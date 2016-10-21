@@ -5,7 +5,7 @@ description: "このトピックでは、機能しているピア ツー ピア�
 title: "Windows ランタイム 8.x から UWP へのケース スタディ - QuizGame ピア ツー ピアのサンプル アプリ"
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: cd05c3edbc254cceb00c55caba698d21998f5594
+ms.openlocfilehash: 353ee8511be38ad437a64e153d43523f355e080f
 
 ---
 
@@ -23,26 +23,21 @@ ms.openlocfilehash: cd05c3edbc254cceb00c55caba698d21998f5594
 
 アプリでは、ビューとビュー モデルを使うパターンを採用します。 このパターンではビューとビュー モデルが明確に分離されているため、以下の説明をご覧になるとわかりますが、このアプリの移植プロセスは非常に簡単です。
 
-
-            **注**  このサンプルでは、カスタム UDP グループ マルチキャスト パケットを送受信するようにネットワークが構成されていることを前提としています (ほとんどのホーム ネットワークはこの前提に該当しますが、社内ネットワークはそのように構成されていない場合があります)。 また、このサンプルでは TCP パケットを送受信します。
+**注**  このサンプルでは、カスタム UDP グループ マルチキャスト パケットを送受信するようにネットワークが構成されていることを前提としています (ほとんどのホーム ネットワークはこの前提に該当しますが、社内ネットワークはそのように構成されていない場合があります)。 また、このサンプルでは TCP パケットを送受信します。
 
  
 
-
-            **注**   Visual Studio で QuizGame10 を開くときに、"Visual Studio 更新プログラムが必要" というメッセージが表示されたら、「[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion)」の手順を実行してください。
+**注**   Visual Studio で QuizGame10 を開くときに、"Visual Studio 更新プログラムが必要" というメッセージが表示されたら、「[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion)」の手順を実行してください。
 
  
 
 ## ダウンロード
 
+[QuizGame ユニバーサル 8.1 アプリをダウンロードします](http://go.microsoft.com/fwlink/?linkid=532953)。 これは、移植前の初期状態のアプリです。 
 
-            [QuizGame ユニバーサル 8.1 アプリをダウンロードします](http://go.microsoft.com/fwlink/?linkid=532953)。 これは、移植前の初期状態のアプリです。 
+[QuizGame10 Windows 10 アプリをダウンロードします](http://go.microsoft.com/fwlink/?linkid=532954)。 これは、移植直後の状態のアプリです。 
 
-
-            [QuizGame10 Windows 10 アプリをダウンロードします](http://go.microsoft.com/fwlink/?linkid=532954)。 これは、移植直後の状態のアプリです。 
-
-
-            [このサンプルの最新バージョンについては GitHub をご覧ください](https://github.com/Microsoft/Windows-appsample-quizgame)。
+[このサンプルの最新バージョンについては GitHub をご覧ください](https://github.com/Microsoft/Windows-appsample-quizgame)。
 
 ## WinRT 8.1 ソリューション
 
@@ -92,11 +87,11 @@ QuizGame には、次の要素が含まれています。
 
 **QuizGame10 ソリューション**
 
--   新しいソリューションを作成し (**[新しいプロジェクト]**、**[その他のプロジェクトの種類]**、**[Visual Studio ソリューション]** の順に移動して作成します)、QuizGame10 という名前を付けます。
+-   新しいソリューションを作成し (**[新しいプロジェクト]** &gt; **[その他のプロジェクトの種類]** &gt; **[Visual Studio ソリューション]** の順に移動して作成します)、QuizGame10 という名前を付けます。
 
 **P2PHelper**
 
--   ソリューション内に、新しい Windows10 クラス ライブラリ プロジェクトを作成し (**[新しいプロジェクト]**、**[Windows ユニバーサル]**、**[Class Library (Windows Universal)]** の順に移動して作成します)、P2PHelper という名前を付けます。
+-   ソリューション内に、新しい Windows 10 クラス ライブラリ プロジェクトを作成し (**[新しいプロジェクト]** &gt; **[Windows ユニバーサル]** &gt; **[Class Library (Windows Universal)]** の順に移動して作成します)、P2PHelper という名前を付けます。
 -   新しいプロジェクトから Class1.cs を削除します。
 -   P2PSession.cs、P2PSessionClient.cs、P2PSessionHost.cs を新しいプロジェクトのフォルダーにコピーし、コピーしたファイルを新しいプロジェクトに追加します。
 -   プロジェクトをビルドします。その他の変更は必要ありません。
@@ -108,9 +103,9 @@ QuizGame には、次の要素が含まれています。
 
 **QuizGameHost**
 
--   新しい Windows10 アプリ プロジェクトを作成し (**[追加]**、**[新しいプロジェクト]**、**[Windows ユニバーサル]**、**[空白のアプリ (Windows ユニバーサル)]** の順に移動して作成します)、QuizGameHost という名前を付けます。
--   P2PHelper に参照を追加します (**[参照の追加]**、**[プロジェクト]**、**[ソリューション]**、**[P2PHelper]** の順に移動して追加します)。
--   **ソリューション エクスプ ローラー**で、ディスク上の各共有フォルダー用に新しいフォルダーを作成します。 次に、作成した各フォルダーを右クリックし、**[追加]**、**[既存の項目]** の順にクリックして、フォルダーに移動します。 適切な共有フォルダーを開き、すべてのファイルを選んで、**[リンクとして追加]** をクリックします。
+-   新しい Windows 10 アプリ プロジェクトを作成し (**[追加]** &gt; **[新しいプロジェクト]** &gt; **[Windows ユニバーサル]** &gt; **[空白のアプリ (Windows ユニバーサル)]** の順に移動します)、QuizGameHost という名前を付けます。
+-   P2PHelper への参照を追加します (**[参照の追加]** &gt; **[プロジェクト]** &gt; **[ソリューション]** &gt; **[P2PHelper]** の順に移動)。
+-   **ソリューション エクスプ ローラー**で、ディスク上の各共有フォルダー用に新しいフォルダーを作成します。 次に、作成した各フォルダーを右クリックし、**[追加]** &gt; **[既存の項目]** の順にクリックして、フォルダーに移動します。 適切な共有フォルダーを開き、すべてのファイルを選んで、**[リンクとして追加]** をクリックします。
 -   \\QuizGame.Windows\\ から \\QuizGameHost\\ に MainPage.xaml をコピーして、名前空間を QuizGameHost に変更します。
 -   \\QuizGame.Shared\\ から \\QuizGameHost\\ に App.xaml をコピーして、名前空間を QuizGameHost に変更します。
 -   app.xaml.cs を上書きせずに、このファイルのバージョンを新しいプロジェクトに保存しておきます。ローカル テスト モードをサポートするように、対象となる変更を 1 つだけそのファイルに加えます。 app.xaml.cs で、次のコード行を置き換えます。
@@ -129,15 +124,15 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 #endif
 ```
 
--   **[プロパティ]**、**[ビルド]**、**[条件付きコンパイル シンボル]** に順に移動して、LOCALTESTMODEON を追加します。
+-   **[プロパティ]** &gt; **[ビルド]** &gt; **[条件付きコンパイル シンボル]** に順に移動して、LOCALTESTMODEON を追加します。
 -   これで、app.xaml.cs に追加したコードに戻り、TestView 型を解決できます。
 -   package.appxmanifest で、機能名を internetClient から internetClientServer に変更します。
 
 **QuizGameClient**
 
--   新しい Windows10 アプリ プロジェクトを作成し (**[追加]**、**[新しいプロジェクト]**、**[Windows ユニバーサル]**、**[空白のアプリ (Windows ユニバーサル)]** の順に移動して作成します)、QuizGameClient という名前を付けます。
--   P2PHelper に参照を追加します (**[参照の追加]**、**[プロジェクト]**、**[ソリューション]**、**[P2PHelper]** の順に移動して追加します)。
--   **ソリューション エクスプ ローラー**で、ディスク上の各共有フォルダー用に新しいフォルダーを作成します。 次に、作成した各フォルダーを右クリックし、**[追加]**、**[既存の項目]** の順にクリックして、フォルダーに移動します。 適切な共有フォルダーを開き、すべてのファイルを選んで、**[リンクとして追加]** をクリックします。
+-   新しい Windows 10 アプリ プロジェクトを作成し (**[追加]** &gt; **[新しいプロジェクト]** &gt; **[Windows ユニバーサル]** &gt; **[空白のアプリ (Windows ユニバーサル)]** の順に移動)、QuizGameClient という名前を付けます。
+-   P2PHelper への参照を追加します (**[参照の追加]** &gt; **[プロジェクト]** &gt; **[ソリューション]** &gt; **[P2PHelper]** の順に移動)。
+-   **ソリューション エクスプ ローラー**で、ディスク上の各共有フォルダー用に新しいフォルダーを作成します。 次に、作成した各フォルダーを右クリックし、**[追加]** &gt; **[既存の項目]** の順にクリックして、フォルダーに移動します。 適切な共有フォルダーを開き、すべてのファイルを選んで、**[リンクとして追加]** をクリックします。
 -   \\QuizGame.WindowsPhone\\ から \\QuizGameClient\\ に MainPage.xaml をコピーして、名前空間を QuizGameClient に変更します。
 -   \\QuizGame.Shared\\ から \\QuizGameClient\\ に App.xaml をコピーして、名前空間を QuizGameClient に変更します。
 -   package.appxmanifest で、機能名を internetClient から internetClientServer に変更します。
@@ -201,6 +196,6 @@ Windows 10 のボタンのテンプレートでは、ボタンに関するタッ
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

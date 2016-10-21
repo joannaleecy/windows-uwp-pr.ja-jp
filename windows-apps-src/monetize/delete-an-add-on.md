@@ -1,87 +1,97 @@
 ---
 author: mcleanbyron
 ms.assetid: 16D4C3B9-FC9B-46ED-9F87-1517E1B549FA
-description: Use this method in the Windows Store submission API to delete an add-on for an app that is registered to your Windows Dev Center account.
-title: Delete an add-on using the Windows Store submission API
+description: "Windows ストア申請 API 内のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されいているアプリのアドオンを削除します。"
+title: "Windows ストア申請 API を使用したアドオンの削除"
+translationtype: Human Translation
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 8c28205ca004bd63b3f6a3fea2971cf927f7e2e4
+
 ---
 
-# Delete an add-on using the Windows Store submission API
+# Windows ストア申請 API を使用したアドオンの削除
 
 
 
 
-Use this method in the Windows Store submission API to delete an add-on (also known as in-app product or IAP) for an app that is registered to your Windows Dev Center account.
+Windows ストア申請 API 内のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されているアプリのアドオン (アプリ内製品または IAP とも呼ばれます) を削除します。
 
-## Prerequisites
+## 前提条件
 
-To use this method, you need to first do the following:
+このメソッドを使うには、最初に次の作業を行う必要があります。
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
-* [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
+* Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
->**Note**&nbsp;&nbsp;This method can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled.
+>**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が与えられた Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
-## Request
+## 要求
 
-This method has the following syntax. See the following sections for usage examples and descriptions of the header and request body.
+このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
 
-| Method | Request URI                                                      |
+| メソッド | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
 | DELETE    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}``` |
 
 <span/>
- 
+ 
 
-### Request header
+### 要求ヘッダー
 
-| Header        | Type   | Description                                                                 |
+| ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
 
 <span/>
 
-### Request parameters
+### 要求パラメーター
 
-| Name        | Type   | Description                                                                 |
+| 名前        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| id | string | Required. The Store ID of the add-on to delete. The Store ID is available on the Dev Center dashboard.  |
+| id | string | 必須。 削除するアドオンのストア ID。 ストア ID はデベロッパー センター ダッシュボードで確認できます。  |
 
 <span/>
 
-### Request body
+### 要求本文
 
-Do not provide a request body for this method.
+このメソッドでは要求本文を指定しないでください。
 
 <span/>
 
-### Request example
+### 要求の例
 
-The following example demonstrates how to delete an add-on.
+次の例は、アドオンを削除する方法を示しています。
 
 ```
 DELETE https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## Response
+## 応答
 
-If successful, this method returns an empty response body.
+成功した場合、このメソッドは空の応答の本文を返します。
 
-## Error codes
+## エラー コード
 
-If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.
+要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。
 
-| Error code |  Description                                                                                                                                                                           |
+| エラー コード |  説明                                                                                                                                                                           |
 |--------|------------------|
-| 400  | The request is invalid. |
-| 404  | The specified add-on could not be found.  |
-| 409  | The specified add-on was found but it could not be deleted in its current state, or the add-on uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 400  | 要求が無効です。 |
+| 404  | 指定したアドオンは見つかりませんでした。  |
+| 409  | 指定したアドオンは見つかりましたが、現在の状態で削除できなかったか、[Windows ストア申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能がアドオンで使用されています。 |   
 
 <span/>
 
-## Related topics
+## 関連トピック
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Get all add-ons](get-all-add-ons.md)
-* [Get an add-on](get-an-add-on.md)
-* [Create an add-on](create-an-add-on.md)
+* [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
+* [すべてのアドオンの入手](get-all-add-ons.md)
+* [アドオンの入手](get-an-add-on.md)
+* [アドオンの作成](create-an-add-on.md)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

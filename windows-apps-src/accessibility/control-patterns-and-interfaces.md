@@ -5,8 +5,9 @@ ms.assetid: 2091883C-5D0C-44ED-936A-709022926A42
 title: "コントロール パターンとインターフェイス"
 label: Control patterns and interfaces
 template: detail.hbs
-ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: 9f38c3bd26ef7b409d4c743abf25a5b0a6455f20
+translationtype: Human Translation
+ms.sourcegitcommit: 74e5af4c3eb5a2e17c95afce156474b613e966c5
+ms.openlocfilehash: d2ae98f95538c014ef256f5d4a400aabb36c3118
 
 ---
 
@@ -25,7 +26,7 @@ Microsoft UI オートメーションのコントロール パターン、それ
 | コントロール パターン | クラス プロバイダー インターフェイス | 説明 |
 |-----------------|--------------------------|-------------|
 | **Annotation** | [**IAnnotationProvider**](https://msdn.microsoft.com/library/windows/apps/Hh738493) | ドキュメント内の注釈のプロパティを公開するために使われます。 |
-| **Dock** | [**IDockProvider**](https://msdn.microsoft.com/library/windows/apps/BR242565) | ドッキング コンテナーにドッキングできるコントロールに使われます (ツール バー、ツール パレットなど)。 |
+| **Dock** | [**IDockProvider**](https://msdn.microsoft.com/library/windows/apps/BR242565) | ドッキング コンテナーにドッキングできるコントロールに使われます  (ツール バー、ツール パレットなど)。 |
 | **Drag** | [**IDragProvider**](https://msdn.microsoft.com/library/windows/apps/Hh750322) | ドラッグ可能なコントロール、またはドラッグ可能な項目を含むコントロールをサポートするために使われます。 |
 | **DropTarget** | [**IDropTargetProvider**](https://msdn.microsoft.com/library/windows/apps/Hh750327) | ドラッグ アンド ドロップ操作のターゲットにできるコントロールをサポートするために使われます。 |
 | **ExpandCollapse** | [**IExpandCollapseProvider**](https://msdn.microsoft.com/library/windows/apps/BR242568) | コンテンツの表示拡大のために展開し、コンテンツの非表示のために折りたたむコントロールをサポートするために使われます。 |
@@ -36,23 +37,21 @@ Microsoft UI オートメーションのコントロール パターン、それ
 | **MultipleView** | [**IMultipleViewProvider**](https://msdn.microsoft.com/library/windows/apps/BR242585) | 同じ情報、データ、または子のセットの複数の表現を切り替えることができるコントロールに使われます。 |
 | **ObjectModel** | [**IObjectModelProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251815) | ドキュメントの基になるオブジェクト モデルにポインターを公開するために使われます。 |
 | **RangeValue** | [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) | 適用できる値の範囲を持つコントロールに使われます。 たとえば、年を含むスピン ボックス コントロールの値の範囲は 1900 年から現在の年までになり、月を提示するスピン ボックス コントロールの値の範囲は 1 ～ 12 になります。 |
-| **Scroll** | [**IScrollProvider**](https://msdn.microsoft.com/library/windows/apps/BR242601) | スクロールできるコントロールに使われます (表示可能領域に表示しきれない情報がある場合にアクティブになるスクロール バーを持つコントロールなど)。 |
-| **ScrollItem** | [**IScrollItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242599) | スクロールするリストの個々の項目を持つコントロールに使われます (コンボ ボックス コントロールなどのスクロール リストの個々の項目を持つリスト コントロールなど)。 |
-| **Selection** | [**ISelectionProvider**](https://msdn.microsoft.com/library/windows/apps/BR242616) | 選択コンテナー コントロールに使われます ([**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868)、[**ComboBox**](https://msdn.microsoft.com/library/windows/apps/BR209348) など)。 |
+| **Scroll** | [**IScrollProvider**](https://msdn.microsoft.com/library/windows/apps/BR242601) | スクロールできるコントロールに使われます  (表示可能領域に表示しきれない情報がある場合にアクティブになるスクロール バーを持つコントロールなど)。 |
+| **ScrollItem** | [**IScrollItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242599) | スクロールするリストの個々の項目を持つコントロールに使われます  (コンボ ボックス コントロールなどのスクロール リストの個々の項目を持つリスト コントロールなど)。 |
+| **Selection** | [**ISelectionProvider**](https://msdn.microsoft.com/library/windows/apps/BR242616) | 選択コンテナー コントロールに使われます  ([**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868)、[**ComboBox**](https://msdn.microsoft.com/library/windows/apps/BR209348) など)。 |
 | **SelectionItem** | [**ISelectionItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242610) | リスト ボックス、コンボ ボックスなどの選択コンテナー コントロールの個々の項目に使われます。 |
 | **Spreadsheet** | [**ISpreadsheetProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251821) | スプレッドシートまたは他のグリッド ベースのドキュメントのコンテンツを公開するために使われます。 |
 | **SpreadsheetItem** | [**ISpreadsheetItemProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251817) | スプレッドシートまたは他のグリッド ベースのドキュメントでセルのプロパティを公開するために使われます。 |
 | **Styles** | [**IStylesProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251823) | 特定のスタイル、塗りつぶしの色、塗りつぶしパターン、または図形を含む UI 要素を記述するために使われます。 |
 | **SynchronizedInput** | [**ISynchronizedInputProvider**](https://msdn.microsoft.com/library/windows/apps/Dn279198) | UI オートメーション クライアント アプリでマウスまたはキーボード入力を特定の UI 要素に転送することを可能にします。 |
-| **Table** | [**ITableProvider**](https://msdn.microsoft.com/library/windows/apps/BR242623) | グリッドとヘッダー情報を持つコントロールに使われます (表形式のカレンダー コントロールなど)。 |
+| **Table** | [**ITableProvider**](https://msdn.microsoft.com/library/windows/apps/BR242623) | グリッドとヘッダー情報を持つコントロールに使われます  (表形式のカレンダー コントロールなど)。 |
 | **TableItem** | [**ITableItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242620) | 表の項目に使われます。 |
 | **Text** | [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) | 編集コントロールやテキスト情報を表示するドキュメントに使われます。 また、「[**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider)」および「[**ITextProvider2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextprovider2)」もご覧ください。 |
 | **TextChild** | [**ITextChildProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextchildprovider) | **Text** コントロール パターンをサポートする、要素に最も近い祖先にアクセスするために使われます。 |
 | **TextEdit** | 使用できるマネージ クラスがありません | テキストを変更するコントロール (たとえば、自動修正の実行、入力方式エディター (IME) を通じた入力合成の有効化を行うコントロールなど) へのアクセスを提供します。 |
-| **TextRange** | [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider) | [
-            **ITextProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextprovider) を実装するテキスト コンテナー内の一続きのテキストへのアクセスを提供します。 [
-            **ITextRangeProvider2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider2) もご覧ください。 |
-| **Toggle** | [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653) | 状態を切り替えることができるコントロールに使われます ([**CheckBox**](https://msdn.microsoft.com/library/windows/apps/BR209316)、オン/オフを切り替えることのできるメニュー項目など)。 |
+| **TextRange** | [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider) | [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextprovider) を実装するテキスト コンテナー内の一続きのテキストへのアクセスを提供します。 [**ITextRangeProvider2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider2) もご覧ください。 |
+| **Toggle** | [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653) | 状態を切り替えることができるコントロールに使われます  ([**CheckBox**](https://msdn.microsoft.com/library/windows/apps/BR209316)、オン/オフを切り替えることのできるメニュー項目など)。 |
 | **Transform** | [**ITransformProvider**](https://msdn.microsoft.com/library/windows/apps/BR242656) | サイズ変更、移動、回転が可能なコントロールに使われます。 デザイナー、フォーム、グラフィカル エディター、描画アプリなどでよく使われます。 |
 | **Value** | [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) | 値の範囲をサポートしないコントロールの値をクライアントが取得または設定できるようにします。 |
 | **VirtualizedItem** | [**IVirtualizedItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242668) | 仮想化されていて、UI オートメーション要素として完全にアクセスできるようにする必要があるコンテナー内の項目を公開します。 |
@@ -67,10 +66,10 @@ Microsoft UI オートメーションのコントロール パターン、それ
 <span id="related_topics"/>
 ## 関連トピック  
 * [カスタム オートメーション ピア](custom-automation-peers.md)
-* [アクセシビリティ](accessibility.md)
+* [アクセシビリティ](accessibility.md) 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

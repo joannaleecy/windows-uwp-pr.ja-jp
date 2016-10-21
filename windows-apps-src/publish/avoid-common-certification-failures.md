@@ -3,8 +3,9 @@ author: jnHs
 Description: "アプリの認定の妨げになることが多い問題、またはアプリの公開後のスポット チェックで識別された問題を回避するために、このリストを確認します。"
 title: "一般的な認定エラーの回避"
 ms.assetid: 9E9E3841-2F9B-42D4-B5F8-4C7C31E42E3D
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6af2842eeb5eeebfc9ffc5a7a3ec98fdcebddb74
+ms.openlocfilehash: 7de2083b2a29baed5a0e6baf0a1e4c4c2f71c9e4
 
 ---
 
@@ -13,15 +14,13 @@ ms.openlocfilehash: 6af2842eeb5eeebfc9ffc5a7a3ec98fdcebddb74
 
 アプリの認定の妨げになることが多い問題、またはアプリの公開後のスポット チェックで識別された問題を回避するために、このリストを確認します。
 
-> 
-            **注:** アプリがここに掲げる要件をすべて満たすようにするには、「[Windows ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944)」も確認してください。
+> **注:** アプリがここに掲げる要件をすべて満たすようにするには、「[Windows ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944)」も確認してください。
 
  
 
 -   アプリを申請するのは、アプリが完成した場合だけにします。 アプリの説明を使って今後の機能を言及することをお勧めしますが、不完全なセクションや、作成中の Web ページへのリンクなど、アプリが不完全であるという印象をユーザーに与えるものをアプリに含めないようにしてください。
 
--   
-            アプリを提出する前に、[Windows アプリ認定キットでアプリをテスト](https://msdn.microsoft.com/library/windows/apps/mt186449)します。
+-   アプリを申請する前に、[Windows アプリ認定キットでアプリをテスト](https://msdn.microsoft.com/library/windows/apps/mt186449)します。
 
 -   できるだけアプリの安定性が高くなるように、複数の異なる構成でアプリをテストします。
 
@@ -46,6 +45,6 @@ ms.openlocfilehash: 6af2842eeb5eeebfc9ffc5a7a3ec98fdcebddb74
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,8 +3,9 @@ author: mcleblanc
 description: "この移植ガイドを最後まで読み進むことを強くお勧めしますが、まず先に進み、プロジェクトの構築と実行の段階に到達することを非常に望まれていることも理解できます。"
 title: "Windows Phone Silverlight から UWP への移植に関するトラブルシューティング"
 ms.assetid: d9a9a2a7-9401-4990-a992-4b13887f2661
+translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 0e7c4ba00ab513c1ea9da94f1a3f69b5921c2dc1
+ms.openlocfilehash: 070e4a00cada6f6cf7b6c1d027d2391eecb8facd
 
 ---
 
@@ -61,6 +62,6 @@ XAML 解析例外は診断が難しい場合があります。特に、わかり
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

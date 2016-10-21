@@ -1,71 +1,75 @@
 ---
 author: mcleanbyron
 ms.assetid: BF296C25-A2E6-48E4-9D08-0CCDB5FAE0C8
-description: Use this method in the Windows Store submission API to get data for an existing app submission.
-title: Get an app submission using the Windows Store submission API
+description: "既存のアプリの提出のデータを取得するには、Windows ストア提出 API 内の以下のメソッドを使用します。"
+title: "Windows ストア提出 API を使用したアプリの提出の取得"
+translationtype: Human Translation
+ms.sourcegitcommit: 178b70db1583790c174d65e060c8bce6e4f69243
+ms.openlocfilehash: c845b59919a3a487949bc8926f7261992dac60ae
+
 ---
 
-# Get an app submission using the Windows Store submission API
+# Windows ストア提出 API を使用したアプリの提出の取得
 
 
 
 
-Use this method in the Windows Store submission API to get data for an existing app submission. For more information about the process of process of creating an app submission by using the Windows Store submission API, see [Manage app submissions](manage-app-submissions.md).
+既存のアプリの提出のデータを取得するには、Windows ストア提出 API 内の以下のメソッドを使用します。 Windows ストア提出 API を使ったアプリの提出の作成プロセスについて詳しくは、「[アプリの提出の管理](manage-app-submissions.md)」をご覧ください。
 
-## Prerequisites
+## 前提条件
 
-To use this method, you need to first do the following:
+このメソッドを使うには、最初に次の作業を行う必要があります。
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
-* [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
-* Create a submission for an app in your Dev Center account. You can do this in the Dev Center dashboard, or you can do this by using the [create an app submission](create-an-app-submission.md) method.
+* Windows ストア提出 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
+* デベロッパー センターのアカウントでアプリの提出を作成します。 この操作は、デベロッパー センター ダッシュボードまたは[アプリ提出の作成](create-an-app-submission.md)メソッドを使って実行できます。
 
->**Note**&nbsp;&nbsp;This method can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled.
+>**注:**&nbsp;&nbsp;このメソッドは、Windows ストア提出 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
-## Request
+## 要求
 
-This method has the following syntax. See the following sections for usage examples and descriptions of the header and request body.
+このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
 
-| Method | Request URI                                                      |
+| メソッド | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
 | GET   | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId} ``` |
 
 <span/>
- 
+ 
 
-### Request header
+### 要求ヘッダー
 
-| Header        | Type   | Description                                                                 |
+| ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
 
 <span/>
 
-### Request parameters
+### 要求パラメーター
 
-| Name        | Type   | Description                                                                 |
+| 名前        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | Required. The Store ID of the app for which you want to update a submission. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| submissionId | string | Required. The ID of the submission to get. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [create an app submission](create-an-app-submission.md).  |
+| applicationId | string | 必須。 提出を更新するアプリのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。  |
+| submissionId | string | 必須。 取得する提出の ID。 この ID は、[アプリの提出の作成](create-an-app-submission.md)要求の応答データに含まれており、デベロッパー センター ダッシュボードで確認できます。  |
 
 <span/>
 
-### Request body
+### 要求本文
 
-Do not provide a request body for this method.
+このメソッドでは要求本文を指定しないでください。
 
-### Request example
+### 要求の例
 
-The following example demonstrates how to get an app submission.
+次の例は、アプリの提出を取得する方法を示しています。
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/submissions/1152921504621243680 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## Response
+## 応答
 
-The following example demonstrates the JSON response body for a successful call to this method. The response body contains information about the specified submission. For more details about the values in the response body, see [App submission resource](manage-app-submissions.md#app-submission-object).
+次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文には、指定された提出に関する情報が含まれています。 応答本文内の値について詳しくは、[アプリの提出のリソース](manage-app-submissions.md#app-submission-object)をご覧ください。
 
 ```json
 {
@@ -157,23 +161,29 @@ The following example demonstrates the JSON response body for a successful call 
 }
 ```
 
-## Error codes
+## エラー コード
 
-If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.
+要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。
 
-| Error code |  Description   |
+| エラー コード |  説明   |
 |--------|------------------|
-| 404  | The submission could not be found. |
-| 409  | The submission does not belong to the specified app, or the app uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 404  | 提出は見つかりませんでした。 |
+| 409  | 指定されたアプリに提出が属していないか、[Windows ストア提出 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能をアプリが使用しています。 |   
 
 <span/>
 
 
-## Related topics
+## 関連トピック
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Create an app submission](create-an-app-submission.md)
-* [Commit an app submission](commit-an-app-submission.md)
-* [Update an app submission](update-an-app-submission.md)
-* [Delete an app submission](delete-an-app-submission.md)
-* [Get the status of an app submission](get-status-for-an-app-submission.md)
+* [Windows ストア サービスを使用した提出の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
+* [アプリの提出の作成](create-an-app-submission.md)
+* [アプリの提出のコミット](commit-an-app-submission.md)
+* [アプリの提出の更新](update-an-app-submission.md)
+* [アプリの提出の削除](delete-an-app-submission.md)
+* [アプリの提出の状態の取得](get-status-for-an-app-submission.md)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

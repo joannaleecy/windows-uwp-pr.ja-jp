@@ -5,8 +5,9 @@ description: .
 ms.assetid: BF42E810-CDC8-47D2-9C30-BAA19DCBE2DA
 label: Screen sizes and break points
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 153652c9fcc9745bdee087033d65eec2bc860e53
+ms.openlocfilehash: 5977b6253e2ee10fa0153d79053f89b705c2e1a3
 
 ---
 
@@ -14,8 +15,7 @@ ms.openlocfilehash: 153652c9fcc9745bdee087033d65eec2bc860e53
 
 対象デバイスと、Windows 10 エコシステム全体での画面サイズの数はあまりに多いため、そのそれぞれのために UI を最適化しても意味がありません。 その代わり、360、640、1024、および 1366 epx という 4 種類の主要なキー幅 ("ブレークポイント" とも呼ばれます) を設計することをお勧めします。
 
-
-            **ヒント**  特定のブレークポイント向けに設計するときは、アプリ (アプリのウィンドウ) で使用できる画面領域の量向けに設計します。 アプリが全画面表示で実行されているときは、アプリ ウィンドウが画面と同じサイズですが、それ以外の状況では、画面より小さいサイズです。
+**ヒント**  特定のブレークポイント向けに設計するときは、アプリ (アプリのウィンドウ) で使用できる画面領域の量向けに設計します。 アプリが全画面表示で実行されているときは、アプリ ウィンドウが画面と同じサイズですが、それ以外の状況では、画面より小さいサイズです。
  
 
 次の表は、さまざまなサイズ クラスを説明し、これらのサイズ クラスを調整するため一般的な推奨事項を示します。
@@ -99,6 +99,6 @@ ms.openlocfilehash: 153652c9fcc9745bdee087033d65eec2bc860e53
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

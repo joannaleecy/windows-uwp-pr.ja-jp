@@ -1,61 +1,71 @@
-﻿---
+---
 author: jnHs
-Description: The Add-on acquisitions report in the Windows Dev Center dashboard lets you see how many add-ons you've sold, along with demographic and platform details.
-title: Add-on acquisitions report
+Description: "Windows デベロッパー センター ダッシュボードのアドオン取得レポートでは、販売したアドオンの数と共に、人口統計データやプラットフォームの詳細を確認できます。"
+title: "アドオン取得レポート"
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
+translationtype: Human Translation
+ms.sourcegitcommit: 0edf45e997f36a82a8bfcb92c1d8fd2c79242461
+ms.openlocfilehash: 144a8400acf0333fcd50e698b333c02942081ef3
+
 ---
 
-# Add-on acquisitions report
+# アドオン取得レポート
 
 
-The **Add-on acquisitions** report in the Windows Dev Center dashboard lets you see how many add-ons you've sold, along with demographic and platform details. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+Windows デベロッパー センター ダッシュボードの**アドオン取得レポート**では、販売したアドオンの数と共に、人口統計データやプラットフォームの詳細を確認できます。 このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md) してオフラインで表示することもできます。 または、[Windows ストア分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) を使って、プログラムでこのデータを取得できます。
 
-In this report, an add-on acquisition means a customer has purchased an add-on from you. Multiple purchases of the same consumable add-on by the same customer are counted as separate add-on acquisitions.
+このレポートで、アドオン取得とは、ユーザーが開発者からアドオンを購入したことを意味します。 同じユーザーが同じコンシューマブルなアドオンを複数回購入した場合は、個別のアドオン取得としてカウントされます。
 
-> **Important**  The **Add-on acquisitions** report does not include data about refunds, reversals, chargebacks, etc. To estimate your app proceeds, visit [Payout summary](payout-summary.md). In the **Reserved** section, click the **Download reserved transactions** link.
+> **重要**  **アドオン取得**レポートには、払戻し、取り消し、支払取り消しなどのデータは含まれません。アプリの収益を見積もるには、「[支払いの要約](payout-summary.md)」をご覧ください。 次に、**[予約済み]** セクションで、**予約済みのトランザクションをダウンロード**するためのリンクをクリックします。
 
-## Apply filters
-
-
-Near the top of the page, you can expand **Apply filters** to filter all of the data on this page by date range and/or by device type. You can also filter to show only data for a specific add-on.
-
--   **Date**: The default filter is **Last 30 days**, but you can expand this up to **Last 12 months**.
--   **Add-on**: The default filter is **All add-ons**. If you want to show acquisition data for only one of your add-ons, you can choose a specific one here.
--   **Device type**: The default setting is **All devices**. If you want to show data for add-on acquisitions from a certain device type only, you can choose a specific one here.
-
-The info in the charts listed below will reflect the period of time selected in the **Apply filters** section.
-
-The info in all of the charts listed below will reflect the period of time selected in the **Apply filters** section. By default this will include data for all device types, unless you've used **Apply filters** to choose only one.
-
-## Add-on acquisitions
+## フィルターの適用
 
 
-The **Add-on acquisitions** chart shows the number of daily or weekly acquisitions of your add-ons over the selected period of time. (When you use **Apply filters** to filter the data over a longer duration, the data will be grouped by week.)
+ページの上部にある **[フィルターの適用]** を展開して、このページのすべてのデータを日付の範囲やデバイスの種類によってフィルター処理できます。 特定のアドオンのデータのみが表示されるようにフィルター処理することもできます。
 
-You can also see the lifetime number of acquisitions for your add-ons. This shows the cumulative total of all acquisitions, starting from when your app was first published.
+-   **[日付]**: 既定のフィルターは **[過去 30 日]** ですが、これを **[過去 12 か月]** まで拡張できます。
+-   **[アドオン]**: 既定のフィルターは **[すべてのアドオン]** です。 アドオンの 1 つについてのみ取得データを表示するには、ここでそのアドオンを選ぶことができます。
+-   **[デバイスの種類]**: 既定の設定は **[すべてのデバイス]** です。 特定のデバイスの種類についてのみアドオン取得データを表示するには、ここでそのデバイスの種類を選ぶことができます。
 
-The chart also shows the price that a customer paid to acquire the add-on.
+以下のグラフに示される情報には、**[フィルターの適用]** セクションで選んだ期間が反映されています。
 
-You can optionally filter the results by market and/or by OS version.
+以下のすべてのグラフに示される情報には、**[フィルターの適用]** セクションで選んだ期間が反映されています。 既定では、**[フィルターの適用]** を使ってデバイスの種類を 1 つに絞り込んでいない限り、その情報にはすべてのデバイスの種類のデータが含まれます。
 
-## Top add-ons
+## アドオン取得
 
-The **Top add-ons** chart shows the total number of acquisitions for each of your add-ons over the selected period of time by market. By default, we show you the add-on which had the most acquisitions on top and continue downward from there. You can reverse this order by toggling the arrow in the **Acquisitions** column of this chart.
 
-## Markets
+**[アドオン取得]** のグラフには、選んだ期間中の日ごとまたは週ごとのアドオン取得数が示されます  (**[フィルターの適用]** を使って長い期間のデータをフィルター処理すると、データが週ごとにグループ化されます)。
 
-The **Markets** chart shows the total number of add-on acquisitions over the selected period of time by market. By default, we show you the market which had the most acquisitions on top and continue downward from there. You can reverse this order by toggling the arrow in the **Acquisitions** column of this chart.
+アドオンの全期間における取得数を確認することもできます。 この値は、アプリが初めて公開されたときからの全取得数の累計です。
 
-## Customer demographic
+また、グラフにはユーザーがアドオンを取得するために支払った価格も示されます。
 
-The **Customer demographic** chart shows demographic info about the people who acquired your add-on. You can see how many acquisitions (over the selected period of time) were made by people in a certain age group and by which gender.
+必要に応じて、市場や OS のバージョン別に結果をフィルター処理することもできます。
 
-> **Note**  Some customers have opted not to share this info. If we were unable to determine the age group or gender, the acquisition is categorized as **Unknown**.
+## トップ アドオン
 
-## OS version
+**[トップ アドオン]** のグラフには、市場別に、選んだ期間中の各アドオンの合計取得数が示されます。 既定では、取得数が最も多かったアドオンが一番上に表示され、そこから降順に表示されます。 このグラフの **[取得]** 列の矢印をクリックすることで、この順序を逆にすることができます。
 
-The **OS version** chart shows the total number of acquisitions based on the customer's operating system (or via [volume acquisition by organizations](organizational-licensing.md)). In some cases we may not be able to determine this info. In that case, the OS version will be listed as **Unknown**.
+## 市場
 
- 
+**[市場]** のグラフには、選んだ期間中の市場別のアドオン取得の合計数が表示されます。 既定では、取得数が最も多かった市場が一番上に表示され、そこから降順に表示されます。 このグラフの **[取得]** 列の矢印をクリックすることで、この順序を逆にすることができます。
 
- 
+## ユーザーの統計データ
+
+**[ユーザーの統計データ]** のグラフには、アドオンを取得したユーザーに関する人口統計情報が表示されます。 特定の年齢グループや性別のユーザーによる (選んだ期間中の) 取得の数を確認できます。
+
+> **注**  ユーザーによっては、この情報を共有することを選んでいない場合があります。 年齢グループや性別を特定できない場合、その取得は**不明**として分類されます。
+
+## OS バージョン
+
+**[OS バージョン]** のグラフは、ユーザーのオペレーティング システムに基づく取得 (または[組織単位でのボリューム取得](organizational-licensing.md)) の合計数を示しています。 場合によっては、この情報を特定できない可能性があります。 その場合、OS バージョンは**不明**として表示されます。
+
+ 
+
+ 
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

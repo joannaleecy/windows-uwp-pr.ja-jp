@@ -5,19 +5,30 @@ title: "ラベル"
 ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
 label: Labels
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: fbb186b6f8b7bfba47fb05155a227224a1bd595e
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: aa605b3862c33633904822bb88de7e647a2b3d5b
 
 ---
-
 # ラベル
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 ラベルは、コントロールまたは関連するコントロールのグループの名前やタイトルです。
 
-**重要な API**
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>Header プロパティ</li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br209652"><strong>TextBlock クラス</strong></a></li>
+</ul>
 
--   Header プロパティ
--   [**TextBlock クラス**](https://msdn.microsoft.com/library/windows/apps/br209652)
+</div>
+</div>
+
+
+
+
 
 
 XAML では、多くのコントロールに組み込みの Header プロパティがあり、これを使ってラベルを表示します。 Header プロパティがないコントロールの場合、またはコントロールのグループにラベルを付ける場合は、代わりに [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) を使います。
@@ -28,14 +39,14 @@ XAML では、多くのコントロールに組み込みの Header プロパテ�
 
 ![標準的なラベル コントロールを示すスクリーンショット](images/label-standard.png)
 
-## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>推奨事項
+## 推奨事項
 
 
 -   隣接するコントロールに入力する必要がある内容をユーザーに説明するためにラベルを使います。 また、関連するコントロールのグループにラベルを付けることや、関連するコントロールのグループの近くに説明テキストを表示することができます。
 -   コントロールにラベルを付ける場合、説明テキストの文ではなく、名詞や簡潔な名詞句のラベルを入力します。 コロン、その他の句読点は使わないでください。
 -   ラベルに説明テキストを入力するときは、テキスト文字列を長くすることができ、句読点も使うことができます。
 
-## <span id="related_topics"></span>関連トピック
+## 関連トピック
 * [テキスト コントロール](text-controls.md)
 
 **開発者向け**
@@ -59,6 +70,6 @@ XAML では、多くのコントロールに組み込みの Header プロパテ�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

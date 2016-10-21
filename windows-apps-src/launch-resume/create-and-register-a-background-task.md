@@ -1,19 +1,17 @@
 ---
 author: TylerMSFT
-title: "バックグラウンド タスクの作成と登録"
+title: "別のプロセスで実行するバックグラウンド タスクの作成と登録"
 description: "バックグラウンド タスク クラスを作り、アプリがフォアグラウンドにない場合にも実行されるように登録します。"
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 translationtype: Human Translation
-ms.sourcegitcommit: 579547b7bd2ee76390b8cac66855be4a9dce008e
-ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
+ms.sourcegitcommit: 95c34f70e9610907897cfe9a2bf82aaac408e486
+ms.openlocfilehash: 4eb67f8f63134ab33df79b0b98b252b2b27b2dda
 
 ---
 
-# バックグラウンド タスクの作成と登録
-
+# 別のプロセスで実行するバックグラウンド タスクの作成と登録
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
-
 
 **重要な API**
 
@@ -21,10 +19,12 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 -   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
 
-バックグラウンド タスク クラスを作り、アプリがフォアグラウンドにない場合にも実行されるように登録します。
+バックグラウンド タスク クラスを作り、アプリがフォアグラウンドにない場合にも実行されるように登録します。 このトピックでは、フォアグラウンド プロセスとは別のプロセスで実行されるバックグラウンド タスクを作成して登録する方法について説明します。 フォアグラウンド アプリケーションで直接バックグラウンド作業を実行する方法については、「[単一プロセス バックグラウンド タスクの作成と登録](create-and-register-a-singleprocess-background-task.md)」をご覧ください。
+
+> [!Note]
+> バックグラウンド タスクを使ってバックグラウンドでメディアを再生する場合、Windows 10 バージョン 1607 で簡単に行うことができる機能強化について、「[バックグラウンドでのメディアの再生](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)」をご覧ください。
 
 ## バックグラウンド タスク クラスを作る
-
 
 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) インターフェイスを実装するクラスを作ると、コードをバックグラウンドで実行できます。 このコードは、[**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) や [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) などを使って特定のイベントをトリガーすると実行されます。
 
@@ -110,9 +110,10 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
-    >     BackgroundTaskDeferral _deferral = taskInstance.GetDeferral(); // Note: define at class scope
+    >     BackgroundTaskDeferral _deferral; // Note: defined at class scope so we can mark it complete inside the OnCancel() callback if we choose to support cancellation
     >     public async void Run(IBackgroundTaskInstance taskInstance)
     >     {
+    >         _deferral = taskInstance.GetDeferral()
     >         //
     >         // TODO: Insert code to start one or more asynchronous methods using the
     >         //       await keyword, for example:
@@ -124,7 +125,7 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
     >     }
     > ```
     > ```cpp
-    >     BackgroundTaskDeferral^ deferral = taskInstance->GetDeferral(); // Note: define at class scope
+    >     BackgroundTaskDeferral^ deferral = taskInstance->GetDeferral(); // Note: defined at class scope so we can mark it complete inside the OnCancel() callback if we choose to support cancellation
     >     void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
     >     {
     >         //
@@ -150,7 +151,6 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 
 > [!NOTE]
 > バックグラウンド タスクを登録するための専用の関数を作成することもできます (「[バックグラウンド タスクの登録](register-a-background-task.md)」を参照)。 その場合、次の 3 つの手順は不要です。単にトリガーを作成し、タスクの名前とエントリ ポイント、(必要に応じて) 条件と併せて登録関数に渡すだけで済みます。
-
 
 ## 実行するバックグラウンド タスクを登録する
 
@@ -242,10 +242,11 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 > [!NOTE]
 > ユニバーサル Windows アプリは、どの種類のバックグラウンド トリガーを登録する場合でも、先に [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) を呼び出す必要があります。
 
-更新プログラムのリリース後にユニバーサル Windows アプリが引き続き適切に実行されるようにするには、更新後にアプリが起動する際に、[**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) の順に呼び出す必要があります。 詳しくは、「[バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)」をご覧ください。
+更新プログラムのリリース後にユニバーサル Windows アプリが引き続き適切に実行されるようにするには、**ServicingComplete** ([SystemTriggerType](https://msdn.microsoft.com/library/windows/apps/br224839) に関するページをご覧ください) トリガーを使って、アプリのデータベースの移行やバックグラウンド タスクの登録などの更新後の構成の変更を実行します。 現時点で、アプリの以前のバージョンに関連付けられたバックグラウンド タスクの登録を解除してから ([**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) に関するページをご覧ください)、アプリの新しいバージョンのバックグラウンド タスクを登録する ([**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) に関するページをご覧ください) ことをお勧めします。
+
+詳しくは、「[バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)」をご覧ください。
 
 ## イベント ハンドラーでバックグラウンド タスクの完了を処理する
-
 
 アプリからバックグラウンド タスクの結果を取得できるように、[**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) にメソッドを登録します。 アプリが起動、または再開されると、アプリが最後にフォアグラウンドに置かれた後にバックグラウンド タスクが終了していた場合、mark メソッドが呼び出されます (アプリがフォアグラウンドにある間にバックグラウンド タスクが終了した場合は、OnCompleted メソッドが直ちに呼び出されます)。
 
@@ -275,7 +276,6 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 
     > [!NOTE]
     > UI の更新は、UI スレッドを拘束することがないように、非同期で実行する必要があります。 例については、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)の UpdateUI メソッドを参照してください。
-
 
 
 2.  バックグラウンド タスクを登録した位置に戻ります。 そのコード行の後に、新しい [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) オブジェクトを追加します。 **BackgroundTaskCompletedEventHandler** コンストラクターのパラメーターとして OnCompleted メソッドを指定します。
@@ -315,13 +315,12 @@ ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
 
 ## 要約と次のステップ
 
-
 ここでは、バックグラウンド タスク クラスの記述方法、アプリ内からバックグラウンド タスクを登録する方法、バックグラウンド タスクが完了したことをアプリで認識する方法の基本について学習しました。 また、アプリで適切にバックグラウンド タスクを登録できるように、アプリ マニフェストを更新する方法についても学習しました。
 
 > [!NOTE]
 > [バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)をダウンロードして、バックグラウンド タスクを使う完全で堅牢な UWP アプリのコンテキストで類似のコード例を確認してください。
 
-API リファレンス、バックグラウンド タスクの概念的ガイダンス、バックグラウンド タスクを使ったアプリの作成に関する詳しい説明については、次の関連するトピックを参照してください。
+API リファレンス、バックグラウンド タスクの概念的ガイダンス、バックグラウンド タスクを使ったアプリの作成に関する詳しい説明については、次の関連するトピックをご覧ください。
 
 > [!NOTE]
 > この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
@@ -337,6 +336,8 @@ API リファレンス、バックグラウンド タスクの概念的ガイダ
 * [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
 * [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
 * [タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)
+* [単一プロセス バックグラウンド タスクの作成と登録](create-and-register-a-singleprocess-background-task.md)。
+[マルチプロセスのバックグラウンド タスクを単一プロセスのバックグラウンド タスクへ変換](convert-multiple-process-background-task.md)  
 
 **バックグラウンド タスクのガイダンス**
 
@@ -350,6 +351,6 @@ API リファレンス、バックグラウンド タスクの概念的ガイダ
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO4-->
 
 

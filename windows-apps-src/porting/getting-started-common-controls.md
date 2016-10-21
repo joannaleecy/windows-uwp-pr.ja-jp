@@ -3,8 +3,9 @@ author: mcleblanc
 ms.assetid: E2B73380-D673-48C6-9026-96976D745017
 description: "コモン コントロールの概要"
 title: "コモン コントロールの概要"
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9d67cf02f80b5aa9d49fe3a0c5eb47a89419991a
+ms.openlocfilehash: 2cd4b7344074c795f14a56cddbe7807c9ffefafe
 
 ---
 
@@ -47,8 +48,7 @@ UWP コントロールが優れている点は、実行されているデバイ�
 
 その他のコントロールについては、「[コントロールの一覧](https://msdn.microsoft.com/library/windows/apps/mt185406)」をご覧ください。
 
-
-            **注:** JavaScript と HTML を使った Windows ストア アプリのコントロールの一覧については、「[コントロールの一覧](https://msdn.microsoft.com/library/windows/apps/hh465453)」をご覧ください。
+**注:** JavaScript と HTML を使った Windows ストア アプリのコントロールの一覧については、「[コントロールの一覧](https://msdn.microsoft.com/library/windows/apps/hh465453)」をご覧ください。
 
 ### 次のステップ
 
@@ -62,6 +62,6 @@ UWP コントロールが優れている点は、実行されているデバイ�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

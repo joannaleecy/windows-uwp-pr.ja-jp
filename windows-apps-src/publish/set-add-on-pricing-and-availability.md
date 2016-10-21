@@ -1,59 +1,69 @@
-﻿---
+---
 author: jnHs
-Description: When submitting an add-on, the options on the Pricing and availability page determine what to charge for your add-on and how it should be offered to customers.
-title: Set add-on pricing and availability
+Description: "アドオンを申請するときに、[価格と使用可能状況] ページのオプションで、アドオンの料金やユーザーに提供する方法を指定します。"
+title: "アドオンの価格と使用可能状況の設定"
 ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
+translationtype: Human Translation
+ms.sourcegitcommit: 0edf45e997f36a82a8bfcb92c1d8fd2c79242461
+ms.openlocfilehash: 17fe4e836dc75e0dfd44389a503a6a94afe44f42
+
 ---
 
-# Set add-on pricing and availability
+# アドオンの価格と使用可能状況の設定
 
 
-When submitting an add-on, the options on the **Pricing and availability** page determine what to charge for your add-on and how it should be offered to customers.
+アドオンを申請するときに、**[価格と使用可能状況]** ページのオプションで、アドオンの料金やユーザーに提供する方法を指定します。
 
-## Base price
-
-
-You must select a base price for your add-on. These price tiers are the same as the price tiers for apps, starting at .99 USD. You also have the option to offer your add-on for free.
-
-## Markets and custom prices
+## 基本価格
 
 
-By default, your add-on will be listed in all possible markets, including any future markets that we may add later, at its base price.
+アドオンの基本価格を選ぶ必要があります。 これらの価格帯は、0.99 米ドルから始まるアプリの価格帯と同じです。 また、アドオンを無料で提供するためのオプションもあります。
 
-However, just as with an app, you have the option to choose the markets in which you'd like to offer your add-on. In most cases you'll want to pick the same set of markets as the app, but you have the flexibility to make changes as needed. You can also set custom prices so that you can charge different prices for the add-on in different markets.
-
-For more info and a full list of the available markets, see [Define pricing and market selection](define-pricing-and-market-selection.md).
-
-## Sale pricing
+## 市場と特別価格
 
 
-If you want to offer your add-on at a reduced price for a limited period of time, you can create and schedule a sale. For more info, see [Put apps and add-ons on sale](put-apps-and-add-ons-on-sale.md).
+既定では、アドオンは販売できるすべての市場 (今後追加される可能性のある市場も含む) にその基本価格で公開されます。
 
-## Distribution and visibility
+ただし、アプリと同様に、アドオンを提供する市場を選ぶためのオプションもあります。 ほとんどの場合、アプリと同じ一連の市場の選びますが、必要に応じて柔軟に変更できます。 さまざまな市場でアドオンの異なる価格を課金できるように、特別価格を設定することもできます。
+
+詳しい情報と利用可能な市場の一覧については、「[価格と市場の選択の定義](define-pricing-and-market-selection.md)」をご覧ください。
+
+## セール価格
 
 
-You can determine whether your add-on should be offered for purchase to customers. Choose from one of the following options:
+期間限定でアドオンを割引価格で提供する場合は、特売を作成し、そのスケジュールを設定できます。 詳しくは、「[アプリとアドオンの販売](put-apps-and-add-ons-on-sale.md)」をご覧ください。
 
--   **Available for purchase. May be displayed in your app's listing:** This is the default setting and is recommended unless you want to restrict access to your add-on. Leave this option checked for add-ons that will be made available to any customer.
--   **Available for purchase. Not displayed in your app's listing:** Choosing this option allows customers to purchase the add-on from within your app, but the add-on will not be displayed in your app's Store listing. Use this only when the offer is not broadly available, for example during initial periods of internal testing.
--   **No longer available for purchase. Not displayed in your app's listing.** Choosing this option means that the add-on won't be displayed in your app's listing, and no new customers may purchase the add-on. However, **this option is not supported for customers on Windows 8.1 or earlier**. If your app is available on Windows 8.1 or earlier, the add-on will still be available for purchase to those customers. To stop offering the add-on to customers on Windows 8.1 or earlier, you'll need to update your app to remove the code that offers the add-on, then publish a new submission for the app. This is recommended even if your app doesn't target Windows 8.1 or earlier; it's a better experience for your customers if you never offer them an add-on that you've opted to make unavailable.
+## 配布と表示
+
+
+アドオンをユーザーが購入できるようにするかどうかを指定できます。 次のいずれかのオプションを選びます。
+
+-   **[購入可能。アプリのリストに表示されます]**: これは既定の設定であり、アドオンへのアクセスを制限する必要がない場合にお勧めします。 アドオンをすべてのユーザーに提供する場合は、このオプションをオンのままにしておきます。
+-   **[購入可能。アプリのリストには表示されません]**: このオプションを選ぶと、ユーザーはアプリ内からアドオンを購入できますが、アドオンはストア内のアプリの内容ページには表示されません。 初期の内部テスト期間中など、IAP が広く利用可能ではない場合にのみ、このオプションを使います。
+-   **[購入不可。 アプリのリストには表示されません]** このオプションを選ぶと、アドオンはアプリの内容ページに表示されず、新しいユーザーはアドオンを購入することができません。 ただし、**このオプションは、Windows 8.1 またはそれ以前のバージョンのユーザーについてはサポートされていません**。 アプリが Windows 8.1 またはそれ以前のバージョンで利用できる場合、それらのユーザーは引き続きアドオンを購入できます。 Windows 8.1 またはそれ以前バージョンのユーザーに対して、このアドオンの提供を停止するには、アプリを更新してアドオンを提供するコードを削除し、新しいアプリの提出パッケージを公開する必要があります。 アプリが Windows 8.1 またはそれ以前のバージョンを対象としていない場合でも、この方法をお勧めします。利用できないようにすることを選択したアドオンをユーザーに提供しないことは、ユーザーのエクスペリエンス向上につながります。
     
- > **Note**  Choosing this setting, and/or submitting an app update that removes the add-on from your app's code, does not affect any customers who have already purchased the add-on, regardless of their operating system.
+ > **注**  この設定を選択した場合や、アプリのコードからアドオンを削除するアプリの更新プログラムを提出した場合でも、オペレーティング システムに関係なく、アドオンを購入済みのユーザーには影響しません。
 
 
-## Publish date
+## 公開日
 
-You can indicate when your add-on submission should be published by choosing an option in the **Publish date** section.
+**[公開日]** セクションのオプションを選ぶことで、アドオンの申請が公開される時期を指定できます。
 
--   Choose **Publish my add-on as soon as it passes certification** to make this submission available in the Store as soon as possible.
--   Choose **Publish this add-on manually** if you don't want your submission to be published until you indicate that it should be. You can do this from the certification status page by clicking **Publish now**, or by selecting a specific date as described below.
--   Choose **No sooner than \[date\]** to ensure that the submission is not published until a certain date. With this option, your submission will be released as soon as possible on or after the date you specify. The date must be at least 24 hours in the future. Along with the date, you can also specify the time at which the submission should begin to be published.
+-   できるだけ早くストアでこの申請が利用できるようにするには、**[認定されたらすぐにアドオンを公開します]** を選びます。
+-   適切な時期を指定するまで申請を公開しない場合は、**[手動でこのアドオンを公開します]** を選びます。 アプリケーションを手動で公開するには、認定のステータス ページから **[今すぐ公開]** をクリックするか、後で説明するように特定の日付を選びます。
+-   申請が特定の日付まで公開されないようにするには、**[次の予定日に公開する \[日付\]]** を選びます。 このオプションを選ぶと、申請は指定された日付の当日またはその日以降に、できるだけ早くリリースされます。 日付は 24 時間以上先の日付にする必要があります。 日付と同時に、申請を公開し始める時刻を指定することもできます。
 
- > **Note**  Delays during certification or publishing could cause the actual release date to be later than the date you request. The Windows Store cannot guarantee that your add-on (or update) will be available on a specific date.
- 
+ > **注**  認定または公開に遅延が生じると、実際のリリース日が、希望する日付よりも後になる場合があります。 Windows ストアではアドオン (更新プログラム) が特定の日にリリースされることを保証できません。
+ 
 
- 
+ 
 
 
+
+
+
+
+
+<!--HONumber=Aug16_HO3-->
 
 

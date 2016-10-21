@@ -5,22 +5,34 @@ title: "ナビゲーション ウィンドウのガイドライン"
 ms.assetid: 8FB52F5E-8E72-4604-9222-0B0EC6A97541
 label: Nav pane
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: eb5600a78d7e8cfcad98509afc4de2d117066f7e
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 4adf3cc8425bba467a8a379a9680360c4e0e3037
 
 ---
+# ナビゲーション ウィンドウ
 
-ナビゲーション ウィンドウ
-=============================================================================================
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 ナビゲーション ウィンドウは、さまざまなトップ レベルのナビゲーション項目を使うことができるパターンです。これにより、画面領域を節約することができます。 ナビゲーション ウィンドウはモバイル アプリに広く使われていますが、大きい画面でも適切に機能します。 オーバーレイとして使うと、ユーザーがボタンを押すまでウィンドウは折りたたまれたままで邪魔にならないため、小さい画面で便利です。 固定モードで使うと、ウィンドウは開いたままであるため、十分な画面領域がある場合に便利です。
 
 ![ナビゲーション ウィンドウの例](images/navHero.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn864360"><strong>SplitView クラス</strong></a></li>
+</ul>
 
--   [**SplitView クラス**](https://msdn.microsoft.com/library/windows/apps/dn864360)
+</div>
+</div>
 
-## <span id="Is_this_the_right_pattern_"></span><span id="is_this_the_right_pattern_"></span><span id="IS_THIS_THE_RIGHT_PATTERN_"></span>適切なパターンの選択
+
+
+
+
+
+## 適切なパターンの選択
 
 ナビゲーション ウィンドウは、次の場合に適しています。
 
@@ -30,25 +42,24 @@ ms.openlocfilehash: eb5600a78d7e8cfcad98509afc4de2d117066f7e
 -   画面領域を節約する場合 (オーバーレイとして)。
 -   ナビゲーション項目のアクセス頻度が低い場合 (オーバーレイとして)。
 
-## <span id="Building_a_nav_pane"></span><span id="building_a_nav_pane"></span><span id="BUILDING_A_NAV_PANE"></span>ナビゲーション ウィンドウの構築
+## ナビゲーション ウィンドウの構築
 
 ナビゲーション ウィンドウ パターンは、ナビゲーションのカテゴリ用のウィンドウ、コンテンツ領域、ウインドウを開閉するためのオプション ボタンで構成されます。 ナビゲーション ウィンドウを構築する最も簡単な方法は、[分割ビュー コントロール](split-view.md)を使う方法です。このコントロールには、空のウィンドウとコンテンツ領域 (常に表示) が用意されています。
 
 このパターンのコードの実装をテストする場合は、GitHub から [XAML ナビゲーションのソリューション](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlNavigation)をダウンロードします。
 
 
-
-### <span id="Pane"></span><span id="pane"></span><span id="PANE"></span>ウィンドウ
+### ウィンドウ
 
 ナビゲーションのカテゴリのヘッダーがウィンドウに移動します。 アプリ設定とアカウント管理へのエントリ ポイント (該当する場合) もウィンドウに移動します。 通常、ナビゲーションのヘッダーは項目の一覧で、そこからユーザーが選びます。
 
 ![ナビゲーション ウィンドウのウィンドウの例](images/nav_pane_expanded.png)
 
-### <span id="Content_area"></span><span id="content_area"></span><span id="CONTENT_AREA"></span>コンテンツ領域
+### コンテンツ領域
 
 コンテンツ領域は、選んだナビゲーション位置の情報が表示される場所です。 個々の要素やその他のサブレベル ナビゲーションを含めることができます。
 
-### <span id="Button"></span><span id="button"></span><span id="BUTTON"></span>ボタン
+### ボタン
 
 ボタンが表示されている場合、ユーザーはこのボタンでウィンドウを開閉できます。 ボタンが表示される位置は固定で、ウィンドウと共に移動はしません。 ナビゲーション ウィンドウのボタンはアプリの左上隅に配置することをお勧めします。 ナビゲーション ウィンドウのボタンは積み重ねられた 3 本の横線として表示されます。このボタンは、一般的には "ハンバーガー" ボタンと呼ばれます。
 
@@ -56,11 +67,11 @@ ms.openlocfilehash: eb5600a78d7e8cfcad98509afc4de2d117066f7e
 
 通常、ナビゲーション ウィンドウのボタンはテキスト文字列に関連付けられています。 アプリの最上部では、ナビゲーション ウィンドウのボタンの横にアプリのタイトルを表示できます。 アプリの下部では、ユーザーが現在表示しているページのタイトルのテキスト文字列を表示できます。
 
-## <span id="Nav_pane_variations"></span><span id="nav_pane_variations"></span><span id="NAV_PANE_VARIATIONS"></span>ナビゲーション ウィンドウのバリエーション
+## ナビゲーション ウィンドウのバリエーション
 
 ナビゲーション ウィンドウには、オーバーレイ、コンパクト、インラインの 3 つのモードがあります。 オーバーレイは必要に応じて折りたたまれたり展開されたりします。 コンパクトの場合は、ウィンドウは細長い小片として常に表示され、展開することもできます。 インライン ウィンドウは既定で開いたままです。
 
-### <span id="Overlay"></span><span id="overlay"></span><span id="OVERLAY"></span>オーバーレイ
+### オーバーレイ
 
 -   オーバーレイは、画面サイズに関係なく、縦方向でも横方向でも使うことができます。 既定の (折りたたまれた) 状態では、オーバーレイは領域を消費せず、ボタンだけが表示されます。
 -   画面領域を節約するオンデマンドのナビゲーションを提供します。 携帯電話やファブレット上のアプリに最適です。
@@ -69,7 +80,7 @@ ms.openlocfilehash: eb5600a78d7e8cfcad98509afc4de2d117066f7e
 -   展開された状態は一時的なものであるため、選択が行った場合、[戻る] ボタンを使った場合、またはユーザーがウィンドウの外部でタップした場合に消滅します。
 -   オーバーレイは、コンテンツの上に描画されます。コンテンツを再配置するわけではありません。
 
-### <span id="Compact"></span><span id="compact"></span><span id="COMPACT"></span>コンパクト
+### コンパクト
 
 -   コンパクト モードは、開いたときにコンテンツをオーバーレイする `CompactOverlay`、またはコンテンツを押し出す `CompactInline` として指定できます。 CompactOverlay を使うことをお勧めします。
 -   コンパクト ウィンドウは、わずかな画面領域を使用して、選択された場所を示します。
@@ -78,14 +89,14 @@ ms.openlocfilehash: eb5600a78d7e8cfcad98509afc4de2d117066f7e
 -   ナビゲーション ウィンドウのボタンを押すとウィンドウが開閉します。指定した表示モードに応じて、オーバーレイまたはインラインのように動作します。
 -   ナビゲーション ツリーにおけるユーザーの位置を強調表示するため、選択内容を一覧のアイコンに表示する必要があります。
 
-### <span id="Inline"></span><span id="inline"></span><span id="INLINE"></span>インライン
+### インライン
 
 -   ナビゲーション ウィンドウは開いたままです。 このモードは、大きな画面に適しています。
 -   ウィンドウ間でのドラッグ アンド ドロップ シナリオがサポートされます。
 -   ナビゲーション ウィンドウのボタンは、この状態には必要ありません。 ボタンを使った場合、コンテンツ領域が押し出され、その領域内のコンテンツが再配置されます。
 -   ナビゲーション ツリーにおけるユーザーの位置を強調表示するため、選択内容を一覧の項目に表示する必要があります。
 
-## <span id="Adaptability"></span><span id="adaptability"></span><span id="ADAPTABILITY"></span>適応性
+## 適応性
 
 さまざまなデバイスでの操作性を最大限に高めるため、[ブレークポイント](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)を利用し、アプリ ウィンドウの幅に基づいてナビゲーション ウィンドウのモードを調整することをお勧めします。
 -   小さいウィンドウ
@@ -98,13 +109,13 @@ ms.openlocfilehash: eb5600a78d7e8cfcad98509afc4de2d117066f7e
    -   幅が 1007 px よりも大きい場合。
    -   ナビゲーション ウィンドウは固定モードで、既定では開いている必要があります。
 
-## <span id="Tailoring"></span><span id="tailoring"></span><span id="TAILORING"></span>調整
+## 調整
 
 アプリの [10 フィート エクスペリエンス](http://go.microsoft.com/fwlink/?LinkId=760736)を最適化するには、ナビゲーション要素の外観を変更してナビゲーション ウィンドウを調整することを検討してください。 操作のコンテキストによっては、選択されているナビゲーション項目やフォーカスされているナビゲーション項目にユーザーの注意を引きつけることがより重要になる場合があります。 10 フィート エクスペリエンスの場合は、ゲームパッドが最も一般的な入力デバイスであり、画面上で現在フォーカスされている項目の場所をユーザーが容易に追跡できるようにすることが特に重要です。
 
 ![ナビゲーション ウィンドウの項目のカスタマイズの例](images/nav_item_states.png)
 
-## <span id="related_topics"></span>関連トピック
+## 関連トピック
 
 * [分割ビュー コントロール](split-view.md)
 * [マスター/詳細](master-details.md)
@@ -115,6 +126,6 @@ ms.openlocfilehash: eb5600a78d7e8cfcad98509afc4de2d117066f7e
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

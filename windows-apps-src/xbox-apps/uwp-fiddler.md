@@ -2,10 +2,9 @@
 author: WilliamsJason
 title: "UWP を開発するときに、Xbox One で Fiddler を使用する方法"
 description: "フリーウェアの Fiddler ツールを使って、UWP Xbox One 開発機でのネットワーク トラフィックを確認する方法について説明します。"
-area: Xbox
 translationtype: Human Translation
-ms.sourcegitcommit: 0f0840992afe5eeae8ec5ac6897e728ec183a2f4
-ms.openlocfilehash: 6d02d7c4fe9c1804e3b63a1d1156fbb3981d0536
+ms.sourcegitcommit: 11c6cffab7934937b6d89c30e4d03ae752f6b3b7
+ms.openlocfilehash: 241fa495c7277fe2bf4feafeb4062842f97e59b1
 
 ---
 
@@ -45,6 +44,7 @@ Fiddler は、コンソールで報告されるネットワーク ステータ�
   | 承認されているユーザー      | 任意                            |
   | 承認されているコンピューター  | 任意                            |
 
+
 6. 次の手順に従って、HTTPS トラフィックのキャプチャして暗号化を解除するように Fiddler を構成します。
   1. 最適なパフォーマンスを実現するために、ボタン バーの **[Stream]** ボタンをクリックして、ストリーミング モードを使用するように Fiddler を設定します。
   2. Fiddler の **[Tools]** メニューで、**[Fiddler Options]** を選んで **[HTTPS]** をクリックします。
@@ -58,7 +58,7 @@ Fiddler は、コンソールで報告されるネットワーク ステータ�
 2. デスクトップにエクスポートした Fiddler のルート証明書を参照します。 
 3. Fiddler を実行している開発用 PC の IP アドレスまたはホスト名を入力します。
 4. Fiddler がリッスンしているポート番号 (既定では、Fiddler はポート 8888 を使用) を入力します。 
-5. **[有効]** をクリックします。 これにより、開発機が再起動します。
+5. **[Enable]** をクリックします。 これにより、開発キットが再起動します。
 
 ### Fiddler の使用を停止するには
 インターネットへのプロキシとしての Fiddler の使用を停止 (し、Fiddler による開発機のすべてのネットワーク トラフィックのトレースを停止) するには、次の操作を行います。
@@ -66,11 +66,10 @@ Fiddler は、コンソールで報告されるネットワーク ステータ�
 1. Xbox Device Portal の UI で**ネットワーク** ツールに移動します。
 2. **[無効]** をクリックします。
 
-###注
+> [!NOTE]
+> Fiddler がインストールされている各 PC では、異なる Fiddler ルート証明書を使用します。 開発機に Fiddler プロキシを提供するために、複数の PC を使用する可能性がある場合は、PC を切り替えたときに新しいルート証明書を選択する必要があります。 1 台の PC のみを使用している場合は、最初に Fiddler を有効にするときにのみルート証明書を選択する必要があります。 この場合も、IP アドレスとポートを指定する必要があります。
 
-Fiddler がインストールされている各 PC では、異なる Fiddler ルート証明書を使用します。 開発機に Fiddler プロキシを提供するために、複数の PC を使用する可能性がある場合は、PC を切り替えたときに新しいルート証明書を選択する必要があります。 1 台の PC のみを使用している場合は、最初に Fiddler を有効にするときにのみルート証明書を選択する必要があります。 この場合も、IP アドレスとポートを指定する必要があります。
-
-## 参照
+## 関連項目
 - [Fiddler 設定 API のリファレンス](wdp-fiddler-api.md)
 - [よく寄せられる質問](frequently-asked-questions.md)
 - [Xbox One の UWP](index.md)
@@ -80,6 +79,6 @@ Fiddler がインストールされている各 PC では、異なる Fiddler �
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

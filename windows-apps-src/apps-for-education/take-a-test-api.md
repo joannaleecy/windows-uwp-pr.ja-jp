@@ -1,268 +1,271 @@
 ---
 author: TylerMSFT
-Description: The JavaScript API for the Microsoft Take a Test app allows you to do secure assessments. Take a Test provides a secure browser that prevents students from using other computer or internet resources during a test.
-title: Microsoft Take a Test JavaScript API.
+Description: "Microsoft テスト アプリ用の JavaScript API を使用すると、セキュリティ保護された評価を行うことができます。 テスト アプリでは、学生がテスト中に他のコンピューターやインターネット リソースを使用することを防ぐセキュリティ保護されたブラウザーが提供されます。"
+title: "Microsoft テスト JavaScript API。"
+translationtype: Human Translation
+ms.sourcegitcommit: f2838d95da66eda32d9cea725a33fc4084d32359
+ms.openlocfilehash: d7f185e83e81583fd6d7920e5412f76f3a97edd0
+
 ---
 
-# Microsoft Take a Test JavaScript API
+# Microsoft テスト JavaScript API
 
-**Take a Test** is a browser-based app that renders locked down online assessments for high-stakes testing. It supports the SBAC browser API standard for high stakes common core testing and allows you to focus on the assessment content rather than how to lock down Windows.
+**テスト**は、重大な影響をもたらすテストに対応した、厳正なオンライン評価を提供するブラウザー ベースのアプリです。 テスト アプリは、重要な全米共通学力テストに対する SBAC ブラウザー API 標準をサポートするので、Windows をロックダウンする方法ではなくコンテンツの評価に集中することができます。
 
-**Take a Test**, powered by Microsoft's Edge browser, provides a JavaScript API that Web applications can use to provide a locked down experience for taking tests.
+Microsoft Edge ブラウザーを利用する**テスト**の JavaScript API を Web アプリケーションで使用すると、テストを実施するためのロックダウンされた環境を提供できます。
 
-The API (based on the [Common Core SBAC API](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)) provides text to speech and the capability to query if the device is locked down, what the running user and system running processes are, and more.
+[Common Core SBAC API](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf) に基づく API では、音声認識用のテキストと、デバイスがロックダウンされているかどうか、実行中のユーザー プロセスとシステムが実行しているプロセス、その他を確認するための機能が提供されます。
 
-See the [Take a Test app technical reference](https://technet.microsoft.com/en-us/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396) for information about the app itself.
+アプリ自体については、「[テスト アプリ技術リファレンス](https://technet.microsoft.com/en-us/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)」をご覧ください。
 
-**Important**
+**重要**
 
-The APIs do not work in a remote session.  
-Take a Test does not handle HTTP new window requests.
+この API はリモート セッションでは動作しません。  
+テスト アプリは、HTTP の新規ウィンドウ要求を処理しません。
 
-For troubleshooting help, see [Troubleshoot Microsoft Take a Test with the event viewer](troubleshooting.md).
+トラブルシューティングについては、「[イベント ビューアーを使用して、Microsoft テストをトラブルシューティングします](troubleshooting.md)」をご覧ください。
 
-**The Take a Test API consists of the following namespaces:**  
+**テスト API は、次の名前空間で構成されます。**  
 
-| Namespace | Description |
+| 名前空間 | 説明 |
 |-----------|-------------|
-|[security namespace](#security-namespace)| Text to speech functionality|
-|[tts namespace](#tts-namespace)|Enables you to lock down the device|
+|[security 名前空間](#security-namespace)| 音声認識機能用のテキスト|
+|[tts 名前空間](#tts-namespace)|デバイスをロックダウンできるようにします|
 
 
- ## security namespace
+ ## security 名前空間
 
-Enables you to lock down the device, check the list of user and system processes, obtain MAC and IP addresses, and clear cached web resources.
+デバイスのロックダウン、ユーザー プロセスとシステム プロセスの一覧の確認、MAC および IP アドレスの取得、キャッシュされている Web リソースのクリアを行うことができます。
 
-| Method | Description   |
+| メソッド | 説明   |
 |--------|---------------|
-|[clearCache](#clearCache) | Clears cached web resources |
-|[close](#close) | Closes the browser and unlocks the device |
-|[enableLockDown](#enableLockDown) | Locks down the device. Also used to unlock the device |
-|[getIPAddressList](#getIPAddressList) | Gets the list of IP addresses for the device |
-|[getMACAddress](#getMACAddress)|Gets the list of MAC addresses for the device|
-|[getProcessList](#getProcessList)|Gets the list of running user and system processes|
-|[isEnvironmentSecure](#isEnvironmentSecure)|Determines whether the lockdown context is still applied to the device|
+|[clearCache](#clearCache) | キャッシュされている Web リソースをクリアします |
+|[close](#close) | ブラウザーを閉じて、デバイスのロックを解除します |
+|[enableLockDown](#enableLockDown) | デバイスをロックダウンします。 デバイスのロック解除にも使用します |
+|[getIPAddressList](#getIPAddressList) | デバイスの IP アドレスの一覧を取得します |
+|[getMACAddress](#getMACAddress)|デバイスの MAC アドレスの一覧を取得します|
+|[getProcessList](#getProcessList)|実行中のユーザーとシステム プロセスの一覧を取得します|
+|[isEnvironmentSecure](#isEnvironmentSecure)|ロックダウン コンテキストがデバイスにまだ適用されるかどうかを確認します|
 
 <span id="clearCache" />
 ### void clearCache()
-Clear cached web resources.
+キャッシュされている Web リソースをクリアします。
 
-**Syntax**  
+**構文**  
 `browser.security.clearCache();`
 
-**Parameters**  
+**パラメーター**  
 `None`
 
-**Return value**  
+**戻り値**  
 `None`
 
-**Requirements**  
-Windows 10, version 1607
+**要件**  
+Windows 10 Version 1607
 
 ---
 
 <span id="close"/>
 ### close(boolean restart)
-Closes the browser and unlocks the device.
+ブラウザーを閉じて、デバイスのロックを解除します。
 
-**Syntax**  
+**構文**  
 `browser.security.close(false);`
 
-**Parameters**  
-`restart` - this parameter is ignored but must be provided.
+**パラメーター**  
+`restart` - このパラメーターは無視されますが、指定する必要があります。
 
-**Return value**  
+**戻り値**  
 `None`
 
-**Requirements**  
-Windows 10, version 1607
+**要件**  
+Windows 10 Version 1607
 
 ---
 
 <span id="enableLockDown"/>
 ### enableLockdown(boolean lockdown)
-Locks down the device. Also used to unlock the device.
+デバイスをロックダウンします。 デバイスのロック解除にも使用します。
 
-**Syntax**  
+**構文**  
 `browser.security.enableLockDown(true|false);`
 
-**Parameters**  
-`lockdown` - `true` to run the Take-a-Test app above the lock screen and apply policies discussed in this [document](https://technet.microsoft.com/en-us/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396). `False` stops running Take-a-Test above the lock screen and closes it unless the app is not locked down; in which case there is no effect.
+**パラメーター**  
+`lockdown` - `true` は、ロック画面上でテスト アプリを実行し、この[ドキュメント](https://technet.microsoft.com/en-us/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)で説明されているポリシーを適用します。 `False` は、アプリがロックダウンされていない場合は、ロック画面上で実行しているテスト アプリを停止して閉じます。アプリがロックダウンされている場合は、何も行われません。
 
-**Return value**  
+**戻り値**  
 `None`
 
-**Requirements**  
-Windows 10, version 1607
+**要件**  
+Windows 10 Version 1607
 
 ---
 
 <span id="getIPAddressList"/>
 ### string[] getIPAddressList()
-Gets the list of IP addresses for the device.
+デバイスの IP アドレスの一覧を取得します。
 
-**Syntax**  
+**構文**  
 `browser.security.getIPAddressList();`
 
-**Parameters**  
+**パラメーター**  
 `None`
 
-**Return value**  
+**戻り値**  
 `An array of IP addresses.`
 
 <span id="getMACAddress" />
 ### string[] getMACAddress()
-Gets the list of MAC addresses for the device.
+デバイスの MAC アドレスの一覧を取得します。
 
-**Syntax**  
+**構文**  
 `browser.security.getMACAddress();`
 
-**Parameters**  
+**パラメーター**  
 `None`
 
-**Return value**  
+**戻り値**  
 `An array of MAC addresses.`
 
-**Requirements**  
-Windows 10, version 1607
+**要件**  
+Windows 10 Version 1607
 
 ---
 
 <span id="getProcessList" />
 ### string[] getProcessList()
-Gets the list the user’s running processes.
+ユーザーの実行中プロセスの一覧を取得します。
 
-**Syntax**  
+**構文**  
 `browser.security.getProcessList();`
 
-**Parameters**  
+**パラメーター**  
 `None`
 
-**Return value**  
+**戻り値**  
 `An array of running process names.`
 
-**Remarks**
-The list does not include system processes.
+**解説** 一覧にはシステム プロセスは含まれません。
 
-**Requirements**  
-Windows 10, version 1607
+**要件**  
+Windows 10 Version 1607
 
 ---
 
 <span id="isEnvironmentSecure" />
 ### boolean isEnvironmentSecure()
-Determines whether the lockdown context is still applied to the device.
+ロックダウン コンテキストがデバイスにまだ適用されるかどうかを確認します。
 
-**Syntax**  
+**構文**  
 `browser.security.isEnvironmentSecure();`
 
-**Parameters**  
+**パラメーター**  
 `None`
 
-**Return value**  
+**戻り値**  
 `True indicates that the lockdown context is applied to the device; otherwise false.`
 
-**Requirements**  
-Windows 10, version 1607
+**要件**  
+Windows 10 Version 1607
 
 ---
 
-## tts namespace
-| Method | Description |
+## tts 名前空間
+| メソッド | 説明 |
 |--------|-------------|
-|[getStatus](#getStatus) | Gets the speech playback status|
-|[getVoices](#getVoices) | Gets a list of available voice packs|
-|[pause](#pause)|Pauses speech synthesis|
-|[resume](#resume)|Resume paused speech synthesis|
-|[speak](#speak)|Client-side text to speech synthesis|
-|[stop](#stop)|Stops speech synthesis|
+|[getStatus](#getStatus) | 音声の再生状態を取得します|
+|[getVoices](#getVoices) | 利用可能な音声パックの一覧を取得します|
+|[pause](#pause)|音声の合成を一時停止します|
+|[resume](#resume)|一時停止されている音声の合成を再開します|
+|[speak](#speak)|音声を合成するクライアント側のテキストです|
+|[stop](#stop)|音声の合成を停止します|
 
 > [!Tip]
-> The [Microsoft Edge Speech Synthesis API](https://blogs.windows.com/msedgedev/2016/06/01/introducing-speech-synthesis-api/) is an implementation of the [W3C Speech Api](https://dvcs.w3.org/hg/speech-api/raw-file/tip/webspeechapi.html) and we recommend that developers use that API when possible.
+> [Microsoft Edge 音声合成 API](https://blogs.windows.com/msedgedev/2016/06/01/introducing-speech-synthesis-api/) は [W3C Speech API](https://dvcs.w3.org/hg/speech-api/raw-file/tip/webspeechapi.html) の実装であり、可能な場合は開発者はその API を使用することをお勧めします。
 
 <span id="getStatus" />
 ### string getStatus()
-Gets the speech playback status.
+音声の再生状態を取得します。
 
-**Syntax**  
+**構文**  
 `browser.tts.getStatus();`
 
-**Parameters**  
+**パラメーター**  
 `None`
 
-**Return value**  
+**戻り値**  
 `The speech playback status. Possible values are: “available”, “idle”, “paused”, and “speaking”.`
 
-**Requirements**  
-Windows 10, version 1607
+**要件**  
+Windows 10 Version 1607
 
 ---
 
 <span id="getVoices" />
 ### string[] getVoices()
-Gets a list of available voice packs.
+利用可能な音声パックの一覧を取得します。
 
-**Syntax**  
+**構文**  
 `browser.tts.getVoices();`
 
-**Parameters**  
+**パラメーター**  
 `None`
 
-**Return value**  
+**戻り値**  
 `The available voice packs. For example: “Microsoft Zira Mobile”, “Microsoft Mark Mobile”`
 
-**Requirements**  
-Windows 10, version 1607
+**要件**  
+Windows 10 Version 1607
 
 ---
 
 <span id="pause" />
 ### void pause()
 
-Pauses speech synthesis.
+音声の合成を一時停止します。
 
-**Syntax**  
+**構文**  
 `browser.tts.pause();`
 
-**Parameters**
+**パラメーター**
 
 `None`
 
-**Return value**
+**戻り値**
 
 `None`
 
-**Requirements**  
-Windows 10, version 1607
+**要件**  
+Windows 10 Version 1607
 
 ---
 
 <span id="resume" />
 ### void resume()
-Resume paused speech synthesis.
+一時停止されている音声の合成を再開します。
 
-**Syntax**  
+**構文**  
 `browser.tts.resume();`
 
-**Parameters**
+**パラメーター**
 `None`
 
-**Return value**
+**戻り値**
 `None`
 
-**Requirements**  
-Windows 10, version 1607
+**要件**  
+Windows 10 Version 1607
 
 ---
 
 <span id="speak" />
 ### void speak(string text, object options, function callback)
-Client-side text to speech synthesis.
+音声を合成するクライアント側のテキストです。
 
-**Syntax**  
+**構文**  
 `void browser.tts.speak(“Hello world”, options, callback);`
 
-**Parameters**  
+**パラメーター**  
 `Speech options such as gender, pitch, rate, volume. For example:`  
 ```
 var options = {
@@ -275,31 +278,36 @@ var options = {
 };
 ```
 
-**Return value**  
+**戻り値**  
 `None`
 
-**Remarks**
-Option variables must be lowercase. The gender, language, and voice parameters take strings.
-Volume, pitch, and rate must be marked up within the speech synthesis markup language file (SSML), not within the options object.
+**解説** オプションの変数は小文字にする必要があります。 gender、language、voice パラメーターは文字列を受け取ります。
+volume、pitch、rate は、options オブジェクト内ではなく、Speech Synthesis Markup Language (SSML) ファイル内でマークアップする必要があります。
 
-The options object must follow the order, naming, and casing shown in the example above.
+options オブジェクトは、上に示した順序、命名、大文字と小文字の使い分けに従う必要があります。
 
-**Requirements**  
-Windows 10, version 1607
+**要件**  
+Windows 10 Version 1607
 
 ---
 <span id="stop" />
 ### void stop()
-Stops speech synthesis.
+音声の合成を停止します。
 
-**Syntax**  
+**構文**  
 `void browser.tts.speak(“Hello world”, options, callback);`
 
-**Parameters**  
+**パラメーター**  
 `None`
 
-**Return value**  
+**戻り値**  
 `None`
 
-**Requirements**  
-Windows 10, version 1607
+**要件**  
+Windows 10 Version 1607
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

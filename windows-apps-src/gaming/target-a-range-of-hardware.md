@@ -3,8 +3,9 @@ author: mtoepke
 title: "ハードウェアの範囲でのシャドウ マップのサポート"
 description: "より高速なデバイスでは高品質なシャドウを、性能が低いデバイスではよりすばやいシャドウをレンダリングします。"
 ms.assetid: d97c0544-44f2-4e29-5e02-54c45e0dff4e
+translationtype: Human Translation
 ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
-ms.openlocfilehash: 0cdc31f07560e7f1747806d1436bccbc1e50f8b9
+ms.openlocfilehash: a2e2ed02025352bd5583abeed8856a216eab4ead
 
 ---
 
@@ -178,6 +179,6 @@ return float4(input.color * (light + shadow), 1.f);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

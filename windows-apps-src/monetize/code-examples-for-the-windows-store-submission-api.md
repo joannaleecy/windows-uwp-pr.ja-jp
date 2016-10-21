@@ -1,24 +1,34 @@
 ---
 author: mcleanbyron
 ms.assetid: 14C23FE6-3EAF-445E-85C1-DF188A7822CA
-description: Use the code examples in this section to learn more about using the Windows Store submission API.
-title: Code examples for the Windows Store submission API
+description: "このセクションのコード例を使用して、Windows ストア申請 API を使用する方法をご確認ください。"
+title: "Windows ストア申請 API のコード例"
+translationtype: Human Translation
+ms.sourcegitcommit: 841a6aeaf0a7ecfd49cda0f519ba2c297f91af92
+ms.openlocfilehash: df29d34b7e1b4b4e2ee715ecc013758df65fc9c3
+
 ---
 
-# Code examples for the Windows Store submission API
+# Windows ストア申請 API のコード例
 
-This section provides code examples for using the *Windows Store submission API* in several different programming languages. 
+このセクションでは、さまざまなプログラミング言語で "*Windows ストア申請 API*" プログラミング言語を使用するためのコード例を紹介します。 
 
-Use the Windows Store submission API to programmatically query and create submissions for apps, add-ons and package flights for your or your organization's Windows Dev Center account. This API is useful if your account manages many apps or add-ons, and you want to automate and optimize the submission process for these assets. For more information about this API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
+Windows ストア申請 API を使用し、自分または自分の組織の Windows デベロッパー センター アカウントに対して、アプリ、アドオン、パッケージ フライトの申請をプログラムによって照会して、作成します。 この API は、アカウントで多数のアプリやアドオンを管理しており、こうしたアセットの申請プロセスを自動化および最適化する場合に便利です。 この API について詳しくは、「[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。
 
-## In this section
+## このセクションの内容
 
-| Topic                                                                                                       | Description                 |
+| トピック                                                                                                       | 説明                 |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------|
-| [C# code examples](csharp-code-examples-for-the-windows-store-submission-api.md) | Use the C# code examples in this section to learn more about using the Windows Store submission API. |
-| [Java code examples](java-code-examples-for-the-windows-store-submission-api.md) | Use the Java code examples in this section to learn more about using the Windows Store submission API. |
-| [Python code examples](python-code-examples-for-the-windows-store-submission-api.md)  | Use the Python code examples in this section to learn more about using the Windows Store submission API.  |
+| [C# のコード例](csharp-code-examples-for-the-windows-store-submission-api.md) | このセクションの C# コード例を使用して、Windows ストア申請 API を使用する方法をご確認ください。 |
+| [Java のコード例](java-code-examples-for-the-windows-store-submission-api.md) | このセクションの Java コード例を使用して、Windows ストア申請 API を使用する方法をご確認ください。 |
+| [Python のコード例](python-code-examples-for-the-windows-store-submission-api.md)  | このセクションの Python コード例を使用して、Windows ストア申請 API を使用する方法をご確認ください。  |
 
-## Related topics
+## 関連トピック
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

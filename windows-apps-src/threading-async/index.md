@@ -3,8 +3,9 @@ author: TylerMSFT
 ms.assetid: beac6333-655a-4bcf-9caf-bba15f715ea5
 title: "スレッド化と非同期プログラミング"
 description: "スレッド化と非同期プログラミングによって、アプリは並列スレッドで作業を非同期的に実行できます。"
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d69259d449ffb7d4dfc1824c77c16eb9e1cdb026
+ms.openlocfilehash: 8962e24e393f0b7961f618f90cd38ead9e54dda4
 
 ---
 # スレッド化と非同期プログラミング
@@ -41,6 +42,6 @@ ms.openlocfilehash: d69259d449ffb7d4dfc1824c77c16eb9e1cdb026
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

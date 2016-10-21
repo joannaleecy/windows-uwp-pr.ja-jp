@@ -3,8 +3,9 @@ author: msatranjr
 ms.assetid: 28B30708-FE08-4BE9-AE11-5429F963C330
 title: Bluetooth GATT
 description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリ用の Bluetooth Generic Attribute Profile (GATT) の概要と、3 つの一般的な GATT シナリオのサンプル コードについて説明します。"
+translationtype: Human Translation
 ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
-ms.openlocfilehash: 664f6ce7829c9e9a6674daa6cdc21e7561ff094b
+ms.openlocfilehash: 508acd449c156fa0f5b14298e4a7700748fc65bb
 
 ---
 # Bluetooth GATT
@@ -400,6 +401,6 @@ void MainPage::BatteryLevelChanged(
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

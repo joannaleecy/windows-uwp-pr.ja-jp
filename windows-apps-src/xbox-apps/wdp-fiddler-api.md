@@ -2,10 +2,9 @@
 author: WilliamsJason
 title: "Device Portal の Fiddler API のリファレンス"
 description: "プログラムによって Fiddler のトレースを有効または無効にする方法について説明します。"
-area: Xbox
 translationtype: Human Translation
-ms.sourcegitcommit: eeb3bc5c4843fe86c54930315d4e112166664e45
-ms.openlocfilehash: 435a00eaf9c1f0d8e0c0043229c2adc80638ace3
+ms.sourcegitcommit: 3cc2a4bd1859e46a73f3e806489eac7381fa6c17
+ms.openlocfilehash: bd215058c71118d8b3e5ce81e2302ce8b151c3f6
 
 ---
 
@@ -102,6 +101,6 @@ HTTP 状態コード      | 説明
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

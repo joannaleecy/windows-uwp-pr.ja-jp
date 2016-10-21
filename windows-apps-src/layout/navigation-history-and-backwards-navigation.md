@@ -6,8 +6,9 @@ ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
 isNew: true
 label: History and backwards navigation
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
+translationtype: Human Translation
+ms.sourcegitcommit: 75e8c342775f7d6c564cb1014519f8e4707a0632
+ms.openlocfilehash: f18fc0806313cc1656860b0fd8b5ae692fa3d4c6
 
 ---
 
@@ -29,7 +30,7 @@ Web の場合、個々の Web サイトには独自のナビゲーション シ�
      </tr>
     <tr>
         <td>電話</td>
-        <td>![system back on a phone](images/back-systemback-phone.png)</td>
+        <td>![電話でのシステムの戻るボタン](images/back-systemback-phone.png)</td>
         <td>
         <ul>
 <li>常に表示されます。</li>
@@ -40,7 +41,7 @@ Web の場合、個々の Web サイトには独自のナビゲーション シ�
      </tr>
      <tr>
         <td>タブレット</td>
-        <td>![system back on a tablet (in tablet mode)](images/back-systemback-tablet.png)</td>
+        <td>![タブレットでのシステムの戻るボタン (タブレット モード)](images/back-systemback-tablet.png)</td>
         <td>
 <ul>
 <li>タブレット モードでは、常に表示されます。
@@ -55,7 +56,7 @@ Web の場合、個々の Web サイトには独自のナビゲーション シ�
      </tr>
     <tr>
         <td>PC、ノート PC、タブレット</td>
-        <td>![system back on a pc or laptop](images/back-systemback-pc.png)</td>
+        <td>![PC やノート PC でのシステムの戻るボタン](images/back-systemback-pc.png)</td>
         <td>
 <ul>
 <li>デスクトップ モードではオプションです。
@@ -72,7 +73,7 @@ Web の場合、個々の Web サイトには独自のナビゲーション シ�
      </tr>
     <tr>
         <td>Surface Hub</td>
-        <td>![system back on a surface hub](images/nav/nav-back-surfacehub.png)</td>
+        <td>![Surface Hub でのシステムの戻るボタン](images/nav/nav-back-surfacehub.png)</td>
         <td>
 <ul>
 <li>省略可能。</li>
@@ -89,74 +90,75 @@ Web の場合、個々の Web サイトには独自のナビゲーション シ�
 
 <table>
 <tr><td colspan="3">入力デバイス</td></tr>
-<tr><td>キーボード</td><td>![keyboard](images/keyboard-wireframe.png)</td><td>Windows キー + BackSpace</td></tr>
-<tr><td>Cortana</td><td>![speech](images/speech-wireframe.png)</td><td>「ねえ、コルタナ、戻る」と話す。</td></tr>
+<tr><td>キーボード</td><td>![キーボード](images/keyboard-wireframe.png)</td><td>Windows キー + BackSpace</td></tr>
+<tr><td>Cortana</td><td>![音声認識](images/speech-wireframe.png)</td><td>「コルタナさん、戻る」と話す。</td></tr>
 </table>
  
 
 アプリが電話、タブレット、PC、ノート PC で実行され、システムの戻るボタンが有効になっていると、戻るボタンが押されたときに、システムからアプリに通知されます。 ユーザーは、戻るボタンによって、アプリのナビゲーション履歴における前の場所に戻ることを想定しています。 ナビゲーション履歴に追加するナビゲーション操作の種類、および戻るボタンが押されたときの応答方法は、自由に決めることができます。
 
 
-## <span id="Enable_system_back_navigation_support"></span><span id="enable_system_back_navigation_support"></span><span id="ENABLE_SYSTEM_BACK_NAVIGATION_SUPPORT"></span>システムの "戻る" ナビゲーションのサポートを有効にする方法
+## システムの "戻る" ナビゲーションのサポートを有効にする方法
 
 
 アプリは、すべてのハードウェアとソフトウェアによるシステムの戻るボタンの "戻る" ナビゲーションを有効にする必要があります。 これを行うには、[**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) イベントのリスナーを登録し、対応するハンドラーを定義します。
 
 ここでは、App.xaml 分離コード ファイルで、[**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) イベントのグローバル リスナーを登録しています。 "戻る" ナビゲーションから特定のページを除外する場合や、ページを表示する前にページ レベルのコードを実行する場合は、各ページでこのイベントについて登録できます。
 
-```CSharp
+> [!div class="tabbedCodeSnippets"]
+```csharp
+Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += 
+    App_BackRequested;
+```
+```cpp
 Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
     BackRequested += ref new Windows::Foundation::EventHandler<
     Windows::UI::Core::BackRequestedEventArgs^>(
         this, &amp;App::App_BackRequested);
 ```
 
-```CSharp
-Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += 
-    App_BackRequested;
-```
-
 対応する [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) イベント ハンドラーを以下に示します。このイベント ハンドラーは、アプリのルート フレームで [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) を呼び出します。
 
 このハンドラーは、グローバルな戻るイベントで呼び出されます。 アプリ内のバック スタックが空である場合、システムはアプリ スタック内の前のアプリまたはスタート画面にナビゲートする可能性があります。 デスクトップ モードにはアプリのバック スタックはなく、アプリ内のバック スタックが使い果たされている場合でも、ユーザーはアプリ内に留まります。
 
-```CSharp
-void App::App_BackRequested(
-    Platform::Object^ sender, 
-    Windows::UI::Core::BackRequestedEventArgs^ e)
-{
-    Frame^ rootFrame = dynamic_cast<Frame^>(Window::Current->Content);
-    if (rootFrame == nullptr)
-        return;
-
-    // Navigate back if possible, and if the event has not
-    // already been handled.
-    if (rootFrame->CanGoBack &amp;&amp; e->Handled == false)
-    {
-        e->Handled = true;
-        rootFrame->GoBack();
-    }
-}
+> [!div class="tabbedCodeSnippets"]
+```csharp
+>private void App_BackRequested(object sender, 
+>    Windows.UI.Core.BackRequestedEventArgs e)
+>{
+>    Frame rootFrame = Window.Current.Content as Frame;
+>    if (rootFrame == null)
+>        return;
+>
+>    // Navigate back if possible, and if the event has not 
+>    // already been handled .
+>    if (rootFrame.CanGoBack &amp;&amp; e.Handled == false)
+>    {
+>        e.Handled = true;
+>        rootFrame.GoBack();
+>    }
+>}
+```
+```cpp
+>void App::App_BackRequested(
+>    Platform::Object^ sender, 
+>    Windows::UI::Core::BackRequestedEventArgs^ e)
+>{
+>    Frame^ rootFrame = dynamic_cast<Frame^>(Window::Current->Content);
+>    if (rootFrame == nullptr)
+>        return;
+>
+>    // Navigate back if possible, and if the event has not
+>    // already been handled.
+>    if (rootFrame->CanGoBack && e->Handled == false)
+>    {
+>        e->Handled = true;
+>        rootFrame->GoBack();
+>    }
+>}
 ```
 
-```CSharp
-private void App_BackRequested(object sender, 
-    Windows.UI.Core.BackRequestedEventArgs e)
-{
-    Frame rootFrame = Window.Current.Content as Frame;
-    if (rootFrame == null)
-        return;
-
-    // Navigate back if possible, and if the event has not 
-    // already been handled .
-    if (rootFrame.CanGoBack &amp;&amp; e.Handled == false)
-    {
-        e.Handled = true;
-        rootFrame.GoBack();
-    }
-}
-```
-## <span id="Enable_the_title_bar_back_button"></span><span id="enable_the_title_bar_back_button"></span><span id="ENABLE_THE_TITLE_BAR_BACK_BUTTON"></span>タイトル バーの戻るボタンを有効にする方法
+## タイトル バーの戻るボタンを有効にする方法
 
 
 デスクトップ モードをサポートするデバイス (通常は PC とノート PC、一部のタブレットも含む) で、設定を有効にしている (**[設定]、[システム]、[タブレット モード]** の順に選択) 場合、システムの戻るボタンを備えたグローバルなナビゲーションバーは提供されません。
@@ -165,8 +167,7 @@ private void App_BackRequested(object sender,
 
 タイトル バーの戻るボタンは、デスクトップ モードのデバイスで実行されているアプリでのみ利用でき、アプリ内のナビゲーション履歴のみをサポートします。アプリ間のナビゲーション履歴はサポートされません。
 
-
-            **重要**  タイトル バーの戻るボタンは、既定では表示されません。 オプトインする必要があります。
+**重要**  タイトル バーの戻るボタンは、既定では表示されません。 オプトインする必要があります。
 
  
 
@@ -181,63 +182,64 @@ private void App_BackRequested(object sender,
 
 この例では、フレームの [**CanGoBack**](https://msdn.microsoft.com/library/windows/apps/br242685) プロパティの値が **true** である場合に、バック スタック内の各ページの一覧を表示し、戻るボタンを有効にします。
 
-```ManagedCPlusPlus
-void StartPage::OnNavigatedTo(NavigationEventArgs^ e)
-{
-    auto rootFrame = dynamic_cast<Windows::UI::Xaml::Controls::Frame^>(Window::Current->Content);
+> [!div class="tabbedCodeSnippets"]
+>```csharp
+>protected override void OnNavigatedTo(NavigationEventArgs e)
+>{
+>    Frame rootFrame = Window.Current.Content as Frame;
+>
+>    string myPages = "";
+>    foreach (PageStackEntry page in rootFrame.BackStack)
+>    {
+>        myPages += page.SourcePageType.ToString() + "\n";
+>    }
+>    stackCount.Text = myPages;
+>
+>    if (rootFrame.CanGoBack)
+>    {
+>        // Show UI in title bar if opted-in and in-app backstack is not empty.
+>        SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
+>            AppViewBackButtonVisibility.Visible;
+>    }
+>    else
+>    {
+>        // Remove the UI from the title bar if in-app back stack is empty.
+>        SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
+>            AppViewBackButtonVisibility.Collapsed;
+>    }
+>}
+>```
+>```cpp
+>void StartPage::OnNavigatedTo(NavigationEventArgs^ e)
+>{
+>    auto rootFrame = dynamic_cast<Windows::UI::Xaml::Controls::Frame^>(Window::Current->Content);
+>
+>    Platform::String^ myPages = "";
+>
+>    if (rootFrame == nullptr)
+>        return;
+>
+>    for each (PageStackEntry^ page in rootFrame->BackStack)
+>    {
+>        myPages += page->SourcePageType.ToString() + "\n";
+>    }
+>    stackCount->Text = myPages;
+>
+>    if (rootFrame->CanGoBack)
+>    {
+>        // If we have pages in our in-app backstack and have opted in to showing back, do so
+>        Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->AppViewBackButtonVisibility =
+>            Windows::UI::Core::AppViewBackButtonVisibility::Visible;
+>    }
+>    else
+>    {
+>        // Remove the UI from the title bar if there are no pages in our in-app back stack
+>        Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->AppViewBackButtonVisibility =
+>            Windows::UI::Core::AppViewBackButtonVisibility::Collapsed;
+>    }
+>}
+>```
 
-    Platform::String^ myPages = "";
-
-    if (rootFrame == nullptr)
-        return;
-
-    for each (PageStackEntry^ page in rootFrame->BackStack)
-    {
-        myPages += page->SourcePageType.ToString() + "\n";
-    }
-    stackCount->Text = myPages;
-
-    if (rootFrame->CanGoBack)
-    {
-        // If we have pages in our in-app backstack and have opted in to showing back, do so
-        Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->AppViewBackButtonVisibility =
-            Windows::UI::Core::AppViewBackButtonVisibility::Visible;
-    }
-    else
-    {
-        // Remove the UI from the title bar if there are no pages in our in-app back stack
-        Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->AppViewBackButtonVisibility =
-            Windows::UI::Core::AppViewBackButtonVisibility::Collapsed;
-    }
-}
-```
-
-```CSharp
-protected override void OnNavigatedTo(NavigationEventArgs e)
-{
-    Frame rootFrame = Window.Current.Content as Frame;
-
-    string myPages = "";
-    foreach (PageStackEntry page in rootFrame.BackStack)
-    {
-        myPages += page.SourcePageType.ToString() + "\n";
-    }
-    stackCount.Text = myPages;
-
-    if (rootFrame.CanGoBack)
-    {
-        // Show UI in title bar if opted-in and in-app backstack is not empty.
-        SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
-            AppViewBackButtonVisibility.Visible;
-    }
-    else
-    {
-        // Remove the UI from the title bar if in-app back stack is empty.
-        SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
-            AppViewBackButtonVisibility.Collapsed;
-    }
-}
-```
 
 ### カスタムの "戻る" ナビゲーションの動作のガイドライン
 
@@ -295,14 +297,17 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 </table>
 
 
-### <span id="Resuming"></span><span id="resuming"></span><span id="RESUMING"></span>再開
+### 再開
 
 ユーザーが別のアプリに切り替えた後で、元のアプリに戻った場合は、ナビゲーション履歴にある最後のページに戻すことをお勧めします。
 
 
+## サンプルの入手
+*   [戻るボタンのサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackButton)<br/>
+    戻るボタンのイベントのイベント ハンドラーを設定する方法、およびアプリがウィンドウ表示されたデスクトップ モードのときにタイトル バーの戻るボタンを有効にする方法を示します。
 
-
-
+## 関連記事
+* [ナビゲーションの基本](navigation-basics.md)
 
  
 
@@ -312,6 +317,6 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

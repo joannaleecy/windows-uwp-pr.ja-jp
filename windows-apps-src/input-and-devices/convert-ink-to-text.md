@@ -1,20 +1,20 @@
 ---
 author: Karl-Bridge-Microsoft
 Description: "インク ストロークを手書き認識によりテキストに変換したり、カスタム認識により図形に変換したりします。"
-title: "Windows インク ストロークのテキスト認識"
+title: "Windows Ink でのストロークのテキスト認識"
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Recognize Windows Ink strokes as text
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, handwriting recognition
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 4351901984f9b1f134cfc42acbbc7f756dc6c11f
+ms.sourcegitcommit: dfb790980a8016da0ed9a080d7cf56b5a8a784ff
+ms.openlocfilehash: 26dc8910c779dc46d19be75abd49c20b750a9843
 
 ---
 
-# Windows インク ストロークのテキスト認識
+# Windows Ink でのストロークのテキスト認識
 
-インク ストロークを手書き認識によりテキストに変換したり、カスタム認識により図形に変換したりします。
+Windows Ink でサポートされている手書き認識により、インク ストロークをテキストに変換します。
 
 **重要な API**
 
@@ -674,6 +674,6 @@ string str = "Recognition result\n";
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -3,8 +3,9 @@ author: mcleblanc
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: "デスクトップ用 Device Portal"
 description: "Windows デスクトップで Windows Device Portal の診断と自動化を利用する方法について説明します。"
-ms.sourcegitcommit: f09f0233ec11b41989cf52da3c5e8cb37a97b607
-ms.openlocfilehash: 7be27f5fb15676c5330f22995dd044899eddfd3d
+translationtype: Human Translation
+ms.sourcegitcommit: b5d259172a7e3975d48a5ba669cfbe345869aebf
+ms.openlocfilehash: 3436a95124071045c8ec89ed8ddf644ccc80c29f
 
 ---
 # デスクトップ用 Device Portal
@@ -73,8 +74,10 @@ Device Portal に接続するには、ローカル ホスト接続と、ロー�
     - HttpPort: 必要な DWORD。 Device Portal が HTTP 接続をリッスンするポート番号を指定します。  
     - HttpsPort: 必要な DWORD。 Device Portal が HTTPS 接続をリッスンするポート番号を指定します。
 
-## 開発者モード パッケージのインストール エラー
-ネットワークや互換性の問題により、開発者モードが正しくインストールされないことがあります。 開発者モード パッケージは、リモート展開 (Device Portal および SSH) で必要ですが、ローカル開発には必要ありません。  
+## 開発者モード パッケージのインストールまたは Device Portal の起動のエラー
+ネットワークや互換性の問題により、開発者モードが正しくインストールされないことがあります。 開発者モード パッケージは、**リモート**展開 (Device Portal および SSH) で必要ですが、ローカル開発には必要ありません。  これらの問題が発生した場合でも、Visual Studio を使用してローカルでアプリを展開できます。 
+
+これらの問題に対する回避策を検索するには、[既知の問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)フォーラムをご覧ください。 
 
 ### パッケージ検索エラー
 
@@ -105,6 +108,6 @@ Device Portal に接続するには、ローカル ホスト接続と、ロー�
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO5-->
 
 

@@ -3,8 +3,9 @@ author: DBirtolo
 ms.assetid: D06AA3F5-CED6-446E-94E8-713D98B13CAA
 title: "デバイス セレクターのビルド"
 description: "デバイス セレクターを作成すると、デバイスを列挙するときに、検索するデバイスを絞り込むことができるようになります。"
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 67bf2795a7d555dc5cd236eeafb07009511fe5d3
+ms.openlocfilehash: 091767d6f223ce2b4538dafb1c81595015589013
 
 ---
 # デバイス セレクターのビルド
@@ -31,8 +32,7 @@ ms.openlocfilehash: 67bf2795a7d555dc5cd236eeafb07009511fe5d3
 
 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API では、AQS の標準的な構文が使われますが、一部の演算子はサポートされていません。 フィルター文字列の作成に使えるプロパティの一覧については、「[デバイス情報プロパティ](device-information-properties.md)」をご覧ください。
 
-
-            **注意:** `{GUID} PID` 形式を使って定義したカスタム プロパティは AQS フィルター文字列の作成に使えません。 これは、プロパティの型が一般的な既知のプロパティ名から派生しているためです。
+**注意:** `{GUID} PID` 形式を使って定義したカスタム プロパティは AQS フィルター文字列の作成に使えません。 これは、プロパティの型が一般的な既知のプロパティ名から派生しているためです。
 
  
 
@@ -56,11 +56,9 @@ ms.openlocfilehash: 67bf2795a7d555dc5cd236eeafb07009511fe5d3
 | **COP\_APPLICATION\_SPECIFIC** | サポートされていません                                                               |
 
 
-> 
-            **ヒント:** **COP\_EQUAL** または **COP\_NOTEQUAL** に **NULL** を指定できます。 これは空のプロパティに変換されます。つまり、値は存在しません。 AQS では、空のかっこ \[\] を使って **NULL** を指定できます。
+> **ヒント:** **COP\_EQUAL** または **COP\_NOTEQUAL** に **NULL** を指定できます。 これは空のプロパティに変換されます。つまり、値は存在しません。 AQS では、空のかっこ \[\] を使って **NULL** を指定できます。
 
-> 
-            **重要:** **COP\_VALUE\_CONTAINS** および **COP\_VALUE\_NOTCONTAINS** の演算子を使うと、文字列と文字列配列で異なる動作をします。 文字列の場合、大文字と小文字を区別する検索が実行され、デバイスに部分文字列として指定された文字列が含まれているかどうかを確認します。 文字列配列の場合、部分文字列は検索されません。 文字列配列を使って、配列を検索し、指定された文字列全体が含まれているかどうかを確認します。 配列内の要素に部分文字列が含まれているかどうかを確認するために、文字列配列を検索することはできません。
+> **重要:** **COP\_VALUE\_CONTAINS** および **COP\_VALUE\_NOTCONTAINS** の演算子を使うと、文字列と文字列配列で異なる動作をします。 文字列の場合、大文字と小文字を区別する検索が実行され、デバイスに部分文字列として指定された文字列が含まれているかどうかを確認します。 文字列配列の場合、部分文字列は検索されません。 文字列配列を使って、配列を検索し、指定された文字列全体が含まれているかどうかを確認します。 配列内の要素に部分文字列が含まれているかどうかを確認するために、文字列配列を検索することはできません。
 
 1 つの AQS フィルター文字列により結果を適切に絞り込むことができない場合は、受け取った結果をさらにフィルター処理できます。 ただしその場合は、最初の AQS フィルター文字列によりできる限り結果を絞り込んでから、[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API に渡すことをお勧めします。 これにより、アプリのパフォーマンスを向上させることができます。
 
@@ -68,53 +66,42 @@ ms.openlocfilehash: 67bf2795a7d555dc5cd236eeafb07009511fe5d3
 
 ここで示している例では、AQS 構文を使って、列挙するデバイスを制限する方法を説明しています。 以下のフィルター文字列はすべて、[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングされており、完全なフィルターを作成できます。 どの種類も指定しない場合、既定の種類は **DeviceInterface** になります。
 
-このフィルターを **DeviceInterface** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、オーディオ キャプチャ インターフェイス クラスを含むオブジェクトと、現在有効なオブジェクトがすべて列挙されます。 
-            **
-              =
-            ** は **COP\_EQUALS** に変換されます。
+このフィルターを **DeviceInterface** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、オーディオ キャプチャ インターフェイス クラスを含むオブジェクトと、現在有効なオブジェクトがすべて列挙されます。 **=
+              ** は **COP\_EQUALS** に変換されます。
 
 ``` syntax
 System.Devices.InterfaceClassGuid:="{2eef81be-33fa-4800-9670-1cd474972c3f}" AND 
 System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True
 ```
 
-このフィルターを **Device** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、GenCdRom のハードウェア ID を 1 つ以上持つオブジェクトがすべて列挙されます。 
-            **
-              ~~
-            ** は **COP\_VALUE\_CONTAINS** に変換されます。
+このフィルターを **Device** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、GenCdRom のハードウェア ID を 1 つ以上持つオブジェクトがすべて列挙されます。 **~~
+              ** は **COP\_VALUE\_CONTAINS** に変換されます。
 
 ``` syntax
 System.Devices.HardwareIds:~~"GenCdRom"
 ```
 
-このフィルターを **DeviceContainer** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、部分文字列として Microsoft を含むモデル名を持つオブジェクトがすべて列挙されます。 
-            **
-              ~~
-            ** は **COP\_VALUE\_CONTAINS** に変換されます。
+このフィルターを **DeviceContainer** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、部分文字列として Microsoft を含むモデル名を持つオブジェクトがすべて列挙されます。 **~~
+              ** は **COP\_VALUE\_CONTAINS** に変換されます。
 
 ``` syntax
 System.Devices.ModelName:~~"Microsoft"
 ```
 
-このフィルターを **DeviceInterface** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、部分文字列の Microsoft から始まる名前を持つオブジェクトがすべて列挙されます。 
-            **
-              ~&lt;
-            ** は **COP\_STARTSWITH** に変換されます。
+このフィルターを **DeviceInterface** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、部分文字列の Microsoft から始まる名前を持つオブジェクトがすべて列挙されます。 **~&lt;
+              ** は **COP\_STARTSWITH** に変換されます。
 
 ``` syntax
 System.ItemNameDisplay:~<"Microsoft"
 ```
 
-このフィルターを **Device** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、**System.Devices.IpAddress** プロパティ セットを持つオブジェクトがすべて列挙されます。 
-            **
-              &lt;&gt;\[\]** は、**NULL** 値を組み合わせた **COP\_NOTEQUALS** に変換されます。
+このフィルターを **Device** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、**System.Devices.IpAddress** プロパティ セットを持つオブジェクトがすべて列挙されます。 **&lt;&gt;\[\]** は、**NULL** 値を組み合わせた **COP\_NOTEQUALS** に変換されます。
 
 ``` syntax
 System.Devices.IpAddress:<>[]
 ```
 
-このフィルターを **Device** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、**System.Devices.IpAddress** プロパティ セットを持たないオブジェクトがすべて列挙されます。 
-            **=\[\]** は、**NULL** 値を組み合わせた **COP\_EQUALS** に変換されます。
+このフィルターを **Device** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、**System.Devices.IpAddress** プロパティ セットを持たないオブジェクトがすべて列挙されます。 **=\[\]** は、**NULL** 値を組み合わせた **COP\_EQUALS** に変換されます。
 
 ``` syntax
 System.Devices.IpAddress:=[]
@@ -130,6 +117,6 @@ System.Devices.IpAddress:=[]
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

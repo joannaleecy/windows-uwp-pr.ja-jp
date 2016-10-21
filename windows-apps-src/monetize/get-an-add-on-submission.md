@@ -1,71 +1,75 @@
 ---
 author: mcleanbyron
 ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
-description: Use this method in the Windows Store submission API to get data for an existing add-on submission.
-title: Get an add-on submission using the Windows Store submission API
+description: "既存のアドオンの提出のデータを取得するには、Windows ストア提出 API 内の以下のメソッドを使用します。"
+title: "Windows ストア提出 API を使用したアドオン提出の取得"
+translationtype: Human Translation
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 699f26e8a73e1777f5966faf346945807d460315
+
 ---
 
-# Get an add-on submission using the Windows Store submission API
+# Windows ストア提出 API を使用したアドオン提出の取得
 
 
 
 
-Use this method in the Windows Store submission API to get data for an existing add-on (also known as in-app product or IAP) submission. For more information about the process of process of creating an add-on submission by using the Windows Store submission API, see [Manage add-on submissions](manage-add-on-submissions.md).
+既存のアドオン (アプリ内製品 (IAP) とも呼ばれます) 提出のデータを取得するには、Windows ストア提出 API 内のこのメソッドを使います。 Windows ストア提出 API を使ったアドオンの提出の作成プロセスについて詳しくは、「[アドオンの提出の管理](manage-add-on-submissions.md)」をご覧ください。
 
-## Prerequisites
+## 前提条件
 
-To use this method, you need to first do the following:
+このメソッドを使うには、最初に次の作業を行う必要があります。
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
-* [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
-* Create an add-on submission for an app in your Dev Center account. You can do this in the Dev Center dashboard, or you can do this by using the [Create an add-on submission](create-an-add-on-submission.md) method.
+* Windows ストア提出 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
+* デベロッパー センター アカウントにアプリのアドオン提出を作成します。 この操作は、デベロッパー センター ダッシュボードまたは[アドオン提出の作成](create-an-add-on-submission.md)メソッドを使って実行できます。
 
->**Note**&nbsp;&nbsp;This method can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled.
+>**注:**&nbsp;&nbsp;このメソッドは、Windows ストア提出 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
-## Request
+## 要求
 
-This method has the following syntax. See the following sections for usage examples and descriptions of the header and request body.
+このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
 
-| Method | Request URI                                                      |
+| メソッド | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
 | GET   | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId} ``` |
 
 <span/>
- 
+ 
 
-### Request header
+### 要求ヘッダー
 
-| Header        | Type   | Description                                                                 |
+| ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
 
 <span/>
 
-### Request parameters
+### 要求パラメーター
 
-| Name        | Type   | Description                                                                 |
+| 名前        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | string | Required. The Store ID of the add-on that contains the submission you want to get. The Store ID is available on the Dev Center dashboard, and it is included in the response data for requests to [Create an add-on](create-an-add-on.md) or [get add-on details](get-all-add-ons.md).  |
-| submissionId | string | Required. The ID of the submission to get. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [Create an add-on submission](create-an-add-on-submission.md).  |
+| inAppProductId | string | 必須。 取得する提出が含まれるアドオンのストア ID です。 ストア ID はデベロッパー センター ダッシュボードで利用できます。また、[アドオンの作成](create-an-add-on.md)または[アドオンの詳細の取得](get-all-add-ons.md)要求の応答データに含まれています。  |
+| submissionId | string | 必須。 取得する提出の ID。 この ID は、[アドオン提出の作成](create-an-add-on-submission.md)要求の応答データに含まれており、デベロッパー センター ダッシュボードで確認できます。  |
 
 <span/>
 
-### Request body
+### 要求本文
 
-Do not provide a request body for this method.
+このメソッドでは要求本文を指定しないでください。
 
-### Request example
+### 要求の例
 
-The following example demonstrates how to get an add-on submission.
+次の例は、アドオンの提出を取得する方法を示しています。
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/submissions/1152921504621243680 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## Response
+## 応答
 
-The following example demonstrates the JSON response body for a successful call to this method. The response body contains information about the specified submission. For more details about the values in the response body, see [add-on submission resource](manage-add-on-submissions.md#add-on-submission-object).
+次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文には、指定された提出に関する情報が含まれています。 応答本文内の値について詳しくは、[アドオンの提出のリソース](manage-add-on-submissions.md#add-on-submission-object)をご覧ください。
 
 ```json
 {
@@ -140,23 +144,29 @@ The following example demonstrates the JSON response body for a successful call 
 }
 ```
 
-## Error codes
+## エラー コード
 
-If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.
+要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。
 
-| Error code |  Description   |
+| エラー コード |  説明   |
 |--------|------------------|
-| 404  | The submission could not be found. |
-| 409  | The submission does not belong to the specified add-on, or the add-on uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 404  | 提出は見つかりませんでした。 |
+| 409  | 指定されたアドオンにアドオンの提出が属していないか、[Windows ストア提出 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能をアドオンが使用しています。 |   
 
 <span/>
 
 
-## Related topics
+## 関連トピック
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Create an add-on submission](create-an-add-on-submission.md)
-* [Commit an add-on submission](commit-an-add-on-submission.md)
-* [Update an add-on submission](update-an-add-on-submission.md)
-* [Delete an add-on submission](delete-an-add-on-submission.md)
-* [Get the status of an add-on submission](get-status-for-an-add-on-submission.md)
+* [Windows ストア サービスを使用した提出の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
+* [アドオンの提出の作成](create-an-add-on-submission.md)
+* [アドオンの提出のコミット](commit-an-add-on-submission.md)
+* [アドオンの提出の更新](update-an-add-on-submission.md)
+* [アドオンの提出の削除](delete-an-add-on-submission.md)
+* [アドオンの提出の状態の取得](get-status-for-an-add-on-submission.md)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

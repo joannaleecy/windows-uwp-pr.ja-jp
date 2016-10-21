@@ -3,8 +3,9 @@ author: msatranjr
 Description: "マップ コントロールでは、地図および上空からの写真、ルート案内、検索結果、交通情報を表示できます。"
 title: "マップのガイドライン"
 ms.assetid: 7B5B6BC9-D1EC-4978-8876-20B78EF44797
+translationtype: Human Translation
 ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: 3c1d37a119eca88ee443772292f8cfe97cb3c1ac
+ms.openlocfilehash: e094e29220a0f8fcae6ca2af36ab86ecd22b520d
 
 ---
 
@@ -23,8 +24,7 @@ ms.openlocfilehash: 3c1d37a119eca88ee443772292f8cfe97cb3c1ac
 
 アプリ固有の地理情報または一般的な地理情報を表示できるアプリ内でマップが必要な場合に、マップ コントロールを使います。 アプリにマップ コントロールを含めておくことで、ユーザーはアプリの外部に移動することなく情報を得ることができます。
 
-
-            **注:** その情報を得るためにユーザーがアプリの外部に移動してもかまわない場合は、Windows マップ アプリを利用することも検討してください。 アプリから Windows マップ アプリを起動し、特定の地図、ルート案内、検索結果を表示することができます。 詳しくは、「[Windows マップ アプリの起動](https://msdn.microsoft.com/library/windows/apps/mt228341)」をご覧ください。
+**注:** その情報を得るためにユーザーがアプリの外部に移動してもかまわない場合は、Windows マップ アプリを利用することも検討してください。 アプリから Windows マップ アプリを起動し、特定の地図、ルート案内、検索結果を表示することができます。 詳しくは、「[Windows マップ アプリの起動](https://msdn.microsoft.com/library/windows/apps/mt228341)」をご覧ください。
 
 ## 例
 
@@ -74,6 +74,6 @@ ms.openlocfilehash: 3c1d37a119eca88ee443772292f8cfe97cb3c1ac
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -2,9 +2,9 @@
 author: Mtoepke
 title: "Xbox の開発環境に UWP を設定する"
 description: "Xbox の開発環境に UWP を設定してテストする手順"
-area: Xbox
-ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
-ms.openlocfilehash: d56206f990e7885af4935401356bd3a2ce2cd292
+translationtype: Human Translation
+ms.sourcegitcommit: e273cc55935f961e0b5493c0648347cba399fa3d
+ms.openlocfilehash: 5ffe0ce35e4aabcfc74e9bfa9017248320925603
 
 ---
 
@@ -28,13 +28,16 @@ Xbox の開発環境のユニバーサル Windows プラットフォーム (UWP)
 
 最新の Windows 10 SDK プレビュー ビルドをインストールします。 インストールについて詳しくは、「[開発者向け Insider Preview 更新プログラムのダウンロード](http://go.microsoft.com/fwlink/p/?LinkId=780552)」をご覧ください。
 
-  > 
-            **重要**
-            &nbsp;&nbsp;最新の SDK をインストールする必要があります。ただし、オペレーティング システムの Windows Insider Preview の最新リリースをインストールする必要は_ありません_。
+> [!IMPORTANT]
+> 最新の SDK をインストールする必要があります。ただし、オペレーティング システムの Windows Insider Preview の最新リリースをインストールする必要はありません。
+
+## 開発者モードを有効にする
+
+開発用 PC からアプリケーションを展開する前に、Windows メニューから [設定]、[更新とセキュリティ]、[開発者向け]、[開発者モード] の順に選択して、開発者モードを有効にする必要があります。
 
 ## Xbox One の設定
 
-Xbox One にアプリを展開する前に、ユーザーがコンソールにサインインする必要があります。 既存の Xbox Live アカウントを使用することも、開発者モードでコンソールの新しいアカウントを作成することもできます。 
+Xbox One にアプリを展開する前に、ユーザーがコンソールにサインインする必要があります。 既存の Xbox Live アカウントを使用することも、開発者モードで本体の新しいアカウントを作成することもできます。 
 
 ## 初めてのアプリケーションを作成する
 
@@ -110,6 +113,6 @@ Xbox One にアプリを展開する前に、ユーザーがコンソールに�
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

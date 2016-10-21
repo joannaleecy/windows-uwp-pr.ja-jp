@@ -1,17 +1,26 @@
 ---
 author: Jwmsft
 Description: "ボタン、テキスト ボックス、コンボ ボックスなどのコントロールを使って、データを表示し、ユーザー入力を取得するためのアプリの UI を作ります。 ここでは、アプリにコントロールを追加する方法について説明します。"
-title: "コントロールの追加とイベントの処理"
+title: "コントロールとパターンの概要"
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
-label: Intro to controls and events
+label: Intro to controls and patterns
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 709771424daba7c034dc6f19d6998469705a24da
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: c597b2e5a1da23247a2100aeae88beaf1bfdaa64
 
 ---
-# コントロールとイベントの概要
+# コントロールとパターンの概要
 
-ボタン、テキスト ボックス、コンボ ボックスなどのコントロールを使って、データを表示し、ユーザー入力を取得するためのアプリの UI を作ります。 ここでは、アプリにコントロールを追加する方法について説明します。 アプリにコントロールを追加するには、3 つの重要な手順があります。 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
+UWP アプリ開発では、*コントロール*は、コンテンツを表示したり、操作を有効にしたりする UI 要素です。 ボタン、テキスト ボックス、コンボ ボックスなどのコントロールを使って、データを表示し、ユーザー入力を取得するためのアプリの UI を作ります。
+
+*パターン*とは、コントロールを変更するか、いくつかのコントロールを組み合わせて、新しいものを作成するためのレシピです。 たとえば、[ナビゲーション ウィンドウ](nav-pane.md) パターンは、アプリのナビゲーションに [SplitView](split-view.md) コントロールを使用する方法です。 同様に、[Pivot](tabs-pivot.md) コントロールのテンプレートをカスタマイズして、タブ パターンを実装することもできます。
+
+多くの場合、コントロールはそのまま使用できます。 ただし、XAML コントロールでは、機能が構造や外観とは分離されているため、ニーズに合わせてさまざまなレベルで変更することができます。 [XAML スタイル](xaml-styles.md)と[コントロール テンプレート](control-templates.md)を使用してコントロールを変更する方法については、「[スタイル](../style/index.md)」セクションをご覧ください。
+
+このセクションでは、アプリ UI の構築に使用できる各 XAML コントロールに関するガイダンスを提供します。 まず、この記事では、アプリにコントロールを追加する方法について説明します。 アプリでコントロールを使用するには、次の 3 つの重要な手順があります。 
 
 - アプリの UI にコントロールを追加します。 
 - 幅、高さ、前景色など、コントロールのプロパティを設定します。 
@@ -131,12 +140,14 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 
 ## 関連トピック
 
--   [**コマンド バー**](app-bars.md)
--   [検索](search.md)
--   [ポップアップ](dialogs-popups-menus.md)
+-   [機能別コントロールのインデックス](controls-by-function.md)
+-   [Windows.UI.Xaml.Controls 名前空間](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+-   [レイアウト](../layout/index.md)
+-   [スタイル](../style/index.md)
+-   [ユーザビリティ](../usability/index.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

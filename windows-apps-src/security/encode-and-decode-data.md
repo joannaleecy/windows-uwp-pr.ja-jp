@@ -3,8 +3,9 @@ title: "データのエンコードとデコード"
 description: "次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリで base64 データと 16 進データをエンコードおよびデコードする方法を示しています。"
 ms.assetid: 2CC23863-E840-48F4-B087-0479045743AC
 author: awkoren
+translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: cd70a84e498c390684a59b33ec8a34375e1eb863
+ms.openlocfilehash: b07a040cafd2248f12fee571552632080e117692
 
 ---
 
@@ -43,6 +44,6 @@ public void EncodeDecodeHex()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

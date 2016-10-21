@@ -1,13 +1,13 @@
 ---
 author: mijacobs
-Description: "色により、アプリのさまざまな情報レベルで直感的に移動先を見つけることができます。また、色は操作モデルを強化するための重要なツールとして機能します。"
+description: "色により、アプリのさまざまな情報レベルで直感的に移動先を見つけることができます。また、色は操作モデルを強化するための重要なツールとして機能します。"
 title: "色"
 ms.assetid: 3ba7176f-ac47-498c-80ed-4448edade8ad
-label: Color
 template: detail.hbs
 extraBodyClass: style-color
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 878470a7cbf44862c47a1428a1d25d332db32fdc
+translationtype: Human Translation
+ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
+ms.openlocfilehash: 8e253c93f932e04b825478cf0801e4c8c0d43b9d
 
 ---
 
@@ -27,34 +27,19 @@ Windows では、色もカスタマイズが可能です。 各ユーザーが�
 ![Xbox のアクセント カラー](images/accentcolorswatch_xbox.png) Xbox のアクセント カラー
 
 
-
 ユーザーがアクセント カラーを選ぶと、その色がシステムのテーマの一部として表示されます。 アクセント カラーが適用される領域は、スタート画面、タスク バー、ウィンドウ クロム、選択した操作の状態、および[共通コントロール](https://dev.windows.com/design/controls-patterns)内のハイパーリンクです。 また、各アプリの文字体裁、背景、および操作にアクセント カラーを組み込んだり、アクセント カラーを無視してアプリ固有のブランドを維持したりできます。
 
-## 色調
+## カラー パレットの構成要素
 
 アクセント カラーを選ぶと、色の明度の HSB 値に基づいて明るい色調と暗い色調のアクセント カラーが作成されます。 アプリはこの色調のバリエーションを使用して視覚的な階層を作成し、操作を示します。
 
 既定では、ハイパーリンクにはユーザーのアクセント カラーが使用されます。 ページの背景と似ていてハイパーリンクが目立たない場合は、適用するアクセント カラーの色調を調整してコントラストを強調できます。
 
-<figure class="figure-img" >
-    <img src="images/shades.png" alt="A single accent color with its 6 shades"  />
-        <figcaption><p>既定のアクセント カラーのさまざまな色調。</p>
-</figcaption>
-</figure>
+![1 つのアクセント カラーと 6 つの色調](images/shades.png)既定のアクセント カラーのさまざまな色調。
 
-<figure class="figure-img" >
-    <img src="images/action_center_redline_zoom.png" alt="Redlines for Colored Action Center"  />
-        <figcaption><p>色のロジックを設計仕様に適用する方法の例。</p>
-</figcaption>
-</figure>
+![色付きのアクション センターを示す赤線](images/action_center_redline_zoom.png)色のロジックを設計仕様に適用する方法の例。
 
-<aside class="aside-dev">
-    <div class="aside-dev-title">
-    </div>
-    <div class="aside-dev-content">
-XAML では、`SystemAccentColor` という名前の[テーマ リソース](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx)でプライマリ アクセント カラーが公開されます。 色調は、`SystemAccentColorLight3`、`SystemAccentColorLight2`、`SystemAccentColorLight1`、`SystemAccentColorDark1`、`SystemAccentColorDark2`、`SystemAccentColorDark3` で表現できます。 [UISettings.GetColorValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uisettings.getcolorvalue.aspx) および [UIColorType](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx) 列挙型を使って、プログラムで使用することもできます。
-    </div>
-</aside>
+**注:**&nbsp;&nbsp;XAML では、`SystemAccentColor` という名前の[テーマ リソース](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx)でプライマリ アクセント カラーが公開されます。 色調は、`SystemAccentColorLight3`、`SystemAccentColorLight2`、`SystemAccentColorLight1`、`SystemAccentColorDark1`、`SystemAccentColorDark2`、`SystemAccentColorDark3` で表現できます。 [UISettings.GetColorValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uisettings.getcolorvalue.aspx) および [UIColorType](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx) 列挙型を使って、プログラムで使用することもできます。
 
 ## 色のテーマ
 
@@ -88,20 +73,37 @@ XAML では、`SystemAccentColor` という名前の[テーマ リソース](htt
 #### クロム
 ![濃色テーマ (クロム)](images/themes-dark-chrome.png)
 
-<aside class="aside-dev">
-    <div class="aside-dev-title">
-    </div>
-    <div class="aside-dev-content">
-それぞれの色は XAML の[テーマ リソース](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx#the_xaml_color_ramp_and_theme-dependent_brushes) として利用できます。このリソースは `System*Color` 名前付け規則に従っている必要があります (例: `SystemChromeHighColor`)。 アプリのテーマは、[Application.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.requestedtheme.aspx) または [FrameworkElement.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.requestedtheme.aspx) で制御できます。
-    </div>
-</aside>
+
+## テーマの変更
+
+テーマを簡単に変更するには、App.xaml で **RequestedTheme** プロパティを変更します。
+
+```XAML
+<Application
+    x:Class="App9.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App9"
+    RequestedTheme="Dark">
+
+</Application>
+```
+
+**RequestedTheme** を削除すると、アプリケーションではユーザーのアプリ モードの設定が使用され、濃色テーマまたは淡色テーマのいずれかを選択してアプリを表示できます。 
+
+テーマはアプリの外観に大きく影響するため、アプリを作成するときは必ずテーマを考慮に入れてください。
 
 ## アクセシビリティ
 
 画面を使用するためにパレットが最適化されています。 読みやすさをできる限り高めるため、背景に対するテキストのコントラスト比は 4.5:1 にすることをお勧めします。 無料で提供されているさまざまなツールを使って、色の[コントラスト比](http://leaverou.github.io/contrast-ratio/)などをテストできます。
 
+## 関連記事
+
+* [XAML スタイル](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)
+* [XAML テーマ リソース](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

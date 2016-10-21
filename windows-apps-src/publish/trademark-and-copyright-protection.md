@@ -3,8 +3,9 @@ author: jnHs
 Description: "別のアプリが知的財産権を侵害していると考えられる場合の対処方法について説明します。"
 title: "商標と著作権の保護"
 ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2c3f35ee5fb3f04e9f2fc389162793caa9ce5f1a
+ms.openlocfilehash: f4946ac6e163dd84806d52a1775301ac231d2b9d
 
 ---
 
@@ -68,6 +69,6 @@ Microsoft からの通知を注意深く読み、指示に従ってください�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

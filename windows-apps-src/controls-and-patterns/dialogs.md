@@ -1,21 +1,25 @@
 ---
 author: mijacobs
-Description: Dialogs and flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.
-title: Dialogs and flyouts
+Description: "ダイアログとポップアップは、ユーザーが要求したとき、または通知や許可を必要とする状況が発生したときに表示される一時的な UI 要素です。"
+title: "ダイアログとポップアップ"
 label: Dialogs
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: ff9940c06276165dc139e120c4e9cdeb005ff125
+
 ---
+# ダイアログとポップアップ
+
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-# Dialogs and flyouts
-
-Dialogs and flyouts are transient UI elements that appear when something happens that requires notification, approval, or additional information from the user.
+ダイアログ ボックスとポップアップは、通知、許可、またはユーザーからの追加の情報を必要とする状況が発生したときに表示される一時的な UI 要素です。
 
 <div class="important-apis" >
-<b>Important APIs</b><br/>
+<b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx">ContentDialog class</a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn279496">Flyout class</a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx">ContentDialog クラス</a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn279496">Flyout クラス</a></li>
 </ul>
 
 </div>
@@ -43,40 +47,40 @@ Dialogs and flyouts are transient UI elements that appear when something happens
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-   <p><b>Dialogs</b> <br/><br/>
-   ![Example of a full-button dialog](images/controls_dialog_twobutton.png)</p>
-<p>Dialogs are modal UI overlays that provide contextual app information. Dialogs block interactions with the app window until being explicitly dismissed. They often request some kind of action from the user.   
+   <p><b>ダイアログ</b> <br/><br/>
+   ![フルボタン ダイアログの例](images/controls_dialog_twobutton.png)</p>
+<p>ダイアログは、状況依存のアプリ情報を表示するモーダル UI オーバーレイです。 ダイアログは、明示的に閉じられるまでアプリ ウィンドウの対話式操作をブロックします。 多くの場合、ユーザーに何らかの操作を要求します。   
 </p><br/>
 
   </div>
   <div class="side-by-side-content-right">
-   <p><b>Flyouts</b> <br/><br/>
-   ![Example of a flyout](images/flyout-example.png)</p>
-<p>A flyout is a lightweight contextual popup that displays UI related to what the user is doing. It includes placement and sizing logic, and can be used to reveal a hidden control, show more detail about an item, or ask the user to confirm an action. 
-</p><p>Unlike a dialog, a flyout can be quickly dismissed by tapping or clicking somewhere outside the flyout, pressing the Escape key or Back button, resizing the app window, or changing the device's orientation.
+   <p><b>ポップアップ</b> <br/><br/>
+   ![ポップアップの例](images/flyout-example.png)</p>
+<p>ポップアップ (flyout) は、ユーザーが現在操作している内容に関係する UI を表示する軽量な状況依存のポップアップです。 このポップアップは、配置ロジックとサイズ設定ロジックを備えており、非表示コントロールを再表示する場合、項目の詳細を表示する場合、またはユーザーに操作の確認を求める場合に使うことができます。 
+</p><p>ダイアログとは異なり、ポップアップは、それ以外の場所をタップまたはクリックするか、Esc キーまたは戻るボタンを押すか、アプリ ウィンドウのサイズを変更するか、デバイスの向きを変更することで、すばやく閉じることができます。
 </p><br/>
 
   </div>
 </div>
 </div>
 
-## Is this the right control?
+## 適切なコントロールの選択
 
-* Use dialogs and flyouts to notify users of important information or to request confirmation or additional info before an action can be completed. 
-* Don't use a flyout instead of [tooltip](tooltips.md) or [context menu](menus.md). Use a tooltip to show a short description that hides after a specified time. Use a context menu for contextual actions related to a UI element, such as copy and paste.  
-
-
-Dialogs and flyouts make sure that users are aware of important information, but they also disrupt the user experience. Because dialogs are modal (blocking), they interupt users, preventing them from doing anything else until they interact with the dialog. Flyouts provide a less jarring experience, but displaying too many flyouts can be distracting. 
-
-Consider the importance of the information you want to share: is it important enough to interupt the user? Also consider how frequently the information needs to be shown; if you're showing a dialog or notification every few minutes, you might want to allocate space for this info in the primary UI instead. For example, in a chat client, rather than showing a flyout every time a friend logs in, you might display a list of friends who are online at the moment and highlight friends as they log on. 
-
-Flyouts and dialogs are frequently used to confirm an action (such as deleting a file) before executing it. If you expect the user to perform a particular action frequently, consider providing a way for the user to undo the action if it was a mistake, rather than forcing users to confirm the action every time. 
+* 重要な情報をユーザーに通知したり、アクションが完了する前に確認や追加情報を要求するために、ダイアログやポップアップを使用します。 
+* [ヒント](tooltips.md)や[コンテキスト メニュー](menus.md)の変わりにポップアップを使用しないようにします。 指定した時間が経過すると非表示になる短い説明を表示するには、ヒントを使います。 UI 要素に関連した状況依存の操作 (コピーや貼り付けなど) には、コンテキスト メニューを使います。  
 
 
+ダイアログとポップアップにより、ユーザーが重要な情報を認識していることを確認できますが、ユーザー エクスペリエンスは中断されます。 ダイアログはモーダル (ブロック) であるため、ユーザーは中断され、ダイアログの操作を行うまで他の操作を行うことはできません。 ポップアップの煩わしさはダイアログより低くなりますが、多用すると、煩わしくなります。 
 
-## Dialogs vs. flyouts
+伝える情報の重要度が、ユーザーを中断させる必要があるものかどうかを、よく検討する必要があります。 また、情報の表示頻度を検討し、数分ごとにダイアログや通知を表示している場合には、代わりにプライマリ UI でこの情報用の領域を割り当てることを検討します。 たとえばチャット クライアントで、友人がログインするたびにポップアップを表示させるよりも、その時点でオンラインである友人の一覧を表示し、ログインが行われたときには強調表示させるなどの方法を検討します。 
 
-Once you've determined that you want to use a dialog or flyout, you need to choose which one to use. 
+ポップアップとダイアログは、アクション (ファイルの削除など) を実行する前に確認するために、よく使用されます。 ユーザーが特定の操作を頻繁に実行することが想定される場合には、ユーザーがアクションを毎回確認する必要があるようにするよりも、誤って操作した場合に、ユーザーが元に戻せる方法を提供することを検討します。 
+
+
+
+## ダイアログとポップアップの比較
+
+ダイアログかポップアップを使用すると決めた場合には、どちらを選択する必要があります。 
 
 <!--
 Dialogs are modal, which means they block all interaction with the app until the user selects a dialog button. To visually reinforce their modal behavior, dialogs draw an overlay layer which partially obscures the temporarily unreachable app UI.
@@ -91,34 +95,34 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 
 -->
 
-Given that dialogs block interactions and flyouts do not, dialogs should be reserved for situations where you want the user to drop everything to focus on a specific bit of information or answer a question. Flyouts, on the other hand, can be used when you want to call attention to something, but it's ok if the user wants to ignore it. 
+ダイアログは操作をブロックし、ポップアップはブロックしないため、ダイアログの使用は、ユーザーが他のすべてを中断して情報や回答の提供に集中する必要がある状況に限定する必要があります。 一方ポップアップは、ユーザーに情報を知らせるが、ユーザーがそれを無視してもよい場合に使用します。 
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-   <p><b>Use a dialog for...</b> <br/>
+   <p><b>ダイアログの用途:</b> <br/>
 <ul>
-<li>Expressing important information that the user **must** read and acknowledge before proceeding. Examples include:
+<li>続行前にユーザーが読んだり確認したりする**必要のある重要な**情報を表示する場合。 次のようなシナリオが考えられます。
 <ul>
-  <li>When the user's security might be compromised</li>
-  <li>When the user is about to permanently alter a valuable asset</li>
-  <li>When the user is about to delete a valuable asset</li>
-  <li>To confirm an in-app purchase</li>
+  <li>ユーザーのセキュリティが侵害される可能性がある場合</li>
+  <li>ユーザーが重要な資産に永続的な変更を加えようとしている場合</li>
+  <li>ユーザーが重要な資産を削除しようとしている場合</li>
+  <li>アプリ内購入を確認する場合</li>
 </ul>
 
 </li>
-<li>Error messages that apply to the overall app context, such as a connectivity error.</li>
-<li>Questions, when the app needs to ask the user a blocking question, such as when the app can't choose on the user's behalf. A blocking question can't be ignored or postponed, and should offer the user well-defined choices.</li>
+<li>接続エラーなど、アプリ全体の状況に適用されるエラー メッセージ</li>
+<li>アプリからユーザーにブロック質問を表示する必要がある場合 (アプリで自動的に選ぶことができない場合など) ブロック質問とは、無視したり先送りにしたりできない質問です。この質問では、ユーザーに明確な選択肢を提示する必要があります。</li>
 </ul> 
 </p>
   </div>
   <div class="side-by-side-content-right">
-   <p><b>Use a flyout for...</b> <br/>
+   <p><b>ポップアップの用途:</b> <br/>
 <ul>
-<li>Collecting additional information needed before an action can be completed.</li>
-<li>Displaying info that's only relevent some of the time. For example, in a photo gallery app, when the user clicks an image thumbnail, you might use a flyout to display a large version of the image.</li>
-<li>Warnings and confirmations, including ones related to potentially destructive actions.</li>
-<li>Displaying more information, such as details or longer descriptions of an item on the page.</li>
+<li>操作を完了する前に、必要な追加情報を収集する場合。</li>
+<li>一部の場合のみに意味がある情報を表示する場合。 たとえばフォト ギャラリー アプリで、ユーザーが画像のサムネイルをクリックした場合に、大きな画像を表示するためにポップアップを使用できます。</li>
+<li>警告と確認 (被害が発生する可能性のある操作に関するものなど)。</li>
+<li>詳細やページ上の項目の長い説明などの詳しい情報の表示。</li>
 </ul></p>
   </div>
 </div>
@@ -126,24 +130,24 @@ Given that dialogs block interactions and flyouts do not, dialogs should be rese
 
 
 
-## Dialog usage guidelines
+## ダイアログの使用に関するガイドライン
 
--   Clearly identify the issue or the user's objective in the first line of the dialog's text.
--   The dialog title is the main instruction and is optional.
-    -   Use a short title to explain what people need to do with the dialog. Long titles do not wrap and are truncated.
-    -   If you're using the dialog to deliver a simple message, error or question, you can optionally omit the title. Rely on the content text to deliver that core information.
-    -   Make sure that the title relates directly to the button choices.
--   The dialog content contains the descriptive text and is required.
-    -   Present the message, error, or blocking question as simply as possible.
-    -   If a dialog title is used, use the content area to provide more detail or define terminology. Don't repeat the title with slightly different wording.
--   At least one dialog button must appear.
-    -   Buttons are the only mechanism for users to dismiss the dialog.
-    -   Use buttons with text that identifies specific responses to the main instruction or content. An example is, "Do you want to allow AppName to access your location?", followed by "Allow" and "Block" buttons. Specific responses can be understood more quickly, resulting in efficient decision making.
--   Error dialogs display the error message in the dialog box, along with any pertinent information. The only button used in an error dialog should be “Close” or a similar action.
--   Don't use dialogs for errors that are contextual to a specific place on the page, such as validation errors (in password fields, for example), use the app's canvas itself to show inline errors.
+-   ダイアログ内のテキストの 1 行目で、問題やユーザーの目的 (実行する内容) を明確に示す必要があります。
+-   ダイアログのタイトルは主な説明で、省略可能です。
+    -   簡潔なタイトルを使って、ユーザーがそのダイアログで行う必要がある操作を説明します。 タイトルが長い場合は、折り返されず省略されます。
+    -   ダイアログを使って、簡単なメッセージ、エラー、または質問を表示する場合は、タイトルを省略することもできます。 主な情報はコンテンツのテキストを使って伝えます。
+    -   タイトルは、ボタンの選択に直接関連するものにします。
+-   ダイアログ コンテンツには説明のテキストを含め、これは必須です。
+    -   メッセージ、エラー、または操作をブロック質問をできる限り簡潔に示します。
+    -   ダイアログ タイトルを使う場合は、コンテンツ領域を詳しい情報の提示や用語の定義に使います。 タイトルの言葉づかいを変えただけの文を繰り返さないようにします。
+-   少なくとも 1 つのダイアログ ボタンを表示する必要があります。
+    -   ボタンは、ユーザーがダイアログ ボックスを非表示にするための唯一のメカニズムです。
+    -   テキストを指定したボタンを使って、主な説明またはコンテンツに対する応答を示します。 たとえば、主な説明が "使っているコンピューターへの AppName からのアクセスを許可しますか?" の場合、"許可" ボタンと "ブロック" ボタンを使います。 具体的な応答の言葉はすばやく理解できるので、効率的に判断できます。
+-   エラー ダイアログでは、ダイアログ ボックスにエラー メッセージと関連情報 (ある場合) を表示します。 エラー ダイアログで使う唯一のボタンは "閉じる" かこれに似た操作である必要があります。
+-   パスワード フィールドの検証エラーなど、ページの特定の場所に関連するエラーでは、ダイアログを使わずに、アプリのキャンバス自体を使ってインライン エラーを表示します。
 
-## Create a dialog
-To create a dialog, you use the [ContentDialog class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx). You can create a dialog in code or markup. Although its usually easier to define UI elements in XAML, in the case of a simple dialog, it's actually easier to just use code. This example creates a dialog to notify the user that there's no WiFi connection, and then uses the [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) method to display it.
+## ダイアログの作成
+ダイアログ ボックスを作成するには、[ContentDialog クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)を使用します。 ダイアログはコードまたはマークアップで作成できます。 通常は UI 要素を XAML で定義する方が容易ですが、単純なダイアログの場合には、コードを記述する方が実際には容易です。 この例では、ダイアログを作成して、ユーザーに WiFi 接続がないことの通知を行い、[ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx)メソッドを使ってそれを表示しています。
 
 ```csharp
 private async void displayNoWifiDialog()
@@ -159,9 +163,9 @@ private async void displayNoWifiDialog()
 }
 ```
 
-When the user clicks a dialog button, the [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) method returns a [ContentDialogResult](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialogresult.aspx) to let you know which button the user clicks. 
+ユーザーがダイアログのボタンをクリックすると、[ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx)メソッドは [ContentDialogResult](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialogresult.aspx) を返して、ユーザーがクリックしたボタンを伝えます。 
 
-The dialog in this example asks a question and uses the returned [ContentDialogResult](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialogresult.aspx) to determine the user's response. 
+この例でのダイアログは、質問を行い、[ContentDialogResult](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialogresult.aspx) の戻り値を使用してユーザーの応答を確認します。 
 
 ```csharp
 private async void displayDeleteFileDialog()
@@ -186,13 +190,13 @@ private async void displayDeleteFileDialog()
 ```
 
 
-##  Create a flyout
+##  ポップアップを作る
 
-A flyout is an open-ended container that can show arbitrary UI as its content.  
+ポップアップは、オープンエンドなコンテナーで、そのコンテンツとして任意の UI を表示することができます。  
 
-Flyouts are attached to specific controls. You can use the [Placement](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.placement.aspx) property to specify where flyout appears: Top, Left, Bottom, Right, or Full. If you select the [Full placement mode](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutplacementmode.aspx), the app stretches the flyout and centers it inside the app window. When visible, they should be anchored to the invoking object and specify their preferred relative position to the object: Top, Left, Bottom, or Right. Flyout also has a Full placement mode which attempts to stretch the flyout and center it inside the app window. Some controls, such as [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx), provide a [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) property that you can use to associate a flyout. 
+ポップアップは、特定のコントロールにアタッチされます。 [Placement ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.placement.aspx) プロパティを使って、ポップアップが表示される場所 (上、左、下、右、またはフル) を指定します。 [完全配置モード](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutplacementmode.aspx)を選択した場合、アプリはポップアップを拡大し、アプリ ウィンドウ内の中央に配置します。 表示するときに、呼び出し元のオブジェクトに固定する必要があり、そのオブジェクトに対して優先する相対位置 (上、下、左、または右) を指定します。 ポップアップには完全配置モードもあります。完全配置モードでは、ポップアップを拡大して、アプリ ウィンドウの中央に配置しようとします。 [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) などの一部のコントロールは、ポップアップを関連付けるために使用できる [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) プロパティを提供します。 
 
-This example creates a simple flyout that displays some text when the button is pressed. 
+この例では、ボタンが押されたときに、いくつかのテキストを表示するシンプルなポップアップを作成します。 
 ````xaml
 <Button Content="Click me">
   <Button.Flyout>
@@ -203,9 +207,9 @@ This example creates a simple flyout that displays some text when the button is 
 </Button>
 ````
 
-If the control doesn't have a flyout property, you can use the [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) attached property instead. When you do this, you also need to call the [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) method to show the flyout. 
+コントロールに Flyout プロパティがない場合には、代わりに [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) 添付プロパティを使用できます。 これを行う場合には、さらに [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout)メソッドを呼び出して、ポップアップを表示する必要があります。 
 
-This example adds a simple flyout to an image. When the user taps the image, the app shows the flyout. 
+この例では、画像に簡単なポップアップを追加します。 ユーザーが画像をタップしたときに、アプリはポップアップを表示します。 
 
 ````xaml
 <Image Source="Assets/cliff.jpg" Width="50" Height="50" 
@@ -225,7 +229,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 }
 ````
 
-The previous examples defined their flyouts inline. You can also define a flyout as a static resource and then use it with multiple elements. This example creates a more complicated flyout that displays a larger version of an image when its thumbnail is tapped. 
+前に示した例では、ポップアップはインラインで定義されています。 ポップアップを静的なリソースとして定義して、複数の要素で使用することもできます。 この例では、サムネイルがタップされたときに大きな画像を表示する、より複雑なポップアップを作成します。 
 
 ````xaml
 <!-- Declare the shared flyout as a resource. -->
@@ -274,8 +278,8 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 }
 ````
 
-## Style a flyout
-To style a Flyout, modify its [FlyoutPresenterStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.flyoutpresenterstyle.aspx). This example shows a paragraph of wrapping text and makes the text block accessible to a screen reader.
+## ポップアップのスタイルを設定する
+ポップアップのスタイルを設定するには、[FlyoutPresenterStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.flyoutpresenterstyle.aspx) を変更します。 次の例では、テキストの折り返しの段落を示し、スクリーン リーダーがテキスト ブロックにアクセスできるようにします。
 
 ````xaml
 <Flyout>
@@ -292,12 +296,18 @@ To style a Flyout, modify its [FlyoutPresenterStyle](https://msdn.microsoft.com/
 </Flyout>
 ````
 
-## Get the samples
-*   [XAML UI basics](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
-    See all of the XAML controls in an interactive format.
+## サンプルの入手
+*   [XAML UI の基本](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
+    インタラクティブな形で XAML コントロールのすべてを参照できます。
 
-## Related articles
-- [Tooltips](tooltips.md)
-- [Menus and context menu](menus.md)
-- [**Flyout class**](https://msdn.microsoft.com/library/windows/apps/dn279496)
-- [**ContentDialog class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)
+## 関連記事
+- [ヒント](tooltips.md)
+- [メニューとコンテキスト メニュー](menus.md)
+- [**Flyout クラス**](https://msdn.microsoft.com/library/windows/apps/dn279496)
+- [**ContentDialog クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

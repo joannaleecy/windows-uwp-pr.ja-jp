@@ -3,17 +3,19 @@ author: mcleanbyron
 Description: "ユーザーがアプリを無料で使うことができる試用期間を設け、その期間中は一部の機能を除外または制限することで、アプリを通常版にアップグレードするようユーザーに促すことができます。"
 title: "試用版での機能の除外または制限"
 ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056
-keywords: free trial code sample
+keywords: "無料試用版のコード サンプル"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9c38784325f4dc51052f70a819012508f2a0bdbb
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: fdca95a6e925ca2238fdcd8791ade2ed4ea5a310
 
 ---
 
 # 試用版での機能の除外または制限
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+
+
+>**注**&nbsp;&nbsp;この記事では、[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間のメンバーの使用法について説明します。 アプリが Windows 10 バージョン 1607 以降を対象としている場合、**Windows.ApplicationModel.Store** 名前空間ではなく、[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間のメンバーを使用して、試用版を実装することをお勧めします。 詳しくは、「[アプリの試用版の実装](implement-a-trial-version-of-your-app.md)」をご覧ください。
 
 ユーザーがアプリを無料で使うことができる試用期間を設け、その期間中は一部の機能を除外または制限することで、アプリを通常版にアップグレードするようユーザーに促すことができます。 どのような機能を制限するかをコーディング開始前に決め、完全なライセンスが購入されたときにだけその機能が正しく動作するようにアプリを設定します。 また、顧客がアプリを購入する前の試用期間中にだけバナーや透かしなどが表示されるようにもできます。
 
@@ -61,8 +63,7 @@ ms.openlocfilehash: 9c38784325f4dc51052f70a819012508f2a0bdbb
 
 アプリを初期化するときに、この例で示されているように、アプリの [**LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/br225157) オブジェクトを取得してください。 **licenseInformation** は、**LicenseInformation** 型のグローバル変数またはフィールドであるとします。
 
-[
-            **CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) または [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) を初期化して、アプリのライセンス情報にアクセスします。
+[**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) または [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) を初期化して、アプリのライセンス情報にアクセスします。
 
 ```CSharp
 void initializeLicense()
@@ -74,7 +75,7 @@ void initializeLicense()
     // Initialize the license info for testing.
     // comment the next line for release
     licenseInformation = CurrentAppSimulator.LicenseInformation;
-      
+
 }
 ```
 
@@ -145,8 +146,8 @@ void DisplayTrialVersionExpirationTime()
         if (licenseInformation.IsTrial)
         {
             var longDateFormat = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("longdate");
-                                                
-            // Display the expiration date using the DateTimeFormatter. 
+
+            // Display the expiration date using the DateTimeFormatter.
             // For example, longDateFormat.Format(licenseInformation.ExpirationDate)
 
             var daysRemaining = (licenseInformation.ExpirationDate - DateTime.Now).Days;
@@ -169,9 +170,7 @@ void DisplayTrialVersionExpirationTime()
 
 シミュレートされたライセンス サーバー呼び出しを使って、アプリをテストしてみましょう。 JavaScript、C#、Visual Basic、または Visual C++ で、アプリの初期化コード内の [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) への参照を [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) への参照に置き換えます。
 
-[
-              **CurrentAppSimulator**
-            ](https://msdn.microsoft.com/library/windows/apps/hh779766) は、%userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData にある "WindowsStoreProxy.xml" という XML ファイルから、テスト専用のライセンス情報を取得します。 このパスとファイルがない場合は、インストール時か実行時にそれらを作る必要があります。 WindowsStoreProxy.xml が所定の場所にない状態で [**CurrentAppSimulator.LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/hh779768) プロパティにアクセスしようとすると、エラーになります。
+[**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) は、%userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData にある "WindowsStoreProxy.xml" という XML ファイルから、テスト専用のライセンス情報を取得します。 このパスとファイルがない場合は、インストール時か実行時にそれらを作る必要があります。 WindowsStoreProxy.xml が所定の場所にない状態で [**CurrentAppSimulator.LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/hh779768) プロパティにアクセスしようとすると、エラーになります。
 
 この例は、異なるライセンス状態のもとでアプリをテストするときのコードを追加する方法を示します。
 
@@ -198,7 +197,7 @@ WindowsStoreProxy.xml を編集して、アプリや機能のシミュレート�
 
 シミュレートされたライセンス サーバーでアプリをテストした後、認定用にストアにアプリを提出する前に、[**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) を [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) に置き換えます (次のコード例を参照)。
 
-**重要:** アプリはストアへの提出時に [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) オブジェクトを使っている必要があり、そうでない場合は認定が不合格になります。
+**重要** アプリはストアへの提出時に [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) オブジェクトを使っている必要があり、そうでない場合は認定が不合格になります。
 
 ```CSharp
 void appInit()
@@ -225,7 +224,7 @@ void appInit()
 
 ## 関連トピック
 
-* [ストア サンプル (試用版とアプリ内購入のデモンストレーション)](http://go.microsoft.com/fwlink/p/?LinkID=627610)
+* [ストア サンプル (試用版とアプリ内購入のデモンストレーション)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
 * [アプリの価格と使用可能状況の設定](https://msdn.microsoft.com/library/windows/apps/mt148548)
 * [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765)
 * [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)
@@ -235,10 +234,6 @@ void appInit()
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

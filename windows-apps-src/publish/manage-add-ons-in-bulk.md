@@ -1,48 +1,58 @@
-﻿---
+---
 author: jnHs
-Description: Managing your add-ons in bulk allows you to make changes to multiple add-ons at once rather than submitting each update individually.
-title: Manage add-ons in bulk
+Description: "アドオンを一括管理すると、更新プログラムを個別に提出するのではなく、複数のアドオンに対して同時に変更を加えることができます。"
+title: "アドオンの一括管理"
+translationtype: Human Translation
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: 9d387cf3a7850301660a672e3255a762ecd3bd4a
+
 
 ---
 
-# Manage add-ons in bulk
+# アドオンの一括管理
 
-> **Important** This feature is currently only available to developer accounts which have joined the [Dev Center Insider Program](dev-center-insider-program.md). The implementation of this feature may change before it becomes available to all developers. This preliminary documentation provides some basic info about how the feature works.
+> **重要** 現在この機能は、[デベロッパー センター Insider Program](dev-center-insider-program.md) に参加している開発者アカウントでのみ利用できます。 すべての開発者が利用できるようになるまでに、この機能の実装は変更される可能性があります。 この暫定版ドキュメントでは、この機能のしくみに関する基本的な情報について説明します。
 
-Managing your add-ons in bulk allows you to make changes to multiple add-ons at once rather than submitting each update individually. You can access this functionality from your app’s overview page by clicking **Manage add-ons in bulk**.
+アドオンを一括管理すると、更新プログラムを個別に提出するのではなく、複数のアドオンに対して同時に変更を加えることができます。 この機能にアクセスするには、アプリの概要ページから **[アドオンの一括管理]** をクリックします。
 
-## Export current add-on info
+## 現在のアドオン情報のエクスポート
 
-To get started, you’ll first need to download a .csv template file. If you’ve already created add-ons, this file will include info about them. If not, it will be a blank file that you can use to enter info for new add-ons.
+最初に、.csv テンプレート ファイルをダウンロードする必要があります。 既にアドオンが作成されている場合、このファイルには、アドオンに関する情報が含まれています。 まだアドオンが作成されていない場合、このファイルは空のファイルとなり、新しいアドオンに関する情報を入力することができます。
 
-To generate and download this template file, click **Export add-ons** and save the .csv file to your computer.
+このテンプレート ファイルを生成し、ダウンロードするには、**[アドオンのエクスポート]** をクリックし、.csv ファイルをコンピューターに保存します。
 
-The .csv file contains the following columns. 
+.csv ファイルには、次の列が含まれています。 
 
-| Column name               | Description                            | Required?      |
+| 列名               | 説明                            | 必須かどうか      |
 |---------------------------|----------------------------------|----------------------|
-| Product ID	|  The unique [product ID](set-your-add-on-product-id.md#product-id) of the add-on.  | Yes. Can’t be changed after the add-on is published. |
-| Action |The action you want to apply when you import the template. Supported values are **Submit** (to submit a new add-on or update a previously-published add-on) and **CreateDraft** (to save the changes without submitting them to the Store). |	 Yes |
-| Product type	| The [product type](set-your-add-on-product-id.md#product-type) of the add-on. Supported values are **Consumable** or **Durable**. |	Yes. Can’t be changed after add-on is published. |
-| Product lifetime	| For a Durable add-on, this is either **Forever** (for a product that never expires) or a set duration. Acceptable duration values are: **1day, 3days, 5days, 7days, 14days, 30days, 60days, 90days, 180days, 365days**	| Yes (if Product type is Durable) |
-| Content type	| The [content type](enter-add-on-properties.md#content-type) of the add-on. For most add-ons. this should be **ElectronicSoftwareDownload**. Other acceptable values are: **ElectronicBooks, ElectronicMagazineSingleIssue, ElectronicNewspaperSingleIssue, MusicDownload, MusicStreaming, OnlineDataStorageServices, VideoDownload, VideoStreaming, SoftwareAsAService** |	Yes |
-| Tag	| Optional [Tag](enter-add-on-properties.md#custom-developer-data) (also known as **Custom developer data**) info used in your app’s implementation. | No |
-| Base price	| The [price tier](set-add-on-pricing-and-availability.md#base-price) at which you want to offer the add-on. Must either be **Free** or a valid price tier in the format **0.99USD**. |	Yes |
-| Release date	| The date at which you want to publish the add-on. Acceptable values are **Immediate**, **Manual**, or a date string that complies with the [ISO 8601 standard](http://go.microsoft.com/fwlink/p/?LinkId=817237). | Yes |
-| Titles	| The name that customers will see for the add-on, preceded by the language code and a semicolon. For example, to use the title “Example Title” in English/United States, you would *enter en-us;Example Title*. Additional titles for other languages can be separated by semicolons. Each title must be 100 characters or fewer. 	| Yes |
-|Descriptions	| Optional additional info to display to customers, preceded by the language-locale code and a semicolon. For example, to use the description “This is an example” in English/United States, you would enter *en-us;This is an example*. Additional titles for other languages can be separated by semicolons. Each description must be 200 characters or fewer.	| No |
-| Markets |	One or more [markets](define-pricing-and-market-selection.md#windows-store-consumer-markets) in which you want to offer the add-on. Separate each market by a semicolon. |	Yes |
-|Keywords |	Optional [keywords](enter-add-on-properties.md#keywords) used in your app’s implementation. | No |
+| 製品 ID    |  アドオン固有の[製品 ID](set-your-add-on-product-id.md#product-id) です。  | はい。 アドオンを公開した後は変更できません。 |
+| Action |テンプレートをインポートするときに適用する操作です。 サポートされる値は、**Submit** (新しいアドオンの提出、または以前に公開されたアドオンの更新)、および **CreateDraft** (アドオンをストアに提出せずに、変更を保存) です。 |  はい |
+| 製品の種類  | アドオンの[製品の種類](set-your-add-on-product-id.md#product-type)です。 サポートされる値は **Consumable** または **Durable** です。 |   はい。 アドオンを公開した後は変更できません。 |
+| 製品の有効期限  | 永続的なアドオンでは、この列には **Forever** (有効期限が切れない製品)、または期間を設定します。 利用可能な期間の値は、**1day、3days、5days、7days、14days、30days、60days、90days、180days、365days** です。    | はい (製品の種類が Durable (永続的) である場合) |
+| コンテンツの種類  | アドオンの[コンテンツの種類](enter-add-on-properties.md#content-type)です。 ほとんどのアドオンでは、 これは **ElectronicSoftwareDownload** になります。 利用可能なその他の値は、**ElectronicBooks、ElectronicMagazineSingleIssue、ElectronicNewspaperSingleIssue、MusicDownload、MusicStreaming、OnlineDataStorageServices、VideoDownload、VideoStreaming、SoftwareAsAService** です。 |    はい |
+| タグ   | アプリの実装で使用される[タグ](enter-add-on-properties.md#custom-developer-data) (**カスタムの開発者データ**とも呼ばれます) 情報です。省略可能です。 | いいえ |
+| 基本価格    | 提供するアドオンの基準となる[価格帯](set-add-on-pricing-and-availability.md#base-price)です。 **Free** を指定するか、**0.99USD** といった形式で有効な価格帯を指定する必要があります。 | はい |
+| リリース日  | アドオンを公開する日付。 利用可能な値は、**Immediate**、**Manual**、または [ISO 8601 標準](http://go.microsoft.com/fwlink/p/?LinkId=817237)に準拠している日付文字列です。 | はい |
+| タイトル    | ユーザーに対して表示されるアドオンの名前です。先頭には言語コードとセミコロンが付きます。 たとえば、英語 (米国) で “Example Title” というタイトルを使用する場合は、「*en-us;Example Title*」と入力します。 他の言語用にタイトルを追加する場合は、セミコロンでそれらのタイトルを区切ります。 各タイトルは、100 文字以下で指定する必要があります。  | はい |
+|説明   | ユーザーに表示する省略可能な追加情報です。先頭には言語-ロケールコードとセミコロンが付きます。 たとえば、英語 (米国) で “This is an example” という説明を使用する場合は、「*en-us;This is an example*」と入力します。 他の言語用に説明を追加する場合は、セミコロンでそれらのタイトルを区切ります。 各説明は、200 文字以下で指定する必要があります。    | いいえ |
+| 市場 | アドオンの提供先となる、1 つまたは複数の[市場](define-pricing-and-market-selection.md#windows-store-consumer-markets)です。 各市場はセミコロンで区切ります。 |  はい |
+|キーワード | アプリの実装で使用される[キーワード](enter-add-on-properties.md#keywords)です。省略可能です。 | いいえ |
 
-## Import add-ons
+## アドオンのインポート
 
-Before you can import changes, you’ll need to update the downloaded .csv file with the changes you’d like to make.
+変更内容をインポートする前に、必要な変更内容に基づいて、ダウンロードした .csv ファイルを更新する必要があります。
 
-To make changes to add-ons that you’ve already published, update the values you wish to change in your copy of the spreadsheet. You can remove any rows for add-ons that you don’t want to update, or leave them as is. Note that if there is already a submission in progress for that add-on, you won’t be able to make changes using the .csv file.
+既に公開されているアドオンに変更を加えるには、スプレッドシートのコピーで、変更が必要な値を更新します。 更新する必要がないアドオンの行は、削除することもできますし、そのままにしておくこともできます。 該当するアドオンについて既に申請が進行中である場合は、.csv ファイルを使用した変更を行うことはできません。
 
-> **Important** When submitting updates to add-ons that you’ve already published, you can’t change the **Product ID** and **Product type** fields.
+> **重要** 既に公開されているアドオン向けの更新プログラムを提出するとき、**製品 ID** フィールドと**製品の種類**フィールドを変更することはできません。
 
-To submit a new add-on, add a new row and enter the info for your new add-on. Be sure to enter all of the required info. 
+新しいアドオンを提出するには、新しい行を追加して、新しいアドオンに関する情報を入力します。 必要な情報はすべて必ず入力してください。 
 
-When you have made all of the changes, save the .csv file (with the same filename), then upload the file by dragging it to the specified field (or click **Browse your files**). A summary of your changes will be shown, along with any errors that must be fixed before submitting. After you’ve verified that the info is correct, you can click **Submit to the Store**. Each add-on will go through the submission process using the info that you’ve provided.
+すべての変更を行ったら、.csv ファイルを保存し (同じファイル名を使用)、指定されたフィールドにファイルをドラッグして (または **[ファイルの参照]** をクリックして)、ファイルをアップロードします。 変更の概要が表示されます。提出する前に修正する必要があるエラーがある場合は、エラーも表示されます。 情報が正しいことを確認して、**[ストアに提出]** をクリックします。 各アドオンに対して、提供された情報を使用して、申請プロセスが開始されます。
+
+
+
+
+<!--HONumber=Aug16_HO3-->
+
 

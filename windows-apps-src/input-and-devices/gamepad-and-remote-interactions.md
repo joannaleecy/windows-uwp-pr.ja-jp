@@ -19,8 +19,7 @@ PC 上の UWP アプリで、ゲームパッドをプラグインして使用で
 
 UWP アプリでのゲームパッドやリモコンを使ったユーザー エクスペリエンスが十分に満足の行くものであることを確認するには、次のことを考慮します。
 
-* [ハードウェア ボタン](designing-for-tv.md#hardware-buttons)
-             -
+* [ハードウェア ボタン](designing-for-tv.md#hardware-buttons) -
 ゲームパッドとリモコンは異なるボタンと構成を提供します。
 
 * [XY フォーカス ナビゲーションと操作](designing-for-tv.md#xy-focus-navigation-and-interaction)

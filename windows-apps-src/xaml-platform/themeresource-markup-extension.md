@@ -3,8 +3,9 @@ author: jwmsft
 description: "現在アクティブなテーマに応じて異なるリソースを取得する追加のシステム ロジックと共に、リソースへの参照を評価して任意の XAML 属性の値を提供します。"
 title: "ThemeResource マークアップ拡張"
 ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
+translationtype: Human Translation
 ms.sourcegitcommit: 9c657f906e6dedb259b8a98373f56ac5a63bd845
-ms.openlocfilehash: 246c991bbdbc95e73ea8d4884cd4d617592bfc51
+ms.openlocfilehash: 803c62987c3a019fc576c6f1d0c343e042ba947b
 
 ---
 
@@ -32,8 +33,7 @@ ms.openlocfilehash: 246c991bbdbc95e73ea8d4884cd4d617592bfc51
 
 アプリが最初に起動されると、**ThemeResource** 参照によって行われたすべてのリソース参照が、起動時に使われたテーマに基づいて評価されます。 ただし、ユーザーが後で実行時にアクティブなテーマを変更した場合、システムは、すべての **ThemeResource** 参照を再評価し、(異なっている可能性のある) テーマに固有のリソースを取得した後、ビジュアル ツリーのすべての適切な場所に新しいリソース値を持つアプリを再表示します。 **StaticResource** は、XAML の読み込み時またはアプリの起動時に判定され、実行時には再評価されません  (XAML を動的に再読み込みする表示状態などの他の方法もありますが、これらの方法は、基本的なリソースの評価が [{StaticResource} マークアップ拡張](staticresource-markup-extension.md)によって有効化されるより高いレベルで動作します)。
 
-
-            **ThemeResource** は、要求されたリソースについてキーを指定する 1 個の引数を受け取ります。 リソース キーは常に、Windows ランタイム XAML の文字列です。 リソース キーを最初に指定する方法について詳しくは、「[x:Key 属性](x-key-attribute.md)」をご覧ください。
+**ThemeResource** は、要求されたリソースについてキーを指定する 1 個の引数を受け取ります。 リソース キーは常に、Windows ランタイム XAML の文字列です。 リソース キーを最初に指定する方法について詳しくは、「[x:Key 属性](x-key-attribute.md)」をご覧ください。
 
 リソースの定義方法と [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) の適切な使用方法 (サンプル コードを含む) について詳しくは、「[ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)」をご覧ください。
 
@@ -44,8 +44,7 @@ ms.openlocfilehash: 246c991bbdbc95e73ea8d4884cd4d617592bfc51
 
 Windows ランタイム XAML プロセッサの実装では、**ThemeResource** のバッキング クラス表現はありません。 コードで最も近いのは、[**Contains**](https://msdn.microsoft.com/library/windows/apps/jj635925) または [**TryGetValue**](https://msdn.microsoft.com/library/windows/apps/jj603139) を呼び出すなど、[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) のコレクション API を使うことです。
 
-
-            **ThemeResource** はマークアップ拡張です。 通常、マークアップ拡張は、属性値をリテラル値やハンドラー名以外にエスケープする必要があり、特定の型やプロパティに対して型コンバーターを指定するのではなく、よりグローバルにその必要がある場合に実装します。 XAML のすべてのマークアップ拡張では、それぞれの属性構文で "{" と "}" の文字を使います。これは規約であり、これに従って XAML プロセッサは、マークアップ拡張で属性を処理する必要があることを認識します。
+**ThemeResource** はマークアップ拡張です。 通常、マークアップ拡張は、属性値をリテラル値やハンドラー名以外にエスケープする必要があり、特定の型やプロパティに対して型コンバーターを指定するのではなく、よりグローバルにその必要がある場合に実装します。 XAML のすべてのマークアップ拡張では、それぞれの属性構文で "{" と "}" の文字を使います。これは規約であり、これに従って XAML プロセッサは、マークアップ拡張で属性を処理する必要があることを認識します。
 
 ### {StaticResource} ではなく {ThemeResource} を使う状況とその方法
 
@@ -65,12 +64,9 @@ Windows ランタイムには、特に **ThemeResource** から参照するた�
 
 コントロール テンプレートの表示状態の XAML 定義では、テーマの変更によって変更される可能性がある基になるリソースがある場合は常に **ThemeResource** 参照を使う必要があります。 通常、システム テーマが変更されても、表示状態の変更は発生しません。 この場合、リソースでは、**ThemeResource** 参照を使って、依然アクティブな表示状態に対して値を再評価できるようにする必要があります。 たとえば、特定の UI 部分のブラシの色とそのプロパティの 1 つを変更する表示状態があり、そのブラシの色がテーマごとに異なる場合は、**ThemeResource** 参照を使って、既定のテンプレートのこのプロパティ値と、その既定のテンプレートに対する表示状態の変更を提供する必要があります。
 
+**ThemeResource** は、一連の依存型の値で使われる場合があります。 たとえば、キーを持つリソースである [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) で使われる [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) で **ThemeResource** 参照を使うことがあります。 ただし、キーを持つ **SolidColorBrush** リソースを使う任意の UI プロパティで **ThemeResource** 参照を使うこともあります。この場合、テーマが変更されたときに動的な値の変更を可能にするのはそれぞれの [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) タイプのプロパティです。
 
-            **ThemeResource** は、一連の依存型の値で使われる場合があります。 たとえば、キーを持つリソースである [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) で使われる [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) で **ThemeResource** 参照を使うことがあります。 ただし、キーを持つ **SolidColorBrush** リソースを使う任意の UI プロパティで **ThemeResource** 参照を使うこともあります。この場合、テーマが変更されたときに動的な値の変更を可能にするのはそれぞれの [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) タイプのプロパティです。
-
-
-            **注**
-            `{ThemeResource}` とテーマの切り替え時の実行時のリソース評価は Windows 8.1 XAML でサポートされますが、Windows 8 をターゲットとするアプリの XAML ではサポートされません。
+**注**  テーマ切り替え時の `{ThemeResource}` および実行時リソースの評価は Windows 8.1 XAML ではサポートされますが、Windows 8 をターゲットとするアプリの XAML ではサポートされません。
 
 ### システム リソース
 
@@ -160,6 +156,6 @@ MicrosoftVisual Studio 2013 では、XAML ページで **{ThemeResource}** マ�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

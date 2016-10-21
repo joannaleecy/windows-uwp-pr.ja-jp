@@ -1,36 +1,40 @@
 ---
 author: mcleanbyron
 ms.assetid: 4920D262-B810-409E-BA3A-F68AADF1B1BC
-description: Use the Java code examples in this section to learn more about using the Windows Store submission API.
-title: Java code examples for the Windows Store submission API
+description: "このセクションの Java コード例を使用して、Windows ストア申請 API を使用する方法をご確認ください。"
+title: "Windows ストア申請 API の Java コード例"
+translationtype: Human Translation
+ms.sourcegitcommit: b0154cc0669dd97e57ed75fa1f65afa8d23ae0b7
+ms.openlocfilehash: 26d5812e41531cf852606227805d0a84255a3f47
+
 ---
 
-# Java code examples for the Windows Store submission API
+# Windows ストア申請 API の Java コード例
 
-This article provides Java code examples for using the *Windows Store submission API*. For more information about this API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
+この記事では、*Windows ストア申請 API* を使用するための Java コード例を紹介します。 この API について詳しくは、｢[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)｣をご覧ください。
 
-These code examples demonstrate the following tasks:
+ここでは、次のタスクに対応するコード例を示します。
 
-* [Obtain an Azure AD access token](java-code-examples-for-the-windows-store-submission-api.md#token).
-* [Create an add-on](java-code-examples-for-the-windows-store-submission-api.md#create-add-on).
-* [Create a package flight](java-code-examples-for-the-windows-store-submission-api.md#create-package-flight).
-* [Create and commit an app submission](java-code-examples-for-the-windows-store-submission-api.md#create-app-submission).
-* [Create and commit an add-on submission](java-code-examples-for-the-windows-store-submission-api.md#create-add-on-submission).
-* [Create and commit a package flight submission](java-code-examples-for-the-windows-store-submission-api.md#create-flight-submission).
+* [Azure AD アクセス トークンの取得](java-code-examples-for-the-windows-store-submission-api.md#token)。
+* [アドオンの作成](java-code-examples-for-the-windows-store-submission-api.md#create-add-on)。
+* [パッケージ フライトの作成](java-code-examples-for-the-windows-store-submission-api.md#create-package-flight)。
+* [アプリの申請の作成とコミット](java-code-examples-for-the-windows-store-submission-api.md#create-app-submission)。
+* [アドオンの申請の作成とコミット](java-code-examples-for-the-windows-store-submission-api.md#create-add-on-submission)。
+* [パッケージ フライトの申請の作成とコミット](java-code-examples-for-the-windows-store-submission-api.md#create-flight-submission)。
 
-You can review each example to learn more about the task it demonstrates, or you can build all the code examples in this article into a console application. For the complete code listing, see the [code listing](java-code-examples-for-the-windows-store-submission-api.md#code-listing) section at the end of this article.
+各例を確認して、それぞれが対応するタスクについて詳しく知ることができます。また、この記事のすべてのコード例を使って、コンソール アプリケーションをビルドすることもできます。 完全なコードについては、この記事の最後の「[完全なコード](java-code-examples-for-the-windows-store-submission-api.md#code-listing)」のセクションをご覧ください。
 
-## Prerequisites
+## 前提条件
 
-These examples use the following libraries:
+以下の例では、次のライブラリを使用します。
 
-* [Apache Commons Logging 1.2](http://commons.apache.org/proper/commons-logging)  (commons-logging-1.2.jar).
-* [Apache HttpComponents Core 4.4.5 and Apache HttpComponents Client 4.5.2](https://hc.apache.org/) (httpcore-4.4.5.jar and httpclient-4.5.2.jar).
-* [JSR 353 JSON Processing API 1.0](https://mvnrepository.com/artifact/javax.json/javax.json-api/1.0) and [JSR 353 JSON Processing Default Provider API 1.0.4](https://mvnrepository.com/artifact/org.glassfish/javax.json/1.0.4) (javax.json-api-1.0.jar and javax.json-1.0.4.jar).
+* [Apache Commons Logging 1.2](http://commons.apache.org/proper/commons-logging)  (commons-logging-1.2.jar)。
+* [Apache HttpComponents Core 4.4.5 および Apache HttpComponents Client 4.5.2](https://hc.apache.org/) (httpcore-4.4.5.jar and httpclient-4.5.2.jar)。
+* [JSR 353 JSON Processing API 1.0](https://mvnrepository.com/artifact/javax.json/javax.json-api/1.0) および [JSR 353 JSON Processing Default Provider API 1.0.4](https://mvnrepository.com/artifact/org.glassfish/javax.json/1.0.4) (javax.json-api-1.0.jar and javax.json-1.0.4.jar)。
 
-## Main program and imports
+## メイン プログラムとインポート
 
-The following example shows the imports statements used by all of the code examples and implements a command line program that calls the other example methods.
+次の例は、この記事のすべてのコード例で使用されている import ステートメントを示しています。このコード例によって、他のメソッドの例を呼び出すコマンド ライン プログラムが実装されます。
 
 ```java
 import java.io.ByteArrayInputStream;
@@ -98,9 +102,9 @@ public class IngestionServiceJavaSamples {
 ```
 
 <span id="token" />
-## Obtain an Azure AD access token
+## Azure AD アクセス トークンの取得
 
-The following example demonstrates how to [obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token).
+次の例は、[Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)する方法を示しています。
 
 ```java
 public static String GenerateAccessToken(String tenantId, String clientId, String clientSecret) {        
@@ -135,9 +139,9 @@ public static String GenerateAccessToken(String tenantId, String clientId, Strin
 ```
 
 <span id="create-add-on" />
-## Create an add-on
+## アドオンの作成
 
-The following example demonstrates how to [create a new add-on](manage-add-ons.md) (add-ons are also known as in-app products or IAPs).
+次の例は、[新しいアドオンを作成](manage-add-ons.md)する方法を示しています (アドオンは "アプリ内製品"、略して "IAP" とも呼ばれます)。
 
 ```java
 public static void CreateNewInAppProduct(String accessToken, String inAppProductRequestJson) throws InterruptedException, IOException {
@@ -212,9 +216,9 @@ private static ResponseHandler<JsonObject> CreateJsonResponseHandler(){
 ```
 
 <span id="create-package-flight" />
-## Create a package flight
+## パッケージ フライトの作成
 
-The following example demonstrates how to [create a new package flight](manage-flights.md).
+次の例は、[新しいパッケージ フライトを作成](manage-flights.md)する方法を示しています。
 
 ```java
 public static void CreateNewFlight(String accessToken, String applicationId, String flightRequestJson) throws InterruptedException, IOException {
@@ -290,9 +294,9 @@ private static ResponseHandler<JsonObject> CreateJsonResponseHandler(){
 ```
 
 <span id="create-app-submission" />
-## Create and commit an app submission
+## アプリの申請の作成とコミット
 
-The following example demonstrates how to [create and commit a new app submission](manage-app-submissions.md).
+次の例は、[新しいアプリの申請を作成](manage-app-submissions.md)する方法を示しています。
 
 ```java
 public static void SubmitNewApplicationSubmission(String accessToken, String applicationId, String appSubmissionRequestJson, String zipFilePath) throws InterruptedException, IOException {
@@ -426,9 +430,9 @@ private static void UploadZipFile(String fileUploadUrl, String zipFilePath) thro
 ```
 
 <span id="create-add-on-submission" />
-## Create and commit an add-on submission
+## アドオンの申請の作成とコミット
 
-The following example demonstrates how to [create and commit a new add-on submission](manage-add-on-submissions.md) (add-ons are also known as in-app products or IAPs).
+次の例は、[新しいアドオンの申請を作成し、コミット](manage-add-on-submissions.md)する方法を示しています (アドオンは "アプリ内製品"、略して "IAP" とも呼ばれます)。
 
 ```java
 public static void SubmitNewInAppProductSubmission(String accessToken, String inAppProductId, String iapSubmissionRequestJson, String zipFilePath) throws InterruptedException, IOException {
@@ -560,9 +564,9 @@ private static void UploadZipFile(String fileUploadUrl, String zipFilePath) thro
 ```
 
 <span id="create-flight-submission" />
-## Create and commit a package flight submission
+## パッケージ フライトの申請の作成とコミット
 
-The following example demonstrates how to [create and commit a new package flight submission](manage-flight-submissions.md).
+次の例は、[新しいパッケージ フライトの申請を作成し、コミット](manage-flight-submissions.md)する方法を示しています。
 
 ```java
 public static void SubmitNewFlightSubmission(String accessToken, String applicationId, String flightId, String flightSubmissionRequestJson, String zipFilePath) throws InterruptedException, URISyntaxException, IOException {
@@ -695,9 +699,9 @@ private static void UploadZipFile(String fileUploadUrl, String zipFilePath) thro
 ```
 
 <span id="code-listing" />
-## Complete code listing
+## 完全なコード
 
-The following code listing contains all of the previous examples organized into one source file.
+次のコードは、上記のすべての例を 1 つのソース ファイルにまとめた状態です。
 
 ```java
 import java.io.ByteArrayInputStream;
@@ -1129,6 +1133,12 @@ public class IngestionServiceJavaSamples {
 }
 ```
 
-## Related topics
+## 関連トピック
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

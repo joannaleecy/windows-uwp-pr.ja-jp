@@ -1,25 +1,32 @@
 ---
-author: martinekuan
+author: GrantMeStrength
 ms.assetid: C9787269-B54F-4FFA-A884-D4A3BF28F80D
 title: "ユニバーサル Windows プラットフォーム (UWP) アプリとは"
 description: "ユニバーサル Windows アプリと呼ばれるさまざまな種類のアプリ (Windows ストア アプリ、Windows Phone ストア アプリ、Windows ランタイム アプリ) について説明します。"
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: f02851d848a82af7104a6038c5d8850d5362c832
+translationtype: Human Translation
+ms.sourcegitcommit: 6be8bb0a78b614e160fb40629601bdab2d7fc71a
+ms.openlocfilehash: 3fd9f4d539977c4b531e08efe0719328365c757c
 
 ---
 
 # ユニバーサル Windows プラットフォーム (UWP) アプリとは
 
+Windows プラットフォームを初めて使う場合、またはこれまでは .NET、Windows フォーム、Silverlight を使っていた場合は、UWP* *アプリが実際にはどのようなものかわからないかもしれません。 
+
+心配する必要はありません。 すぐにすべて明らかになります。 
+
 ユニバーサル Windows プラットフォーム (UWP) アプリは、ユニバーサル Windows プラットフォーム (UWP) 上に構築された Windows エクスペリエンスであり、Windows 8 で Windows ランタイムとして初めて導入されました。 UWP アプリの中核となるのは、ユーザーがすべてのデバイスでモバイル *エクスペリエンス*を手に入れたい、目の前の作業に一番便利で効率的なデバイスを使いたいという考え方です。
 
-Windows 10 を使うことで、UWP 用アプリの開発がこれまでよりも簡単になります。API セット、アプリ パッケージ、ストアをそれぞれ 1 つ使うだけで、すべての Windows 10 デバイス (PC、タブレット、電話など) で利用可能なアプリを作成できます。 また、さまざまな画面サイズ、操作方式 (タッチ、マウスとキーボード、ゲームコントローラー、ペン) のサポートもより簡単になります。
+Windows 10 を使うことで、UWP 用アプリの開発がこれまでよりも簡単になります。API セット、アプリ パッケージ、ストアをそれぞれ 1 つ使うだけで、すべての Windows 10 デバイス (PC、タブレット、電話、Xbox、HoloLens、Surface Hub など) で利用可能なアプリを作成できます。 また、さまざまな画面サイズ、操作方式 (タッチ、マウスとキーボード、ゲームコントローラー、ペン) のサポートもより簡単になります。
+
+結論: プログラミング言語と API は使い慣れたもので、すべては 1 つのプロジェクトに収まっており、まったく同じコードが現在存在するさまざまな Windows ハードウェア上で動作します。
 
 ![Windows デバイス](images/1894834-hig-device-primer-01-500.png)
 
-##それでは、UWP アプリとは何でしょうか。
+##それでは、UWP アプリとは*厳密には*どのようなものでしょうか。
 
 
-UWP アプリの一番の特徴は何でしょうか。 以下に、それらの特徴をいくつか挙げます。
+UWP アプリの一番の特徴は何でしょうか。 以下に、Windows 10 の UWP アプリの特徴をいくつか挙げます。
 
 -   OS ではなくデバイス ファミリを対象にする。
 
@@ -92,8 +99,14 @@ UWP について詳しくは、[ユニバーサル Windows プラットフォー
 * [ユニバーサル Windows プラットフォーム アプリのガイド](universal-application-platform-guide.md)
 * [準備](get-set-up.md)
 
+## 高度なトピック
+
+* [.NET Native - ユニバーサル Windows プラットフォーム (UWP) 開発者にとっての意味](https://blogs.windows.com/buildingapps/2015/08/20/net-native-what-it-means-for-universal-windows-platform-uwp-developers/#TYsD3tJuBJpK3Hc7.97)
+* [.NET でのユニバーサル Windows アプリ](https://blogs.msdn.microsoft.com/dotnet/2015/07/30/universal-windows-apps-in-net)
+* [UWP アプリの .NET](https://msdn.microsoft.com/en-us/library/mt185501.aspx)
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Sep16_HO3-->
 
 

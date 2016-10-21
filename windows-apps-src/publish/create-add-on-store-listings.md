@@ -1,42 +1,52 @@
-﻿---
+---
 author: jnHs
-Description: When submitting an add-on, the info you provide in the Store listings step will be displayed to your customers.
-title: Create add-on Store listings
+Description: "アドオンを申請するとき、ストア登録情報の手順で入力した情報がユーザーに表示されます。"
+title: "アドオンのストア登録情報の作成"
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
+translationtype: Human Translation
+ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
+ms.openlocfilehash: 607dab75b8e446109cbb60c6c149732501f5b43c
+
 ---
 
-# Create add-on Store listings
+# アドオンのストア登録情報の作成
 
 
-When submitting an add-on, the info you provide in the **Store listings** step will be displayed to your customers when they see the option to acquire your add-on. Make sure to consider the Store listing info carefully in order to represent your add-on accurately in a way that makes it appealing to customers. You can provide customized Store listings for different languages.
+**ストア登録情報**の手順で入力した情報は、アドオンを申請する際、アドオンを入手するためのオプションを表示したときにユーザーに表示されます。 ストア登録情報は、ユーザーを最も引きつける方法でアドオンを正確に表すように慎重に検討してください。 また、このストア登録情報は、さまざまな言語でカスタマイズすることができます。
 
-## Languages
-
-
-Before you can enter Store listing info, you need to specify one or more [languages](supported-languages.md). We recommend providing Store listings for every language your app supports.
-
-Under the **Store listing** section of your add-on's submission, click **Manage Store listing languages**, then click **Manage languages** on the next page. Check the boxes for the languages that you’d like to add, then click **Update**. The languages that you’ve selected will be displayed in the **Store listing languages** section of the page. To remove one or more of these languages, click **Remove** (or click **Manage languages** and uncheck the box for languages you’d like to remove). Click **Save** when you're happy with the list of languages.
-
-> **Tip** To add and remove additional languages, click **Manage Store listing languages** from the add-on submission overview.
-
-To edit a Store listing, click the language name on the add-on submission overview. The info you can enter for each language is described below.
-
-## Title
-
-You must provide a title here, which is the name your customers will see for this add-on. Your title can be up to 100 characters.
-
-## Description
-
-If you'd like to display more info than just a title, you can enter up to 200 characters here. This field is optional.
-
-## Icon
-
-You also have the option to provide an image that may be displayed to the customer. This icon must be a .png file that measures exactly 300 x 300 pixels.
-
- 
-
- 
+## 言語
 
 
+ストア登録情報を入力する前に、1 つ以上の[言語](supported-languages.md)を指定する必要があります。 アプリがサポートするすべての言語でストア登録情報を提供することをお勧めします。
+
+アドオンの申請の **[ストア登録情報]** セクションで、**[ストア登録情報の言語を管理する]** をクリックし、次のページで **[言語の管理]** をクリックします。 追加する言語のチェック ボックスをクリックし、**[更新]** をクリックします。 選択した言語が、ページの **[ストア登録情報の言語]** セクションに表示されます。 1 つ以上の言語を削除するには、**[削除]** をクリックします (または、**[言語の管理]** をクリックし、削除する言語のチェック ボックスをオフにします)。 必要な言語の一覧が作成されたら、**[保存]** をクリックします。
+
+> **ヒント:** 言語を追加または削除するには、アドオンの申請の概要で **[ストア登録情報の言語を管理する]** をクリックします。
+
+ストア登録情報を編集するには、アドオンの申請の概要で言語名をクリックします。 言語ごとに入力できる情報は次のとおりです。
+
+## Title (タイトル)
+
+ここにはタイトルを入力します。これは、このアドオンの名前としてユーザーに表示されます。 タイトルは、最大 100 文字入力できます。
+
+## 説明
+
+タイトルより多くの情報を表示する場合、ここに最大 200 文字入力することができます。 このフィールドは省略可能です。
+
+## アイコン
+
+ユーザーに表示できる画像を指定するオプションもあります。 このアイコンには、300 x 300 ピクセルの .png ファイルを使用する必要があります。
+
+ 
+
+ 
+
+
+
+
+
+
+
+<!--HONumber=Aug16_HO5-->
 
 

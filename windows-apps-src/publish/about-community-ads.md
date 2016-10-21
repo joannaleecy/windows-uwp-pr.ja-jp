@@ -3,8 +3,9 @@ author: jnHs
 Description: "自分のアプリと他の開発者が公開したアプリを相互に販売促進 (クロス プロモーション) することができます。 この機能をコミュニティ広告と呼びます。"
 title: "コミュニティ広告について"
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
+translationtype: Human Translation
 ms.sourcegitcommit: 90e63d53c68e25816fd1f7b532792d9ad6dc2cc6
-ms.openlocfilehash: 582b26d2dde6cf4f3c7dd6f6d7b182ec4b7002ea
+ms.openlocfilehash: db771fbd56db55b5767e4e335dcb10514f7a0bae
 
 ---
 
@@ -25,13 +26,11 @@ ms.openlocfilehash: 582b26d2dde6cf4f3c7dd6f6d7b182ec4b7002ea
 
 コミュニティ広告にオプトインするには、次の手順を実行します。
 
-1. Windows デベロッパー センター ダッシュボードで、**[収益化]**&gt;**[広告で収入を増やす]** ページにアクセスします。
+1. Windows デベロッパー センター ダッシュボードで、 **[収益化]** &gt; **[広告で収入を増やす]** ページにアクセスします。
 2. **[Community ads]** (コミュニティ広告) セクションの **[Show community ads in my app]** (アプリにコミュニティ広告を表示する) チェック ボックスをオンにします。
-   > 
-            **注**  このチェック ボックスをオンまたはオフにした後は、アプリを再公開して変更を有効にする必要はありません。
+   > **注**  このチェック ボックスをオンまたはオフにした後は、アプリを再公開して変更を有効にする必要はありません。
 
-3. 
-            アプリの[広告キャンペーンを作成](create-an-ad-campaign-for-your-app.md)します。 キャンペーンの種類として **[Free community ads]** (無料のコミュニティ広告) を選択します。
+3. アプリの[広告キャンペーンを作成](create-an-ad-campaign-for-your-app.md)します。 キャンペーンの種類として **[Free community ads]** (無料のコミュニティ広告) を選択します。
 
 
 ## 関連トピック
@@ -41,6 +40,6 @@ ms.openlocfilehash: 582b26d2dde6cf4f3c7dd6f6d7b182ec4b7002ea
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

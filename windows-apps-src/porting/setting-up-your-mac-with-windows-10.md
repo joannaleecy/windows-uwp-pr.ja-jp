@@ -3,8 +3,9 @@ author: mcleblanc
 description: "現在の Mac コンピューターを使用して、Windows 用アプリを開発します。"
 title: "Windows 10 を使用するための Mac のセットアップ"
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 10ebdb0a534d8f2931d15481c1bee4705268b0bb
+ms.openlocfilehash: b0a6c701237e7eeb1d96964ad429d73373e55252
 
 ---
 
@@ -18,13 +19,11 @@ ms.openlocfilehash: 10ebdb0a534d8f2931d15481c1bee4705268b0bb
 
 ユニバーサル Windows アプリの開発を始める準備は整っているのに、PC が手元にない、そういう方でも 大丈夫です。Mac を使うことができます。 Apple Boot Camp や Oracle VirtualBox、VMware Fusion、Parallels Desktop のような人気のサードパーティ ソリューションを使って、Windows 10 と Microsoft Visual Studio を Apple コンピューターにインストールできます。
 
-
-            **注** ディスクまたは USB フラッシュ ドライブ上の Windows 10 の起動可能なイメージが必要です。 MSDN サブスクライバーである場合は、MSDN サブスクライバー ダウンロード センターからインストール イメージをダウンロードできます。 サブスクライバーでない場合は、[Windows ストアに関するページ](http://apps.microsoft.com/windows/app)からインストーラーを購入できます。 [この場所](http://go.microsoft.com/fwlink/?LinkId=623906)からダウンロードすることもできます。これは、Windows を既に実行中でありアップグレードする場合に便利です。
+**注**  ディスクまたは USB フラッシュ ドライブ上の Windows 10 の起動可能なイメージが必要です。 MSDN サブスクライバーである場合は、MSDN サブスクライバー ダウンロード センターからインストール イメージをダウンロードできます。 サブスクライバーでない場合は、[Windows ストアに関するページ](http://apps.microsoft.com/windows/app)からインストーラーを購入できます。 [この場所](http://go.microsoft.com/fwlink/?LinkId=623906)からダウンロードすることもできます。これは、Windows を既に実行中でありアップグレードする場合に便利です。
 
 Windows を実行したら、「[Windows 10 用のダウンロードとツール](http://go.microsoft.com/fwlink/p/?LinkId=302144)」から Visual Studio 2015 をインストールし、アプリの作成を開始できます。
 
-
-            **注** Visual Studio のデバイスのエミュレーターを使用する予定の場合、64 ビット (x64) バージョンの Windows 10 Pro 以上をインストールする**必要があります**。 ただし、以前の Mac では 64 ビット版の Windows を実行できない場合があります。 この [Apple サポート ページ](http://go.microsoft.com/fwlink/p/?LinkID=397959)で、お使いのハードウェアに互換性があるかどうかを確認してください。
+**注**  Visual Studio のデバイスのエミュレーターを使用する予定の場合、64 ビット (x64) バージョンの Windows 10 Pro 以上をインストールする **必要があります**。 ただし、以前の Mac では 64 ビット版の Windows を実行できない場合があります。 この [Apple サポート ページ](http://go.microsoft.com/fwlink/p/?LinkID=397959)で、お使いのハードウェアに互換性があるかどうかを確認してください。
 
 ## Apple Boot Camp
 
@@ -45,6 +44,6 @@ VirtualBox は、お使いのコンピューター上で仮想マシンを実行
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,16 +5,14 @@ title: "アダプティブ トースト通知と対話型トースト通知"
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Adaptive and interactive toast notifications
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 17faf0ccb0207b318963e00655d7ac91b97e066b
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 55f5cd9e647e74d7861a7472872373d8949b79ba
 
 ---
-
 # アダプティブ トースト通知と対話型トースト通知
 
-
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 アダプティブ トースト通知と対話型トースト通知を使うと、より多くのコンテンツやオプションのインライン画像を含み、オプションのユーザー操作を備えた柔軟性のあるポップアップ通知を作成できます。
 
@@ -24,12 +22,11 @@ ms.openlocfilehash: 17faf0ccb0207b318963e00655d7ac91b97e066b
 -   メインのトースト通知や各操作用の 3 つの異なるアクティブ化の種類。
 -   特定のシナリオ (アラーム、リマインダー、着信呼び出しなど) 向けの通知を作成するためのオプション。
 
-
-            **注**   Windows 8.1 や Windows Phone 8.1 の従来のテンプレートについては、「[従来のトースト テンプレート カタログ](https://msdn.microsoft.com/library/windows/apps/hh761494)」をご覧ください。
+**注**   Windows 8.1 や Windows Phone 8.1 の従来のテンプレートについては、「[従来のトースト テンプレート カタログ](https://msdn.microsoft.com/library/windows/apps/hh761494)」をご覧ください。
 
  
 
-## <span id="toast_structure"></span><span id="TOAST_STRUCTURE"></span>トースト通知の構造体
+## トースト通知の構造体
 
 
 トースト通知は XML を使って作成され、通常、次の主要な要素を含んでいます。
@@ -61,7 +58,7 @@ ms.openlocfilehash: 17faf0ccb0207b318963e00655d7ac91b97e066b
 
 ![トースト通知の構造体](images/adaptivetoasts-structure.jpg)
 
-### <span id="Visual"></span><span id="visual"></span><span id="VISUAL"></span>視覚
+### 視覚
 
 visual 要素内には、トースト通知の視覚的なコンテンツを含んだ binding 要素を 1 つだけ指定する必要があります。
 
@@ -72,7 +69,7 @@ visual 要素内には、トースト通知の視覚的なコンテンツを含�
 
 visual セクションとその子要素でサポートされているすべての属性については、後で説明する「スキーマ」セクションをご覧ください。 その他の例については、以下の「XML の例」セクションをご覧ください。
 
-### <span id="Actions"></span><span id="actions"></span><span id="ACTIONS"></span>操作
+### 操作
 
 UWP アプリでは、ボタンや他の入力をトースト通知に追加できます。これにより、ユーザーはアプリの外部で、より多くの操作を実行できるようになります。 これらの操作は &lt;actions&gt; 要素の下に指定します。指定できる操作は 2 種類あります。
 
@@ -90,7 +87,7 @@ UWP アプリでは、ボタンや他の入力をトースト通知に追加で�
 
 visual セクションとその子要素でサポートされているすべての属性については、後で説明する「スキーマ」セクションをご覧ください。 その他の例については、以下の「XML の例」セクションをご覧ください。
 
-### <span id="Audio"></span><span id="audio"></span><span id="AUDIO"></span>オーディオ
+### オーディオ
 
 デスクトップ プラットフォームを対象とする UWP アプリでは、カスタム サウンドは現在サポートされていません。代わりに、デスクトップ上のアプリ用の ms-winsoundevent の一覧から選ぶことができます。 モバイル プラットフォーム上の UWP アプリでは、ms-winsoundevent と、次の形式のカスタム サウンドの両方をサポートしています。
 
@@ -99,7 +96,7 @@ visual セクションとその子要素でサポートされているすべて�
 
 トースト通知でのオーディオについては、[オーディオ スキーマに関するページ](https://msdn.microsoft.com/library/windows/apps/br230842)をご覧ください。このページには、ms-winsoundevent の完全な一覧も記載されています。
 
-## <span id="Alarms__reminders__and_incoming_calls"></span><span id="alarms__reminders__and_incoming_calls"></span><span id="ALARMS__REMINDERS__AND_INCOMING_CALLS"></span>アラーム、リマインダー、着信呼び出し
+## アラーム、リマインダー、着信呼び出し
 
 
 アラーム、リマインダー、着信呼び出し用にトースト通知を使うことができます。 これらの特別なトースト通知の外観は標準のトースト通知と同じですが、特別なトースト通知では、シナリオ ベースのカスタムの UI とパターンを利用できます。
@@ -108,11 +105,10 @@ visual セクションとその子要素でサポートされているすべて�
 -   アラーム通知では、上記の動作をリマインダー通知と共有するだけでなく、ループするオーディオを自動的に再生します。
 -   着信呼び出し通知は、Windows Mobile デバイスでは全画面で表示されます。 この動作は、トースト通知のルート要素 (&lt;toast&gt;) 内に scenario 属性を指定することによって実行されます。&lt;toast scenario=" { default | alarm | reminder | incomingCall } " &gt;
 
-## <span id="xml_examples"></span><span id="XML_EXAMPLES"></span>XML の例
+## XML の例
 
 
-
-            **注**  以下の例で示されているトースト通知のスクリーン ショットは、デスクトップ上のアプリから取得したものです。 モバイル デバイスでは、トースト通知は折りたたまれて表示される場合があります。このとき、トースト通知の下部には通知を展開するためのグラバーが表示されます。
+**注**  以下の例で示されているトースト通知のスクリーン ショットは、デスクトップ上のアプリから取得したものです。 モバイル デバイスでは、トースト通知は折りたたまれて表示される場合があります。このとき、トースト通知の下部には通知を展開するためのグラバーが表示されます。
 
  
 
@@ -291,7 +287,7 @@ visual セクションとその子要素でサポートされているすべて�
 
  
 
-## <span id="Activation_samples"></span><span id="activation_samples"></span><span id="ACTIVATION_SAMPLES"></span>アクティブ化の例
+## アクティブ化の例
 
 
 既に説明したように、トースト通知内の本文と操作では、さまざまな方法でアプリをアクティブ化することができます。 次の例では、トースト通知内の本文や操作でさまざまな種類のアクティブ化を処理する方法を示しています。
@@ -353,7 +349,7 @@ namespace ToastNotificationTask
 }
 ```
 
-## <span id="Schemas___visual__and__audio_"></span><span id="schemas___visual__and__audio_"></span><span id="SCHEMAS___VISUAL__AND__AUDIO_"></span>スキーマ: &lt;visual&gt; と &lt;audio&gt;
+## スキーマ: &lt;visual&gt; と &lt;audio&gt;
 
 
 次のスキーマでは、"?" サフィックスは属性が省略可能であることを意味します。
@@ -493,7 +489,7 @@ silent?
 
 -   この省略可能な属性について詳しくは、[要素のスキーマに関するこの記事](https://msdn.microsoft.com/library/windows/apps/br230842)をご覧ください。
 
-## <span id="Schemas___action_"></span><span id="schemas___action_"></span><span id="SCHEMAS___ACTION_"></span>スキーマ: &lt;action&gt;
+## スキーマ: &lt;action&gt;
 
 
 次のスキーマでは、"?" サフィックスは属性が省略可能であることを意味します。
@@ -585,7 +581,7 @@ hint-inputId
 -   値は、この属性に関連付ける必要がある入力要素の ID にする必要があります。
 -   モバイルやデスクトップでは、この属性によって、入力ボックスのすぐ横にボタンが配置されます。
 
-## <span id="Attributes_for_system-handled_actions"></span><span id="attributes_for_system-handled_actions"></span><span id="ATTRIBUTES_FOR_SYSTEM-HANDLED_ACTIONS"></span>システムによって処理される操作の属性
+## システムによって処理される操作の属性
 
 
 アプリで再通知や通知の再スケジュールをバックグラウンド タスクとして処理しない場合は、システムで、再通知や通知を閉じるための操作を処理できます。 システムによって処理される操作は、組み合わせることができます (または個別に指定することもできます)。ただし、閉じる操作を使わないで再通知の操作を実装することはお勧めしません。
@@ -648,6 +644,6 @@ hint-inputId
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

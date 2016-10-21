@@ -3,14 +3,15 @@ author: mcleanbyron
 ms.assetid: 141900dd-f1d3-4432-ac8b-b98eaa0b0da2
 description: "XAML アプリの Microsoft Advertising ライブラリに関する、開発上の一般的な問題に対する解決策の詳細"
 title: "XAML と C# のトラブルシューティング ガイド"
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: ef9ad8f8056b17793d7ad8230e410e014edf2c95
+translationtype: Human Translation
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 0688ca6e0c88628803ad4e9a55b9285bd39351b4
 
 ---
 
 # XAML と C# のトラブルシューティング ガイド
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+
 
 このトピックでは、XAML アプリの Microsoft Advertising ライブラリに関する、開発上の一般的な問題に対する解決策について説明します。
 
@@ -289,8 +290,7 @@ ms.openlocfilehash: ef9ad8f8056b17793d7ad8230e410e014edf2c95
 
     ブラック ボックスの原因となる最も一般的なエラーは、"No ad available" です。 このエラーは、要求から復帰する利用可能な広告がないことを意味します。
 
-3.  
-            **AdControl** は正常に動作しています。 同じ広告が何度も連続して表示される場合があります。このとき広告は更新されていないように見えます。
+3.  **AdControl** は正常に動作しています。 同じ広告が何度も連続して表示される場合があります。このとき広告は更新されていないように見えます。
 
 <span id="csharp-adsnotrefreshing"/>
 ### 広告が更新されない
@@ -340,6 +340,6 @@ ms.openlocfilehash: ef9ad8f8056b17793d7ad8230e410e014edf2c95
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

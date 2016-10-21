@@ -3,8 +3,9 @@ author: mcleblanc
 title: "ナビゲーションの概要"
 description: "ナビゲーションの概要"
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c542faa6365c8558988162bee12f266d67474461
+ms.openlocfilehash: daf56299b3a5e81bb756bc9fcb8112da044b00f3
 
 ---
 
@@ -77,8 +78,7 @@ public BlankPage()
 
 ナビゲーションについて詳しくは、「[ナビゲーション](https://msdn.microsoft.com/library/windows/apps/mt187344)」と「[XAML パーソナリティ アニメーションのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=242401)」をご覧ください。
 
-
-            **注:** JavaScript と HTML を使った Windows ストア アプリのナビゲーションについて詳しくは、「[クイック スタート: 単一ページ ナビゲーションの使用](https://msdn.microsoft.com/library/windows/apps/hh452768)」をご覧ください。
+**注:** JavaScript と HTML を使った Windows ストア アプリのナビゲーションについて詳しくは、「[クイック スタート: 単一ページ ナビゲーションの使用](https://msdn.microsoft.com/library/windows/apps/hh452768)」をご覧ください。
  
 ### 次のステップ
 
@@ -87,6 +87,6 @@ public BlankPage()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

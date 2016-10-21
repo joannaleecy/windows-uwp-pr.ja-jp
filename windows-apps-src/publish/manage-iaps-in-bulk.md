@@ -1,60 +1,17 @@
 ---
-author: jnHs
-Description: "IAP を一括管理すると、更新プログラムを個別に提出するのではなく、複数の IAP に対して同時に変更を加えることができます。"
-title: "IAP の一括管理"
+redirect_url: https://msdn.microsoft.com/windows/uwp/publish/manage-add-ons-in-bulk
 translationtype: Human Translation
-ms.sourcegitcommit: 475371dd55aa111f3743c03dc1600e8cfdbeb5b0
-ms.openlocfilehash: ae4d4ed33b9bd10a2b01b336c942ad3212de6533
-
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: 73589979db2ebac96d9168159089d562ef6398e2
 
 ---
 
 # IAP の一括管理
 
-> 
-            **重要** 現在この機能は、[デベロッパー センター Insider Program](dev-center-insider-program.md) に参加している開発者アカウントでのみ利用できます。 すべての開発者が利用できるようになるまでに、この機能の実装は変更される可能性があります。 この暫定版ドキュメントでは、この機能のしくみに関する基本的な情報について説明します。
-
-IAP を一括管理すると、更新プログラムを個別に提出するのではなく、複数の IAP に対して同時に変更を加えることができます。 この機能にアクセスするには、アプリの概要ページから **[IAP の一括管理]** をクリックします。
-
-## 現在の IAP 情報のエクスポート
-
-最初に、.csv テンプレート ファイルをダウンロードする必要があります。 既に IAP が作成されている場合、このファイルには、IAP に関する情報が含まれています。 まだ IAP が作成されていない場合、このファイルは空のファイルとなり、新しい IAP に関する情報を入力することができます。 
-
-このテンプレート ファイルを生成し、ダウンロードするには、**[IAP のエクスポート]** をクリックし、.csv ファイルをコンピューターに保存します。
-
-.csv ファイルには、次の列が含まれています。 
-
-| 列名               | 説明                            | 必須かどうか      |
-|---------------------------|----------------------------------|----------------------|
-| 製品 ID    |  IAP 固有の[製品 ID](set-your-iap-product-id.md#product-id) です。  | はい。 IAP を公開した後は変更できません。 |
-| 操作 |テンプレートをインポートするときに適用する操作です。 サポートされる値は、**Submit** (新しい IAP の提出、または以前に公開された IAP の更新)、および **CreateDraft** (IAP をストアに提出せずに、変更を保存) です。 |    はい |
-| 製品の種類  | IAP の[製品の種類](set-your-iap-product-id.md#product-type)です。 サポートされる値は **Consumable** または **Durable** です。 | はい。 IAP を公開した後は変更できません。 |
-| 製品の有効期限  | 永続的な IAP では、この列には **Forever** (有効期限が切れない製品)、または期間を設定します。 利用可能な期間の値は、**1day、3days、5days、7days、14days、30days、60days、90days、180days、365days** です。   | はい (製品の種類が Durable (永続的) である場合) |
-| コンテンツの種類  | IAP の[コンテンツの種類](enter-iap-properties.md#content-type)です。 ほとんどの IAP では、これは **ElectronicSoftwareDownload** になります。 利用可能なその他の値は、**ElectronicBooks、ElectronicMagazineSingleIssue、ElectronicNewspaperSingleIssue、MusicDownload、MusicStreaming、OnlineDataStorageServices、VideoDownload、VideoStreaming、SoftwareAsAService** です。 | はい |
-| タグ   | アプリの実装で使用される[タグ](enter-iap-properties.md#tag)情報です。省略可能です。 | いいえ |
-| 基本価格    | 提供する IAP の基準となる[価格帯](set-iap-pricing-and-availability.md#base-price)です。 **Free** を指定するか、**0.99USD** といった形式で有効な価格帯を指定する必要があります。 |   はい |
-| リリース日  | IAP を公開する日付。 利用可能な値は、**Immediate**、**Manual**、または [ISO 8601 標準](http://go.microsoft.com/fwlink/p/?LinkId=817237)に準拠している日付文字列です。 | はい |
-| タイトル    | ユーザーに対して表示される IAP の名前です。先頭には言語コードとセミコロンが付きます。 たとえば、英語 (米国) で “Example Title” というタイトルを使用する場合は、「*en-us;Example Title*」と入力します。 他の言語用にタイトルを追加する場合は、セミコロンでそれらのタイトルを区切ります。 各タイトルは、100 文字以下で指定する必要があります。     | はい |
-|説明   | ユーザーに表示する省略可能な追加情報です。先頭には言語-ロケールコードとセミコロンが付きます。 たとえば、英語 (米国) で “This is an example” という説明を使用する場合は、「*en-us;This is an example*」と入力します。 他の言語用に説明を追加する場合は、セミコロンでそれらのタイトルを区切ります。 各説明は、200 文字以下で指定する必要があります。    | いいえ |
-| 市場 | IAP の提供先となる、1 つまたは複数の[市場](define-pricing-and-market-selection.md#windows-store-consumer-markets)です。 各市場はセミコロンで区切ります。 | はい |
-|キーワード | アプリの実装で使用される[キーワード](enter-iap-properties.md#keywords)です。省略可能です。 | いいえ |
-
-## IAP のインポート
-
-変更内容をインポートする前に、必要な変更内容に基づいて、ダウンロードした .csv ファイルを更新する必要があります。
-
-既に公開されている IAP に変更を加えるには、スプレッドシートのコピーで、変更が必要な値を更新します。 更新する必要がない IAP の行は、削除することもできますし、そのままにしておくこともできます。 該当する IAP について既に申請が進行中である場合は、.csv ファイルを使用した変更を行うことはできません。
-
-> 
-            **重要** 既に公開されている IAP 向けの更新プログラムを提出するとき、**製品 ID** フィールドと**製品の種類**フィールドを変更することはできません。
-
-新しい IAP を提出するには、新しい行を追加して、新しい IAP に関する情報を入力します。 必要な情報はすべて必ず入力してください。 
-
-すべての変更を行ったら、.csv ファイルを保存し (同じファイル名を使用)、指定されたフィールドにファイルをドラッグして (または **[ファイルの参照]** をクリックして)、ファイルをアップロードします。 変更の概要が表示されます。提出する前に修正する必要があるエラーがある場合は、エラーも表示されます。 情報が正しいことを確認して、**[ストアに提出]** をクリックします。 各 IAP に対して、提供された情報を使用して、申請プロセスが開始されます。
+このページは、「アドオンの一括管理」にリダイレクトされました。
 
 
 
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

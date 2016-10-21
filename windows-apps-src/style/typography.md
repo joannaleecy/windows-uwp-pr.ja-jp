@@ -1,19 +1,16 @@
 ---
 author: mijacobs
-Description: "言語の視覚的な表現として、文字体裁の主な役割は明確であることです。 スタイルによってその目的が邪魔されてはなりません。 ただし、文字体裁にはレイアウト コンポーネントとしての重要な役割もあり、そのデザインの密度と複雑さに強い影響を与え、そのデザインのユーザー エクスペリエンスにも影響します。"
+description: "言語の視覚的な表現として、文字体裁の主な役割は明確であることです。 スタイルによってその目的が邪魔されてはなりません。 ただし、文字体裁にはレイアウト コンポーネントとしての重要な役割もあり、そのデザインの密度と複雑さに強い影響を与え、そのデザインのユーザー エクスペリエンスにも影響します。"
 title: "文字体裁"
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
-label: Typography
 template: detail.hbs
-extraBodyClass: style-typography
-brief: "As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design."
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 7ec2c80fd571de98060282d2b321d1895e2b3dc8
+ms.sourcegitcommit: 8338b4ebcdd73f1b7ebf1dedafe68d861cd9d93b
+ms.openlocfilehash: 481c66e3edd42722cfd59bf420fe5b6286706245
 
 ---
 
-# UWP アプリの文字体裁
+# 文字体裁
 
 言語の視覚的な表現として、文字体裁の主な役割は明確であることです。 スタイルによってその目的が邪魔されてはなりません。 ただし、文字体裁にはレイアウト コンポーネントとしての重要な役割もあり、そのデザインの密度と複雑さに強い影響を与え、そのデザインのユーザー エクスペリエンスにも影響します。
 
@@ -39,9 +36,9 @@ Microsoft では、シンプルさと効率性を考慮に入れて文字体裁�
 
 ![大きい書体を小さい書体に重ねる方法を示します。](images/line-height-stacking.png)
 
-XAML では、これは 2 つの [TextBlocks](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) を重ね、適切な余白を設定することで実現できます。
+XAML では、これは 2 つの [TextBlocks](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) を重ね、適切な余白を設定することで実現できます。
 
-```xaml
+```xml
 <StackPanel Width="200">
     <!-- Setting a bottom margin of 3px on the header
          puts the baseline of the body text exactly 24px
@@ -61,7 +58,7 @@ XAML では、これは 2 つの [TextBlocks](https://msdn.microsoft.com/library
 </StackPanel>
 ```
 
-<!-- OP version -->
+
 
 ## カーニングとトラッキング
 
@@ -69,7 +66,10 @@ Segoe は、ソフトでわかりやすい外観をした人間的な書体で�
 
 カーニングを "メトリック" に設定し、トラッキングを "0" に設定してください。
 
-<img src="images/kerning-tracking.png" alt="Shows the difference between kerning and tracking" />
+
+![カーニングとトラッキングの違いを示します。](images/kerning-tracking.png)
+
+
 
 ## 単語や文字の間隔
 
@@ -77,29 +77,29 @@ Segoe は、ソフトでわかりやすい外観をした人間的な書体で�
 
 既定では、単語の間隔は常に 100% であり、文字間隔は "0" に設定する必要があります。
 
-<img src="images/word-letter.png" alt="Shows the difference between word and letter spacing" />
 
-<aside class="aside-dev">
-    <div class="aside-dev-title">
-    </div>
-    <div class="aside-dev-content">
-XAML テキスト コントロールでは、[Typogrphy.Kerning](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) を使ってカーニングを制御し、[FontStretch](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) を使ってトラッキングを制御します。 既定では、Typography.Kerning は "true" に設定され、FontStretch は推奨値である" Normal" に設定されます。
-    </div>
-</aside>
+![単語の間隔と文字の間隔の違いを示します。](images/word-letter.png)
+
+**注**&nbsp;&nbsp;XAML テキスト コントロールでは、[Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) を使ってカーニングを制御し、[FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) を使ってトラッキングを制御します。 既定では、Typography.Kerning は "true" に設定され、FontStretch は推奨値である" Normal" に設定されます。
 
 
-<!-- OP version -->
+
+
 ## 配置
 
 通常は、視覚要素と書体の列を左揃えにすることをお勧めします。 ほとんどの場合、このような左揃えおよび右不揃いのアプローチによって、コンテンツが一貫したアンカー設定となり、均一なレイアウトになります。
 
-<img src="images/alignment.png" alt="Shows flush-left text" />
+
+![左揃えテキストを示します](images/alignment.png)
+
+
 
 ## 行の末尾
 
 文字体裁が左揃えおよび右不揃いで配置されていない場合、行の末尾が均等になるようにし、ハイフンを使わないでください。
 
-<img src="images/line-endings.png" alt="Shows even line endings" />
+
+![均等な行の末尾を示します](images/line-endings.png)
 
 ## 段落
 
@@ -123,15 +123,9 @@ Segoe UI には多くの文字が用意されており、サイズが小さく�
 
 テキストの高さがアイコンの高さより高い場合、テキストの先頭行を縦方向に揃え、残りのテキストが自然に下に流れるようにしてください。 より大きい大文字、高さが上昇または下降する文字を使うときは、同じ配置ガイダンスが守られるように注意してください。
 
-![いくつかのアイコンとテキストの組み合わせを示します](images/hanging-text-alignment.png)
+![複数のアイコンとテキストの組み合わせを示します](images/hanging-text-alignment.png)
 
-<aside class="aside-dev">
-    <div class="aside-dev-title">
-    </div>
-    <div class="aside-dev-content">
-XAML の [TextBlock.TextLineBounds](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) プロパティを使うと、大文字の高さやベースライン フォントのメトリックにアクセスできます。 このプロパティは、書体を視覚的に上下中央に配置したり、上揃えに配置する場合に利用できます。
-    </div>
-</aside>
+**注**&nbsp;&nbsp;XAML の [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) プロパティを使うと、大文字の高さやベースライン フォントのメトリックにアクセスできます。 このプロパティは、書体を視覚的に上下中央に配置したり、上揃えに配置する場合に利用できます。
 
 ## クリッピングと省略記号
 
@@ -141,22 +135,13 @@ XAML の [TextBlock.TextLineBounds](https://msdn.microsoft.com/library/windows/a
 
 ![いくつかのテキスト クリッピングがあるデバイス フレームを示します。](images/clipping.png)
 
-# 書体見本
+## 書体見本
+書体見本 (type ramp) は、ヘッドラインからの本文までの重要なデザインの関係を確立し、異なるレベル間の明快でわかりやすい階層を保証します。 この階層により、ユーザーが書面によるコミュニケーションを通じて簡単にナビゲートできる構造が作成されます。
 
-書体見本の階層を作成するため、さまざまなサイズの Segoe UI を使ってください。 この階層により、ユーザーが書面によるコミュニケーションを通じて簡単にナビゲートできる構造が作成されます。
+![書体見本を示します](images/type-ramp.png) すべてのサイズは有効ピクセル単位です。 
 
-<figure class="figure-img" >
-    <img src="images/type-ramp.png" alt="Shows the type ramp"  />
-        <figcaption>すべてのサイズは有効ピクセル単位です。 詳しくは、「TODO: link」をご覧ください。</figcaption>
-</figure>
 
-<aside class="aside-dev">
-    <div class="aside-dev-title">
-    </div>
-    <div class="aside-dev-content">
-書体見本のほとんどのレベルは XAML の[静的リソース](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp)として利用できます。このリソースは `*TextBlockStyle` 名前付け規則に従っている必要があります (例: `HeaderTextBlockStyle`)。 
-    </div>
-</aside>
+**注**&nbsp;&nbsp;書体見本のほとんどのレベルは XAML の[静的リソース](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) として利用できます。このリソースは `*TextBlockStyle` 名前付け規則に従っている必要があります (例: `HeaderTextBlockStyle`)。
 
 
 ## プライマリ テキストとセカンダリ テキスト
@@ -171,13 +156,25 @@ XAML の [TextBlock.TextLineBounds](https://msdn.microsoft.com/library/windows/a
 ただし、言語によっては大文字にすると固有名詞の意味が変わるため、名前やユーザー入力に基づくページ タイトルはすべて大文字に変換*しない*でください。
 
 
-## 推奨と非推奨
+**推奨される事項**
+
+
+
 * ほとんどのテキストには Body を使う
 * スペースに制約がある場合はタイトルに Base を使う
 * 最上位レベルのコンテンツを強調することで、SubtitleAlt を組み込んでコントラストと階層を作る
+
+
+
+**非推奨**
+
+
+
 * 長い文字列やプライマリ操作には Caption を使わない
 * テキストを折り返す必要がある場合は Header や Subheader を使わない
 * 同じページで Subtitle と SubtitleAlt を組み合わせない
+
+
 
 ## 関連記事
 
@@ -185,6 +182,6 @@ XAML の [TextBlock.TextLineBounds](https://msdn.microsoft.com/library/windows/a
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

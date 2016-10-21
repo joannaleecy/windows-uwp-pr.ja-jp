@@ -5,20 +5,18 @@ title: "タイル"
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
-ms.sourcegitcommit: d3fe62d4de00c42079d62d105acdbb21e296ba5f
-ms.openlocfilehash: a9f5d25dfd359364fa8e16666b03c7c105a867dd
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 37de1a413ac9b5e74c905c140899ec7577a6fae5
 
 ---
-
 # UWP アプリのタイル
 
-
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 *タイル*とは、[スタート] メニュー上でアプリを表すものです。 すべてのアプリにはタイルがあります。 Microsoft Visual Studio で作成した新しいユニバーサル Windows プラットフォーム (UWP) アプリ プロジェクトには、アプリの名前とロゴを表示する既定のタイルが含まれます。 このタイルは、アプリを初めてインストールしたときに Windows に表示されます。 アプリをインストールしたら、新しい情報 (ニュース ヘッドライン、最新の未読メッセージの件名など) をユーザーに伝えるようにタイルを変更するなど、通知を通じてタイルの内容を変更できます。
 
-## <span id="Configure_the_default_tile"></span><span id="configure_the_default_tile"></span><span id="CONFIGURE_THE_DEFAULT_TILE"></span>既定のタイルを構成する
+## 既定のタイルを構成する
 
 
 Visual Studio で新しいプロジェクトを作成すると、アプリの名前とロゴを表示する単純な既定のタイルが作成されます。
@@ -48,11 +46,10 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
 
     ここに挙げた画像を、自分で用意したものに置き換えます。 さまざまな倍率に応じて複数の画像を指定することができますが、必ずしもすべて指定する必要はありません。 多種多様なデバイスでアプリを適切に表示するために、各画像の複数のスケール バージョン (100%、200%、400%) を用意することをお勧めします。
 
-    拡大/縮小された画像の名前付け規則は次のとおりです。 
+    拡大/縮小された画像の名前付け規則は次のとおりです: テスト
     
-    *
-              &lt;画像名&gt;*.scale-*&lt;倍率&gt;*.*&lt;画像ファイルの拡張子&gt;*  
-    
+    *&lt;画像名&gt;*.scale-*&lt;倍率&gt;*.*&lt;画像ファイルの拡張子&gt;* 
+
     例: SmallLogo.scale-100.png
 
     画像を参照するときには、*&lt;画像名&gt;*.*&lt;画像ファイルの拡張子&gt;* という形式で参照します (この例では "SmallLogo.png")。 指定した画像からデバイスに合わせて拡大/縮小された画像が自動的に選択されます。
@@ -79,7 +76,7 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
       </Applications>
 ```
 
-## <span id="Use_notifications_to_customize_your_tile"></span><span id="use_notifications_to_customize_your_tile"></span><span id="USE_NOTIFICATIONS_TO_CUSTOMIZE_YOUR_TILE"></span>通知を使ってタイルをカスタマイズする
+## 通知を使ってタイルをカスタマイズする
 
 
 アプリをインストールした後は、通知を使ってタイルをカスタマイズできます。 これは、アプリを初めてを起動したときや、プッシュ通知など、イベントへの応答として実行できます。
@@ -94,10 +91,8 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
     -   タイルをすぐに更新するための [**Windows.UI.NotificationsTileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616) オブジェクト。
     -   タイルを後の任意の時点で更新するための [**Windows.UI.Notifications.ScheduledTileNotification**](https://msdn.microsoft.com/library/windows/apps/hh701637) オブジェクト。
 
-3.  [
-            **Windows.UI.Notifications.TileUpdateManager.CreateTileUpdaterForApplication**](https://msdn.microsoft.com/library/windows/apps/br208623) を使って [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) オブジェクトを作成します。
-4.  [
-            **TileUpdater.Update**](https://msdn.microsoft.com/library/windows/apps/br208632) メソッドを呼び出して、手順 2. で作成したタイル通知オブジェクトに渡します。
+3.  [**Windows.UI.Notifications.TileUpdateManager.CreateTileUpdaterForApplication**](https://msdn.microsoft.com/library/windows/apps/br208623) を使って [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) オブジェクトを作成します。
+4.  [**TileUpdater.Update**](https://msdn.microsoft.com/library/windows/apps/br208632) メソッドを呼び出して、手順 2. で作成したタイル通知オブジェクトに渡します。
 
  
 
@@ -109,6 +104,6 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,8 +3,9 @@ author: mtoepke
 title: "DirectX の移植の計画"
 description: "DirectX 9 から DirectX 11 とユニバーサル Windows プラットフォーム (UWP) へのゲーム移植プロジェクトを計画してください。グラフィックス コードのアップグレードと、Windows ランタイム環境へのゲームの配置が必要です。"
 ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 929ad82ce057754ee04f1f27537e03520e95157a
+ms.openlocfilehash: fbd582b2cc90ee763cb167c65dac88cee4e7a025
 
 ---
 
@@ -31,8 +32,7 @@ Direct3D 9 から Direct3D 11 へのアップグレードは、変更箇所を�
 
 D3DX と DXUT のヘルパー ライブラリは、独自のヘルパー ライブラリか、コミュニティ ツールに置き換える必要があります。 詳しくは、「[DirectX 11 API への DirectX 9 の機能のマッピング](feature-mapping.md)」をご覧ください。
 
-> 
-            **注:** [DirectX Tool Kit](http://go.microsoft.com/fwlink/p/?LinkID=248929) または [DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926) を使うと、D3DX と DXUT で実現されていた機能の一部を置き換えることができます。
+> **注:** [DirectX Tool Kit](http://go.microsoft.com/fwlink/p/?LinkID=248929) または [DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926) を使うと、D3DX と DXUT で実現されていた機能の一部を置き換えることができます。
 
  
 
@@ -47,8 +47,7 @@ UWP アプリは、[**CoreWindow**](https://msdn.microsoft.com/library/windows/a
 
 UWP アプリのライフサイクルはデスクトップ アプリとは大きく異なります。 ゲームの保存は頻繁に行う必要があります。中断イベントが発生したときに、アプリで実行中のコードを停止できる時間が限られているうえ、アプリの再開時には、プレーヤーが中断時の状態からすぐにゲームを再開できるようにする必要があるためです。 ゲームの保存は、再開時に連続したゲームプレイ エクスペリエンスを維持できるだけの頻度で行う必要があります。ただし、フレームレートに影響したり、ゲームに引っかかりをもたらしたりしない程度にしてください。 ゲームは、ゲームが終了状態から再開されたときに、必要に応じてゲームの状態を読み込む必要があります。
 
-
-            [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415571) は、D3DXMath と XNAMath の代わりになり、数学演算ライブラリが必要になったときに役立ちます。 DirectXMath には、高速かつ移植可能なデータ型と、シェーダーで利用できるように整列およびパッキングされた型があります。
+[DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415571) は、D3DXMath と XNAMath の代わりになり、数学演算ライブラリが必要になったときに役立ちます。 DirectXMath には、高速かつ移植可能なデータ型と、シェーダーで利用できるように整列およびパッキングされた型があります。
 
 [インタロック API](https://msdn.microsoft.com/library/windows/desktop/dd405529) などのネイティブ ライブラリは、ARM の組み込みメソッドをサポートするために拡張されました。 ゲームでインタロック API を使う場合は、DirectX 11 と UWP でも使い続けることができます。
 
@@ -69,6 +68,6 @@ Microsoft のテンプレートとコード サンプルでは新しい C++ 機�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

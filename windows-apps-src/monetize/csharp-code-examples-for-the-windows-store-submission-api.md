@@ -1,33 +1,37 @@
 ---
 author: mcleanbyron
 ms.assetid: FABA802F-9CB2-4894-9848-9BB040F9851F
-description: Use the C# code examples in this section to learn more about using the Windows Store submission API.
-title: C# code examples for the Windows Store submission API
+description: "このセクションの C# コード例を使用して、Windows ストア申請 API を使用する方法をご確認ください。"
+title: "Windows ストア申請 API の C# コード例"
+translationtype: Human Translation
+ms.sourcegitcommit: 1f577f33563d6acd7d2f791a48176f9a6164d287
+ms.openlocfilehash: 9ae200699027f908cfc4b59dfc5035dcb09e93f6
+
 ---
 
-# C\# code examples for the Windows Store submission API
+# Windows ストア申請 API の C# コード例
 
-This article provides C# code examples for using the *Windows Store submission API*. For more information about this API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
+この記事では、*Windows ストア申請 API* を使用するための C# コード例を紹介します。 この API について詳しくは、「[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。
 
-These code examples demonstrate the following tasks:
+ここでは、次のタスクに対応するコード例を示します。
 
-* [Update an app submission](csharp-code-examples-for-the-windows-store-submission-api.md#update-app-submission).
-* [Create and commit an add-on submission](csharp-code-examples-for-the-windows-store-submission-api.md#create-and-commit-add-on-submission).
-* [Update an add-on submission](csharp-code-examples-for-the-windows-store-submission-api.md#update-add-on-submission).
-* [Update a package flight submission](csharp-code-examples-for-the-windows-store-submission-api.md#update-flight-submission).
+* [アプリの申請の更新](csharp-code-examples-for-the-windows-store-submission-api.md#update-app-submission)。
+* [アドオンの申請の作成とコミット](csharp-code-examples-for-the-windows-store-submission-api.md#create-and-commit-add-on-submission)。
+* [アドオンの申請の更新](csharp-code-examples-for-the-windows-store-submission-api.md#update-add-on-submission)。
+* [パッケージ フライトの申請の更新](csharp-code-examples-for-the-windows-store-submission-api.md#update-flight-submission)。
 
-You can review each example to learn more about the task it demonstrates, or you can build all the code examples in this article into a console application. To build the examples, create a C# console application named **DeveloperApiCSharpSample** in Visual Studio, copy each example to a separate code file in the project, and build the project.
+各例を確認して、それぞれが対応するタスクについて詳しく知ることができます。また、この記事のすべてのコード例を使って、コンソール アプリケーションをビルドすることもできます。 サンプルをビルドするには、Visual Studio で**DeveloperApiCSharpSample** という名前の C# コンソール アプリケーションを作成し、各サンプルをプロジェクトの別のコード ファイルにコピーして、プロジェクトをビルドします。
 
-## Prerequisites
+## 前提条件
 
-These examples use the following libraries:
+以下の例では、次のライブラリを使用します。
 
-* Microsoft.WindowsAzure.Storage.dll. This library is available in the [Azure SDK for .NET](https://azure.microsoft.com/downloads/), or you can obtain it by installing the [WindowsAzure.Storage NuGet package](https://www.nuget.org/packages/WindowsAzure.Storage).
-* [Json.NET](http://www.newtonsoft.com/json) from Newtonsoft.
+* Microsoft.WindowsAzure.Storage.dll。 このライブラリは、[Azure SDK for .NET](https://azure.microsoft.com/downloads/) に含まれています。または [WindowsAzure.Storage NuGetパッケージ](https://www.nuget.org/packages/WindowsAzure.Storage)をインストールすると入手できます。
+* Newtonsoft による [Json.NET](http://www.newtonsoft.com/json)。
 
-## Main program
+## メイン プログラム
 
-The following example implements a command line program that calls the other example methods in this article to demonstrate different ways to use the Windows Store submission API.
+次の例では、コマンド ライン プログラムを実装し、この記事の他の例のメソッドを呼び出して、Windows ストア申請 API を使用する別の方法を示します。
 
 ```csharp
 namespace DeveloperApiCSharpSample
@@ -60,14 +64,14 @@ namespace DeveloperApiCSharpSample
 }
 ```
 
-## Helper classes
+## ヘルパー クラス
 
-This section provides helper classes that are used by the Windows Store submission API examples in this article.
+このセクションでは、この記事の Windows ストア申請 API の例で使われる、ヘルパー クラスを説明します。
 
 <span id="clientconfiguration" />
-### ClientConfiguration helper class
+### ClientConfiguration ヘルパー クラス
 
-The following example defines a ```ClientConfiguration``` class that is used to pass data to each of the other example methods that use the Windows Store submission API.
+次の例では ```ClientConfiguration``` クラスを定義します。これは Windows ストア申請 API を使用する他のサンプルのメソッドのそれぞれに、データを渡すために使われるクラスです。
 
 ```csharp
 namespace DeveloperApiCSharpSample
@@ -134,9 +138,9 @@ namespace DeveloperApiCSharpSample
 ```
 
 <span id="ingestionclient" />
-### IngestionClient helper class
+### IngestionClient ヘルパー クラス
 
-The following example defines an ```IngestionClient``` class that provides helper methods for some key tasks involving the Windows Store submission API.
+次の例では ```IngestionClient``` クラスを定義します。このクラスは、Windows ストア申請 API を使ういくつかの主なタスクのための、ヘルパー メソッドを提供します。
 
 ```csharp
 namespace DeveloperApiCSharpSample
@@ -415,9 +419,9 @@ namespace DeveloperApiCSharpSample
 ```
 
 <span id="update-app-submission" />
-## Update an app submission
+## アプリの申請の更新
 
-The following example demonstrates how to [update an app submission](manage-app-submissions.md). This example uses the [ClientConfiguration](csharp-code-examples-for-the-windows-store-submission-api.md#clientconfiguration) and [IngestionClient](csharp-code-examples-for-the-windows-store-submission-api.md#ingestionclient) helper classes that are described above.
+次の例は、[アプリの申請の更新](manage-app-submissions.md)の方法を示しています。 この例では、先に説明した [ClientConfiguration](csharp-code-examples-for-the-windows-store-submission-api.md#clientconfiguration) と [IngestionClient](csharp-code-examples-for-the-windows-store-submission-api.md#ingestionclient) ヘルパー クラスを使用しています。
 
 ```csharp
 namespace DeveloperApiCSharpSample
@@ -645,9 +649,9 @@ namespace DeveloperApiCSharpSample
 ```
 
 <span id="create-and-commit-add-on-submission" />
-## Create and commit an add-on submission
+## アドオンの申請の作成とコミット
 
-The following example demonstrates how to [create and commit a new add-on submission](manage-add-on-submissions.md) (add-ons are also known as in-app products or IAPs). This example uses the [ClientConfiguration](csharp-code-examples-for-the-windows-store-submission-api.md#clientconfiguration) and [IngestionClient](csharp-code-examples-for-the-windows-store-submission-api.md#ingestionclient) helper classes that are described above.
+次の例は、[新しいアドオンの申請を作成し、コミット](manage-add-on-submissions.md)する方法を示しています (アドオンは "アプリ内製品"、略して "IAP" とも呼ばれます)。 この例では、先に説明した [ClientConfiguration](csharp-code-examples-for-the-windows-store-submission-api.md#clientconfiguration) と [IngestionClient](csharp-code-examples-for-the-windows-store-submission-api.md#ingestionclient) ヘルパー クラスを使用しています。
 
 ```csharp
 namespace DeveloperApiCSharpSample
@@ -822,9 +826,9 @@ namespace DeveloperApiCSharpSample
 ```
 
 <span id="update-add-on-submission" />
-## Update an add-on submission
+## アドオンの申請の更新
 
-The following example demonstrates how to [update an add-on submission](manage-add-on-submissions.md) (add-ons are also known as in-app products or IAPs). This example uses the [ClientConfiguration](csharp-code-examples-for-the-windows-store-submission-api.md#clientconfiguration) and [IngestionClient](csharp-code-examples-for-the-windows-store-submission-api.md#ingestionclient) helper classes that are described above.
+次の例は、[アドオンの申請の更新](manage-add-on-submissions.md)を行う方法を示しています (アドオンは "アプリ内製品"、略して "IAP" とも呼ばれます)。 この例では、先に説明した [ClientConfiguration](csharp-code-examples-for-the-windows-store-submission-api.md#clientconfiguration) と [IngestionClient](csharp-code-examples-for-the-windows-store-submission-api.md#ingestionclient) ヘルパー クラスを使用しています。
 
 ```csharp
 namespace DeveloperApiCSharpSample
@@ -1003,9 +1007,9 @@ namespace DeveloperApiCSharpSample
 ```
 
 <span id="update-flight-submission" />
-## Update a package flight submission
+## パッケージ フライトの申請の更新
 
-The following example demonstrates how to [update a new package flight submission](manage-flight-submissions.md). This example uses the [ClientConfiguration](csharp-code-examples-for-the-windows-store-submission-api.md#clientconfiguration) and [IngestionClient](csharp-code-examples-for-the-windows-store-submission-api.md#ingestionclient) helper classes that are described above.
+次の例は、[新しいパッケージ フライトの申請を更新する](manage-flight-submissions.md)方法を示しています。 この例では、先に説明した [ClientConfiguration](csharp-code-examples-for-the-windows-store-submission-api.md#clientconfiguration) と [IngestionClient](csharp-code-examples-for-the-windows-store-submission-api.md#ingestionclient) ヘルパー クラスを使用しています。
 
 ```csharp
 namespace DeveloperApiCSharpSample
@@ -1198,6 +1202,12 @@ namespace DeveloperApiCSharpSample
 }
 ```
 
-## Related topics
+## 関連トピック
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

@@ -5,7 +5,7 @@ ms.assetid: F35BEBDF-28C5-4F91-A94E-F7D862B6ED59
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: e7fba930c108744815f261e7d01d198626d7e7c9
-ms.openlocfilehash: a86f31a0b62958f1300e386dfb99fd7fc1432fc5
+ms.openlocfilehash: 420c8daa47fb36e8b7cebbc7a18bc8eb666188d3
 
 ---
 
@@ -76,6 +76,6 @@ CBC などの一部のモードでは、最初の暗号テキスト ブロック
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

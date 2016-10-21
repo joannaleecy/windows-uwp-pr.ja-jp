@@ -7,7 +7,7 @@ label: Visual feedback
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 2bf873f35192c20f15c6cb445b6be6436354c8c2
+ms.openlocfilehash: 388bdc42610d05a4decb5c8aecadcaf2f78b26f8
 
 ---
 
@@ -129,6 +129,6 @@ Windows には、次のような接触の視覚エフェクトが組み込まれ
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

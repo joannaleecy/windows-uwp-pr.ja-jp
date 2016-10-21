@@ -5,32 +5,26 @@ title: "タイル、バッジ、通知"
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 32b1c3ec674a84ca4ed08d98119fe21f77e15554
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: dbc178f5df541e482f4a2e86c6662ead1992a1ce
 
 ---
-
 # UWP アプリのタイル、バッジ、通知
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
 タイル、バッジ、トースト、通知を使用して、アプリへのエントリ ポイントを提供し、ユーザーに最新情報を提示する方法について説明します。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><img src="images/tile-and-live-tile.png" alt="Breakdown of tile elements" /></td>
-<td align="left"><p>すべてのアプリにはタイルがあります。 <em>タイル</em>とは、[スタート] メニュー上でアプリを表すものです。 さまざまなタイル サイズ (小、普通、大、ワイド) を有効にすることもできます。 <em>タイル通知</em>を使用すると、タイルを更新して、新しい情報 (ニュース ヘッドライン、最新の未読メッセージの件名など) をユーザーに伝えることができます。 <em>バッジ</em> (<em>通知バッジ</em>) を使用すると、システム提供のグリフまたは 1 ～ 99 の数値の形式で、状態情報または要約情報を提供できます。</p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="images/tile-and-live-tile.png" />
+タイルとは、スタート メニュー上でアプリを表すものです。 すべての UWP アプリにはタイルがあります。 さまざまなタイル サイズ (小、普通、大、ワイド) を有効にすることもできます。</p>
+
+<p><em>タイル通知</em>を使用すると、タイルを更新して、新しい情報 (ニュース ヘッドライン、最新の未読メッセージの件名など) をユーザーに伝えることができます。</p>
+
+<p><em>バッジ</em>を使用すると、システム提供のグリフまたは 1 ～ 99 の数値の形式で、状態情報または要約情報を提供できます。 バッジは、アプリのタスク バーのアイコンにも表示されます。 </p>
+
 <p><em>トースト通知</em>は、<em>トースト</em> (または<em>バナー</em>) と呼ばれるポップアップ UI 要素を介してアプリがユーザーに送信する通知です。 通知は、ユーザーがアプリを使用中かどうかを問わず表示できます。</p>
-<p><em>プッシュ通知</em>または <em>直接通知</em>は、Windows プッシュ通知サービス (WNS) またはバックグラウンド タスクのいずれかからアプリに送信される通知です。 これらの通知には、関心のあるイベントが発生したことをユーザーに通知することで応答するか、お好みの方法で応答することができます。</p></td>
-</tr>
-</tbody>
-</table>
+<p><em>プッシュ通知</em>または <em>直接通知</em>は、Windows プッシュ通知サービス (WNS) またはバックグラウンド タスクのいずれかからアプリに送信される通知です。 これらの通知には、関心のあるイベントが発生したことをユーザーに通知することで応答するか、お好みの方法で応答することができます。</p>
 
  
 ## タイル 
@@ -131,6 +125,6 @@ ms.openlocfilehash: 32b1c3ec674a84ca4ed08d98119fe21f77e15554
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

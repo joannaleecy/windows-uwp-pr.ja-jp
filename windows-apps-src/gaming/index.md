@@ -4,8 +4,8 @@ title: "ゲームと DirectX"
 description: "ユニバーサル Windows プラットフォーム (UWP) は、ゲームを作り、配布し、収益を得るための新たな機会を提供します。 新しいゲームの開始または既存のゲームの移植について説明します。"
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
 translationtype: Human Translation
-ms.sourcegitcommit: 41ee0d2a45408b5b1a0dbc0b102f1b59843814b2
-ms.openlocfilehash: e5447f6238ece768513d160579e1c7e89b04e509
+ms.sourcegitcommit: adaff9abeb0ae8f9c9deb964b18e673c4d4c5f73
+ms.openlocfilehash: fccc85584e84bf3364130fe80c61b75c6377c0c8
 
 ---
 
@@ -32,7 +32,8 @@ ms.openlocfilehash: e5447f6238ece768513d160579e1c7e89b04e509
 | [ゲームのオーディオ](working-with-audio-in-your-directx-game.md) | ミュージックやサウンドを開発し、DirectX ゲームに統合する方法、およびオーディオ信号を処理して、ダイナミック サウンドやポジショナル サウンドを作成する方法について説明します。 |
 | [ゲームのタッチ コントロール](tutorial--adding-touch-controls-to-your-directx-game.md) | ここでは、DirectX を使って基本的なタッチ コントロールを UWP C++ ゲームに追加する方法について説明します。 具体的には、平面に固定されたカメラを動かすタッチ ベースのコントロールを Direct3D 環境に追加し、指またはスタイラスでドラッグするとカメラの視点がシフトするようにする方法を紹介します。 |
 | [ゲームのムーブ/ルック コントロール](tutorial--adding-move-look-controls-to-your-directx-game.md) | ここでは、マウスとキーボードの従来のムーブ/ルック コントロール (マウスルック コントロールとも呼ばれます) を DirectX ゲームに追加する方法について説明します。 |
-| [入力とレンダリング ループの最適化](optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md) | 入力待ち時間は、ゲーム エクスペリエンスに大きな影響を与えるため、最適化するとゲームがより洗練されたものに感じられます。 また、適切な入力イベントの最適化によってバッテリー残量を節約できます。 適切な [CoreDispatcher](optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md) 入力イベント処理オプションを選択して、ゲームで入力ができる限り滑らかに処理されるようにする方法を説明します。 |
+| [相対マウス移動](relative-mouse-movement.md) | 相対マウス制御を追加する方法について説明します。相対マウス制御では、システム カーソルは使われません。画面の絶対座標を取得するのではなく、マウス移動の間隔をピクセル デルタとして追跡します。 |
+| [入力とレンダリング ループの最適化](optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md) | 入力待ち時間はゲーム エクスペリエンスに大きな影響を与えるため、最適化するとゲームがより洗練されたものに感じられます。 また、適切な入力イベントの最適化によってバッテリー残量を節約できます。 適切な [CoreDispatcher](optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md) 入力イベント処理オプションを選択して、ゲームで入力ができる限り滑らかに処理されるようにする方法を説明します。 |
 | [スワップ チェーンのスケーリングとオーバーレイ](multisampling--scaling--and-overlay-swap-chains.md) | モバイル デバイスでのレンダリングを高速化するためにスケーリングされたスワップ チェーンを作成し、オーバーレイ スワップ チェーン (使用できる場合) を使って画質を高める方法について説明します。 |
 | [DXGI 1.3 スワップ チェーンによる遅延の減少](reduce-latency-with-dxgi-1-3-swap-chains.md) | DXGI 1.3 を使って、スワップ チェーンが新しいフレームのレンダリング開始の適切な時間を通知するまで待機することで、実質的なフレーム待機時間を削減します。 |
 | [UWP アプリでのマルチサンプリング](multisampling--multi-sample-anti-aliasing--in-windows-store-apps.md) | Direct3D を使って構築された UWP アプリでマルチサンプリングを使う方法について説明します。 |
@@ -43,6 +44,7 @@ ms.openlocfilehash: e5447f6238ece768513d160579e1c7e89b04e509
 | [ゲーム用のクラウド](cloud-for-games.md) | ゲーム開発でクラウド テクノロジを使用する方法について説明します。 |
 | [DirectX と XAML の相互運用機能](directx-and-xaml-interop.md) | UWP ゲームで Extensible Application Markup Language (XAML) と Microsoft DirectX を組み合わせて使うことができます。 |
 | [ゲームのパッケージ化](package-your-windows-store-directx-game.md) | 規模の大きい UWP ゲーム (特に、地域固有のアセットや機能オプションによる高解像度アセットを伴って複数言語をサポートするゲーム) は、サイズが容易に膨張する可能性があります。 このトピックでは、ユーザーが実際に必要なリソースのみを受け取ることができるように、アプリ パッケージとアプリ バンドルを使ってアプリをカスタマイズする方法について説明します。 |
+| [概念の承認](concept-approval.md) | 概念の承認を受けるために製品を提出する方法について説明します。概念の承認は、製品が Xbox で実行されるか、Xbox Live を使用する場合に必要になります。 |
 | [ゲーム移植ガイド](porting-guides.md) | 既存のゲームを Direct3D 11、UWP、および Windows 10 に移植するためのガイドを示します。 |
 | [ゲーム プログラミング リソース](additional-directx-game-programming-resources.md) | Windows でのゲーム プログラミングについて詳しくは、次のリソースをご覧ください。 |
 
@@ -70,6 +72,6 @@ ms.openlocfilehash: e5447f6238ece768513d160579e1c7e89b04e509
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

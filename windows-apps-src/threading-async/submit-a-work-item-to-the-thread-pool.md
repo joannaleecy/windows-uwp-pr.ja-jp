@@ -5,7 +5,7 @@ title: "スレッド プールへの作業項目の送信"
 description: "スレッド プールに作業項目を送信することで独立したスレッドで作業を実行する方法について説明します。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: d8b0f512d075510fae527e563ef99f24cc201577
+ms.openlocfilehash: d41f53a40c46087c5a1c21367a34c0f60486f24d
 
 ---
 # スレッド プールへの作業項目の送信
@@ -25,8 +25,7 @@ ms.openlocfilehash: d8b0f512d075510fae527e563ef99f24cc201577
 
 3 つのバージョンの [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) を使うことができるため、必要に応じて作業項目の優先度を指定し、他の作業項目と同時に実行するかどうかを制御できます。
 
-
-              **注**  UI スレッドにアクセスしたり、作業項目の進捗状況を表示したりするには、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) を使います。
+**注**  UI スレッドにアクセスしたり、作業項目の進捗状況を表示したりするには、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) を使います。
 
 次の例では作業項目を作成し、作業を実行するラムダを指定します。
 
@@ -264,6 +263,6 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

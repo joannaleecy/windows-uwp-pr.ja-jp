@@ -1,16 +1,21 @@
 ---
-title: "Unity ゲームの Xbox One への移行"
 author: JordanEllis6809
-ms.sourcegitcommit: 008ff2566b17a05b52dee0a8cd6c070d841b1f62
-ms.openlocfilehash: cc854bc707a9c08687d3c6d92a704f5099d52d5b
+title: "Xbox の UWP への Unity ゲームの移行"
+description: "Xbox での Unity UWP 開発。"
+translationtype: Human Translation
+ms.sourcegitcommit: ea3bea2e5d6de0e55615de701a69e90d81f0f553
+ms.openlocfilehash: 73f701a2608c6ce8d10cab817683ada4e9eecc08
 
 ---
 
-# Unity ゲームの Xbox One への移行
+# Xbox の UWP への Unity ゲームの移行
+
 
 このチュートリアルでは、既に Unity のゲームが存在し、ビルドおよび展開する準備ができていることを前提としています。
 
-[このチュートリアルのビデオ バージョン。](https://www.youtube.com/watch?v=f0Ptvw7k-CE)
+[このチュートリアルのビデオ バージョン](https://www.youtube.com/watch?v=f0Ptvw7k-CE)もご覧ください。
+
+Unity UWP プロジェクトのバージョン管理については、 「[UWP プロジェクトのバージョン管理](development-lanes-unity-versioning.md)」をご覧ください
 
 ## 手順 0: Unity が正しくインストールされていることを確認する
 
@@ -20,35 +25,40 @@ Unity をインストールするときに、以下のコンポーネントを�
 
 ## 手順 1: UWP ソリューションを構築する
 
-Unity ゲーム プロジェクトで、`File -> Build Settings...` から [Build Settings] ウィンドウを開き、次に示す Windows ストア オプション メニューに移動します。
+Unity ゲーム プロジェクトで、**[File] -> [Build Settings]** から **[Build Settings]** ウィンドウを開き、Windows ストア オプション メニューに移動します。
 
 ![[Build Settings] ウィンドウ](images/build-settings.png)
 
-[`SDK`] が [`Universal 10`] に設定されていることを確認します。 次に、メニューの下部にある [Build] をクリックします。これにより、保存先フォルダーを指定するためのエクスプローラー ウィンドウが表示されます。 プロジェクトの `Assets` ディレクトリに `UWP` という名前のフォルダーを作成し、ビルドの保存先フォルダーとしてこのフォルダーを選択します。
+**[SDK]** 設定が **[Universal 10]** であることを確認し、**[Build]** ボタンを選択します。作成先フォルダーを要求するエクスプローラー ウィンドウが起動します。 プロジェクトの **[Assets]** ディレクトリと並んで **[UWP]** というフォルダーを作成し、ビルドの保存先フォルダーとしてこのフォルダーを選択します。
 
 ![ビルドの保存先フォルダー](images/build-destination.png)
 
-Unity で新しい Visual Studio ソリューションを作成できたので、次の手順ではこれを使って UWP ゲームを展開します。
+Unity で新しい Visual Studio ソリューションを作成できたので、これを使って UWP ゲームを展開します。
 
 ![UWP VS ソリューション](images/uwp-vs-solution.png)
 
 ## 手順 2: ゲームを展開する
 
-`Assets/UWP` フォルダーにある新しく生成されたソリューションを開きます。  開いたら、ターゲット プラットフォームを X64 に変更します。
+**[UWP]** フォルダーに新しく作成されたソリューションを開き、ターゲット プラットフォームを **[x64]** に変更します。
 
 ![x64 ビルド プラットフォーム](images/x64-build-platform.png)
 
-これで、ゲームの UWP Visual Studio ソリューションの準備ができました。[こちらの手順に従うことによって](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/getting-started)、ゲームを製品版の Xbox One に正常に展開できます。
+これで、ゲームの UWP Visual Studio ソリューションの準備ができました。[こちらの手順に従うことによって](getting-started.md)、ゲームを製品版の Xbox One に正常に展開できます。
 
-## 開発者メモ
+## 手順 3: 変更とリビルド
 
-- バージョン管理では UWP のフォルダーを無視することをお勧めします。 プロジェクトに新しい XAML 要素を追加しようとして、UWP フォルダー内のアセットをバージョン管理する必要がある場合は、[こちらのサンプル](https://bitbucket.org/Unity-Technologies/windowsstoreappssamples/overview)をご覧ください。
+スクリプトではないものに変更を行った場合、これらの変更がゲームの UWP ビルドに表示されるようにするために、(__手順 1__ の説明に従って) エディター内からプロジェクトをリビルドする必要があります。
 
-- ゲームのビルドに含まれている任意のコンテンツ (スクリプト以外) を Unity で変更する場合、次回展開するときにこれらの変更を確認するには、UWP ソリューションをリビルドする必要があります。 これは、Unity のビルド ステップで、プロジェクトのすべてのアセットが 1 つのリソース ファイルにコンパイルされるためです。 UWP ソリューションでは、ゲームを展開するときに、この生成されたリソース ファイルを参照します。
+## UWP プロジェクトのバージョン管理
+
+この新しく生成された UWP ディレクトリの一部をバージョン管理に追加することが必要になる一般的な状況がいくつかあります。 たとえば、新しい依存関係を UWP プロジェクト (たとえば Xbox Live SDK など) に追加する場合です。  この例の詳細については、[UWP プロジェクトのバージョン管理](development-lanes-unity-versioning.md)で説明します。
+
+## 関連項目
+- [既存のゲームの Xbox への移行](development-lanes-landing.md)
+- [Xbox One の UWP](index.md)
 
 
 
-
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO4-->
 
 

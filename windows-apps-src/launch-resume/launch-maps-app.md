@@ -3,8 +3,9 @@ author: TylerMSFT
 title: "Windows マップ アプリの起動"
 description: "アプリから Windows マップ アプリを起動する方法について説明します。"
 ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 0dcd15c7d04ed452f69208ad1e68a8949baf40dd
+ms.openlocfilehash: a2f09aa510c9c3db6b8eca25f4c8cee98fa0eb46
 
 ---
 
@@ -16,8 +17,7 @@ ms.openlocfilehash: 0dcd15c7d04ed452f69208ad1e68a8949baf40dd
 
 アプリから Windows マップ アプリを起動する方法について説明します。 このトピックでは、**bingmaps:**、**ms-drive-to:**、**ms-walk-to:**、*ms-settings:* の各 URI (Uniform Resource Identifier) スキームについて説明します。 これらの URI スキームを使って、Windows マップ アプリを起動し、特定の地図、ルート案内、検索結果を表示したり、設定アプリから Windows マップ オフライン マップをダウンロードしたりします。
 
-
-            **ヒント** アプリから Windows マップ アプリを起動する方法について詳しくは、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619979)から[ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)をダウンロードしてください。
+**ヒント** アプリから Windows マップ アプリを起動する方法について詳しくは、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619979)から[ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)をダウンロードしてください。
 
 ## URI の概要
 
@@ -67,8 +67,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 地図の中心点とズーム レベルを制御するには、いくつかの方法があります。 *cp* (中心点) パラメーターと *lvl* (ズーム レベル) パラメーターを使う方法が最も簡単な方法であり、これらのパラメーターによって予測可能な結果を得ることができます。 この方法と比べると、*bb* パラメーター (緯度と経度の値で囲まれた領域を指定) を使う方法では予測が難しくなります。これは、このパラメーターでは画面の解像度を考慮し、指定される座標に基づいて地図の中心点とズーム レベルを決定するためです。 これら 3 つのパラメーター (*bb*、*cp*、*lvl*) がすべて指定されていると、*bb* パラメーターは無視されます。
 
-ビューの種類を制御するには、*ss* (Streetside) パラメーターと *sty* (スタイル) パラメーターを使います。 *ss* パラメーターは、Streetside ビューに地図を配置します。 *sty* パラメーターは、道路図、航空写真、3D ビュー表示を切り替えます。 3D スタイルを使う場合、*hdg*、*pit*、*rad* パラメーターを使って 3D ビューを指定できます。 
-            *hdg* はビューの方位を指定します。*pit* はビューのピッチを指定します。*rad* はビューに表示する中心点からの距離を指定します。 これらのパラメーターやその他のパラメーターについて詳しくは、[bingmaps: のパラメーター リファレンス](#bingmaps)をご覧ください。
+ビューの種類を制御するには、*ss* (Streetside) パラメーターと *sty* (スタイル) パラメーターを使います。 *ss* パラメーターは、Streetside ビューに地図を配置します。 *sty* パラメーターは、道路図、航空写真、3D ビュー表示を切り替えます。 3D スタイルを使う場合、*hdg*、*pit*、*rad* パラメーターを使って 3D ビューを指定できます。 *hdg* はビューの方位を指定します。*pit* はビューのピッチを指定します。*rad* はビューに表示する中心点からの距離を指定します。 これらのパラメーターやその他のパラメーターについて詳しくは、[bingmaps: のパラメーター リファレンス](#bingmaps)をご覧ください。
 
 | サンプル URI                                                                 | 結果                                                                                                                                                                                                   |
 |----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -142,8 +141,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 **ms-drive-to:** と **ms-walk-to:** の各 URI スキームでは、直接ターン バイ ターン方式のルート案内を起動できます。 これらの URI スキームでは、ユーザーの現在の場所からのルート案内のみを提供できます。 ユーザーの現在の場所を含まないポイント間のルート案内を提供する必要がある場合は、前のセクションで説明した **bingmaps:** URI スキームを使います。 これらの URI スキームについて詳しくは、[ms-drive-to:](#msdriveto) と [ms-walk-to:](#mswalkto) のパラメーター リファレンスをご覧ください。
 
-> 
-            **重要**  **ms-drive-to:** または **ms-walk-to:** の URI スキームが呼び出されると、マップ アプリは、デバイスで GPS 位置情報の修正が行われたことがあるかどうかを確認します。 行われたことがある場合は、ターン バイ ターン方式のルート案内に進みます。 行われたことがない場合は、「[ルート案内と交通情報の表示](#directions)」で説明したルートの概要を表示します。
+> **重要**  **ms-drive-to:** または **ms-walk-to:** の URI スキームが呼び出されると、マップ アプリは、デバイスで GPS 位置情報の修正が行われたことがあるかどうかを確認します。 行われたことがある場合は、ターン バイ ターン方式のルート案内に進みます。 行われたことがない場合は、「[ルート案内と交通情報の表示](#directions)」で説明したルートの概要を表示します。
 
  
 
@@ -249,16 +247,12 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>sty=a</p></td>
 <td align="left"><p>地図の形式を定義します。 このパラメーターの有効な値は次のとおりです。</p>
 <ul>
-<li>
-            **a**: 地図の航空写真を表示します。</li>
-<li>
-            **r**: 地図の道路図を表示します。</li>
-<li>
-            **3d**: 地図を 3D で表示します。 **cp** パラメーターと組み合わせて使います。必要に応じて、**rad** パラメーターと共に使うこともできます。</li>
+<li>**a**: 地図の航空写真を表示します。</li>
+<li>**r**: 地図の道路図を表示します。</li>
+<li>**3d**: 地図を 3D で表示します。 **cp** パラメーターと組み合わせて使います。必要に応じて、**rad** パラメーターと共に使うこともできます。</li>
 </ul>
 <p>Windows 10 では、航空写真表示と 3D ビューのスタイルは同じです。</p>
 <div class="alert">
-            
 **注**  **sty** パラメーターを省略すると、sty=r と同じ結果が表示されます。
 </div>
 <div>
@@ -297,7 +291,6 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>ss=1</p></td>
 <td align="left"><p><code>ss=1</code> の場合は、ストリート レベルの画像が表示されることを示します。 **ss** パラメーターを省略すると、<code>ss=0</code> と同じ結果が表示されます。 **cp** パラメーターと組み合わせて使うと、ストリート レベル ビューの場所を指定できます。</p>
 <div class="alert">
-            
 > **注**  ストリート レベルの画像は、すべての地域で利用できるわけではありません。
 </div>
 <div>
@@ -312,7 +305,6 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>trfc=1</p></td>
 <td align="left"><p>交通情報を地図に含めるかどうかを指定します。 trfc パラメーターを省略すると、<code>trfc=0</code> と同じ結果が表示されます。</p>
 <div class="alert">
-            
 > **注**  交通情報のデータは、すべての地域で利用できるわけではありません。
 </div>
 <div>
@@ -342,7 +334,6 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>不完全なルートが指定されている場合は、ルートの線は表示されません。</p>
 <p>**mode** パラメーターと組み合わせて使うと、交通手段のモード (自動車、公共交通機関、徒歩) を指定できます。 **mode** が指定されていない場合、ルート案内は、ユーザーの交通手段の設定のモードを使って提供されます。</p>
 <div class="alert">
-            
 **注**  **pos** パラメーターの値によって場所が指定されている場合、その場所に対してタイトルを使うことができます。 緯度と経度が表示される代わりに、タイトルが表示されます。
 </div>
 <div>
@@ -357,12 +348,9 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>mode=d</p></td>
 <td align="left"><p>交通手段モードを定義します。 このパラメーターの有効な値は次のとおりです。</p>
 <ul>
-<li>
-            **d**: 自動車ルート案内のルートの概要を表示します。</li>
-<li>
-            **t**: 乗り換え案内のルートの概要を表示します。</li>
-<li>
-            **w**: 徒歩ルート案内のルートの概要を表示します。</li>
+<li>**d**: 自動車ルート案内のルートの概要を表示します。</li>
+<li>**t**: 乗り換え案内のルートの概要を表示します。</li>
+<li>**w**: 徒歩ルート案内のルートの概要を表示します。</li>
 </ul>
 <p>交通手段案内の **rtp** パラメーターと組み合わせて使います。 **mode** が指定されていない場合、ルート案内は、ユーザーの交通手段の設定のモードを使って提供されます。 現在の位置情報からこのモード用のルート案内に入力するルート パラメーターなしに、**mode** を提供することができます。</p></td>
 </tr>
@@ -386,8 +374,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>名前と複数のポイントをチルダ (**~**) で区切ります。</p>
 <p>指定した項目にチルダが含まれている場合は、そのチルダを <code>%7E</code> としてエンコードしてください。 中心点のパラメーターやズーム レベルのパラメーターと共に使わない場合、コレクションによって、最適な地図ビューが表示されます。</p>
 
-<p>
-            **重要** 指定した項目にアンダースコアが含まれている場合は、そのアンダースコアを %255F としてダブル エンコードしてください。</p>
+<p>**重要** 指定した項目にアンダースコアが含まれている場合は、そのアンダースコアを %255F としてダブル エンコードしてください。</p>
 
 <p>指定した項目にアンダースコアが含まれている場合は、そのアンダースコアを %255F としてダブル エンコードしてください。</p></td>
 </tr>
@@ -401,8 +388,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 ターン バイ ターン方式の自動車ルート案内の要求を起動する URI は、エンコードする必要がありません。その形式は、次のようになります。
 
-> 
-            **注**  この URI スキームでは出発地を指定しません。 常に、現在の場所が出発地であると見なされます。 現在の場所以外の出発地を指定する必要がある場合は、「[ルート案内と交通情報の表示](#directions)」をご覧ください。
+> **注**  この URI スキームでは出発地を指定しません。 常に、現在の場所が出発地であると見なされます。 現在の場所以外の出発地を指定する必要がある場合は、「[ルート案内と交通情報の表示](#directions)」をご覧ください。
 
  
 
@@ -419,8 +405,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 ターン バイ ターン方式の徒歩ルート案内の要求を起動する URI は、エンコードする必要がありません。その形式は、次のようになります。
 
-> 
-            **注**  この URI スキームでは出発地を指定しません。 常に、現在の場所が出発地であると見なされます。 現在の場所以外の出発地を指定する必要がある場合は、「[ルート案内と交通情報の表示](#directions)」をご覧ください。
+> **注**  この URI スキームでは出発地を指定しません。 常に、現在の場所が出発地であると見なされます。 現在の場所以外の出発地を指定する必要がある場合は、「[ルート案内と交通情報の表示](#directions)」をご覧ください。
 
  
 
@@ -434,8 +419,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 ## ms-settings: のパラメーター リファレンス
 
 
-**ms-settings:** URI スキームのマップ アプリ固有のパラメーターの構文は、次のように定義されます。 
-            **maps-downloadmaps** は、**ms-settings:** URI と共に **ms-settings:maps-downloadmaps?** の形式で指定され、オフライン マップの設定ページを示します。
+**ms-settings:** URI スキームのマップ アプリ固有のパラメーターの構文は、次のように定義されます。 **maps-downloadmaps** は、**ms-settings:** URI と共に **ms-settings:maps-downloadmaps?** の形式で指定され、オフライン マップの設定ページを示します。
 
  
 
@@ -448,6 +432,6 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

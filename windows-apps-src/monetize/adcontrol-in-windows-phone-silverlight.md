@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: c0450f7b-5c81-4d8c-92ef-2b1190d18af7
 description: "Windows Phone 8.1 用または Windows Phone 8.0 用の Silverlight アプリで AdControl クラスを使ってバナー広告を表示する方法について説明します。"
 title: "Windows Phone Silverlight の AdControl"
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 5a12badfb11cfd43c0833522d996da7df73b3d55
+translationtype: Human Translation
+ms.sourcegitcommit: 3a09b37a5cae0acaaf97a543cae66e4de3eb3f60
+ms.openlocfilehash: 40e68625ed666a9242ed83729b2f8113da363735
 
 
 ---
@@ -12,30 +13,36 @@ ms.openlocfilehash: 5a12badfb11cfd43c0833522d996da7df73b3d55
 # Windows Phone Silverlight の AdControl
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+
 
 このチュートリアルでは、Windows Phone 8.1 用または Windows Phone 8.0 用の Silverlight アプリで [AdControl](https://msdn.microsoft.com/library/windows/apps/hh524191.aspx) クラスを使ってバナー広告を表示する方法について説明します。
 
-## 前提条件
-
-*  [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk) を Visual Studio 2015 または Visual Studio 2013 と共にインストールします。
+> **Windows Phone Silverlight 8.0 に関する注**&nbsp;&nbsp;以前のリリースの Universal Ad Client SDK または Microsoft Advertising SDK の **AdControl** を使用し、すでにストアで提供されている既存の Windows Phone 8.0 Silverlight アプリでは、バナー広告が引き続きサポートされます。 ただし、新しい Windows Phone 8.0 Silverlight プロジェクトではバナー広告がサポートされません。 さらに、Windows Phone 8.x Silverlight プロジェクトでは、一部のデバッグとテストのシナリオが制限されます。 詳しくは、「[アプリでの広告の表示](display-ads-in-your-app.md#silverlight_support)」をご覧ください。
 
 
-## Advertising アセンブリの参照を追加する
+## Advertising アセンブリをプロジェクトに追加する
 
-Windows Phone Silverlight プロジェクト用の Microsoft Advertising アセンブリは、Microsoft Store Engagement and Monetization SDK と共にローカルにインストールされません。 コードの更新を始める前に、まず、**接続済みサービス**と Microsoft Store Engagement and Monetization SDK の広告仲介サポートを使って、これらのアセンブリをダウンロードしてプロジェクトで参照する必要があります。
+まず、Windows Phone Silverlight 用の Microsoft Advertising アセンブリを含む NuGet パッケージをプロジェクトにダウンロードしてインストールします。
 
-1.  Visual Studio で、**[プロジェクト]**、**[接続済みサービスの追加]** の順にクリックします。
+1.  Visual Studio でプロジェクトを開きます。
 
-2.  **[接続済みサービスの追加]** ダイアログ ボックスで、**[広告メディエーター]** をクリックし、**[構成]** をクリックします。
+2.  **[ツール]** をクリックし、**[NuGet パッケージ マネージャー]** をポイントして **[パッケージ マネージャー コンソール]** をクリックします。
 
-3.  **[広告ネットワークの選択]** をクリックし、**[Microsoft Advertising]** のみを選択します。
+3.  **パッケージ マネージャー コンソール** ウィンドウで、以下のいずれかのコマンドを入力します。
 
-    この時点で、必要なすべての Silverlight 用 Microsoft Advertising アセンブリが NuGet パッケージとしてローカルのプロジェクトにダウンロードされ、それらのアセンブリへの参照が自動的にプロジェクトに追加されます。 広告仲介アセンブリへの参照もプロジェクトに追加されますが、 このシナリオには必要ないため、後の手順で削除します。
+  * プロジェクトが Windows Phone 8.0 をターゲットとする場合は、以下のコマンドを入力します。
 
-4.  **[広告ネットワークの選択]** ダイアログ ボックスで、**[OK]** をクリックします。 次の **[フェッチの状態]** 確認ページでもう一度 **[OK]** をクリックし、最後に **[追加]** をクリックして **[広告メディエーター]** ダイアログ ボックスを閉じます。
+      ```
+      Install-Package Microsoft.Advertising.WindowsPhone.SL80 -Version 6.2.40501.1
+      ```
 
-5.  **ソリューション エクスプローラー**で、**[参照設定]** ノードを展開します。 **[Microsoft.AdMediator.WindowsPhone81SL.MicrosoftAdvertising]** を右クリックし、**[削除]** をクリックします。 このアセンブリ参照は、このシナリオには必要ありません。
+  * プロジェクトが Windows Phone 8.1 をターゲットとする場合は、以下のコマンドを入力します。
+
+      ```
+      Install-Package Microsoft.Advertising.WindowsPhone.SL81 -Version 8.1.50112
+      ```
+
+    コマンドを入力すると、必要なすべての Silverlight 用 Microsoft Advertising アセンブリが NuGet パッケージとしてローカルのプロジェクトにダウンロードされ、それらのアセンブリへの参照が自動的にプロジェクトに追加されます。
 
 ## アプリのコードを記述する
 
@@ -89,8 +96,7 @@ Windows Phone Silverlight プロジェクト用の Microsoft Advertising アセ�
 
 6.  **Grid** タグに、以下に示す **AdControl** のコードを追加します。 **ApplicationId** プロパティと **AdUnitId** プロパティに、「[Test mode values (テスト モードの値)](test-mode-values.md)」に示されているテスト値を割り当てて、**Height** プロパティと **Width** プロパティを、[バナー広告でサポートされている広告サイズ](supported-ad-sizes-for-banner-ads.md)のいずれかに合わせて調整します。
 
-    > **注**  
-    **ApplicationId** と **AdUnitId** のテスト値は、アプリを申請のために提出する前に実際の値に置き換えます。
+    >               **注**&nbsp;&nbsp;**ApplicationId** と **AdUnitId** のテスト値は、アプリを申請のために提出する前に実際の値に置き換えます。
 
     ``` syntax
     <Grid x:Name="ContentPanel" Grid.Row="1">
@@ -113,12 +119,11 @@ Windows Phone Silverlight プロジェクト用の Microsoft Advertising アセ�
 ## デベロッパー センターを使用して、ライブ広告を表示するアプリをリリースする
 
 
-1.  デベロッパー センターのダッシュボードで、アプリの **[貨幣化]**&gt;**[広告で収入を増やす]** ページに移動し、[スタンドアロン Microsoft Advertising ユニットを作成](../publish/monetize-with-ads.md)します。 広告ユニットの種類として、**[バナー]** を指定します。 広告ユニット ID とアプリケーション ID の両方をメモしておきます。
+1.  デベロッパー センターのダッシュボードで、アプリの **[収益化]** &gt; **[広告で収入を増やす]** ページに移動し、[スタンドアロン Microsoft Advertising ユニットを作成](../publish/monetize-with-ads.md)します。 広告ユニットの種類として、**[バナー]** を指定します。 広告ユニット ID とアプリケーション ID の両方をメモしておきます。
 
 2.  コードで、広告ユニットのテスト値 (**applicationId** と **adUnitId**) を、デベロッパー センターで生成した実際の値に置き換えます。
 
-3.  
-            デベロッパー センター ダッシュボードを使用して、ストアに[アプリを提出](../publish/app-submissions.md)します。
+3.  デベロッパー センター ダッシュボードを使用して、ストアに[アプリを申請](../publish/app-submissions.md)します。
 
 4.  デベロッパー センター ダッシュボードで[広告パフォーマンス レポート](../publish/advertising-performance-report.md)を確認します。
 
@@ -127,6 +132,6 @@ Windows Phone Silverlight プロジェクト用の Microsoft Advertising アセ�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

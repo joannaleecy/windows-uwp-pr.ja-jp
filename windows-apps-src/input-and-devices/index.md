@@ -2,16 +2,15 @@
 description: "特定の種類の入力とデバイスに対応するように UWP アプリをカスタマイズします。 タッチと音声コマンドを利用します。 Xbox、電話、テレビでアプリを実行します。"
 title: "UWP アプリの入力とデバイスの設計 - Windows アプリ開発"
 author: mijacobs
-keywords: device primer, app inputs, customize UWP application
+keywords: "デバイスの基本情報, アプリの入力, UWP アプリケーションのカスタマイズ"
 translationtype: Human Translation
-ms.sourcegitcommit: 350de23331f7fe951304ba877c40e07feb424adc
-ms.openlocfilehash: 2d3f0588b56b26e125652c12eeca3028bfe6573e
+ms.sourcegitcommit: 5a6666d4e706d4d49d646b5bb2e43b82394eb215
+ms.openlocfilehash: 85bcd15d4b9262188f0821642faf0d3d0cb7dbad
 
 ---
+# 入力とデバイス
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-# 入力とデバイス
 
 UWP アプリは、さまざまな入力を自動的に処理し、さまざまなデバイスで実行できます。タッチ入力を有効にする場合や、アプリを電話で実行できるようにする場合に、追加の作業は何も必要ありません。 
 
@@ -169,6 +168,6 @@ UWP アプリをサポートするデバイスを理解することは、各フ�
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

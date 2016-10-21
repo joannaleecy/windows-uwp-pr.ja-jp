@@ -6,26 +6,38 @@ ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
 label: Hub
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: fdff043aa92842adb6ac2d572794bf02fdd5c6b3
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 6c27d9b968dfca6d0c1db37eb7779d9ff3744f41
 
 ---
 # ハブ コントロール/パターン
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
 ハブ コントロールを使うと、アプリのコンテンツを、関連した別個のセクションやカテゴリに整理できます。 ハブのセクションは、優先順に走査するためのものであり、さらに細かい操作性を実現するための出発点として使うことができます。
 
 ![ハブの例](images/hub_example_tablet.png)
 
-ハブのコンテンツはパノラマ ビューに表示でき、ユーザーは、新しい情報、入手可能な情報、関連する情報がひとめでわかります。 ハブには通常ページ ヘッダーがあり、各コンテンツ セクションにはセクション ヘッダーがあります。
+ハブのコンテンツはパノラマ ビューに表示でき、ユーザーは、新しい情報、入手可能な情報、関連する情報がひとめでわかります。 ハブには通常、ページ ヘッダーがあり、各コンテンツ セクションにはセクション ヘッダーがあります。
+
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn251843"><strong>Hub クラス</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn251845"><strong>HubSection クラス</strong></a></li>
+</ul>
+
+</div>
+</div>
 
 
--   [**Hub クラス**](https://msdn.microsoft.com/library/windows/apps/dn251843)
--   [**HubSection クラス**](https://msdn.microsoft.com/library/windows/apps/dn251845)
+
+
 
 ## 適切なコントロールの選択
 
-ハブ コントロールは、階層に配置された大量のコンテンツを表示する場合に適してします。 ハブは、新しいコンテンツの閲覧と検出の優先順位を設定し、ストアやメディア コレクション内の項目を表示する際に役立ちます。
+ハブ コントロールは、階層に配置された大量のコンテンツを表示する場合に適しています。 ハブは、新しいコンテンツの閲覧と検出の優先順位を設定し、ストアやメディア コレクション内の項目を表示する際に役立ちます。
 
 ハブ コントロールには、コンテンツのナビゲーション パターンを構築するのに適したいくつかの機能があります。
 
@@ -112,6 +124,6 @@ ms.openlocfilehash: fdff043aa92842adb6ac2d572794bf02fdd5c6b3
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

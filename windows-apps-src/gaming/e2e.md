@@ -4,8 +4,8 @@ title: "Windows 10 ゲーム開発ガイド"
 description: "ユニバーサル Windows プラットフォーム (UWP) ゲーム開発のためのリソースや情報を網羅したガイドです。"
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 translationtype: Human Translation
-ms.sourcegitcommit: a9beb420ac13eb74c0109b30508e49d5305bc67c
-ms.openlocfilehash: 30f8408e6d125423e69615a3f9341e8f7d886fc8
+ms.sourcegitcommit: 1c3f222b4b3ddb14a48cef138984b07ac58cc66b
+ms.openlocfilehash: 7bc6694f94eeeb6188470fee00d432b2d71e52e6
 
 ---
 
@@ -33,8 +33,7 @@ Windows 10 ゲームを作成すると、スマートフォンから PC、Xbox O
 
 ドキュメントから、開発者向けのプログラム、フォーラム、ブログ、サンプルまで、ゲーム開発に役立つ多くのリソースが用意されています。 ここでは、Windows 10 ゲームの開発を始めるにあたって役立つリソースをまとめています。
 
-> 
-              **注**   Xbox One の開発と高度な Windows 10 のゲーム機能 (Xbox Live サービスなど) は、ID@Xbox や Microsoft Studios などのプログラムによって管理されます。 このガイドでは幅広いリソースを取り上げているため、参加しているプログラムや特定の開発の役割によっては、一部のリソースにアクセスできない場合があります。 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com、Game Developer Network (GDN) に解決されるリンクなどです。 Microsoft との提携について詳しくは、「[開発者プログラム](#programs)」をご覧ください。
+> **注**   Xbox One の開発と高度な Windows 10 のゲーム機能 (Xbox Live サービスなど) は、ID@Xbox や Microsoft Studios などのプログラムによって管理されます。 このガイドでは幅広いリソースを取り上げているため、参加しているプログラムや特定の開発の役割によっては、一部のリソースにアクセスできない場合があります。 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com、Game Developer Network (GDN) に解決されるリンクなどです。 Microsoft との提携について詳しくは、「[開発者プログラム](#programs)」をご覧ください。
 
 ### ゲーム開発に関するドキュメント
 
@@ -66,16 +65,20 @@ Windows 10 ゲームを作成すると、スマートフォンから PC、Xbox O
         <td>[DirectX のグラフィックスとゲーミング](https://msdn.microsoft.com/library/windows/desktop/ee663274)</td>
     </tr>
     <tr>
+        <td>Xbox One の UWP</td>
+        <td>[Xbox One の UWP アプリの構築](https://msdn.microsoft.com/windows/uwp/xbox-apps/index)</td>
+    </tr>
+    <tr>
         <td>Xbox Live に関するドキュメント</td>
         <td>[Xbox Live SDK](http://aka.ms/xsapi2)</td>
     </tr>
     <tr>
         <td>Xbox One 開発者向けドキュメント (GDN)</td>
-        <td>[Xbox One XDK ドキュメント](https://developer.xboxlive.com/platform/development/documentation/Pages/home.aspx)</td>
+        <td>[Xbox One XDK ドキュメント](https://developer.xboxlive.com/en-us/platform/development/documentation/Pages/home.aspx)</td>
     </tr>
     <tr>
         <td>Xbox One 開発者向けホワイト ペーパー (GDN)</td>
-        <td>[ホワイト ペーパー](https://developer.xboxlive.com/platform/development/education/Pages/WhitePapers.aspx)</td>
+        <td>[ホワイト ペーパー](https://developer.xboxlive.com/en-us/platform/development/education/Pages/WhitePapers.aspx)</td>
     </tr>     
 </table>
 
@@ -83,7 +86,7 @@ Windows 10 ゲームを作成すると、スマートフォンから PC、Xbox O
 
 Microsoft では、Windows ゲームの開発と公開に役立ついくつかの開発者向けプログラムを提供しています。 Windows ストアでゲームを公開するには、Windows デベロッパー センターで開発者アカウントを作成する必要があります。 開発するゲームや制作スタジオのニーズによっては、他のプログラムも関心を集めており、Xbox One の開発や Xbox Live の統合などの機会を創造できます。
 
-### Windows デベロッパー センター
+#### Windows デベロッパー センター
 
 Windows ゲームの公開に向けての最初の一歩は、Windows デベロッパー センターで開発者アカウントを登録することです。 開発者アカウントでは、ゲームの名前を予約することや、すべての Windows デバイスに対応する無料ゲームと有料ゲームを Windows ストアに提出することができます。 開発者アカウントを使って、ゲームとゲーム内製品を管理し、詳細な分析を取得したり、世界中のユーザーに優れたエクスペリエンスをサービスで実現することができます。
 
@@ -96,10 +99,9 @@ Windows ゲームの公開に向けての最初の一歩は、Windows デベロ�
         <td>開発者アカウントの登録</td>
         <td>[サインアップの準備はできましたか。](https://msdn.microsoft.com/library/windows/apps/bg124287)</td>
     </tr> 
-</table>  
+</table>
 
-
-### ID@Xbox
+#### ID@Xbox
 
 ID@Xbox プログラムでは、認定されたゲーム開発者が Windows と Xbox One 向けに自分でゲームを公開するためのサポートを行います。 Xbox One 向けの開発を行ったり、ゲーマースコア、達成度、ランキングなどの Xbox Live 機能を自分の Windows 10 ゲームでも実現したいと検討されているなら、ID@Xbox にサインアップしてください。 ID@Xbox 開発者になると、創造性を解き放ち、成功の可能性を最大限に引き出すためのツールやサポートを利用できます。 ID@Xbox への登録を申し込む前に、Windows デベロッパー センターで開発者アカウントを登録してください。
 
@@ -118,24 +120,7 @@ ID@Xbox プログラムでは、認定されたゲーム開発者が Windows と
     </tr>
 </table>
 
-
-### DirectX 早期アクセス プログラム
-
-プロのゲーム開発者が、Direct3D 12 API の変更点を初期段階からプレビューする場合や、フォーラムでフィードバックを提供する場合は、DirectX 早期アクセス プログラムにご参加ください。
-
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>DirectX 12 早期アクセス プログラムに登録する</td>
-        <td>[DirectX 早期アクセス プログラム](http://1drv.ms/1dgelm6)</td>
-    </tr>
-</table>
-
-
-### Xbox のツールとミドルウェア
+#### Xbox のツールとミドルウェア
 
 Xbox のツールおよびミドルウェア プログラムは、ゲームのツールやミドルウェア専門の開発者に Xbox 開発キットのライセンスを付与します。 プログラムに受け入れられた開発者は、Xbox XDK テクノロジを共有し、ライセンスを持つ他の Xbox 開発者に配布することができます。
 
@@ -165,8 +150,16 @@ Windows 10 のゲーム機能を理解してゲーム開発をすぐに始める
         <td>[Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples)</td>
     </tr>
     <tr>
+        <td>Xbox Advanced Technology Group のパブリック サンプル</td>
+        <td>[Xbox-ATG-Samples](https://github.com/Microsoft/Xbox-ATG-Samples)</td>
+    </tr>
+    <tr>
         <td>Direct3D 12 グラフィックスのサンプル</td>
-        <td>[DirectX グラフィックスのサンプル](https://github.com/Microsoft/DirectX-Graphics-Samples)</td>
+        <td>[DirectX-Graphics-Samples](https://github.com/Microsoft/DirectX-Graphics-Samples)</td>
+    </tr>
+    <tr>
+        <td>Direct3D 11 グラフィックスのサンプル</td>
+        <td>[directx-sdk-samples](https://github.com/walbourn/directx-sdk-samples)</td>
     </tr>
     <tr>
         <td>Direct3D 11 主観視点のゲームのサンプル</td>
@@ -186,7 +179,7 @@ Windows 10 のゲーム機能を理解してゲーム開発をすぐに始める
     </tr>
     <tr>
         <td>Xbox One ゲームのサンプル (GDN)</td>
-        <td>[サンプル](https://developer.xboxlive.com/platform/development/education/Pages/Samples.aspx)</td>
+        <td>[サンプル](https://developer.xboxlive.com/en-us/platform/development/education/Pages/Samples.aspx)</td>
     </tr>
     <tr>
         <td>Windows 8 ゲームのサンプル (MSDN コード ギャラリー)</td>
@@ -589,15 +582,15 @@ Direct3D 11.3 は低レベル グラフィック API です。よく利用され
         <td>[iOS アプリを Windows に移植する](https://dev.windows.com/bridges/ios)</td>
     </tr>
     <tr>
-        <td>.NET および Win32 用 Windows ブリッジ ("Project Centennial") のプレビュー</td>
-        <td>[Windows Developer Preview Programs](http://go.microsoft.com/fwlink/p/?LinkID=624543)</td>
+        <td>デスクトップ アプリケーション用 Windows ブリッジ (.NET および Win32)</td>
+        <td>[デスクトップ アプリケーションを UWP アプリに変換する](https://developer.microsoft.com/windows/bridges/desktop)</td>
     </tr>
 </table>
  
 
 #### Unity
 
-Unity 5 は、2D および 3D ゲームと対話型エクスペリエンスを作成するための受賞歴のある次世代開発プラットフォームです。 Unity 5 により、新しい芸術性、高度なグラフィックス機能、高い効率性を手に入れることができます。
+Unity 5 は、2D および 3D ゲームと対話型エクスペリエンスを作成するための、受賞歴のある次世代開発プラットフォームです。 Unity 5 により、新しい芸術性、高度なグラフィックス機能、高い効率性を手に入れることができます。
 
 [Unity のロードマップ](https://unity3d.com/unity/roadmap)では、Unity の将来のバージョンで DirectX 12 のサポートが予定されています。
 
@@ -620,7 +613,7 @@ Unity 5 は、2D および 3D ゲームと対話型エクスペリエンスを�
     </tr>
     <tr>
         <td>Windows 向けの Unity に関するドキュメント</td>
-        <td>[Unity マニュアル / Windows](http://docs.unity3d.com/Manual/Windows.mdl)</td>
+        <td>[Unity マニュアル / Windows](http://docs.unity3d.com/Manual/Windows.html)</td>
     </tr>
     <tr>
         <td>ユニバーサル Windows プラットフォーム アプリとして Unity ゲームを公開する (ビデオ)</td>
@@ -691,8 +684,7 @@ Cocos2d-X は、オープン ソース、クロス プラットフォームの�
 
 #### Unreal Engine
 
-Unreal Engine 4 は、あらゆる種類のゲームや開発者に適したゲーム開発ツールがすべて揃ったスイートです。 最も要求の厳しいコンソールおよび PC ゲームにおいて、Unreal Engine は世界中のゲーム開発者により使用されています。 
-              Unreal Engine 4 を購読している [DirectX 12 早期アクセス プログラム](#dxeap) メンバーは、DirectX をサポートする Unreal Engine 4.4 開発プロジェクトにアクセスできます。
+Unreal Engine 4 は、あらゆる種類のゲームや開発者に適したゲーム開発ツールがすべて揃ったスイートです。 最も要求の厳しいコンソールおよび PC ゲームにおいて、Unreal Engine は世界中のゲーム開発者により使用されています。
 
 <table>
     <colgroup>
@@ -701,10 +693,32 @@ Unreal Engine 4 は、あらゆる種類のゲームや開発者に適したゲ�
     </colgroup>
     <tr>
         <td>Unreal Engine の概要</td>
-        <td>[Unreal Engine 4 とは](https://www.unrealengine.com/what-is-unreal-engine-4)</td>
+        <td>[Unreal Engine 4](https://www.unrealengine.com/what-is-unreal-engine-4)</td>
     </tr>
 </table>
- 
+
+#### BabylonJS
+
+BabylonJS は、HTML5、WebGL、Web オーディオで 3D ゲームを構築するための完全な JavaScript フレームワークです。
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>BabylonJS</td>
+        <td>[BabylonJS](http://www.babylonjs.com/)</td>
+    </tr>
+    <tr>
+        <td>HTML5 と BabylonJS を使用した WebGL 3D (ビデオ シリーズ)</td>
+        <td>[WebGL 3D と BabylonJS について](https://channel9.msdn.com/Series/Introduction-to-WebGL-3D-with-HTML5-and-Babylonjs/01)</td>
+    </tr>
+    <tr>
+        <td>BabylonJS を使用してクロスプラットフォーム WebGL ゲームを構築する</td>
+        <td>[BabylonJS を使用してクロスプラットフォーム ゲームを開発する](https://www.smashingmagazine.com/2016/07/babylon-js-building-sponza-a-cross-platform-webgl-game/)</td>
+    </tr>    
+</table>
 
 ### ミドルウェアとパートナー
 
@@ -716,12 +730,8 @@ Unreal Engine 4 は、あらゆる種類のゲームや開発者に適したゲ�
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Windows デベロッパー センターのゲーム分野のパートナー</td>
-        <td>[デベロッパー センターのパートナー (ゲーム)](https://devcenterpartners.windows.com/directory#filter=gaming)</td>
-    </tr>
-    <tr>
         <td>Windows デベロッパー センターのパートナー</td>
-        <td>[デベロッパー センターのパートナー](https://devcenterpartners.windows.com/directory)</td>
+        <td>[デベロッパー センターのパートナー](https://developer.microsoft.com/windows/app-middleware-partners)</td>
     </tr>
 </table>
  
@@ -757,7 +767,7 @@ Unreal Engine 4 は、あらゆる種類のゲームや開発者に適したゲ�
     </tr>
     <tr>
         <td>Xbox ゲームをユニバーサル Windows プラットフォーム アプリに移植する</td>
-        <td>[Xbox One から Windows 10 UWP への移植](https://developer.xboxlive.com/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx)</td>
+        <td>[Xbox One から Windows 10 UWP への移植](https://developer.xboxlive.com/en-us/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx)</td>
     </tr>
     <tr>
         <td>DirectX 9 から DirectX 11 に移植する</td>
@@ -1269,9 +1279,7 @@ Windows プラットフォーム用の多言語対応ゲームを開発し、Mic
     </tr>
 </table>
 
-
 ## ゲームの申請と公開
-
 
 次のガイドと情報は、公開と申請のプロセスをできるだけスムーズに進めるのに役立ちます。
 
@@ -1429,8 +1437,7 @@ Visual Studio Application Insights は、公開されたゲームのパフォー
 ## ゲームへの Xbox Live の追加
 
 
-> 
-              **注**   Xbox Live の開発は ID@Xbox や Microsoft Studios などのプログラムで管理されます。 このガイドでは幅広いリソースを取り上げているため、プログラムへの参加や特定の開発の役割によっては、一部のリソースにアクセスできない場合があります。 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com、Game Developer Network (GDN) に解決されるリンクなどです。 Microsoft との提携について詳しくは、「[開発者プログラム](#programs)」をご覧ください。
+> **注**   Xbox Live の開発は ID@Xbox や Microsoft Studios などのプログラムで管理されます。 このガイドでは幅広いリソースを取り上げているため、プログラムへの参加や特定の開発の役割によっては、一部のリソースにアクセスできない場合があります。 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com、Game Developer Network (GDN) に解決されるリンクなどです。 Microsoft との提携について詳しくは、「[開発者プログラム](#programs)」をご覧ください。
 
 <table>
     <colgroup>
@@ -1499,6 +1506,6 @@ Visual Studio Application Insights は、公開されたゲームのパフォー
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Sep16_HO2-->
 
 

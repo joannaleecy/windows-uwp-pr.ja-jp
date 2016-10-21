@@ -5,29 +5,28 @@ title: "タイルとアイコン アセット"
 ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
 label: Tile and icon assets
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 98eebc4fbf18aa2fbe4586958f666b41580cf6d9
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 4aa22b9eae8ff7f7da2c73f3fdf3a63ed12ff87b
 
 ---
-
 # タイルとアイコン アセットのガイドライン
 
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
 Windows 10 オペレーティング システム全体でさまざまな形式で表示される、アプリ アイコン アセットは、ユニバーサル Windows プラットフォーム (UWP) アプリの名刺です。 このガイドラインでは、システム内でアプリ アイコン アセットが表示される場所の詳細について説明し、最も洗練されたアイコンを作成する方法に関して詳細なデザインのヒントを提供します。
 
 ![Windows 10 のスタート画面とタイル](images/assetguidance01.jpg)
 
-## <span id="Adaptive_scaling"></span><span id="adaptive_scaling"></span><span id="ADAPTIVE_SCALING"></span>アダプティブ スケーリング
+## アダプティブ スケーリング
 
 
 まず、スケーリングとアセットがどのように連携しているかを深く理解するために、アダプティブ スケーリングの概要について簡単に説明します。 Windows 10 には、既存のスケーリング モデルの進化形が導入されています。 表示スケール ベクター コンテンツに加えて、さまざまな画面サイズと画面の解像度で UI 要素に一貫したサイズを提供するスケール ファクターの統合されたセットがあります。 スケール ファクターは、iOS や Android などの他のオペレーティング システムのスケール ファクターとも互換性があり、これにより、こうしたプラットフォーム間でのアセットの共有が簡単になります。
 
 ストアでは、デバイスの DPI の一部に基づいて、ダウンロードするアセットが選ばれます。 デバイスに最適なアセットのみがダウンロードされます。
 
-## <span id="Tile_elements"></span><span id="tile_elements"></span><span id="TILE_ELEMENTS"></span>タイル要素
+## タイル要素
 
 
 スタート画面のタイルの基本コンポーネントは、バック プレート、アイコン、ブランド バー、余白、およびアプリのタイトルで構成されます。
@@ -66,7 +65,7 @@ Windows 10 オペレーティング システム全体でさまざまな形式�
 
  
 
-## <span id="Tile_assets"></span><span id="tile_assets"></span><span id="TILE_ASSETS"></span>タイル アセット
+## タイル アセット
 
 
 各タイル アセットは、配置されるタイルと同じサイズです。 アセットの 2 つの異なる表示によって、アプリのタイルをブランド化できます。
@@ -135,7 +134,7 @@ Windows 10 オペレーティング システム全体でさまざまな形式�
 
 ![余白が小さすぎるフルブリード タイル](images/assetguidance15.png)
 
-## <span id="Tile_assets_in_list_views"></span><span id="tile_assets_in_list_views"></span><span id="TILE_ASSETS_IN_LIST_VIEWS"></span>リスト ビューでのタイル アセット
+## リスト ビューでのタイル アセット
 
 
 タイルはリスト ビューにも表示されます。 リスト ビューに表示されるタイル アセットのサイズ調整に関するガイドラインは、先ほど説明したタイル アセットとは少し異なります。 このセクションでは、これらのサイズ調整の詳細について説明します。
@@ -162,7 +161,7 @@ Windows 10 オペレーティング システム全体でさまざまな形式�
 
 ![タイルに対して小さすぎるアイコン](images/assetguidance20b.png)
 
-## <span id="Target-based_assets"></span><span id="target-based_assets"></span><span id="TARGET-BASED_ASSETS"></span>ターゲット ベースのアセット
+## ターゲット ベースのアセット
 
 
 ターゲット ベースのアセットは、Windows タスク バー、タスク ビュー、スナップ アシスト、Alt + Tab キーを押したとき、およびスタート画面のタイルの右下に表示されるアイコンおよびタイルで使用されます。 これらのアセットにパディングを追加する必要はありません。パディングは、必要に応じて Windows によって追加されます。 これらのアセットは、16 ピクセルの最小面積を占めている必要があります。 Windows タスク バーのアイコンに表示される、このようなアセットの例を以下に示します。
@@ -195,7 +194,7 @@ Windows 10 オペレーティング システム全体でさまざまな形式�
 
 ![正方形以外のアセットのサイズ調整、バッジがある場合とバッジがない場合](images/assetguidance26b.png)
 
-## <span id="Splash_screen_assets"></span><span id="splash_screen_assets"></span><span id="SPLASH_SCREEN_ASSETS"></span>スプラッシュ画面のアセット
+## スプラッシュ画面のアセット
 
 
 スプラッシュ画面の画像は、画像ファイルへの直接パスまたはリソースとして指定できます。 リソース参照を使用すると、Windows がデバイスと画面の解像度に最適なサイズを選択できるように、さまざまなスケールの画像を提供できます。 アクセシビリティのためのハイ コントラスト画像や、さまざまな UI 言語に対応するローカライズされた画像を提供することもできます。
@@ -213,7 +212,7 @@ Windows 10 オペレーティング システム全体でさまざまな形式�
 
 ![スプラッシュ画面のアセットのサイズ調整](images/assetguidance27.png)
 
-## <span id="High-contrast_assets"></span><span id="high-contrast_assets"></span><span id="HIGH-CONTRAST_ASSETS"></span>ハイ コントラストのアセット
+## ハイ コントラストのアセット
 
 
 ハイ コントラスト モードでは、別のハイ コントラスト白 (白の背景に黒のテキスト) とハイ コントラスト黒 (黒の背景に白のテキスト) のアセットを使用します。 アプリでハイ コントラストのアセットが提供されない場合、標準アセットが使用されます。
@@ -224,7 +223,7 @@ Windows 10 オペレーティング システム全体でさまざまな形式�
 
 ハイ コントラストのアセットを用意する場合は、黒地に白と白地に黒の両方のセットを含める必要があります。 これらのアセットをパッケージに含める場合は、黒地に白のアセット用に "contrast-black" フォルダーを、白地に黒のアセット用に "contrast-white" フォルダーを作成できます。
 
-## <span id="Asset_size_tables"></span><span id="asset_size_tables"></span><span id="ASSET_SIZE_TABLES"></span>アセット サイズの一覧表
+## アセット サイズの一覧表
 
 
 少なくとも、100、200、400 の倍率のアセットを提供することを強くお勧めします。 すべての倍率のアセットを提供することによって、最適なユーザー エクスペリエンスを提供できます。
@@ -292,7 +291,7 @@ Windows 10 オペレーティング システム全体でさまざまな形式�
 
 \* ベースラインとしてこれらのサイズのアセットを提出します
 
-## <span id="Asset_types"></span><span id="asset_types"></span><span id="ASSET_TYPES"></span>アセットの種類
+## アセットの種類
 
 
 ここでは、すべてのアセットの種類、その用途、推奨されるファイル名の一覧を示します。
@@ -373,7 +372,7 @@ Windows 10 オペレーティング システム全体でさまざまな形式�
 
 
 
-## <span id="related_topics"></span>関連トピック
+## 関連トピック
 
 
 
@@ -388,6 +387,6 @@ Windows 10 オペレーティング システム全体でさまざまな形式�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

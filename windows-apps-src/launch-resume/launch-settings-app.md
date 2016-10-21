@@ -3,8 +3,9 @@ author: TylerMSFT
 title: "Windows 設定アプリの起動"
 description: "アプリから Windows 設定アプリを起動する方法について説明します。 ここでは、ms-settings URI スキームについて説明します。 Windows 設定アプリを起動して特定の設定ページを表示するには、この URI スキームを使います。"
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
-ms.sourcegitcommit: 3cf9dd4ab83139a2b4b0f44a36c2e57a92900903
-ms.openlocfilehash: e52a4245e8697a68bfc5c5605dc54e5ea510c662
+translationtype: Human Translation
+ms.sourcegitcommit: f90ba930db60f338ee0ebcc80934281363de01ee
+ms.openlocfilehash: 249e485f74364475ff96a8256ee88bdb79749259
 
 ---
 
@@ -26,10 +27,7 @@ ms.openlocfilehash: e52a4245e8697a68bfc5c5605dc54e5ea510c662
 
 ## 設定アプリを起動する方法
 
-
-プライバシー設定でアプリが機密性の高いリソースにアクセスすることを許可していない場合は、**設定**アプリのプライバシー設定へのリンクを示すことをお勧めします。 これにより、ユーザーが設定を変更することが容易になります。
-
-直接、**設定**アプリを起動するには、次の例に示されているように `ms-settings:` URI スキームを使います。
+**設定**アプリを起動するには、次の例に示されているように `ms-settings:` URI スキームを使います。
 
 この例では、ハイパーリンク XAML コントロールで `ms-settings:privacy-microphone` URI を使って、マイクのプライバシー設定ページを起動します。
 
@@ -45,7 +43,7 @@ ms.openlocfilehash: e52a4245e8697a68bfc5c5605dc54e5ea510c662
 </TextBlock>
 ```
 
-また、アプリで [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) メソッドを呼び出し、コードで**設定**アプリを起動することもできます。
+また、アプリで [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) メソッドを呼び出し、コードで**設定**アプリを起動することもできます。 次の例は、`ms-settings:privacy-webcam` URI を使って、カメラのプライバシー設定ページを起動する方法を示しています。
 
 ```cs
 using Windows.System;
@@ -53,9 +51,11 @@ using Windows.System;
 bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
 ```
 
-次の例は、`ms-settings:privacy-webcam` URI を使って、カメラのプライバシー設定ページを起動する方法を示しています。
+上記のコードでは、カメラのプライバシー設定ページが起動されます。
 
 ![カメラのプライバシー設定。](images/privacyawarenesssettingsapp.png)
+
+
 
 URI の起動について詳しくは、「[URI に応じた既定のアプリの起動](launch-default-app.md)」をご覧ください。
 
@@ -71,9 +71,9 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 |                    | 通知とアクション                | 両方           | ms-settings:notifications                 |
 |                    | 電話                                  | モバイルのみ    | ms-settings:phone                         |
 |                    | メッセージング                              | モバイルのみ    | ms-settings:messaging                     |
-|                    | バッテリー節約機能                          | タブレットなどのバッテリを備えたデバイス上のモバイルおよびデスクトップ    | ms-settings:batterysaver                  |
+|                    | バッテリー節約機能                          | タブレットなどのバッテリを備えたデバイス上のモバイルおよびデスクトップ | ms-settings:batterysaver                  |
 |                    | バッテリー節約機能/バッテリー節約機能の設定 | タブレットなどのバッテリを備えたデバイス上のモバイルおよびデスクトップ | ms-settings:batterysaver-settings         |
-|                    | バッテリー節約機能/バッテリーの使用状況            | タブレットなどのバッテリを備えたデバイス上のモバイルおよびデスクトップ    | ms-settings:batterysaver-usagedetails     |
+|                    | バッテリー節約機能/バッテリーの使用状況            | タブレットなどのバッテリを備えたデバイス上のモバイルおよびデスクトップ | ms-settings:batterysaver-usagedetails     |
 |                    | 電源とスリープ                          | デスクトップのみ   | ms-settings:powersleep                    |
 |                    | デスクトップ: バージョン情報                         | 両方           | ms-settings:deviceencryption              |
 |                    |                                        |                |                                           |
@@ -90,14 +90,19 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 |                    | 携帯ネットワーク & SIM                         | 両方           | ms-settings:network-cellular              |
 |                    | モバイル ホットスポット                         | 両方           | ms-settings:network-mobilehotspot         |
 |                    | プロキシ                                  | 両方           | ms-settings:network-proxy                 |
-| 個人用設定    | パーソナル設定 (カテゴリ)             | 両方           | ms-settings:personalization               |
+|                    | 状態                                 | デスクトップのみ   | ms-settings:network-status                |
+| 個人用設定    | 個人用設定 (カテゴリ)             | 両方           | ms-settings:personalization               |
 |                    | 背景                             | デスクトップのみ   | ms-settings:personalization-background    |
 |                    | カラー                                 | 両方           | ms-settings:personalization-colors        |
 |                    | サウンド                                 | モバイルのみ    | ms-settings:sounds                        |
 |                    | ロック画面                            | 両方           | ms-settings:lockscreen                    |
-| アカウント           | 電子メールとアカウント                | 両方           | ms-settings:emailandaccounts              |
-|                    | 職場のアクセス                            | 両方           | ms-settings:workplace                     |
+| アカウント           | 職場または学校にアクセスする                  | 両方           | ms-settings:workplace                     |
+|                    | メール & アプリのアカウント                   | 両方           | ms-settings:emailandaccounts              |
+|                    | 家族とその他のユーザー                  | 両方           | ms-settings:otherusers                    |
+|                    | サインイン オプション                        | 両方           | ms-settings:signinoptions                 |
 |                    | 設定の同期                     | 両方           | ms-settings:sync                          |
+|                    | 他のユーザー                           | 両方           | ms-settings:otherusers                    |
+|                    | ユーザーの情報                              | 両方           | ms-settings:yourinfo                      |
 | 時刻と言語  | 日付と時刻                            | 両方           | ms-settings:dateandtime                   |
 |                    | 地域と言語                      | デスクトップのみ   | ms-settings:regionlanguage                |
 | コンピューターの簡単操作     | ナレーター                               | 両方           | ms-settings:easeofaccess-narrator         |
@@ -127,6 +132,6 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO4-->
 
 

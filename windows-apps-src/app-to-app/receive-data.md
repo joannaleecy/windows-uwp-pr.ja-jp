@@ -3,8 +3,9 @@ description: "この記事では、ユニバーサル Windows プラットフォ
 title: "データの受信"
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
 author: awkoren
-ms.sourcegitcommit: 7069e55b92e69a0af9ba23a0a737b61d427c615c
-ms.openlocfilehash: 806bcb591ec3b7c786f8aa98d854863539d723e2
+translationtype: Human Translation
+ms.sourcegitcommit: b8d627da82da463b87ace2a2ef6e739b1caafaa2
+ms.openlocfilehash: 0092fe2832eeafbc4e7cfa36a3444b9551a4f672
 
 ---
 
@@ -33,13 +34,13 @@ ms.openlocfilehash: 806bcb591ec3b7c786f8aa98d854863539d723e2
 
 1.  マニフェスト ファイルを開きます。 マニフェスト ファイルは **package.appxmanifest** のような名前になっています。
 2.  **[宣言]** ページの **[サポートされるファイルの種類]** セクションで、**[新規追加]** をクリックします。
-3.  サポートするファイル名拡張子を入力します。 たとえば、「.docx」と入力します。 ピリオドを忘れないように注意してください。 すべてのファイルの種類をサポートする場合は、**SupportsAnyFileType** ボックスをオンにします。
+3.  サポートするファイル名拡張子を入力します。たとえば、「.docx」と入力します。 ピリオドを忘れないように注意してください。 すべてのファイルの種類をサポートする場合は、**SupportsAnyFileType** チェック ボックスをオンにします。
 
 データ形式を設定するには:
 
 1.  マニフェスト ファイルを開きます。
 2.  **[宣言]** ページの **[データ形式]** セクションを開き、**[新規追加]**をクリックします。
-3.  サポートするデータ形式の名前を入力します。 たとえば、「テキスト」と入力します。
+3.  サポートすデータ形式の名前を入力します。たとえば、「テキスト」と入力します。
 
 ## 共有のアクティブ化の処理
 
@@ -75,8 +76,7 @@ if (shareOperation.Data.Contains(StandardDataFormats.Text))
 shareOperation.ReportDataRetreived(); 
 ```
 
-[
-            **ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted) を呼び出した後、ユーザーはアプリをそれ以上操作できなくなります。 したがって、このオブジェクトの呼び出しは、ユーザーがアプリを閉じても問題がない状況でのみ行ってください。
+[**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted) を呼び出した後、ユーザーはアプリをそれ以上操作できなくなります。 したがって、このオブジェクトの呼び出しは、ユーザーがアプリを閉じても問題がない状況でのみ行ってください。
 
 長時間共有が行われている状況では、アプリが DataPackage オブジェクトからすべてのデータを取得する前に、ユーザーがソース アプリを閉じる可能性があります。 そのため、アプリが必要なデータを取得したタイミングをシステムに通知することをお勧めします。 こうすると、システムは必要に応じてソース アプリを中断または終了できます。
 
@@ -96,7 +96,7 @@ shareOperation.ReportError("Could not reach the server! Try again later.");
 shareOperation.ReportCompleted();
 ```
 
-これらのメソッドを使う場合は、通常、前に説明した順序で呼び出し、2 回以上呼び出さないようにしてください。 ただし、ターゲット アプリが [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted) の前に [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved) を呼び出すことができる場合があります。 たとえば、アプリがアクティブ化ハンドラーのタスクの一部としてデータを受信できるが、ユーザーが [共有] ボタンをクリックするまで **ReportStarted** を呼び出さない場合です。
+これらのメソッドを使う場合は、通常、前に説明した順序で呼び出し、2 回以上呼び出さないようにしてください。 ただし、ターゲット アプリが [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted) の前に [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved) を呼び出すことができる場合があります。 たとえば、アプリがアクティブ化ハンドラーのタスクの一部としてデータを受信できるが、ユーザーが **[共有]** ボタンをクリックするまで **ReportStarted** を呼び出さない場合です。
 
 ## 共有が成功した場合に QuickLink を返す
 
@@ -130,6 +130,7 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 
 ## 参照 
 
+* [アプリ間通信](index.md)
 * [データの共有](share-data.md)
 * [OnShareTargetActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onsharetargetactivated.aspx)
 * [ReportStarted](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportstarted.aspx)
@@ -141,6 +142,7 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 * [QuickLInkId](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.id.aspx)
 
 
-<!--HONumber=Jun16_HO5-->
+
+<!--HONumber=Aug16_HO3-->
 
 

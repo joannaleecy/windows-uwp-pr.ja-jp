@@ -4,16 +4,17 @@ title: "ゲーム サンプルの紹介"
 description: "これで、 基本的なユニバーサル Windows プラットフォーム (UWP) DirectX 3D ゲームの主なコンポーネントについては理解できました。"
 ms.assetid: a1432c45-569e-7ecd-4098-f5ad6da9327e
 keywords:
-- DirectX, XAML
+- "DirectX、XAML"
+translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 02b8681c45c84e1cdd5b97dfc717a68015df1252
+ms.openlocfilehash: 17d34f0edcbe6729fe63204123faf4b7393beea7
 
 ---
 
 # ゲーム サンプルの紹介
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 これで、 基本的なユニバーサル Windows プラットフォーム (UWP) DirectX 3D ゲームの主なコンポーネントについては理解できました。 ビュー プロバイダーやレンダリング パイプラインなどのゲームのフレームワークをセットアップして、基本的なゲーム ループを実装することができます。 また、基本的なユーザー インターフェイス オーバーレイを作成したり、サウンドやコントロールを統合したりできます。 独自のゲームを自力で作成できるため、ここでは、DirectX ゲーム開発の知識をさらに深めるためのリソースをいくつか紹介します。
 
@@ -1520,6 +1521,6 @@ void MainPage::OnResetButtonClicked(Object^ sender, RoutedEventArgs^ args)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

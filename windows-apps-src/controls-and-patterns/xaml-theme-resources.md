@@ -8,10 +8,12 @@ title: "XAML テーマ リソース"
 ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
 label: XAML theme resources
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: fa0d0881eee0f87b549a7d053e75882ffd2afa6e
+translationtype: Human Translation
+ms.sourcegitcommit: 32b6685dfd04994d13dc8805c5205e87a20b10f1
+ms.openlocfilehash: 092b183ead828ae411ff64d37e581bbbb59a1f5b
 
 ---
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 # XAML テーマ リソース
 
@@ -34,9 +36,7 @@ XAML のテーマ リソースは、アクティブなシステム テーマに�
 
 各テーマ リソースは、XAML ファイル themeresources.xaml の一部です。 設計の目的には、Windows ソフトウェア開発キット (Windows SDK) のインストール先の \\(Program Files)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK version&gt;\\Generic フォルダーにある themeresources.xaml を使うことができます。 themeresources.xaml 内のリソース ディクショナリは、同じディレクトリの generic.xaml にも複製されています。
 
-> 
-            **注:**
-            &nbsp;&nbsp;これらの物理ファイルは Windows ランタイムでランタイム検索に使われません。 そのため、明示的に DesignTime フォルダー内にあり、既定ではアプリにコピーされません。 代わりに、これらのリソース ディクショナリは Windows ランタイム自体の一部としてメモリ内に存在し、テーマ リソース (またはシステム リソース) へのアプリの XAML リソース参照は実行時にメモリ内で解決されます。
+> **注:**&nbsp;&nbsp;これらの物理ファイルは Windows ランタイムでランタイム検索に使われません。 そのため、明示的に DesignTime フォルダー内にあり、既定ではアプリにコピーされません。 代わりに、これらのリソース ディクショナリは Windows ランタイム自体の一部としてメモリ内に存在し、テーマ リソース (またはシステム リソース) へのアプリの XAML リソース参照は実行時にメモリ内で解決されます。
 
  ## テーマ リソースの使用のガイドライン
 
@@ -53,8 +53,7 @@ XAML のテーマ リソースは、アクティブなシステム テーマに�
 
     例外: [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) 内のアプリ テーマに依存しないリソースを参照するために [{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)を使うことは問題ありません。 このようなリソースの例として、`SystemAccentColor` などのアクセント カラー リソースや、通常は "SystemColor" というプレフィックスの付いた `SystemColorButtonFaceColor` などのシステム カラー リソースがあります。
 
-
-            **注意:** これらのガイドラインに従わないと、テーマに関連する予期しない動作がアプリで発生することがあります。 詳しくは、「[テーマ リソースのトラブルシューティング](#troubleshooting_theme_resources)」セクションをご覧ください。
+**注意:** これらのガイドラインに従わないと、テーマに関連する予期しない動作がアプリで発生することがあります。 詳しくは、「[テーマ リソースのトラブルシューティング](#troubleshooting_theme_resources)」セクションをご覧ください。
  
 
 ## XAML 色見本とテーマ依存のブラシ
@@ -103,15 +102,11 @@ XAML フレームワークによって提供されるリソースのセットの
 
 | キー                           | 簡単操作での名前            | HighContrast 簡易名 | 初期既定値 |
 |-------------------------------|--------------------------------|--------------------------|-----------------|
-| SystemColorButtonFaceColor    | 
-            **ボタン テキスト** (背景)   | Background               | \#FFF0F0F0      |
-| SystemColorButtonTextColor    | 
-            **ボタン テキスト** (前景)   | Foreground               | \#FF000000      |
+| SystemColorButtonFaceColor    | **ボタン テキスト** (背景)   | Background               | \#FFF0F0F0      |
+| SystemColorButtonTextColor    | **ボタン テキスト** (前景)   | Foreground               | \#FF000000      |
 | SystemColorGrayTextColor      | **淡色表示のテキスト**              | Disabled                 | \#FF6D6D6D      |
-| SystemColorHighlightColor     | 
-            **選択されたテキスト** (背景) | Highlight                | \#FF3399FF      |
-| SystemColorHighlightTextColor | 
-            **選択されたテキスト** (前景) | HighlightAlt             | \#FFFFFFFF      |
+| SystemColorHighlightColor     | **選択されたテキスト** (背景) | Highlight                | \#FF3399FF      |
+| SystemColorHighlightTextColor | **選択されたテキスト** (前景) | HighlightAlt             | \#FFFFFFFF      |
 | SystemColorHotlightColor      | **ハイパーリンク**                 | Hyperlink                | \#FF0066CC      |
 | SystemColorWindowColor        | **背景**                 | PageBackground           | \#FFFFFFFF      |
 | SystemColorWindowTextColor    | **テキスト**                       | PageText                 | \#FF000000      |
@@ -127,9 +122,7 @@ Windows には複数のハイ コントラスト テーマが用意されてい�
 
 システムのハイ コントラスト テーマの色に加えて、システムのアクセント カラーも、`SystemAccentColor` というキーを使う特別なカラー リソースとして用意されています。 このリソースは、ユーザーが Windows の個人設定でアクセント カラーとして指定した色を実行時に取得します。
 
-> 
-            **注:**
-            &nbsp;&nbsp;ハイ コントラスト カラーとアクセント カラーのシステム カラー リソースは、同じ名前を持つリソースを作成してオーバーライドすることもできますが、特にハイ コントラスト設定についてはユーザーによる色の選択を尊重することをお勧めします。
+> **注:**&nbsp;&nbsp;ハイ コントラスト カラーとアクセント カラーのシステム カラー リソースは、同じ名前を持つリソースを作成してオーバーライドすることもできますが、特にハイ コントラスト設定についてはユーザーによる色の選択を尊重することをお勧めします。
 
 ### テーマ依存のブラシ
 
@@ -157,9 +150,7 @@ Windows には複数のハイ コントラスト テーマが用意されてい�
 For many examples of how the brushes are used in the XAML control templates, see the [Default control styles and templates](default-control-styles-and-templates.md).
 -->
 
-> 
-            **注:**
-            &nbsp;&nbsp;\[*HighContrast 簡易名*\]\[*Light/Dark 簡易名*\] のすべての組み合わせがブラシ リソースとして提供されるわけではありません。
+> **注:**&nbsp;&nbsp;\[*HighContrast 簡易名*\]\[*Light/Dark 簡易名*\] のすべての組み合わせがブラシ リソースとして提供されるわけではありません。
 
 ## XAML の書体見本
 
@@ -173,14 +164,13 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 
 ### BaseTextBlockStyle
 
-
-            **TargetType**: [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)
+**TargetType**: [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)
 
 他のすべての [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) コンテナー スタイルに対する一般的なプロパティを提供します。
 
 ```XAML
 <!-- Usage -->
-<TextBlock Text="Base" Style="{ThemeResource BaseTextBlockStyle}"/>
+<TextBlock Text="Base" Style="{StaticResource BaseTextBlockStyle}"/>
 
 <!-- Style definition -->
 <Style x:Key="BaseTextBlockStyle" TargetType="TextBlock">
@@ -198,7 +188,7 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 
 ```XAML
 <!-- Usage -->
-<TextBlock Text="Header" Style="{ThemeResource HeaderTextBlockStyle}"/>
+<TextBlock Text="Header" Style="{StaticResource HeaderTextBlockStyle}"/>
 
 <!-- Style definition -->
 <Style x:Key="HeaderTextBlockStyle" TargetType="TextBlock"
@@ -213,7 +203,7 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 
 ```XAML
 <!-- Usage -->
-<TextBlock Text="SubHeader" Style="{ThemeResource SubheaderTextBlockStyle}"/>
+<TextBlock Text="SubHeader" Style="{StaticResource SubheaderTextBlockStyle}"/>
 
 <!-- Style definition -->
 <Style x:Key="SubheaderTextBlockStyle" TargetType="TextBlock" 
@@ -258,7 +248,7 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 
 ```XAML
 <!-- Usage -->
-<TextBlock Text="Body" Style="{ThemeResource BodyTextBlockStyle}"/>
+<TextBlock Text="Body" Style="{StaticResource BodyTextBlockStyle}"/>
 
 <!-- Style definition -->
 <Style x:Key="BodyTextBlockStyle" TargetType="TextBlock" 
@@ -272,7 +262,7 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 
 ```XAML
 <!-- Usage -->
-<TextBlock Text="Caption" Style="{ThemeResource CaptionTextBlockStyle}"/>
+<TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
 
 <!-- Style definition -->
 <Style x:Key="CaptionTextBlockStyle" TargetType="TextBlock" 
@@ -284,14 +274,13 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 
 ### BaseRichTextBlockStyle
 
-
-            **TargetType**: [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565)
+**TargetType**: [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565)
 
 他のすべての [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) コンテナー スタイルに対する一般的なプロパティを提供します。
 
 ```XAML
 <!-- Usage -->
-<RichTextBlock Style="{ThemeResource BaseRichTextBlockStyle}">
+<RichTextBlock Style="{StaticResource BaseRichTextBlockStyle}">
     <Paragraph>Rich text.</Paragraph>
 </RichTextBlock>
 
@@ -312,7 +301,7 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 
 ```XAML
 <!-- Usage -->
-<RichTextBlock Style="{ThemeResource BodyRichTextBlockStyle}">
+<RichTextBlock Style="{StaticResource BodyRichTextBlockStyle}">
     <Paragraph>Rich text.</Paragraph>
 </RichTextBlock>
 
@@ -322,9 +311,7 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 </Style>
 ```
 
-> 
-            **注:**
-            &nbsp;&nbsp; [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) スタイルには、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) に含まれているテキスト見本スタイルのすべては含まれていません。これは主に、**RichTextBlock** のブロック ベースのドキュメント オブジェクト モデルでは、個々のテキスト要素への属性の設定がより簡単になっているためです。 また、XAML コンテンツ プロパティを使って [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) を設定する方式では、スタイルを設定できるテキスト要素が存在しない状況になるため、コンテナーにスタイルを設定する必要があります。 これに対して **RichTextBlock** では、テキスト コンテンツは常に [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503) などの固有のテキスト要素になり、そこにページ ヘッダーやページ サブヘッダー、類似のテキスト見本定義の XAML スタイルを適用できるため、この問題はありません。
+> **注:**&nbsp;&nbsp; [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) スタイルには、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) に含まれているテキスト見本スタイルのすべては含まれていません。これは主に、**RichTextBlock** のブロック ベースのドキュメント オブジェクト モデルでは、個々のテキスト要素への属性の設定がより簡単になっているためです。 また、XAML コンテンツ プロパティを使って [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) を設定する方式では、スタイルを設定できるテキスト要素が存在しない状況になるため、コンテナーにスタイルを設定する必要があります。 これに対して **RichTextBlock** では、テキスト コンテンツは常に [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503) などの固有のテキスト要素になり、そこにページ ヘッダーやページ サブヘッダー、類似のテキスト見本定義の XAML スタイルを適用できるため、この問題はありません。
 
 ## その他の名前付きスタイル
 
@@ -332,8 +319,7 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 
 ### TextBlockButtonStyle
 
-
-            **TargetType**: [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736)
+**TargetType**: [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736)
 
 ユーザーがクリックしてアクションを実行できるテキストを表示する必要がある場合は、このスタイルを [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) に適用します。 このテキストには、対話型であることがわかるように現在のアクセント カラーを使ったスタイルが設定され、テキストに適したフォーカス四角形が表示されます。 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) の暗黙的なスタイルとは異なり、**TextBlockButtonStyle** のテキストには下線は付きません。
 
@@ -342,7 +328,7 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 **TextBlockButtonStyle** リソースを適用した [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) の例を以下に示します。
 
 ```XAML
-<Button Content="Clickable text" Style="{ThemeResource TextBlockButtonStyle}" 
+<Button Content="Clickable text" Style="{StaticResource TextBlockButtonStyle}" 
         Click="Button_Click"/>
 ```
 
@@ -352,15 +338,14 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 
 ### NavigationBackButtonNormalStyle
 
-
-            **TargetType**: [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
+**TargetType**: [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
 
 この [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) は、ナビゲーション アプリの "戻る" ボタンとして使うことができる [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 用の完全なテンプレートを提供します。 スタイルに含まれているいくつかのテーマ リソース参照により、このボタンでは Segoe MDL2 Assets 記号フォントが使われるようになります。このため、コンテンツでは、テキストではなく [**Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842) 値を使う必要があります。 既定の寸法は 40 x 40 ピクセルです。 スタイルを調整するには、**Button** の [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718)、[**Width**](https://msdn.microsoft.com/library/windows/apps/br208751)、[**FontSize**](https://msdn.microsoft.com/library/windows/apps/br209406)、その他のプロパティを明示的に設定するか、[**BasedOn**](https://msdn.microsoft.com/library/windows/apps/br208852) を使って派生スタイルを作成します。
 
 **NavigationBackButtonNormalStyle** リソースを適用した [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) の例を以下に示します。
 
 ```XAML
-<Button Content="&amp;#xE830;" Style="{ThemeResource NavigationBackButtonNormalStyle}" 
+<Button Content="&amp;#xE830;" Style="{StaticResource NavigationBackButtonNormalStyle}" 
         Click="Button_Click"/>
 ```
 
@@ -370,15 +355,14 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 
 ### NavigationBackButtonSmallStyle
 
-
-            **TargetType**: [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
+**TargetType**: [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
 
 この [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) は、ナビゲーション アプリの "戻る" ボタンとして使うことができる [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 用の完全なテンプレートを提供します。 **NavigationBackButtonNormalStyle** と同様ですが、寸法は 30 x 30 ピクセルになります。
 
 **NavigationBackButtonSmallStyle** リソースを適用した [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) の例を以下に示します。
 
 ```XAML
-<Button Content="&amp;#xE830;" Style="{ThemeResource NavigationBackButtonSmallStyle}" 
+<Button Content="&amp;#xE830;" Style="{StaticResource NavigationBackButtonSmallStyle}" 
         Click="Button_Click"/>
 ```
 
@@ -460,6 +444,6 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,8 +3,9 @@ author: jnHs
 Description: "申請プロセス中、[アプリケーションのプロパティ] ページの [App declarations] (アプリの宣言) セクションで、アプリに関する追加情報を入力できます。"
 title: "アプリの宣言"
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
+translationtype: Human Translation
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: 419d41de3ba26f6470ad99b44826f2935aea4eff
 
 ---
 
@@ -16,7 +17,7 @@ ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
 
 ## このアプリでは、ユーザーが購入を行うことができますが、Windows ストア コマース システムを使いません。
 
-ほとんどのアプリではこのボックスはオフのままにします。アプリ内購入を行うことができるアプリは、一般的に Microsoft アプリ内購入 API を使って [IAP を作成および申請](iap-submissions.md) するためです。 [アプリ開発者契約書](https://msdn.microsoft.com/library/windows/apps/hh694058) によると、2015 年 6 月 29 日より前に作成および申請されたアプリでは、[Windows ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_8) に準拠している限り、Microsoft のコマース エンジンを使わずにアプリ内購入機能を実装していてもかまいません。 アプリがこれに該当する場合、このチェック ボックスをオンにする必要があります。 それ以外の場合は、オフのままにします。
+ほとんどのアプリではこのボックスはオフのままにします。アプリ内での購入を行うことができるアプリは、一般的に Microsoft アプリ内での購入 API を使って[アドオンを作成および申請](add-on-submissions.md) するためです。 [アプリ開発者契約書](https://msdn.microsoft.com/library/windows/apps/hh694058) によると、2015 年 6 月 29 日より前に作成および申請されたアプリでは、[Windows ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_8) に準拠している限り、Microsoft のコマース エンジンを使わずにアプリ内購入機能を実装していてもかまいません。 アプリがこれに該当する場合、このチェック ボックスをオンにする必要があります。 それ以外の場合は、オフのままにします。
 
 ## このアプリは、アクセシビリティ ガイドラインを満していることがテストされました。
 
@@ -34,8 +35,7 @@ ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
 
 詳しくは、「[Windows ランタイム アプリのアクセシビリティ](https://msdn.microsoft.com/library/windows/apps/dn263101)」、「[アクセシビリティ テスト](https://msdn.microsoft.com/library/windows/apps/mt297664)」、「[ストア内のアクセシビリティ](https://msdn.microsoft.com/library/windows/apps/mt297663)」をご覧ください。
 
-> 
-            **重要**  アクセシビリティのための具体的な設計とテストを行っていない限り、アプリをアクセシビリティ対応として登録しないでください。 アプリをアクセシビリティ対応と宣言しているのにアクセシビリティを実際にサポートしていないと、コミュニティから否定的なフィードバックを受けるおそれがあります。
+> **重要**  アクセシビリティのための具体的な設計とテストを行っていない限り、アプリをアクセシビリティ対応として登録しないでください。 アプリをアクセシビリティ対応と宣言しているのにアクセシビリティを実際にサポートしていないと、コミュニティから否定的なフィードバックを受けるおそれがあります。
 
 ## ユーザーは、代替ドライブやリムーバブル ストレージにこのアプリをインストールできます。
 
@@ -45,8 +45,7 @@ ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
 
 アプリをリムーバブル記憶域メディアにのみインストールできるようにするためにインストールを制限するオプションはないことに注意してください。
 
-> 
-            **注**  Windows Phone 8.1 では、以前は StoreManifest.xml を通じてこれを指定していました。
+> **注**  Windows Phone 8.1 では、以前は StoreManifest.xml を通じてこれを指定していました。
 
 ## Windows では、このアプリのデータを OneDrive への自動バックアップに含めることができます。
 
@@ -54,8 +53,7 @@ ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
 
 アプリのデータが自動バックアップに含まれないようにする場合は、このボックスをオフにします。
 
-> 
-            **注**  Windows Phone 8.1 では、以前は StoreManifest.xml を通じてこれを指定していました。
+> **注**  Windows Phone 8.1 では、以前は StoreManifest.xml を通じてこれを指定していました。
 
  
 
@@ -69,6 +67,6 @@ ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,10 +1,11 @@
 ---
 author: mcleblanc
 description: "移植プロセスを開始するとき、2 つの方法から選ぶことができます。"
-title: "Windows ランタイム 8.x プロジェクトの UWP プロジェクトへの移植'"
+title: "Windows ランタイム 8.x プロジェクトの UWP プロジェクトへの移植&quot;"
 ms.assetid: 2dee149f-d81e-45e0-99a4-209a178d415a
+translationtype: Human Translation
 ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
-ms.openlocfilehash: 60f59c58aedc56da58350a050acd184a376b8067
+ms.openlocfilehash: 97b187b5e1ee988d4e1d514f139cec48088be3f2
 
 ---
 
@@ -43,7 +44,7 @@ ms.openlocfilehash: 60f59c58aedc56da58350a050acd184a376b8067
 
 検出できなかった名前空間、型、メンバーについてのコンパイル エラーが発生した場合は、上記のことが原因となる可能性があります。 API リファレンス ドキュメントで API のトピックを表示し、要件に関するセクションに移動します。このセクションでは、どのようなデバイス ファミリが API を実装するかが示されています。 ターゲット デバイス ファミリが示されていない場合は、プロジェクトで API を利用できるようにするために、そのデバイス ファミリ用の拡張 SDK に対する参照が必要になります。
 
-**[プロジェクト]**、**[参照の追加]**、**[Windows ユニバーサル]**、**[拡張機能]** の順にクリックし、適切な拡張 SDK を選びます。 たとえば、呼び出す API がモバイル デバイス ファミリでのみ利用可能であり、それらの API がバージョン 10.0.x.y で導入されている場合は、**[Windows Mobile Extensions for the UWP]** を選びます。
+**[プロジェクト]** &gt; **[参照の追加]** &gt; **[Windows ユニバーサル]** &gt; **[拡張機能]** の順にクリックし、適切な拡張 SDK を選びます。 たとえば、呼び出す API がモバイル デバイス ファミリでのみ利用可能であり、それらの API がバージョン 10.0.x.y で導入されている場合は、**[Windows Mobile Extensions for the UWP]** を選びます。
 
 これにより、次の参照がプロジェクト ファイルに追加されます。
 
@@ -67,8 +68,7 @@ API を実装するデバイス ファミリがアプリのターゲットでは
 
 コード ファイルが Windows 8.1 と Windows Phone 8.1 の両方で動作するように、条件付きコンパイル (C# プリプロセッサ ディレクティブによる条件付きコンパイル) を使っている場合は、Windows 10 に対して実行される集約作業を考慮して、その条件付きコンパイルを確認できます。 この集約作業では、Windows 10 アプリで、いくつかの条件を完全に削除できることを意味します。 削除されない条件は、次に説明するように実行時チェックに変更します。
 
-
-            **注**   1 つのコード ファイルで Windows 8.1、Windows Phone 8.1、Windows 10 をサポートする場合も、同様の確認作業を実行できます。 プロジェクトのプロパティ ページで Windows 10 プロジェクトを確認すると、プロジェクトでは条件付きコンパイル シンボルとして WINDOWS\_UAP が定義されていることがわかります。 このため、このシンボルを WINDOWS\_APP や WINDOWS\_PHONE\_APP と組み合わせて使うことができます。 次の例では、ユニバーサル 8.1 アプリから条件付きコンパイルを削除し、Windows 10 アプリ用の同等のコードで置き換えるシンプルなケースを紹介します。
+**注**   1 つのコード ファイルで Windows 8.1、Windows Phone 8.1、Windows 10 をサポートする場合も、同様の確認作業を実行できます。 プロジェクトのプロパティ ページで Windows 10 プロジェクトを確認すると、プロジェクトでは条件付きコンパイル シンボルとして WINDOWS\_UAP が定義されていることがわかります。 このため、このシンボルを WINDOWS\_APP や WINDOWS\_PHONE\_APP と組み合わせて使うことができます。 次の例では、ユニバーサル 8.1 アプリから条件付きコンパイルを削除し、Windows 10 アプリ用の同等のコードで置き換えるシンプルなケースを紹介します。
 
 最初の例では、**PickSingleFileAsync** API (Windows 8.1 にのみ適用) と **PickSingleFileAndContinue** API (Windows Phone 8.1 にのみ適用) の使用パターンを示しています。
 
@@ -134,8 +134,7 @@ void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input.CameraE
 #endif // WINDOWS_PHONE_APP
 ```
 
-Windows 10 では、ハードウェアの "カメラ" ボタンはモバイル デバイス ファミリに固有の概念です。 1 つのアプリ パッケージがすべてのデバイスで実行されるため、アダプティブ コードと呼ばれる手法を使って、コンパイル時の条件を実行時の条件に変更します。 そのためには、[**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) クラスを使って、実行時に [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) クラスの有無を照会します。 
-            **HardwareButtons** は、モバイル拡張 SDK で定義されているため、その SDK への参照をプロジェクトに追加して、このコードをコンパイルする必要があります。 ただし、ハンドラーはモバイル拡張 SDK で定義されている型を実装するデバイスでのみ実行されることに注意してください。このようなデバイスは、モバイル デバイス ファミリに該当します。 このコードは事実上ユニバーサル 8.1 コードと同等のコードとなるため、このコードでは存在する機能のみを使うように注意してください。これは、別の方法で実施することもできます。
+Windows 10 では、ハードウェアの "カメラ" ボタンはモバイル デバイス ファミリに固有の概念です。 1 つのアプリ パッケージがすべてのデバイスで実行されるため、アダプティブ コードと呼ばれる手法を使って、コンパイル時の条件を実行時の条件に変更します。 そのためには、[**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) クラスを使って、実行時に [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) クラスの有無を照会します。 **HardwareButtons** は、モバイル拡張 SDK で定義されているため、その SDK への参照をプロジェクトに追加して、このコードをコンパイルする必要があります。 ただし、ハンドラーはモバイル拡張 SDK で定義されている型を実装するデバイスでのみ実行されることに注意してください。このようなデバイスは、モバイル デバイス ファミリに該当します。 このコードは事実上ユニバーサル 8.1 コードと同等のコードとなるため、このコードでは存在する機能のみを使うように注意してください。これは、別の方法で実施することもできます。
 
 ```csharp
     // Note: Cache the value instead of querying it more than once.
@@ -178,6 +177,6 @@ private void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

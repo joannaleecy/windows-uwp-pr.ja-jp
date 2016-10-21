@@ -6,11 +6,13 @@ ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
+ms.sourcegitcommit: 508a09e0c12006c00dbdf7675516b41119eab8a6
+ms.openlocfilehash: 8b8820c9ab82ce0789fbe2fb9f62309e48f4ce9d
 
 ---
 # リスト
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 リストでは、コレクション ベースのコンテンツを表示して対話式で操作できます。 この記事では、次に示す 4 種類のリスト パターンについて説明します。
 
@@ -21,11 +23,18 @@ ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
 
 ここでは、各リスト パターンについて、設計のガイドライン、特徴、例を示します。 記事の最後には、関連するトピックと API へのリンクがあります。
 
-## 重要な API
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br242878"><strong>ListView クラス</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br242705"><strong>GridView クラス</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br209348"><strong>ComboBox クラス</strong></a></li>
+</ul>
 
--   [**ListView クラス**](https://msdn.microsoft.com/library/windows/apps/br242878)
--   [**GridView クラス**](https://msdn.microsoft.com/library/windows/apps/br242705)
--   [**ComboBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209348)
+</div>
+</div>
+
+
 
 
 ## リスト ビュー
@@ -42,20 +51,50 @@ ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
 
 ### 例
 
-[マスター/詳細パターン](master-details.md)を使う場合、リスト ビューを使ってマスター ウィンドウを整理できます。 マスター ウィンドウには、選択できる項目の一覧が表示されます。 ユーザーがマスター ウィンドウで項目を選ぶと、選んだ項目の追加情報が詳細ウィンドウに表示されます。 詳細ウィンドウには、よくグリッド ビューが含まれます。
+これは、電話での単純なリスト ビューの例で、グループ化されたデータを表示しています。
 
-![マスター/詳細パターンの例](images/Stock_Tracker/uap_finance_desktop700.png)
-
-複数のリストを組み合わせて、マスター/詳細の複雑な階層を作成することができます。 詳しくは、「[マスター/詳細パターンのガイドライン](master-details.md)」をご覧ください。
-
-この例のリスト レイアウトには、グループ ヘッダーがあり、1 列で表示されています。
-
-![4 種類の主要な単位を使ったリスト ビューの例](images/controls_listview_4types.png)
+![グループ化されたデータを表示するリスト ビュー](images/simple-list-view-phone.png)
 
 ### 推奨事項
 
 -   同じリストに含まれる各項目の動作は同じにする必要があります。
 -   リストがグループに分割されている場合、グループ化されたコンテンツ内をユーザーが移動しやすくなるように、[セマンティック ズーム](semantic-zoom.md)を使うことができます。
+
+### リスト ビューに関する記事
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">トピック</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>[リスト ビューとグリッド ビュー](listview-and-gridview.md)</p></td>
+<td align="left"><p>アプリでリスト ビューやグリッド ビューを使用するための基本情報を提供します。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>[リスト ビュー項目テンプレート](listview-item-templates.md)</p></td>
+<td align="left"><p>リストやグリッドに表示される項目は、アプリの全体的な見た目を左右する要素になる場合があります。 コントロール テンプレートとデータ テンプレートを変更して、項目の外観を定義し、アプリの見栄えをよくします。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>[反転リスト](inverted-lists.md)</p></td>
+<td align="left"><p>反転リストでは、チャット アプリのように、新しい項目が下部に追加されます。 アプリで反転リストを使用する場合は、こちらのガイダンスに従ってください。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>[引っ張って更新](pull-to-refresh.md)</p></td>
+<td align="left"><p>引っ張って更新パターンを使うと、より多くのデータを取得するためにタッチ操作でデータのリストを引き下げることができます。 リスト ビューに引っ張って更新を実装する場合は、こちらのガイダンスに従ってください。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>[入れ子になった UI](nested-ui.md)</p></td>
+<td align="left"><p>入れ子になった UI は、ユーザーも操作が可能なコンテナー内部に囲まれた、操作できるコントロールを公開するユーザー インターフェイス (UI) です。 たとえば、ボタンを含むリスト ビュー項目があるとします。ユーザーはそのリスト項目を選択することも、項目内に入れ子になっているボタンを押すこともできます。 以下のベスト プラクティスに従って、ユーザーにとって最適な入れ子になった UI のエクスペリエンスを提供してください。</p></td>
+</tr>
+</tbody>
+</table>
 
 ## グリッド ビュー
 
@@ -83,6 +122,34 @@ ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
 
 -   同じリストに含まれる各項目の動作は同じにする必要があります。
 -   リストがグループに分割されている場合、グループ化されたコンテンツ内をユーザーが移動しやすくなるように、[セマンティック ズーム](semantic-zoom.md)を使うことができます。
+
+### グリッド ビューの記事
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">トピック</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>[リスト ビューとグリッド ビュー](listview-and-gridview.md)</p></td>
+<td align="left"><p>アプリでリスト ビューやグリッド ビューを使用するための基本情報を提供します。</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>[リスト ビュー項目テンプレート](listview-item-templates.md)</p></td>
+<td align="left"><p>リストやグリッドに表示される項目は、アプリの全体的な見た目を左右する要素になる場合があります。 コントロール テンプレートとデータ テンプレートを変更して、項目の外観を定義し、アプリの見栄えをよくします。</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>[入れ子になった UI](nested-ui.md)</p></td>
+<td align="left"><p>入れ子になった UI は、ユーザーも操作が可能なコンテナー内部に囲まれた、操作できるコントロールを公開するユーザー インターフェイス (UI) です。 たとえば、ボタンを含むリスト ビュー項目があるとします。ユーザーはそのリスト項目を選択することも、項目内に入れ子になっているボタンを押すこともできます。 以下のベスト プラクティスに従って、ユーザーにとって最適な入れ子になった UI のエクスペリエンスを提供してください。</p></td>
+</tr>
+</tbody>
+</table>
 
 ## ドロップダウン リスト
 
@@ -187,6 +254,7 @@ ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
 - [マスター/詳細](master-details.md)
 - [ナビゲーション ウィンドウ](nav-pane.md)
 - [セマンティック ズーム](semantic-zoom.md)
+- [ドラッグ アンド ドロップ](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 
 **開発者向け**
 - [**ListView クラス**](https://msdn.microsoft.com/library/windows/apps/br242878)
@@ -196,6 +264,6 @@ ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

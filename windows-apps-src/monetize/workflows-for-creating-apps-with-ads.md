@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: fcebd659-438b-4d03-bc73-6b662ed6f1f3
 description: "広告を含むアプリの開発と公開のプロセスの詳細"
 title: "広告を含むアプリを作成するためのワークフロー"
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 69dd1a17290b7ffbc14dbc58404868119403f7c0
+translationtype: Human Translation
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 0f832674f0e635f609f09fa15acead109b1d67ff
 
 
 ---
@@ -12,7 +13,7 @@ ms.openlocfilehash: 69dd1a17290b7ffbc14dbc58404868119403f7c0
 # 広告を含むアプリを作成するためのワークフロー
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+
 
 アプリに広告を表示するには、アプリが広告ネットワークから広告を受信できるようにする必要があります。 マイクロソフトでは、Windows アプリの開発者が広告を受信できるようにする Web サービスを提供します。 ユーザーがアプリの広告をクリックすると、(広告の*発行元*となる) 発行者が、広告の作成者 (*広告主*) から収益を得られます。 広告主から得られる収益は、使用するアカウントを使って発行者に支払われます。
 
@@ -65,6 +66,6 @@ C# と C++ を使って JavaScript/HTML アプリと XAML アプリに広告バ�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

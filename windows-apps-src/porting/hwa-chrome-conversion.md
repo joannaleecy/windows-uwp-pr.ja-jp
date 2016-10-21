@@ -5,7 +5,7 @@ description: "Chrome アプリや Chrome 拡張機能を Windows ストア向け
 kw: Package Chrome Extension for Windows Store tutorial, Port Chrome Extension to Windows 10, How to convert Chrome App to Windows, How to add Chrome Extension to Windows Store, hwa-cli, Hosted Web Apps Command Line Interface CLI Tool, Install Chrome Extension on Windows 10 Device, convert .crx to .AppX
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 7d1cceb931d3ee9d128c6ba47113f501625830da
+ms.openlocfilehash: 7847f69c85708cb42b878253839b06929f837708
 
 ---
 
@@ -59,8 +59,7 @@ Windows ストア用に Web アプリをパッケージ化した後、PC、タ�
 
 ### アプリケーション コンテンツ URI 規則
 
-
-              [アプリケーション コンテンツ URI 規則 (ACUR)](/hwa-access-features.md#keep-your-app-secure-setting-application-content-uri-rules-acurs) またはコンテンツ URI は、アプリ パッケージ マニフェスト内の URL 許可リストによって、ホストされた Web アプリのスコープを定義します。 リモート コンテンツとの相互の通信を制御するために、このリストに含める URL やこのリストから除外する URL を定義する必要があります。 ユーザーが明示的に含まれていない URL をクリックした場合、Windows は既定のブラウザーでターゲット パスを開きます。 ACUR を使うことで、[ユニバーサル Windows API](https://msdn.microsoft.com/library/windows/apps/br211377.aspx) に対する URL アクセスを許可することもできます。
+[アプリケーション コンテンツ URI 規則 (ACUR)](/hwa-access-features.md#keep-your-app-secure-setting-application-content-uri-rules-acurs) またはコンテンツ URI は、アプリ パッケージ マニフェスト内の URL 許可リストによって、ホストされた Web アプリのスコープを定義します。 リモート コンテンツとの相互の通信を制御するために、このリストに含める URL やこのリストから除外する URL を定義する必要があります。 ユーザーが明示的に含まれていない URL をクリックした場合、Windows は既定のブラウザーでターゲット パスを開きます。 ACUR を使うことで、[ユニバーサル Windows API](https://msdn.microsoft.com/library/windows/apps/br211377.aspx) に対する URL アクセスを許可することもできます。
 
 少なくとも、規則にはアプリのスタート ページを含める必要があります。 変換ツールは、スタート ページとそのドメインに基づいて、一連の ACUR を自動的に作成します。 ただし、サーバー上とクライアント上のいずれかに関係なく、プログラムによるリダイレクトがある場合は、それらの宛先を許可リストに追加する必要があります。
 
@@ -102,6 +101,6 @@ Chrome では、バックグラウンド スクリプトとして実行できる
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

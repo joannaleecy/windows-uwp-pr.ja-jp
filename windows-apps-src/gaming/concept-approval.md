@@ -1,20 +1,29 @@
 ---
 author: eliotcowley
-title: Concept approval
-description: Learn how to submit your product for concept approval, which you will need if your product runs on Xbox or uses Xbox Live.
+title: "概念の承認"
+description: "概念の承認を受けるために製品を提出する方法について説明します。概念の承認は、製品が Xbox で実行されるか、Xbox Live を使用する場合に必要になります。"
 ms.assetid: 
+translationtype: Human Translation
+ms.sourcegitcommit: fbd08666fa70af2806f2a0afa2f1823005ce8801
+ms.openlocfilehash: e9915282da1c611037402d149555246819becf89
+
 ---
 
-# Concept approval
+# 概念の承認
 
-When you begin creating a game that will run on Xbox, you will need to submit a proposal concerning that game to Microsoft for *concept approval* before you can publish it. This up-front, high-level submission benefits both Microsoft and you by identifying at the very beginning of the process any likely difficulties or drawbacks in the overall plan for the game. Try to make sure that your content isn't overly vulgar, offensive, or objectionable, and that it feels at home on the target platform. Once you submit your proposal, Microsoft will review it and then notify you of the result.
+Xbox で動作するゲームの開発を始める場合は、そのゲームに関する提案をマイクロソフトに提出し、ゲームの公開前に*概念の承認*を受ける必要があります。 このような概要を事前に提出することで、ゲームの計画全体で起こりうる問題点や課題をプロセスの初期段階で特定できるため、マイクロソフト側とゲーム開発者側の双方にメリットをもたらします。 コンテンツが過度に通俗的、攻撃的、不快ではないことと、ターゲット プラットフォームで快適に動作することを確認してください。 提出された提案はマイクロソフト側で審査し、結果をお知らせします。
 
-If you are developing a Universal Windows Platform (UWP) game, you only need concept approval if you want to allow customers to download it on Xbox devices. If you only want to make your UWP game available to Windows desktop or mobile devices (or if you're publishing a UWP app that's *not* a game, targeting any device), all you need is a [developer account](https://go.microsoft.com/fwlink/?LinkId=817223), and you can freely configure and submit your app to the Store through the dashboard.
+ユニバーサル Windows プラットフォーム (UWP) ゲームを開発している場合は、ユーザーが Xbox デバイスでゲームをダウンロードできるようにするときにのみ、概念の承認が必要です。 UWP ゲームを Windows デスクトップまたはモバイル デバイスのみで使用できるようにする場合 (または、任意のデバイスをターゲットとした、ゲーム*以外*の UWP アプリを公開する場合) に必要なのは[開発者アカウント](https://go.microsoft.com/fwlink/?LinkId=817223)だけで、アプリを自由に構成し、ダッシュボードを使ってストアに送信できます。
 
-## Submit your concept for approval
+## 承認を受けるために概念を提出する
 
-If you are an independent game developer or publisher, you can submit your concept for approval through the ID@Xbox program. Learn more about ID@Xbox and apply [here](http://www.xbox.com/en-US/Developers/id).
+独立したゲーム開発者または発行元の場合、ID@Xbox プログラムを通じて、概念を承認を受けるために提出することができます。 ID@Xbox について確認し、[こちら](http://www.xbox.com/en-US/Developers/id)からお申し込みください。
 
-If you are already an ID@Xbox developer, you should have been sent a link to the Game Information Form (GIF) where you can submit your game concept. If you have questions, contact [idgames@xbox.com](mailto:idgames@xbox.com).
+ID@Xbox 開発者の方には、既にゲーム情報フォーム (GIF) へのリンクをお送りしました。このフォームを使ってゲームの概念を提出してください。 ご質問がある場合は、[idgames@xbox.com](mailto:idgames@xbox.com) までメールをお送りください。
 
-If you have an existing license agreement with Microsoft, contact your Microsoft account team for information on submitting your concept.
+マイクロソフトと既にライセンス契約を締結している場合、概念の提出については、Microsoft アカウント チームにお問い合わせください。
+
+
+<!--HONumber=Aug16_HO5-->
+
+

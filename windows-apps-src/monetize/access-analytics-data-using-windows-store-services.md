@@ -3,80 +3,73 @@ author: mcleanbyron
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: "Windows ストア分析 API を使って、自分または自分の組織の Windows デベロッパー センター アカウントに登録されたアプリの分析データをプログラムで取得することができます。"
 title: "Windows ストア サービスを使った分析データへのアクセス"
-ms.sourcegitcommit: 204bace243fb082d3ca3b4259982d457f9c533da
-ms.openlocfilehash: 30388a975e9623c5511abe608aa1b21956e2c974
+translationtype: Human Translation
+ms.sourcegitcommit: 47e0ac11178af98589e75cc562631c6904b40da4
+ms.openlocfilehash: 1293bb5beb927425928d832f887129263db5a895
 
 ---
 
 # Windows ストア サービスを使った分析データへのアクセス
 
-
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
-
-
-*Windows ストア分析 API* を使って、自分または自分の組織の Windows デベロッパー センター アカウントに登録されたアプリの分析データをプログラムで取得することができます。 この API では、アプリおよび IAP の入手数、エラー、アプリの評価とレビューに関するデータを取得できます。 この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
-
-## Windows ストア分析 API を使うための前提条件
-
-
--   ユーザー (またはユーザーの組織) が Azure AD ディレクトリを持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。 それ以外の場合は、[こちらから無料で入手](http://go.microsoft.com/fwlink/p/?LinkId=703757) できます。
--   Windows デベロッパー センター アカウントに関連付ける Azure AD ディレクトリに [ユーザー アカウント](https://azure.microsoft.com/documentation/articles/active-directory-create-users/) を持っている必要があります。
-
-## Windows ストア分析 API の使用
-
-
-Windows ストア分析 API を使う前に、Azure AD アプリケーションをデベロッパー センター アカウントに関連付けて、Azure AD アクセス トークンを取得する必要があります。 Azure AD アプリケーションは、Windows ストア分析 API の呼び出し元のアプリまたはサービスを表します。 アクセス トークンがある場合、アプリまたはサービスから Windows ストア分析 API を呼び出すことができます。
+*Windows ストア分析 API* を使って、自分または自分の組織の Windows デベロッパー センター アカウントに登録されたアプリの分析データをプログラムで取得することができます。 この API では、アプリおよびアドオン (アプリ内製品または IAP とも呼ばれます) の入手数、エラー、アプリの評価とレビューに関するデータを取得できます。 この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
 
 次の手順で、このプロセスについて詳しく説明しています。
 
-1.  
-            [Azure AD アプリケーションを Windows デベロッパー センター アカウントに関連付けます](#associate-an-azure-ad-application-with-your-windows-dev-center-account)。
-2.  
-            [Azure AD のアクセス トークンを取得します](#obtain-an-azure-ad-access-token)。
-3.  
-            [Windows ストア分析 API を呼び出します](#call-the-windows-store-analytics-api)。
+1.  すべての[前提条件](#prerequisites)を完了したことを確認します。
+2.  Windows ストア分析 API でメソッドを呼び出す前に、[Azure AD アクセス トークンを取得](#obtain-an-azure-ad-access-token)する必要があります。 トークンを取得した後、Windows ストア分析 API への呼び出しでこのトークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れた後は、新しいトークンを生成できます。
+3.  [Windows ストア分析 API を呼び出します](#call-the-windows-store-analytics-api)。
 
+<span id="prerequisites" />
+## 手順 1: Windows ストア分析 API を使うための前提条件を完了する
 
-### Azure AD アプリケーションと Windows デベロッパー センター アカウントの関連付け
+Windows ストア分析 API を呼び出すコードの作成を開始する前に、次の前提条件が完了していることを確認します。
 
-1.  デベロッパー センターで、**[アカウント設定]** に移動して **[ユーザーの管理]** をクリックし、組織のデベロッパー センター アカウントを組織の Azure AD ディレクトリに関連付けます。 詳しい手順については、「[アカウント ユーザーの管理](https://msdn.microsoft.com/library/windows/apps/mt489008)」をご覧ください。 必要に応じて、組織の Azure AD ディレクトリから他のユーザーを追加して、デベロッパー センター アカウントにもアクセスできるようにすることができます。
+* ユーザー (またはユーザーの組織) は、Azure AD ディレクトリと、そのディレクトリに対する[グローバル管理者](http://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。 それ以外の場合は、追加料金なしで[デベロッパー センター内から新しい Azure AD を作成](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)できます。
 
-    > 
-            **注**  Azure Active Directory に関連付けることができるデベロッパー センター アカウントは 1 つのみです。 同様に、デベロッパー センター アカウントに関連付けることができる Azure Active Directory は 1 つのみです。 一度関連付けを確立すると、その関連付けを削除するには、必ずサポートへの問い合わせが必要になります。
+* Azure AD アプリケーションをデベロッパー センター アカウントに関連付け、アプリケーションのテナント ID とクライアント ID を取得してキーを生成する必要があります。 Azure AD アプリケーションは、Windows ストア分析 API の呼び出し元のアプリまたはサービスを表します。 テナント ID、クライアント ID、およびキーは、API に渡す Azure AD アクセス トークンを取得するために必要です。
 
-     
+  >**注**&nbsp;&nbsp; この作業を行うのは一度だけです。 テナント ID、クライアント ID、キーがあれば、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらを再利用できます。
 
-2.  **[ユーザーの管理]** ページで、**[Azure AD アプリケーションの追加]** をクリックして、デベロッパー センター アカウントの分析データへのアクセスに使うアプリやサービスを表す Azure AD アプリケーションを追加し、**マネージャー** ロールを割り当てます。 このアプリケーションが既に Azure AD ディレクトリに存在する場合、**[Azure AD アプリケーションの追加]** ページで選んでデベロッパー センター アカウントに追加できます。 それ以外の場合、**[Azure AD アプリケーションの追加]** ページで新しい Azure AD アプリケーションを作成できます。 詳しくは、「[アカウント ユーザーの管理](https://msdn.microsoft.com/library/windows/apps/mt489008)」の Azure AD アプリケーションの管理に関するセクションをご覧ください。
+Azure AD アプリケーションをデベロッパー センター アカウントに関連付け、必要な値を取得するには:
 
-3.  **[ユーザーの管理]** ページに戻り、Azure AD アプリケーションの名前をクリックしてアプリケーション設定に移動し、**[新しいキーの追加]** をクリックします。 次の画面で、**[クライアント ID]** と **[キー]** の値を書き留めます。 詳しくは、「[アカウント ユーザーの管理](https://msdn.microsoft.com/library/windows/apps/mt489008)」の Azure AD アプリケーションの管理に関するセクションをご覧ください。 これらのクライアント ID とキーは、Windows ストア分析 API を呼び出すときに使う Azure AD アクセス トークンを取得するために必要です。 このページから離れると、この情報に再度アクセスすることはできません。
+1.  デベロッパー センターで、**[アカウント設定]** に移動して **[ユーザーの管理]** をクリックし、組織のデベロッパー センター アカウントを組織の Azure AD ディレクトリに関連付けます。 詳しい手順については、「[アカウント ユーザーの管理](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)」をご覧ください。
 
+2.  **[ユーザーの管理]** ページで、**[Azure AD アプリケーションの追加]** をクリックして、デベロッパー センター アカウントの分析データへのアクセスに使うアプリやサービスを表す Azure AD アプリケーションを追加し、**マネージャー** ロールを割り当てます。 このアプリケーションが既に Azure AD ディレクトリに存在する場合、**[Azure AD アプリケーションの追加]** ページで選んでデベロッパー センター アカウントに追加できます。 それ以外の場合、**[Azure AD アプリケーションの追加]** ページで新しい Azure AD アプリケーションを作成できます。 詳しくは、「[Azure AD アプリケーションを追加して管理する](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)」をご覧ください。
 
-### Azure AD アクセス トークンの取得
+3.  **[ユーザーの管理]** ページに戻り、Azure AD アプリケーションの名前をクリックしてアプリケーション設定に移動し、**[テナント ID]** と **[クライアント ID]** の値を書き留めます。
 
-Azure AD アプリケーションをデベロッパー センター アカウントに関連付け、アプリケーションのクライアント ID とキーを取得すると、この情報を使って Azure AD アクセス トークンを取得できます。 Windows ストア分析 API で任意のメソッドを呼び出すには、アクセス トークンが必要です。 アクセス トークンを作成した後、アクセス トークンを使用できるのはその有効期限が切れるまでの 60 分間です。
+4. **[新しいキーの追加]** をクリックします。 次の画面で、**[キー]** の値を書き留めます。 このページから離れると、この情報に再度アクセスすることはできません。 詳しくは、「[Azure AD アプリケーションを追加して管理する](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)」でキーの管理に関する情報をご覧ください。
 
-アクセス トークンを取得するには、「[クライアント資格情報を使用したサービス間の呼び出し](https://msdn.microsoft.com/library/azure/dn645543.aspx)」の手順に従って、HTTP POST を次の Azure AD エンドポイントに送信します。
+<span id="obtain-an-azure-ad-access-token" />
+## 
+手順 2: Azure AD のアクセス トークンを取得する
 
-```syntax
-https://login.microsoftonline.com/<tenant id>/oauth2/token
+Windows ストア分析 API で任意のメソッドを呼び出す前に、API 内の各メソッドの **Authorization** ヘッダーに渡す Azure AD アクセス トークンをまず取得する必要があります アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れた後は、トークンを更新してそれ以降の API 呼び出しで引き続き使用できます。
+
+アクセス トークンを取得するには、「[クライアント資格情報を使用したサービス間の呼び出し](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/)」の手順に従って、HTTP POST を ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` エンドポイントに送信します。 要求の例を次に示します。
+
+```
+POST https://login.microsoftonline.com/<your_tenant_id>/oauth2/token HTTP/1.1
+Host: login.microsoftonline.com
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+
+grant_type=client_credentials
+&client_id=<your_client_id>
+&client_secret=<your_client_secret>
+&resource=https://manage.devcenter.microsoft.com
 ```
 
--   テナント ID を取得するには、[Azure 管理ポータル](http://manage.windowsazure.com/) にログインし、**Active Directory** に移動し、デベロッパー センター アカウントにリンクされているディレクトリをクリックします。 以下の例にある *your\_tenant\_ID* 文字列からわかるように、このディレクトリのテナント ID がこのページの URL に埋め込まれます。
+*tenant\_id*、*client \_id*、*client \_secret* の各パラメーターには、前のセクションでデベロッパー センターから取得したテナント ID、クライアント ID、キーを指定します。 *resource* パラメーターには、次の URI を指定します。```https://manage.devcenter.microsoft.com```
 
-  ```syntax
-  https://manage.windowsazure.com/@<your_tenant_name>#Workspaces/ActiveDirectoryExtension/Directory/<your_tenant_ID>/directoryQuickStart
-  ```
+アクセス トークンの有効期限が切れた後は、[この](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)手順に従って更新できます。
 
--   *client\_id* および *client\_secret* パラメーターには、前の手順でデベロッパー センターから取得したアプリケーションのクライアント ID とキーを指定します。
--   *resource* パラメーターには、次の URI を指定します: ```https://manage.devcenter.microsoft.com```。
-
-
-### Windows ストア分析 API の呼び出し
+<span id="call-the-windows-store-analytics-api" />
+## 手順 3: Windows ストア分析 API を呼び出す
 
 Azure AD アクセス トークンを取得したら、Windows ストア分析 API を呼び出すことができます。 各メソッドの構文については、次の記事をご覧ください。 各メソッドの **Authorization** ヘッダーにアクセス トークンを渡す必要があります。
 
 -   [アプリの入手数の取得](get-app-acquisitions.md)
--   [IAP の入手数の取得](get-in-app-acquisitions.md)
+-   [アドオンの入手数の取得](get-in-app-acquisitions.md)
 -   [エラー報告データの取得](get-error-reporting-data.md)
 -   [アプリの評価の取得](get-app-ratings.md)
 -   [アプリのレビューの取得](get-app-reviews.md)
@@ -139,7 +132,7 @@ namespace TestAnalyticsAPI
                 "https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?applicationId={0}&startDate={1}&endDate={2}&top={3}&skip={4}",
                 appID, startDate, endDate, top, skip);
 
-            //// Get IAP acquisitions
+            //// Get add-on acquisitions
             //requestURI = string.Format(
             //    "https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?applicationId={0}&startDate={1}&endDate={2}&top={3}&skip={4}",
             //    appID, startDate, endDate, top, skip);
@@ -237,7 +230,7 @@ Windows ストア分析 API は、エラー コードとメッセージが含ま
 ## 関連トピック
 
 * [アプリの入手数の取得](get-app-acquisitions.md)
-* [IAP の入手数の取得](get-in-app-acquisitions.md)
+* [アドオンの入手数の取得](get-in-app-acquisitions.md)
 * [エラー報告データの取得](get-error-reporting-data.md)
 * [アプリの評価の取得](get-app-ratings.md)
 * [アプリのレビューの取得](get-app-reviews.md)
@@ -245,6 +238,6 @@ Windows ストア分析 API は、エラー コードとメッセージが含ま
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Sep16_HO1-->
 
 

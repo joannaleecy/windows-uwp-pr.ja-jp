@@ -3,8 +3,9 @@ author: jwmsft
 description: "カスタム リソース検索の実装から取得されたリソースの参照を評価して、任意の XAML 属性の値を提供します。 リソース検索は、CustomXamlResourceLoader クラスの実装によって実行されます。"
 title: "CustomResource マークアップ拡張"
 ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4758f67c7bcbc58fda47faf1e872998302086c10
+ms.openlocfilehash: a0a4edc8d59219aea3a47a18ea991e4267782026
 
 ---
 
@@ -28,8 +29,7 @@ ms.openlocfilehash: 4758f67c7bcbc58fda47faf1e872998302086c10
 
 ## 注釈
 
-
-            **CustomResource** は、カスタム リソース リポジトリのどこかで定義されている値を取得するための手法です。 この手法は比較的高度なものであり、Windows ランタイム アプリのほとんどのシナリオでは使われていません。
+**CustomResource** は、カスタム リソース リポジトリのどこかで定義されている値を取得するための手法です。 この手法は比較的高度なものであり、Windows ランタイム アプリのほとんどのシナリオでは使われていません。
 
 **CustomResource** がどのようにリソース辞書に解決されるかについては、[**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) の実装方法によって異なるため、このトピックでは説明しません。
 
@@ -41,8 +41,7 @@ ms.openlocfilehash: 4758f67c7bcbc58fda47faf1e872998302086c10
 2.  初期化ロジックでクラスを参照するために [**CustomXamlResourceLoader.Current**](https://msdn.microsoft.com/library/windows/apps/br243328) を設定します。 これは、`{CustomResource}` 拡張の使用が含まれるページ レベルの XAML が読み込まれる前に行う必要があります。 **CustomXamlResourceLoader.Current** を設定する場所の 1 つは、App.xaml コード ビハインド テンプレートで生成される [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) サブクラス コンストラクター内です。
 3.  これで、アプリでページとして読み込む XAML 内で、XAML リソース ディクショナリ内から、`{CustomResource}` 拡張を使うことができます。
 
-
-            **CustomResource** はマークアップ拡張です。 通常、マークアップ拡張は、属性値をリテラル値やハンドラー名以外にエスケープする必要があり、特定の型やプロパティに対して型コンバーターを指定するのではなく、よりグローバルにその必要がある場合に実装します。 XAML のすべてのマークアップ拡張では、それぞれの属性構文で "\{" と "\}" の文字を使います。これは規約であり、これに従って XAML プロセッサは、マークアップ拡張で属性を処理する必要があることを認識します。
+**CustomResource** はマークアップ拡張です。 通常、マークアップ拡張は、属性値をリテラル値やハンドラー名以外にエスケープする必要があり、特定の型やプロパティに対して型コンバーターを指定するのではなく、よりグローバルにその必要がある場合に実装します。 XAML のすべてのマークアップ拡張では、それぞれの属性構文で "\{" と "\}" の文字を使います。これは規約であり、これに従って XAML プロセッサは、マークアップ拡張で属性を処理する必要があることを認識します。
 
 ## 関連トピック
 
@@ -53,6 +52,6 @@ ms.openlocfilehash: 4758f67c7bcbc58fda47faf1e872998302086c10
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

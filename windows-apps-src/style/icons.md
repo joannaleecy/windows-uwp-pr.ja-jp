@@ -5,8 +5,9 @@ title: "アイコン"
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
+ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
 
 ---
 
@@ -24,10 +25,10 @@ ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
         <td>48 ピクセル x 48 ピクセル</td>
     </tr>
     <tr> 
-        <td>![Icons at 16x16 effective pixels](images/icons-16x16.png)</td>
-        <td>![Icons at 24x24 effective pixels](images/icons-24x24.png)</td>
-        <td>![Icons at 32x32 effective pixels](images/icons-32x32.png)</td>
-        <td>![Icons at 48x48 effective pixels](images/icons-48x48.png)</td>
+        <td>![有効ピクセル 16 x 16 のアイコン](images/icons-16x16.png)</td>
+        <td>![有効ピクセル 24 x 24 のアイコン](images/icons-24x24.png)</td>
+        <td>![有効ピクセル 32 x 32 のアイコン](images/icons-32x32.png)</td>
+        <td>![有効ピクセル 48 x 48 のアイコン](images/icons-48x48.png)</td>
     </tr>
 </table>
 
@@ -46,17 +47,17 @@ ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
         <td>三角形</td>
     </tr>
     <tr>
-        <td>![A circle](images/icons-common-shapes-examples-1.png)<td>
-        <td>![A square](images/icons-common-shapes-examples-2.png)</td>
-        <td>![A triangle ](images/icons-common-shapes-examples-3.png)</td>
+        <td>![円形](images/icons-common-shapes-examples-1.png)<td>
+        <td>![正方形](images/icons-common-shapes-examples-2.png)</td>
+        <td>![三角形 ](images/icons-common-shapes-examples-3.png)</td>
     </tr>
         <tr>
         <td>横型の長方形<td>
         <td colspan="2">縦型の長方形</td>        
         </tr>
     <tr>
-        <td>![A horizontal rectangle](images/icons-common-shapes-examples-4.png)<td>
-        <td colspan="2">![A vertical rectangle](images/icons-common-shapes-examples-5.png)</td>
+        <td>![横型の長方形](images/icons-common-shapes-examples-4.png)<td>
+        <td colspan="2">![縦型の長方形](images/icons-common-shapes-examples-5.png)</td>
          
     </tr>
 
@@ -90,10 +91,10 @@ ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
 
 <table>
     <tr>
-        <td>![A 1:1 angle example](images/icons-angles-examples-1.png)</td>
-        <td>![A 1:2 angle example](images/icons-angles-examples-2.png)</td>
-        <td>![A 1:3 angle example](images/icons-angles-examples-3.png)</td>
-        <td>![A 1:4 angle example](images/icons-angles-examples-4.png)</td>
+        <td>![1:1 の角度の例](images/icons-angles-examples-1.png)</td>
+        <td>![1:2 の角度の例](images/icons-angles-examples-2.png)</td>
+        <td>![1:3 の角度の例](images/icons-angles-examples-3.png)</td>
+        <td>![1:4 の角度の例](images/icons-angles-examples-4.png)</td>
     </tr>
 </table>
 
@@ -107,12 +108,12 @@ ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
         <td>円形の 1/8</td>
     </tr>
     <tr>
-        <td>![1/4 circle](images/icons-curves-14circle.png)</td>
-        <td>![1/8 circle](images/icons-curves-18circle.png)</td>
+        <td>![円形の 1/4](images/icons-curves-14circle.png)</td>
+        <td>![円形の 1/8](images/icons-curves-18circle.png)</td>
     </tr>
     <tr>
-        <td>![1/4 cirlce example](images/icons-curves-examples-1.png)</td>
-        <td>![1/8 circle example](images/icons-curves-examples-2.png)</td>
+        <td>![円形の 1/4 の例](images/icons-curves-examples-1.png)</td>
+        <td>![円形の 1/8 の例](images/icons-curves-examples-2.png)</td>
     </tr>    
 </table>
 
@@ -144,8 +145,8 @@ ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
     <td>一般的な操作を示すバッジ</td>
 </tr>
 <tr>
-    <td>![Status badge ](images/icons-badge-common-states-1.png)</td>
-    <td>![Action badge ](images/icons-badge-common-states-2.png)</td>
+    <td>![状態を示すバッジ ](images/icons-badge-common-states-1.png)</td>
+    <td>![操作を示すバッジ ](images/icons-badge-common-states-2.png)</td>
 </tr>
 </table>
 <p></p>
@@ -157,8 +158,8 @@ ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
 <table>
 <tr><td>緑 - #128B44</td><td>青 - #2C71B9</td><td>黄 - #FDC214</td></tr>
 <tr><td>ポジティブ: 終了、完了 </td><td>中立: ヘルプ、通知 </td><td>注意: 警報、警告 </td></tr>
-<tr><td>![Green status](images/icons-color-inbadging-1.png)</td><td>![Blue status](images/icons-color-inbadging-2.png)</td>
-<td>![Yellow status](images/icons-color-inbadging-3.png)</td></tr>
+<tr><td>![緑の状態](images/icons-color-inbadging-1.png)</td><td>![青の状態](images/icons-color-inbadging-2.png)</td>
+<td>![黄色の状態](images/icons-color-inbadging-3.png)</td></tr>
 </table>
 <p></p>
 
@@ -176,6 +177,6 @@ ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

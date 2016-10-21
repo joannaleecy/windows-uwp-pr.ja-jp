@@ -3,8 +3,9 @@ author: jnHs
 Description: "統計データを含む .files をダウンロードすると、統計情報と情報をオフラインで確認できます。"
 title: "分析レポートのダウンロード"
 ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 959007d6d7c4e4c768f196fe04c2fa4a8ac6fc2e
+ms.openlocfilehash: 99b751146adc2394e10c6deae58bd0fdb124888d
 
 ---
 
@@ -17,8 +18,7 @@ ms.openlocfilehash: 959007d6d7c4e4c768f196fe04c2fa4a8ac6fc2e
 
 1.  まず、情報をダウンロードするアプリを選びます。
 
-    > 
-            **ヒント**  情報をダウンロードする対象としてすべてのアプリまたは特定のアプリを選ぶことができます。 **[分析]** セクションで **[レポートのダウンロード]** ページにアクセスしたときに使っていたアプリ以外のレポートもダウンロードできます。
+    > **ヒント**  情報をダウンロードする対象としてすべてのアプリまたは特定のアプリを選ぶことができます。 **[分析]** セクションで **[レポートのダウンロード]** ページにアクセスしたときに使っていたアプリ以外のレポートもダウンロードできます。
 
 2.  利用可能なレポートのいずれかを選びます。
 
@@ -28,6 +28,6 @@ ms.openlocfilehash: 959007d6d7c4e4c768f196fe04c2fa4a8ac6fc2e
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

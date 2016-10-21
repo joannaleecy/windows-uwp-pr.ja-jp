@@ -8,7 +8,7 @@ template: detail.hbs
 redirect_url: https://msdn.microsoft.com/en-us/cortana/voicecommands/support-natural-language-voice-commands-in-cortana
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 1abb30309b41d62aa6355a61ee74078f3aabac87
+ms.openlocfilehash: 281c9fa2f9dfd2415e8d8555084fea83cb84d9e7
 
 ---
 
@@ -20,6 +20,6 @@ Github: https://github.com/Microsoft/cortana-docs/blob/master/docs/voicecommands
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

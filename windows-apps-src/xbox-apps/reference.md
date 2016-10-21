@@ -2,10 +2,9 @@
 author: v-angraf
 title: "Xbox One の UWP に関する API リファレンス"
 description: "Xbox One の UWP に関する API リファレンスです。"
-area: Xbox
 translationtype: Human Translation
-ms.sourcegitcommit: 1a8dc5bcfc619756696dd9892ca63d3ad92c3c16
-ms.openlocfilehash: 3e857501687f74eacbe863889d61d33fcdbcd086
+ms.sourcegitcommit: 3d1c06c556ac8d5bbb915bbfa9f023b0d2b4544f
+ms.openlocfilehash: 0d7fb9a2706dbcb1757c367c3e0b0c61c10eea9a
 
 ---
 
@@ -21,6 +20,7 @@ ms.openlocfilehash: 3e857501687f74eacbe863889d61d33fcdbcd086
 |[/ext/settings](wdp-xboxsettings-api.md)| Xbox One 開発者向け設定にアクセスします。 |
 |[/ext/smb/developerfolder](wdp-smb-api.md)| 開発用 PC のエクスプローラーを使用して、本体上にある開発者向けフォルダーにアクセスします。 |
 |[/ext/user](wdp-user-management.md)| Xbox One 本体のユーザーを管理します。 |
+|[/ext/update/policy](wdp-updatepolicy-api.md)| 本体に適用される更新ポリシーを管理します。 |
 |[/ext/xboxlive/sandbox](wdp-sandbox-api.md)| Xbox Live サンド ボックスを管理します。 |
 
 ## 参照
@@ -29,6 +29,6 @@ ms.openlocfilehash: 3e857501687f74eacbe863889d61d33fcdbcd086
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

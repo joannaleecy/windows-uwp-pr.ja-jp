@@ -4,7 +4,7 @@ title: "Device Portal の Xbox Live サンド ボックス API のリファレ�
 description: "Xbox Live サンド ボックスにプログラムでアクセスする方法について説明します。"
 translationtype: Human Translation
 ms.sourcegitcommit: a857ba338a971e651653193ff2149f08b1665a36
-ms.openlocfilehash: c1671db55dcb05ab7a126fad271a5e49146fe9ac
+ms.openlocfilehash: 2a0bfa2eecffb2b0f5ed0bc691cb90bcd7191321
 
 ---
 
@@ -90,6 +90,6 @@ HTTP 状態コード      | 説明
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,8 +3,9 @@ author: mtoepke
 title: "DXGI 1.3 スワップ チェーンによる遅延の減少"
 description: "DXGI 1.3 を使って、スワップ チェーンが新しいフレームのレンダリング開始の適切な時間を通知するまで待機することで、実質的なフレーム待機時間を削減します。"
 ms.assetid: c99b97ed-a757-879f-3d55-7ed77133f6ce
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 174e2918d54a2b03124752d009f43f0cb0c800ca
+ms.openlocfilehash: 7eb0eab864c58b07e29803895423998dd647a87e
 
 ---
 
@@ -31,8 +32,7 @@ DXGI 1.3 を使って、スワップ チェーンが新しいフレームのレ�
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
 ```
 
-> 
-            **注** 一部の他のフラグと異なり、このフラグは [**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577) を使って追加または削除できません。 このフラグの設定が、スワップ チェーンが作成された時点の設定と異なっている場合、DXGI はエラー コードを返します。
+> **注** 一部の他のフラグと異なり、このフラグは [**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577) を使って追加または削除できません。 このフラグの設定が、スワップ チェーンが作成された時点の設定と異なっている場合、DXGI はエラー コードを返します。
 
  
 
@@ -163,6 +163,6 @@ Windows でのマルチスレッド プログラミングについて詳しく�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

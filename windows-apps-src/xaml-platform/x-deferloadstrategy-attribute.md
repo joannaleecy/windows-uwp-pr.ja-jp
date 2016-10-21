@@ -4,17 +4,18 @@ title: "xDeferLoadStrategy 属性"
 description: "xDeferLoadStrategy は、要素とその子の作成を遅延させます。起動時間は短くなりますが、メモリ使用量は若干増加します。 影響を受けるそれぞれの要素によって、メモリ使用量が約 600 バイト増加します。"
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: a5230a92ad919fc52c40c19646ff799453e64fa4
+ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
+ms.openlocfilehash: c1a0515ea4298b6eb870bdf69e452f774962cdd8
 
 ---
 
 # x:DeferLoadStrategy 属性
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
+**x:DeferLoadStrategy="Lazy"** を使うと、XAML アプリの起動時またはツリー作成時のパフォーマンスを最適化できます。 **x:DeferLoadStrategy="Lazy"** を使うと、要素とその子の作成が遅延され、要素を作成する必要がなくなることにより、起動時間とメモリ コストが減ります。 これは、あまり必要のない要素や条件付きで必要な要素のコストを削減するのに役立ちます。 要素は、コードまたは VisualStateManager から参照された時点で実体化されます。
 
-              **x:DeferLoadStrategy="Lazy"** は、要素とその子の作成を遅延させます。起動時間は短くなりますが、メモリ使用量は若干増加します。 影響を受けるそれぞれの要素によって、メモリ使用量が約 600 バイト増加します。 遅延させる要素ツリーが大きいほど、起動時間がより節約されます。ただし、メモリ使用量のコストは増加します。 したがって、この属性を過剰に使うとパフォーマンスが低下する可能性があります。
+ただし、遅延のための予約により、影響を受ける要素ごとにメモリ使用量が約 600 バイト増えます。 遅延させる要素ツリーが大きいほど、起動時間がより節約されます。ただし、メモリ使用量のコストは増加します。 したがって、この属性を過剰に使うとパフォーマンスが低下する可能性があります。
 
 ## XAML 属性の使用方法
 
@@ -28,7 +29,7 @@ ms.openlocfilehash: a5230a92ad919fc52c40c19646ff799453e64fa4
 
 -   この要素を後で検索する手段が必要なため、定義済みの [x:Name](x-name-attribute.md) が必要です。
 -   遅延としてマークできるのは、[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) のみです ([**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249) から派生した型は除く)。
--   [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControls**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol)、[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) では、ルート要素を遅延できません。
+-   [**Page**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControls**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.usercontrol)、[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) では、ルート要素を遅延できません。
 -   [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) の要素は遅延できません。
 -   [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) で読み込まれた Loose XAML では機能しません。
 -   親要素を移動すると、実現されていない要素はすべて消去されます。
@@ -89,6 +90,6 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

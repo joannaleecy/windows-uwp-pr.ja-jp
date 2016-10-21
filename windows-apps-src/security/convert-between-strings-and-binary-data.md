@@ -3,8 +3,9 @@ title: "文字列とバイナリ データの間の変換"
 description: "次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでの文字列とバイナリ データ間での変換方法を示しています。"
 ms.assetid: AED4C74F-E63B-4980-BB4D-28ACCC1AB58B
 author: awkoren
+translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 667338ed3808f79b75230bc0c3ea00cc7e274d5a
+ms.openlocfilehash: 06c035e336039fd08cc5f3b9bcbb7d2783cff089
 
 ---
 
@@ -33,6 +34,6 @@ public void ConvertData()
 ```
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

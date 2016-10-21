@@ -3,8 +3,9 @@ author: jnHs
 Description: "適切なカテゴリとサブカテゴリにアプリを登録すると、どのようなアプリかわかりやすくなり、ユーザーもアプリを見つけやすくなります。"
 title: "カテゴリとサブカテゴリの一覧"
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9f9f5da100109af5dc38f7ffbc3cadca842b1214
+translationtype: Human Translation
+ms.sourcegitcommit: b31e399d950a99f0cb6f1e912e391429b5463136
+ms.openlocfilehash: 40891ade1c3383f89eed99176b4e9cf979e1fb64
 
 ---
 
@@ -15,14 +16,13 @@ ms.openlocfilehash: 9f9f5da100109af5dc38f7ffbc3cadca842b1214
 
 アプリに最も適したカテゴリを 1 つ選んでください。 次に、利用可能な場合はサブカテゴリを選びます。
 
-> 
-            **注:** カテゴリとして **[ゲーム]** を選んだ場合、サブカテゴリは必須です。
-
- 
+> **注:** カテゴリとして **[ゲーム]** を選んだ場合、サブカテゴリは必須です。
 
 アプリは、1 つのカテゴリ (その中で、ある場合は 1 つのサブカテゴリ) にのみ登録できます。どのカテゴリやサブカテゴリを使えばよいかわからない場合は、同じようなアプリを見つけるときに調べる可能性が高いと思われるカテゴリを選んでください。
 
 既にストアにあるアプリのカテゴリまたはサブカテゴリを変更する場合、[新しい申請を作成](app-submissions.md) して新しいカテゴリを選べば行うことができます。
+
+> **重要:** アプリを**ゲーム**のカテゴリで公開すると、新しい申請で別のカテゴリを選べなくなります。 またゲーム以外のカテゴリで公開したアプリの更新プログラムに対して、**ゲーム**のカテゴリを選ぶこともできません。
 
 Windows ストアでは、アプリを以下のカテゴリとサブカテゴリで分類しています。
 
@@ -59,12 +59,11 @@ Windows ストアでは、アプリを以下のカテゴリとサブカテゴリ
 | ユーティリティ & ツール           | バックアップ & 管理 <br> ファイル マネージャー                |
  
 
-> 
-            **注:** Windows 8.1 以前の Windows ストアと Windows Phone ストアで使われるカテゴリと、上のカテゴリ一覧との関連性については、「[ストアにおける Windows 10 ユーザー向けのアプリの表示形式](how-your-app-appears-in-the-store-for-windows-10-customers.md#category-changes)」をご覧ください。
+> **注:** Windows 8.1 以前の Windows ストアと Windows Phone ストアで使われるカテゴリと、上のカテゴリ一覧との関連性については、「[ストアにおける Windows 10 ユーザー向けのアプリの表示形式](how-your-app-appears-in-the-store-for-windows-10-customers.md#category-changes)」をご覧ください。
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

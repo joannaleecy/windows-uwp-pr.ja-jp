@@ -1,73 +1,83 @@
 ---
 author: mcleanbyron
-Description: The Microsoft Store Services SDK provides libraries and tools that you can use to add features to your apps that help you make more money and gain customers.
+Description: "Microsoft Store Services SDK が提供するライブラリとツールを利用すると、収益とユーザーの獲得を図る機能をアプリに追加できます。"
 title: Microsoft Store Services SDK
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
+translationtype: Human Translation
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 98675e9cb06b05e55d49ca625818626aea5a5346
+
 ---
 
 # Microsoft Store Services SDK
 
-The Microsoft Store Services SDK provides libraries and tools that help you make more money and gain customers in your Universal Windows Platform (UWP) apps, such as displaying ads in your apps and running experiments with A/B testing. This SDK will evolve over time to include new engagement and monetization features.
+Microsoft Store Services SDK が提供するライブラリとツールを利用すると、ユニバーサル Windows プラットフォーム (UWP) アプリで収益とユーザーの獲得を向上することができます。たとえば、アプリで広告を表示したり、A/B テストを行ったりできます。 この SDK には、エンゲージメントと収益化に関する新しい機能が徐々に追加されていきます。
 
 
-## Features available in the SDK
+## SDK で利用可能な機能
 
-The Microsoft Store Services SDK provides libraries and tools that support the following features.
+Microsoft Store Services SDK は、以下の機能をサポートするライブラリとツールを提供します。
 
-### Run experiments with A/B testing for UWP apps
+### UWP アプリの A/B テストの実行
 
-Run A/B tests in your Universal Windows Platform (UWP) apps to measure the effectiveness of features on some customers before you release the features to everyone. After you define an experiment in your Dev Center dashboard, use the [StoreServicesExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.aspx) class to get variations for your experiment in your app, use this data to modify the behavior of the feature you are testing, and then use the [LogForVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation.aspx) method to send view event and conversion events to Dev Center. Finally, use your dashboard to view the results and manage the experiment.
+ユニバーサル Windows プラットフォーム (UWP) アプリで A/B テストを実施して、すべてのユーザー向けに機能を公開する前に、一部のユーザーに対して機能の有効性を測定することができます。 デベロッパー センター ダッシュボードで実験を定義したら、アプリで [StoreServicesExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.aspx) クラスを使用して実験のバリエーションを取得します。次に、そのデータを使用して、テストする機能の動作を変更し、[LogForVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation.aspx) メソッドを使って、デベロッパー センターにビュー イベントとコンバージョン イベントを送信します。 最後に、ダッシュボードで結果を表示し、実験を管理します。
 
-For more information, see [Run experiments with A/B testing](run-app-experiments-with-a-b-testing.md).
+詳しくは、「[A/B テストの実行](run-app-experiments-with-a-b-testing.md)」をご覧ください。
 
-### App feedback for UWP apps
+### UWP アプリのアプリ フィードバック
 
-Use the [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) class in your UWP apps to direct your Windows 10 customers to Feedback Hub, where they can submit problems, suggestions, and upvotes. Then, manage this feedback in the [Feedback report](../publish/feedback-report.md) in the Dev Center dashboard.
+UWP アプリで [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) クラスを使用し、Windows 10 ユーザーをフィードバック Hub に誘導して、ユーザーが問題、提案、賛成票を送信できるようにします。 次に、デベロッパー センター ダッシュボードの[フィードバック レポート](../publish/feedback-report.md)でこのフィードバックを管理します。
 
-For more information, see [Launch Feedback Hub from your app](launch-feedback-hub-from-your-app.md).
+詳しくは、「[アプリからのフィードバック Hub の起動](launch-feedback-hub-from-your-app.md)」をご覧ください。
 
-### Display ads in your apps
+### アプリでの広告の表示
 
-Increase your revenue by displaying banner ads or video interstitial ads from Microsoft in UWP apps. You can also maximize your ad fill rates by using ad mediation to display ads from multiple ad network providers.
+UWP アプリに Microsoft のバナー広告やビデオのスポット広告を表示して収益を増やします。 また、広告仲介を使用して、複数の広告ネットワーク プロバイダーから広告を表示すると、広告のフィル レートを最大限に高めることができます。
 
-For more information, see [Display ads in your app](display-ads-in-your-app.md).
+詳しくは、「[アプリでの広告の表示](display-ads-in-your-app.md)」をご覧ください。
 
->**Note**&nbsp;&nbsp;Microsoft Store Services SDK only supports UWP apps. To display ads in Windows 8.1 and Windows Phone 8.x apps, use the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk).
+>**注**&nbsp;&nbsp;Microsoft Store Services SDK は UWP アプリのみサポートしています。 Windows 8.1 および Windows Phone 8.x アプリで広告を表示するには、[Windows および Windows Phone 8.x 用の Microsoft Advertising SDK](http://aka.ms/store-8-sdk) を使用します。
 
-### API reference
+### API リファレンス
 
-For reference documentation about the APIs in the Microsoft Store Services SDK, see [Microsoft Store Services SDK API reference](https://msdn.microsoft.com/library/windows/apps/mt691886.aspx).
+Microsoft Store Services SDK の API に関するリファレンス ドキュメントについては、「[Microsoft Store Services SDK API リファレンス](https://msdn.microsoft.com/library/windows/apps/mt691886.aspx)」をご覧ください。
 
-## Install the SDK
+## SDK のインストール
 
-To install the Microsoft Store Services SDK:
+Microsoft Store Services SDK をインストールするには
 
-1.  Close all instances of Visual Studio 2013 or Visual Studio 2015 and uninstall any previous versions of the Microsoft Store Engagement and Monetization SDK, Universal Ad Client SDK, Ad Mediator extension or Microsoft Advertising SDK.
-2.  Download and install the [SDK](http://aka.ms/store-em-sdk). It may take a few minutes to install. Be sure and wait until the process has finished.
-3.  Restart Visual Studio.
+1.  Visual Studio 2013 または Visual Studio 2015 のすべてのインスタンスを閉じて、Microsoft Store Engagement and Monetization SDK、Universal Ad Client SDK、Ad Mediator 拡張機能、または Microsoft Advertising SDK の以前のバージョンをアンインストールします。
+2.  [SDK](http://aka.ms/store-em-sdk) をダウンロードしてインストールします。 インストールには数分かかることがあります。 確実に処理が完了するまでお待ちください。
+3.  Visual Studio を再起動します。
 
-Microsoft periodically releases new versions of the Microsoft Store Services SDK with performance improvements and new features. If you have existing projects that use the Microsoft Store Services SDK and you want to use the latest version, simply download and install the latest version of the SDK.
+マイクロソフトでは定期的に、向上したパフォーマンスと新しい機能を備えた、新しいバージョンの Microsoft Store Services SDK をリリースしています。 Microsoft Store Services SDK を使っている既存のプロジェクトがあり、そのプロジェクトで最新バージョンを使う場合は、最新バージョンの SDK をダウンロードしてインストールしてください。
 
-The advertising features for UWP apps from previous releases of the Microsoft Store Engagement and Monetization SDK, Universal Ad Client SDK, Ad Mediator extension and Microsoft Advertising SDK are now included in the Microsoft Store Services SDK. If you have existing UWP projects that use advertising features from one of these previous releases, you can continue working with your projects without any changes after you install the Microsoft Store Services SDK.
+以前のリリースである Microsoft Store Engagement and Monetization SDK、Universal Ad Client SDK、Ad Mediator 拡張機能、Microsoft Advertising SDK の UWP アプリ用の広告機能は現在、Microsoft Store Services SDK に含まれています。 以前のリリースの広告機能を使っている既存の UWP プロジェクトがある場合は、Microsoft Store Services SDK をインストールした後も、変更を加える必要なしに、既存のプロジェクトを継続できます。
 
->**Note**  To install the Microsoft Store Services SDK with Visual Studio 2015, you must have version 1.1 or later of the Visual Studio Tools for Universal Windows Apps installed. For more information about this update to the Visual Studio Tools for Universal Windows Apps, see the [release notes](http://go.microsoft.com/fwlink/?LinkID=624516).
+>**注**  Visual Studio 2015 の Microsoft Store Services SDK をインストールするには、Visual Studio Tools for Universal Windows Apps のバージョン 1.1 以降がインストールされている必要があります。 Visual Studio Tools for Universal Windows Apps のこの更新について詳しくは、[リリース ノート](http://go.microsoft.com/fwlink/?LinkID=624516)をご覧ください。
 
-## Framework packages in the SDK
+## SDK のフレームワーク パッケージ
 
-The following libraries in the Microsoft Store Services SDK are configured as *framework packages*:
+Microsoft Store Services SDK の以下のライブラリは*フレームワーク パッケージ*として構成されています。
 
-* Microsoft.Advertising.dll. This library contains the advertising APIs in the [Microsoft.Advertising](https://msdn.microsoft.com/en-us/library/windows/apps/mt313187.aspx) and [Microsoft.Advertising.WinRT.UI](https://msdn.microsoft.com/en-us/library/windows/apps/microsoft.advertising.winrt.ui.aspx) namespaces.
-* Microsoft.Services.Store.Engagement.dll. This library contains the APIs in the [Microsoft.Services.Store.Engagement](https://msdn.microsoft.com/en-us/library/windows/apps/microsoft.services.store.engagement.aspx) namespace.
+* Microsoft.Advertising.dll。 このライブラリには、[Microsoft.Advertising](https://msdn.microsoft.com/en-us/library/windows/apps/mt313187.aspx) のアドバタイズ API と [Microsoft.Advertising.WinRT.UI](https://msdn.microsoft.com/en-us/library/windows/apps/microsoft.advertising.winrt.ui.aspx) 名前空間が含まれます。
+* Microsoft.Services.Store.Engagement.dll。 このライブラリには、[Microsoft.Services.Store.Engagement](https://msdn.microsoft.com/en-us/library/windows/apps/microsoft.services.store.engagement.aspx) 名前空間の API が含まれています。
 
-This means that after you install the SDK on your development computer, these libraries are automatically updated through Windows Update whenever we publish new versions of the libraries with fixes and performance improvements. This helps to ensure that you always have the latest available version of the libraries installed on your development computer.
+つまり、SDK を開発用コンピューターにインストールした後、これらのライブラリは、修正されてパフォーマンスが向上した新しいバージョンのライブラリが公開されるたびに、Windows Update を介して自動的に更新されます。 これにより、利用できる最新バージョンのライブラリが開発用コンピューターに確実にインストールされます。
 
-In addition, after a user installs a version of your app that uses these libraries, the libraries will also automatically be updated on their device whenever we publish new versions of the libraries with fixes and performance improvements. This means that users will always have the most current version of the libraries, without any need for you to publish updated versions of your app to the Store.
+また、これらのライブラリを使用するバージョンのアプリをユーザーがインストールすると、これらのライブラリは、修正されてパフォーマンスが向上した新しいバージョンのライブラリが公開されるたびに、ユーザーのデバイスで自動的に更新されます。 つまり、開発者が更新されたバージョンのアプリをストアに公開しなくても、ユーザーは最新バージョンのライブラリを常に使用できるようになります。
 
-However, if we release a new version of the SDK that introduces new APIs or features in these libraries, you will need to install the latest version of the SDK to use those features. In this scenario, you would also need to publish your updated app to the Store.
+ただし、これらのライブラリに新しい API や機能が導入された新しいバージョンの SDK がリリースされた場合は、これらの機能を使用するために最新バージョンの SDK をインストールする必要があります。 このシナリオでは、更新されたアプリをストアに公開する必要もあります。
 
-## Related topics
+## 関連トピック
 
-* [Microsoft Store Services SDK API reference](https://msdn.microsoft.com/library/windows/apps/mt691886.aspx)
-* [Run experiments with A/B testing](run-app-experiments-with-a-b-testing.md)
-* [Launch Feedback Hub from your app](launch-feedback-hub-from-your-app.md)
-* [Display ads in your app](display-ads-in-your-app.md)
+* [Microsoft Store Services SDK API リファレンス](https://msdn.microsoft.com/library/windows/apps/mt691886.aspx)
+* [A/B テストの実行](run-app-experiments-with-a-b-testing.md)
+* [アプリからのフィードバック Hub の起動](launch-feedback-hub-from-your-app.md)
+* [アプリでの広告の表示](display-ads-in-your-app.md)
+
+
+
+<!--HONumber=Sep16_HO2-->
+
+

@@ -1,27 +1,31 @@
 ---
 author: mcleanbyron
 ms.assetid: 8AC56AAF-8D8C-4193-A6B3-BB5D0669D994
-description: Use the Python code examples in this section to learn more about using the Windows Store submission API.
-title: Python code examples for the Windows Store submission API
+description: "このセクションの Python コード例を使用して、Windows ストア申請 API を使用する方法をご確認ください。"
+title: "Windows ストア申請 API の Python コード例"
+translationtype: Human Translation
+ms.sourcegitcommit: bd8c8cbf6ed10a583d2008e8b01a499b4d400c11
+ms.openlocfilehash: 52fd41ca41628d41140c8c24047e2a50ea72bf40
+
 ---
 
-# Python code examples for the Windows Store submission API
+# Windows ストア申請 API の Python コード例
 
-This article provides Python code examples for using the *Windows Store submission API*. For more information about this API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
+この記事では、*Windows ストア申請 API* を使用するための Python コード例を紹介します。 この API について詳しくは、[Windows ストア サービスを使用した申請の作成と管理に関するページ](create-and-manage-submissions-using-windows-store-services.md)をご覧ください。
 
-These code examples demonstrate the following tasks:
+ここでは、次のタスクに対応するコード例を示します。
 
-* [Obtain an Azure AD access token](python-code-examples-for-the-windows-store-submission-api.md#token).
-* [Create an add-on](python-code-examples-for-the-windows-store-submission-api.md#create-add-on).
-* [Create a package flight](python-code-examples-for-the-windows-store-submission-api.md#create-package-flight).
-* [Create and commit an app submission](python-code-examples-for-the-windows-store-submission-api.md#create-app-submission).
-* [Create and commit an add-on submission](python-code-examples-for-the-windows-store-submission-api.md#create-add-on-submission).
-* [Create and commit a package flight submission](python-code-examples-for-the-windows-store-submission-api.md#create-flight-submission).
+* [Azure AD アクセス トークンの取得](python-code-examples-for-the-windows-store-submission-api.md#token)。
+* [アドオンの作成](python-code-examples-for-the-windows-store-submission-api.md#create-add-on)。
+* [パッケージ フライトの作成](python-code-examples-for-the-windows-store-submission-api.md#create-package-flight)。
+* [アプリの申請の作成とコミット](python-code-examples-for-the-windows-store-submission-api.md#create-app-submission)。
+* [アドオンの申請の作成とコミット](python-code-examples-for-the-windows-store-submission-api.md#create-add-on-submission)。
+* [パッケージ フライトの申請の作成とコミット](python-code-examples-for-the-windows-store-submission-api.md#create-flight-submission)。
 
 <span id="token" />
-## Obtain an Azure AD access token
+## Azure AD アクセス トークンの取得
 
-The following example demonstrates how to [obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token).
+次の例は、[Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)する方法を示しています。
 
 ```python
 import http.client, json
@@ -47,9 +51,9 @@ tokenConnection.close()
 ```
 
 <span id="create-add-on" />
-## Create an add-on
+## アドオンの作成
 
-The following example demonstrates how to [create a new add-on](manage-add-ons.md) (add-ons are also known as in-app products or IAPs).
+次の例は、[新しいアドオンを作成](manage-add-ons.md)する方法を示しています (アドオンは "アプリ内製品"、略して "IAP" とも呼ばれます)。
 
 ```python
 import http.client, json
@@ -82,9 +86,9 @@ ingestionConnection.close()
 ```
 
 <span id="create-package-flight" />
-## Create a package flight
+## パッケージ フライトの作成
 
-The following example demonstrates how to [create a new package flight](manage-flights.md).
+次の例は、[新しいパッケージ フライトを作成](manage-flights.md)する方法を示しています。
 
 ```python
 import http.client, json, requests, time
@@ -121,9 +125,9 @@ ingestionConnection.close()
 ```
 
 <span id="create-app-submission" />
-## Create and commit an app submission
+## アプリの申請の作成とコミット
 
-The following example demonstrates how to [create and commit a new app submission](manage-app-submissions.md).
+次の例は、[新しいアプリの申請を作成](manage-app-submissions.md)する方法を示しています。
 
 ```python
 import http.client, json, requests, time
@@ -204,9 +208,9 @@ ingestionConnection.close()
 ```
 
 <span id="create-add-on-submission" />
-## Create and commit an add-on submission
+## アドオンの申請の作成とコミット
 
-The following example demonstrates how to [create and commit a new add-on submission](manage-add-on-submissions.md) (add-ons are also known as in-app products or IAPs).
+次の例は、[新しいアドオンの申請を作成し、コミット](manage-add-on-submissions.md)する方法を示しています (アドオンは "アプリ内製品"、略して "IAP" とも呼ばれます)。
 
 ```python
 import http.client, json, requests, time
@@ -286,9 +290,9 @@ ingestionConnection.close()
 ```
 
 <span id="create-flight-submission" />
-## Create and commit a package flight submission
+## パッケージ フライトの申請の作成とコミット
 
-The following example demonstrates how to [create and commit a new package flight submission](manage-flight-submissions.md).
+次の例は、[新しいパッケージ フライトの申請を作成し、コミット](manage-flight-submissions.md)する方法を示しています。
 
 ```python
 import http.client, json, requests, time, zipfile
@@ -369,6 +373,12 @@ print(submissionJsonObject)
 ingestionConnection.close()
 ```
 
-## Related topics
+## 関連トピック
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

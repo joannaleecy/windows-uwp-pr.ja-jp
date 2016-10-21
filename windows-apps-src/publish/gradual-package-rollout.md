@@ -1,35 +1,45 @@
 ---
 author: JnHs
-Description: If your app uses an AdMediatorControl or AdControl to display banner ads, you could increase your ad fill rate and revenue by showing Microsoft affiliate ads in your app.
-title: Gradual package rollout
+Description: "アプリで AdMediatorControl または AdControl を使用してバナー広告を表示する場合は、Microsoft アフィリエイト広告をアプリに表示して、広告のフィル レートと収益を増やすことができます。"
+title: "段階的なパッケージのロールアウト"
+translationtype: Human Translation
+ms.sourcegitcommit: ac9eed95edba99cdba914ff21b25383f35a20012
+ms.openlocfilehash: 3ec642ef0a21d06b20cabb12a47d2abcfd19fe59
+
 ---
 
-# Gradual package rollout
+# 段階的なパッケージのロールアウト
 
-When you publish an update to a submission, you can choose to gradually roll out the updated packages to a percentage of your app’s customers on Windows 10. This allows you to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can increase the percentage (or halt the update) any time without having to create a new submission. 
+提出の更新を公開するときには、Windows 10 で特定の割合のアプリ ユーザーに対して、更新されたパッケージを段階的にロール アウトすることを選択できます。 これにより、更新に確信が持てるよう、特定のパッケージのフィードバックと分析データを監視してから、より広くロールアウトできます。 この割合は、新しい提出を作成することなく、いつでも増やす (または更新を停止する) ことができます。 
 
-> **Important** Your rollout selections apply to all of your packages, but will only apply to your customers running OS versions that support package flights (Windows.Desktop build 10586 or later; Windows.Mobile build 10586.63 or later, and Xbox), including any customers who get the app via [Store-managed (online) licensing](organizational-licensing.md) via the [Windows Store for Business](https://www.microsoft.com/business-store). When using gradual package rollout, customers on earlier OS versions will not get packages from the latest submission until you finalize the package rollout as described below.
+> **重要** ロールアウトの選択はすべてのパッケージに適用されますが、適用対象となるユーザーはパッケージ フライトをサポートする OS バージョン (Windows.Desktop ビルド 10586 以上、Windows.Mobile ビルド 10586.63 以上、および Xbox) を実行しているユーザーだけです。これには、[ビジネス向け Windows ストア](https://www.microsoft.com/business-store)から[ストアで管理される (オンライン) ライセンス](organizational-licensing.md)でアプリを入手するユーザーも含まれます。 段階的なパッケージのロールアウトを使用する場合、次の説明に従ってパッケージのロールアウトを完了するまでは、古い OS バージョンを使用しているユーザーは最新の提出からパッケージを入手できません。
 
-Note that all of your customers will see the Store listing details that you entered with your latest submission. The rollout settings only apply to the packages that customers receive, both for new acquisitions and for updates to existing customers.
+最後の提出で入力したストア登録情報の詳細がすべてのユーザーに表示されることにご注意ください。 新しく入手する場合でも、既存ユーザーの更新の場合でも、ロールアウト設定は、ユーザーが受け取るパッケージだけに適用されます。
 
-> **Tip** Package rollout distributes packages to a random selection of customers in the percentages that you specify. To distribute specific packages to selected customers that you specify, you can use package flights.  You can also combine rollout with your package flights if you want to gradually distribute an update to one of your flight groups.
+> **ヒント** パッケージのロールアウトでは、指定した割合のユーザーをランダムに選択してパッケージが配布されます。 特定のパッケージを配布するユーザーを選んで指定するには、パッケージ フライトを使用できます。  更新をいずれかのフライト グループに段階的に配布する場合に、ロールアウトとパッケージ フライトを組み合わせることもできます。
 
-## Setting the rollout percentage
+## ロールアウトの割合の設定
 
-You can select to roll out your update on the **Packages** page of an updated submission. To do so, check the box that says **Roll out update gradually after this submission is published (to Windows 10 customers only)**. Then enter the percentage of customers who should get the update when the submission is first published. For example, you might enter 5 if you want to start by rolling the update out to only a small percentage of your app’s customers.
+更新した提出の [**パッケージ**] ページでロールアウトを選択できます。 このためには、**[この提出の公開後 (Windows 10 のお客様のみが対象)、ロールアウトの更新は段階的に行われます]** ボックスをオンにします。 次に、提出を最初に公開する時点で更新を取得するユーザーの割合を入力します。 たとえば、最初に少ない割合のアプリ ユーザーに対してのみアップデートをロールアウトする場合は、5 と入力できます。
 
-Click **Update** to save your selections. After your app completes the certification process, the packages will be distributed to customers according to the percentage that you specified, both for new acquisitions and for updates to existing customers.
+**[更新]** をクリックして選択内容を保存します。 新しく入手する場合でも、既存ユーザーの更新の場合でも、アプリの認定プロセスが完了すると、指定した割合に基づいてユーザーにパッケージが配布されます。
 
-## Adjusting the rollout after the submission is published
+## 提出公開後のロールアウトの調整
 
-To adjust the rollout after the submission has been published, go to your app’s Overview page. You can drag the selector to change the percentage of customers getting the packages from your newest submission. Click **Update** to save your selections. The packages will then start to be distributed to customers according to the percentage that you specified, both for new acquisitions and for updates to existing customers.
+提出の公開後にロールアウトを調整するには、アプリの [概要] ページに移動します。 最新の提出からのパッケージを受け取るユーザーの割合を変更するには、セレクターをドラッグします。 **[更新]** をクリックして選択内容を保存します。 新しく入手する場合でも、既存ユーザーの更新の場合でも、指定した割合に基づいてユーザーへのパッケージの配布が開始されます。
 
-## Completing the rollout
+## ロールアウトの完了
 
-Before you can create a new submission, you'll need to complete the package rollout. You can **finalize** the rollout and distribute the latest packages to all of your customers, or **halt** the rollout to stop distributing the latest packages.
+新しい提出を作成する前に、パッケージのロールアウトを完了する必要があります。 ロールアウトを**完了**して最新パッケージをすべてのユーザーに配布するか、またはロールアウトを**停止**して最新パッケージの配布を中止できます。
 
-If you have confidence in the update and would like to make it available to all of your customers, click **Finalize package rollout** to distribute the newest packages to all of your customers.
+更新の内容に確信があり、これをすべてのユーザーに対して利用可能にすることを望む場合は、**[パッケージ ロールアウトの完了]** をクリックし、最新パッケージをすべてのユーザーに配布します。
 
-> **Tip** Changing the rollout percentage to 100% does not ensure that all of your customers will get the packages from the latest submissions, because some customers may be on OS versions that don’t support rollout. You must finalize the rollout in order to stop distributing the older packages and update all existing customers to the newer ones.
+> **ヒント** ロールアウトの割合を 100% に変更しても、すべてのユーザーに最新の提出からのパッケージが配布されることは保証されません。これは、ロールアウトをサポートしていない OS バージョンを使用しているユーザーが存在している可能性があるためです。 前のパッケージの配布を中止して既存のすべてのユーザーを新しいパッケージに更新するには、ロールアウトを完了する必要があります。
 
-If you find that there are problems with the update and you don’t want to distribute it any further, you can click **Halt package rollout** to stop distributing packages from the latest submission. Once you halt a package rollout, those packages will no longer be distributed to any customers; only the packages from the previous submission will be used for any new or updating customers. However, any customers who already had the newer packages will keep those packages; they won’t be rolled back to the previous version. To provide an update to these customers, you’ll need to create a new submission with the packages you’d like them to get. Note that if you use a gradual rollout in your next submission, customers who had the package you halted will be offered the new update in the same order they were offered the halted package. The new rollout will be between your last finalized submission and your newest submission; once you halt a package rollout, those packages will no longer be distributed to any customers.
+更新に問題があることが判明したためこれ以上配布したくない場合は、**[パッケージ ロールアウトの停止]** をクリックし、最新の提出からのパッケージ配布を中止します。 パッケージのロールアウトを停止すると、それ以降パッケージはユーザーに配布されません。新規ユーザーまたは更新ユーザーには以前の提出のパッケージだけが使用されます。 ただし、既に新しいパッケージを受け取っているユーザーはそのパッケージを維持します。以前のバージョンにロールバックすることはありません。 これらのユーザーに更新を提供するには、ユーザーに配布するパッケージを使用して新しい提出を作成する必要があります。 次回の提出で段階的なロールアウトを使用する場合、停止したパッケージを受け取っているユーザーに対しては、停止したパッケージが提供されたのと同じ順序で新しい更新が提供されることにご注意ください。 新たなロールアウトは、最後に完了した提出から最新の提出までの間で行われます。パッケージのロールアウトを停止すると、これらのパッケージはどのユーザーにも配布されません。
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

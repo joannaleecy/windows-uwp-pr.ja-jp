@@ -1,26 +1,20 @@
 ---
 author: drewbatgit
 ms.assetid: C5623861-6280-4352-8F22-80EB009D662C
-description: "MediaSource クラスは、ローカル ファイルやリモート ファイルなど、さまざまなソースのメディアを参照および再生するための一般的な方法を提供し、基になるメディア形式に関係なく、メディア データにアクセスするための一般的なモデルを公開します。"
-title: "MediaSource を使ったメディアの再生"
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d64f4484566d80eaf2a353b1aba954c15079343c
+description: "この記事では、ローカル ファイルやリモート ファイルなど、さまざまなソースのメディアを参照および再生するための一般的な方法を提供し、基になるメディア形式に関係なく、メディア データにアクセスするための一般的なモデルを公開する MediaSource の使い方について説明します。"
+title: "メディア項目、プレイリスト、トラック"
+translationtype: Human Translation
+ms.sourcegitcommit: c2e337e88f9dda3380dd62c32ca6e5d942366636
+ms.openlocfilehash: bb49af7a386356647000e268bcc6983351eaf4b8
 
 ---
 
-# MediaSource を使ったメディアの再生
+# メディア項目、プレイリスト、トラック
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\ ]
 
+ この記事では、ローカル ファイルやリモート ファイルなど、さまざまなソースのメディアを参照および再生するための一般的な方法を提供し、基になるメディア形式に関係なく、メディア データにアクセスするための一般的なモデルを公開する [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource) クラスの使い方について説明します。 [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) クラスは、メディア項目に含まれている複数のオーディオ、ビデオ、メタデータ トラックを管理および選択できるようにして、**MediaSource** の機能を拡張します。 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) を使用すると、1 つまたは複数のメディア再生項目から再生リストを作成できます。
 
-\[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。\]
-
-[**MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) クラスは、ローカル ファイルやリモート ファイルなど、さまざまなソースのメディアを参照および再生するための一般的な方法を提供し、基になるメディア形式に関係なく、メディア データにアクセスするための一般的なモデルを公開します。 [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) クラスは、メディア項目に含まれている複数のオーディオ、ビデオ、メタデータ トラックを管理および選択できるようにして、**MediaSource** の機能を拡張します。 
-            [
-              **MediaPlaybackList**
-            ](https://msdn.microsoft.com/library/windows/apps/dn930955) を使用すると、1 つまたは複数のメディア再生項目から再生リストを作成できます。
-
-この記事のコードは、[ビデオ再生 SDK](http://go.microsoft.com/fwlink/p/?LinkId=620020&clcid=0x409) のサンプルを基にしています。 このサンプルをダウンロードすると、コンテキスト内のコードを確認できます。独自のアプリの出発点として使うこともできます。
 
 ## MediaSource を作成および再生する
 
@@ -35,7 +29,9 @@ ms.openlocfilehash: d64f4484566d80eaf2a353b1aba954c15079343c
 -   [**CreateFromStreamReference**](https://msdn.microsoft.com/library/windows/apps/dn930911)
 -   [**CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912)
 
-**MediaSource** を作成した後、[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) を使って、[**SetPlaybackSource**](https://msdn.microsoft.com/library/windows/apps/dn899085) を呼び出すことによって、または [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) を使って、[**Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) プロパティを設定することによって、ソースを直接再生できます。 次の例では、**MediaSource** を使って **MediaElement** でユーザーが選択したメディア ファイルを再生する方法を示します。
+**MediaSource** を作成した後、[**Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) プロパティを設定することで、[**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) を使って MediaSource を再生できます。 Windows 10 バージョン 1607 以降では、XAML ページでメディア プレイヤー コンテンツをレンダリングするには、[**SetMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/mt708764) を呼び出して **MediaPlayer** を [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) に割り当てます。 これは、**MediaElement** を使用するよりもお勧めの方法です。 **MediaPlayer** の使い方について詳しくは、「[**MediaPlayer を使ったオーディオとビデオの再生**](play-audio-and-video-with-mediaplayer.md)」をご覧ください。
+
+次の例では、**MediaSource** を使って **MediaPlayer** でユーザーが選択したメディア ファイルを再生する方法を示します。
 
 このシナリオを実現するには、[**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) および [**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) 名前空間を含める必要があります。
 
@@ -45,13 +41,27 @@ ms.openlocfilehash: d64f4484566d80eaf2a353b1aba954c15079343c
 
 [!code-cs[DeclareMediaSource](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaSource)]
 
+**MediaPlayer** オブジェクトを格納するための変数を宣言します。XAML でメディア コンテンツをレンダリングする場合は、**MediaPlayerElement** コントロールをページに追加します。
+
+[!code-cs[DeclareMediaPlayer](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetDeclareMediaPlayer)]
+
+[!code-xml[MediaPlayerElement](./code/MediaSource_RS1/cs/MainPage.xaml#SnippetMediaPlayerElement)]
+
 ユーザーが再生するメディア ファイルを選択できるようにするには、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) を使います。 ピッカーの [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) メソッドから返された [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを使って、[**MediaSource.CreateFromStorageFile**](https://msdn.microsoft.com/library/windows/apps/dn930909) を呼び出すことにより、新しい MediaObject を初期化します。 最後に、[**SetPlaybackSource**](https://msdn.microsoft.com/library/windows/apps/dn899085) メソッドを呼び出すことによって、メディア ソースを、**MediaElement** の再生ソースとして設定します。
 
 [!code-cs[PlayMediaSource](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetPlayMediaSource)]
 
+既定では、メディア ソースが設定されても **MediaPlayer** では自動的に再生が開始されません。 [**Play**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Play) を呼び出すことにより手動で再生を開始できます。
+
+[!code-cs[Play](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetPlay)]
+
+**MediaPlayer** の [**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.AutoPlay) プロパティを true に設定して、メディア ソースが設定されたらすぐに再生を開始するようにプレイヤーに指示することもできます。
+
+[!code-cs[AutoPlay](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetAutoPlay)]
+
 ## MediaPlaybackItem を使って複数のオーディオ、ビデオ、メタデータ トラックを処理する
 
-[**MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) を使った再生では、さまざまな種類のソースからメディアを再生するための共通の方法が提供されるため便利ですが、[**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) を使うことにより、さらに高度な動作を実現できます。 これには、メディアの項目の複数のオーディオ、ビデオ、データのトラックにアクセスして管理する機能が含まれます。
+[**MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) を使った再生では、さまざまな種類のソースからメディアを再生するための共通の方法が提供されるため便利ですが、**MediaSource** から [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) を作成することにより、さらに高度な動作を実現できます。 これには、メディアの項目の複数のオーディオ、ビデオ、データのトラックにアクセスして管理する機能が含まれます。
 
 **MediaPlaybackItem** を格納するための変数を宣言します。
 
@@ -65,8 +75,8 @@ ms.openlocfilehash: d64f4484566d80eaf2a353b1aba954c15079343c
 
 [!code-cs[PlayMediaPlaybackItem](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetPlayMediaPlaybackItem)]
 
-**注**  
-**MediaSource** は、単一の **MediaPlaybackItem** にのみ関連付けることができます。 ソースから **MediaPlaybackItem** を作成した後、同じソースから別の再生項目を作成しようとすると、エラーが発生します。 また、メディア ソースから **MediaPlaybackItem** を作成した後、**MediaSource** オブジェクトを、**MediaElement** や **MediaPlayer** のソースとして直接設定することはできません。この場合は、代わりに **MediaPlaybackItem** を使う必要があります。
+> [!NOTE] 
+> **MediaSource** は、単一の **MediaPlaybackItem** にのみ関連付けることができます。 ソースから **MediaPlaybackItem** を作成した後、同じソースから別の再生項目を作成しようとすると、エラーが発生します。 また、メディア ソースから **MediaPlaybackItem** を作成した後、**MediaSource** オブジェクトを **MediaPlayer** のソースとして直接設定することはできません。この場合は、代わりに **MediaPlaybackItem** を使う必要があります。
 
 複数のビデオ トラックを含む **MediaPlaybackItem** が再生ソースとして割り当てられると、[**VideoTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930954) イベントが発生します。項目の変更としてビデオ トラックのリストが変更された場合は、再びイベントが発生することがあります。 このイベントのハンドラーを使うと、ユーザーが利用可能なトラックを切り替えることができるように UI を更新する機会が提供されます。 この例では、[**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) を使って利用可能なビデオ トラックを表示します。
 
@@ -101,6 +111,28 @@ ms.openlocfilehash: d64f4484566d80eaf2a353b1aba954c15079343c
 [!code-cs[ToggleChecked](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetToggleChecked)]
 
 [!code-cs[ToggleUnchecked](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetToggleUnchecked)]
+
+メタデータ トラックを処理している場合は、[**Cues**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.TimedMetadataTrack.Cues) プロパティまたは [**ActiveCues**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.TimedMetadataTrack.ActiveCues) プロパティにアクセスすることで、トラック内の一連のキューにアクセスできます。 こうすることで、UI を更新して、メディア項目のキューの場所を表示することができます。
+
+## メディア項目を開く際にサポートされていないコーデックと不明なエラーを処理する
+Windows 10 バージョン 1607 以降では、アプリが実行されているデバイスでメディア項目の再生に必要なコーデックがサポートされているかどうか、または部分的にサポートされているかどうかを確認できます。 まず、[**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracksChanged) など、**MediaPlaybackItem** トラック変更イベントのイベント ハンドラーで、そのトラックの変更が新しいトラックの挿入かどうかを確認します。 そうである場合は、[**AudioTracks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracks) コレクションなど、**MediaPlaybackItem** パラメーターの適切なトラック コレクションと共に、**IVectorChangedEventArgs.Index** パラメーターで渡されるインデックスを使用することにより、挿入されるトラックへの参照を取得できます。
+
+挿入されるトラックへの参照を取得したら、そのトラックの [**SupportInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.SupportInfo) プロパティの [**DecoderStatus**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrackSupportInfo.DecoderStatus) を確認します。 この値が [**FullySupported**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus) の場合は、トラックの再生に必要な適切なコーデックがデバイス上に存在します。 この値が [**Degraded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus) の場合は、システムでトラックを再生することはできるものの、何らかの方法で再生が劣化することになります。 たとえば、5.1 オーディオ トラックが、2 チャンネル ステレオで再生される可能性があります。 このような場合は、UI を更新して、ユーザーに対し品質の低下を通知することをお勧めします。 この値が [**UnsupportedSubtype**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus) または [**UnsupportedEncoderProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus) の場合は、デバイス上に存在する現在のコーデックではトラックを再生できません。 ユーザーに通知してその項目の再生をスキップするか、ユーザーが正しいコーデックをダウンロードできる UI の実装が必要になる場合があります。 トラックの [**GetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.GetEncodingProperties) メソッドは、再生に必要なコーデックを確認するために使用します。
+
+最後に、トラックの [**OpenFailed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.OpenFailed) イベントを登録します。このイベントは、デバイス上でトラックがサポートされているものの、パイプラインの不明なエラーによってトラックを開けなかった場合に発生します。
+
+[!code-cs[AudioTracksChanged_CodecCheck](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetAudioTracksChanged_CodecCheck)]
+
+[**OpenFailed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.OpenFailed) イベント ハンドラーでは、**MediaSource** ステータスが不明かどうかを確認できます。不明な場合は、プログラムによって別のトラックを選択して再生できるようにしたり、ユーザーが別のトラックを選べるようにしたり、再生を無視することができます。
+
+[!code-cs[OpenFailed](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetOpenFailed)]
+
+## システム メディア トランスポート コントロールで使用する表示プロパティを設定する
+Windows 10 バージョン 1607 以降、[**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) で再生されるメディアは既定では自動的にシステム メディア トランスポート コントロール (SMTC) に統合されます。 SMTC で表示されるメタデータを指定するには、**MediaPlaybackItem** の表示プロパティを更新します。 項目の表示プロパティを表すオブジェクトを取得するには、[**GetDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.GetDisplayProperties) を呼び出します。 [**Type**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.Type) プロパティを設定することによって、再生項目が音楽かビデオかを設定し、 次に、オブジェクトの [**VideoProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.VideoProperties) または [**MusicProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.MusicProperties) を設定します。 項目のプロパティを与えた値に更新するように設定するには、[**ApplyDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/mt489923) を呼び出します。 通常、アプリは Web サービスから表示値を動的に取得しますが、次の例はこのプロセスをハードコードされた値を使って示しています。
+
+[!code-cs[SetVideoProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetVideoProperties)]
+
+[!code-cs[SetMusicProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetMusicProperties)]
 
 ## TimedTextSource を使って外部のタイミングが設定されたテキストを追加する
 
@@ -144,18 +176,24 @@ ms.openlocfilehash: d64f4484566d80eaf2a353b1aba954c15079343c
 
 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) を使うことにより、**MediaPlaybackItem** オブジェクトによって表されるメディア項目の再生リストを作成できます。
 
-
-            **注**  [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 内の項目は、ギャップレス再生を使用してレンダリングされます。 システムは、MP3 または AAC でエンコードされたファイルで提供されるメタデータを使用して、ギャップレス再生に必要な遅延またはパディングの補正を決定します。 MP3 または AAC でエンコードされているファイルでこのメタデータが提供されない場合は、システムがヒューリスティックによって遅延またはパディングを決定します。 ロスレス形式 (PCM、FLAC、ALAC など) の場合、これらのエンコーダーによる遅延やパディングが発生しないため、システムが実行する処理はありません。
+**注:** [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 内の項目は、ギャップレス再生を使用してレンダリングされます。 システムは、MP3 または AAC でエンコードされたファイルで提供されるメタデータを使用して、ギャップレス再生に必要な遅延またはパディングの補正を決定します。 MP3 または AAC でエンコードされているファイルでこのメタデータが提供されない場合は、システムがヒューリスティックによって遅延またはパディングを決定します。 ロスレス形式 (PCM、FLAC、ALAC など) の場合、これらのエンコーダーによる遅延やパディングが発生しないため、システムが実行する処理はありません。
 
 最初に、**MediaPlaybackList** を格納するための変数を宣言します。
 
 [!code-cs[DeclareMediaPlaybackList](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaPlaybackList)]
 
-この記事で既に説明した手順と同じ手順で、リストに追加する各メディア項目について **MediaPlaybackItem** を作成します。 **MediaPlaybackList** オブジェクトを初期化し、メディア再生項目を追加します。 [**CurrentItemChanged**](https://msdn.microsoft.com/library/windows/apps/dn930957) イベントのハンドラーを登録します。 このイベントによって、UI を更新して現在再生中のメディア項目を反映できます。 最後に、**MediaElement** または **MediaPlayer** の再生ソースを **MediaPlaybackList** に設定します。
+この記事で既に説明した手順と同じ手順で、リストに追加する各メディア項目について **MediaPlaybackItem** を作成します。 **MediaPlaybackList** オブジェクトを初期化し、メディア再生項目を追加します。 [**CurrentItemChanged**](https://msdn.microsoft.com/library/windows/apps/dn930957) イベントのハンドラーを登録します。 このイベントによって、UI を更新して現在再生中のメディア項目を反映できます。 最後に、**MediaPlayer** の再生ソースを **MediaPlaybackList** に設定します。
 
 [!code-cs[PlayMediaPlaybackList](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetPlayMediaPlaybackList)]
 
 **CurrentItemChanged** イベント ハンドラーで、UI を更新して現在再生中の項目を反映します。再生中の項目は、イベントに渡された [**CurrentMediaPlaybackItemChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn930929) オブジェクトの [**NewItem**](https://msdn.microsoft.com/library/windows/apps/dn930930) プロパティを使って取得できます。 このイベントから UI を更新する場合は、更新が UI スレッドで行われるように、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) の呼び出し内で実行する必要があります。
+
+> [!NOTE] 
+> メディア項目が再生後にシステムによって自動的に破棄されることはありません。 つまり、ユーザーがリストを後ろに戻った場合、前に再生した曲をギャップレスでもう一度再生することができます。ただしこれは、再生されたリスト内の項目が増えるにつれて、アプリのメモリ使用量が増えることも意味します。 前に再生したメディア項目のリソースは必ず定期的に解放する必要があります。 このように対応することが特に重要になるのは、アプリでバックグラウンド再生を行っていることで、リソースの制約が厳しくなっている場合です。 
+
+**CurrentItemChanged** イベントを、前に再生したメディア項目のリソースを解放する機会として利用できます。 前に再生された項目への参照を維持するには、**Queue** コレクションを作成します。 また、メモリ内で維持するメディア項目の最大数を決定する変数を設定します。 ハンドラーでは、前に再生した項目への参照を取得し、その参照をキューに追加して、キュー内で最も古いエントリをデキューします。 返された項目上で [**Reset**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource.Reset) を呼び出すことで、そのリソースが解放されます。ただし、まず、その項目がもうキュー上にないかどうか、また現在再生されていないかどうかを確認して、項目が複数回再生されるケースに対処します。
+
+[!code-cs[DeclareItemQueue](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetDeclareItemQueue)]
 
 [!code-cs[MediaPlaybackListItemChanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetMediaPlaybackListItemChanged)]
 
@@ -173,16 +211,21 @@ ms.openlocfilehash: d64f4484566d80eaf2a353b1aba954c15079343c
 
 [!code-cs[RepeatButton](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetRepeatButton)]
 
- 
 
- 
+###再生リスト内のメディア項目のエラーへの対処
+[**ItemFailed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList.ItemFailed) イベントは、リスト内の項目を開けない場合に発生します。 ハンドラーに渡された [**MediaPlaybackItemError**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItemError) オブジェクトの [**ErrorCode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItemError.ErrorCode) プロパティは、ネットワーク エラー、デコード エラー、暗号化エラーなど、可能であればエラーの具体的な原因を列挙します。
+
+[!code-cs[ItemFailed](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetItemFailed)]
+
+## 関連トピック
+* [メディア再生](media-playback.md)
+* [MediaPlayer を使ったオーディオとビデオの再生](play-audio-and-video-with-mediaplayer.md)
+* [システム メディア トランスポート コントロールとの統合](integrate-with-systemmediatransportcontrols.md)
+* [バックグラウンドでのメディアの再生](background-audio.md)
 
 
 
 
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

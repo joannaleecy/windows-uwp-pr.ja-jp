@@ -4,15 +4,19 @@ ms.assetid: 551d4e70-312d-4b40-8d3e-336ce934e0ad
 title: "3D 印刷"
 description: "このセクションでは、ユニバーサル Windows アプリで 3D 印刷機能を使用する方法について説明します。"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: d06659defe0c866297049bb7a937d066f6afd6b7
+ms.sourcegitcommit: d6158b654b3d9edcb9bd3a52b0fe58154ce40565
+ms.openlocfilehash: f3e01344bf7879e8992f4f7976c65ca0b7e616b1
 
 ---
 # 3D 印刷
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-このセクションでは、ユニバーサル Windows アプリで 3D 印刷機能を使用する方法について説明します。
+このセクションでは、[3D 印刷 API](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) を使って、ユニバーサル Windows アプリに 3D 印刷機能を追加する方法について説明します。  
+
+<!-- ![the 3D printing from Unity sample uses Windows 3D print APIs to facilitate the printing of a textured model asset from Unity software](images/unity-app-screenshot-002.png) -->
+
+ハードウェア パートナー向けのリソース、コミュニティのディスカッション フォーラム、および 3D 印刷機能に関する一般的な情報など、Windows 10 による 3D 印刷について詳しくは、ハードウェア デベロッパー センターの「[Windows 10 による 3D 印刷](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10)」のサイトをご覧ください。
 
 | トピック | 説明 | 
 |-------|-------------|
@@ -21,14 +25,15 @@ ms.openlocfilehash: d06659defe0c866297049bb7a937d066f6afd6b7
 
 ## 関連トピック
 
+* [Windows 10 による 3D 印刷 (ハードウェア デベロッパー センター)](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10)
 * [UWP 3D 印刷サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
 * [Unity サンプルからの UWP 3D 印刷](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrintingFromUnity)
-* [ハードウェア: Windows 10 による 3D 印刷](https://msdn.microsoft.com/windows/hardware/bg183398.aspx)
+
  
 
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Sep16_HO2-->
 
 

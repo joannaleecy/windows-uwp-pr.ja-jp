@@ -3,8 +3,9 @@ author: mtoepke
 title: "非同期プログラミング (DirectX と C++)"
 description: "このトピックでは、DirectX で非同期プログラミングやスレッディングを使う際のさまざまな考慮事項について取り上げます。"
 ms.assetid: 17613cd3-1d9d-8d2f-1b8d-9f8d31faaa6b
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 67a75e9d1324e7ac50e0575bfd7bda870a87efb2
+ms.openlocfilehash: 1faf25f7c7ad7cc96c8490149acf1c430478616c
 
 ---
 
@@ -32,8 +33,7 @@ DirectX の学習経験や使用経験にかかわらず、グラフィックス
 
 こうしたコンポーネントについては、複数の同時実行スレッド上で処理することができます。 ファイル I/O (特にアセットの読み込み) を非同期で行うと、数メガバイトや数百メガバイトのアセットを読み込んだりストリーミングしたりしている間も、ゲームやアプリのインターフェイスを操作できるようになるため、マルチ スレッド化には非常に大きな意義があります。 これらのスレッドは、[並列パターン ライブラリ](https://msdn.microsoft.com/library/dd492418.aspx) と **task** パターン (PPLTasks.h に定義されている **concurrency** 名前空間) を使って作成、管理するのが最も簡単です。 [並列パターン ライブラリ](https://msdn.microsoft.com/library/dd492418.aspx) は、マルチ コアとハイパースレッディングに対応した CPU の利点をダイレクトに引き出し、体感的な読み込み時間から、CPU 計算やネットワーク処理の集中に伴う滞りや遅延にいたるまで、さまざまな側面を向上させます。
 
-> 
-            **注**   ユニバーサル Windows プラットフォーム (UWP) アプリでは、ユーザー インターフェイスは完全にシングルスレッド アパートメント (STA) で実行されます。 DirectX ゲーム用の UI を [XAML の相互運用機能](directx-and-xaml-interop.md) を使って作成する場合、そのコントロールには、STA を使ってのみアクセスできます。
+> **注**   ユニバーサル Windows プラットフォーム (UWP) アプリでは、ユーザー インターフェイスは完全にシングルスレッド アパートメント (STA) で実行されます。 DirectX ゲーム用の UI を [XAML の相互運用機能](directx-and-xaml-interop.md) を使って作成する場合、そのコントロールには、STA を使ってのみアクセスできます。
 
  
 
@@ -68,6 +68,6 @@ DirectX の学習経験や使用経験にかかわらず、グラフィックス
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

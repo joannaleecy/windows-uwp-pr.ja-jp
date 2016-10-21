@@ -1,24 +1,28 @@
 ---
 author: TylerMSFT
-title: ms-tonepicker scheme
-description: This topic describes the ms-tonepicker URI scheme and how to use it to display a tone picker to select a tone, save a tone, and get the friendly name for a tone.
+title: "ms-tonepicker スキーム"
+description: "このトピックでは、ms-tonepicker URI スキームと、このスキームを使ってトーンの選択コントロールを表示し、トーンの選択、トーンの保存、トーンのフレンドリ名を取得する方法について説明します。"
+translationtype: Human Translation
+ms.sourcegitcommit: 4c7037cc91603af97a64285fd6610445de0523d6
+ms.openlocfilehash: ef605f9d749148240ecee5e0ecfd473f8440ca25
+
 ---
 
-# Choose and save tones using the ms-tonepicker URI scheme
+# ms-tonepicker URI スキームを使ったトーンの選択と保存
 
-This topic describes how to use the **ms-tonepicker:** URI scheme. This URI scheme can be used to:
-- Determine if the tone picker is available on the device.
-- Display the tone picker to list available ringtones, system sounds, text tones, and alarm sounds; and get a tone token which represents the sound the user selected.
-- Display the tone saver, which takes a sound file token as input and saves it to the device. Saved tones are then available via the tone picker. Users can also give the tone a friendly name.
-- Convert a tone token to its friendly name.
+ここでは、**ms-tonepicker:** URI スキームの使い方について説明します。 この URI スキームを使って実行できる操作は次のとおりです。
+- トーンの選択コントロールがデバイスにあるかどうかを確認します。
+- トーンの選択コントロールを表示して、利用可能な着信音、システム サウンド、SMS 着信音、アラーム音の一覧を表示したり、ユーザーが選択したサウンドを表すトーン トークンを取得します。
+- サウンド ファイル トークンを入力として受け取り、デバイスに保存するトーン セーバーを表示します。 保存されたトーンは、トーンの選択コントロールから利用できるようになります。 トーンにはフレンドリ名を付けることもできます。
+- トーン トークンをフレンドリ名に変換します。
 
-## ms-tonepicker: URI scheme reference
+## ms-tonepicker: URI スキーム リファレンス
 
-This URI scheme does not pass arguments via the URI scheme string, but instead passes arguments via a [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx). All strings are case-sensitive.
+この URI スキームは、URI スキーム文字列を利用して引数を渡すことはせず、[ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx) を介して引数を渡します。 すべての文字列で、大文字と小文字が区別されます。
 
-The sections below indicate which arguments should be passed to accomplish the specified task.
+以下のセクションでは、特定のタスクを実行するために渡される引数を示します。
 
-## Task: Determine if the tone picker is available on the device
+## タスク: トーンの選択コントロールがデバイスにあるかどうかを確認する
 ```cs
 var status = await Launcher.QueryUriSupportAsync(new Uri("ms-tonepicker:"),     
                                      LaunchQuerySupportType.UriForResults,
@@ -30,25 +34,25 @@ if (status != LaunchQuerySupportStatus.Available)
 }
 ```
 
-## Task: Display the tone picker
+## タスク: トーンの選択コントロールを表示する
 
-The arguments you can pass to display the tone picker are as follows:
+トーンの選択コントロールを表示するために渡すことができる引数は、次のとおりです。
 
-| Parameter | Type | Required | Possible values | Description |
+| パラメーター | 型 | 必須かどうか | 値 | 説明 |
 |-----------|------|----------|-------|-------------|
-| Action | string | yes | "PickRingtone" | Opens the tone picker. |
-| CurrentToneFilePath | string | no | An existing tone token. | The tone to show as the current tone in the tone picker. If this value is not set, the first tone on the list is selected by default.<br>This is not, strictly speaking, a file path. You can get a suitable value for `CurrenttoneFilePath` from the `ToneToken` value returned from the tone picker.  |
-| TypeFilter | string | no | "Ringtones", "Notifications", "Alarms", "None" | Selects which tones to add to the picker. If no filter is specified then all tones are displayed. |
+| Action | string | はい | "PickRingtone" | トーン選択コントロールを開きます。 |
+| CurrentToneFilePath | string | いいえ | 既存のトーン トークン。 | トーンの選択コントロールに現在のトーンとして表示されるトーン。 この値が設定されていない場合、既定では、一覧の最初のトーンが選ばれます。<br>これは厳密にはファイル パスではありません。 トーンの選択コントロールから返された `ToneToken` の値から、`CurrenttoneFilePath` に適した値を取得できます。  |
+| TypeFilter | string | いいえ | "Ringtones"、"Notifications"、"Alarms"、"None" | 選択コントロールに追加するトーンを選択します。 フィルターが指定されていない場合は、すべてのトーンが表示されます。 |
 
-<br>The values that are returned in [LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx):
+<br>[LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx) に返される値は次のとおりです。
 
-| Return values | Type | Possible values | Description |
+| 戻り値 | 型 | 値 | 説明 |
 |--------------|------|-------|-------------|
-| Result | Int32 | 0-success. <br> 1-cancelled. <br> 7-invalid parameters. <br> 8 - no tones match the filter criteria. <br> 255 - specified action is not implemented. | The result of the picker operation. |
-| ToneToken | string | The selected tone's token. <br> The string is empty if the user selects **default** in the picker. | This token can be used in a toast notification payload, or can be assigned as a contact’s ringtone or text tone. The parameter is returned in the ValueSet only if **Result** is 0. |
-| DisplayName | string | The specified tone’s friendly name. | A string that can be shown to the user to represent the selected tone. The parameter is returned in the ValueSet only if **Result** is 0. |
+| Result | Int32 | 0 - 成功しました。 <br> 1 - 取り消されました。 <br> 7 - 無効なパラメーターです。 <br> 8 - フィルター条件に一致するトーンがありません。 <br> 255 - 指定された操作が実装されていません。 | 選択コントロールの操作の結果。 |
+| ToneToken | string | 選択されたトーンのトークン。 <br> ユーザーが選択コントロールで**既定**を選択している場合、この文字列は空です。 | このトークンはトースト通知のペイロードで使用したり、任意の連絡先の着信音や SMS 着信音として割り当てたりすることができます。 **Result** が 0 の場合のみ、ValueSet にパラメーターが返されます。 |
+| DisplayName | string | 指定したトーンのフレンドリ名。 | ユーザーに対して表示できる、選択されたトーンを表す文字列。 **Result** が 0 の場合のみ、ValueSet にパラメーターが返されます。 |
 <br>
-**Example: Open the tone picker so that the user can select a tone**
+**例: ユーザーがトーンを選択できるようにトーンの選択コントロールを開く**
 
 ``` cs
 LauncherOptions options = new LauncherOptions();
@@ -76,23 +80,23 @@ if (result.Status == LaunchUriStatus.Success)
 }
 ```
 
-## Task: Display the tone saver
+## タスク: トーン セーバーを表示する
 
-The arguments you can pass to display the tone saver are as follows:
+トーン セーバーを表示するために渡すことができる引数は、次のとおりです。
 
-| Parameter | Type | Required | Possible values | Description |
+| パラメーター | 型 | 必須かどうか | 値 | 説明 |
 |-----------|------|----------|-------|-------------|
-| Action | string | yes | "SaveRingtone" | Opens the picker to save a ringtone. |
-| ToneFileSharingToken | string | yes | [SharedStorageAccessManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.aspx) file sharing token for the ringtone file to save. | Saves a specific sound file as a ringtone. The supported content types for the file are mpeg audio and x-ms-wma audio. |
-| DisplayName | string | no | The specified tone’s friendly name. | Sets the display name to use when saving the specified ringtone. |
+| Action | string | はい | "SaveRingtone" | 選択コントロールを開いて着信音を保存します。 |
+| ToneFileSharingToken | string | はい | 保存する着信音ファイルの [SharedStorageAccessManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.aspx) ファイル共有トークン。 | 特定のサウンド ファイルを着信音として保存します。 サポートされるファイル コンテンツの種類は、MPEG オーディオと x-ms-wma オーディオです。 |
+| DisplayName | string | いいえ | 指定したトーンのフレンドリ名。 | 指定した着信音を保存するときに使用する表示名を設定します。 |
 
-<br>The values that are returned in [LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx):
+<br>[LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx) に返される値は次のとおりです。
 
-| Return values | Type | Possible values | Description |
+| 戻り値 | 型 | 値 | 説明 |
 |--------------|------|-------|-------------|
-| Result | Int32 | 0-success.<br>1-cancelled by user.<br>2-Invalid file.<br>3-Invalid file content type.<br>4-file exceeds maximum ringtone size (1MB in Windows 10).<br>5-File exceeds 40 second length limit.<br>6-File is protected by digital rights management.<br>7-invalid  parameters. | The result of the picker operation. |
+| Result | Int32 | 0 - 成功しました。<br>1 - ユーザーによって取り消されました。<br>2 - 無効なファイルです。<br>3 - 無効なファイル コンテンツの種類です。<br>4 - ファイルが着信音の最大サイズ (Windows 10 では 1 MB) を超えています。<br>5 - ファイルが 40 秒の長さ制限を超えています。<br>6 - ファイルがデジタル著作権管理によって保護されています。<br>7 - 無効なパラメーターです。 | 選択コントロールの操作の結果。 |
 <br>
-**Example: Save a local music file as a ringtone**
+**例: ローカルの音楽ファイルを着信音として保存する**
 
 ``` cs
 LauncherOptions options = new LauncherOptions();
@@ -140,23 +144,23 @@ if (result.Status == LaunchUriStatus.Success)
  }
 ```
 
-## Task: Convert a tone token to its friendly name
+## タスク: トーン トークンをフレンドリ名に変換する
 
-The arguments you can pass to get the friendly name of a tone are as follows:
+トーンのフレンドリ名を取得するために渡すことができる引数は、次のとおりです。
 
-| Parameter | Type | Required | Possible values | Description |
+| パラメーター | 型 | 必須かどうか | 値 | 説明 |
 |-----------|------|----------|-------|-------------|
-| Action | string | yes | "GetToneName" | Indicates that you want to get the friendly name of a tone. |
-| ToneToken | string | yes | The tone token | The tone token from which to obtain a display name. |
+| Action | string | はい | "GetToneName" | トーンのフレンドリ名を取得することを示します。 |
+| ToneToken | string | はい | トーンのトークン | 表示名を取得する対象となるトーン トークン。 |
 
-<br>The values that are returned in [LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx):
+<br>[LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx) に返される値は次のとおりです。
 
-| Return value | Type | Possible values | Description |
+| 戻り値 | 型 | 値 | 説明 |
 |--------------|------|-------|-------------|
-| Result | Int32 | 0-The picker operation succeeded.<br>7-Incorrect parameter (for example, no ToneToken provided).<br>9-Error reading the name for the specified token.<br>10-Unable to find specified tone token. | The result of the picker operation.
-| DisplayName | string | The tone's friendly name. | Returns the selected tone's display name. This parameter is only returned in the ValueSet if **Result** is 0. |
+| Result | Int32 | 0 - 選択コントロールの操作が成功しました。<br>7 - パラメーターが正しくありません (ToneToken が指定されていないなど)。<br>9 - 指定されたトークンの名前の読み取り中にエラーが発生しました。<br>10 - 指定されたトーン トークンが見つかりません。 | 選択コントロールの操作の結果。
+| DisplayName | string | トーンのフレンドリ名。 | 指定されたトーンの表示名を返します。 **Result** が 0 の場合のみ、ValueSet にこのパラメーターが返されます。 |
 <br>
-**Example: Retrieve a tone token from Contact.RingToneToken and display its friendly name in the contact card.**
+**例: Contact.RingToneToken からトーン トークンを取得して、連絡先カードにそのフレンドリ名を表示する**
 
 ```cs
 using (var connection = new AppServiceConnection())
@@ -190,3 +194,9 @@ using (var connection = new AppServiceConnection())
     }
 }
 ```
+
+
+
+<!--HONumber=Aug16_HO4-->
+
+

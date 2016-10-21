@@ -1,111 +1,121 @@
-﻿---
+---
 author: jnHs
-Description: The Store listings section of the app submission process is where you provide the text and images that customers will see in your app's Store listing.
-title: Create app Store listings
+Description: "アプリの申請プロセスの [ストア登録情報] セクションでは、アプリのストア登録情報に表示されるテキストと画像を指定できます。"
+title: "アプリのストア登録情報の作成"
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
+translationtype: Human Translation
+ms.sourcegitcommit: d24294583d1ec0186cd63138979d40a06b0c7351
+ms.openlocfilehash: 9ef2a465cb8f9143775feab163ee1d66d135a6b3
+
 ---
 
-# Create app Store listings
+# アプリのストア登録情報の作成
 
 
-The **Store listings** section of the [app submission process](app-submissions.md) is where you provide the text and [images](app-screenshots-and-images.md) that customers will see in your app's Store listing.
+[アプリの申請プロセス](app-submissions.md)の **[ストア登録情報]** セクションでは、アプリのストア登録情報に表示されるテキストと[画像](app-screenshots-and-images.md)を指定できます。
 
-Many of the fields in a **Store listing** are optional, but we suggest providing multiple images and as much info as possible to make your listing stand out. The minimum required for the **Store listings** step to be considered complete is a text description and at least one [screenshot](app-screenshots-and-images.md).
+**[ストア登録情報]** のフィールドの多くは省略可能ですが、登録情報が目立つように複数の画像とできるだけ多くの情報を指定することをお勧めします。 **[ストア登録情報]** 手順が完成したと見なされるには、説明のテキストと少なくとも 1 つの[スクリーンショット](app-screenshots-and-images.md)が必要です。
 
-By default, we'll use the same Store listing (per language) for all of your targeted operating systems. If you'd like to use a customized Store listing for a specific operating system, you can [create platform-specific Store listings](create-platform-specific-store-listings.md).
+既定では、対象となるすべてのオペレーティング システムに同じストア登録情報 (言語ごと) が使われます。 特定のオペレーティング システム用にカスタマイズされたストア登録情報を使う場合、[プラットフォーム固有のストア登録情報を作成](create-platform-specific-store-listings.md)できます。
 
-## Store listing languages
+## ストア登録情報の言語
 
-You must complete the **Store listing** page for at least one language. We recommend providing a Store listing in each language that your packages support, but you have flexibility to remove languages for which you don’t wish to provide a Store listing. You can also create Store listings in additional languages which aren’t supported by your packages.
+少なくとも 1 つの言語の **[ストア登録情報]** ページを完成させる必要があります。 ストア登録情報は、パッケージでサポートしているすべての言語で提供することをお勧めしますが、ストア登録情報を提供しない言語を削除することもできます。 パッケージでサポートしていない言語のストア登録情報を作成することもできます。
 
-> **Note**  If your submission includes packages already, we’ll show the [languages](supported-languages.md) supported in your packages on the submission overview page (unless you remove any of them).
+> **注:** 申請にパッケージが既に含まれている場合は、パッケージでサポートされている[言語](supported-languages.md)が申請の概要ページに表示されます (言語を削除していない場合)。
 
-To add or remove languages for your Store listings, click **Manage Store listing languages** from the submission overview page. If you‘ve already uploaded packages, you’ll see their languages listed in the **Languages supported by your packages** section. To remove one or more of these languages, click **Remove**. If you later decide to include a language that you previously removed from this section, you can click **Add**.
+ストア登録情報の言語を追加または削除するには、申請の概要ページで **[ストア登録情報の言語を管理する]** をクリックします。 既にパッケージをアップロードしている場合は、**[Languages supported by your packages]** (パッケージでサポートしている言語) セクションに言語が表示されます。 これらの言語の 1 つまたは複数を削除するには、**[削除]** をクリックします。 以前にこのセクションから削除した言語を後で含める場合は、**[加算]** をクリックします。
 
-In the **Additional Store listing languages** section, you can click **Manage additional languages** to add or remove languages that are *not* included in your packages. Check the boxes for the languages that you’d like to add, then click **Update**. The languages you’ve selected will be displayed in the **Additional Store listing languages** section. To remove one or more of these languages, click **Remove** (or click **Manage additional languages** and uncheck the box for languages you’d like to remove).
+**[ストア登録情報の追加言語]** セクションで、**[追加言語の管理]** をクリックして、パッケージに含まれて*いない*言語を追加するか、パッケージに含めない言語を削除します。 追加する言語のチェック ボックスをクリックし、**[更新]** をクリックします。 選択した言語が **[ストア登録情報の追加言語]** セクションに表示されます。 1 つまたは複数の言語を削除するには、**[削除]** をクリックします (または、**[追加言語の管理]** をクリックし、削除する言語のチェック ボックスをオフにします)。
 
-When you have finished making your selections, click **Save** to return to the submission overview page.
+選択が終了したら **[保存]** をクリックして、申請の概要ページに戻ります。
 
-> **Note** When creating a Store listing in a language that isn't supported by your packages, you'll need to indicate which of your reserved app names should be displayed in that Store listing, since there isn't an associated package in that language from which to pull the name. The name you choose here only applies to the Store listing for this language and does not impact the name displayed when a customer installs the app.
+> **注:** パッケージでサポートしていない言語のストア登録情報を作成するときは、そのストア登録情報に表示する予約済みのアプリ名を指定する必要があります。その言語のパッケージが関連付けられておらず、名前を取得できないためです。 ここで選んだ名前は、この言語のストア登録情報のみに適用され、ユーザーがアプリをインストールするときに表示される名前には影響しません。
 
-To edit a Store listing, click the language name from the Submission overview. The sections of the **Store listing** page are described below.
+ストア登録情報を編集するには、申請の概要ページで言語名をクリックします。 **[ストア登録情報]** ページのセクションについて以下に説明します。
 
-## Default Store listing fields
+## 既定のストア登録情報のフィールド
 
-At the top of the **Store listing** page are the fields associated with your default Store listing for the selected language. These fields will be shown to all of your customers, unless you have packages targeting earlier OS versions (Windows 8.x or earlier; Windows Phone 8.x or earlier) and create platform-specific Store listings to include different screenshots or info to display to customers on specified OS versions. For more info, see [Create platform-specific Store listings](create-platform-specific-store-listings.md).
+**[ストア登録情報]** ページの上部には、選択した言語の既定のストア登録情報に関連付けられたフィールドがあります。 以前の OS バージョン (Windows 8.x 以前、Windows Phone 8.x 以前) を対象とするパッケージがあり、指定された OS バージョンのユーザーに表示する別のスクリーン ショットまたは情報を含むプラットフォームに固有のストア登録情報を作成している場合を除き、これらのフィールドはすべてのユーザーに表示されます。 詳しくは、「[プラットフォーム固有のストア登録情報の作成](create-platform-specific-store-listings.md)」をご覧ください。
 
-### Description
+### 説明
 
-The description field is where you can tell customers what your app does. This field is required, and will accept up to 10,000 characters of plain text.
+説明フィールドでは、アプリの内容をユーザーに伝えることができます。 このフィールドは必須であり、最大 10,000 文字のプレーンテキストを入力できます。
 
-For some tips on making your description stand out, see [Write a great app description](write-a-great-app-description.md).
+説明を目立たせるためのヒントについては、「[人の心をつかむアプリの説明を書く](write-a-great-app-description.md)」をご覧ください。
 
-### Release notes
+### リリース ノート
 
-If this is the first time you're submitting your app, you'll probably want to leave this field blank. For an update to an existing app, this is where you can let customer know what's changed in the latest release. This field has a 1500 character limit.
+初めてアプリを申請する場合、通常このフィールドは空白のままにします。 既存のアプリの更新の場合、ここには最新のリリースでの変更点をユーザーに知らせることができます。 このフィールドには 1500 文字の制限があります。
 
-### Screenshots
+### スクリーンショット
 
-In most cases, you'll see multiple fields to provide screenshots for different types of devices. You are not required to provide separate screenshots for each device type; only one screenshot is required for your submission (though you can provide up to nine per device type). In most cases we suggest providing screenshots on as many device types as your app supports, so that customers will see images that resemble how the app will look on their device.
+ほとんどの場合、さまざまな種類のデバイスのスクリーンショットを指定する複数のフィールドが表示されます。 デバイスの種類ごとに別個のスクリーンショットを指定する必要はありません (ただし、デバイスの種類ごとに最大 9 個のスクリーンショットを指定できます)。 ほとんどの場合、ユーザーが使っているデバイスに表示されるのと同じような画像が表示されるように、アプリがサポートするデバイスの種類の分だけスクリーンショットを指定することをお勧めします。
 
-For more info, see [App screenshots and images](app-screenshots-and-images.md).
+詳しくは、「[アプリのスクリーンショットと画像](app-screenshots-and-images.md)」をご覧ください。
 
-### App tile icon
+### アプリ タイル アイコン
 
-The app tile icon is used when displaying your app's Store listing to customers on Windows Phone 8.1 and earlier (and in some Store layouts for customers on Windows 10). This must be a .png file measuring 300 x 300 pixels.
+アプリ タイル アイコンは、Windows Phone 8.1 以前のユーザー向けにアプリのストア登録情報を表示するときに使用されます (Windows 10 のユーザー向けには、ストア レイアウトで表示される場合があります)。 これは、サイズが 300 x 300 ピクセルの .png ファイルにする必要があります。
 
-For more info, see [App tile icon](app-screenshots-and-images.md#app-tile-icon).
+詳しくは、「[アプリのタイル アイコン](app-screenshots-and-images.md#app-tile-icon)」をご覧ください。
 
-### App features
+### アプリの機能
 
-These are short summaries of your app's key features. They are displayed to the customer as a bulleted list in your app's Store listing, along with the Description. Keep these brief, with just a few words (and no more than 200 characters) per feature. You may include up to 20 features.
+アプリの主な機能の短い概要です。 アプリのストア登録情報に、説明と共に箇条書きの形式で表示されます。 各機能につき短い 1 文 (かつ、200 文字未満) になるようにまとめます。 最大 20 の機能を含めることができます。
 
-**Note**  These will appear bulleted in your Store listing, so don't add your own bullets.
+**注:** これらはストア登録情報に箇条書きの項目として表示されるので、独自に中点などを追加しないでください。
 
-### Additional system requirements
+### 追加のシステム要件
 
-If needed, you can describe the hardware configurations that your app requires to work properly (beyond the info you provided in the **System requirements** section in [App properties](enter-app-properties.md#system-requirements). This is especially important if your app requires hardware that might not be available on every computer.
+必要に応じて、アプリが正常に動作するうえで必要となるハードウェア構成を記述できます ([アプリのプロパティ](enter-app-properties.md#system-requirements)の **[システム必要条件]** セクションに指定した情報以外)。 この情報は、一部のコンピューターでしか使うことができないハードウェアが必要なアプリの場合、特に重要です。
 
- You can enter up to 11 items for both **Minimum hardware** and **Recommended hardware**.  They are displayed to the customer as a bulleted list in your app's listing. Keep these brief, with just a few words (and no more than 200 characters) per item. The info you enter here will be shown to customers viewing your app's Store listing on Windows 10, version 1607 or later, along with the requirements you indicated on the product's properties page.
+ **[最小ハードウェア要件]** と **[推奨されるハードウェア]** の両方に最大 11 個の項目を入力できます。  アプリの内容に、箇条書きの形式で表示されます。 各項目につき短い 1 文 (かつ、200 文字未満) になるようにまとめます。 ここに入力した情報は、製品のプロパティ ページで指定した要件と共に、Windows 10 バージョン 1607 以降でアプリのストア登録情報を表示するユーザーに表示されます。
 
-**Note**  These will appear bulleted in the listing, so don't add your own bullets.
+**注:** これらは箇条書きの項目として表示されるので、独自に中点などを追加しないでください。
 
-## Shared fields
+## 共有フィールド
 
-The items described below are all shared fields and will apply to all of your Store listings in a given language, regardless of operating system, even if you [create platform-specific Store listings](create-platform-specific-store-listings.md).
+以下で説明する項目はすべて共有フィールドであり、[プラットフォーム固有のストア登録情報を作成](create-platform-specific-store-listings.md)した場合でも、オペレーティング システムに関係なく特定の言語のすべてのストア登録情報に適用されます。
 
-### Keywords
+### キーワード
 
-Keywords are single words or short phrases that are not displayed to customers, but can help your app appear in search results related to the keyword. You can include up to 7 keywords with a maximum of 30 characters each.
+キーワードは、単語または短いフレーズです。これらはユーザーには表示されませんが、キーワードに関連する検索の結果にアプリが表示されるようにするために役立ちます。 それぞれ最大 30 文字の最大 7 個のキーワードを含めることができます。
 
-If you want to add keywords, think about the words that customers might use when searching for apps like yours, especially if they're not part of your app's name. Be sure not to use any keywords that are not actually relevant to your app.
+キーワードを追加する場合、ユーザーがアプリを検索する際にどのような単語を使うかを考えてください (特にアプリ名の一部ではない場合)。 アプリに実際に関連しないキーワードは使わないでください。
 
-### Copyright and trademark info
+### 著作権と商標の情報
 
-If you'd like to provide additional copyright and/or trademark info, enter it here. This field has a 200 character limit.
+その他の著作権や商標の情報を指定する場合は、ここに入力します。 このフィールドには 200 文字の制限があります。
 
-### Additional license terms
+### 追加のライセンス条項
 
-Leave this field blank if you want your app to be licensed to customers under the terms of the **Standard Application License Terms** (which are linked to from the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058)).
+「**標準アプリケーション ライセンス条項**」(「[アプリ開発者契約](https://msdn.microsoft.com/library/windows/apps/hh694058)」からリンクされています) の条項に基づいて、アプリのライセンスをユーザーに付与する場合は、このフィールドを空白にします。
 
-If your license terms are different from the **Standard Application License Terms**, enter them here.
+アプリのライセンス条項が「**標準アプリケーション ライセンス条項**」と異なる場合は、ここに入力します。
 
-If you enter a single URL into this field, it will be displayed to customers as a link that they can click to read your additional license terms. This is useful if your additional license terms are very long, or if you want to include clickable links or formatting in your additional license terms.
+このフィールドに 1 つの URL を入力すると、ユーザーがクリックして追加のライセンス条項を読むことができるリンクとして表示されます。 これは、追加のライセンス条項が非常に長い場合や、追加のライセンス条項にクリック可能なリンクや書式設定を含める場合に便利です。
 
-You can also up to 10,000 characters of text in this field. If you do that, customers will see these additional license terms displayed as plain text.
+このフィールドには、最大 10,000 文字のテキストを入力できます。 この場合、これらの追加のライセンス条項は、ユーザーに対してプレーンテキストとして表示されます。
 
-### Website
+### Web サイト
 
-Enter the URL of the web page for your app. This URL must point to a page on your own website, not your app's web listing in the Store.
+アプリの Web ページの URL を入力します。 この URL は、ストアのアプリの内容ページではなく、独自の Web サイトのページを指すものにする必要があります。
 
-### Support contact info
+### サポートの問い合わせ先情報
 
-Enter the URL of the web page where your customers can go for support on your app, or an email address that customers can contact for support.
+アプリのサポートをユーザーに提供する Web ページの URL、またはユーザーがサポートに連絡するためのメール アドレスを入力します。
 
-**Important**  Microsoft doesn't provide your customers with support for your app.
+**重要:** Microsoft がアプリのサポートをユーザーに提供することはありません。
 
-### Privacy policy
+### プライバシー ポリシー
 
-If you have a privacy policy for your app, enter its URL here. You are responsible for ensuring your app complies with privacy laws and regulations and for providing a privacy policy, if required.
+アプリのプライバシー ポリシーがある場合、URL をここに入力します。 開発者には、アプリがプライバシーに関する法令と規制に準拠するようにし、必要に応じてプライバシー ポリシーを提供する責任があります。
 
-**Important**  Microsoft doesn't provide a default privacy policy for your app. Likewise, your app is not covered by any Microsoft privacy policy. To determine if your app requires a privacy policy, review the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058) and the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1).
+**重要:** アプリ用に既定のプライバシー ポリシーは用意されていません。 同様に、アプリは Microsoft のプライバシー ポリシーの対象にはなりません。 アプリにプライバシー ポリシーが必要かどうかを確認するには、「[アプリ開発者契約](https://msdn.microsoft.com/library/windows/apps/hh694058)」と「[Windows ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1)」をご覧ください。
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

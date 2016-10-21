@@ -5,7 +5,7 @@ title: "デバイスのペアリング"
 description: "一部のデバイスは、使う前にペアリングする必要があります。 Windows.Devices.Enumeration 名前空間では、デバイスをペアリングするための 3 つの異なる方法がサポートされています。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: e719e0ff5f97822f3d0dc937182131bf7f4224eb
+ms.openlocfilehash: 502a1a650d327e914ffef049278581851ad4ec3b
 
 ---
 # デバイスのペアリング
@@ -23,8 +23,7 @@ ms.openlocfilehash: e719e0ff5f97822f3d0dc937182131bf7f4224eb
 -   基本ペアリング
 -   カスタム ペアリング
 
-
-              **ヒント:** 使用にあたってペアリングする必要がないデバイスもあります。 これについては、自動ペアリングに関するセクションで説明します。
+**ヒント:** 使用にあたってペアリングする必要がないデバイスもあります。 これについては、自動ペアリングに関するセクションで説明します。
 
  
 
@@ -77,6 +76,6 @@ ms.openlocfilehash: e719e0ff5f97822f3d0dc937182131bf7f4224eb
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,8 +3,9 @@ title: "Microsoft Passport と Windows Hello"
 description: "この記事では、Windows 10 オペレーティング システムの一部としてリリースされる新しい Microsoft Passport テクノロジについて説明します。また、開発者がこのテクノロジを実装して、ユニバーサル Windows プラットフォーム (UWP) アプリやバックエンド サービスを保護する方法についても説明します。 従来の資格情報を使用する際に生じる脅威を軽減するこれらのテクノロジの特定の機能に着目し、Windows 10 ロールアウトに含まれるこれらのテクノロジの設計と展開について説明します。"
 ms.assetid: 0B907160-B344-4237-AF82-F9D47BCEE646
 author: awkoren
+translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 781866bbbef755815422d1aa5bf71010bb08630d
+ms.openlocfilehash: 979eb3c6ac41f304e19093055574db7805a115ff
 
 ---
 
@@ -453,6 +454,6 @@ Windows 10 には、簡単に実現できる、高いレベルのセキュリテ
 * [Microsoft Passport ログイン サービス](microsoft-passport-login-auth-service.md)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

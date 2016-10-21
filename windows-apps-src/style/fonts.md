@@ -1,55 +1,41 @@
 ---
 author: Jwmsft
-Description: "フォントを選び、フォントのサイズと色を指定するときには、次のガイドラインに従ってください。"
-title: "フォント"
+Description: "UWP アプリのフォントを選び、フォントのサイズと色を指定するときには、次のガイドラインに従ってください。"
+title: "UWP アプリ用のフォント"
 ms.assetid: 1B8B90AD-CDC4-4997-ACDE-871C1E94A929
 label: Fonts
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 7db364240dd98f59a4a4d1d0c23cee1195682de2
-ms.openlocfilehash: 52de4d9517c7f3064ad9e589a95e6f96400524cc
+ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
+ms.openlocfilehash: b79a6f3ee32494f04fa472c0531c06aa0a60098b
 
 ---
 
-# フォントのガイドライン
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-**重要な API**
+# UWP アプリ用のフォント
 
--   [**FontFamily プロパティ**](https://msdn.microsoft.com/library/windows/apps/br209655)
+この記事では、UWP アプリの推奨フォントを示します。 これらのフォントは、UWP アプリをサポートするすべての Windows 10 エディションで利用可能なことが保証されています。
 
-フォントのサイズ、太さ、色、トラッキング、間隔を適切に設定すると、外観がきれいに整い、ユニバーサル Windows プラットフォーム (UWP) アプリが使いやすくなります。 フォントを選び、フォントのサイズと色を指定するときには、次のガイドラインに従ってください。
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br209655"><strong>FontFamily プロパティ</strong></a></li>
+</ul>
 
-Segoe UI Symbol アイコンの一覧については、「[**Segoe UI Symbol アイコンのガイドライン**](segoe-ui-symbol-font.md)」をご覧ください。
+</div>
+</div>
 
-## Windows 10 の書体見本
 
 
-書体見本 (type ramp) は、ヘッドラインからの本文までの重要なデザインの関係を確立し、異なるレベル間の明快でわかりやすい階層を保証します。 ユーザーは、情報を見つける場所やページの解析方法をすぐに理解できます。
+[UWP 文字体裁ガイド](typography.md)ではアプリに Segoe UI フォントを使用するようお勧めしています。Segoe UI はほとんどのアプリに適した選択ですが、すべての場合にこれを使用しなければならないわけではありません。 読み物や英語以外の特定の言語でのテキストの表示など、シナリオによっては、他のフォントを使うことができます。 
 
-UWP アプリ用にお勧めする書体見本を次に示します。
 
-| テキスト スタイル | 書体 | 太さ    | サイズ (epx) | 行間 (epx) | 単語の間隔 | トラッキング (1/1000 em) | XAML スタイル キー          |
-|------------|----------|-----------|------------|--------------------|--------------|----------------------|-------------------------|
-| ヘッダー     | Segoe UI | 細い     | 46         | 56                 | 100%         | 0                    | HeaderTextBlockStyle    |
-| サブヘッダー  | Segoe UI | 細い     | 34         | 40                 | 100%         | 0                    | SubheaderTextBlockStyle |
-| タイトル      | Segoe UI | Semilight | 24         | 28                 | 100%         | 0                    | TitleTextBlockStyle     |
-| サブタイトル   | Segoe UI | 通常   | 20         | 24                 | 100%         | 0                    | SubtitleTextBlockStyle  |
-| ベース       | Segoe UI | Semibold  | 15         | 20                 | 100%         | 0                    | BaseTextBlockStyle      |
-| 本文       | Segoe UI | 通常   | 15         | 20                 | 100%         | 0                    | BodyTextBlockStyle      |
-| 字幕    | Segoe UI | 通常   | 12         | 14                 | 100%         | 0                    | CaptionTextBlockStyle   |
 
  
+## サンセリフ フォント
 
-## 推奨フォント
-
-
-すべてに対して、必ずしも Segoe UI フォントを使う必要はありません。 読み取りや英語以外の言語でのテキストの表示など、特定のシナリオでは、他のフォントを使うことができます。
-
-ここでは、UWP アプリをサポートするすべての Windows 10 エディションで利用可能なことが保証されているフォントの一覧を示します。
-
-**注:** この一覧に含まれていないフォントを使う場合、アプリは Microsoft サービスのフォント データの自動ダウンロードをトリガーすることができます。 これは、特にモバイル デバイスでは、パフォーマンスやその他の影響が懸念の対象となる可能性があります。 具体的には、これによりユーザーのモバイル データ プランの一部が使用されたり、モバイル データ使用コストが発生したりする可能性があります。 モバイル デバイスで利用できる UWP アプリでは、UI コンテンツにこのリスト以外のフォントを使用することはできません。
-
- 
+サンセリフ フォントは、ヘッダーと UI 要素に適しています。 
 
 <table>
 <colgroup>
@@ -66,225 +52,269 @@ UWP アプリ用にお勧めする書体見本を次に示します。
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Arial</td>
-<td align="left">通常、斜体、太字、太字斜体、黒</td>
-<td align="left"></td>
+<td align="left" style="font-family: Arial;">Arial</td>
+<td align="left">標準、斜体、太字、太字斜体、黒</td>
+<td align="left">ヨーロッパおよび中東のスクリプト (ラテン文字、ギリシャ文字、キリル文字、アラビア文字、アルメニア文字、ヘブライ文字) をサポートしています。極太の太さがサポートされているのはヨーロッパのスクリプトだけです。</td>
 </tr>
 <tr class="even">
-<td align="left">Calibri</td>
-<td align="left">通常、斜体、太字、太字斜体、中細、中細斜体</td>
-<td align="left"></td>
+<td align="left" style="font-family: Calibri;">Calibri</td>
+<td align="left">標準、斜体、太字、太字斜体、細字、細字斜体</td>
+<td align="left">ヨーロッパおよび中東のスクリプト (ラテン文字、ギリシャ文字、キリル文字、アラビア語、ヘブライ語) をサポートしています。 アラビア語は縦書きでのみ利用できます。</td>
+</tr>
+<td style="font-family: Consolas;">Consolas</td>
+<td>標準、斜体、太字、太字斜体</td>
+<td>ヨーロッパのスクリプト (ラテン文字、ギリシャ文字、キリル文字) をサポートする等幅フォント。</td>
+</tr>
+
+<tr>
+<td style="font-family: Segoe UI;">Segoe UI</td>
+<td>標準、斜体、細字斜体、極太斜体、太字、太字斜体、細字、中細、中太、極太</td>
+<td>ヨーロッパおよび中東のスクリプト (アラビア文字、アルメニア文字、キリル文字、ジョージア文字、ギリシャ文字、ヘブライ文字、ラテン文字) およびリス文字のスクリプト用のユーザー インターフェイス フォント。</td>
+</tr>
+
+<tr class="odd">
+<td>Segoe UI Historic</td>
+<td align="left">標準</td>
+<td align="left">歴史上のスクリプト用のフォールバック フォント</td>
+</tr>
+
+<tr class="even">
+<td style="font-family: Selawik;">Selawik</td>
+<td align="left">標準、中細、細字、太字、中太</td>
+<td align="left">他のプラットフォーム上で動作する Segoe UI をバンドルしないアプリ向けの、Segoe UI と測定上の互換性があるオープン ソース フォント。 [Selawik は、GitHub で入手できます。](https://github.com/Microsoft/Selawik)</td>
+</tr>
+
+<tr class="even">
+<td style="font-family: Verdana;">Verdana</td>
+<td align="left">標準、斜体、太字、太字斜体</td>
+<td align="left">ヨーロッパのスクリプト (ラテン文字、ギリシャ文字、キリル文字、アルメニア文字) をサポートしています。</td>
+</tr>
+
+</tbody>
+</table>
+
+
+## セリフ フォント
+
+セリフ フォントは、大量のテキストを表示するのに適しています。 
+
+<table>
+<thead>
+<tr class="header">
+<th align="left">フォント ファミリー</th>
+<th align="left">スタイル</th>
+<th align="left">コメント</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="font-family: Cambria;">Cambria</td>
+<td align="left">標準</td>
+<td align="left">ヨーロッパのスクリプト (ラテン文字、ギリシャ文字、キリル文字) をサポートするセリフ フォント。</td>
+</tr>
+<tr class="even">
+<td style="font-family: Courier New;">Courier New</td>
+<td align="left">標準、斜体、太字、太字斜体</td>
+<td align="left">セリフ等幅フォントは、ヨーロッパおよび中東のスクリプト (ラテン文字、ギリシャ文字、キリル文字、アラビア文字、アルメニア文字、ヘブライ文字) をサポートしています。</td>
 </tr>
 <tr class="odd">
-<td align="left">Cambria</td>
-<td align="left">通常</td>
-<td align="left"></td>
+<td style="font-family: Georgia;">Georgia</td>
+<td align="left">標準、斜体、太字、太字斜体</td>
+<td align="left">ヨーロッパのスクリプト (ラテン文字、ギリシャ文字、キリル文字) をサポートしています。</td>
 </tr>
+
+
 <tr class="even">
-<td align="left">Cambria Math</td>
-<td align="left">通常</td>
-<td align="left"></td>
+<td style="font-family: Times New Roman;">Times New Roman</td>
+<td align="left">標準、斜体、太字、太字斜体</td>
+<td align="left">ヨーロッパのスクリプト (ラテン文字、ギリシャ文字、キリル文字、アラビア文字、アルメニア文字、ヘブライ文字) をサポートしている従来のフォント。</td>
 </tr>
-<tr class="odd">
-<td align="left">Comic Sans MS</td>
-<td align="left">通常、斜体、太字、太字斜体</td>
-<td align="left"></td>
+
+</tbody>
+</table>
+
+## シンボルとアイコン
+
+
+<table>
+<thead>
+<tr class="header">
+<th align="left">フォント ファミリー</th>
+<th align="left">スタイル</th>
+<th align="left">コメント</th>
 </tr>
-<tr class="even">
-<td align="left">Courier New</td>
-<td align="left">通常、斜体、太字、太字斜体</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">Ebrima</td>
-<td align="left">通常、太字</td>
-<td align="left">アフリカのスクリプト (エチオピア文字、ンコ文字、オスマニア文字、ティフィナグ文字、ヴァイ文字) 用のユーザー インターフェイス フォント</td>
-</tr>
-<tr class="even">
-<td align="left">Gadugi</td>
-<td align="left">通常</td>
-<td align="left">北アメリカ スクリプト (カナダ音節文字、チェロキー文字) 用のユーザー インターフェイス フォント</td>
-</tr>
-<tr class="odd">
-<td align="left">Georgia</td>
-<td align="left">通常、斜体、太字、太字斜体</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">ジャワ文字のスクリプト用のジャワ文字のテキストの標準フォールバック フォント</td>
-<td align="left">通常</td>
-<td align="left">ジャワ文字のスクリプト用のフォールバック フォント</td>
-</tr>
-<tr class="odd">
-<td align="left">Leelawadee UI</td>
-<td align="left">通常、Semilight、太字</td>
-<td align="left">東南アジアのスクリプト (ブギス文字、ラオス文字、クメール文字、タイ文字) 用のユーザー インターフェイス フォント</td>
-</tr>
-<tr class="even">
-<td align="left">Lucida Console</td>
-<td align="left">通常</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">Malgun Gothic</td>
-<td align="left">通常</td>
-<td align="left">韓国語用のユーザー インターフェイス フォント</td>
-</tr>
-<tr class="even">
-<td align="left">Microsoft Himalaya</td>
-<td align="left">通常</td>
-<td align="left">チベット文字のスクリプト用のフォールバック フォント</td>
-</tr>
-<tr class="odd">
-<td align="left">Microsoft JhengHei</td>
-<td align="left">通常</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">Microsoft JhengHei UI</td>
-<td align="left">通常</td>
-<td align="left">繁体字中国語用のユーザー インターフェイス フォント</td>
-</tr>
-<tr class="odd">
-<td align="left">Microsoft New Tai Lue</td>
-<td align="left">通常</td>
-<td align="left">新タイ ロ文字のスクリプト用のフォールバック フォント</td>
-</tr>
-<tr class="even">
-<td align="left">Microsoft PhagsPa</td>
-<td align="left">通常</td>
-<td align="left">パスパ文字のスクリプト用のフォールバック フォント</td>
-</tr>
-<tr class="odd">
-<td align="left">Microsoft Tai Le</td>
-<td align="left">通常</td>
-<td align="left">タイ ロ文字のスクリプト用のフォールバック フォント</td>
-</tr>
-<tr class="even">
-<td align="left">Microsoft YaHei</td>
-<td align="left">通常</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">Microsoft YaHei UI</td>
-<td align="left">通常</td>
-<td align="left">簡体字中国語用のユーザー インターフェイス フォント</td>
-</tr>
-<tr class="even">
-<td align="left">Microsoft Yi Baiti</td>
-<td align="left">通常</td>
-<td align="left">イ文字のスクリプト用のフォールバック フォント</td>
-</tr>
-<tr class="odd">
-<td align="left">Mongolian Baiti</td>
-<td align="left">通常</td>
-<td align="left">モンゴル文字のスクリプト用のフォールバック フォント</td>
-</tr>
-<tr class="even">
-<td align="left">MV Boli</td>
-<td align="left">通常</td>
-<td align="left">ターナ文字のスクリプト用のフォールバック フォント</td>
-</tr>
-<tr class="odd">
-<td align="left">Myanmar Text</td>
-<td align="left">通常</td>
-<td align="left">ミャンマー文字のスクリプト用のフォールバック フォント</td>
-</tr>
-<tr class="even">
-<td align="left">Nirmala UI</td>
-<td align="left">通常、Semilight、太字</td>
-<td align="left">南アジア言語のスクリプト (バングラ文字、デーバナーガリー文字、グジャラート文字、グルムキー文字、カンナダ文字、マラヤーラム文字、オディア文字、オル チキ文字、シンハラ文字、ソラング ソンペング文字、タミール文字、テルグ文字) 用のユーザー インターフェイス フォント</td>
-</tr>
+</thead>
+<tbody>
 <tr class="odd">
 <td align="left">Segoe MDL2 アセット</td>
-<td align="left">通常</td>
-<td align="left">アプリ アイコン用のユーザー インターフェイス フォント</td>
-</tr>
-<tr class="even">
-<td align="left">Segoe Print</td>
-<td align="left">通常</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">Segoe UI</td>
-<td align="left">通常、斜体、太字、斜体、太字斜体、中細、Semilight、Semibold、黒</td>
-<td align="left">ヨーロッパおよび中東のスクリプト (アラビア文字、アルメニア文字、キリル文字、ジョージア文字、ギリシャ文字、ヘブライ文字、ラテン文字) およびリス文字のスクリプト用のユーザー インターフェイス フォント</td>
+<td align="left">標準</td>
+<td align="left">アプリ アイコン用のユーザー インターフェイス フォント。 詳しくは、[Segoe MDL2 アセットの記事](segoe-ui-symbol-font.md)をご覧ください。</td>
 </tr>
 <tr class="even">
 <td align="left">Segoe UI Emoji</td>
-<td align="left">通常</td>
-<td align="left">Windows Phone に付属しているバージョンでは、各絵文字の周りに白い線が示されており、どのような色の背景にでも表示されます。 Windows に付属するバージョンと測定的に互換性があります。</td>
-</tr>
-<tr class="odd">
-<td align="left">Segoe UI Historic</td>
-<td align="left">通常</td>
-<td align="left">歴史上のスクリプト用のフォールバック フォント</td>
+<td align="left">標準</td>
+<td align="left"></td>
 </tr>
 <tr class="even">
 <td align="left">Segoe UI Symbol</td>
-<td align="left">通常</td>
+<td align="left">標準</td>
 <td align="left">記号用のフォールバック フォント</td>
-</tr>
-<tr class="odd">
-<td align="left">SimSun</td>
-<td align="left">通常</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">Times New Roman</td>
-<td align="left">通常、斜体、太字、太字斜体</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">Trebuchet MS</td>
-<td align="left">通常、斜体、太字、太字斜体</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">Verdana</td>
-<td align="left">通常、斜体、太字、太字斜体</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">Webdings</td>
-<td align="left">通常</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">Wingdings</td>
-<td align="left">通常</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">Yu Gothic</td>
-<td align="left">普通</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">Yu Gothic UI</td>
-<td align="left">通常</td>
-<td align="left">日本語用のユーザー インターフェイス フォント</td>
 </tr>
 </tbody>
 </table>
 
- 
 
-## 関連トピック
 
-**デザイナー向け**
-* [ラベル (またはテキスト ブロック)](../controls-and-patterns/labels.md)
-* [Segoe UI Symbol アイコン](segoe-ui-symbol-font.md)
-**開発者向け (XAML)**
+## ラテン語以外の言語用のフォント
+
+ただし、これらのフォントの多くでは、ラテン文字が提供されています。
+
+<table>
+<thead>
+<tr class="header">
+<th align="left">フォント ファミリー</th>
+<th align="left">スタイル</th>
+<th align="left">コメント</th>
+</tr>
+</thead>
+<tbody>
+
+<tr class="odd">
+<td style="font-family: Embrima;">Ebrima</td>
+<td align="left">標準、太字</td>
+<td align="left">アフリカのスクリプト (エチオピア文字、ンコ文字、オスマニア文字、ティフィナグ文字、ヴァイ文字) 用のユーザー インターフェイス フォント。</td>
+</tr>
+<tr class="even">
+<td style="font-family: Gadugi;">Gadugi</td>
+<td align="left">標準、太字</td>
+<td align="left">北アメリカ スクリプト (カナダ音節文字、チェロキー文字) 用のユーザー インターフェイス フォント。</td>
+</tr>
+<tr class="even">
+<td align="left">ジャワ文字のスクリプト用のジャワ文字のテキストの標準フォールバック フォント</td>
+<td align="left">標準</td>
+<td align="left">ジャワ文字のスクリプト用のフォールバック フォント</td>
+</tr>
+<tr class="odd">
+<td align="left" style="font-family: Leelawadee UI;">Leelawadee UI</td>
+<td align="left">通常、Semilight、太字</td>
+<td align="left">東南アジアのスクリプト (ブギス文字、ラオス文字、クメール文字、タイ文字) 用のユーザー インターフェイス フォント。</td>
+</tr>
+
+<tr class="odd">
+<td align="left" style="font-family: Malgun Gothic;">Malgun Gothic</td>
+<td align="left">標準</td>
+<td align="left">韓国語用のユーザー インターフェイス フォント。</td>
+</tr>
+<tr class="even">
+<td align="left" style="font-family: Microsoft Himalaya;">Microsoft Himalaya</td>
+<td align="left">標準</td>
+<td align="left">チベット文字のスクリプト用のフォールバック フォント。</td>
+</tr>
+<!--
+<tr class="odd">
+<td align="left" style="font-family: Microsoft JhengHei;">Microsoft JhengHei</td>
+<td align="left">Regular</td>
+<td align="left"></td>
+</tr>
+-->
+<tr class="even">
+<td align="left" style="font-family: Microsoft JhengHei UI;">Microsoft JhengHei UI</td>
+<td align="left">標準、太字、細字</td>
+<td align="left">繁体字中国語用のユーザー インターフェイス フォント。</td>
+</tr>
+<tr class="odd">
+<td align="left" style="font-family: Microsoft New Tai Lue;">Microsoft New Tai Lue</td>
+<td align="left">標準</td>
+<td align="left">新タイ ロ文字のスクリプト用のフォールバック フォント。</td>
+</tr>
+<tr class="even">
+<td align="left" style="font-family: Microsoft PhagsPa;">Microsoft PhagsPa</td>
+<td align="left">標準</td>
+<td align="left">パスパ文字のスクリプト用のフォールバック フォント。</td>
+</tr>
+<tr class="odd">
+<td align="left" style="font-family: Microsoft Tai Le;">Microsoft Tai Le</td>
+<td align="left">標準</td>
+<td align="left">タイ ロ文字のスクリプト用のフォールバック フォント。</td>
+</tr>
+<!--
+<tr class="even">
+<td align="left" style="font-family: Microsoft YaHei;">Microsoft YaHei</td>
+<td align="left">Regular</td>
+<td align="left"></td>
+</tr>
+-->
+<tr class="odd">
+<td align="left" style="font-family: Microsoft YaHei UI;">Microsoft YaHei UI</td>
+<td align="left">標準、太字、細字</td>
+<td align="left">簡体字中国語用のユーザー インターフェイス フォント。</td>
+</tr>
+<tr class="even">
+<td align="left" style="font-family: Microsoft Yi Baiti;">Microsoft Yi Baiti</td>
+<td align="left">標準</td>
+<td align="left">イ文字のスクリプト用のフォールバック フォント。</td>
+</tr>
+<tr class="odd">
+<td align="left" style="font-family: Mongolian Baiti;">Mongolian Baiti</td>
+<td align="left">標準</td>
+<td align="left">モンゴル文字のスクリプト用のフォールバック フォント。</td>
+</tr>
+<tr class="even">
+<td align="left" style="font-family: MV Boli;">MV Boli</td>
+<td align="left">標準</td>
+<td align="left">ターナ文字のスクリプト用のフォールバック フォント。</td>
+</tr>
+<tr class="odd">
+<td align="left" style="font-family: Myanmar Text;">Myanmar Text</td>
+<td align="left">標準</td>
+<td align="left">ミャンマー文字のスクリプト用のフォールバック フォント。</td>
+</tr>
+<tr class="even">
+<td align="left" style="font-family: Nirmala UI;">Nirmala UI</td>
+<td align="left">標準、中細、太字</td>
+<td align="left">南アジア言語のスクリプト (バングラ文字、デーバナーガリー文字、グジャラート文字、グルムキー文字、カンナダ文字、マラヤーラム文字、オディア文字、オル チキ文字、シンハラ文字、ソラング ソンペング文字、タミール文字、テルグ文字) 用のユーザー インターフェイス フォント</td>
+</tr>
+
+<tr class="odd">
+<td align="left" style="font-family: SimSun;">SimSun</td>
+<td align="left">標準</td>
+<td align="left">中国語繁体字の UI フォント。 </td>
+</tr>
+<tr class="odd">
+<td align="left" style="font-family: Yu Gothic;">Yu Gothic</td>
+<td align="left">中</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left" style="font-family: Yu Gothic UI;">Yu Gothic UI</td>
+<td align="left">標準</td>
+<td align="left">日本語用のユーザー インターフェイス フォント。</td>
+</tr>
+</tbody>
+</table>
+
+
+## フォントのグローバリゼーション/ローカライズ
+特定言語の推奨フォント ファミリー、サイズ、太さ、スタイルにプログラムを使ってアクセスする場合は、[LanguageFont フォント マッピング API](https://msdn.microsoft.com/library/windows/apps/br206864) を使ってください。 LanguageFont オブジェクトを使うと、コンテンツのさまざまなカテゴリ (UI ヘッダー、通知、本文のテキスト、ユーザー自身で編集できるドキュメント本文のフォントなど) の正しいフォント情報にアクセスできます。 詳しくは、「[レイアウトとグローバリゼーションをサポートするフォントの調整](https://msdn.microsoft.com/windows/uwp/globalizing/adjust-layout-and-fonts--and-support-rtl)」をご覧ください。
+
+<!--
+## Triggering a font download
+If you use a font that's not listed in this article, your app might trigger an automatic download of the font data from a Microsoft service. This can have performance and other impacts that may be a concern, particularly for mobile devices. In particular, note that this might consume some of a user's mobile data plan or result in mobile data usage costs. UWP apps that will available on mobile devices should never use fonts for UI content other than fonts in this list.
+-->
+
+## サンプルの入手
+
+* [ダウンロード可能なフォントのサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlCloudFontIntegration)
+* [UI の基本のサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
+* [DirectWrite を使用した行間のサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/DWriteLineSpacingModes) 
+
+## 関連記事
+
+* [レイアウトとグローバリゼーションをサポートするフォントの調整](https://msdn.microsoft.com/windows/uwp/globalizing/adjust-layout-and-fonts--and-support-rtl)
+* [Segoe MDL2](segoe-ui-symbol-font.md)
+* [テキスト コントロール](../controls-and-patterns/text-controls.md)
 * [XAML テーマ リソース](https://msdn.microsoft.com/library/windows/apps/mt187274)
-* [アプリのページのレイアウト](https://msdn.microsoft.com/library/windows/apps/hh872191)
-* [Segoe UI Symbol アイコン](segoe-ui-symbol-font.md)
-* [**TextBlock.FontFamily プロパティ**](https://msdn.microsoft.com/library/windows/apps/br209655)
 
-**サンプル**
-* [XAML テキスト表示のサンプル](http://go.microsoft.com/fwlink/p/?linkid=238578)
-* [CSS スタイル: アプリのブランド設定のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231641)
-* [言語フォント マッピングのサンプル](http://go.microsoft.com/fwlink/p/?linkid=231603)
  
 
  
@@ -295,6 +325,6 @@ UWP アプリ用にお勧めする書体見本を次に示します。
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

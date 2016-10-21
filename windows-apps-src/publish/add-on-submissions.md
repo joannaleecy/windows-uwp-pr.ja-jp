@@ -1,76 +1,86 @@
 ---
 author: jnHs
-Description: Add-ons are published through the Windows Dev Center dashboard.
-title: Add-on submissions
+Description: "アドオンは Windows デベロッパー センター ダッシュボードを使って公開します。"
+title: "アドオンの申請"
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
+translationtype: Human Translation
+ms.sourcegitcommit: d67931b4ab23d2b6aef945e839d193e140240cf9
+ms.openlocfilehash: 400c2e2ee65e408c996193230b05c68264830f0d
+
 ---
 
-# Add-on submissions
+# アドオンの申請
 
-Add-ons (also sometimes referred to as in-app products) are supplementary items for your app that can be purchased by customers. An add-on can be a fun new add-on feature, a new game level, or anything else you think will keep users engaged. Not only are add-ons a great way to make money, but they help to drive customer interaction and engagement.
+アドオン (アプリ内製品とも呼ばれる) は、お客様が購入可能なアプリの補助アイテムです。 アドオンには、楽しいアドオン新機能、新しいゲーム レベル、またはユーザーの関心を引くと思われるその他のアイテムなどがあります。 アドオンは収益を得るためだけでなく、お客様との意見交換や顧客エンゲージメントの獲得を促すためにも役立ちます。
 
-Add-ons are published through the Windows Dev Center dashboard. You'll also need to [enable the add-ons](../monetize/in-app-purchases-and-trials.md) in your app's code.
+アドオンは Windows デベロッパー センター ダッシュボードを使って公開します。 また、アプリのコードで [アドオンを有効にする](../monetize/in-app-purchases-and-trials.md)ことも必要です。
 
-The first step in the add-on submission process is to create the add-on in the dashboard by [defining its product type and product ID](set-your-add-on-product-id.md). After that, you can create a submission so that your add-on can be purchased via the Windows Store. You can submit an add-on at the same time you [submit your app](app-submissions.md), or you can work on it independently. And you can make [updates](#updating-an-add-on-after-submission) to add-ons after the app is in the Store without having to resubmit the app again.
+アドオンの申請プロセスでは、最初に、[その製品の種類と製品 ID を定義](set-your-add-on-product-id.md)して、ダッシュボードでアドオンを作成します。 その後、アドオンが Windows ストアで購入可能になるように申請を作成できます。 [アプリの申請](app-submissions.md)と同時にまたは別々にアドオンを申請できます。 アプリがストアに公開された後は、アプリを再び申請することなく、アドオンを[更新](#updating-an-add-on-after-submission)できます。
 
-> **Note**&nbsp;&nbsp;This section of the documentation describes how to create an add-on submission on the Dev Center dashboard. Alternatively, you can use the [Windows Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) to automate add-on submissions.
+> **注**&nbsp;&nbsp;ドキュメントのこのセクションでは、デベロッパー センターでアドオンの申請を作成する方法について説明します。 ここで説明する方法以外に、[Windows ストア申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使用してアドオン申請を自動化することもできます。
 
-## Checklist for submitting an add-on
+## アドオンの提出用チェック リスト
 
-Here's a list of the info that you provide when creating your add-on submission. The items that you are required to provide are noted below. Some of these are optional, or have default values already provided that you can change as desired.
+アドオンの申請を作成するときに提供する情報の一覧を次に示します。 提供が必須である情報については、次の一覧に示してあります。 また、省略可能な情報もあります。既に提供されている既定値は必要に応じて変更できます。
 
-### Create a new add-on page
-| Field name                    | Notes                            |
+### 新しいアドオン ページを作成する
+| フィールド名                    | コメント                            |
 |-------------------------------|----------------------------------|
-| [**Product type**](set-your-add-on-product-id.md#product-type)      | Required. If **Durable**, a **Product lifetime** is required. |  
-| [**Product ID**](set-your-add-on-product-id.md#product-id)          | Required |        
+| [**製品の種類**](set-your-add-on-product-id.md#product-type)      | 必須。 **[永続的]** を選んだ場合は、**[製品の有効期限]** を指定する必要があります。 |  
+| [**製品 ID**](set-your-add-on-product-id.md#product-id)          | 必須 |        
 
 <span/>
 
-### Properties page
-| Field name                    | Notes                              |   
+### [プロパティ] ページ
+| フィールド名                    | コメント                              |   
 |-------------------------------|------------------------------------|
-| [**Product lifetime**](enter-add-on-properties.md#product-lifetime)  | Required if the product type is **Durable**. Not applicable to other product types. |
-| [**Quantity**](enter-add-on-properties.md#quantity)  | Required if the product type is **Store-managed consumable**. Not applicable to other product types.
-| [**Content type**](enter-add-on-properties.md#content-type)          | Required       |               
-| [**Keywords**](enter-add-on-properties.md#keywords)                  | Optional (up to 10 keywords, 30 character limit each) |
-| [**Custom developer data**](enter-add-on-properties.md#custom-developer-data)                               | Optional (3000 character limit)             |
+| [**製品の有効期限**](enter-add-on-properties.md#product-lifetime)  | 製品の種類が **[永続的]** である場合は必須です。 他の種類の製品には適用されません。 |
+| [**数量**](enter-add-on-properties.md#quantity)  | 製品の種類が **[ストアで管理されるコンシューマブル]** の場合は必須です。 他の種類の製品には適用されません。
+| [**コンテンツの種類**](enter-add-on-properties.md#content-type)          | 必須       |               
+| [**キーワード**](enter-add-on-properties.md#keywords)                  | 省略可能 (最大で 10 個まで。それぞれ 30 文字以内)。 |
+| [**カスタムの開発者データ**](enter-add-on-properties.md#custom-developer-data)                               | 省略可能 (3,000 文字以内)。             |
 
 <span/>
 
-### Pricing and availability page
-| Field name                    | Notes                                       |
+### [価格と使用可能状況] ページ
+| フィールド名                    | コメント                                       |
 |-------------------------------|---------------------------------------------|
-| [**Base price**](set-add-on-pricing-and-availability.md#base-price)                | Required                                    |
-| [**Markets and custom pricing**](set-add-on-pricing-and-availability.md#markets-and-custom-prices)  | Default: available in all possible markets |
-| [**Sale pricing**](put-apps-and-add-ons-on-sale.md)               | Optional                             |
-| [**Distribution and visibility**](set-add-on-pricing-and-availability.md#distribution-and-visibility)   | Default: add-on can be found by customers browsing or searching the Store |
-| [**Publish date**](set-add-on-pricing-and-availability.md#publish-date)                | Default: Publish as soon as the add-on passes certification |
+| [**基本価格**](set-add-on-pricing-and-availability.md#base-price)                | 必須                                    |
+| [**市場とカスタム価格**](set-add-on-pricing-and-availability.md#markets-and-custom-prices)  | 既定: お客様は対象となるすべての市場で購入できます。 |
+| [**セール価格**](put-apps-and-add-ons-on-sale.md)               | 省略可能                             |
+| [**配布と表示**](set-add-on-pricing-and-availability.md#distribution-and-visibility)   | 既定: お客様はストアを参照または検索することでアドオンを見つけることができます。 |
+| [**公開日**](set-add-on-pricing-and-availability.md#publish-date)                | 既定: アドオンは認定に合格するとすぐに公開されます。 |
 
 <span/>
 
-### Store listings
-One Store listing required. We recommend providing Store listings for every [language](create-add-on-descriptions.md#languages) your app supports.
+### ストア登録情報
+1 つのストア登録情報が必要です。 アプリがサポートする各[言語](create-add-on-descriptions.md#languages)でストア登録情報を提供することをお勧めします。
 
-| Field name                    | Notes                                       |
+| フィールド名                    | コメント                                       |
 |-------------------------------|---------------------------------------------|
-| [**Title**](create-add-on-store-listings.md#title)                    | Required (100 character limit)              |
-| [**Description**](create-add-on-store-listings.md#description)       | Optional (200 character limit)              |
-| [**Icon**](create-add-on-store-listings.md#icon)                    | Optional (.png, 300x300 pixels)             |
+| [**タイトル**](create-add-on-store-listings.md#title)                    | 必須 (100 文字以内)              |
+| [**説明**](create-add-on-store-listings.md#description)       | 省略可能 (200 文字以内)              |
+| [**アイコン**](create-add-on-store-listings.md#icon)                    | 省略可能 (.png、300 x 300 ピクセル)             |
 
 <span/>
 
-When you've finished entering this info, click **Submit to the Store**. In most cases, the certification process takes about an hour. After that, your add-on will be published to the Store and ready for customers to purchase.
+これらの情報の入力が完了したら、**[Submit to the Store]** (ストアに提出) をクリックします。 ほとんどの場合、認定プロセスは約 1 時間かかります。 その後、アドオンはストアに公開され、お客様が購入できるようになります。
 
-**Note**  The add-on must also be implemented in your app's code. For more info, see [Enable in-app product purchases](../monetize/enable-in-app-product-purchases.md).
+**注**  アドオンは、アプリのコードでも実装する必要があります。 詳しくは、「[アプリ内製品購入の有効化](../monetize/enable-in-app-product-purchases.md)」をご覧ください。
 
 
-## Updating an add-on after publication
+## 公開後のアドオンの更新
 
-You can make changes to a published add-on at any time. add-on changes are submitted and published independently of your app, so you generally don't need to update the entire app in order to make changes to an add-on such as updating its price or description.
+公開したアドオンはいつでも変更できます。 アドオンの変更はアプリとは別に申請および公開されるため、一般的には、価格や説明の更新などのアドオンに対する変更ではアプリ全体を更新する必要はありません。
 
-> **Important**  If your app is available to customers on Windows 8.x, you will need to create and publish a new app submission in order to make the add-on updates visible to those customers. Similarly, if you add new add-ons to an app targeting Windows 8.x after the app has been published, you'll need to update your app's code to reference those add-ons, then resubmit the app. Otherwise, the new add-ons won't be visible to customers on Windows 8.x.
+> **重要**  Windows 8.x のユーザーがこのアプリを利用できる場合、アドオンの更新がこれらのユーザーにも表示されるようにするために、新しいアプリの申請を作成して公開する必要があります。 同様に、アプリを公開した後で、Windows 8.x を対象とする新しいアドオンをアプリに追加する場合は、アドオンを参照するようにアプリのコードを更新して、アプリを再申請する必要があります。 それ以外の場合、新しいアドオンは、Windows 8.x のユーザーには表示されません。
 
-To submit updates, go to the add-on's page in your dashboard and click **Update**. This will create a new submission for the add-on using the info from your previous submission as a starting point. Change the info you'd like, and then click **Submit to the Store**.
+更新を申請するには、ダッシュボードでアドオンのページに移動し、**[更新]** をクリックします。 これにより、以前の申請からの情報をひな型として、アドオンの新しい申請が作成されます。 目的の情報を変更したら、**[ストアに提出]** をクリックします。
 
-If you'd like to remove an add-on you've previously offered, you can do this by creating a new submission and changing the [Distribution and visibility](set-add-on-pricing-and-availability.md) option to **No longer available for purchase. Not displayed in your app's listing**. Be sure to update your app's code as needed to also remove references to the add-on.
+既に提供されているアドオンを削除する場合は、新しい申請を作成し、[分布と認知度](set-add-on-pricing-and-availability.md) オプションを **[購入不可。アプリのリストには表示されません]** に変更します。 必要に応じて、アプリのコードを更新し、アドオンへの参照も削除してください。
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

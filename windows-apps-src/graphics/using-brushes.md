@@ -5,7 +5,7 @@ title: "ブラシの使用"
 description: "Brush オブジェクトは、コントロールの領域、テキスト、図形の内側または輪郭を塗りつぶすことで、その対象領域を UI 上で視覚的に確認できるようにする目的で使います。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 38999529dda7f5e21ef7aee4a99b2420cb37bfa6
+ms.openlocfilehash: cc16b07931cf3f7740957c222e8c8821ddbab08a
 
 ---
 # ブラシの使用
@@ -17,9 +17,7 @@ ms.openlocfilehash: 38999529dda7f5e21ef7aee4a99b2420cb37bfa6
 
 -   [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)
 
-
-              [
-              **Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) オブジェクトは、コントロールの領域、テキスト、図形の内側または輪郭を塗りつぶすことで、その対象領域を UI 上で視覚的に確認できるようにする目的で使います。 ここでは、利用可能なブラシとそれらの使い方について説明します。
+[**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) オブジェクトは、コントロールの領域、テキスト、図形の内側または輪郭を塗りつぶすことで、その対象領域を UI 上で視覚的に確認できるようにする目的で使います。 ここでは、利用可能なブラシとそれらの使い方について説明します。
 
 ## ブラシ入門
 
@@ -131,9 +129,7 @@ XAML ではなくコードを使って [**SolidColorBrush**](https://msdn.micros
 
 ![レンダリングされた ImageBrush。](images/brushes-imagebrush.jpg)
 
-
-              [
-              **ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) と [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) は、どちらも Uniform Resource Identifier (URI) でイメージ ソース ファイルを参照します。また、イメージ ソース ファイルに使うことができる画像形式には、さまざまなものがあります。 これらのイメージ ソース ファイルは、URI として指定されます。 イメージ ソースの指定、使用できる画像形式、アプリへのパッケージ化について詳しくは、「[Image と ImageBrush](https://msdn.microsoft.com/library/windows/apps/Mt280382)」をご覧ください。
+[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) と [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) は、どちらも Uniform Resource Identifier (URI) でイメージ ソース ファイルを参照します。また、イメージ ソース ファイルに使うことができる画像形式には、さまざまなものがあります。 これらのイメージ ソース ファイルは、URI として指定されます。 イメージ ソースの指定、使用できる画像形式、アプリへのパッケージ化について詳しくは、「[Image と ImageBrush](https://msdn.microsoft.com/library/windows/apps/Mt280382)」をご覧ください。
 
 ## ブラシとテキスト
 
@@ -143,8 +139,7 @@ XAML ではなくコードを使って [**SolidColorBrush**](https://msdn.micros
 
 ## WebViewBrush
 
-[**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) は、[**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) コントロールに通常表示されるコンテンツにアクセスできる特殊なブラシです。 四角形の **WebView** コントロール領域にコンテンツをレンダリングする代わりに、**WebViewBrush** は、レンダリング サーフェスに [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) タイプのプロパティを持つ別の要素にコンテンツを描画します。 
-              **WebViewBrush** は、必ずしもすべての用途に適したブラシではありませんが、**WebView** の切り替えで効果的に使うことができます。 詳しくは、「**WebViewBrush**」をご覧ください。
+[**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) は、[**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) コントロールに通常表示されるコンテンツにアクセスできる特殊なブラシです。 四角形の **WebView** コントロール領域にコンテンツをレンダリングする代わりに、**WebViewBrush** は、レンダリング サーフェスに [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) タイプのプロパティを持つ別の要素にコンテンツを描画します。 **WebViewBrush** は、必ずしもすべての用途に適したブラシではありませんが、**WebView** の切り替えで効果的に使うことができます。 詳しくは、「**WebViewBrush**」をご覧ください。
 
 ## XAML リソースとしてのブラシ
 
@@ -170,8 +165,7 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) と [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) を UI プロパティに使う場合、その前に既定のコンストラクターを使って他の API を呼び出してください。
 
--   
-              コードを使って [
+-   コードを使って [
               **ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) を定義する場合、[**ImageSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imagebrush.imagesourceproperty.aspx) では [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) (URI ではない) が必要です。 ソースがストリームである場合は、[**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) メソッドを使って値を初期化します。 ソースが、**ms-appx**  スキームまたは **ms-resource** スキームを使うアプリ内のコンテンツを含む URI である場合は、URI を受け取る [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/br243238.aspx) コンストラクターを使います。 イメージ ソースが使えるようになるまで代替コンテンツを表示することが必要となる場合など、イメージ ソースの取得やデコードについてタイミングの問題がある場合は、[**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imageopened.aspx) イベントを処理することも検討してください。
 -   [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) については、[**SourceName**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.sourcename.aspx) プロパティを最近リセットした場合、または [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) のコンテンツをコードを使って変更した場合に、[**Redraw**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.redraw.aspx) を呼び出す必要があります。
 
@@ -186,6 +180,6 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

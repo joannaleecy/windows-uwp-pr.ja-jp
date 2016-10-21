@@ -3,8 +3,9 @@ author: drewbatgit
 ms.assetid: 98BD79B3-F420-43C5-98D3-52EBDDB479A0
 description: "この記事では、BitmapEncoder で使用できるエンコーディング オプションを示します。"
 title: "BitmapEncoder オプション リファレンス"
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 510cb363b258d20688ea212856af4b7ac0311e61
+translationtype: Human Translation
+ms.sourcegitcommit: de54d389488d8298ea1341b0a6f27a476d38584e
+ms.openlocfilehash: 0ccaf55215cb82633313e145a126db92aa6d16e6
 
 ---
 
@@ -12,7 +13,7 @@ ms.openlocfilehash: 510cb363b258d20688ea212856af4b7ac0311e61
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
-この記事では、[**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) で使用できるエンコーディング オプションを示します。 エンコーディング オプションは、対応する名前の文字列と特定のデータ型 ([**Windows.Foundation.PropertyType**](https://msdn.microsoft.com/library/windows/apps/br225871)) の値によって定義されます。 画像の操作について詳しくは、「[イメージング](imaging.md)」をご覧ください。
+この記事では、[**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) で使用できるエンコーディング オプションを示します。 エンコーディング オプションは、対応する名前の文字列と特定のデータ型 ([**Windows.Foundation.PropertyType**](https://msdn.microsoft.com/library/windows/apps/br225871)) の値によって定義されます。 画像の操作について詳しくは、「[ビットマップ画像の作成、編集、保存](imaging.md)」をご覧ください。
 
 | 名前                    | PropertyType | 使用上の注意                                                                                        | 有効な形式 |
 |-------------------------|--------------|----------------------------------------------------------------------------------------------------|---------------|
@@ -26,13 +27,13 @@ ms.openlocfilehash: 510cb363b258d20688ea212856af4b7ac0311e61
 | Chrominance             | uint32Array  | クロミナンスの量子化定数を格納する 64 要素の配列です。                             | JPEG          |
 | JpegYCrCbSubsampling    | uint8        | [**JpegSubsamplingMode**](https://msdn.microsoft.com/library/windows/apps/br226386) 列挙値を使います。                    | JPEG          |
 | SuppressApp0            | boolean      | App0 メタデータ ブロックの作成を抑制するかどうかを示します。                                        | JPEG          |
-| EnableV5Header32bppBGRA | boolean      | アルファをサポートする Version 5 BMP にエンコードするかどうかを示します。                                         | BMP           |
+| EnableV5Header32bppBGRA | boolean      | アルファをサポートするバージョン 5 BMP にエンコードするかどうかを示します。                                         | BMP           |
 
  
 
 ## 関連トピック
 
-* [イメージング](imaging.md)
+* [ビットマップ画像の作成、編集、保存](imaging.md)
  
 
  
@@ -43,6 +44,6 @@ ms.openlocfilehash: 510cb363b258d20688ea212856af4b7ac0311e61
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

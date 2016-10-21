@@ -2,8 +2,9 @@
 title: "ゲーム開発用の CPUSets"
 description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) の新しい CPUSets API の概要を説明し、ゲームとアプリケーションの開発に関連する主な情報を紹介します。"
 author: hammondsp
-ms.sourcegitcommit: 3cefaf4e527d2a0da412dab474a348b55ad409c9
-ms.openlocfilehash: f125ae7e268a8d35b477a1557c498762869f859b
+translationtype: Human Translation
+ms.sourcegitcommit: 9f15d551715d9ccf23e4eb397637f4fafacec350
+ms.openlocfilehash: 6065435dc3add0d9bde15dc6bdd355935b8f53cd
 
 ---
 
@@ -16,10 +17,8 @@ ms.openlocfilehash: f125ae7e268a8d35b477a1557c498762869f859b
 ## CPUSets API
 
 CPUSets API によって、スレッドをスケジュールするためにどの CPU セットを利用できるかを制御できます。 スレッドをスケジュールする場所を制御するために、2 つの関数を利用できます。
-- 
-            **SetProcessDefaultCpuSets**: この関数を使用すると、スレッドが特定の CPU セットに割り当てられていない場合に、新しいスレッドが実行される CPU セットを指定できます。
-- 
-            **SetThreadSelectedCpuSets**: この関数を使用すると、特定のスレッドが実行される CPU セットを制限できます。
+- **SetProcessDefaultCpuSets**: この関数を使用すると、スレッドが特定の CPU セットに割り当てられていない場合に、新しいスレッドが実行される CPU セットを指定できます。
+- **SetThreadSelectedCpuSets**: この関数を使用すると、特定のスレッドが実行される CPU セットを制限できます。
 
 **SetProcessDefaultCpuSets** 関数を使わない場合は、新しく作成されたスレッドは、プロセスで使用できる任意の CPU セットでスケジュールすることができます。 このセクションでは、CPUSets API の基本事項について説明します。
 
@@ -97,9 +96,7 @@ SetThreadSelectedCpuSets(audioHandle, cores, 2);
 
 この方法は、ゲームで複数のスレッドをリアルタイムで実行する必要があり、他のワーカー スレッドが必要とする CPU 時間が比較的少ない場合に有効です。 最適なゲーム エクスペリエンスを提供するために、継続的 BGM など、いくつかのタスクは中断することなく実行される必要があります。 オーディオ スレッドでは、1 つのフレームのスタベーションによってポップ ノイズやグリッチ ノイズが発生する可能性があるため、各フレームで必要な量の CPU 時間が提供されることが重要です。
 
-**SetThreadSelectedCpuSets** を **SetProcessDefaultCpuSets** と組み合わせて使用することにより、大量のスレッドでもワーカー スレッドによって中断されることなく継続できます。 
-            **SetThreadSelectedCpuSets** を使用して、大量のスレッドを特定の CPU セットに割り当てることができます。 
-            次に、**SetProcessDefaultCpuSets** を使用して、作成済みで割り当てられていないスレッドを、他の CPU セットに割り当てることができます。 ハイパースレッディングを利用する CPU の場合は、論理コアが同一物理コア上にあることも重要です。 リアルタイムの応答性を必要とするスレッドと同じ物理コアを共有する論理コアで、ワーカー スレッドを実行しないでください。 次のコードは、PC でハイパースレッディングを使用しているかどうかを判断する方法を示しています。
+**SetThreadSelectedCpuSets** を **SetProcessDefaultCpuSets** と組み合わせて使用することにより、大量のスレッドでもワーカー スレッドによって中断されることなく継続できます。 **SetThreadSelectedCpuSets** を使用して、大量のスレッドを特定の CPU セットに割り当てることができます。 次に、**SetProcessDefaultCpuSets** を使用して、作成済みで割り当てられていないスレッドを、他の CPU セットに割り当てることができます。 ハイパースレッディングを利用する CPU の場合は、論理コアが同一物理コア上にあることも重要です。 リアルタイムの応答性を必要とするスレッドと同じ物理コアを共有する論理コアで、ワーカー スレッドを実行しないでください。 次のコードは、PC でハイパースレッディングを使用しているかどうかを判断する方法を示しています。
 
 ```
 unsigned long retsize = 0;
@@ -190,13 +187,14 @@ for (size_t i = 0; i < count; ++i)
 
 UWP 開発で使用できる CPUSets API によって、相当な量の情報が提供され、マルチスレッド オプションを制御できます。 Windows 開発用の以前のマルチスレッド API と比較して、複雑な部分が増えているため学習に時間が必要ですが、柔軟性が向上しているため、最終的にはさまざまなコンシューマー向け PC やその他のハードウェア ターゲットでパフォーマンスが向上します。
 
-## その他の情報
+## その他の資料
 - [CPU セット (MSDN)](https://msdn.microsoft.com/library/windows/desktop/mt186420(v=vs.85).aspx)
 - [ATG によって提供される CPUSets のサンプル](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
+- [Xbox One の UWP](index.md)
 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

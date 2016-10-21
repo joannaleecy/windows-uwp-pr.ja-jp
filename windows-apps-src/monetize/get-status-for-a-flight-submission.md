@@ -1,72 +1,76 @@
 ---
 author: mcleanbyron
 ms.assetid: C78176D6-47BB-4C63-92F8-426719A70F04
-description: Use this method in the Windows Store submission API to get the status of a package flight submission.
-title: Get the status of a package flight submission using the Windows Store submission API
+description: "Windows ストア提出 API 内のこのメソッドを使用して、パッケージ フライトの提出ステータスを取得します。"
+title: "Windows ストア提出 API を使用したパッケージ フライトの提出ステータスの取得"
+translationtype: Human Translation
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 9c087a01d8a499f8dd31c428f0c1abdbe9b19fac
+
 ---
 
-# Get the status of a package flight submission using the Windows Store submission API
+# Windows ストア提出 API を使用したパッケージ フライトの提出ステータスの取得
 
 
 
 
-Use this method in the Windows Store submission API to get the status of a package flight submission. For more information about the process of process of creating a package flight submission by using the Windows Store submission API, see [Manage package flight submissions](manage-flight-submissions.md).
+Windows ストア提出 API 内のこのメソッドを使用して、パッケージ フライトの提出ステータスを取得します。 Windows ストア提出 API を使ったパッケージ フライトの提出の作成プロセスについて詳しくは、「[パッケージ フライト提出の管理](manage-flight-submissions.md)」に関するページをご覧ください。
 
-## Prerequisites
+## 前提条件
 
-To use this method, you need to first do the following:
+このメソッドを使うには、最初に次の作業を行う必要があります。
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
-* [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
-* Create a package flight submission for an app in your Dev Center account. You can do this in the Dev Center dashboard, or you can do this by using the [create a package flight submission](create-a-flight-submission.md) method.
+* Windows ストア提出 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
+* デベロッパー センターのアカウントでアプリのパッケージ フライトの提出を作成します。 これは、デベロッパー センターのダッシュボードで行うことも、[パッケージ フライトの提出の作成](create-a-flight-submission.md)メソッドを使って行うこともできます。
 
->**Note**&nbsp;&nbsp;This method can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled.
+>**注:**&nbsp;&nbsp;このメソッドは、Windows ストア提出 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
-## Request
+## 要求
 
-This method has the following syntax. See the following sections for usage examples and descriptions of the header and request body.
+このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
 
-| Method | Request URI                                                      |
+| メソッド | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
 | GET   | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions{submissionId}/status``` |
 
 <span/>
- 
+ 
 
-### Request header
+### 要求ヘッダー
 
-| Header        | Type   | Description                                                                 |
+| ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
 
 <span/>
 
-### Request parameters
+### 要求パラメーター
 
-| Name        | Type   | Description                                                                 |
+| 名前        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | Required. The Store ID of the app that contains the package flight submission for which you want to get the status. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| flightId | string | Required. The ID of the package flight that contains the submission for which you want to get the status. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md).  |
-| submissionId | string | Required. The ID of the submission for which you want to get the status. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [create a package flight submission](create-a-flight-submission.md).  |
+| applicationId | string | 必須。 ステータスを取得するパッケージ フライト提出が含まれているアプリのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。  |
+| flightId | string | 必須。 ステータスを取得する提出が含まれているパッケージ フライトの ID です。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データに含まれており、デベロッパー センター ダッシュボードで確認できます。  |
+| submissionId | string | 必須。 ステータスを取得する提出の ID です。 この ID は、[パッケージ フライトの提出の作成](create-a-flight-submission.md)要求の応答データに含まれており、デベロッパー センター ダッシュボードで確認できます。  |
 
 <span/>
 
-### Request body
+### 要求本文
 
-Do not provide a request body for this method.
+このメソッドでは要求本文を指定しないでください。
 
-### Request example
+### 要求の例
 
-The following example demonstrates how to get the status of a package flight submission.
+次の例は、パッケージ フライト提出のステータスを取得する方法を示しています。
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions/1152921504621243649/status HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## Response
+## 応答
 
-The following example demonstrates the JSON response body for a successful call to this method. The response body contains information about the specified submission. For more details about the values in the response body, see the following section.
+次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文には、指定された提出に関する情報が含まれています。 応答本文の値について詳しくは、次のセクションをご覧ください。
 
 ```json
 {
@@ -79,34 +83,40 @@ The following example demonstrates the JSON response body for a successful call 
 }
 ```
 
-### Response body
+### 応答本文
 
-| Value      | Type   | Description                                                                                                                                                                                                                                                                         |
+| 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| status           | string  | The status of the submission. This can be one of the following values: <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
-| statusDetails           | object  |  Contains additional details about the status of the submission, including information about any errors. For more information, see [Status details resource](manage-flight-submissions.md#status-details-object). |
+| status           | string  | 提出の状態。 次のいずれかの値を使用できます。 <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
+| statusDetails           | object  |  エラーに関する情報など、提出ステータスに関する追加詳細情報が含まれています。 詳しくは、[ステータスの詳細に関するリソース](manage-flight-submissions.md#status-details-object)をご覧ください。 |
 
 
 <span/>
 
-## Error codes
+## エラー コード
 
-If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.
+要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。
 
-| Error code |  Description   |
+| エラー コード |  説明   |
 |--------|------------------|
-| 404  | The submission could not be found. |
-| 409  | The app uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 404  | 提出は見つかりませんでした。 |
+| 409  | アプリは、[Windows ストア提出 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センターのダッシュボード機能を使用します。  |
 
 <span/>
 
 
-## Related topics
+## 関連トピック
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Manage package flight submissions](manage-flight-submissions.md)
-* [Get an app submission](get-an-app-submission.md)
-* [Create an app submission](create-an-app-submission.md)
-* [Commit an app submission](commit-an-app-submission.md)
-* [Update an app submission](update-an-app-submission.md)
-* [Delete an app submission](delete-an-app-submission.md)
+* [Windows ストア サービスを使用した提出の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
+* [パッケージ フライトの提出の管理](manage-flight-submissions.md)
+* [アプリの提出の取得](get-an-app-submission.md)
+* [アプリの提出の作成](create-an-app-submission.md)
+* [アプリの提出のコミット](commit-an-app-submission.md)
+* [アプリの提出の更新](update-an-app-submission.md)
+* [アプリの提出の削除](delete-an-app-submission.md)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

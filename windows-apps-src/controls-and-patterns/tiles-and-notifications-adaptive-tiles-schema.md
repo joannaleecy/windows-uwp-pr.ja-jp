@@ -5,19 +5,21 @@ title: "アダプティブ タイル スキーマとテンプレート"
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
 label: Adaptive tile schema and templates
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
 
 ---
-
 # アダプティブ タイル テンプレート: スキーマとガイダンス
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 アダプティブ タイルの作成に使う要素と属性を次に示します。 手順と例については、「[アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)」をご覧ください。
 
-## <span id="tile_element"></span><span id="TILE_ELEMENT"></span>tile 要素
+## tile 要素
 
 
-``` syntax
+``` xml
 <tile>
   
   <!-- Child elements -->
@@ -26,10 +28,10 @@ ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
 </tile>
 ```
 
-## <span id="visual_element"></span><span id="VISUAL_ELEMENT"></span>visual 要素
+## visual 要素
 
 
-``` syntax
+``` xml
 <visual
   version? = integer
   lang? = string
@@ -45,10 +47,10 @@ ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
 </visual>
 ```
 
-## <span id="binding_element"></span><span id="BINDING_ELEMENT"></span>binding 要素
+## binding 要素
 
 
-``` syntax
+``` xml
 <binding
   template = tileTemplateNameV3
   fallback? = tileTemplateNameV1
@@ -70,10 +72,10 @@ ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
 </binding>
 ```
 
-## <span id="image_element"></span><span id="IMAGE_ELEMENT"></span>image 要素
+## image 要素
 
 
-``` syntax
+``` xml
 <image
   src = string
   placement? = "inline" | "background" | "peek"
@@ -84,10 +86,10 @@ ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
   hint-align? = "stretch" | "left" | "center" | "right" />
 ```
 
-## <span id="text_element"></span><span id="TEXT_ELEMENT"></span>text 要素
+## text 要素
 
 
-``` syntax
+``` xml
 <text
   lang? = string
   hint-style? = textStyle
@@ -103,10 +105,10 @@ ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
 
 textStyle の値: caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumber
 
-## <span id="group_element"></span><span id="GROUP_ELEMENT"></span>group 要素
+## group 要素
 
 
-``` syntax
+``` xml
 <group>
 
   <!-- Child elements -->
@@ -115,10 +117,10 @@ textStyle の値: caption captionSubtle body bodySubtle base baseSubtle subtitle
 </group>
 ```
 
-## <span id="subgroup_element"></span><span id="SUBGROUP_ELEMENT"></span>subgroup 要素
+## subgroup 要素
 
 
-``` syntax
+``` xml
 <subgroup
   hint-weight? = [0-100]
   hint-textStacking? = "top" | "center" | "bottom" >
@@ -131,7 +133,7 @@ textStyle の値: caption captionSubtle body bodySubtle base baseSubtle subtitle
 </subgroup>
 ```
 
-## <span id="related_topics"></span>関連トピック
+## 関連トピック
 
 
 * [アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)
@@ -145,6 +147,6 @@ textStyle の値: caption captionSubtle body bodySubtle base baseSubtle subtitle
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

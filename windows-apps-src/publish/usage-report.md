@@ -4,8 +4,8 @@ Description: "Windows デベロッパー センター ダッシュボードの�
 title: "利用状況レポート"
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 translationtype: Human Translation
-ms.sourcegitcommit: 6dac44032ac217969148ff73c594f99d8a733355
-ms.openlocfilehash: 0cb9d09504a024cabe66661a5c77e21752b7e2e6
+ms.sourcegitcommit: c413ff1d4fe709e92f7a306e671f9a4fe22a5999
+ms.openlocfilehash: 21be2064914189abe8ef68c858d33346b947550c
 
 ---
 
@@ -14,25 +14,20 @@ ms.openlocfilehash: 0cb9d09504a024cabe66661a5c77e21752b7e2e6
 
 Windows デベロッパー センター ダッシュボードの**利用状況**レポートでは、お客様による Windows 10 でのアプリの利用状況を確認でき、定義したカスタム イベントに関する情報を取得できます。 このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md)してオフラインで表示することもできます。
 
-> 
-            **注**  以前は、アプリで Visual Studio Application Insights SDK を有効にしている場合にのみ、**利用状況**レポートでデータが表示されました。 更新後の**利用状況**レポートでは、SDK は必要なくなりました。
+> **注**  以前は、アプリで Visual Studio Application Insights SDK を有効にしている場合にのみ、**利用状況**レポートでデータが表示されました。 更新後の**利用状況**レポートでは、SDK は必要なくなりました。
 
 ## フィルターの適用
 
 
 ページの上部近くにある **[フィルターの適用]** を展開して、このページのすべてのデータを日付範囲/製品グループ (関連 OS バージョン) に基づいてフィルター処理できます。
 
--   
-            **[日付]**: 既定のフィルターは **[過去 30 日]** ですが、これを **[過去 3 か月]** まで拡張できます。
--   
-            **[パッケージ バージョン]**: 既定の設定は **[すべて]** です。 アプリに複数のパッケージが含まれる場合、ここで特定のパッケージを選ぶことができます。
--   
-            **[デバイスの種類]**: 既定の設定は **[すべて]** ですが、特定の 1 つのデバイスの種類のデータのみを表示することもできます。
+-   **[日付]**: 既定のフィルターは **[過去 30 日]** ですが、これを **[過去 3 か月]** まで拡張できます。
+-   **[パッケージ バージョン]**: 既定の設定は **[すべて]** です。 アプリに複数のパッケージが含まれる場合、ここで特定のパッケージを選ぶことができます。
+-   **[デバイスの種類]**: 既定の設定は **[すべて]** ですが、特定の 1 つのデバイスの種類のデータのみを表示することもできます。
 
 以下のすべてのグラフに示される情報は、**[フィルターの適用]** で選んだ期間を反映しています。 既定では、**[フィルターの適用]** セクションを使ってパッケージ バージョンやサポートされるデバイスの種類を 1 つに絞り込んでいない限り、その情報にはすべてのパッケージ バージョンやサポートされるデバイスの種類のデータが含まれます。
 
-> 
-            **注** このレポートには、Windows 10 のユーザーからの利用状況データのみが含まれています。
+> **注** このレポートには、Windows 10 のユーザーからの利用状況データのみが含まれています。
 
 ## ユーザー セッションの合計数
 
@@ -50,7 +45,7 @@ Windows デベロッパー センター ダッシュボードの**利用状況**
 
 **カスタム イベント**のグラフには、アプリに定義したカスタム イベントが発生した合計回数が示されます。 この回数には、それらのイベントが同じお客様によって複数回発生した場合も含まれます。
 
-カスタム イベントは、[Microsoft Store Engagement and Monetization SDK](../monetize/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md) の [Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomevents.log.aspx) メソッドを使って実装されています。
+カスタム イベントは、[Microsoft Store Services SDK](../monetize/microsoft-store-services-sdk.md) の [StoreServicesCustomEventLogger.Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) メソッドを使って実装されています。
 
 
 
@@ -58,10 +53,6 @@ Windows デベロッパー センター ダッシュボードの**利用状況**
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

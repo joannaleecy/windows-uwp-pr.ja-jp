@@ -3,8 +3,9 @@ title: "証明書の概要"
 description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリでの証明書の使用について説明します。"
 ms.assetid: 4EA2A9DF-BA6B-45FC-AC46-2C8FC085F90D
 author: awkoren
+translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 84596f70a5deee6cebb5f4bac442a6aaca8210cd
+ms.openlocfilehash: e46d31e2f90b9336ea19632099741c1957521578
 
 ---
 
@@ -99,6 +100,6 @@ X.509 バージョン 3 の証明書には、バージョン 1 とバージョ�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

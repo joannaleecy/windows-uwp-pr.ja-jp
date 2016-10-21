@@ -3,8 +3,9 @@ author: mcleblanc
 title: "アニメーションを始める"
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
 description: "このプロジェクトでは、四角形を移動し、フェード効果を適用した後でもう一度表示します。"
+translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 6e0b92af1d3c5f61aa2341d43ca40330fcc359f4
+ms.openlocfilehash: ae08bb25d8ac56ca6e03a5c200e8a0d4e05fbfe3
 
 ---
 
@@ -122,8 +123,7 @@ MainPage.xaml ファイルを **XAML** ビューで開くと、デザイナー�
 
 この XAML を手動で編集するか、または Blend に戻って操作を続行することができます。 Blend を使うと興味を引くユーザー インターフェイスを作成することが楽しくなり、グラフィカル ツールを使用してそれらをアニメーション化する機能によって開発時間を大幅に高速化することができます。 アニメーションについて詳しくは、「[アニメーションの概要](https://msdn.microsoft.com/library/windows/apps/mt187350)」をご覧ください。
 
-
-            **注:** JavaScript と HTML を使った Windows ストア アプリのアニメーションについて詳しくは、「[UI のアニメーション化 (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165)」をご覧ください。
+**注:** JavaScript と HTML を使った Windows ストア アプリのアニメーションについて詳しくは、「[UI のアニメーション化 (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165)」をご覧ください。
 
 ### 次の手順
 
@@ -131,6 +131,6 @@ MainPage.xaml ファイルを **XAML** ビューで開くと、デザイナー�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

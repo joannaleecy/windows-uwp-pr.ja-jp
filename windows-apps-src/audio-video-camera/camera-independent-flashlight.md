@@ -3,8 +3,9 @@ author: drewbatgit
 ms.assetid: D20C8E01-4E78-4115-A2E8-07BB3E67DDDC
 description: "この記事では、デバイスのライトにアクセスして使う方法を説明します (存在する場合)。 ライト機能は、デバイスのカメラやカメラのフラッシュ機能とは別に管理されます。"
 title: "カメラに依存しない懐中電灯"
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
+translationtype: Human Translation
+ms.sourcegitcommit: 1b32633abc9365bf88137dff7c36ba0f2ad05d72
+ms.openlocfilehash: 8c256d8aba08d42fa00b46a01c8b7e773a0ab40c
 
 ---
 
@@ -41,7 +42,7 @@ ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
 
 ## ライトの設定を調整する
 
-[**Lamp**](https://msdn.microsoft.com/library/windows/apps/dn894310) クラスのインスタンスを作成したら、[**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn894330) プロパティを **true** に設定することで、ライトをオンにします。
+[**Lamp**](https://msdn.microsoft.com/library/windows/apps/dn894310) クラスのインスタンスを作成した後、[**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn894330) プロパティを **true** に設定することで、ライトをオンにします。
 
 [!code-cs[LampSettingsOn](./code/Lamp/cs/MainPage.xaml.cs#SnippetLampSettingsOn)]
 
@@ -69,7 +70,8 @@ ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
 
 [!code-cs[DisposeLamp](./code/Lamp/cs/MainPage.xaml.cs#SnippetDisposeLamp)]
 
- 
+## 関連トピック
+- [メディア再生](media-playback.md)
 
  
 
@@ -79,6 +81,6 @@ ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

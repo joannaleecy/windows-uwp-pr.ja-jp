@@ -1,27 +1,30 @@
 ---
 author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
-description: "Microsoft Store Engagement and Monetization SDK の Microsoft Advertising ライブラリの現在のリリースにおける既知の問題について説明します。"
+description: "Microsoft Store Services SDK の Microsoft Advertising ライブラリの現在のリリースにおける既知の問題について説明します。"
 title: "Microsoft Advertising ライブラリに関する既知の問題"
-ms.sourcegitcommit: 5b6d3e034b73e6ae693fbeab3ecd3b2b81f38bb1
-ms.openlocfilehash: cfaa108cc93b6bae903e86ad141656bf613f185d
+translationtype: Human Translation
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 7d0eeda4deac304fb9b573b6ed206a191f037a3e
 
 ---
 
 # Microsoft Advertising ライブラリに関する既知の問題
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-このトピックでは、Microsoft Store Engagement and Monetization SDK の Microsoft Advertising ライブラリの現在のリリースにおける既知の問題について説明します。
 
-## インストールには Visual Studio Tools for Universal Windows Apps が必要
+このトピックでは、Microsoft Store Services SDK (UWP アプリ用) と、Windows および Windows Phone 8.x 用の Microsoft Advertising SDK (Windows 8.1 アプリおよび Windows Phone 8.x アプリ用) の Microsoft Advertising ライブラリの現在のリリースに関する既知の問題を示します。
 
-Visual Studio 2015 と共に [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk) をインストールするには、Visual Studio Tools for Universal Windows Apps のバージョン 1.1 以降がインストールされている必要があります。 詳しくは、Visual Studio の[リリース ノート](http://go.microsoft.com/fwlink/?LinkID=624516)をご覧ください。
+## Microsoft Store Services SDK のインストールには、Visual Studio Tools for Universal Windows Apps が必要
+
+Visual Studio 2015 と共に [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) をインストールするには、Visual Studio Tools for Universal Windows Apps のバージョン 1.1 以降がインストールされている必要があります。 詳しくは、Visual Studio の[リリース ノート](http://go.microsoft.com/fwlink/?LinkID=624516)をご覧ください。
 
 ## Windows Phone 8.x Silverlight プロジェクト
 
-Windows Phone 8.x Silverlight プロジェクト用の Microsoft Advertising アセンブリを入手するには、[Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk) をインストールします。次に、プロジェクトを Visual Studio で開き、**[プロジェクト]**、**[接続済みサービスを追加します]**、**[Ad Mediator]** の順に移動して、アセンブリを自動的にダウンロードします。 その後、広告仲介を使用しない場合は、広告メディエーターの参照をプロジェクトから削除できます。 詳しくは、「[Windows Phone Silverlight の AdControl](adcontrol-in-windows-phone-silverlight.md)」をご覧ください。
+Windows および Windows Phone 8.x 用の Microsoft Advertising SDK では、Windows Phone 8.x Silverlight プロジェクトのサポートが制限されています。 詳しくは、「[アプリでの広告の表示](display-ads-in-your-app.md#silverlight_support)」をご覧ください。
+
+Windows Phone 8.x Silverlight プロジェクト用の Microsoft Advertising アセンブリを入手するには、[Windows および Windows Phone 8.x 用の Microsoft Advertising SDK](http://aka.ms/store-8-sdk) をインストールします。次に、プロジェクトを Visual Studio で開き、**[プロジェクト]** > **[接続済みサービスを追加します]** > **[Ad Mediator]** の順に移動して、アセンブリを自動的にダウンロードします。 その後、広告仲介を使用しない場合は、広告メディエーターの参照をプロジェクトから削除できます。 詳しくは、「[Windows Phone Silverlight の AdControl](adcontrol-in-windows-phone-silverlight.md)」をご覧ください。
 
 ## XAML での不明な AdControl インターフェイス
 
@@ -116,6 +119,6 @@ Microsoft Advertising ライブラリに関する問題について製品サポ�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

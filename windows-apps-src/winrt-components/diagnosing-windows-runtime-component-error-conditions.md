@@ -3,8 +3,9 @@ author: msatranjr
 title: "Windows ランタイム コンポーネントでのエラー状態の診断"
 description: "この記事では、マネージ コードで記述された Windows ランタイム コンポーネントでの制限に関する追加情報について説明します。"
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
+translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
+ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
 
 ---
 
@@ -29,8 +30,7 @@ ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
 
  
 
-> 
-            **注:** Windows ランタイムについて言及したエラー メッセージでは、以前の用語が使われています。 現在では、Windows ランタイムはユニバーサル Windows プラットフォーム (UWP) と呼ばれます。 たとえば、Windows ランタイム型は UWP 型と呼ばれています。
+> **注:** Windows ランタイムについて言及したエラー メッセージでは、以前の用語が使われています。 現在では、Windows ランタイムはユニバーサル Windows プラットフォーム (UWP) と呼ばれます。 たとえば、Windows ランタイム型は UWP 型と呼ばれています。
 
  
 
@@ -51,8 +51,7 @@ ms.openlocfilehash: 29199b7c94c4fecd173fb96f0d8fb43692d72464
 
 マネージ コードで記述された Windows ランタイム コンポーネントでは、パブリック型のオーバーロードされた演算子を公開することはできません。
 
-> 
-            **注:** エラー メッセージでは、演算子は op\_Addition、op\_Multiply、op\_ExclusiveOr、op\_Implicit (暗黙の変換) などのメタデータ名によって識別されます。
+> **注:** エラー メッセージでは、演算子は op\_Addition、op\_Multiply、op\_ExclusiveOr、op\_Implicit (暗黙の変換) などのメタデータ名によって識別されます。
 
  
 
@@ -90,8 +89,7 @@ UWP では、オーバーロードされたメソッドの 1 つが既定のオ�
 
 ユニバーサル Windows プラットフォームでは、Windows メタデータ (.winmd) ファイルに含まれるすべてのパブリック型は、.winmd ファイルの名前を共有する名前空間、またはそのファイル名のサブ名前空間に含まれている必要があります。 たとえば、Visual Studio プロジェクトの名前が A.B (つまり、Windows ランタイム コンポーネントが A.B.winmd) の場合、パブリック クラス A.B.Class1 と A.B.C.Class2 を含めることができますが、A.Class3 (WME0006) または D.Class4 (WME1044) を含めることはできません。
 
-> 
-            **注:** これらの制限はパブリック型だけに適用され、実装で使われるプライベート型には適用されません。
+> **注:** これらの制限はパブリック型だけに適用され、実装で使われるプライベート型には適用されません。
 
  
 
@@ -105,8 +103,7 @@ D.Class4 の場合、ファイル名には D.Class4 と A.B 名前空間内の�
 
 Windows ランタイム コンポーネントの型には、名前空間と同じ名前を付けることはできません (WME1068)。
 
-> 
-            **注意** Winmdexp.exe を直接呼び出し、Windows ランタイム コンポーネントの名前を指定する /out オプションを指定しなかった場合、Winmdexp.exe は、コンポーネント内のすべての名前空間を含めた名前を生成しようとします。 名前空間の名前を変更すると、コンポーネントの名前も変更される場合があります。
+> **注意** Winmdexp.exe を直接呼び出し、Windows ランタイム コンポーネントの名前を指定する /out オプションを指定しなかった場合、Winmdexp.exe は、コンポーネント内のすべての名前空間を含めた名前を生成しようとします。 名前空間の名前を変更すると、コンポーネントの名前も変更される場合があります。
 
  
 
@@ -130,11 +127,9 @@ Windows ランタイム コンポーネントの型には、名前空間と同�
 
 一般に、最適なのは型に最も近いインターフェイスです。 たとえば、Dictionary&lt;int, string&gt; の場合、IDictionary&lt;int, string&gt; が最適と考えられます。
 
-> 
-            **重要** JavaScript では、マネージ型が実装するインターフェイスのリストに最初に現れるインターフェイスが使われます。 たとえば、Dictionary&lt;int, string&gt; を JavaScript コードに返した場合、戻り値の型としてどのインターフェイスを指定しても、IDictionary&lt;int, string&gt; として表示されます。 これは、後のインターフェイスで表示されるメンバーが最初のインターフェイスに含まれていない場合、そのメンバーは JavaScript に認識されないことを意味します。
+> **重要** JavaScript では、マネージ型が実装するインターフェイスのリストに最初に現れるインターフェイスが使われます。 たとえば、Dictionary&lt;int, string&gt; を JavaScript コードに返した場合、戻り値の型としてどのインターフェイスを指定しても、IDictionary&lt;int, string&gt; として表示されます。 これは、後のインターフェイスで表示されるメンバーが最初のインターフェイスに含まれていない場合、そのメンバーは JavaScript に認識されないことを意味します。
 
-> 
-            **注意** JavaScript で利用されるコンポーネントでは、非ジェネリックな [IList](https://msdn.microsoft.com/library/system.collections.ilist.aspx) インターフェイスと [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) インターフェイスを使わないでください。 これらのインターフェイスは、それぞれ [IBindableVector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindablevector.aspx) と [IBindableIterator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindableiterator.aspx) にマップされます。 これらは、XAML コントロールのバインドをサポートし、JavaScript には参照されません。 JavaScript では、実行時エラー ("関数 'X' に無効なシグネチャがあるため、呼び出せません") が発生します。
+> **注意** JavaScript で利用されるコンポーネントでは、非ジェネリックな [IList](https://msdn.microsoft.com/library/system.collections.ilist.aspx) インターフェイスと [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) インターフェイスを使わないでください。 これらのインターフェイスは、それぞれ [IBindableVector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindablevector.aspx) と [IBindableIterator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindableiterator.aspx) にマップされます。 これらは、XAML コントロールのバインドをサポートし、JavaScript には参照されません。 JavaScript では、実行時エラー ("関数 'X' に無効なシグネチャがあるため、呼び出せません") が発生します。
 
  
 
@@ -161,7 +156,6 @@ Windows ランタイム コンポーネントの型には、名前空間と同�
 <tr class="odd">
 <td align="left">WME1039</td>
 <td align="left"><p>メソッド '{0}' は、そのシグネチャに型 '{1}' のパラメーターを指定しています。 このジェネリック型は有効な Windows ランタイム型ではありませんが、この型またはそのジェネリック パラメーターは、有効な Windows ランタイム型であるインターフェイスを実装します。 {2}</p>
-            
 > **注:** {2} には、Winmdexp.exe によって代替のインターフェイスのリストが付加されます。たとえば、"メソッド シグネチャの型 'System.Collections.Generic.List&lt;T&gt;' を次のいずれかの型に変更することを検討してください: 'System.Collections.Generic.IList&lt;T&gt;、System.Collections.Generic.IReadOnlyList&lt;T&gt;、System.Collections.Generic.IEnumerable&lt;T&gt;'。" のように示されます。
 </td>
 </tr>
@@ -190,8 +184,7 @@ UWP では、構造体にはフィールドのみを含めることができ、�
 
 UWP では、メンバーのシグネチャ内の配列は 1 次元で、下限を 0 (ゼロ) に指定する必要があります。 `myArray[][]` (Visual Basic の `myArray()()`) など、入れ子になった配列型を使うことはできません。
 
-> 
-            **注:** この制限は、実装で内部的に使う配列には適用されません。
+> **注:** この制限は、実装で内部的に使う配列には適用されません。
 
  
 
@@ -242,25 +235,23 @@ UWP では、戻り値は出力パラメーターであると見なされ、パ�
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
     > ```
 
-> [!div class="tabbedCodeSnippets"]
+> **注:** 戻り値の名前を変更する場合、新しい名前が別のパラメーターの名前と競合すると、エラー WME1091 が発生します。
 
+JavaScript コードは、戻り値も含め、メソッドの出力パラメーターに名前でアクセスできます。 例については、[ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx) 属性に関するトピックをご覧ください。
 
-            **注:** 戻り値の名前を変更する場合、新しい名前が別のパラメーターの名前と競合すると、エラー WME1091 が発生します。 JavaScript コードは、戻り値も含め、メソッドの出力パラメーターに名前でアクセスできます。
-
-| 例については、[ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx) 属性に関するトピックをご覧ください。 | エラー番号 |
+| エラー番号 | メッセージ テキスト |
 |---------------|------------|
-| メッセージ テキスト | WME1091 メソッド '\{0}' には、パラメーター名と同じ '\{1}' という名前の戻り値があります。 |
-| Windows ランタイム メソッドのパラメーターと戻り値には一意の名前を指定する必要があります。 | WME1092 メソッド '\{0}' には、既定の戻り値の名前と同じ '\{1}' という名前のパラメーターが指定されています。<br/>このパラメーターに別の名前を使用するか、System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute を使用して、戻り値の名前を明示的に指定してください。 |
+| WME1091 | メソッド '\{0}' には、パラメーター名と同じ '\{1}' という名前の戻り値があります。 Windows ランタイム メソッドのパラメーターと戻り値には一意の名前を指定する必要があります。 |
+| WME1092 | メソッド '\{0}' には、既定の戻り値の名前と同じ '\{1}' という名前のパラメーターが指定されています。 このパラメーターに別の名前を使用するか、System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute を使用して、戻り値の名前を明示的に指定してください。<br/>**注:** 既定の名前は、プロパティ アクセサーでは "returnValue"、その他のすべてのメソッドでは "value" となります。 |
  
 
-## 
-            **注:** 既定の名前は、プロパティ アクセサーでは "returnValue"、その他のすべてのメソッドでは "value" となります。
+## 関連トピック
 
-* [関連トピック](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-* [C# および Visual Basic での Windows ランタイム コンポーネントの作成](https://msdn.microsoft.com/library/hh925576.aspx)
-
+* [C# および Visual Basic での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Winmdexp.exe (Windows ランタイム メタデータ エクスポート ツール)](https://msdn.microsoft.com/library/hh925576.aspx)
 
 
-<!--HONumber=Jun16_HO5-->
+
+<!--HONumber=Aug16_HO3-->
 
 

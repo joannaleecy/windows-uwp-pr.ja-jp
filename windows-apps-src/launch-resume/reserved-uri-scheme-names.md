@@ -3,8 +3,9 @@ author: TylerMSFT
 title: "予約済みのファイルと URI スキーム名"
 description: "URI の関連付けを使用すると、別のアプリで特定の URI スキームを起動したときに自分のアプリを自動的に起動できます。"
 ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 2736267bf72b1cadd2c635b15daf6975a70937df
+ms.openlocfilehash: 2d3d647985701a7bbccc606fd485ad9f6361f9e7
 
 ---
 # 予約済みのファイルと URI スキーム名
@@ -127,6 +128,6 @@ URI の関連付けを使用すると、別のアプリで特定の URI スキ�
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

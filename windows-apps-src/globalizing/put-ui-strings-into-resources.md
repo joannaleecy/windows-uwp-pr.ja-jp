@@ -5,8 +5,9 @@ title: "UI 文字列をリソースに格納する"
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Put UI strings into resources
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: b44d9235e34b8d4c75f663029d1dde3f87bd0eb7
+ms.openlocfilehash: e404eceb4aad562474cff264bb992a3d71a3bed4
 
 ---
 
@@ -31,24 +32,20 @@ UI の文字列リソースをリソース ファイルに格納します。 そ
 1.  Visual Studio でソリューションを開きます (または新しいソリューションを作成します)。
 
 2.  Visual Studio で package.appxmanifest を開き、**[アプリケーション]** タブに移動して、(この例の場合) 既定の言語を "en-US" に設定します。 ソリューションに複数の package.appxmanifest ファイルがある場合、各ファイルに対してこの手順を実行します。
-    <br>
-            **注:** これにより、プロジェクトの既定の言語を指定します。 既定の言語リソースは、ユーザーが優先する言語または表示言語がアプリケーションで提供される言語リソースに一致しない場合に使われます。
+    <br>**注:** これにより、プロジェクトの既定の言語を指定します。 既定の言語リソースは、ユーザーが優先する言語または表示言語がアプリケーションで提供される言語リソースに一致しない場合に使われます。
 3.  リソース ファイルを格納するためのフォルダーを作ります。
-    1.  ソリューション エクスプローラーで、プロジェクト (ソリューションに複数のプロジェクトが含まれる場合は共有プロジェクト) を右クリックし、**[追加]**、**[新しいフォルダー]** を順に選びます。
+    1.  ソリューション エクスプローラーで、プロジェクト (ソリューションに複数のプロジェクトが含まれる場合は共有プロジェクト) を右クリックし、**[追加]** &gt; **[新しいフォルダー]** を順に選びます。
     2.  新しいフォルダーに "Strings" という名前を付けます。
-    3.  ソリューション エクスプローラーに新しいフォルダーが表示されない場合は、プロジェクトが選ばれている状態で Microsoft Visual Studio のメニューの **[プロジェクト]**、**[すべてのファイルを表示]** を順に選びます。
+    3.  ソリューション エクスプローラーに新しいフォルダーが表示されない場合は、プロジェクトが選ばれている状態で Microsoft Visual Studio のメニューの **[プロジェクト]** &gt; **[すべてのファイルを表示]** を順に選びます。
 
 4.  英語 (米国) 用のサブフォルダーとリソース ファイルを作ります。
     1.  Strings フォルダーを右クリックし、その下に新しいフォルダーを追加します。 新しいフォルダーに "en-US" という名前を付けます。 リソース ファイルは、[BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) 言語タグの名前を持つフォルダーに格納します。 言語修飾子の詳しい情報と共通の言語タグの一覧は、「[修飾子を使ってリソースに名前を付ける方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)」をご覧ください。
-    2.  en-US フォルダーを右クリックし、**[追加]**、**[新しい項目]** の順に選びます。
-    3.  
-                    **XAML:** [リソース ファイル (.resw)] を選びます。
-<br>
-            **HTML:** [リソース ファイル (.resjson)] を選びます。
+    2.  en-US フォルダーを右クリックし、**[追加]** &gt; **[新しい項目]** の順に選びます。
+    3.  **XAML:** [リソース ファイル (.resw)] を選びます。
+        <br>**HTML:** [リソース ファイル (.resjson)] を選びます。
 
     4.  **[追加]** をクリックします。 "Resources.resw" (**XAML** の場合) または "resources.rejson" (**HTML** の場合) という既定の名前の付いたリソース ファイルが追加されます。 この既定のファイル名を使うことをお勧めします。 アプリはリソースを他のファイルに分割できますが、そのファイルを正しく参照するように注意する必要があります (「[文字列リソースを読み込む方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)」をご覧ください)。
-    5.  
-            **XAML のみ:** 以前の .NET プロジェクトの文字列リソースだけを含む .resx ファイルがある場合は、**[追加]**、**[既存の項目]** の順に選び、.resx ファイルを追加し、.resw に名前を変更します。
+    5.  **XAML のみ:** 以前の .NET プロジェクトの文字列リソースだけを含む .resx ファイルがある場合は、**[追加]** &gt; **[既存の項目]** の順に選び、.resx ファイルを追加し、.resw に名前を変更します。
     6.  ファイルを開き、エディターを使ってこれらのリソースを追加します。
 
         **XAML:**
@@ -115,8 +112,7 @@ auto str = loader->GetString("Farewell");
 
 1.  JavaScript 用 Windows ライブラリへの参照を HTML ファイルに追加していない場合は追加します。
 
-    
-            **注:** 次のコードは、Visual Studio で新しい **[空のアプリケーション (ユニバーサル Windows)]** JavaScript プロジェクトを作ると生成される Windows プロジェクトの default.html ファイルの HTML を示しています。 ファイルには WinJS への参照が既に含まれていることに注意してください。
+    **注:** 次のコードは、Visual Studio で新しい **[空のアプリケーション (ユニバーサル Windows)]** JavaScript プロジェクトを作ると生成される Windows プロジェクトの default.html ファイルの HTML を示しています。 ファイルには WinJS への参照が既に含まれていることに注意してください。
 
     ```    HTML
     <!-- WinJS references -->
@@ -164,8 +160,7 @@ auto str = loader->GetString("Farewell");
 
     HTML の置き換えの data-win-res 属性の標準パターンは data-win-res="{*propertyname1*: '*resource ID*', *propertyname2*: '*resource ID2*'}" です。
 
-    
-            **注:** 文字列にマークアップが含まれていない場合は、可能な限り、リソースを innerHTML ではなく textContent プロパティにバインドします。 textContent プロパティの方が、innerHTML よりも高速で置き換えることができます。
+    **注:** 文字列にマークアップが含まれていない場合は、可能な限り、リソースを innerHTML ではなく textContent プロパティにバインドします。 textContent プロパティの方が、innerHTML よりも高速で置き換えることができます。
 
 5.  JavaScript で文字列リソースを参照します。
     <span codelanguage="JavaScript"></span>
@@ -254,6 +249,6 @@ auto str = loader->GetString("Farewell");
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

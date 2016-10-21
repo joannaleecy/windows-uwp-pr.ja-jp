@@ -1,34 +1,32 @@
 ---
 author: mcleanbyron
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
-description: "Microsoft Store Engagement and Monetization SDK に含まれる Microsoft Advertising ライブラリのリリース ノートを確認します。"
+description: "Microsoft Store Services SDK に含まれる Microsoft Advertising ライブラリのリリース ノートを確認します。"
 title: "Microsoft Advertising ライブラリのリリース ノート"
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 8e2114e969b27d579f62195f026cfcfd9672a94a
+translationtype: Human Translation
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: b82c4385b0e7089bdddbe094f47f0766f90aa21b
 
 ---
 
 # Microsoft Advertising ライブラリのリリース ノート
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-このセクションでは、Microsoft Store Engagement and Monetization SDK に含まれる Microsoft Advertising ライブラリの最新リリースのリリース ノートを提供します。 これらのライブラリは、Windows 10、Windows 8.1、Windows Phone 8.1、Windows Phone 8 用の XAML アプリと JavaScript/HTML アプリをサポートします。
+
+このセクションでは、Microsoft Store Services SDK (UWP アプリ用) と、Windows および Windows Phone 8.x 用の Microsoft Advertising SDK (Windows 8.1 アプリおよび Windows Phone 8.x アプリ用) の Microsoft Advertising ライブラリの現在のリリースに関するリリース ノートを示します。 これらのライブラリは、Windows 10、Windows 8.1、Windows Phone 8.1、Windows Phone 8 用の XAML アプリと JavaScript/HTML アプリをサポートします。
 
 ## インストール
 
 
-Microsoft Advertising ライブラリは、[Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk) の一部として入手できます。 Windows Phone 8.x Silverlight 以外のすべてのプロジェクト タイプについて、以前に Microsoft Universal Ad Client SDK および Microsoft Advertising SDK のスタンドアロン リリースで配布されていた Microsoft Advertising アセンブリは、Microsoft Store Engagement and Monetization SDK と共にインストールされるようになりました。 この SDK と SDK に含まれているライブラリのインストールについて詳しくは、「[Microsoft Advertising ライブラリのインストール](install-the-microsoft-advertising-libraries.md)」をご覧ください。
+Microsoft Advertising ライブラリは、[Microsoft Store Services SDK](http://aka.ms/store-em-sdk) (UWP アプリ用) と [Windows および Windows Phone 8.x 用の Microsoft Advertising SDK](http://aka.ms/store-8-sdk) (Windows 8.1 アプリおよび Windows Phone 8.x アプリ用) の一部として入手できます。 この SDK と SDK に含まれているライブラリのインストールについて詳しくは、「[Microsoft Advertising ライブラリのインストール](install-the-microsoft-advertising-libraries.md)」をご覧ください。
 
-Windows Phone 8.x Silverlight プロジェクト用の Microsoft Advertising アセンブリを入手するには、[Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk) をインストールします。次に、プロジェクトを Visual Studio で開き、**[プロジェクト]** > **[接続済みサービスを追加します]** > **[Ad Mediator]** の順に移動して、アセンブリを自動的にダウンロードします。 その後、広告仲介を使用しない場合は、広告メディエーターの参照をプロジェクトから削除できます。 詳しくは、「[AdControl in Windows Phone Silverlight (Windows Phone Silverlight での AdControl)](adcontrol-in-windows-phone-silverlight.md)」をご覧ください。
+Windows Phone 8.x Silverlight プロジェクト用の Microsoft Advertising アセンブリを入手するには、[Windows および Windows Phone 8.x 用の Microsoft Advertising SDK](http://aka.ms/store-8-sdk) をインストールします。次に、プロジェクトを Visual Studio で開き、**[プロジェクト]** > **[接続済みサービスを追加します]** > **[Ad Mediator]** の順に移動して、アセンブリを自動的にダウンロードします。 その後、広告仲介を使用しない場合は、広告メディエーターの参照をプロジェクトから削除できます。 詳しくは、「[AdControl in Windows Phone Silverlight (Windows Phone Silverlight での AdControl)](adcontrol-in-windows-phone-silverlight.md)」をご覧ください。
 
-## Microsoft Advertising ライブラリと広告仲介の違いについて
-
-Microsoft Advertising ライブラリと広告仲介ライブラリはどちらも Microsoft Store Engagement and Monetization SDK によって提供されますが、これらのライブラリの用途は異なります。 XAML または JavaScript アプリでマイクロソフトのバナーやビデオのスポット広告を表示する場合には、Microsoft Advertising ライブラリの [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) クラスおよび [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) クラスを使います。 XAML アプリで複数の広告ネットワークからのバナー広告を表示する場合には、広告仲介ライブラリの **AdMediatorControl** クラスを使います (広告仲介は JavaScript/HTML アプリではサポートされていません)。 詳しくは、「[AdMediatorControl と AdControl の違い](what-is-the-difference-admediatorcontrol-or-adcontrol.md)」をご覧ください。
 
 ## 以前のバージョンのアンインストール
 
-Microsoft Store Engagement and Monetization SDK をインストールする前に、Microsoft Universal Ad Client SDK や Microsoft Advertising SDK の以前のインスタンスをすべてアンインストールすることをお勧めします。
+Microsoft Store Services SDK (UWP アプリ用) または Windows および Windows Phone 8.x 用の Microsoft Advertising SDK (Windows 8.1 アプリおよび Windows Phone 8.x アプリ用) をインストールする前に、Microsoft Universal Ad Client SDK または Microsoft Advertising SDK の以前のインスタンスをすべてアンインストールすることを強くお勧めします。
 
 ## ターゲット アーキテクチャ固有のビルドの出力
 
@@ -40,7 +38,7 @@ Microsoft Advertising ライブラリ (**AdControl** クラスと **Interstitial
 
 ## ツールボックス コントロールはない
 
-Microsoft Store Engagement and Monetization SDK に含まれる Microsoft Advertising ライブラリの現在のリリースには、**AdControl** や **InterstitialAd** をアプリのデザイン サーフェイスにドラッグするためのツールボックス コントロールはありません。 マークアップとコードでこれらのコントロールを追加する方法については、[開発者向けのチュートリアル](developer-walkthroughs.md)をご覧ください。
+Microsoft Store Services SDK または Windows および Windows Phone 8.x 用の Microsoft Advertising SDK に含まれる Microsoft Advertising ライブラリの現在のリリースには、**AdControl** や **InterstitialAd** をアプリのデザイン サーフェイスにドラッグするためのツールボックス コントロールがありません。 マークアップとコードでこれらのコントロールを追加する方法については、[開発者向けのチュートリアル](developer-walkthroughs.md)をご覧ください。
 
 ## 使用できなくなった緯度と経度のプロパティ
 
@@ -56,6 +54,6 @@ Microsoft Store Engagement and Monetization SDK に含まれる Microsoft Advert
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

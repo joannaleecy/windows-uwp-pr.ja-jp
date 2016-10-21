@@ -5,8 +5,9 @@ title: "UWP アプリでのモーションとアニメーション"
 ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
 label: Motion
 template: detail.hbs
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: aa1283ed9dbb895854b8d7b2bb16eb485b377fce
+translationtype: Human Translation
+ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
+ms.openlocfilehash: 1cdbb81c783d17af16743a4ff5f82dc1c92df6b4
 
 ---
 
@@ -14,7 +15,7 @@ ms.openlocfilehash: aa1283ed9dbb895854b8d7b2bb16eb485b377fce
 
 目的がはっきりし、適切にデザインされたアニメーションは、アプリを生き生きとさせ、精巧で洗練された印象を与えます。 コンテキストの変化がわかりやすく、視覚的な切り替えがエクスペリエンスに結び付きます。
 
-## <span id="Benefits_of_animation"></span><span id="benefits_of_animation"></span><span id="BENEFITS_OF_ANIMATION"></span>アニメーションの利点
+## アニメーションの利点
 
 
 アニメーションは、単にものを動かすだけではありません。 アニメーションはユーザーがアプリに入り込み、タッチを通じて操作するための物理的なエコシステムを作るツールです。 エクスペリエンスの品質は、ユーザーに対するアプリの反応の良さと、UI が伝える個性の種類によって変わります。
@@ -61,7 +62,7 @@ ms.openlocfilehash: aa1283ed9dbb895854b8d7b2bb16eb485b377fce
         </td>
         <td>リスト アニメーションを使うと、写真のアルバムや検索結果の一覧などのコレクションに対して任意の数の項目を挿入または削除できます。
         </td>
-    </tr> 
+    </tr>
     <tr>
         <td>[ドラッグ アンド ドロップ](motion-dragdrop.md)
         </td>
@@ -110,10 +111,6 @@ ms.openlocfilehash: aa1283ed9dbb895854b8d7b2bb16eb485b377fce
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 

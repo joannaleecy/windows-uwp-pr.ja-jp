@@ -5,21 +5,31 @@ ms.assetid: E9E4537F-1160-4183-9A83-26602FCFDC9A
 description: "分割ビュー コントロールには、展開/折りたたみ可能なウィンドウとコンテンツ領域があります。"
 label: Split view
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 391bfdbbf09474ad707dbbf306d4997825fa8386
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 7fae1477b997508ade92a5bbb977c1d6530a181f
 
 ---
+# 分割ビュー コントロール
 
-# SplitView コントロールのガイドライン
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
+分割ビュー コントロールには、展開/折りたたみ可能なウィンドウとコンテンツ領域があります。
+
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn864360"><strong>SplitView クラス (XAML)</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn919970"><strong>SplitView オブジェクト (HTML)</strong></a></li>
+</ul>
+
+</div>
+</div>
 
 
 
-**重要な API**
 
--   [**SplitView クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn864360)
--   [**SplitView オブジェクト (HTML)**](https://msdn.microsoft.com/library/windows/apps/dn919970)
-
-分割ビュー コントロールには、展開/折りたたみ可能なウィンドウとコンテンツ領域があります。 コンテンツ領域は常に表示されます。 ウィンドウは展開/折りたたみを行うことも、開いた状態のままにすることもでき、アプリ ウィンドウの右側または左側から表示できます。 このウィンドウには 4 つのモードがあります。
+ 分割ビューのコンテンツ領域は常に表示されます。 ウィンドウは展開/折りたたみを行うことも、開いた状態のままにすることもでき、アプリ ウィンドウの右側または左側から表示できます。 このウィンドウには 4 つのモードがあります。
 
 -   **オーバーレイ**
 
@@ -37,13 +47,13 @@ ms.openlocfilehash: 391bfdbbf09474ad707dbbf306d4997825fa8386
 
     このモードでは、ウィンドウの狭い部分が常にアイコンを表示できるだけの大きさで表示されます。 閉じたウィンドウの既定の幅は 48 ピクセルで、この値は `CompactPaneLength` で変更できます。 ウィンドウを開くと、コンテンツを押しのけるようにして、コンテンツの利用可能な領域が小さくなります。
 
-## <span id="Is_this_the_right_control_"></span><span id="is_this_the_right_control_"></span><span id="IS_THIS_THE_RIGHT_CONTROL_"></span>適切なコントロールの選択
+## 適切なコントロールの選択
 
 分割ビュー コントロールは、[ナビゲーション ウィンドウ](nav-pane.md)の作成に使うことができます。 このパターンを構築するには、展開/折りたたみボタン ("ハンバーガー" ボタン) とナビゲーション項目を表すリスト ビューを追加する必要があります。
 
 分割ビュー コントロールを使って、ユーザーが補足的なウィンドウを開いたり閉じたりできる "引き出し" エクスペリエンスを作成することもできます。
 
-## <span id="Examples"></span><span id="examples"></span><span id="EXAMPLES"></span>例
+## 例
 
 既定の形式の分割ビュー コントロールは、基本的なコンテナーです。 SplitView を使ってハブを表示する Microsoft Edge アプリの例を次に示します。
 
@@ -51,7 +61,7 @@ ms.openlocfilehash: 391bfdbbf09474ad707dbbf306d4997825fa8386
 
 
 
-## <span id="related_topics"></span>関連トピック
+## 関連トピック
 
 
 * [ナビゲーション ウィンドウ パターン](nav-pane.md)
@@ -62,6 +72,6 @@ ms.openlocfilehash: 391bfdbbf09474ad707dbbf306d4997825fa8386
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

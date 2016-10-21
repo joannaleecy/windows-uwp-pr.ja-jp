@@ -1,17 +1,16 @@
 ---
 description: "世界中のユーザーに対してアプリを包括的にしてアクセシビリティ対応にする方法について説明します。"
-keywords: uwp app accessibility, globalization, design inclusive apps, accessibility app requirements
+keywords: "UWP アプリのアクセシビリティ, グローバリゼーション, インクルーシブ デザイン アプリ, アクセシビリティ アプリの要件"
 title: "UWP アプリの操作性 - Windows アプリ開発"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 5370dd078db81de606b7a4bbfcf6dd36b2280a17
-ms.openlocfilehash: 457ddacd80b3f9308b2eb66ce0ac2d448bb59ed2
+ms.sourcegitcommit: 589e3290a47a9245ddb5e43f64d13bae1244ac8b
+ms.openlocfilehash: d7246bc898e36155996941875b6c00da7891809d
 
 ---
-
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
 # UWP アプリの操作性
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 少しの配慮で細かい点に注意するだけで、単に優れたユーザー エクスペリエンスから、世界中のユーザーのニーズを満たす真に包括的なユーザー エクスペリエンスに変えることができます。
 
@@ -104,7 +103,7 @@ ms.openlocfilehash: 457ddacd80b3f9308b2eb66ce0ac2d448bb59ed2
 
 ## グローバリゼーションとローカライズ
 
-Windows は世界中で利用されており、文化、地域、言語の異なるユーザーがいます。 ユーザーは、自分の使用言語としてどの言語でも指定でき、複数の言語を指定することもできます。 住んでいる地域として世界中のどの場所を指定することもでき、地域を問わずどの言語でも指定できます。 グローバリゼーションとローカライズによってアプリの適応性を直ちに高めることにより、潜在的な市場が広がります。 
+Windows は世界中で利用されており、文化、地域、言語の異なるユーザーがいます。 ユーザーは、自分の使用言語としてどの言語でも指定でき、複数の言語を指定することもできます。 住んでいる地域として世界中のどの場所を指定することもでき、地域を問わずどの言語でも指定できます。 グローバリゼーションとローカライズによってアプリの適応性を直ちに高めることにより、潜在的な市場が広がります。
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -154,7 +153,7 @@ Windows は世界中で利用されており、文化、地域、言語の異な
 
 ## アプリの設定
 
-アプリの設定を利用することで、ユーザーがアプリをカスタマイズしたり、個人のニーズや好みに合わせてアプリを最適化したりすることができます。 適切な設定を提供し、適切に保存することで、優れたユーザー エクスペリエンスをさらに向上させることができます。 
+アプリの設定を利用することで、ユーザーがアプリをカスタマイズしたり、個人のニーズや好みに合わせてアプリを最適化したりすることができます。 適切な設定を提供し、適切に保存することで、優れたユーザー エクスペリエンスをさらに向上させることができます。
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -168,16 +167,16 @@ Windows は世界中で利用されており、文化、地域、言語の異な
 </div>
 
 ## アプリ内ヘルプ
-アプリの設計がどれほど優れていても、ユーザーはヘルプを必要とする場合があります。 
+アプリの設計がどれほど優れていても、ユーザーはヘルプを必要とする場合があります。
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[アプリのヘルプのガイドライン](../app-help-guidelines/guidelines-for-app-help.md)</b><br/>アプリケーションが複雑な場合には、ユーザーに効果的なヘルプを提供することにより、ユーザー エクスペリエンスを大幅に改善できます。 
+<p><b>[アプリのヘルプのガイドライン](../in-app-help/guidelines-for-app-help.md)</b><br/>アプリケーションが複雑な場合には、ユーザーに効果的なヘルプを提供することにより、ユーザー エクスペリエンスを大幅に改善できます。
 </p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[説明 UI](../app-help-guidelines/instructional-ui.md)</b><br/>特定のタッチ操作など、ユーザーにわかりにくいアプリの機能をユーザーに伝えると便利な場合があります。 このような場合は、わかりにくいと思われる機能をユーザーが検出し使用できるように、UI を使ってユーザーに指示を示す必要があります。</p>
+<p><b>[説明 UI](../in-app-help/instructional-ui.md)</b><br/>特定のタッチ操作など、ユーザーにわかりにくいアプリの機能をユーザーに伝えると便利な場合があります。 このような場合は、わかりにくいと思われる機能をユーザーが検出し使用できるように、UI を使ってユーザーに指示を示す必要があります。</p>
   </div>
 </div>
 </div>
@@ -185,19 +184,16 @@ Windows は世界中で利用されており、文化、地域、言語の異な
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[アプリ内ヘルプ](../app-help-guidelines/in-app-help.md)</b><br/>多くの場合、アプリケーション内でユーザーがヘルプの表示を選んだときに、ヘルプが表示されるのが適切な方法です。 アプリ内ヘルプを作成するときは、次のガイドラインを考慮してください。</p>
+<p><b>[アプリ内ヘルプ](../in-app-help/in-app-help.md)</b><br/>多くの場合、アプリケーション内でユーザーがヘルプの表示を選んだときに、ヘルプが表示されるのが適切な方法です。 アプリ内ヘルプを作成するときは、次のガイドラインを考慮してください。</p>
   </div>
   <div class="side-by-side-content-right">
-<p><b>[外部のヘルプ](../app-help-guidelines/external-help.md)</b><br/>多くの場合、アプリケーション内でユーザーがヘルプの表示を選んだときに、ヘルプが表示されるのが適切な方法です。 アプリ内ヘルプを作成するときは、次のガイドラインを考慮してください。</p>
+<p><b>[外部のヘルプ](../in-app-help/external-help.md)</b><br/>多くの場合、アプリケーション内でユーザーがヘルプの表示を選んだときに、ヘルプが表示されるのが適切な方法です。 アプリ内ヘルプを作成するときは、次のガイドラインを考慮してください。</p>
   </div>
 </div>
 </div>
 
 
 
-
-
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

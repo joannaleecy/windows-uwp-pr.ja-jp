@@ -3,8 +3,9 @@ author: jwmsft
 description: "マークアップとコード ビハインドの間で部分クラスを結合するための XAML コンパイルを設定します。 コードの部分クラスは、個別のコード ファイルで定義され、マークアップ部分クラスは XAML コンパイル時のコード生成によって作成されます。"
 title: "xClass 属性"
 ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 83267df025baeb802bfdd0ec03ecd3bf7b01db76
+translationtype: Human Translation
+ms.sourcegitcommit: 3144758352b99f8c145a3c7be8a6c43d6a002104
+ms.openlocfilehash: 1d04755cc9a2b7689d5373772803b6697227b18a
 
 ---
 
@@ -32,8 +33,7 @@ ms.openlocfilehash: 83267df025baeb802bfdd0ec03ecd3bf7b01db76
 
 ## 注釈
 
-
-            **x:Class** は、XAML ファイル/オブジェクト ツリーのルートであり、ビルド アクションによってコンパイルされる任意の要素か、コンパイルされたアプリケーションのアプリケーション定義中の [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) ルートの属性として宣言できます。 ページ ルートまたはアプリケーション ルート以外の任意の要素に対して **x:Class** を宣言した場合、XAML ファイルが **Page** ビルド動作でコンパイルされていない任意の状況下で、コンパイル時エラーになります。
+**x:Class** は、XAML ファイル/オブジェクト ツリーのルートであり、ビルド アクションによってコンパイルされる任意の要素か、コンパイルされたアプリケーションのアプリケーション定義中の [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) ルートの属性として宣言できます。 ルート ノード以外の任意の要素に対して **x:Class** を宣言した場合、XAML ファイルが **Page** ビルド動作でコンパイルされていない任意の状況下で、コンパイル時エラーになります。
 
 **x:Class** として使われたクラスは、ネストされたクラスにすることはできません。
 
@@ -46,6 +46,6 @@ ms.openlocfilehash: 83267df025baeb802bfdd0ec03ecd3bf7b01db76
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

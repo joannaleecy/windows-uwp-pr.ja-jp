@@ -3,8 +3,8 @@ author: jwmsft
 title: "バージョン アダプティブ コード"
 description: "以前のバージョンとの互換性を維持しつつ、新しい API を利用する方法について説明します"
 translationtype: Human Translation
-ms.sourcegitcommit: 3f81d80cef0fef6d24cad1b42ce9726b03857b5a
-ms.openlocfilehash: db6b9c83d36ac876661197dce81e5724e44bb640
+ms.sourcegitcommit: 24a62c9331d4f651937f3f795fb1e7c9704af2ca
+ms.openlocfilehash: 7656018c61688bddbf23f889a82af4fd6d58c3ea
 
 ---
 
@@ -13,9 +13,6 @@ ms.openlocfilehash: db6b9c83d36ac876661197dce81e5724e44bb640
 Windows 10 SDK の各リリースには、ユーザーが利用したくなるような魅力的な新機能が追加されています。 ただし、すべてのユーザーがデバイスを最新バージョンの Windows 10 に同時に更新するわけではないため、できるだけ幅広いデバイスでアプリが動作するようにする必要があります。 ここでは、アプリが以前のバージョンの Windows 10 で動作するだけでなく、最新の更新プログラムがインストールされたデバイスでアプリを実行したときに新機能を利用できるように、アプリを設計する方法について説明します。
 
 アプリができるだけ幅広い Windows 10 デバイスをサポートするようにするには、2 つの手順を実行します。 まず、最新の API を対象とするように Visual Studio プロジェクトを構成します。 これは、アプリをコンパイルするときの処理に影響します。 次に、ランタイム チェックを実行して、アプリが実行されているデバイスに存在する API のみを呼び出すことを確認します。
-
-> [!NOTE] 
-> この記事では、Windows 10 バージョン 1607 (Anniversary Update) 用 Windows Insider Preview SDK の例を使います。 Preview SDK はプレリリース版なので、運用環境では使うことができません。 SDK をインストールするのは、テスト コンピューターのみにしてください。 Preview SDK には API サーフェス領域に対するバグ修正と開発過程での変更点が含まれています。 ストアに提出する必要があるアプリケーションに取り組んでいる場合は、プレビュー版をインストールしないでください。
 
 ## Visual Studio プロジェクトを構成する
 
@@ -43,7 +40,7 @@ Visual Studio で既に作成済みのプロジェクトの最小バージョン
 参考までに、各 SDK には次のようにビルド番号があります:
 - Windows 10 バージョン 1506: SDK バージョン 10240
 - Windows 10 バージョン 1511 (11 月の更新プログラム): SDK バージョン 10586
-- Windows 10 バージョン 1607 Insider Preview (Anniversary Update): 現時点では、[最新の Insider Preview SDK バージョンは 14332](https://blogs.windows.com/buildingapps/2016/04/28/windows-10-anniversary-sdk-preview-build-14332-released/) です。
+- Windows 10 バージョン 1607 (Anniversary Update): SDK バージョン 14393。
 
 SDK のすべてのリリース版は、「[Windows SDK とエミュレーターのアーカイブ](https://developer.microsoft.com/downloads/sdk-archive)」からダウンロードできます。 最新の Windows Insider Preview SDK は、[Windows Insider](https://insider.windows.com/) サイトの「開発者向け」セクションからダウンロードできます。
 
@@ -192,8 +189,7 @@ XAML またはチェックを含まないコードで ChatWithoutEmoji 値を使
 
 Windows 10 バージョン 1607 には、[**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) と呼ばれる新しいメディア コントロールが導入されています。 このコントロールは、[MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx) クラスに基づいて作成されているため、バックグラウンド オーディオに簡単に結び付けることができるような機能が追加され、メディア スタックの向上したアーキテクチャを活用しています。
 
-ただし、アプリが Windows 10 バージョン 1607 より古いバージョンを実行しているデバイスで実行される場合、新しい **MediaPlayerElement** コントロールではなく、[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.aspx) コントロールを使う必要があります。 [
-            **ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.istypepresent.aspx) メソッドを使って実行時に MediaPlayerElement コントロールが存在するかどうかをチェックし、アプリが実行されているシステムに適しているコントロールを読み込むことができます。
+ただし、アプリが Windows 10 バージョン 1607 より古いバージョンを実行しているデバイスで実行される場合、新しい **MediaPlayerElement** コントロールではなく、[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.aspx) コントロールを使う必要があります。 [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.istypepresent.aspx) メソッドを使って実行時に MediaPlayerElement コントロールが存在するかどうかをチェックし、アプリが実行されているシステムに適しているコントロールを読み込むことができます。
 
 この例は、新しい MediaPlayerElement または古い MediaElement を使うアプリを作成する方法を示しています。どちらを使うかは、MediaPlayerElement 型が存在するかどうかによって異なります。 このコードでは、[UserControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol.aspx) クラスを使って、コントロール、およびそれに関連する UI とコードをコンポーネント化し、OS バージョンに基づいて切り替えることができるようにしています。 また、このシンプルな例に必要なものよりも機能的でカスタムの動作を提供するカスタム コントロールを使うこともできます。
  
@@ -482,6 +478,6 @@ class IsEnumPresentTrigger : StateTriggerBase
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

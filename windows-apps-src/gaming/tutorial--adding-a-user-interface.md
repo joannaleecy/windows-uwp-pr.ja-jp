@@ -3,8 +3,9 @@ author: mtoepke
 title: "ユーザー インターフェイスの追加"
 description: "これまでは、サンプル ゲームでメイン ゲーム オブジェクトと基本的なレンダリング フレームワークを実装する方法について確認してきました。"
 ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d7af6683ab2def1af62e73be008e9189190cde95
+ms.openlocfilehash: 4f4ca9626e38ce7449b6476345205d136b3d9a2d
 
 ---
 
@@ -172,8 +173,7 @@ void GameHud::Render(
 
 このコードでは、オーバーレイに設定された Direct2D レンダー ターゲットが、ヒット数、残り時間、レベルの変化に応じて更新されます。 四角形は [**DrawRect**](https://msdn.microsoft.com/library/windows/desktop/dd371902) を呼び出すと描画され、十字線は [**DrawLine**](https://msdn.microsoft.com/library/windows/desktop/dd371895) をペアで呼び出すと描画されます。
 
-> 
-            **注**   **GameHud::Render** の呼び出しで、メイン ウィンドウの四角形のサイズを示す [**Windows::Foundation::Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) パラメーターが指定されていることにお気付きでしょうか。 これは、UI プログラミングの重要な部分、つまり、DIP (デバイスに依存しないピクセル数、1/96 インチに定義) と呼ばれる単位でのウィンドウ サイズの取得を示しています。 Direct2D では、描画の発生時に描画単位を実際のピクセル数に拡大/縮小し、これには、Windows のドット/インチ (DPI) 設定を使います。 同様に、DirectWrite を使ってテキストを描画するときは、フォントのサイズにポイント数ではなく DIP を指定します。 DIP は、浮動小数点数として表されます。
+> **注**   **GameHud::Render** の呼び出しで、メイン ウィンドウの四角形のサイズを示す [**Windows::Foundation::Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) パラメーターが指定されていることにお気付きでしょうか。 これは、UI プログラミングの重要な部分、つまり、DIP (デバイスに依存しないピクセル数、1/96 インチに定義) と呼ばれる単位でのウィンドウ サイズの取得を示しています。 Direct2D では、描画の発生時に描画単位を実際のピクセル数に拡大/縮小し、これには、Windows のドット/インチ (DPI) 設定を使います。 同様に、DirectWrite を使ってテキストを描画するときは、フォントのサイズにポイント数ではなく DIP を指定します。 DIP は、浮動小数点数として表されます。
 
  
 
@@ -366,8 +366,7 @@ void GameInfoOverlay::RecreateDpiDependentResources()
 
 **Initialize** メソッドは、渡された [**ID2D1Device**](https://msdn.microsoft.com/library/windows/desktop/hh404478) オブジェクトからファクトリを取得し、これを使ってオーバーレイ オブジェクト自身が中に描画できる [**ID2D1DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/hh404479) を作り、提供された [**IDWriteFactory**](https://msdn.microsoft.com/library/windows/desktop/dd368183) 参照に **m\_dWriteFactory** フィールドを設定します。 さらに、コンテキストの DPI も設定します。 その後、**RecreateDeviceResources** を呼び出してオーバーレイの作成と描画を行います。
 
-
-            **RecreateDeviceResources** は、DirectWrite ファクトリ オブジェクトを使って、オーバーレイに表示されるタイトルと本文のテキスト文字列用のフォーマッタ (ブラシ) を作ります。 テキストの描画用には白のブラシ、背景の描画用には黒のブラシ、操作メッセージの描画用にはオレンジ色のブラシを作ります。 次に、**RecreateDpiDependentResources** を呼び出し、[**ID2D1DeviceContext::CreateBitmap**](https://msdn.microsoft.com/library/windows/desktop/hh404480) を呼び出してテキストを描画するビットマップを準備します。 最後に、**RecreateDpiDependentResources** は、Direct2D デバイス コンテキストのレンダー ターゲットをこのビットマップに設定し、このコンテキストを消去してから、ビットマップの各ピクセルの色を黒に設定します。
+**RecreateDeviceResources** は、DirectWrite ファクトリ オブジェクトを使って、オーバーレイに表示されるタイトルと本文のテキスト文字列用のフォーマッタ (ブラシ) を作ります。 テキストの描画用には白のブラシ、背景の描画用には黒のブラシ、操作メッセージの描画用にはオレンジ色のブラシを作ります。 次に、**RecreateDpiDependentResources** を呼び出し、[**ID2D1DeviceContext::CreateBitmap**](https://msdn.microsoft.com/library/windows/desktop/hh404480) を呼び出してテキストを描画するビットマップを準備します。 最後に、**RecreateDpiDependentResources** は、Direct2D デバイス コンテキストのレンダー ターゲットをこのビットマップに設定し、このコンテキストを消去してから、ビットマップの各ピクセルの色を黒に設定します。
 
 これで、オーバーレイに必要なのは、表示するテキストのみになりました。
 
@@ -385,12 +384,9 @@ static const D2D1_RECT_F actionRectangle = D2D1::RectF(50.0f, GameInfoOverlayCon
 
 各領域には、固有の目的があります。
 
--   
-            **titleRectangle** は、タイトル テキストが描画される場所です。
--   
-            **bodyRectangle** は、本文テキストが描画される場所です。
--   
-            **actionRectangle** は、プレイヤーに特定の操作を実行するように通知するテキストが描画される場所です  (これはオーバーレイ ビットマップの左下にあります)。
+-   **titleRectangle** は、タイトル テキストが描画される場所です。
+-   **bodyRectangle** は、本文テキストが描画される場所です。
+-   **actionRectangle** は、プレイヤーに特定の操作を実行するように通知するテキストが描画される場所です  (これはオーバーレイ ビットマップの左下にあります)。
 
 これらの領域を念頭に置いて、状態に固有のメソッドの 1 つである **GameInfoOverlay::SetGameStats** と、オーバーレイの描画方法を確認してみましょう。
 
@@ -1497,6 +1493,6 @@ void GameInfoOverlay::SetAction(GameInfoOverlayCommand action)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

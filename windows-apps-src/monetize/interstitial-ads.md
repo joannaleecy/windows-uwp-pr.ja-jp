@@ -1,19 +1,20 @@
 ---
 author: mcleanbyron
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
-description: "Microsoft Store Engagement and Monetization SDK の Microsoft Advertising ライブラリを使って Windows 10、Windows 8.1、または Windows Phone 8.1 アプリにスポット広告を組み込む方法について説明します。"
+description: "Microsoft Store Services SDK の Microsoft Advertising ライブラリを使って Windows 10、Windows 8.1、または Windows Phone 8.1 アプリにスポット広告を組み込む方法について説明します。"
 title: "スポット広告"
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 0f159409bb584aacaf66550efe8d147cd8fddd50
+translationtype: Human Translation
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 4082fdd17ba42fd2b6a7659095b019c1ad4875a0
 
 ---
 
 # スポット広告
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-このチュートリアルでは、Microsoft Store Engagement and Monetization SDK の Microsoft Advertising ライブラリを使って Windows 10、Windows 8.1、または Windows Phone 8.1 アプリにスポット広告を組み込む方法について説明します。
+
+このチュートリアルでは、Microsoft Store Services SDK の Microsoft Advertising ライブラリを使って Windows 10、Windows 8.1、または Windows Phone 8.1 アプリにスポット広告を組み込む方法について説明します。
 
 C# と C++ を使って JavaScript/HTML アプリと XAML アプリにスポット広告を追加する方法を示す完全なサンプル プロジェクトについては、[GitHub の広告サンプル](http://aka.ms/githubads)をご覧ください。
 
@@ -35,23 +36,19 @@ C# と C++ を使って JavaScript/HTML アプリと XAML アプリにスポッ�
 
 ### 前提条件
 
-1.  [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk) を Visual Studio 2015 または Visual Studio 2013 と共にインストールします。
-
-2.  Visual Studio でプロジェクトを開くか、新しいプロジェクトを作ります。
+* UWP アプリ: Visual Studio 2015 と共に [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) をインストールします。
+* Windows 8.1 アプリまたは Windows Phone 8.1 アプリ: Visual Studio 2015 または Visual Studio 2013 と共に [Windows および Windows Phone 8.x 用の Microsoft Advertising SDK](http://aka.ms/store-8-sdk) をインストールします。
 
 ### コード開発
 
 * [XAML/.NET アプリ用の手順](#interstitialadsxaml10)
-
 * [HTML/JavaScript 用の手順](#interstitialadshtml10)
-
 * [C++ (DirectX Interop) 用の手順](#interstitialadsdirectx10)
 
 <span id="interstitialadsxaml10"/>
 ### スポット広告 (XAML/.NET)
 
-> 
-            **注**  ここでは C# の例を紹介していますが、Visual Basic と C++ もサポートされています。
+> **注**   ここでは C# の例を紹介していますが、Visual Basic と C++ もサポートされています。
  
 1. Visual Studio でプロジェクトを開きます。
 2. **参照マネージャー**で、プロジェクトの種類に応じて次のいずれかの参照を選択します。
@@ -83,8 +80,7 @@ C# と C++ を使って JavaScript/HTML アプリと XAML アプリにスポッ�
 #endif
     ```
 
-    > 
-            **注**  申請のためにアプリを提出する前に、テスト値を実際の値に置き換えてください。
+    > **注**  申請のためにアプリを提出する前に、テスト値を実際の値に置き換えてください。
 
 5.  [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) をインスタンス化し、すべてのイベント ハンドラーを関連付け、広告を要求します。
 
@@ -242,8 +238,7 @@ C# と C++ を使って JavaScript/HTML アプリと XAML アプリにスポッ�
 
 このサンプルでは、Visual Studio 2015 で XAML 用ユニバーサル アプリ プロジェクトを作成済みであり、特定の CPU アーキテクチャをターゲットとしているものと想定しています。
 
-> 
-            **重要**  このコードは、DirectX の要件により C++ で記述されています。
+> **重要**  このコードは、DirectX の要件により C++ で記述されています。
 
  
 1. Visual Studio でプロジェクトを開きます。
@@ -356,12 +351,11 @@ C# と C++ を使って JavaScript/HTML アプリと XAML アプリにスポッ�
 
 ### Windows デベロッパー センターを使用して、ライブ広告を表示するアプリをリリースする
 
-1.  デベロッパー センターのダッシュボードで、アプリの **[収益化]** をクリックして **[広告で収入を増やす]** ページに移動し、[スタンドアロン Microsoft Advertising ユニットを作成](../publish/monetize-with-ads.md)します。 広告ユニットの種類として、**[ビデオ (スポット)]** を指定します。 広告ユニット ID とアプリケーション ID の両方をメモしておきます。
+1.  デベロッパー センターのダッシュボードで、アプリの **[収益化]** &gt; **[広告で収入を増やす]** ページに移動し、[スタンドアロン Microsoft Advertising ユニットを作成](../publish/monetize-with-ads.md)します。 広告ユニットの種類として、**[ビデオ (スポット)]** を指定します。 広告ユニット ID とアプリケーション ID の両方をメモしておきます。
 
 2.  コードで、テスト広告ユニット値を、デベロッパー センターで生成したライブ値に置き換えます。
 
-3.  
-            Windows デベロッパー センター ダッシュボードを使用して、ストアに[アプリを提出](../publish/app-submissions.md)します。
+3.  Windows デベロッパー センター ダッシュボードを使用して、ストアに[アプリを提出](../publish/app-submissions.md)します。
 
 4.  デベロッパー センター ダッシュボードで[広告パフォーマンス レポート](../publish/advertising-performance-report.md)を確認します。
 
@@ -390,6 +384,6 @@ Microsoft Advertising ライブラリを使う場合、プロジェクトで **"
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

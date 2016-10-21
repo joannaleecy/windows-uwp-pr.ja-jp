@@ -1,23 +1,34 @@
 ---
 author: Jwmsft
+Description: "ボタンは、特定の操作を直ちに実行する方法をユーザーに与えます。"
 label: Buttons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: de5af77435b34b8f28005351a7de125f211ca522
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 845aa9935908aa68b64c856ee5e263490a3340c4
 
 ---
 # ボタン
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 ボタンは、特定の操作を直ちに実行する方法をユーザーに与えます。
 
 ![ボタンの例](images/controls/button.png)
 
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx"><strong>Button クラス</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx"><strong>RepeatButton クラス</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx"><strong>Click イベント</strong></a></li>
+</ul>
 
-<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
+</div>
+</div>
 
--   [**Button クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
--   [**RepeatButton クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx)
--   [**Click イベント**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)
+
+
+
 
 ## 適切なコントロールの選択
 
@@ -71,7 +82,7 @@ private async void SubmitButton_Click(object sender, RoutedEventArgs e)
 
 ポインターがボタンの上にあるときに、指やスタイラスでそのボタンをタップするか、マウスの左ボタンを押すと、ボタンでは [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) イベントが発生します。 ボタンにキーボード フォーカスがある場合は、Enter キーまたは Space キーを押しても、Click イベントが発生します。
 
-通常、ボタンでは低レベルな [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) イベントを処理できません。これに代わる Click 動作があるためです。 詳しくは、「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584.aspx)」をご覧ください。
+通常、ボタンでは低レベルな [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) イベントを処理できません。これに代わる Click 動作があるためです。 詳しくは、「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/en-us/library/windows/apps/mt185584.aspx)」をご覧ください。
 
 ボタンで Click イベントが発生する方法を変えるには、[**ClickMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.clickmode.aspx) プロパティを変更します。 ClickMode の既定値は **Release** です。 ClickMode が **Hover** の場合、キーボード操作やタッチ操作によって Click イベントを発生させることはできません。 
 
@@ -150,86 +161,24 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 -   ボタン内に多すぎるコンテンツを配置しないでください。 ボタン内のコンテンツは、簡潔でわかりやすくします (画像と少しのテキストのみにします)。
 
 ## 戻るボタン
-戻るボタンは、バック スタックまたはユーザーのナビゲーション履歴を使って "戻る" ナビゲーションを実現する、システムの UI アフォーダンスです。
+戻るボタンは、バック スタックまたはユーザーのナビゲーション履歴を使って "戻る" ナビゲーションを実現する、システムの UI 要素です。 独自の"戻る"ボタンを作成する必要はありませんが、前に戻る移動で適切なエクスペリエンスを提供するために作業が必要になることがあります。 詳しくは、「[履歴と前に戻る移動](../layout/navigation-history-and-backwards-navigation.md)」をご覧ください。
 
-ナビゲーション履歴のスコープ (アプリ内かグローバルか) はデバイスとデバイス モードによって決まります。
+## サンプルの入手
+*   [XAML UI の基本のサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
+    インタラクティブな形で XAML コントロールのすべてを参照できます。
 
-## <span id="examples"></span><span id="EXAMPLES"></span>例
-
-
-システムの戻るボタンの UI は、デバイスや入力の種類ごとに最適化されますが、ナビゲーション エクスペリエンスはグローバルであり、デバイスやユニバーサル Windows プラットフォーム (UWP) アプリで一貫しています。 これらの異なるエクスペリエンスには次のものがあります。
-
-デバイス 電話 ![電話でのシステムの戻るボタン](images/nav-back-phone.png)
--   常に表示されます。
--   デバイスの下部にあるソフトウェアまたはハードウェア ボタン。
--   アプリ内部やアプリ間で、グローバルな戻るナビゲーションを実現します。
-
-<span id="Tablet"></span><span id="tablet"></span><span id="TABLET"></span>タブレット ![タブレットでのシステムの戻るボタン (タブレット モード)](images/nav-back-tablet.png)
--   タブレット モードでは、常に表示されます。
-
-    デスクトップ モードでは利用できません。 代わりに、タイトル バーの戻るボタンを有効にすることができます。 「[PC、ノート PC、タブレット](#PC)」をご覧ください。
-
-    ユーザーは、**[設定]、[システム]、[タブレット モード]** の順に選択し、**[デバイスをタブレットとして使用すると、Windows のタッチ機能がより使いやすくなります]** をオンまたはオフにすることによって、タブレット モードでの実行とデスクトップ モードでの実行を切り替えることができます。
-
--   デバイスの下部のナビゲーション バーにあるソフトウェア ボタン。
--   アプリ内部やアプリ間で、グローバルな戻るナビゲーションを実現します。
-
-<span id="PC"></span><span id="pc"></span>PC、ノート PC、タブレット ![PC やノート PC でのシステムの戻るボタン](images/nav-back-pc.png)
--   デスクトップ モードではオプションです。
-
-    タブレット モードでは利用できません。 「[タブレット](#Tablet)」をご覧ください。
-
-    既定では無効になっています。 有効にすることをオプトインする必要があります。
-
-    ユーザーは、**[設定]、[システム]、[タブレット モード]** の順に選択し、**[デバイスをタブレットとして使用すると、Windows のタッチ機能がより使いやすくなります]** をオンまたはオフにすることによって、タブレット モードでの実行とデスクトップ モードでの実行を切り替えることができます。
-
--   アプリのタイトル バーにあるソフトウェア ボタン。
--   アプリ内部のみでの戻るナビゲーション。 アプリ間のナビゲーションはサポートされません。
-
-Surface Hub ![Surface Hub でのシステムの戻るボタン](images/nav-back-surfacehub.png)
--   常に表示されます。
--   デバイスの下部にあるソフトウェア ボタン。
--   アプリ内部やアプリ間での戻るナビゲーション。
-
- 
-
-## 推奨と非推奨
-
-
--   "戻る" ナビゲーションを有効にします。
-
-    "戻る" ナビゲーションが有効でない場合は、アプリはグローバルなバック スタックに含まれますが、アプリ内のページ ナビゲーション履歴は保持されません。
-
--   デスクトップ モードではタイトル バーの戻るボタンを有効にします。
-
-    アプリ内のページ ナビゲーション履歴は保持され、アプリ間の "戻る" ナビゲーションはサポートされていません。
-
-    
-              **注:** タブレット モードでは、ユーザーがデバイスの上部から下へスワイプするか、デバイスの上部付近にマウス ポインターを動かしたときに、タイトル バーが表示されます。 重複や混乱を避けるため、タイトル バーの戻るボタンは、タブレット モードでは表示されません。
-
-     
-
--   アプリ内のナビゲーション履歴が使い果たされた場合や利用できない場合は、デスクトップ モードでタイトル バーの戻るボタンを非表示にするか、無効にします。
-
-    可能な限り "戻る" ナビゲーションを行ったことをユーザーに明確に示します。
-
--   各戻るコマンドでは、バック スタック内の 1 ページ前、または、デスクトップ モードでない場合は、直前のアプリに戻る必要があります。
-
-    "戻る" ナビゲーションが、直感的でない場合、一貫性がない場合、予測不可能な場合、ユーザーは混乱する可能性があります。
 
 ## 関連記事
 
 - [ラジオ ボタン](radio-button.md)
 - [トグル スイッチ](toggles.md)
 - [チェック ボックス](checkbox.md)
-
-**開発者向け (XAML)**
 - [**Button クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
 
 
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

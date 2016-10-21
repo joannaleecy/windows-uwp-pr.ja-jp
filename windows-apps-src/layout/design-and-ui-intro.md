@@ -5,8 +5,9 @@ title: "ユニバーサル Windows プラットフォーム (UWP) アプリ設�
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 label: Intro to UWP app design
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: ec154ec64ba18badb5f81b59e76fc04e539de1a8
+ms.openlocfilehash: 06925bc42aab6d2ca7bf97c48161cca5e1cf840b
 
 ---
 
@@ -46,8 +47,7 @@ UWP アプリは、すべてのデバイスで読みやすいように、コン�
 
 ![4x4 のピクセル グリッドに合わせて配置されないデザイン要素](images/rsp-design/offthegridillustration.png)
 
-
-            **ヒント**   イメージ編集プログラムで画面のモックアップを作成するときは、DPI を 72 に設定し、画像サイズを、対象のサイズ クラスで有効な解像度に設定します (サイズ クラスと有効な解像度の一覧については、後述の「[特定のサイズ クラスの推奨事項](#sizeclasses)」をご覧ください)。
+**ヒント**   イメージ編集プログラムで画面のモックアップを作成するときは、DPI を 72 に設定し、画像サイズを、対象のサイズ クラスで有効な解像度に設定します (サイズ クラスと有効な解像度の一覧については、後述の「[特定のサイズ クラスの推奨事項](#sizeclasses)」をご覧ください)。
 
 
 ### ユニバーサル入力とスマート操作
@@ -220,6 +220,6 @@ UI は、画面領域に基づいて表示したり、デバイスが追加機�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

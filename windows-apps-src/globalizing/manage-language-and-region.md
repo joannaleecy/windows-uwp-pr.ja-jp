@@ -5,8 +5,9 @@ title: "言語と地域の管理"
 ms.assetid: 22D3A937-736A-4121-8285-A55DED56E594
 label: Manage language and region
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 294f087fffeefda67ddacd09636915144bf18ff4
+ms.openlocfilehash: 5a7519d9ea7a121e3e3087debba6d6193b1d8155
 
 ---
 
@@ -46,7 +47,7 @@ Windows ストアで明確にサポートされる言語タグのリストにつ
 
 ユーザー言語の優先順位一覧は、ユーザーが好んでいる順にユーザーの言語を記述した、順序化された言語一覧です。
 
-ユーザーは、この一覧を **[設定]**&gt;**[時刻と言語]**&gt;**[地域と言語]** で設定します。 また、**コントロール パネル**&gt;**[時計、言語、および地域]** を使うこともできます。
+ユーザーは、この一覧を **[設定]** &gt; **[時刻と言語]** &gt; **[地域と言語]** で設定します。 また、**コントロール パネル** &gt; **[時計、言語、および地域]** を使うこともできます。
 
 ユーザー言語の優先順位一覧には、複数の言語のほか、地域バリアントなどの特定の言語バリアントを含めることができます。 たとえば、ユーザーは fr-CA を好んで使っているものの、en-GB もわかるという場合が考えられます。
 
@@ -88,10 +89,7 @@ Visual Studio で package.appxmanifest を開き、**[アプリケーション]*
 
 ### <span id="Create_the_application_language_list."></span><span id="create_the_application_language_list."></span><span id="CREATE_THE_APPLICATION_LANGUAGE_LIST."></span>アプリケーションの言語の一覧を作ります。
 
-実行時に、システムはアプリでサポートを宣言しているユーザー言語の優先順位がマニフェストに記載されているかどうかを判断し、*アプリケーションの言語の一覧*を作成します。 この一覧を使ってアプリケーションが使っている言語を判断します。 この一覧により、アプリ リソース、システム リソース、日付、時刻、数値、他のコンポーネントに使われる言語が決定されます。 たとえば、リソース管理システム ([**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022)、[**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039)、[**WinJS.Resources Namespace**](https://msdn.microsoft.com/library/windows/apps/br229779)) は、アプリケーションの言語に応じて UI リソースを読み込みます。 
-            [
-              **Windows.Globalization**
-            ](https://msdn.microsoft.com/library/windows/apps/br206813) も、アプリケーションの言語の一覧に基づいて形式を選びます。 アプリケーションの言語の一覧は、[**Windows.Globalization.ApplicationLanguages.Languages**](https://msdn.microsoft.com/library/windows/apps/hh972396) を使って取得できます。
+実行時に、システムはアプリでサポートを宣言しているユーザー言語の優先順位がマニフェストに記載されているかどうかを判断し、*アプリケーションの言語の一覧*を作成します。 この一覧を使ってアプリケーションが使っている言語を判断します。 この一覧により、アプリ リソース、システム リソース、日付、時刻、数値、他のコンポーネントに使われる言語が決定されます。 たとえば、リソース管理システム ([**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022)、[**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039)、[**WinJS.Resources Namespace**](https://msdn.microsoft.com/library/windows/apps/br229779)) は、アプリケーションの言語に応じて UI リソースを読み込みます。 [**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) も、アプリケーションの言語の一覧に基づいて形式を選びます。 アプリケーションの言語の一覧は、[**Windows.Globalization.ApplicationLanguages.Languages**](https://msdn.microsoft.com/library/windows/apps/hh972396) を使って取得できます。
 
 言語とリソースの対応付けは容易ではありません。 対応付けは Windows で処理させることをお勧めします。言語タグには対応付けの優先順位に影響する多くのオプション コンポーネントがあり、実際にそのようなオプション コンポーネントに遭遇することがあるためです。
 
@@ -118,8 +116,7 @@ Windows は、標準的でわかりやすい方法で言語の対応付けの優
 
 アプリケーションの言語の一覧は、以下の項目から構成されます。
 
-1.  
-            **(オプション) 第 1 言語の上書き。**[**PrimaryLanguageOverride**](https://msdn.microsoft.com/library/windows/apps/hh972398) は、独自の独立した言語選択をユーザーに提示するアプリや、既定の言語選択を無効にしなければならない重大な理由があるアプリで利用できる、シンプルな上書き設定です。 詳しくは、[アプリ リソースとローカライズのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231501)をご覧ください。
+1.  **(オプション) 第 1 言語の上書き。**[**PrimaryLanguageOverride**](https://msdn.microsoft.com/library/windows/apps/hh972398) は、独自の独立した言語選択をユーザーに提示するアプリや、既定の言語選択を無効にしなければならない重大な理由があるアプリで利用できる、シンプルな上書き設定です。 詳しくは、[アプリ リソースとローカライズのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231501)をご覧ください。
 2.  **アプリでサポートされるユーザーの言語。** これは、ユーザーの言語の優先順位を示した一覧です。 この一覧は、アプリのマニフェストのサポート対象言語の一覧によってフィルター処理されます。 アプリでサポートされる言語でユーザーの言語をフィルター処理することで、ソフトウェア開発キット (SDK)、クラス ライブラリ、依存性のあるフレームワーク パッケージ、そのアプリの間で一貫性が保たれます。
 3.  **1 と 2 が空の場合、アプリでサポートされる既定または最初の言語。** ユーザーが、アプリでサポートされる言語のどれも使わない場合は、アプリで最優先にサポートされる言語がアプリケーションの言語として選ばれます。
 
@@ -127,25 +124,19 @@ Windows は、標準的でわかりやすい方法で言語の対応付けの優
 
 ### <span id="Set_the_HTTP_Accept_Language_header."></span><span id="set_the_http_accept_language_header."></span><span id="SET_THE_HTTP_ACCEPT_LANGUAGE_HEADER."></span>HTTP Accept-Language ヘッダーを設定します。
 
-通常の Web 要求と XMLHttpRequest (XHR) で Windows ストア アプリとデスクトップ アプリから行われた HTTP 要求では、標準の HTTP Accept-Language ヘッダーが使われます。 既定では、HTTP ヘッダーは **[設定]**&gt;**[時刻と言語]**&gt;**[地域と言語]** に指定されたユーザーの優先順に並んで、ユーザーの言語の優先順位に設定されます。 この一覧内の各言語は、言語と重み付け (q) のニュートラルを含むようにさらに拡張されます。 たとえば、fr-FR と en-US のユーザーの言語一覧では、HTTP Accept-Language ヘッダーは "fr-FR, fr, en-US, en ("fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3")" となります。
+通常の Web 要求と XMLHttpRequest (XHR) で Windows ストア アプリとデスクトップ アプリから行われた HTTP 要求では、標準の HTTP Accept-Language ヘッダーが使われます。 既定では、HTTP ヘッダーは **[設定]** &gt; **[時刻と言語]** &gt; **[地域と言語]** に指定されたユーザーの優先順に並んで、ユーザーの言語の優先順位に設定されます。 この一覧内の各言語は、言語と重み付け (q) のニュートラルを含むようにさらに拡張されます。 たとえば、fr-FR と en-US のユーザーの言語一覧では、HTTP Accept-Language ヘッダーは "fr-FR, fr, en-US, en ("fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3")" となります。
 
 ### <span id="Use_the_APIs_in_the_Windows.Globalization_namespace."></span><span id="use_the_apis_in_the_windows.globalization_namespace."></span><span id="USE_THE_APIS_IN_THE_WINDOWS.GLOBALIZATION_NAMESPACE."></span>Windows.Globalization 名前空間で API を使います。
 
-通常、[**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) 名前空間の API 要素は、アプリケーションの言語の一覧を使って言語を判断します。 どの言語にも対応する形式が存在しない場合は、ユーザー ロケールが使われます。 これはシステム クロックに使われているものと同じロケールです。 ユーザー ロケールは、**[設定]**&gt;**[時刻と言語]**&gt;**[地域と言語]**&gt;**[日付、時刻、地域の追加設定]**&gt;**[地域: 日付、時刻、または数値の形式の変更]** で確認できます。 **Windows.Globalization** API は、アプリケーションの言語の一覧の代わりに使う言語の一覧を指定するための上書きも受け付けます。
+通常、[**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) 名前空間の API 要素は、アプリケーションの言語の一覧を使って言語を判断します。 どの言語にも対応する形式が存在しない場合は、ユーザー ロケールが使われます。 これはシステム クロックに使われているものと同じロケールです。 ユーザー ロケールは、**[設定]** &gt; **[時刻と言語]** &gt; **[地域と言語]** &gt; **[日付、時刻、地域の追加設定]** &gt; **[地域: 日付、時刻、または数値の形式の変更]** で確認できます。 **Windows.Globalization** API は、アプリケーションの言語の一覧の代わりに使う言語の一覧を指定するための上書きも受け付けます。
 
-
-            [
-              **Windows.Globalization**
-            ](https://msdn.microsoft.com/library/windows/apps/br206813) には、ヘルパー オブジェクトとして提供される [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) オブジェクトもあります。 このオブジェクトを使うと、アプリは、言語のスクリプト、表示名、本来の名称などの、言語についての詳細も調べることができます。
+[**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) には、ヘルパー オブジェクトとして提供される [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) オブジェクトもあります。 このオブジェクトを使うと、アプリは、言語のスクリプト、表示名、本来の名称などの、言語についての詳細も調べることができます。
 
 ### <span id="Use_geographic_region_when_appropriate."></span><span id="use_geographic_region_when_appropriate."></span><span id="USE_GEOGRAPHIC_REGION_WHEN_APPROPRIATE."></span>必要に応じて、地理的な地域を使います。
 
 ユーザーに表示するコンテンツの選択方法として、言語ではなく、ユーザーの地理的な地域の設定を使うことができます。 たとえば、ニュース アプリは、既定では、ユーザーが住んでいる地域のコンテンツを表示します。この地域は、Windows がインストールされた時に設定され、前の手順で説明したように、Windows UI の **[地域: 日付、時刻、または数値の形式を変更する]** で確認できます。 住んでいる地域に関するユーザーの現在の設定は、[**Windows.System.UserProfile.GlobalizationPreferences.HomeGeographicRegion**](https://msdn.microsoft.com/library/windows/apps/br241829) を使って取得できます。
 
-
-            [
-              **Windows.Globalization**
-            ](https://msdn.microsoft.com/library/windows/apps/br206813) には、ヘルパー オブジェクトとして提供される [**GeographicRegion**](https://msdn.microsoft.com/library/windows/apps/br206795) オブジェクトもあります。 このオブジェクトを使うと、アプリは、地域の表示名、本来の名称、使用通貨などの、特定地域についての詳細も調べることができます。
+[**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) には、ヘルパー オブジェクトとして提供される [**GeographicRegion**](https://msdn.microsoft.com/library/windows/apps/br206795) オブジェクトもあります。 このオブジェクトを使うと、アプリは、地域の表示名、本来の名称、使用通貨などの、特定地域についての詳細も調べることができます。
 
 ## <span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注釈
 
@@ -233,6 +224,6 @@ Windows は、標準的でわかりやすい方法で言語の対応付けの優
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

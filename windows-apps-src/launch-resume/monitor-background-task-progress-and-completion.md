@@ -4,8 +4,8 @@ title: "バックグラウンド タスクの進捗状況と完了の監視"
 description: "バックグラウンド タスクから報告される進行状況と完了をアプリから認識する方法について説明します。"
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 translationtype: Human Translation
-ms.sourcegitcommit: 6e6e28bc339364e70282a9db84593188c70a59c4
-ms.openlocfilehash: 153895a3ce41e5f4d22067e33cb5e874e89c6069
+ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
+ms.openlocfilehash: 0488e47c35b2f7c8a8db2b2aca4527c4c3b67d28
 
 ---
 
@@ -21,7 +21,9 @@ ms.openlocfilehash: 153895a3ce41e5f4d22067e33cb5e874e89c6069
 -   [**BackgroundTaskProgressEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224785)
 -   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
 
-バックグラウンド タスクから報告される進行状況と完了をアプリから認識する方法について説明します。 バックグラウンド タスクは、アプリから切り離され、個別に実行されますが、バックグラウンド タスクの進行と完了の状況をアプリ コードによって監視することができます。 これを行うために、アプリでは、システムに登録されたバックグラウンド タスクのイベントを受信登録します。
+別個のプロセスで実行されるバックグラウンド タスクから報告される進行状況と完了をアプリから認識する方法について説明します  (単一プロセス バックグラウンド タスクの場合、共有変数を設定して進行状況と完了を表すことができます)。
+
+ バックグラウンド タスクは、アプリから切り離され、個別に実行されますが、バックグラウンド タスクの進行と完了の状況をアプリ コードによって監視することができます。 これを行うために、アプリでは、システムに登録されたバックグラウンド タスクのイベントを受信登録します。
 
 -   このトピックでは、アプリで既にバックグラウンド タスクが登録されていることを前提とします。 バックグラウンド タスクを直ちに構築する場合は、「[バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」をご覧ください。 条件とトリガーについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
 
@@ -210,7 +212,6 @@ ms.openlocfilehash: 153895a3ce41e5f4d22067e33cb5e874e89c6069
 
 
 
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

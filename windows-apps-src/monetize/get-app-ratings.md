@@ -4,28 +4,26 @@ ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
 description: "特定の日付範囲などのオプション フィルターを使って集計評価データを取得するには、Windows ストア分析 API でこのメソッドを使います。"
 title: "アプリの評価の取得"
 translationtype: Human Translation
-ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
-ms.openlocfilehash: 6f6a94e030f1733ca4224766526386ef1956ff03
+ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
+ms.openlocfilehash: 8ec588ceb0a7c8bd6a75f72bf0a2d48c697a8e6a
 
 ---
 
 # アプリの評価の取得
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+
 
 特定の日付範囲などのオプション フィルターを使って集計評価データを取得するには、Windows ストア分析 API でこのメソッドを使います。 このメソッドは、データを JSON 形式で返します。
 
 ## 前提条件
 
 
-このメソッドを使うには、次の作業が必要です。
+このメソッドを使うには、最初に次の作業を行う必要があります。
 
--   このメソッドの呼び出しに使う Azure AD アプリケーションをデベロッパー センター アカウントに関連付けます。
+* Windows ストア分析 API に関するすべての[前提条件](access-analytics-data-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
--   アプリケーションの Azure AD アクセス トークンを取得します。
-
-詳しくは、「[Windows ストア サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)」をご覧ください。
 
 ## 要求
 
@@ -42,7 +40,7 @@ ms.openlocfilehash: 6f6a94e030f1733ca4224766526386ef1956ff03
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | 必須。 **Bearer**&lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
 
 <span/> 
 
@@ -265,12 +263,12 @@ Authorization: Bearer <your access token>
 
 * [Windows ストア サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)
 * [アプリの入手数の取得](get-app-acquisitions.md)
-* [IAP の入手数の取得](get-in-app-acquisitions.md)
+* [アドオンの入手数の取得](get-in-app-acquisitions.md)
 * [エラー報告データの取得](get-error-reporting-data.md)
 * [アプリのレビューの取得](get-app-reviews.md)
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

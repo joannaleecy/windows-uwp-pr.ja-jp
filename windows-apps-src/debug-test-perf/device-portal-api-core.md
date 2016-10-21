@@ -4,8 +4,8 @@ ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: "デバイス ポータル コア API リファレンス"
 description: "Windows Device Portal コア REST API について説明します。これによって、データにアクセスし、プログラムを使ってデバイスを制御することが可能になります。"
 translationtype: Human Translation
-ms.sourcegitcommit: 30aeffcf090c881f84331ced4f7199fd0092b676
-ms.openlocfilehash: 0fa515d28431d4256b977ee3c3c41169661f129f
+ms.sourcegitcommit: fae2c6b31c9c6c07026abc4718959b02a36e6600
+ms.openlocfilehash: 226ecaecd93e4996e438f56f780926ca63c184fd
 
 ---
 
@@ -40,7 +40,8 @@ package   | (**必須**) インストールするパッケージのファイル�
 
 **要求本文**
 
-- なし
+- .appx または .appxbundle ファイル、およびアプリが必要とする依存関係。 
+- デバイスが IoT または Windows デスクトップの場合、アプリの署名に使う証明書。 その他のプラットフォームでは、証明書は必要ありません。 
 
 **応答**
 
@@ -57,7 +58,8 @@ HTTP 状態コード      | 説明
 **利用可能なデバイス ファミリ**
 
 * Windows Mobile
-* Windows Desktop
+* Windows デスクトップ
+* Xbox
 * HoloLens
 * IoT
 
@@ -99,7 +101,8 @@ HTTP 状態コード      | 説明
 **利用可能なデバイス ファミリ**
 
 * Windows Mobile
-* Windows Desktop
+* Windows デスクトップ
+* Xbox
 * HoloLens
 * IoT
 
@@ -117,7 +120,9 @@ DELETE | /api/app/packagemanager/package
 
 **URI パラメーター**
 
-- なし
+URI パラメーター | 説明
+:---          | :---
+package   | (**必須**) ターゲット アプリの PackageFullName (GET /api/app/packagemanager/packages から)
 
 **要求ヘッダー**
 
@@ -895,8 +900,7 @@ HTTP 状態コード      | 説明
 
 コマンド | 説明
 :----- | :-----
-provider *{guid}* enable *{level}* | *{guid}* で指定されたプロバイダー (括弧は不要) を指定されたレベルで有効にします。 
-              *{level}* は、1 (最小限の詳細) ～ 5 (詳細) の **int** です。
+provider *{guid}* enable *{level}* | *{guid}* で指定されたプロバイダー (括弧は不要) を指定されたレベルで有効にします。 *{level}* は、1 (最小限の詳細) ～ 5 (詳細) の **int** です。
 provider *{guid}* disable | *{guid}* で指定されたプロバイダー (括弧は不要) を無効にします。
 
 この応答は、サーバーからクライアントに送信されます。 これは、テキストとして送信され、JSON で解析すると次の形式になります。
@@ -2718,8 +2722,7 @@ GET | /api/wpr/trace
 
 **応答**
 
-- なし。  
-              **注:** これは時間のかかる処理です。  ETL のディスクへの書き込みが終了すると、制御が戻ります。  
+- なし。  **注:** これは時間のかかる処理です。  ETL のディスクへの書き込みが終了すると、制御が戻ります。  
 
 **状態コード**
 
@@ -2971,8 +2974,7 @@ GET | /api/dns-sd/tags
 
 - なし
 
-
-              **応答** 現在適用されているタグの形式は次のとおりです。 
+**応答** 現在適用されているタグの形式は次のとおりです。 
 ```
  {
     "tags": [
@@ -3165,8 +3167,7 @@ GET | /api/filesystem/apps/knownfolders
 
 - なし
 
-
-              **応答** 利用可能なフォルダーの形式は次のとおりです。 
+**応答** 利用可能なフォルダーの形式は次のとおりです。 
 ```
  {"KnownFolders": [
     "folder0",
@@ -3220,8 +3221,7 @@ path | (**オプション**) 上で指定したフォルダーまたはパッケ
 
 - なし
 
-
-              **応答** 利用可能なフォルダーの形式は次のとおりです。 
+**応答** 利用可能なフォルダーの形式は次のとおりです。 
 ```
 {"Items": [
     {
@@ -3296,6 +3296,58 @@ HTTP 状態コード      | 説明
 **利用可能なデバイス ファミリ**
 
 * Windows Mobile
+* Windows デスクトップ
+* HoloLens
+* Xbox
+* IoT
+
+---
+### ファイルの名前の変更
+
+**要求**
+
+フォルダー内のファイルの名前を変更します。
+
+メソッド      | 要求 URI
+:------     | :-----
+POST | /api/filesystem/apps/rename
+
+<br />
+**URI パラメーター**
+
+URI パラメーター | 説明
+:------     | :-----
+knownfolderid | (**必須**) ファイルが存在するトップレベル ディレクトリ。 サイドロードされたアプリにアクセスするには、**LocalAppData** を使用します。 
+filename | (**必須**) 名前を変更するファイルの元の名前。 
+newfilename | (**必須**) ファイルの新しい名前。
+packagefullname | (*knownfolderid* == *LocalAppData の場合は必須*) 対象となるアプリのパッケージのフルネーム。 
+path | (**オプション**) 上で指定したフォルダーまたはパッケージ内のサブディレクトリ。 
+
+**要求ヘッダー**
+
+- なし
+
+**要求本文**
+
+- なし
+
+**応答**
+
+- なし
+
+**状態コード**
+
+この API では次の状態コードが返される可能性があります。
+
+HTTP 状態コード      | 説明
+:------     | :-----
+200 | OK。 ファイルの名前が変更されました
+404 | ファイルが見つかりません
+5XX | エラー コード
+<br />
+**利用可能なデバイス ファミリ**
+
+* Windows Mobile
 * Windows Desktop
 * HoloLens
 * Xbox
@@ -3330,6 +3382,8 @@ path | (**オプション**) 上で指定したフォルダーまたはパッケ
 - なし
 
 **応答**
+
+- なし 
 
 **状態コード**
 
@@ -3398,6 +3452,6 @@ HTTP 状態コード      | 説明
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

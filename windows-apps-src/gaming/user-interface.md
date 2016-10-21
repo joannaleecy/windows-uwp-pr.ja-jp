@@ -3,8 +3,9 @@ author: mtoepke
 title: "DirectX ゲーム プロジェクト テンプレート"
 description: "ユニバーサル Windows プラットフォーム (UWP) および DirectX ゲームを作成するためのテンプレートについて説明します。"
 ms.assetid: 41b6cd76-5c9a-e2b7-ef6f-bfbf6ef7331d
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b7d01fda0bc8dbafebb7485ec01acb5c7431a815
+ms.openlocfilehash: 1e91814825a0944f9a70fdc7bbc6e8ef78215f29
 
 ---
 
@@ -20,8 +21,7 @@ DirectX とユニバーサル Windows プラットフォーム (UWP) のテン�
 
 プロジェクトを作成するには、次の作業が必要です。
 
--   
-            [Microsoft Visual Studio 2015 をダウンロードします](https://www.visualstudio.com/vs-2015-product-editions)。 Visual Studio 2015 には、デバッグ ツールなど、グラフィックス プログラミングのためのツールが含まれています。 DirectX グラフィックス、ゲーム機能、ツールの概要については、「[DirectX ゲーム開発用の Visual Studio ツール](set-up-visual-studio-for-game-development.md)」をご覧ください。
+-   [Microsoft Visual Studio 2015 をダウンロードします](https://www.visualstudio.com/vs-2015-product-editions)。 Visual Studio 2015 には、デバッグ ツールなど、グラフィックス プログラミングのためのツールが含まれています。 DirectX グラフィックス、ゲーム機能、ツールの概要については、「[DirectX ゲーム開発用の Visual Studio ツール](set-up-visual-studio-for-game-development.md)」をご覧ください。
 
 ## テンプレートの選択
 
@@ -90,6 +90,6 @@ DirectX ユニバーサル Windows テンプレートには、次のファイル
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

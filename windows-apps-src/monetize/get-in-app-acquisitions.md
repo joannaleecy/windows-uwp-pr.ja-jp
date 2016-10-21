@@ -1,31 +1,28 @@
 ---
 author: mcleanbyron
 ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
-description: "特定の日付範囲などのオプション フィルターを使って、アプリ内製品 (IAP) の集計入手データを取得するには、Windows ストア分析 API でこのメソッドを使います。"
-title: "IAP の入手数の取得"
+description: "特定の日付範囲などのオプション フィルターを使ってアドオンの集計入手データを取得するには、Windows ストア分析 API でこのメソッドを使います。"
+title: "アドオンの入手数の取得"
 translationtype: Human Translation
-ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
-ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
+ms.sourcegitcommit: ecb0f5263b7f7f470484e9bd579b7bdb6efcdfa4
+ms.openlocfilehash: 9d895200e6d1bc823ebcb52e0b034883f5a059e0
 
 ---
 
-# IAP の入手数の取得
+# アドオンの入手数の取得
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-特定の日付範囲などのオプション フィルターを使って、アプリ内製品 (IAP) の集計入手データを取得するには、Windows ストア分析 API でこのメソッドを使います。 このメソッドは、データを JSON 形式で返します。
+
+特定の日付範囲などのオプション フィルターを使って、アドオン (アプリ内製品または IAP とも呼ばれます) の集計入手データを取得するには、Windows ストア分析 API でこのメソッドを使います。 このメソッドは、データを JSON 形式で返します。
 
 ## 前提条件
 
 
-このメソッドを使うには、次の作業が必要です。
+このメソッドを使うには、最初に次の作業を行う必要があります。
 
--   このメソッドの呼び出しに使う Azure AD アプリケーションをデベロッパー センター アカウントに関連付けます。
-
--   アプリケーションの Azure AD アクセス トークンを取得します。
-
-詳しくは、「[Windows ストア サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)」をご覧ください。
+* Windows ストア分析 API に関するすべての[前提条件](access-analytics-data-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
 ## 要求
 
@@ -42,13 +39,13 @@ ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | 必須。 **Bearer**&lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
 
 <span/> 
 
 ### 要求パラメーター
 
-*applicationId* または *inAppProductId* パラメーターが必要です。 アプリに登録されたすべての IAP の入手データを取得するには、*applicationId* パラメーターを指定します。 単一の IAP の入手データを取得するには、*inAppProductId* パラメーターを指定します。 両方を指定した場合、*inAppProductId* パラメーターは無視されます。
+*applicationId* または *inAppProductId* パラメーターが必要です。 アプリに登録されたすべてのアドオンの入手データを取得するには、*applicationId* パラメーターを指定します。 単一のアドオンの入手データを取得するには、*inAppProductId* パラメーターを指定します。 両方を指定した場合、*applicationId* パラメーターは無視されます。
 
 <table>
 <colgroup>
@@ -62,32 +59,32 @@ ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 <th align="left">パラメーター</th>
 <th align="left">型</th>
 <th align="left">説明</th>
-<th align="left">必須</th>
+<th align="left">必須かどうか</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">applicationId</td>
 <td align="left">string</td>
-<td align="left">IAP 入手データを取得するアプリのストア ID です。 ストア ID は、デベロッパー センター ダッシュボードの[アプリ ID ページ](../publish/view-app-identity-details.md)で確認できます。 ストア ID の例は 9WZDNCRFJ3Q8 です。</td>
-<td align="left">○</td>
+<td align="left">アドオン入手データを取得するアプリのストア ID です。 ストア ID は、デベロッパー センター ダッシュボードの[アプリ ID ページ](../publish/view-app-identity-details.md)で確認できます。 ストア ID の例は 9WZDNCRFJ3Q8 です。</td>
+<td align="left">必須</td>
 </tr>
 <tr class="even">
 <td align="left">inAppProductId</td>
 <td align="left">string</td>
-<td align="left">入手データを取得する IAP の製品 ID です。</td>
-<td align="left">○</td>
+<td align="left">入手データを取得するアドオンのストア ID です。 ストア ID は、Windows デベロッパー センター ダッシュボードにあるアドオンの概要ページの URL の中にあります。 たとえば、アドオンのダッシュボード ページの URL が ```https://developer.microsoft.com/en-us/dashboard/iaps/9NBLGGH4SCZS?appId=9NBLGGH29DM8``` の場合、アドオンのストア ID は、文字列 9NBLGGH4SCZS になります。</td>
+<td align="left">必須</td>
 </tr>
 <tr class="odd">
 <td align="left">startDate</td>
 <td align="left">date</td>
-<td align="left">取得する IAP 入手データの日付範囲の開始日です。 既定値は現在の日付です。</td>
-<td align="left">×</td>
+<td align="left">取得するアドオン入手データの日付範囲の開始日です。 既定値は現在の日付です。</td>
+<td align="left">必須ではない</td>
 </tr>
 <tr class="even">
 <td align="left">endDate</td>
 <td align="left">date</td>
-<td align="left">取得する IAP 入手データの日付範囲終了日です。 既定値は現在の日付です。</td>
+<td align="left">取得するアドオン入手データの日付範囲終了日です。 既定値は現在の日付です。</td>
 <td align="left">×</td>
 </tr>
 <tr class="odd">
@@ -117,7 +114,7 @@ ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 <tr class="odd">
 <td align="left">orderby</td>
 <td align="left">string</td>
-<td align="left">各 IAP の入手の結果データ値の順序を指定するステートメントです。 構文は <em>orderby=field [order],field [order],...</em> です。 <em>field</em> パラメーターには、次のいずれかの文字列を指定できます。
+<td align="left">それぞれのアドオン入手数について結果データ値の順序を指定するステートメントです。 構文は <em>orderby=field [order],field [order],...</em> です。 <em>field</em> パラメーターには、次のいずれかの文字列を指定できます。
 <ul>
 <li><strong>date</strong></li>
 <li><strong>acquisitionType</strong></li>
@@ -247,7 +244,7 @@ ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 
 ### 要求の例
 
-IAP の入手データを取得するためのいくつかの要求の例を次に示します。 *inAppProductId* と *applicationId* の値を、IAP の適切な製品 ID とアプリのストア ID に置き換えてください。
+アドオン入手データを取得するためのいくつかの要求の例を次に示します。 *inAppProductId* および *applicationId* の値を、アドオンまたはアプリの適切なストア ID に置き換えてください。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?inAppProductId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -267,22 +264,23 @@ Authorization: Bearer <your access token>
 
 | 値      | 型   | 説明                                                                                                                                                                                                                                                                                |
 |------------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Value      | array  | 集計 IAP 入手データが含まれるオブジェクトの配列です。 各オブジェクトのデータについて詳しくは、次の「[IAP 入手値](#iap-acquisition-values)」セクションをご覧ください。                                                                                                              |
-| @nextLink  | string | データの追加ページがある場合、この文字列には、データの次のページを要求するために使用できる URI が含まれます。 たとえば、要求の **top** パラメーターが 10000 に設定されたが、クエリの IAP 入手データに 10,000 を超える行が含まれている場合に、この値が返されます。 |
+| Value      | array  | 集計アドオン入手データが含まれるオブジェクトの配列です。 各オブジェクトのデータについて詳しくは、次の「[アドオン入手値](#add-on-acquisition-values)」セクションをご覧ください。                                                                                                              |
+| @nextLink  | string | データの追加ページがある場合、この文字列には、データの次のページを要求するために使用できる URI が含まれます。 たとえば、要求の **top** パラメーターが 10000 に設定されたが、クエリのアドオン入手データに 10,000 を超える行が含まれている場合に、この値が返されます。 |
 | TotalCount | int    | クエリの結果データ内の行の総数です。                                                                                                                                                                                                                                 |
 
 <span/>
 
-### IAP 入手値
+<span id="add-on-acquisition-values" />
+### アドオン入手値
 
 *Value* 配列の要素には、次の値が含まれます。
 
 | 値               | 型    | 説明                                                                                                                                                                                                                              |
 |---------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | date                | string  | 入手データの日付範囲の最初の日付です。 要求に日付を指定した場合、この値はその日付になります。 要求に週、月、またはその他の日付範囲を指定した場合、この値はその日付範囲の最初の日付になります。 |
-| inAppProductId      | string  | 入手データを取得する IAP の製品 ID です。                                                                                                                                                                 |
-| inAppProductName    | string  | IAP の表示名です。                                                                                                                                                                                                             |
-| applicationId       | string  | IAP 入手データを取得するアプリのストア ID です。                                                                                                                                                           |
+| inAppProductId      | string  | 入手データを取得するアドオンのストア ID です。                                                                                                                                                                 |
+| inAppProductName    | string  | アドオンの表示名です。                                                                                                                                                                                                             |
+| applicationId       | string  | アドオン入手データを取得するアプリのストア ID です。                                                                                                                                                           |
 | applicationName     | string  | アプリの表示名です。                                                                                                                                                                                                             |
 | deviceType          | string  | 入手を完了したデバイスの種類です。 サポートされる文字列の一覧については、前の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                                  |
 | orderName           | string  | 注文の名前。                                                                                                                                                                                                                   |
@@ -306,7 +304,7 @@ Authorization: Bearer <your access token>
     {
       "date": "2015-01-02",
       "inAppProductId": "9NBLGGH3LHKL",
-      "inAppProductName": "Contoso IAP 7",
+      "inAppProductName": "Contoso add-on 7",
       "applicationId": "9NBLGGGZ5QDR",
       "applicationName": "Contoso Demo",
       "deviceType": "Phone",
@@ -316,7 +314,7 @@ Authorization: Bearer <your access token>
       "market": "GB",
       "gender": "m",
       "ageGroup": "50orover",
-      "acquisitionType": "Iap",
+      "acquisitionType": "iap",
       "acquisitionQuantity": 1
     }
   ],
@@ -339,6 +337,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Sep16_HO2-->
 
 

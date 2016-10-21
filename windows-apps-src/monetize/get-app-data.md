@@ -1,37 +1,41 @@
 ---
 author: mcleanbyron
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
-description: Use these methods in the Windows Store submission API to retrieve data for apps that are registered to your Windows Dev Center account.
-title: Get app data using the Windows Store submission API
+description: "Windows デベロッパー センター アカウントに登録するアプリのデータを取得するには、Windows ストア提出 API 内のこれらのメソッドを使用します。"
+title: "Windows ストア提出 API を使用したアプリ データの取得"
+translationtype: Human Translation
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 99d609decc8c38952961deac5bb8ec6926d91c88
+
 ---
 
-# Get app data using the Windows Store submission API
+# Windows ストア提出 API を使用したアプリ データの取得
 
-Use the following methods in the Windows Store submission API to get data for apps that are registered to your Windows Dev Center account. For an introduction to the Windows Store submission API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
+Windows デベロッパー センター アカウントに登録するアプリのデータを取得するには、Windows ストア提出 API 内の次のメソッドを使用します。 Windows ストア提出 API の概要については、「[Windows ストア サービスを使用した提出の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。
 
->**Note**&nbsp;&nbsp;These methods can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled. These methods can only be used to get data for apps. To create or manage submissions for apps, see the methods in [Manage app submissions](manage-app-submissions.md).
+>**注:**&nbsp;&nbsp;これらのメソッドは、Windows ストア提出 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。 これらのメソッドは、アプリのデータを取得する場合にのみ使用できます。 アプリの提出を作成または管理する方法については、「[アプリ提出の管理](manage-app-submissions.md)」のメソッドを参照してください。
 
-| Method        | URI    | Description                                                                 |
+| メソッド        | URI    | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications``` | Retrieves data for all the apps that are registered to your Windows Dev Center account. For more information, see [Get all apps](get-all-apps.md). |
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}``` | Retrieves data about a specific app that is registered to your Windows Dev Center account. For more information, see [Get an app](get-an-app.md). |
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts``` | Lists the add-ons (also known as in-app products or IAPs) for an app that is registered to your Windows Dev Center account. For more information, see [Get add-ons for an app](get-add-ons-for-an-app.md). |
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights``` | Lists the package flights for an app that is registered to your Windows Dev Center account. For more information, see [Get package flights for an app](get-flights-for-an-app.md). |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications``` | Windows デベロッパー センター アカウントに登録されているすべてのアプリのデータを取得します。 詳しくは、「[すべてのアプリの入手](get-all-apps.md)」をご覧ください。 |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}``` | Windows デベロッパー センター アカウントに登録されている特定のアプリに関するデータを取得します。 詳しくは、「[アプリの入手](get-an-app.md)」をご覧ください。 |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts``` | Windows デベロッパー センター アカウントに登録されているアプリのアドオン (アプリ内製品または IAP とも呼ばれる) の一覧を示します。 詳しくは、「[アプリのアドオンの入手](get-add-ons-for-an-app.md)」をご覧ください。 |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights``` | Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトの一覧を示します。 詳しくは、「[アプリのパッケージ フライトの入手](get-flights-for-an-app.md)」をご覧ください。 |
 
 <span/>
 
-## Prerequisites
+## 前提条件
 
-If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API before trying to use any of these methods.
+Windows ストア提出 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)がまだ満たされていない場合は、ここに記載されているメソッドを使用する前に前提条件を整えてください。
 
-## Resources
+## リソース
 
-These methods use the following resources to format data.
+これらのメソッドでは、次のリソースを使用してデータの書式を設定します。
 
 <span id="application_object" />
-### Application
+### アプリケーション
 
-This resource represents an app that is registered to your account. The following example demonstrates the format of this resource.
+このリソースは、アカウントに登録されているアプリを表します。 次の例は、このリソースの書式設定を示しています。
 
 ```json
 {
@@ -52,24 +56,24 @@ This resource represents an app that is registered to your account. The followin
 }
 ```
 
-This resource has the following values.
+このリソースには、次の値があります。
 
-| Value           | Type    | Description                                                                                                                                                                                                                          |
+| 値           | 型    | 説明                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id            | string  | The Store ID of the app. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).   |
-| primaryName   | string  | The primary name of the app.                                                                                                                                                   |
-| packageFamilyName | string  | The package family name of the app.                                                                                                                                                                                                         |
-| packageIdentityName          | string  | The package identity name of the app.                                                                                                                                                              |
-| publisherName       | string  | The Windows publisher ID that is associated with the app. This corresponds to the **Package/Identity/Publisher** value that appears on the [App identity](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) page for the app in the Windows Dev Center dashboard.                                                                                             |
-| firstPublishedDate      | string  | The date the app was first published, in ISO 8601 format.                                                                                         |
-| lastPublishedApplicationSubmission       | object | An object that provides information about the last published submission for the app. For more information, see the [Submission](#submission_object) section below.                                                                                                                                                          |
-| pendingApplicationSubmission        | object  |  An object that provides information about the current pending submission for the app. For more information, see the [Submission](#submission_object) section below.  |   |
+| id            | string  | アプリのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。   |
+| primaryName   | string  | アプリのプライマリ名です。                                                                                                                                                   |
+| packageFamilyName | string  | アプリのパッケージ ファミリ名です。                                                                                                                                                                                                         |
+| packageIdentityName          | string  | アプリのパッケージ ID 名です。                                                                                                                                                              |
+| publisherName       | string  | アプリに関連付けられている Windows 発行元 ID です。 これは、Windows デベロッパー センター ダッシュボードのアプリの「[アプリ ID](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」ページに表示される「**パッケージ/ID/発行者**」値と同じです。                                                                                             |
+| firstPublishedDate      | string  | アプリが最初に発行された日付 (ISO 8601 形式)。                                                                                         |
+| lastPublishedApplicationSubmission       | object | アプリの最後に公開された提出に関する情報を提供するオブジェクト。 詳しくは、以下の「[提出](#submission_object)」のセクションをご覧ください。                                                                                                                                                          |
+| pendingApplicationSubmission        | object  |  アプリの現在保留中の提出に関する情報を提供するオブジェクト。 詳しくは、以下の「[提出](#submission_object)」のセクションをご覧ください。  |   |
 
 
 <span id="add-on-object" />
-### Add-on
+### アドオン
 
-This resource provides information about an add-on. The following example demonstrates the format of this resource.
+このリソースは、アドオンに関する情報を提供します。 次の例は、このリソースの書式設定を示しています。
 
 ```json
 {
@@ -77,17 +81,17 @@ This resource provides information about an add-on. The following example demons
 }
 ```
 
-This resource has the following values.
+このリソースには、次の値があります。
 
-| Value           | Type    | Description                                                                                                                                                                                                                          |
+| 値           | 型    | 説明                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| inAppProductId            | string  | The Store ID of the add-on. This value is supplied by the Store. An example Store ID is 9NBLGGH4TNMP.   |
+| inAppProductId            | string  | アドオンのストア ID です。 この値は、ストアによって提供されます。 ストア ID の例は 9NBLGGH4TNMP です。   |
 
 
 <span id="flight-object" />
-### Flight
+### フライト
 
-This resource provides information about a package flight for an app. The following example demonstrates the format of this resource.
+このリソースは、アプリのパッケージ フライトに関する情報を提供します。 次の例は、このリソースの書式設定を示しています。
 
 ```json
 {
@@ -108,22 +112,22 @@ This resource provides information about a package flight for an app. The follow
 }
 ```
 
-This resource has the following values.
+このリソースには、次の値があります。
 
-| Value           | Type    | Description                                                                                                                                                                                                                          |
+| 値           | 型    | 説明                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| flightId            | string  | The ID for the package flight. This value is supplied by Dev Center.  |
-| friendlyName           | string  | The name of the package flight, as specified by the developer.   |
-| lastPublishedFlightSubmission       | object | An object that provides information about the last published submission for the package flight. For more information, see the [Submission](#submission_object) section below.  |
-| pendingFlightSubmission        | object  |  An object that provides information about the current pending submission for the package flight. For more information, see the [Submission](#submission_object) section below.  |    
-| groupIds           | array  | An array of strings that contain the IDs of the flight groups that are associated with the package flight. For more information about flight groups, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).   |
-| rankHigherThan           | string  | The friendly name of the package flight that is ranked immediately lower than the current package flight. For more information about ranking flight groups, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |
+| flightId            | string  | パッケージ フライトの ID。 この値は、デベロッパー センターによって提供されます。  |
+| friendlyName           | string  | 開発者によって指定されているパッケージ フライトの名前。   |
+| lastPublishedFlightSubmission       | object | パッケージ フライトの最後に公開された提出に関する情報を提供するオブジェクト。 詳しくは、以下の「[提出](#submission_object)」のセクションをご覧ください。  |
+| pendingFlightSubmission        | object  |  パッケージ フライトの現在保留中の提出に関する情報を提供するオブジェクト。 詳しくは、以下の「[提出](#submission_object)」のセクションをご覧ください。  |    
+| groupIds           | array  | パッケージ フライトに関連付けられているフライト グループの ID を含む文字列の配列。 フライト グループについて詳しくは、「[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)」をご覧ください。   |
+| rankHigherThan           | string  | 現在のパッケージ フライトの次に低位のパッケージ フライトのフレンドリ名。 フライト グループのランク付けについて詳しくは、「[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)」をご覧ください。  |
 
 
 <span id="submission_object" />
-### Submission
+### 提出
 
-This resource provides information about a submission. The following example demonstrates the format of this resource.
+このリソースは、提出に関する情報を提供します。 次の例は、このリソースの書式設定を示しています。
 
 ```json
 {
@@ -134,20 +138,26 @@ This resource provides information about a submission. The following example dem
 }
 ```
 
-This resource has the following values.
+このリソースには、次の値があります。
 
-| Value           | Type    | Description                                                                                                                                                                                                                          |
+| 値           | 型    | 説明                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id            | string  | The ID of the submission.    |
-| resourceLocation   | string  | A relative path that you can append to the base ```https://manage.devcenter.microsoft.com/v1.0/my/``` request URI to retrieve the complete data for the submission.                                                                                                                                               |
- 
+| id            | string  | 提出 ID。    |
+| resourceLocation   | string  | 提出の完全なデータを取得するために基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI に付加できる相対パス。                                                                                                                                               |
+ 
 <span/>
 
-## Related topics
+## 関連トピック
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Manage app submissions using the Windows Store submission API](manage-app-submissions.md)
-* [Get all apps](get-all-apps.md)
-* [Get an app](get-an-app.md)
-* [Get add-ons for an app](get-add-ons-for-an-app.md)
-* [Get package flights for an app](get-flights-for-an-app.md)
+* [Windows ストア サービスを使用した提出の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
+* [Windows ストア提出 API を使用したアプリの提出の管理](manage-app-submissions.md)
+* [すべてのアプリの入手](get-all-apps.md)
+* [アプリの入手](get-an-app.md)
+* [アプリのアドオンの入手](get-add-ons-for-an-app.md)
+* [アプリのパッケージ フライトの入手](get-flights-for-an-app.md)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

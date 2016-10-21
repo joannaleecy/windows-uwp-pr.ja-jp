@@ -3,8 +3,9 @@ author: mtoepke
 title: "Marble Maze のサンプルへのオーディオの追加"
 description: "このドキュメントでは、オーディオを扱う際に考慮する必要のある主な手法について説明すると共に、それらが Marble Maze でどのように適用されているかを紹介します。"
 ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
+translationtype: Human Translation
 ms.sourcegitcommit: c663692e31a62fdf40df9d706070d0d2ce0e1cdd
-ms.openlocfilehash: 0b2a0cb240431a49ef2bdb82a188f3dcb0294fc5
+ms.openlocfilehash: 9c35ca4d475783e52ba68d611c7bea49a927a4e5
 
 ---
 
@@ -18,8 +19,7 @@ ms.openlocfilehash: 0b2a0cb240431a49ef2bdb82a188f3dcb0294fc5
 
 Marble Maze は、バックグラウンドで再生する音楽に加え、ゲームのイベント (大理石が壁に当たったときなど) を示すゲーム プレイ音を使っています。 実装で重要となる部分は、大理石がバウンドする音をシミュレートするためにリバーブ (反響) エフェクトを使っている点です。 リバーブ エフェクトを実装すると、小さい空間では反響音がより早く大きい音量で聞こえ、大きい空間では反響音がより遅く小さい音量で聞こえるようになります。
 
-> 
-            **注**  このドキュメントに対応するサンプル コードは、 [DirectX Marble Maze ゲームのサンプルに関するページ](http://go.microsoft.com/fwlink/?LinkId=624011)にあります。
+> **注**   このドキュメントに対応するサンプル コードは、[DirectX Marble Maze ゲームのサンプルに関するページ](http://go.microsoft.com/fwlink/?LinkId=624011)にあります。
 
 このドキュメントでは、ゲームでオーディオを扱う際に重要となるいくつかの事柄について説明します。取り上げる内容は次のとおりです。
 
@@ -147,8 +147,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-> 
-            **ヒント**   既にあるサブミックス ボイスに対し、既にあるエフェクト チェーンをアタッチする場合、または、現在のエフェクト チェーンを置き換える場合は、[**IXAudio2Voice::SetEffectChain**](https://msdn.microsoft.com/library/windows/desktop/ee418594) メソッドを使います。
+> **ヒント**   既にあるサブミックス ボイスに対し、既にあるエフェクト チェーンをアタッチする場合、または、現在のエフェクト チェーンを置き換える場合は、[**IXAudio2Voice::SetEffectChain**](https://msdn.microsoft.com/library/windows/desktop/ee418594) メソッドを使います。
 
  
 
@@ -252,8 +251,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-
-            次に、**MediaStreamer::Initialize** は [**MFCreateSourceReaderFromURL**](https://msdn.microsoft.com/library/windows/desktop/dd388110) を呼び出して [**IMFSourceReader**](https://msdn.microsoft.com/library/windows/desktop/dd374655) オブジェクトを作成します。 **IMFSourceReader** オブジェクトは、URL で指定されたファイルからメディア データを読み取ります。
+次に、**MediaStreamer::Initialize** は [**MFCreateSourceReaderFromURL**](https://msdn.microsoft.com/library/windows/desktop/dd388110) を呼び出して [**IMFSourceReader**](https://msdn.microsoft.com/library/windows/desktop/dd374655) オブジェクトを作成します。 **IMFSourceReader** オブジェクトは、URL で指定されたファイルからメディア データを読み取ります。
 
 ```cpp
 DX::ThrowIfFailed(
@@ -302,8 +300,7 @@ CopyMemory(&m_waveFormat, waveFormat, sizeof(m_waveFormat));
 CoTaskMemFree(waveFormat);
 ```
 
-> 
-            **重要**   [**MFCreateWaveFormatExFromMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms702177) 関数は、**CoTaskMemAlloc** を使って [**WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff538799) オブジェクトを割り当てます。 したがって、このオブジェクトを使い終えたら必ず、**CoTaskMemFree** を呼び出す必要があります。
+> **重要**   [**MFCreateWaveFormatExFromMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms702177) 関数は、**CoTaskMemAlloc** を使って [**WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff538799) オブジェクトを割り当てます。 したがって、このオブジェクトを使い終えたら必ず、**CoTaskMemFree** を呼び出す必要があります。
 
  
 
@@ -432,15 +429,13 @@ void Audio::Start()
 
 ソース ボイスは、そのオーディオ データをオーディオ グラフの次のステージに渡します。 Marble Maze の場合、次のステージには、オーディオにリバーブ エフェクトを適用する 2 つのサブミックス ボイスが含まれます。 1 つは近距離の後期フィールド リバーブを適用するもので、もう 1 つは遠距離の後期フィールド リバーブを適用するものです。 最終的なミキシングに各サブミックス ボイスがどれだけ含まれるかは、空間のサイズと形状によって決定します。 玉が壁の近くまたは小さな空間内にある場合はニアフィールド リバーブの占める量が多くなり、玉が大きな空間内にある場合は後期フィールド リバーブの占める量が多くなります。 この手法により、大理石が迷路内を移動するときに、よりリアルなエコー効果が得られます。 Marble Maze におけるこの効果の実装について詳しくは、Marble Maze のソース コードで **Audio::SetRoomSize** と **Physics::CalculateCurrentRoomSize** をご覧ください。
 
-> 
-            **注**  ほとんどの空間のサイズが同じであるゲームでは、もっと基本的なリバーブ モデルを使うことができます。 たとえば、すべての空間に 1 つのリバーブ設定を使ったり、定義済みのリバーブ設定を空間ごとに作成したりできます。
+> **注**  ほとんどの空間のサイズが同じであるゲームでは、もっと基本的なリバーブ モデルを使うことができます。 たとえば、すべての空間に 1 つのリバーブ設定を使ったり、定義済みのリバーブ設定を空間ごとに作成したりできます。
 
  
 
 **Audio::CreateResources** メソッドは、メディア ファンデーションを使って BGM を読み込みます。 しかし、この時点では、処理対象のオーディオ データがソース ボイスにありません。 さらに、BGM はループするので、データを使いソース ボイスを定期的に更新して、音楽を再生し続ける必要があります。 ソース ボイスにデータが入力された状態を維持するために、ゲーム ループはフレームごとにオーディオ バッファーを更新します。 **MarbleMaze::Render** メソッドは、**Audio::Render** を呼び出して BGM のオーディオ バッファーを処理します。 **Audio::Render** には 3 つのオーディオ バッファーの配列 **m\_audioBuffers** を定義します。 各バッファーは 64 KB (65536 バイト) のデータを保持します。 ループは、メディア ファンデーション オブジェクトからデータを読み取り、ソース ボイスのキューに 3 つのバッファーが入るまで、そのデータをソース ボイスに書き込みます。
 
-> 
-            **注意**  Marble Maze は 64 KB のバッファーを使って音楽データを保持しますが、より大きいバッファーまたはより小さいバッファーが必要になる場合もあります。 その量は、ゲームの要件によって異なります。
+> **注意**  Marble Maze は 64 KB のバッファーを使って音楽データを保持しますが、より大きいバッファーまたはより小さいバッファーが必要になる場合もあります。 その量は、ゲームの要件によって異なります。
 
  
 
@@ -538,8 +533,7 @@ if(sound == RollingEvent)
 
 ただし、BGM に関しては、Marble Maze は、メモリの使用量を細かく制御できるようにバッファーを直接管理します。 音楽ファイルが大きい場合は、小さいバッファーに音楽データをストリームできます。 そうすることで、ゲームがオーディオ データを処理してストリームできる頻度と、メモリ サイズとのバランスを取ることができます。
 
-> 
-            **ヒント**  フレーム レートが低いまたは変動するゲームでは、メイン スレッドでのオーディオの処理中に、オーディオ内で予期しない一時停止またはポップが発生する可能性があります。これは、オーディオ エンジンに処理対象のオーディオ データが十分にバッファーされていないためです。 ゲームでこの問題が発生しやすい場合は、レンダリングを実行しない別のスレッドでオーディオを処理することを検討してください。 この方法は、ゲームがアイドル状態のプロセッサを使うことができるため、複数のプロセッサを搭載したコンピューターで特に役立ちます。
+> **ヒント**  フレーム レートが低いまたは変動するゲームでは、メイン スレッドでのオーディオの処理中に、オーディオ内で予期しない一時停止またはポップが発生する可能性があります。これは、オーディオ エンジンに処理対象のオーディオ データが十分にバッファーされていないためです。 ゲームでこの問題が発生しやすい場合は、レンダリングを実行しない別のスレッドでオーディオを処理することを検討してください。 この方法は、ゲームがアイドル状態のプロセッサを使うことができるため、複数のプロセッサを搭載したコンピューターで特に役立ちます。
 
  
 
@@ -552,8 +546,7 @@ if(sound == RollingEvent)
 m_audio.PlaySoundEffect(FallingEvent);
 ```
 
-**Audio::PlaySoundEffect** メソッドは [**IXAudio2SourceVoice::Start**](https://msdn.microsoft.com/library/windows/desktop/ee418471) メソッドを呼び出してサウンドの再生を開始します。 **IXAudio2SourceVoice::Start** メソッドが既に呼び出されている場合は、もう開始されません。 
-            **Audio::PlaySoundEffect** は、続いて特定のサウンドのカスタム ロジックを実行します。
+**Audio::PlaySoundEffect** メソッドは [**IXAudio2SourceVoice::Start**](https://msdn.microsoft.com/library/windows/desktop/ee418471) メソッドを呼び出してサウンドの再生を開始します。 **IXAudio2SourceVoice::Start** メソッドが既に呼び出されている場合は、もう開始されません。 **Audio::PlaySoundEffect** は、続いて特定のサウンドのカスタム ロジックを実行します。
 
 ```cpp
 void Audio::PlaySoundEffect(SoundEvent sound)
@@ -772,8 +765,7 @@ if (m_engineExperiencedCriticalError)
 
 Marble Maze は、利用できるデバイスがない場合に XAudio2 への呼び出しを防ぐ目的でも **m\_engineExperiencedCriticalError** フラグを使います。 たとえば、**MarbleMaze::Update** メソッドは、このフラグが設定されているときは転がるイベントまたは衝突するイベントのオーディオを処理しません。 アプリは必要に応じてフレームごとにオーディオ エンジンの修復を試みますが、コンピューターにオーディオ デバイスがない場合やヘッドホンが外されていて他に利用できるオーディオ デバイスがない場合は、**m\_engineExperiencedCriticalError** フラグが常に設定されます。
 
-> 
-            **注意**   原則として、エンジン コールバックの本体でブロック操作を実行しないでください。 これを行うと、パフォーマンスの問題が発生することがあります。 Marble Maze は **OnCriticalError** コールバック内でフラグを設定し、後で通常のオーディオ処理フェーズ中にエラーを処理します。 XAudio2 のコールバックについて詳しくは、「[XAudio2 のコールバック](https://msdn.microsoft.com/library/windows/desktop/ee415745)」をご覧ください。
+> **注意**   原則として、エンジン コールバックの本体でブロック操作を実行しないでください。 これを行うと、パフォーマンスの問題が発生することがあります。 Marble Maze は **OnCriticalError** コールバック内でフラグを設定し、後で通常のオーディオ処理フェーズ中にエラーを処理します。 XAudio2 のコールバックについて詳しくは、「[XAudio2 のコールバック](https://msdn.microsoft.com/library/windows/desktop/ee415745)」をご覧ください。
 
  
 
@@ -793,6 +785,6 @@ Marble Maze は、利用できるデバイスがない場合に XAudio2 への�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

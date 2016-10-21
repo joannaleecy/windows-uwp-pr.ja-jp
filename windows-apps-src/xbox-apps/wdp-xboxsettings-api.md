@@ -3,8 +3,8 @@ author: payzer
 title: "Device Portal の Xbox 開発者向け設定 API のリファレンス"
 description: "Xbox 開発者向け設定にアクセスする方法について説明します。"
 translationtype: Human Translation
-ms.sourcegitcommit: a9a2b6e58dfa0d1e77164a59f204deabf8f5c3e0
-ms.openlocfilehash: e3637f5a8481c0800af42c011fb811b908b946b1
+ms.sourcegitcommit: c51eff41e63d815f6298b4fc46a9b11314bc8bc9
+ms.openlocfilehash: 5a983714cda9b5a5f45e555e2cb6f980f082a003
 
 ---
 
@@ -56,11 +56,11 @@ HTTP 状態コード      | 説明
 
 **要求**
 
-次の要求を使用して、個別の設定に関する情報を取得できます。
+次の要求を使って、個別の設定に関する情報を取得できます。
 
 メソッド      | 要求 URI
 :------     | :-----
-GET | /ext/settings/<setting name>
+GET | /ext/settings/\<設定名\>
 <br />
 **URI パラメーター**
 
@@ -97,11 +97,11 @@ HTTP 状態コード      | 説明
 
 **要求**
 
-次の要求を使用して、設定の値を設定できます。
+次の要求を使って、設定の値を設定できます。
 
 メソッド      | 要求 URI
 :------     | :-----
-PUT | /ext/settings/<setting name>
+PUT | /ext/settings/\<設定名\>
 <br />
 **URI パラメーター**
 
@@ -137,6 +137,6 @@ HTTP 状態コード      | 説明
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

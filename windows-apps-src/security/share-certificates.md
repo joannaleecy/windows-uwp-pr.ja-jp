@@ -3,8 +3,9 @@ title: "アプリ間での証明書の共有"
 description: "ユーザー ID とパスワードの組み合わせよりも安全な認証を必要とするユニバーサル Windows プラットフォーム (UWP) アプリでは、証明書を認証に使うことができます。"
 ms.assetid: 159BA284-9FD4-441A-BB45-A00E36A386F9
 author: awkoren
+translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 2bb1b601e1ab35115c88692f6c36dccc70836541
+ms.openlocfilehash: 189e95695be3621754414708f1a394fe4cea4ecf
 
 ---
 
@@ -31,7 +32,7 @@ ms.openlocfilehash: 2bb1b601e1ab35115c88692f6c36dccc70836541
 ## セキュリティで保護された Web サービスの作成と発行
 
 
-1.  管理者として Microsoft Visual Studio を実行し、スタート ページで **[新しいプロジェクト]** を選びます。 Web サービスを IIS サーバーに発行するには、管理者のアクセス権が必要です。 [新しいプロジェクト] ダイアログで、フレームワークを **[.NET Framework 3.5]**に変更します。 **[Visual C#]**、**[Web]**、**[Visual Studio]**、**[ASP.NET Web サービス アプリケーション]** の順に選びます。 アプリケーションに "FirstContosoBank" という名前を付けます。 **[OK]** をクリックしてプロジェクトを作ります。
+1.  管理者として Microsoft Visual Studio を実行し、スタート ページで **[新しいプロジェクト]** を選びます。 Web サービスを IIS サーバーに発行するには、管理者のアクセス権が必要です。 [新しいプロジェクト] ダイアログで、フレームワークを **[.NET Framework 3.5]**に変更します。 **[Visual C#]** -&gt; **[Web]** -&gt; **[Visual Studio]** -&gt; **[ASP.NET Web サービス アプリケーション]** の順に選びます。 アプリケーションに "FirstContosoBank" という名前を付けます。 **[OK]** をクリックしてプロジェクトを作ります。
 2.  **Service1.asmx.cs** ファイルで、既定の **HelloWorld** Web メソッドを次の "Login" メソッドに置き換えます。
     ```cs
             [WebMethod]
@@ -70,8 +71,7 @@ ms.openlocfilehash: 2bb1b601e1ab35115c88692f6c36dccc70836541
 
 使用できるクライアント証明書がない場合は、ユーザーが証明書ストアに証明書を追加する必要があります。 そこで、クライアント証明書の PFX ファイルをユーザーに選んでもらい、その証明書をクライアント証明書ストアにインポートするコードをアプリに含めることができます。
 
-
-            **ヒント** makecert.exe を使うと、このクイック スタートで使うことのできる PFX ファイルを作成できます。 makecert.exe の使い方の詳細については、「[MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968)」を参照してください。
+**ヒント** makecert.exe を使うと、このクイック スタートで使うことのできる PFX ファイルを作成できます。 makecert.exe の使い方の詳細については、「[MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968)」を参照してください。
 
  
 
@@ -205,6 +205,6 @@ ms.openlocfilehash: 2bb1b601e1ab35115c88692f6c36dccc70836541
 これらの手順を繰り返すことで、同じユーザー証明書を使ってセキュリティで保護された同じ Web サービスや別の Web サービスにアクセスする複数のアプリを作成できます。
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

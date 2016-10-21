@@ -3,8 +3,9 @@ author: jnHs
 Description: "アプリについて予約したすべての名前の表示、(他言語用の、またはアプリ名を変更するための) 追加の名前の予約、不要になった予約済みの名前の削除を行います。"
 title: "アプリ名の管理"
 ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
+translationtype: Human Translation
 ms.sourcegitcommit: 48952b5d4f2565d06ec79475f88fbabf93fd0f70
-ms.openlocfilehash: e03e99b5de2142c2bcf46ee2aad4a76bb87ee4e5
+ms.openlocfilehash: e5616be7c3f1b767e4a73af3c6fbc168333090cc
 
 ---
 
@@ -19,8 +20,7 @@ ms.openlocfilehash: e03e99b5de2142c2bcf46ee2aad4a76bb87ee4e5
 
 **[アプリ名の管理]** ページの **[その他の名前を予約]** セクションに、テキスト ボックスが表示されます。 予約する名前を入力し、**[利用可能か確認]** をクリックします。 名前が利用できる場合は、**[名前を予約]** をクリックします。
 
-> 
-            **注**  アプリ名の予約に関する詳細や、特定の名前が利用できない可能性がある理由については、「[名前の予約によるアプリの作成](create-your-app-by-reserving-a-name.md)」をご覧ください。
+> **注**  アプリ名の予約に関する詳細や、特定の名前が利用できない可能性がある理由については、「[名前の予約によるアプリの作成](create-your-app-by-reserving-a-name.md)」をご覧ください。
 
 必要に応じて、ここで引き続き追加のアプリ名を予約できます。
 
@@ -48,6 +48,6 @@ ms.openlocfilehash: e03e99b5de2142c2bcf46ee2aad4a76bb87ee4e5
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

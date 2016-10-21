@@ -1,45 +1,55 @@
 ---
 author: PatrickFarley
-title: Discover remote devices
-description: Learn how to discover remote devices from your app using Project "Rome".
+title: "リモート デバイスの検出"
+description: "&quot;Rome&quot; プロジェクトを使ってアプリからリモート デバイスを検出する方法について説明します。"
+translationtype: Human Translation
+ms.sourcegitcommit: ff8e16d0e376d502157ae42b9cdae11875008554
+ms.openlocfilehash: cb1f9cf6915378203919fdf63bcebc935af74a30
+
 ---
 
-# Discover remote devices
-Your app can use the wireless network, Bluetooth, and a cloud connection to discover Windows-based devices that are signed on with the same Microsoft account as the discovering device. Communal devices that can accept anonymous connections, such as the Surface Hub and Xbox One, are also discoverable. The remote devices do not need to have any special software installed in order to be discoverable.
+# リモート デバイスの検出
+アプリは、ワイヤレス ネットワーク、Bluetooth、クラウド接続を使用って、検出側デバイスと同じ Microsoft アカウントでサインインしている Windows ベースのデバイスを検出できます。 Surface Hub や Xbox One などの、匿名接続を受け入れる共用デバイスも検出できます。 リモート デバイスを検出するために特別なソフトウェアをインストールする必要はありません。
 
 > [!NOTE]
-> This guide assumes you have already been granted access to the Remote Systems feature by following the steps in [Launch a remote app](launch-a-remote-app.md).
+> このガイドでは、「[リモート アプリの起動](launch-a-remote-app.md)」の手順に従うことで、リモート システム機能へのアクセスが既に許可されていることを前提としています。
 
-## Filter the set of discoverable devices
-You can narrow down the set of discoverable devices by using a [**RemoteSystemWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemWatcher) with filters. Filters can detect the discovery type (local network vs. cloud connection), device type (desktop, mobile device, Xbox, Hub, and Holographic), and availability status (the status of a device's availability to use Remote System features).
+## 検出可能な一連のデバイスのフィルター処理
+フィルターに [ **RemoteSystemWatcher** ](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemWatcher) を使うことで、検出可能な一連のデバイスを絞り込むことができます。 フィルターは、検出の種類 (ローカル ネットワークかクラウド接続か)、デバイスの種類 (デスクトップ、モバイル デバイス、Xbox、Hub、ホログラフィック)、利用可能ステータス (デバイスがリモート システム機能を利用可能かどうかのステータス) を検出できます。
 
-Filter objects must be constructed before the **RemoteSystemWatcher** object is initialized, because they are passed as a parameter into its constructor. The following code creates a filter of each type available and then adds them to a list.
+**RemoteSystemWatcher** オブジェクトを初期化する前に、フィルター オブジェクトを作成する必要があります。コンストラクターにパラメーターとして渡されるためです。 次のコードでは、利用可能な各種類のフィルターを作成し、一覧に追加します。
 
 > [!NOTE]
-> The code in these examples assumes that you have a `using Windows.System.RemoteSystems` statement in your file.
+> この例のコードでは、ファイルに `using Windows.System.RemoteSystems` ステートメントがあることを前提としています。
 
-[!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetMakeFilterList)]
+[!code-cs[メイン](./code/DiscoverDevices/MainPage.xaml.cs#SnippetMakeFilterList)]
 
-Once a list of [**IRemoteSystemFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.IRemoteSystemFilter) objects is created, it can be passed into the constructor of a **RemoteSystemWatcher**.
+[**IRemoteSystemFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.IRemoteSystemFilter) オブジェクトの一覧を作成すると、**RemoteSystemWatcher** のコンストラクターに渡すことができます。
 
-[!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetCreateWatcher)]
+[!code-cs[メイン](./code/DiscoverDevices/MainPage.xaml.cs#SnippetCreateWatcher)]
 
-When this watcher's [**Start**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemWatcher.Start) method is called, it will raise the [**RemoteSystemAdded**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemWatcher.RemoteSystemAdded) event only if a device is detected that meets all of the following criteria:
-* It is discoverable by proximal connection
-* It is a desktop or phone
-* It is classified as available
+このウォッチャーの [**Start**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemWatcher.Start) メソッドが呼び出されると、次の条件を満たすデバイスが検出された場合のみ [**RemoteSystemAdded**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemWatcher.RemoteSystemAdded) イベントが発生します。
+* 近接接続によって検出可能
+* デスクトップまたは携帯電話である
+* 利用可能として分類されている
 
-From there, the procedure for handling events, retrieving [**RemoteSystem**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem) objects, and connecting to remote devices is exactly the same as in [Launch a remote app](launch-a-remote-app.md). In short, the **RemoteSystem** objects are stored as properties of [**RemoteSystemAddedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemAddedEventArgs) objects, which are parameters of each **RemoteSystemAdded** event.
+これ以降、イベントの処理、[**RemoteSystem**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem) オブジェクトの取得、リモート デバイスへの接続の手順は「[リモート アプリの起動](launch-a-remote-app.md)」とまったく同じ手順です。 つまり、**RemoteSystem** オブジェクトは、各 **RemoteSystemAdded** イベントのパラメーターである [**RemoteSystemAddedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystemAddedEventArgs) オブジェクトのプロパティとして格納されます。
 
-## Discover devices by address input
-Some devices may not be associated with a user or discoverable with a scan, but they can still be reached if the discovering app uses a direct address. The [**HostName**](https://msdn.microsoft.com/library/windows/apps/windows.networking.hostname.aspx) class is used to represent the address of a remote device. This is often stored in the form of an IP address, but several other formats are allowed (see the [**HostName constructor**](https://msdn.microsoft.com/library/windows/apps/br207118.aspx) for details).
+## アドレス入力によるデバイスの検出
+ユーザーに関連付けられていないか、スキャンで検出することができないデバイスでも、検出側のアプリが直接アドレスを使う場合はアクセスできます。 リモート デバイスのアドレスを表すには、[ **HostName** ](https://msdn.microsoft.com/library/windows/apps/windows.networking.hostname.aspx) クラスを使います。 これは多くの場合 IP アドレスの形式で保存されますが、他のいくつかの形式も使うことができます (詳しくは、「[ **HostName コンス トラクター** ](https://msdn.microsoft.com/library/windows/apps/br207118.aspx)」をご覧ください)。
 
-A **RemoteSystem** object is retrieved if a valid **HostName** object is provided. If the address data is invalid, a `null` object reference is returned.
+**RemoteSystem** オブジェクトは、有効な **HostName** オブジェクトが指定された場合に取得されます。 アドレス データが無効な場合、`null` オブジェクト参照が返されます。
 
-[!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetFindByHostName)]
+[!code-cs[メイン](./code/DiscoverDevices/MainPage.xaml.cs#SnippetFindByHostName)]
 
-## Related topics
-[Connected apps and devices (Project "Rome")](connected-apps-and-devices.md)  
-[Launch a remote app](launch-a-remote-app.md)  
-[Remote Systems API reference](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
-[Remote Systems sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems ) demonstrates how to discover a remote system, launch an app on a remote system, and use app services to send messages between apps running on two systems.
+## 関連トピック
+[接続されているアプリとデバイス ("Rome" プロジェクト)](connected-apps-and-devices.md)  
+[リモート アプリの起動](launch-a-remote-app.md)  
+[リモート システムの API リファレンス](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
+[リモート システムのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems )では、リモート システムを検出する方法、リモート システムでアプリを起動する方法、アプリ サービスを使って 2 つのシステム上で実行しているアプリ間でメッセージを送信する方法が説明されています。
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

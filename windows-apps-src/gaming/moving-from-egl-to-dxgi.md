@@ -3,8 +3,9 @@ author: mtoepke
 title: "EGL コードと DXGI および Direct3D の比較"
 description: "DirectX Graphics Interface (DXGI) といくつかの Direct3D API は EGL と同じ役割を果たします。 このトピックは EGL の観点から DXGI と Direct3D 11 を理解するのに役立ちます。"
 ms.assetid: 90f5ecf1-dd5d-fea3-bed8-57a228898d2a
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 461983b646148c21aba7da2adb703510d95b0343
+ms.openlocfilehash: 599196300a393352540abf1154d1508af7b4caa1
 
 ---
 
@@ -24,8 +25,7 @@ DirectX Graphics Interface (DXGI) といくつかの Direct3D API は EGL と同
 
 DXGI と Direct3D は EGL に似ており、グラフィックス リソースを構成するためのメソッドや、シェーダーの描画先となり、ウィンドウに結果を表示するために使われるレンダリング コンテキストを取得するためのメソッドがあります。 ただし、DXGI と Direct3D にはかなりのオプションがあるため、EGL からの移植の際には、適切に設定するための余分な作業が必要です。
 
-> 
-            **注**   このガイダンスは、Khronos Group による EGL 1.4 のオープン仕様 ([Khronos Native Platform Graphics Interface (EGL Version 1.4 - April 6, 2011) \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)) に基づいています。 その他のプラットフォームと開発言語に固有の構文の違いは、このガイダンスでは説明していません。
+> **注**   このガイダンスは、Khronos Group による EGL 1.4 のオープン仕様 ([Khronos Native Platform Graphics Interface (EGL Version 1.4 - April 6, 2011) \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)) に基づいています。 その他のプラットフォームと開発言語に固有の構文の違いは、このガイダンスでは説明していません。
 
  
 
@@ -69,8 +69,7 @@ EGL は Direct3D 11 と比べて API が非常に少なくなっています。�
 6.  パイプラインが実行され、フレームがバック バッファーに描画されたら、[**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) でそれを画面に表示します。
 
 このプロセスについて詳しく調べるには、「[DirectX グラフィックスの概要](https://msdn.microsoft.com/library/windows/desktop/hh309467)」をご覧ください。 この記事の残りの部分では、基本的なグラフィックス パイプラインの設定と管理に関する一般的な手順の多くについて説明します。
-> 
-            **注**   Windows デスクトップ アプリには、[**D3D11Device::CreateDeviceAndSwapChain**](https://msdn.microsoft.com/library/windows/desktop/ff476083) など、Direct3D スワップ チェーンを取得するためのさまざまな API があります。[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) オブジェクトは使われません。
+> **注**   Windows デスクトップ アプリには、[**D3D11Device::CreateDeviceAndSwapChain**](https://msdn.microsoft.com/library/windows/desktop/ff476083) など、Direct3D スワップ チェーンを取得するためのさまざまな API があります。[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) オブジェクトは使われません。
 
  
 
@@ -417,6 +416,6 @@ UWP アプリでは、[**CoreWindow::Close**](https://msdn.microsoft.com/library
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

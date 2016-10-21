@@ -5,8 +5,9 @@ title: "UWP アプリでのポップアップ UI のアニメーション"
 ms.assetid: 4E9025CE-FC90-4d4c-9DE6-EC6B6F2AD9DF
 label: Motion--Pop-up animations
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 2b135fb62d871c559892e6b1e968767b7be716bd
+ms.openlocfilehash: 45219532db704e76e8e85e2926ea9190fba3c7a4
 
 ---
 
@@ -51,6 +52,6 @@ ms.openlocfilehash: 2b135fb62d871c559892e6b1e968767b7be716bd
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

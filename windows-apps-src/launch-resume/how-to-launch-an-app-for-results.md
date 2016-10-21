@@ -1,10 +1,11 @@
 ---
 author: TylerMSFT
 title: "結果を取得するためのアプリの起動"
-description: "別のアプリからアプリを起動し、2 つのアプリの間でデータを交換する方法について説明します。 これは、\"結果を取得するためのアプリの起動\" と呼ばれます。"
+description: "別のアプリからアプリを起動し、2 つのアプリの間でデータを交換する方法について説明します。 これは、&quot;結果を取得するためのアプリの起動&quot; と呼ばれます。"
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
+translationtype: Human Translation
 ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
-ms.openlocfilehash: 5826b370df3dccd1590e3f67c15126b4e78c2c32
+ms.openlocfilehash: d8d7f73e06d627eaa53deaf26f778c122113a9d6
 
 ---
 
@@ -32,12 +33,9 @@ Windows 10 での新しいアプリ間通信 API により、各 Windows アプ�
 
 プロトコル拡張機能の **ReturnResults** 属性に指定できる値は、次の 3 つのうちいずれかです。
 
--   
-            **optional**—結果を取得するためにアプリを起動する場合は、[**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) メソッドを使います。結果を取得しない場合は、[**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) を使います。 **optional** を使うとき、起動アプリでは、結果を取得するためにアプリが起動されたかどうかを判別する必要があります。 これを行うには、[**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) イベント引数を調べます。 引数の [**IActivatedEventArgs.Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) プロパティが [**ActivationKind.ProtocolForResults**](https://msdn.microsoft.com/library/windows/apps/br224693) を返した場合、またはイベント引数の型が [**ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742) である場合は、アプリが **LaunchUriForResultsAsync** を介して起動されます。
--   
-            **always**—アプリは、結果を取得するためにのみ起動することができます。つまり、[**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) に対してのみ応答できます。
--   
-            **none**—アプリは、結果を取得するために起動することはできません。[**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) に対してのみ応答できます。
+-   **optional**—結果を取得するためにアプリを起動する場合は、[**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) メソッドを使います。結果を取得しない場合は、[**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) を使います。 **optional** を使うとき、起動アプリでは、結果を取得するためにアプリが起動されたかどうかを判別する必要があります。 これを行うには、[**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) イベント引数を調べます。 引数の [**IActivatedEventArgs.Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) プロパティが [**ActivationKind.ProtocolForResults**](https://msdn.microsoft.com/library/windows/apps/br224693) を返した場合、またはイベント引数の型が [**ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742) である場合は、アプリが **LaunchUriForResultsAsync** を介して起動されます。
+-   **always**—アプリは、結果を取得するためにのみ起動することができます。つまり、[**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) に対してのみ応答できます。
+-   **none**—アプリは、結果を取得するために起動することはできません。[**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) に対してのみ応答できます。
 
 次のプロトコル拡張機能の例では、アプリは結果を取得するためにのみ起動することができます。 以下で説明するように、この例では、**OnActivated** メソッド内部のロジックが簡素化されます。これは、"結果を取得するために起動する" ケースのみを処理し、アプリをアクティブ化する他の方法を処理する必要がないためです。
 
@@ -206,6 +204,6 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

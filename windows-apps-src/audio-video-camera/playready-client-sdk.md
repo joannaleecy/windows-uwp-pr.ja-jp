@@ -4,8 +4,8 @@ ms.assetid: DD8FFA8C-DFF0-41E3-8F7A-345C5A248FC2
 description: "このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリに PlayReady で保護されたメディア コンテンツを追加する方法について説明します。"
 title: PlayReady DRM
 translationtype: Human Translation
-ms.sourcegitcommit: 5cae0870142282eaf2f3db05e0e202db7e74ef26
-ms.openlocfilehash: eef128afc0da6f55a76b8c664f9049dc1ec48da1
+ms.sourcegitcommit: 549826e6c355d6b8150fa20736db20a147ed41e9
+ms.openlocfilehash: 735fdfb04bcf7e4fab8265b294b117be5c614870
 
 ---
 
@@ -66,27 +66,13 @@ PlayReady DRM を使うと、開発者はコンテンツ プロバイダーが�
 
 PlayReady DRM に、次の新しいインターフェイス、クラス、列挙子が追加されました。
 
--   [
-              **IPlayReadyLicenseAcquisitionServiceRequest**
-            ](https://msdn.microsoft.com/library/windows/apps/dn986077) インターフェイス
--   [
-              **IPlayReadyLicenseSession**
-            ](https://msdn.microsoft.com/library/windows/apps/dn986080) インターフェイス
--   [
-              **IPlayReadySecureStopServiceRequest**
-            ](https://msdn.microsoft.com/library/windows/apps/dn986090) インターフェイス
--   [
-              **PlayReadyLicenseSession**
-            ](https://msdn.microsoft.com/library/windows/apps/dn986309) クラス
--   [
-              **PlayReadySecureStopIterable**
-            ](https://msdn.microsoft.com/library/windows/apps/dn986371) クラス
--   [
-              **PlayReadySecureStopIterator**
-            ](https://msdn.microsoft.com/library/windows/apps/dn986375) クラス
--   [
-              **PlayReadyHardwareDRMFeatures**
-            ](https://msdn.microsoft.com/library/windows/apps/dn986265) 列挙子
+-   [**IPlayReadyLicenseAcquisitionServiceRequest**](https://msdn.microsoft.com/library/windows/apps/dn986077) インターフェイス
+-   [**IPlayReadyLicenseSession**](https://msdn.microsoft.com/library/windows/apps/dn986080) インターフェイス
+-   [**IPlayReadySecureStopServiceRequest**](https://msdn.microsoft.com/library/windows/apps/dn986090) インターフェイス
+-   [**PlayReadyLicenseSession**](https://msdn.microsoft.com/library/windows/apps/dn986309) クラス
+-   [**PlayReadySecureStopIterable**](https://msdn.microsoft.com/library/windows/apps/dn986371) クラス
+-   [**PlayReadySecureStopIterator**](https://msdn.microsoft.com/library/windows/apps/dn986375) クラス
+-   [**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) 列挙子
 
 PlayReady DRM の新機能を利用する方法を示すために、新しいサンプルが作成されました。 このサンプルは、[http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](http://go.microsoft.com/fwlink/p/?linkid=331670) からダウンロードできます。
 
@@ -111,8 +97,8 @@ PlayReady DRM の新機能を利用する方法を示すために、新しいサ
 
 PlayReady DRM でサポートされる出力保護レベルは、**Microsoft PlayReady の拡張可能なメディア使用権仕様**に記載されています。 このドキュメントは、PlayReady ライセンス製品に付属しているドキュメント パッケージに含まれています。
 
-> **注意**
-            &nbsp;&nbsp;ライセンス サーバーで設定できる出力保護レベルの許容値は、[PlayReady の適合性規則](https://www.microsoft.com/playready/licensing/compliance/)に準拠します。
+> [!NOTE]
+> ライセンス サーバーで設定できる出力保護レベルの許容値は、[PlayReady の適合性規則](https://www.microsoft.com/playready/licensing/compliance/)に準拠します。
 
 PlayReady DRM では、PlayReady の適合性規則で指定された出力コネクタ上でのみ出力保護ポリシーを使用してコンテンツを再生できます。 PlayReady の適合性規則で指定された出力コネクタの条件について詳しくは、[PlayReady の適合性と信頼性規則の定義済みの条件](https://www.microsoft.com/playready/licensing/compliance/)をご覧ください
 
@@ -183,7 +169,7 @@ PlayReady DRM では、PlayReady の適合性規則で指定された出力コ�
         <td colspan="2">コンテンツは渡されません。</td>
     </tr>
 </table>
-
+<br/>
 #### オーディオ
 
 <table>
@@ -222,7 +208,7 @@ PlayReady DRM では、PlayReady の適合性規則で指定された出力コ�
         <td>コンテンツは渡されません。</td>
     </tr>
 </table>
-
+<br/>
 ### Miracast
 
 PlayReady DRM では、HDCP 2.0 以降がエンゲージされるとすぐに Miracast 出力を通じてコンテンツを再生できます。 ただし、Windows 10 では Miracast は*デジタル*出力と見なされます。 Miracast シナリオについて詳しくは、[PlayReady の適合規則](https://www.microsoft.com/playready/licensing/compliance/)をご覧ください。 次の表に、PlayReady ライセンスのさまざまな OPL 間のマッピングと、PlayReady DRM でそれらを Miracast 出力に適用する方法について、概要を示します。
@@ -263,7 +249,7 @@ PlayReady DRM では、HDCP 2.0 以降がエンゲージされるとすぐに Mi
         <td>コンテンツは渡されません。</td>
     </tr>
 </table>
-
+<br/>
 ### その他の明示的な出力制限
 
 次の表では、明示的なデジタル ビデオ出力保護の制限に関する Windows 10 用の PlayReady DRM の実装を説明します。
@@ -281,8 +267,7 @@ PlayReady DRM では、HDCP 2.0 以降がエンゲージされるとすぐに Mi
         <td>接続された出力: デジタル ビデオ出力、Miracast、HDMI、DVI など</td>
         <td>
             <p>
-                次のいずれかに制限される場合にコンテンツが渡されます。  
-            </p>
+次のいずれかに制限される場合にコンテンツが渡されます。 </p>
             <ul>
                 <li>(a) フレームの幅が最大フレーム幅以下で (ピクセル単位)、フレームの高さが最大フレーム高以下 (ピクセル単位)</li>
                 <li>(b) フレームの高さが最大フレーム幅以下で (ピクセル単位)、フレームの幅が最大フレーム高以下 (ピクセル単位)</li>
@@ -296,7 +281,7 @@ PlayReady DRM では、HDCP 2.0 以降がエンゲージされるとすぐに Mi
         <td>HDCP 2.2 でコンテンツが渡され、コンテンツ ストリーム タイプが 1 に設定されます。 HDCP 2.2 をエンゲージできない場合、またはコンテンツ ストリーム タイプを 1 に設定できない場合、コンテンツは渡されません。 未圧縮デジタル ビデオ出力の保護レベルに 271 以上の値が指定されている必要もあります。</td>
     </tr>
 </table>
-
+<br/>
 次の表では、明示的なアナログ ビデオ出力保護の制限に関する Windows 10 用の PlayReady DRM の実装を説明します。
 
 <table>
@@ -344,8 +329,9 @@ PlayReady DRM では、HDCP 2.0 以降がエンゲージされるとすぐに Mi
         <td colspan="2">コンテンツは渡されません</td>
     </tr>
 </table>
-
-> **注**"Mini DisplayPort to VGA" のようなアダプター ドングルを再生に使用する場合、Windows 10 ではその出力はデジタル ビデオ出力と見なされ、アナログ ビデオ ポリシーが適用されません。
+<br/>
+> [!NOTE]
+> "Mini DisplayPort to VGA" のようなアダプター ドングルを再生に使用する場合、Windows 10 ではその出力はデジタル ビデオ出力と見なされ、アナログ ビデオ ポリシーが適用されません。s.
 
 次の表では、他の状況で再生を可能にする Windows 10 用の PlayReady DRM 実装について説明します。
 
@@ -371,7 +357,7 @@ PlayReady DRM では、HDCP 2.0 以降がエンゲージされるとすぐに Mi
         <td>**HWDRM:** コンテンツは渡されません。</td>
     </tr>
 </table>
-
+<br/>
 ## 前提条件
 
 PlayReady で保護された UWP アプリの作成を開始する前に、次のソフトウェアがシステムにインストールされている必要があります。
@@ -460,9 +446,20 @@ mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionConta
 
 セキュア ストップのサンプル実装については、[http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](http://go.microsoft.com/fwlink/p/?linkid=331670) にある PlayReady サンプルの securestop.cs ファイルをご覧ください。
 
- 
+## Xbox One での PlayReady DRM の使用
 
- 
+Xbox One において UWP アプリで PlayReady DRM を使用するには、アプリ マニフェストに `<DeviceCapability>` を追加する必要があります。 アプリケーション マニフェスト デザイナーには現在利用できる設定がないため、これは手動で追加する必要があります。 構成するには、次の手順を実行します。
+
+1. Visual Studio でプロジェクトを開き、**ソリューション エクスプローラー**を開いて **Package.appxmanifest** を右クリックします。
+2. **[ファイルを開くアプリケーションの選択]** をクリックして **[XML (テキスト) エディター]** を選択し、**[OK]** をクリックします。
+3. `<Capabilities>` タグの間に次の `<DeviceCapability>` を追加します。
+```xml
+<DeviceCapability Name="6a7e5907-885c-4bcb-b40a-073c067bd3d5" />
+```
+4. ファイルを保存します。
+
+## 参照
+- [メディア再生](media-playback.md)
 
 
 
@@ -470,6 +467,6 @@ mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionConta
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

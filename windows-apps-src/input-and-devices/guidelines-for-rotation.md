@@ -5,8 +5,9 @@ title: "回転"
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: a43bdd27ff7b79f561789a14d1a8e6caed08dc89
+ms.openlocfilehash: 2fe8814d98dd5ce4471530c7367b8ad266cc6b05
 
 ---
 
@@ -61,7 +62,7 @@ ms.openlocfilehash: a43bdd27ff7b79f561789a14d1a8e6caed08dc89
 
  
 
-Windows 8 では、自由、制約付き、複合の 3 種類の回転をサポートします。
+Windows8 では、自由、制約付き、複合の 3 種類の回転をサポートします。
 
 <table>
 <colgroup>
@@ -127,6 +128,6 @@ Windows 8 では、自由、制約付き、複合の 3 種類の回転をサポ
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

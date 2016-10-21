@@ -5,14 +5,13 @@ description: "ユニバーサル Windows プラットフォーム (UWP) のネ�
 kw: Hosted Web Apps, Accessing Windows 10 features from remote JavaScript, Building a Win10 Web Application, Windows JavaScript Apps, Microsoft Web Apps, HTML5 app for PC, ACUR URI Rules for Windows App, Call Live Tiles with web app, Use Cortana with web app, Access Cortana from website, msapplication-cortanavcd
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: a7f7dccb9c7461e482bd43c8f370a2a7244eb735
+ms.openlocfilehash: fb74bfc40750941860dae0a8f811fde4a614e403
 
 ---
 
 # ユニバーサル Windows プラットフォーム (UWP) の機能へのアクセス
 
-Web アプリケーションは、ユニバーサル Windows プラットフォーム (UWP) へのフル アクセスが可能で、Windows デバイスのネイティブ機能のアクティブ化、[Windows セキュリティのメリットの活用](#keep-your-app-secure-setting-application-content-uri-rules-acurs)、サーバーでホストされるスクリプトからの直接的な [Windows ランタイム API の呼び出し](#call-windows-runtime-apis)、[Cortana の統合](#integrate-cortana-voice-commands)の活用、[オンライン認証プロバイダー](#web-authentication-broker)の使用を実現できます。 
-              [ハイブリッド アプリ](#create-hybrid-apps-packaged-web-apps-vs-hosted-web-apps)もサポートされているため、ホストされているスクリプトから呼び出されるローカル コードを使って、リモートとローカルのページ間でのアプリのナビゲーションを管理することができます。
+Web アプリケーションは、ユニバーサル Windows プラットフォーム (UWP) へのフル アクセスが可能で、Windows デバイスのネイティブ機能のアクティブ化、[Windows セキュリティのメリットの活用](#keep-your-app-secure-setting-application-content-uri-rules-acurs)、サーバーでホストされるスクリプトからの直接的な [Windows ランタイム API の呼び出し](#call-windows-runtime-apis)、[Cortana の統合](#integrate-cortana-voice-commands)の活用、[オンライン認証プロバイダー](#web-authentication-broker)の使用を実現できます。 [ハイブリッド アプリ](#create-hybrid-apps-packaged-web-apps-vs-hosted-web-apps)もサポートされているため、ホストされているスクリプトから呼び出されるローカル コードを使って、リモートとローカルのページ間でのアプリのナビゲーションを管理することができます。
 
 ## アプリのセキュリティの保護: アプリケーション コンテンツ URI 規則 (ACUR) の設定
 
@@ -48,12 +47,9 @@ URL がアプリの境界内 (ACUR) で定義されている場合、JavaScript 
 
 これを実現するには、ACUR で `(WindowsRuntimeAccess="<<level>>")` 属性を、次のいずれかの値で指定する必要があります。
 
-- 
-              **all**: リモート JavaScript コードは、すべての UWP API とローカルのパッケージ化されたコンポーネントにアクセスできます。
-- 
-              **allowForWeb**: リモート JavaScript コードは、パッケージ コード内のカスタム コンポーネントにのみアクセスできます。 カスタム C++/C# コンポーネントにローカルにアクセスできます。
-- 
-              **none**: 既定値。 指定された URL はプラットフォームにアクセスできません。
+- **all**: リモート JavaScript コードは、すべての UWP API とローカルのパッケージ化されたコンポーネントにアクセスできます。
+- **allowForWeb**: リモート JavaScript コードは、パッケージ コード内のカスタム コンポーネントにのみアクセスできます。 カスタム C++/C# コンポーネントにローカルにアクセスできます。
+- **none**: 既定値。 指定された URL はプラットフォームにアクセスできません。
 
 以下に、規則の種類の例を示します。
 
@@ -131,12 +127,9 @@ UWP アプリを作成するためのオプションがあります。 アプリ
 
 アプリでユーザー リソース (ピクチャや音楽など) やデバイス (カメラやマイクなど) に対してプログラムによるアクセスが必要な場合は、適切な機能を宣言する必要があります。 アプリ機能の宣言には次の 3 つのカテゴリがあります。 
 
-- 
-              ストア アプリのほとんどのシナリオに適用される[一般的な用途の機能](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#General-use_capabilities)。 
-- 
-              アプリが周辺機器と内部デバイスにアクセスできるようにする[デバイス機能](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#Device_capabilities)。 
-- 
-              ストアに提出して使用可能のするために特別な会社のアカウントが必要になる[特殊な用途の機能](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#Special_and_restricted_capabilities)。 
+- ストア アプリのほとんどのシナリオに適用される[一般的な用途の機能](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#General-use_capabilities)。 
+- アプリが周辺機器と内部デバイスにアクセスできるようにする[デバイス機能](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#Device_capabilities)。 
+- ストアに提出して使用可能にするために特別な会社のアカウントが必要になる[特殊な用途の機能](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#Special_and_restricted_capabilities)。 
 
 会社のアカウントについて詳しくは、「[アカウントの種類、場所、料金](https://msdn.microsoft.com/library/windows/apps/jj863494.aspx)」をご覧ください。
 
@@ -160,6 +153,6 @@ Web サイトを UWP アプリに変換する簡単な方法は、**アプリ �
 - [アプリ機能の宣言 (Windows ストア アプリ)](https://msdn.microsoft.com/ibrary/windows/apps/hh464936.aspx)
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

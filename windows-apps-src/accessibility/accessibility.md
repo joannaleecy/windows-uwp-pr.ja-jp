@@ -5,8 +5,9 @@ ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
 title: "アクセシビリティ"
 label: Accessibility
 template: detail.hbs
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3
+translationtype: Human Translation
+ms.sourcegitcommit: 13894c199a95060395886635ebb7c294f18c9d6b
+ms.openlocfilehash: 8974ea067e033796c491781997067aafea773d96
 
 ---
 
@@ -19,13 +20,12 @@ ms.openlocfilehash: 3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3
 アクセシビリティの目的は、さまざまな環境でテクノロジを使い、幅広いニーズとエクスペリエンスに対応したユーザー インターフェイスにアクセスするユーザーにとって、アプリを使いやすいものにするエクスペリエンスを構築することです。 状況によってはアクセシビリティの要件が法律で定められているものもありますが、 アプリをできるだけ多くの人が利用するために、法的要件に関係なくアクセシビリティの問題に対処することをお勧めします。 また、アプリのアクセシビリティに関する Windows ストアの宣言も含まれます。
 
 > [!NOTE]
-> 
-            [!NOTE] アプリをアクセシビリティ対応として宣言する方法は、Windows ストアのみに関係します。
+> アプリをアクセシビリティ対応として宣言する方法は、Windows ストアのみに関係します。
 
 | 記事 | 説明 |
 |---------|-------------|
 | [アクセシビリティの概要](accessibility-overview.md) | この記事では、UWP アプリのアクセシビリティ シナリオに関連する概念とテクノロジの概要を示します。 |
-| [包括的なソフトウェアの設計](designing-inclusive-software.md) | Windows 10 用のユニバーサル Windows プラットフォーム (UWP) アプリでの包括性を備えた設計の進化について説明します。  アクセシビリティを考慮して、包括的なソフトウェアを設計、構築します。 |
+| [包括的なソフトウェアの設計](designing-inclusive-software.md) | Windows 10 用の UWP アプリでの包括性を備えた設計の進化について説明します。  アクセシビリティを考慮して、包括的なソフトウェアを設計、構築します。 |
 | [包括的な Windows アプリの開発](developing-inclusive-windows-apps.md) | この記事は、アクセシビリティ対応の UWP アプリを開発するためのロードマップです。 |
 | [アクセシビリティ テスト](accessibility-testing.md) | UWP アプリをアクセシビリティ対応にするためのテスト手順です。 |
 | [ストア内のアクセシビリティ](accessibility-in-the-store.md) | UWP アプリがアクセシビリティ対応であることを Windows ストアで宣言するために必要なことを説明します。 |
@@ -40,10 +40,10 @@ ms.openlocfilehash: 3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3
 
 <span id="related_topics"/>
 ## 関連トピック  
-* [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
+* [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179) 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ ms.assetid: 903046E7-581F-4845-AB80-1A57C42B1B02
 description: "この基本情報を使って、もっと興味深いユニバーサル Windows プラットフォーム (UWP) アプリの作成を今すぐ開始できます。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2b11133fda76fb42f3a850848c426cbb33fb8366
+ms.openlocfilehash: d71c0026c8658e8aa88827915b8f2d815f10c6ef
 
 ---
 
@@ -17,18 +17,12 @@ ms.openlocfilehash: 2b11133fda76fb42f3a850848c426cbb33fb8366
 
 この基本情報を使って、もっと興味深いユニバーサル Windows プラットフォーム (UWP) アプリの作成を今すぐ開始できます。 次の手順として、次のトピックを読んでから Microsoft Visual Studio を起動し、コードの作成を始めます。
 
--   
-            「[アプリ コントラクトと拡張機能](https://msdn.microsoft.com/library/windows/apps/hh464906)」: 自分のアプリおよび他のアプリと Windows との間でアグリーメントを宣言する方法 (リモート再生コントラクト、ゲーム エクスプローラー拡張機能など)。
--   
-            「[タイル、バッジ、トースト通知の操作](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259)」: タイルを作る方法、タイルとバッジを更新する方法、トースト通知を送信する方法、ロック画面上のタイルとバッジの更新を表示および更新する方法。
--   
-            「[起動、再開、マルチタスク](https://msdn.microsoft.com/library/windows/apps/hh770837)」: アプリを自動起動、アクティブ化、一時停止、再開する方法、バックグラウンド タスクを操作する方法。
--   
-            「[アプリケーション データのローミングのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465094)」: 職場では PC、自宅ではタブレットのように複数のデバイスを活用するエンド ユーザーに快適なエクスペリエンスを提供する方法。
--   
-            [C# または Visual Basic を使った初めての Windows ランタイム アプリの作成に関するページ](http://go.microsoft.com/fwlink/p/?LinkID=394138): Windows Phone 開発に重点を置いたトピックを説明します。
--   
-            「[iOS と Android 開発者向けビデオ](https://msdn.microsoft.com/library/windows/apps/dn393982)」: その他のヘルプをビデオで説明します。
+-   「[アプリ コントラクトと拡張機能](https://msdn.microsoft.com/library/windows/apps/hh464906)」: 自分のアプリおよび他のアプリと Windows との間でアグリーメントを宣言する方法 (リモート再生コントラクト、ゲーム エクスプローラー拡張機能など)。
+-   「[タイル、バッジ、トースト通知の操作](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259)」: タイルを作る方法、タイルとバッジを更新する方法、トースト通知を送信する方法、ロック画面上のタイルとバッジの更新を表示および更新する方法。
+-   「[起動、再開、マルチタスク](https://msdn.microsoft.com/library/windows/apps/hh770837)」: アプリを自動起動、アクティブ化、中断、再開する方法、バックグラウンド タスクを操作する方法。
+-   「[アプリケーション データのローミングのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465094)」: 職場では PC、自宅ではタブレットのように複数のデバイスを活用するエンド ユーザーに快適なアプリのエクスペリエンスを提供する方法。
+-   [C# または Visual Basic を使った初めての Windows ランタイム アプリの作成に関するページ](http://go.microsoft.com/fwlink/p/?LinkID=394138): Windows Phone 開発に重点を置いたトピックを説明します。
+-   「[iOS と Android 開発者向けビデオ](https://msdn.microsoft.com/library/windows/apps/dn393982)」: その他のヘルプをビデオで説明します。
 
 さらに、[コミュニティ リソースに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=263513)にアクセスすることもお勧めします。開発者フォーラム、ブログ、開発者キャンプとワークショップ、地域の Microsoft イベントや担当者を通じて情報を入手または交換できます。
 
@@ -44,6 +38,6 @@ Windows 10 により、新しいアプリの構築機会が開かれます。 �
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

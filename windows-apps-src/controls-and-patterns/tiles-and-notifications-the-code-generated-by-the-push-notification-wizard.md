@@ -5,11 +5,12 @@ title: "プッシュ通知ウィザードにより生成されるコード"
 ms.assetid: 340F55C1-0DDF-4233-A8E4-C15EF9030785
 label: TBD
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 6b7bf3c8019e6c3e92fd07b114cdc688fe7ad8de
+translationtype: Human Translation
+ms.sourcegitcommit: 2c50b2be763a0cc7045745baeef6e6282db27cc7
+ms.openlocfilehash: e61c887cc474504cc283de1d433180eb3cfe72a0
 
 ---
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 # プッシュ通知ウィザードにより生成されるコード
 
 
@@ -17,7 +18,7 @@ ms.openlocfilehash: 6b7bf3c8019e6c3e92fd07b114cdc688fe7ad8de
 
 Visual Studio でウィザードを使うことで、Azure のモバイル サービスで作成されたモバイル サービスからプッシュ通知を生成できます。 Visual Studio ウィザードにより、この作業に役立つコードが生成されます。 このトピックでは、ウィザードによるプロジェクトの変更内容、生成されたコードによる実行内容、このコードを使う方法、プッシュ通知を最大限に活用するために次に行うことができる作業について説明します。 「[Windows プッシュ通知サービス (WNS) の概要](tiles-and-notifications-windows-push-notification-services--wns--overview.md)」をご覧ください。
 
-## <span id="How_the_wizard_modifies_your_project"></span><span id="how_the_wizard_modifies_your_project"></span><span id="HOW_THE_WIZARD_MODIFIES_YOUR_PROJECT"></span>ウィザードによるプロジェクトの変更内容
+## ウィザードによるプロジェクトの変更内容
 
 
 プッシュ通知ウィザードは、次のようにプロジェクトを変更します。
@@ -37,7 +38,7 @@ var <mobile-service-name>Client = new Microsoft.WindowsAzure.MobileServices.Mobi
                 "<your client secret>");
 ```
 
-## <span id="Registration_for_push_notifications"></span><span id="registration_for_push_notifications"></span><span id="REGISTRATION_FOR_PUSH_NOTIFICATIONS"></span>プッシュ通知への登録
+## プッシュ通知への登録
 
 
 push.register.\* 内の UploadChannel メソッドは、プッシュ通知を受信するデバイスを登録します。 ストアは、アプリのインストールされたインスタンスを追跡し、プッシュ通知チャネルを提供します。 「[**PushNotificationChannelManager**](https://msdn.microsoft.com/library/windows/apps/br241284)」をご覧ください。
@@ -169,7 +170,7 @@ void mymobileservice1234Push::HandleExceptionsComingFromTheServer()
 
 プッシュ通知のタグがクライアントのサブセットへの通知を制限する方法を提供します。 registerNative メソッド (または RegisterNativeAsync) メソッドを使って、タグを指定せずにすべてのプッシュ通知に登録するか、2 番目の引数としてタグの配列を指定することによって、タグを指定して登録できます。 1 つまたは複数のタグを登録すると、タグに一致する通知のみを受け取ります。
 
-## <span id="Server-side_scripts__JavaScript_backend_only_"></span><span id="server-side_scripts__javascript_backend_only_"></span><span id="SERVER-SIDE_SCRIPTS__JAVASCRIPT_BACKEND_ONLY_"></span>サーバー側のスクリプト (JavaScript バックエンドのみ)
+## サーバー側のスクリプト (JavaScript バックエンドのみ)
 
 
 JavaScript バックエンドを使うモバイル サービスの場合、サーバー側のスクリプトは、削除、挿入、読み取り、または更新操作が行われたときに実行されます。 スクリプトにはこれらの操作が実装されていませんが、クライアントから Windows モバイルの REST API への呼び出しによってこれらのイベントがトリガーされると実行されます。 次に、スクリプトは request.execute または request.respond を呼び出して呼び出し元コンテキストに応答を発行することで、コントロールを操作自体に渡します。 「[Azure のモバイル サービスの REST API リファレンス](http://go.microsoft.com/fwlink/p/?linkid=511139)」をご覧ください。
@@ -205,12 +206,11 @@ function sendNotifications(request) {
 
 sendNotifications 関数は、1 つの通知をトースト通知として送信します。 他の種類のプッシュ通知を使うこともできます。
 
-
-            **ヒント**  スクリプトの編集中にヘルプを表示する方法については、[サーバー側の JavaScript で IntelliSense を有効にする方法](http://go.microsoft.com/fwlink/p/?LinkId=309275)に関するページをご覧ください。
+**ヒント**  スクリプトの編集中にヘルプを表示する方法については、[サーバー側の JavaScript で IntelliSense を有効にする方法](http://go.microsoft.com/fwlink/p/?LinkId=309275)に関するページをご覧ください。
 
  
 
-## <span id="Push_notification_types"></span><span id="push_notification_types"></span><span id="PUSH_NOTIFICATION_TYPES"></span>プッシュ通知の種類
+## プッシュ通知の種類
 
 
 Windows では、プッシュ通知ではない通知がサポートされています。 通知に関する一般情報については、「[スケジュールされた通知、定期的な通知、プッシュ通知の送信](https://msdn.microsoft.com/library/windows/apps/hh761484)」をご覧ください。
@@ -223,21 +223,20 @@ Windows は、プッシュ通知に応答するため、アプリが実行され
 
 プッシュ通知でライブ タイルを更新する場合は、「[タイルとバッジのガイドラインとチェック リスト](https://msdn.microsoft.com/library/windows/apps/hh465403)」のガイドラインにも従ってください。
 
-## <span id="Next_steps"></span><span id="next_steps"></span><span id="NEXT_STEPS"></span>次のステップ
+## 次のステップ
 
 
-### <span id="Using_the_Windows_Push_Notification_Services__WNS_"></span><span id="using_the_windows_push_notification_services__wns_"></span><span id="USING_THE_WINDOWS_PUSH_NOTIFICATION_SERVICES__WNS_"></span>Windows プッシュ通知サービス (WNS) の使用
+### Windows プッシュ通知サービス (WNS) の使用
 
 Window Azure のモバイル サービスの柔軟性が不十分な場合、C# または Visual Basic でサーバー コードを記述する場合、または既にクラウド サービスを持っていてそこからプッシュ通知を送る場合は、Windows プッシュ通知サービス (WNS) を直接呼び出すこともできます。 WNS を直接呼び出すことで、データベースや他の Web サービスからのデータを監視するワーカーの役割など、独自のクラウド サービスからプッシュ通知を送ることができます。 クラウド サービスがプッシュ通知をアプリに送るには、WNS に対して認証する必要があります。 [Windows プッシュ通知サービスに対して認証する方法 (JavaScript)](https://msdn.microsoft.com/library/windows/apps/hh465407) または [(C#/C++/VB)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868206) に関するページをご覧ください。
 
 モバイル サービスでスケジュール済みタスクを実行して、プッシュ通知を送ることもできます。 「[Mobile Services での繰り返し発生するジョブのスケジュール](http://go.microsoft.com/fwlink/p/?linkid=301694)」をご覧ください。
 
-
-            **警告**  プッシュ通知ウィザードは 1 回だけ実行してください。もう一度実行して、別のモバイル サービスの登録コードを追加しないようにしてください。 このウィザードをプロジェクトごとに複数回実行すると、生成されるコードで [**CreatePushNotificationChannelForApplicationAsync**](https://msdn.microsoft.com/library/windows/apps/br241287) メソッドの呼び出しが重複し、ランタイムの例外が発生します。 複数のモバイル サービスのプッシュ通知を登録するには、ウィザードを 1 回だけ実行し、登録コードを上書きして、**CreatePushNotificationChannelForApplicationAsync** の呼び出しが同時に実行されないようにしてください。 そのために、ウィザードによって push.register.\* に生成されたコード (**CreatePushNotificationChannelForApplicationAsync** の呼び出しを含む) を OnLaunched イベント以外の場所に移すという方法もありますが、細かい処理はアプリのアーキテクチャによって異なります。
+**警告**  プッシュ通知ウィザードは 1 回だけ実行してください。もう一度実行して、別のモバイル サービスの登録コードを追加しないようにしてください。 このウィザードをプロジェクトごとに複数回実行すると、生成されるコードで [**CreatePushNotificationChannelForApplicationAsync**](https://msdn.microsoft.com/library/windows/apps/br241287) メソッドの呼び出しが重複し、ランタイムの例外が発生します。 複数のモバイル サービスのプッシュ通知を登録するには、ウィザードを 1 回だけ実行し、登録コードを上書きして、**CreatePushNotificationChannelForApplicationAsync** の呼び出しが同時に実行されないようにしてください。 そのために、ウィザードによって push.register.\* に生成されたコード (**CreatePushNotificationChannelForApplicationAsync** の呼び出しを含む) を OnLaunched イベント以外の場所に移すという方法もありますが、細かい処理はアプリのアーキテクチャによって異なります。
 
  
 
-## <span id="related_topics"></span>関連トピック
+## 関連トピック
 
 
 * [Windows プッシュ通知サービス (WNS) の概要](tiles-and-notifications-windows-push-notification-services--wns--overview.md)
@@ -255,6 +254,6 @@ Window Azure のモバイル サービスの柔軟性が不十分な場合、C# 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

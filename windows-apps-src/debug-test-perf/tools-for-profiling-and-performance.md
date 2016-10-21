@@ -3,8 +3,9 @@ author: mcleblanc
 ms.assetid: EAC34672-5C12-402D-920B-6F2835EA5ACE
 title: "プロファイリングとパフォーマンスに関するツール"
 description: "Microsoft には、ユニバーサル Windows プラットフォーム (UWP) アプリのパフォーマンスを改善する際に役立つツールがいくつか用意されています。"
+translationtype: Human Translation
 ms.sourcegitcommit: 5bbd14fb53cae67bbb827f94e695b2703e07fc34
-ms.openlocfilehash: f7f9821be7d1423b2f89367bd20c09981eca24eb
+ms.openlocfilehash: 3d0cf5f983efdee116bcf8b87398fe376efca3c6
 
 ---
 # プロファイリングとパフォーマンスに関するツール
@@ -13,8 +14,7 @@ ms.openlocfilehash: f7f9821be7d1423b2f89367bd20c09981eca24eb
 
 Microsoft には、ユニバーサル Windows プラットフォーム (UWP) アプリのパフォーマンスを改善する際に役立つツールがいくつか用意されています。 以下のリンクをクリックすると、これらのツールの使い方について学習することができます。
 
-
-            **Visual Studio 2015 の XAML UI の応答ツール**。 アプリ内でのパフォーマンスの影響を測定するために使用する最適なツールの 1 つは、XAML UI の応答ツールです。 このツールは、[Visual Studio 2015 用に更新され](http://blogs.msdn.com/b/wpf/archive/2015/01/14/new-ui-performance-analysis-tool-for-wpf-applications.aspx)、さらに多くのシナリオをサポートします。
+**Visual Studio 2015 の XAML UI の応答ツール**。 アプリ内でのパフォーマンスの影響を測定するために使用する最適なツールの 1 つは、XAML UI の応答ツールです。 このツールは、[Visual Studio 2015 用に更新され](http://blogs.msdn.com/b/wpf/archive/2015/01/14/new-ui-performance-analysis-tool-for-wpf-applications.aspx)、さらに多くのシナリオをサポートします。
 
 関連項目: 
 
@@ -30,6 +30,6 @@ Microsoft には、ユニバーサル Windows プラットフォーム (UWP) ア
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

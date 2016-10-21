@@ -5,8 +5,10 @@ title: "タッチの設計ガイドライン"
 ms.assetid: 3250F729-4FDD-4AD4-B856-B8BA575C3375
 label: Touch design guidelines
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 67b851ce854c803934c2b97dbe7519e2916383a3
+redirect_url: https://msdn.microsoft.com/windows/uwp/input-and-devices/touch-interactions
+translationtype: Human Translation
+ms.sourcegitcommit: 2db7aaccfd56b1bdfda099b197a695bad8a9cba1
+ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
 
 ---
 
@@ -155,8 +157,7 @@ ms.openlocfilehash: 67b851ce854c803934c2b97dbe7519e2916383a3
 -   複合操作をサポートしてください。 たとえば、ピンチによるズームを行いながら指をドラッグしてパンできるようにします。
 -   対話式操作を時間で区別しないでください。 実行にかかる時間に関係なく、同じ対話式操作を行うと同じ結果が得られるようにします。 時間ベースのアクティブ化では、ユーザーは遅延を強いられるので、直接操作のイマーシブの特性が損なわれ、システムの応答性が低く感じられるようになります。
 
-    
-            **注**  ただし、特定の時間制限のある対話式操作を使って学習や調査に役立てる場合は例外です (長押しなど)。
+    **注**  ただし、特定の時間制限のある対話式操作を使って学習や調査に役立てる場合は例外です (長押しなど)。
 
      
 
@@ -177,6 +178,6 @@ ms.openlocfilehash: 67b851ce854c803934c2b97dbe7519e2916383a3
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

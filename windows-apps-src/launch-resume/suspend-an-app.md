@@ -3,25 +3,27 @@ author: TylerMSFT
 title: "アプリの中断の処理"
 description: "システムがアプリを中断するときに重要なアプリケーション データを保存する方法を説明します。"
 ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
-ms.sourcegitcommit: fb83213a4ce58285dae94da97fa20d397468bdc9
-ms.openlocfilehash: 3ad58dc20a660d89622d215c46d263adf27a0542
+translationtype: Human Translation
+ms.sourcegitcommit: 231161ba576a140859952a7e9a4e8d3bd0ba4596
+ms.openlocfilehash: 9d78ee8aceb40cacdb464a65c940ad13baf7bb81
 
 ---
 
 # アプリの中断の処理
 
-
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
-
 
 **重要な API**
 
--   [**中断**](https://msdn.microsoft.com/library/windows/apps/br242341)
+- [**中断**](https://msdn.microsoft.com/library/windows/apps/br242341)
 
 システムがアプリを中断するときに重要なアプリケーション データを保存する方法を説明します。 このトピックの例では、[**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) イベントのイベント ハンドラーを登録して文字列をファイルに保存します。
 
-## 中断イベント ハンドラーを登録する
+## Windows 10 バージョン 1607 で導入された重要な変更
 
+Windows 10 バージョン 1607 より前のバージョンでは、状態を保存するコードを中断ハンドラーに記述していました。 今後は、バックグラウンド状態に移行するときにアプリの状態を保存することをお勧めします (「[Windows 10 ユニバーサル Windows プラットフォーム アプリのライフサイクル](app-lifecycle.md)」で説明しています)。
+
+## 中断イベント ハンドラーを登録する
 
 [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) イベントを処理するために登録します。このイベントは、システムがアプリを中断する前にアプリでアプリケーション データを保存する必要があることを示します。
 
@@ -66,10 +68,9 @@ ms.openlocfilehash: 3ad58dc20a660d89622d215c46d263adf27a0542
 > }
 > ```
 
-## [!div class="tabbedCodeSnippets"]
+## 中断の前にアプリケーション データを保存する
 
-
-中断の前にアプリケーション データを保存する アプリでは、[**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) イベントを処理する時点で、ハンドラー関数で重要なアプリケーション データを保存できます。
+アプリでは、[**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) イベントを処理する時点で、ハンドラー関数で重要なアプリケーション データを保存できます。 アプリで [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) Storage API を使って、シンプルなアプリケーション データを同期的に保存する必要があります。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -102,31 +103,33 @@ ms.openlocfilehash: 3ad58dc20a660d89622d215c46d263adf27a0542
 > }
 > ```
 
-## アプリで [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) Storage API を使って、シンプルなアプリケーション データを同期的に保存する必要があります。
+## リソースの解放
 
+また、排他リソースとファイル ハンドルを、自分のアプリが中断されているときに他のアプリがアクセスできるように解放することをお勧めします。 排他リソースには、カメラ、I/O デバイス、外部デバイス、ネットワーク リソースなどがあります。 排他リソースとファイル ハンドルを明示的に解放すると、自分のアプリが中断されているときに他のアプリが排他リソースとファイル ハンドルにアクセスできるようになります。 アプリが再開されるときに、排他リソースとファイル ハンドルを再取得する必要があります。
 
-[!div class="tabbedCodeSnippets"] 注釈 ユーザーが別のアプリや、デスクトップまたはスタート画面に切り替えると、システムはアプリを中断します。 ユーザーが元のアプリに戻すと、システムはアプリを再開します。
+## 注釈
 
-システムがアプリを再開した時点で、変数とデータ構造の内容は、システムがアプリを一時停止する前の状態と同じです。 システムはアプリを厳密に一時停止前の状態に復元するので、ユーザーからはアプリがバックグラウンドで実行していたように見えます。 システムは、アプリの一時停止中、アプリとそのデータをメモリに保持するよう試みます。
+ユーザーが別のアプリや、デスクトップまたはスタート画面に切り替えると、システムはアプリを中断します。 ユーザーが元のアプリに戻すと、システムはアプリを再開します。 システムがアプリを再開した時点で、変数とデータ構造の内容は、システムがアプリを一時停止する前の状態と同じです。 システムはアプリを厳密に一時停止前の状態に復元するので、ユーザーからはアプリがバックグラウンドで実行していたように見えます。
 
-ただし、アプリをメモリに保持するためのリソースがシステムにない場合、システムはアプリを終了します。
+システムは、アプリの一時停止中、アプリとそのデータをメモリに保持するよう試みます。 ただし、アプリをメモリに保持するためのリソースがシステムにない場合、システムはアプリを終了します。 中断されてから終了されたアプリにユーザーが戻るときに、システムは [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントを送って、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドでアプリケーション データを復元する必要があります。
 
-> 中断されてから終了されたアプリにユーザーが戻るときに、システムは [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントを送って、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドでアプリケーション データを復元する必要があります。 アプリが終了されるときは、システムはアプリに通知を送らないので、アプリは中断されたときにアプリケーション データを保存し、排他リソースとファイル ハンドルを解放して、アプリが終了後アクティブ化されるときにそれらを復元する必要があります。
+アプリが終了されるときは、システムはアプリに通知を送らないので、アプリは中断されたときにアプリケーション データを保存し、排他リソースとファイル ハンドルを解放して、アプリが終了後アクティブ化されるときにそれらを復元する必要があります。
 
-> 
-            **注**   アプリの中断が進められているときに非同期作業が必要になった場合には、その作業が完了するまで中断の完了を遅らせる必要があります。 返された [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) オブジェクトに [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) メソッドを呼び出すまで中断の完了を遅らせるには、[**SuspendingOperation**](https://msdn.microsoft.com/library/windows/apps/br224688) オブジェクト (イベント引数経由で利用可能) に対して [**GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) メソッドを使います。 
-            **注**  Windows 8.1 でシステムの応答性を向上させるために、アプリには中断後にリソースへの優先度の低いアクセスが与えられます。
+ハンドラー内で非同期呼び出しを行う場合、制御はその非同期呼び出しからすぐに戻ります。 つまり、非同期呼び出しがまだ完了していない場合でも、イベント ハンドラーから制御が戻り、アプリを次の状態に移行できます。 イベント ハンドラーに渡される [**EnteredBackgroundEventArgs**](http://aka.ms/Ag2yh4) オブジェクトの [**GetDeferral**](http://aka.ms/Kt66iv) メソッドを使用して、[**Windows.Foundation.Deferral**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.deferral.aspx) オブジェクトの [**Complete**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.deferral.complete.aspx) メソッドを呼び出した後まで中断を延期することができます。
 
-> この新しい優先度をサポートするために、中断操作のタイムアウトが延長され、アプリには通常の優先度と同程度のタイムアウト (Windows では 5 秒、Windows Phone では 1 ～ 10 秒) が与えられます。 このタイムアウトの時間枠を延長したり、変更したりすることはできません。 
-            **Visual Studio によるデバッグに関する注意事項:**  Visual Studio は、Visual Studio デバッガーにアタッチされているアプリを Windows が中断するのを防ぎます。 これは、アプリが実行されている間、ユーザーが Visual Studio デバッグの UI を確認できるようにするためです。
+遅延では、アプリが終了する前に、実行する必要があるコードの量を増やす必要はありません。 遅延の *Complete* メソッドが呼び出されるか、または期限になるか、*どちらか早い方*まで、終了が延期されるだけです。
 
-## アプリのデバッグ中は、Visual Studio を使ってそのアプリに中断イベントを送信できます。
+> **注**  Windows 8.1 でシステムの応答性を向上させるために、アプリには中断後にリソースへの優先度の低いアクセスが与えられます。 この新しい優先度をサポートするために、中断操作のタイムアウトが延長され、アプリには通常の優先度と同程度のタイムアウト (Windows では 5 秒、Windows Phone では 1 ～ 10 秒) が与えられます。 このタイムアウトの時間枠を延長したり、変更したりすることはできません。
 
+> **Visual Studio によるデバッグに関する注意事項:**  Visual Studio は、Visual Studio デバッガーにアタッチされているアプリを Windows が中断するのを防ぎます。 これは、アプリが実行されている間、ユーザーが Visual Studio デバッグの UI を確認できるようにするためです。 アプリのデバッグ中は、Visual Studio を使ってそのアプリに中断イベントを送信できます。 **[デバッグの場所]** ツール バーが表示されていることを確認し、**[中断]** アイコンをクリックします。
 
-* [**[デバッグの場所]** ツール バーが表示されていることを確認し、**[中断]** アイコンをクリックします。](activate-an-app.md)
-* [関連トピック](resume-an-app.md)
-* [アプリのアクティブ化の処理](https://msdn.microsoft.com/library/windows/apps/dn611862)
-* [アプリの再開の処理](app-lifecycle.md)
+## 関連トピック
+
+* [アプリのライフサイクル](app-lifecycle.md)
+* [アプリのアクティブ化の処理](activate-an-app.md)
+* [アプリの再開の処理](resume-an-app.md)
+* [起動、中断、再開の UX ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn611862)
+
 
  
 
@@ -134,6 +137,6 @@ ms.openlocfilehash: 3ad58dc20a660d89622d215c46d263adf27a0542
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

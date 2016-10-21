@@ -7,7 +7,7 @@ label: Device primer
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 0501d59108c5f01b3cefd3d038f3c7d320c862eb
-ms.openlocfilehash: 3461d5cd399682e0c26a7a6864c916bda21eec43
+ms.openlocfilehash: 8821af9bc160dc2636871c3a3b2a558987707766
 
 ---
 
@@ -199,6 +199,6 @@ UI に関する考慮事項
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

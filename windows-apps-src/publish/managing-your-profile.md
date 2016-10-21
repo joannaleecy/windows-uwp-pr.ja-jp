@@ -4,13 +4,13 @@ ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
 title: "アカウントの設定とプロファイル情報の管理"
 description: "開発者アカウントの設定とプロファイル情報の表示および更新は、統合 Windows デベロッパー センター ダッシュボードの [アカウントの設定] セクションで行うことができます。"
 translationtype: Human Translation
-ms.sourcegitcommit: a9aae8fdc3cb4eaf151934a773a7cc3e6ced177f
-ms.openlocfilehash: 20a995f1a67bfdf0d52340c0964eb05c10935af1
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: 3859918d94ad7ffcf1c331ca5a0ca6540387886f
 
 ---
 # アカウントの設定とプロファイル情報の管理
 
-開発者アカウントの設定とプロファイル情報の表示および更新は、[Windows デベロッパー センター ダッシュボード](https://msdn.microsoft.com/library/windows/apps/Mt169843)の **[アカウントの設定]** セクションで行うことができます。
+開発者アカウントの設定とプロファイル情報の表示および更新は、[Windows デベロッパー センター ダッシュボード](using-the-windows-dev-center-dashboard.md)の **[アカウントの設定]** セクションで行うことができます。
 
 ## アカウントの設定
 
@@ -18,8 +18,7 @@ ms.openlocfilehash: 20a995f1a67bfdf0d52340c0964eb05c10935af1
 
 **[アカウントの詳細]** セクションでは、アカウントの状態と種類を確認できます。 またこのページでは、販売者 ID、Windows 発行元 ID、Windows Phone 発行元 ID などの発行元 ID の情報を探すこともできます。 これらの情報の値は、開発者アカウントを一意に識別するために Microsoft によって割り当てられており、ユーザーが編集することはできません。
 
-
-            **注**  個々のアプリの ID に関する詳細は、各アプリの [[アプリ ID](https://msdn.microsoft.com/library/windows/apps/Mt148561)] ページで確認できます。
+**注**  個々のアプリの ID に関する詳細は、各アプリの [[アプリ ID](view-app-identity-details.md)] ページで確認できます。
 
 ## 連絡先情報
 
@@ -31,13 +30,13 @@ ms.openlocfilehash: 20a995f1a67bfdf0d52340c0964eb05c10935af1
 
 ## Additional settings and info (追加の設定と情報)
 
-このセクションには、[受取りアカウントと税務フォームを準備する](https://msdn.microsoft.com/library/windows/apps/Bg124529)ためのリンクも表示されます。 これらの準備は、アプリやアプリ内製品 (IAP) の代金を請求する前に行う必要があります。
+このセクションには、[受取りアカウントと税務フォームを準備する](setting-up-your-payout-account-and-tax-forms.md)ためのリンクも表示されます。 これらの準備は、アプリやアドオンの代金を請求する前に行う必要があります。
 
 一部のプログラムでは、アカウントの機能を拡張できるようにするためのコードが用意されている場合があります。これらの機能は、**[アカウント設定]** で入力できます。 このページでは、[テスト用にロック解除した Windows Phone 8 デバイスや Windows Phone 8.1 デバイス](http://go.microsoft.com/fwlink/p/?LinkId=533897)に関する詳細を確認することもできます。また、[デベロッパー センター Insider Program](dev-center-insider-program.md) をオプトインまたはオプトアウトすることもできます。
 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

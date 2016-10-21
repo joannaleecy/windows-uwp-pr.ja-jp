@@ -5,20 +5,19 @@ title: Notifications Visualizer
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 label: TBD
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: dcbf05669093047bd76dc01c217daf353d8fb9da
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: a954404ccc2e986c1603402315c8497f802ad254
 
 ---
-
 # Notifications Visualizer
 
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
 Notifications Visualizer は、[ストア](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)の新しいユニバーサル Windows プラットフォーム (UWP) アプリで、Windows 10 のアダプティブ ライブ タイルをデザインする際に役立ちます。
 
-## <span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>概要
+## 概要
 
 
 Notifications Visualizer アプリでは、Visual Studio の XAML エディター/デザイン ビューと同様に、タイルの編集時に視覚的なプレビューが即座に表示されます。 このアプリではエラーのチェックも行われます。これにより、有効なタイルのペイロードを作成できます。
@@ -31,12 +30,11 @@ Notifications Visualizer アプリでは、Visual Studio の XAML エディタ�
 
 Notifications Visualizer を使うと、アプリ自体の編集や展開を行わなくても、アダプティブ タイルのペイロードを作成しテストすることができます。 目的に合った視覚効果を得ることができるようにペイロードを作成したら、そのペイロードをアプリに統合できます。 詳しくは、「[ローカル タイル通知の送信](tiles-and-notifications-sending-a-local-tile-notification.md)」をご覧ください。
 
-
-            **注**   Notifications Visualizer では Windows のスタート メニューをシミュレートできますが、完全に正確なシミュレーションが常に行われるというわけではありません。また、このシミュレーションでは、[baseUri](https://msdn.microsoft.com/library/windows/apps/br208712) などの一部のプロパティがサポートされていません。 タイルを目的に合うようにデザインしたら、意図したとおりに表示されることを確認するために、タイルを実際の [スタート] メニューにピン留めしてテストします。
+**注**   Notifications Visualizer では Windows のスタート メニューをシミュレートできますが、完全に正確なシミュレーションが常に行われるというわけではありません。また、このシミュレーションでは、[baseUri](https://msdn.microsoft.com/library/windows/apps/br208712) などの一部のプロパティがサポートされていません。 タイルを目的に合うようにデザインしたら、意図したとおりに表示されることを確認するために、タイルを実際の [スタート] メニューにピン留めしてテストします。
 
  
 
-## <span id="Features"></span><span id="features"></span><span id="FEATURES"></span>機能
+## 機能
 
 
 Notifications Visualizer にはさまざまなサンプル ペイロードが付属しており、アダプティブ ライブ タイルを使ってできることを確認できます。これらのサンプル ペイロードは作業を始める際に役立ちます。 さまざまなテキスト オプション、グループ/サブグループ、背景画像を試すことができます。また、さまざまなデバイスや画面にタイルがどのように対応するかを確認することもできます。 サンプルに変更を加えたら、今後利用するために、更新したペイロードをファイルに保存できます。
@@ -51,7 +49,7 @@ Notifications Visualizer にはさまざまなサンプル ペイロードが付
 
  
 
-## <span id="related_topics"></span>関連トピック
+## 関連トピック
 
 
 * [ストアでの Notifications Visualizer の入手](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)
@@ -69,6 +67,6 @@ Notifications Visualizer にはさまざまなサンプル ペイロードが付
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,8 +3,9 @@ author: mcleblanc
 ms.assetid: 5A47301A-2291-4FC8-8BA7-55DB2A5C653F
 title: "SQLite データベース"
 description: "SQLite は、サーバーを使わない埋め込みデータベース エンジンです。 この記事では、SDK に付属している SQLite ライブラリを使って、独自の SQLite ライブラリをユニバーサル Windows アプリにパッケージ化する方法、およびソースから SQLite ライブラリを構築する方法について説明します。"
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: dd628d16b3ee230ddc0c56b47fd381a518b8af00
+ms.openlocfilehash: 33148e8cfe301c6016d3f8a16bbcc904ca403d0e
 
 ---
 # SQLite データベース
@@ -38,7 +39,7 @@ SDK の SQLite を参照するには、次のヘッダーをプロジェクト�
 
 `#include <winsqlite/winsqlite3.h>`
 
-winsqlite3.lib にリンクするようにプロジェクトを構成します。 **ソリューション エクスプ ローラー**でプロジェクトを右クリックし、**[プロパティ]**、**[リンカー]**、**[入力]** の順に選択して、winsqlite3.lib を **[追加の依存関係]** に追加します。
+winsqlite3.lib にリンクするようにプロジェクトを構成します。 **ソリューション エクスプ ローラー**でプロジェクトを右クリックし、**[プロパティ]** &gt; **[リンカー]** &gt; **[入力]** の順に選択して、winsqlite3.lib を **[追加の依存関係]** に追加します。
 
 ### 2. SQLite をアプリ パッケージに含める
 
@@ -94,6 +95,6 @@ SQLite のしくみを正しく理解するには、SQL データベースの主
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

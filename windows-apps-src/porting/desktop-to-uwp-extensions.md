@@ -4,8 +4,8 @@ Description: "すべての UWP アプリで利用できる標準の API に加�
 Search.Product: eADQiWindows 10XVcnh
 title: "変換されたデスクトップ アプリの拡張機能"
 translationtype: Human Translation
-ms.sourcegitcommit: aa64c39c452beb2356186789a0d8bc44f79d82d2
-ms.openlocfilehash: 0ad7e8d0fe63ffbfa8668be8955859258887d6f0
+ms.sourcegitcommit: 09ddc8cad403a568a43e08f32abeaf0bbd40d59a
+ms.openlocfilehash: 2aa55797ed3a6588b3a27158282a02827fbd2109
 
 ---
 
@@ -26,18 +26,12 @@ ms.openlocfilehash: 0ad7e8d0fe63ffbfa8668be8955859258887d6f0
     <desktop:StartupTask TaskId="MyStartupTask" Enabled="true" DisplayName="My App Service" />
 </desktop:Extension>
 ```
-- 
-            *Extension Category* の値は常に "windows.startupTask" にしてください。
-- 
-            *Extension Executable* は起動する .exe への相対パスです。
-- 
-            *Extension EntryPoint* の値は常に "Windows.FullTrustApplication" にしてください。
-- 
-            *StartupTask TaskId* はタスクの一意の識別子です。 この識別子を使用して、アプリは **Windows.ApplicationModel.StartupTask** クラスの API を呼び出し、プログラムでスタートアップ タスクを有効または無効にすることができます。
-- 
-            *StartupTask Enabled* は、最初に起動するタスクを有効にするか、無効にするかを指定します。 有効になっているタスクは、(ユーザーが無効にしていない限り) 次回ユーザーがログオンするときに実行されます。 
-- 
-            *StartupTask DisplayName* は、タスク マネージャーに表示されるタスクの名前です。 この文字列は、```ms-resource``` を使用してローカライズすることができます。 
+- *Extension Category* の値は常に "windows.startupTask" にしてください。
+- *Extension Executable* は起動する .exe への相対パスです。
+- *Extension EntryPoint* の値は常に "Windows.FullTrustApplication" にしてください。
+- *StartupTask TaskId* はタスクの一意の識別子です。 この識別子を使用して、アプリは **Windows.ApplicationModel.StartupTask** クラスの API を呼び出し、プログラムでスタートアップ タスクを有効または無効にすることができます。
+- *StartupTask Enabled* は、最初に起動するタスクを有効にするか、無効にするかを指定します。 有効になっているタスクは、(ユーザーが無効にしていない限り) 次回ユーザーがログオンするときに実行されます。 
+- *StartupTask DisplayName* は、タスク マネージャーに表示されるタスクの名前です。 この文字列は、```ms-resource``` を使用してローカライズすることができます。 
 
 アプリでは、複数のスタートアップ タスクを宣言できます。各タスクは独立して起動および実行されます。 すべてのスタートアップ タスクは、タスク マネージャーの **[スタートアップ]** タブに、アプリのマニフェストで指定した名前とアプリのアイコンを使って表示されます。 タスク マネージャーによって、タスクの起動への影響が自動的に分析されます。 ユーザーは、タスク マネージャーを使用して、アプリのスタートアップ タスクを手動で無効にすることができます。ユーザーがタスクを無効にした場合、プログラムでタスクを再度有効にすることはできません。
 
@@ -50,19 +44,15 @@ ms.openlocfilehash: 0ad7e8d0fe63ffbfa8668be8955859258887d6f0
 ```XML 
 <uap3:Extension Category="windows.appExecutionAlias" Executable="exes\launcher.exe" EntryPoint="Windows.FullTrustApplication">
     <uap3:AppExecutionAlias>
-        <desktop:ExecutionAlias Alias="Foo.exe">
+        <desktop:ExecutionAlias Alias="Foo.exe" />
     </uap3:AppExecutionAlias>
 </uap3:Extension>
 ```
 
-- 
-            *Extension Category* の値は常に "windows.appExecutionAlias" にしてください。
-- 
-            *Extension Executable* は、エイリアスが呼び出されたときに起動する実行可能ファイルへの相対パスです。
-- 
-            *Extension EntryPoint* の値は常に "Windows.FullTrustApplication" にしてください。
-- 
-            *ExecutionAlias Alias* はアプリの短い名前です。 常に、拡張子 ".exe" で終わっている必要があります。 
+- *Extension Category* の値は常に "windows.appExecutionAlias" にしてください。
+- *Extension Executable* は、エイリアスが呼び出されたときに起動する実行可能ファイルへの相対パスです。
+- *Extension EntryPoint* の値は常に "Windows.FullTrustApplication" にしてください。
+- *ExecutionAlias Alias* はアプリの短い名前です。 常に、拡張子 ".exe" で終わっている必要があります。 
 
 パッケージ内のアプリケーションごとにアプリの実行エイリアスは 1 つだけ指定できます。 複数のアプリで同じエイリアスが登録されている場合、システムは最後に登録されたアプリを呼び出します。したがって、他のアプリが上書きする可能性が低い一意のエイリアスを選んでください。
 
@@ -78,12 +68,9 @@ ms.openlocfilehash: 0ad7e8d0fe63ffbfa8668be8955859258887d6f0
 </uap3:Extension>
 ```
 
-- 
-            *Extension Category* の値は常に "windows.protocol" にしてください。 
-- 
-            *Protocol Name* はプロトコルの名前です。 
-- 
-            *Protocol Parameters* は、アクティブ化するときのイベント引数としてアプリに渡すパラメーターや値のリストです。 変数にファイルのパスを含めることができる場合は、スペースを含むパスを渡すときにパスが分割されないように、値を引用符で囲む必要があることに注意してください。
+- *Extension Category* の値は常に "windows.protocol" にしてください。 
+- *Protocol Name* はプロトコルの名前です。 
+- *Protocol Parameters* は、アクティブ化するときのイベント引数としてアプリに渡すパラメーターや値のリストです。 変数にファイルのパスを含めることができる場合は、スペースを含むパスを渡すときにパスが分割されないように、値を引用符で囲む必要があることに注意してください。
 
 ## ファイルとエクスプローラーの統合
 
@@ -99,10 +86,8 @@ ms.openlocfilehash: 0ad7e8d0fe63ffbfa8668be8955859258887d6f0
 </uap3:Extension>
 ```
 
-- 
-            *Extension Category* の値は常に "windows.fileTypeAssociation" にしてください。 
-- 
-            *FileTypeAssociation Name* は一意の ID です。 この ID は、ファイルの種類の関連付けによって関連付けられたハッシュ対象の ProgID を生成するために内部で使用されます。 この ID を使って、アプリの今後のバージョンで変更を管理することができます。 たとえば、ファイル拡張子のアイコンを変更する場合、別の名前を持つ新しい FileTypeAssociation に移行できます。  
+- *Extension Category* の値は常に "windows.fileTypeAssociation" にしてください。 
+- *FileTypeAssociation Name* は一意の ID です。 この ID は、ファイルの種類の関連付けによって関連付けられたハッシュ対象の ProgID を生成するために内部で使用されます。 この ID を使って、アプリの今後のバージョンで変更を管理することができます。 たとえば、ファイル拡張子のアイコンを変更する場合、別の名前を持つ新しい FileTypeAssociation に移行できます。  
 
 次に、必要な特定の機能に基づいて、このエントリに新しい子要素を追加します。 使用可能なオプションについて以下に説明します。
 
@@ -119,8 +104,7 @@ ms.openlocfilehash: 0ad7e8d0fe63ffbfa8668be8955859258887d6f0
 </uap:SupportedFileTypes>
 ```
 
-- 
-            *FileType* はアプリがサポートする拡張子です。
+- *FileType* はアプリがサポートする拡張子です。
 
 ### コンテキスト メニューの動詞 
 
@@ -137,26 +121,19 @@ ms.openlocfilehash: 0ad7e8d0fe63ffbfa8668be8955859258887d6f0
 </uap2:SupportedVerbs>
 ```
 
-- 
-            *Verb Id* は動詞の一意の ID です。 アプリが UWP アプリである場合、アプリがユーザーの選択内容を適切に処理できるように、この ID がアクティブ化イベント引数の一部としてアプリに渡されます。 アプリが完全に信頼できる変換後のアプリである場合は、代わりにパラメーターを受け取ります (次の項目をご覧ください)。 
-- 
-            *Verb Parameters* は、動詞に関連付けられている引数のパラメーターと値のリストです。 アプリが完全に信頼できる変換後のアプリである場合、これらはアプリがアクティブ化されるときにイベント引数としてアプリに渡されるため、さまざまなアクティブ化の動詞に対して動作をカスタマイズできます。 変数にファイルのパスを含めることができる場合は、スペースを含むパスを渡すときにパスが分割されないように、値を引用符で囲む必要があります。 アプリが UWP アプリである場合、パラメーターを渡すことはできません。アプリは代わりに ID を受け取ります (前の項目をご覧ください)。 
-- 
-            *Verb Extended* は、ユーザーが **Shift** キーを押しながらファイルを右クリックしてショートカット メニューを表示した場合にのみ表示される動詞を指定します。 この属性は省略可能であり、指定されていない場合の既定値は *False* (つまり、常に動詞を表示する) です。 この動作は各動詞について個別に指定します ("開く" は例外で、常に *False*)。 
-- 
-            *Verb* は、エクスプローラーのショートカット メニューに表示される名前です。 この文字列は、```ms-resource``` を使用してローカライズすることができます。
+- *Verb Id* は動詞の一意の ID です。 アプリが UWP アプリである場合、アプリがユーザーの選択内容を適切に処理できるように、この ID がアクティブ化イベント引数の一部としてアプリに渡されます。 アプリが完全に信頼できる変換後のアプリである場合は、代わりにパラメーターを受け取ります (次の項目をご覧ください)。 
+- *Verb Parameters* は、動詞に関連付けられている引数のパラメーターと値のリストです。 アプリが完全に信頼できる変換後のアプリである場合、これらはアプリがアクティブ化されるときにイベント引数としてアプリに渡されるため、さまざまなアクティブ化の動詞に対して動作をカスタマイズできます。 変数にファイルのパスを含めることができる場合は、スペースを含むパスを渡すときにパスが分割されないように、値を引用符で囲む必要があります。 アプリが UWP アプリである場合、パラメーターを渡すことはできません。アプリは代わりに ID を受け取ります (前の項目をご覧ください)。 
+- *Verb Extended* は、ユーザーが **Shift** キーを押しながらファイルを右クリックしてショートカット メニューを表示した場合にのみ表示される動詞を指定します。 この属性は省略可能であり、指定されていない場合の既定値は *False* (つまり、常に動詞を表示する) です。 この動作は各動詞について個別に指定します ("開く" は例外で、常に *False*)。 
+- *Verb* は、エクスプローラーのショートカット メニューに表示される名前です。 この文字列は、```ms-resource``` を使用してローカライズすることができます。
 
 ### 複数選択モデル
 
 複数選択によって、ユーザーがアプリで同時に複数のファイルを開く場合 (エクスプローラーで 10 個のファイルを選んで [開く] をタップする場合など) の処理方法を指定できます。
 
 変換後のデスクトップ アプリでは、通常のデスクトップ アプリと同じ 3 つのオプションがあります。 
-- 
-            *Player*: 選択したすべてのファイルを引数パラメーターとして渡して、アプリが 1 回アクティブ化されます。
-- 
-            *Single*: 選択した最初のファイルについて、アプリが 1 回アクティブ化されます。 その他のファイルは無視されます。 
-- 
-            *Document*: 選択した各ファイルについて、アプリの新しい独立したインスタンスがアクティブ化されます。
+- *Player*: 選択したすべてのファイルを引数パラメーターとして渡して、アプリが 1 回アクティブ化されます。
+- *Single*: 選択した最初のファイルについて、アプリが 1 回アクティブ化されます。 その他のファイルは無視されます。 
+- *Document*: 選択した各ファイルについて、アプリの新しい独立したインスタンスがアクティブ化されます。
 
 ファイルの種類やアクションごとに、さまざまな環境設定項目を設定できます。 たとえば、*Documents* は *Document* モードで開き、*Images* は *Player* モードで開くことができます。
 
@@ -202,6 +179,6 @@ ms.openlocfilehash: 0ad7e8d0fe63ffbfa8668be8955859258887d6f0
 - [アプリ パッケージ マニフェスト](https://msdn.microsoft.com/library/windows/apps/br211474.aspx)
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

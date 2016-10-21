@@ -32,6 +32,8 @@
 
 変換されたアプリでサポートされる UWP API の詳しい一覧を次に示します。 [変換されたアプリで新たにサポートされる API](#new) または [変換されたアプリとデスクトップ アプリケーションの両方でサポートされる API](#both) を表示することができます。 
 
+変換されたアプリから UWP API を呼び出す方法の例については、「[Desktop Bridgeのコード サンプル (GitHub)](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)」をご覧ください。
+
 <span id="new" />
 ### 新たに変換されたアプリでサポートされる API
 
@@ -1028,6 +1030,6 @@
 
 
 
-<!--HONumber=Sep16_HO1-->
+<!--HONumber=Sep16_HO5-->
 
 

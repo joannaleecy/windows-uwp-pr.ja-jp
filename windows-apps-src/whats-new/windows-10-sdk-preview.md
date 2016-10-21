@@ -1,19 +1,19 @@
 ---
 author: QuinnRadich
-title: "Windows 10 の新着情報"
-description: "Windows 10 Anniversary SDK Preview ビルドと新しい開発者ツールを使うと、新しいユニバーサル Windows プラットフォームによって強化されたツール、機能、そしてエクスペリエンスが利用できます。"
+title: "Windows 10 バージョン 1607 Preview の新着情報"
+description: "Windows 10 バージョン 1607 Preview と新しい開発者ツールを使うと、新しいユニバーサル Windows プラットフォームによって強化されたツール、機能、そしてエクスペリエンスが利用できます。"
+keywords: "新着情報, 新しい情報, 更新, 更新情報, 機能, 新規, Windows 10, 1607 preview"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 9623e10b15dbc5f9480d1cd9bd740fa8e914b3c6
+ms.sourcegitcommit: 5646bf7681b5b028031eab02f8dd5c352d4b9cc1
+ms.openlocfilehash: 33c1888620d4e3c2d95cbf701e9128ce006961da
 
 ---
 
 # Windows の新着情報
 
-Windows 10 Anniversary SDK Preview ビルド 14295 と Windows 開発者ツールの更新プログラムでは、引き続きユニバーサル Windows プラットフォームによって強化されたツール、機能、およびエクスペリエンスを利用できます。 
-              Windows 10 の[ツールと SDK をインストール](https://developer.microsoft.com/windows/downloads#_blank)すると、[新しいユニバーサル Windows アプリを作成](https://msdn.microsoft.com/library/windows/apps/bg124288)したり、[Windows の既存のアプリ コード](https://msdn.microsoft.com/library/windows/apps/mt238321)がどのように使えるかを試したりすることができます。
+Windows 10 バージョン 1607 Preview と Windows 開発者ツールの更新プログラムでは、引き続きユニバーサル Windows プラットフォームによって強化されたツール、機能、エクスペリエンスを提供しています。 Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/fwlink/?LinkId=821431)すると、[新しいユニバーサル Windows アプリを作成](https://msdn.microsoft.com/library/windows/apps/bg124288)したり、[Windows の既存のアプリ コード](https://msdn.microsoft.com/library/windows/apps/mt238321)がどのように使えるかを試したりすることができます。
 
-## Windows 10 Anniversary SDK Preview ビルド 12295
+## Windows 10 バージョン 1607 Preview
 
 機能 | 説明
  :---- | :----
@@ -30,6 +30,6 @@ Media API | Windows.Media.Playback 名前空間の新しい MediaBreak API で�
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO4-->
 
 

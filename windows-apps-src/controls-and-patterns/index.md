@@ -2,16 +2,14 @@
 description: "UWP アプリにコントロールとパターンを追加する方法についての設計ガイダンスとコーディングの手順を説明します。 アプリで使用できる 45 種類以上の強力なコントロールを紹介します。"
 title: "UWP のコントロールとパターン - Windows アプリ開発"
 author: mijacobs
-keywords: uwp controls, user interface, app controls
+keywords: "UWP コントロール, ユーザー インターフェイス, アプリ コントロール"
 translationtype: Human Translation
-ms.sourcegitcommit: 7c45a464be250e210df48d3fdef35f00d77e16d5
-ms.openlocfilehash: 23fdd3513d11a0fa0171e50fe71d49c8e3db7376
+ms.sourcegitcommit: 2f9d2059399efd949fc8a1d90a5b6c8c106a478e
+ms.openlocfilehash: ef383e46f2c610b57eec1c7767d5100e42075f6c
 
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-
 # UWP アプリのコントロールとパターン
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 UWP アプリ開発では、<i>コントロール</i>は、コンテンツを表示したり、操作を有効にしたりする UI 要素です。 コントロールとは、ユーザー インターフェイスの構成要素です。 単純なボタンから、グリッド ビューのような強力なデータ コントロールまで、ユーザーが使用できる 45 種類以上のコントロールが用意されています。 <i>パターン</i>とは、いくつかのコントロールを組み合わせて、新しいものを作成するためのレシピです。
 
@@ -67,7 +65,7 @@ XAML フレームワークを使って、さまざまな方法でアプリの外
 </li>
 
 
-<li>[ダイアログ、ポップアップ、メニュー](dialogs-popups-menus.md)</li>
+<li>[ダイアログとポップアップ](dialogs.md)</li>
 
 <li>[フリップ ビュー](flipview.md)</li>
 
@@ -88,6 +86,8 @@ XAML フレームワークを使って、さまざまな方法でアプリの外
 <li>[カスタム トランスポート コントロール](custom-transport-controls.md)</li>
 </ul>
 </li>
+
+<li>[メニューとコンテキスト メニュー](menus.md)</li>
 
 <li>[ナビゲーション ウィンドウ](nav-pane.md)</li>
 
@@ -143,6 +143,8 @@ XAML フレームワークを使って、さまざまな方法でアプリの外
 
 <li>[アダプティブ トースト通知と対話型トースト通知](tiles-and-notifications-adaptive-interactive-toasts.md)</li>
 
+<li>[バッジ通知](tiles-and-notifications-badges.md)</li>
+
 <li>[Notifications Visualizer](tiles-and-notifications-notifications-visualizer.md)</li>
 
 <li>[通知の配信方法](tiles-and-notifications-choosing-a-notification-delivery-method.md)</li>
@@ -167,6 +169,6 @@ XAML フレームワークを使って、さまざまな方法でアプリの外
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

@@ -3,8 +3,9 @@ author: jnHs
 Description: "選択された価格の税金に関する考慮事項、支払内容、および税金の負担について理解するには、下の表で配布対象の国/地域を参照してください。"
 title: "有料アプリの税の詳細"
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
+translationtype: Human Translation
 ms.sourcegitcommit: a59d999ac36e04fbfa53d5b8992b235bff2d3818
-ms.openlocfilehash: 364608e1452ddff7aae261bb0f29ec14ee4fb0a3
+ms.openlocfilehash: 3efc5a575a7ed81b4dfb8e2349e252e61355cfc2
 
 ---
 
@@ -13,11 +14,9 @@ ms.openlocfilehash: 364608e1452ddff7aae261bb0f29ec14ee4fb0a3
 
 選択された価格の税金に関する考慮事項、支払内容、および税金の負担について理解するには、下の表で配布対象の国/地域を参照してください。
 
-> 
-            **注**  Commerce Expansion Adjustment (商取引拡大調整) は、一部の国/地域で支払に影響することがあります。 Commerce Expansion Adjustment とそれが適用される市場の詳細については、[アプリ開発者契約](https://msdn.microsoft.com/library/windows/apps/hh694058)および[影響を受ける国/地域](define-pricing-and-market-selection.md#price-considerations-for-specific-markets)のリストを参照してください。
+> **注**  Commerce Expansion Adjustment (商取引拡大調整) は、一部の国/地域で支払に影響することがあります。 Commerce Expansion Adjustment とそれが適用される市場の詳細については、[アプリ開発者契約](https://msdn.microsoft.com/library/windows/apps/hh694058)および[影響を受ける国/地域](define-pricing-and-market-selection.md#price-considerations-for-specific-markets)のリストを参照してください。
 
-> 
-            **注**  税率は、いつでも変更される可能性があります。 Microsoft は、下記の表に記載された税率が常に正確であることを保証できません。
+> **注**  税率は、いつでも変更される可能性があります。 Microsoft は、下記の表に記載された税率が常に正確であることを保証できません。
 
  
 
@@ -284,6 +283,6 @@ ms.openlocfilehash: 364608e1452ddff7aae261bb0f29ec14ee4fb0a3
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

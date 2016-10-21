@@ -1,45 +1,55 @@
-﻿---
+---
 author: jnHs
-Description: If you've provided packages targeting different operating systems, you have the option to customize parts of your Store listing for different targeted operating systems.
-title: Create platform-specific Store listings
+Description: "さまざまなオペレーティング システムを対象とするパッケージを提供する場合、対象のオペレーティング システムごとにストア登録情報の一部をカスタマイズするオプションがあります。"
+title: "プラットフォーム固有のストア登録情報の作成"
 ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
+translationtype: Human Translation
+ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
+ms.openlocfilehash: 8d9b026cf09d076cd7f7dc8a72d611e68ddd61c7
+
 ---
 
-# Create platform-specific Store listings
+# プラットフォーム固有のストア登録情報の作成
 
 
-If you've provided packages targeting different operating systems, you have the option to customize parts of your Store listing for different targeted operating systems. You will not see this option unless you have already uploaded packages, and include packages for earlier OS versions (Windows 8.x or earlier and/or Windows Phone 8.x or earlier).
+さまざまなオペレーティング システムを対象とするパッケージを提供する場合、対象のオペレーティング システムごとにストア登録情報の一部をカスタマイズするオプションがあります。 このオプションは、パッケージをアップロード済みで、以前の OS バージョン (Windows 8.x 以前または Windows Phone 8.x 以前) 用のパッケージを含めている場合を除き、表示されません。
 
-> **Important**  Customers on Windows 10 will always see your default Store listing.
+> **重要:** Windows 10 のユーザーには既定のストア登録情報が常に表示されます。
 
-Platform-specific Store listings can be useful if you want to mention features that appear only in one OS version, or want to provide screenshots that are specific to a particular OS (independent of device type), rather than having all customers see the same Store listing.
+プラットフォーム固有のストア登録情報は、すべてのユーザーに同じストア登録情報を表示するのではなく、ある OS バージョンでのみ表示される機能について説明したり、(デバイスの種類とは無関係に) 特定の OS に固有のスクリーンショットを指定したりする場合に役立ちます。
 
-> **Note**  Creating a platform-specific Store listing in one language does not create a platform-specific Store listing in other languages that your app supports, even if you have [entered Store listing info](create-app-store-listings.md) for those languages. You'll need to create the platform-specific Store listing separately for each language.
+> **注:** 1 つの言語でプラットフォーム固有のストア登録情報を作成しても、アプリでサポートされる他の言語でプラットフォーム固有のストア登録情報が作成されるわけではありません。これは、それらの言語で[ストア登録情報を入力](create-app-store-listings.md)した場合も同様です。 プラットフォーム固有のストア登録情報は、言語ごとに別個に作成する必要があります。
 
-## Creating a platform-specific Store listing
+## プラットフォーム固有のストア登録情報の作成
 
-Near the top of your **Store listing** page, you'll see a link to **create a platform-specific app Store listing** if you have uploaded packages that support earlier OS versions ((Windows 8.x or earlier and/or Windows Phone 8.x or earlier).
+以前の OS バージョン (Windows 8.x 以前または Windows Phone 8.x 以前) をサポートするパッケージを既にアップロードしている場合、**プラットフォーム固有のアプリのストア登録情報を作成**するためのリンクが **[ストア登録情報]** ページの先頭部分に表示されます。
 
-> **Tip** You can't create platform-specific Store listings until after you've uploaded packages.
+> **ヒント:** プラットフォーム固有のストア登録情報は、パッケージをアップロードするまで作成できません。
 
-When you click the link to **create a platform-specific app Store listing**, a popup will appear asking you to choose from your supported targeted operating systems. Windows 10 is not included in the list of choices, because customers on Windows 10 will always see the app's default Store listing.
+**プラットフォーム固有のアプリのストア登録情報を作成**するためのリンクをクリックすると、サポートされている対象のオペレーティング システムから選ぶように求めるポップアップが表示されます。 Windows 10 のユーザーにはアプリの既定のストア登録情報が常に表示されるため、Windows 10 は選択肢の一覧に含まれません。
 
-> **Note**  If you've already created platform-specific Store listings for all of the OS versions your app targets, you won't be able to make a selection.
+> **注:** アプリが対象とするすべての OS バージョンに対してプラットフォーム固有のストア登録情報を既に作成している場合は、選ぶことができません。
 
-You can use your default Store listing as a starting point, which will bring over all of the text and images you've entered for your default Store listing; you'll then be able to make any changes you'd like before saving. You can also start from a completely blank Store listing if you prefer.
+スタート地点として既定のストア登録情報を使うことができます。この場合、既定のストア登録情報として入力したテキストと画像がすべて取り込まれます。その後、保存前に変更を加えることができます。 必要に応じて、完全に空のストア登録情報から始めることもできます。
 
-After you click **Continue**, your **Store listing** page will now include a section for the platform-specific Store listing you've just created (underneath the [Default Store listing](create-app-store-listings.md#default-store-listing-fields) section). This section will include its own set of fields for **Description** (required), **Release notes**, **Screenshots**, **App tile icon**, **App features**, and **Additional system requirements**. Make sure to enter info into each field where you want to display info in the custom Store listing, even if it's the same info as in your default Store listing. If you leave any of these fields blank, no info will appear for that field in the custom Store listing.
+**[続行]** をクリックすると、前の手順で作成したプラットフォーム固有のストア登録情報のセクションが **[ストア登録情報]** ページに表示されます ([[Default Store listing] (既定のストア登録情報)](create-app-store-listings.md#default-store-listing-fields) セクションの下)。 このセクションには、**[説明]** (必須)、**[リリース ノート]**、**[スクリーンショット]**、**[アプリ タイル アイコン]**、**[アプリの機能]**、**[追加のシステム要件]** の固有のフィールドが表示されます。 既定のストア登録情報と同じ情報であっても、カスタムのストア登録情報で情報を表示するすべてのフィールドに情報を入力してください。 これらのいずれかのフィールドを空白のままにした場合、カスタムのストア登録情報でそのフィールドに情報は表示されません。
 
-> **Note**  Not all fields of your app's Store listing can be customized for a specific targeted OS. For more info, see [Shared fields](create-app-store-listings.md#shared-fields).
+> **注:** アプリのストア登録情報のすべてのフィールドを、対象となる特定の OS に合わせてカスタマイズできるわけではありません。 詳しくは、「[共有フィールド](create-app-store-listings.md#shared-fields)」をご覧ください。
 
-## Removing a platform-specific Store listing
+## プラットフォーム固有のストア登録情報の削除
 
-If you create a platform-specific Store listing and later decide you'd rather show your default Store listing to customers on that operating system, click the **Delete** link. After confirming that you'd like to show those customers your default Store listing, click **OK**. The platform-specific Store listing will be removed. If you decide you want it back later, you can always create a new platform-specific Store listing for that operating system by following the steps listed above.
+プラットフォーム固有のストア登録情報を作成した後、そのオペレーティング システムではユーザーに既定のストア登録情報を表示することにした場合は、**[削除]** リンクをクリックします。 それらのユーザーに既定のストア登録情報を表示することを確認したら、**[OK]** をクリックします。 プラットフォーム固有のストア登録情報が削除されます。 後で戻す場合には、上記の手順に従っていつでもそのオペレーティング システム用の新しいプラットフォーム固有のストア登録情報を作成できます。
 
- 
+ 
 
- 
+ 
 
 
+
+
+
+
+
+<!--HONumber=Aug16_HO5-->
 
 

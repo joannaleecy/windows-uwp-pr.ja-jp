@@ -5,8 +5,9 @@ title: "UWP アプリでの位置変更アニメーション"
 ms.assetid: 25D1EE31-5C25-4F21-B34C-FBD8FB1C8FFF
 label: Motion--Reposition
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: ba8679a5f06895cef52cbc229f4487997a17bf35
+ms.openlocfilehash: 38c3cb8a31708722bb207f2ad39b073262c6ce6f
 
 ---
 
@@ -48,6 +49,6 @@ ms.openlocfilehash: ba8679a5f06895cef52cbc229f4487997a17bf35
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

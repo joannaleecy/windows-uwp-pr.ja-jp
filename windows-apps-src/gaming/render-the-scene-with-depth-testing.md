@@ -3,8 +3,9 @@ author: mtoepke
 title: "深度のテストを使ったシーンのレンダリング"
 description: "シャドウ効果を作成するには、頂点 (またはジオメトリ) シェーダーとピクセル シェーダーに深度のテストを追加します。"
 ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2bac8e8337a10a8411b02eeed53d772dbb5abad6
+ms.openlocfilehash: 6351cc9f6efe0d4bffb54961624a35b4a9f4136a
 
 ---
 
@@ -164,6 +165,6 @@ return float4(input.color * ambient, 1.f);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,8 +3,9 @@ author: mtoepke
 title: "シェーダーの作成とプリミティブの描画"
 description: "ここでは、HLSL ソース ファイルを使い、シェーダーをコンパイルして作成する方法について説明します。作成したシェーダーを使って、ディスプレイ上にプリミティブを描画することができます。"
 ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 15b5f83b45b928baaa484c10dc6e7bfe9c27a924
+ms.openlocfilehash: 36ce1c3c0df0dd9dd4f5cf3d31282d5b15050f5c
 
 ---
 
@@ -17,8 +18,7 @@ ms.openlocfilehash: 15b5f83b45b928baaa484c10dc6e7bfe9c27a924
 
 頂点シェーダーとピクセル シェーダーを使って、黄色の三角形を作成し描画します。 Direct3D デバイス、スワップ チェーン、レンダー ターゲット ビューを作成した後、ディスク上のバイナリ シェーダー オブジェクト ファイルからデータを読み取ります。
 
-
-            **目標:** シェーダーを作成し、プリミティブを描画する。
+**目標:** シェーダーを作成し、プリミティブを描画する。
 
 ## 前提条件
 
@@ -27,8 +27,7 @@ C++ に習熟していることを前提としています。 また、グラフ
 
 また、「[クイック スタート: DirectX リソースの設定と画像の表示](setting-up-directx-resources.md)」にひととおり目を通しておく必要があります。
 
-
-            **完了までの時間:** 20 分。
+**完了までの時間:** 20 分。
 
 ## 手順
 
@@ -297,6 +296,6 @@ SimpleVertexShader.cso ファイルからデータを読み取り、そのデー
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

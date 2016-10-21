@@ -2,8 +2,9 @@
 title: "Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリの自動起動"
 description: "開発者はプロトコルのアクティブ化および起動アクティブ化を使って、自動テスト用に UWP アプリや UWP ゲームを自動で起動できます。"
 author: listurm
-ms.sourcegitcommit: adf2d16f9c208631f91fbcad19d1ea8087cd9cb5
-ms.openlocfilehash: ae2f80a915f4aed90c269c37a11d01a2f6c9849e
+translationtype: Human Translation
+ms.sourcegitcommit: c5d0f685f4c733cbe4ba4c07aab565b888ddfe58
+ms.openlocfilehash: 4b31ec06b1ded4882d26cffed029eb8179ff47c3
 
 ---
 
@@ -13,11 +14,9 @@ ms.openlocfilehash: ae2f80a915f4aed90c269c37a11d01a2f6c9849e
 
 開発者はいくつかの方法でユニバーサル Windows プラットフォーム (UWP) アプリの自動起動を実現できます。 ここでは、プロトコルのアクティブ化と起動アクティブ化を使ってアプリを起動する方法を説明します。
 
+*プロトコルのアクティブ化*では、アプリ自体を特定のプロトコルのハンドラーとして登録できます。 
 
-            *プロトコルのアクティブ化*では、アプリ自体を特定のプロトコルのハンドラーとして登録できます。 
-
-
-            *起動アクティブ化*では、アプリのタイルなど、通常の方法でアプリを起動します。
+*起動アクティブ化*では、アプリのタイルなど、通常の方法でアプリを起動します。
 
 これらのアクティブ化はどちらも、コマンド ラインまたはランチャー アプリケーションを使って実行できます。 いずれの方法でアクティブ化を行う場合も、アプリが実行中のときは、アクティブ化によってアプリがフォアグラウンドになり (再アクティブ化され)、新しいアクティブ化引数が提供されます。 そのため、アクティブ化コマンドを使ってアプリに新しいメッセージを柔軟に提供できます。 アクティブ化メソッドで更新後の新しいアプリが実行されるようにするには、プロジェクトをコンパイルして展開する必要があることに注意してください。 
 
@@ -46,7 +45,7 @@ ms.openlocfilehash: ae2f80a915f4aed90c269c37a11d01a2f6c9849e
   scheme://username:password@host:port/path.extension?query#fragment
   ```
 
-この形式の URI 文字列は、Uri オブジェクトのメソッドで解析できます。 詳しくは、[MSDN の Uri クラスのトピック](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.uri.aspx)をご覧ください。 
+この形式の URI 文字列は、Uri オブジェクトのメソッドで解析できます。 詳しくは、[MSDN の Uri クラスのトピック](https://msdn.microsoft.com/library/windows/apps/windows.foundation.uri.aspx)をご覧ください。 
 
 例:
 
@@ -134,7 +133,7 @@ C:\Program Files (x86)\Windows Kits\10\App Certification Kit\microsoft.windows.s
 
 ### ランチャー アプリケーション
 
-COM の使用をサポートするアプリケーションを起動用に別途作成できます。 起動アクティブ化を使ってアプリを起動するランチャー プログラムの C++ コードの例を次に示します。 このコードでは、**ApplicationActivationManager** を作成して **ActivateApplication** を呼び出し、先ほど確認した AUMID と任意の引数を渡すことができます。 その他のパラメーターについて詳しくは、[MSDN の IApplicationActivationManager::ActivateApplication メソッドのトピック](https://msdn.microsoft.com/en-us/library/windows/desktop/hh706903(v=vs.85).aspx)をご覧ください。
+COM の使用をサポートするアプリケーションを起動用に別途作成できます。 起動アクティブ化を使ってアプリを起動するランチャー プログラムの C++ コードの例を次に示します。 このコードでは、**ApplicationActivationManager** を作成して **ActivateApplication** を呼び出し、先ほど確認した AUMID と任意の引数を渡すことができます。 その他のパラメーターについて詳しくは、[MSDN の IApplicationActivationManager::ActivateApplication メソッドのトピック](https://msdn.microsoft.com/library/windows/desktop/hh706903(v=vs.85).aspx)をご覧ください。
 
 ```
 #include <ShObjIdl.h>
@@ -208,8 +207,12 @@ Platform::String^ argval = launchArgs->Arguments;
 ## 要約
 以上のように、UWP アプリはさまざまな方法で起動することができます。 要件や用途に応じて、適切な方法を利用してください。 
 
+## 関連項目
+- [Xbox One の UWP](index.md)
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,8 +3,9 @@ author: msatranjr
 title: "マップ認証キーの要求"
 description: "MapControl や Windows.Services.Maps 名前空間のマップ サービスをユニバーサル Windows アプリで使うには、そのアプリを認証する必要があります。"
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
+translationtype: Human Translation
 ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: b7c981e071f70ab0a76d73333a94580b3c497b0e
+ms.openlocfilehash: 4cbc0142e7d76795bb147ce4cc98b3da48715b85
 
 ---
 
@@ -16,8 +17,7 @@ ms.openlocfilehash: b7c981e071f70ab0a76d73333a94580b3c497b0e
 
 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) や [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間のマップ サービスを [ユニバーサル Windows アプリ](https://msdn.microsoft.com/library/windows/apps/dn894631) で使うには、そのアプリを認証する必要があります。 アプリを認証するには、マップ認証キーを指定する必要があります。 このトピックでは、[Bing Maps Developer Center](https://www.bingmapsportal.com/) にマップ認証キーを要求し、アプリに追加する方法について説明します。
 
-
-            **ヒント:** アプリで地図を使う方法について詳しくは、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619979)から次のサンプルをダウンロードしてください。
+**ヒント** アプリで地図を使う方法について詳しくは、GitHub の [2Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619979) から次のサンプルをダウンロードしてください。
 
 -   [ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
@@ -42,14 +42,10 @@ ms.openlocfilehash: b7c981e071f70ab0a76d73333a94580b3c497b0e
 
 7.  **[Create Key] (キーの作成)** フォームの入力が完了したら、**[Create] (作成)** をクリックします。
 
-    -   
-            **[Application name] (アプリケーション名):** アプリケーションの名前です。
-    -   
-            **[Application URL] (アプリケーション URL) (オプション):** アプリケーションの URL です。
-    -   
-            **[Key type] (キーの種類):** **[Basic] (ベーシック)** または **[Enterprise] (エンタープライズ)** を選びます。
-    -   
-            **[Application type] (アプリケーションの種類):** ユニバーサル Windows アプリで使うには、**[Universal Windows App] (ユニバーサル Windows アプリ)** を選びます。
+    -   **[Application name]:** アプリケーションの名前です。
+    -   **[Application URL] (オプション):** アプリケーションの URL です。
+    -   **[Key type]:** **[Basic]** または **[Enterprise]** を選びます。
+    -   **[Application type]:** ユニバーサル Windows アプリで使うには、**[Universal Windows App]** を選びます。
 
     次に示すのは、フォームの例です。
 
@@ -100,6 +96,6 @@ ms.openlocfilehash: b7c981e071f70ab0a76d73333a94580b3c497b0e
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

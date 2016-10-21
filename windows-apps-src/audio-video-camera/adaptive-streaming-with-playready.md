@@ -3,8 +3,9 @@ author: eliotcowley
 ms.assetid: BF877F23-1238-4586-9C16-246F3F25AE35
 description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリに、Microsoft PlayReady コンテンツ保護を使ったマルチメディア コンテンツのアダプティブ ストリーミングを追加する方法について説明します。"
 title: "PlayReady を使ったアダプティブ ストリーミング"
-ms.sourcegitcommit: 176f8989aea5402106e3c14144948cec87a5dc27
-ms.openlocfilehash: d76f50e97f16699f34f138fcd25af8a90696085a
+translationtype: Human Translation
+ms.sourcegitcommit: 8534598b1f3cf49b15a73d03f6f19e67877b25d0
+ms.openlocfilehash: 22e430fd6dafe49fb3bf599fec91a9ab3dbd6b95
 
 ---
 
@@ -22,9 +23,9 @@ Smooth Streaming も、現在、ネイティブではサポートされていま
 
 この記事では、アダプティブ ストリーミングの PlayReady 固有の側面についてのみ扱います。 アダプティブ ストリーミングの実装に関する全般的な情報については、「[アダプティブ ストリーミング](adaptive-streaming.md)」をご覧ください。
 
-この記事では、GitHub の Microsoft の **Windows-universal-samples** リポジトリにある[アダプティブ ストリーミングのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)のコードを使っています。 PlayReady を使ったアダプティブ ストリーミングはシナリオ 4 で取り上げられています。 リポジトリを含む ZIP ファイルをダウンロードするには、リポジトリのルート レベルに移動して、**[Download ZIP]** (ZIP をダウンロード) ボタンをクリックします。
+この記事では、GitHub の Microsoft の **Windows-universal-samples** リポジトリにある[アダプティブ ストリーミングのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)のコードを使っています。 PlayReady を使ったアダプティブ ストリーミングはシナリオ 4 で取り上げられています。 リポジトリを含む ZIP ファイルをダウンロードするには、リポジトリのルート レベルに移動して、**[Download ZIP]** ボタンを選びます。
 
-次の using ステートメントが必要です。
+次の **using** ステートメントが必要です。
 
 ```csharp
 using LicenseRequest;
@@ -176,7 +177,7 @@ async Task<bool> ReactiveIndivRequest(
 }
 ```
 
-または、個別化サービス要求を事前に行うこともできます。その場合、`ProtectionManager_ServiceRequested` で `ReactiveIndivRequest` を呼び出すコードの代わりに以下の関数を呼び出します。
+または、個別化サービス要求を事前に行うこともできます。その場合、`ProtectionManager_ServiceRequested` で `ReactiveIndivRequest` を呼び出すコードの代わりに次の関数を呼び出します。
 
 ```csharp
 async void ProActiveIndivRequest()
@@ -188,7 +189,7 @@ async void ProActiveIndivRequest()
 
 ## ライセンス取得サービス要求
 
-代わりに、要求が [PlayReadyLicenseAcquisitionServiceRequest](https://msdn.microsoft.com/library/windows/apps/dn986285) であった場合、以下の関数を呼び出して PlayReady ライセンスを要求および取得します。 要求が成功したかどうかを、渡した MediaProtectionServiceCompletion オブジェクトに通知し、要求を完了します。
+代わりに、要求が [PlayReadyLicenseAcquisitionServiceRequest](https://msdn.microsoft.com/library/windows/apps/dn986285) であった場合、次の関数を呼び出して PlayReady ライセンスを要求および取得します。 要求が成功したかどうかを、渡した **MediaProtectionServiceCompletion** オブジェクトに通知し、要求を完了します。
 
 ```csharp
 async void LicenseAcquisitionRequest(
@@ -291,16 +292,15 @@ async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
 
 この関数は、アダプティブ ストリーミングの開始をどのイベント (たとえば、ボタン クリック イベント) で処理する場合でも呼び出すことができます。
 
- 
-
- 
-
+## 関連項目
+- [PlayReady DRM](playready-client-sdk.md)
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

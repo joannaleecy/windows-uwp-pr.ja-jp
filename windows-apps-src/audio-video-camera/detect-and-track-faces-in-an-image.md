@@ -3,8 +3,9 @@ author: drewbatgit
 ms.assetid: 84729E44-10E9-4D7D-8575-6A9D97467ECD
 description: "このトピックでは、FaceDetector を使って画像内の顔を検出する方法について説明します。 FaceTracker は、ビデオ フレームのシーケンスで顔を経時的に追跡するように最適化されています。"
 title: "画像やビデオでの顔の検出"
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 66730fcbaad2e3e059f2972475625d278d235002
+translationtype: Human Translation
+ms.sourcegitcommit: 7526d5ddfbaa6f5128ef5775bc75cc48768f647d
+ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
 
 ---
 
@@ -45,8 +46,7 @@ ms.openlocfilehash: 66730fcbaad2e3e059f2972475625d278d235002
 
 [!code-cs[形式](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFormat)]
 
-[**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132) を呼び出すことで **FaceDetector** オブジェクトをインスタンス化したら、[**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134) を呼び出して、適切なサイズに拡大縮小済み、サポートされているピクセル形式に変換済みのビットマップを渡します。 このメソッドは [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) オブジェクトの一覧を返します。 
-            **ShowDetectedFaces** はヘルパー メソッドであり、次に示しているように、画像内の顔の周りに四角形を描画します。
+[**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132) を呼び出すことで **FaceDetector** オブジェクトをインスタンス化したら、[**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134) を呼び出して、適切なサイズに拡大縮小済み、サポートされているピクセル形式に変換済みのビットマップを渡します。 このメソッドは [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) オブジェクトの一覧を返します。 **ShowDetectedFaces** はヘルパー メソッドであり、次に示しているように、画像内の顔の周りに四角形を描画します。
 
 [!code-cs[検出](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDetect)]
 
@@ -97,10 +97,12 @@ ms.openlocfilehash: 66730fcbaad2e3e059f2972475625d278d235002
 * [メディア キャプチャのシーン分析](scene-analysis-for-media-capture.md)
 * [基本的な顔検出のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
 * [基本的な顔追跡のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
-* [MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)
+* [カメラ](camera.md)
+* [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [メディア再生](media-playback.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

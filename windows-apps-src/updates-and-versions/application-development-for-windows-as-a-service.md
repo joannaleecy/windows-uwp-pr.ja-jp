@@ -1,157 +1,164 @@
 ---
-title: Application development for Windows as a service (Windows 10)
-description: Decouple app release and support from specific Windows builds.
+title: "サービスとしての Windows アプリケーション開発 (Windows 10)"
+description: "アプリのリリースを分離し、特定の Windows ビルドからサポートします。"
 author: jdeckerMS
+translationtype: Human Translation
+ms.sourcegitcommit: a86002c944841536d37735bb8c4b657905582144
+ms.openlocfilehash: 72ac67b17fc519d374798e5121b309f664ff6b1b
+
 ---
 
-# Application development for Windows as a service
+# サービスとしての Windows アプリケーション開発
 
-**Applies to**
--   Windows 10
--   Windows 10 Mobile
--   Windows 10 IoT Core 
+**適用対象**
+-   Windows 10
+-   Windows 10 Mobile
+-   Windows 10 IoT Core 
 
-In today’s environment, where user expectations frequently are set by device-centric experiences, complete product cycles need to be measured in months, not years. Additionally, new releases must be made available on a continual basis, and must be deployable with minimal impact on users. Microsoft designed Windows 10 to meet these requirements by implementing a new approach to innovation, development, and delivery called [Windows as a service (WaaS)](https://technet.microsoft.com/itpro/windows/manage/introduction-to-windows-10-servicing). The key to enabling significantly shorter product cycles while maintaining high quality levels is an innovative community-centric approach to testing that Microsoft has implemented for Windows 10. The community, known as Windows Insiders, is comprised of millions of users around the world. When Windows Insiders opt in to the community, they test many builds over the course of a product cycle and provide feedback to Microsoft through an iterative methodology called flighting.
+現在の環境では、ユーザーはデバイス中心のエクスペリエンスで期待を抱くことが多いため、完全な製品サイクルを年ではなく月で測定する必要があります。 また、新しいリリースは頻繁に入手可能にする必要があり、ユーザーへの影響を最小限に抑えて展開できる必要があります。 Microsoft は革新、開発、配信のための新しいアプローチを実装することで、これらの要件を満たすように Windows 10 を設計しました。このアプローチは、[サービスとしての Windows (WaaS)](https://technet.microsoft.com/itpro/windows/manage/introduction-to-windows-10-servicing) と呼ばれます。 高い品質レベルを維持しながら、非常に短い製品サイクルを実現するためにキーとなるのは、Microsoft が Windows 10 向けに実装したテストに対するコミュニティ中心の革新的なアプローチです。 Windows Insider として知られるこのコミュニティは、世界中の何百万ものユーザーで構成されています。 Windows Insider ユーザーはコミュニティにオプトインすると、製品サイクルの経過と共に数多くのビルドをテストし、Insider プレビュー ビルドという反復的な方法で Microsoft にフィードバックを提供します。
 
-Builds distributed as flights provide the Windows engineering team with significant data regarding how well builds are performing in actual use. Flighting with Windows Insiders also enables Microsoft to test builds in much more diverse hardware, application, and networking environments than in the past, and to identify issues far more quickly. As a result, Microsoft believes that community-focused flighting will enable both a faster pace of innovation delivery and better public release quality than ever.
+Insider プレビュー ビルドとして配布されるビルドは、実際の使用中にビルドが適切に実行されるかどうかに関する重要なデータを Windows エンジニアリング チームに提供します。 また、Windows Insider による Insider プレビュー ビルドを利用することで、Microsoft は以前よりはるかに多様なハードウェア、アプリケーション、およびネットワーク環境でビルドをテストし、より早く問題を特定することができます。 その結果、Microsoft はコミュニティに重点を置いた Insider プレビュー ビルドによって、これまでより速いペースで革新的機能を配信でき、より高品質な一般リリースを公開できると考えています。
 
-## Windows 10 release types and cadences
+## Windows 10 のリリースの種類と更新間隔
 
-Although Microsoft releases flight builds to Windows Insiders, Microsoft will publish two types of Windows 10 releases broadly to the public on an ongoing basis:
+Microsoft は Windows Insider に Insider プレビュー ビルドをリリースしますが、それに加えて継続的に次の 2 種類の Windows 10 リリースを広く一般に公開します。
 
-**Feature updates** install the latest new features, experiences, and capabilities on devices that are already running Windows 10. Because feature updates contain an entire copy of Windows, they are also what customers use to install Windows 10 on existing devices running Windows 7 or Windows 8.1, and on new devices where no operating system is installed. Microsoft expects to publish an average of one to two new feature updates per year.
+**機能更新プログラム** : 既に Windows 10 を実行しているデバイスに、最新の機能とエクスペリエンスをインストールします。 機能更新プログラムには Windows の全体のコピーが含まれているため、Windows 7 または Windows 8.1 を実行している既存のデバイス、およびオペレーティング システムがインストールされていない新しいデバイスに Windows 10 をインストールするためにも使用できます。 Microsoft は、平均して 1 年に 1 回か 2 回、新しい機能更新プログラムを公開することを想定しています。
 
-**Quality updates** deliver security issue resolutions and other important bug fixes. Quality updates will be provided to improve each feature currently in support, on a cadence of one or more times per month. Microsoft will continue publishing quality updates on Update Tuesday (sometimes referred to as Patch Tuesday). Additionally, Microsoft may publish additional quality updates for Windows 10 outside the Update Tuesday process when required to address customer needs.
+**品質更新プログラム** セキュリティの問題解決やその他の重要なバグ修正を提供します。 品質更新プログラムは、現在サポートされている個々の機能を改善するために、毎月 1 回以上の間隔で提供されます。 Microsoft は、Update Tuesday (Patch Tuesday とも呼ばれます) の品質更新プログラムの公開を継続します。 また、Microsoft はユーザーのニーズへの対応が必要なとき、Update Tuesday のプロセス以外で Windows 10 向けの追加の品質更新プログラムを公開することがあります。
 
-During Windows 10 development, Microsoft streamlined the Windows product engineering and release cycle so that we can deliver the features, experiences, and functionality customers want, more quickly than ever. We also created new ways to deliver and install feature updates and quality updates that simplify deployments and on-going management, broaden the base of employees who can be kept current with the latest Windows capabilities and experiences, and lower total cost of ownership. Hence we have implemented new servicing options – referred to as Current Branch (CB), Current Branch for Business (CBB), and Long-Term Servicing Branch (LTSB) – that provide pragmatic solutions to keep more devices more current in enterprise environments than was previously possible.
+Windows10 の開発時、ユーザーが求める機能やエクスペリエンスを Microsoft がこれまでより迅速に提供できるように、Windows 製品のエンジニアリングおよびリリース サイクルを合理化しました。 また、機能更新プログラムと品質更新プログラムを配信およびインストールするための新しい手段を開発しました。これにより、展開および継続的な管理が簡略化され、最新の Windows の機能とエクスペリエンスによって最新の環境に保たれる従業員の基盤が広がり、総保有コストが削減されます。 それに伴い、Current Branch (CB)、Current Branch for Business (CBB)、および Long-Term Servicing Branch (LTSB) と呼ばれる新しいサービス オプションを実装しました。これらは、エンタープライズ環境で以前より多くのデバイスをより新しい状態に保つための実際的なソリューションを提供します。
 
-The following table shows describes the various servicing branches and their key attributes.
+次の表は、さまざまなサービス ブランチと、各ブランチの重要な特性を示しています。
 
-| Servicing option                  | Availability of new feature upgrades for installation     | Minimum length of servicing lifetime | Key benefits                                                                              | Supported editions                                                                         |
+| サービス オプション                  | インストールでの新しい機能アップグレードの利用可能性     | サービスのライフタイムの最短期間 | 主な利点                                                                              | サポートされるエディション                                                                         |
 |-----------------------------------|-----------------------------------------------------------|--------------------------------------|-------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
-| Current Branch (CB)               | Immediately after first published by Microsoft            | Approximately 4 months               | Makes new features available to users as soon as possible                                 | Home, Pro, Education, Enterprise, Mobile, IoT Core, Windows 10 IoT Core Pro (IoT Core Pro) |
-| Current Branch for Business (CBB) | Approximately 4 months after first published by Microsoft | Approximately 8 months               | Provides additional time to test new feature upgrades before deployment                   | Pro, Education, Enterprise, Mobile Enterprise, IoT Core Pro                                |
-| Long-Term Servicing Branch (LTSB) | Immediately after published by Microsoft                  | 10 Years                             | Enables long-term deployment of selected Windows 10 releases in low-change configurations | Enterprise LTSB                                                                            |
- 
-For more information, see [Windows 10 servicing options for updates and upgrades](https://technet.microsoft.com/itpro/windows/manage/introduction-to-windows-10-servicing).
+| Current Branch (CB)               | Microsoft が最初に発行した直後            | 約 4 か月               | できるだけ早く新機能をユーザーに利用可能にする                                 | Home、Pro、Education、Enterprise、Mobile、IoT Core、Windows 10 IoT Core Pro (IoT Core Pro) |
+| Current Branch for Business (CBB) | Microsoft が最初に発行してから約 4 か月後 | 約 8 か月               | 展開の前に新しい機能アップグレードをテストするための追加時間を提供する                   | Pro、Education、Enterprise、Mobile Enterprise、IoT Core Pro                                |
+| Long-Term Servicing Branch (LTSB) | Microsoft が発行した直後                  | 10 年                             | 低料金構成で選択された Windows 10 リリースの長期的な展開を可能にする | エンタープライズ LTSB                                                                            |
+ 
+詳しくは、「[更新とアップグレードに関する Windows 10 のサービス オプション](https://technet.microsoft.com/itpro/windows/manage/introduction-to-windows-10-servicing)」をご覧ください。
 
-## Supporting apps in Windows as a service
+## サービスとしての Windows におけるアプリのサポート
 
-The traditional approach for supporting apps has been to release a new app version in response to a Windows release. This assumes that there are breaking changes in the underlying OS that could potentially cause a regression with the application. This model involves a dedicated development and validation cycle that requires our ISV partners to align with the Windows release cadence.
+従来のアプリ サポートのアプローチは、Windows のリリースに応じて新しいアプリのバージョンをリリースするというものでした。 このアプローチは、基になる OS で行われた仕様変更により、アプリケーションに不具合が発生する可能性があることを前提としています。 このモデルでの開発と検証には独自のサイクルがあり、そのため ISV パートナーは Windows のリリース間隔に合わせる必要がありました。
 
-In the Windows as a service model, Microsoft is making a commitment to maintaining the compatibility of the underlying OS. This means Microsoft will make a concerted effort to ensure that there are no breaking changes that impact the app ecosystem negatively. In this scenario, when there is a release of a Windows build, most apps (those with no kernel dependencies) will continue to work.
+サービスとしての Windows のモデルで、Microsoft は基になる OS の互換性の維持に取り組んでいます。 そのため Microsoft は、仕様変更によってアプリのエコシステムに悪影響が出ないように、一致協力して取り組んでいきます。 このシナリオでは、Windows ビルドがリリースされた場合、ほとんどのアプリ (カーネルに依存しないアプリ) は引き続き動作します。
 
-In view of this change, Microsoft recommends that our ISV partners decouple their app release and support from specific Windows builds. Our mutual customers are better served by an application lifecycle approach. This means when an application version is released it will be supported for a certain period of time irrespective of however many Windows builds are released in the interim. The ISV makes a commitment to provide support for that specific version of the app as long as it is supported in the lifecycle. Microsoft follows a similar lifecycle approach for Windows that can be referenced [here](http://go.microsoft.com/fwlink/?LinkID=780549).
+この変更の観点から、ISV パートナーの皆様には、アプリのリリースとサポートを特定の Windows ビルドから切り離すことをお勧めします。 アプリケーション ライフサイクルのアプローチを使用すると、Microsoft と ISV パートナーの共通のお客様に対するサービスが向上します。 つまり、アプリケーションのバージョンがリリースされると、このバージョンは特定の期間サポートされます。これはその間に多くの Windows ビルドがリリースされても関係ありません。 ISV は、そのアプリの特定のバージョンがライフサイクルでサポートされている限り、サポートを提供します。 Microsoft は、Windows について同様のライフサイクル アプローチに従っています。[こちら](http://go.microsoft.com/fwlink/?LinkID=780549)をご覧ください。
 
-This approach will reduce the burden of maintaining an app schedule that aligns with Windows releases. ISV partners should be free to release features or updates at their own cadence. We feel that our partners can keep their customer base updated with the latest app updates independent of a Windows release. In addition, our customers do not have to seek an explicit support statement whenever a Windows build is released. Here is an example of a support statement that covers how an app may be supported across different versions of the OS:
+このアプローチでは、Windows のリリースに合わせてアプリのスケジュールを維持せずに済むため、負担が軽減されます。 ISV パートナーは、独自の間隔で機能更新プログラムや品質更新プログラムを自由にリリースできます。 Microsoft は、パートナーが Windows のリリースに依存することなく、それぞれの顧客ベースを最新のアプリ更新プログラムによって継続的に更新できると考えています。 さらに、Windows ビルドがリリースされるたびに、お客様が明示的にサポート ステートメントを探す必要はなくなります。 OS の異なるバージョン間でアプリがどのようにサポートされるかを説明するサポート ステートメントの例を次に示します。
 
-| Example of an application lifecycle support statement                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| アプリケーション ライフサイクルのサポート ステートメントの例                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Contoso is a software development company and is the owner of the popular Mojave app which has a major share in the enterprise space. Contoso releases its next major release Mojave 14.0 and declares mainstream support for a period of three years from the release date. During mainstream support all updates and support are complimentary for the licensed product. Contoso also declares an additional two years of extended support where customers can purchase updates and support for a grace period. Beyond the extended support end date this product version is no longer supported. During the period of mainstream support Contoso will support Mojave 14.0 on all released builds of Windows. Contoso will also release updates to Mojave as necessary and independent of the Windows product releases. |
- 
-In the following sections, you will find additional information about the steps Microsoft takes to maintain the compatibility of the underlying OS. You will also find guidance on steps you can take to help maintain the compatibility of the combined OS and app ecosystem. There is a section on how to leverage Windows flighting builds to detect app regressions before a Windows build is released. Lastly, we describe how we use an instrumentation and telemetry-driven approach to increase the quality of Windows builds. We recommend ISVs adopt a similar approach with their app portfolio.
+| Contoso はソフトウェア開発会社であり、エンタープライズ市場で大きなシェアを持つ、Mojave という人気のあるアプリを所有しています。 Contoso は次期メジャー リリースである Mojave 14.0 をリリースし、リリース日から 3 年間のメイン ストリーム サポートを宣言しました。 メインストリーム サポートの期間中、すべての更新プログラムとサポートは、ライセンス認証された製品については無料です。 また、Contoso は、2 年間の延長サポートも宣言しました。その期間は猶予期間として、お客様が更新プログラムとサポートを購入できます。 延長サポート終了日を過ぎると、この製品バージョンはサポートされません。 メインストリーム サポート期間中、Contoso はリリースされたすべての Windows ビルドで Mojave 14.0 をサポートします。 また、Windows の製品リリースとは関係なく、必要に応じて Mojave の更新プログラムをリリースします。 |
+ 
+以下のセクションでは、基になる OS の互換性を維持するために Microsoft が実施している手順について、詳しい情報を示します。 OS とアプリを組み合わせたエコシステムの互換性を維持するために実行できる手順のガイダンスも記載します。 さらに、Windows ビルドのリリース前に Windows フライティング ビルドを使ってアプリの不具合を検出する方法について説明したセクションがあります。 最後に、インストルメンテーションと利用統計情報に基づくアプローチを使用して Windows ビルドの品質を高める方法について説明します。 ISV の皆様に、自社のアプリのポートフォリオに対して同様のアプローチを採用することをお勧めします。
 
-## Key changes since Windows 7 to ensure app compatibility
+## Windows 7 以降に行われたアプリの互換性を確保するための重要な変更
 
-We understand that compatibility matters to developers. ISVs and developers want to ensure their apps will run as expected on all supported versions of the Windows OS. Consumers and businesses have a key investment here—they want to ensure that the apps they have paid for will continue to work. We know that compatibility is the primary criteria for purchase decisions. Apps that are well written based on best practices will lead to much less code churn when 
-a new Windows version is released and will reduce fragmentation—these apps have a reduced engineering investment to maintain, and a faster time to market.
+Microsoft は互換性が開発者にとって重要なことを理解しています。 ISV と開発者は、サポートされているすべてのバージョンの Windows オペレーティング システムで、アプリが予期したとおりに動作することを確認する必要があります。 一般ユーザーと企業は、アプリに重要な投資をしているため、購入したアプリが引き続き機能することを確認したいと考えます。 Microsoft は、購入決定時に最優先される条件が互換性であることを認識しています。 アプリがベスト プラクティスに基づいて正しく記述されていれば、新しい Windows のバージョンがリリースされたときに、コード チャーンが大幅に少なくて済み、断片化が抑えられます。このようなアプリは、メンテナンスに必要なエンジニアリングの投資の削減と、市場投入期間の短縮をもたらします。
 
-In the Windows 7 timeframe, compatibility was very much a reactive approach. In Windows 8, we started looking at this differently, working within Windows to ensure that compatibility was by design rather than an afterthought. 
-Windows 10 is the most compatible-by-design version of the OS to date. Here are some key ways we accomplished this:
--   **App telemetry**: This helps us understand app popularity in the Windows ecosystem to inform compatibility testing.
--   **ISV partnerships**: Work directly with external partners to provide them with data and help fix issues that our users experience.
--   **Design reviews, upstream detection**: Partner with feature teams to reduce the number of breaking changes in Windows. Compatibility review is a gate that our feature teams must pass.
--   **Communication**: Tighter control over API changes and improved communication.
--   **Flighting and feedback loop**: Windows insiders receive flighted builds that help improve our ability to find compatibility issues before a final build is released to customers. This feedback process not only exposes bugs, but ensures we are shipping features our users want.
+Windows 7 のサポート期間中、互換性に対するアプローチは事後対応の度合いが大きいものでした。 Windows 8 では互換性に対する見方を変えて、後から合わせるのではなく、Windows 自体のしくみとして設計による互換性を確保する取り組みを始めました。 Windows 10 は、これまでの OS の中で、設計による互換性を最大限に高めた OS です。 これを実現した重要な方法をいくつか紹介します。
+-   **アプリの利用統計情報**: Windows エコシステムにおけるアプリの需要を把握して互換性テストを通知するときに役立ちます。
+-   **ISV とのパートナーシップ**: 外部パートナーとの直接的な共同作業によってパートナーにデータを提供し、ユーザーに発生する問題を解決します。
+-   **設計のレビュー、アップストリームの検出**: Windows の仕様変更の数を減らすために機能チームと協力します。 互換性レビューは、機能チームが通過しなければならない関門です。
+-   **コミュニケーション**: API の変更をより厳密にコントロールし、コミュニケーションを改善しました。
+-   **フライティングとフィードバック ループ**: Windows Insider ユーザーは、フライティング後のビルドを受け取ります。このため、お客様に最終ビルドをリリースする前に互換性の問題が見つかりやすくなります。 このフィードバック プロセスでバグが明らかになるだけでなく、ユーザーが求めている機能を提供していることを確認できます。
 
-## Best practices for app compatibility
+## アプリの互換性のためのベスト プラクティス
 
-Microsoft uses diagnostic and usage data to identify and troubleshoot problems, improve our products and services, and provide our users with personalized experiences. The usage data we collect also extends to the apps that PCs in the Windows ecosystem are running. Based on what our customers use, we build our list to test these apps, devices, and drivers against new versions of the Windows OS. Windows 10 has been the most compatible version of Windows to-date, with over 90% compatibility against thousands of popular apps. The Windows Compatibility team commonly reaches out to our ISV partners to provide feedback if issues are discovered, so that we can partner together on solutions. Ideally, we’d like our common customers to be able to update Windows seamlessly and without losing functionality in either their OS or the apps they depend on for their productivity or entertainment.
+Microsoft は、診断データと使用状況データを、問題の特定とトラブルシューティング、製品とサービスの向上、パーソナル化されたエクスペリエンスの提供に利用しています。 Microsoft が収集する使用状況データには、Windows エコシステム内の PC で実行しているアプリまでが含まれます。 お客様が何を使用しているかに基づいて、新しいバージョンの Windows OS に対してテストする対象として、それらのアプリ、デバイス、ドライバーのリストを作成します。 Windows 10 は、これまでで最も互換性が高いバージョンの Windows となっており、人気のある数千ものアプリに対して 90% を超える互換性があります。 Windows 互換性チームは通常、問題が見つかった場合は ISV パートナーに連絡してフィードバックを提供し、協力して解決策を作成できます。 理想は、一般的なユーザーの Windows をシームレスに更新できるようにすることです。しかも、OS またはユーザーがよく使用する生産性アプリやエンターテイメント アプリのどちらについても、機能が失われないようにする必要があります。
 
-The following sections contain some best practices Microsoft recommends so you can ensure your apps are compatible with Windows 10.
+以下のセクションでは、アプリと Windows 10 の互換性を確保するために、Microsoft がお勧めするベスト プラクティスをいくつか紹介します。
 
-### Windows version check
+### Windows のバージョン チェック
 
-The OS version has been incremented with Windows 10. This means that the internal version number has been changed to 10.0. As in the past, we go to great lengths to maintain application and device compatibility after an OS version change. For most app categories (without any kernel dependencies), the change will not negatively impact app functionality, and existing apps will continue to work fine on Windows 10.
+Windows 10 で OS のバージョンがインクリメントされています。 つまり、内部バージョン番号が 10.0 に変更されています。 Microsoft はこれまでと同様に、OS のバージョン変更後のアプリケーションとデバイスの互換性を維持するために全力を尽くしています。 ほとんどのアプリ カテゴリ (カーネルに依存しない) では、変更によってアプリの機能への悪影響はなく、既存のアプリは Windows 10 で正しく動作します。
 
-The manifestation of this change is app-specific. This means any app that specifically checks for the OS version will get a higher version number, which can lead to one or more of the following situations:
--   App installers might not be able to install the app, and apps might not be able to start.
--   Apps might become unstable or crash.
--   Apps might generate error messages, but continue to function properly.
+この変更の影響はアプリ固有です。 つまり、OS のバージョンを厳密にチェックするアプリは大きいバージョン番号を取得します。その結果、次の 1 つ以上の状況が発生する場合があります。
+-   アプリ インストーラーでアプリをインストールできず、アプリを開始できない場合があります。
+-   アプリが不安定になる可能性またはクラッシュする可能性があります。
+-   アプリでエラー メッセージが生成されても、アプリは正しく機能し続ける場合があります。
 
-Some apps perform a version check and simply pass a warning to users. However, there are apps that are bound very tightly to a version check (in the drivers, or in kernel mode to avoid detection). In these cases, the app will fail if an incorrect version is found. Rather than a version check, we recommend one of the following approaches:
--   If the app is dependent on specific API functionality, ensure you target the correct API version.
--   Ensure you detect the change via APISet or another public API, and do not use the version as a proxy for some feature or fix. If there are breaking changes and a proper check is not exposed, then that is a bug.
--   Ensure the app does NOT check for version in odd ways, such as via the registry, file versions, offsets, kernel mode, drivers, or other means. If the app absolutely needs to check the version, use the GetVersion APIs, which should return the major, minor, and build number.
--   If you are using the [GetVersion](http://go.microsoft.com/fwlink/?LinkID=780555) API, remember that the behavior of this API has changed since Windows 8.1.
+一部のアプリでは、バージョン チェックを実行して、ユーザーに警告を渡します。 ただし、(ドライバーで、または検出を回避するためのカーネル モードで) バージョン チェックに非常に緊密にバインドされているアプリがあります。 このような場合、正しくないバージョンが見つかると、アプリは失敗します。 バージョン チェックではなく、次のいずれかのアプローチをお勧めします。
+-   アプリが特定の API 機能に依存している場合は、正しい API バージョンをターゲットにしてください。
+-   APISet または別のパブリック API を使用して変更を検出し、そのバージョンは機能や修正プログラムのプロキシとして使用しないでください。 仕様変更があり、しかも適切なチェックが公開されていない場合、それはバグです。
+-   アプリがその他の方法 (レジストリ、ファイルのバージョン、オフセット、カーネル モード、ドライバーなどの方法) でバージョン チェックを行わないことを確認します。 アプリでどうしてもバージョンを確認する必要がある場合は、メジャー番号、マイナー番号、およびビルド番号を返す GetVersion API を使用します。
+-   [GetVersion](http://go.microsoft.com/fwlink/?LinkID=780555) API を使用している場合は、この API の動作が Windows8.1 以降に変更されていることにご注意ください。
 
-If you own apps such as antimalware or firewall apps, you should work through your usual feedback channels and via the Windows Insider program.
+マルウェア対策やファイアウォール アプリなどのアプリを所有している場合は、通常のフィードバックのチャンネルを通じて、または Windows Insider プログラムから対応してください。
 
-### Undocumented APIs
+### 文書化されていない API
 
-Your apps should not call undocumented Windows APIs, or take dependency on specific Windows file exports or registry keys. This can lead to broken functionality, data loss, and potential security issues. If there is functionality your app requires that is not available, this is an opportunity to provide feedback through your usual feedback channels and via the Windows Insider program.
+アプリでは、文書化されていない Windows API を呼び出さないでください。また、特定の Windows ファイルのエクスポートやレジストリ キーに依存しないようにします。 これに従わないと、機能の破損やデータの損失、セキュリティ上の潜在的な問題につながります。 アプリに必要な機能がない場合は、通常のフィードバックのチャンネルを通じて、または Windows Insider プログラムから、フィードバックをお送りください。
 
-### Develop Universal Windows Platform (UWP) and Centennial apps
+### ユニバーサル Windows プラットフォーム (UWP) アプリおよび Centennial アプリの開発
 
-We encourage all Win32 app ISVs to develop [Universal Windows Platform (UWP)](http://go.microsoft.com/fwlink/?LinkID=780560) and, specifically, [Centennial](http://go.microsoft.com/fwlink/?LinkID=780562) apps moving forward. There are great benefits to developing these app packages rather than using traditional Win32 installers. UWP apps are also supported in the [Windows Store](http://go.microsoft.com/fwlink/?LinkID=780563), so it’s easier for you to update your users to a consistent version automatically, lowering your support costs.
+すべての Win32 アプリの ISV に、今後は[ユニバーサル Windows プラットフォーム (UWP)](http://go.microsoft.com/fwlink/?LinkID=780560) アプリ、中でも特に [Centennial](http://go.microsoft.com/fwlink/?LinkID=780562) アプリを開発することをお勧めします。 従来の Win32 インストーラーを使用するのではなく、これらのアプリ パッケージを開発することには大きな利点があります。 UWP アプリは [Windows ストア](http://go.microsoft.com/fwlink/?LinkID=780563)でもサポートされているため、一貫した同じバージョンにユーザーを自動的に更新することが簡単にできるようになりました。これにより、サポートのコストを削減できます。
 
-If your Win32 app types do not work with the Centennial model, we highly recommend that you use the right installer and ensure this is fully tested. An installer is your user or customer’s first experience with your app, so ensure that this works well. All too often, this doesn’t work well or it hasn’t been fully tested for all scenarios. The [Windows App Certification Kit](http://go.microsoft.com/fwlink/?LinkID=780565) can help you test the install and uninstall of your Win32 app and help you identify use of undocumented APIs, as well as other basic performance-related best-practice issues, before your users do.
+Win32 アプリの種類が Centennial モデルで動作しない場合は、適切なインストーラーを使用し、これが完全にテストされていることを確認します。 インストーラーは、ユーザーまたはお客様が体験するアプリの最初のエクスペリエンスであるため、適切に動作するようにします。 これが十分に動作しなかったり、すべてのシナリオに対して完全にテストされていなかったりすることがよくあります。 [Windows アプリ認定キット](http://go.microsoft.com/fwlink/?LinkID=780565)を使用すると、ユーザーよりも前に、Win32 アプリのインストールとアンインストールを試し、文書化されていない API を使用していないことを確認できます。また、パフォーマンスに関連した他の基本的なベスト プラクティスの問題がないかも確認できます。
 
-**Best practices:**
--   Use installers that work for both 32-bit and 64-bit versions of Windows.
--   Design your installers to run on multiple scenarios (user or machine level).
--   Keep all Windows redistributables in the original packaging – if you repackage these, it’s possible that this will break the installer.
--   Schedule development time for your installers—these are often overlooked as a deliverable during the software development lifecycle.
+**ベスト プラクティス:**
+-   32 ビットと 64 ビットの両方のバージョンの Windows で動作するインストーラーを使用します。
+-   複数のシナリオ (ユーザー レベルまたはコンピューター レベル) で実行するようにインストーラーを設計します。
+-   元のパッケージ化のときに Windows 再頒布可能ファイルをすべて維持します。ファイルを再パッケージ化すると、インストーラーが壊れる可能性があります。
+-   ソフトウェア開発ライフサイクルで見過ごされがちな成果物として、インストーラーの開発時間のスケジュールを設定します。
 
-## Optimized test strategies and flighting
+## 最適化されたテスト戦略とフライティング
 
-Windows OS flighting refers to the interim builds available to Windows Insiders before a final build is released to the general population. The more Insiders that flight these interim builds, the more feedback we receive on the build quality, compatibility, etc., and this helps improve quality of the final builds. You can participate in this flighting program to ensure that your apps work as expected on iterative builds of the OS. We also encourage you to provide feedback on how these flighted builds are working for you, issues you run into, and so on.
+Windows OS のフライティングは、一般ユーザーに最終ビルドがリリースされる前に、Windows Insider ユーザーが利用できる中間ビルドのことです。 中間ビルドのフライティングを行う Insider ユーザーが増えるほど、ビルドの品質や互換性などについてより多くのフィードバックが集まり、最終ビルドの品質向上につながります。 このフライティング プログラムに参加して、OS の反復的なビルドでアプリが期待どおりに動作することを確認します。 フライティング後のビルドの動作、発生した問題などについて、ぜひフィードバックをお寄せください。
 
-If your app is in the Store, you can flight your app via the Store, which means that your app will be available for our Windows Insider population to install. Users can install your app and you can receive preliminary feedback on your app before you release it to the general population. The follow sections outline the steps for testing your apps against Windows flighted builds.
+アプリがストアに登録されている場合は、ストアを通してアプリのフライティングを行うことができます。つまり、Windows Insider カタログからアプリを選んでインストールできるようになります。 ユーザーにアプリをインストールしてもらい、一般リリースの前にアプリについて予備的なフィードバックを受け取ることができます。 以下のセクションでは、フライティング後の Windows ビルドに対してアプリをテストする手順の概要を示します。
 
-### Step 1: Become a Windows Insider and participate in flighting
-As a [Windows Insider,](http://go.microsoft.com/fwlink/p/?LinkId=521639) you can help shape the future of Windows—your feedback will help us improve features and functionality in the platform. This is a vibrant community where you can connect with other enthusiasts, join forums, trade advice, and learn about upcoming Insider-only events.
+### 手順 1: Windows Insider に参加してフライティングに参加する
+[Windows Insider](http://go.microsoft.com/fwlink/p/?LinkId=521639) に登録して Windows の将来像を形作るためにご協力ください。皆様からのフィードバックは、プラットフォームの機能向上に役立てられます。 この活発なコミュニティで熱意のある他のユーザーと交流できます。フォーラムに参加して互いにアドバイスし合ったり、Insider 参加者限定イベントの予定を把握したりできます。
 
-Since you’ll have access to preview builds of Windows 10, Windows 10 Mobile, and the latest Windows SDK and Emulator, you’ll have all the tools at your disposal to develop great apps and explore what's new in the Universal Windows Platform and the Windows Store.
+Windows 10、Windows 10 Mobile、および最新の Windows SDK とエミュレーターにアクセスできるため、優れたアプリの開発に自由に使用できるあらゆるツールを手にすることができます。また、ユニバーサル Windows プラットフォームと Windows ストアの新着情報を確認できます。
 
-This is also a great opportunity to build great hardware, with preview builds of the hardware development kits so you can develop universal drivers for Windows. The IoT Core Insider Preview is also available on supported IoT development boards, so you can build amazing connected solutions using the Universal Windows Platform.
+優れたハードウェアを構築する機会でもあります。ハードウェア開発キットのプレビュー ビルドを入手して、Windows 用ユニバーサル ドライバーの開発を始めましょう。 サポートされている IoT 開発ボードで IoT Core Insider Preview を使用して、ユニバーサル Windows プラットフォームで優れた接続ソリューションを構築しましょう。
 
-Before you become a Windows Insider, please note that participation is intended for users who:
--   Want to try out software that’s still in development.
--   Want to share feedback about the software and the platform.
--   Don’t mind lots of updates or a UI design that might change significantly over time.
--   Really know their way around a PC and feel comfortable troubleshooting problems, backing up data, formatting a hard drive, installing an operating system from scratch, or restoring an old one if necessary.
--   Know what an ISO file is and how to use it.
--   Aren't installing it on their everyday computer or device.
+Windows Insider に登録する前に、参加するユーザーについて次のように想定されていることをご確認ください。
+-   まだ開発段階のソフトウェアを試したい。
+-   ソフトウェアとプラットフォームに関するフィードバックを共有したい。
+-   一定期間に多数の更新プログラムや UI 設計の大幅な変更があっても問題ない。
+-   PC に関する確実な知識があり、問題のトラブルシューティング、データのバックアップ、ハード ドライブのフォーマット、ゼロからのオペレーティング システムのインストールに慣れていて、必要な場合は以前のシステムに復元することも問題ない。
+-   ISO ファイルが何であるかと、その使用方法を理解している。
+-   日常的に使用しているコンピューターやデバイスにはインストールしない。
 
-### Step 2: Test your scenarios
+### 手順 2: シナリオをテストする
 
-Once you have updated to a flighted build, the following are some sample test cases to help you get started on testing and gathering feedback. For most of these tests, ensure you cover both x86 and AMD64 systems.
-**Clean install test:** On a clean install of Windows 10, ensure your app is fully functional. If your app fails this test and the upgrade test, then it’s likely that the issue is caused by underlying OS changes or bugs in the app. 
-If after investigation, the former is the case, be sure to use the Windows Insider program to provide feedback and partner on solutions.
+フライティングを経たビルドを更新した後、テストの実行とフィードバックの収集を始めるときに参考にできるサンプルのテストケースを以下に示します。 これらのテストのほとんどでは、x86 システムと AMD64 システムの両方に対処するようにします。
+**クリーン インストールのテスト:** クリーン インストールした Windows 10 で、アプリが完全に機能することを確認します。 アプリがこのテストとアップグレード テストに失敗した場合は、問題は基になる OS の変更によるものか、アプリのバグである可能性があります。 調査の結果、前者が原因である場合は、Windows Insider プログラムを使用してフィードバックを送り、解決にご協力ください。
 
-**Upgrade Test:** Check that your app works after upgrading from a down-level version of Windows (i.e. Windows 7 or Windows 8.1) to Windows 10. Your app shouldn’t cause roll backs during upgrade, and should continue to work as expected after upgrade—this is crucial to achieve a seamless upgrade experience.
+**アップグレード テスト:** 下位バージョンの Windows (Windows 7 または Windows 8.1) から Windows 10 にアップグレードした後、アプリが動作することを確認します。 アップグレード中にアプリでロールバックが発生することなく、アップグレード後にアプリが予期したとおりに動作する必要があります。これはシームレスなアップグレード エクスペリエンスを実現するために非常に重要です。
 
-**Reinstall Test:** Ensure that app functionality can be restored by reinstalling your app after you upgrade the PC to Windows 10 from a down-level OS. If your app didn’t pass the upgrade test and you have not been able to narrow down the cause of these issues, it’s possible that a reinstall can restore lost functionality. A passing reinstall test indicates that parts of the app may not have been migrated to Windows 10.
+**再インストール テスト:** 下位レベルの OS から Windows 10 に PC をアップグレードした後、アプリを再インストールすることで、アプリの機能を復元できることを確認します。 アプリがアップグレード テストに合格しなかった場合、問題の原因を絞り込むことができないときは、失われた機能を再インストールによって復元することができます。 再インストール テストに合格した場合、アプリが部分的に Windows 10 に移行されていない可能性があります。
 
-**OS\\Device Features Test:** Ensure that your app works as expected if your app relies on specific functionality in the OS. Common areas for testing include the following, often against a selection of the commonly used PC models to ensure coverage:
--   Audio
--   USB device functionality (keyboard, mouse, memory stick, external hard disk, and so on)
+**OS/デバイスの機能テスト:** アプリが OS の特定の機能に依存している場合は、アプリが予期したとおりに動作することを確認します。 一般的なテスト対象範囲は次のとおりです。多くの場合、一般的に使用されているさまざまな PC モデルに対して実行することで、対応を確認します。
+-   オーディオ
+-   USB デバイスの機能 (キーボード、マウス、メモリ スティック、外付けハード ディスクなど)
 -   Bluetooth
--   Graphics\\display (multi-monitor, projection, screen rotation, and so on)
--   Touch screen (orientation, on-screen keyboard, pen, gestures, and so on)
--   Touchpad (left\\right buttons, tap, scroll, and so on)
--   Pen (single\\double tap, press, hold, eraser, and so on)
--   Print\\Scan
--   Sensors (accelerometer, fusion, and so on)
--   Camera
+-   グラフィックス/ディスプレイ (マルチモニター、画面出力、画面の向きなど)
+-   タッチ スクリーン (向き、スクリーン キーボード、ペン、ジェスチャなど)
+-   タッチパッド (左/右ボタン、タップ、スクロールなど)
+-   ペン (シングル/ダブルタップ、プッシュ、長押し、消しゴムなど)
+-   印刷/スキャン
+-   センサー (加速度計、フュージョン センサーなど)
+-   カメラ
 
-### Step 3: Provide feedback
+### 手順 3: フィードバックの提供
 
-Let us know how your app is performing against flighted builds. As you discover issues with your app during testing, please log bugs via the partner portal if you have access, or through your Microsoft representative. We encourage this information so that we can build a quality experience for our users together.
+フライティング後のビルドに対してアプリが動作するかどうかをお知らせください。 テスト中にアプリで問題が見つかった場合、パートナー ポータルにアクセスできる場合はパートナー ポータルにログを登録してください。または、Microsoft の担当者にお伝えください。 ユーザー向けの高品質なエクスペリエンスを協力して構築するために、情報をお寄せください。
 
-### Step 4: Register on Windows 10
-The [Ready for Windows 10](http://go.microsoft.com/fwlink/?LinkID=780580) website is a directory of software that supports Windows 10. It’s intended for IT administrators at companies and organizations worldwide that are considering Windows 10 for their deployments. IT administrators can check the site to see whether software deployed in their enterprise is supported in Windows 10.
+### 手順 4: Windows 10 で登録する
+[Ready for Windows 10](http://go.microsoft.com/fwlink/?LinkID=780580) の Web サイトには、Windows 10 に対応したソフトウェアが登録されています。 Windows 10 の導入を検討している世界中の企業や組織の IT 管理者向けです。 IT 管理者はこのサイトをチェックして、エンタープライズに導入したソフトウェアが Windows 10 でサポートされているかどうかを確認できます。
 
-## Related topics
-[Windows 10 servicing options for updates and upgrades](https://technet.microsoft.com/itpro/windows/manage/introduction-to-windows-10-servicing)
+## 関連トピック
+[更新プログラムおよびアップグレードに関する Windows 10 のサービス オプション](https://technet.microsoft.com/itpro/windows/manage/introduction-to-windows-10-servicing)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

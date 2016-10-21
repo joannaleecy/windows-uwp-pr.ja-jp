@@ -3,8 +3,8 @@ title: "ホストされた Web アプリ - Web アプリケーションからユ
 description: "Web サイトの URL からユニバーサル Windows プラットフォーム (UWP) アプリを作成します。 Web アプリ内のコードから Windows 10 のネイティブ デバイス機能にアクセスします。 ホストされた Web アプリ用 Microsoft Windows ブリッジ (旧 Project Westminster) によって、素早く簡単に Web アプリを Windows ストアで公開できます。"
 author: seksenov
 translationtype: Human Translation
-ms.sourcegitcommit: 765789ef83f9b6a845ab79505b1b9ecbfd987126
-ms.openlocfilehash: 491665558f713dcbaae7ea20739ed72c61a12cd2
+ms.sourcegitcommit: 7fe6e240e4ef221b49f9b103cf30192449ce4502
+ms.openlocfilehash: 95d50aa37f349f494f260ea3af97211a085623a9
 
 ---
 
@@ -35,8 +35,7 @@ Mac と PC のいずれの環境でも、数分で独自のホストされた We
 
 ## 既存の Chrome アプリの変換
 
-[既存の Chrome でホストされるアプリを変換](hwa-chrome-conversion.md)して、Windows でホストされる Web アプリを作成することが容易になりました。 
-            [ManifoldJS](http://manifoldjs.com/) で、入力の形式として Chrome マニフェストを受け入れるようになりました。 また、既存の `.zip` または `.crx` ファイルから `.appx` パッケージを生成する [CLI ツール](https://github.com/MicrosoftEdge/hwa-cli)が開発されました。
+[既存の Chrome でホストされるアプリを変換](hwa-chrome-conversion.md)して、Windows でホストされる Web アプリを作成することが容易になりました。 [ManifoldJS](http://manifoldjs.com/) で、入力の形式として Chrome マニフェストを受け入れるようになりました。 また、既存の `.zip` または `.crx` ファイルから `.appx` パッケージを生成する [CLI ツール](https://github.com/MicrosoftEdge/hwa-cli)が開発されました。
 
 ## デモ
 
@@ -46,6 +45,6 @@ Mac と PC のいずれの環境でも、数分で独自のホストされた We
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

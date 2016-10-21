@@ -5,8 +5,9 @@ title: "ターゲット設定"
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 50a285b484f7e9ed7b349921c3460bd7c9c81603
+ms.openlocfilehash: 5707d36533e1b6566efb23ca9b6bf2bbf659cc63
 
 ---
 
@@ -174,6 +175,6 @@ Windows では、ここで示した最小サイズや推奨する余白サイズ
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

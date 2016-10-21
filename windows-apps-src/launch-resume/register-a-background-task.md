@@ -3,16 +3,15 @@ author: TylerMSFT
 title: "バックグラウンド タスクの登録"
 description: "ほとんどのバックグラウンド タスクを安全に登録できる再利用可能な関数の作成方法について説明します。"
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
+translationtype: Human Translation
+ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
+ms.openlocfilehash: 36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb
 
 ---
 
 # バックグラウンド タスクの登録
 
-
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
-
 
 **重要な API**
 
@@ -22,7 +21,7 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 
 ほとんどのバックグラウンド タスクを安全に登録できる再利用可能な関数の作成方法について説明します。
 
-このトピックでは、登録する必要があるバックグラウンド タスクが既にあることを前提とします  (バックグラウンド タスクの作成方法について詳しくは、「[バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」をご覧ください)。
+このトピックは、単一プロセスのバックグラウンド タスクと個別プロセスのバックグラウンド タスクの両方に適用されます。 このトピックでは、登録する必要があるバックグラウンド タスクが既にあることを前提とします  (バックグラウンド タスクの作成方法について詳しくは、「[別のプロセスで実行するバックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」または「[単一プロセス バックグラウンド タスクの作成と登録](create-and-register-a-singleprocess-background-task.md)」をご覧ください)。
 
 このトピックは、バックグラウンド タスクを登録するユーティリティ関数の作り方を順に説明します。 このユーティリティ関数は、二重登録による問題を防ぐために、同じタスクが登録されていないかどうかをチェックしたうえでタスクを登録します。バックグラウンド タスクにシステムの条件を適用することができます。 ここで紹介しているユーティリティ関数は、それ自体で完結した実用的なコード例となっています。
 
@@ -34,8 +33,11 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 
 ## メソッドのシグニチャと戻り値の型の定義
 
-
 このメソッドは、タスクのエントリ ポイント、タスク名、構築済みのバックグラウンド タスク トリガーのほか、(必要に応じて) バックグラウンド タスクの [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) を引数として受け取ります。 このメソッドは、[**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) オブジェクトを返します。
+
+> [!Important]
+> `taskEntryPoint` - 個別プロセスで実行するバックグラウンド タスクの場合、名前空間名、"."、バックグラウンド クラスを含むクラス名という形式で構築する必要があります。 この文字列では、大文字と小文字を区別します。  たとえば、名前空間 "MyBackgroundTasks" と、バックグラウンド クラス コードを含むクラス "BackgroundTask1" がある場合、`taskEntryPoint` 用の文字列は "MyBackgroundTasks.BackgruondTask1" となります。
+> バックグラウンド タスクをアプリと同じプロセスで実行する (単一プロセスのバックグラウンド タスク) 場合、`taskEntryPoint` を設定する必要はありません。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -63,17 +65,15 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 > }
 > ```
 
-## [!div class="tabbedCodeSnippets"]
+## 登録の重複確認
 
+既に登録されたタスクかどうかを確認します。 同じタスクが二重に登録されると、1 回のトリガーにつきタスクが複数回実行され、CPU が無駄に消費されるばかりか、予期しない動作を招くこともあるため、この確認は重要です。
 
-登録の重複確認 既に登録されたタスクかどうかを確認します。
+同じタスクが登録されているかどうかは、[**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) プロパティを照会し、返された結果を反復処理することで確認できます。 各インスタンスの名前を調べ、登録しようとしているタスクの名前と一致した場合、ループを抜けて、フラグ変数を設定します。このフラグに応じたコード パスが次のステップで選択されます。
 
-同じタスクが二重に登録されると、1 回のトリガーにつきタスクが複数回実行され、CPU が無駄に消費されるばかりか、予期しない動作を招くこともあるため、この確認は重要です。 同じタスクが登録されているかどうかは、[**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) プロパティを照会し、返された結果を反復処理することで確認できます。
+> **注** バックグラウンド タスクには、アプリ内で重複しない名前を使ってください。 各バックグラウンド タスクには一意の名前が付いている必要があります。
 
-> 各インスタンスの名前を調べ、登録しようとしているタスクの名前と一致した場合、ループを抜けて、フラグ変数を設定します。このフラグに応じたコード パスが次のステップで選択されます。 
-            **注** バックグラウンド タスクには、アプリ内で重複しない名前を使ってください。
-
-各バックグラウンド タスクには一意の名前が付いている必要があります。
+次のコードは、最後の手順で作成した [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) を使ってバックグラウンド タスクを登録します。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -137,17 +137,17 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 > }
 > ```
 
-## 次のコードは、最後の手順で作成した [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) を使ってバックグラウンド タスクを登録します。
+## バックグラウンド タスクを登録する (または既に登録されているタスクを返す)
 
 
-[!div class="tabbedCodeSnippets"] バックグラウンド タスクを登録する (または既に登録されているタスクを返す)
+同じバックグラウンド タスクが既に登録されているかどうかを確認します。 登録されている場合は、そのタスクのインスタンスを返します。
 
-同じバックグラウンド タスクが既に登録されているかどうかを確認します。 登録されている場合は、そのタスクのインスタンスを返します。 登録されていない場合は、新しい [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) オブジェクトを使ってタスクを登録します。
+登録されていない場合は、新しい [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) オブジェクトを使ってタスクを登録します。 このコードは、condition パラメーターが null かどうかを確認し、null でない場合は、その condition を登録オブジェクトに追加します。 戻り値は、[**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) メソッドから返された [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) です。
 
-> このコードは、condition パラメーターが null かどうかを確認し、null でない場合は、その condition を登録オブジェクトに追加します。 戻り値は、[**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) メソッドから返された [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) です。 
-            **注**  バックグラウンド タスクの登録パラメーターは登録時に検証されます。
+> **注**  バックグラウンド タスクの登録パラメーターは登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 バックグラウンド タスクの登録が失敗するシナリオをアプリが適切に処理するようにします。タスクを登録しようとした後で、有効な登録オブジェクトを持っていることを前提として動作するアプリは、クラッシュする場合があります。
+> **注** アプリと同じプロセスで実行されるバックグラウンド タスクを登録する場合、`String.Empty` または `null` を `taskEntryPoint` パラメーターに送信します。
 
-いずれかの登録パラメーターが有効でない場合は、エラーが返されます。
+次の例には、既にあるタスクを返すか、バックグラウンド タスクを登録するコードが追加されています。また、システムの条件 (省略可能) が指定された場合の処理も追加されています。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -181,12 +181,16 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 >     var builder = new BackgroundTaskBuilder();
 >
 >     builder.Name = name;
->     builder.TaskEntryPoint = taskEntryPoint;
+>
+>     // single-process background tasks don't set TaskEntryPoint
+>     if ( taskEntryPoint != null && taskEntryPoint != String.Empty)
+>     {
+>         builder.TaskEntryPoint = taskEntryPoint;
+>     }
 >     builder.SetTrigger(trigger);
 >
 >     if (condition != null)
 >     {
->
 >         builder.AddCondition(condition);
 >     }
 >
@@ -247,10 +251,10 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 > }
 > ```
 
-## バックグラウンド タスクの登録が失敗するシナリオをアプリが適切に処理するようにします。タスクを登録しようとした後で、有効な登録オブジェクトを持っていることを前提として動作するアプリは、クラッシュする場合があります。
+## バックグラウンド タスク登録ユーティリティ関数の完成
 
 
-次の例には、既にあるタスクを返すか、バックグラウンド タスクを登録するコードが追加されています。また、システムの条件 (省略可能) が指定された場合の処理も追加されています。 [!div class="tabbedCodeSnippets"]
+この例は、バックグラウンド タスク登録ユーティリティ関数全体を示しています。 ネットワーク関連のバックグラウンド タスクを除くほとんどのバックグラウンド タスクは、この関数を使って登録できます。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -367,30 +371,28 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 > }
 > ```
 
-> バックグラウンド タスク登録ユーティリティ関数の完成 この例は、バックグラウンド タスク登録ユーティリティ関数全体を示しています。
+> **注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
- 
-## ネットワーク関連のバックグラウンド タスクを除くほとんどのバックグラウンド タスクは、この関数を使って登録できます。
-
+## 関連トピック
 
 ****
 
-* [[!div class="tabbedCodeSnippets"]](create-and-register-a-background-task.md)
-* [
-            **注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。](declare-background-tasks-in-the-application-manifest.md)
-* [Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。](handle-a-cancelled-background-task.md)
-* [関連トピック](monitor-background-task-progress-and-completion.md)
-* [バックグラウンド タスクの作成と登録](respond-to-system-events-with-background-tasks.md)
-* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](set-conditions-for-running-a-background-task.md)
-* [取り消されたバックグラウンド タスクの処理](update-a-live-tile-from-a-background-task.md)
-* [バックグラウンド タスクの進捗状況と完了の監視](use-a-maintenance-trigger.md)
-* [バックグラウンド タスクによるシステム イベントへの応答](run-a-background-task-on-a-timer-.md)
-* [バックグラウンド タスクを実行するための条件の設定](guidelines-for-background-tasks.md)
+* [別のプロセスで実行するバックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
+* [単一プロセス バックグラウンド タスクの作成と登録](create-and-register-a-singleprocess-background-task.md)
+* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
+* [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
+* [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
+* [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)
+* [バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)
+* [バックグラウンド タスクのライブ タイルの更新](update-a-live-tile-from-a-background-task.md)
+* [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)
+* [タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)
+* [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
 
 ****
 
-* [バックグラウンド タスクのライブ タイルの更新](debug-a-background-task.md)
-* [メンテナンス トリガーの使用](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
+* [Windows ストア アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 
@@ -398,6 +400,6 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

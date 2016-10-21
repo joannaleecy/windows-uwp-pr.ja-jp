@@ -1,11 +1,11 @@
 ---
 description: "UWP アプリのユーザー インターフェイスのレイアウトやコントロールの設計について、最新のダウンロードとツールを入手します。"
-keywords: uwp app layout, UI, user interface designs, downloads, uwp tools
+keywords: "UWP アプリのレイアウト, UI, ユーザー インターフェイスの設計, ダウンロード, UWP ツール"
 title: "UWP アプリの設計に関するダウンロード - Windows アプリ開発"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 1370af75dcd45d52d0d31f57acb958d366f9bee5
-ms.openlocfilehash: 4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e3
+ms.sourcegitcommit: f1ea979f5179cce0bb059534b064c2ecf805ce89
+ms.openlocfilehash: da21817eea3a26ffd162bd19c8eb69345ac1d726
 
 ---
 
@@ -73,7 +73,7 @@ Adobe Photoshop 用の一連の操作により、7 つのファイルから 68 �
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
             <p><b>Adobe Illustrator 用の Redliner ツール</b><br/>
-Illustrator プロトタイプから赤線による指示書を簡単に生成できます。 <br/>[Adobe Illustrator 用の Redliner ツールをダウンロードする](https://go.microsoft.com/fwlink/p/?LinkId=534641)</p>    
+Illustrator プロトタイプから赤線による指示書を簡単に生成できます。 (Adobe Illustrator CC 以降が必要です。)<br/>[Adobe Illustrator 用の Redliner ツールをダウンロードする](https://go.microsoft.com/fwlink/p/?LinkId=534641)</p>  
   </div>
   <div class="side-by-side-content-right">
 <a href="https://go.microsoft.com/fwlink/p/?LinkId=534641"><img src="images/redliner-tool.png" alt="Download the Redliner tool for Adobe Illustrator" /></a>
@@ -109,6 +109,6 @@ Illustrator プロトタイプから赤線による指示書を簡単に生成�
 <b>他のコードをお探しの場合は、</b> Windows サンプル ページで UWP アプリ サンプルの一覧をご覧ください。 [サンプル ポータルに移動](https://developer.microsoft.com/samples)
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

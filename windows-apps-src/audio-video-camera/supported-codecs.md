@@ -4,8 +4,8 @@ ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: "この記事では、UWP アプリ用のオーディオとビデオのコーデックおよび形式のサポートを示します。"
 title: "サポートされるコーデック"
 translationtype: Human Translation
-ms.sourcegitcommit: b4d6a9f7cc8b343ee1cbd31bcfd8f19e329c82dc
-ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
+ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
+ms.openlocfilehash: 0f6da61ba167328968694d240e250dbc454d5e7b
 
 ---
 
@@ -22,8 +22,8 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 
 次の表は、各デバイス ファミリのオーディオのコーデックと形式のサポートを示しています。
 
-**注:**  
--   AMR-NB のサポートが示されている場合、Server SKU ではこのコーデックがサポートされません。
+> [!NOTE] 
+> AMR-NB のサポートが示されている場合、Server SKU ではこのコーデックがサポートされません。
 
  
 
@@ -1586,9 +1586,9 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 
 次の表は、各デバイス ファミリのビデオのコーデックと形式のサポートを示しています。
 
-**注:**  
--   H.265 のサポートが示されている場合、必ずしもデバイス ファミリ内のすべてのデバイスでサポートされるわけではありません。
--   MPEG-2/MPEG-1 のサポートが示されている場合、オプションの Microsoft DVD ユニバーサル Windows アプリのインストールでのみサポートされます。
+> [!NOTE] 
+> H.265 のサポートが示されている場合、必ずしもデバイス ファミリ内のすべてのデバイスでサポートされるわけではありません。
+> MPEG-2/MPEG-1 のサポートが示されている場合、オプションの Microsoft DVD ユニバーサル Windows アプリのインストールでのみサポートされます。
 
  
 
@@ -2697,6 +2697,6 @@ ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

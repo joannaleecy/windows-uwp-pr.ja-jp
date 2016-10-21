@@ -3,8 +3,9 @@ author: DBirtolo
 ms.assetid: 5B30E32F-27E0-4656-A834-391A559AC8BC
 title: "コンパスの使用"
 description: "コンパスを使って現在の方位を検出する方法を説明します。"
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2c2135867586909328b8d1080c413b3524322246
+ms.openlocfilehash: 05c13ff71e1c6dcfb84d46e37445c1699211951a
 
 ---
 # コンパスの使用
@@ -180,6 +181,6 @@ CompassReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

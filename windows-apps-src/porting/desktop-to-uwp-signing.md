@@ -2,7 +2,11 @@
 
 この記事では、ユニバーサル Windows プラットフォーム (UWP) に変換したデスクトップ アプリに署名する方法について説明します。 .appx パッケージを展開する前に、証明書で署名する必要があります。
 
-## .appx パッケージに署名する
+## Desktop App Converter (DAC) を使った自動的な署名
+
+DAC を実行しているときに ```-Sign``` フラグを使用して、.appx パッケージに自動的に署名します。 詳細については、「[Desktop App Converter プレビュー](desktop-to-uwp-run-desktop-app-converter.md)」をご覧ください。
+
+## SignTool.exe を使った手動での署名
 
 最初に MakeCert.exe を使用して証明書を作成します。 パスワードの入力を求められた場合は、[なし] を選択します。 
 
@@ -21,11 +25,35 @@ C:\> pvk2pfx.exe -pvk <my.pvk> -spc <my.cer> -pfx <my.pfx>
 C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 ``` 
 
-詳しくは、「[SignTool を使ってアプリ パッケージに署名する方法](https://msdn.microsoft.com/en-us/library/windows/desktop/jj835835(v=vs.85).aspx)」をご覧ください。 
+詳しくは、「[SignTool を使ってアプリ パッケージに署名する方法](https://msdn.microsoft.com/library/windows/desktop/jj835835.aspx)」をご覧ください。 
 
 上記の 3 つのツールはすべて Microsoft Windows 10 SDK に含まれています。 これらのツールを直接呼び出すには、コマンド プロンプトから ```C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\VsDevCmd.bat``` スクリプトを呼び出します。
 
 ## 一般的なエラー
+
+### 発行元と証明書の不一致により、Signtool で「エラー: SignerSign() が失敗しました」(-2147024885/0x8007000b) というエラーが発生する
+
+appx マニフェストの発行元エントリは、署名に使用する証明書のサブジェクトと一致する必要があります。  次の方法のいずれかを使用して、証明書のサブジェクトを表示できます。 
+
+**オプション1: Powershell**
+
+次の PowerShell コマンドを実行します。 同じ発行元情報を持つ .cer または .pfx のいずれかを証明書ファイルとして使用できます。
+
+```ps
+(Get-PfxCertificate <cert_file>).Subject
+```
+
+**オプション2: エクスプローラー**
+
+エクスプローラーで証明書をダブルクリックし、*[詳細]* タブを選び、一覧の *[サブジェクト]*フィールドを選びます。 内容をコピーすることができます。 
+
+**オプション3: CertUtil**
+
+コマンドラインから PFX ファイルに **certutil** を実行し、出力から *[サブジェクト]* フィールドをコピーします。 
+
+```cmd
+certutil -dump <cert_file.pfx>
+```
 
 ### Authenticode 署名が破損しているか、形式が正しくない
 
@@ -40,7 +68,7 @@ Authenticode 署名が正しいと見なされるには、Authenticode 署名が
 - **WIN_CERTIFICATE** エントリのサイズは正の値である必要がある
 - **WIN_CERTIFICATE** エントリは、32 ビット実行可能ファイルの場合は **IMAGE_NT_HEADERS32** 構造体の後、64 ビット実行可能ファイルの場合は IMAGE_NT_HEADERS64 構造体の後にある必要がある
 
-詳しくは、[移植可能な実行可能ファイルの Authenticode 署名の仕様に関するドキュメント](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/Authenticode_PE.docx)と [PE ファイル形式の仕様に関するページ](https://msdn.microsoft.com/en-us/windows/hardware/gg463119.aspx)をご覧ください。 
+詳しくは、[移植可能な実行可能ファイルの Authenticode 署名の仕様に関するドキュメント](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/Authenticode_PE.docx)と [PE ファイル形式の仕様に関するページ](https://msdn.microsoft.com/windows/hardware/gg463119.aspx)をご覧ください。 
 
 AppX パッケージに署名するときに、SignTool.exe で、壊れているバイナリや形式が正しくないバイナリの一覧を出力できます。 これを行うには、環境変数 APPXSIP_LOG を 1 に設定して (例: ```set APPXSIP_LOG=1```) 詳細なログを有効にし、SignTool.exe を再度実行します。
 
@@ -48,10 +76,10 @@ AppX パッケージに署名するときに、SignTool.exe で、壊れてい�
 
 ## 参照
 
-- [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx)
-- [SignTool.exe (署名ツール)](https://msdn.microsoft.com/library/8s9b9yaz(v=vs.110).aspx)
-- [SignTool を使ってアプリ パッケージに署名する方法](https://msdn.microsoft.com/en-us/library/windows/desktop/jj835835(v=vs.85).aspx)
+- [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)
+- [SignTool.exe (署名ツール)](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
+- [SignTool を使ってアプリ パッケージに署名する方法](https://msdn.microsoft.com/library/windows/desktop/jj835835.aspx)
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Sep16_HO2-->
 
 

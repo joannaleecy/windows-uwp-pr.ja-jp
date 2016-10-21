@@ -3,8 +3,9 @@ author: DelfCo
 description: "Windows.Web.Syndication 名前空間の機能を利用し、RSS や Atom の標準に従って生成される概要フィードを使って、最新の人気の高い Web コンテンツを取得または作成します。"
 title: "RSS/Atom フィード"
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
+translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 625a18203bd2d60acc97a6243d4f3e1e0cf2b297
+ms.openlocfilehash: b20eb8a241d3cb7800904c26331ac39da93f4d44
 
 ---
 
@@ -94,13 +95,13 @@ try {
 }
 ```
 
-[!div class="tabbedCodeSnippets"] 次に、必要なサーバーの資格情報 ([**ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243461) プロパティ)、プロキシの資格情報 ([**ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243459) プロパティ)、HTTP ヘッダー ([**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br243462) メソッド) を設定して要求を構成します。 基本的な要求パラメーターが構成されると、アプリによって指定されたフィード URI 文字列を使って有効な [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) オブジェクトが作成されます。
+次に、必要なサーバーの資格情報 ([**ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243461) プロパティ)、プロキシの資格情報 ([**ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243459) プロパティ)、HTTP ヘッダー ([**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br243462) メソッド) を設定して要求を構成します。 基本的な要求パラメーターが構成されると、アプリによって指定されたフィード URI 文字列を使って有効な [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) オブジェクトが作成されます。 すると、**Uri** オブジェクトが [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) 関数に渡され、フィードが要求されます。
 
-すると、**Uri** オブジェクトが [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) 関数に渡され、フィードが要求されます。
+目的のフィード コンテンツが返されたら、**displayCurrentItem** (以下で定義) が呼び出され、それぞれのフィード項目が反復処理されます。そして当該の UI を介して項目とそのコンテンツがリストとして表示されます。
 
-目的のフィード コンテンツが返されたら、**displayCurrentItem** (以下で定義) が呼び出され、それぞれのフィード項目が反復処理されます。そして当該の UI を介して項目とそのコンテンツがリストとして表示されます。 非同期ネットワーク メソッドの多くは、呼び出すとき、例外を処理するようにコードを記述する必要があります。
+非同期ネットワーク メソッドの多くは、呼び出すとき、例外を処理するようにコードを記述する必要があります。 例外ハンドラーは例外の原因について詳細な情報を取得でき、エラーの理解と適切な判断に役立ちます。
 
-例外ハンドラーは例外の原因について詳細な情報を取得でき、エラーの理解と適切な判断に役立ちます。 [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) メソッドは、ネットワーク サーバーとの接続が確立できなかった場合や、[**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) オブジェクトが有効な AtomPub や RSS フィードを指してない場合に、例外をスローします。
+[**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) メソッドは、ネットワーク サーバーとの接続が確立できなかった場合や、[**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) オブジェクトが有効な AtomPub や RSS フィードを指してない場合に、例外をスローします。 Javascript サンプル コードでは、**onError** 関数を使って、エラーが発生した場合に例外をキャッチし、例外に関する詳細な情報を出力するようにしています。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -169,7 +170,7 @@ function retreiveFeed(uri) {
 }
 ```
 
-Javascript サンプル コードでは、**onError** 関数を使って、エラーが発生した場合に例外をキャッチし、例外に関する詳細な情報を出力するようにしています。 [!div class="tabbedCodeSnippets"] 前段階では、[**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) で要求対象のフィード コンテンツを取得し、フィード項目を反復処理しました。
+前段階では、[**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) で要求対象のフィード コンテンツを取得し、フィード項目を反復処理しました。 各項目は [**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533)オブジェクトで表され、フィード配信規格 (RSS または Atom) でサポートされているすべての項目のプロパティとコンテンツはこのオブジェクトに格納されています。 次の例では、各項目を処理し、対応する UI 要素を介してその内容を表示する **displayCurrentItem** 関数を詳しく見ていきます。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -217,7 +218,7 @@ function displayCurrentItem() {
                 //displayCurrentItem is continued below.
 ```
 
-各項目は [**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533)オブジェクトで表され、フィード配信規格 (RSS または Atom) でサポートされているすべての項目のプロパティとコンテンツはこのオブジェクトに格納されています。 次の例では、各項目を処理し、対応する UI 要素を介してその内容を表示する **displayCurrentItem** 関数を詳しく見ていきます。 [!div class="tabbedCodeSnippets"]
+先ほども触れましたが、[**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533) オブジェクトによって表されるコンテンツの種類は、フィードの発行に採用されている規格 (RSS または Atom) によって異なります。 たとえば、Atom フィードは [**Contributors**](https://msdn.microsoft.com/library/windows/apps/br243540) のリスト化に対応していますが、RSS フィードは対応していません。 ただし、どちらの規格でもサポートされていないフィード項目内の拡張要素 (Dublin Core の extension 要素など) は、次のコード例のように [**SyndicationItem.ElementExtensions**](https://msdn.microsoft.com/library/windows/apps/br243543) プロパティでアクセスし、表示することができます。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -260,6 +261,6 @@ function displayCurrentItem() {
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: "Windows Device Portal の概要"
 description: "Windows Device Portal で、ネットワーク経由でリモートから、または USB 接続によって、デバイスの構成と管理を行うための方法を説明します。"
 translationtype: Human Translation
-ms.sourcegitcommit: 01e83c14304891ff5eaa895e98bbebac33ee7614
-ms.openlocfilehash: 55cbdc077f839166f32605bbada8e0cc707cf5b3
+ms.sourcegitcommit: 7f6aba331ba27d2c0c2ca7925c452da58e155cb8
+ms.openlocfilehash: b316eab1f269dadbe65b7e93b5a33a8e4c4924d7
 
 ---
 # Windows Device Portal の概要
@@ -35,7 +35,7 @@ Phone | 開発者モードで有効化 | 80| 443 | localhost:10080
 
 デバイス固有のセットアップ手順については、以下をご覧ください。
 - [HoloLens 用 Device Portal](https://dev.windows.com/holographic/using_the_windows_device_portal)
-- [IoT 用 Device Portal](http://ms-iot.github.io/content/win10/tools/DevicePortal.htm)
+- [IoT 用 Device Portal](https://go.microsoft.com/fwlink/?LinkID=616499)
 - [モバイル用 Device Portal](device-portal-mobile.md#set-up-device-portal-on-window-phone)
 - [Xbox 用 Device Portal](device-portal-xbox.md)
 - [デスクトップ用 Device Portal](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
@@ -45,12 +45,9 @@ Phone | 開発者モードで有効化 | 80| 443 | localhost:10080
 ### ツールバーとナビゲーション
 
 ページの最上部にあるツール バーでは、よく使われる状態や機能にアクセスできます。
-- 
-              **[Shutdown]** (シャットダウン): デバイスをオフにします。
-- 
-              **[Restart]** (再起動): デバイスの電源を入れ直します。
-- 
-              **[Help]** (ヘルプ): ヘルプ ページを開きます。
+- **[Shutdown]** (シャットダウン): デバイスをオフにします。
+- **[Restart]** (再起動): デバイスの電源を入れ直します。
+- **[Help]** (ヘルプ): ヘルプ ページを開きます。
 
 ページの左側にあるナビゲーション ウィンドウのリンクを使用して、デバイスの管理と監視に利用可能なツールに移動します。
 
@@ -66,16 +63,11 @@ Phone | 開発者モードで有効化 | 80| 443 | localhost:10080
 
 ![モバイル用 Device Portal](images/device-portal/mob-device-portal-apps.png)
 
-- 
-              **[Installed apps]** (インストール済みのアプリ): アプリを削除および起動します。
-- 
-              **[Running apps]** (実行中のアプリ): 現在実行されているアプリを一覧表示します。
-- 
-              **[Install app]** (アプリのインストール): コンピューターまたはネットワーク上のフォルダーからインストールするアプリ パッケージを選択します。
-- 
-              **[Dependency]** (依存関係): インストールするアプリの依存関係を追加します。
-- 
-              **[Deploy]** (展開): 選択したアプリと依存関係をデバイスに展開します。
+- **[Installed apps]** (インストール済みのアプリ): アプリを削除および起動します。
+- **[Running apps]** (実行中のアプリ): 現在実行されているアプリを一覧表示します。
+- **[Install app]** (アプリのインストール): コンピューターまたはネットワーク上のフォルダーからインストールするアプリ パッケージを選択します。
+- **[Dependency]** (依存関係): インストールするアプリの依存関係を追加します。
+- **[Deploy]** (展開): 選択したアプリと依存関係をデバイスに展開します。
 
 **アプリをインストールするには**
 
@@ -108,16 +100,11 @@ Phone | 開発者モードで有効化 | 80| 443 | localhost:10080
 電力消費、フレーム レート、CPU 負荷など、システムの診断情報のグラフをリアルタイムで表示します。
 
 利用可能なメトリックを次に示します。
-- 
-              **[CPU]**: 使用可能量の合計に対するパーセント
-- 
-              **[Memory]** (メモリ): 合計メモリ、使用中のメモリ、使用可能なコミット メモリ、ページ メモリ、および非ページ メモリ
-- 
-              **[GPU]**: GPU エンジンの使用率、使用可能量の合計に対するパーセント
-- 
-              **[I/O]**: 読み取りと書き込み
-- 
-              **[Network]** (ネットワーク): 受信と送信
+- **[CPU]**: 使用可能量の合計に対するパーセント
+- **[Memory]** (メモリ): 合計メモリ、使用中のメモリ、使用可能なコミット メモリ、ページ メモリ、および非ページ メモリ
+- **[GPU]**: GPU エンジンの使用率、使用可能量の合計に対するパーセント
+- **[I/O]**: 読み取りと書き込み
+- **[Network]** (ネットワーク): 受信と送信
 
 ![モバイル用 Device Portal](images/device-portal/mob-device-portal-perf.png)
 
@@ -128,8 +115,7 @@ Phone | 開発者モードで有効化 | 80| 443 | localhost:10080
 ![モバイル用 Device Portal](images/device-portal/mob-device-portal-etw.png)
 
 **[Hide Providers]** (プロバイダを非表示にする) チェックボックスをオンにすると、イベントの一覧のみが表示されます。
-- 
-              **[Registered providers]** (登録済みプロバイダー): ETW プロバイダーとトレース レベルを選択します。 トレース レベルは次のいずれかの値になります。
+- **[Registered providers]** (登録済みプロバイダー): ETW プロバイダーとトレース レベルを選択します。 トレース レベルは次のいずれかの値になります。
     1. 異常終了または終了
     2. 重大なエラー
     3. 警告
@@ -137,14 +123,10 @@ Phone | 開発者モードで有効化 | 80| 443 | localhost:10080
     5. 詳細なトレース (*)
 
 トレースを開始するには、**[Enable]** (有効にする) をクリックまたはタップします。 **[Enabled Providers]** (有効なプロバイダー) ドロップダウン リストにプロバイダーが追加されます。
-- 
-              **[Custom providers]** (カスタム プロバイダー): カスタム ETW プロバイダーとトレース レベルを選択します。 GUID を使用してプロバイダーを識別します。 GUID にはかっこを含めないでください。
-- 
-              **[Enabled providers]** (有効なプロバイダー): 有効なプロバイダーを一覧表示します。 ドロップダウンからプロバイダーを選択し、**[Disable]** (無効にする) をクリックまたはタップしてトレースを停止します。 すべてのトレースを中断するには、**[Stop All]** (すべて停止) をクリックまたはタップします。
-- 
-              **[Providers history]** (プロバイダー履歴): 現在のセッション中に有効になった ETW プロバイダーを表示します。 無効になっているプロバイダーをアクティブ化するには、**[Enable]** (有効にする) をクリックまたはタップします。 履歴をクリアするには、**[Clear]** (クリア) をクリックまたはタップします。
-- 
-              **[Events]** (イベント): 選択したプロバイダーの ETW イベントを表形式で一覧表示します。 この表は、リアルタイムで更新されます。 すべての ETW イベントを表から削除するには、表の下にある **[Clear]** (クリア) ボタンをクリックします。 これによってプロバイダーが無効になることはありません。 **[Save to file]** (ファイルに保存) をクリックすると、現在収集されている ETW イベントをローカルの CSV ファイルにエクスポートできます。
+- **[Custom providers]** (カスタム プロバイダー): カスタム ETW プロバイダーとトレース レベルを選択します。 GUID を使用してプロバイダーを識別します。 GUID にはかっこを含めないでください。
+- **[Enabled providers]** (有効なプロバイダー): 有効なプロバイダーを一覧表示します。 ドロップダウンからプロバイダーを選択し、**[Disable]** (無効にする) をクリックまたはタップしてトレースを停止します。 すべてのトレースを中断するには、**[Stop All]** (すべて停止) をクリックまたはタップします。
+- **[Providers history]** (プロバイダー履歴): 現在のセッション中に有効になった ETW プロバイダーを表示します。 無効になっているプロバイダーをアクティブ化するには、**[Enable]** (有効にする) をクリックまたはタップします。 履歴をクリアするには、**[Clear]** (クリア) をクリックまたはタップします。
+- **[Events]** (イベント): 選択したプロバイダーの ETW イベントを表形式で一覧表示します。 この表は、リアルタイムで更新されます。 すべての ETW イベントを表から削除するには、表の下にある **[Clear]** (クリア) ボタンをクリックします。 これによってプロバイダーが無効になることはありません。 **[Save to file]** (ファイルに保存) をクリックすると、現在収集されている ETW イベントをローカルの CSV ファイルにエクスポートできます。
 
 ETW トレースの使い方について詳しくは、アプリからリアルタイムのログを収集する方法に関する[ブログの記事](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/)をご覧ください。 
 
@@ -154,10 +136,8 @@ ETW トレースの使い方について詳しくは、アプリからリアル�
 
 ![モバイル用 Device Portal](images/device-portal/mob-device-portal-perf-tracing.png)
 
-- 
-              **[Available profiles]** (利用可能なプロファイル): ドロップダウン リストから WPR プロファイルを選択し、**[Start]** (開始) をクリックまたはタップすると、トレースを開始できます。
-- 
-              **[Custom profiles]** (カスタム プロファイル): **[Browse]** (参照) をクリックまたはタップして、PC から WPR プロファイルを選択します。 **[Upload and start]** (アップロードして開始) をクリックまたはタップすると、トレースが開始します。
+- **[Available profiles]** (利用可能なプロファイル): ドロップダウン リストから WPR プロファイルを選択し、**[Start]** (開始) をクリックまたはタップすると、トレースを開始できます。
+- **[Custom profiles]** (カスタム プロファイル): **[Browse]** (参照) をクリックまたはタップして、PC から WPR プロファイルを選択します。 **[Upload and start]** (アップロードして開始) をクリックまたはタップすると、トレースが開始します。
 
 トレースを停止するには、**[Stop]** (停止) をクリックします。 トレース ファイル (.ETL) のダウンロードが完了するまで、このページを閉じないでください。
 
@@ -172,10 +152,8 @@ ETW トレースの使い方について詳しくは、アプリからリアル�
 ### ネットワーク
 
 デバイス上のネットワーク接続を管理します。  デバイス ポータルに USB 経由で接続している場合を除き、これらの設定を変更するとデバイス ポータルとの接続が切断される可能性があります。
-- 
-              **[Profiles]** (プロファイル): 使用する Wi-Fi プロファイルを選択します。  
-- 
-              **[Available networks]** (利用可能なネットワーク): デバイスで利用可能な Wi-Fi ネットワーク。 ネットワークをクリックまたはタップすると、そのネットワークに接続し、必要に応じてパスキーを提供できます。 注: Device Portal では Enterprise Authentication はまだサポートされていません。 
+- **[Profiles]** (プロファイル): 使用する Wi-Fi プロファイルを選択します。  
+- **[Available networks]** (利用可能なネットワーク): デバイスで利用可能な Wi-Fi ネットワーク。 ネットワークをクリックまたはタップすると、そのネットワークに接続し、必要に応じてパスキーを提供できます。 注: Device Portal では Enterprise Authentication はまだサポートされていません。 
 
 ![モバイル用 Device Portal](images/device-portal/mob-device-portal-network.png)
 
@@ -204,8 +182,7 @@ DNS-SD レコードでアドバタイズされる HTTP ポートですべての�
 
 [CSRF 攻撃](https://wikipedia.org/wiki/Cross-site_request_forgery)に対する保護のために、すべての非 GET 要求に一意のトークンが必要です。 このトークン、X-CSRF-Token 要求ヘッダーは、セッション Cookie、CSRF-Token から派生します。 Device Portal の Web UI では、CSRF-Token Cookie が、各要求の X-CSRF-Token にコピーされます。
 
-
-              **重要:** この保護によって、スタンドアロン クライアント (コマンド ライン ユーティリティなど) から REST API を使用できなくなります。 これは 3 つの方法で解決できます。 
+**重要:** この保護によって、スタンドアロン クライアント (コマンド ライン ユーティリティなど) から REST API を使用できなくなります。 これは 3 つの方法で解決できます。 
 
 1. "auto-" というユーザー名を使用します。 クライアントはユーザー名の前に "auto-" を追加することによって、CSRF に対する保護を迂回できます。 このユーザー名は、ブラウザーから Device Portal にログインするために使用しないでください。サービスが CSRF 攻撃を受ける可能性があります。 例: Device Portal のユーザー名が "admin" である場合、CSRF に対する保護を迂回するために ```curl -u auto-admin:password <args>``` を使用します。 
 
@@ -213,8 +190,7 @@ DNS-SD レコードでアドバタイズされる HTTP ポートですべての�
  
 3. 認証を無効にして、HTTP を使用します。 CSRF に対する保護は HTTPS エンドポイントにのみ適用されるため、HTTP エンドポイントに接続する場合、上記のいずれの操作も必要ありません。 
 
-
-              **注**: ユーザー名が "auto-" で始まる場合、ブラウザーを使用して Device Portal にログインできません。  
+**注**: ユーザー名が "auto-" で始まる場合、ブラウザーを使用して Device Portal にログインできません。  
 
 #### クロスサイト WebSocket ハイジャック (CSWSH) に対する保護
 
@@ -222,6 +198,6 @@ DNS-SD レコードでアドバタイズされる HTTP ポートですべての�
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

@@ -1,38 +1,42 @@
 ---
 author: mcleanbyron
 ms.assetid: 4F9657E5-1AF8-45E0-9617-45AF64E144FC
-description: Use these methods in the Windows Store submission API to manage add-ons for apps that are registered to your Windows Dev Center account.
-title: Manage add-ons using the Windows Store submission API
+description: "Windows デベロッパー センター アカウントに登録するアプリのアドオンを管理するには、以下の Windows ストア申請 API のメソッドを使います。"
+title: "Windows ストア申請 API を使用したアドオンの管理"
+translationtype: Human Translation
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 75548ee4689fd31d734c570f8e3eca5d33a6181f
+
 ---
 
-# Manage add-ons using the Windows Store submission API
+# Windows ストア申請 API を使用したアドオンの管理
 
 
 
 
-Use the following methods in the Windows Store submission API to manage add-ons (also known as in-app products or IAPs) for apps that are registered to your Windows Dev Center account. For an introduction to the Windows Store submission API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
+Windows デベロッパー センター アカウントに登録するアプリのアドオン (アプリ内製品または IAP ともいう) を管理するには、Windows ストア申請 API の以下のメソッドを使用します。 Windows ストア申請 API の概要については、「[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。
 
->**Note**&nbsp;&nbsp;These methods can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled. These methods can only be used to get, create, or delete add-ons. To create submissions for add-ons, see the methods in [Manage add-on submissions](manage-add-on-submissions.md).
+>**注:**&nbsp;&nbsp;これらのメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。 以下のメソッドは、アドオンの取得、作成、または削除にしか使用できません。 アドオンの申請を作成する方法については、「[アドオンの申請の管理](manage-add-on-submissions.md)」のメソッドをご覧ください。
 
-| Method        | URI    | Description                                                                 |
+| メソッド        | URI    | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` | Gets data for all add-ons for all the apps that are registered to your Windows Dev Center account. For more information, see [Get all add-ons](get-all-add-ons.md). |
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId} ``` | Gets data for a specific add-on. For more information, see [Get an add-on](get-an-add-on.md). |
-| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` | Creates a new add-on. For more information, see [Create an add-on](create-an-add-on.md).  |
-| DELETE | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}``` | Deletes an add-on. For more information, see [Delete an add-on](delete-an-add-on.md). |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` | Windows デベロッパー センター アカウントに登録するすべてのアプリのすべてのアドオンについてのデータを取得します。 詳しくは、「[すべてのアドオンの入手](get-all-add-ons.md)」をご覧ください。 |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId} ``` | 特定のアドオンについてのデータを取得します。 詳しくは、「[アドオンの入手](get-an-add-on.md)」をご覧ください。 |
+| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` | 新しいアドオンを作成します。 詳しくは、「[アドオンの作成](create-an-add-on.md)」をご覧ください。  |
+| DELETE | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}``` | アドオンを削除します。 詳しくは、「[アドオンの削除](delete-an-add-on.md)」をご覧ください。 |
 
-## Prerequisites
+## 前提条件
 
-If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API before trying to use any of these methods.
+Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)がまだ満たされていない場合は、ここに記載されているメソッドを使用する前に前提条件を整えてください。
 
-## Resources
+## リソース
 
-These methods use the following resources to format data.
+これらのメソッドでは、次のリソースを使用してデータの書式を設定します。
 
 <span id="add-on-object" />
-### Add-on
+### アドオン
 
-This resource represents an add-on. The following example demonstrates the format of this resource.
+このリソースは、アドオンを表します。 次の例は、このリソースの書式設定を示しています。
 
 ```json
 {
@@ -59,21 +63,21 @@ This resource represents an add-on. The following example demonstrates the forma
 }
 ```
 
-This resource has the following values.
+このリソースには、次の値があります。
 
-| Value      | Type   | Description                                                                                                                                                                                                                                                                         |
+| 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| applications      | array  | An array that contains an object that represents the app that this add-on is associated with. For more information about the data in this object, see the [Application object](#application-object) section below. Only one item is supported in this array.  |
-| id | string  | The Store ID of the add-on. This value is supplied by the Store. An example Store ID is 9NBLGGH4TNMP.  |
-| productId | string  | The product ID of the add-on. This is the ID that was provided by the developer when the add-on was created. For more information, see [Set your product type and product ID](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id). |
-| productType | string  | The product type of the add-on. The following values are supported: **Durable** and **Consumable**.  |
-| lastPublishedInAppProductSubmission       | object | An object that provides information about the last published submission for the add-on. For more information, see the [Submission](#submission-object) section below.                                                                                                                                                          |
-| pendingInAppProductSubmission        | object  |  An object that provides information about the current pending submission for the add-on. For more information, see the [Submission](#submission-object) section below.  |   |
+| applications      | array  | このアドオンが関連付けられるアプリを表すオブジェクトを格納する配列です。 このオブジェクトのデータについて詳しくは、以下の「[Application オブジェクト](#application-object)」のセクションをご覧ください。 この配列でサポートされる項目は 1 つのみです。  |
+| id | string  | アドオンのストア ID です。 この値は、ストアによって提供されます。 ストア ID の例は 9NBLGGH4TNMP です。  |
+| productId | string  | アドオンの製品 ID です。 これは、アドオンの作成時に開発者が指定した ID です。 詳しくは、「[IAP の製品の種類と製品 ID を設定する](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id)」をご覧ください。 |
+| productType | string  | アドオンの製品の種類です。 値 **Durable** と **Consumable** がサポートされています。  |
+| lastPublishedInAppProductSubmission       | object | アドオンの最後に公開された申請に関する情報を提供するオブジェクト。 詳しくは、以下の「[申請](#submission-object)」のセクションをご覧ください。                                                                                                                                                          |
+| pendingInAppProductSubmission        | object  |  アドオンの現在保留中の申請に関する情報を提供するオブジェクト。 詳しくは、以下の「[申請](#submission-object)」のセクションをご覧ください。  |   |
 
 <span id="application-object" />
 ### Application
 
-This resource represents an app that an add-on is associated with. The following example demonstrates the format of this resource.
+このリソースは、アドオンが関連付けられているアプリを表します。 次の例は、このリソースの書式設定を示しています。
 
 ```json
 {
@@ -89,17 +93,17 @@ This resource represents an app that an add-on is associated with. The following
 }
 ```
 
-This resource has the following values.
+このリソースには、次の値があります。
 
-| Value           | Type    | Description                                                                                                                                                                                                                          |
+| 値           | 型    | 説明                                                                                                                                                                                                                          |
 |-----------------|---------|-----------|
-| value            | object  |  An object that contains the following values: <br/><br/> <ul><li>*id*. The Store ID of the app. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).</li><li>*resourceLocation*. A relative path that you can append to the base ```https://manage.devcenter.microsoft.com/v1.0/my/``` request URI to retrieve the complete data for the app.</li></ul>   |
-| totalCount   | int  | The number of app objects in the *applications* array of the response body.                                                                                                                                                 |
+| value            | object  |  次の値を格納するオブジェクトです。 <br/><br/> <ul><li>*id*。 アプリケーションのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。</li><li>*resourceLocation*。 アプリの完全なデータを取得するために基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI に付加できる相対パス。</li></ul>   |
+| totalCount   | int  | 応答本文の *applications* 配列のアプリ オブジェクトの数。                                                                                                                                                 |
 
 <span id="submission-object" />
-### Submission
+### 申請
 
-This resource provides information about a submission for an add-on. The following example demonstrates the format of this resource.
+このリソースは、アドオンの申請に関する情報を提供します。 次の例は、このリソースの書式設定を示しています。
 
 ```json
 {
@@ -110,20 +114,26 @@ This resource provides information about a submission for an add-on. The followi
 }
 ```
 
-This resource has the following values.
+このリソースには、次の値があります。
 
-| Value           | Type    | Description                                                                                                                                                                                                                          |
+| 値           | 型    | 説明                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id            | string  | The ID of the submission.    |
-| resourceLocation   | string  | A relative path that you can append to the base ```https://manage.devcenter.microsoft.com/v1.0/my/``` request URI to retrieve the complete data for the submission.                                                                                                                                               |
- 
+| id            | string  | 申請 ID。    |
+| resourceLocation   | string  | 申請の完全なデータを取得するために基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI に付加できる相対パス。                                                                                                                                               |
+ 
 <span/>
 
-## Related topics
+## 関連トピック
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Manage add-on submissions using the Windows Store submission API](manage-add-on-submissions.md)
-* [Get all add-ons](get-all-add-ons.md)
-* [Get an add-on](get-an-add-on.md)
-* [Create an add-on](create-an-add-on.md)
-* [Delete an add-on](delete-an-add-on.md)
+* [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
+* [Windows ストア申請 API を使用したアドオンの申請の管理](manage-add-on-submissions.md)
+* [すべてのアドオンの入手](get-all-add-ons.md)
+* [アドオンの入手](get-an-add-on.md)
+* [アドオンの作成](create-an-add-on.md)
+* [アドオンの削除](delete-an-add-on.md)
+
+
+
+<!--HONumber=Aug16_HO5-->
+
+

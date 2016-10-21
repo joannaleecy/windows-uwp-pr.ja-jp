@@ -5,8 +5,9 @@ title: "UWP アプリでのエッジに基づく UI アニメーション"
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 1be51a8ff4a63f32834c7eb04b70d17dc41de13b
+ms.openlocfilehash: a835e57c3ae778149cda933d57cf74408b74b416
 
 ---
 
@@ -59,6 +60,6 @@ ms.openlocfilehash: 1be51a8ff4a63f32834c7eb04b70d17dc41de13b
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

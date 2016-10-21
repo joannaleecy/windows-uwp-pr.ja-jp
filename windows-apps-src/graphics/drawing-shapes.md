@@ -5,7 +5,7 @@ title: "図形の描画"
 description: "楕円形、長方形、多角形、パスなどの図形を描画する方法について説明します。 Path クラスは、きわめて複雑なベクター ベースの画像記述言語を XAML UI で視覚化するための手段です。たとえば、ベジエ曲線を描画することができます。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 3add60b9067f40c5d330bd66a84eea41b465e8d7
+ms.openlocfilehash: 2fd20e07c9b7e54559baeeb8324f11065a25444c
 
 ---
 # 図形の描画
@@ -25,15 +25,13 @@ ms.openlocfilehash: 3add60b9067f40c5d330bd66a84eea41b465e8d7
 
 XAML UI に空間領域を定義するクラスのセットには、[**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) と [**Geometry**](https://msdn.microsoft.com/library/windows/apps/BR210041) の 2 つがあります。 これらのクラス間の主な違いは、**Shape** にはブラシが関連付けられ、画面にレンダリングできますが、**Geometry** は単に空間領域を定義するだけで、レンダリングはされない (ただし、別の UI プロパティに情報を提供する働きはある) という点です。 **Shape** は、**Geometry** で境界線が定義される [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) と考えることができます。 このトピックでは、主に **Shape** クラスについて説明します。
 
-[**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) クラスには、[**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345)、[**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343)、[**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371)、[**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359)、[**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365)、[**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) があります。 
-              中でも **Path** は、任意のジオメトリを定義できる興味深いクラスです。また、[**Geometry**](https://msdn.microsoft.com/library/windows/apps/BR210041) クラスは **Path** の構成要素を定義する方法の 1 つであるため、ここに関与します。
+[**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) クラスには、[**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345)、[**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343)、[**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371)、[**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359)、[**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365)、[**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) があります。 中でも **Path** は、任意のジオメトリを定義できる興味深いクラスです。また、[**Geometry**](https://msdn.microsoft.com/library/windows/apps/BR210041) クラスは **Path** の構成要素を定義する方法の 1 つであるため、ここに関与します。
 
 ## 図形の Fill と Stroke
 
 [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) をアプリのキャンバスにレンダリングするには、[**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) を関連付ける必要があります。 **Shape** の [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) プロパティを目的の **Brush** に設定します。 ブラシについて詳しくは、「[ブラシの使用](using-brushes.md)」をご覧ください。
 
-[**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) には、[**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) という、図形の周囲に描画される境界線を設定することもできます。 **Stroke** にも、その外観を定義する [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) が必要です。また、[**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) が 0 以外の値に設定されている必要があります。 
-              **StrokeThickness** は、図形の境界線の太さを定義するプロパティです。 **Stroke** に対して **Brush** 値を指定しなかった場合、または **StrokeThickness** を 0 に設定した場合、図形の周囲に境界線が描画されません。
+[**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) には、[**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) という、図形の周囲に描画される境界線を設定することもできます。 **Stroke** にも、その外観を定義する [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) が必要です。また、[**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) が 0 以外の値に設定されている必要があります。 **StrokeThickness** は、図形の境界線の太さを定義するプロパティです。 **Stroke** に対して **Brush** 値を指定しなかった場合、または **StrokeThickness** を 0 に設定した場合、図形の周囲に境界線が描画されません。
 
 ## 楕円形
 
@@ -100,8 +98,7 @@ The next example creates a [**Polygon**](https://msdn.microsoft.com/library/wind
 
 ![レンダリングされた Polygon。](images/shapes-polygon.jpg)
 
-
-              **ヒント**  [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) の値は、図形の頂点を宣言する場合以外のシナリオで XAML の型としてよく使われます。 たとえば、**Point** はタッチ イベントのイベント データの一部であるため、座標空間におけるタッチ操作が発生した位置を正確に認識することができます。 **Point** の詳しい情報と、それを XAML やコードで使う方法については、API リファレンスの [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) のトピックをご覧ください。
+**ヒント**  [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) の値は、図形の頂点を宣言する場合以外のシナリオで XAML の型としてよく使われます。 たとえば、**Point** はタッチ イベントのイベント データの一部であるため、座標空間におけるタッチ操作が発生した位置を正確に認識することができます。 **Point** の詳しい情報と、それを XAML やコードで使う方法については、API リファレンスの [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) のトピックをご覧ください。
 
  
 
@@ -115,8 +112,7 @@ The next example creates a [**Polygon**](https://msdn.microsoft.com/library/wind
 
 [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) は、[**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) と同様に、図形の境界線を点のセットによって定義しますが、**Polyline** では最後の点が最初の点に接続されません。
 
-
-              **注:** [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) の始点と終点が等しくなるように明示的に [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) を設定することもできますが、その場合は、[**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) を使うのが一般的です。
+**注:** [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) の始点と終点が等しくなるように明示的に [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) を設定することもできますが、その場合は、[**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) を使うのが一般的です。
 
  
 
@@ -204,6 +200,6 @@ The next example shows a usage of the other technique we discussed: a [**Geometr
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

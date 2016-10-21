@@ -3,15 +3,16 @@ author: mcleanbyron
 ms.assetid: 4a311d20-ba8c-4816-8091-35726428dc94
 description: "Microsoft Advertising ライブラリの AdControl クラスおよび InterstitialAd クラスのプロパティ、メソッド、イベントの使用方法を示す追加のサンプルを紹介します。"
 title: "コード サンプル"
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 1a7bf9ed90ed2dadf6de7a141fa03972b06ef144
+translationtype: Human Translation
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 0a852a4bf8404d7ab0d8a2a169a16451c0388122
 
 ---
 
 # コード サンプル
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+
 
 このセクションでは、ターゲット ユーザーの決定、手動での広告の更新、イベントの処理のための、Microsoft Advertising ライブラリの [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) クラスおよび [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) クラスのプロパティ、メソッド、イベントの使用方法を示すサンプルを紹介します。 これらのコントロールをアプリに追加する方法に関する入門用のチュートリアルについては、[開発者向けチュートリアル](developer-walkthroughs.md)をご覧ください。
 
@@ -40,6 +41,6 @@ C# と C++ を使って JavaScript/HTML アプリと XAML アプリに広告バ�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

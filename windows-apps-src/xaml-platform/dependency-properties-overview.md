@@ -4,8 +4,8 @@ description: "このトピックでは、C++、C#、または Visual Basic と U
 title: "依存関係プロパティの概要"
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
 translationtype: Human Translation
-ms.sourcegitcommit: 2791b5b80bf1405d3efdce5d81824dbe6d347b4f
-ms.openlocfilehash: 5c61d4ff2f1efc6d4ce0ed292f2f856b23e53c91
+ms.sourcegitcommit: bd08d102aa5de2d9dec89136caf683755db72391
+ms.openlocfilehash: 7a8c39494b69d36553db3a2df7526ba61e57a228
 
 ---
 
@@ -47,11 +47,9 @@ ms.openlocfilehash: 5c61d4ff2f1efc6d4ce0ed292f2f856b23e53c91
 
 | 用語 | 説明 |
 |------|-------------|
-| 依存関係プロパティ | [
-            **DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 識別子上に存在するプロパティ (下記参照)。 この識別子は通常、定義する **DependencyObject** 派生クラスの静的メンバーとして使用できます。 |
-| 依存関係プロパティ識別子 | [
-            **SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)。このため、読み取り専用でありながら、通常はパブリックになっています。 |
-| プロパティ ラッパー | Windows ランタイム プロパティの呼び出し可能な **get** 実装と **set** 実装。 または、元の定義の言語固有のプロジェクション。 **get** プロパティ ラッパーの実装は、[**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) を呼び出して、該当する依存関係プロパティの識別子を 1 つ目の入力として渡し、設定する値を 2 つ目の入力として渡します。 | 
+| 依存関係プロパティ | [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 識別子上に存在するプロパティ (下記参照)。 この識別子は通常、定義する **DependencyObject** 派生クラスの静的メンバーとして使用できます。 |
+| 依存関係プロパティ識別子 | プロパティを識別する定数値です。通常はパブリックで、読み取り専用です。 |
+| プロパティ ラッパー | Windows ランタイム プロパティの呼び出し可能な **get** 実装と **set** 実装。 または、元の定義の言語固有のプロジェクション。  **get** プロパティ ラッパーの実装は [**GetValue**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobject.getvalue.aspx) を呼び出して、該当する依存関係プロパティの識別子を渡します。 | 
 
 プロパティ ラッパーは呼び出し元に対して便利なだけではありません。プロパティの Windows ランタイム定義を使用するプロセス、ツール、プロジェクションに対する依存関係プロパティの公開も行います。
 
@@ -102,7 +100,7 @@ public bool IsSpinning
 
 ###  バインドと優先順位
 
-バインド操作には、目的のスコープが何であれ、適切な優先順位があります。 たとえば、ローカル値に適用されるバインドはローカル値として機能し、プロパティ setter のバインド ([{TemplateBinding} マークアップ拡張](templatebinding-markup-extension.md)) はスタイル setter の場合と同じように適用されます。 バインドは、データ ソースから値を取得するのを実行時まで待つ必要があります。このため、任意のプロパティに対してプロパティ値の優先順位を決定するプロセスも、実行時まで拡張されます。
+バインド操作には、目的のスコープが何であれ、適切な優先順位があります。 たとえば、ローカル値に適用される [{Binding}](binding-markup-extension.md) はローカル値として機能し、プロパティ setter の [{TemplateBinding} マークアップ拡張](templatebinding-markup-extension.md)はスタイル setter の場合と同じように適用されます。 バインドは、データ ソースから値を取得するのを実行時まで待つ必要があります。このため、任意のプロパティに対してプロパティ値の優先順位を決定するプロセスも、実行時まで拡張されます。
 
 バインドはローカル値と同じ優先順位で動作するだけでなく、実際はローカル値です。この場合、バインドは、遅延された値のプレースホルダーです。 プロパティ値にバインドを指定し、実行時にプロパティにローカル値を設定した場合、このローカル値でバインド全体が置き換えられます。 同様に、[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) を呼び出して、実行時にのみ存在するバインドを定義すると、XAML で、または以前に実行したコードで適用したローカル値が置き換えられます。
 
@@ -120,8 +118,7 @@ public bool IsSpinning
 
 ### 既定値
 
-[
-            **PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) 値を持つ依存関係プロパティの既定値の設定については、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」で詳しく説明しています。
+[**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) 値を持つ依存関係プロパティの既定値の設定については、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」で詳しく説明しています。
 
 依存関係プロパティは、その既定値がプロパティのメタデータで明示的に定義されていない場合でも、既定値を持ちます。 メタデータによって変更されていない限り、Windows ランタイムの依存関係プロパティの既定値は、通常、次のいずれかです。
 
@@ -136,7 +133,7 @@ public bool IsSpinning
 
 ### データ バインディング
 
-依存関係プロパティには、データ バインディングを適用して値を設定することができます。 データ バインディングは、XAML であれば [{Binding} マークアップ拡張](binding-markup-extension.md)構文、コードであれば [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) クラスを使います。 データ バインディング プロパティの場合、最終的なプロパティ値の決定は実行時まで遅延されます。 その時点で、データ ソースから値が取得されます。 依存関係プロパティ システムがここで果たす役割は、値がまだ未知のときに XAML を読み込むような操作のプレースホルダー動作を可能にし、次に、Windows ランタイム データ バインディング エンジンとやり取りして実行時に値を供給することです。
+依存関係プロパティには、データ バインディングを適用して値を設定することができます。 データ バインディングは、XAML では [{Binding} マークアップ拡張](binding-markup-extension.md) 構文、コードでは [{x:Bind} マークアップ拡張](x-bind-markup-extension.md)または [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) クラスを使います。 データ バインディング プロパティの場合、最終的なプロパティ値の決定は実行時まで遅延されます。 その時点で、データ ソースから値が取得されます。 依存関係プロパティ システムがここで果たす役割は、値がまだ未知のときに XAML を読み込むような操作のプレースホルダー動作を可能にし、次に、Windows ランタイム データ バインディング エンジンとやり取りして実行時に値を供給することです。
 
 XAML でバインドを使用して、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素の [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 値を設定する例を次に示します。 バインドでは、継承されたデータ コンテキストおよびオブジェクト データ ソースが使用されます (この短い例ではどちらも示されていません。コンテキストとソースを含むより完全なサンプルについては、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください)。
 
@@ -148,17 +145,17 @@ XAML でバインドを使用して、[**TextBlock**](https://msdn.microsoft.com
 
 XAML ではなく、コードを使ってバインドを確立することもできます。 「[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257)」をご覧ください。
 
-**注:** このようなバインドは、依存関係プロパティ値の優先順位を処理するために、ローカル値として扱われます。 もともと [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 値を保持していたプロパティに別のローカル値を設定すると、バインドの実行時の値だけでなく、バインド全体が上書きされます。
+**注:** このようなバインドは、依存関係プロパティ値の優先順位を処理するために、ローカル値として扱われます。 もともと [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 値を保持していたプロパティに別のローカル値を設定すると、バインドの実行時の値だけでなく、バインド全体が上書きされます。 {x:Bind} バインドは生成されたコードを使用して実装され、プロパティにローカル値を設定します。 {x:Bind} を使用しているプロパティにローカル値が設定されると、次にバインディングが評価されるときに、その値は置き換えられます。たとえば、ソース オブジェクトのプロパティが変更されるときなどです。
 
 ### バインディング ソース、バインディング ターゲット、FrameworkElement の役割
 
-プロパティをバインディング ソースとして使う場合は、依存関係プロパティでなくてもかまいません。通常は、バインディング ソースとして任意のプロパティを使うことができます。もっとも、これはプログラミング言語に左右され、それぞれ特殊なケースが存在します。 ただし、プロパティをバインディング ターゲットとして使用する場合は、依存関係プロパティである必要があります。
+プロパティをバインディング ソースとして使う場合は、依存関係プロパティでなくてもかまいません。通常は、バインディング ソースとして任意のプロパティを使うことができます。もっとも、これはプログラミング言語に左右され、それぞれ特殊なケースが存在します。 ただし、プロパティを [{Binding} マークアップ拡張](binding-markup-extension.md)または [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) のターゲットとして使用する場合は、依存関係プロパティである必要があります。 {x:Bind} では、生成されたコードを使用してバインディング値を適用するため、この要件はありません。
 
 コードでバインドを作成する場合、[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) API は [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) に対してのみ定義されている点に注意してください。 ただし、バインド定義は [**BindingOperations**](https://msdn.microsoft.com/library/windows/apps/br209823) を使用して作成できるため、どのような [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) プロパティでも参照することができます。
 
 コードであれ XAML であれ、[**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) は [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) プロパティです。 親子プロパティの継承という形を使って (通常は XAML マークアップで確立)、バインディング システムは親要素に存在する **DataContext** を解決することができます。 この継承は、子オブジェクト (ターゲット プロパティを持つ) が **FrameworkElement** でなく、そのために独自の **DataContext** 値を保持していない場合でも、評価できます。 ただし、**DataContext** を設定し保持するためには、継承する親要素が **FrameworkElement** であることが必要です。 その一方で、**DataContext** が **null** 値であっても機能できるようにバインドを定義する必要があります。
 
-ほとんどのデータ バインディング シナリオに必要なのは、バインドを作成することだけではありません。 一方向または双方向のバインドを有効にするためには、バインディング システム (とターゲット) への伝播をつかさどる変更通知が、ソース プロパティによってサポートされている必要があります。 つまり、カスタム バインディング ソースの場合、このプロパティは、[**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) をサポートしている必要があります。 コレクションの場合は、[**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) をサポートしている必要があります。 一部のクラスは、データ バインディングのシナリオで基底クラスとして使用できるように、実装でこれらのインターフェイスをサポートしています。たとえば、[**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) はそうしたクラスの 1 つです。 データ バインディングについての詳しい情報と、データ バインディングをプロパティ システムに関連付ける方法については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
+ほとんどのデータ バインディング シナリオに必要なのは、バインドを作成することだけではありません。 一方向または双方向のバインドを有効にするためには、バインディング システム (とターゲット) への伝播をつかさどる変更通知が、ソース プロパティによってサポートされている必要があります。 カスタム バインディング ソースの場合には、プロパティは依存関係プロパティである必要があるか、またはオブジェクトが [ **INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) をサポートする必要があります。 コレクションの場合は、[**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) をサポートしている必要があります。 一部のクラスは、データ バインディングのシナリオで基底クラスとして使用できるように、実装でこれらのインターフェイスをサポートしています。たとえば、[**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) はそうしたクラスの 1 つです。 データ バインディングについての詳しい情報と、データ バインディングをプロパティ システムに関連付ける方法については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
 
 **注:** ここに挙げた型は、Microsoft .NET データ ソースをサポートします。 C++/CX データ ソースは、変更通知または監視可能な動作のために異なるインターフェイスを使います。「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
 
@@ -172,8 +169,7 @@ XAML ではなく、コードを使ってバインドを確立することもで
 
 ストーリーボードに設定されたアニメーションを使うと、依存関係プロパティの値をアニメーション化できます。 Windows ランタイムのストーリーボードに設定されたアニメーションは、単なる視覚的装飾ではありません。 アニメーションは、個々のプロパティの値またはコントロールのすべてのプロパティと視覚効果の値を設定でき、時間の経過と共にこれらの値を変えることができるステート マシンと考えると便利です。
 
-アニメーション化するためには、アニメーションのターゲット プロパティは依存関係プロパティである必要があります。 また、そのターゲット プロパティの値の型は、既存の [**Timeline**](https://msdn.microsoft.com/library/windows/apps/br210517) から派生したアニメーション型のいずれかでサポートされている必要があります。 [
-            **Color**](https://msdn.microsoft.com/library/windows/apps/hh673723)、[**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx)、および [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) は、補間またはキーフレームの技法を使ってアニメーション化できます。 その他の値の大半は、個別の **Object** キー フレームを使ってアニメーション化できます。
+アニメーション化するためには、アニメーションのターゲット プロパティは依存関係プロパティである必要があります。 また、そのターゲット プロパティの値の型は、既存の [**Timeline**](https://msdn.microsoft.com/library/windows/apps/br210517) から派生したアニメーション型のいずれかでサポートされている必要があります。 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723)、[**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx)、および [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) は、補間またはキーフレームの技法を使ってアニメーション化できます。 その他の値の大半は、個別の **Object** キー フレームを使ってアニメーション化できます。
 
 アニメーションが適用されて実行されると、アニメーション化された値は、それ以外の場合のプロパティの値 (ローカル値など) よりも高い優先順位で動作します。 アニメーションにはオプションの [**HoldEnd**](https://msdn.microsoft.com/library/windows/apps/br210306) 動作もあり、アニメーションが停止しているように見えていても、アニメーションをプロパティ値に適用できます。
 
@@ -183,9 +179,11 @@ XAML ではなく、コードを使ってバインドを確立することもで
 
 プロパティ変更動作は、依存関係プロパティという用語で "依存関係" という言葉の起源です。 他のプロパティの値によって影響を受ける可能性のあるプロパティで有効な値を維持することは、多くのフレームワークにおいて、開発上の難しい問題です。 Windows ランタイムのプロパティ システムでは、各依存関係プロパティでプロパティ値が変更されるたびに呼び出されるコールバックを指定できます。 このコールバックを使用して、一般的な同期方法で、関連プロパティ値を通知または変更できます。 多くの既存の依存関係プロパティに、プロパティ変更動作があります。 また、同様のコールバック動作をカスタム依存関係プロパティに追加し、独自のプロパティ変更コールバックを実装することもできます。 例については、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」をご覧ください。
 
+Windows 10 では、[ **RegisterPropertyChangedCallback** ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) メソッドが導入されています。 これによりアプリケーション コードは、[ **DependencyObject**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobject.aspx) のインスタンスで依存関係プロパティが変更された場合の変更通知を登録できます。
+
 ### 既定値と **ClearValue**
 
-依存関係プロパティには、プロパティ メタデータの一部として既定値を定義できます。 依存関係プロパティの場合、その既定値は、プロパティが最初に設定された後も無効にはなりません。 既定値は、値の優先順位で他の決定要因がなくなるたびに、実行時に再び適用されることがあります (依存関係プロパティ値の優先順位については、次のセクションで説明します)。たとえば、ユーザーが意図的にプロパティに適用されるスタイル値またはアニメーションを削除しても、削除後に適切な既定値がこれらのプロパティ値に適用されるようにしたい場合があります。 依存関係プロパティの既定値を使うと、各プロパティの値を余分な手間をかけて特に設定することなく、適切な値を適用することができます。
+依存関係プロパティには、プロパティ メタデータの一部として既定値を定義できます。 依存関係プロパティの場合、その既定値は、プロパティが最初に設定された後も無効にはなりません。 既定値は、値の優先順位で他の決定要因がなくなるたびに、実行時に再び適用されることがあります  (依存関係プロパティ値の優先順位については、次のセクションで説明します)。たとえば、ユーザーが意図的にプロパティに適用されるスタイル値またはアニメーションを削除しても、削除後に適切な既定値がこれらのプロパティ値に適用されるようにしたい場合があります。 依存関係プロパティの既定値を使うと、各プロパティの値を余分な手間をかけて特に設定することなく、適切な値を適用することができます。
 
 既にローカル値を設定した後でも、意図的にプロパティを既定値に設定することができます。 値を既定値にリセットし、優先順位が既定値よりも高く、ローカル値よりも低い値を有効にするには、プロパティの [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) メソッドを呼び出します (メソッド パラメーターとしてクリアするプロパティを参照)。 プロパティで常に既定値がそのまま使われるようにしたくない場合、ローカル値をクリアして既定値に戻しても、コントロール テンプレートのスタイル setter に由来する値など、優先順位内の別の項目が有効になることがあります。
 
@@ -193,8 +191,7 @@ XAML ではなく、コードを使ってバインドを確立することもで
 
 すべての [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) インスタンスは、Windows ランタイム アプリによって表示される現在の [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) と関連付けられている UI スレッド上で作成する必要があります。 それぞれの **DependencyObject** はメイン UI スレッド上で作成する必要がありますが、オブジェクトは、[**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br230616) プロパティにアクセスすることにより、他のスレッドからディスパッチャー参照を使ってアクセスできます。 続いて、[**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) オブジェクトの [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) のようなメソッドを呼び出して、UI スレッドのスレッド制限の規則内でコードを実行します。
 
-[
-            **DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) のスレッドの側面も問題となります。それは、通常、UI スレッド上で実行されるコードのみが依存関係プロパティの値を変更または読み取ることができることを意味するためです。 通常、**非同期**パターンとバックグラウンド ワーカー スレッドを適切に使う一般的な UI コードでは、スレッドの問題を回避できます。 独自に **DependencyObject** 型を定義し、それをデータ ソースや **DependencyObject** が必ずしも適切でないその他のシナリオで使おうとすると、通常は **DependencyObject** に関連するスレッドの問題が発生します。
+[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) のスレッドの側面も問題となります。それは、通常、UI スレッド上で実行されるコードのみが依存関係プロパティの値を変更または読み取ることができることを意味するためです。 通常、**非同期**パターンとバックグラウンド ワーカー スレッドを適切に使う一般的な UI コードでは、スレッドの問題を回避できます。 独自に **DependencyObject** 型を定義し、それをデータ ソースや **DependencyObject** が必ずしも適切でないその他のシナリオで使おうとすると、通常は **DependencyObject** に関連するスレッドの問題が発生します。
 
 ## 関連トピック
 
@@ -205,15 +202,13 @@ XAML ではなく、コードを使ってバインドを確立することもで
 * [ストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/mt187354)
 * [Windows ランタイム コンポーネントの作成](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 * [XAML ユーザー コントロールとカスタム コントロールのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238581)
-            
-          
-            **依存関係プロパティに関連する API**
+**依存関係プロパティに関連する API**
 * [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
 * [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

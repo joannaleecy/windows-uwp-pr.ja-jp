@@ -1,27 +1,41 @@
 ---
 author: Jwmsft
+redirect_url: https://msdn.microsoft.com/windows/uwp/controls-and-patterns/dialogs
 Description: "ポップアップ (flyout) は、ユーザーが現在操作している内容に関係する UI を一時的に表示するために使われる軽量なポップアップです。"
 title: "コンテキスト メニューとダイアログ"
 ms.assetid: 7CA2600C-A1DB-46AE-8F72-24C25E224417
 label: Menus, dialogs, and popups
 template: detail.hbs
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: e268a5facebbdb80d7cc5cdd52c1a6f944ef7d00
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 6572acefa25e464b6edaca9fee5b2b3e3b46ff3f
 
 ---
 # メニュー、ダイアログ、ポップアップ (flyout)
 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 メニュー、ダイアログ、ポップアップ (flyout) は、ユーザーが要求したとき、または通知や許可を必要とする状況が発生したときに表示される一時的な UI 要素です。
 
-<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn299030">MenuFlyout クラス</a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn279496">Flyout クラス</a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx">ContentDialog クラス</a></li>
+</ul>
 
--   [MenuFlyout クラス](https://msdn.microsoft.com/library/windows/apps/dn299030)
--   [Flyout クラス](https://msdn.microsoft.com/library/windows/apps/dn279496)
--   [ContentDialog クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)
+</div>
+</div>
+
+
+
+
+
 
 コンテキスト メニューは、すぐに実行できる操作をユーザーに表示します。 コンテキスト メニューにはテキストのコマンドを追加できます。 コンテキスト メニューは、外側をタップまたはクリックして簡単に非表示にすることができます。
 
-ダイアログは、状況依存のアプリ情報を表示するモーダル UI オーバーレイです。 ダイアログは、明示的に閉じられまでアプリ ウィンドウの対話式操作をブロックします。 多くの場合、ユーザーに何らかの操作を要求します。
+ダイアログは、状況依存のアプリ情報を表示するモーダル UI オーバーレイです。 ダイアログは、明示的に閉じられるまでアプリ ウィンドウの対話式操作をブロックします。 多くの場合、ユーザーに何らかの操作を要求します。
 
 ポップアップ (flyout) は、ユーザーが現在操作している内容に関係する UI を表示する軽量な状況依存のポップアップです。 このポップアップは、配置ロジックとサイズ設定ロジックを備えており、非表示コントロールを再表示する場合、項目の詳細を表示する場合、またはユーザーに操作の確認を求める場合に使うことができます。 ポップアップは、その外側をタップするかクリックすることで簡易非表示にすることができます。
 
@@ -73,8 +87,7 @@ ms.openlocfilehash: e268a5facebbdb80d7cc5cdd52c1a6f944ef7d00
 
 ダイアログはモーダルです。つまり、ユーザーがダイアログのボタンを選択するまで、アプリとのすべての対話式操作をブロックします。 モーダルな動作を視覚的に強調するために、ダイアログはオーバーレイ レイヤーに表示され、一時的に到達できないアプリの UI を部分的に隠します。
 
-
-            **注:** 利用可能なダイアログ オプションの 1 つに [キャンセル] がある場合は、Esc キーを押してダイアログを閉じることをユーザーに許可できます。 この動作は、コントロールには組み込まれていませんが、一般に実装されるショートカットです。
+**注:** 利用可能なダイアログ オプションの 1 つに [キャンセル] がある場合は、Esc キーを押してダイアログを閉じることをユーザーに許可できます。 この動作は、コントロールには組み込まれていませんが、一般に実装されるショートカットです。
 
 ポップアップとコンテキスト メニューは簡易非表示コントロールです。つまり、ユーザーはさまざまな操作から選択して、一時的な UI を閉じることができます。 このような対話式操作は、軽量でブロックしないことを目的としています。 簡易非表示操作には次のような操作があります。
 - 一時的な UI の外側をタップまたはクリックする
@@ -100,29 +113,9 @@ ms.openlocfilehash: e268a5facebbdb80d7cc5cdd52c1a6f944ef7d00
 -   エラー ダイアログでは、ダイアログ ボックスにエラー メッセージと関連情報 (ある場合) を表示します。 エラー ダイアログで使う唯一のボタンは "閉じる" かこれに似た操作である必要があります。
 -   パスワード フィールドの検証エラーなど、ページの特定の場所に関連するエラーでは、ダイアログを使わずに、アプリのキャンバス自体を使ってインライン エラーを表示します。
 
-## コンテキスト メニューとポップアップ
+## ポップアップ
 
-コンテキスト メニューとポップアップは、対話式操作の動作を共有するコントロールと、密接に関連します。 これらのコントロールの主な違いは、受け入れるコンテンツの種類にあります。
-
-### MenuFlyout
-コンテキスト メニューは MenuFlyout クラスを使用して実装し、[ **MenuFlyoutItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyoutitem.aspx)、[ **ToggleMenuFlyoutItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.togglemenuflyoutitem.aspx)、[ **MenuFlyoutSubItem** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyoutsubitem.aspx)、および [**MenuFlyoutSeparator**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyoutseparator.aspx) を含めることができます。 他の種類の UI を表示するには、ポップアップを使います。
-
-- **使用に関するガイドライン**
-  - 次のような場合は、コンテキスト メニューのコマンドのグループ間に区切り記号を使います。
-    - 関連するコマンドのグループを区別する場合。
-    - コマンドのセットをグループ化する場合。
-    - クリップボード コマンド (切り取り/コピー/貼り付け) などの一般的なコマンドのセットを、アプリまたはビューに固有のコマンドと区別する場合。
-  -   ノート PC とデスクトップ PC では、コンテキスト メニューとヒントはアプリケーションのウィンドウに限定されず、一部分は外側に描画できます。 アプリが完全にウィンドウの外側にコンテキスト メニューをレンダリングしようとすると、例外がスローされます。
-
-- **推奨と非推奨**
-  -   コンテキスト メニューのコマンドは短くします。 長いコマンドは末尾が切り詰められます。
-  -   各コマンド名には、文としての大文字表記を使います。
-  -   すべてのコンテキスト メニューで、表示するコマンドの数を最小限にします。
-  -   UI 要素を直接操作できる場合は、そのコマンドをコンテキスト メニューに入れないようにします。 コンテキスト メニューは、それ以外では画面に表示されない状況依存のコマンドに限定する必要があります。
-
-### ポップアップ
-
-ポップアップは、オープンエンドなコンテナーで、そのコンテンツとして任意の UI を表示することができます。  ポップアップは、独自の表示部分を持たず、シンプルにコンテンツのコントロールになります。 ポップアップは、余白とコンテンツの周囲に追加するオプションのスクロール バーを持ちます。 ポップアップのスタイルを設定するには、その `FlyoutPresenterStyle` を変更します。
+ポップアップは、オープンエンドなコンテナーで、そのコンテンツとして任意の UI を表示することができます。  ポップアップは、独自の表示部分を持たず、シンプルにコンテンツのコントロールになります。 ポップアップは、余白とコンテンツの周囲に追加するオプションのスクロール バーを持ちます。 ポップアップのスタイルを設定するには、[FlyoutPresenterStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.flyoutpresenterstyle.aspx) を変更します。
 
 次のコードでは、テキストの折り返しの段落を示し、スクリーン リーダーがテキスト ブロックにアクセスできるようにします。
 
@@ -144,7 +137,7 @@ ms.openlocfilehash: e268a5facebbdb80d7cc5cdd52c1a6f944ef7d00
 
 ポップアップとコンテキスト メニューは、特定のコントロールにアタッチされます。 表示するときに、呼び出し元のオブジェクトに固定する必要があり、そのオブジェクトに対して優先する相対位置 (上、下、左、または右) を指定します。 ポップアップには完全配置モードもあります。完全配置モードでは、ポップアップを拡大して、アプリ ウィンドウの中央に配置しようとします。
 
-[Button クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) には `Flyout` プロパティがあり、これを使うと、ユーザーがボタンをクリックするかタップしたときに表示する一時的な UI を指定できます。
+[Button クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) には [**Flyout**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) プロパティがあり、これを使うと、ユーザーがボタンをクリックするかタップしたときに表示する一時的な UI を指定できます。
 
 ````xaml
 <Button Content="Click me">
@@ -156,24 +149,6 @@ ms.openlocfilehash: e268a5facebbdb80d7cc5cdd52c1a6f944ef7d00
 </Button>
 ````
 
-コンテキスト メニューを開くために、ユーザーは次の操作のいずれかを実行できます。
-- マウスで右クリックする
-- 指で押してホールドする
-- Shift キーを押しながら F10 キーを押す
-- キーボードのメニュー キーを押す
-- ゲームパッドのメニュー ボタンを押す
-
-上記のいずれかの操作に対する応答として、コンテキスト メニューやポップアップを簡単に開くために、アプリは [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx) の新しい [`ContextFlyout`](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) プロパティを使うことができます。これは、ほとんどのコントロールの基底クラスです。
-
-````xaml
-<Rectangle Height="100" Width="100" Fill="Red">
-  <Rectangle.ContextFlyout>
-     <MenuFlyout>
-        <MenuFlyoutItem Text="Close"/>
-     </MenuFlyout>
-  </Rectangle.Flyout>
-</Rectangle>
-````
 
 ## 関連記事
 
@@ -184,6 +159,6 @@ ms.openlocfilehash: e268a5facebbdb80d7cc5cdd52c1a6f944ef7d00
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

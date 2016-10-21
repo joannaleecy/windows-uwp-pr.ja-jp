@@ -3,8 +3,9 @@ author: jnHs
 Description: "Windows Phone 8.1 以前を対象としたアプリでマップ サービスを使うには、アプリのコードに含めるマップ サービス アプリケーション ID とトークンが必要です。 デベロッパー センター ダッシュボードで、[マップ] ページの [サービス] セクションでこのトークンを取得できます。"
 title: "マップ サービスの使用"
 ms.assetid: E5EE6B56-B86F-4D62-B16A-F023FE98EFAB
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0d775c67492fd6afe9f65f3e5dede865f9037342
+ms.openlocfilehash: 5ba722ae17fce33ff3a6860c17c1ed5f3e6790b8
 
 ---
 
@@ -13,13 +14,11 @@ ms.openlocfilehash: 0d775c67492fd6afe9f65f3e5dede865f9037342
 
 Windows Phone 8.1 以前を対象としたアプリでマップ サービスを使うには、アプリのコードに含めるマップ サービス アプリケーション ID とトークンが必要です。 デベロッパー センター ダッシュボードで、**[マップ]** ページの **[サービス]** セクションでこのトークンを取得できます。
 
-> 
-            **注**  他のオペレーティング システムを対象としたアプリでマップ サービスを使うには、[Bing Maps デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=614880)にアクセスしてください。 詳しくは、「[マップ認証キーの要求](https://msdn.microsoft.com/library/windows/apps/mt219694)」をご覧ください。
+> **注**  他のオペレーティング システムを対象としたアプリでマップ サービスを使うには、[Bing Maps デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=614880)にアクセスしてください。 詳しくは、「[マップ認証キーの要求](https://msdn.microsoft.com/library/windows/apps/mt219694)」をご覧ください。
 
 [アプリの名前を予約](create-your-app-by-reserving-a-name.md)したら、左側のナビゲーション メニューの **[サービス]** セクションを探し、そのセクションを展開して、**[マップ]** ページを表示します。 **[トークンの取得]** をクリックすると、**ApplicationID** と **AuthenticationToken** が生成され、このページに表示されます。
 
-> 
-            **注**  この時点でアプリの申請を完了する必要はありません。 トークンと ID を要求した後、この情報はこのページに保存されます。 いつでもこのページに戻って、この情報にアクセスできます。
+> **注**  この時点でアプリの申請を完了する必要はありません。 トークンと ID を要求した後、この情報はこのページに保存されます。 いつでもこのページに戻って、この情報にアクセスできます。
 
 また、アプリをパッケージ化して申請する前に、必ずアプリのコードに **ApplicationID** と **AuthenticationToken** を追加する必要があります。 詳細については、「[Windows Phone 8 でマップ コントロールをページに追加する方法](http://go.microsoft.com/fwlink/p/?LinkId=614882)」を参照してください。
 
@@ -33,6 +32,6 @@ Windows Phone 8.1 以前を対象としたアプリでマップ サービスを�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,21 +5,20 @@ title: "アプリの設定とデータ"
 ms.assetid: E7F312F7-54D8-411F-8D92-92FBB95C2463
 label: App settings and data
 template: detail.hbs
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 4d6f57dcc9dbfe9c2e031a5fe73f24668f0dc462
+translationtype: Human Translation
+ms.sourcegitcommit: aa0a1170332f00e482fca8466930af5da3295f64
+ms.openlocfilehash: 8ba114c2b920e321aecd92a5b4d53825bdb5d599
 
 ---
 
 # アプリの設定とデータ
 
-
-
-
 このセクションでは、アプリ設定を示し、その設定をアプリ データとして格納するためのユーザー エクスペリエンス ガイドラインを取り上げます。
 
-アプリ設定は、ユニバーサル Windows プラットフォーム (UWP) アプリの中で、ユーザーによるカスタマイズが可能な部分です。 たとえば、ニュース リーダー アプリで、表示するニュース ソースや画面に表示する記事の数をユーザーが指定できるようにすることが考えられます。
+*アプリ設定*は、ユニバーサル Windows プラットフォーム (UWP) アプリの中で、ユーザーによるカスタマイズが可能な部分です。 たとえば、ニュース リーダー アプリで、表示するニュース ソースや画面に表示する記事の数をユーザーが指定できるようにすることが考えられます。
 
-アプリ データは、アプリ自体が作成して管理するデータです。 アプリ データには、ランタイム状態、アプリ設定、参照コンテンツ (たとえば、辞書アプリの辞書定義)、その他の設定が含まれます。 アプリ データはアプリの存在に関連付けられ、そのアプリに対して意味を持ちます。
+*アプリ データ*は、アプリ自体が作成して管理するデータです。 アプリ データには、ランタイム状態、アプリ設定、参照コンテンツ (たとえば、辞書アプリの辞書定義)、その他の設定が含まれます。 アプリ データはアプリの存在に関連付けられ、そのアプリに対して意味を持ちます。
+
 ## このセクションの内容
 <table>
 <colgroup>
@@ -34,7 +33,7 @@ ms.openlocfilehash: 4d6f57dcc9dbfe9c2e031a5fe73f24668f0dc462
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[ガイドライン](guidelines-for-app-settings.md)</p></td>
+<td align="left"><p>[アプリ設定のガイドライン](guidelines-for-app-settings.md)</p></td>
 <td align="left"><p>アプリ設定を作成し表示する際のベスト プラクティス。</p></td>
 </tr>
 <tr class="even">
@@ -45,10 +44,11 @@ ms.openlocfilehash: 4d6f57dcc9dbfe9c2e031a5fe73f24668f0dc462
 </table>
 
 
+## 関連項目
+- [ユーザビリティ](../usability/index.md)
 
 
 
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

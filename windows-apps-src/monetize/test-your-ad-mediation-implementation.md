@@ -3,57 +3,16 @@ author: mcleanbyron
 ms.assetid: 54ECD653-7FC2-4A95-AC5A-972C4FB5A54B
 description: "アプリを提出する前に、広告の仲介の実装をテストすることをお勧めします。"
 title: "広告の仲介の実装のテスト"
-ms.sourcegitcommit: ec7ce299545de8e5c167e1934fb9a0b4f4370948
-ms.openlocfilehash: 0805ed5462a4b100b837ed9c11ec2d9e7caabc34
+redirect_url: https://msdn.microsoft.com/library/windows/apps/xaml/dn864358.aspx
+translationtype: Human Translation
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: eb93f21ba9f07c6e00fc6cd1d74a2bc3af5b76e3
 
 ---
 
-# 広告の仲介の実装のテスト
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
-
-アプリを提出する前に、広告の仲介の実装をテストすることをお勧めします。
-
-## テスト用の広告ネットワーク構成値を使ったテスト
-
-
-開発用のコンピューター上 (ユニバーサル Windows プラットフォーム (UWP) および Windows 8.1 XAML アプリ) またはエミュレーターやデバイス上 (Windows Phone アプリ) でアプリを実行するときに、Visual Studio でプロジェクトの **[接続済みサービス]** を起動して広告ネットワークの構成を入力することなくアプリを実行した場合、広告の仲介では自動的にテスト用の構成値が使われます。 これにより、広告ネットワークの必須パラメーターを入力する前に、アプリを簡単にテストしてアプリが正しく記述されていることを確認できます。
-
-広告ネットワークは順番に切り替えられ、次々と同じ時間だけ表示されます。 すべての広告ネットワークを表示できるように、また一時的な接続の問題が発生する可能性を小さくできるように、十分な時間をかけて数回のサイクルが実行されるのを待ちます。
-
-対応している広告ネットワークのテスト広告が表示されます。 テスト広告はエラーのように見える場合があるので注意してください。 イベントを確認して、エラーが発生したかどうかを確かめてください。
-
-> 
-            **注**  Windows Phone Silverlight アプリをテストする際、Google AdMob はテスト メタデータを使用しないため、常に **[無効な要求]** エラーを返します。 Google AdMob の実装を確認するには、次のセクションで説明する必須のパラメーターを入力する必要があります。
-
- 
-
-「[広告のメディエーター コントロールの追加と使用](add-and-use-the-ad-mediator-control.md)」に示したイベント処理コードを使った場合、エラーはコンソール出力に表示されます。
-
-## 広告ネットワーク構成値を使ったテスト
-
-
-テスト用の構成データを使ってアプリをテストした後に、Windows ストアに公開するアプリが使用する広告ネットワーク構成値を使ってアプリをテストします。
-
-最初に **[接続済みサービスの追加]** ウィンドウ (Visual Studio 2015) または **[サービス マネージャー]** ウィンドウ (Visual Studio 2013) を開いて、「[広告のメディエーター コントロールの追加と使用](add-and-use-the-ad-mediator-control.md)」に記載されているように各広告ネットワークを構成します。 各広告ネットワークの必須のパラメーターを入力します。
-
-これで、アプリをテストできるようになりました。 十分な時間アプリを実行して、各広告ネットワークで広告を正しく表示できることを確認してください。 例外の有無を確認し、アプリを提出する前にコーディング エラーを修正します。
-
-アプリ パッケージを Windows デベロッパー センター ダッシュボードに提出すると、Visual Studio で入力した構成値が自動的に **[広告で収入を増やす]** ダッシュボード ページに入力されます。 これらの値を変更して、Windows ストアのアプリの広告ネットワークの動作を構成できます。 詳しくは、「[アプリの提出と広告の仲介の構成](submit-your-app-and-configure-ad-mediation.md)」をご覧ください。
-
-## 関連トピック
-
-* [広告ネットワークの選択と管理](select-and-manage-your-ad-networks.md)
-* [広告の仲介コントロールの追加と使用](add-and-use-the-ad-mediator-control.md)
-* [アプリの提出と広告の仲介の構成](submit-your-app-and-configure-ad-mediation.md)
-* [広告の仲介のトラブルシューティング](troubleshoot-ad-mediation.md)
- 
-
- 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

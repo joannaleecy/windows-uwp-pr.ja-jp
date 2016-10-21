@@ -1,23 +1,22 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
-description: "このロードマップでは、Windows 10 ユニバーサル Windows プラットフォーム (UWP) の主要なエンタープライズ機能の概要について説明します。"
+description: "このロードマップでは、Windows 10 およびユニバーサル Windows プラットフォーム (UWP) の主要なエンタープライズ機能の概要について説明します。"
 title: "エンタープライズ"
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 58f7c9739a000b6cac1c000570807587233018ce
+ms.sourcegitcommit: 8f4b9e7b1b30beb8974a17af77e4d7138bd8f829
+ms.openlocfilehash: 75a7723fb8934a59d44da2f075184dd6bbd85d45
 
 ---
 
 # エンタープライズ
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 このロードマップでは、Windows 10 ユニバーサル Windows プラットフォーム (UWP) の主要なエンタープライズ機能の概要について説明します。 Windows 10 では、アプリを 1 回記述するだけで、すべてのデバイスに展開できます。つまり、すべてのデバイスに対応した 1 つのアプリを作成できます。 これにより、企業が必要とするセキュリティ、管理、構成をコントロールしながら、ユーザーが求めるすばらしいエクスペリエンスを構築できます。
 
-
-              **注**  この記事は、エンタープライズ UWP アプリを作成する開発者を対象としています。 一般的な UWP 開発については、「[Windows 10 アプリに関するハウツー ガイド](https://msdn.microsoft.com/library/windows/apps/mt244352)」をご覧ください。 WPF、Windows フォーム、Win32 開発については、[デスクトップのデベロッパー センター](https://dev.windows.com/desktop)をご覧ください。 IT 担当者向けのリソース (Windows 10 の展開やエンタープライズ セキュリティ機能の管理など) については、TechNet の「[Windows 10](https://msdn.microsoft.com/library/dn986868)」をご覧ください。
+**注**  この記事は、エンタープライズ UWP アプリを作成する開発者を対象としています。 一般的な UWP 開発については、「[Windows 10 アプリに関するハウツー ガイド](https://msdn.microsoft.com/library/windows/apps/mt244352)」をご覧ください。 WPF、Windows フォーム、Win32 開発については、[デスクトップのデベロッパー センター](https://dev.windows.com/desktop)をご覧ください。 IT 担当者向けのリソース (Windows 10 の展開やエンタープライズ セキュリティ機能の管理など) については、TechNet の「[Windows 10](https://msdn.microsoft.com/library/dn986868)」をご覧ください。
 
  
 
@@ -31,7 +30,7 @@ Windows 10 には、一連のセキュリティ機能が用意されています
 | [安全な Windows アプリの開発について](https://msdn.microsoft.com/library/windows/apps/mt622741) | この概要記事では、認証、移動中データ、および保存データの各段階におけるさまざまな Windows のセキュリティ機能について説明します。 また、これらの段階をアプリに統合する方法についても説明します。 ここでは、さまざまなトピックを取り上げており、ユニバーサル Windows プラットフォーム アプリを短時間で簡単に作成するための Windows の機能を、アプリの設計者が詳しく理解できるようにすることを主な目的としています。 |
 | [認証とユーザー ID](https://msdn.microsoft.com/library/windows/apps/mt270184) | この記事では、UWP アプリで利用できるユーザー認証のためオプションを説明します。 企業向けには、新しい Microsoft Passport 機能を強くお勧めします。 Microsoft Passport では、既存の資格情報を確認して、生体認証または PIN ベースのユーザー ジェスチャで保護されるデバイス固有の資格情報を作成することで、パスワードを強力な 2 要素認証 (2FA) に置き換えます。これにより、便利で安全性の高いエクスペリエンスが実現されます。 |
 | [暗号化](https://msdn.microsoft.com/library/windows/apps/mt270191) | 「暗号化」セクションでは、UWP アプリで利用できる暗号化の機能の概要を説明します。 この記事では、重要なビジネス データを簡単に暗号化する方法についての入門用チュートリアルから、暗号化キーの操作や MAC、ハッシュ、署名の使用などの高度なトピックまでを取り上げています。 |
-| [エンタープライズ データ保護 (EDP)](edp-hub.md) | ここでは、企業のデータ保護 (EDP) とファイル、バッファー、クリップボード、ネットワーク、バックグラウンド タスク、ロックの背後でのデータ保護との関係についての開発者向けの詳しい情報について説明します。 |
+| [Windows 情報保護 (WIP)](wip-hub.md) | ここでは、Windows 情報保護 (WIP) と、ファイル、バッファー、クリップボード、ネットワーク、バックグラウンド タスク、ロックの背後でのデータ保護との関係についての開発者向けの詳しい情報について説明します。 |
 
  
 
@@ -42,7 +41,7 @@ Windows 10 には、一連のセキュリティ機能が用意されています
 
 | トピック | 説明 |
 |-------|-------------|
-| [データ バインディングの概要](https://msdn.microsoft.com/library/windows/apps/mt269383) | このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリケーションで、コントロール (または他の UI 要素) を単一の項目にバインドする方法や、項目コントロールを項目のコレクションにバインドする方法を説明します。 また、項目のレンダリングを制御する方法、選択内容に基づいて詳細ビューを実装する方法、表示するデータを変換する方法も紹介します。 |
+| [データ バインディングの概要](https://msdn.microsoft.com/library/windows/apps/mt269383) | このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリで、コントロール (または他の UI 要素) を単一の項目にバインドする方法や、項目コントロールを項目のコレクションにバインドする方法を説明します。 また、項目のレンダリングを制御する方法、選択内容に基づいて詳細ビューを実装する方法、表示するデータを変換する方法も紹介します。 |
 | [UWP 用 Entity Framework 7](https://msdn.microsoft.com/library/windows/apps/mt592863) | 大きなデータ セットに対する複雑なクエリの実行は、UWP をサポートする Entity Framework 7 を使用することで大幅に簡素化されます。 このチュートリアルでは、Entity Framework を使用してローカル SQLite データベースへの基本的なデータ アクセスを実行する UWP アプリを構築します。 |
 | [SQLite ローカル データベース](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/10) | このビデオは、アプリのローカル データベースのソリューションとして推奨される SQLite を使用するための開発者向けの包括的なガイドです。 [SQLite](https://www.sqlite.org/download.html) にアクセスして UWP 用の最新バージョンをダウンロードするか、Windows 10 SDK で既に提供されているバージョンを使用してください。 |
 
@@ -114,9 +113,6 @@ Prism について詳しくは、[GitHub リポジトリ](https://github.com/Pri
 
 
 
-
-
-
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

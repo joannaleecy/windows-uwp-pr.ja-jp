@@ -3,8 +3,9 @@ author: mtoepke
 title: "Marble Maze のアプリケーション構造"
 description: "DirectX ユニバーサル Windows プラットフォーム (UWP) アプリの構造は、従来のデスクトップ アプリケーションとは異なります。"
 ms.assetid: 6080f0d3-478a-8bbe-d064-73fd3d432074
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e9cc290fa77471f315daf7f29f605412d2ec45cc
+ms.openlocfilehash: 84dbe1730274bd39b1ba359c588bc68976a2d19e
 
 ---
 
@@ -16,8 +17,7 @@ ms.openlocfilehash: e9cc290fa77471f315daf7f29f605412d2ec45cc
 
 DirectX ユニバーサル Windows プラットフォーム (UWP) アプリの構造は、従来のデスクトップ アプリケーションとは異なります。 **HWND** などのハンドル型や **CreateWindow** などの関数は使いません。それよりも新しい、オブジェクト指向に沿った方法で UWP アプリを開発できるように、[**Windows::UI::Core::ICoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208296) をはじめとするインターフェイスが Windows ランタイムには用意されています。 ドキュメントのこのセクションでは、Marble Maze アプリケーションのコードがどのように構成されているかを示します。
 
-> 
-            **注**   このドキュメントに対応するサンプル コードは、[DirectX Marble Maze ゲームのサンプルに関するページ](http://go.microsoft.com/fwlink/?LinkId=624011)にあります。
+> **注**   このドキュメントに対応するサンプル コードは、[DirectX Marble Maze ゲームのサンプルに関するページ](http://go.microsoft.com/fwlink/?LinkId=624011)にあります。
 
  
 ## 
@@ -101,8 +101,7 @@ UWP ゲームの初期化時には、通常、Direct3D、Direct2D などのラ�
 
 起動後 5 秒以内にゲームがウィンドウ イベントに応答できるようにするために、ゲーム アセットは非同期的に、またはバックグラウンドで読み込むことをお勧めします。 バックグラウンドでのアセットの読み込み中、ゲームはウィンドウ イベントに応答できます。
 
-> 
-            **注**  また、準備ができたらメイン メニューを表示して、残りのアセットをバックグラウンドで読み込み続けることもできます。 すべてのリソースが読み込まれる前にユーザーがメニューのオプションを選択した場合は、進行状況バーを表示するなどして、シーン リソースが読み込み中であることを示すことができます。
+> **注**  また、準備ができたらメイン メニューを表示して、残りのアセットをバックグラウンドで読み込み続けることもできます。 すべてのリソースが読み込まれる前にユーザーがメニューのオプションを選択した場合は、進行状況バーを表示するなどして、シーン リソースが読み込み中であることを示すことができます。
 
  
 
@@ -122,8 +121,7 @@ UWP ゲームの初期化時には、通常、Direct3D、Direct2D などのラ�
 
 UWP アプリの非同期プログラミングについて詳しくは、「[C++ での非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187334)」をご覧ください。
 
->> > 
-            **ヒント**   Windows ランタイム C++ ライブラリの一部であるゲーム コード (つまり DLL) を記述している場合は、アプリとその他のライブラリで使える非同期操作を作る方法を学ぶために「[C++ における Windows ストア アプリ用の非同期操作の作成](https://msdn.microsoft.com/library/windows/apps/hh750113.aspx)」を読むことを検討してください。
+>> > **ヒント**   Windows ランタイム C++ ライブラリの一部であるゲーム コード (つまり DLL) を記述している場合は、アプリとその他のライブラリで使える非同期操作を作る方法を学ぶために「[C++ における Windows ストア アプリ用の非同期操作の作成](https://msdn.microsoft.com/library/windows/apps/hh750113.aspx)」を読むことを検討してください。
 
  
 
@@ -353,8 +351,7 @@ void MarbleMaze::LoadState()
 }
 ```
 
-> 
-            **重要**  Marble Maze は、コールド スタート (つまり、以前の中断イベントがない、初めての起動) と、中断状態からの再開とを区別しません。 これは、すべての UWP アプリにお勧めする設計です。
+> **重要**  Marble Maze は、コールド スタート (つまり、以前の中断イベントがない、初めての起動) と、中断状態からの再開とを区別しません。 これは、すべての UWP アプリにお勧めする設計です。
 
  
 
@@ -381,6 +378,6 @@ void MarbleMaze::LoadState()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

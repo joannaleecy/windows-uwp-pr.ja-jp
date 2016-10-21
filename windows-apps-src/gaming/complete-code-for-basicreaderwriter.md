@@ -3,8 +3,9 @@ author: mtoepke
 title: "BasicReaderWriter のコード一式"
 description: "バイナリ データ ファイル全般の読み書きを行うクラスとメソッドのコード一式です。"
 ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
+translationtype: Human Translation
 ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
-ms.openlocfilehash: 46762d7b7234be9ff7b4c288a09162d4f942a707
+ms.openlocfilehash: de6ab2687cfbe7b485e51bc90811b1988e29fb7e
 
 ---
 
@@ -29,18 +30,14 @@ ms.openlocfilehash: 46762d7b7234be9ff7b4c288a09162d4f942a707
 
 ## テクノロジ
 
-
-            **プログラミング言語** - C++  
-
-            **プログラミング モデル** - Windows ランタイム
+**プログラミング言語** - C++  
+**プログラミング モデル** - Windows ランタイム
 
 
 ## 要件
 
- 
-            **サポートされている最小のクライアント** - Windows 10       
-
-             **サポートされている最小のサーバー** - Windows Server 2016 Technical Preview 
+ **サポートされている最小のクライアント** - Windows 10       
+ **サポートされている最小のサーバー** - Windows Server 2016 Technical Preview 
 
 ## コードの表示 (C++)
 
@@ -269,6 +266,6 @@ task<void> BasicReaderWriter::WriteDataAsync(
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

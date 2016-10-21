@@ -5,7 +5,7 @@ title: "非同期プログラミング"
 description: "このトピックでは、ユニバーサル Windows プラットフォーム (UWP) での非同期プログラミングと、C#、Microsoft Visual Basic .NET、Visual C\\+\\+ コンポーネント拡張機能 (C\\+\\+/CX)、および JavaScript における非同期プログラミングの表現について説明します。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 36300453bbffd06c675ff63e6e9cb4cafe3a56f5
+ms.openlocfilehash: c033c1d985b9373d9cbadf38463610aa1922163e
 
 ---
 # 非同期プログラミング
@@ -45,12 +45,9 @@ UWP の非同期パターンを利用すると、スレッドの明示的な管�
 
 | プログラミング言語 | 非同期表現           |
 |----------------------|---------------------------------------|
-| C#                  | 
-              **async** キーワード、**await** 演算子 |
-| Visual Basic         | 
-              **Async** キーワード、**Await** 演算子 |
-| C++/CX               | 
-              **task** クラス、**.then** メソッド      |
+| C#                  | **async** キーワード、**await** 演算子 |
+| Visual Basic         | **Async** キーワード、**Await** 演算子 |
+| C++/CX               | **task** クラス、**.then** メソッド      |
 | JavaScript           | promise オブジェクト、**then** 関数     |
 
  
@@ -84,6 +81,6 @@ promise オブジェクトは、将来取得されたときに値を表します
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

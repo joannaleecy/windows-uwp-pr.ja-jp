@@ -1,44 +1,54 @@
 ---
-author: martinekuan
+author: GrantMeStrength
 ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: "デバイスを開発用に有効にする"
-description: "Windows 10 デバイス用の開発には、さまざまな方法があります。"
-keywords: enable device
+description: "開発およびデバッグ用に Windows 10 デバイスを構成します。"
+keywords: "デバイスを有効にする"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4c890d6202a3151e8fc0cf03b3ff33b98cd6a863
+ms.sourcegitcommit: 6e8849b2ed067206ab14c4339f74c5219dcca16b
+ms.openlocfilehash: 66413b43e5b9fd285324fd139fe14527dbee940a
 
 ---
 # デバイスを開発用に有効にする
 
-Windows 10 デバイス用の開発には、さまざまな方法があります。 アプリの開発、インストール、テストに使うそれぞれのデバイスに対して、開発者用ライセンスを所有する必要はなくなりました。 デバイスの設定から、これらのタスク用にデバイスを 1 回だけ有効にします。 この操作だけで十分です。 30 日ごとや 90 日ごとに開発者用ライセンスを更新する必要はありません。
-
-Microsoft Visual Studio 2013 または Microsoft Visual Studio 2015 を利用したアプリの開発やテストで Windows 8.1 デバイスを引き続き使う場合は、[開発者用ライセンスを取得する](https://msdn.microsoft.com/library/windows/apps/Hh974578)か、[Windows Phone を登録する](https://msdn.microsoft.com/library/windows/apps/Dn614128)必要があります。
+アプリを作成する前に、開発用 PC と、コードのテストを実行するデバイスの両方で、開発者モードを有効にする必要があります。
 
 ## 開発者向け機能を使用する
 
 ### Microsoft Visual Studio を使ってアプリを開発する
 
-Windows 10 デバイスで Microsoft Visual Studio を使い、Windows 8.1 アプリまたは Windows 10 アプリ用のソリューションを開く場合は、次のダイアログが表示され、デバイスを有効にするように求められます。 デバイスを有効にし、デザイナーを使ってアプリをデバッグする必要があります。
+Visual Studio で UWP アプリ プロジェクトを開くには、その前に、使用している PC で開発者モードを有効にする必要があります。 UWP プロジェクトを開くときに開発者モードを有効にしていないと、**[開発者向け]** 設定ページが自動的に開きます。 開発者モードを有効にするには、次のセクションの手順に従ってください。
+
+Windows 10 バージョン 1511 以前の Visual Studio で UWP アプリ プロジェクトを開くと、Visual Studio ではこのダイアログが表示されます。 
 
 ![Visual Studio で表示される、開発者モードを有効にするためのダイアログ](images/latestenabledialog.png)
 
-このダイアログが表示されたら、**開発者向け設定**をクリックして **[更新とセキュリティ]** ページ (下記参照) に直接移動します。 または、**[OK]** をクリックし、以下の手順に従って、Windows 10 デバイスを開発用に有効にします。
+このダイアログが表示される場合、**[開発者向け設定]** をクリックして **[開発者向け] ** 設定ページを開き、開発者モードを有効にします。
+
+> **[開発者向け]** ページにいつでも移動し、開発者モードの有効/無効を切り替えられます。その場合には、タスク バーの Cortana 検索ボックスに「開発者向け設定」と入力するだけです。
 
 ### Windows 10 デバイスを有効にする
 
-Windows 10 の場合、デバイスで有効にする開発者向け機能を選びます。 対象となるデバイスは、Windows 10 が動作するデスクトップ、タブレット、電話です。 デバイスを開発用に有効にしたり、サイドローディングのみを目的として有効にしたりできます。
+デバイスを開発用に有効にしたり、サイドローディングのみを目的として有効にしたりできます。
 
 -   *サイドローディング*では、Windows ストアの認証を受けていないアプリをインストールし、実行やテストを行うことができます。 たとえば、社内のみで使うアプリなどがあります。
--   *開発者モード*を使用すると、アプリをサイドロードし、Visual Studio からデバッグ モードでアプリを実行することもできます。
+-   *開発者モード*を使用すると、アプリをサイドロードし、Visual Studio からデバッグ モードでアプリを実行することもできます。 
 
-**注:** アプリをサイドローディングする場合は、信頼できるソースからのみアプリをインストールしてください。 サイドローディングしたアプリ (Windows ストアの認証を受けていないアプリ) をインストールする場合は、そのアプリをサイドローディングする際に必要なすべての権利をお客様が保持していること、およびそのアプリのインストールや実行の結果生じるすべての問題についてお客様が一切の責任を負うことに同意したものと見なされます。 この[プライバシーに関する声明](http://go.microsoft.com/fwlink/?LinkId=521839)の「Windows」&gt;「Windows ストア」セクションをご覧ください。
+    開発者モードを有効にすると、次のようなオプション パッケージがインストールされます。
+    - Windows Device Portal がインストールされます。 Device Portal が有効になり、ファイアウォール規則が構成されるのは、**[デバイス ポータルを有効にする]** オプションがオンの場合のみです。
+    - アプリのリモート インストールを可能にする SSH サービスのファイアウォール規則がインストールされ、有効になり、構成されます。
+    - (デスクトップのみ) Linux 用 Windows サブシステムを有効にできます。 詳しくは、「[Bash on Ubuntu on Windows について](https://msdn.microsoft.com/commandline/wsl/about)」をご覧ください。
+
+オプションについて詳しくは、「[選ぶ必要がある設定: アプリのサイドローディングか開発者モードか](https://msdn.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development#which-settings-should-i-choose-sideload-apps-or-developer-mode)」をご覧ください。
 
 **開発者向け機能を使用するには**
 
 1.  有効にするデバイスで、**[設定]** に移動します。 **[更新とセキュリティ]**、**[開発者向け]** の順にクリックします。
-2.  必要なアクセス レベルを選びます。 オプションについて詳しくは、「[選ぶ必要がある設定: アプリのサイドローディングか開発者モードか](#WhichSettings)」をご覧ください。
+2.  必要なアクセス レベルを選択します。UWP アプリを開発する場合は、**[開発者モード]** を選択します。 
 3.  選択した設定の免責事項を読み、**[はい]** をクリックして変更を受け入れます。
+
+> [!NOTE]
+> 組織所有のデバイスの場合、ここに示されているように、組織によっていくつかのオプションが無効になっている可能性があります。
 
 デスクトップ デバイス ファミリの設定ページを以下に示します。
 
@@ -48,31 +58,84 @@ Windows 10 の場合、デバイスで有効にする開発者向け機能を選
 
 ![電話の [設定] から [更新とセキュリティ] を選ぶ](images/devmode-mob.png)
 
-### 選ぶ必要がある設定: アプリのサイドローディングか開発者モードか
+## 開発者モードの機能
+
+各デバイス ファミリには、開発者向けの追加機能が用意されている場合があります。 これらの機能は、デバイスで開発者モードが有効になっている場合にのみ使用でき、OS バージョンによって異なる可能性があります。
+
+次の画像は、Windows 10 Version 1511 が搭載されたモバイル デバイス ファミリの開発者向け機能を示しています。
+
+![モバイル デバイスの開発者モード オプション](images/devmode-mob-options.png) 
+
+### <span id="device-discovery-and-pairing"></span>Device Portal
+
+デバイスの検出と Device Portal について詳しくは、「[Windows Device Portal の概要](../debug-test-perf/device-portal.md)」をご覧ください。
+
+デバイス固有のセットアップ手順については、以下をご覧ください。
+- [デスクトップ用 Device Portal](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
+- [HoloLens 用 Device Portal](https://dev.windows.com/holographic/using_the_windows_device_portal)
+- [IoT 用 Device Portal](http://ms-iot.github.io/content/en-US/win10/tools/DevicePortal.htm)
+- [モバイル用 Device Portal](../debug-test-perf/device-portal-mobile.md)
+- [Xbox 用 Device Portal](../debug-test-perf/device-portal-xbox.md)
+
+開発者モードまたは Device Portal を有効にするときに問題が発生する場合、「[既知の問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)」フォーラムを参照してこれらの問題の回避策を見つけてください。 
+
+###SSH
+
+デバイスで開発者モードを有効にすると、SSH サービスが有効になります。  デバイスが UWP アプリケーションの展開ターゲットの場合にこれを使用します。   サービスの名前は、「SSH Server Broker」と「SSH Server Proxy」です。
+
+> [!NOTE]
+> これは Microsoft の OpenSSH の実装ではありません。それは [GitHub](https://github.com/PowerShell/Win32-OpenSSH) にあります。
+
+SSH サービスを利用するには、デバイスの検出を有効にして PIN のペアリングを許可できます。 別の SSH サービスを実行する予定の場合、別のポートにセットアップするか、開発者モードの SSH サービスを無効にできます。 これらの SSH サービスを無効にするには、開発者モードを無効にするだけです。  
+
+### デバイスの検出
+
+デバイスの検出を有効にすると、ネットワーク上の他のデバイスから mDNS を介してそのデバイスが表示できるようになります。  またこの機能では、対象デバイスをペアリングするための SSH PIN も取得できます。  
+
+![PIN のペアリング](images/devmode-pc-pinpair.PNG)
+
+デバイスを展開ターゲットにする予定の場合にのみ、デバイスの検出を有効にする必要があります。 たとえば、Device Portal を使用してアプリを電話に展開してテストする場合、その電話でデバイスの検出を有効にする必要がありますが、開発用 PC では不要です。
+
+### エラー報告 (モバイルのみ)
+
+電話に保存されるクラッシュ ダンプの数を指定するには、この値を設定します。
+
+電話でクラッシュ ダンプを収集することで、クラッシュの発生直後に重要なクラッシュ情報にすばやくアクセスできます。 開発者が署名したアプリに対してのみ、ダンプが収集されます。 ダンプは、電話の記憶域の Documents\\Debug フォルダーにあります。 ダンプ ファイルについて詳しくは、[ダンプ ファイルの使用](https://msdn.microsoft.com/library/d5zhxt22.aspx)に関するページをご覧ください。
+
+### エクスプローラー、リモート デスクトップ、PowerShell の最適化 (デスクトップのみ)
+
+ デスクトップ デバイス ファミリの場合、**[開発者向け]** 設定ページには、開発タスク用 PC を最適化するために使用できる設定へのショートカットが備わっています。 それぞれの設定で、チェック ボックスを選択して **[適用]** をクリックするか、**[設定の表示]** リンクをクリックして対象オプションの設定ページを開くことができます。 
+
+## 選ぶ必要がある設定: アプリのサイドローディングか開発者モードか
 
 既定では、Windows ストアからのみユニバーサル Windows プラットフォーム (UWP) アプリをインストールできます。 開発者向け機能を使用するように設定を変更すると、デバイスのセキュリティ レベルが変わる場合があります。 未検証のソースからはアプリをインストールしないでください。
 
-**アプリのサイドローディング**
+### アプリのサイドローディング
 
-アプリのサイドローディング設定は、通常、Windows ストアを使わずにカスタム アプリを管理対象デバイスにインストールする必要がある会社や学校によって使用されます。 この場合、電話の設定ページのイメージで以前に示したように、*Windows ストア アプリ*設定を無効にするポリシーを組織が適用していることはよくあります。 また、組織は、必要な証明書と、アプリをサイドローディングするインストール場所を提供します。 詳しくは、TechNet の記事「[Windows 10 でのアプリのサイド ローディング](https://technet.microsoft.com/library/mt269549.aspx)」と「[Microsoft Intune でのアプリ展開の開始](https://technet.microsoft.com/library/dn646955.aspx)」をご覧ください。
+アプリのサイドローディング設定は、通常、Windows ストアを使わずにカスタム アプリを管理対象デバイスにインストールする必要がある会社や学校によって使用されます。 この場合、設定ページのイメージで以前に示したように、*Windows ストア アプリ*設定を無効にするポリシーを組織が適用していることはよくあります。 また、組織は、必要な証明書と、アプリをサイドローディングするインストール場所を提供します。 詳しくは、TechNet の記事「[Windows 10 でのアプリのサイド ローディング](https://technet.microsoft.com/library/mt269549.aspx)」と「[Microsoft Intune でのアプリ展開の開始](https://technet.microsoft.com/library/dn646955.aspx)」をご覧ください。
 
 デバイス ファミリ固有の情報
 
--   デスクトップ デバイス ファミリの場合: パッケージと共に作成される Windows PowerShell スクリプトを実行して、アプリの実行に必要なアプリ パッケージ (.appx) と証明書をインストールできます ("Add-AppDevPackage.ps1")。
+-   デスクトップ デバイス ファミリの場合: パッケージと共に作成される Windows PowerShell スクリプトを実行して、アプリの実行に必要なアプリ パッケージ (.appx) と証明書をインストールできます ("Add-AppDevPackage.ps1")。 詳しくは、「[UWP アプリのパッケージ化](../packaging/packaging-uwp-apps.md)」をご覧ください。
 
 -   モバイル デバイス ファミリの場合: 必要な証明書が既にインストールされている場合は、電子メールまたは SD カードで受け取ったファイルをタップして、.appx をインストールできます。
 
 信頼できる証明書がないデバイスにアプリをインストールすることはできないため、**アプリのサイドローディング**は開発者モードよりも安全です。
 
-**開発者モード**
+> [!NOTE]
+> アプリをサイドローディングする場合は、信頼できるソースからのみアプリをインストールしてください。 サイドローディングしたアプリ (Windows ストアの認証を受けていないアプリ) をインストールする場合は、そのアプリをサイドローディングする際に必要なすべての権利をお客様が保持していること、およびそのアプリのインストールや実行の結果生じるすべての問題についてお客様が一切の責任を負うことに同意したものと見なされます。 この[プライバシーに関する声明](http://go.microsoft.com/fwlink/?LinkId=521839)の「Windows」&gt;「Windows ストア」セクションをご覧ください。
 
-サイドローディングだけでなく、開発者モードの設定でデバッグおよび追加の展開オプションを有効にできます。 これは、開発者用ライセンスに対する Windows 8.1 の要件に置き換わるものです。
+### 開発者モード
+
+開発者モードは、開発者用ライセンスに対する Windows 8.1 の要件に置き換わるものです。  サイドローディングだけでなく、開発者モードの設定でデバッグおよび追加の展開オプションを有効にできます。 デバイスを展開先にできるようにする SSH サービスの開始も含まれます。 このサービスを停止するためには、開発者モードを無効にしなければなりません。
 
 デバイス ファミリ固有の情報
 
 -   デスクトップ デバイス ファミリの場合:
 
     開発者モードを有効にして、Visual Studio でアプリを開発およびデバッグします。 既に説明したように、開発者モードが有効になっていない場合は、Visual Studio で有効にするように求められます。
+
+    Linux 用の Windows サブシステムを有効にできます。 詳しくは、「[Bash on Ubuntu on Windows について](https://msdn.microsoft.com/commandline/wsl/about)」をご覧ください。
 
 -   モバイル デバイス ファミリの場合:
 
@@ -84,17 +147,13 @@ Windows 10 の場合、デバイスで有効にする開発者向け機能を選
 Windows 10 PC から Windows 10 モバイル デバイスへのアプリの展開に使用できるツールはいくつかあります。 デバイスは両方ともワイヤード (有線) またはワイヤレスでネットワークの同じサブネットに接続されているか、または 2 台のデバイスが USB で接続されている必要があります。 どちらの方法を使用しても、アプリ パッケージ (.appx) のみがインストールされます。証明書はインストールされません。
 
 -   Windows 10 アプリケーション展開 (WinAppDeployCmd) ツールを使います。 詳しくは、[WinAppDeployCmd ツール](http://msdn.microsoft.com/library/windows/apps/mt203806.aspx)に関するページをご覧ください。
--   Windows 10 バージョン 1511 以降では、[デバイス ポータル](#device_portal)を使用して、ブラウザーから、Windows 10 バージョン 1511 以降を実行しているモバイル デバイスに展開できます。 デバイス ポータル (&lt;IP&gt;/appmanager.md) の **Apps** ページを使用してアプリ パッケージ (.appx) をアップロードし、デバイスにインストールします。
+-   Windows 10 バージョン 1511 以降では、[デバイス ポータル](#device_portal)を使用して、ブラウザーから、Windows 10 バージョン 1511 以降を実行しているモバイル デバイスに展開できます。 Device Portal の **[アプリ](../debug-test-perf/device-portal.md#apps)** ページを使用して、アプリ パッケージ (.appx) をアップロードしてデバイスにインストールします。
 
- 
+## グループ ポリシーまたはレジストリ キーを使用してデバイスを有効にする
 
-### グループ ポリシーやレジストリ キーを設定する
+ほとんどの開発者のためには、設定アプリを使用して、デバイスでデバッグを有効にします。 自動化テストなど特定のシナリオでは、他の方法を使用して、Windows 10 デスクトップ デバイスで開発を有効にできます。
 
-Windows 10 デスクトップ デバイスを開発用に有効にする別の方法として、グループ ポリシーまたはレジストリ キーを使うこともできます。
-
-**デスクトップ デバイス ファミリの場合**
-
-Windows 10 Home をお持ちでない場合は、gpedit.msc を使って、グループ ポリシーを設定してデバイスを有効にします。 Windows 10 Home をお持ちの場合は、regedit または PowerShell コマンドを使ってレジストリ キーを直接設定し、デバイスを有効にしてください。
+Windows 10 Home をお持ちでない場合は、gpedit.msc を使って、グループ ポリシーを設定してデバイスを有効にできます。 Windows 10 Home をお持ちの場合は、regedit または PowerShell コマンドを使ってレジストリ キーを直接設定し、デバイスを有効にしてください。
 
 **gpedit を使ってデバイスを有効にする**
 
@@ -139,31 +198,7 @@ Windows 10 Home をお持ちでない場合は、gpedit.msc を使って、グ�
 
     -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"**
 
-## 開発者モードの機能
-
-各デバイス ファミリには、開発者向けの追加機能が用意されている場合があります。 これらの機能は、デバイスで**開発者モード**が有効になっている場合にのみ使用でき、OS バージョンによって異なる可能性があります。
-
-次の画像は、Windows 10 Version 1511 が搭載されたモバイル デバイス ファミリの開発者向け機能を示しています。
-
-![モバイル デバイスの開発者モード オプション](images/devmode-mob-options.png)
-
-### <span id="device-discovery-and-pairing"></span>デバイスの検出と Device Portal
-
-デバイスの検出と Device Portal について詳しくは、「[Windows Device Portal の概要](../debug-test-perf/device-portal.md)」をご覧ください。
-
-デバイス固有のセットアップ手順については、以下をご覧ください。
-- [HoloLens 用 Device Portal](https://dev.windows.com/holographic/using_the_windows_device_portal)
-- [IoT 用 Device Portal](http://ms-iot.github.io/content/en-US/win10/tools/DevicePortal.htm)
-- [モバイル用 Device Portal](../debug-test-perf/device-portal-mobile.md)
-- [Xbox 用 Device Portal](../debug-test-perf/device-portal-xbox.md)
-
-### エラー報告
-
-電話に保存されるクラッシュ ダンプの数を指定するには、この値を設定します。
-
-電話でクラッシュ ダンプを収集することで、クラッシュの発生直後に重要なクラッシュ情報にすばやくアクセスできます。 開発者が署名したアプリに対してのみ、ダンプが収集されます。 ダンプは、電話の記憶域の Documents\\Debug フォルダーにあります。 ダンプ ファイルについて詳しくは、[ダンプ ファイルの使用](https://msdn.microsoft.com/library/d5zhxt22.aspx)に関するページをご覧ください。
-
-## Windows 8.1 から Windows 10 へのデバイスのアップグレード
+## Windows 8.1 から Windows 10 にデバイスをアップグレードする
 
 Windows 8.1 デバイスでアプリを作成またはサイドローディングするときに、開発者用ライセンスをインストールする必要があります。 Windows 8.1 から Windows 10 にデバイスをアップグレードする場合は、この情報が維持されます。 アップグレードした Windows 10 デバイスからこの情報を削除するには、次のコマンドを実行します。 Windows 8.1 から Windows 10 バージョン 1511 以降に直接アップグレードする場合、この手順は必要ありません。
 
@@ -178,8 +213,6 @@ Windows 8.1 デバイスでアプリを作成またはサイドローディン�
 
 
 
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

@@ -3,8 +3,9 @@ author: jwmsft
 description: "XAML で使われる空白処理規則について説明します。"
 title: "XAML と空白"
 ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 408c9c7f79f5db81bdf7810a6c71cf25c1c8ec51
+ms.openlocfilehash: 3b8b68ae8823ec23105d5f92e533d271ab3dcc88
 
 ---
 
@@ -23,8 +24,7 @@ XML と同じように、XAML での空白文字には、スペース、改行�
 -   連続した複数のスペースはすべて削除され、1 つのスペースに置換されます。
 -   開始タグの直後にあるスペースは削除されます。
 -   終了タグの直前にあるスペースは削除されます。
--   
-            *東アジアの文字*は、Unicode 文字範囲 U+20000 から U+2FFFD と U+30000 から U+3FFFD のセットとして定義されます。 このサブセットは *CJK 漢字*とも呼ばれることもあります。 詳しくは、http://www.unicode.org をご覧ください。
+-   *東アジアの文字*は、Unicode 文字範囲 U+20000 から U+2FFFD と U+30000 から U+3FFFD のセットとして定義されます。 このサブセットは *CJK 漢字*とも呼ばれることもあります。 詳しくは、http://www.unicode.org をご覧ください。
 
 "既定" とは、**xml:space** 属性の既定値によって示される状態に相当します。
 
@@ -54,6 +54,6 @@ XML と同じように、XAML での空白文字には、スペース、改行�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,8 +3,9 @@ author: jnHs
 Description: "Windows アプリ内で実行されるアプリの広告キャンペーンの作成に加えて、他のチャネルを使ってアプリを宣伝することもできます。"
 title: "カスタム アプリ プロモーション キャンペーンの作成"
 ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: b6fa63727ac636d37c52e2f3247c52efb1f8b763
+translationtype: Human Translation
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: a6e97968df4e9ab986d364b2573a31b4ba9d1958
 
 ---
 
@@ -21,10 +22,9 @@ Windows アプリ内で実行される[アプリの広告キャンペーン](cre
 次の方法でアプリのカスタム キャンペーンのパフォーマンス データが得られます。
 
 -   アプリがユニバーサル Windows プラットフォーム (UWP) アプリの場合は、[**GetAppPurchaseCampaignIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt186445) メソッドを使って、コンバージョンの基となるカスタム キャンペーン ID をプログラムによって取得できます。
--   アプリや IAP のページ ビューとコンバージョンに関するデータは、デベロッパー センター ダッシュボードの[チャネルとコンバージョン レポート](channels-and-conversions-report.md)から表示できます。
+-   アプリやアドオンのページ ビューとコンバージョンに関するデータは、デベロッパー センター ダッシュボードの[チャネルとコンバージョン レポート](channels-and-conversions-report.md)から表示できます。
 
-> 
-            **重要:**   このデータは、Windows 10 を実行しているユーザーについてのみ追跡されます。 他のオペレーティング システムを使用しているユーザーも、アプリの内容へのリンクをたどることはできますが、それらのユーザーの活動に関するデータは含まれません。
+> **重要:** このデータは、Windows 10 を実行しているユーザーについてのみ追跡されます。 他のオペレーティング システムを使用しているユーザーも、アプリの内容へのリンクをたどることはできますが、それらのユーザーの活動に関するデータは含まれません。
 
  
 
@@ -38,7 +38,7 @@ Windows アプリ内で実行される[アプリの広告キャンペーン](cre
 -   Facebook のページに投稿する URL には、カスタム キャンペーン ID `my-facebook-campaign` を含めます。
 -   Twitter に投稿する URL には、カスタム キャンペーン ID `my-twitter-campaign` を含めます。
 
-Facebook や Twitter のフォロワーがその URL をクリックすると、それが記録されて対応するカスタム キャンペーンに関連付けられます。 以降、ゲームおよびアプリ内製品 (IAP) の購入に関して要件を満たすものは、カスタム キャンペーンと関連付けられてコンバージョンとして報告されます。
+Facebook や Twitter のフォロワーがその URL をクリックすると、それが記録されて対応するカスタム キャンペーンに関連付けられます。 以降、ゲームおよびアドオンの購入に関して要件を満たすものは、カスタム キャンペーンと関連付けられてコンバージョンとして報告されます。
 
 ## アプリのインストールがコンバージョンとして認められるしくみについて
 
@@ -49,8 +49,7 @@ Facebook や Twitter のフォロワーがその URL をクリックすると、
 
 -   正式な Microsoft アカウントを持つユーザーが、カスタム キャンペーン ID が含まれているアプリの URL をクリックし、アプリの Windows ストアのページにリダイレクトされた。
 -   同じユーザー (同じ Microsoft アカウントによって識別される) が、カスタム キャンペーン ID が含まれている Windows ストアの URL を最初にクリックしてから 24 時間以内にアプリをインストールする。 カスタム キャンペーン ID が含まれている Windows ストアの URL をクリックしたのとは別のコンピューターまたはデバイスにアプリをインストールした場合でも、コンバージョン イベントの要件を満たします。
-    > 
-            **注:** カスタム キャンペーンのコンバージョンとしてカウントされるアプリ インストールについては、アプリ内で購入された IAP も、同じカスタム キャンペーンのコンバージョンとしてカウントされます。
+    > **注:** カスタム キャンペーンのコンバージョンとしてカウントされるアプリ インストールについては、アプリ内で購入されたアドオンも、同じカスタム キャンペーンのコンバージョンとしてカウントされます。
 
      
 
@@ -67,8 +66,7 @@ Facebook や Twitter のフォロワーがその URL をクリックすると、
 1.  カスタム キャンペーン用の ID 文字列を作成します。 この文字列は最大 100 文字にできますが、簡単に識別できる短いキャンペーン ID を定義することをお勧めします。
 2.  HTML またはプロトコル形式でアプリの Windows ストアのページの URL を取得します。 HTML 形式の URL は、[デベロッパー センター ダッシュボードの **[アプリ ID]** ページ](link-to-your-app.md)で確認できます。
     -   ユーザーがブラウザーでアプリの Windows ストアのページに移るようにする場合は、HTTP 形式を使います (Windows ストア アプリがインストールされている場合は、この URL によって Windows ストア アプリも起動し、アプリの掲載ページが表示されます)。 この URL の形式は **`https://www.microsoft.com/store/apps/*your app name*/*your app ID*`** です。 たとえば、Skype 用の HTTP URL は `https://www.microsoft.com/store/apps/skype/9wzdncrfj364` になります。
-        > 
-            **注:** HTTP 形式の URL は、Windows 7 以降を実行しているコンピューターとタブレット、および Windows Phone 8 以降を実行している携帯電話のブラウザーで、Windows ストアに移動するために使用できます。
+        > **注:** HTTP 形式の URL は、Windows 7 以降を実行しているコンピューターとタブレットや Windows Phone 8 以降を実行している携帯電話のブラウザーで、Windows ストアに移動するために使用できます。
 -   Windows ストア アプリがインストールされたデバイスやコンピューター上で実行されている他の Windows アプリでアプリを宣伝し、ユーザーが Windows ストア アプリでアプリのページを開くようにする場合は、プロトコル形式を使います。 この URL の形式は **`ms-windows-store://pdp/?PRODUCTID=*your app id*`** です。 たとえば、Skype 用のプロトコル URL は `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364` になります。
 3.  アプリの URL の末尾に次の文字列を追加します。
     -   HTTP 形式の URL の場合は **?cid=`?cid=*my custom campaign ID*`** を追加します。 たとえば、Skype でキャンペーン ID の値が **custom\_campaign** であるキャンペーンを紹介する場合、このキャンペーン ID を含む新しい HTTP URL は `https://www.microsoft.com/store/apps/skype/9wzdncrfj364?cid=custom\_campaign` になります。
@@ -79,8 +77,7 @@ Facebook や Twitter のフォロワーがその URL をクリックすると、
 
 アプリが UWP アプリの場合、アプリに関連付けられているカスタム キャンペーン ID を、[**GetAppPurchaseCampaignIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt186445) メソッドを使ってプログラムで取得できます。 このメソッドによって、多くの分析シナリオや収益シナリオが可能になります。 たとえば、現在のユーザーが Facebook のキャンペーンによってアプリを見つけた後でアプリを取得したかどうかがわかるので、それに合わせてアプリのエクスペリエンスをカスタマイズできます。 また、サード パーティのアプリ マーケティング プロバイダーを使っている場合は、プロバイダーにデータを送ることができます。
 
-> 
-            **注:** [**GetAppPurchaseCampaignIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt186445) メソッドは、ユーザーがキャンペーン ID が埋め込まれた URL をクリックし、アプリの Windows ストアのページにリダイレクトされ、このページから離れることなくアプリをインストールする場合にのみキャンペーン ID 文字列を返します。 ユーザーがこのページから離れ、後で戻ってアプリをインストールする場合、**GetAppPurchaseCampaignIdAsync** ではコンバージョンとして認められません。 詳しくは、このトピックの「[コンバージョンについて](#conversions)」をご覧ください。
+> **注:** [**GetAppPurchaseCampaignIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt186445) メソッドは、ユーザーがキャンペーン ID が埋め込まれた URL をクリックし、アプリの Windows ストアのページにリダイレクトされ、このページから離れることなくアプリをインストールする場合にのみキャンペーン ID 文字列を返します。 ユーザーがこのページから離れ、後で戻ってアプリをインストールする場合、**GetAppPurchaseCampaignIdAsync** ではコンバージョンとして認められません。 詳しくは、このトピックの「[コンバージョンについて](#conversions)」をご覧ください。
 
  
 
@@ -138,6 +135,6 @@ HRESULT hr = CurrentApp::GetAppPurchaseCampaignIdAsync(campaignId.GetAddressOf()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

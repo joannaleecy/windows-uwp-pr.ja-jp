@@ -3,8 +3,9 @@ author: jnHs
 Description: "アプリが人の目に留まるようにしましょう。 アプリの品質を高めることのほかにも、Windows ストアやその他のサイトで注目を集めるためにできることがあります。"
 title: "アプリの販売促進を容易にする"
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e0f993d703ccd3a4509de4350f07d50564893763
+ms.openlocfilehash: aa35a1e46c5fea9bb64602af3842735f1914b039
 
 ---
 
@@ -48,6 +49,6 @@ Windows ストアでは、さまざまなアプリをカテゴリ別またはテ
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

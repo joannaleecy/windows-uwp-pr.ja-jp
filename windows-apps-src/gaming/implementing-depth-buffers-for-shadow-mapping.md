@@ -3,8 +3,9 @@ author: mtoepke
 title: "チュートリアル -- Direct3D 11 の深度バッファーを使ったシャドウ ボリュームの実装"
 description: "このチュートリアルでは、すべての Direct3D 機能レベルのデバイスで Direct3D 11 を使い、深度マップを利用してシャドウ ボリュームをレンダリングする方法について説明します。"
 ms.assetid: d15e6501-1a1d-d99c-d1d8-ad79b849db90
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4bb1f5c71d83b2dc3271b5b2ceaa9a1156b00004
+ms.openlocfilehash: a323c299d588cdcff7b83d538a705d64207c96b2
 
 ---
 
@@ -89,6 +90,6 @@ Windows 8 で、機能レベル 9\_1 と 9\_3 に深度の比較機能が追加�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

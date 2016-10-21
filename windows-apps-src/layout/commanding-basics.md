@@ -5,8 +5,9 @@ title: "ユニバーサル Windows プラットフォーム (UWP) アプリの�
 ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
 label: Command design basics
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: be7ff187df9800a8c2c47c4315f3f9b021e265f8
+ms.openlocfilehash: 736ab8ebe74a293efd48ffd7dcd9d2026089147a
 
 ---
 
@@ -32,8 +33,7 @@ ms.openlocfilehash: be7ff187df9800a8c2c47c4315f3f9b021e265f8
 | 日付/時刻選択ツール | [カレンダーの日付選択ツール、カレンダー ビュー、日付の選択、時刻の選択](https://msdn.microsoft.com/library/windows/apps/hh465466)                                                                                                                 | クレジット カードの有効期限を入力したり、アラームを設定したりするときなどに、ユーザーが日時情報を表示して変更できるようにします。                   |
 | リスト                 | [ドロップダウン リスト、リスト ボックス、リスト ビューとグリッド ビュー](https://msdn.microsoft.com/library/windows/apps/mt186889)                                                                                                                                              | 対話型のリストまたはグリッド内に項目を表示します。 これらの要素を使うと、ユーザーは新着の一覧からムービーを選んだり、在庫を管理したりすることができます。 |
 | テキスト予測入力 | [自動提案ボックス](https://msdn.microsoft.com/library/windows/apps/dn997762)                                                                                                                                                                    | 入力候補を表示して、ユーザーがデータを入力したりクエリを実行したりする時間を節約できるようにします。                                                   |
-| 選択コントロール    | 
-            [チェック ボックス](https://msdn.microsoft.com/library/windows/apps/hh700393)、[ラジオ ボタン](https://msdn.microsoft.com/library/windows/apps/hh700395)、[トグル スイッチ](https://msdn.microsoft.com/library/windows/apps/hh465475) | アンケートに入力するときや、アプリ設定を構成するときなど、ユーザーがさまざまなオプションを選ぶことができるようにします。                                      |
+| 選択コントロール    | [チェック ボックス](https://msdn.microsoft.com/library/windows/apps/hh700393)、[ラジオ ボタン](https://msdn.microsoft.com/library/windows/apps/hh700395)、[トグル スイッチ](https://msdn.microsoft.com/library/windows/apps/hh465475) | アンケートに入力するときや、アプリ設定を構成するときなど、ユーザーがさまざまなオプションを選ぶことができるようにします。                                      |
 
  
 
@@ -135,8 +135,7 @@ Windows に用意されたコマンド サーフェスの一覧と、それら�
     -   コンテンツを変更する、またはテキストを編集する
     -   ファイル名を変更する
 
-
-            **ヒント:** アプリで使う確認ダイアログの量に注意してください。ユーザーが間違えたときはとても役に立ちますが、ユーザーが意図的にアクションを実行しようとしているときは邪魔になります。
+**ヒント:** アプリで使う確認ダイアログの量に注意してください。ユーザーが間違えたときはとても役に立ちますが、ユーザーが意図的にアクションを実行しようとしているときは邪魔になります。
 
  
 
@@ -158,6 +157,6 @@ Windows に用意されたコマンド サーフェスの一覧と、それら�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

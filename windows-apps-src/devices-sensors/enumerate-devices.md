@@ -4,18 +4,27 @@ ms.assetid: 4311D293-94F0-4BBD-A22D-F007382B4DB8
 title: "デバイスの列挙"
 description: "列挙用の名前空間によって、システムに内部接続されているデバイス、外部接続されているデバイス、ワイヤレス プロトコルまたはネットワーク プロトコル経由で検出できるデバイスを検索できます。"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 296ca0ece8cead74112c3e665f13b5e5547e6da3
+ms.sourcegitcommit: 23a600fdcf972fcb291653e8aac447e035c12c6d
+ms.openlocfilehash: 2aa1a86a2cb0b413fae5fbcd87599a9f1a822324
 
 ---
 # デバイスの列挙
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
+## サンプル
 
-** 重要な API **
+利用可能なデバイスすべてを列挙する最も簡単な方法は、(下のセクションで詳しく取り上げられているように) [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx) コマンドを使用してスナップショットを取ることです。
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+```CSharp
+async void enumerateSnapshot(){
+  DeviceInformationCollection collection = await DeviceInformation.FindAllAsync();
+}
+```
+
+[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API のより高度な使い方を示すサンプルをダウンロードするには、[ここ](http://go.microsoft.com/fwlink/?LinkID=620536)をクリックしてください。
+
+## 列挙 API
 
 列挙用の名前空間によって、システムに内部接続されているデバイス、外部接続されているデバイス、ワイヤレス プロトコルまたはネットワーク プロトコル経由で検出できるデバイスを検索できます。 利用可能なデバイスを列挙するために使う API は、[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 名前空間です。 このような API を使う理由は、次のようなものがあります。
 
@@ -82,7 +91,13 @@ ms.openlocfilehash: 296ca0ece8cead74112c3e665f13b5e5547e6da3
 
 デバイスのスナップショットを列挙するには、[**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx) メソッドを使います。 このメソッドは、列挙プロセス全体が完了するまで待ってから、すべての結果を 1 つの [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationcollection.aspx) オブジェクトとして返します。 このメソッドには、結果をフィルター処理し、目的のデバイスに合わせてその結果を絞り込むためのいくつかのオプションを提供するオーバーロードもあります。 オーバーロードを使うには、[**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) を指定するか、デバイス セレクターを渡します。 デバイス セレクターとは、列挙するデバイスを指定する AQS 文字列です。 詳しくは、「[デバイス セレクターのビルド](build-a-device-selector.md)」をご覧ください。
 
+デバイスの列挙スナップショットの例を以下に示します。
+
+
+
 結果を絞り込むだけでなく、デバイスから取得するプロパティも指定できます。 その場合、指定したプロパティが、コレクションで返される各 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトのプロパティ バックで利用可能になります。 すべてのデバイスの種類ですべてのプロパティを使うことができるわけではないことに注意してください。 どのデバイスの種類でどのプロパティを使うことができるかについては、「[デバイス情報プロパティ](device-information-properties.md)」をご覧ください。
+
+
 
 ## デバイスの列挙と監視
 
@@ -136,10 +151,6 @@ ms.openlocfilehash: 296ca0ece8cead74112c3e665f13b5e5547e6da3
 
 すべての [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトが、[**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) と [**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx) の 2 つの情報を組み合わせて個別に識別されています。 この 2 つの情報を手元に残しておくと、**DeviceInformation** オブジェクトが失われたとしても、この情報を [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx) に渡して再び作成することができます。 この場合、アプリと統合するデバイスのユーザー設定を保存できます。
 
-## サンプル
-
-
-[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API の使い方を示すサンプルをダウンロードするには、[ここ](http://go.microsoft.com/fwlink/?LinkID=620536)をクリックしてください。
 
  
 
@@ -151,6 +162,6 @@ ms.openlocfilehash: 296ca0ece8cead74112c3e665f13b5e5547e6da3
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

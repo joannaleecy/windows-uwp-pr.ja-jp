@@ -4,8 +4,8 @@ Description: "iOS、Android、Windows 10 のプラットフォーム機能を比
 Search.Product: eADQiWindows 10XVcnh
 title: "Android や iOS 開発者向けの Windows アプリの概念マッピング"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 640ddc7b77d5a23562dba2ecd9812464beb8a422
+ms.sourcegitcommit: a55e7d0945902ce44ebad481475e8324c9859054
+ms.openlocfilehash: 8acd22c44cf6423aba01083d1e32d282c87f44cb
 
 ---
 
@@ -120,16 +120,16 @@ ms.openlocfilehash: 640ddc7b77d5a23562dba2ecd9812464beb8a422
 <td align="left">XAML が、静的レイアウトやレスポンシブ レイアウト用の <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.canvas.aspx">Canvas</a></strong>、<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx">Grid</a></strong>、<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.relativepanel.aspx">RelativePanel</a></strong>、<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx">StackPanel</a></strong> などの<strong>レイアウト パネル クラス</strong>から成る柔軟なレイアウト システムを提供します。 <strong><a href="https://msdn.microsoft.com/library/ms171352.aspx">プロパティ</a></strong>を使って要素のサイズと位置を制御します。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx">XAML を使ったレイアウトの定義</a><br/></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>ピア ツー ピアのナビゲーション。</strong> <br><br>階層の重要度が同じページ間を移動する方法をユーザーに提供します。</td>
+<td align="left"><strong>ピアのナビゲーション。</strong> <br><br>階層の重要度が同じページ間を移動する方法をユーザーに提供します。</td>
 <td align="left"><strong>タブ</strong>、<strong>スワイプ ビュー</strong>、<strong>ナビゲーション ドロワー</strong>で<strong>水平方向ナビゲーション</strong>ができます。</td>
 <td align="left"><strong>タブ バー コントローラー</strong>、<strong>分割ビュー コントローラー</strong>、<strong>ページ ビュー コントローラー</strong>で同じ階層のビューの間を移動できます。</td>
-<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">タブ/ピボット</a></strong>を使って、コンテンツの上にリンクやタブの永続的な一覧を表示できます。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">ナビゲーション ウィンドウと分割ビュー</a></strong>で、コンテンツの横にリンクの一覧を表示することができます。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187344.aspx">ナビゲーション</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt465735.aspx">2 ページ間でのピア ツー ピアのナビゲーション</a></td>
+<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">タブ/ピボット</a></strong>を使って、コンテンツの上にリンクやタブの永続的な一覧を表示できます。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">ナビゲーション ウィンドウと分割ビュー</a></strong>で、コンテンツの横にリンクの一覧を表示することができます。<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">ナビゲーション</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">2 つのページ間の移動</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>階層型ナビゲーション。</strong> <br><br>階層の親と子のページ間を移動します。</td>
 <td align="left"><strong>他の<strong>アクティビティ</strong>を読み込む<strong>インテント</strong>と一緒にリスト</strong>、<strong>グリッド リスト</strong>、<strong>ボタン</strong>などのコントロールを使うと、<strong>子孫のナビゲーション</strong>ができます。</td>
 <td align="left"><strong>ナビゲーション コントローラー</strong>を使うと、ユーザーが階層のレベルの間を移動できます。</td>
-<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">ハブ</a></strong>を使うと、子ページに移動する場合に選ぶことができるコンテンツのプレビューをユーザーに表示できます。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">マスター/詳細</a></strong>を使うと、ユーザーは対応する [詳細] セクションの横に表示される項目の概要の一覧から項目を選ぶことができます。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187344.aspx">ナビゲーション</a></td>
+<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">ハブ</a></strong>を使うと、子ページに移動する場合に選ぶことができるコンテンツのプレビューをユーザーに表示できます。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">マスター/詳細</a></strong>を使うと、ユーザーは対応する [詳細] セクションの横に表示される項目の概要の一覧から項目を選ぶことができます。<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">ナビゲーション</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">2 つのページ間の移動</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>[戻る] ボタンによるナビゲーション。</strong> <br><br>アプリケーション内で元の画面に戻ります。</td>
@@ -665,6 +665,6 @@ ms.openlocfilehash: 640ddc7b77d5a23562dba2ecd9812464beb8a422
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

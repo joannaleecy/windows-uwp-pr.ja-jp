@@ -4,7 +4,7 @@ title: "Xbox Live テスト ユーザー管理 API のリファレンス"
 description: "ユーザー管理 API にプログラムでアクセスする方法について説明します。"
 translationtype: Human Translation
 ms.sourcegitcommit: 67f158b1d3d5ece14c36483a2513a2db2f478660
-ms.openlocfilehash: ad01d4daf089c61fc50c7927cfbf123d7d7ee4df
+ms.openlocfilehash: 66fe038fdb54ac5cb9086bf9225d0a5d573b39c8
 
 ---  
 
@@ -72,6 +72,6 @@ GET メソッドの呼び出しでは、次のプロパティが指定された 
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

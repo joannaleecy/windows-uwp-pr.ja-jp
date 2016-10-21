@@ -3,8 +3,9 @@ author: mcleblanc
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: "Windows アプリ認定キット"
 description: "作成したアプリを Windows ストアに公開する、または、Windows 認定を受ける一番の方法は、認定のためアプリを提出する前に、ローカルでアプリの検証とテストを行うことです。 このトピックでは、Windows アプリ認定キットのインストール方法と実行方法について説明します。"
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 16e116c2a92a6ad751b0e4fe58fc7b41de0455cb
+ms.openlocfilehash: 478ba4a24cff3c2df34d98157624c9c4339d432a
 
 ---
 # Windows アプリ認定キット
@@ -47,20 +48,17 @@ ms.openlocfilehash: 16e116c2a92a6ad751b0e4fe58fc7b41de0455cb
 
 6.  レポート ファイルを開いて、テストの結果を確認します。
 
-
-            **注:** Visual Studio を使っている場合は、アプリ パッケージを作るときに Windows アプリ認定キットを実行できます。 方法については、「[UWP アプリのパッケージ化](https://msdn.microsoft.com/library/windows/apps/Mt627715)」をご覧ください。
+**注:** Visual Studio を使っている場合は、アプリ パッケージを作るときに Windows アプリ認定キットを実行できます。 方法については、「[UWP アプリのパッケージ化](https://msdn.microsoft.com/library/windows/apps/Mt627715)」をご覧ください。
 
  
 
 ## コマンド ラインから Windows アプリ認定キットを使った Windows アプリを検証する
 
-
-            **重要**  Windows アプリ認定キットは、アクティブなユーザー セッションで実行する必要があります。
+**重要**  Windows アプリ認定キットは、アクティブなユーザー セッションで実行する必要があります。
 
 1.  コマンド ウィンドウで、Windows アプリ認定キットを含むディレクトリに移動します。
 
-    
-            **注:** 既定のパスは C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\ です。
+    **注:** 既定のパスは C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\ です。
 
 2.  次のコマンドをこの順序で入力し、テスト コンピューターにすでにインストールされているアプリをテストします。
 
@@ -76,11 +74,9 @@ ms.openlocfilehash: 16e116c2a92a6ad751b0e4fe58fc7b41de0455cb
 
 3.  テストが完了したら、`[report file name]` という名前のレポート ファイルを開いて、テスト結果を確認します。
 
+**注:** Windows アプリ認定キットはサービスから実行できますが、サービスはアクティブなユーザー セッションでキットのプロセスを開始する必要があり、Session0 では実行できません。
 
-            **注:** Windows アプリ認定キットはサービスから実行できますが、サービスはアクティブなユーザー セッションでキットのプロセスを開始する必要があり、Session0 では実行できません。
-
-
-            **注:** Windows アプリ認定キットのコマンド ラインについて詳しく知るには、コマンド「」を入力します。 `appcert.exe /?`
+**注:** Windows アプリ認定キットのコマンド ラインについて詳しく知るには、次のコマンドを入力します。 `appcert.exe /?`
 
 ## 低電力コンピューターでのテスト
 
@@ -104,6 +100,6 @@ Windows アプリ認定キットで使用するパフォーマンス テスト�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

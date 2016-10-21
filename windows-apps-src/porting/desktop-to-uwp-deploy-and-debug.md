@@ -4,12 +4,12 @@ Description: "デスクトップの変換拡張機能を使用して Windows デ
 Search.Product: eADQiWindows 10XVcnh
 title: "Windows デスクトップ アプリケーションから変換したユニバーサル Windows プラットフォーム (UWP) アプリを展開してデバッグする"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 618b129449d285054604008615c32de74c8bfd9b
+ms.sourcegitcommit: 2c1a8ea38081c947f90ea835447a617c388aec08
+ms.openlocfilehash: 75e176f17845bdbd618c6ca63fbbb5765bef54fb
 
 ---
 
-# 変換済みの UWP アプリを展開してデバッグする (Project Centennial)
+# 変換済みの UWP アプリを展開してデバッグする
 
 \[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、マイクロソフトは明示または黙示を問わずいかなる保証をするものでもありません。\]
 
@@ -17,7 +17,7 @@ ms.openlocfilehash: 618b129449d285054604008615c32de74c8bfd9b
 
 ## 変換済みの UWP アプリをデバッグする
 
-変換済みのアプリを Visual Studio を使ってデバッグするには、主に 2 つの方法があります。
+変換済みのアプリをデバッグするためのいくつかのオプションがあります。
 
 ### プロセスにアタッチ
 
@@ -29,7 +29,7 @@ Microsoft Visual Studio を "管理者として" として実行していると�
 
 開始手順は次のとおりです。 
 
-1. 最初に、Centennial を使える設定になっているか確認します。 手順については、「[Desktop App Converter のプレビュー (Project Centennial)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)」をご覧ください。 
+1. まず、Desktop App Converter を使用するように設定していることを確認します。 詳しくは、「[Desktop App Converter プレビュー](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)」をご覧ください。 
 
 2. コンバーター、Win32 アプリケーションのインストーラーの順に実行します。 コンバーターは、レイアウトと、レジストリに加えられたすべての変更をキャプチャし、レジストリを仮想化する registery.dat とマニフェストを含む Appx を出力します。
 
@@ -162,9 +162,32 @@ Microsoft Visual Studio を "管理者として" として実行していると�
 
     ![alt](images/desktop-to-uwp/debug-8.png)
 
-4.  追加した UWP API を対象にビルドする場合は。ビルド対象を DesktopUWP に切り替えられるようになりました。
+4.  追加した UWP API をターゲットとしてビルドする場合には、ビルド ターゲットを DesktopUWP に切り替えられるようになりました。
+
+### PLMDebug 
+
+Visual Studio の F5 キーおよびプロセスにアタッチの機能は、実行中にアプリをデバッグするために役立ちます。 しかし場合によっては、アプリを開始する前にデバッグを行うなど、デバッグ プロセスを細かく制御する必要があります。 これらのより高度なシナリオでは、[ **PLMDebug**](https://msdn.microsoft.com/library/windows/hardware/jj680085%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396) を使用します。 このツールは、Windows デバッガーを使って、変換済みのアプリをデバッグすることができ、中断、再開、および終了など、アプリのライフ サイクルの完全な制御を提供します。 
+
+PLMDebug は Windows SDK に含まれています。 詳しくは、「[**PLMDebug**](https://msdn.microsoft.com/library/windows/hardware/jj680085%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396)」をご覧ください。 
+
+### 完全な信頼コンテナー内で別のプロセスを実行する 
+
+指定されたアプリ パッケージのコンテナー内でカスタムのプロセスを起動することができます。 これは、シナリオをテストするために役立つ場合があります (たとえば、カスタムのテスト ハーネスがあり、アプリの出力をテストする必要がある場合など)。 これを行うには、```Invoke-CommandInDesktopPackage``` PowerShell コマンドレット を使用します。 
+
+```CMD
+Invoke-CommandInDesktopPackage [-PackageFamilyName] <string> [-AppId] <string> [-Command] <string> [[-Args]
+    <string>]  [<CommonParameters>]
+```
 
 ## 変換済み UWP アプリを展開する
+
+変換済みのアプリを展開するには 2 つの方法があります。ルーズ ファイルの登録と、appx パッケージの展開です。 
+
+ルーズ ファイルの登録は、ファイルがディスク上の容易にアクセス可能な場所に配置されており、署名や証明書を必要としない場合に、デバッグのために役立ちます。  
+
+appx パッケージの展開は、複数のコンピューターにわたってアプリケーションを展開したり、サイドローディングしたりするための容易な方法を提供しますが、パッケージには署名が必要で、コンピューターでは信頼された証明書が必要です。
+
+### ルーズ ファイルの登録
 
 開発中にアプリを展開するには、次の PowerShell コマンドレットを実行します。 
 
@@ -174,15 +197,24 @@ Microsoft Visual Studio を "管理者として" として実行していると�
 
 次の点に注意してください。 
 
-変換済みのアプリをインストールするドライブは、NTFS 形式にフォーマットしておく必要があります。
+* 変換済みのアプリをインストールするドライブは、NTFS 形式にフォーマットしておく必要があります。
 
-変換済みのアプリは、常に、対話ユーザーとして実行されます。 このことは、特に .NET アプリにとって重要です。.NET アプリのマニフェストでは、__requireAdministrator__ の実行レベルを指定します。 対話ユーザーが管理者特権を持っていると、_アプリが起動されるたびに_ UAC プロンプトが表示されます。 標準ユーザーは、アプリを起動できません。
+* 変換済みのアプリは、常に、対話ユーザーとして実行されます。
 
-作成した証明書をインポートしていないコンピューターで Add-AppxPackage コマンドレットを実行しようとすると、エラーが発生します。
+### appx パッケージの展開 
 
 アプリを展開する前に、証明書でアプリに署名する必要があります。 証明書の作成方法の詳細については、「[.Appx パッケージに署名する](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter#deploy-your-converted-appx)」をご覧ください。 
 
-ここでは、以前に作成した証明書をインポートする方法を説明します。 証明書は、直接インストールするか、顧客と同じように、署名済みの appx からインストールすることができます。
+ここでは、以前に作成した証明書をインポートする方法を説明します。 証明書は、直接 CERTUTIL を使ってインポートするか、または顧客と同じように、署名済みの appx からインストールすることができます。 
+
+CERTUTIL を使って証明書をインストールするには、管理者のコマンド プロンプトから次のコマンドを実行します。
+
+```cmd
+Certutil -addStore TrustedPeople <testcert.cer>
+```
+
+顧客が行うように、appx から証明書をインポートするには、次のようにします。
+
 1.  ファイル エクスプローラーで、テスト証明書で署名した appx を右クリックして、コンテンツメニューから [**プロパティ**] を選択します。
 2.  [**デジタル署名**] タブをクリックまたはタップします。
 3.  証明書をクリックまたはタップして、[**詳細**] を選択します。
@@ -195,7 +227,7 @@ Microsoft Visual Studio を "管理者として" として実行していると�
 10. **[次へ]** をクリックまたはタップします。 新しい画面が表示されます。 **[完了]** をクリックまたはタップします。
 11. 確認のダイアログ ボックスが表示されます。 確認のダイアログ ボックスが表示されたら、**[OK]** をクリックします。 別のダイアログが表示され、証明書に問題があることが示された場合は、証明書のトラブルシューティングを行う必要があります。
 
-Windows で証明書を信用するには、証明書を **[証明書 (ローカル コンピューター)] > [信頼されたルート証明機関] > [証明書]** ノードまたは **[証明書 (ローカル コンピューター)] > [信頼されたユーザー] > [証明書]** ノードのどちらかに配置します。 これら 2 つの場所にある証明書だけが、ローカル コンピューターのコンテキストで証明書の信頼性を検証できます。 それ以外の場合、次の文字列のようなエラー メッセージが表示されます。
+注: Windows で証明書を信頼するには、証明書を **[証明書 (ローカル コンピューター)] > [信頼されたルート証明機関] > [証明書]** ノードまたは **[証明書 (ローカル コンピューター)] > [信頼されたユーザー] > [証明書]** ノードのどちらかに配置します。 これら 2 つの場所にある証明書だけが、ローカル コンピューターのコンテキストで証明書の信頼性を検証できます。 それ以外の場合、次の文字列のようなエラー メッセージが表示されます。
 ```CMD
 "Add-AppxPackage : Deployment failed with HRESULT: 0x800B0109, A certificate chain processed,
 but terminated in a rootcertificate which is not trusted by the trust provider.
@@ -203,7 +235,13 @@ but terminated in a rootcertificate which is not trusted by the trust provider.
 in the app package must be trusted."
 ```
 
-### しくみ
+証明書が信頼されると、2 つの方法でパッケージをインストールできます。PowerShell を使用するか、または appx パッケージ ファイルをダブルクリックしてインストールします。  PowerShell を使ってインストールするには、次のコマンドレットを実行します。
+
+```powershell
+Add-AppxPackage <MyApp>.appx
+```
+
+## しくみ
 
 変換済みのアプリを実行すると、UWP アプリ パッケージが \Program Files\WindowsApps\\&lt;_パッケージ名_&gt;\\&lt;_アプリ名_&gt;.exe から起動されます。 その場所を確認すると、アプリに AppxManifest.xml という名前のアプリ パッケージ マニフェストがあり、そのマニフェストから変換済みアプリで使われる特殊な xml 名前空間を参照していることが分かります。 そのマニフェスト ファイル内の __&lt;EntryPoint&gt;__ 要素で、完全に信頼できるアプリを参照します。 そのアプリは、起動されたときに、アプリ コンテナーの内部では実行されず、ユーザーが通常実行するように実行されます。
 
@@ -211,16 +249,37 @@ in the app package must be trusted."
 
 VFS という名前のフォルダーの下に、アプリが依存している DLL を含むフォルダーがあります。 これらの DLL は、従来のデスクトップ版のアプリでは、システム フォルダーにインストールされます。 でも、UWP アプリでは、DLL はアプリのローカルなファイルです。 これにより、UWP アプリをインストールしたりアンインストールしたりしても、バージョンの問題は起きません。
 
-## 参照
+### パッケージ化された VFS の場所
+
+次の表では、パッケージの一部として含まれるファイルが、システム上でアプリのためにどのように配置されるかを示します。 アプリはこれらのファイルが指定されたシステムの位置にあると認識していますが、実際にはリダイレクトされた [PackageRoot]\VFS\ 内の場所にあります。 FOLDERID の場所は [**KNOWNFOLDERID**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd378457.aspx) の定数です。
+
+システムの場所 | リダイレクトされた場所 ([PackageRoot]\VFS\ の下) | 有効なアーキテクチャ
+ :---- | :---- | :---
+FOLDERID_SystemX86 | SystemX86 | x86、amd64 
+FOLDERID_System | SystemX64 | amd64 
+FOLDERID_ProgramFilesX86 | ProgramFilesX86 | x86、amd64 
+FOLDERID_ProgramFilesX64 | ProgramFilesX64 | amd64 
+FOLDERID_ProgramFilesCommonX86 | ProgramFilesCommonX86 | x86、amd64
+FOLDERID_ProgramFilesCommonX64 | ProgramFilesCommonX64 | amd64 
+FOLDERID_Windows | Windows | x86、amd64 
+FOLDERID_ProgramData | 一般的な AppData | x86、amd64 
+FOLDERID_System\catroot | AppVSystem32Catroot | x86、amd64 
+FOLDERID_System\catroot2 | AppVSystem32Catroot2 | x86、amd64 
+FOLDERID_System\drivers\etc | AppVSystem32DriversEtc | x86、amd64 
+FOLDERID_System\driverstore | AppVSystem32Driverstore | x86、amd64 
+FOLDERID_System\logfiles | AppVSystem32Logfiles | x86、amd64 
+FOLDERID_System\spool | AppVSystem32Spool | x86、amd64 
+
+## 関連項目
 [デスクトップ アプリケーションをユニバーサル Windows プラットフォーム (UWP) アプリに変換する](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)
 
-[Desktop App Converter プレビュー (Project Centennial)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
+[Desktop App Converter プレビュー](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
 
 [手動で Windows デスクトップ アプリケーションをユニバーサル Windows プラットフォーム (UWP) アプリに変換する](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion)
 
 [デスクトップ アプリから UWP へのブリッジのコード サンプル (GitHub)](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Sep16_HO2-->
 
 

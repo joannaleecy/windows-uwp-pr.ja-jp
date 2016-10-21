@@ -4,8 +4,9 @@ Description: "アプリに関する詳細な説明やアドバイスのための
 title: "外部ヘルプ ページを設計するためのガイドライン"
 label: External help
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 9da639dedf46068fb1f555f90b39ab979114ebf3
-ms.openlocfilehash: 0e21737e33f33d7239162ddcf9d4cdf39db17655
+ms.openlocfilehash: de371e39dc98049545b81329f240fbe94df78de5
 
 ---
 
@@ -42,6 +43,6 @@ ms.openlocfilehash: 0e21737e33f33d7239162ddcf9d4cdf39db17655
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

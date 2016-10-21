@@ -1,21 +1,16 @@
 ---
-author: martinekuan
+author: GrantMeStrength
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: "初めてのアプリの作成"
 description: "Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリの作成は、思っているよりも簡単です。"
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e2ed4b9587927a2a6a765b47ff69b9cedfd9b92d
+translationtype: Human Translation
+ms.sourcegitcommit: b57a461cf9859be26ed69d12b08259d15201403a
+ms.openlocfilehash: 16adf9c9c8de2ca4596f0fcbe503f570971e74a1
 
 ---
-# 初めてのアプリ作成
+# 初めてのアプリの作成
 
-Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリの作成は、思っているよりも簡単です。 作り始めるにあたって、新しい言語を学習する必要はありません。既に知っている次の言語で作成できます。
-
--   C#、または Visual Basic と XAML
--   C++ と XAML
--   JavaScript と HTML/CSS
-
-このチュートリアルは、好みの言語で初めての UWP アプリを作るために役立ちます。 ここでは、次の方法について説明します。
+ようこそ。このチュートリアルは、好みの言語で初めての UWP アプリを作るために役立ちます。 ここでは、次の方法について説明します。
 
 -   Microsoft Visual Studio で UWP アプリのプロジェクトを作成する
 -   プロジェクトに UI 要素とコードを追加する
@@ -23,56 +18,86 @@ Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプ�
 
 最初に、好みの言語を選びます。
 
-## C#/Visual Basic と XAML のチュートリアル
 
-.NET、WPF、または Silverlight のスキルを活用し、XAML と C# または Visual Basic を使ったアプリを作ります。
+<!--
 
-[XAML と C# または VB で "Hello, world" アプリを作る](create-a-hello-world-app-xaml-universal.md)
+<table Width="100%">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<Col width="33%" />
+</colgroup>
 
-このトピックは、XAML と C# または Visual Basic に習熟していることを前提としています。 基本を学習したり、知識を再確認したりする場合は、[Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/) の次のコースをお試しください。
 
--   [C# Fundamentals for Absolute Beginners (文字どおりの初心者のための C# の基本)](http://www.microsoftvirtualacademy.com/training-courses/c-fundamentals-for-absolute-beginners)
--   [VB Fundamentals for Absolute Beginners (文字どおりの初心者のための VB の基本)](http://www.microsoftvirtualacademy.com/training-courses/vb-fundamentals-for-absolute-beginners)
--   [XAML Deep Dive for Windows & Windows Phone Apps Jump Start (Windows および Windows Phone アプリ開発ジャンプ スタートのための XAML の詳細)](http://www.microsoftvirtualacademy.com/training-courses/xaml-deep-dive-for-windows-windows-phone-apps-jump-start)
+<tbody>
 
-## Visual C++ コンポーネント拡張機能 (C++/CX) と XAML のチュートリアル
+<tr style="background-color: #f2f2f2">
+<td align="left"><strong style="color: #8888ff">C# and XAML</strong><p><ul><li>Hello World, with C#</li><li>Link to docs</li></ul></p></td>
+<td align="left"><strong style="color: #8888ff">C++ and XAML</strong><p><ul><li><a href="http://go.microsoft.com/fwlink/p/?LinkId=533896">C++</a>Hello World, C++</a></li><li>Link to docs</li></ul></p></td>
+<td align="left"><strong style="color: #8888ff">JS and HTML</strong><p><ul><li>Hello World, with C#</li><li>Link to docs</li></ul></p></td>
+
+
+</tr>
+
+
+
+</table>
+
+-->
+
+
+### C# と XAML のチュートリアル
+
+.NET、WPF、または Silverlight のスキルを活用し、XAML と C# を使ったアプリを作ります。
+
+* [XAML と C で "Hello, world" アプリを作る#](create-a-hello-world-app-xaml-universal.md)
+
+このトピックは、XAML と C# に習熟していることを前提としています。 基本を学習したり、知識を再確認したりする場合は、[Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/) の次のコースをお試しください。
+
+* [文字どおりの初心者のための C# の基本](https://mva.microsoft.com/en-US/training-courses/c-fundamentals-for-absolute-beginners-16169)
+* [文字どおりの初心者のための VB の基本](http://www.microsoftvirtualacademy.com/training-courses/vb-fundamentals-for-absolute-beginners)
+* [Windows 10 開発者向けガイド](https://mva.microsoft.com/en-US/training-courses/a-developers-guide-to-windows-10-12618)
+
+### Visual C++ コンポーネント拡張機能 (C++/CX) と XAML のチュートリアル
 
 C++ プログラミングの専門知識を活用し、Visual C++ コンポーネント拡張機能 (C++/CX) と XAML を使ってアプリを作ります。
 
-[XAML と C++/CX で "Hello, world" アプリを作る](create-a-basic-windows-10-app-in-cpp.md)
+* [XAML と C++/CX で "Hello, world" アプリを作る](create-a-basic-windows-10-app-in-cpp.md)
 
-このトピックは、XAML と C++ に習熟していることを前提としています。 基本を学習したり、知識を再確認したりする場合は、[Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916) の次のコースをお試しください。
+このトピックは、XAML と C++ に習熟していることを前提としています。 基本を学習したり、知識を再確認したりする場合は、[Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916)の次のコースをお試しください。
 
--   [C++: A General Purpose Language and Library Jump Start (C++: 汎用言語およびライブラリ ジャンプ スタート)](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
--   [XAML Deep Dive for Windows & Windows Phone Apps Jump Start (Windows および Windows Phone アプリ開発ジャンプ スタートのための XAML の詳細)](http://www.microsoftvirtualacademy.com/training-courses/xaml-deep-dive-for-windows-windows-phone-apps-jump-start)
+* [C++: 汎用言語およびライブラリ ジャンプ スタート](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
 
-## JavaScript と HTML のチュートリアル
+### JavaScript と HTML のチュートリアル
 
 Web のスキルを活用し、HTML5、カスケード スタイル シート レベル 3 (CSS3)、JavaScript を使ったアプリを作ります。
 
-[HTML と JavaScript を使った "Hello, world" アプリの作成](create-a-hello-world-app-js-universal.md)
+* [HTML と JavaScript を使った "Hello, world" アプリの作成](create-a-hello-world-app-js-universal.md)
 
 このトピックは、HTML5、CSS3、JavaScript に習熟していることを前提としています。 基本を学習したり、知識を再確認したりする場合は、[Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916) の次のコースをお試しください。
 
--   [JavaScript Fundamentals for Absolute Beginners (文字どおりの初心者のための JavaScript の基本)](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
--   [HTML5 & CSS3 Fundamentals for Absolute Beginners (文字どおりの初心者のための HTML5 と CSS3 の基本)](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
+* [文字どおりの初心者のための JavaScript の基本](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
+* [文字どおりの初心者のための HTML5 と CSS3 の基本](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
 
-## その他のリソース
+### Objective-C
 
-C++ と Microsoft DirectX を使ってゲームを開発する場合は、「[Windows 10 でのゲームの開発](https://dev.windows.com/games)」をご覧ください。
+iOS 開発者以外の場合 
 
-iOS または Android の使用経験がある場合は、 「[Windows10 にアプリを移植する](https://msdn.microsoft.com/library/windows/apps/Mt238321)」セクションのリソースが作業開始に役立ちます。
+* [iOS 用 Windows ブリッジ](https://developer.microsoft.com/windows/bridges/ios)を使って既存のコードを UWP アプリに変換し、Objective-C での開発を続けてください。
 
-# 関連トピック
 
+## 関連トピック
+
+* [UWP アプリに関するハウツー記事](https://developer.microsoft.com/windows/develop)
+* [UWP 開発者向けコード サンプル](https://developer.microsoft.com/windows/samples)
 * [ユニバーサル Windows アプリとは?](whats-a-uwp.md)
 * [準備](get-set-up.md)
 * [サインアップ](sign-up.md)
- 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Sep16_HO2-->
 
 

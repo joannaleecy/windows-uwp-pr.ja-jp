@@ -3,8 +3,9 @@ author: mcleblanc
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: "Windows アプリ認定キットのテスト"
 description: "Windows アプリ認定キットには、Windows ストアでの公開に向けてアプリが準備できているかどうかを確認するためのテストが多数含まれています。"
+translationtype: Human Translation
 ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
-ms.openlocfilehash: 816b147c91a340505348aa579c8b1540962a1df5
+ms.openlocfilehash: 78a1a2ad4aea11275aa3db1d13790c490a50c232
 
 ---
 ## Windows アプリ認定キットのテスト
@@ -160,8 +161,7 @@ BinScope Binary Analyzer テストは、次のセキュリティ関連機能が�
 
 ### <span id="binscope-1"></span>AllowPartiallyTrustedCallersAttribute
 
-
-            **Windows アプリ認定キットのエラー メッセージ:** APTCACheck Test failed
+**Windows アプリ認定キットのエラー メッセージ:** APTCACheck Test failed
 
 AllowPartiallyTrustedCallersAttribute (APTCA) 属性を使うと、署名されたアセンブリで、部分的に信頼されたコードから完全に信頼されたコードにアクセスできます。 アセンブリに APTCA 属性を適用すると、アセンブリが有効な間は、部分的に信頼された呼び出し元からそのアセンブリにアクセスできます。これにより、セキュリティが侵害されるおそれがあります。
 
@@ -175,8 +175,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 属性を使うと、署名され�
 
 ### <span id="binscope-2"></span>/SafeSEH 例外処理の保護
 
-
-            **Windows アプリ認定キットのエラー メッセージ:** SafeSEHCheck Test failed
+**Windows アプリ認定キットのエラー メッセージ:** SafeSEHCheck Test failed
 
 例外ハンドラーは、アプリがゼロ除算エラーなどの例外的な状況に陥った場合に実行されます。 関数が呼び出されると例外ハンドラーのアドレスがスタックに格納されるため、悪意のあるソフトウェアがスタックを上書きしようとした場合は、バッファー オーバーフローによる攻撃を受けやすくなることがあります。
 
@@ -190,8 +189,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 属性を使うと、署名され�
 
 ### <span id="binscope-3"></span>データ実行防止
 
-
-            **Windows アプリ認定キットのエラー メッセージ:** NXCheck Test failed
+**Windows アプリ認定キットのエラー メッセージ:** NXCheck Test failed
 
 このテストでは、データ セグメントに格納されたコードが、アプリで実行されないことを確認します。
 
@@ -205,8 +203,7 @@ DEP 対応の CPU でアプリをテストし、DEP の結果として見つか�
 
 ### <span id="binscope-4"></span>アドレス空間レイアウトのランダム化
 
-
-            **Windows アプリ認定キットのエラー メッセージ:** DBCheck Test failed
+**Windows アプリ認定キットのエラー メッセージ:** DBCheck Test failed
 
 アドレス空間レイアウトのランダム化 (ASLR) を使うと、実行可能なイメージがメモリの予測不可能な場所に読み込まれます。これにより、特定の仮想アドレスにプログラムを読み込むことを想定している悪意のあるソフトウェアは、計画どおりに動作しにくくなります。 アプリとアプリで使うすべてのコンポーネントは、ASLR をサポートする必要があります。
 
@@ -222,8 +219,7 @@ DEP 対応の CPU でアプリをテストし、DEP の結果として見つか�
 
 ### <span id="binscope-5"></span>共有されている PE セクションの読み取り/書き込み
 
-
-            **Windows アプリ認定キットのエラー メッセージ:** SharedSectionsCheck Test failed.
+**Windows アプリ認定キットのエラー メッセージ:** SharedSectionsCheck Test failed.
 
 共有されている書き込み可能なセクションがあるバイナリ ファイルは、セキュリティの脅威です。 共有する書き込み可能なセクションを含むアプリは、必須の場合を除き、ビルドしないでください。 [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) または [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) を使って適切に保護された共有メモリ オブジェクトを作成します。
 
@@ -237,8 +233,7 @@ DEP 対応の CPU でアプリをテストし、DEP の結果として見つか�
 
 ### AppContainerCheck
 
-
-            **Windows アプリ認定キットのエラー メッセージ:** AppContainerCheck Test failed.
+**Windows アプリ認定キットのエラー メッセージ:** AppContainerCheck Test failed.
 
 AppContainerCheck は、実行可能なバイナリの PE (Portable Executable) ヘッダーに **appcontainer** ビットが設定されているかを検証します。 すべての .exe ファイルとすべてのアンマネージ DLL で **appcontainer** ビットが設定されていないと、アプリは正しく動作しません。
 
@@ -254,8 +249,7 @@ AppContainerCheck は、実行可能なバイナリの PE (Portable Executable) 
 
 ### <span id="binscope-7"></span>ExecutableImportsCheck
 
-
-            **Windows アプリ認定キットのエラー メッセージ:** ExecutableImportsCheck Test failed.
+**Windows アプリ認定キットのエラー メッセージ:** ExecutableImportsCheck Test failed.
 
 移植可能な実行可能ファイル (PE) イメージで、実行可能コード セクションにインポート テーブルが置かれていると、このテストが不合格になります。 これは、Visual C++ リンカーの */merge* フラグを "*/merge:.rdata=.text*" に設定して、PE イメージの .rdata マージを有効にすると生じることがあります。
 
@@ -269,8 +263,7 @@ AppContainerCheck は、実行可能なバイナリの PE (Portable Executable) 
 
 ### <span id="binscope-8"></span>WXCheck
 
-
-            **Windows アプリ認定キットのエラー メッセージ:** WXCheck Test failed.
+**Windows アプリ認定キットのエラー メッセージ:** WXCheck Test failed.
 
 このチェックでは、書き込み可能または実行可能としてマップされたページがバイナリに含まれていないことを確認します。 これが不合格になるのは、書き込み可能または実行可能なセクションがバイナリに含まれている場合と、バイナリの *SectionAlignment* が *PAGE\-SIZE* よりも小さい場合です。
 
@@ -284,8 +277,7 @@ AppContainerCheck は、実行可能なバイナリの PE (Portable Executable) 
 
 書き込み可能または実行可能なセクションは、エディット コンティニュ (/ZI) を有効にしてビルドした実行可能ファイルに含まれることがあります。 エディット コンティニュを無効にすると、無効なセクションは含まれなくなります。
 
-
-            *PAGE\-SIZE* は実行可能ファイルの既定の *SectionAlignment* です。
+*PAGE\-SIZE* は実行可能ファイルの既定の *SectionAlignment* です。
 
 ### プライベート コードの署名
 
@@ -320,13 +312,11 @@ Windows ストアで認定されるためには、アプリで Windows ストア
 
 アプリが、デバッグ用のビルドではなくリリース用ビルドとしてコンパイルされていることを確認します。
 
-> 
-            **注:** アプリで [Windows ストア アプリ用 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx) のみを使っている場合でも、デバッグ用ビルドのアプリではこのテストに合格しません。
+> **注:** アプリで [Windows ストア アプリ用 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx) のみを使っている場合でも、デバッグ用ビルドのアプリではこのテストに合格しません。
 
 エラー メッセージを確認して、アプリで使われている、[Windows ストア アプリ用 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx) ではない API を特定します。
 
-> 
-            **注:** 構成で Windows ストア アプリ用 Windows SDK だけを使っている場合でも、デバッグ構成でビルドされた C++ アプリではこのテストに合格しません。 詳しくは、「[Windows ストア アプリでの Windows API の代替](http://go.microsoft.com/fwlink/p/?LinkID=244022)」をご覧ください。
+> **注:** 構成で Windows ストア アプリ用 Windows SDK だけを使っている場合でも、デバッグ構成でビルドされた C++ アプリではこのテストに合格しません。 詳しくは、「[Windows ストア アプリでの Windows API の代替](http://go.microsoft.com/fwlink/p/?LinkID=244022)」をご覧ください。
 
 ## パフォーマンスのテスト
 
@@ -554,8 +544,7 @@ Windows ストアでは、すべてのアプリケーションが、Direct3D を
 
 ### 中断後の Direct3D トリミング
 
-> 
-            **注:** このテストは、Windows 8.1 以降を対象に開発された Windows ストア アプリにのみ適用されます。
+> **注:** このテストは、Windows 8.1 以降を対象に開発された Windows ストア アプリにのみ適用されます。
 
 ### 背景
 
@@ -604,18 +593,12 @@ Windows ストアでは、すべてのアプリケーションが、Direct3D を
 
 ### 問題への対応
 
--   
-            **ExclusiveTo 属性のテスト:** UWP クラスに別の ExclusiveTo クラスとしてマークされたインターフェイスが実装されていないことを確認します。
--   
-            **型の場所のテスト:** UWP のすべての型のメタデータが、アプリ パッケージで最も長い名前空間対応の名前を持つ winmd ファイルにあることを確認します。
--   
-            **型名の大文字小文字の区別のテスト:** すべての UWP 型のアプリ パッケージ内に大文字と小文字が区別されない一意の名前が存在することを確認します。 また、UWP 型名が、アプリ パッケージ内で名前空間名として使われていないことも確認します。
--   
-            **型名の正確性のテスト:** グローバル名前空間または Windows の最上位名前空間に UWP 型がないことを確認します。
--   
-            **一般的なメタデータの正確性のテスト:** 型の生成に使っているコンパイラが UWP の仕様に従って最新の状態になっていることを確認します。
--   
-            **プロパティのテスト:** UWP クラスのすべてのプロパティに get メソッドがあることを確認します (set メソッドは省略可能です)。 UWP 型のすべてのプロパティについて、get メソッドの戻り値の型が set メソッドの入力パラメーターの型に一致することを確認します。
+-   **ExclusiveTo 属性のテスト:** UWP クラスに別の ExclusiveTo クラスとしてマークされたインターフェイスが実装されていないことを確認します。
+-   **型の場所のテスト:** UWP のすべての型のメタデータが、アプリ パッケージで最も長い名前空間対応の名前を持つ winmd ファイルにあることを確認します。
+-   **型名の大文字小文字の区別のテスト:** すべての UWP 型のアプリ パッケージ内に大文字と小文字が区別されない一意の名前が存在することを確認します。 また、UWP 型名が、アプリ パッケージ内で名前空間名として使われていないことも確認します。
+-   **型名の正確性のテスト:** グローバル名前空間または Windows の最上位名前空間に UWP 型がないことを確認します。
+-   **一般的なメタデータの正確性のテスト:** 型の生成に使っているコンパイラが UWP の仕様に従って最新の状態になっていることを確認します。
+-   **プロパティのテスト:** UWP クラスのすべてのプロパティに get メソッドがあることを確認します (set メソッドは省略可能です)。 UWP 型のすべてのプロパティについて、get メソッドの戻り値の型が set メソッドの入力パラメーターの型に一致することを確認します。
 
 ## パッケージ サニティ テスト
 
@@ -679,8 +662,7 @@ JavaScript のバックグラウンド タスクがあるアプリは、バッ�
 
 バックグラウンドの JavaScript コードを更新して、Close() を正しく呼び出します。
 
-> 
-            **注:** この記事は、UWP アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください。
+> **注:** この記事は、UWP アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください。
 
  
 
@@ -690,6 +672,6 @@ JavaScript のバックグラウンド タスクがあるアプリは、バッ�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

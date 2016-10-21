@@ -5,20 +5,19 @@ title: "通知配信方法の選択"
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: b79a6f771afe63c9a42567875db5ef8107611afc
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: a61c9ce609856ff3addba557558c6bffec504ed7
 
 ---
-
 # 通知配信方法の選択
 
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
 この記事では、タイルとバッジの更新およびトースト通知のコンテンツを配信するための 4 つの通知オプション (ローカル、スケジュール、定期的、プッシュ) について説明します。 タイルやトースト通知では、ユーザーがアプリを直接利用していないときでもユーザーに情報を伝えることができます。 アプリおよび配信する情報の性質と内容から、シナリオに最適な通知方法を決めることができます。
 
-## <span id="Notification_delivery_methods__overview"></span><span id="notification_delivery_methods__overview"></span><span id="NOTIFICATION_DELIVERY_METHODS__OVERVIEW"></span>通知配信方法の概要
+## 通知配信方法の概要
 
 
 通知を配信するためにアプリで使用できるメカニズムには、次の 4 種類があります。
@@ -90,7 +89,7 @@ ms.openlocfilehash: b79a6f771afe63c9a42567875db5ef8107611afc
 
  
 
-## <span id="Local_notifications"></span><span id="local_notifications"></span><span id="LOCAL_NOTIFICATIONS"></span>ローカル通知
+## ローカル通知
 
 
 アプリの実行中に行われるタイルまたはバッジの更新やトースト通知の表示は、ローカルの API 呼び出しのみが必要となる、最もシンプルな通知配信メカニズムです。 どのアプリでも、役立つ情報や興味を引く情報をタイルに表示することができます。これは、ユーザーがアプリを起動して操作を開始した後でのみコンテンツが変更される場合でも可能です。 他の通知メカニズムと併用する場合でも、ローカル通知はアプリのタイルを最新の状態にする手段として適しています。 たとえば、フォト アプリのタイルでは、最近追加されたアルバムの写真を表示できます。
@@ -109,7 +108,7 @@ API 呼び出しはローカルですが、通知では Web 画像を参照で�
 -   [ローカル タイル通知の送信](tiles-and-notifications-sending-a-local-tile-notification.md)
 -   [ユニバーサル Windows プラットフォーム (UWP) の通知コード サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## <span id="Scheduled_notifications"></span><span id="scheduled_notifications"></span><span id="SCHEDULED_NOTIFICATIONS"></span>スケジュールされた通知
+## スケジュールされた通知
 
 
 スケジュールされた通知は、タイルを更新する時刻またはトースト通知を表示する時刻を正確に指定できるローカル通知のサブセットです。 スケジュールされた通知は、会議の招集など、更新される内容があらかじめわかっている場合に適しています。 通知の内容が事前にわからない場合は、プッシュ通知または定期的な通知を使う必要があります。
@@ -121,7 +120,7 @@ API 呼び出しはローカルですが、通知では Web 画像を参照で�
 -   [スケジュールされた通知のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh761464)
 -   [ユニバーサル Windows プラットフォーム (UWP) の通知コード サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## <span id="Periodic_notifications"></span><span id="periodic_notifications"></span><span id="PERIODIC_NOTIFICATIONS"></span>定期的な通知
+## 定期的な通知
 
 
 定期的な通知では、最小限のクラウド サービスとクライアントの投資で、ライブ タイルを更新することができます。 この通知は、同じコンテンツを多数のユーザーに配信する方法としても優れています。 クライアント コードでは、Windows がタイルまたはバッジの更新の有無を確認するためにポーリングするクラウドの場所の URL と、ポーリングの頻度を指定します。 各ポーリング間隔で、Windows は URL にアクセスして指定された XML コンテンツをダウンロードして、タイルに表示します。
@@ -135,7 +134,7 @@ API 呼び出しはローカルですが、通知では Web 画像を参照で�
 -   [定期的な通知の概要](tiles-and-notifications-periodic-notification-overview.md)
 -   [ユニバーサル Windows プラットフォーム (UWP) の通知コード サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## <span id="Push_notifications"></span><span id="push_notifications"></span><span id="PUSH_NOTIFICATIONS"></span>プッシュ通知
+## プッシュ通知
 
 
 プッシュ通知は、リアルタイム データまたはユーザー向けにカスタマイズされたデータと通信する場合に適しています。 また、ニュース速報、ソーシャル ネットワークの更新、インスタント メッセージなどの予測不可能なタイミングで生成されるコンテンツについても、プッシュ通知が使われます。 プッシュ通知は、定期的な通知が適さない即時性を必要とするデータ (スポーツの試合中の得点など) にも役立ちます。
@@ -151,7 +150,7 @@ API 呼び出しはローカルですが、通知では Web 画像を参照で�
 -   [ユニバーサル Windows プラットフォーム (UWP) の通知コード サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 
-## <span id="related_topics"></span>関連トピック
+## 関連トピック
 
 
 * [ローカル タイル通知の送信](tiles-and-notifications-sending-a-local-tile-notification.md)
@@ -171,6 +170,6 @@ API 呼び出しはローカルですが、通知では Web 画像を参照で�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

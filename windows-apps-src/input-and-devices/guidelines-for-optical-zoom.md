@@ -5,8 +5,9 @@ title: "光学式ズームとサイズ変更のガイドライン"
 ms.assetid: 51a0007c-8a5d-4c44-ac9f-bbbf092b8a00
 label: Optical zoom and resizing
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 38feedfe857f8ce2fc638cf55465f1e719108583
+ms.openlocfilehash: 54c0dc3ffa9fd8716a8f147f408c1c8de5775783
 
 ---
 
@@ -96,6 +97,6 @@ ms.openlocfilehash: 38feedfe857f8ce2fc638cf55465f1e719108583
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

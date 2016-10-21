@@ -1,54 +1,58 @@
 ---
 author: Jwmsft
-Description: Learn how to navigate in a basic two-page Universal Windows Platform (UWP) app.
-title: Navigate between two pages
+Description: "基本的な 2 ページのユニバーサル Windows プラットフォーム (UWP) アプリでのナビゲーションの方法について説明します。"
+title: "2 つのページ間の移動"
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Navigate between two pages
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 0cf689ae9d74735f33baa85b3a8791a68a4467d4
+ms.openlocfilehash: d5ff0dfcb10c6977bb93f28cbf8631b9b5dfb83f
+
 ---
 
-# Navigate between two pages
+# 2 つのページ間の移動
 
-Learn how to navigate in a basic two-page Universal Windows Platform (UWP) app.
+基本的な 2 ページのユニバーサル Windows プラットフォーム (UWP) アプリでのナビゲーションの方法について説明します。
 
-![two-page navigation example](images/nav-peertopeer-2page.png)
+![2 ページのナビゲーションの例](images/nav-peertopeer-2page.png)
 
 
-**Important APIs**
+**重要な API**
 
 -   [**Windows.UI.Xaml.Controls.Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)
 -   [**Windows.UI.Xaml.Controls.Page**](https://msdn.microsoft.com/library/windows/apps/br227503)
 -   [**Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300)
 
 
-## Create the blank app
+## 空のアプリの作成
 
 
-1.  On the Microsoft Visual Studio menu, choose **File &gt; New Project**.
-2.  In the left pane of the **New Project** dialog box, choose the **Visual C# -&gt; Windows -&gt; Universal** or the **Visual C++ -&gt; Windows -&gt; Universal** node.
-3.  In the center pane, choose **Blank App**.
-4.  In the **Name** box, enter **NavApp1**, and then choose the **OK** button.
+1.  Microsoft Visual Studio の **[ファイル] メニューで、[新しいプロジェクト]** をクリックします。
+2.  **[新しいプロジェクト]** ダイアログ ボックスの左側のウィンドウで、**[Visual C#]、[Windows]、[ユニバーサル]** ノードまたは **[Visual C++]、[Windows]、[ユニバーサル]** ノードの順にクリックします。
+3.  中央のウィンドウで、**[空のアプリケーション]** をクリックします。
+4.  **[名前]** ボックスに「**NavApp1**」と入力し、**[OK]** をクリックします。
 
-    The solution is created and the project files appear in **Solution Explorer**.
+    ソリューションが作られ、プロジェクト ファイルが**ソリューション エクスプローラー**に表示されます。
 
-5.  To run the program, choose **Debug** &gt; **Start Debugging** from the menu, or press F5.
+5.  プログラムを実行するには、メニューで **[デバッグ]** をクリックして **[デバッグの開始]** をクリックするか、F5 キーを押します。
 
-    A blank page is displayed.
+    空白のページが表示されます。
 
-6.  Press Shift+F5 to stop debugging and return to Visual Studio.
+6.  デバッグを終了して Visual Studio に戻るには、Shift キーを押しながら F5 キーを押します。
 
-## Add basic pages
+## 基本ページの追加
 
-Next, add two content pages to the project.
+次に、プロジェクトにコンテンツ ページを 2 つ追加します。
 
-Do the following steps two times to add two pages to navigate between.
+次の手順を 2 回実行して、ナビゲーションを行う 2 つのページを追加します。
 
-1.  In **Solution Explorer**, right-click the **BlankApp** project node to open the shortcut menu.
-2.  Choose **Add** &gt; **New Item** from the shortcut menu.
-3.  In the **Add New Item** dialog box, choose **Blank Page** in the middle pane.
-4.  In the **Name** box, enter **Page1** (or **Page2**) and press the **Add** button.
+1.  **ソリューション エクスプローラー**で、**[BlankApp]** プロジェクト ノードを右クリックして、ショートカット メニューを開きます。
+2.  ショートカット メニューで **[追加]**、**[新しい項目]** の順にクリックします。
+3.  **[新しい項目の追加]** ダイアログ ボックスの中央のウィンドウで、**[空白のページ]** をクリックします。
+4.  **[名前]** ボックスに「**Page1**」(または「**Page2**」) と入力し、**[追加]** をクリックします。
 
-These files should now be listed as part of your NavApp1 project.
+NavApp1 プロジェクトの一部としてこれらのファイルが表示されます。
 
 <table>
 <colgroup>
@@ -77,28 +81,28 @@ These files should now be listed as part of your NavApp1 project.
 <li>Page2.xaml.cpp</li>
 <li>Page2.xaml.h
 <div class="alert">
-<strong>Note</strong>  
-<p>Functions are declared in the header (.h) file and implemented in the code-behind file (.cpp).</p>
+<strong>注:</strong>  
+<p>関数はヘッダー (.h) ファイルで宣言し、分離コード ファイル (.cpp) で実装します。</p>
 </div>
 <div>
- 
+ 
 </div></li>
 </ul></td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
-Add the following content to the UI of Page1.xaml.
+Page1.xaml の UI に次のコンテンツを追加します。
 
--   Add a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element named `pageTitle` as a child element of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704). Change the [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) property to `Page 1`.
+-   `pageTitle` という名前を付けた [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素を、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の子要素として追加します。 [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) プロパティを `Page 1` に変更します。
 
 ```xaml
 <TextBlock x:Name="pageTitle" Text="Page 1" />
 ```
 
--   Add the following [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) element as a child element of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) and after the `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element.
+-   次の [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 要素を、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の子要素として、`pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素の後に追加します。
 
 
 ```xaml
@@ -107,7 +111,7 @@ Add the following content to the UI of Page1.xaml.
                  HorizontalAlignment="Center"/>
 ```
 
-Add the following code to the `Page1` class in the Page1.xaml code-behind file to handle the `Click` event of the [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) you added previously. Here, we navigate to Page2.xaml.
+前に追加した [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) の `Click` イベントを処理する次のコードを Page1.xaml 分離コード ファイルの `Page1` クラスに追加します。 ここで、Page2.xaml に移動します。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -123,15 +127,15 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 }
 ```
 
-Make the following changes to the UI of Page2.xaml.
+Page2.xaml の UI を次のように変更します。
 
--   Add a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element named `pageTitle` as a child element of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704). Change the value of the [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) property to `Page 2`.
+-   `pageTitle` という名前を付けた [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素を、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の子要素として追加します。 [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) プロパティの値を `Page 2` に変更します。
 
 ```xaml
 <TextBlock x:Name="pageTitle" Text="Page 2" />
 ```
 
--   Add the following [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) element as a child element of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) and after the `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element.
+-   次の [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 要素を、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の子要素として、`pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素の後に追加します。
 
 ```xaml
 <HyperlinkButton Content="Click to go to page 1"
@@ -139,10 +143,10 @@ Make the following changes to the UI of Page2.xaml.
                  HorizontalAlignment="Center"/>
 ```
 
-Add the following code to the `Page2` class in the Page2.xaml code-behind file to handle the `Click` event of the [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) you added previously. Here, we navigate to Page1.xaml.
+前に追加した [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) の `Click` イベントを処理する次のコードを Page2.xaml 分離コード ファイルの `Page2` クラスに追加します。 ここで、Page1.xaml に移動します。
 
-**Note**  
-For C++ projects, you must add a `#include` directive in the header file of each page that references another page. For the inter-page navigation example presented here, page1.xaml.h file contains `#include "Page2.xaml.h"`, in turn, page2.xaml.h contains `#include "Page1.xaml.h"`.
+**注:**  
+C++ プロジェクトの場合は、別のページを参照する各ページのヘッダー ファイルに `#include` ディレクティブを追加する必要があります。 ここで示したページ間のナビゲーションの例では、page1.xaml.h ファイルに `#include "Page2.xaml.h"` が、page2.xaml.h に `#include "Page1.xaml.h"` が含まれています。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -158,11 +162,11 @@ void Page2::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 }
 ```
 
-Now that we've prepared the content pages, we need to make Page1.xaml display when the app starts.
+コンテンツ ページが用意できたら、Page1.xaml をアプリの開始時に表示されるように設定する必要があります。
 
-Open the app.xaml code-behind file and change the `OnLaunched` handler.
+app.xaml 分離コードファイルを開き、`OnLaunched` ハンドラーを変更します。
 
-Here, we specify `Page1` in the call to [**Frame.Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) instead of `MainPage`.
+次に、[**Frame.Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) の呼び出しに、`MainPage` ではなく `Page1` を追加します。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -238,29 +242,29 @@ Here, we specify `Page1` in the call to [**Frame.Navigate**](https://msdn.micros
 > }
 > ```
 
-**Note**  The code here uses the return value of [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) to throw an app exception if the navigation to the app's initial window frame fails. When **Navigate** returns **true**, the navigation happens.
+**注:** このコードは、アプリの初期ウィンドウ フレームへのナビゲーションが失敗した場合に、[**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) の戻り値を使ってアプリの例外をスローします。 **Navigate** が **true** を返す場合は、ナビゲーションが行われます。
 
-Now, build and run the app. Click the link that says "Click to go to page 2". The second page that says "Page 2" at the top should be loaded and displayed in the frame.
+次に、アプリをビルドして実行します。 "Click to go to page 2" と書かれているリンクをクリックします。 上部に "Page 2" と書かれた 2 番目のページが読み込まれ、フレームに表示される必要があります。
 
-## Frame and Page classes
+## Frame クラスと Page クラス
 
-Before we add more functionality to our app, let's look at how the pages we added provide navigation support for the app.
+アプリにさらに機能を加える前に、追加したページに用意されているアプリのナビゲーション サポートについて見てみましょう。
 
-First, a [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) (`rootFrame`) is created for the app in the `App.OnLaunched` method of the App.xaml code-behind file. The [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) class supports various navigation methods such as [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694), [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568), and [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693), and properties such as [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543), [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547), and [**BackStackDepth**](https://msdn.microsoft.com/library/windows/apps/hh967995). The [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) method is used to display content in this **Frame**.
- 
-In our example, `Page1` is passed to the [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) method. This method sets the content of the app's current window to the [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) and loads the content of the page you specify into the **Frame** (Page1.xaml in our example, or MainPage.xaml, by default).
+まず、App.xaml 分離コード ファイルの `App.OnLaunched` メソッドで、アプリの [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) (`rootFrame`) が作成されます。 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) クラスは、[**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694)、[**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568)、[**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693) などのさまざまなナビゲーション メソッドと、[**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543)、[**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547)、[**BackStackDepth**](https://msdn.microsoft.com/library/windows/apps/hh967995) などのプロパティをサポートしています。 [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) メソッドを使って、この **Frame** にコンテンツが表示されます。
+ 
+この例では、`Page1` が [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) メソッドに渡されます。 このメソッドは、アプリの現在のウィンドウの内容を [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) に設定し、指定したページの内容を **Frame** に読み込みます (この例では Page1.xaml、既定では MainPage.xaml)。
 
-`Page1` is a subclass of the [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) class. The **Page** class has a read-only [**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504) property that gets the [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) containing the **Page**. When the [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) event handler of the [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) calls` Frame.Navigate(typeof(Page2))`, the **Frame** in the app's window displays the content of Page2.xaml.
+`Page1`  は [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) クラスのサブクラスです。 **Page** クラスには、**Page** が含まれる [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) を取得する読み取り専用の [**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504) プロパティがあります。 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) の [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) イベント ハンドラーが ` Frame.Navigate(typeof(Page2))` を呼び出すと、アプリのウィンドウ内の **Frame** に Page2.xaml のコンテンツが表示されます。
 
-Whenever a page is loaded into the frame, that page is added as a [**PageStackEntry**](https://msdn.microsoft.com/library/windows/apps/dn298572) to the [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543) or [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547) of the [**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504).
+フレームにページが読み込まれるたびに、そのページが [**PageStackEntry**](https://msdn.microsoft.com/library/windows/apps/dn298572) として、[**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504) の [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543) または [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547) に追加されます。
 
-## Pass information between pages
+## ページ間での情報の受け渡し
 
-Our app navigates between two pages, but it really doesn't do anything interesting yet. Often, when an app has multiple pages, the pages need to share information. Let's pass some information from the first page to the second page.
+このアプリでは、ページ間の移動は行いますが、実際に何かの処理を行うわけではありません。 多くの場合、アプリに複数のページがあれば、ページ間で情報を共有する必要があります。 最初のページから 2 番目のページへ情報を渡してみましょう。
 
-In Page1.xaml, replace the [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) you added earlier with the following [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635).
+Page1.xaml で、前に追加した [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) を次の [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) に置き換えます。
 
-Here, we add a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) label and a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) (`name`) for entering a text string.
+次に、テキスト文字列を入力するための [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) ラベルと [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) (`name`) を追加します。
 
 ```xaml
 <StackPanel>
@@ -272,7 +276,7 @@ Here, we add a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/b
 </StackPanel>
 ```
 
-In the `HyperlinkButton_Click` event handler of the Page1.xaml code-behind file, add a parameter referencing the `Text` property of the `name` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) to the `Navigate` method.
+Page1.xaml 分離コード ファイルの `HyperlinkButton_Click` イベント ハンドラーで、`name` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) の `Text` プロパティを参照するパラメーターを `Navigate` メソッドに追加します。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -288,9 +292,9 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 }
 ```
 
-In Page2.xaml, replace the  [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) you added earlier with the following [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635).
+Page2.xaml で、前に追加した [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) を次の [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) に置き換えます。
 
-Here, we add a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) that will display the text provided by input from the [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) on Page1.
+ここで、Page1 の [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) の入力で指定されたテキストを表示する [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) を追加します。
 
 ```XAML
 <StackPanel>
@@ -299,7 +303,7 @@ Here, we add a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/b
 </StackPanel>
 ```
 
-In the Page2.xaml code-behind file, override the `OnNavigatedTo` method with the following:
+Page2.xaml 分離コード ファイルで、`OnNavigatedTo` メソッドを次のようにオーバーライドします。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -331,19 +335,19 @@ void Page2::OnNavigatedTo(NavigationEventArgs^ e)
 }
 ```
 
-Run the app, type your name in the text box, and then click the link that says **Click to go to page 2**. When you called `this.Frame.Navigate(typeof(Page2), tb1.Text)` in the [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) event of the [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), the `name.Text` property was passed to `Page2` and the value from the event data is used for the message displayed on the page.
+アプリを実行し、テキスト ボックスに自分の名前を入力し、**[Click to go to page 2]** と書かれているリンクをクリックします。 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) の [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) イベントで `this.Frame.Navigate(typeof(Page2), tb1.Text)` を呼び出したときに、`name.Text` プロパティが `Page2` に渡され、イベント データの値がページに表示されるメッセージに使用されます。
 
-## Cache a page
+## ページのキャッシュ
 
-Page content and state is not cached by default, you must enable it in each page of your app.
+ページのコンテンツと状態は既定ではキャッシュされないため、アプリの各ページで有効にする必要があります。
 
-In this basic example, there is no back button (we demonstrate back navigation in [Back button navigation](navigation-history-and-backwards-navigation.md)), but if you did click a back button on `Page2`, the [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) (and any other field) on `Page1` would be set to its default state. One way to work around this is to use the [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) property to specify that a page be added to the frame's page cache.
+この基本的な例では、戻るボタンはありませんが (戻るナビゲーションは「[[戻る] ボタンによるナビゲーション](navigation-history-and-backwards-navigation.md)」で示しました)、`Page2` で戻るボタンをクリックした場合、`Page1` の [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) (およびその他のすべてのフィールド) は既定の状態に設定されます。 これを回避する方法の 1 つは、[**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) プロパティを使って、ページがフレームのページ キャッシュに追加されるように指定することです。
 
-In the constructor of `Page1`, set [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) to [**Enabled**](https://msdn.microsoft.com/library/windows/apps/br243284). This retains all content and state values for the page until the page cache for the frame is exceeded.
+`Page1` のコンストラクターで、[**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) を [**Enabled**](https://msdn.microsoft.com/library/windows/apps/br243284) に設定します。 これにより、フレームのページ キャッシュを超えるまで、ページのすべてのコンテンツや状態値が保持されます。
 
-Set [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) to [**Required**](https://msdn.microsoft.com/library/windows/apps/br243284) if you want to ignore cache size limits for the frame. However, cache size limits might be crucial, depending on the memory limits of a device.
+フレームのキャッシュ サイズの制限を無視する場合は、[**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) を [**Required**](https://msdn.microsoft.com/library/windows/apps/br243284) に設定します。 ただし、キャッシュ サイズの制限は、デバイスのメモリの制限に依存しており、重要である可能性があります。
 
-**Note**  The [**CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) property specifies the number of pages in the navigation history that can be cached for the frame.
+**注:** [**CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) プロパティは、フレームにキャッシュできる、ナビゲーション履歴内のページ数を指定します。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -361,11 +365,17 @@ Page1::Page1()
 }
 ```
 
-## Related articles
+## 関連記事
 
-* [Navigation design basics for UWP apps](https://msdn.microsoft.com/library/windows/apps/dn958438)
-* [Guidelines for tabs and pivots](https://msdn.microsoft.com/library/windows/apps/dn997788)
-* [Guidelines for navigation panes](https://msdn.microsoft.com/library/windows/apps/dn997766)
- 
+* [UWP アプリのナビゲーション デザインの基本](https://msdn.microsoft.com/library/windows/apps/dn958438)
+* [タブとピボットのガイドライン](https://msdn.microsoft.com/library/windows/apps/dn997788)
+* [ナビゲーション ウィンドウのガイドライン](https://msdn.microsoft.com/library/windows/apps/dn997766)
+ 
 
- 
+ 
+
+
+
+<!--HONumber=Sep16_HO2-->
+
+

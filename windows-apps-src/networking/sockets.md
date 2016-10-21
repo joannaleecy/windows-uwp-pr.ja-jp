@@ -3,8 +3,9 @@ author: DelfCo
 description: "ユニバーサル Windows プラットフォーム (UWP) アプリ開発者として、Windows.Networking.Sockets と Winsock の両方を使って、他のデバイスと通信できます。"
 title: "ソケット"
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
+translationtype: Human Translation
 ms.sourcegitcommit: 4557fa59d377edc2ae5bf5a9be63516d152949bb
-ms.openlocfilehash: 432d9849335c537836fd23a4cd95c79c51bc881d
+ms.openlocfilehash: 49a9ae4d7d3994ad7fbb78fc9dc60cdd9dca07c3
 
 ---
 
@@ -19,8 +20,7 @@ ms.openlocfilehash: 432d9849335c537836fd23a4cd95c79c51bc881d
 
 ユニバーサル Windows プラットフォーム (UWP) アプリ開発者として、[**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) と [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms737523) の両方を使って、他のデバイスと通信できます。 このトピックでは、**Windows.Networking.Sockets** 名前空間を使ってネットワーク操作を実行する方法の詳しいガイダンスを示します。
 
->
->            **注** [ネットワーク分離](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)の一環として、システムでは、同じコンピューターで実行される 2 つの UWP アプリ間での、ローカル ループバック アドレス (127.0.0.0) または明示的なローカル IP アドレスの指定による、ソケット接続 (Sockets または WinSock) の確立を禁止しています。 つまり、2 つの UWP アプリ間の通信にソケットを使うことはできません。 UWP には、アプリ間で通信するための他のメカニズムが用意されています。 詳しくは、「[アプリ間通信](https://msdn.microsoft.com/windows/uwp/app-to-app/index)」をご覧ください。
+>**注** [ネットワーク分離](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)の一環として、システムでは、同じコンピューターで実行される 2 つの UWP アプリ間での、ローカル ループバック アドレス (127.0.0.0) または明示的なローカル IP アドレスの指定による、ソケット接続 (Sockets または WinSock) の確立を禁止しています。 つまり、2 つの UWP アプリ間の通信にソケットを使うことはできません。 UWP には、アプリ間で通信するための他のメカニズムが用意されています。 詳しくは、「[アプリ間通信](https://msdn.microsoft.com/windows/uwp/app-to-app/index)」をご覧ください。
 
 ## 基本的な TCP ソケット操作
 
@@ -255,8 +255,7 @@ foreach (IBuffer packet in packetsToSend)
 await outputStream.FlushAsync();
 ```
 
-これまでのバージョンの Windows では、**FlushAsync** はすぐに返り、ストリームに対するすべての動作が完了しているかどうかは保証されませんでした。 Windows 10 では、この動作が変更されています。 
-            **FlushAsync** は、出力ストリームに対するすべての操作が完了した後で返ることが保証されるようになりました。
+これまでのバージョンの Windows では、**FlushAsync** はすぐに返り、ストリームに対するすべての動作が完了しているかどうかは保証されませんでした。 Windows 10 では、この動作が変更されています。 **FlushAsync** は、出力ストリームに対するすべての操作が完了した後で返ることが保証されるようになりました。
 
 コードでバッチ処理される書き込みを使うことで課せられているいくつかの重要な制限があります。
 
@@ -302,6 +301,6 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,8 +3,9 @@ title: "データ保護"
 description: "この記事では、Windows.Security.Cryptography.DataProtection 名前空間の DataProtectionProvider クラスを使って、UWP アプリでデジタル データの暗号化と暗号化解除を行う方法について説明します。"
 ms.assetid: 9EE3CC45-5C44-4196-BD8B-1D64EFC5C509
 author: awkoren
+translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 958d5dd1c5f61078a0b288d53debe93875d65f06
+ms.openlocfilehash: 2a3be202f6754c452185aecbae3b259e09bd3fd3
 
 ---
 
@@ -263,6 +264,6 @@ namespace SampleProtectStreamAsync
 ```
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

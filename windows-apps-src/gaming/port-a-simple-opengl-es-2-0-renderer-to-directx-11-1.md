@@ -3,8 +3,9 @@ author: mtoepke
 title: "簡単な OpenGL ES 2.0 レンダラーを Direct3D 11 に移植する方法"
 description: "最初の移植作業では、基本から始めます。Visual Studio 2015 の DirectX 11 アプリ (ユニバーサル Windows) テンプレートに対応するように、頂点シェーディングされた回転する立方体の簡単なレンダラーを OpenGL ES 2.0 から Direct3D に移植します。"
 ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
+translationtype: Human Translation
 ms.sourcegitcommit: 814f056eaff5419b9c28ba63cf32012bd82cc554
-ms.openlocfilehash: f70d4ec46743d930f8cb45084e55cce2e60e2460
+ms.openlocfilehash: 307b611eece3de6288d67e1e340368763f26fa2e
 
 ---
 
@@ -76,8 +77,7 @@ typedef struct
 
 この構造体には、インスタンスが 1 つあり、頂点シェーディングされた非常に簡単なメッシュをレンダリングするために必要なコンポーネントがすべて含まれています。
 
-> 
-            **注:** このトピックの OpenGL ES 2.0 コードはすべて Khronos Group が提供する Windows API の実装に基づいており、Windows C プログラミング構文を使っています。
+> **注:** このトピックの OpenGL ES 2.0 コードはすべて Khronos Group が提供する Windows API の実装に基づいており、Windows C プログラミング構文を使っています。
 
  
 
@@ -146,6 +146,6 @@ typedef struct
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

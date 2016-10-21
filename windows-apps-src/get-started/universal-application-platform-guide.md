@@ -1,22 +1,19 @@
 ---
 author: TylerMSFT
-title: "ユニバーサル Windows プラットフォーム (UWP) アプリのガイド"
-description: "さまざまなデバイスで実行できるユニバーサル Windows プラットフォーム (UWP) アプリについて説明します。"
+title: "ユニバーサル Windows プラットフォームの紹介"
+description: "Windows 10 を搭載するさまざまなデバイスで実行できるユニバーサル Windows プラットフォーム (UWP) アプリについて説明します。"
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 translationtype: Human Translation
-ms.sourcegitcommit: 2df873ad451e2bb1196a1ce42e3fcd40f8c3ac8e
-ms.openlocfilehash: 925db2c5242eb49229f41298f1db4e2653f3499d
+ms.sourcegitcommit: 0f2ed552898f7cbb476055a6d6b7aa76545113b1
+ms.openlocfilehash: c433bd2eba2a5be114680f52a8da0b5c7b563186
 
 ---
 
-# ユニバーサル Windows プラットフォーム (UWP) アプリのガイド
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+# ユニバーサル Windows プラットフォームの紹介
 
 ここでは、次の項目について説明します。
 
--   *デバイス ファミリ* の定義およびターゲットにするデバイス ファイルを決定する方法。
+-   *デバイス ファミリ*の定義およびターゲットにするデバイス ファイルを決定する方法。
 -   さまざまなデバイスのフォーム ファクターに合わせて UI を対応させることができる新しい UI コントロールおよびパネル。
 -   アプリで利用できる API サーフェスを理解および制御する方法。
 
@@ -267,8 +264,7 @@ UWP アプリに利用可能な Win32 API の完全な一覧については、�
 
 -   あるデバイスから別のデバイスに移動し、中断した場所から再開するユーザーをサポートする方法を検討します。 [通知](https://msdn.microsoft.com/library/windows/apps/mt187203)と[アプリ内購入](https://msdn.microsoft.com/library/windows/apps/mt219684)を計画に盛り込みます。 これらの機能はさまざまなデバイスで動作する必要があります。
 
--   モバイル、小型画面デバイス、大型画面デバイスに対応するには、「[UWP アプリのナビゲーション デザインの基本](https://msdn.microsoft.com/library/windows/apps/dn958438)」を使用してワークフローをデザインします。 
-              さまざまな画面サイズと解像度に対応するように[ユーザー インターフェイスをレイアウトします](https://msdn.microsoft.com/library/windows/apps/dn958435)。
+-   モバイル、小型画面デバイス、大型画面デバイスに対応するには、「[UWP アプリのナビゲーション デザインの基本](https://msdn.microsoft.com/library/windows/apps/dn958438)」を使用してワークフローをデザインします。 さまざまな画面サイズと解像度に対応するように[ユーザー インターフェイスをレイアウトします](https://msdn.microsoft.com/library/windows/apps/dn958435)。
 
 -   小さな携帯電話の画面では役に立たないアプリの機能があるかどうかを検討します。 また、固定されたデスクトップ コンピューターでは役に立たず、モバイル デバイスを使う必要がある領域がある場合もあります。 たとえば、[場所](https://msdn.microsoft.com/library/windows/apps/mt219698)に関連するシナリオではモバイル デバイスを意味することが多いものです。
 
@@ -285,6 +281,6 @@ Windows ストアにアプリ公開の申請をする方法については、「
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Sep16_HO3-->
 
 

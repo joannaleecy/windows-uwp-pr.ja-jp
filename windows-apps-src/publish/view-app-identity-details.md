@@ -3,8 +3,9 @@ author: jnHs
 Description: "Windows デベロッパー センター ダッシュボードを使ったアプリの作業では、Windows ストアによってアプリに割り当てられた一意の ID の詳細を表示したり、ストアでのアプリの内容へのリンクを取得したりできます。"
 title: "アプリ ID の詳細の表示"
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
+translationtype: Human Translation
 ms.sourcegitcommit: a25d87556bb85718f818af5b586f54e6985aaaa4
-ms.openlocfilehash: f00d817616d473ef220ebc1817c2bf9207a7aea0
+ms.openlocfilehash: dc61971865a05e1de17cdcf55ab495fee4917b74
 
 ---
 
@@ -15,8 +16,7 @@ Windows デベロッパー センター ダッシュボードを使ったアプ�
 
 アプリ ID の情報を探すには、アプリのいずれかに移動し、左側のナビゲーション メニューで **[アプリ管理]** を展開します。 **[アプリ ID]** をクリックすると、アプリ ID の詳細が表示されます。
 
-> 
-            **注**  ID の詳細に関するほとんどの情報を表示するには、アプリの[予約名](create-your-app-by-reserving-a-name.md)が必要です。
+> **注**  ID の詳細に関するほとんどの情報を表示するには、アプリの[予約名](create-your-app-by-reserving-a-name.md)が必要です。
 
 ## APPX マニフェストに追加する値
 
@@ -35,17 +35,14 @@ Windows デベロッパー センター ダッシュボードを使ったアプ�
 
 次の値は、アプリのパッケージ ファミリを参照するが、マニフェストには含まれていないその他の値です。
 
--   
-            **パッケージ ファミリ名 (PFN)**: この値は特定の Windows API で使われます。
--   
-            **パッケージ SID**: アプリに WNS の通知を渡すには、この値が必要になります。 詳しくは、「[Windows プッシュ通知サービス (WNS) の概要](https://msdn.microsoft.com/library/windows/apps/mt187203)」をご覧ください。
+-   **パッケージ ファミリ名 (PFN)**: この値は特定の Windows API で使われます。
+-   **パッケージ SID**: アプリに WNS の通知を渡すには、この値が必要になります。 詳しくは、「[Windows プッシュ通知サービス (WNS) の概要](https://msdn.microsoft.com/library/windows/apps/mt187203)」をご覧ください。
 
 ## アプリの内容へのリンク
 
 アプリのページへのリンクを共有することで、ユーザーはストアでアプリを見つけやすくなります。 このリンクは、**`https://www.microsoft.com/store/apps/<your app's Store ID>`** の形式で示されます。
 
-> 
-            **注**  この URL は、アプリが利用可能な任意の OS バージョンで機能します。 また、Windows 8.1 以前や Windows Phone 8.1 以前向けの追加のリンクが表示されることもあります。それらは指定された OS バージョンでのみ機能します。
+> **注**  この URL は、アプリが利用可能な任意の OS バージョンで機能します。 また、Windows 8.1 以前や Windows Phone 8.1 以前向けの追加のリンクが表示されることもあります。それらは指定された OS バージョンでのみ機能します。
 
 ユーザーがこのリンクをクリックすると、アプリの Web ベースの内容ページが開きます。 アプリがユーザーの Windows デバイスで利用できる場合、ストア アプリも起動して、アプリの内容を表示します。
 
@@ -61,6 +58,6 @@ Windows デベロッパー センター ダッシュボードを使ったアプ�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

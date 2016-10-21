@@ -3,8 +3,9 @@ author: mtoepke
 title: "Direct3D 9 と Direct3D 11 の間の重要な変更点"
 description: "このトピックでは、DirectX 9 と DirectX 11 の大まかな違いについて説明します。"
 ms.assetid: 35a9e388-b25e-2aac-0534-577b15dae364
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8d63aebaf656b62481675eebf7c0bf9ea51784a8
+ms.openlocfilehash: 9812e3a4528b0ce8abd76b1bfcfb93b1268f362c
 
 ---
 
@@ -101,8 +102,7 @@ Direct3D 9 ゲームを拡張して、より高い Direct3D 機能レベルを�
 
 Direct3D 9 では、共有配列と一緒に SetVertexShaderConstant と SetPixelShaderConstant を使ってシェーダーの定数を管理していました。 Direct3D 11 では、頂点バッファーやインデックス バッファーと同じようなリソースである定数バッファーを使います。 定数バッファーは、効率的に更新できるように設計されています。 すべてのシェーダー定数を 1 つのグローバル配列にまとめる代わりに、定数を論理グループに整理し、1 つ以上の定数バッファーを使って管理します。 Direct3D 9 ゲームを Direct3D 11 に移植する場合は、定数バッファーを適切に更新できるように整理してください。 たとえば、フレームごとに更新されないシェーダーの定数は別の定数バッファーにグループ化します。そうすると、より動的なシェーダーの定数と一緒にそのデータをグラフィックス アダプターに絶えずアップロードする必要がなくなります。
 
-> 
-            **注**   ほとんどの Direct3D 9 アプリケーションではシェーダーを多用していましたが、従来の固定関数の動作を組み合わせて使うこともありました。 Direct3D 11 では、プログラム可能なシェーダー モデルしか使わないことに注意してください。 Direct3D 9 の従来の固定関数機能は推奨されなくなりました。
+> **注**   ほとんどの Direct3D 9 アプリケーションではシェーダーを多用していましたが、従来の固定関数の動作を組み合わせて使うこともありました。 Direct3D 11 では、プログラム可能なシェーダー モデルしか使わないことに注意してください。 Direct3D 9 の従来の固定関数機能は推奨されなくなりました。
 
  
 
@@ -116,6 +116,6 @@ Direct3D 9 では、共有配列と一緒に SetVertexShaderConstant と SetPixe
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

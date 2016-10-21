@@ -1,45 +1,55 @@
-﻿---
+---
 author: jnHs
-Description: When you create a new add-on in the Windows Dev Center dashboard, you need to specify a product type and assign it a product ID.
-title: Set your add-on product type and product ID
+Description: "Windows デベロッパー センター ダッシュボードで新しいアドオンを作成する際は、製品の種類を指定して、製品 ID を割り当てる必要があります。"
+title: "アドオンの製品の種類と製品 ID を設定する"
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
+translationtype: Human Translation
+ms.sourcegitcommit: e59324aca65cf8baacb085da22a20d952fdb8c9a
+ms.openlocfilehash: 2a469506c8b440e1aa8555ac57b88f2026ae4d8e
+
 ---
 
-# Set your add-on product type and product ID
+# アドオンの製品の種類と製品 ID を設定する
 
-An add-on must be associated with an app that you've created in the dashboard already (even if you haven't submitted it yet). You can find the button to **Create a new add-on** on either your app's **Overview** page or its **Add-ons** page.
+アドオンは、ダッシュボードで作成済みのアプリと関連付けている必要があります (アプリが未申請であっても同様)。 アプリの **[概要]** ページまたは **[アドオン]** ページに **[新しいアドオンを作成する]** ボタンがあります。
 
-Once you've clicked the button, you'll see the **Create a new add-on** page. Here, you'll need to specify a product type and assign it a product ID.
+このボタンをクリックすると、**[新しいアドオンを作成する]** ページが表示されます。 ここで、製品の種類を指定して、製品 ID を割り当てる必要があります。
 
-## Product type
+## 製品の種類
 
-First, you'll need to indicate which type of add-on you are offering. This selection refers to how the customer can use your add-on.
+まず、提供するアドオンの種類を指定する必要があります。 この選択内容は、ユーザーがアドオンをどのように使うことができるかを示しています。
 
-> **Note** You won't be able to change the product type after you save this page to create the add-on. If you did choose the wrong product type, you can always delete your in-progress add-on submission and start over by creating a new add-on.
+> **注** このページを保存してアドオンを作成した後は、製品の種類を変更することはできません。 製品の種類を誤って選択した場合は、進行中のアドオンの申請をいつでも削除して、新しいアドオンを作成し直すことができます。
 
-If the product can be purchased, used (consumed), and then purchased again, you'll want to select one of the **consumable** proudct types. Consumable add-ons are often used for things like in-game currency (gold, coins, etc.) which can be purchased in set amounts and then used up by the customer. For more info on including consumable add-ons in your app, see [Enable consumable add-on purchases](../monetize/enable-consumable-add-on-purchases.md).
+購入して使用 (消費) した後、もう一度購入可能な製品の場合は、**コンシューマブルな**製品の種類を 1 つ選択できます。 コンシューマブル アドオンは多くの場合、一定金額を購入してユーザーが使い切ることができるゲーム内通貨 (ゴールド、コインなど) などに使います。 コンシューマブルなアドオンをアプリで使用する方法について詳しくは、「[コンシューマブルなアドオン購入の有効化](../monetize/enable-consumable-add-on-purchases.md)」をご覧ください。
 
-There are two types of consumable add-ons that you can select:
+選択可能なコンシューマブル アドオンには、2 つの種類があります。
 
-- **Developer-managed consumable**: Supported on all OS versions. Balance and fulfillment must be managed within your app. 
-- **Store-managed consumable:** Balance will be tracked by Microsoft across all of the customer’s devices running Windows 10, version 1607 or later; not supported on any earlier OS versions. To use this option, the parent product must be compiled using Windows 10 SDK version 14393 or later. Also note that you cannot submit a Store-managed consumable add-on to the Store until the parent product has been published (though you can create the submission in your dashboard and begin working on it at any time). You'll need to enter the quantity for your Store-managed consumable add-on in the **Properties** page.
+- **開発者により管理されるコンシューマブル**: すべての OS バージョンでサポートされます。 残高とフルフィルメントは、アプリ内で管理する必要があります。 
+- **ストアで管理されるコンシューマブル:** 残高は、Windows 10 バージョン 1607 以降を実行している顧客の全デバイスを対象に、Microsoft によって追跡されます。これ以前の OS バージョンではサポートされません。 このオプションを使うには、Windows 10 SDK バージョン 14393 以降を使用して親製品をコンパイルする必要があります。 また、親製品が公開されるまで、ストアで管理されるコンシューマブル アドオンをストアに申請することはできません (ただし、ダッシュ ボードで申請を作成して作業を開始することは可能です)。 開発者は **[プロパティ]** ページで、ストアで管理されるコンシューマブル アドオンの数量を入力する必要があります。
 
-You should select **Durable** if your product can be purchased only once. Durable add-ons are often used to unlock additional functionality in an app. Durable add-ons are not consumed, but you can set the **Product lifetime** so that they expire after a set duration (with options from 1-365 days). The default **Product lifetime** for a durable add-on is **Forever**, which means the add-on never expires. You can change this to a different duration in the [Add-on properties](enter-add-on-properties.md) step of the add-on submission process.
+1 回だけ購入できる製品の場合は、**[永続的]** を選択する必要があります。 永続的なアドオンは多くの場合、アプリの追加機能のロックを解除するために使います。 永続的なアドオンは消費されませんが、**[製品の有効期限]** を設定して、設定された期間の後期限が切れるようにすることができます (1 ～ 365 日間のオプションがあります)。 永続的なアドオンの **[製品の有効期限]** の既定値は、**[無期限]** です。つまり、アドオンの期限は切れません。 アドオンの申請プロセスの[アドオンのプロパティ](enter-add-on-properties.md)の手順で、別の期限に変更することができます。
 
-## Product ID
+## 製品 ID
 
-Enter a unique product ID for your add-on. This is the same identifier that you will need to reference in [your app's code to call the add-on](https://msdn.microsoft.com/library/windows/apps/mt219684).
+アドオンの一意の製品 ID を入力します。 アドオンの製品 ID は、[アプリのコードで IAP を呼び出す](https://msdn.microsoft.com/library/windows/apps/mt219684)ときに参照する ID になります。
 
-Here are a few things to keep in mind when choosing a product ID:
+次に示しているのは、IAP の製品 ID を選ぶときの留意点です。
 
--   Customers won't see this product ID. (Later, you can enter a [title and description](create-add-on-descriptions.md) to be displayed to customers.)
--   You can’t change or delete an add-on's product ID after it's been published.
--   A product ID can't be more than 100 characters in length.
--   A product ID cannot include any of the following characters: **&lt; &gt; \* % & : \\ ? + ,**
--   To offer your add-on on all devices, you must only use alphanumeric characters, periods, and/or underscores. If you use any other types of characters, the add-on will not be available for purchase to customers running Windows Phone 8.1 or earlier.
--   A product ID doesn't have to be unique within the Windows Store, but it must be unique to your developer account.
- 
+-   この製品 ID はお客様には表示されません  (後で、お客様に表示される[タイトルと説明](create-add-on-descriptions.md)を入力できます)。
+-   このアドオンの製品 ID はアプリの公開後に変更することも削除することもできません。
+-   この製品 ID の長さは 100 文字以内にする必要があります。
+-   この製品 ID に **&lt; &gt; \* % & : \\ ? + ,** のいずれの文字も含めることはできません。
+-   すべてのデバイスに対応したアドオンを提供するには、英数字、ピリオド、アンダースコアのみを使う必要があります。 その他の種類の文字を使った場合、Windows Phone 8.1 以前を実行しているお客様はそのアドオンを購入できなくなります。
+-   この製品 ID は Windows ストアでは一意である必要はありませんが、開発者アカウントには一意である必要があります。
+ 
 
 
+
+
+
+
+
+<!--HONumber=Aug16_HO5-->
 
 

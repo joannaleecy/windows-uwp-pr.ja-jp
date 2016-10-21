@@ -1,10 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
 title: "ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー"
 description: "音楽、画像、またはビデオの既存のフォルダーを対応するライブラリに追加できます。 ライブラリからフォルダーを削除したり、ライブラリ内のフォルダーの一覧を取得したり、保存した写真、音楽、ビデオにアクセスしたりすることもできます。"
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 332f89f53a55d5783f7497ca5c6cd601dcee5217
+translationtype: Human Translation
+ms.sourcegitcommit: affe6002e22bd10e714dc4782a60ef528c31a407
+ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
 
 ---
 
@@ -38,8 +39,7 @@ ms.openlocfilehash: 332f89f53a55d5783f7497ca5c6cd601dcee5217
 ## ライブラリへの参照を取得する
 
 
-
-            **注:** 必ず適切な機能を宣言してください。
+**注:** 必ず適切な機能を宣言してください。
  
 
 ユーザーの音楽、画像、またはビデオ ライブラリへの参照を取得するには、[**StorageLibrary.GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/dn251725) メソッドを呼び出します。 [**KnownLibraryId**](https://msdn.microsoft.com/library/windows/apps/dn298399) 列挙体の対応する値を指定します。
@@ -62,7 +62,7 @@ ms.openlocfilehash: 332f89f53a55d5783f7497ca5c6cd601dcee5217
     using Windows.Foundation.Collections;
 
     // ...
-            
+
     IObservableVector<Windows.Storage.StorageFolder> myPictureFolders = myPictures.Folders;
 ```
 
@@ -122,25 +122,47 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 次の場所が定義されています。
 
--   
-            **ピクチャ** フォルダー。 画像が格納されます。
+-   **ピクチャ** フォルダー。 画像が格納されます。
 
-    -   
-            **カメラ ロール** フォルダー。 組み込みのカメラからの写真やビデオが格納されます。
+    -   **カメラ ロール** フォルダー。 組み込みのカメラからの写真やビデオが格納されます。
 
-    -   
-            **保存済みの写真**フォルダー。 ユーザーが他のアプリから保存した画像が格納されます。
+    -   **保存済みの写真**フォルダー。 ユーザーが他のアプリから保存した画像が格納されます。
 
--   
-            **ミュージック** フォルダー。 楽曲、ポッドキャスト、オーディオ ブックが格納されます。
+-   **ミュージック** フォルダー。 楽曲、ポッドキャスト、オーディオ ブックが格納されます。
 
--   
-            **ビデオ** フォルダー。 ビデオが格納されます。
+-   **ビデオ** フォルダー。 ビデオが格納されます。
 
 ユーザーやアプリは、メディア ライブラリ フォルダーだけではなく、SD カード上にメディア ファイルを保存することもできます。 SD カード上のメディア ファイルを確実に検索するには、SD カードのコンテンツをスキャンするか、ファイル ピッカーを使ってファイルを検索するようにユーザーに対して要求します。 詳しくは、「[SD カードへのアクセス](access-the-sd-card.md)」をご覧ください。
 
 ## メディア ライブラリへの照会
 
+ファイルのコレクションを取得するには、ライブラリと必要なファイルの種類を指定します。
+
+```cs
+...
+using Windows.Storage;
+using Windows.Storage.Search;
+...
+
+private async void getSongs()
+{
+    QueryOptions queryOption = new QueryOptions
+        (CommonFileQuery.OrderByTitle, new string[] { ".mp3", ".mp4", ".wma" });
+
+    queryOption.FolderDepth = FolderDepth.Deep
+
+    Queue<IStorageFolder> folders = new Queue<IStorageFolder>();
+
+    var files = await KnownFolders.MusicLibrary.CreateFileQueryWithOptions
+      (queryOption).GetFilesAsync();
+
+    foreach (var file in files)
+    {
+        // do something with the music files.
+    }
+
+}
+```
 
 ### 内部ストレージとリムーバブル ストレージの両方が含まれるクエリ結果
 
@@ -154,138 +176,33 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 `await KnownFolders.PicturesLibrary.GetFilesAsync()`を呼び出して、画像ライブラリのコンテンツを照会すると、その結果には internalPic.jpg と SDPic.jpg の両方が含まれます。
 
-### 深いクエリ
 
-メディア ライブラリの内容全体をすばやく列挙するには、深いクエリを使います。
+## 写真の操作
 
-深いクエリは、指定されたメディア タイプのファイルのみを返します。 たとえば、深いクエリでミュージック ライブラリを照会した場合、ミュージック フォルダー内に画像ファイルが検出されたとしても、クエリ結果には含まれません。
 
 すべての画像について低解像度の画像と高解像度の画像の両方を保存するカメラ機能を備えたデバイスでは、深いクエリからは低解像度の画像のみが返されます。
 
 [カメラ ロール] フォルダーと [保存済みの写真] フォルダーでは、深いクエリがサポートされていません。
 
-使うことができる深いクエリは次のとおりです。
+**撮影に使ったアプリで写真を開く**
 
-**ピクチャ ライブラリ**
-
--   `GetFilesAsync(CommonFileQuery.OrderByDate)`
-
-**ミュージック ライブラリ**
-
--   `GetFilesAsync(CommonFileQuery.OrderByName)`
--   `GetFoldersAsync(CommonFolderQuery.GroupByArtist)`
--   `GetFoldersAysnc(CommonFolderQuery.GroupByAlbum)`
--   `GetFoldersAysnc(CommonFolderQuery.GroupByAlbumArtist)`
--   `GetFoldersAsync(CommonFolderQuery.GroupByGenre)`
-
-**ビデオ ライブラリ**
-
--   `GetFilesAsync(CommonFileQuery.OrderByDate)`
-
-### フラット クエリ
-
-ライブラリに格納されているすべてのファイルとフォルダーの完全なリストを取得するには、`GetFilesAsync(CommonFileQuery.DefaultQuery)` を呼び出します。 このメソッドは、ライブラリ内のすべてのファイルをその種類に関係なく返します。 これは浅いクエリであるため、ユーザーによってライブラリにサブフォルダーが作成されていた場合は、独自のコードでサブフォルダーの内容を再帰的に列挙する必要があります。
-
-組み込みクエリで認識されない種類のメディア ファイルを取得したり、特定の種類に該当しないファイルも含め、ライブラリ内のすべてのファイルを取得したりするには、フラット クエリを使います。 たとえば、フラット クエリでミュージック ライブラリを照会し、ミュージック フォルダー内に画像ファイルが検出された場合、そのファイルもすべてクエリ結果に含まれます。
-
-### サンプル クエリ
-
-デバイスとそのオプションの SD カードに、次の画像に示すフォルダーとファイルが格納されているとします。
-
-![格納されているファイル ](images/phone-media-queries.png)
-
-以下に、クエリと返される結果の例をいくつか挙げます。
-
-| クエリ | 結果 |
-|--------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| KnownFolders.PicturesLibrary.GetItemsAsync();  | - 内部ストレージからの [カメラ ロール] フォルダー <br>- SD カードからの [カメラ ロール] フォルダー <br>- 内部ストレージからの [保存済みの写真] フォルダー <br>- SD カードからの [保存済みの写真] フォルダー <br><br>これはフラット クエリであるため、ピクチャ フォルダーの直下にある子だけが返されます。 |
-| KnownFolders.PicturesLibrary.GetFilesAsync();  | 結果は返されません。 <br><br>これはフラット クエリです。ピクチャ フォルダーの直下に子のファイルは存在しません。 |
-| KnownFolders.PicturesLibrary.GetFilesAsync(CommonFileQuery.OrderByDate); | - SD カードからの 4-3-2012.jpg ファイル <br>- 内部ストレージからの 1-1-2014.jpg ファイル <br>- 内部ストレージからの 1-2-2014.jpg ファイル <br>- SD カードからの 1-6-2014.jpg ファイル <br><br>これは深いクエリであるため、ピクチャ フォルダーの内容とその子のフォルダーの内容が返されます。 |
-| KnownFolders.CameraRoll.GetFilesAsync(); | - 内部ストレージからの 1-1-2014.jpg ファイル <br>- SD カードからの 4-3-2012.jpg ファイル <br><br>これはフラット クエリです。 結果の順序は保証されません。 |
-
- 
-## メディア ライブラリの機能とファイルの種類
-
-
-アプリでメディア ファイルにアクセスするためにアプリ マニフェスト ファイルで指定できる機能を次に示します。
-
--   
-            **音楽**。 次の種類のファイルをアプリで参照したりアクセスしたりするには、アプリ マニフェスト ファイルで**音楽ライブラリ**機能を指定します。
-
-    -   .qcp
-    -   .wav
-    -   .mp3
-    -   .m4r
-    -   .m4a
-    -   .aac
-    -   .amr
-    -   .wma
-    -   .3g2 -   .3gp -   .mp4 -   .wm -   .asf -   .3gpp -   .3gp2 -   .mpa -   .adt -   .adts -   .pya -   **写真**。
-    -   次の種類のファイルをアプリで参照したりアクセスしたりするには、アプリ マニフェスト ファイルで**画像ライブラリ**機能を指定します。
-    -   -   .jpeg -   .jpe -   .jpg -   .gif -   .tiff -   .tif -   .png -   .bmp -   .wdp -   .jxr -   .hdp -   **ビデオ**。
-    -   次の種類のファイルをアプリで参照したりアクセスしたりするには、アプリ マニフェスト ファイルで**ビデオ ライブラリ**機能を指定します。
-    -   -   .wm -   .m4v -   .wmv -   .asf -   .mov -   .mp4 -   .3g2 -   .3gp -   .mp4v -   .avi -   .pyv -   .3gpp -   .3gp2
-    -   写真の操作
-    -   すべての画像について低解像度の画像と高解像度の画像の両方を保存するカメラ機能を備えたデバイスでは、深いクエリからは低解像度の画像のみが返されます。
-    -   [カメラ ロール] フォルダーと [保存済みの写真] フォルダーでは、深いクエリがサポートされていません。
-    -   撮影に使ったアプリで写真を開く
-    -   ユーザーが撮影に使ったアプリで後から再び写真を表示できるようにするには、写真のメタデータと一緒に **CreatorAppId** を保存します。次のコード例を参考にしてください。
-    -   この例では、**testPhoto** は [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) です。
--   ストリーム メソッドを使ってメディア ライブラリにファイルを追加する **KnownFolders.PictureLibrary** など、既知のフォルダーを使ってメディア ライブラリにアクセスし、ストリーム メソッドを使ってそのメディア ライブラリにファイルを追加するときは、コードで開いているすべてのストリームを閉じる必要があります。
-
-    -   そのようにしなかった場合、ファイルへのハンドルを保持しているストリームが少なくとも 1 つは存在することとなり、ストリーム メソッドは、メディア ライブラリに正しくファイルを追加できません。
-    -   たとえば、以下のコードを実行したときに、メディア ライブラリにファイルが追加されません。
-    -   `using (var destinationStream = (await destinationFile.OpenAsync(FileAccessMode.ReadWrite)).GetOutputStreamAt(0))` のコード行において、**OpenAsync** メソッドと **GetOutputStreamAt** メソッドの両方がストリームを開いています。
-    -   しかし、**using** ステートメントの結果として破棄されるのは、**GetOutputStreamAt** メソッドによって開かれたストリームだけです。
-    -   もう一方のストリームは開いたままであり、そのことがファイルの保存を妨げます。
-    -   ストリーム メソッドを正しく使ってメディア ライブラリにファイルを追加するには、以下の例のように、コード中で開いているストリームをすべて閉じてください。
-    -   .png
-    -   .bmp
-    -   .wdp
-    -   .jxr
-    -   .hdp
--   <bpt id="p1">**</bpt>Videos<ept id="p1">**</ept>. Specify the <bpt id="p1">**</bpt>Video Library<ept id="p1">**</ept> capability in the app manifest file to let your app see and access files of the following file types:
-
-    -   .wm
-    -   .m4v
-    -   .wmv
-    -   .asf
-    -   .mov
-    -   .mp4
-    -   .3g2
-    -   .3gp
-    -   .mp4v
-    -   .avi
-    -   .pyv
-    -   .3gpp
-    -   .3gp2
-
-## Working with photos
-
-
-On devices where the camera saves both a low-resolution image and a high-resolution image of every picture, the deep queries return only the low-resolution image.
-
-The Camera Roll and the Saved Pictures folder do not support the deep queries.
-
-**Opening a photo in the app that captured it**
-
-If you want to let the user open a photo again later in the app that captured it, you can save the <bpt id="p1">**</bpt>CreatorAppId<ept id="p1">**</ept> with the photo's metadata by using code similar to the following example. In this example, <bpt id="p1">**</bpt>testPhoto<ept id="p1">**</ept> is a <bpt id="p2">[</bpt><bpt id="p3">**</bpt>StorageFile<ept id="p3">**</ept><ept id="p2">](https://msdn.microsoft.com/library/windows/apps/br227171)</ept>.
+ユーザーが撮影に使ったアプリで後から再び写真を表示できるようにするには、写真のメタデータと一緒に **CreatorAppId** を保存します。次のコード例を参考にしてください。 この例では、**testPhoto** は [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) です。
 
 ```CSharp
   IDictionary<string, object> propertiesToSave = new Dictionary<string, object>();
 
   propertiesToSave.Add("System.CreatorOpenWithUIOptions", 1);
   propertiesToSave.Add("System.CreatorAppId", appId);
- 
+
   testPhoto.Properties.SavePropertiesAsync(propertiesToSave).AsyncWait();   
 ```
 
-## Using stream methods to add a file to a media library
+## ストリーム メソッドを使ってメディア ライブラリにファイルを追加する
 
 
-When you access a media library by using a known folder such as <bpt id="p1">**</bpt>KnownFolders.PictureLibrary<ept id="p1">**</ept>, and you use stream methods to add a file to the media library, you have to make sure to close all the streams that your code opens. Otherwise these methods fail to add the file to the media library as expected because at least one stream still has a handle to the file.
+**KnownFolders.PictureLibrary** など、既知のフォルダーを使ってメディア ライブラリにアクセスし、ストリーム メソッドを使ってそのメディア ライブラリにファイルを追加するときは、コードで開いているすべてのストリームを閉じる必要があります。 そのようにしなかった場合、ファイルへのハンドルを保持しているストリームが少なくとも 1 つは存在することとなり、ストリーム メソッドは、メディア ライブラリに正しくファイルを追加できません。
 
-For example, when you run the following code, the file is not added to the media library. In the line of code, <ph id="ph1">`using (var destinationStream = (await destinationFile.OpenAsync(FileAccessMode.ReadWrite)).GetOutputStreamAt(0))`</ph>, both the <bpt id="p1">**</bpt>OpenAsync<ept id="p1">**</ept> method and the <bpt id="p2">**</bpt>GetOutputStreamAt<ept id="p2">**</ept> method open a stream. However only the stream opened by the <bpt id="p1">**</bpt>GetOutputStreamAt<ept id="p1">**</ept> method is disposed as a result of the <bpt id="p2">**</bpt>using<ept id="p2">**</ept> statement. The other stream remains open and prevents saving the file.
+たとえば、以下のコードを実行したときに、メディア ライブラリにファイルが追加されません。 `using (var destinationStream = (await destinationFile.OpenAsync(FileAccessMode.ReadWrite)).GetOutputStreamAt(0))` のコード行において、**OpenAsync** メソッドと **GetOutputStreamAt** メソッドの両方がストリームを開いています。 しかし、**using** ステートメントの結果として破棄されるのは、**GetOutputStreamAt** メソッドによって開かれたストリームだけです。 もう一方のストリームは開いたままであり、そのことがファイルの保存を妨げます。
 
 ```CSharp
 StorageFolder testFolder = await StorageFolder.GetFolderFromPathAsync(@"C:\test");
@@ -301,7 +218,7 @@ using (var sourceStream = (await sourceFile.OpenReadAsync()).GetInputStreamAt(0)
 
 ```
 
-To use stream methods successfully to add a file to the media library, make sure to close all the streams that your code opens, as shown in the following example.
+ストリーム メソッドを正しく使ってメディア ライブラリにファイルを追加するには、以下の例のように、コード中で開いているストリームをすべて閉じてください。
 
 ```CSharp
 StorageFolder testFolder = await StorageFolder.GetFolderFromPathAsync(@"C:\test");
@@ -329,10 +246,6 @@ using (var sourceStream = await sourceFile.OpenReadAsync())
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

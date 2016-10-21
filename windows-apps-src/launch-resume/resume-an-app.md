@@ -3,28 +3,21 @@ author: TylerMSFT
 title: "アプリの再開の処理"
 description: "システムがアプリを再開するときに表示されるコンテンツを更新する方法について説明します。"
 ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
-ms.sourcegitcommit: e6957dd44cdf6d474ae247ee0e9ba62bf17251da
-ms.openlocfilehash: dd3d75c7f3dfe325324e1fe31c039cd207b68d0b
+translationtype: Human Translation
+ms.sourcegitcommit: 231161ba576a140859952a7e9a4e8d3bd0ba4596
+ms.openlocfilehash: 2813a112f9d60c5b133284903c98a152bd027bee
 
 ---
 
 # アプリの再開の処理
 
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
-
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください。 \]
 
 **重要な API**
 
 -   [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)
 
-システムがアプリを再開するときに表示されるコンテンツを更新する方法について説明します。 このトピックの例では、[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントのイベント ハンドラーを登録します。
-
-
-            **ロードマップ:** このトピックと他のトピックとの関連については、 以下をご覧ください。
-
--   [C# または Visual Basic を使った Windows ランタイム アプリのためのロードマップ](https://msdn.microsoft.com/library/windows/apps/br229583)
--   [C++ を使った Windows ランタイム アプリのためのロードマップ](https://msdn.microsoft.com/library/windows/apps/hh700360)
+システムがアプリを再開するときに、どこで UI を更新するかについて説明します。 このトピックの例では、[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントのイベント ハンドラーを登録します。
 
 ## Resuming イベント ハンドラーに登録する
 
@@ -60,9 +53,13 @@ ms.openlocfilehash: dd3d75c7f3dfe325324e1fe31c039cd207b68d0b
 > }
 > ```
 
-## [!div class="tabbedCodeSnippets"]
+## 表示されているコンテンツの更新とリソースの再取得
 
-一時停止の後で表示されるコンテンツを更新する
+ユーザーが別のアプリまたはデスクトップに切り替えると、数秒後にシステムがアプリを中断します。 ユーザーが元のアプリに戻すと、システムはアプリを再開します。 システムがアプリを再開した時点で、変数とデータ構造の内容は、システムがアプリを一時停止する前の状態と同じです。 システムは、アプリを中断前の状態に復元します。 ユーザーには、アプリがバックグラウンドで実行されていたかのように見えます。
+
+アプリが [ **Resuming** ](https://msdn.microsoft.com/library/windows/apps/br242339) イベントを処理した時点で、アプリの中断時間が数時間 (あるいは数日間) に及んでいる可能性もあります。 アプリが中断されている間に古くなった可能性があるコンテンツは、すべて更新されます (ニュース フィードやユーザーの所在地など)。
+
+これは、アプリが中断されたときにリリースした排他リソース (ファイル ハンドル、カメラ、I/O デバイス、外部デバイス、およびネットワーク リソースなど) を復元する良い機会でもあります。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -70,7 +67,7 @@ ms.openlocfilehash: dd3d75c7f3dfe325324e1fe31c039cd207b68d0b
 > {
 >     private void App_Resuming(Object sender, Object e)
 >     {
->         // TODO: Refresh network data
+>         // TODO: Refresh network data, perform UI updates, and reacquire resources like cameras, I/O devices, etc.
 >     }
 > }
 > ```
@@ -79,7 +76,7 @@ ms.openlocfilehash: dd3d75c7f3dfe325324e1fe31c039cd207b68d0b
 >
 >     Private Sub App_Resuming(sender As Object, e As Object)
 >  
->         ' TODO: Refresh network data
+>         ' TODO: Refresh network data, perform UI updates, and reacquire resources like cameras, I/O devices, etc.
 >
 >     End Sub
 >
@@ -88,35 +85,26 @@ ms.openlocfilehash: dd3d75c7f3dfe325324e1fe31c039cd207b68d0b
 > ```cpp
 > void MainPage::App_Resuming(Object^ sender, Object^ e)
 > {
->     // TODO: Refresh network data
+>     // TODO: Refresh network data, perform UI updates, and reacquire resources like cameras, I/O devices, etc.
 > }
 > ```
 
-> アプリでは、[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントを処理する時点で、表示されているコンテンツを更新できます。
+> **注:** [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントは UI とは異なるスレッドで発生するため、UI へのコールをディスパッチするために、ハンドラー内でディスパッチャーを使う必要があります。
 
-## [!div class="tabbedCodeSnippets"]
+## 注釈
 
+アプリが Visual Studio のデバッガーにアタッチされている場合、アプリは中断されません。 ただし、アプリをデバッガーから中断した後、アプリに **Resume** イベントを送信してコードをデバッグすることは可能です。 **[デバッグの場所] ツール バー**が表示されていることを確認し、**[中断]** アイコンの横のドロップダウンをクリックします。 次に、**[再開]** をクリックします。
 
+Windows Phone ストア アプリでは、アプリが現在一時停止中で、ユーザーがプライマリ タイルまたはアプリの一覧からアプリを再起動した場合でも、[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントの後に、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) イベントが常に発生します。 現在のウィンドウにコンテンツ セットが既にある場合、アプリは初期化をスキップすることがあります。 [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) プロパティをチェックすると、アプリがプライマリ タイルとセカンダリ タイルのどちらから起動されたかを調べ、その情報に基づいて新しいアプリ エクスペリエンスを表示するか、アプリ エクスペリエンスを再開するかを判断できます。
 
-            **注**  [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントは UI スレッドからは生成されないため、ハンドラーでこのような処理が必要な場合は、ディスパッチャーを使って UI スレッドにアクセスし、UI に更新を流し込む必要があります。 注釈 ユーザーが別のアプリまたはデスクトップに切り替えると、システムはアプリを中断します。 ユーザーが元のアプリに戻すと、システムはアプリを再開します。 システムがアプリを再開した時点で、変数とデータ構造の内容は、システムがアプリを一時停止する前の状態と同じです。
+## 関連トピック
 
-システムはアプリを厳密に一時停止前の状態に復元するので、ユーザーからはアプリがバックグラウンドで実行していたように見えます。
-
-> しかし、アプリは長時間一時停止している場合があるので、ニュース フィードやユーザーの位置情報など、アプリが一時停止している間に変化した可能性のある表示コンテンツを更新する必要があります。 アプリに更新する表示コンテンツがない場合、アプリで [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントを処理する必要はありません。 
-            **注** アプリが Visual Studio デバッガーにアタッチされている場合、そのアプリに **Resume** イベントを送信できます。
-
-> **[デバッグの場所] ツール バー**が表示されていることを確認し、**[中断]** アイコンの横のドロップダウンをクリックします。 次に、**[再開]** をクリックします。 
-            **注**  Windows Phone ストア アプリでは、アプリが現在一時停止中で、ユーザーがプライマリ タイルまたはアプリの一覧からアプリを再起動した場合でも、[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントの後に、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) イベントが常に発生します。
-
-## 現在のウィンドウにコンテンツ セットが既にある場合、アプリは初期化をスキップすることがあります。
-
-* [[**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) プロパティをチェックすると、アプリがプライマリ タイルとセカンダリ タイルのどちらから起動されたかを調べ、その情報に基づいて新しいアプリ エクスペリエンスを表示するか、アプリ エクスペリエンスを再開するかを判断できます。](activate-an-app.md)
-* [関連トピック](suspend-an-app.md)
-* [アプリのアクティブ化の処理](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [アプリの中断の処理](app-lifecycle.md)
+* [アプリのライフサイクル](app-lifecycle.md)
+* [アプリのアクティブ化の処理](activate-an-app.md)
+* [アプリの中断の処理](suspend-an-app.md)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

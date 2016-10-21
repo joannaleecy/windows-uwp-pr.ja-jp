@@ -3,8 +3,9 @@ author: TylerMSFT
 title: "スプラッシュ画面の表示時間の延長"
 description: "アプリに追加スプラッシュ画面を作成すると、より長い時間、スプラッシュ画面を表示することができます。 この追加画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。"
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
+translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
+ms.openlocfilehash: bec87d2e208ca6f8d310de139692ef13f052b915
 
 ---
 
@@ -22,8 +23,7 @@ ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
 
 アプリに追加スプラッシュ画面を作成すれば、より長い時間、スプラッシュ画面を表示することができます。 この追加画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。 読み込み状況をリアルタイムにユーザーに表示する場合や、アプリの最初の UI の準備に時間がかかる場合、追加スプラッシュ画面を使って起動時のエクスペリエンスを定義できます。
 
-> 
-            **注:** このトピックで "追加スプラッシュ画面" という用語は、表示される時間が延長されたスプラッシュ画面を指します。 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) クラスを拡張するサブクラスやこのクラスから派生したサブクラスという意味ではありません。
+> **注:** このトピックで "追加スプラッシュ画面" という用語は、表示される時間が延長されたスプラッシュ画面を指します。 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) クラスを拡張するサブクラスやこのクラスから派生したサブクラスという意味ではありません。
 
  
 
@@ -70,8 +70,7 @@ ExtendedSplash.xaml ファイルで次の操作を行います。
     </Grid>
 ```
 
-
-            **注:** このコードでは [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) の幅を 20 ピクセルに設定しています。 この幅はアプリに合わせて手動で設定できますが、20 ピクセル未満の幅ではコントロールがレンダリングされません。
+**注:** このコードでは [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) の幅を 20 ピクセルに設定しています。 この幅はアプリに合わせて手動で設定できますが、20 ピクセル未満の幅ではコントロールがレンダリングされません。
 
  
 
@@ -215,8 +214,7 @@ ExtendedSplash.xaml ファイルで次の操作を行います。
     }
     ```
 
-    
-            **注:** イメージの場所を取得する前に、クラス変数 (`splash`) に有効な [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) オブジェクトが含まれていることを確認してください (例を参照)。
+    **注:** イメージの場所を取得する前に、クラス変数 (`splash`) に有効な [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) オブジェクトが含まれていることを確認してください (例を参照)。
 
      
 
@@ -262,8 +260,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 ## コードを完成させる
 
 
-> 
-            **注:** 次のコードは、前の手順に示したスニペットとは少し異なります。
+> **注:** 次のコードは、前の手順に示したスニペットとは少し異なります。
 -   ExtendedSplash.xaml には `DismissSplash` ボタンが含まれています。 このボタンがクリックされると、イベント ハンドラーである `DismissSplashButton_Click` が `DismissExtendedSplash` メソッドを呼び出します。 アプリで、リソースの読み込みまたは UI の初期化の完了時に `DismissExtendedSplash` を呼び出します。
 -   このアプリは、[**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) ナビゲーションを使う、UWP アプリのプロジェクト テンプレートも使います。 その結果、App.xaml.cs ファイルで、起動アクティブ化ハンドラー ([**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)) は `rootFrame` を定義し、それを使ってアプリのウィンドウのコンテンツを設定します。
 
@@ -554,6 +551,6 @@ namespace SplashScreenExample
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

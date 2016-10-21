@@ -1,19 +1,19 @@
 ---
 author: mcleanbyron
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
-description: "Windows ストア購入 API 内のこのメソッドを使用して、無料の製品またはアプリ内製品 (IAP) を特定のユーザーに対して付与します。"
+description: "Windows ストア購入 API 内のこのメソッドを使用して、無料のアプリまたはアドオンを特定のユーザーに対して付与します。"
 title: "無料の製品の付与"
 translationtype: Human Translation
-ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
-ms.openlocfilehash: 64c600460c1cbcbd6bb486649e2bc98298ca9dbe
+ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
+ms.openlocfilehash: a04918a562d132f6a721b96c7f4ad78218eb8819
 
 ---
 
 # 無料の製品の付与
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
-Windows ストア購入 API 内のこのメソッドを使用して、無料の製品またはアプリ内製品 (IAP) を特定のユーザーに対して付与します。
+
+Windows ストア購入 API 内のこのメソッドを使用して、無料のアプリまたはアドオン (アプリ内製品 (IAP) とも呼ばれます) を特定のユーザーに対して付与します。
 
 現時点では、無料の製品のみを付与することができます。 サービスがこのメソッドを使用して無料でない製品を付与しようとすると、このメソッドはエラーを返します。
 
@@ -41,7 +41,7 @@ Windows ストア購入 API 内のこのメソッドを使用して、無料の�
 
 | ヘッダー         | タイプ   | 説明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | string | 必須。 **Bearer**&lt;*token*&gt; という形式の Azure AD アクセス トークン。                           |
+| Authorization  | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。                           |
 | Host           | string | 値 **collections.mp.microsoft.com** に設定する必要があります。                                            |
 | Content-Length | number | 要求の本文の長さ。                                                                       |
 | Content-Type   | string | 要求と応答の種類を指定します。 現時点では、サポートされている唯一の値は **application/json** です。 |
@@ -58,7 +58,7 @@ Windows ストア購入 API 内のこのメソッドを使用して、無料の�
 | language       | string | ユーザーの言語。                                                                                                                                                                                                                                                                                              | 必須      |
 | market         | string | ユーザーの市場。                                                                                                                                                                                                                                                                                                | 必須      |
 | orderId        | guid   | 注文に対して生成された GUID。 この値はそのユーザーに関して一意ですが、すべての注文にわたって一意である必要はありません。                                                                                                                                                                                              | 必須      |
-| productId      | string | Windows ストア カタログのストア ID。 ストア ID は、デベロッパー センター ダッシュボードの[アプリ ID ページ](../publish/view-app-identity-details.md)で確認できます。 ストア ID の例は 9WZDNCRFJ3Q8 です。 | 必須      |
+| productId      | string | Windows ストア カタログのストア ID。 アプリの場合、ストア ID は、デベロッパー センター ダッシュボードの[アプリ ID ページ](../publish/view-app-identity-details.md)で確認できます。 アドオンの場合、ストア ID は、Windows デベロッパー センター ダッシュボードにあるアドオンの概要ページの URL の中にあります。 ストア ID の例は 9WZDNCRFJ3Q8 です。 | 必須      |
 | quantity       | int    | 購入する数量。 現時点では、サポートされている唯一の値は 1 です。 指定されていない場合は、既定値は 1 です。                                                                                                                                                                                                                | 省略可能       |
 | skuId          | string | Windows ストア カタログの SKU ID。 SKU ID の例は “0010” です。                                                                                                                                                                                                                                                | 必須      |
 
@@ -128,7 +128,7 @@ OrderLineItemV6 オブジェクトには以下のパラメーターが含まれ�
 | billingState            | string         | 注文の請求の状態。 完了すると、これは **Charged** に設定されます。                                   | 省略可能       |
 | campaignId              | string         | この注文のキャンペーン ID。                                                                              | 省略可能       |
 | currencyCode            | string         | 価格の詳細に使用される通貨コード。                                                                    | 必須      |
-| Description             | string         | 行項目のローカライズされた説明。                                                                    | 必須      |
+| 説明             | string         | 行項目のローカライズされた説明。                                                                    | 必須      |
 | devofferId              | string         | 特定の注文のプラン ID (該当する場合)。                                                           | 省略可能       |
 | fulfillmentDate         | datetimeoffset | フルフィルメントが発生した日付。                                                                           | 省略可能       |
 | fulfillmentState        | string         | この項目のフルフィルメントの状態。 完了すると、これは **Fulfilled** に設定されます。                      | 省略可能       |
@@ -137,9 +137,9 @@ OrderLineItemV6 オブジェクトには以下のパラメーターが含まれ�
 | legacyBillingOrderId    | string         | 従来の課金 ID。                                                                                       | 省略可能       |
 | lineItemId              | string         | この注文の項目の行項目 ID。                                                                 | 必須      |
 | listPrice               | decimal        | この注文の項目の定価。                                                                    | 必須      |
-| productId               | string         | 行項目の Windows ストア製品 ID。                                                               | 必須      |
+| productId               | string         | 行項目のストア ID。                                                               | 必須      |
 | productType             | string         | 製品の種類。 サポートされる値は、**Durable**、**Application**、および **UnmanagedConsumable** です。 | 必須      |
-| Quantity                | int            | 注文された項目の数量。                                                                            | 必須      |
+| quantity                | int            | 注文された項目の数量。                                                                            | 必須      |
 | retailPrice             | decimal        | 注文された項目の小売価格。                                                                        | 必須      |
 | revenueRecognitionState | string         | 収益認識の状態。                                                                               | 必須      |
 | skuId                   | string         | 行項目の Windows ストア SKU ID。                                                                   | 必須      |
@@ -245,6 +245,6 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

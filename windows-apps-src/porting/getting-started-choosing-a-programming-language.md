@@ -3,8 +3,9 @@ author: mcleblanc
 title: "プログラミング言語の選択"
 ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
 description: "プログラミング言語の選択"
+translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 10fa4a349621c8e7b248c7daf4d7cdf967e25255
+ms.openlocfilehash: c7d99923a0deac61e289d3a2796b8dd1720430b4
 
 ---
 
@@ -26,8 +27,7 @@ C++、C#、Microsoft Visual Basic、JavaScript を使って開発できます。
 -   [C# または Visual Basic を使った初めての Windows Phone ストア アプリの作成](http://go.microsoft.com/fwlink/p/?LinkID=397877)
 -   [Windows Phone 8.1 での WinJS](http://go.microsoft.com/fwlink/p/?LinkID=397879)
 
-
-            **注:** 3D グラフィックスを使うアプリの場合、OpenGL 規格と OpenGL ES 規格は UWP アプリにはネイティブで利用できません。 OpenGL ES のコードを Microsoft DirectX に書き換えない場合は、**Angle** に関心を持つかもしれません。 Angle は OpenGL API 呼び出しを DirectX API 呼び出しに翻訳することにより、OpenGL を DirectX に変換するように設計された進行中のプロジェクトです。 詳しくは、次のトピックをご覧ください。
+**注:** 3D グラフィックスを使うアプリの場合、OpenGL 規格と OpenGL ES 規格は UWP アプリにはネイティブで利用できません。 OpenGL ES のコードを Microsoft DirectX に書き換えない場合は、**Angle** に関心を持つかもしれません。 Angle は OpenGL API 呼び出しを DirectX API 呼び出しに翻訳することにより、OpenGL を DirectX に変換するように設計された進行中のプロジェクトです。 詳しくは、次のトピックをご覧ください。
 -   [Angle](https://code.google.com/p/angleproject/)
 -   [DirectX を使った初めての Windows ストア アプリの作成](https://msdn.microsoft.com/library/windows/apps/br229580)
 -   [DirectX を使った Windows ストア アプリのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=263603)
@@ -145,6 +145,6 @@ C# は習得が容易な言語であり、.NET を構成する多くのサポー
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

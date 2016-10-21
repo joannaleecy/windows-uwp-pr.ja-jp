@@ -3,8 +3,9 @@ author: TylerMSFT
 ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
 title: "タイマーを使った作業項目の送信"
 description: "タイマーが終了した後に実行される作業項目の作成方法を説明します。"
+translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 033669a781aa85cc2c90fa11816e385ffefa997d
+ms.openlocfilehash: ea45e3b61f7646b5df978f36961bd6264ff08fe2
 
 ---
 # タイマーを使った作業項目の送信
@@ -22,8 +23,7 @@ ms.openlocfilehash: 033669a781aa85cc2c90fa11816e385ffefa997d
 
 [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) メソッドを使って、作業項目に対応するタイマーを作成します。 作業を実行するラムダを指定し、*delay* パラメーターを使って、利用可能なスレッドに作業項目を割り当てることができるようになるまでスレッド プールが待機する時間を指定します。 delay パラメーターは [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996) 構造体を使って指定します。
 
-> 
-            **注:** [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) を使って UI にアクセスしたり、作業項目の進捗状況を表示したりすることができます。
+> **注**  [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) を使って UI にアクセスしたり、作業項目の進捗状況を表示したりすることができます。
 
 次の例では、3 分間実行される作業項目を作成します。
 
@@ -81,11 +81,11 @@ ms.openlocfilehash: 033669a781aa85cc2c90fa11816e385ffefa997d
 >         }), delay);
 > ```
 
-## [!div class="tabbedCodeSnippets"]
+## 完了ハンドラーの指定
 
-完了ハンドラーの指定 必要であれば、[**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) を使って、作業項目の取り消しと完了を処理します。 追加のラムダを指定するには、[**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) オーバーロードを使います。
+必要であれば、[**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) を使って、作業項目の取り消しと完了を処理します。 追加のラムダを指定するには、[**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) オーバーロードを使います。 これは、タイマーが取り消されたとき、または作業項目が完了したときに実行されます。
 
-これは、タイマーが取り消されたとき、または作業項目が完了したときに実行されます。
+次の例では、作業項目を送信するタイマーを作成し、作業項目が完了したとき、またはタイマーが取り消されたときにメソッドを呼び出します。
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -201,9 +201,9 @@ ms.openlocfilehash: 033669a781aa85cc2c90fa11816e385ffefa997d
 >         }));
 > ```
 
-## 次の例では、作業項目を送信するタイマーを作成し、作業項目が完了したとき、またはタイマーが取り消されたときにメソッドを呼び出します。
+## タイマーの取り消し
 
-[!div class="tabbedCodeSnippets"] タイマーの取り消し
+タイマーがカウント ダウンを続けているが、作業項目はもう不要である場合は、[**Cancel**](https://msdn.microsoft.com/library/windows/apps/BR230588) を呼び出します。 タイマーが取り消され、作業項目がスレッド プールに送信されなくなります。
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -213,19 +213,19 @@ ms.openlocfilehash: 033669a781aa85cc2c90fa11816e385ffefa997d
 > DelayTimer->Cancel();
 > ```
 
-## タイマーがカウント ダウンを続けているが、作業項目はもう不要である場合は、[**Cancel**](https://msdn.microsoft.com/library/windows/apps/BR230588) を呼び出します。
+## 注釈
 
-タイマーが取り消され、作業項目がスレッド プールに送信されなくなります。 [!div class="tabbedCodeSnippets"]
+ユニバーサル Windows プラットフォーム (UWP) アプリでは UI スレッドをブロックできるため、**Thread.Sleep** を使うことができません。 代わりに、[**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) を使って作業項目を作ります。これによって、UI スレッドをブロックすることなく、作業項目によって実行されたタスクを遅延します。
 
-注釈 ユニバーサル Windows プラットフォーム (UWP) アプリでは UI スレッドをブロックできるため、**Thread.Sleep** を使うことができません。
+作業項目、タイマー作業項目、定期的な作業項目の使い方を示すコード サンプル全体については、[スレッド プールのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=255387)をご覧ください。 コード サンプルは、当初、Windows 8.1 用に作成されましたが、コードは Windows 10 で再利用できます。
 
-代わりに、[**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) を使って作業項目を作ります。これによって、UI スレッドをブロックすることなく、作業項目によって実行されたタスクを遅延します。
+繰り返しタイマーについて詳しくは、「[定期的な作業項目の作成](create-a-periodic-work-item.md)」をご覧ください。
 
-## 作業項目、タイマー作業項目、定期的な作業項目の使い方を示すコード サンプル全体については、[スレッド プールのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=255387)をご覧ください。
+## 関連トピック
 
-* [コード サンプルは、当初、Windows 8.1 用に作成されましたが、コードは Windows 10 で再利用できます。](submit-a-work-item-to-the-thread-pool.md)
-* [繰り返しタイマーについて詳しくは、「[定期的な作業項目の作成](create-a-periodic-work-item.md)」をご覧ください。](best-practices-for-using-the-thread-pool.md)
-* [関連トピック](use-a-timer-to-submit-a-work-item.md)
+* [スレッド プールへの作業項目の送信](submit-a-work-item-to-the-thread-pool.md)
+* [スレッド プールを使うためのベスト プラクティス](best-practices-for-using-the-thread-pool.md)
+* [タイマーを使った作業項目の送信](use-a-timer-to-submit-a-work-item.md)
  
 
  
@@ -233,6 +233,6 @@ ms.openlocfilehash: 033669a781aa85cc2c90fa11816e385ffefa997d
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,8 +5,9 @@ ms.assetid: 59FA3B87-75A6-4B30-BA7C-A0E769D68050
 title: "ストア内のアクセシビリティ"
 label: Accessibility in the Store
 template: detail.hbs
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 46dfe4fba383861c704b2ba9070bdd8102b10562
+translationtype: Human Translation
+ms.sourcegitcommit: 137e8671655c0d20b0343ee7f87086d271fdc531
+ms.openlocfilehash: 8d987e9c1c9476625b8544ee95abc62e2b2c09f5
 
 ---
 
@@ -42,10 +43,10 @@ Windows ストアで認定を受けるためにアプリを提出している間
 
 <span id="related_topics"/>
 ## 関連トピック    
-* [アクセシビリティ](accessibility.md)
+* [アクセシビリティ](accessibility.md) 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

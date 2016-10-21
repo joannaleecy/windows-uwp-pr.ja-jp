@@ -1,11 +1,10 @@
 ---
 author: payzer
 title: "スケーリングを無効にする方法"
-description: 
-area: Xbox
+description: "既定の倍率を無効にする方法を説明します。"
 translationtype: Human Translation
-ms.sourcegitcommit: 192de32bf3afd11cd375655ad92d194ccb09dae1
-ms.openlocfilehash: 307606bc290e9c5268fc5a37b72770d6b1ada4da
+ms.sourcegitcommit: 582f5677c15f7cd62c398103b48743ba4bea6c5b
+ms.openlocfilehash: 8079be9685558277565766fa8d0ebbfd4a555904
 
 ---
 
@@ -15,7 +14,9 @@ ms.openlocfilehash: 307606bc290e9c5268fc5a37b72770d6b1ada4da
 ## HTML   
 次のコード スニペットを使って倍率を無効にすることができます。 
    
-`var result = Windows.UI.ViewManagement.ApplicationViewScaling.trySetDisableLayoutScaling(true);` 
+```
+var result = Windows.UI.ViewManagement.ApplicationViewScaling.trySetDisableLayoutScaling(true);
+```
 
 また、Web 対応の次の方法を使うこともできます。   
 
@@ -30,13 +31,19 @@ ms.openlocfilehash: 307606bc290e9c5268fc5a37b72770d6b1ada4da
 ## XAML
 次のコード スニペットを使って倍率を無効にすることができます。   
    
-`bool result = Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayoutScaling(true);`   
+```
+bool result = Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayoutScaling(true);
+```
    
 ## DirectX/C++   
-DirectX/C++ アプリケーションはスケーリングされません。 自動スケーリングは、HTML アプリケーションと XAML アプリケーションにのみ適用されます。   
+DirectX/C++ アプリケーションはスケーリングされません。 自動スケーリングは、HTML アプリケーションと XAML アプリケーションにのみ適用されます。  
+
+## 関連項目
+- [Xbox のベスト プラクティス](tailoring-for-xbox.md)
+- [Xbox One の UWP](index.md)
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

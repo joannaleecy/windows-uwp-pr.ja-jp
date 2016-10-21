@@ -1,14 +1,19 @@
 ---
 author: QuinnRadich
-title: Windows 10 の新着情報
-description: Windows 10 バージョン 1607 と新しい開発者ツールを使うと、新しいユニバーサル Windows プラットフォームによって強化されたツール、機能、そしてエクスペリエンスが利用できます。
+title: "開発者向けの Windows 10 の新機能、ツールと機能"
+description: "Windows 10 バージョン 1607 と新しい開発者ツールを使うと、新しいユニバーサル Windows プラットフォームによって強化されたツール、機能、そしてエクスペリエンスが利用できます。"
+keywords: "新着情報, 新しい情報, 更新, 更新情報, 機能, 新規, Windows 10, 1607, 7 月, 最新"
+translationtype: Human Translation
+ms.sourcegitcommit: fabe73cf75db4ce4b27805c7a4cf1c820be1b43e
+ms.openlocfilehash: e9e381f3d01e2c0acc5c4ad55937fce3120a3249
+
 ---
 
-# Windows の新着情報
+# Windows 10 の開発者向け新着情報
 
 Windows 10 バージョン 1607 と Windows 開発者ツールの更新プログラムでは、引き続きユニバーサル Windows プラットフォームによって強化されたツール、機能、エクスペリエンスを提供しています。 Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/fwlink/?LinkId=821431)すると、[新しいユニバーサル Windows アプリを作成](https://msdn.microsoft.com/library/windows/apps/bg124288)したり、[Windows の既存のアプリ コード](https://msdn.microsoft.com/library/windows/apps/mt238321)がどのように使えるかを試したりすることができます。
 
-開発者にとって重要な新機能や強化された機能の一覧を以下に示します。 Windows SDK に追加されたすべての新しい名前空間の一覧については、「[Windows 10 バージョン 1607 API の変更点](windows-10-version-1607-api-diff.md)」をご覧ください。
+開発者にとって重要な新機能や強化された機能の一覧を以下に示します。 Windows SDK に追加されたすべての新しい名前空間の一覧については、「[Windows 10 バージョン 1607 API の変更点](windows-10-version-1607-api-diff.md)」をご覧ください。 この更新での注目すべき機能について詳しくは、「[Windows 10 の優れた機能](http://go.microsoft.com/fwlink/?LinkId=823181)」をご覧ください。
 
 ## Windows 10 バージョン 1607 - 2016 年 7 月
 
@@ -21,17 +26,18 @@ XAML 要素のアクセス キー | 新しい [**AccessKey**](https://msdn.micro
 バックグラウンド インテリジェント転送サービス (BITS) | [BITS](https://msdn.microsoft.com/library/windows/desktop/bb968799.aspx) COM API と PowerShell コマンドレット (使用可能な場合) を、PowerShell リモート セッションで使うことができるようになりました。 これは、Windows Server 2016 Technical Preview のローカル ログイン機能がないバージョンを管理するときに特に便利です。 PowerShell リモート セッションによって開始された BITS ジョブは、そのセッションのユーザー アカウントのコンテキストで実行され、少なくとも 1 つのアクティブなローカル ログオン セッションまたはそのユーザー アカウントに関連付けられている PowerShell リモート セッションが存在する場合にのみ進行します。 長時間実行されるセッションを管理する方法について詳しくは、[PowerShell リモート セッションを管理する方法に関するページ](https://msdn.microsoft.com/library/windows/desktop/ee663885.aspx#manage_ps_remote_sessions)をご覧ください。<br/><br/>[BITS ヘルパー トークン](https://msdn.microsoft.com/library/windows/desktop/dd904467.aspx)をサポートしていた以前のバージョンの Windows では、ジョブの所有者は、ヘルパー トークンを設定するために有効な管理者特権を持っている必要がありました。 このリリースでは、ヘルパー トークンに管理者機能がない限り、BITS ジョブの所有者は管理者でなくてもヘルパー トークンを設定できるようになりました。 これにより、バックグラウンド ダウンロード ツールや更新ツールを、管理者特権を持つアカウントではなく、低い権限の NetworkService アカウントで実行できるため、これらのツールの脆弱性を小さくすることができます。
 カラー フォントのサポートの強化 | Direct2D で幅広いカラー フォント形式のレンダリングがサポートされ、開発者は Direct2D 対応アプリで以前よりも多くの種類のフォントを使うことができるようになりました。 これには、次のサポートが含まれます。 <br/>&bull; 'sbix' TrueType テーブル。従来 Apple プラットフォーム用に設計されたフォントでカラー ビットマップ コンテンツを実現します。<br/>&bull; 'SVG' OpenType テーブル。フォントで SVG コンテンツを実現します。<br/>&bull; 'CBDT' OpenType テーブル。フォントでカラー ビットマップ コンテンツを実現します。 <br/><br/>**D2D1_DRAW_TEXT_OPTIONS_ENABLE_COLOR_FONT** フラグが有効になっている場合、Direct2D はこれらのカラー フォント形式を自動的にサポートします。  詳しくは、次のトピックをご覧ください。 <br>&bull;[**ID2D1DeviceContext4**](http://go.microsoft.com/fwlink/?LinkId=822793)<br>&bull;[**D2D1_DRAW_TEXT_OPTIONS**](http://go.microsoft.com/fwlink/?LinkId=822794)<br>&bull;[**ID2D1SvgGlyphStyle**](http://go.microsoft.com/fwlink/?LinkId=822795)     
 CommandBar の動的オーバーフロー | [**コマンド バー**](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/app-bars)内のプライマリ コマンドは、すべてを表示するための十分な領域がない場合、自動的にオーバーフロー メニューに移動するようになりました。
-コンポジションの対話式操作 API| 新しい **Windows.UI.Composition.Interactions** 名前空間によって、アニメーションと効果を駆動する入力にアクセスできます。  ビジュアル層のこの新しい API ファミリは、UI スレッドの処理が遅くなり、ビジー状態になった場合でも、アプリの応答性やスムーズさを感じさせるのに役立ちます。  
-Windows.UI.Composition | **Windows.UI.Composition** 名前空間には、次のような多くの機能のサポートが追加されました。 <br/><br/>&bull; シャドウ: 現実世界の奥行きのエクスペリエンスをアプリに提供できます。 <br/>&bull; シーンの照明: コントロールや UI に光源を当て、アプリケーションにさまざまな効果を提供することにより、コントロールや UI の遠近感を強調します。<br/>&bull;  ぼかし効果: 適切な情報にフォーカスを適用し、他の情報をぼかすことができます。 ぼかしをアニメーション化することで、UI の操作感を高めることができます。  <br/>&bull; 暗黙的なアニメーション: 暗黙的なアニメーションによって、ビジュアルのプロパティが変更されたときにビジュアルをアニメーション化することができます。 暗黙的なアニメーションを使って、レイアウト アニメーションを実行できます。つまり、アプリのレイアウトが変更されたときに、新しい場所に移動するレイアウトをアニメーション化することができます。 <br/>&bull; CompositionBackdropBrush: CompositionBackdropBrush は、効果の入力として現在の RenderTarget を選択できる新しい種類のブラシです。<br/>&bull; LayerVisual: ビジュアルのコレクションに効果を適用することができます。 たとえば、UI の無効になっている部分を示すために、UI の一部をグレースケールにすることができます。<br/>&bull; CompositionMashBrush: 不透明マスクを指定できます。<br/>&bull; クリップの変換: クリップの四角形に変換を適用できます。<br/>&bull; サーフェス ブラシ変換: CompositionSurfaceBrush に変換を適用できます。<br/>&bull; CompositionNineGridBrush: 画像上に 9 グリッドのサイズ変更インセットを指定したり、単色の四角形の境界線を作成したりできます。<br/>&bull; 式文字列の追加: 式文字列は、新しい関数、式演算子、キーワードをサポートします。
+コンポジションの対話式操作 API| 新しい [**Windows.UI.Composition.Interactions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.interactions.aspx) 名前空間によって、アニメーションと効果を駆動する入力にアクセスできます。  ビジュアル層のこの新しい API ファミリは、UI スレッドの処理が遅くなり、ビジー状態になった場合でも、アプリの応答性やスムーズさを感じさせるのに役立ちます。  
+Windows.UI.Composition | [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.aspx) 名前空間には、次のような多くの機能のサポートが追加されました。 <br/><br/>&bull; シャドウ: 現実世界の奥行きのエクスペリエンスをアプリに提供できます。 <br/>&bull; シーンの照明: コントロールや UI に光源を当て、アプリケーションにさまざまな効果を提供することにより、コントロールや UI の遠近感を強調します。<br/>&bull;  ぼかし効果: 適切な情報にフォーカスを適用し、他の情報をぼかすことができます。 ぼかしをアニメーション化することで、UI の操作感を高めることができます。  <br/>&bull; 暗黙的なアニメーション: 暗黙的なアニメーションによって、ビジュアルのプロパティが変更されたときにビジュアルをアニメーション化することができます。 暗黙的なアニメーションを使って、レイアウト アニメーションを実行できます。つまり、アプリのレイアウトが変更されたときに、新しい場所に移動するレイアウトをアニメーション化することができます。 <br/>&bull; CompositionBackdropBrush: CompositionBackdropBrush は、効果の入力として現在の RenderTarget を選択できる新しい種類のブラシです。<br/>&bull; LayerVisual: ビジュアルのコレクションに効果を適用することができます。 たとえば、UI の無効になっている部分を示すために、UI の一部をグレースケールにすることができます。<br/>&bull; CompositionMashBrush: 不透明マスクを指定できます。<br/>&bull; クリップの変換: クリップの四角形に変換を適用できます。<br/>&bull; サーフェス ブラシ変換: CompositionSurfaceBrush に変換を適用できます。<br/>&bull; CompositionNineGridBrush: 画像上に 9 グリッドのサイズ変更インセットを指定したり、単色の四角形の境界線を作成したりできます。<br/>&bull; 式文字列の追加: 式文字列は、新しい関数、式演算子、キーワードをサポートします。
 接続型アニメーション | [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx) によって、ユーザーがシーン間やページ間を移動するときにアニメーションを実行できます。 詳しくは、こちらの[接続型アニメーション](https://channel9.msdn.com/Events/Build/2016/P485)に関するビデオをご覧ください。
 接続型アプリ | クラウドに接続されているデバイスや近くのデバイスを見つけて、それらをシームレスに切り替えるエクスペリエンスを構築します。 詳しくは、[接続型アプリとデバイスに関するページ](http://aka.ms/Bttm1d)をご覧ください。
 Desktop App Converter | Desktop App Converter は、.NET 4.6.1 または Win32 向けに記述された既存のデスクトップ アプリをユニバーサル Windows プラットフォーム (UWP) に変換するためのツールです。
 アクセシビリティのためのアプリ開発 | [アプリのアクセシビリティ ガイドライン](https://developer.microsoft.com/windows/accessible-apps)を使って、使いやすさと顧客満足度を向上させる包括的なソフトウェアを設計できます。 アクセシビリティ対応技術製品に関する事例から、インスピレーションを得てください。 この新しい開発者ハブで、アプリをアクセシビリティ対応にするための情報をご確認ください。
-ゲーム: アーケード スティックとレース ホイールのサポート | **Windows.Gaming.Input** は、2 つの新しい入力デバイス、アーケード スティックとレース ホイールのクラスをサポートしています。 これにより、ゲーム タイトルでは、アーケード スティックやレース ホイール デバイスをデバイスのクラスとしてサポートできます。これらのデバイスの個々のバージョンに固有のコードを記述する必要はありません。 これは、該当するクラスのすべての Xbox 360 および Xbox One デバイスと、一部の PC (HID) デバイスをサポートします。
-ゲーム: フォース フィードバックのサポート | **Windows.Gaming.Input.ForceFeedback** API によって、PC (HID) レース ホイールのフォース フィードバックがサポートされます。
-ゲーム: OEM による新しい入力デバイス用のカスタム WinRT クラス ライブラリのサポート | **Windows.Gaming.Input.Custom** API によって、サード パーティのアクセサリ OEM は、Xbox 360 および Xbox One アクセサリ用のカスタム WinRT クラス ライブラリを作成できます。     
+Direct3D | Direct 3D のドキュメントには、多くの新しいトピックが追加されました。 これらの更新について詳しくは、[Direct3D 12 の新規リリースのページ](https://msdn.microsoft.com/library/windows/desktop/mt748631(v=vs.85).aspx)で **Windows 10 バージョン 1607** をご覧ください。
+ゲーム: アーケード スティックとレース ホイールのサポート | [**Windows.Gaming.Input**](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx) は、2 つの新しい入力デバイス、アーケード スティックとレース ホイールのクラスをサポートしています。 これにより、ゲーム タイトルでは、アーケード スティックやレース ホイール デバイスをデバイスのクラスとしてサポートできます。これらのデバイスの個々のバージョンに固有のコードを記述する必要はありません。 これは、該当するクラスのすべての Xbox 360 および Xbox One デバイスと、一部の PC (HID) デバイスをサポートします。
+ゲーム: フォース フィードバックのサポート | [**Windows.Gaming.Input.ForceFeedback**](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.forcefeedback.aspx) API によって、PC (HID) レース ホイールのフォース フィードバックがサポートされます。
+ゲーム: OEM による新しい入力デバイス用のカスタム WinRT クラス ライブラリのサポート | [**Windows.Gaming.Input.Custom**](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.custom.aspx) API によって、サード パーティのアクセサリ OEM は、Xbox 360 および Xbox One アクセサリ用のカスタム WinRT クラス ライブラリを作成できます。     
 グローバリゼーション | 新しい [**Windows.Globalization.PhoneNumberFormatting**](https://msdn.microsoft.com/library/windows/apps/windows.globalization.phonenumberformatting.aspx) 名前空間のクラスは、幅広いグローバル サポートによって、電話番号の書式設定、検証、照合をサポートします。 新しいクラスは、多くのローカル標準形式に対応しており、番号の入力を開始すると同時に入力した部分から順に書式設定を行うこともできます。
-アプリ内購入とアプリのライセンス | [**System.Services.Store**](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間には、アプリ内購入を実行したり、アプリのストア ライセンス情報にアクセスしたりするための新しい API が用意されています。 詳しくは、[アプリ内製品の購入と試用版の有効化に関するページ](https://msdn.microsoft.com/windows/uwp/monetize/enable-in-app-product-purchases-and-trials)をご覧ください。
+アプリ内購入とアプリのライセンス | [**System.Services.Store**](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間には、アプリ内購入を実行したり、アプリのストア ライセンス情報にアクセスしたりするための新しい API が用意されています。 詳しくは、「[アプリ内製品購入の有効化](https://msdn.microsoft.com/windows/uwp/monetize/enable-in-app-product-purchases)」をご覧ください。
 InkToolbar | [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkToolbar.aspx) は、関連付けられた **InkCanvas** のインク関連機能をアクティブ化する、カスタマイズ可能で拡張性の高いボタンのコレクションが含まれたユニバーサル Windows アプリのコントロールです。<br/><br/>既定では、ツール バーには、描画、消去、強調表示、ルーラー表示のボタンが含まれています。 機能に応じて、インクの色、ストロークの太さ、すべて消去など、他の設定やコマンドがポップアップに表示されます。<br/><br/>**InkToolbar** は、独自のペン、ツール、その他のインク機能を使ってカスタマイズすることもできます。
 MAX_PATH の制限事項の削除 | 一般的な Win32 ファイルおよびディレクトリ API から、MAX_PATH の制限事項が削除されました。 この動作はオプトインする必要があります。 詳しくは、[ファイル、パス、名前空間の命名に関するページ](https://msdn.microsoft.com/library/windows/desktop/aa365247.aspx)の**パスの最大長の制限**に関するセクションをご覧ください。
 カメラ: メディア フレーム リーダー |新しい [**Windows.Media.Capture.Frames**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.capture.frames.aspx) 名前空間には、色、奥行き、赤外線カメラなどの 1 つ以上の利用可能なソースや、スケルタル トラッキング フレームを生成するようなカスタム フレーム ソースから、メディア フレームを読み取るための API が用意されています。 この機能は、拡張現実アプリや奥行きを検出するカメラ アプリなど、メディア フレームのリアルタイム処理を実行するアプリで使用するために設計されました。
@@ -47,14 +53,14 @@ XAML の ComboBox でのテキスト検索 | ユーザーがコンボ ボック�
 UI オートメーション | UI オートメーション プロバイダーは、[**UiaRaiseChangesEvent**](https://msdn.microsoft.com/library/windows/desktop/mt733044(v=vs.85).aspx) 関数を呼び出してドキュメントに対する変更をシステムに通知できるようになりました。
 Xbox One の UWP | この更新プログラムは、Xbox One のユニバーサル Windows プラットフォーム (UWP) の最初の完全なリリースを提供します。 これには、新機能、既存の機能に対する更新プログラム、バグ修正プログラムが含まれています。 詳しくは、「[Xbox One の UWP](https://msdn.microsoft.com/windows/uwp/xbox-apps/index)」をご覧ください。
 Web とアプリのリンク | アプリと Web サイトを関連付けます。 ユーザーが Web サイトへのリンクを開いたとき、代わりにアプリが起動されます。 詳しくは、[アプリの URI ハンドラーによる Web とアプリのリンクのサポートに関するページ](http://aka.ms/Hxfg4m)をご覧ください。
-WebSocket | **MessageWebSocket** と **StreamWebSocket** の両方に、サーバー証明書の表示、SSL ネゴシエーション時にサーバーによって送信された中間証明書の表示、カスタム サーバー証明書の検証の実行、無視する必要がある特定のサーバー証明書エラーの指定といった処理のサポートが追加されました。
-Windows Information Protection (WIP) API | [**WIP**](https://msdn.microsoft.com/windows/uwp/enterprise/edp-hub) は、デスクトップ、ノート PC、タブレット、電話に搭載された、モバイル デバイス管理 (MDM) 用の一連の機能です。 WIP によって、企業は管理対象デバイスによるデータの処理方法をより細かく制御できます。 <br/><br/>WIP API を使用すると、データ ポリシーを尊重しながら、それらのポリシーによって影響を受ける従業員の個人データを分離するアプリを構築できます。 ポリシー管理者は、組織のデータを利用するこのようなアプリを信頼します。 また、従業員からも、組織のモバイル デバイス管理 (MDM) から登録を解除した場合や、完全に組織を去ることになった場合でも、デバイス上の個人データをそのまま残す方法が望まれています。
+WebSocket | [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.messagewebsocket.aspx) と [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.streamwebsocket.aspx) の両方に、サーバー証明書の表示、SSL ネゴシエーション時にサーバーによって送信された中間証明書の表示、カスタム サーバー証明書の検証の実行、無視する必要がある特定のサーバー証明書エラーの指定といった処理のサポートが追加されました。
+Windows Information Protection (WIP) API | [**WIP**](https://msdn.microsoft.com/windows/uwp/enterprise/wip-hub) は、デスクトップ、ノート PC、タブレット、電話に搭載された、モバイル デバイス管理 (MDM) 用の一連の機能です。 WIP によって、企業は管理対象デバイスによるデータの処理方法をより細かく制御できます。 <br/><br/>WIP API を使用すると、データ ポリシーを尊重しながら、それらのポリシーによって影響を受ける従業員の個人データを分離するアプリを構築できます。 ポリシー管理者は、組織のデータを利用するこのようなアプリを信頼します。 また、従業員からも、組織のモバイル デバイス管理 (MDM) から登録を解除した場合や、完全に組織を去ることになった場合でも、デバイス上の個人データをそのまま残す方法が望まれています。
 Windows IOT Core | Windows IoT Core は、Raspberry Pi 3 だけでなく、リモート表示エクスペリエンスを完全にサポートするようになったため、ユーザーは IoT Core デバイスで実行されている UWP アプリケーションをリモートで表示および制御することができます。
 コンパニオン (IoT) デバイスを使った Windows のロック解除 | コンパニオン デバイスは、ユーザー認証のエクスペリエンスを強化するために、Windows 10 のデスクトップと組み合わせて使用できるデバイスです。 [コンパニオン デバイス フレームワーク](https://msdn.microsoft.com/windows/uwp/security/companion-device-unlock)を使用すると、コンパニオン デバイスは、Windows Hello を利用できない場合 (たとえば、Windows 10 のデスクトップに顔認証のカメラまたは指紋リーダーのデバイスがない場合など) でも、Microsoft Passport のための優れたエクスペリエンスを提供できます。
 Winsock | TCP ソケットは、[Winsock](https://tools.ietf.org/html/rfc7413) で TCP_FASTOPEN ソケット オプションを設定することにより、[RFC 7413](https://tools.ietf.org/html/rfc7413) TCP Fast Open を使用するように構成できます。
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Sep16_HO3-->
 
 

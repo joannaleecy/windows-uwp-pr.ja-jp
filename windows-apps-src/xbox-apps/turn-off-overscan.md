@@ -1,22 +1,31 @@
 ---
 author: payzer
-title: "オーバースキャンを無効にする方法"
+title: "画面の端に UI を描画する方法"
 description: 
-area: Xbox
-ms.sourcegitcommit: 32a875348debac9aec9f5a26bc4e7e0af2a0a5b4
-ms.openlocfilehash: abd06e78364ff32cc10d733e33b153b854dbc467
+translationtype: Human Translation
+ms.sourcegitcommit: b5961d3266a031ab09a9da63319e9883cf050789
+ms.openlocfilehash: cddde27a17e897ab8a68bbed099e532a8cd48f07
 
 ---
 
 # 画面の端に UI を描画する方法   
-既定では、アプリケーションのビューポートの境界に、境界線が表示されます。 これは、テレビのセーフ エリアを構成しています。 詳しくは、「[Xbox およびテレビ向け設計](http://go.microsoft.com/fwlink/?LinkID=760736#tv-safe-area)」をご覧ください。  この設定をオフにして、画面の端に描画することをお勧めします。 アプリケーションの起動時に次のコードを追加することによって、画面の端に描画することができます。
+既定では、テレビのセーフ エリアを考慮して、アプリケーションのビューポートの端には境界線が表示されます (詳しくは「[Xbox およびテレビ向け設計](../input-and-devices/designing-for-tv.md#tv-safe-area)」をご覧ください)。 
+
+この設定をオフにして、画面の端に描画することをお勧めします。 アプリケーションの起動時に次のコードを追加することによって、画面の端に描画することができます。
    
-`Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMode(Windows.UI.ViewManagement.ApplicationViewBoundsMode.UseCoreWindow);`
+```
+Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMode(Windows.UI.ViewManagement.ApplicationViewBoundsMode.UseCoreWindow);
+```
    
-注: C++/DirectX アプリケーションの場合、この問題について心配する必要はありません。 システムでは、常にアプリケーションが画面の端にレンダリングされます。
+> [!NOTE]
+> C++/DirectX アプリケーションの場合、この問題について心配する必要はありません。 システムでは、常にアプリケーションが画面の端にレンダリングされます。
+
+## 関連項目
+- [Xbox のベスト プラクティス](tailoring-for-xbox.md)
+- [Xbox One の UWP](index.md)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

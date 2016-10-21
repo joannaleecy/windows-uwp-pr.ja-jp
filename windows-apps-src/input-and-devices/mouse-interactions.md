@@ -5,8 +5,9 @@ title: "マウス操作"
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 10deda7b44d4cfb5c65b425bf82ceaf6654aab95
+ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
 
 ---
 
@@ -89,8 +90,7 @@ ms.openlocfilehash: 10deda7b44d4cfb5c65b425bf82ceaf6654aab95
 
 アプリでマウス入力に応答するには、タッチ入力やペン入力で使うのと同じ基本的なポインター イベントを処理します。
 
-[
-            **UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) イベントを使うと、ポインター入力デバイスごとに別々のコードを記述しなくても、基本的な入力機能を実装できます。 ただし、このオブジェクトのポインター イベント、ジェスチャ イベント、操作イベントを使って、各デバイスの特別な機能 (マウス ホイール イベントなど) を利用することもできます。
+[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) イベントを使うと、ポインター入力デバイスごとに別々のコードを記述しなくても、基本的な入力機能を実装できます。 ただし、このオブジェクトのポインター イベント、ジェスチャ イベント、操作イベントを使って、各デバイスの特別な機能 (マウス ホイール イベントなど) を利用することもできます。
 
 **サンプル: **[アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=264996)で、この機能の動作を実際に確かめることができます。
 
@@ -156,6 +156,6 @@ ms.openlocfilehash: 10deda7b44d4cfb5c65b425bf82ceaf6654aab95
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

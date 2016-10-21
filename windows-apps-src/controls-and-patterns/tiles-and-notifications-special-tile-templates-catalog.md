@@ -5,11 +5,12 @@ title: "特別なタイル テンプレート"
 ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 label: TBD
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: ab7366b8b3cbf75f1f7e9fe35ca83077ac21d081
+translationtype: Human Translation
+ms.sourcegitcommit: 2c50b2be763a0cc7045745baeef6e6282db27cc7
+ms.openlocfilehash: b03ea68ea2a0f66edac81a4c7e2671b2f756aa45
 
 ---
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 # 特別なタイル テンプレート
 
 
@@ -18,14 +19,14 @@ ms.openlocfilehash: ab7366b8b3cbf75f1f7e9fe35ca83077ac21d081
 
 特別なタイル テンプレートは、アニメーション化や、アダプティブ タイルでは不可能な機能を実行できる独特なテンプレートです。 特別なタイル テンプレートは、それぞれ Windows 10 用に特別に構築されたテンプレートです。ただし、アイコン タイル テンプレートは、特別に構築されたテンプレートではなく、従来の特別なテンプレートが Windows 10 向けに更新されたものです。 この記事では、3 つの特別なタイル テンプレートである、アイコン タイル テンプレート、フォト タイル テンプレート、および People タイル テンプレートについて取り上げています。
 
-## <span id="Iconic_tile_template"></span><span id="iconic_tile_template"></span><span id="ICONIC_TILE_TEMPLATE"></span>アイコン タイル テンプレート
+## アイコン タイル テンプレート
 
 
 アイコン テンプレート ("IconWithBadge" テンプレートとも呼ばれます) を使うと、タイルの中央に小さい画像を表示できます。 Windows 10 では、電話とタブレット/デスクトップの両方でテンプレートがサポートされています 
 
 ![小サイズと普通サイズのメール タイル](images/iconic-template-mail-2sizes.png)
 
-### <span id="How_to_create_an_iconic_tile"></span><span id="how_to_create_an_iconic_tile"></span><span id="HOW_TO_CREATE_AN_ICONIC_TILE"></span>アイコン タイルを作成する方法
+### アイコン タイルを作成する方法
 
 次の手順では、Windows 10 のアイコン タイルを作成するために必要なすべての情報について説明します。 大まかに言うと、まずアイコンの画像アセットを用意する必要があります。次に、アイコン テンプレートを使って通知をタイルに送信し、最後に、タイルに表示される番号を指定するバッジ通知を送信します。
 
@@ -90,14 +91,14 @@ XML ペイロードのサンプル コードを次に示します。
 
 ![アイコン タイル テンプレートに関連付けられている API とペイロード](images/iconic-template-properties-info.png)
 
-## <span id="Photos_tile_template"></span><span id="photos_tile_template"></span><span id="PHOTOS_TILE_TEMPLATE"></span>フォト タイル テンプレート
+## フォト タイル テンプレート
 
 
 フォト タイル テンプレートを使うと、ライブ タイルに写真のスライドショーを表示できます。 このテンプレートは、すべてのタイルのサイズ (小サイズのタイルを含む) でサポートされており、各サイズのタイルで同じ動作をします。 次の例は、フォト テンプレートを使った普通サイズのタイルが持つ 5 つのフレームを示しています。 テンプレートには、ズームやクロスフェード アニメーションが用意されており、選んだ写真に対して繰り返し適用し、無限にループすることができます。
 
 ![フォト タイル テンプレートを使った画像のスライド ショー](images/photo-tile-template-image01.jpg)
 
-### <span id="How_to_use_the_photos_template"></span><span id="how_to_use_the_photos_template"></span><span id="HOW_TO_USE_THE_PHOTOS_TEMPLATE"></span>フォト テンプレートを使う方法
+### フォト テンプレートを使う方法
 
 [Windows 10 バージョンの NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx) がインストールされていれば、フォト テンプレートを簡単に使うことができます。 生の XML を使うこともできますが、NotificationExtensions を利用することを強くお勧めします。これにより、有効な XML や XML エスケープされたコンテンツを生成することを考慮する必要がなくなります。
 
@@ -105,7 +106,7 @@ Windows Phone では、スライド ショーで最大 9 枚の写真を表示�
 
 タイル通知の送信について詳しくは、[通知の送信に関する記事](tiles-badges-notifications.md)をご覧ください。
 
-<span codelanguage="XML"></span>
+
 ```XML
 <colgroup>
 <col width="100%" />
@@ -181,29 +182,26 @@ TileContent content = new TileContent()
 };
 ```
 
-## <span id="People_tile_template"></span><span id="people_tile_template"></span><span id="PEOPLE_TILE_TEMPLATE"></span>People タイル テンプレート
+## People タイル テンプレート
 
 
 Windows 10 の People アプリでは、円の中に画像のコレクションを表示する特別なタイル テンプレートを使います。これらの円は、タイル上で垂直方向または水平方向にスライドされます。 このタイル テンプレートは、Windows 10 ビルド 10572 以降で利用でき、すべてのユーザーがアプリで使うことができます。
 
 People タイル テンプレートは、次のサイズのタイルで動作します。
 
-
-            **普通サイズのタイル** (TileMedium)
+**普通サイズのタイル** (TileMedium)
 
 ![普通サイズの People タイル](images/people-tile-medium.png)
 
  
 
-
-            **ワイド タイル** (TileWide)
+**ワイド タイル** (TileWide)
 
 ![ワイド People タイル](images/people-tile-wide.png)
 
  
 
-
-            **大きいタイル (デスクトップのみ)** (TileLarge)
+**大きいタイル (デスクトップのみ)** (TileLarge)
 
 ![大きい People タイル](images/people-tile-large.png)
 
@@ -272,7 +270,7 @@ TileContent content = new TileContent()
 
 通知を送信するには、「[通知配信方法の選択](tiles-and-notifications-choosing-a-notification-delivery-method.md)」をご覧ください。
 
-## <span id="related_topics"></span>関連トピック
+## 関連トピック
 
 
 * [Github での完全なコード サンプル](https://github.com/WindowsNotifications/quickstart-people-tile-template)
@@ -290,6 +288,6 @@ TileContent content = new TileContent()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -7,7 +7,7 @@ label: Prepare your app for localization
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 4f9bc1d14db7c348e2b4dc9db2440f94d44ab4a5
+ms.openlocfilehash: d3f389830fd4f21eae93aae661db86f9df479383
 
 ---
 
@@ -31,8 +31,7 @@ ms.openlocfilehash: 4f9bc1d14db7c348e2b4dc9db2440f94d44ab4a5
 
 アプリのリソース ファイルに、ローカライズ コメントを追加します。 このコメントはローカライズ担当者に表示されるため、ローカライズ担当者が正確にリソースを翻訳するのに役立つコンテキスト情報を提供する必要があります。 また、翻訳によってソフトウェアが壊れることを防ぐため、コメントには十分な制約情報も含める必要があります。 必要に応じ、Makepri.exe ツールを使ってコメントをログに記録することもできます。
 
-
-              **XAML:** Resw ファイル (XAML を使ったアプリ用に Visual Studio で作成したリソース) にはコメント要素があります。 たとえば、次のようにします。
+**XAML:** Resw ファイル (XAML を使ったアプリ用に Visual Studio で作成したリソース) にはコメント要素があります。 たとえば、次のようにします。
 
 ```XML
 <data name="String1">
@@ -41,8 +40,7 @@ ms.openlocfilehash: 4f9bc1d14db7c348e2b4dc9db2440f94d44ab4a5
 </data>
 ```
 
-
-              **HTML:** Resjson ファイル (HTML を使ったアプリ用に Visual Studio で作成したリソース) では、下線から始まるフィールドにコメントなどのメタデータを指定できます。次に例を示します。
+**HTML:** Resjson ファイル (HTML を使ったアプリ用に Visual Studio で作成したリソース) では、下線から始まるフィールドにコメントなどのメタデータを指定できます。次に例を示します。
 
 ```json
 {
@@ -194,6 +192,6 @@ ms.openlocfilehash: 4f9bc1d14db7c348e2b4dc9db2440f94d44ab4a5
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 
