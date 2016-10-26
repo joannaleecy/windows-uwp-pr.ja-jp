@@ -1,11 +1,28 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/47e0ac11178af98589e75cc562631c6904b40da4/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md) | InSyncHandedBackSuccess | [Details](#1293bb5beb927425928d832f887129263db5a8954732)
 
 ## Item Details
+##### <a name='1293bb5beb927425928d832f887129263db5a8954732'></a> Source: [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/47e0ac11178af98589e75cc562631c6904b40da4/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/cd94d2f4539a968a1444f74fdf08f7735616bbe9/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md)
+* Handoff File: [access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/37bcf085a11cb562dd67bcb5d8a81fd0c13b7b48/ol-handoff/Microsoft/windows-apps.ja-jp/master/access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf)
+* Handoff Datetime: 2016-09-02 22:37:19
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/91c008ad08b81d656d590c90eec5556d967123ff/ol-handback/Microsoft/windows-apps.ja-jp/master/access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf)
+* Handback Datetime: 2016-10-26 13:41:24
+* Bilingual File: [access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/480ff19d0d67081a9e8f65722d99210ca2ffc468/ol-handback/Microsoft/windows-apps.ja-jp/master/access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf)
+* Bilingual Datetime: 2016-10-24 15:45:53
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
