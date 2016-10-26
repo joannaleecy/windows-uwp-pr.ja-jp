@@ -41,8 +41,7 @@ Azure AD アプリケーションをデベロッパー センター アカウン
 4. **[新しいキーの追加]** をクリックします。 次の画面で、**[キー]** の値を書き留めます。 このページから離れると、この情報に再度アクセスすることはできません。 詳しくは、「[Azure AD アプリケーションを追加して管理する](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)」でキーの管理に関する情報をご覧ください。
 
 <span id="obtain-an-azure-ad-access-token" />
-## 
-手順 2: Azure AD のアクセス トークンを取得する
+## 手順 2: Azure AD のアクセス トークンを取得する
 
 Windows ストア分析 API で任意のメソッドを呼び出す前に、API 内の各メソッドの **Authorization** ヘッダーに渡す Azure AD アクセス トークンをまず取得する必要があります アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れた後は、トークンを更新してそれ以降の API 呼び出しで引き続き使用できます。
 
