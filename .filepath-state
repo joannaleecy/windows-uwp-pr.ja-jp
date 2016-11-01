@@ -4966,6 +4966,9 @@
   "06797a616ab828932db6c9d4250b7de253e5d0b2": [
     "windows-apps-src\\xaml-platform\\attached-properties-overview.md"
   ],
+  "a6431aed9941079bd05c623229f4ae3236a1b327": [
+    "windows-apps-src\\xaml-platform\\binding-markup-extension.md"
+  ],
   "95b48b55f11c4de0b4a51106b6cf5439bfa784b9": [
     "windows-apps-src\\xaml-platform\\binding-markup-extension.md"
   ],

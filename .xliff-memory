@@ -3239,6 +3239,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8a14fa69089f6d796a803c1c1ff9bb678af3c913.d3d0592dae6e16fc103db213b479312a59151b03.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\xaml-platform\\binding-markup-extension.md.b89a2ff179b82c0154dc27eed1f8180045066a7c.HT": {
+      "SourceFilename": "windows-apps-src\\xaml-platform\\binding-markup-extension.md",
+      "XliffHash": "b89a2ff179b82c0154dc27eed1f8180045066a7c",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a6431aed9941079bd05c623229f4ae3236a1b327.15b98010a36477d687cb0754a21771094d5be862.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
