@@ -3219,6 +3219,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c7b7a43ecd56bd88f5e0e5cb6cc336a96241d0c3.3d98e71828d94d3d1c2995d5fea8c5221c51c3b2.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\keyboard-interactions.md.2c5f27fa2b519a643e5c1c8193f90f4466312b4f.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\keyboard-interactions.md",
+      "XliffHash": "2c5f27fa2b519a643e5c1c8193f90f4466312b4f",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5ab84def6e73329f59d8ae6ef8be335d66ef4334.efca061c357dba927fd081bd7c995eb8cdf522aa.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\listview-and-gridview.md.9f41131e17f07784476662b83a3f2535954246f9.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\listview-and-gridview.md",
+      "XliffHash": "9f41131e17f07784476662b83a3f2535954246f9",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8a14fa69089f6d796a803c1c1ff9bb678af3c913.d3d0592dae6e16fc103db213b479312a59151b03.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

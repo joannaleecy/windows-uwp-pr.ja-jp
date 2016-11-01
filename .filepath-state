@@ -1160,6 +1160,9 @@
   "8b8820c9ab82ce0789fbe2fb9f62309e48f4ce9d": [
     "windows-apps-src\\controls-and-patterns\\lists.md"
   ],
+  "8a14fa69089f6d796a803c1c1ff9bb678af3c913": [
+    "windows-apps-src\\controls-and-patterns\\listview-and-gridview.md"
+  ],
   "aeb339e54a1363dbfe5ee5a764ad762a42a40ed9": [
     "windows-apps-src\\controls-and-patterns\\listview-and-gridview.md"
   ],
@@ -2951,6 +2954,9 @@
   ],
   "8fe27838e2fd1539b708caff5ddb85093c15fd9f": [
     "windows-apps-src\\input-and-devices\\interact-with-a-background-app-in-cortana.md"
+  ],
+  "5ab84def6e73329f59d8ae6ef8be335d66ef4334": [
+    "windows-apps-src\\input-and-devices\\keyboard-interactions.md"
   ],
   "c7b7a43ecd56bd88f5e0e5cb6cc336a96241d0c3": [
     "windows-apps-src\\input-and-devices\\keyboard-interactions.md"
