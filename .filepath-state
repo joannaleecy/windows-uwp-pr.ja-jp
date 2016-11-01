@@ -2952,6 +2952,9 @@
   "8fe27838e2fd1539b708caff5ddb85093c15fd9f": [
     "windows-apps-src\\input-and-devices\\interact-with-a-background-app-in-cortana.md"
   ],
+  "c7b7a43ecd56bd88f5e0e5cb6cc336a96241d0c3": [
+    "windows-apps-src\\input-and-devices\\keyboard-interactions.md"
+  ],
   "a1d97c5a66db1b799ccc16769ff18130155743b8": [
     "windows-apps-src\\input-and-devices\\keyboard-interactions.md"
   ],
@@ -2999,9 +3002,6 @@
   ],
   "281c9fa2f9dfd2415e8d8555084fea83cb84d9e7": [
     "windows-apps-src\\input-and-devices\\support-natural-language-voice-commands-in-cortana.md"
-  ],
-  "fc9331c1583d3aaa97b9fbedb9ee010c84be9001": [
-    "windows-apps-src\\input-and-devices\\surface-hub.md"
   ],
   "db38bfecadb7568e602646222358e0a111c638bc": [
     "windows-apps-src\\input-and-devices\\touch-interactions.md"
@@ -7409,12 +7409,6 @@
   "61ed575e0e3490ec1197b595b5a43ca914b4e8c6": [
     "windows-apps-src\\input-and-devices\\images\\windows-wheel\\dial-and-pen-400px.png"
   ],
-  "1c8db1587d54864c1de41a3f851d3bb7e5f35f36": [
-    "windows-apps-src\\input-and-devices\\images\\windows-wheel\\dial-and-surface-devices-400px.png"
-  ],
-  "b41346a12ba0e69705f1a12e6923cc265b528113": [
-    "windows-apps-src\\input-and-devices\\images\\windows-wheel\\surface-dial-hero.png"
-  ],
   "4af7c4bc524597b67834c7ba03be987ce2c706f2": [
     "windows-apps-src\\input-and-devices\\images\\windows-wheel\\surface-dial-menu-icon1.png"
   ],
@@ -7453,6 +7447,9 @@
   ],
   "088dc15559b7c1879cd9210e0e0dd9603017a59c": [
     "windows-apps-src\\input-and-devices\\images\\windows-wheel\\surface-dial-snippet-customtool4.png"
+  ],
+  "3abe6d6cbbe5a26338aece9dbbb331266a470a87": [
+    "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md"
   ],
   "150d10d7d08422d8c9ae7b66fd982585189f39af": [
     "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md"
@@ -7610,10 +7607,16 @@
   "97af68f1996e974930f464f51770a3b750a82e53": [
     "windows-apps-src\\publish\\images\\push-notifications-template.png"
   ],
+  "f721c2e3f540d35ec2166ef9ce78e30453f43f6a": [
+    "windows-apps-src\\publish\\send-push-notifications-to-your-apps-customers.md"
+  ],
   "9c99fda81d068dee866924cf0d0d04a09c854e41": [
     "windows-apps-src\\publish\\send-push-notifications-to-your-apps-customers.md"
   ],
   "19874f940798e76a18b3377a295505f0aef201c7": [
     "windows-apps-src\\publish\\set-custom-permissions-for-account-users.md"
+  ],
+  "85af3dcacb3969bf53ef97eb63bed94e7c187f4d": [
+    "windows-apps-src\\input-and-devices\\images\\windows-wheel\\dial-and-surface-devices-600px.png"
   ]
 }
