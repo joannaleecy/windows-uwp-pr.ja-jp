@@ -3259,6 +3259,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ecf70ab3526778f115aad2df06d289b16679e24c.1d4f09ab07db1408a5d71b9e8c16be364209ac41.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md.a635feeb685e715ed4600cd55567cde37c31fecc.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md",
+      "XliffHash": "a635feeb685e715ed4600cd55567cde37c31fecc",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5a5c3bc08e7579b5a7496c88800ac76f48f93171.91c10ee48676b574175e4fb3429777bde7300f89.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
