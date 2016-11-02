@@ -7457,6 +7457,9 @@
   "088dc15559b7c1879cd9210e0e0dd9603017a59c": [
     "windows-apps-src\\input-and-devices\\images\\windows-wheel\\surface-dial-snippet-customtool4.png"
   ],
+  "ecf70ab3526778f115aad2df06d289b16679e24c": [
+    "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md"
+  ],
   "3abe6d6cbbe5a26338aece9dbbb331266a470a87": [
     "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md"
   ],
@@ -7625,7 +7628,7 @@
   "19874f940798e76a18b3377a295505f0aef201c7": [
     "windows-apps-src\\publish\\set-custom-permissions-for-account-users.md"
   ],
-  "85af3dcacb3969bf53ef97eb63bed94e7c187f4d": [
-    "windows-apps-src\\input-and-devices\\images\\windows-wheel\\dial-and-surface-devices-600px.png"
+  "6361eb8437dc3397df37bd5dc2162f3aa6242498": [
+    "windows-apps-src\\input-and-devices\\images\\windows-wheel\\dial-pen-studio-600px.png"
   ]
 }
