@@ -3289,6 +3289,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\840a5e76d409f547d55e558262af09c8fa36a544.09ad363c2b5d8e0ec50333c7a4fe9168c8096733.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md.97afad4f92f33384441bc8fea0b180b4cddf9c46.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md",
+      "XliffHash": "97afad4f92f33384441bc8fea0b180b4cddf9c46",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5c593ba7ecb78a46843ac941727a6b0f18728672.b5aa0eedf72048fb3223077ad3f05fc6fb629c41.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md.87eb36580498b7a4d9d5bed7754b5c569b86bad1.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md",
+      "XliffHash": "87eb36580498b7a4d9d5bed7754b5c569b86bad1",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d535af06ab720753980a1125df61323a96e2f406.da57dbf58649142cf58d412c6080895480f0d40e.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

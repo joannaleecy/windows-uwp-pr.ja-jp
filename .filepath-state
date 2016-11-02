@@ -7460,6 +7460,9 @@
   "088dc15559b7c1879cd9210e0e0dd9603017a59c": [
     "windows-apps-src\\input-and-devices\\images\\windows-wheel\\surface-dial-snippet-customtool4.png"
   ],
+  "d535af06ab720753980a1125df61323a96e2f406": [
+    "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md"
+  ],
   "5a5c3bc08e7579b5a7496c88800ac76f48f93171": [
     "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md"
   ],
@@ -7486,6 +7489,9 @@
   ],
   "e2b0680e62014526f684e7c1f7fd7da83a14f5d3": [
     "windows-apps-src\\monetize\\app-metadata-api-for-advertising-networks.md"
+  ],
+  "5c593ba7ecb78a46843ac941727a6b0f18728672": [
+    "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
   ],
   "75756d521d7b2c917589cf8b63a432afc3bc415e": [
     "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
