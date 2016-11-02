@@ -6187,6 +6187,9 @@
   "5fd097d978b1960ed957a7e12ab7eece012c5b41": [
     "windows-apps-src\\monetize\\add-advertisements-to-video-content.md"
   ],
+  "840a5e76d409f547d55e558262af09c8fa36a544": [
+    "windows-apps-src\\monetize\\microsoft-store-services-sdk.md"
+  ],
   "a2b67f05a61245efa12915f6357c97f28b37c130": [
     "windows-apps-src\\monetize\\microsoft-store-services-sdk.md"
   ],
@@ -7619,8 +7622,14 @@
   "4a9a7828b9b8f209d49d3805943ffdff28beafe6": [
     "windows-apps-src\\publish\\images\\push-notifications-promote-toast-launch-box.png"
   ],
+  "7c9a4c602aa2fa3168760486354734e4fb3401dc": [
+    "windows-apps-src\\publish\\images\\push-notifications-template.png"
+  ],
   "97af68f1996e974930f464f51770a3b750a82e53": [
     "windows-apps-src\\publish\\images\\push-notifications-template.png"
+  ],
+  "817043579cfd068267c54f2eab9210ef303ca364": [
+    "windows-apps-src\\publish\\send-push-notifications-to-your-apps-customers.md"
   ],
   "f721c2e3f540d35ec2166ef9ce78e30453f43f6a": [
     "windows-apps-src\\publish\\send-push-notifications-to-your-apps-customers.md"
