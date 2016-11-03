@@ -1904,6 +1904,9 @@
   "d190a32f16d1e7c1d98e33d1757bc9047277b62b": [
     "windows-apps-src\\publish\\age-ratings.md"
   ],
+  "c628b1fb29601ff1d4ff3629da45409586274f6b": [
+    "windows-apps-src\\publish\\analytics.md"
+  ],
   "fd03b13d4169f265575de921ef9c42303babe972": [
     "windows-apps-src\\publish\\analytics.md"
   ],
@@ -1955,6 +1958,9 @@
   "a6e97968df4e9ab986d364b2573a31b4ba9d1958": [
     "windows-apps-src\\publish\\create-a-custom-app-promotion-campaign.md"
   ],
+  "fd756ffa54cf6d81ff2d78878d03aadf0e46ca52": [
+    "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md"
+  ],
   "856643dca5b7b25e20b7b5a782de6cef792b94a8": [
     "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md"
   ],
@@ -1984,6 +1990,9 @@
   ],
   "76fc4e5cfa70d06d6f378409ecd9f331f64c0803": [
     "windows-apps-src\\publish\\distribute-lob-apps-to-enterprises.md"
+  ],
+  "7ec649d0847e60a6bedadc4164809324a17bf377": [
+    "windows-apps-src\\publish\\download-analytic-reports.md"
   ],
   "f5f636ce14a1855f46b0fccbd8ec513eff9f4f64": [
     "windows-apps-src\\publish\\download-analytic-reports.md"
