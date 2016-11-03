@@ -1478,6 +1478,9 @@
   "0a852a4bf8404d7ab0d8a2a169a16451c0388122": [
     "windows-apps-src\\monetize\\code-samples.md"
   ],
+  "ae0ddedf09913d42a036f48d2f60d7a62769b4bb": [
+    "windows-apps-src\\monetize\\code-your-experiment-in-your-app.md"
+  ],
   "c605159f3f727623f9c1fb2bf96faaf109597834": [
     "windows-apps-src\\monetize\\code-your-experiment-in-your-app.md"
   ],
@@ -1586,6 +1589,9 @@
   "8332a70951572da162dce77b258cda1361e75148": [
     "windows-apps-src\\monetize\\index.md"
   ],
+  "c717fa693c6edf8757c3eef79d60193434104bd8": [
+    "windows-apps-src\\monetize\\install-the-microsoft-advertising-libraries.md"
+  ],
   "a18822b167b7b4dab2dee02439c82c1a0dafcf31": [
     "windows-apps-src\\monetize\\install-the-microsoft-advertising-libraries.md"
   ],
@@ -1606,6 +1612,9 @@
   ],
   "7d0eeda4deac304fb9b573b6ed206a191f037a3e": [
     "windows-apps-src\\monetize\\known-issues-for-the-advertising-libraries.md"
+  ],
+  "7525c08319eac2adedde71cd6d5f0a9aeeef41e2": [
+    "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
   ],
   "1ac1f6ceb0f04b664972698912f115ff5def4538": [
     "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
@@ -1642,6 +1651,9 @@
   ],
   "dd3e687d49e538187c123b7123c184f9182905de": [
     "windows-apps-src\\monetize\\report-consumable-products-as-fulfilled.md"
+  ],
+  "f6c8e830a3ffcff8db9c280b6a9df5b515b1a356": [
+    "windows-apps-src\\monetize\\run-app-experiments-with-a-b-testing.md"
   ],
   "50f7ad90c04d5b5672fa7910f2df669798761472": [
     "windows-apps-src\\monetize\\run-app-experiments-with-a-b-testing.md"
@@ -3630,6 +3642,9 @@
   "e2b0680e62014526f684e7c1f7fd7da83a14f5d3": [
     "windows-apps-src\\monetize\\app-metadata-api-for-advertising-networks.md"
   ],
+  "0e6ac52f1e76c0f59cc428b2ff26dc524e93cbde": [
+    "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
+  ],
   "5c593ba7ecb78a46843ac941727a6b0f18728672": [
     "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
   ],
@@ -3677,6 +3692,9 @@
   ],
   "a99647aa8d386c68ea70397fdc33481637b22be9": [
     "windows-apps-src\\monetize\\halt-the-package-rollout-for-an-app-submission.md"
+  ],
+  "61874c700ecd31c7246effef5b05ffbf1153dfd5": [
+    "windows-apps-src\\monetize\\log-custom-events-for-dev-center.md"
   ],
   "9bfc39d77cb4b670f4315d5cdffd9a34295c73a0": [
     "windows-apps-src\\monetize\\log-custom-events-for-dev-center.md"
