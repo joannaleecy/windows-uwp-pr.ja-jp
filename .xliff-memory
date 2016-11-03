@@ -3449,6 +3449,56 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ef0764aaf772fc36c6a6266e103cb35cafa841c5.14dc57a2efe82464cd8991f18caedd52895730e4.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\audio-video-camera\\index.md.70bf414464fdeb1562a5ca1c34a928fb61be5cb7.HT": {
+      "SourceFilename": "windows-apps-src\\audio-video-camera\\index.md",
+      "XliffHash": "70bf414464fdeb1562a5ca1c34a928fb61be5cb7",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6e67f57fbc00e596bb07cc37f2c9f762a5c9f557.01e4cbdfa9c0d5a0d91477300fd9dbf4bb5f5d1c.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\audio-video-camera\\imaging.md.3fce026a8945b626a5135e9b75a1380583be1b56.HT": {
+      "SourceFilename": "windows-apps-src\\audio-video-camera\\imaging.md",
+      "XliffHash": "3fce026a8945b626a5135e9b75a1380583be1b56",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ed153b4ebd2f1b6b26f922786b3c005a57d8255d.3caca6ee61d166fe00adbd42049bc520eb9206de.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\audio-video-camera\\image-metadata.md.444e5c699bc36e299996ca5d5cb3d12c75b43358.HT": {
+      "SourceFilename": "windows-apps-src\\audio-video-camera\\image-metadata.md",
+      "XliffHash": "444e5c699bc36e299996ca5d5cb3d12c75b43358",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\958033bc054da292c85f8df0a57cf964696c82bd.cf05c484d6a661f47f84f1bcd2092b7e6658fd63.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\audio-video-camera\\supported-codecs.md.9f5bc828850409f14c53763d170be5f854ed2cda.HT": {
+      "SourceFilename": "windows-apps-src\\audio-video-camera\\supported-codecs.md",
+      "XliffHash": "9f5bc828850409f14c53763d170be5f854ed2cda",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8.1e39b5df61541b3b695eed720fec50b678557bb1.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\audio-video-camera\\bitmapencoder-options-reference.md.44c81e05c9724f339f44e3e9127c62acc4bad502.HT": {
+      "SourceFilename": "windows-apps-src\\audio-video-camera\\bitmapencoder-options-reference.md",
+      "XliffHash": "44c81e05c9724f339f44e3e9127c62acc4bad502",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\4edf119d0f8830fec9ece34f1a7eb8f3ffbe67dd.c3adb8f7d20cfc2c33cb058dd3a45f61eebcb615.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

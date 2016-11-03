@@ -89,6 +89,9 @@
   "a477827553ac1780ac625deeee08d84ab638d4c2": [
     "windows-apps-src\\audio-video-camera\\background-audio.md"
   ],
+  "4edf119d0f8830fec9ece34f1a7eb8f3ffbe67dd": [
+    "windows-apps-src\\audio-video-camera\\bitmapencoder-options-reference.md"
+  ],
   "0ccaf55215cb82633313e145a126db92aa6d16e6": [
     "windows-apps-src\\audio-video-camera\\bitmapencoder-options-reference.md"
   ],
@@ -134,11 +137,20 @@
   "204e997ebb8484a7a661422b8060fe885bd561a2": [
     "windows-apps-src\\audio-video-camera\\high-dynamic-range-hdr-photo-capture.md"
   ],
+  "958033bc054da292c85f8df0a57cf964696c82bd": [
+    "windows-apps-src\\audio-video-camera\\image-metadata.md"
+  ],
   "1f97bf89682bee430849a6b962c68a8c4877a609": [
     "windows-apps-src\\audio-video-camera\\image-metadata.md"
   ],
+  "ed153b4ebd2f1b6b26f922786b3c005a57d8255d": [
+    "windows-apps-src\\audio-video-camera\\imaging.md"
+  ],
   "ff6bff692c4e0e73b2c99e06b46e8a3050ba12c4": [
     "windows-apps-src\\audio-video-camera\\imaging.md"
+  ],
+  "6e67f57fbc00e596bb07cc37f2c9f762a5c9f557": [
+    "windows-apps-src\\audio-video-camera\\index.md"
   ],
   "1914690b6417a5ae382e74ec76b54d9db411c213": [
     "windows-apps-src\\audio-video-camera\\index.md"
@@ -187,6 +199,9 @@
   ],
   "8330ee43089207faab5f6f72e2ac7b32aada72ce": [
     "windows-apps-src\\audio-video-camera\\simple-camera-preview-access.md"
+  ],
+  "ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8": [
+    "windows-apps-src\\audio-video-camera\\supported-codecs.md"
   ],
   "0f6da61ba167328968694d240e250dbc454d5e7b": [
     "windows-apps-src\\audio-video-camera\\supported-codecs.md"
