@@ -1973,6 +1973,9 @@
   "3fb8594748d303216a4437983604b5d78c993934": [
     "windows-apps-src\\publish\\define-pricing-and-market-selection.md"
   ],
+  "422147270dbae58837e3e8f801c954271178bfa4": [
+    "windows-apps-src\\publish\\dev-center-insider-program.md"
+  ],
   "3e586fbf9fdd69be9941d065abcbad7456eba8b3": [
     "windows-apps-src\\publish\\dev-center-insider-program.md"
   ],
@@ -3069,6 +3072,9 @@
   "75548ee4689fd31d734c570f8e3eca5d33a6181f": [
     "windows-apps-src\\monetize\\manage-add-ons.md"
   ],
+  "9d19ecae9d5c43c28e887627372aabb58bf0aab2": [
+    "windows-apps-src\\monetize\\manage-add-on-submissions.md"
+  ],
   "7276294412d7931e59c1953cd0623cc6cd30247c": [
     "windows-apps-src\\monetize\\manage-add-on-submissions.md"
   ],
@@ -3104,6 +3110,9 @@
   ],
   "9dfad9c0cc6b6e03a2196946ac578ca3170fccc5": [
     "windows-apps-src\\monetize\\update-a-flight-submission.md"
+  ],
+  "f42f2dba155aa0a29e0769fd96cce6d3a0de870b": [
+    "windows-apps-src\\monetize\\update-an-add-on-submission.md"
   ],
   "c101b1e6fe8e9995ed4b1b71a1e59df372668c7d": [
     "windows-apps-src\\monetize\\update-an-add-on-submission.md"
