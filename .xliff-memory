@@ -3509,6 +3509,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\542ef7c54850e1f2d4c635531dca5a318f0e7f91.338f414a01473ba6301605a5662cc1d7440d59ca.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\launch-resume\\how-to-create-and-consume-an-app-service.md.498ed68b420be1c5933a9e3742a3914d86d22f27.HT": {
+      "SourceFilename": "windows-apps-src\\launch-resume\\how-to-create-and-consume-an-app-service.md",
+      "XliffHash": "498ed68b420be1c5933a9e3742a3914d86d22f27",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2449a3198e9265d187557608e097c1369eb471c2.42f198e6f4d68a1e6b8c3db1ce2186ead55bf742.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
