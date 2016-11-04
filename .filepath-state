@@ -1112,6 +1112,9 @@
   "d619cd6b3c9f5d62ca7d68f555e4c051abaf9bad": [
     "windows-apps-src\\input-and-devices\\define-custom-recognition-constraints.md"
   ],
+  "f7c608744981289886ec69e97f95d6a00a46fde5": [
+    "windows-apps-src\\input-and-devices\\designing-for-tv.md"
+  ],
   "d168c358a3dd68f05b5d0962edb1fb62dfe0570e": [
     "windows-apps-src\\input-and-devices\\designing-for-tv.md"
   ],
@@ -1141,6 +1144,9 @@
   ],
   "2fe8814d98dd5ce4471530c7367b8ad266cc6b05": [
     "windows-apps-src\\input-and-devices\\guidelines-for-rotation.md"
+  ],
+  "09e2241523411daa372bc7630d13b96a2aa8203b": [
+    "windows-apps-src\\input-and-devices\\guidelines-for-targeting.md"
   ],
   "5707d36533e1b6566efb23ca9b6bf2bbf659cc63": [
     "windows-apps-src\\input-and-devices\\guidelines-for-targeting.md"
@@ -1202,6 +1208,9 @@
   "97a626aedff1b0915c845f151b16b3678e1cf977": [
     "windows-apps-src\\input-and-devices\\respond-to-the-presence-of-the-touch-keyboard.md"
   ],
+  "a4b227ffeb99097bb3128fb7d6169ac2ffe9fc24": [
+    "windows-apps-src\\input-and-devices\\save-and-load-ink.md"
+  ],
   "8ba48ed9aa7589ddee6009c5a8cb8ec1091d51ef": [
     "windows-apps-src\\input-and-devices\\save-and-load-ink.md"
   ],
@@ -1213,6 +1222,9 @@
   ],
   "1a70ac671c11d2ab3c34a95f2571685f4f851836": [
     "windows-apps-src\\input-and-devices\\specify-the-speech-recognizer-language.md"
+  ],
+  "5efb2d1fc6a63e372e91cfdc8ae5e8117ff047d5": [
+    "windows-apps-src\\input-and-devices\\speech-interactions.md"
   ],
   "d32c38c2f939e03375630439f2aa512004601a70": [
     "windows-apps-src\\input-and-devices\\speech-interactions.md"

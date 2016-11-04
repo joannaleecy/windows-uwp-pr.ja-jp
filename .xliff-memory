@@ -3519,6 +3519,46 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2449a3198e9265d187557608e097c1369eb471c2.42f198e6f4d68a1e6b8c3db1ce2186ead55bf742.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\designing-for-tv.md.c5f94af8bac569b0a60c3b18502bf684f9b41849.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\designing-for-tv.md",
+      "XliffHash": "c5f94af8bac569b0a60c3b18502bf684f9b41849",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f7c608744981289886ec69e97f95d6a00a46fde5.097a09adb51a32740d2f4d572bb76ad159cef215.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\speech-interactions.md.80838aa0614f914c34967d48e1fa1a575febc119.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\speech-interactions.md",
+      "XliffHash": "80838aa0614f914c34967d48e1fa1a575febc119",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5efb2d1fc6a63e372e91cfdc8ae5e8117ff047d5.5c5c9bac8129ffbd1f33867a132c954254d91fc8.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\guidelines-for-targeting.md.454194c20b4a5645229c3a26baf65b6dffbc52e3.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\guidelines-for-targeting.md",
+      "XliffHash": "454194c20b4a5645229c3a26baf65b6dffbc52e3",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\09e2241523411daa372bc7630d13b96a2aa8203b.f9217ecc3b9dec1f4a5b07dbbe16f4c24b3c8eaa.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\save-and-load-ink.md.2001e708661e8140e0ae1959fd3da08f14b08009.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\save-and-load-ink.md",
+      "XliffHash": "2001e708661e8140e0ae1959fd3da08f14b08009",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a4b227ffeb99097bb3128fb7d6169ac2ffe9fc24.0142718562532c7e217dafcb6472aa8ca8e07316.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
