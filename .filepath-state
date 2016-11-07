@@ -1814,6 +1814,9 @@
   "6cf6367ed0f6acea0f87ac36a050e874425423b1": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
+  "4095cfbe96f239afb5f3173e0a7f84e01d63452c": [
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
+  ],
   "fcff283e0d97d76fefe3f42a6cd1076b6cdd2aae": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
@@ -1936,6 +1939,9 @@
   ],
   "b75d9310e577c77d1caed3e9f34762e925eb11ae": [
     "windows-apps-src\\publish\\advertising-performance-report.md"
+  ],
+  "76bb607fb0abf11c863be24489a4eea0747a4e40": [
+    "windows-apps-src\\publish\\affiliates-performance-report.md"
   ],
   "cfb05b2919f40aeeb83c2ba1a75206cf74d8c51d": [
     "windows-apps-src\\publish\\affiliates-performance-report.md"
@@ -2113,6 +2119,9 @@
   ],
   "9f8bc1fc435c0ee25220c60d68a5adaa34ff6214": [
     "windows-apps-src\\publish\\notes-for-certification.md"
+  ],
+  "19096e3f1f94fb4eb98646163c6542a94f8612d4": [
+    "windows-apps-src\\publish\\opening-a-developer-account.md"
   ],
   "1f847b9c3302b092dce6eb73dd01f761ec17c0a5": [
     "windows-apps-src\\publish\\opening-a-developer-account.md"
@@ -2947,6 +2956,9 @@
   ],
   "144a8400acf0333fcd50e698b333c02942081ef3": [
     "windows-apps-src\\publish\\add-on-acquisitions-report.md"
+  ],
+  "1e7c02621da528c4635ab47bd7c2a898f2441da1": [
+    "windows-apps-src\\publish\\add-on-submissions.md"
   ],
   "7b44dabfd4badcad795e38a97590d98e1601092d": [
     "windows-apps-src\\publish\\add-on-submissions.md"
