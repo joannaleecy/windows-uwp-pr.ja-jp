@@ -2813,6 +2813,9 @@
   "32df2810710e78eeb8c257548c39c0d5d978e888": [
     "windows-apps-src\\audio-video-camera\\play-audio-and-video-with-mediaplayer.md"
   ],
+  "648874a50dbe333f1bb6291de646d9088eec1528": [
+    "windows-apps-src\\audio-video-camera\\process-media-frames-with-mediaframereader.md"
+  ],
   "5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1": [
     "windows-apps-src\\audio-video-camera\\process-media-frames-with-mediaframereader.md"
   ],
