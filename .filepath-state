@@ -464,8 +464,14 @@
   "00693e6debfba6511a75164ef6e1964088ae3516": [
     "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
   ],
+  "6433db30765db3993d5867b60bae06f613690021": [
+    "windows-apps-src\\debug-test-perf\\device-portal.md"
+  ],
   "b316eab1f269dadbe65b7e93b5a33a8e4c4924d7": [
     "windows-apps-src\\debug-test-perf\\device-portal.md"
+  ],
+  "3bacb9ac42e157afaed5e9e0e6438654db03ff28": [
+    "windows-apps-src\\debug-test-perf\\device-portal-api-core.md"
   ],
   "226ecaecd93e4996e438f56f780926ca63c184fd": [
     "windows-apps-src\\debug-test-perf\\device-portal-api-core.md"
@@ -478,6 +484,9 @@
   ],
   "00dec1110ba8cc27f759f05bc4a6f352a235d18d": [
     "windows-apps-src\\debug-test-perf\\device-portal-hololens.md"
+  ],
+  "c39c1a843c4f466e1999b4e80bf87f5842ad1996": [
+    "windows-apps-src\\debug-test-perf\\device-portal-mobile.md"
   ],
   "802030f12f2ca3e29eec053d89ab806298974dc7": [
     "windows-apps-src\\debug-test-perf\\device-portal-mobile.md"
@@ -550,6 +559,9 @@
   ],
   "61d8891a97403057fe34c66dbecc6962b05e087e": [
     "windows-apps-src\\devices-sensors\\aep-service-class-ids.md"
+  ],
+  "feda9b20b4cbc265832bdb51f90546d9e1f668e8": [
+    "windows-apps-src\\devices-sensors\\ble-beacon.md"
   ],
   "c8210fd07cdea4095d1f989fe5f55cda529d8de1": [
     "windows-apps-src\\devices-sensors\\ble-beacon.md"
@@ -706,6 +718,9 @@
   ],
   "ddaa13c6bf7d1bcf5a01d7525389a893a077f4f4": [
     "windows-apps-src\\gaming\\adding-input-and-interactivity-to-the-marble-maze-sample.md"
+  ],
+  "6b7880703d40d6ef5ed5f42f3e09bc5573170e1f": [
+    "windows-apps-src\\gaming\\adding-visual-content-to-the-marble-maze-sample.md"
   ],
   "70f35fe423b8ceb3e3e3e0c1c3c2563dc0d8cd61": [
     "windows-apps-src\\gaming\\adding-visual-content-to-the-marble-maze-sample.md"
@@ -1030,6 +1045,9 @@
   ],
   "11989aafb86d280b93eed7c2e3f016b5914b15ab": [
     "windows-apps-src\\graphics\\composition-brushes.md"
+  ],
+  "197a4b32afc82724803fb93949b288b38de52cc4": [
+    "windows-apps-src\\graphics\\composition-effects.md"
   ],
   "23d28144de3d051b4b569cf633f9eee30c13368d": [
     "windows-apps-src\\graphics\\composition-effects.md"
@@ -2381,6 +2399,9 @@
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "176ad6e838f34e6e3dba47bb626be8b4eff8140c": [
+    "windows-apps-src\\TOC.md"
+  ],
   "ff3b9d08c0cfd8bb1222eda0299513be97c4bbc8": [
     "windows-apps-src\\TOC.md"
   ],
@@ -2527,6 +2548,9 @@
   ],
   "273cd14d5f51a693ba8385c13d128bb2888de2ea": [
     "windows-apps-src\\xbox-apps\\devkit-deactivation.md"
+  ],
+  "a6d410e3a4873bb96fba46789b28185c392a7492": [
+    "windows-apps-src\\xbox-apps\\frequently-asked-questions.md"
   ],
   "38e5d48b2b0303b5f7d13fdaf6f71e1b3fa56978": [
     "windows-apps-src\\xbox-apps\\frequently-asked-questions.md"

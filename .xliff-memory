@@ -3629,6 +3629,86 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\648874a50dbe333f1bb6291de646d9088eec1528.75355ec7d23436fc6578e49326c7c6fec2135cb4.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\devices-sensors\\ble-beacon.md.c2ccb60b7700932a4a95f5eea10b16edbb7e40be.HT": {
+      "SourceFilename": "windows-apps-src\\devices-sensors\\ble-beacon.md",
+      "XliffHash": "c2ccb60b7700932a4a95f5eea10b16edbb7e40be",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\feda9b20b4cbc265832bdb51f90546d9e1f668e8.81c682a6fc5973e662b00636bf7d2565a3cc6816.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\TOC.md.26205a47a634843adf27306cb34436209f349542.HT": {
+      "SourceFilename": "windows-apps-src\\TOC.md",
+      "XliffHash": "26205a47a634843adf27306cb34436209f349542",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\176ad6e838f34e6e3dba47bb626be8b4eff8140c.19854ae6d9c660c8122c612c15c4bca9503daf96.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\debug-test-perf\\device-portal-mobile.md.e888c0ae198a39ebd47432d7fc145dabc65dad0b.HT": {
+      "SourceFilename": "windows-apps-src\\debug-test-perf\\device-portal-mobile.md",
+      "XliffHash": "e888c0ae198a39ebd47432d7fc145dabc65dad0b",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c39c1a843c4f466e1999b4e80bf87f5842ad1996.9da8b74f77da3444c688f81b03c1869a231fc167.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\debug-test-perf\\device-portal-api-core.md.a457c7e7f127dd7138a4b027846f9bff6b140846.HT": {
+      "SourceFilename": "windows-apps-src\\debug-test-perf\\device-portal-api-core.md",
+      "XliffHash": "a457c7e7f127dd7138a4b027846f9bff6b140846",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\3bacb9ac42e157afaed5e9e0e6438654db03ff28.843ba89d2868012fe72fa11caf5663bf858a8e7a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\debug-test-perf\\device-portal.md.5cc365a618d4cfba373c3206908e94f43b2f506c.HT": {
+      "SourceFilename": "windows-apps-src\\debug-test-perf\\device-portal.md",
+      "XliffHash": "5cc365a618d4cfba373c3206908e94f43b2f506c",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6433db30765db3993d5867b60bae06f613690021.ecbfdf47002d98c93d475c7302d46dbb65894009.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics\\composition-effects.md.d6a0b093b90339d2ffee2470ef362b2310bf9aec.HT": {
+      "SourceFilename": "windows-apps-src\\graphics\\composition-effects.md",
+      "XliffHash": "d6a0b093b90339d2ffee2470ef362b2310bf9aec",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\197a4b32afc82724803fb93949b288b38de52cc4.6034cf8adb6e931dd74c8e97601fb13decaa8352.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\xbox-apps\\frequently-asked-questions.md.855b7f2e536ead7669eb282ff45b6b3025072e96.HT": {
+      "SourceFilename": "windows-apps-src\\xbox-apps\\frequently-asked-questions.md",
+      "XliffHash": "855b7f2e536ead7669eb282ff45b6b3025072e96",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a6d410e3a4873bb96fba46789b28185c392a7492.c3360a530a154bf15a2ef58e94a703a48f9af186.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\adding-visual-content-to-the-marble-maze-sample.md.9b2c97dacda76c8af41c45a035a90d577d492b64.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\adding-visual-content-to-the-marble-maze-sample.md",
+      "XliffHash": "9b2c97dacda76c8af41c45a035a90d577d492b64",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6b7880703d40d6ef5ed5f42f3e09bc5573170e1f.9374632696909ae022ee5e26aab9c6972704a4e6.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
