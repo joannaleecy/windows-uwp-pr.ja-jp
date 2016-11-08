@@ -3709,6 +3709,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6b7880703d40d6ef5ed5f42f3e09bc5573170e1f.9374632696909ae022ee5e26aab9c6972704a4e6.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\publish\\common-questions.md.3f2a0003e477b2941901652a32a01faf928412b5.HT": {
+      "SourceFilename": "windows-apps-src\\publish\\common-questions.md",
+      "XliffHash": "3f2a0003e477b2941901652a32a01faf928412b5",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ac18d3b036c1ec9290212097a0f9a0feb962d915.685a471d0115c5cc3535f5c63e4ddb570b12f82e.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
