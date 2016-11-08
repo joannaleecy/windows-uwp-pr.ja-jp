@@ -3676,7 +3676,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6433db30765db3993d5867b60bae06f613690021.ecbfdf47002d98c93d475c7302d46dbb65894009.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6c697782683bca6671c01aa0941a78bc66fb052a.5caf1947d3d7de730ed690093076a8edfc91ff96.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -3717,6 +3717,46 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ac18d3b036c1ec9290212097a0f9a0feb962d915.685a471d0115c5cc3535f5c63e4ddb570b12f82e.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\xaml-platform\\xaml-namespaces-and-namespace-mapping.md.0c33c92778181af106066c67145c41903003dc5e.HT": {
+      "SourceFilename": "windows-apps-src\\xaml-platform\\xaml-namespaces-and-namespace-mapping.md",
+      "XliffHash": "0c33c92778181af106066c67145c41903003dc5e",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\626af2ba6e1b8616f8d23419d94e621f3ce7d043.37d53ad36240eaec7c32fb769e6608a4c57195cb.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\data-binding\\data-binding-in-depth.md.44f9bc1466238d49c4dbbc09ac9f616d79510342.HT": {
+      "SourceFilename": "windows-apps-src\\data-binding\\data-binding-in-depth.md",
+      "XliffHash": "44f9bc1466238d49c4dbbc09ac9f616d79510342",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\48db13fec4ce9c6a9a998c84ddaaba30f7a24d83.cc198cdf85bf1a7817e227d10c320c89535a68a0.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\debug-test-perf\\optimize-gridview-and-listview.md.422b960ff333ef0a10bca51d226faa50557d9a7f.HT": {
+      "SourceFilename": "windows-apps-src\\debug-test-perf\\optimize-gridview-and-listview.md",
+      "XliffHash": "422b960ff333ef0a10bca51d226faa50557d9a7f",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\dca6c9c2cde4240da4b2eff4f4786ec5b81051c6.c1a0cc7f1262edcfbdc1719c7741d789ca7fb3bc.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics\\animations-overview.md.f57b08f748af2e8fb0da413f757ba9d063782d54.HT": {
+      "SourceFilename": "windows-apps-src\\graphics\\animations-overview.md",
+      "XliffHash": "f57b08f748af2e8fb0da413f757ba9d063782d54",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b63a1b1ea0810e256c0be62d1357e8c10a492ebd.4b29f3457c997f98927cdd4954d129a991c30ab5.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }

@@ -440,6 +440,9 @@
   "33148e8cfe301c6016d3f8a16bbcc904ca403d0e": [
     "windows-apps-src\\data-access\\sqlite-databases.md"
   ],
+  "48db13fec4ce9c6a9a998c84ddaaba30f7a24d83": [
+    "windows-apps-src\\data-binding\\data-binding-in-depth.md"
+  ],
   "fa1616c88d475393311055561a7bd219c2373f76": [
     "windows-apps-src\\data-binding\\data-binding-in-depth.md"
   ],
@@ -463,6 +466,9 @@
   ],
   "00693e6debfba6511a75164ef6e1964088ae3516": [
     "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
+  ],
+  "6c697782683bca6671c01aa0941a78bc66fb052a": [
+    "windows-apps-src\\debug-test-perf\\device-portal.md"
   ],
   "6433db30765db3993d5867b60bae06f613690021": [
     "windows-apps-src\\debug-test-perf\\device-portal.md"
@@ -514,6 +520,9 @@
   ],
   "53fd6f4c28eaa7d3976658a84dd0aefb4255ff91": [
     "windows-apps-src\\debug-test-perf\\optimize-file-access.md"
+  ],
+  "dca6c9c2cde4240da4b2eff4f4786ec5b81051c6": [
+    "windows-apps-src\\debug-test-perf\\optimize-gridview-and-listview.md"
   ],
   "1aba484afcb704b0b28ceee6027f5ae05d8e420d": [
     "windows-apps-src\\debug-test-perf\\optimize-gridview-and-listview.md"
@@ -1036,6 +1045,9 @@
   ],
   "543dfb60b1fa70e2fceebbdd03da8a301eb9d08f": [
     "windows-apps-src\\graphics\\3-d-perspective-effects.md"
+  ],
+  "b63a1b1ea0810e256c0be62d1357e8c10a492ebd": [
+    "windows-apps-src\\graphics\\animations-overview.md"
   ],
   "d622465ce3da70cdb8dbd064b68ea6983f9fe3f7": [
     "windows-apps-src\\graphics\\animations-overview.md"
@@ -2500,6 +2512,9 @@
   ],
   "34ef0bf246abe49a5e19adef66bddda7004a3441": [
     "windows-apps-src\\xaml-platform\\xaml-namescopes.md"
+  ],
+  "626af2ba6e1b8616f8d23419d94e621f3ce7d043": [
+    "windows-apps-src\\xaml-platform\\xaml-namespaces-and-namespace-mapping.md"
   ],
   "cca962e4d99599206b8a559c2595ea2b0d8a52c7": [
     "windows-apps-src\\xaml-platform\\xaml-namespaces-and-namespace-mapping.md"
