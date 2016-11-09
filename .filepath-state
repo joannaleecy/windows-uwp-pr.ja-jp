@@ -1052,6 +1052,9 @@
   "d622465ce3da70cdb8dbd064b68ea6983f9fe3f7": [
     "windows-apps-src\\graphics\\animations-overview.md"
   ],
+  "b30de6b3a53c96988443f943e02b7329244d3550": [
+    "windows-apps-src\\graphics\\composition-animation.md"
+  ],
   "9f098ef590e51547f066289965a7ce9fd02dc8cd": [
     "windows-apps-src\\graphics\\composition-animation.md"
   ],
@@ -1571,8 +1574,14 @@
   "a3ea6b9cc6561580f2b80d4540b0f4b738c09fc1": [
     "windows-apps-src\\monetize\\display-ads-using-the-microsoft-advertising-libraries.md"
   ],
+  "709ca1371dd3bd13ed72c2ed1709d192eb91c542": [
+    "windows-apps-src\\monetize\\enable-consumable-in-app-product-purchases.md"
+  ],
   "15092f726283f36c8dc5970157d3cd54dea9b837": [
     "windows-apps-src\\monetize\\enable-consumable-in-app-product-purchases.md"
+  ],
+  "1609e7ab63da316c4343183790c8788bc5950cb1": [
+    "windows-apps-src\\monetize\\enable-in-app-product-purchases.md"
   ],
   "531b5c5a5c70461e98b5809246fdce7215805a25": [
     "windows-apps-src\\monetize\\enable-in-app-product-purchases.md"
@@ -1585,6 +1594,9 @@
   ],
   "dedac33d86f50b63de300f78a9f9961efc1c016b": [
     "windows-apps-src\\monetize\\error-handling-with-advertising-libraries.md"
+  ],
+  "6ddf1ff38c691011b4483489673b08bf94210631": [
+    "windows-apps-src\\monetize\\exclude-or-limit-features-in-a-trial-version-of-your-app.md"
   ],
   "fdca95a6e925ca2238fdcd8791ade2ed4ea5a310": [
     "windows-apps-src\\monetize\\exclude-or-limit-features-in-a-trial-version-of-your-app.md"
@@ -1682,6 +1694,9 @@
   "c0c55c78751a7990cc7690c2ba5975a57387989c": [
     "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
   ],
+  "44b9ebe3f162a48ba75292bdd1474c4aea356627": [
+    "windows-apps-src\\monetize\\manage-a-large-catalog-of-in-app-products.md"
+  ],
   "529735319848fc0b8fac12e51b8536b178db0646": [
     "windows-apps-src\\monetize\\manage-a-large-catalog-of-in-app-products.md"
   ],
@@ -1748,6 +1763,9 @@
   "4a8b43ac0b6752b78e998ac16776b84e9ddda09f": [
     "windows-apps-src\\monetize\\troubleshooting-guides.md"
   ],
+  "97feb4f79e0592a7b54a8263b15cd2b85dd3243d": [
+    "windows-apps-src\\monetize\\ui-and-user-experience-guidelines.md"
+  ],
   "fc481b0f5e83d3e8b7ba42f024d9211ab9214767": [
     "windows-apps-src\\monetize\\ui-and-user-experience-guidelines.md"
   ],
@@ -1759,6 +1777,9 @@
   ],
   "6c3dabadff2653afe04c438393777b197a12b69d": [
     "windows-apps-src\\monetize\\use-ad-mediation-to-maximize-revenue.md"
+  ],
+  "fd6b829828133a70c30d933c34051ae91bd10722": [
+    "windows-apps-src\\monetize\\use-receipts-to-verify-product-purchases.md"
   ],
   "ea79a33a52bc45a9c8609e12bfac953c3f92db09": [
     "windows-apps-src\\monetize\\use-receipts-to-verify-product-purchases.md"
@@ -2146,6 +2167,9 @@
   ],
   "3859918d94ad7ffcf1c331ca5a0ca6540387886f": [
     "windows-apps-src\\publish\\managing-your-profile.md"
+  ],
+  "869407ce5d57ce376f283a61c8632b51e245adae": [
+    "windows-apps-src\\publish\\mobile-operator-billing.md"
   ],
   "827a07f45c64722eaf8be25c4f3eb3fb03780494": [
     "windows-apps-src\\publish\\mobile-operator-billing.md"
@@ -2813,6 +2837,9 @@
   "1b99b959cfdde997f7995c1bdf40d51921b2f1d5": [
     "windows-apps-src\\apps-for-education\\troubleshooting.md"
   ],
+  "98f71104b5a95f9327a0b3f879e4dbb91b74b581": [
+    "windows-apps-src\\audio-video-camera\\basic-photo-video-and-audio-capture-with-MediaCapture.md"
+  ],
   "19a546d4778d0edfbc5ca2e3acf0ded084445958": [
     "windows-apps-src\\audio-video-camera\\basic-photo-video-and-audio-capture-with-MediaCapture.md"
   ],
@@ -2977,6 +3004,9 @@
   ],
   "99143d48a5f2155b0a47008574d0a78243dea925": [
     "windows-apps-src\\monetize\\in-app-purchases-and-trials.md"
+  ],
+  "2e2af42ae72312e3a708a00728a517bcedece1d8": [
+    "windows-apps-src\\monetize\\in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md"
   ],
   "5a4f943357660a22217351f04d735c14cab828ff": [
     "windows-apps-src\\monetize\\in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md"
