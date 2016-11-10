@@ -3646,7 +3646,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\176ad6e838f34e6e3dba47bb626be8b4eff8140c.19854ae6d9c660c8122c612c15c4bca9503daf96.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e899f3561060cf80f6a44f99ff0e436f9bb5d803.7189f6f8a10ff8f0783b1ff6852c4fa6c332ff78.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -3867,6 +3867,16 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f762d7eb70a0e9119f32350a815691109f994c75.625d864cf7d4d5ccd393a49adb0c42e5db0ed987.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\manage-your-experiment.md.19e4b8a451670c1b1e6c650b1110588ddaa919cb.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\manage-your-experiment.md",
+      "XliffHash": "19e4b8a451670c1b1e6c650b1110588ddaa919cb",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\18e7956e627589dca694b46472fea631c1ebe6b7.652dfa0244d9570fdff90a5b9cbb60aa05d04506.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }

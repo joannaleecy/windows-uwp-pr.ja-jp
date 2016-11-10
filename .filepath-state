@@ -1703,6 +1703,9 @@
   "529735319848fc0b8fac12e51b8536b178db0646": [
     "windows-apps-src\\monetize\\manage-a-large-catalog-of-in-app-products.md"
   ],
+  "18e7956e627589dca694b46472fea631c1ebe6b7": [
+    "windows-apps-src\\monetize\\manage-your-experiment.md"
+  ],
   "730a7a23b577d92c995da0970c33328cecc2db9b": [
     "windows-apps-src\\monetize\\manage-your-experiment.md"
   ],
@@ -2440,6 +2443,9 @@
   ],
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "e899f3561060cf80f6a44f99ff0e436f9bb5d803": [
+    "windows-apps-src\\TOC.md"
   ],
   "176ad6e838f34e6e3dba47bb626be8b4eff8140c": [
     "windows-apps-src\\TOC.md"
