@@ -6,24 +6,24 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\launch-resume\launch-settings-app.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/1135feec72510e6cbe955161ac169158a71097b9?path=windows-apps-src%2Flaunch-resume%2Flaunch-settings-app.md&_a=contents) | HandedOffSuccess | [Details](#f762d7eb70a0e9119f32350a815691109f994c754765)
+ [windows-apps-src\launch-resume\web-to-app-linking.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/77127e3a387839aba423ff109a8898085b585b73?path=windows-apps-src%2Flaunch-resume%2Fweb-to-app-linking.md&_a=contents) | HandedOffSuccess | [Details](#9a26170d567107bb05cd2257b904ea032bc5b14f4780)
 
 ## Item Details
-##### <a name='f762d7eb70a0e9119f32350a815691109f994c754765'></a> Source: [windows-apps-src\launch-resume\launch-settings-app.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/1135feec72510e6cbe955161ac169158a71097b9?path=windows-apps-src%2Flaunch-resume%2Flaunch-settings-app.md&_a=contents)
+##### <a name='9a26170d567107bb05cd2257b904ea032bc5b14f4780'></a> Source: [windows-apps-src\launch-resume\web-to-app-linking.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/77127e3a387839aba423ff109a8898085b585b73?path=windows-apps-src%2Flaunch-resume%2Fweb-to-app-linking.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [launch-settings-app.213d22fb9304d43ac7c72f50022c39923445e2be.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/2ec4ad619cdbfebc8c9233c1687a5daa88cae1d8?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Flaunch-settings-app.213d22fb9304d43ac7c72f50022c39923445e2be.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2016-11-09 22:50:53
+* Handoff File: [web-to-app-linking.9921741de4371fb28911eab4f61e57b633dfc955.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/4e59b9838a124af04aad74953ae53dc4f34cea5f?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fweb-to-app-linking.9921741de4371fb28911eab4f61e57b633dfc955.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2016-11-10 00:45:39
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\launch-resume\launch-settings-app.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/a0c9b37996e144c232a515e52bb1b63c37a2862b?path=windows-apps-src%2Flaunch-resume%2Flaunch-settings-app.md&_a=contents)
-* Current Handback File: [launch-settings-app.213d22fb9304d43ac7c72f50022c39923445e2be.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/480ff19d0d67081a9e8f65722d99210ca2ffc468?path=ol-handback%2FMicrosoft%2Fwindows-apps.ja-jp%2Fmaster%2Flaunch-settings-app.213d22fb9304d43ac7c72f50022c39923445e2be.ja-jp.xlf&_a=contents)
-* Current Handback Datetime: 2016-10-21 15:00:50
-* Bilingual File: [launch-settings-app.213d22fb9304d43ac7c72f50022c39923445e2be.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/480ff19d0d67081a9e8f65722d99210ca2ffc468?path=ol-handback%2FMicrosoft%2Fwindows-apps.ja-jp%2Fmaster%2Flaunch-settings-app.213d22fb9304d43ac7c72f50022c39923445e2be.ja-jp.xlf&_a=contents)
-* Bilingual Datetime: 2016-10-24 15:45:53
+* Current Target File: [windows-apps-src\launch-resume\web-to-app-linking.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/eef20379f7a85a009f8a05fd928896248f57678f?path=windows-apps-src%2Flaunch-resume%2Fweb-to-app-linking.md&_a=contents)
+* Current Handback File: [web-to-app-linking.9921741de4371fb28911eab4f61e57b633dfc955.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/98085a75bdd13df6c503c0d8e3706a9c11f80fd3?path=ol-handback%2FMicrosoft%2Fwindows-apps.ja-jp%2Fmaster%2Fweb-to-app-linking.9921741de4371fb28911eab4f61e57b633dfc955.ja-jp.xlf&_a=contents)
+* Current Handback Datetime: 2016-09-26 13:24:11
+* Bilingual File: [web-to-app-linking.9921741de4371fb28911eab4f61e57b633dfc955.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/98085a75bdd13df6c503c0d8e3706a9c11f80fd3?path=ol-handback%2FMicrosoft%2Fwindows-apps.ja-jp%2Fmaster%2Fweb-to-app-linking.9921741de4371fb28911eab4f61e57b633dfc955.ja-jp.xlf&_a=contents)
+* Bilingual Datetime: 2016-10-18 13:24:14
 * [Back to Top](#report-top)
 
 

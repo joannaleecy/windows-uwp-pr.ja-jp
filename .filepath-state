@@ -2963,6 +2963,9 @@
   "80e89e24236903ab90f7c4fe326782a0a7e5272f": [
     "windows-apps-src\\launch-resume\\reduce-memory-usage.md"
   ],
+  "9a26170d567107bb05cd2257b904ea032bc5b14f": [
+    "windows-apps-src\\launch-resume\\web-to-app-linking.md"
+  ],
   "d7ce1dbfdf8ce0069b4d882323de8fd6f1b242f7": [
     "windows-apps-src\\launch-resume\\web-to-app-linking.md"
   ],
