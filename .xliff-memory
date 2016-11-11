@@ -3889,6 +3889,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\28906c98d2826f5312e01713e2621159c6b24923.ce6137cf705a5459f9e9f208bb12062393840d66.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\publish\\resolve-package-upload-errors.md.383da6af330e0907adc955d9089899f361320700.HT": {
+      "SourceFilename": "windows-apps-src\\publish\\resolve-package-upload-errors.md",
+      "XliffHash": "383da6af330e0907adc955d9089899f361320700",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\4f7f9698d8b8b17654b6f2e0420c7cdc6031f018.9e0b4dba134b89e5a7aaf25394a8d3cec6d63e06.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\style\\typography.md.4155dd0cce7923095f6ba4a92b9cabe5584c6589.HT": {
+      "SourceFilename": "windows-apps-src\\style\\typography.md",
+      "XliffHash": "4155dd0cce7923095f6ba4a92b9cabe5584c6589",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\45b4bbc86c69cabae4a2ee83d2d43c7189a710ce.3eb8ef2bf1ef1a2e960275977a9b3b3abfd0bf61.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

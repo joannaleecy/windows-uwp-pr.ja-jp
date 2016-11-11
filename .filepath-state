@@ -2237,6 +2237,9 @@
   "1613c8a5e5a28ba431fcfb186a0fcd5fe9bd7582": [
     "windows-apps-src\\publish\\ratings-report.md"
   ],
+  "4f7f9698d8b8b17654b6f2e0420c7cdc6031f018": [
+    "windows-apps-src\\publish\\resolve-package-upload-errors.md"
+  ],
   "c55314d6da819100cc3ed6782cc151d55dc1f8cb": [
     "windows-apps-src\\publish\\resolve-package-upload-errors.md"
   ],
@@ -2416,6 +2419,9 @@
   ],
   "91021d76b180e2bc26c0d502098e0a0b21f0219f": [
     "windows-apps-src\\style\\sound.md"
+  ],
+  "45b4bbc86c69cabae4a2ee83d2d43c7189a710ce": [
+    "windows-apps-src\\style\\typography.md"
   ],
   "481c66e3edd42722cfd59bf420fe5b6286706245": [
     "windows-apps-src\\style\\typography.md"
