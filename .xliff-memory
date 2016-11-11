@@ -3929,6 +3929,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e3e21c55ea8ddeab0969e304080394b940da010d.fae7cda866e15292e461bdf81f0f5235d58616e5.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\updates-and-versions\\choose-a-uwp-version.md.7b0fabf5956a2da8569832d889478874cdaea8b1.HT": {
+      "SourceFilename": "windows-apps-src\\updates-and-versions\\choose-a-uwp-version.md",
+      "XliffHash": "7b0fabf5956a2da8569832d889478874cdaea8b1",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5d05c427ecc1ec57856b7c3909be50c3d87daa28.e49f096b95db9b2285ec46971b4c1bbb77dab6b1.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
