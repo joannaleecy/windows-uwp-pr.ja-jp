@@ -3939,6 +3939,36 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5d05c427ecc1ec57856b7c3909be50c3d87daa28.e49f096b95db9b2285ec46971b4c1bbb77dab6b1.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\security\\microsoft-passport.md.c8a8a8da7d39bb827d9f5a1a0665a3afd3276cb5.HT": {
+      "SourceFilename": "windows-apps-src\\security\\microsoft-passport.md",
+      "XliffHash": "c8a8a8da7d39bb827d9f5a1a0665a3afd3276cb5",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\cb24b1e75dbb8f37fcd4482e3e0d468855155f04.28e21f315855e17edea0c5880992823c2e744f0e.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\security\\index.md.62ce041ccbb0f7569b5b240810c10e5549aea20d.HT": {
+      "SourceFilename": "windows-apps-src\\security\\index.md",
+      "XliffHash": "62ce041ccbb0f7569b5b240810c10e5549aea20d",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b30492c3c74b19d5ce306829302be17ff303723f.e6cdb6e730f3f83adf438c9be18735bba496818b.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\launch-resume\\launch-a-remote-app.md.25499cd9eba4472e3d9a10ae2ad692b0e6dabb10.HT": {
+      "SourceFilename": "windows-apps-src\\launch-resume\\launch-a-remote-app.md",
+      "XliffHash": "25499cd9eba4472e3d9a10ae2ad692b0e6dabb10",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d429ea4a6f8d52445c99cb170bb41c3fc1515dde.d2f3404f06c8a8d2312d2daa4ab9187413600e62.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

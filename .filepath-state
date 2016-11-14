@@ -2357,6 +2357,9 @@
   "d2dfbc6c69e8ee97a01bbf0d7ae82488ca62e3cb": [
     "windows-apps-src\\security\\fingerprint-biometrics.md"
   ],
+  "b30492c3c74b19d5ce306829302be17ff303723f": [
+    "windows-apps-src\\security\\index.md"
+  ],
   "19f024bd3ad99b4ef9355cc3c9229b1b3ffc51e2": [
     "windows-apps-src\\security\\index.md"
   ],
@@ -2365,6 +2368,9 @@
   ],
   "2c43e8ea726827d263fd397ea28058c04d30a7aa": [
     "windows-apps-src\\security\\macs-hashes-and-signatures.md"
+  ],
+  "cb24b1e75dbb8f37fcd4482e3e0d468855155f04": [
+    "windows-apps-src\\security\\microsoft-passport.md"
   ],
   "979eb3c6ac41f304e19093055574db7805a115ff": [
     "windows-apps-src\\security\\microsoft-passport.md"
@@ -2974,6 +2980,9 @@
   ],
   "4f49acfd7efcb10d99f9d23884d20c0fc51e5a4a": [
     "windows-apps-src\\launch-resume\\connected-apps-and-devices.md"
+  ],
+  "d429ea4a6f8d52445c99cb170bb41c3fc1515dde": [
+    "windows-apps-src\\launch-resume\\launch-a-remote-app.md"
   ],
   "d8c3783d68a1b3b216058790d84255a7fb4b612c": [
     "windows-apps-src\\launch-resume\\launch-a-remote-app.md"
