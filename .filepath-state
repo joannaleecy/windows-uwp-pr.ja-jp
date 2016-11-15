@@ -380,14 +380,23 @@
   "4aa22b9eae8ff7f7da2c73f3fdf3a63ed12ff87b": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-app-assets.md"
   ],
+  "71b1255c25adcb4a99d082ba5e83af60b316abe1": [
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-choosing-a-notification-delivery-method.md"
+  ],
   "a61c9ce609856ff3addba557558c6bffec504ed7": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-choosing-a-notification-delivery-method.md"
+  ],
+  "a00796da398d6e0246caac43b18fb688a9e03fce": [
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-create-adaptive-tiles.md"
   ],
   "38ee8ae177898e20d45545c1cfd51a0dd24f7858": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-create-adaptive-tiles.md"
   ],
   "37de1a413ac9b5e74c905c140899ec7577a6fae5": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-creating-tiles.md"
+  ],
+  "20e73c2de82bcc76c94fff38163dddac7ef9d8a9": [
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-notifications-visualizer.md"
   ],
   "a954404ccc2e986c1603402315c8497f802ad254": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-notifications-visualizer.md"
@@ -398,8 +407,14 @@
   "6d0f2460e6b65173445cdf7c1fea207e6bdbd149": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-raw-notification-overview.md"
   ],
+  "8fc2fc007d14bd9c5d08ca4eb7e61a2dfdf04d3b": [
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-sending-a-local-tile-notification.md"
+  ],
   "a4f654b286db44d4054be296e76114024616f632": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-sending-a-local-tile-notification.md"
+  ],
+  "fc01951adfb151f1c5952d9181492a1d1f88b0cc": [
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-special-tile-templates-catalog.md"
   ],
   "b03ea68ea2a0f66edac81a4c7e2671b2f756aa45": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-special-tile-templates-catalog.md"
@@ -671,14 +686,26 @@
   "75a7723fb8934a59d44da2f075184dd6bbd85d45": [
     "windows-apps-src\\enterprise\\index.md"
   ],
+  "a13f351af3cba8d3d9e645a6f6040dff6e81e1ff": [
+    "windows-apps-src\\files\\access-the-sd-card.md"
+  ],
   "c3ce9103f78a78e95214239e41a302ccd0e59796": [
     "windows-apps-src\\files\\access-the-sd-card.md"
+  ],
+  "d6cb8bd32766157b1edf886621bdc605ca160db5": [
+    "windows-apps-src\\files\\file-access-permissions.md"
   ],
   "e58cdce7f803cd15b66371e3b03c4405cbdeb3ff": [
     "windows-apps-src\\files\\file-access-permissions.md"
   ],
+  "fc873da2d0b48cdc614fa319a294e67642440cdf": [
+    "windows-apps-src\\files\\how-to-track-recently-used-files-and-folders.md"
+  ],
   "84b78cc4af9490f142c0f74fec127e1d003ce6df": [
     "windows-apps-src\\files\\how-to-track-recently-used-files-and-folders.md"
+  ],
+  "e248a0898772f1fde38e312b1cbd24da5b2946a7": [
+    "windows-apps-src\\files\\index.md"
   ],
   "32c6e33f9506abc1876075f6ca11656241921005": [
     "windows-apps-src\\files\\index.md"
@@ -686,20 +713,38 @@
   "7f4e53e0dd70534912e0c94f350f4c84e7c1f672": [
     "windows-apps-src\\files\\protect-your-enterprise-data-with-edp.md"
   ],
+  "d55908186e5e0687c7dbd22fee9d2f7b70ba1707": [
+    "windows-apps-src\\files\\quickstart-accessing-homegroup-content.md"
+  ],
   "d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044": [
     "windows-apps-src\\files\\quickstart-accessing-homegroup-content.md"
+  ],
+  "2289b85a8b26e1827446709e1db97c447b3b7964": [
+    "windows-apps-src\\files\\quickstart-determining-availability-of-microsoft-onedrive-files.md"
   ],
   "2ed00b525fd2b7af51da00ad0464e37f1cabd889": [
     "windows-apps-src\\files\\quickstart-determining-availability-of-microsoft-onedrive-files.md"
   ],
+  "464548664f8065e4dba45d23ccbb71a68d0b6b17": [
+    "windows-apps-src\\files\\quickstart-getting-file-properties.md"
+  ],
   "78fdc200b134525fc0445af64e73b184b49ef2a3": [
     "windows-apps-src\\files\\quickstart-getting-file-properties.md"
+  ],
+  "80c9a2f37b7744d983f3f742895e9ac2408850df": [
+    "windows-apps-src\\files\\quickstart-listing-files-and-folders.md"
   ],
   "a7a8ba7166cf8c6778003396b13b7098578097ca": [
     "windows-apps-src\\files\\quickstart-listing-files-and-folders.md"
   ],
+  "4e2b7d10e1d24427aede21ccae176d7cd55f9de8": [
+    "windows-apps-src\\files\\quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md"
+  ],
   "def1c5c8d9d062a81731744e1e1465472225494a": [
     "windows-apps-src\\files\\quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md"
+  ],
+  "0709d9c9126dc4523eae58d5db8d9037a2fb618e": [
+    "windows-apps-src\\files\\quickstart-reading-and-writing-files.md"
   ],
   "2a9f5de71712e657bc9a0a39b668085c399ce9fb": [
     "windows-apps-src\\files\\quickstart-reading-and-writing-files.md"
@@ -707,8 +752,14 @@
   "145acd5a5a6143a31b792df721d94f9ddc5718fa": [
     "windows-apps-src\\files\\quickstart-reading-and-writing-files.md"
   ],
+  "ae6a9806e982a866834371a60788f7a788b04e47": [
+    "windows-apps-src\\files\\quickstart-save-a-file-with-a-picker.md"
+  ],
   "8e65131a913f5ea69438ff986151da11d3126314": [
     "windows-apps-src\\files\\quickstart-save-a-file-with-a-picker.md"
+  ],
+  "e7884f140915d66b4a9f95a4197e717d63b0f25f": [
+    "windows-apps-src\\files\\quickstart-using-file-and-folder-pickers.md"
   ],
   "a27f81be16b5f032d852b377b14f1aaf89b93a2f": [
     "windows-apps-src\\files\\quickstart-using-file-and-folder-pickers.md"
@@ -1874,14 +1925,23 @@
   "100d1b94dec44cbf00d4a3cacd6aa74f94c20d9c": [
     "windows-apps-src\\packaging\\app-capability-declarations.md"
   ],
+  "2cc7fa903a5eba8b20b99298cf565c954016b35d": [
+    "windows-apps-src\\packaging\\index.md"
+  ],
   "d96bf51c2d5410d9e8f89870d9690718633b0cd4": [
     "windows-apps-src\\packaging\\index.md"
   ],
   "230c77cbe60631d643bebe905a92cdbeb76af4d2": [
     "windows-apps-src\\packaging\\index.md"
   ],
+  "37028e1e119f27a8c82bc024e52f939a89243244": [
+    "windows-apps-src\\packaging\\install-universal-windows-apps-with-the-winappdeploycmd-tool.md"
+  ],
   "87af49dc04a94bac8896b33a1d7e8b4993b0f2c3": [
     "windows-apps-src\\packaging\\install-universal-windows-apps-with-the-winappdeploycmd-tool.md"
+  ],
+  "f5678cfe7883130e84db670b32b3ba26be8312b4": [
+    "windows-apps-src\\packaging\\packaging-uwp-apps.md"
   ],
   "e274557883071c65313893ce725cc2307856174b": [
     "windows-apps-src\\packaging\\packaging-uwp-apps.md"

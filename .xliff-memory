@@ -4029,6 +4029,206 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\fd59def4064f1206f963bc6bb7bd937309d960d2.8fa93b7419ba157bddecb04ec9f6bea99e03b350.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\files\\quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md.5011ca088ae1b170eb1a10d24fad7d026652bd93.HT": {
+      "SourceFilename": "windows-apps-src\\files\\quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md",
+      "XliffHash": "5011ca088ae1b170eb1a10d24fad7d026652bd93",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\4e2b7d10e1d24427aede21ccae176d7cd55f9de8.8fc18d36b95de999f29f6c71e29cf85a49bdf3d9.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\files\\how-to-track-recently-used-files-and-folders.md.d2b1df1ae445ce675c1d07c860811d38a1289e65.HT": {
+      "SourceFilename": "windows-apps-src\\files\\how-to-track-recently-used-files-and-folders.md",
+      "XliffHash": "d2b1df1ae445ce675c1d07c860811d38a1289e65",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\fc873da2d0b48cdc614fa319a294e67642440cdf.db9c91af611959d65d4038383e853ee658dd8310.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\files\\quickstart-determining-availability-of-microsoft-onedrive-files.md.0eefa66307adab29ca1edac08c2d9792144d5b17.HT": {
+      "SourceFilename": "windows-apps-src\\files\\quickstart-determining-availability-of-microsoft-onedrive-files.md",
+      "XliffHash": "0eefa66307adab29ca1edac08c2d9792144d5b17",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2289b85a8b26e1827446709e1db97c447b3b7964.b3fa034aff0c83a31064fab30396aeeeaadc3189.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-create-adaptive-tiles.md.97ed4be4175ca9c6b34e8da54bf1599db31aacc5.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-create-adaptive-tiles.md",
+      "XliffHash": "97ed4be4175ca9c6b34e8da54bf1599db31aacc5",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a00796da398d6e0246caac43b18fb688a9e03fce.a8203403cdf4d7342f15edade9e2bb0af1d33f10.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\packaging\\install-universal-windows-apps-with-the-winappdeploycmd-tool.md.739aa80eefd017f410f158b6152202d4f7c6bb75.HT": {
+      "SourceFilename": "windows-apps-src\\packaging\\install-universal-windows-apps-with-the-winappdeploycmd-tool.md",
+      "XliffHash": "739aa80eefd017f410f158b6152202d4f7c6bb75",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\37028e1e119f27a8c82bc024e52f939a89243244.11775a0657b3fc2b4cf439d16a778a08152ffa21.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\files\\access-the-sd-card.md.e75ef9d2996f859e7c66aabcac1b9171afc7d7a8.HT": {
+      "SourceFilename": "windows-apps-src\\files\\access-the-sd-card.md",
+      "XliffHash": "e75ef9d2996f859e7c66aabcac1b9171afc7d7a8",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a13f351af3cba8d3d9e645a6f6040dff6e81e1ff.e4a623f481524cc8e71bdc34025f9bd99185e581.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-sending-a-local-tile-notification.md.00914650f58497265d2b246e3907a09871d9ccc9.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-sending-a-local-tile-notification.md",
+      "XliffHash": "00914650f58497265d2b246e3907a09871d9ccc9",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8fc2fc007d14bd9c5d08ca4eb7e61a2dfdf04d3b.4daed314bbe35662c55006880f93074ec6768047.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\files\\quickstart-reading-and-writing-files.md.1b59705eb7ed290827d85d8f5b34404c2f011bce.HT": {
+      "SourceFilename": "windows-apps-src\\files\\quickstart-reading-and-writing-files.md",
+      "XliffHash": "1b59705eb7ed290827d85d8f5b34404c2f011bce",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0709d9c9126dc4523eae58d5db8d9037a2fb618e.01648833fe1bad05d304e7a4d1dc8303423719d2.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\packaging\\index.md.7021a0691e0d1b5dd42ebed4b7fd9d6ff1f0fef6.HT": {
+      "SourceFilename": "windows-apps-src\\packaging\\index.md",
+      "XliffHash": "7021a0691e0d1b5dd42ebed4b7fd9d6ff1f0fef6",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2cc7fa903a5eba8b20b99298cf565c954016b35d.0068db7bbe4a90ac04b3dc39d88dd476654a6a07.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\files\\index.md.c7d81a472a38d4a4d28570e678cd2d1e8aa18d69.HT": {
+      "SourceFilename": "windows-apps-src\\files\\index.md",
+      "XliffHash": "c7d81a472a38d4a4d28570e678cd2d1e8aa18d69",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e248a0898772f1fde38e312b1cbd24da5b2946a7.ac5d24417db388b13a439943bbdfb37d9f1f04b7.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-notifications-visualizer.md.f29aca91d0ef8de311f0c1c3035d244159e9bf8b.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-notifications-visualizer.md",
+      "XliffHash": "f29aca91d0ef8de311f0c1c3035d244159e9bf8b",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\20e73c2de82bcc76c94fff38163dddac7ef9d8a9.55f253e6a837ffd51de46545b80f6f11ab162865.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\files\\quickstart-using-file-and-folder-pickers.md.e5ed4d459d7c508f4e4a77ba7db6ef059a941e6a.HT": {
+      "SourceFilename": "windows-apps-src\\files\\quickstart-using-file-and-folder-pickers.md",
+      "XliffHash": "e5ed4d459d7c508f4e4a77ba7db6ef059a941e6a",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e7884f140915d66b4a9f95a4197e717d63b0f25f.cbffff656a7c894735bab26c98672b9dfc444ab2.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\files\\quickstart-accessing-homegroup-content.md.e7dfc39c59c32d3864d58002622a65a85f110813.HT": {
+      "SourceFilename": "windows-apps-src\\files\\quickstart-accessing-homegroup-content.md",
+      "XliffHash": "e7dfc39c59c32d3864d58002622a65a85f110813",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d55908186e5e0687c7dbd22fee9d2f7b70ba1707.bcbafa09ef96bc577c542f7ae12b92f30feedb70.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\packaging\\packaging-uwp-apps.md.efd97c5fad061334b31e483bcf5876b64824cd35.HT": {
+      "SourceFilename": "windows-apps-src\\packaging\\packaging-uwp-apps.md",
+      "XliffHash": "efd97c5fad061334b31e483bcf5876b64824cd35",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f5678cfe7883130e84db670b32b3ba26be8312b4.633628d26314d1034451af224ae9f7b109c1d715.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\files\\quickstart-listing-files-and-folders.md.b8c172807b893b5bd410160c9b65925949566eee.HT": {
+      "SourceFilename": "windows-apps-src\\files\\quickstart-listing-files-and-folders.md",
+      "XliffHash": "b8c172807b893b5bd410160c9b65925949566eee",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\80c9a2f37b7744d983f3f742895e9ac2408850df.ff497abea82bb4defb0f571d0f3c5271b7a8081c.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\files\\quickstart-save-a-file-with-a-picker.md.6eca10a583f0b26189f37a2a2f2596393e4087df.HT": {
+      "SourceFilename": "windows-apps-src\\files\\quickstart-save-a-file-with-a-picker.md",
+      "XliffHash": "6eca10a583f0b26189f37a2a2f2596393e4087df",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ae6a9806e982a866834371a60788f7a788b04e47.168c7799667122a4931e4960cdbb14ddc3cf62aa.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\files\\quickstart-getting-file-properties.md.2a330d9145111ce5bfebf70d7be54593fab10857.HT": {
+      "SourceFilename": "windows-apps-src\\files\\quickstart-getting-file-properties.md",
+      "XliffHash": "2a330d9145111ce5bfebf70d7be54593fab10857",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\464548664f8065e4dba45d23ccbb71a68d0b6b17.365ff6a59885185a4d2b97e890cb6934d49edbd7.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-choosing-a-notification-delivery-method.md.35e2c3f5bf27212fcc8c8a013026a622ed6fc9e8.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-choosing-a-notification-delivery-method.md",
+      "XliffHash": "35e2c3f5bf27212fcc8c8a013026a622ed6fc9e8",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\71b1255c25adcb4a99d082ba5e83af60b316abe1.2ce16d4fe68d9152a9ac2cbe87a0300581093203.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\files\\file-access-permissions.md.9aaf25a0869fab99fbd138d2c808cfda48adaa3a.HT": {
+      "SourceFilename": "windows-apps-src\\files\\file-access-permissions.md",
+      "XliffHash": "9aaf25a0869fab99fbd138d2c808cfda48adaa3a",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d6cb8bd32766157b1edf886621bdc605ca160db5.e1202ff41f77aeeb04a7a21b1b9e11cf05b09840.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-special-tile-templates-catalog.md.023df34e99205a18b71c305b55d502f7d015a05c.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-special-tile-templates-catalog.md",
+      "XliffHash": "023df34e99205a18b71c305b55d502f7d015a05c",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\fc01951adfb151f1c5952d9181492a1d1f88b0cc.3e5380b2d712ccf514d88b1d7de7674b89c68aff.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
