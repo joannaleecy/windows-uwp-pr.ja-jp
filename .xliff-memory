@@ -4229,6 +4229,36 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\fc01951adfb151f1c5952d9181492a1d1f88b0cc.3e5380b2d712ccf514d88b1d7de7674b89c68aff.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md.09a369b346a814bc1626fe147ecec68b9f54b5ac.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md",
+      "XliffHash": "09a369b346a814bc1626fe147ecec68b9f54b5ac",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d6f90d8bcff80ef8fae5f85a572e1b1ab11f153d.8ea8c78c4791f038319f0d156c4b1e39e7316821.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\enable-your-device-for-development.md.d0c9c65f6a9bd12dd82253889a7baff9e1dfeebb.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\enable-your-device-for-development.md",
+      "XliffHash": "d0c9c65f6a9bd12dd82253889a7baff9e1dfeebb",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\416dce2f7cbe3bba9285f7e354868a2c00728802.468bb3b7677f5048364c223be3baefcd0d54dd6f.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md.6d59e0596c5059cc750527a283b4111bf77a79e5.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md",
+      "XliffHash": "6d59e0596c5059cc750527a283b4111bf77a79e5",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ad34b1bc62abf6c93f5124e774ad374f5b767f2c.8c8c4f42f2b6140a1fc3937fedcfd3b2424a06fc.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
