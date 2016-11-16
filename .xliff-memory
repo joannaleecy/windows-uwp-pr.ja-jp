@@ -4259,6 +4259,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ad34b1bc62abf6c93f5124e774ad374f5b767f2c.8c8c4f42f2b6140a1fc3937fedcfd3b2424a06fc.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\publish\\mobile-operator-billing.md.f94d4c489b10a634e6bb2a15720975f304e19786.HT": {
+      "SourceFilename": "windows-apps-src\\publish\\mobile-operator-billing.md",
+      "XliffHash": "f94d4c489b10a634e6bb2a15720975f304e19786",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\53be797bab92a6df147b60da2140f93b12a0d6bc.90a17f169c242f8422a84d12d3d115d2879db7fe.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md.3e89d7d28a96033b4f85f1d934615d347bb31f80.HT": {
+      "SourceFilename": "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md",
+      "XliffHash": "3e89d7d28a96033b4f85f1d934615d347bb31f80",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\3ea67f9e4f0d834bd77ef116c5e0b16008f4ae5f.215a62fe37a85f3d833c9549bb4d3f97a0e31fb6.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
