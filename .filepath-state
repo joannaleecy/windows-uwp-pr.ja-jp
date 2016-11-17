@@ -1685,6 +1685,9 @@
   "15db76c03f5880955bc4e609ea004f659a3495bd": [
     "windows-apps-src\\monetize\\get-app-failures.md"
   ],
+  "26d9bd8e5fb756473d8e5bcb0835166e36d35f73": [
+    "windows-apps-src\\monetize\\get-app-ratings.md"
+  ],
   "24ed4d32437143649354642a4d5c070f9675c16d": [
     "windows-apps-src\\monetize\\get-app-ratings.md"
   ],
@@ -1694,6 +1697,9 @@
   "8ec588ceb0a7c8bd6a75f72bf0a2d48c697a8e6a": [
     "windows-apps-src\\monetize\\get-app-ratings.md"
   ],
+  "05c7a28943593ba4665ce86551a63cc93ee1f379": [
+    "windows-apps-src\\monetize\\get-app-reviews.md"
+  ],
   "eb550e45cc6a5ea5e3b9bb4b24fa6462859c03ba": [
     "windows-apps-src\\monetize\\get-app-reviews.md"
   ],
@@ -1702,6 +1708,9 @@
   ],
   "4190012c08e22f4efb086c711183332b23ccee38": [
     "windows-apps-src\\monetize\\get-app-reviews.md"
+  ],
+  "f4a9b13a6012f11e058e8ba62c131dc5c09f40ee": [
+    "windows-apps-src\\monetize\\get-error-reporting-data.md"
   ],
   "0d8bcf051a2b61c5b98e23dcb95c5752676ba9c4": [
     "windows-apps-src\\monetize\\get-error-reporting-data.md"
@@ -2018,20 +2027,38 @@
   "10c65c359f3a0791ba03288a745bc732b94251b7": [
     "windows-apps-src\\porting\\update-your-visual-studio-2015-rc-project-to-rtm.md"
   ],
+  "348012b4a23e60e24d2185baf71cbe147e30053a": [
+    "windows-apps-src\\porting\\w8x-to-uwp-case-study-bookstore1.md"
+  ],
   "fdb5414a0831d6bff607cc8cec9188d3861651fb": [
     "windows-apps-src\\porting\\w8x-to-uwp-case-study-bookstore1.md"
+  ],
+  "34762d74ba34ed3c5cee4da4809c2c509f3932e9": [
+    "windows-apps-src\\porting\\w8x-to-uwp-case-study-bookstore2.md"
   ],
   "2d142ddb5522daf5467ce5690b3fe8e7a356ac0a": [
     "windows-apps-src\\porting\\w8x-to-uwp-case-study-bookstore2.md"
   ],
+  "62d747a06f26bd2d069d2f23f36f48249fd11e95": [
+    "windows-apps-src\\porting\\w8x-to-uwp-case-study-quizgame.md"
+  ],
   "353ee8511be38ad437a64e153d43523f355e080f": [
     "windows-apps-src\\porting\\w8x-to-uwp-case-study-quizgame.md"
+  ],
+  "c3fb6a76800198c15ef05da9ba198ac5e73b35a8": [
+    "windows-apps-src\\porting\\w8x-to-uwp-input-and-sensors.md"
   ],
   "4f7a73eb48d898ed99a5145eccc04da259fe4871": [
     "windows-apps-src\\porting\\w8x-to-uwp-input-and-sensors.md"
   ],
+  "bd0526404f7e8f7fb87a0798c4e0c06bd9305c19": [
+    "windows-apps-src\\porting\\w8x-to-uwp-porting-to-a-uwp-project.md"
+  ],
   "97b187b5e1ee988d4e1d514f139cec48088be3f2": [
     "windows-apps-src\\porting\\w8x-to-uwp-porting-to-a-uwp-project.md"
+  ],
+  "ea8844925cc227d9f082595b039dd68164ad1228": [
+    "windows-apps-src\\porting\\w8x-to-uwp-porting-xaml-and-ui.md"
   ],
   "c81c017817e55aed5dc4d19d919e22dd511c2b01": [
     "windows-apps-src\\porting\\w8x-to-uwp-porting-xaml-and-ui.md"
@@ -2039,35 +2066,68 @@
   "e1f0e9727a36536fe292902fa7313dcc851932f6": [
     "windows-apps-src\\porting\\w8x-to-uwp-root.md"
   ],
+  "6bb6035757c2629c5cbcc3e773703b4f659c5237": [
+    "windows-apps-src\\porting\\w8x-to-uwp-troubleshooting.md"
+  ],
   "a6901946f873b751515cb5d9805158e4b78b92bb": [
     "windows-apps-src\\porting\\w8x-to-uwp-troubleshooting.md"
+  ],
+  "6e6cea49064f49a15b557aad037c5baaa1e9b57b": [
+    "windows-apps-src\\porting\\wpsl-to-uwp-business-and-data.md"
   ],
   "57288b13af0f2ff4f677e2425442b43f3e76d4d8": [
     "windows-apps-src\\porting\\wpsl-to-uwp-business-and-data.md"
   ],
+  "631dab52c1d8f5745179d79182d299688be05d05": [
+    "windows-apps-src\\porting\\wpsl-to-uwp-case-study-bookstore1.md"
+  ],
   "86cccfd462717483720c412c1de9eaf6bbc1c5cd": [
     "windows-apps-src\\porting\\wpsl-to-uwp-case-study-bookstore1.md"
+  ],
+  "c85473d8c3267e4f0ccd6018fe5ee349fdf39284": [
+    "windows-apps-src\\porting\\wpsl-to-uwp-case-study-bookstore2.md"
   ],
   "f421b42798d9472cd97ec9ed51036bd312c3e79e": [
     "windows-apps-src\\porting\\wpsl-to-uwp-case-study-bookstore2.md"
   ],
+  "71e762410b1c7dbf416e3bb81310d74115938102": [
+    "windows-apps-src\\porting\\wpsl-to-uwp-form-factors-and-ux.md"
+  ],
   "d25a10db622980e2e93b5953a695d0ab6b0b027b": [
     "windows-apps-src\\porting\\wpsl-to-uwp-form-factors-and-ux.md"
+  ],
+  "fedba87189e6ee5b6f8f81dfa06703b2011adf6a": [
+    "windows-apps-src\\porting\\wpsl-to-uwp-input-and-sensors.md"
   ],
   "f3b3e32461b7804639c1c0e8ff9b55fa57a23cf0": [
     "windows-apps-src\\porting\\wpsl-to-uwp-input-and-sensors.md"
   ],
+  "dcdf17263dadd71572c942bff5e795928e855c03": [
+    "windows-apps-src\\porting\\wpsl-to-uwp-namespace-and-class-mappings.md"
+  ],
   "6b33127c6b76ef820a93b200a655426a0f516b68": [
     "windows-apps-src\\porting\\wpsl-to-uwp-namespace-and-class-mappings.md"
+  ],
+  "273017f4607c25ee56d7400debe59e94acb36d4f": [
+    "windows-apps-src\\porting\\wpsl-to-uwp-porting-to-a-uwp-project.md"
   ],
   "ffcc7a76a8604deb4f7cb57ac32b9a29de7be46d": [
     "windows-apps-src\\porting\\wpsl-to-uwp-porting-to-a-uwp-project.md"
   ],
+  "3aa68943724c008e18df63d8b0ae20f448146303": [
+    "windows-apps-src\\porting\\wpsl-to-uwp-porting-xaml-and-ui.md"
+  ],
   "344ea7a71fce744bcf90ac99ada9a6fe17568a9b": [
     "windows-apps-src\\porting\\wpsl-to-uwp-porting-xaml-and-ui.md"
   ],
+  "05831f3e357086b338d32e83146d380ca9c78a74": [
+    "windows-apps-src\\porting\\wpsl-to-uwp-root.md"
+  ],
   "c75d1871364a837047c1bd81bc094c5120900a4e": [
     "windows-apps-src\\porting\\wpsl-to-uwp-root.md"
+  ],
+  "3b7e68803a0391ea850b513014aa56a380df4d5c": [
+    "windows-apps-src\\porting\\wpsl-to-uwp-troubleshooting.md"
   ],
   "070e4a00cada6f6cf7b6c1d027d2391eecb8facd": [
     "windows-apps-src\\porting\\wpsl-to-uwp-troubleshooting.md"
@@ -2879,11 +2939,17 @@
   "fb74bfc40750941860dae0a8f811fde4a614e403": [
     "windows-apps-src\\porting\\hwa-access-features.md"
   ],
+  "84cdd12e2a38aafeb989c0f33b1212077dc1d98e": [
+    "windows-apps-src\\porting\\hwa-chrome-conversion.md"
+  ],
   "7847f69c85708cb42b878253839b06929f837708": [
     "windows-apps-src\\porting\\hwa-chrome-conversion.md"
   ],
   "3ba820e2ec8a3556874c0c7c7e328831bab783ca": [
     "windows-apps-src\\porting\\hwa-create-mac.md"
+  ],
+  "1cb4757896c9fecf05224a26949cd6e2ddffdb45": [
+    "windows-apps-src\\porting\\hwa-create-windows.md"
   ],
   "e6dfda4a0f4f8b5760f08cfeb3562d9e42ba8a10": [
     "windows-apps-src\\porting\\hwa-create-windows.md"
