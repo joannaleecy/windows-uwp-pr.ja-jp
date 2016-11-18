@@ -4519,6 +4519,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b88d85c78ba5d08718b7e2c844f94beb71e5134a.dfb416cd27a861b02c7c2705427334bb0a63f1fc.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics\\composition-animation.md.a403cb859edfe75c0271ae9e5cf5fb559f081b2d.HT": {
+      "SourceFilename": "windows-apps-src\\graphics\\composition-animation.md",
+      "XliffHash": "a403cb859edfe75c0271ae9e5cf5fb559f081b2d",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\72b70dd2ae4de385f2a4711477aebb6d7023158c.956dfa9abaccea0c4f923d4cb3b6e6e995bb67f4.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics\\visual-layer.md.47476139bd96e04fbe6021752548ea3651a39ed7.HT": {
+      "SourceFilename": "windows-apps-src\\graphics\\visual-layer.md",
+      "XliffHash": "47476139bd96e04fbe6021752548ea3651a39ed7",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\de6fe0688bec196fc90433ab9274f2e4c4fd9b90.20f49aed0b71344a14c991f1761984e25b31f75e.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

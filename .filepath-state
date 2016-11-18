@@ -1127,6 +1127,9 @@
   "d622465ce3da70cdb8dbd064b68ea6983f9fe3f7": [
     "windows-apps-src\\graphics\\animations-overview.md"
   ],
+  "72b70dd2ae4de385f2a4711477aebb6d7023158c": [
+    "windows-apps-src\\graphics\\composition-animation.md"
+  ],
   "b30de6b3a53c96988443f943e02b7329244d3550": [
     "windows-apps-src\\graphics\\composition-animation.md"
   ],
@@ -1177,6 +1180,9 @@
   ],
   "cc16b07931cf3f7740957c222e8c8821ddbab08a": [
     "windows-apps-src\\graphics\\using-brushes.md"
+  ],
+  "de6fe0688bec196fc90433ab9274f2e4c4fd9b90": [
+    "windows-apps-src\\graphics\\visual-layer.md"
   ],
   "066e5aea48340f96878a41aa28f0fef0c3bda9f5": [
     "windows-apps-src\\graphics\\visual-layer.md"
