@@ -2777,8 +2777,14 @@
   "5ffe0ce35e4aabcfc74e9bfa9017248320925603": [
     "windows-apps-src\\xbox-apps\\development-environment-setup.md"
   ],
+  "903b291ab114298ec556e812f90c3fe27db37215": [
+    "windows-apps-src\\xbox-apps\\devkit-activation.md"
+  ],
   "c50ec870e9548e4823b9116c25f47fed1537a4e6": [
     "windows-apps-src\\xbox-apps\\devkit-activation.md"
+  ],
+  "cccc263dcd0ed9ae843cf845438b30605e9b9d9d": [
+    "windows-apps-src\\xbox-apps\\devkit-deactivation.md"
   ],
   "273cd14d5f51a693ba8385c13d128bb2888de2ea": [
     "windows-apps-src\\xbox-apps\\devkit-deactivation.md"
@@ -3339,6 +3345,9 @@
   "4857e0a9d7eec1d4f862ba61d39d2c0dcb138bd8": [
     "windows-apps-src\\monetize\\create-an-app-submission.md"
   ],
+  "1172be1072f0c539828a08655236be467c6c9fba": [
+    "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
+  ],
   "40855465fa2f9b1c32602b1b636761b608d88fc0": [
     "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
   ],
@@ -3387,6 +3396,9 @@
   "20da33d3e06ca97613f4bc317fe8e8fdc9bc73b6": [
     "windows-apps-src\\monetize\\get-an-add-on.md"
   ],
+  "887615bfc07549d82a295bae99dd31f722546341": [
+    "windows-apps-src\\monetize\\get-an-add-on-submission.md"
+  ],
   "ecdd4292c7980a647075c55abf7d14edd39d23d6": [
     "windows-apps-src\\monetize\\get-an-add-on-submission.md"
   ],
@@ -3395,6 +3407,9 @@
   ],
   "ef0c9ff463b89854c9aaa7ee2c8307f4af30fadf": [
     "windows-apps-src\\monetize\\get-an-app.md"
+  ],
+  "b092658a22b76f044000fb6accc90382dc3bd360": [
+    "windows-apps-src\\monetize\\get-an-app-submission.md"
   ],
   "d7e4e0f355828b3d9b7bbcdd5ceee43dad9fe37c": [
     "windows-apps-src\\monetize\\get-an-app-submission.md"
@@ -3426,6 +3441,9 @@
   "75548ee4689fd31d734c570f8e3eca5d33a6181f": [
     "windows-apps-src\\monetize\\manage-add-ons.md"
   ],
+  "a5e1f8940f53f228808e5a6540759199c4440645": [
+    "windows-apps-src\\monetize\\manage-add-on-submissions.md"
+  ],
   "9d19ecae9d5c43c28e887627372aabb58bf0aab2": [
     "windows-apps-src\\monetize\\manage-add-on-submissions.md"
   ],
@@ -3434,6 +3452,9 @@
   ],
   "52e589c90a8d78905a9617dc2802d76a2f0f0360": [
     "windows-apps-src\\monetize\\manage-add-on-submissions.md"
+  ],
+  "5c19a05f51a14d9df38e64aac3b741e916fc0524": [
+    "windows-apps-src\\monetize\\manage-app-submissions.md"
   ],
   "49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e": [
     "windows-apps-src\\monetize\\manage-app-submissions.md"
@@ -3465,6 +3486,9 @@
   "9dfad9c0cc6b6e03a2196946ac578ca3170fccc5": [
     "windows-apps-src\\monetize\\update-a-flight-submission.md"
   ],
+  "ac126d8e8cf8301399a3248a1d65e19805e70255": [
+    "windows-apps-src\\monetize\\update-an-add-on-submission.md"
+  ],
   "f42f2dba155aa0a29e0769fd96cce6d3a0de870b": [
     "windows-apps-src\\monetize\\update-an-add-on-submission.md"
   ],
@@ -3473,6 +3497,9 @@
   ],
   "b7a8e1d39d5ee0a0858382b84ab00cc2c481da5d": [
     "windows-apps-src\\monetize\\update-an-add-on-submission.md"
+  ],
+  "ec533c5a021d006787a7d217fa7f5eb98835fdd3": [
+    "windows-apps-src\\monetize\\update-an-app-submission.md"
   ],
   "8b1a6da557b966e69345e90c48f90a6df0f27442": [
     "windows-apps-src\\monetize\\update-an-app-submission.md"
