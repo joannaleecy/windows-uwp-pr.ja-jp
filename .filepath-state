@@ -851,6 +851,9 @@
   "1be2c49dc88dcaecfa1d349f9dda7a9cc0619b92": [
     "windows-apps-src\\gaming\\glsl-to-hlsl-reference.md"
   ],
+  "b88d85c78ba5d08718b7e2c844f94beb71e5134a": [
+    "windows-apps-src\\gaming\\handling-device-lost-scenarios.md"
+  ],
   "3cb625886add852d9faa36a0ad5bc611c1929077": [
     "windows-apps-src\\gaming\\handling-device-lost-scenarios.md"
   ],

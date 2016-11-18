@@ -4509,6 +4509,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\14b44ef2f0dcd87fe57f1dce609ea88d626abe7e.2a8f9c2ab71461d157337452e9b131cfaa813d39.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\handling-device-lost-scenarios.md.e05cda2a790f4593529b8a81612f34ff9a17bfd3.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\handling-device-lost-scenarios.md",
+      "XliffHash": "e05cda2a790f4593529b8a81612f34ff9a17bfd3",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b88d85c78ba5d08718b7e2c844f94beb71e5134a.dfb416cd27a861b02c7c2705427334bb0a63f1fc.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
