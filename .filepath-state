@@ -2621,6 +2621,9 @@
   "8962e24e393f0b7961f618f90cd38ead9e54dda4": [
     "windows-apps-src\\threading-async\\index.md"
   ],
+  "2d73b44933ed71dc388b3d37793b7c99b8d0a3dd": [
+    "windows-apps-src\\threading-async\\submit-a-work-item-to-the-thread-pool.md"
+  ],
   "d41f53a40c46087c5a1c21367a34c0f60486f24d": [
     "windows-apps-src\\threading-async\\submit-a-work-item-to-the-thread-pool.md"
   ],
@@ -4094,6 +4097,9 @@
   ],
   "d02921247bd77d59bbb09037a4ced8d3967c33b2": [
     "windows-apps-src\\porting\\desktop-to-uwp-known-issues.md"
+  ],
+  "81a2485d5be22dd392c21aaff281c1c9263883a9": [
+    "windows-apps-src\\porting\\desktop-to-uwp-prepare.md"
   ],
   "4cf9c509be52a8b2c03cdaa9ac68b98ba49b7094": [
     "windows-apps-src\\porting\\desktop-to-uwp-prepare.md"

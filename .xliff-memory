@@ -4629,6 +4629,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1172be1072f0c539828a08655236be467c6c9fba.030784c7a535acd151f4f613f846f5b6120cecfd.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\desktop-to-uwp-prepare.md.9f9a6f8bef88a844ce81ee8cac4b665ec82c4c5b.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\desktop-to-uwp-prepare.md",
+      "XliffHash": "9f9a6f8bef88a844ce81ee8cac4b665ec82c4c5b",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\81a2485d5be22dd392c21aaff281c1c9263883a9.0672538bd8c8e6c9a2886fa4bfdad9ed0bb81494.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\threading-async\\submit-a-work-item-to-the-thread-pool.md.a2006550063b73e2449f4254d4dda771b3e7ea8f.HT": {
+      "SourceFilename": "windows-apps-src\\threading-async\\submit-a-work-item-to-the-thread-pool.md",
+      "XliffHash": "a2006550063b73e2449f4254d4dda771b3e7ea8f",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2d73b44933ed71dc388b3d37793b7c99b8d0a3dd.3bac0fb9b90ca1ede5489508ec427f76738d6c07.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
