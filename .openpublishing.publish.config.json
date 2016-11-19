@@ -33,15 +33,6 @@
         "live": "live",
         "master": "master"
       }
-    },
-    {
-      "path_to_root": "_repo.en-us",
-      "url": "https://cpubwin.visualstudio.com/_git/windows-uwp",
-      "branch": "live",
-      "branch_mapping": {
-        "live": "live",
-        "master": "master"
-      }
     }
   ],
   "need_generate_pdf_url_template": false
