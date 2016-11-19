@@ -4649,6 +4649,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2d73b44933ed71dc388b3d37793b7c99b8d0a3dd.3bac0fb9b90ca1ede5489508ec427f76738d6c07.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\xbox-apps\\known-issues.md.070cade13a5f395ee501f14511c25274f8ce4d31.HT": {
+      "SourceFilename": "windows-apps-src\\xbox-apps\\known-issues.md",
+      "XliffHash": "070cade13a5f395ee501f14511c25274f8ce4d31",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\26db02792eef6bda927bedd1ef8fcb6a644fadcf.a1d1dea4a36a8aedbc80bdd39214bdb7f0eb0659.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
