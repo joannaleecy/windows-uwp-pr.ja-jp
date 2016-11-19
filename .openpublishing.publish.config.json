@@ -25,11 +25,24 @@
   "git_repository_url_open_to_public_contributors": "",
   "skip_source_output_uploading": false,
   "dependent_repositories": [
-        {
-            "path_to_root": "_repo.en-us",
-            "url": "https://cpubwin.visualstudio.com/_git/windows-uwp",
-            "branch": "live",
-            "branch_mapping": {}
-        }
-  ]
+    {
+      "path_to_root": "_repo.en-us",
+      "url": "https://cpubwin.visualstudio.com/_git/windows-uwp",
+      "branch": "live",
+      "branch_mapping": {
+        "live": "live",
+        "master": "master"
+      }
+    },
+    {
+      "path_to_root": "_repo.en-us",
+      "url": "https://cpubwin.visualstudio.com/_git/windows-uwp",
+      "branch": "live",
+      "branch_mapping": {
+        "live": "live",
+        "master": "master"
+      }
+    }
+  ],
+  "need_generate_pdf_url_template": false
 }
