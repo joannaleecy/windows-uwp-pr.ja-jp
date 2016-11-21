@@ -1061,6 +1061,9 @@
   "729c71fbe0db202bd4f5ce15bea87caa973adf80": [
     "windows-apps-src\\get-started\\get-set-up.md"
   ],
+  "90c7fe1a31586f5aa39e61b584a258b1bbed3a50": [
+    "windows-apps-src\\get-started\\learn-more.md"
+  ],
   "fd59def4064f1206f963bc6bb7bd937309d960d2": [
     "windows-apps-src\\get-started\\learn-more.md"
   ],
@@ -2531,6 +2534,9 @@
   "19f024bd3ad99b4ef9355cc3c9229b1b3ffc51e2": [
     "windows-apps-src\\security\\index.md"
   ],
+  "2ac9edf074ceb91d5cfea17228f0a39fef200b74": [
+    "windows-apps-src\\security\\intro-to-secure-windows-app-development.md"
+  ],
   "434505a697e045198972ce529366be281774af86": [
     "windows-apps-src\\security\\intro-to-secure-windows-app-development.md"
   ],
@@ -2543,8 +2549,14 @@
   "979eb3c6ac41f304e19093055574db7805a115ff": [
     "windows-apps-src\\security\\microsoft-passport.md"
   ],
+  "04311e9c3242bdaf6588c8102a06ae658e6637e2": [
+    "windows-apps-src\\security\\microsoft-passport-login.md"
+  ],
   "1b0a510592002cf869dac06b55d377d790c06cac": [
     "windows-apps-src\\security\\microsoft-passport-login.md"
+  ],
+  "d02c2029121927192430ce030684200de1656418": [
+    "windows-apps-src\\security\\microsoft-passport-login-auth-service.md"
   ],
   "2250cc400828b2142bc5d152f54de554daa24aa9": [
     "windows-apps-src\\security\\microsoft-passport-login-auth-service.md"

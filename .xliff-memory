@@ -4669,6 +4669,46 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\312c8fb0bbbb6231da91e7d477b800a797160e96.989d84bf2b97ad261f279554f616916369dddcab.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\security\\microsoft-passport-login-auth-service.md.1348c61de9e263858ab0c27693154c5ebbf81e4a.HT": {
+      "SourceFilename": "windows-apps-src\\security\\microsoft-passport-login-auth-service.md",
+      "XliffHash": "1348c61de9e263858ab0c27693154c5ebbf81e4a",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d02c2029121927192430ce030684200de1656418.9c524c7287d0e991346d35a165cdf4131d93b37e.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\security\\microsoft-passport-login.md.898a6e85be92dae9ffb41962f62241fefb688138.HT": {
+      "SourceFilename": "windows-apps-src\\security\\microsoft-passport-login.md",
+      "XliffHash": "898a6e85be92dae9ffb41962f62241fefb688138",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\04311e9c3242bdaf6588c8102a06ae658e6637e2.3d69dcbb5c13d094cb2d5f523925ca6a34f2a720.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\learn-more.md.f409747d786a57e85bc65ae7660378db046d2c61.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\learn-more.md",
+      "XliffHash": "f409747d786a57e85bc65ae7660378db046d2c61",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\90c7fe1a31586f5aa39e61b584a258b1bbed3a50.fc86df578b5bd5afb03fd3a9f7b215d29ea4447f.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\security\\intro-to-secure-windows-app-development.md.e70e39b54c78cd90d1a1ce4b34d9e899deaf2339.HT": {
+      "SourceFilename": "windows-apps-src\\security\\intro-to-secure-windows-app-development.md",
+      "XliffHash": "e70e39b54c78cd90d1a1ce4b34d9e899deaf2339",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2ac9edf074ceb91d5cfea17228f0a39fef200b74.e1963bf3ee26f790cdb777295210469dbb85137e.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
