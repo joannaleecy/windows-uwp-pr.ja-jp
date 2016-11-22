@@ -554,6 +554,9 @@
   "ae6ad7a761737613c323eb80af993ab5dfcd7977": [
     "windows-apps-src\\debug-test-perf\\optimize-your-xaml-layout.md"
   ],
+  "b9395e80bca7a46076e20e42fa7ceee5df7cc0d5": [
+    "windows-apps-src\\debug-test-perf\\performance-and-xaml-ui.md"
+  ],
   "f4589b187d05ae122839fab74d8086779847b120": [
     "windows-apps-src\\debug-test-perf\\performance-and-xaml-ui.md"
   ],
@@ -1060,6 +1063,9 @@
   ],
   "729c71fbe0db202bd4f5ce15bea87caa973adf80": [
     "windows-apps-src\\get-started\\get-set-up.md"
+  ],
+  "843775553f6a2caa9dca0c4e256c6f690829b84a": [
+    "windows-apps-src\\get-started\\learn-more.md"
   ],
   "90c7fe1a31586f5aa39e61b584a258b1bbed3a50": [
     "windows-apps-src\\get-started\\learn-more.md"
@@ -1586,6 +1592,9 @@
   "e91f0bbb203ef1c77ad1435b1a3f10aa53c3a483": [
     "windows-apps-src\\maps-and-location\\set-up-a-geofence.md"
   ],
+  "5ae5dcbe6684aa34a1428760cd5c7e9b8f599ebf": [
+    "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
+  ],
   "468be96b70d07567163b2caccebaa8e2f6ecd592": [
     "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
   ],
@@ -1729,6 +1738,9 @@
   ],
   "4190012c08e22f4efb086c711183332b23ccee38": [
     "windows-apps-src\\monetize\\get-app-reviews.md"
+  ],
+  "800405bcac9b05af0e0295c88c27cbe3d2387947": [
+    "windows-apps-src\\monetize\\get-error-reporting-data.md"
   ],
   "37f332806d0efbf3df3040a6fa718e0b75bc8a3f": [
     "windows-apps-src\\monetize\\get-error-reporting-data.md"
@@ -2650,6 +2662,9 @@
   ],
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "3494dda19213be976e6649d923d1d3437942897c": [
+    "windows-apps-src\\TOC.md"
   ],
   "215c37464f0105c7ea8eae1e6df7c0f8c9a37617": [
     "windows-apps-src\\TOC.md"
@@ -4145,5 +4160,17 @@
   ],
   "19874f940798e76a18b3377a295505f0aef201c7": [
     "windows-apps-src\\publish\\set-custom-permissions-for-account-users.md"
+  ],
+  "854ec43d075f8adc1f875d3b9e5e2d818434edb9": [
+    "windows-apps-src\\debug-test-perf\\optimize-background-activity.md"
+  ],
+  "b1265952ba4c434e663b0d5eff7da14f041b55bd": [
+    "windows-apps-src\\layout\\grid-tutorial.md"
+  ],
+  "cd72e58ec252c556cf0f2e5ce071744e8fac6c9e": [
+    "windows-apps-src\\monetize\\get-details-for-an-error-in-your-app.md"
+  ],
+  "90481b5f85d010a142e86ca67ac94c3ec25d89c6": [
+    "windows-apps-src\\monetize\\get-the-stack-trace-for-an-error-in-your-app.md"
   ]
 }
