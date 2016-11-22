@@ -86,9 +86,6 @@
   "f9764405f8177235d1a14aaf5606770c69647731": [
     "windows-apps-src\\audio-video-camera\\background-audio.md"
   ],
-  "a477827553ac1780ac625deeee08d84ab638d4c2": [
-    "windows-apps-src\\audio-video-camera\\background-audio.md"
-  ],
   "4edf119d0f8830fec9ece34f1a7eb8f3ffbe67dd": [
     "windows-apps-src\\audio-video-camera\\bitmapencoder-options-reference.md"
   ],
@@ -303,9 +300,6 @@
     "windows-apps-src\\controls-and-patterns\\lists.md"
   ],
   "8a14fa69089f6d796a803c1c1ff9bb678af3c913": [
-    "windows-apps-src\\controls-and-patterns\\listview-and-gridview.md"
-  ],
-  "aeb339e54a1363dbfe5ee5a764ad762a42a40ed9": [
     "windows-apps-src\\controls-and-patterns\\listview-and-gridview.md"
   ],
   "f0083e3c50e7e899e6caf62595a7ecbf0af22b3d": [
@@ -1172,9 +1166,6 @@
   "163109a8e87c0d270eeeed825958af7ec51ee336": [
     "windows-apps-src\\graphics\\key-frame-and-easing-function-animations.md"
   ],
-  "00abdacf8d1f8376a3d1a0c472ff7cf2c15afb01": [
-    "windows-apps-src\\graphics\\key-frame-and-easing-function-animations.md"
-  ],
   "361765de700af2a701e16fc27a5867d80907865a": [
     "windows-apps-src\\graphics\\storyboarded-animations.md"
   ],
@@ -1296,12 +1287,6 @@
     "windows-apps-src\\input-and-devices\\interact-with-a-background-app-in-cortana.md"
   ],
   "5ab84def6e73329f59d8ae6ef8be335d66ef4334": [
-    "windows-apps-src\\input-and-devices\\keyboard-interactions.md"
-  ],
-  "c7b7a43ecd56bd88f5e0e5cb6cc336a96241d0c3": [
-    "windows-apps-src\\input-and-devices\\keyboard-interactions.md"
-  ],
-  "a1d97c5a66db1b799ccc16769ff18130155743b8": [
     "windows-apps-src\\input-and-devices\\keyboard-interactions.md"
   ],
   "f80678865c1dbdf84dbcfd44ae6b98b7eadc9446": [
@@ -2009,9 +1994,6 @@
   "f8bcda0cd2e31026f90f3a84a15674c00691f01d": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
   ],
-  "75e176f17845bdbd618c6ca63fbbb5765bef54fb": [
-    "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
-  ],
   "170ed75d1cd865bfc8e4feb776fce4332cc67850": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
@@ -2472,9 +2454,6 @@
     "windows-apps-src\\publish\\supported-languages.md"
   ],
   "483630b23eaaa2ff81883f4f828dd46ecd448f9b": [
-    "windows-apps-src\\publish\\tax-details-for-paid-apps.md"
-  ],
-  "3efc5a575a7ed81b4dfb8e2349e252e61355cfc2": [
     "windows-apps-src\\publish\\tax-details-for-paid-apps.md"
   ],
   "07b3631ccc875222b8d2ea30a2b69e2995a09e23": [
@@ -2948,9 +2927,6 @@
   "598384993e0e2931773cdb30e0909af6b771590e": [
     "windows-apps-src\\gaming\\cloud-for-games.md"
   ],
-  "b23c33fac9ac8fe5e2d5563a0af6824c82a3969b": [
-    "windows-apps-src\\gaming\\cloud-for-games.md"
-  ],
   "185e79b96cdc64f3ead6c85d067659b9087ec082": [
     "windows-apps-src\\gaming\\accessibility-for-games.md"
   ],
@@ -3140,9 +3116,6 @@
   "9d931ef590f895406e9d516110e6d200789558c7": [
     "windows-apps-src\\contacts-and-calendar\\integrating-social-feeds-into-contact-cards.md"
   ],
-  "c5b9666d8654a4065bc0e4e400d3e47de4773b8b": [
-    "windows-apps-src\\contacts-and-calendar\\integrating-social-feeds-into-contact-cards.md"
-  ],
   "034dc2b7be69763416192014abe24b9bf924c443": [
     "windows-apps-src\\contacts-and-calendar\\integrating-with-contacts.md"
   ],
@@ -3276,9 +3249,6 @@
     "windows-apps-src\\whats-new\\windows-10-version-1607.md"
   ],
   "7ab2c9f1054509f816ef9647f340e61b6a281d8a": [
-    "windows-apps-src\\whats-new\\windows-10-version-1607-api-diff.md"
-  ],
-  "e897c68c97b4cdeb5cdf2a4df454d40d774cbc90": [
     "windows-apps-src\\whats-new\\windows-10-version-1607-api-diff.md"
   ],
   "b035e81776039fba60f239b18efef8fe5b43b2f6": [

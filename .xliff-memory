@@ -187,8 +187,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\163109a8e87c0d270eeeed825958af7ec51ee336.40e9828ba6eac59c40ce8dbf1ab0b5e161259a03.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\key-frame-and-easing-function-animations.ee692c3bbe40d1610b1708fdf7d29cdf6aa81401.ja-jp.xlf",
+      "LocXliffCommit": "f7fe8061b81560c8b6065b2aa92b6a63895bc3d5"
     },
     "windows-apps-src\\publish\\set-app-pricing-and-availability.md.de04cfe064947eeab3bff7b577005a7f17b83e32.HT": {
       "SourceFilename": "windows-apps-src\\publish\\set-app-pricing-and-availability.md",
@@ -1197,8 +1197,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f8bcda0cd2e31026f90f3a84a15674c00691f01d.37beb0218215fbf763622efd64ef4ceccc83d62b.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\desktop-to-uwp-deploy-and-debug.c373301a747650050efa3006e6e6a31b8f2cf9a1.ja-jp.xlf",
+      "LocXliffCommit": "f7fe8061b81560c8b6065b2aa92b6a63895bc3d5"
     },
     "windows-apps-src\\contacts-and-calendar\\integrating-social-feeds-into-contact-cards.md.7de4997d8b08d7bb746d166d0c076646217b5e7f.HT": {
       "SourceFilename": "windows-apps-src\\contacts-and-calendar\\integrating-social-feeds-into-contact-cards.md",
@@ -1207,8 +1207,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9d931ef590f895406e9d516110e6d200789558c7.59a610ff98a67b4031a1e2e377e112df22b61517.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\integrating-social-feeds-into-contact-cards.da122ef61a6b3eb3376ef78d2bd1a3894fa9bd10.ja-jp.xlf",
+      "LocXliffCommit": "f7fe8061b81560c8b6065b2aa92b6a63895bc3d5"
     },
     "windows-apps-src\\graphics-concepts\\domain-shader-stage--ds-.md.feb551bde0f1a59738ae180089218dcf6f33835d.HT": {
       "SourceFilename": "windows-apps-src\\graphics-concepts\\domain-shader-stage--ds-.md",
@@ -1987,8 +1987,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\598384993e0e2931773cdb30e0909af6b771590e.07bc67a8a1af53df1fc1a392f680f75bd8170a56.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\cloud-for-games.3663687797401afed76a6c0531ae5359fe2d96fe.ja-jp.xlf",
+      "LocXliffCommit": "f7fe8061b81560c8b6065b2aa92b6a63895bc3d5"
     },
     "windows-apps-src\\graphics-concepts\\tile-pool-resizing.md.c079c947159800e1d6c74070ac757e5a8efa193b.HT": {
       "SourceFilename": "windows-apps-src\\graphics-concepts\\tile-pool-resizing.md",
@@ -2517,8 +2517,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\483630b23eaaa2ff81883f4f828dd46ecd448f9b.9a86218e4d9faf26df26bd04b91be29c9f00521e.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\tax-details-for-paid-apps.dabd93b4ae33f057b5755bdbfd54af1f2c7ebbad.ja-jp.xlf",
+      "LocXliffCommit": "f7fe8061b81560c8b6065b2aa92b6a63895bc3d5"
     },
     "windows-apps-src\\monetize\\create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md.7fc6fd891b27586db31bb39674e1f0c46ec7a811.HT": {
       "SourceFilename": "windows-apps-src\\monetize\\create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md",
@@ -2837,8 +2837,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7ab2c9f1054509f816ef9647f340e61b6a281d8a.6b501bcc5a3c1e6e4e0e36ab61b7f841df69d725.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\windows-10-version-1607-api-diff.3f27db6e828e403f589951962a160d763082dafe.ja-jp.xlf",
+      "LocXliffCommit": "f7fe8061b81560c8b6065b2aa92b6a63895bc3d5"
     },
     "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md.2ef23c91be1d89aa68abf21e42e430829755f8ed.HT": {
       "SourceFilename": "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md",
@@ -3177,8 +3177,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f9764405f8177235d1a14aaf5606770c69647731.24c7bd2e0345648d9fd0daad495b6b24181b2dee.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\background-audio.7b1349a8c74aa8ba5aae5f29abd931f1752577ec.ja-jp.xlf",
+      "LocXliffCommit": "f7fe8061b81560c8b6065b2aa92b6a63895bc3d5"
     },
     "windows-apps-src\\graphics-concepts\\geometry-shader-stage--gs-.md.19433981b99980a0e32fbbc1edde959bc7db49dc.HT": {
       "SourceFilename": "windows-apps-src\\graphics-concepts\\geometry-shader-stage--gs-.md",
@@ -3227,8 +3227,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5ab84def6e73329f59d8ae6ef8be335d66ef4334.efca061c357dba927fd081bd7c995eb8cdf522aa.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\keyboard-interactions.b676c957b4c1fd3c826e6cd06eebac3cbb149b75.ja-jp.xlf",
+      "LocXliffCommit": "f7fe8061b81560c8b6065b2aa92b6a63895bc3d5"
     },
     "windows-apps-src\\controls-and-patterns\\listview-and-gridview.md.9f41131e17f07784476662b83a3f2535954246f9.HT": {
       "SourceFilename": "windows-apps-src\\controls-and-patterns\\listview-and-gridview.md",
@@ -3237,8 +3237,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8a14fa69089f6d796a803c1c1ff9bb678af3c913.d3d0592dae6e16fc103db213b479312a59151b03.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\listview-and-gridview.7757d74397dd2eae577ac2003eeb27120b54f483.ja-jp.xlf",
+      "LocXliffCommit": "f7fe8061b81560c8b6065b2aa92b6a63895bc3d5"
     },
     "windows-apps-src\\xaml-platform\\binding-markup-extension.md.b89a2ff179b82c0154dc27eed1f8180045066a7c.HT": {
       "SourceFilename": "windows-apps-src\\xaml-platform\\binding-markup-extension.md",
