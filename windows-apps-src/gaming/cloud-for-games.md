@@ -4,8 +4,8 @@ title: "UWP ゲーム用のクラウド サービスの使用"
 description: "UWP ゲーム用のバックエンドとしてクラウドを実装することについて説明します。"
 ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
 translationtype: Human Translation
-ms.sourcegitcommit: 0b2d81daa8bd0fd5694b81fa14fcd064e1600d35
-ms.openlocfilehash: b23c33fac9ac8fe5e2d5563a0af6824c82a3969b
+ms.sourcegitcommit: 2584a08e0a869ab3c5f11c192f0a5a6eeb223d61
+ms.openlocfilehash: 598384993e0e2931773cdb30e0909af6b771590e
 
 ---
 #  UWP ゲーム用のクラウド サービスの使用
@@ -111,7 +111,7 @@ Windows 10 のユニバーサル Windows プラットフォーム (UWP) では�
 
 ## クラウド バックエンドを設計する方法
 
-プロデューサーやゲーム設計者は、ゲームの特徴やゲームに必要な機能について話し合いますが、ゲームのインフラストラクチャをどのように設計するかについての検討から始めることをお勧めします。 さまざまなデバイスや複数の主要プラットフォームを対象にゲームを開発する場合、Azure Cloud をゲームのバックエンドとして使用できます。
+プロデューサーやゲーム設計者は、ゲームの特徴やゲームに必要な機能について話し合いますが、ゲームのインフラストラクチャをどのように設計するかについての検討から始めることをお勧めします。 さまざまなデバイスや複数の主要プラットフォームを対象にゲームを開発する場合、Azure をゲームのバックエンドとして使用できます。
 
 ### ステップ バイ ステップの学習ガイド
 
@@ -138,7 +138,7 @@ Windows 10 のユニバーサル Windows プラットフォーム (UWP) では�
 
 ### Azure を使ったゲーム インフラストラクチャの設計
 
-Azure のクラウド サービスをゲームに使用するためのいくつかの方法を以下に示します。 Azure は、Windows や Linux、および Ruby、Python、Java、PHP などのオープン ソース テクノロジと連携して動作します。 詳しくは、[Azure クラウドに関するページ](https://azure.microsoft.com)をご覧ください。
+Azure のクラウド サービスをゲームに使用するためのいくつかの方法を以下に示します。 Azure は、Windows や Linux、および Ruby、Python、Java、PHP などのオープン ソース テクノロジと連携して動作します。 詳しくは、「[ゲームのための Azure](https://azure.microsoft.com/solutions/gaming/)」をご覧ください。
 
 | 要件                 | アクティビティのシナリオ                            | 提供されるサービス                      | サービスの機能                               |
 |-----------------------------------|-----------------------------------------------|---------------------------------------|----------------------------------------------------|
@@ -191,7 +191,7 @@ Azure のクラウド サービスをゲームに使用するためのいくつ�
 ## 関連リンク
 
 * [Windows 10 ゲーム開発ガイド](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
-* [Microsoft Azure](https://azure.microsoft.com/)
+* [ゲームのための Azure](https://azure.microsoft.com/solutions/gaming/)
 * [Microsoft BizSpark](https://www.microsoft.com/bizspark/)
 * [ID@Xbox](http://www.xbox.com/Developers/id)
 
@@ -202,6 +202,6 @@ Azure のクラウド サービスをゲームに使用するためのいくつ�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

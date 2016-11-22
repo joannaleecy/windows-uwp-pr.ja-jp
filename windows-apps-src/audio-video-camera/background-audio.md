@@ -4,8 +4,8 @@ ms.assetid:
 description: "この記事では、アプリがバックグラウンドで実行されているときにメディアを再生する方法を示します。"
 title: "バックグラウンドでのメディアの再生"
 translationtype: Human Translation
-ms.sourcegitcommit: c8cbc538e0979f48b657197d59cb94a90bc61210
-ms.openlocfilehash: a477827553ac1780ac625deeee08d84ab638d4c2
+ms.sourcegitcommit: 7d065cff214475d46cf5c62dd5aa732a58c5f61a
+ms.openlocfilehash: f9764405f8177235d1a14aaf5606770c69647731
 
 ---
 
@@ -26,7 +26,7 @@ ms.openlocfilehash: a477827553ac1780ac625deeee08d84ab638d4c2
 ## 1 プロセス モデルの説明
 Windows 10 バージョン 1607 では、新しいシングル プロセス モデルが導入され、バックグラウンド オーディオを実現するプロセスが大幅に簡略化されました。 以前は、アプリで、フォアグラウンド アプリに加えてバックグラウンド プロセスも管理し、2 つのプロセス間の状態変更を手動で通信する必要がありました。 新しいモデルでは、アプリ マニフェストにバックグラウンド オーディオ機能を追加するだけで、アプリはバックグラウンドに移行しても、自動的にオーディオ再生を続行します。 2 つ新しいアプリケーション ライフサイクル イベント、[**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) と [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) によって、バックグラウンドへの移行とバックグラウンドからの移行をアプリに通知できます。 アプリがバックグラウンドに遷移またはバックグラウンドから遷移する場合、システムによって適用されるメモリの制約が変化する場合があるため、これらのイベントを使用して現在のメモリ消費量を確認し、制限値を下回るようにリソースを解放できます。
 
-複雑なプロセス間通信と状態の管理を排除することによって、新しいモデルでは、コードを大幅に削減し、より簡単にバックグラウンド オーディオを実装することができます。 ただし、下位互換性のために、現在のリリースでは 2 プロセス モデルも引き続きサポートされています。 詳しくは、「[従来のバックグラウンド オーディオ モデル](background-audio.md)」をご覧ください。
+複雑なプロセス間通信と状態の管理を排除することによって、新しいモデルでは、コードを大幅に削減し、より簡単にバックグラウンド オーディオを実装することができます。 ただし、下位互換性のために、現在のリリースでは 2 プロセス モデルも引き続きサポートされています。 詳しくは、「[従来のバックグラウンド オーディオ モデル](legacy-background-media-playback.md)」をご覧ください。
 
 ## バックグラウンド オーディオの要件
 アプリは、アプリがバックグラウンドで実行されている場合のオーディオ再生について、以下の要件を満たしている必要があります。
@@ -62,7 +62,7 @@ Windows 10 バージョン 1607 では、新しいシングル プロセス モ�
 ```
 
 ##フォアグラウンドとバックグラウンドの間の移行の処理
-アプリがフォアグラウンドからバックグラウンドに移動すると、[**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) イベントが発生します。 また、アプリがフォアグラウンドに戻るときには、[**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) イベントが発生します。 これらは、アプリのライフサイクル イベントであるために、アプリを作成するときに、これらのイベントのハンドラーを登録する必要があります。 既定のプロジェクト テンプレートでは、これは、App.xaml.cs の **App** クラス コンストラクターに追加することを意味します。 バックグラウンドで実行すると、システムによってアプリが保持することを許可されているメモリ リソースが減少するため、[**AppMemoryUsageIncreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageIncreased) と [**AppMemoryUsageLimitChanging**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageLimitChanging) イベントについても登録する必要があります。これらは、アプリの現在のメモリ使用量と、現在の制限を確認するために使用されます。 これらのイベントのハンドラーを、次の例に示します。 UWP アプリのアプリケーション ライフサイクルについて詳しくは、「[アプリのライフサイクル](../\launch-resume\app-lifecycle.md)」をご覧ください。
+アプリがフォアグラウンドからバックグラウンドに移動すると、[**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) イベントが発生します。 また、アプリがフォアグラウンドに戻るときには、[**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) イベントが発生します。 これらは、アプリのライフサイクル イベントであるために、アプリを作成するときに、これらのイベントのハンドラーを登録する必要があります。 既定のプロジェクト テンプレートでは、これは、App.xaml.cs の **App** クラス コンストラクターに追加することを意味します。 
 
 [!code-cs[RegisterEvents](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetRegisterEvents)]
 
@@ -74,36 +74,12 @@ Windows 10 バージョン 1607 では、新しいシングル プロセス モ�
 
 [!code-cs[EnteredBackground](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetEnteredBackground)]
 
-アプリがバックグラウンドに移行するときに、現在のフォアグラウンド アプリが応答性の高いユーザー エクスペリエンスを提供するために十分なリソースを確保できるように、システムによってアプリのメモリ制限が低減されます。 [**AppMemoryUsageLimitChanging**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageLimitChanging) イベント ハンドラーによって、割り当てられたメモリが削減されたことをアプリに通知することができ、ハンドラーに渡されるイベント引数で新しい制限を提供します。 アプリの現在のメモリ使用量を提供する [**MemoryManager.AppMemoryUsage**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsage) プロパティと、新しい制限を指定するイベント引数の [**NewLimit**](https://msdn.microsoft.com/library/windows/apps/Windows.System.AppMemoryUsageLimitChangingEventArgs.NewLimit) プロパティを比較してください。 メモリ使用量が制限を超えている場合は、メモリ使用量を削減する必要があります。 この例では、この処理はヘルパー メソッド **ReduceMemoryUsage** で実行されます。このメソッドの定義については、後で説明します。
-
-[!code-cs[MemoryUsageLimitChanging](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetMemoryUsageLimitChanging)]
-
-> [!NOTE] 
-> デバイス構成によって、システム リソースが不足するまで新しいメモリ制限でアプリケーションの実行を続けることができる場合とできない場合があります。 特に Xbox では、アプリが 2 秒以内にメモリ使用量を新しい制限未満に減らさない場合、アプリは中断または終了されます。 つまり、このイベントを使用して、イベントの発生から 2 秒以内にリソースの使用量を制限未満に減らすことにより、幅広いデバイスで最適なエクスペリエンスを提供できます。
-
-
-アプリが最初にバックグラウンドに移行したときは、メモリ使用量がバックグラウンド アプリのメモリ制限を下回っていたが、しばらくしてその使用量が増加し、制限に近づき始める場合があります。 [**AppMemoryUsageIncreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageIncreased) ハンドラーによって、メモリ使用量が増加したときに現在の使用量を確認し、必要に応じて、メモリを解放する機会を得ることができます。 [**AppMemoryUsageLevel**](https://msdn.microsoft.com/library/windows/apps/Windows.System.AppMemoryUsageLevel) が **High** または **OverLimit** になっていないかどうかを確認し、これらの値になっている場合はメモリ使用量を減らします。 繰り返しになりますが、この例では、この処理はヘルパー メソッド **ReduceMemoryUsage** によって行われます。 [**AppMemoryUsageDecreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageDecreased) イベントを受信登録して、アプリのメモリ使用量が制限未満であるかどうかを確認でき、制限未満である場合は追加のリソースを割り当てることができます。
-
-[!code-cs[MemoryUsageIncreased](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetMemoryUsageIncreased)]
-
-**ReduceMemoryUsage** は、アプリがバックグラウンドで実行されるアプリのメモリ使用量の制限を超えている場合に、メモリを解放するために実装できるヘルパー メソッドです。 メモリを解放する方法はアプリの仕様によって異なりますが、推奨されるメモリ解放の方法の 1 つは、UI と、アプリ ビューに関連付けられている他のリソースを破棄することです。 最初に、バックグラウンド モードで実行されていることを確認した後、アプリのウィンドウの [**Content**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Window.Content) プロパティを null に設定します。 **GC.Collect** を呼び出して、解放されたメモリをすぐに再利用するようにシステムに指示します。
-
-[!code-cs[UnloadViewContent](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetUnloadViewContent)]
-
-ウィンドウのコンテンツが収集されると、各フレームでは、その切断プロセスが開始されます。 ビジュアル オブジェクト ツリーで、ウィンドウのコンテンツの下に Page がある場合、これらはその [**Unloaded**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.FrameworkElement.Unloaded) イベントを発生させ始めます。 Page は、Page へのすべての参照を削除しない限り、メモリから完全には消去できません。 **Unloaded** コールバックでは、メモリが直ちに解放されるように次の処理を行います。
-* Page 内の大規模なデータ構造体を消去して null に設定します。
-* Page 内でコールバック メソッドを持つすべてのイベント ハンドラーの登録を解除します。 Page の Loaded イベント ハンドラーで、これらのコールバックを確実に登録します。 Loaded イベントは、UI が再構築され、Page がビジュアル オブジェクト ツリーに追加されたときに発生します。
-* Unloaded コールバックの最後に **GC.Collect** を呼び出して、先ほど null に設定した大規模なデータ構造体のガベージ コレクションをすばやく実行します。
-
-[!code-cs[Unloaded](./code/BackgroundAudio_RS1/cs/MainPage.xaml.cs#SnippetUnloaded)]
-
-[**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) イベント ハンドラーで、アプリがバックグラウンドで実行されなくなったことを示すために追跡変数を設定する必要があります。 次に、現在のウィンドウの [**Content**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Window.Content) が null であるかどうかを確認します。バックグラウンドでの実行中にメモリを消去するためにアプリ ビューを破棄した場合は、null になります。 ウィンドウのコンテンツが null の場合は、アプリ ビューを再構築します。 この例では、ウィンドウのコンテンツは、**CreateRootFrame** ヘルパー メソッドで作成されます。
+[**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) イベント ハンドラーで、アプリがバックグラウンドで実行されなくなったことを示すために追跡変数を設定する必要があります。
 
 [!code-cs[LeavingBackground](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetLeavingBackground)]
 
-**CreateRootFrame** ヘルパー メソッドは、アプリ ビューのコンテンツを再作成します。 このメソッドのコードは、既定のプロジェクト テンプレートで提供される [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) ハンドラーのコードと同じです。 1 つ異なる点は、**Launching** ハンドラーが [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs) の [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs.PreviousExecutionState) プロパティから以前の実行状態を特定するのに対して、**CreateRootFrame** メソッドは単に引数として渡される以前の実行状態を取得します。 重複するコードを最小限に抑えるには、既定の **Launching** イベント ハンドラーのコードをリファクタリングして、必要に応じて **CreateRootFrame** を呼び出します。
-
-[!code-cs[CreateRootFrame](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetCreateRootFrame)]
+### メモリ管理の要件
+フォアグラウンドとバックグラウンドの間の移行処理で最も重要な部分は、アプリが使うメモリの管理です。 バックグラウンドで実行すると、システムによってアプリが保持することを許可されているメモリ リソースが減少するため、[**AppMemoryUsageIncreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageIncreased) と [**AppMemoryUsageLimitChanging**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageLimitChanging) イベントについても登録する必要があります。 これらのイベントが発生したとき、アプリの現在のメモリ使用量と、現在の制限を確認し、必要に応じて、メモリ使用量を減らしてください。 バックグラウンドで実行中にメモリ使用量を減らす方法については、[アプリがバックグラウンドに移動したときにメモリを解放する方法に関するページ](../launch-resume/reduce-memory-usage.md)をご覧ください。
 
 ## バックグラウンド メディア アプリのネットワークの可用性
 すべてのネットワーク対応メディア ソース (ストリームやファイルから作成されないソース) は、リモート コンテンツの取得中はアクティブなネットワーク接続を維持し、リモート コンテンツを取得していないときはネットワーク接続を解放します。 [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaStreamSource) は、具体的には、アプリケーションを利用して、[**SetBufferedRange**](https://msdn.microsoft.com/library/windows/apps/dn282762) を使用して適切にバッファー処理された範囲をプラットフォームに適切に報告します。 コンテンツ全体が完全にバッファー処理されると、ネットワークはアプリ用に予約されなくなります。
@@ -126,6 +102,6 @@ Windows 10 バージョン 1607 では、新しいシングル プロセス モ�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 
