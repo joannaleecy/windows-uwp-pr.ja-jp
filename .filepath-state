@@ -149,6 +149,9 @@
   "ff6bff692c4e0e73b2c99e06b46e8a3050ba12c4": [
     "windows-apps-src\\audio-video-camera\\imaging.md"
   ],
+  "d1aad0800bfe4982a316aa5da719db005b687fa1": [
+    "windows-apps-src\\audio-video-camera\\index.md"
+  ],
   "6e67f57fbc00e596bb07cc37f2c9f762a5c9f557": [
     "windows-apps-src\\audio-video-camera\\index.md"
   ],
@@ -1469,6 +1472,9 @@
   "0488e47c35b2f7c8a8db2b2aca4527c4c3b67d28": [
     "windows-apps-src\\launch-resume\\monitor-background-task-progress-and-completion.md"
   ],
+  "809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca": [
+    "windows-apps-src\\launch-resume\\register-a-background-task.md"
+  ],
   "2d27b46caefcae12e3ff3aeb300129eec0c5b7d7": [
     "windows-apps-src\\launch-resume\\register-a-background-task.md"
   ],
@@ -1688,6 +1694,9 @@
   "fdca95a6e925ca2238fdcd8791ade2ed4ea5a310": [
     "windows-apps-src\\monetize\\exclude-or-limit-features-in-a-trial-version-of-your-app.md"
   ],
+  "b82136348936d436a374cfef42d5e349ed0d0f36": [
+    "windows-apps-src\\monetize\\get-app-acquisitions.md"
+  ],
   "12a221e84ade6b359f46f1950e1ed1cc2dd8e422": [
     "windows-apps-src\\monetize\\get-app-acquisitions.md"
   ],
@@ -1699,6 +1708,9 @@
   ],
   "15db76c03f5880955bc4e609ea004f659a3495bd": [
     "windows-apps-src\\monetize\\get-app-failures.md"
+  ],
+  "86685984256459e0bb125340daa1616b09982429": [
+    "windows-apps-src\\monetize\\get-app-ratings.md"
   ],
   "26d9bd8e5fb756473d8e5bcb0835166e36d35f73": [
     "windows-apps-src\\monetize\\get-app-ratings.md"
@@ -1712,6 +1724,9 @@
   "8ec588ceb0a7c8bd6a75f72bf0a2d48c697a8e6a": [
     "windows-apps-src\\monetize\\get-app-ratings.md"
   ],
+  "49d3f3cb608f3207306af443c67b684a0ae9f319": [
+    "windows-apps-src\\monetize\\get-app-reviews.md"
+  ],
   "05c7a28943593ba4665ce86551a63cc93ee1f379": [
     "windows-apps-src\\monetize\\get-app-reviews.md"
   ],
@@ -1724,6 +1739,9 @@
   "4190012c08e22f4efb086c711183332b23ccee38": [
     "windows-apps-src\\monetize\\get-app-reviews.md"
   ],
+  "37f332806d0efbf3df3040a6fa718e0b75bc8a3f": [
+    "windows-apps-src\\monetize\\get-error-reporting-data.md"
+  ],
   "f4a9b13a6012f11e058e8ba62c131dc5c09f40ee": [
     "windows-apps-src\\monetize\\get-error-reporting-data.md"
   ],
@@ -1735,6 +1753,9 @@
   ],
   "64bd3491bc8ff37f5eb7ca852ad6dc738f6e2711": [
     "windows-apps-src\\monetize\\get-error-reporting-data.md"
+  ],
+  "a79cd324d57151318445df0dedd35a98d9c9f915": [
+    "windows-apps-src\\monetize\\get-in-app-acquisitions.md"
   ],
   "1909bb2639840f75a8186581a79c62ca730fb111": [
     "windows-apps-src\\monetize\\get-in-app-acquisitions.md"
@@ -2644,6 +2665,9 @@
   ],
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "215c37464f0105c7ea8eae1e6df7c0f8c9a37617": [
+    "windows-apps-src\\TOC.md"
   ],
   "e899f3561060cf80f6a44f99ff0e436f9bb5d803": [
     "windows-apps-src\\TOC.md"

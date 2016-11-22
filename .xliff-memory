@@ -4709,6 +4709,86 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2ac9edf074ceb91d5cfea17228f0a39fef200b74.e1963bf3ee26f790cdb777295210469dbb85137e.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\TOC.md.0eda74ebda6698fe1133accbc110fd8aa3a77ee0.HT": {
+      "SourceFilename": "windows-apps-src\\TOC.md",
+      "XliffHash": "0eda74ebda6698fe1133accbc110fd8aa3a77ee0",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\215c37464f0105c7ea8eae1e6df7c0f8c9a37617.70d55c5bb878c8ef19c18febb162fac1979829cc.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\launch-resume\\register-a-background-task.md.f7de9ca10445483c0ddeb475b831fb62fbee0a2e.HT": {
+      "SourceFilename": "windows-apps-src\\launch-resume\\register-a-background-task.md",
+      "XliffHash": "f7de9ca10445483c0ddeb475b831fb62fbee0a2e",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca.8e44d939cd3d4d6c44596799576617bbbc9c7baa.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\get-app-ratings.md.875200bab6e9d9289ff22628dac9839635998d4a.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\get-app-ratings.md",
+      "XliffHash": "875200bab6e9d9289ff22628dac9839635998d4a",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\86685984256459e0bb125340daa1616b09982429.817ef305d8fea4601d9a13b247b1dd20c5fb522d.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\get-app-acquisitions.md.a511b3de07da57538e7c4d595b1b29282c5e3acb.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\get-app-acquisitions.md",
+      "XliffHash": "a511b3de07da57538e7c4d595b1b29282c5e3acb",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b82136348936d436a374cfef42d5e349ed0d0f36.968218b0b3eb2a9c0afe6341d67ebdb43688c429.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\get-error-reporting-data.md.b920c1daf1784ce40053ed246115444154b8d1d3.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\get-error-reporting-data.md",
+      "XliffHash": "b920c1daf1784ce40053ed246115444154b8d1d3",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\37f332806d0efbf3df3040a6fa718e0b75bc8a3f.7ae2c0a0fd61701cc2fbcc90b870f44bc2f0ff87.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\get-app-reviews.md.e04e7f9e60cf334b6b7e68b3d16112292edfdf2d.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\get-app-reviews.md",
+      "XliffHash": "e04e7f9e60cf334b6b7e68b3d16112292edfdf2d",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\49d3f3cb608f3207306af443c67b684a0ae9f319.d61491580158f16c2cfc15af3986b98ff20c0bda.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\get-in-app-acquisitions.md.cc5f3ca89c0bf91aa1bf789b987e6bf6b848a960.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\get-in-app-acquisitions.md",
+      "XliffHash": "cc5f3ca89c0bf91aa1bf789b987e6bf6b848a960",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a79cd324d57151318445df0dedd35a98d9c9f915.ec0d1cfa56d21d4e25f6064dc2f7e538b333bad6.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\audio-video-camera\\index.md.551a7443544373cdcedc71cc16c66b1d7da9e720.HT": {
+      "SourceFilename": "windows-apps-src\\audio-video-camera\\index.md",
+      "XliffHash": "551a7443544373cdcedc71cc16c66b1d7da9e720",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d1aad0800bfe4982a316aa5da719db005b687fa1.de380ece99db72284abd610c066349c9605db23b.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
