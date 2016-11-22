@@ -4799,6 +4799,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c925015e9f74edcb1859ca10279beefc31286b1e.2591625e693d03e8f2d2677bd6bd1131afa2d0ab.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\xbox-apps\\known-issues.md.430de26abd591cbe621f098a739a9c85273942e3.HT": {
+      "SourceFilename": "windows-apps-src\\xbox-apps\\known-issues.md",
+      "XliffHash": "430de26abd591cbe621f098a739a9c85273942e3",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b6fe2f90e0aff4b8e77b4c20aec0d29f2a6a36f8.22be4e7b5a97516fbab436ad1d967f3f09f1c437.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\audio-video-camera\\media-casting.md.a05318dddcc6ef29273a61380df7c24bd93932b5.HT": {
+      "SourceFilename": "windows-apps-src\\audio-video-camera\\media-casting.md",
+      "XliffHash": "a05318dddcc6ef29273a61380df7c24bd93932b5",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\fc69e3b5bb814752480fa0151c36ae0a8c783c4e.ea94c5a717366a448246e7d83cf2c4ba020ed033.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

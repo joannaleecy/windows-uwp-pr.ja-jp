@@ -1,26 +1,47 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\launch-resume\how-to-create-and-consume-an-app-service.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/8b3ad18a3a0561d344b0d88a529cd929dafd9e4b?path=windows-apps-src%2Flaunch-resume%2Fhow-to-create-and-consume-an-app-service.md&_a=contents) | HandedOffSuccess | [Details](#c925015e9f74edcb1859ca10279beefc31286b1e4751)
+ [windows-apps-src\audio-video-camera\media-casting.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/ebcd2f2b28a7cd2a8a9dad16c30239b06e147ec3?path=windows-apps-src%2Faudio-video-camera%2Fmedia-casting.md&_a=contents) | HandedOffSuccess | [Details](#fc69e3b5bb814752480fa0151c36ae0a8c783c4e1644)
+ [windows-apps-src\xbox-apps\known-issues.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/20ac6fb738de1c8aaf10f46c359842f31714dbbf?path=windows-apps-src%2Fxbox-apps%2Fknown-issues.md&_a=contents) | HandedOffSuccess | [Details](#b6fe2f90e0aff4b8e77b4c20aec0d29f2a6a36f88533)
 
 ## Item Details
-##### <a name='c925015e9f74edcb1859ca10279beefc31286b1e4751'></a> Source: [windows-apps-src\launch-resume\how-to-create-and-consume-an-app-service.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/8b3ad18a3a0561d344b0d88a529cd929dafd9e4b?path=windows-apps-src%2Flaunch-resume%2Fhow-to-create-and-consume-an-app-service.md&_a=contents)
+##### <a name='fc69e3b5bb814752480fa0151c36ae0a8c783c4e1644'></a> Source: [windows-apps-src\audio-video-camera\media-casting.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/ebcd2f2b28a7cd2a8a9dad16c30239b06e147ec3?path=windows-apps-src%2Faudio-video-camera%2Fmedia-casting.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [how-to-create-and-consume-an-app-service.a15dae966f1f3c76bc61f81f7ed50b4a7fe0e782.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/1510a6cd2acc114b0841549d34f1829d351a9863?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fhow-to-create-and-consume-an-app-service.a15dae966f1f3c76bc61f81f7ed50b4a7fe0e782.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2016-11-22 18:58:26
+* Handoff File: [media-casting.0c7f4edb755dd030e35e1133657e6154b41aaee4.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/00a7b77c59b70ff030a2d00a772b20b8d4a36fba?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmedia-casting.0c7f4edb755dd030e35e1133657e6154b41aaee4.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2016-11-22 20:59:31
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Bilingual File: [how-to-create-and-consume-an-app-service.a15dae966f1f3c76bc61f81f7ed50b4a7fe0e782.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/5fbfce34d71b9c9ce97b3692f989d8e628c65b51?path=ol-handback%2FMicrosoft%2Fwindows-apps.ja-jp%2Fmaster%2Fhow-to-create-and-consume-an-app-service.a15dae966f1f3c76bc61f81f7ed50b4a7fe0e782.ja-jp.xlf&_a=contents)
-* Bilingual Datetime: 2016-10-18 13:24:14
+* Current Target File: [windows-apps-src\audio-video-camera\media-casting.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/a0c9b37996e144c232a515e52bb1b63c37a2862b?path=windows-apps-src%2Faudio-video-camera%2Fmedia-casting.md&_a=contents)
+* Current Handback File: [media-casting.0c7f4edb755dd030e35e1133657e6154b41aaee4.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/480ff19d0d67081a9e8f65722d99210ca2ffc468?path=ol-handback%2FMicrosoft%2Fwindows-apps.ja-jp%2Fmaster%2Fmedia-casting.0c7f4edb755dd030e35e1133657e6154b41aaee4.ja-jp.xlf&_a=contents)
+* Current Handback Datetime: 2016-10-21 15:00:50
+* Bilingual File: [media-casting.0c7f4edb755dd030e35e1133657e6154b41aaee4.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/480ff19d0d67081a9e8f65722d99210ca2ffc468?path=ol-handback%2FMicrosoft%2Fwindows-apps.ja-jp%2Fmaster%2Fmedia-casting.0c7f4edb755dd030e35e1133657e6154b41aaee4.ja-jp.xlf&_a=contents)
+* Bilingual Datetime: 2016-10-24 15:45:53
+* [Back to Top](#report-top)
+
+##### <a name='b6fe2f90e0aff4b8e77b4c20aec0d29f2a6a36f88533'></a> Source: [windows-apps-src\xbox-apps\known-issues.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/20ac6fb738de1c8aaf10f46c359842f31714dbbf?path=windows-apps-src%2Fxbox-apps%2Fknown-issues.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/00a7b77c59b70ff030a2d00a772b20b8d4a36fba?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fknown-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2016-11-22 20:59:31
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\xbox-apps\known-issues.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/a0c9b37996e144c232a515e52bb1b63c37a2862b?path=windows-apps-src%2Fxbox-apps%2Fknown-issues.md&_a=contents)
+* Current Handback File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/480ff19d0d67081a9e8f65722d99210ca2ffc468?path=ol-handback%2FMicrosoft%2Fwindows-apps.ja-jp%2Fmaster%2Fknown-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf&_a=contents)
+* Current Handback Datetime: 2016-10-21 15:00:50
+* Bilingual File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/480ff19d0d67081a9e8f65722d99210ca2ffc468?path=ol-handback%2FMicrosoft%2Fwindows-apps.ja-jp%2Fmaster%2Fknown-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf&_a=contents)
+* Bilingual Datetime: 2016-10-24 15:45:53
 * [Back to Top](#report-top)
 
 
