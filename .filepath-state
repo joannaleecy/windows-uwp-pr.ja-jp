@@ -1049,6 +1049,9 @@
   "6c81b24f7fa9abe036d4ccd22ee8fa24c011fe77": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
   ],
+  "e928b4bb116ad98ffe7c225ac1ef2306e56a13ea": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
+  ],
   "6cf960781862649588f361b6bfcd87605f3e8d55": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
   ],
@@ -1063,6 +1066,9 @@
   ],
   "729c71fbe0db202bd4f5ce15bea87caa973adf80": [
     "windows-apps-src\\get-started\\get-set-up.md"
+  ],
+  "087c298f59798010628aefc428eedf9933bb2686": [
+    "windows-apps-src\\get-started\\learn-more.md"
   ],
   "843775553f6a2caa9dca0c4e256c6f690829b84a": [
     "windows-apps-src\\get-started\\learn-more.md"
@@ -1211,6 +1217,9 @@
   "2b4bae1606f9b51e2d4901218ebd2d616e4c5edc": [
     "windows-apps-src\\index.md"
   ],
+  "3a5f9495f226d7df076c2623d8b07afc4794d9b4": [
+    "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
+  ],
   "26dc8910c779dc46d19be75abd49c20b750a9843": [
     "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
   ],
@@ -1313,6 +1322,9 @@
   "d4238e0d1becee719148b38acf5a91d74230601d": [
     "windows-apps-src\\input-and-devices\\multiple-input-design-guidelines.md"
   ],
+  "9b55a3fd251c7c44e3ff325db0e345036d114ded": [
+    "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
+  ],
   "4c87dea0387b2da055d07df5bab14c4ad61638d7": [
     "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
   ],
@@ -1321,6 +1333,9 @@
   ],
   "97a626aedff1b0915c845f151b16b3678e1cf977": [
     "windows-apps-src\\input-and-devices\\respond-to-the-presence-of-the-touch-keyboard.md"
+  ],
+  "9712a2bb7bd1495d0049ab43d798d5ec9c08f313": [
+    "windows-apps-src\\input-and-devices\\save-and-load-ink.md"
   ],
   "a4b227ffeb99097bb3128fb7d6169ac2ffe9fc24": [
     "windows-apps-src\\input-and-devices\\save-and-load-ink.md"
@@ -3038,6 +3053,9 @@
   "d38b41852a225e9a4fb1f571dc4749c45f3c5956": [
     "windows-apps-src\\debug-test-perf\\app-analysis.md"
   ],
+  "dfe89e4d4fd089dde6b7b307325b8fe43de82c10": [
+    "windows-apps-src\\input-and-devices\\access-keys.md"
+  ],
   "d96d507c6ce8537888619ce174e2ff0e5284dcce": [
     "windows-apps-src\\input-and-devices\\access-keys.md"
   ],
@@ -3175,6 +3193,9 @@
   ],
   "2beec354ed7dbb3cc2d4cb502977ce028b4eaf1d": [
     "windows-apps-src\\enterprise\\wip-hub.md"
+  ],
+  "1b810a42166c48c1359dcf9adfba84184234b42c": [
+    "windows-apps-src\\input-and-devices\\ink-toolbar.md"
   ],
   "f5c8f7f8e60317a3ef30ff1900d99f9f6d63d391": [
     "windows-apps-src\\input-and-devices\\ink-toolbar.md"
