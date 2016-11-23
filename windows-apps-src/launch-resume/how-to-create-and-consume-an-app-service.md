@@ -3,10 +3,10 @@ author: TylerMSFT
 title: "アプリ サービスの作成と利用"
 description: "他の UWP アプリにサービスを提供できるユニバーサル Windows プラットフォーム (UWP) アプリを作成する方法と、それらのサービスを利用する方法について説明します。"
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
-keywords: app to app
+keyword: app to app communication, interprocess communication, IPC, Background messaging, background communication, app to app
 translationtype: Human Translation
-ms.sourcegitcommit: d7d7edf8d1ed6ae1c4be504cd4827bb941f14380
-ms.openlocfilehash: 13b9456d1f6ee2b592db0e5e38b9f9e7fe41764c
+ms.sourcegitcommit: 8b3ad18a3a0561d344b0d88a529cd929dafd9e4b
+ms.openlocfilehash: c925015e9f74edcb1859ca10279beefc31286b1e
 
 ---
 
@@ -18,15 +18,15 @@ ms.openlocfilehash: 13b9456d1f6ee2b592db0e5e38b9f9e7fe41764c
 
 他の UWP アプリにサービスを提供できるユニバーサル Windows プラットフォーム (UWP) アプリを作成する方法と、それらのサービスを利用する方法について説明します。
 
-## 新しいアプリ サービス プロバイダー プロジェクトの作成
+Windows 10 バージョン 1607 以降では、ホスト アプリと同じプロセスで実行されるアプリ サービスを作成できます。 この記事では、別のバックグラウンド プロセスで実行されるアプリ サービスの作成に重点を置いて説明します。 プロバイダーと同じプロセスで実行されるアプリ サービスの詳細については、「[ホスト アプリと同じプロセスで実行するようにアプリ サービスを変換する](convert-app-service-in-process.md)」をご覧ください。
 
+## 新しいアプリ サービス プロバイダー プロジェクトの作成
 
 このトピックでは、わかりやすくするためにすべてを 1 つのソリューションで作成します。
 
 -   Microsoft Visual Studio 2015 で、新しい UWP アプリ プロジェクトを作成し、これに AppServiceProvider という名前を付けます。 (**[新しいプロジェクト]** ダイアログ ボックスで、**[テンプレート] &gt; [他の言語] &gt; [Visual C#] &gt; [Windows] &gt; [Windows ユニバーサル] &gt; [空白のアプリ (Windows ユニバーサル)]** の順にクリックします)。 これは、アプリ サービスを提供するアプリです。
 
 ## package.appxmanifest に、アプリ サービスの拡張機能を追加します。
-
 
 AppServiceProvider プロジェクトの Package.appxmanifest ファイルで、次の AppService 拡張機能を **&lt;Application&gt;** 要素に追加します。 この例では、`com.Microsoft.Inventory` サービスをアドバタイズし、このアプリをアプリ サービス プロバイダーとして識別します。 実際のサービスは、バックグラウンド タスクとして実装されます。 アプリ サービスのアプリは、サービスを他のアプリに公開します。 サービス名には逆のドメイン名スタイルを使うことをお勧めします。
 
@@ -51,7 +51,6 @@ AppServiceProvider プロジェクトの Package.appxmanifest ファイルで、
 **EntryPoint** 属性は、サービスを実装するクラスを識別します。これについては、次に実装します。
 
 ## アプリ サービスの作成
-
 
 1.  アプリ サービスは、バックグラウンド タスクとして実装されます。 これにより、フォアグラウンド アプリケーションは、背後でタスクを実行する、別のアプリケーションのアプリ サービスを呼び出すことができます。 MyAppService という名前の新しい Windows ランタイム コンポーネント プロジェクトをソリューションに追加 (**[ファイル] &gt; [追加] &gt; [新しいプロジェクト]**) します。 (**[新しいプロジェクトの追加]** ダイアログ ボックスで、**[インストール済み] &gt; [他の言語] &gt; [Visual C#] &gt; [Windows] &gt; [Windows ユニバーサル] &gt; [Windows ランタイム コンポーネント (Windows ユニバーサル)]** の順に選びます。)
 2.  AppServiceProvider プロジェクトで、MyAppService プロジェクトへの参照を追加します。
@@ -100,17 +99,13 @@ AppServiceProvider プロジェクトの Package.appxmanifest ファイルで、
 
     このクラスは、アプリ サービスが作業を実行する場所です。
 
-    
-            バックグラウンド タスクが作成されると、**Run()** が呼び出されます。 バックグラウンド タスクは **Run** が完了すると終了するため、バックグラウンド タスクが要求に引き続き対応できるように、コードは保留されます。
+    バックグラウンド タスクが作成されると、**Run()** が呼び出されます。 バックグラウンド タスクは **Run** が完了すると終了するため、バックグラウンド タスクが要求に引き続き対応できるように、コードは保留されます。
 
-    
-            タスクが取り消されると、**OnTaskCanceled()** が呼び出されます。 タスクが取り消されるのは、クライアント アプリが [**AppServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn921704) を破棄したとき、クライアント アプリが中断されたとき、OS がシャットダウンまたはスリープ状態になったとき、または OS がリソース不足になりタスクを実行できなくなったときです。
+    タスクが取り消されると、**OnTaskCanceled()** が呼び出されます。 タスクが取り消されるのは、クライアント アプリが [**AppServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn921704) を破棄したとき、クライアント アプリが中断されたとき、OS がシャットダウンまたはスリープ状態になったとき、または OS がリソース不足になりタスクを実行できなくなったときです。
 
 ## アプリ サービスのコードを記述する
 
-
-
-            **OnRequestedReceived()** は、アプリ サービスのコードが配置される場所です。 MyAppService の Class1.cs のスタブ **OnRequestedReceived()** を、次の例のコードに置き換えます。 このコードは、インベントリの項目のインデックスを取得し、コマンド文字列と共にサービスに渡して、指定したインベントリ項目の名前と価格を取得します。 エラー処理コードは、簡略にするために削除されています。
+**OnRequestedReceived()** は、アプリ サービスのコードが配置される場所です。 MyAppService の Class1.cs のスタブ **OnRequestedReceived()** を、次の例のコードに置き換えます。 このコードは、インベントリの項目のインデックスを取得し、コマンド文字列と共にサービスに渡して、指定したインベントリ項目の名前と価格を取得します。 エラー処理コードは、簡略にするために削除されています。
 
 ```cs
 private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
@@ -164,11 +159,7 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 
 **OnRequestedReceived()** が **async** であることに注意してください。この例では、[**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) への待機可能なメソッド呼び出しを行うためです。
 
-保留が行われるのは、サービスが OnRequestReceived ハンドラーで **async** メソッドを使用できるようにするためです。 これにより、OnRequestReceived への呼び出しは、メッセージの処理が完了するまで完了しません。 
-            [
-              **SendResponseAsync**
-            ](https://msdn.microsoft.com/library/windows/apps/dn921722) は、完了と共に応答を送信するために使われます。 
-            **SendResponseAsync** は、呼び出しの完了時に通知しません。 OnRequestReceived が完了したことを [**SendMessageAsync**](https://msdn.microsoft.com/library/windows/apps/dn921712) に通知するのは、保留の完了時です。
+保留が行われるのは、サービスが OnRequestReceived ハンドラーで **async** メソッドを使用できるようにするためです。 これにより、OnRequestReceived への呼び出しは、メッセージの処理が完了するまで完了しません。 [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) は、完了と共に応答を送信するために使われます。 **SendResponseAsync** は、呼び出しの完了時に通知しません。 OnRequestReceived が完了したことを [**SendMessageAsync**](https://msdn.microsoft.com/library/windows/apps/dn921712) に通知するのは、保留の完了時です。
 
 アプリ サービスは [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) を使って情報を交換します。 渡すことができるデータのサイズは、システム リソースによってのみ制限されます。 **ValueSet** で使うことができる定義済みのキーはありません。 アプリ サービスのプロトコルの定義に使うキーの値を決定する必要があります。 呼び出し元は、そのプロトコルを念頭に置いて記述する必要があります。 この例では、アプリ サービスがインベントリ項目またはその価格の名前を提供するかどうかを示す値を持つ、"Command" という名前のキーを選びました。 インベントリ名のインデックスは、"ID" キーに保存されています。 戻り値は "Result" キーに保存されます。
 
@@ -178,14 +169,12 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 
 ## サービス アプリを展開して、パッケージ ファミリ名を取得する
 
-
 クライアントから呼び出す前に、アプリ サービス プロバイダーのアプリを展開する必要があります。 これを呼び出すには、アプリ サービスのアプリのパッケージ ファミリ名も必要になります。
 
 -   アプリ サービスのアプリのパッケージ ファミリ名を取得する 1 つの方法は、**AppServiceProvider** プロジェクト内から (たとえば、App.xaml.cs の `public App()` から) [**Windows.ApplicationModel.Package.Current.Id.FamilyName**](https://msdn.microsoft.com/library/windows/apps/br224670) を呼び出し、結果をメモします。 Microsoft Visual Studio で AppServiceProvider を実行するには、ソリューション エクスプローラー ウィンドウで、スタートアップ プロジェクトとして設定し、プロジェクトを実行します。
 -   パッケージ ファミリ名を取得する別の方法として、ソリューションを配置し (**[ビルド] &gt; [ソリューションの配置]**)、出力ウィンドウで完全なパッケージ名をメモします (**[表示] &gt; [出力]**)。 パッケージ名を派生するには、出力ウィンドウの文字列からプラットフォーム情報を削除する必要があります。 たとえば、完全なパッケージ名が出力ウィンドウで "9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_1.0.0.0\_x86\_\_yd7nk54bq29ra" と報告された場合、"1.0.0.0\_x86\_\_" を削除し、"9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_yd7nk54bq29ra" がパッケージ ファミリ名となります。
 
 ## アプリ サービスを呼び出すクライアントを作成する
-
 
 1.  ClientApp という名前の新しい空の Windows ユニバーサル アプリ プロジェクトをソリューションに追加 (**[ファイル] &gt; [追加] &gt; [新しいプロジェクト]**) します。 (**[新しいプロジェクトの追加]** ダイアログ ボックスで、**[インストール済み] &gt; [他の言語] &gt; [Visual C#] &gt; [Windows] &gt; [Windows ユニバーサル] &gt; [空白のアプリ (Windows ユニバーサル)]** の順に選びます。)
 2.  ClientApp プロジェクトで、MainPage.xaml.cs の上部に、次の **using** ステートメントを追加します。
@@ -276,7 +265,7 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 ## アプリ サービスのデバッグ
 
 
-1.  サービスを呼び出す前にアプリ サービス プロバイダーのアプリが配置される必要があるため、ソリューション全体がデバッグする前に展開されるようにします  (Visual Studio で、**[ビルド] &gt; [ソリューションの配置]** の順にクリックします)。
+1.  サービスを呼び出す前にアプリ サービス プロバイダーのアプリが配置される必要があるため、ソリューション全体がデバッグする前に展開されるようにします。 (Visual Studio で、**[ビルド] &gt; [ソリューションの配置]** の順にクリックします)。
 2.  ソリューション エクスプローラーで、AppServiceProvider プロジェクトを右クリックして、**[プロパティ]** をクリックします。 **[デバッグ]** タブで、**[開始動作]** を **[起動しないが、開始時にマイ コードをデバッグする]** に変更します。
 3.  MyAppService プロジェクトの Class1.cs ファイルで、OnRequestReceived() にブレークポイントを設定します。
 4.  AppServiceProvider プロジェクトをスタートアップ プロジェクトとなるように設定し、F5 キーを押します。
@@ -285,20 +274,17 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 
 ## クライアントのデバッグ
 
-
 1.  前の手順に従って、アプリ サービスをデバッグします。
 2.  [スタート] メニューから ClientApp を起動します。
-3.  (ApplicationFrameHost.exe プロセスではなく) ClientApp.exe プロセスにデバッガーをアタッチします  (Visual Studio で、**[デバッグ] &gt; [プロセスにアタッチ]** の順に選びます)。
+3.  (ApplicationFrameHost.exe プロセスではなく) ClientApp.exe プロセスにデバッガーをアタッチします。 (Visual Studio で、**[デバッグ] &gt; [プロセスにアタッチ]** の順に選びます)。
 4.  ClientApp プロジェクトで、**button\_Click()** にブレークポイントを設定します。
 5.  ClientApp のテキスト ボックスに数値 1 を入力してボタンをクリックすると、クライアントとアプリ サービスの両方のブレークポイントがヒットするようになります。
 
 ## 注釈
 
-
 この例では、アプリ サービスを作成して、別のアプリからそれを呼び出しす簡単な概要を示します。 重要な点は、アプリ サービスをホストするためのバックグラウンド タスクの作成、アプリ サービス プロバイダーのアプリの Package.appxmanifest ファイルへの windows.appservice 拡張機能の追加、クライアント アプリから接続するためのアプリ サービス プロバイダーのアプリのパッケージ ファミリ名の取得、[**Windows.ApplicationModel.AppService.AppServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn921704) を使ったサービスの呼び出しです。
 
 ## MyAppService の完全なコード
-
 
 ```cs
 using System;
@@ -389,15 +375,11 @@ namespace MyAppService
 
 ## 関連トピック
 
-
+* [ホスト アプリと同じプロセスで実行するようにアプリ サービスを変換する](convert-app-service-in-process.md)
 * [バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)
 
- 
-
- 
 
 
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Nov16_HO4-->
 
 
