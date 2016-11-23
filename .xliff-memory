@@ -4979,6 +4979,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\3a5f9495f226d7df076c2623d8b07afc4794d9b4.e6b451bdc1db0eecf5fc35fa964d839065365baf.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\networking\\network-communications-in-the-background.md.0bdbd6a97b0e1ae9f9a5b960db4c4d1f96a89a72.HT": {
+      "SourceFilename": "windows-apps-src\\networking\\network-communications-in-the-background.md",
+      "XliffHash": "0bdbd6a97b0e1ae9f9a5b960db4c4d1f96a89a72",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ea979eceb20c13d4025ec94ec8ed05b484a7eb27.4b228a1a5a6f9969bc8723038b5ffd90949bd89e.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
