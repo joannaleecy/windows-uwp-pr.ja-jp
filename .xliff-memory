@@ -3477,8 +3477,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\958033bc054da292c85f8df0a57cf964696c82bd.cf05c484d6a661f47f84f1bcd2092b7e6658fd63.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\image-metadata.36996dce323e596780c32fc5306c41f69aa51cb4.ja-jp.xlf",
+      "LocXliffCommit": "fe572fef22d84e2953c750f1a5dba45aaf1fe912"
     },
     "windows-apps-src\\audio-video-camera\\supported-codecs.md.9f5bc828850409f14c53763d170be5f854ed2cda.HT": {
       "SourceFilename": "windows-apps-src\\audio-video-camera\\supported-codecs.md",
