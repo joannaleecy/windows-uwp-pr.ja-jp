@@ -1484,6 +1484,9 @@
   "36352e3ce5b7d853da0d4aca47e7fc5839ccbfbb": [
     "windows-apps-src\\launch-resume\\register-a-background-task.md"
   ],
+  "230b117d99fca1a36bc4e8bfc8e1c1e427a41cd6": [
+    "windows-apps-src\\launch-resume\\reserved-uri-scheme-names.md"
+  ],
   "2d3d647985701a7bbccc606fd485ad9f6361f9e7": [
     "windows-apps-src\\launch-resume\\reserved-uri-scheme-names.md"
   ],

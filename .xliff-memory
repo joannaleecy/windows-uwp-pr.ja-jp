@@ -5009,6 +5009,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\951e2ea29a47e362d9fdee0f597d2e7c808212b6.7f660a96c3d585e3acb4b38b00a0d353dcf1852c.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\launch-resume\\reserved-uri-scheme-names.md.fabf931b542d076025d69c2009d64ca6d0d0314a.HT": {
+      "SourceFilename": "windows-apps-src\\launch-resume\\reserved-uri-scheme-names.md",
+      "XliffHash": "fabf931b542d076025d69c2009d64ca6d0d0314a",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\230b117d99fca1a36bc4e8bfc8e1c1e427a41cd6.bdc80642efd13012915e7bcfe8ddb66b36212233.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
