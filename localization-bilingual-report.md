@@ -1,11 +1,28 @@
 # <a name='report-top'></a> Localization Bilingual Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [windows-apps-src\audio-video-camera\image-metadata.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/fd5b52a1d431b9396a4b162077d4f8d6246cd597?path=windows-apps-src%2Faudio-video-camera%2Fimage-metadata.md&_a=contents) | InSyncHandedBackSuccess | [Details](#958033bc054da292c85f8df0a57cf964696c82bd1635)
 
 ## Item Details
+##### <a name='958033bc054da292c85f8df0a57cf964696c82bd1635'></a> Source: [windows-apps-src\audio-video-camera\image-metadata.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/fd5b52a1d431b9396a4b162077d4f8d6246cd597?path=windows-apps-src%2Faudio-video-camera%2Fimage-metadata.md&_a=contents)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\audio-video-camera\image-metadata.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/e9f77a520d2882ca9bd614f5903229446a6af25c?path=windows-apps-src%2Faudio-video-camera%2Fimage-metadata.md&_a=contents)
+* Handoff File: [image-metadata.36996dce323e596780c32fc5306c41f69aa51cb4.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/950406e4768ea919dfcca9cdf97899eb5f47a91a?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fimage-metadata.36996dce323e596780c32fc5306c41f69aa51cb4.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2016-11-03 23:01:49
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [image-metadata.36996dce323e596780c32fc5306c41f69aa51cb4.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fe572fef22d84e2953c750f1a5dba45aaf1fe912?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fimage-metadata.36996dce323e596780c32fc5306c41f69aa51cb4.ja-jp.xlf&_a=contents)
+* Handback Datetime: 2016-11-28 16:40:06
+* Bilingual File: [image-metadata.36996dce323e596780c32fc5306c41f69aa51cb4.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/fe572fef22d84e2953c750f1a5dba45aaf1fe912?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fimage-metadata.36996dce323e596780c32fc5306c41f69aa51cb4.ja-jp.xlf&_a=contents)
+* Bilingual Datetime: 2016-11-28 16:43:02
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
