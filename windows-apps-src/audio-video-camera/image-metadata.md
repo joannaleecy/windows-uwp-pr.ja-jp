@@ -1,11 +1,11 @@
 ---
-author: drewbatgit
+author: laurenhughes
 ms.assetid: D5D98044-7221-4C2A-9724-56E59F341AB0
 description: "この記事では、画像のメタデータ プロパティを読み取ったり書き込んだりする方法のほか、GeotagHelper ユーティリティ クラスを使ってファイルに位置情報タグを設定する方法について説明します。"
 title: "画像のメタデータ"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1f97bf89682bee430849a6b962c68a8c4877a609
+ms.sourcegitcommit: fd5b52a1d431b9396a4b162077d4f8d6246cd597
+ms.openlocfilehash: 958033bc054da292c85f8df0a57cf964696c82bd
 
 ---
 
@@ -66,8 +66,7 @@ GeotagHelper は、地理データを含んだ画像へのタグ付けを支援�
 
 -   WIC メタデータ クエリ言語とサポートされるプロパティについては、「[WIC ネイティブ イメージ形式メタデータのクエリ](https://msdn.microsoft.com/library/windows/desktop/ee719904)」をご覧ください。
 
--   メタデータのプロパティの多くは、サポートされる画像の種類に限りがあります。 
-              デコーダーに関連付けられている画像が、要求したプロパティのいずれかをサポートしていない場合、[**GetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226250) はエラー コード 0x88982F41 で失敗します。画像がどのメタデータもサポートしていない場合は、0x88982F81 で失敗します。 この 2 つのエラー コードに関連付けられている定数はそれぞれ WINCODEC\_ERR\_PROPERTYNOTSUPPORTED と WINCODEC\_ERR\_UNSUPPORTEDOPERATION で、winerror.h ヘッダー ファイルに定義されています。
+-   メタデータのプロパティの多くは、サポートされる画像の種類に限りがあります。 デコーダーに関連付けられている画像が、要求したプロパティのいずれかをサポートしていない場合、[**GetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226250) はエラー コード 0x88982F41 で失敗します。画像がどのメタデータもサポートしていない場合は、0x88982F81 で失敗します。 この 2 つのエラー コードに関連付けられている定数はそれぞれ WINCODEC\_ERR\_PROPERTYNOTSUPPORTED と WINCODEC\_ERR\_UNSUPPORTEDOPERATION で、winerror.h ヘッダー ファイルに定義されています。
 -   特定のプロパティの値が画像に存在するかどうかはわからないので、**IDictionary.ContainsKey** を使って、結果にプロパティが存在するかどうかを確かめたうえでアクセスしてください。
 
 画像のメタデータをストリームに書き込むには、画像の出力ファイルに関連付けられている **BitmapEncoder** が必要です。
@@ -78,8 +77,7 @@ GeotagHelper は、地理データを含んだ画像へのタグ付けを支援�
 
 -   画像ファイルの種類ごとのサポート対象プロパティについて詳しくは、「[Windows プロパティ](https://msdn.microsoft.com/library/windows/desktop/dd561977)」、「[フォト メタデータ ポリシー](https://msdn.microsoft.com/library/windows/desktop/ee872003)」、「[WIC ネイティブ イメージ形式メタデータのクエリ](https://msdn.microsoft.com/library/windows/desktop/ee719904)」をご覧ください。
 
--   
-              エンコーダーに関連付けられている画像が、要求したプロパティのいずれかをサポートしていない場合、[**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) はエラー コード 0x88982F41 で失敗します。
+-   エンコーダーに関連付けられている画像が、要求したプロパティのいずれかをサポートしていない場合、[**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) はエラー コード 0x88982F41 で失敗します。
 
 ## 関連トピック
 
@@ -94,6 +92,6 @@ GeotagHelper は、地理データを含んだ画像へのタグ付けを支援�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 
