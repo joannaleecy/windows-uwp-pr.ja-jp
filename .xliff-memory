@@ -5029,6 +5029,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c5c44c3aa73b96e6dd85a555390e2d4c795704be.95c8d815e9457f84c5f50853f660cab674dd1afd.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\publish\\mobile-operator-billing.md.6438a5d4ce269e9932e5c684e278bbef452666f9.HT": {
+      "SourceFilename": "windows-apps-src\\publish\\mobile-operator-billing.md",
+      "XliffHash": "6438a5d4ce269e9932e5c684e278bbef452666f9",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\fe11b56430a07e1326f78b59579ffd9e733ed1b0.8b2aae3a0e323bef446c607e59f0015d41f0926c.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\publish\\payment-thresholds-methods-and-timeframes.md.42082807a3f9a8acaece06e2c772fb07a31b8b80.HT": {
+      "SourceFilename": "windows-apps-src\\publish\\payment-thresholds-methods-and-timeframes.md",
+      "XliffHash": "42082807a3f9a8acaece06e2c772fb07a31b8b80",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6e94ae84b6e553e2d481b71a8a09f3f0fffdab5b.ea7035c9646553f654db8a0c7b4fe64c698afeeb.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
