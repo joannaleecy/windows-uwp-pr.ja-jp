@@ -5049,6 +5049,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6e94ae84b6e553e2d481b71a8a09f3f0fffdab5b.ea7035c9646553f654db8a0c7b4fe64c698afeeb.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\publish\\payment-thresholds-methods-and-timeframes.md.ff81f10f47369faed587acb401168652d638f7fd.HT": {
+      "SourceFilename": "windows-apps-src\\publish\\payment-thresholds-methods-and-timeframes.md",
+      "XliffHash": "ff81f10f47369faed587acb401168652d638f7fd",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\44dccce89b3edb84cfd9813dd6acc420ae19fc4b.ec172e33867686fa5a464b57803e4e5a550ab228.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
