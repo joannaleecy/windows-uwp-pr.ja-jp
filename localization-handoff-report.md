@@ -6,19 +6,24 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\payment-thresholds-methods-and-timeframes.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/bdba3db84138bcfaa5c9433e546df7beaf77552c?path=windows-apps-src%2Fpublish%2Fpayment-thresholds-methods-and-timeframes.md&_a=contents) | HandedOffSuccess | [Details](#44dccce89b3edb84cfd9813dd6acc420ae19fc4b5514)
+ [windows-apps-src\input-and-devices\designing-for-tv.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/ee0a2f5a34cbbef198a9012d0425bb84e65f3b33?path=windows-apps-src%2Finput-and-devices%2Fdesigning-for-tv.md&_a=contents) | HandedOffSuccess | [Details](#de76a3c6d4949b9203df79855e1748a81d76ca644357)
 
 ## Item Details
-##### <a name='44dccce89b3edb84cfd9813dd6acc420ae19fc4b5514'></a> Source: [windows-apps-src\publish\payment-thresholds-methods-and-timeframes.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/bdba3db84138bcfaa5c9433e546df7beaf77552c?path=windows-apps-src%2Fpublish%2Fpayment-thresholds-methods-and-timeframes.md&_a=contents)
+##### <a name='de76a3c6d4949b9203df79855e1748a81d76ca644357'></a> Source: [windows-apps-src\input-and-devices\designing-for-tv.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/ee0a2f5a34cbbef198a9012d0425bb84e65f3b33?path=windows-apps-src%2Finput-and-devices%2Fdesigning-for-tv.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [payment-thresholds-methods-and-timeframes.a7bdbb15553090183b0fa2cbdd54710d90be2ed3.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/2f882fe255113263df5eebd86724ede7f614b0e2?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fpayment-thresholds-methods-and-timeframes.a7bdbb15553090183b0fa2cbdd54710d90be2ed3.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2016-11-29 20:38:58
+* Handoff File: [designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/42c00d811d8ac900108e98eaa4886a0dfe5fca66?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fdesigning-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2016-11-29 22:34:24
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\input-and-devices\designing-for-tv.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/a0c9b37996e144c232a515e52bb1b63c37a2862b?path=windows-apps-src%2Finput-and-devices%2Fdesigning-for-tv.md&_a=contents)
+* Current Handback File: [designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/480ff19d0d67081a9e8f65722d99210ca2ffc468?path=ol-handback%2FMicrosoft%2Fwindows-apps.ja-jp%2Fmaster%2Fdesigning-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.ja-jp.xlf&_a=contents)
+* Current Handback Datetime: 2016-10-21 15:00:50
+* Bilingual File: [designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/480ff19d0d67081a9e8f65722d99210ca2ffc468?path=ol-handback%2FMicrosoft%2Fwindows-apps.ja-jp%2Fmaster%2Fdesigning-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.ja-jp.xlf&_a=contents)
+* Bilingual Datetime: 2016-10-24 15:45:53
 * [Back to Top](#report-top)
 
 
