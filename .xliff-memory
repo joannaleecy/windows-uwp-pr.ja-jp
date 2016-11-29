@@ -5019,6 +5019,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\230b117d99fca1a36bc4e8bfc8e1c1e427a41cd6.bdc80642efd13012915e7bcfe8ddb66b36212233.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\designing-for-tv.md.744d70e3da95bbdb47e50ff4809682aae9250de6.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\designing-for-tv.md",
+      "XliffHash": "744d70e3da95bbdb47e50ff4809682aae9250de6",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c5c44c3aa73b96e6dd85a555390e2d4c795704be.95c8d815e9457f84c5f50853f660cab674dd1afd.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
