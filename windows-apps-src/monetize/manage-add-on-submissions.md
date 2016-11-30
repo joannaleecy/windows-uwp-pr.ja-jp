@@ -4,8 +4,8 @@ ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
 description: "Windows デベロッパー センター アカウントに登録するアプリのアドオンの申請を管理するには、以下の Windows ストア申請 API のメソッドを使います。"
 title: "Windows ストア申請 API を使用したアドオンの申請の管理"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 52e589c90a8d78905a9617dc2802d76a2f0f0360
+ms.sourcegitcommit: 4a1ea50d72e0f754658d8ee99755b873619e1969
+ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 ---
 
@@ -16,6 +16,8 @@ ms.openlocfilehash: 52e589c90a8d78905a9617dc2802d76a2f0f0360
 Windows デベロッパー センター アカウントに登録するアプリのアドオン (アプリ内製品または IAP ともいう) の申請を管理するには、Windows ストア申請 API の以下のメソッドを使用します。 Windows ストア申請 API の概要については、「[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。この API を使用するための前提条件などの情報があります。
 
 >**注:**&nbsp;&nbsp;これらのメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。 これらのメソッドを使用してアドオンの申請を作成または管理するには、アドオンをお客様自身のデベロッパー センター アカウントに用意しておく必要があります。 アドオンは、[デベロッパー センター ダッシュボードを使用する](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)か、「[アドオンの管理](manage-add-ons.md)」の説明に従って Windows ストア申請 API のメソッドを使用して、作成できます。
+
+>**重要**&nbsp;&nbsp;近い将来、Microsoft は Windows デベロッパー センターでアドオンの申請の価格データ モデルを変更する予定です。 変更の実施後には、**価格**リソースはサポートされなくなり、Windows ストア申請 APIを使用してアドオンの申請の価格、販売データの取得と変更を行うことが、一時的にできなくなります。 今後は API を更新して、アドオンの申請に関する価格情報にプログラムでアクセスする新しい方法を導入する予定です。 詳しくは、「[価格リソース](#pricing-object)」セクションをご覧ください。
 
 | メソッド        | URI    | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -168,15 +170,15 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 | 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | id            | string  | 申請 ID。  |
-| contentType           | string  |  アドオンで提供されている[コンテンツの種類](https://msdn.microsoft.com/windows/uwp/publish/enter-iap-properties#content-type)です。 次のいずれかの値を使用できます。 <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
-| keywords           | array  | アドオンの[キーワード](../publish/enter-iap-properties.md#keywords)の文字列を最大 10 個含む配列です。 アプリでは、これらのキーワードを使ってアドオンを照会できます。   |
+| contentType           | string  |  アドオンで提供されている[コンテンツの種類](../publish/enter-add-on-properties.md#content-type)です。 次のいずれかの値を使用できます。 <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
+| keywords           | array  | アドオンの[キーワード](../publish/enter-add-on-properties.md#keywords)の文字列を最大 10 個含む配列です。 アプリでは、これらのキーワードを使ってアドオンを照会できます。   |
 | lifetime           | string  |  アドオンの有効期間です。 次のいずれかの値を使用できます。 <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
 | listings           | object  |  キーと値のペアのディクショナリです。各キーは 2 文字の ISO 3166-1 alpha-2 の国コードで、各値はアドオンの登録情報が保持される[登録情報リソース](#listing-object)オブジェクトです。  |
 | pricing           | object  | アドオンの価格情報を含むオブジェクトです。 詳しくは、以下の「[価格リソース](#pricing-object)」セクションをご覧ください。  |
 | targetPublishMode           | string  | 申請の公開モードです。 次のいずれかの値を使用できます。 <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | string  | *targetPublishMode* が SpecificDate に設定されている場合、ISO 8601 形式での申請の公開日です。  |
-| tag           | string  |  アドオンの[タグ](../publish/enter-iap-properties.md#tag)です。   |
-| visibility  | string  |  アドオンの可視性です。 次のいずれかの値を使用できます。 <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
+| タグ           | string  |  アドオンの[カスタムの開発者データ](../publish/enter-add-on-properties.md#custom-developer-data)(この情報は従来*タグ*と呼ばれていました)。   |
+| 可視性  | string  |  アドオンの可視性です。 次のいずれかの値を使用できます。 <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
 | status  | string  |  申請の状態。 次のいずれかの値を使用できます。 <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | object  |  エラーに関する情報など、申請ステータスに関する追加詳細情報が含まれています。 詳しくは、以下の「[状態の詳細](#status-details-object)」セクションをご覧ください。 |
 | fileUploadUrl           | string  | 申請のパッケージのアップロードに使用する共有アクセス署名 (SAS) URI です。 申請用に新しいパッケージを追加する場合は、パッケージを含む ZIP アーカイブをこの URI にアップロードします。 詳しくは、「[アドオンの申請の作成](#create-an-add-on-submission)」をご覧ください。  |
@@ -206,19 +208,32 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 <span id="pricing-object" />
 ### 価格設定
 
-このリソースにはアドオンの価格設定情報が保持されます。 このリソースには、次の値があります。
+このリソースにはアドオンの価格設定情報が保持されます。
+
+>**重要**&nbsp;&nbsp;近い将来、Microsoft は Windows デベロッパー センターでアドオンの申請の価格データ モデルを変更する予定です。 変更の実施後には、**価格**リソースはサポートされなくなり、Windows ストア申請 APIを使用してアドオンの申請の価格、販売データの取得と変更を行うことが、一時的にできなくなります。 次の動作に変更が発生します。
+
+   > * [アドオンの申請を取得する GET メソッド](get-an-add-on-submission.md)を呼び出した後に、**価格**リソースは空になります。 引き続きデベロッパー センター ダッシュボードを使って、アドオンの申請の価格データを取得することができます。
+   > * [アドオンの申請を更新する PUT メソッド](update-an-add-on-submission.md)を呼び出すとき、**価格**リソースの情報は無視されます。 引き続きデベロッパー センター ダッシュボードを使って、アドオンの申請の価格データを変更することができます。
+
+> 今後、Windows ストア申請 API を更新し、アドオンの申請の価格情報をプログラムで取得したり更新する新しい方法を導入する予定です。
+
+このリソースには、次の値があります。
 
 | 値           | 型    | 説明                                                                                                                                                                                                                          |
 |-----------------|---------|------|
 |  marketSpecificPricings               |    object     |  キーと値のペアのディクショナリです。各キーは 2 文字の ISO 3166-1 alpha-2 の国コードで、各値は[価格帯](#price-tiers)です。 これらの項目は、[特定の市場でのアドオンのカスタム価格](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#markets-and-custom-prices)を表します。 このディクショナリに含まれる項目は、指定された市場の *priceId* の値によって指定されている基本価格を上書きします。     |     
 |  sales               |   array      |  アドオンのセール情報が保持されるオブジェクト配列です。 詳しくは、以下の「[セール](#sale-object)」セクションをご覧ください。    |     
-|  priceId               |   string      |  アドオンの[基本価格](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#base-price)を規定する[価格帯](#price-tier)です。    |
+|  priceId               |   string      |  アドオンの[基本価格](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#base-price)を規定する[価格帯](#price-tiers)です。    |
 
 
 <span id="sale-object" />
 ### セール
 
-このリソースにはアドオンのセール情報が保持されます。 このリソースには、次の値があります。
+このリソースにはアドオンのセール情報が保持されます。
+
+>**重要**&nbsp;&nbsp;近い将来、Microsoft は Windows デベロッパー センターでアドオンの申請の価格データ モデルを変更する予定です。 変更の実施後には、**セール**リソースはサポートされなくなり、Windows ストア申請 APIを使用してアドオンの申請の販売データの取得と変更を行うことが、一時的にできなくなります。 今後は API を更新して、アドオンの申請に関する販売情報にプログラムでアクセスする新しい方法を導入する予定です。 詳しくは、「[価格リソース](#pricing-object)」セクションをご覧ください。
+
+このリソースには、次の値があります。
 
 | 値           | 型    | 説明                                                                                                                                                                                                                          |
 |-----------------|---------|------|
@@ -315,6 +330,6 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

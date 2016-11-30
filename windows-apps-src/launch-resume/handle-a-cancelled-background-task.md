@@ -4,8 +4,8 @@ title: "取り消されたバックグラウンド タスクの処理"
 description: "取り消し要求を認識し、作業を停止して、固定ストレージを使っているアプリの取り消しを報告するバックグラウンド タスクの作成方法について説明します。"
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 translationtype: Human Translation
-ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
-ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
+ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
+ms.openlocfilehash: a8fe98ab60012c2183e8394bfc8d7089f51552f0
 
 ---
 
@@ -21,9 +21,9 @@ ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
 
 取り消し要求を認識し、作業を停止して、固定ストレージを使っているアプリに取り消しを報告するバックグラウンド タスクの作成方法について説明します。
 
-このトピックでは、バックグラウンド タスクのエントリ ポイントとして使う Run メソッドも含めて、既にバックグラウンド タスク クラスが作られていることを前提とします。 バックグラウンド タスクを直ちに構築する場合は、「[別のプロセスで実行するバックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」をご覧ください。 条件とトリガーについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
+このトピックでは、バックグラウンド タスクのエントリ ポイントとして使う Run メソッドも含めて、既にバックグラウンド タスク クラスが作られていることを前提とします。 バックグラウンド タスクの作成方法の概要については、「[アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-an-outofproc-background-task.md)」または「[インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)」をご覧ください。 条件とトリガーについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
 
-このトピックは、単一プロセスのバックグラウンド タスクにも適用されます。 ただし、Run() メソッドを使う代わりに、OnBackgroundActivated() に置き換えます。 単一プロセスのバックグラウンド タスクでは、バックグラウンド タスクがフォアグラウンド アプリと同じプロセスで実行されているため、取り消しを通知するために固定ストレージを使用する必要はありません。アプリの状態を使用して、取り消しを伝えられます。
+このトピックは、インプロセス バックグラウンド タスクにも適用されます。 ただし、Run() メソッドを使う代わりに、OnBackgroundActivated() に置き換えます。 インプロセス バックグラウンド タスクでは、バックグラウンド タスクがフォアグラウンド アプリと同じプロセスで実行されているため、取り消しを通知するために固定ストレージを使用する必要はありません。アプリの状態を使用して、取り消しを伝えることができます。
 
 ## OnCanceled メソッドにより、取り消し要求を認識します。
 
@@ -86,7 +86,7 @@ ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
 >     }
 > ```
 
-バックグラウンド タスクの Run メソッドでは、処理を開始する前に OnCanceled イベント ハンドラー メソッドを登録します。 単一プロセスのバックグラウンド タスクでは、アプリケーションの初期化の一部としてこの登録を実行できます。 たとえば、次のコード行を使います。
+バックグラウンド タスクの Run メソッドでは、処理を開始する前に OnCanceled イベント ハンドラー メソッドを登録します。 インプロセス バックグラウンド タスクでは、アプリケーションの初期化の一部としてこの登録を実行できます。 たとえば、次のコード行を使います。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -98,7 +98,7 @@ ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
 
 ## バックグラウンド タスクを終了することによって、取り消しを処理します。
 
-バックグラウンド処理を実行しているメソッドは、**\_cancelRequested** が **true** に設定されたタイミングを認識し、処理を停止して終了する必要があります。 単一プロセスのバックグラウンド タスクの場合、これは `OnBackgroundActivated()` メソッドから戻ることです。 別のプロセスで実行されているバックグラウンド タスクの場合、これは `Run()` メソッドから戻ることです。
+バックグラウンド処理を実行しているメソッドは、**\_cancelRequested** が **true** に設定されたタイミングを認識し、処理を停止して終了する必要があります。 インプロセス バックグラウンド タスクの場合、これは `OnBackgroundActivated()` メソッドから戻ることです。 アウトプロセス バックグラウンド タスクの場合、これは `Run()` メソッドから戻ることです。
 
 バックグラウンド タスク クラスの処理中にフラグ変数を確認するようにコードを変更します。 **\_cancelRequested** が true に設定された時点で、処理を中断します。
 
@@ -134,7 +134,7 @@ ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
 
 > **注**  上記のコード サンプルでは、[**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) プロパティを使って、バックグラウンド タスクの進行状況を記録します。 進行状況は、[**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) クラスを使ってアプリに報告されます。
 
-処理が停止したときに、タスクが完了したのか、取り消されたのかを記録するように、Run メソッドを変更します。 この手順は、バックグラウンド タスクが取り消されたときにプロセス間で通信する手段が必要なため、別のプロセスで実行されるバックグラウンド タスクに適用されます。 単一プロセスのバックグラウンド タスクでは、タスクが取り消されたことを示すためにアプリケーションの状態を単に共有するだけで済みます。
+処理が停止したときに、タスクが完了したのか、取り消されたのかを記録するように、Run メソッドを変更します。 この手順は、バックグラウンド タスクが取り消されたときにプロセス間で通信する手段が必要となるため、別のプロセスで実行されるアウトプロセス バック グラウンド タスクに適用されます。 インプロセス バックグラウンド タスクでは、タスクが取り消されたことを示すために、状態をアプリケーションと共有するだけで十分です。
 
 [バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、LocalSettings に状態が記録されます。
 
@@ -331,7 +331,8 @@ ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
 
 ## 関連トピック
 
-* [バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
+* [インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)。
+* [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-an-outofproc-background-task.md)
 * [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
 * [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
 * [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
@@ -341,12 +342,11 @@ ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
 * [バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)
 * [バックグラウンド タスクのライブ タイルの更新](update-a-live-tile-from-a-background-task.md)
 * [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)
-
 * [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
 * [Windows ストア アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: "Windows ストア コレクション API 内のこのメソッドを使用して、コンシューマブルな製品を特定の顧客についてフルフィルメント完了として報告します。 ユーザーがコンシューマブルな製品を再購入するには、アプリまたはサービスがコンシューマブルな製品をそのユーザーについてフルフィルメント完了と報告する必要があります。"
 title: "コンシューマブルな製品をフルフィルメント完了として報告する"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: dd3e687d49e538187c123b7123c184f9182905de
+ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
+ms.openlocfilehash: 54095c7fd3c29fe7596be4c4b5a7148d078a7091
 
 ---
 
@@ -18,16 +18,16 @@ Windows ストア コレクション API 内のこのメソッドを使用して
 
 このメソッドを使用してコンシューマブルな製品をフルフィルメント完了として報告するには、次の 2 つの方法があります。
 
--   コンシューマブルの項目 ID ([製品の照会](query-for-products.md)で **itemId** パラメーターとして返されるもの)、およびユーザー指定の一意の追跡 ID を指定します。 複数の試行で同じ追跡 ID が使用される場合、項目が既に消費されている場合でも同じ結果が返されます。 消費要求が成功したかどうかがわからない場合は、サービスは同じ追跡 ID を使用して消費要求を再送信する必要があります。 追跡 ID は常にその消費要求に関連付けられており、無限に再送信できます。
--   製品 ID ([製品の照会](query-for-products.md)の **productId** パラメーターで返されるもの)、および以下の要求の本文セクションの **transactionId** パラメーターの記述にあるいずれかのソースから取得されるトランザクション ID を指定します。
+* コンシューマブルの項目 ID ([製品の照会](query-for-products.md)で **itemId** パラメーターとして返されるもの)、およびユーザー指定の一意の追跡 ID を指定します。 複数の試行で同じ追跡 ID が使用される場合、項目が既に消費されている場合でも同じ結果が返されます。 消費要求が成功したかどうかがわからない場合は、サービスは同じ追跡 ID を使用して消費要求を再送信する必要があります。 追跡 ID は常にその消費要求に関連付けられており、無限に再送信できます。
+* 製品 ID ([製品の照会](query-for-products.md)の **productId** パラメーターで返されるもの)、および以下の要求の本文セクションの **transactionId** パラメーターの記述にあるいずれかのソースから取得されるトランザクション ID を指定します。
 
 ## 前提条件
 
 
 このメソッドを使用するための要件:
 
--   `https://onestore.microsoft.com` 対象ユーザー URI を使用して作成した Azure AD アクセス トークン。
--   アプリのクライアント側コードから [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) メソッドを呼び出して生成された Windows ストア ID キー。
+* `https://onestore.microsoft.com` 対象ユーザー URI を使用して作成した Azure AD アクセス トークン。
+* [アプリのクライアント側コードから生成された](view-and-grant-products-from-a-service.md#step-4) Windows ストア ID キー。
 
 詳しくは、「[サービスからの製品の表示と許可](view-and-grant-products-from-a-service.md)」をご覧ください。
 
@@ -71,7 +71,7 @@ UserIdentity オブジェクトには以下のパラメーターが含まれて�
 | パラメーター            | タイプ   | 説明                                                                                                                                 | 必須かどうか |
 |----------------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | identityType         | string | 文字列値 **b2b** を指定します。                                                                                                           | 必須      |
-| identityValue        | string | Windows ストア ID キーの文字列値。                                                                                                   | 必須      |
+| identityValue        | string | [アプリのクライアント側コードから生成された](view-and-grant-products-from-a-service.md#step-4) Windows ストア ID キー。                                                                                                   | 必須      |
 | localTicketReference | string | 返された応答で必要な識別子。 Windows ストア ID キーの *userId* 要求と同じ値を使用することをお勧めします。 | 必須      |
 
 <span/> 
@@ -158,6 +158,6 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

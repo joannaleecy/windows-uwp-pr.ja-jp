@@ -3,8 +3,8 @@ title: "Web アカウント マネージャーによる ID プロバイダーへ
 description: "この記事では、新しい Windows 10 Web アカウント マネージャー API を使って、AccountsSettingsPane を使い、ユニバーサル Windows プラットフォーム (UWP) アプリを外部の ID プロバイダー (Microsoft、Facebook など) に接続する方法について説明します。"
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: f3cdb187ec4056d4c7db6acde471b0bc91c78390
-ms.openlocfilehash: 093ca8906853121bbf33a729c523717d26cb7b0d
+ms.sourcegitcommit: e16977a9a11b292ea9624ff421aa964c11d615be
+ms.openlocfilehash: d234811b395790a35ad50dea9ef4cc56d60458e8
 
 ---
 # Web アカウント マネージャーによる ID プロバイダーへの接続
@@ -121,9 +121,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 }
 ```
 
-文字列 "consumers" をオプションの *authority* パラメーターに渡すことにも注意してください。 これは、Microsoft は "消費者 (consumers)" 向けの Microsoft アカウント (MSA) と、"組織 (organizations)" 向けの Azure Active Directory (AAD) という、2 種類の認証を提供しているためです。 "consumers" 権限では、前者のオプションに関心があることをプロバイダーに知らせます。
-
-企業向けのアプリを開発している場合は、代わりに AAD グラフ エンドポイントを使います。 これを行う方法について詳しくは、「[GitHub の WebAccountManagement サンプル](http://go.microsoft.com/fwlink/p/?LinkId=620621)」全体と、Azure のドキュメントをご覧ください。 
+文字列 "consumers" をオプションの *authority* パラメーターに渡すことにも注意してください。 これは、Microsoft は "消費者 (consumers)" 向けの Microsoft アカウント (MSA) と、"組織 (organizations)" 向けの Azure Active Directory (AAD) という、2 種類の認証を提供しているためです。 "consumers" 権限は、MSA オプションを必要としていることを示します。 企業向けのアプリを開発している場合は、代わりに文字列 "organizations" を使います。
 
 最後に、次のような新しい WebAccountProviderCommand を作成して、AccountsSettingsPane にプロバイダーを追加します。 
 
@@ -168,9 +166,22 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 
 サービス プロバイダーは、サービス プロバイダーのサービスで使うトークンを取得するためにどのスコープを指定する必要があるかに関するドキュメントを提供します。 
 
-Office 365 と Outlook.com のスコープについては、「(v2.0 認証エンドポイントを使用した Office 365 および Outlook.com の API の認証)[ https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2 ]」をご覧ください。 
+* Office 365 と Outlook.com のスコープについては、「(v2.0 認証エンドポイントを使用した Office 365 および Outlook.com の API の認証)[ https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2 ]」をご覧ください。 
+* OneDrive については、「(OneDrive の認証とサインイン)[ https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes ]」をご覧ください。 
 
-OneDrive については、「(OneDrive の認証とサインイン)[ https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes ]」をご覧ください。 
+企業向けのアプリを開発している場合は、Azure Active Directory (AAD) インスタンスに接続し、通常の MSA サービスではなく Microsoft Graph API を使用します。 このシナリオでは、次のコードを代わりに使います。 
+
+```C#
+private async void GetAadTokenAsync(WebAccountProviderCommand command)
+{
+    string clientId = "your_guid_here"; // Obtain your clientId from the Azure Portal
+    WebTokenRequest request = new WebTokenRequest(provider, "User.Read", clientId);
+    request.Properties.Add("resource", "https://graph.microsoft.com");
+    WebTokenRequestResult = await WebAuthenticationCoreManager.RequestTokenAsync(request);
+}
+```
+
+この記事の残りの部分では、引き続き MSA シナリオについて説明しますが、AAD 用のコードもよく似ています。 GitHub の完全なサンプルを含め、AAD/Graph について詳しくは、[Microsoft Graph のドキュメント](https://graph.microsoft.io/docs/platform/get-started)をご覧ください。
 
 ## トークンの使用
 
@@ -390,6 +401,6 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

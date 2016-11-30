@@ -1,41 +1,40 @@
 ---
 author: TylerMSFT
-Description: "Microsoft テスト アプリ用の JavaScript API を使用すると、セキュリティ保護された評価を行うことができます。 テスト アプリでは、学生がテスト中に他のコンピューターやインターネット リソースを使用することを防ぐセキュリティ保護されたブラウザーが提供されます。"
-title: "Microsoft テスト JavaScript API。"
+Description: "Microsoft テスト アプリ用の JavaScript API を使用すると、セキュリティ保護された評価を行うことができます。 テスト アプリでは、学生がテスト中に他のコンピューターやインターネットのリソースを使用することを防ぐセキュリティ保護されたブラウザーが提供されます。"
+title: "テスト JavaScript API。"
 translationtype: Human Translation
-ms.sourcegitcommit: f2838d95da66eda32d9cea725a33fc4084d32359
-ms.openlocfilehash: d7f185e83e81583fd6d7920e5412f76f3a97edd0
+ms.sourcegitcommit: 7f578d73a9a625b0ac7d9c10f6dc8118c36b07d0
+ms.openlocfilehash: c2e1832489d36f4ccbeae4e2f67e18caf941a68f
 
 ---
 
-# Microsoft テスト JavaScript API
+# テスト JavaScript API
 
-**テスト**は、重大な影響をもたらすテストに対応した、厳正なオンライン評価を提供するブラウザー ベースのアプリです。 テスト アプリは、重要な全米共通学力テストに対する SBAC ブラウザー API 標準をサポートするので、Windows をロックダウンする方法ではなくコンテンツの評価に集中することができます。
+[テスト](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)は、重大な影響をもたらすテストに対応した、厳正なオンライン評価を提供するブラウザー ベースのアプリです。 テスト アプリは、重要な全米共通学力テストに対する SBAC ブラウザー API 標準をサポートするので、Windows をロックダウンする方法ではなくコンテンツの評価に集中することができます。
 
-Microsoft Edge ブラウザーを利用する**テスト**の JavaScript API を Web アプリケーションで使用すると、テストを実施するためのロックダウンされた環境を提供できます。
+Microsoft Edge ブラウザーを利用するテストでは、JavaScript API を Web アプリケーションで使用すると、テストを実施するためのロックダウンされた環境を提供できます。
 
-[Common Core SBAC API](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf) に基づく API では、音声認識用のテキストと、デバイスがロックダウンされているかどうか、実行中のユーザー プロセスとシステムが実行しているプロセス、その他を確認するための機能が提供されます。
+[Common Core SBAC API](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf) に基づく API では、音声合成機能、およびデバイスがロックダウンされているか、どのユーザー プロセスとシステム プロセスを実行しているかなどを確認するための機能が提供されます。
 
 アプリ自体については、「[テスト アプリ技術リファレンス](https://technet.microsoft.com/en-us/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)」をご覧ください。
 
-**重要**
+> [!Important]
+> これらの API はリモート セッションでは動作しません。  
 
-この API はリモート セッションでは動作しません。  
-テスト アプリは、HTTP の新規ウィンドウ要求を処理しません。
+トラブルシューティングについては、「[イベント ビューアーを使用して、Microsoft テストをトラブルシューティングする](troubleshooting.md)」をご覧ください。
 
-トラブルシューティングについては、「[イベント ビューアーを使用して、Microsoft テストをトラブルシューティングします](troubleshooting.md)」をご覧ください。
-
-**テスト API は、次の名前空間で構成されます。**  
+## リファレンス ドキュメント
+テスト API は、次の名前空間で構成されます。 
 
 | 名前空間 | 説明 |
 |-----------|-------------|
-|[security 名前空間](#security-namespace)| 音声認識機能用のテキスト|
-|[tts 名前空間](#tts-namespace)|デバイスをロックダウンできるようにします|
+|[セキュリティ名前空間](#security-namespace)|デバイスをロックダウンできるようにします|
+|[TTS 名前空間](#tts-namespace)|音声合成機能|
 
 
- ## security 名前空間
+ ### セキュリティ名前空間
 
-デバイスのロックダウン、ユーザー プロセスとシステム プロセスの一覧の確認、MAC および IP アドレスの取得、キャッシュされている Web リソースのクリアを行うことができます。
+セキュリティ名前空間を使用すると、デバイスのロックダウン、ユーザー プロセスとシステム プロセスの一覧の確認、MAC および IP アドレスの取得、キャッシュされている Web リソースのクリアを行うことができます。
 
 | メソッド | 説明   |
 |--------|---------------|
@@ -45,9 +44,10 @@ Microsoft Edge ブラウザーを利用する**テスト**の JavaScript API を
 |[getIPAddressList](#getIPAddressList) | デバイスの IP アドレスの一覧を取得します |
 |[getMACAddress](#getMACAddress)|デバイスの MAC アドレスの一覧を取得します|
 |[getProcessList](#getProcessList)|実行中のユーザーとシステム プロセスの一覧を取得します|
-|[isEnvironmentSecure](#isEnvironmentSecure)|ロックダウン コンテキストがデバイスにまだ適用されるかどうかを確認します|
+|[isEnvironmentSecure](#isEnvironmentSecure)|ロックダウン コンテキストがデバイスにまだ適用されるかどうかを確認します|  
 
-<span id="clearCache" />
+---
+<span id="clearCache"/>
 ### void clearCache()
 キャッシュされている Web リソースをクリアします。
 
@@ -114,6 +114,8 @@ Windows 10 Version 1607
 **戻り値**  
 `An array of IP addresses.`
 
+---
+
 <span id="getMACAddress" />
 ### string[] getMACAddress()
 デバイスの MAC アドレスの一覧を取得します。
@@ -170,18 +172,23 @@ Windows 10 Version 1607
 
 ---
 
-## tts 名前空間
-| メソッド | 説明 |
+### TTS 名前空間
+
+TTS 名前空間は、アプリの音声合成機能を処理します。
+
+| メソッド | [説明] |
 |--------|-------------|
 |[getStatus](#getStatus) | 音声の再生状態を取得します|
 |[getVoices](#getVoices) | 利用可能な音声パックの一覧を取得します|
 |[pause](#pause)|音声の合成を一時停止します|
 |[resume](#resume)|一時停止されている音声の合成を再開します|
-|[speak](#speak)|音声を合成するクライアント側のテキストです|
-|[stop](#stop)|音声の合成を停止します|
+|[speak](#speak)|クライアント側の音声合成|
+|[stop](#stop)|音声合成を停止します|
 
 > [!Tip]
-> [Microsoft Edge 音声合成 API](https://blogs.windows.com/msedgedev/2016/06/01/introducing-speech-synthesis-api/) は [W3C Speech API](https://dvcs.w3.org/hg/speech-api/raw-file/tip/webspeechapi.html) の実装であり、可能な場合は開発者はその API を使用することをお勧めします。
+> [Microsoft Edge 音声合成 API](https://blogs.windows.com/msedgedev/2016/06/01/introducing-speech-synthesis-api/) は [W3C Speech API](https://dvcs.w3.org/hg/speech-api/raw-file/tip/webspeechapi.html) の実装であり、可能な場合は、開発者はこの API を使用することをお勧めします。
+
+---
 
 <span id="getStatus" />
 ### string getStatus()
@@ -260,7 +267,7 @@ Windows 10 Version 1607
 
 <span id="speak" />
 ### void speak(string text, object options, function callback)
-音声を合成するクライアント側のテキストです。
+クライアント側の音声合成を開始します。
 
 **構文**  
 `void browser.tts.speak(“Hello world”, options, callback);`
@@ -283,13 +290,13 @@ var options = {
 
 **解説** オプションの変数は小文字にする必要があります。 gender、language、voice パラメーターは文字列を受け取ります。
 volume、pitch、rate は、options オブジェクト内ではなく、Speech Synthesis Markup Language (SSML) ファイル内でマークアップする必要があります。
-
 options オブジェクトは、上に示した順序、命名、大文字と小文字の使い分けに従う必要があります。
 
 **要件**  
 Windows 10 Version 1607
 
 ---
+
 <span id="stop" />
 ### void stop()
 音声の合成を停止します。
@@ -308,6 +315,6 @@ Windows 10 Version 1607
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

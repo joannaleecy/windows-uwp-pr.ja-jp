@@ -4,15 +4,15 @@ Description: "Windows デベロッパー センター ダッシュボードの�
 title: "アドオン取得レポート"
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
 translationtype: Human Translation
-ms.sourcegitcommit: 0edf45e997f36a82a8bfcb92c1d8fd2c79242461
-ms.openlocfilehash: 144a8400acf0333fcd50e698b333c02942081ef3
+ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
+ms.openlocfilehash: 76ea807f1f8306bb964a61d1c81e9bf578e4b344
 
 ---
 
 # アドオン取得レポート
 
 
-Windows デベロッパー センター ダッシュボードの**アドオン取得レポート**では、販売したアドオンの数と共に、人口統計データやプラットフォームの詳細を確認できます。 このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md) してオフラインで表示することもできます。 または、[Windows ストア分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) を使って、プログラムでこのデータを取得できます。
+Windows デベロッパー センター ダッシュボードの**アドオン取得レポート**では、販売したアドオンの数と共に、人口統計データやプラットフォームの詳細を確認できます。 このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md) してオフラインで表示することもできます。 または、[Windows ストア分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) の[アドオンの入手数の取得](../monetize/get-in-app-acquisitions.md)メソッドを使って、プログラムでこのデータを取得できます。
 
 このレポートで、アドオン取得とは、ユーザーが開発者からアドオンを購入したことを意味します。 同じユーザーが同じコンシューマブルなアドオンを複数回購入した場合は、個別のアドオン取得としてカウントされます。
 
@@ -66,6 +66,6 @@ Windows デベロッパー センター ダッシュボードの**アドオン�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

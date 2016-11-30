@@ -4,8 +4,8 @@ description: "UWP アプリで連絡先とカレンダーの情報を使う方�
 title: "連絡先とカレンダー"
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
 translationtype: Human Translation
-ms.sourcegitcommit: 5c0f6ef1f1a346a66ca554a415d9f24c8a314ae1
-ms.openlocfilehash: da73790ca9aec3fa16295eac4880c7b80db033ab
+ms.sourcegitcommit: c21a5f0f859e3a80d01786caaf6941c3d0b11c18
+ms.openlocfilehash: 0b93ab3f5e0a622fb924a752ec581bbb9df32936
 
 ---
 
@@ -24,7 +24,6 @@ ms.openlocfilehash: da73790ca9aec3fa16295eac4880c7b80db033ab
 | [SMS メッセージの送信](sending-an-sms-message.md) | このトピックでは、SMS の作成ダイアログを起動して、ユーザーが SMS メッセージを送信できるようにする方法について説明します。 ダイアログを表示する前に、SMS の各フィールドにデータを設定することができます。 メッセージは、ユーザーが送信ボタンをタップするまで送信されません。 |
 | [予定の管理](managing-appointments.md) | [<strong>Windows.ApplicationModel.Appointments</strong>](https://msdn.microsoft.com/library/windows/apps/Dn263359) 名前空間を使うと、ユーザーのカレンダー アプリで予定の作成と管理を行うことができます。 ここでは、予定を作成してカレンダー アプリに追加し、カレンダー アプリで置換して、カレンダー アプリから削除する方法を示します。 さらに、カレンダー アプリの一定の期間を表示し、予定の繰り返しオブジェクトを作る方法も示します。 |
 | [アプリを連絡先カードの操作に接続する](integrating-with-contacts.md) | アプリを連絡先カードまたはミニ連絡先カードの操作の横に表示する方法を説明します。 ユーザーは、プロファイル ページを開く、通話を行う、メッセージを送信するなど、操作を実行するアプリを選ぶことができます。 |
-| [People アプリにソーシャル フィードを提供する](integrating-social-feeds-into-contact-cards.md) | データベースのソーシャル フィード データを People アプリに統合します。 フィード データは、People アプリの <strong>[新着情報]</strong> ページまたは連絡先の <strong>[プロファイル]</strong> ページに表示されます。 |
 
  
 
@@ -35,10 +34,9 @@ ms.openlocfilehash: da73790ca9aec3fa16295eac4880c7b80db033ab
 * [連絡先ピッカー アプリのサンプル](http://go.microsoft.com/fwlink/p/?linkid=231575)
 * [連絡先に関連する操作の処理のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=320151)
 * [連絡先カードの統合のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)
-* [ソーシャル情報のサンプル](https://github.com/Microsoft/Windows-Social-Samples/tree/master/SocialInfoSampleApp)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

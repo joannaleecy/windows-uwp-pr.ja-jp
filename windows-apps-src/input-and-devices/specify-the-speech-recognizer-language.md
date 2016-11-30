@@ -6,8 +6,8 @@ ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
 label: Specify the speech recognizer language
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 1a70ac671c11d2ab3c34a95f2571685f4f851836
+ms.sourcegitcommit: 526493614666424089199063013b5fc72d9bc5d8
+ms.openlocfilehash: 9abde4aa5489780f3ee2e9b5e7ecbdfa4dd53b93
 
 ---
 
@@ -106,12 +106,16 @@ SRGS 文法は、[**SpeechRecognitionGrammarFileConstraint**](https://msdn.micro
 
 ## 関連記事
 
-
 **開発者向け**
-* [音声操作](speech-interactions.md)
+
+* [音声認識による対話式操作](speech-interactions.md)
+
 **デザイナー向け**
-* [音声認識の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)
+
+* ([音声認識の設計ガイドライン)] （https://msdn.microsoft.com/library/windows/apps/dn596121）
+
 **サンプル**
+
 * [音声認識と音声合成のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
@@ -123,6 +127,6 @@ SRGS 文法は、[**SpeechRecognitionGrammarFileConstraint**](https://msdn.micro
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

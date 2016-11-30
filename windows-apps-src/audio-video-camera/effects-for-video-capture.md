@@ -1,22 +1,42 @@
 ---
 author: drewbatgit
 ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
-description: "このトピックでは、ビデオ手ブレ補正効果を使う方法について説明します。"
+description: "このトピックでは、カメラのプレビューおよび録画中のビデオ ストリームに効果を適用する方法と、ビデオ手ブレ補正効果を使用する方法について説明します。"
 title: "ビデオ キャプチャの効果"
 translationtype: Human Translation
-ms.sourcegitcommit: 367ab34663d66d8c454ff305c829be66834e4ebe
-ms.openlocfilehash: 3fe7abcc417db76b4375243d66b1c0ecb9092147
+ms.sourcegitcommit: 25212fede7640c12ea4f1484a9f3c540bf4a0c12
+ms.openlocfilehash: ec7c285df48f37842fe757ef619da3a0d76cd690
 
 ---
 
 # ビデオ キャプチャの効果
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
-このトピックでは、ビデオ手ブレ補正効果を使う方法について説明します。
+このトピックでは、カメラのプレビューおよび録画中のビデオ ストリームに効果を適用する方法と、ビデオ手ブレ補正効果を使用する方法について説明します。
 
 > [!NOTE] 
 > この記事の内容は、写真やビデオの基本的なキャプチャ機能を実装するための手順を紹介した「[MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)」で取り上げた概念やコードに基づいています。 そちらの記事で基本的なメディア キャプチャのパターンを把握してから、高度なキャプチャ シナリオに進むことをお勧めします。 この記事で紹介しているコードは、MediaCapture のインスタンスが既に作成され、適切に初期化されていることを前提としています。
+
+## カメラのビデオ ストリームに対する効果の追加と削除
+デバイスのカメラからビデオをプレビューまたはキャプチャするには、「[MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)」で説明されているように、[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) オブジェクトを使用します。 **MediaCapture** オブジェクトを初期化した後、プレビュー ストリームやキャプチャ ストリームに 1 つまたは複数のビデオ効果を追加できます。そのためには、[**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) を呼び出して、追加する効果を表す [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IVideoEffectDefinition) オブジェクトと、カメラのプレビュー ストリームとレコード ストリームのどちらに効果を追加するかを示す [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaStreamType) 列挙のメンバーを渡します。
+
+> [!NOTE]
+> 一部のデバイスでは、プレビュー ストリームとキャプチャ ストリームが同じである場合があります。これは、**AddVideoEffectAsync** を呼び出すときに **MediaStreamType.VideoPreview** または **MediaStreamType.VideoRecord** を指定すると、プレビュー ストリームとレコード ストリームの両方に効果が適用されることを意味します。 現在のデバイスでプレビュー ストリームとレコード ストリームが同じであるかどうかを確認するには、**MediaCapture** オブジェクトの [**MediaCaptureSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.MediaCaptureSettings) の [**VideoDeviceCharacteristic**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSettings.VideoDeviceCharacteristic) プロパティを調べます。 このプロパティの値が **VideoDeviceCharacteristic.AllStreamsIdentical** または **VideoDeviceCharacteristic.PreviewRecordStreamsIdentical** である場合、ストリームは同じであり、一方に対して適用したすべての効果はもう一方にも影響します。
+
+次の例では、カメラのプレビュー ストリームとレコード ストリームの両方に効果を追加します。 この例では、レコード ストリームとプレビュー ストリームと同じかどうかを確認する方法を示します。
+
+[!code-cs[BasicAddEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetBasicAddEffect)]
+
+**AddVideoEffectAsync** は、追加されたビデオ効果を表す [**IMediaExtension**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.IMediaExtension) を実装するオブジェクトを返します。 一部の効果では、[**PropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.PropertySet) を [**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) メソッドに渡すことによって、効果の設定を変更できます。
+
+Windows 10 バージョン 1607 では、**AddVideoEffectAsync** によって返されるオブジェクトを [**RemoveEffectAsync**](https://msdn.microsoft.com/library/windows/apps/mt667957) に渡すことによって、ビデオ パイプラインから効果を削除することもできます。 **RemoveEffectAsync** は、効果オブジェクトのパラメーターがプレビュー ストリームとレコード ストリームのどちらに追加されたかを自動的に特定するため、呼び出しの際にストリームの種類を指定する必要はありません。
+
+[!code-cs[RemoveOneEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetRemoveOneEffect)]
+
+また、[**ClearEffectsAsync**](https://msdn.microsoft.com/library/windows/apps/br226592) を呼び出し、すべての効果を削除するストリームを指定して、プレビュー ストリームやキャプチャ ストリームからすべての効果を削除することもできます。
+
+[!code-cs[ClearAllEffects](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetClearAllEffects)]
 
 ## ビデオ手ブレ補正効果
 
@@ -28,15 +48,15 @@ ms.openlocfilehash: 3fe7abcc417db76b4375243d66b1c0ecb9092147
 
 ビデオ手ブレ補正効果を使うためには、基本的なメディア キャプチャに必要な名前空間に加え、次の名前空間が必要となります。
 
-[!code-cs[VideoStabilizationEffectUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoStabilizationEffectUsing)]
+[!code-cs[VideoStabilizationEffectUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetVideoStabilizationEffectUsing)]
 
 [**VideoStabilizationEffect**](https://msdn.microsoft.com/library/windows/apps/dn926760) オブジェクトを格納するためのメンバー変数を宣言します。 効果の実装の一部として、キャプチャしたビデオをエンコードするために使うエンコードのプロパティを変更します。 後で効果が無効にされたときに入出力のエンコード プロパティを復元できるよう、初期状態のバックアップ コピーを格納するための 2 つの変数を宣言します。 最後に、[**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) 型のメンバー変数を宣言します。メンバー変数として宣言しているのは、コードのいたるところからこのオブジェクトにアクセスすることになるためです。
 
-[!code-cs[DeclareVideoStabilizationEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareVideoStabilizationEffect)]
+[!code-cs[DeclareVideoStabilizationEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetDeclareVideoStabilizationEffect)]
 
 このシナリオでは、後からアクセスできるようメディア エンコード プロファイル オブジェクトをメンバー変数に代入する必要があります。
 
-[!code-cs[EncodingProfileMember](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEncodingProfileMember)]
+[!code-cs[EncodingProfileMember](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetEncodingProfileMember)]
 
 ### ビデオ手ブレ補正効果を初期化する
 
@@ -44,7 +64,7 @@ ms.openlocfilehash: 3fe7abcc417db76b4375243d66b1c0ecb9092147
 
 [**EnabledChanged**](https://msdn.microsoft.com/library/windows/apps/dn948982) イベントのハンドラーを登録し、ヘルパー メソッド **SetUpVideoStabilizationRecommendationAsync** を呼び出します。詳細については後で説明します。 最後に、[**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn926775) プロパティを true に設定して効果を有効にします。
 
-[!code-cs[CreateVideoStabilizationEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateVideoStabilizationEffect)]
+[!code-cs[CreateVideoStabilizationEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetCreateVideoStabilizationEffect)]
 
 ### 推奨エンコード プロパティを使う
 
@@ -60,7 +80,7 @@ VideoStabilizationEffect のインスタンスの [**GetRecommendedStreamConfigu
 
 **MediaEncodingProfile** オブジェクトの [**Video**](https://msdn.microsoft.com/library/windows/apps/hh701124) プロパティを設定します。 効果を無効にしたときに設定を元に戻すことができるよう、新しいプロパティを設定する前にメンバー変数を使って初期エンコード プロパティを保存します。
 
-[!code-cs[SetUpVideoStabilizationRecommendationAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetUpVideoStabilizationRecommendationAsync)]
+[!code-cs[SetUpVideoStabilizationRecommendationAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetSetUpVideoStabilizationRecommendationAsync)]
 
 ### ビデオ手ブレ補正効果の無効化イベントを処理する
 
@@ -68,13 +88,13 @@ VideoStabilizationEffect のインスタンスの [**GetRecommendedStreamConfigu
 
 通常、このイベントを使ってアプリの UI を調整し、ビデオ手ブレ補正の現在の状態を示します。
 
-[!code-cs[VideoStabilizationEnabledChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoStabilizationEnabledChanged)]
+[!code-cs[VideoStabilizationEnabledChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetVideoStabilizationEnabledChanged)]
 
 ### ビデオ手ブレ補正効果をクリーンアップする
 
-ビデオ手ブレ補正効果をクリーンアップするには、[**ClearEffectsAsync**](https://msdn.microsoft.com/library/windows/apps/br226592) を呼び出してビデオ パイプラインからすべての効果を消去します。 初期エンコード プロパティを格納しているメンバー変数が null 以外であれば、それらの変数を使ってエンコード プロパティを復元します。 最後に、**EnabledChanged** イベント ハンドラーを削除し、効果を null に設定します。
+ビデオ手ブレ補正効果をクリーンアップするには、[**RemoveEffectAsync**](https://msdn.microsoft.com/library/windows/apps/mt667957) を呼び出してビデオ パイプラインから効果を削除します。 初期エンコード プロパティを格納しているメンバー変数が null 以外であれば、それらの変数を使ってエンコード プロパティを復元します。 最後に、**EnabledChanged** イベント ハンドラーを削除し、効果を null に設定します。
 
-[!code-cs[CleanUpVisualStabilizationEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpVisualStabilizationEffect)]
+[!code-cs[CleanUpVisualStabilizationEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetCleanUpVisualStabilizationEffect)]
 
 ## 関連トピック
 
@@ -90,6 +110,6 @@ VideoStabilizationEffect のインスタンスの [**GetRecommendedStreamConfigu
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -1,11 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
-description: "特定の日付範囲などのオプション フィルターを使ってアドオンの集計入手データを取得するには、Windows ストア分析 API でこのメソッドを使います。"
+description: "特定の日付範囲などのオプション フィルターを使って、アドオンに関する集計入手データを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。"
 title: "アドオンの入手数の取得"
 translationtype: Human Translation
-ms.sourcegitcommit: ecb0f5263b7f7f470484e9bd579b7bdb6efcdfa4
-ms.openlocfilehash: 9d895200e6d1bc823ebcb52e0b034883f5a059e0
+ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
+ms.openlocfilehash: 642bcab934a18631477e3709dcdeab0a9289844e
 
 ---
 
@@ -14,7 +14,7 @@ ms.openlocfilehash: 9d895200e6d1bc823ebcb52e0b034883f5a059e0
 
 
 
-特定の日付範囲などのオプション フィルターを使って、アドオン (アプリ内製品または IAP とも呼ばれます) の集計入手データを取得するには、Windows ストア分析 API でこのメソッドを使います。 このメソッドは、データを JSON 形式で返します。
+特定の日付範囲などのオプション フィルターを使って、アプリのアドオン (アプリ内製品または IAP とも呼ばれます) に関する JSON 形式の集計入手データを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。 この情報は、Windows デベロッパー センター ダッシュボードの[アドオン取得レポート](../publish/add-on-acquisitions-report.md)でも確認することができます。
 
 ## 前提条件
 
@@ -127,8 +127,35 @@ ms.openlocfilehash: 9d895200e6d1bc823ebcb52e0b034883f5a059e0
 <li><strong>orderName</strong></li>
 </ul>
 <p><em>order</em> パラメーターは省略可能であり、<strong>asc</strong> または <strong>desc</strong> を指定して、各フィールドを昇順または降順にすることができます。 既定値は <strong>asc</strong> です。</p>
-<p>例: <em>orderby</em> string: <em>orderby=date,market</em></p></td>
-<td align="left">×</td>
+<p><em>orderby</em> 文字列の例: <em>orderby=date,market</em></p></td>
+<td align="left">必須ではない</td>
+</tr>
+<tr class="even">
+<td align="left">groupby</td>
+<td align="left">string</td>
+<td align="left"><p>データ集計を指定したフィールドのみに適用するステートメントです。 次のフィールドを指定できます。</p>
+<ul>
+<li><strong>date</strong></li>
+<li><strong>applicationName</strong></li>
+<li><strong>inAppProductName</strong></li>
+<li><strong>acquisitionType</strong></li>
+<li><strong>ageGroup</strong></li>
+<li><strong>storeClient</strong></li>
+<li><strong>gender</strong></li>
+<li><strong>market</strong></li>
+<li><strong>osVersion</strong></li>
+<li><strong>deviceType</strong></li>
+<li><strong>orderName</strong></li>
+</ul>
+<p>返されるデータ行には、<em>groupby</em> パラメーターに指定したフィールドと次の値が含まれます。</p>
+<ul>
+<li><strong>date</strong></li>
+<li><strong>applicationId</strong></li>
+<li><strong>inAppProductId</strong></li>
+<li><strong>acquisitionQuantity</strong></li>
+</ul>
+<p><em>groupby</em> パラメーターは、<em>aggregationLevel</em> パラメーターと同時に使用できます。 例: <em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p></td>
+<td align="left"></td>
 </tr>
 </tbody>
 </table>
@@ -279,7 +306,7 @@ Authorization: Bearer <your access token>
 |---------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | date                | string  | 入手データの日付範囲の最初の日付です。 要求に日付を指定した場合、この値はその日付になります。 要求に週、月、またはその他の日付範囲を指定した場合、この値はその日付範囲の最初の日付になります。 |
 | inAppProductId      | string  | 入手データを取得するアドオンのストア ID です。                                                                                                                                                                 |
-| inAppProductName    | string  | アドオンの表示名です。                                                                                                                                                                                                             |
+| inAppProductName    | string  | アドオンの表示名です。 この値は、*aggregationLevel* パラメーターが **day** に設定されている場合にのみ応答データに表示されます (ただし、*groupby* パラメーターに **inAppProductName** フィールドを指定していない場合)。                                                                                                                                                                                                            |
 | applicationId       | string  | アドオン入手データを取得するアプリのストア ID です。                                                                                                                                                           |
 | applicationName     | string  | アプリの表示名です。                                                                                                                                                                                                             |
 | deviceType          | string  | 入手を完了したデバイスの種類です。 サポートされる文字列の一覧については、前の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                                  |
@@ -325,6 +352,7 @@ Authorization: Bearer <your access token>
 
 ## 関連トピック
 
+* [アドオン取得レポート](../publish/add-on-acquisitions-report.md)
 * [Windows ストア サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)
 * [アプリの入手数の取得](get-app-acquisitions.md)
 * [エラー報告データの取得](get-error-reporting-data.md)
@@ -337,6 +365,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

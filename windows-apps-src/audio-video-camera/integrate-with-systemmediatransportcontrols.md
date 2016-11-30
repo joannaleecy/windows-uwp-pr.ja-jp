@@ -4,8 +4,8 @@ ms.assetid:
 description: "この記事では、システム メディア トランスポート コントロールを操作する方法について説明します。"
 title: "システム メディア トランスポート コントロールとの統合"
 translationtype: Human Translation
-ms.sourcegitcommit: 53b1cb94f90cd697a96bca49c5f2109d4749dbd1
-ms.openlocfilehash: c490ea43a6f49e09828cb6b07a6fbf1920acca74
+ms.sourcegitcommit: 34cb2fec3071add8617fe2bee2eaf50356611ac6
+ms.openlocfilehash: 702d5911f6e76d6c047fcc97c1117456ae04c3e5
 
 ---
 
@@ -70,6 +70,7 @@ Windows 10 バージョン 1607 以降、メディアの再生に [**MediaPlayer
 この記事で既に説明したように、SMTC はアプリによって作成される **MediaPlayer** のすべてのインスタンスに関する情報を自動的に検出して表示します。 **MediaPlayer** のインスタンスを複数使うが、SMTC ではアプリのエントリを 1 つだけ提供する場合、自動統合を使うのではなく、SMTC を手動で制御する必要があります。 また、[**MediaTimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController) を使って 1 つ以上のメディア プレーヤーを制御する場合、手動 SMTC 統合を使う必要があります。 アプリが **MediaPlayer** 以外の API ([**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioGraph) クラスなど) を使ってメディアを再生する場合も、ユーザーが SMTC を使ってアプリを制御できるように、手動 SMTC 統合を実装する必要があります。 SMTC を手動で制御する方法について詳しくは、「[システム メディア トランスポート コントロールの手動制御](system-media-transport-controls.md)」をご覧ください。
 
 
+
 ## 関連トピック
 * [メディア再生](media-playback.md)
 * [MediaPlayer を使ったオーディオとビデオの再生](play-audio-and-video-with-mediaplayer.md)
@@ -85,6 +86,6 @@ Windows 10 バージョン 1607 以降、メディアの再生に [**MediaPlayer
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

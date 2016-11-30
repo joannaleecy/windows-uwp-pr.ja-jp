@@ -4,15 +4,15 @@ Description: "Windows デベロッパー センター ダッシュボードの [
 title: "評価レポート"
 ms.assetid: CAFEC20B-04FB-48C8-B663-1238C0B85ECD
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1613c8a5e5a28ba431fcfb186a0fcd5fe9bd7582
+ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
+ms.openlocfilehash: 45d22b46a750655cc723658b476ba40d18b4f745
 
 ---
 
 # 評価レポート
 
 
-Windows デベロッパー センター ダッシュボードの **[評価]** レポートには、Windows ストアに掲載されているアプリに関するユーザー評価の分布が示されます。 このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md)してオフラインで表示することもできます。 または、[Windows ストア分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) を使って、プログラムでこのデータを取得できます。
+Windows デベロッパー センター ダッシュボードの **[評価]** レポートには、Windows ストアに掲載されているアプリに関するユーザー評価の分布が示されます。 このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md)してオフラインで表示することもできます。 または、[Windows ストア分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) で [アプリの評価の取得](../monetize/get-app-ratings.md)メソッドを使って、プログラムでこのデータを取得できます。
 
 このレポートで、評価とは、ストアでのアプリの評価時に、ユーザーがアプリに付けた星の数 (1 ～ 5) を意味します。 **評価**レポートにはレビューとして残された個々のコメントに関する情報は含まれません。これらは[レビュー レポート](reviews-report.md)で参照できます。
 
@@ -73,6 +73,6 @@ Windows デベロッパー センター ダッシュボードの **[評価]** �
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

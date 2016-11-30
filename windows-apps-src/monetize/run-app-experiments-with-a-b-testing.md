@@ -4,8 +4,8 @@ Description: "Windows デベロッパー センター ダッシュボードを�
 title: "A/B テストを使用してアプリの試験的機能を実行する"
 ms.assetid: 790B4B37-C72D-4CEA-97AF-D226B2216DCC
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 50f7ad90c04d5b5672fa7910f2df669798761472
+ms.sourcegitcommit: 126fee708d82f64fd2a49b844306c53bb3d4cc86
+ms.openlocfilehash: f6c8e830a3ffcff8db9c280b6a9df5b515b1a356
 
 ---
 
@@ -33,7 +33,7 @@ Windows デベロッパー センターの A/B テストは、UWP アプリの�
 A/B テストを実行する前に、開発用コンピューターを設定する必要があります。
 
 * [ここ](../get-started/get-set-up.md)で説明する指示に従って、UWP 開発のための開発用コンピューターを設定します。
-* [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) をインストールします。 試験的機能用の API に加えて、この SDK は広告を表示したり、アプリのフィードバックを収集するフィードバック Hub にユーザーを誘導するなど、その他の機能のための API も提供します。 この SDK について詳しくは、「[Microsoft Store Services SDK](microsoft-store-services-sdk.md)」をご覧ください。
+* [Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk) をインストールします。 試験的機能用の API に加えて、この SDK は広告を表示したり、アプリのフィードバックを収集するフィードバック Hub にユーザーを誘導するなど、その他の機能のための API も提供します。 
 
 ## ベスト プラクティス
 
@@ -65,6 +65,6 @@ A/B テストを実行する前に、開発用コンピューターを設定す�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,8 +4,8 @@ title: "ゲームと DirectX"
 description: "ユニバーサル Windows プラットフォーム (UWP) は、ゲームを作り、配布し、収益を得るための新たな機会を提供します。 新しいゲームの開始または既存のゲームの移植について説明します。"
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
 translationtype: Human Translation
-ms.sourcegitcommit: adaff9abeb0ae8f9c9deb964b18e673c4d4c5f73
-ms.openlocfilehash: fccc85584e84bf3364130fe80c61b75c6377c0c8
+ms.sourcegitcommit: 708e998e414f01bc6544d7f2435e7145ac84902b
+ms.openlocfilehash: 6437f3620afadd0b421bf11f1aa4f86558d50de1
 
 ---
 
@@ -42,6 +42,7 @@ ms.openlocfilehash: fccc85584e84bf3364130fe80c61b75c6377c0c8
 | [ゲームのネットワーク](work-with-networking-in-your-directx-game.md) | ネットワーク機能を開発し、DirectX ゲームに組み込む方法について説明します。 |
 | [ゲームのアクセシビリティ](accessibility-for-games.md) | ゲームをより使いやすくする方法について説明します。 |
 | [ゲーム用のクラウド](cloud-for-games.md) | ゲーム開発でクラウド テクノロジを使用する方法について説明します。 |
+| [ゲームの収益化](monetization-for-games.md) | ゲームを収益化する方法について説明します。 |
 | [DirectX と XAML の相互運用機能](directx-and-xaml-interop.md) | UWP ゲームで Extensible Application Markup Language (XAML) と Microsoft DirectX を組み合わせて使うことができます。 |
 | [ゲームのパッケージ化](package-your-windows-store-directx-game.md) | 規模の大きい UWP ゲーム (特に、地域固有のアセットや機能オプションによる高解像度アセットを伴って複数言語をサポートするゲーム) は、サイズが容易に膨張する可能性があります。 このトピックでは、ユーザーが実際に必要なリソースのみを受け取ることができるように、アプリ パッケージとアプリ バンドルを使ってアプリをカスタマイズする方法について説明します。 |
 | [概念の承認](concept-approval.md) | 概念の承認を受けるために製品を提出する方法について説明します。概念の承認は、製品が Xbox で実行されるか、Xbox Live を使用する場合に必要になります。 |
@@ -72,6 +73,6 @@ ms.openlocfilehash: fccc85584e84bf3364130fe80c61b75c6377c0c8
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

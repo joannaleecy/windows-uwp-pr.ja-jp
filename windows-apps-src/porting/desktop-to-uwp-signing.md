@@ -1,4 +1,15 @@
-# 変換済みのデスクトップ アプリに署名する
+---
+author: awkoren
+Description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) に変換したデスクトップ アプリに署名する方法について説明します。"
+Search.Product: eADQiWindows 10XVcnh
+title: "Desktop to UWP Bridge を使用して変換したアプリに署名します。"
+translationtype: Human Translation
+ms.sourcegitcommit: fe96945759739e9260d0cdfc501e3e59fb915b1e
+ms.openlocfilehash: 2db978089a6334214c3b4c85dbde8d4a4e846092
+
+---
+
+# Desktop Bridge を使用して変換したアプリに署名する
 
 この記事では、ユニバーサル Windows プラットフォーム (UWP) に変換したデスクトップ アプリに署名する方法について説明します。 .appx パッケージを展開する前に、証明書で署名する必要があります。
 
@@ -66,7 +77,7 @@ Authenticode 署名が正しいと見なされるには、Authenticode 署名が
 - PE ファイル内の **WIN_CERTIFICATE** エントリの先頭は、実行可能ファイルの終わりを超えて拡張できない
 - **WIN_CERTIFCATE** エントリは、イメージの最後に置かれている必要がある
 - **WIN_CERTIFICATE** エントリのサイズは正の値である必要がある
-- **WIN_CERTIFICATE** エントリは、32 ビット実行可能ファイルの場合は **IMAGE_NT_HEADERS32** 構造体の後、64 ビット実行可能ファイルの場合は IMAGE_NT_HEADERS64 構造体の後にある必要がある
+- **WIN_CERTIFICATE** エントリは、32 ビット実行可能ファイルの場合は **IMAGE_NT_HEADERS32** 構造体より後、64 ビット実行可能ファイルの場合は IMAGE_NT_HEADERS64 構造体より後に開始する必要がある
 
 詳しくは、[移植可能な実行可能ファイルの Authenticode 署名の仕様に関するドキュメント](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/Authenticode_PE.docx)と [PE ファイル形式の仕様に関するページ](https://msdn.microsoft.com/windows/hardware/gg463119.aspx)をご覧ください。 
 
@@ -80,6 +91,7 @@ AppX パッケージに署名するときに、SignTool.exe で、壊れてい�
 - [SignTool.exe (署名ツール)](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
 - [SignTool を使ってアプリ パッケージに署名する方法](https://msdn.microsoft.com/library/windows/desktop/jj835835.aspx)
 
-<!--HONumber=Sep16_HO2-->
+
+<!--HONumber=Nov16_HO1-->
 
 

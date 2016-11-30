@@ -4,8 +4,8 @@ ms.assetid: 4e7c2388-b94e-4828-a104-14fa33f6eb2d
 description: "Windows 10 (UWP) 用、Windows 8.1 用、Windows Phone 8.1 用の XAML アプリで AdControl クラスを使ってバナー広告を表示する方法について説明します。"
 title: "XAML および .NET の AdControl"
 translationtype: Human Translation
-ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
-ms.openlocfilehash: e3cc04e2c039223729a1e24224ddd19d6485d434
+ms.sourcegitcommit: 35f07c73a72e5242d59c6b45e6d5b4ac62f40741
+ms.openlocfilehash: 0652bd1c3e52c9026b26e14b2475a4b34997ac91
 
 ---
 
@@ -145,13 +145,13 @@ C# と C++ を使って XAML アプリにバナー広告を追加する方法を
 
 ## コメント
 
-C#: **AdControl** イベントにイベント ハンドラーを割り当てる例については、「[XAML プロパティの例](xaml-properties-example.md)」をご覧ください。 C# で書かれたイベント ハンドラーのサンプル コードについては、「[C# の AdControl イベント](adcontrol-events-in-c.md)」をご覧ください。
+* C#: **AdControl** イベントにイベント ハンドラーを割り当てる例については、「[XAML プロパティの例](xaml-properties-example.md)」をご覧ください。 C# で書かれたイベント ハンドラーのサンプル コードについては、「[C# の AdControl イベント](adcontrol-events-in-c.md)」をご覧ください。
 
-Visual Basic: **AdControl** イベントにイベント ハンドラーを割り当てる例については、「[XAML プロパティの例](xaml-properties-example.md)」をご覧ください。
+* C++: Microsoft Advertising ライブラリの現在のリリースは C++ をサポートしています。 **AdControl** クラスは、ネイティブ C++ で実装されており、.NET CLR を読み込みません。 C++ で **AdControl** を使用する方法を示すコード例については、[GitHub の広告サンプル](http://aka.ms/githubads)をご覧ください。
 
-C++: Microsoft Advertising ライブラリの現在のリリースは C++ をサポートしています。 **AdControl** は、CLR を読み込んで Managed C++ を使います。
+* Visual Basic: **AdControl** イベントにイベント ハンドラーを割り当てる例については、「[XAML プロパティの例](xaml-properties-example.md)」をご覧ください。
 
-エラー処理: エラー処理の方法については、「[AdControl エラーの処理](adcontrol-error-handling.md)」をご覧ください。
+* エラー処理: エラー処理の方法については、「[AdControl エラーの処理](adcontrol-error-handling.md)」をご覧ください。
 
 ## 関連トピック
 
@@ -161,6 +161,6 @@ C++: Microsoft Advertising ライブラリの現在のリリースは C++ をサ
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

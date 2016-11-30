@@ -4,8 +4,8 @@ ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
 description: "このセクションでは、写真、ビデオ、オーディオをキャプチャ、再生、または編集するユニバーサル Windows (UWP) プラットフォーム アプリの作成について説明します。"
 title: "オーディオ、ビデオ、およびカメラ"
 translationtype: Human Translation
-ms.sourcegitcommit: 18e97dd5e607960c1c1fd640fe6fe6ae5e9f9085
-ms.openlocfilehash: 1914690b6417a5ae382e74ec76b54d9db411c213
+ms.sourcegitcommit: fd5b52a1d431b9396a4b162077d4f8d6246cd597
+ms.openlocfilehash: 6e67f57fbc00e596bb07cc37f2c9f762a5c9f557
 
 ---
 
@@ -30,7 +30,7 @@ ms.openlocfilehash: 1914690b6417a5ae382e74ec76b54d9db411c213
 | [MIDI](midi.md) | MIDI (Musical Instrument Digital Interface) デバイスを列挙する方法と、UWP アプリとの間で MIDI メッセージを送受信する方法について説明します。 |
 | [デバイスからのメディアのインポート](import-media-from-a-device.md) | 利用可能なメディア ソースの検索、ビデオ、写真、サイドカー ファイルなどのファイルのインポート、ソース デバイスからインポートしたファイルの削除など、デバイスからメディアをインポートする方法について説明します。 |
 | [カメラに依存しない懐中電灯](camera-independent-flashlight.md) | デバイスにライトが搭載されている場合、ライトにアクセスして使う方法を説明します。 ライト機能は、デバイスのカメラやカメラのフラッシュ機能とは別に管理されます。 |
-| [サポートされているコーデック](supported-codecs.md) | UWP アプリ用のオーディオとビデオのコーデックおよび形式のサポートを示します。 |
+| [サポートされているコーデック](supported-codecs.md) | UWP アプリ用のオーディオ、ビデオ、画像のコーデックおよび形式のサポートを示します。 |
 
 
 ## 関連項目
@@ -48,6 +48,6 @@ ms.openlocfilehash: 1914690b6417a5ae382e74ec76b54d9db411c213
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: C5623861-6280-4352-8F22-80EB009D662C
 description: "この記事では、ローカル ファイルやリモート ファイルなど、さまざまなソースのメディアを参照および再生するための一般的な方法を提供し、基になるメディア形式に関係なく、メディア データにアクセスするための一般的なモデルを公開する MediaSource の使い方について説明します。"
 title: "メディア項目、プレイリスト、トラック"
 translationtype: Human Translation
-ms.sourcegitcommit: c2e337e88f9dda3380dd62c32ca6e5d942366636
-ms.openlocfilehash: bb49af7a386356647000e268bcc6983351eaf4b8
+ms.sourcegitcommit: 9999805c8a3bf946aa323b921cea6d63f9a48789
+ms.openlocfilehash: 4c4c6fdb1ea2d42d5bda1034df082bf836d8b803
 
 ---
 
@@ -128,7 +128,7 @@ Windows 10 バージョン 1607 以降では、アプリが実行されている
 [!code-cs[OpenFailed](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetOpenFailed)]
 
 ## システム メディア トランスポート コントロールで使用する表示プロパティを設定する
-Windows 10 バージョン 1607 以降、[**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) で再生されるメディアは既定では自動的にシステム メディア トランスポート コントロール (SMTC) に統合されます。 SMTC で表示されるメタデータを指定するには、**MediaPlaybackItem** の表示プロパティを更新します。 項目の表示プロパティを表すオブジェクトを取得するには、[**GetDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.GetDisplayProperties) を呼び出します。 [**Type**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.Type) プロパティを設定することによって、再生項目が音楽かビデオかを設定し、 次に、オブジェクトの [**VideoProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.VideoProperties) または [**MusicProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.MusicProperties) を設定します。 項目のプロパティを与えた値に更新するように設定するには、[**ApplyDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/mt489923) を呼び出します。 通常、アプリは Web サービスから表示値を動的に取得しますが、次の例はこのプロセスをハードコードされた値を使って示しています。
+Windows 10 バージョン 1607 以降、[**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) で再生されるメディアは既定では自動的にシステム メディア トランスポート コントロール (SMTC) に統合されます。 SMTC で表示されるメタデータを指定するには、**MediaPlaybackItem** の表示プロパティを更新します。 項目の表示プロパティを表すオブジェクトを取得するには、[**GetDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.GetDisplayProperties) を呼び出します。 [**Type**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.Type) プロパティを設定することによって、再生項目が音楽かビデオかを設定し、 次に、オブジェクトの [**VideoProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.VideoProperties) または [**MusicProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.MusicProperties) を設定します。 項目のプロパティを与えた値に更新するには、[**ApplyDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/mt489923) を呼び出します。 通常、アプリは Web サービスから表示値を動的に取得しますが、次の例はこのプロセスをハードコードされた値を使って示しています。
 
 [!code-cs[SetVideoProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetVideoProperties)]
 
@@ -226,6 +226,6 @@ Windows 10 バージョン 1607 以降、[**MediaPlayer**](https://msdn.microsof
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

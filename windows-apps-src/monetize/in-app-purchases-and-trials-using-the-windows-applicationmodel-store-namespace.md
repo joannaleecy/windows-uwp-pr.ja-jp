@@ -4,8 +4,8 @@ ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
 description: "Windows 10 バージョン 1607 より前のリリースを対象とする UWP アプリでのアプリ内購入と試用版を有効にする方法を説明します。"
 title: "Windows.ApplicationModel.Store 名前空間を使用するアプリ内購入と試用版"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 649d082cddcf301fe602a5ab99637ad7bea67d49
+ms.sourcegitcommit: 812fa1789c5c86657b8e73e45a851c7a58a1c84e
+ms.openlocfilehash: 5a4f943357660a22217351f04d735c14cab828ff
 
 ---
 
@@ -13,11 +13,15 @@ ms.openlocfilehash: 649d082cddcf301fe602a5ab99637ad7bea67d49
 
 Windows SDK に用意されている [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間のメンバーを使して、ユニバーサル Windows プラットフォーム (UWP) アプリにアプリ内購入機能や試用版機能を追加し、アプリで収益を得たり、新しい機能を追加したりすることができます。 こうした API では、アプリのライセンス情報へのアクセスも提供されます。
 
->**注**&nbsp;&nbsp;アプリが Windows 10 バージョン 1607 以降のバージョンをターゲットにする場合は、**Windows.ApplicationModel.Store** 名前空間ではなく、[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間を使用することをお勧めします。 **Windows.Services.Store** 名前空間は、ストアで管理されるコンシューマブルなアドオンなど、最新の種類のアドオンをサポートしており、Windows デベロッパー センターとストアで今後サポートされる製品および機能の種類と互換性を持つように設計されています。 **Windows.Services.Store** 名前空間は、パフォーマンスの向上も考えた作りになっています。 詳しくは、「[アプリ内購入と試用版](in-app-purchases-and-trials.md)」をご覧ください。
-
 このセクションの記事では、いくつかの一般的なシナリオにおいて **Windows.ApplicationModel.Store** 名前空間のメンバーを使用するための詳しいガイダンスとコード例を示します。 UWP アプリのアプリ内での購入に関する概念の概要については、「[アプリ内購入と試用版](in-app-purchases-and-trials.md)」をご覧ください。
 
 **Windows.ApplicationModel.Store** 名前空間を使用した試用版とアプリ内購入の実装方法を示す完全なサンプルについては、[ストア サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)をご覧ください。
+
+>**注**&nbsp;&nbsp;
+>
+> * アプリが Windows 10 バージョン 1607 以降をターゲットとする場合は、**Windows.ApplicationModel.Store** 名前空間ではなく、[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間のメンバーを使用することをお勧めします。 **Windows.Services.Store** 名前空間は、ストアで管理されるコンシューマブルなアドオンなど、最新の種類のアドオンをサポートしており、Windows デベロッパー センターとストアで今後サポートされる製品および機能の種類と互換性を持つように設計されています。 **Windows.Services.Store** 名前空間は、パフォーマンスの向上も考えた作りになっています。 詳しくは、「[アプリ内購入と試用版](in-app-purchases-and-trials.md)」をご覧ください。
+<br/><br/>
+> * **Windows.ApplicationModel.Store** 名前空間は、[Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop) を使用する Windows デスクトップ アプリケーションではサポートされていません。 このようなアプリケーションでは、**Windows.Services.Store** 名前空間を使用して、アプリ内購入と試用版を実装する必要があります。
 
 ## このセクションの内容
 
@@ -32,6 +36,6 @@ Windows SDK に用意されている [Windows.ApplicationModel.Store](https://ms
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: DD8FFA8C-DFF0-41E3-8F7A-345C5A248FC2
 description: "このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリに PlayReady で保護されたメディア コンテンツを追加する方法について説明します。"
 title: PlayReady DRM
 translationtype: Human Translation
-ms.sourcegitcommit: 549826e6c355d6b8150fa20736db20a147ed41e9
-ms.openlocfilehash: 735fdfb04bcf7e4fab8265b294b117be5c614870
+ms.sourcegitcommit: 94f3145716edee7f9b86e97fb01e98b4bf71a084
+ms.openlocfilehash: b2748f0e48b25027441b183c287aa995dc6d9a9c
 
 ---
 
@@ -448,17 +448,31 @@ mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionConta
 
 ## Xbox One での PlayReady DRM の使用
 
-Xbox One において UWP アプリで PlayReady DRM を使用するには、アプリ マニフェストに `<DeviceCapability>` を追加する必要があります。 アプリケーション マニフェスト デザイナーには現在利用できる設定がないため、これは手動で追加する必要があります。 構成するには、次の手順を実行します。
+Xbox One において UWP アプリで PlayReady DRM を使用するには、まず、アプリの公開に使用するデベロッパー センター アカウントを登録して、PlayReady の使用許可を得る必要があります。 これは次の 2 つのいずれかの方法で行うことができます。
+
+* Microsoft の連絡担当者を通じて許可を申請します。
+* デベロッパー センター アカウントと会社名を [pronxbox@microsoft.com](mailto:pronxbox@microsoft.com) に送信して許可を申請します。
+
+許可を受信したら、追加の `<DeviceCapability>` をアプリ マニフェストに追加する必要があります。 アプリケーション マニフェスト デザイナーには現在利用できる設定がないため、これは手動で追加する必要があります。 構成するには、次の手順を実行します。
 
 1. Visual Studio でプロジェクトを開き、**ソリューション エクスプローラー**を開いて **Package.appxmanifest** を右クリックします。
 2. **[ファイルを開くアプリケーションの選択]** をクリックして **[XML (テキスト) エディター]** を選択し、**[OK]** をクリックします。
 3. `<Capabilities>` タグの間に次の `<DeviceCapability>` を追加します。
-```xml
-<DeviceCapability Name="6a7e5907-885c-4bcb-b40a-073c067bd3d5" />
-```
+
+    ```xml
+    <DeviceCapability Name="6a7e5907-885c-4bcb-b40a-073c067bd3d5" />
+    ```
+
 4. ファイルを保存します。
 
-## 参照
+最後に、Xbox One で PlayReady を使用する場合の最後の考慮事項として、開発キットでは、SL150 のみに使用が制限されています (SL2000 や SL3000 のコンテンツは再生できません)。 製品デバイスではセキュリティ レベルの高いコンテンツを再生できますが、開発キットでアプリをテストするには、SL150 のコンテンツを使用する必要があります。 このコンテンツのテストは、次のいずれかの方法で行うことができます。
+
+* SL150 ライセンスを必要とするテスト コンテンツを選択して使用します。
+* 特定の認証されたテスト アカウントのみが、特定のコンテンツについて SL150 ライセンスを取得できるようにロジックを実装します。
+
+企業と製品に応じて最適なアプローチを使用してください。
+
+## 関連項目
 - [メディア再生](media-playback.md)
 
 
@@ -467,6 +481,6 @@ Xbox One において UWP アプリで PlayReady DRM を使用するには、ア
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

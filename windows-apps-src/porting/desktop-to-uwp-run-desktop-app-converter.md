@@ -4,8 +4,8 @@ Description: "Desktop Converter App を実行して、Windows デスクトップ
 Search.Product: eADQiWindows 10XVcnh
 title: Desktop App Converter
 translationtype: Human Translation
-ms.sourcegitcommit: ed4da94f2732c279c3071135168da9e4b18953cb
-ms.openlocfilehash: c0ed8386cb823ea83e5b1f80cd584f370a85f278
+ms.sourcegitcommit: 8429e6e21319a03fc2a0260c68223437b9aed02e
+ms.openlocfilehash: fcff283e0d97d76fefe3f42a6cd1076b6cdd2aae
 
 ---
 
@@ -26,8 +26,9 @@ Desktop App Converterは現在、[Windows ストア](https://aka.ms/converter)�
 ### 2016 年 9 月 14 日 (v1.0)
 
 * Desktop App Converter は現在、[Windows ストア](https://aka.ms/converter)からダウンロードできます。 
-* DAC と共に使用する、最新の Windows 10 の基本イメージ (.wim) を[ダウンロード センター](https://www.microsoft.com/download/details.aspx?id=53833)から入手します。
+* DAC と共に使用する、最新の Windows 10 の基本イメージ (.wim) を[ダウンロード センター](https://aka.ms/converterimages)から入手します。
 * ストア アプリにより、*DesktopAppConverter.exe <arguments>* の新しいエントリ ポイントを使って、管理者特権のコマンド プロンプトまたは PowerShell ウィンドウの任意の場所からコンバーターを実行できるようになりました。  
+
 
 ### 2016 年 9 月 2 日 (v0.1.25)
 
@@ -76,12 +77,12 @@ Desktop App Converterは現在、[Windows ストア](https://aka.ms/converter)�
 
 ## システム要件
 
-### サポートされるオペレーティング システム
-+ Windows 10 Anniversary Update Enterprise edition preview (Build 10.0.14342.0 以上)
+### オペレーティング システム
 
-### 必要なハードウェア構成
++ Windows 10 Anniversary Update (10.0.14393.0 以降) Pro または Enterprise エディション。
 
-コンピューターの能力の最低条件を示します。
+### ハードウェア構成
+
 + 64 ビット (x64) プロセッサ
 + ハードウェア支援による仮想化
 + Second Level Address Translation (SLAT)
@@ -90,29 +91,37 @@ Desktop App Converterは現在、[Windows ストア](https://aka.ms/converter)�
 
 + [Windows 10 用 Windows ソフトウェア開発キット (SDK)](https://go.microsoft.com/fwlink/?linkid=821375)
 
-## Desktop App Converter をセットアップする   
+## Desktop App Converter をセットアップする
 
-Desktop App Converter は、Windows Insider Preview ビルドに含まれている Windows 10 の機能に依存しています。 このコンバーターを利用するには、最新ビルドであることを確認します。
+Desktop App Converter は、最新の Windows 10 機能に依存しています。 Windows 10 Anniversary Update (14393.0) 以降のビルドをお使いであることを確認してください。
 
-1. 最新の Windows 10 Insider Preview OS の Enterprise または Pro edition (http://insider.windows.com) がインストールされていること。 
-2. 使用している Insider Preview ビルドに対応する DesktopAppConverter.zip と Insider Preview ビルドをダウンロードします (http://aka.ms/converter)。 
-3. ローカル フォルダーに DesktopAppConverter.zip を抽出します。
-4. 管理者 PowerShell ウィンドウの場合。  
-```CMD
-PS C:\> Set-ExecutionPolicy bypass
-```
-5. 管理者 PowerShell ウィンドウから、次のコマンドを実行してコンバーターをセットアップします。
-```CMD
-PS C:\> .\DesktopAppConverter.ps1 -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose
-```
-6. 上のコマンドを実行したときに再起動を求めるメッセージが表示されたら、コンピューターを再起動してコマンドをもう一度実行します。
+### ストアのダウンロード
+
+1.  [DesktopAppConverter を Windows ストアからダウンロード](https://aka.ms/converter)し、[ビルドに対応する基本イメージの .wim ファイル](https://aka.ms/converterimages)をダウンロードします。  
+2.  管理者として DesktopAppConverter を実行します。 これには、スタート メニューでタイルを右クリックして *[その他]* から *[管理者として実行]* を選択するか、タスク バーでタイルを右クリックし、表示されるアプリ名を右クリックして *[管理者として実行]* を選択します。
+3.  アプリ コンソール ウィンドウから ```CMD PS C:\> Set-ExecutionPolicy bypass``` を実行します。
+4.  アプリ コンソール ウィンドウから ```CMD PS C:\> DesktopAppConverter.exe -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose``` を実行することでコンバーターをセットアップします。
+5.  上のコマンドを実行したときに再起動を求めるメッセージが表示されたら、コンピューターを再起動してください。
+
+### zip ファイル 
+
+オフラインでの使用に対応できるように、DAC は zip ファイルとして[ダウンロード センター](https://aka.ms/converterimages)に残されます。 ただし、今後の更新プログラムはすべて、ストア バージョンとしてのみ公開されます。
+
+1.  DAC の zip ファイルと、[ビルドに一致する基本イメージの .wimファイル](https://aka.ms/converterimages)をダウンロードします。  
+2. ローカル フォルダーに DesktopAppConverter.zip を抽出します。
+3. 管理者 PowerShell ウィンドウから ```CMD PS C:\> Set-ExecutionPolicy bypass``` を実行します。
+4. 管理者 PowerShell ウィンドウから ```CMD PS C:\> .\DesktopAppConverter.ps1 -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose``` を実行してコンバーターをセットアップします。
+5. 上のコマンドを実行したときに再起動を求めるメッセージが表示されたら、コンピューターを再起動してください。
 
 ## Desktop App Converter を実行する
-Desktop App Converter のエントリ ポイントは、PowerShell とコマンド シェルの 2 つです。 変換プロセスを開始するには、これらのエントリ ポイントのいずれかを使います。
 
-### 用途
++ **ストア ダウンロード**: ```DesktopAppConverter.exe``` を使用してコンバーターを実行します。
++ **zipファイル**: ```DesktopAppConverter.ps1``` を使用してコンバーターを実行します。 
+
+### 使用法
+
 ```CMD
-DesktopAppConverter.ps1
+DesktopAppConverter.exe
 -Installer <String> [-InstallerArguments <String>] [-InstallerValidExitCodes <Int32>]
 -Destination <String>
 -PackageName <String>
@@ -132,11 +141,11 @@ DesktopAppConverter.ps1
 ```
 
 ### 例
+
 次の例では、*MyApp* という名前のデスクトップ アプリを *&lt;publisher_name&gt;* で UWP パッケージ (AppX) に変換する方法を説明します。
 
-+ 管理者 PowerShell ウィンドウから次のコマンドを実行します。
 ```CMD
-PS C:\>.\DesktopAppConverter.ps1 -Installer C:\Installer\MyApp.exe 
+DesktopAppConverter.exe -Installer C:\Installer\MyApp.exe 
 -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" 
 -Publisher "CN=<publisher_name>" -Version 0.0.0.1 -MakeAppx -Verbose
 ```
@@ -183,12 +192,15 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DesktopAppConverter
 + 利用統計情報を有効にするには、このキーを削除するかキーの値を 0 に設定します。
 
 ## Desktop App Converter の使用法
-Desktop App Converter のパラメーターの一覧を示します。 この一覧は、次のコマンドを実行して、Windows Powershell ウィンドウでも表示できます。  
+
+Desktop App Converter のパラメーターの一覧を示します。 この一覧は、以下のコマンドを実行して表示することもできます。   
+
 ```CMD
-get-help .\DesktopAppConverter.ps1 -detailed
+Get-Help DesktopAppConverter.exe -detailed
 ```
 
 ### セットアップ パラメーター  
+
 |パラメーター|説明|
 |---------|-----------|
 |```-Setup [<SwitchParameter>]``` | セットアップ モードで DesktopAppConverter を実行します。 セットアップ モードでは、用意されている基本イメージの展開をサポートします。|
@@ -198,14 +210,17 @@ get-help .\DesktopAppConverter.ps1 -detailed
 |```-NoRestart [<SwitchParameter>]``` | セットアップの実行中に再起動を要求しません (コンテナー機能を有効にするには再起動が必要です)。 |
 
 ### 変換パラメーター  
+
 |パラメーター|説明|
 |---------|-----------|
-|```-Installer <String>``` | アプリケーションのインストーラーのパス。無人/サイレント モードで実行できる必要があります。|
+|```-AppInstallPath <String> [optional]``` | インストール済みのファイルに対応する、アプリケーションのルート フォルダーの完全パス (インストールされている場合)。"C:\Program Files (x86)\MyApp" など。| 
+|```-Destination <String>``` | コンバーターの appx を出力する場所。この場所がまだ存在しない場合は、DesktopAppConverter によって作成されます。|
+|```-Installer <String>``` | アプリケーションのインストーラーのパス。無人/サイレント モードで実行できるようにする必要があります。|
 |```-InstallerArguments <String>``` (省略可能) | インストーラーに無人/サイレント モードでの実行を強制する引数の文字列、またはコンマ区切り一覧。 インストーラーが msi の場合は、このパラメーターは省略可能です。 インストーラーからログを取得するには、ここで、インストーラーのログ記録の引数を指定し、パス ```<log_folder>``` (コンバーターが適切なパスに置換するトークン) を使います。 <br><br>**注: 無人/サイレント フラグとログの引数は、インストーラー テクノロジごとに異なります。** <br><br>このパラメーターの使用例:```-InstallerArguments "/silent /log <log_folder>\install.log"```。ログ ファイルを生成しない別の例: ```-InstallerArguments "/quiet", "/norestart"```。繰り返しになりますが、コンバーターでログをキャプチャし、最終的なログ フォルダーに格納する場合は、文字どおりすべてのログにトークン パス ```<log_folder>``` を指定する必要があります。|
 |```-InstallerValidExitCodes <Int32>``` (省略可能) | インストーラーの正常な実行を示す、コンマで区切った終了コードの一覧 (例: 0, 1234, 5678)。  既定では、非 msi は 0、msi は 0, 1641, 3010 です。|
-|```-Destination <String>``` | コンバーターが appx を出力する場所。この場所がまだ存在しない場合は、DesktopAppConverter が作成できます。|
 
 ### Appx ID パラメーター  
+
 |パラメーター|説明|
 |---------|-----------|
 |```-PackageName <String>``` | ユニバーサル Windows アプリ パッケージの名前
@@ -213,6 +228,7 @@ get-help .\DesktopAppConverter.ps1 -detailed
 |```-Version <Version>``` | ユニバーサル Windows アプリ パッケージのバージョン番号
 
 ### Appx マニフェストのオプションのパラメーター  
+
 |パラメーター|説明|
 |---------|-----------|
 |```-AppExecutable <String> [optional]``` (省略可能) | アプリケーションのメインの実行可能ファイル (例:"MyApp.exe") の名前。 |
@@ -224,6 +240,7 @@ get-help .\DesktopAppConverter.ps1 -detailed
 |```-PackagePublisherDisplayName <String>``` (省略可能) | appx マニフェストでパッケージの発行元表示名を設定する値を指定します。 指定しないと、*Publisher* で渡した値が設定されます。 |
 
 ### その他の変換パラメーター  
+
 |パラメーター|説明|
 |---------|-----------|
 |```-ExpandedBaseImage <String>``` (省略可能) | 既に展開済みの基本イメージの完全パス。|
@@ -233,6 +250,7 @@ get-help .\DesktopAppConverter.ps1 -detailed
 |```<Common parameters>``` | このコマンドレットは、次の共通パラメーターをサポートします。*Verbose*、*Debug*、*ErrorAction*、*ErrorVariable*、*WarningAction*、*WarningVariable*、*OutBuffer*、*PipelineVariable*、および *OutVariable*。 詳細については、「[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)」をご覧ください。 |
 
 ### クリーンアップ パラメーター
+
 |パラメーター|説明|
 |---------|-----------|
 |```Cleanup [<Option>]``` | DesktopAppConverter の成果物のクリーンアップを実行します。 クリーンアップ モードには 3 つの有効なオプションがあります。 |
@@ -241,6 +259,7 @@ get-help .\DesktopAppConverter.ps1 -detailed
 |```Cleanup ExpandedImage``` | ホスト コンピューターにインストールされているすべての展開済みの基本イメージを削除します。 |
 
 ### パッケージのアーキテクチャ
+
 Desktop App Converter では、x86 コンピューターと amd64 コンピューターにインストールして実行できる x86 および x64 の両方のアプリ パッケージの作成がサポートされるようになりました。 適切な変換を実行するには、Desktop App Converter を AMD64 コンピューターで実行する必要があることに注意してください。
 
 |パラメーター|説明|
@@ -266,16 +285,12 @@ example3: PEHeaderCertFixTool c:\myapp /c /v
 
 Desktop App Converterは、Unicode をサポートしていません。したがって、漢字または非 ASCII 文字をツールで使用することはできません。
 
-## 関連項目
-+ [Desktop App Converter を入手する](http://go.microsoft.com/fwlink/?LinkId=785437)
-+ [ユニバーサル Windows プラットフォームにデスクトップ アプリを移行する](https://developer.microsoft.com/windows/bridges/desktop)
+## 参照
+
 + [Desktop App Converter を使う UWP へのデスクトップ アプリの移行](https://channel9.msdn.com/events/Build/2016/P504)
 + [Project Centennial: ユニバーサル Windows プラットフォームへの既存のデスクトップ アプリケーションの移行](https://channel9.msdn.com/events/Build/2016/B829)  
-+ [Desktop Bridge 用の UserVoice](http://aka.ms/UserVoiceDesktopToUwp)
-+ [デスクトップ アプリから UWP へのブリッジのコード サンプル (GitHub)](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
 
-
-<!--HONumber=Sep16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

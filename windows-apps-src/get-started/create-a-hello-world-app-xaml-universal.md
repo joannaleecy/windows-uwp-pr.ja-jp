@@ -4,8 +4,8 @@ ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: "Hello, world アプリを作成する (XAML)"
 description: "このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象にした単純な Hello, world アプリを Extensible Application Markup Language (XAML) を使って C# で作る方法について説明します。"
 translationtype: Human Translation
-ms.sourcegitcommit: 275c5cf8f8960f2be7cd9566e59eeb3bf4ee8f46
-ms.openlocfilehash: 272eb87e47c398218df85fa33f70bf9fbf240a3e
+ms.sourcegitcommit: 344ffda398c789f82973b5f08a0e3b791fc5ad10
+ms.openlocfilehash: 6cf960781862649588f361b6bfcd87605f3e8d55
 
 ---
 
@@ -109,21 +109,21 @@ ms.openlocfilehash: 272eb87e47c398218df85fa33f70bf9fbf240a3e
 
     XAML コード ウィンドウを見ると、そこにも Button が追加されたことがわかります。
 
-    ```XAML
+ ```XAML
 <Button x:name="button" Content="Button" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
-```
+ ```
 
 4.  ボタンのテキストを変更します。
 
     XAML コード ビュー内をクリックし、Content の値を "Button" から "Hello, world!" に変更します。
 
-    ```XAML
+```XAML
 <Button x:name="button" Content="Hello, world!" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
 ```
 
-    デザイン キャンバスに表示されたボタンが更新され、新しいテキストが表示されることがわかります。
+デザイン キャンバスに表示されたボタンが更新され、新しいテキストが表示されることがわかります。
 
-    ![ソリューション エクスプローラーのウィンドウ](images/win10-cs-07.png)
+![ソリューション エクスプローラーのウィンドウ](images/win10-cs-07.png)
 
 ## 手順 3. アプリを起動する
 
@@ -253,10 +253,10 @@ private async void button_Click(object sender, RoutedEventArgs e)
 ## まとめ
 
 
-これで、Windows 10 と UWP 用の初めてのアプリを作成しました。
+これで、Windows 10 と UWP 用の初めてのアプリを作成しました。 [次の手順](learn-more.md)に進みます。
 
 
 
-<!--HONumber=Sep16_HO1-->
+<!--HONumber=Nov16_HO1-->
 
 

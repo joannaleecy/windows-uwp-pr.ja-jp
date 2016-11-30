@@ -4,17 +4,17 @@ ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: "この記事では、UWP アプリ用のオーディオとビデオのコーデックおよび形式のサポートを示します。"
 title: "サポートされるコーデック"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: 0f6da61ba167328968694d240e250dbc454d5e7b
+ms.sourcegitcommit: 7bd0002d62519757cf582d6070a22890a0e1837e
+ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
 ---
 
 # サポートされるコーデック
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
-この記事では、UWP アプリ用のオーディオとビデオのコーデックおよび形式のサポートを示します。
+この記事では、UWP アプリ用のオーディオ、ビデオ、およびイメージのコーデックと形式のサポートを示します。
 
 以下の表では、"D" はデコーダーのサポートを示し、"E" はエンコーダーのサポートを示します。
 
@@ -2685,18 +2685,80 @@ ms.openlocfilehash: 0f6da61ba167328968694d240e250dbc454d5e7b
 </tbody>
 </table>
 
- 
+## イメージのコーデックおよび形式のサポート 
 
- 
+<table>
+<colgroup>
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">コーデック</th>
+<th align="left">デスクトップ</th>
+<th align="left">他のデバイス ファミリ</th>
+</tr>
+</thead>
+<tr class="odd">
+<td align="left">BMP</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="even">
+<td align="left">DDS</td>
+<td align="left">D/E<sup>1</sup></td>
+<td align="left">D/E<sup>1</sup></td>
+</tr>
+<tr class="odd">
+<td align="left">DNG</td>
+<td align="left">D<sup>2</sup></td>
+<td align="left">D<sup>2</sup></td>
+</tr>
+<tr class="even">
+<td align="left">GIF</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="odd">
+<td align="left">ICO</td>
+<td align="left">D</td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">JPEG</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="odd">
+<td align="left">JPEG-XR</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="even">
+<td align="left">PNG</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="odd">
+<td align="left">TIFF</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="even">
+<td align="left">RAW 形式のカメラ</td>
+<td align="left">D<sup>3</sup></td>
+<td align="left">なし</td>
+</tr>
+</table>
 
- 
+<sup>1</sup> BC5 圧縮による BC1 を使用した DDS イメージがサポートされています。  
+<sup>2</sup> 非 RAW 形式の埋め込みプレビューを含む DNG イメージがサポートされています。  
+<sup>3</sup> 特定のカメラの Raw 形式のみがサポートされています。  
+
+イメージ コーデックの詳細については、「[ネイティブ WIC コーデック](https://msdn.microsoft.com/library/windows/desktop/gg430027.aspx)」をご覧ください。
 
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

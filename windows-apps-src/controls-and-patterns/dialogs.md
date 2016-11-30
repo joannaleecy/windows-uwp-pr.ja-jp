@@ -5,8 +5,8 @@ title: "ダイアログとポップアップ"
 label: Dialogs
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: ff9940c06276165dc139e120c4e9cdeb005ff125
+ms.sourcegitcommit: 86f28a0509ead0632c942c6746fea19acac54931
+ms.openlocfilehash: 6b0b680cd85d6f57c3ca06758ab7dcaef3f7ffe5
 
 ---
 # ダイアログとポップアップ
@@ -48,7 +48,7 @@ ms.openlocfilehash: ff9940c06276165dc139e120c4e9cdeb005ff125
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
    <p><b>ダイアログ</b> <br/><br/>
-   ![フルボタン ダイアログの例](images/controls_dialog_twobutton.png)</p>
+    ![ダイアログの例](images/dialogs/dialog-delete-file-example.png)</p>
 <p>ダイアログは、状況依存のアプリ情報を表示するモーダル UI オーバーレイです。 ダイアログは、明示的に閉じられるまでアプリ ウィンドウの対話式操作をブロックします。 多くの場合、ユーザーに何らかの操作を要求します。   
 </p><br/>
 
@@ -130,7 +130,8 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 
 
 
-## ダイアログの使用に関するガイドライン
+## ダイアログ
+### 一般的なガイドライン
 
 -   ダイアログ内のテキストの 1 行目で、問題やユーザーの目的 (実行する内容) を明確に示す必要があります。
 -   ダイアログのタイトルは主な説明で、省略可能です。
@@ -146,7 +147,23 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 -   エラー ダイアログでは、ダイアログ ボックスにエラー メッセージと関連情報 (ある場合) を表示します。 エラー ダイアログで使う唯一のボタンは "閉じる" かこれに似た操作である必要があります。
 -   パスワード フィールドの検証エラーなど、ページの特定の場所に関連するエラーでは、ダイアログを使わずに、アプリのキャンバス自体を使ってインライン エラーを表示します。
 
-## ダイアログの作成
+### 確認ダイアログ ([OK]/[キャンセル])
+確認ダイアログ ボックスにより、ユーザーはアクションを実行するかどうかを確認できます。 アクションを確認するか、キャンセルを選択することができます。  
+一般的な確認ダイアログ ボックスには、確認 ([OK]) ボタンと [キャンセル] ボタンの 2 つのボタンがあります。  
+
+<ul>
+    <li>
+        <p>一般的に、確認ボタンは左側 (プライマリ ボタン) にあり、[キャンセル] ボタン (セカンダリ ボタン) は右側にあります。</p>
+         ![[OK]/[キャンセル] ダイアログ ボックス](images/dialogs/dialog-delete-file-example.png)
+        
+    </li>
+    <li>一般的な推奨事項のセクションで説明したように、テキストを指定したボタンを使って、主な説明またはコンテンツに対する具体的な応答を示します。
+    </li>
+</ul>
+
+> 一部のプラットフォームでは、左側ではなく、右側に確認ボタンが配置されます。 それでは、左側に確認ボタンを配置するのはなぜでしょうか。  ユーザーの大部分が右利きであり、右手でスマートフォンを保持すると想定した場合、実際に確認ボタンが左側にある方がボタンを押しやすくなります。これは、ボタンがユーザーの親指が描く円弧上にある可能性が高くなるためです。 画面の右側にボタンがある場合、ユーザーは親指を内側に引いて操作しにくい位置に移動する必要があります。
+
+### ダイアログの作成
 ダイアログ ボックスを作成するには、[ContentDialog クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)を使用します。 ダイアログはコードまたはマークアップで作成できます。 通常は UI 要素を XAML で定義する方が容易ですが、単純なダイアログの場合には、コードを記述する方が実際には容易です。 この例では、ダイアログを作成して、ユーザーに WiFi 接続がないことの通知を行い、[ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx)メソッドを使ってそれを表示しています。
 
 ```csharp
@@ -174,23 +191,23 @@ private async void displayDeleteFileDialog()
     {
         Title = "Delete file permanently?",
         Content = "If you delete this file, you won't be able to recover it. Do you want to delete it?",
-        PrimaryButtonText = "Cancel",
-        SecondaryButtonText = "Delete file permanently"
+        PrimaryButtonText = "Delete",
+        SecondaryButtonText = "Cancel"
     };
 
     ContentDialogResult result = await deleteFileDialog.ShowAsync();
     
-    // Delete the file if the user clicked the second button. 
+    // Delete the file if the user clicked the primary button. 
     /// Otherwise, do nothing. 
-    if (result == ContentDialogResult.Secondary)
+    if (result == ContentDialogResult.Primary)
     {
         // Delete the file. 
     }
 }
 ```
 
-
-##  ポップアップを作る
+## ポップアップ
+###  ポップアップの作成
 
 ポップアップは、オープンエンドなコンテナーで、そのコンテンツとして任意の UI を表示することができます。  
 
@@ -278,7 +295,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 }
 ````
 
-## ポップアップのスタイルを設定する
+### ポップアップのスタイルを設定する
 ポップアップのスタイルを設定するには、[FlyoutPresenterStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.flyoutpresenterstyle.aspx) を変更します。 次の例では、テキストの折り返しの段落を示し、スクリーン リーダーがテキスト ブロックにアクセスできるようにします。
 
 ````xaml
@@ -308,6 +325,6 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

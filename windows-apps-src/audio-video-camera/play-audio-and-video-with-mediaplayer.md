@@ -4,8 +4,8 @@ ms.assetid:
 description: "この記事では、MediaPlayer を使ってユニバーサル Windows アプリでメディアを再生する方法を示します。"
 title: "MediaPlayer を使ったオーディオとビデオの再生"
 translationtype: Human Translation
-ms.sourcegitcommit: 3d6f79ea55718d988415557bc4ac9a1f746f9053
-ms.openlocfilehash: 32df2810710e78eeb8c257548c39c0d5d978e888
+ms.sourcegitcommit: 34cb2fec3071add8617fe2bee2eaf50356611ac6
+ms.openlocfilehash: 66240809d47247312d9d4c49c7bf36ff70295559
 
 ---
 
@@ -39,6 +39,9 @@ ms.openlocfilehash: 32df2810710e78eeb8c257548c39c0d5d978e888
 **MediaPlayerElement** での再生ソースを設定することもできます。その場合、要素は自動的に [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.MediaPlayer) プロパティを使ってアクセスできる新しい **MediaPlayer** インスタンスを作成します。
 
 [!code-cs[GetPlayerFromElement](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetGetPlayerFromElement)]
+
+> [!NOTE] 
+> [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) を false に設定して、[**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) の [**MediaPlaybackCommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager) を無効にすると、**MediaPlayerElement** で提供される **MediaPlayer** と [**TransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.TransportControls) の間のリンクが解除されます。このため組み込みトランスポート コンソールはプレーヤーの再生を自動的に制御しなくなります。 代わりに、独自のコントロールを実装して、**MediaPlayer** を制御する必要があります。
 
 ##MediaPlayer の一般的なタスク
 このセクションでは、**MediaPlayer** の一部の機能の使用方法を示します。
@@ -174,6 +177,6 @@ Windows 10 バージョン 1607 からは、**MediaPlayer** を使って [**ICom
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

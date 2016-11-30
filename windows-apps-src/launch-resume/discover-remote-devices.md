@@ -1,15 +1,15 @@
 ---
 author: PatrickFarley
 title: "リモート デバイスの検出"
-description: "&quot;Rome&quot; プロジェクトを使ってアプリからリモート デバイスを検出する方法について説明します。"
+description: Learn how to discover remote devices from your app using Project "Rome".
 translationtype: Human Translation
-ms.sourcegitcommit: ff8e16d0e376d502157ae42b9cdae11875008554
-ms.openlocfilehash: cb1f9cf6915378203919fdf63bcebc935af74a30
+ms.sourcegitcommit: dc5030fea8e149b3926b926b09bfec3eeb5092ee
+ms.openlocfilehash: b4b4eb28ea56ab3d84e2fe0bc0c281cb53149d5d
 
 ---
 
 # リモート デバイスの検出
-アプリは、ワイヤレス ネットワーク、Bluetooth、クラウド接続を使用って、検出側デバイスと同じ Microsoft アカウントでサインインしている Windows ベースのデバイスを検出できます。 Surface Hub や Xbox One などの、匿名接続を受け入れる共用デバイスも検出できます。 リモート デバイスを検出するために特別なソフトウェアをインストールする必要はありません。
+アプリは、ワイヤレス ネットワーク、Bluetooth、クラウド接続を使用って、検出側デバイスと同じ Microsoft アカウントでサインインしている Windows デバイスを検出できます。 Surface Hub や Xbox One などの、匿名接続を受け入れる共用デバイスも検出できます。 リモート デバイスを検出するために特別なソフトウェアをインストールする必要はありません。
 
 > [!NOTE]
 > このガイドでは、「[リモート アプリの起動](launch-a-remote-app.md)」の手順に従うことで、リモート システム機能へのアクセスが既に許可されていることを前提としています。
@@ -50,6 +50,6 @@ ms.openlocfilehash: cb1f9cf6915378203919fdf63bcebc935af74a30
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

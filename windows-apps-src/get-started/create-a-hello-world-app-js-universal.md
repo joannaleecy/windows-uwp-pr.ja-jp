@@ -1,11 +1,11 @@
 ---
 author: GrantMeStrength
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
-title: "Hello, world アプリを作成する (JS)"
+title: Create a "Hello, world" app (JS)
 description: "このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象にした単純な Hello, world アプリを JavaScript と HTML で作る方法について説明します。"
 translationtype: Human Translation
-ms.sourcegitcommit: 2e0965f964f6f2e10b895d99244b66458eb15903
-ms.openlocfilehash: 6c81b24f7fa9abe036d4ccd22ee8fa24c011fe77
+ms.sourcegitcommit: 7b4676e5c5a66450b321ab6f5f8670f9491b7a9d
+ms.openlocfilehash: 31bd2d40750e5acf09679d8ff5ea1a1540f60934
 
 ---
 # Hello, world アプリを作成する (JS)
@@ -24,7 +24,7 @@ ms.openlocfilehash: 6c81b24f7fa9abe036d4ccd22ee8fa24c011fe77
 
 -   [ユニバーサル Windows アプリとは](whats-a-uwp.md)?
 -   [Windows 10 の新着情報](https://dev.windows.com/whats-new-windows-10-dev-preview)
--   このチュートリアルを行うには、Windows 10 と Visual Studio 2015 が必要です。 [準備](get-set-up.md)。
+-   このチュートリアルを行うには、Windows 10 と Visual Studio 2015 が必要です。 [準備してください](get-set-up.md)。
 -   また、Visual Studio の既定のウィンドウ レイアウトを使用することを前提としています。 既定のレイアウトを変更した場合は、**[ウィンドウ]** メニューの **[ウィンドウ レイアウトのリセット]** を使って、レイアウトをリセットできます。
 
 ## 手順 1: Visual Studio での新しいプロジェクトの作成
@@ -338,7 +338,7 @@ HTML コントロールには専用のマークアップ要素がありますが
 
 1.  index.html ファイルで、`greetingOutput` **div** の後ろに [label](https://msdn.microsoft.com/library/windows/apps/Hh453321) コントロールと [Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) コントロールを追加します。
 
-    ```html
+```html
     <body class="win-type-body">
         <h1>Hello, world!</h1>
         <p>What's your name?</p>
@@ -351,7 +351,7 @@ HTML コントロールには専用のマークアップ要素がありますが
         <div id="ratingControlDiv" data-win-control="WinJS.UI.Rating">
         </div>
     </body>
-    ```
+```
 
 2.  ローカル コンピューターでアプリを実行します。 新しい [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) コントロールに注目してください。
 
@@ -384,7 +384,7 @@ WinJS コントロールのイベント ハンドラーを登録する方法は�
 
 1.  main.html ファイルで、評価値を表示する [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 要素を作成し、それに "ratingOutput" という **ID** を付けます。
 
-    ```html
+```html
         <body class="win-type-body">
         <h1>Hello, world!</h1>
         <p>What's your name?</p>
@@ -402,7 +402,7 @@ WinJS コントロールのイベント ハンドラーを登録する方法は�
 
 2.  main.js ファイルで、**Rating** コントロールの [change](https://msdn.microsoft.com/library/windows/apps/BR211891) イベントのイベント ハンドラーを作成します。このイベント ハンドラーには、`ratingChanged` という名前を付けます。 [eventInfo](https://msdn.microsoft.com/library/windows/apps/Hh465776) パラメーターには、新しいユーザー評価を示す **detail.tentativeRating** プロパティが含まれています。 この値を取得し、出力 **div** で表示します。
 
-    ```javascript
+```javascript
         function ratingChanged(eventInfo) {
 
             var ratingOutput = document.getElementById("ratingOutput");
@@ -412,7 +412,7 @@ WinJS コントロールのイベント ハンドラーを登録する方法は�
 
 3.  [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975) を呼び出す [onactivated](https://msdn.microsoft.com/library/windows/apps/BR212679) イベント ハンドラーのコードを更新して、[then](https://msdn.microsoft.com/library/windows/apps/BR229728) メソッドの呼び出しを追加し、それに `completed` 関数を渡すようにします。 `completed` 関数では、[Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) コントロールをホストする `ratingControlDiv` 要素を取得します。 次に、[winControl](https://msdn.microsoft.com/library/windows/apps/Hh770814) プロパティを使って、実際の **Rating** コントロールを取得します  (この例では、 `completed` 関数がインラインで定義されます)。
 
-    ```javascript
+```javascript
            args.setPromise(WinJS.UI.processAll().then(function completed() {
 
                     // Retrieve the div that hosts the Rating control.
@@ -431,7 +431,7 @@ WinJS コントロールのイベント ハンドラーを登録する方法は�
 
     更新後の [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) イベント ハンドラーは次のようになります。
 
-    ```javascript
+```javascript
     (function () {
     "use strict";
 
@@ -484,18 +484,18 @@ WinJS コントロールのイベント ハンドラーを登録する方法は�
         isFirstActivation = false;
     };
 
-    ```        
+```        
 
-    アプリを実行します。 評価値を選ぶと、[**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) コントロールの下に数値が出力されます。
+    Run the app. When you select a rating value, it outputs the numeric value below the [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) control.
 
-![PC で動作する完成した HelloWorld アプリ](images/helloworld-5-winjs.png)
+![PC で動作する完成した Hello World アプリ](images/helloworld-5-winjs.png)
 
-## 要約
+## 概要
 
 これで、JavaScript と HTML を使って Windows 10 と UWP 用の初めてのアプリを作成しました。
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -22,12 +22,10 @@ UWP アプリでのゲームパッドやリモコンを使ったユーザー エ
 * [ハードウェア ボタン](designing-for-tv.md#hardware-buttons) -
 ゲームパッドとリモコンは異なるボタンと構成を提供します。
 
-* [XY フォーカス ナビゲーションと操作](designing-for-tv.md#xy-focus-navigation-and-interaction)
-             -
+* [XY フォーカス ナビゲーションと操作](designing-for-tv.md#xy-focus-navigation-and-interaction) -
 ユーザーは XY フォーカス ナビゲーションを使うことで、アプリの UI を移動できます。
 
-* [マウス モード](designing-for-tv.md#mouse-mode)
-             -
+* [マウス モード](designing-for-tv.md#mouse-mode) -
 マウス モードは、XY フォーカス ナビゲーションでは十分でないときに、アプリでマウスのエクスペリエンスをエミュレートします。
 
 

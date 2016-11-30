@@ -4,8 +4,8 @@ ms.assetid: C4DB495D-1F91-40EF-A55C-5CABBF3269A2
 description: "Windows.Media.Editing 名前空間の API を使うと、オーディオやビデオのソース ファイルからメディア コンポジションを作成するアプリを簡単に開発できます。"
 title: "メディア コンポジションと編集"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
+ms.sourcegitcommit: 018d7c85aae007a1fd887de0daf6625ccce37a64
+ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
 
 ---
 
@@ -21,6 +21,7 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) クラスは、コンポジションの構成要素となるすべてのメディア クリップのコンテナーで、最終的なコンポジションのレンダリングや、ディスクからの読み込みとディスクへの保存、UI に表示するプレビュー ストリームの提供などの機能を担います。 **MediaComposition** をアプリで使うには、[**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 名前空間に加え、関連する必要な API を含んだ [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 名前空間を追加する必要があります。
 
 [!code-cs[Namespace1](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace1)]
+
 
 **MediaComposition** オブジェクトには、コードのいたるところからアクセスすることになるため、それを格納するためのメンバー変数を宣言するのが一般的です。
 
@@ -54,7 +55,7 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 
 ## コンポジションを MediaElement でプレビューする
 
-メディア コンポジションをユーザーが表示できるようにするには、UI を定義する XAML ファイルに [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) を追加します。
+メディア コンポジションをユーザーが表示できるようにするには、UI を定義する XAML ファイルに [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) を追加します。
 
 [!code-xml[MediaElement](./code/MediaEditing/cs/MainPage.xaml#SnippetMediaElement)]
 
@@ -63,16 +64,16 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 
 [!code-cs[DeclareMediaStreamSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetDeclareMediaStreamSource)]
 
-**MediaComposition** オブジェクトの [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) メソッドを呼び出してコンポジションの **MediaStreamSource** を作成した後、**MediaElement** の [**SetMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn299029) メソッドを呼び出します。 これでコンポジションを UI に表示することができます。
+**MediaComposition** オブジェクトの [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) メソッドを呼び出して、コンポジションの **MediaStreamSource** を作成します。 ファクトリ メソッド [**CreateFromMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn930907) を呼び出して、[**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource) オブジェクトを作成し、それを **MediaPlayerElement** の [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.Source) プロパティに割り当てます。 これでコンポジションを UI に表示することができます。
 
 
 [!code-cs[UpdateMediaElementSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetUpdateMediaElementSource)]
 
 -   [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) は、**MediaComposition** にメディア クリップが少なくとも 1 つは存在している状態で呼び出す必要があります。まったく存在しない場合、返されるオブジェクトは null になります。
 
--   コンポジションの変更を反映するために **MediaElement** のタイムラインが自動的に更新されることはありません。 コンポジションに一連の変更を行って UI の更新が必要になるたびに、**GeneratePreviewMediaStreamSource** と **SetMediaStreamSource** の両方を呼び出すことをお勧めします。
+-   コンポジションの変更を反映するために **MediaElement** のタイムラインが自動的に更新されることはありません。 コンポジションに一連の変更を行って UI の更新が必要になるたびに、**GeneratePreviewMediaStreamSource** を呼び出し、**MediaPlayerElement**、**Source** プロパティを設定することをお勧めします。
 
-ユーザーがページから離れたときは、**MediaElement** の [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) プロパティと **MediaStreamSource** オブジェクトを null に設定して、関連付けられているリソースを解放することをお勧めします。
+ユーザーがページから離れたときは、**MediaPlayerElement** の [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) プロパティと **MediaStreamSource** オブジェクトを null に設定して、関連付けられているリソースを解放することをお勧めします。
 
 [!code-cs[OnNavigatedFrom](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
 
@@ -94,7 +95,7 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 
 [!code-cs[TrimClipBeforeCurrentPosition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetTrimClipBeforeCurrentPosition)]
 
--   任意の UI を使って、トリミングの開始と終了の値をユーザーに指定してもらうことができます。 上の例では、**MediaElement** の [**Position**](https://msdn.microsoft.com/library/windows/apps/br227407) プロパティを使い、[**StartTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652629) と [**EndTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652618) を確認することによって、コンポジションの現在位置で再生されている MediaClip を調べています。 次に、**Position** プロパティと **StartTimeInComposition** プロパティをもう一度使って、クリップの先頭からトリミングする時間を計算します。 **FirstOrDefault** メソッドは、**System.Linq** 名前空間の拡張メソッドです。リストから項目を選択するコードが、このメソッドによって単純化されます。
+-   任意の UI を使って、トリミングの開始と終了の値をユーザーに指定してもらうことができます。 上の例では、**MediaPlayerElement** に関連付けられた [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) の [**Position**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.Position) プロパティを使い、[**StartTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652629) と [**EndTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652618) を確認することによって、コンポジションの現在位置で再生されている **MediaClip** を調べています。 次に、**Position** プロパティと **StartTimeInComposition** プロパティをもう一度使って、クリップの先頭からトリミングする時間を計算します。 **FirstOrDefault** メソッドは、**System.Linq** 名前空間の拡張メソッドです。リストから項目を選択するコードが、このメソッドによって単純化されます。
 -   クリッピングが一切適用されていない状態のメディア クリップの再生時間は、**MediaClip** オブジェクトの [**OriginalDuration**](https://msdn.microsoft.com/library/windows/apps/dn652625) プロパティで確認できます。
 -   トリミングを適用した後のメディア クリップの再生時間は、[**TrimmedDuration**](https://msdn.microsoft.com/library/windows/apps/dn652631) プロパティを使って確認できます。
 -   クリップの元の再生時間を超えるトリミング値を指定してもエラーはスローされません。 ただし、コンポジションに含まれているクリップが 1 つだけであるときに、大きなトリミング値を指定したことによって長さがゼロにまでトリミングされた場合、それ以降の [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) の呼び出しからは、一見コンポジションにクリップが存在しないかのように null が返されます。
@@ -127,7 +128,7 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 
 ## メディア クリップに効果を追加する
 
-コンポジションに含まれる各 **MediaClip** には、オーディオ効果とビデオ効果のリストがあって、そのリストに複数の効果を追加することができます。 これらの効果にはそれぞれ [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) または [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608047) が実装されている必要があります。 次の例は、メディア要素の現在位置を使って表示されている **MediaClip** を選び、[**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) の新しいインスタンスを作成して、メディア クリップの [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) リストに追加しています。
+コンポジションに含まれる各 **MediaClip** には、オーディオ効果とビデオ効果のリストがあって、そのリストに複数の効果を追加することができます。 これらの効果にはそれぞれ [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) または [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608047) が実装されている必要があります。 次の例は、現在の **MediaPlayerElement** 位置を使って表示されている **MediaClip** を選び、[**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) の新しいインスタンスを作成して、メディア クリップの [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) リストに追加しています。
 
 [!code-cs[AddVideoEffect](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddVideoEffect)]
 
@@ -155,6 +156,6 @@ ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

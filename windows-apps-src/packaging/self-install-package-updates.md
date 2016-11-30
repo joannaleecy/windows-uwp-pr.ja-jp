@@ -4,8 +4,8 @@ ms.assetid: 414ACC73-2A72-465C-BD15-1B51CB2334F2
 title: "アプリのパッケージの更新をダウンロードしてインストールする"
 description: "デベロッパー センター ダッシュ ボードでパッケージを必須としてマークする方法と、パッケージ更新をダウンロードしてインストールするためのコードをアプリ内に記述する方法について説明します。"
 translationtype: Human Translation
-ms.sourcegitcommit: 7df130e13685b519d5cc1353c8d64878ecc3d213
-ms.openlocfilehash: adb9b999c88649fc2c8ade838dfa0dabc407c075
+ms.sourcegitcommit: b96d4074a8960db314313c612955900c6a05dc48
+ms.openlocfilehash: 4da8ffe72435501876a1e859d10a16cf19eb11fd
 
 ---
 # アプリのパッケージの更新をダウンロードしてインストールする
@@ -16,30 +16,38 @@ Windows 10 バージョン 1607 以降では、[Windows.Services.Store](https://
 
 これらの機能は、ユーザー ベースが使用しているアプリや関連サービスを、自動的に最新バージョンに維持するために役立ちます。
 
-## アプリのパッケージ更新をダウンロードしてインストールする
+## API の概要
 
-Windows 10 バージョン 1607 以降を対象としたアプリでは、[StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) クラスの次のメソッドを使用して、パッケージ更新をダウンロードし、インストールすることができます。
+Windows 10 バージョン 1607 以降を対象としたアプリでは、[StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) クラスの次のメソッドを使用して、パッケージの更新をダウンロードし、インストールすることができます。
 
-* [GetAppAndOptionalStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync.aspx) は、パッケージ更新が利用可能かどうかを確認するために使用します。
-* [RequestDownloadStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706586.aspx) は、パッケージ更新をダウンロードするために使用します (インストールはしません)。
-* [RequestDownloadAndInstallStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706585.aspx) は、パッケージ更新をダウンロードしてインストールするために使用します。 [RequestDownloadStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706586.aspx) を呼び出すことでパッケージ更新が既にダウンロードされている場合、このメソッドはダウンロード プロセスをスキップし、更新のインストールのみを行います。
+|  メソッド  |  [説明]  |
+|----------|---------------|
+| [GetAppAndOptionalStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync.aspx) | 利用できるパッケージの更新の一覧を取得するには、このメソッドを呼び出します。<br/><br/>**重要**&nbsp;&nbsp;パッケージが認定プロセスを通過した後、そのパッケージの更新がアプリで利用可能になったことを [GetAppAndOptionalStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync.aspx) メソッドが認識するまでには、最大で 1 日間の遅延が生じます。 |
+| [RequestDownloadStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706586.aspx) | このメソッドを呼び出して、利用可能なパッケージの更新をダウンロードします (インストールはされません)。 この OS では、更新プログラムのダウンロードに対してユーザーのアクセス許可を求めるダイアログが表示されます。 |
+| [RequestDownloadAndInstallStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706585.aspx) | 利用可能なパッケージの更新をダウンロードしてインストールするには、このメソッドを呼び出します。 OS では、更新プログラムのダウンロードとインストールに対してユーザーのアクセス許可を求めるダイアログが表示されます。 [RequestDownloadStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706586.aspx) を呼び出すことでパッケージの更新が既にダウンロードされている場合、このメソッドはダウンロード プロセスをスキップし、更新のインストールのみを行います。  |
 
-[StorePackageUpdate](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.aspx) クラスは、利用可能な更新パッケージを表します。
-* [Mandatory](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.mandatory.aspx) プロパティは、パッケージがデベロッパー センター ダッシュ ボードで必須としてマークされているかどうかを確認するために使用します。
-* [Package](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.package.aspx) プロパティは、その他のパッケージ関連データにアクセスするために使用します。
+<span/>
 
->**注** パッケージが認定プロセスを通過した後、そのパッケージ更新が利用可能になったことを [GetAppAndOptionalStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync.aspx) メソッドが認識するまでには、最大で 1 日間の遅延が生じます。
+これらのメソッドは [StorePackageUpdate](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.aspx) オブジェクトを使用して、使用可能な更新プログラム パッケージを表します。 次の [StorePackageUpdate](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.aspx) プロパティを使用して、更新プログラム パッケージに関する情報を取得します。
 
+|  プロパティ  |  説明  |
+|----------|---------------|
+| [Mandatory](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.mandatory.aspx) | このプロパティを使用して、デベロッパー センター ダッシュ ボードでパッケージが必須としてマークされているかどうかを決定します。 |
+| [Package](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.package.aspx) | このプロパティを使用して、基になるパッケージ関連データにアクセスします。 |
 
-### コード例
+<span/>
 
-次のコード例は、アプリでパッケージ更新をダウンロードし、インストールする方法を示したものです。 これらの例は、次のことを前提としています。
+## コード例
+
+次のコード例は、アプリでパッケージの更新をダウンロードし、インストールする方法を示したものです。 これらの例は、次のことを前提としています。
 * コードは、[Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) のコンテキスト内で実行されます。
 * **Page** には、ダウンロード操作のステータスを提供するための、```downloadProgressBar``` という [ProgressBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressbar.aspx) が含まれます。
 * コード ファイルには、[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間の **using** ステートメントがあります。
 * アプリは、アプリを起動したユーザーのコンテキストでのみ動作するシングル ユーザー アプリです。 [マルチ ユーザー アプリ](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) の場合は、[GetDefault](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getdefault.aspx) メソッドの代わりに [GetForUser](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getforuser.aspx) メソッドを使用して、[StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) オブジェクトを取得してください。
 
-#### すべてのパッケージ更新をダウンロードしてインストールする
+<span/>
+
+### すべてのパッケージ更新をダウンロードしてインストールする
 
 次のコード例は、利用可能なすべてのパッケージ更新をダウンロードしてインストールする方法を示したものです。  
 
@@ -90,7 +98,7 @@ public async Task DownloadAndInstallAllUpdatesAsync()
 }
 ```
 
-#### 必須のパッケージ更新を処理する
+### 必須のパッケージ更新を処理する
 
 次のコード例は、前の例とは別に作成されたもので、[Windows デベロッパー センター ダッシュ ボードで必須としてマークされている](#mandatory-dashboard)更新パッケージがあるかどうかを確認する方法を示したものです。 通常、必須のパッケージ更新を正常にダウンロードまたはインストールできない場合は、ユーザーに不便のない方法でアプリのエクスペリエンスをダウングレードする必要があります。
 
@@ -207,9 +215,9 @@ private void HandleMandatoryPackageError()
 <span id="mandatory-dashboard" />
 ## デベロッパー センター ダッシュ ボードでパッケージ申請を必須にする
 
-Windows 10 バージョン 1607 以降を対象としたアプリのパッケージ申請を作成する際には、パッケージを必須としてマークし、それが必須になる日時を指定することができます。 このプロパティが設定されている場合、利用可能なパッケージ更新がこの記事の前半で説明した API を通じて検出されると、アプリは更新パッケージが必須であることを認識し、更新がインストールされるまで、その動作を変更することができます (たとえば、機能を無効にするなど)。
+Windows 10 バージョン 1607 以降を対象としたアプリのパッケージ申請を作成する際には、パッケージを必須としてマークし、それが必須になる日時を指定することができます。 このプロパティが設定されている場合、利用可能なパッケージの更新がこの記事の前半で説明した API を通じて検出されると、アプリは更新パッケージが必須であることを認識し、更新がインストールされるまで、その動作を変更することができます (たとえば、機能を無効にするなど)。
 
->**注** パッケージの必須ステータスは、Microsoft によって強制されるものではありません。 必須設定は、開発者が自身のコード内で必須の更新を実施するためのものです。
+>**注:**&nbsp;&nbsp;パッケージ更新の必須ステータスは Microsoft によって強制されるものではありません。アプリの必須更新プログラムをインストールする必要があることをユーザーに示すための UI は、OS では提供されていません。 必須設定は、開発者が自身のコード内でアプリの必須更新プログラムを強制するために使用するものです。  
 
 パッケージ申請を必須としてマークするには、次の手順に従います。
 
@@ -219,10 +227,10 @@ Windows 10 バージョン 1607 以降を対象としたアプリのパッケー
 
 デベロッパー センター ダッシュ ボードでのパッケージの構成について詳しくは、「[アプリ パッケージのアップロード](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages)」をご覧ください。
 
-  >**注** [パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)を作成する場合は、フライトの **[パッケージ]** ページで同様の UI を使用して、パッケージを必須としてマークできます。 その場合、必須のパッケージ更新は、フライト グループのメンバーであるユーザーにのみ適用されます。
+  >**注**&nbsp;&nbsp;[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)を作成する場合は、フライトの**パッケージ**ページで同様の UI を使用して、パッケージを必須としてマークできます。 その場合、必須のパッケージ更新は、フライト グループのメンバーであるユーザーにのみ適用されます。
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -6,8 +6,8 @@ ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
 label: Interaction primer
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: fe012189566a20203b2bf8cae72f80655eeadfd1
-ms.openlocfilehash: 29a33550c3b8c80c1ae2c8349fc0b771717325f1
+ms.sourcegitcommit: 19e033455caf677c4e65ffb7bd7ce11a5a93b7a9
+ms.openlocfilehash: 5f6aee51984f86c67db9dc77eace614e385df088
 
 ---
 
@@ -21,6 +21,24 @@ ms.openlocfilehash: 29a33550c3b8c80c1ae2c8349fc0b771717325f1
 UWP では "スマート" な状況依存の対話式操作システムが採用されているため、ほとんどの場合、アプリが受け取った固有の入力の種類を個別に処理する必要はありません。 たとえば、タップや長押しなどの静的ジェスチャ、スライドでのパン操作などの操作ジェスチャ、またはデジタル インクのレンダリング操作をサポートするために、汎用的なポインターの種類として処理されるタッチ、タッチパッド、マウス、ペン入力があります。
 
 特定のフォームファクターと組み合わせて使うときの各入力デバイスの種類とその動作、機能、制限事項を把握しておきましょう。 これにより、プラットフォームのコントロールとアフォーダンスがアプリに十分であるか、カスタマイズした操作エクスペリエンスの提供が必要であるかを判断しやすくなります。
+
+## Surface Dial
+
+Windows 10 Anniversary Update では、Windows Wheel と呼ばれる新しいカテゴリの入力デバイスを導入しています。 Surface Dial は、このクラスのデバイスの中で最初のものです。 
+
+### デバイスのサポート
+
+-   タブレット
+-   PC とノート PC
+
+### 一般的な使い方
+
+回転動作 (またはジェスチャ) に基づくフォームファクタを持つ Surface Dial は、プライマリ デバイスからの入力を補完または変更する、セカンダリのマルチ モーダル入力デバイスとして設計されています。 このデバイスは多くの場合、ユーザーが優先的な手でタスクを実行している間に (たとえばペンでインク操作をするときなど)、従属的な手で操作されます。
+
+### 詳細
+
+[Surface Dial の設計ガイドライン](windows-wheel-interactions.md)
+
 
 ## Cortana
 
@@ -332,6 +350,6 @@ Windows でサポートされている対話式操作のエクスペリエンス
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

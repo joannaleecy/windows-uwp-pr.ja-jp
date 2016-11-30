@@ -4,15 +4,15 @@ Description: "Windows デベロッパー センター ダッシュボードの�
 title: "取得レポート"
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2556e7bd8f827287c917c3b9ffa2da980d0d5d88
+ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
+ms.openlocfilehash: afac76ac5b1e1ef2a0ffef3dddf10e8e0023a275
 
 ---
 
 # 取得レポート
 
 
-Windows デベロッパー センター ダッシュボードの**取得**レポートでは、アプリを取得したユーザーと共に、人口統計データやプラットフォームの詳細を確認できます。 このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md) してオフラインで表示することもできます。 または、[Windows ストア分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) を使って、プログラムでこのデータを取得できます。
+Windows デベロッパー センター ダッシュボードの**取得**レポートでは、アプリを取得したユーザーと共に、人口統計データやプラットフォームの詳細を確認できます。 このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md) してオフラインで表示することもできます。 または、[Windows ストア分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) の[アプリの入手数の取得](../monetize/get-app-acquisitions.md)メソッドを使って、プログラムでこのデータを取得できます。
 
 このレポートでは、取得は、新しいユーザーがアプリのライセンスを入手したことを意味します (有料の場合も無料の場合も含む)。
 
@@ -68,6 +68,6 @@ Windows デベロッパー センター ダッシュボードの**取得**レポ
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: "アプリ内広告の UI とユーザー エクスペリエンスのガイドラインについて説明します。"
 title: "アプリ内広告の UI とユーザー エクスペリエンスのガイドライン"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: d464a2de442e6f1833f429c8460c27bf85e577d1
+ms.sourcegitcommit: 8574695fe12042e44831227f81e1f6ea45e9c0da
+ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 
 
 ---
@@ -43,7 +43,7 @@ ms.openlocfilehash: d464a2de442e6f1833f429c8460c27bf85e577d1
 * ユーザーが中心的なタスクに集中するのを妨げないでください。 主要な項目は常にアプリに表示されている必要があります。 広告スペースは 2 次的な項目として組み込まれている必要があります。
 
 <span id="interstitialbestpractices10"/>
-## スポット広告に関するベスト プラクティス
+## スポット広告に関するベスト プラクティスとポリシー
 
 * [スポット広告に関するベスト プラクティス: 推奨事項](#interstitialbestpracticesdo10)
 * [スポット広告に関するベスト プラクティス: 避ける事項](#interstitialbestpracticesavoid10)
@@ -122,12 +122,13 @@ ms.openlocfilehash: d464a2de442e6f1833f429c8460c27bf85e577d1
     * プレーヤーのアバターのシャツをカスタマイズ可能にすることは、カモフラージュ機能がなければ問題ありません。
 
 <span id="interstitialbestpracticesnever10"/>
-### スポットに関するベスト プラクティス: 禁止事項 (ポリシーが適用される)
+### スポット広告に関するベスト プラクティス: 禁止事項 (ポリシーが適用される)
 
 * 広告コンテナー上に UI 要素を配置しないでください。
 
     * 広告主は全画面表示に対して広告料金を支払っています。
 
+<span/>
 
 * ユーザーがアプリを使用している間は、**Show** を呼び出さないでください。
 
@@ -137,12 +138,16 @@ ms.openlocfilehash: d464a2de442e6f1833f429c8460c27bf85e577d1
 
 * 広告を使って、通貨として消費できるものや、他のユーザーと取引できるものを取得できるようにしないでください。
 
- 
+* [ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.erroroccurred.aspx) イベントのイベント ハンドラーのコンテキストで新しい広告を要求しないでください。 これにより、無限ループが発生して、広告サービスの操作上の問題の原因となります。
+
+* スポット広告を要求した後は、アプリに提供される広告を非表示にしないようにしてください。 広告を要求し、要求に対する応答で [AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) イベントを受信した場合は、広告を表示する必要があります。 他の広告ネットワークを使用して独自の広告仲介ソリューションを実装する場合は、他の広告ネットワークへの要求が失敗した後にのみ、**InterstitialAd** コントロールの広告を要求します。
 
  
 
+ 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Nov16_HO1-->
 
 

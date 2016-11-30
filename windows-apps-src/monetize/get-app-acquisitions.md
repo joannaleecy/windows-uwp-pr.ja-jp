@@ -1,18 +1,18 @@
 ---
 author: mcleanbyron
 ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
-description: "特定の日付範囲などのオプション フィルターを使ってアプリケーションの集計入手データを取得するには、Windows ストア分析 API でこのメソッドを使います。"
+description: "特定の日付範囲などのオプション フィルターを使って、アプリケーションに関する集計入手データを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。"
 title: "アプリの入手数の取得"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: c3efa347d11c2694d8814eb31f7e5f6825c7173a
+ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
+ms.openlocfilehash: db271b0d1ec3b20ab2ead2e35e06fd97adb2ce0c
 
 ---
 
 # アプリの入手数の取得
 
 
-特定の日付範囲などのオプション フィルターを使ってアプリケーションの集計入手データを取得するには、Windows ストア分析 API でこのメソッドを使います。 このメソッドは、データを JSON 形式で返します。
+特定の日付範囲などのオプション フィルターを使って、アプリケーションに関する JSON 形式の集計入手データを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。 この情報は、Windows デベロッパー センター ダッシュボードの[取得レポート](../publish/acquisitions-report.md)でも確認することができます。
 
 ## 前提条件
 
@@ -20,7 +20,7 @@ ms.openlocfilehash: c3efa347d11c2694d8814eb31f7e5f6825c7173a
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Windows ストア分析 API に関するすべての[前提条件](access-analytics-data-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
 ## 要求
 
@@ -117,8 +117,33 @@ ms.openlocfilehash: c3efa347d11c2694d8814eb31f7e5f6825c7173a
 <li><strong>orderName</strong></li>
 </ul>
 <p><em>order</em> パラメーターは省略可能であり、<strong>asc</strong> または <strong>desc</strong> を指定して、各フィールドを昇順または降順にすることができます。 既定値は <strong>asc</strong> です。</p>
-<p>例: <em>orderby</em> string: <em>orderby=date,market</em></p></td>
-<td align="left">×</td>
+<p><em>orderby</em> 文字列の例: <em>orderby=date,market</em></p></td>
+<td align="left">必須ではない</td>
+</tr>
+<tr class="odd">
+<td align="left">groupby</td>
+<td align="left">string</td>
+<td align="left"><p>データ集計を指定したフィールドのみに適用するステートメントです。 次のフィールドを指定できます。</p>
+<ul>
+<li><strong>date</strong></li>
+<li><strong>applicationName</strong></li>
+<li><strong>acquisitionType</strong></li>
+<li><strong>ageGroup</strong></li>
+<li><strong>storeClient</strong></li>
+<li><strong>gender</strong></li>
+<li><strong>market</strong></li>
+<li><strong>osVersion</strong></li>
+<li><strong>deviceType</strong></li>
+<li><strong>orderName</strong></li>
+</ul>
+<p>返されるデータ行には、<em>groupby</em> パラメーターに指定したフィールドと次の値が含まれます。</p>
+<ul>
+<li><strong>date</strong></li>
+<li><strong>applicationId</strong></li>
+<li><strong>acquisitionQuantity</strong></li>
+</ul>
+<p><em>groupby</em> パラメーターは、<em>aggregationLevel</em> パラメーターと同時に使用できます。 例: <em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p></td>
+<td align="left"></td>
 </tr>
 </tbody>
 </table>
@@ -307,6 +332,7 @@ Authorization: Bearer <your access token>
 
 ## 関連トピック
 
+* [取得レポート](../publish/acquisitions-report.md)
 * [Windows ストア サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)
 * [アドオンの入手数の取得](get-in-app-acquisitions.md)
 * [エラー報告データの取得](get-error-reporting-data.md)
@@ -315,6 +341,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

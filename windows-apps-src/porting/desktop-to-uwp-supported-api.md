@@ -1,4 +1,14 @@
-# 変換されたデスクトップ アプリでサポートされている UWP API
+---
+author: awkoren
+Description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) に変換したデスクトップ アプリに署名する方法について説明します。"
+Search.Product: eADQiWindows 10XVcnh
+title: "変換されたデスクトップ アプリでサポートされている UWP API"
+translationtype: Human Translation
+ms.sourcegitcommit: 3751b16837a1e12f68954b2dec7dfaf0fb8554b6
+ms.openlocfilehash: c99d103fe5d613c5b654ba2b0bb83987a7fcb944
+
+---
+# Desktop Bridge で変換されたアプリでサポートされている UWP API
 
 変換されたデスクトップ アプリは、UWP アプリに完全に移行されていない場合でも、さまざまなユニバーサル Windows プラットフォーム (UWP) API を使うことができます。 この記事では、変換されたアプリが使うことができるクラスについて説明します。 
 
@@ -32,7 +42,7 @@
 
 変換されたアプリでサポートされる UWP API の詳しい一覧を次に示します。 [変換されたアプリで新たにサポートされる API](#new) または [変換されたアプリとデスクトップ アプリケーションの両方でサポートされる API](#both) を表示することができます。 
 
-変換されたアプリから UWP API を呼び出す方法の例については、「[Desktop Bridgeのコード サンプル (GitHub)](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)」をご覧ください。
+WinRT API の使用方法を示した例については、GitHub で[デスクトップ アプリから UWP へのブリッジのコード サンプル](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)および[ユニバーサル Windows プラットフォーム (UWP) のアプリ サンプル](https://github.com/Microsoft/Windows-universal-samples)をご覧ください。
 
 <span id="new" />
 ### 新たに変換されたアプリでサポートされる API
@@ -1030,6 +1040,6 @@
 
 
 
-<!--HONumber=Sep16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

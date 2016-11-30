@@ -5,8 +5,8 @@ description: "このトピックでは、Windows 10 ユニバーサル Windows �
 keywords: "アプリのライフサイクル 中断 再開 起動 アクティブ化"
 ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 translationtype: Human Translation
-ms.sourcegitcommit: 79d0b4c7208d2fa79ceb7f5e212255ff94d6fe3a
-ms.openlocfilehash: 86e0f10e45445df82585bd58b0f2583c07a19cb7
+ms.sourcegitcommit: df297d442a4c636fac886b113ada8a01aa37a015
+ms.openlocfilehash: 6e7b92e81aa0a00e579e0ca89234a90e68c253f1
 
 ---
 
@@ -85,7 +85,7 @@ Windows によって、アプリの起動時に、アプリのスプラッシュ
 
 ## バックグラウンドでの実行 ##
 
-Windows 10 バージョン 1607 の新機能として、1 つのプロセス内でバックグラウンドでコードを実行できます。 詳しくは、[シングル プロセス モデルでのバックグラウンド アクティビティに関する記事](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)をご覧ください。 シングル プロセスのバックグラウンド処理については、この記事では詳しく説明しませんが、アプリのライフサイクルへの影響として、アプリをバックグラウンドで実行する場合に関連する 2 つの新しいイベントが追加されています。 [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) と [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) です。
+Windows 10 バージョン 1607 以降では、アプリは、アプリ自体と同じプロセスでバックグラウンド タスクを実行できます。 詳しくは、[シングル プロセス モデルでのバックグラウンド アクティビティに関する記事](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)をご覧ください。 インプロセスのバックグラウンド処理については、この記事では詳しく説明しませんが、アプリのライフサイクルへの影響として、アプリをバックグラウンドで実行する場合に関連する 2 つの新しいイベントが追加されています。 [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) と [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) です。
 
 これらのイベントは、アプリの UI を表示するかどうかも反映します。
 
@@ -220,7 +220,6 @@ Windows 10 バージョン 1607 の新機能として、1 つのプロセス内�
 * [アプリのアクティブ化の処理](activate-an-app.md)
 * [アプリの中断の処理](suspend-an-app.md)
 * [アプリの再開の処理](resume-an-app.md)
-* [アプリの事前起動の処理](handle-app-prelaunch.md)
 * [シングル プロセス モデルでのバックグラウンド アクティビティ](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)
 * [バックグラウンドでのメディアの再生](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
 
@@ -230,6 +229,6 @@ Windows 10 バージョン 1607 の新機能として、1 つのプロセス内�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

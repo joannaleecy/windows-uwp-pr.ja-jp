@@ -6,8 +6,8 @@ MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "Windows 情報保護 (WIP)"
 translationtype: Human Translation
-ms.sourcegitcommit: 1070561ea95cd1d884303fdd476b40a9ec88e390
-ms.openlocfilehash: 2beec354ed7dbb3cc2d4cb502977ce028b4eaf1d
+ms.sourcegitcommit: 724d9edf67d0f73ceb3eb2ac323e0a0f42f2dd0d
+ms.openlocfilehash: f9cfa8d1d7ea4e78208a4fb3fc853884a13a676c
 
 ---
 
@@ -66,9 +66,6 @@ WIP API を使用してアプリを対応させてから、アプリをエンタ
 
   たとえば、企業ネットワーク以外のエンドポイントにデータが送信されないようにしたり、ローミングを許可する前にポータブルな暗号化形式でデータをラップしたりすることができます。また必要であれば (ポリシーの設定に依存)、許可リストに登録されていないアプリに企業データを貼り付ける前にユーザーに確認を表示することもできます。
 
-> **注**  WIP のファイル保護では、Rights Management Service (RMS) キーが利用されます (このキーがプロビジョニングされている場合)。これらのキーはデバイス間でローミングできるため、保護されたデータもローミングできるようになります。 RMS キーがない場合、これらの API はローカルの選択的ワイプ キーにフォールバックし、ローミング機能が制限されます。 暗号化されてローミングされるデータには、ダウンレベルの Windows と、Microsoft からプラットフォーム固有の RMS アプリが提供されているサード パーティ製デバイスでアクセスできるほか、RMS 対応のサード パーティ アプリを使ってアクセスすることもできます。
-
-
 
 
 
@@ -79,6 +76,6 @@ WIP API を使用してアプリを対応させてから、アプリをエンタ
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

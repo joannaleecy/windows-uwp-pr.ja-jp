@@ -1,20 +1,17 @@
 ---
 author: mcleanbyron
 ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
-description: "特定の日付範囲などのオプション フィルターを使って集計エラー報告データを取得するには、Windows ストア分析 API でこのメソッドを使います。"
+description: "特定の日付範囲などのオプション フィルターを使って集計エラー報告データを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。"
 title: "エラー報告データの取得"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: 64bd3491bc8ff37f5eb7ca852ad6dc738f6e2711
+ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
+ms.openlocfilehash: 89b1c9b44aaabb49f78953877ae11d2d7a0a2a2f
 
 ---
 
 # エラー報告データの取得
 
-
-
-
-特定の日付範囲などのオプション フィルターを使って集計エラー報告データを取得するには、Windows ストア分析 API でこのメソッドを使います。 このメソッドは、データを JSON 形式で返します。
+特定の日付範囲などのオプション フィルターを使って JSON 形式の集計エラー報告データを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。 この情報は、Windows デベロッパー センター ダッシュボードの[状態レポート](../publish/health-report.md)でも確認することができます。
 
 ## 前提条件
 
@@ -146,7 +143,7 @@ ms.openlocfilehash: 64bd3491bc8ff37f5eb7ca852ad6dc738f6e2711
 <li><strong>packageVersion</strong></li>
 </ul>
 <p><em>order</em> パラメーターは省略可能であり、<strong>asc</strong> または <strong>desc</strong> を指定して、各フィールドを昇順または降順にすることができます。 既定値は <strong>asc</strong> です。</p>
-<p>例: <em>orderby</em> string: <em>orderby=date,market</em></p></td>
+<p><em>orderby</em> 文字列の例: <em>orderby=date,market</em></p></td>
 <td align="left">×</td>
 </tr>
 </tbody>
@@ -322,6 +319,7 @@ Authorization: Bearer <your access token>
 
 ## 関連トピック
 
+* [状態レポート](../publish/health-report.md)
 * [Windows ストア サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)
 * [アプリの入手数の取得](get-app-acquisitions.md)
 * [アドオンの入手数の取得](get-in-app-acquisitions.md)
@@ -330,6 +328,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -1,20 +1,17 @@
 ---
 author: mcleanbyron
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
-description: "特定の日付範囲などのオプション フィルターを使って集計評価データを取得するには、Windows ストア分析 API でこのメソッドを使います。"
+description: "特定の日付範囲などのオプション フィルターを使って集計評価データを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。"
 title: "アプリの評価の取得"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: 8ec588ceb0a7c8bd6a75f72bf0a2d48c697a8e6a
+ms.sourcegitcommit: 67845c76448ed13fd458cb3ee9eb2b75430faade
+ms.openlocfilehash: 45df3a1296ba06551e08705e9d72a693ad3d33e5
 
 ---
 
 # アプリの評価の取得
 
-
-
-
-特定の日付範囲などのオプション フィルターを使って集計評価データを取得するには、Windows ストア分析 API でこのメソッドを使います。 このメソッドは、データを JSON 形式で返します。
+特定の日付範囲などのオプション フィルターを使って JSON 形式の集計評価データを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。 この情報は、Windows デベロッパー センター ダッシュボードの[評価レポート](../publish/ratings-report.md)でも確認することができます。
 
 ## 前提条件
 
@@ -116,8 +113,33 @@ ms.openlocfilehash: 8ec588ceb0a7c8bd6a75f72bf0a2d48c697a8e6a
 <li><strong>isRevised</strong></li>
 </ul>
 <p><em>order</em> パラメーターは省略可能であり、<strong>asc</strong> または <strong>desc</strong> を指定して、各フィールドを昇順または降順にすることができます。 既定値は <strong>asc</strong> です。</p>
-<p>例: <em>orderby</em> string: <em>orderby=date,market</em></p></td>
-<td align="left">×</td>
+<p><em>orderby</em> 文字列の例: <em>orderby=date,market</em></p></td>
+<td align="left">必須ではない</td>
+</tr>
+<tr class="odd">
+<td align="left">groupby</td>
+<td align="left">string</td>
+<td align="left"><p>データ集計を指定したフィールドのみに適用するステートメントです。 次のフィールドを指定できます。</p>
+<ul>
+<li><strong>date</strong></li>
+<li><strong>applicationName</strong></li>
+<li><strong>market</strong></li>
+<li><strong>osVersion</strong></li>
+<li><strong>deviceType</strong></li>
+<li><strong>isRevised</strong></li>
+</ul>
+<p>返されるデータ行には、<em>groupby</em> パラメーターに指定したフィールドと次の値が含まれます。</p>
+<ul>
+<li><strong>date</strong></li>
+<li><strong>applicationId</strong></li>
+<li><strong>fiveStars</strong></li>
+<li><strong>fourStars</strong></li>
+<li><strong>threeStars</strong></li>
+<li><strong>twoStars</strong></li>
+<li><strong>oneStar</strong></li>
+</ul>
+<p><em>groupby</em> パラメーターは、<em>aggregationLevel</em> パラメーターと同時に使用できます。 例: <em>&amp;groupby=osVersion,market&amp;aggregationLevel=week</em></p></td>
+<td align="left"></td>
 </tr>
 </tbody>
 </table>
@@ -261,6 +283,7 @@ Authorization: Bearer <your access token>
 
 ## 関連トピック
 
+* [評価レポート](../publish/ratings-report.md)
 * [Windows ストア サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)
 * [アプリの入手数の取得](get-app-acquisitions.md)
 * [アドオンの入手数の取得](get-in-app-acquisitions.md)
@@ -269,6 +292,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

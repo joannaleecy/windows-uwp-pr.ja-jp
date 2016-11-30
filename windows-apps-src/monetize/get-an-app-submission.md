@@ -4,8 +4,8 @@ ms.assetid: BF296C25-A2E6-48E4-9D08-0CCDB5FAE0C8
 description: "既存のアプリの提出のデータを取得するには、Windows ストア提出 API 内の以下のメソッドを使用します。"
 title: "Windows ストア提出 API を使用したアプリの提出の取得"
 translationtype: Human Translation
-ms.sourcegitcommit: 178b70db1583790c174d65e060c8bce6e4f69243
-ms.openlocfilehash: c845b59919a3a487949bc8926f7261992dac60ae
+ms.sourcegitcommit: 27d8385c7250feba89c6970033ad7ec170f0646c
+ms.openlocfilehash: d7e4e0f355828b3d9b7bbcdd5ceee43dad9fe37c
 
 ---
 
@@ -14,17 +14,19 @@ ms.openlocfilehash: c845b59919a3a487949bc8926f7261992dac60ae
 
 
 
-既存のアプリの提出のデータを取得するには、Windows ストア提出 API 内の以下のメソッドを使用します。 Windows ストア提出 API を使ったアプリの提出の作成プロセスについて詳しくは、「[アプリの提出の管理](manage-app-submissions.md)」をご覧ください。
+既存のアプリの提出のデータを取得するには、Windows ストア提出 API 内の以下のメソッドを使用します。 Windows ストア申請 API を使ったアプリの申請の作成プロセスについて詳しくは、「[アプリの申請の管理](manage-app-submissions.md)」をご覧ください。
+
+>**重要**&nbsp;&nbsp;近い将来、Microsoft は Windows デベロッパー センターでアプリの申請の価格データ モデルを変更する予定です。 変更が実施されると、このメソッドの応答データに含まれる**価格**リソースが空になり、このメソッドを使用してアプリの申請に関する試用期間、価格、および販売データを取得することが一時的にできなくなります。 将来的には、Windows ストア申請 API を更新し、アプリの申請の価格情報にプログラムでアクセスする新しい方法を導入する予定です。 詳しくは、「[価格リソース](manage-app-submissions.md#pricing-object)」をご覧ください。
 
 ## 前提条件
 
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
-* Windows ストア提出 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
+* Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
 * このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
-* デベロッパー センターのアカウントでアプリの提出を作成します。 この操作は、デベロッパー センター ダッシュボードまたは[アプリ提出の作成](create-an-app-submission.md)メソッドを使って実行できます。
+* デベロッパー センターのアカウントでアプリの申請を作成します。 この操作は、デベロッパー センター ダッシュボードまたは[アプリ申請の作成](create-an-app-submission.md)メソッドを使って実行できます。
 
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア提出 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
+>**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
 ## 要求
 
@@ -41,7 +43,7 @@ ms.openlocfilehash: c845b59919a3a487949bc8926f7261992dac60ae
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
 <span/>
 
@@ -49,7 +51,7 @@ ms.openlocfilehash: c845b59919a3a487949bc8926f7261992dac60ae
 
 | 名前        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | 必須。 提出を更新するアプリのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。  |
+| applicationId | string | 必須。 取得する申請が含まれるアプリのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。  |
 | submissionId | string | 必須。 取得する提出の ID。 この ID は、[アプリの提出の作成](create-an-app-submission.md)要求の応答データに含まれており、デベロッパー センター ダッシュボードで確認できます。  |
 
 <span/>
@@ -148,6 +150,16 @@ Authorization: Bearer <your access token>
       ]
     }
   ],
+  "packageDeliveryOptions": {
+    "packageRollout": {
+        "isPackageRollout": false,
+        "packageRolloutPercentage": 0,
+        "packageRolloutStatus": "PackageRolloutNotStarted",
+        "fallbackSubmissionId": "0"
+    },
+    "isMandatoryUpdate": false,
+    "mandatoryUpdateEffectiveDate": "1601-01-01T00:00:00.0000000Z"
+  },
   "enterpriseLicensing": "Online",
   "allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies": true,
   "allowTargetFutureDeviceFamilies": {
@@ -184,6 +196,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

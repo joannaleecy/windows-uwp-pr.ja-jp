@@ -4,8 +4,8 @@ Description: "ユニバーサル Windows プラットフォーム (UWP) アプ�
 title: "プロジェクトを作成し、デベロッパー センター ダッシュボードでリモート変数を定義する"
 ms.assetid: C3809FF1-0A6A-4715-B989-BE9D0E8C9013
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: ea455892717546f7f789054609664ca1c0017699
+ms.sourcegitcommit: 32c1b379ee3913e267664e6d125fbc3daf480bb3
+ms.openlocfilehash: 88a55c9ed64d5f52f959a1c68618dc5296dc24d6
 
 ---
 
@@ -13,8 +13,12 @@ ms.openlocfilehash: ea455892717546f7f789054609664ca1c0017699
 
 実験を始めるには、デベロッパー センター ダッシュボードでアプリの実験[プロジェクト](run-app-experiments-with-a-b-testing.md#terms)を作成し、アプリがアクセスできるリモート変数を定義します。
 
+次の手順では、プロジェクトを作成するための主な手順について説明します。 プロジェクトの作成と実験の実行のプロセスについて詳しく示すチュートリアルについては、「[A/B テストを使用して最初の実験を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)」をご覧ください。
+
+## 手順
+
 1. [デベロッパー センター ダッシュボード](https://dev.windows.com/overview)にサインインします。
-2. **[Your apps]** で、実験を作成するアプリを選択します。
+2. **[アプリ]** で、実験を作成するアプリを選択します。
 3. ナビゲーション ウィンドウで、**[Services]** を選択し、**[Experimentation]** を選択します。
 4. **[Experimentation]** ページで、**[プロジェクト]** セクション **[新しいプロジェクト]** ボタンをクリックします。 1 つ以上のプロジェクトを既に作成している場合、それらのプロジェクトが **[プロジェクト]** セクションに表示されます。
 5. **[新しいプロジェクト]** ページで、新しいプロジェクトの名前を入力します。
@@ -37,10 +41,10 @@ ms.openlocfilehash: ea455892717546f7f789054609664ca1c0017699
 * [デベロッパー センター ダッシュボードで実験を定義する](define-your-experiment-in-the-dev-center-dashboard.md)
 * [デベロッパー センター ダッシュボードで試験的機能を管理する](manage-your-experiment.md)
 * [A/B テストを使用して最初の試験的機能を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)
-* [A/B テストを使用してアプリの試験的機能を実行する](run-app-experiments-with-a-b-testing.md)
+* [A/B テストを使用してアプリの実験を実行する](run-app-experiments-with-a-b-testing.md)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,8 +4,8 @@ Description: "アプリ申請プロセスの [価格と使用可能状況] の�
 title: "アプリの価格と使用可能状況の設定"
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 translationtype: Human Translation
-ms.sourcegitcommit: fc5265cf7d455e34225fd74f9792cdb46b0029d7
-ms.openlocfilehash: 91a65020c29e990d96ab26f5abbd777da7810658
+ms.sourcegitcommit: 2ce776b69eed7d5803db7a37b54c4b00f58dc6c0
+ms.openlocfilehash: e5b956f819af3cbbd7e00d77de77a15678a2ab4c
 
 ---
 
@@ -26,7 +26,7 @@ ms.openlocfilehash: 91a65020c29e990d96ab26f5abbd777da7810658
 
 多くの開発者は、ストアが提供する試用版の機能を使って、ユーザーが無料でアプリを試用できるようにすることを選択します。 既定では、アプリは無料試用版として利用できません。無料試用版を提供する場合は、**[無料試用版]** ドロップダウンで値を選びます。
 
-ユーザーが期限なしに無料でアプリにアクセスできるようにするには、**[試用に期限はありません]** を選びます。 ユーザーに通常版の購入を促す場合は、[試用版の機能を除外または制限する](https://msdn.microsoft.com/library/windows/apps/mt219685)コードを追加します。
+ユーザーが期限なしに無料でアプリにアクセスできるようにするには、**[試用に期限はありません]** を選びます。 ユーザーに通常版の購入を促す場合は、[試用版の機能を除外または制限する](../monetize/in-app-purchases-and-trials.md)コードを追加します。
 
 また、**[1 日]**、**[7 日間]**、**[15 日間]**、または **[30 日間]** の期限付きの試用版を選ぶオプションもあります。 試用期間中、機能を制限することも、すべての機能を使えるようにすることもできます。
 
@@ -86,10 +86,6 @@ ms.openlocfilehash: 91a65020c29e990d96ab26f5abbd777da7810658
 
 
 
-
-
-
-
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

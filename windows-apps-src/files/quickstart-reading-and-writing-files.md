@@ -4,8 +4,8 @@ ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
 title: "ファイルの作成、書き込み、および読み取り"
 description: "StorageFile オブジェクトを使ってファイルの読み取りと書き込みを行います。"
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: 145acd5a5a6143a31b792df721d94f9ddc5718fa
+ms.sourcegitcommit: 24f50f2c4ac7fcfe931759d42ba73e758d77f6e8
+ms.openlocfilehash: 2a9f5de71712e657bc9a0a39b668085c399ce9fb
 
 ---
 
@@ -139,7 +139,6 @@ using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
 ```
 ```vb
     Dim dataWriter As New DataWriter(outputStream)
-
     dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.")
 ```
 
@@ -181,9 +180,9 @@ string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
 Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
 ```
 
-**バッファーを使ったファイルからのバイトの読み取り (2 ステップ)**
+**バッファーを使ったファイルからのテキストの読み取り (2 ステップ)**
 
-1.  まず、[**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) クラスの [**ReadBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701468) メソッドを呼び出してファイルのバッファーからバイトを読み取ります。
+1.  まず[**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) クラスの [**ReadBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701468) メソッドを呼び出します。
 > [!div class="tabbedCodeSnippets"]
 ```cs
 var buffer = await Windows.Storage.FileIO.ReadBufferAsync(sampleFile);
@@ -260,6 +259,6 @@ Dim dataReader As New DataReader(inputStream)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

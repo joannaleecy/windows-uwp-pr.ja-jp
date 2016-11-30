@@ -3,8 +3,8 @@ title: "サービスとしての Windows アプリケーション開発 (Windows
 description: "アプリのリリースを分離し、特定の Windows ビルドからサポートします。"
 author: jdeckerMS
 translationtype: Human Translation
-ms.sourcegitcommit: a86002c944841536d37735bb8c4b657905582144
-ms.openlocfilehash: 72ac67b17fc519d374798e5121b309f664ff6b1b
+ms.sourcegitcommit: a98d35162c81f720e4d45990befa289abd2f2c5c
+ms.openlocfilehash: c61800c32e8ab98c13a356e7a61b11ff5b364ffe
 
 ---
 
@@ -151,14 +151,14 @@ Windows Insider に登録する前に、参加するユーザーについて次�
 
 フライティング後のビルドに対してアプリが動作するかどうかをお知らせください。 テスト中にアプリで問題が見つかった場合、パートナー ポータルにアクセスできる場合はパートナー ポータルにログを登録してください。または、Microsoft の担当者にお伝えください。 ユーザー向けの高品質なエクスペリエンスを協力して構築するために、情報をお寄せください。
 
-### 手順 4: Windows 10 で登録する
-[Ready for Windows 10](http://go.microsoft.com/fwlink/?LinkID=780580) の Web サイトには、Windows 10 に対応したソフトウェアが登録されています。 Windows 10 の導入を検討している世界中の企業や組織の IT 管理者向けです。 IT 管理者はこのサイトをチェックして、エンタープライズに導入したソフトウェアが Windows 10 でサポートされているかどうかを確認できます。
+### 手順 4: Ready For Windows に登録する
+[Ready for Windows](http://go.microsoft.com/fwlink/?LinkID=780580) の Web サイトには、Windows 10 に対応したソフトウェアが登録されています。 Windows 10 の導入を検討している世界中の企業や組織の IT 管理者向けです。 IT 管理者はこのサイトをチェックして、エンタープライズに導入したソフトウェアが Windows 10 でサポートされているかどうかを確認できます。
 
 ## 関連トピック
 [更新プログラムおよびアップグレードに関する Windows 10 のサービス オプション](https://technet.microsoft.com/itpro/windows/manage/introduction-to-windows-10-servicing)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

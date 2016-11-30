@@ -4,8 +4,8 @@ description: "xBind マークアップ拡張は Binding の代わりです。 xB
 title: "xBind マークアップ拡張"
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 translationtype: Human Translation
-ms.sourcegitcommit: 0f9955b897c626e7f6abb5557658e1b1e5937ffd
-ms.openlocfilehash: 7380386a77338c1fce7a7184b558a06605ffdf33
+ms.sourcegitcommit: 2dc706412684ded7fe4e98c6d01fb75ae65abd5f
+ms.openlocfilehash: b7d1dd183ba35e4b694a80d3e43628c928b218e5
 
 ---
 
@@ -191,7 +191,7 @@ Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Orde
 
 コンパイル済みバインドを含むページやユーザー コントロールでは、生成されたコードに "Bindings" プロパティが含まれます。 これには次のメソッドが含まれます。
 - **Update()** - すべてのコンパイル済みバインドの値を更新します。 すべての 1 方向/双方向バインディングには、変更を検出するためにフックされたリスナーがあります。
-- **Initiatlize()** - バインディングがまだ初期化されていない場合、Update() を呼び出してバインディングを初期化します。
+- **Initialize()** - バインディングがまだ初期化されていない場合、Update() を呼び出してバインディングを初期化します。
 - **StopTracking()** - 1 方向と双方向のバインディングに作成されたすべてのリスナーをフック解除します。 Update() メソッドを使って再初期化できます。
 
 > [!NOTE]
@@ -224,6 +224,6 @@ Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Orde
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

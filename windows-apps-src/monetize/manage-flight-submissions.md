@@ -4,8 +4,8 @@ ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
 description: "Windows デベロッパー センター アカウントに登録するアプリのパッケージ フライトの申請を管理するには、以下の Windows ストア申請 API のメソッドを使います。"
 title: "Windows ストア申請 API を使用したパッケージ フライトの申請の管理"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 18d28495b80101cf5cfe53869b0f5cd3d61b50c9
+ms.sourcegitcommit: 9b76a11adfab838b21713cb384cdf31eada3286e
+ms.openlocfilehash: 7b59bb255774c8050232831e7f0d7a78a921ec6d
 
 ---
 
@@ -20,12 +20,16 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 | メソッド        | URI    | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | 既存のパッケージ フライトの申請のデータを取得します。 詳しくは、「[パッケージ フライトの申請の取得](get-a-flight-submission.md)」をご覧ください。 |
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status``` | 既存のパッケージ フライトの申請の取得を取得します。 詳しくは、「[パッケージ フライトの申請の状態の取得](get-status-for-a-flight-submission.md)」をご覧ください。 |
-| POST | ```https://manage.devcenter.microsoft.com/v1.0/applications/{applicationId}/flights/{flightId}/submissions``` | Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトの申請を新規作成します。 詳しくは、「[パッケージ フライトの申請の作成](create-a-flight-submission.md)」をご覧ください。 |
-| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit``` | 新しいパッケージ フライトまたは更新されたパッケージ フライトの申請を Windows デベロッパー センターにコミットします。 詳しくは、「[パッケージ フライトの申請のコミット](commit-a-flight-submission.md)」をご覧ください。 |
-| PUT | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | 既存のパッケージ フライトの申請のデータを更新します。 詳しくは、「[パッケージ フライトの申請の更新](update-a-flight-submission.md)」をご覧ください。 |
-| DELETE | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | パッケージ フライトの申請を削除します。 詳しくは、「[パッケージ フライトの申請の削除](delete-a-flight-submission.md)」をご覧ください。 |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | 既存のパッケージ フライトの申請のデータを取得します。 詳しくは、[この記事](get-a-flight-submission.md)をご覧ください。 |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status``` | 既存のパッケージ フライトの申請の取得を取得します。 詳しくは、[この記事](get-status-for-a-flight-submission.md)をご覧ください。 |
+| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions``` | Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトの申請を新規作成します。 詳しくは、[この記事](create-a-flight-submission.md)をご覧ください。 |
+| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit``` | 新しいパッケージ フライトまたは更新されたパッケージ フライトの申請を Windows デベロッパー センターにコミットします。 詳しくは、[この記事](commit-a-flight-submission.md)をご覧ください。 |
+| PUT | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | 既存のパッケージ フライトの申請のデータを更新します。 詳しくは、[この記事](update-a-flight-submission.md)をご覧ください。 |
+| DELETE | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | パッケージ フライトの申請を削除します。 詳しくは、[この記事](delete-a-flight-submission.md)をご覧ください。 |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/packagerollout``` | パッケージ フライトの申請の段階的なロールアウトの情報を取得します。 詳しくは、[この記事](get-package-rollout-info-for-a-flight-submission.md)をご覧ください。 |
+| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/updatepackagerolloutpercentage``` | パッケージ フライトの申請の段階的なロールアウトの割合を更新します。 詳しくは、[この記事](update-the-package-rollout-percentage-for-a-flight-submission.md)をご覧ください。 |
+| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/haltpackagerollout``` | パッケージ フライトの申請の段階的なロールアウトを停止します。 詳しくは、[この記事](halt-the-package-rollout-for-a-flight-submission.md)をご覧ください。 |
+| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/finalizepackagerollout``` | パッケージ フライトの申請の段階的なロールアウトの情報を完了します。 詳しくは、[この記事](finalize-the-package-rollout-for-a-flight-submission.md)をご覧ください。 |
 
 <span id="create-a-package-flight-submission">
 ## パッケージ フライトの申請の作成
@@ -34,9 +38,9 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 1. 「[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」に記載されている前提条件が満たされていない場合は、前提条件を整えてください。これには、Azure AD アプリケーションの Windows デベロッパー センター アカウントへの関連付けや、クライアント ID およびキーの取得が含まれます。 この作業は 1 度行うだけでよく、クライアント ID とキーを入手したら、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらを再利用できます。  
 
-2. [Azure AD アクセス トークンを取得します](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 このアクセス トークンを Windows ストア申請 API のメソッドに渡す必要があります。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
+2. [Azure AD アクセス トークンを取得します](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 このアクセス トークンを Windows ストア申請 API のメソッドに渡す必要があります。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
 
-3. Windows ストア申請 API の次のメソッドを実行します。 このメソッドによって、新しい申請が作成され、審議中になります。これは、前回発行した申請のコピーです。 詳しくは、「[パッケージ フライトの申請の作成](create-a-flight-submission.md)」をご覧ください。
+3. Windows ストアの申請 API の次のメソッドを実行して、[パッケージ フライトの申請を作成](create-a-flight-submission.md)します。 このメソッドによって、新しい申請が作成され、審査中になります。これは、前回発行した申請のコピーです。
 
   ```
   POST https://manage.devcenter.microsoft.com/v1.0/my/applications{applicationId}/flights/{flightId}/submissions
@@ -46,7 +50,7 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 4. 申請用に新しいパッケージを追加する場合は、[パッケージを準備](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements)して、ZIP アーカイブに追加します。
 
-5. 新しい申請用に必要な変更を行って申請データを更新し、次のメソッドを実行して申請を更新します。 詳しくは、「[パッケージ フライトの申請の更新](update-a-flight-submission.md)」をご覧ください。
+5. 新しい申請用に必要な変更を行って申請データを更新し、次のメソッドを実行して[パッケージ フライトの申請を更新](update-a-flight-submission.md)します。
 
   ```
   PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}
@@ -66,13 +70,13 @@ Windows デベロッパー センター アカウントに登録するアプリ�
   await blockBob.UploadFromStreamAsync(stream);
   ```
 
-5. 次のメソッドを実行して、申請をコミットします。 これで、申請が完了し、更新がアカウントに適用されていることがデベロッパー センターに通知されます。 詳しくは、「[パッケージ フライトの申請のコミット](commit-a-flight-submission.md)」をご覧ください。
+5. 次のメソッドを実行して、[パッケージ フライトの申請をコミット](commit-a-flight-submission.md)します。 これで、申請が完了し、更新がアカウントに適用されていることがデベロッパー センターに通知されます。
 
   ```
   POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
   ```
 
-6. 次のメソッドを実行して、コミットの状態を確認します。 詳しくは、「[パッケージ フライトの申請の状態の取得](get-status-for-a-flight-submission.md)」をご覧ください。
+6. 次のメソッドを実行して[パッケージ フライトの申請の状態を取得](get-status-for-a-flight-submission.md)して、コミット状態を確認します。
 
   ```
   GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status
@@ -81,6 +85,51 @@ Windows デベロッパー センター アカウントに登録するアプリ�
   申請の状態を確認するには、応答本文の *status* の値を確認します。 この値が **CommitStarted** から **PreProcessing** (要求が成功した場合) または **CommitFailed** (要求でエラーが発生した場合) に変わっています。 エラーがある場合は、*statusDetails* フィールドにエラーについての詳細情報が含まれています。
 
 7. コミットが正常に処理されると、インジェストのために申請がストアに送信されます。 上記のメソッドを使うか、デベロッパー センターのダッシュボードから、申請の進行状況を引き続き監視できます。
+
+<span id="manage-gradual-package-rollout">
+## パッケージ フライトの申請の段階的なパッケージのロールアウトを管理する
+
+パッケージ フライトの申請で更新されたパッケージを、アプリの Windows 10 のユーザーの一部に、段階的にロールアウトできます。 これにより、更新に確信が持てるよう、特定のパッケージのフィードバックと分析データを監視してから、より広くロールアウトできます。 新しい申請を作成することなく、公開された申請のロールアウトの割合を変更する (または更新を停止する) ことができます。 デベロッパー センターで段階的なパッケージのロールアウトの有効化と管理を行う方法などについて詳しくは、[この記事](../publish/gradual-package-rollout.md)をご覧ください。
+
+Windows ストア申請 API の次のメソッドを使用して、パッケージ フライトの申請の段階的なパッケージのロールアウトを、プログラムによって有効化したり管理することもできます。
+
+* パッケージ フライトの申請の段階的なパッケージのロールアウトを有効化するには
+
+  1. [パッケージ フライトの申請の作成](create-a-flight-submission.md)、または[パッケージ フライトの申請の取得](get-a-flight-submission.md)を行います。
+  2. 応答データで、[packageRollout](#package-rollout-object) リソースを探し、*[isPackageRollout]* フィールドを [true] に設定し、*[packageRolloutPercentage]* フィールドに、アプリのユーザーが更新されたパッケージを取得する割合を設定します。
+  3. 更新されたパッケージ フライトの申請のデータを[パッケージ フライトの申請を更新する](update-a-flight-submission.md)メソッドに渡します。
+
+<span/>
+
+* [パッケージ フライトの申請のパッケージのロールアウトの情報を取得する](get-package-rollout-info-for-a-flight-submission.md)には、次のメソッドを実行します。
+
+  ```
+  GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/packagerollout
+  ```
+
+<span/>
+
+* [パッケージ フライトの申請のパッケージのロールアウトの割合を更新する](update-the-package-rollout-percentage-for-a-flight-submission.md)には、次のメソッドを実行します。
+
+  ```
+  POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/updatepackagerolloutpercentage  
+  ```
+
+<span/>
+
+* [パッケージ フライトの申請のパッケージのロールアウトを停止する](halt-the-package-rollout-for-a-flight-submission.md)には、次のメソッドを実行します。
+
+  ```
+  POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/haltpackagerollout   
+  ```  
+
+<span/>
+
+* [パッケージ フライトの申請のパッケージのロールアウトを完了する](finalize-the-package-rollout-for-a-flight-submission.md)には、次のメソッドを実行します。
+
+  ```
+  POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/finalizepackagerollout
+  ```
 
 ## リソース
 
@@ -113,6 +162,16 @@ Windows デベロッパー センター アカウントに登録するアプリ�
       "minimumSystemRam": "None"
     }
   ],
+  "packageDeliveryOptions": {
+    "packageRollout": {
+        "isPackageRollout": false,
+        "packageRolloutPercentage": 0,
+        "packageRolloutStatus": "PackageRolloutNotStarted",
+        "fallbackSubmissionId": "0"
+    },
+    "isMandatoryUpdate": false,
+    "mandatoryUpdateEffectiveDate": "1601-01-01T00:00:00.0000000Z"
+  },
   "fileUploadUrl": "https://productingestionbin1.blob.core.windows.net/ingestion/8b389577-5d5e-4cbe-a744-1ff2e97a9eb8?sv=2014-02-14&sr=b&sig=wgMCQPjPDkuuxNLkeG35rfHaMToebCxBNMPw7WABdXU%3D&se=2016-06-17T21:29:44Z&sp=rwl",
   "targetPublishMode": "Immediate",
   "targetPublishDate": "",
@@ -129,6 +188,7 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 | status           | string  | 申請の状態。 次のいずれかの値を使用できます。 <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | object  |  エラーに関する情報など、申請ステータスに関する追加詳細情報が含まれています。 詳しくは、以下の「[状態の詳細](#status-details-object)」セクションをご覧ください。 |
 | flightPackages           | array  | 申請の各パッケージに関する詳細を提供するオブジェクトが含まれています。 詳しくは、以下の「[フライト パッケージ](#flight-package-object)」セクションをご覧ください。  |
+| packageDeliveryOptions    | object  | 申請の段階的なパッケージのロールアウトと必須の更新の設定が含まれています。 詳しくは、以下の「[パッケージの配信オプション オブジェクト](#package-delivery-options-object)」セクションをご覧ください。  |
 | fileUploadUrl           | string  | 申請のパッケージのアップロードに使用する共有アクセス署名 (SAS) URI です。 申請用に新しいパッケージを追加する場合は、パッケージを含む ZIP アーカイブをこの URI にアップロードします。 詳しくは、「[パッケージ フライトの申請の作成](#create-a-package-flight-submission)」をご覧ください。  |
 | targetPublishMode           | string  | 申請の公開モードです。 次のいずれかの値を使用できます。 <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | string  | *targetPublishMode* が SpecificDate に設定されている場合、ISO 8601 形式での申請の公開日です。  |
@@ -206,6 +266,47 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 | minimumDirectXVersion    |  string   |  アプリ パッケージによってサポートされる DirectX の最小バージョンです。 これは Windows 8.x をターゲットにするアプリにしか設定できません。その他バージョンをターゲットにするアプリでは無視されます。 次のいずれかの値を使用できます。 <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
 | minimumSystemRam    | string    |  アプリ パッケージに必要な RAM の最小サイズです。 これは Windows 8.x をターゲットにするアプリにしか設定できません。その他バージョンをターゲットにするアプリでは無視されます。 次のいずれかの値を使用できます。 <ul><li>None</li><li>Memory2GB</li></ul>   |    
 
+
+<span id="package-delivery-options-object" />
+### パッケージの配信オプション オブジェクト
+
+このリソースには、申請の段階的なパッケージのロールアウトと必須の更新の設定が含まれています。 次の例は、このリソースの書式設定を示しています。
+
+```json
+{
+  "packageDeliveryOptions": {
+    "packageRollout": {
+        "isPackageRollout": false,
+        "packageRolloutPercentage": 0,
+        "packageRolloutStatus": "PackageRolloutNotStarted",
+        "fallbackSubmissionId": "0"
+    },
+    "isMandatoryUpdate": false,
+    "mandatoryUpdateEffectiveDate": "1601-01-01T00:00:00.0000000Z"
+  },
+}
+```
+
+このリソースには、次の値があります。
+
+| 値           | 型    | 説明        |
+|-----------------|---------|------|
+| packageRollout   |   object      |  申請の段階的なパッケージのロールアウトの設定が含まれています。 詳しくは、以下の「[パッケージのロールアウト オブジェクト](#package-rollout-object)」セクションをご覧ください。    |  
+| isMandatoryUpdate    | boolean    |  この申請のパッケージを自己インストールのアプリの更新のために必須として扱うかどうかを指定します。 自己インストールのアプリの更新のために必須なパッケージについて詳しくは、「[アプリのパッケージの更新をダウンロードしてインストールする](../packaging/self-install-package-updates.md)」をご覧ください。    |  
+| mandatoryUpdateEffectiveDate    |  date   |  この申請のパッケージが必須となる日時 (ISO 8601 形式、UTC タイムゾーン)。   |        
+
+<span id="package-rollout-object" />
+### パッケージのロールアウト オブジェクト
+
+このリソースには、申請の段階的な[パッケージのロールアウトの設定](#manage-gradual-package-rollout)が含まれています。 このリソースには、次の値があります。
+
+| 値           | 型    | 説明        |
+|-----------------|---------|------|
+| isPackageRollout   |   boolean      |  申請の段階的なパッケージのロールアウトが有効化されているかどうかを示します。    |  
+| packageRolloutPercentage    | float    |  段階的なロールアウトでパッケージを受信するユーザーの割合。    |  
+| packageRolloutStatus    |  string   |  段階的なパッケージのロールアウトの状態を示す、次の文字列のいずれかです。 <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
+| fallbackSubmissionId    |  string   |  段階的なロールアウトのパッケージを入手しないユーザーが受信する申請のID。   |          
+
 <span/>
 
 ## 列挙型
@@ -249,6 +350,6 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,8 +4,8 @@ description: "Binding マークアップ拡張は、XAML の読み込み時に B
 title: "Binding マークアップ拡張"
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 translationtype: Human Translation
-ms.sourcegitcommit: 0f9955b897c626e7f6abb5557658e1b1e5937ffd
-ms.openlocfilehash: 95b48b55f11c4de0b4a51106b6cf5439bfa784b9
+ms.sourcegitcommit: 3ad7dd8261ceb549de6bd9a5ae513e6f6fdb8d49
+ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
 
 ---
 
@@ -20,11 +20,6 @@ ms.openlocfilehash: 95b48b55f11c4de0b4a51106b6cf5439bfa784b9
 **{Binding}** マークアップ拡張は、コントロールのプロパティをコードなどのデータ ソースの値にデータ バインドするために使われます。 **{Binding}** マークアップ拡張は、XAML の読み込み時に [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) クラスのインスタンスに変換されます。 このバインド オブジェクトは、データ ソースのプロパティから値を取得し、その値をコントロールのプロパティにプッシュします。 必要な場合、バインディング オブジェクトは、データ ソース プロパティの値の変化を監視し、その変化に基づいて自分自身を更新するように構成できます。 また、そのコントロールの値の変化をソース プロパティにプッシュするように構成することもできます。 データ バインディングのターゲットとなるプロパティは、依存関係プロパティである必要があります。 詳しくは、「[依存関係プロパティの概要](dependency-properties-overview.md)」をご覧ください。
 
 **{Binding}** には、ローカル値と同じ依存関係プロパティの優先順位があります。命令型コードにローカル値を設定すると、マークアップに設定されたすべての **{Binding}** の影響がなくなります。
-
-**{Binding} の使い方を示すサンプル アプリ**
-
--   [Bookstore1](http://go.microsoft.com/fwlink/?linkid=532950) アプリのダウンロード。
--   [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) アプリのダウンロード。
 
 ## XAML 属性の使用方法
 
@@ -48,7 +43,7 @@ ms.openlocfilehash: 95b48b55f11c4de0b4a51106b6cf5439bfa784b9
 
 ## プロパティ パス
 
-*PropertyPath* は、バインド先のプロパティ (ソース プロパティ) を記述する [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) の値を設定します。 PropertyPath は位置パラメーターであるため、`{Binding Path=...}` のように最初の無名パラメーター として指定できます。 または `{Binding Path=...}` のようにパラメーターの名前を明示的に指定することもできます。
+[**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) は、バインド先のプロパティ (ソース プロパティ) を表します。 Path は位置パラメーターであるため、パラメーター名を明示的に使用する (`{Binding Path=EmployeeID}`) ことも、最初の無名パラメーターとして指定する (`{Binding EmployeeID}`) こともできます。
 
 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) の型はプロパティ パスであり、この文字列は、カスタム型または framework 型のプロパティまたはサブプロパティに評価されます。 型は [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) にすることができますが、そうしなければならないわけではありません。 プロパティ パスのステップは、ドット (.) で区切ります。複数の区切り記号を指定することで、連続するサブプロパティを走査できます。 バインドされているオブジェクトを実装するために使用するプログラミング言語に関係なく、ドット区切り記号を使います。
 
@@ -131,6 +126,6 @@ Microsoft Visual Studio の Microsoft IntelliSense では、XAML マークアッ
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

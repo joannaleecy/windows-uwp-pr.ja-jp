@@ -4,19 +4,19 @@ ms.assetid: 8C63D33B-557D-436E-9DDA-11F7A5BFA2D7
 description: "既存のアドオンの申請を更新するには、Windows ストア申請 API のこのメソッドを使います。"
 title: "Windows ストア申請 API を使用したアドオンの申請の更新"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: b7a8e1d39d5ee0a0858382b84ab00cc2c481da5d
+ms.sourcegitcommit: 7307ca70467a751d5adb53f3718c7e9cf0b70dbb
+ms.openlocfilehash: f42f2dba155aa0a29e0769fd96cce6d3a0de870b
 
 ---
 
 # Windows ストア申請 API を使用したアドオンの申請の更新
 
 
-
-
 既存のアドオン (アプリ内製品 (IAP) とも呼ばれます) 申請を更新するには、Windows ストア申請 API 内のこのメソッドを使います。 このメソッドを使って申請を正常に更新した後は、インジェストと公開のために[申請をコミット](commit-an-add-on-submission.md)する必要があります。
 
 このメソッドが Windows ストア申請 API を使ったアドオンの申請の作成プロセスにどのように適合するかについては、「[アドオンの申請の管理](manage-add-on-submissions.md)」をご覧ください。
+
+>**重要**&nbsp;&nbsp;近い将来、Microsoft は Windows デベロッパー センターでアドオンの申請の価格データ モデルを変更する予定です。 変更の実施後、このメソッドの要求本文内の**価格**リソースが無視され、このメソッドを使用してアドオンの申請の価格および販売データの変更を行うことが一時的にできなくなります。 将来的には、Windows ストア申請 API を更新し、アドオンの申請の価格情報にプログラムでアクセスする新しい方法を導入する予定です。 詳しくは、「[価格リソース](manage-add-on-submissions.md#pricing-object)」をご覧ください。
 
 ## 前提条件
 
@@ -62,14 +62,14 @@ ms.openlocfilehash: b7a8e1d39d5ee0a0858382b84ab00cc2c481da5d
 
 | 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| contentType           | string  |  アドオンで提供されている[コンテンツの種類](../publish/enter-iap-properties.md#content-type)です。 次のいずれかの値を使用できます。 <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
-| keywords           | array  | アドオンの[キーワード](../publish/enter-iap-properties.md#keywords)の文字列を最大 10 個含む配列です。 アプリでは、これらのキーワードを使ってアドオンを照会できます。   |
+| contentType           | string  |  アドオンで提供されている[コンテンツの種類](../publish/enter-add-on-properties.md#content-type)です。 次のいずれかの値を使用できます。 <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
+| keywords           | array  | アドオンの[キーワード](../publish/enter-add-on-properties.md#keywords)の文字列を最大 10 個含む配列です。 アプリでは、これらのキーワードを使ってアドオンを照会できます。   |
 | lifetime           | string  |  アドオンの有効期間です。 次のいずれかの値を使用できます。 <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
 | listings           | object  | アドオンの表示内容を含むオブジェクトです。 詳しくは、「[表示リソース](manage-add-on-submissions.md#listing-object)」をご覧ください。  |
 | pricing           | object  | アドオンの価格情報を含むオブジェクトです。 詳しくは、「[価格リソース](manage-add-on-submissions.md#pricing-object)」をご覧ください。  |
 | targetPublishMode           | string  | 申請の公開モードです。 次のいずれかの値を使用できます。 <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | string  | *targetPublishMode* が SpecificDate に設定されている場合、ISO 8601 形式での申請の公開日です。  |
-| tag           | string  |  アドオンの[タグ](../publish/enter-iap-properties.md#tag)です。   |
+| tag           | string  |  アドオンの[カスタムの開発者データ](../publish/enter-add-on-properties.md#custom-developer-data)(この情報は従来*タグ*と呼ばれていました)。   |
 | visibility  | string  |  アドオンの可視性です。 次のいずれかの値を使用できます。 <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
 
 <span/>
@@ -231,6 +231,6 @@ Content-Type: application/json
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

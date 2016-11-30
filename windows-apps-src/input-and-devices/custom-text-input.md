@@ -6,8 +6,8 @@ ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 614c1b8f319ea1925cd15c5ad1a3093b2bce54d3
+ms.sourcegitcommit: 62ac7e8f49f4413d9423c027047341f9adcca6f9
+ms.openlocfilehash: 136e9ce1cede3fc09ebd31841e9d1b0be251837a
 
 ---
 
@@ -152,19 +152,16 @@ ms.openlocfilehash: 614c1b8f319ea1925cd15c5ad1a3093b2bce54d3
 
 ## 関連記事
 
-
+**サンプル**
+* [カスタム編集コントロールのサンプル](https://go.microsoft.com/fwlink/?linkid=831024)
+ 
 **サンプルのアーカイブ**
 * [XAML テキスト編集のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkID=251417)
- 
-
- 
 
 
 
 
 
-
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

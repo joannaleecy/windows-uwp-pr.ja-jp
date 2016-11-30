@@ -5,8 +5,8 @@ title: "次の手順"
 description: "初めてのアプリの作成が終わったので、デベロッパー センターの他の部分を見てみましょう。 ここでは、デベロッパー センターの他の部分に含まれるさまざまなセクションについて説明します。"
 keywords: "デベロッパー センター, 概要"
 translationtype: Human Translation
-ms.sourcegitcommit: 743a3649613d39083520f8d79f4c0daf97336568
-ms.openlocfilehash: 5a1b5dbb3b9d841ca0c3f14f591acd716c153c54
+ms.sourcegitcommit: 1c059edde92a48af610af1033c3b18ca729410aa
+ms.openlocfilehash: 6b7985137e02a348fafabf0aaf298c5d20095bd7
 
 ---
 
@@ -18,10 +18,9 @@ ms.openlocfilehash: 5a1b5dbb3b9d841ca0c3f14f591acd716c153c54
 
 まず、UWP 関連のトピックを通読して、UWP プラットフォームがどのようなものかを理解されることをお勧めします。そのうえで、XAML コントロールを使用し、さらにカスタマイズして、ユーザー インターフェイスを作成する方法をお調べください。 XAML の最大の長所は、*データ バインディング*を使用することです。データ バインディングは、アプリに表示したい情報とコントロールを関連付けることができます。Windows プラットフォーム開発が初めての場合、これは理解が必要な重要な概念になります。
 
-入門者向けの情報がまとめられている[開発者ツールキット](https://developer.microsoft.com/windows/projects/campaigns/welcome-toolbox) サイトもよろしければご利用ください。
+アプリにアニメーションや効果を追加するなど、最新の Windows 10 のプログラミング テクニックを調べる場合は、[Windows 開発者向けブログ](https://blogs.windows.com/buildingapps)を確認します。
 
 <table class="wdg-noborder">
-
 <tr>
  <td width=60><img src="images/icon3.png" width=64></td>
     <td><h2>UWP と UWP アプリのライフサイクル</h2><p>アプリが起動するしくみや、別のアプリを起動したときの処理はどのようになっているのでしょうか。 以下のトピックでは、それについて説明しています。</p> <ul>
@@ -40,6 +39,7 @@ ms.openlocfilehash: 5a1b5dbb3b9d841ca0c3f14f591acd716c153c54
       <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/controls-and-events-intro">コントロールとパターンの概要</a></li>
      <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/styling-controls">コントロールのスタイル</a></li>
       <li><a href="https://msdn.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">画面のサイズとレスポンシブ デザインのブレークポイント</a></li>
+      <li><a href="https://developer.microsoft.com/windows/projects/campaigns/welcome-toolbox">事前に作成されたコントロールとパターンの選択に UWP コミュニティ ツールキットを使用する</a></li>
     </ul></td>  
 </tr>
  
@@ -162,6 +162,6 @@ API リファレンス コンテンツではなく、概念コンテンツを参
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

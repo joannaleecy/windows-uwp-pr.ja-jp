@@ -4,8 +4,8 @@ ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
 description: "Microsoft Store Services SDK の Microsoft Advertising ライブラリを使って Windows 10、Windows 8.1、または Windows Phone 8.1 アプリにスポット広告を組み込む方法について説明します。"
 title: "スポット広告"
 translationtype: Human Translation
-ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
-ms.openlocfilehash: 4082fdd17ba42fd2b6a7659095b019c1ad4875a0
+ms.sourcegitcommit: 8574695fe12042e44831227f81e1f6ea45e9c0da
+ms.openlocfilehash: fdc9bddafc7b80f66bb160183a6c416a8573883a
 
 ---
 
@@ -360,10 +360,10 @@ C# と C++ を使って JavaScript/HTML アプリと XAML アプリにスポッ�
 4.  デベロッパー センター ダッシュボードで[広告パフォーマンス レポート](../publish/advertising-performance-report.md)を確認します。
 
 <span id="interstitialbestpractices10"/>
-## スポット広告に関するベスト プラクティス
+## スポットのベスト プラクティスとポリシー
 
 
-スポット広告を効果的に使用する方法については、「[UI とユーザー エクスペリエンスのガイドライン](ui-and-user-experience-guidelines.md)」をご覧ください。
+スポット広告を効果的に使用する方法と、実行する必要があるポリシーについて詳しくは、「[スポットのベスト プラクティスとポリシー](ui-and-user-experience-guidelines.md#interstitialbestpractices10)」をご覧ください。
 
 <span id="targetplatform10"/>
 ## 参照エラーの解決: 特定の CPU プラットフォームをターゲットにする (XAML と HTML)
@@ -384,6 +384,6 @@ Microsoft Advertising ライブラリを使う場合、プロジェクトで **"
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

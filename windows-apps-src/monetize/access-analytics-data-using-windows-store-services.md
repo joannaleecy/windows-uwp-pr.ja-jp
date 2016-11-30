@@ -4,8 +4,8 @@ ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: "Windows ストア分析 API を使って、自分または自分の組織の Windows デベロッパー センター アカウントに登録されたアプリの分析データをプログラムで取得することができます。"
 title: "Windows ストア サービスを使った分析データへのアクセス"
 translationtype: Human Translation
-ms.sourcegitcommit: 47e0ac11178af98589e75cc562631c6904b40da4
-ms.openlocfilehash: 1293bb5beb927425928d832f887129263db5a895
+ms.sourcegitcommit: 67845c76448ed13fd458cb3ee9eb2b75430faade
+ms.openlocfilehash: 468be96b70d07567163b2caccebaa8e2f6ecd592
 
 ---
 
@@ -24,11 +24,11 @@ ms.openlocfilehash: 1293bb5beb927425928d832f887129263db5a895
 
 Windows ストア分析 API を呼び出すコードの作成を開始する前に、次の前提条件が完了していることを確認します。
 
-* ユーザー (またはユーザーの組織) は、Azure AD ディレクトリと、そのディレクトリに対する[グローバル管理者](http://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。 それ以外の場合は、追加料金なしで[デベロッパー センター内から新しい Azure AD を作成](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)できます。
+* ユーザー (またはユーザーの組織) は、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](http://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。 それ以外の場合は、追加料金なしで[デベロッパー センター内から新しい Azure AD を作成](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)できます。
 
 * Azure AD アプリケーションをデベロッパー センター アカウントに関連付け、アプリケーションのテナント ID とクライアント ID を取得してキーを生成する必要があります。 Azure AD アプリケーションは、Windows ストア分析 API の呼び出し元のアプリまたはサービスを表します。 テナント ID、クライアント ID、およびキーは、API に渡す Azure AD アクセス トークンを取得するために必要です。
 
-  >**注**&nbsp;&nbsp; この作業を行うのは一度だけです。 テナント ID、クライアント ID、キーがあれば、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらを再利用できます。
+  >**注:**&nbsp;&nbsp;この作業を行うのは一度だけです。 テナント ID、クライアント ID、キーがあれば、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらを再利用できます。
 
 Azure AD アプリケーションをデベロッパー センター アカウントに関連付け、必要な値を取得するには:
 
@@ -58,7 +58,7 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-*tenant\_id*、*client \_id*、*client \_secret* の各パラメーターには、前のセクションでデベロッパー センターから取得したテナント ID、クライアント ID、キーを指定します。 *resource* パラメーターには、次の URI を指定します。```https://manage.devcenter.microsoft.com```
+*tenant\_id*、*client \_id*、*client \_secret* の各パラメーターには、前のセクションでデベロッパー センターから取得したテナント ID、クライアント ID、キーを指定します。 *resource* パラメーターには、```https://manage.devcenter.microsoft.com``` という URI を指定します。
 
 アクセス トークンの有効期限が切れた後は、[この](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)手順に従って更新できます。
 
@@ -72,6 +72,8 @@ Azure AD アクセス トークンを取得したら、Windows ストア分析 A
 -   [エラー報告データの取得](get-error-reporting-data.md)
 -   [アプリの評価の取得](get-app-ratings.md)
 -   [アプリのレビューの取得](get-app-reviews.md)
+-   [広告のパフォーマンス データの取得](get-ad-performance-data.md)
+-   [広告キャンペーンのパフォーマンス データの取得](get-ad-campaign-performance-data.md)
 
 ## コードの例
 
@@ -233,10 +235,12 @@ Windows ストア分析 API は、エラー コードとメッセージが含ま
 * [エラー報告データの取得](get-error-reporting-data.md)
 * [アプリの評価の取得](get-app-ratings.md)
 * [アプリのレビューの取得](get-app-reviews.md)
+* [広告のパフォーマンス データの取得](get-ad-performance-data.md)
+* [広告キャンペーンのパフォーマンス データの取得](get-ad-campaign-performance-data.md)
  
 
 
 
-<!--HONumber=Sep16_HO1-->
+<!--HONumber=Nov16_HO1-->
 
 

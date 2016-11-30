@@ -4,32 +4,36 @@ ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: "Windows デベロッパー センター アカウントに登録するアプリの申請を管理するには、以下の Windows ストア申請 API のメソッドを使います。"
 title: "Windows ストア申請 API を使用したアプリの申請の管理"
 translationtype: Human Translation
-ms.sourcegitcommit: 178b70db1583790c174d65e060c8bce6e4f69243
-ms.openlocfilehash: 448eafbdadb21476da43e7408bb8bad354ba486d
+ms.sourcegitcommit: 9b76a11adfab838b21713cb384cdf31eada3286e
+ms.openlocfilehash: 49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e
 
 ---
 
 # Windows ストア申請 API を使用したアプリの申請の管理
 
 
-
-
 Windows デベロッパー センター アカウントに登録するアプリの申請を管理するには、以下の Windows ストア申請 API のメソッドを使います。 Windows ストア申請 API の概要については、「[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。この API を使用するための前提条件などの情報があります。
 
 >**注:**&nbsp;&nbsp;これらのメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
+>**重要**&nbsp;&nbsp;近い将来、Microsoft は Windows デベロッパー センターでアプリの申請の価格データ モデルを変更する予定です。 変更の実施後には、**価格**リソースはサポートされなくなり、Windows ストア申請 APIを使用してアプリの申請の試用期間、価格、販売データの取得と変更を行うことが、一時的にできなくなります。 今後は API を更新して、アプリの申請に関する価格情報にプログラムでアクセスする新しい方法を導入する予定です。 詳しくは、「[価格リソース](#pricing-object)」セクションをご覧ください。
+
 
 | メソッド        | URI    | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}``` | 既存のアプリの申請のデータを取得します。 詳しくは、「[アプリの申請の取得](get-an-app-submission.md)」をご覧ください。 |
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/status``` | 既存のアプリの申請の状態を取得します。 詳しくは、「[アプリの申請の状態の取得](get-status-for-an-app-submission.md)」をご覧ください。 |
-| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions``` | Windows デベロッパー センター アカウントに登録されているアプリの申請を新規作成します。 詳しくは、「[アプリの申請の作成](create-an-app-submission.md)」をご覧ください。 |
-| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/commit``` | 新しいアプリまたは更新されたアプリの申請を Windows デベロッパー センターにコミットします。 詳しくは、「[アプリの申請のコミット](commit-an-app-submission.md)」をご覧ください。 |
-| PUT | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}``` | 既存のアプリの申請を更新します。 詳しくは、「[アプリの申請の更新](update-an-app-submission.md)」をご覧ください。 |
-| DELETE | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}``` | アプリの申請を削除します。 詳しくは、「[アプリの申請の削除](delete-an-app-submission.md)」をご覧ください。 |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}``` | 既存のアプリの申請のデータを取得します。 詳しくは、[この記事](get-an-app-submission.md)をご覧ください。 |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/status``` | 既存のアプリの申請の状態を取得します。 詳しくは、[この記事](get-status-for-an-app-submission.md)をご覧ください。 |
+| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions``` | Windows デベロッパー センター アカウントに登録されているアプリの申請を新規作成します。 詳しくは、[この記事](create-an-app-submission.md)をご覧ください。 |
+| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/commit``` | 新しいアプリまたは更新されたアプリの申請を Windows デベロッパー センターにコミットします。 詳しくは、[この記事](commit-an-app-submission.md)をご覧ください。 |
+| PUT | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}``` | 既存のアプリの申請を更新します。 詳しくは、[この記事](update-an-app-submission.md)をご覧ください。 |
+| DELETE | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}``` | アプリの申請を削除します。 詳しくは、[この記事](delete-an-app-submission.md)をご覧ください。 |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/packagerollout``` | アプリの申請の段階的なロールアウトの情報を取得します。 詳しくは、[この記事](get-package-rollout-info-for-an-app-submission.md)をご覧ください。 |
+| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/updatepackagerolloutpercentage``` | アプリの申請の段階的なロールアウトの割合を更新します。 詳しくは、[この記事](update-the-package-rollout-percentage-for-an-app-submission.md)をご覧ください。 |
+| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/haltpackagerollout``` | アプリの申請の段階的なロールアウトを停止します。 詳しくは、[この記事](halt-the-package-rollout-for-an-app-submission.md)をご覧ください。 |
+| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/finalizepackagerollout``` | アプリの申請の段階的なロールアウトを完了します。 詳しくは、[この記事](finalize-the-package-rollout-for-an-app-submission.md)をご覧ください。 |
 
 <span id="create-an-app-submission">
-## アプリの申請の作成
+## アプリの提出の作成
 
 アプリの申請を作成するには、次のプロセスに従います。
 
@@ -37,9 +41,9 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
   >**注**&nbsp;&nbsp;[年齢区分](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)の情報を含む 1 つ以上の申請がアプリで既に完了していることを確認します。
 
-3. [Azure AD アクセス トークンを取得します](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 このアクセス トークンを Windows ストア申請 API のメソッドに渡す必要があります。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
+2. [Azure AD アクセス トークンを取得します](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 このアクセス トークンを Windows ストア申請 API のメソッドに渡す必要があります。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
 
-4. Windows ストア申請 API の次のメソッドを実行します。 このメソッドによって、新しい申請が作成され、審議中になります。これは、前回発行した申請のコピーです。 詳しくは、「[アプリの申請の作成](create-an-app-submission.md)」をご覧ください。
+3. Windows ストアの申請 API の次のメソッドを実行して、[アプリの申請を作成](create-an-app-submission.md)します。 このメソッドによって、新しい申請が作成され、審査中になります。これは、前回発行した申請のコピーです。
 
   ```
   POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions
@@ -47,9 +51,9 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
   応答本文には、新しい申請の ID、新しい申請のデータ (すべての登録情報と価格情報が含まれます)、申請のアプリのパッケージと登録情報の画像のアップロードに必要な共有アクセス署名 (SAS) URI の 3 つの項目が含まれます。 SAS について詳しくは、[共有アクセス署名についてのチュートリアルの第 1 部で SAS モデルの概要情報](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)をご覧ください。
 
-3. 申請用の新しいパッケージまたは画像を追加する場合は、[アプリのパッケージを準備](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements)し、[アプリのスクリーンショットと画像を準備](https://msdn.microsoft.com/windows/uwp/publish/app-screenshots-and-images)します。 これらのファイルをすべてまとめて ZIP アーカイブに追加します。
+4. 申請用の新しいパッケージまたは画像を追加する場合は、[アプリのパッケージを準備](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements)し、[アプリのスクリーンショットと画像を準備](https://msdn.microsoft.com/windows/uwp/publish/app-screenshots-and-images)します。 これらのファイルをすべてまとめて ZIP アーカイブに追加します。
 
-4. 新しい申請用に必要な変更を行って申請データを更新し、次のメソッドを実行して申請を更新します。 詳しくは、「[アプリの申請の更新](update-an-app-submission.md)」をご覧ください。
+5. 新しい申請用に必要な変更を行って申請データを修正し、次のメソッドを実行して[アプリの申請を更新](update-an-app-submission.md)します。
 
   ```
   PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}
@@ -69,13 +73,13 @@ Windows デベロッパー センター アカウントに登録するアプリ�
   await blockBob.UploadFromStreamAsync(stream);
   ```
 
-5. 次のメソッドを実行して、申請をコミットします。 これで、申請が完了し、更新がアカウントに適用されていることがデベロッパー センターに通知されます。 詳しくは、「[アプリの申請のコミット](commit-an-app-submission.md)」をご覧ください。
+5. 次のメソッドを実行して、[アプリの申請をコミット](commit-an-app-submission.md)します。 これで、申請が完了し、更新がアカウントに適用されていることがデベロッパー センターに通知されます。
 
   ```
   POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/commit
   ```
 
-6. 次のメソッドを実行して、コミットの状態を確認します。 詳しくは、「[アプリの申請の状態の取得](get-status-for-an-app-submission.md)」をご覧ください。
+6. 次のメソッドを実行して[アプリの申請の状態を取得](get-status-for-an-app-submission.md)して、コミット状態を確認します。
 
     ```
     GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/status
@@ -84,6 +88,51 @@ Windows デベロッパー センター アカウントに登録するアプリ�
     申請の状態を確認するには、応答本文の *status* の値を確認します。 この値が **CommitStarted** から **PreProcessing** (要求が成功した場合) または **CommitFailed** (要求でエラーが発生した場合) に変わっています。 エラーがある場合は、*statusDetails* フィールドにエラーについての詳細情報が含まれています。
 
 7. コミットが正常に処理されると、インジェストのために申請がストアに送信されます。 上記のメソッドを使うか、デベロッパー センターのダッシュボードから、申請の進行状況を引き続き監視できます。
+
+<span id="manage-gradual-package-rollout">
+## アプリの申請の段階的なパッケージのロールアウトを管理する
+
+アプリの申請で更新されたパッケージを、アプリの Windows 10 のユーザーの一部に、段階的にロールアウトできます。 これにより、更新に確信が持てるよう、特定のパッケージのフィードバックと分析データを監視してから、より広くロールアウトできます。 新しい申請を作成することなく、公開された申請のロールアウトの割合を変更する (または更新を停止する) ことができます。 デベロッパー センターで段階的なパッケージのロールアウトの有効化と管理を行う方法などについて詳しくは、[この記事](../publish/gradual-package-rollout.md)をご覧ください。
+
+Windows ストア申請 API の次のメソッドを使用して、アプリの申請の段階的なパッケージのロールアウトを、プログラムによって有効化したり管理することもできます。
+
+* アプリの申請の段階的なパッケージのロールアウトを有効化するには
+
+  1. [アプリの申請を作成する](create-an-app-submission.md)か、または[アプリの申請を取得](get-an-app-submission.md)します。
+  2. 応答データで、[packageRollout](#package-rollout-object) リソースを探し、*[isPackageRollout]* フィールドを [true] に設定し、*[packageRolloutPercentage]* フィールドに、アプリのユーザーが更新されたパッケージを取得する割合を設定します。
+  3. [アプリの申請の更新](update-an-app-submission.md)のメソッドに、更新されたアプリの申請データを渡します。
+
+<span/>
+
+* [アプリの申請のパッケージのロールアウト情報を取得する](get-package-rollout-info-for-an-app-submission.md)には、次のメソッドを実行します。
+
+  ```
+  GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/packagerollout
+  ```
+
+<span/>
+
+* [アプリの申請のパッケージのロールアウトの割合を更新する](update-the-package-rollout-percentage-for-an-app-submission.md)には、次のメソッドを実行します。
+
+  ```
+  POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/updatepackagerolloutpercentage  
+  ```
+
+<span/>
+
+* [アプリの申請のパッケージのロールアウトを停止する](halt-the-package-rollout-for-an-app-submission.md)には、次のメソッドを実行します。
+
+  ```
+  POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/haltpackagerollout   
+  ```  
+
+<span/>
+
+* [アプリの申請のパッケージのロールアウトを完了する](finalize-the-package-rollout-for-an-app-submission.md)には、次のメソッドを実行します。
+
+  ```
+  POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/finalizepackagerollout
+  ```
 
 ## リソース
 
@@ -171,6 +220,16 @@ Windows デベロッパー センター アカウントに登録するアプリ�
       ]
     }
   ],
+  "packageDeliveryOptions": {
+    "packageRollout": {
+        "isPackageRollout": false,
+        "packageRolloutPercentage": 0,
+        "packageRolloutStatus": "PackageRolloutNotStarted",
+        "fallbackSubmissionId": "0"
+    },
+    "isMandatoryUpdate": false,
+    "mandatoryUpdateEffectiveDate": "1601-01-01T00:00:00.0000000Z"
+  },
   "enterpriseLicensing": "Online",
   "allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies": true,
   "allowTargetFutureDeviceFamilies": {
@@ -186,8 +245,8 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 このリソースには、次の値があります。
 
-| 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
-|------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 値      | 型   | 説明      |
+|------------|--------|-------------------|
 | id            | string  | 申請 ID。  |
 | applicationCategory           | string  |   アプリの[カテゴリとサブカテゴリ](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table)を指定する文字列です。 カテゴリとサブカテゴリは、アンダースコア "_" で 1 つの文字列に連結します (例: **BooksAndReference_EReader**)。      |  
 | pricing           |  object  | アプリの価格情報を含むオブジェクトです。 詳しくは、以下の「[価格リソース](#pricing-object)」セクションをご覧ください。       |   
@@ -206,6 +265,7 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 | statusDetails           |   object  |  エラーに関する情報など、申請ステータスに関する追加詳細情報が含まれています。 詳しくは、以下の「[状態の詳細](#status-details-object)」セクションをご覧ください。       |    
 | fileUploadUrl           |   string  | 申請のパッケージのアップロードに使用する共有アクセス署名 (SAS) URI です。 申請用に新しいパッケージまたは画像を追加する場合は、パッケージと画像を含む ZIP アーカイブをこの URI にアップロードします。 詳しくは、「[アプリの申請の作成](#create-an-app-submission)」をご覧ください。       |    
 | applicationPackages           |   array  | 申請の各パッケージに関する詳細を提供するオブジェクトが含まれています。 詳しくは、以下の「[アプリ パッケージ](#application-package-object)」セクションをご覧ください。 |    
+| packageDeliveryOptions    | object  | 申請の段階的なパッケージのロールアウトと必須の更新の設定が含まれています。 詳しくは、以下の「[パッケージの配信オプション オブジェクト](#package-delivery-options-object)」セクションをご覧ください。  |
 | enterpriseLicensing           |  string  |  アプリのエンタープライズ ライセンス動作を示す[エンタープライズ ライセンス値](#enterprise-licensing)のいずれかです。  |    
 | allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  [アプリを将来の Windows 10 デバイス ファミリで利用できるようにする](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)ことを Microsoft が許可されているかどうかを示すします。    |    
 | allowTargetFutureDeviceFamilies           | object   |  キーと値のペアのディクショナリです。各キーは [Windows 10 デバイス ファミリ](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families) を表し、各値は指定されたデバイス ファミリをアプリがターゲットにできるかどうかを示すブール値です。     |    
@@ -227,7 +287,7 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 このリソースにはアプリの基本の登録情報が保持されます。 このリソースには、次の値があります。
 
-| 値           | 型    | 説明                                                                                                                                                                                                                          |
+| 値           | 型    | 説明       |
 |-----------------|---------|------|
 |  copyrightAndTrademarkInfo                |   string      |  (省略可能) [著作権や商標の情報](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#copyright-and-trademark-info)です。  |
 |  keywords                |  array       |  結果にアプリが表示される確率を高める[キーワード](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#keywords)の配列です。    |
@@ -248,7 +308,7 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 このリソースにはアプリの登録情報の画像とアイコンのデータが保持されます。 登録情報の画像とアイコンについて詳しくは、「[アプリのスクリーンショットと画像](https://msdn.microsoft.com/windows/uwp/publish/app-screenshots-and-images)」をご覧ください。 このリソースには、次の値があります。
 
-| 値           | 型    | 説明                                                                                                                                                                                                                          |
+| 値           | 型    | 説明           |
 |-----------------|---------|------|
 |  fileName               |    string     |   申請用にアップロードした ZIP アーカイブに含まれている画像ファイルの名前です。    |     
 |  fileStatus               |   string      |  画像ファイルの状態です。 次のいずれかの値を使用できます。 <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
@@ -260,20 +320,33 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 <span id="pricing-object" />
 ### 価格設定
 
-このリソースにはアプリの価格設定情報が保持されます。 このリソースには、次の値があります。
+このリソースにはアプリの価格設定情報が保持されます。
+
+>**重要**&nbsp;&nbsp;近い将来、Microsoft は Windows デベロッパー センターでアプリの申請の価格データ モデルを変更する予定です。 変更の実施後には、**価格**リソースはサポートされなくなり、Windows ストア申請 APIを使用してアプリの申請の試用期間、価格、販売データの取得と変更を行うことが、一時的にできなくなります。 次の動作に変更が発生します。
+
+   > * [アプリの申請を取得する GET メソッド](get-an-app-submission.md)を呼び出した後に、**価格**リソースは空になります。 引き続きデベロッパー センター ダッシュボードを使って、アプリの申請の価格データを取得することができます。
+   > * [アプリの申請を更新する PUT メソッド](update-an-app-submission.md)を呼び出すとき、**価格**リソースの情報は無視されます。 引き続きデベロッパー センター ダッシュボードを使って、アプリの申請の価格データを変更することができます。
+
+> 今後、Windows ストア申請 API を更新し、アプリの申請の価格情報をプログラムで取得したり更新する新しい方法を導入する予定です。
+
+このリソースには、次の値があります。
 
 | 値           | 型    | 説明                                                                                                                                                                                                                          |
 |-----------------|---------|------|
 |  trialPeriod               |    string     |  アプリの試用期間を示す文字列です。 次のいずれかの値を使用できます。 <ul><li>NoFreeTrial</li><li>OneDay</li><li>TrialNeverExpires</li><li>SevenDays</li><li>FifteenDays</li><li>ThirtyDays</li></ul>    |
 |  marketSpecificPricings               |    object     |  キーと値のペアのディクショナリです。各キーは 2 文字の ISO 3166-1 alpha-2 の国コードで、各値は[価格帯](#price-tiers)です。 これらの項目は、[特定の市場でのアプリのカスタム価格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)を表します。 このディクショナリに含まれる項目は、指定された市場の *priceId* の値によって指定されている基本価格を上書きします。      |     
 |  sales               |   array      |  アプリのセール情報が保持されるオブジェクト配列です。 詳しくは、以下の「[セール](#sale-object)」セクションをご覧ください。    |     
-|  priceId               |   string      |  アプリの[基本価格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#base-price)を規定する[価格帯](#price-tier)です。   |
+|  priceId               |   string      |  アプリの[基本価格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#base-price)を規定する[価格帯](#price-tiers)です。   |
 
 
 <span id="sale-object" />
 ### セール
 
-このリソースにはアプリのセール情報が保持されます。 このリソースには、次の値があります。
+このリソースにはアプリのセール情報が保持されます。
+
+>**重要**&nbsp;&nbsp;近い将来、Microsoft は Windows デベロッパー センターでアプリの申請の価格データ モデルを変更する予定です。 変更の実施後には、**セール**リソースはサポートされなくなり、Windows ストア申請 APIを使用してアプリの申請の販売データの取得と変更を行うことが、一時的にできなくなります。 今後は API を更新して、アプリの申請に関する販売情報にプログラムでアクセスする新しい方法を導入する予定です。 詳しくは、「[価格リソース](#pricing-object)」セクションをご覧ください。
+
+このリソースには、次の値があります。
 
 | 値           | 型    | 説明                                                                                                                                                                                                                          |
 |-----------------|---------|------|
@@ -369,6 +442,47 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 |     reportUrl            |    string     |  レポートにアクセスできる URL です。    |
 
 
+<span id="package-delivery-options-object" />
+### パッケージの配信オプション オブジェクト
+
+このリソースには、申請の段階的なパッケージのロールアウトと必須の更新の設定が含まれています。 次の例は、このリソースの書式設定を示しています。
+
+```json
+{
+  "packageDeliveryOptions": {
+    "packageRollout": {
+        "isPackageRollout": false,
+        "packageRolloutPercentage": 0,
+        "packageRolloutStatus": "PackageRolloutNotStarted",
+        "fallbackSubmissionId": "0"
+    },
+    "isMandatoryUpdate": false,
+    "mandatoryUpdateEffectiveDate": "1601-01-01T00:00:00.0000000Z"
+  },
+}
+```
+
+このリソースには、次の値があります。
+
+| 値           | 型    | 説明        |
+|-----------------|---------|------|
+| packageRollout   |   object      |  申請の段階的なパッケージのロールアウトの設定が含まれています。 詳しくは、以下の「[パッケージのロールアウト オブジェクト](#package-rollout-object)」セクションをご覧ください。    |  
+| isMandatoryUpdate    | boolean    |  この申請のパッケージを自己インストールのアプリの更新のために必須として扱うかどうかを指定します。 自己インストールのアプリの更新のために必須なパッケージについて詳しくは、「[アプリのパッケージの更新をダウンロードしてインストールする](../packaging/self-install-package-updates.md)」をご覧ください。    |  
+| mandatoryUpdateEffectiveDate    |  date   |  この申請のパッケージが必須となる日時 (ISO 8601 形式、UTC タイムゾーン)。   |        
+
+<span id="package-rollout-object" />
+### パッケージのロールアウト オブジェクト
+
+このリソースには、申請の段階的な[パッケージのロールアウトの設定](#manage-gradual-package-rollout)が含まれています。 このリソースには、次の値があります。
+
+| 値           | 型    | 説明        |
+|-----------------|---------|------|
+| isPackageRollout   |   boolean      |  申請の段階的なパッケージのロールアウトが有効化されているかどうかを示します。    |  
+| packageRolloutPercentage    | float    |  段階的なロールアウトでパッケージを受信するユーザーの割合。    |  
+| packageRolloutStatus    |  string   |  段階的なパッケージのロールアウトの状態を示す、次の文字列のいずれかです。 <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
+| fallbackSubmissionId    |  string   |  段階的なロールアウトのパッケージを入手しないユーザーが受信する申請のID。   |          
+
+<span/>
 
 ## 列挙型
 
@@ -432,6 +546,6 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

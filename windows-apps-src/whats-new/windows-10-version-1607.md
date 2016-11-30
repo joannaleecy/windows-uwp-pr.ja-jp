@@ -4,8 +4,8 @@ title: "開発者向けの Windows 10 の新機能、ツールと機能"
 description: "Windows 10 バージョン 1607 と新しい開発者ツールを使うと、新しいユニバーサル Windows プラットフォームによって強化されたツール、機能、そしてエクスペリエンスが利用できます。"
 keywords: "新着情報, 新しい情報, 更新, 更新情報, 機能, 新規, Windows 10, 1607, 7 月, 最新"
 translationtype: Human Translation
-ms.sourcegitcommit: fabe73cf75db4ce4b27805c7a4cf1c820be1b43e
-ms.openlocfilehash: e9e381f3d01e2c0acc5c4ad55937fce3120a3249
+ms.sourcegitcommit: 860019e351f6fc6ce1ff00646413d3727e48de9c
+ms.openlocfilehash: d292d48489fa5001d3cd8af95aa72019107836c1
 
 ---
 
@@ -24,7 +24,7 @@ XAML 要素のアクセス キー | 新しい [**AccessKey**](https://msdn.micro
 アプリの拡張性 | UWP アプリの[拡張機能](http://aka.ms/appextensibility)を作成できます。 Windows ストア アプリで、他の Windows ストア アプリから提供されるコンテンツをホストすることができます。  それらのアプリの読み取り専用コンテンツを検出、列挙し、アクセスすることもできます。
 評価テスト | [テスト](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10?f=255&MSPPError=-2147217396)は、重大な影響をもたらすテストに対応した、厳正なオンライン評価を提供するブラウザー ベースのアプリです。 [テスト API](../apps-for-education/take-a-test-api.md) を使うことにより、学生がテスト中に他のコンピューターやインターネット リソースを利用することを防止できます。
 バックグラウンド インテリジェント転送サービス (BITS) | [BITS](https://msdn.microsoft.com/library/windows/desktop/bb968799.aspx) COM API と PowerShell コマンドレット (使用可能な場合) を、PowerShell リモート セッションで使うことができるようになりました。 これは、Windows Server 2016 Technical Preview のローカル ログイン機能がないバージョンを管理するときに特に便利です。 PowerShell リモート セッションによって開始された BITS ジョブは、そのセッションのユーザー アカウントのコンテキストで実行され、少なくとも 1 つのアクティブなローカル ログオン セッションまたはそのユーザー アカウントに関連付けられている PowerShell リモート セッションが存在する場合にのみ進行します。 長時間実行されるセッションを管理する方法について詳しくは、[PowerShell リモート セッションを管理する方法に関するページ](https://msdn.microsoft.com/library/windows/desktop/ee663885.aspx#manage_ps_remote_sessions)をご覧ください。<br/><br/>[BITS ヘルパー トークン](https://msdn.microsoft.com/library/windows/desktop/dd904467.aspx)をサポートしていた以前のバージョンの Windows では、ジョブの所有者は、ヘルパー トークンを設定するために有効な管理者特権を持っている必要がありました。 このリリースでは、ヘルパー トークンに管理者機能がない限り、BITS ジョブの所有者は管理者でなくてもヘルパー トークンを設定できるようになりました。 これにより、バックグラウンド ダウンロード ツールや更新ツールを、管理者特権を持つアカウントではなく、低い権限の NetworkService アカウントで実行できるため、これらのツールの脆弱性を小さくすることができます。
-カラー フォントのサポートの強化 | Direct2D で幅広いカラー フォント形式のレンダリングがサポートされ、開発者は Direct2D 対応アプリで以前よりも多くの種類のフォントを使うことができるようになりました。 これには、次のサポートが含まれます。 <br/>&bull; 'sbix' TrueType テーブル。従来 Apple プラットフォーム用に設計されたフォントでカラー ビットマップ コンテンツを実現します。<br/>&bull; 'SVG' OpenType テーブル。フォントで SVG コンテンツを実現します。<br/>&bull; 'CBDT' OpenType テーブル。フォントでカラー ビットマップ コンテンツを実現します。 <br/><br/>**D2D1_DRAW_TEXT_OPTIONS_ENABLE_COLOR_FONT** フラグが有効になっている場合、Direct2D はこれらのカラー フォント形式を自動的にサポートします。  詳しくは、次のトピックをご覧ください。 <br>&bull;[**ID2D1DeviceContext4**](http://go.microsoft.com/fwlink/?LinkId=822793)<br>&bull;[**D2D1_DRAW_TEXT_OPTIONS**](http://go.microsoft.com/fwlink/?LinkId=822794)<br>&bull;[**ID2D1SvgGlyphStyle**](http://go.microsoft.com/fwlink/?LinkId=822795)     
+カラー フォントのサポートの強化 | Direct2D で幅広いカラー フォント形式のレンダリングがサポートされ、開発者は Direct2D 対応アプリで以前よりも多くの種類のフォントを使うことができるようになりました。 これには、次のサポートが含まれます。 <br/>&bull; 'sbix' OpenType テーブル。フォントでカラー ビットマップ コンテンツを実現します。<br/>&bull; 'SVG' OpenType テーブル。フォントで SVG コンテンツを実現します。<br/>&bull; 'CBDT' OpenType テーブル。フォントでカラー ビットマップ コンテンツを実現します。 <br/><br/>**D2D1_DRAW_TEXT_OPTIONS_ENABLE_COLOR_FONT** フラグが有効になっている場合、Direct2D はこれらのカラー フォント形式を自動的にサポートします。  詳しくは、次のトピックをご覧ください。 <br>&bull;[**ID2D1DeviceContext4**](http://go.microsoft.com/fwlink/?LinkId=822793)<br>&bull;[**D2D1_DRAW_TEXT_OPTIONS**](http://go.microsoft.com/fwlink/?LinkId=822794)<br>&bull;[**ID2D1SvgGlyphStyle**](http://go.microsoft.com/fwlink/?LinkId=822795)     
 CommandBar の動的オーバーフロー | [**コマンド バー**](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/app-bars)内のプライマリ コマンドは、すべてを表示するための十分な領域がない場合、自動的にオーバーフロー メニューに移動するようになりました。
 コンポジションの対話式操作 API| 新しい [**Windows.UI.Composition.Interactions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.interactions.aspx) 名前空間によって、アニメーションと効果を駆動する入力にアクセスできます。  ビジュアル層のこの新しい API ファミリは、UI スレッドの処理が遅くなり、ビジー状態になった場合でも、アプリの応答性やスムーズさを感じさせるのに役立ちます。  
 Windows.UI.Composition | [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.aspx) 名前空間には、次のような多くの機能のサポートが追加されました。 <br/><br/>&bull; シャドウ: 現実世界の奥行きのエクスペリエンスをアプリに提供できます。 <br/>&bull; シーンの照明: コントロールや UI に光源を当て、アプリケーションにさまざまな効果を提供することにより、コントロールや UI の遠近感を強調します。<br/>&bull;  ぼかし効果: 適切な情報にフォーカスを適用し、他の情報をぼかすことができます。 ぼかしをアニメーション化することで、UI の操作感を高めることができます。  <br/>&bull; 暗黙的なアニメーション: 暗黙的なアニメーションによって、ビジュアルのプロパティが変更されたときにビジュアルをアニメーション化することができます。 暗黙的なアニメーションを使って、レイアウト アニメーションを実行できます。つまり、アプリのレイアウトが変更されたときに、新しい場所に移動するレイアウトをアニメーション化することができます。 <br/>&bull; CompositionBackdropBrush: CompositionBackdropBrush は、効果の入力として現在の RenderTarget を選択できる新しい種類のブラシです。<br/>&bull; LayerVisual: ビジュアルのコレクションに効果を適用することができます。 たとえば、UI の無効になっている部分を示すために、UI の一部をグレースケールにすることができます。<br/>&bull; CompositionMashBrush: 不透明マスクを指定できます。<br/>&bull; クリップの変換: クリップの四角形に変換を適用できます。<br/>&bull; サーフェス ブラシ変換: CompositionSurfaceBrush に変換を適用できます。<br/>&bull; CompositionNineGridBrush: 画像上に 9 グリッドのサイズ変更インセットを指定したり、単色の四角形の境界線を作成したりできます。<br/>&bull; 式文字列の追加: 式文字列は、新しい関数、式演算子、キーワードをサポートします。
@@ -61,6 +61,6 @@ Winsock | TCP ソケットは、[Winsock](https://tools.ietf.org/html/rfc7413) �
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

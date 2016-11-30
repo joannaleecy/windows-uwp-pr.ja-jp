@@ -4,8 +4,8 @@ ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: "Azure AD クライアント ID に関連付けられているアプリでユーザーが所有しているすべての製品を取得するには、Windows ストア コレクション API のこのメソッドを使用します。 スコープを指定して特定の製品を照会することができ、また他のフィルターを使用することもできます。"
 title: "製品の照会"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: ea517d66dbb6f373b191937de8c1cbe42c74846f
+ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
+ms.openlocfilehash: d614919debd979a475e93909199851390d242deb
 
 ---
 
@@ -23,8 +23,8 @@ Azure AD クライアント ID に関連付けられているアプリでユー�
 
 このメソッドを使用するための要件:
 
--   `https://onestore.microsoft.com` 対象ユーザー URI を使用して作成した Azure AD アクセス トークン。
--   アプリのクライアント側コードから [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) メソッドを呼び出して生成された Windows ストア ID キー。
+* `https://onestore.microsoft.com` 対象ユーザー URI を使用して作成した Azure AD アクセス トークン。
+* [アプリのクライアント側コードから生成された](view-and-grant-products-from-a-service.md#step-4) Windows ストア ID キー。
 
 詳しくは、「[サービスからの製品の表示と許可](view-and-grant-products-from-a-service.md)」をご覧ください。
 
@@ -69,7 +69,7 @@ UserIdentity オブジェクトには以下のパラメーターが含まれて�
 | パラメーター            | タイプ   | 説明                                                                                                                                                                                                                  | 必須かどうか |
 |----------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | identityType         | string | 文字列値 **b2b** を指定します。                                                                                                                                                                                            | 必須      |
-| identityValue        | string | Windows ストア ID キーの文字列値。                                                                                                                                                                                    | 必須      |
+| identityValue        | string | [アプリのクライアント側コードから生成された](view-and-grant-products-from-a-service.md#step-4) Windows ストア ID キー。                                                                                                                                                                                     | 必須      |
 | localTicketReference | string | 返された製品で必要な識別子。 応答本文で返された項目には、一致する *localTicketReference* があります。 Windows ストア ID キーの *userId* 要求と同じ値を使用することをお勧めします。 | 必須      |
 
 <span/> 
@@ -217,6 +217,6 @@ Date: Tue, 22 Sep 2015 20:28:18 GMT
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

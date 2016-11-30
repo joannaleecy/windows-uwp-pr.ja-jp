@@ -4,8 +4,8 @@ title: "ユニバーサル Windows プラットフォームの紹介"
 description: "Windows 10 を搭載するさまざまなデバイスで実行できるユニバーサル Windows プラットフォーム (UWP) アプリについて説明します。"
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 translationtype: Human Translation
-ms.sourcegitcommit: 0f2ed552898f7cbb476055a6d6b7aa76545113b1
-ms.openlocfilehash: c433bd2eba2a5be114680f52a8da0b5c7b563186
+ms.sourcegitcommit: 98dd2da8e16552fcde9790bd77f17a2100b63d4f
+ms.openlocfilehash: 170bbb4e22b3ac642b0dfd0c9136d3dd39d519d0
 
 ---
 
@@ -189,7 +189,6 @@ Windows 10 には、既存のスケーリング モデルの進化形が導入�
 
 ## コードの記述
 
-
 [Visual Studio での Windows 10 プロジェクト](https://msdn.microsoft.com/library/windows/apps/dn609832.aspx#target_win10) に使用するプログラミング言語オプションには、Visual C++、C#、Visual Basic、JavaScript が含まれます。 Visual C++、C#、Visual Basic については、完全な再現性を持つ、ネイティブ UI エクスペリエンスのために XAML を使うことができます。 Visual C++ については、XAML の代わりに、または XAML に加えて、DirectX での描画を選ぶことができます。 JavaScript については、プレゼンテーション レイヤーは HTML になり、HTML はもちろん、クロスプラットフォーム Web 標準です。 コードと UI の大部分はユニバーサルで、すべての場所で同様に実行されます。 特定のデバイス ファミリに合わせて調整されたコードと特定のフォーム ファクターに合わせて調整された UI については、アダプティブ コードとアダプティブ UI を使用するオプションがあります。 これらの異なる場合を詳しく見てみましょう。
 
 **ターゲット デバイス ファミリで実装されている API の呼び出し**
@@ -279,8 +278,11 @@ UWP アプリに利用可能な Win32 API の完全な一覧については、�
 
 Windows ストアにアプリ公開の申請をする方法については、「[統合 Windows デベロッパー センター ダッシュボードの使用](../publish/using-the-windows-dev-center-dashboard.md)」をご覧ください。
 
+## 関連項目 ##
+別の入門資料については、「[Windows 10 デバイス向け Windows アプリのビルドの概要](https://msdn.microsoft.com/en-us/magazine/dn973012.aspx)」をご覧ください。
 
 
-<!--HONumber=Sep16_HO3-->
+
+<!--HONumber=Nov16_HO1-->
 
 

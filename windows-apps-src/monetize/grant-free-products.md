@@ -4,8 +4,8 @@ ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
 description: "Windows ストア購入 API 内のこのメソッドを使用して、無料のアプリまたはアドオンを特定のユーザーに対して付与します。"
 title: "無料の製品の付与"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: a04918a562d132f6a721b96c7f4ad78218eb8819
+ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
+ms.openlocfilehash: 2eca8712075ce1f9d876f3ae441381734bd52370
 
 ---
 
@@ -21,8 +21,8 @@ Windows ストア購入 API 内のこのメソッドを使用して、無料の�
 
 このメソッドを使用するための要件:
 
--   `https://onestore.microsoft.com` 対象ユーザー URI を使用して作成した Azure AD アクセス トークン。
--   アプリのクライアント側コードから [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) メソッドを呼び出して生成された Windows ストア ID キー。
+* `https://onestore.microsoft.com` 対象ユーザー URI を使用して作成した Azure AD アクセス トークン。
+* [アプリのクライアント側コードから生成された](view-and-grant-products-from-a-service.md#step-4) Windows ストア ID キー。
 
 詳しくは、「[サービスからの製品の表示と許可](view-and-grant-products-from-a-service.md)」をご覧ください。
 
@@ -53,7 +53,7 @@ Windows ストア購入 API 内のこのメソッドを使用して、無料の�
 | パラメーター      | タイプ   | 説明                                                                                                                                                                                                                                                                                                            | 必須かどうか |
 |----------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | availabilityId | string | Windows ストア カタログから購入される製品の可用性 ID。                                                                                                                                                                                                                                     | 必須      |
-| b2bKey         | string | 顧客 ID を表す Windows ストア ID キー。                                                                                                                                                                                                                                                        | 必須      |
+| b2bKey         | string | [アプリのクライアント側コードから生成された](view-and-grant-products-from-a-service.md#step-4) Windows ストア ID キー。                                                                                                                                                                                                                                                        | 必須      |
 | devOfferId     | string | 購入後にコレクション項目に表示される開発者指定のプラン ID。                                                                                                                                                                                                                                 | 省略可能       |
 | language       | string | ユーザーの言語。                                                                                                                                                                                                                                                                                              | 必須      |
 | market         | string | ユーザーの市場。                                                                                                                                                                                                                                                                                                | 必須      |
@@ -245,6 +245,6 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

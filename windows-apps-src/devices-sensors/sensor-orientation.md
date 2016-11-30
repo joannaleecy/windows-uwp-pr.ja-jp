@@ -4,8 +4,8 @@ ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
 title: "センサーの向き"
 description: "Accelerometer、Gyrometer、Compass、Inclinometer、および OrientationSensor の各クラスのセンサー データは、基準軸によって定義されます。 これらの軸はデバイスの横長の向きで定義され、ユーザーがデバイスの向きを変えると、デバイスと共に回転します。"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: f0f9c7184c81edf8136849bf8a7bd9d04c340f62
+ms.sourcegitcommit: 62b4042cf1c6296c908a12feb5b2fcbd2b9b8734
+ms.openlocfilehash: 9deb0327f67350af49ba19224a75e766ff9805d7
 
 ---
 # センサーの向き
@@ -21,30 +21,30 @@ ms.openlocfilehash: f0f9c7184c81edf8136849bf8a7bd9d04c340f62
 
 ## 表示の向きとデバイスの向き
 
-センサーの基準軸について理解するために、画面の向きとデバイスの向きを区別する必要があります。 画面の向きはテキストの向きであり、画面上に画像が表示されます。それに対してデバイスの向きは、デバイスの実際の配置です。 次の図では、デバイスと画面の向きは共に **Landscape** です。
+センサーの基準軸について理解するために、画面の向きとデバイスの向きを区別する必要があります。 画面の向きはテキストの向きであり、画面上に画像が表示されます。それに対してデバイスの向きは、デバイスの実際の配置です。 次の図では、デバイスとディスプレイの向きは共に**横向き**です (示されているセンサー軸は、横向き優先デバイスにのみ適用されることに注意してください)。
 
-![画面とデバイスの向きが Landscape](images/accelerometer-axis-orientation-landscape-with-text.png)
+![画面とデバイスの向きが横向き](images/sensor-orientation-a.PNG)
 
 次の図では、画面とデバイスの向きが共に **LandscapeFlipped** です。
 
-![画面とデバイスの向きが LandscapeFlipped](images/accelerometer-axis-orientation-landscape-180-with-text.png)
+![画面とデバイスの向きが LandscapeFlipped](images/sensor-orientation-b.PNG)
 
 次の図では、画面の向きが Landscape、デバイスの向きが LandscapeFlipped です。
 
-![画面の向きが Landscape、デバイスの向きが LandscapeFlipped です。](images/accelerometer-axis-orientation-landscape-180-with-text-inverted.png)
+![画面の向きが Landscape、デバイスの向きが LandscapeFlipped です。](images/sensor-orientation-c.PNG)
 
 向きの値は、[**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Dn264258) クラスの [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.getforcurrentview.aspx) メソッドと [**CurrentOrientation**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.currentorientation.aspx) プロパティを使って照会することができます。 次に、[**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/BR226142) 列挙値と比較することによってロジックを作成できます。 サポートするすべての向きについて、その向きへの基準軸の変換をサポートする必要があることに注意してください。
 
 ## 横向き優先デバイスと縦向き優先デバイス
 
-製造元は、横向き優先および縦向き優先のいずれのデバイスも製造します。 製造元がデバイスにコンポーネントを統合する場合、すべてのデバイスが同じ参照フレーム内で動作するように、統一された一貫性のある方法で行います。 次の表は、横向き優先デバイスと縦向き優先デバイスの両方のセンサー軸を示しています。
+製造元は、横向き優先および縦向き優先のいずれのデバイスも製造します。 参照フレームは、横向き優先デバイス (デスクトップやノート PC など) と縦向き優先デバイス (電話や一部のタブレットなど) によって異なります。 次の表は、横向き優先デバイスと縦向き優先デバイスの両方のセンサー軸を示しています。
 
-| 向き | 横向き優先 | 縦向き優先 |
+| 方向 | 横向き優先 | 縦向き優先 |
 |-------------|-----------------|----------------|
-| **横向き** | ![Landscape の向きの横向き優先デバイス](images/accelerometer-axis-orientation-landscape.png) | ![Landscape の向きの縦向き優先デバイス](images/accelerometer-axis-orientation-portrait-270.png) |
-| **縦向き** | ![Portrait の向きの横向き優先デバイス](images/accelerometer-axis-orientation-landscape-90.png) | ![Portrait の向きの縦向き優先デバイス](images/accelerometer-axis-orientation-portrait.png) |
-| **LandscapeFlipped ** | ![LandscapeFlipped の向きの横向き優先デバイス](images/accelerometer-axis-orientation-landscape-180.png) | ![LandscapeFlipped の向きの縦向き優先デバイス](images/accelerometer-axis-orientation-portrait-90.png) | 
-| **PortraitFlipped** | ![PortraitFlipped の向きの横向き優先デバイス](images/accelerometer-axis-orientation-landscape-270.png)| ![PortraitFlipped の向きの縦向き優先デバイス](images/accelerometer-axis-orientation-portrait-180.png) |
+| **横向き** | ![Landscape の向きの横向き優先デバイス](images/sensor-orientation-0.PNG) | ![Landscape の向きの縦向き優先デバイス](images/sensor-orientation-1.PNG) |
+| **縦向き** | ![Portrait の向きの横向き優先デバイス](images/sensor-orientation-2.PNG) | ![Portrait の向きの縦向き優先デバイス](images/sensor-orientation-3.PNG) |
+| **LandscapeFlipped ** | ![LandscapeFlipped の向きの横向き優先デバイス](images/sensor-orientation-4.PNG) | ![LandscapeFlipped の向きの縦向き優先デバイス](images/sensor-orientation-5.PNG) | 
+| **PortraitFlipped** | ![PortraitFlipped の向きの横向き優先デバイス](images/sensor-orientation-6.PNG)| ![PortraitFlipped の向きの縦向き優先デバイス](images/sensor-orientation-7.PNG) |
 
 ## ディスプレイをブロードキャストするデバイスとヘッドレス デバイス
 
@@ -171,6 +171,6 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

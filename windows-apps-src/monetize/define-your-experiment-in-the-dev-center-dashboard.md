@@ -4,14 +4,16 @@ Description: "ユニバーサル Windows プラットフォーム (UWP) アプ�
 title: "デベロッパー センター ダッシュボードで実験を定義する"
 ms.assetid: 675F2ADE-0D4B-41EB-AA4E-56B9C8F32C41
 translationtype: Human Translation
-ms.sourcegitcommit: ce0431243866125eff83569e3b9b1c75e0703358
-ms.openlocfilehash: df6744cb9f4dd60c9eef07dc89f2265ac4244aab
+ms.sourcegitcommit: b33e003af6e12df5eedfe150155db6777c5c62f6
+ms.openlocfilehash: fa209464e247e7073da2197ddd0b9a5344f3763b
 
 ---
 
 # デベロッパー センター ダッシュボードで実験を定義する
 
 [デベロッパー センター ダッシュボードでプロジェクトを作成し、リモート変数を定義](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)し、[アプリの実験用のコードを記述](code-your-experiment-in-your-app.md)したら、プロジェクトで実験を作成することができます。 実験を作成するときは、ゴールとユーザーが受け取るバリエーションを定義します。
+
+実験の作成および実行のプロセスについて詳しく示すチュートリアルについては、「[A/B テストを使用して最初の実験を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)」をご覧ください。
 
 <span id="get-an-api-key" />
 <span id="create-an-experiment" />
@@ -85,6 +87,6 @@ ms.openlocfilehash: df6744cb9f4dd60c9eef07dc89f2265ac4244aab
 
 
 
-<!--HONumber=Sep16_HO1-->
+<!--HONumber=Nov16_HO1-->
 
 

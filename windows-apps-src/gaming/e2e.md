@@ -4,8 +4,8 @@ title: "Windows 10 ゲーム開発ガイド"
 description: "ユニバーサル Windows プラットフォーム (UWP) ゲーム開発のためのリソースや情報を網羅したガイドです。"
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 translationtype: Human Translation
-ms.sourcegitcommit: 1c3f222b4b3ddb14a48cef138984b07ac58cc66b
-ms.openlocfilehash: 7bc6694f94eeeb6188470fee00d432b2d71e52e6
+ms.sourcegitcommit: 2584a08e0a869ab3c5f11c192f0a5a6eeb223d61
+ms.openlocfilehash: af9252d172bab96ce50eb7ff12d8f0503f010d15
 
 ---
 
@@ -63,6 +63,10 @@ Windows 10 ゲームを作成すると、スマートフォンから PC、Xbox O
     <tr>
         <td>DirectX のリファレンスと概要</td>
         <td>[DirectX のグラフィックスとゲーミング](https://msdn.microsoft.com/library/windows/desktop/ee663274)</td>
+    </tr>
+    <tr>
+        <td>ゲームのための Azure</td>
+        <td>[Azure を使ったゲームの構築とスケーリング](https://azure.microsoft.com/solutions/gaming/)</td>
     </tr>
     <tr>
         <td>Xbox One の UWP</td>
@@ -653,6 +657,30 @@ Havok のモジュール化された一連のツールとテクノロジによ�
     </tr>
 </table>
  
+
+#### MonoGame
+
+MonoGame は、オープン ソース、クロスプラット フォームのゲーム開発フレームワークで、当初は Microsoft の XNA Framework 4.0 に基づいていました。 現在、Monogame は、Windows、Windows Phone、Xbox と共に、Linux、macOS、iOS、Android、その他のいくつかのプラットフォームをサポートしています。
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>MonoGame</td>
+        <td>[MonoGame Web サイト](http://www.monogame.net)</td>
+    </tr>
+    <tr>
+        <td>MonoGame のドキュメント</td>
+        <td>[MonoGame のドキュメント (最新)](http://www.monogame.net/documentation/)</td>
+    </tr>
+    <tr>
+        <td>Monogame のダウンロード</td>
+        <td>MonoGame の Web サイトから[リリース、開発ビルド、ソース コードをダウンロード](http://www.monogame.net/downloads/)するか、[NuGet から最新のリリースを入手](https://www.nuget.org/profiles/MonoGame)します。
+    </tr>
+</table>
+
 
 #### Cocos2d
 
@@ -1506,6 +1534,6 @@ Visual Studio Application Insights は、公開されたゲームのパフォー
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

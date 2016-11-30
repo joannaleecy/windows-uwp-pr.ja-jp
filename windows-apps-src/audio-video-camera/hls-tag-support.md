@@ -4,8 +4,8 @@ ms.assetid:
 description: "この記事では、UWP アプリでサポートされている HTTP ライブ ストリーミング (HLS) プロトコルのタグを示します。"
 title: "HTTP ライブ ストリーミング (HLS) タグのサポート"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: 779e5d0da7186a6f94251b89cf27636170923d5c
+ms.sourcegitcommit: 3d61f5272e4d11acfb7e0a85436ca60ba458dcae
+ms.openlocfilehash: a561f11a1638d5fea21d1d3b3f8bc47f71271f3f
 
 ---
 
@@ -16,7 +16,7 @@ ms.openlocfilehash: 779e5d0da7186a6f94251b89cf27636170923d5c
 > "X-" で始まるカスタム タグには、「[メディア項目、プレイリスト、トラック](media-playback-with-mediasource.md)」の記事で示されているように、タイミングが設定されたメタデータとしてアクセスできます。
 
 |タグ |導入済みの HLS プロトコルのバージョン|HLS プロトコル ドキュメント草案のバージョン|クライアントに必須|7 月にリリースされた Windows 10|Windows 10 バージョン 1511|Windows 10 バージョン 1606 |
-|---------------------|-----------|--------------|---------|--------------|
+|---------------------|-----------|--------------|---------|--------------|-----|-----|
 |4.3.1.  基本タグ                 |             |                   |         |             |     |    |
 | 4.3.1.1.  EXTM3U |1|0|必須|サポートされる|サポートされる|サポートされる|
 | 4.3.1.2.  EXT-X-VERSION |2|3|必須|サポートされる|サポートされる|サポートされる
@@ -86,6 +86,6 @@ ms.openlocfilehash: 779e5d0da7186a6f94251b89cf27636170923d5c
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

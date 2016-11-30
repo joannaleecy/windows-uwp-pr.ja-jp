@@ -1,123 +1,92 @@
 ---
 author: awkoren
-Description: "Windows デスクトップ アプリケーション (Win32、WPF、Windows フォームなど) を、デスクトップの変換拡張機能を使ってユニバーサル Windows プラットフォーム (UWP) アプリに変換する準備を行います。"
+Description: "Desktop to UWP Bridge について理解し、Windows デスクトップ アプリケーション (Win32、WPF、Windows フォームなど) をユニバーサル Windows プラットフォーム (UWP) アプリに変換しましょう。"
 Search.Product: eADQiWindows 10XVcnh
-title: "デスクトップ アプリケーションをユニバーサル Windows プラットフォーム (UWP) アプリに変換する"
+title: "Desktop Bridge でデスクトップ アプリをユニバーサル Windows プラットフォーム (UWP) 用に変換する"
 translationtype: Human Translation
-ms.sourcegitcommit: ff8cd3ab5e38cfc3a2b5fabaad15f78a5f2620f2
-ms.openlocfilehash: 6cf6367ed0f6acea0f87ac36a050e874425423b1
+ms.sourcegitcommit: 933dcd48c03de1992bbfcf0d86951170264a309f
+ms.openlocfilehash: 170ed75d1cd865bfc8e4feb776fce4332cc67850
 
 ---
 
-# デスクトップ アプリケーションをユニバーサル Windows プラットフォーム (UWP) アプリに変換する
+# Desktop Bridge でデスクトップ アプリをユニバーサル Windows プラットフォーム (UWP) 用に変換する
 
-\[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、マイクロソフトは明示または黙示を問わずいかなる保証をするものでもありません。\]
+Desktop to UWP Bridge について理解し、Windows デスクトップ アプリケーションをユニバーサル Windows プラットフォーム (UWP) アプリに変換しましょう。
 
-Windows デスクトップ アプリケーション (Win32、WPF、Windows フォームなど) を、デスクトップの変換拡張機能を使ってユニバーサル Windows プラットフォーム (UWP) アプリに変換する準備を行います。
+Desktop Bridge は、Windows デスクトップ アプリケーション (Win32、Windows フォーム、WPF など) やゲームを UWP のアプリやゲームに変換するための一連のテクノロジです。 Windows デスクトップ アプリケーションは、変換後、Windows 10 デスクトップをターゲットとする UWP アプリ パッケージ (.appx または .appxbundle) の形式でパッケージ化され、処理と展開が行われます。
 
-## アプリケーションを UWP に変換する利点
+デスクトップ アプリの UWP パッケージへの変換を可能にするテクノロジは、2 つあります。 1 つ目は、変換プロセスです。既存のバイナリを取り込んで、UWP パッケージとして再パッケージ化します。 コードは、同じままで、パッケージ化の方法だけが異なります。 2 つ目は、Windows Anniversary Update の各種ランタイムテクノロジーで、UWP パッケージを、アプリ コンテナーではなく完全な信頼として実行される実行可能ファイルにします。 このテクノロジにより、変換済みのアプリにパッケージ ID が与えられます。パッケージ ID は一部の UWP API を使用するときに必要です。
 
-デスクトップの変換拡張機能を使う UWP は、Windows デスクトップ アプリケーション (Win32、Windows フォーム、WPF など) やゲームをユニバーサル Windows プラットフォーム (UWP) アプリやゲームに変換するためのブリッジです。 詳しくは、「[UWP アプリ ガイド](https://msdn.microsoft.com/library/windows/apps/dn894631.aspx)」をご覧ください。 Windows デスクトップ アプリケーションは、変換後、Windows 10 デスクトップをターゲットとする UWP アプリ パッケージ (.appx または .appxbundle) の形式でパッケージ化され、処理されて、展開されます。
+## 利点
 
-デスクトップ アプリの UWP パッケージへの変換を可能にするテクノロジは、2 つあります。 1 つ目は、Desktop App Converter です。既存のバイナリを取り込んで、UWP パッケージとして再パッケージ化します。 コードは、同じままで、パッケージ化の方法だけが異なります。 2 つ目は、Windows Anniversary Update の各種ランタイムテクノロジーで、UWP パッケージを、アプリ コンテナーではなく完全な信頼として実行される実行可能ファイルにします。 このテクノロジにより、変換済みのアプリにパッケージ ID が与えられます。パッケージ ID は一部の UWP API を使用するときに必要です。
+Windows デスクトップ アプリケーションを変換する利点を以下に示します。 
 
-次に、Windows デスクトップ アプリケーションを変換する利点をいくつか示します。
+**スムーズな展開プロセス**。 ブリッジを使用すると、ユーザーが安心してアプリやゲームをインストールまたは更新できる優れた展開エクスペリエンスを提供できます。 ユーザーがアプリをアンインストールすると、跡形なく完全に削除されます。 このため、セットアップ エクスペリエンスの設計や、更新プログラムの配信にかかる時間を削減できます。
 
-* アプリのインストール エクスペリエンスが、お客様にとってスムーズになります。 サイドローディングを使ってアプリをコンピューターに展開でき (「[Windows 10 での LOB アプリのサイドローディング](https://technet.microsoft.com/library/mt269549.aspx)」を参照)、アンインストール後に何も残りません。 長い間、Windows ストアにアプリを公開できます。
+**自動更新とライセンス**。 アプリは、Windows ストアの組み込みライセンスと自動更新機能に参加できます。 自動更新機能は、ファイルの変更された部分だけがダウンロードされるため、非常に信頼性が高く効率的なメカニズムです。
 
-* 変換済みのアプリにはパッケージ ID があるので、完全に信頼できるパーティションからでも、以前よりも多くの UWP API を呼び出すことができます。 完全な一覧は、「[変換されたデスクトップ アプリでサポートされている UWP API](desktop-to-uwp-supported-api.md)」をご覧ください。 
+**リーチの拡大とシンプルな決済**。 Windows ストアからの配布なら、数百万人の Windows 10 ユーザーにリーチできます。ユーザーは、アプリとゲームの購入や、アプリ内での購入に各地域の支払い方法を使用できます。
 
-* 自分のペースで、XAML ユーザー インターフェイス、ライブ タイルの更新、UWP バックグラウンド タスク、アプリ サービスなどの多くの UWP 機能をアプリのパッケージに追加できます。 他の UWP アプリで利用できるすべての機能を、自分のアプリで利用できます。
+**UWP 機能の追加**。  自分のペースで、XAML ユーザー インターフェイス、ライブ タイルの更新、UWP バックグラウンド タスク、アプリ サービスなどの多くの UWP 機能をアプリのパッケージに追加できます。
 
-* アプリのすべての機能をアプリの完全に信頼できるパーティションから、アプリ コンテナー パーティションに移動すると、すべての Windows 10 デバイスでアプリを実行できるようになります。
+**対応デバイスの拡大**。 ブリッジを使用すると、徐々にコードをユニバーサル Windows プラットフォームに移行して、電話、Xbox One、HoloLens など、すべての Windows 10 デバイスを対象にできます。
 
-* アプリは、UWP アプリとして、Windows デスクトップ アプリケーションと同じことを実行できます。 アプリは、実際のレジストリおよびファイル システムからは区別されている、仮想化ビューのレジストおよびファイル システムと通信します。
+## 準備
 
-* アプリは、Windows ストアの組み込みライセンスと自動更新機能に参加できます。 自動更新機能は、ファイルの変更された部分だけがダウンロードされるため、非常に信頼性が高く効率的なメカニズムです。
+Desktop to UWP Bridge は使いやすく設計されており、変換プロセス用にアプリを準備する作業はそれほど必要ありません。 ただし、変換を行う前に注意する点がいくつかあります。 先へ進む前に「[Desktop to UWP Bridge 用にアプリを準備する](desktop-to-uwp-prepare.md)」を読み、アプリに該当する点があれば対処してください。
 
-## デスクトップ アプリを UWP に変換する準備をする
+## 変換
 
-アプリの変換プロセス準備に多くの作業は必要ありません。 Windows ストアがライセンスを処理して自動更新するため、これらの機能をコードベースから削除できることを思い出してください。 次の状況のいずれかがアプリケーションに該当する場合は、変換する前に、この問題に対処する必要があります。
+アプリを変換するには、いくつかの方法があります。
 
-+ __アプリでバージョン 4.6.1 よりも前のバージョンの .NET を使用している__。 .NET 4.6.1 のみがサポートされています。 変換する前にアプリのターゲットを .NET 4.6.1 に変更する必要があります。 
+**Desktop App Converter (DAC)**。 DAC は、アプリを自動的に変換し、署名を行うツールです。 DAC の使用は便利で自動的です。アプリが多くのシステム変更を行う場合や、インストーラーについて不明確な点がある場合に役立ちます。 まず、「[Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md)」をご覧ください。 
 
-+ __常に管理者特権のセキュリティ権限でアプリを実行する__。 アプリは、対話ユーザーとして実行中にも機能する必要があります。 Windows ストアからアプリをインストールするユーザーはシステム管理者ではない可能性があります。そのため、アプリは、標準ユーザーでは正しく動作しない、管理者だけが実行できる方法で実行する必要があります。
+**手動変換**。 xcopy を使用してアプリをインストールする場合や、インストーラーによるシステムへの変更点が明確である場合は、手動変換の選択が適していることがあります。 これには、マニフェスト ファイルの作成、MakeAppx.exe ツールの実行、アプリ パッケージへの署名が含まれます。 手動で変換する方法について詳しくは、「[Desktop Bridge を使って手動でアプリを UWP アプリに変換する](desktop-to-uwp-manual-conversion.md)」をご覧ください。 
 
-+ __アプリにカーネル モード ドライバーや Windows サービスが必要__。 ブリッジはアプリには適していますが、システム アカウントで実行する必要があるカーネル モード ドライバーや Windows サービスはサポートしていません。 Windows サービスの代わりに、[バックグラウンド タスク](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)を使います。
+**サードパーティ インストーラー**。 よく使われるサードパーティのインストーラーとしては、[InstallShield (Flexera)](http://www.flexerasoftware.com/producer/products/software-installation/installshield-software-installer)、[WiX (FireGiant)](https://www.firegiant.com/r/appx)、および [Advanced Installer (Caphyon)](http://www.advancedinstaller.com/uwp-app-package) があり、これらで Desktop Bridge がサポートされるようにりました。数クリックで MSI インストーラーと変換済みのアプリ パッケージを生成できます。 詳しくは、各インストーラーの Web サイトをご覧ください。 
 
-+ __アプリのモジュールが AppX パッケージに含まれていないプロセスに読み込まれるインプロセスである__。 これは許可されていません。つまり、[シェルの拡張機能](https://msdn.microsoft.com/library/windows/desktop/dd758089.aspx)などのインプロセスの拡張機能はサポートされていません。 ただし、同じパッケージに 2 つのアプリが含まれている場合に、そのアプリ間でプロセス間通信することはできます。
+## 強化 
 
-+ __アプリが [SetDllDirectory](https://msdn.microsoft.com/library/windows/desktop/ms686203) または [AddDllDirectory](https://msdn.microsoft.com/library/windows/desktop/hh310513)__ を呼び出す。 現在、これらの関数は変換されたアプリでサポートされていません。 今後のリリースでサポートが追加される予定です。 この問題を回避するには、これらの関数を使うために配置している .dll をすべてパッケージのルートにコピーします。 
+変換されたデスクトップ アプリは、広範な UWP API で強化できます。ライブ タイルやプッシュ通知など、さまざまな機能を追加することができます。 完全なコード サンプルについては、GitHub のリポジトリで[デスクトップ アプリから UWP へのブリッジのコード サンプル](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)および[ユニバーサル Windows プラットフォーム (UWP) のアプリ サンプル](https://github.com/Microsoft/Windows-universal-samples)をご覧ください。 サポートされている API の一覧については、「[Desktop Bridge で変換されたアプリでサポートされている UWP API](desktop-to-uwp-supported-api.md)」をご覧ください。 
 
-+ __アプリでカスタム アプリケーション ユーザー モデル ID (AUMID) を使う__。 プロセスから [SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422.aspx) を呼び出して独自の AUMID を設定する場合、アプリ モデル環境/AppX パッケージでその目的で生成された AUMID しか使えません。 カスタムの AUMID を定義することはできません。
+UWP API の呼び出しのほか、変換されたアプリだけがアクセスできる機能でアプリを拡張することもできます。 ユーザーのログオン時のプロセスの起動やエクスプローラーの統合などに対応した機能があり、元のデスクトップ アプリと UWP アプリのフル パッケージの間でのスムーズな移行を目的として設計されています。 詳しくは、「[Desktop Bridge アプリの拡張機能](desktop-to-uwp-extensions.md)」をご覧ください。 
 
-+ __アプリが HKEY_LOCAL_MACHINE (HKLM) レジストリ ハイブを変更する__。 アプリから HKLM キーを作成しようとしたり、変更のために開こうとしたりすると、アクセス拒否エラーが発生します。 アプリには、レジストリを仮想化した独自のプライベート ビューがあるため、ユーザーやマシン全体のレジストリ ハイブ (HKLM はこれに相当) の概念は適用されないことに注意してください。 HKLM を使って実現していたことを、HKEY_CURRENT_USER (HKCU) に書き込むなど別の方法で実現する必要があります。
+## 移行
 
-+ __アプリで、別のアプリを起動する手段として ddeexec レジストリ サブキーを使っている__。 代わりに、[アプリ パッケージ マニフェスト](https://msdn.microsoft.com/library/windows/apps/br211474.aspx)のさまざまなアクティブ化可能* な拡張機能で構成する DelegateExecute verb ハンドラーの 1 つを使います。
+ブリッジを使用すると、Windows デスクトップでアプリを実行および公開する機能を維持しつつ、コードを徐々に UWP に移行できます。 UWP に完全に移行 (アプリに WPF/Win32 コンポーネントが含まれていない状態に) すると、スマートフォン、Xbox One、HoloLens などすべての Windows デバイスでの使用が可能になります。
 
-+ __アプリが、別のアプリとデータを共有するために AppData フォルダーに書き込みを行う__。 変換後、AppData はローカル アプリ データ ストアにリダイレクトされます。このストアは、各 UWP アプリのプライベート ストアです。 プロセス間データ共有に別の方法を使います。 詳しくは、「[設定と他のアプリ データを保存して取得する](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)」をご覧ください。
+## デバッグ
 
-+ __アプリが、アプリのインストール ディレクトリに書き込みを行う__。 たとえば、exe と同じディレクトリに置いたログ ファイルにアプリが書き込む場合などです。 この書き込みは、サポートされていないため、ローカル アプリ データ ストアなどの別の場所にする必要があります。
+アプリは、Visual Studio を使ってデバッグできます。 詳しくは、「[Desktop Bridge で変換されたアプリのデバッグ](desktop-to-uwp-debug.md)」をご覧ください。 
 
-+ __アプリのインストールでユーザーの対話式操作を求める__。 アプリ インストーラーはサイレント実行でき、クリーンな状態の OS イメージには既定では存在しないすべての前提条件をインストールする必要があります。
+Desktop Bridge の内部的なしくみについては、「[Desktop Bridge の内側](desktop-to-uwp-behind-the-scenes.md)」をご覧ください。 
 
-+ __アプリで現在の作業ディレクトリを使う__。 変換済みのアプリでは、実行時に、デスクトップで以前に指定していたのと同じ作業ディレクトリ (.LNK ショートカット) を取得しません。 アプリを正しく動作させるために現在のディレクトリを取得することが重要な場合は、実行時に CWD を変更する必要があります。
+## 配布
 
-+ __アプリで UIAccess が必要__。 アプリケーションが UAC マニフェストの `requestedExecutionLevel` 要素で `UIAccess=true` を指定している場合の UWP への変換は現在サポートされていません。 詳しくは、「[UI オートメーション セキュリティの概要](https://msdn.microsoft.com/library/ms742884.aspx)」をご覧ください。
+アプリは、Windows ストアまたはサイドローディングを使用して配布できます。 詳しくは、「[Desktop Bridge で変換されたアプリの配布](desktop-to-uwp-distribute.md)」をご覧ください。 アプリは、ユーザー用に展開する前に、署名する必要があります。 手順については、「[Desktop Bridge を使用して変換したアプリに署名する](desktop-to-uwp-signing.md)」をご覧ください。 
 
-+ __アプリが既に完全な UWP アプリであり、アプリ パッケージ内から完全な信頼プロセスを起動しようとする。__. ブリッジの「逆」使用はサポートされていません。完全な信頼プロセスを起動しようとする UWP アプリは、ストア認定に失敗します。 サイドローディングされたアプリでこのシナリオを有効にするには、まずアプリのマニフェストに ```<desktop:Extension>``` 宣言を含めます (値として *Windows.FullTrustApplication* を持つ、*EntryPoint* 属性を含みます)。 次に、アプリの ```<TargetDeviceFamily>``` を *Windows.Desktop* に設定します。 これにより、アプリがデスクトップ デバイス ファミリのみをターゲットとしており、すべての UWP デバイスをターゲットとしていないことを示します。 これらの設定を行ってもアプリが *APPX0501: 検証エラー*を返す場合、ターゲット デバイス ファミリを確認します。アプリが *Windows.Desktop* でなく、*Windows.Universal* ファミリをターゲットとしている可能性があります。 
-
-+ __アプリが COM オブジェクトや GAC アセンブリを他のプロセスで使用できるように公開している__。 現在のリリースでは、AppX パッケージ外部の実行可能ファイルから生成されたプロセスで使用できるように、アプリが COM オブジェクトや GAC アセンブリを公開することはできません。 パッケージ内のプロセスは、通常どおり、COM オブジェクトや GAC アセンブリを登録して使用できますが、外部からは認識されません。 つまり、OLE などの相互運用機能のシナリオは、外部プロセスによって呼び出された場合、機能しません。 
-
-+ __アプリがサポートされていない方法で C ランタイム ライブラリにリンクされている__。 Microsoft C/C++ ランタイム ライブラリは、Microsoft Windows オペレーティング システムのプログラミングのルーチンを提供します。 これらのルーチンは、C および C++ 言語では提供されない、多くの一般的なプログラミング タスクを自動化します。 アプリで C/C++ ランタイム ライブラリを使用している場合、サポートされている方法でリンクされていることを確認する必要があります。 
-    
-    Visual Studio 2015 は、現在のバージョンの CRT に対して、コードで共通の DLL ファイルを使用できるようにするダイナミック リンクと、コードに直接ライブラリをリンクするスタティック リンクの両方をサポートしています。 可能であれば、アプリで VS 2015 へのダイナミック リンクを使用することをお勧めします。 
-
-    以前のバージョンの Visual Studio でのサポートは異なります。 詳しくは、次の表をご覧ください。 
-
-    <table>
-    <th>Visual Studio のバージョン</td><th>ダイナミック リンク</th><th>スタティック リンク</th></th>
-    <tr><td>2005 (VC 8)</td><td>サポートされない</td><td>サポートされる</td>
-    <tr><td>2008 (VC 9)</td><td>サポートされない</td><td>サポートされる</td>
-    <tr><td>2010 (VC 10)</td><td>サポートされる</td><td>サポートされる</td>
-    <tr><td>2012 (VC 11)</td><td>サポートされる</td><td>サポートされない</td>
-    <tr><td>2013 (VC 12)</td><td>サポートされる</td><td>サポートされない</td>
-    <tr><td>2015 (VC 14)</td><td>サポートされる</td><td>サポートされる</td>
-    </table>
-    
-    注: いずれの場合も、最新の公開されている CRT にリンクする必要があります。
-
-+ __アプリが Windows サイドバイサイド フォルダーからアセンブリをインストールする/読み込む__。 たとえば、アプリが C ランタイム ライブラリ VC8 または VC9 を使用しており、Windows サイドバイサイド フォルダーから動的にリンクしている、つまり、コードが共有フォルダーから共通の DLL ファイルを使用しているとします。 これはサポートされていません。 再頒布可能なライブラリ ファイルをコードに直接リンクして、静的にリンクする必要があります。
-
-## 変換プロセスを開始する
-
-アプリを変換するための、いくつかの異なるオプションがあります。
-
-* **Desktop App Converter (DAC)**。 DAC は、アプリを自動的に変換し、署名を行うツールです。 DAC の使用は便利で自動的です。アプリが多くのシステム変更を行う場合や、インストーラーについて不明確な点がある場合に、役立ちます。 DAC で作業を始めるには、「[Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md)」をご覧ください。 
-
-* **手動変換**。 アプリが xcopy を使用してインストールされたか、またはインストーラーがシステムに行う変更が明確である場合には、手動変換がより簡単な選択肢となる場合があります。 これには、マニフェスト ファイルの作成、MakeAppx.exe ツールの実行、アプリ パッケージへの署名が含まれます。 手動で変換する方法について詳しくは、[手動で Windows デスクトップ アプリケーションをユニバーサル Windows プラットフォーム (UWP) アプリに変換する](desktop-to-uwp-manual-conversion.md)」をご覧ください。 
-
-* **サードパーティ インストーラー**。 次の 3 つは、よく使われるサードパーティのインストーラーです。[Flexera による InstallShield](http://www.flexerasoftware.com/producer/products/software-installation/installshield-software-installer)、[FireGiant による WiX](https://www.firegiant.com/r/appx)、および [Caphyon による Advanced Installer](http://www.advancedinstaller.com/uwp-app-package) です。これらは Desktop Bridge をサポートし、わずかなクリックで MSI インストーラーと変換済みのアプリ パッケージを生成できます。 詳しくは、各インストーラーの Web サイトをご覧ください。 
-
-## サポートの利用とフィードバックの提供
+## サポートとフィードバック
 
 アプリの変換で問題が発生した場合、ヘルプのために[フォーラム](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop)を利用できます。 
 
-フィードバックを提供したり、機能の提案を行うには、[UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial) をご覧ください。 
+フィードバックを提供したり、機能の提案を行うには、[UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial) で項目を提出するか賛成票を投じてください。 
 
 ## このセクションの内容
 
 | トピック | 説明 |
 |-------|-------------|
-| [Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md) | Desktop App Converter を実行する方法が説明されています。 通常は、アプリの変換プロセス準備にそれほど多くの作業は必要ありません。 |
-| [デスクトップ アプリの手動変換](desktop-to-uwp-manual-conversion.md) | 手動でアプリ パッケージとマニフェストを作成する方法について説明します。 |
-| [変換されたデスクトップ アプリの拡張機能](desktop-to-uwp-extensions.md) | 拡張機能を使って、スタートアップ タスク、エクスプローラー統合などの機能を有効にして、変換済みのアプリを強化します。 |
-| [変換されたデスクトップ アプリでサポートされている UWP API](desktop-to-uwp-supported-api.md) | 変換されたデスクトップ アプリで利用可能な UWP API を確認します。 |
-| [変換済みのデスクトップ アプリに署名する](desktop-to-uwp-signing.md) | 証明書を使って、変換済みの .appx パッケージに署名する方法について説明します。 |
-| [変換済みの UWP アプリを展開してデバッグする](desktop-to-uwp-deploy-and-debug.md) | 変換後のアプリの展開とデバッグに関するヘルプを利用します。 また、デスクトップの変換拡張機能の内部に関心をお持ちの場合にも、このトピックは役に立ちます。 |
-| [デスクトップ アプリから UWP へのブリッジのコード サンプル](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | 変換されたアプリの機能の示す GitHub のコード サンプルです。 |
+| [Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md) | Desktop App Converter を実行する方法が説明されています。 |
+| [Desktop Bridge を使って手動でアプリを UWP アプリに変換する](desktop-to-uwp-manual-conversion.md) | 手動でアプリ パッケージとマニフェストを作成する方法について説明します。 |
+| [Desktop Bridge アプリの拡張機能](desktop-to-uwp-extensions.md) | 拡張機能を使って、スタートアップ タスクやエクスプローラー統合などの機能を有効にして、変換済みのアプリを強化します。 |
+| [Desktop Bridge で変換されたアプリでサポートされている UWP API](desktop-to-uwp-supported-api.md) | 変換されたデスクトップ アプリで利用可能な UWP API を確認します。 |
+| [Desktop Bridge で変換されたアプリのデバッグ](desktop-to-uwp-debug.md) | 変換済みのアプリをデバッグするためのオプションについて説明します。 | 
+| [Desktop Bridge を使用して変換したアプリに署名する](desktop-to-uwp-signing.md) | 証明書を使って変換済みのアプリ パッケージに署名する方法について説明します。 |
+| [Desktop Bridge で変換されたアプリの配布](desktop-to-uwp-distribute.md) | 変換済みのアプリをユーザーに配布する方法を確認します。  |
+| [Desktop Bridge の内側](desktop-to-uwp-behind-the-scenes.md) | Desktop to UWP Bridge の内部的な処理について詳しく説明します。 | 
+| [Desktop Bridge に関する既知の問題](desktop-to-uwp-known-issues.md) | Desktop to UWP Bridge に関する既知の問題について説明します。 | 
+| [デスクトップ アプリから UWP へのブリッジのコード サンプル](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | 変換されたアプリの機能を示す GitHub のコード サンプルです。 |
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

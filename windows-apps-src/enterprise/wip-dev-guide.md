@@ -5,8 +5,8 @@ MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "企業データと個人データの両方を使用する対応アプリの作成"
 translationtype: Human Translation
-ms.sourcegitcommit: 0da731e1211544ce6b07e783ddc2407da57781c2
-ms.openlocfilehash: 8ead30471371b9b6aca32088f115da9f68784922
+ms.sourcegitcommit: bf1c47e9cca45b626a45ca664bf2bb4be9c529e0
+ms.openlocfilehash: 82b674c72126c66aff34b0396a2c32f88023dd25
 
 ---
 
@@ -28,25 +28,17 @@ WIP と対応アプリについて詳しくは、「[Windows Information Protect
 
 以下が必要となります。
 
-* Microsoft Intune のアカウントへのアクセス権。
+* Windows 10 Version 1607 を実行するテスト仮想マシン (VM)。 このテスト VM でアプリをデバッグします。
 
-* Windows 10 Version 1607 を実行している開発コンピューター。
-
-* Windows 10 Version 1607 を実行しているテスト デバイス。 このテスト デバイスでアプリをデバッグします。
-
-  MDM に登録されているものと同じデバイスでは、デバッグすることはできません。 そのため、独立したテスト デバイスが必要になります。
-
-  わかりやすくするために、ここでは、テスト デバイスはコンピューターまたは仮想マシンであるとします。
+* Windows 10 Version 1607 を実行している開発コンピューター。 Visual Studio をテスト VM にインストールしている場合は、テスト VM を使用することもできます。
 
 ## 開発環境のセットアップ
 
 以下の作業を行います。
 
-* テスト コンピューターを登録します。
+* テスト VM に WIP Setup Developer Assistant をインストールします。
 
-* 保護ポリシーを作成します。
-
-* ポリシーをテスト コンピューターにダウンロードします。
+* WIP Setup Developer Assistant を使用して保護ポリシーを作成します。
 
 * Visual Studio プロジェクトをセットアップします。
 
@@ -54,23 +46,17 @@ WIP と対応アプリについて詳しくは、「[Windows Information Protect
 
 * 名前空間をコード ファイルに追加します。
 
-**テスト コンピューターを登録する**
+**テスト VM に WIP Setup Developer Assistant をインストールする**
 
- テスト コンピューターを登録するには、テスト コンピューターの **[設定]** -> **[職場または学校にアクセスする]** ページに Intune アカウントを追加します。
+ テスト VM で Windows 情報保護ポリシーを設定するには、このツールを使用します。
 
- ![MDM への接続](images/connect-v2.png)
-
- Intune 管理者コンソールにコンピューター名が表示されます。
+ このツールは、[WIP Setup Developer Assistant に関するページ](https://www.microsoft.com/store/p/wip-setup-developer-assistant/9nblggh526jf)でダウンロードできます。
 
 **保護ポリシーを作成する**
 
-ポリシーを作成し、そのポリシーをテスト コンピューターに展開します。 「[Create a Windows Information Protection (WIP) policy using Microsoft Intune](https://technet.microsoft.com/itpro/windows/keep-secure/create-edp-policy-using-intune)」(Microsoft Intune を使用して Windows 情報保護 (WIP) ポリシーを作成する) をご覧ください。
+WIP Setup Developer Assistant 内の各セクションに情報を追加することによって、ポリシーを定義します。 その使用方法について詳しくは、すべての設定の横にある [ヘルプ] アイコンを選択します。
 
-**ポリシーをデバイスにダウンロードする**
-
-テスト コンピューターで、**[設定]** ページに移動し、**[職場または学校にアクセスする]** -> **[情報]** -> **[同期]** の順に選びます。
-
-![MDM での同期の設定](images/sync.png)
+このツールの使用方法に関する一般的なガイダンスについては、アプリのダウンロード ページで、バージョンに関する注意事項のセクションを参照してください。
 
 **Visual Studio プロジェクトをセットアップする**
 
@@ -103,7 +89,7 @@ WIP と対応アプリについて詳しくは、「[Windows Information Protect
 
 **リモート デバッグをセットアップする**
 
-Visual Studio リモート ツールをテスト コンピューターにインストールします。 次に、開発用コンピューターでリモート デバッガーを起動し、アプリがターゲット コンピューターで実行されているかどうかを確認します。
+VM 以外のコンピューターでアプリを開発している場合にのみ、テスト VM に Visual Studio リモート ツールをインストールします。 次に、開発用コンピューターでリモート デバッガーを起動し、アプリがテスト VM で実行されているかどうかを確認します。
 
 「[リモート PC の手順](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps#remote-pc-instructions)」をご覧ください。
 
@@ -1104,6 +1090,6 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

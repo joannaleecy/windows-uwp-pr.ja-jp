@@ -4,8 +4,8 @@ Description: "詳細な分析は、Windows デベロッパー センター ダ�
 title: "分析"
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 translationtype: Human Translation
-ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
-ms.openlocfilehash: fd03b13d4169f265575de921ef9c42303babe972
+ms.sourcegitcommit: fa6e5945855defc99e9f5636543ec072eb777a5a
+ms.openlocfilehash: c628b1fb29601ff1d4ff3629da45409586274f6b
 
 ---
 
@@ -18,9 +18,7 @@ ms.openlocfilehash: fd03b13d4169f265575de921ef9c42303babe972
 
 ## すべてのアプリの分析
 
-ダッシュボードの概要ページには、すべてのアプリに関する詳細情報を集めたロールアップ ビューも含まれています。 概要ページに表示される統計情報は、アプリによって異なります。
-
-[分析レポートをダウンロードする](download-analytic-reports.md) 場合、すべてのアプリについてのレポートをダウンロードすることもできます。 いずれかのアプリについて、**[分析]** セクションで **[レポートのダウンロード]** ページにアクセスする必要がありますが、選んだアプリ以外のレポートもダウンロードできます。
+上部のナビゲーション メニューで、最もダウンロードされたアプリについての主要な分析を表示するには、**[分析]** > **[概要]** の順に選択します。 既定では、**[分析の概要]** ページには、全期間の取得数が最も多い 5 つのアプリに関する情報が表示されます。 別のアプリを選択して表示するには、**[フィルターを変更します]** を選択します。
 
 ## 各アプリで利用可能なレポート
 
@@ -33,8 +31,9 @@ ms.openlocfilehash: fd03b13d4169f265575de921ef9c42303babe972
 -   [フィードバック レポート](feedback-report.md)
 -   [利用状況レポート](usage-report.md)
 -   [アドオン取得レポート](add-on-acquisitions-report.md)
--   [広告仲介レポート](ad-mediation-report.md)
+-   [広告メディエーション レポート](ad-mediation-report.md)
 -   [広告パフォーマンス レポート](advertising-performance-report.md)
+-   [アフィリエイト パフォーマンス レポート](affiliates-performance-report.md)
 -   [アプリのインストールの広告レポート](app-install-ads-reports.md)
 -   [チャネルとコンバージョン レポート](channels-and-conversions-report.md)
 
@@ -73,13 +72,13 @@ Power BI を使って分析データにアクセスするには、まず、次�
 
 ### Dev Center アプリ
 
-[Dev Center](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) アプリをインストールすると、すべての Windows 10 デバイスでアプリの正常性とパフォーマンスに関する詳細情報をすばやく確認できます。 
+[Dev Center](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) アプリをインストールすると、すべての Windows 10 デバイスでアプリの正常性とパフォーマンスに関する詳細情報をすばやく確認できます。
 
 ## 関連トピック
 - [Windows アプリの公開](index.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

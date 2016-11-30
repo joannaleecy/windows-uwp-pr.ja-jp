@@ -3,8 +3,8 @@ author: QuinnRadich
 title: "UWP バージョンの選択"
 description: "Microsoft Visual Studio で UWP アプリを作成するときは、ターゲットのバージョンを選択できます。 ここでは、UWP バージョンによる違いと、新しいプロジェクトや既存のプロジェクトで選択したバージョンを構成する方法について説明します。"
 translationtype: Human Translation
-ms.sourcegitcommit: 46852d305b2c19b46a904cabf928978c6c9f1606
-ms.openlocfilehash: 249bba67b844585b590294a456e3d0e74c392c95
+ms.sourcegitcommit: 04e96e38887116fe71504e7b6cb9a275e4dd30f0
+ms.openlocfilehash: fb03ae3b4f234dc61ec6918df06c15bc3c00df09
 
 ---
 
@@ -14,7 +14,7 @@ Microsoft Visual Studio で UWP アプリを作成するときは、ターゲッ
 
 | バージョン | 説明 |
 | --- | --- |
-| ビルド 14393 (Anniversary エディション) | 2016 年 7 月にリリースされた Windows 10 の最新バージョンです。 このリリースの主な新機能は次のとおりです。 </br> \* **Windows Ink:** 新しい InkCanvas と InkToolbar のコントロールです。 </br> \* **Cortana API:** 新しい Cortana アクションを使って、Cortana のサポートをアプリの特定の機能と統合できます。 </br> \* **Windows Hello:** Mirosoft Edge が Windows Hello をサポートするようになり、Web 開発者が生体認証にアクセスできるようになりました。 </br> このリリースの Windows で追加されたこれらの機能や他の多くの機能については、[デベロッパー センター](https://developer.microsoft.com/en-us/windows/windows-10-for-developers)または「[Windows 10 の開発者向け新着情報](../whats-new/windows-10-version-1607.md)」の詳細ページをご覧ください。  |
+| ビルド 14393 (Anniversary エディション) | 2016 年 7 月にリリースされた Windows 10 の最新バージョンです。 このリリースの主な新機能は次のとおりです。 </br> \* **Windows Ink:** 新しい InkCanvas と InkToolbar のコントロールです。 </br> \* **Cortana API:** 新しい Cortana アクションを使って、Cortana のサポートをアプリの特定の機能と統合できます。 </br> \* **Windows Hello:** Microsoft Edge が Windows Hello をサポートするようになり、Web 開発者が生体認証にアクセスできるようになりました。 </br> このリリースの Windows で追加されたこれらの機能や他の多くの機能については、[デベロッパー センター](https://developer.microsoft.com/en-us/windows/windows-10-for-developers)または「[Windows 10 の開発者向け新着情報](../whats-new/windows-10-version-1607.md)」の詳細ページをご覧ください。  |
 | ビルド 10586 | このバージョンの Windows 10 は、2015 年 11 月にリリースされました。 このリリースでは主な新機能として、Microsoft Edge のビデオ通信用 ORTC (オブジェクト リアルタイム通信) APIと、アプリで Windows Hello 顔認証を使うためのプロバイダー API が導入されました。 [このビルドで導入された機能について詳しくはこちらをご覧ください。](../whats-new/windows-10-version-1511.md) |
 | ビルド 10240 | 2015 年 7 月にリリースされた Windows 10 の初期リリース バージョンです。 [このビルドで導入された機能について詳しくはこちらをご覧ください。](../whats-new/windows-10-version-1507.md) |
 
@@ -41,6 +41,6 @@ Visual Studio の **[新しいユニバーサル Windows プロジェクト]** �
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

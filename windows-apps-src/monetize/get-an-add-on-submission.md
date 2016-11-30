@@ -4,8 +4,8 @@ ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
 description: "既存のアドオンの提出のデータを取得するには、Windows ストア提出 API 内の以下のメソッドを使用します。"
 title: "Windows ストア提出 API を使用したアドオン提出の取得"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 699f26e8a73e1777f5966faf346945807d460315
+ms.sourcegitcommit: 03942eb9015487cfd5690e4b1933e4febd705971
+ms.openlocfilehash: ecdd4292c7980a647075c55abf7d14edd39d23d6
 
 ---
 
@@ -14,17 +14,19 @@ ms.openlocfilehash: 699f26e8a73e1777f5966faf346945807d460315
 
 
 
-既存のアドオン (アプリ内製品 (IAP) とも呼ばれます) 提出のデータを取得するには、Windows ストア提出 API 内のこのメソッドを使います。 Windows ストア提出 API を使ったアドオンの提出の作成プロセスについて詳しくは、「[アドオンの提出の管理](manage-add-on-submissions.md)」をご覧ください。
+既存のアドオン (アプリ内製品 (IAP) とも呼ばれます) 提出のデータを取得するには、Windows ストア提出 API 内のこのメソッドを使います。 Windows ストア申請 API を使ったアドオンの申請の作成プロセスについて詳しくは、「[アドオンの申請の管理](manage-add-on-submissions.md)」をご覧ください。
+
+>**重要**&nbsp;&nbsp;近い将来、Microsoft は Windows デベロッパー センターでアドオンの申請の価格データ モデルを変更する予定です。 変更が実施されると、このメソッドの応答データに含まれる**価格**リソースが空になり、このメソッドを使用してアドオンの申請に関する価格および販売データを取得することが一時的にできなくなります。 将来的には、Windows ストア申請 API を更新し、アドオンの申請の価格情報にプログラムでアクセスする新しい方法を導入する予定です。 詳しくは、「[価格リソース](manage-add-on-submissions.md#pricing-object)」をご覧ください。
 
 ## 前提条件
 
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
-* Windows ストア提出 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
-* デベロッパー センター アカウントにアプリのアドオン提出を作成します。 この操作は、デベロッパー センター ダッシュボードまたは[アドオン提出の作成](create-an-add-on-submission.md)メソッドを使って実行できます。
+* Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
+* デベロッパー センター アカウントにアドオン申請を作成します。 この操作は、デベロッパー センター ダッシュボードまたは[アドオン申請の作成](create-an-add-on-submission.md)メソッドを使って実行できます。
 
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア提出 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
+>**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
 ## 要求
 
@@ -41,7 +43,7 @@ ms.openlocfilehash: 699f26e8a73e1777f5966faf346945807d460315
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
 <span/>
 
@@ -167,6 +169,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

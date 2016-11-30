@@ -4,8 +4,8 @@ Description: "アプリの申請プロセスの [年齢区分] ページでは�
 title: "年齢区分"
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 translationtype: Human Translation
-ms.sourcegitcommit: 8781eb0e5ea352216a1f4e1c6deedbd04d4b588c
-ms.openlocfilehash: d190a32f16d1e7c1d98e33d1757bc9047277b62b
+ms.sourcegitcommit: eaba2fa0af727df29843dad38e277f5b22192b51
+ms.openlocfilehash: 6269cff868f7a4357c3006d65fcc0ad5b7f7932b
 
 ---
 
@@ -50,6 +50,6 @@ ms.openlocfilehash: d190a32f16d1e7c1d98e33d1757bc9047277b62b
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

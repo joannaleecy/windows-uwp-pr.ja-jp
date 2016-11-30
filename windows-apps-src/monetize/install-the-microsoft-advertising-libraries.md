@@ -4,8 +4,8 @@ ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
 description: "Microsoft Advertising ライブラリをインストールする方法について説明します。"
 title: "Microsoft Advertising ライブラリのインストール"
 translationtype: Human Translation
-ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
-ms.openlocfilehash: a18822b167b7b4dab2dee02439c82c1a0dafcf31
+ms.sourcegitcommit: 126fee708d82f64fd2a49b844306c53bb3d4cc86
+ms.openlocfilehash: c717fa693c6edf8757c3eef79d60193434104bd8
 
 
 ---
@@ -15,7 +15,7 @@ ms.openlocfilehash: a18822b167b7b4dab2dee02439c82c1a0dafcf31
 
 
 
-Windows 10 用のユニバーサル Windows プラットフォーム (UWP) アプリ向けに、[Microsoft Store Services SDK](http://aka.ms/store-em-sdk) には Microsoft Advertising ライブラリが含まれています。 この SDK は、Visual Studio 2015 の拡張機能です。 この SDK について詳しくは、[この記事](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)をご覧ください。
+Windows 10 用のユニバーサル Windows プラットフォーム (UWP) アプリ向けに、[Microsoft Store Services SDK](http://aka.ms/store-em-sdk) には Microsoft Advertising ライブラリが含まれています。 この SDK は、Visual Studio 2015 およびそれ以降のバージョンの拡張機能です。 この SDK のインストールについて詳しくは、[この記事](microsoft-store-services-sdk.md)をご覧ください。
 
 > **注**&nbsp;&nbsp;Windows 10 SDK (14393) 以降をインストールしている場合、JavaScript/HTML UWP アプリに広告を追加するには WinJS ライブラリもインストールする必要があります。 このライブラリは以前のバージョンの Windows 10 SDK に含まれていましたが、Windows 10 SDK (14393) 以降ではこのライブラリを別個にインストールする必要があります。 WinJS をインストールする場合は、「[Get WinJS (WinJS を入手する)](http://try.buildwinjs.com/download/GetWinJS/)」をご覧ください。
 
@@ -103,6 +103,6 @@ Windows および Windows Phone 8.x 用の Microsoft Store Services SDK と Micr
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

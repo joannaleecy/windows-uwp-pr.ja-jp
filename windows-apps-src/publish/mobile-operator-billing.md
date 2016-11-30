@@ -4,8 +4,8 @@ Description: "Windows ストアでは、支払方法として携帯電話会社�
 title: "携帯電話会社による課金"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 translationtype: Human Translation
-ms.sourcegitcommit: 3afac16fb79262dd6a75cd44804747d173e60edf
-ms.openlocfilehash: 114783cb93d1d49eb1b2cd0d5218a35318a02df0
+ms.sourcegitcommit: ac4cf2fd0514fba5446f11f07719f62bec75d960
+ms.openlocfilehash: 827a07f45c64722eaf8be25c4f3eb3fb03780494
 
 ---
 
@@ -16,14 +16,11 @@ Windows ストアでは、支払方法として携帯電話会社による課金
 
 > **注**  ユーザーの携帯電話会社が携帯電話会社による課金を提供していても、ユーザーのデバイスにこのオプションがない場合、[トラブルシューティングの手順](http://go.microsoft.com/fwlink/p/?LinkId=523993)をご覧ください。
 
- 
-
 弊社は、定期的に携帯電話会社と協力して、この支払方法の機能を拡張しています。 次のリストにない携帯電話会社をサポートするように提案する場合は、携帯電話会社にお問い合わせください。
 
-## Windows 10 デバイスでの携帯電話会社による課金
+## Windows 10 および Xbox One デバイスでの携帯電話会社による課金
 
-
-Windows 10 では、携帯電話会社による課金の新しい実装が導入されています。 この実装を含むデバイスでは、ユーザーは、支払方法として携帯電話会社による課金をデバイスに追加できます。 この実装は、Windows 10 を実行する PC とタブレット、および Windows 10 Mobile を実行する携帯電話で利用できます。
+Windows 10 では、携帯電話会社による課金の新しい実装が導入されています。 この実装は、Windows 10 を実行するすべてのデバイス、Windows 10 Mobile を実行する電話、および Xbox One コンソールで使用できます。 これらのデバイスでは、ユーザーは携帯電話会社による課金を支払い方法として追加し、購入に使用することができます。 
 
 Windows 10 での携帯電話会社による課金の実装は、現在、次の携帯電話会社でサポートされています。
 
@@ -34,6 +31,9 @@ Windows 10 での携帯電話会社による課金の実装は、現在、次の
 | ハンガリー         | Telenor          |
 | イタリア           | Wind             |
 | ノルウェー          | Telenor          |
+| ポーランド          | Orange           |
+| ロシア          | Beeline          |
+| スウェーデン          | Telenor          |
 | スイス     | Swisscom         |
 | 米国   | Sprint           |
 | 英国  | O2               |
@@ -98,7 +98,6 @@ Windows 10 での携帯電話会社による課金の実装は、現在、次の
 | 南アフリカ         | Vodacom                                                            |
 | スペイン                | Movistar、Vodafone、Orange                                         |
 | スウェーデン               | Telenor、Tele2                                                     |
-| スイス          | Swisscom                                                           |
 | アラブ首長国連邦 | Etisalat、Du                                                       |
 | 英国       | Everything Everywhere (T-Mobile)、Telefonica (O2)、Three、Vodafone |
 | 米国        | AT&T、Sprint、T-Mobile、Verizon                                    |
@@ -118,6 +117,6 @@ Windows 10 での携帯電話会社による課金の実装は、現在、次の
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

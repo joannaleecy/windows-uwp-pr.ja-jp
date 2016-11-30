@@ -4,8 +4,8 @@ ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
 title: "コンポジション効果"
 description: "効果 API を使用すると、開発者は UI のレンダリング方法をカスタマイズできます。"
 translationtype: Human Translation
-ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
-ms.openlocfilehash: 12523034d9b3ad50fb5c31b2e66984df68f34de1
+ms.sourcegitcommit: 7f8660eae59219f15a083b41c581e427c140d299
+ms.openlocfilehash: 23d28144de3d051b4b569cf633f9eee30c13368d
 
 ---
 # コンポジションの効果
@@ -14,7 +14,7 @@ ms.openlocfilehash: 12523034d9b3ad50fb5c31b2e66984df68f34de1
 
 [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) WinRT API により、アニメーション化可能な効果プロパティを持つ画像と UI にリアルタイムの効果を適用できます。 この概要では、コンポジションのビジュアルに効果を適用するために使用できる機能に目を通します。
 
-アプリケーションの効果を記述する開発者に対して [ユニバーサル Windows プラットフォーム (UWP)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) との整合性をサポートするには、コンポジション効果で Win2D の IGraphicsEffect インターフェイスを活用し、[Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.md) 名前空間を介して効果記述子を使用します。
+アプリケーションの効果を記述する開発者に対して [ユニバーサル Windows プラットフォーム (UWP)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) との整合性をサポートするには、コンポジション効果で Win2D の IGraphicsEffect インターフェイスを活用し、[Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 名前空間を介して効果記述子を使用します。
 
 ブラシ効果は、一連の既存画像に効果を適用することでアプリケーションの領域をペイントするために使用されます。 Windows 10 のコンポジション効果 API ではスプライト ビジュアルが重視されます。 SpriteVisual を使うと、色、画像、効果の作成で柔軟性と関係性を得られます。 SpriteVisual は、2D の四角形をブラシで埋めることができるコンポジション ビジュアル タイプです。 ビジュアルは四角形の境界を定義し、ブラシは四角形のペイントに使用されるピクセルを定義します。
 
@@ -36,9 +36,9 @@ ms.openlocfilehash: 12523034d9b3ad50fb5c31b2e66984df68f34de1
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 2D アフィン変換  | 画像に 2D アフィン変換マトリックスを適用します。 効果の [サンプル](http://go.microsoft.com/fwlink/?LinkId=785341) では、アルファ マスクのアニメーション化にこの効果が使われています。       |
 | 算術コンポジット | 柔軟な方程式を使って 2 つの画像を組み合わせます。 [サンプル](http://go.microsoft.com/fwlink/?LinkId=785341) では、クロスフェード効果の作成に算術コンポジットが使われています。 |
-| ブレンド効果         | 2 つの画像を組み合わせるブレンド効果を作成します。 コンポジションでは、Win2D でサポートされている 26 個の [ブレンド モード](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.md) のうち 21 個が用意されています。        |
+| ブレンド効果         | 2 つの画像を組み合わせるブレンド効果を作成します。 コンポジションでは、Win2D でサポートされている 26 個の [ブレンド モード](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.htm) のうち 21 個が用意されています。        |
 | カラー ソース         | 単色が含まれている画像を生成します。                                                                                                                                                                               |
-| コンポジット            | 2 つの画像を組み合わせます。 コンポジションでは、Win2D でサポートされている 13 個の [コンポジット モード](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.md) がすべて用意されています。                                              |
+| コンポジット            | 2 つの画像を組み合わせます。 コンポジションでは、Win2D でサポートされている 13 個の [コンポジット モード](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.htm) がすべて用意されています。                                              |
 | コントラスト             | 画像のコントラストを増減します。                                                                                                                                                                           |
 | 露出             | 画像の露出を増減します。                                                                                                                                                                           |
 | グレースケール            | 画像を灰色のモノクロ画像に変換します。                                                                                                                                                                                   |
@@ -51,7 +51,7 @@ ms.openlocfilehash: 12523034d9b3ad50fb5c31b2e66984df68f34de1
 
  
 
-詳しくは、Win2D の [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.md) 名前空間を参照してください。 コンポジションでサポートされていない効果は \[NoComposition\] として示されています。
+詳しくは、Win2D の [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 名前空間を参照してください。 コンポジションでサポートされていない効果は \[NoComposition\] として示されています。
 
 ### チェーン効果
 
@@ -248,6 +248,6 @@ brush.Surface = imageSource.Surface;
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 
