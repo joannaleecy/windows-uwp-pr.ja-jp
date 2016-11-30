@@ -5069,6 +5069,46 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\de76a3c6d4949b9203df79855e1748a81d76ca64.6cf901f6dbb0119bbde54d7d1961c5622bf7bdd0.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\TOC.md.1382ce575dd8a288fa767461b57eda65b5b816cb.HT": {
+      "SourceFilename": "windows-apps-src\\TOC.md",
+      "XliffHash": "1382ce575dd8a288fa767461b57eda65b5b816cb",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ae1bb800a24ef9c7dca0f66d99671affa6c20bae.4c5f27046f4f259df7ba97e308d7ebd20b925ef1.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\launch-resume\\communicate-with-a-remote-app-service.md.7e0296e7c73ab83ef8c8f01fc55eb1ade798b5e7.HT": {
+      "SourceFilename": "windows-apps-src\\launch-resume\\communicate-with-a-remote-app-service.md",
+      "XliffHash": "7e0296e7c73ab83ef8c8f01fc55eb1ade798b5e7",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\3d50330e6a6f81718a83439acda3ad0680e7311e.df36734497f49fdbd51fc919c8e20f6243d600d9.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\packaging\\index.md.4aba44bd8c2acbd1cc492f406768a28dd090be5b.HT": {
+      "SourceFilename": "windows-apps-src\\packaging\\index.md",
+      "XliffHash": "4aba44bd8c2acbd1cc492f406768a28dd090be5b",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8aa4bfc8004b4d0739fe09e6e49e66de372569c4.ed306565a4f0055c993c1659ebe1df63b9cc409b.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\packaging\\create-app-package-with-makeappx-tool.md.5faed18cc4367ff988a853befdfb0e1fdc649d3e.HT": {
+      "SourceFilename": "windows-apps-src\\packaging\\create-app-package-with-makeappx-tool.md",
+      "XliffHash": "5faed18cc4367ff988a853befdfb0e1fdc649d3e",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c99c76fac9303e174b5d804c2f1b99856be25006.1e4a2f3432c3792e4bde9ecd224cf92eb7d33a45.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

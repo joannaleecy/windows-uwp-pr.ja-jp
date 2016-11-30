@@ -1784,6 +1784,9 @@
   "100d1b94dec44cbf00d4a3cacd6aa74f94c20d9c": [
     "windows-apps-src\\packaging\\app-capability-declarations.md"
   ],
+  "8aa4bfc8004b4d0739fe09e6e49e66de372569c4": [
+    "windows-apps-src\\packaging\\index.md"
+  ],
   "2cc7fa903a5eba8b20b99298cf565c954016b35d": [
     "windows-apps-src\\packaging\\index.md"
   ],
@@ -2393,6 +2396,9 @@
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "ae1bb800a24ef9c7dca0f66d99671affa6c20bae": [
+    "windows-apps-src\\TOC.md"
+  ],
   "3494dda19213be976e6649d923d1d3437942897c": [
     "windows-apps-src\\TOC.md"
   ],
@@ -2870,6 +2876,9 @@
   "f5c8f7f8e60317a3ef30ff1900d99f9f6d63d391": [
     "windows-apps-src\\input-and-devices\\ink-toolbar.md"
   ],
+  "3d50330e6a6f81718a83439acda3ad0680e7311e": [
+    "windows-apps-src\\launch-resume\\communicate-with-a-remote-app-service.md"
+  ],
   "bff77a63d0f88907410c74d4dce19fb422c1bd3f": [
     "windows-apps-src\\launch-resume\\communicate-with-a-remote-app-service.md"
   ],
@@ -3289,5 +3298,8 @@
   ],
   "90481b5f85d010a142e86ca67ac94c3ec25d89c6": [
     "windows-apps-src\\monetize\\get-the-stack-trace-for-an-error-in-your-app.md"
+  ],
+  "c99c76fac9303e174b5d804c2f1b99856be25006": [
+    "windows-apps-src\\packaging\\create-app-package-with-makeappx-tool.md"
   ]
 }
