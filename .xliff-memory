@@ -5279,6 +5279,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\65785e53b2e5ba788dbda533373737e193e1c792.f1669ddb70fe8ae577c433b4e78c330ea0dd5287.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-adaptive-interactive-toasts.md.72254d6fd12a17b33822572d1762352ac6e135c7.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-adaptive-interactive-toasts.md",
+      "XliffHash": "72254d6fd12a17b33822572d1762352ac6e135c7",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\cfbbf110ed6df1b7e81e0505dcf55a63ba8739aa.0ffa266010fea708057285a69148cc597b940275.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\desktop-to-uwp-debug.md.614b3b2ab0129169c679bd42b9444f4087bf7bef.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\desktop-to-uwp-debug.md",
+      "XliffHash": "614b3b2ab0129169c679bd42b9444f4087bf7bef",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\537ac8e83d5f54bf83ec0e05b71be354651000f2.6de97920b9ebbe8ffb05b660c7bf28a35aad2893.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
