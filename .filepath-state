@@ -1829,6 +1829,9 @@
   "fc7793926275dd732ee6c814c9e65a6b656654d2": [
     "windows-apps-src\\networking\\which-networking-technology.md"
   ],
+  "5b1052c8b20908cef431a4d1d144d5e8fe1a0eac": [
+    "windows-apps-src\\packaging\\app-capability-declarations.md"
+  ],
   "100d1b94dec44cbf00d4a3cacd6aa74f94c20d9c": [
     "windows-apps-src\\packaging\\app-capability-declarations.md"
   ],
@@ -2743,6 +2746,9 @@
   ],
   "ef383e46f2c610b57eec1c7767d5100e42075f6c": [
     "windows-apps-src\\controls-and-patterns\\index.md"
+  ],
+  "ea028e232c3dca0eacbc4b69d9af4c148bd9c39a": [
+    "windows-apps-src\\design-downloads\\index.md"
   ],
   "da21817eea3a26ffd162bd19c8eb69345ac1d726": [
     "windows-apps-src\\design-downloads\\index.md"

@@ -1,3 +1,24 @@
 {
-  "Table": {}
+  "Table": {
+    "windows-apps-src\\design-downloads\\index.md.a117b0144885c428c2a15778aeee9c58995ab8a7.HT": {
+      "SourceFilename": "windows-apps-src\\design-downloads\\index.md",
+      "XliffHash": "a117b0144885c428c2a15778aeee9c58995ab8a7",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ea028e232c3dca0eacbc4b69d9af4c148bd9c39a.648e4cc4467b4ae08947ca330901b0b612e8e118.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\packaging\\app-capability-declarations.md.be5036fdb6c356cf76f16b03a5782b854c23fa37.HT": {
+      "SourceFilename": "windows-apps-src\\packaging\\app-capability-declarations.md",
+      "XliffHash": "be5036fdb6c356cf76f16b03a5782b854c23fa37",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5b1052c8b20908cef431a4d1d144d5e8fe1a0eac.74c6afb5126fb2a38a756f73460746283bb365f7.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    }
+  }
 }
