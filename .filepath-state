@@ -1316,6 +1316,9 @@
   "cf7cb9f81207f4f25eb8e78283079df27f83d7dc": [
     "windows-apps-src\\launch-resume\\handle-app-prelaunch.md"
   ],
+  "ffcfa8991e9eb73b8d6a47bb7dd1cd23220097e0": [
+    "windows-apps-src\\launch-resume\\handle-file-activation.md"
+  ],
   "dffbccad62f48667a0495ceb205c751ccce0a3e0": [
     "windows-apps-src\\launch-resume\\handle-file-activation.md"
   ],
@@ -1330,6 +1333,9 @@
   ],
   "d8d7f73e06d627eaa53deaf26f778c122113a9d6": [
     "windows-apps-src\\launch-resume\\how-to-launch-an-app-for-results.md"
+  ],
+  "7667cfb9671a7517a394f6f691aef4c305c02087": [
+    "windows-apps-src\\launch-resume\\index.md"
   ],
   "3b1be5b6951b72d5699e7b31e95702b827b741b5": [
     "windows-apps-src\\launch-resume\\index.md"
@@ -1364,6 +1370,9 @@
   "2d27b46caefcae12e3ff3aeb300129eec0c5b7d7": [
     "windows-apps-src\\launch-resume\\register-a-background-task.md"
   ],
+  "c514ae4831f21b4c471b0445b3cf54a6a08ff92a": [
+    "windows-apps-src\\launch-resume\\reserved-uri-scheme-names.md"
+  ],
   "230b117d99fca1a36bc4e8bfc8e1c1e427a41cd6": [
     "windows-apps-src\\launch-resume\\reserved-uri-scheme-names.md"
   ],
@@ -1381,6 +1390,9 @@
   ],
   "c22fed27b77f3287dd11a05c32405fe18521af65": [
     "windows-apps-src\\launch-resume\\set-conditions-for-running-a-background-task.md"
+  ],
+  "b33fd118289ca575207be97bd8a1a33ddcc49a87": [
+    "windows-apps-src\\launch-resume\\support-your-app-with-background-tasks.md"
   ],
   "35b64637904e35413217d4cf500658999db07088": [
     "windows-apps-src\\launch-resume\\support-your-app-with-background-tasks.md"
@@ -2423,6 +2435,9 @@
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "9c856b4019ceb0cb0af8a00d6c736b7b406ca02a": [
+    "windows-apps-src\\TOC.md"
+  ],
   "ae1bb800a24ef9c7dca0f66d99671affa6c20bae": [
     "windows-apps-src\\TOC.md"
   ],
@@ -2626,6 +2641,9 @@
   ],
   "c3ca70936e30ce67b19971e5ccbb01fa89253f35": [
     "windows-apps-src\\xbox-apps\\system-resource-allocation.md"
+  ],
+  "f55f3bd6479cdf076c51cf574b07bfb5ce3a805c": [
+    "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md"
   ],
   "6ca48fd829b7437fe2db8aa1251f6ed8976919ab": [
     "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md"
@@ -2903,11 +2921,17 @@
   "f5c8f7f8e60317a3ef30ff1900d99f9f6d63d391": [
     "windows-apps-src\\input-and-devices\\ink-toolbar.md"
   ],
+  "c6a094c1939c3f34926f998a8206b0e2d7ea6aa0": [
+    "windows-apps-src\\launch-resume\\communicate-with-a-remote-app-service.md"
+  ],
   "3d50330e6a6f81718a83439acda3ad0680e7311e": [
     "windows-apps-src\\launch-resume\\communicate-with-a-remote-app-service.md"
   ],
   "bff77a63d0f88907410c74d4dce19fb422c1bd3f": [
     "windows-apps-src\\launch-resume\\communicate-with-a-remote-app-service.md"
+  ],
+  "2dbce34aeaf4933eee22e1e8ef40c48e633f6f7e": [
+    "windows-apps-src\\launch-resume\\connected-apps-and-devices.md"
   ],
   "4f49acfd7efcb10d99f9d23884d20c0fc51e5a4a": [
     "windows-apps-src\\launch-resume\\connected-apps-and-devices.md"
@@ -2920,6 +2944,9 @@
   ],
   "80e89e24236903ab90f7c4fe326782a0a7e5272f": [
     "windows-apps-src\\launch-resume\\reduce-memory-usage.md"
+  ],
+  "e5c815ef0c776954e5b0d7f1cb9bd5e32e10356c": [
+    "windows-apps-src\\launch-resume\\web-to-app-linking.md"
   ],
   "9a26170d567107bb05cd2257b904ea032bc5b14f": [
     "windows-apps-src\\launch-resume\\web-to-app-linking.md"
@@ -3197,6 +3224,9 @@
   "c3088c2498a94c988359dd08c6c900ad9a6c4f95": [
     "windows-apps-src\\publish\\respond-to-customer-feedback.md"
   ],
+  "4fd7a23f6d6c880e490f93dba248b6c1e43c7053": [
+    "windows-apps-src\\publish\\payment-thresholds-methods-and-timeframes.md"
+  ],
   "44dccce89b3edb84cfd9813dd6acc420ae19fc4b": [
     "windows-apps-src\\publish\\payment-thresholds-methods-and-timeframes.md"
   ],
@@ -3358,5 +3388,17 @@
   ],
   "c99c76fac9303e174b5d804c2f1b99856be25006": [
     "windows-apps-src\\packaging\\create-app-package-with-makeappx-tool.md"
+  ],
+  "d3d32ec35d4d3483beb58d36a3addf7e01718ecd": [
+    "windows-apps-src\\launch-resume\\app-services.md"
+  ],
+  "1b85261b07c935809fdce5b825e6f9e004f5bedb": [
+    "windows-apps-src\\launch-resume\\launch-app-from-file.md"
+  ],
+  "e4b070db5180538732e08b10ace1aaa196ae5eaa": [
+    "windows-apps-src\\launch-resume\\launch-app-with-uri.md"
+  ],
+  "bb0f3ff68b7dc15623e4f337e589989354e08b65": [
+    "windows-apps-src\\launch-resume\\splash-screens.md"
   ]
 }
