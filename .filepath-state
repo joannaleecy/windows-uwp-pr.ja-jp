@@ -1136,6 +1136,9 @@
   "2b4bae1606f9b51e2d4901218ebd2d616e4c5edc": [
     "windows-apps-src\\index.md"
   ],
+  "c402843cce752a54d8ff7301d892ef8014350a07": [
+    "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
+  ],
   "3a5f9495f226d7df076c2623d8b07afc4794d9b4": [
     "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
   ],
@@ -1238,6 +1241,9 @@
   "d4238e0d1becee719148b38acf5a91d74230601d": [
     "windows-apps-src\\input-and-devices\\multiple-input-design-guidelines.md"
   ],
+  "49098df1bf7fb72264a633aae37f941951cee2cf": [
+    "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
+  ],
   "9b55a3fd251c7c44e3ff325db0e345036d114ded": [
     "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
   ],
@@ -1246,6 +1252,9 @@
   ],
   "97a626aedff1b0915c845f151b16b3678e1cf977": [
     "windows-apps-src\\input-and-devices\\respond-to-the-presence-of-the-touch-keyboard.md"
+  ],
+  "d4458b66f4f1917e99495353a088680b19cb94c9": [
+    "windows-apps-src\\input-and-devices\\save-and-load-ink.md"
   ],
   "9712a2bb7bd1495d0049ab43d798d5ec9c08f313": [
     "windows-apps-src\\input-and-devices\\save-and-load-ink.md"
@@ -3268,6 +3277,9 @@
   ],
   "dbd2d5d7924cfbfd48d20f48ccfcd4bfe62db645": [
     "windows-apps-src\\get-started\\get-uwp-app-samples.md"
+  ],
+  "08ac5d58f2650306b162e4dec7f4e606543ca80f": [
+    "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md"
   ],
   "d535af06ab720753980a1125df61323a96e2f406": [
     "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md"
