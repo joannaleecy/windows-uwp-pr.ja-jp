@@ -6,24 +6,24 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\controls-and-patterns\tiles-and-notifications-adaptive-interactive-toasts.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/beb47d579bea4b260bf1add95b477aed50e7bfa0?path=windows-apps-src%2Fcontrols-and-patterns%2Ftiles-and-notifications-adaptive-interactive-toasts.md&_a=contents) | HandedOffSuccess | [Details](#19f5d718b5d49e7c556f1696ac5bd3fcf28695243198)
+ [windows-apps-src\publish\send-push-notifications-to-your-apps-customers.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/e9cbfec938ebc71da6f41df69defcac1bb902245?path=windows-apps-src%2Fpublish%2Fsend-push-notifications-to-your-apps-customers.md&_a=contents) | HandedOffSuccess | [Details](#c4bdd398db570c4962325c2164651e9e8a1935ff5620)
 
 ## Item Details
-##### <a name='19f5d718b5d49e7c556f1696ac5bd3fcf28695243198'></a> Source: [windows-apps-src\controls-and-patterns\tiles-and-notifications-adaptive-interactive-toasts.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/beb47d579bea4b260bf1add95b477aed50e7bfa0?path=windows-apps-src%2Fcontrols-and-patterns%2Ftiles-and-notifications-adaptive-interactive-toasts.md&_a=contents)
+##### <a name='c4bdd398db570c4962325c2164651e9e8a1935ff5620'></a> Source: [windows-apps-src\publish\send-push-notifications-to-your-apps-customers.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/e9cbfec938ebc71da6f41df69defcac1bb902245?path=windows-apps-src%2Fpublish%2Fsend-push-notifications-to-your-apps-customers.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [tiles-and-notifications-adaptive-interactive-toasts.754babe558bdbd1c80d4acd94c1873c54d9426c8.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/ff49d6366bb90d82111eaffb93fa04c85aa4782d?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Ftiles-and-notifications-adaptive-interactive-toasts.754babe558bdbd1c80d4acd94c1873c54d9426c8.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2016-12-02 20:23:05
+* Handoff File: [send-push-notifications-to-your-apps-customers.64e46845492836f2978a6630ffedd93a5af45530.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/bb76e90cee07a641f3a3e1f820b23b7457530b9f?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fsend-push-notifications-to-your-apps-customers.64e46845492836f2978a6630ffedd93a5af45530.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2016-12-02 22:24:43
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\controls-and-patterns\tiles-and-notifications-adaptive-interactive-toasts.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/a0c9b37996e144c232a515e52bb1b63c37a2862b?path=windows-apps-src%2Fcontrols-and-patterns%2Ftiles-and-notifications-adaptive-interactive-toasts.md&_a=contents)
-* Current Handback File: [tiles-and-notifications-adaptive-interactive-toasts.754babe558bdbd1c80d4acd94c1873c54d9426c8.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/480ff19d0d67081a9e8f65722d99210ca2ffc468?path=ol-handback%2FMicrosoft%2Fwindows-apps.ja-jp%2Fmaster%2Ftiles-and-notifications-adaptive-interactive-toasts.754babe558bdbd1c80d4acd94c1873c54d9426c8.ja-jp.xlf&_a=contents)
-* Current Handback Datetime: 2016-10-21 15:00:50
-* Bilingual File: [tiles-and-notifications-adaptive-interactive-toasts.754babe558bdbd1c80d4acd94c1873c54d9426c8.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/480ff19d0d67081a9e8f65722d99210ca2ffc468?path=ol-handback%2FMicrosoft%2Fwindows-apps.ja-jp%2Fmaster%2Ftiles-and-notifications-adaptive-interactive-toasts.754babe558bdbd1c80d4acd94c1873c54d9426c8.ja-jp.xlf&_a=contents)
-* Bilingual Datetime: 2016-10-24 15:45:53
+* Current Target File: [windows-apps-src\publish\send-push-notifications-to-your-apps-customers.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/94b4321bb5dd263955ca2211a312bbd0b2b4b105?path=windows-apps-src%2Fpublish%2Fsend-push-notifications-to-your-apps-customers.md&_a=contents)
+* Current Handback File: [send-push-notifications-to-your-apps-customers.64e46845492836f2978a6630ffedd93a5af45530.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/1aa649d9aea9534cd7eb0453080e5e7830e9b3fa?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fsend-push-notifications-to-your-apps-customers.64e46845492836f2978a6630ffedd93a5af45530.ja-jp.xlf&_a=contents)
+* Current Handback Datetime: 2016-11-30 15:16:15
+* Bilingual File: [send-push-notifications-to-your-apps-customers.64e46845492836f2978a6630ffedd93a5af45530.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/1aa649d9aea9534cd7eb0453080e5e7830e9b3fa?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fsend-push-notifications-to-your-apps-customers.64e46845492836f2978a6630ffedd93a5af45530.ja-jp.xlf&_a=contents)
+* Bilingual Datetime: 2016-11-30 15:23:26
 * [Back to Top](#report-top)
 
 
