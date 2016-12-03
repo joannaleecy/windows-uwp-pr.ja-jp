@@ -39,6 +39,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c4bdd398db570c4962325c2164651e9e8a1935ff.438c10b7387cba46c5084749572bb7e9f30d036e.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md.2d7a712e7267f56f2cceb10c88eca880bb566bbd.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md",
+      "XliffHash": "2d7a712e7267f56f2cceb10c88eca880bb566bbd",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f2de946ca7210cf3f4c170c73902c1a727067e7c.5937e42a1c060b3c7d7107b026521265d55c1737.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-adaptive-interactive-toasts.md.3f7eb58ce16172facccdfff095d4d37044fdfb9b.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-adaptive-interactive-toasts.md",
+      "XliffHash": "3f7eb58ce16172facccdfff095d4d37044fdfb9b",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e6a81273176bd2696217b3e7d62bea4b2124dff8.bb56b4a047ddbd4a31193dd96a5100013a5814d4.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

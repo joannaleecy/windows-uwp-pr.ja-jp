@@ -329,6 +329,9 @@
   "201244521f8110181e268af47d52c1ac1315e9d3": [
     "windows-apps-src\\controls-and-patterns\\text-controls.md"
   ],
+  "e6a81273176bd2696217b3e7d62bea4b2124dff8": [
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-adaptive-interactive-toasts.md"
+  ],
   "19f5d718b5d49e7c556f1696ac5bd3fcf2869524": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-adaptive-interactive-toasts.md"
   ],
@@ -1243,6 +1246,9 @@
   ],
   "d4238e0d1becee719148b38acf5a91d74230601d": [
     "windows-apps-src\\input-and-devices\\multiple-input-design-guidelines.md"
+  ],
+  "f2de946ca7210cf3f4c170c73902c1a727067e7c": [
+    "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
   ],
   "49098df1bf7fb72264a633aae37f941951cee2cf": [
     "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
