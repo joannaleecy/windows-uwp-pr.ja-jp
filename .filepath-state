@@ -50,6 +50,9 @@
   "6302ec1bf332a27986876dbde4da92bbc916f85b": [
     "windows-apps-src\\app-settings\\guidelines-for-app-settings.md"
   ],
+  "c42fb398d159841838f6858f685664ceefacb20d": [
+    "windows-apps-src\\app-settings\\store-and-retrieve-app-data.md"
+  ],
   "9de98c3d4e58fba085484451029fc3bb54da7a80": [
     "windows-apps-src\\app-settings\\store-and-retrieve-app-data.md"
   ],
@@ -2825,6 +2828,9 @@
   "6b0b680cd85d6f57c3ca06758ab7dcaef3f7ffe5": [
     "windows-apps-src\\controls-and-patterns\\dialogs.md"
   ],
+  "648ee7bff0f8d691f0943cc03235d93d7d45a351": [
+    "windows-apps-src\\controls-and-patterns\\menus.md"
+  ],
   "f6ce4bc08e3647cd26dc1537bba5499ddb646a49": [
     "windows-apps-src\\controls-and-patterns\\menus.md"
   ],
@@ -2908,6 +2914,9 @@
   ],
   "aacf45c90458d3ca1bd295f904e8f2393d27542d": [
     "windows-apps-src\\controls-and-patterns\\inking-controls.md"
+  ],
+  "3382d5876617b5fb21e1db99742c276177e0b47f": [
+    "windows-apps-src\\controls-and-patterns\\inverted-lists.md"
   ],
   "c70cafe4d1dd3db46d48e9844ba9086dbba9acaa": [
     "windows-apps-src\\controls-and-patterns\\inverted-lists.md"

@@ -59,6 +59,36 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e6a81273176bd2696217b3e7d62bea4b2124dff8.bb56b4a047ddbd4a31193dd96a5100013a5814d4.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\menus.md.f2b11d7fe3d90e59b3bbf8b3cafaf4c9d23dae25.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\menus.md",
+      "XliffHash": "f2b11d7fe3d90e59b3bbf8b3cafaf4c9d23dae25",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\648ee7bff0f8d691f0943cc03235d93d7d45a351.8249ee6f0972a78b74060e00842381706301d860.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\inverted-lists.md.13136d9769b5b19b856b57a99bd4aa0aa82b1431.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\inverted-lists.md",
+      "XliffHash": "13136d9769b5b19b856b57a99bd4aa0aa82b1431",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\3382d5876617b5fb21e1db99742c276177e0b47f.319fc27ca9995f0fc53da393ae5cbdf1b5bcbd63.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\app-settings\\store-and-retrieve-app-data.md.374198b4b710d35b5c7c1fd858f58c058d6a5cd8.HT": {
+      "SourceFilename": "windows-apps-src\\app-settings\\store-and-retrieve-app-data.md",
+      "XliffHash": "374198b4b710d35b5c7c1fd858f58c058d6a5cd8",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c42fb398d159841838f6858f685664ceefacb20d.b76d498b381b80221829b4191f9f600e7730a262.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
