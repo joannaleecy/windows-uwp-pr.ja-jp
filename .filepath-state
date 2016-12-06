@@ -245,6 +245,9 @@
   "6572acefa25e464b6edaca9fee5b2b3e3b46ff3f": [
     "windows-apps-src\\controls-and-patterns\\dialogs-popups-menus.md"
   ],
+  "3ad89682248462efa5022467ceb330da03843de4": [
+    "windows-apps-src\\controls-and-patterns\\flipview.md"
+  ],
   "7e52f9d379b909c4dd35bc535cbca2d7b8cca6ac": [
     "windows-apps-src\\controls-and-patterns\\flipview.md"
   ],
@@ -257,6 +260,9 @@
   "71749f09eb11f779427bc450ae607f3fa99c2490": [
     "windows-apps-src\\controls-and-patterns\\hyperlinks.md"
   ],
+  "6adb5c106ccbe7d5dccda405b301daf8ce4e69f4": [
+    "windows-apps-src\\controls-and-patterns\\images-imagebrushes.md"
+  ],
   "bcb23963bfe59006efff2df01bb5ea3d98525497": [
     "windows-apps-src\\controls-and-patterns\\images-imagebrushes.md"
   ],
@@ -268,6 +274,9 @@
   ],
   "8a14fa69089f6d796a803c1c1ff9bb678af3c913": [
     "windows-apps-src\\controls-and-patterns\\listview-and-gridview.md"
+  ],
+  "ef57c6d1a00797e2a68291475b6a38778e5d73ad": [
+    "windows-apps-src\\controls-and-patterns\\master-details.md"
   ],
   "f0083e3c50e7e899e6caf62595a7ecbf0af22b3d": [
     "windows-apps-src\\controls-and-patterns\\master-details.md"
@@ -1445,6 +1454,9 @@
   "06925bc42aab6d2ca7bf97c48161cca5e1cf840b": [
     "windows-apps-src\\layout\\design-and-ui-intro.md"
   ],
+  "b1c3d5ca03a99e2fff1c37cfddfb7a00db45d251": [
+    "windows-apps-src\\layout\\layout-panels.md"
+  ],
   "58187f34de283b407278a75f1b7b6de61908387f": [
     "windows-apps-src\\layout\\layout-panels.md"
   ],
@@ -1459,6 +1471,9 @@
   ],
   "5977b6253e2ee10fa0153d79053f89b705c2e1a3": [
     "windows-apps-src\\layout\\screen-sizes-and-breakpoints-for-responsive-design.md"
+  ],
+  "09447ad4545f3839d39a4b9191b51718455e7c00": [
+    "windows-apps-src\\layout\\show-multiple-views.md"
   ],
   "ccbcb1f3f5ee31724416f512138757865ffabc98": [
     "windows-apps-src\\layout\\show-multiple-views.md"
@@ -2666,6 +2681,9 @@
   "c3ca70936e30ce67b19971e5ccbb01fa89253f35": [
     "windows-apps-src\\xbox-apps\\system-resource-allocation.md"
   ],
+  "73f30d564fcec1b748b4d59ff545e25b62b1c719": [
+    "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md"
+  ],
   "f55f3bd6479cdf076c51cf574b07bfb5ce3a805c": [
     "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md"
   ],
@@ -3275,6 +3293,9 @@
   "ccfe1f397be1b3d49d4ef771016ec76eabd2974f": [
     "windows-apps-src\\publish\\payment-thresholds-methods-and-timeframes.md"
   ],
+  "58e58c212cb6efd76f4afb8d3b6c7a3c5ddf215e": [
+    "windows-apps-src\\updates-and-versions\\choose-a-uwp-version.md"
+  ],
   "5d05c427ecc1ec57856b7c3909be50c3d87daa28": [
     "windows-apps-src\\updates-and-versions\\choose-a-uwp-version.md"
   ],
@@ -3388,6 +3409,9 @@
   ],
   "d02921247bd77d59bbb09037a4ced8d3967c33b2": [
     "windows-apps-src\\porting\\desktop-to-uwp-known-issues.md"
+  ],
+  "a93d5ad1c1f429182c8df7d29df85dee70064e2f": [
+    "windows-apps-src\\porting\\desktop-to-uwp-prepare.md"
   ],
   "81a2485d5be22dd392c21aaff281c1c9263883a9": [
     "windows-apps-src\\porting\\desktop-to-uwp-prepare.md"
