@@ -614,6 +614,9 @@
   "0671ad8deef7c0062172e3a441d206efb15de7dd": [
     "windows-apps-src\\devices-sensors\\get-battery-info.md"
   ],
+  "c5a7293874bd71b50aa31d6af9a687d289d07ce5": [
+    "windows-apps-src\\devices-sensors\\host-card-emulation.md"
+  ],
   "52a8be1df522c6b5512a7fe560d01e8d840194af": [
     "windows-apps-src\\devices-sensors\\host-card-emulation.md"
   ],
@@ -1487,8 +1490,14 @@
   "e094e29220a0f8fcae6ca2af36ab86ecd22b520d": [
     "windows-apps-src\\maps-and-location\\controls-map.md"
   ],
+  "09f87f66802e5143c8eac7fce8fc2118f3d31340": [
+    "windows-apps-src\\maps-and-location\\display-maps.md"
+  ],
   "5569722bdfc8dfb78d43dbe6abf23dcd06f619c0": [
     "windows-apps-src\\maps-and-location\\display-maps.md"
+  ],
+  "8afdb41d6790bb9647a6b89086c4b86872940c51": [
+    "windows-apps-src\\maps-and-location\\display-poi.md"
   ],
   "aec420d6591546e63c6343d7151afe9e95d1afd8": [
     "windows-apps-src\\maps-and-location\\display-poi.md"

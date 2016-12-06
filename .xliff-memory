@@ -179,6 +179,36 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\10ac3f53f0f8128985c39154f74a9348a40641b5.71fcec7792d3b25e99223d95bd25c472f6499fbd.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\maps-and-location\\display-poi.md.9e6fa92148c08ff7f37ee9230a61d2803852b77b.HT": {
+      "SourceFilename": "windows-apps-src\\maps-and-location\\display-poi.md",
+      "XliffHash": "9e6fa92148c08ff7f37ee9230a61d2803852b77b",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8afdb41d6790bb9647a6b89086c4b86872940c51.793cbe18820358ffac2b368b5052cc03f36991cc.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\devices-sensors\\host-card-emulation.md.147516583fde77e480621be5b03d7de9e584952f.HT": {
+      "SourceFilename": "windows-apps-src\\devices-sensors\\host-card-emulation.md",
+      "XliffHash": "147516583fde77e480621be5b03d7de9e584952f",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c5a7293874bd71b50aa31d6af9a687d289d07ce5.6f8307b6119ba1c1a440c2b84c9d98ec51b746aa.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\maps-and-location\\display-maps.md.3ab8b27e996b2afe2e5bc5d0adb6f92ba6238977.HT": {
+      "SourceFilename": "windows-apps-src\\maps-and-location\\display-maps.md",
+      "XliffHash": "3ab8b27e996b2afe2e5bc5d0adb6f92ba6238977",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\09f87f66802e5143c8eac7fce8fc2118f3d31340.e223faab6cd12914df964fd4e36e8368420db345.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
