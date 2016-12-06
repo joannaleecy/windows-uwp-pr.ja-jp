@@ -169,6 +169,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\09447ad4545f3839d39a4b9191b51718455e7c00.becc56c8b2ff924bd3bac939d85080de7d92049d.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\audio-video-camera\\capture-photos-and-video-with-cameracaptureui.md.d31e3670c23d34fa331df5226bf10be63ae1c696.HT": {
+      "SourceFilename": "windows-apps-src\\audio-video-camera\\capture-photos-and-video-with-cameracaptureui.md",
+      "XliffHash": "d31e3670c23d34fa331df5226bf10be63ae1c696",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\10ac3f53f0f8128985c39154f74a9348a40641b5.71fcec7792d3b25e99223d95bd25c472f6499fbd.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
