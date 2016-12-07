@@ -2915,6 +2915,9 @@
   "eb6487e7f2c19a8227320c5a7f087e4b3c3c6270": [
     "windows-apps-src\\audio-video-camera\\handle-device-orientation-with-mediacapture.md"
   ],
+  "5575a56838eae98c0d79dff61e1afaa8cf87ee86": [
+    "windows-apps-src\\audio-video-camera\\hls-tag-support.md"
+  ],
   "a561f11a1638d5fea21d1d3b3f8bc47f71271f3f": [
     "windows-apps-src\\audio-video-camera\\hls-tag-support.md"
   ],
