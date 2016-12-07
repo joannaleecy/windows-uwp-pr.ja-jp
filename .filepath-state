@@ -209,6 +209,9 @@
   "7edfcf2e1a73fe522693c4b328d5d72a8759d5cb": [
     "windows-apps-src\\controls-and-patterns\\active-canvas.md"
   ],
+  "c6d295a21825d1e89eaafcba59ca3a1b85669da9": [
+    "windows-apps-src\\controls-and-patterns\\app-bars.md"
+  ],
   "4ce59951387542124bcea1cbd0f636c0e44e0d1e": [
     "windows-apps-src\\controls-and-patterns\\app-bars.md"
   ],
@@ -331,6 +334,9 @@
   ],
   "2386ccbc89cad5514c0b1a4879af6d0df328263e": [
     "windows-apps-src\\controls-and-patterns\\styling-controls.md"
+  ],
+  "865969a7c965a502acd9fe24df28128399efd380": [
+    "windows-apps-src\\controls-and-patterns\\tabs-pivot.md"
   ],
   "2a652e7bd8223a128fbd77d986c446fa7c74a34c": [
     "windows-apps-src\\controls-and-patterns\\tabs-pivot.md"

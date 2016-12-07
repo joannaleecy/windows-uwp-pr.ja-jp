@@ -229,6 +229,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5575a56838eae98c0d79dff61e1afaa8cf87ee86.b72e2599ea0b04f8ae70b6c38c496371984598d7.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\app-bars.md.4171ef22a21bf607b331e8fbf84a9c5f75938118.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\app-bars.md",
+      "XliffHash": "4171ef22a21bf607b331e8fbf84a9c5f75938118",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c6d295a21825d1e89eaafcba59ca3a1b85669da9.18f001157e61f3721c75d2dd164d1f59584d7801.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\tabs-pivot.md.5c0276b5b76c47644900f6e3e874a8eb970be7e6.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\tabs-pivot.md",
+      "XliffHash": "5c0276b5b76c47644900f6e3e874a8eb970be7e6",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\865969a7c965a502acd9fe24df28128399efd380.502fbea023697421f6eaa028a76646456b7543b8.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
