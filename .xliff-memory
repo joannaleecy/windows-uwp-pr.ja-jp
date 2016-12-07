@@ -209,6 +209,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\09f87f66802e5143c8eac7fce8fc2118f3d31340.e223faab6cd12914df964fd4e36e8368420db345.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\networking\\web-feeds.md.523bc44ca5f9c68b16fc058e2e4e2ee044fc0335.HT": {
+      "SourceFilename": "windows-apps-src\\networking\\web-feeds.md",
+      "XliffHash": "523bc44ca5f9c68b16fc058e2e4e2ee044fc0335",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\623c11eba097a072b456738b84750eb4b2d888bb.f3fa3c249b91a15445fb72b63d2ca58ebdcfff4f.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
