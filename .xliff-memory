@@ -249,6 +249,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\865969a7c965a502acd9fe24df28128399efd380.502fbea023697421f6eaa028a76646456b7543b8.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\interstitial-ad-sample-code-in-javascript.md.4de32847e680cf26a79a34b4f411c8d203076dbd.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\interstitial-ad-sample-code-in-javascript.md",
+      "XliffHash": "4de32847e680cf26a79a34b4f411c8d203076dbd",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2d016b24213d658951f97253bf5f8569db1a9e13.38cf34c747c52bd5f253dd4dcab23d708c83ede4.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
