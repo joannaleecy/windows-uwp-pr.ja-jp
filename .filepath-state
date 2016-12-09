@@ -860,6 +860,9 @@
   "d21bbf905797a7b0c14e666f1ec31a85203b30db": [
     "windows-apps-src\\gaming\\map-concepts-and-infrastructure.md"
   ],
+  "696d4227bcd3ff4238d81e6f951a61e098fbc2f6": [
+    "windows-apps-src\\gaming\\marble-maze-application-structure.md"
+  ],
   "84dbe1730274bd39b1ba359c588bc68976a2d19e": [
     "windows-apps-src\\gaming\\marble-maze-application-structure.md"
   ],
@@ -883,6 +886,9 @@
   ],
   "bc861d98563107b2c67e94281e79d97bed6dee9b": [
     "windows-apps-src\\gaming\\package-your-windows-store-directx-game.md"
+  ],
+  "f5f66f5da79eb62e3a81f4fe0d7398fed689d378": [
+    "windows-apps-src\\gaming\\plan-your-directx-port.md"
   ],
   "fbd582b2cc90ee763cb167c65dac88cee4e7a025": [
     "windows-apps-src\\gaming\\plan-your-directx-port.md"

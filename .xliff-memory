@@ -259,6 +259,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2d016b24213d658951f97253bf5f8569db1a9e13.38cf34c747c52bd5f253dd4dcab23d708c83ede4.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\plan-your-directx-port.md.b89890e28e847ff4c4cf9dd8c0b97f6bdeb35659.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\plan-your-directx-port.md",
+      "XliffHash": "b89890e28e847ff4c4cf9dd8c0b97f6bdeb35659",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f5f66f5da79eb62e3a81f4fe0d7398fed689d378.7e9b663e3b266e9c999c1529930bd30e7d60c223.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\marble-maze-application-structure.md.57f3134f0cd2adf70b5e2f0c28377deb60309e3c.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\marble-maze-application-structure.md",
+      "XliffHash": "57f3134f0cd2adf70b5e2f0c28377deb60309e3c",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\696d4227bcd3ff4238d81e6f951a61e098fbc2f6.f5ac3f74688aa65430979f9d2afa3b54e200ec27.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
