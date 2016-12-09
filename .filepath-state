@@ -1739,6 +1739,9 @@
   "7d0eeda4deac304fb9b573b6ed206a191f037a3e": [
     "windows-apps-src\\monetize\\known-issues-for-the-advertising-libraries.md"
   ],
+  "54c6503add19ead5226da5a862b199bc3f305b7e": [
+    "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
+  ],
   "4296bd4007ae5109c9a3736c977ba68f312b208c": [
     "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
   ],
@@ -2410,6 +2413,9 @@
   ],
   "979eb3c6ac41f304e19093055574db7805a115ff": [
     "windows-apps-src\\security\\microsoft-passport.md"
+  ],
+  "27f06fe3031d391a03bc5f5b08723983b34308f0": [
+    "windows-apps-src\\security\\microsoft-passport-login.md"
   ],
   "04311e9c3242bdaf6588c8102a06ae658e6637e2": [
     "windows-apps-src\\security\\microsoft-passport-login.md"
@@ -3271,6 +3277,9 @@
   ],
   "7b59bb255774c8050232831e7f0d7a78a921ec6d": [
     "windows-apps-src\\monetize\\manage-flight-submissions.md"
+  ],
+  "876b02ddc78391407cc59cdd123e96c2d06e5d60": [
+    "windows-apps-src\\monetize\\python-code-examples-for-the-windows-store-submission-api.md"
   ],
   "52fd41ca41628d41140c8c24047e2a50ea72bf40": [
     "windows-apps-src\\monetize\\python-code-examples-for-the-windows-store-submission-api.md"

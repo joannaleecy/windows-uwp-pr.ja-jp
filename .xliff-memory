@@ -279,6 +279,36 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\696d4227bcd3ff4238d81e6f951a61e098fbc2f6.f5ac3f74688aa65430979f9d2afa3b54e200ec27.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md.b78ca5c1ef7597f4045f287fd6c99b3fe28859ce.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md",
+      "XliffHash": "b78ca5c1ef7597f4045f287fd6c99b3fe28859ce",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\54c6503add19ead5226da5a862b199bc3f305b7e.8e06a22a6b1a96d1c56850dc7ecc3d6cf27d7d84.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\python-code-examples-for-the-windows-store-submission-api.md.e261cc26eab178508d7afc2a54ee92650c13136d.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\python-code-examples-for-the-windows-store-submission-api.md",
+      "XliffHash": "e261cc26eab178508d7afc2a54ee92650c13136d",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\876b02ddc78391407cc59cdd123e96c2d06e5d60.1e9fc36c68f33b730fc3dd0010e7d42c1a4ef994.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\security\\microsoft-passport-login.md.e1592e557acc98985baaefd9d9afe929d261f012.HT": {
+      "SourceFilename": "windows-apps-src\\security\\microsoft-passport-login.md",
+      "XliffHash": "e1592e557acc98985baaefd9d9afe929d261f012",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\27f06fe3031d391a03bc5f5b08723983b34308f0.fe8e19e548e7857a930c92533549d7c83c32b083.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
