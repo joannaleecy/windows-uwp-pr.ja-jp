@@ -1538,6 +1538,9 @@
   "e91f0bbb203ef1c77ad1435b1a3f10aa53c3a483": [
     "windows-apps-src\\maps-and-location\\set-up-a-geofence.md"
   ],
+  "5f2233b388cbe8e2ef6359536c0e9437006fb82e": [
+    "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
+  ],
   "5ae5dcbe6684aa34a1428760cd5c7e9b8f599ebf": [
     "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
   ],
@@ -1639,6 +1642,9 @@
   ],
   "fdca95a6e925ca2238fdcd8791ade2ed4ea5a310": [
     "windows-apps-src\\monetize\\exclude-or-limit-features-in-a-trial-version-of-your-app.md"
+  ],
+  "2e35da3b3033ecbad8c48184d831ca9465142322": [
+    "windows-apps-src\\monetize\\get-app-acquisitions.md"
   ],
   "b82136348936d436a374cfef42d5e349ed0d0f36": [
     "windows-apps-src\\monetize\\get-app-acquisitions.md"
@@ -3188,6 +3194,9 @@
   "40855465fa2f9b1c32602b1b636761b608d88fc0": [
     "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
   ],
+  "8697ba13142cd2e89d7c72ac7c68691853ce3894": [
+    "windows-apps-src\\monetize\\csharp-code-examples-for-the-windows-store-submission-api.md"
+  ],
   "9ae200699027f908cfc4b59dfc5035dcb09e93f6": [
     "windows-apps-src\\monetize\\csharp-code-examples-for-the-windows-store-submission-api.md"
   ],
@@ -3253,6 +3262,9 @@
   ],
   "f93b26201ea45dc456013737fef0382aadb56e7f": [
     "windows-apps-src\\monetize\\get-status-for-an-app-submission.md"
+  ],
+  "ffa9503623d9da89eae1e305dc7b9cfbdf389a7f": [
+    "windows-apps-src\\monetize\\java-code-examples-for-the-windows-store-submission-api.md"
   ],
   "26d5812e41531cf852606227805d0a84255a3f47": [
     "windows-apps-src\\monetize\\java-code-examples-for-the-windows-store-submission-api.md"
