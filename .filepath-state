@@ -161,6 +161,9 @@
   "cc3553aff7c30a2e84b527dc9e108f7c45b7b21f": [
     "windows-apps-src\\audio-video-camera\\midi.md"
   ],
+  "97a3002c1e61d8f7d31b81a3a80d7473a5dc6077": [
+    "windows-apps-src\\audio-video-camera\\playready-client-sdk.md"
+  ],
   "b2748f0e48b25027441b183c287aa995dc6d9a9c": [
     "windows-apps-src\\audio-video-camera\\playready-client-sdk.md"
   ],
@@ -1349,14 +1352,29 @@
   "bec87d2e208ca6f8d310de139692ef13f052b915": [
     "windows-apps-src\\launch-resume\\create-a-customized-splash-screen.md"
   ],
+  "868fb7f1285ddd4f3e5120779ccf81a9ba55f8db": [
+    "windows-apps-src\\launch-resume\\create-and-register-a-background-task.md"
+  ],
+  "4eb67f8f63134ab33df79b0b98b252b2b27b2dda": [
+    "windows-apps-src\\launch-resume\\create-and-register-a-background-task.md"
+  ],
+  "6e1184729af929b771f21112083593e321cacc38": [
+    "windows-apps-src\\launch-resume\\debug-a-background-task.md"
+  ],
   "c4717ac41992d9a0c04d098067881ce5ca6952f0": [
     "windows-apps-src\\launch-resume\\debug-a-background-task.md"
   ],
   "b3518780600b9fe8f9be5af48eb5ee6022ec350f": [
     "windows-apps-src\\launch-resume\\declare-background-tasks-in-the-application-manifest.md"
   ],
+  "2d03c7f47461422fef7a0905df7e68b3e65c33f0": [
+    "windows-apps-src\\launch-resume\\guidelines-for-background-tasks.md"
+  ],
   "04e8776852a68d2e15c0a08732da48756f403d15": [
     "windows-apps-src\\launch-resume\\guidelines-for-background-tasks.md"
+  ],
+  "ba40aefe83a02d29150dd25e1303ec15bb032b8c": [
+    "windows-apps-src\\launch-resume\\handle-a-cancelled-background-task.md"
   ],
   "a8fe98ab60012c2183e8394bfc8d7089f51552f0": [
     "windows-apps-src\\launch-resume\\handle-a-cancelled-background-task.md"
@@ -1381,6 +1399,9 @@
   ],
   "d8d7f73e06d627eaa53deaf26f778c122113a9d6": [
     "windows-apps-src\\launch-resume\\how-to-launch-an-app-for-results.md"
+  ],
+  "e3c0746439a44b399929b525f7e76554b30ba21e": [
+    "windows-apps-src\\launch-resume\\index.md"
   ],
   "7667cfb9671a7517a394f6f691aef4c305c02087": [
     "windows-apps-src\\launch-resume\\index.md"
@@ -1409,8 +1430,14 @@
   "20cbd0ef20cc81c81f686100579059321e3c56fa": [
     "windows-apps-src\\launch-resume\\launch-the-default-app-for-a-file.md"
   ],
+  "c7b6062a624b194b2806788c5f498d87aaa209a2": [
+    "windows-apps-src\\launch-resume\\monitor-background-task-progress-and-completion.md"
+  ],
   "c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3": [
     "windows-apps-src\\launch-resume\\monitor-background-task-progress-and-completion.md"
+  ],
+  "d65b8d3312e49469bd99d458b45bf5a46f345e6a": [
+    "windows-apps-src\\launch-resume\\register-a-background-task.md"
   ],
   "809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca": [
     "windows-apps-src\\launch-resume\\register-a-background-task.md"
@@ -1427,17 +1454,29 @@
   "2d3d647985701a7bbccc606fd485ad9f6361f9e7": [
     "windows-apps-src\\launch-resume\\reserved-uri-scheme-names.md"
   ],
+  "1774b853839e65fd08acb9eb8f9cbb1735cd9bee": [
+    "windows-apps-src\\launch-resume\\respond-to-system-events-with-background-tasks.md"
+  ],
   "a3d7ac01724b1e8dcabe3219855eabe172924764": [
     "windows-apps-src\\launch-resume\\respond-to-system-events-with-background-tasks.md"
   ],
   "2813a112f9d60c5b133284903c98a152bd027bee": [
     "windows-apps-src\\launch-resume\\resume-an-app.md"
   ],
+  "488bbbf1dbe99d653dded0af78a8fd22c7429cde": [
+    "windows-apps-src\\launch-resume\\run-a-background-task-on-a-timer-.md"
+  ],
   "1ad44208b3442e80212656db943ff088514cc954": [
     "windows-apps-src\\launch-resume\\run-a-background-task-on-a-timer-.md"
   ],
+  "c83f861f43209c42dff661e3277e1d8a1b67d37c": [
+    "windows-apps-src\\launch-resume\\set-conditions-for-running-a-background-task.md"
+  ],
   "c22fed27b77f3287dd11a05c32405fe18521af65": [
     "windows-apps-src\\launch-resume\\set-conditions-for-running-a-background-task.md"
+  ],
+  "9f83717657fddf2df51589aae75a3aa21c6ef5da": [
+    "windows-apps-src\\launch-resume\\support-your-app-with-background-tasks.md"
   ],
   "b33fd118289ca575207be97bd8a1a33ddcc49a87": [
     "windows-apps-src\\launch-resume\\support-your-app-with-background-tasks.md"
@@ -1450,6 +1489,9 @@
   ],
   "d651a5dbf8478de238944cac36ea13429b0f1849": [
     "windows-apps-src\\launch-resume\\update-a-live-tile-from-a-background-task.md"
+  ],
+  "8ca0255be671d0a2900bb7be3a66d4df4e793725": [
+    "windows-apps-src\\launch-resume\\use-a-maintenance-trigger.md"
   ],
   "2f459156ac8bc52c79b9b6d3b902882693120028": [
     "windows-apps-src\\launch-resume\\use-a-maintenance-trigger.md"
@@ -2186,6 +2228,9 @@
   "3fb8594748d303216a4437983604b5d78c993934": [
     "windows-apps-src\\publish\\define-pricing-and-market-selection.md"
   ],
+  "96ce11cd78b1398f4079f63b17da26bd7776a140": [
+    "windows-apps-src\\publish\\dev-center-insider-program.md"
+  ],
   "422147270dbae58837e3e8f801c954271178bfa4": [
     "windows-apps-src\\publish\\dev-center-insider-program.md"
   ],
@@ -2245,6 +2290,9 @@
   ],
   "3859918d94ad7ffcf1c331ca5a0ca6540387886f": [
     "windows-apps-src\\publish\\managing-your-profile.md"
+  ],
+  "831e3fbd1524ce452a4346b6c52f3f1c76385d68": [
+    "windows-apps-src\\publish\\mobile-operator-billing.md"
   ],
   "fe11b56430a07e1326f78b59579ffd9e733ed1b0": [
     "windows-apps-src\\publish\\mobile-operator-billing.md"
@@ -2515,6 +2563,9 @@
   ],
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "817238529effa410802bb3ff76cdbff763062667": [
+    "windows-apps-src\\TOC.md"
   ],
   "9c856b4019ceb0cb0af8a00d6c736b7b406ca02a": [
     "windows-apps-src\\TOC.md"
@@ -3389,11 +3440,11 @@
   "b361a558ecef2030370590eedbef69bd04cf68bd": [
     "windows-apps-src\\launch-resume\\convert-out-of-process-background-task.md"
   ],
-  "f4bf682c27f856402ae8d1b5fd85bc998921efac": [
+  "32147efccb2b574038929e25d9607f98d6270ae7": [
     "windows-apps-src\\launch-resume\\create-and-register-an-inproc-background-task.md"
   ],
-  "2958d3309c4e71c0b04e36d84de1317555e738bd": [
-    "windows-apps-src\\launch-resume\\create-and-register-an-outofproc-background-task.md"
+  "f4bf682c27f856402ae8d1b5fd85bc998921efac": [
+    "windows-apps-src\\launch-resume\\create-and-register-an-inproc-background-task.md"
   ],
   "e2b0680e62014526f684e7c1f7fd7da83a14f5d3": [
     "windows-apps-src\\monetize\\app-metadata-api-for-advertising-networks.md"
