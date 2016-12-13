@@ -599,6 +599,36 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\fd1610a2b0ad637f87bd0b7ee4ec0726d21d65d2.e60255423e6319477ab6fa0ff2e8182d5c1c8c78.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\manage-app-submissions.md.4e8afaa2348573d4a12692eb5ede4edcfcd66b9e.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\manage-app-submissions.md",
+      "XliffHash": "4e8afaa2348573d4a12692eb5ede4edcfcd66b9e",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7698076fec7f0b38c8608214629ba43ab1bb1c07.331d96971e34ffe80da997ea73368a069aead3ff.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\manage-add-on-submissions.md.25f6249bf6b2c74294e23c8f39abadbb43859a23.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\manage-add-on-submissions.md",
+      "XliffHash": "25f6249bf6b2c74294e23c8f39abadbb43859a23",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\755ec8c5b2d7d4b247fd1944c4efc5fe20184619.80edfc78bed365a4b63269735f71d55bc4aad9ef.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\manage-flight-submissions.md.2e371ca4050c2a99328870c4f6734170372ad9b6.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\manage-flight-submissions.md",
+      "XliffHash": "2e371ca4050c2a99328870c4f6734170372ad9b6",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\72d4d4c1772ec78559071d5e6ac8ffbdd9c8cf28.14cc392a40fd3d786c4d5209b43586064a54f084.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
