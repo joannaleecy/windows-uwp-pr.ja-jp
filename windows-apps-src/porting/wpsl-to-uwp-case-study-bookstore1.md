@@ -4,12 +4,12 @@ ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
 description: "このトピックでは、Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリに、非常にシンプルな Windows Phone Silverlight アプリを移植するケース スタディについて説明します。"
 title: "Windows Phone Silverlight から UWP へのケース スタディ - Bookstore1"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 86cccfd462717483720c412c1de9eaf6bbc1c5cd
+ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
+ms.openlocfilehash: 631dab52c1d8f5745179d79182d299688be05d05
 
 ---
 
-# Windows Phone Silverlight から UWP へのケース スタディ - Bookstore1
+# <a name="windows-phone-silverlight-to-uwp-case-study-bookstore1"></a>Windows Phone Silverlight から UWP へのケース スタディ - Bookstore1
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -19,21 +19,21 @@ ms.openlocfilehash: 86cccfd462717483720c412c1de9eaf6bbc1c5cd
 
 このセクションの前のトピックでは、プラットフォーム間の違いについて説明し、ビュー モデルへのバインドを通じて、データへのアクセスに至るまで、XAML マークアップからのアプリのさまざまな要素に対する移植プロセスの詳細とガイダンスを提供しました。 ケース スタディでは、実際の例が動作するようすを示すことにより、このガイダンスを補足することを目的としています。 ケース スタディは、ガイダンスを読み終わっていることを前提としているため、繰り返し説明することはありません。
 
-**注**   Visual Studio で Bookstore1Universal\_10 を開くときに、"Visual Studio 更新プログラムが必要" というメッセージが表示されたら、「[TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md#targetplatformversion)」の手順を実行してください。
+**注**   Visual Studio で Bookstore1Universal\_10 を開こうとすると、"Visual Studio 更新プログラムが必要" というメッセージが表示される場合は、「[TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md)」の手順に従って、ターゲット プラットフォームのバージョン番号を選択してください。
 
-## ダウンロード
+## <a name="downloads"></a>ダウンロード
 
 [Bookstore1WPSL8 Windows Phone Silverlight アプリのダウンロード](http://go.microsoft.com/fwlink/?linkid=517053)。
 
 [Bookstore1Universal\_10 Windows 10 アプリのダウンロード](http://go.microsoft.com/fwlink/?linkid=532950)。
 
-## Windows Phone Silverlight アプリ
+## <a name="the-windows-phone-silverlight-app"></a>Windows Phone Silverlight アプリ
 
 次に、ここで移植するアプリ Bookstore1WPSL8 の外観を示します。 これは、アプリ名とページ タイトルの見出しの下に、縦方向にスクロールする書籍のリスト ボックスを示すシンプルなアプリです。
 
 ![bookstore1wpsl8 の外観](images/wpsl-to-uwp-case-studies/c01-01-wpsl-how-the-app-looks.png)
 
-## Windows 10 プロジェクトへの移植
+## <a name="porting-to-a-windows-10-project"></a>Windows 10 プロジェクトへの移植
 
 Visual Studio で新しいプロジェクトを作成し、そこへ Bookstore1WPSL8 からファイルをコピーし、コピーしたファイルを新しいプロジェクトに含めるというタスクは、非常に短時間で実行できます。 最初に、"新しいアプリケーション (Windows ユニバーサル)" プロジェクトを新規作成します。 そして、"Bookstore1Universal\_10" という名前を付けます。 これらは、Bookstore1WPSL8 から Bookstore1Universal\_10 にコピーするファイルです。
 
@@ -71,11 +71,11 @@ MainPage.xaml では、移植作業のために次の変更を行う必要があ
 
 ビューおよびビュー モデルは、適切に連携しており、**ListBox** が機能しています。 ほとんどの場合、若干スタイルを修正して、画像を表示する必要があります。
 
-## 削除した項目と一部の初期スタイルを戻す
+## <a name="paying-off-the-debt-items-and-some-initial-styling"></a>削除した項目と一部の初期スタイルを戻す
 
 既定では、すべての向きがサポートされます。 ただし、Windows Phone Silverlight アプリでは、自身を縦向きのみに明示的に制限します。したがって、新しいプロジェクト内のアプリ パッケージ マニフェストに含め、**[サポートされる向き]** で **[縦]** をオンにすることにより、削除した項目 \#1 および \#2 を元に戻します。
 
-このアプリでは、ステータス バー (以前はシステム トレイと呼ばれていました) が既定で示されるので、項目 \#3 は元に戻す必要はありません。 項目 \#4 および \#5 では、使っていた Windows Phone Silverlight スタイルに対応する 4 つのユニバーサル Windows プラットフォーム (UWP)  **TextBlock** スタイルを検索する必要があります。 エミュレーターで Windows Phone Silverlight アプリを実行し、「[テキスト](wpsl-to-uwp-porting-xaml-and-ui.md#text)」セクションの図で並べて比較できます。 ここから、Windows Phone Silverlight システム スタイルのプロパティに注目することで、次のような表を作ることができます。
+このアプリでは、ステータス バー (以前はシステム トレイと呼ばれていました) が既定で示されるので、項目 \#3 は元に戻す必要はありません。 項目 \#4 および \#5 では、使っていた Windows Phone Silverlight スタイルに対応する 4 つのユニバーサル Windows プラットフォーム (UWP)  **TextBlock** スタイルを検索する必要があります。 エミュレーターで Windows Phone Silverlight アプリを実行し、「[テキスト](wpsl-to-uwp-porting-xaml-and-ui.md)」セクションの図で並べて比較できます。 ここから、Windows Phone Silverlight システム スタイルのプロパティに注目することで、次のような表を作ることができます。
 
 | Windows Phone Silverlight スタイル キー | UWP スタイル キー          |
 |-------------------------------------|------------------------|
@@ -88,11 +88,11 @@ MainPage.xaml では、移植作業のために次の変更を行う必要があ
 
 **ListBox** コントロールの既定のスタイルでは背景に `ListBoxBackgroundThemeBrush` システム リソースが設定されるため、項目の背景は 80% の不透明な白になります。 **ListBox** で `Background="Transparent"` を設定し、背景をクリアします。 項目テンプレートで **TextBlock** を左揃えにするには、前記と同様に再度編集し、両方の **TextBlock** で `"9.6,0"` の **Margin** を設定します。
 
-これが終わったら、[表示ピクセルに関連する変更](wpsl-to-uwp-porting-xaml-and-ui.md#effective-pixels)のために、まだ変更していないすべての固定サイズの寸法 (余白、幅、高さなど) について、0.8 を乗算する必要があります。 したがって、たとえば画像は 70 x 70px から 56 x 56px に変更する必要があります。
+これが終わったら、[表示ピクセルに関連する変更](wpsl-to-uwp-porting-xaml-and-ui.md)のために、まだ変更していないすべての固定サイズの寸法 (余白、幅、高さなど) について、0.8 を乗算する必要があります。 したがって、たとえば画像は 70 x 70px から 56 x 56px に変更する必要があります。
 
 ただし、スタイルの結果を示す前に、画像を描画しましょう。
 
-## ビュー モデルへの画像のバインド
+## <a name="binding-an-image-to-a-view-model"></a>ビュー モデルへの画像のバインド
 
 Bookstore1WPSL8 では、次のことを適用しました。
 
@@ -108,7 +108,7 @@ Bookstore1Universal では、ms-appx [URI スキーム](https://msdn.microsoft.c
     return new BitmapImage(new Uri(new Uri("ms-appx://"), this.CoverImagePath));
 ```
 
-## ユニバーサル スタイル設定
+## <a name="universal-styling"></a>ユニバーサル スタイル設定
 
 後は、いくつかの最終的なスタイルの調整を行い、アプリがデスクトップ (およびその他) のフォーム ファクターとモバイルで適切に表示されることを確認するだけです。 手順は次のとおりです。 このトピックの上部にあるリンクを使って、プロジェクトをダウンロードし、この時点とケース スタディの終了時の間のすべての変更の結果を参照できます。
 
@@ -118,17 +118,17 @@ Bookstore1Universal では、ms-appx [URI スキーム](https://msdn.microsoft.c
 
 ここで、より洗練されたアプリにより、「[フォーム ファクターとユーザー エクスペリエンスのための移植](wpsl-to-uwp-form-factors-and-ux.md)」のガイダンスを参考にして、実際にアプリで実行できる多くのデバイスのそれぞれで、フォーム ファクターを最適に利用します。 このシンプルなアプリでは、ここで停止し、スタイル操作の最後の手順を行った後のアプリの外観を確認します。 実際には、モバイル デバイスとデスクトップ デバイスで同じに表示されますが、広いフォーム ファクターの領域を最大限に活用していません (ただし、後のケース スタディで、これを行う方法を調査します)。
 
-アプリのテーマの管理方法については、「[テーマの変更](wpsl-to-uwp-porting-xaml-and-ui.md#theme-changes)」をご覧ください。
+アプリのテーマの管理方法については、「[テーマの変更](wpsl-to-uwp-porting-xaml-and-ui.md)」をご覧ください。
 
 ![移植された Windows 10 アプリ](images/w8x-to-uwp-case-studies/c01-07-mob10-ported.png)
 
 モバイル デバイスで動作中の、移植された Windows 10 アプリ
 
-## モバイル デバイス向けのリスト ボックスの調整 (オプション)
+## <a name="an-optional-adjustment-to-the-list-box-for-mobile-devices"></a>モバイル デバイス向けのリスト ボックスの調整 (オプション)
 
-モバイル デバイスでのアプリの実行中には、両方のテーマで既定で、リスト ボックスの背景は淡色です。 このスタイルで問題なければ、それ以上の操作は必要ありません。 コントロールは、動作に影響を及ぼすことなく、表示形式をカスタマイズできるように設計されています。 元のアプリの外観のように、濃色のテーマでリスト ボックスを濃色にする場合は、[これらの手順](w8x-to-uwp-case-study-bookstore1.md#an-optional-adjustment)に従います。
+モバイル デバイスでのアプリの実行中には、両方のテーマで既定で、リスト ボックスの背景は淡色です。 このスタイルで問題なければ、それ以上の操作は必要ありません。 コントロールは、動作に影響を及ぼすことなく、表示形式をカスタマイズできるように設計されています。 元のアプリの外観のように、濃色のテーマでリスト ボックスを濃色にする場合は、[このページ](w8x-to-uwp-case-study-bookstore1.md)の「モバイル デバイス向けのリスト ボックスの調整 (オプション)」の手順に従います。
 
-## まとめ
+## <a name="conclusion"></a>まとめ
 
 このケース スタディでは、非常に単純なアプリ (実在しないと考えらえる単純なアプリ) を移植するプロセスを示しました。 たとえば、リスト コントロールは、選択用またはナビゲーション コンテキストの確立用に使うことができます。アプリは、タップされた項目に関する詳細を提示するページに移動します。 この特定のアプリは、ユーザーの選択に対して何も処理せず、またナビゲーション機能がありません。 それでも、このケース スタディは、まず移植プロセスを導入し、実際の UWP アプリで使うことができる重要な手法をデモする役割を果たします。
 
@@ -136,6 +136,6 @@ Bookstore1Universal では、ms-appx [URI スキーム](https://msdn.microsoft.c
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

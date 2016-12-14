@@ -5,27 +5,39 @@ title: "UWP アプリでのペン操作と Windows Ink"
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in UWP apps
 template: detail.hbs
-keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas
+keywords: "Windows Ink, Windows の手書き入力, DirectInk, InkPresenter, InkCanvas"
 translationtype: Human Translation
-ms.sourcegitcommit: f7bc2ccbdd34bec671864323df53ab7bdda25a87
-ms.openlocfilehash: 4c87dea0387b2da055d07df5bab14c4ad61638d7
+ms.sourcegitcommit: 0f7f54c5c5baccdedfe32bc7c71994e43a93f032
+ms.openlocfilehash: 49098df1bf7fb72264a633aae37f941951cee2cf
 
 ---
 
-# UWP アプリでのペン操作と Windows Ink
+# <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>UWP アプリでのペン操作と Windows Ink
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
+<!--
+![touchpad](images/input-patterns/input-pen.jpg)
+-->
+
+<!--
+![Surface Pen](images/ink/hero2-small.png)  
+*Surface Studio with Surface Pen* (available for purchase at the [Microsoft Store](https://aka.ms/purchasesurfacepen)).
+-->
+
+![Surface ペン](images/ink/hero-small.png)  
+*Surface ペン* ([Microsoft ストア](https://aka.ms/purchasesurfacepen)で購入できます)。
+
+## <a name="overview"></a>概要
 
 ペン入力向けにユニバーサル Windows プラットフォーム (UWP) アプリを最適化して、標準の [**ポインター デバイス**](https://msdn.microsoft.com/library/windows/apps/br225633) 機能と最良の Windows Ink エクスペリエンスをユーザーに提供します。
 
 > [!NOTE]
 > ここでは主に、Windows Ink プラットフォームについて説明します。 ポインター入力処理 (マウス、タッチ、タッチパッドに類似) の概要については、「[ポインター入力の処理](handle-pointer-input.md)」をご覧ください。
 
-![タッチパッド](images/input-patterns/input-pen.jpg)
-
-**重要な API**
-
--   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
--   [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
--   [**Windows.UI.Input.Inking.Core**](https://msdn.microsoft.com/library/windows/apps/dn958452)
+| ビデオ |   |
+| --- | --- |
+| <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Ink-in-Your-UWP-App/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Events/Ignite/2016/BRK2060/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> |
+| *Using ink in your UWP app (UWP アプリでのインクの使用)* | *Use Windows Pen and Ink to build more engaging enterprise apps (Windows ペンとインクを使ったより魅力的なエンタープライズ アプリの構築)* |
 
 Windows Ink プラットフォームでペン デバイスを使うと、自然な形でデジタルの手書きノート、描画、コメントを作れます。 このプラットフォームは、デジタイザー入力のインク データとしてのキャプチャ、インク データの生成、インク データの管理、出力デバイスのインク ストロークとしてのインク データのレンダリング、手書き認識によるインクからテキストへの変換をサポートします。
 
@@ -36,11 +48,9 @@ Windows Ink プラットフォームでペン デバイスを使うと、自然�
 
 インク プラットフォームは非常に柔軟で、 必要に応じてさまざまなレベルの機能をサポートできるようになっています。
 
-
-
 Windows Ink UX のガイドラインについては、「[手描き入力コントロール](../controls-and-patterns/inking-controls.md)」をご覧ください。
 
-## Windows Ink プラットフォームのコンポーネント
+## <a name="components-of-the-windows-ink-platform"></a>Windows Ink プラットフォームのコンポーネント
 
 | コンポーネント | 説明 |
 | --- | --- |
@@ -49,7 +59,7 @@ Windows Ink UX のガイドラインについては、「[手描き入力コン�
 | [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | 既定の InkToolbar をユニバーサル Windows プラットフォーム (UWP) 手描き入力アプリに追加し、カスタム ペン ボタンを InkToolbar に追加して、カスタム ペン ボタンをカスタム ペン定義にバインドします。関連付けられた InkCanvas のインク関連機能をアクティブ化する、カスタマイズ可能で拡張性の高いボタンのコレクションが含まれた XAML UI プラットフォーム コントロールです。<br/>InkToolbar の使用方法について詳しくは、「[InkToolbar をユニバーサル Windows プラットフォーム (UWP) 手描き入力アプリに追加する](ink-toolbar.md)」をご覧ください。 |
 | [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) | 既定の [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) コントロールの代わりに、ユニバーサル Windows アプリが指定した Direct2D デバイス コンテキストにインク ストロークをレンダリングできます。 これにより、手描き入力エクスペリエンスの全面的なカスタマイズが実現されます。<br/>詳しくは、「[複雑なインクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620314)」をご覧ください。 |
 
-## InkCanvas による基本的な手描き入力
+## <a name="basic-inking-with-inkcanvas"></a>InkCanvas による基本的な手描き入力
 
 基本的な手描き入力機能は、ページの任意の場所に [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) を配置するだけで利用できます。
 
@@ -89,7 +99,7 @@ Windows Ink UX のガイドラインについては、「[手描き入力コン�
 
 基本的な手書き入力では [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) のことを気にする必要はありませんが、 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) の手書き入力動作をカスタマイズしたり構成したりするには、対応する **InkPresenter** オブジェクトにアクセスする必要があります。
 
-## InkPresenter による基本的なカスタマイズ
+## <a name="basic-customization-with-inkpresenter"></a>InkPresenter による基本的なカスタマイズ
 
 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) オブジェクトは、各 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) コントロールと共にインスタンス化されます。
 
@@ -193,7 +203,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 手書き入力と消去以外の機能 (ストロークの選択など) を提供するには、アプリで処理するために [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) では未処理のままパススルーする入力をアプリで識別する必要があります。
 
-## 高度な処理のための入力のパススルー
+## <a name="pass-through-input-for-advanced-processing"></a>高度な処理のための入力のパススルー
 
 既定では、[**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) はすべての入力をインク ストロークか消去ストロークとして処理します。 これには、セカンダリ ハードウェア アフォーダンス (ペン バレル ボタン、マウスの右ボタンなど) によって変更された入力も含まれます。
 
@@ -425,7 +435,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
         }
       ```
 
-## カスタム インク レンダリング
+## <a name="custom-ink-rendering"></a>カスタム インク レンダリング
 
 既定では、手書き入力は低待機時間のバックグラウンド スレッドで処理され、描画と同時に "ウェット" レンダリングが行われます。 ストロークが完了すると (ペンまたは指が画面を離れるか、マウスのボタンが離されると)、UI スレッドでストロークが処理されて、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) レイヤーへの "ドライ" レンダリングが行われます (アプリケーション コンテンツの上にレンダリングされてウェット インクが置き換えられます)。
 
@@ -441,7 +451,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 > カスタム ドライ レンダリングと [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)  
 > カスタム ドライの実装によって、アプリが [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) の既定のインク レンダリング動作を上書きすると、レンダリングされたインク ストロークが InkToolbar で利用できなくなり、InkToolbar の組み込みの消去コマンドが正常に機能しなくなります。 消去機能を提供するには、すべてのポインター イベントを処理し、ストロークごとにヒット テストを実行すると共に、組み込みの [すべてのインクのデータを消去] コマンドをオーバーライドする必要があります。
 
-## このセクションの他の記事
+## <a name="other-articles-in-this-section"></a>このセクションの他の記事
 
 | トピック | 説明 |
 | --- | --- |
@@ -449,15 +459,23 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 | [インク ストロークの保存と取得](save-and-load-ink.md) | 埋め込みの Ink Serialized Format (ISF) メタデータを使って、インク ストローク データをグラフィックス交換形式 (GIF) ファイルに保存します。 |
 | [UWP 手描き入力アプリへの InkToolbar の追加](ink-toolbar.md) | 既定の InkToolbar をユニバーサル Windows プラットフォーム (UWP) 手描き入力アプリに追加し、カスタム ペン ボタンを InkToolbar に追加して、カスタム ペン ボタンをカスタム ペン定義にバインドします。 |
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 * [ポインター入力の処理](handle-pointer-input.md)
 * [入力デバイスの識別](identify-input-devices.md)
+
+**API**
+
+* [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
+* [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
+* [**Windows.UI.Input.Inking.Core**](https://msdn.microsoft.com/library/windows/apps/dn958452)
 
 **サンプル**
 * [インクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [単純なインクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620312)
 * [複雑なインクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [塗り絵帳のサンプル](https://aka.ms/cpubsample-coloringbook)
+* [Family Notes のサンプル](https://aka.ms/cpubsample-familynotessample)
 * [基本的な入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [待機時間が短い入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [ユーザー操作モードのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619894)
@@ -474,6 +492,6 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

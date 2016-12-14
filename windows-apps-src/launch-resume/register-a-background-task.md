@@ -4,12 +4,12 @@ title: "バックグラウンド タスクの登録"
 description: "ほとんどのバックグラウンド タスクを安全に登録できる再利用可能な関数の作成方法について説明します。"
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 translationtype: Human Translation
-ms.sourcegitcommit: 0f1bf88b1470cc5205f2e98ef15300da705203b1
-ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
+ms.sourcegitcommit: 2f46f5cd26656b2d6b7d14c0d85aa7a0a6950fb8
+ms.openlocfilehash: 809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca
 
 ---
 
-# バックグラウンド タスクの登録
+# <a name="register-a-background-task"></a>バックグラウンド タスクの登録
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -31,7 +31,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 
 更新プログラムのリリース後にユニバーサル Windows アプリが引き続き適切に実行されるようにするには、更新後にアプリが起動する際に、[**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) の順に呼び出す必要があります。 詳しくは、「[バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)」をご覧ください。
 
-## メソッドのシグニチャと戻り値の型の定義
+## <a name="define-the-method-signature-and-return-type"></a>メソッドのシグニチャと戻り値の型の定義
 
 このメソッドは、タスクのエントリ ポイント、タスク名、構築済みのバックグラウンド タスク トリガーのほか、(必要に応じて) バックグラウンド タスクの [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) を引数として受け取ります。 このメソッドは、[**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) オブジェクトを返します。
 
@@ -40,7 +40,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 > バックグラウンド タスクをアプリと同じプロセスで実行する (インプロセスのバックグラウンド タスク) 場合、`taskEntryPoint` を設定する必要はありません。
 
 > [!div class="tabbedCodeSnippets"]
-> ```cs
+> ``` csharp
 > public static BackgroundTaskRegistration RegisterBackgroundTask(
 >                                                 string taskEntryPoint,
 >                                                 string name,
@@ -52,7 +52,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 >
 > }
 > ```
-> ```cpp
+> ``` cpp
 > BackgroundTaskRegistration^ MainPage::RegisterBackgroundTask(
 >                                              Platform::String ^ taskEntryPoint,
 >                                              Platform::String ^ taskName,
@@ -65,7 +65,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 > }
 > ```
 
-## 登録の重複確認
+## <a name="check-for-existing-registrations"></a>登録の重複確認
 
 既に登録されたタスクかどうかを確認します。 同じタスクが二重に登録されると、1 回のトリガーにつきタスクが複数回実行され、CPU が無駄に消費されるばかりか、予期しない動作を招くこともあるため、この確認は重要です。
 
@@ -76,7 +76,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 次のコードは、最後の手順で作成した [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) を使ってバックグラウンド タスクを登録します。
 
 > [!div class="tabbedCodeSnippets"]
-> ```cs
+> ``` csharp
 > public static BackgroundTaskRegistration RegisterBackgroundTask(
 >                                                 string taskEntryPoint,
 >                                                 string name,
@@ -103,7 +103,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 >     // We'll register the task in the next step.
 > }
 > ```
-> ```cpp
+> ``` cpp
 > BackgroundTaskRegistration^ MainPage::RegisterBackgroundTask(
 >                                              Platform::String ^ taskEntryPoint,
 >                                              Platform::String ^ taskName,
@@ -137,7 +137,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 > }
 > ```
 
-## バックグラウンド タスクを登録する (または既に登録されているタスクを返す)
+## <a name="register-the-background-task-or-return-the-existing-registration"></a>バックグラウンド タスクを登録する (または既に登録されているタスクを返す)
 
 
 同じバックグラウンド タスクが既に登録されているかどうかを確認します。 登録されている場合は、そのタスクのインスタンスを返します。
@@ -150,7 +150,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 次の例には、既にあるタスクを返すか、バックグラウンド タスクを登録するコードが追加されています。また、システムの条件 (省略可能) が指定された場合の処理も追加されています。
 
 > [!div class="tabbedCodeSnippets"]
-> ```cs
+> ``` csharp
 > public static BackgroundTaskRegistration RegisterBackgroundTask(
 >                                                 string taskEntryPoint,
 >                                                 string name,
@@ -199,7 +199,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 >     return task;
 > }
 > ```
-> ```cpp
+> ``` cpp
 > BackgroundTaskRegistration^ MainPage::RegisterBackgroundTask(
 >                                              Platform::String ^ taskEntryPoint,
 >                                              Platform::String ^ taskName,
@@ -251,13 +251,13 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 > }
 > ```
 
-## バックグラウンド タスク登録ユーティリティ関数の完成
+## <a name="complete-background-task-registration-utility-function"></a>バックグラウンド タスク登録ユーティリティ関数の完成
 
 
 この例は、バックグラウンド タスク登録ユーティリティ関数全体を示しています。 ネットワーク関連のバックグラウンド タスクを除くほとんどのバックグラウンド タスクは、この関数を使って登録できます。
 
 > [!div class="tabbedCodeSnippets"]
-> ```cs
+> ``` csharp
 > //
 > // Register a background task with the specified taskEntryPoint, name, trigger,
 > // and condition (optional).
@@ -310,7 +310,7 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 >     return task;
 > }
 > ```
-> ```cpp
+> ``` cpp
 > //
 > // Register a background task with the specified taskEntryPoint, name, trigger,
 > // and condition (optional).
@@ -373,12 +373,12 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 
 > **注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 ****
 
-* [Create and register an out-of-process background task (アウトプロセスで実行されるバックグラウンド タスクの作成と登録)](create-and-register-an-outofproc-background-task.md)
-* [Create and register an in-process background task (インプロセスのバックグラウンド タスクの作成と登録)](create-and-register-an-inproc-background-task.md)
+* [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-an-outofproc-background-task.md)
+* [インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)
 * [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
 * [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
 * [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
@@ -397,6 +397,6 @@ ms.openlocfilehash: 2d27b46caefcae12e3ff3aeb300129eec0c5b7d7
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

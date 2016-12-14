@@ -6,12 +6,12 @@ ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 2c50b2be763a0cc7045745baeef6e6282db27cc7
-ms.openlocfilehash: a4f654b286db44d4054be296e76114024616f632
+ms.sourcegitcommit: d51aacb31f41cbd9c065b013ffb95b83a6edaaf4
+ms.openlocfilehash: 8fc2fc007d14bd9c5d08ca4eb7e61a2dfdf04d3b
 
 ---
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-# ローカル タイル通知の送信
+# <a name="send-a-local-tile-notification"></a>ローカル タイル通知の送信
 
 
 
@@ -25,31 +25,31 @@ Windows 10 では、アプリのプライマリ タイルはアプリ マニフ�
 
  
 
-## NuGet パッケージをインストールする
+## <a name="install-the-nuget-package"></a>NuGet パッケージをインストールする
 
 
-[NotificationsExtensions NuGet パッケージ](https://www.nuget.org/packages/NotificationsExtensions.Win10/)をインストールすることをお勧めします。このパッケージを使うと、生の XML ではなくオブジェクトによってタイルのペイロードが生成され、さまざまなことが簡素化されます。
+[Notifications ライブラリの NuGet パッケージ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)をインストールすることをお勧めします。このパッケージを使うと、生の XML ではなくオブジェクトによってタイルのペイロードが生成され、作業が簡素化されます。
 
-この記事のインライン コードの例は、[NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet パッケージがインストールされている場合の C# に対応しています  (独自の XML を作成する場合は、この記事の最後に示されている、[NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) を使わないコード例をご覧ください)。
+この記事のインライン コードの例は、Notifications ライブラリを使った場合の C# に対応しています  (独自の XML を作成する場合は、この記事の最後に示されている、Notifications ライブラリを使わないコード例をご覧ください)。
 
-## 名前空間宣言を追加する
+## <a name="add-namespace-declarations"></a>名前空間宣言を追加する
 
 
-タイル API にアクセスするには、[**Windows.UI.Notifications**](https://msdn.microsoft.com/library/windows/apps/br208661) 名前空間を追加します。 **NotificationsExtensions.Tiles** 名前空間も追加することをお勧めします。これにより、タイルのヘルパー API を使うことができます (これらの API にアクセスするには、[NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet パッケージをインストールする必要があります)。
+タイル API にアクセスするには、[**Windows.UI.Notifications**](https://msdn.microsoft.com/library/windows/apps/br208661) 名前空間を追加します。 **NotificationsExtensions.Tiles** 名前空間も追加することをお勧めします。これにより、タイルのヘルパー API を使うことができます (これらの API にアクセスするには、[Notifications ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)の NuGet パッケージをインストールする必要があります)。
 
-```
+```CSharp
 using Windows.UI.Notifications;
-using NotificationsExtensions.Tiles; // NotificationsExtensions.Win10
+using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ```
 
-## タイル通知のコンテンツを作成する
+## <a name="create-the-notification-content"></a>タイル通知のコンテンツを作成する
 
 
 Windows 10 では、アダプティブ タイル テンプレートを使ってタイルのペイロードが定義されます。これにより、通知に合わせたカスタムの視覚的なレイアウトを作成できます  (アダプティブ タイルを使ってできることについて詳しくは、「[アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)」と「[アダプティブ タイル テンプレート](tiles-and-notifications-adaptive-tiles-schema.md)」の記事をご覧ください)。
 
 次のコード例では、普通サイズのタイルおよびワイド タイル用にアダプティブ タイルのコンテンツを作成します。
 
-```
+```CSharp
 // In a real app, these would be initialized with actual data
 string from = "Jennifer Parker";
 string subject = "Photos from our trip";
@@ -67,48 +67,48 @@ TileContent content = new TileContent()
             {
                 Children =
                 {
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = from
                     },
- 
-                    new TileText()
+
+                    new AdaptiveText()
                     {
                         Text = subject,
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     },
- 
-                    new TileText()
+
+                    new AdaptiveText()
                     {
                         Text = body,
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     }
                 }
             }
         },
- 
+
         TileWide = new TileBinding()
         {
             Content = new TileBindingContentAdaptive()
             {
                 Children =
                 {
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = from,
-                        Style = TileTextStyle.Subtitle
+                        HintStyle = AdaptiveTextStyle.Subtitle
                     },
- 
-                    new TileText()
+
+                    new AdaptiveText()
                     {
                         Text = subject,
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     },
- 
-                    new TileText()
+
+                    new AdaptiveText()
                     {
                         Text = body,
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     }
                 }
             }
@@ -121,33 +121,30 @@ TileContent content = new TileContent()
 
 ![普通サイズのタイルでの通知のコンテンツ](images/sending-local-tile-02.png)
 
-## 通知を作成する
+## <a name="create-the-notification"></a>通知を作成する
 
 
-通知のコンテンツを決定したら、新しい [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616) を作成する必要があります。 **TileNotification** コンストラクターは Windows ランタイムの [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br208620) オブジェクトを受け取ります。このオブジェクトは、[NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) を使っている場合に、**TileContent.GetXml** メソッドから取得することができます。
+通知のコンテンツを決定したら、新しい [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616) を作成する必要があります。 **TileNotification** コンストラクターは Windows ランタイムの [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br208620) オブジェクトを受け取ります。このオブジェクトは、[Notifications ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)を使っている場合に、**TileContent.GetXml** メソッドから取得することができます。
 
 次のコード例では、新しいタイルの通知を作成します。
 
-```
+```CSharp
 // Create the tile notification
 var notification = new TileNotification(content.GetXml());
 ```
 
-## 通知の有効期限を設定する (省略可能)
+## <a name="set-an-expiration-time-for-the-notification-optional"></a>通知の有効期限を設定する (省略可能)
 
 
 既定では、ローカル タイル通知とローカル バッジ通知には有効期限がなく、プッシュ通知、定期的な通知、スケジュールされた通知の有効期限は 3 日です。 タイルのコンテンツは必要以上に長く保持しないことが推奨されるため、アプリにとって適切な有効期限を設定することをお勧めします (特に、ローカル タイル通知やローカル バッジ通知の場合)。
 
 次のコード例では、10 分後に有効期限が切れ、タイルから削除される通知を作成します。
 
-```
-tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);</code></pre></td>
-</tr>
-</tbody>
-</table>
+```CSharp
+tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);
 ```
 
-## 通知を送信する
+## <a name="send-the-notification"></a>通知を送信する
 
 
 タイル通知をローカルで送信する方法は簡単ですが、通知をプライマリ タイルに送信する方法とセカンダリ タイルに送信する方法は少し異なります。
@@ -159,13 +156,8 @@ tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);</code></
 次のコード例では、通知をプライマリ タイルに送信します。
 
 
-```
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-// And send the notification
+```CSharp
+// Send the notification to the primary tile
 TileUpdateManager.CreateTileUpdaterForApplication().Update(notification);
 ```
 
@@ -175,7 +167,7 @@ TileUpdateManager.CreateTileUpdaterForApplication().Update(notification);
 
 次のコード例では、通知をセカンダリ タイルに送信します。
 
-```
+```CSharp
 // If the secondary tile is pinned
 if (SecondaryTile.Exists("MySecondaryTile"))
 {
@@ -189,18 +181,15 @@ if (SecondaryTile.Exists("MySecondaryTile"))
 
 ![既定のタイルと通知を含んだタイル](images/sending-local-tile-01.png)
 
-## タイルの通知を消去する (省略可能)
+## <a name="clear-notifications-on-the-tile-optional"></a>タイルの通知を消去する (省略可能)
 
 
 ほとんどの場合、ユーザーが通知コンテンツを操作した後で、通知を消去する必要があります。 たとえば、ユーザーがアプリを起動したとき、場合によっては、タイルからすべての通知を消去する必要があります。 通知に期限がある場合は、通知を明示的に消去するのではなく、通知に有効期限を設定することをお勧めします。
 
-次のコード例では、タイルの通知を消去します。
+次のコード例では、プライマリ タイルへのタイル通知を消去します。 セカンダリ タイルのタイル アップデーターを作成することで、セカンダリ タイルに対しても同じ処理を行うことができます。
 
-```
-TileUpdateManager.CreateTileUpdaterForApplication().Clear();</code></pre></td>
-</tr>
-</tbody>
-</table>
+```CSharp
+TileUpdateManager.CreateTileUpdaterForApplication().Clear();
 ```
 
 タイルの通知キューが有効になっており、キューに通知がある場合は、Clear メソッドを呼び出すことでキューが空になります。 ただし、アプリのサーバーを使って通知を消去することはできません。ローカルのアプリ コードでのみ通知を消去できます。
@@ -209,7 +198,7 @@ TileUpdateManager.CreateTileUpdaterForApplication().Clear();</code></pre></td>
 
 ![通知を含んだタイルと消去された後のタイル](images/sending-local-tile-03.png)
 
-## 次のステップ
+## <a name="next-steps"></a>次の手順
 
 
 **通知キューの使用**
@@ -222,15 +211,10 @@ TileUpdateManager.CreateTileUpdaterForApplication().Clear();</code></pre></td>
 
 **XmlEncode 配信メソッド**
 
-[NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) を使わない場合は、このメソッドを代わりに使って、通信を配信することができます。
+[Notifications ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)を使わない場合は、このメソッドを代わりに使って、通信を配信することができます。
 
 
-```
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody>
-<tr class="odd">
+```CSharp
 public string XmlEncode(string text)
 {
     StringBuilder builder = new StringBuilder();
@@ -243,21 +227,21 @@ public string XmlEncode(string text)
 }
 ```
 
-## NotificationsExtensions を使わない場合のコード例
+## <a name="code-examples-without-notifications-library"></a>Notifications ライブラリを使わない場合のコード例
 
 
-[NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet パッケージではなく、生の XML を使う場合は、この記事で照会した最初の 3 つの例で、以下の代替のコード例を利用することができます。 他のコード例は、[NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) または生の XML のいずれかと共に使うことができます。
+[Notifications ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)の NuGet パッケージではなく、生の XML を使う場合は、この記事で照会した最初の 3 つの例で、以下の代替のコード例を利用することができます。 他のコード例は、[Notifications ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)または生の XML のいずれかと共に使うことができます。
 
 名前空間宣言を追加する
 
-```
+```CSharp
 using Windows.UI.Notifications;
 using Windows.Data.Xml.Dom;
 ```
 
 タイル通知のコンテンツを作成する
 
-```
+```CSharp
 // In a real app, these would be initialized with actual data
 string from = "Jennifer Parker";
 string subject = "Photos from our trip";
@@ -272,16 +256,16 @@ string content = $@"
 <tile>
     <visual>
  
-        <binding template=&#39;TileMedium&#39;>
+        <binding template='TileMedium'>
             <text>{from}</text>
-            <text hint-style=&#39;captionSubtle&#39;>{subject}</text>
-            <text hint-style=&#39;captionSubtle&#39;>{body}</text>
+            <text hint-style='captionSubtle'>{subject}</text>
+            <text hint-style='captionSubtle'>{body}</text>
         </binding>
  
-        <binding template=&#39;TileWide&#39;>
-            <text hint-style=&#39;subtitle&#39;>{from}</text>
-            <text hint-style=&#39;captionSubtle&#39;>{subject}</text>
-            <text hint-style=&#39;captionSubtle&#39;>{body}</text>
+        <binding template='TileWide'>
+            <text hint-style='subtitle'>{from}</text>
+            <text hint-style='captionSubtle'>{subject}</text>
+            <text hint-style='captionSubtle'>{body}</text>
         </binding>
  
     </visual>
@@ -290,7 +274,7 @@ string content = $@"
 
 通知を作成する
 
-```
+```CSharp
 // Load the string into an XmlDocument
 XmlDocument doc = new XmlDocument();
 doc.LoadXml(content);
@@ -299,14 +283,13 @@ doc.LoadXml(content);
 var notification = new TileNotification(doc);
 ```
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)
 * [アダプティブ タイル テンプレート: スキーマとドキュメント](tiles-and-notifications-adaptive-tiles-schema.md)
-* [NotificationsExtensions.Win10 (NuGet パッケージ)](https://www.nuget.org/packages/NotificationsExtensions.Win10/)
-* [GitHub の NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
-* [Github での完全なコード サンプル](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
+* [Notifications ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+* [GitHub での完全なコード サンプル](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
 * [**Windows.UI.Notifications 名前空間**](https://msdn.microsoft.com/library/windows/apps/br208661)
 * [通知キューの使用方法 (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
 * [通知の配信](tiles-and-notifications-choosing-a-notification-delivery-method.md)
@@ -320,6 +303,6 @@ var notification = new TileNotification(doc);
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

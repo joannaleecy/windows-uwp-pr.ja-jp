@@ -4,12 +4,12 @@ ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 description: "Windows ストア申請 API を使用して、Windows デベロッパー センター アカウントに登録されているアプリの申請をプログラムで作成および管理します。"
 title: "Windows ストア サービスを使用した申請の作成と管理"
 translationtype: Human Translation
-ms.sourcegitcommit: 03942eb9015487cfd5690e4b1933e4febd705971
-ms.openlocfilehash: 40855465fa2f9b1c32602b1b636761b608d88fc0
+ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
+ms.openlocfilehash: 1172be1072f0c539828a08655236be467c6c9fba
 
 ---
 
-# Windows ストア サービスを使用した申請の作成と管理
+# <a name="create-and-manage-submissions-using-windows-store-services"></a>Windows ストア サービスを使用した申請の作成と管理
 
 
 *Windows ストア申請 API* を使用し、自分または自分の組織の Windows デベロッパー センター アカウントに対して、アプリ、アドオン (アプリ内製品または IAP とも呼ばれます)、パッケージ フライトの申請をプログラムによって照会して、作成します。 この API は、アカウントで多数のアプリやアドオンを管理しており、こうしたアセットの申請プロセスを自動化および最適化する場合に便利です。 この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
@@ -21,19 +21,16 @@ ms.openlocfilehash: 40855465fa2f9b1c32602b1b636761b608d88fc0
 4.  [Windows ストア申請 API を呼び出します](#call-the-windows-store-submission-api)。
 
 
-
 <span id="not_supported" />
 >**重要**
 
 > * この API は、API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 このアクセス許可は、開発者アカウントに対して段階的に有効になります。現時点では、すべてのアカウントでこのアクセス許可が有効になっているわけではありません。 以前のアクセス権を要求するには、デベロッパー センター ダッシュボードにログオンし、ダッシュ ボードの下部にある **[フィードバック]** をクリックします。その後、フィードバック領域で **[申請 API]** を選択し、要求を提出します。 自分のアカウントでこのアクセス許可が有効になると、メールが届きます。
 <br/><br/>
 > * この API は、2016 年 8 月にデベロッパー センター ダッシュボードに導入された特定の機能を使用するアプリまたはアドオンで使用できません。これには、必須のアプリの更新プログラムとストアで管理されるコンシューマブルなアドオンが含まれますが、これらに限定されません。 このような機能のいずれかを使用するアプリまたはアドオンで Windows ストア申請 API を使うと、API から 409 エラー コードが返されます。 この場合は、ダッシュボードを使ってアドオンまたはアプリの申請を管理する必要があります。
-<br/><br/>
-> * 近い将来、Microsoft は Windows デベロッパー センターでアプリの申請の価格データ モデルを変更する予定です。 変更の実施後には、アプリとアドオンの申請用の**価格**リソースはサポートされなくなり、Windows ストア申請 APIを使用して申請の試用期間、価格、販売データを取得することが、一時的にできなくなります。 今後は API を更新して、アプリやアドオンの申請に関する価格情報にプログラムでアクセスする新しい方法を導入する予定です。 詳しくは、「[アプリの申請の価格リソース](manage-app-submissions.md#pricing-object)」および「[アドオンの申請の価格リソース](manage-add-on-submissions.md#pricing-object)」をご覧ください。
 
 
 <span id="prerequisites" />
-## 手順 1. Windows ストア申請 API を使うための前提条件を完了する
+## <a name="step-1-complete-prerequisites-for-using-the-windows-store-submission-api"></a>手順 1. Windows ストア申請 API を使うための前提条件を完了する
 
 Windows ストア申請 API を呼び出すコードの作成を開始する前に、次の前提条件が完了していることを確認します。
 
@@ -54,7 +51,7 @@ Windows ストア申請 API を呼び出すコードの作成を開始する前�
   * アドオンの申請を作成または更新するときにアイコンを含める必要がある場合は、[アイコンを準備](https://msdn.microsoft.com/windows/uwp/publish/create-iap-descriptions#icon)します。
 
 <span id="associate-an-azure-ad-application-with-your-windows-dev-center-account" />
-### Azure AD アプリケーションを Windows デベロッパー センター アカウントに関連付ける方法
+### <a name="how-to-associate-an-azure-ad-application-with-your-windows-dev-center-account"></a>Azure AD アプリケーションを Windows デベロッパー センター アカウントに関連付ける方法
 
 Windows ストア申請 API を使うには、事前に Azure AD アプリケーションをデベロッパー センター アカウントに関連付け、アプリケーションのテナント ID とクライアント ID を取得して、キーを生成しておく必要があります。 Azure AD アプリケーションは、Windows ストア申請 API の呼び出し元のアプリまたはサービスを表します。 テナント ID、クライアント ID、およびキーは、API に渡す Azure AD アクセス トークンを取得するために必要です。
 
@@ -69,7 +66,7 @@ Windows ストア申請 API を使うには、事前に Azure AD アプリケー
 4. **[新しいキーの追加]** をクリックします。 次の画面で、**[キー]** の値を書き留めます。 このページから離れると、この情報に再度アクセスすることはできません。 詳しくは、「[Azure AD アプリケーションを追加して管理する](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)」でキーの管理に関する情報をご覧ください。
 
 <span id="obtain-an-azure-ad-access-token" />
-## 手順 2. Azure AD のアクセス トークンを取得する
+## <a name="step-2-obtain-an-azure-ad-access-token"></a>手順 2. Azure AD のアクセス トークンを取得する
 
 Windows ストア申請 API で任意のメソッドを呼び出す前に、API 内の各メソッドの **Authorization** ヘッダーに渡す Azure AD アクセス トークンをまず取得する必要があります アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れた後は、トークンを更新してそれ以降の API 呼び出しで引き続き使用できます。
 
@@ -91,7 +88,7 @@ grant_type=client_credentials
 アクセス トークンの有効期限が切れた後は、[この](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)手順に従って更新できます。
 
 <span id="call-the-windows-store-submission-api">
-## 手順 3. Windows ストア申請 API を使用する
+## <a name="step-3-use-the-windows-store-submission-api"></a>手順 3. Windows ストア申請 API を使用する
 
 Azure AD アクセス トークンを取得したら、Windows ストア申請 API のメソッドを呼び出すことができます。 この API には、アプリ、アドオン、パッケージ フライトのシナリオにグループ化される多くのメソッドが含まれています。 申請を作成または更新するには、通常、Windows ストア申請 API 内の複数のメソッドを特定の順序で呼び出します。 各シナリオと各メソッドの構文について詳しくは、次の表の記事をご覧ください。
 
@@ -105,7 +102,7 @@ Azure AD アクセス トークンを取得したら、Windows ストア申請 A
 
 <span />
 
-## コード例
+## <a name="code-examples"></a>コード例
 
 次の記事では、さまざまなプログラミング言語で Windows ストア申請 API を使用する方法を説明する詳しいコード例を紹介します。
 
@@ -113,20 +110,20 @@ Azure AD アクセス トークンを取得したら、Windows ストア申請 A
 * [Java のコード例](java-code-examples-for-the-windows-store-submission-api.md)
 * [Python のコード例](python-code-examples-for-the-windows-store-submission-api.md)
 
-## トラブルシューティング
+## <a name="troubleshooting"></a>トラブルシューティング
 
 | 問題      | 解決策                                          |
 |---------------|---------------------------------------------|
 | Windows ストア申請 API を PowerShell から呼び出した後、[ConvertFrom-Json](https://technet.microsoft.com/en-us/library/hh849898.aspx) コマンドレットを使って API の応答データを JSON 形式から PowerShell オブジェクトに変換し、[ConvertTo-Json](https://technet.microsoft.com/en-us/library/hh849922.aspx) コマンドレットを使ってもう一度 JSON 形式に変換すると、応答データが破損します。 |  既定では、[ConvertTo-Json](https://technet.microsoft.com/en-us/library/hh849922.aspx) コマンドレットの *-Depth* パラメーターは、2 レベルのオブジェクトに設定されます。これは、Windows ストア申請 API から返される JSON オブジェクトの大半にとって浅すぎます。 [ConvertTo-Json](https://technet.microsoft.com/en-us/library/hh849922.aspx) コマンドレットを呼び出すときは、*-Depth* パラメーターを大きな値 (たとえば 20) に設定します。 |
 
-## 追加のヘルプ
+## <a name="additional-help"></a>追加のヘルプ
 
 Windows ストア申請 API に関する質問がある場合やこの API を使った申請の管理にサポートが必要な場合は、次のリソースを使ってください。
 
 * Microsoft の[フォーラム](https://social.msdn.microsoft.com/Forums/windowsapps/en-us/home?forum=wpsubmit)で質問します。
 * Microsoft の[サポート ページ](https://developer.microsoft.com/windows/support)にアクセスし、デベロッパー センター ダッシュボードのサポート オプションのいずれかを要求します。 問題の種類とカテゴリを選択するよう求められた場合は、**[App submission and certification]** (アプリの申請と認定) と **[Submitting an app]** (アプリの申請) をそれぞれ選択します。  
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [アプリ データの入手](get-app-data.md)
 * [アプリの申請の管理](manage-app-submissions.md)
@@ -138,6 +135,6 @@ Windows ストア申請 API に関する質問がある場合やこの API を�
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

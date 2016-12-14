@@ -1,14 +1,14 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
 title: "ファイルとフォルダーの列挙と照会"
 description: "フォルダー、ライブラリ、デバイス、またはネットワークの場所にあるファイルやフォルダーにアクセスします。 ファイルやフォルダーのクエリを作成することで、任意の場所にあるファイルやフォルダーを照会することもできます。"
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: a7a8ba7166cf8c6778003396b13b7098578097ca
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: 80c9a2f37b7744d983f3f742895e9ac2408850df
 
 ---
-# ファイルとフォルダーの列挙と照会
+# <a name="enumerate-and-query-files-and-folders"></a>ファイルとフォルダーの列挙と照会
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -16,10 +16,12 @@ ms.openlocfilehash: a7a8ba7166cf8c6778003396b13b7098578097ca
 
 フォルダー、ライブラリ、デバイス、またはネットワークの場所にあるファイルやフォルダーにアクセスします。 ファイルやフォルダーのクエリを作成することで、任意の場所にあるファイルやフォルダーを照会することもできます。
 
-**注:** [フォルダーの列挙のサンプル](http://go.microsoft.com/fwlink/p/?linkid=619993)に関するページも参照してください。
+ユニバーサル Windows プラットフォーム アプリのデータを保存する方法について詳しくは、[ApplicationData](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx) クラスをご覧ください。
+
+**注:** [フォルダーの列挙のサンプル](http://go.microsoft.com/fwlink/p/?linkid=619993)に関するページもご覧ください。
 
  
-## 必要条件
+## <a name="prerequisites"></a>前提条件
 
 -   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
 
@@ -29,7 +31,7 @@ ms.openlocfilehash: a7a8ba7166cf8c6778003396b13b7098578097ca
 
     たとえば、これらの例のコードでは **picturesLibrary** 機能が必要ですが、場所によっては別の機能が必要であったり、機能をまったく必要としない場合もあります。 詳しくは、「[ファイル アクセス許可](file-access-permissions.md)」をご覧ください。
 
-## ある場所のファイルやフォルダーを列挙する
+## <a name="enumerate-files-and-folders-in-a-location"></a>ある場所のファイルやフォルダーを列挙する
 
 > **注:** 必ず **picturesLibrary** 機能を宣言してください。
 
@@ -208,7 +210,7 @@ ms.openlocfilehash: a7a8ba7166cf8c6778003396b13b7098578097ca
 > Next item
 > ```
 
-## ある場所に保存されているファイルを照会して、一致するファイルを列挙する
+## <a name="query-files-in-a-location-and-enumerate-matching-files"></a>ある場所に保存されているファイルを照会して、一致するファイルを列挙する
 
 この例では [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) にある月ごとにグループ化されたすべてのファイルを照会し、今回はサブフォルダーに再帰的に呼び出します。 まず、[**StorageFolder.CreateFolderQuery**](https://msdn.microsoft.com/library/windows/apps/br227262) を呼び出し、[**CommonFolderQuery.GroupByMonth**](https://msdn.microsoft.com/library/windows/apps/br207957) の値をメソッドに渡します。 これで、[**StorageFolderQueryResult**](https://msdn.microsoft.com/library/windows/apps/br208066) オブジェクトが取得されます。
 
@@ -324,6 +326,6 @@ July ‎2015 (2)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

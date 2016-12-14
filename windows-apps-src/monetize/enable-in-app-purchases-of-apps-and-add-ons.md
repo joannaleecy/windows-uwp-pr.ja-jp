@@ -5,12 +5,12 @@ description: "Windows.Services.Store 名前空間を使用して、アプリま�
 title: "アプリとアドオンのアプリ内購入の有効化"
 keywords: "アプリ内販売コード サンプル"
 translationtype: Human Translation
-ms.sourcegitcommit: 962bee0cae8c50407fe1509b8000dc9cf9e847f8
-ms.openlocfilehash: a28982e05e88b542a0b20bf481e3121d6ac8a247
+ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
+ms.openlocfilehash: 05a93f3124324d7308f5494ad14a15bfd6a4e698
 
 ---
 
-# アプリとアドオンのアプリ内購入の有効化
+# <a name="enable-in-app-purchases-of-apps-and-add-ons"></a>アプリとアドオンのアプリ内購入の有効化
 
 Windows 10 バージョン 1607 以降を対象とするアプリは、[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間のメンバーを使用して、ユーザーの現在のアプリまたはそのいずれかのアドオン (アプリ内製品または IAP とも呼ばれます) の購入を要求できます。 たとえば、現在ユーザーがアプリの試用版を使用している場合、このプロセスを使用して、ユーザーの完全なライセンスを購入できます。 また、このプロセスを使用して、ユーザーの新しいゲーム レベルなどのアドオンを購入できます。
 
@@ -22,9 +22,9 @@ Windows 10 バージョン 1607 以降を対象とするアプリは、[Windows.
 
 >**注**&nbsp;&nbsp;この記事は、Windows 10 バージョン 1607 以降をターゲットとするアプリに適用されます。 アプリが Windows 10 の以前のバージョンをターゲットする場合、**Windows.Services.Store** 名前空間の代わりに [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間を使う必要があります。 詳しくは、「[Windows.ApplicationModel.Store 名前空間を使用するアプリ内購入と試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)」をご覧ください。
 
-## 必要条件
+## <a name="prerequisites"></a>前提条件
 
-この例には、次の必要条件があります。
+この例には、次の前提条件があります。
 * Windows 10 バージョン 1607 以降をターゲットとするユニバーサル Windows プラットフォーム (UWP) アプリの Visual Studio プロジェクト。
 * Windows デベロッパー センター ダッシュ ボードでアプリを作成し、このアプリが公開されてストアで入手可能になっている。 これは、ユーザーにリリースするアプリでも、[Windows アプリ認定キット](https://developer.microsoft.com/windows/develop/app-certification-kit)の最小要件を満たす、テスト目的でのみ使う基本的なアプリでもかまいません。 詳しくは、[テスト ガイダンス](in-app-purchases-and-trials.md#testing)をご覧ください。
 
@@ -33,69 +33,18 @@ Windows 10 バージョン 1607 以降を対象とするアプリは、[Windows.
 * コード ファイルには、**Windows.Services.Store** 名前空間の **using** ステートメントがあります。
 * アプリは、アプリを起動したユーザーのコンテキストでのみ動作するシングル ユーザー アプリです。 詳しくは、「[アプリ内購入と試用版](in-app-purchases-and-trials.md#api_intro)」をご覧ください。
 
->**注:**&nbsp;&nbsp;[Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop) を使うデスクトップ アプリケーションがある場合、この例には表示されていないコードを追加して [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) オブジェクトを構成することが必要になることがあります。 詳しくは、「[Desktop Bridge を使用するデスクトップ アプリケーションでの StoreContext クラスの使用](in-app-purchases-and-trials.md#desktop)」をご覧ください。
+>**注:**&nbsp;&nbsp;[Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop) を使うデスクトップ アプリケーションがある場合、この例には示されていないコードを追加して [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) オブジェクトを構成することが必要になることがあります。 詳しくは、「[Desktop Bridge を使用するデスクトップ アプリケーションでの StoreContext クラスの使用](in-app-purchases-and-trials.md#desktop)」をご覧ください。
 
-## コードの例
+## <a name="code-example"></a>コードの例
 
 この例は、[StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) クラスの [RequestPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.requestpurchaseasync.aspx) メソッドを使用して、[ストア ID](in-app-purchases-and-trials.md#store_ids) がわかっているアプリまたはアドオンを購入する方法を示しています。
 
-```csharp
-private StoreContext context = null;
-
-public async void PurchaseAddOn(string storeId)
-{
-    if (context == null)
-    {
-        context = StoreContext.GetDefault();
-        // If your app is a desktop app that uses the Desktop Bridge, you
-        // may need additional code to configure the StoreContext object.
-        // For more info, see https://aka.ms/storecontext-for-desktop.
-    }
-
-    workingProgressRing.IsActive = true;
-    StorePurchaseResult result = await context.RequestPurchaseAsync(storeId);
-    workingProgressRing.IsActive = false;
-
-    if (result.ExtendedError != null)
-    {
-        // The user may be offline or there might be some other server failure.
-        textBlock.Text = $"ExtendedError: {result.ExtendedError.Message}";
-        return;
-    }
-
-    switch (result.Status)
-    {
-        case StorePurchaseStatus.AlreadyPurchased:
-            textBlock.Text = "The user has already purchased the product.";
-            break;
-
-        case StorePurchaseStatus.Succeeded:
-            textBlock.Text = "The purchase was successful.";
-            break;
-
-        case StorePurchaseStatus.NotPurchased:
-            textBlock.Text = "The purchase did not complete. " +
-                "The user may have cancelled the purchase.";
-            break;
-
-        case StorePurchaseStatus.NetworkError:
-            textBlock.Text = "The purchase was unsuccessful due to a network error.";
-            break;
-
-        case StorePurchaseStatus.ServerError:
-            textBlock.Text = "The purchase was unsuccessful due to a server error.";
-            break;
-
-        default:
-            textBlock.Text = "The purchase was unsuccessful due to an unknown error.";
-            break;
-    }
-}
-```
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[EnablePurchases](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseAddOnPage.xaml.cs#PurchaseAddOn)]
 
 完全なサンプル アプリケーションについては、[ストア サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)をご覧ください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [アプリ内購入と試用版](in-app-purchases-and-trials.md)
 * [アプリとアドオンの製品情報の取得](get-product-info-for-apps-and-add-ons.md)
@@ -106,6 +55,6 @@ public async void PurchaseAddOn(string storeId)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

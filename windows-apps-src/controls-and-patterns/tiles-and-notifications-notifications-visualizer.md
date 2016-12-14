@@ -6,18 +6,18 @@ ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: a954404ccc2e986c1603402315c8497f802ad254
+ms.sourcegitcommit: d51aacb31f41cbd9c065b013ffb95b83a6edaaf4
+ms.openlocfilehash: 20e73c2de82bcc76c94fff38163dddac7ef9d8a9
 
 ---
-# Notifications Visualizer
+# <a name="notifications-visualizer"></a>Notifications Visualizer
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
 Notifications Visualizer は、[ストア](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)の新しいユニバーサル Windows プラットフォーム (UWP) アプリで、Windows 10 のアダプティブ ライブ タイルをデザインする際に役立ちます。
 
-## 概要
+## <a name="overview"></a>概要
 
 
 Notifications Visualizer アプリでは、Visual Studio の XAML エディター/デザイン ビューと同様に、タイルの編集時に視覚的なプレビューが即座に表示されます。 このアプリではエラーのチェックも行われます。これにより、有効なタイルのペイロードを作成できます。
@@ -34,7 +34,7 @@ Notifications Visualizer を使うと、アプリ自体の編集や展開を行�
 
  
 
-## 機能
+## <a name="features"></a>機能
 
 
 Notifications Visualizer にはさまざまなサンプル ペイロードが付属しており、アダプティブ ライブ タイルを使ってできることを確認できます。これらのサンプル ペイロードは作業を始める際に役立ちます。 さまざまなテキスト オプション、グループ/サブグループ、背景画像を試すことができます。また、さまざまなデバイスや画面にタイルがどのように対応するかを確認することもできます。 サンプルに変更を加えたら、今後利用するために、更新したペイロードをファイルに保存できます。
@@ -49,24 +49,15 @@ Notifications Visualizer にはさまざまなサンプル ペイロードが付
 
  
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [ストアでの Notifications Visualizer の入手](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)
 * [アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)
 * [アダプティブ タイル テンプレート: スキーマとドキュメント](tiles-and-notifications-adaptive-tiles-schema.md)
-* [タイルとトースト (MSDN ブログ)](http://blogs.msdn.com/b/tiles_and_toasts/)
-* [NotificationsExtensions ライブラリ (MSDN ブログ)](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx)
- 
-
- 
+* [Tiles and toasts (タイルとトースト) (MSDN ブログ)](http://blogs.msdn.com/b/tiles_and_toasts/)
 
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

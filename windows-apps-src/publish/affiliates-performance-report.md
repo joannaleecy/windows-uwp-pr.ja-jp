@@ -4,23 +4,23 @@ Description: "アプリ内のアフィリエイト広告のパフォーマンス
 title: "アフィリエイト パフォーマンス レポート"
 ms.assetid: 38AD494C-0F85-4FED-8732-9064D1FC503D
 translationtype: Human Translation
-ms.sourcegitcommit: 577b238875b2d0edd47d9ad0e5e73ca79a6acf75
-ms.openlocfilehash: cfb05b2919f40aeeb83c2ba1a75206cf74d8c51d
+ms.sourcegitcommit: 9646b9614bb2935db5880cad9bf1a58648330671
+ms.openlocfilehash: 76bb607fb0abf11c863be24489a4eea0747a4e40
 
 ---
 
-# アフィリエイト パフォーマンス レポート
+# <a name="affiliates-performance-report"></a>アフィリエイト パフォーマンス レポート
 
 [Microsoft アフィリエイト広告プログラムにオプトインした](about-affiliate-ads.md)場合は、アプリに表示されるアフィリエイト広告のパフォーマンス データを、Windows デベロッパー センター ダッシュボードの次のレポートで確認できます。
 
--   [アプリ レベルのアフィリエイト パフォーマンス レポート](affiliates-performance-report.md#app-level-affiliates-performance-report)。 このレポートは、ダッシュボードで現在選択されているアプリ内のアフィリエイト広告についてパフォーマンス データを提供します。
--   [ダッシュボード レベルのアフィリエイト パフォーマンス レポート](affiliates-performance-report.md#dashboard-level-affiliates-performance-report)。 このレポートは、Microsoft アフィリエイト広告プログラムにオプトインしたすべてのアプリ内のアフィリエイト広告について、パフォーマンス データの要約を提供します。
+-   [アプリ レベルのアフィリエイト パフォーマンス レポート](#app-level-affiliate-ads-performance-report)。 このレポートは、ダッシュボードで現在選択されているアプリ内のアフィリエイト広告についてパフォーマンス データを提供します。
+-   [ダッシュボード レベルのアフィリエイト パフォーマンス レポート](#dashboard-level-affiliate-ads-performance-report)。 このレポートは、Microsoft アフィリエイト広告プログラムにオプトインしたすべてのアプリ内のアフィリエイト広告について、パフォーマンス データの要約を提供します。
 
 これらのレポートは毎日更新されます。 既定では、レポートはすべてのデバイスにおける過去 30 日間のパフォーマンスでフィルター処理されます。 これらのフィルターを変更するには、**[ページ フィルター]** をクリックし、異なる期間や個々のデバイスの種類を選択します。 すべてのデータは、特定のタイム ゾーンではなく、UTC に基づいて集計されることに注意してください。
 
 以降のセクションでは、これらのレポートについてさらに詳しく説明します。
 
-## アプリ レベルのアフィリエイト広告パフォーマンス レポート
+## <a name="app-level-affiliate-ads-performance-report"></a>アプリ レベルのアフィリエイト広告パフォーマンス レポート
 
 このレポートは、ダッシュボードで現在選択されているアプリ内のアフィリエイト広告のパフォーマンス データを、グラフと表の形式で提供します。 このレポートを表示するには、ダッシュボードでいずれかのアプリを選択し、ナビゲーション ウィンドウで **[分析]** &gt; **[Affiliates performance]** の順にクリックします。
 
@@ -36,11 +36,11 @@ ms.openlocfilehash: cfb05b2919f40aeeb83c2ba1a75206cf74d8c51d
 
 > **注**  ユーザーがストアで製品を購入してからアフィリエイト広告プログラムで承認されるまでに 45 日かかります。 そのため、指定した日の **[Estimated earnings (approved)] (売上見込み (承認済み))**、**[Estimated earnings (pending approval)] (売上見込み (承認保留中))**、**[Purchases (approved)] (購入数 (承認済み))**、**[Purchases (pending approval)] (購入数 (承認保留中))** のデータは、購入が承認または拒否された後に変わる可能性があります。
 
-## ダッシュボード レベルのアフィリエイト広告のパフォーマンス レポート
+## <a name="dashboard-level-affiliate-ads-performance-report"></a>ダッシュボード レベルのアフィリエイト広告のパフォーマンス レポート
 
 **[ダッシュボード概要]** ページの **[Affiliates performance] (アフィリエイトのパフォーマンス)** セクションには、Microsoft アフィリエイト広告プログラムにオプトインしたすべてのアプリ内のアフィリエイト広告について、パフォーマンス データの要約が提供されます。 このレポートは、上記で説明したアプリ レベルのアフィリエイト パフォーマンス レポートと同じパフォーマンスのメトリックおよびフィルターを示します。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [アフィリエイト広告について](about-affiliate-ads.md)
 * [広告による収益獲得](monetize-with-ads.md)
@@ -50,6 +50,6 @@ ms.openlocfilehash: cfb05b2919f40aeeb83c2ba1a75206cf74d8c51d
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

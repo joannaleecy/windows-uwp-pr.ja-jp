@@ -4,17 +4,17 @@ ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
 description: "特定の日付範囲などのオプション フィルターを使って、アプリケーションに関する集計入手データを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。"
 title: "アプリの入手数の取得"
 translationtype: Human Translation
-ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
-ms.openlocfilehash: db271b0d1ec3b20ab2ead2e35e06fd97adb2ce0c
+ms.sourcegitcommit: 7d05c8953f1f50be0b388a044fe996f345d45006
+ms.openlocfilehash: b82136348936d436a374cfef42d5e349ed0d0f36
 
 ---
 
-# アプリの入手数の取得
+# <a name="get-app-acquisitions"></a>アプリの入手数の取得
 
 
 特定の日付範囲などのオプション フィルターを使って、アプリケーションに関する JSON 形式の集計入手データを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。 この情報は、Windows デベロッパー センター ダッシュボードの[取得レポート](../publish/acquisitions-report.md)でも確認することができます。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 
 このメソッドを使うには、最初に次の作業を行う必要があります。
@@ -22,18 +22,18 @@ ms.openlocfilehash: db271b0d1ec3b20ab2ead2e35e06fd97adb2ce0c
 * Windows ストア分析 API に関するすべての[前提条件](access-analytics-data-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
 * このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
-## 要求
+## <a name="request"></a>要求
 
 
-### 要求の構文
+### <a name="request-syntax"></a>要求の構文
 
-| メソッド | 要求 URI                                                              |
-|--------|--------------------------------------------------------------------------|
+| メソッド | 要求 URI       |
+|--------|----------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions``` |
 
 <span/>
 
-### 要求ヘッダー
+### <a name="request-header"></a>要求ヘッダー
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -41,223 +41,45 @@ ms.openlocfilehash: db271b0d1ec3b20ab2ead2e35e06fd97adb2ce0c
 
 <span/> 
 
-### 要求パラメーター
+### <a name="request-parameters"></a>要求パラメーター
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">パラメーター</th>
-<th align="left">型</th>
-<th align="left">説明</th>
-<th align="left">必須かどうか</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">applicationId</td>
-<td align="left">string</td>
-<td align="left">入手データを取得するアプリのストア ID です。 ストア ID は、デベロッパー センター ダッシュボードの[アプリ ID ページ](../publish/view-app-identity-details.md)で確認できます。 ストア ID の例は 9WZDNCRFJ3Q8 です。</td>
-<td align="left">○</td>
-</tr>
-<tr class="even">
-<td align="left">startDate</td>
-<td align="left">date</td>
-<td align="left">取得する入手データの日付範囲の開始日です。 既定値は現在の日付です。</td>
-<td align="left">×</td>
-</tr>
-<tr class="odd">
-<td align="left">endDate</td>
-<td align="left">date</td>
-<td align="left">取得する入手データの日付範囲終了日です。 既定値は現在の日付です。</td>
-<td align="left">×</td>
-</tr>
-<tr class="even">
-<td align="left">top</td>
-<td align="left">int</td>
-<td align="left">要求で返すデータの行数です。 指定されない場合の既定値は、最大値でもある 10000 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。</td>
-<td align="left">×</td>
-</tr>
-<tr class="odd">
-<td align="left">skip</td>
-<td align="left">int</td>
-<td align="left">クエリでスキップする行数です。 大きなデータ セットを操作するには、このパラメーターを使用します。 たとえば、top=10000 と skip=0 を指定すると、データの最初の 10,000 行が取得され、top=10000 と skip=10000 を指定すると、データの次の 10,000 行が取得されます。</td>
-<td align="left">×</td>
-</tr>
-<tr class="even">
-<td align="left">filter</td>
-<td align="left">string</td>
-<td align="left">応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 詳しくは、次の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。</td>
-<td align="left">いいえ</td>
-</tr>
-<tr class="odd">
-<td align="left">aggregationLevel</td>
-<td align="left">string</td>
-<td align="left">集計データを取得する時間範囲を指定します。 次のいずれかの文字列を指定できます。<strong>day</strong>、<strong>week</strong>、または <strong>month</strong>。 指定されていない場合、既定値は <strong>day</strong> です。</td>
-<td align="left">×</td>
-</tr>
-<tr class="even">
-<td align="left">orderby</td>
-<td align="left">string</td>
-<td align="left">それぞれの入手数について結果データ値の順序を指定するステートメントです。 構文は <em>orderby=field [order],field [order],...</em> です。 <em>field</em> パラメーターには、次のいずれかの文字列を指定できます。
-<ul>
-<li><strong>date</strong></li>
-<li><strong>acquisitionType</strong></li>
-<li><strong>ageGroup</strong></li>
-<li><strong>storeClient</strong></li>
-<li><strong>gender</strong></li>
-<li><strong>market</strong></li>
-<li><strong>osVersion</strong></li>
-<li><strong>deviceType</strong></li>
-<li><strong>orderName</strong></li>
-</ul>
-<p><em>order</em> パラメーターは省略可能であり、<strong>asc</strong> または <strong>desc</strong> を指定して、各フィールドを昇順または降順にすることができます。 既定値は <strong>asc</strong> です。</p>
-<p><em>orderby</em> 文字列の例: <em>orderby=date,market</em></p></td>
-<td align="left">必須ではない</td>
-</tr>
-<tr class="odd">
-<td align="left">groupby</td>
-<td align="left">string</td>
-<td align="left"><p>データ集計を指定したフィールドのみに適用するステートメントです。 次のフィールドを指定できます。</p>
-<ul>
-<li><strong>date</strong></li>
-<li><strong>applicationName</strong></li>
-<li><strong>acquisitionType</strong></li>
-<li><strong>ageGroup</strong></li>
-<li><strong>storeClient</strong></li>
-<li><strong>gender</strong></li>
-<li><strong>market</strong></li>
-<li><strong>osVersion</strong></li>
-<li><strong>deviceType</strong></li>
-<li><strong>orderName</strong></li>
-</ul>
-<p>返されるデータ行には、<em>groupby</em> パラメーターに指定したフィールドと次の値が含まれます。</p>
-<ul>
-<li><strong>date</strong></li>
-<li><strong>applicationId</strong></li>
-<li><strong>acquisitionQuantity</strong></li>
-</ul>
-<p><em>groupby</em> パラメーターは、<em>aggregationLevel</em> パラメーターと同時に使用できます。 例: <em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p></td>
-<td align="left"></td>
-</tr>
-</tbody>
-</table>
+| パラメーター        | 型   |  説明      |  必須かどうか  
+|---------------|--------|---------------|------|
+| applicationId | string | 入手データを取得するアプリのストア ID です。 ストア ID は、デベロッパー センター ダッシュボードの[アプリ ID ページ](../publish/view-app-identity-details.md)で確認できます。 ストア ID は、たとえば 9WZDNCRFJ3Q8 のような文字列です。 |  必須  |
+| startDate | date | 取得する入手データの日付範囲の開始日です。 既定値は現在の日付です。 |  必須ではない  |
+| endDate | date | 取得する入手データの日付範囲終了日です。 既定値は現在の日付です。 |  必須ではない  |
+| top | int | 要求で返すデータの行数です。 指定されない場合の既定値は、最大値でもある 10000 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。 |  必須ではない  |
+| skip | int | クエリでスキップする行数です。 大きなデータ セットを操作するには、このパラメーターを使用します。 たとえば、top=10000 と skip=0 を指定すると、データの最初の 10,000 行が取得され、top=10000 と skip=10000 を指定すると、データの次の 10,000 行が取得されます。 |  必須ではない  |
+| filter | string  | 応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 詳しくは、次の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。 | 必須ではない   |
+| aggregationLevel | string | 集計データを取得する時間範囲を指定します。 次のいずれかの文字列を指定できます。<strong>day</strong>、<strong>week</strong>、または <strong>month</strong>。 指定されていない場合、既定値は <strong>day</strong> です。 | 必須ではない |
+| orderby | string | それぞれの入手数について結果データ値の順序を指定するステートメントです。 構文は <em>orderby=field [order],field [order],...</em> です。 <em>field</em> パラメーターには、次のいずれかの文字列を指定できます。<ul><li><strong>date</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p><em>order</em> パラメーターは省略可能であり、<strong>asc</strong> または <strong>desc</strong> を指定して、各フィールドを昇順または降順にすることができます。 既定値は <strong>asc</strong> です。</p><p><em>orderby</em> 文字列の例: <em>orderby=date,market</em></p> |  必須ではない  |
+| groupby | string | 指定したフィールドのみにデータ集計を適用するステートメントです。 次のフィールドを指定できます。<ul><li><strong>date</strong></li><li><strong>applicationName</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p>返されるデータ行には、<em>groupby</em> パラメーターに指定したフィールドと次の値が含まれます。</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>acquisitionQuantity</strong></li></ul><p><em>groupby</em> パラメーターは、<em>aggregationLevel</em> パラメーターと同時に使用できます。 例: <em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p> |  必須ではない  |
 
 <span/>
  
-### フィルター フィールド
+### <a name="filter-fields"></a>フィルター フィールド
 
 要求の *filter* パラメーターには、応答内の行をフィルター処理する 1 つまたは複数のステートメントが含まれます。 各ステートメントには **eq** 演算子または **ne** 演算子と関連付けられるフィールドと値が含まれ、**and** または **or** を使ってステートメントを組み合わせることができます。 *filter* パラメーターの例を次に示します。
 
 -   *filter=market eq 'US' and gender eq 'm'*
 -   *filter=(market ne 'US') and (gender ne 'Unknown') and (gender ne 'm') and (market ne 'NO') and (ageGroup ne 'greater than 55' or ageGroup ne ‘less than 13’)*
 
-サポートされているフィールドの一覧については、次の表をご覧ください。 *filter* パラメーターでは、文字列値は単一引用符で囲む必要があります。
+サポートされているフィールドの一覧については、次の表をご覧ください。 *filter* パラメーターでは、文字列値を単一引用符で囲む必要があります。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">フィールド</th>
-<th align="left">説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">acquisitionType</td>
-<td align="left">次のいずれかの文字列です。
-<ul>
-<li><strong>free</strong></li>
-<li><strong>trial</strong></li>
-<li><strong>paid</strong></li>
-<li><strong>promotional code</strong></li>
-<li><strong>iap</strong></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td align="left">ageGroup</td>
-<td align="left">次のいずれかの文字列です。
-<ul>
-<li><strong>less than 13</strong></li>
-<li><strong>13-17</strong></li>
-<li><strong>18-24</strong></li>
-<li><strong>25-34</strong></li>
-<li><strong>35-44</strong></li>
-<li><strong>44-55</strong></li>
-<li><strong>greater than 55</strong></li>
-<li><strong>Unknown</strong></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td align="left">storeClient</td>
-<td align="left">次のいずれかの文字列です。
-<ul>
-<li><strong>Windows Phone Store (client)</strong></li>
-<li><strong>Windows Store (client)</strong></li>
-<li><strong>Windows Store (web)</strong></li>
-<li><strong>Volume purchase by organizations</strong></li>
-<li><strong>Other</strong></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td align="left">gender</td>
-<td align="left">次のいずれかの文字列です。
-<ul>
-<li><strong>m</strong></li>
-<li><strong>f</strong></li>
-<li><strong>Unknown</strong></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td align="left">market</td>
-<td align="left">入手が発生した市場の ISO 3166 国コードを含む文字列です。</td>
-</tr>
-<tr class="even">
-<td align="left">osVersion</td>
-<td align="left">次のいずれかの文字列です。
-<ul>
-<li><strong>Windows Phone 7.5</strong></li>
-<li><strong>Windows Phone 8</strong></li>
-<li><strong>Windows Phone 8.1</strong></li>
-<li><strong>Windows Phone 10</strong></li>
-<li><strong>Windows 8</strong></li>
-<li><strong>Windows 8.1</strong></li>
-<li><strong>Windows 10</strong></li>
-<li><strong>Unknown</strong></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td align="left">deviceType</td>
-<td align="left">次のいずれかの文字列です。
-<ul>
-<li><strong>PC</strong></li>
-<li><strong>Tablet</strong></li>
-<li><strong>Phone</strong></li>
-<li><strong>IoT</strong></li>
-<li><strong>Wearable</strong></li>
-<li><strong>Server</strong></li>
-<li><strong>Collaborative</strong></li>
-<li><strong>Other</strong></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td align="left">orderName</td>
-<td align="left">アプリを入手するために使用されたプロモーション コードの注文の名前を指定する文字列です (このフィールドは、ユーザーがプロモーション コードを利用してアプリを入手した場合のみに適用されます)。</td>
-</tr>
-</tbody>
-</table>
+| フィールド        |  説明        |
+|---------------|-----------------|
+| acquisitionType | 次のいずれかの文字列です。<ul><li><strong>free</strong></li><li><strong>trial</strong></li><li><strong>paid</strong></li><li><strong>promotional code</strong></li><li><strong>iap</strong></li></ul> |
+| ageGroup | 次のいずれかの文字列です。<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Unknown</strong></li></ul> |
+| storeClient | 次のいずれかの文字列です。<ul><li><strong>Windows Phone Store (client)</strong></li><li><strong>Windows Store (client)</strong></li><li><strong>Windows Store (web)</strong></li><li><strong>Volume purchase by organizations</strong></li><li><strong>Other</strong></li></ul> |
+| gender | 次のいずれかの文字列です。<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Unknown</strong></li></ul> |
+| market | 入手が発生した市場の ISO 3166 国コードを含む文字列です。 |
+| osVersion | 次のいずれかの文字列です。<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul> |
+| deviceType | 次のいずれかの文字列です。<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul> |
+| orderName | アプリを入手するために使用されたプロモーション コードの注文の名前を指定する文字列です (このフィールドは、ユーザーがプロモーション コードを利用してアプリを入手した場合のみに適用されます)。 |
 
 <span/> 
 
-### 要求の例
+### <a name="request-example"></a>要求の例
 
 アプリの入手データを取得するためのいくつかの要求の例を次に示します。 *applicationId* 値を、目的のアプリのストア ID に置き換えてください。
 
@@ -269,41 +91,41 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?app
 Authorization: Bearer <your access token>
 ```
 
-## 応答
+## <a name="response"></a>応答
 
 
-### 応答本文
+### <a name="response-body"></a>応答本文
 
-| 値      | 型   | 説明                                                                                                                                                                                                                                                                            |
-|------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 値      | 型   | 説明                  |
+|------------|--------|-------------------------------------------------------|
 | Value      | array  | 集計評価データが含まれるオブジェクトの配列です。 各オブジェクトのデータについて詳しくは、次の「[入手値](#acquisition-values)」セクションをご覧ください。                                                                                                                      |
 | @nextLink  | string | データの追加ページがある場合、この文字列には、データの次のページを要求するために使用できる URI が含まれます。 たとえば、要求の **top** パラメーターが 10000 に設定されたが、クエリの入手データに 10,000 を超える行が含まれている場合に、この値が返されます。 |
 | TotalCount | int    | クエリの結果データ内の行の総数です。                                                                                                                                                                                                                             |
 
 <span/>
  
-### 入手値
+### <a name="acquisition-values"></a>入手値
 
 *Value* 配列の要素には、次の値が含まれます。
 
-| 値               | 型   | 説明                                                                                                                                                                                                                              |
-|---------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 値               | 型   | 説明                           |
+|---------------------|--------|-------------------------------------------|
 | date                | string | 入手データの日付範囲の最初の日付です。 要求に日付を指定した場合、この値はその日付になります。 要求に週、月、またはその他の日付範囲を指定した場合、この値はその日付範囲の最初の日付になります。 |
 | applicationId       | string | 入手データを取得するアプリのストア ID です。                                                                                                                                                                 |
 | applicationName     | string | アプリの表示名です。                                                                                                                                                                                                             |
-| deviceType          | string | 入手を完了したデバイスの種類です。 サポートされる文字列の一覧については、前の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                                  |
+| deviceType          | string | 入手を完了したデバイスの種類です。 サポートされる文字列の一覧については、上記の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                                  |
 | orderName           | string | 注文の名前。                                                                                                                                                                                                                   |
-| storeClient         | string | 入手が発生したストアのバージョンです。 サポートされる文字列の一覧については、前の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                            |
-| osVersion           | string | 入手が発生した OS のバージョンです。 サポートされる文字列の一覧については、前の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                                   |
+| storeClient         | string | 入手が発生したストアのバージョンです。 サポートされる文字列の一覧については、上記の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                            |
+| osVersion           | string | 入手が発生した OS のバージョンです。 サポートされる文字列の一覧については、上記の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                                   |
 | market              | string | 入手が発生した市場の ISO 3166 国コードです。                                                                                                                                                                  |
-| gender              | string | 入手を行ったユーザーの性別です。 サポートされる文字列の一覧については、前の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                                    |
-| ageGroup            | string | 入手を行ったユーザーの年齢グループです。 サポートされる文字列の一覧については、前の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                                 |
-| acquisitionType     | string | 入手の種類です (無料、有料など)。 サポートされる文字列の一覧については、前の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                                    |
+| gender              | string | 入手を行ったユーザーの性別です。 サポートされる文字列の一覧については、上記の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                                    |
+| ageGroup            | string | 入手を行ったユーザーの年齢グループです。 サポートされる文字列の一覧については、上記の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                                 |
+| acquisitionType     | string | 入手の種類です (無料、有料など)。 サポートされる文字列の一覧については、上記の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                                    |
 | acquisitionQuantity | number | 指定された集計レベルで発生した入手の数です。                                                                                                                                                         |
 
 <span/> 
 
-### 応答の例
+### <a name="response-example"></a>応答の例
 
 この要求の JSON 応答の本文の例を次に示します。
 
@@ -330,7 +152,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [取得レポート](../publish/acquisitions-report.md)
 * [Windows ストア サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)
@@ -341,6 +163,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

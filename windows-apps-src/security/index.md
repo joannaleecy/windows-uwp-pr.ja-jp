@@ -4,23 +4,23 @@ description: "このセクションには、Windows 10 のユニバーサル Win
 ms.assetid: 41E2EEFB-E8A9-4592-814C-72B703CD952C
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: a178f992ddd39b5609ce6d15b7e3560e157b9afb
-ms.openlocfilehash: 19f024bd3ad99b4ef9355cc3c9229b1b3ffc51e2
+ms.sourcegitcommit: 82f6e2decde2d332bd08b0b9798350b973860f21
+ms.openlocfilehash: b30492c3c74b19d5ce306829302be17ff303723f
 
 ---
 
-# セキュリティ
+# <a name="security"></a>セキュリティ
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 このセクションには、Windows 10 のユニバーサル Windows プラットフォーム (UWP) アプリをセキュリティで保護されたアプリとして構築する方法に関する記事が含まれています。
 
-## はじめに 
+## <a name="introduction"></a>はじめに 
 
-Windows または UWP での開発が初めての場合は、最初に「[安全な Windows アプリの開発について](web-authentication-broker.md)」をご覧ください。 この初級レベルの記事では、アプリのセキュリティに関する考慮事項の概要と Windows 10 で使用できるさまざまな機能について説明しています。
+Windows または UWP での開発が初めての場合は、最初に「[安全な Windows アプリの開発について](intro-to-secure-windows-app-development.md)」をご覧ください。 この初級レベルの記事では、アプリのセキュリティに関する考慮事項の概要と Windows 10 で使用できるさまざまな機能について説明しています。
 
-## 認証とユーザー ID
+## <a name="authentication-and-user-identity"></a>認証とユーザー ID
 
 [認証とユーザー ID に関するセクション](authentication-and-user-identity.md)には、ユーザーのログインや身元確認に関連するシナリオのためのチュートリアルが記載されています。 アプリでは、[Web 認証ブローカー](web-authentication-broker.md)を使う簡単なシングル サインオン (SSO) から、高度なセキュリティで保護された 2 要素認証に至るまで、いくつかの方法でユーザー認証を行うことができます。
 
@@ -29,7 +29,7 @@ Windows または UWP での開発が初めての場合は、最初に「[安全
 <tr><td>[資格情報保管ボックス](credential-locker.md)</td><td>この記事では、アプリで資格情報保管ボックスを使ってユーザーの資格情報を安全に保管し取得する方法、およびユーザーの Microsoft アカウントを使ってデバイス間でこれらの資格情報をローミングする方法について説明します。</td></tr>
 
 <tr><td>[指紋生体認証](fingerprint-biometrics.md) </td><td>この記事では、アプリに指紋生体認証を追加する方法について説明します。 特定の操作に対してユーザーの同意を得る必要がある場合は、指紋認証の要求を含めると、アプリのセキュリティを高めることができます。 たとえば、アプリ内購入を承認する前や制限されたリソースにアクセスする前に指紋認証を要求できます。 指紋認証は、[Windows.Security.Credentials.UI](https://msdn.microsoft.com/library/windows/apps/hh701356) 名前空間の [UserConsentVerifier](https://msdn.microsoft.com/library/windows/apps/dn279134) クラスを使って管理されます。</td></tr>
-<tr><td>[Microsoft Passport と Windows Hello](microsoft-passport.md)</td><td>この記事では、新しい Windows 10 の Microsoft Passport テクノロジについて説明します。また、開発者がこのテクノロジを実装してアプリやバックエンド サービスを保護する方法についても説明します。 従来の資格情報の脅威を軽減するこれらのテクノロジの特定の機能に着目し、Windows10 ロールアウトに含まれるこれらのテクノロジの設計と展開の方法について説明します。 </td></tr>
+<tr><td>[Microsoft Passport と Windows Hello](microsoft-passport.md)</td><td>この記事では、新しい Windows 10 の Microsoft Passport テクノロジについて説明します。また、開発者がこのテクノロジを実装してアプリやバックエンド サービスを保護する方法についても説明します。 従来の資格情報の脅威を軽減するこれらのテクノロジの特定の機能に着目し、Windows 10 ロールアウトに含まれるこれらのテクノロジの設計と展開の方法について説明します。 </td></tr>
 <tr><td>[Microsoft Passport ログイン アプリの作成](microsoft-passport-login.md)</td><td>従来のユーザー名とパスワードの認証システムの代わりに Microsoft Passport を使う Windows 10 UWP (ユニバーサル Windows プラットフォーム) アプリの作成方法に関する詳しいチュートリアルのパート 1 です。</td></tr>
 <tr><td>[Microsoft Passport ログイン サービスの作成](microsoft-passport-login-auth-service.md)</td><td>Windows 10 UWP (ユニバーサル Windows プラットフォーム) アプリで従来のユーザー名とパスワードの認証システムの代わりに Microsoft Passport を使う方法に関する詳しいチュートリアルのパート 2 です。</td></tr>
 <tr><td>[スマート カード](smart-cards.md)</td><td>このトピックでは、アプリでスマート カードを使ってユーザーをセキュリティで保護されたネットワーク サービスに接続する方法のほか、物理スマート カード リーダーにアクセスする方法、仮想スマート カードの作成方法、スマート カードとの通信方法、ユーザーの認証方法、ユーザーの PIN のリセット方法、スマート カードの取り外しや切断の方法などについて説明します。</td></tr>
@@ -39,7 +39,7 @@ Windows または UWP での開発が初めての場合は、最初に「[安全
 <tr><td>[Web 認証ブローカー](web-authentication-broker.md)</td><td>この記事では、OpenID や OAuth などの認証プロトコルを使うオンライン ID プロバイダー (Facebook、Twitter、Flickr、Instagram など) にアプリを接続する方法について説明します。 [AuthenticateAsync](https://msdn.microsoft.com/library/windows/apps/br212066) メソッドは、要求をオンライン ID プロバイダーに送信し、アプリがアクセスできるプロバイダー リソースを表すアクセス トークンを返します。</td></tr>
 </table>
 
-## 暗号化 
+## <a name="cryptography"></a>暗号化 
 
 暗号化についてのセクションでは、より複雑な暗号化に関するトピックが説明されています。 
 
@@ -54,6 +54,6 @@ Windows または UWP での開発が初めての場合は、最初に「[安全
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

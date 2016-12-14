@@ -4,18 +4,18 @@ description: "ここでは、ほとんどの XAML ファイルのルート要素
 title: "XAML 名前空間と名前空間マッピング"
 ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
 translationtype: Human Translation
-ms.sourcegitcommit: 3ca9492b334bf4b3d4f0fcab8fca5625f4e23fa5
-ms.openlocfilehash: cca962e4d99599206b8a559c2595ea2b0d8a52c7
+ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
+ms.openlocfilehash: 626af2ba6e1b8616f8d23419d94e621f3ce7d043
 
 ---
 
-# XAML 名前空間と名前空間マッピング
+# <a name="xaml-namespaces-and-namespace-mapping"></a>XAML 名前空間と名前空間マッピング
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 ここでは、ほとんどの XAML ファイルのルート要素で行われる XML/XAML 名前空間 (**xmlns**) マッピングについて説明します。 また、カスタム型やカスタム アセンブリに対して同様のマッピングを行う方法についても説明します。
 
-## XAML 名前空間のコード定義とタイプ ライブラリとの関連
+## <a name="how-xaml-namespaces-relate-to-code-definition-and-type-libraries"></a>XAML 名前空間のコード定義とタイプ ライブラリとの関連
 
 XAML は、一般用と Windows ランタイム アプリのプログラミング用の両方の用途において、オブジェクト、オブジェクトのプロパティ、階層として表されるオブジェクトとプロパティの関係を宣言するために使われます。 XAML で宣言するオブジェクトは、他のプログラミング手法やプログラミング言語で定義されるタイプ ライブラリまたはその他の表現によってサポートされます。 たとえば、次のようなライブラリがあります。
 
@@ -28,11 +28,11 @@ XAML は、一般用と Windows ランタイム アプリのプログラミン�
 
 XAML プロセッサは、ランタイム オブジェクト表現を作成するときに、XAML 名前空間に関連付けられているバッキング アセンブリから型とメンバーを検索できます。 これが、XAML がオブジェクト構築の動作の定義を形式化および交換する方法として役立ち、Windows ストア アプリの UI 定義の手法として使われる理由です。
 
-## XAML マークアップの一般的な使用法における XAML 名前空間
+## <a name="xaml-namespaces-in-typical-xaml-markup-usage"></a>XAML マークアップの一般的な使用法における XAML 名前空間
 
 ほとんどの場合、XAML ファイルでは、既定の XAML 名前空間をルート要素で宣言します。 既定の XAML 名前空間は、プレフィックスで修飾することなく宣言できる要素を定義します。 たとえば、要素 `<Balloon />` を宣言した場合、XAML パーサーでは、**Balloon** という要素が既定の XAML 名前空間に存在し有効であることが想定されます。 その一方、定義済みの既定の XAML 名前空間に **Balloon** が存在しない場合は、`<party:Balloon />` のようにプレフィックスを使って要素名を修飾する必要があります。 このプレフィックスは、要素が既定の名前空間とは異なる XAML 名前空間に存在することを示します。この要素を使う前に、プレフィックス **party** に XAML 名前空間をマップする必要があります。 XAML 名前空間は、名前空間が宣言されている特定の要素に適用されるほか、XAML 構造においてこの要素に含まれるすべての要素に対しても適用されます。 したがって、ほとんどの場合は、この継承を利用するために、XAML 名前空間を XAML ファイルのルート要素で宣言します。
 
-## 既定および XAML 言語の XAML 名前空間の宣言
+## <a name="the-default-and-xaml-language-xaml-namespace-declarations"></a>既定および XAML 言語の XAML 名前空間の宣言
 
 ほとんどの XAML ファイルのルート要素内には 2 つの **xmlns** 宣言があります。 1 つ目の宣言では、XAML 名前空間を既定としてマップします。  `xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"`
 
@@ -46,11 +46,12 @@ XAML プロセッサは、ランタイム オブジェクト表現を作成す�
 
 XAML 言語では、特定の言語要素を指定します。これらの各要素には、XAML 名前空間に対応する XAML プロセッサの実装を介してアクセスする必要があります。 XAML 言語の XAML 名前空間に通常マップする "x:" の後には、プロジェクト テンプレート、サンプル コード、および言語機能に関するドキュメントが続きます。 XAML 言語の名前空間では、C++、C#、または Visual Basic を使った基本的な Windows ランタイム アプリでも必要な、よく使われる複数の機能を定義します。 たとえば、部分クラスを介して XAML ファイルにコード ビハインドを追加するには、関連する XAML ファイルのルート要素における [x:Class 属性](x-class-attribute.md)としてそのクラスを指定する必要があります。 または、[ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)内のキーを持つリソースとして XAML ページで定義されている要素の該当するオブジェクト要素では、[x:Key](x-key-attribute.md) 属性を設定する必要があります。
 
-## その他の XAML 名前空間
+<span id="other-XAML-namespaces"/>
+## <a name="other-xaml-namespaces"></a>その他の XAML 名前空間
 
 既定の名前空間と XAML 言語の XAML 名前空間である "x:" に加えて、Microsoft Visual Studio で生成されるアプリで使う初期の既定の XAML では、その他の XAML 名前空間がマップされる場合もあります。
 
-### **d: (`http://schemas.microsoft.com/expression/blend/2008`)**
+### **<a name="d-httpschemasmicrosoftcomexpressionblend2008"></a>d: (`http://schemas.microsoft.com/expression/blend/2008`)**
 
 "d:" は、デザイナー サポート (特に、Microsoft Visual Studio の XAML デザイン サーフェイスにおけるデザイナー サポート) を対象とした XAML 名前空間です。 "d:" XAML 名前空間を使うと、XAML 要素でデザイナー (設計時) 属性が有効になります。 このようなデザイナー属性は、XAML の動作の設計面にのみ影響します。 アプリの実行時に同じ XAML が Windows ランタイム XAML パーサーによって読み込まれると、デザイナー属性は無視されます。 一般に、デザイナー属性はすべての XAML 要素で有効ですが、実際のところ、デザイナー属性の適用が適しているのは特定のシナリオのみです。 特に、デザイナー属性の多くは、XAML とデータ バインディングを使うコードの開発時にデータ コンテキストやデータ ソースを操作しやすくすることを目的としています。
 
@@ -62,19 +63,19 @@ XAML 言語では、特定の言語要素を指定します。これらの各要
 -   **d:DesignSource 属性:** 設計時の [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) のデータ ソースを指定して、[**Source**](https://msdn.microsoft.com/library/windows/apps/br209835) を上書きします。
 -   **d:DesignInstance マークアップ拡張と d:DesignData マークアップ拡張:** この 2 つのマークアップ拡張は、**d:DataContext** または **d:DesignSource** の設計時のデータ リソースを提供するために使われます。 設計時のデータ リソースの使い方は、ここで説明した内容がすべてではありません。 詳しくは、「[デザイン時属性](http://go.microsoft.com/fwlink/p/?LinkId=272504)」をご覧ください。 使用例については、「[デザイン サーフェイス上のサンプル データとプロトタイプを作るためのサンプル データ](https://msdn.microsoft.com/library/windows/apps/mt517866)」をご覧ください。
 
-### **mc: (`http://schemas.openxmlformats.org/markup-compatibility/2006`)**
+### **<a name="mc-httpschemasopenxmlformatsorgmarkup-compatibility2006"></a>mc: (`http://schemas.openxmlformats.org/markup-compatibility/2006`)**
 
 " mc:" は、XAML を読み取るためのマークアップ互換モードを示し、このモードをサポートします。 通常、"d:" プレフィックスは属性 **mc:Ignorable** に関連付けられます。 この手法により、ランタイムの XAML パーサーで "d:" のデザイナー属性を無視することができます。
 
-### **local:** と **common:**
+### <a name="local-and-common"></a>**local:** と **common:**
 
 "local:" は、テンプレート化された Windows ストア アプリ プロジェクトの XAML ページ内でマップされることが多いプレフィックスです。 これは app.xaml を含むすべての XAML ファイルで [x:Class 属性](x-class-attribute.md)とコードを含めるために作成される同じ名前空間を参照するためにマップされています。 XAML で使うカスタム クラスをこの同じ名前空間で定義する限り、**local:** プレフィックスを使って XAML でカスタム型を参照することができます。 テンプレート化された Windows ストア アプリ プロジェクトに由来する関連のプレフィックスは **common:** です。 このプレフィックスは、コンバーターやコマンドのようなユーティリティ クラスを含む入れ子になった "Common" 名前空間を参照します。その定義は**ソリューション エクスプローラー** ビューの Common フォルダーで確認できます。
 
-### **vsm:**
+### **<a name="vsm"></a>vsm:**
 
 使わないでください。 "vsm:" は、他の Microsoft テクノロジからインポートされる従来の XAML テンプレートで使う場合のあるプレフィックスです。 従来の名前空間の作成に関する問題には、この名前空間を使って対応していました。 Windows ランタイムに使う XAML で "vsm:" の XAML 名前空間の定義を削除したうえで、[**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007)、[**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014)、関連オブジェクトのプレフィックスの使用法を変更して、代わりに既定の XAML 名前空間を使う必要があります。 XAML の移行について詳しくは、「[Silverlight または WPF XAML/コードの Windows ランタイム アプリへの移行](https://msdn.microsoft.com/library/windows/apps/br229571)」をご覧ください。
 
-## XAML 名前空間およびプレフィックスへのカスタム型のマッピング
+## <a name="mapping-custom-types-to-xaml-namespaces-and-prefixes"></a>XAML 名前空間およびプレフィックスへのカスタム型のマッピング
 
 XAML 名前空間をマップすると、XAML を使用して独自のカスタム型にアクセスできるようになります。 つまり、カスタム型を定義するコード表現にコード名前空間が存在する場合にコード名前空間をマップし、使用法に対応したプレフィックス付きの XAML 名前空間をそのコード名前空間に割り当てます。 XAML 用のカスタム型は Microsoft .NET 言語 (C# または Microsoft Visual Basic) または C++ で定義できます。 マッピングを行う場合は **xmlns** プレフィックスが定義されます。 たとえば、`xmlns:myTypes` では、すべての使用法に対し、プレフィックスとしてトークン `myTypes:` を付けてアクセスする新しい XAML 名前空間を定義します。
 
@@ -84,7 +85,7 @@ XAML 名前空間をマップすると、XAML を使用して独自のカスタ�
 
 同じページのスコープの部分クラスをマップする必要はありません。 たとえば、ページの XAML UI 定義からのイベントを処理するために定義したイベント ハンドラーを参照するプレフィックスは不要です。 また、C++、C#、または Visual Basic を使った Windows ランタイム アプリ向けに Visual Studio によって生成されたプロジェクトの XAML 開始ページの多くは、既に "local:" プレフィックスをマップしています。このプレフィックスは、プロジェクト固有の既定の名前空間と部分クラス定義で使われる名前空間を参照します。
 
-### CLR 言語規則
+### <a name="clr-language-rules"></a>CLR 言語規則
 
 .NET 言語 (C# または Microsoft Visual Basic) でバッキング コードを記述する場合は、名前空間の名前の一部にドット (".") を使用する規則を使って、コード名前空間の概念的な階層を作成できます。 名前空間の定義にドットを含める場合は、"using:" トークンの後ろに指定する値の一部としてそのドットを使う必要があります。
 
@@ -92,17 +93,17 @@ XAML 名前空間をマップすると、XAML を使用して独自のカスタ�
 
 XAML で使うコードを定義するときに入れ子になった型を使わないでください (クラス内で列挙型を入れ子にするなど)。 入れ子になった型は評価できません。 ドットが名前空間名の一部なのか、それとも入れ子になった型名の一部なのかを区別する方法は XAML パーサーにはありません。
 
-## カスタム型およびカスタム アセンブリ
+## <a name="custom-types-and-assemblies"></a>カスタム型およびカスタム アセンブリ
 
 マッピングでは、その XAML 名前空間のバッキング型を定義するアセンブリの名前は指定されません。 アセンブリを使うことができるロジックはアプリ定義のレベルで制御され、アプリの展開とセキュリティの基本原則に含まれます。 XAML のコード定義ソースとして含めるすべてのアセンブリを、依存アセンブリとしてプロジェクト設定で宣言します。 詳しくは、「[C# と Visual Basic での Windows ランタイム コンポーネントの作成](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)」をご覧ください。
 
 主要なアプリのアプリケーション定義やページ定義のカスタム型を参照する場合は、それらの型を使うのにさらに依存アセンブリを構成する必要はありませんが、それらの型を含むコード名前空間をマップする必要はあります。 通常は、プレフィックス "local" を特定の XAML ページの既定のコード名前空間にマップします。 この方法は、XAML プロジェクトのプロジェクト開始テンプレートでよく使われています。
 
-## 添付プロパティ
+## <a name="attached-properties"></a>添付プロパティ
 
 添付プロパティを参照する場合、添付プロパティ名の所有者型の部分は、既定の XAML 名前空間に存在するか、またはプレフィックスが付けられている必要があります。 要素とは別に属性にプレフィックスを付けることはまれですが、これは、特にカスタム添付プロパティの場合に、必要となることのあるケースの 1 つです。 詳しくは、「[カスタム添付プロパティ](custom-attached-properties.md)」をご覧ください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [XAML の概要](xaml-overview.md)
 * [XAML 構文のガイド](xaml-syntax-guide.md)
@@ -114,6 +115,6 @@ XAML で使うコードを定義するときに入れ子になった型を使わ
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

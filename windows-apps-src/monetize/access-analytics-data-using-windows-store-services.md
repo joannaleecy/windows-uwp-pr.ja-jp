@@ -4,12 +4,12 @@ ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: "Windows ストア分析 API を使って、自分または自分の組織の Windows デベロッパー センター アカウントに登録されたアプリの分析データをプログラムで取得することができます。"
 title: "Windows ストア サービスを使った分析データへのアクセス"
 translationtype: Human Translation
-ms.sourcegitcommit: 67845c76448ed13fd458cb3ee9eb2b75430faade
-ms.openlocfilehash: 468be96b70d07567163b2caccebaa8e2f6ecd592
+ms.sourcegitcommit: dcf4c263ff3fd8df846d1d5620ba31a9da7a5e6c
+ms.openlocfilehash: 5ae5dcbe6684aa34a1428760cd5c7e9b8f599ebf
 
 ---
 
-# Windows ストア サービスを使った分析データへのアクセス
+# <a name="access-analytics-data-using-windows-store-services"></a>Windows ストア サービスを使った分析データへのアクセス
 
 *Windows ストア分析 API* を使って、自分または自分の組織の Windows デベロッパー センター アカウントに登録されたアプリの分析データをプログラムで取得することができます。 この API では、アプリおよびアドオン (アプリ内製品または IAP とも呼ばれます) の入手数、エラー、アプリの評価とレビューに関するデータを取得できます。 この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
 
@@ -20,7 +20,7 @@ ms.openlocfilehash: 468be96b70d07567163b2caccebaa8e2f6ecd592
 3.  [Windows ストア分析 API を呼び出します](#call-the-windows-store-analytics-api)。
 
 <span id="prerequisites" />
-## 手順 1: Windows ストア分析 API を使うための前提条件を完了する
+## <a name="step-1-complete-prerequisites-for-using-the-windows-store-analytics-api"></a>手順 1: Windows ストア分析 API を使うための前提条件を完了する
 
 Windows ストア分析 API を呼び出すコードの作成を開始する前に、次の前提条件が完了していることを確認します。
 
@@ -41,7 +41,7 @@ Azure AD アプリケーションをデベロッパー センター アカウン
 4. **[新しいキーの追加]** をクリックします。 次の画面で、**[キー]** の値を書き留めます。 このページから離れると、この情報に再度アクセスすることはできません。 詳しくは、「[Azure AD アプリケーションを追加して管理する](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)」でキーの管理に関する情報をご覧ください。
 
 <span id="obtain-an-azure-ad-access-token" />
-## 手順 2: Azure AD のアクセス トークンを取得する
+## <a name="step-2-obtain-an-azure-ad-access-token"></a>手順 2: Azure AD のアクセス トークンを取得する
 
 Windows ストア分析 API で任意のメソッドを呼び出す前に、API 内の各メソッドの **Authorization** ヘッダーに渡す Azure AD アクセス トークンをまず取得する必要があります アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れた後は、トークンを更新してそれ以降の API 呼び出しで引き続き使用できます。
 
@@ -63,19 +63,21 @@ grant_type=client_credentials
 アクセス トークンの有効期限が切れた後は、[この](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)手順に従って更新できます。
 
 <span id="call-the-windows-store-analytics-api" />
-## 手順 3: Windows ストア分析 API を呼び出す
+## <a name="step-3-call-the-windows-store-analytics-api"></a>手順 3: Windows ストア分析 API を呼び出す
 
 Azure AD アクセス トークンを取得したら、Windows ストア分析 API を呼び出すことができます。 各メソッドの構文については、次の記事をご覧ください。 各メソッドの **Authorization** ヘッダーにアクセス トークンを渡す必要があります。
 
--   [アプリの入手数の取得](get-app-acquisitions.md)
--   [アドオンの入手数の取得](get-in-app-acquisitions.md)
--   [エラー報告データの取得](get-error-reporting-data.md)
--   [アプリの評価の取得](get-app-ratings.md)
--   [アプリのレビューの取得](get-app-reviews.md)
--   [広告のパフォーマンス データの取得](get-ad-performance-data.md)
--   [広告キャンペーンのパフォーマンス データの取得](get-ad-campaign-performance-data.md)
+* [アプリの入手数の取得](get-app-acquisitions.md)
+* [アドオンの入手数の取得](get-in-app-acquisitions.md)
+* [エラー報告データの取得](get-error-reporting-data.md)
+* [アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)
+* [アプリのエラーに関するスタック トレースの取得](get-the-stack-trace-for-an-error-in-your-app.md)
+* [アプリの評価の取得](get-app-ratings.md)
+* [アプリのレビューの取得](get-app-reviews.md)
+* [広告のパフォーマンス データの取得](get-ad-performance-data.md)
+* [広告キャンペーンのパフォーマンス データの取得](get-ad-campaign-performance-data.md)
 
-## コードの例
+## <a name="code-example"></a>コードの例
 
 
 次のコード例は、Azure AD アクセス トークンを取得し、C# コンソール アプリから Windows ストア分析 API を呼び出す方法を示しています。 このコード例を使う場合は、変数 *tenantId*、*clientId*、*clientSecret*、および *appID* を自分のシナリオに合った適切な値に割り当ててください。 この例では、Windows ストア分析 API から返される JSON データを逆シリアル化するときに、Newtonsoft から提供されている [Json.NET パッケージ](http://www.newtonsoft.com/json) が必要になります。
@@ -204,7 +206,7 @@ namespace TestAnalyticsAPI
 }
 ```
 
-## エラー応答
+## <a name="error-responses"></a>エラー応答
 
 
 Windows ストア分析 API は、エラー コードとメッセージが含まれた JSON オブジェクトにエラー応答を返します。 次の例は、無効なパラメーターに対するエラー応答を示しています。
@@ -228,11 +230,13 @@ Windows ストア分析 API は、エラー コードとメッセージが含ま
 }
 ```
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [アプリの入手数の取得](get-app-acquisitions.md)
 * [アドオンの入手数の取得](get-in-app-acquisitions.md)
 * [エラー報告データの取得](get-error-reporting-data.md)
+* [アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)
+* [アプリのエラーに関するスタック トレースの取得](get-the-stack-trace-for-an-error-in-your-app.md)
 * [アプリの評価の取得](get-app-ratings.md)
 * [アプリのレビューの取得](get-app-reviews.md)
 * [広告のパフォーマンス データの取得](get-ad-performance-data.md)
@@ -241,6 +245,6 @@ Windows ストア分析 API は、エラー コードとメッセージが含ま
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

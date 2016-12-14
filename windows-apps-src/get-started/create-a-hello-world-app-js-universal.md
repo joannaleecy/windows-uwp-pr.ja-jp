@@ -4,11 +4,11 @@ ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
 title: Create a "Hello, world" app (JS)
 description: "このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象にした単純な Hello, world アプリを JavaScript と HTML で作る方法について説明します。"
 translationtype: Human Translation
-ms.sourcegitcommit: 7b4676e5c5a66450b321ab6f5f8670f9491b7a9d
-ms.openlocfilehash: 31bd2d40750e5acf09679d8ff5ea1a1540f60934
+ms.sourcegitcommit: 1a4aea3d31bad97fa0933e1274c037a4bb8d81bb
+ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
 
 ---
-# Hello, world アプリを作成する (JS)
+# <a name="create-a-hello-world-app-js"></a>Hello, world アプリを作成する (JS)
 
 このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象にした単純な "Hello, world" アプリを JavaScript と HTML で作る方法について説明します。 Microsoft Visual Studio の 1 つのプロジェクトを使って、Windows 10 のすべてのデバイスで実行されるアプリを構築できます。
 
@@ -20,14 +20,13 @@ ms.openlocfilehash: 31bd2d40750e5acf09679d8ff5ea1a1540f60934
 -   Visual Studio のローカル デスクトップと電話エミュレーターでプロジェクトを実行します。
 -   JavaScript 用 Windows ライブラリのコントロールを使う
 
-## はじめに...
+## <a name="before-you-start"></a>はじめに...
 
 -   [ユニバーサル Windows アプリとは](whats-a-uwp.md)?
--   [Windows 10 の新着情報](https://dev.windows.com/whats-new-windows-10-dev-preview)
 -   このチュートリアルを行うには、Windows 10 と Visual Studio 2015 が必要です。 [準備してください](get-set-up.md)。
 -   また、Visual Studio の既定のウィンドウ レイアウトを使用することを前提としています。 既定のレイアウトを変更した場合は、**[ウィンドウ]** メニューの **[ウィンドウ レイアウトのリセット]** を使って、レイアウトをリセットできます。
 
-## 手順 1: Visual Studio での新しいプロジェクトの作成
+## <a name="step-1-create-a-new-project-in-visual-studio"></a>手順 1: Visual Studio での新しいプロジェクトの作成
 
 `HelloWorld` という名前の新しいアプリを作成しましょう。 以下にその方法を示します。
 1.  Visual Studio 2015 を起動します。
@@ -62,14 +61,14 @@ ms.openlocfilehash: 31bd2d40750e5acf09679d8ff5ea1a1540f60934
 
 これらのファイルは、JavaScript を使うすべての UWP アプリに必要です。 Visual Studio で作るプロジェクトには、これらのファイルが必ず含まれます。
 
-## 手順 2: アプリの起動
+## <a name="step-2-launch-the-app"></a>手順 2: アプリの起動
 
 
 ここまでの操作で、非常に単純なアプリが作成されました。 ここで、アプリをビルド、デプロイ、起動してどうなるかを見てみましょう。 アプリは、ローカル コンピューター、シミュレーターかエミュレーター、またはリモート デバイスでデバッグできます。 Visual Studio の [ターゲット デバイス] メニューを示します。
 
 ![アプリをデバッグするデバイス ターゲットのドロップダウン リスト](images/uap-debug.png)
 
-### デスクトップ デバイスでアプリを起動する
+### <a name="start-the-app-on-a-desktop-device"></a>デスクトップ デバイスでアプリを起動する
 
 既定では、アプリはローカル コンピューターで実行されます。 [ターゲット デバイス] メニューには、デスクトップ デバイス ファミリのデバイスでアプリをデバッグするためのいくつかのオプションが用意されています。
 
@@ -112,7 +111,7 @@ Windows キーを押して **[スタート]** メニューを開き、すべて�
 
    アプリ ウィンドウを閉じます。
 
-### モバイル デバイス エミュレーターでアプリを起動する
+### <a name="start-the-app-on-a-mobile-device-emulator"></a>モバイル デバイス エミュレーターでアプリを起動する
 
 アプリは、すべての Windows 10 デバイスで実行できます。Windows Phone ではどのようになるかを見てみましょう。
 
@@ -141,7 +140,7 @@ Visual Studio で、選択したエミュレーターが起動し、アプリが
 
 ![モバイル デバイスでのアプリの初期画面](images/helloworld-1-winjs-phone.png)
 
-## 手順 3: スタート ページの変更
+## <a name="step-3-modify-your-start-page"></a>手順 3: スタート ページの変更
 
 Visual Studio によって作成されるファイルの中に **index.html** があります。これはアプリのスタート ページです。 アプリが実行されると、スタート ページのコンテンツが表示されます。 スタート ページには、アプリのコード ファイルとスタイル シートへの参照も含まれます。 Visual Studio によって作成されるスタート ページを次に示します。
 
@@ -191,7 +190,7 @@ Visual Studio によって作成されるファイルの中に **index.html** �
 
    次の手順で、ユーザーに合わせたあいさつを表示する **button** 用のイベント ハンドラーを作成します。 イベント ハンドラーのコードを main.js ファイルに追加します。
 
-## 手順 4: イベント ハンドラーの作成
+## <a name="step-4-create-an-event-handler"></a>手順 4: イベント ハンドラーの作成
 
 新しいプロジェクトを作成したときに、/js/main.js というファイルが自動的に作成されました。 このファイルには、アプリのライフサイクルを処理するコードが含まれています。 このファイルは、index.html ファイルにインタラクティビティを追加するコードを記述する場所でもあります。
 
@@ -261,7 +260,7 @@ main.js の残りのコードを見てください。 これは、アプリの [
 
 それでは、[button](https://msdn.microsoft.com/library/windows/apps/Hh453017) 用のイベント ハンドラーを定義しましょう。 新しいイベント ハンドラーは、`nameInput` [input](https://msdn.microsoft.com/library/windows/apps/Hh453271) コントロールからユーザーの名前を取得し、それを使って前のセクションで作成した `greetingOutput` **div** 要素にあいさつを出力します。
 
-### タッチ、マウス、ペン入力で動作するイベントの使用
+### <a name="using-events-that-work-for-touch-mouse-and-pen-input"></a>タッチ、マウス、ペン入力で動作するイベントの使用
 
 UWP アプリでは、入力方法 (タッチ、マウス、その他の形式のポインター入力) の違いを気にする必要はありません。 [click](https://msdn.microsoft.com/library/windows/apps/Hh441312) などのイベントを使うだけで、あらゆる形式の入力に対応できます。
 
@@ -289,7 +288,7 @@ UWP アプリでは、入力方法 (タッチ、マウス、その他の形式�
 
 これで、イベント ハンドラーが main.js に追加されました。 次に、そのハンドラーを登録する必要があります。
 
-## 手順 5: アプリ起動時のイベント ハンドラーの登録
+## <a name="step-5-register-the-event-handler-when-your-app-launches"></a>手順 5: アプリ起動時のイベント ハンドラーの登録
 
 
 ここで行う必要があるのは、ボタンにイベント ハンドラーを登録する作業だけです。 イベント ハンドラーを登録する際に推奨される方法は、コードから [addEventListener](https://msdn.microsoft.com/library/windows/apps/Hh441145) を呼び出す方法です。 イベント ハンドラーを登録するのに最適なタイミングは、アプリがアクティブ化される時点です。 さいわい、これまで見たように、アプリのアクティブ化を処理するコードが main.js ファイル内に自動的に生成されています。
@@ -327,7 +326,7 @@ WinJS 以外のコントロール用のイベント ハンドラーは、**WinJS
 
 **注:** HTML に [onclick](https://msdn.microsoft.com/library/windows/apps/Hh441312) イベントを設定するのではなく [addEventListener](https://msdn.microsoft.com/library/windows/apps/Hh441145) を使ってコード内のイベントを登録する理由を理解するには、「[基本的なアプリのコーディング](https://msdn.microsoft.com/library/windows/apps/Hh780660)」の詳しい説明をご覧ください。
 
-## 手順 6: JavaScript 用 Windows ライブラリ コントロールの追加
+## <a name="step-6-add-a-windows-library-for-javascript-control"></a>手順 6: JavaScript 用 Windows ライブラリ コントロールの追加
 
 
 アプリでは、標準の HTML コントロール以外にも、[WinJS.UI.DatePicker](https://msdn.microsoft.com/library/windows/apps/BR211681)、[WinJS.UI.FlipView](https://msdn.microsoft.com/library/windows/apps/BR211711)、[WinjS.UI.ListView](https://msdn.microsoft.com/library/windows/apps/BR211837)、[WinJS.UI.Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) コントロールなど、[JavaScript 用 Windows ライブラリ](https://msdn.microsoft.com/library/windows/apps/BR229782)のいずれのコントロールも使うことができます。
@@ -361,7 +360,7 @@ HTML コントロールには専用のマークアップ要素がありますが
 
 ここで **Rating** コントロールをクリックすると評価が変化しますが、それ以外は何も起こりません。 イベント ハンドラーを使って、ユーザーが評価を変更したときに何か処理を行うようにしましょう。
 
-## 手順 7: Windows ライブラリの JavaScript 用コントロールのイベント ハンドラーの登録
+## <a name="step-7-register-an-event-handler-for-a-windows-library-for-javascript-control"></a>手順 7: Windows ライブラリの JavaScript 用コントロールのイベント ハンドラーの登録
 
 
 WinJS コントロールのイベント ハンドラーを登録する方法は、標準の HTML コントロールのイベント ハンドラーを登録する方法と少し異なります。 前に説明したように、**onactivated** イベント ハンドラーでは、**WinJS.UI.processAll** メソッドを呼び出して、マークアップ内で WinJS を初期化します。 **WinJS.UI.processAll** 呼び出しが、次のように **setPromise** メソッドの呼び出しの中にカプセル化されます。
@@ -410,7 +409,7 @@ WinJS コントロールのイベント ハンドラーを登録する方法は�
         }
 ```
 
-3.  [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975) を呼び出す [onactivated](https://msdn.microsoft.com/library/windows/apps/BR212679) イベント ハンドラーのコードを更新して、[then](https://msdn.microsoft.com/library/windows/apps/BR229728) メソッドの呼び出しを追加し、それに `completed` 関数を渡すようにします。 `completed` 関数では、[Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) コントロールをホストする `ratingControlDiv` 要素を取得します。 次に、[winControl](https://msdn.microsoft.com/library/windows/apps/Hh770814) プロパティを使って、実際の **Rating** コントロールを取得します  (この例では、 `completed` 関数がインラインで定義されます)。
+3.  [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975) を呼び出す [onactivated](https://msdn.microsoft.com/library/windows/apps/BR212679) イベント ハンドラーのコードを更新して、[then](https://msdn.microsoft.com/library/windows/apps/BR229728) メソッドの呼び出しを追加し、それに `completed` 関数を渡すようにします。 `completed` 関数では、[Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) コントロールをホストする `ratingControlDiv` 要素を取得します。 次に、[winControl](https://msdn.microsoft.com/library/windows/apps/Hh770814) プロパティを使って、実際の **Rating** コントロールを取得します  (この例では、`completed` 関数がインラインで定義されます)。
 
 ```javascript
            args.setPromise(WinJS.UI.processAll().then(function completed() {
@@ -490,12 +489,14 @@ WinJS コントロールのイベント ハンドラーを登録する方法は�
 
 ![PC で動作する完成した Hello World アプリ](images/helloworld-5-winjs.png)
 
-## 概要
+## <a name="summary"></a>概要
 
 これで、JavaScript と HTML を使って Windows 10 と UWP 用の初めてのアプリを作成しました。
 
+次の手順 [WinJS](https://developer.microsoft.com/en-us/windows/develop/winjs) ドキュメントは、JavaScript 用 Windows ライブラリの利用に役立ちます。
 
 
-<!--HONumber=Nov16_HO1-->
+
+<!--HONumber=Dec16_HO1-->
 
 

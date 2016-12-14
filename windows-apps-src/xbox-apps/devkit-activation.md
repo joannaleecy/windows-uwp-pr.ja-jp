@@ -3,18 +3,18 @@ author: Mtoepke
 title: "Xbox One 開発者モードのアクティブ化"
 description: "開発者モードをアクティブ化して、リテール モードと開発者モードを切り替えることができるようにする方法を説明します。"
 translationtype: Human Translation
-ms.sourcegitcommit: 2e34e54465448c91f4e63ec53a062cdb730ad952
-ms.openlocfilehash: c50ec870e9548e4823b9116c25f47fed1537a4e6
+ms.sourcegitcommit: 1e9abda6e2b505860bfbdbdc1e19193f0ebc8a6b
+ms.openlocfilehash: 903b291ab114298ec556e812f90c3fe27db37215
 
 ---
 
-# Xbox One 開発者モードのアクティブ化
+# <a name="xbox-one-developer-mode-activation"></a>Xbox One 開発者モードのアクティブ化
 
 * [開発者モードの動作](#how-developer-mode-works)
 * [製品版の Xbox One 本体で開発者モードをアクティブにする](#activate-developer-mode-on-your-retail-xbox-one-console)  
 * [リテール モードと開発者モードを切り替える](#switch-between-retail-and-developer-mode)
 
-## 開発者モードの動作
+## <a name="how-developer-mode-works"></a>開発者モードの動作
 Xbox One には、*リテール* モード (1) と*開発者*モード (2) の 2 つのモードがあります。 リテール モードは、Xbox One 本体のユーザーが本体を使うときのモードです。ユーザーとしてゲームをプレイしたり、アプリを実行したりできます。 開発者モードでは、本体用のソフトウェアを開発することができますが、製品版のゲームをプレイしたり、製品版のアプリを実行したりすることはできません。
 開発者モードは、製品版のすべての Xbox One 本体で有効にできます。 開発者モードを有効にした後は、リテール モード (2a) と開発者モード (2b) を相互に切り替えることができます。
 
@@ -23,12 +23,12 @@ Xbox One には、*リテール* モード (1) と*開発者*モード (2) の 2
 
 ![Xbox One のモード](images/dev-mode-flow.png)
 
-## 製品版の Xbox One 本体で開発者モードをアクティブにする
+## <a name="activate-developer-mode-on-your-retail-xbox-one-console"></a>製品版の Xbox One 本体で開発者モードをアクティブにする
 
 1.  Xbox One 本体を起動します。
 
 2.  Xbox One ストアから、開発者モードのアクティブ化用アプリを検索してインストールします。  
-    ![](images/activation-store-search.png)
+    ![開発者モードのアクティブ化用アプリのインストール](images/activation-store-search.png)
 
 3.  **[マイ コレクション]** > **[アプリ]** に移動します。
 
@@ -64,7 +64,7 @@ Xbox One には、*リテール* モード (1) と*開発者*モード (2) の 2
     
 
     
-## リテール モードと開発者モードを切り替える
+## <a name="switch-between-retail-and-developer-mode"></a>リテール モードと開発者モードを切り替える
 本体で開発者モードを有効にした後、リテール モードと開発者モードを切り替えるには、**Dev Home** を使います。 **Dev Home** の起動と使用について詳しくは、「[Xbox One ツールの概要](introduction-to-xbox-tools.md)」をご覧ください。
 
 * リテール モードに切り替えるには、**Dev Home** を使って **[Leave developer mode]** (開発者モードの終了) をクリックします。 これにより、本体がリテール モードで再起動します。    
@@ -75,12 +75,12 @@ Xbox One には、*リテール* モード (1) と*開発者*モード (2) の 2
 
   ![アクティブ化手順 14](images/activation-step-12.png)  
 
-## 参照
+## <a name="see-also"></a>参照
 - [Xbox One 開発者モードの非アクティブ化](devkit-deactivation.md)
 - [Xbox One の UWP](index.md)
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

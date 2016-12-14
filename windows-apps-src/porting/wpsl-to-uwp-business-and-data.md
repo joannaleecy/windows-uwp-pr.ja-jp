@@ -4,12 +4,12 @@ description: "UI の背後には、ビジネス レイヤーとデータ レイ�
 title: "Windows Phone Silverlight ビジネス レイヤーとデータ レイヤーから UWP への移植"
 ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 57288b13af0f2ff4f677e2425442b43f3e76d4d8
+ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
+ms.openlocfilehash: 6e6cea49064f49a15b557aad037c5baaa1e9b57b
 
 ---
 
-#  Windows Phone Silverlight ビジネス レイヤーとデータ レイヤーから UWP への移植
+#  <a name="porting-windows-phone-silverlight-business-and-data-layers-to-uwp"></a>Windows Phone Silverlight ビジネス レイヤーとデータ レイヤーから UWP への移植
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -17,11 +17,11 @@ ms.openlocfilehash: 57288b13af0f2ff4f677e2425442b43f3e76d4d8
 
 UI の背後には、ビジネス レイヤーとデータ レイヤーがあります。 こうしたレイヤーのコードでは、オペレーティング システムと .NET Framework API (たとえば、バックグラウンド処理、場所、カメラ、ファイル システム、ネットワーク、その他のデータ アクセスなど) を呼び出します。 その大半が[ユニバーサル Windows プラットフォーム (UWP) アプリ](https://msdn.microsoft.com/library/windows/apps/br211369)で利用可能であり、したがって変更なくこのコードの大半を移植できると考えられます。
 
-## 非同期メソッド
+## <a name="asynchronous-methods"></a>非同期メソッド
 
 ユニバーサル Windows プラットフォーム (UWP) で優先されることの 1 つは、真に一貫して応答性が高いアプリを構築できるようにすることです。 アニメーションは常にスムーズで、パンやスワイプなどのタッチ操作は遅延なく瞬時であり、UI が指に密着するように感じさせます。 これを実現するために、50 ミリ秒以内の完了が保証できないすべての UWP API は非同期になり、名前の後に **Async** が付加されています。 UI スレッドは、**Async** メソッドの呼び出し後に直ちに戻り、別のスレッドで処理を実行します。 **Async** メソッドの使用は、構文的に非常に簡単であり、C# の **await** 演算子、JavaScript promise オブジェクト、C++ 後続タスクを使います。 詳しくは、「[非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187335)」をご覧ください。
 
-## バックグラウンド処理
+## <a name="background-processing"></a>バックグラウンド処理
 
 Windows Phone Silverlight アプリは、アプリがフォアグラウンドにない間、タスクを実行するためにマネージド **ScheduledTaskAgent** オブジェクトを使うことができます。 UWP アプリでは、同様の方法でバックグラウンド タスクを作成、登録するために [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) クラスを使います。 バックグラウンド タスクの処理を実装するクラスを定義します。 システムでは、バックグラウンド タスクを定期的に実行し、処理を実行するクラスの [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) メソッドを呼び出します。 UWP アプリでは、アプリ パッケージ マニフェストで**バックグラウンド タスク**の宣言を忘れずに設定します。 詳しくは、「[バックグラウンド タスクによるアプリのサポート](https://msdn.microsoft.com/library/windows/apps/mt299103)」をご覧ください。
 
@@ -29,7 +29,7 @@ Windows Phone Silverlight アプリでは、バックグラウンドで大きな
 
 Windows Phone Silverlight アプリは、フォアグラウンドにない間にオーディオを再生するために **Microsoft.Phone.BackgroundAudio** 名前空間のマネージ クラスを使います。 UWP は Windows Phone ストア アプリ モデルを使います。詳しくは、「[バックグラウンド オーディオ](https://msdn.microsoft.com/library/windows/apps/mt282140)」および[バックグラウンド オーディオ](http://go.microsoft.com/fwlink/p/?linkid=619997)のサンプルをご覧ください。
 
-## クラウド サービス、ネットワーク、データベース
+## <a name="cloud-services-networking-and-databases"></a>クラウド サービス、ネットワーク、データベース
 
 Azure を使ってクラウドでデータとアプリ サービスをホストできます。 「[Mobile Services の使用](http://go.microsoft.com/fwlink/p/?LinkID=403138)」をご覧ください。 オンラインおよびオフラインの両データを必要とするソリューションの場合は、「[Mobile Services でのオフライン データの同期の使用](http://azure.microsoft.com/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data/)」をご覧ください。
 
@@ -39,13 +39,13 @@ UWP アプリには、現在、大量のデータ アクセスを実行するシ
 
 相対 URI ではなく絶対 URI を Windows ランタイム型に渡します。 「[Windows ランタイムへの URI の引き渡し](https://msdn.microsoft.com/library/hh763341.aspx)」をご覧ください。
 
-## ランチャーとセレクター
+## <a name="launchers-and-choosers"></a>ランチャーとセレクター
 
 (**Microsoft.Phone.Tasks** 名前空間の) Launcher (ランチャー) および Chooser (セレクター) により、Windows Phone Silverlight アプリはメールの作成、写真の選択、別のアプリとの特定種類のデータ共有など、一般的な操作を実行するためにオペレーティング システムとやり取りできます。 相当する UWP の型を見つけるには、「[Windows Phone Silverlight から Windows 10 への名前空間とクラスのマッピング](wpsl-to-uwp-namespace-and-class-mappings.md)」のトピックで **Microsoft.Phone.Tasks** を検索してください。 これには、ランチャーおよびピッカーと呼ばれる同様のメカニズムから、アプリ間でデータを共有するコントラクトの実装に至るまで、一連の型が含まれます。
 
 Windows Phone Silverlight アプリでは、たとえば写真選択タスクの使用中に、休止中の状態にするか、破棄することもできます。 UWP アプリは、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) クラスの使用中はアクティブで実行中のままになります。
 
-## 収益化 (試用モードとアプリ内購入)
+## <a name="monetization-trial-mode-and-in-app-purchases"></a>収益化 (試用モードとアプリ内購入)
 
 Windows Phone Silverlight アプリでは、試用モードとアプリ内購入機能の大半で UWP の [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) クラスを使うことができるため、コードを移植する必要がありません。 ただし、Windows Phone Silverlight アプリは、購入用のアプリを提示するために **MarketplaceDetailTask.Show** を呼び出します。
 
@@ -69,15 +69,15 @@ UWP の  [**RequestAppPurchaseAsync**](https://msdn.microsoft.com/library/wind
 
 テスト目的のためにアプリ購入機能およびアプリ内購入機能をシミュレートするコードがある場合は、代わりに [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) クラスを使うようにこのコードを移植できます。
 
-## タイルまたはトーストの更新通知
+## <a name="notifications-for-tile-or-toast-updates"></a>タイルまたはトーストの更新通知
 
-Windows Phone Silverlight アプリでは、通知はプッシュ通知モデルの拡張機能の 1 つです。 Windows プッシュ通知サービス (WNS) から通知を受信した場合、タイル更新またはトーストにより UI にこの情報を提示できます。 通知機能の UI 側の移植については、「[タイルとトースト](w8x-to-uwp-porting-xaml-and-ui.md#tiles-and-toasts)」をご覧ください。
+Windows Phone Silverlight アプリでは、通知はプッシュ通知モデルの拡張機能の 1 つです。 Windows プッシュ通知サービス (WNS) から通知を受信した場合、タイル更新またはトーストにより UI にこの情報を提示できます。 通知機能の UI 側の移植については、「[タイルとトースト](w8x-to-uwp-porting-xaml-and-ui.md)」をご覧ください。
 
 UWP アプリで通知を使う方法について詳しくは、「[トースト通知の送信](https://msdn.microsoft.com/library/windows/apps/xaml/hh868266)」をご覧ください。
 
 C++、C#、または Visual Basic を使った Windows ランタイム アプリでのタイル、トースト、バッジ、バナー、通知の使用についての情報とチュートリアルは、「[タイル、バッジ、トースト通知の操作](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259)」をご覧ください。
 
-## ストレージ (ファイル アクセス)
+## <a name="storage-file-access"></a>ストレージ (ファイル アクセス)
 
 キーと値のペアとしてアプリ設定を分離ストレージに格納する Windows Phone Silverlight コードは、簡単に移植できます。 ここでは、まず Windows Phone Silverlight バージョンの移植前後の例を示します。
 
@@ -134,7 +134,7 @@ UWP アプリでの写真、音楽、ビデオ ファイルへのアクセスに
 
 次のトピックは、「[フォーム ファクターと UX の移植](wpsl-to-uwp-form-factors-and-ux.md)」です。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [名前空間とクラス マッピング](wpsl-to-uwp-namespace-and-class-mappings.md)
  
@@ -142,6 +142,6 @@ UWP アプリでの写真、音楽、ビデオ ファイルへのアクセスに
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

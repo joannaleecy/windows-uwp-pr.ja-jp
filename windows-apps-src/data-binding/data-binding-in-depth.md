@@ -4,11 +4,11 @@ ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: "データ バインディングの詳細"
 description: "データ バインディングは、アプリの UI でデータを表示し、必要に応じてそのデータとの同期を保つ方法です。"
 translationtype: Human Translation
-ms.sourcegitcommit: ef5e2819a7fd18fb3ed3162fd8debe750f29c378
-ms.openlocfilehash: fa1616c88d475393311055561a7bd219c2373f76
+ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
+ms.openlocfilehash: 48db13fec4ce9c6a9a998c84ddaaba30f7a24d83
 
 ---
-# データ バインディングの詳細
+# <a name="data-binding-in-depth"></a>データ バインディングの詳細
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
@@ -43,7 +43,7 @@ ms.openlocfilehash: fa1616c88d475393311055561a7bd219c2373f76
 -   [Bookstore1](http://go.microsoft.com/fwlink/?linkid=532950) アプリのダウンロード。
 -   [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) アプリのダウンロード。
 
-## すべてのバインディングに関連する要素
+## <a name="every-binding-involves-these-pieces"></a>すべてのバインディングに関連する要素
 
 -   *バインディング ソース*。 これは、バインディング用のデータのソースで、UI に表示する値を持つメンバーが含まれる、任意のクラスのインスタンスを使うことができます。
 -   *バインディング ターゲット*。 これは、データを表示する UI の [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) の [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362) です。
@@ -51,7 +51,7 @@ ms.openlocfilehash: fa1616c88d475393311055561a7bd219c2373f76
 
 次のセクションでは、バインディング ソース、バインディング ターゲット、バインド オブジェクトについて詳しく見てみます。 また、以下のセクションでは、**HostViewModel** という名前のクラスに属する **NextButtonText** という名前の文字列プロパティに、ボタンのコンテンツをバインドする例へのリンクも示します。
 
-### バインディング ソース
+### <a name="binding-source"></a>バインディング ソース
 
 バインディング ソースとして使用できるクラスの非常に基本的な実装を次に示します。
 
@@ -145,7 +145,7 @@ public class HostViewModel : BindableBase
 
 段階的読み込みを使うと、任意の大きさのデータ ソースにリスト コントロールをバインドすると同時に、高パフォーマンスを実現できます。 たとえば、一度にすべての結果を読む込むことなく、Bing の画像クエリ結果にリスト コントロールをバインドすることができます。 この場合、すぐに読み込むのは一部の結果だけで、他の結果は必要に応じて読み込みます。 段階的読み込みをサポートするには、コレクション変更通知をサポートするデータ ソースに [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916) を実装する必要があります。 データ バインディング エンジンがより多くのデータを要求する場合は、UI を更新するためにデータ ソースで適切な要求を行い、結果を統合して、適切な通知を送信する必要があります。
 
-### バインディング ターゲット
+### <a name="binding-target"></a>バインディング ターゲット
 
 以下の 2 つの例で、**Button.Content** プロパティはバインディング ターゲットであり、その値はバインディング オブジェクトを宣言するマークアップ拡張に設定されます。 最初に [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) を示し、次に [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) を示します。 マークアップでバインディングを宣言する方法は一般的です (便利で、読みやすく、ツールで処理できます)。 ただし、必要な場合は、マークアップを使わずに、命令を使って (プログラムで) [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) クラスのインスタンスを作成できます。
 
@@ -158,7 +158,7 @@ public class HostViewModel : BindableBase
 <Button Content="{Binding ...}" ... />
 ```
 
-### {x:Bind} を使って宣言されたバインディング オブジェクト
+### <a name="binding-object-declared-using-xbind"></a>{x:Bind} を使って宣言されたバインディング オブジェクト
 
 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) マークアップを作成する前に必要な手順が 1 つあります。 マークアップのページを表すクラスからバインディング ソース クラスを公開する必要があります。 そのためには、**HostView** ページ クラスに (ここでは **HostViewModel** 型の) プロパティを追加します。
 
@@ -217,7 +217,7 @@ namespace QuizGame.View
 
 **{x:Bind}** は、JSON オブジェクトのディクショナリ構造内を移動する場合などの遅延バインディングのシナリオや、プロパティ名の語彙的な一致に基づく厳密ではない型指定であるダック タイピング ("アヒルのように歩き、泳ぎ、鳴くならば、それはアヒルである") には適していません。 ダック タイピングでは、Age プロパティへのバインディングは、Person オブジェクトでも Wine オブジェクトでも同様に満足されます。 このようなシナリオでは、**{Binding}** を使用します。
 
-### {Binding} を使って宣言されたバインディング オブジェクト
+### <a name="binding-object-declared-using-binding"></a>{Binding} を使って宣言されたバインディング オブジェクト
 
 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) は、既定で、マークアップ ページの [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) にバインドしていることを前提としています。 したがって、ページの **DataContext** を、バインディング ソース クラス (ここでは **HostViewModel** 型) のインスタンスに設定します。 次の例は、バインディング オブジェクトを宣言するマークアップを示しています。 前の「バインディング ターゲット」セクションで使用したものと同じ **Button.Content** バインディング ターゲットを使っており、**HostViewModel.NextButtonText** プロパティにバインドします。
 
@@ -252,14 +252,14 @@ UI 要素の [**DataContext**](https://msdn.microsoft.com/library/windows/apps/B
 
 [**Path**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) プロパティは、入れ子になったプロパティ、添付プロパティ、整数と文字列のインデクサーにバインドするためのさまざまな構文オプションをサポートしています。 詳しくは、「[Property-path 構文](https://msdn.microsoft.com/library/windows/apps/Mt185586)」をご覧ください。 文字列のインデクサーにバインドすると、[**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878) を実装しなくても動的プロパティにバインドする効果を得られます。 [**ElementName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.elementname) プロパティは要素間のバインディングに便利です。 [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.relativesource) プロパティにはいくつかの用途があり、そのうちの 1 つが、[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209391) 内でバインディングをテンプレート化するためのより強力な方法としての用途です。 その他の設定については、「[{Binding} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204782)」と [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) クラスの説明をご覧ください。
 
-## ソースとターゲットが同じ型ではない場合
+## <a name="what-if-the-source-and-the-target-are-not-the-same-type"></a>ソースとターゲットが同じ型ではない場合
 
 ブール型プロパティの値に基づいて UI 要素の表示を制御する場合、数値の範囲や傾向に応じた色で UI 要素をレンダリングする場合、または文字列を想定している UI 要素のプロパティに日付や時刻の値を表示する場合は、値の型を別の型に変換する必要があります。 バインディング ソース クラスから適切な型の別のプロパティを公開し、変換ロジックをカプセル化し、その中でテストできるようにしておくことが、適切なソリューションである場合があります。 ただし、この方法はソースとターゲットのプロパティの数が多くなり、組み合わせが多くなると、柔軟性も拡張性もありません。 その場合は、いくつかのオプションがあります。
 
 * {X:Bind} を使用している場合、関数に直接バインドして変換を行うことができます
 * または、変換を実行するためのオブジェクトである、値コンバーターを指定することができます 
 
-## 値コンバーター
+## <a name="value-converters"></a>値コンバーター
 
 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx) 値を月を含む文字列値に変換する、1 回限りまたは一方向のバインディングに適した値コンバーターを以下に示します。 このクラスは、[**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903) を実装します。
 
@@ -369,11 +369,12 @@ End Class
 > [!NOTE]
 > Windows 10、バージョン1607 以降では、XAML フレームワークにブール値と Visibility 値のコンバーターが組み込まれています。 コンバーターは、**Visible** 列挙値に対して **true** を、**Collapsed** に対して **false** をマッピングします。これにより、コンバーターを作成せずに Visibility プロパティをブール値にバインドできます。 組み込みのコンバーターを使用するには、アプリの最小のターゲット SDK バージョンが 14393 以降である必要があります。 アプリがそれよりも前のバージョンの Windows 10 をターゲットとしている場合は使うことができません。 ターゲット バージョンについて詳しくは、「[バージョン アダプティブ コード](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)」をご覧ください。
 
-## {X:Bind} の関数バインド
+## <a name="function-binding-in-xbind"></a>{X:Bind} の関数バインド
 
 {x:Bind} は関数となるバインディング パスの最終ステップを有効化します。 これを使って変換を実行できます。また 1 つ以上のプロパティに依存するバインディングを実行できます。 「[**{x:Bind} マークアップ拡張**](https://msdn.microsoft.com/en-us/windows/uwp/xaml-platform/x-bind-markup-extension)」をご覧ください。
 
-## リソース ディクショナリと {x:Bind}
+<span id="resource-dictionaries-with-x-bind"/>
+## <a name="resource-dictionaries-with-xbind"></a>リソース ディクショナリと {x:Bind}
 
 [{x:Bind} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)はコードの生成に依存するため、**InitializeComponent** (生成されたコードを初期化する) を呼び出すコンストラクターを含むコード ビハインド ファイルが必要です。 ファイル名を参照する代わりに、その型をインスタンス化する (**InitializeComponent** が呼び出される) ことによって、リソース ファイルを再利用します。 次の例では、既存のリソース ディクショナリがあり、その中で {x:Bind} を使う場合の対処方法を示します。
 
@@ -428,7 +429,7 @@ MainPage.xaml
 </Page>
 ```
 
-## イベント バインディングと ICommand
+## <a name="event-binding-and-icommand"></a>イベント バインディングと ICommand
 
 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) はイベント バインディングと呼ばれる機能をサポートしています。 この機能によって、バインディングを使用するイベントのハンドラーを指定できます。これは、コード ビハインド ファイルのメソッドによるイベント処理に対する追加のオプションです。 たとえば、**MainPage** クラスに **RootFrame** プロパティがあるとします。
 
@@ -448,12 +449,12 @@ MainPage.xaml
     Click="{x:Bind RootFrame.GoForward}"/>
 ```
 
-この方法では、オーバーロードされたメソッドを使ってイベントを処理することはできません。 また、イベントを処理するメソッドにパラメーターがある場合、すべてのパラメーターがそれぞれ、イベントのすべての型から代入できる必要があります。 この場合、[**Frame.GoForward**](https://msdn.microsoft.com/library/windows/apps/BR242693) はオーバー ロードされておらず、パラメーターはありません (ただし、2 つの **object** パラメーターを取る場合でも有効です)。 一方、[**Frame.GoBack**](https://msdn.microsoft.com/library/windows/apps/Dn996568) はオーバーロードされているため、この手法でそのメソッドを使うことはできません。
+この方法では、オーバーロードされたメソッドを使ってイベントを処理することはできません。 また、イベントを処理するメソッドにパラメーターがある場合、すべてのパラメーターがそれぞれ、イベントのすべての型から代入できる必要があります。 この場合、[**Frame.GoForward**](https://msdn.microsoft.com/library/windows/apps/BR242693) はオーバーロードされておらず、パラメーターはありません (ただし、2 つの **object** パラメーターを取る場合でも有効です)。 一方、[**Frame.GoBack**](https://msdn.microsoft.com/library/windows/apps/Dn996568) はオーバーロードされているため、この手法でそのメソッドを使うことはできません。
 
 イベント バインディングの手法は、コマンドの実装と使用に似ています (コマンドは [**ICommand**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.icommand.aspx) インターフェイスを実装するオブジェクトを返すプロパティです)。 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) と [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) はいずれもコマンドで動作します。 コマンド パターンを何度も実装する必要はありません。[QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) サンプル (Common フォルダー) に含まれている **DelegateCommand** ヘルパー クラスを使うことができます。
 
 
-## フォルダーやファイルのコレクションへのバインド
+## <a name="binding-to-a-collection-of-folders-or-files"></a>フォルダーやファイルのコレクションへのバインド
 
 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 名前空間の API を使って、フォルダーとファイルのデータを取得できます。 ただし、**GetFilesAsync** メソッド、**GetFoldersAsync** メソッド、**GetItemsAsync** メソッドは、リスト コントロールへのバインドに適した値を返さないことがあります。 代わりに、[**FileInformationFactory**](https://msdn.microsoft.com/library/windows/apps/BR207501) クラスの [**GetVirtualizedFilesVector**](https://msdn.microsoft.com/library/windows/apps/Hh701422) メソッド、[**GetVirtualizedFoldersVector**](https://msdn.microsoft.com/library/windows/apps/Hh701428) メソッド、[**GetVirtualizedItemsVector**](https://msdn.microsoft.com/library/windows/apps/Hh701430) メソッドの戻り値にバインドする必要があります。 [StorageDataSource と GetVirtualizedFilesVector のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=228621)から抜粋した次のコード例は、一般的な使用パターンを示しています。 アプリ パッケージ マニフェストで **picturesLibrary** 機能を宣言し、ピクチャ ライブラリ フォルダーにピクチャがあることを確認します。
 
@@ -486,7 +487,7 @@ MainPage.xaml
 
 仮想化されたベクターは、一部の項目に対して、値の設定の前に **null** を返す場合があることにも注意してください。 たとえば、仮想化されたベクターにバインドされたリスト コントロールの [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 値を使う前に、**null** をチェックする必要があります。または、代わりに [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/BR209768) を使います。
 
-## キーでグループ化されたデータへのバインド
+## <a name="binding-to-data-grouped-by-a-key"></a>キーでグループ化されたデータへのバインド
 
 フラットな項目のコレクション (たとえば、**BookSku** クラスで表される書籍) があり、共通のプロパティ (たとえば、**BookSku.AuthorName**) をキーとして使って項目をグループ化する場合、結果はグループ化されたデータと呼ばれます。 データをグループ化すると、フラットなコレクションではなくなります。 グループ化されたデータはグループ オブジェクトのコレクションであり、各グループ オブジェクトには a) キーと b) プロパティがキーと一致する項目のコレクションがあります。 再び書籍の例で説明すると、書籍を著者名でグループ化した結果は、著者名グループのコレクションになります。各グループには、a) キーとしての著者名と、b) **AuthorName** プロパティがグループのキーに一致する **BookSku** のコレクションが含まれます。
 
@@ -575,7 +576,8 @@ MainPage.xaml
 
 階層データ (カテゴリ内のサブカテゴリなど) にバインドする場合、一連の項目コントロールを使って、UI に階層レベルを表示できます。 1 つの項目コントロールで項目を選ぶと、後続する項目コントロールの内容に反映されます。 各リストをそれぞれの [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) インスタンスにバインドし、**CollectionViewSource** インスタンスをチェーン形式でバインドすることで、これらのリストの同期を保つことができます。 これは、マスター/詳細 (またはリスト/詳細) ビューと呼ばれます。 詳しくは、「[階層データにバインドし、マスター/詳細ビューを作る方法](how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md)」をご覧ください。
 
-## データ バインディングに関する問題の診断とデバッグ
+<span id="debugging"/>
+## <a name="diagnosing-and-debugging-data-binding-problems"></a>データ バインディングに関する問題の診断とデバッグ
 
 バインド マークアップには、プロパティ (と、C# では場合によってフィールドとメソッド) の名前が含まれています。 したがって、プロパティの名前を変更するときに、それを参照するすべてのバインディングを変更する必要があります。 この処理を忘れることは、データ バインディングのバグの一般的な例であり、アプリは正しくコンパイルまたは実行されません。
 
@@ -583,7 +585,7 @@ MainPage.xaml
 
 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) には、バインディング ソースの型情報はありません。 ただし、デバッガーがアタッチされたアプリを実行すると、バインド エラーがある場合は Visual Studio の **[出力]** ウィンドウにそのエラーが表示されます。
 
-## コードでのバインドの作成
+## <a name="creating-bindings-in-code"></a>コードでのバインドの作成
 
 **注**  このセクションは [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) にのみ適用されます。コードで [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) バインディングを作成することはできないためです。 ただし、{x:Bind} と同じメリットを、[**DependencyObject.RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) によって実現できます。これにより、すべての依存関係プロパティについての変更通知を登録できます。
 
@@ -627,7 +629,7 @@ Dim binding As New Binding() With {.Path = New PropertyPath("Brush1")}
 MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 ```
 
-## {x:Bind} と {Binding} の機能の比較
+## <a name="xbind-and-binding-feature-comparison"></a>{x:Bind} と {Binding} の機能の比較
 
 | 機能 | {x:Bind} | {Binding} | コメント |
 |---------|----------|-----------|-------|
@@ -651,6 +653,6 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

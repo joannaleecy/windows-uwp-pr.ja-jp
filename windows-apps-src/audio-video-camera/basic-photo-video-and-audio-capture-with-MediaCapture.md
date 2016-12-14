@@ -4,12 +4,12 @@ ms.assetid:
 description: "この記事では、MediaCapture クラスを使用して写真やビデオをキャプチャする最も簡単な方法を示します。"
 title: "MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ"
 translationtype: Human Translation
-ms.sourcegitcommit: 0c7355d442cd650f110042d5e01f51becbb51d0e
-ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
+ms.sourcegitcommit: 9cbe7948767ba45e8ef495a9349621969957ab04
+ms.openlocfilehash: 98f71104b5a95f9327a0b3f879e4dbb91b74b581
 
 ---
 
-# MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ
+# <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -17,8 +17,9 @@ ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
 
 写真やビデオをキャプチャするだけで、他のメディア キャプチャ機能を追加しない場合や、独自のカメラ UI を作成する必要がない場合は、[**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CameraCaptureUI) クラスを使用することができます。このクラスによって、単に Windows の組み込みカメラ アプリを起動し、キャプチャされた写真やビデオのファイルを受信することができます。 詳しくは、「[**Windows の組み込みカメラ UI を使った写真とビデオのキャプチャ**](capture-photos-and-video-with-cameracaptureui.md)」をご覧ください。
 
+この記事のコードは、[**カメラのスターター キット**](https://go.microsoft.com/fwlink/?linkid=619479)のサンプルを基にしています。 このサンプルをダウンロードし、該当するコンテキストで使用されているコードを確認することも、サンプルを独自のアプリの開始点として使用することもできます。
 
-## アプリ マニフェストに機能宣言を追加する
+## <a name="add-capability-declarations-to-the-app-manifest"></a>アプリ マニフェストに機能宣言を追加する
 
 アプリからデバイスのカメラにアクセスするには、アプリでデバイス機能 (*webcam* と *microphone*) の使用を宣言する必要があります。 キャプチャした写真とビデオをユーザーの画像ライブラリまたはビデオ ライブラリに保存する場合は、*picturesLibrary* 機能と *videosLibrary* 機能も宣言する必要があります。
 
@@ -30,17 +31,17 @@ ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
 4.  画像ライブラリとビデオ ライブラリにアクセスするには、**画像ライブラリ**のボックスと**ビデオ ライブラリ**のボックスをオンにします。
 
 
-## MediaCapture オブジェクトを初期化する
+## <a name="initialize-the-mediacapture-object"></a>MediaCapture オブジェクトを初期化する
 この記事で説明されているすべてのキャプチャ メソッドでは、最初の手順として、コンストラクターを呼び出した後、[**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.InitializeAsync) を呼び出すことによって、[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) オブジェクトを初期化する必要があります。 **MediaCapture** オブジェクトはアプリで複数の場所からアクセスされるため、このオブジェクトを保持するためのクラス変数を宣言します。  キャプチャ操作に失敗した場合に通知されるように、**MediaCapture** オブジェクトの [**Failed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.Failed) イベントのハンドラーを実装します。
 
 [!code-cs[DeclareMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
 [!code-cs[InitMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetInitMediaCapture)]
 
-## カメラ プレビューの設定
+## <a name="set-up-the-camera-preview"></a>カメラ プレビューの設定
 **MediaCapture** を使用して写真、ビデオ、オーディオをキャプチャする場合、カメラのプレビューを表示しないこともできますが、通常は、ユーザーがキャプチャされる内容を確認できるようにプレビュー ストリームを表示する必要があります。 また、オート フォーカス、自動露出、オート ホワイト バランスなど、**MediaCapture** の一部の機能を有効にするには、プレビュー ストリームが実行されている必要があります。 カメラ プレビューを設定する方法については、「[**カメラ プレビューの表示**](simple-camera-preview-access.md)」をご覧ください。
 
-## SoftwareBitmap への写真のキャプチャ
+## <a name="capture-a-photo-to-a-softwarebitmap"></a>SoftwareBitmap への写真のキャプチャ
 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap) クラスは、複数の機能間で共通の画像表現を提供するために、Windows 10 で導入されました。 写真をキャプチャした後、ファイルにキャプチャするのではなく、XAML で表示するなど、キャプチャしたイメージをアプリですぐに使用する場合は、**SoftwareBitmap** にキャプチャする必要があります。 後で画像をディスクに保存するオプションもあります。
 
 **MediaCapture** オブジェクトを初期化した後、[**LowLagPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagPhotoCapture) クラスを使用して、写真を **SoftwareBitmap** にキャプチャできます。 このクラスのインスタンスを取得するには、[**PrepareLowLagPhotoCaptureAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.PrepareLowLagPhotoCaptureAsync) を呼び出して、必要な画像形式を指定する [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.ImageEncodingProperties)オブジェクトを渡します。 [**CreateUncompressed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.ImageEncodingProperties.CreateUncompressed) は、指定されたピクセル形式で非圧縮エンコードを作成します。 写真をキャプチャするには、[**CaptureAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagPhotoCapture.CaptureAsync) を呼び出します。これは、[**CapturedPhoto**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedPhoto) オブジェクトを返します。 **SoftwareBitmap** を取得するには、[**Frame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedPhoto.Frame) プロパティにアクセスし、次に [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedFrame.SoftwareBitmap) プロパティにアクセスします。
@@ -51,7 +52,7 @@ ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
 
 XAML ページに表示する方法など、**SoftwareBitmap** オブジェクトの操作について詳しくは、「[**ビットマップ画像の作成、編集、保存**](imaging.md)」をご覧ください。
 
-## ファイルへの写真のキャプチャ
+## <a name="capture-a-photo-to-a-file"></a>ファイルへの写真のキャプチャ
 典型的な写真アプリでは、キャプチャした写真をディスクやクラウド ストレージに保存し、写真の向きなどのメタデータをファイルに追加する必要があります。 次の例では、ファイルに写真をキャプチャする方法を示します。 後で画像ファイルから **SoftwareBitmap** を作成するオプションもあります。 
 
 この例で示されている方法では、写真をインメモリ ストリームにキャプチャし、写真をストリームからディスク上のファイルにコード変換します。 この例では、[**GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageLibrary.GetLibraryAsync) を使ってユーザーのピクチャ ライブラリを取得し、次に [**SaveFolder**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageLibrary.SaveFolder) プロパティを使って既定の保存フォルダーを取得します。 このフォルダーにアクセスするには、必ず**ピクチャ ライブラリ**機能をアプリ マニフェストに追加してください。 [**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFolder.CreateFileAsync) は、写真の保存先となる新しい [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFile) を作成します。
@@ -66,7 +67,7 @@ XAML ページに表示する方法など、**SoftwareBitmap** オブジェク�
 
 ファイルとフォルダーの操作について詳しくは、「[**ファイル、フォルダー、およびライブラリ**](https://msdn.microsoft.com/windows/uwp/files/index)」をご覧ください。
 
-## ビデオのキャプチャ
+## <a name="capture-a-video"></a>ビデオのキャプチャ
 アプリにビデオ キャプチャ機能をすばやく追加するには、[**LowLagMediaRecording**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording) クラスを使用します。 最初に、オブジェクト用のクラス変数を宣言します。
 
 [!code-cs[LowLagMediaRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetLowLagMediaRecording)]
@@ -91,7 +92,7 @@ XAML ページに表示する方法など、**SoftwareBitmap** オブジェク�
 
 [!code-cs[RecordLimitationExceededHandler](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRecordLimitationExceededHandler)]
 
-## ビデオ録画の一時停止と再開
+## <a name="pause-and-resume-video-recording"></a>ビデオ録画の一時停止と再開
 [**PauseAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.PauseAsync) と [**ResumeAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.ResumeAsync) を呼び出すことによって、ビデオの録画を一時停止し、別の出力ファイルを作成せずに録画を再開することができます
 
 [!code-cs[PauseRecordingSimple](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetPauseRecordingSimple)]
@@ -111,7 +112,7 @@ Windows 10 バージョン 1607 以降では、ビデオの録画を一時停止
 [**StopWithResultAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.StopWithResultAsync) を呼び出すことによってビデオを停止したときに、結果のフレームを取得することもできます。
 
 
-## オーディオのキャプチャ 
+## <a name="capture-audio"></a>オーディオのキャプチャ 
 前に示したビデオのキャプチャと同じ手法を用いて、アプリにオーディオ キャプチャ機能を簡単に追加することができます。 次の例では、アプリケーション データ フォルダーに **StorageFile** を作成します。 [**PrepareLowLagRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.PrepareLowLagRecordToStorageFileAsync) を呼び出して、ファイルと、[**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile) を渡すことによって、キャプチャ セッションを初期化します。この例では、MediaEncodingProfile は静的メソッド [**CreateMp3**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile.CreateMp3) によって生成されます。 録音を開始するには、[**StartAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.StartAsync) を呼び出します。
 
 [!code-cs[StartAudioCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartAudioCapture)]
@@ -125,7 +126,7 @@ Windows 10 バージョン 1607 以降では、ビデオの録画を一時停止
 
 [!code-cs[FinishAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetFinishAsync)]
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [カメラ](camera.md)
 * [Windows の組み込みカメラ UI を使った写真とビデオのキャプチャ](capture-photos-and-video-with-cameracaptureui.md)
@@ -136,6 +137,6 @@ Windows 10 バージョン 1607 以降では、ビデオの録画を一時停止
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

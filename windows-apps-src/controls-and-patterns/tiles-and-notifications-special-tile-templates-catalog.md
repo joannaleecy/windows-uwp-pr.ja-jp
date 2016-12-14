@@ -6,12 +6,12 @@ ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 2c50b2be763a0cc7045745baeef6e6282db27cc7
-ms.openlocfilehash: b03ea68ea2a0f66edac81a4c7e2671b2f756aa45
+ms.sourcegitcommit: d51aacb31f41cbd9c065b013ffb95b83a6edaaf4
+ms.openlocfilehash: fc01951adfb151f1c5952d9181492a1d1f88b0cc
 
 ---
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-# 特別なタイル テンプレート
+# <a name="special-tile-templates"></a>特別なタイル テンプレート
 
 
 
@@ -19,14 +19,14 @@ ms.openlocfilehash: b03ea68ea2a0f66edac81a4c7e2671b2f756aa45
 
 特別なタイル テンプレートは、アニメーション化や、アダプティブ タイルでは不可能な機能を実行できる独特なテンプレートです。 特別なタイル テンプレートは、それぞれ Windows 10 用に特別に構築されたテンプレートです。ただし、アイコン タイル テンプレートは、特別に構築されたテンプレートではなく、従来の特別なテンプレートが Windows 10 向けに更新されたものです。 この記事では、3 つの特別なタイル テンプレートである、アイコン タイル テンプレート、フォト タイル テンプレート、および People タイル テンプレートについて取り上げています。
 
-## アイコン タイル テンプレート
+## <a name="iconic-tile-template"></a>アイコン タイル テンプレート
 
 
 アイコン テンプレート ("IconWithBadge" テンプレートとも呼ばれます) を使うと、タイルの中央に小さい画像を表示できます。 Windows 10 では、電話とタブレット/デスクトップの両方でテンプレートがサポートされています 
 
 ![小サイズと普通サイズのメール タイル](images/iconic-template-mail-2sizes.png)
 
-### アイコン タイルを作成する方法
+### <a name="how-to-create-an-iconic-tile"></a>アイコン タイルを作成する方法
 
 次の手順では、Windows 10 のアイコン タイルを作成するために必要なすべての情報について説明します。 大まかに言うと、まずアイコンの画像アセットを用意する必要があります。次に、アイコン テンプレートを使って通知をタイルに送信し、最後に、タイルに表示される番号を指定するバッジ通知を送信します。
 
@@ -77,10 +77,7 @@ XML ペイロードのサンプル コードを次に示します。
 XML ペイロードのサンプル コードを次に示します。
 
 ```XML
-<badge value="2"/></code></pre></td>
-</tr>
-</tbody>
-</table>
+<badge value="2"/>
 ```
 
 タイルのバッジは状況に応じて適切に更新されます。
@@ -91,16 +88,16 @@ XML ペイロードのサンプル コードを次に示します。
 
 ![アイコン タイル テンプレートに関連付けられている API とペイロード](images/iconic-template-properties-info.png)
 
-## フォト タイル テンプレート
+## <a name="photos-tile-template"></a>フォト タイル テンプレート
 
 
 フォト タイル テンプレートを使うと、ライブ タイルに写真のスライドショーを表示できます。 このテンプレートは、すべてのタイルのサイズ (小サイズのタイルを含む) でサポートされており、各サイズのタイルで同じ動作をします。 次の例は、フォト テンプレートを使った普通サイズのタイルが持つ 5 つのフレームを示しています。 テンプレートには、ズームやクロスフェード アニメーションが用意されており、選んだ写真に対して繰り返し適用し、無限にループすることができます。
 
 ![フォト タイル テンプレートを使った画像のスライド ショー](images/photo-tile-template-image01.jpg)
 
-### フォト テンプレートを使う方法
+### <a name="how-to-use-the-photos-template"></a>フォト テンプレートを使う方法
 
-[Windows 10 バージョンの NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx) がインストールされていれば、フォト テンプレートを簡単に使うことができます。 生の XML を使うこともできますが、NotificationExtensions を利用することを強くお勧めします。これにより、有効な XML や XML エスケープされたコンテンツを生成することを考慮する必要がなくなります。
+[Notifications ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)がインストールされていれば、フォト テンプレートを簡単に使うことができます。 生の XML を使うこともできますが、このライブラリの利用を強くお勧めします。これにより、開発者は有効な XML や XML エスケープされたコンテンツの生成について考える必要がなくなります。
 
 Windows Phone では、スライド ショーで最大 9 枚の写真を表示できます。タブレット、ノート PC、デスクトップでは、最大で 12 枚の写真を表示できます。
 
@@ -108,16 +105,6 @@ Windows Phone では、スライド ショーで最大 9 枚の写真を表示�
 
 
 ```XML
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">XML</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
 <!--
  
 To use the Photos template...
@@ -168,9 +155,9 @@ TileContent content = new TileContent()
             {
                 Images =
                 {
-                    new TileImageSource("Assets/1.jpg"),
-                    new TileImageSource("ms-appdata:///local/Images/2.jpg"),
-                    new TileImageSource("http://msn.com/images/3.jpg")
+                    new TileBasicImage() { Source = "Assets/1.jpg" },
+                    new TileBasicImage() { Source = "ms-appdata:///local/Images/2.jpg" },
+                    new TileBasicImage() { Source = "http://msn.com/images/3.jpg" }
  
                     // TODO: Can have 12 images total
                 }
@@ -182,7 +169,7 @@ TileContent content = new TileContent()
 };
 ```
 
-## People タイル テンプレート
+## <a name="people-tile-template"></a>People タイル テンプレート
 
 
 Windows 10 の People アプリでは、円の中に画像のコレクションを表示する特別なタイル テンプレートを使います。これらの円は、タイル上で垂直方向または水平方向にスライドされます。 このタイル テンプレートは、Windows 10 ビルド 10572 以降で利用でき、すべてのユーザーがアプリで使うことができます。
@@ -207,11 +194,11 @@ People タイル テンプレートは、次のサイズのタイルで動作し
 
  
 
-[NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx) を使っている場合、People タイル テンプレートを利用するために必要な操作は、*TileBinding* コンテンツ用に新しい *TileBindingContentPeople* オブジェクトを作成することだけです。 *TileBindingContentPeople* クラスには、画像を追加するための Images プロパティがあります。
+[Notifications ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)を使っている場合、People タイル テンプレートを利用するために必要な操作は、*TileBinding* コンテンツ用に新しい *TileBindingContentPeople* オブジェクトを作成することだけです。 *TileBindingContentPeople* クラスには、画像を追加するための Images プロパティがあります。
 
 生の XML を使っている場合は、*hint-presentation* を "people" に設定し、画像を binding 要素の子として追加します。
 
-次の C# コード サンプルは、[NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx) を使っていることを前提としています。
+次の C# コード サンプルは、[Notifications ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) を使っていることを前提としています。
 
 ```CSharp
 TileContent content = new TileContent()
@@ -224,15 +211,15 @@ TileContent content = new TileContent()
             {
                 Images =
                 {
-                    new TileImageSource("Assets/ProfilePics/1.jpg"),
-                    new TileImageSource("Assets/ProfilePics/2.jpg"),
-                    new TileImageSource("Assets/ProfilePics/3.jpg"),
-                    new TileImageSource("Assets/ProfilePics/4.jpg"),
-                    new TileImageSource("Assets/ProfilePics/5.jpg"),
-                    new TileImageSource("Assets/ProfilePics/6.jpg"),
-                    new TileImageSource("Assets/ProfilePics/7.jpg"),
-                    new TileImageSource("Assets/ProfilePics/8.jpg"),
-                    new TileImageSource("Assets/ProfilePics/9.jpg")
+                    new TileBasicImage() { Source = "Assets/ProfilePics/1.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/2.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/3.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/4.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/5.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/6.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/7.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/8.jpg" },
+                    new TileBasicImage() { Source = "Assets/ProfilePics/9.jpg" }
                 }
             }
         }
@@ -244,16 +231,16 @@ TileContent content = new TileContent()
 <tile>
   <visual>
  
-    <binding template=&#39;TileMedium&#39; hint-presentation=&#39;people&#39;>
-      <image src=&#39;Assets/ProfilePics/1.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/2.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/3.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/4.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/5.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/6.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/7.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/8.jpg&#39;/>
-      <image src=&#39;Assets/ProfilePics/9.jpg&#39;/>
+    <binding template="TileMedium" hint-presentation="people">
+      <image src="Assets/ProfilePics/1.jpg"/>
+      <image src="Assets/ProfilePics/2.jpg"/>
+      <image src="Assets/ProfilePics/3.jpg"/>
+      <image src="Assets/ProfilePics/4.jpg"/>
+      <image src="Assets/ProfilePics/5.jpg"/>
+      <image src="Assets/ProfilePics/6.jpg"/>
+      <image src="Assets/ProfilePics/7.jpg"/>
+      <image src="Assets/ProfilePics/8.jpg"/>
+      <image src="Assets/ProfilePics/9.jpg"/>
     </binding>
  
   </visual>
@@ -270,12 +257,12 @@ TileContent content = new TileContent()
 
 通知を送信するには、「[通知配信方法の選択](tiles-and-notifications-choosing-a-notification-delivery-method.md)」をご覧ください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
-* [Github での完全なコード サンプル](https://github.com/WindowsNotifications/quickstart-people-tile-template)
-* [GitHub の NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
-* [タイル、バッジ、通知](tiles-badges-notifications.md)
+* [GitHub での完全なコード サンプル](https://github.com/WindowsNotifications/quickstart-people-tile-template)
+* [Notifications ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+* [タイル、バッジ、および通知](tiles-badges-notifications.md)
 * [アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)
 * [アダプティブ タイル テンプレート: スキーマとドキュメント](tiles-and-notifications-adaptive-tiles-schema.md)
  
@@ -288,6 +275,6 @@ TileContent content = new TileContent()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

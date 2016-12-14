@@ -1,21 +1,21 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: "ファイル アクセス許可"
 description: "アプリは既定でファイル システムの特定の場所にアクセスできます。 また、ファイル ピッカーを使うか機能を宣言すると、その他の場所にアクセスすることもできます。"
 translationtype: Human Translation
-ms.sourcegitcommit: ef8d0e7ad9063fa57a9db7c3cbdcb6846d3b1133
-ms.openlocfilehash: e58cdce7f803cd15b66371e3b03c4405cbdeb3ff
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: d6cb8bd32766157b1edf886621bdc605ca160db5
 
 ---
-# ファイル アクセス許可
+# <a name="file-access-permissions"></a>ファイル アクセス許可
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 アプリは既定でファイル システムの特定の場所にアクセスできます。 また、ファイル ピッカーを使うか機能を宣言すると、その他の場所にアクセスすることもできます。
 
-## すべてのアプリからアクセスできる場所
+## <a name="the-locations-that-all-apps-can-access"></a>すべてのアプリからアクセスできる場所
 
 新しいアプリを作成すると、既定でファイル システムの次の場所にアクセスできます。
 
@@ -106,7 +106,7 @@ ms.openlocfilehash: e58cdce7f803cd15b66371e3b03c4405cbdeb3ff
 
      
 
-## Windows ストア アプリがアクセスできる場所
+## <a name="locations-windows-store-apps-can-access"></a>Windows ストア アプリがアクセスできる場所
 
 -   **ユーザーの Downloads フォルダー。** ダウンロードされたファイルが保存される既定のフォルダーです。
 
@@ -146,7 +146,7 @@ ms.openlocfilehash: e58cdce7f803cd15b66371e3b03c4405cbdeb3ff
 
     Downloads フォルダーにファイルやフォルダーを作成する場合は、以降に簡単にアクセスできるように、その項目をアプリの [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) に追加することをお勧めします。
 
-## その他の場所へのアクセス
+## <a name="accessing-additional-locations"></a>その他の場所へのアクセス
 
 アプリで、既定の場所以外にあるファイルやフォルダーにアクセスするには、アプリ マニフェストで機能を宣言するか、ファイル ピッカーを呼び出してアプリでアクセスするファイルやフォルダーをユーザーが選べるようにします。詳しくは、「[アプリ機能の宣言](https://msdn.microsoft.com/library/windows/apps/mt270968)」または「[ピッカーでファイルやフォルダーを開く](quickstart-using-file-and-folder-pickers.md)」をご覧ください。
 
@@ -165,6 +165,6 @@ ms.openlocfilehash: e58cdce7f803cd15b66371e3b03c4405cbdeb3ff
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

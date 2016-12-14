@@ -4,12 +4,12 @@ description: "宣言型 XAML マークアップ形式での UI の定義は、�
 title: "Windows ランタイム 8.x の XAML と UI の UWP への移植"
 ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
 translationtype: Human Translation
-ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
-ms.openlocfilehash: c81c017817e55aed5dc4d19d919e22dd511c2b01
+ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
+ms.openlocfilehash: ea8844925cc227d9f082595b039dd68164ad1228
 
 ---
 
-# Windows ランタイム 8.x の XAML と UI の UWP への移植
+# <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>Windows ランタイム 8.x の XAML と UI の UWP への移植
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -17,15 +17,15 @@ ms.openlocfilehash: c81c017817e55aed5dc4d19d919e22dd511c2b01
 
 宣言型 XAML マークアップ形式での UI の定義は、ユニバーサル 8.1 アプリからユニバーサル Windows プラットフォーム (UWP) アプリに適切に変換されます。 ほとんどのマークアップには互換性がありますが、場合によっては、使っているシステムのリソース キーやカスタム テンプレートを調整する必要があります。 ビュー モデルの命令型コードについては、ほとんどあるいはまったく変更する必要はありません。 プレゼンテーション層にあるほとんどのコード (UI 要素を操作するコード) も、簡単に移植できます。
 
-## 命令型コード
+## <a name="imperative-code"></a>命令型コード
 
 プロジェクトのビルド段階に進むだけであれば、重要でないコードのコメントアウトやスタブの挿入を行うことができます。 次に、このセクションの以降のトピック (および前のトピック「[トラブルシューティング](w8x-to-uwp-troubleshooting.md)」) を参考にして、ビルドとランタイムの問題が解決して移植が完了するまで一度に 1 つの問題について反復作業を行います。
 
-## アダプティブ/応答性の高い UI
+## <a name="adaptiveresponsive-ui"></a>アダプティブ/応答性の高い UI
 
-アプリは、画面サイズと解像度が異なるさまざまなデバイスで実行できる場合があります。このため、最小限の手順でアプリを移植するだけでなく、各デバイスで最適な外観になるように UI を調整する必要があります。 アダプティブな Visual State Manager の機能を使って、ウィンドウのサイズを動的に検出し、それに応じてレイアウトを変更できます。その方法を示す例を、Bookstore2 ケース スタディの「[アダプティブ UI](w8x-to-uwp-case-study-bookstore2.md#adaptive-ui)」に示します。
+アプリは、画面サイズと解像度が異なるさまざまなデバイスで実行できる場合があります。このため、最小限の手順でアプリを移植するだけでなく、各デバイスで最適な外観になるように UI を調整する必要があります。 アダプティブな Visual State Manager の機能を使って、ウィンドウのサイズを動的に検出し、それに応じてレイアウトを変更できます。その方法を示す例を、Bookstore2 ケース スタディの「[アダプティブ UI](w8x-to-uwp-case-study-bookstore2.md)」に示します。
 
-## "戻る" ボタンの処理
+## <a name="back-button-handling"></a>"戻る" ボタンの処理
 
 ユニバーサル 8.1 アプリ、Windows ストア アプリ、Windows Phone ストア アプリには、表示する UI と "戻る" ボタンで処理するイベントについてさまざまなアプローチがあります。 ただし、Windows 10 アプリでは、1 つのアプローチをアプリで使うことができます。 モバイル デバイスでは、このボタンはデバイス上の静電容量式のボタンまたはシェル内のボタンとして提供されます。 デスクトップ デバイスでは、アプリ内で戻るナビゲーションが可能な場合には常にアプリのクロムにボタンを追加します。このボタンは、ウィンドウ表示されたアプリのタイトル バーまたはタブレット モードのタスク バーに表示されます。 "戻る" ボタンのイベントはすべてのデバイス ファミリに共通するユニバーサルな概念であり、ハードウェアまたはソフトウェアに実装されるボタンは同じ [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) イベントを発生させます。
 
@@ -77,11 +77,11 @@ ms.openlocfilehash: c81c017817e55aed5dc4d19d919e22dd511c2b01
    Windows.UI.Xaml.Application.Current.Exit();
 ```
 
-## チャーム
+## <a name="charms"></a>チャーム
 
 チャームと統合されるコードを変更する必要はありません。ただし、いくつかの UI をアプリに追加して、Windows 10 シェルに含まれていないチャーム バーの代わりに使う必要があります。 Windows 10 で実行されるユニバーサル 8.1 アプリには、独自の代替 UI があります。このような UI は、アプリのタイトル バーにシステムが表示するクロムによって提供されます。
 
-## コントロールとコントロール スタイル/テンプレート
+## <a name="controls-and-control-stylestemplates"></a>コントロールとコントロール スタイル/テンプレート
 
 Windows 10 で実行されるユニバーサル 8.1 アプリでは、コントロールに関して 8.1 の外観と動作が維持されます。 ただし、そのアプリを Windows 10 アプリに移植すると、外観と動作が異なる場合があるので、注意してください。 コントロールのアーキテクチャと設計は、Windows 10 アプリでは基本的に変更はありません。ほとんどの変更は、[デザイン言語](#design-language)、単純化、操作性の向上に関連するものです。
 
@@ -117,11 +117,11 @@ Windows 10 で実行されるユニバーサル 8.1 アプリでは、コント�
 
 UWP アプリのコントロールについて詳しくは、「[機能別コントロール](https://msdn.microsoft.com/library/windows/apps/mt185405)」、「[コントロールの一覧](https://msdn.microsoft.com/library/windows/apps/mt185406)」、「[コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/dn611856)」をご覧ください。
 
-##  Windows 10 でのデザイン言語
+##  <a name="design-language-in-windows-10"></a>Windows 10 でのデザイン言語
 
 ユニバーサル 8.1 アプリと Windows 10 アプリでは、デザイン言語に関して若干の違いがありますが、重要な相違点なので注意してください。 詳しくは、「[Design](http://dev.windows.com/design)」(設計) をご覧ください。 デザイン言語に変更が加えられていますが、設計原則は維持されています。細部にまで注意を払いながら、簡潔さを追求しています。そのために、クロムよりもコンテンツを優先し、視覚要素を大幅に減らし、真のデジタル領域を常に意識しています。また、視覚的な階層の利用 (特に文字体裁に対して)、グリッド内でのデザイン、滑らかなアニメーションを使ったエクスペリエンスの実現も行っています。
 
-## 有効ピクセル、視聴距離、スケール ファクター
+## <a name="effective-pixels-viewing-distance-and-scale-factors"></a>有効ピクセル、視聴距離、スケール ファクター
 
 これまで、表示ピクセルは、デバイスの実際の物理サイズと解像度から UI 要素のサイズとレイアウトを抽象化する方法でした。 現在では、表示ピクセルが有効ピクセルに変わりました。その用語の説明、有効ピクセルが何をするものなのか、および有効ピクセルで使うことができる追加の値について、以下に示します。
 
@@ -139,7 +139,7 @@ Windows 10 アプリ向けのすべてスケール ファクターは 100%、125
 
 Windows ストア アプリの XAML マークアップを再利用できます。Windows ストア アプリでは、リテラルの寸法値がマークアップで使われています (図形や他の要素に関するサイズの設定や、文字体裁のために使われている場合があります)。 ただし、場合によっては、ユニバーサル 8.1 アプリ用のデバイスに比べ、Windows 10 アプリ用のデバイスではより大きなスケール ファクターが使われます (たとえば、140%% であった場合に 150%%、180%% であった場合に 200%% など)。 したがって、Windows 10 でこれらのリテラル値が大きすぎる場合は、それらの値に 0.8 を乗算してみてください。 詳しくは、「[ユニバーサル Windows プラットフォーム (UWP) アプリ用レスポンシブ デザイン 101](https://msdn.microsoft.com/library/windows/apps/dn958435)」をご覧ください。
 
-## GridView/ListView に関する変更
+## <a name="gridviewlistview-changes"></a>GridView/ListView に関する変更
 
 コントロールを縦方向へスクロールするために、[**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) の既定の style setter に対していくつかの変更が行われました (横方向へのスクロールではありません。これについては既定で対応しています)。 プロジェクトに含まれている既定のスタイルのコピーを編集した場合、そのコピーにはこれらの変更が適用されていないため、手動で変更を加える必要があります。 一連の変更を以下にまとめます。
 
@@ -230,15 +230,15 @@ Windows ストア アプリの XAML マークアップを再利用できます�
 -   SelectionStates 表示状態グループの Selected 表示状態を CommonStates 表示状態グループに移動します。
 -   SelectionStates 表示状態グループ全体を削除します。
 
-## ローカリゼーションとグローバリゼーション
+## <a name="localization-and-globalization"></a>ローカリゼーションとグローバリゼーション
 
 UWP アプリ プロジェクトで、ユニバーサル 8.1 プロジェクトの Resources.resw ファイルを再利用できます。 このファイルをコピーしてから、プロジェクトに追加し、**[ビルド アクション]** を **[PRIResource]** に、**[出力ディレクトリにコピー]** を **[コピーしない]** に設定します。 「[**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071)」トピックでは、デバイス ファミリのリソースを選ぶ要因に基づいてデバイス ファミリ固有のリソースを読み込む方法について説明しています。
 
-## リモート再生
+## <a name="play-to"></a>リモート再生
 
 [**Windows.Media.PlayTo**](https://msdn.microsoft.com/library/windows/apps/br207025) 名前空間の API は Windows 10 アプリでは使われなくなり、[**Windows.Media.Casting**](https://msdn.microsoft.com/library/windows/apps/dn972568) API が使われるようになりました。
 
-## リソース キー、および TextBlock スタイル サイズ
+## <a name="resource-keys-and-textblock-style-sizes"></a>リソース キー、および TextBlock スタイル サイズ
 
 デザイン言語は Windows 10 で改善され、特定のシステム スタイルが変更されました。 場合によっては、変更されたスタイルのプロパティにビューが適合するように、ビューのビジュアル デザインに戻る必要があります。
 
@@ -405,7 +405,7 @@ UWP アプリ プロジェクトで、ユニバーサル 8.1 プロジェクト�
 -   TextStyleSmallFontSize
 -   TimeRemainingElementMargin
 
-## SearchBox に代わって使われる AutoSuggestBox
+## <a name="searchbox-deprecated-in-favor-of-autosuggestbox"></a>SearchBox に代わって使われる AutoSuggestBox
 
 ユニバーサル デバイス ファミリでは [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252803) が実装されていますが、モバイル デバイスでは部分的に機能しません。 ユニバーサル検索エクスペリエンスには [**AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/dn633874) を使います。 **AutoSuggestBox** を使った検索エクスペリエンスの通常の実装方法を次に示します。
 
@@ -423,7 +423,7 @@ UWP アプリ プロジェクトで、ユニバーサル 8.1 プロジェクト�
 
 [AutoSuggestBox の移植のサンプル](http://go.microsoft.com/fwlink/p/?linkid=619996)に関するページもご覧ください。
 
-## SemanticZoom に関する変更
+## <a name="semanticzoom-changes"></a>SemanticZoom に関する変更
 
 [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) での縮小表示のジェスチャは、Windows Phone モデルで収束され、グループ ヘッダーをタップまたはクリックするという動作になりました (このため、デスクトップ コンピューターでは、縮小表示するためのマイナス記号のボタンのアフォーダンスは表示されなくなります)。 これで、デバイスに関係なく同一で一貫性のある動作を実現できます。 Windows Phone モデルと外観面で異なる点の 1 つは、縮小表示ビュー (ジャンプ リスト) が、拡大表示ビューをオーバーレイするのではなく、拡大表示ビューを置き換えることです。 このため、縮小表示ビューから半透明の背景を削除することができます。
 
@@ -435,7 +435,7 @@ Windows ストア アプリでは、アプリが非アクティブ化して再�
 
 Windows Phone ストア アプリと Windows 10 アプリでは、[戻る] ボタンを押すと、縮小表示ビューが閉じられます。 Windows ストア アプリの場合、組み込みの [戻る] ボタンの処理はないため、該当しません。
 
-## 設定
+## <a name="settings"></a>設定
 
 Windows ランタイム 8.x の **SettingsPane** クラスは、Windows 10 には適していません。 代わりに、[設定] ページを作成し、さらに、アプリ内から [設定] ページにアクセスする方法をユーザーに提供する必要があります。 このアプリの [設定] ページはトップ レベルで表示されるようにすることをお勧めしますが、ナビゲーション ウィンドウの最後のピン留めされた項目として、ここにはオプションの完全なセットがあります。
 
@@ -447,11 +447,11 @@ Windows ランタイム 8.x の **SettingsPane** クラスは、Windows 10 に�
 
 [設定] ページはアプリのウィンドウ全体を埋め、このページには [バージョン情報] と [フィードバック] があることも必要です。 [設定] ページのデザインに関するガイダンスについては、「[アプリ設定のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh770544)」をご覧ください。
 
-## テキスト
+## <a name="text"></a>テキスト
 
 テキスト (または文字体裁) は UWP アプリの重要な要素です。移植するときには、ビューの視覚的なデザインが新しいデザイン言語に適合するように、ビューの視覚的なデザインを再検討することが必要になる場合があります。 次の図を使って、ユニバーサル Windows プラットフォーム (UWP) の利用可能な  **TextBlock** システム スタイルを見つけてください。 使用した Windows Phone Silverlight スタイルに対応するものを見つけます。 また、独自のユニバーサル スタイルを作成し、Windows Phone Silverlight システム スタイルからプロパティをコピーすることもできます。
 
-![Windows10 アプリのシステム TextBlock スタイル](images/label-uwp10stylegallery.png) <br/>Windows 10 アプリのシステム TextBlock スタイル
+![Windows 10 アプリのシステム TextBlock スタイル](images/label-uwp10stylegallery.png) <br/>Windows 10 アプリのシステム TextBlock スタイル
 
 Windows ストア アプリと Windows Phone ストア アプリでは、既定のフォント ファミリは Global User Interface です。 Windows 10 アプリでは、既定のフォント ファミリは Segoe UI です。 この結果、アプリでのフォント メトリックの表示が異なる可能性があります。 8.1 のテキストの外観を再現する場合は、[**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671) や [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362) などのプロパティを使って、独自のメトリックを設定できます。
 
@@ -459,11 +459,11 @@ Windows ストア アプリと Windows Phone ストア アプリでは、テキ�
 
 詳しくは、「[フォントのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)」と「[UWP アプリの設計](http://go.microsoft.com/fwlink/p/?LinkID=533896)」をご覧ください。 テキスト コントロールの変更については、上記の「[コントロール](#controls)」セクションもご覧ください。
 
-## テーマの変更
+## <a name="theme-changes"></a>テーマの変更
 
 ユニバーサル 8.1 アプリでは、既定のテーマは濃色になっています。 Windows 10 デバイスでは既定のテーマが変更されていますが、App.xaml で要求するテーマを宣言して、使用するテーマを制御できます。 たとえば、すべてのデバイスで濃色テーマを使うには、`RequestedTheme="Dark"` をルートの Application 要素に追加します。
 
-## タイルとトースト
+## <a name="tiles-and-toasts"></a>タイルとトースト
 
 タイルとトーストについては、現在使っているテンプレートを引き続き Windows 10 アプリで使うことができます。 ただし、新しいアダプティブ テンプレートを使うことができ、それらについては「 [通知、タイル、トースト、バッジ](https://msdn.microsoft.com/library/windows/apps/mt185606)」で説明されています。
 
@@ -471,7 +471,7 @@ Windows ストア アプリと Windows Phone ストア アプリでは、テキ�
 
 トースト通知を送るために機能を宣言する必要はなくなりました。
 
-## ウィンドウ サイズ
+## <a name="window-size"></a>ウィンドウ サイズ
 
 ユニバーサル 8.1 アプリでは、アプリ マニフェストの要素 [**ApplicationView**](https://msdn.microsoft.com/library/windows/apps/dn391667) を使って、ウィンドウの最小幅が宣言されます。 UWP アプリでは、命令型コードを使って最小サイズ (幅と高さ) を指定できます。 既定の最小サイズは 500 x 320 epx で、このサイズは受け入れられる最も小さいサイズでもあります。 受け入れられる最も大きいサイズは 500 x 500 epx です。
 
@@ -485,6 +485,6 @@ Windows ストア アプリと Windows Phone ストア アプリでは、テキ�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

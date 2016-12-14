@@ -4,28 +4,26 @@ ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: "アプリ内広告の UI とユーザー エクスペリエンスのガイドラインについて説明します。"
 title: "アプリ内広告の UI とユーザー エクスペリエンスのガイドライン"
 translationtype: Human Translation
-ms.sourcegitcommit: 8574695fe12042e44831227f81e1f6ea45e9c0da
-ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
+ms.sourcegitcommit: 148aca16104f599f3048f5965c4131a3f37799f8
+ms.openlocfilehash: 97feb4f79e0592a7b54a8263b15cd2b85dd3243d
 
 
 ---
 
-# アプリ内広告の UI とユーザー エクスペリエンスのガイドライン
+# <a name="ui-and-user-experience-guidelines-for-ads-in-apps"></a>アプリ内広告の UI とユーザー エクスペリエンスのガイドライン
 
 
-
-
-## Windows アプリの一般的な UI リソース
+## <a name="general-ui-resources-for-windows-apps"></a>Windows アプリの一般的な UI リソース
 
 アプリの外観を設計する方法については、「[設計および UI](https://developer.microsoft.com/windows/design)」をご覧ください。
 
-## AdControl に関するベスト プラクティス
+## <a name="adcontrol-best-practices"></a>AdControl に関するベスト プラクティス
 
 * [AdControl に関するベスト プラクティス: 推奨事項](#adcontrolbestpracticesdo10)
 * [AdControl に関するベスト プラクティス: 非推奨事項](#adcontrolbestpracticesdont10)
 
 <span id="adcontrolbestpracticesdo10"/>
-### AdControl に関するベスト プラクティス: 推奨事項
+### <a name="adcontrol-best-practices-do"></a>AdControl に関するベスト プラクティス: 推奨事項
 
 * 広告をエクスペリエンスに組み込んで設計します。 広告がどのように表示されるかを計画するための広告のサンプルをデザイナーに提供します。 適切に計画されたアプリ内広告の 2 つの例は、コンテンツとしての広告のレイアウトと分割レイアウトです。
 
@@ -34,7 +32,7 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 * 広告が利用できない場合の対応を計画します。 広告がアプリに送信されない場合があります。 ページに広告が表示される場合も、表示されない場合も、適切に表示されるようにページをレイアウトします。 詳しくは、「[エラー処理](error-handling-with-advertising-libraries.md)」をご覧ください。
 
 <span id="adcontrolbestpracticesdont10"/>
-### AdControl に関するベスト プラクティス: 非推奨事項
+### <a name="adcontrol-best-practices-dont"></a>AdControl に関するベスト プラクティス: 非推奨事項
 
 * 空いている領域に広告を固定しないでください。 広告スペースは、画面上で最初に見つかった空き領域に配置しないでください。 広告スペースはアプリの全体的な設計に組み込む必要があります。
 
@@ -43,18 +41,18 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 * ユーザーが中心的なタスクに集中するのを妨げないでください。 主要な項目は常にアプリに表示されている必要があります。 広告スペースは 2 次的な項目として組み込まれている必要があります。
 
 <span id="interstitialbestpractices10"/>
-## スポット広告に関するベスト プラクティスとポリシー
+## <a name="interstitial-best-practices-and-policies"></a>スポット広告に関するベスト プラクティスとポリシー
 
 * [スポット広告に関するベスト プラクティス: 推奨事項](#interstitialbestpracticesdo10)
 * [スポット広告に関するベスト プラクティス: 避ける事項](#interstitialbestpracticesavoid10)
-* [スポットに関するベスト プラクティス: 禁止事項 (ポリシーが適用される)](#interstitialbestpracticesnever10)
+* [スポット広告に関するベスト プラクティス: 禁止事項 (ポリシーが適用される)](#interstitialbestpracticesnever10)
 
 洗練された方法でビデオ スポット広告を使うと、ユーザー満足度を損なうことなく、アプリの収益を飛躍的に向上させることができます。 使い方が不適切である場合、ビデオ スポット広告が逆効果になる可能性があります。
 
 ここでは、適切な使い方を実現するためのヒントを示します。 ポリシーに関連する問題を除き、アプリについて最もよく理解しているのは開発者の皆様であるため、ベスト プラクティスに関する最終的な判断は開発者の皆様に委ねています。 留意する最も重要な点は、アプリの評価と収益が密接に結びついていることです。
 
 <span id="interstitialbestpracticesdo10"/>
-### スポット広告に関するベスト プラクティス: 推奨事項
+### <a name="interstitial-best-practices-do"></a>スポット広告に関するベスト プラクティス: 推奨事項
 
 * ゲームのレベルの合間など、アプリの自然な流れの中にスポット広告を配置します。
 
@@ -84,13 +82,14 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 
     * 特に高速接続がない市場において、ビデオ広告はバナーよりもダウンロードにかかる時間が大幅に長くなります。
 
+<span/>
 
 * ユーザーのデータ通信プランに留意してください。 たとえば、データ通信の上限が近い、または上限を超えているモバイル デバイスで、ビデオ広告を表示する前に、何も表示しないか、ユーザーに警告するかを決定します。 [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) クラスには、これに役立つ API があります。
 
 * 最初の申請後に、アプリを継続的に改善します。 広告レポートを確認し、フィル レートとビデオ完了率を向上させるために設計を変更します。
 
 <span id="interstitialbestpracticesavoid10"/>
-### スポット広告に関するベスト プラクティス: 避ける事項
+### <a name="interstitial-best-practices-avoid"></a>スポット広告に関するベスト プラクティス: 避ける事項
 
 * 過剰に表示しないでください。 ユーザーがゲームをプレイするだけでなく、広告についてオプションの具体的なメリットを明確に感じている場合を除き、5 分ごとよりも頻繁に広告を強制的に表示しないでください。
 
@@ -106,8 +105,9 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 
 * [Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) を呼び出す 5 分以上前にビデオを取得しないでください。
 
-    * 適切なインベントリでは、事前に取得された広告から請求可能なインプレッションへのコンバージョンが最大化されます。
+  * 適切なインベントリでは、事前に取得された広告から請求可能なインプレッションへのコンバージョンが最大化されます。
 
+<span/>
 
 * 利用可能な広告がないなど、広告を提供できなかった場合に、ユーザーに不利益をもたらさないようにします。 たとえば、[広告を視聴して *xxx* を取得する] という UI オプションを表示する場合、ユーザーが責任を果たしたら、*xxx* を提供する必要があります。 2 つのオプションを検討してください。
 
@@ -122,7 +122,7 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
     * プレーヤーのアバターのシャツをカスタマイズ可能にすることは、カモフラージュ機能がなければ問題ありません。
 
 <span id="interstitialbestpracticesnever10"/>
-### スポット広告に関するベスト プラクティス: 禁止事項 (ポリシーが適用される)
+### <a name="interstitial-best-practices-never-policy-enforced"></a>スポット広告に関するベスト プラクティス: 禁止事項 (ポリシーが適用される)
 
 * 広告コンテナー上に UI 要素を配置しないでください。
 
@@ -130,9 +130,9 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 
 <span/>
 
-* ユーザーがアプリを使用している間は、**Show** を呼び出さないでください。
+* ユーザーがアプリを使用している間は、[Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) を呼び出さないでください。
 
-    * **InterstitialAd** は全画面オーバーレイを作成するため、ユーザーはこれを不快に感じます。
+    * [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) は全画面オーバーレイを作成するため、ユーザーはこれを不快に感じます。
 
     * また、クリック スルー レートが誇張される可能性もあります。
 
@@ -140,7 +140,7 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 
 * [ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.erroroccurred.aspx) イベントのイベント ハンドラーのコンテキストで新しい広告を要求しないでください。 これにより、無限ループが発生して、広告サービスの操作上の問題の原因となります。
 
-* スポット広告を要求した後は、アプリに提供される広告を非表示にしないようにしてください。 広告を要求し、要求に対する応答で [AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) イベントを受信した場合は、広告を表示する必要があります。 他の広告ネットワークを使用して独自の広告仲介ソリューションを実装する場合は、他の広告ネットワークへの要求が失敗した後にのみ、**InterstitialAd** コントロールの広告を要求します。
+* 連鎖的な広告の単なるバックアップとして、スポット広告を要求しないでください。 スポット広告を要求し、[AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) イベントを受信した場合、アプリに表示できる次のスポット広告は、[Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) メソッド経由で表示できる必要があります。
 
  
 
@@ -148,6 +148,6 @@ ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

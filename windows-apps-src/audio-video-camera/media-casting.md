@@ -4,19 +4,19 @@ ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
 description: "この記事では、ユニバーサル Windows アプリからリモート デバイスにメディアをキャストする方法について説明します。"
 title: "メディアのキャスト"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: e225d5f5b7957ab21136de7294f086af62c2a5ec
+ms.sourcegitcommit: ebcd2f2b28a7cd2a8a9dad16c30239b06e147ec3
+ms.openlocfilehash: fc69e3b5bb814752480fa0151c36ae0a8c783c4e
 
 ---
 
-# メディアのキャスト
+# <a name="media-casting"></a>メディアのキャスト
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 この記事では、ユニバーサル Windows アプリからリモート デバイスにメディアをキャストする方法について説明します。
 
-## MediaElement を使った組み込みのメディア キャスト機能
+## <a name="built-in-media-casting-with-mediaplayerelement"></a>MediaPlayerElement を使った組み込みのメディア キャスト機能
 
 ユニバーサル Windows アプリからメディアをキャストする方法としては、[**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) コントロールの組み込みのキャスト機能を使うのが最も簡単です。
 
@@ -45,7 +45,7 @@ ms.openlocfilehash: e225d5f5b7957ab21136de7294f086af62c2a5ec
 > [!NOTE] 
 > Windows 10 バージョン 1607 以降、メディア項目の再生には、**MediaPlayer** クラスを使うことをお勧めします。 **MediaPlayerElement** は、XAML ページの **MediaPlayer** コンテンツをレンダリングするために使われる軽量の XAML コントロールです。 下位互換性を確保するため、**MediaElement**コントロールも引き続きサポートされています。 **MediaPlayer** と **MediaPlayerElement** を使ってメディア コンテンツを再生する方法について詳しくは、「[MediaPlayer を使ったオーディオとビデオの再生](play-audio-and-video-with-mediaplayer.md)」をご覧ください。 **MediaSource** と関連の API を使ってメディア コンテンツを操作する方法について詳しくは、「[メディア項目、プレイリスト、トラック](media-playback-with-mediasource.md)」をご覧ください。
 
-## CastingDevicePicker を使ったメディアのキャスト
+## <a name="media-casting-with-the-castingdevicepicker"></a>CastingDevicePicker を使ったメディアのキャスト
 
 メディアをデバイスにキャストするもう 1 つの方法は、[**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/dn972525) を使うことです。 このクラスを使うには、プロジェクトに [**Windows.Media.Casting**](https://msdn.microsoft.com/library/windows/apps/dn972568) 名前空間を追加します。
 
@@ -78,7 +78,7 @@ ms.openlocfilehash: e225d5f5b7957ab21136de7294f086af62c2a5ec
 
 [!code-cs[EmptyStateHandlers](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetEmptyStateHandlers)]
 
-## カスタム デバイス ピッカーを使ったメディアのキャスト
+## <a name="media-casting-with-a-custom-device-picker"></a>カスタム デバイス ピッカーを使ったメディアのキャスト
 
 次のセクションでは、独自のコードでキャスト先デバイスを列挙し、接続を開始することによって、キャスト先デバイス ピッカーの UI を作成する方法を説明します。
 
@@ -160,6 +160,6 @@ StateChanged ハンドラーで実行する操作は、キャスト接続の新�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

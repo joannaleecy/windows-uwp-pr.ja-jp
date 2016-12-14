@@ -4,12 +4,12 @@ title: "ファイルのアクティブ化の処理"
 description: "アプリは、特定のファイルの種類の既定のハンドラーとして登録することができます。"
 ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
 translationtype: Human Translation
-ms.sourcegitcommit: 0e0fa6cf082034110e11b9bde910564de8f5048c
-ms.openlocfilehash: dffbccad62f48667a0495ceb205c751ccce0a3e0
+ms.sourcegitcommit: ed7aee6add80d31b48006d9dec9e207c449a1912
+ms.openlocfilehash: ffcfa8991e9eb73b8d6a47bb7dd1cd23220097e0
 
 ---
 
-# ファイルのアクティブ化の処理
+# <a name="handle-file-activation"></a>ファイルのアクティブ化の処理
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
@@ -28,7 +28,7 @@ ms.openlocfilehash: dffbccad62f48667a0495ceb205c751ccce0a3e0
 
 > **注**  UWP アプリでは、組み込みのアプリとオペレーティング システムで使うために、特定の URI とファイル拡張子が予約されています。 予約されている URI またはファイル拡張子にアプリを登録しようとしても無視されます。 詳しくは、「[予約済みのファイルと URI スキーム名](reserved-uri-scheme-names.md)」をご覧ください。
 
-## ステップ 1: パッケージ マニフェストに拡張点を指定する
+## <a name="step-1-specify-the-extension-point-in-the-package-manifest"></a>ステップ 1: パッケージ マニフェストに拡張点を指定する
 
 
 アプリは、パッケージ マニフェストに一覧表示されるファイル拡張子のアクティブ化イベントだけを受け取ります。 アプリが `.alsdk` 拡張子を持つファイルを処理することを示す方法は次のとおりです。
@@ -43,8 +43,8 @@ ms.openlocfilehash: dffbccad62f48667a0495ceb205c751ccce0a3e0
 | **ロゴ** | デスクトップと**コントロール パネル**の [[既定のプログラムを設定する]](https://msdn.microsoft.com/library/windows/desktop/cc144154) でファイルの種類を識別するために使われるロゴを指定します。 ロゴを指定しない場合は、アプリケーションの小さいロゴが使われます。 |
 | **InfoTip** | ファイルの種類のグループの [InfoTip](https://msdn.microsoft.com/library/windows/desktop/cc144152) を指定します。 このヒントのテキストは、ユーザーがこの種類のファイルのアイコンの上にマウス ポインターを置くと表示されます。 |
 | **名前** | 同じ表示名、ロゴ、InfoTip、編集フラグを共有するファイルの種類のグループの名前を選びます。 このグループ名は、アプリの更新後も維持される名前にします。 **注**  名前はすべて小文字である必要があります。 |
-| **コンテンツの種類** | 特定のファイルの種類の MIME コンテンツの種類 (**image/jpeg** など) を指定します。 **許可されるコンテンツの種類に関する重要な注意:**  MIME コンテンツの種類のうち、**application/force-download**、**application/octet-stream**、**application/unknown**、**application/x-msdownload** は予約または禁止されているため、パッケージ マニフェストに入力できません。 |
-| **ファイルの種類** | 登録するファイルの種類を指定します。先頭にはピリオドを付けます (例: ".jpeg")。 **予約および禁止されているファイルの種類** 予約または禁止されているため、UWP アプリを登録できない組み込みアプリ用のファイルの種類の一覧 (アルファベット順) については、[予約済みの URI スキーム名とファイルの種類](reserved-uri-scheme-names.md)に関するページをご覧ください。 |
+| **コンテンツの種類** | 特定のファイルの種類の MIME コンテンツの種類 (**image/jpeg** など) を指定します。 **許可されるコンテンツの種類に関する重要な注意:** MIME コンテンツの種類のうち、**application/force-download**、**application/octet-stream**、**application/unknown**、**application/x-msdownload** は予約または禁止されているため、パッケージ マニフェストに入力できません。 |
+| **ファイルの種類** | 登録するファイルの種類を指定します。先頭にはピリオドを付けます (例: ".jpeg")。 **予約および禁止されているファイルの種類:** 予約または禁止されているために UWP アプリを登録できない組み込みアプリ用のファイルの種類の一覧 (アルファベット順) については、「[予約済みのファイルと URI スキーム名](reserved-uri-scheme-names.md)」をご覧ください。 |
 
 2.  **[名前]** に `alsdk` と入力します。
 3.  **[ファイルの種類]** に `.alsdk` と入力します。
@@ -66,7 +66,7 @@ ms.openlocfilehash: dffbccad62f48667a0495ceb205c751ccce0a3e0
       </Extensions>
 ```
 
-## ステップ 2: 適切なアイコンを追加する
+## <a name="step-2-add-the-proper-icons"></a>ステップ 2: 適切なアイコンを追加する
 
 
 ファイルの種類の既定となるアプリは、そのアイコンがシステムのさまざまな場所に表示されます。 アイコンは、たとえば次の場所に表示されます。
@@ -79,7 +79,7 @@ ms.openlocfilehash: dffbccad62f48667a0495ceb205c751ccce0a3e0
 アプリのタイルのロゴの外観を調和させ、アイコンを透明にするのではなく、アプリの背景色を使います。 パディングせずにロゴを端まで拡張します。 アイコンは、白い背景でテストします。 サンプルのアイコンについては、[関連付けによる起動のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620490)をご覧ください。
 ![ソリューション エクスプローラーで images フォルダー内にあるファイルを表示した様子。 Icon.targetsize と smallTile-sdk の両方に 16、32、48、256 の各ピクセルのバージョンがあります。](images/seviewofimages.png)
 
-## ステップ 3: アクティブ化イベントを処理する
+## <a name="step-3-handle-the-activated-event"></a>ステップ 3: アクティブ化イベントを処理する
 
 
 [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331) イベント ハンドラーは、すべてのファイル アクティブ化イベントを受け取ります。
@@ -115,7 +115,7 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 
 ファイル アクティブ化によって起動されたときは、アプリの先頭ページに戻ることができる UI を含めることを検討してください。
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 
 受け取るファイルは、信頼できないソースからのファイルである可能性があります。 操作する前に、ファイルのコンテンツを検証することをお勧めします。 入力の検証について詳しくは、[安全なコードの記述](http://go.microsoft.com/fwlink/p/?LinkID=142053)をご覧ください。
@@ -124,7 +124,7 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 
  
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 **完全な例**
 
@@ -154,6 +154,6 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

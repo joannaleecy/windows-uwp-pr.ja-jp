@@ -4,12 +4,12 @@ ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
 description: "このセクションでは、写真、ビデオ、オーディオをキャプチャ、再生、または編集するユニバーサル Windows (UWP) プラットフォーム アプリの作成について説明します。"
 title: "オーディオ、ビデオ、およびカメラ"
 translationtype: Human Translation
-ms.sourcegitcommit: fd5b52a1d431b9396a4b162077d4f8d6246cd597
-ms.openlocfilehash: 6e67f57fbc00e596bb07cc37f2c9f762a5c9f557
+ms.sourcegitcommit: 77f47bce2a4be3f7c5ee3d320ff6c68e8c7ce6b0
+ms.openlocfilehash: d1aad0800bfe4982a316aa5da719db005b687fa1
 
 ---
 
-# オーディオ、ビデオ、およびカメラ
+# <a name="audio-video-and-camera"></a>オーディオ、ビデオ、およびカメラ
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
@@ -22,6 +22,7 @@ ms.openlocfilehash: 6e67f57fbc00e596bb07cc37f2c9f762a5c9f557
 | [画像やビデオでの顔の検出](detect-and-track-faces-in-an-image.md) | ビデオ フレームのシーケンスで顔を経時的に追跡するための [FaceTracker](https://msdn.microsoft.com/library/windows/apps/dn974150) の使用方法について説明します。 |
 | [メディアのコンポジションと編集](media-compositions-and-editing.md) | [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 名前空間の API を使って、オーディオとビデオのソース ファイルからメディア コンポジションを作成するアプリを開発する方法について説明します。 |
 | [カスタムのビデオ特殊効果](custom-video-effects.md) | ビデオ ストリームのカスタム効果を作成できる **IBasicVideoEffect** インターフェイスを実装する Windows ランタイム コンポーネントを作成する方法について説明します。 |
+| [カスタムのオーディオ特殊効果](custom-audio-effects.md) | オーディオ ストリームのカスタム効果を作成できる **IBasicAudioEffect** インターフェイスを実装する Windows ランタイム コンポーネントを作成する方法について説明します。 |
 | [ビットマップ画像の作成、編集、保存](imaging.md) | [SoftwareBitmap](https://msdn.microsoft.com/library/windows/apps/dn887358) オブジェクトを使って画像ファイルの読み込みと保存を行い、ビットマップ画像を表現する方法について説明します。  |
 | [オーディオ デバイス情報のプロパティ](audio-device-information-properties.md)  | オーディオ デバイスに関連するデバイス情報プロパティを示します。 |
 | [メディア ファイルのトランスコード](transcode-media-files.md) | [Windows.Media.Transcoding](https://msdn.microsoft.com/library/windows/apps/br207105) API を使って、ビデオ ファイルをある形式から別の形式にコード変換する方法について説明します。 |
@@ -33,7 +34,7 @@ ms.openlocfilehash: 6e67f57fbc00e596bb07cc37f2c9f762a5c9f557
 | [サポートされているコーデック](supported-codecs.md) | UWP アプリ用のオーディオ、ビデオ、画像のコーデックおよび形式のサポートを示します。 |
 
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 - [UWP アプリの開発](https://developer.microsoft.com/en-us/windows/develop)
 
  
@@ -48,6 +49,6 @@ ms.openlocfilehash: 6e67f57fbc00e596bb07cc37f2c9f762a5c9f557
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -1,14 +1,14 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 3604524F-112A-474F-B0CA-0726DC8DB885
 title: "Microsoft OneDrive ファイルが利用可能かどうかの確認"
 description: "StorageFile.IsAvailable プロパティを使って、Microsoft OneDrive ファイルが利用可能かどうかを確認します。"
 translationtype: Human Translation
-ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
-ms.openlocfilehash: 2ed00b525fd2b7af51da00ad0464e37f1cabd889
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: 2289b85a8b26e1827446709e1db97c447b3b7964
 
 ---
-# Microsoft OneDrive ファイルが利用可能かどうかの確認
+# <a name="determining-availability-of-microsoft-onedrive-files"></a>Microsoft OneDrive ファイルが利用可能かどうかの確認
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: 2ed00b525fd2b7af51da00ad0464e37f1cabd889
 
 [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) プロパティを使って、Microsoft OneDrive ファイルが利用可能かどうかを確認します。
 
-## 必要条件
+## <a name="prerequisites"></a>前提条件
 
 -   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
 
@@ -31,7 +31,7 @@ ms.openlocfilehash: 2ed00b525fd2b7af51da00ad0464e37f1cabd889
 
     「[ファイル アクセス許可](file-access-permissions.md)」をご覧ください。
 
-## StorageFile.IsAvailable プロパティの使用
+## <a name="using-the-storagefileisavailable-property"></a>StorageFile.IsAvailable プロパティの使用
 
 ユーザーは、OneDrive ファイルを "オフラインで利用可能" (既定) または "オンラインのみ" とマークできます。 この機能を使うと、大容量のファイル (写真やビデオなど) を自分の OneDrive に移動し、オンラインのみとマークすることで、ディスク領域を節約できます (ローカルに保存されるのはメタデータ ファイルのみです)。
 
@@ -92,6 +92,6 @@ private async void CheckAvailabilityOfFilesInPicturesLibrary()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

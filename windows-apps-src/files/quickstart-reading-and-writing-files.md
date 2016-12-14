@@ -1,15 +1,15 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
 title: "ファイルの作成、書き込み、および読み取り"
 description: "StorageFile オブジェクトを使ってファイルの読み取りと書き込みを行います。"
 translationtype: Human Translation
-ms.sourcegitcommit: 24f50f2c4ac7fcfe931759d42ba73e758d77f6e8
-ms.openlocfilehash: 2a9f5de71712e657bc9a0a39b668085c399ce9fb
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: 0709d9c9126dc4523eae58d5db8d9037a2fb618e
 
 ---
 
-# ファイルの作成、書き込み、および読み取り
+# <a name="create-write-and-read-a-file"></a>ファイルの作成、書き込み、および読み取り
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -25,7 +25,7 @@ ms.openlocfilehash: 2a9f5de71712e657bc9a0a39b668085c399ce9fb
 
 > **注** [ファイル アクセスのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619995) に関するページもご覧ください。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 -   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
 
@@ -35,7 +35,7 @@ ms.openlocfilehash: 2a9f5de71712e657bc9a0a39b668085c399ce9fb
 
     ファイル ピッカーを使ってファイルを取得する方法については、「[ピッカーでファイルやフォルダーを開く](quickstart-using-file-and-folder-pickers.md)」をご覧ください。
 
-## ファイルの作成
+## <a name="creating-a-file"></a>ファイルの作成
 
 アプリのローカル フォルダーにファイルを作成する方法について説明します。 既に存在する場合は置き換えます。
 > [!div class="tabbedCodeSnippets"]
@@ -53,7 +53,7 @@ Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.Loc
 Dim sampleFile As StorageFile = Await storageFolder.CreateFileAsync("sample.txt", CreationCollisionOption.ReplaceExisting)
 ```
 
-## ファイルへの書き込み
+## <a name="writing-to-a-file"></a>ファイルへの書き込み
 
 
 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) クラスを使ってディスク上の書き込み可能ファイルに書き込む方法について説明します。 いずれの方法でファイルに書き込む場合でも (ファイルの作成直後に書き込むのでない限り)、まずは [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) でファイルを取得します。
@@ -153,7 +153,7 @@ using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
         Await outputStream.FlushAsync()
 ```
 
-## ファイルからの読み取り
+## <a name="reading-from-a-file"></a>ファイルからの読み取り
 
 
 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) クラスを使ってディスク上のファイルから読み取る方法について説明します。 いずれの方法でファイルから読み取る場合でも、まずは [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) を使ってファイルを取得します。
@@ -259,6 +259,6 @@ Dim dataReader As New DataReader(inputStream)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

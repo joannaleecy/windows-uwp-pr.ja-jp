@@ -4,12 +4,12 @@ description: "これは、Windows 10 UWP (ユニバーサル Windows プラッ�
 ms.assetid: ECC9EF3D-E0A1-4BC4-94FA-3215E6CFF0E4
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 2250cc400828b2142bc5d152f54de554daa24aa9
+ms.sourcegitcommit: a70a59283fe664bef9ddab56df57a9fc46c91033
+ms.openlocfilehash: d02c2029121927192430ce030684200de1656418
 
 ---
 
-# Microsoft Passport ログイン サービスの作成
+# <a name="create-a-microsoft-passport-login-service"></a>Microsoft Passport ログイン サービスの作成
 
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -21,7 +21,7 @@ ms.openlocfilehash: 2250cc400828b2142bc5d152f54de554daa24aa9
 
 このプロジェクトを作成するには、C# と XAML の経験がいくらか必要です。 Windows 10 コンピューターで Visual Studio 2015 (Community Edition 以上) を使う必要もあります。
 
-## 演習 1: サーバー側のロジック
+## <a name="exercise-1-server-side-logic"></a>演習 1: サーバー側のロジック
 
 
 この演習では、最初のタブに組み込まれた Passport アプリケーションを使って作業を開始し、ローカルのモック サーバーとモック データベースを作成します。 このハンズオン ラボの目的は、Microsoft Passport を既存のシステムに統合する方法を説明することです。 モック サーバーとモック データベースを使うと、関係のない多くの設定が省略されます。 実際のアプリケーションでは、モック オブジェクトを実際のサービスとデータベースに置き換える必要があります。
@@ -30,9 +30,9 @@ ms.openlocfilehash: 2250cc400828b2142bc5d152f54de554daa24aa9
 -   まず、モック サーバーとモック データベースを実装します。 新しいフォルダーを "AuthService" という名前で作成します。 ソリューション エクスプローラーで、[PassportLogin (ユニバーサル Windows)] ソリューションを右クリックし、[追加]、[新しいフォルダー] の順に選びます。
 -   モック データベースに保存するデータ モデルの役割を果たす UserAccount クラスと PassportDevices クラスを作成します。 UserAccount は、従来型の認証サーバーに実装されているユーザー モデルと同様です。 AuthService フォルダーを右クリックし、"UserAccount.cs" という新しいクラスを追加します。
 
-    ![](images/passport-auth-1.png)
+    ![Passport の認証作成用フォルダー](images/passport-auth-1.png)
 
-    ![](images/passport-auth-2.png)
+    ![Passport の認証作成用クラス](images/passport-auth-2.png)
 
 -   クラス定義をパブリックに変更し、次のパブリック プロパティを追加します。 次の参照が必要です。
 
@@ -538,7 +538,7 @@ ms.openlocfilehash: 2250cc400828b2142bc5d152f54de554daa24aa9
     }
     ```
 
-## 演習 2: クライアント側のロジック
+## <a name="exercise-2-client-side-logic"></a>演習 2: クライアント側のロジック
 
 
 この演習では、最初のラボのクライアント側ビューとヘルパー クラスを変更して、AuthService クラスを使います。 実際には、AuthService が認証サーバーとなり、Web API を使ってサーバーとの間でデータを送受信する必要があります。 このハンズオン ラボでは、わかりやすいようにクライアントとサーバーはすべてローカルになっています。 目的は、Microsoft Passport API を使う方法を学習することです。
@@ -990,9 +990,9 @@ ms.openlocfilehash: 2250cc400828b2142bc5d152f54de554daa24aa9
 
 -   アプリをビルドして実行します (F5)。 資格情報 "sampleUsername" および "samplePassword" を使って、サンプル ユーザー アカウントにサインインします。 ようこそ画面には、デバイスを消去するボタンが表示されてもデバイスがないことがあります。 ユーザーを作成するときや Microsoft Passport を使うようにユーザーを移行するとき、Passport 情報は AuthService にプッシュされません。
 
-    ![](images/passport-auth-3.png)
+    ![Passport のログイン画面](images/passport-auth-3.png)
 
-    ![](images/passport-auth-4.png)
+    ![passport のログインの成功](images/passport-auth-4.png)
 
 -   Passport 情報を AuthService に送るには、MicrosoftPassportHelper.cs を更新する必要があります。 CreatePassportKeyAsync メソッドでは、成功した場合に true を返すだけではなく、KeyAttestation の取得を試みる新しいメソッドを呼び出す必要があります。 このハンズオン ラボではこの情報が AuthService に記録されないため、この情報をクライアント側で取得する方法を説明します。 CreatePassportKeyAsync メソッドを更新します。
 
@@ -1084,7 +1084,7 @@ ms.openlocfilehash: 2250cc400828b2142bc5d152f54de554daa24aa9
 -   Microsoft Passport 情報が AuthService に送信されるように、GetKeyAttestationAsync メソッドの最後の行のコメントを解除します。
 -   アプリケーションをビルドして実行し、既定の資格情報を使ってサインインします。 ようこそ画面に、デバイス ID が表示されるのがわかります。 別のデバイスでサインインした場合、それもここに表示されます (クラウド ホスト型認証サービスを使っていた場合)。 このハンズオン ラボでは、実際のデバイス ID が表示されます。 実際の実装では、ユーザーが理解して各デバイスの特定に使うことができるフレンドリ名を表示できます。
 
-    ![](images/passport-auth-5.png)
+    ![Passport でのログインに成功したデバイス ID](images/passport-auth-5.png)
 
 -   21. このハンズオン ラボを完了するには、ユーザー選択ページから選んでもう一度サインインするときにユーザーの要求とチャレンジが必要です。 AuthService には、チャレンジを要求するために作成した 2 つのメソッドと、署名済みのチャレンジを使う 1 つのメソッドがあります。 MicrosoftPassportHelper.cs で、"RequestSignAsync" という新しいメソッドを作成します。このメソッドは、AuthService にチャレンジを要求し、Passport API を使ってそのチャレンジにローカルに署名して、署名済みのチャレンジを AuthService に送信します。 このハンズオン ラボでは、AuthService が署名済みのチャレンジを受け取って true を返します。 実際の実装では、チャレンジが適切なデバイスの適切なユーザーによって署名されたことを判断する検証メカニズムを実装する必要があります。 次のメソッドを MicrosoftPassportHelper.cs に追加します。
 
@@ -1175,12 +1175,12 @@ ms.openlocfilehash: 2250cc400828b2142bc5d152f54de554daa24aa9
 
 練習用として、サービスとサーバー側で認証を実装する方法の詳細を記載しておきました。 ほとんどの場合、Microsoft Passport を使い始めるために移行が必要な既存のシステムがあり、各システムの詳細は異なっていることが予想されます。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [Microsoft Passport と Windows Hello](microsoft-passport.md)
 * [Microsoft Passport ログイン アプリ](microsoft-passport-login.md)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

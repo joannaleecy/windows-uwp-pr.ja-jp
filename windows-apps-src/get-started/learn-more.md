@@ -5,21 +5,20 @@ title: "次の手順"
 description: "初めてのアプリの作成が終わったので、デベロッパー センターの他の部分を見てみましょう。 ここでは、デベロッパー センターの他の部分に含まれるさまざまなセクションについて説明します。"
 keywords: "デベロッパー センター, 概要"
 translationtype: Human Translation
-ms.sourcegitcommit: 1c059edde92a48af610af1033c3b18ca729410aa
-ms.openlocfilehash: 6b7985137e02a348fafabf0aaf298c5d20095bd7
+ms.sourcegitcommit: 7e76c9abd4157c22b38d79b178f5f07827d336ca
+ms.openlocfilehash: 087c298f59798010628aefc428eedf9933bb2686
 
 ---
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-# 次の手順
+# <a name="whats-next"></a>次の手順
 
-アプリを作成するには、どこから手を着ければよいのでしょうか。 ここでは、アプリの作成に役立つデベロッパー センターのトピックを紹介します。 UWP プラットフォームでの開発が初めての場合は、<a href="https://channel9.msdn.com/">Channel 9</a> のビデオと <a href="https://www.microsoftvirtualacademy.com">Microsoft Virtual Academy</a> のコースをお試しください。 既に XAML と C# を使用している場合は、以下のトピックをすぐに参考にしていただけます。
+アプリを作成して Windows ストアに公開するには、どこから手を着ければよいのでしょうか。 UWP プラットフォームでの開発が初めての場合は、<a href="https://channel9.msdn.com/">Channel 9</a> のビデオと <a href="https://www.microsoftvirtualacademy.com">Microsoft Virtual Academy</a> のコースをお試しください。 既に XAML と C# を使用している場合は、以下のトピックを参照するか、直接「[GitHub からユニバーサル Windows プラットフォーム (UWP) のサンプルを取得する](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)」にお進みください。
 
-まず、UWP 関連のトピックを通読して、UWP プラットフォームがどのようなものかを理解されることをお勧めします。そのうえで、XAML コントロールを使用し、さらにカスタマイズして、ユーザー インターフェイスを作成する方法をお調べください。 XAML の最大の長所は、*データ バインディング*を使用することです。データ バインディングは、アプリに表示したい情報とコントロールを関連付けることができます。Windows プラットフォーム開発が初めての場合、これは理解が必要な重要な概念になります。
+アプリの作成では、数多くの便利なツールやフレームワークを利用することができ、それらの多くがクロスプラットフォーム開発をサポートします。 たとえば、2 Dゲームを作成する場合は、<a href="http://www.monogame.net">Monogame</a> の使用を検討してください。 3D ゲームの開発用には <a href="http://www.unity3d.com">Unity</a> があり、モバイル デバイスが中心の場合は <a href="http://www.xamarin.com">Xamarin</a> が便利です。
 
-アプリにアニメーションや効果を追加するなど、最新の Windows 10 のプログラミング テクニックを調べる場合は、[Windows 開発者向けブログ](https://blogs.windows.com/buildingapps)を確認します。
-
+初めて開発する場合は、まず、UWP 関連のトピックを通読して、UWP プラットフォームがどのようなものかを理解されることをお勧めします。そのうえで、XAML コントロールを使用し、さらにカスタマイズして、ユーザー インターフェイスを作成する方法をお調べください。 アプリのレイアウトには XAML を使います (使用方法について詳しくは、[このチュートリアル](../layout/grid-tutorial.md)をご覧ください)。しかし、XAML の真価は*データ バインディング*使用することです。データ バインディングは、アプリに表示する情報とコントロールを関連付けることができます。Windows プラットフォームでの開発が初めての場合、この概念を理解することが重要です。 
 <table class="wdg-noborder">
 <tr>
  <td width=60><img src="images/icon3.png" width=64></td>
@@ -28,11 +27,9 @@ ms.openlocfilehash: 6b7985137e02a348fafabf0aaf298c5d20095bd7
     <li><a href="https://msdn.microsoft.com/windows/uwp/launch-resume/app-lifecycle">UWP アプリのライフサイクル</a></li>
     <li><a href="https://developer.microsoft.com/windows/windows-10-for-developers">Windows 10 の優れた機能</a></ul></td>  
 </tr>
- 
- 
 <tr>
  <td width=60><img src="images/icon7.png" width=64></td>
-    <td><h2>UX と UI</h2><p>自由に使うことができるコントロールとその使い方を知りたい場合は、 以下のトピックを参照してください。コントロールとコードが連携するしくみや、アプリの外観に合わせてコントロールをカスタマイズする方法を説明しています。</p> <ul>
+    <td><h2>UX と UI</h2><p>自由に使うことができるコントロールとその使い方を知りたい場合は、 以下のトピックをご覧ください。コントロールとコードが連携するしくみや、アプリの外観に合わせてコントロールをカスタマイズする方法を説明しています。</p> <ul>
     <li><a href="https://developer.microsoft.com/windows/design">設計と UI</a></li>
     <li><a href="https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml">XAML を使ったページ レイアウトの定義</a></li>
     <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function">機能別コントロール</a></li>
@@ -42,8 +39,6 @@ ms.openlocfilehash: 6b7985137e02a348fafabf0aaf298c5d20095bd7
       <li><a href="https://developer.microsoft.com/windows/projects/campaigns/welcome-toolbox">事前に作成されたコントロールとパターンの選択に UWP コミュニティ ツールキットを使用する</a></li>
     </ul></td>  
 </tr>
- 
- 
 <tr>
  <td width=60><img src="images/icon6.png" width=64></td>
     <td><h2>データとサービス</h2><p>コードによって自動的にリストやグリッドを設定できるデータ バインドについて説明します。 外部リソースにリンクして、データをアプリに取り込む方法を知ることができます。</p> <ul>
@@ -52,8 +47,6 @@ ms.openlocfilehash: 6b7985137e02a348fafabf0aaf298c5d20095bd7
      <li><a href="https://msdn.microsoft.com/windows/uwp/data-access/index">データ アクセス</a></li>
     </ul></td>  
 </tr>
- 
-
 <tr>
  <td width=60><img src="images/icon4.png" width=64></td>
     <td><h2>公開</h2><p>作成したアプリを公開して、収益を得ましょう。 アプリがストアで公開されるようになるまでのプロセスを詳しく説明します。</p> <ul>
@@ -61,7 +54,6 @@ ms.openlocfilehash: 6b7985137e02a348fafabf0aaf298c5d20095bd7
     <li><a href="https://msdn.microsoft.com/windows/uwp/packaging/index">アプリのパッケージ化</a></li>
     </ul></td>  
 </tr>
- 
 <tr>
  <td width=60><img src="images/icon2.png" width=64></td>
     <td><h2>その他のリソース</h2><p>サンプル、チュートリアル、ビデオ、その他のツール、SDK を利用して、 アプリをレベル アップしましょう。</p>
@@ -78,14 +70,24 @@ ms.openlocfilehash: 6b7985137e02a348fafabf0aaf298c5d20095bd7
     </ul>
     </td>  
 </tr>
- 
-
-
 </table>
 
 <hr>
 
-## デベロッパー センターでのヘルプの検索
+## <a name="windows-developer-blog"></a>Windows 開発者向けブログ
+
+[Windows 開発者ブログ](https://blogs.windows.com/buildingapps)では、コーディング手法や、プロジェクトのアイデア、ツールに関する最新情報が定期的に投稿されています。 以下に、Windows 開発に関するお勧めの記事をいくつかご紹介します。
+
+* [Animations with the Visual layer (ビジュアル レイヤーを使ったアニメーション)](https://blogs.windows.com/buildingapps/2016/09/16/animations-with-the-visual-layer/#JM2XkQcL7MRSXe3X.97)
+* [Interop between XAML and the Visual layer (XAML とビジュアル レイヤー間の相互運用)](https://blogs.windows.com/buildingapps/2016/08/26/interop-between-xaml-and-the-visual-layer/#ue6O7MWpqrVFE81K.97)
+* [Creating beautiful effects for UWP (UWP 向けの美しい効果の作成)](https://blogs.windows.com/buildingapps/2016/09/12/creating-beautiful-effects-for-uwp/#85jsfw6PFXX825rR.97)
+* [Beautiful apps made possible and easy with Windows.UI (Windows UI で美しいアプリを簡単に作成)](https://blogs.windows.com/buildingapps/2016/08/23/beautiful-apps-made-possible-and-easy-with-windows-ui/#GBREkRSBwsRvi2uL.97)
+* [Polishing your app with animation and audio cues (アニメーションとオーディオ キューを活用して洗練されたアプリを実現)](https://blogs.windows.com/buildingapps/2016/08/09/polishing-your-app-with-animations-and-audio-cues/#hziKxt2xPwUE1oqU.97) 
+* [Adding color to your design (色を考慮したデザイン)](https://blogs.windows.com/buildingapps/2016/07/28/adding-color-to-your-design/#HcPqMlfPsuKETOIo.97)
+
+<hr>
+
+## <a name="finding-help-in-the-dev-center"></a>デベロッパー センターでのヘルプの検索
 
 [Microsoft デベロッパー センター](http://devcenter.microsoft.com)には、さまざまなツール、フレームワーク、およびプラットフォームについて大量のドキュメントがあります。 トピックやサンプルを検索するときは、UWP 関連のコンテンツを閲覧していることを確認してください。 適切なコンテンツを閲覧するには、
 API リファレンス コンテンツではなく、概念コンテンツを参照します。概念コンテンツのトピックであれば、URL に "UWP" という文字が含まれています。 API コンテンツのパスには、"Windows Runtime API" という文字が含まれています。 
@@ -100,7 +102,7 @@ API リファレンス コンテンツではなく、概念コンテンツを参
 <hr>
 
 
-## 重要なデベロッパー センターのトピック
+## <a name="important-dev-center-topics"></a>重要なデベロッパー センターのトピック
 
 以下は、デベロッパー センターのコンテンツの重要なセクションです。 
 
@@ -162,6 +164,10 @@ API リファレンス コンテンツではなく、概念コンテンツを参
 
 
 
-<!--HONumber=Nov16_HO1-->
+
+
+
+
+<!--HONumber=Dec16_HO1-->
 
 

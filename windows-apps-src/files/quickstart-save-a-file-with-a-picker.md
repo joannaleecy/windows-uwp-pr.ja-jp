@@ -1,15 +1,15 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 8BDDE64A-77D2-4F9D-A1A0-E4C634BCD890
 title: "ピッカーによるファイルの保存"
 description: "FileSavePicker を使って、ユーザーがアプリで保存するファイルの名前とその保存場所を指定できるようにします。"
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: 8e65131a913f5ea69438ff986151da11d3126314
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: ae6a9806e982a866834371a60788f7a788b04e47
 
 ---
 
-# ピッカーによるファイルの保存
+# <a name="save-a-file-with-a-picker"></a>ピッカーによるファイルの保存
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -26,7 +26,7 @@ ms.openlocfilehash: 8e65131a913f5ea69438ff986151da11d3126314
 
  
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 
 -   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
@@ -37,7 +37,7 @@ ms.openlocfilehash: 8e65131a913f5ea69438ff986151da11d3126314
 
     「[ファイル アクセス許可](file-access-permissions.md)」をご覧ください。
 
-## FileSavePicker: 手順
+## <a name="filesavepicker-step-by-step"></a>FileSavePicker: 手順
 
 
 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) を使って、ユーザーが保存するファイルの名前、種類、場所を指定できるようにします。 ファイル ピッカー オブジェクトを作成、カスタマイズ、および表示し、選ばれたファイルを表す返された [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを使ってデータを保存します。
@@ -114,6 +114,6 @@ Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

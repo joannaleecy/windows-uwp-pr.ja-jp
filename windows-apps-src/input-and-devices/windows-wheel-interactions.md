@@ -5,17 +5,17 @@ title: "Surface Dial の操作"
 label: Surface Dial interactions
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: e58306bb3b5ffc484575c874154875745a4aa917
-ms.openlocfilehash: d535af06ab720753980a1125df61323a96e2f406
+ms.sourcegitcommit: 0f7f54c5c5baccdedfe32bc7c71994e43a93f032
+ms.openlocfilehash: 08ac5d58f2650306b162e4dec7f4e606543ca80f
 
 ---
 
-# Surface Dial の操作
+# <a name="surface-dial-interactions"></a>Surface Dial の操作
 
 ![Surface Dial と Surface Studio の画像](images/windows-wheel/dial-pen-studio-600px.png)  
 *Surface Dial と Surface Studio、Surface ペン* ([Microsoft ストア](https://aka.ms/purchasesurfacedial)で購入できます)。
 
-## 概要
+## <a name="overview"></a>概要
 
 Surface Dial などの Windows Wheel デバイスは、Windows や Windows アプリで魅力的でユニークなユーザー操作エクスペリエンスを実現する、新しいカテゴリの入力デバイスです。 
 
@@ -44,7 +44,7 @@ Surface Dial は、*長押し*アクションと*クリック*アクションも
 | --- | --- | --- |
 | ![Surface Dial のオフスクリーン メニュー](images/windows-wheel/surface-dial-menu-offscreen.png) | | ![Surface Dial のオンスクリーン メニュー](images/windows-wheel/surface-dial-menu-onscreen.png) |
 
-## システム統合
+## <a name="system-integration"></a>システム統合
 
 Surface Dial は Windows と緊密に統合されており、システム ボリューム、スクロール、拡大/縮小、元に戻す/やり直しなど、一連の組み込みツールをメニューでサポートしています。
 
@@ -70,17 +70,17 @@ Surface Dial と共に使用する場合、これらのコントロールで、�
 ![Surface Dial メニューと Windows Ink ツール バーのルーラー ツール](images/windows-wheel/surface-dial-menu-inktoolbar-ruler.png)  
 *Surface Dial メニューと Windows Ink ツール バーのルーラー ツール*
 
-## ユーザーのカスタマイズ
+## <a name="user-customization"></a>ユーザーのカスタマイズ
 
 ユーザーは、既定のフォント、バイブレーション (または触覚フィードバック)、利き手など、Dial のエクスペリエンスの一部を、**[Windows の設定] -> [デバイス] -> [ホイール]** ページでカスタマイズできます。 
 
 Surface Dial ユーザー エクスペリエンスをカスタマイズする場合、特定の機能や動作が利用可能であり、ユーザーが有効にしていることを常に確認する必要があります。
 
-## カスタム ツール
+## <a name="custom-tools"></a>カスタム ツール
 
 ここでは、Surface Dial メニューで公開されるツールをカスタマイズするための UX と開発者の両方のガイダンスについて説明します。
 
-### UX ガイダンス
+### <a name="ux-guidance"></a>UX ガイダンス
 
 **ツールを現在のコンテキストに確実に対応させる** ツールの目的や Surface Dial の操作方法を明確かつ直感的にしている場合、ユーザーは操作をすばやく習得し、作業に集中することができます。
 
@@ -120,7 +120,7 @@ Surface Dial メニュー項目は無効な状態をサポートしていない�
   - スクロールは両方の回転方向の効果を示す
   - ([元に戻す] はプライマリ操作を指定するが、ユーザーは簡単に [やり直し)] （補完的なアクション） を推測して検出できる
 
-### 開発者向けガイダンス
+### <a name="developer-guidance"></a>開発者向けガイダンス
 
 包括的な一連の [Windows ランタイム API](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController) を使用してアプリの機能を補完するために、Surface Dial エクスペリエンスをカスタマイズできます。 
 
@@ -266,7 +266,7 @@ public MainPage()
 }
 ```
 
-## カスタム操作
+## <a name="custom-interactions"></a>カスタム操作
 
 前述のように、Surface Dial は 3 つのジェスチャ (長押し、回転、クリック) をサポートしており、それぞれ既定の操作に対応します。 
 
@@ -275,7 +275,7 @@ public MainPage()
 > [!NOTE]
 > 操作エクスペリエンスは、Surface Dial メニューの状態に依存します。 メニューがアクティブな場合はメニューが入力を処理し、それ以外の場合はアプリが入力を処理します。
 
-### 長押し
+### <a name="press-and-hold"></a>長押し
 
 このジェスチャは、Surface Dial メニューをアクティブにして表示します。このジェスチャに関連付けられているアプリの機能はありません。 
 
@@ -284,7 +284,7 @@ public MainPage()
 > [!NOTE]
 > Surface Dial を Surface Studio の画面上に配置している場合、Surface Dial の画面上の位置を中心として表示されます。
 
-### 回転
+### <a name="rotate"></a>回転
 
 Surface Dial は、アナログ値やコントロールのスムーズな増分の調整に関連する操作のための回転をサポートすることを主な目的として設計されています。
 
@@ -293,7 +293,7 @@ Surface Dial は、アナログ値やコントロールのスムーズな増分�
 > [!NOTE]
 > 触覚フィードバックは、ユーザーが **[Windows の設定] -> [デバイス] -> [ホイール]** ページで無効にすることができます。
 
-#### UX ガイダンス
+#### <a name="ux-guidance"></a>UX ガイダンス
 
 **連続的な高い回転感度のツールでは触覚フィードバックを無効にする**
 
@@ -320,7 +320,7 @@ Dial メニューの組み込みのツールとコマンドは、回転ベース
 | 縦方向 | Surface Dial の左側に基づいて上下のマッピング | 下 | 上 |
 | Z 軸 | 内 (またはより近い) が上/右にマップ<br/>外 (またはより遠い) が下/左にマップ | 内 | 外 |
 
-#### 開発者向けガイダンス
+#### <a name="developer-guidance"></a>開発者向けガイダンス
 
 ユーザーがデバイスを回転させると、[**RadialController.RotationChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.RotationChanged) イベントが、回転の方向を基準としたデルタ ([**RadialControllerRotationChangedEventArgs.RotationDeltaInDegrees**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerRotationChangedEventArgs.RotationDeltaInDegrees)) に基づいて発生します。 データの感度 (または解像度) は、[**RadialController.RotationResolutionInDegrees**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.RotationResolutionInDegrees) プロパティで設定できます。
 
@@ -359,11 +359,11 @@ private void MyController_ButtonClicked(RadialController sender,
 }
 ```
 
-### クリック
+### <a name="click"></a>クリック
 
 Surface Dial のクリックは、マウスの左ボタンのクリックと似ています (デバイスの回転状態は、この操作に影響しません)。
 
-#### UX ガイダンス
+#### <a name="ux-guidance"></a>UX ガイダンス
 
 **ユーザーが結果から簡単に回復できない場合は、このジェスチャに操作やコマンドをマップしない**
 
@@ -377,11 +377,11 @@ Surface Dial のクリックは、マウスの左ボタンのクリックと似�
 
 モーダル ツールの場合、アクティブな Surface Dial メニュー項目を、ターゲット ツールまたは以前に選択したメニュー項目にマップします。
 
-#### 開発者向けガイダンス
+#### <a name="developer-guidance"></a>開発者向けガイダンス
 
 Surface Dial がクリックされると、[**RadialController.ButtonClicked**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.ButtonClicked) イベントが発生します。 [**RadialControllerButtonClickedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs) には、Surface Dial が Surface Studio の画面に接触している位置と境界領域を格納する [**Contact**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs.Contact) プロパティが含まれています。 Surface Dial が画面に接触していない場合、このプロパティは null です。 
 
-### オンスクリーン
+### <a name="on-screen"></a>オンスクリーン
 
 前述のように、Surface Dial は Surface Studio と組み合わせて使用し、特殊なオンスクリーン モードで Surface Dial メニューを表示できます。 
 
@@ -391,7 +391,7 @@ Surface Dial がクリックされると、[**RadialController.ButtonClicked**](
 - Surface Dial の位置に基づいて、画面領域を拡大する
 - 画面の位置に基づくユニークなゲームの操作
 
-#### UX ガイダンス
+#### <a name="ux-guidance"></a>UX ガイダンス
 
 **画面上で Surface Dial が検出されたときにアプリが応答する必要がある**
 
@@ -415,7 +415,7 @@ Surface Dial がクリックされると、[**RadialController.ButtonClicked**](
 
 UI コンテキスト (コントロール、キャンバス、ウィンドウとの近さなど) に基づいてアクティブなツールを設定すると、タスクを実行するために必要な手順が減ることにより、ユーザー エクスペリエンスを向上させることができます。
 
-#### 開発者向けガイダンス
+#### <a name="developer-guidance"></a>開発者向けガイダンス
 
 Surface Dial が Surface Studio のデジタイザー サーフェス上に配置されると、[**RadialController.ScreenContactStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.ScreenContactStarted) イベントが発生し、接触情報 ([**RadialControllerScreenContactStartedEventArgs.Contact**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs.Contact)) がアプリに提供されます。
 
@@ -630,18 +630,17 @@ private void ActivateGridAtLocation(Point Location)
 ![Surface Dial のカスタム ツールを使用してアクティブ化されたサンプル アプリの UI の画像](images/windows-wheel/surface-dial-snippet-customtool4.png)  
 *Surface Dial のカスタム ツールを使用してアクティブ化されたサンプル アプリの UI*
 
-## まとめ
+## <a name="summary"></a>まとめ
 
 このトピックでは、Surface Studio 入力デバイスの概要を、UX および開発者向けのガイダンスと共に示し、オフスクリーンのシナリオおよび Surface Studio と共に使用する場合のオンスクリーンのシナリオでユーザー エクスペリエンスをカスタマイズする方法について説明しました。
 
-## フィードバック
+## <a name="feedback"></a>フィードバック
 
 質問、提案、フィードバックについては、[radialcontroller@microsoft.com](mailto:radialcontroller@microsoft.com) までお送りください。
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
-### API リファレンス
-
+### <a name="api-reference"></a>API リファレンス
 
 - [**RadialController** クラス](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController)
 - [**RadialControllerButtonClickedEventArgs** クラス](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs)
@@ -656,13 +655,13 @@ private void ActivateGridAtLocation(Point Location)
 - [**RadialControllerMenuKnownIcon** 列挙型](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenuKnownIcon) 
 - [**RadialControllerSystemMenuItemKind** 列挙型](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerSystemMenuItemKind) 
 
-### サンプル
+### <a name="samples"></a>サンプル
 
 [ユニバーサル Windows プラットフォーム のサンプル (C# と C++)](https://go.microsoft.com/fwlink/?linkid=832713)
 
 [Windows の従来のデスクトップのサンプル](https://aka.ms/radialcontrollerclassicsample)
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -3,33 +3,33 @@ author: Mtoepke
 title: "Xbox One 開発者プログラムの UWP の既知の問題"
 description: 
 translationtype: Human Translation
-ms.sourcegitcommit: 5774ada049e5f300e9cb990f5a079c8c21796f8b
-ms.openlocfilehash: 5892e00f4da74af5aa4e24fdd12b0df0e8a4a7d9
+ms.sourcegitcommit: 20ac6fb738de1c8aaf10f46c359842f31714dbbf
+ms.openlocfilehash: b6fe2f90e0aff4b8e77b4c20aec0d29f2a6a36f8
 
 ---
 
-# Xbox 開発者プログラムの UWP の既知の問題
+# <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Xbox 開発者プログラムの UWP の既知の問題
 
 このトピックでは、Xbox One 開発者プログラムの UWP の既知の問題について説明します。 このプログラムについて詳しくは、「[Xbox One の UWP](index.md)」をご覧ください。 
 
 \[API リファレンス トピックのリンクからこのページを見つけた、ユニバーサル デバイス ファミリの API の情報を探している方は、「[Xbox でまだサポートされていない UWP 機能](http://go.microsoft.com/fwlink/?LinkID=760755)」をご覧ください。\]
 
-以降に、このリリースで発生する可能性のある既知の問題を示していますが、すべての問題は網羅されていません。 
+以下では、発生する可能性のある既知の問題を示していますが、すべての問題は網羅されていません。 
 
-**お客様からのフィードバックは重要ですので**、問題が見つかりましたら[ユニバーサル Windows プラットフォーム アプリの開発](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop)フォーラムでご報告ください。 
+**お客様からのフィードバックは重要ですので**、問題が見つかりましたら[ユニバーサル Windows プラットフォーム アプリの開発](https://social.msdn.microsoft.com/forums/windowsapps/home?forum=wpdevelop)フォーラムでご報告ください。 
 
 行き詰まった場合は、このトピックの情報をお読みください。「[よく寄せられる質問](frequently-asked-questions.md)」を利用することも、フォーラムに質問を投稿することもできます。
 
 
 <!--## Developing games-->
  
-## バックグラウンド アプリのメモリ制限が完全に適用されない
+## <a name="memory-limits-for-background-apps-are-partially-enforced"></a>バックグラウンド アプリのメモリ制限が完全に適用されない
  
 バックグラウンドで実行されているアプリのメモリ使用量は最大 128 MB です。 Xbox One の UWP の現在のバージョンでは、アプリがバックグラウンドに移行したときにこの制限を上回っている場合、アプリは中断されます。 現在、既にバックグラウンドで実行されているアプリについては制限を上回っても、この制限が適用されません。つまり、バックグラウンドで実行中に 128 MB を上回っても、アプリはメモリを割り当てることができます。
  
 現時点では、この問題に対する回避策はありません。 したがってアプリ自体でメモリ使用量を管理し、バックグラウンドで実行しているときは 128 MB の制限を超えないようにしてください。
  
-## [保護者による制限] を有効にしたことにより VS からの展開に失敗する
+## <a name="deploying-from-vs-fails-with-parental-controls-turned-on"></a>[保護者による制限] を有効にしたことにより VS からの展開に失敗する
 
 本体で [設定] の [保護者による制限] を有効にした場合、VS からのアプリの起動が失敗します。
 
@@ -67,7 +67,7 @@ The following game engines have been confirmed to work:
 There are likely others that are working too. We would love to get your feedback on what you find. 
 Please use the forum to report any issues you see.-->
 
-## DirectX 12 のサポート
+## <a name="directx-12-support"></a>DirectX 12 のサポート
 
 Xbox One の UWP は、DirectX 11 の機能レベル 10 をサポートしています。 現時点では DirectX 12 はサポートされていません。 
 
@@ -91,11 +91,11 @@ In this developer preview, inbound and outbound network access from the console 
 Developers can still use HTTP and WebSockets.
 --> 
 
-## Xbox One のネットワーク ポートのブロック
+## <a name="blocked-networking-ports-on-xbox-one"></a>Xbox One のネットワーク ポートのブロック
 
 Xbox One デバイスでは、範囲 [49152, 65535] に含まれるポートへのユニバーサル Windows プラットフォーム (UWP) アプリのバインドは制限されています。 実行時にはこの範囲のポートへのバインドは成功しているように見えても、ネットワーク トラフィックはアプリに到達する前にエラーや警告なしで破棄される可能性があります。 できる限りポート 0 にアプリをバインドし、システムによってローカル ポートが選択されるようにしてください。 使用するポートを指定する必要がある場合は、範囲 [1025, 49151] 内のポート番号を使用する必要があります。この場合、IANA レジストリと競合しないように、確認してください。 詳しくは、[サービス名およびトランスポート プロトコル ポート番号のレジストリ](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)についてのページをご覧ください。
 
-## UWP API カバレッジ
+## <a name="uwp-api-coverage"></a>UWP API カバレッジ
 
 Xbox では、すべての UWP API がサポートされているわけではありません。 動作しないことが確認されている API の一覧については、「[Xbox でまだサポートされていない UWP 機能](http://go.microsoft.com/fwlink/p/?LinkId=760755)」をご覧ください。 他の API に問題が見つかった場合は、フォーラムでご報告ください。 
 
@@ -160,7 +160,7 @@ This will delete all of your games, apps, settings and content, deactivate Devel
 
 Sometimes this is resolved by sorting a column on the table.-->
 
-## WDP に移動すると証明書の警告が表示される
+## <a name="navigating-to-wdp-causes-a-certificate-warning"></a>WDP に移動すると証明書の警告が表示される
 
 提供された証明書についての、次のスクリーン ショットのような警告が表示されます。これは、Xbox One 本体によって署名されたセキュリティ証明書が、既知の信頼された発行元とは見なされないためです。 Windows Device Portal にアクセスするには、**[このサイトの閲覧を続行する]** をクリックします。
 
@@ -171,12 +171,12 @@ Sometimes this is resolved by sorting a column on the table.-->
 Occasionally, selecting the “Manage Windows Device Portal” option in Dev Home will cause Dev Home to silently exit to the Home screen. 
 This is caused by a failure in the WDP infrastructure on the console and can be resolved by restarting the console.-->
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 - [よく寄せられる質問](frequently-asked-questions.md)
 - [Xbox One の UWP](index.md)
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 
