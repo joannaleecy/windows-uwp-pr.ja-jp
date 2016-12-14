@@ -47,8 +47,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f2de946ca7210cf3f4c170c73902c1a727067e7c.5937e42a1c060b3c7d7107b026521265d55c1737.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\pen-and-stylus-interactions.945e27470c6cb2f2ab789832deb91ac592d1679f.ja-jp.xlf",
+      "LocXliffCommit": "674e35ee18fe66a2b4c02bcd57b9c64ebcbca0e0"
     },
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-adaptive-interactive-toasts.md.3f7eb58ce16172facccdfff095d4d37044fdfb9b.HT": {
       "SourceFilename": "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-adaptive-interactive-toasts.md",
@@ -317,8 +317,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2e35da3b3033ecbad8c48184d831ca9465142322.f5e735652a2a69c9b644b755db763341eaa7e381.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\get-app-acquisitions.f14b6d2a411a11089761ab93454ca2bd46c9fee7.ja-jp.xlf",
+      "LocXliffCommit": "674e35ee18fe66a2b4c02bcd57b9c64ebcbca0e0"
     },
     "windows-apps-src\\monetize\\csharp-code-examples-for-the-windows-store-submission-api.md.c7317e96f4b97c6f37ed07ccb769fca37a5daf92.HT": {
       "SourceFilename": "windows-apps-src\\monetize\\csharp-code-examples-for-the-windows-store-submission-api.md",
@@ -357,8 +357,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e3c0746439a44b399929b525f7e76554b30ba21e.227874650c594465e778eceea9bacd2c765babfe.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\index.7f38ebfeadef5946145c54c9dd9fb44894d2175a.ja-jp.xlf",
+      "LocXliffCommit": "674e35ee18fe66a2b4c02bcd57b9c64ebcbca0e0"
     },
     "windows-apps-src\\launch-resume\\handle-a-cancelled-background-task.md.573cee005543aa9d93e8ebc224dee4f0902218fa.HT": {
       "SourceFilename": "windows-apps-src\\launch-resume\\handle-a-cancelled-background-task.md",
@@ -467,8 +467,8 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\817238529effa410802bb3ff76cdbff763062667.c7de83c385da7141a59c13d06975c841a039311f.xml",
-      "LocXliff": null,
-      "LocXliffCommit": null
+      "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf",
+      "LocXliffCommit": "674e35ee18fe66a2b4c02bcd57b9c64ebcbca0e0"
     },
     "windows-apps-src\\launch-resume\\monitor-background-task-progress-and-completion.md.e77ecfac121eef22c4946a494ad93006c282b519.HT": {
       "SourceFilename": "windows-apps-src\\launch-resume\\monitor-background-task-progress-and-completion.md",
