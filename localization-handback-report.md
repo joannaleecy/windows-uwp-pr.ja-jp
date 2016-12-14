@@ -1,43 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 2
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\input-and-devices\designing-for-tv.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/ee0a2f5a34cbbef198a9012d0425bb84e65f3b33?path=windows-apps-src%2Finput-and-devices%2Fdesigning-for-tv.md&_a=contents) | InSyncHandedBackSuccess | [Details](#de76a3c6d4949b9203df79855e1748a81d76ca644356)
- [windows-apps-src\launch-resume\launch-a-remote-app.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/4e94ee5b3c56f3ec20e3592b97348c291297a670?path=windows-apps-src%2Flaunch-resume%2Flaunch-a-remote-app.md&_a=contents) | InSyncHandedBackSuccess | [Details](#d429ea4a6f8d52445c99cb170bb41c3fc1515dde4775)
 
 ## Item Details
-##### <a name='de76a3c6d4949b9203df79855e1748a81d76ca644356'></a> Source: [windows-apps-src\input-and-devices\designing-for-tv.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/ee0a2f5a34cbbef198a9012d0425bb84e65f3b33?path=windows-apps-src%2Finput-and-devices%2Fdesigning-for-tv.md&_a=contents)
-* Status: InSyncHandedBackSuccess
-* Target File: [windows-apps-src\input-and-devices\designing-for-tv.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/4a4bb3f871960b0bc76a3b61b0ad172b9e5af51c?path=windows-apps-src%2Finput-and-devices%2Fdesigning-for-tv.md&_a=contents)
-* Handoff File: [designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/d696d2041dabc9df9d3a7ee32eaf2a638a13aea3?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fdesigning-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2016-12-02 01:16:21
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/ab81087c19ab60f2ca4b55d9cc8759fee0c637da?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fdesigning-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.ja-jp.xlf&_a=contents)
-* Handback Datetime: 2016-12-14 16:13:17
-* Bilingual File: [designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/674e35ee18fe66a2b4c02bcd57b9c64ebcbca0e0?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fdesigning-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.ja-jp.xlf&_a=contents)
-* Bilingual Datetime: 2016-12-14 14:21:41
-* [Back to Top](#report-top)
-
-##### <a name='d429ea4a6f8d52445c99cb170bb41c3fc1515dde4775'></a> Source: [windows-apps-src\launch-resume\launch-a-remote-app.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/4e94ee5b3c56f3ec20e3592b97348c291297a670?path=windows-apps-src%2Flaunch-resume%2Flaunch-a-remote-app.md&_a=contents)
-* Status: InSyncHandedBackSuccess
-* Target File: [windows-apps-src\launch-resume\launch-a-remote-app.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/4a4bb3f871960b0bc76a3b61b0ad172b9e5af51c?path=windows-apps-src%2Flaunch-resume%2Flaunch-a-remote-app.md&_a=contents)
-* Handoff File: [launch-a-remote-app.ca9376133d84e80a1e47cffe465fc9586a55369d.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/d696d2041dabc9df9d3a7ee32eaf2a638a13aea3?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Flaunch-a-remote-app.ca9376133d84e80a1e47cffe465fc9586a55369d.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2016-12-02 01:16:21
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [launch-a-remote-app.ca9376133d84e80a1e47cffe465fc9586a55369d.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/ab81087c19ab60f2ca4b55d9cc8759fee0c637da?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Flaunch-a-remote-app.ca9376133d84e80a1e47cffe465fc9586a55369d.ja-jp.xlf&_a=contents)
-* Handback Datetime: 2016-12-14 16:13:17
-* Bilingual File: [launch-a-remote-app.ca9376133d84e80a1e47cffe465fc9586a55369d.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/674e35ee18fe66a2b4c02bcd57b9c64ebcbca0e0?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Flaunch-a-remote-app.ca9376133d84e80a1e47cffe465fc9586a55369d.ja-jp.xlf&_a=contents)
-* Bilingual Datetime: 2016-12-14 14:21:41
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
