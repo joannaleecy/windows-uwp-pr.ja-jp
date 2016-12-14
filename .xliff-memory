@@ -629,6 +629,56 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\72d4d4c1772ec78559071d5e6ac8ffbdd9c8cf28.14cc392a40fd3d786c4d5209b43586064a54f084.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\cortana-design-guidelines.md.923179e5ae2332a2e8adc4e0b2a711402ea65c91.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\cortana-design-guidelines.md",
+      "XliffHash": "923179e5ae2332a2e8adc4e0b2a711402ea65c91",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9e156ee056a6f0bfb72baec1e23e189308f71313.0acd52275a556705dc72fbf8a3cc23e1d123919c.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md.6cb64ba2e26c672cbfa5497555ce1e359608da5f.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md",
+      "XliffHash": "6cb64ba2e26c672cbfa5497555ce1e359608da5f",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\dd9ddb3c7865cf1ec1248fb2fba9588519ff372e.1cd6634070f7c2a935b21bb173e63c438716e52e.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\access-keys.md.f07e2fc3933d5c8db3944c04cc2628a18797ff5a.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\access-keys.md",
+      "XliffHash": "f07e2fc3933d5c8db3944c04cc2628a18797ff5a",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\34cce6acc786fe34b3d94faaec57011474e029ff.90fc82ac484ea1e9d8837024e7f0b96046cb118d.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\convert-ink-to-text.md.2d5e46d82e4f969abf589523b364b51ca1d3ce19.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\convert-ink-to-text.md",
+      "XliffHash": "2d5e46d82e4f969abf589523b364b51ca1d3ce19",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c832c3c3626ac5f75eaac4317b6779c410693742.0588c26cfd05a6ff0358741d4ddaba5daf9c66fa.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\cortana-interactions.md.dfc6c76170a03aa8349a86563c6a1df790877cf1.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\cortana-interactions.md",
+      "XliffHash": "dfc6c76170a03aa8349a86563c6a1df790877cf1",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8dcf45951723c0bf2302b59ef475f3b0fa973d5e.485f005e52ba9879fab0a040b6791c9e785b2c7c.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

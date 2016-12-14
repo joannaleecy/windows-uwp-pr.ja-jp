@@ -1175,6 +1175,9 @@
   "2b4bae1606f9b51e2d4901218ebd2d616e4c5edc": [
     "windows-apps-src\\index.md"
   ],
+  "c832c3c3626ac5f75eaac4317b6779c410693742": [
+    "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
+  ],
   "c402843cce752a54d8ff7301d892ef8014350a07": [
     "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
   ],
@@ -1184,8 +1187,14 @@
   "26dc8910c779dc46d19be75abd49c20b750a9843": [
     "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
   ],
+  "9e156ee056a6f0bfb72baec1e23e189308f71313": [
+    "windows-apps-src\\input-and-devices\\cortana-design-guidelines.md"
+  ],
   "b3612b71b5e6843d2326c9874e674cfb77900e7e": [
     "windows-apps-src\\input-and-devices\\cortana-design-guidelines.md"
+  ],
+  "8dcf45951723c0bf2302b59ef475f3b0fa973d5e": [
+    "windows-apps-src\\input-and-devices\\cortana-interactions.md"
   ],
   "8e853962cdea36a6738c094851d461c700aafd73": [
     "windows-apps-src\\input-and-devices\\cortana-interactions.md"
@@ -2966,6 +2975,9 @@
   "d38b41852a225e9a4fb1f571dc4749c45f3c5956": [
     "windows-apps-src\\debug-test-perf\\app-analysis.md"
   ],
+  "34cce6acc786fe34b3d94faaec57011474e029ff": [
+    "windows-apps-src\\input-and-devices\\access-keys.md"
+  ],
   "dfe89e4d4fd089dde6b7b307325b8fe43de82c10": [
     "windows-apps-src\\input-and-devices\\access-keys.md"
   ],
@@ -3457,6 +3469,9 @@
   ],
   "dbd2d5d7924cfbfd48d20f48ccfcd4bfe62db645": [
     "windows-apps-src\\get-started\\get-uwp-app-samples.md"
+  ],
+  "dd9ddb3c7865cf1ec1248fb2fba9588519ff372e": [
+    "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md"
   ],
   "08ac5d58f2650306b162e4dec7f4e606543ca80f": [
     "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md"
