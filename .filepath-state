@@ -3302,11 +3302,17 @@
   "75548ee4689fd31d734c570f8e3eca5d33a6181f": [
     "windows-apps-src\\monetize\\manage-add-ons.md"
   ],
+  "c59f1d856044493dcff87b96ed1626bc0d8a0b9a": [
+    "windows-apps-src\\monetize\\manage-add-on-submissions.md"
+  ],
   "755ec8c5b2d7d4b247fd1944c4efc5fe20184619": [
     "windows-apps-src\\monetize\\manage-add-on-submissions.md"
   ],
   "a5e1f8940f53f228808e5a6540759199c4440645": [
     "windows-apps-src\\monetize\\manage-add-on-submissions.md"
+  ],
+  "3d5d6ed974e1640bc3a44b7187adb2bf87252de2": [
+    "windows-apps-src\\monetize\\manage-app-submissions.md"
   ],
   "7698076fec7f0b38c8608214629ba43ab1bb1c07": [
     "windows-apps-src\\monetize\\manage-app-submissions.md"
@@ -3316,6 +3322,9 @@
   ],
   "de1c23d721cee67d813520e3a23eb553cd90b7e9": [
     "windows-apps-src\\monetize\\manage-flights.md"
+  ],
+  "68030bcb51cb073f913102848b075bd2758dfacf": [
+    "windows-apps-src\\monetize\\manage-flight-submissions.md"
   ],
   "72d4d4c1772ec78559071d5e6ac8ffbdd9c8cf28": [
     "windows-apps-src\\monetize\\manage-flight-submissions.md"
