@@ -2111,8 +2111,14 @@
   "f8bcda0cd2e31026f90f3a84a15674c00691f01d": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
   ],
+  "1ef54c3c45113e434333058d0f039e213ea8eed2": [
+    "windows-apps-src\\porting\\desktop-to-uwp-root.md"
+  ],
   "170ed75d1cd865bfc8e4feb776fce4332cc67850": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
+  ],
+  "f002d3a73946d1505cb8e4525e9d4d1be0442372": [
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
   "4095cfbe96f239afb5f3173e0a7f84e01d63452c": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
@@ -3287,6 +3293,9 @@
   "1172be1072f0c539828a08655236be467c6c9fba": [
     "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
   ],
+  "8d88e0df536831551f2e1496d94ca4ec37b52826": [
+    "windows-apps-src\\monetize\\csharp-code-examples-for-the-windows-store-submission-api.md"
+  ],
   "8697ba13142cd2e89d7c72ac7c68691853ce3894": [
     "windows-apps-src\\monetize\\csharp-code-examples-for-the-windows-store-submission-api.md"
   ],
@@ -3350,6 +3359,9 @@
   "f93b26201ea45dc456013737fef0382aadb56e7f": [
     "windows-apps-src\\monetize\\get-status-for-an-app-submission.md"
   ],
+  "f97419507510a432aa19cbfadd86a3a1d9cc4aec": [
+    "windows-apps-src\\monetize\\java-code-examples-for-the-windows-store-submission-api.md"
+  ],
   "ffa9503623d9da89eae1e305dc7b9cfbdf389a7f": [
     "windows-apps-src\\monetize\\java-code-examples-for-the-windows-store-submission-api.md"
   ],
@@ -3388,6 +3400,9 @@
   ],
   "7b59bb255774c8050232831e7f0d7a78a921ec6d": [
     "windows-apps-src\\monetize\\manage-flight-submissions.md"
+  ],
+  "2ea28bd7c1f3d075036453364d2a91305d8dd7e7": [
+    "windows-apps-src\\monetize\\python-code-examples-for-the-windows-store-submission-api.md"
   ],
   "876b02ddc78391407cc59cdd123e96c2d06e5d60": [
     "windows-apps-src\\monetize\\python-code-examples-for-the-windows-store-submission-api.md"
