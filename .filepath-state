@@ -1268,6 +1268,9 @@
   "8e853962cdea36a6738c094851d461c700aafd73": [
     "windows-apps-src\\input-and-devices\\cortana-interactions.md"
   ],
+  "afcc64e6b000df1a7380b4cc22101ebb1826d7cd": [
+    "windows-apps-src\\input-and-devices\\custom-text-input.md"
+  ],
   "edb7f02a4f0292128189f805f733a6c102b524f8": [
     "windows-apps-src\\input-and-devices\\custom-text-input.md"
   ],
@@ -1277,14 +1280,23 @@
   "1cfdfe6f5da1752db823477a2dabad84304406a0": [
     "windows-apps-src\\input-and-devices\\deep-link-into-your-app-from-cortana.md"
   ],
+  "c75ee725ce4bc9fc33d9ea13e4ab92ed60bfb04d": [
+    "windows-apps-src\\input-and-devices\\define-custom-recognition-constraints.md"
+  ],
   "b2f8f18d89633e7c53e5311a108631681fe51673": [
     "windows-apps-src\\input-and-devices\\define-custom-recognition-constraints.md"
   ],
   "d619cd6b3c9f5d62ca7d68f555e4c051abaf9bad": [
     "windows-apps-src\\input-and-devices\\define-custom-recognition-constraints.md"
   ],
+  "a138e0ba73da792a63f1c22ee4342a8157f2a136": [
+    "windows-apps-src\\input-and-devices\\designing-for-tv.md"
+  ],
   "de76a3c6d4949b9203df79855e1748a81d76ca64": [
     "windows-apps-src\\input-and-devices\\designing-for-tv.md"
+  ],
+  "de04c759b3080a6c3d3c9a1bb0f8a73b049d3991": [
+    "windows-apps-src\\input-and-devices\\device-primer.md"
   ],
   "5fe3c296e30d4080a9b3d7e82bc3bf819917a4e5": [
     "windows-apps-src\\input-and-devices\\device-primer.md"
@@ -1294,6 +1306,9 @@
   ],
   "4a010fc5d1be3167bcca93231f740d6f087f303e": [
     "windows-apps-src\\input-and-devices\\dynamically-modify-voice-command-definition--vcd--phrase-lists.md"
+  ],
+  "f4353807c83cbf91c385b31acfd481abb6ea5aed": [
+    "windows-apps-src\\input-and-devices\\enable-continuous-dictation.md"
   ],
   "159129f944b8f641ec713cf48a33121bef61d901": [
     "windows-apps-src\\input-and-devices\\enable-continuous-dictation.md"
@@ -1331,6 +1346,9 @@
   "09e2241523411daa372bc7630d13b96a2aa8203b": [
     "windows-apps-src\\input-and-devices\\guidelines-for-targeting.md"
   ],
+  "bb3a231a842698c18fc496c87705d269dfbeaa58": [
+    "windows-apps-src\\input-and-devices\\guidelines-for-textselection.md"
+  ],
   "b4e1f1788b9388bd032d6496b268b47951d45171": [
     "windows-apps-src\\input-and-devices\\guidelines-for-textselection.md"
   ],
@@ -1340,17 +1358,26 @@
   "28dfadf6010aed3fb2ed0d03b73f92631c17fcf4": [
     "windows-apps-src\\input-and-devices\\guidelines-for-user-interaction.md"
   ],
+  "ab7a6cfabb98eaf841849f5045e7ebce1ec86d65": [
+    "windows-apps-src\\input-and-devices\\guidelines-for-visualfeedback.md"
+  ],
   "abc0695d2d330eb870edd5a23c6f5af779034662": [
     "windows-apps-src\\input-and-devices\\guidelines-for-visualfeedback.md"
   ],
   "388bdc42610d05a4decb5c8aecadcaf2f78b26f8": [
     "windows-apps-src\\input-and-devices\\guidelines-for-visualfeedback.md"
   ],
+  "ba4288d93924d3a32a0a659dea67af28fb607987": [
+    "windows-apps-src\\input-and-devices\\handle-pointer-input.md"
+  ],
   "bcd4c40ae36419f7862e1f305d6a2cc7c1f39974": [
     "windows-apps-src\\input-and-devices\\handle-pointer-input.md"
   ],
   "2053062f6a5f850da8983bce2465cd10cdc01d56": [
     "windows-apps-src\\input-and-devices\\handle-pointer-input.md"
+  ],
+  "20230362a38d4541fbed25ac822c96032f7b6d8f": [
+    "windows-apps-src\\input-and-devices\\identify-input-devices.md"
   ],
   "5cc2149bc7921508e03a13e004210743e6b280f5": [
     "windows-apps-src\\input-and-devices\\identify-input-devices.md"
@@ -1378,6 +1405,9 @@
   ],
   "6bbfb7877a75081ee422015da0e434cf6fa0ff36": [
     "windows-apps-src\\input-and-devices\\launch-a-foreground-app-with-voice-commands-in-cortana.md"
+  ],
+  "a6f6e4c04f608898d2871113f38fe647b62bf8a5": [
+    "windows-apps-src\\input-and-devices\\manage-issues-with-audio-input.md"
   ],
   "9bbdc1ac23804c83f6e6bba40a34aad922586a1b": [
     "windows-apps-src\\input-and-devices\\manage-issues-with-audio-input.md"
@@ -1415,11 +1445,17 @@
   "d4458b66f4f1917e99495353a088680b19cb94c9": [
     "windows-apps-src\\input-and-devices\\save-and-load-ink.md"
   ],
+  "770a34c7c190540456a2748290b0aa557fcc1800": [
+    "windows-apps-src\\input-and-devices\\set-speech-recognition-timeouts.md"
+  ],
   "e3f3e90caf29736a4216fe11fa05693899763a35": [
     "windows-apps-src\\input-and-devices\\set-speech-recognition-timeouts.md"
   ],
   "0e5b60b2a59478899343ed4dee9d9c2039607491": [
     "windows-apps-src\\input-and-devices\\set-speech-recognition-timeouts.md"
+  ],
+  "42ddaea1de6dc4354e776b7d6db79486a6b3057e": [
+    "windows-apps-src\\input-and-devices\\specify-the-speech-recognizer-language.md"
   ],
   "709eaee0623a2fbb8e6392741ca0d18b68e32152": [
     "windows-apps-src\\input-and-devices\\specify-the-speech-recognizer-language.md"
@@ -1427,8 +1463,14 @@
   "9abde4aa5489780f3ee2e9b5e7ecbdfa4dd53b93": [
     "windows-apps-src\\input-and-devices\\specify-the-speech-recognizer-language.md"
   ],
+  "5080fe9496b7a13336b42a83fd569e44f43ba2db": [
+    "windows-apps-src\\input-and-devices\\speech-interactions.md"
+  ],
   "5efb2d1fc6a63e372e91cfdc8ae5e8117ff047d5": [
     "windows-apps-src\\input-and-devices\\speech-interactions.md"
+  ],
+  "a4de0955eb6bd01ef5279b5b8d553fe1d1dd50f2": [
+    "windows-apps-src\\input-and-devices\\speech-recognition.md"
   ],
   "61ca877a5f4c3e3bc36c51c94b4c1947d7bc40ae": [
     "windows-apps-src\\input-and-devices\\speech-recognition.md"
@@ -1439,14 +1481,23 @@
   "281c9fa2f9dfd2415e8d8555084fea83cb84d9e7": [
     "windows-apps-src\\input-and-devices\\support-natural-language-voice-commands-in-cortana.md"
   ],
+  "26f80e2619ea7b80a49d54278507c83461fe2336": [
+    "windows-apps-src\\input-and-devices\\touch-interactions.md"
+  ],
   "4941f3013714047d7b5bb597eebb99ee3ab5868f": [
     "windows-apps-src\\input-and-devices\\touch-interactions.md"
   ],
   "db38bfecadb7568e602646222358e0a111c638bc": [
     "windows-apps-src\\input-and-devices\\touch-interactions.md"
   ],
+  "dd91c8a6c58c25799a0c43b8632fade5309850cc": [
+    "windows-apps-src\\input-and-devices\\touchpad-interactions.md"
+  ],
   "30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b": [
     "windows-apps-src\\input-and-devices\\touchpad-interactions.md"
+  ],
+  "caaa6228f2d5b2bb6566ccb285d90a396a1caf01": [
+    "windows-apps-src\\input-and-devices\\use-input-scope-to-change-the-touch-keyboard.md"
   ],
   "8c161b644d2ea3c3fd469b8082306f7d4e00d471": [
     "windows-apps-src\\input-and-devices\\use-input-scope-to-change-the-touch-keyboard.md"
@@ -3032,6 +3083,9 @@
   "034dc2b7be69763416192014abe24b9bf924c443": [
     "windows-apps-src\\contacts-and-calendar\\integrating-with-contacts.md"
   ],
+  "e2ffb7bfb7bb602fdc3462da84f60f4ae12d9da8": [
+    "windows-apps-src\\controls-and-patterns\\inking-controls.md"
+  ],
   "c375d4069d5dd6e33afd85362dfa36d02b773d01": [
     "windows-apps-src\\controls-and-patterns\\inking-controls.md"
   ],
@@ -3397,6 +3451,9 @@
   ],
   "dbd2d5d7924cfbfd48d20f48ccfcd4bfe62db645": [
     "windows-apps-src\\get-started\\get-uwp-app-samples.md"
+  ],
+  "96b9a2e213c36b8f92664185e9cdcaea6d457368": [
+    "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md"
   ],
   "dd9ddb3c7865cf1ec1248fb2fba9588519ff372e": [
     "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md"

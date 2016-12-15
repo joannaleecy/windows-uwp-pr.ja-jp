@@ -646,7 +646,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\dd9ddb3c7865cf1ec1248fb2fba9588519ff372e.1cd6634070f7c2a935b21bb173e63c438716e52e.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\96b9a2e213c36b8f92664185e9cdcaea6d457368.79f4da6af074a171da4312b19d09028c9c542251.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -2026,7 +2026,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c375d4069d5dd6e33afd85362dfa36d02b773d01.482dc3f1ed9ed7b9463c05ab76f378e8e91d36e7.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e2ffb7bfb7bb602fdc3462da84f60f4ae12d9da8.bb78689f04ba76d87e2946d75a81bb23443327ba.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -2177,6 +2177,176 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\4420ecac17c41858aac7379b4dfaaa43b853318d.014c3fbbe3eceb41c586cb494feab9ef89691d73.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\handle-pointer-input.md.2bc0d782ada35da89309e950392dc5d2194ff79c.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\handle-pointer-input.md",
+      "XliffHash": "2bc0d782ada35da89309e950392dc5d2194ff79c",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ba4288d93924d3a32a0a659dea67af28fb607987.cdebe60a47f5408352518b99ca55e477919d77db.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\guidelines-for-visualfeedback.md.c072193e88e3048bfbf66c104139adbdb2118790.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\guidelines-for-visualfeedback.md",
+      "XliffHash": "c072193e88e3048bfbf66c104139adbdb2118790",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ab7a6cfabb98eaf841849f5045e7ebce1ec86d65.ae27f5860782fd5372d1806fc12a4979ef873bc0.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\touch-interactions.md.2e1071396c177cc1309d7567d57656dc8c7e6dd9.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\touch-interactions.md",
+      "XliffHash": "2e1071396c177cc1309d7567d57656dc8c7e6dd9",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\26f80e2619ea7b80a49d54278507c83461fe2336.d1bb45e0e3e9af5060ef2fccbfbaf5f3c2e39f6d.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\set-speech-recognition-timeouts.md.74c873c27e50eb232fb8925d2a0580d2b32952a1.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\set-speech-recognition-timeouts.md",
+      "XliffHash": "74c873c27e50eb232fb8925d2a0580d2b32952a1",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\770a34c7c190540456a2748290b0aa557fcc1800.f4e777549f61a7741d1da3f7fa49441af38d2b80.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\device-primer.md.a2a96c1dab4623018805d302b373c4353462b3c5.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\device-primer.md",
+      "XliffHash": "a2a96c1dab4623018805d302b373c4353462b3c5",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\de04c759b3080a6c3d3c9a1bb0f8a73b049d3991.ddf5a305e91102721383a9d169fcfeea9108a19c.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\speech-interactions.md.38e2aeb54171fd538546e92c87bb7f9222e42bb6.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\speech-interactions.md",
+      "XliffHash": "38e2aeb54171fd538546e92c87bb7f9222e42bb6",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5080fe9496b7a13336b42a83fd569e44f43ba2db.7cf713baa4c7a27f702e3093b908b071544ccb1f.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\identify-input-devices.md.9a872f63efc5c20f3d69dbf169c45597c57e2cba.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\identify-input-devices.md",
+      "XliffHash": "9a872f63efc5c20f3d69dbf169c45597c57e2cba",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\20230362a38d4541fbed25ac822c96032f7b6d8f.a6991f891fb5bf6d9739e5a6e6de4e40dbe56bf0.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\speech-recognition.md.d9cbd570ab1dcee8566d91e869e1a89e04249dcc.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\speech-recognition.md",
+      "XliffHash": "d9cbd570ab1dcee8566d91e869e1a89e04249dcc",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a4de0955eb6bd01ef5279b5b8d553fe1d1dd50f2.f14bea3211c600462de9ef5163315ab3e5ac6479.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\guidelines-for-textselection.md.504b18670169498053f466ccfe188c2c8132fda2.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\guidelines-for-textselection.md",
+      "XliffHash": "504b18670169498053f466ccfe188c2c8132fda2",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\bb3a231a842698c18fc496c87705d269dfbeaa58.3ecd7a54e0fb417f5d58febe45df694b492cd436.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\define-custom-recognition-constraints.md.26b411fe7fc6cf0a4dc34256d666c3477f103a33.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\define-custom-recognition-constraints.md",
+      "XliffHash": "26b411fe7fc6cf0a4dc34256d666c3477f103a33",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c75ee725ce4bc9fc33d9ea13e4ab92ed60bfb04d.9e4c4a5bce838e07e6c7d5a8a6efd533e1f1122b.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\specify-the-speech-recognizer-language.md.a284613ac54977d7688abcbd3366d912ae618ef9.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\specify-the-speech-recognizer-language.md",
+      "XliffHash": "a284613ac54977d7688abcbd3366d912ae618ef9",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\42ddaea1de6dc4354e776b7d6db79486a6b3057e.42d99bcf12eb7db795fe9075083350812cabc20e.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\manage-issues-with-audio-input.md.2e643c16dda31b5d8941d469938aec92f4d6e103.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\manage-issues-with-audio-input.md",
+      "XliffHash": "2e643c16dda31b5d8941d469938aec92f4d6e103",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a6f6e4c04f608898d2871113f38fe647b62bf8a5.9925e6209708a97c606be2a7d2044d6823a46018.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\designing-for-tv.md.11486c1dc2f50232b2faafb654760e4fc88d9418.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\designing-for-tv.md",
+      "XliffHash": "11486c1dc2f50232b2faafb654760e4fc88d9418",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a138e0ba73da792a63f1c22ee4342a8157f2a136.a8a4ec39ec066e39440a1a82aaa8afbb342fa1c6.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\enable-continuous-dictation.md.a53ad2ddf1e0caaeb321cc404a6b105cf63f3f8c.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\enable-continuous-dictation.md",
+      "XliffHash": "a53ad2ddf1e0caaeb321cc404a6b105cf63f3f8c",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f4353807c83cbf91c385b31acfd481abb6ea5aed.f984d4605854c3762d2533b333294d2a8853e685.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\use-input-scope-to-change-the-touch-keyboard.md.172d2e7d7a444c6875ea2c1bb36208e7314c44b2.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\use-input-scope-to-change-the-touch-keyboard.md",
+      "XliffHash": "172d2e7d7a444c6875ea2c1bb36208e7314c44b2",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\caaa6228f2d5b2bb6566ccb285d90a396a1caf01.1289b01775d4b695dfebfaf2ab8858c6105cd653.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\touchpad-interactions.md.394077629175d6cbb3d0373a0b14061347515d20.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\touchpad-interactions.md",
+      "XliffHash": "394077629175d6cbb3d0373a0b14061347515d20",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\dd91c8a6c58c25799a0c43b8632fade5309850cc.819a528ec7d17655d999098032828e038f244f20.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\custom-text-input.md.ec206ac90f4796974ec564cc600e3302bfd3c5bc.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\custom-text-input.md",
+      "XliffHash": "ec206ac90f4796974ec564cc600e3302bfd3c5bc",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\afcc64e6b000df1a7380b4cc22101ebb1826d7cd.d8f4ca44773c5a929819c742a2cc5bcfa9a91e58.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }
