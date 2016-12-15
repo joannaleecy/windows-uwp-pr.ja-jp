@@ -215,6 +215,9 @@
   "a5af97156ade8574537e38e50c45b9b15f506980": [
     "windows-apps-src\\audio-video-camera\\scene-analysis-for-media-capture.md"
   ],
+  "828cbddd9568bd4e9d0a571880a867afff293e34": [
+    "windows-apps-src\\audio-video-camera\\set-media-encoding-properties.md"
+  ],
   "1b20578fe52c004a55c5099ccb89e8c180571009": [
     "windows-apps-src\\audio-video-camera\\set-media-encoding-properties.md"
   ],
@@ -2117,6 +2120,9 @@
   "170ed75d1cd865bfc8e4feb776fce4332cc67850": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
+  "3ffd664892fe5ee589d3bf5704e2eeed178bf5f3": [
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
+  ],
   "f002d3a73946d1505cb8e4525e9d4d1be0442372": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
@@ -2645,6 +2651,9 @@
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "089d3eb6c687ca2bc2e8704b261f9ec469c456a4": [
+    "windows-apps-src\\TOC.md"
+  ],
   "e9a1d69687fb284f78dc5f9743e206ae01f49b0b": [
     "windows-apps-src\\TOC.md"
   ],
@@ -3080,6 +3089,9 @@
   "66240809d47247312d9d4c49c7bf36ff70295559": [
     "windows-apps-src\\audio-video-camera\\play-audio-and-video-with-mediaplayer.md"
   ],
+  "11e09d9b447e9daa0498377a67ef235bdab168dd": [
+    "windows-apps-src\\audio-video-camera\\process-media-frames-with-mediaframereader.md"
+  ],
   "648874a50dbe333f1bb6291de646d9088eec1528": [
     "windows-apps-src\\audio-video-camera\\process-media-frames-with-mediaframereader.md"
   ],
@@ -3163,6 +3175,9 @@
   ],
   "80e89e24236903ab90f7c4fe326782a0a7e5272f": [
     "windows-apps-src\\launch-resume\\reduce-memory-usage.md"
+  ],
+  "524a0897b6b8a8d17bb7493dc4d9e4357d8c1456": [
+    "windows-apps-src\\launch-resume\\web-to-app-linking.md"
   ],
   "e5c815ef0c776954e5b0d7f1cb9bd5e32e10356c": [
     "windows-apps-src\\launch-resume\\web-to-app-linking.md"
@@ -3601,5 +3616,8 @@
   ],
   "862dc3a96e5c4a88efb4e9d51bc914b9e39e6465": [
     "windows-apps-src\\layout\\grid.md"
+  ],
+  "2927588bc096ef1ed9e8451cea73ba78efa9d7c0": [
+    "windows-apps-src\\publish\\understand-irs-tax-forms.md"
   ]
 }

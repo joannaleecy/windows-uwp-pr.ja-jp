@@ -2389,6 +2389,66 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f002d3a73946d1505cb8e4525e9d4d1be0442372.46a5c92c2e57fe39ef0bda21a4474bb49226e424.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\TOC.md.54bcfe2e86ad189447dd2e07d14f2cc42d576663.HT": {
+      "SourceFilename": "windows-apps-src\\TOC.md",
+      "XliffHash": "54bcfe2e86ad189447dd2e07d14f2cc42d576663",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\089d3eb6c687ca2bc2e8704b261f9ec469c456a4.0f95ef387f120f64ea135a74ca21fd0cbe167af2.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\audio-video-camera\\set-media-encoding-properties.md.5a9a18984d5290d2052e25bacd6b220f16049fc6.HT": {
+      "SourceFilename": "windows-apps-src\\audio-video-camera\\set-media-encoding-properties.md",
+      "XliffHash": "5a9a18984d5290d2052e25bacd6b220f16049fc6",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\828cbddd9568bd4e9d0a571880a867afff293e34.9060c5ad42cf8337dbe29ffc395180bba2e297a4.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\audio-video-camera\\process-media-frames-with-mediaframereader.md.3e401123024b7539d968eacf15fc596e2d8a125c.HT": {
+      "SourceFilename": "windows-apps-src\\audio-video-camera\\process-media-frames-with-mediaframereader.md",
+      "XliffHash": "3e401123024b7539d968eacf15fc596e2d8a125c",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\11e09d9b447e9daa0498377a67ef235bdab168dd.d1102d6eae69a7f0b5c8cf8dee31b6dc8ed9903b.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md.e4ac8c79af21b9eafc4d17ccb361e7428156d028.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md",
+      "XliffHash": "e4ac8c79af21b9eafc4d17ccb361e7428156d028",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\3ffd664892fe5ee589d3bf5704e2eeed178bf5f3.30ec2a9541209af9b91151f9ad2013b9c91ac229.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\publish\\understand-irs-tax-forms.md.144b56c66792e306ddafc261aa62d2543602e054.HT": {
+      "SourceFilename": "windows-apps-src\\publish\\understand-irs-tax-forms.md",
+      "XliffHash": "144b56c66792e306ddafc261aa62d2543602e054",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2927588bc096ef1ed9e8451cea73ba78efa9d7c0.351cb95c4d939142f7b048c36867c03c80ccbd14.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\launch-resume\\web-to-app-linking.md.48e7e117fdcff4381dd8f3a43ea4096065a4fe46.HT": {
+      "SourceFilename": "windows-apps-src\\launch-resume\\web-to-app-linking.md",
+      "XliffHash": "48e7e117fdcff4381dd8f3a43ea4096065a4fe46",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\524a0897b6b8a8d17bb7493dc4d9e4357d8c1456.c23e4fb49f85b9cd98dc3df8ed11b8ba9cfcecba.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
