@@ -21,7 +21,7 @@ Windows 10 Version 1607 では、ユーザーは設定アプリの **[バッテ�
 
 ![アプリによるバッテリーの使用](images/battery-usage-by-app.png)
 
-この一覧の UWPアプリに対して、ユーザーは、システムがバック グラウンド アクティビティを扱う方法をある程度制御できます。 バックグラウンド アクティビティについては、[常に許可]、[Windows で管理] (既定の設定)、または [バックグラウンドで許可しない] (詳細は以下を参照) のいずれかを指定できます。 アプリに許容されているバックグラウンド アクティビティの上限を確認するには、[**BackgroundExecutionManager.RequestAccessAsync()**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync.aspx) メソッドから返される **BackgroundAccessStatus** 列挙値を使います。
+この一覧の UWPアプリに対して、ユーザーは、システムがバック グラウンド アクティビティを扱う方法をある程度制御できます。 バックグラウンド アクティビティについては、[常に許可]、[Windows で管理] （既定の設定）、または [バックグラウンドで許可しない] （詳細は以下を参照） のいずれかを指定できます。 アプリに許容されているバックグラウンド アクティビティの上限を確認するには、[**BackgroundExecutionManager.RequestAccessAsync()**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync.aspx) メソッドから返される **BackgroundAccessStatus** 列挙値を使います。
 
 ![バックグラウンド タスクのアクセス許可](images/background-task-permissions.png)
 
