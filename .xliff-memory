@@ -2449,6 +2449,56 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\524a0897b6b8a8d17bb7493dc4d9e4357d8c1456.c23e4fb49f85b9cd98dc3df8ed11b8ba9cfcecba.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\ink-toolbar.md.4394a7c4f5aa2aa6cf7cafb2c77d8a3741931a3b.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\ink-toolbar.md",
+      "XliffHash": "4394a7c4f5aa2aa6cf7cafb2c77d8a3741931a3b",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5983209e7e107f8cf0a7d2fe9ce8ef734e3af7d4.59f359068eca6eb6fbabeae64c1ad16e26a9c7d3.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\xbox-apps\\known-issues.md.97d28d5f581a2fe3cfdcf5a2d971250c71e6ece6.HT": {
+      "SourceFilename": "windows-apps-src\\xbox-apps\\known-issues.md",
+      "XliffHash": "97d28d5f581a2fe3cfdcf5a2d971250c71e6ece6",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\18c8d1fcd696f336601dc6c531424fe8bfb78304.807b967e9b37b88283e13ee533a8bb6386a6617b.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\devices-sensors\\ble-beacon.md.4bdb8c6b0f38e4519b77a21e20c45e05d4443150.HT": {
+      "SourceFilename": "windows-apps-src\\devices-sensors\\ble-beacon.md",
+      "XliffHash": "4bdb8c6b0f38e4519b77a21e20c45e05d4443150",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e21567bf2ffa5b05861cf96099290e1bb66dbf03.2833b39bf62b7cade5557d8ba69b722a2f1194df.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\layout\\grid-tutorial.md.bd6ea69143ee3864ad92f79e5a11deea5162f59d.HT": {
+      "SourceFilename": "windows-apps-src\\layout\\grid-tutorial.md",
+      "XliffHash": "bd6ea69143ee3864ad92f79e5a11deea5162f59d",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\3e96a508d7712d208832a22b629facd6284bb98c.e95151178036102a1ba5b0407ec3c277578cc9e6.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\data-binding\\data-binding-in-depth.md.c0296da4ca6264f7e006c9e97b1016cae21d98a7.HT": {
+      "SourceFilename": "windows-apps-src\\data-binding\\data-binding-in-depth.md",
+      "XliffHash": "c0296da4ca6264f7e006c9e97b1016cae21d98a7",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\fca2c9a795e38983f439d6df5c5a7394c29c1217.6b6f2612c006b90b2792b6a6584c543804654f9a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

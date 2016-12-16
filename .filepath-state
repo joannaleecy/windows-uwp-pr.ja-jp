@@ -605,6 +605,9 @@
   "33148e8cfe301c6016d3f8a16bbcc904ca403d0e": [
     "windows-apps-src\\data-access\\sqlite-databases.md"
   ],
+  "fca2c9a795e38983f439d6df5c5a7394c29c1217": [
+    "windows-apps-src\\data-binding\\data-binding-in-depth.md"
+  ],
   "48db13fec4ce9c6a9a998c84ddaaba30f7a24d83": [
     "windows-apps-src\\data-binding\\data-binding-in-depth.md"
   ],
@@ -715,6 +718,9 @@
   ],
   "61d8891a97403057fe34c66dbecc6962b05e087e": [
     "windows-apps-src\\devices-sensors\\aep-service-class-ids.md"
+  ],
+  "e21567bf2ffa5b05861cf96099290e1bb66dbf03": [
+    "windows-apps-src\\devices-sensors\\ble-beacon.md"
   ],
   "feda9b20b4cbc265832bdb51f90546d9e1f668e8": [
     "windows-apps-src\\devices-sensors\\ble-beacon.md"
@@ -2810,6 +2816,9 @@
   "6030f666f213865a92d071210fe66f587c1bffb1": [
     "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
   ],
+  "18c8d1fcd696f336601dc6c531424fe8bfb78304": [
+    "windows-apps-src\\xbox-apps\\known-issues.md"
+  ],
   "b6fe2f90e0aff4b8e77b4c20aec0d29f2a6a36f8": [
     "windows-apps-src\\xbox-apps\\known-issues.md"
   ],
@@ -3157,6 +3166,9 @@
   ],
   "f9cfa8d1d7ea4e78208a4fb3fc853884a13a676c": [
     "windows-apps-src\\enterprise\\wip-hub.md"
+  ],
+  "5983209e7e107f8cf0a7d2fe9ce8ef734e3af7d4": [
+    "windows-apps-src\\input-and-devices\\ink-toolbar.md"
   ],
   "709a75d214a70b7f2cff4e2c2684833ae64d0c89": [
     "windows-apps-src\\input-and-devices\\ink-toolbar.md"
@@ -3589,6 +3601,9 @@
   ],
   "854ec43d075f8adc1f875d3b9e5e2d818434edb9": [
     "windows-apps-src\\debug-test-perf\\optimize-background-activity.md"
+  ],
+  "3e96a508d7712d208832a22b629facd6284bb98c": [
+    "windows-apps-src\\layout\\grid-tutorial.md"
   ],
   "b1265952ba4c434e663b0d5eff7da14f041b55bd": [
     "windows-apps-src\\layout\\grid-tutorial.md"
