@@ -1574,6 +1574,9 @@
   "d8d7f73e06d627eaa53deaf26f778c122113a9d6": [
     "windows-apps-src\\launch-resume\\how-to-launch-an-app-for-results.md"
   ],
+  "6b350ef65f381d18585c8b080c6259f7607c7bf9": [
+    "windows-apps-src\\launch-resume\\index.md"
+  ],
   "e3c0746439a44b399929b525f7e76554b30ba21e": [
     "windows-apps-src\\launch-resume\\index.md"
   ],
@@ -2660,6 +2663,9 @@
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "4b6cc924805f060da4c1091c9718afe114fdc735": [
+    "windows-apps-src\\TOC.md"
+  ],
   "089d3eb6c687ca2bc2e8704b261f9ec469c456a4": [
     "windows-apps-src\\TOC.md"
   ],
@@ -3637,5 +3643,8 @@
   ],
   "2927588bc096ef1ed9e8451cea73ba78efa9d7c0": [
     "windows-apps-src\\publish\\understand-irs-tax-forms.md"
+  ],
+  "40b2a15379129142a84c4a5caf4317dc50041e06": [
+    "windows-apps-src\\launch-resume\\run-minimized-with-extended-execution.md"
   ]
 }
