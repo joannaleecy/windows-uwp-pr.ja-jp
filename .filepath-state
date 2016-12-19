@@ -1703,6 +1703,9 @@
   "8ca8852df2747410b9d139b55a4f24366cc0eefc": [
     "windows-apps-src\\layout\\layouts-with-xaml.md"
   ],
+  "25a84e7a72fb87faea47845d7d32a5c3071a78a7": [
+    "windows-apps-src\\layout\\navigation-basics.md"
+  ],
   "74e63e4eb5a4d5a6b58b3dbcd875e6323820ec3a": [
     "windows-apps-src\\layout\\navigation-basics.md"
   ],
@@ -3637,9 +3640,6 @@
   ],
   "bb0f3ff68b7dc15623e4f337e589989354e08b65": [
     "windows-apps-src\\launch-resume\\splash-screens.md"
-  ],
-  "862dc3a96e5c4a88efb4e9d51bc914b9e39e6465": [
-    "windows-apps-src\\layout\\grid.md"
   ],
   "2927588bc096ef1ed9e8451cea73ba78efa9d7c0": [
     "windows-apps-src\\publish\\understand-irs-tax-forms.md"
