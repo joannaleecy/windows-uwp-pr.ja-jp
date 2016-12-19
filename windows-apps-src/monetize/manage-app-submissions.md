@@ -4,19 +4,17 @@ ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: "Windows デベロッパー センター アカウントに登録するアプリの申請を管理するには、以下の Windows ストア申請 API のメソッドを使います。"
 title: "Windows ストア申請 API を使用したアプリの申請の管理"
 translationtype: Human Translation
-ms.sourcegitcommit: 9b76a11adfab838b21713cb384cdf31eada3286e
-ms.openlocfilehash: 49d60048a0dd5dae3e80abb9fd4e21b8cf7b417e
+ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
+ms.openlocfilehash: 5c19a05f51a14d9df38e64aac3b741e916fc0524
 
 ---
 
-# Windows ストア申請 API を使用したアプリの申請の管理
+# <a name="manage-app-submissions-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアプリの申請の管理
 
 
 Windows デベロッパー センター アカウントに登録するアプリの申請を管理するには、以下の Windows ストア申請 API のメソッドを使います。 Windows ストア申請 API の概要については、「[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。この API を使用するための前提条件などの情報があります。
 
 >**注:**&nbsp;&nbsp;これらのメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
-
->**重要**&nbsp;&nbsp;近い将来、Microsoft は Windows デベロッパー センターでアプリの申請の価格データ モデルを変更する予定です。 変更の実施後には、**価格**リソースはサポートされなくなり、Windows ストア申請 APIを使用してアプリの申請の試用期間、価格、販売データの取得と変更を行うことが、一時的にできなくなります。 今後は API を更新して、アプリの申請に関する価格情報にプログラムでアクセスする新しい方法を導入する予定です。 詳しくは、「[価格リソース](#pricing-object)」セクションをご覧ください。
 
 
 | メソッド        | URI    | 説明                                                                 |
@@ -33,7 +31,7 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 | POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/finalizepackagerollout``` | アプリの申請の段階的なロールアウトを完了します。 詳しくは、[この記事](finalize-the-package-rollout-for-an-app-submission.md)をご覧ください。 |
 
 <span id="create-an-app-submission">
-## アプリの提出の作成
+## <a name="create-an-app-submission"></a>アプリの申請の作成
 
 アプリの申請を作成するには、次のプロセスに従います。
 
@@ -90,7 +88,7 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 7. コミットが正常に処理されると、インジェストのために申請がストアに送信されます。 上記のメソッドを使うか、デベロッパー センターのダッシュボードから、申請の進行状況を引き続き監視できます。
 
 <span id="manage-gradual-package-rollout">
-## アプリの申請の段階的なパッケージのロールアウトを管理する
+## <a name="manage-a-gradual-package-rollout-for-an-app-submission"></a>アプリの申請の段階的なパッケージのロールアウトを管理する
 
 アプリの申請で更新されたパッケージを、アプリの Windows 10 のユーザーの一部に、段階的にロールアウトできます。 これにより、更新に確信が持てるよう、特定のパッケージのフィードバックと分析データを監視してから、より広くロールアウトできます。 新しい申請を作成することなく、公開された申請のロールアウトの割合を変更する (または更新を停止する) ことができます。 デベロッパー センターで段階的なパッケージのロールアウトの有効化と管理を行う方法などについて詳しくは、[この記事](../publish/gradual-package-rollout.md)をご覧ください。
 
@@ -134,12 +132,12 @@ Windows ストア申請 API の次のメソッドを使用して、アプリの�
   POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/finalizepackagerollout
   ```
 
-## リソース
+## <a name="resources"></a>リソース
 
 これらのメソッドでは、次のリソースを使用してデータの書式を設定します。
 
 <span id="app-submission-object" />
-### アプリの申請
+### <a name="app-submission"></a>アプリの申請
 
 このリソースは、アプリの申請を表します。 次の例は、このリソースの書式設定を示しています。
 
@@ -273,7 +271,7 @@ Windows ストア申請 API の次のメソッドを使用して、アプリの�
 
 
 <span id="listing-object" />
-### 登録情報
+### <a name="listing"></a>登録情報
 
 このリソースにはアプリの登録情報が保持されます。 このリソースには、次の値があります。
 
@@ -283,7 +281,7 @@ Windows ストア申請 API の次のメソッドを使用して、アプリの�
 |  platformOverrides               | object |   キーと値のペアのディクショナリです。各キーは、登録情報を上書きするプラットフォームを示す文字列を表し、各値は、指定されたプラットフォームで上書きする登録情報を示す[基本の登録情報](#base-listing-object)オブジェクト (description から title までの値のみが保持されています) を表します。 キーには次の値を設定できます。 <ul><li>Unknown</li><li>Windows80</li><li>Windows81</li><li>WindowsPhone71</li><li>WindowsPhone80</li><li>WindowsPhone81</li></ul>     |      |     
 
 <span id="base-listing-object" />
-### 基本の登録情報
+### <a name="base-listing"></a>基本の登録情報
 
 このリソースにはアプリの基本の登録情報が保持されます。 このリソースには、次の値があります。
 
@@ -304,7 +302,7 @@ Windows ストア申請 API の次のメソッドを使用して、アプリの�
 
 
 <span id="image-object" />
-### 画像
+### <a name="image"></a>画像
 
 このリソースにはアプリの登録情報の画像とアイコンのデータが保持されます。 登録情報の画像とアイコンについて詳しくは、「[アプリのスクリーンショットと画像](https://msdn.microsoft.com/windows/uwp/publish/app-screenshots-and-images)」をご覧ください。 このリソースには、次の値があります。
 
@@ -318,33 +316,29 @@ Windows ストア申請 API の次のメソッドを使用して、アプリの�
 
 
 <span id="pricing-object" />
-### 価格設定
+### <a name="pricing"></a>価格設定
 
-このリソースにはアプリの価格設定情報が保持されます。
-
->**重要**&nbsp;&nbsp;近い将来、Microsoft は Windows デベロッパー センターでアプリの申請の価格データ モデルを変更する予定です。 変更の実施後には、**価格**リソースはサポートされなくなり、Windows ストア申請 APIを使用してアプリの申請の試用期間、価格、販売データの取得と変更を行うことが、一時的にできなくなります。 次の動作に変更が発生します。
-
-   > * [アプリの申請を取得する GET メソッド](get-an-app-submission.md)を呼び出した後に、**価格**リソースは空になります。 引き続きデベロッパー センター ダッシュボードを使って、アプリの申請の価格データを取得することができます。
-   > * [アプリの申請を更新する PUT メソッド](update-an-app-submission.md)を呼び出すとき、**価格**リソースの情報は無視されます。 引き続きデベロッパー センター ダッシュボードを使って、アプリの申請の価格データを変更することができます。
-
-> 今後、Windows ストア申請 API を更新し、アプリの申請の価格情報をプログラムで取得したり更新する新しい方法を導入する予定です。
-
-このリソースには、次の値があります。
+このリソースにはアプリの価格設定情報が保持されます。 このリソースには、次の値があります。
 
 | 値           | 型    | 説明                                                                                                                                                                                                                          |
 |-----------------|---------|------|
 |  trialPeriod               |    string     |  アプリの試用期間を示す文字列です。 次のいずれかの値を使用できます。 <ul><li>NoFreeTrial</li><li>OneDay</li><li>TrialNeverExpires</li><li>SevenDays</li><li>FifteenDays</li><li>ThirtyDays</li></ul>    |
 |  marketSpecificPricings               |    object     |  キーと値のペアのディクショナリです。各キーは 2 文字の ISO 3166-1 alpha-2 の国コードで、各値は[価格帯](#price-tiers)です。 これらの項目は、[特定の市場でのアプリのカスタム価格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)を表します。 このディクショナリに含まれる項目は、指定された市場の *priceId* の値によって指定されている基本価格を上書きします。      |     
-|  sales               |   array      |  アプリのセール情報が保持されるオブジェクト配列です。 詳しくは、以下の「[セール](#sale-object)」セクションをご覧ください。    |     
+|  sales               |   array      |  **推奨されなくなった値**です。 アプリのセール情報が保持されるオブジェクト配列です。 詳しくは、以下の「[セール](#sale-object)」セクションをご覧ください。    |     
 |  priceId               |   string      |  アプリの[基本価格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#base-price)を規定する[価格帯](#price-tiers)です。   |
 
 
 <span id="sale-object" />
-### セール
+### <a name="sale"></a>セール
 
 このリソースにはアプリのセール情報が保持されます。
 
->**重要**&nbsp;&nbsp;近い将来、Microsoft は Windows デベロッパー センターでアプリの申請の価格データ モデルを変更する予定です。 変更の実施後には、**セール**リソースはサポートされなくなり、Windows ストア申請 APIを使用してアプリの申請の販売データの取得と変更を行うことが、一時的にできなくなります。 今後は API を更新して、アプリの申請に関する販売情報にプログラムでアクセスする新しい方法を導入する予定です。 詳しくは、「[価格リソース](#pricing-object)」セクションをご覧ください。
+>**重要**&nbsp;&nbsp;**セール** リソースはサポートを終了しました。現在、Windows ストア申請 APIを使用して、アプリの申請の販売データを取得し、変更することはできません。
+
+   > * [アプリの申請を取得する GET メソッド](get-an-app-submission.md)を呼び出すと、*セール* リソースは空になります。 引き続きデベロッパー センター ダッシュボードを使って、アプリの申請のセール データを取得することができます。
+   > * [アプリの申請を更新する PUT メソッド](update-an-app-submission.md)を呼び出すとき、*セール*の値に含まれた情報は無視されます。 引き続きデベロッパー センター ダッシュボードを使って、アプリの申請のセール データを変更することができます。
+
+> 将来的には、Windows ストア申請 API を更新し、アプリの申請のセール情報にプログラムでアクセスする新しい方法を導入する予定です。
 
 このリソースには、次の値があります。
 
@@ -358,7 +352,7 @@ Windows ストア申請 API の次のメソッドを使用して、アプリの�
 
 
 <span id="status-details-object" />
-### 状態の詳細
+### <a name="status-details"></a>状態の詳細
 
 このリソースには、申請の状態についての追加情報が保持されます。 このリソースには、次の値があります。
 
@@ -370,7 +364,7 @@ Windows ストア申請 API の次のメソッドを使用して、アプリの�
 
 
 <span id="status-detail-object" />
-### 状態の詳細
+### <a name="status-detail"></a>状態の詳細
 
 このリソースには、申請に関連するエラーや警告についての追加情報が保持されます。 このリソースには、次の値があります。
 
@@ -381,7 +375,7 @@ Windows ストア申請 API の次のメソッドを使用して、アプリの�
 
 
 <span id="application-package-object" />
-### アプリ パッケージ
+### <a name="application-package"></a>アプリ パッケージ
 
 このリソースには、申請のアプリ パッケージについての情報が保持されます。 次の例は、このリソースの書式設定を示しています。
 
@@ -418,7 +412,7 @@ Windows ストア申請 API の次のメソッドを使用して、アプリの�
 
 | 値           | 型    | 説明                   |
 |-----------------|---------|------|
-| fileName   |   string      |  パッケージの名前です。    |  
+| fileName   |   string      |  パッケージの名前。    |  
 | fileStatus    | string    |  パッケージの状態です。 次のいずれかの値を使用できます。 <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
 | id    |  string   |  パッケージを一意に識別する ID です。 この値は、デベロッパー センターによって使用されます。   |     
 | version    |  string   |  アプリ パッケージのバージョンです。 詳しくは、「[パッケージ バージョンの番号付け](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering)」をご覧ください。   |   
@@ -432,7 +426,7 @@ Windows ストア申請 API の次のメソッドを使用して、アプリの�
 <span/>
 
 <span id="certification-report-object" />
-### 認定レポート
+### <a name="certification-report"></a>認定レポート
 
 このリソースは、申請の認定レポート データへのアクセスを提供します。 このリソースには、次の値があります。
 
@@ -443,7 +437,7 @@ Windows ストア申請 API の次のメソッドを使用して、アプリの�
 
 
 <span id="package-delivery-options-object" />
-### パッケージの配信オプション オブジェクト
+### <a name="package-delivery-options-object"></a>パッケージの配信オプション オブジェクト
 
 このリソースには、申請の段階的なパッケージのロールアウトと必須の更新の設定が含まれています。 次の例は、このリソースの書式設定を示しています。
 
@@ -471,7 +465,7 @@ Windows ストア申請 API の次のメソッドを使用して、アプリの�
 | mandatoryUpdateEffectiveDate    |  date   |  この申請のパッケージが必須となる日時 (ISO 8601 形式、UTC タイムゾーン)。   |        
 
 <span id="package-rollout-object" />
-### パッケージのロールアウト オブジェクト
+### <a name="package-rollout-object"></a>パッケージのロールアウト オブジェクト
 
 このリソースには、申請の段階的な[パッケージのロールアウトの設定](#manage-gradual-package-rollout)が含まれています。 このリソースには、次の値があります。
 
@@ -484,13 +478,13 @@ Windows ストア申請 API の次のメソッドを使用して、アプリの�
 
 <span/>
 
-## 列挙型
+## <a name="enums"></a>列挙型
 
 これらのメソッドでは、次の列挙型が使用されます。
 
 
 <span id="price-tiers" />
-### 価格帯
+### <a name="price-tiers"></a>価格帯
 
 次の値は、アプリの申請に利用できる価格帯を表します。
 
@@ -503,7 +497,7 @@ Windows ストア申請 API の次のメソッドを使用して、アプリの�
 
 
 <span id="enterprise-licensing" />
-### エンタープライズ ライセンス値
+### <a name="enterprise-licensing-values"></a>エンタープライズ ライセンス値
 
 次の値は、アプリのエンタープライズ ライセンス動作を表します。 これらのオプションについて詳しくは、「[組織のライセンス オプション](https://msdn.microsoft.com/windows/uwp/publish/organizational-licensing)」をご覧ください。
 
@@ -515,7 +509,7 @@ Windows ストア申請 API の次のメソッドを使用して、アプリの�
 
 
 <span id="submission-status-code" />
-### 申請の状態コード
+### <a name="submission-status-code"></a>申請の状態コード
 
 次の値は、申請の状態コードを表します。
 
@@ -538,7 +532,7 @@ Windows ストア申請 API の次のメソッドを使用して、アプリの�
 
 <span/>
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [Windows ストア申請 API を使用したアプリ データの取得](get-app-data.md)
@@ -546,6 +540,6 @@ Windows ストア申請 API の次のメソッドを使用して、アプリの�
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

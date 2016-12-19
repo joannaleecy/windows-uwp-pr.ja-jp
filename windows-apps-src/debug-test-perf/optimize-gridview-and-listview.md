@@ -4,11 +4,11 @@ ms.assetid: 26DF15E8-2C05-4174-A714-7DF2E8273D32
 title: "ListView と GridView の UI の最適化"
 description: "ListView と GridView のパフォーマンスと起動時間を、UI の仮想化や要素の削減、項目の段階的な更新を通して向上させます。"
 translationtype: Human Translation
-ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
-ms.openlocfilehash: 1aba484afcb704b0b28ceee6027f5ae05d8e420d
+ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
+ms.openlocfilehash: dca6c9c2cde4240da4b2eff4f4786ec5b81051c6
 
 ---
-# ListView と GridView の UI の最適化
+# <a name="listview-and-gridview-ui-optimization"></a>ListView と GridView の UI の最適化
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
@@ -17,7 +17,7 @@ ms.openlocfilehash: 1aba484afcb704b0b28ceee6027f5ae05d8e420d
 
 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) のパフォーマンスと起動時間を、UI の仮想化や要素の削減、項目の段階的な更新を通して向上させます。 データ仮想化の手法については、[ListView と GridView のデータ仮想化](listview-and-gridview-data-optimization.md)」をご覧ください。
 
-## コレクションのパフォーマンスの主要な 2 つの要因
+## <a name="two-key-factors-in-collection-performance"></a>コレクションのパフォーマンスの主要な 2 つの要因
 
 コレクションの操作は、よくある状況です。 フォト ビューアーには写真のコレクションが、リーダーには記事/書籍/ストーリーのコレクションが、ショッピング アプリには製品のコレクションがあります。 このトピックでは、アプリでコレクションの操作を効率よく行うために何ができるかについて説明します。
 
@@ -25,7 +25,7 @@ ms.openlocfilehash: 1aba484afcb704b0b28ceee6027f5ae05d8e420d
 
 スムーズなパン/スクロールを行うには、UI スレッドで効率的かつスマートなインスタンス化、データ バインド、および項目のレイアウトを実行することが不可欠です。
 
-## UI の仮想化
+## <a name="ui-virtualization"></a>UI の仮想化
 
 UI の仮想化は、実行できる最も重要な改善策です。 これは、項目を表す UI 要素がオンデマンドで作成されることを意味します。 1,000 項目のコレクションにバインドされている項目コントロールでは、すべての項目の UI を同時に作成しても、同時に全部を表示することはできないため、リソースを無駄に使うことになります。 UI の仮想化は、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) (およびその他の [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) から派生した標準コントロール) によって実行されます。 数ページ先にある項目がスクロールされて表示されそうになると、フレームワークがその項目用の UI を生成してキャッシュします。 項目がもう一度表示される可能性が低い場合、フレームワークはメモリを解放します。
 
@@ -33,7 +33,7 @@ UI の仮想化は、実行できる最も重要な改善策です。 これは�
 
 表示される可能性のある要素の作成はフレームワークが行う必要があるため、ビューポートの概念は UI の仮想化にとって非常に重要です。 一般的に、[**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) のビューポートは論理コントロールの範囲を指します。 たとえば、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) のビューポートは **ListView** 要素の幅と高さです。 一部のパネルでは子要素に制限のない空間を与えることができます。たとえば [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527) や [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) では、行または列のサイズが自動的に調整されます。 このようなパネルに仮想化された **ItemsControl** を配置すると、すべての項目を表示できるスペースが用意され、仮想化の意味がなくなります。 仮想化を復元するには、**ItemsControl** に幅と高さを設定します。
 
-## 項目ごとの要素の削減
+## <a name="element-reduction-per-item"></a>項目ごとの要素の削減
 
 項目をレンダリングするために使う UI 要素の数を、妥当と思われる最小限の数に抑えます。
 
@@ -64,7 +64,8 @@ UI の仮想化は、実行できる最も重要な改善策です。 これは�
 
 [**SelectionCheckMarkVisualEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled.aspx) と [**SelectedBackground**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.selectedbackground.aspx) に似た 25 個のわかりやすい名前のプロパティがあります。 これらのプレゼンターを使用目的に合うように十分にカスタマイズできないことがわかった場合は、`ListViewItemExpanded` または `GridViewItemExpanded` コントロール テンプレートのコピーを代わりに編集できます。 これらは、`\Program Files (x86)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\<version>\Generic\generic.xaml` の中にあります。 ただし、これらのテンプレートの使用は、パフォーマンスを多少低下させる代償としてカスタマイズの可能性を大きくする意味があることに注意してください。
 
-## GridView と ListView の項目を段階的に更新する
+<span id="update-items-incrementally"/>
+## <a name="update-listview-and-gridview-items-progressively"></a>GridView と ListView の項目を段階的に更新する
 
 データ仮想化を使う場合は、項目の読み込み中に一時的な UI 要素をレンダリングするようにコントロールを構成することで、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) の高い応答性を維持できます。 一時的な要素は、データが読み込まれるときに実際の UI と段階的に置き換えることができます。
 
@@ -72,7 +73,7 @@ UI の仮想化は、実行できる最も重要な改善策です。 これは�
 
 これらの手法の使用例は、写真表示アプリでよく見られます。画像のすべてが読み込まれて表示されていない場合でも、ユーザーはコレクションをパン/スクロールして操作できます。 または、「映画」の項目の場合は、第 1 のフェーズでタイトルを表示し、第 2 のフェーズでその評価を表示し、第 3 のフェーズでポスターの画像を表示できます。 ユーザーは各項目について最も重要なデータをできるだけ早く見ることができ、それはユーザーがすぐに行動を起こせることを意味します。 その後、時間の許す限り、重要度の低い情報を表示します。 これらの手法を実装するために使うことができるプラットフォームの機能を次に示します。
 
-### プレースホルダー
+### <a name="placeholders"></a>プレースホルダー
 
 一時的なプレースホルダーの視覚効果機能は、既定でオンになっています。それは [**ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) プロパティによって制御されます。 高速なパン/スクロールが行われている間、この機能は、滑らかな動きを維持したまま、完全に表示されていない項目が存在することを示す視覚的なヒントをユーザーに与えます。 次のいずれかの手法を使う場合は、必要に応じて **ShowsScrollingPlaceholders** を false に設定して、プレースホルダーが表示されないようにすることができます。
 
@@ -239,7 +240,7 @@ namespace LotsOfItems
 
 4.  今すぐアプリを実行し、グリッド ビューですばやくパン/スクロールすると、**x:Phase** と同じ動作が起こることがわかります。
 
-## 異種コレクションでのコンテナー リサイクル
+## <a name="container-recycling-with-heterogeneous-collections"></a>異種コレクションでのコンテナー リサイクル
 
 一部のアプリケーションでは、コレクション内のさまざまな種類の項目に合わせて異なる UI を用意する必要があります。 これにより、仮想化されるパネルで、項目を表示するために使用される視覚要素を再利用またはリサイクルすることができない状況が発生する場合があります。 パンした時に項目の視覚要素を再作成すると、仮想化によって得られた多くのパフォーマンスのメリットが取り消されます。 ただし、少し計画することで、仮想化されるパネルで要素を再利用できるようになります。 開発者には、シナリオに応じて、[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) イベントまたは項目テンプレート セレクターの 2 つのオプションがあります。 **ChoosingItemContainer** アプローチでは、パフォーマンスが向上します。
 
@@ -320,6 +321,6 @@ private void lst-ChoosingItemContainer
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

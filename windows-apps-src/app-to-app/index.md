@@ -4,12 +4,12 @@ description: "ここでは、共有コントラクトの使用、コピーと貼
 title: "アプリ間通信"
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: 94e1586a73743e8918ef160897b1b22c8c545ea0
-ms.openlocfilehash: 05ac668e0e3c33f6dd9da9f578335bab96c6429c
+ms.sourcegitcommit: ea67ae5b568d1c51af3bb951fe3a68a8def8a556
+ms.openlocfilehash: 951e2ea29a47e362d9fdee0f597d2e7c808212b6
 
 ---
 
-# アプリ間通信
+# <a name="app-to-app-communication"></a>アプリ間通信
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: 05ac668e0e3c33f6dd9da9f578335bab96c6429c
 
 共有コントラクトに加えて、アプリは、ドラッグ アンド ドロップやコピーと貼り付けなど、データを転送するための従来の手法を統合することもできます。 UWP アプリ間の通信だけでなく、こうした手法はデスクトップ アプリケーション間の共有もサポートします。
 
-## このセクションの内容
+## <a name="in-this-section"></a>このセクションの内容
 
 | トピック | 説明 |
 |-------|-------------|
@@ -30,11 +30,11 @@ ms.openlocfilehash: 05ac668e0e3c33f6dd9da9f578335bab96c6429c
 | [コピーと貼り付け](copy-and-paste.md) | この記事では、UWP アプリで、クリップボードを使ってコピーと貼り付けをサポートする方法について説明します。 コピーと貼り付けはアプリ間やアプリ内でデータを交換するための従来の方法であり、クリップボード操作はほとんどすべてのアプリである程度サポートできます。 |
 | [ドラッグ アンド ドロップ](drag-and-drop.md) | この記事では、UWP アプリにドラッグ アンド ドロップを追加する方法について説明します。 ドラッグ アンド ドロップは、画像やファイルなどのコンテンツを操作するための従来からある自然な方法です。 ドラッグ アンド ドロップを実装すると、アプリからアプリ、アプリからデスクトップ、デスクトップからアプリなど、あらゆる方向でシームレスに機能します。 |
 
-## 関連項目
-- [UWP アプリの開発](https://developer.microsoft.com/en-us/windows/develop)
+## <a name="see-also"></a>関連項目
+- [UWP アプリの開発](https://developer.microsoft.com/windows/develop)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

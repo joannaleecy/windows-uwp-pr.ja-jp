@@ -4,12 +4,12 @@ description: "これは、従来のユーザー名とパスワードの認証シ
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: af8ae79f67d77195d5ed4801d040b2f1aafe8a97
-ms.openlocfilehash: 1b0a510592002cf869dac06b55d377d790c06cac
+ms.sourcegitcommit: a70a59283fe664bef9ddab56df57a9fc46c91033
+ms.openlocfilehash: 04311e9c3242bdaf6588c8102a06ae658e6637e2
 
 ---
 
-# Microsoft Passport ログイン アプリの作成
+# <a name="create-a-microsoft-passport-login-app"></a>Microsoft Passport ログイン アプリの作成
 
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -23,7 +23,7 @@ ms.openlocfilehash: 1b0a510592002cf869dac06b55d377d790c06cac
 
 開始する前に、「[Microsoft Passport と Windows Hello](microsoft-passport.md)」の概要を読んで、Microsoft Passport の全般的なしくみを理解してください。
 
-## はじめに
+## <a name="get-started"></a>はじめに
 
 
 このプロジェクトを作成するには、C# と XAML の経験がいくらか必要です。 Windows 10 コンピューターで Visual Studio 2015 (Community Edition 以上) を使う必要もあります。
@@ -33,20 +33,20 @@ ms.openlocfilehash: 1b0a510592002cf869dac06b55d377d790c06cac
 -   [空白のアプリ (ユニバーサル Windows)] を選び、アプリケーションに "PassportLogin" という名前を付けます。
 -   新しいアプリケーションをビルドして実行すると (F5)、画面に空白のウィンドウが表示されます。 アプリケーションを閉じます。
 
-![](images/passport-login-1.png)
+![Passport の新しいプロジェクト](images/passport-login-1.png)
 
-## 演習 1: Microsoft Passport でログインする
+## <a name="exercise-1-login-with-microsoft-passport"></a>演習 1: Microsoft Passport でログインする
 
 
 この演習では、コンピューターで Microsoft Passport がセットアップされているかどうかを確認する方法と、Microsoft Passport を使ってアカウントにサインインする方法について説明します。
 
--   新しいプロジェクトで、"Views" という新しいフォルダーをソリューションに作成します。 このフォルダーには、このサンプルで移動先となるページが置かれます。 ソリューション エクスプ ローラーでプロジェクトを右クリックし、[追加]、[新しいフォルダー] の順に選んでフォルダー名を Views に変更します。
+-   新しいプロジェクトで、"Views" という新しいフォルダーをソリューションに作成します。 このフォルダーには、このサンプルで移動先となるページが置かれます。 ソリューション エクスプローラーでプロジェクトを右クリックし、[追加]、[新しいフォルダー] の順に選んでフォルダー名を Views に変更します。
 
-    ![](images/passport-login-2.png)
+    ![Passport のフォルダーの追加](images/passport-login-2.png)
 
 -   新しい Views フォルダーを右クリックし、[追加]、[新しい項目] の順に選び、[空白のページ] を選びます。 このページに "Login.xaml" という名前を付けます。
 
-    ![](images/passport-login-3.png)
+    ![Passport の空白ページの追加](images/passport-login-3.png)
 
 -   新しいログイン ページのユーザー インターフェイスを定義するには、次の XAML を追加します。 この XAML では、次の子を配置するために StackPanel が定義されます。
 
@@ -85,7 +85,7 @@ ms.openlocfilehash: 1b0a510592002cf869dac06b55d377d790c06cac
     </Grid>
     ```
 
--   ソリューションをビルドするには、分離コードにいくつかのメソッドを追加する必要があります。 F7 キーを押すか、ソリューション エクスプ ローラーを使って Login.xaml.cs に移動します。 Login イベントと Register イベントを処理する次の 2 つのイベント メソッドを追加します。 この時点では、これらのメソッドは ErrorMessage.Text を空の文字列に設定します。
+-   ソリューションをビルドするには、分離コードにいくつかのメソッドを追加する必要があります。 F7 キーを押すか、ソリューション エクスプローラーを使って Login.xaml.cs に移動します。 Login イベントと Register イベントを処理する次の 2 つのイベント メソッドを追加します。 この時点では、これらのメソッドは ErrorMessage.Text を空の文字列に設定します。
 
     ```cs
     namespace PassportLogin.Views
@@ -162,7 +162,7 @@ ms.openlocfilehash: 1b0a510592002cf869dac06b55d377d790c06cac
 
 -   MicrosoftPassportHelper クラスを作成するには、PassportLogin (ユニバーサル Windows) ソリューションを右クリックし、[追加]、[新しいフォルダー] の順にクリックします。 このフォルダーに Utils という名前を付けます。
 
-    ![](images/passport-login-5.png)
+    ![Passport のヘルパー クラスの作成](images/passport-login-5.png)
 
 -   Utils フォルダーを右クリックし、[追加]、[クラス] の順にクリックします。 このクラスに "MicrosoftPassportHelper.cs" という名前を付けます。
 -   MicrosoftPassportHelper のクラス定義をパブリック静的に変更した後、Microsoft Passport を使う準備ができたかどうかをユーザーに知らせる次のメソッドを追加します。 必要な名前空間を追加する必要があります。
@@ -209,9 +209,9 @@ ms.openlocfilehash: 1b0a510592002cf869dac06b55d377d790c06cac
 
 -   アプリをビルドして実行します (F5)。 ログイン ページに自動的に移動し、Passport を使う準備ができているかどうかを示す Microsoft Passport バナーが表示されます。 コンピューターでの Microsoft Passport の状態を示す緑色または青色のバナーが表示されます。
 
-    ![](images/passport-login-6.png)
+    ![Passport のログイン画面の準備](images/passport-login-6.png)
 
-    ![](images/passport-login-7.png)
+    ![Passport のログイン画面 (セットアップされていない場合)](images/passport-login-7.png)
 
 -   次に、サインインのロジックを作成する必要があります。 新しいフォルダーを "Models" という名前で作成します。
 -   Models フォルダーで、"Account.cs" という新しいクラスを作成します。 このクラスは、アカウント モデルとして機能します。 これはサンプルのため、ユーザー名のみが含められます。 クラス定義をパブリックに変更し、Username プロパティを追加します。
@@ -486,9 +486,9 @@ ms.openlocfilehash: 1b0a510592002cf869dac06b55d377d790c06cac
 
 -   アプリをビルドして実行します。 自動的に Login ページに移動します。 "sampleUsername" と入力し、[Login] をクリックします。 PIN の入力を求める Microsoft Passport プロンプトが表示されます。 PIN を正しく入力すると、CreatePassportKeyAsync メソッドが Passport キーを作成できるようになります。 出力ウィンドウで、成功を示すメッセージが表示されるかどうかを確認してください。
 
-    ![](images/passport-login-8.png)
+    ![Passport のログイン PIN の入力画面](images/passport-login-8.png)
 
-## 演習 2: ウェルカム ページとユーザーの選択ページ
+## <a name="exercise-2-welcome-and-user-selection-pages"></a>演習 2: ウェルカム ページとユーザーの選択ページ
 
 
 この演習は、前の演習の続きです。 ユーザーが正常にログインすると、ウェルカム ページに移動し、サインアウトしたり、アカウントを削除したりすることができます。 Passport ではコンピューターごとにキーが作成されるため、そのコンピューターにサインインしたすべてのユーザーが表示されるユーザーの選択画面を作成できます。 その後、ユーザーはいずれかのアカウントを選び、パスワードを再入力しなくてもようこそ画面に直接移動することができます。コンピューターにアクセスするときに既に認証されているためです。
@@ -624,7 +624,7 @@ ms.openlocfilehash: 1b0a510592002cf869dac06b55d377d790c06cac
 
 -   アプリをビルドして実行します。 "sampleUsername" を使ってログインし、[Login] をクリックします。 PIN を入力し、成功した場合は、自動的にようこそ画面に移動します。 ユーザーの消去ボタンをクリックし、出力ウィンドウでユーザーが削除されたかどうかを確認してください。 ユーザーが削除されても、ウェルカム ページから移動しない点に注意してください。 アプリが移動できるユーザーの選択ページを作成する必要があります。
 
-    ![](images/passport-login-9.png)
+    !Passport のようこそ画面](images/passport-login-9.png)
 
 -   Views フォルダーで、"UserSelection.xaml" という新しい空白ページを作成し、次の XAML を追加してユーザー インターフェイスを定義します。 このページには、ローカル アカウントの一覧にすべてのユーザーを表示する [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) と、ログイン ページに移動してユーザーが別のアカウントを追加できるようにする Button が含められます。
 
@@ -872,9 +872,9 @@ ms.openlocfilehash: 1b0a510592002cf869dac06b55d377d790c06cac
 
 -   アプリをビルドして実行します。 "sampleUsername" を使ってログインします。 PIN を入力します。成功した場合は、自動的にようこそ画面に移動します。 ユーザーの一覧に戻るボタンをクリックします。 一覧にユーザーが表示されます。 この Passport をクリックすると、パスワードなどを再入力しなくても再度サインインできるようになります。
 
-    ![](images/passport-login-10.png)
+    ![Passport のユーザー選択用の一覧](images/passport-login-10.png)
 
-## 演習 3: 新しい Passport ユーザーを登録する
+## <a name="exercise-3-registering-a-new-passport-user"></a>演習 3: 新しい Passport ユーザーを登録する
 
 
 この演習では、Passport を使って新しいアカウントを作成する新しいページを作成します。 このページは、Login ページの動作と似ています。 Login ページは、Passport の使用に移行する既存のユーザーのために実装されます。 PassportRegister ページでは、新しいユーザーの Passport の登録が作成されます。
@@ -961,18 +961,18 @@ ms.openlocfilehash: 1b0a510592002cf869dac06b55d377d790c06cac
 
 -   アプリをビルドして実行します。 新しいユーザーを登録してみます。 その後、ユーザーの一覧に戻り、そのユーザーを選んでログインできることを検証します。
 
-    ![](images/passport-login-11.png)
+    ![Passport の新しいユーザーの登録](images/passport-login-11.png)
 
 このラボでは、新しい Microsoft Passport API を使って既存のユーザーを認証し、新しいユーザーのアカウントを作成するために必要となる基本的なスキルを習得しました。 この新しい知識があれば、ユーザーはアプリケーションのパスワードを記憶する必要がなくなりますが、引き続きアプリケーションをユーザー認証によって確実に保護することができます。 Windows 10 では、Passport テクノロジを使って、Windows Hello の生体認証ログインがサポートされます。 Windows Hello がサポートされるコンピューターを使っている場合、この一連の演習を通じて Windows Hello が既にサポートされていることがわかります。
 
 Microsoft Passport のサポートを実装すれば、Windows Hello をサポートするために開発者が追加の作業を行う必要はありません。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [Microsoft Passport と Windows Hello](microsoft-passport.md)
 * [Microsoft Passport ログイン サービス](microsoft-passport-login-auth-service.md)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

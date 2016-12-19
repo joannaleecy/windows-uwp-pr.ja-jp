@@ -4,24 +4,26 @@ Description: "Desktop to UWP Bridge を使用して Windows デスクトップ �
 Search.Product: eADQiWindows 10XVcnh
 title: "Desktop Bridge で変換されたアプリのデバッグ"
 translationtype: Human Translation
-ms.sourcegitcommit: 8429e6e21319a03fc2a0260c68223437b9aed02e
-ms.openlocfilehash: 9dcc39c51e61b24c25bcbfa216c6e51b49bbfd3a
+ms.sourcegitcommit: dba00371b29b3179a6dc3bdd96a092437331e61a
+ms.openlocfilehash: 537ac8e83d5f54bf83ec0e05b71be354651000f2
 
 ---
 
-# Desktop Bridge で変換されたアプリのデバッグ
+# <a name="debug-apps-converted-with-the-desktop-bridge"></a>Desktop Bridge で変換されたアプリのデバッグ
 
 このトピックには、Desktop to UWP Bridge による変換後のアプリの正常なデバッグに役立つ情報が含まれています。 変換済みのアプリをデバッグするには、いくつかのオプションがあります。
 
-## プロセスにアタッチ
+## <a name="attach-to-process"></a>プロセスにアタッチ
 
 Microsoft Visual Studio を "管理者として" 実行しているときは、変換済みアプリのプロジェクトで *[デバッグの開始]* コマンドと *[デバッグなしで開始]* コマンドを使えますが、起動したアプリは[中程度の整合性レベル](https://msdn.microsoft.com/library/bb625963)で実行されます (つまり、管理者特権はありません)。 起動したアプリに管理者特権を与えるには、まずショートカットまたはタイルを使って "管理者として" 起動する必要があります。 "管理者として" 実行している Microsoft Visual Studio のインスタンスからアプリを起動したら、__[プロセスにアタッチ]__ を実行して、ダイアログ ボックスからアプリのプロセスを選択します。
 
-## F5 デバッグ
+## <a name="f5-debug"></a>F5 デバッグ
 
 Visual Studio では、新しいパッケージ プロジェクトがサポートされるようになりました。 新しいプロジェクトでは、アプリケーションをビルドしたときに行ったすべての更新を、アプリケーションのインストーラーでコンバーターを実行したときに作成される AppX パッケージに自動的にコピーすることができます。 パッケージ プロジェクトを構成したら、F5 キーを使って AppX パッケージを直接デバッグできます。 
 
-開始手順は次のとおりです。 
+>注: オプションを使って既存の Appx パッケージをデバッグすることもできます。これには、[デバッグ]、[その他のデバッグ ターゲット]、[インストールされているアプリケーション パッケージのデバッグ] の順にオプションを選びます。
+
+手順は次のとおりです。 
 
 1. まず、Desktop App Converter を使用するように設定していることを確認します。 詳しくは、「[Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md)」をご覧ください。
 
@@ -29,7 +31,7 @@ Visual Studio では、新しいパッケージ プロジェクトがサポー�
 
 ![alt](images/desktop-to-uwp/debug-1.png)
 
-3. [Visual Studio "15" Preview 2](https://www.visualstudio.com/downloads/visual-studio-next-downloads-vs.aspx) をインストールして起動します。 
+3. [Visual Studio 2017 RC](https://www.visualstudio.com/downloads/#visual-studio-community-2017-rc) をインストールして起動します。 
 
 4. [Visual Studio ギャラリー](http://go.microsoft.com/fwlink/?LinkId=797871)から Desktop to UWP Packaging VSIX Project をデスクトップにインストールします。 
 
@@ -73,7 +75,7 @@ Visual Studio では、新しいパッケージ プロジェクトがサポー�
     <?xml version="1.0" encoding=utf-8"?>
     <Project ToolsVersion=14.0" xmlns="http://scehmas.microsoft.com/developer/msbuild/2003">
         <PropertyGroup>
-            <MyProjectOutputPath>C:\{path}</MyProjectOutputPath>
+            <MyProjectOutputPath>{relativepath}</MyProjectOutputPath>
         </PropertyGroup>
         <ItemGroup>
             <LayoutFile Include="$(MyProjectOutputPath)\ProjectTracker.exe">
@@ -94,7 +96,7 @@ Visual Studio では、新しいパッケージ プロジェクトがサポー�
     <?xml version="1.0" encoding="utf-8"?>
     <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
         <PropertyGroup>
-            <MyProjectOutputPath>C:\Users\peterfar\Desktop\ProjectTracker\ProjectTracker\bin\DesktopUWP</MyProjectOutputPath>
+            <MyProjectOutputPath>..\ProjectTracker\bin\DesktopUWP</MyProjectOutputPath>
         </PropertyGroup>
     ```
 
@@ -158,13 +160,13 @@ Visual Studio では、新しいパッケージ プロジェクトがサポー�
 
 4.  追加した UWP API をターゲットとしてビルドする場合には、ビルド ターゲットを DesktopUWP に切り替えられるようになりました。
 
-## PLMDebug 
+## <a name="plmdebug"></a>PLMDebug 
 
 Visual Studio の F5 キーおよびプロセスにアタッチの機能は、実行中にアプリをデバッグするために役立ちます。 しかし場合によっては、アプリを開始する前にデバッグを行うなど、デバッグ プロセスを細かく制御する必要があります。 これらのより高度なシナリオでは、[ **PLMDebug**](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx) を使用します。 このツールは、Windows デバッガーを使って、変換済みのアプリをデバッグすることができ、中断、再開、および終了など、アプリのライフ サイクルの完全な制御を提供します。 
 
 PLMDebug は Windows SDK に含まれています。 詳しくは、「[**PLMDebug**](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx)」をご覧ください。 
 
-## 完全な信頼コンテナー内で別のプロセスを実行する 
+## <a name="run-another-process-inside-the-full-trust-container"></a>完全な信頼コンテナー内で別のプロセスを実行する 
 
 指定されたアプリ パッケージのコンテナー内でカスタムのプロセスを起動することができます。 これは、シナリオをテストするために役立つ場合があります (たとえば、カスタムのテスト ハーネスがあり、アプリの出力をテストする必要がある場合など)。 これを行うには、```Invoke-CommandInDesktopPackage``` PowerShell コマンドレット を使用します。 
 
@@ -175,6 +177,6 @@ Invoke-CommandInDesktopPackage [-PackageFamilyName] <string> [-AppId] <string> [
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

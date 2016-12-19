@@ -4,30 +4,26 @@ ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
 description: "特定の日付範囲などのオプション フィルターを使ってレビュー データを取得するには、Windows ストア分析 API でこのメソッドを使います。"
 title: "アプリのレビューの取得"
 translationtype: Human Translation
-ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
-ms.openlocfilehash: 581532b56851d486f7804364d1d555b81829c1d1
+ms.sourcegitcommit: 7d05c8953f1f50be0b388a044fe996f345d45006
+ms.openlocfilehash: 49d3f3cb608f3207306af443c67b684a0ae9f319
 
 ---
 
-# アプリのレビューの取得
-
-
+# <a name="get-app-reviews"></a>アプリのレビューの取得
 
 
 特定の日付範囲などのオプション フィルターを使って JSON 形式でレビュー データを取得するには、Windows ストア分析 API でこのメソッドを使います。 この情報は、Windows デベロッパー センター ダッシュボードの[レビュー レポート](../publish/reviews-report.md)でも確認することができます。
 
-## 前提条件
-
+## <a name="prerequisites"></a>前提条件
 
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Windows ストア分析 API に関するすべての[前提条件](access-analytics-data-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
 * このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
-## 要求
+## <a name="request"></a>要求
 
-
-### 要求の構文
+### <a name="request-syntax"></a>要求の構文
 
 | メソッド | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -35,255 +31,62 @@ ms.openlocfilehash: 581532b56851d486f7804364d1d555b81829c1d1
 
 <span/> 
 
-### 要求ヘッダー
+### <a name="request-header"></a>要求ヘッダー
 
 | ヘッダー        | 型   | 説明                                                                 |
-|---------------|--------|-----------------------------------------------------------------------------|
+|---------------|--------|---------------------|
 | Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
 
 <span/> 
 
-### 要求パラメーター
+### <a name="request-parameters"></a>要求パラメーター
 
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">パラメーター</th>
-<th align="left">型</th>
-<th align="left">説明</th>
-<th align="left">必須かどうか</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">applicationId</td>
-<td align="left">string</td>
-<td align="left">レビュー データを取得するアプリのストア ID です。 ストア ID は、デベロッパー センター ダッシュボードの[アプリ ID ページ](../publish/view-app-identity-details.md)で確認できます。 ストア ID の例は 9WZDNCRFJ3Q8 です。</td>
-<td align="left">○</td>
-</tr>
-<tr class="even">
-<td align="left">startDate</td>
-<td align="left">date</td>
-<td align="left">取得するレビュー データの日付範囲の開始日です。 既定値は現在の日付です。</td>
-<td align="left">×</td>
-</tr>
-<tr class="odd">
-<td align="left">endDate</td>
-<td align="left">date</td>
-<td align="left">取得するレビュー データの日付範囲の終了日です。 既定値は現在の日付です。</td>
-<td align="left">×</td>
-</tr>
-<tr class="even">
-<td align="left">top</td>
-<td align="left">int</td>
-<td align="left">要求で返すデータの行数です。 指定されない場合の既定値は、最大値でもある 10000 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。</td>
-<td align="left">×</td>
-</tr>
-<tr class="odd">
-<td align="left">skip</td>
-<td align="left">int</td>
-<td align="left">クエリでスキップする行数です。 大きなデータ セットを操作するには、このパラメーターを使用します。 たとえば、top=10000 と skip=0 を指定すると、データの最初の 10,000 行が取得され、top=10000 と skip=10000 を指定すると、データの次の 10,000 行が取得されます。</td>
-<td align="left">×</td>
-</tr>
-<tr class="even">
-<td align="left">filter</td>
-<td align="left">string</td>
-<td align="left">応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 詳しくは、次の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。</td>
-<td align="left">いいえ</td>
-</tr>
-<tr class="odd">
-<td align="left">orderby</td>
-<td align="left">string</td>
-<td align="left">各評価の結果データ値の順序を指定するステートメントです。 構文は <em>orderby=field [order],field [order],...</em> です。 <em>field</em> パラメーターには、次のいずれかの文字列を指定できます。
-<ul>
-<li><strong>date</strong></li>
-<li><strong>osVersion</strong></li>
-<li><strong>market</strong></li>
-<li><strong>deviceType</strong></li>
-<li><strong>isRevised</strong></li>
-<li><strong>packageVersion</strong></li>
-<li><strong>deviceModel</strong></li>
-<li><strong>productFamily</strong></li>
-<li><strong>deviceScreenResolution</strong></li>
-<li><strong>isTouchEnabled</strong></li>
-<li><strong>reviewerName</strong></li>
-<li><strong>reviewTitle</strong></li>
-<li><strong>reviewText</strong></li>
-<li><strong>helpfulCount</strong></li>
-<li><strong>notHelpfulCount</strong></li>
-<li><strong>responseDate</strong></li>
-<li><strong>responseText</strong></li>
-<li><strong>deviceRAM</strong></li>
-<li><strong>deviceStorageCapacity</strong></li>
-<li><strong>rating</strong></li>
-</ul>
-<p><em>order</em> パラメーターは省略可能であり、<strong>asc</strong> または <strong>desc</strong> を指定して、各フィールドを昇順または降順にすることができます。 既定値は <strong>asc</strong> です。</p>
-<p><em>orderby</em> 文字列の例: <em>orderby=date,market</em></p></td>
-<td align="left">×</td>
-</tr>
-</tbody>
-</table>
+| パラメーター        | 型   |  説明      |  必須かどうか  
+|---------------|--------|---------------|------|
+| applicationId | string | レビュー データを取得するアプリのストア ID です。 ストア ID は、デベロッパー センター ダッシュボードの[アプリ ID ページ](../publish/view-app-identity-details.md)で確認できます。 ストア ID は、たとえば 9WZDNCRFJ3Q8 のような文字列です。 |  必須  |
+| startDate | date | 取得するレビュー データの日付範囲の開始日です。 既定値は現在の日付です。 |  必須ではない  |
+| endDate | date | 取得するレビュー データの日付範囲の終了日です。 既定値は現在の日付です。 |  必須ではない  |
+| top | int | 要求で返すデータの行数です。 指定されない場合の既定値は、最大値でもある 10000 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。 |  必須ではない  |
+| skip | int | クエリでスキップする行数です。 大きなデータ セットを操作するには、このパラメーターを使用します。 たとえば、top=10000 と skip=0 を指定すると、データの最初の 10,000 行が取得され、top=10000 と skip=10000 を指定すると、データの次の 10,000 行が取得されます。 |  必須ではない  |
+| filter |string  | 応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 詳しくは、次の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。 | 必須ではない   |
+| orderby | string | 結果データ値の順序を指定するステートメントです。 構文は <em>orderby=field [order],field [order],...</em> です。 <em>field</em> パラメーターには、次のいずれかの文字列を指定できます。<ul><li><strong>date</strong></li><li><strong>osVersion</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>isRevised</strong></li><li><strong>packageVersion</strong></li><li><strong>deviceModel</strong></li><li><strong>productFamily</strong></li><li><strong>deviceScreenResolution</strong></li><li><strong>isTouchEnabled</strong></li><li><strong>reviewerName</strong></li><li><strong>reviewTitle</strong></li><li><strong>reviewText</strong></li><li><strong>helpfulCount</strong></li><li><strong>notHelpfulCount</strong></li><li><strong>responseDate</strong></li><li><strong>responseText</strong></li><li><strong>deviceRAM</strong></li><li><strong>deviceStorageCapacity</strong></li><li><strong>rating</strong></li></ul><p><em>order</em> パラメーターは省略可能であり、<strong>asc</strong> または <strong>desc</strong> を指定して、各フィールドを昇順または降順にすることができます。 既定値は <strong>asc</strong> です。</p><p><em>orderby</em> 文字列の例: <em>orderby=date,market</em></p> |  必須ではない  |
 
 <span/>
  
-### フィルター フィールド
+### <a name="filter-fields"></a>フィルター フィールド
 
 要求の *filter* パラメーターには、応答内の行をフィルター処理する 1 つまたは複数のステートメントが含まれます。 各ステートメントには **eq** または **ne** 演算子と関連付けられるフィールドと値が含まれ、一部のフィールドでは **contains**、**gt**、**lt**、**ge**、および **le** 演算子もサポートします。 **and** または **or** を使ってステートメントを組み合わせることができます。
 
 *filter* 文字列の例は次のとおりです。*filter=contains(reviewText,'great') and contains(reviewText,'ads') and deviceRAM lt 2048 and market eq 'US'*
 
-サポートされているフィールドと各フィールドでサポートされている演算子の一覧については、次の表をご覧ください。 *filter* パラメーターでは、文字列値は単一引用符で囲む必要があります。
+サポートされているフィールドと各フィールドでサポートされている演算子の一覧については、次の表をご覧ください。 *filter* パラメーターでは、文字列値を単一引用符で囲む必要があります。
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">フィールド</th>
-<th align="left">サポートされている演算子</th>
-<th align="left">説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">market</td>
-<td align="left">eq、ne</td>
-<td align="left">デバイス市場の ISO 3166 国コードを含む文字列です。</td>
-</tr>
-<tr class="even">
-<td align="left">osVersion</td>
-<td align="left">eq、ne</td>
-<td align="left">次のいずれかの文字列です。
-<ul>
-<li><strong>Windows Phone 7.5</strong></li>
-<li><strong>Windows Phone 8</strong></li>
-<li><strong>Windows Phone 8.1</strong></li>
-<li><strong>Windows Phone 10</strong></li>
-<li><strong>Windows 8</strong></li>
-<li><strong>Windows 8.1</strong></li>
-<li><strong>Windows 10</strong></li>
-<li><strong>Unknown</strong></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td align="left">deviceType</td>
-<td align="left">eq、ne</td>
-<td align="left">次のいずれかの文字列です。
-<ul>
-<li><strong>PC</strong></li>
-<li><strong>Tablet</strong></li>
-<li><strong>Phone</strong></li>
-<li><strong>IoT</strong></li>
-<li><strong>Wearable</strong></li>
-<li><strong>Server</strong></li>
-<li><strong>Collaborative</strong></li>
-<li><strong>Other</strong></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td align="left">isRevised</td>
-<td align="left">eq、ne</td>
-<td align="left">更新されているレビューをフィルター処理するには <strong>true</strong> を指定します。それ以外の場合は <strong>false</strong> を指定します。</td>
-</tr>
-<tr class="odd">
-<td align="left">packageVersion</td>
-<td align="left">eq、ne</td>
-<td align="left">レビューされたアプリ パッケージのバージョンです。</td>
-</tr>
-<tr class="even">
-<td align="left">deviceModel</td>
-<td align="left">eq、ne</td>
-<td align="left">アプリがレビューされたデバイスの種類です。</td>
-</tr>
-<tr class="odd">
-<td align="left">productFamily</td>
-<td align="left">eq、ne</td>
-<td align="left">次のいずれかの文字列です。
-<ul>
-<li><strong>PC</strong></li>
-<li><strong>Tablet</strong></li>
-<li><strong>Phone</strong></li>
-<li><strong>Wearable</strong></li>
-<li><strong>Server</strong></li>
-<li><strong>Collaborative</strong></li>
-<li><strong>Other</strong></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td align="left">deviceScreenResolution</td>
-<td align="left">eq、ne</td>
-<td align="left">&quot;<em>幅</em> x <em>高さ</em>&quot; 形式のデバイスの画面解像度です。</td>
-</tr>
-<tr class="odd">
-<td align="left">isTouchEnabled</td>
-<td align="left">eq、ne</td>
-<td align="left">タッチ対応デバイスをフィルター処理するには <strong>true</strong> を指定します。それ以外の場合は <strong>false</strong> を指定します。</td>
-</tr>
-<tr class="even">
-<td align="left">reviewerName</td>
-<td align="left">eq、ne</td>
-<td align="left">レビュー担当者名です。</td>
-</tr>
-<tr class="odd">
-<td align="left">helpfulCount</td>
-<td align="left">eq、ne</td>
-<td align="left">レビューが役に立つとマークされた回数です。</td>
-</tr>
-<tr class="even">
-<td align="left">notHelpfulCount</td>
-<td align="left">eq、ne</td>
-<td align="left">レビューが役に立たないとマークされた回数です。</td>
-</tr>
-<tr class="odd">
-<td align="left">reviewTitle</td>
-<td align="left">eq、ne、contains</td>
-<td align="left">レビューのタイトルです。</td>
-</tr>
-<tr class="even">
-<td align="left">reviewText</td>
-<td align="left">eq、ne、contains</td>
-<td align="left">レビューのテキスト コンテンツです。</td>
-</tr>
-<tr class="odd">
-<td align="left">responseText</td>
-<td align="left">eq、ne、contains</td>
-<td align="left">応答のテキスト コンテンツです。</td>
-</tr>
-<tr class="even">
-<td align="left">responseDate</td>
-<td align="left">eq、ne</td>
-<td align="left">応答が送信された日付です。</td>
-</tr>
-<tr class="odd">
-<td align="left">deviceRAM</td>
-<td align="left">eq、ne、gt、lt、ge、le</td>
-<td align="left">物理 RAM (MB 単位) です。</td>
-</tr>
-<tr class="even">
-<td align="left">deviceStorageCapacity</td>
-<td align="left">eq、ne、gt、lt、ge、le</td>
-<td align="left">主記憶域ディスクの容量 (GB 単位) です。</td>
-</tr>
-<tr class="odd">
-<td align="left">rating</td>
-<td align="left">eq、ne、gt、lt、ge、le</td>
-<td align="left">星で表現したアプリの評価です。</td>
-</tr>
-</tbody>
-</table>
+| フィールド        | サポートされている演算子   |  説明        |
+|---------------|--------|-----------------|
+| market | eq、ne | デバイス市場の ISO 3166 国コードを含む文字列です。 |
+| osVersion  | eq、ne  | 次のいずれかの文字列です。<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul>  |
+| deviceType  | eq、ne  | 次のいずれかの文字列です。<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul>  |
+| isRevised  | eq、ne  | 更新されているレビューをフィルター処理するには <strong>true</strong> を指定します。それ以外の場合は <strong>false</strong> を指定します。  |
+| packageVersion  | eq、ne  | レビューされたアプリ パッケージのバージョンです。  |
+| deviceModel  | eq、ne  | アプリがレビューされたデバイスの種類です。  |
+| productFamily  | eq、ne  | 次のいずれかの文字列です。<ul><li><strong>PC</strong></li><li><strong>Tablet</strong></li><li><strong>Phone</strong></li><li><strong>Wearable</strong></li><li><strong>Server</strong></li><li><strong>Collaborative</strong></li><li><strong>Other</strong></li></ul>  |
+| deviceRAM  | eq、ne、gt、lt、ge、le  | 物理 RAM (MB 単位) です。  |
+| deviceScreenResolution  | eq、ne  | &quot;<em>幅</em> x <em>高さ</em>&quot; 形式のデバイスの画面解像度です。   |
+| deviceStorageCapacity  | eq、ne、gt、lt、ge、le   | 主記憶域ディスクの容量 (GB 単位) です。  |
+| isTouchEnabled  | eq、ne  | タッチ対応デバイスをフィルター処理するには <strong>true</strong> を指定します。それ以外の場合は <strong>false</strong> を指定します。   |
+| reviewerName  | eq、ne  |  レビュー担当者名です。 |
+| rating  | eq、ne、gt、lt、ge、le  | 星で表現したアプリの評価です。  |
+| reviewTitle  | eq、ne、contains  | レビューのタイトルです。  |
+| reviewText  | eq、ne、contains  |  レビューのテキスト コンテンツです。 |
+| helpfulCount  | eq、ne  |  レビューが役に立つとマークされた回数です。 |
+| notHelpfulCount  | eq、ne  | レビューが役に立たないとマークされた回数です。  |
+| responseDate  | eq、ne  | 応答が送信された日付です。  |
+| responseText  | eq、ne、contains  | 応答のテキスト コンテンツです。  |
+
 
 <span/> 
 
-### 要求の例
+### <a name="request-example"></a>要求の例
 
 レビュー データを取得するためのいくつかの要求の例を次に示します。 *applicationId* 値を、目的のアプリのストア ID に置き換えてください。
 
@@ -295,51 +98,51 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews?application
 Authorization: Bearer <your access token>
 ```
 
-## 応答
+## <a name="response"></a>応答
 
 
-### 応答本文
+### <a name="response-body"></a>応答本文
 
 | 値      | 型   | 説明                                                                                                                                                                                                                                                                            |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Value      | array  | レビュー データを含むオブジェクトの配列です。 各オブジェクトのデータについて詳しくは、次の「[レビュー値](#review-values)」セクションをご覧ください。                                                                                                                                      |
-| @nextLink  | string | データの追加ページがある場合、この文字列には、データの次のページを要求するために使用できる URI が含まれます。 たとえば、要求の **top** パラメーターが 10000 に設定されたが、クエリの入手データに 10,000 を超える行が含まれている場合に、この値が返されます。 |
+| @nextLink  | string | データの追加ページがある場合、この文字列には、データの次のページを要求するために使用できる URI が含まれます。 たとえば、要求の **top** パラメーターを 10000 に設定した場合、クエリに適合するレビュー データが 10,000 行を超えると、この値が返されます。 |
 | TotalCount | int    | クエリの結果データ内の行の総数です。                                                                                                                                                                                                                             |
 
 <span/>
  
-### レビュー値
+### <a name="review-values"></a>レビュー値
 
 *Value* 配列の要素には、次の値が含まれます。
 
 | 値                  | 型    | 説明                                                                                                                                                                                                                          |
-|------------------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| date                   | string  | 評価データの日付範囲の最初の日付です。 要求に日付を指定した場合、この値はその日付になります。 要求に週、月、またはその他の日付範囲を指定した場合、この値はその日付範囲の最初の日付になります。 |
-| applicationId          | string  | 評価データを取得するアプリのストア ID です。                                                                                                                                                                 |
-| applicationName        | string  | アプリの表示名です。                                                                                                                                                                                                         |
-| market                 | string  | 評価が送信された市場の ISO 3166 国コードです。                                                                                                                                                              |
-| osVersion              | string  | 評価が送信された OS バージョンです。 サポートされる文字列の一覧については、前の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                               |
-| deviceType             | string  | 評価が送信されたデバイスの種類です。 サポートされる文字列の一覧については、前の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                           |
-| isRevised              | Boolean | 値 **true** は、レビューが更新済みであることを示します。それ以外の場合は **false** です。                                                                                                                                                       |
-| packageVersion         | string  | レビューされたアプリ パッケージのバージョンです。                                                                                                                                                                                    |
-| deviceModel            | string  | アプリがレビューされたデバイスの種類です。                                                                                                                                                                                    |
-| productFamily          | string  | デバイス ファミリの名前です。 サポートされる文字列の一覧については、前の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                                                         |
-| deviceScreenResolution | string  | "*幅* x *高さ*" 形式のデバイスの画面解像度です。                                                                                                                                                                     |
-| isTouchEnabled         | Boolean | 値 **true** は、タッチ対応であることを示します。それ以外の場合は **false** です。                                                                                                                                                             |
-| reviewerName           | string  | レビュー担当者名です。                                                                                                                                                                                                                   |
-| helpfulCount           | number  | レビューが役に立つとマークされた回数です。                                                                                                                                                                                   |
-| notHelpfulCount        | number  | レビューが役に立たないとマークされた回数です。                                                                                                                                                                               |
-| reviewTitle            | string  | レビューのタイトルです。                                                                                                                                                                                                             |
-| reviewText             | string  | レビューのテキスト コンテンツです。                                                                                                                                                                                                     |
-| responseText           | string  | 応答のテキスト コンテンツです。                                                                                                                                                                                                   |
-| responseDate           | string  | 応答が送信された日付です。                                                                                                                                                                                                   |
-| deviceRAM              | number  | 物理 RAM (MB 単位) です。                                                                                                                                                                                                             |
-| deviceStorageCapacity  | number  | 主記憶域ディスクの容量 (GB 単位) です。                                                                                                                                                                                     |
-| rating                 | number  | 星で表現したアプリの評価です。                                                                                                                                                                                                            |
+|------------------------|---------|---------------------|
+| date                   | string  | レビュー データの日付範囲の最初の日付です。 要求に日付を指定した場合、この値はその日付になります。 要求に週、月、またはその他の日付範囲を指定した場合、この値はその日付範囲の最初の日付になります。  |
+| applicationId          | string  | レビュー データを取得するアプリのストア ID です。        |
+| applicationName        | string  | アプリの表示名です。   |
+| market                 | string  | レビューが送信された市場の ISO 3166 国コードです。       |
+| osVersion              | string  | レビューが送信された OS バージョンです。 サポートされる文字列の一覧については、上記の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。         |
+| deviceType             | string  | レビューが送信されたデバイスの種類です。 サポートされる文字列の一覧については、上記の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。      |
+| isRevised              | Boolean | 値 **true** は、レビューが更新済みであることを示します。それ以外の場合は **false** です。         |
+| packageVersion         | string  | レビューされたアプリ パッケージのバージョンです。   |
+| deviceModel            | string  | アプリがレビューされたデバイスの種類です。      |
+| productFamily          | string  | デバイス ファミリの名前です。 サポートされる文字列の一覧については、上記の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。  |
+| deviceRAM              | number  | 物理 RAM (MB 単位) です。        |
+| deviceScreenResolution | string  | "*幅* x *高さ*" 形式のデバイスの画面解像度です。        |
+| deviceStorageCapacity  | number  | 主記憶域ディスクの容量 (GB 単位) です。   |
+| isTouchEnabled         | Boolean | 値 **true** は、タッチ対応であることを示します。それ以外の場合は **false** です。      |
+| reviewerName           | string  | レビュー担当者名です。      |
+| rating                 | number  | 星で表現したアプリの評価です。         |
+| reviewTitle            | string  | レビューのタイトルです。       |
+| reviewText             | string  | レビューのテキスト コンテンツです。     |
+| helpfulCount           | number  | レビューが役に立つとマークされた回数です。     |
+| notHelpfulCount        | number  | レビューが役に立たないとマークされた回数です。               |
+| responseDate           | string  | 応答が送信された日付です。                 |
+| responseText           | string  | 応答のテキスト コンテンツです。        |
 
 <span/> 
 
-### 応答の例
+### <a name="response-example"></a>応答の例
 
 この要求の JSON 応答の本文の例を次に示します。
 
@@ -376,7 +179,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [レビュー レポート](../publish/reviews-report.md)
 * [Windows ストア サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)
@@ -387,6 +190,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

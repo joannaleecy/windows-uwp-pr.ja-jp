@@ -5,14 +5,14 @@ title: "Windows Ink でのストロークのテキスト認識"
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Recognize Windows Ink strokes as text
 template: detail.hbs
-keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, handwriting recognition
+keywords: "Windows Ink, Windows の手書き入力, DirectInk, InkPresenter, InkCanvas, 手書き認識"
 translationtype: Human Translation
-ms.sourcegitcommit: dfb790980a8016da0ed9a080d7cf56b5a8a784ff
-ms.openlocfilehash: 26dc8910c779dc46d19be75abd49c20b750a9843
+ms.sourcegitcommit: 0f7f54c5c5baccdedfe32bc7c71994e43a93f032
+ms.openlocfilehash: c402843cce752a54d8ff7301d892ef8014350a07
 
 ---
 
-# Windows Ink でのストロークのテキスト認識
+# <a name="recognize-windows-ink-strokes-as-text"></a>Windows Ink でのストロークのテキスト認識
 
 Windows Ink でサポートされている手書き認識により、インク ストロークをテキストに変換します。
 
@@ -26,7 +26,7 @@ Windows Ink でサポートされている手書き認識により、インク �
 
 ここで示しているすべての例では、インク入力機能に必要な名前空間の参照を追加しています。 "Windows.UI.Input.Inking" などです。
 
-## 基本的な手書き認識
+## <a name="basic-handwriting-recognition"></a>基本的な手書き認識
 
 
 ここでは、既定のインストール言語パックに関連付けられた手書き認識エンジンを使って、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) での一連のインク ストロークを解釈する方法を示します。
@@ -203,7 +203,7 @@ string str = "Recognition result\n";
     }
 ```
 
-## 地域と言語の認識
+## <a name="international-recognition"></a>地域と言語の認識
 
 
 Windows でサポートされている包括的な言語のサブセットを手書き認識に使えます。
@@ -448,7 +448,7 @@ string str = "Recognition result\n";
     }
 ```
 
-## 動的な手書き認識
+## <a name="dynamic-handwriting-recognition"></a>動的な手書き認識
 
 
 前の 2 つの例では、認識を開始するには、ユーザーがボタンを押す必要があります。 アプリでは、インク ストローク入力と基本的なタイミング機能を組み合わせて使うことで、動的な認識を実行することもできます。
@@ -660,7 +660,7 @@ string str = "Recognition result\n";
     }
 ```
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 * [ペン操作とスタイラス操作](pen-and-stylus-interactions.md)
 
@@ -668,12 +668,14 @@ string str = "Recognition result\n";
 * [インクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [単純なインクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620312)
 * [複雑なインクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [塗り絵帳のサンプル](https://aka.ms/cpubsample-coloringbook)
+* [Family Notes のサンプル](https://aka.ms/cpubsample-familynotessample)
+
+
  
 
- 
 
 
-
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

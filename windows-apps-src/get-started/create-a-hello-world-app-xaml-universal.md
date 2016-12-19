@@ -4,12 +4,12 @@ ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: "Hello, world アプリを作成する (XAML)"
 description: "このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象にした単純な Hello, world アプリを Extensible Application Markup Language (XAML) を使って C# で作る方法について説明します。"
 translationtype: Human Translation
-ms.sourcegitcommit: 344ffda398c789f82973b5f08a0e3b791fc5ad10
-ms.openlocfilehash: 6cf960781862649588f361b6bfcd87605f3e8d55
+ms.sourcegitcommit: 7e76c9abd4157c22b38d79b178f5f07827d336ca
+ms.openlocfilehash: e928b4bb116ad98ffe7c225ac1ef2306e56a13ea
 
 ---
 
-# "Hello, world" アプリを作成する (XAML)
+# <a name="create-a-hello-world-app-xaml"></a>"Hello, world" アプリを作成する (XAML)
 
 このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) 向けの単純な "Hello, world" アプリを XAML と C# で作る方法について説明します。 Microsoft Visual Studio の 1 つのプロジェクトを使って、Windows 10 のすべてのデバイスで実行されるアプリを構築できます。
 
@@ -20,7 +20,7 @@ ms.openlocfilehash: 6cf960781862649588f361b6bfcd87605f3e8d55
 -   Visual Studio でローカル デスクトップと電話エミュレーターに対してプロジェクトを実行する。
 -   SpeechSynthesizer を使って、ボタンが押されたときにアプリがコンテンツを読み上げるようにする。
 
-## はじめに...
+## <a name="before-you-start"></a>はじめに...
 
 -   [ユニバーサル Windows アプリとは](whats-a-uwp.md)?
 -   [Windows 10 の新着情報](https://dev.windows.com/whats-new-windows-10-dev-preview)
@@ -28,13 +28,13 @@ ms.openlocfilehash: 6cf960781862649588f361b6bfcd87605f3e8d55
 -   また、Visual Studio の既定のウィンドウ レイアウトを使用することを前提としています。 既定のレイアウトを変更した場合は、**[ウィンドウ]** メニューの **[ウィンドウ レイアウトのリセット]** を使って、レイアウトをリセットできます。
 
 
-## ビデオを見る場合...
+## <a name="if-you-would-rather-watch-a-video"></a>ビデオを見る場合...
 
 <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Writing-Your-First-Windows-10-App/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
 
 ステップ バイ ステップ ガイドを読むより視覚的なアプローチをご希望の場合は、このビデオをご覧ください。内容は同じですが、素敵なサウンドトラックが付いています。
 
-## 手順 1. Visual Studio で新しいプロジェクトを作る
+## <a name="step-1-create-a-new-project-in-visual-studio"></a>手順 1. Visual Studio で新しいプロジェクトを作る
 
 1.  Visual Studio 2015 を起動します。
 
@@ -59,7 +59,7 @@ ms.openlocfilehash: 6cf960781862649588f361b6bfcd87605f3e8d55
 **[空白のアプリ (ユニバーサル Windows)]** は最小限のテンプレートですが、多くのファイルが含まれています。 これらのファイルは、C# を使うすべての UWP アプリに必要です。 Visual Studio で作るすべてのプロジェクトには、これらのファイルが必ず含まれます。
 
 
-### ファイルの内容
+### <a name="whats-in-the-files"></a>ファイルの内容
 
 プロジェクトのファイルを表示して編集するには、**ソリューション エクスプローラー**でファイルをダブルクリックします。 フォルダーと同様、XAML ファイルを展開して、関連するコード ファイルを表示します。 XAML ファイルは、デザイン サーフェスと XAML エディターの両方を表示する分割ビューで開きます。
 > [!NOTE]
@@ -87,9 +87,9 @@ ms.openlocfilehash: 6cf960781862649588f361b6bfcd87605f3e8d55
 -   Assets/StoreLogo.png は、Windows ストア内のアプリを表します。
 -   Assets/SplashScreen.scale-200.png は、アプリが起動したときに表示するスプラッシュ画面です。
 
-## 手順 2. ボタンを追加する
+## <a name="step-2-adding-a-button"></a>手順 2. ボタンを追加する
 
-### デザイナー ビューの使用
+### <a name="using-the-designer-view"></a>デザイナー ビューの使用
 
 ページにボタンを追加しましょう。 このチュートリアルでは、前に示した複数のファイルの一部 (App.xaml、MainPage.xaml、および MainPage.xaml.cs) のみを操作します。
 
@@ -125,14 +125,14 @@ ms.openlocfilehash: 6cf960781862649588f361b6bfcd87605f3e8d55
 
 ![ソリューション エクスプローラーのウィンドウ](images/win10-cs-07.png)
 
-## 手順 3. アプリを起動する
+## <a name="step-3-start-the-app"></a>手順 3. アプリを起動する
 
 
 ここまでの操作で、非常に単純なアプリが作成されました。 ここで、アプリをビルド、デプロイ、起動してどうなるかを見てみましょう。 アプリは、ローカル コンピューター、シミュレーターかエミュレーター、またはリモート デバイスでデバッグできます。 Visual Studio の [ターゲット デバイス] メニューを示します。
 
 ![アプリをデバッグするデバイス ターゲットのドロップダウン リスト](images/uap-debug.png)
 
-### デスクトップ デバイスでアプリを起動する
+### <a name="start-the-app-on-a-desktop-device"></a>デスクトップ デバイスでアプリを起動する
 
 既定では、アプリはローカル コンピューターで実行されます。 [ターゲット デバイス] メニューには、デスクトップ デバイス ファミリのデバイスでアプリをデバッグするためのいくつかのオプションが用意されています。
 
@@ -175,7 +175,7 @@ Windows キーを押して **[スタート]** メニューを開き、すべて�
 
    アプリ ウィンドウを閉じます。
 
-### モバイル デバイス エミュレーターでアプリを起動する
+### <a name="start-the-app-on-a-mobile-device-emulator"></a>モバイル デバイス エミュレーターでアプリを起動する
 
 アプリは、すべての Windows 10 デバイスで実行できます。Windows Phone ではどのようになるかを見てみましょう。
 
@@ -209,7 +209,7 @@ Visual Studio で、選択したエミュレーターが起動し、アプリが
 Windows Phone で Windows 10 を実行している場合は、Windows Phone をコンピューターに接続し、アプリを直接配置して実行できます (ただし、最初に[開発者モードを有効にする](enable-your-device-for-development.md)必要があります)。
 
 
-## 手順 4. イベント ハンドラー
+## <a name="step-3-event-handlers"></a>手順 4. イベント ハンドラー
 
 "イベント ハンドラー" は複雑なもののように思われますが、イベント (ユーザーによるボタンのクリックなど) が発生したときに呼び出されるコードの別名にすぎません。
 
@@ -243,20 +243,22 @@ private async void button_Click(object sender, RoutedEventArgs e)
 
 **async** キーワードも含めるようにしてください。そうしないと、アプリを実行しようとしたときにエラーが表示されます。
 
-### ここで実行したこと
+### <a name="what-did-we-just-do"></a>ここで実行したこと
 
 このコードでは、いくつか Windows API を使用して音声合成オブジェクトを作成し、読み上げるテキストを指定します  (SpeechSynthesis の使い方について詳しくは、[SpeechSynthesis 名前空間](https://msdn.microsoft.com/library/windows/apps/windows.media.speechsynthesis.aspx)のドキュメントをご覧ください)。
 
 アプリを実行し、ボタンをクリックすると、コンピューター (または電話) が "Hello, World!" を文字どおりにしゃべります。
 
 
-## まとめ
+## <a name="summary"></a>まとめ
 
 
-これで、Windows 10 と UWP 用の初めてのアプリを作成しました。 [次の手順](learn-more.md)に進みます。
+これで、Windows 10 と UWP 用の初めてのアプリを作成しました。
+
+アプリで使うコントロールを XAML によってレイアウトする方法については、[グリッドに関するチュートリアル](../layout/grid-tutorial.md)で学習するか、直接[次のステップ](learn-more.md)に進んでください。
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -4,12 +4,12 @@ ms.assetid: F45E6F35-BC18-45C8-A8A5-193D528E2A4E
 description: "UWP アプリのアプリ内購入と試用版を有効にする方法を説明します。"
 title: "アプリ内購入と試用版"
 translationtype: Human Translation
-ms.sourcegitcommit: 09a123de7b3c31e2de6a3e43d44c648e7cc94da4
-ms.openlocfilehash: ef0764aaf772fc36c6a6266e103cb35cafa841c5
+ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
+ms.openlocfilehash: 7783b6017a314ddb24509c55db8134a4c214430f
 
 ---
 
-# アプリ内購入と試用版
+# <a name="in-app-purchases-and-trials"></a>アプリ内購入と試用版
 
 Windows SDK に用意されている API を使用して、以下の機能を実装し、ユニバーサル Windows プラットフォーム (UWP) アプリによる収益を向上させることができます。
 
@@ -20,7 +20,7 @@ Windows SDK に用意されている API を使用して、以下の機能を実
 この記事では、UWP アプリでのアプリ内購入と試用版のしくみについて、その概要を説明します。
 
 <span id="choose-namespace" />
-## 使用する名前空間を選ぶ
+## <a name="choose-which-namespace-to-use"></a>使用する名前空間を選ぶ
 
 UWP アプリにアプリ内購入機能や試用版機能を追加する際に使用できる名前空間は、2 つあります。どちらの名前空間を使用するかは、アプリのターゲットとなる Windows 10 のバージョンによって決まります。 これらの名前空間の API は同じ目的を果たしますが、その設計は大きく異なります。また、この 2 つの API 間にコードの互換性はありません。
 
@@ -29,7 +29,7 @@ UWP アプリにアプリ内購入機能や試用版機能を追加する際に�
 * **[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)**&nbsp;&nbsp;Windows 10 のすべてのバージョンでは、この名前空間にあるアプリ内購入と試用版向けの以前の API がサポートされています。 Windows 10 用 UWP アプリではこの名前空間を使用できますが、今後デベロッパー センターやストアでは、この名前空間は新しい種類の製品や機能をサポートするように更新されない可能性があります。 この名前空間について詳しくは、「[Windows.ApplicationModel.Store 名前空間を使用するアプリ内購入と試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)」をご覧ください。
 
 <span id="concepts" />
-## 基本的な概念
+## <a name="basic-concepts"></a>基本的な概念
 
 このセクションでは、UWP アプリでのアプリ内購入と試用版に関する基本的な概念について説明します。 その概念のほとんどは、特に記載がない限り、**Windows.Services.Store** 名前空間と **Windows.ApplicationModel.Store** 名前空間の両方に適用されます。
 
@@ -52,28 +52,31 @@ UWP アプリでは、次の種類のアドオンを提供できます。
 >**注**&nbsp;&nbsp;パッケージで使用される永続的なアドオン (ダウンロード コンテンツまたは DLC とも呼ばれます) など、他の種類のアドオンが利用できるのは一部の開発者に限られており、このドキュメントでは説明しません。
 
 <span id="api_intro" />
-## Windows.Services.Store 名前空間の使用
+## <a name="using-the-windowsservicesstore-namespace"></a>Windows.Services.Store 名前空間の使用
 
 この記事の残りの部分では、[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間を使用してアプリ内購入と試用版を実装する方法について説明します。 この名前空間は Windows 10 バージョン 1607 以降をターゲットにしているアプリでのみ使用できます。可能であれば、このようなアプリでは [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間の代わりに、この Windows.Services.Store 名前空間を使用することをお勧めします。
 
 **Windows.ApplicationModel.Store** 名前空間については、「[Windows.ApplicationModel.Store 名前空間を使用するアプリ内購入と試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)」をご覧ください。
 
-### StoreContext クラスの概要
+### <a name="get-started-with-the-storecontext-class"></a>StoreContext クラスの概要
 
 **Windows.Services.Store** 名前空間のメイン エントリ ポイントは、[StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) クラスです。 このクラスには、現在のアプリとその利用可能なアドオンに関する情報の取得、現在のアプリまたはそのアドオンに関するライセンス情報の取得、現在のユーザー向けのアプリまたはアドオンの購入、およびその他のタスクを行う際に使用できるメソッドが用意されています。 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) オブジェクトを取得するには、次のいずれかを実行します。
 
 * シングル ユーザー アプリ (アプリを起動したユーザーのコンテキストのみで実行されるアプリ) では、[GetDefault](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getdefault.aspx) メソッドを使用して、**StoreContext** オブジェクトを取得します。このオブジェクトを使用すると、ユーザーの Windows ストア関連データへのアクセスおよび管理が可能になります。 ほとんどのユニバーサル Windows プラットフォーム アプリ (UWP) アプリはシングル ユーザー アプリです。
 
+  > [!div class="tabbedCodeSnippets"]
   ```csharp
   Windows.Services.Store.StoreContext context = StoreContext.GetDefault();
   ```
 
 * [マルチ ユーザー アプリ](../xbox-apps/multi-user-applications.md)では、[GetForUser](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getforuser.aspx) メソッドを使用して **StoreContext** オブジェクトを取得します。このオブジェクトを使用すると、アプリの使用中に Microsoft アカウントでサインインした特定のユーザーに関する Windows ストア関連のデータのアクセスや管理を行うことができます。 次の例は、利用可能な最初のユーザーの **StoreContext** オブジェクトを取得します。
 
+  > [!div class="tabbedCodeSnippets"]
   ```csharp
   var users = await Windows.System.User.FindAllAsync();
   Windows.Services.Store.StoreContext context = StoreContext.GetForUser(users[0]);
   ```
+
 >**注**&nbsp;&nbsp;[Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop) を使用する Windows デスクトップ アプリケーションでは、[StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) オブジェクトを使用する前に、追加の手順を実行してこのオブジェクトを構成する必要があります。 詳しくは、「[Desktop Bridge を使用するデスクトップ アプリケーションでの StoreContext クラスの使用](#desktop)」をご覧ください。
 
 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) オブジェクトを構成すると、メソッドを呼び出して、現在のアプリやアドオンに関するストア製品情報の取得、現在のアプリとそのアドオンに関するライセンス情報の取得、現在のユーザー向けのアプリやアドオンの購入、およびその他のタスクを実行できます。 この名前空間を使用して実行できる一般的なタスクについて詳しくは、次の記事をご覧ください。
@@ -87,7 +90,7 @@ UWP アプリでは、次の種類のアドオンを提供できます。
 **Windows.Services.Store** 名前空間の使用方法を示すサンプル アプリについては、[ストア サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)をご覧ください。
 
 <span id="implement-iap" />
-### アプリ内購入の実装
+### <a name="implement-in-app-purchases"></a>アプリ内購入の実装
 
 **Windows.Services.Store** 名前空間を使用して、アプリでアプリ内購入をユーザーに提供するには:
 
@@ -100,7 +103,7 @@ UWP アプリでは、次の種類のアドオンを提供できます。
 4. この記事に記載されている[テスト ガイダンス](#testing)に従って、実装をテストします。
 
 <span id="implement-trial" />
-### 試用版機能の実装
+### <a name="implement-trial-functionality"></a>試用版機能の実装
 
 **Windows.Services.Store** 名前空間を使用して、アプリの試用版の機能を除外または制限するには:
 
@@ -113,7 +116,7 @@ UWP アプリでは、次の種類のアドオンを提供できます。
 4. この記事に記載されている[テスト ガイダンス](#testing)に従って、実装をテストします。
 
 <span id="testing" />
-### 実装のテスト
+### <a name="test-your-implementation"></a>実装のテスト
 
 **Windows.Services.Store** 名前空間には、テスト中にライセンス情報をシミュレートするために使用できるクラスが用意されていません。 代わりに、アプリをストアに公開し、そのアプリを開発用デバイスにダウンロードして、そのライセンスをテストに使用する必要があります。 この方法は、**Windows.ApplicationModel.Store** 名前空間を使用するアプリの場合とは異なります。このようなアプリでは、[CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) クラスを使用して、テスト中にライセンス情報をシミュレートできます。
 
@@ -138,14 +141,14 @@ UWP アプリでは、次の種類のアドオンを提供できます。
 5. Visual Studio で、プロジェクトの実行またはデバッグを開始します。 コードによって、ローカルのプロジェクトと関連付けたストア アプリからアプリおよびアドオンのデータが取得されます。 アプリを再インストールするように求められた場合は、その指示に従った後、プロジェクトを実行またはデバッグします。
 
 <span id="receipts" />
-### アプリ内購入の受領通知
+### <a name="receipts-for-in-app-purchases"></a>アプリ内購入の受領通知
 
 **Windows.Services.Store** 名前空間には、購入が成功した場合の取引の受領通知をアプリのコードで取得する際に使用できる API が用意されていません。 これは、**Windows.ApplicationModel.Store** 名前空間を使用するアプリの場合とは異なります。このようなアプリでは、[クライアント側の API を使用して、取引の受領通知を取得する](use-receipts-to-verify-product-purchases.md)ことができます。
 
 **Windows.Services.Store** 名前空間を使用してアプリ内購入を実装し、特定のユーザーがアプリまたはアドオンを購入したかどうかを確認する必要がある場合は、[Windows ストア コレクション REST API](view-and-grant-products-from-a-service.md) の[製品を照会するためのメソッド](query-for-products.md)を使用できます。 このメソッドで返されるデータによって、指定されたユーザーが特定の製品に対する資格を持っているかどうかを確認し、ユーザーが購入した製品の取引に関するデータを取得することができます。 Windows ストア コレクション API では、Azure AD Authentication を使用してこの情報を取得します。
 
 <span id="desktop" />
-### Desktop Bridge を使用するアプリでの StoreContext クラスの使用
+### <a name="using-the-storecontext-class-in-an-app-that-uses-the-desktop-bridge"></a>Desktop Bridge を使用するアプリでの StoreContext クラスの使用
 
 [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop) を使用するデスクトップ アプリケーションでは、[StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) クラスを使用してアプリ内購入と試用版を実装できます。 ただし、Win32 デスクトップ アプリケーション、またはレンダリング フレームワーク (WPF アプリケーションなど) に関連付けられているウィンドウ ハンドル (HWND) を含んだデスクトップ アプリケーションがある場合、アプリケーションでは、オブジェクトによって表示されるモーダル ダイアログのオーナー ウィンドウとなるアプリケーション ウィンドウを指定するように、**StoreContext** オブジェクトを構成する必要があります。
 
@@ -155,6 +158,7 @@ Desktop Bridge を使用するデスクトップ アプリケーションで **S
 
   1. アプリケーションが C# や Visual Basic などのマネージ言語で記述されている場合、次の例に示すように、アプリのコードで [ComImport](https://msdn.microsoft.com/library/system.runtime.interopservices.comimportattribute.aspx) 属性を使用して、[IInitializeWithWindow](https://msdn.microsoft.com/library/windows/desktop/hh706981.aspx) インターフェイスを宣言します。 この例では、コード ファイルに **System.Runtime.InteropServices** 名前空間の **using** ステートメントが指定されていることを前提としています。
 
+    > [!div class="tabbedCodeSnippets"]
     ```csharp
     [ComImport]
     [Guid("3E68D4BD-7135-4D10-8018-9FB6D9F33FA1")]
@@ -169,6 +173,7 @@ Desktop Bridge を使用するデスクトップ アプリケーションで **S
 
   2. この記事で既に説明したように、[GetDefault](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getdefault.aspx) (または [GetForUser](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getforuser.aspx)) メソッドを使用して、[StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) オブジェクトを取得します。次に、このオブジェクトを [IInitializeWithWindow](https://msdn.microsoft.com/library/windows/desktop/hh706981.aspx) オブジェクトにキャストします。 その後で、[Initialize](https://msdn.microsoft.com/library/windows/desktop/hh706982.aspx) メソッドを呼び出し、**StoreContext** メソッドによって表示されるモーダル ダイアログのオーナーにするウィンドウのハンドルを渡します。 次の例は、アプリのメイン ウィンドウのハンドルをメソッドに渡す方法を示しています。
 
+    > [!div class="tabbedCodeSnippets"]
     ```csharp
     StoreContext context = StoreContext.GetDefault();
     IInitializeWithWindow initWindow = (IInitializeWithWindow)(object)context;
@@ -176,7 +181,7 @@ Desktop Bridge を使用するデスクトップ アプリケーションで **S
     ```
 
 <span id="products-skus" />
-### 製品、SKU、および可用性
+### <a name="products-skus-and-availabilities"></a>製品、SKU、および可用性
 
 ストア内のすべての製品には少なくとも 1 つの *SKU* があり、各 SKU ごとに少なくとも 1 つの*可用性*があります。 Windows デベロッパー センター ダッシュボードでは、ほとんどの場合、これらの概念は開発者から抽象化されており、多くの開発者はアプリまたはアドオンの SKU や可用性を定義することはありません。 ただし、**Windows.Services.Store** 名前空間のストア製品のオブジェクト モデルには SKU と可用性が含まれているため、これらの概念の基本的な知識があると役に立つことがあります。
 
@@ -187,7 +192,7 @@ Desktop Bridge を使用するデスクトップ アプリケーションで **S
 | [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx)  |  このクラスは、SKU の*可用性*を表します。 可用性によって、固有の価格情報に基づいて特定のバージョンの SKU が示されます。 各 SKU には、既定の可用性があります。 一部の発行元は独自の可用性を定義でき、特定の SKU にさまざまな価格オプションを導入できます。 <p/><p/> 各 SKU には、可用性にアクセスするために使用できる [Availabilities](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.availabilities.aspx) プロパティがあります。 ほとんどの開発者の場合、SKU ごとに 1 つの既定の可用性があります。  |
 
 <span id="store_ids" />
-### ストア ID
+### <a name="store-ids"></a>ストア ID
 
 ストアのアプリとアドオンにはすべて、関連付けられた**ストア ID** があります。 **Windows.Services.Store** 名前空間の API の多くは、アプリまたはアドオンで操作を実行するためにストア ID を必要とします。 製品、SKU、および可用性のストア ID の形式はそれぞれ異なります。
 
@@ -197,7 +202,7 @@ Desktop Bridge を使用するデスクトップ アプリケーションで **S
 | [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) |  SKU の場合、ストア ID の形式は ```<product Store ID>/xxxx``` のようになります。ここで、```xxxx``` は製品の SKU を識別する 4 文字の英数字文字列です。 たとえば、```9NBLGGH4R315/000N``` と記述します。 この ID は、[StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) オブジェクトの [StoreId](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.storeid.aspx) プロパティによって返され、*SKU ストア ID* と呼ばれることもあります。 |
 | [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx)  |  可用性の場合、ストア ID の形式は ```<product Store ID>/xxxx/yyyyyyyyyyyy``` のようになります。ここで、```xxxx``` は製品の SKU を識別する 4 文字の英数字文字列で、```yyyyyyyyyyyy``` は SKU の可用性を識別する 12 文字の英数字文字列です。 たとえば、```9NBLGGH4R315/000N/4KW6QZD2VN6X``` と記述します。 この ID は、[StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx) オブジェクトの [StoreId](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.storeid.aspx) プロパティによって返され、*可用性ストア ID* と呼ばれることもあります。  |
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [アプリとアドオンの製品情報の取得](get-product-info-for-apps-and-add-ons.md)
 * [アプリとアドオンのライセンス情報の取得](get-license-info-for-apps-and-add-ons.md)
@@ -208,6 +213,6 @@ Desktop Bridge を使用するデスクトップ アプリケーションで **S
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

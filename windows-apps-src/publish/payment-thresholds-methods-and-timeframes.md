@@ -1,3378 +1,4169 @@
-﻿
 ---
 author: jnHs
-Description: The estimated time to transfer payments, applicable payment threshold(s), and Microsoft marketplaces from which you can receive payments can vary depending on your country/region and payout account type. This topic outlines the thresholds and payment methods supported in each country/region.
-
-title: Payment thresholds, methods, and timeframes
+Description: "支払の送金にかかる推定時間、支払しきい値、および支払を受けることができる Microsoft マーケットプレースは、お住まいの国/地域および受取りアカウントの種類によって異なる可能性があります。"
+title: "支払しきい値、方法、期間"
+translationtype: Human Translation
+ms.sourcegitcommit: d5ec64bbd1e8b10c17ff5c43d89e6652eadb2367
+ms.openlocfilehash: 4fd7a23f6d6c880e490f93dba248b6c1e43c7053
 
 ---
 
 
-# Payment thresholds, methods, and timeframes
+# <a name="payment-thresholds-methods-and-timeframes"></a>支払しきい値、方法、期間
 
-The estimated time to transfer payments, applicable payment threshold(s), and Microsoft marketplaces from which you can receive payments can vary depending on your country/region and payout account type. This topic outlines the payment thresholds and payment methods supported in each country/region.
+支払の送金にかかる推定時間、支払しきい値、および支払を受けることができる Microsoft マーケットプレースは、お住まいの国/地域および受取りアカウントの種類によって異なる可能性があります。 このトピックでは、国/地域ごとにサポートされている支払しきい値と支払方法について説明します。
 
-For any given country/region, we will either use ACH/SEPA or wire transfer to deliver our payments. Additionally, some countries/regions support PayPal as a payment method.
+どのような国/地域であっても、ACH/SEPA または電信送金を使用して支払を行います。 さらに、一部の国/地域では、支払方法として PayPal をサポートします。
 
-## Number of days for payments to reach payout account
+## <a name="number-of-days-for-payments-to-reach-payout-account"></a>支払が受取りアカウントに到着するまでの日数
 
-We'll typically send any payment due in a given month by the 15th day of that month, but it will take additional time for the payment to reach your account. The amount of days will vary depending on the payment method we use for your account, as described below. 
+通常、支払は、該当する月の 15 日に行われますが、支払が受取りアカウントに到着するまでさらに時間がかかります。 日数は、以下に示すように、アカウントで使用する支払方法によって異なります。 
 
-> **Note** The days shown below are approximate; any given payout may take a longer or shorter amount of time.
+> **注** 以下に示す日数は概算値です。いずれの支払も、より長い日数または短い日数になる可能性があります。
 
 
-| Payment method | Number of days to reach payout account |
+| 支払方法 | 受取りアカウントに到着するまでの日数 |
 |--------------------|--------------------------------------------|
-| PayPal | 1 business day |	
-| ACH/SEPA |2-3 business days |
-| Wire Transfer | 7-10 business days |
+| PayPal | 1 営業日 | 
+| ACH/SEPA |2 ～ 3 営業日 |
+| 電信送金 | 7 ～ 10 営業日 |
 
 &nbsp;
 
-To see the countries/regions in which these payment methods are used for each marketplace, see the tables below.
+これらの支払方法が各マーケットプレースで使用されている国/地域を確認するには、以下の表をご覧ください。
 
-## Payment thresholds and methods
+## <a name="payment-thresholds-and-methods"></a>支払のしきい値と方法
 
-> **Note** Payment thresholds are listed in USD. In some markets, the equivalent in local currency is used. 
+> **注** 支払しきい値は米ドル (USD) で記載されています。 一部の市場では、相当する現地通貨が使用されます。 
 
-### Windows Store 
+### <a name="windows-store"></a>Windows ストア 
 
 <table>
   <tr>
     <th>&nbsp;</th>
-    <th colspan="2">Payout account = Bank account</th>
-    <th colspan="2">Payout account = PayPal</th>
+    <th colspan="2">受取りアカウント = 銀行口座</th>
+    <th colspan="2">受取りアカウント = PayPal</th>
   </tr>
   <tr>
-    <td><strong>Country/region</strong></td>
-    <td><strong>Payment threshold</strong></td>
-    <td><strong>Payment method</strong></td>
-    <td><strong>Payment threshold</strong></td>
-    <td><strong>Payment method</strong></td>
+    <td><strong>国/地域</strong></td>
+    <td><strong>支払しきい値</strong></td>
+    <td><strong>支払方法</strong></td>
+    <td><strong>支払しきい値</strong></td>
+    <td><strong>支払方法</strong></td>
   </tr>
   <tr>
-    <td>Afghanistan</td>
+    <td>アフガニスタン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Albania</td>
+    <td>アルバニア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Algeria</td>
+    <td>アルジェリア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Angola</td>
+    <td>アンゴラ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Antigua and Barbuda</td>
+    <td>アンティグア・バーブーダ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Argentina</td>
+    <td>アルゼンチン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Armenia</td>
+    <td>アルメニア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Australia</td>
+    <td>オーストラリア</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Austria</td>
+    <td>オーストリア</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Azerbaijan</td>
+    <td>アゼルバイジャン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Bahrain</td>
+    <td>バーレーン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Bangladesh</td>
+    <td>バングラデシュ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Belarus</td>
+    <td>ベラルーシ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Belgium</td>
+    <td>ベルギー</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Benin</td>
+    <td>ベナン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Bolivia</td>
+    <td>ボリビア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Bosnia and Herzegovina</td>
+    <td>ボスニア・ヘルツェゴビナ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Botswana</td>
+    <td>ボツワナ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Brazil</td>
+    <td>ブラジル</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Bulgaria</td>
+    <td>ブルガリア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Burkina Faso</td>
+    <td>ブルキナファソ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Burundi</td>
+    <td>ブルンジ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Cambodia</td>
+    <td>カンボジア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Cameroon</td>
+    <td>カメルーン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Canada</td>
+    <td>カナダ</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Central African Republic</td>
+    <td>中央アフリカ共和国</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Chad</td>
+    <td>チャド</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Chile</td>
+    <td>チリ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>China</td>
+    <td>中国</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
+    <td>電信送金</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Colombia</td>
+    <td>コロンビア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Comoros</td>
+    <td>コモロ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Congo</td>
+    <td>コンゴ共和国</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Congo (DRC)</td>
+    <td>コンゴ民主共和国</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Costa Rica</td>
+    <td>コスタリカ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Côte d'Ivoire</td>
+    <td>コートジボワール</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Croatia</td>
+    <td>クロアチア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Cyprus</td>
+    <td>キプロス</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Czech Republic</td>
+    <td>チェコ共和国</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
+    <td>電信送金</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Denmark</td>
+    <td>デンマーク</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Dominica</td>
+    <td>ドミニカ国</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Dominican Republic</td>
+    <td>ドミニカ共和国</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Ecuador</td>
+    <td>エクアドル</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Egypt</td>
+    <td>エジプト</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>El Salvador</td>
+    <td>エルサルバドル</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Eritrea</td>
+    <td>エリトリア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Estonia</td>
+    <td>エストニア</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Ethiopia</td>
+    <td>エチオピア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Fiji</td>
+    <td>フィジー</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Finland</td>
+    <td>フィンランド</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>France</td>
+    <td>フランス</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Georgia</td>
+    <td>ジョージア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Germany</td>
+    <td>ドイツ</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Ghana</td>
+    <td>ガーナ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Greece</td>
+    <td>ギリシャ</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Guatemala</td>
+    <td>グアテマラ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Guinea</td>
+    <td>ギニア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Haiti</td>
+    <td>ハイチ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Honduras</td>
+    <td>ホンジュラス</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Hong Kong SAR</td>
+    <td>香港特別行政区</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Hungary</td>
+    <td>ハンガリー</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
+    <td>電信送金</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Iceland</td>
+    <td>アイスランド</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>India</td>
+    <td>インド</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Indonesia</td>
+    <td>インドネシア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Iraq</td>
+    <td>イラク</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Ireland</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Israel</td>
+    <td>アイルランド</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Italy</td>
+    <td>イスラエル</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Jamaica</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Japan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Jordan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Kazakhstan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Kenya</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Korea</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Kuwait</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Laos</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Latvia</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Lebanon</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Liberia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Liechtenstein</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Lithuania</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Luxembourg</td>
+    <td>イタリア</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Macedonia (FYROM)</td>
+    <td>ジャマイカ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Madagascar</td>
+    <td>日本</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
   </tr>
   <tr>
-    <td>Malawi</td>
+    <td>ヨルダン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Malaysia</td>
+    <td>カザフスタン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Mali</td>
+    <td>ケニア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Malta</td>
+    <td>韓国</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>クウェート</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ラオス</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ラトビア</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>レバノン</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>リベリア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>リヒテンシュタイン</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>リトアニア</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ルクセンブルク</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Mauritius</td>
+    <td>マケドニア (FYROM)</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Mexico</td>
+    <td>マダガスカル</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>マラウイ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>マレーシア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>マリ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>マルタ</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Monaco</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Mongolia</td>
+    <td>モーリシャス</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Montenegro</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Morocco</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Mozambique</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Nepal</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Netherlands</td>
+    <td>メキシコ</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>New Zealand</td>
+    <td>モナコ</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>モンゴル国</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>モンテネグロ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>モロッコ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>モザンビーク</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ネパール</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>オランダ</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Nicaragua</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Niger</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Nigeria</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Norway</td>
+    <td>ニュージーランド</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Oman</td>
+    <td>ニカラグア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Pakistan</td>
+    <td>ニジェール</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Panama</td>
+    <td>ナイジェリア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Paraguay</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Peru</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Philippines</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Poland</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Portugal</td>
+    <td>ノルウェー</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Qatar</td>
+    <td>オマーン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Romania</td>
+    <td>パキスタン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Russia</td>
+    <td>パナマ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>パラグアイ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ペルー</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>フィリピン</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Rwanda</td>
+    <td>ポーランド</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
   </tr>
   <tr>
-    <td>Saint Vincent and the Grenadines</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Saudi Arabia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Senegal</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Serbia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Sierra Leone</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Singapore</td>
+    <td>ポルトガル</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Slovakia</td>
+    <td>カタール</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ルーマニア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ロシア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>ルワンダ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>セントビンセントおよびグレナディーン諸島</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>サウジアラビア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>セネガル</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>セルビア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>シエラレオネ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>シンガポール</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Slovenia</td>
+    <td>スロバキア</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Somalia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>South Africa</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Spain</td>
+    <td>スロベニア</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Sri Lanka</td>
+    <td>ソマリア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Sweden</td>
+    <td>南アフリカ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>スペイン</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Switzerland</td>
+    <td>スリランカ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Taiwan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Tajikistan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Tanzania</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Thailand</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Timor-Leste</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Togo</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Tonga</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Trinidad and Tobago</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Tunisia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Turkey</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Turkmenistan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Uganda</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Ukraine</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>United Arab Emirates</td>
+    <td>スウェーデン</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>United Kingdom</td>
+    <td>スイス</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>台湾</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>タジキスタン</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>タンザニア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>タイ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>ティモール・レステ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>トーゴ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>トンガ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>トリニダード・トバゴ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>チュニジア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>トルコ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>トルクメニスタン</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ウガンダ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ウクライナ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>アラブ首長国連邦</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>United States</td>
+    <td>英国</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Uruguay</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>米国</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
   </tr>
   <tr>
-    <td>Uzbekistan</td>
+    <td>ウルグアイ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Venezuela</td>
+    <td>ウズベキスタン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Vietnam</td>
+    <td>ベネズエラ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Zambia</td>
+    <td>ベトナム</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Zimbabwe</td>
+    <td>ザンビア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ジンバブエ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
 </table>
 
 &nbsp;
 
-### Microsoft Advertising 
+### <a name="microsoft-advertising"></a>Microsoft Advertising 
 
 <table>
   <tr>
     <th>&nbsp;</th>
-    <th colspan="2">Payout account = Bank account</th>
-    <th colspan="2">Payout account = PayPal</th>
+    <th colspan="2">受取りアカウント = 銀行口座</th>
+    <th colspan="2">受取りアカウント = PayPal</th>
   </tr>
   <tr>
-    <td><strong>Country/region</strong></td>
-    <td><strong>Payment threshold</strong></td>
-    <td><strong>Payment method</strong></td>
-    <td><strong>Payment threshold</strong></td>
-    <td><strong>Payment method</strong></td>
+    <td><strong>国/地域</strong></td>
+    <td><strong>支払しきい値</strong></td>
+    <td><strong>支払方法</strong></td>
+    <td><strong>支払しきい値</strong></td>
+    <td><strong>支払方法</strong></td>
   </tr>
   <tr>
-    <td>Afghanistan</td>
+    <td>アフガニスタン</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Albania</td>
+    <td>アルバニア</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Algeria</td>
+    <td>アルジェリア</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Angola</td>
+    <td>アンゴラ</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Antigua and Barbuda</td>
+    <td>アンティグア・バーブーダ</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Argentina</td>
+    <td>アルゼンチン</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Armenia</td>
+    <td>アルメニア</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Australia</td>
-    <td>50 USD</td>
-    <td>ACH/SEPA</td>
-    <td>50 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Austria</td>
+    <td>オーストラリア</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Azerbaijan</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Bahrain</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Bangladesh</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Belarus</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Belgium</td>
+    <td>オーストリア</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Benin</td>
+    <td>アゼルバイジャン</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Bolivia</td>
+    <td>バーレーン</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Bosnia and Herzegovina</td>
+    <td>バングラデシュ</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Botswana</td>
+    <td>ベラルーシ</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Brazil</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Bulgaria</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Burkina Faso</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Burundi</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Cambodia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Cameroon</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Canada</td>
+    <td>ベルギー</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Central African Republic</td>
+    <td>ベナン</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Chad</td>
+    <td>ボリビア</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Chile</td>
+    <td>ボスニア・ヘルツェゴビナ</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>China</td>
+    <td>ボツワナ</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>50 USD</td>
-    <td>PayPal</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Colombia</td>
+    <td>ブラジル</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Comoros</td>
+    <td>ブルガリア</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Congo</td>
+    <td>ブルキナファソ</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Congo (DRC)</td>
+    <td>ブルンジ</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Costa Rica</td>
+    <td>カンボジア</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Côte d'Ivoire</td>
+    <td>カメルーン</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Croatia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Cyprus</td>
+    <td>カナダ</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Czech Republic</td>
+    <td>中央アフリカ共和国</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>チャド</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>チリ</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>中国</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Denmark</td>
+    <td>コロンビア</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>コモロ</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>コンゴ共和国</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>コンゴ民主共和国</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>コスタリカ</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>コートジボワール</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>クロアチア</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>キプロス</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Dominica</td>
+    <td>チェコ共和国</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>50 USD</td>
+    <td>PayPal</td>
   </tr>
   <tr>
-    <td>Dominican Republic</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Ecuador</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Egypt</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>El Salvador</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Eritrea</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Estonia</td>
+    <td>デンマーク</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Ethiopia</td>
+    <td>ドミニカ国</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Fiji</td>
+    <td>ドミニカ共和国</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Finland</td>
+    <td>エクアドル</td>
     <td>50 USD</td>
-    <td>ACH/SEPA</td>
-    <td>50 USD</td>
-    <td>PayPal</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>France</td>
+    <td>エジプト</td>
     <td>50 USD</td>
-    <td>ACH/SEPA</td>
-    <td>50 USD</td>
-    <td>PayPal</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Georgia</td>
+    <td>エルサルバドル</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Germany</td>
+    <td>エリトリア</td>
     <td>50 USD</td>
-    <td>ACH/SEPA</td>
-    <td>50 USD</td>
-    <td>PayPal</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Ghana</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Greece</td>
+    <td>エストニア</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Guatemala</td>
+    <td>エチオピア</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Guinea</td>
+    <td>フィジー</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Haiti</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Honduras</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Hong Kong SAR</td>
+    <td>フィンランド</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Hungary</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>50 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Iceland</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>India</td>
-    <td>50 USD</td>
-    <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Indonesia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Iraq</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Ireland</td>
+    <td>フランス</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Israel</td>
+    <td>ジョージア</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ドイツ</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Italy</td>
+    <td>ガーナ</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ギリシャ</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Jamaica</td>
+    <td>グアテマラ</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Japan</td>
+    <td>ギニア</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>50 USD</td>
-    <td>PayPal</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Jordan</td>
+    <td>ハイチ</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Kazakhstan</td>
+    <td>ホンジュラス</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Kenya</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Korea</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Kuwait</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Laos</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Latvia</td>
-    <td>50 USD</td>
-    <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Lebanon</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Liberia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Liechtenstein</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>50 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Lithuania</td>
-    <td>50 USD</td>
-    <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Luxembourg</td>
+    <td>香港特別行政区</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Macedonia (FYROM)</td>
+    <td>ハンガリー</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>50 USD</td>
+    <td>PayPal</td>
   </tr>
   <tr>
-    <td>Madagascar</td>
+    <td>アイスランド</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Malawi</td>
+    <td>インド</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>ACH/SEPA</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Malaysia</td>
+    <td>インドネシア</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Mali</td>
+    <td>イラク</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Malta</td>
+    <td>アイルランド</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Mauritius</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Mexico</td>
+    <td>イスラエル</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Monaco</td>
-    <td>50 USD</td>
-    <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Mongolia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Montenegro</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Morocco</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Mozambique</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Nepal</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Netherlands</td>
+    <td>イタリア</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>New Zealand</td>
+    <td>ジャマイカ</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>日本</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>50 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>ヨルダン</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>カザフスタン</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ケニア</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>韓国</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>クウェート</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ラオス</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ラトビア</td>
+    <td>50 USD</td>
+    <td>ACH/SEPA</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>レバノン</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>リベリア</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>リヒテンシュタイン</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>50 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>リトアニア</td>
+    <td>50 USD</td>
+    <td>ACH/SEPA</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ルクセンブルク</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Nicaragua</td>
+    <td>マケドニア (FYROM)</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Niger</td>
+    <td>マダガスカル</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Nigeria</td>
+    <td>マラウイ</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Norway</td>
+    <td>マレーシア</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>マリ</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>マルタ</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Oman</td>
+    <td>モーリシャス</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Pakistan</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Panama</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Paraguay</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Peru</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Philippines</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>50 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Poland</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>50 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Portugal</td>
+    <td>メキシコ</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Qatar</td>
+    <td>モナコ</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>ACH/SEPA</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Romania</td>
+    <td>モンゴル国</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Russia</td>
+    <td>モンテネグロ</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>50 USD</td>
-    <td>PayPal</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Rwanda</td>
+    <td>モロッコ</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Saint Vincent and the Grenadines</td>
+    <td>モザンビーク</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Saudi Arabia</td>
+    <td>ネパール</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Senegal</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Serbia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Sierra Leone</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Singapore</td>
+    <td>オランダ</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Slovakia</td>
+    <td>ニュージーランド</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Slovenia</td>
+    <td>ニカラグア</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ニジェール</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ナイジェリア</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ノルウェー</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Somalia</td>
+    <td>オマーン</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>South Africa</td>
+    <td>パキスタン</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Spain</td>
+    <td>パナマ</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>パラグアイ</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ペルー</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>フィリピン</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>50 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>ポーランド</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>50 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>ポルトガル</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Sri Lanka</td>
+    <td>カタール</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Sweden</td>
+    <td>ルーマニア</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ロシア</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>50 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>ルワンダ</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>セントビンセントおよびグレナディーン諸島</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>サウジアラビア</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>セネガル</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>セルビア</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>シエラレオネ</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>シンガポール</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Switzerland</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>50 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Taiwan</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>50 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Tajikistan</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Tanzania</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Thailand</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>50 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Timor-Leste</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Togo</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Tonga</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Trinidad and Tobago</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Tunisia</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Turkey</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Turkmenistan</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Uganda</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Ukraine</td>
-    <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>United Arab Emirates</td>
+    <td>スロバキア</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>United Kingdom</td>
+    <td>スロベニア</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>United States</td>
+    <td>ソマリア</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>南アフリカ</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>スペイン</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Uruguay</td>
+    <td>スリランカ</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Uzbekistan</td>
+    <td>スウェーデン</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>ACH/SEPA</td>
+    <td>50 USD</td>
+    <td>PayPal</td>
   </tr>
   <tr>
-    <td>Venezuela</td>
+    <td>スイス</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>50 USD</td>
+    <td>PayPal</td>
   </tr>
   <tr>
-    <td>Vietnam</td>
+    <td>台湾</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>50 USD</td>
+    <td>PayPal</td>
   </tr>
   <tr>
-    <td>Zambia</td>
+    <td>タジキスタン</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Zimbabwe</td>
+    <td>タンザニア</td>
     <td>50 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>タイ</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>50 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>ティモール・レステ</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>トーゴ</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>トンガ</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>トリニダード・トバゴ</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>チュニジア</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>トルコ</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>トルクメニスタン</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ウガンダ</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ウクライナ</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>アラブ首長国連邦</td>
+    <td>50 USD</td>
+    <td>ACH/SEPA</td>
+    <td>50 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>英国</td>
+    <td>50 USD</td>
+    <td>ACH/SEPA</td>
+    <td>50 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>米国</td>
+    <td>50 USD</td>
+    <td>ACH/SEPA</td>
+    <td>50 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>ウルグアイ</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ウズベキスタン</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ベネズエラ</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ベトナム</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ザンビア</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ジンバブエ</td>
+    <td>50 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
 </table>
 
 &nbsp;
 
-### Azure Marketplace
+### <a name="azure-marketplace"></a>Azure Marketplace
 
 <table>
   <tr>
     <th>&nbsp;</th>
-    <th colspan="2">Payout account = Bank account</th>
-    <th colspan="2">Payout account = PayPal</th>
+    <th colspan="2">受取りアカウント = 銀行口座</th>
+    <th colspan="2">受取りアカウント = PayPal</th>
   </tr>
   <tr>
-    <td><strong>Country/region</strong></td>
-    <td><strong>Payment threshold</strong></td>
-    <td><strong>Payment method</strong></td>
-    <td><strong>Payment threshold</strong></td>
-    <td><strong>Payment method</strong></td>
+    <td><strong>国/地域</strong></td>
+    <td><strong>支払しきい値</strong></td>
+    <td><strong>支払方法</strong></td>
+    <td><strong>支払しきい値</strong></td>
+    <td><strong>支払方法</strong></td>
+  </tr>
+  <tr>
+    <td>アフガニスタン</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>アルバニア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>アルジェリア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>アンゴラ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+<tr>
+    <td>アンティグア・バーブーダ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+ <tr>
+    <td>アルゼンチン</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>アルメニア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>オーストラリア</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
   </tr>
     <tr>
-    <td>Austria</td>
+    <td>オーストリア</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
-  <tr>
-    <td>Belgium</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Bulgaria</td>
+<tr>
+    <td>アゼルバイジャン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Canada</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Croatia</td>
+    <td>バーレーン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Cyprus</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Czech Republic</td>
+    <td>バングラデシュ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Denmark</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Estonia</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Finland</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>France</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Germany</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Greece</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Hong Kong SAR</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Hungary</td>
+    <td>ベラルーシ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
-  <tr>
-    <td>Ireland</td>
+    <tr>
+    <td>ベルギー</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
-  <tr>
-    <td>Italy</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Japan</td>
+ <tr>
+    <td>ベナン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Latvia</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Liechtenstein</td>
+    <td>ボリビア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Lithuania</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Luxembourg</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Malta</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Netherlands</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Norway</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Poland</td>
+    <td>ボスニア・ヘルツェゴビナ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Portugal</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Romania</td>
+    <td>ボツワナ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Slovakia</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Slovenia</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Spain</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Sweden</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Switzerland</td>
+    <td>ブラジル</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+   <tr>
+    <td>ブルガリア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+<tr>
+    <td>ブルキナファソ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ブルンジ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>カンボジア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>カメルーン</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+    <tr>
+    <td>カナダ</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
+<tr>
+    <td>中央アフリカ共和国</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
   <tr>
-    <td>United Kingdom</td>
+    <td>チャド</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>チリ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>コロンビア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>コモロ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>コンゴ共和国</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>コンゴ民主共和国</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>コスタリカ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>コートジボワール</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>クロアチア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>キプロス</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>United States</td>
+    <td>チェコ共和国</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>デンマーク</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
-</table>
+  <tr>
+    <td>ドミニカ国</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ドミニカ共和国</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>エクアドル</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>エジプト</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>エルサルバドル</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>エリトリア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>エストニア</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>エチオピア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>フィジー</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>フィンランド</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>フランス</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+   <tr>
+    <td>ジョージア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+ <tr>
+    <td>ドイツ</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+   <tr>
+    <td>ガーナ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+ <tr>
+    <td>ギリシャ</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>グアテマラ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ギニア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ハイチ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ホンジュラス</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+   <tr>
+    <td>香港特別行政区</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>ハンガリー</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>アイスランド</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>インド</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>インドネシア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>イラク</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>アイルランド</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>イスラエル</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+   <tr>
+    <td>イタリア</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+   <tr>
+    <td>ジャマイカ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+ <tr>
+    <td>日本</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>ヨルダン</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>カザフスタン</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ケニア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>韓国</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>クウェート</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ラオス</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+   <tr>
+    <td>ラトビア</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>レバノン</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>リベリア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>リヒテンシュタイン</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>リトアニア</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ルクセンブルク</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>マケドニア (FYROM)</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>マダガスカル</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>マラウイ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>マレーシア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>マリ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+   <tr>
+    <td>マルタ</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>モーリシャス</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>メキシコ</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>モナコ</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>モンゴル国</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>モンテネグロ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>モロッコ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>モザンビーク</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ネパール</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+   <tr>
+    <td>オランダ</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>ニカラグア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ニジェール</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ナイジェリア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+   <tr>
+    <td>ノルウェー</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>オマーン</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>パキスタン</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>パナマ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>パラグアイ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ペルー</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>フィリピン</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+   <tr>
+    <td>ポーランド</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>ポルトガル</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>カタール</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ルーマニア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+ <tr>
+    <td>ロシア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>ルワンダ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>セントビンセントおよびグレナディーン諸島</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>サウジアラビア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>セネガル</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>セルビア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>シエラレオネ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>シンガポール</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+   <tr>
+    <td>スロバキア</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>スロベニア</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>ソマリア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>南アフリカ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+   <tr>
+    <td>スペイン</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>スリランカ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>スウェーデン</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>スイス</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>台湾</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>タジキスタン</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>タンザニア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>タイ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>ティモール・レステ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>トーゴ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>トンガ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>トリニダード・トバゴ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>チュニジア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>トルコ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>トルクメニスタン</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ウガンダ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ウクライナ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>アラブ首長国連邦</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+    <tr>
+    <td>英国</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>米国</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>ウルグアイ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ウズベキスタン</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ベネズエラ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ベトナム</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ザンビア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ジンバブエ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+ </table>
 
 &nbsp;
 
-### Office Store
+### <a name="office-store"></a>Office ストア
 <table>
   <tr>
     <th>&nbsp;</th>
-    <th colspan="2">Payout account = Bank account</th>
-    <th colspan="2">Payout account = PayPal</th>
+    <th colspan="2">受取りアカウント = 銀行口座</th>
+    <th colspan="2">受取りアカウント = PayPal</th>
   </tr>
   <tr>
-    <td><strong>Country/region</strong></td>
-    <td><strong>Payment threshold</strong></td>
-    <td><strong>Payment method</strong></td>
-    <td><strong>Payment threshold</strong></td>
-    <td><strong>Payment method</strong></td>
+    <td><strong>国/地域</strong></td>
+    <td><strong>支払しきい値</strong></td>
+    <td><strong>支払方法</strong></td>
+    <td><strong>支払しきい値</strong></td>
+    <td><strong>支払方法</strong></td>
   </tr>
   <tr>
-    <td>Albania</td>
+    <td>アルバニア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Algeria</td>
+    <td>アルジェリア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Andorra</td>
+    <td>アンドラ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Angola</td>
+    <td>アンゴラ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Argentina</td>
+    <td>アルゼンチン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Australia</td>
+    <td>オーストラリア</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Austria</td>
+    <td>オーストリア</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Azerbaijan</td>
+    <td>アゼルバイジャン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Bahrain</td>
+    <td>バーレーン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Bangladesh</td>
+    <td>バングラデシュ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Belarus</td>
+    <td>ベラルーシ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Belgium</td>
+    <td>ベルギー</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Benin</td>
+    <td>ベナン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Bolivia</td>
+    <td>ボリビア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Bosnia and Herzegovina</td>
+    <td>ボスニア・ヘルツェゴビナ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Brazil</td>
+    <td>ブラジル</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Bulgaria</td>
+    <td>ブルガリア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Burkina Faso</td>
+    <td>ブルキナファソ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Burundi</td>
+    <td>ブルンジ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Cambodia</td>
+    <td>カンボジア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Cameroon</td>
+    <td>カメルーン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Canada</td>
+    <td>カナダ</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Central African Republic</td>
+    <td>中央アフリカ共和国</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Chad</td>
+    <td>チャド</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Chile</td>
+    <td>チリ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>China</td>
+    <td>中国</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
+    <td>電信送金</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Colombia</td>
+    <td>コロンビア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Congo</td>
+    <td>コンゴ共和国</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Congo (DRC)</td>
+    <td>コンゴ民主共和国</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Costa Rica</td>
+    <td>コスタリカ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Côte d'Ivoire</td>
+    <td>コートジボワール</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Croatia</td>
+    <td>クロアチア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Cyprus</td>
+    <td>キプロス</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Czech Republic</td>
+    <td>チェコ共和国</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
+    <td>電信送金</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Denmark</td>
+    <td>デンマーク</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Dominican Republic</td>
+    <td>ドミニカ共和国</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Ecuador</td>
+    <td>エクアドル</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Egypt</td>
+    <td>エジプト</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>El Salvador</td>
+    <td>エルサルバドル</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Eritrea</td>
+    <td>エリトリア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Estonia</td>
+    <td>エストニア</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Ethiopia</td>
+    <td>エチオピア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Finland</td>
+    <td>フィンランド</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>France</td>
+    <td>フランス</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Georgia</td>
+    <td>ジョージア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Germany</td>
+    <td>ドイツ</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Ghana</td>
+    <td>ガーナ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Greece</td>
+    <td>ギリシャ</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Guatemala</td>
+    <td>グアテマラ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Guinea</td>
+    <td>ギニア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Haiti</td>
+    <td>ハイチ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Honduras</td>
+    <td>ホンジュラス</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Hong Kong SAR</td>
+    <td>香港特別行政区</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Hungary</td>
+    <td>ハンガリー</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
+    <td>電信送金</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Iceland</td>
+    <td>アイスランド</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>India</td>
+    <td>インド</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Indonesia</td>
+    <td>インドネシア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Ireland</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Israel</td>
+    <td>アイルランド</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Italy</td>
+    <td>イスラエル</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Jamaica</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Japan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Jordan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Kazakhstan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Kenya</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Korea</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Kuwait</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Kyrgyzstan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Laos</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Latvia</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Liberia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Liechtenstein</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Lithuania</td>
-    <td>25 USD</td>
-    <td>ACH/SEPA</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Luxembourg</td>
+    <td>イタリア</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Macedonia (FYROM)</td>
+    <td>ジャマイカ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Madagascar</td>
+    <td>日本</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
   </tr>
   <tr>
-    <td>Malawi</td>
+    <td>ヨルダン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Malaysia</td>
+    <td>カザフスタン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Mali</td>
+    <td>ケニア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Malta</td>
+    <td>韓国</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>クウェート</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>キルギス</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ラオス</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ラトビア</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>リベリア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>リヒテンシュタイン</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>リトアニア</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ルクセンブルク</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Mexico</td>
+    <td>マケドニア (FYROM)</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>マダガスカル</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>マラウイ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>マレーシア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>マリ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>マルタ</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Mongolia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Montenegro</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Morocco</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Mozambique</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Nepal</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Netherlands</td>
+    <td>メキシコ</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>New Zealand</td>
+    <td>モンゴル国</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>モンテネグロ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>モロッコ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>モザンビーク</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ネパール</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>オランダ</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Nicaragua</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Niger</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Nigeria</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Norway</td>
+    <td>ニュージーランド</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Oman</td>
+    <td>ニカラグア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Pakistan</td>
+    <td>ニジェール</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Panama</td>
+    <td>ナイジェリア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Paraguay</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Peru</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Philippines</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Poland</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Portugal</td>
+    <td>ノルウェー</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Puerto Rico</td>
+    <td>オマーン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Qatar</td>
+    <td>パキスタン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Romania</td>
+    <td>パナマ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Rwanda</td>
+    <td>パラグアイ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Saudi Arabia</td>
+    <td>ペルー</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Senegal</td>
+    <td>フィリピン</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
   </tr>
   <tr>
-    <td>Serbia</td>
+    <td>ポーランド</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
   </tr>
   <tr>
-    <td>Sierra Leone</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Singapore</td>
+    <td>ポルトガル</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Slovakia</td>
+    <td>プエルトリコ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>カタール</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ルーマニア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ルワンダ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>サウジアラビア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>セネガル</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>セルビア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>シエラレオネ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>シンガポール</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Slovenia</td>
+    <td>スロバキア</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Somalia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>South Africa</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Spain</td>
+    <td>スロベニア</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Sri Lanka</td>
+    <td>ソマリア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Sweden</td>
+    <td>南アフリカ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>スペイン</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Switzerland</td>
+    <td>スリランカ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Taiwan</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Tanzania</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Thailand</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>25 USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Timor-Leste</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Togo</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Trinidad and Tobago</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Tunisia</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Turkey</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Uganda</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>United Arab Emirates</td>
+    <td>スウェーデン</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>United Kingdom</td>
+    <td>スイス</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>台湾</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>タンザニア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>タイ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>ティモール・レステ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>トーゴ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>トリニダード・トバゴ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>チュニジア</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>トルコ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ウガンダ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>アラブ首長国連邦</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>United States</td>
+    <td>英国</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Uruguay</td>
-    <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>米国</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
   </tr>
   <tr>
-    <td>Venezuela</td>
+    <td>ウルグアイ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Vietnam</td>
+    <td>ベネズエラ</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Zambia</td>
+    <td>ベトナム</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
   <tr>
-    <td>Zimbabwe</td>
+    <td>ザンビア</td>
     <td>200 USD</td>
-    <td>Wire transfer</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>ジンバブエ</td>
+    <td>200 USD</td>
+    <td>電信送金</td>
+    <td>なし</td>
+    <td>なし</td>
   </tr>
 </table>
+
+
+
+<!--HONumber=Dec16_HO1-->
+
+

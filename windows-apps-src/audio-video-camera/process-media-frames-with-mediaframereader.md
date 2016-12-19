@@ -4,12 +4,12 @@ ms.assetid:
 description: "この記事では、MediaCapture と共に MediaFrameReader を使って、色、深度、赤外線カメラ、オーディオ デバイスなどの 1 つ以上の利用可能なソースや、スケルタル トラッキング フレームを生成するようなカスタム フレーム ソースから、メディア フレームを取得する方法を示します。"
 title: "MediaFrameReader を使ったメディア フレームの処理"
 translationtype: Human Translation
-ms.sourcegitcommit: 21433f812915a2b4da6b4d68151bbc922a97a7a7
-ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
+ms.sourcegitcommit: 881f806a61d247c6c4f73aa770ba4c5dab91af00
+ms.openlocfilehash: 648874a50dbe333f1bb6291de646d9088eec1528
 
 ---
 
-# MediaFrameReader を使ったメディア フレームの処理
+# <a name="process-media-frames-with-mediaframereader"></a>MediaFrameReader を使ったメディア フレームの処理
 
 この記事では、[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) と共に [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) を使って、色、深度、赤外線カメラ、オーディオ デバイスなどの 1 つ以上の利用可能なソースや、スケルタル トラッキング フレームを生成するようなカスタム フレーム ソースから、メディア フレームを取得する方法を示します。 この機能は、拡張現実アプリや奥行きを検出するカメラ アプリなど、メディア フレームのリアルタイム処理を実行するアプリで使用するために設計されました。
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 > [!NOTE] 
 > **MediaFrameReader** を使って色、深度、赤外線カメラなど、さまざまなフレーム ソースからのフレームを表示する方法を示す、ユニバーサル Windows アプリのサンプルがあります。 詳しくは、「[カメラ フレームのサンプル](http://go.microsoft.com/fwlink/?LinkId=823230)」をご覧ください。
 
-## プロジェクトの設定
+## <a name="setting-up-your-project"></a>プロジェクトの設定
 **MediaCapture** を使う他のアプリと同様に、カメラ デバイスにアクセスする前にアプリが *webcam* 機能を使うことを宣言する必要があります。 アプリがオーディオ デバイスからキャプチャする場合は、*microphone* デバイス機能も宣言する必要があります。 
 
 **アプリ マニフェストに機能を追加する**
@@ -35,7 +35,7 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 
 [!code-cs[FramesUsing](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFramesUsing)]
 
-## フレーム ソースとフレーム ソース グループを選択する
+## <a name="select-frame-sources-and-frame-source-groups"></a>フレーム ソースとフレーム ソース グループを選択する
 メディア フレームを処理する多くのアプリは、デバイスの色、深度カメラなど、複数のソースからフレームを一度に取得する必要があります。 [**MediaFrameSourceGroup**] (https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) オブジェクトは、同時に使用できるメディア フレーム ソースのセットを表します。 静的メソッド [ **MediaFrameSourceGroup.FindAllAsync** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.FindAllAsync) を呼び出して、現在のデバイスでサポートされているフレーム ソースのすべてのグループの一覧を取得します。
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
@@ -60,7 +60,7 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 
 [!code-cs[ColorInfraredDepth](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetColorInfraredDepth)]
 
-## 選択したフレーム ソース グループを使うように MediaCapture オブジェクトを初期化する
+## <a name="initialize-the-mediacapture-object-to-use-the-selected-frame-source-group"></a>選択したフレーム ソース グループを使うように MediaCapture オブジェクトを初期化する
 次に、前の手順で選択したフレーム ソース グループを使うように **MediaCapture** オブジェクトを初期化します。
 
 通常、**MediaCapture** オブジェクトはアプリ内の複数の場所から使用できるため、それを保持するクラス メンバー変数を宣言する必要があります。
@@ -78,14 +78,14 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 
 [!code-cs[InitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetInitMediaCapture)]
 
-## フレーム ソースの優先形式を設定する
+## <a name="set-the-preferred-format-for-the-frame-source"></a>フレーム ソースの優先形式を設定する
 フレーム ソースの優先形式を設定するには、ソースを表す [ **MediaFrameSource** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource) オブジェクトを取得する必要があります。 このオブジェクトを取得するには、初期化した **MediaCapture** オブジェクトの [**Frames**](https://msdn.microsoft.com/library/windows/apps/Windows.Phone.Media.Capture.CameraCaptureSequence.Frames) ディクショナリにアクセスし、使用するフレーム ソースの識別子を指定します。 これは、フレーム ソース グループを選択していたときに [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) オブジェクトを保存したからです。
 
 [**MediaFrameSource.SupportedFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSource.SupportedFormats) プロパティには、フレーム ソースのサポートされている形式を記述する [**MediaFrameFormat**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameFormat) オブジェクトの一覧が含まれています。 **Where** Linq 拡張メソッドを使って、目的のプロパティに基づいて形式を選択します。 この例では、幅が 1080 ピクセルで、32 ビット RGB 形式のフレームを提供できる形式が選択されています。 **FirstOrDefault** 拡張メソッドは一覧内で最初のエントリを選択します。 選択された形式が null の場合、要求された形式はそのフレーム ソースでサポートされません。 形式がサポートされている場合は、[**SetFormatAsync**](https://msdn.microsoft.com/library/windows/apps/) を呼び出すことでソースがこの形式を使うことを要求できます。
 
 [!code-cs[GetPreferredFormat](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetPreferredFormat)]
 
-## フレーム ソースのフレーム リーダーを作成する
+## <a name="create-a-frame-reader-for-the-frame-source"></a>フレーム ソースのフレーム リーダーを作成する
 メディア フレーム ソースのフレームを受け取るには、[**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) を使います。
 
 [!code-cs[DeclareMediaFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetDeclareMediaFrameReader)]
@@ -98,7 +98,7 @@ ms.openlocfilehash: 5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1
 
 [!code-cs[CreateFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCreateFrameReader)]
 
-## FrameArrived イベントを処理する
+## <a name="handle-the-frame-arrived-event"></a>FrameArrived イベントを処理する
 新しいフレームが利用可能になると、[**MediaFrameReader.FrameArrived**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.FrameArrived) イベントが発生します。 到着したすべてのフレームを処理するか、必要なときのみフレームを使うかを選択できます。 フレーム リーダーは自身のスレッドでイベントを発生させるため、何らかの同期ロジックを実装して、複数のスレッドからの同じデータにアクセスしていないことを確認する必要があります。 このセクションでは、XAML ページのイメージ コントロールへの色フレームの描画を同期する方法を示します。 このシナリオでは、XAML コントロールへのすべての更新を UI スレッドで実行するように要求する追加の同期制約について検討します。
 
 XAML でフレームを表示するときの最初の手順は、イメージ コントロールの作成です。 
@@ -125,16 +125,20 @@ XAML でフレームを表示するときの最初の手順は、イメージ �
 
 最後に、次回にハンドラーが呼び出されたときにタスクをもう一度実行できるように、*_taskRunning* 変数を false に戻します。
 
+> [!NOTE] 
+> [**MediaFrameReference**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference) の [**VideoMediaFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference.VideoMediaFrame) プロパティが提供する [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.VideoMediaFrame.SoftwareBitmap) オブジェクトまたは [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.VideoMediaFrame.Direct3DSurface) オブジェクトにアクセスすると、これらのオブジェクトへの強参照がシステムによって作成されます。そのため、それらが含まれている **MediaFrameReference** に対して [**Dispose**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference.Close) を呼び出してもこれらのオブジェクトは破棄されません。 それらのオブジェクトを即座に破棄するには、**SoftwareBitmap** または **Direct3DSurface** の **Dispose** メソッドを明示的に直接呼び出す必要があります。 そうしない場合、最終的にはガーベジ コレクターによってこれらのオブジェクトのメモリが解放されますが、それがいつになるかは不明であり、割り当てられたビットマップやサーフェスの数がシステムによって許容される最大数を上回った場合、新しいフレームのフローが停止します。
+
+
 [!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFrameArrived)]
 
-## リソースをクリーンアップする
+## <a name="cleanup-resources"></a>リソースをクリーンアップする
 フレームの読み込みが終わったら、必ず [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader.StopAsync) を呼び出してメディア フレーム リーダーを停止して、**FrameArrived** ハンドラーの登録を解除し、**MediaCapture** オブジェクトを破棄してください。
 
 [!code-cs[クリーンアップ](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCleanup)]
 
 アプリケーションが中断されたときのメディア キャプチャ オブジェクトのクリーンアップについて詳しくは、「[**カメラ プレビューの表示**](simple-camera-preview-access.md)」をご覧ください。
 
-## FrameRenderer ヘルパー クラス
+## <a name="the-framerenderer-helper-class"></a>FrameRenderer ヘルパー クラス
 ユニバーサル Windows の[カメラ フレームのサンプル](http://go.microsoft.com/fwlink/?LinkId=823230)は、アプリで色、赤外線、および深度のソースからフレームを表示するのを容易にするヘルパー クラスを提供します。 通常、深度や赤外線のデータを画面に表示するだけでなく、データを使ってそれ以上のことを行いたいですが、このヘルパー クラスは、フレーム リーダーの機能を示したり、独自のフレーム リーダーの実装をデバッグしたりするための便利なツールです。
 
 **FrameRenderer** ヘルパー クラスは、次のメソッドを実装します。
@@ -148,7 +152,7 @@ XAML でフレームを表示するときの最初の手順は、イメージ �
 
 [!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/FrameRenderer.cs#SnippetFrameRenderer)]
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [カメラ](camera.md)
 * [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
@@ -163,6 +167,6 @@ XAML でフレームを表示するときの最初の手順は、イメージ �
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

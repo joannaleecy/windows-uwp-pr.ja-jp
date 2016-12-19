@@ -1,18 +1,18 @@
 ---
-author: msatranjr
+author: laurenhughes
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: "WinAppDeployCmd.exe ツールを使ったアプリのインストール"
-description: "Windows のアプリケーションの展開ツール (WinAppDeployCmd.exe) は、Windows 10 PC から Windows 10 デバイスにユニバーサル Windows プラットフォーム (UWP) アプリを展開するために利用できるコマンド ライン ツールです。"
+description: "Windows アプリケーションの展開ツール (WinAppDeployCmd.exe) は、Windows 10 PC から Windows 10 デバイスにユニバーサル Windows プラットフォーム (UWP) アプリを展開するために利用できるコマンド ライン ツールです。"
 translationtype: Human Translation
-ms.sourcegitcommit: 7b04e2e9980da4bbdd6d9d10fc493eb05e21afc4
-ms.openlocfilehash: 87af49dc04a94bac8896b33a1d7e8b4993b0f2c3
+ms.sourcegitcommit: f467bd83c2f700d94a232c99a06f86f1f1b1a0ac
+ms.openlocfilehash: 37028e1e119f27a8c82bc024e52f939a89243244
 
 ---
-# WinAppDeployCmd.exe ツールを使ったアプリのインストール
+# <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>WinAppDeployCmd.exe ツールを使ったアプリのインストール
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Windows のアプリケーションの展開ツール (WinAppDeployCmd.exe) は、Windows 10 PC から Windows 10 デバイスにユニバーサル Windows プラットフォーム (UWP) アプリを展開するために利用できるコマンド ライン ツールです。 このツールを使うと、Windows 10 デバイスが USB で接続されているか同じサブネットにあれば、.appx パッケージを展開できます。Microsoft Visual Studio やそのアプリ用のソリューションは不要です。 最初にパッケージ化することなく、リモート PC や Xbox One にアプリを展開することもできます。 この記事では、このツールを使って UWP アプリをインストールする方法について説明します。
+Windows アプリケーションの展開ツール (WinAppDeployCmd.exe) は、Windows 10 PC から Windows 10 デバイスにユニバーサル Windows プラットフォーム (UWP) アプリを展開するために利用できるコマンド ライン ツールです。 このツールを使うと、Windows 10 デバイスが USB で接続されているか同じサブネットにあれば、.appx パッケージを展開できます。Microsoft Visual Studio やそのアプリ用のソリューションは不要です。 最初にパッケージ化することなく、リモート PC や Xbox One にアプリを展開することもできます。 この記事では、このツールを使って UWP アプリをインストールする方法について説明します。
 
 Windows 10 SDK がインストールされていれば、WinAppDeployCmd ツールをコマンド プロンプトまたはスクリプト ファイルから実行できます。 WinAppDeployCmd.exe でアプリをインストールすると、.appx ファイルや AppxManifest(ルーズ ファイルの場合) を使って Windows 10 デバイスにアプリがサイドローディングされます。 このコマンドによって、アプリに必要な証明書はインストールされません。 アプリを実行するには、Windows 10 デバイスが開発者モードになっているか、証明書が既にインストールされている必要があります。
 
@@ -20,7 +20,7 @@ Windows 10 SDK がインストールされていれば、WinAppDeployCmd ツー�
 
 **WinAppDeployCmd.exe** ツールは、Windows 10 PC の **C:\\Program Files (x86)\\Windows Kits\\10\\bin\\x86\\WinAppDeployCmd.exe** にあります (SDK のインストール パスに基づきます)。 まず、Windows 10 デバイスを同じサブネットに接続するか、USB 接続で Windows 10 コンピューターに直接接続します。 この記事ではその後、このコマンドの次の構文と例を使って UWP アプリを展開します。
 
-## WinAppDeployCmd の構文とオプション
+## <a name="winappdeploycmd-syntax-and-options"></a>WinAppDeployCmd の構文とオプション
 
 **WinAppDeployCmd.exe** で使うことができる構文を次に示します。
 
@@ -99,7 +99,7 @@ WinAppDeployCmd command -option <argument> ...
 | &lt;remotedeploydir&gt;| 展開先の場所を基準としたデバイス上のディレクトリ。                      |
 
  
-## WinAppDeployCmd.exe の例
+## <a name="winappdeploycmdexe-examples"></a>WinAppDeployCmd.exe の例
 
 **WinAppDeployCmd.exe** の構文を使ってコマンド ラインから展開する方法の例を、次に示します。
 
@@ -139,7 +139,7 @@ IP アドレスが 192.168.0.1 である PC または Xbox の展開パスの ap
 WinAppDeployCmd registerfiles -file app1_F5 -ip 192.168.0.1
 ```
 
-## WinAppDeployCmd を使用した PC からの Xbox One 展開の実行の設定
+## <a name="using-winappdeploycmd-to-set-up-run-from-pc-deployment-on-xbox-one"></a>WinAppDeployCmd を使用した PC からの Xbox One 展開の実行の設定
 
 PC からの実行を利用すると、バイナリをコピーしなくても Xbox One に UWP アプリケーションを展開できます。バイナリは、Xbox と同じネットワーク上のネットワーク共有でホストされます。  そのためには、開発者によりロック解除された Xbox One と、ルーズ ファイル UWP アプリケーションを Xbox がアクセスできるネットワーク ドライブに用意する必要があります。
 
@@ -152,6 +152,6 @@ ex. WinAppDeployCmd register files -ip 192.168.0.1 -remotedeploydir \\driveA\myA
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

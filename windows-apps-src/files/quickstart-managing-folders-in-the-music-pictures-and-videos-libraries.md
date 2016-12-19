@@ -1,15 +1,15 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
 title: "ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー"
 description: "音楽、画像、またはビデオの既存のフォルダーを対応するライブラリに追加できます。 ライブラリからフォルダーを削除したり、ライブラリ内のフォルダーの一覧を取得したり、保存した写真、音楽、ビデオにアクセスしたりすることもできます。"
 translationtype: Human Translation
-ms.sourcegitcommit: affe6002e22bd10e714dc4782a60ef528c31a407
-ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: 4e2b7d10e1d24427aede21ccae176d7cd55f9de8
 
 ---
 
-# ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー
+# <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -19,7 +19,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
 
 ライブラリは、フォルダーの仮想コレクションです。既定で含まれている既知のフォルダーに加えて、ユーザーがアプリや組み込みのアプリのいずれかを使ってライブラリに追加した他のフォルダーが含まれています。 たとえば、画像ライブラリには、既定で画像の既知のフォルダーが含まれています。 ユーザーは、アプリや組み込みのフォト アプリを使って、画像ライブラリに対してフォルダーの追加や削除を行うことができます。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 
 -   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
@@ -36,7 +36,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
 
     詳しくは、「[ファイル アクセス許可](file-access-permissions.md)」をご覧ください。
 
-## ライブラリへの参照を取得する
+## <a name="get-a-reference-to-a-library"></a>ライブラリへの参照を取得する
 
 
 **注:** 必ず適切な機能を宣言してください。
@@ -53,7 +53,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
         (Windows.Storage.KnownLibraryId.Pictures);
 ```
 
-## ライブラリ内のフォルダーの一覧を取得する
+## <a name="get-the-list-of-folders-in-a-library"></a>ライブラリ内のフォルダーの一覧を取得する
 
 
 ライブラリ内のフォルダーの一覧を取得するには、[**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) プロパティの値を取得します。
@@ -66,7 +66,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
     IObservableVector<Windows.Storage.StorageFolder> myPictureFolders = myPictures.Folders;
 ```
 
-## 新しいファイルが既定で保存されるライブラリのフォルダーを取得する
+## <a name="get-the-folder-in-a-library-where-new-files-are-saved-by-default"></a>新しいファイルが既定で保存されるライブラリのフォルダーを取得する
 
 
 新しいファイルが既定で保存されるライブラリのフォルダーを取得するには、[**StorageLibrary.SaveFolder**](https://msdn.microsoft.com/library/windows/apps/dn251728) プロパティの値を取得します。
@@ -75,7 +75,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
     Windows.Storage.StorageFolder savePicturesFolder = myPictures.SaveFolder;
 ```
 
-## ライブラリに既存のフォルダーを追加する
+## <a name="add-an-existing-folder-to-a-library"></a>ライブラリに既存のフォルダーを追加する
 
 
 ライブラリにフォルダーを追加するには、[**StorageLibrary.RequestAddFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251726) を呼び出します。 画像ライブラリを例として考えた場合、このメソッドを呼び出すとフォルダー ピッカーが **[ピクチャにこのフォルダーを追加]** ボタンと共に表示されます。 ユーザーがフォルダーを選ぶと、フォルダーはディスク上の元の場所に残り、[**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) プロパティ (および組み込みのフォト アプリ) 内の項目となりますが、フォルダーはエクスプローラーでピクチャ フォルダーの子として表示されません。
@@ -85,7 +85,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
     Windows.Storage.StorageFolder newFolder = await myPictures.RequestAddFolderAsync();
 ```
 
-## フォルダーをライブラリから削除する
+## <a name="remove-a-folder-from-a-library"></a>フォルダーをライブラリから削除する
 
 
 フォルダーをライブラリから削除するには、[**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727) メソッドを呼び出して、削除するフォルダーを指定します。 [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) と [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) コントロール (または同様のコントロール) を使って、ユーザーが削除するフォルダーを選べるようにすることができます。
@@ -99,7 +99,7 @@ ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
     bool result = await myPictures.RequestRemoveFolderAsync(folder);
 ```
 
-## ライブラリ内のフォルダーの一覧に対する変更の通知を受け取る
+## <a name="get-notified-of-changes-to-the-list-of-folders-in-a-library"></a>ライブラリ内のフォルダーの一覧に対する変更の通知を受け取る
 
 
 ライブラリ内のフォルダーの一覧に対する変更について通知を受け取るには、ライブラリの [**StorageLibrary.DefinitionChanged**](https://msdn.microsoft.com/library/windows/apps/dn251723) イベントにハンドラーを登録します。
@@ -115,7 +115,7 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 }
 ```
 
-## メディア ライブラリ フォルダー
+## <a name="media-library-folders"></a>メディア ライブラリ フォルダー
 
 
 デバイスには、ユーザーやアプリがメディア ファイルを格納するための定義済みの場所が 5 つ用意されています。 組み込みのアプリでは、ユーザーが作成したメディアとダウンロードしたメディアをこれらの場所に格納できます。
@@ -134,7 +134,7 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 ユーザーやアプリは、メディア ライブラリ フォルダーだけではなく、SD カード上にメディア ファイルを保存することもできます。 SD カード上のメディア ファイルを確実に検索するには、SD カードのコンテンツをスキャンするか、ファイル ピッカーを使ってファイルを検索するようにユーザーに対して要求します。 詳しくは、「[SD カードへのアクセス](access-the-sd-card.md)」をご覧ください。
 
-## メディア ライブラリへの照会
+## <a name="querying-the-media-libraries"></a>メディア ライブラリへの照会
 
 ファイルのコレクションを取得するには、ライブラリと必要なファイルの種類を指定します。
 
@@ -164,7 +164,7 @@ private async void getSongs()
 }
 ```
 
-### 内部ストレージとリムーバブル ストレージの両方が含まれるクエリ結果
+### <a name="query-results-include-both-internal-and-removable-storage"></a>内部ストレージとリムーバブル ストレージの両方が含まれるクエリ結果
 
 ユーザーは、既定でオプションの SD カードにファイルを格納するように選ぶことができます。 また、アプリでは、ファイルが SD カードに格納されないようにすることができます。 その結果、メディア ライブラリがデバイスの内部ストレージと SD カードの両方に存在する可能性があります。
 
@@ -177,7 +177,7 @@ private async void getSongs()
 `await KnownFolders.PicturesLibrary.GetFilesAsync()`を呼び出して、画像ライブラリのコンテンツを照会すると、その結果には internalPic.jpg と SDPic.jpg の両方が含まれます。
 
 
-## 写真の操作
+## <a name="working-with-photos"></a>写真の操作
 
 
 すべての画像について低解像度の画像と高解像度の画像の両方を保存するカメラ機能を備えたデバイスでは、深いクエリからは低解像度の画像のみが返されます。
@@ -197,7 +197,7 @@ private async void getSongs()
   testPhoto.Properties.SavePropertiesAsync(propertiesToSave).AsyncWait();   
 ```
 
-## ストリーム メソッドを使ってメディア ライブラリにファイルを追加する
+## <a name="using-stream-methods-to-add-a-file-to-a-media-library"></a>ストリーム メソッドを使ってメディア ライブラリにファイルを追加する
 
 
 **KnownFolders.PictureLibrary** など、既知のフォルダーを使ってメディア ライブラリにアクセスし、ストリーム メソッドを使ってそのメディア ライブラリにファイルを追加するときは、コードで開いているすべてのストリームを閉じる必要があります。 そのようにしなかった場合、ファイルへのハンドルを保持しているストリームが少なくとも 1 つは存在することとなり、ストリーム メソッドは、メディア ライブラリに正しくファイルを追加できません。
@@ -246,6 +246,6 @@ using (var sourceStream = await sourceFile.OpenReadAsync())
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

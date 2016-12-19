@@ -4,11 +4,11 @@ ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
 title: "アニメーションの概要"
 description: "Windows ランタイム アニメーション ライブラリのアニメーションを使って、Windows の見た目や操作感を自分のアプリに取り入れることができます。"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: d622465ce3da70cdb8dbd064b68ea6983f9fe3f7
+ms.sourcegitcommit: 2a08d1def7c4d2fde0ae08eb26076526058e8aae
+ms.openlocfilehash: e3e21c55ea8ddeab0969e304080394b940da010d
 
 ---
-# アニメーションの概要
+# <a name="animations-overview"></a>アニメーションの概要
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
@@ -31,7 +31,7 @@ Windows 10 バージョン 1607 では、ナビゲーション時にビューの
 
 さらに、ScrollViewer のスクロール位置に基づいた項目のアニメーション化など、特定の高度なシナリオでは、開発者がビジュアル レイヤーの相互運用を使ってカスタム アニメーションを実装することが必要になる場合があります。 詳しくは、「[ビジュアル レイヤー](https://msdn.microsoft.com/windows/uwp/graphics/visual-layer)」をご覧ください。
 
-## アニメーションの種類
+## <a name="types-of-animations"></a>アニメーションの種類
 
 Windows ランタイム アニメーション システムとアニメーション ライブラリには、コントロールと UI のその他の部分が動作をアニメーション化できるようにするという、より大きな目的があります。 アニメーションには、いくつかの個別の種類があります。
 
@@ -41,7 +41,7 @@ Windows ランタイム アニメーション システムとアニメーショ�
 -   *ストーリーボードに設定されたアニメーション*は、時間の経過と共に Windows ランタイム依存関係プロパティの値をアニメーション化します。 ストーリーボードは、視覚的切り替えの一部として定義することも、実行時にアプリケーションによってトリガーすることもできます。 詳しくは、「[ストーリーボードに設定されたアニメーション](storyboarded-animations.md)」をご覧ください。 依存関係プロパティとその存在場所について詳しくは、「[依存関係プロパティの概要](https://msdn.microsoft.com/library/windows/apps/Mt185583)」をご覧ください。
 -   新しい [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx) API によって提供される*接続型アニメーション*により、開発者はナビゲーション時にビューの間で要素がアニメーション化される効果を容易に作成できます。 この API は、Windows 10 バージョン 1607 以降で使うことができます。 詳しくは、「[**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx)」をご覧ください。
 
-## ライブラリに用意されているアニメーション
+## <a name="animations-available-in-the-library"></a>ライブラリに用意されているアニメーション
 
 アニメーション ライブラリには、次のアニメーションが用意されています。 アニメーションの名前をクリックすると、主な使用シナリオ、その定義方法、アニメーション例の詳しい情報が表示されます。
 
@@ -55,45 +55,48 @@ Windows ランタイム アニメーション システムとアニメーショ�
 -   [リスト項目の変更](./animations-overview.md#list-item-changes): リストについて項目の追加、項目の削除、項目の並べ替えを行います。
 -   [ドラッグ/ドロップ](./animations-overview.md#drag-drop): ドラッグ アンド ドロップ操作中に視覚的なフィードバックを提供します。
 
-### ページ切り替え
+### <a name="page-transition"></a>ページ切り替え
 
 アプリ内でのナビゲーションをアニメーション化するには、ページ切り替えを使います。 ほぼすべてのアプリで、ある種のナビゲーションが使用されるため、ページ切り替えアニメーションはアプリで使用される最も一般的な種類のテーマ アニメーションです。 ページ切り替えの API について詳しくは、「[**NavigationThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition)」をご覧ください。
 
 
 
-### コンテンツ切り替えと開始切り替え
+### <a name="content-transition-and-entrance-transition"></a>コンテンツ切り替えと開始切り替え
 
 コンテンツ切り替えアニメーション ([**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243103)) を使って、コンテンツの断片やまとまりを移動して現在の画面に表示したり、画面から消したりします。 たとえば、コンテンツ切り替えアニメーションは、ページが最初に読み込まれたとき、またはページの 1 セクションのコンテンツを変更したときに表示できなかったコンテンツを表示する場合に使われます。
 
 [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) は、ページまたは UI の大きなセクションが最初に読み込まれたときに、コンテンツに適用できるモーションを表します。 したがって、最初にコンテンツを表示するときは、コンテンツ切り替え時とは異なるフィードバックとすることができます。 [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) は、既定のパラメーターを指定した場合の [**NavigationThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition) と同じですが、[**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) の外部で使用できます。
  
  
-
-### フェード イン/アウトとクロスフェード
+<span id="fade-in-out-and-crossfade"/>
+### <a name="fade-inout-and-crossfade"></a>フェード イン/アウトとクロスフェード
 
 フェード イン/アウト アニメーションを使って、一時的な UI またはコントロールを表示したり、非表示にしたりします。 XAML では、これは [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) と [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) として表されます。 たとえば、ユーザーの操作により新しいコントロールが表示されるアプリ バーでこのアニメーションを使います。 また、一定期間ユーザーの入力が検出されないとフェード アウトする一時的なスクロール バーとパン インジケーターにもこのアニメーションが適用されます。 アプリで、コンテンツが動的に読み込まれてプレースホルダー項目から最終項目に切り替わるときにもフェード イン アニメーションが使われます。
 
 クロスフェード アニメーションを使って、画面の現在のコンテンツを更新している場合など、項目の状態が変化しているときにスムーズに切り替えます。 XAML アニメーション ライブラリには専用のクロスフェード アニメーション ([**crossFade**](https://msdn.microsoft.com/library/windows/apps/BR212661) と同等のもの) がありませんが、タイミングを重ねて [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) と [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) を使うことで同じ結果を実現できます。
 
-### ポインター アップ/ダウン
+<span id="pointer-up-down"/>
+### <a name="pointer-updown"></a>ポインター アップ/ダウン
 
 [**PointerUpThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh969168) アニメーションと [**PointerDownThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh969164) アニメーションを使って、タイルでのタップやクリックが正常に行われたことについてユーザーにフィードバックを提供します。 たとえば、ユーザーがタイルを下にクリックまたはタップすると、ポインター ダウン アニメーションが再生されます。 クリックまたはタップが解放されると、ポインター アップ アニメーションが再生されます。
 
-### 位置の変更
+### <a name="reposition"></a>位置の変更
 
 位置変更アニメーション ([**RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210421) または [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429)) を使って、要素を新しい位置に移動します。 たとえば、項目のコントロールでヘッダーを動かすと、位置変更アニメーションが適用されます。
 
-### ポップアップの表示/非表示
+<span id="show-hide-popup"/>
+### <a name="showhide-popup"></a>ポップアップの表示/非表示
 
 [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210383) と [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210391) を使って、[**Popup**](https://msdn.microsoft.com/library/windows/apps/BR227842) や類似のコンテキストに沿った UI を現在の画面に表示し、画面から消します。 [**PopupThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh969172) は、ポップアップを簡易非表示にする場合、便利なフィードバックとなるテーマ切り替えです。
 
-### エッジ (端) UI の表示/非表示
+<span id="show-hide-edge-ui"/>
+### <a name="showhide-edge-ui"></a>エッジ (端) UI の表示/非表示
 
 [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh702324) アニメーションを使って、端に基づく小さい UI をスライドして画面に表示したり、画面から消したりします。 たとえば、画面の上部や下部にカスタムのアプリ バーを表示したり、画面の上部にエラーや警告の UI サーフェスを表示したりするときに、これらのアニメーションを使います。
 
 ウィンドウまたはパネルの表示や非表示には [**PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh969160) アニメーションを使います。 これはカスタム キーボードや作業ウィンドウのような端に基づく大きな UI 用です。
 
-### リスト項目の変更
+### <a name="list-item-changes"></a>リスト項目の変更
 
 [**AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243047) アニメーションは、既にあるリストに項目の追加時または削除時のアニメーション動作を追加するときに使います。 追加時の切り替えの場合、最初にリスト内の既にある項目の位置が変更され、新しい項目用のスペースが確保されてから、新しい項目が追加されます。 削除時の切り替えの場合、リストから項目が削除され、必要に応じて、残りのリスト項目の位置が変更されます。
 
@@ -101,13 +104,14 @@ Windows ランタイム アニメーション システムとアニメーショ�
 
 これらのアニメーションは、既定の [**ListView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) テンプレートと [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) テンプレートに含まれているため、これらのコントロールを既に使用している場合、これらのアニメーションを手動で追加する必要はありません。
 
-### ドラッグ/ドロップ
+<span id="drag-drop"/>
+### <a name="dragdrop"></a>ドラッグ/ドロップ
 
 ドラッグ アニメーション ([**DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243173)、[**DragOverThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243177)) とドロップ アニメーション ([**DropTargetItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243185)) を使って、ユーザーが項目をドラッグまたはドロップするときに視覚的なフィードバックを提供します。
 
 有効にすると、リストにドロップした項目の前後の項目の位置が変更されることがアニメーションによってユーザーに示されます。 このアニメーションを使うと、ユーザーは項目を現在の位置にドロップしたときに、項目がリスト内のどの位置に配置されるかを把握できるため便利です。 アニメーションでは、ドラッグしている項目を、リストの他の 2 つの項目間にドロップできること、およびそれらの項目は移動することを視覚的なフィードバックで示します。
 
-## アニメーションとカスタム コントロールの使用
+## <a name="using-animations-with-custom-controls"></a>アニメーションとカスタム コントロールの使用
 
 カスタマイズした Windows ランタイム コントロールを作るときに、どのアニメーションを使う必要があるかについての推奨事項を次の表にまとめます。
 
@@ -124,7 +128,7 @@ Windows ランタイム アニメーション システムとアニメーショ�
 
  
 
-## 切り替え効果のアニメーションの例
+## <a name="transition-animation-examples"></a>切り替え効果のアニメーションの例
 
 アプリが使うアニメーションは、ユーザーを困惑させることなく、ユーザー インターフェイスを豊かに、魅力的にするものであるのが理想です。 1 つの方法は、切り替え効果のアニメーションを UI に適用することです。画面に何かが出入りするなど、何かの変化が起きたときに、アニメーションによって、その変化にユーザーの注意を惹き付けます。 たとえば、ボタンの場合、単に画面に表示したり画面から消したりするのではなく、フェード イン/フェード アウトさせるようにします。 一貫性のあるお勧めの (標準的な) 切り替え効果アニメーションを作ることができる API を多数用意しました。 ここでは、ボタンがスライドしながら勢いよく画面に表示されるアニメーションの適用方法を紹介します。
 
@@ -198,11 +202,9 @@ Windows ランタイム アニメーション システムとアニメーショ�
 
 切り替え効果が適用された [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) の子である四角形が次々に表示され、見ていて楽しい気分になります。同じアニメーションを個々の四角形に適用した場合は、すべての四角形がいっせいに表示されますが、それとは対照的です。
 
-このアニメーションのデモは、次のビデオでご覧いただけます。
+このアニメーションのデモを次に示します。
 
 ![子である四角形をビューに切り替えて表示するアニメーション](./images/animation-child-rectangles.gif)
-
-<iframe src="https://videoplayercdn.osi.office.net/embed/bb48c68b-c15d-44e4-86e5-8a8065da7a2e?autoplay=true&mkt=en-us&csid=IA-en-us" width="640" height="360" allowFullScreen="true" frameBorder="0" scrolling="no" ></iframe>
 
 いずれかの子の位置が変化した場合は、コンテナーの子オブジェクトを再度流し込むことができます。 次の例では、[**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429) を四角形から成るグリッドに適用しています。 いずれかの四角形を削除すると、その他すべての四角形が新しい位置に再度流し込まれます。
 
@@ -266,8 +268,6 @@ void BlankPage::RemoveButton_Click(Platform::Object^ sender, Windows::UI::Xaml::
 }
 ```
 
-次のビデオは、削除される四角形を表現するアニメーションを実行するデモです。
-
 切り替え効果のアニメーションは、1 つのオブジェクトまたは 1 つのオブジェクト コンテナーに対し複数適用することができます。 たとえば、アニメーションで表示する一連の四角形があり、四角形の位置が変化したときにもアニメーションを適用する必要がある場合、[**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429) と [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) を次のように適用します。
 
 ```xml
@@ -297,7 +297,7 @@ void BlankPage::RemoveButton_Click(Platform::Object^ sender, Windows::UI::Xaml::
 
  
 
-## テーマ アニメーションの例
+## <a name="theme-animation-examples"></a>テーマ アニメーションの例
 
 切り替え効果のアニメーションは簡単に適用できます。 しかし、場合によっては、アニメーション効果のタイミングや順序をもっと細かく制御する必要があります。 テーマ アニメーションを使うと、アニメーションの動作に一貫したテーマを使いながら、より細かな制御を行うことができます。 テーマ アニメーションも、カスタム アニメーションよりマークアップを少なくする必要があります。 ここでは、[**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) を使って、四角形をフェード アウトさせています。
 
@@ -366,7 +366,7 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
  
 
-## カスタム アニメーションの作成
+## <a name="create-your-own-animations"></a>カスタム アニメーションの作成
 
 テーマ アニメーションでは自分のニーズが満たせない場合は、アニメーションを独自に作ることができます。 オブジェクトのプロパティ値のいくつかをアニメーション化することによって、オブジェクトに動きを与えることができます。 たとえば、四角形の幅や [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932) の角度、ボタンの色の値をアニメーション化することができます。 この種のカスタム アニメーションは、事前構成済みのアニメーションの種類として Windows ランタイムに既に用意されているライブラリ アニメーションと区別するために、"ストーリーボードに設定されたアニメーション" と呼ばれています。 ストーリーボードに設定されたアニメーションの場合、特定の型の値を変更できるアニメーション (**Double** をアニメーションできる [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) など) を使い、そのアニメーションを [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 内に配置して制御します。
 
@@ -384,6 +384,6 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

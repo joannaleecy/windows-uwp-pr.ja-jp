@@ -4,21 +4,19 @@ ms.assetid: 8C63D33B-557D-436E-9DDA-11F7A5BFA2D7
 description: "既存のアドオンの申請を更新するには、Windows ストア申請 API のこのメソッドを使います。"
 title: "Windows ストア申請 API を使用したアドオンの申請の更新"
 translationtype: Human Translation
-ms.sourcegitcommit: 7307ca70467a751d5adb53f3718c7e9cf0b70dbb
-ms.openlocfilehash: f42f2dba155aa0a29e0769fd96cce6d3a0de870b
+ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
+ms.openlocfilehash: ac126d8e8cf8301399a3248a1d65e19805e70255
 
 ---
 
-# Windows ストア申請 API を使用したアドオンの申請の更新
+# <a name="update-an-add-on-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアドオンの申請の更新
 
 
 既存のアドオン (アプリ内製品 (IAP) とも呼ばれます) 申請を更新するには、Windows ストア申請 API 内のこのメソッドを使います。 このメソッドを使って申請を正常に更新した後は、インジェストと公開のために[申請をコミット](commit-an-add-on-submission.md)する必要があります。
 
 このメソッドが Windows ストア申請 API を使ったアドオンの申請の作成プロセスにどのように適合するかについては、「[アドオンの申請の管理](manage-add-on-submissions.md)」をご覧ください。
 
->**重要**&nbsp;&nbsp;近い将来、Microsoft は Windows デベロッパー センターでアドオンの申請の価格データ モデルを変更する予定です。 変更の実施後、このメソッドの要求本文内の**価格**リソースが無視され、このメソッドを使用してアドオンの申請の価格および販売データの変更を行うことが一時的にできなくなります。 将来的には、Windows ストア申請 API を更新し、アドオンの申請の価格情報にプログラムでアクセスする新しい方法を導入する予定です。 詳しくは、「[価格リソース](manage-add-on-submissions.md#pricing-object)」をご覧ください。
-
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
@@ -28,7 +26,7 @@ ms.openlocfilehash: f42f2dba155aa0a29e0769fd96cce6d3a0de870b
 
 >**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
-## 要求
+## <a name="request"></a>要求
 
 このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
 
@@ -39,7 +37,7 @@ ms.openlocfilehash: f42f2dba155aa0a29e0769fd96cce6d3a0de870b
 <span/>
  
 
-### 要求ヘッダー
+### <a name="request-header"></a>要求ヘッダー
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -47,7 +45,7 @@ ms.openlocfilehash: f42f2dba155aa0a29e0769fd96cce6d3a0de870b
 
 <span/>
 
-### 要求パラメーター
+### <a name="request-parameters"></a>要求パラメーター
 
 | 名前        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -56,7 +54,7 @@ ms.openlocfilehash: f42f2dba155aa0a29e0769fd96cce6d3a0de870b
 
 <span/>
 
-### 要求本文
+### <a name="request-body"></a>要求本文
 
 要求本文には次のパラメーターがあります。
 
@@ -74,7 +72,7 @@ ms.openlocfilehash: f42f2dba155aa0a29e0769fd96cce6d3a0de870b
 
 <span/>
 
-### 要求の例
+### <a name="request-example"></a>要求の例
 
 次の例は、アドオンの申請を更新する方法を示しています。
 
@@ -111,17 +109,7 @@ Content-Type: application/json
       "RU": "Tier3",
       "US": "Tier4",
     },
-    "sales": [
-      {
-         "name": "Sale1",
-         "basePriceId": "Free",
-         "startDate": "2016-05-21T18:40:11.7369008Z",
-         "endDate": "2016-05-22T18:40:11.7369008Z",
-         "marketSpecificPricings": {
-            "RU": "NotAvailable"
-         }
-      }
-    ],
+    "sales": [],
     "priceId": "Free"
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
@@ -131,7 +119,7 @@ Content-Type: application/json
 }
 ```
 
-## 応答
+## <a name="response"></a>応答
 
 次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文には、更新された申請に関する情報が含まれています。 応答本文内の値について詳しくは、「[アドオンの申請のリソース](manage-add-on-submissions.md#add-on-submission-object)」をご覧ください。
 
@@ -166,17 +154,7 @@ Content-Type: application/json
       "RU": "Tier3",
       "US": "Tier4",
     },
-    "sales": [
-      {
-         "name": "Sale1",
-         "basePriceId": "Free",
-         "startDate": "2016-05-21T18:40:11.7369008Z",
-         "endDate": "2016-05-22T18:40:11.7369008Z",
-         "marketSpecificPricings": {
-            "RU": "NotAvailable"
-         }
-      }
-    ],
+    "sales": [],
     "priceId": "Free"
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
@@ -207,7 +185,7 @@ Content-Type: application/json
 }
 ```
 
-## エラー コード
+## <a name="error-codes"></a>エラー コード
 
 要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。
 
@@ -219,7 +197,7 @@ Content-Type: application/json
 <span/>
 
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [アドオンの申請の管理](manage-add-on-submissions.md)
@@ -231,6 +209,6 @@ Content-Type: application/json
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -3,12 +3,12 @@ author: Mtoepke
 title: "Xbox One 開発者モードの非アクティブ化"
 description: "開発者モードを非アクティブ化する方法を説明します。"
 translationtype: Human Translation
-ms.sourcegitcommit: c80849904eccae1ef0e0740bb4e882f7f0f37cc8
-ms.openlocfilehash: 273cd14d5f51a693ba8385c13d128bb2888de2ea
+ms.sourcegitcommit: 0eee645f068614d2368623859dec4e16f3190169
+ms.openlocfilehash: cccc263dcd0ed9ae843cf845438b30605e9b9d9d
 
 ---
 
-# Xbox One 開発者モードの非アクティブ化
+# <a name="xbox-one-developer-mode-deactivation"></a>Xbox One 開発者モードの非アクティブ化
 
 * [リテール モードに切り替える](#switch-to-retail-mode)
 * [開発者モードのアクティブ化用アプリを使って本体を非アクティブ化する](#deactivate-your-console-using-the-dev-mode-activation-app)  
@@ -17,17 +17,17 @@ ms.openlocfilehash: 273cd14d5f51a693ba8385c13d128bb2888de2ea
 
 本体を開発用に使うことをやめる場合は、以下の手順を使って開発者モードを非アクティブ化します。
 
-## リテール モードに切り替える
+## <a name="switch-to-retail-mode"></a>リテール モードに切り替える
 まず、Xbox One 本体をリテール モードに戻します。
 
 1. **Dev Home** を開きます。
 2. **[Leave developer mode]** (開発者モードの終了) をクリックします。  本体がリテール モードで再起動します。  
 
-   ![](images/deactivation-leave-dev-mode.png)
+   ![開発者モードの終了](images/deactivation-leave-dev-mode.png)
 
 次のいずれかの方法を使って本体を非アクティブ化します。
 
-## 開発者モードのアクティブ化用アプリを使って本体を非アクティブ化する
+## <a name="deactivate-your-console-using-the-dev-mode-activation-app"></a>開発者モードのアクティブ化用アプリを使って本体を非アクティブ化する
 
 本体の開発者モードを非アクティブ化するための推奨される方法は、開発者モードのアクティブ化用アプリを使うことです。 
 
@@ -40,7 +40,7 @@ ms.openlocfilehash: 273cd14d5f51a693ba8385c13d128bb2888de2ea
   
 ![本体の非アクティブ化](images/deactivation-app.png)
 
-## 本体をリセットする
+## <a name="reset-your-console"></a>本体をリセットする
 
 開発者モードを非アクティブ化するには、本体をリセットする方法を使うこともできます。  
 
@@ -64,7 +64,7 @@ ms.openlocfilehash: 273cd14d5f51a693ba8385c13d128bb2888de2ea
    
     ![すべてを削除してリセット](images/deactivation-reset-remove.png)
 
-## Windows デベロッパー センターを使って本体を非アクティブ化する
+## <a name="deactivate-your-console-using-windows-dev-center"></a>Windows デベロッパー センターを使って本体を非アクティブ化する
 
 何らかの理由で本体にアクセスできない場合は、Windows デベロッパー センターを使って本体の開発者モードを非アクティブ化できます。
 
@@ -82,12 +82,12 @@ ms.openlocfilehash: 273cd14d5f51a693ba8385c13d128bb2888de2ea
 
 ![アクティブ化手順 13](images/deactivation-leave-dev-mode.png)
 
-## 参照
+## <a name="see-also"></a>参照
 - [Xbox One 開発者モードのアクティブ化](devkit-activation.md)
 - [Xbox One の UWP](index.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

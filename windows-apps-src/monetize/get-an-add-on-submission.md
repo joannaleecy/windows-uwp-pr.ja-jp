@@ -1,24 +1,19 @@
 ---
 author: mcleanbyron
 ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
-description: "既存のアドオンの提出のデータを取得するには、Windows ストア提出 API 内の以下のメソッドを使用します。"
-title: "Windows ストア提出 API を使用したアドオン提出の取得"
+description: "既存のアドオンの申請のデータを取得するには、Windows ストア申請 API 内の以下のメソッドを使用します。"
+title: "Windows ストア申請 API を使用したアドオン申請の取得"
 translationtype: Human Translation
-ms.sourcegitcommit: 03942eb9015487cfd5690e4b1933e4febd705971
-ms.openlocfilehash: ecdd4292c7980a647075c55abf7d14edd39d23d6
+ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
+ms.openlocfilehash: 887615bfc07549d82a295bae99dd31f722546341
 
 ---
 
-# Windows ストア提出 API を使用したアドオン提出の取得
+# <a name="get-an-add-on-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアドオン申請の取得
 
+既存のアドオン (アプリ内製品 (IAP) とも呼ばれます) 申請のデータを取得するには、Windows ストア申請 API 内のこのメソッドを使います。 Windows ストア申請 API を使ったアドオンの申請の作成プロセスについて詳しくは、「[アドオンの申請の管理](manage-add-on-submissions.md)」をご覧ください。
 
-
-
-既存のアドオン (アプリ内製品 (IAP) とも呼ばれます) 提出のデータを取得するには、Windows ストア提出 API 内のこのメソッドを使います。 Windows ストア申請 API を使ったアドオンの申請の作成プロセスについて詳しくは、「[アドオンの申請の管理](manage-add-on-submissions.md)」をご覧ください。
-
->**重要**&nbsp;&nbsp;近い将来、Microsoft は Windows デベロッパー センターでアドオンの申請の価格データ モデルを変更する予定です。 変更が実施されると、このメソッドの応答データに含まれる**価格**リソースが空になり、このメソッドを使用してアドオンの申請に関する価格および販売データを取得することが一時的にできなくなります。 将来的には、Windows ストア申請 API を更新し、アドオンの申請の価格情報にプログラムでアクセスする新しい方法を導入する予定です。 詳しくは、「[価格リソース](manage-add-on-submissions.md#pricing-object)」をご覧ください。
-
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
@@ -28,7 +23,7 @@ ms.openlocfilehash: ecdd4292c7980a647075c55abf7d14edd39d23d6
 
 >**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
-## 要求
+## <a name="request"></a>要求
 
 このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
 
@@ -39,7 +34,7 @@ ms.openlocfilehash: ecdd4292c7980a647075c55abf7d14edd39d23d6
 <span/>
  
 
-### 要求ヘッダー
+### <a name="request-header"></a>要求ヘッダー
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -47,31 +42,31 @@ ms.openlocfilehash: ecdd4292c7980a647075c55abf7d14edd39d23d6
 
 <span/>
 
-### 要求パラメーター
+### <a name="request-parameters"></a>要求パラメーター
 
 | 名前        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | string | 必須。 取得する提出が含まれるアドオンのストア ID です。 ストア ID はデベロッパー センター ダッシュボードで利用できます。また、[アドオンの作成](create-an-add-on.md)または[アドオンの詳細の取得](get-all-add-ons.md)要求の応答データに含まれています。  |
-| submissionId | string | 必須。 取得する提出の ID。 この ID は、[アドオン提出の作成](create-an-add-on-submission.md)要求の応答データに含まれており、デベロッパー センター ダッシュボードで確認できます。  |
+| inAppProductId | string | 必須。 取得する申請が含まれるアドオンのストア ID です。 ストア ID はデベロッパー センター ダッシュボードで利用できます。また、[アドオンの作成](create-an-add-on.md)または[アドオンの詳細の取得](get-all-add-ons.md)要求の応答データに含まれています。  |
+| submissionId | string | 必須。 取得する申請の ID。 この ID は、[アドオン申請の作成](create-an-add-on-submission.md)要求の応答データに含まれており、デベロッパー センター ダッシュボードで確認できます。  |
 
 <span/>
 
-### 要求本文
+### <a name="request-body"></a>要求本文
 
 このメソッドでは要求本文を指定しないでください。
 
-### 要求の例
+### <a name="request-example"></a>要求の例
 
-次の例は、アドオンの提出を取得する方法を示しています。
+次の例は、アドオンの申請を取得する方法を示しています。
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/submissions/1152921504621243680 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## 応答
+## <a name="response"></a>応答
 
-次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文には、指定された提出に関する情報が含まれています。 応答本文内の値について詳しくは、[アドオンの提出のリソース](manage-add-on-submissions.md#add-on-submission-object)をご覧ください。
+次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文には、指定された申請に関する情報が含まれています。 応答本文内の値について詳しくは、[アドオンの申請のリソース](manage-add-on-submissions.md#add-on-submission-object)をご覧ください。
 
 ```json
 {
@@ -104,17 +99,7 @@ Authorization: Bearer <your access token>
       "RU": "Tier3",
       "US": "Tier4",
     },
-    "sales": [
-      {
-         "name": "Sale1",
-         "basePriceId": "Free",
-         "startDate": "2016-05-21T18:40:11.7369008Z",
-         "endDate": "2016-05-22T18:40:11.7369008Z",
-         "marketSpecificPricings": {
-            "RU": "NotAvailable"
-         }
-      }
-    ],
+    "sales": [],
     "priceId": "Free"
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
@@ -146,29 +131,29 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## エラー コード
+## <a name="error-codes"></a>エラー コード
 
 要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。
 
 | エラー コード |  説明   |
 |--------|------------------|
-| 404  | 提出は見つかりませんでした。 |
-| 409  | 指定されたアドオンにアドオンの提出が属していないか、[Windows ストア提出 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能をアドオンが使用しています。 |   
+| 404  | 申請は見つかりませんでした。 |
+| 409  | 指定されたアドオンにアドオンの申請が属していないか、[Windows ストア申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能をアドオンが使用しています。 |   
 
 <span/>
 
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
-* [Windows ストア サービスを使用した提出の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-* [アドオンの提出の作成](create-an-add-on-submission.md)
-* [アドオンの提出のコミット](commit-an-add-on-submission.md)
-* [アドオンの提出の更新](update-an-add-on-submission.md)
-* [アドオンの提出の削除](delete-an-add-on-submission.md)
-* [アドオンの提出の状態の取得](get-status-for-an-add-on-submission.md)
+* [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
+* [アドオンの申請の作成](create-an-add-on-submission.md)
+* [アドオンの申請のコミット](commit-an-add-on-submission.md)
+* [アドオンの申請の更新](update-an-add-on-submission.md)
+* [アドオンの申請の削除](delete-an-add-on-submission.md)
+* [アドオンの申請の状態の取得](get-status-for-an-add-on-submission.md)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

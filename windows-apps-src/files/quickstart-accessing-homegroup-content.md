@@ -1,14 +1,14 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
 title: "ホームグループ コンテンツへのアクセス"
 description: "ユーザーのホームグループ フォルダーに格納されているコンテンツ (画像、音楽、ビデオなど) にアクセスします。"
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: d55908186e5e0687c7dbd22fee9d2f7b70ba1707
 
 ---
-# ホームグループ コンテンツへのアクセス
+# <a name="accessing-homegroup-content"></a>ホームグループ コンテンツへのアクセス
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -19,7 +19,7 @@ ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
 
 ユーザーのホームグループ フォルダーに格納されているコンテンツ (画像、音楽、ビデオなど) にアクセスします。
 
-## 必要条件
+## <a name="prerequisites"></a>前提条件
 
 -   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
 
@@ -41,7 +41,7 @@ ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
 
     ホームグループのファイルやフォルダーを列挙するには、クエリを使うことができます。 ファイルとフォルダーのクエリについて詳しくは、「[ファイルとフォルダーの列挙と照会](quickstart-listing-files-and-folders.md)」をご覧ください。
 
-## ホームグループでファイル ピッカーを開く
+## <a name="open-the-file-picker-at-the-homegroup"></a>ホームグループでファイル ピッカーを開く
 
 以下の手順に従って、ユーザーがホームグループのファイルとフォルダーを選ぶことができるファイル ピッカーのインスタンスを開きます。
 
@@ -76,7 +76,7 @@ ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
     }   
     ```
 
-## ホームグループでファイルを検索する
+## <a name="search-the-homegroup-for-files"></a>ホームグループでファイルを検索する
 
 このセクションでは、ユーザーが指定したクエリ語句に一致するホームグループ項目を見つける方法を示します。
 
@@ -119,7 +119,7 @@ ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
     ```
 
 
-## ホームグループで特定のユーザーの共有ファイルを検索する
+## <a name="search-the-homegroup-for-a-particular-users-shared-files"></a>ホームグループで特定のユーザーの共有ファイルを検索する
 
 このセクションでは、特定のユーザーによって共有されているホームグループ ファイルを見つける方法を示します。
 
@@ -164,7 +164,7 @@ ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
     }    
     ```
 
-## ホームグループからビデオをストリーミングする
+## <a name="stream-video-from-the-homegroup"></a>ホームグループからビデオをストリーミングする
 
 ホームグループからビデオ コンテンツをストリーミングするには、次の手順を実行します。
 
@@ -211,6 +211,6 @@ ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

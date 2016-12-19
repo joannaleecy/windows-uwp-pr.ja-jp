@@ -1,32 +1,32 @@
 ---
 author: TylerMSFT
 title: "アプリ サービスの作成と利用"
-description: "他の UWP アプリにサービスを提供できるユニバーサル Windows プラットフォーム (UWP) アプリを作成する方法と、それらのサービスを利用する方法について説明します。"
+description: "他のユニバーサル Windows プラットフォーム (UWP) アプリにサービスを提供できる UWP アプリを作成する方法と、それらのサービスを利用する方法について説明します。"
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
-keyword: app to app communication, interprocess communication, IPC, Background messaging, background communication, app to app
+keywords: "アプリ間通信, プロセス間通信, IPC, バックグラウンド メッセージング, バックグラウンド通信, アプリ間"
 translationtype: Human Translation
-ms.sourcegitcommit: 8b3ad18a3a0561d344b0d88a529cd929dafd9e4b
-ms.openlocfilehash: c925015e9f74edcb1859ca10279beefc31286b1e
+ms.sourcegitcommit: fadfab2f03d5cfda46d5c9f29c28ad561e6ab2db
+ms.openlocfilehash: 81786f6bf76d1d3840d5cd8c6191550b98a248b2
 
 ---
 
-# アプリ サービスの作成と利用
+# <a name="create-and-consume-an-app-service"></a>アプリ サービスの作成と利用
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-他の UWP アプリにサービスを提供できるユニバーサル Windows プラットフォーム (UWP) アプリを作成する方法と、それらのサービスを利用する方法について説明します。
+他のユニバーサル Windows プラットフォーム (UWP) アプリにサービスを提供できる UWP アプリを作成する方法と、それらのサービスを利用する方法について説明します。
 
 Windows 10 バージョン 1607 以降では、ホスト アプリと同じプロセスで実行されるアプリ サービスを作成できます。 この記事では、別のバックグラウンド プロセスで実行されるアプリ サービスの作成に重点を置いて説明します。 プロバイダーと同じプロセスで実行されるアプリ サービスの詳細については、「[ホスト アプリと同じプロセスで実行するようにアプリ サービスを変換する](convert-app-service-in-process.md)」をご覧ください。
 
-## 新しいアプリ サービス プロバイダー プロジェクトの作成
+## <a name="create-a-new-app-service-provider-project"></a>新しいアプリ サービス プロバイダー プロジェクトの作成
 
 このトピックでは、わかりやすくするためにすべてを 1 つのソリューションで作成します。
 
 -   Microsoft Visual Studio 2015 で、新しい UWP アプリ プロジェクトを作成し、これに AppServiceProvider という名前を付けます。 (**[新しいプロジェクト]** ダイアログ ボックスで、**[テンプレート] &gt; [他の言語] &gt; [Visual C#] &gt; [Windows] &gt; [Windows ユニバーサル] &gt; [空白のアプリ (Windows ユニバーサル)]** の順にクリックします)。 これは、アプリ サービスを提供するアプリです。
 
-## package.appxmanifest に、アプリ サービスの拡張機能を追加します。
+## <a name="add-an-app-service-extension-to-packageappxmanifest"></a>package.appxmanifest に、アプリ サービスの拡張機能を追加します。
 
 AppServiceProvider プロジェクトの Package.appxmanifest ファイルで、次の AppService 拡張機能を **&lt;Application&gt;** 要素に追加します。 この例では、`com.Microsoft.Inventory` サービスをアドバタイズし、このアプリをアプリ サービス プロバイダーとして識別します。 実際のサービスは、バックグラウンド タスクとして実装されます。 アプリ サービスのアプリは、サービスを他のアプリに公開します。 サービス名には逆のドメイン名スタイルを使うことをお勧めします。
 
@@ -50,7 +50,7 @@ AppServiceProvider プロジェクトの Package.appxmanifest ファイルで、
 
 **EntryPoint** 属性は、サービスを実装するクラスを識別します。これについては、次に実装します。
 
-## アプリ サービスの作成
+## <a name="create-the-app-service"></a>アプリ サービスの作成
 
 1.  アプリ サービスは、バックグラウンド タスクとして実装されます。 これにより、フォアグラウンド アプリケーションは、背後でタスクを実行する、別のアプリケーションのアプリ サービスを呼び出すことができます。 MyAppService という名前の新しい Windows ランタイム コンポーネント プロジェクトをソリューションに追加 (**[ファイル] &gt; [追加] &gt; [新しいプロジェクト]**) します。 (**[新しいプロジェクトの追加]** ダイアログ ボックスで、**[インストール済み] &gt; [他の言語] &gt; [Visual C#] &gt; [Windows] &gt; [Windows ユニバーサル] &gt; [Windows ランタイム コンポーネント (Windows ユニバーサル)]** の順に選びます。)
 2.  AppServiceProvider プロジェクトで、MyAppService プロジェクトへの参照を追加します。
@@ -103,7 +103,7 @@ AppServiceProvider プロジェクトの Package.appxmanifest ファイルで、
 
     タスクが取り消されると、**OnTaskCanceled()** が呼び出されます。 タスクが取り消されるのは、クライアント アプリが [**AppServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn921704) を破棄したとき、クライアント アプリが中断されたとき、OS がシャットダウンまたはスリープ状態になったとき、または OS がリソース不足になりタスクを実行できなくなったときです。
 
-## アプリ サービスのコードを記述する
+## <a name="write-the-code-for-the-app-service"></a>アプリ サービスのコードを記述する
 
 **OnRequestedReceived()** は、アプリ サービスのコードが配置される場所です。 MyAppService の Class1.cs のスタブ **OnRequestedReceived()** を、次の例のコードに置き換えます。 このコードは、インベントリの項目のインデックスを取得し、コマンド文字列と共にサービスに渡して、指定したインベントリ項目の名前と価格を取得します。 エラー処理コードは、簡略にするために削除されています。
 
@@ -167,14 +167,14 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 
 [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) の呼び出しからは、[**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) が呼び出し元に返されます。
 
-## サービス アプリを展開して、パッケージ ファミリ名を取得する
+## <a name="deploy-the-service-app-and-get-the-package-family-name"></a>サービス アプリを展開して、パッケージ ファミリ名を取得する
 
 クライアントから呼び出す前に、アプリ サービス プロバイダーのアプリを展開する必要があります。 これを呼び出すには、アプリ サービスのアプリのパッケージ ファミリ名も必要になります。
 
 -   アプリ サービスのアプリのパッケージ ファミリ名を取得する 1 つの方法は、**AppServiceProvider** プロジェクト内から (たとえば、App.xaml.cs の `public App()` から) [**Windows.ApplicationModel.Package.Current.Id.FamilyName**](https://msdn.microsoft.com/library/windows/apps/br224670) を呼び出し、結果をメモします。 Microsoft Visual Studio で AppServiceProvider を実行するには、ソリューション エクスプローラー ウィンドウで、スタートアップ プロジェクトとして設定し、プロジェクトを実行します。
 -   パッケージ ファミリ名を取得する別の方法として、ソリューションを配置し (**[ビルド] &gt; [ソリューションの配置]**)、出力ウィンドウで完全なパッケージ名をメモします (**[表示] &gt; [出力]**)。 パッケージ名を派生するには、出力ウィンドウの文字列からプラットフォーム情報を削除する必要があります。 たとえば、完全なパッケージ名が出力ウィンドウで "9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_1.0.0.0\_x86\_\_yd7nk54bq29ra" と報告された場合、"1.0.0.0\_x86\_\_" を削除し、"9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_yd7nk54bq29ra" がパッケージ ファミリ名となります。
 
-## アプリ サービスを呼び出すクライアントを作成する
+## <a name="write-a-client-to-call-the-app-service"></a>アプリ サービスを呼び出すクライアントを作成する
 
 1.  ClientApp という名前の新しい空の Windows ユニバーサル アプリ プロジェクトをソリューションに追加 (**[ファイル] &gt; [追加] &gt; [新しいプロジェクト]**) します。 (**[新しいプロジェクトの追加]** ダイアログ ボックスで、**[インストール済み] &gt; [他の言語] &gt; [Visual C#] &gt; [Windows] &gt; [Windows ユニバーサル] &gt; [空白のアプリ (Windows ユニバーサル)]** の順に選びます。)
 2.  ClientApp プロジェクトで、MainPage.xaml.cs の上部に、次の **using** ステートメントを追加します。
@@ -262,7 +262,7 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 2.  **button\_Click()** で、インベントリ サービスの接続に割り当てられたアプリ サービス名が、AppServiceProvider の Package.appxmanifest ファイルのアプリ サービス名と一致することを確認します。 `this.inventoryService.AppServiceName = "com.microsoft.inventory";` をご覧ください。
 3.  AppServiceProvider アプリが展開されたことを確認します (ソリューション エクスプローラーでソリューションを右クリックし、**[展開]** をクリックします)。
 
-## アプリ サービスのデバッグ
+## <a name="debug-the-app-service"></a>アプリ サービスのデバッグ
 
 
 1.  サービスを呼び出す前にアプリ サービス プロバイダーのアプリが配置される必要があるため、ソリューション全体がデバッグする前に展開されるようにします。 (Visual Studio で、**[ビルド] &gt; [ソリューションの配置]** の順にクリックします)。
@@ -272,7 +272,7 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 5.  (Visual Studio からではなく) [スタート] メニューから ClientApp を起動します。
 6.  数値 1 をテキスト ボックスに入力し、ボタンを押します。 デバッガーは、アプリ サービス内のブレークポイントでアプリ サービスの呼び出しを停止します。
 
-## クライアントのデバッグ
+## <a name="debug-the-client"></a>クライアントのデバッグ
 
 1.  前の手順に従って、アプリ サービスをデバッグします。
 2.  [スタート] メニューから ClientApp を起動します。
@@ -280,11 +280,11 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 4.  ClientApp プロジェクトで、**button\_Click()** にブレークポイントを設定します。
 5.  ClientApp のテキスト ボックスに数値 1 を入力してボタンをクリックすると、クライアントとアプリ サービスの両方のブレークポイントがヒットするようになります。
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 この例では、アプリ サービスを作成して、別のアプリからそれを呼び出しす簡単な概要を示します。 重要な点は、アプリ サービスをホストするためのバックグラウンド タスクの作成、アプリ サービス プロバイダーのアプリの Package.appxmanifest ファイルへの windows.appservice 拡張機能の追加、クライアント アプリから接続するためのアプリ サービス プロバイダーのアプリのパッケージ ファミリ名の取得、[**Windows.ApplicationModel.AppService.AppServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn921704) を使ったサービスの呼び出しです。
 
-## MyAppService の完全なコード
+## <a name="full-code-for-myappservice"></a>MyAppService の完全なコード
 
 ```cs
 using System;
@@ -373,13 +373,13 @@ namespace MyAppService
 }
 ```
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [ホスト アプリと同じプロセスで実行するようにアプリ サービスを変換する](convert-app-service-in-process.md)
 * [バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)
 
 
 
-<!--HONumber=Nov16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

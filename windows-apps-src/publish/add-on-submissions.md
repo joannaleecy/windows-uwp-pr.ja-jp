@@ -4,12 +4,12 @@ Description: "アドオンは Windows デベロッパー センター ダッシ�
 title: "アドオンの申請"
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 translationtype: Human Translation
-ms.sourcegitcommit: b0d877e46ba6958bfc61dd87687c30e91b6cd937
-ms.openlocfilehash: 7b44dabfd4badcad795e38a97590d98e1601092d
+ms.sourcegitcommit: 0f2b48f646423f299999a61d78dd956a78a09a8e
+ms.openlocfilehash: 1e7c02621da528c4635ab47bd7c2a898f2441da1
 
 ---
 
-# アドオンの申請
+# <a name="add-on-submissions"></a>アドオンの申請
 
 アドオン (アプリ内製品とも呼ばれる) は、お客様が購入可能なアプリの補助アイテムです。 アドオンには、楽しいアドオン新機能、新しいゲーム レベル、またはユーザーの関心を引くと思われるその他のアイテムなどがあります。 アドオンは収益を得るためだけでなく、お客様との意見交換や顧客エンゲージメントの獲得を促すためにも役立ちます。
 
@@ -19,11 +19,11 @@ ms.openlocfilehash: 7b44dabfd4badcad795e38a97590d98e1601092d
 
 > **注**&nbsp;&nbsp;ドキュメントのこのセクションでは、デベロッパー センター ダッシュボードでアドオンを申請する方法について説明します。 ここで説明する方法以外に、[Windows ストア申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使用してアドオン申請を自動化することもできます。
 
-## アドオンの提出用チェック リスト
+## <a name="checklist-for-submitting-an-add-on"></a>アドオンの申請用チェック リスト
 
 アドオンの申請を作成するときに提供する情報の一覧を次に示します。 提供が必須である情報については、次の一覧に示してあります。 また、省略可能な情報もあります。既に提供されている既定値は必要に応じて変更できます。
 
-### 新しいアドオン ページを作成する
+### <a name="create-a-new-add-on-page"></a>新しいアドオン ページを作成する
 | フィールド名                    | コメント                            |
 |-------------------------------|----------------------------------|
 | [**製品の種類**](set-your-add-on-product-id.md#product-type)      | 必須。 **[永続的]** を選んだ場合は、**[製品の有効期限]** を指定する必要があります。 |  
@@ -31,7 +31,7 @@ ms.openlocfilehash: 7b44dabfd4badcad795e38a97590d98e1601092d
 
 <span/>
 
-### [プロパティ] ページ
+### <a name="properties-page"></a>[プロパティ] ページ
 | フィールド名                    | コメント                              |   
 |-------------------------------|------------------------------------|
 | [**製品の有効期限**](enter-add-on-properties.md#product-lifetime)  | 製品の種類が **[永続的]** である場合は必須です。 他の種類の製品には適用されません。 |
@@ -42,7 +42,7 @@ ms.openlocfilehash: 7b44dabfd4badcad795e38a97590d98e1601092d
 
 <span/>
 
-### [価格と使用可能状況] ページ
+### <a name="pricing-and-availability-page"></a>[価格と使用可能状況] ページ
 | フィールド名                    | コメント                                       |
 |-------------------------------|---------------------------------------------|
 | [**基本価格**](set-add-on-pricing-and-availability.md#base-price)                | 必須                                    |
@@ -53,8 +53,8 @@ ms.openlocfilehash: 7b44dabfd4badcad795e38a97590d98e1601092d
 
 <span/>
 
-### ストア登録情報
-1 つのストア登録情報が必要です。 アプリがサポートする各[言語](create-add-on-descriptions.md#languages)でストア登録情報を提供することをお勧めします。
+### <a name="store-listings"></a>ストア登録情報
+1 つのストア登録情報が必要です。 アプリがサポートする各[言語](create-add-on-store-listings.md#languages)でストア登録情報を提供することをお勧めします。
 
 | フィールド名                    | コメント                                       |
 |-------------------------------|---------------------------------------------|
@@ -64,12 +64,12 @@ ms.openlocfilehash: 7b44dabfd4badcad795e38a97590d98e1601092d
 
 <span/>
 
-これらの情報の入力が完了したら、**[Submit to the Store]** (ストアに提出) をクリックします。 ほとんどの場合、認定プロセスは約 1 時間かかります。 その後、アドオンはストアに公開され、お客様が購入できるようになります。
+これらの情報の入力が完了したら、**[ストアに提出]** をクリックします。 ほとんどの場合、認定プロセスは約 1 時間かかります。 その後、アドオンはストアに公開され、お客様が購入できるようになります。
 
 **注**  アドオンは、アプリのコードでも実装する必要があります。 詳しくは、「[アプリ内製品購入の有効化](../monetize/enable-in-app-product-purchases.md)」をご覧ください。
 
 
-## 公開後のアドオンの更新
+## <a name="updating-an-add-on-after-publication"></a>公開後のアドオンの更新
 
 公開したアドオンはいつでも変更できます。 アドオンの変更はアプリとは別に申請および公開されるため、一般的には、価格や説明の更新などのアドオンに対する変更ではアプリ全体を更新する必要はありません。
 
@@ -81,6 +81,6 @@ ms.openlocfilehash: 7b44dabfd4badcad795e38a97590d98e1601092d
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -4,31 +4,33 @@ ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
 description: "製品購入が成功した各 Windows ストアのトランザクションでは、必要に応じてトランザクションの通知を返すことができます。"
 title: "通知を使った製品購入の確認"
 translationtype: Human Translation
-ms.sourcegitcommit: 18d5c2ecf7d438355c3103ad2aae32dc84fc89ed
-ms.openlocfilehash: ea79a33a52bc45a9c8609e12bfac953c3f92db09
+ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
+ms.openlocfilehash: 55631d364ca6f2d76d214eca6d00fbdd969c0e15
 
 ---
 
-# 通知を使った製品購入の確認
+# <a name="use-receipts-to-verify-product-purchases"></a>通知を使った製品購入の確認
 
 
->**注**&nbsp;&nbsp;この記事の例では、[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間のメンバーを使います。 アプリが Windows 10 Version 1607 以降を対象としている場合、**Windows.ApplicationModel.Store** 名前空間ではなく、[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間のメンバーを使ってアプリ内での購入を管理することをお勧めします。 詳しくは、「[アプリ内購入と試用版](in-app-purchases-and-trials.md)」をご覧ください。
+>**注**&nbsp;&nbsp;この記事では、[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間のメンバーを使って、アプリ内での購入の受領通知を取得および検証する方法について説明します。 アプリがこの名前空間の代わりに、Windows 10 Version 1607 で導入された [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) を使用する場合、アプリ内での購入に関する受領通知を取得するための API は提供されていません。 ただし、Windows ストア コレクション API の REST メソッドを使って、購入トランザクションのデータを取得することができます。 詳しくは、「[アプリ内購入の受領通知](in-app-purchases-and-trials.md#receipts)」をご覧ください。
 
-**重要な API**
-
--   [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765)
--   [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)
 
 製品購入が成功した各 Windows ストアのトランザクションでは、必要に応じてトランザクションの通知を返すことができます。 この通知は、ユーザーに対する製品と金銭的コストの一覧を掲載します。
 
-この情報は、ユーザーがアプリを購入したことや、Windows ストアからアプリ内製品の購入が行われたことをアプリで確認する必要がある場合などに役立ちます。 たとえば、ダウンロードしたコンテンツを提供するゲームを想像してください。 ゲーム コンテンツを購入したユーザーが別のデバイスでゲームをする場合、そのユーザーが既にコンテンツを所有していることを確認する必要があります。 以下にその方法を示します。
+この情報は、ユーザーがアプリを購入したことや、Windows ストアからアドオン (アプリ内製品または IAP とも呼ばれます) の購入が行われたことをアプリで確認する必要がある場合などに役立ちます。 たとえば、ダウンロードしたコンテンツを提供するゲームを想像してください。 ゲーム コンテンツを購入したユーザーが別のデバイスでゲームをする場合、そのユーザーが既にコンテンツを所有していることを確認する必要があります。 以下にその方法を示します。
 
-## 通知の要求
+## <a name="requesting-a-receipt"></a>通知の要求
 
 
-**Windows.ApplicationModel.Store** 名前空間は、通知を受け取る 2 つの方法として、[**CurrentApp.RequestProductPurchaseAsync | requestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263381) または [**CurrentApp.RequestAppPurchaseAsync | requestAppPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/hh967813) メソッドを利用し *includeReceipt* パラメーターを使う方法と、[**CurrentApp.GetAppReceiptAsync | getAppReceiptAsync**](https://msdn.microsoft.com/library/windows/apps/hh967811) メソッドを呼び出す方法をサポートしています。 アプリの通知は次のようになります。
+**Windows.ApplicationModel.Store** 名前空間は、受領通知を取得する複数の方法をサポートしています。
 
-```XML
+* [CurrentApp.RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813)か [CurrentApp.RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh779780.aspx) (またはこのメソッドの他のオーバーロードのいずれか) を使って購入すると、戻り値に受領通知が含まれます。
+* [CurrentApp.GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811) メソッドを呼び出して、アプリおよびアプリ内のアドオンに関する現在の受領通知を取得できます。
+
+アプリの通知は次のようになります。
+
+> [!div class="tabbedCodeSnippets"]
+```xml
 <Receipt Version="1.0" ReceiptDate="2012-08-30T23:10:05Z" CertificateId="b809e47cd0110a4db043b3f73e83acd917fe1336" ReceiptDeviceId="4e362949-acc3-fe3a-e71b-89893eb4f528">
     <AppReceipt Id="8ffa256d-eca8-712a-7cf8-cbf5522df24b" AppId="55428GreenlakeApps.CurrentAppSimulatorEventTest_z7q3q7z11crfr" PurchaseDate="2012-06-04T23:07:24Z" LicenseType="Full" />
     <ProductReceipt Id="6bbf4366-6fb2-8be8-7947-92fd5f683530" ProductId="Product1" PurchaseDate="2012-08-30T23:08:52Z" ExpirationDate="2012-09-02T23:08:49Z" ProductType="Durable" AppId="55428GreenlakeApps.CurrentAppSimulatorEventTest_z7q3q7z11crfr" />
@@ -51,7 +53,8 @@ ms.openlocfilehash: ea79a33a52bc45a9c8609e12bfac953c3f92db09
 
 製品の通知は次のようになります。
 
-```XML
+> [!div class="tabbedCodeSnippets"]
+```xml
 <Receipt Version="1.0" ReceiptDate="2012-08-30T23:08:52Z" CertificateId="b809e47cd0110a4db043b3f73e83acd917fe1336" ReceiptDeviceId="4e362949-acc3-fe3a-e71b-89893eb4f528">
     <ProductReceipt Id="6bbf4366-6fb2-8be8-7947-92fd5f683530" ProductId="Product1" PurchaseDate="2012-08-30T23:08:52Z" ExpirationDate="2012-09-02T23:08:49Z" ProductType="Durable" AppId="55428GreenlakeApps.CurrentAppSimulatorEventTest_z7q3q7z11crfr" />
     <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
@@ -71,168 +74,69 @@ ms.openlocfilehash: ea79a33a52bc45a9c8609e12bfac953c3f92db09
 </Receipt>
 ```
 
-これらの通知の例のいずれかを使って検証コードをテストできます。
+これらの通知の例のいずれかを使って検証コードをテストできます。 受領通知の内容について詳しくは、「[受領通知の要素と属性の説明](#receipt-descriptions)」をご覧ください。
 
-## 通知の検証
+## <a name="validating-a-receipt"></a>通知の検証
 
+受領通知の真正を検証するには、バックエンド システム (Web サービスやそれに類するサービス) でパブリック証明書を使って受領通知の署名を確認する必要があります。 この証明書を取得するには、URL ```https://go.microsoft.com/fwlink/p/?linkid=246509&cid=CertificateId``` (```CertificateId``` は受領通知の **CertificateId** の値) を使用します。
 
-通知を受け取ったら、バックエンド システム (Web サービスのようなもの) でその通知を検証することが必要です。 次に、検証プロセスの .NET Framework サンプルを示します。
+検証プロセスの例を以下に示します。 このコードは、**System.Security** アセンブリへの参照を含む .NET Framework コンソール アプリケーションで実行されます。
 
-```CSharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
-using System.Xml;
-using System.IO;
-using System.Security.Cryptography.Xml;
-using System.Net;
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[ReceiptVerificationSample](./code/ReceiptVerificationSample/cs/Program.cs#ReceiptVerificationSample)]
 
-namespace ReceiptVerificationSample
-{
-        public sealed class RSAPKCS1SHA256SignatureDescription : SignatureDescription
-        {
-            public RSAPKCS1SHA256SignatureDescription()
-            {
-                base.KeyAlgorithm = typeof(RSACryptoServiceProvider).FullName;
-                base.DigestAlgorithm = typeof(SHA256Managed).FullName;
-                base.FormatterAlgorithm = typeof(RSAPKCS1SignatureFormatter).FullName;
-                base.DeformatterAlgorithm = typeof(RSAPKCS1SignatureDeformatter).FullName;
-            }
+<span id="receipt-descriptions" />
+## <a name="element-and-attribute-descriptions-for-a-receipt"></a>受領通知の要素と属性の説明
 
-            public override AsymmetricSignatureDeformatter CreateDeformatter(AsymmetricAlgorithm key)
-            {
-                if (key == null)
-                {
-                    throw new ArgumentNullException("key");
-                }
+このセクションでは、受領通知内の属性と要素について説明します。
 
-                RSAPKCS1SignatureDeformatter deformatter = new RSAPKCS1SignatureDeformatter(key);
-                deformatter.SetHashAlgorithm("SHA256");
-                return deformatter;
-            }
+### <a name="receipt-element"></a>受領通知の要素
 
-            public override AsymmetricSignatureFormatter CreateFormatter(AsymmetricAlgorithm key)
-            {
-                if (key == null)
-                {
-                    throw new ArgumentNullException("key");
-                }
+このファイルのルート要素は、**Receipt** 要素です。これには、アプリとアプリ内での購入に関する情報が含まれています。 この要素には、次の子要素が含まれます。
 
-                RSAPKCS1SignatureFormatter formatter = new RSAPKCS1SignatureFormatter(key);
-                formatter.SetHashAlgorithm("SHA256");
-                return formatter;
-            }
+|  要素  |  必須かどうか  |  数量  |  説明   |
+|-------------|------------|--------|--------|
+|  [AppReceipt](#appreceipt)  |    必須ではない        |  0 または 1  |  現在のアプリの購入情報が含まれています。            |
+|  [ProductReceipt](#productreceipt)  |     必須ではない       |  0 以上    |   現在のアプリのアプリ内での購入に関する情報が含まれています。     |
+|  Signature  |      必須      |  1   |   この要素は、標準の [XML-DSIG コンストラクト](http://go.microsoft.com/fwlink/p/?linkid=251093)です。 これには、受領通知の検証に使用する **SignatureValue** 要素に加え、**SignedInfo** 要素が含まれています。      |
 
-        }
+**Receipt** には次の属性があります。
 
-        class Program
-        {
+|  属性  |  説明   |
+|-------------|-------------------|
+|  **Version**  |    受領通知のバージョン番号            |
+|  **CertificateId**  |     受領通知の署名に使用された証明サムプリント          |
+|  **ReceiptDate**  |    受領通知が署名され、ダウンロードされた日付です。           |  
+|  **ReceiptDeviceId**  |   この受領通知の要求に使用するデバイスを識別します。         |  |
 
-            // Utility function to read the bytes from an HTTP response
-            private static int ReadResponseBytes(byte[] responseBuffer, Stream resStream)
-            {
-                int count = 0;
+<span id="appreceipt" />
+### <a name="appreceipt-element"></a>AppReceipt 要素
 
-                int numBytesRead = 0;
-                int numBytesToRead = responseBuffer.Length;
+この要素には、現在のアプリの購入情報が含まれています。
 
-                do
-                {
-                    count = resStream.Read(responseBuffer, numBytesRead, numBytesToRead);
+**AppReceipt** には次の属性があります。
 
-                    numBytesRead += count;
-                    numBytesToRead -= count;
+|  属性  |  説明   |
+|-------------|-------------------|
+|  **Id**  |    購入を識別します。           |
+|  **AppId**  |     OS がアプリに対して使用するパッケージ ファミリ名です。           |
+|  **LicenseType**  |    ユーザーがアプリの通常版を購入した場合は、**Full** です。 ユーザーがアプリの試用版をダウンロードした場合は、**Trial** です。           |  
+|  **PurchaseDate**  |    アプリが取得された日付です。          |  |
 
-                } while (count > 0);
+<span id="productreceipt" />
+### <a name="productreceipt-element"></a>ProductReceipt 要素
 
-                return numBytesRead;
-            }
+この要素には、現在のアプリのアプリ内での購入に関する情報が含まれています。
 
-            public static X509Certificate2 RetrieveCertificate(string certificateId)
-            {
-                const int MaxCertificateSize = 10000;
+**ProductReceipt** は次の属性があります。
 
-                // We are attempting to retrieve the following url. The getAppReceiptAsync website at
-                // http://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.getappreceiptasync.aspx
-                // lists the following format for the certificate url.
-                String certificateUrl = String.Format("https://go.microsoft.com/fwlink/?LinkId=246509&cid={0}", certificateId);
-
-                // Make an HTTP GET request for the certificate
-                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(certificateUrl);
-                request.Method = "GET";
-
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-
-                // Retrieve the certificate out of the response stream
-                byte[] responseBuffer = new byte[MaxCertificateSize];
-                Stream resStream = response.GetResponseStream();
-                int bytesRead = ReadResponseBytes(responseBuffer, resStream);
-
-                if (bytesRead < 1)
-                {
-                    //TODO: Handle error here
-                }
-
-                return new X509Certificate2(responseBuffer);
-            }
-
-            static bool ValidateXml(XmlDocument receipt, X509Certificate2 certificate)
-            {
-                // Create the signed XML object.
-                SignedXml sxml = new SignedXml(receipt);
-
-                // Get the XML Signature node and load it into the signed XML object.
-                XmlNode dsig = receipt.GetElementsByTagName("Signature", SignedXml.XmlDsigNamespaceUrl)[0];
-                if (dsig == null)
-                {
-                    // If signature is not found return false
-                    System.Console.WriteLine("Signature not found.");
-                    return false;
-                }
-
-                sxml.LoadXml((XmlElement)dsig);
-
-                // Check the signature
-                bool isValid = sxml.CheckSignature(certificate, true);
-
-                return isValid;
-            }
-
-            static void Main(string[] args)
-            {
-                // .NET does not support SHA256-RSA2048 signature verification by default, so register this algorithm for verification
-                CryptoConfig.AddAlgorithm(typeof(RSAPKCS1SHA256SignatureDescription), "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256");
-
-                // Load the receipt that needs to be verified as an XML document
-                XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.Load("..\\..\\receipt.xml");
-
-                // The certificateId attribute is present in the document root, retrieve it
-                XmlNode node = xmlDoc.DocumentElement;
-                string certificateId = node.Attributes["CertificateId"].Value;
-
-                // Retrieve the certificate from the official site.
-                // NOTE: For sake of performance, you would want to cache this certificate locally.
-                //       Otherwise, every single call will incur the delay of certificate retrieval.
-                X509Certificate2 verificationCertificate = RetrieveCertificate(certificateId);
-
-                try
-                {
-                    // Validate the receipt with the certificate retrieved earlier
-                    bool isValid = ValidateXml(xmlDoc, verificationCertificate);
-                    System.Console.WriteLine("Certificate valid: " + isValid);
-                }
-                catch (Exception ex)
-                {
-                    System.Console.WriteLine(ex.ToString());
-                }
-            }
-        }
-}
-```
+|  属性  |  説明   |
+|-------------|-------------------|
+|  **Id**  |    購入を識別します。           |
+|  **AppId**  |     ユーザーが購入に使ったアプリを識別します。           |
+|  **ProductId**  |     購入した製品を識別します。           |
+|  **ProductType**  |    製品の種類を示します。 現在サポートされている値は、**Durable** のみです。          |  
+|  **PurchaseDate**  |    購入した日付です。          |  |
 
  
 
@@ -240,6 +144,6 @@ namespace ReceiptVerificationSample
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

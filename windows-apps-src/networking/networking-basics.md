@@ -4,18 +4,18 @@ description: "ネットワーク対応アプリで実行する必要がある事
 title: "ネットワークの基本"
 ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 221c3278f8561fa322257714f67bd2985fa04f22
+ms.sourcegitcommit: 28cf7084fd7ea6ad41c7c2817522891617928abb
+ms.openlocfilehash: 13457b7da3472f3530805198a74b3a6b2ff78f50
 
 ---
 
-# ネットワークの基本
+# <a name="networking-basics"></a>ネットワークの基本
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 ネットワーク対応アプリで実行する必要がある事柄について説明します。
 
-## 機能
+## <a name="capabilities"></a>機能
 
 ネットワークを使うには、アプリ マニフェストに適切な機能要素を追加する必要があります。 アプリ マニフェストにネットワーク機能が指定されていない場合、アプリはネットワーク機能を持たないため、ネットワークへの接続は失敗します。
 
@@ -31,12 +31,11 @@ ms.openlocfilehash: 221c3278f8561fa322257714f67bd2985fa04f22
 
 | 機能 | 説明 |
 |------------|-------------|
-| **pushNotifications** | アプリでソケット アクティビティ トリガーを使う場合は、この機能をアプリ マニフェストに指定する必要があります。 |
 | **enterpriseAuthentication** | ドメイン資格情報を必要とするネットワーク リソースにアプリが接続できるようにします。 この機能を使う場合、すべてのアプリの機能をドメイン管理者が有効にする必要があります。 たとえば、プライベート イントラネットの SharePoint サーバーからデータを取得するアプリが該当します。 <br/> この機能を使うと、資格情報を必要とするネットワーク上のリソースに、自分の資格情報を使ってアクセスすることができます。 この機能を持ったアプリは、ネットワーク上でユーザーを偽装することができます。 <br/> この機能を使う場合、認証プロキシ経由でのインターネットへのアクセスをアプリに許可する必要はありません。 |
 | **proximity** | コンピューターときわめて近い場所にあるデバイスとの近距離近接通信で必要となります。 近距離近接通信は、近くのデバイス上のアプリケーションに接続したりデータを送ったりするときに使われます。 <br/> この機能を有効にすると、アプリは、ユーザーの同意に基づいて相手を招待したり招待に応じたりしながら、ネットワークにアクセスし、きわめて近い場所にあるデバイスに接続することができます。 |
 | **sharedUserCertificates** | ソフトウェア証明書とハードウェア証明書 (スマート カード証明書など) にアプリがアクセスできるようにします。 この機能が実行時に呼び出されると、ユーザーは、カードの挿入や証明書の選択などの行動をとる必要があります。 <br/> この機能では、ソフトウェア証明書やハードウェア証明書、スマート カードが、アプリでの身分証明に使われます。 この機能は、企業や銀行、行政サービスで身分証明に使うことができます。 |
 
-## アプリがフォア グラウンドにないときの通信
+## <a name="communicating-when-your-app-is-not-in-the-foreground"></a>アプリがフォア グラウンドにないときの通信
 
 
               「[バックグラウンド タスクによるアプリのサポート](https://msdn.microsoft.com/library/windows/apps/mt299103)」には、アプリがフォアグラウンドでないときにバックグラウンド タスクを使って処理を実行する方法に関する一般的な情報が含まれています。 具体的には、アプリがフォアグラウンド アプリでないときにネットワーク経由でそのアプリのデータが到着した場合は、到着通知を受け取るための特別な手順のコードを実行する必要があります。 Windows 8 では、このためにコントロール チャネル トリガーを使っていました。これらのトリガーは、Windows 10 でも引き続きサポートされます。 コントロール チャネル トリガーの使い方について詳しくは[**ここ**](https://msdn.microsoft.com/library/windows/apps/hh701032)をご覧ください。 Windows 10 の新しいテクノロジでは、プッシュ対応ストリーム ソケットなどのいくつかのシナリオでオーバーヘッドが小さい優れた機能であるソケット ブローカーとソケット アクティビティ トリガーを利用できます。
@@ -45,9 +44,8 @@ ms.openlocfilehash: 221c3278f8561fa322257714f67bd2985fa04f22
 
 ソケット ブローカーはコントロール チャネル トリガーと同じ機能を少ない制限と小さなメモリ使用量で提供するため、ソケット ブローカーの目的は、適切な場所でコントロール チャネル トリガーと交代することです。 ソケット ブローカーは、ロック画面に表示するアプリ以外のアプリで使うことができ、電話でも他のデバイスと同じように使うことができます。 ソケット ブローカーによってアクティブ化するために、トラフィックの到着時にアプリが実行されている必要はありません。 さらに、ソケット ブローカーは、TCP ソケットでのリッスンをサポートします。これはコントロール チャネル トリガーではサポートされていません。
 
-アプリでソケット アクティビティ トリガーを使う場合は、**pushNotifications** 機能をアプリ マニフェストに指定する必要があります。
 
-### ネットワーク トリガーの選択
+### <a name="choosing-a-network-trigger"></a>ネットワーク トリガーの選択
 
 どちらの種類のトリガーが適しているかを判断するいくつかのシナリオがあります。 アプリで使うトリガーの種類を選択するときは、次のアドバイスを検討してください。
 
@@ -58,11 +56,11 @@ ms.openlocfilehash: 221c3278f8561fa322257714f67bd2985fa04f22
 
 ソケット ブローカーの使い方の説明と例については、「[バックグラウンドでのネットワーク通信](network-communications-in-the-background.md)」をご覧ください。
 
-## セキュリティ保護された接続
+## <a name="secured-connections"></a>セキュリティ保護された接続
 
 Secure Sockets Layer (SSL) とより新しいトランスポート層セキュリティ (TLS) は、ネットワーク通信の認証と暗号化を実現するように設計された暗号化プロトコルです。 これらのプロトコルは、ネットワーク データの送受信時に傍受や改ざんを防ぐように設計されています。 これらのプロトコルでは、クライアント/サーバー モデルを使ってプロトコル交換が行われます。 また、デジタル証明書と証明機関を使って、サーバーが本物であることが確認されます。
 
-### セキュリティが確保されたソケット接続の作成
+### <a name="creating-secure-socket-connections"></a>セキュリティが確保されたソケット接続の作成
 
 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) オブジェクトは、クライアントとサーバー間の通信に SSL/TLS を使うように構成できます。 この SSL/TLS のサポートは、SSL/TLS ネゴシエーションで **StreamSocket** オブジェクトをクライアントとして使うことに制限されます。 サーバーとしての SSL/TLS ネゴシエーションは **StreamSocket** クラスで実装されていないため、着信接続を受信したときに [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) によって作成された **StreamSocket** と共に SSL/TLS を使うことはできません。
 
@@ -75,7 +73,7 @@ SocketProtectionLevel 値には、許可する最低限の保護レベルを設�
 
 > **注**  コードでは、特定の保護レベルの使用に暗黙的に依存しないように、つまり特定のセキュリティ レベルの既定での使用を前提にしないようにしてください。 セキュリティ環境は変わり続けており、プロトコルと既定の保護レベルは、既知の弱点のあるプロトコルの使用を避けるように、刻々と変更されています。 既定値は、個々のコンピューターの構成、つまりインストールされているソフトウェアや適用されているパッチによって異なることがあります。 アプリが特定のセキュリティ レベルの使用に依存する場合は、明示的にそのレベルを指定したうえで、実際にそのレベルを使って接続が確立されたことを確認する必要があります。
 
-### ConnectAsync の使用
+### <a name="use-connectasync"></a>ConnectAsync の使用
 
 [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504)ネットワーク サービスへの最初の接続を確立してすぐに、すべての通信で SSL/TLS を使うようにネゴシエートするのに使えます。 *protectionLevel* パラメーターを渡すことができる **ConnectAsync** メソッドは 2 つあります。
 
@@ -165,7 +163,7 @@ using Windows::Networking::Sockets;
     // Then close the clientSocket when done
 ```
 
-### UpgradeToSslAsync の使用
+### <a name="use-upgradetosslasync"></a>UpgradeToSslAsync の使用
 
 コードで [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) を使うときは、ネットワーク サービスへの最初の接続を暗号化なしで確立します。 アプリでデータが送受信される可能性があるため、以降のすべての通信で SSL/TLS を使うように接続をアップグレードします。
 
@@ -354,7 +352,7 @@ using Windows::Storage::Streams;
     });
 ```
 
-### セキュリティが確保された WebSocket 接続の作成
+### <a name="creating-secure-websocket-connections"></a>セキュリティが確保された WebSocket 接続の作成
 
 従来のソケット接続と同様に、Windows 8 の [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) と [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) の機能を Windows ストア アプリで使う際に、トランスポート層セキュリティ (TLS)/Secure Sockets Layer (SSL) を使って WebSocket 接続を暗号化することもできます。 ほとんどの場合、WebSocket 接続にはセキュリティを確保する必要があります。 多くのプロキシは、暗号化されていない WebSocket 接続を拒否するため、接続の成功率が高くなります。
 
@@ -364,13 +362,13 @@ using Windows::Storage::Streams;
 
 クライアントからの最初の要求にこの値が含まれていない場合、または含まれている値がサーバーで想定されるものと一致しない場合は、WebSocket ハンドシェーク エラーでサーバーから想定される値がクライアントに送信されます。
 
-## 認証
+## <a name="authentication"></a>認証
 
 ネットワーク経由で接続するときに、認証資格情報を提供する方法。
 
-### StreamSocket クラスによるクライアント証明書の提供
+### <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>StreamSocket クラスによるクライアント証明書の提供
 
-[**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスは、SSL/TLS を使ったアプリの接続先サーバーの認証をサポートします。 場合によっては、アプリは、TLS クライアント証明書を使って自身をサーバーに対して認証する必要があります。 Windows10 では、クライアント証明書を [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) オブジェクトに提供できます (これは TLS ハンドシェイクが開始される前に設定する必要があります)。 サーバーがクライアント証明書を要求した場合、Windows が提供された証明書を使って応答します。
+[**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスは、SSL/TLS を使ったアプリの接続先サーバーの認証をサポートします。 場合によっては、アプリは、TLS クライアント証明書を使って自身をサーバーに対して認証する必要があります。 Windows 10 では、クライアント証明書を [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) オブジェクトに提供できます (これは TLS ハンドシェイクが開始される前に設定する必要があります)。 サーバーがクライアント証明書を要求した場合、Windows が提供された証明書を使って応答します。
 
 これを実装する方法を示すコード スニペットを次に示します。
 
@@ -381,7 +379,7 @@ socket.Control.ClientCertificate = certificate;
 await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 ```
 
-### Web サービスへの認証資格情報の提供
+### <a name="providing-authentication-credentials-to-a-web-service"></a>Web サービスへの認証資格情報の提供
 
 Networking API は、セキュリティが確保された Web サービスとアプリが連携できるようにします。この API のそれぞれが、サーバーとプロキシの認証資格情報を使ってクライアントの初期化または要求ヘッダーの設定を行う独自のメソッドを提供します。 各メソッドは、[**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) オブジェクトを使って設定されます。このオブジェクトは、ユーザー名、パスワード、それぞれの資格情報が使われるリソースを示します。 次の表では、これらの API のマッピングについて説明します。
 
@@ -404,7 +402,7 @@ Networking API は、セキュリティが確保された Web サービスとア
 |  | [**AtomPubClient.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243428) |
 |  | [**AtomPubClient.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243423) |
  
-## ネットワーク例外を処理する
+## <a name="handling-network-exceptions"></a>ネットワーク例外を処理する
 
 ほとんどのプログラミング領域では、例外は、プログラムの不具合によって発生した重大な問題やエラーを示します。 ネットワーク プログラミングでは、さらに、ネットワークそのものとネットワーク通信の特性という、例外の発生源があります。 ネットワーク通信は、本質的に信頼性が低く、予期しない障害が発生する傾向があります。 アプリでネットワークを使う方法のそれぞれについて、状態情報を維持する必要があります。アプリのコードは、その状態情報を更新し、通信エラーが発生したときに接続を再び確立するか再試行する適切なロジックを開始することで、ネットワーク例外を処理する必要があります。
 
@@ -417,7 +415,7 @@ Networking API は、例外の原因についての詳しい情報を取得す�
 -   一部の API には、例外の **HRESULT** 値を列挙値に変換するヘルパー メソッドがあります。
 -   その他の API には、実際の **HRESULT** 値を取得するメソッドがあります。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [Windows 10 での Networking API の機能強化](http://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
  
@@ -425,6 +423,6 @@ Networking API は、例外の原因についての詳しい情報を取得す�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

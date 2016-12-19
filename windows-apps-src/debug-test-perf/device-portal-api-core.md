@@ -4,19 +4,19 @@ ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: "デバイス ポータル コア API リファレンス"
 description: "Windows Device Portal コア REST API について説明します。これによって、データにアクセスし、プログラムを使ってデバイスを制御することが可能になります。"
 translationtype: Human Translation
-ms.sourcegitcommit: fae2c6b31c9c6c07026abc4718959b02a36e6600
-ms.openlocfilehash: 226ecaecd93e4996e438f56f780926ca63c184fd
+ms.sourcegitcommit: b4222774dc4b0f9cdcac871311f5ead69c1e70a9
+ms.openlocfilehash: 3bacb9ac42e157afaed5e9e0e6438654db03ff28
 
 ---
 
-# デバイス ポータル コア API リファレンス
+# <a name="device-portal-core-api-reference"></a>デバイス ポータル コア API リファレンス
 
 Windows Device Portal の機能はすべて、REST API の上に構築されています。REST API は、プログラムからデータにアクセスしてデバイスを制御するために使用できます。
 
-## アプリの展開
+## <a name="app-deployment"></a>アプリの展開
 
 ---
-### アプリをインストールする
+### <a name="install-an-app"></a>アプリをインストールする
 
 **要求**
 
@@ -64,7 +64,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### アプリのインストール状態を取得する
+### <a name="get-app-installation-status"></a>アプリのインストール状態を取得する
 
 **要求**
 
@@ -107,7 +107,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### アプリをアンインストールする
+### <a name="uninstall-an-app"></a>アプリをアンインストールする
 
 **要求**
 
@@ -153,7 +153,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### インストールされたアプリを取得する
+### <a name="get-installed-apps"></a>インストールされたアプリを取得する
 
 **要求**
 
@@ -222,9 +222,9 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-## デバイス マネージャー
+## <a name="device-manager"></a>デバイス マネージャー
 ---
-### コンピューターにインストールされているデバイスを取得する
+### <a name="get-the-installed-devices-on-the-machine"></a>コンピューターにインストールされているデバイスを取得する
 
 **要求**
 
@@ -281,9 +281,9 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-## ダンプの収集
+## <a name="dump-collection"></a>ダンプの収集
 ---
-### アプリのすべてのクラッシュ ダンプの一覧を取得する
+### <a name="get-the-list-of-all-crash-dumps-for-apps"></a>アプリのすべてのクラッシュ ダンプの一覧を取得する
 
 **要求**
 
@@ -322,12 +322,13 @@ HTTP 状態コード      | 説明
 <br />
 **利用可能なデバイス ファミリ**
 
-* Windows Desktop
+* Window Mobile (Windows Insider Program のみ)
+* Windows デスクトップ
 * HoloLens
 * IoT
 
 ---
-### アプリのクラッシュ ダンプ収集設定を取得する
+### <a name="get-the-crash-dump-collection-settings-for-an-app"></a>アプリのクラッシュ ダンプ収集設定を取得する
 
 **要求**
 
@@ -373,12 +374,13 @@ HTTP 状態コード      | 説明
 <br />
 **利用可能なデバイス ファミリ**
 
-* Windows Desktop
+* Window Mobile (Windows Insider Program のみ)
+* Windows デスクトップ
 * HoloLens
 * IoT
 
 ---
-### サイドローディングされたアプリのクラッシュ ダンプを削除する
+### <a name="delete-a-crash-dump-for-a-sideloaded-app"></a>サイドローディングされたアプリのクラッシュ ダンプを削除する
 
 **要求**
 
@@ -420,12 +422,13 @@ HTTP 状態コード      | 説明
 <br />
 **利用可能なデバイス ファミリ**
 
-* Windows Desktop
+* Window Mobile (Windows Insider Program のみ)
+* Windows デスクトップ
 * HoloLens
 * IoT
 
 ---
-### サイドローディングされたアプリのクラッシュ ダンプを無効にする
+### <a name="disable-crash-dumps-for-a-sideloaded-app"></a>サイドローディングされたアプリのクラッシュ ダンプを無効にする
 
 **要求**
 
@@ -466,12 +469,13 @@ HTTP 状態コード      | 説明
 <br />
 **利用可能なデバイス ファミリ**
 
-* Windows Desktop
+* Window Mobile (Windows Insider Program のみ)
+* Windows デスクトップ
 * HoloLens
 * IoT
 
 ---
-### サイドローディングされたアプリのクラッシュ ダンプをダウンロードする
+### <a name="download-the-crash-dump-for-a-sideloaded-app"></a>サイドローディングされたアプリのクラッシュ ダンプをダウンロードする
 
 **要求**
 
@@ -515,12 +519,13 @@ HTTP 状態コード      | 説明
 <br />
 **利用可能なデバイス ファミリ**
 
-* Windows Desktop
+* Window Mobile (Windows Insider Program のみ)
+* Windows デスクトップ
 * HoloLens
 * IoT
 
 ---
-### サイドローディングされたアプリのクラッシュ ダンプを有効にする
+### <a name="enable-crash-dumps-for-a-sideloaded-app"></a>サイドローディングされたアプリのクラッシュ ダンプを有効にする
 
 **要求**
 
@@ -559,12 +564,13 @@ HTTP 状態コード      | 説明
 <br />
 **利用可能なデバイス ファミリ**
 
-* Windows Desktop
+* Window Mobile (Windows Insider Program のみ)
+* Windows デスクトップ
 * HoloLens
 * IoT
 
 ---
-### バグチェック ファイルの一覧を取得する
+### <a name="get-the-list-of-bugcheck-files"></a>バグチェック ファイルの一覧を取得する
 
 **要求**
 
@@ -589,12 +595,12 @@ GET | /api/debug/dump/kernel/dumplist
 
 **応答**
 
-応答には、ダンプ ファイル名とこれらのファイルのサイズの一覧が含まれます。 一覧は、次の形式になります。 2 つ目の *FileName* パラメーターは、ファイルのサイズです。 これは、既知のバグです。
+応答には、ダンプ ファイル名とこれらのファイルのサイズの一覧が含まれます。 一覧は、次の形式になります。 
 ```
 {"DumpFiles": [
     {
         "FileName": string,
-        "FileName": string
+        "FileSize": int
     },...
 ]}
 ```
@@ -613,7 +619,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### バグチェックのダンプ ファイルをダウンロードする
+### <a name="download-a-bugcheck-dump-file"></a>バグチェックのダンプ ファイルをダウンロードする
 
 **要求**
 
@@ -660,7 +666,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### バグチェックのクラッシュ制御の設定を取得する
+### <a name="get-the-bugcheck-crash-control-settings"></a>バグチェックのクラッシュ制御の設定を取得する
 
 **要求**
 
@@ -688,12 +694,22 @@ GET | /api/debug/dump/kernel/crashcontrol
 応答には、クラッシュの制御の設定が含まれます。 CrashControl について詳しくは、「[CrashControl](https://technet.microsoft.com/library/cc951703.aspx)」をご覧ください。 応答のテンプレートは次のとおりです。
 ```
 {
-    "autoreboot": int,
-    "dumptype": int,
+    "autoreboot": bool (0 or 1),
+    "dumptype": int (0 to 4),
     "maxdumpcount": int,
-    "overwrite": int
+    "overwrite": bool (0 or 1)
 }
 ```
+
+**ダンプの種類**
+
+0: 無効
+
+1: 完全メモリ ダンプ (使用中のすべてのメモリを収集)
+
+2: カーネル メモリ ダンプ (ユーザー モード メモリを無視)
+
+3: 限られたカーネル ミニダンプ
 
 **状態コード**
 
@@ -711,7 +727,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### ライブ カーネル ダンプを取得する
+### <a name="get-a-live-kernel-dump"></a>ライブ カーネル ダンプを取得する
 
 **要求**
 
@@ -754,7 +770,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### ライブ ユーザー プロセスからダンプを取得する
+### <a name="get-a-dump-from-a-live-user-process"></a>ライブ ユーザー プロセスからダンプを取得する
 
 **要求**
 
@@ -801,7 +817,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### バグチェックのクラッシュ制御の設定を行う
+### <a name="set-the-bugcheck-crash-control-settings"></a>バグチェックのクラッシュ制御の設定を行う
 
 **要求**
 
@@ -849,9 +865,9 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-## ETW
+## <a name="etw"></a>ETW
 ---
-### websocket 経由でリアルタイムの ETW セッションを作成する
+### <a name="create-a-realtime-etw-session-over-a-websocket"></a>websocket 経由でリアルタイムの ETW セッションを作成する
 
 **要求**
 
@@ -876,7 +892,7 @@ GET/WebSocket | /api/etw/session/realtime
 
 **応答**
 
-応答には、有効なプロバイダーの ETW イベントが含まれます。  以下の「ETW WebSocket コマンド」を参照してください。 
+応答には、有効なプロバイダーの ETW イベントが含まれます。  以下の「ETW WebSocket コマンド」をご覧ください。 
 
 **状態コード**
 
@@ -895,7 +911,7 @@ HTTP 状態コード      | 説明
 * HoloLens
 * IoT
 
-### ETW WebSocket コマンド
+### <a name="etw-websocket-commands"></a>ETW WebSocket コマンド
 次のコマンドは、クライアントからサーバーに送信されます。
 
 コマンド | 説明
@@ -945,7 +961,7 @@ payload objects は、追加のキーと値のペア (文字列: 文字列) で�
 ```
 
 ---
-### 登録済みの ETW プロバイダーを列挙する
+### <a name="enumerate-the-registered-etw-providers"></a>登録済みの ETW プロバイダーを列挙する
 
 **要求**
 
@@ -996,7 +1012,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### プラットフォームによって公開されているカスタム ETW プロバイダーを列挙します。
+### <a name="enumerate-the-custom-etw-providers-exposed-by-the-platform"></a>プラットフォームによって公開されているカスタム ETW プロバイダーを列挙します。
 
 **要求**
 
@@ -1044,9 +1060,9 @@ GET | /api/etw/customproviders
 * IoT
 
 ---
-## OS 情報
+## <a name="os-information"></a>OS 情報
 ---
-### コンピューター名を取得する
+### <a name="get-the-machine-name"></a>コンピューター名を取得する
 
 **要求**
 
@@ -1096,7 +1112,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### オペレーティング システムの情報を取得する
+### <a name="get-the-operating-system-information"></a>オペレーティング システムの情報を取得する
 
 **要求**
 
@@ -1152,7 +1168,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### デバイス ファミリを取得する 
+### <a name="get-the-device-family"></a>デバイス ファミリを取得する 
 
 **要求**
 
@@ -1206,7 +1222,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### コンピューター名を設定する
+### <a name="set-the-machine-name"></a>コンピューター名を設定する
 
 **要求**
 
@@ -1252,9 +1268,9 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-## パフォーマンス データ
+## <a name="performance-data"></a>パフォーマンス データ
 ---
-### 実行中のプロセスの一覧を取得する
+### <a name="get-the-list-of-running-processes"></a>実行中のプロセスの一覧を取得する
 
 **要求**
 
@@ -1315,7 +1331,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### システム パフォーマンスの統計情報を取得する
+### <a name="get-the-system-performance-statistics"></a>システム パフォーマンスの統計情報を取得する
 
 **要求**
 
@@ -1394,9 +1410,9 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-## 電源
+## <a name="power"></a>電源
 ---
-### 現在のバッテリ状態を取得する
+### <a name="get-the-current-battery-state"></a>現在のバッテリ状態を取得する
 
 **要求**
 
@@ -1447,13 +1463,13 @@ HTTP 状態コード      | 説明
 <br />
 **利用可能なデバイス ファミリ**
 
-* Windows Desktop
+* Windows Mobile
+* Windows デスクトップ
 * HoloLens
 * IoT
-* モバイル
 
 ---
-### アクティブな電源設定を取得する
+### <a name="get-the-active-power-scheme"></a>アクティブな電源設定を取得する
 
 **要求**
 
@@ -1499,7 +1515,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### 電源設定のサブ値を取得する
+### <a name="get-the-sub-value-for-a-power-scheme"></a>電源設定のサブ値を取得する
 
 **要求**
 
@@ -1542,7 +1558,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### システムの電源状態を取得する
+### <a name="get-the-power-state-of-the-system"></a>システムの電源状態を取得する
 
 **要求**
 
@@ -1589,7 +1605,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### アクティブな電源設定を行う
+### <a name="set-the-active-power-scheme"></a>アクティブな電源設定を行う
 
 **要求**
 
@@ -1634,7 +1650,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### 電源設定のサブ値を設定する
+### <a name="set-the-sub-value-for-a-power-scheme"></a>電源設定のサブ値を設定する
 
 **要求**
 
@@ -1678,7 +1694,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### SleepStudy レポートを取得する
+### <a name="get-a-sleep-study-report"></a>SleepStudy レポートを取得する
 
 **要求**
 
@@ -1721,7 +1737,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### 利用可能な SleepStudy レポートを列挙する
+### <a name="enumerate-the-available-sleep-study-reports"></a>利用可能な SleepStudy レポートを列挙する
 
 **要求**
 
@@ -1772,7 +1788,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### スリープ スタディ変換を取得する
+### <a name="get-the-sleep-study-transform"></a>スリープ スタディ変換を取得する
 
 **要求**
 
@@ -1815,9 +1831,9 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-## リモート制御
+## <a name="remote-control"></a>リモート制御
 ---
-### ターゲット コンピューターを再起動する
+### <a name="restart-the-target-computer"></a>ターゲット コンピューターを再起動する
 
 **要求**
 
@@ -1859,7 +1875,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### ターゲット コンピューターをシャットダウンする
+### <a name="shut-down-the-target-computer"></a>ターゲット コンピューターをシャットダウンする
 
 **要求**
 
@@ -1903,9 +1919,9 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-## タスク マネージャー
+## <a name="task-manager"></a>タスク マネージャー
 ---
-### 最新のアプリを起動する
+### <a name="start-a-modern-app"></a>最新のアプリを起動する
 
 **要求**
 
@@ -1954,7 +1970,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### 最新のアプリを停止する
+### <a name="stop-a-modern-app"></a>最新のアプリを停止する
 
 **要求**
 
@@ -2003,9 +2019,9 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-## Networking (ネットワーク)
+## <a name="networking"></a>ネットワーク
 ---
-### 現在の IP 構成を取得する
+### <a name="get-the-current-ip-configuration"></a>現在の IP 構成を取得する
 
 **要求**
 
@@ -2091,7 +2107,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 --
-### ワイヤレス ネットワーク インターフェイスを列挙する
+### <a name="enumerate-wireless-network-interfaces"></a>ワイヤレス ネットワーク インターフェイスを列挙する
 
 **要求**
 
@@ -2153,7 +2169,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### ワイヤレス ネットワークを列挙する
+### <a name="enumerate-wireless-networks"></a>ワイヤレス ネットワークを列挙する
 
 **要求**
 
@@ -2223,7 +2239,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### Wi-Fi ネットワークを接続および切断する
+### <a name="connect-and-disconnect-to-a-wi-fi-network"></a>Wi-Fi ネットワークを接続および切断する
 
 **要求**
 
@@ -2273,7 +2289,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### Wi-Fi のプロファイルを削除する
+### <a name="delete-a-wi-fi-profile"></a>Wi-Fi のプロファイルを削除する
 
 **要求**
 
@@ -2320,9 +2336,9 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-## Windows エラー報告 (WER)
+## <a name="windows-error-reporting-wer"></a>Windows エラー報告 (WER)
 ---
-### Windows エラー報告 (WER) ファイルをダウンロードする
+### <a name="download-a-windows-error-reporting-wer-file"></a>Windows エラー報告 (WER) ファイルをダウンロードする
 
 **要求**
 
@@ -2373,7 +2389,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### Windows エラー報告 (WER) レポート内のファイルを列挙する
+### <a name="enumerate-files-in-a-windows-error-reporting-wer-report"></a>Windows エラー報告 (WER) レポート内のファイルを列挙する
 
 **要求**
 
@@ -2428,7 +2444,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### Windows エラー報告 (WER) レポートを一覧表示する
+### <a name="list-the-windows-error-reporting-wer-reports"></a>Windows エラー報告 (WER) レポートを一覧表示する
 
 **要求**
 
@@ -2486,9 +2502,9 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-## Windows Performance Recorder (WPR) 
+## <a name="windows-performance-recorder-wpr"></a>Windows Performance Recorder (WPR) 
 ---
-### カスタム プロファイルを使用してトレースを開始する
+### <a name="start-tracing-with-a-custom-profile"></a>カスタム プロファイルを使用してトレースを開始する
 
 **要求**
 
@@ -2540,7 +2556,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### 起動パフォーマンス トレース セッションを開始する
+### <a name="start-a-boot-performance-tracing-session"></a>起動パフォーマンス トレース セッションを開始する
 
 **要求**
 
@@ -2596,7 +2612,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### 起動パフォーマンス トレース セッションを停止する
+### <a name="stop-a-boot-performance-tracing-session"></a>起動パフォーマンス トレース セッションを停止する
 
 **要求**
 
@@ -2621,7 +2637,7 @@ GET | /api/wpr/boottrace
 
 **応答**
 
-- トレース ETL ファイルを返します。
+-  なし。  **注:** これは時間のかかる処理です。  ETL のディスクへの書き込みが終了すると、制御が戻ります。
 
 **状態コード**
 
@@ -2641,7 +2657,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### パフォーマンス トレース セッションを開始する
+### <a name="start-a-performance-tracing-session"></a>パフォーマンス トレース セッションを開始する
 
 **要求**
 
@@ -2697,7 +2713,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### パフォーマンスのトレース セッションを停止する
+### <a name="stop-a-performance-tracing-session"></a>パフォーマンスのトレース セッションを停止する
 
 **要求**
 
@@ -2742,7 +2758,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### トレース セッションの状態を取得する
+### <a name="retrieve-the-status-of-a-tracing-session"></a>トレース セッションの状態を取得する
 
 **要求**
 
@@ -2794,7 +2810,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### 完了したトレース セッション (ETL) を一覧表示する
+### <a name="list-completed-tracing-sessions-etls"></a>完了したトレース セッション (ETL) を一覧表示する
 
 **要求**
 
@@ -2851,7 +2867,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### トレース セッション (ETL) をダウンロードする
+### <a name="download-a-tracing-session-etl"></a>トレース セッション (ETL) をダウンロードする
 
 **要求**
 
@@ -2900,7 +2916,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### トレース セッション (ETL) を削除する
+### <a name="delete-a-tracing-session-etl"></a>トレース セッション (ETL) を削除する
 
 **要求**
 
@@ -2949,9 +2965,9 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-## DNS SD タグ 
+## <a name="dns-sd-tags"></a>DNS SD タグ 
 ---
-### タグを表示する
+### <a name="view-tags"></a>タグを表示する
 
 **要求**
 
@@ -3004,7 +3020,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### タグを削除する
+### <a name="delete-tags"></a>タグを削除する
 
 **要求**
 
@@ -3049,7 +3065,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### タグを削除する
+### <a name="delete-tag"></a>タグを削除する
 
 **要求**
 
@@ -3095,7 +3111,7 @@ HTTP 状態コード      | 説明
 * IoT
  
 ---
-### タグを追加する
+### <a name="add-a-tag"></a>タグを追加する
 
 **要求**
 
@@ -3141,10 +3157,10 @@ HTTP 状態コード      | 説明
 * HoloLens
 * IoT
 
-## アプリのエクスプローラー
+## <a name="app-file-explorer"></a>アプリのエクスプローラー
 
 ---
-### 既知のフォルダーを取得する
+### <a name="get-known-folders"></a>既知のフォルダーを取得する
 
 **要求**
 
@@ -3194,7 +3210,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### ファイルを取得する
+### <a name="get-files"></a>ファイルを取得する
 
 **要求**
 
@@ -3254,7 +3270,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### ファイルをダウンロードする
+### <a name="download-a-file"></a>ファイルをダウンロードする
 
 **要求**
 
@@ -3302,7 +3318,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### ファイルの名前の変更
+### <a name="rename-a-file"></a>ファイルの名前の変更
 
 **要求**
 
@@ -3354,7 +3370,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### ファイルを削除する
+### <a name="delete-a-file"></a>ファイルを削除する
 
 **要求**
 
@@ -3404,7 +3420,7 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
-### ファイルをアップロードする
+### <a name="upload-a-file"></a>ファイルをアップロードする
 
 **要求**
 
@@ -3451,7 +3467,6 @@ HTTP 状態コード      | 説明
 * IoT
 
 
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -1,15 +1,15 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
 title: "ピッカーでファイルやフォルダーを開く"
 description: "ユーザーがピッカーを操作してファイルやフォルダーにアクセスできるようにします。 ファイルへのアクセスには FileOpenPicker クラスと FileSavePicker クラス、フォルダーへのアクセスには FolderPicker を使います。"
 translationtype: Human Translation
-ms.sourcegitcommit: 232008b7f80aceab201d5bedd744eedfe995648e
-ms.openlocfilehash: a27f81be16b5f032d852b377b14f1aaf89b93a2f
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: e7884f140915d66b4a9f95a4197e717d63b0f25f
 
 ---
 
-# ピッカーでファイルやフォルダーを開く
+# <a name="open-files-and-folders-with-a-picker"></a>ピッカーでファイルやフォルダーを開く
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -27,7 +27,7 @@ ms.openlocfilehash: a27f81be16b5f032d852b377b14f1aaf89b93a2f
 
  
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 
 -   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
@@ -38,7 +38,7 @@ ms.openlocfilehash: a27f81be16b5f032d852b377b14f1aaf89b93a2f
 
     「[ファイル アクセス許可](file-access-permissions.md)」をご覧ください。
 
-## ファイル ピッカーの UI
+## <a name="file-picker-ui"></a>ファイル ピッカーの UI
 
 
 ファイル ピッカーには、ユーザーを指示する情報やユーザーがファイルを開くまたは保存するときの一貫したエクスペリエンスを提供する情報が表示されます。
@@ -53,18 +53,18 @@ ms.openlocfilehash: a27f81be16b5f032d852b377b14f1aaf89b93a2f
 
 ![2 つのファイルが開く対象として選ばれているファイル ピッカー。](images/picker-multifile-600px.png)
 
-## ピッカーのしくみ
+## <a name="how-pickers-work"></a>ピッカーのしくみ
 
 
 アプリでは、ファイル ピッカーを使ってユーザーのシステム上のファイルとフォルダーにアクセスします。 アプリではこれらの選択を [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトと [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) オブジェクトとして受け取ることにより、それらを操作できます。
 
-ピッカーは単一の統一されたインターフェイスを使用して、ユーザーがファイル システムや他のアプリからファイルやフォルダーを選べるように表示します。 他のアプリから選ばれたファイルは、ファイル システムから選ばれたファイルと同様に、[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトとして返されます。 通常、アプリはそれらのオブジェクトも、他のオブジェクトと同じ方法で操作できます。 他のアプリは、ファイル ピッカー コントラクトに参加することで、ユーザーにファイルを表示します。 ファイル、保存場所、またはファイルの更新を他のアプリに提供する場合は、「[ファイル ピッカー コントラクトとの統合](https://msdn.microsoft.com/library/windows/apps/hh465192)」を参照してください。
+ピッカーは単一の統一されたインターフェイスを使用して、ユーザーがファイル システムや他のアプリからファイルやフォルダーを選べるように表示します。 他のアプリから選ばれたファイルは、ファイル システムから選ばれたファイルと同様に、[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトとして返されます。 通常、アプリはそれらのオブジェクトも、他のオブジェクトと同じ方法で操作できます。 他のアプリは、ファイル ピッカー コントラクトに参加することで、ユーザーにファイルを表示します。 ファイル、保存場所、またはファイルの更新を他のアプリに提供する場合は、「[ファイル ピッカー コントラクトとの統合](https://msdn.microsoft.com/library/windows/apps/hh465192)」をご覧ください。
 
 たとえば、アプリでファイル ピッカーを呼び出し、ユーザーにファイルを開くように促すことができます。 この場合、アプリは呼び出し元アプリになります。 ファイル ピッカーは、システムや他のアプリと情報をやり取りして、ユーザーがファイルを探して選べるようにします。 ユーザーがファイルを選ぶと、ファイル ピッカーはそのファイルをアプリに返します。 ここでは、ユーザーが OneDrive のような提供元アプリからファイルを選ぶ場合のプロセスを示しています。
 
 ![ファイル ピッカーを 2 つのアプリの間のインターフェイスとして使って、一方のアプリのファイルをもう一方のアプリから開くプロセスを示す図。](images/app-to-app-diagram-600px.png)
 
-## 1 つのファイルを選ぶ: 完全なコード
+## <a name="pick-a-single-file-complete-code-listing"></a>1 つのファイルを選ぶ: 完全なコード
 
 
 ```CSharp
@@ -88,7 +88,7 @@ else
 }
 ```
 
-## 1 つのファイルを選ぶ: ステップ バイ ステップ
+## <a name="pick-a-single-file-step-by-step"></a>1 つのファイルを選ぶ: ステップ バイ ステップ
 
 
 ファイル ピッカーが動作するには、ファイル ピッカー オブジェクトを作成してカスタマイズし、ユーザーが項目を選べるようにそのファイル ピッカーを表示する必要があります。
@@ -153,7 +153,7 @@ var files = await picker.PickMultipleFilesAsync();
         }
 ```
 
-## フォルダーを選ぶ: 完全なコード
+## <a name="pick-a-folder-complete-code-listing"></a>フォルダーを選ぶ: 完全なコード
 
 
 ```CSharp
@@ -175,7 +175,7 @@ else
 }
 ```
 
-**ヒント** アプリがピッカーでファイルまたはフォルダーにアクセスするたびに、その項目をアプリの [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) または [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) に追加して、項目を追跡します。 これらのリストの使用の詳細については、「[最近使ったファイルやフォルダーを追跡する方法](how-to-track-recently-used-files-and-folders.md)」を参照してください。
+**ヒント** アプリがピッカーでファイルまたはフォルダーにアクセスするたびに、その項目をアプリの [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) または [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) に追加して、項目を追跡します。 これらのリストの使用の詳細については、「[最近使ったファイルやフォルダーを追跡する方法](how-to-track-recently-used-files-and-folders.md)」をご覧ください。
 
  
 
@@ -185,6 +185,6 @@ else
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

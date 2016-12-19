@@ -4,11 +4,11 @@ ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
 title: "ビジュアル レイヤー"
 description: "Windows.UI.Composition API を使うと、フレーム ワーク層 (XAML) とグラフィック層 (DirectX) との間のコンポジション層にアクセスできます。"
 translationtype: Human Translation
-ms.sourcegitcommit: ad262cc6dcfd53156f3f3a3e850f9cfe99e87dc6
-ms.openlocfilehash: 066e5aea48340f96878a41aa28f0fef0c3bda9f5
+ms.sourcegitcommit: 9ea05f7ba76c7813b200a4c8cd021613f980355d
+ms.openlocfilehash: de6fe0688bec196fc90433ab9274f2e4c4fd9b90
 
 ---
-# ビジュアル レイヤー
+# <a name="visual-layer"></a>ビジュアル レイヤー
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -18,8 +18,8 @@ Windows.UI.Composition は宣言型の[保持モード](https://msdn.microsoft.c
 
 XAML 開発者は、C# のコンポジション層まで降り、この層で WinRT を使ってカスタムの操作を実行できます。グラフィック層まで降り、DirectX と C++ を使ってカスタムの UI 操作を実行する必要はありません。 この手法を用いることにより、コンポジション API を使用して既存の要素をアニメーション化したり、XAML 要素ツリー内で Windows.UI.Composition コンテンツの "ビジュアル アイランド" を作成して UI を拡張したりすることができます。
 
-![](images/layers-win-ui-composition.png)
-## <span id="Composition_Objects_and_The_Compositor"></span><span id="composition_objects_and_the_compositor"></span><span id="COMPOSITION_OBJECTS_AND_THE_COMPOSITOR"></span>コンポジション オブジェクトとコンポジター
+![UI フレームワークの階層: フレームワーク レイヤー (Windows.UI.XAML) はビジュアル レイヤー (Windows.UI.Composition) を基盤とし、ビジュアル レイヤーはさらにグラフィック レイヤー (DirectX) を基盤としている](images/layers-win-ui-composition.png)
+## <a name="span-idcompositionobjectsandthecompositorspanspan-idcompositionobjectsandthecompositorspanspan-idcompositionobjectsandthecompositorspancomposition-objects-and-the-compositor"></a><span id="Composition_Objects_and_The_Compositor"></span><span id="composition_objects_and_the_compositor"></span><span id="COMPOSITION_OBJECTS_AND_THE_COMPOSITOR"></span>コンポジション オブジェクトとコンポジター
 
 コンポジション オブジェクトは [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) (コンポジション オブジェクトのファクトリとして機能します) によって作成されます。 コンポジターは [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) オブジェクトを作成できるため、この API の他のすべての機能とコンポジション オブジェクトでベースとして使われるビジュアル ツリー構造を作成できます。
 
@@ -35,19 +35,19 @@ XAML 開発者は、C# のコンポジション層まで降り、この層で Wi
 
 コンポジターは、ツリー内のビジュアル オブジェクトのクリッピングや変換に使われる他の多数のコンポジション オブジェクトだけでなく、多様なアニメーションと効果のファクトリでもあります。
 
-## <span id="Effects_System"></span><span id="effects_system"></span><span id="EFFECTS_SYSTEM"></span>効果システム
+## <a name="span-ideffectssystemspanspan-ideffectssystemspanspan-ideffectssystemspaneffects-system"></a><span id="Effects_System"></span><span id="effects_system"></span><span id="EFFECTS_SYSTEM"></span>効果システム
 
 Windows.UI.Composition では、アニメーション化、カスタマイズ、チェーンできるリアルタイム効果がサポートされています。 効果には、2D アフィン変換、算術演算コンポジット、ブレンド、カラー ソース、コンポジット、コントラスト、露出、グレースケール、ガンマ伝達、色相回転、色の反転、彩度、セピア、色温度、濃淡などがあります。
 
 詳しくは、「[コンポジションの効果](composition-effects.md)」をご覧ください。
 
-## <span id="Animation_System"></span><span id="animation_system"></span><span id="ANIMATION_SYSTEM"></span>アニメーション システム
+## <a name="span-idanimationsystemspanspan-idanimationsystemspanspan-idanimationsystemspananimation-system"></a><span id="Animation_System"></span><span id="animation_system"></span><span id="ANIMATION_SYSTEM"></span>アニメーション システム
 
 Windows.UI.Composition には、フレーム ワークに依存しない表現力豊かなアニメーション システムが含まれており、キー フレーム アニメーションと数式アニメーションという 2 種類のアニメーションを設定できるようになっています。 これらのアニメーションを使って、ビジュアル オブジェクトを動かしたり、変換/クリッピングしたり、効果をアニメーション化したりします。 コンポジター プロセスで直接実行することで、滑らかさとスケールを保持しながら、多数のアニメーションを同時に実行できるようになります。
 
 詳しくは、「[コンポジションのアニメーション](composition-animation.md)」をご覧ください。
 
-## <span id="XAML_Interoperation"></span><span id="xaml_interoperation"></span><span id="XAML_INTEROPERATION"></span>XAML の相互運用
+## <a name="span-idxamlinteroperationspanspan-idxamlinteroperationspanspan-idxamlinteroperationspanxaml-interoperation"></a><span id="XAML_Interoperation"></span><span id="xaml_interoperation"></span><span id="XAML_INTEROPERATION"></span>XAML の相互運用
 
 コンポジション API は、ビジュアル ツリーを最初から作成できるだけでなく、[**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908) の [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976) クラスを使用して、既存の XAML UI と相互運用することもできます。
 
@@ -61,7 +61,7 @@ Windows.UI.Composition には、フレーム ワークに依存しない表現�
 
  
 
-## <span id="Additional_Resources_"></span><span id="additional_resources_"></span><span id="ADDITIONAL_RESOURCES_"></span>その他の情報
+## <a name="span-idadditionalresourcesspanspan-idadditionalresourcesspanspan-idadditionalresourcesspanadditional-resources"></a><span id="Additional_Resources_"></span><span id="additional_resources_"></span><span id="ADDITIONAL_RESOURCES_"></span>その他の情報
 
 -   この API に関する Kenny Kerr の MSDN 記事:「[グラフィックスとアニメーション - Windows 合成が 10 歳になる](https://msdn.microsoft.com/magazine/mt590968)」
 -   [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) にある高度な UI とコンポジションのサンプル
@@ -78,6 +78,6 @@ Windows.UI.Composition には、フレーム ワークに依存しない表現�
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

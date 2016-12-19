@@ -1,14 +1,14 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: CAC6A7C7-3348-4EC4-8327-D47EB6E0C238
 title: "SD カードへのアクセス"
 description: "オプションの microSD カードに重要度の低いデータを保存したり、これらのデータにアクセスしたりすることができます (特に内部ストレージに制限がある低コストのモバイル デバイスの場合)。"
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: c3ce9103f78a78e95214239e41a302ccd0e59796
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: a13f351af3cba8d3d9e645a6f6040dff6e81e1ff
 
 ---
-# SD カードへのアクセス
+# <a name="access-the-sd-card"></a>SD カードへのアクセス
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
@@ -23,15 +23,15 @@ ms.openlocfilehash: c3ce9103f78a78e95214239e41a302ccd0e59796
 
 - [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) API
 
-## SD カードでアクセスできるデータとアクセスできないデータ
+## <a name="what-you-can-and-cant-access-on-the-sd-card"></a>SD カードでアクセスできるデータとアクセスできないデータ
 
-### アクセスできるデータ
+### <a name="what-you-can-access"></a>アクセスできるデータ
 
 - アプリでファイルの読み取りと書き込みを実行するには、そのファイルの種類が処理対象となるように、アプリでアプリ マニフェスト ファイルに登録する必要があります。
 
 - アプリでは、フォルダーの作成と管理も実行できます。
 
-### アクセスできないデータ
+### <a name="what-you-cant-access"></a>アクセスできないデータ
 
 - アプリでは、システム フォルダーとそのフォルダー内のファイルを参照したり、アクセスしたりすることはできません。
 
@@ -39,7 +39,7 @@ ms.openlocfilehash: c3ce9103f78a78e95214239e41a302ccd0e59796
 
 - [**KnownFolders.DocumentsLibrary**](https://msdn.microsoft.com/library/windows/apps/br227152) を使ってドキュメント ライブラリを参照したり、ドキュメント ライブラリにアクセスしたりすることはできません。 ただしファイル システムを走査することによって、SD カード上のドキュメント ライブラリにアクセスすることはできます。
 
-## セキュリティとプライバシーに関する考慮事項
+## <a name="security-and-privacy-considerations"></a>セキュリティとプライバシーに関する考慮事項
 
 アプリが SD カードのグローバルな場所にファイルを保存する場合、それらのファイルは暗号化されないため、通常は他のアプリからアクセスすることができます。
 
@@ -49,7 +49,7 @@ ms.openlocfilehash: c3ce9103f78a78e95214239e41a302ccd0e59796
 
 アプリを SD カードにインストールし、ファイルを SD カードの [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) に保存する場合、それらのファイルは暗号化されるため、他のアプリからアクセスすることはできません。
 
-## SD カード上のファイルへアクセスするための要件
+## <a name="requirements-for-accessing-files-on-the-sd-card"></a>SD カード上のファイルへアクセスするための要件
 
 SD カードのファイルにアクセスするには通常、次のことを指定する必要があります。
 
@@ -60,9 +60,9 @@ SD カードのファイルにアクセスするには通常、次のことを�
 
 ミュージック、写真、ビデオなどのメディア ライブラリに格納されているメディア ファイルに既知のフォルダーを使ってアクセスする場合は、関連付けられている機能 (**musicLibrary**、**picturesLibrary**、**videoLibrary**) をアプリ マニフェスト ファイルで指定するだけで十分です。 **removableStorage** 機能を指定する必要はありません。 詳しくは、「[ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)」をご覧ください。
 
-## SD カード上のファイルへのアクセス
+## <a name="accessing-files-on-the-sd-card"></a>SD カード上のファイルへのアクセス
 
-### SD カードへの参照の取得
+### <a name="getting-a-reference-to-the-sd-card"></a>SD カードへの参照の取得
 
 [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) フォルダーは、デバイスに現在接続されている一連のリムーバブル デバイスに対する論理ルートである [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) です。 SD カードが取り付けられている場合は、**KnownFolders.RemovableDevices** フォルダーの下にある、最初の (唯一の) **StorageFolder** が SD カードを表します。
 
@@ -89,7 +89,7 @@ using Windows.Storage;
             }
 ```
 
-### SD カードのコンテンツの照会
+### <a name="querying-the-contents-of-the-sd-card"></a>SD カードのコンテンツの照会
 
 SD カードには、既知のフォルダーとして認識されないさまざまなフォルダーやファイルを含めることができますが、[**KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) の場所の情報を使って照会することはできません。 ファイルを検索するには、アプリでファイル システムを再帰的に走査して、SD カードのコンテンツを列挙する必要があります。 SD カードのコンテンツを効率的に取得するには、[**GetFilesAsync (CommonFileQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227274) と [**GetFoldersAsync (CommonFolderQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227281) を使います。
 
@@ -103,7 +103,7 @@ SD カードを走査するにはバックグラウンド スレッドを使う�
 
 -   アクセスしようとするファイルの拡張子を処理対象として登録しなかった場合、[**GetFileFromPathAsync**](https://msdn.microsoft.com/library/windows/apps/br227206) メソッドは失敗します。
 
-## 個々の SD カードの識別
+## <a name="identifying-the-individual-sd-card"></a>個々の SD カードの識別
 
 SD カードが最初にマウントされると、オペレーティング システムによって、そのカードの一意の識別子が生成されます。 この ID は、カードのルートにある WPSystem フォルダー内のファイルに格納されます。 アプリはこの ID を使って、カードを認識できるかどうかを判断することができます。 カードがアプリによって認識されると、アプリでは、既に完了している特定の操作を後で実行できる場合があります。 ただし、アプリが前回カードにアクセスした以降、カードのコンテンツが変更されている可能性があります。
 
@@ -148,6 +148,6 @@ using Windows.Storage;
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

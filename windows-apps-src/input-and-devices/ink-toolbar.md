@@ -4,14 +4,14 @@ Description: "既定の InkToolbar をユニバーサル Windows プラットフ
 title: "InkToolbar をユニバーサル Windows プラットフォーム (UWP) 手書き入力アプリに追加する"
 label: Add an InkToolbar to a Universal Windows Platform (UWP) inking app
 template: detail.hbs
-keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, InkToolbar, Universal Windows Platform, UWP
+keywords: "Windows Ink, Windows の手書き入力, DirectInk, InkPresenter, InkCanvas, InkToolbar, ユニバーサル Windows プラットフォーム, UWP"
 translationtype: Human Translation
-ms.sourcegitcommit: 9e971104a7f7de9425787f32edcb7c376fb0c934
-ms.openlocfilehash: f5c8f7f8e60317a3ef30ff1900d99f9f6d63d391
+ms.sourcegitcommit: 2b6b1d7b1755aad4d75a29413d989c6e8112128a
+ms.openlocfilehash: 1b810a42166c48c1359dcf9adfba84184234b42c
 
 ---
 
-# InkToolbar をユニバーサル Windows プラットフォーム (UWP) 手書き入力アプリに追加する
+# <a name="add-an-inktoolbar-to-a-universal-windows-platform-uwp-inking-app"></a>InkToolbar をユニバーサル Windows プラットフォーム (UWP) 手書き入力アプリに追加する
 
 ユニバーサル Windows プラットフォーム (UWP) アプリでの手書き入力を容易にする、[**InkCanvas**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) と [**InkToolbar**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) という 2 つのコントロールがあります。
 
@@ -29,7 +29,7 @@ InkCanvas は、完全に透明なオーバーレイであるため、インク 
 
   ここでは、InkToolbar について説明します。
 
-## 重要な API
+## <a name="important-apis"></a>重要な API
 
   -   [**InkCanvas クラス**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx)
   -   [**InkToolbar クラス**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)
@@ -37,7 +37,7 @@ InkCanvas は、完全に透明なオーバーレイであるため、インク 
   -   [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
 
 
-## 既定の InkToolbar
+## <a name="default-inktoolbar"></a>既定の InkToolbar
 
 既定では、InkToolbar には、描画、消去、強調表示、ルーラー表示のボタンが含まれています。 機能に応じて、インクの色、ストロークの太さ、すべてのインクの消去など、他の設定やコマンドがポップアップに表示されます。
 
@@ -72,11 +72,11 @@ InkCanvas は、完全に透明なオーバーレイであるため、インク 
 </Grid>
 ```
 
-## 基本的なカスタマイズ
+## <a name="basic-customization"></a>基本的なカスタマイズ
 
 このセクションでは、Windows Ink ツール バーの基本的なカスタマイズに関するシナリオについて説明します。
 
-### 選択されるボタンを指定する  
+### <a name="specify-the-selected-button"></a>選択されるボタンを指定する  
 ![初期化時に鉛筆ボタンが選択される](.\images\ink\ink-tools-default-toolbar.png)  
 *Windows Ink ツール バーで初期化時に鉛筆ボタンが選択される*
 
@@ -126,7 +126,7 @@ private void inkToolbar_Loaded(object sender, RoutedEventArgs e)
 }
 ```
 
-### 組み込みのボタンを指定する
+### <a name="specify-the-built-in-buttons"></a>組み込みのボタンを指定する
 
 ![初期化時に特定のボタンが含まれる](.\images\ink\ink-tools-specific.png)  
 *初期化時に特定のボタンが含まれる*
@@ -262,7 +262,7 @@ private void inkToolbar_Loaded(object sender, RoutedEventArgs e)
 By default, the InkToolbar supports both pen and mouse input, you have to enable support for touch input.
 -->
 
-## カスタム ボタンおよび手書き入力機能
+## <a name="custom-buttons-and-inking-features"></a>カスタム ボタンおよび手書き入力機能
 
 InkToolbar を通じて提供されるボタン (および関連する手書き入力機能) のコレクションをカスタマイズして拡張できます。
 
@@ -282,7 +282,7 @@ InkToolbar は、次のような 2 つの異なるボタンの種類のグルー
 
 > **注**&nbsp;&nbsp;組み込みのボタンの表示順序を変更することはできません。 既定の表示順序は、ボールペン、鉛筆、蛍光ペン、消しゴム、ルーラーです。 カスタム ペンは最後の既定のペンに追加され、カスタム ツール ボタンは最後のペン ボタンと消しゴム ボタンの間に追加され、カスタム トグル ボタンはルーラー ボタンの後に追加されます  (カスタム ボタンは、指定されている順序で追加されます)。
 
-### カスタム ペン
+### <a name="custom-pen"></a>カスタム ペン
 
 形状、回転、サイズなどのインク カラー パレットと、ペン先のプロパティを定義するカスタムペン (カスタム ペン ボタンを使用してアクティブ化されます) を作成できます。
 
@@ -396,7 +396,7 @@ class CalligraphicPen : InkToolbarCustomPen
 </Grid>
 ```
 
-### カスタム トグル
+### <a name="custom-toggle"></a>カスタム トグル
 
 カスタム トグル (カスタム トグル ボタンを使用してアクティブ化されます) を作成して、アプリ定義の機能の状態をオンまたはオフに設定できます。 オンにすると、機能はアクティブなツールと連携して動作します。
 
@@ -520,7 +520,7 @@ namespace Ink_Basic_InkToolbar
 }
 ```
 
-### カスタム ツール
+### <a name="custom-tool"></a>カスタム ツール
 
 カスタム ツール ボタンを作成して、アプリで定義されたペン以外のツールを呼び出すことができます。
 
@@ -783,7 +783,7 @@ namespace Ink_Basic_InkToolbar
 
 
 
-### カスタム インク レンダリング
+### <a name="custom-ink-rendering"></a>カスタム インク レンダリング
 
 既定では、手書き入力は低待機時間のバックグラウンド スレッドで処理され、描画と同時に "ウェット" レンダリングが行われます。 ストロークが完了すると (ペンまたは指が画面を離れるか、マウスのボタンが離されると)、UI スレッドでストロークが処理されて、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) レイヤーへの "ドライ" レンダリングが行われます (アプリケーション コンテンツの上にレンダリングされてウェット インクが置き換えられます)。
 
@@ -795,7 +795,7 @@ namespace Ink_Basic_InkToolbar
 > カスタム ドライ レンダリングと [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)  
 > カスタム ドライの実装によって、アプリが [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) の既定のインク レンダリング動作を上書きすると、レンダリングされたインク ストロークが InkToolbar で利用できなくなり、InkToolbar の組み込みの消去コマンドが正常に機能しなくなります。 消去機能を提供するには、すべてのポインター イベントを処理し、ストロークごとにヒット テストを実行すると共に、組み込みの [すべてのインクのデータを消去] コマンドをオーバーライドする必要があります。
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 * [ペン操作とスタイラス操作](pen-and-stylus-interactions.md)
 
@@ -806,6 +806,6 @@ namespace Ink_Basic_InkToolbar
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

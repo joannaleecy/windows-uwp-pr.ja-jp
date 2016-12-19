@@ -1,15 +1,15 @@
 ---
 author: TylerMSFT
 title: "アプリの URI ハンドラーを使用して Web とアプリのリンクをサポートする"
-description: "アプリの URI ハンドラーを使用して、ユーザーがアプリを利用するように導く"
+description: "アプリの URI ハンドラーを使用して、ユーザーがアプリを利用するように促します。"
 keywords: "Windows でのディープ リンクの設定"
 translationtype: Human Translation
-ms.sourcegitcommit: cb3dbf7fd55c92339c77124bd22b3484fa389285
-ms.openlocfilehash: d7ce1dbfdf8ce0069b4d882323de8fd6f1b242f7
+ms.sourcegitcommit: 3e57ca2cf0e7c788f5a8be12ebaf3e6b05a4fe51
+ms.openlocfilehash: e5c815ef0c776954e5b0d7f1cb9bd5e32e10356c
 
 ---
 
-# アプリの URI ハンドラーを使用して Web とアプリのリンクをサポートする
+# <a name="support-web-to-app-linking-with-app-uri-handlers"></a>アプリの URI ハンドラーを使用して Web とアプリのリンクをサポートする
 
 Web とアプリのリンクをサポートすることによって、アプリを利用するようにユーザーを導く方法について説明します。 Web とアプリのリンクを使用すると、アプリと Web サイトを関連付けることができます。 ユーザーが Web サイトへの http リンクや https リンクを開くと、ブラウザーが開くのではなく、アプリが起動されます。 アプリがインストールされていない場合は、ブラウザーで Web サイトを開くためのリンクが提供されます。 検証済みのコンテンツ所有者だけがリンクに登録できるため、ユーザーはこのエクスペリエンスを信頼することができます。
 
@@ -18,7 +18,7 @@ Web とアプリのリンクを有効にするには、次を行う必要があ�
 - アプリのマニフェスト宣言と同じホストのルートに配置されている JSON ファイルに、アプリのパッケージ ファミリ名を指定します。
 - アプリでアクティブ化を処理します。
 
-## http リンクや https リンクを処理できるようにアプリ マニフェストに登録する
+## <a name="register-to-handle-http-and-https-links-in-the-app-manifest"></a>http リンクや https リンクを処理できるようにアプリ マニフェストに登録する
 
 アプリでは、処理する Web サイトの URI を指定する必要があります。 そのためには、**Windows.appUriHandler** 拡張機能登録をアプリのマニフェスト ファイル **Package.appxmanifest** に追加します。
 
@@ -40,7 +40,7 @@ Web とアプリのリンクを有効にするには、次を行う必要があ�
 
 上記の宣言によって、指定されたホストからのリンクを処理するようにアプリが登録されます。 Web サイトに複数のアドレス (m.example.com、www.example.com、example.com など) がある場合は、各アドレスに対応するように、`<uap3:AppUriHandler>` 内に個別の `<uap3:Host Name=... />` エントリを追加します。
 
-## アプリと Web サイトを JSON ファイルに関連付ける
+## <a name="associate-your-app-and-website-with-a-json-file"></a>アプリと Web サイトを JSON ファイルに関連付ける
 
 アプリで開くことができるのがお客様の Web サイトのコンテンツのみにする場合は、Web サーバーのルートまたはドメイン上の既知のディレクトリに配置されている JSON ファイル内に、アプリのパッケージ ファミリ名を指定します。 これにより、お客様の Web サイトは、指定されている一連のアプリがサイト上のコンテンツを開くことに同意したことになります。 パッケージ ファミリ名は、アプリケーション マニフェスト デザイナーの [パッケージ] セクションで確認できます。
 
@@ -59,7 +59,7 @@ Web とアプリのリンクを有効にするには、次を行う必要があ�
 
 Windows によって、Web サイトへの https 接続が行われ、Web サーバー上の対応する JSON ファイルが検索されます。
 
-### ワイルドカード
+### <a name="wildcards"></a>ワイルドカード
 
 上記の JSON ファイルの例では、ワイルドカードの使用も示しています。 ワイルドカードを使用すると、数行のコードでさまざまなリンクをサポートすることができます。 Web とアプリのリンクでは、JSON ファイルで 2 種類のワイルドカードを使用できます。
 
@@ -71,7 +71,7 @@ Windows によって、Web サイトへの https 接続が行われ、Web サー
 たとえば、上記の例のように `"excludePaths" : [ "/news/*", "/blog/*" ]` と指定すると、アプリでは、Web サイトのアドレス (上記の例では msn.com) で始まるすべてのパスがサポートされますが、`/news/` と `/blog/` の下にあるパスは**サポートされません**。 つまり、**msn.com/weather.html** はサポートされますが、****msn.com/news/topnews.html**** はサポートされません。
 
 
-### 複数のアプリ
+### <a name="multiple-apps"></a>複数のアプリ
 
 Web サイトにリンクするアプリが 2 つある場合、両方のアプリケーションのパッケージ ファミリ名を **windows-app-web-link** JSON ファイルに指定します。 これで、どちらのアプリもサポートされます。 両方のアプリがインストールされている場合、ユーザーに対して、どちらを既定のリンクとして選ぶかが示されます。 既定のリンクを後で変更する場合は、**[設定] > [Web サイト用のアプリ]** で変更できます。 また、開発者はいつでも JSON ファイルを変更できます。変更内容は、変更と同日内になるべく早く確認するか、更新後 8 日以内に確認してください。
 
@@ -91,7 +91,7 @@ Web サイトにリンクするアプリが 2 つある場合、両方のアプ�
 
 最初に除外パスが確認され、除外パスが一致すると、そのパスに対応するページは、指定されたアプリではなくブラウザーで開かれます。 上記の例では、‘/news/\*’ と指定すると、そのパスの下にあるすべてのページが対象となりますが、‘/news\*’ ('news' の後にスラッシュを付けない) と指定すると、‘news\*’ で始まるパス (‘newslocal/’、‘newsinternational/’ など) の下にあるすべてのパスが対象となります。
 
-## コンテンツにリンクするためのアクティブ化でリンクを処理する
+## <a name="handle-links-on-activation-to-link-to-content"></a>コンテンツにリンクするためのアクティブ化でリンクを処理する
 
 アプリの Visual Studio ソリューションで **App.xaml.cs** に移動し、**OnActivated()** に、リンクされたコンテンツの処理を追加します。 次の例では、アプリで開かれるページは URI パスによって異なります。
 
@@ -143,7 +143,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 **重要** 上記の例で示したように、最後の `if (rootFrame.Content == null)` ロジックは `rootFrame.Navigate(deepLinkPageType, e);` に置き換えてください。
 
-## テストの実行: ローカルの検証ツール
+## <a name="test-it-out-local-validation-tool"></a>テストの実行: ローカルの検証ツール
 
 アプリ ホスト登録検証ツールを実行して、アプリと Web サイトの構成をテストできます。このツールは次の場所にあります。
 
@@ -157,7 +157,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 -   パッケージ ファミリ名 (PFN): アプリの PFN
 -   ファイル パス: ローカルな検証のための JSON ファイル (C:\\SomeFolder\\windows-app-web-link など)
 
-## テストの実行: Web 検証
+## <a name="test-it-web-validation"></a>テストの実行: Web 検証
 
 リンクをクリックしたときにアプリがアクティブ化されるかどうか確認するには、アプリケーションを閉じておきます。 次に、Web サイトでサポートされるパスのいずれかのアドレスをコピーします。 たとえば、Web サイトのアドレスが “msn.com” であり、サポートされるパスの 1 つが “path1” である場合、アドレスは次のようになります。 `http://msn.com/path1`
 
@@ -169,7 +169,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 **注:** Microsoft Edge ブラウザーでリンクをクリックすると、アプリは起動されず、Web サイトに移動されます。
 
-## AppUriHandlers のヒント:
+## <a name="appurihandlers-tips"></a>AppUriHandlers のヒント:
 
 - アプリで処理できるリンクのみを必ず指定してください。
 
@@ -185,7 +185,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 - この機能は、アプリが [LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx) によって起動された UWP アプリである場合、または [ShellExecuteEx](https://msdn.microsoft.com/en-us/library/windows/desktop/bb762154(v=vs.85).aspx) によって起動された Windows デスクトップ アプリである場合は、必ず動作します。 URL が、登録されているアプリの URI ハンドラーに対応している場合、ブラウザーではなくアプリが起動されます。
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 
 [windows.protocol の登録](https://msdn.microsoft.com/en-us/library/windows/apps/br211458.aspx)
 
@@ -195,6 +195,6 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

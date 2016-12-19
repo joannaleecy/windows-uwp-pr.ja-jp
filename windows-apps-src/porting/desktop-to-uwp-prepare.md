@@ -4,12 +4,12 @@ Description: "この記事では、Desktop to UWP Bridge を使用してアプ�
 Search.Product: eADQiWindows 10XVcnh
 title: "Desktop to UWP Bridge 用にアプリを準備する"
 translationtype: Human Translation
-ms.sourcegitcommit: 8429e6e21319a03fc2a0260c68223437b9aed02e
-ms.openlocfilehash: 4cf9c509be52a8b2c03cdaa9ac68b98ba49b7094
+ms.sourcegitcommit: f7a8b8d586983f42fe108cd8935ef084eb108e35
+ms.openlocfilehash: 81a2485d5be22dd392c21aaff281c1c9263883a9
 
 ---
 
-# Desktop Bridge での変換用にアプリを準備する
+# <a name="prepare-an-app-for-conversion-with-the-desktop-bridge"></a>Desktop Bridge での変換用にアプリを準備する
 
 この記事では、Desktop to UWP Bridge を使用してアプリを変換する前に理解しておく必要のあることについて説明します。 変換プロセス用にアプリを準備するためには多くの作業を行う必要はありませんが、以下の項目のいずれかがアプリケーションに当てはまる場合には、変換の前に対処する必要があります。 ライセンスと自動更新は Windows ストアで処理されるため、これらの機能はコードベースから削除できます。
 
@@ -61,7 +61,14 @@ ms.openlocfilehash: 4cf9c509be52a8b2c03cdaa9ac68b98ba49b7094
 
 + __アプリが Windows サイドバイサイド フォルダーからアセンブリをインストールする/読み込む__。 たとえば、アプリが C ランタイム ライブラリ VC8 または VC9 を使用しており、Windows サイドバイサイド フォルダーから動的にリンクしている、つまり、コードが共有フォルダーから共通の DLL ファイルを使用しているとします。 これはサポートされていません。 再頒布可能なライブラリ ファイルをコードに直接リンクして、静的にリンクする必要があります。
 
++ __アプリが、System32/SysWOW64 フォルダーの依存関係を使っている__。 DLL が機能するためには、AppX パッケージの仮想ファイル システム部分にそれらの DLL を含める必要があります。 これにより、アプリは DLL が **System32**/**SysWOW64** フォルダーにインストールされている場合と同じように動作します。 パッケージのルートで **VFS** という名前のフォルダーを作成します。 そのフォルダー内に、**SystemX64** フォルダーと **SystemX86**フォルダーを作成します。 **SystemX86** フォルダーに DLL の 32 ビット バージョンを格納し、**SystemX64** フォルダーに 64 ビット バージョンを格納します。
 
-<!--HONumber=Nov16_HO1-->
++ __アプリが Dev11 VCLibs フレームワーク パッケージを使っている__。 VCLibs 11 ライブラリは、AppX パッケージで依存関係として定義されている場合、Windows ストアから直接インストールできます。 これを行うには、`<Dependencies>` ノードの下に、以下を追加して変更する必要があります。  
+`<PackageDependency Name="Microsoft.VCLibs.110.00.UWPDesktop" MinVersion="11.0.24217.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />`  
+Windows ストアからインストールするとき、アプリをインストールする前に VCLibs 11 フレームワークの適切なバージョン (x86 または x64) がインストールされます。  
+アプリがサイドローディングによってインストールされる場合は、依存関係がインストールされません。 コンピューター上に依存関係を手動でインストールするには、[VC 11.0 Desktop Bridge 用フレームワーク パッケージ](https://www.microsoft.com/download/details.aspx?id=53340&WT.mc_id=DX_MVP4025064)をダウンロードしてインストールする必要があります。 これらのシナリオについて詳しくは、「[Using Visual C++ Runtime in Centennial project (Centennial プロジェクトで Visual C++ ラインタイムを使用する)](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project/)」をご覧ください。
+
+
+<!--HONumber=Dec16_HO1-->
 
 

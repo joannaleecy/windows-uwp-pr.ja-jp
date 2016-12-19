@@ -6,34 +6,40 @@ ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 38ee8ae177898e20d45545c1cfd51a0dd24f7858
+ms.sourcegitcommit: d51aacb31f41cbd9c065b013ffb95b83a6edaaf4
+ms.openlocfilehash: a00796da398d6e0246caac43b18fb688a9e03fce
 
 ---
-# アダプティブ タイルの作成
+# <a name="create-adaptive-tiles"></a>アダプティブ タイルの作成
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
 アダプティブ タイル テンプレートは Windows 10 の新機能であり、シンプルで柔軟なマークアップ言語を使って、さまざまな画面密度に合わせて変化する独自のタイル通知コンテンツをデザインできるようになります。 この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリのアダプティブ ライブ タイルを作成する方法について説明します。 アダプティブ タイルのすべての要素と属性の一覧については、「[アダプティブ タイルのスキーマ](tiles-and-notifications-adaptive-tiles-schema.md)」をご覧ください 
 
-(必要に応じて、Windows 10 の通知をデザインするときは、[Windows 8 タイル テンプレート カタログ](https://msdn.microsoft.com/library/windows/apps/hh761491)のプリセット テンプレートを引き続き使えます)。
-
-## はじめに
+(必要に応じて、Windows 10 の通知をデザインするときは、[Windows 8 タイル テンプレート カタログ](https://msdn.microsoft.com/library/windows/apps/hh761491)のプリセット テンプレートを引き続き使うことができます)。
 
 
-**NotificationsExtensions をインストールします。** 通知の生成に XML ではなく C# を使う場合は、[NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) という名前の NuGet パッケージをインストールします。 この記事で示している C# のサンプルでは、NotificationsExtensions を使っています。
+## <a name="getting-started"></a>概要
+
+**Notifications ライブラリをインストールします。** XML の代わりに C# を使って通知を生成する場合は、[Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) という名前の NuGet パッケージをインストールします (「notifications uwp」を検索してください)。 この記事で示している C# のサンプルでは、NuGet パッケージの Version 1.0.0 を使っています。
 
 **Notifications Visualizer をインストールします。** この無料の UWP アプリは、Visual Studio の XAML エディター/デザイン ビューと同様、タイルの編集時に視覚的なプレビューが即座に表示されるため、アダプティブ ライブ タイルのデザインに便利です。 詳しくは、[このブログ記事](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/09/22/introducing-notifications-visualizer-for-windows-10.aspx)をご覧ください。Notifications Visualizer は[こちら](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)からダウンロードできます。
 
-## 使い方のガイダンス
+
+## <a name="how-to-send-a-tile-notification"></a>タイル通知を送信する方法
+
+詳しくは、「[Quickstart on sending local tile notifications (ローカル タイル通知の送信に関するクイックスタート)](tiles-and-notifications-create-adaptive-tiles.md)」をご覧ください。 このページでは、アダプティブ タイルを使って作成できるあらゆる視覚的 UI について説明します。
+
+
+## <a name="usage-guidance"></a>使い方のガイダンス
 
 
 アダプティブ テンプレートはさまざまな種類のフォーム ファクターと通知で動作するようにデザインされています。 グループやサブグループのような要素はコンテンツと共にリンクされますが、それらのグループ自体には特に視覚的な動作はありません。 通知の最終的な外観は、表示先のデバイスがスマートフォン、タブレット、デスクトップ、その他のデバイスのいずれであっても、特定のデバイスに基づきます。
 
 hint は、特定の視覚的な動作を実現するために要素に追加できる省略可能な属性です。 デバイス固有または通知固有の hint を追加できます。
 
-## 基本的な例
+## <a name="a-basic-example"></a>基本的な例
 
 
 次の例では、アダプティブ タイル テンプレートで何を作成できるかを示しています。
@@ -73,22 +79,22 @@ TileContent content = new TileContent()
             {
                 Children =
                 {
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = "Jennifer Parker",
-                        Style = TileTextStyle.Subtitle
+                        HintStyle = AdaptiveTextStyle.Subtitle
                     },
   
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = "Photos from our trip",
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     },
   
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = "Check out these awesome photos I took while in New Zealand!",
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     }
                 }
             }
@@ -103,7 +109,7 @@ TileContent content = new TileContent()
 
 ![クイック サンプル タイル](images/adaptive-tiles-quicksample.png)
 
-## タイルのサイズ
+## <a name="tile-sizes"></a>タイルのサイズ
 
 
 各タイル サイズのコンテンツは XML ペイロード内でそれぞれ個別の [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素で指定します。 template 属性を次のいずれかの値に設定することで、目的のサイズを選びます。
@@ -150,7 +156,7 @@ TileContent content = new TileContent()
             {
                 Children =
                 {
-                    new TileText() { Text = "Small" }
+                    new AdaptiveText() { Text = "Small" }
                 }
             }
         },
@@ -161,7 +167,7 @@ TileContent content = new TileContent()
             {
                 Children =
                 {
-                    new TileText() { Text = "Medium" }
+                    new AdaptiveText() { Text = "Medium" }
                 }
             }
         },
@@ -172,7 +178,7 @@ TileContent content = new TileContent()
             {
                 Children =
                 {
-                    new TileText() { Text = "Wide" }
+                    new AdaptiveText() { Text = "Wide" }
                 }
             }
         },
@@ -183,7 +189,7 @@ TileContent content = new TileContent()
             {
                 Children =
                 {
-                    new TileText() { Text = "Large" }
+                    new AdaptiveText() { Text = "Large" }
                 }
             }
         }
@@ -195,7 +201,7 @@ TileContent content = new TileContent()
 
 ![アダプティブ タイル サイズ: 小、中、ワイド、大](images/adaptive-tiles-sizes.png)
 
-## ブランディング
+## <a name="branding"></a>ブランディング
 
 
 通知ペイロード内で branding 属性を使って、ライブ タイルの下部でブランディング (表示名とコーナー ロゴ) を制御できます。 表示なし ("none")、名前のみ表示 ("name")、ロゴのみ表示 ("logo")、名前とロゴの両方を表示 ("nameAndLogo") のいずれかを選べます。
@@ -211,12 +217,6 @@ TileContent content = new TileContent()
 ```
 
 ```CSharp
-new TileVisual()
-{
-    Branding = TileBranding.Logo,
-    ...
-}
-
 new TileVisual()
 {
     Branding = TileBranding.Logo,
@@ -256,13 +256,13 @@ TileContent content = new TileContent()
     Visual = new TileVisual()
     {
         Branding = TileBranding.NameAndLogo,
- 
+
         TileMedium = new TileBinding()
         {
             Branding = TileBranding.Logo,
             ...
         },
- 
+
         // Inherits branding from Visual
         TileWide = new TileBinding()
         {
@@ -282,7 +282,7 @@ TileContent content = new TileContent()
 
  
 
-## 表示名
+## <a name="display-name"></a>表示名
 
 
 **displayName** 属性に任意のテキスト文字列を入力することで、通知の表示名を上書きすることができます。 ブランディングと同様、通知ペイロード全体に影響を与える [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素で、または個々のタイルにのみ影響を与える [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素で、表示名を指定できます。
@@ -313,13 +313,13 @@ TileContent content = new TileContent()
     {
         Branding = TileBranding.NameAndLogo,
         DisplayName = "Wednesday 22",
- 
+
         TileMedium = new TileBinding()
         {
             DisplayName = "Wed. 22",
             ...
         },
- 
+
         // Inherits DisplayName from Visual
         TileWide = new TileBinding()
         {
@@ -333,31 +333,18 @@ TileContent content = new TileContent()
 
 ![アダプティブ タイルの表示名](images/adaptive-tiles-displayname.png)
 
-## テキスト
+## <a name="text"></a>テキスト
 
 
 [&lt;text&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素を使って、テキストを表示します。 hint を使うと、テキストの表示方法を変更できます。
 
 ```XML
-<text>This is a line of text</text></code></pre></td>
-</tr>
-</tbody>
-</table>
+<text>This is a line of text</text>
 ```
 
 
 ```CSharp
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">C#</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-new TileText()
+new AdaptiveText()
 {
     Text = "This is a line of text"
 };
@@ -367,34 +354,21 @@ new TileText()
 
 ![アダプティブ タイルのテキスト](images/adaptive-tiles-text.png)
 
-## テキストの折り返し
+## <a name="text-wrapping"></a>テキストの折り返し
 
 
 既定では、テキストは折り返されず、タイルの端からはみ出します。 **hint-wrap** 属性を使って、text 要素のテキストの折り返しを設定します。 また、**hint-minLines** と **hint-maxLines** (正の整数のみを受け取り) を使って、行の最小数と最大数を制御することもできます。
 
 ```XML
-<text hint-wrap="true">This is a line of wrapping text</text></code></pre></td>
-</tr>
-</tbody>
-</table>
+<text hint-wrap="true">This is a line of wrapping text</text>
 ```
 
 
 ```CSharp
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">C#</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-new TileText()
+new AdaptiveText()
 {
     Text = "This is a line of wrapping text",
-    Wrap = true
+    HintWrap = true
 };
 ```
 
@@ -402,7 +376,7 @@ new TileText()
 
 ![テキストが折り返されるアダプティブ タイル](images/adaptive-tiles-textwrapping.png)
 
-## テキスト スタイル
+## <a name="text-styles"></a>テキスト スタイル
 
 
 スタイルを使って、text 要素のフォントのサイズ、色、太さを制御します。 多数のスタイルを使えます。たとえば、各スタイルの "Subtle" バリエーションを使って、テキストの不透明度を 60% に設定して、テキストの色を淡い灰色で暗くすることができます。
@@ -413,16 +387,16 @@ new TileText()
 ```
 
 ```CSharp
-new TileText()
+new AdaptiveText()
 {
     Text = "Header content",
-    Style = TileTextStyle.Base
+    HintStyle = AdaptiveTextStyle.Base
 },
- 
-new TileText()
+
+new AdaptiveText()
 {
     Text = "Subheader content",
-    Style = TileTextStyle.CaptionSubtle
+    HintStyle = AdaptiveTextStyle.CaptionSubtle
 }
 ```
 
@@ -480,34 +454,21 @@ new TileText()
 
  
 
-## テキストの配置
+## <a name="text-alignment"></a>テキストの配置
 
 
 テキストは、横方向の配置 (左揃え、中央揃え、または右揃え) を設定できます。 英語のように左から右へと表記される言語では、テキストは既定で左揃えになります。 アラビア語のように右から左へと表記される言語では、テキストは既定で右揃えになります。 テキストの配置は要素の **hint-align** 属性で手動で設定できます。
 
 ```XML
-<text hint-align="center">Hello</text></code></pre></td>
-</tr>
-</tbody>
-</table>
+<text hint-align="center">Hello</text>
 ```
 
 
 ```CSharp
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">C#</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-new TileText()
+new AdaptiveText()
 {
     Text = "Hello",
-    Align = TileTextAlign.Center
+    HintAlign = AdaptiveTextAlign.Center
 };
 ```
 
@@ -515,7 +476,7 @@ new TileText()
 
 ![アダプティブ タイルのテキストの配置](images/adaptive-tiles-textalignment.png)
 
-## グループとサブグループ
+## <a name="groups-and-subgroups"></a>グループとサブグループ
 
 
 グループを使って、グループ内のコンテンツが互いに関連していて意味をなすまとまりで表示される必要があることを宣言できます。 たとえば、2 つの text 要素、1 つのヘッダー、1 つのサブヘッダーがあるとすると、ヘッダーのみが表示されても意味をなしません。 要素をサブグループにまとめることで、それらの要素はすべて表示されるか (画面に収まる場合)、まったく表示されません (画面に収まらない場合)。
@@ -527,7 +488,6 @@ new TileText()
  
 
 ```XML
-...
 <binding template="TileWide" branding="nameAndLogo">
   <group>
     <subgroup>
@@ -547,12 +507,9 @@ new TileText()
     </subgroup>
   </group>
 </binding>
-...
 ```
 
 ```CSharp
-...
- 
 TileWide = new TileBinding()
 {
     Branding = TileBranding.NameAndLogo,
@@ -564,10 +521,10 @@ TileWide = new TileBinding()
                 from: "Jennifer Parker",
                 subject: "Photos from our trip",
                 body: "Check out these awesome photos I took while in New Zealand!"),
- 
+
             // For spacing
-            new TileText(),
- 
+            new AdaptiveText(),
+
             CreateGroup(
                 from: "Steve Bosniak",
                 subject: "Build 2015 Dinner",
@@ -575,36 +532,33 @@ TileWide = new TileBinding()
         }
     }
 }
- 
+
 ...
- 
- 
-private static TileGroup CreateGroup(string from, string subject, string body)
+
+private static AdaptiveGroup CreateGroup(string from, string subject, string body)
 {
-    return new TileGroup()
+    return new AdaptiveGroup()
     {
         Children =
         {
-            new TileSubgroup()
+            new AdaptiveSubgroup()
             {
                 Children =
                 {
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = from,
-                        Style = TileTextStyle.Subtitle
+                        HintStyle = AdaptiveTextStyle.Subtitle
                     },
- 
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = subject,
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     },
- 
-                    new TileText()
+                    new AdaptiveText()
                     {
                         Text = body,
-                        Style = TileTextStyle.CaptionSubtle
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
                     }
                 }
             }
@@ -617,7 +571,7 @@ private static TileGroup CreateGroup(string from, string subject, string body)
 
 ![アダプティブ タイルのグループとサブグループ](images/adaptive-tiles-groups-subgroups.png)
 
-## サブグループ (列)
+## <a name="subgroups-columns"></a>サブグループ (列)
 
 
 サブグループを使って、グループのデータを意味をなすまとまりに分けることもできます。 ライブ タイルの場合、このまとまりは視覚的には列になります。
@@ -732,7 +686,6 @@ private static TileGroup CreateGroup(string from, string subject, string body)
 ここで示しているのは、天気タイルのサンプル コードで、等幅の 5 つの列で構成されたタイルになります。
 
 ```XML
-...
 <binding template="TileWide" displayName="Seattle" branding="name">
   <group>
     <subgroup hint-weight="1">
@@ -767,11 +720,9 @@ private static TileGroup CreateGroup(string from, string subject, string body)
     </subgroup>
   </group>
 </binding>
-...
 ```
 
 ```CSharp
-...
 TileWide = new TileBinding()
 {
     DisplayName = "Seattle",
@@ -780,58 +731,50 @@ TileWide = new TileBinding()
     {
         Children =
         {
-            new TileGroup()
+            new AdaptiveGroup()
             {
                 Children =
                 {
                     CreateSubgroup("Mon", "Mostly Cloudy.png", "63°", "42°"),
- 
                     CreateSubgroup("Tue", "Cloudy.png", "57°", "38°"),
- 
                     CreateSubgroup("Wed", "Sunny.png", "59°", "43°"),
- 
                     CreateSubgroup("Thu", "Sunny.png", "62°", "42°"),
- 
                     CreateSubgroup("Fri", "Sunny.png", "71°", "66°")
                 }
             }
         }
     }
 }
+
 ...
- 
- 
-private static TileSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
+
+private static AdaptiveSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
 {
-    return new TileSubgroup()
+    return new AdaptiveSubgroup()
     {
-        Weight = 1,
- 
+        HintWeight = 1,
         Children =
         {
-            new TileText()
+            new AdaptiveText()
             {
                 Text = day,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileImage()
+            new AdaptiveImage()
             {
-                Source = new TileImageSource("Assets/Weather/" + image),
-                RemoveMargin = true
+                Source = "Assets/Weather/" + image,
+                HintRemoveMargin = true
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = highTemp,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = lowTemp,
-                Align = TileTextAlign.Center,
-                Style = TileTextStyle.CaptionSubtle
+                HintAlign = AdaptiveTextAlign.Center,
+                HintStyle = AdaptiveTextStyle.CaptionSubtle
             }
         }
     };
@@ -842,7 +785,7 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 ![天気タイルの例](images/adaptive-tiles-weathertile.png)
 
-## 画像
+## <a name="images"></a>画像
 
 
 &lt;image&gt; 要素を使って、タイル通知に画像を表示します。 画像はタイル コンテンツ (既定) 内に、背景画像としてか、タイルでアニメーション化されるプレビュー画像として、インラインで配置できます。
@@ -854,7 +797,6 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 特に動作が指定されていないと、画像は一様に拡大縮小されて、空いている幅が埋められます。 次のサンプルでは、2 列とインライン画像を使うタイルを示しています。 インライン画像は拡大されて、空いている列幅が埋められます。
 
 ```XML
-...
 <binding template="TileMedium" displayName="Seattle" branding="name">
   <group>
     <subgroup>
@@ -871,11 +813,9 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
     </subgroup>
   </group>
 </binding>
-...
 ```
 
 ```CSharp
-...
 TileMedium = new TileBinding()
 {
     DisplayName = "Seattle",
@@ -884,12 +824,11 @@ TileMedium = new TileBinding()
     {
         Children =
         {
-            new TileGroup()
+            new AdaptiveGroup()
             {
                 Children =
                 {
                     CreateSubgroup("Mon", "Mostly Cloudy.png", "63°", "42°"),
- 
                     CreateSubgroup("Tue", "Cloudy.png", "57°", "38°")
                 }
             }
@@ -897,37 +836,32 @@ TileMedium = new TileBinding()
     }
 }
 ...
- 
- 
-private static TileSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
+private static AdaptiveSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
 {
-    return new TileSubgroup()
+    return new AdaptiveSubgroup()
     {
         Children =
         {
-            new TileText()
+            new AdaptiveText()
             {
                 Text = day,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileImage()
+            new AdaptiveImage()
             {
-                Source = new TileImageSource("Assets/Weather/" + image),
-                RemoveMargin = true
+                Source = "Assets/Weather/" + image,
+                HintRemoveMargin = true
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = highTemp,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = lowTemp,
-                Align = TileTextAlign.Center,
-                Style = TileTextStyle.CaptionSubtle
+                HintAlign = AdaptiveTextAlign.Center,
+                HintStyle = AdaptiveTextStyle.CaptionSubtle
             }
         }
     };
@@ -940,47 +874,42 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 &lt;binding&gt; のルート、つまり最初のグループに配置された画像も、空いている高さに合わせて拡大されます。
 
-### 画像の配置
+### <a name="image-alignment"></a>画像の配置
 
 画像は、**hint-align** 属性を使って、左揃え、中央揃え、または右揃えに設定できます。 また、これにより画像は、幅を埋めるように拡大されずに、ネイティブの解像度で表示されます。
 
 ```XML
-...
 <binding template="TileLarge">
   <image src="Assets/fable.jpg" hint-align="center"/>
 </binding>
-...
 ```
 
 ```CSharp
-...
 TileLarge = new TileBinding()
 {
     Content = new TileBindingContentAdaptive()
     {
         Children =
         {
-            new TileImage()
+            new AdaptiveImage()
             {
-                Source = new TileImageSource("Assets/fable.jpg"),
-                Align = TileImageAlign.Center
+                Source = "Assets/fable.jpg",
+                HintAlign = AdaptiveImageAlign.Center
             }
         }
     }
 }
-...
 ```
 
 **結果:**
 
 ![画像の配置の例 (左、中央、右)](images/adaptive-tiles-imagealignment.png)
 
-### 画像の余白
+### <a name="image-margins"></a>画像の余白
 
 既定では、インライン画像の上または下には、コンテンツとの間に 8 ピクセルの余白が追加されます。 この余白は、画像の **hint-removeMargin** 属性を使って削除できます。 ただし、画像では常にタイルの端から 8 ピクセルの余白が保持され、サブグループ (列) では常に列の間に 8 ピクセルのパディングが保持されます。
 
 ```XML
-...
 <binding template="TileMedium" branding="none">
   <group>
     <subgroup>
@@ -997,12 +926,9 @@ TileLarge = new TileBinding()
     </subgroup>
   </group>
 </binding>
-...
 ```
 
 ```CSharp
-...
- 
 TileMedium = new TileBinding()
 {
     Branding = TileBranding.None,
@@ -1010,53 +936,47 @@ TileMedium = new TileBinding()
     {
         Children =
         {
-            new TileGroup()
+            new AdaptiveGroup()
             {
                 Children =
                 {
                     CreateSubgroup("Mon", "4.jpg", "63°", "42°"),
- 
                     CreateSubgroup("Tue", "3.jpg", "57°", "38°")
                 }
             }
         }
     }
 }
- 
+
 ...
- 
- 
-private static TileSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
+
+private static AdaptiveSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
 {
-    return new TileSubgroup()
+    return new AdaptiveSubgroup()
     {
-        Weight = 1,
- 
+        HintWeight = 1,
         Children =
         {
-            new TileText()
+            new AdaptiveText()
             {
                 Text = day,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileImage()
+            new AdaptiveImage()
             {
-                Source = new TileImageSource("Assets/Numbers/" + image),
-                RemoveMargin = true
+                Source = "Assets/Numbers/" + image,
+                HintRemoveMargin = true
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = highTemp,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = lowTemp,
-                Align = TileTextAlign.Center,
-                Style = TileTextStyle.CaptionSubtle
+                HintAlign = AdaptiveTextAlign.Center,
+                HintStyle = AdaptiveTextStyle.CaptionSubtle
             }
         }
     };
@@ -1065,12 +985,11 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 ![画像の余白削除の例](images/adaptive-tiles-removemargin.png)
 
-### 画像のトリミング
+### <a name="image-cropping"></a>画像のトリミング
 
 **hint-crop** 属性を使って、画像を円形にトリミングできます。現時点では、"none" (既定) または "circle" のみがサポートされています。
 
 ```XML
-...
 <binding template="TileLarge" hint-textStacking="center">
   <group>
     <subgroup hint-weight="1"/>
@@ -1083,72 +1002,62 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
   <text hint-style="title" hint-align="center">Hi,</text>
   <text hint-style="subtitleSubtle" hint-align="center">MasterHip</text>
 </binding>
-...
 ```
 
 ```CSharp
-...
 TileLarge = new TileBinding()
 {
     Content = new TileBindingContentAdaptive()
     {
         TextStacking = TileTextStacking.Center,
- 
         Children =
         {
-            new TileGroup()
+            new AdaptiveGroup()
             {
                 Children =
                 {
-                    new TileSubgroup() { Weight = 1 },
- 
-                    new TileSubgroup()
+                    new AdaptiveSubgroup() { HintWeight = 1 },
+                    new AdaptiveSubgroup()
                     {
-                        Weight = 2,
+                        HintWeight = 2,
                         Children =
                         {
-                            new TileImage()
+                            new AdaptiveImage()
                             {
-                                Source = new TileImageSource("Assets/Apps/Hipstame/hipster.jpg"),
-                                Crop = TileImageCrop.Circle
+                                Source = "Assets/Apps/Hipstame/hipster.jpg",
+                                HintCrop = AdaptiveImageCrop.Circle
                             }
                         }
                     },
- 
-                    new TileSubgroup() { Weight = 1 }
+                    new AdaptiveSubgroup() { HintWeight = 1 }
                 }
             },
- 
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = "Hi,",
-                Style = TileTextStyle.Title,
-                Align = TileTextAlign.Center
+                HintStyle = AdaptiveTextStyle.Title,
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = "MasterHip",
-                Style = TileTextStyle.SubtitleSubtle,
-                Align = TileTextAlign.Center
+                HintStyle = AdaptiveTextStyle.SubtitleSubtle,
+                HintAlign = AdaptiveTextAlign.Center
             }
         }
     }
 }
-...
 ```
 
 **結果:**
 
 ![画像のトリミングの例](images/adaptive-tiles-imagecropping.png)
 
-### バックグラウンド画像
+### <a name="background-image"></a>バックグラウンド画像
 
 背景画像を設定するには、&lt;binding&gt; のルートに image 要素を追加し、placement 属性を "background" に設定します。
 
 ```XML
-...
 <binding template="TileWide">
   <image src="Assets\Mostly Cloudy-Background.jpg" placement="background"/>
   <group>
@@ -1161,23 +1070,21 @@ TileLarge = new TileBinding()
     ...
   </group>
 </binding>
-...
 ```
 
 ```CSharp
-...
 TileWide = new TileBinding()
 {
     Content = new TileBindingContentAdaptive()
     {
         BackgroundImage = new TileBackgroundImage()
         {
-            Source = new TileImageSource("Assets/Mostly Cloudy-Background.jpg")
+            Source = "Assets/Mostly Cloudy-Background.jpg"
         },
- 
+
         Children =
         {
-            new TileGroup()
+            new AdaptiveGroup()
             {
                 Children =
                 {
@@ -1188,40 +1095,36 @@ TileWide = new TileBinding()
         }
     }
 }
+
 ...
- 
- 
-private static TileSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
+
+private static AdaptiveSubgroup CreateSubgroup(string day, string image, string highTemp, string lowTemp)
 {
-    return new TileSubgroup()
+    return new AdaptiveSubgroup()
     {
-        Weight = 1,
- 
+        HintWeight = 1,
         Children =
         {
-            new TileText()
+            new AdaptiveText()
             {
                 Text = day,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileImage()
+            new AdaptiveImage()
             {
-                Source = new TileImageSource("Assets/Weather/" + image),
-                RemoveMargin = true
+                Source = "Assets/Weather/" + image,
+                HintRemoveMargin = true
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = highTemp,
-                Align = TileTextAlign.Center
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = lowTemp,
-                Align = TileTextAlign.Center,
-                Style = TileTextStyle.CaptionSubtle
+                HintAlign = AdaptiveTextAlign.Center,
+                HintStyle = AdaptiveTextStyle.CaptionSubtle
             }
         }
     };
@@ -1232,96 +1135,62 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 ![背景画像の例](images/adaptive-tiles-backgroundimage.png)
 
-さらに、**hint-overlay** を使って、背景画像上に黒のオーバーレイを設定できます。この属性は 0 ～ 100 の整数を受け取ります。0 はオーバーレイなし、100 は完全な黒のオーバーレイを表します。 既定値は 20 です。
-
-```XML
-...
-<binding template="TileWide" hint-overlay="60">
-  <image src="Assets\Mostly Cloudy-Background.jpg" placement="background"/>
-  ...
-</binding>
-...
-```
-
-```CSharp
-...
- 
-TileWide = new TileBinding()
-{
-    Content = new TileBindingContentAdaptive()
-    {
-        BackgroundImage = new TileBackgroundImage()
-        {
-            Source = new TileImageSource("Assets/Mostly Cloudy-Background.jpg"),
-            Overlay = 60
-        },
- 
-        ...
-    }
-}
- 
-...
-```
-
-**結果:**
-
-![画像のオーバーレイの例](images/adaptive-tiles-image-hintoverlay.png)
-
-### プレビュー画像
+### <a name="peek-image"></a>プレビュー画像
 
 タイルでアニメーション化されるプレビュー画像を指定できます。 プレビュー画像はタイルでアニメーション化されます。コンテンツが下にスライドしてプレビューが現れ、上にスライドしてプレビューが隠れます。 プレビュー画像を設定するには、&lt;binding&gt; のルートに image 要素を追加し、placement 属性を "peek" に設定します。
 
 ```XML
-...
 <binding template="TileMedium" branding="name">
   <image placement="peek" src="Assets/Apps/Hipstame/hipster.jpg"/>
   <text>New Message</text>
   <text hint-style="captionsubtle" hint-wrap="true">Hey, have you tried Windows 10 yet?</text>
 </binding>
-...
 ```
 
 ```CSharp
-...
- 
 TileWide = new TileBinding()
 {
     Branding = TileBranding.Name,
- 
     Content = new TileBindingContentAdaptive()
     {
         PeekImage = new TilePeekImage()
         {
-            Source = new TileImageSource("Assets/Apps/Hipstame/hipster.jpg")
+            Source = "Assets/Apps/Hipstame/hipster.jpg"
         },
- 
         Children =
         {
-            new TileText()
+            new AdaptiveText()
             {
                 Text = "New Message"
             },
- 
-            new TileText()
+            new AdaptiveText()
             {
                 Text = "Hey, have you tried Windows 10 yet?",
-                Style = TileTextStyle.CaptionSubtle,
-                Wrap = true
+                HintStyle = AdaptiveTextStyle.CaptionSubtle,
+                HintWrap = true
             }
         }
     }
 }
- 
-...
 ```
 
 ![プレビュー画像の例](images/adaptive-tiles-imagepeeking.png)
 
 **プレビュー画像と背景画像の円トリミング**
 
-円トリミングを行うには、プレビュー画像と背景画像で次の属性を使用します。
+円トリミングを行うには、プレビュー画像と背景画像で hint-crop 属性を使用します。
 
-hint-crop="circle"
+```XML
+<image placement="peek" hint-crop="circle" src="Assets/Apps/Hipstame/hipster.jpg"/>
+```
+
+```CSharp
+new TilePeekImage()
+{
+    HintCrop = TilePeekImageCrop.Circle,
+    Source = "Assets/Apps/Hipstame/hipster.jpg"
+}
+```
 
 結果は次のようになります。
 
@@ -1335,75 +1204,122 @@ hint-crop="circle"
 
 ![一緒に使用されているプレビュー画像と背景画像](images/peekandbackground.png)
 
+
+### <a name="peek-and-background-image-overlays"></a>プレビュー画像と背景画像のオーバーレイ
+
+**hint-overlay** を使って、背景画像とプレビュー画像上に黒のオーバーレイを設定できます。この属性は 0 ～ 100 の整数を受け取ります。0 はオーバーレイなし、100 は完全な黒のオーバーレイを表します。 オーバーレイを使うことで、タイル上のテキストを読みやすく表示できます。
+
+**背景画像での hint-overlay の使用**
+
+ペイロードにテキスト要素が含まれている場合、背景画像のオーバーレイは既定で 20% です (そうでない場合、既定のオーバーレイは 0% です)。
+
+```XML
+<binding template="TileWide">
+  <image placement="background" hint-overlay="60" src="Assets\Mostly Cloudy-Background.jpg"/>
+  ...
+</binding>
+```
+
+```CSharp
+TileWide = new TileBinding()
+{
+    Content = new TileBindingContentAdaptive()
+    {
+        BackgroundImage = new TileBackgroundImage()
+        {
+            Source = "Assets/Mostly Cloudy-Background.jpg",
+            HintOverlay = 60
+        },
+
+        ...
+    }
+}
+```
+
+**結果:**
+
+![画像のオーバーレイの例](images/adaptive-tiles-image-hintoverlay.png)
+
 **プレビュー画像での hint-overlay の使用**
 
-プレビュー画像で **hint-overlay** を使用して、不透明度を上げてタイルの表示名を読みやすくすることができます。 &lt;binding&gt; 要素で **hint-overlay** を指定すると、背景画像とプレビュー画像の両方にオーバーレイが適用されます。
+Windows 10 Version 1511 では、背景画像と同様、プレビュー画像のオーバーレイもサポートされています。 プレビュー画像要素の hint-overlay には、0 ～ 100 の整数を指定します。 プレビュー画像の既定のオーバーレイは、0 (オーバーレイなし) です。
 
-各画像が個別の不透明度を持つようにするために placement="peek" または placement="background" と指定されている &lt;image&gt; 要素に対して **hint-overlay** を適用することもできます。 オーバーレイを指定しない場合、背景画像の不透明度は既定値 20%、プレビュー画像の不透明度は既定値 0% になります。
+```XML
+<binding template="TileMedium">
+  <image hint-overlay="20" src="Assets\Map.jpg" placement="peek"/>
+  ...
+</binding>
+```
 
-この例は、20% の不透明度 (左) と 0% の不透明度 (右) の背景画像を示しています。
+```CSharp
+TileMedium = new TileBinding()
+{
+    Content = new TileBindingContentAdaptive()
+    {
+        PeekImage = new TilePeekImage()
+        {
+            Source = "Assets/Map.jpg",
+            HintOverlay = 20
+        },
+        ...
+    }
+}
+```
+
+以下の例では、20% の不透明度 (左) と 0% の不透明度 (右) のプレビュー画像を示しています。
 
 ![プレビュー画像での hint-overlay](images/hintoverlay.png)
 
-## 縦方向の配置 (テキストの積み重ね)
+## <a name="vertical-alignment-text-stacking"></a>縦方向の配置 (テキストの積み重ね)
 
 
 [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素と [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素のいずれでも **hint-textStacking** 属性を使って、タイルのコンテンツの縦方向の配置を制御できます。 既定では、コンテンツは上揃えになりますが、下揃えまたは中央揃えに設定することもできます。
 
-### binding 要素でのテキストの積み重ね
+### <a name="text-stacking-on-binding-element"></a>binding 要素でのテキストの積み重ね
 
 テキストの積み重ねを [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) レベルで適用すると、ブランディング/バッジ領域の上にある縦方向のスペースに収まるように、通知コンテンツ全体の縦方向の配置が設定されます。
 
 ```XML
-...
 <binding template="TileMedium" hint-textStacking="center" branding="logo">
   <text hint-style="base" hint-align="center">Hi,</text>
   <text hint-style="captionSubtle" hint-align="center">MasterHip</text>
 </binding>
-...
 ```
 
 ```CSharp
-...
- 
 TileMedium = new TileBinding()
 {
     Branding = TileBranding.Logo,
- 
     Content = new TileBindingContentAdaptive()
     {
         TextStacking = TileTextStacking.Center,
- 
         Children =
         {
-            new TileText()
+            new AdaptiveText()
             {
                 Text = "Hi,",
-                Style = TileTextStyle.Base,
-                Align = TileTextAlign.Center
+                HintStyle = AdaptiveTextStyle.Base,
+                HintAlign = AdaptiveTextAlign.Center
             },
- 
-            new TileText()
+
+            new AdaptiveText()
             {
                 Text = "MasterHip",
-                Style = TileTextStyle.CaptionSubtle,
-                Align = TileTextAlign.Center
+                HintStyle = AdaptiveTextStyle.CaptionSubtle,
+                HintAlign = AdaptiveTextAlign.Center
             }
         }
     }
 }
- 
-...
 ```
 
 ![binding 要素でのテキストの積み重ね](images/adaptive-tiles-textstack-bindingelement.png)
 
-### subgroup 要素でのテキストの積み重ね
+### <a name="text-stacking-on-subgroup-element"></a>subgroup 要素でのテキストの積み重ね
 
 テキストの積み重ねを [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) レベルで適用すると、そのグループ内の縦方向のスペースに収まるように、サブグループ (列) コンテンツの縦方向の配置が設定されます。
 
 ```XML
-...
 <binding template="TileWide" branding="nameAndLogo">
   <group>
     <subgroup hint-weight="33">
@@ -1415,56 +1331,51 @@ TileMedium = new TileBinding()
     </subgroup>
   </group>
 </binding>
-...
 ```
 
 ```CSharp
-...
- 
 TileWide = new TileBinding()
 {
     Branding = TileBranding.NameAndLogo,
- 
     Content = new TileBindingContentAdaptive()
     {
         Children =
         {
-            new TileGroup()
+            new AdaptiveGroup()
             {
                 Children =
                 {
                     // Image column
-                    new TileSubgroup()
+                    new AdaptiveSubgroup()
                     {
-                        Weight = 33,
+                        HintWeight = 33,
                         Children =
                         {
-                            new TileImage()
+                            new AdaptiveImage()
                             {
-                                Source = new TileImageSource("Assets/Apps/Hipstame/hipster.jpg"),
-                                Crop = TileImageCrop.Circle
+                                Source = "Assets/Apps/Hipstame/hipster.jpg",
+                                HintCrop = AdaptiveImageCrop.Circle
                             }
                         }
                     },
- 
+
                     // Text column
-                    new TileSubgroup()
+                    new AdaptiveSubgroup()
                     {
                         // Vertical align its contents
                         TextStacking = TileTextStacking.Center,
- 
                         Children =
                         {
-                            new TileText()
+                            new AdaptiveText()
                             {
                                 Text = "Hi,",
-                                Style = TileTextStyle.Subtitle
+                                HintStyle = AdaptiveTextStyle.Subtitle
                             },
- 
-                            new TileText()
+
+                            new AdaptiveText()
                             {
                                 Text = "MasterHip",
-                                Style = TileTextStyle.BodySubtle
+                                HintStyle = AdaptiveTextStyle.BodySubtle
                             }
                         }
                     }
@@ -1473,15 +1384,14 @@ TileWide = new TileBinding()
         }
     }
 }
- 
-...
 ```
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [アダプティブ タイルのスキーマ](tiles-and-notifications-adaptive-tiles-schema.md)
-* [GitHub の NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
+* [Quickstart: Send a local tile notification (クイックスタート: ローカル タイル通知の送信)](tiles-and-notifications-create-adaptive-tiles.md)
+* [GitHub の Notifications ライブラリ](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)
 * [特別なタイル テンプレート カタログ](tiles-and-notifications-special-tile-templates-catalog.md)
  
 
@@ -1493,6 +1403,6 @@ TileWide = new TileBinding()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

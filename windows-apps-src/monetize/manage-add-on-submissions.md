@@ -4,20 +4,18 @@ ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
 description: "Windows デベロッパー センター アカウントに登録するアプリのアドオンの申請を管理するには、以下の Windows ストア申請 API のメソッドを使います。"
 title: "Windows ストア申請 API を使用したアドオンの申請の管理"
 translationtype: Human Translation
-ms.sourcegitcommit: 4a1ea50d72e0f754658d8ee99755b873619e1969
-ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
+ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
+ms.openlocfilehash: a5e1f8940f53f228808e5a6540759199c4440645
 
 ---
 
-# Windows ストア申請 API を使用したアドオンの申請の管理
+# <a name="manage-add-on-submissions-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアドオンの申請の管理
 
 
 
 Windows デベロッパー センター アカウントに登録するアプリのアドオン (アプリ内製品または IAP ともいう) の申請を管理するには、Windows ストア申請 API の以下のメソッドを使用します。 Windows ストア申請 API の概要については、「[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。この API を使用するための前提条件などの情報があります。
 
 >**注:**&nbsp;&nbsp;これらのメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。 これらのメソッドを使用してアドオンの申請を作成または管理するには、アドオンをお客様自身のデベロッパー センター アカウントに用意しておく必要があります。 アドオンは、[デベロッパー センター ダッシュボードを使用する](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)か、「[アドオンの管理](manage-add-ons.md)」の説明に従って Windows ストア申請 API のメソッドを使用して、作成できます。
-
->**重要**&nbsp;&nbsp;近い将来、Microsoft は Windows デベロッパー センターでアドオンの申請の価格データ モデルを変更する予定です。 変更の実施後には、**価格**リソースはサポートされなくなり、Windows ストア申請 APIを使用してアドオンの申請の価格、販売データの取得と変更を行うことが、一時的にできなくなります。 今後は API を更新して、アドオンの申請に関する価格情報にプログラムでアクセスする新しい方法を導入する予定です。 詳しくは、「[価格リソース](#pricing-object)」セクションをご覧ください。
 
 | メソッド        | URI    | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -29,7 +27,7 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 | DELETE | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}``` | アドオンの申請を削除します。 詳しくは、「[アドオンの申請の削除](delete-an-add-on-submission.md)」をご覧ください。 |
 
 <span id="create-an-add-on-submission">
-## アドオンの申請の作成
+## <a name="create-an-add-on-submission"></a>アドオンの申請の作成
 
 アドオンの申請を作成するには、次のプロセスに従います。
 
@@ -83,12 +81,12 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 7. コミットが正常に処理されると、インジェストのために申請がストアに送信されます。 上記のメソッドを使うか、デベロッパー センターのダッシュボードから、申請の進行状況を引き続き監視できます。
 
-## リソース
+## <a name="resources"></a>リソース
 
 これらのメソッドでは、次のリソースを使用してデータの書式を設定します。
 
 <span id="add-on-submission-object" />
-### アドオンの申請
+### <a name="add-on-submission"></a>アドオンの申請
 
 このリソースは、アドオンの申請を表します。 次の例は、このリソースの書式設定を示しています。
 
@@ -123,17 +121,7 @@ Windows デベロッパー センター アカウントに登録するアプリ�
       "RU": "Tier3",
       "US": "Tier4",
     },
-    "sales": [
-      {
-         "name": "Sale1",
-         "basePriceId": "Free",
-         "startDate": "2016-05-21T18:40:11.7369008Z",
-         "endDate": "2016-05-22T18:40:11.7369008Z",
-         "marketSpecificPricings": {
-            "RU": "NotAvailable"
-         }
-      }
-    ],
+    "sales": [],
     "priceId": "Free"
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
@@ -177,15 +165,15 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 | pricing           | object  | アドオンの価格情報を含むオブジェクトです。 詳しくは、以下の「[価格リソース](#pricing-object)」セクションをご覧ください。  |
 | targetPublishMode           | string  | 申請の公開モードです。 次のいずれかの値を使用できます。 <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | string  | *targetPublishMode* が SpecificDate に設定されている場合、ISO 8601 形式での申請の公開日です。  |
-| タグ           | string  |  アドオンの[カスタムの開発者データ](../publish/enter-add-on-properties.md#custom-developer-data)(この情報は従来*タグ*と呼ばれていました)。   |
-| 可視性  | string  |  アドオンの可視性です。 次のいずれかの値を使用できます。 <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
+| tag           | string  |  アドオンの[カスタムの開発者データ](../publish/enter-add-on-properties.md#custom-developer-data)(この情報は従来*タグ*と呼ばれていました)。   |
+| visibility  | string  |  アドオンの可視性です。 次のいずれかの値を使用できます。 <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
 | status  | string  |  申請の状態。 次のいずれかの値を使用できます。 <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | object  |  エラーに関する情報など、申請ステータスに関する追加詳細情報が含まれています。 詳しくは、以下の「[状態の詳細](#status-details-object)」セクションをご覧ください。 |
 | fileUploadUrl           | string  | 申請のパッケージのアップロードに使用する共有アクセス署名 (SAS) URI です。 申請用に新しいパッケージを追加する場合は、パッケージを含む ZIP アーカイブをこの URI にアップロードします。 詳しくは、「[アドオンの申請の作成](#create-an-add-on-submission)」をご覧ください。  |
 | friendlyName  | string  |  表示目的で使用される、アドオンのフレンドリ名です。  |
 
 <span id="listing-object" />
-### 登録情報
+### <a name="listing"></a>登録情報
 
 このリソースにはアドオンの登録情報が保持されます。 このリソースには、次の値があります。
 
@@ -196,7 +184,7 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 |  title               |     string    |   アドオンの登録情報のタイトルです。   |  
 
 <span id="icon-object" />
-### アイコン
+### <a name="icon"></a>アイコン
 
 このリソースにはアドオンの登録情報のアイコン データが保持されます。 このリソースには、次の値があります。
 
@@ -206,32 +194,28 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 |  fileStatus               |   string      |  アイコン ファイルの状態です。 次のいずれかの値を使用できます。 <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
 
 <span id="pricing-object" />
-### 価格設定
+### <a name="pricing"></a>価格設定
 
-このリソースにはアドオンの価格設定情報が保持されます。
+このリソースにはアドオンの価格設定情報が保持されます。 このリソースには、次の値があります。
 
->**重要**&nbsp;&nbsp;近い将来、Microsoft は Windows デベロッパー センターでアドオンの申請の価格データ モデルを変更する予定です。 変更の実施後には、**価格**リソースはサポートされなくなり、Windows ストア申請 APIを使用してアドオンの申請の価格、販売データの取得と変更を行うことが、一時的にできなくなります。 次の動作に変更が発生します。
-
-   > * [アドオンの申請を取得する GET メソッド](get-an-add-on-submission.md)を呼び出した後に、**価格**リソースは空になります。 引き続きデベロッパー センター ダッシュボードを使って、アドオンの申請の価格データを取得することができます。
-   > * [アドオンの申請を更新する PUT メソッド](update-an-add-on-submission.md)を呼び出すとき、**価格**リソースの情報は無視されます。 引き続きデベロッパー センター ダッシュボードを使って、アドオンの申請の価格データを変更することができます。
-
-> 今後、Windows ストア申請 API を更新し、アドオンの申請の価格情報をプログラムで取得したり更新する新しい方法を導入する予定です。
-
-このリソースには、次の値があります。
-
-| 値           | 型    | 説明                                                                                                                                                                                                                          |
+| 値           | 型    | 説明               |
 |-----------------|---------|------|
 |  marketSpecificPricings               |    object     |  キーと値のペアのディクショナリです。各キーは 2 文字の ISO 3166-1 alpha-2 の国コードで、各値は[価格帯](#price-tiers)です。 これらの項目は、[特定の市場でのアドオンのカスタム価格](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#markets-and-custom-prices)を表します。 このディクショナリに含まれる項目は、指定された市場の *priceId* の値によって指定されている基本価格を上書きします。     |     
-|  sales               |   array      |  アドオンのセール情報が保持されるオブジェクト配列です。 詳しくは、以下の「[セール](#sale-object)」セクションをご覧ください。    |     
+|  sales               |   array      |  **推奨されなくなった値**です。 アドオンのセール情報が保持されるオブジェクト配列です。 詳しくは、以下の「[セール](#sale-object)」セクションをご覧ください。    |     
 |  priceId               |   string      |  アドオンの[基本価格](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#base-price)を規定する[価格帯](#price-tiers)です。    |
 
 
 <span id="sale-object" />
-### セール
+### <a name="sale"></a>セール
 
 このリソースにはアドオンのセール情報が保持されます。
 
->**重要**&nbsp;&nbsp;近い将来、Microsoft は Windows デベロッパー センターでアドオンの申請の価格データ モデルを変更する予定です。 変更の実施後には、**セール**リソースはサポートされなくなり、Windows ストア申請 APIを使用してアドオンの申請の販売データの取得と変更を行うことが、一時的にできなくなります。 今後は API を更新して、アドオンの申請に関する販売情報にプログラムでアクセスする新しい方法を導入する予定です。 詳しくは、「[価格リソース](#pricing-object)」セクションをご覧ください。
+>**重要**&nbsp;&nbsp;**セール** リソースはサポートを終了しました。現在、Windows ストア申請 APIを使用して、アドオンの申請の販売データを取得し、変更することはできません。
+
+   > * [アドオンの申請を取得する GET メソッド](get-an-add-on-submission.md)を呼び出すと、*セール* リソースは空になります。 引き続きデベロッパー センター ダッシュボードを使って、アドオンの申請のセール データを取得することができます。
+   > * [アドオンの申請を更新する PUT メソッド](update-an-add-on-submission.md)を呼び出すとき、*セール*の値に含まれた情報は無視されます。 引き続きデベロッパー センター ダッシュボードを使って、アドオンの申請のセール データを変更することができます。
+
+> 将来的には、Windows ストア申請 API を更新し、アドオンの申請のセール情報にプログラムでアクセスする新しい方法を導入する予定です。
 
 このリソースには、次の値があります。
 
@@ -246,7 +230,7 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 
 <span id="status-details-object" />
-### 状態の詳細
+### <a name="status-details"></a>状態の詳細
 
 このリソースには、申請の状態についての追加情報が保持されます。 このリソースには、次の値があります。
 
@@ -258,7 +242,7 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 
 <span id="status-detail-object" />
-### 状態の詳細
+### <a name="status-detail"></a>状態の詳細
 
 このリソースには、申請に関連するエラーや警告についての追加情報が保持されます。 このリソースには、次の値があります。
 
@@ -269,7 +253,7 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 
 <span id="certification-report-object" />
-### 認定レポート
+### <a name="certification-report"></a>認定レポート
 
 このリソースは、申請の認定レポート データへのアクセスを提供します。 このリソースには、次の値があります。
 
@@ -280,13 +264,13 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 
 
-## 列挙型
+## <a name="enums"></a>列挙型
 
 これらのメソッドでは、次の列挙型が使用されます。
 
 
 <span id="price-tiers" />
-### 価格帯
+### <a name="price-tiers"></a>価格帯
 
 次の値は、アドオンの申請に利用できる価格帯を表します。
 
@@ -299,7 +283,7 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 
 <span id="submission-status-code" />
-### 申請の状態コード
+### <a name="submission-status-code"></a>申請の状態コード
 
 次の値は、申請の状態コードを表します。
 
@@ -322,7 +306,7 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 <span/>
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [Windows ストア申請 API を使用したアドオンの管理](manage-add-ons.md)
@@ -330,6 +314,6 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

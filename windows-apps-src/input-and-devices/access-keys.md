@@ -5,14 +5,14 @@ title: "アクセス キー"
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Access keys
 template: detail.hbs
-keyword: Access keys, keyboard, accessibility
+keywords: "アクセス キー、キーボード、アクセシビリティ"
 translationtype: Human Translation
-ms.sourcegitcommit: ac86012b63646e53dbde492eef504cb8230f2afd
-ms.openlocfilehash: d96d507c6ce8537888619ce174e2ff0e5284dcce
+ms.sourcegitcommit: 2b6b1d7b1755aad4d75a29413d989c6e8112128a
+ms.openlocfilehash: dfe89e4d4fd089dde6b7b307325b8fe43de82c10
 
 ---
 
-# アクセス キー
+# <a name="access-keys"></a>アクセス キー
 
 運動障碍を持つユーザーなど、マウスの使用が難しいユーザーは、通常、アプリ内の移動やアプリの操作にキーボードを使用します。  XAML フレームワークでは、タブ ナビゲーションとアクセス キーによって UI 要素へのキーボード アクセスを提供できます。
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: d96d507c6ce8537888619ce174e2ff0e5284dcce
 
 キーボード ナビゲーションとアクセシビリティについて詳しくは、「[キーボード操作](https://msdn.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)」と「[キーボードのアクセシビリティ](https://msdn.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)」をご覧ください。 この記事では、これらの記事で説明されている概念を理解していることを前提としています。
 
-## アクセス キーの概要
+## <a name="access-key-overview"></a>アクセス キーの概要
 
 アクセス キーによって、ユーザーはボタンを直接呼び出したり、Tab キーや方向キーを繰り返し押さなくてもキーボードでフォーカスを設定したりすることができます。 アクセス キーは簡単に見つけることができるようにすることを目的としているため、UI に直接表示する必要があります。たとえば、コントロール上にアクセス キーのフローティング バッジを表示します。
 
@@ -49,7 +49,7 @@ _図 2: Microsoft Word の [ホーム] タブのスコープのアクセス キ�
 
 呼び出された後に終了する要素 ([書式のコピー/貼り付け] ボタンなど) もあれば、終了しない要素 ([ホーム] タブなど) もあります。 アクセス キーを呼び出すと、コマンドの実行、フォーカスの移動、アクセス キーのスコープの変更、アクセス キーに関連付けられたその他の操作が実行されます。
 
-## アクセス キーのユーザー操作
+## <a name="access-key-user-interaction"></a>アクセス キーのユーザー操作
 
 アクセス キー API を理解するには、ユーザー操作モデルを理解しておく必要があります。 以下に、アクセス キーのユーザー操作モデルの概要を示します。
 
@@ -79,7 +79,7 @@ _図 2: Microsoft Word の [ホーム] タブのスコープのアクセス キ�
  - アクセス キー シーケンスを終了する特別なキー。これには、Esc キー、Alt キー、方向キー、Enter キー、Tab キーがあります。
  - アクセス キーに割り当てられている英数字。
 
-## アクセス キー API
+## <a name="access-key-apis"></a>アクセス キー API
 
 アクセス キーのユーザーの操作をサポートするために、XAML フレームワークは、ここで説明する API を提供します。
 
@@ -125,7 +125,7 @@ XAML フレームワークで確実にアクセス キーを処理するには�
 
 アクセス キーを複数の言語にローカライズし、[ResourceLoader](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.resources.resourceloader.aspx) API を使って、実行時に読み込むことができます。
 
-## アクセス キーが呼び出されたときに使用されるコントロール パターン
+## <a name="control-patterns-used-when-an-access-key-is-invoked"></a>アクセス キーが呼び出されたときに使用されるコントロール パターン
 
 コントロール パターンは、共通するコントロール機能を公開するインターフェイスの実装です。たとえば、ボタンは **Invoke** コントロール パターンを実装し、これによって **Click** イベントを発生させます。 アクセス キーが呼び出されると、XAML フレームワークは、呼び出された要素がコントロール パターンを実装するかどうかを検索し、実装する場合はそれを実行します。 要素が複数のコントロール パターンを持つ場合、1 つのみが呼び出され、残りは無視されます。 コントロール パターンは、次の順序で検索されます。
 
@@ -150,11 +150,11 @@ private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args
 
 コントロール パターンについて詳しくは、「[UI オートメーション コントロール パターンの概要](https://msdn.microsoft.com/library/windows/desktop/ee671194.aspx)」をご覧ください。
 
-## アクセス キーとナレーター
+## <a name="access-keys-and-narrator"></a>アクセス キーとナレーター
 
 Windows ランタイムには、Microsoft UI オートメーション要素のプロパティを公開する UI オートメーション プロバイダーがあります。 これらのプロパティによって、UI オートメーション クライアント アプリケーションで、ユーザー インターフェイスの要素に関する情報を検出できます。 [AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763) プロパティによって、ナレーターなどのクライアントで、要素に関連付けられているアクセス キーを検出できます。 要素がフォーカスを取得するたびに、ナレーターはこのプロパティを読み取ります。 AutomationProperties.AccessKey に値がない場合、XAML フレームワークは UIElement や TextElement から [AccessKey](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskey.aspx) プロパティの値を返します。 AccessKey プロパティに既に値がある場合は、AutomationProperties.AccessKey を設定する必要はありません。
 
-## 例: ボタンのアクセス キー
+## <a name="example-access-key-for-button"></a>例: ボタンのアクセス キー
 
 この例では、ボタンのアクセス キーを作成する方法を示します。 アクセス キーを含むフローティング バッジを実装する視覚的アフォーダンスとして、ヒントを使用しています。
 
@@ -229,7 +229,7 @@ XAML フレームワークは Click イベントのハンドラーを自動的�
     }
 ```
 
-## 例: スコープ指定されたアクセス キー
+## <a name="example-scoped-access-keys"></a>例: スコープ指定されたアクセス キー
 
 この例では、スコープ指定されたアクセス キーを作成する方法を示します。 PivotItem の IsAccessKeyScope プロパティによって、ユーザーが Alt キーを押したときに、PivotItem の子要素のアクセス キーが表示されるのを防止します。 これらのアクセス キーは、ユーザーが PivotItem を呼び出したときにのみ表示されます。XAML フレームワークによって、スコープが自動的に切り替えられるためです。 フレームワークによって、他のスコープのアクセス キーも非表示になります。
 
@@ -385,6 +385,6 @@ public sealed partial class ScopedAccessKeys : Page
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

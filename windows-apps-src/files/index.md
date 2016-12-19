@@ -1,14 +1,14 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 1901c4c2-5161-435d-bc7b-f40c69cdb138
 title: "ファイル、フォルダー、およびライブラリ"
 description: "アプリの設定の読み取りと書き込み、ファイルやフォルダーのピッカー、ビデオ ライブラリやミュージック ライブラリなどのセキュリティで保護された特別なサンドボックス化された場所について説明します。"
 translationtype: Human Translation
-ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
-ms.openlocfilehash: 32c6e33f9506abc1876075f6ca11656241921005
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: e248a0898772f1fde38e312b1cbd24da5b2946a7
 
 ---
- # ファイル、フォルダー、およびライブラリ
+ # <a name="files-folders-and-libraries"></a>ファイル、フォルダー、およびライブラリ
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
@@ -28,7 +28,7 @@ ms.openlocfilehash: 32c6e33f9506abc1876075f6ca11656241921005
 | [SD カードへのアクセス](access-the-sd-card.md) | オプションの microSD カードに重要度の低いデータを保存したり、これらのデータにアクセスしたりすることができます (特に内部ストレージに制限がある低コストのモバイル デバイスの場合)。 |
 | [ファイル アクセス許可](file-access-permissions.md) | アプリは既定でファイル システムの特定の場所にアクセスできます。 また、ファイル ピッカーを使うか機能を宣言すると、その他の場所にアクセスすることもできます。 |
 
-## 関連するサンプル
+## <a name="related-samples"></a>関連するサンプル
 [フォルダーの列挙のサンプル](http://go.microsoft.com/fwlink/p/?linkid=619993)
 
 [ファイル アクセスのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619995)
@@ -40,6 +40,6 @@ ms.openlocfilehash: 32c6e33f9506abc1876075f6ca11656241921005
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -5,14 +5,14 @@ title: "Windows Ink ストローク データの保存と取得"
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
-keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, Ink Serialized Format
+keywords: "Windows Ink, Windows の手書き入力, DirectInk, InkPresenter, InkCanvas, ISF, Ink Serialized Format"
 translationtype: Human Translation
-ms.sourcegitcommit: 75e93920422b5ad8ad0e9399bccc403ea69e7feb
-ms.openlocfilehash: 8ba48ed9aa7589ddee6009c5a8cb8ec1091d51ef
+ms.sourcegitcommit: 0f7f54c5c5baccdedfe32bc7c71994e43a93f032
+ms.openlocfilehash: d4458b66f4f1917e99495353a088680b19cb94c9
 
 ---
 
-# Windows Ink ストローク データの保存と取得
+# <a name="store-and-retrieve-windows-ink-stroke-data"></a>Windows Ink ストローク データの保存と取得
 
 
 Windows Ink をサポートしている UWP アプリでは、インク ストロークを Ink Serialized Format (ISF) ファイルにシリアル化および逆シリアル化することができます。 ISF ファイルは、すべてのインク ストロークのプロパティと動作に関する追加のメタデータを含む GIF 画像です。 インク対応ではないアプリでは、アルファ チャンネルの背景色の透明度を含めて、静的な GIF 画像を表示できます。
@@ -30,7 +30,7 @@ Windows Ink をサポートしている UWP アプリでは、インク スト�
 
  
 
-## インク ストロークをファイルに保存する
+## <a name="save-ink-strokes-to-a-file"></a>インク ストロークをファイルに保存する
 
 
 ここでは、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) コントロールに描画されたインク ストロークの保存方法を説明します。
@@ -160,7 +160,7 @@ public MainPage()
 > [!NOTE]  
 > インク データの保存用にサポートされるファイル形式は GIF のみです。 ただし、[**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) メソッド (次のセクションで説明します) では、下位互換性のためにその他の形式もサポートされています。
 
-## インク ストロークをファイルから読み込む
+## <a name="load-ink-strokes-from-a-file"></a>インク ストロークをファイルから読み込む
 
 ここでは、ファイルからインク ストロークを読み込んで [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) コントロールにレンダリングする方法を示します。
 
@@ -270,14 +270,14 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 | Gif                       | ファイル内に ISF がメタデータとして埋め込まれた GIF ファイルで永続化されたインクを指定します。 この形式では、インクに対応していないアプリケーションでインクを表示でき、インク対応のアプリケーションに返されたときもまったく同じように再現できます。 この形式は、HTML ファイル内のインクのコンテンツを転送して、インク アプリとインク対応でないアプリで使えるようにする場合に適しています。 |
 | Base64Gif                 | base64 エンコードの拡張 GIF で永続化されたインクを指定します。 この形式は、後で画像に変換するために、インクを XML ファイルや HTML ファイルで直接エンコードする場合に指定します。 すべてのインク情報を格納するために生成された XML 形式で、Extensible Stylesheet Language Transformations (XSLT) を介して HTML を生成するために使うことができます。 
 
-## クリップボードを使ってインク ストロークのコピーと貼り付けを行う
+## <a name="copy-and-paste-ink-strokes-with-the-clipboard"></a>クリップボードを使ってインク ストロークのコピーと貼り付けを行う
 
 
 ここでは、クリップボードを使って、アプリ間でインク ストロークを転送する方法について説明します。
 
 クリップボード機能をサポートするために、組み込みの [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) の切り取り/コピー コマンドでは、1 つまたは複数のインク ストロークの選択が求められます。
 
-次の例では、ペン バレル ボタン (またはマウスの右ボタン) で入力が変更された場合にストロークを選べるようにする手順を示しています。 ストローク選択の実装方法を示す詳しい例については、「[ペン操作とスタイラス操作](pen-and-stylus-interactions.md)」の「[高度な処理のための入力のパススルー](pen-and-stylus-interactions.md#passthrough)」をご覧ください。
+次の例では、ペン バレル ボタン (またはマウスの右ボタン) で入力が変更された場合にストロークを選べるようにする手順を示しています。 ストローク選択の実装方法を示す詳しい例については、「[UWP アプリでのペン操作と Windows Ink](pen-and-stylus-interactions.md)」の「高度な処理のための入力のパススルー」をご覧ください。
 
 1.  まず、UI を設定します。
 
@@ -319,7 +319,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 
     [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) は、ペンとマウスのいずれからの入力データもインク ストローク ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)) として解釈するように構成します。 ここでは、ボタンのクリック イベント、選択機能のポインター イベントおよびストローク イベントに対するリスナーも宣言されています。
 
-    ストローク選択の実装方法を示す詳しい例については、「[ペン操作とスタイラス操作](pen-and-stylus-interactions.md)」の「[高度な処理のための入力のパススルー](pen-and-stylus-interactions.md#passthrough)」をご覧ください。
+    ストローク選択の実装方法を示す詳しい例については、「[UWP アプリでのペン操作と Windows Ink](pen-and-stylus-interactions.md)」の「高度な処理のための入力のパススルー」をご覧ください。
 ```    CSharp
 public MainPage()
     {
@@ -428,7 +428,7 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 * [ペン操作とスタイラス操作](pen-and-stylus-interactions.md)
 
@@ -436,16 +436,18 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 * [インクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [単純なインクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620312)
 * [複雑なインクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [塗り絵帳のサンプル](https://aka.ms/cpubsample-coloringbook)
+* [Family Notes のサンプル](https://aka.ms/cpubsample-familynotessample)
+
+
  
 
- 
 
 
 
 
 
 
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

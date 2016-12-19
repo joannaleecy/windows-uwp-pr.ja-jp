@@ -4,11 +4,11 @@ ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: "Windows Device Portal の概要"
 description: "Windows Device Portal で、ネットワーク経由でリモートから、または USB 接続によって、デバイスの構成と管理を行うための方法を説明します。"
 translationtype: Human Translation
-ms.sourcegitcommit: 7f6aba331ba27d2c0c2ca7925c452da58e155cb8
-ms.openlocfilehash: b316eab1f269dadbe65b7e93b5a33a8e4c4924d7
+ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
+ms.openlocfilehash: 6c697782683bca6671c01aa0941a78bc66fb052a
 
 ---
-# Windows Device Portal の概要
+# <a name="windows-device-portal-overview"></a>Windows Device Portal の概要
 
 Windows Device Portal では、ネットワーク経由でリモートから、または USB 接続によって、デバイスの構成と管理を行えます。 また、Windows デバイスのトラブルシューティングを行ったり、リアルタイムのパフォーマンスを表示するための高度な診断ツールも用意されています。
 
@@ -18,7 +18,7 @@ Windows Device Portal では、ネットワーク経由でリモートから、�
 
 Windows Device Portal のすべての機能は [REST API](device-portal-api-core.md) の上に構築されます。REST API を使用してデータにアクセスしたり、プログラムを使ってデバイスを制御することができます。
 
-## セットアップ
+## <a name="setup"></a>セットアップ
 
 Device Portal への接続の具体的な手順はデバイスによって異なりますが、どのデバイスでも次の一般的な手順が必要です。
 1. デバイスで開発者モードと Device Portal を有効にします。
@@ -27,22 +27,24 @@ Device Portal への接続の具体的な手順はデバイスによって異な
 
 デバイス ファミリ | 既定でオンになっているか | HTTP | HTTPS | USB
 --------------|----------------|------|-------|----
-HoloLens | 開発者モードでオン | 80 (既定) | 443 (既定) | localhost:10080
-IoT | 開発者モードでオン | 8080 | レジストリ キーで有効化する | 該当なし
-Xbox | 開発者モードで有効化 | 無効 | 11443 | 該当なし
-Desktop| 開発者モードで有効化 | ランダム > 50,000 (xx080) | ランダム > 50,000 (xx443) | 該当なし
-Phone | 開発者モードで有効化 | 80| 443 | localhost:10080
+HoloLens | 開発者モードでオン | 80 (既定) | 443 (既定) | http://127.0.0.1:10080
+IoT | 開発者モードでオン | 8080 | レジストリ キーで有効化する | なし
+Xbox | 開発者モードで有効化する | 無効 | 11443 | なし
+Desktop| 開発者モードで有効化する | 50080\* | 50043\* | なし
+Phone | 開発者モードで有効化する | 80| 443 | http://127.0.0.1:10080
+
+\* デスクトップ上の Device Portal が、デバイス上の既存のポート要求との競合を避ける目的で ephemeral ポートの範囲 (>50,000) にあるポートを要求するため、この表が当てはまらない場合があります。  詳しくは、デスクトップに関する「[ポート番号を設定する](device-portal-desktop.md#setting-port-numbers)」のセクションをご覧ください。  
 
 デバイス固有のセットアップ手順については、以下をご覧ください。
 - [HoloLens 用 Device Portal](https://dev.windows.com/holographic/using_the_windows_device_portal)
 - [IoT 用 Device Portal](https://go.microsoft.com/fwlink/?LinkID=616499)
-- [モバイル用 Device Portal](device-portal-mobile.md#set-up-device-portal-on-window-phone)
+- [モバイル用 Device Portal](device-portal-mobile.md)
 - [Xbox 用 Device Portal](device-portal-xbox.md)
 - [デスクトップ用 Device Portal](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
 
-## 機能
+## <a name="features"></a>機能
 
-### ツールバーとナビゲーション
+### <a name="toolbar-and-navigation"></a>ツールバーとナビゲーション
 
 ページの最上部にあるツール バーでは、よく使われる状態や機能にアクセスできます。
 - **[Shutdown]** (シャットダウン): デバイスをオフにします。
@@ -53,11 +55,11 @@ Phone | 開発者モードで有効化 | 80| 443 | localhost:10080
 
 ここでは、すべてのデバイスに共通のツールについて説明します。 デバイスによってはその他のオプションを利用できる場合があります。 詳しくは、お使いのデバイス用のページをご覧ください。
 
-### ホーム
+### <a name="home"></a>ホーム
 
 デバイス ポータル セッションはホーム ページで開始します。 通常、ホーム ページには、名前や OS のバージョンなどのデバイスに関する情報、およびデバイスについて設定できる項目が表示されます。
 
-### アプリ
+### <a name="apps"></a>アプリ
 
 デバイスへの AppX パッケージとバンドルのインストール/アンインストールおよび管理を行う機能を提供します。
 
@@ -87,7 +89,7 @@ Phone | 開発者モードで有効化 | 80| 443 | localhost:10080
 2.  実行中の場合、[Running apps] に移動してそのアプリを閉じます。 アプリの実行中にアンインストールすると、そのアプリを再インストールしようとするときに問題が発生することがあります。 
 3.  準備ができたら、**[Uninstall]** (アンインストール) をクリックします。
 
-### プロセス
+### <a name="processes"></a>プロセス
 
 現在実行中のプロセスに関する詳細を表示します。 これには、アプリとシステムの両方のプロセスが含まれます。
 
@@ -95,7 +97,7 @@ Phone | 開発者モードで有効化 | 80| 443 | localhost:10080
 
 ![モバイル用 Device Portal](images/device-portal/mob-device-portal-processes.png)
 
-### パフォーマンス
+### <a name="performance"></a>パフォーマンス
 
 電力消費、フレーム レート、CPU 負荷など、システムの診断情報のグラフをリアルタイムで表示します。
 
@@ -108,7 +110,7 @@ Phone | 開発者モードで有効化 | 80| 443 | localhost:10080
 
 ![モバイル用 Device Portal](images/device-portal/mob-device-portal-perf.png)
 
-### Windows イベント トレーシング (ETW)
+### <a name="event-tracing-for-windows-etw"></a>Windows イベント トレーシング (ETW)
 
 デバイス上の Windows イベント トレーシング (ETW) をリアルタイムで管理します。
 
@@ -130,7 +132,7 @@ Phone | 開発者モードで有効化 | 80| 443 | localhost:10080
 
 ETW トレースの使い方について詳しくは、アプリからリアルタイムのログを収集する方法に関する[ブログの記事](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/)をご覧ください。 
 
-### パフォーマンス トレース
+### <a name="performance-tracing"></a>パフォーマンス トレース
 
 [Windows Performance Recorder](https://msdn.microsoft.com/library/windows/hardware/hh448205.aspx) (WPR) のトレースをデバイスからキャプチャします。
 
@@ -143,13 +145,13 @@ ETW トレースの使い方について詳しくは、アプリからリアル�
 
 キャプチャした ETL ファイルは、[Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/hardware/hh448170.aspx) で開いて分析に使用できます。
 
-### デバイス
+### <a name="devices"></a>デバイス
 
 デバイスに接続されているすべての周辺機器を列挙します。
 
 ![モバイル用 Device Portal](images/device-portal/mob-device-portal-devices.png)
 
-### ネットワーク
+### <a name="networking"></a>ネットワーク
 
 デバイス上のネットワーク接続を管理します。  デバイス ポータルに USB 経由で接続している場合を除き、これらの設定を変更するとデバイス ポータルとの接続が切断される可能性があります。
 - **[Profiles]** (プロファイル): 使用する Wi-Fi プロファイルを選択します。  
@@ -157,15 +159,15 @@ ETW トレースの使い方について詳しくは、アプリからリアル�
 
 ![モバイル用 Device Portal](images/device-portal/mob-device-portal-network.png)
 
-### アプリのエクスプローラー
+### <a name="app-file-explorer"></a>アプリのエクスプローラー
 
 サイドロードされたアプリによって保存されたファイルを表示および操作できるようにします。  これは、Windows Phone 8.1 の[分離ストレージ エクスプローラー](https://msdn.microsoft.com/library/windows/apps/hh286408(v=vs.105).aspx)の新しいクロスプラットフォーム バージョンです。アプリのエクスプローラーとその使用方法について詳しくは、[こちらのブログの投稿](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/)をご覧ください。 
 
 ![モバイル用 Device Portal](images/device-portal/mob-device-portal-AppFileExplorer.png)
 
-## サービスの機能と注意事項
+## <a name="service-features-and-notes"></a>サービスの機能と注意事項
 
-### DNS-SD
+### <a name="dns-sd"></a>DNS-SD
 
 Device Portal は DNS-SD を使用して、ローカル ネットワーク上でその存在をアドバタイズします  Device Portal のすべてのインスタンスは、デバイスの種類に関係なく、"WDP._wdp._tcp.local" でアドバタイズします。 サービス インスタンスの TXT レコードは、次の情報を提供します。
 
@@ -178,7 +180,7 @@ T | null 文字で区切られた string のリスト | ユーザーが適用し
 
 DNS-SD レコードでアドバタイズされる HTTP ポートですべてのデバイスがリッスンしているわけではないため、HTTPS ポートでの接続をお勧めします。 
 
-### CSRF に対する保護とスクリプト
+### <a name="csrf-protection-and-scripting"></a>CSRF に対する保護とスクリプト
 
 [CSRF 攻撃](https://wikipedia.org/wiki/Cross-site_request_forgery)に対する保護のために、すべての非 GET 要求に一意のトークンが必要です。 このトークン、X-CSRF-Token 要求ヘッダーは、セッション Cookie、CSRF-Token から派生します。 Device Portal の Web UI では、CSRF-Token Cookie が、各要求の X-CSRF-Token にコピーされます。
 
@@ -192,12 +194,12 @@ DNS-SD レコードでアドバタイズされる HTTP ポートですべての�
 
 **注**: ユーザー名が "auto-" で始まる場合、ブラウザーを使用して Device Portal にログインできません。  
 
-#### クロスサイト WebSocket ハイジャック (CSWSH) に対する保護
+#### <a name="cross-site-websocket-hijacking-cswsh-protection"></a>クロスサイト WebSocket ハイジャック (CSWSH) に対する保護
 
 [CSWSH 攻撃](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html)を防御するために、Device Portal に対して WebSocket 接続を開くすべてのクライアントは、Host ヘッダーと一致する Origin ヘッダーも提供する必要があります。  これにより、Device Portal に対して、要求が Device Portal の UI または有効なクライアント アプリケーションからの要求であることを証明します。  Origin ヘッダーがない場合、要求は拒否されます。 
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

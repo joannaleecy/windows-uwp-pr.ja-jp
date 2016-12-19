@@ -1,14 +1,14 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: "ファイルのプロパティの取得"
 description: "StorageFile オブジェクトで表されるファイルのプロパティ (最上位、基本、拡張) を取得します。"
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: 78fdc200b134525fc0445af64e73b184b49ef2a3
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: 464548664f8065e4dba45d23ccbb71a68d0b6b17
 
 ---
-# ファイルのプロパティの取得
+# <a name="get-file-properties"></a>ファイルのプロパティの取得
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -26,7 +26,7 @@ ms.openlocfilehash: 78fdc200b134525fc0445af64e73b184b49ef2a3
  
 
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 -   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
 
@@ -36,7 +36,7 @@ ms.openlocfilehash: 78fdc200b134525fc0445af64e73b184b49ef2a3
 
     たとえば、これらの例のコードでは **picturesLibrary** 機能が必要ですが、場所によっては別の機能が必要であったり、機能をまったく必要としない場合もあります。 詳しくは、「[ファイル アクセス許可](file-access-permissions.md)」をご覧ください。
 
-## ファイルの最上位プロパティの取得
+## <a name="getting-a-files-top-level-properties"></a>ファイルの最上位プロパティの取得
 
 多くの最上位ファイル プロパティは、[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) クラスのメンバーとしてアクセスできます。 これらのプロパティには、ファイル属性、コンテンツの種類、作成日、表示名、ファイルの種類などがあります。
 
@@ -62,7 +62,7 @@ foreach (Windows.Storage.StorageFile file in files)
 }
 ```
 
-## ファイルの基本プロパティの取得
+## <a name="getting-a-files-basic-properties"></a>ファイルの基本プロパティの取得
 
 多くの基本ファイル プロパティは、最初に [**StorageFile.GetBasicPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh701737) メソッドを呼び出して取得します。 このメソッドは、項目 (ファイルまたはフォルダー) のサイズや最終変更日のプロパティを定義する [**BasicProperties**](https://msdn.microsoft.com/library/windows/apps/br212113) オブジェクトを返します。
 
@@ -87,7 +87,7 @@ foreach (Windows.Storage.StorageFile file in files)
 }
  ```
 
-## ファイルの拡張プロパティの取得
+## <a name="getting-a-files-extended-properties"></a>ファイルの拡張プロパティの取得
 
 最上位と基本ファイル プロパティのほかに、ファイルの内容に関連付けられている多くのプロパティがあります。 これらの拡張プロパティは、[**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124) メソッドを呼び出してアクセスします  ([**BasicProperties**](https://msdn.microsoft.com/library/windows/apps/br212113) オブジェクトは、[**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225) プロパティを呼び出して取得します)。最上位と基本ファイル プロパティは、クラス (それぞれ [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) と **BasicProperties**) のプロパティとしてアクセスできます。拡張プロパティは、取得するプロパティの名前を表す [String](http://go.microsoft.com/fwlink/p/?LinkID=325032) オブジェクトの [IEnumerable](http://go.microsoft.com/fwlink/p/?LinkID=313091) コレクションを **BasicProperties.RetrievePropertiesAsync** メソッドに渡して取得します。 このメソッドは、[IDictionary](http://go.microsoft.com/fwlink/p/?LinkId=325238) コレクションを返します。 各拡張プロパティは、コレクションから名前またはインデックスで取得します。
 
@@ -137,6 +137,6 @@ foreach (Windows.Storage.StorageFile file in files)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

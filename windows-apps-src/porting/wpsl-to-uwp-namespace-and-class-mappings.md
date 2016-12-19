@@ -4,12 +4,12 @@ description: "このトピックでは、Windows Phone Silverlight API からユ
 title: "Windows Phone Silverlight から UWP への名前空間とクラスのマッピング"
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6b33127c6b76ef820a93b200a655426a0f516b68
+ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
+ms.openlocfilehash: dcdf17263dadd71572c942bff5e795928e855c03
 
 ---
 
-# Windows Phone Silverlight から UWP への名前空間とクラスのマッピング
+# <a name="windows-phone-silverlight-to-uwp-namespace-and-class-mappings"></a>Windows Phone Silverlight から UWP への名前空間とクラスのマッピング
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -62,7 +62,7 @@ UWP プロジェクトで作業する場合、および Windows Phone Silverligh
 | (MPU = **Microsoft.Phone.UserData**) <br/> **MPU.Appointments** クラス | [**AppointmentCalendar**](https://msdn.microsoft.com/library/windows/apps/dn596134) クラス |
 | (MPU = **Microsoft.Phone.UserData**) <br/> **MPU.Contacts** クラス | [**ContactStore**](https://msdn.microsoft.com/library/windows/apps/dn624859) クラス |
 | コントロールと UI インフラストラクチャ | |
-| **ControlTiltEffect.TiltEffect** クラス | Windows ランタイム アニメーション ライブラリのアニメーションは、共通のコントロールの既定のスタイルに組み込まれています。 「[アニメーション](wpsl-to-uwp-porting-xaml-and-ui.md#animation)」をご覧ください。 |
+| **ControlTiltEffect.TiltEffect** クラス | Windows ランタイム アニメーション ライブラリのアニメーションは、共通のコントロールの既定のスタイルに組み込まれています。 「[アニメーション](wpsl-to-uwp-porting-xaml-and-ui.md)」をご覧ください。 |
 | **Microsoft.Phone.Controls** 名前空間 | [**Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227716) 名前空間 |
 | (MPC = **Microsoft.Phone.Controls**) <br/> **MPC.ContextMenu** クラス | [**PopupMenu**](https://msdn.microsoft.com/library/windows/apps/br208693) クラス |
 | (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.DatePickerPage** クラス | [**DatePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn625013) クラス |
@@ -80,7 +80,7 @@ UWP プロジェクトで作業する場合、および Windows Phone Silverligh
 | (MPD = **Microsoft.Phone.Data**) <br/>**MPD.Linq** 名前空間 | 直接相当する要素はなし | 
 | (MPD = **Microsoft.Phone.Data**) <br/>**MPD.Linq.Mapping** 名前空間 | 直接相当する要素はなし |
 | **Microsoft.Phone.Globalization** 名前空間 | 直接相当する要素はなし | 
-| (MPI = **Microsoft.Phone.Info**) <br/>**MPI.DeviceExtendedProperties**、**DeviceStatus** クラス | [**EasClientDeviceInformation**](https://msdn.microsoft.com/library/windows/apps/hh701390)、[**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831) クラス 詳しくは、「[デバイスの状態](wpsl-to-uwp-input-and-sensors.md#device-status)」をご覧ください。 | 
+| (MPI = **Microsoft.Phone.Info**) <br/>**MPI.DeviceExtendedProperties**、**DeviceStatus** クラス | [**EasClientDeviceInformation**](https://msdn.microsoft.com/library/windows/apps/hh701390)、[**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831) クラス 詳しくは、「[デバイスの状態](wpsl-to-uwp-input-and-sensors.md)」をご覧ください。 | 
 | (MPI = **Microsoft.Phone.Info**) <br/>**MPI.MediaCapabilities** クラス | 直接相当する要素はなし | 
 | (MPI = **Microsoft.Phone.Info**) <br/>**MPI.UserExtendedProperties** クラス | [**AdvertisingManager**](https://msdn.microsoft.com/library/windows/apps/dn363391) クラス | 
 | **System.Windows** 名前空間 | [**Windows.UI.Xaml**](https://msdn.microsoft.com/library/windows/apps/br209045) 名前空間 | 
@@ -129,7 +129,7 @@ UWP プロジェクトで作業する場合、および Windows Phone Silverligh
 | **Microsoft.Xna.Framework.Media.MediaQueue** クラス | [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) クラス |
 | **Microsoft.Xna.Framework.Media.Playlist** クラス | [**BackgroundMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652527) クラス |
 | **System.Windows.Media** 名前空間 | [**Windows.UI.Xaml.Media**](https://msdn.microsoft.com/library/windows/apps/br243045) 名前空間 |
-| **System.Windows.Media.RadialGradientBrush** クラス | 直接相当する要素はなし。 「[メディアとグラフィックス](wpsl-to-uwp-porting-xaml-and-ui.md#media)」をご覧ください。 |
+| **System.Windows.Media.RadialGradientBrush** クラス | 直接相当する要素はなし。 「[メディアとグラフィックス](wpsl-to-uwp-porting-xaml-and-ui.md)」をご覧ください。 |
 | **System.Windows.Media.Animation** 名前空間 | [**Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/br243232) 名前空間 |
 | **System.Windows.Media.Effects** 名前空間 | 直接相当する要素はなし | 
 | **System.Windows.Media.Imaging** 名前空間 | [**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) 名前空間 |
@@ -249,6 +249,6 @@ UWP プロジェクトで作業する場合、および Windows Phone Silverligh
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

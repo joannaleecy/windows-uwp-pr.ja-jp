@@ -4,12 +4,12 @@ description: "この概要記事は、ユニバーサル Windows プラットフ
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: 434505a697e045198972ce529366be281774af86
+ms.sourcegitcommit: a70a59283fe664bef9ddab56df57a9fc46c91033
+ms.openlocfilehash: 2ac9edf074ceb91d5cfea17228f0a39fef200b74
 
 ---
 
-# 安全な Windows アプリの開発について
+# <a name="intro-to-secure-windows-app-development"></a>安全な Windows アプリの開発について
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -17,7 +17,7 @@ ms.openlocfilehash: 434505a697e045198972ce529366be281774af86
 
 この概要記事は、ユニバーサル Windows プラットフォーム (UWP) アプリをセキュリティで保護されたアプリとして作成する作業を加速するさまざまな Windows 10 プラットフォーム機能を、アプリの設計者と開発者が深く理解するのに役立ちます。 ここでは、認証、移動中データ、および保存データの各段階で利用可能な、Windows のセキュリティ機能に使用方法について詳しく説明します。 各章にあるその他のリソースを確認すれば、各トピックについてさらに詳しい情報を得ることができます。
 
-## 1 はじめに
+## <a name="1-introduction"></a>1 はじめに
 
 
 セキュリティで保護されたアプリの開発は、容易な作業ではありません。 モバイル アプリ、ソーシャル アプリ、クラウド アプリ、および複雑なエンタープライズ アプリが急速に進歩する現在では、アプリがこれまでよりも早く利用可能になり、更新されることをユーザーは期待しています。 また、ユーザーはさまざまな種類のデバイスを使用するので、アプリ エクスペリエンスの実現はますます複雑になっています。 Windows 10 ユニバーサル Windows プラットフォーム (UWP) 用にビルドする場合、含めることが可能なデバイス リストには、デスクトップ、ノート、タブレット、モバイル デバイスなどの従来のデバイスの他に、モノのインターネット、Xbox One、Microsoft Surface Hub、HoloLens にわたる新しいデバイスがあり、今後も増加します。 開発者は、関連するすべてのプラットフォームまたはデバイスで、アプリが安全に通信し、データを保存できるようにする必要があります。
@@ -34,7 +34,7 @@ Windows 10 のセキュリティ機能を利用する利点を次にいくつか
 
 最後に、保存データとは、メモリや記憶域メディアに存在するデータのことです。 Windows 10 では、アプリ間の承認されていないデータ アクセスを防止するアプリ モデルがあり、デバイス上のデータの安全性をさらに高める暗号化 API が提供されています。 資格情報保管ボックスと呼ばれる機能を使用すると、デバイスにユーザー資格情報を安全に保存することができ、オペレーティング システムが他のアプリからのアクセスを防止します。
 
-## 2 認証要素
+## <a name="2-authentication-factors"></a>2 認証要素
 
 
 データを保護するために、データへのアクセスを要求する人は、特定され、要求するデータ リソースへのアクセスが承認される必要があります。 ユーザーを特定するプロセスは認証と呼ばれ、リソースへのアクセス特権を判別することは承認と呼ばれます。 これらは密接な関係のある操作であり、ユーザーには区別できないかもしれません。 操作には、比較的単純な操作から複雑な操作まであります。これは、さまざまな要因 (データが 1 台のサーバーに存在するか、多数のシステム間で分散しているかなど) によって決まります。 認証サービスおよび承認サービスを提供するサーバーは、ID プロバイダーと呼ばれます。
@@ -49,7 +49,7 @@ Windows 10 のセキュリティ機能を利用する利点を次にいくつか
 
 システムで使う認証方法を設計することは、データ セキュリティにおいて複雑かつ重要な要素であるといえます。 一般的に、認証で使う要素の数が多いほど、システムのセキュリティは高くなります。 同時に、認証は使いやすいものであることが必要です。 通常、ユーザーは 1 日に何度もログインするため、このプロセスは迅速に行われる必要があります。 認証の種類を選ぶときは、セキュリティと使いやすさのバランスを取る必要があります。単一要素認証は、セキュリティが最も低いレベルになりますが、最も使いやすい方法です。多要素認証では、認証要素が増えるに従って、セキュリティのレベルは高くなりますが、複雑になっていきます。
 
-## 2.1 単一要素認証
+## <a name="21-single-factor-authentication"></a>2.1 単一要素認証
 
 
 この形式の認証は、1 つのユーザーの資格情報に基づいています。 通常、これはパスワードですが、暗証番号 (PIN) の場合もあります。
@@ -69,7 +69,7 @@ Windows 10 のセキュリティ機能を利用する利点を次にいくつか
 
 欠点はありますが、単一要素認証ではユーザーが資格情報を制御できます。 資格情報の作成や変更はユーザーが行い、認証プロセスで必要となるのはキーボードだけです。 これが、多要素認証にはない単一要素認証の主な特徴です。
 
-## 2.1.1 Web 認証ブローカー
+## <a name="211-web-authentication-broker"></a>2.1.1 Web 認証ブローカー
 
 
 既に説明したように、IT 部門におけるパスワード認証の課題の 1 つは、ユーザー名/パスワードの基盤やリセット メカニズムなどの管理というオーバーヘッドが加わる点です。一般的になってきているオプションは、認証のオープン スタンダードである OAuth による認証を提供するサード パーティの ID プロバイダーを利用することです。
@@ -128,7 +128,7 @@ catch (Exception ex)
 }
 ```
 
-## 2.2 多要素認証
+## <a name="22-multi-factor-authentication"></a>2.2 多要素認証
 
 
 多要素認証では、複数の認証要素を使います。 通常、パスワードなどの "知っている情報" は、携帯電話やスマート カードなどの "持っているもの" に結合されます。 攻撃者がユーザーのパスワードを検出しても、デバイスやカードを使わないと、アカウントにアクセスすることはできません。 また、攻撃者がデバイスやカードだけを手に入れても、パスワードがなければ、攻撃者はこれらを使うことはできません。 したがって、多要素認証は単一要素認証よりもセキュリティが高くなりますが、複雑にもなります。
@@ -146,7 +146,7 @@ catch (Exception ex)
 
 以上の説明でわかるように、このプロセスは、2 番目のユーザーの資格情報がユーザーによって作成または提供されるのではなく、ユーザーに送られるという点が、単一要素認証とは異なります。 そのため、ユーザーは、必要な資格情報を完全に制御することはできません。 このことは、スマート カードを 2 番目の資格情報として使う場合にも該当します。2 番目の資格情報の作成とユーザーへの提供は、組織が管理します。
 
-## 2.2.1 Azure Active Directory
+## <a name="221-azure-active-directory"></a>2.2.1 Azure Active Directory
 
 
 Azure Active Directory (Azure AD) は、クラウド ベースの ID およびアクセスの管理サービスであり、単一要素認証や多要素認証の ID プロバイダーとして使うことができます。 Azure AD 認証は、確認コードの有無にかかわらず使うことができます。
@@ -155,7 +155,7 @@ Azure AD では単一要素認証を実装することもできますが、通�
 
 さらに、Azure AD は OAuth プロバイダーとして使用でき、さまざまなプラットフォームのアプリに対する認証および承認メカニズムを標準ユーザーに提供できます。 詳しくは、「[Azure Active Directory](https://azure.microsoft.com/services/active-directory/)」および「[Azure の多要素認証](https://azure.microsoft.com/services/multi-factor-authentication/)」をご覧ください。
 
-## 2.4 Microsoft Passport と Windows Hello
+## <a name="24-microsoft-passport-and-windows-hello"></a>2.4 Microsoft Passport と Windows Hello
 
 
 Windows 10 では、便利な多要素認証メカニズムがオペレーティング システムに組み込まれています。 含まれている 2 つのコンポーネントは、Microsoft Passport と Windows Hello と呼ばれます。 Windows Hello は、Windows 10 に組み込まれた新しい生体認証サインイン システムです。 Windows Hello はオペレーティング システムに直接組み込まれているため、顔または指紋を識別して、ユーザーのデバイスのロックを解除できます。 Windows のセキュリティ保護された資格情報ストアは、デバイス上の生体認証データを保護します。
@@ -174,12 +174,12 @@ Microsoft Passport は、従来の 2FA システムの単なる代替機能で�
 
 Microsoft Passport と Windows Hello について詳しくは、「[Microsoft Passport ガイド](https://msdn.microsoft.com/library/mt589441)」および「[Microsoft Passport 開発者向けガイド](microsoft-passport.md)」をご覧ください。
 
-## 3 移動中データに関するセキュリティ保護の方法
+## <a name="3-data-in-flight-security-methods"></a>3 移動中データに関するセキュリティ保護の方法
 
 
 移動中データに関するセキュリティ保護の方法は、ネットワークに接続されているデバイス間でやり取りされるデータに適用されます。 データは、プライベートな社内イントラネットの高度なセキュリティ環境にあるシステムの間で転送される場合と、セキュリティで保護されていない Web 環境にあるクライアントと Web サービスの間で転送される場合があります。 Windows 10 アプリでは、ネットワーキング API を利用して SSL などの標準をサポートしており、Azure API 管理などのテクノロジとも連携します。これにより、開発者はアプリで適切なレベルのセキュリティを確保することができます。
 
-## 3.1 リモート システムの認証
+## <a name="31-remote-system-authentication"></a>3.1 リモート システムの認証
 
 
 リモート コンピューター システムとの通信が発生する一般的なシナリオは、2 つあります。
@@ -193,14 +193,14 @@ Web サービス通信では、データはもはやセキュリティで保護�
 
 第 2 の要件は、メッセージの整合性です。クライアントと Web サービスは、受信したメッセージが送信側によって送られたものであること、およびメッセージが転送中に改変されていないことを確認する必要があります。 これは、デジタル署名を使ったメッセージへの署名と、証明書の認証の利用によって実現されます。
 
-## 3.2 SSL 接続
+## <a name="32-ssl-connections"></a>3.2 SSL 接続
 
 
 セキュリティで保護された接続を確立し、維持するために、Web サービスでは、Secure Hypertext Transfer Protocol (HTTPS) によってサポートされている Secure Sockets Layer (SSL) を使うことができます。 SSL では、公開キーの暗号化、およびサーバーの証明書をサポートすることによって、メッセージの機密性と整合性が実現されます。 トランスポート層セキュリティ (TLS) は SSL に取って代わるものですが、TLS は非公式に SSL と呼ばれることがよくあります。
 
 クライアントがサーバーにあるリソースへのアクセスを要求すると、SSL はサーバーとのネゴシエーション プロセスを開始します。 これは、SSL ハンドシェイクと呼ばれます。 暗号化レベル、公開暗号化キーと秘密暗号化キーのセット、およびクライアントとサーバーの証明書に含まれている ID 情報が、SSL 接続が行われている間のすべての通信における基盤として認識されます。 このとき、サーバーは、認証されるクライアントを要求する場合があります。 接続が確立されると、接続が閉じられるまで、すべてのメッセージがネゴシエートされた公開キーで暗号化されます。
 
-## 3.2.1 SSL のピン留め
+## <a name="321-ssl-pinning"></a>3.2.1 SSL のピン留め
 
 
 SSL では、暗号化と証明書を使ってメッセージの機密性を実現できますが、クライアントが通信しているサーバーが正しいサーバーであることを確認するための処理は行いません。 サーバーの動作は、承認されていない第三者によって模倣され、クライアントが転送した重要なデータが傍受される可能性があります。 これを防ぐためには、SSL のピン留めと呼ばれる手法を使って、サーバー上の証明書がクライアントで想定され、信頼されている証明書であることを確認します。
@@ -260,7 +260,7 @@ private bool ValidateCertificates(IReadOnlyList<Certificate> certs)
 }
 ```
 
-## 3.3 REST API の公開と REST API へのアクセスの保護
+## <a name="33-publishing-and-securing-access-to-rest-apis"></a>3.3 REST API の公開と REST API へのアクセスの保護
 
 
 Web サービスへのアクセスの承認を確実に行うためには、API の呼び出しが行われるたびに認証する必要があります。 Web サービスが Web 経由で公開されている場合、パフォーマンスとスケールを制御できるようにすることも考慮する必要があります。 Azure API Management は、API を Web に公開する場合に役立つサービスであり、3 つのレベルで機能を提供します。
@@ -273,12 +273,12 @@ API の**発行者/管理者**は、Azure API Management の発行者ポータ�
 
 Azure App 管理では、Web サービスのパフォーマンスを最適化するために、サービスでの API 呼び出しの回数を減らすこともできます (この手続きはスロットルと呼ばれます)。 詳しくは、「[Azure API 管理](https://azure.microsoft.com/services/api-management/)」および「[AzureCon 2015 の Azure API 管理](https://channel9.msdn.com/events/Microsoft-Azure/AzureCon-2015/ACON313)」をご覧ください。
 
-## 4 保存データに関するセキュリティ保護の方法
+## <a name="4-data-at-rest-security-methods"></a>4 保存データに関するセキュリティ保護の方法
 
 
 データがデバイスに到着すると、そのデータは "保存データ" と呼ばれます。 このデータは、承認されていないユーザーやアプリからのアクセスを防ぐために、セキュリティ保護の方法に従ってデバイスに保存する必要があります。 Windows 10 のアプリ モデルでは、アプリで保存されたデータはそのアプリによってのみアクセスできるようにして、必要な場合はデータを共有するための API を提供するように、さまざまな操作を行います。 また、追加の API を利用して、データを暗号化し、資格情報を安全に保存することができます。
 
-## 4.1 Windows アプリ モデル
+## <a name="41-windows-app-model"></a>4.1 Windows アプリ モデル
 
 
 従来、Windows はアプリの定義を備えていませんでした。 一般的には、実行可能ファイル (.exe) がアプリの定義として扱われていましたが、インストール、状態の記憶、実行の長さ、バージョン管理、OS の統合、およびアプリ間通信は、定義には含まれていませんでした。 ユニバーサル Windows プラットフォーム モデルでは、インストール、ランタイム環境、リソース管理、更新プログラム、データ モデル、およびアンインストールを含めるように、アプリ モデルを定義します。
@@ -293,7 +293,7 @@ Windows 10 アプリはコンテナー内で実行されるので、既定では
 
 詳しくは、「[ユニバーサル: Windows 10 のアプリケーションのライフ サイクルについて](https://visualstudiomagazine.com/articles/2015/09/01/its-universal.aspx)」をご覧ください。
 
-## 4.2 保存された資格情報の保護
+## <a name="42-stored-credential-protection"></a>4.2 保存された資格情報の保護
 
 
 多くの場合、認証済みのサービスにアクセスする Windows アプリでは、ユーザーは資格情報をローカル デバイスに保存することができます。 これは、ユーザーによって指定されたユーザー名とパスワードを、アプリが、次回以降の起動時に自動的に使う場合に便利です。 この機能は、保存されているデータへのアクセス許可を攻撃者が手に入れた場合に、セキュリティ上の問題となる可能性があります。このため、Windows 10 では、Windows アプリはユーザーの資格情報を安全な資格情報保管ボックスに保存することができます。 アプリは、アプリのストレージ コンテナーに資格情報を保存するのではなく、資格情報保管ボックス API を呼び出して、保管ボックスに対して資格情報の保存や取得を実行します。 資格情報保管ボックスはオペレーティング システムによって管理されますが、アクセスは資格情報を保存したアプリに制限されます。これにより、資格情報の保存に関して、安全に管理されたソリューションが実現されます。
@@ -359,12 +359,12 @@ private PasswordCredential GetCredentialFromLocker()
 
 詳しくは、「[資格情報保管ボックス](credential-locker.md)」をご覧ください。
 
-## 4.3 保存されたデータの保護
+## <a name="43-stored-data-protection"></a>4.3 保存されたデータの保護
 
 
 保存されたデータ (一般に "保存データ" と呼ばれます) を扱う場合、これを暗号化することによって、承認されていないユーザーは、保存されたデータにアクセスできなくなります。 データを暗号化する一般的なメカニズムには、対称キーを使う方法と非対称キーを使う方法の 2 つがあります。 ただし、データを暗号化しても、データが送信されて保存されるまでの間に、データの変更を防ぐことができるとは限りません。 つまり、データの整合性を保証することはできません。 メッセージ認証コード、ハッシュ、デジタル署名を利用することが、この問題を解決するための一般的な手法です。
 
-## 4.3.1 データの暗号化
+## <a name="431-data-encryption"></a>4.3.1 データの暗号化
 
 
 対称暗号化では、送信者と受信者は同じキーを所持し、そのキーを使ってデータの暗号化と暗号化解除を行います。 この方法で重要となる点は、送信者と受信者の双方が把握しているキーを安全に共有することです。
@@ -373,7 +373,7 @@ private PasswordCredential GetCredentialFromLocker()
 
 Windows アプリの開発者は、[**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) クラスと [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) クラスを使って、UWP アプリに対称暗号化と非対称暗号化を実装することができます。 また、[**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) クラスを使って、データの暗号化と暗号化解除、コンテンツへの署名、デジタル署名の確認を実行することができます。 アプリでは、[**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) 名前空間の [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) クラスを使って、保存されているローカル データの暗号化と暗号化解除を実行することもできます。
 
-## 4.3 メッセージの改ざんの検出 (Mac、ハッシュ、署名)
+## <a name="432-detecting-message-tampering-macs-hashes-and-signatures"></a>4.3.2 メッセージの改ざんの検出 (Mac、ハッシュ、署名)
 
 
 MAC は、対称キー (秘密鍵と呼ばれます) やメッセージを MAC 暗号化アルゴリズムへの入力として使った結果生成されるコード (またはタグ) です。 秘密鍵とアルゴリズムは、メッセージを転送する前に、送信者と受信者の間で合意されます。
@@ -385,11 +385,11 @@ MAC では、次のようにしてメッセージを確認します。
 -   受信者は、秘密鍵とメッセージを MAC アルゴリズムへの入力として使うことで、MAC タグを取得します。
 -   受信者は、取得した MAC タグと送信者の MAC タグを比較します。 これらが同じである場合、メッセージは改ざんされていないと見なされます。
 
-![](images/secure-macs.png)
+![MAC による検証](images/secure-macs.png)
 
 Windows アプリでは、[**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) クラスを呼び出して、MAC 暗号化アルゴリズムを実行するためのキーと [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) クラスを生成することにより、MAC によるメッセージの検証を実装できます。
 
-## 4.3.1 ハッシュの使用
+## <a name="433-using-hashes"></a>4.3.3 ハッシュの使用
 
 
 ハッシュ関数は、任意の長さのデータ ブロックを受け取り、固定ビット サイズの文字列 (ハッシュ値) を返す暗号アルゴリズムです。 この処理を実行できるハッシュ関数のファミリはすべて用意されています。
@@ -428,7 +428,7 @@ public void SampleReusableHash()
 }
 ```
 
-## 4.3.2 デジタル署名
+## <a name="434-digital-signatures"></a>4.3.4 デジタル署名
 
 
 保存されているメッセージがデジタル署名されている場合、そのメッセージに関するデータの整合性は、MAC による認証と同様の方法で検証されます。 デジタル署名のワークフローがどのように実施されるかを次に示します。
@@ -444,7 +444,7 @@ public void SampleReusableHash()
 
 詳しくは、「[デジタル署名](https://msdn.microsoft.com/library/windows/desktop/aa381977)」、「[MAC、ハッシュ、および署名](macs-hashes-and-signatures.md)」、および「[暗号化](cryptography.md)」の記事をご覧ください。
 
-## 5 まとめ
+## <a name="5-summary"></a>5 まとめ
 
 
 Windows 10 のユニバーサル Windows プラットフォームには、オペレーティング システムの機能を活用してより安全なアプリを作成する方法が数多くあります。 単一要素、多要素、または OAuth ID プロバイダーを利用する仲介の認証などさまざまな認証シナリオで、最も一般的な認証問題を軽減する API があります。 Windows Hello によって、ユーザーを認識する新しい生体認証サインイン システムが提供されます。また、Windows Hello を使うことで、正しい ID を意図的に回避するような操作をアクティブに阻止することができます。 Microsoft Passport は Windows Hello と連携して、キーと証明書に関する複数の層を提供します。これらの層は、トラステッド プラットフォーム モジュールの外部で公開されたり、使われたりすることは決してありません。 また、より詳細なセキュリティ レイヤーを、オプションである構成証明識別キーや証明書の利用時に使うことができます。
@@ -453,10 +453,10 @@ Windows 10 のユニバーサル Windows プラットフォームには、オペ
 
 データがデバイスに到着すると、Windows アプリ モデルは、アプリがインストール、更新される方法、およびデバイスのデータにアクセスする方法をより細かく制御し、アプリが他のアプリのデータに承認されていない方法でアクセスするのを防止します。 資格情報保管ボックスを利用することで、ユーザーの資格情報の保存用に、オペレーティング システムによって管理されるセキュリティで保護された記憶域を使用し、ユニバーサル Windows プラットフォームが提供する暗号化およびハッシュ化する API を使うことによって他のデータをデバイス上で保護することができます。
 
-## 6 リソース
+## <a name="6-resources"></a>6 リソース
 
 
-### 6.1 ハウツー記事
+### <a name="61-how-to-articles"></a>6.1 ハウツー記事
 
 -   [認証とユーザー ID](authentication-and-user-identity.md)
 -   [Microsoft Passport](microsoft-passport.md)
@@ -473,7 +473,7 @@ Windows 10 のユニバーサル Windows プラットフォームには、オペ
 -   [暗号化に関する輸出制限の順守](export-restrictions-on-cryptography.md)
 -   [一般的な暗号化タスク](common-cryptography-tasks.md)
 
-### 6.2 コード サンプル
+### <a name="62-code-samples"></a>6.2 コード サンプル
 
 -   [資格情報保管ボックス](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/PasswordVault)
 -   [資格情報ピッカー](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CredentialPicker)
@@ -484,7 +484,7 @@ Windows 10 のユニバーサル Windows プラットフォームには、オペ
 -   [Web アカウント管理](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/WebAccountManagement)
 -   [WebAuthenticationBroker](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/WebAuthenticationBroker)
 
-### 6.3 API リファレンス
+### <a name="63-api-reference"></a>6.3 API リファレンス
 
 -   [**Windows.Security.Authentication.OnlineId**](https://msdn.microsoft.com/library/windows/apps/hh701371)
 -   [**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044)
@@ -501,6 +501,6 @@ Windows 10 のユニバーサル Windows プラットフォームには、オペ
 -   [**Windows.Security.EnterpriseData**](https://msdn.microsoft.com/library/windows/apps/dn279153)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 
