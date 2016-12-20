@@ -3614,6 +3614,9 @@
   "fbe8a77e3d5735b14088efb0ff6aa01be8d4badf": [
     "windows-apps-src\\porting\\desktop-to-uwp-distribute.md"
   ],
+  "d3ed0af32c9a44078d0f772d7fc130121f5d4970": [
+    "windows-apps-src\\porting\\desktop-to-uwp-known-issues.md"
+  ],
   "d02921247bd77d59bbb09037a4ced8d3967c33b2": [
     "windows-apps-src\\porting\\desktop-to-uwp-known-issues.md"
   ],
