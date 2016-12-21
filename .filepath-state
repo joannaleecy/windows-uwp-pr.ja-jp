@@ -1940,6 +1940,9 @@
   "1482450a8e5039ffd61a90f7cd38738115c5f2f0": [
     "windows-apps-src\\monetize\\important-notice-eula.md"
   ],
+  "e8a4c40dbc715d82d6f41fef8a49df5bfdfa79ae": [
+    "windows-apps-src\\monetize\\index.md"
+  ],
   "f67eb3212be4ced99ec55f62a5d19169a4200f70": [
     "windows-apps-src\\monetize\\index.md"
   ],
@@ -2050,6 +2053,9 @@
   ],
   "55631d364ca6f2d76d214eca6d00fbdd969c0e15": [
     "windows-apps-src\\monetize\\use-receipts-to-verify-product-purchases.md"
+  ],
+  "e9a2308808ef5c03f226968095041f1bb282abc4": [
+    "windows-apps-src\\monetize\\using-windows-store-services.md"
   ],
   "ed5d27bf74e516717fa0b8e7e526617bea94cc51": [
     "windows-apps-src\\monetize\\using-windows-store-services.md"
@@ -2665,6 +2671,9 @@
   ],
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "82ea533dab4f3bbdaf92c24ec29aad9577989860": [
+    "windows-apps-src\\TOC.md"
   ],
   "84a1e68fb703abdcacb139404dccf75a029d60ca": [
     "windows-apps-src\\TOC.md"
@@ -3338,8 +3347,14 @@
   "dc5fcdd7a3181e07874b761c7183c6c539591704": [
     "windows-apps-src\\monetize\\create-an-app-submission.md"
   ],
+  "8467cddd5eec2348cd35f4f5dc1564b47813a6ca": [
+    "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
+  ],
   "1172be1072f0c539828a08655236be467c6c9fba": [
     "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
+  ],
+  "d2fc29f8f2fc6cc78c1cb04c68844215a3e3eafe": [
+    "windows-apps-src\\monetize\\csharp-code-examples-for-the-windows-store-submission-api.md"
   ],
   "8d88e0df536831551f2e1496d94ca4ec37b52826": [
     "windows-apps-src\\monetize\\csharp-code-examples-for-the-windows-store-submission-api.md"
@@ -3410,6 +3425,9 @@
   "f93b26201ea45dc456013737fef0382aadb56e7f": [
     "windows-apps-src\\monetize\\get-status-for-an-app-submission.md"
   ],
+  "7f7de7c7d9fa9131d38da48e13ce449f4440962d": [
+    "windows-apps-src\\monetize\\java-code-examples-for-the-windows-store-submission-api.md"
+  ],
   "2d98cf05d6f5a89518cfd66235b69951dbb213cc": [
     "windows-apps-src\\monetize\\java-code-examples-for-the-windows-store-submission-api.md"
   ],
@@ -3472,6 +3490,9 @@
   ],
   "7b59bb255774c8050232831e7f0d7a78a921ec6d": [
     "windows-apps-src\\monetize\\manage-flight-submissions.md"
+  ],
+  "1f8d415744d53120191f02a17aed4b7b04fa2f57": [
+    "windows-apps-src\\monetize\\python-code-examples-for-the-windows-store-submission-api.md"
   ],
   "2ea28bd7c1f3d075036453364d2a91305d8dd7e7": [
     "windows-apps-src\\monetize\\python-code-examples-for-the-windows-store-submission-api.md"
@@ -3593,6 +3614,9 @@
   "e0012d586d9b79db77bdeded6f0e1d2ce848bbea": [
     "windows-apps-src\\monetize\\log-custom-events-for-dev-center.md"
   ],
+  "ca9e27944cc4504400191ef1620949b1e8b64ff2": [
+    "windows-apps-src\\monetize\\retail-demo-experience.md"
+  ],
   "7a5367ae13be60be6e5b0ee4f62190f8b3330c59": [
     "windows-apps-src\\monetize\\retail-demo-experience.md"
   ],
@@ -3686,20 +3710,35 @@
   "9fd90cbb8be3a0b2d234eff8a13a98b7f406aadf": [
     "windows-apps-src\\gaming\\arcade-stick.md"
   ],
+  "78514ab102b98adec80b2e5292d7341264a73bd0": [
+    "windows-apps-src\\gaming\\gamepad-and-vibration.md"
+  ],
   "6beb66a46f0908064ddc25cb74b23d0883051c60": [
     "windows-apps-src\\gaming\\gamepad-and-vibration.md"
   ],
   "5306ef31bf20b25a5f2a24dee8bd8b55de2773da": [
     "windows-apps-src\\gaming\\headset.md"
   ],
+  "8d1cfa840e359ad1f6a890ed7e7425d387393e15": [
+    "windows-apps-src\\gaming\\input-for-games.md"
+  ],
   "81c03f6d5999f56a9d995d089c86c82e229a79b3": [
     "windows-apps-src\\gaming\\input-for-games.md"
+  ],
+  "15e5096c00334bf200fa0076d227e42fc463e25d": [
+    "windows-apps-src\\gaming\\input-practices-for-games.md"
   ],
   "b385b035060de8c837f7bcb3b129361c09dc0e4c": [
     "windows-apps-src\\gaming\\input-practices-for-games.md"
   ],
+  "5dda1043aef1fd020015b427dc966984fe85ede3": [
+    "windows-apps-src\\gaming\\racing-wheel-and-force-feedback.md"
+  ],
   "5bec43064da2ccd316980ba8b608331256a8c6cf": [
     "windows-apps-src\\gaming\\racing-wheel-and-force-feedback.md"
+  ],
+  "aa1ec06469db74fa1b4e4af44642cf6ccce167db": [
+    "windows-apps-src\\gaming\\ui-navigation-controller.md"
   ],
   "847e589a0e1ad9d58d9a1156c4df6a9bf4fc69ad": [
     "windows-apps-src\\gaming\\ui-navigation-controller.md"

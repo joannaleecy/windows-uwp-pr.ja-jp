@@ -2729,6 +2729,136 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5306ef31bf20b25a5f2a24dee8bd8b55de2773da.8a0c5d4738fdb7214a1705ad2e37c8e6e61b40d0.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md.09ae01926464f8f9e337e43a329d9ace28955450.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md",
+      "XliffHash": "09ae01926464f8f9e337e43a329d9ace28955450",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8467cddd5eec2348cd35f4f5dc1564b47813a6ca.50956336e03d9f06bd62cd4159235948d8274aca.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\input-practices-for-games.md.0e136893ea62171208aa490dc5a7a71dbf1248fc.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\input-practices-for-games.md",
+      "XliffHash": "0e136893ea62171208aa490dc5a7a71dbf1248fc",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\15e5096c00334bf200fa0076d227e42fc463e25d.9fa25ae2778e4feb2ea60f399aa2afbcc596a77a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\TOC.md.3b76ebac43889ea02d2e9805ee01ce824f8b485e.HT": {
+      "SourceFilename": "windows-apps-src\\TOC.md",
+      "XliffHash": "3b76ebac43889ea02d2e9805ee01ce824f8b485e",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\82ea533dab4f3bbdaf92c24ec29aad9577989860.8085d8240f2874adfb6b6c50b6902a22e95ad984.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\ui-navigation-controller.md.71e51d747775336ac8cb7ecd61db78df27e74662.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\ui-navigation-controller.md",
+      "XliffHash": "71e51d747775336ac8cb7ecd61db78df27e74662",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\aa1ec06469db74fa1b4e4af44642cf6ccce167db.b11ce28b44bba1c3869d3a11e38d499d5ae37870.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\gamepad-and-vibration.md.9dd7889455ce96eda1dabb94c73148eb228c6069.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\gamepad-and-vibration.md",
+      "XliffHash": "9dd7889455ce96eda1dabb94c73148eb228c6069",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\78514ab102b98adec80b2e5292d7341264a73bd0.73728952c8fc41f22e2771f2106f012851e086a8.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\csharp-code-examples-for-the-windows-store-submission-api.md.aff306fda696caf51a6c1dd37d801e8276aa3315.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\csharp-code-examples-for-the-windows-store-submission-api.md",
+      "XliffHash": "aff306fda696caf51a6c1dd37d801e8276aa3315",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d2fc29f8f2fc6cc78c1cb04c68844215a3e3eafe.f8581b46b181234a10ccb574faa342cc1876a0d2.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\java-code-examples-for-the-windows-store-submission-api.md.f2d2ec5c8c203ba96d553bbb0465c6e35e9cec5d.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\java-code-examples-for-the-windows-store-submission-api.md",
+      "XliffHash": "f2d2ec5c8c203ba96d553bbb0465c6e35e9cec5d",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7f7de7c7d9fa9131d38da48e13ce449f4440962d.f7dd5baab6f901afb6d59b793d9403dc172a8a47.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\racing-wheel-and-force-feedback.md.e1b9f92a8294c13a861e4348700d891858cc6321.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\racing-wheel-and-force-feedback.md",
+      "XliffHash": "e1b9f92a8294c13a861e4348700d891858cc6321",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5dda1043aef1fd020015b427dc966984fe85ede3.ea0fd80c016b6db1d288d286303a3b6b3eb1c7f1.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\python-code-examples-for-the-windows-store-submission-api.md.eb0440d7a37e9360f30b25398d5486646140cb8a.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\python-code-examples-for-the-windows-store-submission-api.md",
+      "XliffHash": "eb0440d7a37e9360f30b25398d5486646140cb8a",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1f8d415744d53120191f02a17aed4b7b04fa2f57.f1ac51b42b91b45224d1bfcc764b24391095287b.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\index.md.a5cbc49110f60859a970939f498182a8d2ff68af.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\index.md",
+      "XliffHash": "a5cbc49110f60859a970939f498182a8d2ff68af",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e8a4c40dbc715d82d6f41fef8a49df5bfdfa79ae.9486f3ab5daed4e444dac073b9a2bf9c25d5ba47.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\retail-demo-experience.md.df2c77e204f83ae1b5eed42a08d7ae42b11759b3.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\retail-demo-experience.md",
+      "XliffHash": "df2c77e204f83ae1b5eed42a08d7ae42b11759b3",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ca9e27944cc4504400191ef1620949b1e8b64ff2.34b9de276d961f0560faee400dff8620640a4fdb.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\using-windows-store-services.md.b5c1bdca327fb22106b1873ab460c1bf475bf472.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\using-windows-store-services.md",
+      "XliffHash": "b5c1bdca327fb22106b1873ab460c1bf475bf472",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e9a2308808ef5c03f226968095041f1bb282abc4.a7f1e147a9d0725cf219473ba6c7f117a71b5fbe.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\input-for-games.md.8f2f6acf83b22b89c6474ad6abad9a7426283a07.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\input-for-games.md",
+      "XliffHash": "8f2f6acf83b22b89c6474ad6abad9a7426283a07",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8d1cfa840e359ad1f6a890ed7e7425d387393e15.3ac73f3bcdf6f42053083d566aceb8f21900f65a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
