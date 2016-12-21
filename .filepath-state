@@ -2666,6 +2666,9 @@
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "84a1e68fb703abdcacb139404dccf75a029d60ca": [
+    "windows-apps-src\\TOC.md"
+  ],
   "4b6cc924805f060da4c1091c9718afe114fdc735": [
     "windows-apps-src\\TOC.md"
   ],
@@ -3679,5 +3682,26 @@
   ],
   "40b2a15379129142a84c4a5caf4317dc50041e06": [
     "windows-apps-src\\launch-resume\\run-minimized-with-extended-execution.md"
+  ],
+  "9fd90cbb8be3a0b2d234eff8a13a98b7f406aadf": [
+    "windows-apps-src\\gaming\\arcade-stick.md"
+  ],
+  "6beb66a46f0908064ddc25cb74b23d0883051c60": [
+    "windows-apps-src\\gaming\\gamepad-and-vibration.md"
+  ],
+  "5306ef31bf20b25a5f2a24dee8bd8b55de2773da": [
+    "windows-apps-src\\gaming\\headset.md"
+  ],
+  "81c03f6d5999f56a9d995d089c86c82e229a79b3": [
+    "windows-apps-src\\gaming\\input-for-games.md"
+  ],
+  "b385b035060de8c837f7bcb3b129361c09dc0e4c": [
+    "windows-apps-src\\gaming\\input-practices-for-games.md"
+  ],
+  "5bec43064da2ccd316980ba8b608331256a8c6cf": [
+    "windows-apps-src\\gaming\\racing-wheel-and-force-feedback.md"
+  ],
+  "847e589a0e1ad9d58d9a1156c4df6a9bf4fc69ad": [
+    "windows-apps-src\\gaming\\ui-navigation-controller.md"
   ]
 }
