@@ -3710,6 +3710,9 @@
   "9fd90cbb8be3a0b2d234eff8a13a98b7f406aadf": [
     "windows-apps-src\\gaming\\arcade-stick.md"
   ],
+  "5d64c463b572dfc6da5ed453308c56a05d0a4410": [
+    "windows-apps-src\\gaming\\gamepad-and-vibration.md"
+  ],
   "78514ab102b98adec80b2e5292d7341264a73bd0": [
     "windows-apps-src\\gaming\\gamepad-and-vibration.md"
   ],
@@ -3731,11 +3734,17 @@
   "b385b035060de8c837f7bcb3b129361c09dc0e4c": [
     "windows-apps-src\\gaming\\input-practices-for-games.md"
   ],
+  "ea2c1f359424f042b9563e2723c1eb34ee8ddff0": [
+    "windows-apps-src\\gaming\\racing-wheel-and-force-feedback.md"
+  ],
   "5dda1043aef1fd020015b427dc966984fe85ede3": [
     "windows-apps-src\\gaming\\racing-wheel-and-force-feedback.md"
   ],
   "5bec43064da2ccd316980ba8b608331256a8c6cf": [
     "windows-apps-src\\gaming\\racing-wheel-and-force-feedback.md"
+  ],
+  "ad10f5758f4a66552f9c4e4750667e8d13f4c09f": [
+    "windows-apps-src\\gaming\\ui-navigation-controller.md"
   ],
   "aa1ec06469db74fa1b4e4af44642cf6ccce167db": [
     "windows-apps-src\\gaming\\ui-navigation-controller.md"

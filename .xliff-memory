@@ -2859,6 +2859,36 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8d1cfa840e359ad1f6a890ed7e7425d387393e15.3ac73f3bcdf6f42053083d566aceb8f21900f65a.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\ui-navigation-controller.md.8d003eddef663330dea1af3553f0d6b01b770121.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\ui-navigation-controller.md",
+      "XliffHash": "8d003eddef663330dea1af3553f0d6b01b770121",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ad10f5758f4a66552f9c4e4750667e8d13f4c09f.b50b8ec38a334ada5a01da582a2154a6b7bc3acd.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\racing-wheel-and-force-feedback.md.d46e595303c47ab68bfa6f4c36e068c967f7dade.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\racing-wheel-and-force-feedback.md",
+      "XliffHash": "d46e595303c47ab68bfa6f4c36e068c967f7dade",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ea2c1f359424f042b9563e2723c1eb34ee8ddff0.dc9b850658d7512f52ed52d5f716a79b96a05142.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\gamepad-and-vibration.md.ce86a09f75feda733e5a65e9aab78025f0cb0972.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\gamepad-and-vibration.md",
+      "XliffHash": "ce86a09f75feda733e5a65e9aab78025f0cb0972",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5d64c463b572dfc6da5ed453308c56a05d0a4410.329ecd0921d569f7b5ee2e3581e7d388066d66e6.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
