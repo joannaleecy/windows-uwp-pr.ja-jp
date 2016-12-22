@@ -1790,6 +1790,9 @@
   "e91f0bbb203ef1c77ad1435b1a3f10aa53c3a483": [
     "windows-apps-src\\maps-and-location\\set-up-a-geofence.md"
   ],
+  "596cc5054367acf0d3609a34b764bc7fcf33ea0b": [
+    "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
+  ],
   "5f2233b388cbe8e2ef6359536c0e9437006fb82e": [
     "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
   ],
@@ -2059,6 +2062,9 @@
   ],
   "ed5d27bf74e516717fa0b8e7e526617bea94cc51": [
     "windows-apps-src\\monetize\\using-windows-store-services.md"
+  ],
+  "d7677c85408af22e882444119dc0231eebe4fa9a": [
+    "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md"
   ],
   "86d7383a7288434ec613244e4c2ba610889a45fb": [
     "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md"
@@ -3235,6 +3241,9 @@
   ],
   "ea4c5637a970a63938da2b1bea9f11fd39de9cc8": [
     "windows-apps-src\\monetize\\implement-a-trial-version-of-your-app.md"
+  ],
+  "33004b5229167bedd4cbafe5279709f1225ed02c": [
+    "windows-apps-src\\monetize\\in-app-purchases-and-trials.md"
   ],
   "053981b33a58b8317ea999ceac1d1d26027aba34": [
     "windows-apps-src\\monetize\\in-app-purchases-and-trials.md"
