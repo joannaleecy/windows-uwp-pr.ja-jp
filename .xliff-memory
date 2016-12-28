@@ -2919,6 +2919,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\596cc5054367acf0d3609a34b764bc7fcf33ea0b.7d3d361c0bfcc1de36112cc77f8381ea2581794d.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\device-primer.md.41d5c9f9b58ad4c34f5ace0dacb498b9c4fd9af4.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\device-primer.md",
+      "XliffHash": "41d5c9f9b58ad4c34f5ace0dacb498b9c4fd9af4",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ea19592ea98eb7d9a1b47c1a8cf8f1990ca33797.718283cf19f1deb1e4c0a2fb97d877be04241eb9.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
