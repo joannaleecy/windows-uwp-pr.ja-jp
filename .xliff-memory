@@ -2929,6 +2929,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ea19592ea98eb7d9a1b47c1a8cf8f1990ca33797.718283cf19f1deb1e4c0a2fb97d877be04241eb9.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\layout\\navigation-history-and-backwards-navigation.md.6757368059961dfd7ffe7ba20ef82edb0153a1b4.HT": {
+      "SourceFilename": "windows-apps-src\\layout\\navigation-history-and-backwards-navigation.md",
+      "XliffHash": "6757368059961dfd7ffe7ba20ef82edb0153a1b4",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\bfff3a4787a37156ef3232372a125db60678ebac.f976455f5dd61a6ca04c89f6be0d60aa35919362.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\winrt-components\\walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md.24cd4f1d8d677d0b39dde5b3ffa27c9b838c58f2.HT": {
+      "SourceFilename": "windows-apps-src\\winrt-components\\walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md",
+      "XliffHash": "24cd4f1d8d677d0b39dde5b3ffa27c9b838c58f2",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\16502dbda2495333d512d9d7a3e0a7f8a8f98562.c59d51fca94777ee7008a7ed946a2feb8129b609.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

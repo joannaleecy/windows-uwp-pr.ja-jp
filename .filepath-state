@@ -1715,6 +1715,9 @@
   "2a4005aa12a123c0f9e98486fa1c69839a14276c": [
     "windows-apps-src\\layout\\navigation-basics.md"
   ],
+  "bfff3a4787a37156ef3232372a125db60678ebac": [
+    "windows-apps-src\\layout\\navigation-history-and-backwards-navigation.md"
+  ],
   "5144ea884d2ef7067e738aa6228217e8a14168ef": [
     "windows-apps-src\\layout\\navigation-history-and-backwards-navigation.md"
   ],
@@ -2731,6 +2734,9 @@
   ],
   "0085d3edb2ec1fbe14ce268c54532cd246a73dde": [
     "windows-apps-src\\winrt-components\\walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md"
+  ],
+  "16502dbda2495333d512d9d7a3e0a7f8a8f98562": [
+    "windows-apps-src\\winrt-components\\walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md"
   ],
   "ff9db6298fd6d0083ae6923f3666ce4315573058": [
     "windows-apps-src\\winrt-components\\walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md"
