@@ -2054,6 +2054,9 @@
   "4a8b43ac0b6752b78e998ac16776b84e9ddda09f": [
     "windows-apps-src\\monetize\\troubleshooting-guides.md"
   ],
+  "ce39829cd6cd2dfb0c6a3aef930dd8fa82351b75": [
+    "windows-apps-src\\monetize\\ui-and-user-experience-guidelines.md"
+  ],
   "2ecfae0a10565b99428fc9f16ae9f3530375c357": [
     "windows-apps-src\\monetize\\ui-and-user-experience-guidelines.md"
   ],
@@ -3601,6 +3604,9 @@
   ],
   "b361a558ecef2030370590eedbef69bd04cf68bd": [
     "windows-apps-src\\launch-resume\\convert-out-of-process-background-task.md"
+  ],
+  "2ab02b8edda9aeadc9962464a63e08f1fb407777": [
+    "windows-apps-src\\launch-resume\\create-and-register-an-inproc-background-task.md"
   ],
   "32147efccb2b574038929e25d9607f98d6270ae7": [
     "windows-apps-src\\launch-resume\\create-and-register-an-inproc-background-task.md"

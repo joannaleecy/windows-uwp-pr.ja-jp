@@ -2989,6 +2989,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1990a3ad4e56fa039d024c53a04b021e60bed145.741a984aff650a4b9c2b0b28f45d5f9b3d82f6c5.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\ui-and-user-experience-guidelines.md.00aaae21b0a1bdb641216ab945dfde32929e9cc2.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\ui-and-user-experience-guidelines.md",
+      "XliffHash": "00aaae21b0a1bdb641216ab945dfde32929e9cc2",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ce39829cd6cd2dfb0c6a3aef930dd8fa82351b75.1a332c5706c77e47c7149a03d32509066dcefe89.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\launch-resume\\create-and-register-an-inproc-background-task.md.7f7e8c2ae56d5b9ca32301aa4d4dd24357e8b349.HT": {
+      "SourceFilename": "windows-apps-src\\launch-resume\\create-and-register-an-inproc-background-task.md",
+      "XliffHash": "7f7e8c2ae56d5b9ca32301aa4d4dd24357e8b349",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2ab02b8edda9aeadc9962464a63e08f1fb407777.3abc69f7e41d89f0a74d9f60fa13d61034a6bcdc.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
