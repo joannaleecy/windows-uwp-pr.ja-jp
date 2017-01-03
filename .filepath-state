@@ -857,6 +857,9 @@
   "ae6a9806e982a866834371a60788f7a788b04e47": [
     "windows-apps-src\\files\\quickstart-save-a-file-with-a-picker.md"
   ],
+  "08782286228fa25dc492b0e7ccc90958bdec5a7f": [
+    "windows-apps-src\\files\\quickstart-using-file-and-folder-pickers.md"
+  ],
   "e7884f140915d66b4a9f95a4197e717d63b0f25f": [
     "windows-apps-src\\files\\quickstart-using-file-and-folder-pickers.md"
   ],
@@ -3697,6 +3700,9 @@
   ],
   "854ec43d075f8adc1f875d3b9e5e2d818434edb9": [
     "windows-apps-src\\debug-test-perf\\optimize-background-activity.md"
+  ],
+  "1990a3ad4e56fa039d024c53a04b021e60bed145": [
+    "windows-apps-src\\layout\\grid-tutorial.md"
   ],
   "3e96a508d7712d208832a22b629facd6284bb98c": [
     "windows-apps-src\\layout\\grid-tutorial.md"
