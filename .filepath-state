@@ -1922,6 +1922,9 @@
   "86685984256459e0bb125340daa1616b09982429": [
     "windows-apps-src\\monetize\\get-app-ratings.md"
   ],
+  "7208fe26b3fbc4bc25b2bdb6c07d6e4793a6cbf7": [
+    "windows-apps-src\\monetize\\get-app-reviews.md"
+  ],
   "49d3f3cb608f3207306af443c67b684a0ae9f319": [
     "windows-apps-src\\monetize\\get-app-reviews.md"
   ],
@@ -2480,6 +2483,9 @@
   "3d14f1d11290942a90498f7aff4dc324daa3a84e": [
     "windows-apps-src\\publish\\supported-languages.md"
   ],
+  "36c970938df1ca6bc919afe34a916213441a71d2": [
+    "windows-apps-src\\publish\\tax-details-for-paid-apps.md"
+  ],
   "69ae8d29df626f6a1e2ce1bb4a8a09e99353a0ac": [
     "windows-apps-src\\publish\\tax-details-for-paid-apps.md"
   ],
@@ -2695,6 +2701,9 @@
   ],
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "9ed5b4865b948622957a6dec4f3e5768de87556d": [
+    "windows-apps-src\\TOC.md"
   ],
   "82ea533dab4f3bbdaf92c24ec29aad9577989860": [
     "windows-apps-src\\TOC.md"
@@ -3787,5 +3796,11 @@
   ],
   "847e589a0e1ad9d58d9a1156c4df6a9bf4fc69ad": [
     "windows-apps-src\\gaming\\ui-navigation-controller.md"
+  ],
+  "45c3605cebc74597030be4f22d0c65cdc0a58768": [
+    "windows-apps-src\\monetize\\get-response-info-for-app-reviews.md"
+  ],
+  "05624d16f3cd755626229b83d29eb5cc15960b2f": [
+    "windows-apps-src\\monetize\\submit-responses-to-app-reviews.md"
   ]
 }
