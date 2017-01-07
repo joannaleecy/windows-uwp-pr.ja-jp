@@ -2357,6 +2357,9 @@
   "3fb8594748d303216a4437983604b5d78c993934": [
     "windows-apps-src\\publish\\define-pricing-and-market-selection.md"
   ],
+  "71d9da93dc767c8db2aeb4cf09cd91a51aae2191": [
+    "windows-apps-src\\publish\\dev-center-insider-program.md"
+  ],
   "96ce11cd78b1398f4079f63b17da26bd7776a140": [
     "windows-apps-src\\publish\\dev-center-insider-program.md"
   ],
@@ -2407,6 +2410,9 @@
   ],
   "aa35a1e46c5fea9bb64602af3842735f1914b039": [
     "windows-apps-src\\publish\\make-your-app-easier-to-promote.md"
+  ],
+  "107aff78014e43af07769cec115bec9f25c24347": [
+    "windows-apps-src\\publish\\manage-account-users.md"
   ],
   "2beba2cd6f818782750c812829bc04a9297048a1": [
     "windows-apps-src\\publish\\manage-account-users.md"
