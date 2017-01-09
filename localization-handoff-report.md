@@ -1,20 +1,19 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\dev-center-insider-program.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/5a8374867015e19e2026194e840508f3d47a6787?path=windows-apps-src%2Fpublish%2Fdev-center-insider-program.md&_a=contents) | HandedOffSuccess | [Details](#71d9da93dc767c8db2aeb4cf09cd91a51aae21915728)
- [windows-apps-src\publish\manage-account-users.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/1738e3ddd29ecd45643d8915b2c7f7d4f8efb8fe?path=windows-apps-src%2Fpublish%2Fmanage-account-users.md&_a=contents) | HandedOffSuccess | [Details](#107aff78014e43af07769cec115bec9f25c243475755)
+ [windows-apps-src\apps-for-education\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/47f0ca1ae08e0a78c6ca1e7ed6fc4d84bb1fc593?path=windows-apps-src%2Fapps-for-education%2Findex.md&_a=contents) | HandedOffSuccess | [Details](#6d3e193d3e38935371274607ff988136450fffb9157)
 
 ## Item Details
-##### <a name='71d9da93dc767c8db2aeb4cf09cd91a51aae21915728'></a> Source: [windows-apps-src\publish\dev-center-insider-program.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/5a8374867015e19e2026194e840508f3d47a6787?path=windows-apps-src%2Fpublish%2Fdev-center-insider-program.md&_a=contents)
+##### <a name='6d3e193d3e38935371274607ff988136450fffb9157'></a> Source: [windows-apps-src\apps-for-education\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/47f0ca1ae08e0a78c6ca1e7ed6fc4d84bb1fc593?path=windows-apps-src%2Fapps-for-education%2Findex.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/2b157bbe1f527650551e54fbc8e02a5fa33d0644?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fdev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-01-07 00:11:41
+* Handoff File: [index.2cc87043830bb9640c617568c764ed1059899790.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/1629b896823bc33a173ef1091e5b62e8c7b3db4b?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Findex.2cc87043830bb9640c617568c764ed1059899790.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-01-09 20:07:49
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -22,29 +21,10 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\publish\dev-center-insider-program.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/94b4321bb5dd263955ca2211a312bbd0b2b4b105?path=windows-apps-src%2Fpublish%2Fdev-center-insider-program.md&_a=contents)
-* Current Handback File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/1aa649d9aea9534cd7eb0453080e5e7830e9b3fa?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fdev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\apps-for-education\index.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/94b4321bb5dd263955ca2211a312bbd0b2b4b105?path=windows-apps-src%2Fapps-for-education%2Findex.md&_a=contents)
+* Current Handback File: [index.2cc87043830bb9640c617568c764ed1059899790.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/1aa649d9aea9534cd7eb0453080e5e7830e9b3fa?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Findex.2cc87043830bb9640c617568c764ed1059899790.ja-jp.xlf&_a=contents)
 * Current Handback Datetime: 2016-11-30 15:16:15
-* Bilingual File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/1aa649d9aea9534cd7eb0453080e5e7830e9b3fa?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fdev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ja-jp.xlf&_a=contents)
-* Bilingual Datetime: 2016-11-30 15:23:26
-* [Back to Top](#report-top)
-
-##### <a name='107aff78014e43af07769cec115bec9f25c243475755'></a> Source: [windows-apps-src\publish\manage-account-users.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/1738e3ddd29ecd45643d8915b2c7f7d4f8efb8fe?path=windows-apps-src%2Fpublish%2Fmanage-account-users.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/2b157bbe1f527650551e54fbc8e02a5fa33d0644?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmanage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-01-07 00:11:41
-* Handoff Reason: Include
-* Handoff Name: 
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Handback Name: 
-* Current Target File: [windows-apps-src\publish\manage-account-users.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/94b4321bb5dd263955ca2211a312bbd0b2b4b105?path=windows-apps-src%2Fpublish%2Fmanage-account-users.md&_a=contents)
-* Current Handback File: [manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/1aa649d9aea9534cd7eb0453080e5e7830e9b3fa?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmanage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.ja-jp.xlf&_a=contents)
-* Current Handback Datetime: 2016-11-30 15:16:15
-* Bilingual File: [manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/1aa649d9aea9534cd7eb0453080e5e7830e9b3fa?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmanage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.ja-jp.xlf&_a=contents)
+* Bilingual File: [index.2cc87043830bb9640c617568c764ed1059899790.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/1aa649d9aea9534cd7eb0453080e5e7830e9b3fa?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Findex.2cc87043830bb9640c617568c764ed1059899790.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2016-11-30 15:23:26
 * [Back to Top](#report-top)
 
