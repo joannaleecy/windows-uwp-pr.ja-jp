@@ -3099,6 +3099,36 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6d3e193d3e38935371274607ff988136450fffb9.927f370854714ca24ed5a98c26ae5ad789434dd8.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\e2e.md.69c2dfc80c50ae998128b7e9796165b0b5f26bbf.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\e2e.md",
+      "XliffHash": "69c2dfc80c50ae998128b7e9796165b0b5f26bbf",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\de2e253bbd864349c4bdfbe2bd20e0517e48bbba.4c7db06c1388ea6f109587eb31e287d8451e7da9.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\desktop-to-uwp-prepare.md.57bb3c9fbf6c4911aa99952fefc07ae34cf06f3d.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\desktop-to-uwp-prepare.md",
+      "XliffHash": "57bb3c9fbf6c4911aa99952fefc07ae34cf06f3d",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\99f3d26fc3e984245e5f3e486fa50b44793ce08b.6e554329e889d2393601f03e3df528967b62f7b1.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\audio-video-camera\\playready-client-sdk.md.448157374756fd91db88e1a0de05550755e341b7.HT": {
+      "SourceFilename": "windows-apps-src\\audio-video-camera\\playready-client-sdk.md",
+      "XliffHash": "448157374756fd91db88e1a0de05550755e341b7",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\26b3012b4f41233f40235d56b911417e195489dd.cf4108517eaa61d445eb2c674dd687902ecfbf46.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

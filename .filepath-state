@@ -200,6 +200,9 @@
   "cc3553aff7c30a2e84b527dc9e108f7c45b7b21f": [
     "windows-apps-src\\audio-video-camera\\midi.md"
   ],
+  "26b3012b4f41233f40235d56b911417e195489dd": [
+    "windows-apps-src\\audio-video-camera\\playready-client-sdk.md"
+  ],
   "97a3002c1e61d8f7d31b81a3a80d7473a5dc6077": [
     "windows-apps-src\\audio-video-camera\\playready-client-sdk.md"
   ],
@@ -925,6 +928,9 @@
   ],
   "1e2039743ba45d577c08c0a6d9c17c7f923b2d86": [
     "windows-apps-src\\gaming\\draw-to-the-screen.md"
+  ],
+  "de2e253bbd864349c4bdfbe2bd20e0517e48bbba": [
+    "windows-apps-src\\gaming\\e2e.md"
   ],
   "af9252d172bab96ce50eb7ff12d8f0503f010d15": [
     "windows-apps-src\\gaming\\e2e.md"
@@ -3706,6 +3712,9 @@
   ],
   "d02921247bd77d59bbb09037a4ced8d3967c33b2": [
     "windows-apps-src\\porting\\desktop-to-uwp-known-issues.md"
+  ],
+  "99f3d26fc3e984245e5f3e486fa50b44793ce08b": [
+    "windows-apps-src\\porting\\desktop-to-uwp-prepare.md"
   ],
   "a93d5ad1c1f429182c8df7d29df85dee70064e2f": [
     "windows-apps-src\\porting\\desktop-to-uwp-prepare.md"
