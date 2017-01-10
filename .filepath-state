@@ -1943,6 +1943,9 @@
   "b5fe116ea850e93b5208b829e4ed6cec2bc42de0": [
     "windows-apps-src\\monetize\\get-started-with-microsoft-advertising-libraries.md"
   ],
+  "1a4e73a2a6a9ada10ee0bcf76059bd0c9ab3e41a": [
+    "windows-apps-src\\monetize\\grant-free-products.md"
+  ],
   "2eca8712075ce1f9d876f3ae441381734bd52370": [
     "windows-apps-src\\monetize\\grant-free-products.md"
   ],
@@ -2150,6 +2153,9 @@
   "100d1b94dec44cbf00d4a3cacd6aa74f94c20d9c": [
     "windows-apps-src\\packaging\\app-capability-declarations.md"
   ],
+  "53fa7a8ca941147a4c8389551c3d3e4b5f4a59c6": [
+    "windows-apps-src\\packaging\\index.md"
+  ],
   "8aa4bfc8004b4d0739fe09e6e49e66de372569c4": [
     "windows-apps-src\\packaging\\index.md"
   ],
@@ -2339,11 +2345,17 @@
   "48128577d41a9810062288ae908646c391aae849": [
     "windows-apps-src\\publish\\channels-and-conversions-report.md"
   ],
+  "6d8f8e90eb3d64ea812c5ba4e7b76b5d1e6bcd69": [
+    "windows-apps-src\\publish\\common-questions.md"
+  ],
   "ac18d3b036c1ec9290212097a0f9a0feb962d915": [
     "windows-apps-src\\publish\\common-questions.md"
   ],
   "a6e97968df4e9ab986d364b2573a31b4ba9d1958": [
     "windows-apps-src\\publish\\create-a-custom-app-promotion-campaign.md"
+  ],
+  "4a910847f61c6c3128e87268bdb5fc70c840a422": [
+    "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md"
   ],
   "3ea67f9e4f0d834bd77ef116c5e0b16008f4ae5f": [
     "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md"
@@ -2456,6 +2468,9 @@
   "2668152ba471986e00831bdcf46e5a2feba54dcd": [
     "windows-apps-src\\publish\\package-version-numbering.md"
   ],
+  "c3d6a3a8f0eaf8e154a69ee5316c15c3b8ec2621": [
+    "windows-apps-src\\publish\\payout-summary.md"
+  ],
   "145fac07ca3c83d5441c0f43c5ad286163c03a8b": [
     "windows-apps-src\\publish\\payout-summary.md"
   ],
@@ -2476,6 +2491,9 @@
   ],
   "71f8ee9e2b8d1f892711ada30c58eefde250cca3": [
     "windows-apps-src\\publish\\resolve-submission-errors.md"
+  ],
+  "fc236d3b8ddc57d037bcdfa9c7bb7ae548438874": [
+    "windows-apps-src\\publish\\respond-to-customer-reviews.md"
   ],
   "24d327a92a6a58ecf265f9cdadd5a49d24c0857d": [
     "windows-apps-src\\publish\\respond-to-customer-reviews.md"
@@ -2716,6 +2734,9 @@
   ],
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "4847b181b2ab7fdc28d81ff806f073e4b99f755a": [
+    "windows-apps-src\\TOC.md"
   ],
   "9ed5b4865b948622957a6dec4f3e5768de87556d": [
     "windows-apps-src\\TOC.md"
@@ -3049,6 +3070,9 @@
   ],
   "d7246bc898e36155996941875b6c00da7891809d": [
     "windows-apps-src\\usability\\index.md"
+  ],
+  "8087d0bbc6d24027c0a9cbf7b78d3fd785fc36ee": [
+    "windows-apps-src\\publish\\index.md"
   ],
   "6e2b6158a586fa82780664cd2ef2de0b425a1f1d": [
     "windows-apps-src\\publish\\index.md"
@@ -3677,6 +3701,9 @@
   "b1828b1add220ae7eecf72c406fe5250dbe873de": [
     "windows-apps-src\\monetize\\halt-the-package-rollout-for-an-app-submission.md"
   ],
+  "e42e4c256027856ed60d5c6670381b57530a32eb": [
+    "windows-apps-src\\monetize\\log-custom-events-for-dev-center.md"
+  ],
   "e0012d586d9b79db77bdeded6f0e1d2ce848bbea": [
     "windows-apps-src\\monetize\\log-custom-events-for-dev-center.md"
   ],
@@ -3832,5 +3859,11 @@
   ],
   "05624d16f3cd755626229b83d29eb5cc15960b2f": [
     "windows-apps-src\\monetize\\submit-responses-to-app-reviews.md"
+  ],
+  "508c15a4ac9bc006dcf5aded6bc52836e3ee0abb": [
+    "windows-apps-src\\packaging\\create-certificate-package-signing.md"
+  ],
+  "a7481872df2931273542815b9797c4fb09d46c90": [
+    "windows-apps-src\\packaging\\sign-app-package-using-signtool.md"
   ]
 }
