@@ -2954,6 +2954,9 @@
   "992182f69fe65967771b8bf75b1cb9883da3633a": [
     "windows-apps-src\\xbox-apps\\development-lanes-html.md"
   ],
+  "c4e547e8f3de234391effb052d0b2bc149714b12": [
+    "windows-apps-src\\xbox-apps\\development-lanes-landing.md"
+  ],
   "383e0f77ff9b810d5e5627b8df9ca09b03f4d0ae": [
     "windows-apps-src\\xbox-apps\\development-lanes-landing.md"
   ],
@@ -3712,6 +3715,9 @@
   ],
   "d02921247bd77d59bbb09037a4ced8d3967c33b2": [
     "windows-apps-src\\porting\\desktop-to-uwp-known-issues.md"
+  ],
+  "7963fad3b72a979e7c883c6eeafd80dea0a4d05a": [
+    "windows-apps-src\\porting\\desktop-to-uwp-prepare.md"
   ],
   "99f3d26fc3e984245e5f3e486fa50b44793ce08b": [
     "windows-apps-src\\porting\\desktop-to-uwp-prepare.md"

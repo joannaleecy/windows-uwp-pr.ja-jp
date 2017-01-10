@@ -3129,6 +3129,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\26b3012b4f41233f40235d56b911417e195489dd.cf4108517eaa61d445eb2c674dd687902ecfbf46.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\desktop-to-uwp-prepare.md.b37df318d629e14b4030433326093d78cfc8727f.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\desktop-to-uwp-prepare.md",
+      "XliffHash": "b37df318d629e14b4030433326093d78cfc8727f",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7963fad3b72a979e7c883c6eeafd80dea0a4d05a.bd8d703fdcde4b55d81b7e358d32c843fa82cbb5.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\xbox-apps\\development-lanes-landing.md.10782a2489b07896ae21bd287908332e4415923a.HT": {
+      "SourceFilename": "windows-apps-src\\xbox-apps\\development-lanes-landing.md",
+      "XliffHash": "10782a2489b07896ae21bd287908332e4415923a",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c4e547e8f3de234391effb052d0b2bc149714b12.d6bea127b501691c6b1f91a165f4688bf7d48cb1.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
