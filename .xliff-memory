@@ -3309,6 +3309,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ec4c0e93a278bd5f3aa2b7be5ed6b80fc1218132.6236ad0366e5797bae75dd862d33b503de9ebf17.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\walkthrough--simple-port-from-direct3d-9-to-11-1.md.0cadd6a040d9ae2eeba079ec7760e0c319d8353f.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\walkthrough--simple-port-from-direct3d-9-to-11-1.md",
+      "XliffHash": "0cadd6a040d9ae2eeba079ec7760e0c319d8353f",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\694b16cd867315ddc3981340d566d245b3b01961.6b248953241f249f2965e3f74eeb0cea9851139d.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
