@@ -260,6 +260,9 @@
   "7edfcf2e1a73fe522693c4b328d5d72a8759d5cb": [
     "windows-apps-src\\controls-and-patterns\\active-canvas.md"
   ],
+  "01869ea568ec128a6a7f9b87523b089c0a300fe5": [
+    "windows-apps-src\\controls-and-patterns\\app-bars.md"
+  ],
   "c6d295a21825d1e89eaafcba59ca3a1b85669da9": [
     "windows-apps-src\\controls-and-patterns\\app-bars.md"
   ],
@@ -271,6 +274,9 @@
   ],
   "9406f9b826dfb7d2603a0812f209dfb38cf639ae": [
     "windows-apps-src\\controls-and-patterns\\auto-suggest-box.md"
+  ],
+  "4f1c3291b1dd32176dec4dc11ab903853043dc51": [
+    "windows-apps-src\\controls-and-patterns\\buttons.md"
   ],
   "bb670533769d8bae9cdea0f18e9cbb5717eb3877": [
     "windows-apps-src\\controls-and-patterns\\buttons.md"
@@ -479,11 +485,17 @@
   "2a652e7bd8223a128fbd77d986c446fa7c74a34c": [
     "windows-apps-src\\controls-and-patterns\\tabs-pivot.md"
   ],
+  "ec4c0e93a278bd5f3aa2b7be5ed6b80fc1218132": [
+    "windows-apps-src\\controls-and-patterns\\text-block.md"
+  ],
   "9f52252d1d6efb5f0b8b8bc39c1e048f767bc805": [
     "windows-apps-src\\controls-and-patterns\\text-block.md"
   ],
   "94f858912473f2a0d20f4041155b1e1ee93032a2": [
     "windows-apps-src\\controls-and-patterns\\text-block.md"
+  ],
+  "9ce268494e4cf7367e22254aa6d20d4b2a24f22a": [
+    "windows-apps-src\\controls-and-patterns\\text-box.md"
   ],
   "3cbfa4a2896e5e7453d9fe1793f422d2f7b60c79": [
     "windows-apps-src\\controls-and-patterns\\text-box.md"
@@ -2428,6 +2440,9 @@
   ],
   "aa35a1e46c5fea9bb64602af3842735f1914b039": [
     "windows-apps-src\\publish\\make-your-app-easier-to-promote.md"
+  ],
+  "b941d7640483d25c2d87bac32b9ba5e3dfecc7e2": [
+    "windows-apps-src\\publish\\manage-account-users.md"
   ],
   "107aff78014e43af07769cec115bec9f25c24347": [
     "windows-apps-src\\publish\\manage-account-users.md"

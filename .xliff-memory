@@ -3259,6 +3259,56 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e42e4c256027856ed60d5c6670381b57530a32eb.e8dcd742a2318572e0a649091eab0a5f73f82296.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\text-box.md.cce40a33f523069d6be07b848129914581cebb98.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\text-box.md",
+      "XliffHash": "cce40a33f523069d6be07b848129914581cebb98",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9ce268494e4cf7367e22254aa6d20d4b2a24f22a.056728ddeb19593cd6229a42b9b0383cfc9a7591.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\buttons.md.fd947a3d7d95d622e5f8a6503a1a0cf362ecd597.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\buttons.md",
+      "XliffHash": "fd947a3d7d95d622e5f8a6503a1a0cf362ecd597",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\4f1c3291b1dd32176dec4dc11ab903853043dc51.c0a1b9448ff85366a94679878c72a23e4698e80a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\publish\\manage-account-users.md.d30562f0ea807de1d88bee31a1520c500c81ed1b.HT": {
+      "SourceFilename": "windows-apps-src\\publish\\manage-account-users.md",
+      "XliffHash": "d30562f0ea807de1d88bee31a1520c500c81ed1b",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b941d7640483d25c2d87bac32b9ba5e3dfecc7e2.eddac6d7eb65857b57d60510e0f668e86f902c56.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\app-bars.md.c362ec7630fa4143bba5fb501f8a07806120aac3.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\app-bars.md",
+      "XliffHash": "c362ec7630fa4143bba5fb501f8a07806120aac3",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\01869ea568ec128a6a7f9b87523b089c0a300fe5.a8228316ffea8d46ccdbb48d59260e6e54b9f86f.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\text-block.md.87fbd5e21f96ffb60c75e43f84e5e2ff9a9460aa.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\text-block.md",
+      "XliffHash": "87fbd5e21f96ffb60c75e43f84e5e2ff9a9460aa",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ec4c0e93a278bd5f3aa2b7be5ed6b80fc1218132.6236ad0366e5797bae75dd862d33b503de9ebf17.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
