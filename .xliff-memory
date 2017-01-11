@@ -3319,6 +3319,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\694b16cd867315ddc3981340d566d245b3b01961.6b248953241f249f2965e3f74eeb0cea9851139d.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\e2e.md.9537d6cdcb61de8455de93b1c6526f197f246bf0.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\e2e.md",
+      "XliffHash": "9537d6cdcb61de8455de93b1c6526f197f246bf0",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\53818d16232fbe31b467b12fbb66496f85fbeb94.cd1a7d2e72f958b0b456e25150d9e4a1ac88c40c.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
