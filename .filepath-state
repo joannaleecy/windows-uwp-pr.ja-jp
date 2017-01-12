@@ -134,6 +134,9 @@
   "087db9c426a643cc4c7ecfa7686409ed219b07a5": [
     "windows-apps-src\\audio-video-camera\\audio-graphs.md"
   ],
+  "4f939019374c67cd2f354874898de078a5c7f059": [
+    "windows-apps-src\\audio-video-camera\\background-audio.md"
+  ],
   "f9764405f8177235d1a14aaf5606770c69647731": [
     "windows-apps-src\\audio-video-camera\\background-audio.md"
   ],
@@ -185,6 +188,9 @@
   "ed153b4ebd2f1b6b26f922786b3c005a57d8255d": [
     "windows-apps-src\\audio-video-camera\\imaging.md"
   ],
+  "c5a9b69f71337e990d94a9ada1ec494db0f60bbf": [
+    "windows-apps-src\\audio-video-camera\\index.md"
+  ],
   "d1aad0800bfe4982a316aa5da719db005b687fa1": [
     "windows-apps-src\\audio-video-camera\\index.md"
   ],
@@ -223,6 +229,9 @@
   ],
   "1b20578fe52c004a55c5099ccb89e8c180571009": [
     "windows-apps-src\\audio-video-camera\\set-media-encoding-properties.md"
+  ],
+  "a0d558d3e43e3df0aafb89b842f27ad0fca80f26": [
+    "windows-apps-src\\audio-video-camera\\simple-camera-preview-access.md"
   ],
   "5eb53d1527f2cd002dfb66110f1f1f3618458b3a": [
     "windows-apps-src\\audio-video-camera\\simple-camera-preview-access.md"
@@ -3197,6 +3206,9 @@
   "1b99b959cfdde997f7995c1bdf40d51921b2f1d5": [
     "windows-apps-src\\apps-for-education\\troubleshooting.md"
   ],
+  "e2054468e4688906dc29e466abf1d57e369c00d3": [
+    "windows-apps-src\\audio-video-camera\\basic-photo-video-and-audio-capture-with-MediaCapture.md"
+  ],
   "98f71104b5a95f9327a0b3f879e4dbb91b74b581": [
     "windows-apps-src\\audio-video-camera\\basic-photo-video-and-audio-capture-with-MediaCapture.md"
   ],
@@ -3208,6 +3220,9 @@
   ],
   "0fe495f3eb2c15ccff4a672abd904dc43cfdf193": [
     "windows-apps-src\\audio-video-camera\\create-schedule-and-manage-media-breaks.md"
+  ],
+  "c6163d353bddec68559a5f163e601eae5b807a58": [
+    "windows-apps-src\\audio-video-camera\\handle-device-orientation-with-mediacapture.md"
   ],
   "eb6487e7f2c19a8227320c5a7f087e4b3c3c6270": [
     "windows-apps-src\\audio-video-camera\\handle-device-orientation-with-mediacapture.md"
