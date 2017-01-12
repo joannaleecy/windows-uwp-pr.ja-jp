@@ -3329,6 +3329,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\53818d16232fbe31b467b12fbb66496f85fbeb94.cd1a7d2e72f958b0b456e25150d9e4a1ac88c40c.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\wpsl-to-uwp-root.md.d8b170c064636ef8038766dd0614fb612c05dcc1.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\wpsl-to-uwp-root.md",
+      "XliffHash": "d8b170c064636ef8038766dd0614fb612c05dcc1",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a25ffbaf55943ab0b20b0025ec55065edcd0de6c.df6e09a0b02ee65c98fb3425e1b00a506f3ad3cd.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
