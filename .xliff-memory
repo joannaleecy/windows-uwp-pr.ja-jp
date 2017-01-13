@@ -2446,7 +2446,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\524a0897b6b8a8d17bb7493dc4d9e4357d8c1456.c23e4fb49f85b9cd98dc3df8ed11b8ba9cfcecba.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ce84071917602a313d29b53b06f5659254aa6278.f5ce0e19c16da0508db850eb18502f46d145e9bb.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -3397,6 +3397,36 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6c4b6c20f0971737a578b42630e2a61bb2bda68d.f120640208951d9db559f0600cec4625f590df98.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\relative-mouse-movement.md.b70f7c4ec2bd270f7e5f9ba9fb9cdeafc0b7d918.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\relative-mouse-movement.md",
+      "XliffHash": "b70f7c4ec2bd270f7e5f9ba9fb9cdeafc0b7d918",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b6150aa515478862076c571a16658aba3ac99b43.62d5a5180a517243b92bb34350e95af5601ca56f.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics\\visual-layer.md.aacbf105cd89cc312fcde34e58bce9948df1712c.HT": {
+      "SourceFilename": "windows-apps-src\\graphics\\visual-layer.md",
+      "XliffHash": "aacbf105cd89cc312fcde34e58bce9948df1712c",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c1d16edd8d95ec4dda058d2dc9d789dfacb8fcff.16844b0960df394ecad8a92066885b691811ef37.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics\\composition-animation.md.02bc4dc8de165a46190cfcc2c6431fcaee2b8e46.HT": {
+      "SourceFilename": "windows-apps-src\\graphics\\composition-animation.md",
+      "XliffHash": "02bc4dc8de165a46190cfcc2c6431fcaee2b8e46",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c513ad302369621d45fa8526891f62d55e530613.fc95efb0f80c4ea8b9bca6ca1017cd9cd149b314.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }

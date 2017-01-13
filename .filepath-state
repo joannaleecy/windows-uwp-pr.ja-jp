@@ -1244,6 +1244,9 @@
   "e3e21c55ea8ddeab0969e304080394b940da010d": [
     "windows-apps-src\\graphics\\animations-overview.md"
   ],
+  "c513ad302369621d45fa8526891f62d55e530613": [
+    "windows-apps-src\\graphics\\composition-animation.md"
+  ],
   "72b70dd2ae4de385f2a4711477aebb6d7023158c": [
     "windows-apps-src\\graphics\\composition-animation.md"
   ],
@@ -1276,6 +1279,9 @@
   ],
   "dc415135a05a63226a6b2d0b828245fe2f713788": [
     "windows-apps-src\\graphics\\using-brushes.md"
+  ],
+  "c1d16edd8d95ec4dda058d2dc9d789dfacb8fcff": [
+    "windows-apps-src\\graphics\\visual-layer.md"
   ],
   "de6fe0688bec196fc90433ab9274f2e4c4fd9b90": [
     "windows-apps-src\\graphics\\visual-layer.md"
@@ -3338,6 +3344,9 @@
   "80e89e24236903ab90f7c4fe326782a0a7e5272f": [
     "windows-apps-src\\launch-resume\\reduce-memory-usage.md"
   ],
+  "ce84071917602a313d29b53b06f5659254aa6278": [
+    "windows-apps-src\\launch-resume\\web-to-app-linking.md"
+  ],
   "524a0897b6b8a8d17bb7493dc4d9e4357d8c1456": [
     "windows-apps-src\\launch-resume\\web-to-app-linking.md"
   ],
@@ -3376,6 +3385,9 @@
   ],
   "7ab2c9f1054509f816ef9647f340e61b6a281d8a": [
     "windows-apps-src\\whats-new\\windows-10-version-1607-api-diff.md"
+  ],
+  "b6150aa515478862076c571a16658aba3ac99b43": [
+    "windows-apps-src\\gaming\\relative-mouse-movement.md"
   ],
   "6c4b6c20f0971737a578b42630e2a61bb2bda68d": [
     "windows-apps-src\\gaming\\relative-mouse-movement.md"
