@@ -3389,6 +3389,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a0d558d3e43e3df0aafb89b842f27ad0fca80f26.8dbc28cc56ba14cc1dc3c55584d225c4614027ab.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\relative-mouse-movement.md.07304024aca4ad5eceeb3abdb5815f9886e836e6.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\relative-mouse-movement.md",
+      "XliffHash": "07304024aca4ad5eceeb3abdb5815f9886e836e6",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6c4b6c20f0971737a578b42630e2a61bb2bda68d.f120640208951d9db559f0600cec4625f590df98.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
