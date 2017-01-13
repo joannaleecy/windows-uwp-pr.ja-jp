@@ -635,6 +635,9 @@
   "48db13fec4ce9c6a9a998c84ddaaba30f7a24d83": [
     "windows-apps-src\\data-binding\\data-binding-in-depth.md"
   ],
+  "755d183e1bd4e3d6241e8049c5cbf3f91f050ea0": [
+    "windows-apps-src\\data-binding\\data-binding-quickstart.md"
+  ],
   "d452751fd4ab0cc422c3eae94507923440ec45df": [
     "windows-apps-src\\data-binding\\data-binding-quickstart.md"
   ],
