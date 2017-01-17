@@ -3593,6 +3593,9 @@
   "75548ee4689fd31d734c570f8e3eca5d33a6181f": [
     "windows-apps-src\\monetize\\manage-add-ons.md"
   ],
+  "927d3ff1cbe22bde40f099303752ef06b13993ea": [
+    "windows-apps-src\\monetize\\manage-add-on-submissions.md"
+  ],
   "1a1ace9d456089d4bed2dd4ac4f39479dc8faa52": [
     "windows-apps-src\\monetize\\manage-add-on-submissions.md"
   ],
@@ -3604,6 +3607,9 @@
   ],
   "a5e1f8940f53f228808e5a6540759199c4440645": [
     "windows-apps-src\\monetize\\manage-add-on-submissions.md"
+  ],
+  "5083ab4d9fcb2b5d07ceee70afdd7c00876e947f": [
+    "windows-apps-src\\monetize\\manage-app-submissions.md"
   ],
   "ef7727befa20606800fb9747f9402be9be5cc9e4": [
     "windows-apps-src\\monetize\\manage-app-submissions.md"
