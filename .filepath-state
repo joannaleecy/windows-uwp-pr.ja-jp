@@ -668,6 +668,9 @@
   "638ebca167b2ca56f00a83aab13b15c57b2dca2a": [
     "windows-apps-src\\debug-test-perf\\device-portal-api-hololens.md"
   ],
+  "f780866b327685a7256da8b40be81dd765d10c4d": [
+    "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
+  ],
   "3436a95124071045c8ec89ed8ddf644ccc80c29f": [
     "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
   ],
