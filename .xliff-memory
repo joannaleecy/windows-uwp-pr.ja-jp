@@ -3569,6 +3569,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d8340b14f9d3de1828357ac34a75cd963880cebe.a24f9ad12237fbeba22c2930818e07900505b18a.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\xbox-apps\\frequently-asked-questions.md.aee6546438451f242ae02f36e78f1a6cfe1bdd8e.HT": {
+      "SourceFilename": "windows-apps-src\\xbox-apps\\frequently-asked-questions.md",
+      "XliffHash": "aee6546438451f242ae02f36e78f1a6cfe1bdd8e",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b015bf24a5b64b0564b4860b13c5258a91176250.dbb2e49ee4f90f7258a4a6288c37323b93686e6d.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
