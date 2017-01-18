@@ -2105,6 +2105,9 @@
   "4a8b43ac0b6752b78e998ac16776b84e9ddda09f": [
     "windows-apps-src\\monetize\\troubleshooting-guides.md"
   ],
+  "f80b13b8848e8af669941dcc3f5b07f78e94ae06": [
+    "windows-apps-src\\monetize\\ui-and-user-experience-guidelines.md"
+  ],
   "ce39829cd6cd2dfb0c6a3aef930dd8fa82351b75": [
     "windows-apps-src\\monetize\\ui-and-user-experience-guidelines.md"
   ],
@@ -2957,6 +2960,9 @@
   "a6d410e3a4873bb96fba46789b28185c392a7492": [
     "windows-apps-src\\xbox-apps\\frequently-asked-questions.md"
   ],
+  "8d64ee98599f589aa890e96591059b9967c51f08": [
+    "windows-apps-src\\xbox-apps\\getting-started.md"
+  ],
   "33b8369be9cc0fd54ee044ec2aa6ea38b352c908": [
     "windows-apps-src\\xbox-apps\\getting-started.md"
   ],
@@ -2971,6 +2977,9 @@
   ],
   "b6fe2f90e0aff4b8e77b4c20aec0d29f2a6a36f8": [
     "windows-apps-src\\xbox-apps\\known-issues.md"
+  ],
+  "d8340b14f9d3de1828357ac34a75cd963880cebe": [
+    "windows-apps-src\\xbox-apps\\multi-user-applications.md"
   ],
   "e9696cb20fa53b2fb5fe7f2cb06d4e5585639faf": [
     "windows-apps-src\\xbox-apps\\multi-user-applications.md"
@@ -3443,6 +3452,9 @@
   "5fd097d978b1960ed957a7e12ab7eece012c5b41": [
     "windows-apps-src\\monetize\\add-advertisements-to-video-content.md"
   ],
+  "490b2dfaa9f5240a602055512df903d6f7cc2ece": [
+    "windows-apps-src\\monetize\\microsoft-store-services-sdk.md"
+  ],
   "840a5e76d409f547d55e558262af09c8fa36a544": [
     "windows-apps-src\\monetize\\microsoft-store-services-sdk.md"
   ],
@@ -3502,6 +3514,9 @@
   ],
   "dc5fcdd7a3181e07874b761c7183c6c539591704": [
     "windows-apps-src\\monetize\\create-an-app-submission.md"
+  ],
+  "a5a871e3273353b678632f6cc79658f8d576a41e": [
+    "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
   ],
   "8467cddd5eec2348cd35f4f5dc1564b47813a6ca": [
     "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
@@ -3749,6 +3764,9 @@
   "e2b0680e62014526f684e7c1f7fd7da83a14f5d3": [
     "windows-apps-src\\monetize\\app-metadata-api-for-advertising-networks.md"
   ],
+  "802c9de3b27d09645e2b1efa967a4da371ff5068": [
+    "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
+  ],
   "d840fbe66e5ccb439148c7849e44b923a5586740": [
     "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
   ],
@@ -3775,6 +3793,9 @@
   ],
   "b1828b1add220ae7eecf72c406fe5250dbe873de": [
     "windows-apps-src\\monetize\\halt-the-package-rollout-for-an-app-submission.md"
+  ],
+  "49ec1c30152c95b6a79cb26f3350387f0c67ac2d": [
+    "windows-apps-src\\monetize\\log-custom-events-for-dev-center.md"
   ],
   "e42e4c256027856ed60d5c6670381b57530a32eb": [
     "windows-apps-src\\monetize\\log-custom-events-for-dev-center.md"

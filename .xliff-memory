@@ -3499,6 +3499,76 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\13bcbdc22514d93732d44097b5e548e5067c5237.e25df36b904199e35303d465fb1de11c494ff729.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\log-custom-events-for-dev-center.md.f9d085b1c83f70fa56ea2905b562aec80772bf72.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\log-custom-events-for-dev-center.md",
+      "XliffHash": "f9d085b1c83f70fa56ea2905b562aec80772bf72",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\49ec1c30152c95b6a79cb26f3350387f0c67ac2d.b7e28a7aeb0bcaa85cca89ae4d6c341a0992803b.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\xbox-apps\\getting-started.md.1325540488435dfd9f681d96f74553aba5043254.HT": {
+      "SourceFilename": "windows-apps-src\\xbox-apps\\getting-started.md",
+      "XliffHash": "1325540488435dfd9f681d96f74553aba5043254",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8d64ee98599f589aa890e96591059b9967c51f08.9bfe4ac92205c97f8b100c3a49bcb43361ab69cd.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\microsoft-store-services-sdk.md.f085f3b2068e8abd88847a787b873a6f22d33f5e.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\microsoft-store-services-sdk.md",
+      "XliffHash": "f085f3b2068e8abd88847a787b873a6f22d33f5e",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\490b2dfaa9f5240a602055512df903d6f7cc2ece.87b0b0d01630f281aa59be2e894114f519249b48.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md.27f5c6b6e6330ce7033fe081ed45d4d2821fa736.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md",
+      "XliffHash": "27f5c6b6e6330ce7033fe081ed45d4d2821fa736",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\802c9de3b27d09645e2b1efa967a4da371ff5068.2bc04091808d8691c9fe287ef5102503a9f419f5.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\ui-and-user-experience-guidelines.md.8bb8308bd6f7c2b3530736c9e657ddaad905e5b5.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\ui-and-user-experience-guidelines.md",
+      "XliffHash": "8bb8308bd6f7c2b3530736c9e657ddaad905e5b5",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f80b13b8848e8af669941dcc3f5b07f78e94ae06.1e74a780890559a0c96cebefcb17887926434429.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md.27e133c0b082fbbda0181eb334694b6488a1359f.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md",
+      "XliffHash": "27e133c0b082fbbda0181eb334694b6488a1359f",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a5a871e3273353b678632f6cc79658f8d576a41e.b4e657b23b5f095bc7c0ca6aac77ea884a5d8dfb.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\xbox-apps\\multi-user-applications.md.54dd6633b19c1e24aafc7c9ec20c0828e3494cf6.HT": {
+      "SourceFilename": "windows-apps-src\\xbox-apps\\multi-user-applications.md",
+      "XliffHash": "54dd6633b19c1e24aafc7c9ec20c0828e3494cf6",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d8340b14f9d3de1828357ac34a75cd963880cebe.a24f9ad12237fbeba22c2930818e07900505b18a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
