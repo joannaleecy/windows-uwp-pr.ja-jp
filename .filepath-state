@@ -2276,6 +2276,9 @@
   "c3fb6a76800198c15ef05da9ba198ac5e73b35a8": [
     "windows-apps-src\\porting\\w8x-to-uwp-input-and-sensors.md"
   ],
+  "32282fa30ca67b70629911507bc6610b49581597": [
+    "windows-apps-src\\porting\\w8x-to-uwp-porting-to-a-uwp-project.md"
+  ],
   "bd0526404f7e8f7fb87a0798c4e0c06bd9305c19": [
     "windows-apps-src\\porting\\w8x-to-uwp-porting-to-a-uwp-project.md"
   ],
@@ -2488,6 +2491,9 @@
   ],
   "3859918d94ad7ffcf1c331ca5a0ca6540387886f": [
     "windows-apps-src\\publish\\managing-your-profile.md"
+  ],
+  "13bcbdc22514d93732d44097b5e548e5067c5237": [
+    "windows-apps-src\\publish\\mobile-operator-billing.md"
   ],
   "831e3fbd1524ce452a4346b6c52f3f1c76385d68": [
     "windows-apps-src\\publish\\mobile-operator-billing.md"

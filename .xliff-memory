@@ -3479,6 +3479,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f780866b327685a7256da8b40be81dd765d10c4d.2a1d40973408fe20d9f5fced1f9bce7292c04bcc.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\w8x-to-uwp-porting-to-a-uwp-project.md.983c8667502da3ee9cc72a4130f1e9a6383cfb59.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\w8x-to-uwp-porting-to-a-uwp-project.md",
+      "XliffHash": "983c8667502da3ee9cc72a4130f1e9a6383cfb59",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\32282fa30ca67b70629911507bc6610b49581597.b00f04e1c9585261f39ab116604a2bf997a1f13f.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\publish\\mobile-operator-billing.md.9c991e2ddcddc7cb4f9b79eb528ee1932603ee97.HT": {
+      "SourceFilename": "windows-apps-src\\publish\\mobile-operator-billing.md",
+      "XliffHash": "9c991e2ddcddc7cb4f9b79eb528ee1932603ee97",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\13bcbdc22514d93732d44097b5e548e5067c5237.e25df36b904199e35303d465fb1de11c494ff729.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
