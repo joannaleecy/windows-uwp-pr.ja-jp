@@ -6260,404 +6260,806 @@
   "dbd2d5d7924cfbfd48d20f48ccfcd4bfe62db645": [
     "windows-apps-src\\get-started\\get-uwp-app-samples.md"
   ],
+  "bf066410b91a9fe8ba199647ea97e8c8634b59d1": [
+    "windows-apps-src\\graphics-concepts\\address-space-available-for-streaming-resources.md"
+  ],
   "ae2478093abcd5740ef830347160eae2b6895904": [
     "windows-apps-src\\graphics-concepts\\address-space-available-for-streaming-resources.md"
+  ],
+  "c6484c5f052a01bd77aeab016beca44c54e868b6": [
+    "windows-apps-src\\graphics-concepts\\ambient-lighting.md"
   ],
   "e1baffb9f78c708451a19f1578e914a70841aeed": [
     "windows-apps-src\\graphics-concepts\\ambient-lighting.md"
   ],
+  "ee95356b72b26ea138505909708b50bafc78b1b2": [
+    "windows-apps-src\\graphics-concepts\\anisotropic-texture-filtering.md"
+  ],
   "24954225bd8ce0a30897e41b7b048398b666a0cf": [
     "windows-apps-src\\graphics-concepts\\anisotropic-texture-filtering.md"
+  ],
+  "d82f25a1f3ee09207f9a1213cdb38115cad4d101": [
+    "windows-apps-src\\graphics-concepts\\appendix.md"
   ],
   "fdc0c5a48671b165aecc53a151d4f97cd92341aa": [
     "windows-apps-src\\graphics-concepts\\appendix.md"
   ],
+  "a145b69584b3362a9aa4705c175fdc53aed02be4": [
+    "windows-apps-src\\graphics-concepts\\attenuation-and-spotlight-factor.md"
+  ],
   "517dc48c1b0105a829874d067a60d5d071e5aa7f": [
     "windows-apps-src\\graphics-concepts\\attenuation-and-spotlight-factor.md"
+  ],
+  "d5abdc25aca58a330bd81ef57c75c55e5d286329": [
+    "windows-apps-src\\graphics-concepts\\basic-texturing-concepts.md"
   ],
   "a580fb8e7e844d57b1d47c3c0aa49bbb5b628265": [
     "windows-apps-src\\graphics-concepts\\basic-texturing-concepts.md"
   ],
+  "75a1fbc29f429611eec3dd6811ecc8e79acf1932": [
+    "windows-apps-src\\graphics-concepts\\bc6h-format.md"
+  ],
   "0a1a983e949aa5efa85b7c6c25d434d5d7b66323": [
     "windows-apps-src\\graphics-concepts\\bc6h-format.md"
+  ],
+  "62bf368c309962a71b9d1237243922ab9400d8f3": [
+    "windows-apps-src\\graphics-concepts\\bc7-format.md"
   ],
   "ded93b7685ad4bf4e98ee7c47f09cc78b9b7371e": [
     "windows-apps-src\\graphics-concepts\\bc7-format.md"
   ],
+  "91ac332da13805032d3d97c54fda26e3d4f0c29c": [
+    "windows-apps-src\\graphics-concepts\\bilinear-texture-filtering.md"
+  ],
   "b9b69990c83f0e1ec9acf67a9c7f46c5ef50ee25": [
     "windows-apps-src\\graphics-concepts\\bilinear-texture-filtering.md"
+  ],
+  "9304749785bd51a39f178a62650b31c80639b3dd": [
+    "windows-apps-src\\graphics-concepts\\blending-stages.md"
   ],
   "4e7d36025950ec06ff3b675b51d13d0c78c30c04": [
     "windows-apps-src\\graphics-concepts\\blending-stages.md"
   ],
+  "6a30536f851214a29e49c0da74e4fe8ff16dfb82": [
+    "windows-apps-src\\graphics-concepts\\block-compression.md"
+  ],
   "b13dd61571d087a0749ab022bbab205e38b82e06": [
     "windows-apps-src\\graphics-concepts\\block-compression.md"
+  ],
+  "322a1cdac40a775b713c98187ba952716488776b": [
+    "windows-apps-src\\graphics-concepts\\buffer-tiling.md"
   ],
   "7d63f7fe38784c17972472c5ccf69806356bae06": [
     "windows-apps-src\\graphics-concepts\\buffer-tiling.md"
   ],
+  "0eb90d27f614d14d8f627935c15ba56a0b15c03c": [
+    "windows-apps-src\\graphics-concepts\\camera-space-transformations.md"
+  ],
   "72229dc233bd87861ca12506eb16772f9f61a50f": [
     "windows-apps-src\\graphics-concepts\\camera-space-transformations.md"
+  ],
+  "91810f86d385d278659a4c16f451c60dabc65823": [
+    "windows-apps-src\\graphics-concepts\\choosing-a-resource.md"
   ],
   "afdbabec0df15636d1f034b0d6b579f40bd434ac": [
     "windows-apps-src\\graphics-concepts\\choosing-a-resource.md"
   ],
+  "d2a48804c6449f1978d62d9568f78c54ee9c65b0": [
+    "windows-apps-src\\graphics-concepts\\color-light-maps.md"
+  ],
   "18de93a06b9804aa0d3f26d4c880b67651ec82bb": [
     "windows-apps-src\\graphics-concepts\\color-light-maps.md"
+  ],
+  "71abb214a625e7799bab498d755f43efdaec957e": [
+    "windows-apps-src\\graphics-concepts\\compressed-texture-formats.md"
   ],
   "8081b3d37eabe55e81c1b40a570fcc7547f3afdd": [
     "windows-apps-src\\graphics-concepts\\compressed-texture-formats.md"
   ],
+  "c863eb45a21fa23213aff09e7f1b284292343568": [
+    "windows-apps-src\\graphics-concepts\\compressed-texture-resources.md"
+  ],
   "f929d2796cc19daa62110bce9de11e8040842dc1": [
     "windows-apps-src\\graphics-concepts\\compressed-texture-resources.md"
+  ],
+  "d3a0ea0c1ce9cd491e52d93be52efb387a9c1077": [
+    "windows-apps-src\\graphics-concepts\\compute-pipeline.md"
   ],
   "e8d1ee10f67cc58658f42ddb4f8e277d3f22f880": [
     "windows-apps-src\\graphics-concepts\\compute-pipeline.md"
   ],
+  "4be5d0332905d1dffe90549d5fc49a0d7693b286": [
+    "windows-apps-src\\graphics-concepts\\compute-shader-stage--cs-.md"
+  ],
   "86e88e6780baa65425ea69a02c5981116797aceb": [
     "windows-apps-src\\graphics-concepts\\compute-shader-stage--cs-.md"
+  ],
+  "5e6eeab657cceab223cc79494f8d0fbc6c0b4bdb": [
+    "windows-apps-src\\graphics-concepts\\configuring-depth-stencil-functionality.md"
   ],
   "a00612d256546944a79eb50e753b9219f9ef312d": [
     "windows-apps-src\\graphics-concepts\\configuring-depth-stencil-functionality.md"
   ],
+  "7a401afebba84a7b9a60504af42e36a5206e3c73": [
+    "windows-apps-src\\graphics-concepts\\constant-buffer-view--cbv-.md"
+  ],
   "078c7241c09245f8a7627e17a20d310cc29a1b36": [
     "windows-apps-src\\graphics-concepts\\constant-buffer-view--cbv-.md"
+  ],
+  "3286a24afa9c67bd1fb8d255cd378bac2d974254": [
+    "windows-apps-src\\graphics-concepts\\coordinate-systems.md"
   ],
   "f86e137ebf46ff7d72b3eb6216ff0277dc8038c1": [
     "windows-apps-src\\graphics-concepts\\coordinate-systems.md"
   ],
+  "321591c6a9b2419b9a466922d80effca43816223": [
+    "windows-apps-src\\graphics-concepts\\coordinate-systems-and-geometry.md"
+  ],
   "295e30fd4c5a1e6f7538334783892187648e5a86": [
     "windows-apps-src\\graphics-concepts\\coordinate-systems-and-geometry.md"
+  ],
+  "40bdf43e20e851dfea7450c03a458926594bf431": [
+    "windows-apps-src\\graphics-concepts\\copying-and-accessing-resource-data.md"
   ],
   "c50171d25da989adee4a4592fc77d93fab3b338d": [
     "windows-apps-src\\graphics-concepts\\copying-and-accessing-resource-data.md"
   ],
+  "34c8db7e171d54bbc012cf1c11af0d5ae6c04541": [
+    "windows-apps-src\\graphics-concepts\\creating-streaming-resources.md"
+  ],
   "6a0e2b9893104c4d5eefb205a8fa362edf3a1e37": [
     "windows-apps-src\\graphics-concepts\\creating-streaming-resources.md"
+  ],
+  "cabf76a25de8f78fcf6124f972808a28e6173466": [
+    "windows-apps-src\\graphics-concepts\\data-type-conversion.md"
   ],
   "4303f813e06b71c7fe9eebfb07f77ada24bdb8bc": [
     "windows-apps-src\\graphics-concepts\\data-type-conversion.md"
   ],
+  "ec67f2fb1481b0432ec812a5a7be04085bbec228": [
+    "windows-apps-src\\graphics-concepts\\depth-and-stencil-buffers.md"
+  ],
   "7b3f7388d325f590a478b1ebb673dfcad5fc9f90": [
     "windows-apps-src\\graphics-concepts\\depth-and-stencil-buffers.md"
+  ],
+  "ff01aaf93431304e2b1e2fff8c94f47db97474b5": [
+    "windows-apps-src\\graphics-concepts\\depth-buffers.md"
   ],
   "70b04e92cc02c39c5fc4c04f9b5265253caae228": [
     "windows-apps-src\\graphics-concepts\\depth-buffers.md"
   ],
+  "3132e38e728edbccd2f3e72c1813696e2b04b9a4": [
+    "windows-apps-src\\graphics-concepts\\depth-stencil-view--dsv-.md"
+  ],
   "ada23b8132790b457983f40aa15767978a366eac": [
     "windows-apps-src\\graphics-concepts\\depth-stencil-view--dsv-.md"
+  ],
+  "00bfeff9b8104bd11ca6f7b72e92932d26235b72": [
+    "windows-apps-src\\graphics-concepts\\devices.md"
   ],
   "dcd96601de6fe9108d53d06fd39a8835f667f815": [
     "windows-apps-src\\graphics-concepts\\devices.md"
   ],
+  "1ff3650620cb6c16076428ead8eebd4d0fb57a55": [
+    "windows-apps-src\\graphics-concepts\\device-types.md"
+  ],
   "ad1a67ea3b8323b8ee5c5161dbcdf5fab15f6930": [
     "windows-apps-src\\graphics-concepts\\device-types.md"
+  ],
+  "fcc6129ab09e23e1cce15f9862b34f6998297aa9": [
+    "windows-apps-src\\graphics-concepts\\diffuse-lighting.md"
   ],
   "c8cc008b9f34d99767ad9480bbecd6ade92e5b14": [
     "windows-apps-src\\graphics-concepts\\diffuse-lighting.md"
   ],
+  "956b907f72010111bb90f8945f9187a4eeb3165c": [
+    "windows-apps-src\\graphics-concepts\\diffuse-light-maps.md"
+  ],
   "5b4f8cdf50e710113cec638090b2d18f6adc26b6": [
     "windows-apps-src\\graphics-concepts\\diffuse-light-maps.md"
+  ],
+  "9b4d471ca678132d57606571f62c5d189d0021bd": [
+    "windows-apps-src\\graphics-concepts\\domain-shader-stage--ds-.md"
   ],
   "5dd4cf219759e64f0a5029859be1bd8fdbfb37ad": [
     "windows-apps-src\\graphics-concepts\\domain-shader-stage--ds-.md"
   ],
+  "deb950832ae6dbcd72750c26263c271726e95c42": [
+    "windows-apps-src\\graphics-concepts\\emissive-lighting.md"
+  ],
   "61e3635c39d16ebbfd1d71b0837a0ba39777b41d": [
     "windows-apps-src\\graphics-concepts\\emissive-lighting.md"
+  ],
+  "ebfc8790c89919f94fde8cf0842e957bc74450ac": [
+    "windows-apps-src\\graphics-concepts\\face-and-vertex-normal-vectors.md"
   ],
   "c4c08e2b53de623a287302e9cf409d881bf67435": [
     "windows-apps-src\\graphics-concepts\\face-and-vertex-normal-vectors.md"
   ],
+  "f0a88237463d1b4ada4bfdfbaea5d99b1630ad21": [
+    "windows-apps-src\\graphics-concepts\\floating-point-rules.md"
+  ],
   "4d33ea8465da1649c911f7b42ad89c19621d9eaa": [
     "windows-apps-src\\graphics-concepts\\floating-point-rules.md"
+  ],
+  "2eb6d66a01687da838a1924622573c2b5df05f29": [
+    "windows-apps-src\\graphics-concepts\\geometry-shader-stage--gs-.md"
   ],
   "6615491a6175b3af6f890971572e0f751f4de42a": [
     "windows-apps-src\\graphics-concepts\\geometry-shader-stage--gs-.md"
   ],
+  "ccc630ca1f53206926f6101f63e038a9179a1211": [
+    "windows-apps-src\\graphics-concepts\\graphics-pipeline.md"
+  ],
   "ddeafacaca62465b62dc42515c9982bbc83c2ddc": [
     "windows-apps-src\\graphics-concepts\\graphics-pipeline.md"
+  ],
+  "2a0ac340b650a6266ade562619b83155cbefd4cd": [
+    "windows-apps-src\\graphics-concepts\\hazard-tracking-versus-tile-pool-resources.md"
   ],
   "fa79d3155aba3dfe5c327ce107bba82292dcbc93": [
     "windows-apps-src\\graphics-concepts\\hazard-tracking-versus-tile-pool-resources.md"
   ],
+  "b93e7643e19a0c9244003ab5f177a251ab1e0c11": [
+    "windows-apps-src\\graphics-concepts\\hlsl-streaming-resources-exposure.md"
+  ],
   "0599ed3a7754b3abcd4a6cf2110e703840a4d66a": [
     "windows-apps-src\\graphics-concepts\\hlsl-streaming-resources-exposure.md"
+  ],
+  "37222cc82ee9cca1f0423624bfff0ecd062a84c8": [
+    "windows-apps-src\\graphics-concepts\\how-a-streaming-resource-s-area-is-tiled.md"
   ],
   "a661555edf2df1f98caaa77e1c5f214a17e8f1f1": [
     "windows-apps-src\\graphics-concepts\\how-a-streaming-resource-s-area-is-tiled.md"
   ],
+  "9fcec4925ba09d81bccf0470f2e690c0a57c120c": [
+    "windows-apps-src\\graphics-concepts\\hull-shader-stage--hs-.md"
+  ],
   "617b623430670612012457f9dc3180bacfdb06b5": [
     "windows-apps-src\\graphics-concepts\\hull-shader-stage--hs-.md"
+  ],
+  "1af4138023fc895faea5ec6ac49f1756589feb0e": [
+    "windows-apps-src\\graphics-concepts\\index.md"
   ],
   "994ff2ce23a84e96d022285de2437f01e0143f38": [
     "windows-apps-src\\graphics-concepts\\index.md"
   ],
+  "e5e252fb4ec92b12ad913bf0ed39ce12b2a72986": [
+    "windows-apps-src\\graphics-concepts\\index-buffers.md"
+  ],
   "671313752b3a3de315157055c6040035577157b2": [
     "windows-apps-src\\graphics-concepts\\index-buffers.md"
+  ],
+  "1e6ad426006eb702d091016a184a48c3c8064e04": [
+    "windows-apps-src\\graphics-concepts\\input-assembler-stage--ia-.md"
   ],
   "12e94861a9f4c4d910fe725328682f932214c0ec": [
     "windows-apps-src\\graphics-concepts\\input-assembler-stage--ia-.md"
   ],
+  "05d7ac0e3416c5b4f607fd128cd45db4271886fc": [
+    "windows-apps-src\\graphics-concepts\\introduction-to-buffers.md"
+  ],
   "c3a6b48cf02ffff37adf403801beeb60f34b5377": [
     "windows-apps-src\\graphics-concepts\\introduction-to-buffers.md"
+  ],
+  "796ebafa06cefe1874906d4bcae1dc21008e3487": [
+    "windows-apps-src\\graphics-concepts\\introduction-to-rasterization-rules.md"
   ],
   "cfbcb7414d4f74d5ebfbc6e87f206d0201a75f9e": [
     "windows-apps-src\\graphics-concepts\\introduction-to-rasterization-rules.md"
   ],
+  "95b930bd08629a966e9905d7dc91e738bac2d877": [
+    "windows-apps-src\\graphics-concepts\\introduction-to-textures.md"
+  ],
   "106b2ed7fcca3a7f3a6d762d151c7cdff5bf6b32": [
     "windows-apps-src\\graphics-concepts\\introduction-to-textures.md"
+  ],
+  "98b123d058fa055cc6ccaff5317574161ce19e6b": [
+    "windows-apps-src\\graphics-concepts\\lighting-overview.md"
   ],
   "100dddd483eae4ef8b7be9f16537eacd1ecf19c1": [
     "windows-apps-src\\graphics-concepts\\lighting-overview.md"
   ],
+  "52649c7fd89b0a49655e25125f0203abbd20a5a8": [
+    "windows-apps-src\\graphics-concepts\\light-mapping-with-textures.md"
+  ],
   "97ade33056c47f4a7222d885ef6322b3c81157af": [
     "windows-apps-src\\graphics-concepts\\light-mapping-with-textures.md"
+  ],
+  "8a4f869c347caf01e14286fdd92d866b58ba4d9a": [
+    "windows-apps-src\\graphics-concepts\\light-properties.md"
   ],
   "2ea66a9f33da5a5895101573e0c3d44f9156e651": [
     "windows-apps-src\\graphics-concepts\\light-properties.md"
   ],
+  "3a6fd3b0e83d090aa4f81184394b985f421b99e8": [
+    "windows-apps-src\\graphics-concepts\\lights-and-materials.md"
+  ],
   "234e490027c89900a14d91b8212866bf19b01e72": [
     "windows-apps-src\\graphics-concepts\\lights-and-materials.md"
+  ],
+  "f50b86d803a9ea9704f569f8102f024fe7e77b2f": [
+    "windows-apps-src\\graphics-concepts\\light-types.md"
   ],
   "797040d4b0b3c351441c64168aa9d084fe6682b8": [
     "windows-apps-src\\graphics-concepts\\light-types.md"
   ],
+  "4a6a861c16addbb20385fda53b40033c2a0e3b17": [
+    "windows-apps-src\\graphics-concepts\\line-lists.md"
+  ],
   "e443d3c0abf53cd2594b990991efa676c4312bf6": [
     "windows-apps-src\\graphics-concepts\\line-lists.md"
+  ],
+  "576818aa3b89b3e647420fc20122e74ca4469695": [
+    "windows-apps-src\\graphics-concepts\\line-strips.md"
   ],
   "d32feb3ed594cd200be2c2a4e18f5c10a7b2562f": [
     "windows-apps-src\\graphics-concepts\\line-strips.md"
   ],
+  "097f578781b07c28490f38103a8cbcf81a1a4b1b": [
+    "windows-apps-src\\graphics-concepts\\lost-devices.md"
+  ],
   "7a1d0ffb2a87c64977ba2c02e4586aa3493ef789": [
     "windows-apps-src\\graphics-concepts\\lost-devices.md"
+  ],
+  "e1e29929f0b7369ba6b5d291dfb9e157f8967c0b": [
+    "windows-apps-src\\graphics-concepts\\mappings-are-into-a-tile-pool.md"
   ],
   "b35909976ecb1286cfe940874db297764b23a977": [
     "windows-apps-src\\graphics-concepts\\mappings-are-into-a-tile-pool.md"
   ],
+  "ecb85d01962c782eac16fc70f9b594485043f693": [
+    "windows-apps-src\\graphics-concepts\\mathematics-of-lighting.md"
+  ],
   "afe47d09858f0b4d087f852a94747836e69b6b9c": [
     "windows-apps-src\\graphics-concepts\\mathematics-of-lighting.md"
+  ],
+  "99c7b4b0fc96afa83d34393669aea1c4806ed493": [
+    "windows-apps-src\\graphics-concepts\\mipmap-packing.md"
   ],
   "0222d2445c066e9078df95e6b11516ca3368f289": [
     "windows-apps-src\\graphics-concepts\\mipmap-packing.md"
   ],
+  "0e6b9dee9fc9f47ef8be94b625039708351bb34d": [
+    "windows-apps-src\\graphics-concepts\\monochrome-light-maps.md"
+  ],
   "20d05c62d1550522210ce50e173d03a1bbe4013c": [
     "windows-apps-src\\graphics-concepts\\monochrome-light-maps.md"
+  ],
+  "87d69396e478441e56074b06ee8d9a0c2c2c24e0": [
+    "windows-apps-src\\graphics-concepts\\multipass-texture-blending.md"
   ],
   "1db7119b52aaad4faad04f3933a2fc6e16f6d105": [
     "windows-apps-src\\graphics-concepts\\multipass-texture-blending.md"
   ],
+  "ed8fa559b11b49ee63f9866e516ac41b401bb0f9": [
+    "windows-apps-src\\graphics-concepts\\nearest-point-sampling.md"
+  ],
   "4bb155ee4e981b8d17b48a4be18572139c25fd96": [
     "windows-apps-src\\graphics-concepts\\nearest-point-sampling.md"
+  ],
+  "e0656a618adb701e578d738ae1ef357d69d0472e": [
+    "windows-apps-src\\graphics-concepts\\opaque-and-1-bit-alpha-textures.md"
   ],
   "7dd5dec4798205e8025cf6afc91a5963cdb83203": [
     "windows-apps-src\\graphics-concepts\\opaque-and-1-bit-alpha-textures.md"
   ],
+  "8098bf60ea95399f2e97748b1605221dfbeb5b74": [
+    "windows-apps-src\\graphics-concepts\\operations-available-on-streaming-resources.md"
+  ],
   "0ebd9f31075388f32b9a28f98a96a510d7e9086b": [
     "windows-apps-src\\graphics-concepts\\operations-available-on-streaming-resources.md"
+  ],
+  "f9b2b8d5d7f49ae3d2adcccc7b561fb86d9fa512": [
+    "windows-apps-src\\graphics-concepts\\operations-available-on-tile-pools.md"
   ],
   "5c57ec03ff8db027853c88ecbc30a82d0514760d": [
     "windows-apps-src\\graphics-concepts\\operations-available-on-tile-pools.md"
   ],
+  "dd7a7672cec1dd48c2c3b0fbb1081b914c3f0900": [
+    "windows-apps-src\\graphics-concepts\\output-merger-stage--om-.md"
+  ],
   "1e5c30ded0482ce803b412c403bffa957468a11d": [
     "windows-apps-src\\graphics-concepts\\output-merger-stage--om-.md"
+  ],
+  "9797d3c02255d6b2a487b3c3703d1c557d0c9f1c": [
+    "windows-apps-src\\graphics-concepts\\pipeline-access-to-streaming-resources.md"
   ],
   "58e03aa1ae03989828aa19f0a06d5374d8477ca3": [
     "windows-apps-src\\graphics-concepts\\pipeline-access-to-streaming-resources.md"
   ],
+  "89eb98dfd9fcbed30826962fbbb557662e18ee7f": [
+    "windows-apps-src\\graphics-concepts\\pixel-shader-stage--ps-.md"
+  ],
   "19f0b5acd89096021274f7524524108081056787": [
     "windows-apps-src\\graphics-concepts\\pixel-shader-stage--ps-.md"
+  ],
+  "39617d1647c20619fd9cd85350e2d124ec8edd65": [
+    "windows-apps-src\\graphics-concepts\\point-lists.md"
   ],
   "1b0148fc7ca2810e1bcb7ee93edef4ed1b3a3dad": [
     "windows-apps-src\\graphics-concepts\\point-lists.md"
   ],
+  "8ba2c2fc43ab5a03c9eb6e884a3e4f26a0b023ce": [
+    "windows-apps-src\\graphics-concepts\\primitives.md"
+  ],
   "6a81c206c4df9a26a6f73a379913edbc7d14285a": [
     "windows-apps-src\\graphics-concepts\\primitives.md"
+  ],
+  "82c3966bfe31e473cb0b1542f896ecc40278973d": [
+    "windows-apps-src\\graphics-concepts\\primitive-topologies.md"
   ],
   "3de994216f89c44a2913c4e258213dd84680e09c": [
     "windows-apps-src\\graphics-concepts\\primitive-topologies.md"
   ],
+  "1c74a898761a2e90d9030f92cc965a9b61196b6d": [
+    "windows-apps-src\\graphics-concepts\\projection-transform.md"
+  ],
   "115ffae2e0f520b27f73e16feb6473b545dae22a": [
     "windows-apps-src\\graphics-concepts\\projection-transform.md"
+  ],
+  "8a4e0138a38a9016235c781c8913105324cad2b8": [
+    "windows-apps-src\\graphics-concepts\\rasterization-rules.md"
   ],
   "586493547045cede3b83afbfaa53357e41fadcd5": [
     "windows-apps-src\\graphics-concepts\\rasterization-rules.md"
   ],
+  "cade99ff4c423e94ad51161c7b85d6e3d5521164": [
+    "windows-apps-src\\graphics-concepts\\rasterizer-behavior-with-non-mapped-tiles.md"
+  ],
   "fed8dfce58897422a172e8aa998a322b9c381035": [
     "windows-apps-src\\graphics-concepts\\rasterizer-behavior-with-non-mapped-tiles.md"
+  ],
+  "ce46f08c9e6cf3a6b4194963e50a85323dfc0f8e": [
+    "windows-apps-src\\graphics-concepts\\rasterizer-ordered-view--rov-.md"
   ],
   "5d8558c2d59ddac89b77e45474d8fe7435c9fe15": [
     "windows-apps-src\\graphics-concepts\\rasterizer-ordered-view--rov-.md"
   ],
+  "3e96b47c00f699cecf01c2a80e904d1499c52f77": [
+    "windows-apps-src\\graphics-concepts\\rasterizer-stage--rs-.md"
+  ],
   "442de59db6c3df0989d48b799cb9b4d56502ac92": [
     "windows-apps-src\\graphics-concepts\\rasterizer-stage--rs-.md"
+  ],
+  "f9ceec7ceaa616332089150f6855a99d5228d41a": [
+    "windows-apps-src\\graphics-concepts\\rectangles.md"
   ],
   "6be466295d98c8c0cf0fda7ae2e8555ab0b5f5e6": [
     "windows-apps-src\\graphics-concepts\\rectangles.md"
   ],
+  "9e1e7198aa5cf18341d85a898615ad350532625e": [
+    "windows-apps-src\\graphics-concepts\\render-target-view--rtv-.md"
+  ],
   "e93c65ed3cfc77a8ae13e126b64bfc26cb9ef181": [
     "windows-apps-src\\graphics-concepts\\render-target-view--rtv-.md"
+  ],
+  "e289ba69c103f26ce89b581a8ce8fb4b6bfb1938": [
+    "windows-apps-src\\graphics-concepts\\resources.md"
   ],
   "0634807d98eba60d748d4bcc458b0c0ed3c132f8": [
     "windows-apps-src\\graphics-concepts\\resources.md"
   ],
+  "d0e542f78dc8e627bfb1dee86a97ce439af546ae": [
+    "windows-apps-src\\graphics-concepts\\resource-types.md"
+  ],
   "a31880c1ed06bff23fcd35495d7c17f9e1aff0d7": [
     "windows-apps-src\\graphics-concepts\\resource-types.md"
+  ],
+  "3f530ee95332d3e842dc65e2de7a37a5de065e86": [
+    "windows-apps-src\\graphics-concepts\\sampler.md"
   ],
   "1d665e3e466ee06f535ca87fb1242cd497a853ec": [
     "windows-apps-src\\graphics-concepts\\sampler.md"
   ],
+  "6b87c9fe6ccedccda2700eff6c858269e0497f41": [
+    "windows-apps-src\\graphics-concepts\\shader-resource-view--srv-.md"
+  ],
   "d55fcee927ba8acc81edf2a7ad28e759ed87dbd3": [
     "windows-apps-src\\graphics-concepts\\shader-resource-view--srv-.md"
+  ],
+  "9b6dc836596330ecf2a38d6cbb005fa7282c75c4": [
+    "windows-apps-src\\graphics-concepts\\specular-lighting.md"
   ],
   "1d1b20c32462f38273d5d1bc9970dfdcd86c2b91": [
     "windows-apps-src\\graphics-concepts\\specular-lighting.md"
   ],
+  "4c275de2978957c9abb0aff4f4f5a00254195e9d": [
+    "windows-apps-src\\graphics-concepts\\specular-light-maps.md"
+  ],
   "2fb547d50d557b4d50439e663a624714731ac46f": [
     "windows-apps-src\\graphics-concepts\\specular-light-maps.md"
+  ],
+  "3879be2e02f5bfd89d8ee12e75d90622e96fcaa8": [
+    "windows-apps-src\\graphics-concepts\\srv-behavior-with-non-mapped-tiles.md"
   ],
   "fe1e7ebb3e6aec3c6a0b767e1531617726d06f15": [
     "windows-apps-src\\graphics-concepts\\srv-behavior-with-non-mapped-tiles.md"
   ],
+  "26d2f1be1659061a1e1fd26fd2a63414b2989dbc": [
+    "windows-apps-src\\graphics-concepts\\state-objects.md"
+  ],
   "2b3054d04e582205e46af7725c4d1bc8f578e699": [
     "windows-apps-src\\graphics-concepts\\state-objects.md"
+  ],
+  "bd8797107f376559056dc3220ba664a10d59f5d4": [
+    "windows-apps-src\\graphics-concepts\\stencil-buffers.md"
   ],
   "7050616f608c50eb4b4c55c8b7bb545c958f5494": [
     "windows-apps-src\\graphics-concepts\\stencil-buffers.md"
   ],
+  "1ffa412cfde8494a272efc6b91192f5492db59e5": [
+    "windows-apps-src\\graphics-concepts\\stencil-formats-not-supported-with-streaming-resources.md"
+  ],
   "299c3304d4ab37ca1932b9ab8014013370fb628b": [
     "windows-apps-src\\graphics-concepts\\stencil-formats-not-supported-with-streaming-resources.md"
+  ],
+  "2a59051f087732475ba57c9f146796edbcc05563": [
+    "windows-apps-src\\graphics-concepts\\streaming-resource-creation-parameters.md"
   ],
   "a659e92b73f40642c00bf35fc0a079f02eb46df8": [
     "windows-apps-src\\graphics-concepts\\streaming-resource-creation-parameters.md"
   ],
+  "85bee6639f3888cf3a2a8a377d8ead7efdeb138a": [
+    "windows-apps-src\\graphics-concepts\\streaming-resource-cross-process-and-device-sharing.md"
+  ],
   "64a9a0bd8c90b0f99381627cd4f5c7f3616a66da": [
     "windows-apps-src\\graphics-concepts\\streaming-resource-cross-process-and-device-sharing.md"
+  ],
+  "d0d2b0fd0850963c69ccbd119b7994a57971f540": [
+    "windows-apps-src\\graphics-concepts\\streaming-resources.md"
   ],
   "89ef7eafc027a91fc310be5d8315687e242827cb": [
     "windows-apps-src\\graphics-concepts\\streaming-resources.md"
   ],
+  "487ad934a1292f54d8f726938dd7da06d35fd727": [
+    "windows-apps-src\\graphics-concepts\\streaming-resources-features-tiers.md"
+  ],
   "8629c5ace073ae29fe7cb13cde85456709e634d6": [
     "windows-apps-src\\graphics-concepts\\streaming-resources-features-tiers.md"
+  ],
+  "22f48d629a57adda5b2c53c93ccbccd55105acb4": [
+    "windows-apps-src\\graphics-concepts\\streaming-resources-texture-sampling-features.md"
   ],
   "1cbcbb6d0fa54425781f28d37052f46a72073dfe": [
     "windows-apps-src\\graphics-concepts\\streaming-resources-texture-sampling-features.md"
   ],
+  "b33553155c2e27a90025c8a45b79df5984f19ba2": [
+    "windows-apps-src\\graphics-concepts\\stream-output-stage--so-.md"
+  ],
   "a2ec6c6ba79dd318011e77364d086081f094c04d": [
     "windows-apps-src\\graphics-concepts\\stream-output-stage--so-.md"
+  ],
+  "a5f6de5a94c91d94da574d4abff680a6dc4ea1a3": [
+    "windows-apps-src\\graphics-concepts\\stream-output-view--sov-.md"
   ],
   "0fda34925295ac50fe9b9b43d61fa59796e0a71a": [
     "windows-apps-src\\graphics-concepts\\stream-output-view--sov-.md"
   ],
+  "1d396398b5e3bbee5809c1c11a2647b0c235b477": [
+    "windows-apps-src\\graphics-concepts\\swap-chains.md"
+  ],
   "6f17b32cdb4c51b5305aa27b77e070ac8dadf76e": [
     "windows-apps-src\\graphics-concepts\\swap-chains.md"
+  ],
+  "8d6d2819fcd7aefa53c2cee97b9f2510061493ca": [
+    "windows-apps-src\\graphics-concepts\\tessellator-stage--ts-.md"
   ],
   "52aeff470eb2e283a4743f5212feb2cd8c5db451": [
     "windows-apps-src\\graphics-concepts\\tessellator-stage--ts-.md"
   ],
+  "586d90ad4def6a6875840683d174865b1c6d806f": [
+    "windows-apps-src\\graphics-concepts\\texture2d-and-texture2darray-subresource-tiling.md"
+  ],
   "ad955a6021a9e60fb05fb871219bf0e439c28466": [
     "windows-apps-src\\graphics-concepts\\texture2d-and-texture2darray-subresource-tiling.md"
+  ],
+  "b6fd0190b64cd35d79fb66d71a59dbbdcceb197f": [
+    "windows-apps-src\\graphics-concepts\\texture3d-subresource-tiling.md"
   ],
   "6ca2de124f62ac27601bc669d1b84ab316b29ed5": [
     "windows-apps-src\\graphics-concepts\\texture3d-subresource-tiling.md"
   ],
+  "af3dca362ecde230777f6c4bac989c7e62e2458b": [
+    "windows-apps-src\\graphics-concepts\\texture-addressing-modes.md"
+  ],
   "5baa87f2744475b1741caa3b465eb9427631910b": [
     "windows-apps-src\\graphics-concepts\\texture-addressing-modes.md"
+  ],
+  "44df099fe9d0d2827bacf5a19119d5bda066b87b": [
+    "windows-apps-src\\graphics-concepts\\texture-blending.md"
   ],
   "eb79862a60a8a792d70d3a95ebf7392bec33ede0": [
     "windows-apps-src\\graphics-concepts\\texture-blending.md"
   ],
+  "15891adcc439f60fa77cc9573676ab84ae89577b": [
+    "windows-apps-src\\graphics-concepts\\texture-block-compression.md"
+  ],
   "39486bf469b35dcd4eaaf16bc680d1ba8b967753": [
     "windows-apps-src\\graphics-concepts\\texture-block-compression.md"
+  ],
+  "8e2d5086b48e716377947e558356eec5274dae20": [
+    "windows-apps-src\\graphics-concepts\\texture-filtering.md"
   ],
   "260d5d3a0e295da7a7792394b62fd40df877a54c": [
     "windows-apps-src\\graphics-concepts\\texture-filtering.md"
   ],
+  "83f90eb20a77d69f859c4a3d846d49823a273b90": [
+    "windows-apps-src\\graphics-concepts\\texture-filtering-with-mipmaps.md"
+  ],
   "03b923b213244c9226d962e1b2953eee67516dd3": [
     "windows-apps-src\\graphics-concepts\\texture-filtering-with-mipmaps.md"
+  ],
+  "0e9a2e2466456a2a4fe8f4f4e27c868368bc3db9": [
+    "windows-apps-src\\graphics-concepts\\texture-resources.md"
   ],
   "d092328fe8bf48a68d2dfe2c159871206be160e0": [
     "windows-apps-src\\graphics-concepts\\texture-resources.md"
   ],
+  "b403b8c39b223eb6546ea7d317d41b057ab78cc9": [
+    "windows-apps-src\\graphics-concepts\\textures.md"
+  ],
   "64830357503726f97f99a399c57370769d38bcfc": [
     "windows-apps-src\\graphics-concepts\\textures.md"
+  ],
+  "86636d0a6f28f3e885168628f8fdcce4e3b15870": [
+    "windows-apps-src\\graphics-concepts\\textures-with-alpha-channels.md"
   ],
   "f2f97fe836472b3af8785d0bced51d4bbf16d767": [
     "windows-apps-src\\graphics-concepts\\textures-with-alpha-channels.md"
   ],
+  "4f7319551b060b4db4f1fa2024828c2a28483500": [
+    "windows-apps-src\\graphics-concepts\\texture-views.md"
+  ],
   "798869f5b2d41ab3a4e097916911c112f4250e49": [
     "windows-apps-src\\graphics-concepts\\texture-views.md"
+  ],
+  "04ac87138fb016e3a3424a0421a7a4ce005271ea": [
+    "windows-apps-src\\graphics-concepts\\texture-wrapping.md"
   ],
   "4d83e0d4abee64f20aa356c770d6bccbd40e7cb2": [
     "windows-apps-src\\graphics-concepts\\texture-wrapping.md"
   ],
+  "e82d190f87600013419543b1e147b82533470ab6": [
+    "windows-apps-src\\graphics-concepts\\the-need-for-streaming-resources.md"
+  ],
   "39c2105834bb45071f3ce5a7e8aac8b8a494c5b3": [
     "windows-apps-src\\graphics-concepts\\the-need-for-streaming-resources.md"
+  ],
+  "fe2f749f0cef50d6cada4a1e0c4f56862a46ad17": [
+    "windows-apps-src\\graphics-concepts\\tier-1.md"
   ],
   "81c6cec429ca799009b5a2ceee243a29adfc865f": [
     "windows-apps-src\\graphics-concepts\\tier-1.md"
   ],
+  "5e028f337b4e548f2a33b63fd7e04600a8c51598": [
+    "windows-apps-src\\graphics-concepts\\tier-2.md"
+  ],
   "7a5b2360403a9e0a4af76c9eb1a7f89154df00d8": [
     "windows-apps-src\\graphics-concepts\\tier-2.md"
+  ],
+  "393a897a8a6c542979a7dc16b6a05b7f7dcf9acb": [
+    "windows-apps-src\\graphics-concepts\\tier-3.md"
   ],
   "4fd9e7a11173e1994e18a9136fa54a4f0d44e82b": [
     "windows-apps-src\\graphics-concepts\\tier-3.md"
   ],
+  "3ba04f364328956352857c5f19d1beae88c678ef": [
+    "windows-apps-src\\graphics-concepts\\tile-access-limitations-with-duplicate-mappings.md"
+  ],
   "61530785d5d0224bd162c83639a01af97b2fd448": [
     "windows-apps-src\\graphics-concepts\\tile-access-limitations-with-duplicate-mappings.md"
+  ],
+  "1cbc9d87869ecfdbe2a9903564adddfaf126472e": [
+    "windows-apps-src\\graphics-concepts\\tile-pool-creation.md"
   ],
   "bab0f15d2fce3340335e6dbaabd1ea184aa1298c": [
     "windows-apps-src\\graphics-concepts\\tile-pool-creation.md"
   ],
+  "b94a81151930e76fd8d0ac36fbd9fc93985547c5": [
+    "windows-apps-src\\graphics-concepts\\tile-pool-creation-parameters.md"
+  ],
   "a7aca7a682a83eac8bf44a4db6d37edae8ca9e38": [
     "windows-apps-src\\graphics-concepts\\tile-pool-creation-parameters.md"
+  ],
+  "765a644f049d16eb6cbf64dada7c8d2e5e4ad7f1": [
+    "windows-apps-src\\graphics-concepts\\tile-pool-resizing.md"
   ],
   "e05b5038eb386c254aa9853ff60fbc97e66d52bb": [
     "windows-apps-src\\graphics-concepts\\tile-pool-resizing.md"
   ],
+  "1aadf62d346cb291fa4a0d8d31e5385df761b475": [
+    "windows-apps-src\\graphics-concepts\\transform-overview.md"
+  ],
   "eff0db9340ca347583e3e9e07548bcc608b443c8": [
     "windows-apps-src\\graphics-concepts\\transform-overview.md"
+  ],
+  "0d0a88a44eb4884287b0128c23a81de8e9ff42a7": [
+    "windows-apps-src\\graphics-concepts\\transforms.md"
   ],
   "d33c584676950c562ba236b6a9457262288132d9": [
     "windows-apps-src\\graphics-concepts\\transforms.md"
   ],
+  "97fdd602c560a0fa403183afbb57be557bf718e0": [
+    "windows-apps-src\\graphics-concepts\\triangle-interpolation.md"
+  ],
   "d641042b446aa49c572199881b1d052866209b54": [
     "windows-apps-src\\graphics-concepts\\triangle-interpolation.md"
+  ],
+  "1076316f03bd60a1f8b9e87b3288f323ebf4cf4c": [
+    "windows-apps-src\\graphics-concepts\\triangle-lists.md"
   ],
   "fbf65eec802e30ab4851dce9cc966913189932de": [
     "windows-apps-src\\graphics-concepts\\triangle-lists.md"
   ],
+  "c4242a7cf01bfa07fd54ffc9b9a7d14463e2df7f": [
+    "windows-apps-src\\graphics-concepts\\triangle-strips.md"
+  ],
   "b8af9386d60ffc5869411d3a3e39b0f639969a09": [
     "windows-apps-src\\graphics-concepts\\triangle-strips.md"
+  ],
+  "06e1f5c6940adf6e7adbd5dd3dd3c4f64a3bee3a": [
+    "windows-apps-src\\graphics-concepts\\uav-behavior-with-non-mapped-tiles.md"
   ],
   "8c6c4805f5465089f16a6a9f5348f23b29c28dd5": [
     "windows-apps-src\\graphics-concepts\\uav-behavior-with-non-mapped-tiles.md"
   ],
+  "c62a5ce33402c2ca5e88d5f28d5118788f7384bf": [
+    "windows-apps-src\\graphics-concepts\\using-system-generated-values.md"
+  ],
   "21dfe9373a0b0e558d4f86a0859549514f3257b4": [
     "windows-apps-src\\graphics-concepts\\using-system-generated-values.md"
+  ],
+  "a246479afee7bec18b015369178312ec27ff5933": [
+    "windows-apps-src\\graphics-concepts\\vectors--vertices--and-quaternions.md"
   ],
   "44afb7a1c655751ff56cf8a2205313f4c1ee04dc": [
     "windows-apps-src\\graphics-concepts\\vectors--vertices--and-quaternions.md"
   ],
+  "d2c3cb3b97cf77f3df7b3753ef0e9f593bdf779a": [
+    "windows-apps-src\\graphics-concepts\\vertex-and-index-buffers.md"
+  ],
   "0461a88ab533efe567ac789ed13ad07f7bd269e6": [
     "windows-apps-src\\graphics-concepts\\vertex-and-index-buffers.md"
+  ],
+  "1ea06d91e5df09fb747afd656f9fb249ddbd17a3": [
+    "windows-apps-src\\graphics-concepts\\vertex-buffer-view--vbv-.md"
   ],
   "baf33b30e7e503d7a7fcbdd9c30e71fb2faf3f08": [
     "windows-apps-src\\graphics-concepts\\vertex-buffer-view--vbv-.md"
   ],
+  "77285c377a2669917cba760d4b49c60d5f8354a0": [
+    "windows-apps-src\\graphics-concepts\\vertex-shader-stage--vs-.md"
+  ],
   "b56b905e190d24f6ade41fae1253d1de604e88f4": [
     "windows-apps-src\\graphics-concepts\\vertex-shader-stage--vs-.md"
+  ],
+  "f2457f58cab4a34defab6433069f56cd51bb74ce": [
+    "windows-apps-src\\graphics-concepts\\viewports-and-clipping.md"
   ],
   "ef0d6703bf77a6b01c09ad51b56388b3f60d8372": [
     "windows-apps-src\\graphics-concepts\\viewports-and-clipping.md"
   ],
+  "df56c8af82e795fea4d82dda5dff37fc50e9bb4d": [
+    "windows-apps-src\\graphics-concepts\\views.md"
+  ],
   "d0b676b724fbc9db3bdfb8195c75d4f6453ad956": [
     "windows-apps-src\\graphics-concepts\\views.md"
+  ],
+  "e852c5772a51436a9ee0e83e928925d93f524ccd": [
+    "windows-apps-src\\graphics-concepts\\view-transform.md"
   ],
   "d5e4722b6496d9043cc6b963a64256e8ca517bb0": [
     "windows-apps-src\\graphics-concepts\\view-transform.md"
   ],
+  "703b78f06cb137f93f201dd31357ae1997fd6b6e": [
+    "windows-apps-src\\graphics-concepts\\windowed-vs--full-screen-mode.md"
+  ],
   "bb0775e7fa418ccd38b9e831b8dd45ab0fc0be51": [
     "windows-apps-src\\graphics-concepts\\windowed-vs--full-screen-mode.md"
+  ],
+  "d1cf8747b31567d330726e48f27730681a69794f": [
+    "windows-apps-src\\graphics-concepts\\world-transform.md"
   ],
   "9b2161b529c81fe7e3cb81f601897356a2486dce": [
     "windows-apps-src\\graphics-concepts\\world-transform.md"
