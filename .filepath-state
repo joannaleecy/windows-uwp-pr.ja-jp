@@ -7447,5 +7447,8 @@
   ],
   "a7481872df2931273542815b9797c4fb09d46c90": [
     "windows-apps-src\\packaging\\sign-app-package-using-signtool.md"
+  ],
+  "71f633c724c95b46dc48c8ab3573ac0cc6c90479": [
+    "windows-apps-src\\porting\\desktop-to-uwp-packaging-dot-net.md"
   ]
 }
