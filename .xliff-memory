@@ -13609,6 +13609,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b4b81217fb5f6bf632d6b7a15d2bdeb61c562616.d766862dffda964240aca952b838de039ccb90c7.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\audio-video-camera\\import-media-from-a-device.md.b427be50f5b869d545c7f4a68fd08f8b2b50401f.HT": {
+      "SourceFilename": "windows-apps-src\\audio-video-camera\\import-media-from-a-device.md",
+      "XliffHash": "b427be50f5b869d545c7f4a68fd08f8b2b50401f",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\38d04c40e0ae43f8202876b060db7a7d957f86ea.30eff00060ec91c0f955a3a229466b793f4ded33.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
