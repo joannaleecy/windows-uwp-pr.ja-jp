@@ -4,8 +4,8 @@ Description: "Desktop Converter App を実行して、Windows デスクトップ
 Search.Product: eADQiWindows 10XVcnh
 title: Desktop App Converter
 translationtype: Human Translation
-ms.sourcegitcommit: a5ac8acdbb7480bb776cef6d1dffa303dab5a9e1
-ms.openlocfilehash: 4095cfbe96f239afb5f3173e0a7f84e01d63452c
+ms.sourcegitcommit: bf6da2f4d780774819fe7a4abf6367345304767c
+ms.openlocfilehash: 3ffd664892fe5ee589d3bf5704e2eeed178bf5f3
 
 ---
 
@@ -22,6 +22,12 @@ Desktop App Converterは現在、[Windows ストア](https://aka.ms/converter)�
 ## <a name="whats-new"></a>新着情報
 
 ここでは、Desktop App Converter のバージョン間での変更について概要を示します。 
+
+### <a name="12142016-v104"></a>2016 年 12 月 14 日 (v1.0.4)
+
+* 無効な .wim ファイルを確認するための基本イメージの検証が向上しました。 
+* ```-Publisher``` パラメーターの特殊文字の問題が修正されました。 
+* アセットが更新されました。
 
 ### <a name="1122016-v101"></a>2016 年 11 月 2 日 (v1.0.1)
 
@@ -102,30 +108,17 @@ Desktop App Converterは現在、[Windows ストア](https://aka.ms/converter)�
 
 Desktop App Converter は、最新の Windows 10 機能に依存しています。 Windows 10 Anniversary Update (14393.0) 以降のビルドをお使いであることを確認してください。
 
-### <a name="store-download"></a>ストアのダウンロード
-
 1.  [DesktopAppConverter を Windows ストアからダウンロード](https://aka.ms/converter)し、[ビルドに対応する基本イメージの .wim ファイル](https://aka.ms/converterimages)をダウンロードします。  
 2.  管理者として DesktopAppConverter を実行します。 これには、スタート メニューでタイルを右クリックして *[その他]* から *[管理者として実行]* を選択するか、タスク バーでタイルを右クリックし、表示されるアプリ名を右クリックして *[管理者として実行]* を選択します。
-3.  アプリ コンソール ウィンドウから ```CMD PS C:\> Set-ExecutionPolicy bypass``` を実行します。
-4.  アプリ コンソール ウィンドウから ```CMD PS C:\> DesktopAppConverter.exe -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose``` を実行することでコンバーターをセットアップします。
+3.  アプリ コンソール ウィンドウから ```Set-ExecutionPolicy bypass``` を実行します。
+4.  アプリ コンソール ウィンドウから ```DesktopAppConverter.exe -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose``` を実行することでコンバーターをセットアップします。
 5.  上のコマンドを実行したときに再起動を求めるメッセージが表示されたら、コンピューターを再起動してください。
-
-### <a name="zip-file"></a>zip ファイル 
-
-オフラインでの使用に対応できるように、DAC は zip ファイルとして[ダウンロード センター](https://aka.ms/converterimages)に残されます。 ただし、今後の更新プログラムはすべて、ストア バージョンとしてのみ公開されます。
-
-1.  DAC の zip ファイルと、[ビルドに一致する基本イメージの .wimファイル](https://aka.ms/converterimages)をダウンロードします。  
-2. ローカル フォルダーに DesktopAppConverter.zip を抽出します。
-3. 管理者 PowerShell ウィンドウから ```CMD PS C:\> Set-ExecutionPolicy bypass``` を実行します。
-4. 管理者 PowerShell ウィンドウから ```CMD PS C:\> .\DesktopAppConverter.ps1 -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose``` を実行してコンバーターをセットアップします。
-5. 上のコマンドを実行したときに再起動を求めるメッセージが表示されたら、コンピューターを再起動してください。
 
 ## <a name="run-the-desktop-app-converter"></a>Desktop App Converter を実行する
 
 + **ストア ダウンロード**: ```DesktopAppConverter.exe``` を使用してコンバーターを実行します。
-+ **zipファイル**: ```DesktopAppConverter.ps1``` を使用してコンバーターを実行します。 
 
-### <a name="usage"></a>使用法
+### <a name="usage"></a>使用方法
 
 ```CMD
 DesktopAppConverter.exe
@@ -173,6 +166,17 @@ Add-AppxPackage コマンドレットを使うには、展開するアプリケ�
 
 .appx パッケージに署名を行う方法について詳しくは、「[変換済みのデスクトップ アプリに署名する](desktop-to-uwp-signing.md)」をご覧ください。 
 
+注: 自動生成された証明書を使用してパッケージに署名をする場合は、既定のパスワード "123456" を使用する必要があります。
+
+## <a name="modify-vfs-folder-and-registry-hive-optional"></a>VFS フォルダーとレジストリ ハイブを変更する (オプション)
+
+Desktop App Converter は、コンテナー内のファイルとシステム ノイズの除去に、非常に保守的なアプローチを取ります。  lこれは必須ではありませんが、変換後に以下を実行できます。
+
+1. VFS フォルダーを確認し、インストーラーに必要ないファイルを削除します。
+2. Reg.dat の内容を確認し、アプリによってインストールされないまたは必要ないキーを削除します。
+
+変換済みのアプリ を変更する場合 (上記を含む)、コンバーターを再実行する必要はありません。MakeAppx ツールと、DAC によってアプリ用に生成された appxmanifest.xml ファイルを使用して、手動でアプリをもう一度パッケージ化します。 詳しくは、「[Desktop Bridge を使って手動でアプリを UWP アプリに変換する](desktop-to-uwp-manual-conversion.md)」をご覧ください。
+
 ## <a name="caveats"></a>注意事項
 
 1. ホスト コンピューターの Windows 10 ビルドは、Desktop App Converter ダウンロードに含まれていた基本イメージと一致する必要があります。  
@@ -185,14 +189,24 @@ Add-AppxPackage コマンドレットを使うには、展開するアプリケ�
 
 ## <a name="known-issues"></a>既知の問題
 
-+ 以前に Desktop App Converter がインストールされていた開発用コンピューターで Windows Insider フライトを受信すると、新しい基本イメージをセットアップするときにエラー (`New-ContainerNetwork: The object already exists`) が表示される場合があります。 この問題を回避するには、管理者特権のコマンド プロンプトからコマンド `Netsh int ipv4 reset` を実行し、コンピューターを再起動します。 
-+ "AnyCPU" ビルド オプションでコンパイルされた .NET アプリは、メインの実行可能ファイルまたはいずれかの依存関係が "Program Files" または "Windows\System32" に置かれていた場合、インストールに失敗します。 回避策として、アーキテクチャ固有デスクトップ インストーラー (32 ビットまたは 64 ビット) を使用して、AppX パッケージを正しく生成してください。
+* 一部の OS ビルドで発生する以下のエラーについては、現在調査中です。
+    
+    * ```E_CREATTING_ISOLATED_ENV_FAILED```
+    * ```E_STARTING_ISOLATED_ENV_FAILED```
+    
+    以下のいずれかのエラーが発生した場合は、[ダウンロード センター](https://aka.ms/converterimages)から取得した有効な基本イメージを使用していることを確認してください。 有効な .wim をお使いの場合は、お手数ですがログを converter@microsoft.com にお送りください。調査へのご協力をお願いいたします。 
 
-## <a name="telemetry-from-desktop-app-converter"></a>Desktop App Converter の利用統計情報  
+* 以前に Desktop App Converter がインストールされていた開発用コンピューターで Windows Insider フライトを受信すると、新しい基本イメージをセットアップするときにエラー (`New-ContainerNetwork: The object already exists`) が表示される場合があります。 この問題を回避するには、管理者特権のコマンド プロンプトからコマンド `Netsh int ipv4 reset` を実行し、コンピューターを再起動します。 
+
+* "AnyCPU" ビルド オプションでコンパイルされた .NET アプリは、メインの実行可能ファイルまたはいずれかの依存関係が "Program Files" または "Windows\System32" に置かれていた場合、インストールに失敗します。 回避策として、アーキテクチャ固有デスクトップ インストーラー (32 ビットまたは 64 ビット) を使用して、AppX パッケージを正しく生成してください。
+
+## <a name="telemetry-from-desktop-app-converter"></a>Desktop App Converter の利用統計情報
+
 Desktop App Converter は、ソフトウェアの使用者と使用方法に関する情報を収集して、この情報を Microsoft に送信することがあります。 Microsoft のデータ収集と製品ドキュメントでの使用の詳細については、「[マイクロソフトのプライバシーに関する声明](http://go.microsoft.com/fwlink/?LinkId=521839)」をご覧ください。 マイクロソフトのプライバシーに関する声明の該当するすべての条項に準拠することに同意します。
 
 既定では、Desktop App Converter の利用統計情報は有効にされています。 利用統計情報を目的の設定に構成するには、次のレジストリ キーを追加します。  
-```CMD
+
+```cmd
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DesktopAppConverter
 ```
 + DWORD を 1 に設定して、*DisableTelemetry* 値を追加または編集します。
@@ -275,9 +289,7 @@ Desktop App Converter では、x86 コンピューターと amd64 コンピュ�
 
 ### <a name="running-the-peheadercertfixtool"></a>PEHeaderCertFixTool を実行する
 
-DesktopAppConverter は 変換処理中に PEHeaderCertFixTool を自動的に実行し、破損している PEヘッダーを修正します。 ただし、UWP の appx、ルーズ ファイル、または特定のバイナリで、PEHeaderCertFixTool を実行することも可能です。 
-
-PEHeaderCertFixTool は、DesktopAppConverter.zip の一部として付属しています。 使用例: 
+DesktopAppConverter は 変換処理中に PEHeaderCertFixTool を自動的に実行し、破損している PEヘッダーを修正します。 ただし、UWP の appx、ルーズ ファイル、または特定のバイナリで、PEHeaderCertFixTool を実行することも可能です。 使用例: 
 
 ```CMD
 PEHeaderCertFixTool.exe <binary file>|<.appx package>|<folder> [/c] [/v]
@@ -288,7 +300,7 @@ example2: PEHeaderCertFixTool c:\package.appx /c
 example3: PEHeaderCertFixTool c:\myapp /c /v
 ```
 
-## <a name="language-support"></a>サポート言語
+## <a name="language-support"></a>言語サポート
 
 Desktop App Converterは、Unicode をサポートしていません。したがって、漢字または非 ASCII 文字をツールで使用することはできません。
 
@@ -298,6 +310,6 @@ Desktop App Converterは、Unicode をサポートしていません。したが
 + [Project Centennial: ユニバーサル Windows プラットフォームへの既存のデスクトップ アプリケーションの移行](https://channel9.msdn.com/events/Build/2016/B829)  
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -4,8 +4,8 @@ ms.assetid:
 description: "この記事では、MediaCapture と共に MediaFrameReader を使って、色、深度、赤外線カメラ、オーディオ デバイスなどの 1 つ以上の利用可能なソースや、スケルタル トラッキング フレームを生成するようなカスタム フレーム ソースから、メディア フレームを取得する方法を示します。"
 title: "MediaFrameReader を使ったメディア フレームの処理"
 translationtype: Human Translation
-ms.sourcegitcommit: 881f806a61d247c6c4f73aa770ba4c5dab91af00
-ms.openlocfilehash: 648874a50dbe333f1bb6291de646d9088eec1528
+ms.sourcegitcommit: e6ab1fc16f150de2fed3797d89375a52b3965182
+ms.openlocfilehash: 11e09d9b447e9daa0498377a67ef235bdab168dd
 
 ---
 
@@ -117,7 +117,7 @@ XAML でフレームを表示するときの最初の手順は、イメージ �
 
 **Image** コントロールは、プリマルチプライ処理済みまたはアルファなしの BRGA8 形式でのみイメージを表示できます。 到着するフレームがその形式でない場合は、静的メソッド [**Convert**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap.Covert) を使ってソフトウェア ビットマップを正しい形式に変換します。
 
-次に、[**Interlocked.Exchange**](https://msdn.microsoft.com/en-us/library/bb337971) メソッドを使って、到着するビットマップの参照をバックバッファー ビットマップと交換します。 このメソッドは、スレッド セーフであるアトミック操作でこれらの参照を交換します。 交換後、*softwareBitmap* 変数に格納されている古いバックバッファー イメージは、リソースをクリーンアップするために破棄されます。
+次に、[**Interlocked.Exchange**](https://msdn.microsoft.com/library/bb337971) メソッドを使って、到着するビットマップの参照をバックバッファー ビットマップと交換します。 このメソッドは、スレッド セーフであるアトミック操作でこれらの参照を交換します。 交換後、*softwareBitmap* 変数に格納されている古いバックバッファー イメージは、リソースをクリーンアップするために破棄されます。
 
 次に、**Image** 要素に関連付けられている [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Core.CoreDispatcher) を使って、[**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) を呼び出して UI スレッドで実行されるタスクを作成します。 非同期タスクはタスク内で実行されるため、**RunAsync** に渡されるラムダ式は *async* キーワードを付けて宣言されます。
 
@@ -167,6 +167,6 @@ XAML でフレームを表示するときの最初の手順は、イメージ �
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -4,8 +4,8 @@ Description: "Windows ストアでは、支払方法として携帯電話会社�
 title: "携帯電話会社による課金"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 translationtype: Human Translation
-ms.sourcegitcommit: e829808a8e521f2308454e05e8911579b22be807
-ms.openlocfilehash: fe11b56430a07e1326f78b59579ffd9e733ed1b0
+ms.sourcegitcommit: 694c3223278c8666bfb47bf9898ac7c02ac981f4
+ms.openlocfilehash: 831e3fbd1524ce452a4346b6c52f3f1c76385d68
 
 ---
 
@@ -27,6 +27,7 @@ Windows 10 での携帯電話会社による課金の実装は、現在、次の
 | 国/地域  | 携帯電話会社 |
 |-----------------|------------------|
 | フィンランド         | DNA、Elisa       |
+| フランス          | Orange           |
 | ドイツ         | O2               |
 | ハンガリー         | Telenor          |
 | イタリア           | Wind             |
@@ -77,7 +78,7 @@ Windows 10 での携帯電話会社による課金の実装は、現在、次の
 | 南アフリカ         | Vodacom                                                            |
 | スペイン                | Movistar、Vodafone、Orange                                         |
 | 英国       | Everything Everywhere (T-Mobile)、Telefonica (O2)、Three、Vodafone |
-| 米国        | AT&T、Sprint、T-Mobile、Verizon                                    |
+| 米国        | AT&T、T-Mobile、Verizon                                    |
 | ベトナム              | Viettel、Vietnamobile、Vinaphone、Mobifone                         |
 
  
@@ -94,6 +95,6 @@ Windows 10 での携帯電話会社による課金の実装は、現在、次の
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

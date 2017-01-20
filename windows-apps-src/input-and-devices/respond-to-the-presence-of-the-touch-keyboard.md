@@ -6,20 +6,23 @@ ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 97a626aedff1b0915c845f151b16b3678e1cf977
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 7db7c360c1e6e3cadf6423d888240bb2f0f4651a
 
 ---
 
-# タッチ キーボードの表示への応答
+# <a name="respond-to-the-presence-of-the-touch-keyboard"></a>タッチ キーボードの表示への応答
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 タッチ キーボードを表示または非表示にするときにアプリの UI を調整する方法について説明します。
 
-
-**重要な API**
-
--   [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/br209185)
--   [**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242255)
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/br209185)</li>
+<li>[**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242255)</li>
+</ul>
+</div> 
 
 
 
@@ -48,7 +51,7 @@ ms.openlocfilehash: 97a626aedff1b0915c845f151b16b3678e1cf977
 
 キーボード入力に最適化された便利で魅力的なアプリの設計に役立つヒントについては、「[キーボードの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/hh972345)」をご覧ください。
 
-## タッチ キーボードとカスタム UI
+## <a name="touch-keyboard-and-a-custom-ui"></a>タッチ キーボードとカスタム UI
 
 
 ここでは、カスタム テキスト入力コントロールについてのいくつかの基本的な推奨事項を示します。
@@ -71,7 +74,7 @@ ms.openlocfilehash: 97a626aedff1b0915c845f151b16b3678e1cf977
 
     ![常に表示されている必要がある領域を含むフォーム](images/touch-keyboard-pan2.png)
 
-## Showing イベントと Hiding イベントの処理
+## <a name="handling-the-showing-and-hiding-events"></a>Showing イベントと Hiding イベントの処理
 
 
 タッチ キーボードの [**showing**](https://msdn.microsoft.com/library/windows/apps/br242262) イベントと [**hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) イベントのイベント ハンドラーをアタッチする例を次に示します。
@@ -124,7 +127,7 @@ public class MyApplication
 }
 ```
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 * [キーボード操作](keyboard-interactions.md)
 * [キーボードのアクセシビリティ](https://msdn.microsoft.com/library/windows/apps/mt244347)
@@ -146,6 +149,6 @@ public class MyApplication
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

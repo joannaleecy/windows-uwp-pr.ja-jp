@@ -6,11 +6,11 @@ ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f565acbebbee8b8fb88a72970c9dbe3202ba24df
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 874d1a7200359ecc46b26b306b208946c7a6f273
 
 ---
-# チェック ボックス
+# <a name="check-boxes"></a>チェック ボックス
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -21,20 +21,14 @@ ms.openlocfilehash: f565acbebbee8b8fb88a72970c9dbe3202ba24df
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209316"><strong>CheckBox クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx"><strong>Checked イベント</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx"><strong>IsChecked プロパティ</strong></a> </li>
+<li>[**CheckBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209316)</li>
+<li>[**Checked イベント**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)</li>
+<li>[**IsChecked プロパティ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) </li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 **1 つのチェック ボックス**を使うのは、"このアカウントを記憶する" ログイン シナリオや、 サービス契約の条項など、はい/いいえの二者択一の選択肢の場合です。
 
@@ -54,7 +48,7 @@ ms.openlocfilehash: f565acbebbee8b8fb88a72970c9dbe3202ba24df
 
 **チェック ボックス** コントロールと**ラジオ ボタン** コントロールの両方を使うと、ユーザーはオプションの一覧から選択できます。 チェック ボックスを使うと、ユーザーはオプションの組み合わせを選択できます。 これに対し、ラジオ ボタンを使うと、ユーザーは相互排他的なオプションの中から 1 つのオプションを選択できます。 1 つ以上のオプションがあっても、選択できるのが 1 つだけの場合は、代わりにラジオ ボタンを使います。
 
-## 例
+## <a name="examples"></a>例
 
 Microsoft Edge ブラウザーのダイアログ内のチェック ボックス。
 
@@ -64,7 +58,7 @@ Windows のアラーム & クロック アプリ内のチェック ボックス�
 
 ![Windows のアラーム & クロック アプリ内のチェック ボックス](images/control-examples/check-box-alarm.png)
 
-## チェック ボックスを作成する
+## <a name="create-a-checkbox"></a>チェック ボックスを作成する
 
 チェック ボックスにラベルを割り当てるには、[**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) プロパティを設定します。 ラベルはチェック ボックスの横に表示されます。
 
@@ -82,7 +76,7 @@ CheckBox checkBox1 = new CheckBox();
 checkBox1.Content = "I agree to the terms of service.";
 ```
 
-### IsChecked にバインドする
+### <a name="bind-to-ischecked"></a>IsChecked にバインドする
 
 チェック ボックスがオンになっているかオフになっているかを判断するには、[**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) プロパティを使います。 IsChecked プロパティの値を他のバイナリ値にバインドできます。 ただし、IsChecked は [null 許容](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx)のブール値であるため、値コンバーターを使ってブール値にバインドする必要があります。
 
@@ -127,7 +121,7 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 }
 ```
 
-### Click イベントと Checked イベントを処理する
+### <a name="handle-click-and-checked-events"></a>Click イベントと Checked イベントを処理する
 
 チェック ボックスの状態が変化したときにアクションを実行するには、[**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) イベント、または [**Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx) イベントと [**Unchecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.unchecked.aspx) イベントを処理できます。 
 
@@ -180,7 +174,7 @@ private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### 不確定の状態を使用する
+### <a name="use-the-indeterminate-state"></a>不確定の状態を使用する
 
 CheckBox コントロールは [ToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.aspx) を継承します。また、このコントロールには 3 つの状態を指定できます。 
 
@@ -276,7 +270,7 @@ private void SetCheckedState()
 }
 ```
 
-## 推奨と非推奨
+## <a name="dos-and-donts"></a>推奨と非推奨
 
 -   チェック ボックスの用途と現在の状態が明確であることを確認します。
 -   チェック ボックスのテキスト コンテンツは 2 行以内にします。
@@ -298,7 +292,7 @@ private void SetCheckedState()
     ![[Not spicy]、[Spicy]、[Extra spicy] という 3 つのオプションがあるラジオ ボタン グループ](images/spicyoptions.png)
 
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 -   [**CheckBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209316) 
 -   [ラジオ ボタン](radio-button.md)
@@ -308,6 +302,6 @@ private void SetCheckedState()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

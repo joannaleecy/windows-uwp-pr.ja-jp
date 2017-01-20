@@ -4,11 +4,11 @@ ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: "アプリ機能の宣言"
 description: "一部の API またはピクチャ、ミュージック、デバイス (カメラ、マイクなど) などのリソースにアクセスするには、機能をユニバーサル Windows プラットフォーム (UWP) アプリのパッケージ マニフェストで宣言する必要があります。"
 translationtype: Human Translation
-ms.sourcegitcommit: a86efd3e50be6a5cbe0271c1024d3b405fc0d160
-ms.openlocfilehash: 100d1b94dec44cbf00d4a3cacd6aa74f94c20d9c
+ms.sourcegitcommit: ece16df809e7f030c3cbb7a6ab5e727ae77614e3
+ms.openlocfilehash: 5b1052c8b20908cef431a4d1d144d5e8fe1a0eac
 
 ---
-# アプリ機能の宣言
+# <a name="app-capability-declarations"></a>アプリ機能の宣言
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
@@ -28,7 +28,7 @@ ms.openlocfilehash: 100d1b94dec44cbf00d4a3cacd6aa74f94c20d9c
 
 -   Microsoft とそのパートナーだけが使用可能な制限された機能。
 
-## 一般的な用途の機能
+## <a name="general-use-capabilities"></a>一般的な用途の機能
 
 一般的な用途の機能は、ストア アプリのほとんどのシナリオに適用される機能です。
 
@@ -55,7 +55,7 @@ ms.openlocfilehash: 100d1b94dec44cbf00d4a3cacd6aa74f94c20d9c
 | **バックグラウンドでのメディアの再生** | **backgroundMediaPlayback** 機能は、[ **MediaPlayer** ](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx) クラスや [ **AudioGraph** ](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.audiograph.aspx) クラスなど、メディア固有の API の動作を変更して、アプリがバック グラウンドで実行されている間のメディアの再生を有効にします。 アプリがバックグラウンドに移行しても、アクティブなすべてのオーディオ ストリームはミュートせず、音声を発し続けます。 また再生が行われている間はアプリが有効に保たれるように、アプリの有効期間が自動的に延長されます。
 | **リモート システム** | **remoteSystem**機能を使うと、アプリがユーザーの Microsoft アカウントに関連付けられているデバイスの一覧にアクセスできるようになります。 デバイスの一覧へのアクセスは、実行した操作を複数のデバイス間で保持するために不可欠です。 この機能は、次の項目のすべてのメンバーにアクセスするために必要です。<br /><br />Windows.System.RemoteSystems 名前空間<br />Windows.System.RemoteLauncher 名前空間<br />AppServiceConnection.OpenRemoteAsync メソッド
 
-## デバイスの機能
+## <a name="device-capabilities"></a>デバイスの機能
 
 デバイス機能を使用すると、アプリは周辺機器と内部デバイスにアクセスできます。 デバイスの機能を指定するには、アプリのパッケージ マニフェストの **DeviceCapability** 要素を使います。 この要素は追加の子要素を必要とする場合があり、一部のデバイス機能をパッケージ マニフェストに手動で追加する必要があります。 詳しくは、「[パッケージ マニフェストでデバイス機能を指定する方法](https://msdn.microsoft.com/library/windows/apps/Dn263092)」と「[**DeviceCapability スキーマ リファレンス**](https://msdn.microsoft.com/library/windows/apps/BR211430)」をご覧ください。
 
@@ -74,11 +74,11 @@ ms.openlocfilehash: 100d1b94dec44cbf00d4a3cacd6aa74f94c20d9c
 | **光学式ディスク** | **optical** デバイス機能を使うと、アプリは、CD、DVD、ブルーレイなどの光ディスク ドライブの機能にアクセスできます。<br/>[**Windows.Devices.Custom**](https://msdn.microsoft.com/library/windows/apps/Dn263667) 名前空間の一部の API を使う場合は、この機能が必要になります。 |
 | **モーション アクティビティ** | デバイス機能 **activity** を使うと、アプリはデバイスの現在の動きを検出できるようになります。<br/>[**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408) 名前空間の一部の API を使う場合は、この機能が必要になります。 |
 
-## 特殊な用途および制限された用途に関する機能
+## <a name="special-and-restricted-capabilities"></a>特殊な用途および制限された用途に関する機能
 
 これらの機能が必要で適しているものとしては、身元を証明するデジタル証明書をスマート カードに含めるようにユーザーに求める 2 要素認証を使ったバンキング アプリなどがあります。 また、主に企業ユーザー向けに設計されたアプリや、ユーザーのドメイン資格情報がないとアクセスできな企業リソースへのアクセスを必要とするアプリもあります。
 
-特殊な用途の機能に該当するアプリについては、ストアに提出する際に会社のアカウントが必要になります。 これに対し、制限された機能は開発者が使うことができないため、ストア用の特別な会社のアカウントは必要ありません。 制限された機能は、Microsoft とそのパートナーにより開発されたアプリだけが使用可能です。 会社のアカウントについて詳しくは、「[アカウントの種類、場所、料金](https://msdn.microsoft.com/library/windows/apps/JJ863494)」をご覧ください。
+特殊な用途の機能を宣言するアプリについては、ストアに提出する際に会社のアカウントが必要になります。 対照的に、制限された機能には、ストア用の特別な会社のアカウントは必要ありません。 開発者は制限された機能をアプリに使用することはできますが、ストアの申請に承認が必要です。 会社のアカウントについて詳しくは、「 [アカウントの種類、場所、料金](https://msdn.microsoft.com/library/windows/apps/JJ863494)」をご覧ください。 
 
 アプリのパッケージ マニフェストで宣言するとき、すべての制限された機能には **rescap** 名前空間を含める必要があります (これは、他の機能とは異なります)。 次の例は、**appCaptureSettings** 機能を宣言する方法を示しています。
 
@@ -168,7 +168,7 @@ ms.openlocfilehash: 100d1b94dec44cbf00d4a3cacd6aa74f94c20d9c
 **注**  
 この記事は、UWP アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [マニフェスト デザイナー](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx)
 * [個人データにアクセスするアプリのガイドライン](https://msdn.microsoft.com/library/windows/apps/Hh768223)
@@ -178,6 +178,6 @@ ms.openlocfilehash: 100d1b94dec44cbf00d4a3cacd6aa74f94c20d9c
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

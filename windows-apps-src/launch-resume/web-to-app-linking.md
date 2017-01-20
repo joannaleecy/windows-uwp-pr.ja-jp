@@ -3,9 +3,14 @@ author: TylerMSFT
 title: "アプリの URI ハンドラーを使用して Web とアプリのリンクをサポートする"
 description: "アプリの URI ハンドラーを使用して、ユーザーがアプリを利用するように促します。"
 keywords: "Windows でのディープ リンクの設定"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 3e57ca2cf0e7c788f5a8be12ebaf3e6b05a4fe51
-ms.openlocfilehash: e5c815ef0c776954e5b0d7f1cb9bd5e32e10356c
+ms.sourcegitcommit: ffa6ad17ee865dda5349565094c38e09dc42e0e3
+ms.openlocfilehash: 524a0897b6b8a8d17bb7493dc4d9e4357d8c1456
 
 ---
 
@@ -65,7 +70,7 @@ Windows によって、Web サイトへの https 接続が行われ、Web サー
 
 | **ワイルドカード** | **説明**               |
 |--------------|-------------------------------|
-| *****       | 任意の部分文字列を表します      |
+| **\***       | 任意の部分文字列を表します      |
 | **?**        | 1 つの文字を表します |
 
 たとえば、上記の例のように `"excludePaths" : [ "/news/*", "/blog/*" ]` と指定すると、アプリでは、Web サイトのアドレス (上記の例では msn.com) で始まるすべてのパスがサポートされますが、`/news/` と `/blog/` の下にあるパスは**サポートされません**。 つまり、**msn.com/weather.html** はサポートされますが、****msn.com/news/topnews.html**** はサポートされません。
@@ -163,7 +168,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 アプリが閉じていることを確認します。 **Windows キー + R** キーを押し、**[ファイル名を指定して実行]** ダイアログ ボックスを開き、ウィンドウにリンクを貼り付けます。 Web ブラウザーではなく、アプリが起動します。
 
-また、[LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx) API を使用し、他のアプリから目的のアプリを起動してテストすることもできます。 この API を使用して、電話でテストすることもできます。
+また、[LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) API を使用し、他のアプリから目的のアプリを起動してテストすることもできます。 この API を使用して、電話でテストすることもできます。
 
 プロトコルのアクティブ化ロジックを実行する場合は、**OnActivated** イベント ハンドラーにブレークポイントを設定します。
 
@@ -183,18 +188,18 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 - AppUriHandlers と共にサイドロードされたすべてのアプリでは、インストール時にホストのリンクが検証されます。 機能をテストするために JSON ファイルをアップロードする必要はありません。
 
-- この機能は、アプリが [LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx) によって起動された UWP アプリである場合、または [ShellExecuteEx](https://msdn.microsoft.com/en-us/library/windows/desktop/bb762154(v=vs.85).aspx) によって起動された Windows デスクトップ アプリである場合は、必ず動作します。 URL が、登録されているアプリの URI ハンドラーに対応している場合、ブラウザーではなくアプリが起動されます。
+- この機能は、アプリが [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) によって起動された UWP アプリである場合、または [ShellExecuteEx](https://msdn.microsoft.com/library/windows/desktop/bb762154(v=vs.85).aspx) によって起動された Windows デスクトップ アプリである場合は、必ず動作します。 URL が、登録されているアプリの URI ハンドラーに対応している場合、ブラウザーではなくアプリが起動されます。
 
 ## <a name="see-also"></a>関連項目
 
-[windows.protocol の登録](https://msdn.microsoft.com/en-us/library/windows/apps/br211458.aspx)
+[windows.protocol の登録](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
 
-[URI のアクティブ化の処理](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation)
+[URI のアクティブ化の処理](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 
 [関連付けによる起動のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)では、LaunchUriAsync() API の使用方法を説明します。
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

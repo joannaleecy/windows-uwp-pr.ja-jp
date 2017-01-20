@@ -6,16 +6,18 @@ ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
 label: Motion
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
-ms.openlocfilehash: 1cdbb81c783d17af16743a4ff5f82dc1c92df6b4
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 53b6108a472e021caa0d11327c1457b3f6ca8aac
 
 ---
 
-# UWP アプリのモーション
+# <a name="motion-for-uwp-apps"></a>UWP アプリのモーション
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 目的がはっきりし、適切にデザインされたアニメーションは、アプリを生き生きとさせ、精巧で洗練された印象を与えます。 コンテキストの変化がわかりやすく、視覚的な切り替えがエクスペリエンスに結び付きます。
 
-## アニメーションの利点
+## <a name="benefits-of-animation"></a>アニメーションの利点
 
 
 アニメーションは、単にものを動かすだけではありません。 アニメーションはユーザーがアプリに入り込み、タッチを通じて操作するための物理的なエコシステムを作るツールです。 エクスペリエンスの品質は、ユーザーに対するアプリの反応の良さと、UI が伝える個性の種類によって変わります。
@@ -48,15 +50,13 @@ ms.openlocfilehash: 1cdbb81c783d17af16743a4ff5f82dc1c92df6b4
 
     アニメーションを使うと、ユーザーは電話がフリーズしているのではなく処理中であることを知ることができ、ユーザーが関心を持つ可能性のある新しい情報を受動的に表示することができます。
 
-## このセクションの内容
+<h2>このセクションの内容</h2>
+
 <table>
-<thead>
-<tr class="header">
+<tr>
 <th align="left">アニメーションの種類</th>
 <th align="left">説明</th>
 </tr>
-</thead>
-<tbody>
     <tr>
         <td>[追加と削除](motion-list.md)
         </td>
@@ -99,8 +99,6 @@ ms.openlocfilehash: 1cdbb81c783d17af16743a4ff5f82dc1c92df6b4
         <td>要素を新しい位置に移動します。
         </td>
     </tr>
-
-</tbody>
 </table>
 
  
@@ -111,6 +109,6 @@ ms.openlocfilehash: 1cdbb81c783d17af16743a4ff5f82dc1c92df6b4
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

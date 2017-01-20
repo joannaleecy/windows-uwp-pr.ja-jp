@@ -6,23 +6,26 @@ ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
 label: Panning
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 5d82af288d389c6eeb5373d1b1f4230fc992a441
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: d043555d0b467c6b27bc4f0a3b86ccb1404e16a3
 
 ---
 
-# パンのガイドライン
+# <a name="guidelines-for-panning"></a>パンのガイドライン
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 パンとスクロールにより、ユーザーは単一ビュー内で移動し、ビューポートに収まらないビューのコンテンツを表示できます。 ビューの例として、コンピューターのフォルダー構造、ドキュメントのライブラリ、フォト アルバムなどがあります。
 
-**重要な API**
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</li>
+<li>[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)</li>
+</ul>
+</div>
 
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
--   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
-
-
-## 推奨と非推奨
+## <a name="dos-and-donts"></a>推奨と非推奨
 
 
 **パン インジケーターとスクロール バー**
@@ -73,7 +76,7 @@ ms.openlocfilehash: 5d82af288d389c6eeb5373d1b1f4230fc992a441
 
     ![コンテナーと同じ方向にスクロールする埋め込まれたパン対応領域を示す図](images/scrolling-embedded3.png)
 
-## その他の使い方のガイダンス
+## <a name="additional-usage-guidance"></a>その他の使い方のガイダンス
 
 
 タッチでのパン (1 本または複数の指でのスワイプまたはスライド ジェスチャ) は、マウスでのスクロールと似ています。 パンはスクロール バーのクリックよりも、マウス ホイールの回転やスクロール ボックスのスライドに最も近い操作です。 API で区別されているか、一部のデバイス固有の Windows UI によって区別が必要とされていない限り、両方の操作を単にパンと呼びます。
@@ -93,7 +96,7 @@ ms.openlocfilehash: 5d82af288d389c6eeb5373d1b1f4230fc992a441
 
 **パンの種類**
 
-Windows8 では 3 種類のパンがサポートされます。
+Windows 8 では 3 種類のパンがサポートされます。
 
 -   単一軸: 一方向 (水平または垂直) へのパンのみがサポートされます。
 -   レール: 全方向へのパンがサポートされます。 ただし、特定の方向への距離のしきい値を超えると、パンはその軸に制限されます。
@@ -163,7 +166,7 @@ Windows8 では 3 種類のパンがサポートされます。
 
 このガイダンスは、たとえば、フォト アルバムや地図のようなアプリでも役に立ちます。各画像または地図内の制約のないパンをサポートしながら、アルバム内の前の画像または次の画像や詳細な領域への単一軸パンもサポートできます。 フリーフォーム パンの画像や地図に対応する詳細領域またはオプション領域を提供するアプリでは、ページ レイアウトを詳細領域やオプション領域で始めることをお勧めします。画像や地図の制約のないパン領域が、詳細領域へのパンを妨げる可能性があるためです。
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 
 * [カスタム ユーザー操作](https://msdn.microsoft.com/library/windows/apps/mt185599)
@@ -195,6 +198,6 @@ Windows8 では 3 種類のパンがサポートされます。
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

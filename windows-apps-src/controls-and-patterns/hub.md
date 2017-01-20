@@ -6,11 +6,11 @@ ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
 label: Hub
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 6c27d9b968dfca6d0c1db37eb7779d9ff3744f41
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: ad5a8dfab77c78b1c53762f5de868819e0b37d6f
 
 ---
-# ハブ コントロール/パターン
+# <a name="hub-controlpattern"></a>ハブ コントロール/パターン
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -21,21 +21,17 @@ ms.openlocfilehash: 6c27d9b968dfca6d0c1db37eb7779d9ff3744f41
 
 ハブのコンテンツはパノラマ ビューに表示でき、ユーザーは、新しい情報、入手可能な情報、関連する情報がひとめでわかります。 ハブには通常、ページ ヘッダーがあり、各コンテンツ セクションにはセクション ヘッダーがあります。
 
+
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn251843"><strong>Hub クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn251845"><strong>HubSection クラス</strong></a></li>
+<li>[**Hub クラス**](https://msdn.microsoft.com/library/windows/apps/dn251843)</li>
+<li>[**HubSection クラス**](https://msdn.microsoft.com/library/windows/apps/dn251845)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 ハブ コントロールは、階層に配置された大量のコンテンツを表示する場合に適しています。 ハブは、新しいコンテンツの閲覧と検出の優先順位を設定し、ストアやメディア コレクション内の項目を表示する際に役立ちます。
 
@@ -63,13 +59,13 @@ ms.openlocfilehash: 6c27d9b968dfca6d0c1db37eb7779d9ff3744f41
 
 ハブは、いくつかある利用可能なナビゲーション要素の 1 つです。ナビゲーション パターンと他のナビゲーション要素について詳しくは、「[ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーション デザインの基本](../layout/navigation-basics.md)」をご覧ください。
 
-## ハブのアーキテクチャ
+## <a name="hub-architecture"></a>ハブのアーキテクチャ
 
 ハブ コントロールには、リレーショナル情報アーキテクチャを使ったアプリをサポートする階層型ナビゲーション パターンがあります。 ハブはさまざまなカテゴリのコンテンツで構成され、それぞれがアプリのセクション ページに対応付けられています。 セクション ページは、シナリオとセクションに含まれるコンテンツが最適に表現されるような形で表示できます。
 
 ![階層型の Food with Friends アプリのワイヤーフレーム](images/navigation_diagram_food_with_friends_app_new.png)
 
-## レイアウトとパン/スクロール
+## <a name="layouts-and-panningscrolling"></a>レイアウトとパン/スクロール
 
 コンテンツをハブに配置して移動する方法はたくさんあります。ハブのコンテンツ リストが常にハブのスクロール方向に対して垂直にパンされる点だけ確認してください。
 
@@ -86,7 +82,7 @@ ms.openlocfilehash: 6c27d9b968dfca6d0c1db37eb7779d9ff3744f41
 
 ![水平方向にパンするハブの例](images/controls_hub_vertical_horizontal_scroll.png)
 
-## 例
+## <a name="examples"></a>例
 
 ハブは、設計上の大きな柔軟性を備えています。 そのため、魅力的で視覚に訴えるさまざまなエクスペリエンスを提供するアプリを設計できます。 最初のグループには、ヒーロー画像やコンテンツ セクションを使うことができます。ヒーローには、最も強調したい内容を失うことなく垂直方向と水平方向にトリミングできる大きい画像を使ってください。 次の例は、1 つのヒーロー画像と、その画像を横長、縦長、狭い幅で表示するためにトリミングする方法を示しています。
 
@@ -96,7 +92,7 @@ ms.openlocfilehash: 6c27d9b968dfca6d0c1db37eb7779d9ff3744f41
 
 ![小型画面上のハブ パターンの例](images/phone_hub_example.png)
 
-## 推奨事項
+## <a name="recommendations"></a>推奨事項
 
 -   ハブ セクションに他のコンテンツがあることがユーザーにわかるように、一定量のコンテンツが見えるようにコンテンツをクリッピングすることをお勧めします。
 -   アプリの必要に基づいて、ハブ コントロールに複数のハブ セクションを追加し、各セクションに独自の機能目的を持たせることができます。 たとえば、あるセクションには一連のリンクとコントロールを含め、別のセクションはサムネイルのリポジトリとすることができます。 ユーザーは、ハブ コントロールに組み込まれているジェスチャのサポートを使って、これらのセクション間をパンすることができます。
@@ -114,8 +110,11 @@ ms.openlocfilehash: 6c27d9b968dfca6d0c1db37eb7779d9ff3744f41
     -   背景、セクション、セクション ヘッダー、セクション コンテンツの色
 
 
+## <a name="get-the-sample-code"></a>サンプル コードを入手する
+* [XAML UI の基本のサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 
-## 関連記事
+
+## <a name="related-articles"></a>関連記事
 
 - [Hub クラス](https://msdn.microsoft.com/library/windows/apps/dn251843)
 - [ナビゲーションの基本](../layout/navigation-basics.md)
@@ -124,6 +123,6 @@ ms.openlocfilehash: 6c27d9b968dfca6d0c1db37eb7779d9ff3744f41
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

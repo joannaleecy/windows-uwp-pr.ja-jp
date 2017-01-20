@@ -6,11 +6,11 @@ ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 4d474af6930354482f9f8b6e7754ddaf6fe65dac
 
 ---
-# ハイパーリンク
+# <a name="hyperlinks"></a>ハイパーリンク
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -21,17 +21,13 @@ ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn279356"><strong>ハイパーリンク テキスト要素</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br242739"><strong>HyperlinkButton コントロール</strong></a></li>
+<li>[**ハイパーリンク テキスト要素**](https://msdn.microsoft.com/library/windows/apps/dn279356)</li>
+<li>[**HyperlinkButton コントロール**](https://msdn.microsoft.com/library/windows/apps/br242739)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 ユーザーがテキストを選び、そのテキストに関する詳しい情報が表示される場所に移動するとき、この操作に応答するテキストが必要となる場合に、ハイパーリンクを使います。
 
@@ -41,13 +37,13 @@ ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 -   スタンドアロンのハイパーリンクには **HyperlinkButton** を使用します。 HyperlinkButton は、ボタンを使用する任意の場所で使用できる特殊なボタン コントロールです。
 -   クリック可能なイメージを作成するには[イメージ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.image.aspx) と一緒にそのコンテンツとして **HyperlinkButton** を使用します。
 
-## 例
+## <a name="examples"></a>例
 
 電卓アプリでのハイパーリンク。
 
 ![電卓アプリでのハイパーリンクの例](images/control-examples/hyperlinks-calculator.png)
 
-## ハイパーリンク テキスト要素を作成する
+## <a name="create-a-hyperlink-text-element"></a>ハイパーリンク テキスト要素を作成する
 
 この例では、[TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 内のハイパーリンク テキスト要素の使用方法を示します。
 
@@ -66,7 +62,7 @@ ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 
 > **ヒント**&nbsp;&nbsp;テキスト コントロールでハイパーリンクを XAML のその他のテキスト要素と一緒に使用する場合、[スパン](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) コンテナーにコンテンツを配置してスパンに `xml:space="preserve"` 属性を適用すると、ハイパーリンクとその他の要素間に空白を保持します。
 
-## HyperlinkButton を作成する
+## <a name="create-a-hyperlinkbutton"></a>HyperlinkButton を作成する
 
 テキストおよび画像の両方で HyperlinkButton を使用する方法を次に示します。
 
@@ -87,7 +83,7 @@ ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 
 ![ボタン コントロールとしてのハイパーリンクの例](images/controls_hyperlink-button-image.png)
 
-## ナビゲーションの処理
+## <a name="handle-navigation"></a>ナビゲーションの処理
 
 どちらの種類のハイパーリンクでも同様にナビゲーションを処理します。**NavigateUri** プロパティを設定するか、または**クリック** イベントを処理することができます。
 
@@ -95,7 +91,8 @@ ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 
 ハイパーリンクを使用して URI に移動するには、NavigateUri プロパティを設定します。 ユーザーがハイパーリンクをクリックしてまたはタップすると、指定された URI が既定のブラウザーで開きます。 既定のブラウザーは、アプリと別のプロセスで実行されます。
 
-> **注**&nbsp;&nbsp;http: または https: スキームを使用する必要はありません。 ブラウザーに読み込むのに適したリソース コンテンツがこれらの場所にある場合は、ms-appx:、ms-appdata: または ms リソース: などのスキームを使うことができます。 ただし、file: スキームは明確に禁止されます。 詳しくは、「[URI スキーム](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx)」 をご覧ください。
+> [!NOTE]
+> Http: または https: スキームを使用する必要はありません。 ブラウザーに読み込むのに適したリソース コンテンツがこれらの場所にある場合は、ms-appx:、ms-appdata: または ms リソース: などのスキームを使うことができます。 ただし、file: スキームは明確に禁止されます。 詳しくは、「[URI スキーム](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx)」 をご覧ください。
 
 > ユーザーがハイパーリンクをクリックすると、URI の種類とスキームのシステムのハンドラーに NavigateUri プロパティの値が渡されます。 システムは、NavigateUri の指定された URI のスキームに対して登録されているアプリを起動します。
 
@@ -110,7 +107,7 @@ ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 
 既定のブラウザーが NavigateUri に指定されている任意の有効なターゲットを読み込むことを防ぐために Click イベント ハンドラー内でできることはありません。ハイパーリンクがアクティブ化されると操作は自動的に (非同期的に) 行われ、Click イベント ハンドラー内で取り消すことはできません。 
 
-## ハイパーリンクの下線
+## <a name="hyperlink-underlines"></a>ハイパーリンクの下線
 既定では、ハイパーリンクに下線が引かれます。 この下線は、アクセシビリティ要件を満たすために役立つので重要です。 色覚に障碍があるユーザーは、ハイパーリンクとその他のテキストを区別するために下線を使用します。 下線を無効にした場合は、ハイパーリンクを他のテキストと区別するために、FontWeight または FontStyle など、他の書式設定の違いを追加することを検討してください。
 
 **ハイパーリンク テキスト要素**
@@ -127,7 +124,7 @@ ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 
 下線の無いテキストとして表示されるボタンが必要な場合は、標準のボタン コントロールを使い、そのスタイルのプロパティに組み込みの `TextBlockButtonStyle` システム リソースを適用することを検討してください。
 
-## ハイパーリンク テキスト要素の注意点
+## <a name="notes-for-hyperlink-text-element"></a>ハイパーリンク テキスト要素の注意点
 
 このセクションは、ハイパーリンク テキスト要素にのみ該当します。HyperlinkButton コントロールには該当しません。
 
@@ -145,16 +142,14 @@ ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 
 ハイパーリンクの既定の色は、システムのアクセント カラーです。 [Foreground](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.foreground.aspx) プロパティを設定するとこれを上書きできます。
 
-## 推奨事項
+## <a name="recommendations"></a>推奨事項
 
 -   ハイパーリンクを使う場合は、移動のみを目的としてください。他の操作のためにハイパーリンクは使わないでください。
 -   テキスト ベースのハイパーリンクには、書体見本の本文スタイルを使います。 [**fonts and the Windows 10 type ramp**](fonts.md) に関するページをご覧ください。
 -   個々のハイパーリンクの間には十分な間隔を空けます。これにより、それぞれのハイパーリンクを区別することができ、ハイパーリンクを間違えずに選ぶことができます。
 -   ユーザーの移動先を示すヒントをハイパーリンクに追加します。 ユーザーが外部サイトに移動する場合は、ヒント内にトップレベルのドメイン名を入れ、補助的なフォント色を使ってそのテキストのスタイルを指定します。
 
-
-
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 - [テキスト コントロール](text-controls.md)
 - [ヒントのガイドライン](tooltips.md)
@@ -165,6 +160,6 @@ ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

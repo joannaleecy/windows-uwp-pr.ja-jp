@@ -6,17 +6,17 @@ ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
 label: Adaptive tile schema and templates
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 70c06949ee9ac8f9a3f914fc4e020de0460124fa
 
 ---
-# アダプティブ タイル テンプレート: スキーマとガイダンス
+# <a name="adaptive-tile-templates-schema-and-guidance"></a>アダプティブ タイル テンプレート: スキーマとガイダンス
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 アダプティブ タイルの作成に使う要素と属性を次に示します。 手順と例については、「[アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)」をご覧ください。
 
-## tile 要素
+## <a name="tile-element"></a>tile 要素
 
 
 ``` xml
@@ -28,7 +28,7 @@ ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
 </tile>
 ```
 
-## visual 要素
+## <a name="visual-element"></a>visual 要素
 
 
 ``` xml
@@ -47,7 +47,7 @@ ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
 </visual>
 ```
 
-## binding 要素
+## <a name="binding-element"></a>binding 要素
 
 
 ``` xml
@@ -72,7 +72,7 @@ ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
 </binding>
 ```
 
-## image 要素
+## <a name="image-element"></a>image 要素
 
 
 ``` xml
@@ -86,7 +86,7 @@ ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
   hint-align? = "stretch" | "left" | "center" | "right" />
 ```
 
-## text 要素
+## <a name="text-element"></a>text 要素
 
 
 ``` xml
@@ -103,9 +103,9 @@ ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
 </text>
 ```
 
-textStyle の値: caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumber
+textStyle の値: caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumeral
 
-## group 要素
+## <a name="group-element"></a>group 要素
 
 
 ``` xml
@@ -117,7 +117,7 @@ textStyle の値: caption captionSubtle body bodySubtle base baseSubtle subtitle
 </group>
 ```
 
-## subgroup 要素
+## <a name="subgroup-element"></a>subgroup 要素
 
 
 ``` xml
@@ -133,7 +133,7 @@ textStyle の値: caption captionSubtle body bodySubtle base baseSubtle subtitle
 </subgroup>
 ```
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)
@@ -147,6 +147,6 @@ textStyle の値: caption captionSubtle body bodySubtle base baseSubtle subtitle
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

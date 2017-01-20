@@ -4,18 +4,18 @@ title: "バックグラウンド タスクのガイドライン"
 description: "アプリがバックグラウンド タスクを実行するための要件を満たしていることを確認します。"
 ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
 translationtype: Human Translation
-ms.sourcegitcommit: 04cb13ce355b3983a55b7f7f253e6b22a7cebece
-ms.openlocfilehash: 04e8776852a68d2e15c0a08732da48756f403d15
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: 2d03c7f47461422fef7a0905df7e68b3e65c33f0
 
 ---
 
-# バックグラウンド タスクのガイドライン
+# <a name="guidelines-for-background-tasks"></a>バックグラウンド タスクのガイドライン
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください。\]
 
 アプリがバック グラウンド タスクを実行するための要件を満たしていることを確認します。
 
-## バックグラウンド タスクのガイダンス
+## <a name="background-task-guidance"></a>バックグラウンド タスクのガイダンス
 
 バックグラウンド タスクの開発時とアプリの公開前に、次のガイダンスについて検討します。
 
@@ -34,7 +34,7 @@ ms.openlocfilehash: 04e8776852a68d2e15c0a08732da48756f403d15
 
 **バックグラウンド タスクを管理する:** アプリでは、登録済みのバックグラウンド タスクの一覧を取得し、進行状況ハンドラーと完了ハンドラーを登録して、各イベントを適切に処理する必要があります。 バックグラウンド タスク クラスでは、進行状況、キャンセル、完了を報告する必要があります。 詳しくは、「[取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)」と「[バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)」をご覧ください。
 
-**Use [BackgroundTaskDeferral](https://msdn.microsoft.com/library/windows/apps/hh700499)を使用する:** バックグラウンド タスク クラスで非同期コードを実行する場合は、保留を使ってください。 それ以外の場合、[Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) メソッド (インプロセス バックグラウンド タスクの場合は [OnBackgroundActivated](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) メソッド) により、バックグラウンド タスクが途中で終了する可能性があります。 詳しくは、「[アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-an-outofproc-background-task.md)」をご覧ください
+**Use [BackgroundTaskDeferral](https://msdn.microsoft.com/library/windows/apps/hh700499)を使用する:** バックグラウンド タスク クラスで非同期コードを実行する場合は、保留を使ってください。 それ以外の場合、[Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) メソッド (インプロセス バックグラウンド タスクの場合は [OnBackgroundActivated](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) メソッド) により、バックグラウンド タスクが途中で終了する可能性があります。 詳しくは、「[アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」をご覧ください
 
 別の方法として、保留を 1 回要求し、**async/await** を使って、非同期メソッドの呼び出しを完了させることもできます。 **await** メソッドを呼び出した後、保留を閉じます。
 
@@ -49,7 +49,7 @@ ms.openlocfilehash: 04e8776852a68d2e15c0a08732da48756f403d15
 > **重要**  Windows 10 以降、バックグラウンド タスクを実行する前提条件として、アプリをロック画面に配置する必要はなくなりました。
 
 ユニバーサル Windows プラットフォーム (UWP) アプリは、ロック画面にピン留めしなくても、サポートされているすべての種類のタスクを実行できます。 ただし、どの種類のバックグラウンド タスクを登録する場合でも、その前にアプリが [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) を呼び出す必要があります。 ユーザーがデバイス設定でバックグラウンド タスクに対するアプリのアクセス許可を明示的に拒否した場合、このメソッドは [**BackgroundAccessStatus.Denied**](https://msdn.microsoft.com/library/windows/apps/hh700439) を返します。
-## バックグラウンド タスクのチェック リスト
+## <a name="background-task-checklist"></a>バックグラウンド タスクのチェック リスト
 
 *インプロセス バックグラウンド タスクとアウトプロセス バックグラウンド タスクの両方に適用されます*
 
@@ -75,7 +75,7 @@ ms.openlocfilehash: 04e8776852a68d2e15c0a08732da48756f403d15
 -   バックグラウンド タスクの存続期間は短くします。 バックグラウンド タスクに使用できる時間は、ウォールクロック時間で 30 秒間に制限されています。
 -   バックグラウンド タスクでのユーザー操作に依存することはできません。
 
-## Windows: ロック画面対応アプリのバックグラウンド タスクのチェック リスト
+## <a name="windows-background-task-checklist-for-lock-screen-capable-apps"></a>Windows: ロック画面対応アプリのバックグラウンド タスクのチェック リスト
 
 ロック画面に配置できるアプリのバックグラウンド タスクを開発する際は、このガイダンスに従ってください。 また、「[ロック画面のタイルのガイドラインとチェック リスト](https://msdn.microsoft.com/library/windows/apps/hh465403)」のガイダンスにも従ってください。
 
@@ -88,10 +88,10 @@ ms.openlocfilehash: 04e8776852a68d2e15c0a08732da48756f403d15
 **注**  
 この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
-* [インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)。
-* [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-an-outofproc-background-task.md)
+* [インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)
+* [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
 * [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
 * [バックグラウンドでのメディアの再生](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
 * [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
@@ -111,6 +111,6 @@ ms.openlocfilehash: 04e8776852a68d2e15c0a08732da48756f403d15
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

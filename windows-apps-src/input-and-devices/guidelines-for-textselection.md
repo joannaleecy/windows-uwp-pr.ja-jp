@@ -5,26 +5,34 @@ title: "テキストと画像の選択"
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
 template: detail.hbs
+keywords: "キーボード, テキスト, 入力, ユーザーの操作"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 45184c6ce84b9db215c576c5521e8ec1e834b162
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: bb3a231a842698c18fc496c87705d269dfbeaa58
 
 ---
 
-# テキストと画像の選択
+# <a name="selecting-text-and-images"></a>テキストと画像の選択
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 この記事では、テキスト、画像、コントロールの選択と操作について説明し、アプリでこれらのメカニズムを使うときに考慮する必要があるユーザー エクスペリエンスのガイドラインを示します。
 
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)</li>
+<li>[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</li>
+</ul>
+</div>
+ 
 
 
-
-**重要な API**
-
--   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
-
-
-## 推奨と非推奨
+## <a name="dos-and-donts"></a>推奨と非推奨
 
 
 -   独自のグリッパー UI を実装する場合は、フォント グリフを使います。 グリッパーは、システム全体で利用できる 2 つの Segoe UI フォントを組み合わせたものです。 フォント リソースを使うと、さまざまな dpi におけるレンダリングの問題が軽減され、さまざまな UI 表示スケール プラトーに対応できます。 独自のグリッパーを実装する場合は、どのグリッパーにも次の UI の特性を持たせてください。
@@ -40,7 +48,7 @@ ms.openlocfilehash: 45184c6ce84b9db215c576c5521e8ec1e834b162
 
 -   コントロール、ラベル、画像、独自のコンテンツなどの UI 要素は選択できないようにします。 通常、Windows アプリケーションでは、特定のコントロール内でのみ選択できます。 ボタン、ラベル、ロゴなどのコントロールは選択できません。 選択がアプリにとって問題になるかどうかを評価し、問題になる場合は、選択を禁止する UI 領域を特定します。 
 
-## その他の使い方のガイダンス
+## <a name="additional-usage-guidance"></a>その他の使い方のガイダンス
 
 
 テキストの選択と操作は、タッチ操作で導入されたユーザー エクスペリエンスの問題の影響を特に受けやすくなっています。 マウス、ペン/スタイラス、キーボード入力は非常に細かく制御されます。1 回のマウスのクリックまたはペン/スタイラスの接触は 1 ピクセルにマッピングされ、キーは押されるか、放されます。 タッチ入力は細かく制御されません。指先の表面全体を、画面上の特定の x-y の位置にマッピングしてテキスト キャレットを正確に配置することは困難です。
@@ -58,9 +66,9 @@ Windows の言語フレームワークによって公開されるビルトイン
 **編集可能なコンテンツと編集不可のコンテンツ**
 
 
-タッチでは、選択操作は主に挿入カーソルの設定や単語の選択を行うタップ、選択範囲の変更を行うスライドなどのジェスチャを通じて実行されます。 他の Windowsタッチ操作と同様に、時間制限のある対話式操作は情報 UI を表示するための長押しジェスチャに制限されます。 詳しくは、「[視覚的なフィードバックのガイドライン](guidelines-for-visualfeedback.md)」をご覧ください。
+タッチでは、選択操作は主に挿入カーソルの設定や単語の選択を行うタップ、選択範囲の変更を行うスライドなどのジェスチャを通じて実行されます。 他の Windows タッチ操作と同様に、時間制限のある対話式操作は情報 UI を表示するための長押しジェスチャに制限されます。 詳しくは、「[視覚的なフィードバックのガイドライン](guidelines-for-visualfeedback.md)」をご覧ください。
 
-Windowsでは、選択操作のために "編集可能" と "編集不可" の 2 つの状態が認識され、その状態に合わせて選択 UI、フィードバック、機能が調整されます。
+Windows では、選択操作のために "編集可能" と "編集不可" の 2 つの状態が認識され、その状態に合わせて選択 UI、フィードバック、機能が調整されます。
 
 **編集可能なコンテンツ**
 
@@ -104,7 +112,7 @@ UWP アプリでカスタム オブジェクト操作を実装する場合は、
 
 *トリミング グリッパーが表示された画像エディターです。*
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 
 
@@ -136,6 +144,6 @@ UWP アプリでカスタム オブジェクト操作を実装する場合は、
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

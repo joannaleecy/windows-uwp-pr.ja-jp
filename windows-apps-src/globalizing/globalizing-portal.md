@@ -7,15 +7,13 @@ ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: a34b682cc903555b9d6f64636c3d1cf7bee75b5d
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 3149eb8275cc74c61ff0e35963f3fd1dbdc4e833
 
 ---
 
-# グローバリゼーションとローカライズ
-
-
-
+# <a name="globalization-and-localization"></a>グローバリゼーションとローカライズ
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Windows は世界中で利用されており、文化、地域、言語の異なるユーザーがいます。 ユーザーは、自分の使用言語としてどの言語でも指定でき、複数の言語を指定することもできます。 住んでいる地域として世界中のどの場所を指定することもでき、地域を問わずどの言語でも指定できます。 *グローバリゼーション*と*ローカライズ*によってアプリの適応性を高めることにより、潜在的な市場を拡大することができます。
 
@@ -36,7 +34,7 @@ Windows は世界中で利用されており、文化、地域、言語の異な
 
 世界に向けてアプリを準備する方法の概略については、ビデオ「[アプリのグローバリゼーションとローカライズの概略](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization)」をご覧ください。
 
-## 記事
+## <a name="articles"></a>記事
 <table>
 <colgroup>
 <col width="50%" />
@@ -99,6 +97,6 @@ Windows は世界中で利用されており、文化、地域、言語の異な
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

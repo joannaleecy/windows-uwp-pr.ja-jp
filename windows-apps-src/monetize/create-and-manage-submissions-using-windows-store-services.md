@@ -4,8 +4,8 @@ ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 description: "Windows ストア申請 API を使用して、Windows デベロッパー センター アカウントに登録されているアプリの申請をプログラムで作成および管理します。"
 title: "Windows ストア サービスを使用した申請の作成と管理"
 translationtype: Human Translation
-ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
-ms.openlocfilehash: 1172be1072f0c539828a08655236be467c6c9fba
+ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
+ms.openlocfilehash: 8467cddd5eec2348cd35f4f5dc1564b47813a6ca
 
 ---
 
@@ -73,7 +73,7 @@ Windows ストア申請 API で任意のメソッドを呼び出す前に、API 
 アクセス トークンを取得するには、「[クライアント資格情報を使用したサービス間の呼び出し](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/)」の手順に従って、HTTP POST を ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` エンドポイントに送信します。 要求の例を次に示します。
 
 ```
-POST https://login.microsoftonline.com/<your_tenant_id>/oauth2/token HTTP/1.1
+POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded; charset=utf-8
 
@@ -83,9 +83,11 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-*tenant\_id*、*client \_id*、*client \_secret* の各パラメーターには、前のセクションでデベロッパー センターから取得したテナント ID、クライアント ID、キーを指定します。 *resource* パラメーターには、```https://manage.devcenter.microsoft.com``` という URI を指定します。
+POST URI の *tenant\_id* の値と *client \_id* および *client \_secret* のパラメーターには、前のセクションでデベロッパー センターから取得したテナント ID、クライアント ID、キーを指定します。 *resource* パラメーターには、```https://manage.devcenter.microsoft.com``` を指定します。
 
 アクセス トークンの有効期限が切れた後は、[この](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)手順に従って更新できます。
+
+C#、Java、または Python コードを使用してアクセス トークンを取得する方法を示す例については、Windows ストア申請 API の[コード例](#code-examples)をご覧ください。
 
 <span id="call-the-windows-store-submission-api">
 ## <a name="step-3-use-the-windows-store-submission-api"></a>手順 3. Windows ストア申請 API を使用する
@@ -100,8 +102,7 @@ Azure AD アクセス トークンを取得したら、Windows ストア申請 A
 | アドオン | アプリのアドオンを取得、作成、または削除した後、そのアドオンの申請を取得、作成、または削除します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[アドオンの管理](manage-add-ons.md)</li><li>[アドオンの申請の管理](manage-add-on-submissions.md)</li></ul> |
 | パッケージ フライト | アプリのパッケージ フライトを取得、作成、または削除した後、パッケージ フライトの申請を取得、作成、または削除します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[パッケージ フライトの管理](manage-flights.md)</li><li>[パッケージ フライトの申請の管理](manage-flight-submissions.md)</li></ul> |
 
-<span />
-
+<span id="code-samples"/>
 ## <a name="code-examples"></a>コード例
 
 次の記事では、さまざまなプログラミング言語で Windows ストア申請 API を使用する方法を説明する詳しいコード例を紹介します。
@@ -135,6 +136,6 @@ Windows ストア申請 API に関する質問がある場合やこの API を�
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

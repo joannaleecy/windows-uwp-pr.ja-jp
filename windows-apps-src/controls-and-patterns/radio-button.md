@@ -6,11 +6,11 @@ ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: f26b042bb7efb6599993b8fd7cee6ee35e1765fd
-ms.openlocfilehash: 0e9cd8db21577bdbfe4c53fc9a17fbcbf5c81f76
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 95ddb1ddd1dfd318a5c491504c95f7833f98115e
 
 ---
-# ラジオ ボタン
+# <a name="radio-buttons"></a>ラジオ ボタン
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -23,20 +23,14 @@ ms.openlocfilehash: 0e9cd8db21577bdbfe4c53fc9a17fbcbf5c81f76
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br227544"><strong>RadioButton クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx"><strong>Checked イベント</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx"><strong>IsChecked プロパティ</strong></a></li>
+<li>[**RadioButton クラス**](https://msdn.microsoft.com/library/windows/apps/br227544)</li>
+<li>[**Checked イベント**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)</li>
+<li>[**IsChecked プロパティ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 ユーザーに 2 つ以上の相互排他的なオプションを提示するには、次のようにラジオ ボタンを使います。
 
@@ -60,12 +54,12 @@ ms.openlocfilehash: 0e9cd8db21577bdbfe4c53fc9a17fbcbf5c81f76
 
 オプションがアプリの現在のコンテキストに基づいて表示される場合や、その他の方法で動的に変化する場合は、単一選択の [リスト ボックス](lists.md) を使います。
 
-## 例
+## <a name="example"></a>例
 Microsoft Edge ブラウザーでのラジオ ボタンの設定です。
 
 ![Microsoft Edge ブラウザーでのラジオ ボタンの設定](images/control-examples/radio-buttons-edge.png)
 
-## ラジオ ボタンの作成
+## <a name="create-a-radio-button"></a>ラジオ ボタンの作成
 
 ラジオ ボタンは、グループで動作します。 ラジオ ボタン コントロールをグループ化する 2 つの方法があります。
 - 同じ親コンテナー内に追加します。
@@ -155,13 +149,13 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 }
 ```
 
-ユーザーが青色の背景色と緑の境界線を選択すると、ラジオ ボタン グループは次のようになります。
+ラジオ ボタンのグループは、次のようになります。
 
 ![ラジオ ボタンの 2 つのグループ](images/radio-button-groups.png)
 
 ラジオ ボタンには*選択*または*クリア*の 2 つの状態があります。 ラジオ ボタンを選択すると、[**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) プロパティは **true** になります。 ラジオ ボタンがクリアされると、**IsChecked** プロパティは **false** になります。 同じグループ内の別のラジオ ボタンをクリックするとラジオ ボタンをクリアにできますが、ボタンをもう一度クリックしてもクリアにすることはできません。 ただし、プログラムで IsChecked プロパティを **false** に設定してラジオ ボタンをクリアにすることができます。
 
-## 推奨事項
+## <a name="recommendations"></a>推奨事項
 
 -   一連のラジオ ボタンの用途と現在の状態が明確に表示されていることを確認します。
 -   ユーザーがラジオ ボタンをタップしたときには、必ず視覚的なフィードバックを返します。
@@ -177,12 +171,12 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 -   2 つのラジオ ボタン グループを並べて配置しないようにします。 
 2 つのラジオ ボタン グループが並んでいると、どのボタンがどのグループに属しているかがわかりにくくなります。 グループを分けるには、グループ ラベルを使います。
 
-## その他の使い方のガイダンス
+## <a name="additional-usage-guidance"></a>その他の使い方のガイダンス
 
 この図は、適切な位置と間隔で配置したラジオ ボタンを示しています。
 
 ![一連のラジオ ボタン](images/radiobutton_layout1.png)
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 **デザイナー向け**
 - [ボタンのガイドライン](buttons.md)
@@ -199,6 +193,6 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

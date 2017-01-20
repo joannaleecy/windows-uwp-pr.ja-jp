@@ -1,27 +1,36 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "ユーザーがタッチ キーボード、つまりソフト入力パネル (SIP) でデータを入力できるように、ユーザーが入力すると予想されるデータの種類に合わせてテキスト コントロールの入力値の種類を設定できます。"
+Description: "ユーザーがタッチ キーボード、つまりソフト入力パネル (SIP) でデータを入力できるように、ユーザーが入力すると予想されるデータの種類に合わせてテキスト コントロールの入力スコープを設定できます。"
 MS-HAID: dev\_ctrl\_layout\_txt.use\_input\_scope\_to\_change\_the\_touch\_keyboard
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: "入力値の種類を使ったタッチ キーボードの変更"
+title: "入力スコープを使用してタッチ キーボードを変更する"
 ms.assetid: 6E5F55D7-24D6-47CC-B457-B6231EDE2A71
 template: detail.hbs
+keywords: "キーボード, アクセシビリティ, ナビゲーション, フォーカス, テキスト, 入力, ユーザーの操作"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 692905c1c6d9b3d706baeadc480041c77163c272
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: caaa6228f2d5b2bb6566ccb285d90a396a1caf01
 
 ---
 
-# 入力値の種類を使ったタッチ キーボードの変更
+# <a name="use-input-scope-to-change-the-touch-keyboard"></a>入力スコープを使用してタッチ キーボードを変更する
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 ユーザーがタッチ キーボード、つまりソフト入力パネル (SIP) でデータを入力できるように、ユーザーが入力すると予想されるデータの種類に合わせてテキスト コントロールの入力スコープを設定できます。
 
-**重要な API**
-
--   [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632)
--   [**InputScopeNameValue**](https://msdn.microsoft.com/library/windows/apps/hh702028)
-
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632)</li>
+<li>[**InputScopeNameValue**](https://msdn.microsoft.com/library/windows/apps/hh702028)</li>
+</ul>
+</div>
 
 
 タッチ キーボードは、アプリがタッチ スクリーン付きのデバイスで実行されているときにテキスト入力に使うことができます。 タッチ キーボードは、[**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) または [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) などの編集可能な入力フィールドをユーザーがタップしたときに呼び出されます。 ユーザーが入力すると予想されるデータの種類と一致するようにテキスト コントロールの*入力値の種類*を設定することで、ユーザーはより速く簡単にアプリでデータを入力できるようになります。 入力値の種類は、システムに対してコントロールが予期しているテキスト入力の種類のヒントとなるため、システムはその入力の種類用の特殊なタッチ キーボード レイアウトを提供できます。
@@ -32,7 +41,7 @@ ms.openlocfilehash: 692905c1c6d9b3d706baeadc480041c77163c272
 - この情報は、SIP にのみ適用されます。 ハードウェア キーボードにも、Windows の簡単操作オプションで使用できるスクリーン キーボードにも適用されません。
 - 入力値の種類の設定によって、入力の検証が実行されるわけではありません。また、ユーザーが、ハードウェア キーボードやその他の入力デバイスから入力できなくなることもありません。 必要に応じて、コードで入力を検証する必要があります。
 
-## テキスト コントロールの入力値の種類を変更する
+## <a name="changing-the-input-scope-of-a-text-control"></a>テキスト コントロールの入力値の種類を変更する
 
 アプリで使用可能な入力値の種類は、[**InputScopeNameValue**](https://msdn.microsoft.com/library/windows/apps/hh702028) 列挙体のメンバーです。 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) または [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) の **InputScope** プロパティを、これらの値のいずれかに設定できます。
 
@@ -113,7 +122,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 };
 ```
 
-## 予測入力、スペル チェック、および自動修正
+## <a name="text-prediction-spell-checking-and-auto-correction"></a>予測入力、スペル チェック、および自動修正
 
 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) コントロールと [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) コントロールには、SIP の動作に影響を与えるプロパティがいくつかあります。 ユーザーに最適なエクスペリエンスを提供するには、これらのプロパティが、タッチ操作を使用したテキスト入力に与える影響を理解しておく必要があります。
 
@@ -129,7 +138,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 -   [**PreventKeyboardDisplayOnProgrammaticFocus**](https://msdn.microsoft.com/library/windows/apps/dn299273): このプロパティが **true** の場合は、プログラムによりフォーカスがテキスト コントロールに設定されていると、SIP が表示されなくなります。 代わりに、ユーザーがコントロールで操作するときにだけ、キーボードが表示されます。
 
-## Windows と Windows Phone のタッチ キーボード インデックス
+## <a name="touch-keyboard-index-for-windows-and-windows-phone"></a>Windows と Windows Phone のタッチ キーボード インデックス
 
 次の各表は、一般的な入力値の種類について、デスクトップおよびモバイル デバイスのソフト入力パネル (SIP) レイアウトを示しています。 **IsSpellCheckEnabled** プロパティや **IsTextPredictionEnabled** プロパティによって有効になっている機能に対する入力値の種類の影響が、入力値の種類ごとに説明されています。 これは、利用できる入力値の種類をすべて示したものではありません。
 
@@ -137,7 +146,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 > **ヒント**&nbsp;&nbsp;ほとんどのタッチ キーボードでは、アルファベットのレイアウトと、数字と記号のレイアウトを切り替えることができます。 Windows では、**&123** キーを切り替えます。 Windows Phone では、**&123** キーを押して、数字と記号のレイアウトに切り替え、**abcd** キーを押して、アルファベットのレイアウトに切り替えます。
 
-### Default
+### <a name="default"></a>Default
 
 `<TextBox InputScope="Default"/>`
 
@@ -154,7 +163,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 -   大文字の自動設定: **IsSpellCheckEnabled** = **true** の場合は有効、**IsSpellCheckEnabled** = **false** の場合は無効
 -   予測入力: **IsTextPredictionEnabled** = **true** の場合は有効、**IsTextPredictionEnabled** = **false** の場合は無効
 
-### CurrencyAmountAndSymbol
+### <a name="currencyamountandsymbol"></a>CurrencyAmountAndSymbol
 
 `<TextBox InputScope="CurrencyAmountAndSymbol"/>`
 
@@ -165,7 +174,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 | ![通貨用 Windows タッチ キーボード](images/input-scopes/kbdpccurrencyamountandsymbol.png)<br>その他の記号を表示するためのページの左/右キーもあります。| ![通貨用 Windows Phone タッチ キーボード](images/input-scopes/kbdwpcurrencyamountandsymbol.png) |
 |機能の可用性:<ul><li>スペル チェック: 既定では有効だが、無効にすることも可能</li><li>自動修正: 常に無効</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 常に無効</li></ul>**Number** および **TelephoneNumber** と同じ。 | 機能の可用性:<ul><li>スペル チェック: 既定では有効だが、無効にすることも可能</li><li>自動修正: 既定では有効だが、無効にすることも可能</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 既定では有効だが、無効にすることも可能</li>| 
 
-### Url
+### <a name="url"></a>Url
 
 `<TextBox InputScope="Url"/>`
 
@@ -176,7 +185,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 | ![URL 用 Windows タッチ キーボード](images/input-scopes/kbdpcurl.png)<br>**:** キー、**-** キー、**/** キーもあります。| ![URL 用 Windows Phone タッチ キーボード](images/input-scopes/kbdwpurl.png)<br>ピリオド キーを長押しすると、追加オプション ( - + &quot; / &amp; : , ) が表示されます。 |
 |機能の可用性:<ul><li>スペル チェック: 既定では有効だが、無効にすることも可能</li><li>自動修正: 既定では有効だが、無効にすることも可能</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 常に無効</li></ul> | 機能の可用性:<ul><li>スペル チェック: 既定では無効だが、有効にすることも可能</li><li>自動修正: 既定では無効だが、有効にすることも可能</li><li>大文字の自動設定: 既定では無効だが、有効にすることも可能</li><li>予測入力: 既定では無効だが、有効にすることも可能</li></ul> |
 
-### EmailSmtpAddress
+### <a name="emailsmtpaddress"></a>EmailSmtpAddress
 
 `<TextBox InputScope="EmailSmtpAddress"/>`
 
@@ -187,7 +196,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 | ![メール アドレス用の Windows タッチ キーボード](images/input-scopes/kbdpcemailsmtpaddress.png)<br>**_** キーと **-** キーもあります。| ![メール アドレス用の Windows Phone タッチ キーボード](images/input-scopes/kbdwpemailsmtpaddress.png)<br>ピリオド キーを長押しすると、追加オプション ( - _ , ; ) が表示されます。 |
 |機能の可用性:<ul><li>スペル チェック: 既定では有効だが、無効にすることも可能</li><li>自動修正: 既定では有効だが、無効にすることも可能</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 常に無効</li></ul> | 機能の可用性:<ul><li>スペル チェック: 既定では無効だが、有効にすることも可能</li><li>自動修正: 既定では無効だが、有効にすることも可能</li><li>大文字の自動設定: 既定では無効だが、有効にすることも可能</li><li>予測入力: 既定では無効だが、有効にすることも可能</li></ul> |
 
-### Number
+### <a name="number"></a>Number
 
 `<TextBox InputScope="Number"/>`
 
@@ -196,7 +205,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 | ![電話番号用 Windows タッチ キーボード](images/input-scopes/kbdpccurrencyamountandsymbol.png)| ![電話番号用 Windows Phone タッチ キーボード](images/input-scopes/kbdwpnumber.png)<br>キーボードには、数字と小数点が含まれます。 小数点キーを長押しすると、追加オプション ( , - ) が表示されます。 |
 |**CurrencyAmountAndSymbol** および **TelephoneNumber** と同じ。 | 機能の可用性:<ul><li>スペル チェック: 常に無効</li><li>自動修正: 常に無効</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 常に無効</li></ul> |
 
-### TelephoneNumber
+### <a name="telephonenumber"></a>TelephoneNumber
 
 `<TextBox InputScope="TelephoneNumber"/>`
 
@@ -205,7 +214,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 | ![電話番号用 Windows タッチ キーボード](images/input-scopes/kbdpccurrencyamountandsymbol.png)| ![電話番号用 Windows Phone タッチ キーボード](images/input-scopes/kbdwptelephonenumber.png)<br>キーボードは、電話のキーパッドに似ています。 ピリオド キーを長押しすると、追加オプション ( , ( ) X .  ) が表示されます。 + を入力するには、0 キーを長押しします。 |
 |**CurrencyAmountAndSymbol** および **TelephoneNumber** と同じ。 | 機能の可用性:<ul><li>スペル チェック: 常に無効</li><li>自動修正: 常に無効</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 常に無効</li></ul> |
 
-### Search
+### <a name="search"></a>Search
 
 `<TextBox InputScope="Search"/>`
 
@@ -216,7 +225,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 | ![検索用 Windows タッチ キーボード](images/input-scopes/kbdpcsearch.png)| ![検索用 Windows Phone タッチ キーボード](images/input-scopes/kbdwpsearch.png)|
 |機能の可用性:<ul><li>スペル チェック: 既定では有効だが、無効にすることも可能</li><li>自動修正: 常に無効</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 既定では有効だが、無効にすることも可能</li></ul> | 機能の可用性:<ul><li>スペル チェック: 既定では有効だが、無効にすることも可能</li><li>自動修正: 既定では有効だが、無効にすることも可能</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 既定では有効だが、無効にすることも可能</li></ul> |
 
-### SearchIncremental
+### <a name="searchincremental"></a>SearchIncremental
 
 `<TextBox InputScope="SearchIncremental"/>`
 
@@ -225,7 +234,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 | ![既定の Windows タッチ キーボード](images/input-scopes/kbdpcdefault.png)<br>**Default** と同じレイアウト。| ![既定の Windows Phone タッチ キーボード](images/input-scopes/kbdwpdefault.png)|
 |機能の可用性:<ul><li>スペル チェック: 既定では無効だが、有効にすることも可能</li><li>自動修正: 常に無効</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 常に無効</li></ul> | **Default** と同じ。 |
 
-### Formula
+### <a name="formula"></a>Formula
 
 `<TextBox InputScope="Formula"/>`
 
@@ -236,7 +245,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 | ![数式用 Windows タッチ キーボード](images/input-scopes/kbdpcformula.png)<br>**%** キー、**$** キー、**+** キーもあります。| ![数式用 Windows Phone タッチ キーボード](images/input-scopes/kbdwpformula.png)<br>ピリオド キーを長押しすると、追加オプション ( - ! ? , ) が表示されます。 **=** キーを長押しすると、追加オプション ( ( ) : &lt; &gt; ) が表示されます。 |
 |機能の可用性:<ul><li>スペル チェック: 既定では無効だが、有効にすることも可能</li><li>自動修正: 常に無効</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 常に無効</li></ul> | 機能の可用性:<ul><li>スペル チェック: 既定では有効だが、無効にすることも可能</li><li>自動修正: 既定では有効だが、無効にすることも可能</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 既定では有効だが、無効にすることも可能</li></ul> |
 
-### Chat
+### <a name="chat"></a>Chat
 
 `<TextBox InputScope="Chat"/>`
 
@@ -245,7 +254,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 | ![既定の Windows タッチ キーボード](images/input-scopes/kbdpcdefault.png)<br>**Default** と同じレイアウト。| ![既定の Windows Phone タッチ キーボード](images/input-scopes/kbdwpdefault.png)<br>**Default** と同じレイアウト。|
 |機能の可用性:<ul><li>スペル チェック: 既定では無効だが、有効にすることも可能</li><li>自動修正: 常に無効</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 常に無効</li></ul> | 機能の可用性:<ul><li>スペル チェック: 既定では有効だが、無効にすることも可能</li><li>自動修正: 既定では有効だが、無効にすることも可能</li><li>大文字の自動設定: 既定では有効だが、無効にすることも可能</li><li>予測入力: 既定では有効だが、無効にすることも可能</li></ul> |
 
-### NameOrPhoneNumber
+### <a name="nameorphonenumber"></a>NameOrPhoneNumber
 
 `<TextBox InputScope="NameOrPhoneNumber"/>`
 
@@ -256,6 +265,6 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

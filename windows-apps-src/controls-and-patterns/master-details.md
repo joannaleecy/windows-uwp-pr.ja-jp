@@ -6,11 +6,11 @@ ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
+ms.sourcegitcommit: 98b3a9739b1906b7abb529cea1e7d433118cbcdd
+ms.openlocfilehash: ef57c6d1a00797e2a68291475b6a38778e5d73ad
 
 ---
-# マスター/詳細パターン
+# <a name="masterdetails-pattern"></a>マスター/詳細パターン
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -18,7 +18,7 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 
 ![マスター/詳細パターンの例](images/HIGSecOne_MasterDetail.png)
 
-## 適切なパターンの選択
+## <a name="is-this-the-right-pattern"></a>適切なパターンの選択
 
 次の場合は、マスター/詳細パターンが適しています。
 
@@ -26,7 +26,7 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 -   大きいコンテンツ コレクションを特定して優先順位を設定する。
 -   コンテキスト間を前後に移動しながら、リストから項目をすばやく追加および削除できるようにする。
 
-## 適切なスタイルの選択
+## <a name="choose-the-right-style"></a>適切なスタイルの選択
 
 マスター/詳細パターンを実装するとき、利用可能な画面領域の量に応じて、スタック スタイルまたは左右に並べるスタイルを使うことをお勧めします。
 
@@ -36,7 +36,7 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 | 720 epx 以上       | 左右に並べる      |
 
  
-## スタック スタイル
+## <a name="stacked-style"></a>スタック スタイル
 
 スタック スタイルでは、マスター ウィンドウと詳細ウィンドウのうち 1 つのウィンドウだけが一度に表示されます。
 
@@ -44,7 +44,7 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 
 ユーザーがマスター ウィンドウで作業を始め、マスター リストで項目を選んで詳細ウィンドウに "ドリルダウン" します。 ユーザーから見ると、マスター ビューと詳細ビューが別々の 2 つのページに存在するように表示されます。
 
-### スタック マスター/詳細パターンの作成
+### <a name="create-a-stacked-masterdetails-pattern"></a>スタック マスター/詳細パターンの作成
 
 スタック マスター/詳細パターンを作る方法の 1 つは、マスター ウィンドウと詳細ウィンドウにそれぞれ別のページを使うことです。 マスター リストを表示するリスト ビューを 1 つのページに配置し、詳細ウィンドウのコンテンツ要素を別のページに配置します。
 
@@ -54,7 +54,7 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 
 詳細ウィンドウの場合、最も意味のあるコンテンツ要素を使います。 多くの個別フィールドがある場合は、グリッド レイアウトを使って要素をフォームに配置することを検討します。
 
-## 左右に並べるスタイル
+## <a name="side-by-side-style"></a>左右に並べるスタイル
 
 横に並べるスタイルでは、マスター ウィンドウと詳細ウィンドウを同時に表示できます。
 
@@ -62,13 +62,13 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 
 マスター ウィンドウのリストは、現在選択されている項目を示すために選択ビジュアルを使用します。 マスター リストで新しい項目を選ぶと、詳細ウィンドウが更新されます。
 
-### 左右に並べるマスター/詳細パターンの作成
+### <a name="create-a-side-by-side-masterdetails-pattern"></a>左右に並べるマスター/詳細パターンの作成
 
 マスター ウィンドウでは、イメージとテキストが含まれるリストを表示するのに[リスト ビュー](lists.md) コントロールが適しています。
 
 詳細ウィンドウの場合、最も意味のあるコンテンツ要素を使います。 多くの個別フィールドがある場合は、グリッド レイアウトを使って要素をフォームに配置することを検討します。
 
-## 例
+## <a name="examples"></a>例
 
 株式市場を追跡するアプリの設計では、マスター/詳細パターンを使います。 次のアプリの例は、携帯電話に表示されているため、左側にマスター ウィンドウ/リストが、右側に詳細ウィンドウが表示されています。
 
@@ -78,9 +78,11 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 
 ![マスター/詳細パターンを使ったアプリの例 (デスクトップ PC)](images/uap-finance-desktop700.png)
 
+マスター/詳細パターンを示すサンプル コードについては、以下をご覧ください。
+- [ListView と GridView のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619900)
+- [RSS リーダーのサンプル](https://github.com/Microsoft/Windows-appsample-rssreader)
 
-
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 - [リスト](lists.md)
 - [検索](search.md)
@@ -89,6 +91,6 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

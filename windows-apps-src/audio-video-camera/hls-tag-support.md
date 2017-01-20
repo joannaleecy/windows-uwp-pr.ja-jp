@@ -4,12 +4,12 @@ ms.assetid:
 description: "この記事では、UWP アプリでサポートされている HTTP ライブ ストリーミング (HLS) プロトコルのタグを示します。"
 title: "HTTP ライブ ストリーミング (HLS) タグのサポート"
 translationtype: Human Translation
-ms.sourcegitcommit: 3d61f5272e4d11acfb7e0a85436ca60ba458dcae
-ms.openlocfilehash: a561f11a1638d5fea21d1d3b3f8bc47f71271f3f
+ms.sourcegitcommit: 61feba54418ad7ba8f089737ebf52d12c466b7a7
+ms.openlocfilehash: 5575a56838eae98c0d79dff61e1afaa8cf87ee86
 
 ---
 
-# HTTP ライブ ストリーミング (HLS) タグのサポート
+# <a name="http-live-streaming-hls-tag-support"></a>HTTP ライブ ストリーミング (HLS) タグのサポート
 次の表では、UWP アプリでサポートされている HLS タグを示します。
 
 > [!NOTE] 
@@ -68,11 +68,15 @@ ms.openlocfilehash: a561f11a1638d5fea21d1d3b3f8bc47f71271f3f
 | 4.3.4.3.  EXT-X-I-FRAME-STREAM-INF  |4|7|省略可能|サポートされない|サポートされない|サポートされない|
 | 4.3.4.4.  EXT-X-SESSION-DATA  |7|14|省略可能|サポートされない|サポートされない|サポートされない|
 | 4.3.4.5.  EXT-X-SESSION-KEY |7|17|省略可能|サポートされない|サポートされない|サポートされない|
+|4.3.5.   メディアまたはマスター プレイリスト タグ                  |             |                   |         |             |     |    |
+| 4.3.5.1.   EXT-X-INDEPENDENT-SEGMENTS |6|13|省略可能|サポートされない|サポートされる|サポートされる|
+| 4.3.5.2.   EXT-X-START  |6|12|省略可能|サポートされない|部分的にサポートされる|部分的にサポートされる|
+|&nbsp;&nbsp;&nbsp;  TIME-OFFSET|6|12|備わっている|サポートされない|サポートされる|サポートされる|
+|&nbsp;&nbsp;&nbsp;  PRECISE|6|12|備わっている|サポートされない|既定ではサポートされない|既定ではサポートされない|
 
 
 
-
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [メディア再生](media-playback.md)
 * [アダプティブ ストリーミング](adaptive-streaming.md)
@@ -86,6 +90,6 @@ ms.openlocfilehash: a561f11a1638d5fea21d1d3b3f8bc47f71271f3f
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

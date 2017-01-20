@@ -7,30 +7,30 @@ ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
 label: Do's and don'ts
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 72849c304d2150fd7fe6768181a504f94ef98d5f
 
 ---
 
-# グローバリゼーションとローカライズの推奨と非推奨
-
-
-
-
-
-**重要な API**
-
--   [**Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813)
--   [**Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)
--   [**Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
--   [**リソース**](https://msdn.microsoft.com/library/windows/apps/br206022)
--   [**Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039)
+# <a name="globalization-and-localization-dos-and-donts"></a>グローバリゼーションとローカライズの推奨と非推奨
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 広範なユーザー向けにアプリをグローバル化したり、特定の市場を対象にアプリをローカライズするときは、次のベスト プラクティスに従ってください。
 
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813)</li>
+<li>[**Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)</li>
+<li>[**Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)</li>
+<li>[**Resources**](https://msdn.microsoft.com/library/windows/apps/br206022)</li>
+<li>[**Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039)</li>
+</ul>
+</div>
 
 
-## <span id="guidelines_for_internationalization"></span><span id="GUIDELINES_FOR_INTERNATIONALIZATION"></span>グローバリゼーション
+
+## <a name="globalization"></a>グローバリゼーション
 
 グローバル化に適した UI の用語と画像が選択され、[**Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) API を使ってアプリ データがフォーマットされ、場所や言語に基づく前提のない、異なる市場に簡単に適応できるアプリを準備します。
 
@@ -106,7 +106,7 @@ ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
 
  
 
-## <span id="guidelines_for_localization"></span><span id="GUIDELINES_FOR_LOCALIZATION"></span>ローカライズ
+## <a name="localization"></a>ローカライズ
 
 <table>
 <colgroup>
@@ -178,7 +178,7 @@ ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
 
  
 
-## <span id="related_topics"></span>関連記事
+## <a name="related-articles"></a>関連記事
 
 
 **サンプル**
@@ -193,6 +193,6 @@ ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

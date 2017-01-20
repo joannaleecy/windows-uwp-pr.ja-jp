@@ -6,11 +6,11 @@ ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
 label: Rich edit box
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f26bcc596417f607ee348e93009905ec4a3e27c8
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: a8e8e42c87809eb08685fb137a242b1177b824b4
 
 ---
-# リッチ エディット ボックス
+# <a name="rich-edit-box"></a>リッチ エディット ボックス
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,21 +19,14 @@ ms.openlocfilehash: f26bcc596417f607ee348e93009905ec4a3e27c8
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx"><strong>RichEditBox クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx"><strong>Document プロパティ</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx"><strong>IsReadOnly プロパティ</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx"><strong>IsSpellCheckEnabled プロパティ</strong></a></li>
+<li>[**RichEditBox クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)</li>
+<li>[**Document プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx)</li>
+<li>[**IsReadOnly プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx)</li>
+<li>[**IsSpellCheckEnabled プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 **RichEditBox** を使用して、テキスト ファイルを表示および編集します。 その他の標準的なテキスト入力ボックスを使用するように、アプリへユーザー入力を行うために RichEditBox を使用しません。 代わりに、アプリとは別のテキスト ファイルを操作するために使用します。 通常は、RichEditBox に入力されたテキストを .rtf ファイルに保存します。
 -   複数行テキスト ボックスの主な目的がドキュメントの作成 (ブログのエントリ、メール メッセージのコンテンツなど) であり、ドキュメントでリッチ テキストが必要な場合は、リッチ テキスト ボックスを使います。
@@ -43,13 +36,13 @@ ms.openlocfilehash: f26bcc596417f607ee348e93009905ec4a3e27c8
 
 適切なテキスト コントロールの選択について詳しくは、「[テキスト コントロール](text-controls.md)」をご覧ください。
 
-## 例
+## <a name="examples"></a>例
 
 このリッチ エディット ボックスで、リッチ テキスト ドキュメントを開きます。 書式設定とファイルのボタンは、リッチ エディット ボックスの一部ではありませんが、最小限のスタイル設定ボタンを用意し、その動作を実装する必要があります。
 
 ![開いたドキュメントが用意されたリッチ テキスト ボックス](images/rich-edit-box.png)
 
-## リッチ エディット ボックスを作成します。
+## <a name="create-a-rich-edit-box"></a>リッチ エディット ボックスを作成します。
 
 既定では、RichEditBox はスペル チェックをサポートします。 スペル チェックを無効にするには、[IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx) プロパティを **false** に設定します。 詳しくは、「[スペル チェックのガイドライン](spell-checking-and-prediction.md)」をご覧ください。
 
@@ -194,13 +187,13 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## テキスト コントロールに適切なキーボードの選択
+## <a name="choose-the-right-keyboard-for-your-text-control"></a>テキスト コントロールに適切なキーボードの選択
 
 ユーザーがタッチ キーボード、つまりソフト入力パネル (SIP) でデータを入力できるように、ユーザーが入力すると予想されるデータの種類に合わせてテキスト コントロールの入力値の種類を設定できます。 通常、既定のキーボード レイアウトは、リッチ テキスト ドキュメントを扱う場合に適しています。
 
 入力値の種類の使い方について詳しくは、「[入力値の種類を使ったタッチ キーボードの変更](https://msdn.microsoft.com/library/windows/apps/mt280229)」をご覧ください。
 
-## 推奨事項
+## <a name="dos-and-donts"></a>推奨と非推奨
 
 -   リッチ テキスト ボックスを作る場合は、スタイル設定ボタンを用意し、その動作を実装します。
 -   アプリのスタイルに合ったフォントを使います。
@@ -210,24 +203,17 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 -   プレーンテキスト コントロールで十分な場合に、リッチ テキスト コントロールを使わないでください。
 
 
+## <a name="related-articles"></a>関連記事
 
-
-
-## 関連記事
-
-[テキスト コントロール](text-controls.md)
-
-**デザイナー向け**
+* [テキスト コントロール](text-controls.md)
 - [スペル チェックのガイドライン](spell-checking-and-prediction.md)
 - [検索の追加](search.md)
 - [テキスト入力のガイドライン](text-controls.md)
-
-**開発者向け (XAML)**
 - [**TextBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Windows.UI.Xaml.Controls PasswordBox クラス**](https://msdn.microsoft.com/library/windows/apps/br227519)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

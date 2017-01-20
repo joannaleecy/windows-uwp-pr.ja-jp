@@ -4,8 +4,8 @@ description: "これは、従来のユーザー名とパスワードの認証シ
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: a70a59283fe664bef9ddab56df57a9fc46c91033
-ms.openlocfilehash: 04311e9c3242bdaf6588c8102a06ae658e6637e2
+ms.sourcegitcommit: 126811b615117c0204e3ac4326d810c986a51e55
+ms.openlocfilehash: 27f06fe3031d391a03bc5f5b08723983b34308f0
 
 ---
 
@@ -624,7 +624,7 @@ ms.openlocfilehash: 04311e9c3242bdaf6588c8102a06ae658e6637e2
 
 -   アプリをビルドして実行します。 "sampleUsername" を使ってログインし、[Login] をクリックします。 PIN を入力し、成功した場合は、自動的にようこそ画面に移動します。 ユーザーの消去ボタンをクリックし、出力ウィンドウでユーザーが削除されたかどうかを確認してください。 ユーザーが削除されても、ウェルカム ページから移動しない点に注意してください。 アプリが移動できるユーザーの選択ページを作成する必要があります。
 
-    !Passport のようこそ画面](images/passport-login-9.png)
+    ![Passport のようこそ画面](images/passport-login-9.png)
 
 -   Views フォルダーで、"UserSelection.xaml" という新しい空白ページを作成し、次の XAML を追加してユーザー インターフェイスを定義します。 このページには、ローカル アカウントの一覧にすべてのユーザーを表示する [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) と、ログイン ページに移動してユーザーが別のアカウントを追加できるようにする Button が含められます。
 
@@ -973,6 +973,6 @@ Microsoft Passport のサポートを実装すれば、Windows Hello をサポ�
 * [Microsoft Passport ログイン サービス](microsoft-passport-login-auth-service.md)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

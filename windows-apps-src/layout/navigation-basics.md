@@ -1,17 +1,20 @@
 ---
 author: mijacobs
 Description: "ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーションは、ナビゲーション構造、ナビゲーション要素、システム レベルの機能から成る柔軟なモデルに基づいています。"
-title: "ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーション デザインの基本"
+title: "UWP アプリのナビゲーション デザインの基本 (Windows アプリ)"
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
+op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: a55e7d0945902ce44ebad481475e8324c9859054
-ms.openlocfilehash: 2a4005aa12a123c0f9e98486fa1c69839a14276c
+ms.sourcegitcommit: d0c1858727d4a19e699d2ec9cf5d869460873524
+ms.openlocfilehash: 25a84e7a72fb87faea47845d7d32a5c3071a78a7
 
 ---
 
-#  UWP アプリのナビゲーション デザインの基本
+#  <a name="navigation-design-basics-for-uwp-apps"></a>UWP アプリのナビゲーション デザインの基本
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーションは、ナビゲーション構造、ナビゲーション要素、システム レベルの機能から成る柔軟なモデルに基づいています。 これら全体で、アプリ、ページ、コンテンツ間での移動の際にさまざまな直感的なユーザー エクスペリエンスを実現します。
 
@@ -31,12 +34,12 @@ UWP アプリにおいて効果的で便利なマルチページ ナビゲーシ
 
     直感的な操作性を感じさせる一貫したエクスペリエンスを実現するには、予測可能な方法で、システム レベルのナビゲーション機能に応答します。
 
-## <span id="Build_the_right_navigation_structure"></span><span id="build_the_right_navigation_structure"></span><span id="BUILD_THE_RIGHT_NAVIGATION_STRUCTURE"></span>適切なナビゲーション構造を構築する
+## <a name="build-the-right-navigation-structure"></a>適切なナビゲーション構造を構築する
 
 
 ページのグループから構成されるコレクションとしてアプリを見てみましょう。各ページには、コンテンツや機能の固有のセットが含まれます。 たとえば、写真アプリには、写真を撮影するためのページ、画像を編集するためのページ、画像ライブラリを管理するためのページが含まれている場合があります。 これらのページをグループに配置する方法によって、アプリのナビゲーション構造が定義されます。 ページのグループを配置する一般的な方法には、次の 2 つがあります。
 
-<table>
+<table class="uwpd-noborder uwpd-top-aligned-table">
 <colgroup>
 <col width="50%" />
 <col width="50%" />
@@ -49,12 +52,12 @@ UWP アプリにおいて効果的で便利なマルチページ ナビゲーシ
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><img src="images/nav/nav-pages-hiearchy.png" alt="Pages arranged in a hierarchy" /></p></td>
-<td align="left"><p><img src="images/nav/nav-pages-peer.png" alt="Pages arranged as peers" /></p></td>
+<td style="text-align: center;"><p><img src="images/nav/nav-pages-hiearchy.png" alt="Pages arranged in a hierarchy" /></p></td>
+<td style="text-align: center;"><p><img src="images/nav/nav-pages-peer.png" alt="Pages arranged as peers" /></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>ページは、ツリー状の構造に配置されます。 それぞれの子ページの親は 1 つだけですが、親ページは 1 つ以上の子ページを持つことができます。 子ページにアクセスするには、親ページを経由します。</p></td>
-<td align="left"><p>ページは、並列の関係で配置されます。 どのような順序でもページ間を移動できます。</p></td>
+<td style="vertical-align: top">ページは、ツリー状の構造に配置されます。 それぞれの子ページの親は 1 つだけですが、親ページは 1 つ以上の子ページを持つことができます。 子ページにアクセスするには、親ページを経由します。 </td>
+<td style="vertical-align: top"> ページは、並列の関係で配置されます。 どのような順序でもページ間を移動できます。 </td>
 </tr>
 </tbody>
 </table>
@@ -67,51 +70,44 @@ UWP アプリにおいて効果的で便利なマルチページ ナビゲーシ
 
 では、どのような場合にページを階層に配置し、どのような場合にページをピアとして配置すればよいでしょうか。 この質問に答えるには、グループ内のページ数、特定の順序でページ間を移動する必要があるかどうか、およびページ間の関係を考慮する必要があります。 一般に、構造がフラットであれば、構造を理解しやすくなり、すばやい移動が可能になります。ただし、深い階層が適している場合もあります。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><p>次の場合は、階層関係を使うことをお勧めします。</p>
+
+
+<div class="side-by-side">
+<div class="side-by-side-content">
+  <div class="side-by-side-content-left">次の場合は、階層関係を使うことをお勧めします。
 <ul>
-<li><p>ユーザーが特定の順序でページ間を移動する必要がある場合。 その順序を強制的に適用するように階層を配置します。</p></li>
-<li><p>グループ内の各ページ間には明確な親子関係があります。</p></li>
-<li><p>グループ内のページ数が 7 ページを超える場合。</p>
+<li>ユーザーが特定の順序でページ間を移動する必要がある場合。 その順序を強制的に適用するように階層を配置します。</li>
+<li>グループ内の各ページ間には明確な親子関係がある場合。</li>
+<li>グループ内のページ数が 7 ページを超える場合。
 <p>グループ内のページ数が 7 ページを超える場合、ページが一意であるかどうかを判断したり、グループ内の現在の位置を把握したりするのが難しくなる場合があります。 このことがアプリでは問題にはならないと考えられる場合は、ページをピアとして作成します。 このことが問題となる可能性がある場合は、階層構造を使って、ページを 2 つ以上の小さなグループに分割することを検討してください  (ハブ コントロールを使うと、ページをカテゴリにグループ化できます)。</p></li>
-</ul></td>
-<td align="left"><p>次の場合は、ピアの関係を使うことをお勧めします。</p>
+</ul>
+  </div>
+  <div class="side-by-side-content-right">次の場合は、ピアの関係を使うことをお勧めします。
 <ul>
 <li>ページをどのような順序でも表示できる場合。</li>
 <li>各ページはそれぞれ異なるページであり、明確な親/子関係はありません。</li>
 <li><p>グループ内のページ数が 8 ページよりも少ない場合。</p>
 <p>グループ内のページ数が 7 ページを超える場合、ページが一意であるかどうかを判断したり、グループ内の現在の位置を把握したりするのが難しくなる場合があります。 このことがアプリでは問題にはならないと考えられる場合は、ページをピアとして作成します。 このことが問題となる可能性がある場合は、階層構造を使って、ページを 2 つ以上の小さなグループに分割することを検討してください  (ハブ コントロールを使うと、ページをカテゴリにグループ化できます)。</p></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
-
+</ul>
+  </div>
+</div>
+</div>
  
 
-## <span id="Use_the_right_navigation_elements"></span><span id="use_the_right_navigation_elements"></span><span id="USE_THE_RIGHT_NAVIGATION_ELEMENTS"></span>適切なナビゲーション要素の使用
+## <a name="use-the-right-navigation-elements"></a>適切なナビゲーション要素の使用
 
 
 ナビゲーション要素は 2 つのサービスを提供できます。つまり、これらの要素を使うと、ユーザーは必要なコンテンツにアクセスすることができ、要素によっては、アプリ内のどの位置にいるかを把握することができます。 ただし、ナビゲーション要素は、コンテンツやコマンド実行要素用にアプリで使うことができる領域を占有します。そのため、アプリの構造に最適なナビゲーション要素を使うことが重要になります。
 
-### <span id="Peer_navigation_elements"></span><span id="peer_navigation_elements"></span><span id="PEER_NAVIGATION_ELEMENTS"></span>ピアのナビゲーション要素
+### <a name="peer-to-peer-navigation-elements"></a>ピア ツー ピアのナビゲーション要素
 
-ピアのナビゲーション要素によって、同じサブツリーの同じレベルにあるページ間のナビゲーションが有効になります。
+ピア ツー ピアのナビゲーション要素によって、同じサブツリーの同じレベルにあるページ間のナビゲーションが有効になります。
 
-![ピアのナビゲーション](images/nav/nav-lateralmovement.png)
+![ピア ツー ピアのナビゲーション](images/nav/nav-lateralmovement.png)
 
-ピアのナビゲーションでは、タブまたはナビゲーション ウィンドウを使うことをお勧めします。
+ピア ツー ピアのナビゲーションでは、タブまたはナビゲーション ウィンドウを使うことをお勧めします。
 
 <table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th align="left">ナビゲーション要素</th>
@@ -120,9 +116,9 @@ UWP アプリにおいて効果的で便利なマルチページ ナビゲーシ
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[タブとピボット](../controls-and-patterns/tabs-pivot.md)</p>
+<td style="vertical-align:top;">[タブとピボット](../controls-and-patterns/tabs-pivot.md)
 <p><img src="images/nav/nav-tabs-sm-300.png" alt="Tab-based navigation" /></p></td>
-<td align="left">同じレベルにあるページへのリンクの永続的な一覧を表示します。
+<td style="vertical-align:top;">同じレベルにあるページへのリンクの永続的な一覧を表示します。
 <p>タブ/ピボットを使う場合</p>
 <ul>
 <li><p>ページ数が 2 ～ 5 ページの場合</p>
@@ -133,9 +129,9 @@ UWP アプリにおいて効果的で便利なマルチページ ナビゲーシ
 <p><img src="images/food-truck-finder/uap-foodtruck-tabletphone-sbs-sm-400.png" alt="Example of an app using tabs/pivots pattern" /></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[ナビゲーション ウィンドウ](../controls-and-patterns/nav-pane.md)</p>
+<td style="vertical-align:top;">[ナビゲーション ウィンドウ](../controls-and-patterns/nav-pane.md)
 <p><img src="images/nav/nav-navpane-4page-thumb.png" alt="A navigation pane" /></p></td>
-<td align="left">トップレベルのページへのリンクの一覧を表示します。
+<td style="vertical-align:top;">トップレベルのページへのリンクの一覧を表示します。
 <p>ナビゲーション ウィンドウを使う場合</p>
 <ul>
 <li>ユーザーが頻繁にページ間を切り替えることを前提としていない場合。</li>
@@ -151,25 +147,21 @@ UWP アプリにおいて効果的で便利なマルチページ ナビゲーシ
 
  
 
-ナビゲーション構造に複数のレベルがある場合は、現在のサブツリー内のピアにのみリンクするピアのナビゲーション要素を使うことをお勧めします。 3 つのレベルを持つナビゲーション構造を示す、次の図について考えてみましょう。
+ナビゲーション構造に複数のレベルがある場合は、現在のサブツリー内のピアにのみリンクするピア ツー ピアのナビゲーション要素を使うことをお勧めします。 3 つのレベルを持つナビゲーション構造を示す、次の図について考えてみましょう。
 
 ![2 つのサブツリーを含むアプリ](images/nav/nav-subtrees.png)
--   レベル 1 では、ピアのナビゲーション要素によって、ページ A、B、C、および D へのアクセスが提供されます。
--   レベル 2 では、A2 ページのピアのナビゲーション要素は、他の A2 ページにのみリンクしています。 これらのナビゲーション要素は、C サブツリー内にあるレベル 2 のページにはリンクしていません。
+-   レベル 1 では、ピア ツー ピアのナビゲーション要素によって、ページ A、B、C、および D へのアクセスが提供されます。
+-   レベル 2 では、A2 ページのピア ツー ピアのナビゲーション要素は、他の A2 ページにのみリンクしています。 これらのナビゲーション要素は、C サブツリー内にあるレベル 2 のページにはリンクしていません。
 
 ![2 つのサブツリーを含むアプリ](images/nav/nav-subtrees2.png)
 
-### <span id="Hierarchical_navigation_elements"></span><span id="hierarchical_navigation_elements"></span><span id="HIERARCHICAL_NAVIGATION_ELEMENTS"></span>階層型ナビゲーション要素
+### <a name="hierarchical-navigation-elements"></a>階層型ナビゲーション要素
 
 階層型ナビゲーション要素は、親ページとその子ページ間のナビゲーションを実現します。
 
 ![階層型ナビゲーション](images/nav/nav-verticalmovement.png)
 
 <table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th align="left">ナビゲーション要素</th>
@@ -178,7 +170,7 @@ UWP アプリにおいて効果的で便利なマルチページ ナビゲーシ
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[ハブ](../controls-and-patterns/hub.md)</p>
+<td style="vertical-align:top;">[ハブ](../controls-and-patterns/hub.md)
 <p><img src="images/higsecone-hub-thumb.png" alt="Hub" /></p></td>
 <td align="left">ハブは、子ページのプレビュー/概要を提供する特殊な種類のナビゲーション コントロールです。 ナビゲーション ウィンドウやタブとは異なり、ページ自体に埋め込まれているリンクやセクション ヘッダーを使って、子ページへのナビゲーションを実現します。
 <p>ハブを使う場合</p>
@@ -188,8 +180,9 @@ UWP アプリにおいて効果的で便利なマルチページ ナビゲーシ
 <p>ハブでは検出や調査がサポートされるため、メディア、ニュース リーダー、ショッピング アプリに適しています。</p>
 <p></p></td>
 </tr>
+
 <tr class="even">
-<td align="left"><p>[マスター/詳細](../controls-and-patterns/master-details.md)</p>
+<td style="vertical-align:top;">[マスター/詳細](../controls-and-patterns/master-details.md)
 <p><img src="images/higsecone-masterdetail-thumb.png" alt="Master/details" /></p></td>
 <td align="left">項目の概要の一覧 (マスター ビュー) が表示されます。 項目を選ぶと、対応する項目ページが詳細セクションに表示されます。
 <p>マスター/詳細要素を使う場合</p>
@@ -206,13 +199,9 @@ UWP アプリにおいて効果的で便利なマルチページ ナビゲーシ
 
  
 
-### <span id="Historical_navigation_elements"></span><span id="historical_navigation_elements"></span><span id="HISTORICAL_NAVIGATION_ELEMENTS"></span>履歴ナビゲーション要素
+### <a name="historical-navigation-elements"></a>履歴ナビゲーション要素
 
 <table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th align="left">ナビゲーション要素</th>
@@ -221,21 +210,17 @@ UWP アプリにおいて効果的で便利なマルチページ ナビゲーシ
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">戻る</td>
-<td align="left"><p>ユーザーは、アプリ内のナビゲーション履歴や、デバイスによってはアプリ間を移動できます。 詳細については、この後の「[システム レベルのナビゲーション機能がアプリで正しく動作するようにする」](#backnavigation)セクションをご覧ください。</p></td>
+<td style="vertical-align:top;">[戻る](navigation-history-and-backwards-navigation.md)</td>
+<td style="vertical-align:top;">ユーザーは、アプリ内のナビゲーション履歴や、デバイスによってはアプリ間を移動できます。 詳しくは、「[ナビゲーション履歴と前に戻る移動](navigation-history-and-backwards-navigation.md)」をご覧ください。</td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <span id="Content-embedded_navigation_elements"></span><span id="content-embedded_navigation_elements"></span><span id="CONTENT-EMBEDDED_NAVIGATION_ELEMENTS"></span>コンテンツに埋め込まれたナビゲーション要素
+### <a name="content-level-navigation-elements"></a>コンテンツ レベルのナビゲーション要素
 
 <table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th align="left">ナビゲーション要素</th>
@@ -244,15 +229,15 @@ UWP アプリにおいて効果的で便利なマルチページ ナビゲーシ
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">ハイパーリンクとボタン</td>
-<td align="left"><p>コンテンツに埋め込まれたナビゲーション要素は、ページのコンテンツに表示されます。 他のナビゲーション要素はページのグループやサブツリー全体で一貫性がありますが、それとは異なり、コンテンツに埋め込まれたナビゲーション要素はそれぞれのページに固有のナビゲーション要素です。</p></td>
+<td style="vertical-align:top;">ハイパーリンクとボタン</td>
+<td style="vertical-align:top;">コンテンツに埋め込まれたナビゲーション要素は、ページのコンテンツに表示されます。 他のナビゲーション要素はページのグループやサブツリー全体で一貫性がありますが、それとは異なり、コンテンツに埋め込まれたナビゲーション要素はそれぞれのページに固有のナビゲーション要素です。</td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <span id="Combining_navigation_elements"></span><span id="combining_navigation_elements"></span><span id="COMBINING_NAVIGATION_ELEMENTS"></span>ナビゲーション要素の連結
+### <a name="combining-navigation-elements"></a>ナビゲーション要素の連結
 
 ナビゲーション要素を連結してアプリに最適なナビゲーション エクスペリエンスを作成することができます。 たとえば、アプリでトップ レベルのページへのアクセスにはナビゲーション ウィンドウを、第 2 レベルのページへのアクセスにはタブを使用することができます。
 
@@ -265,6 +250,10 @@ UWP アプリにおいて効果的で便利なマルチページ ナビゲーシ
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+
+<!--HONumber=Dec16_HO3-->
 
 

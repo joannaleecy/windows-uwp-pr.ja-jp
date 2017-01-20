@@ -7,11 +7,11 @@ dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
 label: Auto-suggest box
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 9406f9b826dfb7d2603a0812f209dfb38cf639ae
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 6b41c8b1888b61c82aa3d54244151b08d963658d
 
 ---
-# 自動提案ボックス
+# <a name="auto-suggest-box"></a>自動提案ボックス
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 AutoSuggestBox を使って、ユーザーが入力と同時に選べる候補リストを表示します。
@@ -21,32 +21,27 @@ AutoSuggestBox を使って、ユーザーが入力と同時に選べる候補�
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx"><strong>AutoSuggestBox クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx"><strong>TextChanged イベント</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx"><strong>SuggestionChose イベント</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx"><strong>QuerySubmitted イベント</strong></a></li>
+<li>[**AutoSuggestBox クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)</li>
+<li>[**TextChanged イベント**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx)</li>
+<li>[**SuggestionChose イベント**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx)</li>
+<li>[**QuerySubmitted イベント**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 候補の一覧を使ってテキストを検索できる、シンプルでカスタマイズ可能なコントロールが必要な場合は、自動提案ボックスを使います。
 
 適切なテキスト コントロールの選択について詳しくは、「[テキスト コントロール](text-controls.md)」をご覧ください。
 
-## 例
+## <a name="examples"></a>例
 
 Groove ミュージック アプリの自動提案ボックス。
 
 ![Groove ミュージック アプリの自動提案ボックス](images/control-examples/auto-suggest-box-groove.png)
 
-## 構造
+## <a name="anatomy"></a>構造
 自動提案ボックスのエントリ ポイントは、オプションのヘッダーとオプションのヒント テキスト付きのテキスト ボックスで構成されます。
 
 ![自動提案コントロールのエントリ ポイントの例](images/controls_autosuggest_entrypoint.png)
@@ -55,7 +50,7 @@ Groove ミュージック アプリの自動提案ボックス。
 
 ![展開された自動提案コントロールの例](images/controls_autosuggest_expanded01.png)
 
-## 自動提案ボックスの作成
+## <a name="create-an-auto-suggest-box"></a>自動提案ボックスの作成
 
 AutoSuggestBox を使うには、3 つのユーザー操作に応答する必要があります。
 
@@ -63,7 +58,7 @@ AutoSuggestBox を使うには、3 つのユーザー操作に応答する必要
 - 候補の選択 - ユーザーが候補リストで候補を選んだときに、テキスト ボックスを更新します。
 - クエリの送信 - ユーザーがクエリを送信したときに、クエリの結果を表示します。
 
-### テキストの変更
+### <a name="text-changed"></a>テキストの変更
 
 テキスト ボックスの内容が更新されるたびに、[**TextChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx) イベントが発生します。 イベント引数 [Reason](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxtextchangedeventargs.reason.aspx) プロパティを使って、変更がユーザー入力によって生じたものかどうかを調べます。 変更の理由が **UserInput** の場合、入力に基づいてデータをフィルター処理します。 次に、フィルター処理されたデータを AutoSuggestBox の [ItemsSource](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) に設定し、候補リストを更新します。
 
@@ -72,7 +67,7 @@ AutoSuggestBox を使うには、3 つのユーザー操作に応答する必要
 - データ項目の単一のプロパティのテキストを表示するには、DisplayMemberPath プロパティを設定し、候補リストに表示するオブジェクトのプロパティを選択します。
 - リストの各項目に対してカスタマイズした外観を定義するには、ItemTemplate プロパティを使います。
 
-### 候補の選択
+### <a name="suggestion-chosen"></a>候補の選択
 
 ユーザーがキーボードを使って候補リスト内を移動したときは、テキスト ボックス内のテキストを更新して合わせる必要があります。
 
@@ -80,7 +75,7 @@ AutoSuggestBox を使うには、3 つのユーザー操作に応答する必要
 
 単純ではないプロパティを表示する必要がある場合、[SuggestionChosen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx) イベントを処理し、選択した項目に基づいてカスタム テキストをテキスト ボックスに入力します。
 
-### クエリの送信
+### <a name="query-submitted"></a>クエリの送信
 
 [QuerySubmitted](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx) イベントを処理し、アプリに適したクエリ操作を実行して、ユーザーに結果を表示します。
 
@@ -90,7 +85,7 @@ AutoSuggestBox を使うには、3 つのユーザー操作に応答する必要
 
 いずれの場合も、イベント引数の [QueryText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext.aspx) プロパティにはテキスト ボックスのテキストが含まれています。
 
-## 検索に AutoSuggestBox を使う
+## <a name="use-autosuggestbox-for-search"></a>検索に AutoSuggestBox を使う
 
 AutoSuggestBox を使って、ユーザーが入力と同時に選べる候補リストを表示します。
 
@@ -104,9 +99,9 @@ AutoSuggestBox を使って、ユーザーが入力と同時に選べる候補�
 
 ![自動提案コントロールのエントリ ポイントの例](images/controls_autosuggest_entrypoint.png)
 
-## サンプル
+## <a name="get-the-sample-code"></a>サンプル コードを入手する 
 
-AutoSuggestBox の動作の詳細な例については、[AutoSuggestBox の移行のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619996) と [XAML UI の基本のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619992) をご覧ください。
+AutoSuggestBox の動作の詳細な例については、[AutoSuggestBox の移行のサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlAutoSuggestBox) と [XAML UI の基本のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619992) をご覧ください。
 
 必須のイベント ハンドラーを使った簡単な AutoSuggestBox を次に示します。
 
@@ -150,24 +145,37 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 }
 ```
 
-## 推奨と非推奨
+## <a name="dos-and-donts"></a>推奨と非推奨
 
--   自動提案ボックスを使って検索を実行したときに、入力したテキストに対応する検索結果が存在しなかった場合は、"検索結果が見つかりませんでした" という 1 行を表示します。これにより、ユーザーは検索要求が実行されたことがわかります。
+-   自動提案ボックスを使って検索を実行したときに、入力したテキストに対応する検索結果が存在しなかった場合は、"検索結果が見つかりませんでした" という 1 行を表示します。これにより、検索要求が実行されたことがユーザーに伝わります。
 
     ![検索結果のない自動提案ボックスの例](images/controls_autosuggest_noresults.png)
 
+<div class="microsoft-internal-note">
+**グローバリゼーションとローカライズのチェックリスト**
 
-## 関連記事
+<table>
+<tr>
+<th>垂直方向の間隔</th><td>非ラテン文字を使って垂直方法の間隔を調整し、非ラテン文字が数字を含めて適切に表示されるようにします。</td>
+</tr>
+<tr>
+<th>スクロール</th><td>自動提案テキストが選択されたときに、文字列の末尾までスクロールできるようにする必要があります。</td>
+</tr>
+</table>
+</div>
+
+
+## <a name="related-articles"></a>関連記事
 
 - [テキスト コントロール](text-controls.md)
 - [スペル チェック](spell-checking-and-prediction.md)
 - [検索](search.md)
 - [**TextBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Windows.UI.Xaml.Controls PasswordBox クラス**](https://msdn.microsoft.com/library/windows/apps/br227519)
-- [String.Length プロパティ](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+- [String.Length プロパティ](https://msdn.microsoft.com/library/system.string.length.aspx)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

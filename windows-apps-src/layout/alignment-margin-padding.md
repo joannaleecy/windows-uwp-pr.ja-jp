@@ -5,20 +5,22 @@ title: "ユニバーサル Windows プラットフォーム (UWP) アプリの�
 ms.assetid: 9412ABD4-3674-4865-B07D-64C7C26E4842
 label: Alignment, margin, and padding
 template: detail.hbs
+op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: ec16fa013e177529c517f91610b77ea22402a958
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: f6c8665c935380078efd2e8ea9d225967cf45eba
 
 ---
-# 配置、余白、およびパディング
+# <a name="alignment-margin-and-padding"></a>配置、余白、およびパディング
 
 サイズのプロパティ (幅、高さ、および制約) に加え、要素は、配置、余白、パディングのプロパティも含むことができ、これらは、要素がレイアウト パスに移動し、UI に表示されるときにレイアウト動作に影響を与えます。 配置、余白、パディングのプロパティとサイズのプロパティの間には関係があり、ここには、[**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) オブジェクトが配置されるときに一般的なロジックの流れがあります。これによって、各値は、状況に応じて使用されたり、無視されたりします。
 
-## 配置プロパティ
+## <a name="alignment-properties"></a>配置プロパティ
 
 [**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720) プロパティと [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749) プロパティは、親要素に割り当てられたレイアウト スペース内で子要素がどのように配置されるかを説明します。 これらのプロパティを一緒に使って、コンテナーのレイアウト ロジックはコンテナー (パネルまたはコントロール) 内に子要素を配置できます。 配置プロパティは、アダプティブ レイアウトのコンテナーに目的のレイアウトのヒントを与えることが目的であるため、基本的に、[**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) の子に設定され、別の **FrameworkElement** コンテナーの親によって解釈されます。 配置の値は、向きの 2 つの端のいずれかに揃えて要素を配置するか、または中央に揃えるかを指定できます。 ただし、両方の配置プロパティの既定値は **Stretch** です。 **Stretch** 配置にすると、要素は、レイアウトで提供されたスペース全体に配置されます。 **Stretch** は既定値であるため、明示的な測定値も、レイアウトの測定パスからの [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 値もない場合は、アダプティブ レイアウトの手法を使う方がより簡単です。 この既定値を使うと、コンテンツの明示的な高さと幅がコンテナー内に収まらなかったり、各コンテナーのサイズを指定するまでにクリップされたりする危険性がありません。
 
-> **注:**&nbsp;&nbsp;一般的なレイアウトの原則として、特定の主要な要素にのみ測定値を適用し、他の要素にはアダプティブ レイアウト動作を使うことが最善です。 こうすると、ユーザーが最上位アプリのウィンドウ サイズを指定するときに柔軟なレイアウト動作を提供できます。このようなサイズ指定は、いつでも実行できるのが普通です。
+> [!NOTE]
+> 一般的なレイアウトの原則として、特定の主要な要素にのみ測定値を適用し、他の要素にはアダプティブ レイアウト動作を使うことが最善です。 こうすると、ユーザーが最上位アプリのウィンドウ サイズを指定するときに柔軟なレイアウト動作を提供できます。このようなサイズ指定は、いつでも実行できるのが普通です。
 
  
 1 つのアダプティブ コンテナー内に [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 値と [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 値、またはクリッピングがある場合は、**Stretch** が配置の値として設定されていても、レイアウトは、そのコンテナーの動作によって制御されます。 パネルでは、**Height** と **Width** によって防止されている **Stretch** 値は、値が **Center** の場合と同様に機能します。
@@ -33,7 +35,7 @@ ms.openlocfilehash: ec16fa013e177529c517f91610b77ea22402a958
 
 配置プロパティは、親レイアウト コンテナーのサイズに余分なスペースがある場合にのみ効果があります。 既にレイアウト コンテナーでコンテンツがクリッピングされている場合、配置は、クリッピングが適用される要素の領域に影響を与える可能性があります。 たとえば、`HorizontalAlignment="Left"` を設定すると、要素の適正なサイズがクリッピングされます。
 
-## 余白
+## <a name="margin"></a>余白
 
 [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724) プロパティは、レイアウトの状態で要素とピアとの間隔を説明し、さらに、要素と、その要素を含むコンテナーのコンテンツ領域の間の距離について説明します。 要素を、サイズが [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) と [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) である境界ボックスまたは四角形であると考える場合は、**Margin** レイアウトが、その四角形の外側に適用され、**ActualHeight** と **ActualWidth** にピクセルは追加されません。 また、余白は、入力イベントのヒット テストとソースの目的のために要素の一部と見なされることもありません。
 
@@ -49,7 +51,7 @@ ms.openlocfilehash: ec16fa013e177529c517f91610b77ea22402a958
 
 [**Block**](https://msdn.microsoft.com/library/windows/apps/br244379) クラスは、[**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503) の基本クラスであり、[**Margin**](https://msdn.microsoft.com/library/windows/apps/jj191725) プロパティも備えています。 このクラスには、その **Paragraph** の位置が親コンテナー内でどのように設定されるかについて同様の効果があります。この親コンテナーは、通常は [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) オブジェクトまたは [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) オブジェクトです。また、この効果は、複数の段落の位置が、[**RichTextBlock.Blocks**](https://msdn.microsoft.com/library/windows/apps/br244347) コレクションの他の **Block** のピアに対してどのように設定されるかにも及びます。
 
-## 余白
+## <a name="padding"></a>余白
 
 **Padding** プロパティは、要素と、それに含まれる子要素またはコンテンツの間の距離を説明します。 コンテンツは、複数の子を持つことができる要素である場合、すべてのコンテンツを囲む単一の境界ボックスとして処理されます。 たとえば、2 つの項目を含む [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/br242803) がある場合は、[**Padding**](https://msdn.microsoft.com/library/windows/apps/br209459) が、これらの項目を含む境界ボックスの周りに適用されます。 **Padding** は、コンテナーの測定パスと配置パスの計算では、利用可能なサイズから減算されます。また、コンテナー自体でそれを含む要素のレイアウト パスが実行されるときは、目的のサイズの値の一部です。 [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724) とは異なり、**Padding** は [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) のプロパティではありません。実際は、複数のクラスがあり、それぞれが独自の **Padding** プロパティを定義しています。
 
@@ -60,28 +62,23 @@ ms.openlocfilehash: ec16fa013e177529c517f91610b77ea22402a958
 
 このような場合のそれぞれで、同じ要素に **Margin** プロパティもあります。 余白とパディングの両方が適用される場合、いずれも、外部のコンテナーと内部のコンテンツの間に見える距離は余白とパディングを加算したものであるという意味で、加算可能です。 コンテンツ、要素、またはコンテナーに適用されるさまざまなバックグラウンド値がある場合、余白が終了し、パディングが開始されるポイントは、表示によって判別できる可能性があります。
 
-## サイズ (高さ、幅)
+## <a name="dimensions-height-width"></a>サイズ (高さ、幅)
 
 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) の [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) プロパティと [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) プロパティは、多くの場合、レイアウト パスの実行時の配置、余白、およびパディングのプロパティの動作に影響します。 特に、実数 **Height** および **Width** 値は、**Stretch** の配置を取り消すと同時に、レイアウトの測定のパスで確立される [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 値のコンポーネントの候補として昇格されます。 **Height** と **Width** には、次の制約プロパティがあります。**Height** 値は、[**MinHeight**](https://msdn.microsoft.com/library/windows/apps/br208731) と [**MaxHeight**](https://msdn.microsoft.com/library/windows/apps/br208726) で制約でき、**Width** 値は、[**MinWidth**](https://msdn.microsoft.com/library/windows/apps/br208733) と [**MaxWidth**](https://msdn.microsoft.com/library/windows/apps/br208728) で制約できます。 また、[**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) と [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) は、レイアウト パスの完了後にのみ有効な値を含む、計算された読み取り専用プロパティです。 サイズと、制約プロパティまたは集計プロパティの相関方法について詳しくは、[**FrameworkElement.Height**](https://msdn.microsoft.com/library/windows/apps/br208718) と [**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751) の注釈をご覧ください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 **リファレンス**
 
-[**FrameworkElement.Height**](https://msdn.microsoft.com/library/windows/apps/br208718)
-
-[**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751)
-
-[**FrameworkElement.HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720)
-
-[**FrameworkElement.VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)
-
-[**FrameworkElement.Margin**](https://msdn.microsoft.com/library/windows/apps/br208724)
-
-[**Control.Padding**](https://msdn.microsoft.com/library/windows/apps/br209459)
+* [**FrameworkElement.Height**](https://msdn.microsoft.com/library/windows/apps/br208718)
+* [**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751)
+* [**FrameworkElement.HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720)
+* [**FrameworkElement.VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)
+* [**FrameworkElement.Margin**](https://msdn.microsoft.com/library/windows/apps/br208724)
+* [**Control.Padding**](https://msdn.microsoft.com/library/windows/apps/br209459)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

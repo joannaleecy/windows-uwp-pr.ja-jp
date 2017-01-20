@@ -4,11 +4,11 @@ Description: "ボタンは、特定の操作を直ちに実行する方法をユ
 label: Buttons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 845aa9935908aa68b64c856ee5e263490a3340c4
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: bb670533769d8bae9cdea0f18e9cbb5717eb3877
 
 ---
-# ボタン
+# <a name="buttons"></a>ボタン
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 ボタンは、特定の操作を直ちに実行する方法をユーザーに与えます。
@@ -18,19 +18,16 @@ ms.openlocfilehash: 845aa9935908aa68b64c856ee5e263490a3340c4
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx"><strong>Button クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx"><strong>RepeatButton クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx"><strong>Click イベント</strong></a></li>
+<li>[**Button クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)</li>
+<li>[**RepeatButton クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx)</li>
+<li>[**Click イベント**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)</li>
+<li> </li>
+<li> </li>
+<li> </li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 ボタンを使うと、ユーザーは直ちに操作を開始できます (フォームの送信など)。
 
@@ -38,13 +35,13 @@ ms.openlocfilehash: 845aa9935908aa68b64c856ee5e263490a3340c4
     
 > 例外: ウィザードでのページの移動には、[戻る] と [次へ] というラベルのボタンを使います。 他の種類の前に戻る移動や上位レベルへの移動では、[戻る] ボタンを使います。
 
-## 例
+## <a name="example"></a>例
 
 この例では、Microsoft Edge ブラウザーのダイアログで、Close all (すべて閉じる) と Cancel (キャンセル) という 2 つのボタンを使用しています。 
 
 ![ダイアログで使われるボタンの例](images/control-examples/buttons-edge.png)
 
-## ボタンの作成
+## <a name="create-a-button"></a>ボタンの作成
 
 クリックに応答するボタンの例を次に示します。 
 
@@ -78,7 +75,7 @@ private async void SubmitButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### ボタンの対話式操作
+### <a name="button-interaction"></a>ボタンの対話式操作
 
 ポインターがボタンの上にあるときに、指やスタイラスでそのボタンをタップするか、マウスの左ボタンを押すと、ボタンでは [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) イベントが発生します。 ボタンにキーボード フォーカスがある場合は、Enter キーまたは Space キーを押しても、Click イベントが発生します。
 
@@ -87,7 +84,7 @@ private async void SubmitButton_Click(object sender, RoutedEventArgs e)
 ボタンで Click イベントが発生する方法を変えるには、[**ClickMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.clickmode.aspx) プロパティを変更します。 ClickMode の既定値は **Release** です。 ClickMode が **Hover** の場合、キーボード操作やタッチ操作によって Click イベントを発生させることはできません。 
 
 
-### ボタンのコンテンツ
+### <a name="button-content"></a>ボタンのコンテンツ
 
 ボタンは [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.aspx) です。 その XAML コンテンツ プロパティは [**Content**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx) で、`<Button>A button's content</Button>` のような XMAL 構文を使用できます。 任意のオブジェクトをボタンのコンテンツとして設定できます。 コンテンツが [UIElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx) の場合、ボタンにレンダリングされます。 コンテンツが別のタイプのオブジェクトの場合、その文字列表現がボタンに表示されます。
 
@@ -109,7 +106,7 @@ private async void SubmitButton_Click(object sender, RoutedEventArgs e)
 
 ![画像とテキスト コンテンツがあるボタン](images/button-orange.png)
 
-## 繰り返しボタンの作成
+## <a name="create-a-repeat-button"></a>繰り返しボタンの作成
 
 [**RepeatButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx) は、ボタンが押されてから離されるまで、繰り返し [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) イベントを発生させるボタンです。 ボタンが押されてからクリック操作の繰り返しを始めるまでの RepeatButton の待ち時間を指定するには、[**Delay**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.delay.aspx) プロパティを設定します。 クリック操作の繰り返し間隔を指定するには、[**Interval**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.interval.aspx) プロパティを設定します。 これらのプロパティの時間はどちらもミリ秒単位で指定します。
 
@@ -141,10 +138,17 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## 推奨事項
+## <a name="recommendations"></a>推奨事項
 
 -   ボタンの用途と状態をユーザーがはっきりと理解できるようにします。
 -   ボタンによって行われる操作を明確に説明する、簡潔で具体的でわかりやすいテキストを使います。 通常、ボタンのテキスト コンテンツは、1 語の動詞です。
+-   同じ意思決定に対して複数のボタンが存在する場合 (確認のダイアログなど)、コミット ボタンは次の順番で提示します。 
+    -   [OK]/[実行する]/[はい]
+    -   [実行しない]/[いいえ]
+    -   [キャンセル]
+
+    (この "[実行する]" と "[実行しない]" は、メインの指示に対応する具体的な文になります。)
+
 -   ボタンのテキスト コンテンツが動的な場合 (ローカライズされる場合など) は、ボタンのサイズがどのように変化し、その周囲のコントロールに何が起こるかを考えます。
 -   テキスト コンテンツの付いたコマンド ボタンの場合は、最小のボタン幅を使います。
 -   テキスト コンテンツの付いた幅が狭い横長または縦長のコマンド ボタンは使わないようにします。
@@ -160,15 +164,15 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 -   送信、リセット、標準ボタンの既定のスタイルを取り替えないでください。
 -   ボタン内に多すぎるコンテンツを配置しないでください。 ボタン内のコンテンツは、簡潔でわかりやすくします (画像と少しのテキストのみにします)。
 
-## 戻るボタン
+## <a name="back-buttons"></a>戻るボタン
 戻るボタンは、バック スタックまたはユーザーのナビゲーション履歴を使って "戻る" ナビゲーションを実現する、システムの UI 要素です。 独自の"戻る"ボタンを作成する必要はありませんが、前に戻る移動で適切なエクスペリエンスを提供するために作業が必要になることがあります。 詳しくは、「[履歴と前に戻る移動](../layout/navigation-history-and-backwards-navigation.md)」をご覧ください。
 
-## サンプルの入手
+## <a name="get-the-sample-code"></a>サンプル コードを入手する
 *   [XAML UI の基本のサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
     インタラクティブな形で XAML コントロールのすべてを参照できます。
 
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 - [ラジオ ボタン](radio-button.md)
 - [トグル スイッチ](toggles.md)
@@ -179,6 +183,6 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

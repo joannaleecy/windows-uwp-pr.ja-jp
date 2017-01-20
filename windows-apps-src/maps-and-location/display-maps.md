@@ -4,12 +4,12 @@ title: "2D、3D、Streetside ビューでの地図の表示"
 description: "MapControl クラスを使って、アプリにカスタマイズできる地図を表示します。 このトピックでは、航空写真 3D ビューと Streetside ビューについても紹介します。"
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
 translationtype: Human Translation
-ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: 5569722bdfc8dfb78d43dbe6abf23dcd06f619c0
+ms.sourcegitcommit: d00ba80ac7d0f033a69ad070dc8ee681cbd0ed18
+ms.openlocfilehash: 09f87f66802e5143c8eac7fce8fc2118f3d31340
 
 ---
 
-# 2D、3D、Streetside ビューでの地図の表示
+# <a name="display-maps-with-2d-3d-and-streetside-views"></a>2D、3D、Streetside ビューでの地図の表示
 
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -21,7 +21,7 @@ ms.openlocfilehash: 5569722bdfc8dfb78d43dbe6abf23dcd06f619c0
 
 -   [ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-## マップ コントロールのアプリへの追加
+## <a name="add-the-map-control-to-your-app"></a>マップ コントロールのアプリへの追加
 
 
 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) を追加することによって、XAML ページに地図を表示します。 **MapControl** を使うには、XAML ページまたはコード内に [**Windows.UI.Xaml.Controls.Maps**](https://msdn.microsoft.com/library/windows/apps/dn610751) 名前空間の宣言が必要です。 ツールボックスからコントロールをドラッグすると、この名前空間宣言が自動的に追加されます。 XAML ページに **MapControl** を手動で追加する場合は、ページの上部に名前空間宣言を手動で追加する必要があります。
@@ -65,12 +65,12 @@ MapControl2.MapServiceToken = "EnterYourAuthenticationKeyHere";
 pageGrid.Children.Add(MapControl2);
 ```
 
-## マップ認証キーの取得と設定
+## <a name="get-and-set-a-maps-authentication-key"></a>マップ認証キーの取得と設定
 
 
 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) やマップ サービスを使用する前に、マップ認証キーを [**MapServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn637036) プロパティの値として指定する必要があります。 前に示した例では、`EnterYourAuthenticationKeyHere` を [Bing Maps Developer Center](https://www.bingmapsportal.com/) から取得したキーで置き換えます。 マップ認証キーを指定するまでは、コントロールの下に **[警告: MapServiceToken が指定されていません]** というテキストが表示されます。 マップ認証キーを取得して設定する方法について詳しくは、「[マップ認証キーの要求](authentication-key.md)」をご覧ください。
 
-## 地図の開始位置の設定
+## <a name="set-a-starting-location-for-the-map"></a>地図の開始位置の設定
 
 
 コードで [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) の [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) プロパティを指定するか、または XAML マークアップでプロパティをバインドすることにより、地図上の表示位置を設定します。 シアトル市を中心とした地図を表示する例を次に示します。
@@ -95,7 +95,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 ![マップ コントロールの例。](images/displaymapsexample1.png)
 
-## 地図の現在位置の設定
+## <a name="set-the-current-location-of-the-map"></a>地図の現在位置の設定
 
 
 ユーザーの位置情報にアクセスするには、先にアプリで [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) メソッドを呼び出す必要があります。 このときに、アプリをフォアグラウンドで実行し、**RequestAccessAsync** を UI スレッドから呼び出す必要があります。 位置情報に対するアクセス許可をユーザーがアプリに与えるまで、アプリは位置情報にアクセスできません。
@@ -132,7 +132,7 @@ switch (accessStatus)
 
 地図にデバイスの位置を表示するときは、位置情報の精度に基づいてグラフィックスを表示してズーム レベルを設定することを検討します。 詳しくは、「[位置認識アプリのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465148)」をご覧ください。
 
-## 地図の位置の変更
+## <a name="change-the-location-of-the-map"></a>地図の位置の変更
 
 
 2D 地図に表示する位置を変更するには、[**TrySetViewAsync**](https://msdn.microsoft.com/library/windows/apps/dn637060) メソッドのいずれかのオーバーロードを呼び出します。 そのメソッドを使って、[**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005)、[**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068)、[**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019)、[**Pitch**](https://msdn.microsoft.com/library/windows/apps/dn637044) の新しい値を指定します。 また、ビューが変わるときに使うアニメーションをオプションで指定することもできます。そのためには、[**MapAnimationKind**](https://msdn.microsoft.com/library/windows/apps/dn637002) 列挙値の定数を指定します。
@@ -141,7 +141,7 @@ switch (accessStatus)
 
 地図上に [**GeoboundingBox**](https://msdn.microsoft.com/library/windows/apps/dn607949) の内容を表示するには、[**TrySetViewBoundsAsync**](https://msdn.microsoft.com/library/windows/apps/dn637065) メソッドを呼び出します。 たとえばこのメソッドを使うと、地図上にルートやルートの一部を表示することができます。 詳しくは、「[地図へのルートとルート案内の表示](routes-and-directions.md)」をご覧ください。
 
-## 地図の構成
+## <a name="configure-the-map"></a>地図の構成
 
 
 地図とその外観を構成するには、[**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) の次のプロパティの値を設定します。
@@ -168,7 +168,7 @@ switch (accessStatus)
 
 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) でプッシュピン、図形、XAML コントロールを表示する方法については、「[関心のあるポイント (POI) の地図への表示](display-poi.md)」をご覧ください。
 
-## Streetside ビューの表示
+## <a name="display-streetside-views"></a>Streetside ビューの表示
 
 
 Streetside ビューは、視点がストリート レベルにある場合の場所の見え方を示すもので、マップ コントロールの上に表示されます。
@@ -224,12 +224,12 @@ private async void showStreetsideView()
 }
 ```
 
-## 航空写真 3D ビューの表示
+## <a name="display-aerial-3d-views"></a>航空写真 3D ビューの表示
 
 
 [**MapScene**](https://msdn.microsoft.com/library/windows/apps/dn974329) クラスを使って、地図の 3D 視点を指定します。 マップ シーンは、地図に表示される 3D ビューを表します。 [**MapCamera**](https://msdn.microsoft.com/library/windows/apps/dn974244) クラスは、このようなビューが表示されるカメラの位置を表します。
 
-![](images/mapcontrol-techdiagram.png)
+![マップ シーンの場所と MapCamera の場所を示す図](images/mapcontrol-techdiagram.png)
 
 建物などの地物を地図表面に 3D 表示するには、マップ コントロールの [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) プロパティを [**MapStyle.Aerial3DWithRoads**](https://msdn.microsoft.com/library/windows/apps/dn637127) に設定します。 **Aerial3DWithRoads** スタイルの 3D ビューの例を次に示します。
 
@@ -278,7 +278,7 @@ private async void display3DLocation()
 }
 ```
 
-## 位置や要素に関する情報の取得
+## <a name="get-info-about-locations-and-elements"></a>位置や要素に関する情報の取得
 
 
 地図上の位置に関する情報を取得するには、[**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) の次のメソッドを呼び出します。
@@ -292,7 +292,7 @@ private async void display3DLocation()
 -   [**FindMapElementsAtOffset**
             ](https://msdn.microsoft.com/library/windows/apps/dn637014) メソッド - マップ コントロールのビューポート内の指定したポイントにある地図上の要素を取得します。
 
-## ユーザー操作と変更の処理
+## <a name="handle-user-interaction-and-changes"></a>ユーザー操作と変更の処理
 
 
 地図でのユーザーの入力ジェスチャを処理するには、[**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) の次のイベントを処理します。 地図上の地理的な位置、およびジェスチャが行われたビューポート内の実際の位置に関する情報を取得するには、[**MapInputEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637090) の [**Location**](https://msdn.microsoft.com/library/windows/apps/dn637091) プロパティと [**Position**](https://msdn.microsoft.com/library/windows/apps/dn637093) プロパティの値を確認します。
@@ -310,7 +310,7 @@ private async void display3DLocation()
 -   [**PitchChanged**](https://msdn.microsoft.com/library/windows/apps/dn637045)
 -   [**ZoomLevelChanged**](https://msdn.microsoft.com/library/windows/apps/dn637069)
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
 * [UWP の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
@@ -325,6 +325,6 @@ private async void display3DLocation()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

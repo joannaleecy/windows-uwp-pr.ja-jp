@@ -4,381 +4,93 @@ ms.assetid: 8AC56AAF-8D8C-4193-A6B3-BB5D0669D994
 description: "このセクションの Python コード例を使用して、Windows ストア申請 API を使用する方法をご確認ください。"
 title: "Windows ストア申請 API の Python コード例"
 translationtype: Human Translation
-ms.sourcegitcommit: bd8c8cbf6ed10a583d2008e8b01a499b4d400c11
-ms.openlocfilehash: 52fd41ca41628d41140c8c24047e2a50ea72bf40
+ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
+ms.openlocfilehash: 1f8d415744d53120191f02a17aed4b7b04fa2f57
 
 ---
 
-# Windows ストア申請 API の Python コード例
+# <a name="python-code-examples-for-the-windows-store-submission-api"></a>Windows ストア申請 API の Python コード例
 
 この記事では、*Windows ストア申請 API* を使用するための Python コード例を紹介します。 この API について詳しくは、[Windows ストア サービスを使用した申請の作成と管理に関するページ](create-and-manage-submissions-using-windows-store-services.md)をご覧ください。
 
 ここでは、次のタスクに対応するコード例を示します。
 
-* [Azure AD アクセス トークンの取得](python-code-examples-for-the-windows-store-submission-api.md#token)。
-* [アドオンの作成](python-code-examples-for-the-windows-store-submission-api.md#create-add-on)。
-* [パッケージ フライトの作成](python-code-examples-for-the-windows-store-submission-api.md#create-package-flight)。
-* [アプリの申請の作成とコミット](python-code-examples-for-the-windows-store-submission-api.md#create-app-submission)。
-* [アドオンの申請の作成とコミット](python-code-examples-for-the-windows-store-submission-api.md#create-add-on-submission)。
-* [パッケージ フライトの申請の作成とコミット](python-code-examples-for-the-windows-store-submission-api.md#create-flight-submission)。
+* [Azure AD アクセス トークンの取得](#token)
+* [アドオンの作成](#create-add-on)
+* [パッケージ フライトの作成](#create-package-flight)
+* [アプリの申請の作成](#create-app-submission)
+* [アドオンの申請の作成](#create-add-on-submission)
+* [パッケージ フライトの申請の作成](#create-flight-submission)
 
 <span id="token" />
-## Azure AD アクセス トークンの取得
+## <a name="obtain-an-azure-ad-access-token"></a>Azure AD アクセス トークンの取得
 
-次の例は、[Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)する方法を示しています。
+次の例は、Windows ストア申請 API のメソッドを呼び出すために使用できる [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)する方法を示しています。 トークンを取得した後、Windows ストア申請 API への呼び出しでこのトークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れた後は、新しいトークンを生成できます。
 
-```python
-import http.client, json
-
-tenantId = ""  # Your tenant ID
-clientId = ""  # Your client ID
-clientSecret = ""  # Your client secret
-
-tokenEndpoint = "https://login.microsoftonline.com/{0}/oauth2/token"
-tokenResource = "https://manage.devcenter.microsoft.com"
-
-tokenRequestBody = "grant_type=client_credentials&client_id={0}&client_secret={1}&resource={2}".format(clientId, clientSecret, tokenResource)
-headers = {"Content-Type": "application/x-www-form-urlencoded; charset=utf-8"}
-tokenConnection = http.client.HTTPSConnection("login.microsoftonline.com")
-tokenConnection.request("POST", "/{0}/oauth2/token".format(tenantId), tokenRequestBody, headers=headers)
-
-tokenResponse = tokenConnection.getresponse()
-print(tokenResponse.status)
-tokenJson = json.loads(tokenResponse.read().decode())
-print(tokenJson["access_token"])
-
-tokenConnection.close()
-```
+[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L1-L20)]
 
 <span id="create-add-on" />
-## アドオンの作成
+## <a name="create-an-add-on"></a>アドオンの作成
 
-次の例は、[新しいアドオンを作成](manage-add-ons.md)する方法を示しています (アドオンは "アプリ内製品"、略して "IAP" とも呼ばれます)。
+次の例は、アドオンを[作成](create-an-add-on.md)してから[削除](delete-an-add-on.md)する方法を示しています (アドオンは "アプリ内製品"、略して "IAP" とも呼ばれます)。
 
-```python
-import http.client, json
-
-accessToken = ""  # Your access token
-iapRequestJson = ""  # Your in-app-product request JSON
-
-headers = {"Authorization": "Bearer " + accessToken,
-           "Content-type": "application/json",
-           "User-Agent": "Python"}
-ingestionConnection = http.client.HTTPSConnection("manage.devcenter.microsoft.com")
-
-# Create a new in-app-product
-ingestionConnection.request("POST", "/v1.0/my/inappproducts", iapRequestJson, headers)
-createIapResponse = ingestionConnection.getresponse()
-print(createIapResponse.status)
-print(createIapResponse.reason)
-print(createIapResponse.headers["MS-CorrelationId"])  # Log correlation ID
-
-iapJsonObject = json.loads(createIapResponse.read().decode())
-inAppProductId = iapJsonObject["id"]
-
-# Delete created in-app-product
-ingestionConnection.request("DELETE", "/v1.0/my/inappproducts/" + inAppProductId, "", headers)
-deleteIapResponse = ingestionConnection.getresponse()
-print(deleteIapResponse.status)
-print(deleteIapResponse.headers["MS-CorrelationId"])  # Log correlation ID
-
-ingestionConnection.close()
-```
+[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L26-L52)]
 
 <span id="create-package-flight" />
-## パッケージ フライトの作成
+## <a name="create-a-package-flight"></a>パッケージ フライトの作成
 
-次の例は、[新しいパッケージ フライトを作成](manage-flights.md)する方法を示しています。
+次の例は、パッケージ フライトを[作成](create-a-flight.md)してから[削除](delete-a-flight.md)する方法を示しています。
 
-```python
-import http.client, json, requests, time
-
-accessToken = ""  # Your access token
-applicationId = ""  # Your application ID
-flightRequestJson = ""  # Your flight request JSON
-
-headers = {"Authorization": "Bearer " + accessToken,
-           "Content-type": "application/json",
-           "User-Agent": "Python"}
-ingestionConnection = http.client.HTTPSConnection("manage.devcenter.microsoft.com")
-
-# Create a new flight, a flight submission will be created together with the flight
-
-```python
-ingestionConnection.request("POST", "/v1.0/my/applications/{0}/flights".format(applicationId), flightRequestJson, headers)
-createFlightResponse = ingestionConnection.getresponse()
-print(createFlightResponse.status)
-print(createFlightResponse.reason)
-print(createFlightResponse.headers["MS-CorrelationId"])  # Log correlation ID
-
-flightJsonObject = json.loads(createFlightResponse.read().decode())
-flightId = flightJsonObject["flightId"]
-submissionId = flightJsonObject["pendingFlightSubmission"]["id"]
-
-# Delete created flight
-ingestionConnection.request("DELETE", "/v1.0/my/applications/{0}/flights/{1}".format(applicationId, flightId), "", headers)
-deleteFlightResponse = ingestionConnection.getresponse()
-print(deleteFlightResponse.status)
-print(deleteFlightResponse.headers["MS-CorrelationId"])  # Log correlation ID
-
-ingestionConnection.close()
-```
+[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L58-L87)]
 
 <span id="create-app-submission" />
-## アプリの申請の作成とコミット
+## <a name="create-an-app-submission"></a>アプリの申請の作成
 
-次の例は、[新しいアプリの申請を作成](manage-app-submissions.md)する方法を示しています。
+次の例は、Windows ストア申請 API のいくつかのメソッドを使用して、アプリの申請を作成する方法を示しています。 これを行うために、このコードでは、新しい申請を最後に公開された申請の複製として作成し、複製された申請を更新して Windows デベロッパー センターにコミットします。 具体的には、この例では次のタスクを実行します。
 
-```python
-import http.client, json, requests, time
+1. まず、例では[指定されたアプリのデータを取得](get-an-app.md)します。
+2. 次に、[アプリの保留中の申請を削除](delete-an-app-submission.md)します (存在する場合)。
+3. その後、[アプリの新しい申請を作成](create-an-app-submission.md)します (新しい申請は、最後に公開された申請のコピーです)。
+4. 新しい申請の詳細を変更し、申請の新しいパッケージを Azure Blob Storage にアップロードします。
+5. 次に、新しい申請を[更新](update-an-app-submission.md)してから Windows デベロッパー センターに[コミット](commit-an-app-submission.md)します。
+6. 最後に、申請が正常にコミットされるまで、定期的に[新しい申請の状態をチェック](get-status-for-an-app-submission.md)します。
 
-accessToken = ""  # Your access token
-applicationId = ""  # Your application ID
-appSubmissionRequestJson = "";  # Your submission request JSON
-zipFilePath = r'*.zip'  # Your zip file path
-
-headers = {"Authorization": "Bearer " + accessToken,
-           "Content-type": "application/json",
-           "User-Agent": "Python"}
-ingestionConnection = http.client.HTTPSConnection("manage.devcenter.microsoft.com")
-
-# Get application
-ingestionConnection.request("GET", "/v1.0/my/applications/{0}".format(applicationId), "", headers)
-appResponse = ingestionConnection.getresponse()
-print(appResponse.status)
-print(appResponse.headers["MS-CorrelationId"])  # Log correlation ID
-
-# Delete existing in-progress submission
-appJsonObject = json.loads(appResponse.read().decode())
-if "pendingApplicationSubmission" in appJsonObject :
-    submissionToRemove = appJsonObject["pendingApplicationSubmission"]["id"]
-    ingestionConnection.request("DELETE", "/v1.0/my/applications/{0}/submissions/{1}".format(applicationId, submissionToRemove), "", headers)
-    deleteSubmissionResponse = ingestionConnection.getresponse()
-    print(deleteSubmissionResponse.status)
-    print(deleteSubmissionResponse.headers["MS-CorrelationId"])  # Log correlation ID
-    deleteSubmissionResponse.read()
-
-# Create submission
-ingestionConnection.request("POST", "/v1.0/my/applications/{0}/submissions".format(applicationId), "", headers)
-createSubmissionResponse = ingestionConnection.getresponse()
-print(createSubmissionResponse.status)
-print(createSubmissionResponse.headers["MS-CorrelationId"])  # Log correlation ID
-
-submissionJsonObject = json.loads(createSubmissionResponse.read().decode())
-submissionId = submissionJsonObject["id"]
-fileUploadUrl = submissionJsonObject["fileUploadUrl"]
-print(submissionId)
-print(fileUploadUrl)
-
-# Update submission
-ingestionConnection.request("PUT", "/v1.0/my/applications/{0}/submissions/{1}".format(applicationId, submissionId), appSubmissionRequestJson, headers)
-updateSubmissionResponse = ingestionConnection.getresponse()
-print(updateSubmissionResponse.status)
-print(updateSubmissionResponse.headers["MS-CorrelationId"])  # Log correlation ID
-updateSubmissionResponse.read()
-
-# Upload images and packages in a zip file. Note that large file might need to be handled differently
-f = open(zipFilePath, 'rb')
-uploadResponse = requests.put(fileUploadUrl.replace("+", "%2B"), f, headers={"x-ms-blob-type": "BlockBlob"})
-print(uploadResponse.status_code)
-
-
-# Commit submission
-ingestionConnection.request("POST", "/v1.0/my/applications/{0}/submissions/{1}/commit".format(applicationId, submissionId), "", headers)
-commitResponse = ingestionConnection.getresponse()
-print(commitResponse.status)
-print(commitResponse.headers["MS-CorrelationId"])  # Log correlation ID
-print(commitResponse.read())
-
-# Pull submission status until commit process is completed
-ingestionConnection.request("GET", "/v1.0/my/applications/{0}/submissions/{1}/status".format(applicationId, submissionId), "", headers)
-getSubmissionStatusResponse = ingestionConnection.getresponse()
-submissionJsonObject = json.loads(getSubmissionStatusResponse.read().decode())
-while submissionJsonObject["status"] == "CommitStarted":
-    time.sleep(60)
-    ingestionConnection.request("GET", "/v1.0/my/applications/{0}/submissions/{1}/status".format(applicationId, submissionId), "", headers)
-    getSubmissionStatusResponse = ingestionConnection.getresponse()
-    submissionJsonObject = json.loads(getSubmissionStatusResponse.read().decode())
-    print(submissionJsonObject["status"])
-
-print(submissionJsonObject["status"])
-print(submissionJsonObject)
-
-ingestionConnection.close()
-```
+[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L93-L166)]
 
 <span id="create-add-on-submission" />
-## アドオンの申請の作成とコミット
+## <a name="create-an-add-on-submission"></a>アドオンの申請の作成
 
-次の例は、[新しいアドオンの申請を作成し、コミット](manage-add-on-submissions.md)する方法を示しています (アドオンは "アプリ内製品"、略して "IAP" とも呼ばれます)。
+次の例は、Windows ストア申請 API のいくつかのメソッドを使用して、アドオンの申請を作成する方法を示しています。 これを行うために、このコードでは、新しい申請を最後に公開された申請の複製として作成し、複製された申請を更新して Windows デベロッパー センターにコミットします。 具体的には、この例では次のタスクを実行します。
 
-```python
-import http.client, json, requests, time
+1. まず、例では[指定されたアドオンのデータを取得](get-an-add-on.md)します。
+2. 次に、[アドオンの保留中の申請を削除](delete-an-add-on-submission.md)します (存在する場合)。
+3. その後、[アドオンの新しい申請を作成](create-an-add-on-submission.md)します (新しい申請は、最後に公開された申請のコピーです)。
+4. 申請のアイコンが含まれた ZIP アーカイブを Azure Blob Storage にアップロードします。 詳しくは、「[アドオンの申請の作成](manage-add-on-submissions.md#create-an-add-on-submission)」の Azure Blob Storage に ZIP アーカイブをアップロードする方法について関連する手順をご覧ください。
+5. 次に、新しい申請を[更新](update-an-add-on-submission.md)してから Windows デベロッパー センターに[コミット](commit-an-add-on-submission.md)します。
+6. 最後に、申請が正常にコミットされるまで、定期的に[新しい申請の状態をチェック](get-status-for-an-add-on-submission.md)します。
 
-accessToken = ""  # Your access token
-inAppProductId = ""  # Your in-app-product ID
-updateSubmissionRequestBody = "";  # Your in-app-product submission request JSON
-zipFilePath = r'*.zip'  # Your zip file path
-
-headers = {"Authorization": "Bearer " + accessToken,
-           "Content-type": "application/json",
-           "User-Agent": "Python"}
-ingestionConnection = http.client.HTTPSConnection("manage.devcenter.microsoft.com")
-
-# Get in-app-product
-ingestionConnection.request("GET", "/v1.0/my/inappproducts/{0}".format(inAppProductId), "", headers)
-iapResponse = ingestionConnection.getresponse()
-print(iapResponse.status)
-print(iapResponse.headers["MS-CorrelationId"])  # Log correlation ID
-
-# Delete existing in-progress submission
-iapJsonObject = json.loads(iapResponse.read().decode())
-if "pendingInAppProductSubmission" in iapJsonObject :
-    submissionToRemove = iapJsonObject["pendingInAppProductSubmission"]["id"]
-    ingestionConnection.request("DELETE", "/v1.0/my/inappproducts/{0}/submissions/{1}".format(inAppProductId, submissionToRemove), "", headers)
-    deleteSubmissionResponse = ingestionConnection.getresponse()
-    print(deleteSubmissionResponse.status)
-    print(deleteSubmissionResponse.headers["MS-CorrelationId"])  # Log correlation ID
-    deleteSubmissionResponse.read()
-
-# Create submission
-ingestionConnection.request("POST", "/v1.0/my/inappproducts/{0}/submissions".format(inAppProductId), "", headers)
-createSubmissionResponse = ingestionConnection.getresponse()
-print(createSubmissionResponse.status)
-print(createSubmissionResponse.headers["MS-CorrelationId"])  # Log correlation ID
-
-submissionJsonObject = json.loads(createSubmissionResponse.read().decode())
-submissionId = submissionJsonObject["id"]
-fileUploadUrl = submissionJsonObject["fileUploadUrl"]
-print(submissionId)
-print(fileUploadUrl)
-
-# Update submission
-ingestionConnection.request("PUT", "/v1.0/my/inappproducts/{0}/submissions/{1}".format(inAppProductId, submissionId), updateSubmissionRequestBody, headers)
-updateSubmissionResponse = ingestionConnection.getresponse()
-print(updateSubmissionResponse.status)
-print(updateSubmissionResponse.headers["MS-CorrelationId"])  # Log correlation ID
-updateSubmissionResponse.read()
-
-# Upload images and packages in a zip file. Note that large file might need to be handled differently
-f = open(zipFilePath, 'rb')
-uploadResponse = requests.put(fileUploadUrl.replace("+", "%2B"), f, headers={"x-ms-blob-type": "BlockBlob"})
-print(uploadResponse.status_code)
-
-# Commit submission
-ingestionConnection.request("POST", "/v1.0/my/inappproducts/{0}/submissions/{1}/commit".format(inAppProductId, submissionId), "", headers)
-commitResponse = ingestionConnection.getresponse()
-print(commitResponse.status)
-print(commitResponse.headers["MS-CorrelationId"])  # Log correlation ID
-print(commitResponse.read())
-
-# Pull submission status until commit process is completed
-ingestionConnection.request("GET", "/v1.0/my/inappproducts/{0}/submissions/{1}/status".format(inAppProductId, submissionId), "", headers)
-getSubmissionStatusResponse = ingestionConnection.getresponse()
-submissionJsonObject = json.loads(getSubmissionStatusResponse.read().decode())
-while submissionJsonObject["status"] == "CommitStarted":
-    time.sleep(60)
-    ingestionConnection.request("GET", "/v1.0/my/inappproducts/{0}/submissions/{1}/status".format(inAppProductId, submissionId), "", headers)
-    getSubmissionStatusResponse = ingestionConnection.getresponse()
-    submissionJsonObject = json.loads(getSubmissionStatusResponse.read().decode())
-    print(submissionJsonObject["status"])
-
-print(submissionJsonObject["status"])
-print(submissionJsonObject)
-
-ingestionConnection.close()
-```
+[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L172-L245)]
 
 <span id="create-flight-submission" />
-## パッケージ フライトの申請の作成とコミット
+## <a name="create-a-package-flight-submission"></a>パッケージ フライトの申請の作成
 
-次の例は、[新しいパッケージ フライトの申請を作成し、コミット](manage-flight-submissions.md)する方法を示しています。
+次の例は、Windows ストア申請 API のいくつかのメソッドを使用して、パッケージ フライトの申請を作成する方法を示しています。 これを行うために、このコードでは、新しい申請を最後に公開された申請の複製として作成し、複製された申請を更新して Windows デベロッパー センターにコミットします。 具体的には、この例では次のタスクを実行します。
 
-```python
-import http.client, json, requests, time, zipfile
+1. まず、例では[指定されたパッケージ フライトのデータを取得](get-a-flight.md)します。
+2. 次に、[パッケージ フライトの保留中の申請を削除](delete-a-flight-submission.md)します (存在する場合)。
+3. その後、[パッケージ フライトの新しい申請を作成](create-a-flight-submission.md)します (新しい申請は、最後に公開された申請のコピーです)。
+4. 申請の新しいパッケージを Azure Blob Storage にアップロードします。 詳しくは、「[パッケージ フライトの申請の作成](manage-flight-submissions.md#create-a-package-flight-submission)」の Azure Blob Storage に ZIP アーカイブをアップロードする方法について関連する手順をご覧ください。
+5. 次に、新しい申請を[更新](update-a-flight-submission.md)してから Windows デベロッパー センターに[コミット](commit-a-flight-submission.md)します。
+6. 最後に、申請が正常にコミットされるまで、定期的に[新しい申請の状態をチェック](get-status-for-a-flight-submission.md)します。
 
-accessToken = ""  # Your access token
-applicationId = ""  # Your application ID
-flightId = ""  # Your flight ID
-flightSubmissionRequestJson = ""  # Your submission request JSON
-zipFilePath = r'*.zip'  # Your zip file path
+[!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L251-L325)]
 
-headers = {"Authorization": "Bearer " + accessToken,
-           "Content-type": "application/json",
-           "User-Agent": "Python"}
-ingestionConnection = http.client.HTTPSConnection("manage.devcenter.microsoft.com")
-
-# Get flight
-ingestionConnection.request("GET", "/v1.0/my/applications/{0}/flights/{1}".format(applicationId, flightId), "", headers)
-flightResponse = ingestionConnection.getresponse()
-print(flightResponse.status)
-print(flightResponse.headers["MS-CorrelationId"])  # Log correlation ID
-
-# Delete existing in-progress submission
-flightJsonObject = json.loads(flightResponse.read().decode())
-if "pendingFlightSubmission" in flightJsonObject :
-    submissionToRemove = flightJsonObject["pendingFlightSubmission"]["id"]
-    ingestionConnection.request("DELETE", "/v1.0/my/applications/{0}/flights/{1}/submissions/{2}".format(applicationId, flightId, submissionToRemove), "", headers)
-    deleteSubmissionResponse = ingestionConnection.getresponse()
-    print(deleteSubmissionResponse.status)
-    print(deleteSubmissionResponse.headers["MS-CorrelationId"])  # Log correlation ID
-    deleteSubmissionResponse.read()
-
-# Create submission
-ingestionConnection.request("POST", "/v1.0/my/applications/{0}/flights/{1}/submissions".format(applicationId, flightId), "", headers)
-createSubmissionResponse = ingestionConnection.getresponse()
-print(createSubmissionResponse.status)
-print(createSubmissionResponse.headers["MS-CorrelationId"])  # Log correlation ID
-
-submissionJsonObject = json.loads(createSubmissionResponse.read().decode())
-submissionId = submissionJsonObject["id"]
-fileUploadUrl = submissionJsonObject["fileUploadUrl"]
-print(submissionId)
-print(fileUploadUrl)
-
-# Update submission
-ingestionConnection.request("PUT", "/v1.0/my/applications/{0}/flights/{1}/submissions/{2}".format(applicationId, flightId, submissionId), flightSubmissionRequestJson, headers)
-updateSubmissionResponse = ingestionConnection.getresponse()
-print(updateSubmissionResponse.status)
-print(updateSubmissionResponse.headers["MS-CorrelationId"])  # Log correlation ID
-updateSubmissionResponse.read()
-
-# Upload images and packages in a zip file. Note that large file might need to be handled differently
-f = open(zipFilePath, 'rb')
-uploadResponse = requests.put(fileUploadUrl.replace("+", "%2B"), f, headers={"x-ms-blob-type": "BlockBlob"})
-print(uploadResponse.status_code)
-
-
-# Commit submission
-ingestionConnection.request("POST", "/v1.0/my/applications/{0}/flights/{1}/submissions/{2}/commit".format(applicationId, flightId, submissionId), "", headers)
-commitResponse = ingestionConnection.getresponse()
-print(commitResponse.status)
-print(commitResponse.headers["MS-CorrelationId"])  # Log correlation ID
-print(commitResponse.read())
-
-# Pull submission status until commit process is completed
-ingestionConnection.request("GET", "/v1.0/my/applications/{0}/flights/{1}/submissions/{2}/status".format(applicationId, flightId, submissionId), "", headers)
-getSubmissionStatusResponse = ingestionConnection.getresponse()
-submissionJsonObject = json.loads(getSubmissionStatusResponse.read().decode())
-while submissionJsonObject["status"] == "CommitStarted":
-    time.sleep(60)
-    ingestionConnection.request("GET", "/v1.0/my/applications/{0}/flights/{1}/submissions/{2}/status".format(applicationId, flightId, submissionId), "", headers)
-    getSubmissionStatusResponse = ingestionConnection.getresponse()
-    submissionJsonObject = json.loads(getSubmissionStatusResponse.read().decode())
-    print(submissionJsonObject["status"])
-
-print(submissionJsonObject["status"])
-print(submissionJsonObject)
-
-ingestionConnection.close()
-```
-
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO3-->
 
 

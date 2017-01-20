@@ -6,27 +6,29 @@ ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 2fe8814d98dd5ce4471530c7367b8ad266cc6b05
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 3217dd6bda6d9692ff450133af23002a7040347b
 
 ---
 
-# 回転
+# <a name="rotation"></a>回転
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 この記事では、新しい Windows UI の回転について説明し、UWP アプリでこの新しい対話式操作のメカニズムを使うときに考慮する必要があるユーザー エクスペリエンスのガイドラインを示します。
 
-**重要な API**
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</li>
+<li>[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)</li>
+</ul>
+</div>
 
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
--   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
-
-
-## 推奨と非推奨
-
+## <a name="dos-and-donts"></a>推奨と非推奨
 
 -   ユーザーが直接 UI 要素を回転できるように回転を使います。
 
-## その他の使い方のガイダンス
+## <a name="additional-usage-guidance"></a>その他の使い方のガイダンス
 
 
 **回転の概要**
@@ -62,7 +64,7 @@ ms.openlocfilehash: 2fe8814d98dd5ce4471530c7367b8ad266cc6b05
 
  
 
-Windows8 では、自由、制約付き、複合の 3 種類の回転をサポートします。
+Windows 8 では、自由、制約付き、複合の 3 種類の回転をサポートします。
 
 <table>
 <colgroup>
@@ -100,7 +102,7 @@ Windows8 では、自由、制約付き、複合の 3 種類の回転をサポ�
 
  
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 **サンプル**
@@ -128,6 +130,6 @@ Windows8 では、自由、制約付き、複合の 3 種類の回転をサポ�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

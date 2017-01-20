@@ -6,11 +6,11 @@ ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
 label: Rich text block
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 82c7e80afde143d7d12bbf4fe49aa2c52f244f6f
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: a5a4c96723bd5c4cabdc7dd6dfc114b7af4d10f8
 
 ---
-# リッチ テキスト ブロック
+# <a name="rich-text-block"></a>リッチ テキスト ブロック
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,22 +19,14 @@ ms.openlocfilehash: 82c7e80afde143d7d12bbf4fe49aa2c52f244f6f
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx"><strong>RichTextBlock クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx"><strong>RichTextBlockOverflow クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx"><strong>Paragraph クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx"><strong>Typography クラス</strong></a></li>
+<li>[**RichTextBlock クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)</li>
+<li>[**RichTextBlockOverflow クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx)</li>
+<li>[**Paragraph クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx)</li>
+<li> [**Typography クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 複数の段落、段組などの複雑なテキスト レイアウト、インライン UI 要素 (画像など) をサポートする必要がある場合は、**RichTextBlock** を使います。
 
@@ -42,10 +34,7 @@ ms.openlocfilehash: 82c7e80afde143d7d12bbf4fe49aa2c52f244f6f
 
 適切なテキスト コントロールの選択について詳しくは、「[テキスト コントロール](text-controls.md)」をご覧ください。
 
-## 例
-
-
-## リッチ テキスト ブロックを作成する
+## <a name="create-a-rich-text-block"></a>リッチ テキスト ブロックを作成する
 
 RichTextBlock のコンテンツ プロパティは [Blocks](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.blocks.aspx) プロパティです。このプロパティでは、[Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) 要素によって段落に基づくテキストがサポートされています。 アプリ内でコントロールのテキスト コンテンツに簡単にアクセスすることができる **Text** プロパティは含まれていません。 しかし、RichTextBlock には、TextBlock にはない独自の機能がいくつかあります。 
 
@@ -54,7 +43,7 @@ RichTextBlock では次の機能がサポートされています。
 - インライン UI 要素。 画像などの UI 要素をテキスト内にインラインで表示するには [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) を使います。
 - オーバーフロー コンテナー。 段組テキスト レイアウトを作成するには [RichTextBlockOverflow](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx) 要素を使います。
 
-### 段落
+### <a name="paragraphs"></a>段落
 
 RichTextBlock コントロール内に表示するテキストのブロックを定義するには [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) 要素を使います。 すべての RichTextBlock に少なくとも 1 つの Paragraph を含める必要があります。 
 
@@ -68,7 +57,7 @@ RichTextBlock のすべての段落のインデントを設定するには、[Ri
 </RichTextBlock>
 ```
 
-### インライン UI 要素
+### <a name="inline-ui-elements"></a>インライン UI 要素
 
 [**InlineUIContainer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) クラスを使うと、任意の UIElement をテキスト内にインラインで埋め込むことができます。 Image をテキスト内にインラインで配置するシナリオが一般的ですが、Button、CheckBox などの対話型の要素を使うこともできます。
 
@@ -88,7 +77,7 @@ RichTextBlock のすべての段落のインデントを設定するには、[Ri
 </RichTextBlock>
 ```
 
-## オーバーフロー コンテナー
+## <a name="overflow-containers"></a>オーバーフロー コンテナー
 
 [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx) 要素を持つ RichTextBlock を使って、段組などの高度なページ レイアウトを作成することができます。 RichTextBlockOverflow 要素のコンテンツは、常に RichTextBlock 要素から取得されます。 RichTextBlockOverflow 要素をリンクするには、その要素を RichTextBlock または別の RichTextBlockOverflow の OverflowContentTarget として設定します。
 
@@ -110,11 +99,11 @@ RichTextBlock のすべての段落のインデントを設定するには、[Ri
 </Grid>
 ```
 
-## テキストの書式設定
+## <a name="formatting-text"></a>テキストの書式設定
 
 RichTextBlock に格納されるのはプレーン テキストですが、各種の書式設定オプションを適用して、アプリでテキストをレンダリングする方法をカスタマイズすることができます。 FontFamily、FontSize、FontStyle、Foreground、CharacterSpacing などの標準的なコントロール プロパティを設定して、テキストの外観を変更できます。 インライン テキスト要素と Typography 添付プロパティを使ってテキストを書式設定することもできます。 これらのオプションが影響を与えるのは、RichTextBlock がローカルでテキストを表示する方法だけです。したがって、テキストをコピーしてリッチ テキスト コントロールなどに貼り付けても、書式設定は適用されません。
 
-### インライン要素
+### <a name="inline-elements"></a>インライン要素
 
 [Windows.UI.Xaml.Documents](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.aspx) 名前空間には、テキストの書式設定に使うことができるさまざまなインライン テキスト要素が用意されています (Bold、Italic、Run、Span、LineBreak など)。 テキストのセクションに書式設定を適用する典型的な方法では、テキストを Run 要素または Span 要素に配置して、その要素のプロパティを設定します。
 
@@ -127,7 +116,7 @@ RichTextBlock に格納されるのはプレーン テキストですが、各�
 </Paragraph>
 ```
 
-### 文字体裁
+### <a name="typography"></a>文字体裁
 
 [Typography](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx) クラスの添付プロパティは、Microsoft OpenType の一連の Typography プロパティへのアクセスを提供します。 これらの添付プロパティは、RichTextBlock で設定することも、次の例のように個々のインライン テキスト要素で設定することもできます。
 
@@ -140,13 +129,13 @@ RichTextBlock に格納されるのはプレーン テキストですが、各�
 </RichTextBlock>
 ```
 
-## 推奨事項
+## <a name="recommendations"></a>推奨事項
 
 文字体裁およびフォントのガイドラインに関するトピックをご覧ください。
 
 
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 [テキスト コントロール](text-controls.md)
 
@@ -165,6 +154,6 @@ RichTextBlock に格納されるのはプレーン テキストですが、各�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

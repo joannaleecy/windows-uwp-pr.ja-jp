@@ -6,29 +6,35 @@ ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 label: Use global-ready formats
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 5255da14ccdd0aed3852c41fa662de63a7160fba
-ms.openlocfilehash: 3615d1301a9d163390a2d709690c1e583c9b4f7e
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: eb524ae7369874e8a2f81cd4a8cbb112829387c8
 
 ---
 
-# グローバル対応の形式の使用
+# <a name="use-global-ready-formats"></a>グローバル対応の形式の使用
 
-**重要な API**
-
--   [**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724)
--   [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
--   [**Windows.Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)
--   [**Windows.Globalization.PhoneNumberFormatting**](https://msdn.microsoft.com/library/windows/apps/Windows.Globalization.PhoneNumberFormatting)
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 日付、時刻、数字、電話番号、通貨を適切に書式設定することで、グローバル対応のアプリを開発します。 これを行うと、後でアプリを世界市場の他のカルチャ、地域、言語に適応させることができます。
 
-## 概要
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724)</li>
+<li>[**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)</li>
+<li>[**Windows.Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)</li>
+<li>[**Windows.Globalization.PhoneNumberFormatting**](https://msdn.microsoft.com/library/windows/apps/Windows.Globalization.PhoneNumberFormatting)</li>
+</ul>
+</div>
+
+
+## <a name="introduction"></a>概要
 
 多くのアプリ開発者は、自然に自分たちの言語とカルチャだけを考慮してアプリを作ります。 しかし、そうしたアプリを新しい言語や地域に適応させて他の市場に参入しようとすると、予想しないことで困難に遭遇することがあります。 たとえば、日付、時刻、数値、カレンダー、通貨、電話番号、計測単位、紙のサイズは、すべてカルチャや言語によって表示が異なる場合があります。
 
 アプリを開発する段階で、いくつかのことを考慮しておけば、新しい市場に参入するプロセスを簡単にできます。
 
-## 日付と時刻を適切に書式設定する
+## <a name="format-dates-and-times-appropriately"></a>日付と時刻を適切に書式設定する
 
 日付と時刻は、さまざまな方法で表示することができます。 さまざまな地域やカルチャで、日付の月と日の順、時刻の時と分との分離、セパレーターとして使われる句読点について、さまざまな規則が使われています。 また、日付にはさまざまな表示形式があり、長い形式 ("Wednesday, March 28, 2012") や短い形式 ("3/28/12") など、カルチャによってその表示形式が異なる場合があります。 当然ですが、曜日や月の名称と省略形は言語によって異なります。
 
@@ -56,7 +62,7 @@ ms.openlocfilehash: 3615d1301a9d163390a2d709690c1e583c9b4f7e
                   "Short Time: " + stime;
 ```
 
-## 数字と通貨を適切に書式設定する
+## <a name="format-numbers-and-currencies-appropriately"></a>数字と通貨を適切に書式設定する
 
 数字の書式設定はカルチャによって異なります。 数字の書式設定が異なるものには、表示する小数の桁数、小数点記号に使う文字、通貨記号などがあります。 [**NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136) を使って、小数、パーセントまたはパーミル数値、通貨を表示します。 多くの場合、単にユーザーの通貨設定に従って数字や通貨を表示します。 ただし、フォーマッタを使って特定の地域または形式の通貨を表示することもできます。
 
@@ -94,13 +100,13 @@ ms.openlocfilehash: 3615d1301a9d163390a2d709690c1e583c9b4f7e
                   "Formatted Euro (fr-FR defaults): " + currencyEuroFR;
 ```
 
-## カルチャに適したカレンダーを使用する
+## <a name="use-a-culturally-appropriate-calendar"></a>カルチャに適したカレンダーを使用する
 
 カレンダーは地域や言語によって異なります。 グレゴリオ暦がすべての地域で既定となっているわけではありません。 ある地域のユーザーは、日本の年号、アラビアの太陰暦など別のカレンダーを選ぶ場合があります。 カレンダーの日付や時刻も、さまざまなタイム ゾーンや夏時間に影響されます。
 
 必要なカレンダー形式を使うために、ユーザーが日付を選べるようにするには、標準の [DatePicker と TimePicker](https://msdn.microsoft.com/library/windows/apps/hh465466) コントロールを使います。 カレンダーの日付を直接操作することが必要な、さらに複雑なシナリオの場合、特定のカルチャ、地域、カレンダーの種類を表す適切なカレンダーを提供する [**Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724) クラスが Windows.Globalization によって提供されています。
 
-## 電話番号を適切に書式設定する
+## <a name="format-phone-numbers-appropriately"></a>電話番号を適切に書式設定する
 電話番号の書式設定は地域によって異なります。 電話番号の桁数、桁のグループ化、および特定部分の重要性は、国によって異なります。 Windows 10 Version 1607 以降では、[**PhoneNumberFormatting**](https://msdn.microsoft.com/library/windows/apps/Windows.Globalization.PhoneNumberFormatting) を使って、電話番号を現在の地域に適した書式に設定できます。
 
 [**PhoneNumberInfo**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.phonenumberformatting.phonenumberinfo.aspx) を使うと、数字の文字列を解析して、数字が現在の地域の電話馬号として有効かどうかを判定し、2 つの番号が等しいかどうかを比較して、電話番号の国コードや地域コードなどの異なる機能部分を抽出できます。
@@ -140,11 +146,11 @@ ms.openlocfilehash: 3615d1301a9d163390a2d709690c1e583c9b4f7e
     }
 ```    
 
-## ユーザーの言語とカルチャを考慮する
+## <a name="respect-the-users-language-and-cultural-preferences"></a>ユーザーの言語とカルチャを考慮する
 
 ユーザーの言語、地域、カルチャの設定に基づいてさまざまな機能を提供するシナリオでは、[**Windows.System.UserProfile.GlobalizationPreferences**](https://msdn.microsoft.com/library/windows/apps/br241825) を使ってそれらの設定にアクセスするための方法が、Windows によって提供されます。 必要に応じて、**GlobalizationPreferences** クラスを使って、ユーザーの現在の地理的な地域、優先する言語や通貨などの値を取得します。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [世界市場向けの計画](https://msdn.microsoft.com/library/windows/apps/hh465405)
 * [日付コントロールと時刻コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465466)
@@ -163,6 +169,6 @@ ms.openlocfilehash: 3615d1301a9d163390a2d709690c1e583c9b4f7e
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

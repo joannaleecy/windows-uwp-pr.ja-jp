@@ -6,11 +6,11 @@ ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: a02793e45f190b9401f18e845af3dc73d235c3fc
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 465c75ccb2af9b162202a79025aa292fbd626a58
 
 ---
-# UWP アプリ向けのバッジ通知
+# <a name="badge-notifications-for-uwp-apps"></a>UWP アプリ向けのバッジ通知
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -21,9 +21,11 @@ ms.openlocfilehash: a02793e45f190b9401f18e845af3dc73d235c3fc
 
 通知バッジは、アプリが実行されているかどうかに関係なく、アプリのタスク バーのアイコンとスタート タイルの右下隅に表示されます。 バッジは、どのサイズのタイルにも表示できます。  
 
-**注意**&nbsp;&nbsp;独自のバッジ イメージを指定することはできません。システムが提供するバッジ イメージだけを使うことができます。
+> [!NOTE]
+> 独自のバッジ イメージを指定することはできません。システムが提供するバッジ イメージだけを使うことができます。
 
-## 数値バッジ
+
+## <a name="numeric-badges"></a>数値バッジ
 
 <table>
     <tr>
@@ -43,7 +45,7 @@ ms.openlocfilehash: a02793e45f190b9401f18e845af3dc73d235c3fc
     </tr>    
 </table>
 
-## グリフ バッジ
+## <a name="glyph-badges"></a>グリフ バッジ
 バッジには、数値の代わりに拡張不可能な状態グリフ セットの 1 つを表示することもできます。 
 
 <table>
@@ -119,11 +121,11 @@ ms.openlocfilehash: a02793e45f190b9401f18e845af3dc73d235c3fc
 </tr>
 </table>
 
-## バッジの作成
+## <a name="create-a-badge"></a>バッジの作成
 
 以降の例で、バッジの更新を作成する方法を示します。
 
-### 数値バッジの作成
+### <a name="create-a-numeric-badge"></a>数値バッジの作成
 
 ````csharp
 private void setBadgeNumber(int num)
@@ -150,7 +152,7 @@ private void setBadgeNumber(int num)
 }
 ````
 
-### グリフ バッジの作成
+### <a name="create-a-glyph-badge"></a>グリフ バッジの作成
 ````csharp
 private void updateBadgeGlyph()
 {
@@ -178,7 +180,7 @@ private void updateBadgeGlyph()
 }
 ````
 
-### バッジのクリア
+### <a name="clear-a-badge"></a>バッジのクリア
 
 ````csharp
 private void clearBadge()
@@ -187,17 +189,17 @@ private void clearBadge()
 }
 ````
 
-## サンプルの入手
+## <a name="get-the-sample-code"></a>サンプル コードを入手する
 
 * [通知のサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/Notifications)<br/> ライブ タイルを作り、バッジの更新を送信し、トースト通知を表示する方法を示します。 
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 * [アダプティブ トースト通知と対話型トースト通知](tiles-and-notifications-adaptive-interactive-toasts.md)
 * [タイルの作成](tiles-and-notifications-creating-tiles.md)
 * [アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

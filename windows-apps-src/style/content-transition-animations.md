@@ -3,26 +3,27 @@ author: mijacobs
 Description: "コンテンツ切り替えアニメーションを使うと、コンテナーや背景はそのままに、画面のある領域のコンテンツを変更できます。 新しいコンテンツはフェード インします。 既にあるコンテンツを差し替える場合、そのコンテンツはフェード アウトします。"
 title: "コンテンツ切り替えアニメーションのガイドライン"
 ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
+template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
-ms.openlocfilehash: 2b3e0196b573fb426c9cd71fc613819a2dd2d615
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: ed2d580568b73e787ad7b980981e025652232a83
 
 ---
 
-# コンテンツ切り替えアニメーション
+# <a name="content-transition-animations"></a>コンテンツ切り替えアニメーション
 
-
-
-
-
-**重要な API**
-
--   [**ContentThemeTransition クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
--   [**enterContent 関数 (HTML)**](https://msdn.microsoft.com/library/windows/apps/hh701582)
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 コンテンツ切り替えアニメーションを使うと、コンテナーや背景はそのままに、画面のある領域のコンテンツを変更できます。 新しいコンテンツはフェード インします。 既にあるコンテンツを差し替える場合、そのコンテンツはフェード アウトします。
 
-## 推奨と非推奨
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**ContentThemeTransition クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)</li>
+</ul>
+</div>
+
+## <a name="dos-and-donts"></a>推奨と非推奨
 
 
 -   開始アニメーションは、空のコンテナーに一連の新しい項目を流し込むときに使います。 たとえば、アプリの初期読み込みの直後は、アプリのコンテンツの一部が表示に間に合わない場合があります。 このような場合、コンテンツを表示する準備が整った段階で、コンテンツ切り替えアニメーションを使い、遅れてコンテンツが表示されるようにします。
@@ -35,7 +36,7 @@ ms.openlocfilehash: 2b3e0196b573fb426c9cd71fc613819a2dd2d615
 
 
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 **開発者向け (XAML)**
 * [アニメーションの概要](https://msdn.microsoft.com/library/windows/apps/mt187350)
@@ -53,6 +54,6 @@ ms.openlocfilehash: 2b3e0196b573fb426c9cd71fc613819a2dd2d615
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

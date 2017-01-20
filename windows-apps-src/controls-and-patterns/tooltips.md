@@ -6,16 +6,13 @@ ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 4110f902adf01e5e25ac674faf9be8faf61f4ea0
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 1ed8bc2339b0616ea5e34b640bb572693d397cce
 
 
 ---
-# ヒント
+# <a name="tooltips"></a>ヒント
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-
-
 
 ヒントは、他のコントロールまたはオブジェクトにリンクされた短い説明です。 ヒントを使うと、UI では直接説明されていない、なじみのないオブジェクトをユーザーが理解しやすくなります。 ヒントは、ユーザーがコントロールにフォーカスを移動する、コントロール上で長押しする、またはマウス ポインターをコントロール上にホバーすると、自動的に表示されます。 また、ヒントは数秒経過するか、ユーザーが指、ポインター、またはキーボード/ゲームパッドのフォーカスを移動すると消えます。
 
@@ -24,17 +21,12 @@ ms.openlocfilehash: 4110f902adf01e5e25ac674faf9be8faf61f4ea0
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br227608"><strong>ToolTip クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice"><strong>ToolTipService クラス</strong></a></li>
+<li>[**ToolTip クラス**](https://msdn.microsoft.com/library/windows/apps/br227608)</li>
+<li>[**ToolTipService クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 ユーザーに操作の実行を指示する前に、ヒントを使ってコントロールに関する詳しい情報を表示します。 ヒントは慎重に使い、タスクを完了しようとしているユーザーにとって明らかに重要である場合にのみ追加します。 1 つの目安は、情報が同じエクスペリエンスのどこかで入手できる場合、ヒントは必要ありません。 価値あるヒントによって、不明瞭な操作を明確にします。
 
@@ -61,13 +53,13 @@ ms.openlocfilehash: 4110f902adf01e5e25ac674faf9be8faf61f4ea0
 -   **ユーザーがヒントを煩わしいと感じますか?**
     その場合は、別の手段を使うことを検討します。何もしない、という選択肢もあります。 煩わしいと感じる可能性があってもヒントを使う場合は、ユーザーがヒントをオフにできるようにします。
 
-## 例
+## <a name="example"></a>例
 
 Bing Maps アプリのヒントです。
 
 ![Bing Maps アプリのヒントです](images/control-examples/tool-tip-maps.png)
 
-## 推奨事項
+## <a name="recommendations"></a>推奨事項
 
 -   ヒントは慎重に使います (または使わない)。 ヒントは作業の中断になります。 ヒントはポップアップと同じように煩わしい場合があるため、大きな付加価値がない限り使わないでください。
 -   ヒントのテキストは簡潔なものにします。 ヒントは短い文やフレーズに適しています。 大きなテキストのまとまりは圧迫感を与えることがあり、ユーザーが読み終える前にヒントがタイムアウトする可能性があります。
@@ -78,12 +70,11 @@ Bing Maps アプリのヒントです。
 -   対話的に見えるような画像をヒント内に配置しないでください。
 
 関連トピック
------------------------------------------------
 
 * [**ToolTip クラス**](https://msdn.microsoft.com/library/windows/apps/br227608)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -5,10 +5,15 @@ title: "アクセス キー"
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Access keys
 template: detail.hbs
-keywords: "アクセス キー、キーボード、アクセシビリティ"
+keywords: "アクセス キー, キーボード, アクセシビリティ, ユーザーの操作, 入力"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 2b6b1d7b1755aad4d75a29413d989c6e8112128a
-ms.openlocfilehash: dfe89e4d4fd089dde6b7b307325b8fe43de82c10
+ms.sourcegitcommit: 76b012ab4cf737f00fc986c81c88fd48339867fc
+ms.openlocfilehash: 34cce6acc786fe34b3d94faaec57011474e029ff
 
 ---
 
@@ -385,6 +390,6 @@ public sealed partial class ScopedAccessKeys : Page
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

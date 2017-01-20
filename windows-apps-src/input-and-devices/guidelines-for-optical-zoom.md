@@ -6,20 +6,24 @@ ms.assetid: 51a0007c-8a5d-4c44-ac9f-bbbf092b8a00
 label: Optical zoom and resizing
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 54c0dc3ffa9fd8716a8f147f408c1c8de5775783
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 2776fe18d20286a3beaf8ba280976316e40119dd
 
 ---
 
-# 光学式ズームとサイズ変更
+# <a name="optical-zoom-and-resizing"></a>光学式ズームとサイズ変更
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 この記事では、Windows のズームと要素のサイズ変更について説明し、アプリでこのような新しい対話式操作のメカニズムを使うときのユーザー エクスペリエンスのガイドラインを示します。
 
-**重要な API**
-
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
--   [**Input (XAML)**](https://msdn.microsoft.com/library/windows/apps/br227994)
-
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</li>
+<li>[**Input (XAML)**](https://msdn.microsoft.com/library/windows/apps/br227994)</li>
+</ul>
+</div>
 
 光学式ズームを使うと、ユーザーはコンテンツの表示を拡大できます (コンテンツ領域自体に対して実行されます)。一方、サイズ変更を使うと、コンテンツ領域の表示は変更せずに、1 つまたは複数のオブジェクトの相対的なサイズをユーザーが変更できます (コンテンツ領域内のオブジェクトに対して実行されます)。
 
@@ -40,7 +44,7 @@ ms.openlocfilehash: 54c0dc3ffa9fd8716a8f147f408c1c8de5775783
 
  
 
-## 推奨と非推奨
+## <a name="dos-and-donts"></a>推奨と非推奨
 
 
 サイズ変更または光学式ズームをサポートするアプリでは、次のガイドラインに従ってください。
@@ -69,7 +73,7 @@ ms.openlocfilehash: 54c0dc3ffa9fd8716a8f147f408c1c8de5775783
 
      
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 
 **サンプル**
@@ -97,6 +101,6 @@ ms.openlocfilehash: 54c0dc3ffa9fd8716a8f147f408c1c8de5775783
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

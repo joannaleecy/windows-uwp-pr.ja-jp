@@ -2,16 +2,16 @@
 author: drewbatgit
 ms.assetid: 09BA9250-A476-4803-910E-52F0A51704B1
 description: "この記事では、IMediaEncodingProperties インターフェイスを使用して、カメラのプレビュー ストリームとキャプチャした写真/ビデオの解像度およびフレーム レートを設定する方法を説明します。"
-title: "MediaCapture のメディア エンコード プロパティの設定"
+title: "MediaCapture の形式、解像度、およびフレーム レートの設定"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: 1b20578fe52c004a55c5099ccb89e8c180571009
+ms.sourcegitcommit: 6c3ed4ab773fe821acaee7d5b8c70fdc8770de81
+ms.openlocfilehash: 828cbddd9568bd4e9d0a571880a867afff293e34
 
 ---
 
-# MediaCapture のメディア エンコード プロパティの設定
+# <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>MediaCapture の形式、解像度、およびフレーム レートの設定
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
 この記事では、[**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) インターフェイスを使用して、カメラのプレビュー ストリームとキャプチャした写真/ビデオの解像度およびフレーム レートを設定する方法を説明します。 プレビュー ストリームの縦横比をキャプチャしたメディアの縦横比と一致させる方法についても説明します。
@@ -23,7 +23,7 @@ ms.openlocfilehash: 1b20578fe52c004a55c5099ccb89e8c180571009
 > [!NOTE] 
 > この記事の内容は、写真やビデオの基本的なキャプチャ機能を実装するための手順を紹介した「[MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)」で取り上げた概念やコードに基づいています。 そちらの記事で基本的なメディア キャプチャのパターンを把握してから、高度なキャプチャ シナリオに進むことをお勧めします。 この記事で紹介しているコードは、MediaCapture のインスタンスが既に作成され、適切に初期化されていることを前提としています。
 
-## メディア エンコード プロパティのヘルパー クラス
+## <a name="a-media-encoding-properties-helper-class"></a>メディア エンコード プロパティのヘルパー クラス
 
 [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) インターフェイスの機能をラップする単純なヘルパー クラスを作成すると、特定の条件を満たす一連のエンコード プロパティを容易に選択できます。 特に、エンコード プロパティの機能の次のような動作に対して、このヘルパー クラスが便利です。
 
@@ -38,13 +38,13 @@ ms.openlocfilehash: 1b20578fe52c004a55c5099ccb89e8c180571009
 
 [!code-cs[StreamPropertiesHelper](./code/BasicMediaCaptureWin10/cs/StreamPropertiesHelper.cs#SnippetStreamPropertiesHelper)]
 
-## プレビュー ストリームとキャプチャ ストリームの独立性の判断
+## <a name="determine-if-the-preview-and-capture-streams-are-independent"></a>プレビュー ストリームとキャプチャ ストリームの独立性の判断
 
 デバイスによっては、プレビュー ストリームとキャプチャ ストリームに同じハードウェア ピンが使用されることがあります。 このようなデバイスでは、一方のエンコード プロパティを設定すると、他方も設定されます。 キャプチャとプレビューに別々のハードウェア ピンが使用されるデバイスでは、ストリームごとのプロパティを個々に設定できます。 プレビュー ストリームとキャプチャ ストリームが独立しているかどうかを判断するには、次のコードを使用します。 このテストの結果に基づいて UI を調整し、ストリームの設定を個々に有効化または無効化する必要があります。
 
 [!code-cs[CheckIfStreamsAreIdentical](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCheckIfStreamsAreIdentical)]
 
-## 利用可能なストリーム プロパティのリストの取得
+## <a name="get-a-list-of-available-stream-properties"></a>利用可能なストリーム プロパティのリストの取得
 
 キャプチャ デバイスについて利用可能なストリーム プロパティのリストを取得するには、アプリの [MediaCapture](capture-photos-and-video-with-mediacapture.md) オブジェクトの [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) を取得し、[**GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) を呼び出して、いずれか 1 つの [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) 値 (**VideoPreview**、**VideoRecord**、**Photo**) を渡します。 この例では、**GetAvailableMediaStreamProperties** から返されたそれぞれの [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) 値に対し、この記事で定義した **StreamPropertiesHelper** オブジェクトのリストを Linq 構文で作成しています。 この例では、まず Linq 拡張メソッドを使用して、返されたプロパティを解像度順のフレーム レート順に並べ替えます。
 
@@ -52,7 +52,7 @@ ms.openlocfilehash: 1b20578fe52c004a55c5099ccb89e8c180571009
 
 [!code-cs[PopulateStreamPropertiesUI](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPopulateStreamPropertiesUI)]
 
-## 目的のストリーム プロパティを設定する
+## <a name="set-the-desired-stream-properties"></a>目的のストリーム プロパティを設定する
 
 目的のエンコード プロパティを使用するようにビデオ デバイスのコントローラーに指示するには、[**SetMediaStreamPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh700895) を呼び出します。このとき、写真、ビデオ、プレビューのうち、どのプロパティを設定するかを示す **MediaStreamType** 値を渡します。 この例では、**PopulateStreamPropertiesUI** ヘルパー メソッドによって設定されたいずれかの **ComboBox** オブジェクトからユーザーが項目を選択すると、要求されたエンコード プロパティが設定されます。
 
@@ -62,7 +62,7 @@ ms.openlocfilehash: 1b20578fe52c004a55c5099ccb89e8c180571009
 
 [!code-cs[VideoSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoSettingsChanged)]
 
-## プレビューとキャプチャ ストリームの縦横比を一致させる
+## <a name="match-the-aspect-ratio-of-the-preview-and-capture-streams"></a>プレビューとキャプチャ ストリームの縦横比を一致させる
 
 一般的なカメラ アプリでは、ユーザーがビデオや写真のキャプチャ解像度を選択するための UI を提供することも、プログラムによってプレビュー解像度を設定することもあります。 アプリの最適なプレビュー ストリーム解像度を選択するための方法はいくつかあります。
 
@@ -90,6 +90,6 @@ ms.openlocfilehash: 1b20578fe52c004a55c5099ccb89e8c180571009
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

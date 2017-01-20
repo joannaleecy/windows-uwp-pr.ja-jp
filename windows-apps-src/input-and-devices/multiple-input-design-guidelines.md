@@ -6,12 +6,13 @@ ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
 label: Multiple inputs
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: d4238e0d1becee719148b38acf5a91d74230601d
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: a433660665eeaa0caad3f380a587de89b8c74441
 
 ---
 
-# 複数の入力
+# <a name="multiple-inputs"></a>複数の入力
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 人がお互いにコミュニケーションをとる際に音声とジェスチャを組み合わせて使うように、アプリの操作では、複数の種類とモードの入力を使うと便利な場合があります。
 
@@ -24,12 +25,12 @@ ms.openlocfilehash: d4238e0d1becee719148b38acf5a91d74230601d
 -   すべての入力方法が常にサポートされていますか? 特定のコントロールでサポートされていますか? 特定の時間や環境でサポートされていますか?
 -   1 つの入力方法が優先されますか?
 
-## 単一 (排他) モードの操作
+## <a name="single-or-exclusive-mode-interactions"></a>単一 (排他) モードの操作
 
 
 単一モードの操作では、複数の入力の種類がサポートされますが、1 つのアクションで使用できるのは、1 つのみです。 たとえば、コマンドに音声認識、ナビゲーションにジェスチャなどです。または近接度に応じて、タッチかジェスチャを使用してテキストを入力します。
 
-## マルチモーダル操作
+## <a name="multimodal-interactions"></a>マルチモーダル操作
 
 
 マルチモーダル操作では、1 つのアクションを完了するために複数の入力方法が順番に使われます。
@@ -45,6 +46,6 @@ ms.openlocfilehash: d4238e0d1becee719148b38acf5a91d74230601d
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

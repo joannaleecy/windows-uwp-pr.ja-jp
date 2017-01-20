@@ -7,11 +7,11 @@ dev.assetid: AF2F2008-9B53-430C-BBC3-8888F631B0B0
 label: Media player
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 6945708f0d81cd9f2edd363ed193c76601ec5652
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 155f1712beb70d2a1fc93809ddc254e8f6e6f4a2
 
 ---
-# メディア プレーヤー
+# <a name="media-player"></a>メディア プレーヤー
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -22,28 +22,25 @@ ms.openlocfilehash: 6945708f0d81cd9f2edd363ed193c76601ec5652
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx"><strong>MediaPlayerElement クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediatransportcontrols"><strong>MediaTransportControls クラス</strong></a></li>
+<li>[**MediaPlayerElement クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx)</li>
+<li>[**MediaTransportControls クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediatransportcontrols)</li>
 </ul>
-
 </div>
-</div>
-
 
 
 > **注**&nbsp;&nbsp; **MediaPlayerElement** は Windows 10 バージョン 1607 以降でのみ使用できます。 Windows 10 の以前のバージョン用にアプリを開発する場合は、代わりに [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) を使用する必要があります。 このページの推奨事項はすべて MediaElement にも適用されます。
 
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 アプリでオーディオまたはビデオを再生する場合は、メディア プレーヤーを使います。 画像のコレクションを表示するには、[フリップ ビュー](flipview.md)を使います。
 
-## 例
+## <a name="examples"></a>例
 
 Windows 10 Get Started アプリのメディア プレイヤー。
 
 ![Windows 10 Get Started アプリのメディア要素](images/control-examples/mtc_getstarted_example.png)
 
-## メディア プレーヤーの作成
+## <a name="create-a-media-player"></a>メディア プレーヤーの作成
 XAML で [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) オブジェクトを作成してアプリにメディアを追加し、オーディオやビデオ ファイルを指定する [**MediaSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx) に [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) を設定します。
 
 この XAML は [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) を作成し、その [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) プロパティをアプリのローカルにあるビデオ ファイルの URI に設定するコードを示します。 ページが読み込まれると、**MediaPlayerElement** によって再生が開始します。 メディアがすぐに再生されないようにするには、[**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.autoplay.aspx) プロパティを **false** に設定します。
@@ -65,7 +62,7 @@ XAML で [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/app
                     AreTransportControlsEnabled="True"/>
 ```
 
-### メディア トランスポート コントロール
+### <a name="media-transport-controls"></a>メディア トランスポート コントロール
 [**MediaPlayerElement**]((https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) には、再生、停止、一時停止、音量、ミュート、シーク (進行状況)、クローズド キャプション、オーディオ トラックの選択を処理する組み込みのトランスポート コントロールがあります。 これらのコントロールを有効にするには、[**AreTransportControlsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.AreTransportControlsEnabled.aspx) を **true** に設定します。 これらのコントロールを無効にするには、**AreTransportControlsEnabled** を **false** に設定します。 トランスポート コントロールは、[**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn831962) クラスで表されます。 トランスポート コントロールは、そのまま使用することも、さまざまな方法でカスタマイズすることもできます。 詳しくは、[**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn831962) クラスのリファレンスと「[カスタム トランスポート コントロールを作成する](custom-transport-controls.md)」をご覧ください。
 
 トランスポート コントロールは 1 行および 2 行のレイアウトをサポートします。 最初の例は、メディアのタイムラインの左側に再生/一時停止ボタンを配置した 1 行のレイアウトです。 このレイアウトは、インライン メディア再生とコンパクトな画面に適しています。
@@ -83,7 +80,7 @@ XAML で [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/app
 > **注**&nbsp;&nbsp; [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) は、システム メディア トランスポート コントロールと自動的に統合されないため、自分で接続する必要があります。 詳しくは、「[システム メディア トランスポート コントロール](https://msdn.microsoft.com/library/windows/apps/mt228338)」をご覧ください。
 
 
-### メディア ソースを設定する
+### <a name="set-the-media-source"></a>メディア ソースを設定する
 ネットワーク上のファイルまたはアプリに埋め込まれたファイルを再生する場合は、ファイルのパスを使用して [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) プロパティを [**MediaSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx) に設定します。
 
 **ヒント**  インターネットからファイルを開くには、アプリのマニフェスト (Package.appxmanifest) で **Internet (Client)** 機能を宣言する必要があります。 機能の宣言について詳しくは、「[アプリ機能の宣言](https://msdn.microsoft.com/library/windows/apps/mt270968)」をご覧ください。
@@ -155,7 +152,7 @@ private void LoadEmbeddedAppFile()
 }
 ```
 
-### ローカル メディア ファイルを開く
+### <a name="open-local-media-files"></a>ローカル メディア ファイルを開く
 ローカル システムや OneDrive のファイルを開くには、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) を使ってファイルを取得し、[**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) を使ってメディア ソースを設定します。または、プログラムによってユーザーのメディア フォルダーにアクセスすることもできます。
 
 アプリがユーザーの操作なしで、**Music** または **Video** フォルダーにアクセスする必要がある場合、たとえばユーザーのコレクションのすべての音楽ファイルやビデオ ファイルを列挙し、アプリで表示する場合は、**音楽ライブラリ**および**ビデオ ライブラリ**機能を宣言する必要があります。 詳しくは、「[ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー](https://msdn.microsoft.com/library/windows/apps/mt188703)」をご覧ください。
@@ -208,7 +205,7 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 }
 ```
 
-### ポスター ソースを設定する
+### <a name="set-the-poster-source"></a>ポスター ソースを設定する
 [**PosterSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.PosterSource.aspx) プロパティを使って、メディアの読み込みが終わるまで [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) に視覚的な表示を提供することができます。 **PosterSource** は、スクリーン ショットや映画のポスターなど、メディアの代わりに表示される画像です。 **PosterSource** は、次のような状況で表示されます。
 
 -   有効なソースが設定されていないとき。 たとえば、[**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) が設定されていないとき、**Source** が **Null** に設定されているとき、またはソースが無効であるとき ([**MediaFailed**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.mediafailed.aspx) イベントが発生したときと同様) です。
@@ -222,7 +219,7 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 <MediaPlayerElement Source="Media/Track1.mp4" PosterSource="Media/AlbumCover.png"/>
 ```
 
-### デバイスの画面をアクティブに維持する
+### <a name="keep-the-devices-screen-active"></a>デバイスの画面をアクティブに維持する
 通常、ユーザーがいないときはバッテリーを節約するために画面が暗くなり、最終的には電源がオフになりますが、ビデオ アプリでは、ユーザーがビデオを見られるように画面をオンのままにしておく必要があります。 アプリでビデオを再生しているときなど、無操作状態が検出されてもディスプレイの電源が切れないようにするには、[**DisplayRequest.RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818) を呼び出します。 [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) クラスを使うと、ユーザーがビデオを見られるように画面をオンのままにするよう Windows に指示することができます。
 
 消費電力とバッテリーの駆動時間を節約するため、不要になったら、[**DisplayRequest.RequestRelease**](https://msdn.microsoft.com/library/windows/apps/br241819) を呼び出して表示要求を解放してください。 Windows は、アプリが画面から消されると自動的にアプリのアクティブな表示要求を非アクティブ化し、アプリがフォアグラウンドに戻ると再びアクティブ化します。
@@ -287,13 +284,13 @@ private DisplayRequest appDisplayRequest = null;
     }
     ```
 
-### プログラムでメディア プレーヤーを制御する
+### <a name="control-the-media-player-programmatically"></a>プログラムでメディア プレーヤーを制御する
 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) には、[**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) プロパティを介してオーディオやビデオの再生を制御するプロパティ、メソッド、イベントが多数用意されています。 プロパティ、メソッド、イベントの完全な一覧については、[**MediaPlayer**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.aspx) のリファレンス ページをご覧ください。
 
-### 高度なメディア再生のシナリオ
+### <a name="advanced-media-playback-scenarios"></a>高度なメディア再生のシナリオ
 プレイリストを再生するような複雑なメディア再生のシナリオでは、オーディオ言語間を切り替えたり、カスタム メタデータ トラックを作成したりするため、[**MediaPlayerElement.Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) を [**MediaPlaybackItem**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybackitem.aspx) または [**MediaPlaybackList**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacklist.aspx) に設定します。 さまざまな高度なメディア機能を有効にする方法について詳しくは、デベロッパー センターの[**メディアの再生**](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/media-playback-with-mediasource)のページをご覧ください。
 
-### フル ウィンドウのビデオ レンダリングを有効にする
+### <a name="enable-full-window-video-rendering"></a>フル ウィンドウのビデオ レンダリングを有効にする
 
 フル ウィンドウのレンダリングを有効または無効にするには、[**IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.isfullwindow.aspx) プロパティを設定します。 プログラムを使ってアプリにフル ウィンドウのレンダリングを設定する場合、手動で行う代わりに **IsFullWindow** を常に使う必要があります。 **IsFullWindow** により、システム レベルの最適化が実行され、パフォーマンスとバッテリーの寿命が向上します。 フル ウィンドウのレンダリングが正しく設定されていない場合、これらの最適化が有効になっていない可能性があります。
 
@@ -312,7 +309,7 @@ private void FullWindow_Click(object sender, object e)
 }
 ```
 
-### ビデオのサイズを変更し、拡大する
+### <a name="resize-and-stretch-video"></a>ビデオのサイズを変更し、拡大する
 
 [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.stretch.aspx) プロパティを使って、コンテナー内でのビデオ コンテンツや [**PosterSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.postersource.aspx) のサイズを変更します。 この要素は、[**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) の値に応じてビデオのサイズ変更と拡大を行います。 **Stretch** 状態は、多くのテレビ セットの画像サイズの設定に似ています。 ボタンにフックしてユーザーが好みの設定を選ぶことができるようにします。
 
@@ -354,7 +351,7 @@ private void PictureSize_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### 待機時間が短い再生を可能にする
+### <a name="enable-low-latency-playback"></a>待機時間が短い再生を可能にする
 
 [**RealTimePlayback**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.realtimeplayback.aspx) プロパティを **true** に設定すると、[**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) の再生の最初の待機時間を短くすることができます。 これは双方向通信アプリには重要で、ゲームのシナリオにも適用できる場合があります。 このモードでは、リソースがより多く消費され、電力効率が低下する点に注意してください。
 
@@ -366,7 +363,7 @@ MediaPlayerElement mp = new MediaPlayerElement();
 mp.MediaPlayer.RealTimePlayback = true;
 ```
 
-## 推奨事項
+## <a name="recommendations"></a>推奨事項
 
 メディア プレイヤーは淡色テーマと濃色テーマの両方をサポートしていますが、ほとんどのエンターテインメント シナリオでは、濃色テーマを使用することでエクスペリエンスが向上します。 暗い背景を使うと、(特に高感度条件では) コントラストが強調され、表示エクスペリエンスに影響を及ぼすコントロール バーが制限されます。
 
@@ -378,13 +375,13 @@ mp.MediaPlayer.RealTimePlayback = true;
 
 既定のコントロールはメディア再生に最適化されていますが、アプリに最適なエクスペリエンスを実現するために、必要なカスタム オプションをメディア プレーヤーに追加できます。 カスタム コントロールの追加について詳しくは、「[カスタム トランスポート コントロールを作成する](custom-transport-controls.md)」をご覧ください。
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 - [UWP アプリのコマンド設計の基本](https://msdn.microsoft.com/library/windows/apps/dn958433)
 - [UWP アプリのコンテンツ デザインの基本](https://msdn.microsoft.com/library/windows/apps/dn958434)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

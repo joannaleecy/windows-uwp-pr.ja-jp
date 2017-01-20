@@ -5,13 +5,16 @@ title: "ツリー ビュー"
 label: Tree view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: b81ef40954860cb026038447158ba1a9edb07002
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 88e3e79b7ebdf06c200f3525095d7685f7e3e6dc
 
 ---
-# ツリー ビューでの階層的なレイアウト
+# <a name="hierarchical-layout-with-treeview"></a>ツリー ビューでの階層的なレイアウト
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
+<div class="microsoft-internal-note">
+ツリー ビューの赤線を Design Depot で確認: http://designdepotweb1/DesignDepot.FrontEnd/#/Dashboard/856
+</div>
 
 ツリー ビューは、階層型のリスト パターンになっており、入れ子になった項目を含むノードを展開したり、折りたたんだりすることができます。 入れ子になった項目は、追加のノードや標準的な一覧項目として使うことができます。 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) を使用して、フォルダー構造や入れ子になった関係を UI で視覚的に示すツリー ビューを作成できます。
 
@@ -27,45 +30,45 @@ ms.openlocfilehash: b81ef40954860cb026038447158ba1a9edb07002
 -- | --
 ツリー ビューのリファレンス サンプル | Edge ブラウザーでのツリー ビュー
 
-## 適切なパターンの選択
+## <a name="is-this-the-right-pattern"></a>適切なパターンの選択
 
 - 項目に入れ子になった一覧項目が含まれているとき、それらの項目とピアやノードとの階層関係を視覚的に示すことが重要になる場合は、ツリー ビューを使用します。
 
 - 項目の入れ子になった関係を強調表示することが優先的な処理ではない場合は、ツリー ビューを使用しないでください。 ほとんどの演習用シナリオでは、標準的なリスト ビューが適しています
 
-## ツリー ビューの UI 構造
+## <a name="treeview-ui-structure"></a>ツリー ビューの UI 構造
 
 アイコンを使用して、ツリー ビュー内のノードを表すことができます。 インデントとアイコンを組み合わせて使用することで、フォルダー/親ノードとフォルダー以外の項目/子ノードとの間の入れ子になった関係を表すことができます。 その方法についてのガイダンスを説明します。
 
-### アイコン
+### <a name="icons"></a>アイコン
 
 アイコンを使用して、項目がノードであることや、ノードの状態 (展開されているか、折りたたまれているか) を示すことができます。
 
-#### 山形記号
+#### <a name="chevron"></a>山形記号
 
 一貫性を保つために、折りたたまれているノードでは右向きの山形記号を使用し、展開されているノードでは下向きの山形記号を使用します。
 
 ![ツリー ビューでの山形記号アイコンの使用](images/treeview_chevron.png)
 
-#### フォルダー
+#### <a name="folder"></a>フォルダー
 
 フォルダー アイコンは、フォルダーをフォルダーとして表す場合にのみ使用します。
 
 ![ツリー ビューでのフォルダー アイコンの使用](images/treeview_folder.png)
 
-#### 山形記号とフォルダー
+#### <a name="chevron-and-folder"></a>山形記号とフォルダー
 
 山形記号とフォルダーの組み合わせは、ツリー ビューに含まれるノード以外の一覧項目にもアイコンが指定されている場合にのみ使用します。
 
 ![ツリー ビューで山形記号のアイコンとフォルダー アイコンを組み合わせた使用](images/treeview_chevron_folder.png)
 
-#### フォルダーとフォルダー以外のノードのインデントを示す赤線
+#### <a name="redlines-for-indentation-of-folders-and-non-folder-nodes"></a>フォルダーとフォルダー以外のノードのインデントを示す赤線
 
 次のスクリーンショットでは、赤線を使用して、フォルダーとフォルダー以外のノードのインデントを示しています。
 
 ![フォルダーとフォルダー以外のノードのインデントを示す赤線](images/treeview_chevron_folder_indent_rl.png)
 
-## ツリー ビューの作成
+## <a name="building-a-treeview"></a>ツリー ビューの作成
 
 ツリー ビューには、次の主なクラスがあります。 これらすべてのクラスは、リファレンス実装で定義されており、含まれています。
 
@@ -76,7 +79,7 @@ ms.openlocfilehash: b81ef40954860cb026038447158ba1a9edb07002
 - `TreeViewItem` クラスは、ドロップ操作のイベントを実装します。
 - `ViewModel` クラスは、TreeViewItems のリストをフラット化します。これにより、キーボード ナビゲーションやドラッグ アンド ドロップなどの操作を ListView から継承できるようになります。
 
-## TreeViewItem 用のデータ テンプレートを作成する
+## <a name="create-a-data-template-for-your-treeviewitem"></a>TreeViewItem 用のデータ テンプレートを作成する
 
 フォルダー項目やフォルダー以外の項目のデータ テンプレートをセットアップする XAML のセクションを次に示します。
 - ListViewItem をフォルダーとして指定するには、その ListViewItem で [AllowDrop](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.allowdrop.aspx) プロパティを **true** に明示的に設定する必要があります。 この XAML では、そのための 1 つの方法を示しています。
@@ -133,7 +136,7 @@ ms.openlocfilehash: b81ef40954860cb026038447158ba1a9edb07002
 </DataTemplate>
 ```
 
-## ツリー ビュー内のデータをセットアップする
+## <a name="set-up-the-data-in-your-treeview"></a>ツリー ビュー内のデータをセットアップする
 
 ツリー ビューのサンプルで使われるデータをセットアップするコードを次に示します。
 
@@ -179,7 +182,7 @@ ms.openlocfilehash: b81ef40954860cb026038447158ba1a9edb07002
 ユーザーがツリー ビューから項目の追加/削除を実行できるようにするには、そのためのオプションをユーザーに示すコンテキスト メニューを追加することをお勧めします。
 
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 - [ツリー ビューのサンプル](http://go.microsoft.com/fwlink/?LinkId=785018)
 - [**ListView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
@@ -187,6 +190,6 @@ ms.openlocfilehash: b81ef40954860cb026038447158ba1a9edb07002
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

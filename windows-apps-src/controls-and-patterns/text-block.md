@@ -4,11 +4,11 @@ ms.assetid: DA562509-D893-425A-AAE6-B2AE9E9F8A19
 label: Text block
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 94f858912473f2a0d20f4041155b1e1ee93032a2
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 9f52252d1d6efb5f0b8b8bc39c1e048f767bc805
 
 ---
-# テキスト ブロック
+# <a name="text-block"></a>テキスト ブロック
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -17,17 +17,14 @@ ms.openlocfilehash: 94f858912473f2a0d20f4041155b1e1ee93032a2
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx"><strong>TextBlock クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx"><strong>Text プロパティ</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.inlines.aspx"><strong>Inlines プロパティ</strong></a></li>
+<li>[**TextBlock クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)</li>
+<li>[**Text プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx)</li>
+<li>[**Inlines プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.inlines.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 テキスト ブロックは、一般的に、リッチ テキスト ブロックより使い方が簡単で、テキスト レンダリングのパフォーマンスが優れているため、ほとんどのアプリで UI テキストに適しています。 [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx) プロパティの値を取得することによって、アプリ内でテキスト ブロックのテキストに容易にアクセスして使用することができます。 テキストのレンダリング方法をカスタマイズするための書式設定オプションも、同じものが数多く用意されています。
 
@@ -35,12 +32,9 @@ ms.openlocfilehash: 94f858912473f2a0d20f4041155b1e1ee93032a2
 
 適切なテキスト コントロールの選択について詳しくは、「[テキスト コントロール](text-controls.md)」をご覧ください。
 
-## 例
+## <a name="create-a-text-block"></a>テキスト ブロックの作成
 
-
-## テキスト ブロックの作成
-
-ここでは、単純な TextBlock を定義し、その Text プロパティを文字列に設定する方法を示します。
+ここでは、単純な TextBlock コントロールを定義し、その Text プロパティを文字列に設定する方法を示します。
 
 ```xaml
 <TextBlock Text="Hello, world!" />
@@ -56,7 +50,7 @@ textBlock1.Text = "Hello, world!";
     TextBlock textBlock1 = new TextBlock();
     textBlock1.Text = "Hello, world!";
 
-### コンテンツ モデル
+### <a name="content-model"></a>コンテンツ モデル
 
 コンテンツを TextBlock に追加するために使用できるプロパティとして、[Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx) と [Inlines](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.inlines.aspx) の 2 つがあります。
 
@@ -70,7 +64,7 @@ textBlock1.Text = "Hello, world!";
 Inline クラスから派生した要素 (Bold、Italic、Run、Span、LineBreak など) を使用すると、テキスト内の部分によって別々の書式を有効にすることができます。 詳しくは、「[テキストの書式設定]()」をご覧ください。 インラインの Hyperlink 要素を使うと、テキストにハイパーリンクを追加することができます。 ただし、Inlines を使用すると、テキストの高速パス レンダリングが無効になります。これについては、次のセクションで説明します。
 
 
-## パフォーマンスに関する考慮事項
+## <a name="performance-considerations"></a>パフォーマンスに関する考慮事項
 
 可能であれば、XAML ではより効率的なコード パスを使ってテキストをレイアウトします。 この高速パスを使うと、全体的なメモリ使用量が減少し、テキストのサイズ測定と配置を実行するための CPU 時間が大幅に減少します。 この高速パスは TextBlock にのみ適用されるため、可能な場合 RichTextBlock よりも優先されます。
 
@@ -120,14 +114,14 @@ IsTextPerformanceVisualizationEnabled を true に設定してデバッグ モ�
 
 >**注意**&nbsp;&nbsp;高速パスにないテキストの色は変更されません。 アプリ内に、明るい緑色として指定された色のテキストがある場合、レンダリング パスが低速であれば、引き続き明るい緑色として表示されます。 テキストが高速パスにあるアプリで緑色に設定されたテキストと、デバッグ設定による緑色を混同しないように注意してください。
 
-## テキストの書式設定
+## <a name="formatting-text"></a>テキストの書式設定
 
 Text プロパティに格納されるのはプレーンテキストですが、各種の書式設定オプションを TextBlock コントロールに適用して、アプリでテキストをレンダリングする方法をカスタマイズすることができます。 FontFamily、FontSize、FontStyle、Foreground、CharacterSpacing などの標準的なコントロール プロパティを設定して、テキストの外観を変更できます。 インライン テキスト要素と Typography 添付プロパティを使ってテキストを書式設定することもできます。 これらのオプションが影響を与えるのは、TextBlock がローカルでテキストを表示する方法だけです。したがって、テキストをコピーしてリッチ テキスト コントロールなどに貼り付けても、書式設定は適用されません。
 
 >**注**&nbsp;&nbsp;前のセクションで説明したように、インライン テキスト要素と既定以外の文字体裁値は、高速パスでレンダリングされません。
 
 
-### インライン要素
+### <a name="inline-elements"></a>インライン要素
 
 [Windows.UI.Xaml.Documents](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.aspx) 名前空間には、テキストの書式設定に使うことができるさまざまなインライン テキスト要素が用意されています (Bold、Italic、Run、Span、LineBreak など)。
 
@@ -155,7 +149,7 @@ Text プロパティに格納されるのはプレーンテキストですが、
 
 ![Run 要素で書式設定されたテキスト](images/text-block-run-examples.png)
 
-### 文字体裁
+### <a name="typography"></a>文字体裁
 
 [Typography](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx) クラスの添付プロパティは、Microsoft OpenType の一連の Typography プロパティへのアクセスを提供します。 これらの添付プロパティは、TextBlock で設定することも、個々のインライン テキスト要素で設定することもできます。 次の例では、両方を示します。
 ```xaml
@@ -176,25 +170,18 @@ Windows.UI.Xaml.Documents.Typography.SetStylisticSet4(textBlock1, true);
 ```
 
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
-[テキスト コントロール](text-controls.md)
-
-**デザイナー向け**
+- [テキスト コントロール](text-controls.md)
 - [スペル チェックのガイドライン](spell-checking-and-prediction.md)
 - [検索の追加](search.md)
 - [テキスト入力のガイドライン](text-controls.md)
-
-**開発者向け (XAML)**
 - [**TextBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Windows.UI.Xaml.Controls PasswordBox クラス**](https://msdn.microsoft.com/library/windows/apps/br227519)
-
-
-**開発者向け (その他)**
 - [String.Length プロパティ](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

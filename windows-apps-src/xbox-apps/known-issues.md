@@ -3,8 +3,8 @@ author: Mtoepke
 title: "Xbox One 開発者プログラムの UWP の既知の問題"
 description: 
 translationtype: Human Translation
-ms.sourcegitcommit: 20ac6fb738de1c8aaf10f46c359842f31714dbbf
-ms.openlocfilehash: b6fe2f90e0aff4b8e77b4c20aec0d29f2a6a36f8
+ms.sourcegitcommit: 3f0647bb76340ccbd538e9e4fefe173924d6baf4
+ms.openlocfilehash: 18c8d1fcd696f336601dc6c531424fe8bfb78304
 
 ---
 
@@ -22,12 +22,18 @@ ms.openlocfilehash: b6fe2f90e0aff4b8e77b4c20aec0d29f2a6a36f8
 
 
 <!--## Developing games-->
+
+## <a name="issue-when-leaving-dev-mode"></a>開発者モード終了時に発生する問題
+DevHome を使用しても [開発者向け設定] からも、開発者モードを終了できない場合があります。
+この問題の回避策として、次の 2 つが考えられます。 
+1. 開発者モードを終了するときに、**[Delete side loaded games and apps]** (サイドローディングされたゲームとアプリを削除する) チェック ボックスをオフにする
+2. [マイ コレクション] に移動し、コンソールにインストールした開発者向けアプリをアンインストールする
  
-## <a name="memory-limits-for-background-apps-are-partially-enforced"></a>バックグラウンド アプリのメモリ制限が完全に適用されない
+<!--## Memory limits for background apps are partially enforced
  
-バックグラウンドで実行されているアプリのメモリ使用量は最大 128 MB です。 Xbox One の UWP の現在のバージョンでは、アプリがバックグラウンドに移行したときにこの制限を上回っている場合、アプリは中断されます。 現在、既にバックグラウンドで実行されているアプリについては制限を上回っても、この制限が適用されません。つまり、バックグラウンドで実行中に 128 MB を上回っても、アプリはメモリを割り当てることができます。
+The maximum memory footprint for apps running in the background is 128 megabytes. In the current version of UWP on Xbox One, your app will be suspended if it is above this limit when it is moved to the background. This limit is not currently enforced if your app exceeds the limit while it is already running in the background—this means that if your app exceeds 128 MB while running in the background, it will still be able to allocate memory.
  
-現時点では、この問題に対する回避策はありません。 したがってアプリ自体でメモリ使用量を管理し、バックグラウンドで実行しているときは 128 MB の制限を超えないようにしてください。
+There is currently no workaround for this issue. Apps should govern their memory usage accordingly and continue to stay under the 128 MB limit while running in the background.-->
  
 ## <a name="deploying-from-vs-fails-with-parental-controls-turned-on"></a>[保護者による制限] を有効にしたことにより VS からの展開に失敗する
 
@@ -93,7 +99,7 @@ Developers can still use HTTP and WebSockets.
 
 ## <a name="blocked-networking-ports-on-xbox-one"></a>Xbox One のネットワーク ポートのブロック
 
-Xbox One デバイスでは、範囲 [49152, 65535] に含まれるポートへのユニバーサル Windows プラットフォーム (UWP) アプリのバインドは制限されています。 実行時にはこの範囲のポートへのバインドは成功しているように見えても、ネットワーク トラフィックはアプリに到達する前にエラーや警告なしで破棄される可能性があります。 できる限りポート 0 にアプリをバインドし、システムによってローカル ポートが選択されるようにしてください。 使用するポートを指定する必要がある場合は、範囲 [1025, 49151] 内のポート番号を使用する必要があります。この場合、IANA レジストリと競合しないように、確認してください。 詳しくは、[サービス名およびトランスポート プロトコル ポート番号のレジストリ](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)についてのページをご覧ください。
+Xbox One デバイスでは、範囲 [57344, 65535] に含まれるポートへのユニバーサル Windows プラットフォーム (UWP) アプリのバインドは制限されています。 実行時にはこの範囲のポートへのバインドは成功しているように見えても、ネットワーク トラフィックはアプリに到達する前にエラーや警告なしで破棄される可能性があります。 できる限りポート 0 にアプリをバインドし、システムによってローカル ポートが選択されるようにしてください。 使用するポートを指定する必要がある場合は、範囲 [1025, 49151] 内のポート番号を使用する必要があります。この場合、IANA レジストリと競合しないように、確認してください。 詳しくは、[サービス名およびトランスポート プロトコル ポート番号のレジストリ](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)についてのページをご覧ください。
 
 ## <a name="uwp-api-coverage"></a>UWP API カバレッジ
 
@@ -177,6 +183,6 @@ This is caused by a failure in the WDP infrastructure on the console and can be 
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

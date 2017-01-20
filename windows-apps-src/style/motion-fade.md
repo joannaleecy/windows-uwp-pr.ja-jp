@@ -6,22 +6,27 @@ ms.assetid: 975E5EE3-EFBE-4159-8D10-3C94143DD07F
 label: Motion--fades
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 9999c353bfc7a72f04ba8ae0052212f9f2166703
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: cbe1a4ca77f0d6e15b3d12b2b3a0f2f8363530ae
 
 ---
 
-# フェード アニメーション
+# <a name="fade-animations"></a>フェード アニメーション
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 フェード アニメーションは、項目を画面に表示したり、項目を画面から非表示にするときに使います。 一般的なフェード アニメーションは、フェード インとフェード アウトの 2 つです。
 
-**重要な API**
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**FadeInThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br210298)</li>
+<li>[**FadeOutThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br210302)</li>
+</ul>
+</div>
 
--   [**FadeInThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br210298)
--   [**FadeOutThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
-
-## 推奨と非推奨
+## <a name="dos-and-donts"></a>推奨と非推奨
 
 
 -   アプリで互いに関係のない要素や、テキストの多い要素を切り替えるときには、フェード アウトとフェード インを使います。 そうすることで、差し替え前のオブジェクトが完全に消えてから差し替え後のオブジェクトを表示させることができます。
@@ -29,9 +34,8 @@ ms.openlocfilehash: 9999c353bfc7a72f04ba8ae0052212f9f2166703
 -   リストの項目を追加または削除する目的でフェード アニメーションを使うのは避けてください。 そのような場合には、専用に作成したリスト アニメーションを使います。
 -   フェード アニメーションは、ページの全コンテンツを変化させるときには使わないでください。 そのような場合には、専用に作成したページ切り替えアニメーションを使います。
 -   フェード アウトは要素を削除するための繊細な方法です。
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
-**開発者向け (XAML)**
 * [アニメーションの概要](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [フェードのアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
 * [クイック スタート: ライブラリのアニメーションを使った UI のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
@@ -48,6 +52,6 @@ ms.openlocfilehash: 9999c353bfc7a72f04ba8ae0052212f9f2166703
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

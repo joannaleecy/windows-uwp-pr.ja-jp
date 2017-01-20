@@ -6,35 +6,27 @@ ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 5752e1a7f7ac358043ec99c8db07cbfda9c4cd37
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 9fa226beed09e79ef3e5a294e36f615fa179c470
 
 ---
-# Web ビュー
+# <a name="web-view"></a>Web ビュー
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-
-
 
 Web ビュー コントロールは、Microsoft Edge レンダリング エンジンを使って、Web コンテンツをレンダリングするアプリにビューを埋め込みます。 また、Web ビュー コントロールでは、ハイパーリンクの表示と動作が可能です。
 
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br227702"><strong>WebView クラス</strong></a></li>
+<li>[**WebView クラス**](https://msdn.microsoft.com/library/windows/apps/br227702)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 リモート Web サーバー、動的に生成されたコード、またはアプリ パッケージのコンテンツ ファイルの、書式がリッチな HTML コンテンツを表示するには、Web ビュー コントロールを使います。 また、リッチ コンテンツは、スクリプト コードを含めることができ、さらに、スクリプトとアプリのコード間で通信を行うこともできます。
 
-## Web ビューを作成する
+## <a name="create-a-web-view"></a>Web ビューを作成する
 
 **Web ビューの外観を変更する**
 
@@ -54,7 +46,7 @@ WebView は Control サブクラスではありませんが、キーボードの
 
 [**WebView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) クラスのページの「Event」表からも分かるとおり、Web ビューは、[**KeyDown**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keydown.aspx) や [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keyup.aspx)、[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx) といった [**UIElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx) から継承したユーザー入力イベントのほとんどをサポートしていません。 その代わり、[**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) を JavaScript の **eval** 関数と使って、HTML イベント ハンドラーを利用したり、HTML イベント ハンドラーの **window.external.notify** を通じて [**WebView.ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) に対応するアプリに通知したりできます。
 
-### コンテンツに移動する
+### <a name="navigating-to-content"></a>コンテンツに移動する
 
 Web ビューには、[**GoBack**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goback.aspx)、[**GoForward**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goforward.aspx)、[**Stop**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.stop.aspx)、[**Refresh**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.refresh.aspx)、[**CanGoBack**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoback.aspx)、そして [**CanGoForward**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoforward.aspx) という基本的な操作用の API が用意されています。 これらの API を使うと、一般的な Web 閲覧機能をアプリに追加できます。 
 
@@ -97,7 +89,7 @@ webView1.Navigate("ms-appx-web:///help/about.html");
 
 [**NavigateToLocalStreamUri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx) メソッドを使えば、カスタム リゾルバーを通じてローカルのコンテンツも読み込めます。 これにより、Web ベースのコンテンツをオフライン用にダウンロードないしキャッシングしたり、圧縮ファイルからコンテンツを抽出したりといった高度なシナリオも可能です。
 
-### ナビゲーション イベントを処理する
+### <a name="responding-to-navigation-events"></a>ナビゲーション イベントを処理する
 
 Web ビュー コントロールでは、ナビゲーションやコンテンツの読み込みの状態に対する処理に使うことができるイベントがいくつか用意されています。 ルートとなる Web ビューコンテンツについて、イベントは次の順番で発生します。[**NavigationStarting**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationstarting.aspx)、[**ContentLoading**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.contentloading.aspx)、[**DOMContentLoaded**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.domcontentloaded.aspx)、[**NavigationCompleted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationcompleted.aspx)
 
@@ -170,7 +162,7 @@ Web ビューのコンテンツの各 **iframe** についても、同様のイ�
 - [**FrameDOMContentLoaded**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framedomcontentloaded.aspx) - Web ビューのフレームが現在の HTML のコンテンツの解析を完了すると発生します。 
 - [**FrameNavigationCompleted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationcompleted.aspx) - Web ビューのフレームがコンテンツの読み込みを完了すると発生します。 
 
-### 潜在的な問題に対処する
+### <a name="responding-to-potential-problems"></a>潜在的な問題に対処する
 
 長時間実行されているスクリプトや、Web ビューが読み込めないコンテンツ、安全でないコンテンツに関する警告など潜在的な問題があれば、それに対処することができます。 
 
@@ -182,7 +174,7 @@ Web ビュー コントロールは、任意のファイルの種類をホスト
 
 Web ビューが、SmartScreen フィルターにより安全でないと報告されているコンテンツの警告ページを表示すると、[**UnsafeContentWarningDisplayingevent**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unsafecontentwarningdisplaying.aspx) イベントが発生します。 ユーザーがナビゲーションの続行を選んだ場合は、そのページへの移動では以降、警告が表示されたり、イベントが発されたりすることはありません。
 
-### Web ビューのコンテンツの特殊ケースを処理する
+### <a name="handling-special-cases-for-web-view-content"></a>Web ビューのコンテンツの特殊ケースを処理する
 
 [**ContainsFullScreenElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.containsfullscreenelement.aspx) プロパティと [**ContainsFullScreenElementChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.containsfullscreenelementchanged.aspx) イベントを使うと、全画面での動画の再生といった、全画面表示を可能にしたり、検出したり、または処理したりすることができます。 たとえば、ContainsFullScreenElementChanged イベントを使えば、Web ビューのサイズを変更して、アプリ ビュー全体を占有することができます。もしくは、次の例で示すとおり、全画面表示が望ましいときは、ウィンドウ内のアプリを全画面表示にすることもできます。
 
@@ -238,7 +230,7 @@ private void webView_PermissionRequested(WebView sender, WebViewPermissionReques
 
 Web ビューでホストされている Web サイトからユーザーが安全にログアウトしなければならない場合や、セキュリティが重要であるような場合は、静的メソッドである [**ClearTemporaryWebDataAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cleartemporarywebdataasync.aspx) を呼び出し、当該の Web ビュー セッションでローカルにキャッシュされたコンテンツを消去します。 これにより、悪意あるユーザーが重要なデータにアクセスするのを防ぎます。 
 
-### Web ビューのコンテンツとインタラクトする
+### <a name="interacting-with-web-view-content"></a>Web ビューのコンテンツとインタラクトする
 
 [**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) メソッドで Web ビューのコンテンツにスクリプトを呼び出し、または挿入し、そして [**ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) イベントで Web ビューのコンテンツから情報を反対に取得することで、Web ビューのコンテンツとインタラクトできます。
 
@@ -268,7 +260,7 @@ Web ビューのコンテンツのスクリプトは、文字列型パラメー�
 
 外部の Web ページを有効にして、window.external.notify を呼び出した際に **ScriptNotify** イベントを発するには、当該のページの URI をアプリの宣言の **ApplicationContentUriRules** セクションに含める必要があります  (これは、Package.appxmanifest デザイナーの [コンテンツ URI] タブにある Microsoft Visual Studio で可能です)。この一覧にある URI は HTTPS を使う必要があります。また、サブドメインのワイルドカード (たとえば、`https://*.microsoft.com`) を含めることはできますが、ドメインのワイルドカード (たとえば、`https://*.com` や `https://*.*`) を含めることはできません。 マニフェスト要件は、アプリ パッケージから生成されたコンテンツには適用されず、ms-local-stream:// URI を使うか、[**NavigateToString**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetostring.aspx) で読み込まれます。 
 
-### Web ビューの Windows ランタイムにアクセスする
+### <a name="accessing-the-windows-runtime-in-a-web-view"></a>Web ビューの Windows ランタイムにアクセスする
 
 [**AddWebAllowedObject**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx) メソッドを使うと、Windows ランタイム コンポーネントから Web ビューの JavaScript コンテンツにネイティブ クラスのインスタンスを挿入できます。 それにより、その Web ビューの JavaScript コンテンツにあるオブジェクトの、ネイティブのメソッドやプロパティ、イベントにフルにアクセスできるようになります。 クラスは、[**AllowForWeb**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.metadata.allowforwebattribute.aspx) 属性で修飾する必要があります。 
 
@@ -302,17 +294,17 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
   </Applications>
 ```
 
-### Web コンテンツのホスティングのオプション
+### <a name="options-for-web-content-hosting"></a>Web コンテンツのホスティングのオプション
 
 [**WebView.Settings**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.settings.aspx) プロパティ  ([**WebViewSettings**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewsettings.aspx) 型のプロパティ) を使うと、JavaScript と IndexedDB のオン/ オフをコントロールできます。 たとえば、Web ビューで完全に静的なコンテンツを表示するような場合は、JavaScript を無効にすることでパフォーマンスを高められます。
 
-### Web ビューのコンテンツをキャプチャする
+### <a name="capturing-web-view-content"></a>Web ビューのコンテンツをキャプチャする
 
 Web ビューのコンテンツを他のアプリと共有できるようにするには、[**CaptureSelectedContentToDataPackageAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.captureselectedcontenttodatapackageasync.aspx) メソッドを使います。このメソッドは、[**DataPackage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.datapackage.aspx) として選択したコンテンツを返します。 このメソッドは非同期ですから、[**DataRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.datatransfermanager.datarequested.aspx) イベント ハンドラーが、非同期呼び出しが完了する前に戻されてしまうのを防ぐために、遅延を適用する必要があります。 
 
 Web ビューの現在のコンテンツに関するプレビュー イメージを取得するには、[**CapturePreviewToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.capturepreviewtostreamasync.aspx) メソッドを使います。 このメソッドは、現在のコンテンツのイメージを作成し、指定のストリームに書き込みます。 
 
-### スレッド処理の動作
+### <a name="threading-behavior"></a>スレッド処理の動作
 
 既定では、Web ビューのコンテンツは、デスクトップ デバイス ファミリのデバイス上の UI スレッドにホストされており、その他のデバイス上の UI スレッドからは分離されています。 [**WebView.DefaultExecutionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultexecutionmode.aspx) 静的プロパティを使うと、現在のクライアントに対する既定のスレッド処理動作を照会できます。 必要であれば、[**WebView(WebViewExecutionMode)**](https://msdn.microsoft.com/library/windows/apps/xaml/dn932036.aspx) コンス トラクターを使ってその動作をオーバーライドすることもできます。 
 
@@ -320,7 +312,7 @@ Web ビューの現在のコンテンツに関するプレビュー イメージ
 
 UI スレッドから外れてコンテンツをホストしている Web ビューは、[**FlipView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx), [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) といった、Web ビューのコントロールから親へと伝達するジェスチャを必要とする親コントロールや、その他の関連コントロールと互換性がありません。 そうしたコントロールは、オフ スレッドの Web ビューで開始されるジェスチャを受け取ることができません。 さらに、オフ スレッドの Web コンテンツの出力は、直接サポートされていません。つまり、要素は [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.aspx) フィルで代わりに出力することになります。
 
-## 推奨事項
+## <a name="recommendations"></a>推奨事項
 
 
 -   読み込まれた Web サイトがデバイスに応じて正しく書式設定されており、アプリの他の部分と一貫性のある色、文字体裁、ナビゲーションが使われていることを確認します。
@@ -329,7 +321,7 @@ UI スレッドから外れてコンテンツをホストしている Web ビュ
 
 
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [**WebView クラス**](https://msdn.microsoft.com/library/windows/apps/br227702)
  
@@ -342,6 +334,6 @@ UI スレッドから外れてコンテンツをホストしている Web ビュ
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

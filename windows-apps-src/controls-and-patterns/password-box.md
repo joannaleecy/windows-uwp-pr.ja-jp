@@ -7,11 +7,11 @@ dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
 label: Password box
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 4f08195bcd70429f103c730c6c4a6d69dcf5b55e
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 1addc6eee8ae4819fa388332998ac8a69e01cdf3
 
 ---
-# パスワード ボックス
+# <a name="password-box"></a>パスワード ボックス
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -22,28 +22,21 @@ ms.openlocfilehash: 4f08195bcd70429f103c730c6c4a6d69dcf5b55e
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx"><strong>PasswordBox クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx"><strong>Password プロパティ</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx"><strong>PasswordChar プロパティ</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx"><strong>PasswordRevealMode プロパティ</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx"><strong>PasswordChanged イベント</strong></a></li>
+<li>[**PasswordBox クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)</li>
+<li>[**Password プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx)</li>
+<li>[**PasswordChar プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx)</li>
+<li>[**PasswordRevealMode プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx)</li>
+<li>[**PasswordChanged イベント**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 **PasswordBox** コントロールを使用して、社会保障番号などその他の機密データも収集できます。
 
 適切なテキスト コントロールの選択について詳しくは、「[テキスト コントロール](text-controls.md)」をご覧ください。
 
-## 例
+## <a name="examples"></a>例
 
 パスワード ボックスには、次のようにいくつかの状態があります。
 
@@ -59,7 +52,7 @@ ms.openlocfilehash: 4f08195bcd70429f103c730c6c4a6d69dcf5b55e
 
 ![テキストが一時的に表示されたパスワード ボックス](images/passwordbox-text-reveal.png)
 
-## パスワード ボックスの作成
+## <a name="create-a-password-box"></a>パスワード ボックスの作成
 
 PasswordBox の内容を取得または設定するには [Password](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx) プロパティを使います。 [PasswordChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx) イベントのハンドラーでこの操作を実行すると、ユーザーがパスワードを入力している間に検証を実行できます。 ボタンの [Click](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) などの別のイベントを使って、ユーザーが入力を終えてから検証を実行することもできます。
 
@@ -91,7 +84,7 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
 
 ![検証メッセージを表示するパスワード ボックス](images/passwordbox-revealed-validation.png)
 
-### パスワード文字
+### <a name="password-character"></a>パスワード文字
 
 パスワードを隠すために使う文字を変更するには、[PasswordChar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx) プロパティを設定します。 ここでは、既定の記号をアスタリスクに置き換えています。
 
@@ -103,7 +96,7 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
 
 ![カスタムの文字が使われているパスワード ボックス](images/passwordbox-custom-char.png)
 
-### ヘッダーとプレースホルダー テキスト
+### <a name="headers-and-placeholder-text"></a>ヘッダーとプレースホルダー テキスト
 
 [Header](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.header.aspx) プロパティと [PlaceholderText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.placeholdertext.aspx) プロパティを使って PasswordBox のコンテキストを提示することができます。 パスワードを変更するためのフォームなど、複数のボックスがある場合に特に便利です。
 
@@ -113,17 +106,17 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
 
 ![ヒントのテキストが表示された、待機状態のパスワード ボックス](images/passwordbox-rest-hinttext.png)
 
-### 最大長
+### <a name="maximum-length"></a>最大長
 
 ユーザーが入力できる文字の最大数を指定するには、[MaxLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.maxlength.aspx) プロパティを設定します。 長さの最小値を指定するプロパティはありませんが、アプリのコードでパスワードの長さをチェックしたりその他の検証を実行したりできます。
 
-## パスワード表示モード
+## <a name="password-reveal-mode"></a>パスワード表示モード
 
 PasswordBox には、ユーザーが押すとパスワード テキストを表示できるボタンが組み込まれています。 ユーザーがこのボタンを操作した結果を次に示します。 ユーザーがボタンを離すと、パスワードは自動的に非表示になります。
 
 ![テキストが一時的に表示されたパスワード ボックス](images/passwordbox-text-reveal.png)
 
-### プレビュー モード
+### <a name="peek-mode"></a>プレビュー モード
 
 既定で表示されるパスワード表示ボタン ("プレビュー" ボタン) では、 ユーザーがパスワードを表示するにはボタンを押し続けなければならないため、高レベルのセキュリティが維持されます。
 
@@ -131,7 +124,7 @@ PasswordBox には、ユーザーが押すとパスワード テキストを表�
 
 > **注意:**&nbsp;&nbsp;Windows 10 より前のバージョンでは、パスワード表示ボタンは既定で表示されませんでした。 アプリのセキュリティにより、パスワードを必ず非表示にする必要がある場合は、PasswordRevealMode を Hidden に設定してください。
 
-### 非表示モードと表示モード
+### <a name="hidden-and-visible-modes"></a>非表示モードと表示モード
 
 [PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordrevealmode.aspx) には、そのほかに **Hidden** と **Visible** という列挙値があります。これらの列挙値を使うと、パスワード表示ボタンを非表示にして、パスワードを非表示にするかどうかをプログラムで管理できます。
 
@@ -169,13 +162,13 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 
 ![カスタムの表示ボタンが使われているパスワード ボックス](images/passwordbox-custom-reveal.png)
 
-## テキスト コントロールに適切なキーボードの選択
+## <a name="choose-the-right-keyboard-for-your-text-control"></a>テキスト コントロールに適切なキーボードの選択
 
 ユーザーがタッチ キーボード、つまりソフト入力パネル (SIP) でデータを入力できるように、ユーザーが入力すると予想されるデータの種類に合わせてテキスト コントロールの入力値の種類を設定できます。 PasswordBox でサポートされている入力値の種類は **Password** と **NumericPin** だけです。 それ以外の値はすべて無視されます。
 
 入力値の種類の使い方について詳しくは、「[入力値の種類を使ったタッチ キーボードの変更](https://msdn.microsoft.com/library/windows/apps/mt280229)」をご覧ください。
 
-## 推奨事項
+## <a name="recommendations"></a>推奨事項
 
 -   パスワード ボックスの目的がわかりにくい場合は、ラベルまたはプレース ホルダー テキストを使用します。 ラベルは、テキスト入力ボックスに値が存在するかどうかに関係なく表示します。 プレースホルダー テキストはテキスト入力ボックスの内側に表示され、値を入力すると非表示になります。
 -   パスワード ボックスは、入力できる値の範囲に適した幅になるようにします。 単語の長さは言語によって異なるため、アプリを世界対応にする場合は、ローカライズを考慮に入れて幅を調整します。
@@ -186,25 +179,19 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 
 
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 [テキスト コントロール](text-controls.md)
 
-**デザイナー向け**
 - [スペル チェックのガイドライン](spell-checking-and-prediction.md)
 - [検索の追加](https://msdn.microsoft.com/library/windows/apps/hh465231)
 - [テキスト入力のガイドライン](text-controls.md)
-
-**開発者向け (XAML)**
 - [**TextBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Windows.UI.Xaml.Controls PasswordBox クラス**](https://msdn.microsoft.com/library/windows/apps/br227519)
-
-
-**開発者向け (その他)**
 - [String.Length プロパティ](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

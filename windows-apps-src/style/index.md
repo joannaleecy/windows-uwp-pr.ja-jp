@@ -3,12 +3,19 @@ description: "Windows デベロッパー センター UWP スタイル ガイド
 keywords: "UWP スタイル ガイド, 設計ガイダンス, 文字体裁, モーション, サウンド, モーション, アプリ開発"
 title: "UWP スタイル ガイド - Windows アプリ開発"
 author: mijacobs
+label: Style
+template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 2f9d2059399efd949fc8a1d90a5b6c8c106a478e
-ms.openlocfilehash: 4a96db626f6f3682248e7e720c956fa343186b4a
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 488eac85e7ab724dd3dbc6d5972cd330d972134b
 
 ---
-# UWP スタイル ガイド
+# <a name="uwp-style-guide"></a>UWP スタイル ガイド
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -74,6 +81,6 @@ XAML フレームワークを使って、さまざまな方法でアプリの外
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO2-->
 
 

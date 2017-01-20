@@ -7,11 +7,11 @@ isNew: true
 label: Date picker
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 2253172ff20ae46b0ada556551adfeac62136398
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 76d5cd756f462ebaad5a200cf4bcf7f4076e4652
 
 ---
-# 日付の選択コントロール
+# <a name="date-picker"></a>日付の選択コントロール
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -20,30 +20,25 @@ DatePicker は、ユーザーがタッチ、マウス、またはキーボード
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx"><strong>DatePicker クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx"><strong>Date プロパティ</strong></a></li>
+<li>[**DatePicker クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)</li>
+<li>[**Date プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx) </li>
+
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 日付の選択コントロールは、ユーザーが誕生日などの既知の日付 (カレンダーのコンテキストが重要ではない日) を選べるようにする場合に使用します。
 
 適切な日付コントロールの選択について詳しくは、「[日付と時刻コントロール](date-and-time.md)」をご覧ください。
 
-## 例
+## <a name="examples"></a>例
 
 エントリ ポイントには、選んだ日付が表示されます。ユーザーがエントリ ポイントを選ぶと、選択ツール サーフェイスが中央から縦方向に展開されて、日付を選べるようになります。 日付の選択は他の UI をオーバーレイし、他の UI を別の位置に移動させることはありません。
 
 ![展開した日付の選択コントロールの例](images/controls_datepicker_expand.png)
 
-## 日付の選択コントロールの作成
+## <a name="create-a-date-picker"></a>日付の選択コントロールの作成
 
 次の例は、ヘッダーを含むシンプルな日付の選択コントロールを作成する方法を示しています。
 
@@ -64,7 +59,7 @@ birthDatePicker.Header = "Date of birth";
 
 
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 - [日付と時刻コントロール](date-and-time.md)
 - [カレンダーの日付の選択コントロール](calendar-date-picker.md)
@@ -73,6 +68,6 @@ birthDatePicker.Header = "Date of birth";
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

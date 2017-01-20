@@ -4,12 +4,12 @@ title: "バックグラウンド タスクによるシステム イベントへ�
 description: "SystemTrigger イベントに応答するバックグラウンド タスクを作成する方法について説明します。"
 ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
 translationtype: Human Translation
-ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
-ms.openlocfilehash: a3d7ac01724b1e8dcabe3219855eabe172924764
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: 1774b853839e65fd08acb9eb8f9cbb1735cd9bee
 
 ---
 
-# バックグラウンド タスクによるシステム イベントへの応答
+# <a name="respond-to-system-events-with-background-tasks"></a>バックグラウンド タスクによるシステム イベントへの応答
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -21,9 +21,9 @@ ms.openlocfilehash: a3d7ac01724b1e8dcabe3219855eabe172924764
 
 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) イベントに応答するバックグラウンド タスクを作成する方法について説明します。
 
-このトピックは、既にアプリにバックグラウンド タスク クラスが作られており、システムがトリガーするイベント (インターネットの可用性が変わる、ユーザーがログインするなど) に応じてこのタスクを実行する必要があることを前提としています。 ここでは、主に [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) クラスについて扱います。 バックグラウンド タスク クラスの作成について詳しくは、「[Create and register an in-process background task (インプロセスのバックグラウンド タスクの作成と登録)](create-and-register-an-inproc-background-task.md)」または「[Create and register an out-of-process background task (アウトプロセスで実行されるバックグラウンド タスクの作成と登録)](create-and-register-an-outofproc-background-task.md)」をご覧ください。
+このトピックは、既にアプリにバックグラウンド タスク クラスが作られており、システムがトリガーするイベント (インターネットの可用性が変わる、ユーザーがログインするなど) に応じてこのタスクを実行する必要があることを前提としています。 ここでは、主に [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) クラスについて扱います。 バックグラウンド タスク クラスの作成について詳しくは、「[Create and register an in-process background task (インプロセスのバックグラウンド タスクの作成と登録)](create-and-register-an-inproc-background-task.md)」または「[Create and register an out-of-process background task (アウトプロセスで実行されるバックグラウンド タスクの作成と登録)](create-and-register-a-background-task.md)」をご覧ください。
 
-## SystemTrigger オブジェクトを作る
+## <a name="create-a-systemtrigger-object"></a>SystemTrigger オブジェクトを作る
 
 -   アプリ コードで新規の [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) オブジェクトを作ります。 1 つ目のパラメーター triggerType には、このバックグラウンド タスクをアクティブ化するシステム イベント トリガーの種類を指定します。** イベントの種類の一覧については、「[**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839)」をご覧ください。
 
@@ -39,7 +39,7 @@ ms.openlocfilehash: a3d7ac01724b1e8dcabe3219855eabe172924764
     > SystemTrigger ^ internetTrigger = ref new SystemTrigger(SystemTriggerType::InternetAvailable, false);
     > ```
 
-## バックグラウンド タスクの登録
+## <a name="register-the-background-task"></a>バックグラウンド タスクの登録
 
 -   バックグラウンド タスクの登録関数を呼び出してバックグラウンド タスクを登録します。 バックグラウンド タスクの登録について詳しくは、「[バックグラウンド タスクの登録](register-a-background-task.md)」をご覧ください。
 
@@ -65,7 +65,7 @@ ms.openlocfilehash: a3d7ac01724b1e8dcabe3219855eabe172924764
 
     > **注**  バックグラウンド タスクの登録パラメーターは登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 バックグラウンド タスクの登録が失敗するシナリオをアプリが適切に処理するようにします。タスクを登録しようとした後で、有効な登録オブジェクトを持っていることを前提として動作するアプリは、クラッシュする場合があります。
  
-## 注釈
+## <a name="remarks"></a>注釈
 
 バックグラウンド タスクの登録動作を確認するには、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)をダウンロードしてください。
 
@@ -75,12 +75,12 @@ ms.openlocfilehash: a3d7ac01724b1e8dcabe3219855eabe172924764
 
 > **注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 ****
 
-* [Create and register an out-of-process background task (アウトプロセスで実行されるバックグラウンド タスクの作成と登録)](create-and-register-an-outofproc-background-task.md)
-* [Create and register an in-process background task (インプロセスのバックグラウンド タスクの作成と登録)](create-and-register-an-inproc-background-task.md)
+* [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
+* [インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)
 * [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
 * [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
 * [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
@@ -95,6 +95,6 @@ ms.openlocfilehash: a3d7ac01724b1e8dcabe3219855eabe172924764
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

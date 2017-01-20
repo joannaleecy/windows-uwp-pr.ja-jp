@@ -6,16 +6,18 @@ ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: f8cb9c36b42936b8dfd24bbd5f88e2cf500e930f
 
 ---
 
-# UWP アプリのアイコン
+# <a name="icons-for-uwp-apps"></a>UWP アプリのアイコン
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 優れたアイコンは、文字の体裁やその他のデザイン言語と調和するものです。 アイコンは比喩と混用しないようにします。優れたアイコンは、できるだけすばやくシンプルに、必要なことのみを伝えます。 
 
-## 線形のスケーリングのサイズの見本 
+## <a name="linear-scaling-size-ramps"></a>線形のスケーリングのサイズの見本 
 
 <table>
     <tr> 
@@ -32,7 +34,7 @@ ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
     </tr>
 </table>
 
-## 一般的な形状
+## <a name="common-shapes"></a>一般的な形状
 
 アイコンは通常、余白を少なく、スペースを最大限に使用します。 下記の図形は基本的な形状のサイズを決めるためのヒントとなります。 
 
@@ -40,7 +42,7 @@ ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
 
 アイコンの向きに対応した図形を使用して、これらの基本的なパラメーターをヒントとして構成します。 アイコンは必ずしも図形内側に完全に合わせて埋める必要はありません。最適なバランスを取るために適宜調整します。 
 
-<table>
+<table class="uwpd-noborder">
     <tr>
         <td>円形<td>
         <td>正方形</td>
@@ -63,7 +65,7 @@ ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
 
 </table>
 
-## 角度
+## <a name="angles"></a>角度
 
 同じグリッドや線の太さなどをはじめ、アイコンは共通的な要素で構成されています。 
 
@@ -98,7 +100,7 @@ ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
     </tr>
 </table>
 
-## 曲線
+## <a name="curves"></a>曲線
 
 曲線は円の一部から構成します。ピクセル グリッドにスナップするために必要な場合以外は、ゆがめて使用しないようにします。 
 
@@ -117,19 +119,19 @@ ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
     </tr>    
 </table>
 
-## 幾何学図形の使用
+## <a name="geometric-construction"></a>幾何学図形の使用
 
 アイコンを作成する場合には、純粋な幾何学図形のみを使用することをお勧めします。
 
 ![幾何学図形のオーバーレイを使ったギターのアイコン ](images/icons-geometric-construction.png)
 
-## 図形の塗りつぶし 
+## <a name="filled-shapes"></a>図形の塗りつぶし 
 
 アイコンは、必要な場合は、塗りつぶされた図形を含めることができますが、32 ピクセル × 32 ピクセルの場合、4 ピクセルを超えないようにします。 円形の塗りつぶしは 6 ピクセル × 6 ピクセルを超えないようにします。 
 
 ![5 ピクセル x 8 ピクセルの塗りつぶし ](images/icons-filled-shapes.png)
 
-## バッジ
+## <a name="badges"></a>バッジ
 
 「バッジ」は、元になるアイコンの要素との統合を意図することなくアイコンに追加された要素を記述するために使用する一般的な用語です。 これらは通常、状態や操作など、元になるアイコンに関連する情報を示すために使用します。 この他に一般的に使われる用語には、オーバーレイ、注釈、修飾子などがあります。 
 
@@ -151,7 +153,7 @@ ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
 </table>
 <p></p>
 
-### バッジの色 
+### <a name="badge-color"></a>バッジの色 
 
 色のバッジは、アイコンの状態を示す場合にのみ使用する必要があります。 状態を示すバッジに使用される色は、ユーザーに特定の感情的なメッセージを伝えます。 
 
@@ -163,20 +165,20 @@ ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
 </table>
 <p></p>
 
-### バッジの位置
+### <a name="badge-position"></a>バッジの位置
 
 状態または操作を示すバッジの既定の位置は、右下です。 その他の位置は、デザイン上やむを得ない場合にのみ使用します。 
 
-### バッジのサイズ変更
+### <a name="badge-sizing"></a>バッジのサイズ変更
 
 バッジは 32 ピクセル × 32 ピクセル グリッドで、10 ～ 18 ピクセルのサイズで使用します。 
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 * [タイルとアイコン アセットのガイドライン](../controls-and-patterns/tiles-and-notifications-app-assets.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

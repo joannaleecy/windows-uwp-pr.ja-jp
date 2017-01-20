@@ -6,26 +6,28 @@ ms.assetid: 012028B3-9DA2-4E72-8C0E-3E06BEC3B3FE
 label: Use patterns to format dates and times
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: f49af17ada36ceb2e5898d80047c2d616b1d0c6e
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 564062173544ab368d8dd7fc8fe2c35e9d518444
 
 ---
 
-# パターンを使った日付と時刻の書式設定
+# <a name="use-patterns-to-format-dates-and-times"></a>パターンを使った日付と時刻の書式設定
 
-
-
-
-
-**重要な API**
-
--   [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
--   [**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828)
--   [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) API でカスタム パターンを使うと、日付と時刻を必要な形式で表示することができます。
 
-## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>概要
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)</li>
+<li>[**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828)</li>
+<li>[**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)</li>
+</ul>
+</div>
+
+
+## <a name="introduction"></a>概要
 
 
 [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) では、世界中の言語と地域に対応するように、日付と時刻をさまざまな方法で適切に書式設定できます。 年、月、日などの標準的な形式を使うことも、"longdate" や "month day" などの標準の文字列テンプレートを使うこともできます。
@@ -36,7 +38,7 @@ ms.openlocfilehash: f49af17ada36ceb2e5898d80047c2d616b1d0c6e
 
  
 
-## <span id="What_you_need_to_know"></span><span id="what_you_need_to_know"></span><span id="WHAT_YOU_NEED_TO_KNOW"></span>理解しておく必要があること
+## <a name="what-you-need-to-know"></a>理解しておく必要があること
 
 
 パターンを使うときは、すべてのカルチャに対して有効であるとは限らないカスタム形式を構築するという点に注意してください。 たとえば、"month day" テンプレートについて考えてみます。
@@ -111,7 +113,7 @@ Ja-JP: 1月1 (inappropriate for Japan; the day symbol is missing)
 -   カルチャに適するとは限りません。
 -   任意の順序の構成要素のあらゆる組み合わせを指定できます。
 
-## <span id="Tasks"></span><span id="tasks"></span><span id="TASKS"></span>処理手順
+## <a name="tasks"></a>処理手順
 
 
 現在の月と日を特定の形式で現在時刻と一緒に表示するとします。 たとえば、米国英語のユーザーに次のように表示する必要があるとします。
@@ -177,7 +179,7 @@ var mydateplustimefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFor
 var mydateplustimefmt = new dtf.DateTimeFormatter(mydateplustime);
 ```
 
-## <span id="related_topics"></span>関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [日付と時刻の書式設定のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=231618)
@@ -192,6 +194,6 @@ var mydateplustimefmt = new dtf.DateTimeFormatter(mydateplustime);
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

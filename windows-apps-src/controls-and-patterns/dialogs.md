@@ -5,11 +5,11 @@ title: "ダイアログとポップアップ"
 label: Dialogs
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 86f28a0509ead0632c942c6746fea19acac54931
-ms.openlocfilehash: 6b0b680cd85d6f57c3ca06758ab7dcaef3f7ffe5
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: bc428b42324cd584dfaee1db3c9eb834d30cd69d
 
 ---
-# ダイアログとポップアップ
+# <a name="dialogs-and-flyouts"></a>ダイアログとポップアップ
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -18,31 +18,11 @@ ms.openlocfilehash: 6b0b680cd85d6f57c3ca06758ab7dcaef3f7ffe5
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx">ContentDialog クラス</a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn279496">Flyout クラス</a></li>
+<li>[ContentDialog クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)</li>
+<li>[Flyout クラス](https://msdn.microsoft.com/library/windows/apps/dn279496)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-<!--
-<table>
-<tr>
-<th>Dialogs</th><th>Flyouts</th>
-</tr>
-<tr>
-<td>![Example of a full-button dialog](images/controls_dialog_twobutton.png)</td>
-<td>![Example of a flyout](images/flyout-example.png)</td>
-</tr>
-<tr>
-<td>Dialogs are modal UI overlays that provide contextual app information. Dialogs block interactions with the app window until being explicitly dismissed. They often request some kind of action from the user.  </td>
-<td>A flyout is a lightweight contextual popup that displays UI related to what the user is doing. It includes placement and sizing logic, and can be used to reveal a hidden control, show more detail about an item, or ask the user to confirm an action. Flyouts can be quickly dismissed by tapping or clicking somewhere outside the flyout, pressing the Escape key or Back button, resizing the app window, or changing the device's orientation.
-</td>
-</tr>
-</table>
--->
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -64,7 +44,7 @@ ms.openlocfilehash: 6b0b680cd85d6f57c3ca06758ab7dcaef3f7ffe5
 </div>
 </div>
 
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 * 重要な情報をユーザーに通知したり、アクションが完了する前に確認や追加情報を要求するために、ダイアログやポップアップを使用します。 
 * [ヒント](tooltips.md)や[コンテキスト メニュー](menus.md)の変わりにポップアップを使用しないようにします。 指定した時間が経過すると非表示になる短い説明を表示するには、ヒントを使います。 UI 要素に関連した状況依存の操作 (コピーや貼り付けなど) には、コンテキスト メニューを使います。  
@@ -78,22 +58,9 @@ ms.openlocfilehash: 6b0b680cd85d6f57c3ca06758ab7dcaef3f7ffe5
 
 
 
-## ダイアログとポップアップの比較
+## <a name="dialogs-vs-flyouts"></a>ダイアログとポップアップの比較
 
 ダイアログかポップアップを使用すると決めた場合には、どちらを選択する必要があります。 
-
-<!--
-Dialogs are modal, which means they block all interaction with the app until the user selects a dialog button. To visually reinforce their modal behavior, dialogs draw an overlay layer which partially obscures the temporarily unreachable app UI.
-
-A flyout is a light dismiss control, meaning that users can choose from a variety of actions to quickly dismiss it. These interactions are intended to be lightweight and non-blocking. Light dismiss actions include
-
-* Clicking or tap outside the transient UI
-* Pressing the Escape key
-* Pressing the Back button
-* Resizing the app window
-* Changing device orientation
-
--->
 
 ダイアログは操作をブロックし、ポップアップはブロックしないため、ダイアログの使用は、ユーザーが他のすべてを中断して情報や回答の提供に集中する必要がある状況に限定する必要があります。 一方ポップアップは、ユーザーに情報を知らせるが、ユーザーがそれを無視してもよい場合に使用します。 
 
@@ -128,10 +95,16 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 </div>
 </div>
 
+<div class="microsoft-internal-note">
+簡易非表示コントロールは、閉じられるまで一時的な UI にキーボードのフォーカスやゲームパッドのフォーカスを捕捉します。 この動作に視覚的な合図を提供するために、Xbox の簡易非表示コントロールは、スコープ外の UI を暗く表示するオーバーレイを描画します。 この動作は、新しい `LightDismissOverlayMode` プロパティを使用して変更できます。 既定では、一時的な UI は Xbox で簡易非表示オーバーレイを描画し、他のデバイス ファミリでは描画しませんが、アプリで強制的にオーバーレイを常に**オン**にするか、常に**オフ**にするかを選択できます。
 
+```xaml
+<MenuFlyout LightDismissOverlayMode=\"Off\">
+```
+</div>
 
-## ダイアログ
-### 一般的なガイドライン
+## <a name="dialogs"></a>ダイアログ
+### <a name="general-guidelines"></a>一般的なガイドライン
 
 -   ダイアログ内のテキストの 1 行目で、問題やユーザーの目的 (実行する内容) を明確に示す必要があります。
 -   ダイアログのタイトルは主な説明で、省略可能です。
@@ -144,10 +117,17 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 -   少なくとも 1 つのダイアログ ボタンを表示する必要があります。
     -   ボタンは、ユーザーがダイアログ ボックスを非表示にするための唯一のメカニズムです。
     -   テキストを指定したボタンを使って、主な説明またはコンテンツに対する応答を示します。 たとえば、主な説明が "使っているコンピューターへの AppName からのアクセスを許可しますか?" の場合、"許可" ボタンと "ブロック" ボタンを使います。 具体的な応答の言葉はすばやく理解できるので、効率的に判断できます。
+    - 次の順番でコミット ボタンを提示します。 
+        -   [OK]/[実行する]/[はい]
+        -   [実行しない]/[いいえ]
+        -   [キャンセル]
+        
+        (この "[実行する]" と "[実行しない]" は、メインの指示に対応する具体的な文になります。)
+   
 -   エラー ダイアログでは、ダイアログ ボックスにエラー メッセージと関連情報 (ある場合) を表示します。 エラー ダイアログで使う唯一のボタンは "閉じる" かこれに似た操作である必要があります。
 -   パスワード フィールドの検証エラーなど、ページの特定の場所に関連するエラーでは、ダイアログを使わずに、アプリのキャンバス自体を使ってインライン エラーを表示します。
 
-### 確認ダイアログ ([OK]/[キャンセル])
+### <a name="confirmation-dialogs-okcancel"></a>確認ダイアログ ([OK]/[キャンセル])
 確認ダイアログ ボックスにより、ユーザーはアクションを実行するかどうかを確認できます。 アクションを確認するか、キャンセルを選択することができます。  
 一般的な確認ダイアログ ボックスには、確認 ([OK]) ボタンと [キャンセル] ボタンの 2 つのボタンがあります。  
 
@@ -163,7 +143,7 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 
 > 一部のプラットフォームでは、左側ではなく、右側に確認ボタンが配置されます。 それでは、左側に確認ボタンを配置するのはなぜでしょうか。  ユーザーの大部分が右利きであり、右手でスマートフォンを保持すると想定した場合、実際に確認ボタンが左側にある方がボタンを押しやすくなります。これは、ボタンがユーザーの親指が描く円弧上にある可能性が高くなるためです。 画面の右側にボタンがある場合、ユーザーは親指を内側に引いて操作しにくい位置に移動する必要があります。
 
-### ダイアログの作成
+### <a name="create-a-dialog"></a>ダイアログの作成
 ダイアログ ボックスを作成するには、[ContentDialog クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)を使用します。 ダイアログはコードまたはマークアップで作成できます。 通常は UI 要素を XAML で定義する方が容易ですが、単純なダイアログの場合には、コードを記述する方が実際には容易です。 この例では、ダイアログを作成して、ユーザーに WiFi 接続がないことの通知を行い、[ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx)メソッドを使ってそれを表示しています。
 
 ```csharp
@@ -206,10 +186,14 @@ private async void displayDeleteFileDialog()
 }
 ```
 
-## ポップアップ
-###  ポップアップの作成
+## <a name="flyouts"></a>ポップアップ
+###  <a name="create-a-flyout"></a>ポップアップの作成
 
-ポップアップは、オープンエンドなコンテナーで、そのコンテンツとして任意の UI を表示することができます。  
+ポップアップは、オープンエンドなコンテナーで、そのコンテンツとして任意の UI を表示することができます。 
+
+<div class="microsoft-internal-note">
+これにはポップアップやコンテキスト メニューが含まれ、それらをさらに他のポップアップ内で入れ子にすることができます。
+</div>
 
 ポップアップは、特定のコントロールにアタッチされます。 [Placement ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.placement.aspx) プロパティを使って、ポップアップが表示される場所 (上、左、下、右、またはフル) を指定します。 [完全配置モード](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutplacementmode.aspx)を選択した場合、アプリはポップアップを拡大し、アプリ ウィンドウ内の中央に配置します。 表示するときに、呼び出し元のオブジェクトに固定する必要があり、そのオブジェクトに対して優先する相対位置 (上、下、左、または右) を指定します。 ポップアップには完全配置モードもあります。完全配置モードでは、ポップアップを拡大して、アプリ ウィンドウの中央に配置しようとします。 [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) などの一部のコントロールは、ポップアップを関連付けるために使用できる [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) プロパティを提供します。 
 
@@ -295,7 +279,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 }
 ````
 
-### ポップアップのスタイルを設定する
+### <a name="style-a-flyout"></a>ポップアップのスタイルを設定する
 ポップアップのスタイルを設定するには、[FlyoutPresenterStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.flyoutpresenterstyle.aspx) を変更します。 次の例では、テキストの折り返しの段落を示し、スクリーン リーダーがテキスト ブロックにアクセスできるようにします。
 
 ````xaml
@@ -313,11 +297,11 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 </Flyout>
 ````
 
-## サンプルの入手
+## <a name="get-the-samples"></a>サンプルの入手
 *   [XAML UI の基本](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
     インタラクティブな形で XAML コントロールのすべてを参照できます。
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 - [ヒント](tooltips.md)
 - [メニューとコンテキスト メニュー](menus.md)
 - [**Flyout クラス**](https://msdn.microsoft.com/library/windows/apps/dn279496)
@@ -325,6 +309,6 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

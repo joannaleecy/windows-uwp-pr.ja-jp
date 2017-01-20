@@ -6,11 +6,11 @@ description: "分割ビュー コントロールには、展開/折りたたみ�
 label: Split view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 7fae1477b997508ade92a5bbb977c1d6530a181f
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 61ada7839f76df92041b606066f5cbd54448cd93
 
 ---
-# 分割ビュー コントロール
+# <a name="split-view-control"></a>分割ビュー コントロール
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,14 +19,13 @@ ms.openlocfilehash: 7fae1477b997508ade92a5bbb977c1d6530a181f
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn864360"><strong>SplitView クラス (XAML)</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn919970"><strong>SplitView オブジェクト (HTML)</strong></a></li>
+<li>[**SplitView クラス**](https://msdn.microsoft.com/library/windows/apps/dn864360)</li>
 </ul>
-
-</div>
 </div>
 
+SplitView を使ってハブを表示する Microsoft Edge アプリの例を次に示します。
 
+![Microsoft Edge の分割ビューの例](images/split_view_Edge.png)
 
 
  分割ビューのコンテンツ領域は常に表示されます。 ウィンドウは展開/折りたたみを行うことも、開いた状態のままにすることもでき、アプリ ウィンドウの右側または左側から表示できます。 このウィンドウには 4 つのモードがあります。
@@ -47,23 +46,38 @@ ms.openlocfilehash: 7fae1477b997508ade92a5bbb977c1d6530a181f
 
     このモードでは、ウィンドウの狭い部分が常にアイコンを表示できるだけの大きさで表示されます。 閉じたウィンドウの既定の幅は 48 ピクセルで、この値は `CompactPaneLength` で変更できます。 ウィンドウを開くと、コンテンツを押しのけるようにして、コンテンツの利用可能な領域が小さくなります。
 
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 分割ビュー コントロールは、[ナビゲーション ウィンドウ](nav-pane.md)の作成に使うことができます。 このパターンを構築するには、展開/折りたたみボタン ("ハンバーガー" ボタン) とナビゲーション項目を表すリスト ビューを追加する必要があります。
 
 分割ビュー コントロールを使って、ユーザーが補足的なウィンドウを開いたり閉じたりできる "引き出し" エクスペリエンスを作成することもできます。
 
-## 例
+## <a name="create-a-split-view"></a>分割ビューの作成
 
-既定の形式の分割ビュー コントロールは、基本的なコンテナーです。 SplitView を使ってハブを表示する Microsoft Edge アプリの例を次に示します。
+以下は、Content の横にインラインでオープン状態の Pane を表示する SplitView コントロールのコードです。
+```xaml
+<SplitView IsPaneOpen="True"
+           DisplayMode="Inline"
+           OpenPaneLength="296">
+    <SplitView.Pane>
+        <TextBlock Text="Pane"
+                   FontSize="24"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+    </SplitView.Pane>
 
-![Microsoft Edge の分割ビューの例](images/split_view_Edge.png)
+    <Grid>
+        <TextBlock Text="Content"
+                   FontSize="24"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+    </Grid>
+</SplitView>
+```
 
 
 
-## 関連トピック
-
-
+## <a name="related-topics"></a>関連トピック
 * [ナビゲーション ウィンドウ パターン](nav-pane.md)
 * [リスト ビュー](lists.md)
  
@@ -72,6 +86,6 @@ ms.openlocfilehash: 7fae1477b997508ade92a5bbb977c1d6530a181f
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

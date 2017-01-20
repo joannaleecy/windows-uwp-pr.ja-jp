@@ -4,12 +4,12 @@ ms.assetid: DD8FFA8C-DFF0-41E3-8F7A-345C5A248FC2
 description: "このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリに PlayReady で保護されたメディア コンテンツを追加する方法について説明します。"
 title: PlayReady DRM
 translationtype: Human Translation
-ms.sourcegitcommit: 94f3145716edee7f9b86e97fb01e98b4bf71a084
-ms.openlocfilehash: b2748f0e48b25027441b183c287aa995dc6d9a9c
+ms.sourcegitcommit: 3c0b72b674ce02a1802a50c512e98b9aeba3bfe1
+ms.openlocfilehash: 97a3002c1e61d8f7d31b81a3a80d7473a5dc6077
 
 ---
 
-# PlayReady DRM
+# <a name="playready-drm"></a>PlayReady DRM
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -23,7 +23,7 @@ PlayReady DRM を使うと、開発者はコンテンツ プロバイダーが�
 | [ハードウェア DRM](hardware-drm.md)                                           | このトピックでは、PlayReady ハードウェア ベースのデジタル著作権管理 (DRM) を UWP アプリに追加する方法の概要を示します。                                                                                                                                                                 |
 | [PlayReady を使ったアダプティブ ストリーミング](adaptive-streaming-with-playready.md) | この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリに、Microsoft PlayReady コンテンツ保護を使ったマルチメディア コンテンツのアダプティブ ストリーミングを追加する方法について説明します。 現在、この機能では、HTTP ライブ ストリーミング (HLS) と Dynamic Adaptive Streaming over HTTP (DASH) コンテンツの再生がサポートされています。 |
 
-## PlayReady DRM の新機能
+## <a name="whats-new-in-playready-drm"></a>PlayReady DRM の新機能
 
 次に、Windows 10 用の PlayReady DRM に関する新機能や変更点について説明します。
 
@@ -76,7 +76,7 @@ PlayReady DRM に、次の新しいインターフェイス、クラス、列挙
 
 PlayReady DRM の新機能を利用する方法を示すために、新しいサンプルが作成されました。 このサンプルは、[http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](http://go.microsoft.com/fwlink/p/?linkid=331670) からダウンロードできます。
 
-## 考慮事項
+## <a name="things-to-consider"></a>考慮事項
 
 -   PlayReady DRM は、HDCP Type 1 (HDCP バージョン 2.1 以降でサポートされます) をサポートするようになりました。 PlayReady は、デバイスが適用するライセンスで HDCP タイプ制限ポリシーを持っています。 Windows 10 では、このポリシーにより HDCP 2.2 以降がエンゲージされます。 この機能は、PlayReady Server v3.0 SDK ライセンスで有効にできます (サーバーは、HDCP タイプ制限 GUID を使って、ライセンスでこのポリシーを管理します)。 詳しくは、「[PlayReady の適合性と信頼性規則](http://www.microsoft.com/playready/licensing/compliance/)」をご覧ください。
 -   Windows Media Video (VC-1 とも呼ばれます) はハードウェア DRM ではサポートされません (「[ハードウェア DRM のオーバーライド](hardware-drm.md#override-hardware-drm)」をご覧ください)。
@@ -91,7 +91,7 @@ PlayReady DRM の新機能を利用する方法を示すために、新しいサ
 | DRM\_E\_TEE\_OUTPUT\_PROTECTION\_REQUIREMENTS\_NOT\_MET | 0x8004CD22 | このエラー コードは、ハードウェア DRM で実行されている場合にのみ発生します。 ライセンスの出力保護ポリシーでは、モニターが HDCP をエンゲージするか、コンテンツの実質的な解像度を減らす必要がありますが、ハードウェア DRM はコンテンツの解像度の減少をサポートしていないため、HDCP をエンゲージできず、コンテンツの実質的な解像度を減らすことができませんでした。 ソフトウェア DRM で、コンテンツは再生されます。 「[ハードウェア DRM を使うための考慮事項](hardware-drm.md#considerations-for-using-hardware-drm)」をご覧ください。 |
 | ERROR\_GRAPHICS\_OPM\_NOT\_SUPPORTED                    | 0xc0262500 | グラフィックス ドライバーは、出力保護をサポートしていません。 たとえば、モニターが VGA 経由で接続されているか、デジタル出力用の適切なグラフィックス ドライバーがインストールされていません。 後者の場合、インストールされている一般的なドライバーは Microsoft ベーシック ディスプレイ アダプターであり、適切なグラフィックス ドライバーをインストールすることで、問題が解決されます。                                                                                                                                                  |
 
-## 出力保護
+## <a name="output-protection"></a>出力保護
 
 次のセクションでは、PlayReady ライセンスの出力保護ポリシーを用いて Windows 10 用の PlayReady DRM を使用する場合の動作について説明します。
 
@@ -111,11 +111,11 @@ PlayReady DRM では、PlayReady の適合性規則で指定された出力コ�
     * オーディオは、ビデオとは異なるコンテンツ キーに暗号化される必要があります。また、オーディオに使われるライセンスには、最低限のセキュリティ レベルとして 2000 が必要です。 または、オーディオをプレーン テキストのままにすることもできます。
 * すべての SWDRM のシナリオでは、オーディオやビデオのコンテンツ キーに使用される PlayReady ライセンスの最低限のセキュリティ レベルが 2000 以下である必要があります。
 
-### 出力保護レベル
+### <a name="output-protection-levels"></a>出力保護レベル
 
 次の表では、PlayReady ライセンスのさまざまな OPL 間のマッピングと、Windows 10 用の PlayReady DRM でそれらを適用する方法の概要を示します。
 
-#### ビデオ
+#### <a name="video"></a>ビデオ
 
 <table>
     <tr>
@@ -130,31 +130,32 @@ PlayReady DRM では、PlayReady の適合性規則で指定された出力コ�
         <th>コンポジット、コンポーネント</th>
     </tr>
     <tr>
-        <th>0 ～ 100</th>
-        <td rowspan="7">Windows 10 では、後続の OPL 値に関わらず、圧縮デジタル ビデオ コンテンツが出力に渡されることはありません。 圧縮デジタル ビデオ コンテンツについて詳しくは、[PlayReady 製品の適合規則](https://www.microsoft.com/playready/licensing/compliance/)をご覧ください。</td>
-        <td rowspan="3" colspan="2">コンテンツが渡されます。</td>
+        <th>100</th>
+        <td rowspan="6">該当なし。\*</td>
+        <td colspan="2">コンテンツが渡されます。</td>
         <td>コンテンツが渡されます。</td>
     </tr>
     <tr>
-        <th>101 ～ 150</th>
+        <th>150</th>
+        <td colspan="2" rowspan="2">該当なし。\*</td>
         <td>CGMS-A CopyNever がエンゲージされている場合、または CGMS-A をエンゲージできない場合に、コンテンツが渡されます。</td>
     </tr>
     <tr>
-        <th>151 ～ 200</th>
+        <th>200</th>
         <td>CGMS-A CopyNever がエンゲージされている場合に、コンテンツが渡されます。</td>
     </tr>
     <tr>
-        <th>201 ～ 250</th>
+        <th>250</th>
         <td colspan="2">HDCP に対するエンゲージを試みますが、結果にかかわらずコンテンツが渡されます。</td>
-        <td rowspan="4">コンテンツは渡されません。</td>
+        <td rowspan="5">該当なし。\*</td>
     </tr>
     <tr>
-        <th>251 ～ 270</th>
+        <th>270</th>
         <td>**SWDRM**: HDCP のエンゲージを試みます。 HDCP をエンゲージできない場合、PC は 1 フレームあたりの有効な解像度を 520,000 ピクセルに制限し、コンテンツが渡されます。</td>
         <td>**HWDRM**: HDCP を使用してコンテンツが渡されます。 HDCP をエンゲージできない場合、HDMI ポートと DVI ポートでの再生はブロックされます</td>
     </tr>
     <tr>
-        <th>271-300</th>
+        <th>300</th>
         <td colspan="2">
             <p>
                 **HDCP のタイプ制限が定義されていない場合:** HDCP でコンテンツを渡されます。 HDCP をエンゲージできない場合、HDMI ポートと DVI ポートでの再生はブロックされます。
@@ -165,12 +166,19 @@ PlayReady DRM では、PlayReady の適合性規則で指定された出力コ�
         </td>
     </tr>
     <tr>
-        <th>\>300</th>
-        <td colspan="2">コンテンツは渡されません。</td>
+        <th>400</th>
+        <td rowspan="2">Windows 10 では、後続の OPL 値に関わらず、圧縮デジタル ビデオ コンテンツが出力に渡されることはありません。 圧縮デジタル ビデオ コンテンツについて詳しくは、[PlayReady 製品の適合規則](https://www.microsoft.com/playready/licensing/compliance/)をご覧ください。</td>
+        <td colspan="2" rowspan="2">該当なし。\*</td>
+    </tr>
+    <tr>
+        <th>500</th>
     </tr>
 </table>
 <br/>
-#### オーディオ
+
+\* 出力保護レベルの値の中には、ライセンス サーバーによって設定できないものもあります。 詳しくは、「[PlayReady の適合性規則](https://www.microsoft.com/playready/licensing/compliance/)」をご覧ください。
+
+#### <a name="audio"></a>オーディオ
 
 <table>
     <tr>
@@ -185,31 +193,30 @@ PlayReady DRM では、PlayReady の適合性規則で指定された出力コ�
         <th>任意</th>
     </tr>
     <tr>
-        <th>0 ～ 100</th>
-        <td rowspan="2">コンテンツが渡されます。</td>
+        <th>100</th>
+        <td rowspan="3">コンテンツが渡されます。</td>
         <td>コンテンツが渡されます。</td>
-        <td rowspan="4">コンテンツが渡されます。</td>
+        <td rowspan="5">コンテンツが渡されます。</td>
     </tr>
     <tr>
-        <th>101 ～ 200</th>
+        <th>150</th>
         <td rowspan="4">コンテンツは渡されません。</td>
     </tr>
     <tr>
-        <th>201 ～ 250</th>
+        <th>200</th>
+    </tr>
+    <tr>
+        <th>250</th>
         <td>HDMI、DisplayPort、または MHL で HDCP がエンゲージされている場合、または SCMS がエンゲージされて CopyNever に設定されている場合、コンテンツが渡されます。</td>
     </tr>
     <tr>
-        <th>251 ～ 300</th>
+        <th>300</th>
         <td>HDMI、DisplayPort、または MHL で HDCP がエンゲージされている場合にコンテンツが渡されます。</td>
-    </tr>
-    <tr>
-        <th>\>300</th>
-        <td>コンテンツは渡されません。</td>
-        <td>コンテンツは渡されません。</td>
     </tr>
 </table>
 <br/>
-### Miracast
+
+### <a name="miracast"></a>Miracast
 
 PlayReady DRM では、HDCP 2.0 以降がエンゲージされるとすぐに Miracast 出力を通じてコンテンツを再生できます。 ただし、Windows 10 では Miracast は*デジタル*出力と見なされます。 Miracast シナリオについて詳しくは、[PlayReady の適合規則](https://www.microsoft.com/playready/licensing/compliance/)をご覧ください。 次の表に、PlayReady ライセンスのさまざまな OPL 間のマッピングと、PlayReady DRM でそれらを Miracast 出力に適用する方法について、概要を示します。
 
@@ -222,18 +229,32 @@ PlayReady DRM では、HDCP 2.0 以降がエンゲージされるとすぐに Mi
         <th>未圧縮デジタル ビデオ</th>
     </tr>
     <tr>
-        <th>0 ～ 100</th>
-        <td rowspan="3">HDCP 2.0 以降がエンゲージされている場合はコンテンツが渡されます。 エンゲージできない場合はコンテンツが渡されません。</td>
+        <th>100</th>
+        <td rowspan="4">HDCP 2.0 以降がエンゲージされている場合はコンテンツが渡されます。 エンゲージできない場合はコンテンツが渡されません。</td>
         <td>HDCP 2.0 以降がエンゲージされている場合はコンテンツが渡されます。 エンゲージできない場合はコンテンツが渡されません。</td>
-        <td rowspan="4">Windows 10 では、後続の OPL 値に関わらず、圧縮デジタル ビデオ コンテンツが出力に渡されることはありません。 圧縮デジタル ビデオ コンテンツについて詳しくは、[PlayReady の適合規則](https://www.microsoft.com/playready/licensing/compliance/)をご覧ください。</td>
+        <td rowspan="6">該当なし。\*</td>
+        <td>HDCP 2.0 以降がエンゲージされている場合はコンテンツが渡されます。 エンゲージできない場合はコンテンツが渡されません。</td>
+    </tr>
+    <tr>
+        <th>150</th>
+        <td rowspan="3">コンテンツは渡されません。</td>
+        <td rowspan="2">該当なし。\*</td>
+    </tr>
+    <tr>
+        <th>200</th>
+    </tr>
+    <tr>
+        <th>250</th>
         <td rowspan="2">HDCP 2.0 以降がエンゲージされている場合はコンテンツが渡されます。 エンゲージできない場合はコンテンツが渡されません。</td>
     </tr>
     <tr>
-        <th>101-270</th>
-        <td rowspan="3">コンテンツは渡されません。</td>
+        <th>270</th>
+        <td colspan="2">該当なし。\*</td>
     </tr>
     <tr>
-        <th>271-300</th>
+        <th>300</th>
+        <td>HDCP 2.0 以降がエンゲージされている場合はコンテンツが渡されます。 エンゲージできない場合はコンテンツが渡されません。</td>
+        <td>コンテンツは渡されません。</td>
         <td>
             <p>
                 **HDCP のタイプ制限が定義されていない場合:** HDCP 2.0 以降がエンゲージされている場合はコンテンツが渡されます。 エンゲージできない場合はコンテンツが渡されません。
@@ -244,13 +265,20 @@ PlayReady DRM では、HDCP 2.0 以降がエンゲージされるとすぐに Mi
         </td>
     </tr>
     <tr>
-        <th>\>300</th>
-        <td>コンテンツは渡されません。</td>
-        <td>コンテンツは渡されません。</td>
+        <th>400</th>
+        <td rowspan="2" colspan="2">該当なし。\*</td>
+        <td rowspan="2">Windows 10 では、後続の OPL 値に関わらず、圧縮デジタル ビデオ コンテンツが出力に渡されることはありません。 圧縮デジタル ビデオ コンテンツについて詳しくは、[PlayReady 製品の適合規則](https://www.microsoft.com/playready/licensing/compliance/)をご覧ください。</td>
+        <td rowspan="2">該当なし。\*</td>
+    </tr>
+    <tr>
+        <th>500</th>
     </tr>
 </table>
 <br/>
-### その他の明示的な出力制限
+
+\* 出力保護レベルの値の中には、ライセンス サーバーによって設定できないものもあります。 詳しくは、「[PlayReady の適合性規則](https://www.microsoft.com/playready/licensing/compliance/)」をご覧ください。
+
+### <a name="additional-explicit-output-restrictions"></a>その他の明示的な出力制限
 
 次の表では、明示的なデジタル ビデオ出力保護の制限に関する Windows 10 用の PlayReady DRM の実装を説明します。
 
@@ -267,7 +295,8 @@ PlayReady DRM では、HDCP 2.0 以降がエンゲージされるとすぐに Mi
         <td>接続された出力: デジタル ビデオ出力、Miracast、HDMI、DVI など</td>
         <td>
             <p>
-次のいずれかに制限される場合にコンテンツが渡されます。 </p>
+                次のいずれかに制限される場合にコンテンツが渡されます。  
+            </p>
             <ul>
                 <li>(a) フレームの幅が最大フレーム幅以下で (ピクセル単位)、フレームの高さが最大フレーム高以下 (ピクセル単位)</li>
                 <li>(b) フレームの高さが最大フレーム幅以下で (ピクセル単位)、フレームの幅が最大フレーム高以下 (ピクセル単位)</li>
@@ -282,6 +311,7 @@ PlayReady DRM では、HDCP 2.0 以降がエンゲージされるとすぐに Mi
     </tr>
 </table>
 <br/>
+
 次の表では、明示的なアナログ ビデオ出力保護の制限に関する Windows 10 用の PlayReady DRM の実装を説明します。
 
 <table>
@@ -330,8 +360,9 @@ PlayReady DRM では、HDCP 2.0 以降がエンゲージされるとすぐに Mi
     </tr>
 </table>
 <br/>
+
 > [!NOTE]
-> "Mini DisplayPort to VGA" のようなアダプター ドングルを再生に使用する場合、Windows 10 ではその出力はデジタル ビデオ出力と見なされ、アナログ ビデオ ポリシーが適用されません。s.
+> "Mini DisplayPort to VGA" のようなアダプター ドングルを再生に使用する場合、Windows 10 ではその出力はデジタル ビデオ出力と見なされ、アナログ ビデオ ポリシーが適用されません。
 
 次の表では、他の状況で再生を可能にする Windows 10 用の PlayReady DRM 実装について説明します。
 
@@ -358,7 +389,8 @@ PlayReady DRM では、HDCP 2.0 以降がエンゲージされるとすぐに Mi
     </tr>
 </table>
 <br/>
-## 前提条件
+
+## <a name="prerequisites"></a>前提条件
 
 PlayReady で保護された UWP アプリの作成を開始する前に、次のソフトウェアがシステムにインストールされている必要があります。
 
@@ -367,7 +399,7 @@ PlayReady で保護された UWP アプリの作成を開始する前に、次�
 
 アプリで MPEG-2/H.262 コンテンツの再生を計画している場合は、[Windows 8.1 Media Center Pack](http://go.microsoft.com/fwlink/p/?LinkId=626876) をダウンロードしてインストールする必要もあります。
 
-## PlayReady Windows ストア アプリの移行ガイド
+## <a name="playready-windows-store-app-migration-guide"></a>PlayReady Windows ストア アプリの移行ガイド
 
 このセクションには、既にある PlayReady Windows 8.x ストア アプリを Windows 10 に移行する方法についての情報が含まれています。
 
@@ -393,7 +425,7 @@ mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionConta
                 "{9A04F079-9840-4286-AB92-E65BE0885F95}";
 ```
 
-## 再生する前に永続的でないライセンスを事前に取得する
+## <a name="proactively-acquire-a-non-persistent-license-before-playback"></a>再生する前に永続的でないライセンスを事前に取得する
 
 このセクションでは、再生を開始する前に、永続的でないライセンスを事前に取得する方法について説明します。
 
@@ -433,7 +465,7 @@ mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionConta
     videoPlayer.msSetMediaProtectionManager( mediaProtectionManager );
     ```
     
-## セキュア ストップの追加
+## <a name="add-secure-stop"></a>セキュア ストップの追加
 
 このセクションでは、UWP アプリにセキュア ストップを追加する方法を説明します。
 
@@ -446,7 +478,7 @@ mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionConta
 
 セキュア ストップのサンプル実装については、[http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](http://go.microsoft.com/fwlink/p/?linkid=331670) にある PlayReady サンプルの securestop.cs ファイルをご覧ください。
 
-## Xbox One での PlayReady DRM の使用
+## <a name="use-playready-drm-on-xbox-one"></a>Xbox One での PlayReady DRM の使用
 
 Xbox One において UWP アプリで PlayReady DRM を使用するには、まず、アプリの公開に使用するデベロッパー センター アカウントを登録して、PlayReady の使用許可を得る必要があります。 これは次の 2 つのいずれかの方法で行うことができます。
 
@@ -472,7 +504,7 @@ Xbox One において UWP アプリで PlayReady DRM を使用するには、ま
 
 企業と製品に応じて最適なアプローチを使用してください。
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 - [メディア再生](media-playback.md)
 
 
@@ -481,6 +513,6 @@ Xbox One において UWP アプリで PlayReady DRM を使用するには、ま
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

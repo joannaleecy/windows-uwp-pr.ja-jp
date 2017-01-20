@@ -4,12 +4,12 @@ title: "DirectX の移植の計画"
 description: "DirectX 9 から DirectX 11 とユニバーサル Windows プラットフォーム (UWP) へのゲーム移植プロジェクトを計画してください。グラフィックス コードのアップグレードと、Windows ランタイム環境へのゲームの配置が必要です。"
 ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: fbd582b2cc90ee763cb167c65dac88cee4e7a025
+ms.sourcegitcommit: 115377ed3e5a13668481d1122f354610b3077763
+ms.openlocfilehash: f5f66f5da79eb62e3a81f4fe0d7398fed689d378
 
 ---
 
-# DirectX の移植の計画
+# <a name="plan-your-directx-port"></a>DirectX の移植の計画
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -23,7 +23,7 @@ ms.openlocfilehash: fbd582b2cc90ee763cb167c65dac88cee4e7a025
 
 DirectX 9 から DirectX 11 とユニバーサル Windows プラットフォーム (UWP) へのゲーム移植プロジェクトを計画してください。グラフィックス コードのアップグレードと、Windows ランタイム環境へのゲームの配置が必要です。
 
-## グラフィックス コードの移植の計画
+## <a name="plan-to-port-graphics-code"></a>グラフィックス コードの移植の計画
 
 
 UWP へのゲームの移植を開始する前に、ゲームに Direct3D 8 の要素が残っていない状態にすることが重要です。 ゲームに固定関数パイプラインが残っていないことを確かめてください。 固定パイプライン機能など、推奨されなくなった機能の全一覧については、「[推奨されなくなった機能](https://msdn.microsoft.com/library/windows/desktop/cc308047)」をご覧ください。
@@ -40,7 +40,7 @@ D3DX と DXUT のヘルパー ライブラリは、独自のヘルパー ライ�
 
 さまざまな [Direct3D 機能レベル](https://msdn.microsoft.com/library/windows/desktop/ff476876)について確かめてください。 機能レベルは、既知の機能のセットを定義することで、幅広いビデオ ハードウェアを分類するものです。 各セットは 9.1 ～ 11.2 のバージョンの Direct3D にほぼ対応しています。 すべての機能レベルで DirectX 11 API を使います。
 
-## CoreWindow への Win32 UI コードの移植の計画
+## <a name="plan-to-port-win32-ui-code-to-corewindow"></a>CoreWindow への Win32 UI コードの移植の計画
 
 
 UWP アプリは、[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) と呼ばれる、アプリ コンテナーに対して作成されるウィンドウで実行されます。 ゲームでは、デスクトップのウィンドウよりも必要な実装の詳細が少ない [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) からの継承によってウィンドウを制御します。 ゲームのメイン ループは [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) メソッドにあります。
@@ -55,7 +55,7 @@ Microsoft のテンプレートとコード サンプルでは新しい C++ 機�
 
 頻繁に使う 2 つの概念があります。
 
--   マネージ リファレンス ([**^**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx) と[**マネージ クラス**](https://msdn.microsoft.com/library/windows/apps/6w96b5h7.aspx) (ref クラス) は、Windows ランタイムの基本となる部分です。 Windows ランタイム コンポーネントとのインターフェイスとして機能するマネージ ref クラスを使う必要があります。具体的には、[**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) などです。詳しくはチュートリアルをご覧ください。
+-   マネージ リファレンス ([**^ 演算子**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)) と [**マネージ クラス**](https://msdn.microsoft.com/library/windows/apps/6w96b5h7.aspx) (ref クラス) は、Windows ランタイムの基本となる部分です。 Windows ランタイム コンポーネントとのインターフェイスとして機能するマネージ ref クラスを使う必要があります。具体的には、[**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) などです。詳しくはチュートリアルをご覧ください。
 -   Direct3D 11 の COM インターフェイスを操作する場合は、[**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) テンプレート型を使うと COM ポインターが使いやすくなります。
 
  
@@ -68,6 +68,6 @@ Microsoft のテンプレートとコード サンプルでは新しい C++ 機�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

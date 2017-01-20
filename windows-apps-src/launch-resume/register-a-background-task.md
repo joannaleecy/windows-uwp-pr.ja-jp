@@ -4,8 +4,8 @@ title: "バックグラウンド タスクの登録"
 description: "ほとんどのバックグラウンド タスクを安全に登録できる再利用可能な関数の作成方法について説明します。"
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 translationtype: Human Translation
-ms.sourcegitcommit: 2f46f5cd26656b2d6b7d14c0d85aa7a0a6950fb8
-ms.openlocfilehash: 809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: d65b8d3312e49469bd99d458b45bf5a46f345e6a
 
 ---
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: 809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca
 
 ほとんどのバックグラウンド タスクを安全に登録できる再利用可能な関数の作成方法について説明します。
 
-このトピックは、インプロセスのバックグラウンド タスクとアウトプロセスのバックグラウンド タスクの両方に適用されます。 このトピックの説明では、登録する必要があるバックグラウンド タスクが既に存在すると想定します。 (バックグラウンド タスクの作成方法について詳しくは、「[Create and register a background task that runs out-of-process (アウトプロセスで実行されるバックグラウンド タスクの作成と登録)](create-and-register-an-outofproc-background-task.md)」または「[Create and register an in-process background task (インプロセスのバックグラウンド タスクの作成と登録)](create-and-register-an-inproc-background-task.md)」をご覧ください)。
+このトピックは、インプロセスのバックグラウンド タスクとアウトプロセスのバックグラウンド タスクの両方に適用されます。 このトピックの説明では、登録する必要があるバックグラウンド タスクが既に存在すると想定します。 (バックグラウンド タスクの作成方法について詳しくは、「[Create and register a background task that runs out-of-process (アウトプロセスで実行されるバックグラウンド タスクの作成と登録)](create-and-register-a-background-task.md)」または「[Create and register an in-process background task (インプロセスのバックグラウンド タスクの作成と登録)](create-and-register-an-inproc-background-task.md)」をご覧ください)。
 
 このトピックは、バックグラウンド タスクを登録するユーティリティ関数の作り方を順に説明します。 このユーティリティ関数は、二重登録による問題を防ぐために、同じタスクが登録されていないかどうかをチェックしたうえでタスクを登録します。バックグラウンド タスクにシステムの条件を適用することができます。 ここで紹介しているユーティリティ関数は、それ自体で完結した実用的なコード例となっています。
 
@@ -377,7 +377,7 @@ ms.openlocfilehash: 809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca
 
 ****
 
-* [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-an-outofproc-background-task.md)
+* [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
 * [インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)
 * [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
 * [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
@@ -397,6 +397,6 @@ ms.openlocfilehash: 809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

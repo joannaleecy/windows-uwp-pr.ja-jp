@@ -6,13 +6,13 @@ ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: ed0c8e86d38865fad8bb784550b9b4fc61a8b40a
 
 ---
 
-# マウス操作
-
+# <a name="mouse-interactions"></a>マウス操作
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 ユニバーサル Windows プラットフォーム (UWP) アプリの設計をタッチ入力用に最適化し、既定の基本的なマウスのサポートを利用します。
 
@@ -28,7 +28,7 @@ ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
 
 このトピックでは、マウス操作の設計時の考慮事項について説明します。
 
-## UWP アプリのマウス言語
+## <a name="the-uwp-app-mouse-language"></a>UWP アプリのマウス言語
 
 
 システム内では一貫して、マウス操作の簡単なセットが使われます。
@@ -86,7 +86,7 @@ ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
 </tbody>
 </table>
 
-## マウス イベント
+## <a name="mouse-events"></a>マウス イベント
 
 アプリでマウス入力に応答するには、タッチ入力やペン入力で使うのと同じ基本的なポインター イベントを処理します。
 
@@ -101,7 +101,7 @@ ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
 
 - [入力: GestureRecognizer によるジェスチャと操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
 
-## 視覚的なフィードバックのガイドライン
+## <a name="guidelines-for-visual-feedback"></a>視覚的なフィードバックのガイドライン
 
 
 -   移動イベントまたはホバー イベントを通じてマウスが検出されたら、マウス固有の UI を表示して、要素によって公開されている機能を示します。 マウスが一定の期間動かされなかった場合や、ユーザーがタッチ操作を始めた場合は、マウス UI を徐々に非表示にします。 これにより、UI の簡潔さが保たれます。
@@ -114,7 +114,7 @@ ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
 視覚的なフィードバックに関する一般的なガイダンスについては、「[視覚的なフィードバックのガイドライン](guidelines-for-visualfeedback.md)」をご覧ください。
 
 
-## カーソル
+## <a name="cursors"></a>カーソル
 
 
 マウス ポインターとして利用できる標準のカーソル セットが用意されています。 これらが要素のプライマリ操作を示すために使われます。
@@ -129,7 +129,7 @@ ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
 -   サイズ変更ができるオブジェクトに対しては、横、縦、対角線のサイズ変更カーソル (![縦のサイズ変更カーソル](images/cursor-vertical.png)、 ![横のサイズ変更カーソル](images/cursor-horizontal.png)、 ![対角線のサイズ変更カーソル (左下、右上)](images/cursor-diagonal2.png)、 ![対角線のサイズ変更カーソル (左上、右下)](images/cursor-diagonal1.png)) を使います。
 -   地図など、固定キャンバス内のコンテンツのパンを行うときは、手でつかむ形のカーソル (![手でつかむ形のカーソル (開いた状態)](images/cursor-pan1.png)、 ![手でつかむ形のカーソル (つかんだ状態)](images/cursor-pan2.png)) を使います。
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 * [ポインター入力の処理](handle-pointer-input.md)
 * [入力デバイスの識別](identify-input-devices.md)
@@ -156,6 +156,6 @@ ms.openlocfilehash: 5a26ff6380383965d51a6938db68ad8406941229
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

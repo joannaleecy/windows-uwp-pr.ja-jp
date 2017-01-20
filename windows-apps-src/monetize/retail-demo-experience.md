@@ -1,14 +1,14 @@
 ---
 author: joannaleecy
-title: "市販デモ エクスペリエンス アプリの作成"
+title: "市販デモ エクスペリエンス (RDX) アプリを作成する"
 description: "単一のアプリで市販デモ モードと通常モードの両方を起動できる市販デモ エクスペリエンス (RDX) アプリの作成"
 ms.assetid: f83f950f-7fdd-4f18-8127-b92a8f400061
 translationtype: Human Translation
-ms.sourcegitcommit: 0110cec1857aac519f8e7c1490e5b3a0d8be9ea2
-ms.openlocfilehash: 7a5367ae13be60be6e5b0ee4f62190f8b3330c59
+ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
+ms.openlocfilehash: ca9e27944cc4504400191ef1620949b1e8b64ff2
 
 ---
-#  市販デモ エクスペリエンス (RDX) アプリの作成
+#  <a name="create-a-retail-demo-experience-rdx-app"></a>市販デモ エクスペリエンス (RDX) アプリを作成する
 
 小売店や小売拠点を訪れるお客様は、展示されている最新の PC や携帯電話を見るためにご来店になります。展示されているこれらのデバイスは、市販デモ デバイスと呼ばれます。 お客様の多くはかなりの時間をこれらのデバイスの試用に費やすため、このような市販デモ デバイスやそれらにインストールされているコンテンツは、店舗におけるお客様のエクスペリエンスに大きな影響を与えます。
 
@@ -18,30 +18,30 @@ ms.openlocfilehash: 7a5367ae13be60be6e5b0ee4f62190f8b3330c59
 
 RDX アプリは、ご来店のお客様に常に肯定的なエクスペリエンスを提供できるように、アプリのストア要件に加え、市販デモ デバイスの設定、クリーンアップ、システム更新に完全に対応している必要があります。
 
-## 設計原則
+## <a name="design-principles"></a>設計原則
 
-### 最大のメリットを提示
+### <a name="show-your-best"></a>最大のメリットを提示
 
 市販デモ モードは、アプリケーションのメリットを伝えるために使ってください。  多くの場合、これはお客様がこのアプリケーションに触れる最初の機会です。最も魅力的な部分をアピールしましょう。
     
-### スピーディな伝達
+### <a name="show-it-fast"></a>スピーディな伝達
 
 お客様に見ていただける時間は限られています。アプリの真価がすぐに実感できるように構成してください。 
     
-### シンプルなストーリー
+### <a name="keep-the-story-simple"></a>シンプルなストーリー
     
 市販デモ モードは、ごく限られた時間でアプリの真価を伝えるチャンスであることを常に意識してください。
     
-### エクスペリエンスを重視
+### <a name="focus-on-the-experience"></a>エクスペリエンスを重視
 
 お客様がコンテンツを理解する時間を設けましょう。  魅力的な部分をすばやく伝えることは重要ですが、適切な空白時間を設けることでエクスペリエンスがさらに向上します。
 
-## 技術的要件
+## <a name="technical-requirements"></a>技術的要件
 
 市販デモ エクスペリエンス アプリは、ご来店のお客様にアプリの真価をご理解いただくことを目的としているため、次の技術的要件を満たすと共に、すべての市販デモ エクスペリエンス アプリに関してストアが定めるプライバシー規則に従うことが重要です。
 以下はチェックリストとして利用して、検証プロセスの準備や、テスト プロセスの明確化に役立てることもできます。 これらの要件は、検証プロセスだけでなく、アプリが市販デモ デバイスで実行される限り、市販デモ エクスペリエンス アプリのライフタイム全体にわたって満たす必要があります。
 
-### 必須レベルの要件
+### <a name="critical-level-requirements"></a>必須レベルの要件
    
 これらの必須要件を満たしていない RDX アプリは、可能な限り速やかにすべての市販デモ デバイスから削除されます。
 
@@ -58,7 +58,7 @@ RDX アプリは、ご来店のお客様に常に肯定的なエクスペリエ�
 
     市販デモ デバイスにアプリをインストールするには、アプリが無料アプリであるか、正式な試用モードを持つ必要があります。  お客様は小売店での試用に料金を支払うことは想定していません。 詳しくは、「[試用版での機能の除外または制限](https://msdn.microsoft.com/windows/uwp/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app)」をご覧ください。
 
-### 優先度の高い要件
+### <a name="high-priority-requirements"></a>優先度の高い要件
     
 これらの優先度の高い要件を満たしていない RDX アプリは、直ちに調査して修正する必要があります。 直ちに修正されない場合、このアプリをすべての市販デモ デバイスから削除することがあります。
 
@@ -82,7 +82,7 @@ RDX アプリは、ご来店のお客様に常に肯定的なエクスペリエ�
 
     すべての市販デモ エクスペリエンス アプリのコンテンツは、ティーン以下の年齢区分向けでなければなりません。 詳しくは、[アプリの評価に関する IARC のページ](https://www.globalratings.com/for-developers.aspx)および「[ESRB 評価に関するページ](https://www.esrb.org/ratings/ratings_guide.aspx)をご覧ください。
     
-### 中程度の優先度の要件
+### <a name="medium-priority-requirements"></a>中程度の優先度の要件
 
 Windows リテール ストア チームは、これらの問題の修正方法について、直接開発者に連絡して話し合いの場を設けることがあります。
 
@@ -94,46 +94,46 @@ Windows リテール ストア チームは、これらの問題の修正方法�
     
     アプリのサイズは、800 MB 未満である必要があります。 市販デモ エクスペリエンス アプリがこのサイズ要件を満たしていない場合は、Windows リテール ストア チームに直接お問い合わせください。
 
-## 市販デモ モード開発用のコードベースの準備
+## <a name="preparing-codebase-for-retail-demo-mode-development"></a>市販デモ モード開発用のコードベースの準備
 
 アプリケーションを_通常_モードと_市販_モードのいずれのコード パスで実行するかを指定するブール インジケーターには、Windows 10 SDK の [Windows.System.Profile](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.aspx) 名前空間に含まれる [**RetailInfo**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.aspx) ユーティリティ クラスの [**IsDemoModeEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.isdemomodeenabled.aspx) プロパティを使用します。 
 
 [**RetailInfo.IsDemoModeEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.isdemomodeenabled.aspx) が true なったときに、[**RetailInfo.Properties**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.retailinfo.properties.aspx) を使ってデバイスに関する一連のプロパティを照会することで、さらにカスタマイズした市販デモ エクスペリエンスを構築できます。 これらのプロパティには、[**ManufacturerName**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.knownretailinfoproperties.manufacturername.aspx)、[**Screensize**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.knownretailinfoproperties.screensize.aspx)、[**Memory**](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.knownretailinfoproperties.memory.aspx) などが含まれます。 
 
 
-## クリーンアップ処理
+## <a name="clean-up-process"></a>クリーンアップ処理
 
 一定時間デバイスの操作がない場合は、クリーンアップ処理を使って市販デモ デバイスを元の既定の設定に自動的にリセットします。 この処理により、小売店でお客様がデバイスの試用を開始するとき、デバイスを操作するすべてのお客様に対して、既定のエクスペリエンスが適切に提供されます。 市販デモ エクスペリエンス アプリの開発にあたっては、クリーンアップ処理を開始するタイミングと方法に加え、既定のクリーンアップ処理で行う動作を理解することが重要です。また目的の市販デモ エクスペリエンスの要件に応じて、このクリーンアップ処理をカスタマイズする方法を把握する必要があります。
 
-### クリーンアップ処理を開始するタイミング
+### <a name="when-does-clean-up-begin"></a>クリーンアップ処理を開始するタイミング
 
 クリーンアップ シーケンスは、デバイスのアイドル時間が一定の長さに達した後に開始します。 アイドル時間は、タッチ、マウス、デバイス上のキーボード入力がない場合に、カウントを開始します。
 
-#### デスクトップ/PC
+#### <a name="desktoppc"></a>デスクトップ/PC
 
 120 秒のアイドル時間の後、アイドル状態を予告するアプリ ビデオがデバイス上で再生を開始します。 5 秒後、クリーンアップ処理が開始します。
 
-#### 携帯電話
+#### <a name="phone"></a>携帯電話
 
 60 秒のアイドル時間の後、アイドル状態を予告するアプリ ビデオがデバイス上で再生を開始し、即座にクリーンアップ処理が開始します。
 
-### 既定のクリーンアップ処理の動作
+### <a name="what-happens-during-a-default-clean-up-process"></a>既定のクリーンアップ処理の動作
 
-#### 手順 1: クリーンアップ
+#### <a name="step-1-clean-up"></a>手順 1: クリーンアップ
 * すべての Win32 アプリとストア アプリが終了します
 * __ピクチャ__、__ビデオ__、__ミュージック__、__ドキュメント__、__保存済みの写真__、__カメラロール__、__デスクトップ__、__ダウンロード__フォルダーなどのすべての既知のフォルダーが削除されます
 * 構造化されていないローミング状態と構造化されたローミング状態が削除されます
 * 構造化されたローカル状態が削除されます
 
-#### 手順2: 設定 
+#### <a name="step-2-set-up"></a>手順2: 設定 
 * オフライン デバイスの場合: フォルダーは空のままです
 * オンライン デバイスの場合: Windows ストアから市販デモ アセットがデバイスにプッシュされます
 
-### ユーザー セッション間でデータを保存する方法
+### <a name="how-to-store-data-across-user-sessions"></a>ユーザー セッション間でデータを保存する方法
 
 ユーザー セッション間でデータを保存する場合は、情報を __ApplicationData.Current.TemporaryFolder__ に格納します。このフォルダーのデータは、既定のクリーンアップ処理によって自動的に削除されません。 *LocalState* を使って保存した情報は、クリーンアップ処理中に削除されることに注意してください。 
 
-### クリーンアップ処理をカスタマイズする方法
+### <a name="how-to-customize-the-clean-up-process"></a>クリーンアップ処理をカスタマイズする方法
 
 クリーンアップ処理をカスタマイズする場合は、`Microsoft-RetailDemo-Cleanup` アプリ サービスをアプリに実装する必要があります。 
 
@@ -245,7 +245,7 @@ namespace MyCompany.MyApp
 }
 ```
 
-## 関連リンク
+## <a name="related-links"></a>関連リンク
 
 * [アプリ データの保存と取得](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
 * [アプリ サービスの作成と利用の方法](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
@@ -258,6 +258,6 @@ namespace MyCompany.MyApp
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

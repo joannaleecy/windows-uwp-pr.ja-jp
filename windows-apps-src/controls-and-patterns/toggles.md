@@ -6,11 +6,11 @@ ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
 label: Toggle switches
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: a4fe19dcd6f555273e74236192c5c61e8c6579ab
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 685ef17e17fb17fa620eea84335ce6688a5cfb3e
 
 ---
-# トグル スイッチ
+# <a name="toggle-switches"></a>トグル スイッチ
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
@@ -19,18 +19,13 @@ ms.openlocfilehash: a4fe19dcd6f555273e74236192c5c61e8c6579ab
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx"><strong>ToggleSwitch クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx"><strong>IsOn プロパティ</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx"><strong>Toggled イベント</strong></a></li>
+<li>[**ToggleSwitch クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx)</li>
+<li>[**IsOn プロパティ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx)</li>
+<li>[**Toggled イベント**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 トグル スイッチは、ユーザーがそのトグル スイッチをフリップした後すぐに有効になるバイナリ操作に対して使います。 たとえば、トグル スイッチを使って、WiFi などのサービスまたはハードウェア コンポーネントをオンまたはオフにできます。
 
@@ -40,7 +35,7 @@ ms.openlocfilehash: a4fe19dcd6f555273e74236192c5c61e8c6579ab
 
 ユーザーがスイッチをオンまたはオフに切り替えた後、対応する操作が直ちに実行されるようにすることをお勧めします。
 
-### トグル スイッチとチェック ボックスの選択
+### <a name="choosing-between-toggle-switch-and-check-box"></a>トグル スイッチとチェック ボックスの選択
 
 操作によっては、トグル スイッチまたはチェック ボックスの両方が使えることがあります。 どちらのコントロールがより適切に動作するかを判断するには、次のヒントを参考にしてください。
 
@@ -58,7 +53,7 @@ ms.openlocfilehash: a4fe19dcd6f555273e74236192c5c61e8c6579ab
 
     ![複数の項目が選択されたチェック ボックス](images/guidelines_and_checklist_for_toggle_switches_checkbox_multi_select.png)
 
-## 例
+## <a name="examples"></a>例
 
 ニュース アプリの全般的な設定のトグル スイッチです。
 
@@ -68,7 +63,7 @@ Windows のスタート メニューの設定のトグル スイッチです。
 
 ![Windows のスタート メニューの設定のトグル スイッチ](images/control-examples/toggle-switch-start-settings.png)
 
-## トグル スイッチの作成
+## <a name="create-a-toggle-switch"></a>トグル スイッチの作成
 
 簡単なトグル スイッチを作成する方法を次に示します。 この XAML では、前に示した WiFi トグル スイッチを作成します。
 
@@ -85,7 +80,7 @@ wiFiToggle.Header = "WiFi";
 stackPanel1.Children.Add(wiFiToggle);
 ```
 
-### IsOn
+### <a name="ison"></a>IsOn
 
 スイッチはオンまたはオフにできます。 [**IsOn**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx)プロパティを使って、スイッチの状態を判断します。 スイッチを使って別のバイナリ プロパティの状態を制御している場合、次に示すようにバインドを使うことができます。
 
@@ -96,7 +91,7 @@ stackPanel1.Children.Add(wiFiToggle);
 </StackPanel>
 ```
 
-### Toggled
+### <a name="toggled"></a>Toggled
 
 状況によっては、[**Toggled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx) イベントを処理して状態の変化に対応することができます。
 
@@ -140,7 +135,7 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 }
 ```
 
-### オン/オフ ラベル
+### <a name="onoff-labels"></a>オン/オフ ラベル
 
 既定では、トグル スイッチにはリテラルのオン/オフ ラベルが含まれており、自動的にローカライズされます。 これらのラベルは、[**OnContent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontent.aspx) プロパティと [**OffContent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontent.aspx) プロパティを設定して置き換えることができます。
 
@@ -154,24 +149,20 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 
 [**OnContentTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontenttemplate.aspx) プロパティと [**OffContentTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontenttemplate.aspx) プロパティを設定することで、より複雑なコンテンツを使うこともできます。
 
-## 推奨事項
+## <a name="recommendations"></a>推奨事項
 
 -   設定に対して具体的なラベルがある場合は、それらを "オン" や "オフ" の代わりに使います。 特定の設定に対してより適切な、対になる項目を表す短い (3 ～ 4 文字) ラベルがある場合は、それらを使います。 たとえば、設定が "画像の表示" である場合は、"表示/非表示" などを使います。 より具体的なラベルを使うと、UI のローカライズ時に役立ちます。
 -   "オン" と "オフ" のラベルは、必要がない限り変更しないでください。独自のラベルが必要な場合以外は既定のラベルを使います。
 -   ラベルは 4 文字以内である必要があります。
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
-[**ToggleSwitch**](https://msdn.microsoft.com/library/windows/apps/hh701411)
+- [**ToggleSwitch クラス**](https://msdn.microsoft.com/library/windows/apps/hh701411)
 - [ラジオ ボタン](radio-button.md)
 - [トグル スイッチ](toggles.md)
 - [チェック ボックス](checkbox.md)
 
-**開発者向け (XAML)**
-- [**ToggleSwitch クラス**](https://msdn.microsoft.com/library/windows/apps/br209712)
 
-
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

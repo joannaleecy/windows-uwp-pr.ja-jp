@@ -339,6 +339,13 @@
 #### [アプリをアクティブ化する方法](gaming/how-to-activate-an-app-directx-and-cpp.md)
 #### [アプリを中断する方法](gaming/how-to-suspend-an-app-directx-and-cpp.md)
 #### [アプリを再開する方法](gaming/how-to-resume-an-app-directx-and-cpp.md)
+### [ゲームの入力](gaming/input-for-games.md)
+#### [ゲームパッドとバイブレーション](gaming/gamepad-and-vibration.md)
+#### [アーケード スティック](gaming/arcade-stick.md)
+#### [レース ホイールとフォース フィードバック](gaming/racing-wheel-and-force-feedback.md)
+#### [ヘッドセット](gaming/headset.md)
+#### [UI ナビゲーション コントローラー](gaming/ui-navigation-controller.md)
+#### [ゲームの入力プラクティス](gaming/input-practices-for-games.md)
 ### [DirectX ゲームの 2D グラフィックス](gaming/working-with-2d-graphics-in-your-directx-game.md)
 ### [DirectX ゲームの基本的な 3D グラフィックス](gaming/an-introduction-to-3d-graphics-with-directx.md)
 #### [DirectX リソースの設定と画像の表示](gaming/setting-up-directx-resources.md)
@@ -569,6 +576,7 @@
 #### [アプリの中断の処理](launch-resume/suspend-an-app.md)
 #### [アプリの再開の処理](launch-resume/resume-an-app.md)
 #### [アプリがバックグラウンドに移動したときの空きメモリ](launch-resume/reduce-memory-usage.md)
+#### [延長実行を使った最小化状態での実行](launch-resume/run-minimized-with-extended-execution.md)
 ### [URI を使ったアプリの起動](launch-resume/launch-app-with-uri.md)
 #### [URI に応じた既定のアプリの起動](launch-resume/launch-default-app.md)
 #### [URI のアクティブ化の処理](launch-resume/handle-uri-activation.md)
@@ -670,8 +678,8 @@
 ##### [Windows Phone Silverlight の AdControl](monetize/adcontrol-in-windows-phone-silverlight.md)
 ##### [HTML 5 および JavaScript によるビデオ コンテンツへの広告の追加](monetize/add-advertisements-to-video-content.md)
 #### [コード サンプル](monetize/code-samples.md)
-##### [HTML プロパティの例](monetize/html-properties-example.md)
-##### [XAML プロパティの例](monetize/xaml-properties-example.md)
+##### [AdControl HTML プロパティの例](monetize/html-properties-example.md)
+##### [AdControl XAML プロパティの例](monetize/xaml-properties-example.md)
 ##### [JavaScript での AdControl の作成](monetize/create-an-adcontrol-in-javascript.md)
 ##### [JavaScript の AdControl イベント](monetize/adcontrol-events-in-javascript.md)
 ##### [C の AdControl イベント#](monetize/adcontrol-events-in-c.md)
@@ -683,7 +691,7 @@
 #### [トラブルシューティング ガイド](monetize/troubleshooting-guides.md)
 ##### [HTML と JavaScript のトラブルシューティング ガイド](monetize/html-and-javascript-troubleshooting-guide.md)
 ##### [XAML と C# のトラブルシューティング ガイド](monetize/xaml-and-c-troubleshooting-guide.md)
-### [Windows ストア サービスの使用](monetize/using-windows-store-services.md)
+### [Windows ストア サービス](monetize/using-windows-store-services.md)
 #### [分析データへのアクセス](monetize/access-analytics-data-using-windows-store-services.md)
 ##### [アプリの入手数の取得](monetize/get-app-acquisitions.md)
 ##### [アドオンの入手数の取得](monetize/get-in-app-acquisitions.md)
@@ -748,7 +756,7 @@
 ##### [無料の製品の付与](monetize/grant-free-products.md)
 ##### [Windows ストア ID キーの更新](monetize/renew-a-windows-store-id-key.md)
 #### [広告ネットワーク用のアプリのメタデータ API](monetize/app-metadata-api-for-advertising-networks.md)
-### [小売デモ アプリ](monetize/retail-demo-experience.md)
+### [市販デモ エクスペリエンス (RDX) アプリを作成する](monetize/retail-demo-experience.md)
 ## [ネットワークと Web サービス](networking/index.md)
 ### [ネットワークの基本](networking/networking-basics.md)
 ### [アプリに適したネットワーク テクノロジ](networking/which-networking-technology.md)
@@ -1018,6 +1026,7 @@
 ### [受け取りしきい値、方法、期間](publish/payment-thresholds-methods-and-timeframes.md)
 ### [入金状況](publish/payout-summary.md)
 ### [有料アプリの税の詳細](publish/tax-details-for-paid-apps.md)
+### [IRS の税関連の書類について](publish/understand-irs-tax-forms.md)
 ### [通信事業者の請求](publish/mobile-operator-billing.md)
 ### [付加価値税情報](publish/vat-info.md)
 ## [ストアのポリシーと倫理規定](https://msdn.microsoft.com/library/windows/apps/dn764939.aspx)
@@ -1027,6 +1036,6 @@
 ### [開発者倫理規定](https://msdn.microsoft.com/library/windows/apps/dn764941.aspx)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -4,12 +4,12 @@ title: "バックグラウンド タスクの進捗状況と完了の監視"
 description: "バックグラウンド タスクから報告される進行状況と完了をアプリから認識する方法について説明します。"
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 translationtype: Human Translation
-ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
-ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: c7b6062a624b194b2806788c5f498d87aaa209a2
 
 ---
 
-# バックグラウンド タスクの進捗状況と完了の監視
+# <a name="monitor-background-task-progress-and-completion"></a>バックグラウンド タスクの進捗状況と完了の監視
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -25,9 +25,9 @@ ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
 
  バック グラウンド タスクの進捗状況と完了は、アプリ コードによって監視することができます。 これを行うために、アプリでは、システムに登録されたバックグラウンド タスクのイベントを受信登録します。
 
--   このトピックでは、アプリで既にバックグラウンド タスクが登録されていることを前提とします。 バックグラウンド タスクの作成方法の概要については、「[インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)」または「[アウト プロセス バックグラウンド タスクの作成と登録](create-and-register-an-outofproc-background-task.md)」をご覧ください。 条件とトリガーについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
+-   このトピックでは、アプリで既にバックグラウンド タスクが登録されていることを前提とします。 バックグラウンド タスクの作成方法の概要については、「[インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)」または「[アウト プロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」をご覧ください。 条件とトリガーについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
 
-## 完了したバックグラウンド タスクを処理するイベント ハンドラーの作成
+## <a name="create-an-event-handler-to-handle-completed-background-tasks"></a>完了したバックグラウンド タスクを処理するイベント ハンドラーの作成
 
 1.  完了したバックグラウンド タスクを処理するイベント ハンドラー関数を作ります。 このコードは、[**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) オブジェクトと [**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778) オブジェクトを受け入れる特定のフットプリントに従っている必要があります。
 
@@ -65,7 +65,7 @@ ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
     >     };
     > ```
 
-## バックグラウンド タスクの進行状況を処理するイベント ハンドラー関数の作成
+## <a name="create-an-event-handler-function-to-handle-background-task-progress"></a>バックグラウンド タスクの進行状況を処理するイベント ハンドラー関数の作成
 
 1.  完了したバックグラウンド タスクを処理するイベント ハンドラー関数を作ります。 このコードは、[**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) オブジェクトと [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) オブジェクトを受け入れる特定のフットプリントに従っている必要があります。
 
@@ -109,7 +109,7 @@ ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
     >     };
     > ```
 
-## 新規および既存のバックグラウンド タスクと共にイベント ハンドラー関数を登録する
+## <a name="register-the-event-handler-functions-with-new-and-existing-background-tasks"></a>新規および既存のバックグラウンド タスクと共にイベント ハンドラー関数を登録する
 
 
 1.  アプリで初めてバックグラウンド タスクを登録するときは、フォアグラウンドでまだアプリがアクティブになっていてタスクか実行されている場合に、進行状況と完了の更新を受け取ることができるように登録する必要があります。
@@ -195,10 +195,10 @@ ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
     >     }
     > ```
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)。
-* [アウト プロセス バックグラウンド タスクの作成と登録](create-and-register-an-outofproc-background-task.md)
+* [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
 * [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
 * [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
 * [バックグラウンド タスクの登録](register-a-background-task.md)
@@ -213,6 +213,6 @@ ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -6,11 +6,11 @@ ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 9b21a15edcead96fdc1a335a1c6e58cc0a279858
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 8be3dfed1e6fda1777905a73db4b0eae1e3368dd
 
 ---
-# スライダー
+# <a name="sliders"></a>スライダー
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -21,20 +21,14 @@ ms.openlocfilehash: 9b21a15edcead96fdc1a335a1c6e58cc0a279858
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx"><strong>Slider クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx"><strong>Value プロパティ</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx"><strong>ValueChanged イベント</strong></a></li>
+<li>[**Slider クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)</li>
+<li>[**Value プロパティ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)</li>
+<li>[**ValueChanged イベント**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 定義された連続的な値 (音量や明るさなど) または個別の値の範囲 (画面解像度の設定など) をユーザーが設定できるようにする場合に、スライダーを使います。
 
@@ -59,7 +53,7 @@ ms.openlocfilehash: 9b21a15edcead96fdc1a335a1c6e58cc0a279858
 
 -   ユーザーにとって、すぐに結果がわかると便利。
 
-## 例
+## <a name="examples"></a>例
 
 Windows Phone の音量を制御するためのスライダー。
 
@@ -69,7 +63,7 @@ Windows 画面設定でテキスト サイズを変更するためのスライ�
 
 ![Windows 画面設定でテキスト サイズを変更するためのスライダー](images/control-examples/slider-display-settings.png)
 
-## スライダーの作成
+## <a name="create-a-slider"></a>スライダーの作成
 
 XAML でスライダーを作成する方法を次に示します。
 
@@ -103,7 +97,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 }
 ```
 
-## 推奨事項
+## <a name="recommendations"></a>推奨事項
 
 -   コントロールのサイズは、ユーザーが値を簡単に設定できる大きさにします。 個別の値を設定する場合は、ユーザーがマウスを使って値を簡単に選べるようにします。 スライダーのエンドポイントが、常にビューの境界内にあることを確認します。
 -   ユーザーが選んでいるときまたは選んだ後で、すぐに結果が確認できるようにします (それが実際的な場合)。 たとえば、Windows のボリューム コントロールは、選ばれたオーディオ音量を示すためにビープ音を鳴らします。
@@ -114,9 +108,9 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 -   スライダーのつまみは、既定のサイズのままにします。
 -   値の範囲が広く、ユーザーが選ぶのは範囲内のいくつかの代表的な値であることがほとんどの場合は、連続的なスライダーを作成しません。 代わりに、それらの値だけを、許可される間隔として使います。 たとえば、時間の最大値は 1 か月であっても、ユーザーが 1 分、1 時間、1 日、1 か月のいずれかを選ぶ場合は、4 つの間隔位置だけのスライダーを作成します。
 
-## その他の使い方のガイダンス
+## <a name="additional-usage-guidance"></a>その他の使い方のガイダンス
 
-### 適切なレイアウトの選択: 水平または垂直
+### <a name="choosing-the-right-layout-horizontal-or-vertical"></a>適切なレイアウトの選択: 水平または垂直
 
 スライダーは、水平方向または垂直方向に向きを設定できます。 次のガイドラインを使って、使うレイアウトを決めます。
 
@@ -125,7 +119,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 -   1 つの方向 (水平または垂直) にパンするページでスライダーを使う場合は、パンの方向とは異なる方向をスライダーに使います。 そうしないと、ユーザーはページをパンしようとしてスライダーをスワイプし、誤って値を変えてしまう場合があります。
 -   使用する方向がまだ決まらない場合は、ページ レイアウトに適した方を使います。
 
-### 範囲方向
+### <a name="range-direction"></a>範囲方向
 
 範囲方向とは、現在の値から最大値へスライダーを動かす方向のことです。
 
@@ -133,7 +127,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 -   水平方向のスタイルでは、ページ レイアウトが左から右への場合は、低い方の値をスライダーの左側に配置します。ページ レイアウトが右から左への場合は、右側に配置します。
 -   前のガイドラインの 1 つの例外は、メディア シーク バーです。このバーでは、低い方の値を常にスライダーの左側に配置します。
 
-### 間隔と目盛り
+### <a name="steps-and-tick-marks"></a>間隔と目盛り
 
 -   スライダーで最小値から最大値までの任意の値を許可するのではない場合は、間隔位置を使います。たとえば、購入する映画のチケットの数を指定するためにスライダーを使う場合、浮動小数点値は許可しません。 間隔の値を 1 にします。
 -   間隔 (スナップ位置とも言います) を指定する場合、最後のステップがスライダーの最大値に揃うようにします。
@@ -142,7 +136,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 -   選択した設定の正確な値を、コントロールを操作しなくてもユーザーが確認できるようにするには、目盛りと値ラベルを表示します。 または、値ヒントを使って、正確な値が見られるようにします。
 -   間隔位置が明白でない場合は、常に目盛りを表示します。 たとえば、スライダーの幅が 200 ピクセルで、200 のスナップ位置がある場合は、ユーザーはスナップの動作に気付かないので、目盛りを非表示にできます。 しかし、スナップ位置が 10 個しかない場合は、目盛りを表示します。
 
-### ラベル
+### <a name="labels"></a>ラベル
 
 -   **スライダー ラベル**
 
@@ -168,7 +162,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
     -   テキストをコントロールに対して中央に配置し、単位 (ピクセルなど) を付記します。
     -   スライダーのつまみはスクラブ中に隠れるため、ラベルや他の視覚効果で現在の値を表示することをお勧めします。 スライダー設定のテキスト サイズは、スライダー以外の適切なサイズのサンプル テキストに連動させることができます。
 
-### 外観と操作
+### <a name="appearance-and-interaction"></a>外観と操作
 
 スライダーはトラックとつまみで構成されます。 トラックは入力できる値の範囲を表すバーです (オプションでさまざまなスタイルの目盛りを表示できます)。 つまみは、ユーザーがトラックをタップするか、トラックを前後にスクラブして位置を調整できるセレクターです。
 
@@ -176,15 +170,12 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 カスタム スライダーを設計する際は、余分な要素をできるだけなくし、ユーザーに必要なすべての情報を示す方法を検討してください。 ユーザーが設定を理解できるように単位を表示する必要がある場合は、値ラベルを使います。これらの値を視覚的に示す方法を工夫してください。 たとえば、音量を調整するスライダーでは、スライダーの最小の端に音波のないスピーカーのグラフィック、最大の端に音波のあるスピーカーのグラフィックを表示できます。
 
-## 関連トピック
-
-**デザイナー向け**
-- [トグル スイッチのガイドライン](toggles.md)
-**開発者向け (XAML)**
+## <a name="related-topics"></a>関連トピック
+- [トグル スイッチ](toggles.md)
 - [**Slider クラス**](https://msdn.microsoft.com/library/windows/apps/br209614)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

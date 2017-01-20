@@ -4,8 +4,8 @@ ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: "データ バインディングの詳細"
 description: "データ バインディングは、アプリの UI でデータを表示し、必要に応じてそのデータとの同期を保つ方法です。"
 translationtype: Human Translation
-ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
-ms.openlocfilehash: 48db13fec4ce9c6a9a998c84ddaaba30f7a24d83
+ms.sourcegitcommit: fa3a3cf6194f04a05301ae4dfb75a7a21ff22e73
+ms.openlocfilehash: fca2c9a795e38983f439d6df5c5a7394c29c1217
 
 ---
 # <a name="data-binding-in-depth"></a>データ バインディングの詳細
@@ -371,7 +371,7 @@ End Class
 
 ## <a name="function-binding-in-xbind"></a>{X:Bind} の関数バインド
 
-{x:Bind} は関数となるバインディング パスの最終ステップを有効化します。 これを使って変換を実行できます。また 1 つ以上のプロパティに依存するバインディングを実行できます。 「[**{x:Bind} マークアップ拡張**](https://msdn.microsoft.com/en-us/windows/uwp/xaml-platform/x-bind-markup-extension)」をご覧ください。
+{x:Bind} は関数となるバインディング パスの最終ステップを有効化します。 これを使って変換を実行できます。また 1 つ以上のプロパティに依存するバインディングを実行できます。 「[**{x:Bind} マークアップ拡張**](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)」をご覧ください。
 
 <span id="resource-dictionaries-with-x-bind"/>
 ## <a name="resource-dictionaries-with-xbind"></a>リソース ディクショナリと {x:Bind}
@@ -653,6 +653,6 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 
