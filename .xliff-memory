@@ -13589,6 +13589,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6f72004562443295094824a5c98405a785a346b0.66fb4684905e316490a61352a0ef2b569668841a.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md.97699ed8df350bd2c3eb5d19bd77faa133affd55.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md",
+      "XliffHash": "97699ed8df350bd2c3eb5d19bd77faa133affd55",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b3161c9770d2bda6580a13f47da71e0888cb9bb3.bce14128d983256677c9e139b5c52b8bd5a7e863.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\code-examples-for-the-windows-store-submission-api.md.245dbe4a2d65721a528a3d15aad32d4d8b7f7ddf.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\code-examples-for-the-windows-store-submission-api.md",
+      "XliffHash": "245dbe4a2d65721a528a3d15aad32d4d8b7f7ddf",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b4b81217fb5f6bf632d6b7a15d2bdeb61c562616.d766862dffda964240aca952b838de039ccb90c7.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

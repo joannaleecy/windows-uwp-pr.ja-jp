@@ -5090,6 +5090,9 @@
   "1f77ca4191de09361bae752ba72fd6239c44ad1b": [
     "windows-apps-src\\gaming\\concept-approval.md"
   ],
+  "b4b81217fb5f6bf632d6b7a15d2bdeb61c562616": [
+    "windows-apps-src\\monetize\\code-examples-for-the-windows-store-submission-api.md"
+  ],
   "62ae4018d06bb13d0ca660e635a07c5fbbb9fb7f": [
     "windows-apps-src\\monetize\\code-examples-for-the-windows-store-submission-api.md"
   ],
@@ -5143,6 +5146,9 @@
   ],
   "dc5fcdd7a3181e07874b761c7183c6c539591704": [
     "windows-apps-src\\monetize\\create-an-app-submission.md"
+  ],
+  "b3161c9770d2bda6580a13f47da71e0888cb9bb3": [
+    "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
   ],
   "ef594f8f889e82fd0c94b4ec537c9444102af8c0": [
     "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
