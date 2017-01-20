@@ -13519,6 +13519,76 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\71f633c724c95b46dc48c8ab3573ac0cc6c90479.0914c63d010bdb0d4d241cca82d470ec7474cb4f.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\hwa-create-mac.md.b3db185f71853fa90bf26fee451e7e0cf0263689.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\hwa-create-mac.md",
+      "XliffHash": "b3db185f71853fa90bf26fee451e7e0cf0263689",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e59b39ab8386b74d5481fef8043390083bf3f4d2.fdcbdf56c467bdf5ee0aec3d78f991f36aa1dcdd.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\hwa-to-uwp-root.md.7d17bbd737dcc9972e3f1d9659a48f403d76cb89.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\hwa-to-uwp-root.md",
+      "XliffHash": "7d17bbd737dcc9972e3f1d9659a48f403d76cb89",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c9239f3a3c14bf9da99e60cfef8154eefb4305b4.86c8dc8f00426a95964ac441d2be5f4de99745df.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\hwa-create-windows.md.47e76efd9fefaf4ab484585180e9fea5700b494b.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\hwa-create-windows.md",
+      "XliffHash": "47e76efd9fefaf4ab484585180e9fea5700b494b",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9c2df3b441990b1e0f17df3cd442772d75091bac.d93fe3e554db657d5234bc665e63db4817ea78ba.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\hwa-access-features.md.656e89b1cad601c450acf57b5a8303f53462628d.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\hwa-access-features.md",
+      "XliffHash": "656e89b1cad601c450acf57b5a8303f53462628d",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1026fc37564035c3b71acfc79cfbf73022acd493.7780f1cd3593f9a0eb3e96bbdc80b8d37739bc51.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\hwa-chrome-conversion.md.138d996a8153d042b0156653aa03411495b08576.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\hwa-chrome-conversion.md",
+      "XliffHash": "138d996a8153d042b0156653aa03411495b08576",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e441c36f6b42f8cb417569517a9d0c91c0b89a66.6b2e0503055730c9d445eddbf92df49c40f74110.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\publish\\upload-app-packages.md.8d6d36990795ebdc2e457bed02b0f56f14bf034f.HT": {
+      "SourceFilename": "windows-apps-src\\publish\\upload-app-packages.md",
+      "XliffHash": "8d6d36990795ebdc2e457bed02b0f56f14bf034f",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1bc2ce82688db20315113efc9b080b449a850f05.c451cb011ac9966ba9e1c53e01b3302d0d261b64.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\publish\\send-push-notifications-to-your-apps-customers.md.b88b86a18fea7521c88eb0764f6e36327a27e251.HT": {
+      "SourceFilename": "windows-apps-src\\publish\\send-push-notifications-to-your-apps-customers.md",
+      "XliffHash": "b88b86a18fea7521c88eb0764f6e36327a27e251",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6f72004562443295094824a5c98405a785a346b0.66fb4684905e316490a61352a0ef2b569668841a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

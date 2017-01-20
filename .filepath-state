@@ -4346,6 +4346,9 @@
   "f4946ac6e163dd84806d52a1775301ac231d2b9d": [
     "windows-apps-src\\publish\\trademark-and-copyright-protection.md"
   ],
+  "1bc2ce82688db20315113efc9b080b449a850f05": [
+    "windows-apps-src\\publish\\upload-app-packages.md"
+  ],
   "8a4afc6969298e4d34a15961950f57292d839923": [
     "windows-apps-src\\publish\\upload-app-packages.md"
   ],
@@ -5300,11 +5303,17 @@
   "405b9b100be93f7098eb384d6b48b8690f5e6309": [
     "windows-apps-src\\porting\\desktop-to-uwp-extensions.md"
   ],
+  "1026fc37564035c3b71acfc79cfbf73022acd493": [
+    "windows-apps-src\\porting\\hwa-access-features.md"
+  ],
   "8082115e5ba204c18a04d5df939d8b9dede5a7cd": [
     "windows-apps-src\\porting\\hwa-access-features.md"
   ],
   "fb74bfc40750941860dae0a8f811fde4a614e403": [
     "windows-apps-src\\porting\\hwa-access-features.md"
+  ],
+  "e441c36f6b42f8cb417569517a9d0c91c0b89a66": [
+    "windows-apps-src\\porting\\hwa-chrome-conversion.md"
   ],
   "7ace595c7b93ec89dffa312b4ff9ec724db458bb": [
     "windows-apps-src\\porting\\hwa-chrome-conversion.md"
@@ -5312,17 +5321,26 @@
   "84cdd12e2a38aafeb989c0f33b1212077dc1d98e": [
     "windows-apps-src\\porting\\hwa-chrome-conversion.md"
   ],
+  "e59b39ab8386b74d5481fef8043390083bf3f4d2": [
+    "windows-apps-src\\porting\\hwa-create-mac.md"
+  ],
   "281acae04c4fab9429745a3341702cc2132fb1d5": [
     "windows-apps-src\\porting\\hwa-create-mac.md"
   ],
   "3ba820e2ec8a3556874c0c7c7e328831bab783ca": [
     "windows-apps-src\\porting\\hwa-create-mac.md"
   ],
+  "9c2df3b441990b1e0f17df3cd442772d75091bac": [
+    "windows-apps-src\\porting\\hwa-create-windows.md"
+  ],
   "6be2e2ff40fba7fb4a7c96e014364b3e918f8ea5": [
     "windows-apps-src\\porting\\hwa-create-windows.md"
   ],
   "1cb4757896c9fecf05224a26949cd6e2ddffdb45": [
     "windows-apps-src\\porting\\hwa-create-windows.md"
+  ],
+  "c9239f3a3c14bf9da99e60cfef8154eefb4305b4": [
+    "windows-apps-src\\porting\\hwa-to-uwp-root.md"
   ],
   "95d50aa37f349f494f260ea3af97211a085623a9": [
     "windows-apps-src\\porting\\hwa-to-uwp-root.md"
@@ -7267,6 +7285,9 @@
   ],
   "28906c98d2826f5312e01713e2621159c6b24923": [
     "windows-apps-src\\publish\\create-customer-segments.md"
+  ],
+  "6f72004562443295094824a5c98405a785a346b0": [
+    "windows-apps-src\\publish\\send-push-notifications-to-your-apps-customers.md"
   ],
   "f7fe35b03671321e3583838921f229e7af065471": [
     "windows-apps-src\\publish\\send-push-notifications-to-your-apps-customers.md"
