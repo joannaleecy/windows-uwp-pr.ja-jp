@@ -1811,6 +1811,9 @@
   "729c71fbe0db202bd4f5ce15bea87caa973adf80": [
     "windows-apps-src\\get-started\\get-set-up.md"
   ],
+  "f1a1af29b22ffda281acfa0b57262313c8854f0f": [
+    "windows-apps-src\\get-started\\learn-more.md"
+  ],
   "fef88c783884af8f8c33c4e767434396b78749a3": [
     "windows-apps-src\\get-started\\learn-more.md"
   ],
@@ -1834,6 +1837,9 @@
   ],
   "170bbb4e22b3ac642b0dfd0c9136d3dd39d519d0": [
     "windows-apps-src\\get-started\\universal-application-platform-guide.md"
+  ],
+  "399cb1a84a3fb56a0403fbfd7c1eaacbc67a8e84": [
+    "windows-apps-src\\get-started\\whats-a-uwp.md"
   ],
   "e351f140e1414a714da2359f4afc400a60c65db1": [
     "windows-apps-src\\get-started\\whats-a-uwp.md"
@@ -6436,6 +6442,9 @@
   ],
   "854ec43d075f8adc1f875d3b9e5e2d818434edb9": [
     "windows-apps-src\\debug-test-perf\\optimize-background-activity.md"
+  ],
+  "ddf9676fd817eb333a80110c8d2d7d87a93d6b2d": [
+    "windows-apps-src\\layout\\grid-tutorial.md"
   ],
   "248b345cdca2077315cbb0a0f8890ea3dd13f19a": [
     "windows-apps-src\\layout\\grid-tutorial.md"
