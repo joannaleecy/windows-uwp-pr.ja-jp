@@ -1832,6 +1832,9 @@
   "ddba8a7fe517ecb538a5632355fcb73a17fe54f7": [
     "windows-apps-src\\get-started\\sign-up.md"
   ],
+  "8592a2855cdb7524462dbc2f761f0077a421af09": [
+    "windows-apps-src\\get-started\\universal-application-platform-guide.md"
+  ],
   "54dac9a58a128eb5b8fd7d54520b81ead63fdea8": [
     "windows-apps-src\\get-started\\universal-application-platform-guide.md"
   ],
@@ -2267,6 +2270,9 @@
   "4d8a00cf7bd151ab97e9abc10a09a3794a0e292f": [
     "windows-apps-src\\launch-resume\\add-a-splash-screen.md"
   ],
+  "9551b7c46843ea3e571a6147999d81afe6e5d13e": [
+    "windows-apps-src\\launch-resume\\app-lifecycle.md"
+  ],
   "2d2027b9594c9ba3fe8e04251af90407397991ed": [
     "windows-apps-src\\launch-resume\\app-lifecycle.md"
   ],
@@ -2291,6 +2297,9 @@
   "868fb7f1285ddd4f3e5120779ccf81a9ba55f8db": [
     "windows-apps-src\\launch-resume\\create-and-register-a-background-task.md"
   ],
+  "cce71f25b5b0440a999121b63f13d1bd6bc3e8a9": [
+    "windows-apps-src\\launch-resume\\debug-a-background-task.md"
+  ],
   "d6e3e21d5db463aa62e9537185d61cbebe34a5c4": [
     "windows-apps-src\\launch-resume\\debug-a-background-task.md"
   ],
@@ -2303,6 +2312,9 @@
   "b3518780600b9fe8f9be5af48eb5ee6022ec350f": [
     "windows-apps-src\\launch-resume\\declare-background-tasks-in-the-application-manifest.md"
   ],
+  "14bc9a633ed944ae89cd822e000852dc1fb04651": [
+    "windows-apps-src\\launch-resume\\guidelines-for-background-tasks.md"
+  ],
   "987f413b92a078de2765a4367489f31454106877": [
     "windows-apps-src\\launch-resume\\guidelines-for-background-tasks.md"
   ],
@@ -2314,6 +2326,9 @@
   ],
   "ba40aefe83a02d29150dd25e1303ec15bb032b8c": [
     "windows-apps-src\\launch-resume\\handle-a-cancelled-background-task.md"
+  ],
+  "3b5586bc2ed667c1bf77c0a3cd3cf21a2af27a2f": [
+    "windows-apps-src\\launch-resume\\handle-app-prelaunch.md"
   ],
   "83902375e9b8f159b290dbcda3b5db005a21f2c3": [
     "windows-apps-src\\launch-resume\\handle-app-prelaunch.md"
@@ -2429,11 +2444,17 @@
   "c83f861f43209c42dff661e3277e1d8a1b67d37c": [
     "windows-apps-src\\launch-resume\\set-conditions-for-running-a-background-task.md"
   ],
+  "c9cbfd958477e926c85aae281e14f2f30c322cb8": [
+    "windows-apps-src\\launch-resume\\support-your-app-with-background-tasks.md"
+  ],
   "1c8c799ca9631f2999b6f5bb843f7cc7866ffc28": [
     "windows-apps-src\\launch-resume\\support-your-app-with-background-tasks.md"
   ],
   "9f83717657fddf2df51589aae75a3aa21c6ef5da": [
     "windows-apps-src\\launch-resume\\support-your-app-with-background-tasks.md"
+  ],
+  "018e12aca7de48fc866c0557913562144592f702": [
+    "windows-apps-src\\launch-resume\\suspend-an-app.md"
   ],
   "a744b6c7fa46bd20f59fcb318d9265a53c69291a": [
     "windows-apps-src\\launch-resume\\suspend-an-app.md"
@@ -4733,6 +4754,9 @@
   "bb401b73432c072d551814dec9504a7d1742b7d4": [
     "windows-apps-src\\apps-for-education\\index.md"
   ],
+  "63e886874c332190e0e6d532f4d4b83a8fbe2bac": [
+    "windows-apps-src\\apps-for-education\\take-a-test-api.md"
+  ],
   "69038d3528b203b5085a2bbb78c920ca396976c4": [
     "windows-apps-src\\apps-for-education\\take-a-test-api.md"
   ],
@@ -4904,17 +4928,26 @@
   "c6a094c1939c3f34926f998a8206b0e2d7ea6aa0": [
     "windows-apps-src\\launch-resume\\communicate-with-a-remote-app-service.md"
   ],
+  "e21e5cfe652498e08403a2cfb88e3eaa96449ee4": [
+    "windows-apps-src\\launch-resume\\connected-apps-and-devices.md"
+  ],
   "b2fd97176301ee2ee0faff1be54bfb54e427f11f": [
     "windows-apps-src\\launch-resume\\connected-apps-and-devices.md"
   ],
   "2dbce34aeaf4933eee22e1e8ef40c48e633f6f7e": [
     "windows-apps-src\\launch-resume\\connected-apps-and-devices.md"
   ],
+  "b169263b81c0a2c57c5fc9d23459cb8151024152": [
+    "windows-apps-src\\launch-resume\\launch-a-remote-app.md"
+  ],
   "d83a0f0afb6043fb9789f1dc328a124aed0df0b8": [
     "windows-apps-src\\launch-resume\\launch-a-remote-app.md"
   ],
   "d429ea4a6f8d52445c99cb170bb41c3fc1515dde": [
     "windows-apps-src\\launch-resume\\launch-a-remote-app.md"
+  ],
+  "534eaaf0b712702c2600382c18a79ed4e5379ffc": [
+    "windows-apps-src\\launch-resume\\reduce-memory-usage.md"
   ],
   "b9ebe9363d97a800f04ff3fdded8f171d65373e8": [
     "windows-apps-src\\launch-resume\\reduce-memory-usage.md"
@@ -5077,6 +5110,9 @@
   ],
   "72ac67b17fc519d374798e5121b309f664ff6b1b": [
     "windows-apps-src\\get-started\\application-development-for-windows-as-a-service.md"
+  ],
+  "084ce01ffd5e99501095ba74518a58c6a2148543": [
+    "windows-apps-src\\launch-resume\\launch-ringtone-picker.md"
   ],
   "e352c88bc8ce11df3b5fd5246d13984e1ac0fa50": [
     "windows-apps-src\\launch-resume\\launch-ringtone-picker.md"
@@ -6256,6 +6292,9 @@
   ],
   "80402d12a51ea970f5927dc50cae587be8809b87": [
     "windows-apps-src\\launch-resume\\convert-app-service-in-process.md"
+  ],
+  "06ee953588945677cb623269d9b104d3f35d83bb": [
+    "windows-apps-src\\launch-resume\\convert-out-of-process-background-task.md"
   ],
   "808996695dc40579ceb06891fb032e517f06e6af": [
     "windows-apps-src\\launch-resume\\convert-out-of-process-background-task.md"
