@@ -1925,6 +1925,9 @@
   "72b70dd2ae4de385f2a4711477aebb6d7023158c": [
     "windows-apps-src\\graphics\\composition-animation.md"
   ],
+  "71ffd720dac0be29f003da965054db16ae8e39c0": [
+    "windows-apps-src\\graphics\\composition-brushes.md"
+  ],
   "b1ff95afef1269a70eb3c0f46650d0ba1ac2dd71": [
     "windows-apps-src\\graphics\\composition-brushes.md"
   ],
@@ -5017,6 +5020,9 @@
   ],
   "7ab2c9f1054509f816ef9647f340e61b6a281d8a": [
     "windows-apps-src\\whats-new\\windows-10-version-1607-api-diff.md"
+  ],
+  "d60af56da1e203039f925cfc482ec26405df7529": [
+    "windows-apps-src\\gaming\\relative-mouse-movement.md"
   ],
   "76ef3e6b2583acacfa63ca96113436975e3ebcef": [
     "windows-apps-src\\gaming\\relative-mouse-movement.md"

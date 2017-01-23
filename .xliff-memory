@@ -13769,6 +13769,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8592a2855cdb7524462dbc2f761f0077a421af09.202273001898f96c3f12029b3b4092abda9e3243.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\relative-mouse-movement.md.313648dfbf6eb0ba5e40123217bfbcb4685e37e4.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\relative-mouse-movement.md",
+      "XliffHash": "313648dfbf6eb0ba5e40123217bfbcb4685e37e4",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d60af56da1e203039f925cfc482ec26405df7529.73f934fc8364aec7bcbc7391d593bf79b61f3634.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics\\composition-brushes.md.c576e3dc1d127e7781b13da2736cae1263b5babc.HT": {
+      "SourceFilename": "windows-apps-src\\graphics\\composition-brushes.md",
+      "XliffHash": "c576e3dc1d127e7781b13da2736cae1263b5babc",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\71ffd720dac0be29f003da965054db16ae8e39c0.25673bdefabe8ae37c91c589b52c5025935ad2fc.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
