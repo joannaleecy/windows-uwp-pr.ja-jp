@@ -1811,6 +1811,9 @@
   "729c71fbe0db202bd4f5ce15bea87caa973adf80": [
     "windows-apps-src\\get-started\\get-set-up.md"
   ],
+  "f39d46c146b2e2bb904935aa3f0854ed6934eb3d": [
+    "windows-apps-src\\get-started\\learn-more.md"
+  ],
   "f1a1af29b22ffda281acfa0b57262313c8854f0f": [
     "windows-apps-src\\get-started\\learn-more.md"
   ],
@@ -5020,6 +5023,9 @@
   ],
   "7ab2c9f1054509f816ef9647f340e61b6a281d8a": [
     "windows-apps-src\\whats-new\\windows-10-version-1607-api-diff.md"
+  ],
+  "941855a9fb9bdcaf4cfaa78adf1a1045bdda93ce": [
+    "windows-apps-src\\gaming\\relative-mouse-movement.md"
   ],
   "d60af56da1e203039f925cfc482ec26405df7529": [
     "windows-apps-src\\gaming\\relative-mouse-movement.md"

@@ -13789,6 +13789,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\71ffd720dac0be29f003da965054db16ae8e39c0.25673bdefabe8ae37c91c589b52c5025935ad2fc.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\learn-more.md.64783b62ee9ed8d4d2c9f0f1ca94010a42ff2847.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\learn-more.md",
+      "XliffHash": "64783b62ee9ed8d4d2c9f0f1ca94010a42ff2847",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f39d46c146b2e2bb904935aa3f0854ed6934eb3d.31054046d54f6c357994faffdd429fa991aa9fe4.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\relative-mouse-movement.md.b0c5e9cc58f7804f262a0eb7364de43b45afea22.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\relative-mouse-movement.md",
+      "XliffHash": "b0c5e9cc58f7804f262a0eb7364de43b45afea22",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\941855a9fb9bdcaf4cfaa78adf1a1045bdda93ce.6a19782cc40b9eaa8f0142c8545a05363e9d73a3.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
