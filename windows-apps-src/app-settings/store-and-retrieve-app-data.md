@@ -441,7 +441,7 @@ localSettings.DeleteContainer("exampleContainer");
 ## <a name="versioning-your-app-data"></a>アプリ データのバージョン管理
 
 
-必要に応じて、アプリのアプリ データをバージョン管理することもできます。 これにより、将来作成するアプリのバージョンでアプリ データの形式を変更しても、以前のバージョンとの互換性に問題が起こりません。 データ ストア内のアプリ データのバージョンをアプリが確認し、以前のバージョンであった場合、アプリ データは新しい形式に更新され、バージョンも更新されます。 詳しくは、「[** Application.Version**](https://msdn.microsoft.com/library/windows/apps/br241630) プロパティ」と「[**ApplicationData.SetVersionAsync**](https://msdn.microsoft.com/library/windows/apps/hh701429) メソッド」をご覧ください。
+必要に応じて、アプリのアプリ データをバージョン管理することもできます。 これにより、将来作成するアプリのバージョンでアプリ データの形式を変更しても、以前のバージョンとの互換性に問題が起こりません。 データ ストア内のアプリ データのバージョンをアプリが確認し、以前のバージョンであった場合、アプリ データは新しい形式に更新され、バージョンも更新されます。 詳しくは、「[**Application.Version**](https://msdn.microsoft.com/library/windows/apps/br241630) プロパティ」と「[**ApplicationData.SetVersionAsync**](https://msdn.microsoft.com/library/windows/apps/hh701429) メソッド」をご覧ください。
 
 ## <a name="related-articles"></a>関連記事
 
