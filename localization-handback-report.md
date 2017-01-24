@@ -1,33 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\app-settings\store-and-retrieve-app-data.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3c073879ab847a3e1af454e0c1550d8af0f78b3e?path=windows-apps-src%2Fapp-settings%2Fstore-and-retrieve-app-data.md&_a=contents) | HandedOffSuccess | [Details](#7d328a67c37d5bf9b0498bc5b5d862fdb6f1d72b82)
 
 ## Item Details
-##### <a name='7d328a67c37d5bf9b0498bc5b5d862fdb6f1d72b82'></a> Source: [windows-apps-src\app-settings\store-and-retrieve-app-data.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3c073879ab847a3e1af454e0c1550d8af0f78b3e?path=windows-apps-src%2Fapp-settings%2Fstore-and-retrieve-app-data.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [store-and-retrieve-app-data.5da8a763047d281092870b7268f4d599223c086e.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/8423d1d7c72b00a366abf91ec4fdb36211976055?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fstore-and-retrieve-app-data.5da8a763047d281092870b7268f4d599223c086e.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-01-19 01:49:59
-* Handoff Reason: Include
-* Handoff Name: 
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Handback Name: 
-* Current Target File: [windows-apps-src\app-settings\store-and-retrieve-app-data.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/7dba01aefd8c323f98d1d0e17b62a94bde3dfebc?path=windows-apps-src%2Fapp-settings%2Fstore-and-retrieve-app-data.md&_a=contents)
-* Current Handback File: [store-and-retrieve-app-data.5da8a763047d281092870b7268f4d599223c086e.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/9c1f01c4550d5fdd42fc4b5d152648bc5518ace1?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fstore-and-retrieve-app-data.5da8a763047d281092870b7268f4d599223c086e.ja-jp.xlf&_a=contents)
-* Current Handback Datetime: 2017-01-24 18:30:26
-* Bilingual File: [store-and-retrieve-app-data.5da8a763047d281092870b7268f4d599223c086e.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/f4949b6a371ff9640aa76dfd4ccf284889b93315?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fstore-and-retrieve-app-data.5da8a763047d281092870b7268f4d599223c086e.ja-jp.xlf&_a=contents)
-* Bilingual Datetime: 2017-01-20 14:54:09
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
