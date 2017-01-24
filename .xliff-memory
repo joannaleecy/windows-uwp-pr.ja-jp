@@ -688,7 +688,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\08ad1fbddc3db2c8329594419fefdc1aa0659092.d479c93c063e7f4eb8e7f23bb2a8d5aac98d3735.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\store-and-retrieve-app-data.5da8a763047d281092870b7268f4d599223c086e.ja-jp.xlf",
-      "LocXliffCommit": "f4949b6a371ff9640aa76dfd4ccf284889b93315"
+      "LocXliffCommit": "9c1f01c4550d5fdd42fc4b5d152648bc5518ace1"
     },
     "windows-apps-src\\input-and-devices\\multiple-input-design-guidelines.md.802a225c4f3bb710c9638a3823f255cdfe34d00e.HT": {
       "SourceFilename": "windows-apps-src\\input-and-devices\\multiple-input-design-guidelines.md",
