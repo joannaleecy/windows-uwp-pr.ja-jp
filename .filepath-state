@@ -2627,6 +2627,9 @@
   "e91f0bbb203ef1c77ad1435b1a3f10aa53c3a483": [
     "windows-apps-src\\maps-and-location\\set-up-a-geofence.md"
   ],
+  "c3a4a5d0a88ef517455798181d461b6f0beddacd": [
+    "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
+  ],
   "a9b80601b76ddef97d9affd2bc18f8c4ae7b7f5f": [
     "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
   ],
@@ -2782,6 +2785,9 @@
   ],
   "86685984256459e0bb125340daa1616b09982429": [
     "windows-apps-src\\monetize\\get-app-ratings.md"
+  ],
+  "f8dd6e05dc265c29a624189b37463aa3afb3a0fd": [
+    "windows-apps-src\\monetize\\get-app-reviews.md"
   ],
   "72485bacf18e6224b867f4928c691593a7e6e7dc": [
     "windows-apps-src\\monetize\\get-app-reviews.md"
@@ -2993,6 +2999,9 @@
   "55631d364ca6f2d76d214eca6d00fbdd969c0e15": [
     "windows-apps-src\\monetize\\use-receipts-to-verify-product-purchases.md"
   ],
+  "1f263c746b48a7194a41de249482fb93c7d17588": [
+    "windows-apps-src\\monetize\\using-windows-store-services.md"
+  ],
   "1b9688ce072b71c91cd2afcbf09b8079e8063518": [
     "windows-apps-src\\monetize\\using-windows-store-services.md"
   ],
@@ -3034,6 +3043,9 @@
   ],
   "f8548c85e571d3f0f72f775af4ca40d85e86c163": [
     "windows-apps-src\\networking\\background-transfers.md"
+  ],
+  "c29d1d0a9595958aaa2872488f131b59ee278161": [
+    "windows-apps-src\\networking\\httpclient.md"
   ],
   "30ad0b7041e9af33d60b871df555baae89f683de": [
     "windows-apps-src\\networking\\httpclient.md"
@@ -4072,6 +4084,9 @@
   ],
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "bc35f173d89899ee8333397d725a9add31705695": [
+    "windows-apps-src\\TOC.md"
   ],
   "4847b181b2ab7fdc28d81ff806f073e4b99f755a": [
     "windows-apps-src\\TOC.md"
@@ -6350,6 +6365,9 @@
   "5a6bbf5e242b7284fb2a5de66252b354bfa09909": [
     "windows-apps-src\\monetize\\finalize-the-package-rollout-for-an-app-submission.md"
   ],
+  "f20a9c13dee7df8d1421f2264fa76355c7daa3bc": [
+    "windows-apps-src\\monetize\\get-ad-campaign-performance-data.md"
+  ],
   "a593e05035622753e75c7b364cb7b89e6a973603": [
     "windows-apps-src\\monetize\\get-ad-campaign-performance-data.md"
   ],
@@ -6605,11 +6623,17 @@
   "ad10f5758f4a66552f9c4e4750667e8d13f4c09f": [
     "windows-apps-src\\gaming\\ui-navigation-controller.md"
   ],
+  "af6b1b378ed054e68fff311ab37d3d55ca2bcdb7": [
+    "windows-apps-src\\monetize\\get-response-info-for-app-reviews.md"
+  ],
   "64f0ca208ea3a3213b4d276f3326b347e0d3bf4c": [
     "windows-apps-src\\monetize\\get-response-info-for-app-reviews.md"
   ],
   "45c3605cebc74597030be4f22d0c65cdc0a58768": [
     "windows-apps-src\\monetize\\get-response-info-for-app-reviews.md"
+  ],
+  "4905e8bfdbb707c5f6bf5bc9f6c9edccd6f4f1f5": [
+    "windows-apps-src\\monetize\\submit-responses-to-app-reviews.md"
   ],
   "072bafc702c2b783dc498388d437140e07a79b3c": [
     "windows-apps-src\\monetize\\submit-responses-to-app-reviews.md"
@@ -6631,5 +6655,23 @@
   ],
   "71f633c724c95b46dc48c8ab3573ac0cc6c90479": [
     "windows-apps-src\\porting\\desktop-to-uwp-packaging-dot-net.md"
+  ],
+  "922ef4582f90a7a997f5400cc3033496e3d136ca": [
+    "windows-apps-src\\monetize\\manage-ad-campaigns.md"
+  ],
+  "d655f161251705a4c53d572951978ae4da51ecab": [
+    "windows-apps-src\\monetize\\manage-creatives-for-ad-campaigns.md"
+  ],
+  "d0d6aa1a1a4b48f14e538c1471e766da09c0aae2": [
+    "windows-apps-src\\monetize\\manage-delivery-lines-for-ad-campaigns.md"
+  ],
+  "7878f6efda9b3b3e8e4e2c9fb97fffdb45374bb9": [
+    "windows-apps-src\\monetize\\manage-targeting-profiles-for-ad-campaigns.md"
+  ],
+  "fbb145a78a137ce6f7c3255c8909b00600f0923f": [
+    "windows-apps-src\\monetize\\respond-to-reviews-using-windows-store-services.md"
+  ],
+  "0aae07d058f1c7a1d458a1c240abae6305811778": [
+    "windows-apps-src\\monetize\\run-ad-campaigns-using-windows-store-services.md"
   ]
 }
