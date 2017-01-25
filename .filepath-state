@@ -371,11 +371,17 @@
   "b4f9bc3ad0340a893474360a542f35315ef01712": [
     "windows-apps-src\\audio-video-camera\\variable-photo-sequence.md"
   ],
+  "e86eff79f7f01c4fcd9e4651fffac9abe06d23af": [
+    "windows-apps-src\\contacts-and-calendar\\index.md"
+  ],
   "6279d10ea76773219bd7d1965a75addc0b57bb0c": [
     "windows-apps-src\\contacts-and-calendar\\index.md"
   ],
   "0b93ab3f5e0a622fb924a752ec581bbb9df32936": [
     "windows-apps-src\\contacts-and-calendar\\index.md"
+  ],
+  "e2592d26c917eb82967cc3b13406b211e65c610c": [
+    "windows-apps-src\\contacts-and-calendar\\managing-appointments.md"
   ],
   "56dd353437a893e2032b748cec70d940d922eb3e": [
     "windows-apps-src\\contacts-and-calendar\\managing-appointments.md"
@@ -770,17 +776,26 @@
   "9ee42532cb7f13d611e2365d7c9cf8f0532dd1c5": [
     "windows-apps-src\\controls-and-patterns\\xaml-theme-resources.md"
   ],
+  "24135d114b1c6513b446f1bcce5b4f14e065acd0": [
+    "windows-apps-src\\data-access\\entity-framework-7-with-sqlite-for-csharp-apps.md"
+  ],
   "55887fe3fc909ae9d4419c8a5f8266da76298307": [
     "windows-apps-src\\data-access\\entity-framework-7-with-sqlite-for-csharp-apps.md"
   ],
   "07244b35b2ec20227bccc43638b56b9fda88956a": [
     "windows-apps-src\\data-access\\entity-framework-7-with-sqlite-for-csharp-apps.md"
   ],
+  "b63663bf53e20cd3a79b5f8af4849e101be64b00": [
+    "windows-apps-src\\data-access\\index.md"
+  ],
   "363c3b4363f0a69e2cb005457a2bfccbefe22c29": [
     "windows-apps-src\\data-access\\index.md"
   ],
   "f67efa8a00439de719219f750f0244a17cc26182": [
     "windows-apps-src\\data-access\\index.md"
+  ],
+  "09f9aeb27f424ae34e3ea636b54e943227bb103f": [
+    "windows-apps-src\\data-access\\sqlite-databases.md"
   ],
   "485d531b658fc89be334491156a8d472c7bd0873": [
     "windows-apps-src\\data-access\\sqlite-databases.md"
@@ -832,6 +847,9 @@
   ],
   "13857b2ba5946149d04ad4f6eda6828cc11a0640": [
     "windows-apps-src\\debug-test-perf\\beta-testing.md"
+  ],
+  "40ae084bf077dfb183abb520ec225dc324fb6523": [
+    "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
   ],
   "2d7840b98fe0737204be1ee265affb25e9ff3de8": [
     "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
@@ -2555,11 +2573,17 @@
   "09447ad4545f3839d39a4b9191b51718455e7c00": [
     "windows-apps-src\\layout\\show-multiple-views.md"
   ],
+  "748dc11e9073d237eb64543cb71c6991f5c45566": [
+    "windows-apps-src\\maps-and-location\\authentication-key.md"
+  ],
   "9bb642b50b4cf3c215c5a68f7b5df7d8926a9905": [
     "windows-apps-src\\maps-and-location\\authentication-key.md"
   ],
   "4cbc0142e7d76795bb147ce4cc98b3da48715b85": [
     "windows-apps-src\\maps-and-location\\authentication-key.md"
+  ],
+  "edf4a87f364ac89f8b1257310ac02f9cbe356922": [
+    "windows-apps-src\\maps-and-location\\controls-map.md"
   ],
   "6542cfee8f790af8fd98f9469b888ec29a0537b8": [
     "windows-apps-src\\maps-and-location\\controls-map.md"
@@ -2567,11 +2591,17 @@
   "e094e29220a0f8fcae6ca2af36ab86ecd22b520d": [
     "windows-apps-src\\maps-and-location\\controls-map.md"
   ],
+  "458e0fb93761dce8052e34f716cb00416b3a0566": [
+    "windows-apps-src\\maps-and-location\\display-maps.md"
+  ],
   "54e5a09659d79cd2371e9d9211ad12d03cf67356": [
     "windows-apps-src\\maps-and-location\\display-maps.md"
   ],
   "09f87f66802e5143c8eac7fce8fc2118f3d31340": [
     "windows-apps-src\\maps-and-location\\display-maps.md"
+  ],
+  "69578099b06da8cd2decbcf0798bb57fce560757": [
+    "windows-apps-src\\maps-and-location\\display-poi.md"
   ],
   "69dcb489324a150977aae4a1530567e4d8edb746": [
     "windows-apps-src\\maps-and-location\\display-poi.md"
@@ -2579,11 +2609,17 @@
   "8afdb41d6790bb9647a6b89086c4b86872940c51": [
     "windows-apps-src\\maps-and-location\\display-poi.md"
   ],
+  "4bbf2de60f1d6de7f35644776f45f3932defab3e": [
+    "windows-apps-src\\maps-and-location\\geocoding.md"
+  ],
   "9ea1112457aa2769158539b8a37cfa6667240f5b": [
     "windows-apps-src\\maps-and-location\\geocoding.md"
   ],
   "d42708a82f99e345183b6cbcb87cfdd136b10e52": [
     "windows-apps-src\\maps-and-location\\geocoding.md"
+  ],
+  "5c6a48c1c5705f41e3ae3f43c2afdb458a5da71b": [
+    "windows-apps-src\\maps-and-location\\get-location.md"
   ],
   "dbb41b6e30cdc257a9a829c9c6a4ed9afb9657e3": [
     "windows-apps-src\\maps-and-location\\get-location.md"
@@ -2591,11 +2627,17 @@
   "1172aae67169295ac6f2446c839a1cce5a84fa36": [
     "windows-apps-src\\maps-and-location\\get-location.md"
   ],
+  "f5d1427f2c5f6cc139b461b81661d83bee9104b6": [
+    "windows-apps-src\\maps-and-location\\guidelines-and-checklist-for-detecting-location.md"
+  ],
   "511223b4cad6808157e1a2c4a3db48cf2243573a": [
     "windows-apps-src\\maps-and-location\\guidelines-and-checklist-for-detecting-location.md"
   ],
   "133add15e0e5681ec85a0800c52605262a82f8b4": [
     "windows-apps-src\\maps-and-location\\guidelines-and-checklist-for-detecting-location.md"
+  ],
+  "5f614694d81873e1f0c3bbb9d9a90ad2f178dff2": [
+    "windows-apps-src\\maps-and-location\\guidelines-for-geofencing.md"
   ],
   "28a735d29e36ab4e4fa75a7dc53f1b9b2c4d1237": [
     "windows-apps-src\\maps-and-location\\guidelines-for-geofencing.md"
@@ -2603,11 +2645,17 @@
   "0a152fbc444e252ed8c2a822036e00b8869703ac": [
     "windows-apps-src\\maps-and-location\\guidelines-for-geofencing.md"
   ],
+  "5f163596f3331a2672076f4fcc0e1d8e711a6685": [
+    "windows-apps-src\\maps-and-location\\index.md"
+  ],
   "97c6fe7340c2d512ba3ada4fc5292cba69b15f1f": [
     "windows-apps-src\\maps-and-location\\index.md"
   ],
   "327185d655d8495901cfa9fa0a99c0af3a8cdae0": [
     "windows-apps-src\\maps-and-location\\index.md"
+  ],
+  "5f23f47678323c9ee986e87c56857948d29a7289": [
+    "windows-apps-src\\maps-and-location\\overlay-tiled-images.md"
   ],
   "7715d41bdfadc667dbef3daada99f1548c779275": [
     "windows-apps-src\\maps-and-location\\overlay-tiled-images.md"
@@ -2615,11 +2663,17 @@
   "a00d3d27161310077a0690cef7e4d11a5209bee7": [
     "windows-apps-src\\maps-and-location\\overlay-tiled-images.md"
   ],
+  "f6f1fc1fc5e474ebda399cfb7dfb54e2c02a9886": [
+    "windows-apps-src\\maps-and-location\\routes-and-directions.md"
+  ],
   "e8fdf03b628aa235c784e371d9ef9e7de92c9786": [
     "windows-apps-src\\maps-and-location\\routes-and-directions.md"
   ],
   "eb3596236e7de29473635b26f48f0c7e4fa1d49f": [
     "windows-apps-src\\maps-and-location\\routes-and-directions.md"
+  ],
+  "381e86cfa61fa3d19a0f4868dee054139a905f3c": [
+    "windows-apps-src\\maps-and-location\\set-up-a-geofence.md"
   ],
   "e13646e7b4c85a04073b51584815f0679e873faf": [
     "windows-apps-src\\maps-and-location\\set-up-a-geofence.md"
@@ -4037,11 +4091,17 @@
   "e13e9c8b559c16676628ab6e77ddad019a4c22e0": [
     "windows-apps-src\\style\\typography.md"
   ],
+  "5e40e7d3f9c3a1c13a2b19cdff0067ad0a6fe83e": [
+    "windows-apps-src\\threading-async\\asynchronous-programming-in-cpp-universal-windows-platform-apps.md"
+  ],
   "12f24a3f142fe4b067fb44423340291d15225017": [
     "windows-apps-src\\threading-async\\asynchronous-programming-in-cpp-universal-windows-platform-apps.md"
   ],
   "12fdf79cbf3a79e4789131d0da8eee978b82cdf8": [
     "windows-apps-src\\threading-async\\asynchronous-programming-in-cpp-universal-windows-platform-apps.md"
+  ],
+  "0dc50205c36f91e37fe24464a06b6321eab693a4": [
+    "windows-apps-src\\threading-async\\asynchronous-programming-universal-windows-platform-apps.md"
   ],
   "dc04420420db75f3300ec2fbfb667d77698414cc": [
     "windows-apps-src\\threading-async\\asynchronous-programming-universal-windows-platform-apps.md"
@@ -4049,11 +4109,17 @@
   "c033c1d985b9373d9cbadf38463610aa1922163e": [
     "windows-apps-src\\threading-async\\asynchronous-programming-universal-windows-platform-apps.md"
   ],
+  "926390ff1b686cb4b5bfc001af374f01c2dc1f2b": [
+    "windows-apps-src\\threading-async\\best-practices-for-using-the-thread-pool.md"
+  ],
   "eb455edc5e8462031166809a55fea29852e57e86": [
     "windows-apps-src\\threading-async\\best-practices-for-using-the-thread-pool.md"
   ],
   "796625fe5c1892ac99195a4920dbc7e539aebf76": [
     "windows-apps-src\\threading-async\\best-practices-for-using-the-thread-pool.md"
+  ],
+  "3b8e3c32e70bf8b2512305f61016e6d71c708336": [
+    "windows-apps-src\\threading-async\\call-asynchronous-apis-in-csharp-or-visual-basic.md"
   ],
   "e61efbb5d4a84ff85b5658bd5e1b06d5f59db0c6": [
     "windows-apps-src\\threading-async\\call-asynchronous-apis-in-csharp-or-visual-basic.md"
@@ -4061,11 +4127,17 @@
   "da2c6eddcc842e176e31b1a1628c91994efb1969": [
     "windows-apps-src\\threading-async\\call-asynchronous-apis-in-csharp-or-visual-basic.md"
   ],
+  "421df9873cf68ce6f7e82fa2ab7b61e5ddef501d": [
+    "windows-apps-src\\threading-async\\create-a-periodic-work-item.md"
+  ],
   "fe7f74dbfdf2dd830aba190ac371c78aa87bd75e": [
     "windows-apps-src\\threading-async\\create-a-periodic-work-item.md"
   ],
   "11e4c5d2ece918854620a89062e164fba7f48953": [
     "windows-apps-src\\threading-async\\create-a-periodic-work-item.md"
+  ],
+  "f340fe376d1a4cf112ce7c9d1b02f0ffad8ea0ea": [
+    "windows-apps-src\\threading-async\\index.md"
   ],
   "7afa92ca10cdfbe5105597fbb9294636429f68a9": [
     "windows-apps-src\\threading-async\\index.md"
@@ -4073,11 +4145,17 @@
   "8962e24e393f0b7961f618f90cd38ead9e54dda4": [
     "windows-apps-src\\threading-async\\index.md"
   ],
+  "7071b3676c98ca8220ab7446f521038f53d9a42d": [
+    "windows-apps-src\\threading-async\\submit-a-work-item-to-the-thread-pool.md"
+  ],
   "9463ed141b8c865a404afeba1c2ec48fd5e0c688": [
     "windows-apps-src\\threading-async\\submit-a-work-item-to-the-thread-pool.md"
   ],
   "2d73b44933ed71dc388b3d37793b7c99b8d0a3dd": [
     "windows-apps-src\\threading-async\\submit-a-work-item-to-the-thread-pool.md"
+  ],
+  "2a7c5930752c759c3875826d0046603a63981341": [
+    "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
   "bd2e9526de79f413829d28ccc8e855aa1a09c04c": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
@@ -4874,6 +4952,9 @@
   "9d931ef590f895406e9d516110e6d200789558c7": [
     "windows-apps-src\\contacts-and-calendar\\integrating-social-feeds-into-contact-cards.md"
   ],
+  "94b19aa76d0108438dcfbbfb756715af7cf453cb": [
+    "windows-apps-src\\contacts-and-calendar\\integrating-with-contacts.md"
+  ],
   "a085680946c41da6642db54cbfce0a0ee85dc857": [
     "windows-apps-src\\contacts-and-calendar\\integrating-with-contacts.md"
   ],
@@ -4928,11 +5009,17 @@
   "2afc1250aa9d7a6cf6c9c8cb45dd2379b9d36984": [
     "windows-apps-src\\devices-sensors\\bluetooth-dev-faq.md"
   ],
+  "5ac8e7497b8b2774fb5a7e51b0eff07ef9c083d6": [
+    "windows-apps-src\\enterprise\\wip-dev-guide.md"
+  ],
   "36cad36de4039c29413c1474bf523f1f93f4f837": [
     "windows-apps-src\\enterprise\\wip-dev-guide.md"
   ],
   "82b674c72126c66aff34b0396a2c32f88023dd25": [
     "windows-apps-src\\enterprise\\wip-dev-guide.md"
+  ],
+  "51f8a0cedb405b0a6c64c2d15726df719b331260": [
+    "windows-apps-src\\enterprise\\wip-hub.md"
   ],
   "8856e9bb1b582af4d60d135f16a45744499e8cc5": [
     "windows-apps-src\\enterprise\\wip-hub.md"

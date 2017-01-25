@@ -13949,6 +13949,296 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c3a4a5d0a88ef517455798181d461b6f0beddacd.7d371b1b6407da9ecccff85621b2e821cc7152a3.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\maps-and-location\\geocoding.md.978ec422ee2711c5fd16553a7cf9d9da5f5d64c6.HT": {
+      "SourceFilename": "windows-apps-src\\maps-and-location\\geocoding.md",
+      "XliffHash": "978ec422ee2711c5fd16553a7cf9d9da5f5d64c6",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\4bbf2de60f1d6de7f35644776f45f3932defab3e.c54f03337529748f9b2c9c59af09f98ae1ed3c34.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\threading-async\\asynchronous-programming-universal-windows-platform-apps.md.a9cab2dba32fb347a786f27ac458d5bdc621849f.HT": {
+      "SourceFilename": "windows-apps-src\\threading-async\\asynchronous-programming-universal-windows-platform-apps.md",
+      "XliffHash": "a9cab2dba32fb347a786f27ac458d5bdc621849f",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0dc50205c36f91e37fe24464a06b6321eab693a4.8e658bed9acd0a8f6e17e034cc8f6988c64d6ad2.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md.e90d4dff8d352e62b58cb367643d15d442e9b067.HT": {
+      "SourceFilename": "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md",
+      "XliffHash": "e90d4dff8d352e62b58cb367643d15d442e9b067",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\40ae084bf077dfb183abb520ec225dc324fb6523.ca2790e3f3f26bcd7e9764f20c10e486d7f82161.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\threading-async\\create-a-periodic-work-item.md.7323ebfb0c48da2b2549341688a6865e49fd2498.HT": {
+      "SourceFilename": "windows-apps-src\\threading-async\\create-a-periodic-work-item.md",
+      "XliffHash": "7323ebfb0c48da2b2549341688a6865e49fd2498",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\421df9873cf68ce6f7e82fa2ab7b61e5ddef501d.e53763cbf28c846902508a5c7e1f93b957c28489.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md.05df8be5f0e99c92936440a746f50e7e28fc17e3.HT": {
+      "SourceFilename": "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md",
+      "XliffHash": "05df8be5f0e99c92936440a746f50e7e28fc17e3",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2a7c5930752c759c3875826d0046603a63981341.ceb5e07c46e68d1eb2005ac5dfbcb9dfca85da01.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\maps-and-location\\overlay-tiled-images.md.2aab5dbc9a968d5581031680619dc32aab7e948d.HT": {
+      "SourceFilename": "windows-apps-src\\maps-and-location\\overlay-tiled-images.md",
+      "XliffHash": "2aab5dbc9a968d5581031680619dc32aab7e948d",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5f23f47678323c9ee986e87c56857948d29a7289.421ecdec95b21ff91027327fdc9fcc93aeb6f0a2.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\maps-and-location\\display-poi.md.ed2a7eb05db7a4a66f4b9bee3a452085119c9222.HT": {
+      "SourceFilename": "windows-apps-src\\maps-and-location\\display-poi.md",
+      "XliffHash": "ed2a7eb05db7a4a66f4b9bee3a452085119c9222",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\69578099b06da8cd2decbcf0798bb57fce560757.96a74c622f6e510e0c6de938d1b69799bb3ca958.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\maps-and-location\\controls-map.md.06eebb5577aeb31fdd3e83ea2a3ebdd2817546dd.HT": {
+      "SourceFilename": "windows-apps-src\\maps-and-location\\controls-map.md",
+      "XliffHash": "06eebb5577aeb31fdd3e83ea2a3ebdd2817546dd",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\edf4a87f364ac89f8b1257310ac02f9cbe356922.041aeaafded0d399a40baf6d450a18504f710109.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\maps-and-location\\guidelines-for-geofencing.md.d0ccecf9122f3ee173a6880ec146ad887452608d.HT": {
+      "SourceFilename": "windows-apps-src\\maps-and-location\\guidelines-for-geofencing.md",
+      "XliffHash": "d0ccecf9122f3ee173a6880ec146ad887452608d",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5f614694d81873e1f0c3bbb9d9a90ad2f178dff2.a93d3585784f9bccc39a1b1c8b3822bbcbf5c486.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\contacts-and-calendar\\index.md.b38a605abb4a367fab3788a2c4f274a1fcbc64f0.HT": {
+      "SourceFilename": "windows-apps-src\\contacts-and-calendar\\index.md",
+      "XliffHash": "b38a605abb4a367fab3788a2c4f274a1fcbc64f0",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e86eff79f7f01c4fcd9e4651fffac9abe06d23af.92d5d4b7b2203ba0f5e8fa1ed35eac2795b8d774.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\contacts-and-calendar\\integrating-with-contacts.md.9a9618204519812807ade33c3555501efa8d229a.HT": {
+      "SourceFilename": "windows-apps-src\\contacts-and-calendar\\integrating-with-contacts.md",
+      "XliffHash": "9a9618204519812807ade33c3555501efa8d229a",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\94b19aa76d0108438dcfbbfb756715af7cf453cb.da4a601bbb178e0224458d93b0f0a3c6838c0804.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\maps-and-location\\guidelines-and-checklist-for-detecting-location.md.7bc6140713ff0dc98afe86d29b0d396109c52de4.HT": {
+      "SourceFilename": "windows-apps-src\\maps-and-location\\guidelines-and-checklist-for-detecting-location.md",
+      "XliffHash": "7bc6140713ff0dc98afe86d29b0d396109c52de4",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f5d1427f2c5f6cc139b461b81661d83bee9104b6.ef26561df19b4f155cc099ca2bc1e880bca75857.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\contacts-and-calendar\\managing-appointments.md.0c2a8d8ef5d8664491569f5af4372eae7cca78ed.HT": {
+      "SourceFilename": "windows-apps-src\\contacts-and-calendar\\managing-appointments.md",
+      "XliffHash": "0c2a8d8ef5d8664491569f5af4372eae7cca78ed",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e2592d26c917eb82967cc3b13406b211e65c610c.4a8d45af3ee145ca0e68f217793bc31a144dc80a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\enterprise\\wip-hub.md.39c0935f08124a4f13033ff3c57a8607f24d7aff.HT": {
+      "SourceFilename": "windows-apps-src\\enterprise\\wip-hub.md",
+      "XliffHash": "39c0935f08124a4f13033ff3c57a8607f24d7aff",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\51f8a0cedb405b0a6c64c2d15726df719b331260.3a5e8caff34a84299c098ba563ecf0c5b46999da.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\maps-and-location\\routes-and-directions.md.73ec89092d73e5c7323faf3ac42234e75f2b0aa5.HT": {
+      "SourceFilename": "windows-apps-src\\maps-and-location\\routes-and-directions.md",
+      "XliffHash": "73ec89092d73e5c7323faf3ac42234e75f2b0aa5",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f6f1fc1fc5e474ebda399cfb7dfb54e2c02a9886.c347349400f39507006b987d0a8f7795fa6d2fa2.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\threading-async\\asynchronous-programming-in-cpp-universal-windows-platform-apps.md.c89314ea5547aa301bc3a0af9327af20e33668f4.HT": {
+      "SourceFilename": "windows-apps-src\\threading-async\\asynchronous-programming-in-cpp-universal-windows-platform-apps.md",
+      "XliffHash": "c89314ea5547aa301bc3a0af9327af20e33668f4",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5e40e7d3f9c3a1c13a2b19cdff0067ad0a6fe83e.d117a1b393c3fa9238128354450dcdc7a1c46801.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\threading-async\\call-asynchronous-apis-in-csharp-or-visual-basic.md.e3a198e755acaf171340733d462692c1fe10c57a.HT": {
+      "SourceFilename": "windows-apps-src\\threading-async\\call-asynchronous-apis-in-csharp-or-visual-basic.md",
+      "XliffHash": "e3a198e755acaf171340733d462692c1fe10c57a",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\3b8e3c32e70bf8b2512305f61016e6d71c708336.98bdc1acb8cc6677e7d6e14ad0b4516e268e1897.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\data-access\\index.md.de8ea6d37591755d409b71da5f2d2ed14c175d51.HT": {
+      "SourceFilename": "windows-apps-src\\data-access\\index.md",
+      "XliffHash": "de8ea6d37591755d409b71da5f2d2ed14c175d51",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b63663bf53e20cd3a79b5f8af4849e101be64b00.5bcde2fd3f4a8f699ca9b71ca35d334014e20571.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\maps-and-location\\get-location.md.d9d51b4854fd72119adb85e7a78c3308d10dfa2f.HT": {
+      "SourceFilename": "windows-apps-src\\maps-and-location\\get-location.md",
+      "XliffHash": "d9d51b4854fd72119adb85e7a78c3308d10dfa2f",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5c6a48c1c5705f41e3ae3f43c2afdb458a5da71b.2a4ebcb757afd2d3f89e3efb18e3ea6c9496c054.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\threading-async\\best-practices-for-using-the-thread-pool.md.1e71e521075a7230061f76e6b518db4b33baefcb.HT": {
+      "SourceFilename": "windows-apps-src\\threading-async\\best-practices-for-using-the-thread-pool.md",
+      "XliffHash": "1e71e521075a7230061f76e6b518db4b33baefcb",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\926390ff1b686cb4b5bfc001af374f01c2dc1f2b.2079b7b7ea394f4f3b1b0dd1e689c638d0cab412.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\maps-and-location\\authentication-key.md.4e70926c64f4ad5585715fe973bac188b8c4eb68.HT": {
+      "SourceFilename": "windows-apps-src\\maps-and-location\\authentication-key.md",
+      "XliffHash": "4e70926c64f4ad5585715fe973bac188b8c4eb68",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\748dc11e9073d237eb64543cb71c6991f5c45566.0577bd015a3da96c3fd2c3f357f46efa1f6ce188.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\enterprise\\wip-dev-guide.md.b81f0617637b0a6ca51af352852f0d70d8c83071.HT": {
+      "SourceFilename": "windows-apps-src\\enterprise\\wip-dev-guide.md",
+      "XliffHash": "b81f0617637b0a6ca51af352852f0d70d8c83071",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5ac8e7497b8b2774fb5a7e51b0eff07ef9c083d6.b7195d4a1a4fb1fa8657a9a2b8c020025e34938a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\maps-and-location\\display-maps.md.2c04334f1d6fe649b03ff328c80c2b9573a47281.HT": {
+      "SourceFilename": "windows-apps-src\\maps-and-location\\display-maps.md",
+      "XliffHash": "2c04334f1d6fe649b03ff328c80c2b9573a47281",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\458e0fb93761dce8052e34f716cb00416b3a0566.7df6271d446eafc8ccce0437090821047d6fa0cd.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\threading-async\\submit-a-work-item-to-the-thread-pool.md.b65b13782cf4a74496b4b01ad77d1e6776d69b79.HT": {
+      "SourceFilename": "windows-apps-src\\threading-async\\submit-a-work-item-to-the-thread-pool.md",
+      "XliffHash": "b65b13782cf4a74496b4b01ad77d1e6776d69b79",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7071b3676c98ca8220ab7446f521038f53d9a42d.3efd830a08c09dc9c579e7599433ae1e6723f62c.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\data-access\\entity-framework-7-with-sqlite-for-csharp-apps.md.177ead42b1907098a3da34faf51be85c7d265afb.HT": {
+      "SourceFilename": "windows-apps-src\\data-access\\entity-framework-7-with-sqlite-for-csharp-apps.md",
+      "XliffHash": "177ead42b1907098a3da34faf51be85c7d265afb",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\24135d114b1c6513b446f1bcce5b4f14e065acd0.330808b5587e817fd6304739c21529f34e9acb97.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\maps-and-location\\set-up-a-geofence.md.1e5eca7ddfbfeba6fa7fe7a3f9dd81e76cffb389.HT": {
+      "SourceFilename": "windows-apps-src\\maps-and-location\\set-up-a-geofence.md",
+      "XliffHash": "1e5eca7ddfbfeba6fa7fe7a3f9dd81e76cffb389",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\381e86cfa61fa3d19a0f4868dee054139a905f3c.d03755b93a1eb1f59b7cd39de8402b8c4c344e16.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\data-access\\sqlite-databases.md.2b95b6090325a48c329661d7289980be477113d1.HT": {
+      "SourceFilename": "windows-apps-src\\data-access\\sqlite-databases.md",
+      "XliffHash": "2b95b6090325a48c329661d7289980be477113d1",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\09f9aeb27f424ae34e3ea636b54e943227bb103f.95dc627143ed7f149043da5929e65ec3664cbb49.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\threading-async\\index.md.471c5ddea3fb41e10fe323a1360da722988aa800.HT": {
+      "SourceFilename": "windows-apps-src\\threading-async\\index.md",
+      "XliffHash": "471c5ddea3fb41e10fe323a1360da722988aa800",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f340fe376d1a4cf112ce7c9d1b02f0ffad8ea0ea.ed42c1eb9671de60b8ce0496efa11e969c668547.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\maps-and-location\\index.md.08773e2277149d9b3ee1579df4119aa6eab1058a.HT": {
+      "SourceFilename": "windows-apps-src\\maps-and-location\\index.md",
+      "XliffHash": "08773e2277149d9b3ee1579df4119aa6eab1058a",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5f163596f3331a2672076f4fcc0e1d8e711a6685.d3737b0d07f8d0d51be36c4aa99e17def0629d22.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
