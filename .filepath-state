@@ -4268,6 +4268,9 @@
   "b5fe116ea850e93b5208b829e4ed6cec2bc42de0": [
     "windows-apps-src\\monetize\\get-started-with-microsoft-advertising-libraries.md"
   ],
+  "32d09f17e792911d0e0a216ff8f8b5983f2a2b87": [
+    "windows-apps-src\\monetize\\grant-free-products.md"
+  ],
   "042af0d8e604c7727a71daf9db443375f549700e": [
     "windows-apps-src\\monetize\\grant-free-products.md"
   ],
@@ -4433,6 +4436,9 @@
   "4e9ce94789b411ce148067b60555aa3ae82d2805": [
     "windows-apps-src\\monetize\\monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md"
   ],
+  "6f93d0956966577d6b28c2eccbe46ec951ed8945": [
+    "windows-apps-src\\monetize\\query-for-products.md"
+  ],
   "7e5e66dd335f69c2428b6b0950c1071a4814b7fe": [
     "windows-apps-src\\monetize\\query-for-products.md"
   ],
@@ -4457,6 +4463,9 @@
   "b82c4385b0e7089bdddbe094f47f0766f90aa21b": [
     "windows-apps-src\\monetize\\release-notes-for-the-advertising-libraries.md"
   ],
+  "178764ffdcf098b5f29ac80a63f1be5867db29da": [
+    "windows-apps-src\\monetize\\renew-a-windows-store-id-key.md"
+  ],
   "eed2e0545660950a253b00fdbd13cc8e013c0a19": [
     "windows-apps-src\\monetize\\renew-a-windows-store-id-key.md"
   ],
@@ -4468,6 +4477,9 @@
   ],
   "4e0ca6fe88218faef1f7c9192a5e19569e9c00b4": [
     "windows-apps-src\\monetize\\renew-a-windows-store-id-key.md"
+  ],
+  "4efe2025267671a319f7473284d7e532e1273731": [
+    "windows-apps-src\\monetize\\report-consumable-products-as-fulfilled.md"
   ],
   "73e0fc321f82140a35a0ab239d26e703430f9816": [
     "windows-apps-src\\monetize\\report-consumable-products-as-fulfilled.md"
@@ -4822,6 +4834,9 @@
   ],
   "1ef54c3c45113e434333058d0f039e213ea8eed2": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
+  ],
+  "b92c4bed3aec662db9ce23640f11ee04973a0d2f": [
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
   "9a53c663696c0a66d4beb3628392dee1b021a7f0": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
