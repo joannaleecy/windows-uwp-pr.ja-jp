@@ -4001,6 +4001,9 @@
   "a8f18048915927f9e93d4469e7288e5a06a69070": [
     "windows-apps-src\\monetize\\code-samples.md"
   ],
+  "d78c8b4892e6524254f3c3736cddcd9fe0a4a105": [
+    "windows-apps-src\\monetize\\code-your-experiment-in-your-app.md"
+  ],
   "6a429c81f502fb56c66c42b8275a10e32792f800": [
     "windows-apps-src\\monetize\\code-your-experiment-in-your-app.md"
   ],
@@ -4019,6 +4022,9 @@
   "d7ecb5205d9668f83d2619869baafd569b581078": [
     "windows-apps-src\\monetize\\create-an-adcontrol-in-javascript.md"
   ],
+  "8391e63f3a889fb589c052d2b9c3f250e7c7d6f9": [
+    "windows-apps-src\\monetize\\create-and-run-your-first-experiment-with-a-b-testing.md"
+  ],
   "177d0a44302392ee7a5e10e9754e5b56d8a88b92": [
     "windows-apps-src\\monetize\\create-and-run-your-first-experiment-with-a-b-testing.md"
   ],
@@ -4027,6 +4033,9 @@
   ],
   "65785e53b2e5ba788dbda533373737e193e1c792": [
     "windows-apps-src\\monetize\\create-and-run-your-first-experiment-with-a-b-testing.md"
+  ],
+  "41fc5a8eea3f6e4be96cdd83131be7f5988da139": [
+    "windows-apps-src\\monetize\\define-your-experiment-in-the-dev-center-dashboard.md"
   ],
   "bdbbd1e51aa98e12365ab191c32c2085165d0377": [
     "windows-apps-src\\monetize\\define-your-experiment-in-the-dev-center-dashboard.md"
@@ -4067,6 +4076,9 @@
   "a3ea6b9cc6561580f2b80d4540b0f4b738c09fc1": [
     "windows-apps-src\\monetize\\display-ads-using-the-microsoft-advertising-libraries.md"
   ],
+  "0ec382594f0f14c03eadc6ce51535fbeb6ebeee8": [
+    "windows-apps-src\\monetize\\enable-consumable-in-app-product-purchases.md"
+  ],
   "b3f668dc219d52d1b72d523c7d385f3b971de34e": [
     "windows-apps-src\\monetize\\enable-consumable-in-app-product-purchases.md"
   ],
@@ -4075,6 +4087,9 @@
   ],
   "acb7218bed287f430950d4f8d3621831b269ae18": [
     "windows-apps-src\\monetize\\enable-consumable-in-app-product-purchases.md"
+  ],
+  "c3e30a406dd6f09aeef9b9a8e8c1f89408663d60": [
+    "windows-apps-src\\monetize\\enable-in-app-product-purchases.md"
   ],
   "d460be33fbd61f27004048588aa1f43e12bd688e": [
     "windows-apps-src\\monetize\\enable-in-app-product-purchases.md"
@@ -4111,6 +4126,9 @@
   ],
   "56df2b0f0a41d128f02aa5e2aa0ce11e6f6ca16a": [
     "windows-apps-src\\monetize\\error-handling-with-advertising-libraries.md"
+  ],
+  "b450bae1069d7bef8c2142f878774f009cda6036": [
+    "windows-apps-src\\monetize\\exclude-or-limit-features-in-a-trial-version-of-your-app.md"
   ],
   "bce9b84abd7614e15ff2e31ebb9c33d06a760fb1": [
     "windows-apps-src\\monetize\\exclude-or-limit-features-in-a-trial-version-of-your-app.md"
@@ -4223,6 +4241,9 @@
   "1482450a8e5039ffd61a90f7cd38738115c5f2f0": [
     "windows-apps-src\\monetize\\important-notice-eula.md"
   ],
+  "7de65bc96a5067e3ab517409fec430fa304d586c": [
+    "windows-apps-src\\monetize\\index.md"
+  ],
   "8609704c30675d4991b4ae848e2bd5ef1e88d637": [
     "windows-apps-src\\monetize\\index.md"
   ],
@@ -4280,6 +4301,9 @@
   "7d0eeda4deac304fb9b573b6ed206a191f037a3e": [
     "windows-apps-src\\monetize\\known-issues-for-the-advertising-libraries.md"
   ],
+  "3ecd31b049585901ff66c217871c130cb637872e": [
+    "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
+  ],
   "5302b1d6f5edcf71215a121ca16fcc5e252a6378": [
     "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
   ],
@@ -4289,6 +4313,9 @@
   "54c6503add19ead5226da5a862b199bc3f305b7e": [
     "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
   ],
+  "3fc24ceb3884005c8ed1494c43eb4113c2a97ae6": [
+    "windows-apps-src\\monetize\\manage-a-large-catalog-of-in-app-products.md"
+  ],
   "73a8387890ba53f79a7d799f04ce6bbacddfee19": [
     "windows-apps-src\\monetize\\manage-a-large-catalog-of-in-app-products.md"
   ],
@@ -4297,6 +4324,9 @@
   ],
   "ccbf6f99820ebc9a9245066899b2bd3be69319e7": [
     "windows-apps-src\\monetize\\manage-a-large-catalog-of-in-app-products.md"
+  ],
+  "611a3ed1a09ad10274e9a78a6b93f3e4ef53f64a": [
+    "windows-apps-src\\monetize\\manage-your-experiment.md"
   ],
   "660c4f8b7bcf76ac93a7ac851ca2e7c67eac5adf": [
     "windows-apps-src\\monetize\\manage-your-experiment.md"
@@ -4345,6 +4375,9 @@
   ],
   "54095c7fd3c29fe7596be4c4b5a7148d078a7091": [
     "windows-apps-src\\monetize\\report-consumable-products-as-fulfilled.md"
+  ],
+  "6ac1ffad64c20c4ebea522b1aad106a0531ea026": [
+    "windows-apps-src\\monetize\\run-app-experiments-with-a-b-testing.md"
   ],
   "9cd7ec7f78ff872e84f101efbfc08c08e3f93292": [
     "windows-apps-src\\monetize\\run-app-experiments-with-a-b-testing.md"
@@ -4435,6 +4468,9 @@
   ],
   "6c3dabadff2653afe04c438393777b197a12b69d": [
     "windows-apps-src\\monetize\\use-ad-mediation-to-maximize-revenue.md"
+  ],
+  "e76461af80ef65e0f52d9bdfcc29fd851332ebd0": [
+    "windows-apps-src\\monetize\\use-receipts-to-verify-product-purchases.md"
   ],
   "de04bc4859e4d8b33c6a2cd353b0c1662570f894": [
     "windows-apps-src\\monetize\\use-receipts-to-verify-product-purchases.md"
@@ -6995,6 +7031,9 @@
   "34cce6acc786fe34b3d94faaec57011474e029ff": [
     "windows-apps-src\\input-and-devices\\access-keys.md"
   ],
+  "53b332e58f98b2040d508c314611dbf968a58b0f": [
+    "windows-apps-src\\monetize\\create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md"
+  ],
   "da5bc069db648170f647a656686aee51a235c4ea": [
     "windows-apps-src\\monetize\\create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md"
   ],
@@ -7343,6 +7382,9 @@
   "524a0897b6b8a8d17bb7493dc4d9e4357d8c1456": [
     "windows-apps-src\\launch-resume\\web-to-app-linking.md"
   ],
+  "53bde441cd31a085bbbd841f613c1d187e16e8c1": [
+    "windows-apps-src\\monetize\\enable-consumable-add-on-purchases.md"
+  ],
   "c3265c767589f3c08b52cb6780694dd8bb248f8f": [
     "windows-apps-src\\monetize\\enable-consumable-add-on-purchases.md"
   ],
@@ -7351,6 +7393,9 @@
   ],
   "12191a946ec080c8e386191363617a9c437671c5": [
     "windows-apps-src\\monetize\\enable-consumable-add-on-purchases.md"
+  ],
+  "e1bbeb134ca4625cce6434171de719c6575d68c2": [
+    "windows-apps-src\\monetize\\enable-in-app-purchases-of-apps-and-add-ons.md"
   ],
   "ab3690265bf156fb6841c47d4d65f65b43f4d5ab": [
     "windows-apps-src\\monetize\\enable-in-app-purchases-of-apps-and-add-ons.md"
@@ -7361,6 +7406,9 @@
   "05a93f3124324d7308f5494ad14a15bfd6a4e698": [
     "windows-apps-src\\monetize\\enable-in-app-purchases-of-apps-and-add-ons.md"
   ],
+  "a6636807852d6a1501c4d77e7e3a2df505935d77": [
+    "windows-apps-src\\monetize\\get-license-info-for-apps-and-add-ons.md"
+  ],
   "1666997d888abcb72b0fe9093b1d1f9bb277fb35": [
     "windows-apps-src\\monetize\\get-license-info-for-apps-and-add-ons.md"
   ],
@@ -7369,6 +7417,9 @@
   ],
   "0482cc192eeff4d3633898b6fa677805c635c6e1": [
     "windows-apps-src\\monetize\\get-license-info-for-apps-and-add-ons.md"
+  ],
+  "fe5e9aeb0c3bc4c8583441643af3eb93443794eb": [
+    "windows-apps-src\\monetize\\get-product-info-for-apps-and-add-ons.md"
   ],
   "ba0d1238aa7bfad4a32b1b0b53e1e321b305a240": [
     "windows-apps-src\\monetize\\get-product-info-for-apps-and-add-ons.md"
@@ -7379,6 +7430,9 @@
   "dd58103d22314081985cd5ce0f98f2f25e1e7287": [
     "windows-apps-src\\monetize\\get-product-info-for-apps-and-add-ons.md"
   ],
+  "b1fac5f336b723d0093946a3f9fbd0c41d0eb5ff": [
+    "windows-apps-src\\monetize\\implement-a-trial-version-of-your-app.md"
+  ],
   "75723e56884874713c9d079acd00729834a84e95": [
     "windows-apps-src\\monetize\\implement-a-trial-version-of-your-app.md"
   ],
@@ -7388,6 +7442,9 @@
   "ea4c5637a970a63938da2b1bea9f11fd39de9cc8": [
     "windows-apps-src\\monetize\\implement-a-trial-version-of-your-app.md"
   ],
+  "3215e2b29e6c87c9990a4ba9a4f17bfb4cf467f3": [
+    "windows-apps-src\\monetize\\in-app-purchases-and-trials.md"
+  ],
   "bf5e0e2ade60f6dd2ef5ce6dd621652253102205": [
     "windows-apps-src\\monetize\\in-app-purchases-and-trials.md"
   ],
@@ -7396,6 +7453,9 @@
   ],
   "33004b5229167bedd4cbafe5279709f1225ed02c": [
     "windows-apps-src\\monetize\\in-app-purchases-and-trials.md"
+  ],
+  "b17fd4aa7e22167da144a50af23281b8542d7017": [
+    "windows-apps-src\\monetize\\in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md"
   ],
   "71e2f2687bf966e13d4ddc955579d4d830f15670": [
     "windows-apps-src\\monetize\\in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md"
@@ -7528,6 +7588,9 @@
   ],
   "5573d37068a6b6c10ff9e380bb8b34bb83516c35": [
     "windows-apps-src\\monetize\\add-advertisements-to-video-content.md"
+  ],
+  "12c817fcebd03908bdbbf6b5be26b1beb1f18ac5": [
+    "windows-apps-src\\monetize\\microsoft-store-services-sdk.md"
   ],
   "13428f90b631344b78e2d3f1cc50f38419ee5c9c": [
     "windows-apps-src\\monetize\\microsoft-store-services-sdk.md"
@@ -9353,6 +9416,9 @@
   "e2b0680e62014526f684e7c1f7fd7da83a14f5d3": [
     "windows-apps-src\\monetize\\app-metadata-api-for-advertising-networks.md"
   ],
+  "0ca907fbc73a0e823207d243d338a2f62bf03d78": [
+    "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
+  ],
   "c51c0ac8895932109b2e6b91375f5a661a4413a3": [
     "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
   ],
@@ -9439,6 +9505,9 @@
   ],
   "b1828b1add220ae7eecf72c406fe5250dbe873de": [
     "windows-apps-src\\monetize\\halt-the-package-rollout-for-an-app-submission.md"
+  ],
+  "2935e0bef15eaf1be0c138bed6767ee96b9bda23": [
+    "windows-apps-src\\monetize\\log-custom-events-for-dev-center.md"
   ],
   "7f9365c0bc055c335f14d1e644221bd9bc30ce26": [
     "windows-apps-src\\monetize\\log-custom-events-for-dev-center.md"
@@ -9832,6 +9901,9 @@
   ],
   "fbb145a78a137ce6f7c3255c8909b00600f0923f": [
     "windows-apps-src\\monetize\\respond-to-reviews-using-windows-store-services.md"
+  ],
+  "ec763771624e22b6898d357108b77bae13f2284c": [
+    "windows-apps-src\\monetize\\run-ad-campaigns-using-windows-store-services.md"
   ],
   "58b3b4fc3ca6bbe77d04f2f3f74aa7407bdbbed3": [
     "windows-apps-src\\monetize\\run-ad-campaigns-using-windows-store-services.md"

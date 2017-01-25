@@ -24499,6 +24499,246 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ecdb21cb2f0c8638d4058620b8bf584cec266142.0ed7f0ea9c0ef40b6946346022d8109441832954.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\enable-consumable-in-app-product-purchases.md.88999712ad1c42c5f7658153f0e1abd80d151adf.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\enable-consumable-in-app-product-purchases.md",
+      "XliffHash": "88999712ad1c42c5f7658153f0e1abd80d151adf",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0ec382594f0f14c03eadc6ce51535fbeb6ebeee8.81890c70d8494148e25210e7fe6dc7c57be62d8e.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\in-app-purchases-and-trials.md.57e86e3721a2c4449244468ffb93a431b09e9ec1.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\in-app-purchases-and-trials.md",
+      "XliffHash": "57e86e3721a2c4449244468ffb93a431b09e9ec1",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\3215e2b29e6c87c9990a4ba9a4f17bfb4cf467f3.c576dd24e643eabb06180d07a3125139a91ac8cf.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\use-receipts-to-verify-product-purchases.md.5c003fc20f286b318259337a0700e32ee98bbcf5.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\use-receipts-to-verify-product-purchases.md",
+      "XliffHash": "5c003fc20f286b318259337a0700e32ee98bbcf5",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e76461af80ef65e0f52d9bdfcc29fd851332ebd0.a9fb6eeae68c79dd2313e9a3e01325ee7b14a6e9.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\manage-your-experiment.md.828a7a4085ae8e8a4d9b49995c4716c6d3a093e1.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\manage-your-experiment.md",
+      "XliffHash": "828a7a4085ae8e8a4d9b49995c4716c6d3a093e1",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\611a3ed1a09ad10274e9a78a6b93f3e4ef53f64a.810484146cc997c66fb2f747b1b36aeb3f7b80af.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\implement-a-trial-version-of-your-app.md.ed2a6d04317132e78c7c1a8adcea1fe449d14821.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\implement-a-trial-version-of-your-app.md",
+      "XliffHash": "ed2a6d04317132e78c7c1a8adcea1fe449d14821",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b1fac5f336b723d0093946a3f9fbd0c41d0eb5ff.ce892ca0bcf2823f0394ea22068db477621d8430.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\microsoft-store-services-sdk.md.fd5e1b28315558d4371f724c7056ee90f2310a6c.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\microsoft-store-services-sdk.md",
+      "XliffHash": "fd5e1b28315558d4371f724c7056ee90f2310a6c",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\12c817fcebd03908bdbbf6b5be26b1beb1f18ac5.d5598901c2ec33003deec90f4c7bfda6f574954a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\run-ad-campaigns-using-windows-store-services.md.0899fe0c97b2ac78db1d0ff89daba0703f769ce2.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\run-ad-campaigns-using-windows-store-services.md",
+      "XliffHash": "0899fe0c97b2ac78db1d0ff89daba0703f769ce2",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ec763771624e22b6898d357108b77bae13f2284c.5c077402f5dec366e3cf4a663731a6525c30bdef.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md.f8df4e3bb0cd1fcdf1a2a0f25411e29d70fcf904.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md",
+      "XliffHash": "f8df4e3bb0cd1fcdf1a2a0f25411e29d70fcf904",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\53b332e58f98b2040d508c314611dbf968a58b0f.053352a9c47f6f7e2392a2515aa2bafb497e3868.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\run-app-experiments-with-a-b-testing.md.c2722e826e4e7f1633a632c79f04560ab0328345.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\run-app-experiments-with-a-b-testing.md",
+      "XliffHash": "c2722e826e4e7f1633a632c79f04560ab0328345",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6ac1ffad64c20c4ebea522b1aad106a0531ea026.0e2cc28ae818b474a9f6b7fa82f955a4eec83757.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\get-product-info-for-apps-and-add-ons.md.8d4fc4b0a1e35a4618aac021d73e714ff35d2df6.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\get-product-info-for-apps-and-add-ons.md",
+      "XliffHash": "8d4fc4b0a1e35a4618aac021d73e714ff35d2df6",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\fe5e9aeb0c3bc4c8583441643af3eb93443794eb.7a8159fbcf2180abe7ad2427e40cd20c0a489070.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\define-your-experiment-in-the-dev-center-dashboard.md.55cf90dfeeaf3678dcb08add924c54ed7ac4dbc2.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\define-your-experiment-in-the-dev-center-dashboard.md",
+      "XliffHash": "55cf90dfeeaf3678dcb08add924c54ed7ac4dbc2",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\41fc5a8eea3f6e4be96cdd83131be7f5988da139.bef71c9d32ff7e9624e37efabdb7d5702f2bd5fb.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\enable-in-app-product-purchases.md.99fdd9162aa841a5b62f095a74cdf506038991a9.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\enable-in-app-product-purchases.md",
+      "XliffHash": "99fdd9162aa841a5b62f095a74cdf506038991a9",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c3e30a406dd6f09aeef9b9a8e8c1f89408663d60.c032b71d37ac3991a4b9cb6d2a96952ba3fb9a9d.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\enable-consumable-add-on-purchases.md.ba2c2f36b336c6cbacacaf4cb64ce7ac0c5599d4.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\enable-consumable-add-on-purchases.md",
+      "XliffHash": "ba2c2f36b336c6cbacacaf4cb64ce7ac0c5599d4",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\53bde441cd31a085bbbd841f613c1d187e16e8c1.dec7107c820460ec7988a09da4415444a1afe921.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\exclude-or-limit-features-in-a-trial-version-of-your-app.md.9d066f751355fe480e0f506a8b2247e43d0e1a2f.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\exclude-or-limit-features-in-a-trial-version-of-your-app.md",
+      "XliffHash": "9d066f751355fe480e0f506a8b2247e43d0e1a2f",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b450bae1069d7bef8c2142f878774f009cda6036.cf1ad487338cfdf9f8787b635fbadde8e9f93ca7.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\get-license-info-for-apps-and-add-ons.md.fbe28b16f7bf56231bf8696df89b9ea6006a49f7.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\get-license-info-for-apps-and-add-ons.md",
+      "XliffHash": "fbe28b16f7bf56231bf8696df89b9ea6006a49f7",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a6636807852d6a1501c4d77e7e3a2df505935d77.fe5d2a97af3d5e63b1712c11ebce87791cfdd358.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md.c402d0c973d2e7ad51c8aea893e8666103c23335.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md",
+      "XliffHash": "c402d0c973d2e7ad51c8aea893e8666103c23335",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\3ecd31b049585901ff66c217871c130cb637872e.bfb937015732ceaf05529675bb1dd4bfa312b941.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\code-your-experiment-in-your-app.md.7de435a9f7115770da7a628ade7aad29937c0550.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\code-your-experiment-in-your-app.md",
+      "XliffHash": "7de435a9f7115770da7a628ade7aad29937c0550",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d78c8b4892e6524254f3c3736cddcd9fe0a4a105.8dec1ca17d57e6b84d4acbe943ba4d00eadd0da9.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\log-custom-events-for-dev-center.md.913c0c370cf390635a5b84f7995f6f2ed0f2a0d6.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\log-custom-events-for-dev-center.md",
+      "XliffHash": "913c0c370cf390635a5b84f7995f6f2ed0f2a0d6",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2935e0bef15eaf1be0c138bed6767ee96b9bda23.e890dad5b859d9fae95e6f8942eeca60cd8aebd3.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md.b064fee6d3d92c215f905f56ceb6de06bb21bb2c.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md",
+      "XliffHash": "b064fee6d3d92c215f905f56ceb6de06bb21bb2c",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b17fd4aa7e22167da144a50af23281b8542d7017.fbdb423671396860f70eda3f188d30c77ee4b752.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\create-and-run-your-first-experiment-with-a-b-testing.md.b329c284b671afd1e992394e20de596299d19b52.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\create-and-run-your-first-experiment-with-a-b-testing.md",
+      "XliffHash": "b329c284b671afd1e992394e20de596299d19b52",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8391e63f3a889fb589c052d2b9c3f250e7c7d6f9.7bd88b6370e18a1d6a9e5f6eb3c0071b8bae9158.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\manage-a-large-catalog-of-in-app-products.md.cb102dac43ef47c9f853174feab39368bf020490.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\manage-a-large-catalog-of-in-app-products.md",
+      "XliffHash": "cb102dac43ef47c9f853174feab39368bf020490",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\3fc24ceb3884005c8ed1494c43eb4113c2a97ae6.56e55bf8874fc03da5b45b23392f1f1869341653.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\enable-in-app-purchases-of-apps-and-add-ons.md.836b1c366705b26aea62b7c5bf856f0f033f97ba.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\enable-in-app-purchases-of-apps-and-add-ons.md",
+      "XliffHash": "836b1c366705b26aea62b7c5bf856f0f033f97ba",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e1bbeb134ca4625cce6434171de719c6575d68c2.8cb8b0be6646f63557712104f7de32fb7380e312.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md.86ffd2bb7b66765b829f4990e63566a533de8b0c.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md",
+      "XliffHash": "86ffd2bb7b66765b829f4990e63566a533de8b0c",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0ca907fbc73a0e823207d243d338a2f62bf03d78.1ccf7300d8e5bce8eaf359be97c1d5efb4d82807.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\index.md.b14aa718edb27f2a6499a64902e66ab8ce0e6020.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\index.md",
+      "XliffHash": "b14aa718edb27f2a6499a64902e66ab8ce0e6020",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7de65bc96a5067e3ab517409fec430fa304d586c.a85c405c9e9c39de9ba48f0d572d512eb12f8348.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
