@@ -238,7 +238,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c6d295a21825d1e89eaafcba59ca3a1b85669da9.18f001157e61f3721c75d2dd164d1f59584d7801.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\app-bars.5a175043205bf3552c68985c9d352d0ce06ae166.ja-jp.xlf",
-      "LocXliffCommit": "f4949b6a371ff9640aa76dfd4ccf284889b93315"
+      "LocXliffCommit": "4e2da7c2d5992253464157ce73a4969c2d0cf406"
     },
     "windows-apps-src\\controls-and-patterns\\tabs-pivot.md.5c0276b5b76c47644900f6e3e874a8eb970be7e6.HT": {
       "SourceFilename": "windows-apps-src\\controls-and-patterns\\tabs-pivot.md",
