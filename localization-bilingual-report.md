@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\app-settings\store-and-retrieve-app-data.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3c073879ab847a3e1af454e0c1550d8af0f78b3e?path=windows-apps-src%2Fapp-settings%2Fstore-and-retrieve-app-data.md&_a=contents) | HandedOffSuccess | [Details](#7d328a67c37d5bf9b0498bc5b5d862fdb6f1d72b82)
+ [windows-apps-src\controls-and-patterns\app-bars.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/e6ebd891c31291b8094ed5138fa9ffcd67e70ab6?path=windows-apps-src%2Fcontrols-and-patterns%2Fapp-bars.md&_a=contents) | HandedOffSuccess | [Details](#a91ee9cf214c686aae8cf069883f4fb1d789777a746)
 
 ## Item Details
-##### <a name='7d328a67c37d5bf9b0498bc5b5d862fdb6f1d72b82'></a> Source: [windows-apps-src\app-settings\store-and-retrieve-app-data.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3c073879ab847a3e1af454e0c1550d8af0f78b3e?path=windows-apps-src%2Fapp-settings%2Fstore-and-retrieve-app-data.md&_a=contents)
+##### <a name='a91ee9cf214c686aae8cf069883f4fb1d789777a746'></a> Source: [windows-apps-src\controls-and-patterns\app-bars.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/e6ebd891c31291b8094ed5138fa9ffcd67e70ab6?path=windows-apps-src%2Fcontrols-and-patterns%2Fapp-bars.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [store-and-retrieve-app-data.5da8a763047d281092870b7268f4d599223c086e.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/8423d1d7c72b00a366abf91ec4fdb36211976055?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fstore-and-retrieve-app-data.5da8a763047d281092870b7268f4d599223c086e.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-01-19 01:49:59
+* Handoff File: [app-bars.5a175043205bf3552c68985c9d352d0ce06ae166.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/95e82b9f3949242b6c1bd8fc13998c064d5ee553?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fapp-bars.5a175043205bf3552c68985c9d352d0ce06ae166.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-01-25 04:22:25
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,11 +21,11 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\app-settings\store-and-retrieve-app-data.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/7dba01aefd8c323f98d1d0e17b62a94bde3dfebc?path=windows-apps-src%2Fapp-settings%2Fstore-and-retrieve-app-data.md&_a=contents)
-* Current Handback File: [store-and-retrieve-app-data.5da8a763047d281092870b7268f4d599223c086e.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/9c1f01c4550d5fdd42fc4b5d152648bc5518ace1?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fstore-and-retrieve-app-data.5da8a763047d281092870b7268f4d599223c086e.ja-jp.xlf&_a=contents)
-* Current Handback Datetime: 2017-01-24 18:30:26
-* Bilingual File: [store-and-retrieve-app-data.5da8a763047d281092870b7268f4d599223c086e.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/9c1f01c4550d5fdd42fc4b5d152648bc5518ace1?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fstore-and-retrieve-app-data.5da8a763047d281092870b7268f4d599223c086e.ja-jp.xlf&_a=contents)
-* Bilingual Datetime: 2017-01-24 18:35:34
+* Current Target File: [windows-apps-src\controls-and-patterns\app-bars.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/4dbb751927c0558afe14be25167fc4d5106acabe?path=windows-apps-src%2Fcontrols-and-patterns%2Fapp-bars.md&_a=contents)
+* Current Handback File: [app-bars.5a175043205bf3552c68985c9d352d0ce06ae166.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/4e2da7c2d5992253464157ce73a4969c2d0cf406?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fapp-bars.5a175043205bf3552c68985c9d352d0ce06ae166.ja-jp.xlf&_a=contents)
+* Current Handback Datetime: 2017-01-25 18:24:41
+* Bilingual File: [app-bars.5a175043205bf3552c68985c9d352d0ce06ae166.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/4e2da7c2d5992253464157ce73a4969c2d0cf406?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fapp-bars.5a175043205bf3552c68985c9d352d0ce06ae166.ja-jp.xlf&_a=contents)
+* Bilingual Datetime: 2017-01-25 18:29:10
 * [Back to Top](#report-top)
 
 
