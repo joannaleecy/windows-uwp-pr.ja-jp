@@ -6638,6 +6638,9 @@
   "4b31ec06b1ded4882d26cffed029eb8179ff47c3": [
     "windows-apps-src\\xbox-apps\\automate-launching-uwp-apps.md"
   ],
+  "83ce6ce54f52e0525f9aa7f045715c2709554c6b": [
+    "windows-apps-src\\xbox-apps\\development-environment-setup.md"
+  ],
   "1bafa93bf2f21d47c0778a707831aea6eb4f298f": [
     "windows-apps-src\\xbox-apps\\development-environment-setup.md"
   ],
@@ -7847,6 +7850,9 @@
   "1f77ca4191de09361bae752ba72fd6239c44ad1b": [
     "windows-apps-src\\gaming\\concept-approval.md"
   ],
+  "bfa59f28678f6f21f0d77c6eed99fd20c079136c": [
+    "windows-apps-src\\monetize\\code-examples-for-the-windows-store-submission-api.md"
+  ],
   "e8c0faf0f8ebad5eb6b68b92bcb3047d59092865": [
     "windows-apps-src\\monetize\\code-examples-for-the-windows-store-submission-api.md"
   ],
@@ -7957,6 +7963,9 @@
   ],
   "dc5fcdd7a3181e07874b761c7183c6c539591704": [
     "windows-apps-src\\monetize\\create-an-app-submission.md"
+  ],
+  "0b7b533abe67c5573d5dc655ded59744c41b87f0": [
+    "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
   ],
   "39fd705c45a4cfb73ae7355ade69bd3c46953728": [
     "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
@@ -8240,6 +8249,9 @@
   "058d11938dd6efc961da58a9d937be76beac5978": [
     "windows-apps-src\\monetize\\manage-add-ons.md"
   ],
+  "61dbfd6afc6efe7cb17d2b88f5266c2659077491": [
+    "windows-apps-src\\monetize\\manage-add-on-submissions.md"
+  ],
   "ce30e9c75da27fe95f67c2bcc91092e7456a2b7f": [
     "windows-apps-src\\monetize\\manage-add-on-submissions.md"
   ],
@@ -8254,6 +8266,9 @@
   ],
   "1a1ace9d456089d4bed2dd4ac4f39479dc8faa52": [
     "windows-apps-src\\monetize\\manage-add-on-submissions.md"
+  ],
+  "47ad8297ec43dec65cc606e5e44dcf761158e6b7": [
+    "windows-apps-src\\monetize\\manage-app-submissions.md"
   ],
   "4ca7096f1bc72e4c946ad4d4e90948c9cd3c0ca5": [
     "windows-apps-src\\monetize\\manage-app-submissions.md"
@@ -8281,6 +8296,9 @@
   ],
   "626a59ba848c9ae1d97b85b67ef2c76eed49065a": [
     "windows-apps-src\\monetize\\manage-flights.md"
+  ],
+  "a7e9cc6634f0c8aec8c6a933fc0ed61ef2f69274": [
+    "windows-apps-src\\monetize\\manage-flight-submissions.md"
   ],
   "46dec92ac22b4771e38dcb31d6d5ba86a2dad2e7": [
     "windows-apps-src\\monetize\\manage-flight-submissions.md"
