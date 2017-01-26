@@ -4826,6 +4826,9 @@
   "f8bcda0cd2e31026f90f3a84a15674c00691f01d": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
   ],
+  "24682c6468915fc5e66b43a5fda9aa8a12efdba5": [
+    "windows-apps-src\\porting\\desktop-to-uwp-root.md"
+  ],
   "b2d3cec15bf8f7b7650b3f9cad9b207ab86646e2": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
@@ -6233,6 +6236,9 @@
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "140409f8fc3cd50bc585ae6875e78218cf49e9c8": [
+    "windows-apps-src\\TOC.md"
+  ],
   "7738ffe1d17f6a20551e13f3d107a83bc747d77b": [
     "windows-apps-src\\TOC.md"
   ],
@@ -6730,6 +6736,9 @@
   ],
   "c3ca70936e30ce67b19971e5ccbb01fa89253f35": [
     "windows-apps-src\\xbox-apps\\system-resource-allocation.md"
+  ],
+  "fbf267d14d3a0292579e4f734397aac8cacfd616": [
+    "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md"
   ],
   "5d49ec7d32dc9d9e1f6dba73780ae9b73481f9e4": [
     "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md"
@@ -10204,6 +10213,9 @@
   ],
   "a7481872df2931273542815b9797c4fb09d46c90": [
     "windows-apps-src\\packaging\\sign-app-package-using-signtool.md"
+  ],
+  "59a1ff149e51dc7d057d01145c0aeaedfa5468d6": [
+    "windows-apps-src\\porting\\desktop-to-uwp-packaging-dot-net.md"
   ],
   "71f633c724c95b46dc48c8ab3573ac0cc6c90479": [
     "windows-apps-src\\porting\\desktop-to-uwp-packaging-dot-net.md"
