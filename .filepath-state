@@ -3911,6 +3911,9 @@
   "e91f0bbb203ef1c77ad1435b1a3f10aa53c3a483": [
     "windows-apps-src\\maps-and-location\\set-up-a-geofence.md"
   ],
+  "b5ba3287d62fb941f1a55827ef7b6096761cc994": [
+    "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
+  ],
   "71985eb3c4e51c0885c61f2c58b05d96579b2610": [
     "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
   ],
@@ -4268,6 +4271,9 @@
   "b5fe116ea850e93b5208b829e4ed6cec2bc42de0": [
     "windows-apps-src\\monetize\\get-started-with-microsoft-advertising-libraries.md"
   ],
+  "8fb86a9618643a68734f7f6f9b0fbff04648fe7d": [
+    "windows-apps-src\\monetize\\grant-free-products.md"
+  ],
   "32d09f17e792911d0e0a216ff8f8b5983f2a2b87": [
     "windows-apps-src\\monetize\\grant-free-products.md"
   ],
@@ -4436,6 +4442,9 @@
   "4e9ce94789b411ce148067b60555aa3ae82d2805": [
     "windows-apps-src\\monetize\\monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md"
   ],
+  "82f3e400eae4c01ec3e4d2897730140f713680ac": [
+    "windows-apps-src\\monetize\\query-for-products.md"
+  ],
   "6f93d0956966577d6b28c2eccbe46ec951ed8945": [
     "windows-apps-src\\monetize\\query-for-products.md"
   ],
@@ -4477,6 +4486,9 @@
   ],
   "4e0ca6fe88218faef1f7c9192a5e19569e9c00b4": [
     "windows-apps-src\\monetize\\renew-a-windows-store-id-key.md"
+  ],
+  "fe2f806a129eebefbd4d71010e9d32dea9e3610f": [
+    "windows-apps-src\\monetize\\report-consumable-products-as-fulfilled.md"
   ],
   "4efe2025267671a319f7473284d7e532e1273731": [
     "windows-apps-src\\monetize\\report-consumable-products-as-fulfilled.md"
@@ -4618,6 +4630,9 @@
   ],
   "55631d364ca6f2d76d214eca6d00fbdd969c0e15": [
     "windows-apps-src\\monetize\\use-receipts-to-verify-product-purchases.md"
+  ],
+  "aa50614eb1617552f52587b53e470485d9b93272": [
+    "windows-apps-src\\monetize\\using-windows-store-services.md"
   ],
   "cbd4836c4c250cbd5428d3d71915dcdc918352cf": [
     "windows-apps-src\\monetize\\using-windows-store-services.md"
@@ -9751,6 +9766,9 @@
   ],
   "5a6bbf5e242b7284fb2a5de66252b354bfa09909": [
     "windows-apps-src\\monetize\\finalize-the-package-rollout-for-an-app-submission.md"
+  ],
+  "bbb90f49fc74a290911785ca051bcdb7a4c040e3": [
+    "windows-apps-src\\monetize\\get-ad-campaign-performance-data.md"
   ],
   "768f5cbb97f86b6055a3927f33e87d1f465e11df": [
     "windows-apps-src\\monetize\\get-ad-campaign-performance-data.md"

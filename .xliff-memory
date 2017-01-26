@@ -24926,7 +24926,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\71985eb3c4e51c0885c61f2c58b05d96579b2610.ee576f1ba456625c3ff2b29a9cfaaf260b000e7c.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b5ba3287d62fb941f1a55827ef7b6096761cc994.ee576f1ba456625c3ff2b29a9cfaaf260b000e7c.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -25476,7 +25476,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\cbd4836c4c250cbd5428d3d71915dcdc918352cf.c685556d6e85f7ba5fce2d61c4246903d22fee58.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\aa50614eb1617552f52587b53e470485d9b93272.01623c8f33822834d3517380ff57f6218815d3b2.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -25756,7 +25756,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\768f5cbb97f86b6055a3927f33e87d1f465e11df.821358b6bddab374f2db3e2bcaa79159b6208c3d.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\bbb90f49fc74a290911785ca051bcdb7a4c040e3.821358b6bddab374f2db3e2bcaa79159b6208c3d.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -25897,6 +25897,36 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\24682c6468915fc5e66b43a5fda9aa8a12efdba5.036c5eea0de4fc5e999c648c7056eaafec879733.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\grant-free-products.md.1cc8141feefcfb810818c6000139e8a45cdc0520.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\grant-free-products.md",
+      "XliffHash": "1cc8141feefcfb810818c6000139e8a45cdc0520",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8fb86a9618643a68734f7f6f9b0fbff04648fe7d.168179af19c3288a017f04dcfe5b4ff77b58e167.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\report-consumable-products-as-fulfilled.md.f4f3eb1ed4b3c2796464991098c3380c1f9e7daf.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\report-consumable-products-as-fulfilled.md",
+      "XliffHash": "f4f3eb1ed4b3c2796464991098c3380c1f9e7daf",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\fe2f806a129eebefbd4d71010e9d32dea9e3610f.d7a01c34b4c466579e60a441daf90417c3e3a0f8.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\query-for-products.md.6e80fb0a55758816db02745d121375b998d83fc4.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\query-for-products.md",
+      "XliffHash": "6e80fb0a55758816db02745d121375b998d83fc4",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\82f3e400eae4c01ec3e4d2897730140f713680ac.13837f812f499ac3718b699206b2ed1e42f75893.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }
