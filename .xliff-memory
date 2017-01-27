@@ -25989,6 +25989,86 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\bfa59f28678f6f21f0d77c6eed99fd20c079136c.db78993fca55cc1cec7e9bffdf266f8f632f988c.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\xbox-apps\\frequently-asked-questions.md.7d4d5dd97722da7d97a0c1d0c20bfb30b76b50f6.HT": {
+      "SourceFilename": "windows-apps-src\\xbox-apps\\frequently-asked-questions.md",
+      "XliffHash": "7d4d5dd97722da7d97a0c1d0c20bfb30b76b50f6",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\397330e05d9f2335ffbdfc11ab62749d1e202b90.df81645b632ff57cc267bc3dd0fd16fa1433093d.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\security\\microsoft-passport-login.md.8c02f73d5c03359eb8076cdea892c8112789ab65.HT": {
+      "SourceFilename": "windows-apps-src\\security\\microsoft-passport-login.md",
+      "XliffHash": "8c02f73d5c03359eb8076cdea892c8112789ab65",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\336bb3b58e9f6cfeb3c173a8bb1c9e72bc7929b7.910207957c68c3d4eb88f42fd6be78e98a346d48.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\xbox-apps\\system-resource-allocation.md.e8eaeabb6af97304fbade06763f982748981d5d7.HT": {
+      "SourceFilename": "windows-apps-src\\xbox-apps\\system-resource-allocation.md",
+      "XliffHash": "e8eaeabb6af97304fbade06763f982748981d5d7",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\4c45e1b290408d1212bdbf45ca4245c7d7db9903.b71e994ee03f64422e3d8f72d6c0730f527308e0.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\xbox-apps\\known-issues.md.c56e8a89f5c1ad1f05ed28509c87f45d6b3bda80.HT": {
+      "SourceFilename": "windows-apps-src\\xbox-apps\\known-issues.md",
+      "XliffHash": "c56e8a89f5c1ad1f05ed28509c87f45d6b3bda80",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ff8fa065ca1fef2fde122a5ef91d86b35fd84443.9b9011385aee0a1e3c55f1aa9d519401f848910e.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\security\\microsoft-passport.md.e2bc8e4ab556e1cb079b370650d02d73ca90a61c.HT": {
+      "SourceFilename": "windows-apps-src\\security\\microsoft-passport.md",
+      "XliffHash": "e2bc8e4ab556e1cb079b370650d02d73ca90a61c",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e22176049652717af5ad222f7e6c8a30d447ce1b.46b0982bbfc9794d2dc69dfe1509183093c11cbe.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\security\\microsoft-passport-login-auth-service.md.4957b8723e36bed73fa7cd8c990fd85cf201a59e.HT": {
+      "SourceFilename": "windows-apps-src\\security\\microsoft-passport-login-auth-service.md",
+      "XliffHash": "4957b8723e36bed73fa7cd8c990fd85cf201a59e",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2428512d8279160eb51e252dfabd85ceeaff25c6.f1aed4751886f2434e6db40c0bcb04cb08e93ca7.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\security\\intro-to-secure-windows-app-development.md.d7084a4b1f9b742c2b8e8926b93928cbbab43881.HT": {
+      "SourceFilename": "windows-apps-src\\security\\intro-to-secure-windows-app-development.md",
+      "XliffHash": "d7084a4b1f9b742c2b8e8926b93928cbbab43881",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0427c56816c72d8ec520a69bc02e608aa53a8372.e58f68556d7b7418559686828693a390a03d0400.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\publish\\define-pricing-and-market-selection.md.243fe5315a580dbca3b9c43f361c81d2ae12f70d.HT": {
+      "SourceFilename": "windows-apps-src\\publish\\define-pricing-and-market-selection.md",
+      "XliffHash": "243fe5315a580dbca3b9c43f361c81d2ae12f70d",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\cac1b5d0a56398a098f10fc49187d027607fa0ac.8c73b60784665c25f0dd672480f7602eb43d648a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

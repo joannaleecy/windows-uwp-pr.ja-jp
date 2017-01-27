@@ -5399,6 +5399,9 @@
   "1be7229086e1f2f932e0945334098d89a9978b70": [
     "windows-apps-src\\publish\\create-your-app-by-reserving-a-name.md"
   ],
+  "cac1b5d0a56398a098f10fc49187d027607fa0ac": [
+    "windows-apps-src\\publish\\define-pricing-and-market-selection.md"
+  ],
   "952b0a01d201f8579b6f62ce481fa9cbca5e6f92": [
     "windows-apps-src\\publish\\define-pricing-and-market-selection.md"
   ],
@@ -6005,6 +6008,9 @@
   "b30492c3c74b19d5ce306829302be17ff303723f": [
     "windows-apps-src\\security\\index.md"
   ],
+  "0427c56816c72d8ec520a69bc02e608aa53a8372": [
+    "windows-apps-src\\security\\intro-to-secure-windows-app-development.md"
+  ],
   "1f501fbefa6c0ff109eec3cd18f5e920a487f78e": [
     "windows-apps-src\\security\\intro-to-secure-windows-app-development.md"
   ],
@@ -6023,6 +6029,9 @@
   "2c43e8ea726827d263fd397ea28058c04d30a7aa": [
     "windows-apps-src\\security\\macs-hashes-and-signatures.md"
   ],
+  "e22176049652717af5ad222f7e6c8a30d447ce1b": [
+    "windows-apps-src\\security\\microsoft-passport.md"
+  ],
   "c504aea7bc62b3201c8135ebef48c9188a4203b6": [
     "windows-apps-src\\security\\microsoft-passport.md"
   ],
@@ -6032,6 +6041,9 @@
   "cb24b1e75dbb8f37fcd4482e3e0d468855155f04": [
     "windows-apps-src\\security\\microsoft-passport.md"
   ],
+  "336bb3b58e9f6cfeb3c173a8bb1c9e72bc7929b7": [
+    "windows-apps-src\\security\\microsoft-passport-login.md"
+  ],
   "93a3563b25e63c44f7847f55bc8cf7bfed820376": [
     "windows-apps-src\\security\\microsoft-passport-login.md"
   ],
@@ -6040,6 +6052,9 @@
   ],
   "27f06fe3031d391a03bc5f5b08723983b34308f0": [
     "windows-apps-src\\security\\microsoft-passport-login.md"
+  ],
+  "2428512d8279160eb51e252dfabd85ceeaff25c6": [
+    "windows-apps-src\\security\\microsoft-passport-login-auth-service.md"
   ],
   "de0270aaedaa38e4d307c89e21450d545e0122b6": [
     "windows-apps-src\\security\\microsoft-passport-login-auth-service.md"
@@ -6668,6 +6683,9 @@
   "cccc263dcd0ed9ae843cf845438b30605e9b9d9d": [
     "windows-apps-src\\xbox-apps\\devkit-deactivation.md"
   ],
+  "397330e05d9f2335ffbdfc11ab62749d1e202b90": [
+    "windows-apps-src\\xbox-apps\\frequently-asked-questions.md"
+  ],
   "49497e6ab6996871a9ce3c598c2add5747232987": [
     "windows-apps-src\\xbox-apps\\frequently-asked-questions.md"
   ],
@@ -6710,6 +6728,9 @@
   "6030f666f213865a92d071210fe66f587c1bffb1": [
     "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
   ],
+  "ff8fa065ca1fef2fde122a5ef91d86b35fd84443": [
+    "windows-apps-src\\xbox-apps\\known-issues.md"
+  ],
   "0b3b1b7cb42d1705eb2e3a1a5c2edea2969dec7e": [
     "windows-apps-src\\xbox-apps\\known-issues.md"
   ],
@@ -6745,6 +6766,9 @@
   ],
   "387732c923f67fec75ce3944cc05d39224892db4": [
     "windows-apps-src\\xbox-apps\\samples-xaml-media.md"
+  ],
+  "4c45e1b290408d1212bdbf45ca4245c7d7db9903": [
+    "windows-apps-src\\xbox-apps\\system-resource-allocation.md"
   ],
   "1c54b4c0bc94e9011a6a36914ce21450772a1cba": [
     "windows-apps-src\\xbox-apps\\system-resource-allocation.md"
