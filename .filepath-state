@@ -126,13 +126,16 @@
     "windows-apps-src\\accessibility\\practices-to-avoid.md"
   ],
   "9733608c7212ab1e26511c33034ad2b626cc5887": [
-    "windows-apps-src\\app-help-guidelines\\external-help.md"
+    "windows-apps-src\\app-help-guidelines\\external-help.md",
+    "windows-apps-src\\in-app-help\\external-help.md"
   ],
   "c978e805fa7d746baf299058c8d98fc04ad7c81b": [
-    "windows-apps-src\\app-help-guidelines\\guidelines-for-app-help.md"
+    "windows-apps-src\\app-help-guidelines\\guidelines-for-app-help.md",
+    "windows-apps-src\\in-app-help\\guidelines-for-app-help.md"
   ],
   "f649a43bed09a6aac2c94f4a24591730093dc297": [
-    "windows-apps-src\\app-help-guidelines\\in-app-help.md"
+    "windows-apps-src\\app-help-guidelines\\in-app-help.md",
+    "windows-apps-src\\in-app-help\\in-app-help.md"
   ],
   "c76034e627bcd3a8394b88e3926c994a878e4a40": [
     "windows-apps-src\\in-app-help\\in-app-help.md"
@@ -140,11 +143,9 @@
   "7d396561fda4ad52830255c2755b13496753fc10": [
     "windows-apps-src\\in-app-help\\in-app-help.md"
   ],
-  "0c606e3b5be2889e83efce77d4c98ca646fef725": [
-    "windows-apps-src\\in-app-help\\in-app-help.md"
-  ],
   "179f70a1c421d3d5a73813a9b9675353a8d5f8c2": [
-    "windows-apps-src\\app-help-guidelines\\instructional-ui.md"
+    "windows-apps-src\\app-help-guidelines\\instructional-ui.md",
+    "windows-apps-src\\in-app-help\\instructional-ui.md"
   ],
   "446d5e8bb0651df7041fd79b266310d026c09ce4": [
     "windows-apps-src\\app-settings\\app-settings-and-data.md"
@@ -155,6 +156,9 @@
   "52bf5b65412918e522b57ba06d83c67771086a93": [
     "windows-apps-src\\app-settings\\app-settings-and-data.md"
   ],
+  "84a73137294cb36e1a424d597b997676ac1d1376": [
+    "windows-apps-src\\app-settings\\guidelines-for-app-settings.md"
+  ],
   "389dff17320080742b24304b7172d4ea2b1e9a9f": [
     "windows-apps-src\\app-settings\\guidelines-for-app-settings.md"
   ],
@@ -163,6 +167,9 @@
   ],
   "dc2fb58250ed1cc032271adc4bae98872e6f612a": [
     "windows-apps-src\\app-settings\\guidelines-for-app-settings.md"
+  ],
+  "a136cf9deaf0de726c4a4bbb3c42f964f34997fa": [
+    "windows-apps-src\\app-settings\\store-and-retrieve-app-data.md"
   ],
   "0dbcd89ca4b46a3a7eaebbc28bc7f8c4bd461423": [
     "windows-apps-src\\app-settings\\store-and-retrieve-app-data.md"
@@ -596,13 +603,13 @@
   "7edfcf2e1a73fe522693c4b328d5d72a8759d5cb": [
     "windows-apps-src\\controls-and-patterns\\active-canvas.md"
   ],
+  "01869ea568ec128a6a7f9b87523b089c0a300fe5": [
+    "windows-apps-src\\controls-and-patterns\\app-bars.md"
+  ],
   "a91ee9cf214c686aae8cf069883f4fb1d789777a": [
     "windows-apps-src\\controls-and-patterns\\app-bars.md"
   ],
   "f1c3957653994870bc24bdc76ace8e06335ca617": [
-    "windows-apps-src\\controls-and-patterns\\app-bars.md"
-  ],
-  "01869ea568ec128a6a7f9b87523b089c0a300fe5": [
     "windows-apps-src\\controls-and-patterns\\app-bars.md"
   ],
   "c6d295a21825d1e89eaafcba59ca3a1b85669da9": [
@@ -617,13 +624,13 @@
   "6b41c8b1888b61c82aa3d54244151b08d963658d": [
     "windows-apps-src\\controls-and-patterns\\auto-suggest-box.md"
   ],
+  "4f1c3291b1dd32176dec4dc11ab903853043dc51": [
+    "windows-apps-src\\controls-and-patterns\\buttons.md"
+  ],
   "f6aa1818062fbddfabbd46e22939254593b90508": [
     "windows-apps-src\\controls-and-patterns\\buttons.md"
   ],
   "56c603358fc3a99abcc9e1394a295bdd95f3f3c9": [
-    "windows-apps-src\\controls-and-patterns\\buttons.md"
-  ],
-  "4f1c3291b1dd32176dec4dc11ab903853043dc51": [
     "windows-apps-src\\controls-and-patterns\\buttons.md"
   ],
   "bb670533769d8bae9cdea0f18e9cbb5717eb3877": [
@@ -929,25 +936,25 @@
   "865969a7c965a502acd9fe24df28128399efd380": [
     "windows-apps-src\\controls-and-patterns\\tabs-pivot.md"
   ],
+  "ec4c0e93a278bd5f3aa2b7be5ed6b80fc1218132": [
+    "windows-apps-src\\controls-and-patterns\\text-block.md"
+  ],
   "80af43db71da3c1b07d4fbbc10a7ea79d13187cc": [
     "windows-apps-src\\controls-and-patterns\\text-block.md"
   ],
   "0a0b59b7520c821625bd1e635b760cebeec23ecb": [
     "windows-apps-src\\controls-and-patterns\\text-block.md"
   ],
-  "ec4c0e93a278bd5f3aa2b7be5ed6b80fc1218132": [
-    "windows-apps-src\\controls-and-patterns\\text-block.md"
-  ],
   "9f52252d1d6efb5f0b8b8bc39c1e048f767bc805": [
     "windows-apps-src\\controls-and-patterns\\text-block.md"
+  ],
+  "9ce268494e4cf7367e22254aa6d20d4b2a24f22a": [
+    "windows-apps-src\\controls-and-patterns\\text-box.md"
   ],
   "34a28a46cdf013a44368ae1ffe450821cbe2a403": [
     "windows-apps-src\\controls-and-patterns\\text-box.md"
   ],
   "676708ee5bf843f42e53cb334cbb707b8ae44809": [
-    "windows-apps-src\\controls-and-patterns\\text-box.md"
-  ],
-  "9ce268494e4cf7367e22254aa6d20d4b2a24f22a": [
     "windows-apps-src\\controls-and-patterns\\text-box.md"
   ],
   "3cbfa4a2896e5e7453d9fe1793f422d2f7b60c79": [
@@ -961,6 +968,9 @@
   ],
   "04f8e82f05c46d41657dae0b30e04f49341bb5db": [
     "windows-apps-src\\controls-and-patterns\\text-controls.md"
+  ],
+  "b7ef6dd940983172299210d0f9fc5ef86e93c581": [
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-adaptive-interactive-toasts.md"
   ],
   "032c4bb595501d3bb1cdfac703880cf3be9ab1d2": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-adaptive-interactive-toasts.md"
@@ -2960,25 +2970,16 @@
   "c9ed3bbcbca901aa8dbfcfb0374dd84d42783959": [
     "windows-apps-src\\in-app-help\\external-help.md"
   ],
-  "de371e39dc98049545b81329f240fbe94df78de5": [
-    "windows-apps-src\\in-app-help\\external-help.md"
-  ],
   "0564d8fca67a8724e99daa063d1ff3014989571d": [
     "windows-apps-src\\in-app-help\\guidelines-for-app-help.md"
   ],
   "6d72999bb99faae4feb446ec7b4ab7394a71d69f": [
     "windows-apps-src\\in-app-help\\guidelines-for-app-help.md"
   ],
-  "0ca099b0acfcba16d62c6158c7a829adaf475891": [
-    "windows-apps-src\\in-app-help\\guidelines-for-app-help.md"
-  ],
   "96aa3eb153a993fc18bdcc84d6a5a8ef603be837": [
     "windows-apps-src\\in-app-help\\instructional-ui.md"
   ],
   "cdb1ea2e21b4c3b60287a8dba0cb6585f420463a": [
-    "windows-apps-src\\in-app-help\\instructional-ui.md"
-  ],
-  "6fc4840ce37d05bbaf0e423049d79b4e0c4febfc": [
     "windows-apps-src\\in-app-help\\instructional-ui.md"
   ],
   "2b4bae1606f9b51e2d4901218ebd2d616e4c5edc": [
@@ -2992,6 +2993,9 @@
   ],
   "c832c3c3626ac5f75eaac4317b6779c410693742": [
     "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
+  ],
+  "b3612b71b5e6843d2326c9874e674cfb77900e7e": [
+    "windows-apps-src\\input-and-devices\\cortana-design-guidelines.md"
   ],
   "d252cccbb6f7c0a9ea632a7ef272071ece15a565": [
     "windows-apps-src\\input-and-devices\\cortana-design-guidelines.md"
@@ -3179,6 +3183,9 @@
   "8fe27838e2fd1539b708caff5ddb85093c15fd9f": [
     "windows-apps-src\\input-and-devices\\interact-with-a-background-app-in-cortana.md"
   ],
+  "47be61de166e25b249938b0e7e29f16dbdb6e62b": [
+    "windows-apps-src\\input-and-devices\\keyboard-interactions.md"
+  ],
   "f95b7ebc25dd0d128752f3f67a6cda06379e8e9b": [
     "windows-apps-src\\input-and-devices\\keyboard-interactions.md"
   ],
@@ -3233,6 +3240,9 @@
   "a433660665eeaa0caad3f380a587de89b8c74441": [
     "windows-apps-src\\input-and-devices\\multiple-input-design-guidelines.md"
   ],
+  "bed856376fc0d70d4e595a61bc69ba49ccbd706f": [
+    "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
+  ],
   "39697ffff547cc6fe41a25d8d59b132b573fc082": [
     "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
   ],
@@ -3242,6 +3252,9 @@
   "f2de946ca7210cf3f4c170c73902c1a727067e7c": [
     "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
   ],
+  "06d2c5ccb4cd42d4d24c17dfb16d6328b50e6905": [
+    "windows-apps-src\\input-and-devices\\respond-to-the-presence-of-the-touch-keyboard.md"
+  ],
   "61f527072c7572f838eb78bda18549a376f9fc2c": [
     "windows-apps-src\\input-and-devices\\respond-to-the-presence-of-the-touch-keyboard.md"
   ],
@@ -3250,6 +3263,9 @@
   ],
   "7db7c360c1e6e3cadf6423d888240bb2f0f4651a": [
     "windows-apps-src\\input-and-devices\\respond-to-the-presence-of-the-touch-keyboard.md"
+  ],
+  "957df2860f20cb868444509fdbe81fabbad79160": [
+    "windows-apps-src\\input-and-devices\\save-and-load-ink.md"
   ],
   "b3fd9e12fb5f0b3297685e795feb8c87373b6850": [
     "windows-apps-src\\input-and-devices\\save-and-load-ink.md"
@@ -7046,6 +7062,9 @@
   "d18696de51451552aef14c55d2a1b62c6037fb59": [
     "windows-apps-src\\design-downloads\\index.md"
   ],
+  "00b39341f3b9a256e54f7c24e168e2c29845f024": [
+    "windows-apps-src\\input-and-devices\\index.md"
+  ],
   "59b1424d5178c676d0f03c7c7b4c0445f76c7503": [
     "windows-apps-src\\input-and-devices\\index.md"
   ],
@@ -7219,6 +7238,9 @@
   ],
   "bc428b42324cd584dfaee1db3c9eb834d30cd69d": [
     "windows-apps-src\\controls-and-patterns\\dialogs.md"
+  ],
+  "b3b54f3b5e3a2620803c76b2201a2d1921862c0e": [
+    "windows-apps-src\\controls-and-patterns\\menus.md"
   ],
   "edcc74e91dc67c33cf969cd3a54c5c89ce31e0ce": [
     "windows-apps-src\\controls-and-patterns\\menus.md"
@@ -7433,6 +7455,9 @@
   "034dc2b7be69763416192014abe24b9bf924c443": [
     "windows-apps-src\\contacts-and-calendar\\integrating-with-contacts.md"
   ],
+  "e710630f7d9a74ca69b7d5bc08f54cc5409a9554": [
+    "windows-apps-src\\controls-and-patterns\\inking-controls.md"
+  ],
   "5425e4da2c58424dbef955553d2f92a8f8cb7102": [
     "windows-apps-src\\controls-and-patterns\\inking-controls.md"
   ],
@@ -7441,6 +7466,9 @@
   ],
   "e2ffb7bfb7bb602fdc3462da84f60f4ae12d9da8": [
     "windows-apps-src\\controls-and-patterns\\inking-controls.md"
+  ],
+  "f60f0e635d2ff98679ef0e06101945fbf53237cb": [
+    "windows-apps-src\\controls-and-patterns\\inverted-lists.md"
   ],
   "c556a79f6e3ff7bb5c4001ac4c0d857d75f3b94e": [
     "windows-apps-src\\controls-and-patterns\\inverted-lists.md"
