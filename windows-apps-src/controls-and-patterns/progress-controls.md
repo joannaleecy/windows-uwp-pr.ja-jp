@@ -6,11 +6,11 @@ ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: de18267de982ef50913ed605e7a9272f7f8c476b
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 5679c2bb8e8b3fff205f8071fcf52a52e0c939cd
 
 ---
-# プログレス コントロール
+# <a name="progress-controls"></a>プログレス コントロール
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,21 +19,14 @@ ms.openlocfilehash: de18267de982ef50913ed605e7a9272f7f8c476b
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx"><strong>ProgressBar クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx"><strong>IsIndeterminate プロパティ</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx"><strong>ProgressRing クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx"><strong>IsActive プロパティ</strong></a></li>
+<li>[**ProgressBar クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx)</li>
+<li>[**IsIndeterminate プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx)</li>
+<li>[**ProgressRing クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx)</li>
+<li>[**IsActive プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-## プログレス コントロールの種類
+## <a name="types-of-progress"></a>プログレス コントロールの種類
 
 操作が進行中であることをユーザー示すコントロールは 2 つあります。ProgressBar または ProgressRing を使います。
 
@@ -51,11 +44,11 @@ ms.openlocfilehash: de18267de982ef50913ed605e7a9272f7f8c476b
 
 *不確定の ProgressRing*
 
-## 各コントロールを使う状況
+## <a name="when-to-use-each-control"></a>各コントロールを使う状況
 
 何が起こっているかを表示するとき、どのコントロールを使うか、どの状態 (確定または不確定) を使うかが明白でない場合があります。 タスクの内容が明らかでプログレス コントロールを使う必要がないときもあり、プログレス コントロールを使う場合でも、どういう操作が進行中かをユーザーに説明するために 1 行のテキストが必要なときもあります。
 
-### ProgressBar
+### <a name="progressbar"></a>ProgressBar
 -   **コントロールには定義された期間や予測可能な終了時期があるか?**
 
     確定 ProgressBar を使用し、パーセンテージや値を適宜更新します。
@@ -72,7 +65,7 @@ ms.openlocfilehash: de18267de982ef50913ed605e7a9272f7f8c476b
     - *取得しています*
     - *処理しています...*
 
-### ProgressRing
+### <a name="progressring"></a>ProgressRing
 
 -   **この操作によってユーザーは続行できるまで待つことになるか?**
 
@@ -90,7 +83,7 @@ ms.openlocfilehash: de18267de982ef50913ed605e7a9272f7f8c476b
     - *サインインしています...*
     - *接続しています...*
 
-### 進行状況を示す必要なし
+### <a name="no-progress-indication-necessary"></a>進行状況を示す必要なし
 -   **何かが行われていることをユーザーが知る必要があるか?**
 
     たとえば、アプリがバックグラウンドで何かをダウンロードしていて、ダウンロードを開始したのがユーザーでない場合、ユーザーは必ずしもそのことを知る必要がありません。
@@ -103,7 +96,7 @@ ms.openlocfilehash: de18267de982ef50913ed605e7a9272f7f8c476b
 
     操作が完了したときだけ通知を表示するか、操作がすぐに完了したというビジュアルを表示し、最後の仕上げをバック グラウンドで実行することが最良のときがあります。
 
-## プログレス コントロールのベスト プラクティス
+## <a name="progress-controls-best-practices"></a>プログレス コントロールのベスト プラクティス
 
 これらのさまざまなプログレス コントロールを使用する状況と場所の視覚的な表現をいくつか表示することが最良のときがあります。
 
@@ -129,7 +122,7 @@ ms.openlocfilehash: de18267de982ef50913ed605e7a9272f7f8c476b
 
 ユーザーのそれ以上のアプリとのやり取りが停止されたとき、またはアプリがユーザーの入力を待っているときは、不確定 ProgressRing が使われます。 上記の「サインインしています…」の例は、 ProgressRing の完全なシナリオであり、ユーザーはサインインが完了するまでアプリの使用を続けることはできません。
 
-## プログレス コントロールのカスタマイズ
+## <a name="customizing-a-progress-control"></a>プログレス コントロールのカスタマイズ
 
 両方のプログレス コントロールはかなりシンプルですが、コントロールの視覚的な機能の一部はカスタマイズの方法が明白ではありません。
 
@@ -171,7 +164,7 @@ ProgressRing の前景色を変更すると、ドットの色が変更されま�
 Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows.UI.Core.CoreCursorType.Wait, 10);
 ```
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 
 - [**ProgressBar クラス**](https://msdn.microsoft.com/library/windows/apps/br227529)
@@ -183,6 +176,6 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -6,11 +6,11 @@ ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: bb881fb0120401047c77a2d1e64a1e1555a9ced0
 
 ---
-# カレンダー、日付、および時刻コントロール
+# <a name="calendar-date-and-time-controls"></a>カレンダー、日付、および時刻コントロール
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,21 +19,15 @@ ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx"><strong>CalendarView クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx"><strong>CalendarDatePicker クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx"><strong>DatePicker クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx"><strong>TimePicker クラス</strong></a></li>
+<li>[**CalendarView クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)</li>
+<li>[**CalendarDatePicker クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)</li>
+<li>[**DatePicker クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)</li>
+<li>[**TimePicker クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## 日付または時刻コントロールの選択
+## <a name="which-date-or-time-control-should-you-use"></a>日付または時刻コントロールの選択
 
 4 つの日付および時刻コントロールから選択できますが、シナリオによって使用するコントロールは異なります。 以下の情報を参考にして、アプリに適切なコントロールを選んでください。
 
@@ -46,7 +40,7 @@ ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
 
 <!-- This table seems redundant, not sure it's needed.-->
 
-### カレンダー ビュー
+### <a name="calendar-view"></a>カレンダー ビュー
 
 **CalendarView** を使うと、ユーザーはカレンダーを表示し操作できます (カレンダーは、月、年、または 10 年単位で操作できます)。 ユーザーは 1 つの日付や日付の範囲を選ぶことができます。 カレンダー ビューには選択コントロール サーフェイスがなく、カレンダーは常に表示されます。
 
@@ -57,7 +51,7 @@ ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
 - ユーザーが複数の日付を選べるようにする必要がある場合は、**CalendarView** を使う必要があります。
 - ユーザーが 1 つの日付しか選べないようにする必要があり、カレンダーを常に表示する必要がない場合は、**CalendarDatePicker** または **DatePicker** を使うことを検討してください。
 
-### カレンダーの日付の選択コントロール
+### <a name="calendar-date-picker"></a>カレンダーの日付の選択コントロール
 
 **CalendarDatePicker** は、カレンダーの曜日や埋まり具合などのコンテキスト情報が必要となるカレンダー ビューから単一の日付を選ぶ用途に最適なドロップダウン コントロールです。 追加のコンテキストを提供する場合、または利用可能日を制限する場合は、カレンダーを変更できます。
 
@@ -67,7 +61,7 @@ ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
 
 - カレンダーの日付の選択コントロールは、予定日や出発日の選択などに使います。 
 
-### 日付の選択コントロール
+### <a name="date-picker"></a>日付の選択コントロール
 
 **DatePicker** コントロールによって、標準化された方法で特定の日付を選ぶことができます。 
 
@@ -77,7 +71,7 @@ ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
 
 - 日付の選択コントロールは、ユーザーが誕生日などの既知の日付 (カレンダーのコンテキストが重要ではない日) を選べるようにする場合に使用します。
 
-### 時刻の選択コントロール
+### <a name="time-picker"></a>時刻の選択コントロール
 
 **TimePicker** は、予定や出発時刻などの 1 つの時刻を選択する場合に使用します。 ユーザーまたはコードによって設定された静的な表示であるため、更新して現在の時刻を表示することはできません。 
 
@@ -87,7 +81,7 @@ ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
 
 - 時刻の選択コントロールを使って、ユーザーが 1 つの時刻を選べるようにします。
 
-## 日付または時刻コントロールの作成
+## <a name="create-a-date-or-time-control"></a>日付または時刻コントロールの作成
 
 日付および時刻コントロールの詳細と例については、次の記事をご覧ください。
 
@@ -96,14 +90,14 @@ ms.openlocfilehash: 417f1294b1d8e5034fd7c8b346461fbe334f4b03
 - [**日付の選択コントロール**](date-picker.md)
 - [**時刻の選択コントロール**](time-picker.md)
 
-### グローバリゼーション
+### <a name="globalization"></a>グローバリゼーション
 
 XAML の日付のコントロールでは、Windows でサポートされる各カレンダー システムがサポートされます。 それらのカレンダーは [**Windows.Globalization.CalendarIdentifiers**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendaridentifiers.aspx) クラスで指定されます。 各コントロールは、アプリの既定の言語に適したカレンダーを使います。または、**CalendarIdentifier** プロパティを設定して特定のカレンダー システムを使うこともできます。
 
 時刻の選択コントロールでは、[**Windows.Globalization.ClockIdentifiers**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.clockidentifiers.aspx) クラスで指定される各クロック システムがサポートされます。 [**ClockIdentifier**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.clockidentifier.aspx) プロパティを設定し、12 時間形式または 24 時間形式を指定できます。 プロパティの型は文字列ですが、ClockIdentifiers クラスの静的な文字列プロパティに対応する値を使用する必要があります。 それらの値とは、TwelveHour (文字列 "12HourClock") と TwentyFourHour (文字列 "24HourClock") です。 既定値は "12HourClock" です。
 
 
-### DateTime と Calendar の値
+### <a name="datetime-and-calendar-values"></a>DateTime と Calendar の値
 
 XAML の日付および時刻コントロールで使用される日付オブジェクトでは、プログラミング言語によって表現方法が異なります。 
 - C# および Visual Basic では、.NET の一部である [**System.DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) 構造体が使用されます。 
@@ -115,8 +109,11 @@ XAML の日付および時刻コントロールで使用される日付オブジ
 
 > **注:**&nbsp;&nbsp;日付オブジェクトを受け取るプロパティは、XAML 属性文字列として設定することはできません。これは、Windows ランタイム XAML パーサーには、文字列を DateTime/DateTimeOffset オブジェクトとして日付に変換する変換ロジックがないためです。 通常、それらの値はコードで設定します。 考えられる別の方法として、データ オブジェクトとして (またはデータ コンテキストで) 利用可能な日付を定義し、その日付をデータとしてアクセスできる [\{Binding\} マークアップ拡張](../xaml-platform/binding-markup-extension.md)表現を参照する XAML 属性をプロパティとして設定することができます。
 
+## <a name="get-the-sample-code"></a>サンプル コードを入手する
+* [XAML UI の基本のサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 
-## 関連トピック
+
+## <a name="related-topics"></a>関連トピック
 
 **開発者向け (XAML)**
 - [**CalendarView クラス**](https://msdn.microsoft.com/library/windows/apps/dn890052)
@@ -126,6 +123,6 @@ XAML の日付および時刻コントロールで使用される日付オブジ
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

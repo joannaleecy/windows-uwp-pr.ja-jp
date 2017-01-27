@@ -5,30 +5,37 @@ title: "ポインター入力の処理"
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
 template: detail.hbs
+keywords: "ペン, マウス, タッチパッド, タッチ, ポインター, 入力, ユーザー操作"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 2053062f6a5f850da8983bce2465cd10cdc01d56
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: ba4288d93924d3a32a0a659dea67af28fb607987
 
 ---
 
-# ポインター入力の処理
+# <a name="handle-pointer-input"></a>ポインター入力の処理
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 ユニバーサル Windows プラットフォーム (UWP) アプリで、タッチ、マウス、ペン/スタイラス、タッチパッドなどのポインティング デバイスからの入力データを受信、処理、管理します。
 
-**重要な API**
-
--   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)
--   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
-
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)</li>
+<li>[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)</li>
+<li>[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</li>
+</ul>
+</div>
 
 **重要**  
 独自の対話式操作サポートを実装する場合は、ユーザーはアプリの UI 要素を直接操作できる直感的なエクスペリエンスを期待しているということを心に留めておいてください。 カスタムの対話式操作では、「[コントロールの一覧](https://msdn.microsoft.com/library/windows/apps/mt185406)」を手本にして、一貫性と見つけやすさを維持することをお勧めします。 これらのプラットフォーム コントロールでは、標準的な対話式操作、アニメーション化された物理的効果、視覚的フィードバック、アクセシビリティなど、ユニバーサル Windows プラットフォーム (UWP) の完全なユーザー操作エクスペリエンスが提供されます。 はっきりとした明確に定義されている要件があり、基本的な対話式操作ではシナリオがサポートされない場合のみ、カスタムの対話式操作を作ってください。
 
 
-## ポインター
-
-
+## <a name="pointers"></a>ポインター
 多くの操作のエクスペリエンスでは、ユーザーがタッチ、マウス、ペン/スタイラス、タッチパッドなどの入力デバイスを使ってポイントすることによって、操作の対象となるオブジェクトを識別します。 これらの入力デバイスによって提供される生のヒューマン インターフェイス デバイス (HID) のデータには、多くの共通するプロパティが含まれているため、情報は統合入力スタックに昇格され、デバイスにとらわれない、統合されたポインター データとして公開されます。 UWP アプリでは、使われている入力デバイスについて意識することなくこのデータを利用できます。
 
 **注**  アプリで必要な場合は、デバイス固有の情報も HID の生データから昇格されます。
@@ -37,7 +44,7 @@ ms.openlocfilehash: 2053062f6a5f850da8983bce2465cd10cdc01d56
 
 入力スタックの各入力ポイント (または接触) は、さまざまなポインター イベントで提供される [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) パラメーターによって公開される [**Pointer**](https://msdn.microsoft.com/library/windows/apps/br227968) オブジェクトで表されます。 マルチペンまたはマルチタッチ入力の場合、各接触は固有の入力ポイントとして扱われます。
 
-## ポインター イベント
+## <a name="pointer-events"></a>ポインター イベント
 
 
 ポインター イベントは、検出状態 (範囲または接触) やデバイスの種類などの基本情報と、位置、圧力、接触形状などの拡張情報を公開します。 さらに、ユーザーが押したマウス ボタンは何か、ペンの消しゴム ボタンは使われているかなど、特定のデバイスのプロパティも使うことができます。 アプリで入力デバイスとその機能を区別する必要がある場合は、「[入力デバイスの識別](identify-input-devices.md)」をご覧ください。
@@ -127,12 +134,12 @@ UWP アプリでは、次のポインター イベントをリッスンするこ
 
  
 
-## 例
+## <a name="example"></a>例
 
 
 ここでは、基本的なポインター追跡アプリのコード例を示すことによって、ポインター イベントをリッスンして処理し、アクティブなポインターのさまざまなプロパティを取得する方法について説明します。
 
-### UI を作る
+### <a name="create-the-ui"></a>UI を作る
 
 この例では、ポインター入力のターゲット オブジェクトとして四角形 (`targetContainer`) を使います。 ポインターの状態が変わると、ターゲットの色が変わります。
 
@@ -195,7 +202,7 @@ UWP アプリでは、次のポインター イベントをリッスンするこ
 </Page>
 ```
 
-### ポインター イベントをリッスンする
+### <a name="listen-for-pointer-events"></a>ポインター イベントをリッスンする
 
 ほとんどの場合は、イベント ハンドラーの [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) を介してポインター情報を取得することをお勧めします。
 
@@ -244,7 +251,7 @@ UWP アプリでは、次のポインター イベントをリッスンするこ
 
 ```
 
-### ポインター イベントを処理する
+### <a name="handle-pointer-events"></a>ポインター イベントを処理する
 
 次に、UI フィードバックを使って基本的なポインター イベント ハンドラーを示します。
 
@@ -556,7 +563,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
     }
 ```
 
-### ポインターのプロパティを取得する
+### <a name="get-pointer-properties"></a>ポインターのプロパティを取得する
 
 前に説明したように、ほとんどの拡張ポインター情報を、[**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) の [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/hh943077) と [**GetIntermediatePoints**](https://msdn.microsoft.com/library/windows/apps/hh943078) メソッドを介して取得した [**Windows.UI.Input.PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) オブジェクトから取得する必要があります。
 
@@ -652,7 +659,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
              }
 ```
 
-### 完全な例
+### <a name="complete-example"></a>完全な例
 
 この例の C\# コードを次に示します。 さらに複雑なサンプルへのリンクについては、このページの最後にある関連記事をご覧ください。
 
@@ -1080,7 +1087,7 @@ namespace PointerInput
 }
 ```
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 
 **サンプル**
@@ -1106,6 +1113,6 @@ namespace PointerInput
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

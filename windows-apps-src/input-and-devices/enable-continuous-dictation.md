@@ -5,24 +5,31 @@ title: "継続的なディクテーションの有効化"
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
 label: Continuous dictation
 template: detail.hbs
+keywords: "スピーチ, 音声, 音声認識, 自然言語, ディクテーション, 入力, ユーザーの操作"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 1f074b210d42b1c40817e88b5d73921652fa7d05
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: f4353807c83cbf91c385b31acfd481abb6ea5aed
 
 ---
 
-# 継続的なディクテーション
+# <a name="continuous-dictation"></a>継続的なディクテーション
 
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 長い形式の継続的なディクテーション音声入力をキャプチャし、認識する方法について説明します。
 
-**重要な API**
-
--   [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896)
--   [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913)
-
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896)</li>
+<li>[**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913)</li>
+</ul>
+</div>
 
 「[音声認識](speech-recognition.md)」では、[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) オブジェクトの [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) メソッドまたは [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) メソッドを使って、比較的短い音声入力をキャプチャし、認識する方法について説明しました。たとえば、ショート メッセージ サービス (SMS) のメッセージを作成したり、質問したりする場合です。
 
@@ -30,7 +37,7 @@ ms.openlocfilehash: 1f074b210d42b1c40817e88b5d73921652fa7d05
 
 
 
-## 設定
+## <a name="set-up"></a>設定
 
 
 アプリには、継続的なディクテーション セッションを管理するためのオブジェクトがいくつか必要です。
@@ -64,7 +71,7 @@ private CoreDispatcher dispatcher;
 private StringBuilder dictatedTextBuilder;
 ```
 
-## 初期化
+## <a name="initialization"></a>初期化
 
 
 継続的な音声認識の初期化時には、次の操作を行う必要があります。
@@ -100,7 +107,7 @@ SpeechRecognitionCompilationResult result =
       await speechRecognizer.CompileConstraintsAsync();
 ```
 
-## 認識イベントの処理
+## <a name="handle-recognition-events"></a>認識イベントの処理
 
 
 [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) または [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) を呼び出して、1 つの短い発声または語句をキャプチャできます。 
@@ -209,7 +216,7 @@ private async void ContinuousRecognitionSession_Completed(
       }
 ```
 
-## 実行中の認識に対するフィードバックの提供
+## <a name="provide-ongoing-recognition-feedback"></a>実行中の認識に対するフィードバックの提供
 
 
 人が会話する場合は、話の内容を完全に理解するためにコンテキストが必要であることがよくあります。 同様に、信頼性の高い認識結果を提供するために音声認識エンジンにコンテキストが必要である場合がよくあります。 たとえば、"weight" および "wait" という単語は、それ自体だけでは区別できないため、周囲の単語からコンテキストをさらに探り出す必要があります。 認識エンジンは、単語や語句を正しく認識したことを、ある程度確信するまでは、[**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) イベントを生成しません。
@@ -237,7 +244,7 @@ private async void SpeechRecognizer_HypothesisGenerated(
   }
 ```
 
-## 認識の開始と停止
+## <a name="start-and-stop-recognition"></a>認識の開始と停止
 
 
 認識セッションを開始する前に、音声認識エンジンの [**State**](https://msdn.microsoft.com/library/windows/apps/dn913915) プロパティの値を確認します。 音声認識エンジンは、[**Idle**](https://msdn.microsoft.com/library/windows/apps/dn653227) 状態である必要があります。
@@ -274,7 +281,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 
  
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 
 * [音声操作](speech-interactions.md)
@@ -291,6 +298,6 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

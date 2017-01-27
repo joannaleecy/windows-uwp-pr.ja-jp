@@ -5,16 +5,17 @@ title: "アクティブなキャンバス レイアウト パターン"
 ms.assetid: 4D768472-64D6-406C-9E87-F750F6B981A0
 label: TBD
 template: detail.hbs
+op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: ef71196ba0aefd4428daae70c54bcc9cbeaa56a2
-ms.openlocfilehash: 2c4bb601e1657bad8d1acad49f0591658b5b1d77
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: b38d7664a8a874743c5307e44e81104ce512454e
 
 ---
-# アクティブなキャンバス レイアウト パターン
+# <a name="active-canvas-layout-pattern"></a>アクティブなキャンバス レイアウト パターン
 
 アクティブなキャンバスは、コンテンツ領域とコマンド領域を持つパターンです。 これは、単一ビュー アプリやモーダル エクスペリエンス (フォト ビューアー/エディター、ドキュメント ビューアー、マップ、描画、自由スクロール ビューを利用する他のアプリなど) のパターンです。 アクティブなキャンバスは操作を行うために、必要な操作の数と種類に応じて、コマンド バー、またはボタンのみとペアを構成できます。
 
-## 例
+## <a name="examples"></a>例
 
 写真編集アプリのこのデザインはアクティブなキャンバス パターンが特徴となっています。左側にモバイルの例、右側にデスクトップの例を示します。 イメージ編集サーフェスがキャンバスであり、下部にあるコマンド バーにはアプリのコンテキスト依存アクションがすべて含まれています。
 
@@ -25,7 +26,7 @@ ms.openlocfilehash: 2c4bb601e1657bad8d1acad49f0591658b5b1d77
 ![アクティブなキャンバス パターンを使ったマップ アプリの例](images/uap-subway-pc-phone-700.png)
 
 
-## このパターンの実装
+## <a name="implementing-this-pattern"></a>このパターンの実装
 
 アクティブなキャンバスは、コンテンツ領域とコマンド領域で構成されます。
 
@@ -35,12 +36,12 @@ ms.openlocfilehash: 2c4bb601e1657bad8d1acad49f0591658b5b1d77
 
 
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 -   [**アプリ バーとコマンド バー**](../controls-and-patterns/app-bars.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

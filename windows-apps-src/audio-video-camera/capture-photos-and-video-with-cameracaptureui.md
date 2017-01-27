@@ -4,12 +4,12 @@ ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
 description: "この記事では、CameraCaptureUI クラスを使用して、Windows に組み込まれているカメラ UI で写真またはビデオをキャプチャする方法を説明します。"
 title: "Windows の組み込みカメラ UI を使った写真とビデオのキャプチャ"
 translationtype: Human Translation
-ms.sourcegitcommit: b4bf4d74ae291186100a553a90fd93f890b8ece4
-ms.openlocfilehash: fea1c2f8f52ec9ac485d9a4846cc0661243a7ccc
+ms.sourcegitcommit: 65508d32995f57672f94dffa4866a86d57903d00
+ms.openlocfilehash: 10ac3f53f0f8128985c39154f74a9348a40641b5
 
 ---
 
-# Windows の組み込みカメラ UI を使った写真とビデオのキャプチャ
+# <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>Windows の組み込みカメラ UI を使った写真とビデオのキャプチャ
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -18,7 +18,11 @@ ms.openlocfilehash: fea1c2f8f52ec9ac485d9a4846cc0661243a7ccc
 
 独自のカメラ用 UI を用意する場合、またはキャプチャ操作に対してより堅牢で低レベルな制御が必要な場合は、[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) オブジェクトを使用して、独自のキャプチャ操作を実装する必要があります。 詳しくは、「[MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)」をご覧ください。
 
-## CameraCaptureUI を使った写真のキャプチャ
+> [!NOTE]
+> CameraCaptureUI を使用している場合は、アプリのマニフェスト ファイルで **Web カメラ**または**マイク**機能を指定しないでください。 指定すると、アプリはデバイスのカメラのプライバシー設定に表示されますが、ユーザーがアプリからのカメラへのアクセスを拒否しても、CameraCaptureUI はメディアをキャプチャできます。 これは、Windows の組み込みのカメラ アプリが、写真、音声、ビデオのキャプチャをボタンを押して開始する必要がある、信頼されているファースト パーティ アプリであるためです。 アプリが CameraCaptureUI を使用していて、Web カメラまたはマイク機能を指定している場合、ストアに提出するときに WACK (Windows アプリケーション認定キット) 認定が認められない可能性があります。
+> MediaCapture を使用して、音声、写真、またはビデオをプログラムによってキャプチャする場合は、アプリのマニフェスト ファイルで Web カメラまたはマイク機能を指定する必要があります。
+
+## <a name="capture-a-photo-with-cameracaptureui"></a>CameraCaptureUI を使った写真のキャプチャ
 
 カメラ キャプチャ UI を使うには、プロジェクトに [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) 名前空間を含めます。 返された画像ファイルでファイル操作を行うには、[**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) を含めます。
 
@@ -59,7 +63,7 @@ XAML ページでソフトウェア ビットマップを使用するには、[*
 
 [!code-cs[SetImageSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSetImageSource)]
 
-## CameraCaptureUI を使ったビデオのキャプチャ
+## <a name="capture-a-video-with-cameracaptureui"></a>CameraCaptureUI を使ったビデオのキャプチャ
 
 ビデオをキャプチャするには、新しい [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) オブジェクトを作成します。 オブジェクトの [**VideoSettings**](https://msdn.microsoft.com/library/windows/apps/br241059) プロパティを使うと、ビデオの形式など、返されるビデオのプロパティを指定することができます。
 
@@ -103,7 +107,7 @@ XAML ページでソフトウェア ビットマップを使用するには、[*
 
  
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [カメラ](camera.md)
 * [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
@@ -118,6 +122,6 @@ XAML ページでソフトウェア ビットマップを使用するには、[*
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

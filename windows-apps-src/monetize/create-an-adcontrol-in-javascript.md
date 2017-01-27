@@ -4,55 +4,46 @@ ms.assetid: 48a1ef86-8514-4af8-9c93-81e869d36de7
 description: "JavaScript を使ってプログラムで **AdControl** を作成する方法について説明します。"
 title: "JavaScript での AdControl の作成"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 68bc124aea079bc60fa22e1e6a038caf95fe765c
+ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
+ms.openlocfilehash: d7ecb5205d9668f83d2619869baafd569b581078
 
 
 ---
 
-# JavaScript での AdControl の作成
+# <a name="create-an-adcontrol-in-javascript"></a>JavaScript での AdControl の作成
 
 
 
 
-この例では、JavaScript を使ってプログラムで [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) を作成する方法について説明します。
+この記事の例では、JavaScript を使ってプログラムで [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) を作成する方法について説明します。 この記事では、**AdControl** を使用するために必要なプロジェクトへの参照が既に追加していることを前提としています。 JavaScript ではなく HTML マークアップで **AdControl** を作成し初期化する方法の詳しいチュートリアルも含め、詳しくは「[HTML 5 および Javascript の AdControl](adcontrol-in-html-5-and-javascript.md)」をご覧ください。
 
-## AdControl 用の HTML の div
+## <a name="html-div-for-an-adcontrol"></a>AdControl 用の HTML の div
 
 **AdControl** で広告を表示するには、対象の html ページに **div** を含める必要があります。 この **div** のコード例を次に示します。
 
-``` syntax
+> [!div class="tabbedCodeSnippets"]
+``` html
 <div id="myAd" style="position: absolute; top: 50px; left: 0px; width: 300px; height: 250px; z-index: 1"
     data-win-control="MicrosoftNSJS.Advertising.AdControl">
 </div>
 ```
 
-## AdControl を作成するための JavaScript
+## <a name="javascript-for-creating-an-adcontrol"></a>AdControl を作成するための JavaScript
 
 次の例では、HTML に **div** が既にあることを前提にしています。ID は **myAd** です。
 
 **AdControl** を **app.onactivated** 関数でインスタンス化します。
 
-``` syntax
-// TODO: This application has been newly launched. Initialize
-// your application here.
-var adDiv = document.getElementById("myAd");
-var myAdControl = new MicrosoftNSJS.Advertising.AdControl(adDiv,
-    {
-        applicationId: "3f83fe91-d6be-434d-a0ae-7351c5a997f1",
-        adUnitId: "10865270"
-    });
-myAdControl.isAutoRefreshEnabled = false;
-myAdControl.onErrorOccurred = myAdError;
-myAdControl.onAdRefreshed = myAdRefreshed;
-myAdControl.onEngagedChanged = myAdEngagedChanged;
-```
+> [!div class="tabbedCodeSnippets"]
+[!code-javascript[AdControl](./code/AdvertisingSamples/AdControlSamples/js/main.js#DeclareAdControl)]
 
-これらの値は例です。 実際のコードでは、これらの関数とプロパティの値を対象のアプリに適した値に設定します。
+この例では、**myAdError**、**myAdRefreshed**、および **myAdEngagedChanged** という名前のイベント ハンドラー メソッドを既に宣言していることを前提としています。
+
+>**注**&nbsp;&nbsp;この例の *applicationId* の値と *adUnitId* の値は、[テスト モードの値](test-mode-values.md)です。 申請のためにアプリを提出する前に、Windows デベロッパー センターから[実際の値にこれらの値を置き換える](set-up-ad-units-in-your-app.md)必要があります。
 
 このコードで広告が表示されない場合は、**AdControl** を含む **div** に **position:relative** の属性を挿入してみてください。 これにより、**IFrame** の既定の設定が上書きされます。 この属性の値が原因でなければ、広告が正しく表示されるようになります。 新しい広告ユニットが利用可能になるまでに最大で 30 分かかる場合があることに注意してください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [GitHub の広告サンプル](http://aka.ms/githubads)
 
@@ -62,6 +53,6 @@ myAdControl.onEngagedChanged = myAdEngagedChanged;
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

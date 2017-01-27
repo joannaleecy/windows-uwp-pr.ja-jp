@@ -3,10 +3,15 @@ author: GrantMeStrength
 ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: "デバイスを開発用に有効にする"
 description: "開発およびデバッグ用に Windows 10 デバイスを構成します。"
-keywords: "デバイスを有効にする"
+keywords: "開発者用 Visual Studio での作業の開始, 開発者用ライセンス対応デバイス"
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ed91f7585b63199ab9d591c712d4260a3b452b85
-ms.openlocfilehash: 416dce2f7cbe3bba9285f7e354868a2c00728802
+ms.sourcegitcommit: 7a6f0be15105bc70e580eaaf581152338c56bed7
+ms.openlocfilehash: 3641fdd1f7eb74a11233115d9dfb809ea959926e
 
 ---
 # <a name="enable-your-device-for-development"></a>デバイスを開発用に有効にする
@@ -213,6 +218,6 @@ Windows 8.1 デバイスでアプリを作成またはサイドローディン�
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -5,27 +5,38 @@ title: "カスタム認識の制約の定義"
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
 label: Define custom recognition constraints
 template: detail.hbs
+keywords: "スピーチ, 音声, 音声認識, 自然言語, ディクテーション, 入力, ユーザーの操作"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: d619cd6b3c9f5d62ca7d68f555e4c051abaf9bad
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: c75ee725ce4bc9fc33d9ea13e4ab92ed60bfb04d
 
 ---
 
-# カスタム認識の制約の定義
+# <a name="define-custom-recognition-constraints"></a>カスタム認識の制約の定義
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 音声認識のカスタム制約を定義して使う方法について説明します。
 
-**重要な API**
-
--   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)
--   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)
--   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)</li>
+<li>[**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)</li>
+<li>[**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)</li>
+</ul>
+</div>
 
 
 音声認識では、少なくとも 1 つの制約を使って、認識できるボキャブラリを定義する必要があります。 制約が指定されていない場合、ユニバーサル Windows アプリで定義済みのディクテーション文法が使われます。 「[音声認識](speech-recognition.md)」をご覧ください。
 
 
-## 制約の追加
+## <a name="add-constraints"></a>制約の追加
 
 
 [**SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) プロパティを使って、音声認識エンジンに制約を追加します。
@@ -43,7 +54,7 @@ ms.openlocfilehash: d619cd6b3c9f5d62ca7d68f555e4c051abaf9bad
 
 **注意:  **認識プロセスを開始する前に制約をコンパイルするには、[**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) メソッドを呼び出します。
 
-## Web 検索文法の指定 (SpeechRecognitionTopicConstraint) 
+## <a name="specify-a-web-search-grammar-speechrecognitiontopicconstraint"></a>Web 検索文法の指定 (SpeechRecognitionTopicConstraint) 
 
 
 トピック制約 (ディクテーションまたは Web 検索文法) は音声認識エンジンの制約コレクションに追加する必要があります。
@@ -80,7 +91,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## プログラムによる一覧の制約の指定 (SpeechRecognitionListConstraint)
+## <a name="specify-a-programmatic-list-constraint-speechrecognitionlistconstraint"></a>プログラムによる一覧の制約の指定 (SpeechRecognitionListConstraint)
 
 
 一覧の制約は音声認識エンジンの制約コレクションに追加する必要があります。
@@ -120,7 +131,7 @@ private async void YesOrNo_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## SRGS 文法の制約の指定 (SpeechRecognitionGrammarFileConstraint)
+## <a name="specify-an-srgs-grammar-constraint-speechrecognitiongrammarfileconstraint"></a>SRGS 文法の制約の指定 (SpeechRecognitionGrammarFileConstraint)
 
 
 SRGS 文法ファイルは音声認識エンジンの制約コレクションに追加する必要があります。
@@ -211,7 +222,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 </grammar>
 ```
 
-## 制約の管理
+## <a name="manage-constraints"></a>制約の管理
 
 
 制約コレクションが認識のために読み込まれると、アプリでは制約の [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) プロパティを **true** または **false** に設定して、認識操作でどの制約を有効にするかを管理できます。 既定の設定は **true** です。
@@ -224,7 +235,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 発声できる内容をユーザーに伝えるには、[**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254) プロパティを使って設定できる、[**SpeechRecognizerUIOptions.AudiblePrompt**](https://msdn.microsoft.com/library/windows/apps/dn653235) プロパティと [**SpeechRecognizerUIOptions.ExampleText**](https://msdn.microsoft.com/library/windows/apps/dn653236) プロパティを使います。 音声認識の操作時に何を発声できるか準備しておくことによって、アクティブな制約に一致する語句をユーザーが発声する可能性が高まります。
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 
 * [音声操作](speech-interactions.md)
@@ -241,6 +252,6 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

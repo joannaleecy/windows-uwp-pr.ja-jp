@@ -4,20 +4,17 @@ ms.assetid: cb7380d0-bc14-4936-aa1c-206304b3dc70
 description: "Microsoft Advertising ライブラリの AdControl クラスで生成されるエラーを処理する方法について説明します。"
 title: "Microsoft Advertising ライブラリによるエラーの処理"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: dedac33d86f50b63de300f78a9f9961efc1c016b
+ms.sourcegitcommit: 2b5dbf872dd7aad48373f6a6df3dffbcbaee8090
+ms.openlocfilehash: 56df2b0f0a41d128f02aa5e2aa0ce11e6f6ca16a
 
 ---
 
-# Microsoft Advertising ライブラリによるエラーの処理
-
-
-
+# <a name="error-handling-with-the-microsoft-advertising-libraries"></a>Microsoft Advertising ライブラリによるエラーの処理
 
 このトピックでは、Microsoft Advertising ライブラリで [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) クラスによって生成されたエラーを処理する方法についての基本的な情報を説明します。
 
 <span id="bkmk-javascript"/>
-## JavaScript/HTML アプリ
+## <a name="javascripthtml-apps"></a>JavaScript/HTML アプリ
 
 JavaScript アプリで **AdControl** を処理するには:
 
@@ -27,7 +24,8 @@ JavaScript アプリで **AdControl** を処理するには:
 
 **AdControl** の **div** の **data-win-options** 属性で **onErrorOccurred** イベント ハンドラーが設定されます。 次の例では、**onErrorOccurred** イベントが **errorLogger** という名前の関数で処理されるために設定されます。
 
-``` syntax
+> [!div class="tabbedCodeSnippets"]
+``` html
 <div id="myAd" style="position: absolute; top: 53px; left: 0px; width: 250px; height: 250px; z-index: 1"
      data-win-control="MicrosoftNSJS.Advertising.AdControl"
      data-win-options="{applicationId: 'd25517cb-12d4-4699-8bdc-52040c712cab', adUnitId: 'ADPT33', onErrorOccurred: errorLogger}">
@@ -40,17 +38,19 @@ JavaScript アプリで **AdControl** を処理するには:
 
 **onErrorOccurred** イベントを処理する **errorLogger** という名前のエラー処理関数の例を示します。
 
-``` syntax
+> [!div class="tabbedCodeSnippets"]
+``` javascript
 WinJS.Utilities.markSupportedForProcessing(
 window.errorLogger = function (sender, evt) {
-    console.log(new Date()).toLocaleTimeString() + ": " + sender.element.id + " error: " + evt.errorMessage + " error code: " + evt.errorCode + \n");
+    console.log(new Date()).toLocaleTimeString() + ": " + sender.element.id + " error: " + evt.errorMessage +
+    " error code: " + evt.errorCode + \n");
 });
 ```
 
 JavaScript での **AdControl** エラー処理について説明するチュートリアルについては、「[JavaScript チュートリアルでのエラー処理](error-handling-in-javascript-walkthrough.md)」をご覧ください。
 
 <span id="bkmk-dotnet"/>
-## XAML アプリ
+## <a name="xaml-apps"></a>XAML アプリ
 
 XAML アプリで **AdControl** エラーを処理するには:
 
@@ -60,16 +60,19 @@ XAML アプリで **AdControl** エラーを処理するには:
 
 **OnAdError** という名前のデリゲートを **ErrorOccurred** イベントに割り当てる例を次に示します。
 
-``` syntax
+> [!div class="tabbedCodeSnippets"]
+``` csharp
 this.ErrorOccurred = OnAdError;
 ```
 
 Visual Studio の出力ウィンドウにエラー情報を書き込む **OnAdError** デリゲートの定義例を次に示します。
 
-``` syntax
+> [!div class="tabbedCodeSnippets"]
+``` csharp
 private void OnAdError(object sender, AdErrorEventArgs e)
 {
-    System.Diagnostics.Debug.WriteLine("AdControl error (" + ((AdControl)sender).Name + "): " + e.Error + " ErrorCode: " + e.ErrorCode.ToString());
+    System.Diagnostics.Debug.WriteLine("AdControl error (" + ((AdControl)sender).Name + "): " + e.Error +
+        " ErrorCode: " + e.ErrorCode.ToString());
 }
 ```
 
@@ -81,6 +84,6 @@ XAML および C# での **AdControl** エラー処理について説明する�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

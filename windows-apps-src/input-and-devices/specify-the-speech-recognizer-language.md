@@ -5,25 +5,34 @@ title: "音声認識エンジンの言語の指定"
 ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
 label: Specify the speech recognizer language
 template: detail.hbs
+keywords: "スピーチ, 音声, 音声認識, 自然言語, ディクテーション, 入力, ユーザーの操作"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 526493614666424089199063013b5fc72d9bc5d8
-ms.openlocfilehash: 9abde4aa5489780f3ee2e9b5e7ecbdfa4dd53b93
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: 42ddaea1de6dc4354e776b7d6db79486a6b3057e
 
 ---
 
-# 音声認識エンジンの言語の指定
-
+# <a name="specify-the-speech-recognizer-language"></a>音声認識エンジンの言語の指定
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 音声認識に使われるインストール済みの言語を選ぶ方法について説明します。
 
-
-
-
-**重要な API**
-
--   [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251)
--   [**SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250)
--   [**言語**](https://msdn.microsoft.com/library/windows/apps/br206804)
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li> [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251)</li>
+<li>[**SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250)</li>
+<li>[**言語**](https://msdn.microsoft.com/library/windows/apps/br206804)</li>
+<li> </li>
+<li> </li>
+<li> </li>
+</ul>
+</div>
 
 
 ここでは、システムにインストールされている言語を列挙し、どの言語が既定の言語であるかを指定します。また、音声認識用に別の言語を選びます。
@@ -43,7 +52,7 @@ ms.openlocfilehash: 9abde4aa5489780f3ee2e9b5e7ecbdfa4dd53b93
 
 魅力的な音声認識対応アプリの設計に役立つ便利なヒントについては、「[音声機能の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)」をご覧ください。
 
-## 既定の言語を指定する
+## <a name="identify-the-default-language"></a>既定の言語を指定する
 
 
 音声認識エンジンでは、システムの音声認識の言語を既定の認識言語として使います。 この言語は、デバイスで [設定] &gt; [システム] &gt; [音声認識] &gt; [音声認識の言語] の順に移動し、画面上でユーザーが設定します。
@@ -57,7 +66,7 @@ var language = SpeechRecognizer.SystemSpeechLanguage; </code></pre></td>
 </table>
 ```
 
-## インストールされている言語を確認する
+## <a name="confirm-an-installed-language"></a>インストールされている言語を確認する
 
 
 インストールされている言語はデバイスによって異なる場合があります。 特定の制約を使う際にある言語に依存する場合は、その言語が存在するかどうかを確認してください。
@@ -72,7 +81,7 @@ var language = SpeechRecognizer.SystemSpeechLanguage; </code></pre></td>
 
 -   [**SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250)— 一覧の制約または Speech Recognition Grammar Specification (SRGS) ファイルと共に使われる [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) オブジェクトのコレクションです。
 
-## 言語を指定する
+## <a name="specify-a-language"></a>言語を指定する
 
 
 言語を指定するには、[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) コンストラクターで [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) オブジェクトを渡します。
@@ -95,7 +104,7 @@ var language = new Windows.Globalization.Language(“en-US”);
 var recognizer = new SpeechRecognizer(language); 
 ```
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 
 トピック制約を構成するには、[**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446) を [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) の [**Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) コレクションに追加して、[**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) を呼び出します。 サポートされているトピックの言語で認識エンジンが初期化されていない場合は、**TopicLanguageNotSupported** の [**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433) が返されます。
@@ -104,15 +113,15 @@ var recognizer = new SpeechRecognizer(language);
 
 SRGS 文法は、[**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412) クラスによって表されるオープン スタンダードの XML 形式です。 カスタム一覧とは異なり、SRGS マークアップで文法の言語を指定できます。 [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) は、認識エンジンが SRGS マークアップと同じ言語に初期化されていない場合は、**TopicLanguageNotSupported** の [**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433) により失敗します。
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 **開発者向け**
 
-* [音声認識による対話式操作](speech-interactions.md)
+* [音声操作](speech-interactions.md)
 
 **デザイナー向け**
 
-* ([音声認識の設計ガイドライン)] （https://msdn.microsoft.com/library/windows/apps/dn596121）
+* [音声認識の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)
 
 **サンプル**
 
@@ -127,6 +136,6 @@ SRGS 文法は、[**SpeechRecognitionGrammarFileConstraint**](https://msdn.micro
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

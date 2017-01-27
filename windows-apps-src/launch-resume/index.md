@@ -4,8 +4,8 @@ title: "起動、再開、バックグラウンド タスク"
 description: "このセクションでは、ユニバーサル Windows プラットフォーム (UWP) アプリが起動、中断、再開、および終了されたときの動作について説明します。"
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 translationtype: Human Translation
-ms.sourcegitcommit: a21b2e9bb41e951660916bbbdb09b0bd3e5ecf2d
-ms.openlocfilehash: 7667cfb9671a7517a394f6f691aef4c305c02087
+ms.sourcegitcommit: 32737991b31eaceb33fc2ecb5152def167c36fdd
+ms.openlocfilehash: 6b350ef65f381d18585c8b080c6259f7607c7bf9
 
 ---
 
@@ -33,7 +33,8 @@ ms.openlocfilehash: 7667cfb9671a7517a394f6f691aef4c305c02087
 | [アプリのアクティブ化の処理](activate-an-app.md)     | アプリのアクティブ化を処理する方法について説明します。                                                                             |
 | [アプリの中断の処理](suspend-an-app.md)         | システムがアプリを一時停止するときに重要なアプリケーション データを保存する方法を説明します。                                 |
 | [アプリの再開の処理](resume-an-app.md)           | システムがアプリを再開するときに表示されるコンテンツを更新する方法について説明します。                                        |
-| [アプリがバックグラウンドに移動したときの空きメモリ](reduce-memory-usage.md)           | バックグラウンド状態になっているときにアプリで使用するメモリ量を減らして、アプリが終了しないようにする方法を説明します。                                        |
+| [アプリがバックグラウンドに移動したときの空きメモリ](reduce-memory-usage.md) | バックグラウンド状態になっているときにアプリで使用するメモリ量を減らして、アプリが終了しないようにする方法を説明します。|
+| [延長実行を使った最小化状態での実行](run-minimized-with-extended-execution.md) | 延長実行を使用して、アプリが最小化されているときにアプリの実行を保持する方法について説明します。 |
 
 ## <a name="launch-apps"></a>アプリの起動
 
@@ -118,6 +119,6 @@ ms.openlocfilehash: 7667cfb9671a7517a394f6f691aef4c305c02087
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -7,38 +7,28 @@ ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
 label: Segoe MDL2 icons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
-ms.openlocfilehash: a779d4ff5d404c2eca658cee836c5d45c42f14d8
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 1e7914c0641d2897efbcbe5c9479a2ecc1a8dd2d
 
 ---
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+# <a name="segoe-mdl2-icons"></a>Segoe MDL2 アイコン
 
-# Segoe MDL2 アイコン
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 この記事では、Segoe MDL2 アセット フォントによって提供されるアイコンの一覧を示します。 
 
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn252842"><strong>Symbol 列挙値 (XAML)</strong></a></li>
+<li>[**Symbol 列挙値 (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn252842)</li>
 </ul>
-
-</div>
 </div>
 
 
+## <a name="about-segoe-mdl2-assets"></a>Segoe MDL2 アセットについて
 
-## このフォントの入手方法
-Segoe MDL2 アセットを入手するには、Windows 10 をインストールする必要があります。 
-
-## Segoe MDL2 アセットについて
-
-Windows 8 または 8.1 の Segoe UI Symbol アイコン フォントは、Segoe MDL2 アセット フォントに置き換えられました。これは Windows 10 のリリースで有効です。 <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> **Segoe UI Symbol** も「レガシ」リソースとして利用できますが、アプリを更新して新しい **Segoe MDL2 アセット**を使用することをお勧めします。
-
-> **注**
->
-> **Em** は、フォントの測定単位です。 フォントの 1 Em は、72 ppi で指定したポイント値の 100% に相当します。 たとえば、16 ポイントは 72 ppi で 16 ピクセルに相当します (100% のプラトーとも言います)。 新しい MDL2 フォントはアイコン領域の面積が正方形の Em となるように設計されています。 このため、コードで幅と高さを 16 ピクセルに指定すると、アイコンの面積は 16 x 16 ピクセルになります。 これは、常にアイコンがこの面積いっぱいに表示されるということではありません。
+Windows 10 リリースでは、Segoe MDL2 アセット フォントが Windows 8/8.1 Segoe UI Symbol アイコン フォントに置き換わります。 <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> (**Segoe UI Symbol** も「レガシ」リソースとして利用できますが、アプリを更新して新しい **Segoe MDL2 アセット**を使用することをお勧めします。)
 
 **Segoe MDL2 アセット** フォントに含まれるアイコンや UI コントロールのほとんどは、Unicode の私用領域 (PUA) にマップされます。 フォント開発者は PUA を使って、既にあるコード ポイントにマップされないグリフにプライベート Unicode 値を割り当てることができます。 これは、記号フォントを作成するときに役立ちますが、相互運用性の問題が生じます。 フォントが利用できない場合、グリフは表示されません。 これらのグリフは、**Segoe MDL2 アセット** フォントを明示的に指定できる場合にのみ使います。
 
@@ -46,7 +36,7 @@ Windows 8 または 8.1 の Segoe UI Symbol アイコン フォントは、Segoe
 
 **Segoe UI Symbol** と異なり、**Segoe MDL2 アセット** フォントのアイコンは、テキストとインラインで使用することは意図されていません。 これは、段階的表示の矢印のような一部の古い方法は利用できなくなったことを意味します。 さらに、新しいアイコンはすべて同じ場所に同じ大きさで表示されるため、幅を 0 にして作成する必要はありません。一組で機能することが確認済みです。 一組として設計された 2 つのアイコンは、ぴったり重ねることができ、正しい位置に収まることが理想的です。 これにより、コード内の色付けが可能になります。 たとえば、スタート タイルのバッチ ステータス用に、U+EA3A と U+EA3B が作成されました。 これらは既に中央揃えされているため、ステータスが変わった場合に円を色で塗りつぶすことができます。
 
-## 重ね合わせとミラーリング
+## <a name="layering-and-mirroring"></a>重ね合わせとミラーリング
 
 **Segoe MDL2 アセット**のグリフにはすべて、一貫した高さと、左を原点とした同一の固定幅が設定されているため、重ね合わせや色付けの効果はグリフどうしを直接重ねて描画することで表現できます。 この例では、幅が 0 の赤いハートに重ねて、黒の輪郭が描画されています。
 
@@ -54,14 +44,17 @@ Windows 8 または 8.1 の Segoe UI Symbol アイコン フォントは、Segoe
 
 また、アイコンの多くは、アラビア語、ペルシア語、ヘブライ語などの右から左に書く文字を使う言語でも利用できるように、左右が反転した形式も作成されています。
 
-## Symbol 列挙値
+## <a name="symbol-enumeration"></a>Symbol 列挙値
 C#/VB/C++ と XAML を使ってアプリを開発している場合、[**Symbol 列挙値**](https://msdn.microsoft.com/library/windows/apps/dn252842)を使って Segoe MDL2 アセット フォントのアイコンを使用できます。 
+
+## <a name="how-do-i-get-this-font"></a>このフォントの入手方法
+Segoe MDL2 アセットを入手するには、Windows 10 をインストールする必要があります。 
 
 <!--
 Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons than we can show here. Many of these are intended for specialized purposed and are not typically used anywhere else.
 -->
 
-## アイコン一覧
+## <a name="icon-list"></a>アイコン一覧
 
 <table>
 
@@ -5143,10 +5136,7 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 
 
 
-
-
-
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 * [フォントのガイドライン](fonts.md)
 * [**Symbol 列挙値**](https://msdn.microsoft.com/library/windows/apps/dn252842)
@@ -5160,6 +5150,6 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

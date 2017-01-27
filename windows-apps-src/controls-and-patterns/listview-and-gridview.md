@@ -5,11 +5,11 @@ title: "リスト ビューとグリッド ビュー"
 label: List view and grid view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 8f9d85f0cb15c9fe4ceec9c397e23a134a442d3f
-ms.openlocfilehash: 8a14fa69089f6d796a803c1c1ff9bb678af3c913
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 2887e2aed2c3b638343f2bd211c32f99b3c7da1a
 
 ---
-# ListView と GridView
+# <a name="listview-and-gridview"></a>ListView と GridView
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -20,19 +20,14 @@ ListView と GridView はどちらも ListViewBase クラスから派生して�
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx"><strong>ListView クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx"><strong>GridView クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx"><strong>ItemsSource プロパティ</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx"><strong>Items プロパティ</strong></a></li>
+<li>[**ListView クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)</li>
+<li>[**GridView クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)</li>
+<li>[**ItemsSource プロパティ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)</li>
+<li>[**Items プロパティ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 ListView では、データを縦方向の 1 列に並べて表示します。 メールや検索結果の一覧など、順序が付けられた項目の一覧を表示するときによく使います。 
 
@@ -44,7 +39,7 @@ GridView は、縦方向にスクロールできる複数行と複数列で項�
 
 使用するコントロールを選ぶための詳しい比較とガイダンスについては、「[リスト](lists.md)」をご覧ください。
 
-## リスト ビューの作成
+## <a name="create-a-list-view"></a>リスト ビューの作成
 
 リスト ビューは [ItemsControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.aspx) であるため、あらゆる種類の項目のコレクションを含めることができます。 リスト ビューを使って項目を表示するには、[**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) コレクションに項目を追加しておく必要があります。 ビューのデータを設定するには、項目を直接 [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) コレクションに追加するか、データ ソースに [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) プロパティを設定します。 
 
@@ -52,7 +47,7 @@ GridView は、縦方向にスクロールできる複数行と複数列で項�
 
 > **注**&nbsp;&nbsp;この記事の例の多くでは、説明を簡単にするために **Items** コレクションを直接設定しています。 ただし、リストの項目は、オンライン データベースの書籍一覧など、動的なソースから取得される方が一般的です。 このようなケースでは、**ItemsSource** プロパティを使用します。 
 
-### Items コレクションへの項目の追加
+### <a name="add-items-to-the-items-collection"></a>Items コレクションへの項目の追加
 
 [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) コレクションに項目を追加するには、XAML またはコードを使います。 通常、項目が少数で、その項目が変わらず、XAML で簡単に定義できる場合や、実行時にコードで項目を生成する場合は、この方法で項目を追加します。 
 
@@ -89,7 +84,7 @@ ListView は次のようになります。
 
 ![単純なリスト ビュー](images/listview-simple.png)
 
-### 項目ソースの設定
+### <a name="set-the-items-source"></a>項目ソースの設定
 
 通常、リスト ビューを使って、データベースやインターネットなどのソースからデータを表示します。 データ ソースからリスト ビューのデータを設定するには、[**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) プロパティをデータ項目のコレクションに設定します。
 
@@ -148,7 +143,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 リスト ビューにグループ化されたデータを表示する必要がある場合、[**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx) にバインドします。 CollectionViewSource は XAML のコレクション クラスのプロキシとして機能し、グループ化サポートを有効にします。 詳しくは、「[**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx)」をご覧ください。
 
-## データ テンプレート
+## <a name="data-template"></a>データ テンプレート
 
 項目のデータ テンプレートによって、データの表示方法を定義します。 既定では、データ項目は、バインドされているデータ オブジェクトの文字列表現としてリスト ビューに表示されます。 データ項目の特定のプロパティに [**DisplayMemberPath**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.displaymemberpath.aspx) を設定すると、そのプロパティの文字列表現を表示できます。
 
@@ -189,7 +184,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 データ テンプレートは、リスト ビューの外観を定義する主要な方法です。 リストに多数の項目を表示した場合、パフォーマンスが大幅に低下することもあります。 この記事では、ほとんどの例で単純な文字列データを使用しており、データ テンプレートを指定していません。 データ テンプレートと項目コンテナーを使用してリストまたはグリッドの項目の外観を定義する詳しい方法とその例については、「[リスト ビュー項目テンプレート](listview-item-templates.md)」をご覧ください。 
 
-## 項目のレイアウト変更
+## <a name="change-the-layout-of-items"></a>項目のレイアウト変更
 
 リスト ビューまたはグリッド ビューに項目を追加すると、項目コンテナー内で各項目が自動的に折り返され、すべての項目コンテナーがレイアウトされます。 この項目コンテナーのレイアウト方法は、コントロールの [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) によって決まります。  
 - **ListView** では既定で [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx) が使用され、次のような縦 1 列のリストが生成されます。
@@ -269,7 +264,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 ![グループ化された横方向のリスト ビュー](images/listview-horizontal-groups.png)
 
-## 項目の選択と操作
+## <a name="item-selection-and-interaction"></a>項目の選択と操作
 
 ユーザーがリスト ビューを操作する方法は、いくつか選ぶことができます。 既定では、ユーザーは 1 つの項目を選択できます。 [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) プロパティを変更することで、複数選択を有効にしたり、選択を無効にしたりできます。 [**IsItemClickEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) プロパティを設定することで、ユーザーが項目をクリックしたときに項目を選択するのではなく、ボタンと同じように操作を呼び出すことができます。
 
@@ -304,41 +299,41 @@ myGridView.SelectionMode = ListViewSelectionMode.None;
 myGridView.IsItemClickEnabled = true;
 ```
 
-### 読み取り専用
+### <a name="read-only"></a>読み取り専用
 
 SelectionMode プロパティを **ListViewSelectionMode.None** に設定することで、項目の選択を無効にすることができます。 これによりコントロールが読み取り専用モードになり、ユーザーの操作には使われず、データの表示のみに使われます。 コントロール自体は無効にならず、項目の選択のみが無効になります。
 
-### 単一選択
+### <a name="single-selection"></a>単一選択
 
 次の表では、SelectionMode が **Single** の場合のキーボード操作、マウス操作、タッチ操作について説明します。
 
 修飾キー | 操作
 -------------|------------
-なし | <ul><li>ユーザーはスペース バー、マウスのクリック、タッチ操作のタップを使って 1 つの項目を選択できます。</li></ul>
-Ctrl | <ul><li>ユーザーはスペース バー、マウスのクリック、タッチ操作のタップを使って 1 つの項目の選択を解除できます。</li><li>方向キーを使うと、選択した項目とは関係なくフォーカスを移動できます。</li></ul>
+なし | <li>ユーザーはスペース バー、マウスのクリック、タッチ操作のタップを使って 1 つの項目を選択できます。</li>
+Ctrl | <li>ユーザーはスペース バー、マウスのクリック、タッチ操作のタップを使って 1 つの項目の選択を解除できます。</li><li>方向キーを使うと、選択した項目とは関係なくフォーカスを移動できます。</li>
 
 SelectionMode が **Single** の場合、[**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selecteditem.aspx) プロパティから選択したデータ項目を取得できます。 [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectedindex.aspx) プロパティを使って、選択した項目のコレクション内のインデックスを取得できます。 項目が選択されていない場合、SelectedItem は **null** になり、SelectedIndex は -1 になります。 
  
 **Items** コレクションに含まれない項目を **SelectedItem** として設定しようとすると、その操作は無視され、SelectedItem が **null** になります。 ただし、リスト内の **Items** の範囲外のインデックスを **SelectedIndex** に設定しようとすると、**System.ArgumentException** 例外が発生します。 
 
-### 複数選択
+### <a name="multiple-selection"></a>複数選択
 
 次の表では、SelectionMode が **Multiple** の場合のキーボード操作、マウス操作、タッチ操作について説明します。
 
 修飾キー | 操作
 -------------|------------
-なし | <ul><li>ユーザーは、スペース バー、マウスのクリック、タッチ操作のタップを使って、フォーカスのある項目の選択状態を切り替えることで、複数の項目を選択できます。</li><li>方向キーを使うと、選択した項目とは関係なくフォーカスを移動できます。</li></ul>
-Shift | <ul><li>ユーザーは、選択する最初の項目をクリックまたはタップした後、選択する最後の項目をクリックまたはタップすることで、複数の項目を連続的に選択できます。</li><li>方向キーを使用すると、Shift キーが押されたときに選択された項目を起点として連続的に選択することができます。</li></ul>
+なし | <li>ユーザーは、スペース バー、マウスのクリック、タッチ操作のタップを使って、フォーカスのある項目の選択状態を切り替えることで、複数の項目を選択できます。</li><li>方向キーを使うと、選択した項目とは関係なくフォーカスを移動できます。</li>
+Shift | <li>ユーザーは、選択する最初の項目をクリックまたはタップした後、選択する最後の項目をクリックまたはタップすることで、複数の項目を連続的に選択できます。</li><li>方向キーを使用すると、Shift キーが押されたときに選択された項目を起点として連続的に選択することができます。</li>
 
-### 拡張選択
+### <a name="extended-selection"></a>拡張選択
 
 次の表では、SelectionMode が **Extended** の場合のキーボード操作、マウス操作、タッチ操作について説明します。
 
 修飾キー | 操作
 -------------|------------
-なし | <ul><li>**Single** の選択と同じです。</li></ul>
-Ctrl | <ul><li>ユーザーは、スペース バー、マウスのクリック、タッチ操作のタップを使って、フォーカスのある項目の選択状態を切り替えることで、複数の項目を選択できます。</li><li>方向キーを使うと、選択した項目とは関係なくフォーカスを移動できます。</li></ul>
-Shift | <ul><li>ユーザーは、選択する最初の項目をクリックまたはタップした後、選択する最後の項目をクリックまたはタップすることで、複数の項目を連続的に選択できます。</li><li>方向キーを使用すると、Shift キーが押されたときに選択された項目を起点として連続的に選択することができます。</li></ul>
+なし | <li>**Single** の選択と同じです。</li>
+Ctrl | <li>ユーザーは、スペース バー、マウスのクリック、タッチ操作のタップを使って、フォーカスのある項目の選択状態を切り替えることで、複数の項目を選択できます。</li><li>方向キーを使うと、選択した項目とは関係なくフォーカスを移動できます。</li>
+Shift | <li>ユーザーは、選択する最初の項目をクリックまたはタップした後、選択する最後の項目をクリックまたはタップすることで、複数の項目を連続的に選択できます。</li><li>方向キーを使用すると、Shift キーが押されたときに選択された項目を起点として連続的に選択することができます。</li>
 
 SelectionMode が **Multiple** または **Extended** の場合、選択したデータ項目を [**SelectedItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx) プロパティから取得できます。 
 
@@ -346,7 +341,7 @@ SelectionMode が **Multiple** または **Extended** の場合、選択した�
 
 複数選択モードの場合、**SelectedItem** には最初に選択された項目が含まれ、**Selectedindex** には最初に選択した項目のインデックスが含まれます。 
 
-### 選択範囲の変更への対応
+### <a name="respond-to-selection-changes"></a>選択範囲の変更への対応
 
 リスト ビューにおける選択内容の変更に対応するには、[**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) イベントを処理します。 イベント ハンドラーのコードでは、[**SelectionChangedEventArgs.AddedItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.selectionchangedeventargs.addeditems.aspx) プロパティから選ばれた項目の一覧を取得できます。 選択が解除された項目は、[**SelectionChangedEventArgs.RemovedItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.selectionchangedeventargs.removeditems.aspx) プロパティから取得できます。 ユーザーが Shift キーを押しながら一連の項目を選択しない限り、AddedItems コレクションと RemovedItems コレクションに含まれる項目の数は 1 個までになります。
 
@@ -396,7 +391,7 @@ private void ListView1_SelectionChanged(object sender, SelectionChangedEventArgs
 }
 ```
 
-### クリック モード
+### <a name="click-mode"></a>クリック モード
 
 項目を選択するのではなく、ボタンのように項目をクリックできるように、リスト ビューを変更することができます。 この方法は、たとえば、リストまたはグリッド内の項目をユーザーがクリックしたときに新しいページに移動するアプリで便利です。 この動作を有効にするには、次のように設定します。
 - **SelectionMode** を **None** に設定します。
@@ -450,7 +445,7 @@ private void ListView1_ItemClick(object sender, ItemClickEventArgs e)
 }
 ```
 
-### プログラムを使った一定範囲の項目の選択
+### <a name="select-a-range-of-items-programmatically"></a>プログラムを使った一定範囲の項目の選択
 
 場合によっては、プログラムからリスト ビューの項目の選択を操作する必要があります。 たとえば、ユーザーがリスト内のすべての項目を選択できるように、**[すべて選択]** ボタンを用意する場合があります。 この場合、SelectedItems コレクションの項目を 1 つずつ追加したり削除したりすることは、一般的に効率的とは言えません。 各項目を変更するたびに SelectionChanged イベントが発生し、インデックス値を操作するのではなく項目を直接操作すると、項目の仮想化が解除されます。
 
@@ -502,11 +497,11 @@ private void DeselectAllButton_Click(object sender, RoutedEventArgs e)
 
 選択した項目の外観を変更する方法について詳しくは、「[リスト ビュー項目テンプレート](listview-item-templates.md)」をご覧ください。
 
-### ドラッグ アンド ドロップ
+### <a name="drag-and-drop"></a>ドラッグ アンド ドロップ
 
 ListView コントロールと GridView コントロールは、項目内、項目間、および他の ListView コントロールと GridView コントロール間での項目のドラッグ アンド ドロップをサポートします。 ドラッグ アンド ドロップのパターンの実装について詳しくは、「[ドラッグ アンド ドロップ](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)」をご覧ください。 
 
-## サンプルの入手
+## <a name="get-the-sample-code"></a>サンプル コードを入手する 
 
 *   [XAML ListView と GridView のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619900)<br/>
     このサンプルでは、ListView コントロールと GridView コントロールの使い方を示します。
@@ -514,7 +509,7 @@ ListView コントロールと GridView コントロールは、項目内、項�
 *   [XAML UI の基本のサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
     インタラクティブな形で XAML コントロールのすべてを参照できます。
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 - [リスト](lists.md)
 - [リスト ビュー項目テンプレート](listview-item-templates.md)
@@ -522,6 +517,6 @@ ListView コントロールと GridView コントロールは、項目内、項�
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

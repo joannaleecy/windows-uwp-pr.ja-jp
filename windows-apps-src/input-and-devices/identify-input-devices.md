@@ -5,24 +5,33 @@ title: "入力デバイスの識別"
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
 label: Identify input devices
 template: detail.hbs
+keywords: "デバイス, デジタイザー, 入力, 操作"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: df416821ad67a8eaf8a8a31879b6a1d39526df14
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: 20230362a38d4541fbed25ac822c96032f7b6d8f
 
 ---
 
-# 入力デバイスの識別
+# <a name="identify-input-devices"></a>入力デバイスの識別
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 ユニバーサル Windows プラットフォーム (UWP) デバイスに接続されている入力デバイスを識別し、その機能と属性を識別します。
 
-**重要な API**
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)</li>
+<li>[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)</li>
+<li>[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</li>
+</ul>
+</div>
 
--   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)
--   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
-
-
-## マウスのプロパティの取得
+## <a name="retrieve-mouse-properties"></a>マウスのプロパティの取得
 
 
 接続されているマウスによって公開されているプロパティを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626) クラスを使います。 新しい **MouseCapabilities** オブジェクトを作成し、目的のプロパティを取得するだけです。
@@ -45,7 +54,7 @@ private void GetMouseProperties()
 }
 ```
 
-## キーボードのプロパティの取得
+## <a name="retrieve-keyboard-properties"></a>キーボードのプロパティの取得
 
 
 キーボードが接続されているかどうかを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**KeyboardCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225623) クラスを使います。 新しい **KeyboardCapabilities** オブジェクトを作成し、[**KeyboardPresent**](https://msdn.microsoft.com/library/windows/apps/br225625) プロパティを取得するだけです。
@@ -60,7 +69,7 @@ private void GetKeyboardProperties()
 }
 ```
 
-## タッチのプロパティの取得
+## <a name="retrieve-touch-properties"></a>タッチのプロパティの取得
 
 
 タッチ デジタイザーが接続されているかどうかを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644) クラスを使います。 新しい **TouchCapabilities** オブジェクトを作成し、目的のプロパティを取得するだけです。
@@ -80,7 +89,7 @@ private void GetTouchProperties()
 }
 ```
 
-## ポインターのプロパティの取得
+## <a name="retrieve-pointer-properties"></a>ポインターのプロパティの取得
 
 
 検出されたデバイスがポインター入力 (タッチ、タッチパッド、マウス、ペン) をサポートしているかどうかを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) クラスを使います。 新しい **PointerDevice** オブジェクトを作成し、目的のプロパティを取得するだけです。
@@ -176,7 +185,7 @@ private void GetPointerDevices()
     }
 ```
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 
 **サンプル**
@@ -196,6 +205,6 @@ private void GetPointerDevices()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

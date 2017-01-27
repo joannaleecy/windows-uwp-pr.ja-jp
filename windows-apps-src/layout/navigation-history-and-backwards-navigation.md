@@ -1,18 +1,21 @@
 ---
 author: mijacobs
 Description: "ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーションは、ナビゲーション構造、ナビゲーション要素、システム レベルの機能から成る柔軟なモデルに基づいています。"
-title: "ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーション デザインの基本"
+title: "ナビゲーション履歴と前に戻る移動 (Windows アプリ)"
 ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
 isNew: true
 label: History and backwards navigation
 template: detail.hbs
+op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: 75e8c342775f7d6c564cb1014519f8e4707a0632
-ms.openlocfilehash: f18fc0806313cc1656860b0fd8b5ae692fa3d4c6
+ms.sourcegitcommit: 5f7f40d754ec9408fe5b4ba18d6d64bd49cb449f
+ms.openlocfilehash: bfff3a4787a37156ef3232372a125db60678ebac
 
 ---
 
-#  ナビゲーション履歴と前に戻る移動
+#  <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP アプリのナビゲーション履歴と前に戻る移動
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Web の場合、個々の Web サイトには独自のナビゲーション システム (目次、ボタン、メニュー、リンクの簡単な一覧など) が用意されています。 ナビゲーション エクスペリエンスは、Web サイトによっては大幅に異なる場合があります。 ただし、一貫して同じナビゲーション エクスペリエンスが 1 つあります。それは "戻る" 操作です。 ほとんどのブラウザーには、Web サイトに関係なく同じように動作する戻るボタンがあります。
 
@@ -26,12 +29,12 @@ Web の場合、個々の Web サイトには独自のナビゲーション シ�
 <table>
     <tr>
         <td colspan="2">デバイス</td>
-        <td>戻るボタンの動作</td>
+        <td style="vertical-align:top;">戻るボタンの動作</td>
      </tr>
     <tr>
-        <td>電話</td>
-        <td>![電話でのシステムの戻るボタン](images/back-systemback-phone.png)</td>
-        <td>
+        <td style="vertical-align:top;">電話</td>
+        <td style="vertical-align:top;">![電話でのシステムの戻るボタン](images/back-systemback-phone.png)</td>
+        <td style="vertical-align:top;">
         <ul>
 <li>常に表示されます。</li>
 <li>デバイスの下部にあるソフトウェアまたはハードウェア ボタン。</li>
@@ -40,41 +43,31 @@ Web の場合、個々の Web サイトには独自のナビゲーション シ�
 </td>
      </tr>
      <tr>
-        <td>タブレット</td>
-        <td>![タブレットでのシステムの戻るボタン (タブレット モード)](images/back-systemback-tablet.png)</td>
-        <td>
+        <td style="vertical-align:top;">タブレット</td>
+        <td style="vertical-align:top;">![タブレットでのシステムの戻るボタン (タブレット モード)](images/back-systemback-tablet.png)</td>
+        <td style="vertical-align:top;">
 <ul>
-<li>タブレット モードでは、常に表示されます。
-
-    Not available in Desktop mode. Title bar back button can be enabled, instead. See [PC, Laptop, Tablet](#PC).
-
-    Users can switch between running in Tablet mode and Desktop mode by going to **Settings &gt; System &gt; Tablet mode** and setting **Make Windows more touch-friendly when using your device as a tablet**.</li>
-
+<li>タブレット モードでは、常に表示されます。 デスクトップ モードでは利用できません。 代わりに、タイトル バーの戻るボタンを有効にすることができます。 「[PC、ノート PC、タブレット](#PC)」をご覧ください。
+ユーザーは、**[設定]、[システム]、[タブレット モード]** の順に選択し、**[デバイスをタブレットとして使用すると、Windows のタッチ機能がより使いやすくなります]** をオンまたはオフにすることによって、タブレット モードでの実行とデスクトップ モードでの実行を切り替えることができます。</li>
 <li> デバイスの下部のナビゲーション バーにあるソフトウェア ボタン。</li>
 <li>アプリ内部やアプリ間で、グローバルな戻るナビゲーションを実現します。</li></ul>        
         </td>
      </tr>
     <tr>
-        <td>PC、ノート PC、タブレット</td>
-        <td>![PC やノート PC でのシステムの戻るボタン](images/back-systemback-pc.png)</td>
-        <td>
+        <td style="vertical-align:top;">PC、ノート PC、タブレット</td>
+        <td style="vertical-align:top;">![PC やノート PC でのシステムの戻るボタン](images/back-systemback-pc.png)</td>
+        <td style="vertical-align:top;">
 <ul>
-<li>デスクトップ モードではオプションです。
-
-    Not available in Tablet mode. See [Tablet](#Tablet).
-
-    Disabled by default. Must opt in to enable it.
-
-    Users can switch between running in Tablet mode and Desktop mode by going to **Settings &gt; System &gt; Tablet mode** and setting **Make Windows more touch-friendly when using your device as a tablet**.</li>
-
+<li>デスクトップ モードではオプションです。 タブレット モードでは利用できません。 「[タブレット](#Tablet)」をご覧ください。 既定では無効になっています。 有効にすることをオプトインする必要があります。
+ユーザーは、**[設定]、[システム]、[タブレット モード]** の順に選択し、**[デバイスをタブレットとして使用すると、Windows のタッチ機能がより使いやすくなります]** をオンまたはオフにすることによって、タブレット モードでの実行とデスクトップ モードでの実行を切り替えることができます。</li>
 <li>アプリのタイトル バーにあるソフトウェア ボタン。</li>
 <li>アプリ内部のみでの戻るナビゲーション。 アプリ間のナビゲーションはサポートされません。</li></ul>        
         </td>
      </tr>
     <tr>
-        <td>Surface Hub</td>
-        <td>![Surface Hub でのシステムの戻るボタン](images/nav/nav-back-surfacehub.png)</td>
-        <td>
+        <td style="vertical-align:top;">Surface Hub</td>
+        <td style="vertical-align:top;">![Surface Hub でのシステムの戻るボタン](images/nav/nav-back-surfacehub.png)</td>
+        <td style="vertical-align:top;">
 <ul>
 <li>省略可能。</li>
 <li>既定では無効になっています。 有効にすることをオプトインする必要があります。</li>
@@ -90,15 +83,15 @@ Web の場合、個々の Web サイトには独自のナビゲーション シ�
 
 <table>
 <tr><td colspan="3">入力デバイス</td></tr>
-<tr><td>キーボード</td><td>![キーボード](images/keyboard-wireframe.png)</td><td>Windows キー + BackSpace</td></tr>
-<tr><td>Cortana</td><td>![音声認識](images/speech-wireframe.png)</td><td>「コルタナさん、戻る」と話す。</td></tr>
+<tr><td style="vertical-align:top;">キーボード</td><td style="vertical-align:top;">![キーボード](images/keyboard-wireframe.png)</td><td style="vertical-align:top;">Windows キー + BackSpace</td></tr>
+<tr><td style="vertical-align:top;">Cortana</td><td style="vertical-align:top;">![音声認識](images/speech-wireframe.png)</td><td style="vertical-align:top;">「コルタナさん、戻る」と話す。</td></tr>
 </table>
  
 
 アプリが電話、タブレット、PC、ノート PC で実行され、システムの戻るボタンが有効になっていると、戻るボタンが押されたときに、システムからアプリに通知されます。 ユーザーは、戻るボタンによって、アプリのナビゲーション履歴における前の場所に戻ることを想定しています。 ナビゲーション履歴に追加するナビゲーション操作の種類、および戻るボタンが押されたときの応答方法は、自由に決めることができます。
 
 
-## システムの "戻る" ナビゲーションのサポートを有効にする方法
+## <a name="how-to-enable-system-back-navigation-support"></a>システムの "戻る" ナビゲーションのサポートを有効にする方法
 
 
 アプリは、すべてのハードウェアとソフトウェアによるシステムの戻るボタンの "戻る" ナビゲーションを有効にする必要があります。 これを行うには、[**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) イベントのリスナーを登録し、対応するハンドラーを定義します。
@@ -158,7 +151,7 @@ Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
 >}
 ```
 
-## タイトル バーの戻るボタンを有効にする方法
+## <a name="how-to-enable-the-title-bar-back-button"></a>タイトル バーの戻るボタンを有効にする方法
 
 
 デスクトップ モードをサポートするデバイス (通常は PC とノート PC、一部のタブレットも含む) で、設定を有効にしている (**[設定]、[システム]、[タブレット モード]** の順に選択) 場合、システムの戻るボタンを備えたグローバルなナビゲーションバーは提供されません。
@@ -241,15 +234,11 @@ Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
 >```
 
 
-### カスタムの "戻る" ナビゲーションの動作のガイドライン
+### <a name="guidelines-for-custom-back-navigation-behavior"></a>カスタムの "戻る" ナビゲーションの動作のガイドライン
 
 独自のバック スタック ナビゲーションを提供する場合、エクスペリエンスが他のアプリと一貫している必要があります。 ナビゲーション操作では、次のパターンに従うことをお勧めします。
 
 <table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th align="left">ナビゲーション操作</th>
@@ -258,38 +247,38 @@ Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>ページ間、異なるピア グループ</strong></p></td>
-<td align="left"><strong>○</strong>
+<td style="vertical-align:top;"><strong>ページ間、異なるピア グループ</strong></td>
+<td style="vertical-align:top;"><strong>○</strong>
 <p>この図では、ユーザーはピア グループを横断して、アプリのレベル 1 からレベル 2 に移動します。そのため、このナビゲーションはナビゲーション履歴に追加されます。</p>
 <p><img src="images/nav/nav-pagetopage-diffpeers-imageonly1.png" alt="Navigation across peer groups" /></p>
 <p>次の図では、ユーザーは同じレベルにある 2 つのピア グループの間を移動し、この場合もピア グループを横断します。そのため、このナビゲーションはナビゲーション履歴に追加されます。</p>
 <p><img src="images/nav/nav-pagetopage-diffpeers-imageonly2.png" alt="Navigation across peer groups" /></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>ページ間、同じピア グループ、ナビゲーション要素は画面上に表示されない</strong></p>
+<td style="vertical-align:top;"><strong>ページ間、同じピア グループ、ナビゲーション要素は画面上に表示されない</strong>
 <p>ユーザーは、同じピア グループでページ間を移動します。 両方のページを対象とした直接的なナビゲーションを実現するナビゲーション要素 (タブ/ピボットや、ドッキングされたナビゲーション ウィンドウなど) は画面に表示されません。</p></td>
-<td align="left"><strong>○</strong>
+<td style="vertical-align:top;"><strong>○</strong>
 <p>次の図では、ユーザーは同じピア グループ内の 2 つのページ間を移動します。 ページでは、タブやドッキングされたナビゲーション ウィンドウは使われていません。そのため、このナビゲーションはナビゲーション履歴に追加されます。</p>
 <p><img src="images/nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>ページ間、同じピア グループ、画面上に表示されるナビゲーション要素を使う</strong></p>
+<td style="vertical-align:top;"><strong>ページ間、同じピア グループ、画面上に表示されるナビゲーション要素を使う</strong>
 <p>ユーザーは、同じピア グループ内のページ間を移動します。 両方のページは同じナビゲーション要素に表示されます。 たとえば、両方のページで同じタブ/ピボット要素を使っていたり、両方のページがドッキングされたナビゲーション ウィンドウに表示されるとします。</p></td>
-<td align="left"><strong>×</strong>
+<td style="vertical-align:top;"><strong>×</strong>
 <p>ユーザーが戻るボタンを押すと、現在のピア グループに移動する前に表示していた最後のページに戻ります。</p>
 <p><img src="images/nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>一時的な UI の表示</strong>
+<td style="vertical-align:top;"><strong>一時的な UI の表示</strong>
 <p>アプリは、ダイアログ、スプラッシュ画面、スクリーン キーボードなどのポップアップ ウィンドウや子ウィンドウを表示します。または、アプリが複数選択モードなどの特別なモードに移行します。</p></td>
-<td align="left"><strong>×</strong>
+<td style="vertical-align:top;"><strong>×</strong>
 <p>ユーザーが戻るボタンを押すと、一時的な UI が閉じられ (スクリーン キーボードが非表示になる、ダイアログがキャンセルされるなど)、一時的な UI を生成したページに戻ります。</p>
 <p><img src="images/back-transui.png" alt="Showing a transient UI" /></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>項目の列挙</strong>
+<td style="vertical-align:top;"><strong>項目の列挙</strong>
 <p>アプリが、マスター/詳細リストで選んだ項目の詳細など、画面上の項目のコンテンツを表示します。</p></td>
-<td align="left"><strong>×</strong>
+<td style="vertical-align:top;"><strong>×</strong>
 <p>項目の列挙は、ピア グループ内の移動に似ています。 ユーザーが戻るボタンを押すと、項目の列挙が表示されている現在のページの前のページに移動されます。</p>
 <img src="images/nav/nav-enumerate.png" alt="Iterm enumeration" /></td>
 </tr>
@@ -297,16 +286,16 @@ Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
 </table>
 
 
-### 再開
+### <a name="resuming"></a>再開
 
 ユーザーが別のアプリに切り替えた後で、元のアプリに戻った場合は、ナビゲーション履歴にある最後のページに戻すことをお勧めします。
 
 
-## サンプルの入手
+## <a name="get-the-samples"></a>サンプルの入手
 *   [戻るボタンのサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackButton)<br/>
     戻るボタンのイベントのイベント ハンドラーを設定する方法、およびアプリがウィンドウ表示されたデスクトップ モードのときにタイトル バーの戻るボタンを有効にする方法を示します。
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 * [ナビゲーションの基本](navigation-basics.md)
 
  
@@ -317,6 +306,6 @@ Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO4-->
 
 

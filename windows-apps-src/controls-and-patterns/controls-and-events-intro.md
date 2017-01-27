@@ -6,11 +6,11 @@ ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and patterns
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: c597b2e5a1da23247a2100aeae88beaf1bfdaa64
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 8a9a9009574b46ff3ae5b05569fb871a49e2f1ea
 
 ---
-# コントロールとパターンの概要
+# <a name="intro-to-controls-and-patterns"></a>コントロールとパターンの概要
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -26,7 +26,7 @@ UWP アプリ開発では、*コントロール*は、コンテンツを表示�
 - 幅、高さ、前景色など、コントロールのプロパティを設定します。 
 - 動作を行うためのコードをコントロールに追加します。 
 
-## コントロールの追加
+## <a name="add-a-control"></a>コントロールの追加
 アプリにコントロールを追加するには、いくつかの方法があります。
  
 - Blend for Visual Studio や Microsoft Visual Studio Extensible Application Markup Language (XAML) デザイナーなどのデザイン ツールを使用する。 
@@ -43,7 +43,7 @@ Visual Studio の [ツールボックス] には、アプリで使用できる�
 
 また、コントロールを [ツールボックス] から XAML デザイナーにドラッグすることもできます。
 
-## コントロールの名前の設定 
+## <a name="set-the-name-of-a-control"></a>コントロールの名前の設定 
 
 コントロールをコードで操作する場合は、コントロールの [x:Name](../xaml-platform/x-name-attribute.md) 属性を設定し、コードでは名前でコントロールを参照します。 名前は、Visual Studio の [プロパティ] ウィンドウまたは XAML で設定できます。 以下では、[プロパティ] ウィンドウの上部にある [名前] ボックスを使って、現在選択されているコントロールの名前を設定する方法を示しています。 
 
@@ -60,7 +60,7 @@ XAML エディターで x:Name 属性を追加してコントロールの名前�
 <Button x:Name="Button1" Content="Button"/>
 ```
 
-## コントロールのプロパティの設定 
+## <a name="set-the-control-properties"></a>コントロールのプロパティの設定 
 
 プロパティを使って、コントロールの外観、内容、その他の属性を指定します。 デザイン ツールを使ってコントロールを追加すると、Visual Studio によってサイズ、位置、コンテンツを制御するプロパティが設定されることがあります。 Width、Height、Margin など、いくつかのプロパティは、[デザイン] ビューでコントロールを選んで操作することで変更できます。 次の図は、[デザイン] ビューで使用できるサイズ変更ツールの一部を示しています。 
 
@@ -98,7 +98,7 @@ Foreground プロパティを設定した後の結果の XAML を次に示しま
 Button1.Foreground = new SolidColorBrush(Windows.UI.Colors.Beige);
 ```
 
-## イベント ハンドラーの作成 
+## <a name="create-an-event-handler"></a>イベント ハンドラーの作成 
 
 各コントロールには、ユーザーの操作またはアプリ内での他の変更に対して応答するためのイベントが用意されています。 たとえば、Button コントロールには、ユーザーがボタンをクリックしたときに発生する Click イベントがあります。 イベントを処理するために、イベント ハンドラーと呼ばれるメソッドを作成します。 [プロパティ] ウィンドウでは、XAML またはコードでイベント ハンドラー メソッドとコントロールのイベントを関連付けることができます。 イベントについて詳しくは、「[イベントとルーティング イベントの概要](../xaml-platform/events-and-routed-events-overview.md)」をご覧ください。
 
@@ -136,9 +136,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 Button1.Click += new RoutedEventHandler(Button_Click);
 ```
 
-
-
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 -   [機能別コントロールのインデックス](controls-by-function.md)
 -   [Windows.UI.Xaml.Controls 名前空間](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
@@ -148,6 +146,6 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

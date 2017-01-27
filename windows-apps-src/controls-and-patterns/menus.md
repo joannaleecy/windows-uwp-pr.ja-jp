@@ -5,11 +5,11 @@ title: "メニューとコンテキスト メニュー"
 label: Menus and context menus
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f6ce4bc08e3647cd26dc1537bba5499ddb646a49
+ms.sourcegitcommit: 5f50e490caa5d1d88c2f8315dc47e15b0ae22a05
+ms.openlocfilehash: badb03c97ae0f2350e5d7592f10168bb7d6e7d1a
 
 ---
-# メニューとコンテキスト メニュー
+# <a name="menus-and-context-menus"></a>メニューとコンテキスト メニュー
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -20,24 +20,20 @@ ms.openlocfilehash: f6ce4bc08e3647cd26dc1537bba5499ddb646a49
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn299030">MenuFlyout クラス</a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx">ContextFlyout プロパティ</a></li>
-<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx">FlyoutBase.AttachedFlyout プロパティ</a></li>
+<li>[MenuFlyout クラス](https://msdn.microsoft.com/library/windows/apps/dn299030)</li>
+<li>[ContextFlyout プロパティ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx)</li>
+<li>[FlyoutBase.AttachedFlyout プロパティ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 メニューとコンテキスト メニューは、コマンドを整理してユーザーに要求されるまで非表示にすることによって、スペースを節約します。 特定のコマンドを頻繁に使っていて、利用可能なスペースがある場合は、メニューを使って移動しなくてもよいように、メニュー内ではなく、独自の要素に直接配置することを検討してください。 
 
 メニューとコンテキスト メニューは、コマンドを整理する目的で使います。通知などの任意のコンテンツを表示する場合や、確認を要求する場合は、[ダイアログまたはポップアップ](dialogs.md)を使います。  
 
 
-## メニューとコンテキスト メニュー
+## <a name="menus-vs-context-menus"></a>メニューとコンテキスト メニュー
 
 メニューとコンテキスト メニューは、外観や、何を含めることができるかという点で同一です。 実際、これらは [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030) という同じコントロールを使って作成します。 唯一の違いは、ユーザーのアクセス方法です。 
 
@@ -76,7 +72,7 @@ ms.openlocfilehash: f6ce4bc08e3647cd26dc1537bba5499ddb646a49
 </div>
 </div>
 
-## メニューまたはコンテキスト メニューの作成
+## <a name="create-a-menu-or-a-context-menu"></a>メニューまたはコンテキスト メニューの作成
 
 メニューまたはコンテキスト メニューを作成するには、[MenuFlyout クラス](https://msdn.microsoft.com/library/windows/apps/dn299030) を使います。 メニューのコンテンツは、[MenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx) オブジェクト、[ToggleMenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) オブジェクト、[MenuFlyoutSeparator](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx) オブジェクトを MenuFlyout に追加することで定義します。 これらのオブジェクトの用途を次に説明します。
 * [MenuFlyoutItem](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx)—即座にアクションを実行します。
@@ -153,22 +149,23 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 }
 ````
 
-> **注**&nbsp;&nbsp;簡易非表示コントロール (メニュー、コンテキスト メニュー、その他のポップアップ) は、閉じられるまで一時的な UI にキーボードのフォーカスやゲームパッドのフォーカスを捕捉します。 この動作に視覚的な合図を提供するために、Xbox の簡易非表示コントロールは、スコープ外の UI を暗く表示するオーバーレイを描画します。 この動作は、新しい [LightDismissOverlayMode](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx) プロパティを使って変更できます。 既定では、一時的な UI は Xbox で簡易非表示オーバーレイを描画し、他のデバイス ファミリでは描画しませんが、アプリで強制的にオーバーレイを常に**オン**にするか、常に**オフ**にするかを選択できます。
-> 
+
+> 簡易非表示コントロール (メニュー、コンテキスト メニュー、その他のポップアップ) は、閉じられるまで一時的な UI にキーボードのフォーカスやゲームパッドのフォーカスを捕捉します。 この動作に視覚的な合図を提供するために、Xbox の簡易非表示コントロールは、スコープ外の UI を暗く表示するオーバーレイを描画します。 この動作は、新しい [LightDismissOverlayMode](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx) プロパティを使って変更できます。 既定では、一時的な UI は Xbox で簡易非表示オーバーレイを描画し、他のデバイス ファミリでは描画しませんが、アプリで強制的にオーバーレイを常に**オン**にするか、常に**オフ**にするかを選択できます。
+
 > ```xaml
 > <MenuFlyout LightDismissOverlayMode="Off">
-```
+> ```
 
-## Get the samples
-*   [XAML UI basics](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
-    See all of the XAML controls in an interactive format.
+## <a name="get-the-sample-code"></a>サンプル コードを入手する
+*   [XAML UI の基本のサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
+    インタラクティブな形で XAML コントロールのすべてを参照できます。
 
-## Related articles
+## <a name="related-articles"></a>関連記事
 
-- [**MenuFlyout class**](https://msdn.microsoft.com/library/windows/apps/dn299030)
+- [**MenuFlyout クラス**](https://msdn.microsoft.com/library/windows/apps/dn299030)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

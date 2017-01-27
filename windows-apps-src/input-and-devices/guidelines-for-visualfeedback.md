@@ -5,30 +5,40 @@ title: "視覚的なフィードバック"
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
 template: detail.hbs
+keywords: "視覚的なフィードバック, フォーカス フィードバック, タッチ フィードバック, 接触の視覚エフェクト, 入力, 操作"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 388bdc42610d05a4decb5c8aecadcaf2f78b26f8
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: ab7a6cfabb98eaf841849f5045e7ebce1ec86d65
 
 ---
 
-# 視覚的なフィードバックのガイドライン
+# <a name="guidelines-for-visual-feedback"></a>視覚的なフィードバックのガイドライン
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 視覚的なフィードバックは、対話式操作が検出、解釈、処理されていることをユーザーに示すために使います。 視覚的なフィードバックは、対話式操作を促進することによってユーザーを支援します。 対話式操作の成功を示すことによって、ユーザーのコントロール感を向上させます。 また、システム状態の中継やエラーの削減も可能になります。
 
-**重要な API**
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)</li>
+<li>[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</li>
+<li>[**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)</li>
+</ul>
+</div>
 
--   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
--   [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
-
-## 推奨事項
+## <a name="recommendations"></a>推奨事項
 
 -   最適なコントロールとアプリケーションのパフォーマンスを確保するために、できるだけ、元のコントロール テンプレートに近い状態を維持してください。
 -   タッチの視覚エフェクトがアプリの使用を妨げる可能性がある場合は、使わないでください。 詳しくは、「[**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969)」をご覧ください。
 -   どうしても必要な場合以外は、フィードバックを表示しないでください。 その場所でしか意味がない場合を除き、視覚的なフィードバックを表示せずに、UI の簡潔さを維持してください。
 -   Windows の組み込みジェスチャの視覚的なフィードバックの動作は大幅にカスタマイズしないでください。この動作をカスタマイズすると、ユーザー エクスペリエンスに一貫性がなくなり、混乱する可能性があります。
 
-## その他の使い方のガイダンス
+## <a name="additional-usage-guidance"></a>その他の使い方のガイダンス
 
 正確性が求められるタッチ操作では、接触の視覚エフェクトが特に重要です。 たとえば、アプリでタップの位置を正確に示し、対象から外れていたかどうか、どの程度外れていたか、合わせるにはどうすればよいかをユーザーが把握できるようする必要があります。
 
@@ -50,11 +60,11 @@ Windows には、次のような接触の視覚エフェクトが組み込まれ
 | --- | --- | --- | --- |
 | タッチの視覚エフェクト | マウス/タッチパッドの視覚エフェクト | ペンの視覚エフェクト | キーボードの視覚エフェクト |
 
-## 視認性の高いフォーカスの視覚効果
+## <a name="high-visibility-focus-visuals"></a>視認性の高いフォーカスの視覚効果
 
 すべての Windows アプリでは、定義済みのさまざまなフォーカスの視覚効果が、アプリケーション内にある対話可能なコントロールの周囲に示されます。 新しいフォーカスの視覚効果は、すべてカスタマイズ可能であり、必要に応じて無効にすることができます。
 
-## 色のブランド化とカスタマイズ
+## <a name="color-branding--customizing"></a>色のブランド化とカスタマイズ
 
 **境界線のプロパティ**
 
@@ -100,7 +110,7 @@ Windows には、次のような接触の視覚エフェクトが組み込まれ
 <Slider Width="200" FocusVisualPrimaryBrush="DarkRed" FocusVisualSecondaryBrush="Pink"/>
 ```
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 **デザイナー向け**
 * [パンのガイドライン](guidelines-for-panning.md)
@@ -129,6 +139,6 @@ Windows には、次のような接触の視覚エフェクトが組み込まれ
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

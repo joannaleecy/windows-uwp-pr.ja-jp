@@ -4,8 +4,8 @@ Description: "この記事では、Desktop to UWP Bridge を使用してアプ�
 Search.Product: eADQiWindows 10XVcnh
 title: "Desktop to UWP Bridge 用にアプリを準備する"
 translationtype: Human Translation
-ms.sourcegitcommit: f7a8b8d586983f42fe108cd8935ef084eb108e35
-ms.openlocfilehash: 81a2485d5be22dd392c21aaff281c1c9263883a9
+ms.sourcegitcommit: d22d51d52c129534f8766ab76e043a12d140e8b7
+ms.openlocfilehash: a93d5ad1c1f429182c8df7d29df85dee70064e2f
 
 ---
 
@@ -67,6 +67,12 @@ ms.openlocfilehash: 81a2485d5be22dd392c21aaff281c1c9263883a9
 `<PackageDependency Name="Microsoft.VCLibs.110.00.UWPDesktop" MinVersion="11.0.24217.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />`  
 Windows ストアからインストールするとき、アプリをインストールする前に VCLibs 11 フレームワークの適切なバージョン (x86 または x64) がインストールされます。  
 アプリがサイドローディングによってインストールされる場合は、依存関係がインストールされません。 コンピューター上に依存関係を手動でインストールするには、[VC 11.0 Desktop Bridge 用フレームワーク パッケージ](https://www.microsoft.com/download/details.aspx?id=53340&WT.mc_id=DX_MVP4025064)をダウンロードしてインストールする必要があります。 これらのシナリオについて詳しくは、「[Using Visual C++ Runtime in Centennial project (Centennial プロジェクトで Visual C++ ラインタイムを使用する)](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project/)」をご覧ください。
+
++ __アプリがジャンプ リストの項目を作成して、[ICustomDestinationList::SetAppID](https://msdn.microsoft.com/library/windows/desktop/dd378403(v=vs.85).aspx) または [SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422(v=vs.85).aspx)__ を呼び出します。 プログラムによって AppID をコードに設定しないでください。 そうすると、ジャンプ リストの項目が表示されません。 アプリにカスタム ID が必要な場合は、マニフェスト ファイルを使用して指定してください。 手順については、「[Desktop Bridge を使って手動でアプリを UWP アプリに変換する](desktop-to-uwp-manual-conversion.md)」を参照してください。 アプリケーションの AppID は *YOUR_PRAID_HERE* セクションに指定されます。 
+
++ __アプリが、パッケージ内の実行可能ファイルを参照するジャンプ リスト シェル リンクを追加します__。 ジャンプ リストから直接、パッケージ内の実行可能ファイルを起動することはできません (アプリ自体の .exe の絶対パスを使用する場合は除く)。 アプリの実行エイリアスを登録し (これで、まるで PATH に指定されているかのように、キーワードを使って変換済みのアプリを起動できます)、リンク先のパスにこのエイリアスを設定します。 appExecutionAlias 拡張機能の使い方について詳しくは、「[Desktop Bridge アプリの拡張機能](desktop-to-uwp-extensions.md)」をご覧ください。 元の .exe に一致するジャンプ リストのリンク アセットが必要な場合は、他のカスタム項目と同様に、[**SetIconLocation**](https://msdn.microsoft.com/library/windows/desktop/bb761047(v=vs.85).aspx) を使用してアイコンなどのアセットを設定し、PKEY_Title を使用して名前を表示します。 
+
++ __アプリが、絶体パスを使用して、アプリのパッケージ内のアセットを参照するジャンプ リスト項目を追加します__。 アプリのインストール パスが、パッケージが更新されるときに変更され、アセット (アイコン、ドキュメント、実行可能ファイルなど) の場所が変わる場合があります。 ジャンプ リストの項目が、そのようなアセットを絶対パスで参照している場合、アプリのジャンプ リストを定期的に (アプリの起動時など) 更新して、パスが正しく解決されるようにします。 または、UWP [**Windows.UI.StartScreen.JumpList**](https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.jumplist.aspx) API を使用します。この API では、package-relative ms-resource URI スキーマ (これは言語、DPI、ハイ コントラストにも対応します) を使用して、文字列アセットと画像アセットを参照できます。 
 
 
 <!--HONumber=Dec16_HO1-->

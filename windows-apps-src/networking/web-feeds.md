@@ -4,12 +4,12 @@ description: "Windows.Web.Syndication 名前空間の機能を利用し、RSS �
 title: "RSS/Atom フィード"
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: b20eb8a241d3cb7800904c26331ac39da93f4d44
+ms.sourcegitcommit: a30b58737befaae10a1dbb30416f338d8eb1cbb1
+ms.openlocfilehash: 623c11eba097a072b456738b84750eb4b2d888bb
 
 ---
 
-# RSS/Atom フィード
+# <a name="rssatom-feeds"></a>RSS/Atom フィード
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -21,11 +21,11 @@ ms.openlocfilehash: b20eb8a241d3cb7800904c26331ac39da93f4d44
 
 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 名前空間の機能により、RSS や Atom に従って生成される概要フィードを使って、最新かつ人気の高い Web コンテンツを取得または作成します。
 
-## フィードとは
+## <a name="what-is-a-feed"></a>フィードとは
 
 Web フィードは、テキストやリンク、画像といった個々のエントリをいくつでも含むことのできるドキュメントです。 フィードに対する更新は、新規エントリの形式で行います。この新しいエントリを使って、最新のコンテンツが Web 上に配信されます。 コンテンツの利用者は、フィード リーダー アプリを使って、多数のコンテンツ作成者からのフィードを収集、監視でき、最新のコンテンツにすばやく手間をかけずにアクセスすることができます。
 
-## サポートされるフィード形式
+## <a name="which-feed-format-standards-are-supported"></a>サポートされるフィード形式
 
 ユニバーサル Windows プラットフォーム (UWP) では、RSS 形式 (0.91 ～ 2.0) と Atom 形式 (0.3 ～ 1.0) のフィードを取得することができます。 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 名前空間のクラスは、RSS と Atom のどちらの要素も表せるフィードとフィード項目を定義することができます。
 
@@ -33,7 +33,7 @@ Web フィードは、テキストやリンク、画像といった個々のエ�
 
 概要コンテンツの発行については、UWP による Atom Publication Protocol の実装 ([**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609)) は、Atom および Atom Publication に準拠したフィード コンテンツ操作のみをサポートする点に注意してください。
 
-## 概要コンテンツとネットワーク分離の併用
+## <a name="using-syndicated-content-with-network-isolation"></a>概要コンテンツとネットワーク分離の併用
 
 開発者は UWP のネットワーク分離機能を使って、UWP アプリによるネットワーク アクセスを制御および制限できます。 すべてのアプリにネットワークへのアクセスが必要なわけではありません。 ただし、アクセスが必要な場合は、UWP にはさまざまなレベルのネットワーク アクセスが用意されており、それは適切な機能を選ぶことで有効にできます。
 
@@ -45,7 +45,7 @@ Web フィードは、テキストやリンク、画像といった個々のエ�
 
 ネットワーク分離とネットワーク機能について詳しくは、「[ネットワークの基本](networking-basics.md)」トピックの「機能」セクションをご覧ください。
 
-## Web フィードにアクセスする方法
+## <a name="how-to-access-a-web-feed"></a>Web フィードにアクセスする方法
 
 このセクションでは、C# または Javascript で記述された UWP アプリで [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 名前空間のクラスを使って、Web フィードを取得および表示する方法について説明します。
 
@@ -63,13 +63,10 @@ UWP アプリをネットワークに対応させるには、プロジェクト�
 ```csharp
 Windows.Web.Syndication.SyndicationClient client = new Windows.Web.Syndication.SyndicationClient();
 Windows.Web.Syndication.SyndicationFeed feed;
-
 // The URI is validated by catching exceptions thrown by the Uri constructor.
 Uri uri = null;
-
 // Use your own uriString for the feed you are connecting to.
 string uriString = "";
-
 try
 {
     uri = new Uri(uriString);
@@ -82,9 +79,7 @@ catch (Exception ex)
 ```javascript
 var currentFeed = null;
 var currentItemIndex = 0;
-        
 var client = new Windows.Web.Syndication.SyndicationClient();
-
 // The URI is validated by catching exceptions thrown by the Uri constructor.
 var uri = null;
 try {
@@ -111,12 +106,9 @@ try
     // others will reject the request or return a different response if this header is missing.
     // Use the setRequestHeader() method to add custom headers.
     client.SetRequestHeader("User-Agent", "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)");
-
     feed = await client.RetrieveFeedAsync(uri);
-
     // Retrieve the title of the feed and store it in a string.
     string title = feed.Title.Text;
-
     // Iterate through each feed item.
     foreach (Windows.Web.Syndication.SyndicationItem item in feed.Items)
     {
@@ -131,7 +123,6 @@ catch (Exception ex)
 ```javascript
 function onError(err) {
     WinJS.log && WinJS.log(err, "sample", "error");
-
     // Match error number with a ErrorStatus value.
     // Use Windows.Web.WebErrorStatus.getStatus() to retrieve HTTP error status codes.
     var errorStatus = Windows.Web.Syndication.SyndicationError.getStatus(err.number);
@@ -139,31 +130,24 @@ function onError(err) {
         displayLog("An invalid XML exception was thrown. Please make sure to use a URI that points to a RSS or Atom feed.");
     }
 }
-
 // Retrieve and display feed at given feed address.
 function retreiveFeed(uri) {
-
     // Although most HTTP servers do not require User-Agent header, 
     // others will reject the request or return a different response if this header is missing.
     // Use the setRequestHeader() method to add custom headers.
     client.setRequestHeader("User-Agent", "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)");
-
     client.retrieveFeedAsync(uri).done(function (feed) {
         currentFeed = feed;
-
         WinJS.log && WinJS.log("Feed download complete.", "sample", "status");
-
         var title = "(no title)";
         if (currentFeed.title) {
             title = currentFeed.title.text;
         }
         document.getElementById("CurrentFeedTitle").innerText = title;
-
         currentItemIndex = 0;
         if (currentFeed.items.size > 0) {
             displayCurrentItem();
         }
-
         // List the items.
         displayLog("Items: " + currentFeed.items.size);
      }, onError);
@@ -180,32 +164,26 @@ private void displayCurrentItem(Windows.Web.Syndication.SyndicationItem item)
     string itemLink = item.Links == null ? "No link" : item.Links.FirstOrDefault().ToString();
     string itemContent = item.Content == null ? "No content" : item.Content.Text;
     //displayCurrentItem is continued below.
-
 ```
 ```javascript
 function displayCurrentItem() {
     var item = currentFeed.items[currentItemIndex];
-
     // Display item number.
     document.getElementById("Index").innerText = (currentItemIndex + 1) + " of " + currentFeed.items.size;
-
     // Display title.
     var title = "(no title)";
     if (item.title) {
         title = item.title.text;
     }
     document.getElementById("ItemTitle").innerText = title;
-
     // Display the main link.
     var link = "";
     if (item.links.size > 0) {
         link = item.links[0].uri.absoluteUri;
     }
-
     var link = document.getElementById("Link");
     link.innerText = link;
     link.href = link;
-
     // Display the body as HTML.
     var content = "(no content)";
     if (item.content) {
@@ -224,16 +202,13 @@ function displayCurrentItem() {
 ```csharp
     //displayCurrentItem continued.
     string extensions = "";
-
     foreach (Windows.Web.Syndication.SyndicationNode node in item.ElementExtensions)
     {
         string nodeName = node.NodeName;
         string nodeNamespace = node.NodeNamespace;
         string nodeValue = node.NodeValue;
-
         extensions += nodeName + "\n" + nodeNamespace + "\n" + nodeValue + "\n";
     }
-
     this.listView.Items.Add(itemTitle + "\n" + itemLink + "\n" + itemContent + "\n" + extensions);
 }
 ```
@@ -248,19 +223,16 @@ function displayCurrentItem() {
         };
         bindableNodes.push(bindableNode);
     }
-
     var dataList = new WinJS.Binding.List(bindableNodes);
     var listView = document.getElementById("extensionsListView").winControl;
     WinJS.UI.setOptions(listView, {
         itemDataSource: dataList.dataSource
-
     });
 }
 ```
 
 
 
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

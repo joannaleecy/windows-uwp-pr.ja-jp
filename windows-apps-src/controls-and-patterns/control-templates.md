@@ -9,31 +9,25 @@ ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
 label: Control templates
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 2aa257fa422ed954206dffb5ac68461e4e3a544f
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 4c6ee696dff8d8e0ddc3a9b62d0309e999762dc6
 
 ---
-# コントロール テンプレート
+# <a name="control-templates"></a>コントロール テンプレート
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
+XAML フレームワークで、コントロール テンプレートを作ることによって、コントロールの視覚的構造や視覚的動作をカスタマイズすることができます。 コントロールには、[**Background**](https://msdn.microsoft.com/library/windows/apps/br209395)、[**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414)、[**FontFamily**](https://msdn.microsoft.com/library/windows/apps/br209404) などの多くのプロパティがあり、このプロパティを設定することで、コントロールの外観に関するさまざまな要素を指定できます。 ただし、これらのプロパティの設定によって変更できる内容は限られています。 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) クラスを使ってテンプレートを作成することにより、さらに細かいカスタマイズを指定できます。 ここでは、[**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) コントロールの外観をカスタマイズする **ControlTemplate** の作成方法について説明します。
 
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209391"><strong>ControlTemplate クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx"><strong>Control.Template プロパティ</strong></a></li>
+<li>[**ControlTemplate クラス**](https://msdn.microsoft.com/library/windows/apps/br209391)</li>
+<li>[**Control.Template プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-XAML フレームワークで、コントロール テンプレートを作ることによって、コントロールの視覚的構造や視覚的動作をカスタマイズすることができます。 コントロールには、[**Background**](https://msdn.microsoft.com/library/windows/apps/br209395)、[**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414)、[**FontFamily**](https://msdn.microsoft.com/library/windows/apps/br209404) などの多くのプロパティがあり、このプロパティを設定することで、コントロールの外観に関するさまざまな要素を指定できます。 ただし、これらのプロパティの設定によって変更できる内容は限られています。 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) クラスを使ってテンプレートを作成することにより、さらに細かいカスタマイズを指定できます。 ここでは、[**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) コントロールの外観をカスタマイズする **ControlTemplate** の作成方法について説明します。
-
-## カスタム コントロール テンプレートの例
+## <a name="custom-control-template-example"></a>カスタム コントロール テンプレートの例
 
 
 既定では、[**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) コントロールの内容 (**CheckBox** の横に表示される文字列またはオブジェクト) は、選択ボックスの右側に配置され、チェック マークはユーザーがその **CheckBox** を選択したことを示します。 これらの特性は、**CheckBox** の視覚的構造や視覚的動作を表します。
@@ -54,7 +48,7 @@ XAML フレームワークで、コントロール テンプレートを作る�
 
 ![カスタム CheckBox テンプレート](images/templates-checkbox-states.png)
 
-## コントロールの視覚的構造の指定
+## <a name="specify-the-visual-structure-of-a-control"></a>コントロールの視覚的構造の指定
 
 
 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) を作るときには、いくつかの [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) オブジェクトを組み合わせて 1 つのコントロールを作ります。 **ControlTemplate** には、ルート要素として **FrameworkElement** が 1 つだけ含まれている必要があります。 通常、ルート要素には、他の **FrameworkElement** オブジェクトが含まれています。 オブジェクトの組み合わせによって、コントロールの視覚的構造が作られます
@@ -95,7 +89,7 @@ XAML フレームワークで、コントロール テンプレートを作る�
 </ControlTemplate>
 ```
 
-## コントロールの視覚的動作の指定
+## <a name="specify-the-visual-behavior-of-a-control"></a>コントロールの視覚的動作の指定
 
 
 視覚的動作は、コントロールが特定の状態にあるときの外観を指定します。 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) コントロールには、`Checked`、`Unchecked`、`Indeterminate` という 3 つのチェック状態があります。 [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/br209798) プロパティの値によって **CheckBox** の状態が決まり、その状態によって、ボックスに何が表示されるかが決まります。
@@ -188,11 +182,11 @@ XAML フレームワークで、コントロール テンプレートを作る�
  
 コントロールの表示状態の作成方法、特に、[**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) クラスとアニメーション タイプの使い方について詳しくは、「[表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808)」をご覧ください。
 
-## ツールを使ってテーマを簡単に操作
+## <a name="use-tools-to-work-with-themes-easily"></a>ツールを使ってテーマを簡単に操作
 
 コントロールにテーマをすばやく適用する方法の 1 つは、Microsoft Visual Studio の **[ドキュメント アウトライン]** でコントロールを右クリックし、**[テーマの編集]** または **[スタイルの編集]** (右クリックしたコントロールによって異なる) をクリックすることです。 その後、**[リソースの適用]** をクリックして既にあるテーマを適用するか、または **[空アイテムの作成]** をクリックして新しいテーマを定義できます。
 
-## コントロールとアクセシビリティ
+## <a name="controls-and-accessibility"></a>コントロールとアクセシビリティ
 
 コントロールのテンプレートを新しく作成するときは、コントロールの動作と外見を変更する以外にも、アクセシビリティ フレームワークに対する表現方法も変更することができます。 ユニバーサル Windows プラットフォーム (UWP) は、アクセシビリティのための Microsoft UI オートメーション フレームワークをサポートしています。 既定のコントロールとそのテンプレートはいずれも、UI オートメーションの共通のコントロール型と、その目的や機能に合ったパターンをサポートしています。 支援技術などの UI オートメーション クライアントが、これらのコントロール型とパターンを解釈することにより、アクセシビリティ対応アプリの UI という、より大きな枠組みを構成する要素としてコントロールを利用することができます。
 
@@ -200,28 +194,25 @@ XAML フレームワークで、コントロール テンプレートを作る�
 
 まったく新しいカスタム コントロールを作成するときは、同時に、新しいオートメーション ピアの作成が必要になることもあります。 詳しくは、「[カスタム オートメーション ピア](../accessibility/custom-automation-peers.md)」をご覧ください。
 
-## コントロールの既定のテンプレートの詳細
+## <a name="learn-more-about-a-controls-default-template"></a>コントロールの既定のテンプレートの詳細
 
 XAML コントロールのスタイルとテンプレートについて説明するトピックでは、既に説明した **テーマの編集**や**スタイルの編集**の手法を使った場合に見られる、同じ XAML の開始部分を抜粋しています。 各トピックでは、表示状態の名前、使用しているテーマ リソースを示しているほか、テンプレートを含むスタイルの完全な XAML を示しています。 これらのトピックが便利なガイダンスになるのは、テンプレートを変更し始めてから元のテンプレートがどのように見えていたかを確認したり、必要な名前付きの表示状態がすべて新しいテンプレートにあることを確認したりする場合です。
 
-## コントロール テンプレートのテーマ リソース
+## <a name="theme-resources-in-control-templates"></a>コントロール テンプレートのテーマ リソース
 
 XAML の例を見ると、一部の属性について [{ThemeResource} マークアップ拡張機能](../xaml-platform/themeresource-markup-extension.md) を使うリソース参照があることがわかるでしょう。 この手法では、現在アクティブであるテーマに応じて値が変わるリソースを 1 つのコントロール テンプレートで使用できます。 この点はブラシと色に特に重要です。システム全体に暗い、明るい、またはハイコントラストのいずれのテーマを適用するかをユーザーが選択できるようにすることが、テーマの主な目的であるためです。 XAML リソース システムを使うアプリはそのテーマに適切な一連のリソースを使用できます。そのため、アプリの UI のテーマの選択にはユーザーのシステム全体のテーマの選択が反映されます。
 
-**注:**  
-この記事は、UWP アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください。
+ ## <a name="get-the-sample-code"></a>サンプル コードを入手する
+* [XAML UI の基本のサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
+* [カスタム テキスト編集コントロールのサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomEditControl)
 
  
 
- 
-
- 
 
 
 
 
 
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
 description: "特定の日付範囲などのオプション フィルターを使って、アプリケーションに関する集計入手データを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。"
 title: "アプリの入手数の取得"
 translationtype: Human Translation
-ms.sourcegitcommit: 7d05c8953f1f50be0b388a044fe996f345d45006
-ms.openlocfilehash: b82136348936d436a374cfef42d5e349ed0d0f36
+ms.sourcegitcommit: ce6535508136f8f7bfc8e0da599eea10a936908d
+ms.openlocfilehash: 2e35da3b3033ecbad8c48184d831ca9465142322
 
 ---
 
@@ -163,6 +163,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -6,32 +6,31 @@ ms.assetid: 06E1D4BB-59EA-4D71-99AC-7CB93D2A58A7
 label: Prepare your app for localization
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: d3f389830fd4f21eae93aae661db86f9df479383
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 4eb57a836cace6cc41ccd15b74ecc9f62f8b0f60
 
 ---
 
-# ローカライズのためにアプリの準備をする
+# <a name="prepare-your-app-for-localization"></a>ローカライズのためにアプリの準備をする
 
 
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 他の市場、言語、または地域に向けたローカライズのためにアプリを準備します。 作業を始める前に、[推奨事項と非推奨事項](guidelines-and-checklist-for-globalizing-your-app.md)に必ず目を通してください。
 
-## <span id="use_resource_files_and_qualifiers."></span><span id="USE_RESOURCE_FILES_AND_QUALIFIERS."></span>リソース ファイルと修飾子を使う
+## <a name="use-resource-files-and-qualifiers"></a>リソース ファイルと修飾子を使う
 
 
 アプリの UI 文字列は、コードに格納するのではなく、リソース ファイルに指定してください。 詳しくは、「[UI 文字列をリソースに格納する](put-ui-strings-into-resources.md)」をご覧ください。
 
 画像または他のファイル リソースは、それらのファイルまたはフォルダーで、適切な言語タグを使って指定してください。 画像、オーディオ、ビデオのローカライズには大量のシステム リソースが使われるため、可能な限り依存性がないメディア アセットを使うことが望まれます。 詳しくは、「[修飾子を使ってリソースに名前を付ける方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)」をご覧ください。
 
-## <span id="add_contextual_comments."></span><span id="ADD_CONTEXTUAL_COMMENTS."></span>コンテキスト依存のコメントを追加する
+## <a name="add-contextual-comments"></a>コンテキスト依存のコメントを追加する
 
 
 アプリのリソース ファイルに、ローカライズ コメントを追加します。 このコメントはローカライズ担当者に表示されるため、ローカライズ担当者が正確にリソースを翻訳するのに役立つコンテキスト情報を提供する必要があります。 また、翻訳によってソフトウェアが壊れることを防ぐため、コメントには十分な制約情報も含める必要があります。 必要に応じ、Makepri.exe ツールを使ってコメントをログに記録することもできます。
 
-**XAML:** Resw ファイル (XAML を使ったアプリ用に Visual Studio で作成したリソース) にはコメント要素があります。 たとえば、次のようにします。
+**XAML:** Resw ファイル (XAML を使ったアプリ用に Visual Studio で作成したリソース) にはコメント要素があります。 たとえば、次のように入力します。
 
 ```XML
 <data name="String1">
@@ -40,16 +39,7 @@ ms.openlocfilehash: d3f389830fd4f21eae93aae661db86f9df479383
 </data>
 ```
 
-**HTML:** Resjson ファイル (HTML を使ったアプリ用に Visual Studio で作成したリソース) では、下線から始まるフィールドにコメントなどのメタデータを指定できます。次に例を示します。
-
-```json
-{
-    "String1"  : "Hello World",
-    "_String1.comment" : "A greeting (This is a comment to the localizer)"
-}
-```
-
-## <span id="localize_sentences_instead_of_words."></span><span id="LOCALIZE_SENTENCES_INSTEAD_OF_WORDS."></span>語句ではなく文をローカライズする
+## <a name="localize-sentences-instead-of-words"></a>語句ではなく文をローカライズする
 
 
 次の文字列、"{0} を同期できませんでした" について考えてみましょう。
@@ -72,14 +62,14 @@ ms.openlocfilehash: d3f389830fd4f21eae93aae661db86f9df479383
 -   ローカライズ担当者は、文字列が何に置き換えられるかをたずねる必要がない。
 -   アプリが完了した後でこのような問題が浮かび上がったときに、犠牲の大きいコード修正を行う必要がない。
 
-## <span id="ensure_the_correct_parameter_order."></span><span id="ENSURE_THE_CORRECT_PARAMETER_ORDER."></span>パラメーターの順番を正しくする
+## <a name="ensure-the-correct-parameter-order"></a>パラメーターの順番を正しくする
 
 
 どの言語も同じ順番でパラメーターを使うと想定しないでください。 例として、"毎年 %s %s" という文字列を考えてみましょう。最初の %s は月の名称に置き換えられ、2 つ目の %s は月の日付に置き換えられます。 この例は日本語では機能しますが、日付と月が逆順に表示されるドイツ語にこのアプリがローカライズされると、エラーになります。
 
 この問題を解決するには、言語に応じて順序を入れ替えることができるように、文字列を "毎年 %1 %2" に変更します。
 
-## <span id="don_t_over_localize."></span><span id="DON_T_OVER_LOCALIZE."></span>過度なローカライズを避ける
+## <a name="dont-over-localize"></a>過度なローカライズを避ける
 
 
 特定の文字列をローカライズし、タグは除外します。 次に例を示します。
@@ -93,7 +83,7 @@ ms.openlocfilehash: d3f389830fd4f21eae93aae661db86f9df479383
 
 前の &lt;link&gt; タグをリソースに含めると、そのタグもローカライズされます。 これにより、タグが無効になります。 文字列自体のみをローカライズしてください。 一般に、タグは「ローカライズ可能なコンテンツから分離しておく必要があるコード」と考える必要があります。 ただし、コンテキストを保持して順序を正しい状態にするために、一部の長い文字列にはマークアップを含める必要があります。
 
-## <span id="do_not_use_the_same_strings_in_dissimilar_contexts."></span><span id="DO_NOT_USE_THE_SAME_STRINGS_IN_DISSIMILAR_CONTEXTS."></span>異なるコンテキストに同じ文字列を使うことを避ける
+## <a name="do-not-use-the-same-strings-in-dissimilar-contexts"></a>異なるコンテキストに同じ文字列を使うことを避ける
 
 
 文字列の再使用は最善の方法のように思われるかもしれませんが、同じ語句またはフレーズに異なる意味やコンテキストが含まれる場合にはローカライズ問題を引き起こすことがあります。
@@ -104,7 +94,7 @@ ms.openlocfilehash: d3f389830fd4f21eae93aae661db86f9df479383
 
 また、"text" や "fax" などの文字列は英語では動詞としても名詞としても使うことができますが、翻訳プロセスを混乱させる可能性があります。 この場合、別の方法として動詞形と名詞形の両方に個別の文字列を作ります。 コンテキストが同じかどうか確信できない場合は、(間違えるとしても) 重大な間違いは避け、明確な文字列を使ってください。
 
-## <span id="identify_resources_with_unique_attributes."></span><span id="IDENTIFY_RESOURCES_WITH_UNIQUE_ATTRIBUTES."></span>一意の属性を使ってリソースを特定する
+## <a name="identify-resources-with-unique-attributes"></a>一意の属性を使ってリソースを特定する
 
 
 リソース識別子は大文字と小文字が区別されません。リソース識別子は、リソース ファイルごとに一意でなければなりません。 リソースにアクセスする場合は、リソースの実際の値ではなく、リソースの識別子を使ってください。 リソース識別子は変化しませんが、リソースの実際の値は言語に応じて変化します。
@@ -113,7 +103,7 @@ ms.openlocfilehash: d3f389830fd4f21eae93aae661db86f9df479383
 
 文字列リソースが翻訳に回された後は、リソース識別子を変更しないでください。 ローカライズ チームは、リソース識別子を使ってリソース内の追加、削除、更新を追跡します。 リソース識別子の変更 ("リソース識別子のシフト" とも呼ばれる) を行うと、文字列が削除されて他の文字列が追加されたような表示状態になります。このため、リソース識別子を変更した場合は、文字列を翻訳し直す必要があります。
 
-## <span id="choose_an_appropriate_translation_approach."></span><span id="CHOOSE_AN_APPROPRIATE_TRANSLATION_APPROACH."></span>適切な翻訳方法を選択する
+## <a name="choose-an-appropriate-translation-approach"></a>適切な翻訳方法を選択する
 
 
 文字列がリソース ファイルとして分けられた後、それらを翻訳できます。 文字列を翻訳するのに適したタイミングは、プロジェクト内の文字列が最終的に確定した後です。この最終処理は、通常、プロジェクトの終わりごろです。 翻訳プロセスには、さまざまな方法で取り組むことができます。 どの方法を選ぶかは、翻訳する文字列の量、翻訳する言語の数、翻訳の方法 (社内で行うか外部ベンダーを雇うか) などに応じて決まります。
@@ -121,31 +111,23 @@ ms.openlocfilehash: d3f389830fd4f21eae93aae661db86f9df479383
 次に選択肢を示します。
 
 -   **リソース ファイルは、プロジェクト内で直接開いて翻訳できます。** この方法は、文字列の量が少ないプロジェクトや、2 ～ 3 言語に翻訳する必要があるプロジェクトに合っています。 たとえば、開発者が複数の言語に通じており、翻訳プロセスを自分で処理することをいとわない場合などに適します。 この方法は迅速さがメリットであり、ツールを必要とせず、誤訳のリスクが最小限に抑えられますが、拡張性はありません。 たとえば、複数の言語にわたるリソースの同期があっけなく失われ、ユーザー操作に問題が生じ、メンテナンスが困難になる可能性があります。
--   **文字列リソース ファイルは XML または ResJSON テキスト形式で作られるため、どのテキスト エディターを使った翻訳にも回すことができます。 翻訳されたファイルは、プロジェクトに書き戻します。** この方法には翻訳者が誤って XML タグを編集するリスクがありますが、Microsoft Visual Studio プロジェクトの外で翻訳作業を進めることができます。 この方法は、少数の言語に翻訳する必要があるプロジェクトに適します。 XLIFF 形式はローカライズ向けとして特別に設計された XML 形式であり、いくつかのローカライズ ベンダーやローカライゼーション ツールでうまくサポートされています。 他のリソース ファイル (.resw や .resjson など) から XLIFF ファイルを生成する場合は、[多言語アプリ ツールキット](https://msdn.microsoft.com/library/windows/apps/xaml/jj572370.aspx)を使うことができます。
+-   **文字列リソース ファイルは XML または ResJSON テキスト形式で作られるため、どのテキスト エディターを使った翻訳にも回すことができます。 翻訳されたファイルは、プロジェクトに書き戻します。** この方法には翻訳者が誤って XML タグを編集するリスクがありますが、Microsoft Visual Studio プロジェクトの外で翻訳作業を進めることができます。 この方法は、少数の言語に翻訳する必要があるプロジェクトに適します。 XLIFF 形式はローカライズ向けとして特別に設計された XML 形式であり、いくつかのローカライズ ベンダーやローカライゼーション ツールでうまくサポートされています。 他のリソース ファイル (.resw や .resjson など) から XLIFF ファイルを生成する場合は、[多言語アプリ ツールキット](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx)を使うことができます。
 
 ローカライズ担当者へのハンドオフは、他のファイル (画像やオーディオ ファイルなど) でも必要となることがあります。 文化性の強いファイルは、ローカライズが難しい場合があります。このようなファイルの作成はお勧めできません。
 
 次の提案も検討してください。
 
--   **ローカライズ ツールを使う。** リソース ファイルを解析し、翻訳可能な文字列だけを翻訳者が編集できるようにするローカライズ ツールは多数あります。 この方法では翻訳者が誤って XML タグを編集するリスクは減ります。 ただし、ローカライズ プロセスに新しいツールとプロセスの導入が必要になるという欠点があります。 ローカライズ ツールは、扱う文字列は大量であるが言語は少ないというプロジェクトに適します。 詳しくは、「[多言語アプリ ツールキットの使用方法](https://msdn.microsoft.com/library/windows/apps/xaml/jj572370.aspx)」をご覧ください。
+-   **ローカライズ ツールを使う。** リソース ファイルを解析し、翻訳可能な文字列だけを翻訳者が編集できるようにするローカライズ ツールは多数あります。 この方法では翻訳者が誤って XML タグを編集するリスクは減ります。 ただし、ローカライズ プロセスに新しいツールとプロセスの導入が必要になるという欠点があります。 ローカライズ ツールは、扱う文字列は大量であるが言語は少ないというプロジェクトに適します。 詳しくは、「[多言語アプリ ツールキットの使用方法](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx)」をご覧ください。
 -   **ローカライズ ベンダーを利用する。** プロジェクトに大量の文字列が含まれ、多数の言語に翻訳する必要がある場合は、ローカライズ ベンダーの利用を検討します。 ローカライズ ベンダーは、リソース ファイルの翻訳だけでなく、ツールとプロセスについてのアドバイスを得るためにも利用できます。 これは非常によい解決策ですが、最もコストがかかる選択肢でもあり、翻訳済みコンテンツの作業期間が延びる可能性があります。
 -   **ローカライズ担当者に必要情報を与える。** 文字列のローカライズ担当者に、名詞または動詞と見なされる可能性がある文字列を知らせます。 用語ツールを使って、ローカライズ担当者に、作った単語について説明します。 混乱を避けるため、文字列は文法的に正しく、明瞭で、できる限り専門的でないように維持します。
 
-## <span id="keep_access_keys_and_labels_consistent."></span><span id="KEEP_ACCESS_KEYS_AND_LABELS_CONSISTENT."></span>アクセス キーとラベルの一貫性を維持する
+## <a name="keep-access-keys-and-labels-consistent"></a>アクセス キーとラベルの一貫性を維持する
 
 
-アクセシビリティで使われるアクセス キーとローカライズされたアクセス キーは、2 つの個別のセクションに分類されます。このため、この 2 つの文字列リソースの表示の "同期" は難問です。 ラベル文字列に  のようなコメントを必ず入れてください。 `Make sure that the emphasized shortcut key  is synchronized with the access key.`
+アクセシビリティで使われるアクセス キーとローカライズされたアクセス キーは、2 つの個別のセクションに分類されます。このため、この 2 つの文字列リソースの表示の "同期" は難問です。 ラベル文字列に次のようなコメントを必ず入れてください。 `Make sure that the emphasized shortcut key  is synchronized with the access key.`
 
-**HTML:**
 
-次に示す実装に従うことができます。 ここでも、ラベル文字列に適切なコメントを付けて、そのラベル文字列をアクセス キー定義にリンクしてください。
-
-```HTML
-<label id="theLabel" data-win-res="{accessKey: 'theLabelAccessKey'}" for="xPrinterRedirection" accessKey="L">The <u>L</u>abel</label>
-<input type="checkbox" value="OFF" id="xPrinterRedirection" name="xPrinterRedirection" />
-```
-
-## <span id="support_furigana_for_japanese_strings_that_can_be_sorted."></span><span id="SUPPORT_FURIGANA_FOR_JAPANESE_STRINGS_THAT_CAN_BE_SORTED."></span>並べ替えることができる日本語文字列のふりがなのサポート
+## <a name="support-furigana-for-japanese-strings-that-can-be-sorted"></a>並べ替えることができる日本語文字列のふりがなのサポート
 
 
 日本語の漢字には、語句と使用状況に応じて変化する複数の発音があるという、ユニークな特性があります。 このため、日本語の名称が付いたオブジェクト (アプリケーション名、ファイル、曲など) を並べ替えるときに問題が発生します。 日本語の漢字は、以前は一般に、XJIS と呼ばれる、コンピューターが理解できる順序で並べられていました。 残念ながら、この並べ替え順序は発音に即したものではなく、人間にとってはそれほど便利ではありません。
@@ -177,7 +159,7 @@ ms.openlocfilehash: d3f389830fd4f21eae93aae661db86f9df479383
     -   ふりがなが有効になっている場合、"の" の下に "希蒼" が並びます。
     -   ふりがなが含まれていない場合、"漢字" の下に "希蒼" が並びます。
 
-## <span id="related_topics"></span>関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [グローバリゼーションとローカライズの推奨と非推奨](guidelines-and-checklist-for-globalizing-your-app.md)
@@ -192,6 +174,6 @@ ms.openlocfilehash: d3f389830fd4f21eae93aae661db86f9df479383
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

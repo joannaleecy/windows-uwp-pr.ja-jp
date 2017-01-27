@@ -3,19 +3,26 @@ description: "UWP アプリにコントロールとパターンを追加する�
 title: "UWP のコントロールとパターン - Windows アプリ開発"
 author: mijacobs
 keywords: "UWP コントロール, ユーザー インターフェイス, アプリ コントロール"
+label: Controls & patterns
+template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 2f9d2059399efd949fc8a1d90a5b6c8c106a478e
-ms.openlocfilehash: ef383e46f2c610b57eec1c7767d5100e42075f6c
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: e530c8fab64c160737ccc06faf676d1d113896c4
 
 ---
-# UWP アプリのコントロールとパターン
+# <a name="controls-and-patterns-for-uwp-apps"></a>UWP アプリのコントロールとパターン
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 UWP アプリ開発では、<i>コントロール</i>は、コンテンツを表示したり、操作を有効にしたりする UI 要素です。 コントロールとは、ユーザー インターフェイスの構成要素です。 単純なボタンから、グリッド ビューのような強力なデータ コントロールまで、ユーザーが使用できる 45 種類以上のコントロールが用意されています。 <i>パターン</i>とは、いくつかのコントロールを組み合わせて、新しいものを作成するためのレシピです。
 
 このセクションの記事では、UWP アプリにコントロールとパターンを追加するための設計ガイダンスとコーディングの手順を説明します。 
 
-## はじめに
+## <a name="intro"></a>はじめに
 
 XAML と C# でコントロールを追加し、スタイルを指定するための一般的な手順とコード例を示します。
 
@@ -34,7 +41,7 @@ XAML フレームワークを使って、さまざまな方法でアプリの外
 </div>
 </div>
 
-## アルファベット順インデックス 
+## <a name="alphabetical-index"></a>アルファベット順インデックス 
 
 特定のコントロールとパターンに関する詳細情報を説明します。
 
@@ -169,6 +176,6 @@ XAML フレームワークを使って、さまざまな方法でアプリの外
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO2-->
 
 

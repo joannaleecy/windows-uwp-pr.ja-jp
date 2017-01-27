@@ -3,18 +3,25 @@ description: "さまざまなデバイスや画面サイズで、ナビゲーシ
 title: "UWP アプリのレイアウトの設計 - Windows アプリ開発"
 author: mijacobs
 keywords: "UWP アプリのレイアウト, ユニバーサル Windows プラットフォーム, アプリの設計, インターフェイス"
+label: Layout
+template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 2f9d2059399efd949fc8a1d90a5b6c8c106a478e
-ms.openlocfilehash: 72c4b957c98956965c773b4c2182796880f59a1d
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: e643b7029d5bc417437f7a1b8586424ac4345c3b
 
 ---
-# UWP アプリのレイアウト
+# <a name="layout-for-uwp-apps"></a>UWP アプリのレイアウト
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
 アプリの構造、ページ レイアウト、ナビゲーションは、アプリのユーザー エクスペリエンスの基盤となるものです。 このセクションの記事は、さまざまなデバイスや画面サイズで簡単に操作でき、適切に表示されるアプリを作成する際に役立ちます。
 
-## はじめに
+## <a name="intro"></a>はじめに
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -28,7 +35,7 @@ UWP アプリを設計する場合、さまざまなディスプレイ サイズ
 </div>
 </div>
 
-## アプリのレイアウトと構造
+## <a name="app-layout-and-structure"></a>アプリのレイアウトと構造
 アプリを構築し、ナビゲーション、コマンド、コンテンツという 3 種類の UI 要素を使うには、次の推奨事項を確認してください。
 
 <div class="side-by-side">
@@ -50,7 +57,7 @@ UWP アプリのナビゲーションは、ナビゲーション構造、ナビ�
 </div>
 </div>
 
-## ページのレイアウト 
+## <a name="page-layout"></a>ページのレイアウト 
 次の記事は、さまざまな画面サイズ、ウィンドウ サイズ、解像度、向きで適切に表示される柔軟な UI を作成する際に役立ちます。 
 
 
@@ -83,6 +90,6 @@ XAML プロパティとレイアウト パネルを使って、アプリの応�
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO2-->
 
 

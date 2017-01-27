@@ -6,34 +6,28 @@ ms.assetid: 1B8B90AD-CDC4-4997-ACDE-871C1E94A929
 label: Fonts
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
-ms.openlocfilehash: b79a6f3ee32494f04fa472c0531c06aa0a60098b
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 0b25dc91a5ec82a83ae24a41854e9eeab8990128
 
 ---
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-# UWP アプリ用のフォント
+# <a name="fonts-for-uwp-apps"></a>UWP アプリ用のフォント
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 この記事では、UWP アプリの推奨フォントを示します。 これらのフォントは、UWP アプリをサポートするすべての Windows 10 エディションで利用可能なことが保証されています。
 
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209655"><strong>FontFamily プロパティ</strong></a></li>
+<li>[**FontFamily プロパティ**](https://msdn.microsoft.com/library/windows/apps/br209655)</li>
 </ul>
-
 </div>
-</div>
-
-
 
 [UWP 文字体裁ガイド](typography.md)ではアプリに Segoe UI フォントを使用するようお勧めしています。Segoe UI はほとんどのアプリに適した選択ですが、すべての場合にこれを使用しなければならないわけではありません。 読み物や英語以外の特定の言語でのテキストの表示など、シナリオによっては、他のフォントを使うことができます。 
-
-
-
  
-## サンセリフ フォント
+## <a name="sans-serif-fonts"></a>サンセリフ フォント
 
 サンセリフ フォントは、ヘッダーと UI 要素に適しています。 
 
@@ -94,7 +88,7 @@ ms.openlocfilehash: b79a6f3ee32494f04fa472c0531c06aa0a60098b
 </table>
 
 
-## セリフ フォント
+## <a name="serif-fonts"></a>セリフ フォント
 
 セリフ フォントは、大量のテキストを表示するのに適しています。 
 
@@ -133,7 +127,7 @@ ms.openlocfilehash: b79a6f3ee32494f04fa472c0531c06aa0a60098b
 </tbody>
 </table>
 
-## シンボルとアイコン
+## <a name="symbols-and-icons"></a>シンボルとアイコン
 
 
 <table>
@@ -165,7 +159,7 @@ ms.openlocfilehash: b79a6f3ee32494f04fa472c0531c06aa0a60098b
 
 
 
-## ラテン語以外の言語用のフォント
+## <a name="fonts-for-non-latin-languages"></a>ラテン語以外の言語用のフォント
 
 ただし、これらのフォントの多くでは、ラテン文字が提供されています。
 
@@ -294,21 +288,17 @@ ms.openlocfilehash: b79a6f3ee32494f04fa472c0531c06aa0a60098b
 </table>
 
 
-## フォントのグローバリゼーション/ローカライズ
+## <a name="globalizinglocalizing-fonts"></a>フォントのグローバリゼーション/ローカライズ
 特定言語の推奨フォント ファミリー、サイズ、太さ、スタイルにプログラムを使ってアクセスする場合は、[LanguageFont フォント マッピング API](https://msdn.microsoft.com/library/windows/apps/br206864) を使ってください。 LanguageFont オブジェクトを使うと、コンテンツのさまざまなカテゴリ (UI ヘッダー、通知、本文のテキスト、ユーザー自身で編集できるドキュメント本文のフォントなど) の正しいフォント情報にアクセスできます。 詳しくは、「[レイアウトとグローバリゼーションをサポートするフォントの調整](https://msdn.microsoft.com/windows/uwp/globalizing/adjust-layout-and-fonts--and-support-rtl)」をご覧ください。
 
-<!--
-## Triggering a font download
-If you use a font that's not listed in this article, your app might trigger an automatic download of the font data from a Microsoft service. This can have performance and other impacts that may be a concern, particularly for mobile devices. In particular, note that this might consume some of a user's mobile data plan or result in mobile data usage costs. UWP apps that will available on mobile devices should never use fonts for UI content other than fonts in this list.
--->
 
-## サンプルの入手
+## <a name="get-the-samples"></a>サンプルの入手
 
 * [ダウンロード可能なフォントのサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlCloudFontIntegration)
 * [UI の基本のサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 * [DirectWrite を使用した行間のサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/DWriteLineSpacingModes) 
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 * [レイアウトとグローバリゼーションをサポートするフォントの調整](https://msdn.microsoft.com/windows/uwp/globalizing/adjust-layout-and-fonts--and-support-rtl)
 * [Segoe MDL2](segoe-ui-symbol-font.md)
@@ -325,6 +315,6 @@ If you use a font that's not listed in this article, your app might trigger an a
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -3,10 +3,15 @@ author: GrantMeStrength
 ms.assetid: 4288E511-581C-49DC-A2F2-1CB832C4A676
 title: "次の手順"
 description: "初めてのアプリの作成が終わったので、デベロッパー センターの他の部分を見てみましょう。 ここでは、デベロッパー センターの他の部分に含まれるさまざまなセクションについて説明します。"
-keywords: "デベロッパー センター, 概要"
+keywords: "デベロッパー センター, デベロッパー センターの説明, 概要"
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 7e76c9abd4157c22b38d79b178f5f07827d336ca
-ms.openlocfilehash: 087c298f59798010628aefc428eedf9933bb2686
+ms.sourcegitcommit: 7a6f0be15105bc70e580eaaf581152338c56bed7
+ms.openlocfilehash: 7b1d2c1dc83bf0b6d24c1de134102f14542c907d
 
 ---
 
@@ -168,6 +173,6 @@ API リファレンス コンテンツではなく、概念コンテンツを参
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

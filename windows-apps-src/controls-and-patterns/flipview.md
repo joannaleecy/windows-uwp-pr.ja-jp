@@ -6,11 +6,11 @@ ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 7e52f9d379b909c4dd35bc535cbca2d7b8cca6ac
+ms.sourcegitcommit: 92c523c100a021808e01dffe4cd9b5c47c21b58a
+ms.openlocfilehash: 3ad89682248462efa5022467ceb330da03843de4
 
 ---
-# フリップ ビュー
+# <a name="flip-view"></a>フリップ ビュー
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,25 +19,18 @@ ms.openlocfilehash: 7e52f9d379b909c4dd35bc535cbca2d7b8cca6ac
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx"><strong>FlipView クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx"><strong>ItemsSource プロパティ</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx"><strong>ItemTemplate プロパティ</strong></a></li>
+<li>[**FlipView クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)</li>
+<li> [**ItemsSource プロパティ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)</li>
+<li>[**ItemTemplate プロパティ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)</li>
+
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 フリップ ビューは、小規模から中規模のコレクション (最大で 25 個程度の項目を含むコレクション) の画像を参照する場合に最適です。 このようなコレクションの例として、製品の詳細ページ内の項目やフォト アルバム内の写真などがあります。 多くの場合、大規模なコレクションで FlipView を使うことはお勧めしませんが、このコントロールは、フォト アルバム内の個々の画像を表示するためによく使われます。
 
-## 例
+## <a name="examples"></a>例
 
 水平方向の閲覧、左端の項目から開始し、右にフリップするのが、FlipView の一般的なレイアウトです。 このレイアウトは、すべてのデバイス上で縦方向でも横方向でも正常に動作します。
 
@@ -47,13 +40,13 @@ ms.openlocfilehash: 7e52f9d379b909c4dd35bc535cbca2d7b8cca6ac
 
 ![垂直方向のフリップ ビューに関する例](images/controls_flipview_vertical.jpg)
 
-## フリップ ビューを作成する
+## <a name="create-a-flip-view"></a>フリップ ビューを作成する
 
 FlipView は [ItemsControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.aspx) であるため、あらゆる種類の項目をコレクションを含めることができます。 ビューのデータを設定するには、項目を [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) コレクションに追加するか、[**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) プロパティをデータ ソースに設定します。
 
 既定では、データ項目は、バインドされているデータ オブジェクトの文字列表現としてフリップ ビューに表示されます。 フリップ ビューでの項目の表示方法を正確に指定するには、[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.datatemplate.aspx) を作成して、個々の項目を表示するために使うコントロールのレイアウトを定義します。 レイアウト内のコントロールは、データ オブジェクトのプロパティにバインドすることも、インラインでコンテンツを定義することもできます。 DataTemplate は、FlipView の [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) プロパティに割り当てます。
 
-### 項目コレクションへの項目の追加
+### <a name="add-items-to-the-items-collection"></a>項目コレクションへの項目の追加
 
 [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) コレクションに項目を追加するには、XAML かコードを使います。 通常、項目が少数で、その項目が変わらず、XAML で簡単に定義できる場合や、実行時にコードで項目を生成する場合は、この方法で項目を追加します。 項目をインラインで定義したフリップ ビューを次に示します。
 
@@ -80,7 +73,7 @@ stackPanel1.Children.Add(flipView1);
 
 XAML で項目を定義すると、定義した項目は Items コレクションに自動的に追加されます。
 
-### 項目ソースの設定
+### <a name="set-the-items-source"></a>項目ソースの設定
 
 通常、フリップ ビューを使って、データベースやインターネットなどのソースからデータを表示します。 データ ソースからフリップ ビューのデータを設定するには、[**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) プロパティをデータ項目のコレクションに設定します。
 
@@ -120,7 +113,7 @@ ItemsSource が `itemsViewSource` という名前の [**CollectionViewSource**](
 
 >**注**&nbsp;&nbsp;フリップ ビューのデータを設定するには、その Items コレクションに項目を追加するか ItemsSource プロパティを設定しますが、同時に両方の方法で設定することはできません。 ItemsSource プロパティを設定して XAML で項目を追加した場合、追加された項目は無視されます。 ItemsSource プロパティを設定してコードで Items コレクションに項目を追加した場合、例外がスローされます。
 
-### 項目の表示方法の指定
+### <a name="specify-the-look-of-the-items"></a>項目の表示方法の指定
 
 既定では、データ項目は、バインドされているデータ オブジェクトの文字列表現としてフリップ ビューに表示されます。 通常は、リッチな表現でデータを表示する必要があります。 フリップ ビューでの項目の表示方法を正確に指定するには、[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx) を作成します。 DataTemplate の XAML では、個々の項目を表示するために使うコントロールのレイアウトと外観を定義します。 レイアウト内のコントロールは、データ オブジェクトのプロパティにバインドすることも、インラインでコンテンツを定義することもできます。 DataTemplate は、FlipView の [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) プロパティに割り当てます。
 
@@ -149,7 +142,7 @@ ItemsSource が `itemsViewSource` という名前の [**CollectionViewSource**](
 
 フリップ ビュー データ テンプレート。
 
-### フリップ ビューの向きの設定
+### <a name="set-the-orientation-of-the-flip-view"></a>フリップ ビューの向きの設定
 
 既定では、フリップ ビューは横方向にめくれます。 縦方向にめくれるようにするには、フリップ ビューの [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) として縦方向のスタック パネルを使います。
 
@@ -186,7 +179,7 @@ ItemsSource が `itemsViewSource` という名前の [**CollectionViewSource**](
 
 ![垂直方向のフリップ ビューに関する例](images/controls_flipview_vertical.jpg)
 
-## コンテキスト インジケーターの追加
+## <a name="adding-a-context-indicator"></a>コンテキスト インジケーターの追加
 
 フリップ ビュー内のコンテキスト インジケーターによって、便利な基準点を設けることができます。 標準的なコンテキスト インジケーターに含まれるドットは、対話型です。 次の例に示されているように、最適な配置は、通常はギャラリーの下中央です。
 
@@ -196,7 +189,9 @@ ItemsSource が `itemsViewSource` という名前の [**CollectionViewSource**](
 
 ![コンテキスト インジケーターの例](images/controls_contextindicator.jpg)
 
-## 推奨と非推奨
+コンテキスト インジケーターを FlipView に追加する方法を示すサンプル コードについては、[XAML FlipView のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkID=311760)をご覧ください。
+
+## <a name="dos-and-donts"></a>推奨と非推奨
 
 -   FlipView は最大 25 個程度の項目のコレクションに最適です。
 -   大規模なコレクションでは FlipView コントロールを使わないでください。これは、項目ごとにフリップ操作を繰り返す必要があり、ユーザーの負担になるためです。 フォト アルバムは例外です。フォト アルバムには数百または数千の画像が含まれている場合があります。 ほとんどの場合、フォト アルバムでは、グリッド ビューのレイアウトで写真を選ぶと、フリップ ビューに切り替わります。 他の大きいコレクションについては、[リスト ビューまたはグリッド ビュー](lists.md)を検討してください。
@@ -206,7 +201,7 @@ ItemsSource が `itemsViewSource` という名前の [**CollectionViewSource**](
     -   強調表示されているドットは現在の項目を示します。 通常、強調表示されているドットは白で、その他のドットは灰色で表されます。
     -   ドットの数は変更できますが、多すぎるとユーザーは現在の場所を把握することが難しくなります。通常、表示するドットの最大数は 10 個です。
 
-## グローバリゼーションとローカライズのチェックリスト
+## <a name="globalization-and-localization-checklist"></a>グローバリゼーションとローカライズのチェックリスト
 
 <table>
 <tr>
@@ -215,14 +210,17 @@ ItemsSource が `itemsViewSource` という名前の [**CollectionViewSource**](
 
 </table>
 
+## <a name="get-the-sample-code"></a>サンプル コードを入手する
+* [XAML UI の基本のサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 
-## 関連記事
+
+## <a name="related-articles"></a>関連記事
 
 - [リストのガイドライン](lists.md)
 - [**FlipView クラス**](https://msdn.microsoft.com/library/windows/apps/br242678)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

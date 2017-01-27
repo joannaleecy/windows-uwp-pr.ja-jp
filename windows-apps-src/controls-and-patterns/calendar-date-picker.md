@@ -6,11 +6,11 @@ ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
 label: Calendar date picker
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: d32c643db84eeb7c81304467a326566938e726c0
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 0c565c036b8bcb7c26ad860231ee649b73c636c3
 
 ---
-# カレンダーの日付の選択コントロール
+# <a name="calendar-date-picker"></a>カレンダーの日付の選択コントロール
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,33 +19,26 @@ ms.openlocfilehash: d32c643db84eeb7c81304467a326566938e726c0
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx"><strong>CalendarDatePicker クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx"><strong>Date プロパティ</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx"><strong>DateChanged イベント</strong></a></li>
+<li>[**CalendarDatePicker クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)</li>
+<li>[**Date プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx)</li>
+<li>[**DateChanged イベント**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 **カレンダーの日付の選択コントロール**を使うと、ユーザーはコンテキストに沿ったカレンダー ビューから 1 つの日付を選ぶことができます。 予定日や出発日の選択などに使います。
 
 ユーザーが誕生日などの既知の日付 (カレンダーのコンテキストとしては重要ではない日) を選べるようにするには、[**日付の選択コントロール**](date-picker.md) を使うことを検討してください。
 
 適切なコントロールの選択について詳しくは、「[日付と時刻コントロール](date-and-time.md)」をご覧ください。
 
-## 例
+## <a name="examples"></a>例
 
 日付が設定されていない場合、エントリ ポイントにはプレースホルダー テキストが表示されます。設定されている場合は、選んだ日付が表示されます。 ユーザーがエントリ ポイントを選ぶと、カレンダー ビューが展開されて、ユーザーが日付を選べるようになります。 カレンダー ビューは他の UI をオーバーレイし、他の UI を別の位置に移動させることはありません。
 
 ![カレンダーの日付の選択コントロールの例](images/calendar-date-picker-2-views.png)
 
-## 日付の選択コントロールの作成
+## <a name="create-a-date-picker"></a>日付の選択コントロールの作成
 
 ```xaml
 <CalendarDatePicker x:Name="arrivalCalendarDatePicker" Header="Arrival date"/>
@@ -64,7 +57,7 @@ arrivalCalendarDatePicker.Header = "Arrival date";
 
 ただし、複数選択を許可するために、内部の CalendarView の [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectionmode.aspx) を変更することはできません。 ユーザーが複数の日付を選べるようにしたり、カレンダーを常に表示しておく必要がある場合、カレンダーの日付の選択コントロールではなく、カレンダー ビューを使うことを検討してください。 カレンダー表示を変更する方法について詳しくは、「[カレンダー ビュー](calendar-view.md)」をご覧ください。
 
-### 日付の選択
+### <a name="selecting-dates"></a>日付の選択
 
 選んだ日付を取得または設定するには、[**Date**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx) プロパティを使います。 既定では、Date プロパティは **null** です。 ユーザーがカレンダー ビューで日付を選ぶと、このプロパティが更新されます。 日付をクリアするには、カレンダー ビュー内で選んだ日付をクリックして選択を解除します。 
 
@@ -80,9 +73,10 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 
 Date 値が変化したときに通知を受け取るには、[**DateChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx) イベントを処理します。
 
-> **注:**&nbsp;&nbsp;日付値の重要な情報については、「日付と時刻コントロール」の「[DateTime と Calendar の値](date-and-time.md#datetime-and-calendar-values)」をご覧ください。
+> [!NOTE]
+日付値の重要な情報については、「日付と時刻コントロール」の「[DateTime と Calendar の値](date-and-time.md#datetime-and-calendar-values)」をご覧ください。
 
-### ヘッダーとプレースホルダー テキストの設定
+### <a name="setting-a-header-and-placeholder-text"></a>ヘッダーとプレースホルダー テキストの設定
 
 [**Header**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.header.aspx) (ラベル) と [**PlaceholderText**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.placeholdertext.aspx) (透かし) をカレンダーの日付の選択コントロールに追加すると、ユーザーに用途を示すことができます。 ヘッダーの外観をカスタマイズするには、Header ではなく [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.headertemplate.aspx) プロパティを設定します。
 
@@ -93,8 +87,11 @@ Date 値が変化したときに通知を受け取るには、[**DateChanged**](
                     PlaceholderText="Choose your arrival date"/>
 ```
 
+## <a name="get-the-sample-code"></a>サンプル コードを入手する
+* [XAML UI の基本のサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 
-## 関連記事
+
+## <a name="related-articles"></a>関連記事
 
 - [日付と時刻コントロール](date-and-time.md)
 - [カレンダー ビュー](calendar-view.md)
@@ -103,6 +100,6 @@ Date 値が変化したときに通知を受け取るには、[**DateChanged**](
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

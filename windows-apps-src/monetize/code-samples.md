@@ -4,12 +4,12 @@ ms.assetid: 4a311d20-ba8c-4816-8091-35726428dc94
 description: "Microsoft Advertising ライブラリの AdControl クラスおよび InterstitialAd クラスのプロパティ、メソッド、イベントの使用方法を示す追加のサンプルを紹介します。"
 title: "コード サンプル"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 0a852a4bf8404d7ab0d8a2a169a16451c0388122
+ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
+ms.openlocfilehash: a8f18048915927f9e93d4469e7288e5a06a69070
 
 ---
 
-# コード サンプル
+# <a name="code-samples"></a>コード サンプル
 
 
 
@@ -18,12 +18,12 @@ ms.openlocfilehash: 0a852a4bf8404d7ab0d8a2a169a16451c0388122
 
 C# と C++ を使って JavaScript/HTML アプリと XAML アプリに広告バナーやビデオのスポット広告を追加する方法を示す完全なサンプル プロジェクトについては、[GitHub の広告サンプル](http://aka.ms/githubads)をご覧ください。
 
-## このセクションの内容
+## <a name="in-this-section"></a>このセクションの内容
 
 |  トピック    | 説明 |               
 |----------|-------|
-| [HTML プロパティの例](html-properties-example.md)     | すべての属性が設定された HTML の **AdControl** を示します。        |
-| [XAML プロパティの例](xaml-properties-example.md)     | すべての属性が設定された XAML の **AdControl** を示します。        |
+| [AdControl HTML プロパティの例](html-properties-example.md)     | すべての属性が設定された HTML の **AdControl** を示します。        |
+| [AdControl XAML プロパティの例](xaml-properties-example.md)     | すべての属性が設定された XAML の **AdControl** を示します。        |
 | [JavaScript での AdControl の作成](create-an-adcontrol-in-javascript.md)     | JavaScript を使って **AdControl** を作成する方法を示します。        |
 | [JavaScript の AdControl イベント](adcontrol-events-in-javascript.md)     | JavaScript で **AdControl** イベントを処理する方法を示します。       |
 | [C の AdControl イベント#](adcontrol-events-in-c.md)     | C# で **AdControl** イベントを処理する方法を示します。       |
@@ -41,6 +41,6 @@ C# と C++ を使って JavaScript/HTML アプリと XAML アプリに広告バ�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -4,12 +4,12 @@ title: "メンテナンス トリガーの使用"
 description: "デバイスが接続されているときに、MaintenanceTrigger クラスを使って軽量のコードをバックグラウンドで実行する方法について説明します。"
 ms.assetid: 727D9D84-6C1D-4DF3-B3B0-2204EA4D76DD
 translationtype: Human Translation
-ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
-ms.openlocfilehash: 2f459156ac8bc52c79b9b6d3b902882693120028
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: 8ca0255be671d0a2900bb7be3a66d4df4e793725
 
 ---
 
-# メンテナンス トリガーの使用
+# <a name="use-a-maintenance-trigger"></a>メンテナンス トリガーの使用
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -21,11 +21,11 @@ ms.openlocfilehash: 2f459156ac8bc52c79b9b6d3b902882693120028
 
 デバイスが接続されているときに、[**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) クラスを使って軽量のコードをバックグラウンドで実行する方法について説明します。
 
-## メンテナンス トリガー オブジェクトを作る
+## <a name="create-a-maintenance-trigger-object"></a>メンテナンス トリガー オブジェクトを作る
 
 この例は、デバイスが接続されているときにアプリを拡張するためにバックグラウンドで実行できる軽量のコードがあることを前提にしています。 ここでは主に、[**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) に似た [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) について扱います。
 
-バックグラウンド タスク クラスの作成について詳しくは、「[インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)」または「[アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-an-outofproc-background-task.md)」をご覧ください。
+バックグラウンド タスク クラスの作成について詳しくは、「[インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)」または「[アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」をご覧ください。
 
 新しい [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) オブジェクトを作成します。 2 つ目のパラメーター (*OneShot*) では、メンテナンス タスクを一度だけ実行するか、定期的に実行を続けるかを指定します。 *OneShot* を true に設定する場合は、1 つ目のパラメーター (*FreshnessTime*) に、バックグラウンド タスクをスケジュールするまで待機する時間 (分単位) を指定します。 *OneShot* を false に設定する場合は、*FreshnessTime* でバックグラウンド タスクを実行する間隔を指定します。
 
@@ -45,7 +45,7 @@ ms.openlocfilehash: 2f459156ac8bc52c79b9b6d3b902882693120028
 > MaintenanceTrigger ^ taskTrigger = ref new MaintenanceTrigger(waitIntervalMinutes, false);
 > ```
 
-## (省略可能) 条件の追加
+## <a name="optional-add-a-condition"></a>(省略可能) 条件の追加
 
 -   いつタスクを実行するかを制御するバックグラウンド タスクの条件を必要に応じて作成します。 条件を指定すると、条件が満たされるまではバックグラウンド タスクが実行されないようにすることができます。詳しくは「[バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)」をご覧ください。
 
@@ -61,7 +61,7 @@ ms.openlocfilehash: 2f459156ac8bc52c79b9b6d3b902882693120028
 > SystemCondition ^ exampleCondition = ref new SystemCondition(SystemConditionType::InternetAvailable);
 > ```
 
-## バックグラウンド タスクの登録
+## <a name="register-the-background-task"></a>バックグラウンド タスクの登録
 
 -   バックグラウンド タスクの登録関数を呼び出してバックグラウンド タスクを登録します。 バックグラウンド タスクの登録について詳しくは、「[バックグラウンド タスクの登録](register-a-background-task.md)」をご覧ください。
 
@@ -92,12 +92,12 @@ ms.openlocfilehash: 2f459156ac8bc52c79b9b6d3b902882693120028
 
 > **注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 ****
 
 * [インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)
-* [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-an-outofproc-background-task.md)
+* [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
 * [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
 * [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
 * [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
@@ -112,6 +112,6 @@ ms.openlocfilehash: 2f459156ac8bc52c79b9b6d3b902882693120028
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

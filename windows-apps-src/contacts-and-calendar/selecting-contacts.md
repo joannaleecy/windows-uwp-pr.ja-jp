@@ -3,21 +3,26 @@ author: Xansky
 description: "Windows.ApplicationModel.Contacts 名前空間を使うと、連絡先を選ぶ複数のオプションがあります。"
 title: "連絡先の選択"
 ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
-keywords: "連絡先, 特定のフィールドの選択"
+keywords: "連絡先, 単一の連絡先の選択, 複数の連絡先の選択, 複数の選択, 特定の連絡先データ連絡先の選択, 特定のデータ連絡先の選択, 特定のフィールドの選択"
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: 70abebb53f96b7d9d818f3542c33ed477ff0c8a4
+ms.sourcegitcommit: 7a6f0be15105bc70e580eaaf581152338c56bed7
+ms.openlocfilehash: 7181a51a91997124b2c5c8ba184261de63de9caf
 
 ---
 
-# 連絡先の選択
+# <a name="select-contacts"></a>連絡先の選択
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 [**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002) 名前空間では、複数の方法で連絡先を選ぶことができます。 ここでは、1 つまたは複数の連絡先を選ぶ方法について説明します。また、アプリで必要な連絡先情報だけを取得するように連絡先ピッカーを構成する方法についても説明します。
 
-## 連絡先ピッカーを設定する
+## <a name="set-up-the-contact-picker"></a>連絡先ピッカーを設定する
 
 [**Windows.ApplicationModel.Contacts.ContactPicker**](https://msdn.microsoft.com/library/windows/apps/BR224913) のインスタンスを作成し、変数に割り当てます。
 
@@ -25,7 +30,7 @@ ms.openlocfilehash: 70abebb53f96b7d9d818f3542c33ed477ff0c8a4
 var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
 ```
 
-## 選択モードを設定する (省略可能)
+## <a name="set-the-selection-mode-optional"></a>選択モードを設定する (省略可能)
 
 連絡先ピッカーの既定の動作では、ユーザーが選んだ連絡先について、利用可能なすべてのデータが取得されます。 [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) プロパティを使うと、アプリに必要なデータ フィールドだけを取得するように連絡先ピッカーを構成できます。 利用可能な連絡先データのうちの一部だけが必要な場合は、この方法で連絡先ピッカーを使うと効率的です。
 
@@ -41,7 +46,7 @@ contactPicker.SelectionMode = Windows.ApplicationModel.Contacts.ContactSelection
 contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Contacts.ContactFieldType.Email);
 ```
 
-## ピッカーを起動する
+## <a name="launch-the-picker"></a>ピッカーを起動する
 
 ```cs
 Contact contact = await contactPicker.PickContactAsync();
@@ -54,7 +59,7 @@ public IList<Contact> contacts;
 contacts = await contactPicker.PickContactsAsync();
 ```
 
-## 連絡先を処理する
+## <a name="process-the-contacts"></a>連絡先を処理する
 
 ピッカーから制御が戻ったら、ユーザーが連絡先を選んだかどうかを調べ、 選んでいた場合は連絡先情報を処理します。
 
@@ -83,7 +88,7 @@ if (contacts != null && contacts.Count > 0)
 }
 ```
 
-## 完全な例 (1 つの連絡先)
+## <a name="complete-example-single-contact"></a>完全な例 (1 つの連絡先)
 
 この例では、連絡先ピッカーを使って、1 つの連絡先の名前、メール アドレス、電話番号、住所を取得しています。
 
@@ -163,7 +168,7 @@ private void AppendContactFieldValues<T>(TextBlock content, IList<T> fields)
 }
 ```
 
-## 完全な例 (複数の連絡先)
+## <a name="complete-example-multiple-contacts"></a>完全な例 (複数の連絡先)
 
 次の例では、連絡先ピッカーを使って複数の連絡先を取得し、`OutputContacts` という名前の [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) コントロールに追加しています。
 
@@ -226,12 +231,12 @@ public class ContactItemAdapter
 }
 ```
 
-## 要約と次のステップ
+## <a name="summary-and-next-steps"></a>要約と次のステップ
 
 ここでは、連絡先ピッカーを使って連絡先情報を取得する基本的な方法について説明しました。 連絡先や連絡先選択ツールの使い方に関するその他の例については、GitHub から [ユニバーサル Windows アプリのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619979) をダウンロードしてください。
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

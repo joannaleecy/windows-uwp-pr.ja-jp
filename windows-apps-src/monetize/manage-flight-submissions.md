@@ -4,35 +4,71 @@ ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
 description: "Windows デベロッパー センター アカウントに登録するアプリのパッケージ フライトの申請を管理するには、以下の Windows ストア申請 API のメソッドを使います。"
 title: "Windows ストア申請 API を使用したパッケージ フライトの申請の管理"
 translationtype: Human Translation
-ms.sourcegitcommit: 9b76a11adfab838b21713cb384cdf31eada3286e
-ms.openlocfilehash: 7b59bb255774c8050232831e7f0d7a78a921ec6d
+ms.sourcegitcommit: 41203bffb65de3d4d6cc0fec2c7436e0b9d5821b
+ms.openlocfilehash: 9fc42f3abf1d876f271d18c1747ed7462dd20bd6
 
 ---
 
-# Windows ストア申請 API を使用したパッケージ フライトの申請の管理
+# <a name="manage-package-flight-submissions-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したパッケージ フライトの申請の管理
 
-
-
-
-Windows デベロッパー センター アカウントに登録するアプリのパッケージ フライトの申請を管理するには、以下の Windows ストア申請 API のメソッドを使います。 Windows ストア申請 API の概要については、「[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。この API を使用するための前提条件などの情報があります。
+Windows ストア申請 API には、段階的なパッケージのロールアウトなど、アプリのパッケージ フライトの申請を管理するために使用できるメソッドが用意されています。 Windows ストア申請 API の概要については、「[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。この API を使用するための前提条件などの情報があります。
 
 >**注:**&nbsp;&nbsp;これらのメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。 これらのメソッドを使用してパッケージ フライトの申請を作成または管理するには、パッケージ フライトをお客様自身のデベロッパー センター アカウントに用意しておく必要があります。 パッケージ フライトは、[デベロッパー センター ダッシュボードを使用する](https://msdn.microsoft.com/windows/uwp/publish/package-flights)か、「[パッケージ フライトの管理](manage-flights.md)」の説明に従って Windows ストア申請 API のメソッドを使用して、作成できます。
 
-| メソッド        | URI    | 説明                                                                 |
-|---------------|--------|-----------------------------------------------------------------------------|
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | 既存のパッケージ フライトの申請のデータを取得します。 詳しくは、[この記事](get-a-flight-submission.md)をご覧ください。 |
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status``` | 既存のパッケージ フライトの申請の取得を取得します。 詳しくは、[この記事](get-status-for-a-flight-submission.md)をご覧ください。 |
-| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions``` | Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトの申請を新規作成します。 詳しくは、[この記事](create-a-flight-submission.md)をご覧ください。 |
-| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit``` | 新しいパッケージ フライトまたは更新されたパッケージ フライトの申請を Windows デベロッパー センターにコミットします。 詳しくは、[この記事](commit-a-flight-submission.md)をご覧ください。 |
-| PUT | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | 既存のパッケージ フライトの申請のデータを更新します。 詳しくは、[この記事](update-a-flight-submission.md)をご覧ください。 |
-| DELETE | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | パッケージ フライトの申請を削除します。 詳しくは、[この記事](delete-a-flight-submission.md)をご覧ください。 |
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/packagerollout``` | パッケージ フライトの申請の段階的なロールアウトの情報を取得します。 詳しくは、[この記事](get-package-rollout-info-for-a-flight-submission.md)をご覧ください。 |
-| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/updatepackagerolloutpercentage``` | パッケージ フライトの申請の段階的なロールアウトの割合を更新します。 詳しくは、[この記事](update-the-package-rollout-percentage-for-a-flight-submission.md)をご覧ください。 |
-| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/haltpackagerollout``` | パッケージ フライトの申請の段階的なロールアウトを停止します。 詳しくは、[この記事](halt-the-package-rollout-for-a-flight-submission.md)をご覧ください。 |
-| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/finalizepackagerollout``` | パッケージ フライトの申請の段階的なロールアウトの情報を完了します。 詳しくは、[この記事](finalize-the-package-rollout-for-a-flight-submission.md)をご覧ください。 |
+<span id="methods-for-package-flight-submissions" />
+## <a name="methods-for-managing-package-flight-submissions"></a>パッケージ フライトの申請を管理するためのメソッド
+
+パッケージ フライトの申請を取得、作成、更新、コミット、または削除するには、次のメソッドを使用します。
+
+<table>
+<colgroup>
+<col width="10%" />
+<col width="30%" />
+<col width="60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">メソッド</th>
+<th align="left">URI</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">GET</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}```</td>
+<td align="left">[既存のパッケージ フライトの申請を更新します](get-a-flight-submission.md)</td>
+</tr>
+<tr>
+<td align="left">GET</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status```</td>
+<td align="left">[既存のパッケージ フライトの申請の状態を取得します](get-status-for-a-flight-submission.md)</td>
+</tr>
+<tr>
+<td align="left">POST</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions```</td>
+<td align="left">[新しいパッケージ フライトの申請を作成します](create-a-flight-submission.md)</td>
+</tr>
+<tr>
+<td align="left">PUT</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}```</td>
+<td align="left">[既存のパッケージ フライトの申請を更新します](update-a-flight-submission.md)</td>
+</tr>
+<tr>
+<td align="left">POST</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit```</td>
+<td align="left">[新しいパッケージ フライトの申請または更新されたパッケージ フライトの申請をコミットします](commit-a-flight-submission.md)</td>
+</tr>
+<tr>
+<td align="left">DELETE</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}```</td>
+<td align="left">[パッケージ フライトの申請を削除します](delete-a-flight-submission.md)</td>
+</tr>
+</tbody>
+</table>
 
 <span id="create-a-package-flight-submission">
-## パッケージ フライトの申請の作成
+### パッケージ フライトの申請の作成
 
 パッケージ フライトの申請を作成するには、次のプロセスに従います。
 
@@ -42,29 +78,40 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 3. Windows ストアの申請 API の次のメソッドを実行して、[パッケージ フライトの申請を作成](create-a-flight-submission.md)します。 このメソッドによって、新しい申請が作成され、審査中になります。これは、前回発行した申請のコピーです。
 
-  ```
+  > [!div class="tabbedCodeSnippets"]
+  ``` syntax
   POST https://manage.devcenter.microsoft.com/v1.0/my/applications{applicationId}/flights/{flightId}/submissions
   ```
 
-  応答本文には、新しい申請の ID、新しい申請のデータ (すべての登録情報と価格情報が含まれます)、申請用のパッケージのアップロードに必要な共有アクセス署名 (SAS) URI の 3 つの項目が含まれます。 SAS について詳しくは、[共有アクセス署名についてのチュートリアルの第 1 部で SAS モデルの概要情報](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)をご覧ください。
+  応答本文には、新しい申請の ID、新しい申請のデータ (すべての登録情報と価格情報が含まれます)、申請用のパッケージを Azure Blob Storage にアップロードするための共有アクセス署名 (SAS) URI の 3 つの項目が含まれます。
+
+  >**注**&nbsp;&nbsp;SAS URI では、アカウント キーを必要とせずに、Azure Storage 内のセキュリティで保護されたリソースにアクセスできます。 SAS URI の背景情報と Azure Blob Storage での SAS URI の使用については、「[Shared Access Signatures (SAS) の使用](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1)」と「[Shared Access Signature、第 2 部: BLOB ストレージでの SAS の作成と使用](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)」をご覧ください。
 
 4. 申請用に新しいパッケージを追加する場合は、[パッケージを準備](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements)して、ZIP アーカイブに追加します。
 
 5. 新しい申請用に必要な変更を行って申請データを更新し、次のメソッドを実行して[パッケージ フライトの申請を更新](update-a-flight-submission.md)します。
 
-  ```
+  > [!div class="tabbedCodeSnippets"]
+  ``` syntax
   PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}
   ```
 
+  <span/>
   >**注**&nbsp;&nbsp;申請用に新しいパッケージを追加する場合、ZIP アーカイブ内のパッケージのファイルの名前と相対パスを参照するように、申請データを更新してください。
 
-4. 申請用に新しいパッケージを追加する場合は、手順 2. で呼び出した POST メソッドの応答本文に含まれていた SAS URI に ZIP アーカイブをアップロードします。 詳しくは、「[Shared Access Signature、第 2 部: BLOB ストレージでの SAS の作成と使用](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)」をご覧ください。
+4. 申請用に新しいパッケージを追加する場合は、上記で呼び出した POST メソッドの応答本文に含まれていた SAS URI を使用して、ZIP アーカイブを [Azure Blob Storage](https://docs.microsoft.com/azure/storage/storage-introduction#blob-storage) にアップロードします。 さまざまなプラットフォームでこれを行うために使用できる、次のようなさまざまな Azure ライブラリがあります。
 
-  次のコード スニペットは、.NET 用 Azure Storage クライアント ライブラリの [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) クラスを使用してアーカイブをアップロードする方法を示しています。
+  * [.NET 用 Azure Storage クライアント ライブラリ](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-blobs)
+  * [Azure Storage SDK for Java](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
+  * [Azure Storage SDK for Python](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
 
+  <span/>
+
+  次の C# コード例は、.NET 用 Azure Storage クライアント ライブラリの [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) クラスを使用して ZIP アーカイブを Azure Blob Storage にアップロードする方法を示しています。 この例では、ZIP アーカイブが既にストリーム オブジェクトに書き込まれていることを前提としています。
+
+  > [!div class="tabbedCodeSnippets"]
   ```csharp
   string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
-
   Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob blockBob =
       new Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob(new System.Uri(sasUrl));
   await blockBob.UploadFromStreamAsync(stream);
@@ -72,13 +119,15 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 5. 次のメソッドを実行して、[パッケージ フライトの申請をコミット](commit-a-flight-submission.md)します。 これで、申請が完了し、更新がアカウントに適用されていることがデベロッパー センターに通知されます。
 
-  ```
+  > [!div class="tabbedCodeSnippets"]
+  ``` syntax
   POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
   ```
 
 6. 次のメソッドを実行して[パッケージ フライトの申請の状態を取得](get-status-for-a-flight-submission.md)して、コミット状態を確認します。
 
-  ```
+  > [!div class="tabbedCodeSnippets"]
+  ``` syntax
   GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status
   ```
 
@@ -86,59 +135,74 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 7. コミットが正常に処理されると、インジェストのために申請がストアに送信されます。 上記のメソッドを使うか、デベロッパー センターのダッシュボードから、申請の進行状況を引き続き監視できます。
 
+<span/>
+### <a name="code-examples"></a>コード例
+
+次の記事では、さまざまなプログラミング言語でパッケージ フライトの申請を作成する方法を説明する詳しいコード例を紹介します。
+
+* [C# のコード例](csharp-code-examples-for-the-windows-store-submission-api.md)
+* [Java のコード例](java-code-examples-for-the-windows-store-submission-api.md)
+* [Python のコード例](python-code-examples-for-the-windows-store-submission-api.md)
+
 <span id="manage-gradual-package-rollout">
-## パッケージ フライトの申請の段階的なパッケージのロールアウトを管理する
+## <a name="manage-a-gradual-package-rollout-for-a-package-flight-submission"></a>パッケージ フライトの申請の段階的なパッケージのロールアウトを管理する
 
 パッケージ フライトの申請で更新されたパッケージを、アプリの Windows 10 のユーザーの一部に、段階的にロールアウトできます。 これにより、更新に確信が持てるよう、特定のパッケージのフィードバックと分析データを監視してから、より広くロールアウトできます。 新しい申請を作成することなく、公開された申請のロールアウトの割合を変更する (または更新を停止する) ことができます。 デベロッパー センターで段階的なパッケージのロールアウトの有効化と管理を行う方法などについて詳しくは、[この記事](../publish/gradual-package-rollout.md)をご覧ください。
 
-Windows ストア申請 API の次のメソッドを使用して、パッケージ フライトの申請の段階的なパッケージのロールアウトを、プログラムによって有効化したり管理することもできます。
-
-* パッケージ フライトの申請の段階的なパッケージのロールアウトを有効化するには
+パッケージ フライトの申請の段階的なパッケージのロールアウトをプログラムによって有効化するには、Windows ストア申請 API のメソッドを使用して、次のプロセスに従います。
 
   1. [パッケージ フライトの申請の作成](create-a-flight-submission.md)、または[パッケージ フライトの申請の取得](get-a-flight-submission.md)を行います。
   2. 応答データで、[packageRollout](#package-rollout-object) リソースを探し、*[isPackageRollout]* フィールドを [true] に設定し、*[packageRolloutPercentage]* フィールドに、アプリのユーザーが更新されたパッケージを取得する割合を設定します。
   3. 更新されたパッケージ フライトの申請のデータを[パッケージ フライトの申請を更新する](update-a-flight-submission.md)メソッドに渡します。
 
+パッケージ フライトの申請の段階的なパッケージのロールアウトが有効化された後、段階的なロールアウトをプログラムで取得、更新、停止、または完了するには、次のメソッドを使用できます。
+
+<table>
+<colgroup>
+<col width="10%" />
+<col width="30%" />
+<col width="60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">メソッド</th>
+<th align="left">URI</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">GET</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/packagerollout```</td>
+<td align="left">[パッケージ フライトの申請の段階的なロールアウトの情報を取得します](get-package-rollout-info-for-a-flight-submission.md)</td>
+</tr>
+<tr>
+<td align="left">POST</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/updatepackagerolloutpercentage```</td>
+<td align="left">[パッケージ フライトの申請の段階的なロールアウトの割合を更新します](update-the-package-rollout-percentage-for-a-flight-submission.md)</td>
+</tr>
+<tr>
+<td align="left">POST</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/haltpackagerollout```</td>
+<td align="left">[パッケージ フライトの申請の段階的なロールアウトを停止します](halt-the-package-rollout-for-a-flight-submission.md)</td>
+</tr>
+<tr>
+<td align="left">POST</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/finalizepackagerollout```</td>
+<td align="left">[パッケージ フライトの申請の段階的なロールアウトの情報を完了します](finalize-the-package-rollout-for-a-flight-submission.md)</td>
+</tr>
+</tbody>
+</table>
+
 <span/>
+## データ リソース
 
-* [パッケージ フライトの申請のパッケージのロールアウトの情報を取得する](get-package-rollout-info-for-a-flight-submission.md)には、次のメソッドを実行します。
-
-  ```
-  GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/packagerollout
-  ```
-
-<span/>
-
-* [パッケージ フライトの申請のパッケージのロールアウトの割合を更新する](update-the-package-rollout-percentage-for-a-flight-submission.md)には、次のメソッドを実行します。
-
-  ```
-  POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/updatepackagerolloutpercentage  
-  ```
-
-<span/>
-
-* [パッケージ フライトの申請のパッケージのロールアウトを停止する](halt-the-package-rollout-for-a-flight-submission.md)には、次のメソッドを実行します。
-
-  ```
-  POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/haltpackagerollout   
-  ```  
-
-<span/>
-
-* [パッケージ フライトの申請のパッケージのロールアウトを完了する](finalize-the-package-rollout-for-a-flight-submission.md)には、次のメソッドを実行します。
-
-  ```
-  POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/finalizepackagerollout
-  ```
-
-## リソース
-
-これらのメソッドでは、以下のデータ リソースを使用します。
+パッケージ フライトの申請を管理するための Windows ストア申請 API のメソッドでは、次の JSON データ リソースを使用します。
 
 <span id="flight-submission-object" />
-### パッケージ フライトの申請
+### <a name="flight-submission-resource"></a>フライトの申請のリソース
 
-このリソースは、パッケージ フライトの申請を表します。 次の例は、このリソースの書式設定を示しています。
+このリソースは、パッケージ フライトの申請を記述しています。
 
 ```json
 {
@@ -181,57 +245,57 @@ Windows ストア申請 API の次のメソッドを使用して、パッケー�
 
 このリソースには、次の値があります。
 
-| 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
-|------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 値      | 型   | 説明              |
+|------------|--------|------------------------------|
 | id            | string  | 申請の ID です。  |
 | flightId           | string  |  申請が関連付けられているパッケージ フライトの ID です。  |  
 | status           | string  | 申請の状態。 次のいずれかの値を使用できます。 <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
-| statusDetails           | object  |  エラーに関する情報など、申請ステータスに関する追加詳細情報が含まれています。 詳しくは、以下の「[状態の詳細](#status-details-object)」セクションをご覧ください。 |
-| flightPackages           | array  | 申請の各パッケージに関する詳細を提供するオブジェクトが含まれています。 詳しくは、以下の「[フライト パッケージ](#flight-package-object)」セクションをご覧ください。  |
-| packageDeliveryOptions    | object  | 申請の段階的なパッケージのロールアウトと必須の更新の設定が含まれています。 詳しくは、以下の「[パッケージの配信オプション オブジェクト](#package-delivery-options-object)」セクションをご覧ください。  |
+| statusDetails           | object  |  エラーに関する情報など、申請のステータスに関する追加情報が保持される[ステータスの詳細に関するリソース](#status-details-object)です。  |
+| flightPackages           | array  | 申請の各パッケージに関する詳細を提供する[フライト パッケージ リソース](#flight-package-object)が含まれています。   |
+| packageDeliveryOptions    | object  | 申請の段階的なパッケージのロールアウトと必須の更新の設定が含まれた[パッケージ配布オプション リソース](#package-delivery-options-object)です。   |
 | fileUploadUrl           | string  | 申請のパッケージのアップロードに使用する共有アクセス署名 (SAS) URI です。 申請用に新しいパッケージを追加する場合は、パッケージを含む ZIP アーカイブをこの URI にアップロードします。 詳しくは、「[パッケージ フライトの申請の作成](#create-a-package-flight-submission)」をご覧ください。  |
 | targetPublishMode           | string  | 申請の公開モードです。 次のいずれかの値を使用できます。 <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | string  | *targetPublishMode* が SpecificDate に設定されている場合、ISO 8601 形式での申請の公開日です。  |
 | notesForCertification           | string  |  テスト アカウントの資格情報や、機能のアクセスおよび検証手順など、審査担当者に対して追加情報を提供します。 詳しくは、「[認定の注意書き](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification)」をご覧ください。 |
 
 <span id="status-details-object" />
-### 状態の詳細
+### <a name="status-details-resource"></a>ステータスの詳細に関するリソース
 
 このリソースには、申請の状態についての追加情報が保持されます。 このリソースには、次の値があります。
 
-| 値           | 型    | 説明                                                                                                                                                                                                                          |
+| 値           | 型    | 説明                   |
 |-----------------|---------|------|
-|  errors               |    object     |   申請のエラーの詳細が保持されるオブジェクトの配列です。 詳しくは、以下の「[状態の詳細](#status-detail-object)」セクションをご覧ください。   |     
-|  warnings               |   object      | 申請の警告の詳細が保持されるオブジェクトの配列です。 詳しくは、以下の「[状態の詳細](#status-detail-object)」セクションをご覧ください。     |
-|  certificationReports               |     object    |   申請の認定レポート データへのアクセスを提供するオブジェクトの配列です。 認定されなかった場合に、これらのレポートから詳しい情報を知ることができます。 詳しくは、以下の「[認定レポート](#certification-report-object)」セクションをご覧ください。   |  
+|  errors               |    object     |   申請のエラーの詳細が保持される[ステータスの詳細リソース](#status-detail-object)の配列です。   |     
+|  warnings               |   object      | 申請の警告の詳細が保持される[ステータスの詳細リソース](#status-detail-object)の配列です。     |
+|  certificationReports               |     object    |   申請の認定レポート データへのアクセスを提供する[認定レポート リソース](#certification-report-object)です。 認定されなかった場合に、これらのレポートから詳しい情報を知ることができます。    |  
 
 
 <span id="status-detail-object" />
-### 状態の詳細
+### <a name="status-detail-resource"></a>ステータスの詳細に関するリソース
 
 このリソースには、申請に関連するエラーや警告についての追加情報が保持されます。 このリソースには、次の値があります。
 
-| 値           | 型    | 説明                                                                                                                                                                                                                          |
+| 値           | 型    | 説明       |
 |-----------------|---------|------|
-|  code               |    string     |   エラーや警告の種類を説明する文字列です。 詳しくは、以下の「[申請の状態コード](#submission-status-code)」セクションをご覧ください。   |     
+|  code               |    string     |   エラーや警告の種類を説明する[申請ステータス コード](#submission-status-code)です。 |  
 |  details               |     string    |  問題についての詳細が含まれるメッセージです。     |
 
 
 <span id="certification-report-object" />
-### 認定レポート
+### <a name="certification-report-resource"></a>認定レポート リソース
 
 このリソースは、申請の認定レポート データへのアクセスを提供します。 このリソースには、次の値があります。
 
-| 値           | 型    | 説明                                                                                                                                                                                                                          |
+| 値           | 型    | 説明         |
 |-----------------|---------|------|
 |     date            |    string     |  ISO 8601 形式で表された、レポートが生成された日付と時刻です。    |
 |     reportUrl            |    string     |  レポートにアクセスできる URL です。    |
 
 
 <span id="flight-package-object" />
-### フライト パッケージ
+### <a name="flight-package-resource"></a>フライト パッケージ リソース
 
-このリソースは、申請に含まれるパッケージについての詳細情報を提供します。 次の例は、このリソースの書式設定を示しています。
+このリソースは、申請に含まれるパッケージについての詳細情報を提供します。
 
 ```json
 {
@@ -254,9 +318,9 @@ Windows ストア申請 API の次のメソッドを使用して、パッケー�
 
 >**注**&nbsp;&nbsp;[パッケージ フライトの申請の更新](update-a-flight-submission.md)のメソッドを呼び出す場合、要求本文に必要なのは、このオブジェクトの *fileName*、*fileStatus*、*minimumDirectXVersion*、*minimumSystemRam* の値のみです。 他の値はデベロッパー センターによって設定されます。
 
-| 値           | 型    | 説明                                                                                                                                                                                                                          |
+| 値           | 型    | 説明              |
 |-----------------|---------|------|
-| fileName   |   string      |  パッケージの名前です。    |  
+| fileName   |   string      |  パッケージの名前。    |  
 | fileStatus    | string    |  パッケージの状態です。 次のいずれかの値を使用できます。 <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
 | id    |  string   |  パッケージを一意に識別する ID です。 この値は、デベロッパー センターによって使用されます。   |     
 | version    |  string   |  アプリ パッケージのバージョンです。 詳しくは、「[パッケージ バージョンの番号付け](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering)」をご覧ください。   |   
@@ -268,9 +332,9 @@ Windows ストア申請 API の次のメソッドを使用して、パッケー�
 
 
 <span id="package-delivery-options-object" />
-### パッケージの配信オプション オブジェクト
+### <a name="package-delivery-options-resource"></a>パッケージの配信オプション リソース
 
-このリソースには、申請の段階的なパッケージのロールアウトと必須の更新の設定が含まれています。 次の例は、このリソースの書式設定を示しています。
+このリソースには、申請の段階的なパッケージのロールアウトと必須の更新の設定が含まれています。
 
 ```json
 {
@@ -291,12 +355,12 @@ Windows ストア申請 API の次のメソッドを使用して、パッケー�
 
 | 値           | 型    | 説明        |
 |-----------------|---------|------|
-| packageRollout   |   object      |  申請の段階的なパッケージのロールアウトの設定が含まれています。 詳しくは、以下の「[パッケージのロールアウト オブジェクト](#package-rollout-object)」セクションをご覧ください。    |  
+| packageRollout   |   object      |   申請の段階的なパッケージのロールアウトの設定が含まれた[パッケージのロールアウトのリソース](#package-rollout-object)です。    |  
 | isMandatoryUpdate    | boolean    |  この申請のパッケージを自己インストールのアプリの更新のために必須として扱うかどうかを指定します。 自己インストールのアプリの更新のために必須なパッケージについて詳しくは、「[アプリのパッケージの更新をダウンロードしてインストールする](../packaging/self-install-package-updates.md)」をご覧ください。    |  
 | mandatoryUpdateEffectiveDate    |  date   |  この申請のパッケージが必須となる日時 (ISO 8601 形式、UTC タイムゾーン)。   |        
 
 <span id="package-rollout-object" />
-### パッケージのロールアウト オブジェクト
+### <a name="package-rollout-resource"></a>パッケージのロールアウトのリソース
 
 このリソースには、申請の段階的な[パッケージのロールアウトの設定](#manage-gradual-package-rollout)が含まれています。 このリソースには、次の値があります。
 
@@ -309,12 +373,12 @@ Windows ストア申請 API の次のメソッドを使用して、パッケー�
 
 <span/>
 
-## 列挙型
+## <a name="enums"></a>列挙型
 
 これらのメソッドでは、次の列挙型が使用されます。
 
 <span id="submission-status-code" />
-### 申請の状態コード
+### <a name="submission-status-code"></a>申請の状態コード
 
 次のコードは、申請の状態を表します。
 
@@ -337,7 +401,7 @@ Windows ストア申請 API の次のメソッドを使用して、パッケー�
 
 <span/>
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [Windows ストア申請 API を使用したパッケージ フライトの管理](manage-flights.md)
@@ -350,6 +414,6 @@ Windows ストア申請 API の次のメソッドを使用して、パッケー�
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

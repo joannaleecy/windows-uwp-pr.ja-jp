@@ -6,24 +6,27 @@ ms.assetid: 6064755F-6E24-4901-A4FF-263F05F0DFD6
 label: Motion--Drag and drop
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 58934982554aa3caf0060c84df113d483e62e1d2
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: e71b936be1649f8ede394b019369176c7e3ca631
 
 ---
 
-# ドラッグ アニメーション
+# <a name="drag-animations"></a>ドラッグ アニメーション
 
 
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 ドラッグ アンド ドロップ アニメーションは、リスト内で項目を移動するときや、特定の項目を別の項目上にドロップするときなど、オブジェクトを移動する際に使います。
 
-**重要な API**
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**DragItemThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br243174)</li>
+</ul>
+</div>
 
--   [**DragItemThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br243174)
 
-
-## 推奨と非推奨
+## <a name="dos-and-donts"></a>推奨と非推奨
 
 
 **ドラッグの開始アニメーション**
@@ -52,9 +55,9 @@ ms.openlocfilehash: 58934982554aa3caf0060c84df113d483e62e1d2
 -   項目間でのドラッグの開始アニメーションよりも先に、項目間でのドラッグの中止アニメーションを使わないでください。
 
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
-**開発者向け (XAML)**
+**開発者向け**
 * [アニメーションの概要](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [ドラッグ アンド ドロップ シーケンスのアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649427)
 * [クイック スタート: ライブラリのアニメーションを使った UI のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
@@ -71,6 +74,6 @@ ms.openlocfilehash: 58934982554aa3caf0060c84df113d483e62e1d2
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

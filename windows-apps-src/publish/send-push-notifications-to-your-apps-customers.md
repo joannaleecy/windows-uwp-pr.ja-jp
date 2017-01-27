@@ -3,12 +3,12 @@ author: shawjohn
 Description: "顧客にアプリの評価またはアドオンの購入などを勧めるために、Windows デベロッパー センターからアプリにターゲット プッシュ通知を送信する方法について説明します。"
 title: "アプリの顧客にターゲット プッシュ通知を送信する"
 translationtype: Human Translation
-ms.sourcegitcommit: 3e3c9737784c81f5eb882296a82a4dcd879363e1
-ms.openlocfilehash: 817043579cfd068267c54f2eab9210ef303ca364
+ms.sourcegitcommit: e9cbfec938ebc71da6f41df69defcac1bb902245
+ms.openlocfilehash: c4bdd398db570c4962325c2164651e9e8a1935ff
 
 ---
 
-# アプリの顧客にターゲット プッシュ通知を送信する
+# <a name="send-targeted-push-notifications-to-your-apps-customers"></a>アプリの顧客にターゲット プッシュ通知を送信する
 
 適切なメッセージを適切なタイミングで送信して顧客を惹きつけることは、アプリ開発者として成功する鍵です。 Windows デベロッパー センターは、すべての顧客に、または[顧客セグメント](create-customer-segments.md)で定義した条件を満たす Windows 10 の顧客のサブセットだけにプッシュ通知を送信できる、データドリブンの顧客エンゲージメント プラットフォームを提供します。
 
@@ -16,14 +16,14 @@ ms.openlocfilehash: 817043579cfd068267c54f2eab9210ef303ca364
 
 > **重要** ターゲット プッシュ通知は UWP アプリでのみ使用できます。
 
-## プッシュ通知の使い方の概要に関するページ
+## <a name="getting-started-with-push-notifications"></a>プッシュ通知の使い方の概要に関するページ
 
 プッシュ通知を使用して顧客と関わりあうには、大まかには 3 つの操作を実行する必要があります。
-1. **プッシュ通知を受け取るためにアプリを登録します。** これを実行するには、アプリで Microsoft Store Services SDK への参照を追加し、デベロッパー センターとアプリ間で通知チャネルを登録するコードを数行追加します。 そのチャネルを使用して、プッシュ通知を顧客に配信します。 詳しくは、「[通知チャネルの登録](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.engagementclient.registernotificationchannelasync.aspx)」をご覧ください。
+1. **プッシュ通知を受け取るためにアプリを登録します。** これを実行するには、アプリで Microsoft Store Services SDK への参照を追加し、デベロッパー センターとアプリ間で通知チャネルを登録するコードを数行追加します。 そのチャネルを使用して、プッシュ通知を顧客に配信します。 詳しくは、「[デベロッパー センターのプッシュ通知を受信するようにアプリを設定する](../monetize/configure-your-app-to-receive-dev-center-notifications.md)」をご覧ください。
 2. **対象にする 1 つ以上の顧客セグメントを作成します。** 人口統計または収益条件に基づいて顧客をセグメントにグループ化することができます。 詳しくは、「[顧客セグメントの作成](create-customer-segments.md)」をご覧ください。
 3. **プッシュ通知を作成し、特定の顧客セグメントに送信します。** たとえば、新しい顧客にアプリの評価を促すために通知を送信する、またはアドオンの購入を促進する特別サービスを含む通知を送信します。
 
-## ターゲット プッシュ通知を作成して送信するには
+## <a name="to-create-and-send-a-targeted-push-notification"></a>ターゲット プッシュ通知を作成して送信するには
 
 1. まだこれを実行していない場合は、[Microsoft Store Services SDK](http://aka.ms/store-em-sdk) をインストールして、アプリのスタートアップ コードで [RegisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) メソッドを呼び出し、アプリを登録して通知を受け取ります。 このメソッドを呼び出す方法の詳細については、「[デベロッパー センターの通知を受け取るようにアプリを構成する](../monetize/configure-your-app-to-receive-dev-center-notifications.md)」をご覧ください。
 2.  [Windows デベロッパー センター ダッシュボード](https://developer.microsoft.com/dashboard/overview)で、アプリを選びます。
@@ -55,7 +55,7 @@ ms.openlocfilehash: 817043579cfd068267c54f2eab9210ef303ca364
 
 > **注:** 通知のコンテンツは、ストア [コンテンツ ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#content_policies)に準拠する必要があります。
 
-## 通知テンプレートの種類
+## <a name="notification-template-types"></a>通知テンプレートの種類
 
 さまざまな通知テンプレートから選択できます。
 
@@ -73,16 +73,16 @@ ms.openlocfilehash: 817043579cfd068267c54f2eab9210ef303ca364
 -   **販売の促進 (トースト)。** アプリのクーポンの通知に使用できるトースト通知。 顧客が通知を選択すると、アプリのストア登録情報が表示されます。
 - **更新のプロンプト (トースト)。** 古いバージョンのアプリを実行している顧客に最新バージョンをインストールするよう促すトースト通知。 顧客が通知を選択すると、ストア アプリに **[ダウンロードと更新]** 一覧が表示されます。 このテンプレートを使用するために顧客セグメントを作成する必要はないことに注意してください。 この通知は 24 時間以内にスケジュールされ、アプリの最新バージョンをまだ実行していないすべてのユーザーを対象にもれなく送信されます。
 
-## 通知のパフォーマンスの測定
+## <a name="measure-notification-performance"></a>通知のパフォーマンスの測定
 
 各通知を通じて、効率的に集客しているかを測定できます。
 
-###通知のパフォーマンスを測定するには
+###<a name="to-measure-notification-performance"></a>通知のパフォーマンスを測定するには
 
 1.  通知を作成するときに、**[通知のコンテンツ]** セクションで **[アプリの起動率の追跡]** チェック ボックスを選択します。
 2.  アプリで、[ParseArgumentsAndTrackAppLaunch](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch.aspx) メソッドを呼び出して、ターゲット通知に対する応答でアプリが起動されたことをデベロッパー センターに通知します。 このメソッドは Microsoft ストア SDK によって提供されます。 このメソッドを呼び出す方法の詳細については、「[デベロッパー センターの通知を受け取るようにアプリを構成する](../monetize/configure-your-app-to-receive-dev-center-notifications.md)」をご覧ください。
 
-###通知のパフォーマンスを表示するには
+###<a name="to-view-notification-performance"></a>通知のパフォーマンスを表示するには
 
 前述のとおり、[通知のパフォーマンスを測定](#to-measure-notification-performance)するように通知とアプリを構成すると、ダッシュボードを使用して通知のパフォーマンス状態を表示できます。
 
@@ -97,7 +97,7 @@ ms.openlocfilehash: 817043579cfd068267c54f2eab9210ef303ca364
  - **起動**: 通知が送信され、顧客が通知をクリックして、その結果、アプリが開かれました。 これは、アプリの起動のみを追跡することに注意してください。 ストアを起動して評価をするなど、他のアクションを実行するよう顧客に促す通知は、この状態には含まれていません。
  - **不明**: この通知の状態を特定できませんでした。
 
-## 通知の翻訳
+## <a name="translate-your-notifications"></a>通知の翻訳
 
 通知を最大限に活用するには、顧客が希望する言語に翻訳することを検討します。 デベロッパー センターでは、優れた [Microsoft Translator](https://msdn.microsoft.com/library/dd576287.aspx) サービスを活用して、通知を簡単に自動的に翻訳できます。
 
@@ -111,7 +111,7 @@ ms.openlocfilehash: 817043579cfd068267c54f2eab9210ef303ca364
  - 自動翻訳を上書きした後に英語バージョンの通知に別のテキスト ボックスを追加した場合は、新しいテキスト ボックスは翻訳済みの通知には追加されません。 その場合、翻訳済みの通知ごとに新しいテキスト ボックスを手動で追加する必要があります。
  - 通知が翻訳された後に英語のテキストを変更した場合は、翻訳済みの通知は変更に合わせて自動的に更新されます。 ただし、初期の翻訳を上書きすることを以前に選択している場合は、この処理は適用されません。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 - [UWP アプリのタイル、バッジ、通知](../controls-and-patterns/tiles-badges-notifications.md)
 - [Windows プッシュ通知サービス (WNS) の概要](../controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview.md)
 - [Windows プッシュ通知サービス (WNS) の概要 (Windows ランタイム アプリ)](https://msdn.microsoft.com/en-us/library/windows/apps/hh913756.aspx)
@@ -121,6 +121,6 @@ ms.openlocfilehash: 817043579cfd068267c54f2eab9210ef303ca364
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

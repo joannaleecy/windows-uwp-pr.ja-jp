@@ -4,12 +4,12 @@ title: "バックグラウンド タスクを実行するための条件の設�
 description: "バックグラウンド タスクをいつ実行するかを制御する条件の設定方法について説明します。"
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 translationtype: Human Translation
-ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
-ms.openlocfilehash: c22fed27b77f3287dd11a05c32405fe18521af65
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: c83f861f43209c42dff661e3277e1d8a1b67d37c
 
 ---
 
-# バックグラウンド タスクを実行するための条件の設定
+# <a name="set-conditions-for-running-a-background-task"></a>バックグラウンド タスクを実行するための条件の設定
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -27,9 +27,9 @@ ms.openlocfilehash: c22fed27b77f3287dd11a05c32405fe18521af65
 
 同じ [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) で AddCondition を複数回呼び出すことで、複数の条件を組み合わせることができます。 **UserPresent** や **UserNotPresent** など競合する条件を追加しないように注意してください。
 
-## SystemCondition オブジェクトを作る
+## <a name="create-a-systemcondition-object"></a>SystemCondition オブジェクトを作る
 
-ここでは、既にバックグラウンド タスクがアプリと関連付けられており、アプリでは、**taskBuilder** という [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) オブジェクトを作るためのコードが記述済みであることを前提とします。  最初にバックグラウンド タスクを作成する必要がある場合は、「[インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)」または「[アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-an-outofproc-background-task.md)」をご覧ください。
+ここでは、既にバックグラウンド タスクがアプリと関連付けられており、アプリでは、**taskBuilder** という [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) オブジェクトを作るためのコードが記述済みであることを前提とします。  最初にバックグラウンド タスクを作成する必要がある場合は、「[インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)」または「[アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」をご覧ください。
 
 このトピックの内容は、アウトプロセスで実行されるバックグラウンド タスク、およびフォアグラウンド アプリと同じプロセスで実行されるバックグラウンド タスクに適用されます。
 
@@ -45,7 +45,7 @@ ms.openlocfilehash: c22fed27b77f3287dd11a05c32405fe18521af65
 > SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionType::InternetAvailable);
 > ```
 
-## SystemCondition オブジェクトをバックグラウンド タスクに追加する
+## <a name="add-the-systemcondition-object-to-your-background-task"></a>SystemCondition オブジェクトをバックグラウンド タスクに追加する
 
 
 条件を追加するには、[**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) オブジェクトで [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) メソッドを呼び出して、[**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) オブジェクトに渡します。
@@ -60,7 +60,7 @@ ms.openlocfilehash: c22fed27b77f3287dd11a05c32405fe18521af65
 > taskBuilder->AddCondition(internetCondition);
 > ```
 
-## バックグラウンド タスクを登録する
+## <a name="register-your-background-task"></a>バックグラウンド タスクを登録する
 
 
 これで、バックグラウンド タスクを [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) メソッドに登録できます。このタスクは、指定した条件が満たされるまで、開始されません。
@@ -81,7 +81,7 @@ ms.openlocfilehash: c22fed27b77f3287dd11a05c32405fe18521af65
 
 > **注**  バックグラウンド タスクの登録パラメーターは登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 バックグラウンド タスクの登録が失敗するシナリオをアプリが適切に処理するようにします。タスクを登録しようとした後で、有効な登録オブジェクトを持っていることを前提として動作するアプリは、クラッシュする場合があります。
 
-## バックグラウンド タスクに複数の条件を設定する
+## <a name="place-multiple-conditions-on-your-background-task"></a>バックグラウンド タスクに複数の条件を設定する
 
 複数の条件を追加するには、アプリから [**で**](https://msdn.microsoft.com/library/windows/apps/br224769) メソッドを複数回呼び出します。 呼び出しは必ず、タスクの登録が有効になる前に行います。
 
@@ -150,18 +150,18 @@ ms.openlocfilehash: c22fed27b77f3287dd11a05c32405fe18521af65
 > BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ```
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 
 > **注**  バックグラウンド タスクが必要なときにのみ実行され、そうでない場合には実行されないようにするために、バックグラウンド タスクの条件を選んでください。 バックグラウンド タスクの各条件については、「[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)」をご覧ください。
 
 > **注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 ****
 
-* [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-an-outofproc-background-task.md)
+* [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
 * [インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)
 * [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
 * [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
@@ -181,6 +181,6 @@ ms.openlocfilehash: c22fed27b77f3287dd11a05c32405fe18521af65
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

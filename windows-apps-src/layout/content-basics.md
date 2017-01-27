@@ -5,19 +5,22 @@ title: "ユニバーサル Windows プラットフォーム (UWP) アプリの�
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
+op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 4ac800f9d2dd51ac074ec50cd1046e5a78c80710
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 7433fcabe455c0a0198cd23f883ed72b0b4558fc
 
 ---
 
-#  UWP アプリのコンテンツ デザインの基本
+#  <a name="content-design-basics-for-uwp-apps"></a>UWP アプリのコンテンツ デザインの基本
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 どのようなアプリでも、主な目的はコンテンツへのアクセスを提供することです。たとえば、写真編集アプリでは写真がコンテンツであり、旅行アプリでは地図と旅行の目的地に関する情報がコンテンツです。 ナビゲーション要素はコンテンツへのアクセスを提供します。コマンド要素はユーザーがコンテンツを操作できるようにし、コンテンツ要素は実際のコンテンツを表示します。
 
 この記事では、3 つのコンテンツ シナリオでのコンテンツの設計に関する推奨事項を示します。
 
-## <span id="Design_for_the_right_content_scenario"></span><span id="design_for_the_right_content_scenario"></span><span id="DESIGN_FOR_THE_RIGHT_CONTENT_SCENARIO"></span>適切なコンテンツ シナリオの設計
+## <a name="design-for-the-right-content-scenario"></a>適切なコンテンツ シナリオの設計
 
 
 次の 3 つの主要なコンテンツ シナリオがあります。
@@ -26,7 +29,7 @@ ms.openlocfilehash: 4ac800f9d2dd51ac074ec50cd1046e5a78c80710
 -   **作成**: 新しいコンテンツの作成が焦点となる、主に一方向のエクスペリエンス。 作成は、写真やビデオの撮影のように何かをゼロから作る、描画アプリで新しい画像を作る、新しいドキュメントを開くなどに分かれます。
 -   **対話型**: コンテンツの使用、作成、修正を含む、2 方向のコンテンツ エクスペリエンス。
 
-## <span id="Consumption-focused_apps"></span><span id="consumption-focused_apps"></span><span id="CONSUMPTION-FOCUSED_APPS"></span>使用に重点を置いたアプリ
+## <a name="consumption-focused-apps"></a>使用に重点を置いたアプリ
 
 
 使用に重点を置いたアプリでは、コンテンツ要素の優先順位が最も高く、ユーザーが目的のコンテンツを探すために必要な [ナビゲーション要素](navigation-basics.md) が次に続きます。 使用に重点を置いたアプリの例として、ムービー プレーヤー、読書アプリ、音楽アプリ、フォト ビューアーなどがあります。
@@ -38,7 +41,7 @@ ms.openlocfilehash: 4ac800f9d2dd51ac074ec50cd1046e5a78c80710
 -   専用の [ナビゲーション](navigation-basics.md) ページとコンテンツ表示ページを作成し、ユーザーが探していたコンテンツを見つけたときに、無駄な情報がない専用のページでそのコンテンツを表示できるようにすることを検討します。
 -   コンテンツを画面全体に拡張し、その他のすべての UI 要素を非表示にする、全画面表示のオプションを作成することを検討します。
 
-## <span id="Creation-focused_apps"></span><span id="creation-focused_apps"></span><span id="CREATION-FOCUSED_APPS"></span>作成に重点を置いたアプリ
+## <a name="creation-focused-apps"></a>作成に重点を置いたアプリ
 
 
 コンテンツと [コマンド](commanding-basics.md) 要素は、作成に重点を置いたアプリでは最も重要な UI 要素です。コマンド要素により、ユーザーは新しいコンテンツを作成することができます。 この例には、ペイント アプリ、写真編集アプリ、ビデオ編集アプリ、ワード プロセッシング アプリがあります。
@@ -52,7 +55,7 @@ ms.openlocfilehash: 4ac800f9d2dd51ac074ec50cd1046e5a78c80710
 -   [ナビゲーション](navigation-basics.md) 要素の使用を最小限に抑えます。
 -   [コマンド](commanding-basics.md)要素は、作成に重点を置いたアプリで特に重要です。 ユーザーは多くのコマンドを実行するため、コマンド履歴/元に戻す機能を提供することをお勧めします。
 
-## <span id="Apps_with_interactive_content"></span><span id="apps_with_interactive_content"></span><span id="APPS_WITH_INTERACTIVE_CONTENT"></span>対話型コンテンツを含むアプリ
+## <a name="apps-with-interactive-content"></a>対話型コンテンツを含むアプリ
 
 
 対話型コンテンツを含むアプリでは、ユーザーはコンテンツを作成、表示、編集します。多くのアプリはこのカテゴリに分類されます。 これらの種類のアプリの例には、基幹業務アプリ、在庫管理アプリ、ユーザーがレシピを作成または変更できる料理のアプリなどがあります。
@@ -68,7 +71,7 @@ ms.openlocfilehash: 4ac800f9d2dd51ac074ec50cd1046e5a78c80710
 
 -   3 つすべてが重要であるときに、ナビゲーション、コンテンツ、およびコマンド要素のバランスを取ることは困難である場合があります。 可能であれば、コンテンツの閲覧、作成、編集用の別の画面を作成するか、モード スイッチを提供することを検討します。
 
-## <span id="Commonly_used_content_elements"></span><span id="commonly_used_content_elements"></span><span id="COMMONLY_USED_CONTENT_ELEMENTS"></span>よく使われるコンテンツ要素
+## <a name="commonly-used-content-elements"></a>よく使われるコンテンツ要素
 
 
 コンテンツの表示によく使われるいくつかの UI 要素を次に示します。 UI 要素の全一覧については、「[コントロールと UI 要素](https://msdn.microsoft.com/library/windows/apps/dn611856)」をご覧ください。
@@ -123,6 +126,6 @@ ms.openlocfilehash: 4ac800f9d2dd51ac074ec50cd1046e5a78c80710
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

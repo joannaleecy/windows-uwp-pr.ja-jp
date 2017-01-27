@@ -6,11 +6,11 @@ ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scroll bars
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 3dd5912bdd210751257bb9e495c5a95ce0be20a5
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 8ead56e84e21aaf5005530ed0509efa9440bce59
 
 ---
-# スクロール バー
+# <a name="scroll-bars"></a>スクロール バー
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -22,29 +22,26 @@ ms.openlocfilehash: 3dd5912bdd210751257bb9e495c5a95ce0be20a5
 
 ![標準的なスクロール バーとパン インジケーター コントロールの外観のサンプル](images/SCROLLBAR.png)
 
+<div class="microsoft-internal-note">
+完全な赤線を [Design Depot](http://designdepot/DesignDepot.FrontEnd/#/ML/Dashboard/1805) で確認
+</div>
 
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209527"><strong>ScrollViewer クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx"><strong>ScrollBar クラス</strong></a></li>
+<li>[**ScrollViewer クラス**](https://msdn.microsoft.com/library/windows/apps/br209527)</li>
+<li>[**ScrollBar クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## 例
+## <a name="examples"></a>例
 
 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) を使って、実際のサイズよりも小さな領域にコンテンツを表示できるようにします。 スクロール ビューアーのコンテンツがまったく表示されないと、スクロール ビューアーは、表示されるコンテンツ領域を移動するためにユーザーが使用できるスクロール バーを表示します。 範囲は、スクロール ビューアーのすべてのコンテンツを指します。** ビューポートは、コンテンツの表示領域を指します。**
 
 ![標準的なスクロール バー コントロールを示すスクリーンショット](images/ScrollBar_Standard.jpg)
 
-## スクロール ビューアーを作成する
+## <a name="create-a-scroll-viewer"></a>スクロール ビューアーを作成する
 ページに垂直スクロールを追加するには、スクロール ビューアーでページのコンテンツをラップします。
 
 ```xaml
@@ -72,7 +69,7 @@ ms.openlocfilehash: 3dd5912bdd210751257bb9e495c5a95ce0be20a5
 </ScrollViewer>
 ```
 
-## コントロール テンプレートにおける ScrollViewer
+## <a name="scrollviewer-in-a-control-template"></a>コントロール テンプレートにおける ScrollViewer
 
 ScrollViewer コントロールが他のコントロールの複合パートとして存在するのは一般的です。 ScrollViewer パーツは、サポートのための [**ScrollContentPresenter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollcontentpresenter.aspx) クラスと共に、ホスト コントロールのレイアウト スペースが展開されたコンテンツのサイズより小さく制限されている場合にのみ、スクロール バーと、ビューポートを表示します。 多くの場合、リストがこれに該当するため、[**ListView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) テンプレートは常に ScrollViewer を含めます。 [**TextBox**
             ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) と [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) もまたテンプレートに ScrollViewer を含みます。
@@ -109,7 +106,7 @@ ScrollViewer では、次の XAML 添付プロパティを定義します。
 ScrollViewer が XAML で明示的である場合、コード例に示すように、添付プロパティ構文を使用する必要はありません。 属性構文 (たとえば `<ScrollViewer VerticalScrollBarVisibility="Visible"/>`) を使うだけです。
 
 
-## 推奨事項
+## <a name="dos-and-donts"></a>推奨と非推奨
 
 -   できる限り、水平方向ではなく垂直方向のスクロールを設計してください。
 -   コンテンツ領域が 1 つのビューポート境界 (垂直方向または水平方向) を超えている場合は、単一軸のパンを使います。 コンテンツ領域が両方のビューポート境界 (垂直方向と水平方向) を超えている場合は、2 軸のパンを使います。
@@ -119,13 +116,13 @@ ScrollViewer が XAML で明示的である場合、コード例に示すよう�
 -   1 つのオブジェクトのみを含める場合にスクロール ビューアーを使います。 1 つのオブジェクトをレイアウト パネルとし、その任意の数のオブジェクトを含めることができる点に注意してください。
 -   ピボットのスクロール ロジックが競合するのを避けるため、スクロール ビューアー内には[ピボット](tabs-pivot.md) コントロールを配置しないでください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 **開発者向け (XAML)**
 * [**ScrollViewer クラス**](https://msdn.microsoft.com/library/windows/apps/br209527)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

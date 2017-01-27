@@ -6,16 +6,18 @@ title: "サウンド"
 template: detail.hbs
 ms.assetid: 9fa77494-2525-4491-8f26-dc733b6a18f6
 translationtype: Human Translation
-ms.sourcegitcommit: e240197b4cc233b9fc1ecaa4a1835c4a4dcd3bf8
-ms.openlocfilehash: 91021d76b180e2bc26c0d502098e0a0b21f0219f
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 5e4decdfdda0cad59d80395440f974d4ff3303a6
 
 ---
 
-# サウンド
+# <a name="sound"></a>サウンド
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 サウンドを使ってアプリを向上させるには、さまざまな方法があります。 ユーザーがイベントを音声で認識できるように、サウンドを使って他の UI 要素を補完できます。 視覚障碍のあるユーザーにとって、サウンドは効果的なユーザー インターフェイスの要素となる可能性があります。 サウンドを使ってユーザーを釘づけにするような雰囲気を作ることができます。たとえば、パズル ゲームのバックグラウンドで風変わりなサウンドトラックを再生したり、ホラー ゲームやサバイバル ゲームで不気味なサウンド効果を使う可能性があります。
 
-## サウンドのグローバル API
+## <a name="sound-global-api"></a>サウンドのグローバル API
 
 UWP には使いやすいサウンド システムが用意されていて、「スイッチを切り替える」だけで、アプリ全体にイマーシブなオーディオ エクスペリエンスを実装することができます。
 
@@ -27,12 +29,12 @@ ElementSoundPlayer.State = ElementSoundPlayerState.On;
 
 **Off** に設定すると、アプリの実行環境に関わらず、サウンドが再生されることはありません。 **On** に設定すると、すべてのプラットフォームで、アプリのサウンドが再生されます。
 
-### テレビや Xbox のサウンド
+### <a name="sound-for-tv-and-xbox"></a>テレビや Xbox のサウンド
 
 サウンドは 10 フィート エクスペリエンスの重要なパーツであるため、既定では、**ElementSoundPlayer** の状態は **Auto**、つまり、アプリが Xbox で実行されているときにのみサウンドが再生されます。
 Xbox やテレビ向けの設計について詳しくは、「[Xbox およびテレビ向け設計](http://go.microsoft.com/fwlink/?LinkId=760736)」の記事をご覧ください。
 
-## 音量設定のオーバーライド
+## <a name="sound-volume-override"></a>音量設定のオーバーライド
 
 アプリ内のすべてのサウンドは、**Volume** コントロールで小さくすることができます。 しかし、アプリ内のサウンドを*システムの音量より大きく*することができません。
 
@@ -42,7 +44,7 @@ ElementSoundPlayer.Volume = 0.5f;
 ```
 ここで、最大の音量はシステムの音量に相対的に1.0、最小は 0.0 (本質的にサイレント)です。
 
-## コントロール レベルの状態
+## <a name="control-level-state"></a>コントロール レベルの状態
 
 コントロールの既定のサウンドが望ましくない場合は、これを無効にできます。 サウンドを無効にするには、コントロールで **ElementSoundMode** を使います。
 
@@ -56,13 +58,13 @@ ElementSoundPlayer.Volume = 0.5f;
 ButtonName.ElementSoundState = ElementSoundMode.Off;
 ```
 
-## 適切なサウンドの選択
+## <a name="is-this-the-right-sound"></a>適切なサウンドの選択
 
 カスタム コントロールを作成したり、既にあるコントロールのサウンドを変更したりするときには、システムが提供するすべてのサウンドの使用法を理解することが重要です。
 
 各サウンドは特定の基本的なユーザー操作に関連付けられています。すべての対話式操作で再生するサウンドをカスタマイズできますが、このセクションでは、すべての UWP アプリで一貫したエクスペリエンスを維持するためにサウンドを使う必要がある、というシナリオを説明します。
 
-### 要素の呼び出し
+### <a name="invoking-an-element"></a>要素の呼び出し
 
 現在のシステムで最も一般的な、コントロールにトリガーされるサウンドは、**Invoke** サウンドです。 このサウンドは、ユーザーがタップ、クリック、入力、スペース、または、ゲームパッドの [A] ボタンを押すことでコントロールを呼び出したときに、再生されます。
 
@@ -75,7 +77,7 @@ ButtonName.ElementSoundState = ElementSoundMode.Off;
 ElementSoundPlayer.Play(ElementSoundKind.Invoke);
 ```
 
-### コンテンツの表示と非表示
+### <a name="showing--hiding-content"></a>コンテンツの表示と非表示
 
 XAML には多くのポップアップやダイアログ、閉じることができる UI があり、これらのオーバーレイのいずれかをトリガーするすべての操作で **Show** または **Hide** サウンドを呼び出す必要があります、
 
@@ -93,7 +95,7 @@ ElementSoundPlayer.Play(ElementSoundKind.Show);
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Hide);
 ```
-### ページ内でのナビゲーション
+### <a name="navigation-within-a-page"></a>ページ内でのナビゲーション
 
 アプリのページ内でパネルまたはビューの間をナビゲーションする場合 (「[ハブ](../controls-and-patterns/hub.md)」または「[タブとピボット](../controls-and-patterns/tabs-pivot.md)」をご覧ください)、通常は、移動の方向は双方向です。 つまり、現在表示しているアプリのページを離れずに、次のビュー/パネルまたは前のビュー/パネルに移動できます。
 
@@ -113,7 +115,7 @@ ElementSoundPlayer.Play(ElementSoundKind.MoveNext);
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.MovePrevious);
 ```
-### 戻るナビゲーション
+### <a name="back-navigation"></a>戻るナビゲーション
 
 アプリ内で現在のページから前のページにナビゲーションするときは、**GoBack** サウンドを呼び出す必要があります。
 
@@ -122,7 +124,7 @@ ElementSoundPlayer.Play(ElementSoundKind.MovePrevious);
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.GoBack);
 ```
-### 要素へのフォーカス
+### <a name="focusing-on-an-element"></a>要素へのフォーカス
 
 マイクロソフトのシステムの **Focus** サウンドは、唯一の暗黙的なサウンドです。 つまり、ユーザーは、何かを直接操作していなくてもサウンドが聞こえます。
 
@@ -135,18 +137,18 @@ ElementSoundPlayer.Play(ElementSoundKind.GoBack);
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Focus);
 ```
-### フォーカス サウンドの循環
+### <a name="cycling-focus-sounds"></a>フォーカス サウンドの循環
 
 **ElementSound.Focus** 呼び出しの追加機能として、サウンド システムは、既定で、ナビゲーション トリガーごとに 4 つの異なるサウンドを循環させます。 つまり、2 つの同じフォーカス サウンドが前後して再生されることはありません。
 
 この循環機能の目的は、フォーカス サウンドが単調になることを防ぎ、ユーザーの注意をひかない状態を保つことです。フォーカス サウンドは、最もよく再生されるため、最も繊細なサウンドにする必要があります。
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 * [Xbox およびテレビ向け設計](http://go.microsoft.com/fwlink/?LinkId=760736)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

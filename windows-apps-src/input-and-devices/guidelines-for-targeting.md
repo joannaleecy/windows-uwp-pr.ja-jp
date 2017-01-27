@@ -6,22 +6,24 @@ ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 5b52f6a8e944e4166c2f4c7e16e4a83ddff23dac
-ms.openlocfilehash: 09e2241523411daa372bc7630d13b96a2aa8203b
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 9710e3060410428e1a4b7cfe89442c7df8602ed2
 
 ---
 
 # <a name="guidelines-for-targeting"></a>ターゲット設定のガイドライン
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Windows のタッチ補正では、タッチ デジタイザーで検出されるそれぞれの指が接触する領域全体を使います。 デジタイザーから伝えられる、より広く複雑なこの入力データのセットを使うと、ユーザーが意図した (または意図した可能性が高い) ターゲットをより正確に特定できます。
 
-**重要な API**
-
--   [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
--   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
-
-
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)</li>
+<li>[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</li>
+<li>[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)</li>
+</ul>
+</div>
 
 このトピックでは、タッチ補正のための接触形状の使用について説明し、UWP アプリでのターゲット設定のベスト プラクティスを紹介します。
 
@@ -175,6 +177,6 @@ Windows では、ここで示した最小サイズや推奨する余白サイズ
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

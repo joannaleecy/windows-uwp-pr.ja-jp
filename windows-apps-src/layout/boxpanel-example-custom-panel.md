@@ -4,29 +4,37 @@ Description: "カスタム Panel クラスのコードの記述、ArrangeOverrid
 MS-HAID: dev\_ctrl\_layout\_txt.boxpanel\_example\_custom\_panel
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: "BoxPanel、カスタム パネルの例"
+title: "BoxPanel、カスタム パネルの例 (Windows アプリ)"
 ms.assetid: 981999DB-81B1-4B9C-A786-3025B62B74D6
 label: BoxPanel, an example custom panel
 template: detail.hbs
+op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 4427219987f0524858233cf382cd13121cf77b07
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 9f711fbd6f3562fb05fee70f42304204e602bc0b
 
 ---
 
-# BoxPanel、カスタム パネルの例
+# <a name="boxpanel-an-example-custom-panel"></a>BoxPanel、カスタム パネルの例
 
-**重要な API**
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
--   [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511)
--   [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)
--   [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
+カスタム [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) クラスのコードの記述、[**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) メソッドと [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) メソッドの実装、[**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) プロパティの使用について説明します。 
 
-カスタム [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) クラスのコードの記述、[**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) メソッドと [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) メソッドの実装、[**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) プロパティの使用について説明します。 コード例ではカスタム パネルの実装を示しますが、さまざまなレイアウト シナリオのパネルのカスタマイズ方法に影響を与えるレイアウトの概念については、詳しく説明していません。 このようなレイアウトの概念や、自分の特定のレイアウト シナリオへの適用方法に関する詳細情報が必要な場合は、「[XAML カスタム パネルの概要](custom-panels-overview.md)」をご覧ください。
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511)</li>
+<li>[**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)</li>
+<li>[**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) </li>
+</ul>
+</div>
+
+コード例ではカスタム パネルの実装を示しますが、さまざまなレイアウト シナリオのパネルのカスタマイズ方法に影響を与えるレイアウトの概念については、詳しく説明していません。 このようなレイアウトの概念や、自分の特定のレイアウト シナリオへの適用方法に関する詳細情報が必要な場合は、「[XAML カスタム パネルの概要](custom-panels-overview.md)」をご覧ください。
 
 *パネル*は、XAML レイアウト システムが実行されて、アプリの UI が表示されるときに、含まれている子要素のレイアウト動作を提供するオブジェクトです。 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) クラスからカスタム クラスを派生させて、XAML レイアウトのカスタム パネルを定義できます。 パネルの動作は、[**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) メソッドと [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) メソッドをオーバーライドすることで子要素を評価して配置するロジックを提供して実行します。 この例は、**Panel** から派生しています。 **Panel** から開始した場合、**ArrangeOverride** メソッドと **MeasureOverride** メソッドには起動動作がありません。 コードが提供するゲートウェイによって、子要素が XAML レイアウト システムに認識され、UI に表示されます。 したがって、コードがすべての子要素について説明し、レイアウト システムが想定しているパターンに従うことが実際に重要です。
 
-## レイアウト シナリオ
+## <a name="your-layout-scenario"></a>レイアウト シナリオ
 
 カスタム パネルを定義することは、レイアウト シナリオを定義することです。
 
@@ -38,7 +46,7 @@ ms.openlocfilehash: 4427219987f0524858233cf382cd13121cf77b07
 
 この点を考慮して、特定のシナリオが使用する `BoxPanel` を次に示します。 この例でコードを最優先するために、ここではシナリオを詳しくは説明しません。その代わり、必要な手順とコーディング パターンについて重点的に説明します。 最初にシナリオについて詳しく知りたい場合は、この後にある「[`BoxPanel` のシナリオ](#scenario)」を参照した後、コードの説明に戻ってください。
 
-## **Panel** からの派生で開始する
+## <a name="start-by-deriving-from-panel"></a>**Panel** からの派生で開始する
 
 まず、[**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) からカスタム クラスを派生させます。 このために最も簡単と思われる方法は、このクラスのための別のコード ファイルを定義することです。これには、Microsoft Visual Studio の**ソリューション エクスプローラー**でプロジェクトに対してコンテキスト メニューの **[追加]** | **[新しい項目]** | **[クラス]** をクリックします。 このクラス (とファイル) に、`BoxPanel` という名前を付けます。
 
@@ -82,7 +90,7 @@ public class BoxPanel : Panel
 
 これ以降は、メソッドのオーバーライド、依存関係プロパティなどのサポートするものなどのメンバー定義を 1 つずつ示します。 これらは、上に示したスケルトンに任意の順序で追加できます。最終的なコードを示すまで、スニペットでは、**using** ステートメントとクラス スコープの定義のいずれも再び示すことはありません。
 
-## **MeasureOverride**
+## **<a name="measureoverride"></a>MeasureOverride**
 
 
 ```CSharp
@@ -128,7 +136,8 @@ protected override Size MeasureOverride(Size availableSize)
 
 このパネルが、*availableSize* の高さコンポーネントが無限である場合に使われる可能性があります。 これに該当する場合、パネルには、分割するための既知の高さがありません。 この場合、測定パスのロジックは、有限の高さがまだないことを各子要素に知らせます。 知らせるには、[**Size.Height**](https://msdn.microsoft.com/library/windows/apps/hh763910) が無限である子の [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 呼び出しに [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) を渡します。 これは適正な動作です。 **Measure** が呼び出されるときのロジックは、[**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) が、**Measure** に渡されたものの最小値、または、明示的に設定された [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) と [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) などの要因からのその要素の自然なサイズの最小値として設定されていることです。
 
-**注:** &nbsp;&nbsp;[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) の内部ロジックにも、この動作があります。**StackPanel** は、子の [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) に無限サイズの値を渡します。これは、子には、向きのサイズの制約がないことを示します。 **StackPanel** は、通常、動的にサイズ設定され、そのサイズ内で拡大されるスタックにすべての子が配置されます。
+> [!NOTE]
+> [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) の内部ロジックにも、この動作があります。**StackPanel** は、子の [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) に無限サイズの値を渡します。これは、子には、向きのサイズの制約がないことを示します。 **StackPanel** は、通常、動的にサイズ設定され、そのサイズ内で拡大されるスタックにすべての子が配置されます。
 
 ただし、パネル自体は、[**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) から、無限値を持つ [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) を返すことができません。返すと、レイアウト時に例外がスローされます。 したがって、ロジックの一部は、子が要求する最大の高さを調べ、それが既にパネル自体のサイズ制約によるものでない場合は、その高さをセルの高さとして使うことです。 次に示すのは、前のコードで参照されるヘルパー関数 `LimitUnboundedSize` です。これは、このセルの最大の高さを受け取り、これを使って、返すことができる有限の高さをパネルに与えます。また、配置パスの開始前に `cellheight` が有限数であることを確認します。
 
@@ -149,7 +158,7 @@ Size LimitUnboundedSize(Size input)
 }
 ```
 
-## **ArrangeOverride**
+## **<a name="arrangeoverride"></a>ArrangeOverride**
 
 ```CSharp
 protected override Size ArrangeOverride(Size finalSize)
@@ -180,7 +189,7 @@ protected override Size ArrangeOverride(Size finalSize)
 
 入力 *finalSize* と、[**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) の実装から返す [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) が同じであることは一般的です。 その理由について詳しくは、「[XAML カスタム パネルの概要](custom-panels-overview.md)」の「**ArrangeOverride**」セクションをご覧ください。
 
-## 改良: 行と列の数の制御
+## <a name="a-refinement-controlling-the-row-vs-column-count"></a>改良: 行と列の数の制御
 
 このパネルは、コンパイルして、そのまま使用できます。 ただし、もう 1 つ改良を加えます。 ここで示したコードで、ロジックは、縦横比で最も長い側に、追加の行または列を設定しています。 ただし、セルの形状をさらに制御するには、パネル自体の縦横比が "縦長" であっても、3×4 ではなく、4×3 のセル セットを選択する方が適切である場合があります。 そのため、その動作を制御するためにパネルのユーザーが設定できる、オプションの依存関係プロパティを追加します。 この依存関係プロパティ定義は、次に示すように、非常に基本的です。
 
@@ -201,7 +210,7 @@ public bool UseSquareCells
 if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 ```
 
-## BoxPanel のシナリオ
+## <a name="the-scenario-for-boxpanel"></a>BoxPanel のシナリオ
 
 `BoxPanel` の特定のシナリオは、子項目の数がわかっており、パネルで使用できるとわかっているスペースを分割することが、スペースの分割方法の主な決定要因の 1 つであるパネルです。 パネルの形状は本質的に四角形です。 多くのパネルは、その四角形のスペースをさらに四角形に分割して動作します。これは、セルに対する [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の動作です。 **Grid** の場合は、セルのサイズが [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/br209324) と [**RowDefinition**](https://msdn.microsoft.com/library/windows/apps/br227606) の値によって設定され、これらの値が使用される正確なセルが要素によって、[**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) 添付プロパティと [**Grid.Column**](https://msdn.microsoft.com/library/windows/apps/hh759774) 添付プロパティで宣言されます。 **Grid** から適切なレイアウトを取得するには、通常、子要素の数を事前に知っている必要があります。これは、セルの数が十分であり、各子要素がそのセル サイズに収まるように自身の添付プロパティを設定する必要があるためです。
 
@@ -213,24 +222,23 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 
 10 項目の場合にパネルが、ちょうど収まる 5×2 を選択しないのは不思議に思われます。 ただし、実際には、向きがはっきりした縦横比の四角形としてパネルがサイズ設定されることは稀です。 最小正方形の手法は、サイズ設定ロジックを偏らせて、一般的なレイアウトの図形を適切に処理し、セルの形状が極端な縦横比になるサイズ設定を防ぐための 1 つの方法です。
 
-**注:**&nbsp;&nbsp;この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+> [!NOTE]
+> この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 **リファレンス**
 
-[**FrameworkElement.ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)
-
-[**FrameworkElement.MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
-
-[**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511)
+* [**FrameworkElement.ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)
+* [**FrameworkElement.MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
+* [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511)
 
 **概念**
 
-[配置、余白、およびパディング](alignment-margin-padding.md)
+* [配置、余白、およびパディング](alignment-margin-padding.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

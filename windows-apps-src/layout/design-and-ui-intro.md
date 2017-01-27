@@ -1,17 +1,20 @@
 ---
 author: mijacobs
 Description: "この記事では、デザインの観点からユニバーサル Windows プラットフォーム (UWP) の機能、利点、要件について説明します。 無料で提供されるプラットフォーム、自由に使うことができるツールを紹介します。"
-title: "ユニバーサル Windows プラットフォーム (UWP) アプリ設計の概要"
+title: "ユニバーサル Windows プラットフォーム (UWP) アプリ設計の概要 (Windows アプリ)"
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 label: Intro to UWP app design
 template: detail.hbs
+op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 06925bc42aab6d2ca7bf97c48161cca5e1cf840b
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: e6169f033a224c6ad9c3ba47ef1fd0a80e137dff
 
 ---
 
-#  UWP アプリ設計の概要 
+#  <a name="introduction-to-uwp-app-design"></a>UWP アプリ設計の概要 
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 ユニバーサル Windows プラットフォーム (UWP) アプリは、電話からタブレット、PC まで、任意の Windows ベース デバイスで実行できます。
 
@@ -23,9 +26,9 @@ ms.openlocfilehash: 06925bc42aab6d2ca7bf97c48161cca5e1cf840b
 
 この記事では、UWP アプリの UI の機能と利点について説明し、UWP アプリを初めて作成する場合のいくつかの大まかな設計ガイダンスを紹介します。 最初に、UWP アプリの作成時に利用できる一部の機能を見てみましょう。 
 
-## UWP アプリの機能
+## <a name="uwp-app-features"></a>UWP アプリの機能
 
-### 有効ピクセルとスケーリング
+### <a name="effective-pixels-and-scaling"></a>有効ピクセルとスケーリング
 
 UWP アプリは、すべてのデバイスで読みやすいように、コントロール、フォント、およびその他の UI 要素のサイズを自動的に調整します。
 
@@ -35,7 +38,7 @@ UWP アプリは、すべてのデバイスで読みやすいように、コン�
 
 スケーリング システムのしくみのため、UWP アプリをデザインするときには、実際の物理ピクセルではなく、*有効ピクセル*でデザインすることになります。 それでは、これは、アプリの設計方法にどのような影響を及ぼすでしょうか。
 
--   設計時には、ピクセル密度と実際の画面解像度を無視できます。 その代わり、サイズ クラスの有効な解像度 (有効ピクセル単位の解像度) が向上するように設計します (サイズ クラスは、[この記事の後半で](#sizeclasses)定義します)。
+-   設計時には、ピクセル密度と実際の画面解像度を無視できます。 その代わり、サイズ クラスの有効な解像度 (有効ピクセル単位の解像度) が向上するように設計します (詳しくは、「[画面のサイズとブレークポイント](screen-sizes-and-breakpoints-for-responsive-design.md)」をご覧ください)。
 
 -   システムによる UI のスケーリングは、4 の倍数単位で行われます。 外観が鮮明になるように、4x4 のピクセル グリッドにデザインをスナップします。余白、UI 要素のサイズと位置、およびテキストの位置 (サイズは除きます。テキストのサイズに制限はありません) を、4 有効ピクセルの倍数にします。
 
@@ -47,14 +50,15 @@ UWP アプリは、すべてのデバイスで読みやすいように、コン�
 
 ![4x4 のピクセル グリッドに合わせて配置されないデザイン要素](images/rsp-design/offthegridillustration.png)
 
-**ヒント**   イメージ編集プログラムで画面のモックアップを作成するときは、DPI を 72 に設定し、画像サイズを、対象のサイズ クラスで有効な解像度に設定します (サイズ クラスと有効な解像度の一覧については、後述の「[特定のサイズ クラスの推奨事項](#sizeclasses)」をご覧ください)。
+> [!TIP]
+> イメージ編集プログラムで画面のモックアップを作成するときは、DPI を 72 に設定し、画像サイズを、対象のサイズ クラスで有効な解像度に設定します (サイズ クラスと有効な解像度の一覧については、後述の「[特定のサイズ クラスの推奨事項](#sizeclasses)」をご覧ください)。
 
 
-### ユニバーサル入力とスマート操作
+### <a name="universal-input-and-smart-interactions"></a>ユニバーサル入力とスマート操作
 
 UWP のもう 1 つの組み込み機能は、スマート操作によって有効になるユニバーサル入力です。 特定の入力モードやデバイス用にアプリを設計することもできますが、そうする必要はありません。 ユニバーサル Windows アプリでは、既定でスマート操作が使用されます。 つまり、クリックの発生元が実際のマウス クリックであるか、指によるタップであるかどうかを認識または定義しなくても、クリック操作に対応したデザインを行うことができます。
 
-### ユニバーサル コントロールとスタイル
+### <a name="universal-controls-and-styles"></a>ユニバーサル コントロールとスタイル
 
 
 UWP には、複数のデバイス ファミリに対応したアプリを簡単にデザインできる、便利な構成要素が用意されています。
@@ -85,7 +89,7 @@ UWP には、複数のデバイス ファミリに対応したアプリを簡単
 
 ここまで、UWP アプリの構成要素について説明しました。次に、それらを組み合わせて UI を作成する方法を見てみましょう。 
     
-## 一般的な UWP アプリの構造
+## <a name="the-anatomy-of-a-typical-uwp-app"></a>一般的な UWP アプリの構造
 
 
 最新のユーザー インターフェイスは複雑であり、テキスト、形状、色、アニメーションで構成されますが、それらは最終的には使っているデバイスの画面の個々のピクセルで構成されます。 ユーザー インターフェイスの設計を開始すると、選択肢が多すぎて圧倒されることがあります。
@@ -94,7 +98,7 @@ UWP には、複数のデバイス ファミリに対応したアプリを簡単
 
 
 
-<table>
+<table class="uwpd-noborder" >
 <colgroup>
 <col width="50%" />
 <col width="50%" />
@@ -122,7 +126,7 @@ UWP には、複数のデバイス ファミリに対応したアプリを簡単
 
 アプリに適切な UI 要素を決めるときには、アプリが実行されるデバイスや画面サイズも考慮に入れるかもしれません。
 
-## <span id="Why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="WHY_TAILOR_YOUR_APP_FOR_SPECIFIC_DEVICE_FAMILIES_AND_SCREEN_SIZES_"></span>特定のデバイスと画面サイズに合わせたアプリの調整
+## <a name="tailoring-your-app-for-specific-devices-and-screen-sizes"></a>特定のデバイスと画面サイズに合わせたアプリの調整
 
 
 UWP アプリでは、すべての Windows デバイスで、デザイン要素が見やすく操作しやすい効果的なピクセルが使用されます。 このため、特定のデバイス ファミリー向けにアプリの UI をカスタマイズする理由がありません。
@@ -146,12 +150,12 @@ UWP アプリでは、すべての Windows デバイスで、デザイン要素�
 
     ユニバーサル コントロール ライブラリは、すべての入力タイプ (タッチ、ペン、キーボード、マウス) と連携できますが、その場合も、UI 要素を再配置して、特定の入力タイプを最適化することができます。 たとえば、画面の下部にナビゲーション要素を配置すると、携帯電話のユーザーにとってはアクセスしやすくなりますが、ほとんどの PC ユーザーは、ナビゲーション要素は画面の上部に表示されると想定しています。
 
-## <span id="Responsive_design_techniques"></span><span id="responsive_design_techniques"></span><span id="RESPONSIVE_DESIGN_TECHNIQUES"></span>レスポンシブ デザインの手法
+## <a name="responsive-design-techniques"></a>レスポンシブ デザインの手法
 
 
 アプリの UI を特定の画面の幅に合わせて最適化することは、レスポンシブ デザインの作成と呼ばれます。 ここでは、アプリの UI のカスタマイズに使用できる 6 種類のレスポンシブ デザイン手法を紹介します。
 
-### <span id="Reposition"></span><span id="reposition"></span><span id="REPOSITION"></span>位置の変更
+### <a name="reposition"></a>位置の変更
 
 アプリの UI 要素の場所と位置を変更して、各デバイスを最大限に活用することができます。 この例では、電話やファブレットのビューが縦向きであり、完全なフレームが一度に 1 つだけ表示されるため、スクロール UI が必要です。 縦方向か横方向かを問わず、2 つの画面フレームを表示できるデバイスでアプリが使用される場合、フレーム B は、専用の領域を占有できます。 グリッドを使用して配置する場合は、UI 要素が再配置されるときに同じグリッドに従うことができます。
 
@@ -161,13 +165,13 @@ UWP アプリでは、すべての Windows デバイスで、デザイン要素�
 
 ![大きな画面にコンテンツに再配置するアプリの設計](images/rsp-design/rspd-reposition-type1.png)
 
-### <span id="Resize"></span><span id="resize"></span><span id="RESIZE"></span>サイズ変更
+### <a name="resize"></a>サイズ変更
 
 余白と UI 要素のサイズを調整して、フレーム サイズを最適化できます。 次の例が示すように、これにより、コンテンツ フレームを拡大するだけで、より大きな画面で画面を見やすくすることができます。
 
 ![デザイン要素のサイズ変更](images/rsp-design/rspd-resize.png)
 
-### <span id="Reflow"></span><span id="reflow"></span><span id="REFLOW"></span>再配置
+### <a name="reflow"></a>再配置
 
 デバイスと向きに応じて UI 要素のフローを変更すると、アプリでコンテンツの表示を最適化できます。 たとえば、より大きな画面を対象にする場合は、より大きなコンテナーに切り替え、列を追加し、別の方法でリスト項目を生成することが効果的である可能性があります。
 
@@ -175,7 +179,7 @@ UWP アプリでは、すべての Windows デバイスで、デザイン要素�
 
 ![デザイン要素の再配置](images/rsp-design/rspd-reflow.png)
 
-### <span id="_____________Reveal___________"></span><span id="_____________reveal___________"></span><span id="_____________REVEAL___________"></span> 表示
+###  <a name="reveal"></a>表示
 
 UI は、画面領域に基づいて表示したり、デバイスが追加機能、特定の状況、または推奨される画面の向きをサポートする場合に表示できます。
 
@@ -191,13 +195,13 @@ UI は、画面領域に基づいて表示したり、デバイスが追加機�
 -   どのアプリでも、列を分割して、さらに詳細な情報を表示できます。
 -   どのアプリでも、縦に並べられたものを横に並べて配置することができます。 携帯電話やファブレットから大型デバイスに移行する場合、縦に並べられたリスト項目は、リスト項目の行とメタデータの列の表示に変更できます。
 
-### <span id="Replace"></span><span id="replace"></span><span id="REPLACE"></span>置換
+### <a name="replace"></a>置換
 
 この手法では、特定のデバイスのサイズ クラスまたは向きにユーザー インターフェイスを切り替えることができます。 次の例では、ナビゲーション ウィンドウとそのコンパクトで一時的な UI は小型デバイスに適していますが、大型デバイスには、タブの方が適しています。
 
 ![デザイン要素の置き換え](images/rsp-design/rspd-replace.png)
 
-### <span id="_____________Re-architect___________"></span><span id="_____________re-architect___________"></span><span id="_____________RE-ARCHITECT___________"></span> 再構築
+###  <a name="re-architect"></a>再構築
 
 アプリのアーキテクチャを折りたたんだり、分岐させたりして、対象となる特定のデバイスをより明確にすることができます。 次の例では、左側のデバイスから右側のデバイスに移動すると、ページが結合されます。
 
@@ -208,7 +212,7 @@ UI は、画面領域に基づいて表示したり、デバイスが追加機�
 ![レスポンシブ デザインの再構築手法を使用する設計の例](images/rsp-design/rspd-rearchitect-type1.png)
 
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 - [UWP アプリとは](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx)
 
@@ -220,6 +224,6 @@ UI は、画面領域に基づいて表示したり、デバイスが追加機�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -4,12 +4,12 @@ title: "バックグラウンド タスクのデバッグ"
 description: "バックグラウンド タスクをデバッグする方法について説明します。バックグラウンド タスクのアクティブ化のほか、Windows イベント ログでのデバッグ トレースなどについて取り上げます。"
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 translationtype: Human Translation
-ms.sourcegitcommit: e094ed9e0110fee33275721c4b6547ba53c1da3e
-ms.openlocfilehash: c4717ac41992d9a0c04d098067881ce5ca6952f0
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: 6e1184729af929b771f21112083593e321cacc38
 
 ---
 
-# バックグラウンド タスクのデバッグ
+# <a name="debug-a-background-task"></a>バックグラウンド タスクのデバッグ
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -18,10 +18,10 @@ ms.openlocfilehash: c4717ac41992d9a0c04d098067881ce5ca6952f0
 
 バックグラウンド タスクをデバッグする方法について説明します。バックグラウンド タスクのアクティブ化のほか、Windows イベント ログでのデバッグ トレースなどについて取り上げます。
 
-## アウトプロセス バックグラウンド タスクのデバッグとインプロセス バックグラウンド タスクのデバッグ
+## <a name="debugging-out-of-process-vs-in-process-background-tasks"></a>アウトプロセス バックグラウンド タスクのデバッグとインプロセス バックグラウンド タスクのデバッグ
 このトピックでは主に、ホスト アプリとは別のプロセスで実行されているバックグラウンド タスクについて扱います。 インプロセス バックグラウンド タスクをデバッグする場合、別個のバックグラウンド タスク プロジェクト タスクはいらず、**OnBackgroundActivated()** (インプロセス バックグラウンド コードが実行される場所) にブレークポイントを設定できます。実行するバックグラウンド コードをトリガーする手順については、以下の「[バックグラウンド タスク コードをデバッグするためバックグラウンド タスクを手動でトリガー](#Trigger-background-tasks-manually-to-debug-background-task-code)」をご覧ください。
 
-## バックグラウンド タスク プロジェクトが正しく設定されていることを確認
+## <a name="make-sure-the-background-task-project-is-set-up-correctly"></a>バックグラウンド タスク プロジェクトが正しく設定されていることを確認
 
 このトピックは、デバッグ対象のバックグラウンド タスクを備えたアプリが既に手元にあることを前提としています。 以下の内容は、アウトプロセスで実行されるバックグラウンド タスクに固有の内容であり、インプロセス バックグラウンド タスクには適用されません。
 
@@ -29,7 +29,7 @@ ms.openlocfilehash: c4717ac41992d9a0c04d098067881ce5ca6952f0
 -   C# と C++ の場合、バックグラウンド タスク プロジェクトの **Output type** が "Windows ランタイム コンポーネント" になっていることを確認します。
 -   バックグラウンド クラスは、パッケージ マニフェストのエントリ ポイント属性で宣言されている必要があります。
 
-## バックグラウンド タスク コードをデバッグするためバックグラウンド タスクを手動でトリガー
+## <a name="trigger-background-tasks-manually-to-debug-background-task-code"></a>バックグラウンド タスク コードをデバッグするためバックグラウンド タスクを手動でトリガー
 
 バックグラウンド タスクは、Microsoft Visual Studio を使って手動でトリガーできます。 その後で、コードをステップ実行してデバッグできます。
 
@@ -49,7 +49,7 @@ ms.openlocfilehash: c4717ac41992d9a0c04d098067881ce5ca6952f0
 
 3.  バックグラウンド タスクがアクティブになると、デバッガーがアタッチされて、デバッグ出力が VS に表示されます。
 
-## バックグラウンド タスクのアクティブ化のデバッグ
+## <a name="debug-background-task-activation"></a>バックグラウンド タスクのアクティブ化のデバッグ
 
 > [!NOTE]
 > このセクションは、アウトプロセスで実行されるバックグラウンド タスクに固有の内容であり、インプロセス バックグラウンド タスクには適用されません。
@@ -83,7 +83,7 @@ ms.openlocfilehash: c4717ac41992d9a0c04d098067881ce5ca6952f0
 
 ![イベント ビューアーでバックグラウンド タスクのデバッグ情報を表示](images/event-viewer.png)
 
-## バックグラウンド タスクと Visual Studio パッケージの展開
+## <a name="background-tasks-and-visual-studio-package-deployment"></a>バックグラウンド タスクと Visual Studio パッケージの展開
 
 バックグラウンド タスクを使ったアプリが Visual Studio を使って展開され、その後、マニフェスト デザイナーで指定されたバージョン (メジャー バージョンとマイナー バージョン、またはそのどちらか一方) が更新された場合、以後、Visual Studio を使ってそのアプリを再展開すると、アプリのバックグラウンド タスクが停止することがあります。 これは、次のようにして対処できます。
 
@@ -92,7 +92,7 @@ ms.openlocfilehash: c4717ac41992d9a0c04d098067881ce5ca6952f0
 -   C# プロジェクトでは、"パッケージを常に再インストール" というデバッグ オプションを選ぶことで、この問題を回避することができます。
 -   展開用にアプリが最終確定するのを待ってパッケージのバージョンをインクリメントします (デバッグ中は変更しない)。
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 -   バックグラウンド タスクは、同じバックグラウンド タスクが登録されていないことをアプリ側で必ずチェックしたうえで登録してください。 同じバックグラウンド タスクを重複して登録すると、1 回のトリガーにつきバックグラウンド タスクが複数回実行され、予期しない結果を招きます。
 -   バックグラウンド タスクがロック画面へのアクセスを必要とする場合は、バックグラウンド タスクをデバッグする前にロック画面にアプリを配置してください。 ロック画面対応アプリのマニフェスト オプションを指定する方法については、「[アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)」をご覧ください。
@@ -100,9 +100,9 @@ ms.openlocfilehash: c4717ac41992d9a0c04d098067881ce5ca6952f0
 
 VS を使ってバックグラウンド タスクをデバッグする方法について詳しくは、「[Windows ストア アプリで中断イベント、再開イベント、バックグラウンド イベントをトリガーする方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)」をご覧ください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
-* [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-an-outofproc-background-task.md)
+* [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
 * [インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)
 * [バックグラウンド タスクの登録](register-a-background-task.md)
 * [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
@@ -116,6 +116,6 @@ VS を使ってバックグラウンド タスクをデバッグする方法に�
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

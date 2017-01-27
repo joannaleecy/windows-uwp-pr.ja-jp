@@ -6,24 +6,28 @@ ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: a835e57c3ae778149cda933d57cf74408b74b416
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 925826f2702474a0003f2ca2dee6ff10992f5f25
 
 ---
 
-# エッジに基づく UI アニメーション
+# <a name="edge-based-ui-animations"></a>エッジに基づく UI アニメーション
 
 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 
 エッジに基づく UI アニメーションでは、画面の端を起点とする UI の表示と非表示を切り替えられます。 この表示と非表示のアクションは、ユーザーが開始することも、アプリから開始することもできます。 UI は、アプリの手前に表示するか、メイン アプリ サーフェスの一部として表示することができます。 UI をアプリ サーフェスの一部として表示する場合は、UI を表示できるようにアプリの残りの部分のサイズを調整する必要があります。
 
-**重要な API**
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**EdgeUIThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/hh702324)</li>
+</ul>
+</div>
 
--   [**EdgeUIThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/hh702324)
 
-
-## 推奨と非推奨
+## <a name="dos-and-donts"></a>推奨と非推奨
 
 
 -   画面領域をあまり占有しないカスタム メッセージ バーやエラー バーを表示または非表示にするには、エッジ (端) UI アニメーションを使います。
@@ -38,10 +42,10 @@ ms.openlocfilehash: a835e57c3ae778149cda933d57cf74408b74b416
 
     ![エッジ (端) UI アニメーションまたはパネル アニメーションを使うケースと位置変更を使うケースの図](images/edgevsreposition.png)
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 
-**開発者向け (XAML)**
+**開発者向け**
 * [アニメーションの概要](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [エッジに基づく UI のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
 * [クイック スタート: ライブラリのアニメーションを使った UI のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
@@ -60,6 +64,6 @@ ms.openlocfilehash: a835e57c3ae778149cda933d57cf74408b74b416
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

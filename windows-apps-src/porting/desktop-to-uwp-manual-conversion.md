@@ -4,8 +4,8 @@ Description: "手動で Windows デスクトップ アプリケーション (Win
 Search.Product: eADQiWindows 10XVcnh
 title: "手動で Windows デスクトップ アプリケーションをユニバーサル Windows プラットフォーム (UWP) アプリに変換する"
 translationtype: Human Translation
-ms.sourcegitcommit: ee697323af75f13c0d36914f65ba70f544d046ff
-ms.openlocfilehash: f55f3bd6479cdf076c51cf574b07bfb5ce3a805c
+ms.sourcegitcommit: b612b2c94de79f48a375ae3469c35dee6ce3939d
+ms.openlocfilehash: 73f30d564fcec1b748b4d59ff545e25b62b1c719
 
 ---
 
@@ -57,21 +57,7 @@ _appxmanifest.xml_ ファイルには、(少なくとも) 次のような内容�
     </Package>
 ```
 
-## <a name="add-unplated-assets"></a>プレートなしのアセットを追加する
-
-タスク バーに表示されるアプリの 44 x 44 アセットを構成する方法を次に示します。
-
-1. 正しい 44 x 44 画像を取得し、画像保存用のフォルダー (つまり、Assets) にコピーします。
-
-2. 各 44 x 44 画像のコピーを同じフォルダーに作成し、ファイル名の末尾に *.targetsize-44_altform-unplated* を追加します。 これにより、同じ画像で異なる名前のアイコンが、2 つずつフォルダーに保存されます。 たとえばプロセスを完了すると、assets フォルダーに *MYAPP_44x44.png* と *MYAPP_44x44.targetsize-44_altform-unplated.png* ができます (注: 前者は、VisualElements 属性 *Square44x44Logo* の下の appxmanifest で参照されるアイコン)。 
-
-3.  AppXManifest で、作業対象のすべてのアイコンの BackgroundColor を透明に設定します。 この属性は、各アプリケーションの VisualElements の下にあります。
-
-4.  CMD を開き、パッケージのルート フォルダーにディレクトリを変更した後、コマンド ```makepri createconfig /cf priconfig.xml /dq en-US``` を実行して priconfig.xml ファイルを作成します。
-
-5.  CMD を使い、ディレクトリはパッケージのルート フォルダーのまま、コマンド ```makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``` を使って resources.pri ファイルを作成します。 たとえば、アプリのコマンドは、```makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``` のようになります。 
-
-6.  次の手順の説明に従って AppX をパッケージ化し、結果を確認します。
+追加したいプレートなしのアセットがありますか。 その手順については、この記事の「[プレートなしのアセット](#unplated-assets)」のセクションをご覧ください。
 
 ## <a name="run-the-makeappx-tool"></a>MakeAppX ツールを実行する
 
@@ -106,14 +92,28 @@ C:\> MakeCert.exe -r -h 0 -n "CN=<publisher_name>" -eku 1.3.6.1.5.5.7.3.3 -pe -s
 C:\> pvk2pfx.exe -pvk <my.pvk> -spc <my.cer> -pfx <my.pfx>
 C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 ```
-
 MakeCert.exe を実行したときにパスワードの入力を求められたら、**[なし]** を選択します。 証明書と署名について詳しくは、以下をご覧ください。 
 
 - [方法: 開発中に使う一時的な証明書を作成する](https://msdn.microsoft.com/library/ms733813.aspx)
-
 - [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)
-
 - [SignTool.exe (署名ツール)](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
+
+<span id="unplated-assets" />
+## <a name="add-unplated-assets"></a>プレートなしのアセットを追加する
+
+タスク バーに表示されるアプリの 44 x 44 アセットを任意で構成する方法を次に示します。 
+
+1. 正しい 44 x 44 画像を取得し、画像保存用のフォルダー (つまり、Assets) にコピーします。
+
+2. 各 44 x 44 画像のコピーを同じフォルダーに作成し、ファイル名の末尾に *.targetsize-44_altform-unplated* を追加します。 これにより、同じ画像で異なる名前のアイコンが、2 つずつフォルダーに保存されます。 たとえばプロセスを完了すると、assets フォルダーに *MYAPP_44x44.png* と *MYAPP_44x44.targetsize-44_altform-unplated.png* ができます (注: 前者は、VisualElements 属性 *Square44x44Logo* の下の appxmanifest で参照されるアイコン)。 
+
+3.  AppXManifest で、作業対象のすべてのアイコンの BackgroundColor を透明に設定します。 この属性は、各アプリケーションの VisualElements の下にあります。
+
+4.  CMD を開き、パッケージのルート フォルダーにディレクトリを変更した後、コマンド ```makepri createconfig /cf priconfig.xml /dq en-US``` を実行して priconfig.xml ファイルを作成します。
+
+5.  CMD を使い、ディレクトリはパッケージのルート フォルダーのまま、コマンド ```makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``` を使って resources.pri ファイルを作成します。 たとえば、アプリのコマンドは、```makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``` のようになります。 
+
+6.  次の手順の説明に従って AppX をパッケージ化し、結果を確認します。
 
 
 

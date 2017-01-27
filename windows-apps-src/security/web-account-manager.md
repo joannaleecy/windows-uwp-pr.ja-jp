@@ -3,17 +3,17 @@ title: "Web アカウント マネージャーによる ID プロバイダーへ
 description: "この記事では、新しい Windows 10 Web アカウント マネージャー API を使って、AccountsSettingsPane を使い、ユニバーサル Windows プラットフォーム (UWP) アプリを外部の ID プロバイダー (Microsoft、Facebook など) に接続する方法について説明します。"
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: e16977a9a11b292ea9624ff421aa964c11d615be
-ms.openlocfilehash: d234811b395790a35ad50dea9ef4cc56d60458e8
+ms.sourcegitcommit: 0aef3cc9a3312a647197d8b2a7b815ed42d54fa3
+ms.openlocfilehash: 10851432b6e28934ab60041d23a5cf319671f704
 
 ---
-# Web アカウント マネージャーによる ID プロバイダーへの接続
+# <a name="connect-to-identity-providers-with-web-account-manager"></a>Web アカウント マネージャーによる ID プロバイダーへの接続
 
 この記事では、新しい Windows 10 Web アカウント マネージャー API を使って、AccountsSettingsPane を表示し、ユニバーサル Windows プラットフォーム (UWP) アプリを外部の ID プロバイダー (Microsoft、Facebook など) に接続する方法について説明します。 ユーザーの Microsoft アカウントを使うためのユーザーの許可を求める方法、アクセス トークンを取得する方法、基本的な操作 (プロファイル データの取得や OneDrive へのファイルのアップロードなど) を実行する方法について説明します。 この手順は、ユーザーの許可を得て、Web アカウント マネージャーをサポートする ID プロバイダーにアクセスするための手順と似ています。
 
 > 注: 完全なコード サンプルについては、「[GitHub の WebAccountManagement サンプル](http://go.microsoft.com/fwlink/p/?LinkId=620621)」をご覧ください。
 
-## 準備
+## <a name="get-set-up"></a>準備
 
 まず、Visual Studio で新しい空白のアプリを作成します。 
 
@@ -51,7 +51,7 @@ using Windows.UI.Xaml.Navigation;
 using Windows.Web.Http;
 ```
 
-## AccountSettingsPane の表示
+## <a name="show-the-accountsettingspane"></a>AccountSettingsPane の表示
 
 システムには、ID プロバイダーを管理するための組み込みのユーザー インターフェイスと、AccountSettingsPane という名前の Web アカウントが用意されています。 これを次のように表示することができます。
 
@@ -68,7 +68,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 
 システムは UI シェルのみを提供するため、このウィンドウは空になっています。開発者がこのウィンドウに ID プロバイダーをプログラムで入力します。 
 
-## AccountCommandsRequested への登録
+## <a name="register-for-accountcommandsrequested"></a>AccountCommandsRequested への登録
 
 ウィンドウにコマンドを追加するには、まず AccountCommandsRequested イベント ハンドラーに登録します。 これにより、ユーザーがウィンドウを表示するよう求めたとき (XAML ボタンのクリックなど) に構築したロジックをシステムが実行するようにできます。 
 
@@ -90,7 +90,7 @@ protected override void OnNavigatedFrom(NavigationEventArgs e)
 
 ユーザーは頻繁にはアカウントを操作しないため、この方法でイベント ハンドラーを登録および登録解除することは、メモリ リークを防ぐために役立ちます。 この方法では、カスタマイズしたウィンドウは (ユーザーが "設定" ページや "ログイン" ページにいるなどの理由で) ユーザーが使う可能性が高いときにのみメモリ内にあります。 
 
-## アカウント設定ウィンドウを構築します。
+## <a name="build-the-account-settings-pane"></a>アカウント設定ウィンドウを構築します。
 
 AccountSettingsPane を表示するたびに、BuildPaneAsync メソッドが呼び出されます。 ここに、ウィンドウに表示されるコマンドをカスタマイズするコードを記述します。 
 
@@ -148,7 +148,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 
 ![アカウント設定ウィンドウ](images/tb-2.png)
 
-### トークンの要求
+### <a name="request-a-token"></a>トークンの要求
 
 AccountsSettingsPane に Microsoft アカウントのオプションが表示されたら、ユーザーがこのオプションを選択したときに何が起こるかを扱う必要があります。 ユーザーが自分の Microsoft アカウントを使ってログインしたときに GetMsaToken メソッドが発生するように登録しているため、ここでトークンを取得します。 
 
@@ -166,8 +166,8 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 
 サービス プロバイダーは、サービス プロバイダーのサービスで使うトークンを取得するためにどのスコープを指定する必要があるかに関するドキュメントを提供します。 
 
-* Office 365 と Outlook.com のスコープについては、「(v2.0 認証エンドポイントを使用した Office 365 および Outlook.com の API の認証)[ https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2 ]」をご覧ください。 
-* OneDrive については、「(OneDrive の認証とサインイン)[ https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes ]」をご覧ください。 
+* Office 365 と Outlook.com のスコープについては、[v2.0 認証エンドポイントを使用した Office 365 および Outlook.com の API の認証](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2)に関するページをご覧ください。 
+* OneDrive については、「[OneDrive authentication and sign-in (OneDrive の認証とサインイン)](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes)」をご覧ください。 
 
 企業向けのアプリを開発している場合は、Azure Active Directory (AAD) インスタンスに接続し、通常の MSA サービスではなく Microsoft Graph API を使用します。 このシナリオでは、次のコードを代わりに使います。 
 
@@ -183,7 +183,7 @@ private async void GetAadTokenAsync(WebAccountProviderCommand command)
 
 この記事の残りの部分では、引き続き MSA シナリオについて説明しますが、AAD 用のコードもよく似ています。 GitHub の完全なサンプルを含め、AAD/Graph について詳しくは、[Microsoft Graph のドキュメント](https://graph.microsoft.io/docs/platform/get-started)をご覧ください。
 
-## トークンの使用
+## <a name="use-the-token"></a>トークンの使用
 
 RequestTokenAsync メソッドは、要求の結果を含む WebTokenRequestResult オブジェクトを返します。 要求が成功した場合には、トークンが含まれます。  
 
@@ -234,7 +234,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 
 さまざまな REST API の呼び出し方法は、プロバイダーによって異なります。トークンの使い方に関する情報については、プロバイダーの API ドキュメントをご覧ください。 
 
-## アカウントの状態の保存
+## <a name="save-account-state"></a>アカウントの状態の保存
 
 トークンはユーザーに関する情報をすぐに取得するために便利ですが、通常はさまざまな有効期限を持ちます。たとえば、MSA トークンは数時間のみ有効です。 さいわい、トークンの有効期限が切れるたびに AccountsSettingsPane を再表示する必要はありません。 ユーザーが一度アプリを承認すると、将来使うためにユーザーのアカウント情報を保存できます。 
 
@@ -304,7 +304,7 @@ private async Task<string> GetTokenSilentlyAsync()
 
 上記の例は、基本的な成功と失敗のケースのみを扱っていることに注意してください。 アプリは特殊なシナリオ (ユーザーによってアプリのアクセス許可が無効にされた場合や、Windows からユーザーのアカウントが削除された場合など) も考慮し、適切に処理する必要があります。  
 
-## アカウントのログアウト 
+## <a name="log-out-an-account"></a>アカウントのログアウト 
 
 WebAccount を保持する場合は、ユーザーがアプリでアカウントを切り替えたり、単に自分のアカウントの関連付けを解除することができるように、"ログアウト" 機能を提供する場合があります。 これを行うには、まず保存されたアカウントとプロバイダーの情報を削除します。 次に、WebAccount.SignOutAsync() を呼び出してキャッシュをクリアし、アプリが保持している可能性がある既存のトークンをすべて無効にします。 
 
@@ -317,7 +317,7 @@ private async Task SignOutAccountAsync(WebAccount account)
 }
 ```
 
-## WebAccountManager をサポートしていないプロバイダーの追加
+## <a name="add-providers-that-dont-support-webaccountmanager"></a>WebAccountManager をサポートしていないプロバイダーの追加
 
 サービスからの認証をアプリに統合するときに、そのサービスが WebAccountManager をサポートしていない場合でも (Google+ や Twitter など)、そのプロバイダーを AccountsSettingsPane に手動で追加できます。 これを行うには、新しい WebAccountProvider オブジェクトを作成し、独自の名前と .png アイコンを提供してから、WebAccountProviderCommands に追加します。 いくつかのスタブ コードを次に示します。 
 
@@ -342,7 +342,7 @@ private async void GetTwitterTokenAsync(WebAccountProviderCommand command)
 
 これはアイコンを AccountsSettingsPane に追加し、アイコンがクリックされたときに指定されたメソッド (この場合は GetTwitterTokenAsync) を実行するだけなことに注意してください。 実際の認証を処理するコードを提供する必要があります。 詳しくは、「(Web 認証ブローカー)[web-authentication-broker]」を参照してください。REST サービスを使った認証のためのヘルパー メソッドが提供されています。 
 
-## カスタム ヘッダーの追加
+## <a name="add-a-custom-header"></a>カスタム ヘッダーの追加
 
 次のように、HeaderText プロパティを使ってアカウント設定ウィンドウをカスタマイズできます。 
 
@@ -361,7 +361,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 ヘッダー テキストを長くしすぎないでください。短く簡潔なテキストにします。 ログイン プロセスが複雑で、詳しい情報を表示する必要がある場合には、カスタム リンクを使ってユーザーを別のページにリンクします。 
 
-## カスタム リンクの追加
+## <a name="add-custom-links"></a>カスタム リンクの追加
 
 サポートされている WebAccountProviders の下にリンクとして表示されるカスタム コマンドを AccountsSettingsPane に追加することができます。 カスタム コマンドは、プライバシー ポリシーの表示や問題が発生したユーザーのためのサポート ページの起動などの、ユーザー アカウントに関連する単純なタスクに適しています。 
 
@@ -387,7 +387,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 理論上は、あらゆることのために設定コマンドを使うことができます。 ただし、上記のような、直観的なアカウント関連のシナリオにのみ使うことをお勧めします。 
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 
 [Windows.Security.Authentication.Web.Core 名前空間](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.web.core.aspx)
 
@@ -401,6 +401,6 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO5-->
 
 

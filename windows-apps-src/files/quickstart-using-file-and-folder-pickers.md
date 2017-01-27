@@ -4,8 +4,8 @@ ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
 title: "ピッカーでファイルやフォルダーを開く"
 description: "ユーザーがピッカーを操作してファイルやフォルダーにアクセスできるようにします。 ファイルへのアクセスには FileOpenPicker クラスと FileSavePicker クラス、フォルダーへのアクセスには FolderPicker を使います。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: e7884f140915d66b4a9f95a4197e717d63b0f25f
+ms.sourcegitcommit: 99a21818fc3b8552de18792f408da860bf6dea22
+ms.openlocfilehash: 08782286228fa25dc492b0e7ccc90958bdec5a7f
 
 ---
 
@@ -24,8 +24,6 @@ ms.openlocfilehash: e7884f140915d66b4a9f95a4197e717d63b0f25f
 ユーザーがピッカーを操作してファイルやフォルダーにアクセスできるようにします。 ファイルへのアクセスには [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) クラスと [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) クラス、フォルダーへのアクセスには [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) を使います。
 
 **注** ファイル ピッカーのサンプルについては、[ファイル ピッカーのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=619994)をご覧ください。
-
- 
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -95,63 +93,63 @@ else
 
 1.  **FileOpenPicker を作成してカスタマイズする**
 
-```CSharp
-var picker = new Windows.Storage.Pickers.FileOpenPicker();
-    picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
-    picker.SuggestedStartLocation =
-        Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
-    picker.FileTypeFilter.Add(".jpg");
-    picker.FileTypeFilter.Add(".jpeg");
-    picker.FileTypeFilter.Add(".png");
-```
+    ```CSharp
+    var picker = new Windows.Storage.Pickers.FileOpenPicker();
+        picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
+        picker.SuggestedStartLocation =
+            Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
+        picker.FileTypeFilter.Add(".jpg");
+        picker.FileTypeFilter.Add(".jpeg");
+        picker.FileTypeFilter.Add(".png");
+    ```
 
-ファイル ピッカー オブジェクトの、ユーザーとアプリに関連するプロパティを設定します。 ファイル ピッカーのカスタマイズ方法を判断するためのガイドラインについては、「[ファイル ピッカーのガイドラインとチェック リスト](https://msdn.microsoft.com/library/windows/apps/hh465182)」をご覧ください。
+    ファイル ピッカー オブジェクトの、ユーザーとアプリに関連するプロパティを設定します。 ファイル ピッカーのカスタマイズ方法を判断するためのガイドラインについては、「[ファイル ピッカーのガイドラインとチェック リスト](https://msdn.microsoft.com/library/windows/apps/hh465182)」をご覧ください。
 
-この例では、[**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855)、[**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854)、および [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) という 3 つのプロパティを設定して、ユーザーが画像ファイルを選べる視覚的に優れた表示を作成し、使いやすい場所に配置します。
+    この例では、[**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855)、[**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854)、および [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) という 3 つのプロパティを設定して、ユーザーが画像ファイルを選べる視覚的に優れた表示を作成し、使いやすい場所に配置します。
 
--   [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) を [**PickerViewMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail)**Thumbnail** 列挙値に設定すると、ファイル ピッカーで画像ファイルが縮小表示の画像で表され、視覚的に優れた表示が作成されます。 これは、画像やビデオなどの視覚的なファイルを選ぶ場合に設定します。 それ以外の場合は、[**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list) を使います。 **画像またはビデオの添付**機能と**ドキュメントの添付**機能がある架空のメール アプリでは、ファイル ピッカーを表示する前に **ViewMode** をそれらの機能に対応させます。
+    -   [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) を [**PickerViewMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail)**Thumbnail** 列挙値に設定すると、ファイル ピッカーで画像ファイルが縮小表示の画像で表され、視覚的に優れた表示が作成されます。 これは、画像やビデオなどの視覚的なファイルを選ぶ場合に設定します。 それ以外の場合は、[**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list) を使います。 **画像またはビデオの添付**機能と**ドキュメントの添付**機能がある架空のメール アプリでは、ファイル ピッカーを表示する前に **ViewMode** をそれらの機能に対応させます。
 
--   [**PickerLocationId.PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br207890) を使って [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) を Pictures に設定すると、画像を見つけられる可能性が高い場所が最初に表示されます。 選ぶファイルの種類 (音楽、画像、ビデオ、ドキュメントなど) に合わせて **SuggestedStartLocation** を設定します。 ユーザーは、開始場所から別の場所に移動できます。
+    -   [**PickerLocationId.PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br207890) を使って [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) を Pictures に設定すると、画像を見つけられる可能性が高い場所が最初に表示されます。 選ぶファイルの種類 (音楽、画像、ビデオ、ドキュメントなど) に合わせて **SuggestedStartLocation** を設定します。 ユーザーは、開始場所から別の場所に移動できます。
 
--   [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) を使うと、関連性の高いファイルの種類に絞ってユーザーがファイルを選ぶことができます。 **FileTypeFilter** の以前のファイルの種類を新しいエントリに置き換えるには、[**Add**](https://msdn.microsoft.com/library/windows/apps/br207834) ではなく [**ReplaceAll**](https://msdn.microsoft.com/library/windows/apps/br207844) メソッドを使います。
+    -   [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) を使うと、関連性の高いファイルの種類に絞ってユーザーがファイルを選ぶことができます。 **FileTypeFilter** の以前のファイルの種類を新しいエントリに置き換えるには、[**Add**](https://msdn.microsoft.com/library/windows/apps/br207834) ではなく [**ReplaceAll**](https://msdn.microsoft.com/library/windows/apps/br207844) メソッドを使います。
 
 2.  **FileOpenPicker を表示する**
 
-    -   **単一のファイルを選ぶには**
+    - **単一のファイルを選ぶには**
 
-```CSharp
-Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
-        if (file != null)
-        {
-            // Application now has read/write access to the picked file
-            this.textBlock.Text = "Picked photo: " + file.Name;
-        }
-        else
-        {
-            this.textBlock.Text = "Operation cancelled.";
-        }
-```
-
-    -   **複数のファイルを選ぶには**
-
-```CSharp
-var files = await picker.PickMultipleFilesAsync();
-        if (files.Count > 0)
-        {
-            StringBuilder output = new StringBuilder("Picked files:\n");
-
-            // Application now has read/write access to the picked file(s)
-            foreach (Windows.Storage.StorageFile file in files)
+    ```CSharp
+    Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
+            if (file != null)
             {
-                output.Append(file.Name + "\n");
+                // Application now has read/write access to the picked file
+                this.textBlock.Text = "Picked photo: " + file.Name;
             }
-            this.textBlock.Text = output.ToString();
-        }
-        else
-        {
-            this.textBlock.Text = "Operation cancelled.";
-        }
-```
+            else
+            {
+                this.textBlock.Text = "Operation cancelled.";
+            }
+    ```
+
+    - **複数のファイルを選ぶには**  
+
+    ```CSharp
+    var files = await picker.PickMultipleFilesAsync();
+            if (files.Count > 0)
+            {
+                StringBuilder output = new StringBuilder("Picked files:\n");
+
+                // Application now has read/write access to the picked file(s)
+                foreach (Windows.Storage.StorageFile file in files)
+                {
+                    output.Append(file.Name + "\n");
+                }
+                this.textBlock.Text = output.ToString();
+            }
+            else
+            {
+                this.textBlock.Text = "Operation cancelled.";
+            }
+    ```
 
 ## <a name="pick-a-folder-complete-code-listing"></a>フォルダーを選ぶ: 完全なコード
 
@@ -159,6 +157,7 @@ var files = await picker.PickMultipleFilesAsync();
 ```CSharp
 var folderPicker = new Windows.Storage.Pickers.FolderPicker();
 folderPicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.Desktop;
+folderPicker.FileTypeFilter.Add("*");
 
 Windows.Storage.StorageFolder folder = await folderPicker.PickSingleFolderAsync();
 if (folder != null)
@@ -177,14 +176,7 @@ else
 
 **ヒント** アプリがピッカーでファイルまたはフォルダーにアクセスするたびに、その項目をアプリの [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) または [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) に追加して、項目を追跡します。 これらのリストの使用の詳細については、「[最近使ったファイルやフォルダーを追跡する方法](how-to-track-recently-used-files-and-folders.md)」をご覧ください。
 
- 
 
- 
-
- 
-
-
-
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO1-->
 
 

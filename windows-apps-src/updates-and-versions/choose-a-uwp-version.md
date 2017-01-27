@@ -3,8 +3,8 @@ author: QuinnRadich
 title: "UWP バージョンの選択"
 description: "Microsoft Visual Studio で UWP アプリを作成するときは、ターゲットのバージョンを選択できます。 ここでは、UWP バージョンによる違いと、新しいプロジェクトや既存のプロジェクトで選択したバージョンを構成する方法について説明します。"
 translationtype: Human Translation
-ms.sourcegitcommit: 006b5d01c2474591a81e4d7a83c5735dc0b3d9d8
-ms.openlocfilehash: 5d05c427ecc1ec57856b7c3909be50c3d87daa28
+ms.sourcegitcommit: 7e59551f528e23e497122f822fbfc09ec3086cdc
+ms.openlocfilehash: 58e58c212cb6efd76f4afb8d3b6c7a3c5ddf215e
 
 ---
 
@@ -14,7 +14,7 @@ Microsoft Visual Studio で UWP アプリを作成するときは、ターゲッ
 
 | バージョン | 説明 |
 | --- | --- |
-| ビルド 14393 (Anniversary エディション) | 2016 年 7 月にリリースされた Windows 10 の最新バージョンです。 このリリースの主な新機能は次のとおりです。 </br> \* **Windows Ink:** 新しい InkCanvas と InkToolbar のコントロールです。 </br> \* **Cortana API:** 新しい Cortana アクションを使って、Cortana のサポートをアプリの特定の機能と統合できます。 </br> \* **Windows Hello:** Microsoft Edge が Windows Hello をサポートするようになり、Web 開発者が生体認証にアクセスできるようになりました。 </br> このリリースの Windows で追加されたこれらの機能や他の多くの機能については、[デベロッパー センター](https://developer.microsoft.com/en-us/windows/windows-10-for-developers)または「[Windows 10 の開発者向け新着情報](../whats-new/windows-10-version-1607.md)」の詳細ページをご覧ください。  |
+| ビルド 14393 (Anniversary エディション) | 2016 年 7 月にリリースされた Windows 10 の最新バージョンです。 このリリースの主な新機能は次のとおりです。 </br> \* **Windows Ink:** 新しい InkCanvas と InkToolbar のコントロールです。 </br> \* **Cortana API:** 新しい Cortana アクションを使って、Cortana のサポートをアプリの特定の機能と統合できます。 </br> \* **Windows Hello:** Microsoft Edge が Windows Hello をサポートするようになり、Web 開発者が生体認証にアクセスできるようになりました。 </br> このリリースの Windows で追加されたこれらの機能や他の多くの機能については、[デベロッパー センター](https://developer.microsoft.com/windows/windows-10-for-developers)または「[Windows 10 の開発者向け新着情報](../whats-new/windows-10-version-1607.md)」の詳細ページをご覧ください。  |
 | ビルド 10586 | このバージョンの Windows 10 は、2015 年 11 月にリリースされました。 このリリースでは主な新機能として、Microsoft Edge のビデオ通信用 ORTC (オブジェクト リアルタイム通信) APIと、アプリで Windows Hello 顔認証を使うためのプロバイダー API が導入されました。 [このビルドで導入された機能について詳しくはこちらをご覧ください。](../whats-new/windows-10-version-1511.md) |
 | ビルド 10240 | 2015 年 7 月にリリースされた Windows 10 の初期リリース バージョンです。 [このビルドで導入された機能について詳しくはこちらをご覧ください。](../whats-new/windows-10-version-1507.md) |
 

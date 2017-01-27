@@ -3,8 +3,8 @@ author: msatranjr
 title: "Bluetooth アドバタイズ"
 description: "このセクションでは、API の AdvertisementWatcher と AdvertisementPublisher を使って、ユニバーサル Windows プラットフォーム (UWP) アプリに Bluetooth 低エネルギー (LE) アドバタイズを統合する方法に関する記事を取り上げています。"
 translationtype: Human Translation
-ms.sourcegitcommit: b1493d3d0d61a5fc45ab563b56bffa43650bbed9
-ms.openlocfilehash: feda9b20b4cbc265832bdb51f90546d9e1f668e8
+ms.sourcegitcommit: b454e08015ea9bd6240c836563b1fec78e38dc2c
+ms.openlocfilehash: e21567bf2ffa5b05861cf96099290e1bb66dbf03
 
 ---
 
@@ -39,7 +39,7 @@ ms.openlocfilehash: feda9b20b4cbc265832bdb51f90546d9e1f668e8
 
 Bluetooth LE アドバタイズでは、デバイスから特定のペイロードを常時ビーコンできます。これをアドバタイズと呼びます。 近接範囲内にあり、この特定のアドバタイズをリッスンするように設定されたすべての Bluetooth LE 対応デバイスは、このアドバタイズを認識できます。
 
-**注:** ユーザーのプライバシー保護のため、アドバタイズの寿命はアプリの寿命に関連付けられています。 BluetoothLEAdvertisementPublisher を作成し、バックグラウンド タスクで Start を呼び出して、バックグラウンドでアドバタイズを発行できます。 バックグラウンド タスクについて詳しくは、「[起動、再開、バックグラウンド タスク](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/index)」をご覧ください。
+**注:** ユーザーのプライバシー保護のため、アドバタイズの寿命はアプリの寿命に関連付けられています。 BluetoothLEAdvertisementPublisher を作成し、バックグラウンド タスクで Start を呼び出して、バックグラウンドでアドバタイズを発行できます。 バックグラウンド タスクについて詳しくは、「[起動、再開、バックグラウンド タスク](https://msdn.microsoft.com/windows/uwp/launch-resume/index)」をご覧ください。
 
 ### <a name="basic-publishing"></a>基本的なパブリッシュ
 
@@ -155,6 +155,6 @@ private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watch
 そこで、純粋な距離を判断する代わりに「バケット」を定義することができます。 電波は、発信源が非常に近い場合は 0 ～ -50 DBm、中程度の距離の場合は -50 ～ -90 DBm、遠く離れている場合は -90 DBm 未満を示す傾向があります。 アプリの作成にあたってこれらのバケットを判断するには、試行錯誤を繰り返すのが最良の方法です。
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

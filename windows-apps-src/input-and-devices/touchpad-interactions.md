@@ -5,13 +5,19 @@ title: "タッチパッド操作"
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
 template: detail.hbs
+keywords: "タッチパッド, PTP, タッチ, ポインター, 入力, ユーザーの操作"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: dd91c8a6c58c25799a0c43b8632fade5309850cc
 
 ---
 
-# タッチパッドの設計ガイドライン
+# <a name="touchpad-design-guidelines"></a>タッチパッドの設計ガイドライン
 
 
 ユーザーがタッチパッドで操作できるようにアプリを設計します。 タッチパッドは、間接的なマルチタッチ入力と、マウスのようなポインティング デバイスの精密入力を組み合わせたものです。 この組み合わせにより、タッチパッドはタッチに最適化された UI にも、生産性アプリのより小さいターゲットにも適しています。
@@ -42,7 +48,7 @@ ms.openlocfilehash: 30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b
 
 このトピックで説明されているジェスチャとガイドラインを利用することで、アプリはタッチパッド入力を最小限のコードでシームレスにサポートできます。
 
-## タッチパッド言語
+## <a name="the-touchpad-language"></a>タッチパッド言語
 
 
 システム内では一貫して、タッチパッド操作の簡単なセットが使われます。 アプリをタッチとマウス入力用に最適化すると、ユーザーが慣れている操作感がこの言語によって実現されるので、信頼感が高まり、アプリの習得や使用も簡単になります。
@@ -112,14 +118,14 @@ ms.openlocfilehash: 30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b
 
  
 
-## ハードウェア
+## <a name="hardware"></a>ハードウェア
 
 
 マウス デバイス機能 ([**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626)) を照会して、タッチパッド ハードウェアから直接アクセスできるアプリ UI の要素を識別します。 タッチ入力とマウス入力の両方の UI を用意することをお勧めします。
 
 デバイス機能の照会について詳しくは、「[入力デバイスの識別](identify-input-devices.md)」をご覧ください。
 
-## 視覚的なフィードバック
+## <a name="visual-feedback"></a>視覚的なフィードバック
 
 
 -   移動イベントまたはホバー イベントを通じてタッチパッド カーソルが検出されたら、マウス固有の UI を表示して、要素によって公開されている機能を示します。 タッチパッド カーソルが一定の期間動かされなかった場合や、ユーザーがタッチ操作を始めた場合は、タッチパッド UI を徐々に非表示にします。 これにより、UI の簡潔さが保たれます。
@@ -130,7 +136,7 @@ ms.openlocfilehash: 30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b
 
 視覚的なフィードバックに関する一般的なガイダンスについては、「[視覚的なフィードバックのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465342)」をご覧ください。
 
-## カーソル
+## <a name="cursors"></a>カーソル
 
 
 タッチパッド ポインターとして利用できる標準のカーソル セットが用意されています。 これらが要素のプライマリ操作を示すために使われます。
@@ -145,7 +151,7 @@ ms.openlocfilehash: 30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b
 -   サイズ変更ができるオブジェクトに対しては、横、縦、対角線のサイズ変更カーソル (![縦のサイズ変更カーソル](images/cursor-vertical.png)、 ![横のサイズ変更カーソル](images/cursor-horizontal.png)、 ![対角線のサイズ変更カーソル (左下、右上)](images/cursor-diagonal2.png)、 ![対角線のサイズ変更カーソル (左上、右下)](images/cursor-diagonal1.png)) を使います。
 -   地図など、固定キャンバス内のコンテンツのパンを行うときは、手でつかむ形のカーソル (![手でつかむ形のカーソル (開いた状態)](images/cursor-pan1.png)、 ![手でつかむ形のカーソル (つかんだ状態)](images/cursor-pan2.png)) を使います。
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 
 * [ポインター入力の処理](handle-pointer-input.md)
@@ -167,6 +173,6 @@ ms.openlocfilehash: 30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

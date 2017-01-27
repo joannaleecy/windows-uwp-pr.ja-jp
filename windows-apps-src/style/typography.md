@@ -5,12 +5,14 @@ title: "文字体裁"
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 0356d9420d85fbf54718223df77ed501d4b6f5e5
-ms.openlocfilehash: 45b4bbc86c69cabae4a2ee83d2d43c7189a710ce
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: e13e9c8b559c16676628ab6e77ddad019a4c22e0
 
 ---
 
 # <a name="typography"></a>文字体裁
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 言語の視覚的な表現として、文字体裁の主な役割は明確であることです。 スタイルによってその目的が邪魔されてはなりません。 ただし、文字体裁にはレイアウト コンポーネントとしての重要な役割もあり、そのデザインの密度と複雑さに強い影響を与え、そのデザインのユーザー エクスペリエンスにも影響します。
 
@@ -38,7 +40,7 @@ Microsoft では、シンプルさと効率性を考慮に入れて文字体裁�
 
 XAML では、これは 2 つの [TextBlocks](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) を重ね、適切な余白を設定することで実現できます。
 
-```xml
+```xaml
 <StackPanel Width="200">
     <!-- Setting a bottom margin of 3px on the header
          puts the baseline of the body text exactly 24px
@@ -59,47 +61,65 @@ XAML では、これは 2 つの [TextBlocks](https://msdn.microsoft.com/en-us/l
 ```
 
 
-
-## <a name="kerning-and-tracking"></a>カーニングとトラッキング
+<div class="side-by-side">
+<div class="side-by-side-content">
+  <div class="side-by-side-content-left">
+<h2>カーニングとトラッキング</h2>
 
 Segoe は、ソフトでわかりやすい外観をした人間的な書体であり、手書き文字に基づく自然でオープンな形をしています。 できるだけ読みやすくし、人間的な一貫性を保つため、カーニングとトラッキングの設定を特定の値にする必要があります。
 
 カーニングを "メトリック" に設定し、トラッキングを "0" に設定してください。
-
-
-![カーニングとトラッキングの違いを示します。](images/kerning-tracking.png)
-
-
-
-## <a name="word-and-letter-spacing"></a>単語や文字の間隔
+  </div>
+  <div class="side-by-side-content-right">
+<h2>単語や文字の間隔</h2>
 
 カーニングやトラッキングと同様、できるだけ読みやすくし、人間的な一貫性を保つため、単語の間隔と文字間隔でも特定の設定を使います。
 
 既定では、単語の間隔は常に 100% であり、文字間隔は "0" に設定する必要があります。
+  </div>
+</div>
+</div>
+<div class="side-by-side">
+<div class="side-by-side-content">
+  <div class="side-by-side-content-left">
+![カーニングとトラッキングの差](images/kerning-tracking.png)  
+  </div>
+  <div class="side-by-side-content-right">
+![単語の間隔と文字の間隔の差](images/word-letter.png) 
+  </div>
+</div>
+</div>
 
 
-![単語の間隔と文字の間隔の違いを示します。](images/word-letter.png)
+>[!NOTE]
+>XAML テキスト コントロールでは、[Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) を使ってカーニングを制御し、[FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) を使ってトラッキングを制御します。 既定では、Typography.Kerning は "true" に設定され、FontStretch は推奨値である" Normal" に設定されます。
 
-**注**&nbsp;&nbsp;XAML テキスト コントロールでは、[Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) を使ってカーニングを制御し、[FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) を使ってトラッキングを制御します。 既定では、Typography.Kerning は "true" に設定され、FontStretch は推奨値である" Normal" に設定されます。
+<div class="side-by-side">
+<div class="side-by-side-content">
+  <div class="side-by-side-content-left">
+<h2>配置</h2>
 
-
-
-
-## <a name="alignment"></a>配置
-
-通常は、視覚要素と書体の列を左揃えにすることをお勧めします。 ほとんどの場合、このような左揃えおよび右不揃いのアプローチによって、コンテンツが一貫したアンカー設定となり、均一なレイアウトになります。
-
-
-![左揃えテキストを示します](images/alignment.png)
-
-
-
-## <a name="line-endings"></a>行の末尾
+通常は、視覚要素と書体の列を左揃えにすることをお勧めします。 ほとんどの場合、このような左揃えおよび右不揃いのアプローチによって、コンテンツが一貫したアンカー設定となり、均一なレイアウトになります。 
+  </div>
+  <div class="side-by-side-content-right">
+<h2>行の末尾</h2>
 
 文字体裁が左揃えおよび右不揃いで配置されていない場合、行の末尾が均等になるようにし、ハイフンを使わないでください。
+  </div>
+</div>
+</div>
 
+<div class="side-by-side">
+<div class="side-by-side-content">
+  <div class="side-by-side-content-left">
+![左揃えテキストを示します。](images/alignment.png)  
+  </div>
+  <div class="side-by-side-content-right">
+![均等な行の末尾を示します。](images/line-endings.png) 
+  </div>
+</div>
+</div>
 
-![均等な行の末尾を示します](images/line-endings.png)
 
 ## <a name="paragraphs"></a>段落
 
@@ -123,9 +143,10 @@ Segoe UI には多くの文字が用意されており、サイズが小さく�
 
 テキストの高さがアイコンの高さより高い場合、テキストの先頭行を縦方向に揃え、残りのテキストが自然に下に流れるようにしてください。 より大きい大文字、高さが上昇または下降する文字を使うときは、同じ配置ガイダンスが守られるように注意してください。
 
-![複数のアイコンとテキストの組み合わせを示します](images/hanging-text-alignment.png)
+![いくつかのアイコンとテキストの組み合わせを示します](images/hanging-text-alignment.png)
 
-**注**&nbsp;&nbsp;XAML の [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) プロパティを使うと、大文字の高さやベースライン フォントのメトリックにアクセスできます。 このプロパティは、書体を視覚的に上下中央に配置したり、上揃えに配置する場合に利用できます。
+>[!NOTE]
+>XAML の [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) プロパティを使うと、大文字の高さやベースライン フォントのメトリックにアクセスできます。 このプロパティは、書体を視覚的に上下中央に配置したり、上揃えに配置する場合に利用できます。
 
 ## <a name="clipping-and-ellipses"></a>クリッピングと省略記号
 
@@ -138,16 +159,31 @@ Segoe UI には多くの文字が用意されており、サイズが小さく�
 ## <a name="type-ramp"></a>書体見本
 書体見本 (type ramp) は、ヘッドラインからの本文までの重要なデザインの関係を確立し、異なるレベル間の明快でわかりやすい階層を保証します。 この階層により、ユーザーが書面によるコミュニケーションを通じて簡単にナビゲートできる構造が作成されます。
 
-![書体見本を示します](images/type-ramp.png) すべてのサイズは有効ピクセル単位です。 
+<div class="uwpd-image-with-caption">
+    <img src="images/type-ramp.png" alt="Shows the type ramp" />
+    <div>すべてのサイズは有効ピクセル単位です。 詳しくは、「[UWP アプリ設計の概要](../layout/design-and-ui-intro.md)」をご覧ください。</div>
+</div>
+
+>[!NOTE]
+>書体見本のほとんどのレベルは XAML の[静的リソース](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp)として利用できます。このリソースは `*TextBlockStyle` 名前付け規則に従っている必要があります (例: `HeaderTextBlockStyle`)。
 
 
-**注**&nbsp;&nbsp;書体見本のほとんどのレベルは XAML の[静的リソース](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) として利用できます。このリソースは `*TextBlockStyle` 名前付け規則に従っている必要があります (例: `HeaderTextBlockStyle`)。
+<div class="microsoft-internal-note">
+SubtitleAlt、BaseAlt、および CaptionAlt は現在含まれていません。 上記のリンクのコード スニペットに従うと、自分のアプリのスタイルを作成できます。 また、現在 XAML では行の高さが正確には一致しないことに注意してください。
+</div>
 
 
 ## <a name="primary-and-secondary-text"></a>プライマリ テキストとセカンダリ テキスト
 
-書体見本を超えて追加の階層を作成するには、セカンダリ テキストの不透明度を 60% に設定します。 [テーマ カラー パレット](color.md#color-theming) で、BaseMedium を使います。 プライマリ テキストは、常に不透明度を 100% にするか、BaseHigh にしてください。
+書体見本以外の追加の階層を作成するには、セカンダリ テキストの不透明度を 60% に設定します。 [テーマ カラー パレット](color.md#color-theming) で、BaseMedium を使います。 プライマリ テキストは、常に不透明度を 100% にするか、BaseHigh にしてください。
 
+<!-- Need new images
+![Two phone apps using SubtitleAlt](images/type-ramp-example-2.png)
+Recommended use of SubtitleAlt. Also note the primary and secondary text usage in list items.
+
+![Two phone apps using CaptionAlt](images/type-ramp-example-1.png)
+Recommended use of CaptionAlt.
+-->
 
 ## <a name="all-caps-titles"></a>すべて大文字のタイトル
 
@@ -156,32 +192,28 @@ Segoe UI には多くの文字が用意されており、サイズが小さく�
 ただし、言語によっては大文字にすると固有名詞の意味が変わるため、名前やユーザー入力に基づくページ タイトルはすべて大文字に変換*しない*でください。
 
 
-**推奨される事項**
+<!-- Need new images
+![Shows several apps where they should and should not use all caps](images/all-caps.png)
+Green shows where all caps should be used. Red shows where it should not.
+-->
 
-
-
+## <a name="dos-and-donts"></a>推奨と非推奨
 * ほとんどのテキストには Body を使う
 * スペースに制約がある場合はタイトルに Base を使う
 * 最上位レベルのコンテンツを強調することで、SubtitleAlt を組み込んでコントラストと階層を作る
-
-
-
-**非推奨**
-
-
-
 * 長い文字列やプライマリ操作には Caption を使わない
 * テキストを折り返す必要がある場合は Header や Subheader を使わない
 * 同じページで Subtitle と SubtitleAlt を組み合わせない
 
 
-
 ## <a name="related-articles"></a>関連記事
 
 * [テキスト コントロール](../controls-and-patterns/text-controls.md)
+* [フォント](fonts.md)
+* [Segoe MDL2 アイコン](segoe-ui-symbol-font.md)
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

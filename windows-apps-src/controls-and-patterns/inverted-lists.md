@@ -5,11 +5,11 @@ title: "反転リスト"
 label: Inverted lists
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: c70cafe4d1dd3db46d48e9844ba9086dbba9acaa
+ms.sourcegitcommit: 5f50e490caa5d1d88c2f8315dc47e15b0ae22a05
+ms.openlocfilehash: de90c49dfc961241c1da028c8f7278e370a810bd
 
 ---
-# 反転リスト
+# <a name="inverted-lists"></a>反転リスト
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -22,29 +22,24 @@ ms.openlocfilehash: c70cafe4d1dd3db46d48e9844ba9086dbba9acaa
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx"><strong>ListView クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx"><strong>ItemsStackPanel クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx"><strong>ItemsUpdatingScrollMode プロパティ</strong></a></li>
+<li>[**ListView クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)</li>
+<li>[**ItemsStackPanel クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx)</li>
+<li>[**ItemsUpdatingScrollMode プロパティ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## 反転リストを作成する
+## <a name="create-an-inverted-list"></a>反転リストを作成する
 
 反転リストを作成するには、リスト ビューと共に、項目パネルとして [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx) を使います。 ItemsStackPanel で、[**ItemsUpdatingScrollMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx) を [**KeepLastItemInView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsupdatingscrollmode.aspx) に設定します。
 
-> **重要**&nbsp;&nbsp;**KeepLastItemInView** 列挙値は、Windows 10 バージョン 1607 以上で利用できます。 この値は、アプリを以前のバージョンの Windows 10 で実行するときには使用できません。
+> [!IMPORTANT]
+> **KeepLastItemInView** 列挙値は、Windows 10 バージョン 1607 以上で利用できます。 この値は、アプリを以前のバージョンの Windows 10 で実行するときには使用できません。
 
 この例は、リスト ビューの項目を下部に配置する方法や、項目に変更があったときに最後の項目をビュー内に維持するように指定する方法を示しています。
  
  **XAML**
- ```xaml
+```xaml
 <ListView>
     <ListView.ItemsPanel>
         <ItemsPanelTemplate>
@@ -55,7 +50,7 @@ ms.openlocfilehash: c70cafe4d1dd3db46d48e9844ba9086dbba9acaa
 </ListView>
 ```
 
-## 推奨事項
+## <a name="dos-and-donts"></a>推奨と非推奨
 
 - 送信者のメッセージと受信者のメッセージを両側に配置して、ユーザーが会話のフローを簡単に理解できるようにします。
 - ユーザーが既に会話の末尾を読んでいて次のメッセージを待っている場合は、既存のメッセージを上に移動して最新のメッセージを表示するアニメーションを表示します。
@@ -63,6 +58,6 @@ ms.openlocfilehash: c70cafe4d1dd3db46d48e9844ba9086dbba9acaa
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

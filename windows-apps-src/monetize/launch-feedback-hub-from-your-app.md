@@ -4,8 +4,8 @@ Description: "アプリからフィードバック Hub を起動してフィー�
 title: "アプリからのフィードバック Hub の起動"
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: 4296bd4007ae5109c9a3736c977ba68f312b208c
+ms.sourcegitcommit: a3c4ebc9bfda5ed41363de139d43a6a2c7934e0e
+ms.openlocfilehash: 54c6503add19ead5226da5a862b199bc3f305b7e
 
 ---
 
@@ -59,16 +59,16 @@ ms.openlocfilehash: 4296bd4007ae5109c9a3736c977ba68f312b208c
 
 フィードバック Hub を起動するために、Segoe MDL2 Assets フォントと文字コード E939 から次の標準のフィードバック アイコンを表示する UI 要素 (ボタンなど) をアプリに追加することをお勧めします。
 
-![]Feedback icon](images/feedback_icon.PNG)
+![フィードバック アイコン](images/feedback_icon.PNG)
 
 また、アプリでフィードバック Hub にリンクするための次の配置オプションを 1 つ以上使用することをお勧めします。
 * **アプリ バー内で直接**。 実装に応じて、アイコンのみを使用するか、テキストを追加できます (以下に示すように)。
 
-  ![]Feedback icon](images/feedback_appbar_placement.png)
+  ![フィードバック アイコン](images/feedback_appbar_placement.png)
 
 * **アプリの設定内**。 これは、フィードバック Hub へのアクセスを提供するより巧妙な方法です。 次の例では、フィードバック リンクがアプリの下にあるリンクとして表示されています。
 
-  ![]Feedback icon](images/feedback_settings_placement.png)
+  ![フィードバック アイコン](images/feedback_settings_placement.png)
 
 * **イベント駆動型のポップアップ内**。 これは、Windows フィードバック Hub を起動する前に、特定の質問についてユーザーにたずねる場合に便利です。 たとえば、ユーザーがアプリで特定の機能を使用した後、その機能の満足度に関する特定の質問を表示します。 ユーザーが質問に応答した場合、アプリでフィードバック Hub が起動します。
 
@@ -79,6 +79,6 @@ ms.openlocfilehash: 4296bd4007ae5109c9a3736c977ba68f312b208c
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

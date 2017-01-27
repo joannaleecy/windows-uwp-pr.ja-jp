@@ -4,15 +4,12 @@ ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
 description: "Windows ストア申請 API 内のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されているアプリの新しいパッケージ フライトの申請を作成します。"
 title: "Windows ストア申請 API を使用したパッケージ フライト申請の作成"
 translationtype: Human Translation
-ms.sourcegitcommit: 27d8385c7250feba89c6970033ad7ec170f0646c
-ms.openlocfilehash: 8689fa9d314d2ba1d31a16c47aa4c7168e44c69f
+ms.sourcegitcommit: 020c8b3f4d9785842bbe127dd391d92af0962117
+ms.openlocfilehash: 2ca6824039077d5d3ceba2c643d52a62c77104e4
 
 ---
 
-# Windows ストア申請 API を使用したパッケージ フライト申請の作成
-
-
-
+# <a name="create-a-package-flight-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したパッケージ フライト申請の作成
 
 Windows ストア申請 API 内のこのメソッドを使用して、アプリのパッケージ フライトの新しい申請を作成します。 このメソッドを使って新しい申請を正常に作成したら、[申請を更新](update-a-flight-submission.md)して申請データに必要な変更を加え、取り込んで公開するために[申請をコミット](commit-a-flight-submission.md)します。
 
@@ -20,7 +17,7 @@ Windows ストア申請 API 内のこのメソッドを使用して、アプリ�
 
 >**注:**&nbsp;&nbsp;このメソッドは、既存のパッケージ フライトの申請を作成します。 パッケージ フライトを作成するには、[パッケージ フライトの作成](create-a-flight.md)のメソッドを使用してください。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
@@ -30,7 +27,7 @@ Windows ストア申請 API 内のこのメソッドを使用して、アプリ�
 
 >**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
-## 要求
+## <a name="request"></a>要求
 
 このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
 
@@ -41,7 +38,7 @@ Windows ストア申請 API 内のこのメソッドを使用して、アプリ�
 <span/>
  
 
-### 要求ヘッダー
+### <a name="request-header"></a>要求ヘッダー
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -49,7 +46,7 @@ Windows ストア申請 API 内のこのメソッドを使用して、アプリ�
 
 <span/>
 
-### 要求パラメーター
+### <a name="request-parameters"></a>要求パラメーター
 
 | 名前        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -58,11 +55,11 @@ Windows ストア申請 API 内のこのメソッドを使用して、アプリ�
 
 <span/>
 
-### 要求本文
+### <a name="request-body"></a>要求本文
 
 このメソッドでは要求本文を指定しないでください。
 
-### 要求の例
+### <a name="request-example"></a>要求の例
 
 次の例は、ストア ID 9WZDNCRD91MD を持つアプリの新しいパッケージ フライトの申請を作成する方法を示しています。
 
@@ -71,7 +68,7 @@ POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/fl
 Authorization: Bearer <your access token>
 ```
 
-## 応答
+## <a name="response"></a>応答
 
 次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文には、新しい申請に関する情報が含まれています。 応答本文の値について詳しくは、[パッケージ フライトの申請のリソース](manage-flight-submissions.md#flight-submission-object)を参照してください。
 
@@ -114,7 +111,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## エラー コード
+## <a name="error-codes"></a>エラー コード
 
 要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。
 
@@ -125,7 +122,7 @@ Authorization: Bearer <your access token>
 
 <span/>
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [パッケージ フライトの申請の管理](manage-flight-submissions.md)
@@ -137,6 +134,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

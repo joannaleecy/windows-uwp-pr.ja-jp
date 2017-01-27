@@ -4,12 +4,12 @@ title: "関心のあるポイント (POI) の地図への表示"
 description: "プッシュピン、画像、図形、XAML UI 要素を使って、関心のあるポイント (POI) を地図に追加します。"
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
 translationtype: Human Translation
-ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: aec420d6591546e63c6343d7151afe9e95d1afd8
+ms.sourcegitcommit: d00ba80ac7d0f033a69ad070dc8ee681cbd0ed18
+ms.openlocfilehash: 8afdb41d6790bb9647a6b89086c4b86872940c51
 
 ---
 
-# 関心のあるポイント (POI) の地図への表示
+# <a name="display-points-of-interest-poi-on-a-map"></a>関心のあるポイント (POI) の地図への表示
 
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -38,7 +38,7 @@ XAML ユーザー インターフェイス要素 ([**Button**](https://msdn.micr
 
 地図に配置する要素の数が多い場合、[地図にタイル画像をオーバーレイする](overlay-tiled-images.md)ことを検討します。 地図に道路情報を表示するには、「[ルートとルート案内の表示](routes-and-directions.md)」をご覧ください。
 
-## MapIcon の追加
+## <a name="add-a-mapicon"></a>MapIcon の追加
 
 
 [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) クラスを使って、プッシュピンなどの画像をオプションのテキストと共に地図に表示します。 既定の画像をそのまま使うか、[**Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) プロパティを使ってカスタム画像を指定できます。 次の画像はそれぞれ、[**Title**](https://msdn.microsoft.com/library/windows/apps/dn637088) プロパティに値を指定しない、短いタイトル、長いタイトル、非常に長いタイトルを指定した場合の **MapIcon** の既定の画像です。
@@ -90,7 +90,7 @@ XAML ユーザー インターフェイス要素 ([**Button**](https://msdn.micr
 -   [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) のオプションの [**Title**](https://msdn.microsoft.com/library/windows/apps/dn637088) は、必ず表示されるとは限りません。 テキストが表示されない場合は、[**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) の [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) プロパティの値を減らして、地図を縮小してください。
 -   地図上の特定の場所を指す [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) 画像 (たとえば、プッシュピンや矢印など) を表示する場合は、[**NormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637082) プロパティの値を画像上にあるポインターのおおよその位置に設定することを検討してください。 **NormalizedAnchorPoint** の値を、画像の左上隅を示す既定値 (0, 0) のままにした場合、地図の [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) を変更すると、画像が別の場所を示した状態になる可能性があります。
 
-## MapPolygon の追加
+## <a name="add-a-mappolygon"></a>MapPolygon の追加
 
 
 [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) クラスを使って、マルチポイント図形を地図に表示します。 次の例は、[UWP の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)から抜粋したもので、地図に赤色のボックス (境界線は青色) を表示します。
@@ -118,7 +118,7 @@ private void mapPolygonAddButton_Click(object sender, Windows.UI.Xaml.RoutedEven
 }
 ```
 
-## MapPolyline の追加
+## <a name="add-a-mappolyline"></a>MapPolyline の追加
 
 
 [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) クラスを使って、線を地図に表示します。 次の例は、[UWP の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)から抜粋したもので、地図に破線を表示します。
@@ -141,7 +141,7 @@ private void mapPolylineAddButton_Click(object sender, Windows.UI.Xaml.RoutedEve
 }
 ```
 
-## XAML の追加
+## <a name="add-xaml"></a>XAML の追加
 
 
 XAML を使って、カスタム UI 要素を地図に表示します。 XAML を地図に配置するには、XAML の位置と正規化されたアンカー ポイントを指定します。
@@ -149,7 +149,7 @@ XAML を使って、カスタム UI 要素を地図に表示します。 XAML �
 -   [**SetLocation**](https://msdn.microsoft.com/library/windows/desktop/ms704369) を呼び出して、XAML を地図に配置する位置を設定します。
 -   [**SetNormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637050) を呼び出して、指定した位置に対応する XAML 上の相対位置を設定します。
 
-次の例では、シアトル市の地図を表示して、XAML の [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) コントロールを追加し、スペース ニードルの場所を示しています。 また、そのエリアを地図の中央に配置し、拡大しています。 マップ コントロールを使用する方法に関する一般的な情報については、「[2D、3D、Streetside ビューでの地図の表示](display-maps.md)」をご覧ください。
+次の例では、シアトル市の地図を表示して、XAML の [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) コントロールを追加し、スペース ニードルの場所を示しています。 また、そのエリアを地図の中央に配置し、拡大しています。 マップ コントロールを使用する方法に関する一般的な情報については、「 [2D、3D、Streetside ビューでの地図の表示](display-maps.md)」をご覧ください。
 
 ```csharp
 private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
@@ -180,7 +180,7 @@ private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 
 この例では、地図に青色の境界線が表示されます。
 
-![](images/displaypoixaml.png)
+![地図上の関心がある場所に表示された xaml のスクリーンショット](images/displaypoixaml.png)
 
 次の例では、データ バインディングを使って、ページの XAML マークアップで XAML UI 要素を直接追加する方法を示しています。 コンテンツを表示する他の XAML 要素と同様に、[**Children**](https://msdn.microsoft.com/library/windows/apps/dn637008) は [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) の既定のコンテンツ プロパティであり、XAML マークアップで明示的に指定する必要はありません。
 
@@ -220,7 +220,7 @@ private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 </maps:MapControl>
 ```
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
 * [UWP の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
@@ -235,6 +235,6 @@ private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

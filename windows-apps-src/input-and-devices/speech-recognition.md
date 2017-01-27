@@ -5,27 +5,34 @@ title: "音声認識"
 ms.assetid: 553C0FB7-35BC-4894-9EF1-906139E17552
 label: Speech recognition
 template: detail.hbs
+keywords: "スピーチ, 音声, 音声認識, 自然言語, ディクテーション, 入力, ユーザーの操作"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 59cebc2235b8ae4214156a4140b0b003c717375d
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: a4de0955eb6bd01ef5279b5b8d553fe1d1dd50f2
 
 ---
 
-# 音声認識
-
+# <a name="speech-recognition"></a>音声認識
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 音声認識を使って、入力を行ったり、操作やコマンドを指定したり、タスクを実行したりできます。
 
-**重要な API**
-
--   [**Windows.Media.SpeechRecognition**](https://msdn.microsoft.com/library/windows/apps/dn653262)
-
-
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**Windows.Media.SpeechRecognition**](https://msdn.microsoft.com/library/windows/apps/dn653262)</li>
+</ul>
+</div>
 
 音声認識機能は、音声認識ランタイム、ランタイムをプログラミングするための認識 API、ディクテーションと Web 検索のための定義済みの文法、ユーザーが音声認識機能を見つけて使うときに役立つ既定のシステム UI で構成されています。
 
 
-## オーディオ フィードの設定
+## <a name="set-up-the-audio-feed"></a>オーディオ フィードの設定
 
 
 使っているデバイスにマイクまたは同等の機能があることを確認します。
@@ -34,7 +41,7 @@ ms.openlocfilehash: 59cebc2235b8ae4214156a4140b0b003c717375d
 
 「[アプリ機能の宣言](https://msdn.microsoft.com/library/windows/apps/mt270968)」をご覧ください。
 
-## 音声入力の認識
+## <a name="recognize-speech-input"></a>音声入力の認識
 
 
 *制約*は、音声入力でアプリが認識する単語と語句 (ボキャブラリ) を定義します。 制約は音声認識の中心であり、アプリの音声認識の精度に大きく影響します。
@@ -147,7 +154,7 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## 認識 UI をカスタマイズする
+## <a name="customize-the-recognition-ui"></a>認識 UI をカスタマイズする
 
 
 アプリが [**SpeechRecognizer.RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) を呼び出して音声認識を試みると、複数の画面が次の順序で表示されます。
@@ -204,7 +211,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 
 **開発者向け**
@@ -223,6 +230,6 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -4,22 +4,19 @@ ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
 description: "Microsoft Store Services SDK の Microsoft Advertising ライブラリを使って Windows 10、Windows 8.1、または Windows Phone 8.1 アプリにスポット広告を組み込む方法について説明します。"
 title: "スポット広告"
 translationtype: Human Translation
-ms.sourcegitcommit: 8574695fe12042e44831227f81e1f6ea45e9c0da
-ms.openlocfilehash: fdc9bddafc7b80f66bb160183a6c416a8573883a
+ms.sourcegitcommit: 2b5dbf872dd7aad48373f6a6df3dffbcbaee8090
+ms.openlocfilehash: fae0fc57eca3477bf46a6f3ac43ec35781241a6e
 
 ---
 
-# スポット広告
-
-
-
+# <a name="interstitial-ads"></a>スポット広告
 
 このチュートリアルでは、Microsoft Store Services SDK の Microsoft Advertising ライブラリを使って Windows 10、Windows 8.1、または Windows Phone 8.1 アプリにスポット広告を組み込む方法について説明します。
 
 C# と C++ を使って JavaScript/HTML アプリと XAML アプリにスポット広告を追加する方法を示す完全なサンプル プロジェクトについては、[GitHub の広告サンプル](http://aka.ms/githubads)をご覧ください。
 
 <span id="whatareinterstitialads10"/>
-## スポット広告とは
+## <a name="what-are-interstitial-ads"></a>スポット広告とは
 
 スポット広告 (または*スポット*) は、バナー広告とは異なり、アプリの画面全体に表示されます。 通常、ゲームでは、2 つの基本的な形式が使用されます。
 
@@ -31,327 +28,179 @@ C# と C++ を使って JavaScript/HTML アプリと XAML アプリにスポッ�
 
     この SDK ではビデオの再生時を除いて特定のユーザー インターフェイスを処理できないことに注意してください。 スポット広告をアプリに統合する方法を検討するときは、何をすべきであり何をすべきでないかに関するガイドラインとして、[スポットのベスト プラクティス](ui-and-user-experience-guidelines.md#interstitialbestpractices10)をご覧ください。
 
-## スポット広告を含むアプリのビルド
+## <a name="build-an-app-with-interstitial-ads"></a>スポット広告を含むアプリの構築
 
+アプリでスポット広告を表示するには、次のプロジェクトの種類の指示に従います。
 
-### 前提条件
+* [XAML/.NET](#interstitialadsxaml10)
+* [HTML/JavaScript](#interstitialadshtml10)
+* [C++ (DirectX Interop)](#interstitialadsdirectx10)
+
+<span/>
+### <a name="prerequisites"></a>前提条件
 
 * UWP アプリ: Visual Studio 2015 と共に [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) をインストールします。
 * Windows 8.1 アプリまたは Windows Phone 8.1 アプリ: Visual Studio 2015 または Visual Studio 2013 と共に [Windows および Windows Phone 8.x 用の Microsoft Advertising SDK](http://aka.ms/store-8-sdk) をインストールします。
 
-### コード開発
-
-* [XAML/.NET アプリ用の手順](#interstitialadsxaml10)
-* [HTML/JavaScript 用の手順](#interstitialadshtml10)
-* [C++ (DirectX Interop) 用の手順](#interstitialadsdirectx10)
-
 <span id="interstitialadsxaml10"/>
-### スポット広告 (XAML/.NET)
+###<a name="xamlnet"></a>XAML/.NET
 
-> **注**   ここでは C# の例を紹介していますが、Visual Basic と C++ もサポートされています。
- 
+ここでは C# の例を紹介していますが、XAML/.NET プロジェクトでは Visual Basic と C++ もサポートされています。 完全な C# コードの例については、「[C# を使ったスポット広告のサンプル コード](interstitial-ad-sample-code-in-c.md)」をご覧ください。
+
 1. Visual Studio でプロジェクトを開きます。
-2. **参照マネージャー**で、プロジェクトの種類に応じて次のいずれかの参照を選択します。
 
-    -   ユニバーサル Windows プラットフォーム (UWP) プロジェクトの場合: **[ユニバーサル Windows]** を展開し、**[拡張機能]** をクリックします。次に、**[Microsoft Advertising SDK for XAML]** (Version 10.0) の横のチェック ボックスをオンにします。
+2. **[参照マネージャー]** で、プロジェクトの種類に応じて次のいずれかの参照を選択します。
 
-    -   Windows 8.1 プロジェクトの場合: **[Windows 8.1]** を展開し、**[拡張機能]** をクリックします。次に、**[Ad Mediator SDK for Windows 8.1 XAML]** の横のチェック ボックスをオンにします。 この場合、Microsoft Advertising ライブラリと広告メディエーター ライブラリの両方がプロジェクトに追加されますが、広告メディエーター ライブラリは無視してかまいません。
+  * ユニバーサル Windows プラットフォーム (UWP) プロジェクトの場合: **[ユニバーサル Windows]** を展開し、**[拡張機能]** をクリックします。次に、**[Microsoft Advertising SDK for XAML]** (Version 10.0) の横のチェック ボックスをオンにします。
 
-    -   Windows Phone 8.1 プロジェクトの場合: **[Windows Phone 8.1]** を展開し、**[拡張機能]** をクリックします。次に、**[Ad Mediator SDK for Windows Phone 8.1 XAML]** の横のチェック ボックスをオンにします。 この場合、Microsoft Advertising ライブラリと広告メディエーター ライブラリの両方がプロジェクトに追加されますが、広告メディエーター ライブラリは無視してかまいません。
+  * Windows 8.1 プロジェクトの場合: **[Windows 8.1]** を展開し、**[拡張機能]** をクリックします。次に、**[Ad Mediator SDK for Windows 8.1 XAML]** の横のチェック ボックスをオンにします。 この場合、Microsoft Advertising ライブラリと広告メディエーター ライブラリの両方がプロジェクトに追加されますが、広告メディエーター ライブラリは無視してかまいません。
 
-3.  アプリ コードで、次の名前空間の参照を含めます。
+  * Windows Phone 8.1 プロジェクトの場合: **[Windows Phone 8.1]** を展開し、**[拡張機能]** をクリックします。次に、**[Ad Mediator SDK for Windows Phone 8.1 XAML]** の横のチェック ボックスをオンにします。 この場合、Microsoft Advertising ライブラリと広告メディエーター ライブラリの両方がプロジェクトに追加されますが、広告メディエーター ライブラリは無視してかまいません。
 
-    ``` syntax
-    using Microsoft.Advertising.WinRT.UI;
-    ```
+3.  アプリの適切なコード ファイル (たとえば、MainPage.xaml.cs またはその他のページのコード ファイル) に、次の名前空間の参照を追加します。
 
-4.  `MyAppId` プロパティと `MyAdUnitId` プロパティを宣言します。
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet1)]
 
-    ``` syntax
-    var MyAppId = "<your app id for windows>";
-    var MyAdUnitId = "<your adunit for windows";
+4.  アプリの適切な場所 (たとえば、```MainPage``` またはその他のページ) で、[InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) オブジェクトと、スポット広告のアプリケーション ID および広告ユニット ID を表す複数の文字列フィールドを宣言します。 次のコード例では、`myAppId` フィールドおよび `myAdUnitId` フィールドを「[テスト モードの値](test-mode-values.md)」で提供されているテスト値に割り当てています。 これらの値はテストにのみ使用されるため、アプリを公開する前に、これらの値を Windows デベロッパー センターから取得した実際の値に置き換える必要があります。
 
-    // if your code is in a universal solution and resides in the shared project
-    // you can opt to use #if WINDOWS_APP or WINDOWS_PHONE_APP to override with different
-    // identifiers for each
-#if WINDOWS_PHONE_APP
-    MyAppId = "<your app id for phone>";
-    MyAdUnitId = "<your adunit for phone>";
-#endif
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet2)]
 
-    > **注**  申請のためにアプリを提出する前に、テスト値を実際の値に置き換えてください。
+5.  起動時に実行されるコード (たとえば、ページのコンストラクター) 内で、**InterstitialAd** オブジェクトをインスタンス化し、このオブジェクトのイベント用のイベント ハンドラーを関連付けます。
 
-5.  [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) をインスタンス化し、すべてのイベント ハンドラーを関連付け、広告を要求します。
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet3)]
 
-    ``` syntax
-    // instantiate an InterstitialAd
-    InterstitialAd MyVideoAd = new InterstitialAd();
+6.  スポット広告が必要になる約 30 ～ 60 秒前に、[RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) メソッドを使用して事前に広告を取得しておきます。 これにより、広告を表示する前に、その広告を要求して準備するための十分な時間が与えられます。
 
-    // wire up all 4 events, see below for function templates
-    MyVideoAd.AdReady += MyVideoAd_AdReady;
-    MyVideoAd.ErrorOccurred += MyVideoAd_ErrorOccurred;
-    MyVideoAd.Completed += MyVideoAd_Completed;
-    MyVideoAd.Cancelled += MyVideoAd_Cancelled;
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet4)]
 
-    // pre-fetch an ad 30-60 seconds before you need it
-    MyVideoAd.RequestAd(AdType.Video, MyAppId, MyAdUnitId);
-    ```
+6.  広告を表示するコード内のポイントで、**InterstitialAd** の表示準備が整っていることを確認した後、[Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) メソッドを使用して広告を表示します。
 
-6.  コードの広告を表示するポイントで、広告が準備されていることを確認し、広告を表示します。
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet5)]
 
-    ``` syntax
-    if ((InterstitialAdState.Ready) == (MyVideoAd.State))
-    {
-      MyVideoAd.Show();
-    }
-    ```
+7.  **InterstitialAd** オブジェクトのイベント ハンドラーを定義します。
 
-7.  イベントを定義してコードを記述します。
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet6)]
 
-    ``` syntax
-    void MyVideoAd_AdReady(object sender, object e)
-    {
-      // code
-    }
-
-    void MyVideoAd_ErrorOccurred(object sender, AdErrorEventArgs e)
-    {
-      // code
-    }
-
-    void MyVideoAd_Completed(object sender, object e)
-    {  
-      // code
-    }
-
-    void MyVideoAd_Cancelled(object sender, object e)
-    {
-      // code
-    }
-    ```
-
-8.  `MyAppId` プロパティを、「[テスト モードの値](test-mode-values.md)」で提供されているテスト値に割り当てます。 この値はテストのみに使います。アプリを公開する前にこの値を適切な値に置き換えてください。
-
-    ``` syntax
-    var MyAppId = "d25517cb-12d4-4699-8bdc-52040c712cab";
-    ```
-
-9.  `MyAdUnitId` プロパティを、「[テスト モードの値](test-mode-values.md)」で提供されているテスト値に割り当てます。 この値はテストのみに使います。アプリを公開する前にこの値を適切な値に置き換えてください。
-
-    ``` syntax
-    var MyAdUnitId = "11389925";
-    ```
-
-10.  アプリをビルドした後テストして、テスト広告が表示されることを確認します。
+8.  アプリをビルドした後テストして、テスト広告が表示されることを確認します。
 
 <span id="interstitialadshtml10"/>
-### スポット広告 (HTML/JavaScript)
+###<a name="htmljavascript"></a>HTML/JavaScript
 
-このサンプルでは、Visual Studio 2015 で JavaScript 用ユニバーサル アプリ プロジェクトを作成済みであり、特定の CPU をターゲットとしているものと想定しています。
+次の手順では、Visual Studio 2015 で JavaScript 用のユニバーサル Windows プロジェクトを作成済みであり、特定の CPU をターゲットとしているものと想定しています。 完全なコード サンプルについては、「[JavaScript を使ったスポット広告のサンプル コード](interstitial-ad-sample-code-in-javascript.md)」をご覧ください。
 
 1. Visual Studio でプロジェクトを開きます。
-2.  **参照マネージャー**で、プロジェクトの種類に応じて次のいずれかの参照を選択します。
 
-    -   ユニバーサル Windows プラットフォーム (UWP) プロジェクトの場合: **[ユニバーサル Windows]** を展開し、**[拡張機能]** をクリックします。次に、**[Microsoft Advertising SDK for JavaScript]** (Version 10.0) の横のチェック ボックスをオンにします。
+2.  **[参照マネージャー]** で、プロジェクトの種類に応じて次のいずれかの参照を選択します。
 
-    -   Windows 8.1 プロジェクトの場合: **[Windows 8.1]** を展開し、**[拡張機能]** をクリックします。次に、**[Microsoft Advertising SDK for Windows 8.1 Native (JS)]** の横のチェック ボックスをオンにします。
+  * ユニバーサル Windows プラットフォーム (UWP) プロジェクトの場合: **[ユニバーサル Windows]** を展開し、**[拡張機能]** をクリックします。次に、**[Microsoft Advertising SDK for JavaScript]** (Version 10.0) の横のチェック ボックスをオンにします。
 
-    -   Windows 8.1 プロジェクトの場合: **[Windows Phone 8.1]** を展開し、**[拡張機能]** をクリックします。次に、**[Microsoft Advertising SDK for Windows Phone 8.1 Native (JS)]** の横のチェック ボックスをオンにします。
+  * Windows 8.1 プロジェクトの場合: **[Windows 8.1]** を展開し、**[拡張機能]** をクリックします。次に、**[Microsoft Advertising SDK for Windows 8.1 Native (JS)]** の横のチェック ボックスをオンにします。
 
-3.  HTML で、次のスクリプト参照を含めます。
+  * Windows 8.1 プロジェクトの場合: **[Windows Phone 8.1]** を展開し、**[拡張機能]** をクリックします。次に、**[Microsoft Advertising SDK for Windows Phone 8.1 Native (JS)]** の横のチェック ボックスをオンにします。
 
-    ``` syntax
-    <script src="//Microsoft.Advertising.JavaScript/ad.js"></script>
-    ```
+3.  プロジェクト内の HTML ファイルの **&lt;head&gt;** セクションで、プロジェクトの default.css と default.js の JavaScript 参照の後に ad.js への参照を追加します。 UWP プロジェクトでは、次の参照を追加します。
 
-4.  `myAppId` プロパティと `myAdUnitId` プロパティを宣言します。
+  > [!div class="tabbedCodeSnippets"]
+  ``` html
+  <script src="//Microsoft.Advertising.JavaScript/ad.js"></script>
+  ```
 
-    ``` syntax
-    <script>
-      var myAppId = "<your app id>";
-      var myAdUnitId = "<your adunit id>";
-    </script>
-    ```
+  Windows 8.1 または Windows Phone 8.1 のプロジェクトでは、次の参照を追加します。
 
-5.  **InterstitialAd** をインスタンス化し、すべてのイベント ハンドラーを関連付け、広告を要求します。
+  > [!div class="tabbedCodeSnippets"]
+  ``` html
+  <script src="/MSAdvertisingJS/ads/ad.js"></script>
+  ```
 
-    ``` syntax
-    // instantiate an InterstitialAd
-    window.interstitialAd = new MicrosoftNSJS.Advertising.InterstitialAd();
+4.  プロジェクト内の .js ファイルで、[InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) オブジェクトと、スポット広告のアプリケーション ID および広告ユニット ID を含む複数のフィールドを宣言します。 次のコード例では、`applicationId` フィールドおよび `adUnitId` フィールドを「[テスト モードの値](test-mode-values.md)」で提供されているテスト値に割り当てています。 これらの値はテストにのみ使用されるため、アプリを公開する前に、これらの値を Windows デベロッパー センターから取得した実際の値に置き換える必要があります。
 
-    // wire up all 4 events, see below for function templates
-    window.interstitialAd.onAdReady = readyHandler;
-    window.interstitialAd.onErrorOccurred = errorHandler;
-    window.interstitialAd.onCompleted = completeHandler;
-    window.interstitialAd.onCancelled = cancelHandler;
+  > [!div class="tabbedCodeSnippets"]
+  [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet1)]
 
-    // pre-fetch an ad 30-60 seconds before you need it
-    var myAdType = MicrosoftNSJS.Advertising.InterstitialAdType.video;
-    window.interstitialAd.requestAd(myAdType, myAppId, myAdUnitId);
-    ```
+5.  起動時に実行されるコード (たとえば、ページのコンストラクター) 内で、**InterstitialAd** オブジェクトをインスタンス化し、このオブジェクトのイベント ハンドラーを関連付けます。
 
-6.  コードの広告を表示するポイントで、広告が準備されていることを確認し、広告を表示します。
+  > [!div class="tabbedCodeSnippets"]
+  [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet2)]
 
-    ``` syntax
-    if ((MicrosoftNSJS.Advertising.InterstitialAdState.ready) == (window.interstitialAd.state)) {
-             window.interstitialAd.show();
-    }
-    ```
+5. スポット広告が必要になる約 30 ～ 60 秒前に、[RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) メソッドを使用して事前に広告を取得しておきます。 これにより、広告を表示する前に、その広告を要求して準備するための十分な時間が与えられます。
 
-7.  イベントを定義してコードを記述します。
+  > [!div class="tabbedCodeSnippets"]
+  [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet3)]
 
-    ``` syntax
-    function readyHandler(sender) {
-      // code
-    }
+6.  広告を表示するコード内のポイントで、**InterstitialAd** の表示準備が整っていることを確認した後、[Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) メソッドを使用して広告を表示します。
 
-    function errorHandler(sender, args) {
-      // code
-    }
+  > [!div class="tabbedCodeSnippets"]
+  [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/samples.js#Snippet4)]
 
-    function completeHandler(sender) {
-      // code
-    }
+7.  **InterstitialAd** オブジェクトのイベント ハンドラーを定義します。
 
-    function cancelHandler(sender) {
-      // code
-    }
-    ```
-
-7.  `MyAppId` プロパティを、「[テスト モードの値](test-mode-values.md)」で提供されているテスト値に割り当てます。 この値はテストのみに使います。アプリを公開する前にこの値を適切な値に置き換えてください。
-
-    ``` syntax
-    var MyAppId = "d25517cb-12d4-4699-8bdc-52040c712cab";
-    ```
-
-8.  `MyAdUnitId` プロパティを、「[テスト モードの値](test-mode-values.md)」で提供されているテスト値に割り当てます。 この値はテストのみに使います。アプリを公開する前にこの値を適切な値に置き換えてください。
-
-    ``` syntax
-    var MyAdUnitId = "11389925";
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/samples.js#Snippet5)]
 
 9.  アプリをビルドした後テストして、テスト広告が表示されることを確認します。
 
 <span id="interstitialadsdirectx10"/>
-### スポット広告 (C++ および DirectX と XAML の相互運用機能)
+###<a name="c-directx-interop"></a>C++ (DirectX Interop)
 
-このサンプルでは、Visual Studio 2015 で XAML 用ユニバーサル アプリ プロジェクトを作成済みであり、特定の CPU アーキテクチャをターゲットとしているものと想定しています。
-
-> **重要**  このコードは、DirectX の要件により C++ で記述されています。
-
+このサンプルでは、Visual Studio 2015 で C++ **DirectX および XAML アプリ (ユニバーサル Windows)** プロジェクトを作成済みであり、特定の CPU アーキテクチャをターゲットとしているものと想定しています。
  
 1. Visual Studio でプロジェクトを開きます。
-1.  **参照マネージャー**で、プロジェクトの種類に応じて次のいずれかの参照を選択します。
 
-    -   ユニバーサル Windows プラットフォーム (UWP) プロジェクトの場合: **[ユニバーサル Windows]** を展開し、**[拡張機能]** をクリックします。次に、**[Microsoft Advertising SDK for XAML]** (Version 10.0) の横のチェック ボックスをオンにします。
+1.  **[参照マネージャー]** で、プロジェクトの種類に応じて次のいずれかの参照を選択します。
 
-    -   Windows 8.1 プロジェクトの場合: **[Windows 8.1]** を展開し、**[拡張機能]** をクリックします。次に、**[Ad Mediator SDK for Windows 8.1 XAML]** の横のチェック ボックスをオンにします。 この場合、Microsoft Advertising ライブラリと広告メディエーター ライブラリの両方がプロジェクトに追加されますが、広告メディエーター ライブラリは無視してかまいません。
+  * ユニバーサル Windows プラットフォーム (UWP) プロジェクトの場合: **[ユニバーサル Windows]** を展開し、**[拡張機能]** をクリックします。次に、**[Microsoft Advertising SDK for XAML]** (Version 10.0) の横のチェック ボックスをオンにします。
 
-    -   Windows Phone 8.1 プロジェクトの場合: **[Windows Phone 8.1]** を展開し、**[拡張機能]** をクリックします。次に、**[Ad Mediator SDK for Windows Phone 8.1 XAML]** の横のチェック ボックスをオンにします。 この場合、Microsoft Advertising ライブラリと広告メディエーター ライブラリの両方がプロジェクトに追加されますが、広告メディエーター ライブラリは無視してかまいません。
+  * Windows 8.1 プロジェクトの場合: **[Windows 8.1]** を展開し、**[拡張機能]** をクリックします。次に、**[Ad Mediator SDK for Windows 8.1 XAML]** の横のチェック ボックスをオンにします。 この場合、Microsoft Advertising ライブラリと広告メディエーター ライブラリの両方がプロジェクトに追加されますが、広告メディエーター ライブラリは無視してかまいません。
 
-2.  アプリの適切なヘッダー ファイルで、スポット広告オブジェクトとそれに関連するプロパティまたはメソッドを宣言します。
+  * Windows Phone 8.1 プロジェクトの場合: **[Windows Phone 8.1]** を展開し、**[拡張機能]** をクリックします。次に、**[Ad Mediator SDK for Windows Phone 8.1 XAML]** の横のチェック ボックスをオンにします。 この場合、Microsoft Advertising ライブラリと広告メディエーター ライブラリの両方がプロジェクトに追加されますが、広告メディエーター ライブラリは無視してかまいません。
 
-    ``` syntax
-    Microsoft::Advertising::WinRT::UI::InterstitialAd^ m_ia;
-    void OnAdReady(Object^ sender, Object^ args);
-    void OnAdCompleted(Object^ sender, Object^ args);
-    void OnAdCancelled(Object^ sender, Object^ args);
-    void OnAdError (Object^ sender,  Microsoft::Advertising::WinRT::UI::AdErrorEventArgs^ args);
-    ```
+2.  アプリの適切なヘッダー ファイル (例: DirectXPage.xaml.h) 内で、[InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) オブジェクトと関連するイベント ハンドラー メソッドを宣言します。  
 
-3.  `AppId` プロパティと `AdUnitId` プロパティを宣言します。
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.h#Snippet1)]
 
-    ``` syntax
-    #if WINDOWS_PHONE_APP
-    static Platform::String^ IA_APPID = L"<your app id for phone>";
-    static Platform::String^ IA_ADUNITID = L"<your ad unit for phone>";
-    #endif
+3.  同じヘッダー ファイル内で、スポット広告のアプリケーション ID と広告ユニット ID を表す複数の文字列フィールドを宣言します。 次のコード例では、`myAppId` フィールドおよび `myAdUnitId` フィールドを「[テスト モードの値](test-mode-values.md)」で提供されているテスト値に割り当てています。 これらの値はテストにのみ使用されるため、アプリを公開する前に、これらの値を Windows デベロッパー センターから取得した実際の値に置き換える必要があります。
 
-    #if WINDOWS_APP
-    static Platform::String^ IA_APPID = L"<your app id for windows>";
-    static Platform::String^ IA_ADUNITID = L"<your ad unit for windows>";
-    #endif
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.h#Snippet2)]
 
-4.  .cpp ファイルで、名前空間の参照を追加します。
+4.  スポット広告を表示するためのコードを追加する .cpp file に、次の名前空間の参照を追加します。 次の例では、アプリの DirectXPage.xaml.cpp ファイルにそのコードを追加しているものと想定しています。
 
-    ``` syntax
-    using namespace Microsoft::Advertising::WinRT::UI;
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet3)]
 
-5.  **InterstitialAd** をインスタンス化し、すべてのイベント ハンドラーを関連付け、広告を要求します。
+6.  起動時に実行されるコード (たとえば、ページのコンストラクター) 内で、**InterstitialAd** オブジェクトをインスタンス化し、このオブジェクトのイベント用のイベント ハンドラーを関連付けます。 次の例では、```InterstitialAdSamplesCpp``` がプロジェクトの名前空間です。コードでは、必要に応じてこの名前を変更します。
 
-    ``` syntax
-    // Instantiate an InterstitialAd.
-    m_ia = ref new InterstitialAd();
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet4)]
 
-    // Wire up all 4 events, see below for function templates.            
-    m_ia->AdReady += ref new Windows::Foundation::EventHandler<Platform::Object ^>
-        (this, &Simple3DGameXaml::DirectXPage::OnAdReady);
-    m_ia->Completed += ref new Windows::Foundation::EventHandler<Platform::Object ^>
-        (this, &Simple3DGameXaml::DirectXPage::OnAdCompleted);
-    m_ia->Cancelled += ref new Windows::Foundation::EventHandler<Platform::Object ^>
-        (this, &Simple3DGameXaml::DirectXPage::OnAdCancelled);
-    m_ia->ErrorOccurred += ref new
-        Windows::Foundation::EventHandler<Microsoft::Advertising::WinRT::UI::AdErrorEventArgs ^>
-            (this, &Simple3DGameXaml::DirectXPage::OnAdError);
+7. スポット広告が必要になる約 30 ～ 60 秒前に、[RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) メソッドを使用して事前に広告を取得しておきます。 これにより、広告を表示する前に、その広告を要求して準備するための十分な時間が与えられます。
 
-    // Pre-fetch an ad 30-60 seconds before you need it.
-    m_ia->RequestAd(AdType::Video, IA_APPID, IA_ADUNITID);
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet5)]
 
-6.  コードの広告を表示するポイントで、広告が準備されていることを確認し、広告を表示します。
+7.  広告を表示するコード内のポイントで、**InterstitialAd** の表示準備が整っていることを確認した後、[Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) メソッドを使用して広告を表示します。
 
-    ``` syntax
-    if ((InterstitialAdState::Ready == m_ia->State))
-    {
-        m_ia->Show();
-    }
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet6)]
 
-7.  イベントを定義してコードを記述します。
+8.  **InterstitialAd** オブジェクトのイベント ハンドラーを定義します。
 
-    ``` syntax
-    void DirectXPage::OnAdReady(Object^ sender, Object^ args)
-    {
-      // code
-    }
+  > [!div class="tabbedCodeSnippets"]
+  [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet7)]
 
-    void DirectXPage::OnAdCompleted(Object^ sender, Object^ args)
-    {
-      // code
-    }
+9. アプリをビルドした後テストして、テスト広告が表示されることを確認します。
 
-    void DirectXPage::OnAdCancelled(Object^ sender, Object^ args)
-    {
-      // code
-    }
+<span/>
+### <a name="release-your-app-with-live-ads-using-windows-dev-center"></a>Windows デベロッパー センターを使用して、ライブ広告を表示するアプリをリリースする
 
-    void DirectXPage::OnAdError
-      (Object^ sender, Microsoft::Advertising::WinRT::UI::AdErrorEventArgs^ args)
-    {
-      // code
-    }
-    ```
-
-8.  `AppId` プロパティを、「[テスト モードの値](test-mode-values.md)」で提供されているテスト値に割り当てます。 この値はテストのみに使います。アプリを公開する前にこの値を適切な値に置き換えてください。
-
-    ``` syntax
-    static Platform::String^ IA_APPID = L"d25517cb-12d4-4699-8bdc-52040c712cab";
-    ```
-
-9.  `AdUnitId` プロパティを、「[テスト モードの値](test-mode-values.md)」で提供されているテスト値に割り当てます。 この値はテストのみに使います。アプリを公開する前にこの値を適切な値に置き換えてください。
-
-    ``` syntax
-    static Platform::String^ IA_ADUNITID = L"11389925";
-    ```
-
-10. アプリをビルドした後テストして、テスト広告が表示されることを確認します。
-
-### Windows デベロッパー センターを使用して、ライブ広告を表示するアプリをリリースする
-
-1.  デベロッパー センターのダッシュボードで、アプリの **[収益化]** &gt; **[広告で収入を増やす]** ページに移動し、[スタンドアロン Microsoft Advertising ユニットを作成](../publish/monetize-with-ads.md)します。 広告ユニットの種類として、**[ビデオ (スポット)]** を指定します。 広告ユニット ID とアプリケーション ID の両方をメモしておきます。
+1.  デベロッパー センターのダッシュボードで、アプリの **[収益化]** &gt; **[広告で収入を増やす]** ページに移動し、[広告ユニットを作成](../publish/monetize-with-ads.md)します。 広告ユニットの種類として、**[ビデオ (スポット)]** を指定します。 広告ユニット ID とアプリケーション ID の両方をメモしておきます。
 
 2.  コードで、テスト広告ユニット値を、デベロッパー センターで生成したライブ値に置き換えます。
 
@@ -360,18 +209,18 @@ C# と C++ を使って JavaScript/HTML アプリと XAML アプリにスポッ�
 4.  デベロッパー センター ダッシュボードで[広告パフォーマンス レポート](../publish/advertising-performance-report.md)を確認します。
 
 <span id="interstitialbestpractices10"/>
-## スポットのベスト プラクティスとポリシー
+## <a name="interstitial-best-practices-and-policies"></a>スポットのベスト プラクティスとポリシー
 
 
 スポット広告を効果的に使用する方法と、実行する必要があるポリシーについて詳しくは、「[スポットのベスト プラクティスとポリシー](ui-and-user-experience-guidelines.md#interstitialbestpractices10)」をご覧ください。
 
 <span id="targetplatform10"/>
-## 参照エラーの解決: 特定の CPU プラットフォームをターゲットにする (XAML と HTML)
+## <a name="remove-reference-errors-target-a-specific-cpu-platform-xaml-and-html"></a>参照エラーの解決: 特定の CPU プラットフォームをターゲットにする (XAML と HTML)
 
 
 Microsoft Advertising ライブラリを使う場合、プロジェクトで **"Any CPU"** をターゲットにすることはできません。 プロジェクトでのターゲットを **Any CPU** プラットフォームに設定している場合は、Microsoft Advertising ライブラリに参照を追加した後で警告メッセージが表示される可能性があります。 この警告を解決するには、アーキテクチャ固有のビルド出力 (たとえば、**x86**) を使用するようにプロジェクトを更新します。 詳しくは、「[既知の問題](known-issues-for-the-advertising-libraries.md)」をご覧ください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [C# を使ったスポット広告のサンプル コード#](interstitial-ad-sample-code-in-c.md)
@@ -384,6 +233,6 @@ Microsoft Advertising ライブラリを使う場合、プロジェクトで **"
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

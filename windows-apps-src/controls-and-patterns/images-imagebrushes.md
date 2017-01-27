@@ -6,11 +6,11 @@ ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
 label: Images and image brushes
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: bcb23963bfe59006efff2df01bb5ea3d98525497
+ms.sourcegitcommit: 98b3a9739b1906b7abb529cea1e7d433118cbcdd
+ms.openlocfilehash: 6adb5c106ccbe7d5dccda405b301daf8ce4e69f4
 
 ---
-# 画像とイメージ ブラシ
+# <a name="images-and-image-brushes"></a>画像とイメージ ブラシ
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,29 +19,23 @@ ms.openlocfilehash: bcb23963bfe59006efff2df01bb5ea3d98525497
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx"><strong>Image クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx"><strong>Source プロパティ</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx"><strong>ImageBrush クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx"><strong>ImageSource プロパティ</strong></a></li>
+<li>[**Image クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)</li>
+<li>[**Source プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx)</li>
+<li>[**ImageBrush クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx)</li>
+<li>[**ImageSource プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## これらの要素は適切か。
+## <a name="are-these-the-right-elements"></a>これらの要素は適切か。
 **画像** 要素を使用して、アプリにスタンドアロンの画像を表示します。
 
-**ImageBrush** を使用して、画像を別のオブジェクトに適用します。 ImageBrush の使用法には、テキストの装飾性を高める効果や、コントロールまたはレイアウト コンテナーのタイルの背景などがあります。 画像を拡大、配置、およびタイル貼りする方法を制御できるので、パターンやその他の効果を作成することができます。 
+**ImageBrush** を使用して、画像を別のオブジェクトに適用します。 ImageBrush の使用法には、テキストの装飾性を高める効果や、コントロールまたはレイアウト コンテナーの背景などがあります。
 
 
-## 画像を作成する
+## <a name="create-an-image"></a>画像を作成する
 
-### Image
+### <a name="image"></a>Image
 [**Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx) オブジェクトを使って画像を作成する方法を次の例に示します。
 
 
@@ -55,7 +49,7 @@ ms.openlocfilehash: bcb23963bfe59006efff2df01bb5ea3d98525497
 
 この例の [**Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) プロパティは、表示する画像がある場所を指定します。 ソースを設定するには、絶対 URL (http://contoso.com/myPicture.jpg など) を指定するか、アプリのパッケージ化構造を基準とする相対 URL を指定します。 この例では、プロジェクトのルート フォルダーに "licorice.jpg" 画像ファイルを入れ、この画像ファイルをコンテンツとして含めるプロジェクト設定を宣言しています。
 
-### ImageBrush
+### <a name="imagebrush"></a>ImageBrush
 
 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx) オブジェクトを使うと、[**Brush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx) オブジェクトを受け付ける領域を、画像を使ってペイントできます。 たとえば、[**Ellipse**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.ellipse.aspx) の [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) プロパティまたは [**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) の [**Background**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) プロパティの値に ImageBrush を使うことができます。
 
@@ -73,7 +67,7 @@ ms.openlocfilehash: bcb23963bfe59006efff2df01bb5ea3d98525497
 
 ![ImageBrush でペイントされた Ellipse (楕円)。](images/Image_ImageBrush_Ellipse.jpg)
 
-### 画像を拡大する
+### <a name="stretch-an-image"></a>画像を拡大する
 
 **Image** の [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) 値または [**Height**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) 値を設定しないと、**Source** で指定した画像の寸法で表示されます。 **Width** と **Height** を設定すると、画像を表示する領域を囲む四角形が作成されます。 この囲まれた領域に画像を描く方法は、[**Stretch**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.stretch.aspx) プロパティを使って指定できます。 Stretch プロパティには、[**Stretch**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.stretch.aspx) 列挙体で定義されている次の値を指定します。
 
@@ -84,7 +78,7 @@ ms.openlocfilehash: bcb23963bfe59006efff2df01bb5ea3d98525497
 
 ![ストレッチ設定の例。](images/Image_Stretch.jpg)
 
-### 画像をトリミングする
+### <a name="crop-an-image"></a>画像をトリミングする
 
 [**Clip**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.clip.aspx) プロパティを使うと、画像出力から一定の領域をクリップできます。 Clip プロパティを [**Geometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.geometry.aspx) に設定します。 現在、四角形以外のクリップはサポートされていません。
 
@@ -102,7 +96,7 @@ ms.openlocfilehash: bcb23963bfe59006efff2df01bb5ea3d98525497
 
 ![RectangleGeometry によってトリミングされた Image オブジェクト。](images/Image_Cropped.jpg)
 
-### 不透明度を適用する
+### <a name="apply-an-opacity"></a>不透明度を適用する
 
 画像が半透明でレンダリングされるように、画像に [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.opacity.aspx) を適用することができます。 不透明度の値は、0.0 (完全に透明) ～ 1.0 (完全に不透明) です。 不透明度 0.5 を Image に適用する方法を次の例に示します。
 
@@ -114,7 +108,7 @@ ms.openlocfilehash: bcb23963bfe59006efff2df01bb5ea3d98525497
 
 ![不透明度 0.5 の Image オブジェクト。](images/Image_Opacity.jpg)
 
-### 画像ファイルの形式
+### <a name="image-file-formats"></a>画像ファイルの形式
 
 **Image** と **ImageBrush** は、次の画像ファイル形式を表示できます。
 
@@ -134,35 +128,36 @@ Windows 10 バージョン 1607 からは、**Image** 要素で、アニメー�
 
 アプリ リソースについて、およびアプリにイメージ ソースをパッケージ化する方法について詳しくは、「[アプリ リソースの定義](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)」をご覧ください。
 
-### WriteableBitmap
+### <a name="writeablebitmap"></a>WriteableBitmap
 
 [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.aspx) は、WIC からの基本的なファイルに基づくデコードを使わない、修正可能な [**BitmapSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.aspx) を提供します。 画像を動的に変更し、更新後の画像を再レンダリングできます。 **WriteableBitmap** のバッファーの内容を定義するには、[**PixelBuffer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.pixelbuffer.aspx) プロパティを使ってバッファーにアクセスし、ストリームまたは言語固有のバッファーの種類を使って入力します。 コード例については、「[**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.aspx)」をご覧ください。
 
-### RenderTargetBitmap
+### <a name="rendertargetbitmap"></a>RenderTargetBitmap
 
 [**RenderTargetBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.rendertargetbitmap.aspx) クラスは、実行中のアプリから XAML UI ツリーをキャプチャして、ビットマップ画像ソースを表現することができます。 キャプチャした画像ソースは、アプリ内の他の部分に適用したり、リソース (つまり、ユーザーによって作成されたアプリ データ) として保存するなど、さまざまなシナリオに利用することができます。 特にお勧めする用途は、実行時における XAML ページのサムネイルをナビゲーション手段として利用することです。たとえば、[**Hub**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hub.aspx) コントロールから画像形式のリンクを提供することができます。 キャプチャされた画像に表示されるコンテンツに関して、**RenderTargetBitmap** にはいくつか制限があります。 詳しくは、[**RenderTargetBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.rendertargetbitmap.aspx) の API リファレンス トピックをご覧ください。
 
-### 画像ソースとスケーリング
+### <a name="image-sources-and-scaling"></a>画像ソースとスケーリング
 
 画像ソースは、Windows がスケールするときにアプリで適切に表示されるように、複数の推奨サイズで作る必要があります。 **Image** の **Source** を指定する際には、現在のスケーリングに対応したリソースを自動的に示す名前付け規則を利用できます。 この名前付け規則の詳細や関連情報については、「[クイック スタート: ファイルまたは画像リソースの使用](https://msdn.microsoft.com/library/windows/apps/xaml/hh965325)」をご覧ください。
 
 スケーリングの設計方法について詳しくは、「[レイアウトとスケーリングの UX ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn611863)」をご覧ください。
 
-### コードを使った Image と ImageBrush
+### <a name="image-and-imagebrush-in-code"></a>コードを使った Image と ImageBrush
 
 コードを使うよりも、XAML を使って Image と ImageBrush 要素を指定する方が一般的です。 これは、これらの要素が XAML UI 定義の一部としてのデザイン ツールの出力結果である場合が多いためです。
 
-コードを使って Image または ImageBrush を定義する場合は、既定のコンストラクターを使い、次に、関連するソースのプロパティ ([**Image.Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) と [**ImageBrush.ImageSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)) を設定します。 ソースのプロパティは、コードを使って設定する場合、[**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) (URI ではない) を必要と使用します。 ソースがストリームである場合は、[**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync.aspx) メソッドを使って値を初期化します。 ソースが、**ms-appx**  スキームまたは **ms-resource** スキームを使うアプリ内のコンテンツを含む URI である場合は、URI を受け取る [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/br243238.aspx) コンストラクターを使います。 イメージ ソースが使えるようになるまで代替コンテンツを表示することが必要であるなど、イメージ ソースの取得やデコードについてタイミングの問題がある場合は、[**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx) イベントを処理することも検討してください。 コードの例については、[XAML 画像のサンプル](http://go.microsoft.com/fwlink/p/?linkid=238575)をご覧ください。
+コードを使って Image または ImageBrush を定義する場合は、既定のコンストラクターを使い、次に、関連するソースのプロパティ ([**Image.Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) と [**ImageBrush.ImageSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)) を設定します。 ソースのプロパティは、コードを使って設定する場合、[**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) (URI ではない) を必要と使用します。 ソースがストリームである場合は、[**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync.aspx) メソッドを使って値を初期化します。 ソースが、**ms-appx**  スキームまたは **ms-resource** スキームを使うアプリ内のコンテンツを含む URI である場合は、URI を受け取る [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/br243238.aspx) コンストラクターを使います。 イメージ ソースが使えるようになるまで代替コンテンツを表示することが必要であるなど、イメージ ソースの取得やデコードについてタイミングの問題がある場合は、[**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx) イベントを処理することも検討してください。 コードの例については、[XAML 画像のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=238575)をご覧ください。
 
-> **注**&nbsp;&nbsp;コードを利用して画像を確立すると、自動処理を使って、現在のスケール修飾子とカルチャ修飾子で非修飾リソースにアクセスしたり、カルチャとスケールの修飾子で [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) と [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) を使って、リソースを直接取得したりできます。 詳しくは、「[リソース管理システム](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx)」をご覧ください。
+> [!NOTE]
+> コードを利用して画像を確立すると、自動処理を使って、現在のスケール修飾子とカルチャ修飾子で非修飾リソースにアクセスしたり、カルチャとスケールの修飾子で [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) と [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) を使って、リソースを直接取得したりできます。 詳しくは、「[リソース管理システム](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx)」をご覧ください。
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 -   [オーディオ、ビデオ、およびカメラ](https://msdn.microsoft.com/windows/uwp/audio-video-camera/index)
 -   [**Image クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)
 -   [**ImageBrush クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

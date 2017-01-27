@@ -5,26 +5,35 @@ title: "音声入力の問題の管理"
 ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
 label: Manage audio input issues
 template: detail.hbs
+keywords: "スピーチ, 音声, 音声認識, 自然言語, ディクテーション, 入力, ユーザーの操作"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 12f46dd0ec375977cc33efeb73757c5ec75077bd
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: a6f6e4c04f608898d2871113f38fe647b62bf8a5
 
 ---
 
-# 音声入力の問題の管理
+# <a name="manage-issues-with-audio-input"></a>音声入力の問題の管理
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 オーディオ入力の品質が原因で発生する音声認識の精度の問題を管理する方法について説明します。
 
-**重要な API**
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226)</li>
+<li>[**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)</li>
+<li>[**SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)</li>
 
--   [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226)
--   [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)
--   [**SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)
+</ul>
+</div>
 
 
-
-
-## オーディオ入力の品質を評価する
+## <a name="assess-audio-input-quality"></a>オーディオ入力の品質を評価する
 
 
 音声認識がアクティブな場合は、音声認識エンジンの [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) イベントを使用して、1 つ以上のオーディオの問題によって音声入力が妨げられている可能性があるかどうかを判断します。 イベント引数 ([**SpeechRecognitionQualityDegradingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn631430)) には、[**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) プロパティがあり、音声入力で検出された問題の説明が含まれています。
@@ -63,7 +72,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## 音声認識エクスペリエンスを管理する
+## <a name="manage-the-speech-recognition-experience"></a>音声認識エクスペリエンスを管理する
 
 
 [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) プロパティにある説明を使用して、ユーザーが認識の状態を改善できるようにします。
@@ -103,7 +112,7 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 }
 ```
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 
 * [音声操作](speech-interactions.md)
@@ -120,6 +129,6 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

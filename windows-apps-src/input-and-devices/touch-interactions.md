@@ -5,25 +5,33 @@ title: "タッチ操作"
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
+keywords: "タッチ, ポインター, 入力, ユーザーの操作"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 526493614666424089199063013b5fc72d9bc5d8
-ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: 26f80e2619ea7b80a49d54278507c83461fe2336
 
 ---
 
-# タッチ操作
-
+# <a name="touch-interactions"></a>タッチ操作
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 タッチがユーザーの主な入力方法になるという想定でアプリを設計します。 UWP コントロールを使う場合は、タッチパッド、マウス、ペン/スタイラスをサポートするために追加のプログラミングを行う必要はありません。UWP アプリでは、それらが無料で提供されます。
 
 ただし、タッチ用に最適化された UI が従来の UI よりも常に優れているとは限らないことに留意してください。 どちらの UI にも、テクノロジとアプリに固有の長所と短所があります。 タッチ操作主体の UI に移行する際に、タッチ (タッチパッドを含む)、ペン/スタイラス、マウス、キーボードの各入力の主な違いを理解することが重要です。
 
-**重要な API**
-
--   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
--   [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
--   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
-
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)</li>
+<li>[**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)</li>
+<li>[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)</li>
+</ul>
+</div>
 
 
 多くのデバイスに、1 本または複数の指 (つまりタッチ接触) を入力として使うことをサポートするマルチタッチ画面が搭載されています。 タッチ接触とその移動は、さまざまなユーザー操作をサポートするタッチ ジェスチャや操作として解釈されます。
@@ -52,7 +60,7 @@ ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
 
 すべての入力デバイスに固有なそれぞれの対話式操作のエクスペリエンスにより、多様な機能や基本設定をサポートし、できるだけ幅広い対象者の関心を引くことで、アプリのユーザーを増やすことができます。
 
-## タッチ操作の要件の比較
+## <a name="compare-touch-interaction-requirements"></a>タッチ操作の要件の比較
 
 次の表に、タッチ操作に最適な UWP アプリの設計時に考慮する必要がある、入力デバイス間の違いをいくつか示します。
 
@@ -80,14 +88,14 @@ ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
 
  
 
-## タッチのフィードバックの使用
+## <a name="use-touch-feedback"></a>タッチのフィードバックの使用
 
-アプリの対話的操作中に視覚的なフィードバックが適切に表示されると、その対話的操作がアプリと Windows8 の両方でどのように解釈されるかに関する認識、学習、適応に役立ちます。 視覚的なフィードバックの用途は、対話的操作の成功の表示、システム状態の中継、コントロール感の向上、エラーの低減、システムと入力デバイスに関するユーザーの理解の支援、対話的操作の促進などです。
+アプリの対話的操作中に視覚的なフィードバックが適切に表示されると、その対話的操作がアプリと Windows 8 の両方でどのように解釈されるかに関する認識、学習、適応に役立ちます。 視覚的なフィードバックの用途は、対話的操作の成功の表示、システム状態の中継、コントロール感の向上、エラーの低減、システムと入力デバイスに関するユーザーの理解の支援、対話的操作の促進などです。
 
 位置に基づく正確性が求められる操作をタッチ入力で行う場合は、視覚的なフィードバックが重要です。 タッチ入力が検出された場所に必ずフィードバックを表示して、アプリとそのコントロールで定義されたカスタム ターゲット設定規則をユーザーが把握できるようにします。
 
 
-## ターゲット設定
+## <a name="targeting"></a>ターゲット設定
 
 ターゲット設定は、次の要素によって最適化します。
 
@@ -107,14 +115,14 @@ ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
 
     密集した複数の項目 (ハイパーリンクなど) を指で押してスライドせずに前後に揺らすと、それらの項目を簡単にターゲット設定し直すことができます。 オクルージョンが原因で、現在の項目はヒントまたはステータス バーで特定され、指を離すとアクティブ化されます。
 
-## 正確性
+## <a name="accuracy"></a>正確性
 
 以下を使って、対話的操作が雑な場合に備えて設計します。
 
 -   コンテンツの操作時に目的の位置で簡単に停止できるようにするスナップ位置。
 -   手をわずかに曲げて動かした場合でも垂直方向または水平方向のパンを実行できる方向 "レール"。 詳しくは、「[パンのガイドライン](guidelines-for-panning.md)」をご覧ください。
 
-## オクルージョン
+## <a name="occlusion"></a>オクルージョン
 
 指と手のオクルージョンは、次の要素によって回避します。
 
@@ -134,7 +142,7 @@ ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
 
     正確さが要求される場合 (テキスト選択など)、正確さを向上させるためにオフセットされる選択ハンドルを用意します。 詳しくは、「[テキストと画像の選択のガイドライン (Windows ランタイム アプリ)](guidelines-for-textselection.md)」をご覧ください。
 
-## タイミング
+## <a name="timing"></a>タイミング
 
 直接操作を行うために、時間制限のあるモードの変更を避けます。 直接操作は、オブジェクトに対するリアルタイムで物理的な直接処理をシミュレートします。 オブジェクトは指の動きに合わせて反応します。
 
@@ -160,7 +168,7 @@ ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
 -   適切な説明と視覚的な合図を使うと、高度な対話式操作を非常に効果的に使用できます。
 
 
-## アプリ ビュー
+## <a name="app-views"></a>アプリ ビュー
 
 
 アプリのビューのパン/スクロールとズームの設定を使って、ユーザー操作エクスペリエンスを調整します。 アプリ ビューによって、ユーザーがアプリとそのコンテンツにアクセスして操作する方法が決まります。 ビューは、慣性、コンテンツ境界の跳ね返り、スナップ位置などの動作も提供します。
@@ -173,7 +181,7 @@ ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
 
 アプリ ビューについて詳しくは、「[コントロール、レイアウト、テキスト](https://msdn.microsoft.com/library/windows/apps/mt228348)」をご覧ください。
 
-## カスタム タッチ操作
+## <a name="custom-touch-interactions"></a>カスタム タッチ操作
 
 
 独自の対話式操作サポートを実装する場合は、ユーザーはアプリの UI 要素を直接操作できる直感的なエクスペリエンスを期待しているということを心に留めておいてください。 プラットフォーム コントロール ライブラリでカスタムの対話式操作をモデル化し、一貫性と見つけやすさを維持することをお勧めします。 これらのライブラリのコントロールでは、標準的な対話式操作、アニメーション化された物理的効果、視覚的フィードバック、アクセシビリティなど、完全なユーザー操作エクスペリエンスが提供されます。 はっきりとした明確に定義されている要件があり、基本的な対話式操作ではシナリオがサポートされない場合のみ、カスタムの対話式操作を作ってください。
@@ -210,12 +218,12 @@ UWP でサポートされている基本的なタッチ ジェスチャのセッ
 For more info about gestures, manipulations, and interactions, see [Custom user interactions](custom-user-input-portal.md).
 -->
 
-## ジェスチャ イベント
+## <a name="gesture-events"></a>ジェスチャ イベント
 
 
 個々のコントロールについて詳しくは、「[コントロールの一覧](https://msdn.microsoft.com/library/windows/apps/mt185406)」をご覧ください。
 
-## ポインター イベント
+## <a name="pointer-events"></a>ポインター イベント
 
 
 ポインター イベントは、タッチ、タッチパッド、ペン、マウスなど、さまざまなアクティブな入力ソースによって生成されます (従来のマウス イベントに代わるものです)。
@@ -424,7 +432,7 @@ Private Sub touchRectangle_PointerPressed(sender As Object, e As PointerRoutedEv
 End Sub
 ```
 
-## 操作イベント
+## <a name="manipulation-events"></a>操作イベント
 
 
 アプリで複数の指を使った操作や速度データを必要とする操作をサポートする必要がある場合は、操作イベントを使います。
@@ -600,12 +608,12 @@ Private Sub testRectangle_ManipulationDelta(
 End Sub
 ```
 
-## ルーティング イベント
+## <a name="routed-events"></a>ルーティング イベント
 
 
 ここに記載されたポインター イベント、ジェスチャ イベント、操作イベントはすべて、*ルーティング イベント*として実装されます。 つまりこのイベントは、最初にイベントを発生したオブジェクト以外のオブジェクトによって処理される可能性があります。 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) の親コンテナーや、アプリのルート [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) などのオブジェクト ツリーの一連の親は、元の要素が存在しなくても、これらのイベントを処理することを選択できます。 逆に、イベントを処理するどのオブジェクトも、親要素に達しないように、処理済みイベントをマークできます。 ルーティング イベントの概念について、およびそれがルーティング イベントのハンドラーの記述方法にどのように影響するかについて詳しくは、「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/hh758286)」をご覧ください。
 
-## 推奨と非推奨
+## <a name="dos-and-donts"></a>推奨と非推奨
 
 
 -   期待される主な入力方法としてタッチ操作を使うアプリを設計します。
@@ -617,7 +625,7 @@ End Sub
 -   できる限り、操作の区別に使われた数の指は使わないようにします。
 
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 * [ポインター入力の処理](handle-pointer-input.md)
 * [入力デバイスの識別](identify-input-devices.md)
@@ -645,6 +653,6 @@ End Sub
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

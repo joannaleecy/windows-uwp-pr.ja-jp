@@ -4,23 +4,18 @@ ms.assetid: c0450f7b-5c81-4d8c-92ef-2b1190d18af7
 description: "Windows Phone 8.1 用または Windows Phone 8.0 用の Silverlight アプリで AdControl クラスを使ってバナー広告を表示する方法について説明します。"
 title: "Windows Phone Silverlight の AdControl"
 translationtype: Human Translation
-ms.sourcegitcommit: 3a09b37a5cae0acaaf97a543cae66e4de3eb3f60
-ms.openlocfilehash: 40e68625ed666a9242ed83729b2f8113da363735
-
+ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
+ms.openlocfilehash: f4b519b56e8f656f75405a946c646e9f7b89ba99
 
 ---
 
-# Windows Phone Silverlight の AdControl
-
-
-
+# <a name="adcontrol-in-windows-phone-silverlight"></a>Windows Phone Silverlight の AdControl
 
 このチュートリアルでは、Windows Phone 8.1 用または Windows Phone 8.0 用の Silverlight アプリで [AdControl](https://msdn.microsoft.com/library/windows/apps/hh524191.aspx) クラスを使ってバナー広告を表示する方法について説明します。
 
 > **Windows Phone Silverlight 8.0 に関する注**&nbsp;&nbsp;以前のリリースの Universal Ad Client SDK または Microsoft Advertising SDK の **AdControl** を使用し、すでにストアで提供されている既存の Windows Phone 8.0 Silverlight アプリでは、バナー広告が引き続きサポートされます。 ただし、新しい Windows Phone 8.0 Silverlight プロジェクトではバナー広告がサポートされません。 さらに、Windows Phone 8.x Silverlight プロジェクトでは、一部のデバッグとテストのシナリオが制限されます。 詳しくは、「[アプリでの広告の表示](display-ads-in-your-app.md#silverlight_support)」をご覧ください。
 
-
-## Advertising アセンブリをプロジェクトに追加する
+## <a name="add-the-advertising-assemblies-to-your-project"></a>Advertising アセンブリをプロジェクトに追加する
 
 まず、Windows Phone Silverlight 用の Microsoft Advertising アセンブリを含む NuGet パッケージをプロジェクトにダウンロードしてインストールします。
 
@@ -32,43 +27,47 @@ ms.openlocfilehash: 40e68625ed666a9242ed83729b2f8113da363735
 
   * プロジェクトが Windows Phone 8.0 をターゲットとする場合は、以下のコマンドを入力します。
 
-      ```
+      > [!div class="tabbedCodeSnippets"]
+      ```syntax
       Install-Package Microsoft.Advertising.WindowsPhone.SL80 -Version 6.2.40501.1
       ```
 
   * プロジェクトが Windows Phone 8.1 をターゲットとする場合は、以下のコマンドを入力します。
 
-      ```
+      > [!div class="tabbedCodeSnippets"]
+      ```syntax
       Install-Package Microsoft.Advertising.WindowsPhone.SL81 -Version 8.1.50112
       ```
 
     コマンドを入力すると、必要なすべての Silverlight 用 Microsoft Advertising アセンブリが NuGet パッケージとしてローカルのプロジェクトにダウンロードされ、それらのアセンブリへの参照が自動的にプロジェクトに追加されます。
 
-## アプリのコードを記述する
+## <a name="code-your-app"></a>アプリのコードを記述する
 
 
 1.  WMAppManifest.xml ファイルの **Capabilities** ノードに次の機能を追加します。
 
-    ``` syntax
-    <Capability Name="ID_CAP_IDENTITY_USER"/>
-    <Capability Name="ID_CAP_MEDIALIB_PHOTO"/>
-    <Capability Name="ID_CAP_PHONEDIALER"/>
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  ``` syntax
+  <Capability Name="ID_CAP_IDENTITY_USER"/>
+  <Capability Name="ID_CAP_MEDIALIB_PHOTO"/>
+  <Capability Name="ID_CAP_PHONEDIALER"/>
+  ```
 
-    この例では、**Capabilities** ノードが次のようになります。
+  この例では、**Capabilities** ノードが次のようになります。
 
-    ``` syntax
-        <Capabilities>
-          <Capability Name="ID_CAP_NETWORKING"/>
-          <Capability Name="ID_CAP_MEDIALIB_AUDIO"/>
-          <Capability Name="ID_CAP_MEDIALIB_PLAYBACK"/>
-          <Capability Name="ID_CAP_SENSORS"/>
-          <Capability Name="ID_CAP_WEBBROWSERCOMPONENT"/>
-          <Capability Name="ID_CAP_IDENTITY_USER"/>
-          <Capability Name="ID_CAP_MEDIALIB_PHOTO"/>
-          <Capability Name="ID_CAP_PHONEDIALER"/>
-        </Capabilities>
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  ``` syntax
+  <Capabilities>
+      <Capability Name="ID_CAP_NETWORKING"/>
+      <Capability Name="ID_CAP_MEDIALIB_AUDIO"/>
+      <Capability Name="ID_CAP_MEDIALIB_PLAYBACK"/>
+      <Capability Name="ID_CAP_SENSORS"/>
+      <Capability Name="ID_CAP_WEBBROWSERCOMPONENT"/>
+      <Capability Name="ID_CAP_IDENTITY_USER"/>
+      <Capability Name="ID_CAP_MEDIALIB_PHOTO"/>
+      <Capability Name="ID_CAP_PHONEDIALER"/>
+  </Capabilities>
+  ```
 
 2.  (省略可能) プロジェクトを保存します。 **[すべてを保存]** アイコンをクリックするか、**[ファイル]** メニューの **[すべてを保存]** をクリックします。
 
@@ -82,42 +81,42 @@ ms.openlocfilehash: 40e68625ed666a9242ed83729b2f8113da363735
 
 5.  MainPage.xaml ファイルの Silverlight マークアップを変更して、**Microsoft.Advertising.Mobile.UI** 名前空間を追加します。
 
-    ``` syntax
-    xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  ``` xml
+  xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
+  ```
 
-    ページのヘッダーのコードが次のようになります。
+  ページのヘッダーのコードが次のようになります。
 
-    ``` syntax
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
-        x:Class="PhoneApp1.MainPage"
-    ```
+  > [!div class="tabbedCodeSnippets"]
+  ``` xml
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
+  x:Class="PhoneApp1.MainPage"
+  ```
 
 6.  **Grid** タグに、以下に示す **AdControl** のコードを追加します。 **ApplicationId** プロパティと **AdUnitId** プロパティに、「[Test mode values (テスト モードの値)](test-mode-values.md)」に示されているテスト値を割り当てて、**Height** プロパティと **Width** プロパティを、[バナー広告でサポートされている広告サイズ](supported-ad-sizes-for-banner-ads.md)のいずれかに合わせて調整します。
 
-    >               **注**&nbsp;&nbsp;**ApplicationId** と **AdUnitId** のテスト値は、アプリを申請のために提出する前に実際の値に置き換えます。
+  >               **注**&nbsp;&nbsp;**ApplicationId** と **AdUnitId** のテスト値は、アプリを申請のために提出する前に実際の値に置き換えます。
 
-    ``` syntax
-    <Grid x:Name="ContentPanel" Grid.Row="1">
-
+  > [!div class="tabbedCodeSnippets"]
+  ``` xml
+  <Grid x:Name="ContentPanel" Grid.Row="1">
       <UI:AdControl
-             ApplicationId="3f83fe91-d6be-434d-a0ae-7351c5a997f1"
-             AdUnitId="10865270"
-             HorizontalAlignment="Left"
-             Height="80"
-             VerticalAlignment="Top"
-             Width="480"/>
-
-    </Grid>
-    ```
+          ApplicationId="3f83fe91-d6be-434d-a0ae-7351c5a997f1"
+          AdUnitId="10865270"
+          HorizontalAlignment="Left"
+          Height="80"
+          VerticalAlignment="Top"
+          Width="480"/>
+  </Grid>
+  ```
 
 7.  プロジェクトをビルドして実行します。 アプリに次のような広告が表示されることを確認します。
 
-    ![wp81silverlight\-emulatorwithad](images/13-8db1492f-ae1d-439b-9b78-bed8e22fe996.jpg)
+  ![wp81silverlight\-emulatorwithad](images/13-8db1492f-ae1d-439b-9b78-bed8e22fe996.jpg)
 
-## デベロッパー センターを使用して、ライブ広告を表示するアプリをリリースする
-
+## <a name="release-your-app-with-live-ads-using-dev-center"></a>デベロッパー センターを使用して、ライブ広告を表示するアプリをリリースする
 
 1.  デベロッパー センターのダッシュボードで、アプリの **[収益化]** &gt; **[広告で収入を増やす]** ページに移動し、[スタンドアロン Microsoft Advertising ユニットを作成](../publish/monetize-with-ads.md)します。 広告ユニットの種類として、**[バナー]** を指定します。 広告ユニット ID とアプリケーション ID の両方をメモしておきます。
 
@@ -132,6 +131,6 @@ ms.openlocfilehash: 40e68625ed666a9242ed83729b2f8113da363735
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Dec16_HO2-->
 
 

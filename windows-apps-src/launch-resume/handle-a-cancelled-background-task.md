@@ -4,12 +4,12 @@ title: "取り消されたバックグラウンド タスクの処理"
 description: "取り消し要求を認識し、作業を停止して、固定ストレージを使っているアプリの取り消しを報告するバックグラウンド タスクの作成方法について説明します。"
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 translationtype: Human Translation
-ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
-ms.openlocfilehash: a8fe98ab60012c2183e8394bfc8d7089f51552f0
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: ba40aefe83a02d29150dd25e1303ec15bb032b8c
 
 ---
 
-# 取り消されたバックグラウンド タスクの処理
+# <a name="handle-a-cancelled-background-task"></a>取り消されたバックグラウンド タスクの処理
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
@@ -21,11 +21,11 @@ ms.openlocfilehash: a8fe98ab60012c2183e8394bfc8d7089f51552f0
 
 取り消し要求を認識し、作業を停止して、固定ストレージを使っているアプリに取り消しを報告するバックグラウンド タスクの作成方法について説明します。
 
-このトピックでは、バックグラウンド タスクのエントリ ポイントとして使う Run メソッドも含めて、既にバックグラウンド タスク クラスが作られていることを前提とします。 バックグラウンド タスクの作成方法の概要については、「[アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-an-outofproc-background-task.md)」または「[インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)」をご覧ください。 条件とトリガーについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
+このトピックでは、バックグラウンド タスクのエントリ ポイントとして使う Run メソッドも含めて、既にバックグラウンド タスク クラスが作られていることを前提とします。 バックグラウンド タスクの作成方法の概要については、「[アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」または「[インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)」をご覧ください。 条件とトリガーについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
 
 このトピックは、インプロセス バックグラウンド タスクにも適用されます。 ただし、Run() メソッドを使う代わりに、OnBackgroundActivated() に置き換えます。 インプロセス バックグラウンド タスクでは、バックグラウンド タスクがフォアグラウンド アプリと同じプロセスで実行されているため、取り消しを通知するために固定ストレージを使用する必要はありません。アプリの状態を使用して、取り消しを伝えることができます。
 
-## OnCanceled メソッドにより、取り消し要求を認識します。
+## <a name="use-the-oncanceled-method-to-recognize-cancellation-requests"></a>OnCanceled メソッドにより、取り消し要求を認識します。
 
 取り消しイベントを処理するメソッドを作ります。
 
@@ -96,7 +96,7 @@ ms.openlocfilehash: a8fe98ab60012c2183e8394bfc8d7089f51552f0
 >     taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &SampleBackgroundTask::OnCanceled);
 > ```
 
-## バックグラウンド タスクを終了することによって、取り消しを処理します。
+## <a name="handle-cancellation-by-exiting-your-background-task"></a>バックグラウンド タスクを終了することによって、取り消しを処理します。
 
 バックグラウンド処理を実行しているメソッドは、**\_cancelRequested** が **true** に設定されたタイミングを認識し、処理を停止して終了する必要があります。 インプロセス バックグラウンド タスクの場合、これは `OnBackgroundActivated()` メソッドから戻ることです。 アウトプロセス バックグラウンド タスクの場合、これは `Run()` メソッドから戻ることです。
 
@@ -200,13 +200,13 @@ ms.openlocfilehash: a8fe98ab60012c2183e8394bfc8d7089f51552f0
 >     }
 > ```
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 [バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)をダウンロードして、メソッドのコンテキストに従ってコード例を確認できます。
 
 このサンプル コードでは、説明の便宜上、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)の Run メソッド (およびコールバック タイマー) の一部しか示していません。
 
-## メソッド例を実行します。
+## <a name="run-method-example"></a>メソッド例を実行します。
 
 [バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)のコンテキストがわかるように、以下に完全な Run メソッドとタイマーのコールバック コードを示します。
 
@@ -329,10 +329,10 @@ ms.openlocfilehash: a8fe98ab60012c2183e8394bfc8d7089f51552f0
 
 > **注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
-* [インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)。
-* [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-an-outofproc-background-task.md)
+* [インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)
+* [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
 * [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
 * [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
 * [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
@@ -347,6 +347,6 @@ ms.openlocfilehash: a8fe98ab60012c2183e8394bfc8d7089f51552f0
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

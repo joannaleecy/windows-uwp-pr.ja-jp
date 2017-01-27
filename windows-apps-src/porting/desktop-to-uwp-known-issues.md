@@ -4,15 +4,15 @@ Description: "この記事では、Desktop to UWP Bridge に関する既知の�
 Search.Product: eADQiWindows 10XVcnh
 title: "Desktop Bridge に関する既知の問題"
 translationtype: Human Translation
-ms.sourcegitcommit: 537c6a3d4559da4673b68c3ab5bdddb612760849
-ms.openlocfilehash: d02921247bd77d59bbb09037a4ced8d3967c33b2
+ms.sourcegitcommit: ec4c5f937e4fd133bfc4f7aa96d00cee03a13c26
+ms.openlocfilehash: d3ed0af32c9a44078d0f772d7fc130121f5d4970
 
 ---
-# Desktop Bridge に関する既知の問題
+# <a name="known-issues-with-the-desktop-bridge"></a>Desktop Bridge に関する既知の問題
 
 この記事では、Desktop to UWP Bridge に関する既知の問題について説明します。
 
-## エラー コード 0x139 のブルー スクリーン (KERNEL_SECURITY_CHECK_FAILURE)
+## <a name="blue-screen-with-error-code-0x139-kernelsecuritycheckfailure"></a>エラー コード 0x139 のブルー スクリーン (KERNEL_SECURITY_CHECK_FAILURE)
 
 Windows ストアのアプリをインストールまたは起動した後、予期せず **0x139 (KERNEL\_SECURITY\_CHECK\_ FAILURE)** というエラーでコンピューターの再起動が発生することがあります。
 
@@ -27,10 +27,10 @@ Windows ストアのアプリをインストールまたは起動した後、予
 ```<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.351" MaxVersionTested="10.0.14393.351"/>```
 
 Windows 更新プログラムについて詳しくは、以下をご覧ください。 
-* https://support.microsoft.com/3197954
+* https://support.microsoft.com/kb/3197954
 * https://support.microsoft.com/help/12387/windows-10-update-history
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

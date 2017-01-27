@@ -5,17 +5,23 @@ title: "Cortana の操作"
 ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
 label: Cortana
 template: detail.hbs
+keywords: "Cortana, Cortana のキャンバス, Cortana の設計, ユーザー インターフェイス, 音声コマンド, VCD"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 75e93920422b5ad8ad0e9399bccc403ea69e7feb
-ms.openlocfilehash: 8e853962cdea36a6738c094851d461c700aafd73
+ms.sourcegitcommit: 76b012ab4cf737f00fc986c81c88fd48339867fc
+ms.openlocfilehash: 8dcf45951723c0bf2302b59ef475f3b0fa973d5e
 
 ---
 
-# UWP アプリでの Cortana の操作
+# <a name="cortana-interactions-in-uwp-apps"></a>UWP アプリでの Cortana の操作
 
 Cortana には堅牢かつ包括的な機能拡張フレームワークが用意されています。このフレームワークにより、アプリまたはサービスの機能を Cortana のエクスペリエンスにシームレスに組み込むことができます。
 
-## 移動しました
+## <a name="weve-moved"></a>移動しました
 
 Cortanaの機能とサービスに関する開発者向けドキュメントはすべて、[Cortana デベロッパー センター](https://developer.microsoft.com/en-us/cortana)で参照できるようになりました。
 
@@ -23,7 +29,7 @@ Cortanaの機能とサービスに関する開発者向けドキュメントは�
 
 音声コマンドを使って UWP アプリの機能で Cortana を拡張する方法については、[Cortana の音声コマンドに関するページ](https://developer.microsoft.com/en-us/cortana)をご覧ください。 
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 * [**VCD 要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
@@ -43,6 +49,6 @@ Cortanaの機能とサービスに関する開発者向けドキュメントは�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

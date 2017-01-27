@@ -6,24 +6,26 @@ ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: b6c57d1ceadd0785a51c518bc51f93892aa472d5
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: e1fc86e5110da8926194e20947552337216d4a72
 
 ---
 
-# 追加と削除のアニメーション
+# <a name="add-and-delete-animations"></a>追加と削除のアニメーション
 
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 リスト アニメーションを使うと、写真のアルバムや検索結果の一覧などのコレクションに対して任意の数の項目を挿入または削除できます。
 
-**重要な API**
+<div class="important-apis" >
+<b>重要な API</b><br/>
+<ul>
+<li>[**AddDeleteThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/br243048)</li>
+</ul>
+</div>
 
--   [**AddDeleteThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
-
-## 推奨と非推奨
+## <a name="dos-and-donts"></a>推奨と非推奨
 
 
 -   リスト アニメーションは、既にある一連の項目に新しい項目を 1 つ追加するときに使います。 たとえば、新しい電子メールを受け取ったときや、既にあるセットに新しい写真をインポートするときに使います。
@@ -35,10 +37,8 @@ ms.openlocfilehash: b6c57d1ceadd0785a51c518bc51f93892aa472d5
 
 
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
-
-**開発者向け (XAML)**
 * [アニメーションの概要](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [リストの追加と削除のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649430)
 * [クイック スタート: ライブラリのアニメーションを使った UI のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
@@ -54,6 +54,6 @@ ms.openlocfilehash: b6c57d1ceadd0785a51c518bc51f93892aa472d5
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

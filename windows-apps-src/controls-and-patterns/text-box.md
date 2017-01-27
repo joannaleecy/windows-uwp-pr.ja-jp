@@ -4,11 +4,11 @@ ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
 label: Text box
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f9750e87516d38b16a589e5271de25d9f241e97b
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 3cbfa4a2896e5e7453d9fe1793f422d2f7b60c79
 
 ---
-# テキスト ボックス
+# <a name="text-box"></a>テキスト ボックス
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,17 +19,13 @@ TextBox には、テキスト入力を簡略化するための多くの機能が
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx"><strong>TextBox クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx"><strong>Text プロパティ</strong></a></li>
+<li>[**TextBox クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)</li>
+<li>[**Text プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 ユーザーが書式設定されていないテキストを入力、編集できるようにするには、**TextBox** コントロールを使います。 TextBox 内のテキストの取得と設定には、[Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) プロパティを使います。
 
@@ -43,11 +39,11 @@ TextBox を読み取り専用にすることはできますが、これは一時
 
 適切なテキスト コントロールの選択について詳しくは、「[テキスト コントロール](text-controls.md)」をご覧ください。
 
-## 例
+## <a name="examples"></a>例
 
 ![テキスト ボックス](images/text-box.png)
 
-## テキスト ボックスの作成
+## <a name="create-a-text-box"></a>テキスト ボックスの作成
 
 ヘッダーとプレースホルダーのテキストを含むシンプルなテキスト ボックスの XAML を次に示します。
 
@@ -68,7 +64,7 @@ rootGrid.Children.Add(textBox);
 
 ![シンプルなテキスト ボックス](images/text-box-ex1.png)
 
-### フォームでのデータ入力用のテキスト ボックスの使用
+### <a name="use-a-text-box-for-data-input-in-a-form"></a>フォームでのデータ入力用のテキスト ボックスの使用
 
 テキスト ボックスを使用してフォームでデータ入力を受け付け、[Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) プロパティを使用してテキスト ボックスから完全なテキスト文字列を取得するのが一般的です。 通常、Text プロパティにアクセスするには、送信ボタンのクリックなどのイベントを使用しますが、テキストが変化したときに処理を実行する必要がある場合は、[TextChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanged.aspx) イベントや [TextChanging](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanging.aspx) イベントを処理することができます。
 
@@ -87,7 +83,7 @@ rootGrid.Children.Add(textBox);
 - **AcceptsReturn** が **true** である
 - **TextWrap** の値が **NoWrap** 以外である
 
-### テキスト ボックスを読み取り専用にする
+### <a name="make-a-text-box-read-only"></a>テキスト ボックスを読み取り専用にする
 
 [IsReadOnly](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isreadonly.aspx) プロパティを **true** に設定すると、テキスト ボックスを読み取り専用にすることができます。 通常、アプリでの条件に基づいて、アプリ コードでこのプロパティを切り替えます。 テキストを常に読み取り専用にする必要がある場合は、代わりに TextBlock の使用を検討してください。
 
@@ -98,7 +94,7 @@ IsReadOnly プロパティを true に設定すると、TextBox を読み取り�
 IsEnabled
 
 
-### 複数行入力の有効化
+### <a name="enable-multi-line-input"></a>複数行入力の有効化
 
 テキスト ボックスで複数行にテキストを表示するかどうかを制御するために使用できるプロパティが 2 つあります。 通常、両方のプロパティを設定して複数行テキスト ボックスを作成します。
 - テキスト ボックスで改行文字の入力を受け付けて表示するには、[**AcceptsReturn**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) プロパティを **true** に設定します。
@@ -130,7 +126,7 @@ ScrollViewer.SetVerticalScrollBarVisibility(textBox, ScrollBarVisibility.Auto);
 
 ![複数行テキスト ボックス](images/text-box-multi-line.png)
 
-### テキストの表示形式の設定
+### <a name="format-the-text-display"></a>テキストの表示形式の設定
 
 テキスト ボックス内のテキストを整列するには、[TextAlignment]() プロパティを使います。 ページのレイアウト内のテキスト ボックスを整列するには、[HorizontalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) プロパティと [VerticalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx) プロパティを使います。
 
@@ -166,7 +162,7 @@ rootGrid.Children.Add(textBox);
 
 ![書式設定されたテキスト ボックス](images/text-box-formatted.png)
 
-### ショートカット メニューの変更
+### <a name="modify-the-context-menu"></a>ショートカット メニューの変更
 
 既定では、テキスト ボックスのショートカット メニューに表示されるコマンドは、テキスト ボックスの状態によって異なります。 たとえば、次のコマンドは、テキスト ボックスが編集可能なときに表示できます。
 
@@ -180,7 +176,7 @@ rootGrid.Children.Add(textBox);
 
 ショートカット メニューに表示されるコマンドを変更するには、[ContextMenuOpening](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.contextmenuopening.aspx) イベントを処理します。 この処理の例については、[ContextMenu のサンプル](http://go.microsoft.com/fwlink/p/?linkid=234891)のシナリオ 2 をご覧ください。 デザインについて詳しくは、「ショートカット メニューのガイドライン」をご覧ください。
 
-### 選択、コピー、貼り付け
+### <a name="select-copy-and-paste"></a>選択、コピー、貼り付け
 
 [SelectedText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectedtext.aspx) プロパティを使って、テキスト ボックス内のテキストを取得または設定できます。 [SelectionStart](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionstart.aspx) プロパティと [SelectionLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionlength.aspx) プロパティ、[Select](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.select.aspx) メソッドと [SelectAll](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectall.aspx) メソッドを使って、テキストの選択を操作します。 ユーザーがテキストの選択または選択解除を行ったときに操作を実行するには、[SelectionChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionchanged.aspx) イベントを処理します。 選択したテキストを強調表示するために使用する色を変更するには、[SelectionHighlightColor](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionhighlightcolor.aspx) プロパティを設定します。
 
@@ -214,7 +210,7 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 ![テキスト ボックスで選択されたテキスト](images/text-box-selection.png)
 
-## テキスト コントロールに適切なキーボードの選択
+## <a name="choose-the-right-keyboard-for-your-text-control"></a>テキスト コントロールに適切なキーボードの選択
 
 ユーザーがタッチ キーボード、つまりソフト入力パネル (SIP) でデータを入力できるように、ユーザーが入力すると予想されるデータの種類に合わせてテキスト コントロールの入力スコープを設定できます。
 
@@ -228,7 +224,7 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 詳細な情報と例については、「[入力値の種類を使ったタッチ キーボードの変更](https://msdn.microsoft.com/library/windows/apps/mt280229)」とプロパティのドキュメントをご覧ください。
 
-## 推奨事項
+## <a name="recommendations"></a>推奨事項
 
 -   テキスト ボックスの目的がわかりにくい場合は、ラベルまたはプレースホルダー テキストを使用します。 ラベルは、テキスト入力ボックスに値が存在するかどうかに関係なく表示します。 プレースホルダー テキストはテキスト入力ボックスの内側に表示され、値を入力すると非表示になります。
 -   テキスト ボックスは、入力できる値の範囲に適した幅になるようにします。 単語の長さは言語によって異なるため、アプリを世界対応にする場合は、ローカライズを考慮に入れて幅を調整します。
@@ -273,25 +269,18 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
-[テキスト コントロール](text-controls.md)
-
-**デザイナー向け**
+- [テキスト コントロール](text-controls.md)
 - [スペル チェックのガイドライン](spell-checking-and-prediction.md)
 - [検索の追加](https://msdn.microsoft.com/library/windows/apps/hh465231)
 - [テキスト入力のガイドライン](text-controls.md)
-
-**開発者向け (XAML)**
 - [**TextBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Windows.UI.Xaml.Controls PasswordBox クラス**](https://msdn.microsoft.com/library/windows/apps/br227519)
-
-
-**開発者向け (その他)**
 - [String.Length プロパティ](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -6,11 +6,11 @@ ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
 label: Time picker
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 69f682b0edddbcf88515af537c33b3d8297f91f0
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: cfe38564f54f61b2d48918f5dd5bf41e7c57b965
 
 ---
-# 時刻の選択コントロール
+# <a name="time-picker"></a>時刻の選択コントロール
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 TimePicker は、ユーザーがタッチ、マウス、またはキーボード入力を使って時刻値を選択できる標準化された方法です。 
@@ -18,28 +18,23 @@ TimePicker は、ユーザーがタッチ、マウス、またはキーボード
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx"><strong>TimePicker クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.time.aspx"><strong>Time プロパティ</strong></a></li>
+<li>[**TimePicker クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)</li>
+<li>[**Time プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.time.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 時刻の選択コントロールを使って、ユーザーが単一の時刻値を選べるようにします。
 
 適切なコントロールの選択について詳しくは、「[日付と時刻コントロール](date-and-time.md)」をご覧ください。
 
-## 例
+## <a name="examples"></a>例
 
 エントリ ポイントには、選んだ時刻が表示されます。ユーザーがエントリ ポイントを選ぶと、選択ツール サーフェスが中央から縦方向に展開されて、時刻を選べるようになります。 時刻の選択は他の UI をオーバーレイし、他の UI を別の位置に移動させることはありません。
 
 ![展開した時刻の選択コントロールの例](images/controls_timepicker_expand.png)
 
-## 時刻の選択コントロールの作成
+## <a name="create-a-time-picker"></a>時刻の選択コントロールの作成
 
 次の例は、ヘッダーを含むシンプルな時刻の選択コントロールを作成する方法を示しています。
 
@@ -56,11 +51,12 @@ arrivalTimePicker.Header = "Arrival time";
 
 ![時刻の選択コントロールの例](images/time-picker-closed.png)
 
-> **注:**&nbsp;&nbsp;日付値の重要な情報については、「*日付と時刻コントロール*」の「[DateTime と Calendar の値](date-and-time.md#datetime-and-calendar-values)」をご覧ください。
+> [!NOTE]
+> 日付と時刻の値の重要な情報については、「*日付と時刻コントロール*」の「[DateTime と Calendar の値](date-and-time.md#datetime-and-calendar-values)」をご覧ください。
 
 
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 - [日付と時刻コントロール](date-and-time.md)
 - [カレンダーの日付の選択コントロール](calendar-date-picker.md)
@@ -69,6 +65,6 @@ arrivalTimePicker.Header = "Arrival time";
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

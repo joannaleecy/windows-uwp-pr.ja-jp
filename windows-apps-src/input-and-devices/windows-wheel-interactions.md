@@ -4,9 +4,15 @@ Description: "Cortana の音声コマンド、音声認識、音声合成を使�
 title: "Surface Dial の操作"
 label: Surface Dial interactions
 template: detail.hbs
+keywords: "Surface Dial, Windows ホイール, RadialController, ラジアル コントローラー, ユーザーの操作, 入力"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 0f7f54c5c5baccdedfe32bc7c71994e43a93f032
-ms.openlocfilehash: 08ac5d58f2650306b162e4dec7f4e606543ca80f
+ms.sourcegitcommit: eb86863d6ce2e545b3e534ef6cafb220904e3dc8
+ms.openlocfilehash: 96b9a2e213c36b8f92664185e9cdcaea6d457368
 
 ---
 
@@ -24,7 +30,7 @@ Surface Dial などの Windows Wheel デバイスは、Windows や Windows ア�
 
 | ビデオ |   |
 | --- | --- |
-| <iframe width="300" height="200" src="https://www.youtube.com/embed/WMklcdzcNcU" frameborder="0" allowfullscreen></iframe> | <iframe width="300" height="200" src="https://www.youtube.com/embed/2tajuOfs9p0" frameborder="0" allowfullscreen></iframe> |
+| <iframe width="300" height="200" src="https://www.youtube.com/embed/WMklcdzcNcU" frameborder="0" allowfullscreen></iframe> | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> |
 | *Surface Dial のアプリ パートナー* | *開発者向けの Surface Dial* |
 
 *回転*動作 (またはジェスチャ) に基づくフォームファクタを持つ Surface Dial は、プライマリ デバイスからの入力を補完または変更する、セカンダリのマルチ モーダル入力デバイスとして設計されています。 このデバイスは多くの場合、ユーザーが利き手でタスクを実行している間に (たとえばペンでインク操作をするときなど)、利き手ではない手で操作されます。 高精度のポインター入力 (タッチ、ペン、マウスなど) 用に設計されていません。 
@@ -662,6 +668,6 @@ private void ActivateGridAtLocation(Point Location)
 [Windows の従来のデスクトップのサンプル](https://aka.ms/radialcontrollerclassicsample)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

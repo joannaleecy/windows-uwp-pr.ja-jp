@@ -6,39 +6,34 @@ ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
 label: Calendar view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 4d67cf41bf44904e094476d6350ad68cc46ab52f
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 86062f744efa487cc70adb9648ff3f3584226000
 
 ---
-# カレンダー ビュー
+# <a name="calendar-view"></a>カレンダー ビュー
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 カレンダー ビューを使うと、ユーザーはカレンダーを表示し操作できます (カレンダーは、月、年、または 10 年単位で操作できます)。 ユーザーは 1 つの日付や日付の範囲を選ぶことができます。 カレンダー ビューには選択コントロール サーフェイスがなく、カレンダーは常に表示されます。 
 
+
 <div class="important-apis" >
 <b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx"><strong>CalendarView クラス</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx"><strong>SelectedDatesChanged イベント</strong></a></li>
+<li>[**CalendarView クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)</li>
+<li>[**SelectedDatesChanged イベント**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 カレンダー ビューを使うと、ユーザーは常に表示されているカレンダーから 1 つの日付または日付の範囲を選ぶことができます。
 
 ユーザーが一度に複数の日付を選べるようにする必要がある場合は、カレンダー ビューを使う必要があります。 ユーザーが 1 つの日付しか選べないようにする必要があり、カレンダーを常に表示する必要がない場合は、[カレンダーの日付の選択コントロール](calendar-date-picker.md) または [日付の選択コントロール](date-picker.md) を使うことを検討してください。
 
 適切なコントロールの選択について詳しくは、「[日付と時刻コントロール](date-and-time.md)」をご覧ください。
 
-## 例
+## <a name="examples"></a>例
 
 カレンダー ビューは、月ビュー、年ビュー、10 年ビューという 3 つの個別のビューで構成されています。 既定では、月ビューが開きます。 スタートアップ表示を指定するには、[**DisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.displaymode.aspx) プロパティを設定します。
 
@@ -46,7 +41,7 @@ ms.openlocfilehash: 4d67cf41bf44904e094476d6350ad68cc46ab52f
 
 ユーザーが月ビューのヘッダーをクリックすると年ビューが開き、年ビューのヘッダーをクリックすると 10 年ビューが開きます。 また、10 年ビューで年を選ぶと年ビューに戻り、年ビューで月を選ぶと月ビューに戻ります。 ヘッダーの横にある 2 つの矢印を使うと、月、年、10 年単位で前後に移動できます。 
 
-## カレンダー ビューの作成
+## <a name="create-a-calendar-view"></a>カレンダー ビューの作成
 
 次の例は、1 つのカレンダー ビューを作成する方法を示しています。
 
@@ -58,7 +53,7 @@ ms.openlocfilehash: 4d67cf41bf44904e094476d6350ad68cc46ab52f
 
 ![カレンダー ビューの例](images/controls_calendar_monthview.png)
 
-### 日付の選択
+### <a name="selecting-dates"></a>日付の選択
 
 既定では、[**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectionmode.aspx) プロパティは **Single** に設定されています。 このため、ユーザーはカレンダー内の 1 つの日付を選ぶことができます。 日付の選択を無効にするには、SelectionMode を **None** に設定します。 
 
@@ -73,9 +68,10 @@ calendarView1.SelectedDates.Add(new DateTime(1977, 1, 5));
 
 [**SelectedDates**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) コレクションが変化したときに通知を受け取るようにするには、[**SelectedDatesChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx) イベントを処理します。
 
-> **注:**&nbsp;&nbsp;日付値の重要な情報については、「日付と時刻コントロール」の「[DateTime と Calendar の値](date-and-time.md#datetime-and-calendar-values)」をご覧ください。
+> [!NOTE]
+> 日付値の重要な情報については、「日付と時刻コントロール」の「[DateTime と Calendar の値](date-and-time.md#datetime-and-calendar-values)」をご覧ください。
 
-### カレンダー ビューの外観のカスタマイズ
+### <a name="customizing-the-calendar-views-appearance"></a>カレンダー ビューの外観のカスタマイズ
 
 カレンダー ビューは、ControlTemplate で定義される XAML 要素と、コントロールによって直接レンダリングされるビジュアル要素で構成されます。 
 - コントロール テンプレートで定義される XAML 要素には、コントロールを囲む境界線、ヘッダー、[前へ] ボタンと [次へ] ボタン、および DayOfWeek 要素が含まれています。 すべての XAML コントロールと同様、これらの要素にスタイルを指定し、テンプレートを再適用することができます。 
@@ -116,7 +112,7 @@ calendarView1.MinDate = new DateTime(2000, 1, 1);
 calendarView1.MaxDate = new DateTime(2099, 12, 31);
 ```
 
-### カレンダーの日付項目の更新
+### <a name="updating-calendar-day-items"></a>カレンダーの日付項目の更新
 
 カレンダーの各日付は、[**CalendarViewDayItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx) オブジェクトで表されます。 個々の日付項目にアクセスしてそのプロパティとメソッドを使うには、[**CalendarViewDayItemChanging**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendarviewdayitemchanging.aspx) イベントを処理し、イベント引数の Item プロパティを使って CalendarViewDayItem にアクセスします。
 
@@ -128,7 +124,7 @@ calendarView1.MaxDate = new DateTime(2099, 12, 31);
 
 ![密度コントロール バーが設定されたカレンダーの日付](images/calendar-view-density-bars.png)
 
-### 段階的なレンダリング
+### <a name="phased-rendering"></a>段階的なレンダリング
 
 カレンダー ビューには、多数の CalendarViewDayItem オブジェクトを含めることができます。 UI の応答性を保ち、カレンダー内をスムーズに移動できるようにするため、カレンダー ビューでは段階的なレンダリングがサポートされています。 そのため、日付項目の処理を複数のフェーズに分けることができます。 すべてのフェーズが完了する前に日付がビューの範囲外に移動すると、その項目の処理とレンダリングはそれ以上行われません。
 
@@ -198,7 +194,7 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 }
 ```
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 - [日付と時刻コントロール](date-and-time.md)
 - [カレンダーの日付の選択コントロール](calendar-date-picker.md)
@@ -207,6 +203,6 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

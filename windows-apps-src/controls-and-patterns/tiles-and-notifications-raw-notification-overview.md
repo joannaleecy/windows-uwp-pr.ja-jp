@@ -6,22 +6,20 @@ ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 2c50b2be763a0cc7045745baeef6e6282db27cc7
-ms.openlocfilehash: 6d0f2460e6b65173445cdf7c1fea207e6bdbd149
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 8aa2c34969b87fbe440c578d93553dbdd6f3d8c4
 
 ---
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-# 直接通知の概要
-
-
-
+# <a name="raw-notification-overview"></a>直接通知の概要
 
 
 直接通知は、短い汎用のプッシュ通知です。 説明のみを目的としており、UI コンポーネントは含まれません。 他のプッシュ通知と同様に、Windows プッシュ通知サービス (WNS) 機能は、クラウド サービスからアプリに直接通知を配信します。
 
 直接通知は、ユーザーがアプリに権限を与えている場合にアプリによるバックグラウンド タスクの実行をトリガーするなど、さまざまな目的で使うことができます。 アプリとの通信に WNS を使うことで、固定ソケット接続の作成、HTTP GET メッセージの送信、サービスとアプリ間でのその他の接続などに伴う処理のオーバーヘッドを回避できます。
 
-**重要**   直接通知について理解するには、「[Windows プッシュ通知サービス (WNS) の概要](tiles-and-notifications-windows-push-notification-services--wns--overview.md)」で説明されている概念を理解していれば理想的です。
+> [!IMPORTANT]
+> 直接通知について理解するには、「[Windows プッシュ通知サービス (WNS) の概要](tiles-and-notifications-windows-push-notification-services--wns--overview.md)」で説明されている概念を理解していれば理想的です。
 
  
 
@@ -29,7 +27,7 @@ ms.openlocfilehash: 6d0f2460e6b65173445cdf7c1fea207e6bdbd149
 
 直接通知を使うことによってメリットを得ることができるアプリの例として、理論上のドキュメント共同作業アプリについて考えてみましょう。 1 つのドキュメントを同時に編集している 2 人のユーザーがいるとします。 この共有ドキュメントをホストするクラウド サービスでは、一方のユーザーが変更を加えたときに、直接通知を使ってもう一方のユーザーに通知できます。 この直接通知には、ドキュメントに対する変更が含まれるとは限りません。この通知は、各ユーザーのアプリ コピーに対して、一元化された場所にアクセスして変更を同期するように伝えます。 直接通知を使うことによって、アプリとそのクラウド サービスは、ドキュメントが開かれている間、固定接続の保持に伴うオーバーヘッドを削減することができます。
 
-## 直接通知のしくみ
+## <a name="how-raw-notifications-work"></a>直接通知のしくみ
 
 
 すべての直接通知はプッシュ通知です。 このため、プッシュ通知の送受信に必要な設定が直接通知にも適用されます。
@@ -43,7 +41,7 @@ ms.openlocfilehash: 6d0f2460e6b65173445cdf7c1fea207e6bdbd149
 
 直接通知がクライアントで使うパスは 3 つしかありません。直接通知は、実行中のアプリに通知配信イベントをとおして配信されるか、バックグラウンド タスクに送られるか、またはドロップされます。 したがって、クライアントがオフラインの状態で WNS が直接通知の配信を試みた場合、その通知はドロップされます。
 
-## 直接通知の作成
+## <a name="creating-a-raw-notification"></a>直接通知の作成
 
 
 直接通知の送信はタイル、トースト、またはバッジのプッシュ通知の送信に似ていますが、次の違いがあります。
@@ -56,7 +54,7 @@ ms.openlocfilehash: 6d0f2460e6b65173445cdf7c1fea207e6bdbd149
 
 プッシュ通知の送信について詳しくは、「[クイック スタート: プッシュ通知の送信](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)」をご覧ください。
 
-## 直接通知の受信
+## <a name="receiving-a-raw-notification"></a>直接通知の受信
 
 
 アプリで直接通知を受け取る方法は 2 とおりあります。
@@ -69,7 +67,7 @@ ms.openlocfilehash: 6d0f2460e6b65173445cdf7c1fea207e6bdbd149
 -   アプリが実行中の場合、バックグラウンド タスクよりも通知配信イベントが優先され、最初に通知を処理するのはそのアプリになります。
 -   通知配信イベント ハンドラーは、イベントの [**PushNotificationReceivedEventArgs.Cancel**](https://msdn.microsoft.com/library/windows/apps/br241297) プロパティを **true** に設定することで、そのハンドラーの終了後に直接通知がそのバックグラウンド タスクに渡されないよう指定できます。 **Cancel** プロパティを **false** に設定するか、またはこのプロパティを設定しない (デフォルト値は **false**) 場合、通知配信イベント ハンドラーによる処理の完了後、直接通知によってバックグラウンド タスクがトリガーされます。
 
-### 通知配信イベント
+### <a name="notification-delivery-events"></a>通知配信イベント
 
 アプリで通知配信イベント ([**PushNotificationReceived**](https://msdn.microsoft.com/library/windows/apps/br241292)) を使うと、アプリの実行中に直接通知を受信できます。 クラウド サービスが直接通知を送る場合、実行中のアプリはチャネル URI 上の通知配信イベントを処理することによって直接通知を受け取ることができます。
 
@@ -87,9 +85,10 @@ ms.openlocfilehash: 6d0f2460e6b65173445cdf7c1fea207e6bdbd149
 
     詳しくは、「[プッシュ通知サービスの要求ヘッダーと応答ヘッダー](https://msdn.microsoft.com/library/windows/apps/hh465435)」を参照してください。
 
-### 直接通知によってトリガーされるバックグラウンド タスク
+### <a name="background-tasks-triggered-by-raw-notifications"></a>直接通知によってトリガーされるバックグラウンド タスク
 
-**重要**   直接通知のバックグラウンド タスクを使用する前に、[**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) を使用してアプリにバックグラウンド アクセスを許可する必要があります。
+> [!IMPORTANT]
+> 直接通知のバックグラウンド タスクを使用する前に、[**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) を使用してアプリにバックグラウンド アクセスを許可する必要があります。
 
  
 
@@ -108,13 +107,12 @@ ms.openlocfilehash: 6d0f2460e6b65173445cdf7c1fea207e6bdbd149
 
 各アプリで同時に実行できるバックグラウンド タスクは 1 つだけです。 バックグラウンド タスクが既に実行されているアプリでバックグラウンド タスクがトリガーされた場合、最初のバックグラウンド タスクが完了するまで新しいバックグラウンド タスクは実行されません。
 
-## その他のリソース
+## <a name="other-resources"></a>その他のリソース
 
 
 詳しくは、Windows 8.1 の[直接通知のサンプル](http://go.microsoft.com/fwlink/p/?linkid=241553)や Windows 8.1 の[プッシュ通知と定期的な通知のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=231476)をダウンロードし、Windows 10 アプリでそれらのソース コードを再利用してください。
 
-## 関連トピック
-
+## <a name="related-topics"></a>関連トピック
 
 * [直接通知のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh761463)
 * [クイック スタート: 直接通知のバックグラウンド タスクの作成と登録](https://msdn.microsoft.com/library/windows/apps/jj676800)
@@ -131,6 +129,6 @@ ms.openlocfilehash: 6d0f2460e6b65173445cdf7c1fea207e6bdbd149
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 
