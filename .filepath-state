@@ -1899,6 +1899,9 @@
   "818d113b0b41fcec8bb5b854d3fdec449ae8ad5c": [
     "windows-apps-src\\files\\use-edp-to-protect-streams-and-buffers.md"
   ],
+  "60c1e38c25bf135383eda7edc92166d64f8914f7": [
+    "windows-apps-src\\gaming\\about-the-metro-style-user-interface-and-directx.md"
+  ],
   "76c980cb125aa5f9124da76c77cd62f4c9639fac": [
     "windows-apps-src\\gaming\\about-the-metro-style-user-interface-and-directx.md"
   ],
@@ -1907,6 +1910,9 @@
   ],
   "78e2bbcc4c9182b09138da457c839466b49ac31a": [
     "windows-apps-src\\gaming\\about-the-metro-style-user-interface-and-directx.md"
+  ],
+  "2faaa6eac525c0e61679e0ef12dbb62743808dcf": [
+    "windows-apps-src\\gaming\\adding-audio-to-the-marble-maze-sample.md"
   ],
   "302ee0d6d8bf34754a67d243e1dd5f97cca34c91": [
     "windows-apps-src\\gaming\\adding-audio-to-the-marble-maze-sample.md"
@@ -1917,6 +1923,9 @@
   "9c35ca4d475783e52ba68d611c7bea49a927a4e5": [
     "windows-apps-src\\gaming\\adding-audio-to-the-marble-maze-sample.md"
   ],
+  "211edce1fab52a2688b399c8185257a6feb5412f": [
+    "windows-apps-src\\gaming\\adding-input-and-interactivity-to-the-marble-maze-sample.md"
+  ],
   "812261548d5babdbb090ffc9382491ba041a2c27": [
     "windows-apps-src\\gaming\\adding-input-and-interactivity-to-the-marble-maze-sample.md"
   ],
@@ -1925,6 +1934,9 @@
   ],
   "ddaa13c6bf7d1bcf5a01d7525389a893a077f4f4": [
     "windows-apps-src\\gaming\\adding-input-and-interactivity-to-the-marble-maze-sample.md"
+  ],
+  "d75d8ffcae13dd852ded4051b7e5605412137c13": [
+    "windows-apps-src\\gaming\\adding-visual-content-to-the-marble-maze-sample.md"
   ],
   "d61f92e3e51e6b63b547083a26c1bde719156bd6": [
     "windows-apps-src\\gaming\\adding-visual-content-to-the-marble-maze-sample.md"
@@ -1935,6 +1947,9 @@
   "6b7880703d40d6ef5ed5f42f3e09bc5573170e1f": [
     "windows-apps-src\\gaming\\adding-visual-content-to-the-marble-maze-sample.md"
   ],
+  "b0e42895fe11ee713335abc8025b98e30102d3d1": [
+    "windows-apps-src\\gaming\\additional-directx-game-programming-resources.md"
+  ],
   "000c6f74ffbb6e466970ce44c156df7e9d47de78": [
     "windows-apps-src\\gaming\\additional-directx-game-programming-resources.md"
   ],
@@ -1943,6 +1958,9 @@
   ],
   "9d7e21a10686a22299e644600414c73f5b4991e7": [
     "windows-apps-src\\gaming\\additional-directx-game-programming-resources.md"
+  ],
+  "0b476878e0a33c17be675bec9af4a51f1e693ebd": [
+    "windows-apps-src\\gaming\\an-introduction-to-3d-graphics-with-directx.md"
   ],
   "e9167f475a5b5928fc8599f1339a10bf30f882f8": [
     "windows-apps-src\\gaming\\an-introduction-to-3d-graphics-with-directx.md"
@@ -1953,6 +1971,9 @@
   "d4b059bed3cb21403b742048d6f6df47780b8aab": [
     "windows-apps-src\\gaming\\an-introduction-to-3d-graphics-with-directx.md"
   ],
+  "07778838514a7fcf9e97a01db4a8320afb9f51ce": [
+    "windows-apps-src\\gaming\\applying-textures-to-primitives.md"
+  ],
   "514dddaecb4c1c5e23182b8ee25c9bd52456b299": [
     "windows-apps-src\\gaming\\applying-textures-to-primitives.md"
   ],
@@ -1961,6 +1982,9 @@
   ],
   "5533b086557be44b27e4e371c0d71bc8bc6310b0": [
     "windows-apps-src\\gaming\\applying-textures-to-primitives.md"
+  ],
+  "414120e30e5b932cf5b0f633f46f39f35968e9e6": [
+    "windows-apps-src\\gaming\\asynchronous-programming-directx-and-cpp.md"
   ],
   "8186f7f2486b481ed8773a4647847ef929941cab": [
     "windows-apps-src\\gaming\\asynchronous-programming-directx-and-cpp.md"
@@ -1971,6 +1995,9 @@
   "1faf25f7c7ad7cc96c8490149acf1c430478616c": [
     "windows-apps-src\\gaming\\asynchronous-programming-directx-and-cpp.md"
   ],
+  "ea70abb2daf8479c089168473ae7d51a41b232b1": [
+    "windows-apps-src\\gaming\\change-your-shader-loading-code.md"
+  ],
   "980d1551e014afe2e2240887f357d485c6fb85fa": [
     "windows-apps-src\\gaming\\change-your-shader-loading-code.md"
   ],
@@ -1979,6 +2006,9 @@
   ],
   "144e3374c16118418872f6c473c5f39101fbfce0": [
     "windows-apps-src\\gaming\\change-your-shader-loading-code.md"
+  ],
+  "d277ef4ea332bcad6ed2e63287eb6ac3a59bb4cb": [
+    "windows-apps-src\\gaming\\compare-opengl-es-2-0-api-design-to-directx.md"
   ],
   "8537d5e7e2b8edda234d51405d6d335f0694a260": [
     "windows-apps-src\\gaming\\compare-opengl-es-2-0-api-design-to-directx.md"
@@ -1989,6 +2019,9 @@
   "84f13d6507d141c468fcfd6a2bcf75f5419d65da": [
     "windows-apps-src\\gaming\\compare-opengl-es-2-0-api-design-to-directx.md"
   ],
+  "2ac58ebad3e4458f7b90878fb54ff70fb0f9566b": [
+    "windows-apps-src\\gaming\\complete-code-for-basicloader.md"
+  ],
   "a990b329797ea29311c0ec15d2288b09df80017d": [
     "windows-apps-src\\gaming\\complete-code-for-basicloader.md"
   ],
@@ -1997,6 +2030,9 @@
   ],
   "ab16033c05273a0cd483fdc7a5302a3ff461e4b1": [
     "windows-apps-src\\gaming\\complete-code-for-basicloader.md"
+  ],
+  "61f6f58edcb94241623eb4ed643ac95e625cc68e": [
+    "windows-apps-src\\gaming\\complete-code-for-basicreaderwriter.md"
   ],
   "75a454d12b0e8ec3f7502fb09161227de29fdb5c": [
     "windows-apps-src\\gaming\\complete-code-for-basicreaderwriter.md"
@@ -2007,6 +2043,9 @@
   "de6ab2687cfbe7b485e51bc90811b1988e29fb7e": [
     "windows-apps-src\\gaming\\complete-code-for-basicreaderwriter.md"
   ],
+  "745eb76c1b1a616f5bdab43826e65b5d9590b1c4": [
+    "windows-apps-src\\gaming\\complete-code-for-ddstextureloader.md"
+  ],
   "223ddf4e299f41a6acbd721663904cc874d53808": [
     "windows-apps-src\\gaming\\complete-code-for-ddstextureloader.md"
   ],
@@ -2015,6 +2054,9 @@
   ],
   "edcddb162d58b5f05248c7cd94b6079207e4a318": [
     "windows-apps-src\\gaming\\complete-code-for-ddstextureloader.md"
+  ],
+  "ff847f4c6b4184656aa60dd7301f77d11cce3418": [
+    "windows-apps-src\\gaming\\create-a-basic-mesh.md"
   ],
   "9a896e32549201e6c64c7d18b63b9c9c636aad0c": [
     "windows-apps-src\\gaming\\create-a-basic-mesh.md"
@@ -2025,6 +2067,9 @@
   "b8795438053adebfbd36cada86a8ef13afb3eef2": [
     "windows-apps-src\\gaming\\create-a-basic-mesh.md"
   ],
+  "9f9d7fd2b7b5ebf1b355a4dfbbbf6af22c9c4109": [
+    "windows-apps-src\\gaming\\create-depth-buffer-resource--view--and-sampler-state.md"
+  ],
   "91b905460972127f3ea27d725a090339e0eb97f0": [
     "windows-apps-src\\gaming\\create-depth-buffer-resource--view--and-sampler-state.md"
   ],
@@ -2033,6 +2078,9 @@
   ],
   "85fb020e7d476d3b2095875376903c5e28f08d94": [
     "windows-apps-src\\gaming\\create-depth-buffer-resource--view--and-sampler-state.md"
+  ],
+  "226fcd342feb398cc4690a184e68705fa6666359": [
+    "windows-apps-src\\gaming\\creating-shaders-and-drawing-primitives.md"
   ],
   "177d8b49a09b2f328cb8c552517c0b9875ce4f85": [
     "windows-apps-src\\gaming\\creating-shaders-and-drawing-primitives.md"
@@ -2043,6 +2091,9 @@
   "36ce1c3c0df0dd9dd4f5cf3d31282d5b15050f5c": [
     "windows-apps-src\\gaming\\creating-shaders-and-drawing-primitives.md"
   ],
+  "5ed1acf2f42502d088f809136e5a057188b0dd99": [
+    "windows-apps-src\\gaming\\developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md"
+  ],
   "debd22fc1516679e8b3b729db0ebacb0e8d15f9a": [
     "windows-apps-src\\gaming\\developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md"
   ],
@@ -2051,6 +2102,9 @@
   ],
   "d660e05ab43f1c45f21b028a78c6cfa3e0897164": [
     "windows-apps-src\\gaming\\developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md"
+  ],
+  "df8bfb064b2aa42651a84ec057ca916a45ba6434": [
+    "windows-apps-src\\gaming\\directx-and-xaml-interop.md"
   ],
   "06fa2db3eeab3f9d3bd3ca1d81db4123ba7c5714": [
     "windows-apps-src\\gaming\\directx-and-xaml-interop.md"
@@ -2061,6 +2115,9 @@
   "167709c7ba3470c144924801cb8cf18ffa544c5d": [
     "windows-apps-src\\gaming\\directx-and-xaml-interop.md"
   ],
+  "57116ec2f705db6c322d966f370201c8c40df7e3": [
+    "windows-apps-src\\gaming\\directx-porting-faq.md"
+  ],
   "f02bb45c1e214e582e381aff10e326e44e6358fa": [
     "windows-apps-src\\gaming\\directx-porting-faq.md"
   ],
@@ -2070,6 +2127,9 @@
   "908da9d15a49291f6a1c2467858b525c2f3dc7da": [
     "windows-apps-src\\gaming\\directx-porting-faq.md"
   ],
+  "27e3df88efd5f060f8b31451ad70f6170cb3ae0b": [
+    "windows-apps-src\\gaming\\draw-to-the-screen.md"
+  ],
   "519342fd02d2ee5c420f4a572a0f7e1b82ff79dc": [
     "windows-apps-src\\gaming\\draw-to-the-screen.md"
   ],
@@ -2078,6 +2138,9 @@
   ],
   "1e2039743ba45d577c08c0a6d9c17c7f923b2d86": [
     "windows-apps-src\\gaming\\draw-to-the-screen.md"
+  ],
+  "c4b7cd51f03f3abf943114652f5bdc492e782a84": [
+    "windows-apps-src\\gaming\\e2e.md"
   ],
   "160e657dc2b270419a356d62ef5b98edad64d8b8": [
     "windows-apps-src\\gaming\\e2e.md"
@@ -2097,6 +2160,9 @@
   "af9252d172bab96ce50eb7ff12d8f0503f010d15": [
     "windows-apps-src\\gaming\\e2e.md"
   ],
+  "4b4f2f3c1352a2f91684e6533c91a1e69a3fff8a": [
+    "windows-apps-src\\gaming\\feature-mapping.md"
+  ],
   "0ea4d34b741a6de7355d7ad0d310a2818d06fbe6": [
     "windows-apps-src\\gaming\\feature-mapping.md"
   ],
@@ -2105,6 +2171,9 @@
   ],
   "6ab76921f1e8b613010f99eba6a141daca128ea5": [
     "windows-apps-src\\gaming\\feature-mapping.md"
+  ],
+  "126dda0fef08ddc2cb10249d0e2f340083711054": [
+    "windows-apps-src\\gaming\\game-development-platform-guide.md"
   ],
   "4201647de2f68dae917751a28a626de47da8afc5": [
     "windows-apps-src\\gaming\\game-development-platform-guide.md"
@@ -2115,6 +2184,9 @@
   "83c3fda490d7ab821e8e584291ded642c9c11dd1": [
     "windows-apps-src\\gaming\\game-development-platform-guide.md"
   ],
+  "1644f08611fe78f103799a441590d84c8e9a4d3d": [
+    "windows-apps-src\\gaming\\glsl-to-hlsl-reference.md"
+  ],
   "3110d8e2fa8d826e73c69f53001ed0f25ef24d48": [
     "windows-apps-src\\gaming\\glsl-to-hlsl-reference.md"
   ],
@@ -2123,6 +2195,9 @@
   ],
   "1be2c49dc88dcaecfa1d349f9dda7a9cc0619b92": [
     "windows-apps-src\\gaming\\glsl-to-hlsl-reference.md"
+  ],
+  "bf74a1b24f8c5fbfcf6f9c60f8e05962253bb659": [
+    "windows-apps-src\\gaming\\handling-device-lost-scenarios.md"
   ],
   "8aee9e65adbdeb9d2461896f2014b38f9be81ade": [
     "windows-apps-src\\gaming\\handling-device-lost-scenarios.md"
@@ -2133,6 +2208,9 @@
   "b88d85c78ba5d08718b7e2c844f94beb71e5134a": [
     "windows-apps-src\\gaming\\handling-device-lost-scenarios.md"
   ],
+  "03960cc3a630bc213ee2734e2b9491bd20cd5c5b": [
+    "windows-apps-src\\gaming\\how-to-activate-an-app-directx-and-cpp.md"
+  ],
   "b7961216191c3cbdf78d260c5b01aff78b2bf2d6": [
     "windows-apps-src\\gaming\\how-to-activate-an-app-directx-and-cpp.md"
   ],
@@ -2141,6 +2219,9 @@
   ],
   "0b13604d2b0349817881a5c1c56c311931c90759": [
     "windows-apps-src\\gaming\\how-to-activate-an-app-directx-and-cpp.md"
+  ],
+  "de68d55d23fa4d466ae971e63699cba84b05e516": [
+    "windows-apps-src\\gaming\\how-to-resume-an-app-directx-and-cpp.md"
   ],
   "e25ac18c25a3eb74d7ee5c2670c4b4fcf1ffa8c6": [
     "windows-apps-src\\gaming\\how-to-resume-an-app-directx-and-cpp.md"
@@ -2151,6 +2232,9 @@
   "978f779eaeb732b549657751c11cd2192728999b": [
     "windows-apps-src\\gaming\\how-to-resume-an-app-directx-and-cpp.md"
   ],
+  "2b1874472ee4bf3082d85713982b0bbcfc7780b3": [
+    "windows-apps-src\\gaming\\how-to-suspend-an-app-directx-and-cpp.md"
+  ],
   "20e6bb2b033caed0594497ea801beedf81f2c491": [
     "windows-apps-src\\gaming\\how-to-suspend-an-app-directx-and-cpp.md"
   ],
@@ -2159,6 +2243,9 @@
   ],
   "dd7319b254dcaaa5da7a7055bbde299f5e7e62a3": [
     "windows-apps-src\\gaming\\how-to-suspend-an-app-directx-and-cpp.md"
+  ],
+  "50b4b0f2b5f3869145b23925d2a8e3e35de4270b": [
+    "windows-apps-src\\gaming\\implementing-depth-buffers-for-shadow-mapping.md"
   ],
   "d72b939dd176b94e4af00dfd0cb8b087b0810cdb": [
     "windows-apps-src\\gaming\\implementing-depth-buffers-for-shadow-mapping.md"
@@ -2169,6 +2256,9 @@
   "a323c299d588cdcff7b83d538a705d64207c96b2": [
     "windows-apps-src\\gaming\\implementing-depth-buffers-for-shadow-mapping.md"
   ],
+  "fc74b24c8b51886f4fb7155e70739860cf01752b": [
+    "windows-apps-src\\gaming\\index.md"
+  ],
   "ea0aa67b52165f5adb62158025ac4757257f90c4": [
     "windows-apps-src\\gaming\\index.md"
   ],
@@ -2177,6 +2267,9 @@
   ],
   "6437f3620afadd0b421bf11f1aa4f86558d50de1": [
     "windows-apps-src\\gaming\\index.md"
+  ],
+  "94a0a3df87815f4b17d4a85bb0b8f5089621386d": [
+    "windows-apps-src\\gaming\\launching-and-resuming-apps-directx-and-cpp.md"
   ],
   "0d8d2172fb14e9120cf301cc65bd29227d19cbf4": [
     "windows-apps-src\\gaming\\launching-and-resuming-apps-directx-and-cpp.md"
@@ -2187,6 +2280,9 @@
   "9a0a1314aa0b174bfb1c44e5280455ab668a42b7": [
     "windows-apps-src\\gaming\\launching-and-resuming-apps-directx-and-cpp.md"
   ],
+  "245fd4d07c8fd265b4553dd5f0bffa9e8d2800f5": [
+    "windows-apps-src\\gaming\\load-a-game-asset.md"
+  ],
   "2a3ab58114d91f295b8428e3ad83fd09369d0723": [
     "windows-apps-src\\gaming\\load-a-game-asset.md"
   ],
@@ -2195,6 +2291,9 @@
   ],
   "09221cb853b3d327b5cb60cacec109032135eabc": [
     "windows-apps-src\\gaming\\load-a-game-asset.md"
+  ],
+  "2756f282ee40cfc9fcd061ea0262aa6b40e4d557": [
+    "windows-apps-src\\gaming\\map-concepts-and-infrastructure.md"
   ],
   "0d30928432063872912b12761b7fa97c9760d4cd": [
     "windows-apps-src\\gaming\\map-concepts-and-infrastructure.md"
@@ -2205,6 +2304,9 @@
   "d21bbf905797a7b0c14e666f1ec31a85203b30db": [
     "windows-apps-src\\gaming\\map-concepts-and-infrastructure.md"
   ],
+  "a25f76483b7b158d49d42f058b9009af2e93fc3e": [
+    "windows-apps-src\\gaming\\marble-maze-application-structure.md"
+  ],
   "19d3608755b7be052235ca4352b0d290e020a41c": [
     "windows-apps-src\\gaming\\marble-maze-application-structure.md"
   ],
@@ -2213,6 +2315,9 @@
   ],
   "696d4227bcd3ff4238d81e6f951a61e098fbc2f6": [
     "windows-apps-src\\gaming\\marble-maze-application-structure.md"
+  ],
+  "c9e52b28995e75162e1e5a9960636974b5daadfb": [
+    "windows-apps-src\\gaming\\marble-maze-sample-fundamentals.md"
   ],
   "67653d8f338859bf19af88b6e5438fe212fda9cc": [
     "windows-apps-src\\gaming\\marble-maze-sample-fundamentals.md"
@@ -2223,6 +2328,9 @@
   "c9aafbf7d8061893180a1a823c2c1cafd9ef7a7f": [
     "windows-apps-src\\gaming\\marble-maze-sample-fundamentals.md"
   ],
+  "bd67462cf4322fa2f05f078118556950b8e7b183": [
+    "windows-apps-src\\gaming\\moving-from-egl-to-dxgi.md"
+  ],
   "8a723339d1787950dcb31a1c8b8f0d4821bbe514": [
     "windows-apps-src\\gaming\\moving-from-egl-to-dxgi.md"
   ],
@@ -2231,6 +2339,9 @@
   ],
   "599196300a393352540abf1154d1508af7b4caa1": [
     "windows-apps-src\\gaming\\moving-from-egl-to-dxgi.md"
+  ],
+  "2e3a23e234d9a897dbda5c980f3cfb88cb6987ad": [
+    "windows-apps-src\\gaming\\multisampling--multi-sample-anti-aliasing--in-windows-store-apps.md"
   ],
   "a1e2ed13b65ec608459f2ba7ae89aafaecbfd9ff": [
     "windows-apps-src\\gaming\\multisampling--multi-sample-anti-aliasing--in-windows-store-apps.md"
@@ -2241,6 +2352,9 @@
   "cf82c34e23a1c66bfc2d59f9ea3b4ebce99ab52e": [
     "windows-apps-src\\gaming\\multisampling--multi-sample-anti-aliasing--in-windows-store-apps.md"
   ],
+  "fa6c51f81915c3c208a019d0d055afd02825d729": [
+    "windows-apps-src\\gaming\\multisampling--scaling--and-overlay-swap-chains.md"
+  ],
   "d05842662589e414402911da2bb95d197ede3022": [
     "windows-apps-src\\gaming\\multisampling--scaling--and-overlay-swap-chains.md"
   ],
@@ -2249,6 +2363,9 @@
   ],
   "1eea87b2175872e5a3bc7c41e82cda47bb555f82": [
     "windows-apps-src\\gaming\\multisampling--scaling--and-overlay-swap-chains.md"
+  ],
+  "55839f82e00a9719f98169dc140ab6b3e25a13f0": [
+    "windows-apps-src\\gaming\\opengl-es-2-0-to-directx-11-1-reference.md"
   ],
   "3b192d66ac6fa22a8551e9e520de01892ccb627e": [
     "windows-apps-src\\gaming\\opengl-es-2-0-to-directx-11-1-reference.md"
@@ -2259,6 +2376,9 @@
   "dff8bf0f8723055e955cd32042f14f58037494b5": [
     "windows-apps-src\\gaming\\opengl-es-2-0-to-directx-11-1-reference.md"
   ],
+  "d4f1cc11469cbf67efeae0853701f55e8f98a2ec": [
+    "windows-apps-src\\gaming\\optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md"
+  ],
   "e32ab2d9fc2fd35cf5e6f1346ed7cdb040744abf": [
     "windows-apps-src\\gaming\\optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md"
   ],
@@ -2267,6 +2387,9 @@
   ],
   "ae99f88126192866ed18df55497af6390bc38c26": [
     "windows-apps-src\\gaming\\optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md"
+  ],
+  "d826e8364feea135a0dc3ab096392a73d59cd6c5": [
+    "windows-apps-src\\gaming\\package-your-windows-store-directx-game.md"
   ],
   "5b0e056f4ae875966cad32dca8427a272269ca65": [
     "windows-apps-src\\gaming\\package-your-windows-store-directx-game.md"
@@ -2277,6 +2400,9 @@
   "bc861d98563107b2c67e94281e79d97bed6dee9b": [
     "windows-apps-src\\gaming\\package-your-windows-store-directx-game.md"
   ],
+  "f88a9dc7afb26ef39cf3c7891e9235c7e1c63b62": [
+    "windows-apps-src\\gaming\\plan-your-directx-port.md"
+  ],
   "74cc254d56a32c8ed5141189e7c3221733e38c9f": [
     "windows-apps-src\\gaming\\plan-your-directx-port.md"
   ],
@@ -2285,6 +2411,9 @@
   ],
   "f5f66f5da79eb62e3a81f4fe0d7398fed689d378": [
     "windows-apps-src\\gaming\\plan-your-directx-port.md"
+  ],
+  "e57006d5ef218237ac6872552ae22780f8c7885f": [
+    "windows-apps-src\\gaming\\port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md"
   ],
   "07fcf1c39b1344b1f879de5a328a4537f0addfcf": [
     "windows-apps-src\\gaming\\port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md"
@@ -2295,6 +2424,9 @@
   "307b611eece3de6288d67e1e340368763f26fa2e": [
     "windows-apps-src\\gaming\\port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md"
   ],
+  "14a9e9154dedd39a58a67321e58b887810c476bc": [
+    "windows-apps-src\\gaming\\port-from-opengl-es-2-0-to-directx-11-1.md"
+  ],
   "7ca7b506722fa8631fd70e44defc511709c6745a": [
     "windows-apps-src\\gaming\\port-from-opengl-es-2-0-to-directx-11-1.md"
   ],
@@ -2303,6 +2435,9 @@
   ],
   "aab0c3e9f3816e0657dfb6fec4917d62f2be5280": [
     "windows-apps-src\\gaming\\port-from-opengl-es-2-0-to-directx-11-1.md"
+  ],
+  "0b6fbd739107b068bf1e878fd1e41d1fee02de16": [
+    "windows-apps-src\\gaming\\porting-considerations.md"
   ],
   "dbee4a79519e9eafedc36470d6a9abbfb71a2be6": [
     "windows-apps-src\\gaming\\porting-considerations.md"
@@ -2313,6 +2448,9 @@
   "875d638a6104cf91b707a2998c9d74e905c945da": [
     "windows-apps-src\\gaming\\porting-considerations.md"
   ],
+  "3c89eaf09b90ced1ea6f616eeba1cd81db6e813f": [
+    "windows-apps-src\\gaming\\porting-guides.md"
+  ],
   "0e69df344f5f336fa19635cc0efe8eca00fdf4e8": [
     "windows-apps-src\\gaming\\porting-guides.md"
   ],
@@ -2321,6 +2459,9 @@
   ],
   "3cfc483052d12b89cf2707e7b9ebd666e5c49e3d": [
     "windows-apps-src\\gaming\\porting-guides.md"
+  ],
+  "67b1dcb74fe30d20230549840eb94cbf32b15e36": [
+    "windows-apps-src\\gaming\\porting-uniforms-and-attributes.md"
   ],
   "caa7217942d775be7a9653c213ba686748580b7f": [
     "windows-apps-src\\gaming\\porting-uniforms-and-attributes.md"
@@ -2331,6 +2472,9 @@
   "d3a1c0d3a37f24bdf4dfec1118aa206dfd6b9ac1": [
     "windows-apps-src\\gaming\\porting-uniforms-and-attributes.md"
   ],
+  "9fabc44d2e57eb29b7596edc2524452a5046435e": [
+    "windows-apps-src\\gaming\\porting-your-directx-9-game-to-windows-store.md"
+  ],
   "75376e9607e5850e02d2b281259278bae216cd20": [
     "windows-apps-src\\gaming\\porting-your-directx-9-game-to-windows-store.md"
   ],
@@ -2339,6 +2483,9 @@
   ],
   "3988d0cbfb3b7e585622af45c0d7ff3589ee020d": [
     "windows-apps-src\\gaming\\porting-your-directx-9-game-to-windows-store.md"
+  ],
+  "b56c260801ae46ac1713612cc8e2aedf64fa625f": [
+    "windows-apps-src\\gaming\\port-the-glsl.md"
   ],
   "eca72c388170b3394d2b8a75b289a65c51b6c7da": [
     "windows-apps-src\\gaming\\port-the-glsl.md"
@@ -2349,6 +2496,9 @@
   "883f4423f72f044435ffc0ee9eccdcd5b0d63bfa": [
     "windows-apps-src\\gaming\\port-the-glsl.md"
   ],
+  "34bcb88cf82389b1133edd8c942288c2ae90ff89": [
+    "windows-apps-src\\gaming\\port-the-shader-config.md"
+  ],
   "7ddb4af86f1d1057d97fed2aa8354ca45fee0c23": [
     "windows-apps-src\\gaming\\port-the-shader-config.md"
   ],
@@ -2357,6 +2507,9 @@
   ],
   "478b5615834ea946a6a327fc2cbf54651e21b695": [
     "windows-apps-src\\gaming\\port-the-shader-config.md"
+  ],
+  "1eb308908dedd188ba803962ceda74da3530b573": [
+    "windows-apps-src\\gaming\\port-the-vertex-buffers-and-data-config.md"
   ],
   "ee04e8ec6eac515385d0cc7dbc3b92ae2c6cafd9": [
     "windows-apps-src\\gaming\\port-the-vertex-buffers-and-data-config.md"
@@ -2367,6 +2520,9 @@
   "ee8b3f693e40d9c0fba679a44ebcd4986d06d7ac": [
     "windows-apps-src\\gaming\\port-the-vertex-buffers-and-data-config.md"
   ],
+  "20e887e9b26137e85faa41863600ae07d9700c07": [
+    "windows-apps-src\\gaming\\prepare-your-dev-environment-for-windows-store-directx-game-development.md"
+  ],
   "3bb93d5db86cee9e0072f4190b7431308359ec11": [
     "windows-apps-src\\gaming\\prepare-your-dev-environment-for-windows-store-directx-game-development.md"
   ],
@@ -2375,6 +2531,9 @@
   ],
   "360ffe86a6b2033510cb7d4b790477c80d5d1205": [
     "windows-apps-src\\gaming\\prepare-your-dev-environment-for-windows-store-directx-game-development.md"
+  ],
+  "ce9472002effda9c8d276074122f3d19018efa2d": [
+    "windows-apps-src\\gaming\\reduce-latency-with-dxgi-1-3-swap-chains.md"
   ],
   "611441a0a1964234927bc26f63031f553a5369e5": [
     "windows-apps-src\\gaming\\reduce-latency-with-dxgi-1-3-swap-chains.md"
@@ -2385,6 +2544,9 @@
   "7eb0eab864c58b07e29803895423998dd647a87e": [
     "windows-apps-src\\gaming\\reduce-latency-with-dxgi-1-3-swap-chains.md"
   ],
+  "a208ce5f8768040e3fcea6f0dece8e1aaf36f7ff": [
+    "windows-apps-src\\gaming\\render-the-scene-with-depth-testing.md"
+  ],
   "ef53957030f544df73b8617cde33a48d68919dea": [
     "windows-apps-src\\gaming\\render-the-scene-with-depth-testing.md"
   ],
@@ -2393,6 +2555,9 @@
   ],
   "6351cc9f6efe0d4bffb54961624a35b4a9f4136a": [
     "windows-apps-src\\gaming\\render-the-scene-with-depth-testing.md"
+  ],
+  "090045d8c5c3278a76fe8c5197d753f228338e95": [
+    "windows-apps-src\\gaming\\render-the-shadow-map-to-the-depth-buffer.md"
   ],
   "5db71a2e97f81e1edf00b0f44e8ceb1f5e63929e": [
     "windows-apps-src\\gaming\\render-the-shadow-map-to-the-depth-buffer.md"
@@ -2403,6 +2568,9 @@
   "337aa63ee30b05da51d5b224cb0013519e11504d": [
     "windows-apps-src\\gaming\\render-the-shadow-map-to-the-depth-buffer.md"
   ],
+  "e16e764a61cd90fc61df1073d96bde31923ca5b3": [
+    "windows-apps-src\\gaming\\setting-up-directx-resources.md"
+  ],
   "0a38c1b1a481cb2af29d5d93e1f0bbf9d1623202": [
     "windows-apps-src\\gaming\\setting-up-directx-resources.md"
   ],
@@ -2411,6 +2579,9 @@
   ],
   "af52969011a90f0c665dc8a5508c213d3a73b5b7": [
     "windows-apps-src\\gaming\\setting-up-directx-resources.md"
+  ],
+  "63f2216678c04799dec6d9b606b28a950c048881": [
+    "windows-apps-src\\gaming\\set-up-visual-studio-for-game-development.md"
   ],
   "bcdf1ffe7fbc85b9fe9504f841aa8f8842629803": [
     "windows-apps-src\\gaming\\set-up-visual-studio-for-game-development.md"
@@ -2421,6 +2592,9 @@
   "59fe007601d16f6586ec52c0026e161ad6350a1e": [
     "windows-apps-src\\gaming\\set-up-visual-studio-for-game-development.md"
   ],
+  "0d815771078f90e9b611f9f5cbe3e33863a0eff3": [
+    "windows-apps-src\\gaming\\simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md"
+  ],
   "7755ae7578b09a73a6a07d460de2b89fca77c9c6": [
     "windows-apps-src\\gaming\\simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md"
   ],
@@ -2429,6 +2603,9 @@
   ],
   "723321983418a714ec375db99a0df7f8455c0464": [
     "windows-apps-src\\gaming\\simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md"
+  ],
+  "e00f20f6acb77d919c130b9430ac181bb7626aef": [
+    "windows-apps-src\\gaming\\simple-port-from-direct3d-9-to-11-1-part-2--rendering.md"
   ],
   "715541241a579b06ea06e75d471c88063b8c21b3": [
     "windows-apps-src\\gaming\\simple-port-from-direct3d-9-to-11-1-part-2--rendering.md"
@@ -2439,6 +2616,9 @@
   "c5cdddbf2bf75da761f4439ef2d890170c6681c5": [
     "windows-apps-src\\gaming\\simple-port-from-direct3d-9-to-11-1-part-2--rendering.md"
   ],
+  "bf08f73cb18236fe6be34f8c949e5c4444f544db": [
+    "windows-apps-src\\gaming\\simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md"
+  ],
   "0a2414718119f4f4dee4b3b8cc5c12dc2d0dd509": [
     "windows-apps-src\\gaming\\simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md"
   ],
@@ -2447,6 +2627,9 @@
   ],
   "8d843d8b22623dfbba3a76eb7ef19a82cc07f04f": [
     "windows-apps-src\\gaming\\simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md"
+  ],
+  "7dfd20b1e6d89fcf50d29880ecd6969a38bb8012": [
+    "windows-apps-src\\gaming\\supporting-screen-rotation-directx-and-cpp.md"
   ],
   "bf593502f13acf1485fe80ed0c12a204055b70a6": [
     "windows-apps-src\\gaming\\supporting-screen-rotation-directx-and-cpp.md"
@@ -2457,6 +2640,9 @@
   "101ee7a6d0760abfc40145b21478947c0563a346": [
     "windows-apps-src\\gaming\\supporting-screen-rotation-directx-and-cpp.md"
   ],
+  "0fa1c87c22afb76e9724b598d34b0f35f74d6dc1": [
+    "windows-apps-src\\gaming\\target-a-range-of-hardware.md"
+  ],
   "fee0318908c6e893ea5e1b1073e523765ac6f7c6": [
     "windows-apps-src\\gaming\\target-a-range-of-hardware.md"
   ],
@@ -2465,6 +2651,9 @@
   ],
   "a2e2ed02025352bd5583abeed8856a216eab4ead": [
     "windows-apps-src\\gaming\\target-a-range-of-hardware.md"
+  ],
+  "c4c506a1caa65e45912de23a11044903f7ee7a97": [
+    "windows-apps-src\\gaming\\tutorial--adding-a-user-interface.md"
   ],
   "b92101de3c7479625b83e4ba8649bfa48a73935c": [
     "windows-apps-src\\gaming\\tutorial--adding-a-user-interface.md"
@@ -2475,6 +2664,9 @@
   "4f4ca9626e38ce7449b6476345205d136b3d9a2d": [
     "windows-apps-src\\gaming\\tutorial--adding-a-user-interface.md"
   ],
+  "d336479d5fec8caa399a3c81b9aaa868e94071f5": [
+    "windows-apps-src\\gaming\\tutorial--adding-controls.md"
+  ],
   "36e231d01ae54e9f8c0c863aaa15ae97e528d0d7": [
     "windows-apps-src\\gaming\\tutorial--adding-controls.md"
   ],
@@ -2483,6 +2675,9 @@
   ],
   "49214f3bc14b6a475a77c5dbb7c0f08bb0818df6": [
     "windows-apps-src\\gaming\\tutorial--adding-controls.md"
+  ],
+  "28b83fe627c71e73439250ace7b5bf651ccc4b9b": [
+    "windows-apps-src\\gaming\\tutorial--adding-move-look-controls-to-your-directx-game.md"
   ],
   "b1ed6a81d2cc20440365ba75f9f4615ce03b54e6": [
     "windows-apps-src\\gaming\\tutorial--adding-move-look-controls-to-your-directx-game.md"
@@ -2493,6 +2688,9 @@
   "d5bd0a43c1f261e6a12ed947e497d3e45d0ab6a7": [
     "windows-apps-src\\gaming\\tutorial--adding-move-look-controls-to-your-directx-game.md"
   ],
+  "467f89d288eeffe5c8a8d9fe22b4e8af10e47425": [
+    "windows-apps-src\\gaming\\tutorial--adding-sound.md"
+  ],
   "dcfc11c65dce35f68d61e9254002a964dfa82d5c": [
     "windows-apps-src\\gaming\\tutorial--adding-sound.md"
   ],
@@ -2501,6 +2699,9 @@
   ],
   "e44bc1046310b57cffa3eb4009e91885c61470eb": [
     "windows-apps-src\\gaming\\tutorial--adding-sound.md"
+  ],
+  "8ef53947fe956ea36f35dd6a3085cb911a5a1abb": [
+    "windows-apps-src\\gaming\\tutorial--adding-touch-controls-to-your-directx-game.md"
   ],
   "b429bf45409151c5220b72c75c0c2978331501dd": [
     "windows-apps-src\\gaming\\tutorial--adding-touch-controls-to-your-directx-game.md"
@@ -2511,6 +2712,9 @@
   "901b83b1c4a2e572e4fe41e1df59910432982687": [
     "windows-apps-src\\gaming\\tutorial--adding-touch-controls-to-your-directx-game.md"
   ],
+  "ea0ea9c8948b73b65755af8477da35c96d4c2ab5": [
+    "windows-apps-src\\gaming\\tutorial--assembling-the-rendering-pipeline.md"
+  ],
   "19da57f41240b22504b384d13b90c624c8ff6386": [
     "windows-apps-src\\gaming\\tutorial--assembling-the-rendering-pipeline.md"
   ],
@@ -2519,6 +2723,9 @@
   ],
   "c0c935af257fe52e22cadaffb6e008ddbf9629a8": [
     "windows-apps-src\\gaming\\tutorial--assembling-the-rendering-pipeline.md"
+  ],
+  "02fcf67752060e50ec24816b48e72eb02a25d517": [
+    "windows-apps-src\\gaming\\tutorial--building-the-games-metro-style-app-framework.md"
   ],
   "3cc4f850971c6435ac4e936da7e151a02eca6362": [
     "windows-apps-src\\gaming\\tutorial--building-the-games-metro-style-app-framework.md"
@@ -2538,6 +2745,9 @@
   "0e409f846c0f2e24c469c84610b22a0171e65018": [
     "windows-apps-src\\gaming\\tutorial--create-your-first-metro-style-directx-game.md"
   ],
+  "46b45f12420089b042aa5159a1990b16ee2c214a": [
+    "windows-apps-src\\gaming\\tutorial--defining-the-main-game-loop.md"
+  ],
   "2462c7dafe5d9d41526558330a0fe2149bc62df4": [
     "windows-apps-src\\gaming\\tutorial--defining-the-main-game-loop.md"
   ],
@@ -2556,6 +2766,9 @@
   "17d34f0edcbe6729fe63204123faf4b7393beea7": [
     "windows-apps-src\\gaming\\tutorial-resources.md"
   ],
+  "5bbe0eff4f6a9e0233e1a373e5efa78e1b825a34": [
+    "windows-apps-src\\gaming\\tutorial--setting-up-the-games-infrastructure.md"
+  ],
   "5fd02fc3d73a2ba5a341622c64db916ebb838a73": [
     "windows-apps-src\\gaming\\tutorial--setting-up-the-games-infrastructure.md"
   ],
@@ -2564,6 +2777,9 @@
   ],
   "fd8e676e66c1df530aca41e05f2ea68d96d01a32": [
     "windows-apps-src\\gaming\\tutorial--setting-up-the-games-infrastructure.md"
+  ],
+  "a5e0c67ac734f2f9ad07b21f0e33bd5baf2aa19a": [
+    "windows-apps-src\\gaming\\understand-direct3d-11-1-concepts.md"
   ],
   "124a542f3c86f368b8e6cbf0e8118405e86fa129": [
     "windows-apps-src\\gaming\\understand-direct3d-11-1-concepts.md"
@@ -2574,6 +2790,9 @@
   "9812e3a4528b0ce8abd76b1bfcfb93b1268f362c": [
     "windows-apps-src\\gaming\\understand-direct3d-11-1-concepts.md"
   ],
+  "778e19ad5695dffbaf2d2d3e6464f964e45ee5d1": [
+    "windows-apps-src\\gaming\\user-interface.md"
+  ],
   "f598723e09143642b92684b08c0faa48a7710238": [
     "windows-apps-src\\gaming\\user-interface.md"
   ],
@@ -2583,6 +2802,9 @@
   "1e91814825a0944f9a70fdc7bbc6e8ef78215f29": [
     "windows-apps-src\\gaming\\user-interface.md"
   ],
+  "4fc422f32c2ef7814e6151d48ddb2386e72e240f": [
+    "windows-apps-src\\gaming\\use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md"
+  ],
   "64bc43ecf692bb8d71785016b98b36551678da07": [
     "windows-apps-src\\gaming\\use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md"
   ],
@@ -2591,6 +2813,9 @@
   ],
   "5d8f7a8dbba2da76c6093d034c2ca8c2b4592c7e": [
     "windows-apps-src\\gaming\\use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md"
+  ],
+  "5a430364985712331eb266d961ef07016c63d09c": [
+    "windows-apps-src\\gaming\\using-depth-and-effects-on-primitives.md"
   ],
   "86ac6062af8bbbfe99aa5e2196f7ee338adb2317": [
     "windows-apps-src\\gaming\\using-depth-and-effects-on-primitives.md"
@@ -2604,6 +2829,9 @@
   "3a8ea00144b707bc4bf01a26a91ca7f7567b31de": [
     "windows-apps-src\\gaming\\walkthrough-sample-ports-from-opengl-es-2-0.md"
   ],
+  "50e544b63ce1730c31202efd4d3aa236be606b59": [
+    "windows-apps-src\\gaming\\walkthrough--simple-port-from-direct3d-9-to-11-1.md"
+  ],
   "6db499ec9b104e5d1f0d121f7414f7a6a09f3b61": [
     "windows-apps-src\\gaming\\walkthrough--simple-port-from-direct3d-9-to-11-1.md"
   ],
@@ -2616,6 +2844,9 @@
   "53e0b3f5a69f133e74430b1a2e32a13180569f06": [
     "windows-apps-src\\gaming\\walkthrough--simple-port-from-direct3d-9-to-11-1.md"
   ],
+  "ed7e0fe4c108ee67c903ad4663030182a129504b": [
+    "windows-apps-src\\gaming\\working-with-2d-graphics-in-your-directx-game.md"
+  ],
   "c2315865c6948674658be205ade4f8792aa8d945": [
     "windows-apps-src\\gaming\\working-with-2d-graphics-in-your-directx-game.md"
   ],
@@ -2625,6 +2856,9 @@
   "7a4c41b24bc4f703f035bb0daf0f1bc280af1e68": [
     "windows-apps-src\\gaming\\working-with-2d-graphics-in-your-directx-game.md"
   ],
+  "d2f391b60c36d22761c7b4168b0ecd6128a35a28": [
+    "windows-apps-src\\gaming\\working-with-audio-in-your-directx-game.md"
+  ],
   "00977b2ab59f23a2b8fc63ef0a072c4e1bb731b9": [
     "windows-apps-src\\gaming\\working-with-audio-in-your-directx-game.md"
   ],
@@ -2633,6 +2867,9 @@
   ],
   "51e941becdaa55de3ec81757dddf01e6c04aed2d": [
     "windows-apps-src\\gaming\\working-with-audio-in-your-directx-game.md"
+  ],
+  "7154b9b6f3755f8eefdbc8cb929d8fddfbed9409": [
+    "windows-apps-src\\gaming\\work-with-networking-in-your-directx-game.md"
   ],
   "7a35de6ae87518b195b2083de0814a2e95f42bd3": [
     "windows-apps-src\\gaming\\work-with-networking-in-your-directx-game.md"
@@ -7005,6 +7242,9 @@
   "5a983714cda9b5a5f45e555e2cb6f980f082a003": [
     "windows-apps-src\\xbox-apps\\wdp-xboxsettings-api.md"
   ],
+  "23806eb344d8719a6a7934b07e459099fc5ecdbc": [
+    "windows-apps-src\\gaming\\cloud-for-games.md"
+  ],
   "dd6197a42af6d1d1b40c3efc79ea99e52698c3d5": [
     "windows-apps-src\\gaming\\cloud-for-games.md"
   ],
@@ -7013,6 +7253,9 @@
   ],
   "598384993e0e2931773cdb30e0909af6b771590e": [
     "windows-apps-src\\gaming\\cloud-for-games.md"
+  ],
+  "61ba84acac322da21df5d7921f72b64740c10c3b": [
+    "windows-apps-src\\gaming\\accessibility-for-games.md"
   ],
   "6b213bbd155c18b0df14c3ffc6cef95e8a5dd076": [
     "windows-apps-src\\gaming\\accessibility-for-games.md"
@@ -7722,6 +7965,9 @@
   "7ab2c9f1054509f816ef9647f340e61b6a281d8a": [
     "windows-apps-src\\whats-new\\windows-10-version-1607-api-diff.md"
   ],
+  "63c085c6767fa976e304fd124ccc2c4721e768d6": [
+    "windows-apps-src\\gaming\\relative-mouse-movement.md"
+  ],
   "d24c8f034360b550f5867902cf1d5f4773b68e1b": [
     "windows-apps-src\\gaming\\relative-mouse-movement.md"
   ],
@@ -7892,6 +8138,9 @@
   ],
   "d6d2be6c91ddf5fb85cdec759c753db1561f066f": [
     "windows-apps-src\\get-started\\choose-a-uwp-version.md"
+  ],
+  "52f8e71202eba3c1747ff180edc43cd50d3f036f": [
+    "windows-apps-src\\gaming\\concept-approval.md"
   ],
   "6c1bf0fe955d95a5e46ccf0e1b3cddfc6e5765df": [
     "windows-apps-src\\gaming\\concept-approval.md"
@@ -8522,6 +8771,9 @@
   ],
   "9cdaa63563dc08f2a17d1624b0a795fb84f8d39e": [
     "windows-apps-src\\audio-video-camera\\custom-audio-effects.md"
+  ],
+  "c24537bd223b3793ae775ec2fe0ab5d9e055f7d2": [
+    "windows-apps-src\\gaming\\monetization-for-games.md"
   ],
   "53f8e8583b79739e0b14db73f5e5020b5c02238c": [
     "windows-apps-src\\gaming\\monetization-for-games.md"
@@ -10191,6 +10443,9 @@
   "40b2a15379129142a84c4a5caf4317dc50041e06": [
     "windows-apps-src\\launch-resume\\run-minimized-with-extended-execution.md"
   ],
+  "c5975e091deccaa4367fd001a775f746f86b4a35": [
+    "windows-apps-src\\gaming\\arcade-stick.md"
+  ],
   "1821c62401c7a3ebd8f176c55aa9919f115da318": [
     "windows-apps-src\\gaming\\arcade-stick.md"
   ],
@@ -10199,6 +10454,9 @@
   ],
   "9fd90cbb8be3a0b2d234eff8a13a98b7f406aadf": [
     "windows-apps-src\\gaming\\arcade-stick.md"
+  ],
+  "2537b9668ce81ec0a8e2bc91e2c9ac43fafde113": [
+    "windows-apps-src\\gaming\\gamepad-and-vibration.md"
   ],
   "29964a7d9d7b8d26446a91c1f289bdf64d8082bc": [
     "windows-apps-src\\gaming\\gamepad-and-vibration.md"
@@ -10209,6 +10467,9 @@
   "5d64c463b572dfc6da5ed453308c56a05d0a4410": [
     "windows-apps-src\\gaming\\gamepad-and-vibration.md"
   ],
+  "51e2e716c0bb3e26af76493b3f987f747ff8e33e": [
+    "windows-apps-src\\gaming\\headset.md"
+  ],
   "8f80e861501b25360f4d8af5a9b83d671bf18f6d": [
     "windows-apps-src\\gaming\\headset.md"
   ],
@@ -10217,6 +10478,9 @@
   ],
   "5306ef31bf20b25a5f2a24dee8bd8b55de2773da": [
     "windows-apps-src\\gaming\\headset.md"
+  ],
+  "deb0ad71c8c06bc8a3f5775e50021b71a5bb8e23": [
+    "windows-apps-src\\gaming\\input-for-games.md"
   ],
   "bd97df6e6d268419d7a4fc06d00a92ab0b4c7623": [
     "windows-apps-src\\gaming\\input-for-games.md"
@@ -10227,6 +10491,9 @@
   "8d1cfa840e359ad1f6a890ed7e7425d387393e15": [
     "windows-apps-src\\gaming\\input-for-games.md"
   ],
+  "f5a0db9b5d4dcf0c248966e130e678904671c66d": [
+    "windows-apps-src\\gaming\\input-practices-for-games.md"
+  ],
   "6e64957cbba1a7ab743e40f4cd0e30fd391174db": [
     "windows-apps-src\\gaming\\input-practices-for-games.md"
   ],
@@ -10236,6 +10503,9 @@
   "15e5096c00334bf200fa0076d227e42fc463e25d": [
     "windows-apps-src\\gaming\\input-practices-for-games.md"
   ],
+  "baf7f854625a364e32882c49e47d6425259d30ca": [
+    "windows-apps-src\\gaming\\racing-wheel-and-force-feedback.md"
+  ],
   "eb7609198d833a2654d617ce07a673ab95f8f99b": [
     "windows-apps-src\\gaming\\racing-wheel-and-force-feedback.md"
   ],
@@ -10244,6 +10514,9 @@
   ],
   "ea2c1f359424f042b9563e2723c1eb34ee8ddff0": [
     "windows-apps-src\\gaming\\racing-wheel-and-force-feedback.md"
+  ],
+  "d89895837876da8ccf7e39ce9dea42d990869f80": [
+    "windows-apps-src\\gaming\\ui-navigation-controller.md"
   ],
   "6e70a08a22a900f28a489d64a901c48f53ad442d": [
     "windows-apps-src\\gaming\\ui-navigation-controller.md"
