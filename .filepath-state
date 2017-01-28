@@ -7368,6 +7368,9 @@
   "82131efdd83d9b7aced7a164025a17401f827cba": [
     "windows-apps-src\\publish\\microsoft-advertising-payment-process.md"
   ],
+  "07c9763c4b112909d0daf29d09e12360547a3bbc": [
+    "windows-apps-src\\porting\\desktop-to-uwp-extensions.md"
+  ],
   "b84c4fdeea40d31e40a53d5d4a7e56f8544ee917": [
     "windows-apps-src\\porting\\desktop-to-uwp-extensions.md"
   ],
@@ -8024,6 +8027,9 @@
   ],
   "bab1d5b520b3272f08cfa87d32834d913e54be9f": [
     "windows-apps-src\\publish\\create-add-on-descriptions.md"
+  ],
+  "65bb276c4f3bf0c4582e02ac812687eb7bcb0b49": [
+    "windows-apps-src\\publish\\enter-add-on-properties.md"
   ],
   "b7b1d3ce208f53f8ed876a7e2eeec7846f8b37f5": [
     "windows-apps-src\\publish\\enter-add-on-properties.md"
@@ -10274,6 +10280,9 @@
   ],
   "fbe8a77e3d5735b14088efb0ff6aa01be8d4badf": [
     "windows-apps-src\\porting\\desktop-to-uwp-distribute.md"
+  ],
+  "1f0a987ce13493db51bf1d16322e4eb6f47d818d": [
+    "windows-apps-src\\porting\\desktop-to-uwp-known-issues.md"
   ],
   "00b9c8c7fe9067d6925c8c955f50e8e9f6a7dc8c": [
     "windows-apps-src\\porting\\desktop-to-uwp-known-issues.md"
