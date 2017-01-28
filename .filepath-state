@@ -5403,6 +5403,9 @@
   "3b7e68803a0391ea850b513014aa56a380df4d5c": [
     "windows-apps-src\\porting\\wpsl-to-uwp-troubleshooting.md"
   ],
+  "4b0b6f11d3ae1a01ed61b43865910c73106d6ca8": [
+    "windows-apps-src\\publish\\about-affiliate-ads.md"
+  ],
   "bd57fe866fbf4cff6b5428ac2e374416b5276375": [
     "windows-apps-src\\publish\\about-affiliate-ads.md"
   ],
@@ -5528,6 +5531,9 @@
   ],
   "b6662344996a83c3f1460af8b7387bf7cfd4b087": [
     "windows-apps-src\\publish\\app-marketing-guidelines.md"
+  ],
+  "d212d36b3e279dec14ddab38606c447801390e9a": [
+    "windows-apps-src\\publish\\app-package-requirements.md"
   ],
   "4c24167b1fc4ffcfcb93f3285faaf234ef26e4f9": [
     "windows-apps-src\\publish\\app-package-requirements.md"
