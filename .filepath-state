@@ -4902,6 +4902,9 @@
   "e9a2308808ef5c03f226968095041f1bb282abc4": [
     "windows-apps-src\\monetize\\using-windows-store-services.md"
   ],
+  "6ceed6f172bc1cf73e354faf198bd403aa09080f": [
+    "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md"
+  ],
   "414450ff94b24f831f2129085402af2444cb25e4": [
     "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md"
   ],
@@ -10232,6 +10235,9 @@
   ],
   "bae825e0fecda32df770a1f48038c2eb652a05cc": [
     "windows-apps-src\\monetize\\update-the-package-rollout-percentage-for-an-app-submission.md"
+  ],
+  "b55c96ff781d2cb56938dd1f44012260946cb4de": [
+    "windows-apps-src\\monetize\\update-your-app-to-the-latest-advertising-libraries.md"
   ],
   "cbd59ebaeaef822a196e4a25203f98a3bd2a7a29": [
     "windows-apps-src\\monetize\\update-your-app-to-the-latest-advertising-libraries.md"

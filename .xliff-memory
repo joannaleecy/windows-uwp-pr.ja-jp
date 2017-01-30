@@ -27099,6 +27099,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1f0a987ce13493db51bf1d16322e4eb6f47d818d.7236b50bc1d04c7322a0254ad3dbdf88115323fe.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md.1972592218cfcf99256aa66c2a92cdf1ab6c61e8.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md",
+      "XliffHash": "1972592218cfcf99256aa66c2a92cdf1ab6c61e8",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6ceed6f172bc1cf73e354faf198bd403aa09080f.b4773ab9f40e3b990add69d3e12596af11a333ef.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\update-your-app-to-the-latest-advertising-libraries.md.f91ad7835f2df107bfa61d06fcf30344c3664bec.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\update-your-app-to-the-latest-advertising-libraries.md",
+      "XliffHash": "f91ad7835f2df107bfa61d06fcf30344c3664bec",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b55c96ff781d2cb56938dd1f44012260946cb4de.b2515a367f14196164102884860d1e5a19b1dacd.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
