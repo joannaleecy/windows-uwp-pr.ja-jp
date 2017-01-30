@@ -156,6 +156,9 @@
   "52bf5b65412918e522b57ba06d83c67771086a93": [
     "windows-apps-src\\app-settings\\app-settings-and-data.md"
   ],
+  "ae831f4cc54bd8a4693acf935dff7bd9897e41b2": [
+    "windows-apps-src\\app-settings\\guidelines-for-app-settings.md"
+  ],
   "84a73137294cb36e1a424d597b997676ac1d1376": [
     "windows-apps-src\\app-settings\\guidelines-for-app-settings.md"
   ],
@@ -2880,6 +2883,9 @@
   "2a9b42ab2cab6a1f4330759c0ff114e985eb3c20": [
     "windows-apps-src\\gaming\\work-with-networking-in-your-directx-game.md"
   ],
+  "dde943a92c947134da4de50b8dcfc14f5a0abf0c": [
+    "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
+  ],
   "3bedb4390b678d3a23703e1b13fc8a4d7a20af42": [
     "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
   ],
@@ -2889,6 +2895,9 @@
   "d6f90d8bcff80ef8fae5f85a572e1b1ab11f153d": [
     "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
   ],
+  "59e77748d82a292cf25964c643d97b9b19ee25a7": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
+  ],
   "5f1f6fc0a5af3dab26afd49cd823745994134b9f": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
   ],
@@ -2897,6 +2906,9 @@
   ],
   "ad34b1bc62abf6c93f5124e774ad374f5b767f2c": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
+  ],
+  "47eba3e052b0d0b6e5eac330ae5190ea45ecaf0b": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
   ],
   "08246c942b175c5e43f17a3aaa8c3a1b1acd55a4": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
@@ -2924,6 +2936,9 @@
   ],
   "729c71fbe0db202bd4f5ce15bea87caa973adf80": [
     "windows-apps-src\\get-started\\get-set-up.md"
+  ],
+  "ddde2e2d71baf7a8170e33308ddb9a9dac5eda01": [
+    "windows-apps-src\\get-started\\learn-more.md"
   ],
   "78697bd5dfb70ef7f203db369e9620feccb5e23d": [
     "windows-apps-src\\get-started\\learn-more.md"
@@ -2970,6 +2985,9 @@
   "170bbb4e22b3ac642b0dfd0c9136d3dd39d519d0": [
     "windows-apps-src\\get-started\\universal-application-platform-guide.md"
   ],
+  "1026ab55c353a4eb42535aeb233c2715b1b6c11f": [
+    "windows-apps-src\\get-started\\whats-a-uwp.md"
+  ],
   "2ebb738bbb420873d2cb3286c69d24ba2a8cee11": [
     "windows-apps-src\\get-started\\whats-a-uwp.md"
   ],
@@ -2981,6 +2999,9 @@
   ],
   "3fd9f4d539977c4b531e08efe0719328365c757c": [
     "windows-apps-src\\get-started\\whats-a-uwp.md"
+  ],
+  "96390f5c36e50fd7c0684067fc1f9d1942a4912b": [
+    "windows-apps-src\\get-started\\your-first-app.md"
   ],
   "63aada36a74c55609bbb0bcd068343c35839bd5a": [
     "windows-apps-src\\get-started\\your-first-app.md"
@@ -8799,6 +8820,9 @@
   "00ab2e2f8b9b086bfcfe31972816a56f7e043d5c": [
     "windows-apps-src\\gaming\\monetization-for-games.md"
   ],
+  "20d6b50a1ab057d809dfb0543da106098ad66807": [
+    "windows-apps-src\\get-started\\get-uwp-app-samples.md"
+  ],
   "27a10aba09ada9044528dee629a0e62e83b9fc66": [
     "windows-apps-src\\get-started\\get-uwp-app-samples.md"
   ],
@@ -10235,6 +10259,9 @@
   ],
   "bae825e0fecda32df770a1f48038c2eb652a05cc": [
     "windows-apps-src\\monetize\\update-the-package-rollout-percentage-for-an-app-submission.md"
+  ],
+  "ea7757189de819d04e4478777fa9e140d9450337": [
+    "windows-apps-src\\monetize\\update-your-app-to-the-latest-advertising-libraries.md"
   ],
   "b55c96ff781d2cb56938dd1f44012260946cb4de": [
     "windows-apps-src\\monetize\\update-your-app-to-the-latest-advertising-libraries.md"
