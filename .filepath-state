@@ -5553,6 +5553,9 @@
   "6269cff868f7a4357c3006d65fcc0ad5b7f7932b": [
     "windows-apps-src\\publish\\age-ratings.md"
   ],
+  "dbfda4e6ddefba35e1d7fee595aab5b07bc7d526": [
+    "windows-apps-src\\publish\\analytics.md"
+  ],
   "819487a990c62afe5cc8b546045724705f2b1302": [
     "windows-apps-src\\publish\\analytics.md"
   ],
@@ -5664,6 +5667,9 @@
   "40891ade1c3383f89eed99176b4e9cf979e1fb64": [
     "windows-apps-src\\publish\\category-and-subcategory-table.md"
   ],
+  "e693baaac9daa923fb43ef87fc82eeaedec4c094": [
+    "windows-apps-src\\publish\\channels-and-conversions-report.md"
+  ],
   "b646546e7542fc1ee3fbe939f35659b731d7e500": [
     "windows-apps-src\\publish\\channels-and-conversions-report.md"
   ],
@@ -5684,6 +5690,9 @@
   ],
   "ac18d3b036c1ec9290212097a0f9a0feb962d915": [
     "windows-apps-src\\publish\\common-questions.md"
+  ],
+  "5554e778168834cb1bd5016d9d759d432477404a": [
+    "windows-apps-src\\publish\\create-a-custom-app-promotion-campaign.md"
   ],
   "23fc02e5367173ce2ce0030a0d403c07faaedc91": [
     "windows-apps-src\\publish\\create-a-custom-app-promotion-campaign.md"
@@ -6599,6 +6608,9 @@
   ],
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "4c540f1cbe386e78c8e414cfb6a79926f61181b3": [
+    "windows-apps-src\\TOC.md"
   ],
   "140409f8fc3cd50bc585ae6875e78218cf49e9c8": [
     "windows-apps-src\\TOC.md"
@@ -10733,5 +10745,8 @@
   ],
   "0aae07d058f1c7a1d458a1c240abae6305811778": [
     "windows-apps-src\\monetize\\run-ad-campaigns-using-windows-store-services.md"
+  ],
+  "1fac83e3cf6b3f10c2a6ff629de56b62d1391625": [
+    "windows-apps-src\\publish\\installs-report.md"
   ]
 }
