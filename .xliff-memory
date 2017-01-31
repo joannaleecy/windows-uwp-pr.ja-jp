@@ -27379,6 +27379,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\58dfbd8192e04acbbd5e8032453ff477614217ce.63970a1ec0cebaced14b0e18b7a3223a70566f9b.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-periodic-notification-overview.md.6ee7cfa1b60f3175d27302d26b1430e4bb9cceba.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-periodic-notification-overview.md",
+      "XliffHash": "6ee7cfa1b60f3175d27302d26b1430e4bb9cceba",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5110825f5136beff5a86c816a937c9a411ad5b8c.c4ec0337eb11b942b6b5f411dcfd3510a5ec5ae6.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
