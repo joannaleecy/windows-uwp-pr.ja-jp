@@ -1,33 +1,11 @@
 # <a name='report-top'></a> Localization Bilingual Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\controls-and-patterns\app-bars.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/e6ebd891c31291b8094ed5138fa9ffcd67e70ab6?path=windows-apps-src%2Fcontrols-and-patterns%2Fapp-bars.md&_a=contents) | HandedOffSuccess | [Details](#a91ee9cf214c686aae8cf069883f4fb1d789777a746)
 
 ## Item Details
-##### <a name='a91ee9cf214c686aae8cf069883f4fb1d789777a746'></a> Source: [windows-apps-src\controls-and-patterns\app-bars.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/e6ebd891c31291b8094ed5138fa9ffcd67e70ab6?path=windows-apps-src%2Fcontrols-and-patterns%2Fapp-bars.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [app-bars.5a175043205bf3552c68985c9d352d0ce06ae166.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/95e82b9f3949242b6c1bd8fc13998c064d5ee553?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fapp-bars.5a175043205bf3552c68985c9d352d0ce06ae166.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-01-25 04:22:25
-* Handoff Reason: Include
-* Handoff Name: 
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Handback Name: 
-* Current Target File: [windows-apps-src\controls-and-patterns\app-bars.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/4dbb751927c0558afe14be25167fc4d5106acabe?path=windows-apps-src%2Fcontrols-and-patterns%2Fapp-bars.md&_a=contents)
-* Current Handback File: [app-bars.5a175043205bf3552c68985c9d352d0ce06ae166.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/4e2da7c2d5992253464157ce73a4969c2d0cf406?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fapp-bars.5a175043205bf3552c68985c9d352d0ce06ae166.ja-jp.xlf&_a=contents)
-* Current Handback Datetime: 2017-01-25 18:24:41
-* Bilingual File: [app-bars.5a175043205bf3552c68985c9d352d0ce06ae166.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/4e2da7c2d5992253464157ce73a4969c2d0cf406?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fapp-bars.5a175043205bf3552c68985c9d352d0ce06ae166.ja-jp.xlf&_a=contents)
-* Bilingual Datetime: 2017-01-25 18:29:10
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
