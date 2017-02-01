@@ -7638,6 +7638,9 @@
   "f9313d3c8b93ba13074c547f1f63c9f3204f0f58": [
     "windows-apps-src\\xbox-apps\\wdp-updatepolicy-api.md"
   ],
+  "406aec4b8291f9c5ccf299bae60bf3bbc18f4be2": [
+    "windows-apps-src\\porting\\desktop-to-uwp-supported-api.md"
+  ],
   "0b4ffacec0f4b87112e3cd9b9f30623b5750241c": [
     "windows-apps-src\\porting\\desktop-to-uwp-supported-api.md"
   ],
