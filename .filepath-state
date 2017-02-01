@@ -5745,6 +5745,9 @@
   "3fb8594748d303216a4437983604b5d78c993934": [
     "windows-apps-src\\publish\\define-pricing-and-market-selection.md"
   ],
+  "e3f8343da97448c80fb0167a046dc85b427ee36f": [
+    "windows-apps-src\\publish\\dev-center-insider-program.md"
+  ],
   "906896cfc952d464b0cb4d9ccfc8a0f50b97e81d": [
     "windows-apps-src\\publish\\dev-center-insider-program.md"
   ],
@@ -8114,6 +8117,9 @@
   ],
   "76ea807f1f8306bb964a61d1c81e9bf578e4b344": [
     "windows-apps-src\\publish\\add-on-acquisitions-report.md"
+  ],
+  "ae1f70bbdded3409d32d7f027277f924957f3f98": [
+    "windows-apps-src\\publish\\add-on-submissions.md"
   ],
   "d255fb0cf369d66abbd785f80dc35139d58a42cf": [
     "windows-apps-src\\publish\\add-on-submissions.md"
@@ -10748,5 +10754,11 @@
   ],
   "1fac83e3cf6b3f10c2a6ff629de56b62d1391625": [
     "windows-apps-src\\publish\\installs-report.md"
+  ],
+  "66c18f3bf0f33de02645b19f4a08534cae92690a": [
+    "hub\\index.md"
+  ],
+  "46f0f0189b1d7df4cb842a21abffd06dc9a7d2c1": [
+    "hub\\TOC.md"
   ]
 }
