@@ -4326,6 +4326,9 @@
   "8893abe389365b37b99df16e7bad955589f49350": [
     "windows-apps-src\\monetize\\add-and-use-the-ad-mediator-control.md"
   ],
+  "bde1398dd0b3e501accc89e7a62bd7df4ebcec8f": [
+    "windows-apps-src\\monetize\\additional-help.md"
+  ],
   "fdfcb96bae01418e12ba73859925bb572515fabd": [
     "windows-apps-src\\monetize\\additional-help.md"
   ],
@@ -4920,6 +4923,9 @@
   "4a8b43ac0b6752b78e998ac16776b84e9ddda09f": [
     "windows-apps-src\\monetize\\troubleshooting-guides.md"
   ],
+  "bffd0d8d9c54741c50912c05b1221e2ec2aba5dc": [
+    "windows-apps-src\\monetize\\ui-and-user-experience-guidelines.md"
+  ],
   "96d94939059f62ab12609b132d695499d44fbf73": [
     "windows-apps-src\\monetize\\ui-and-user-experience-guidelines.md"
   ],
@@ -4988,6 +4994,9 @@
   ],
   "4f7879f1df73498b551633fec3f33d8e7b8c706c": [
     "windows-apps-src\\monetize\\what-is-the-difference-admediatorcontrol-or-adcontrol.md"
+  ],
+  "3b0271f21fe4c2abdc523c7870c5c002aca2a021": [
+    "windows-apps-src\\monetize\\workflows-for-creating-apps-with-ads.md"
   ],
   "c7004fd67468bd0a4204781c9a391cab18279f67": [
     "windows-apps-src\\monetize\\workflows-for-creating-apps-with-ads.md"
@@ -5927,6 +5936,9 @@
   ],
   "3859918d94ad7ffcf1c331ca5a0ca6540387886f": [
     "windows-apps-src\\publish\\managing-your-profile.md"
+  ],
+  "99669c226050e560080acf4c4aa6326bc412b091": [
+    "windows-apps-src\\publish\\mobile-operator-billing.md"
   ],
   "e3753483ff5bcb21b0d9d586b108582874cec39e": [
     "windows-apps-src\\publish\\mobile-operator-billing.md"
@@ -8703,6 +8715,9 @@
   "1a1ace9d456089d4bed2dd4ac4f39479dc8faa52": [
     "windows-apps-src\\monetize\\manage-add-on-submissions.md"
   ],
+  "cae0a02d858c0a094a8c2185876951fa36bc1fc6": [
+    "windows-apps-src\\monetize\\manage-app-submissions.md"
+  ],
   "54da40c99fa7e4c51b751f5d113ac809980cc804": [
     "windows-apps-src\\monetize\\manage-app-submissions.md"
   ],
@@ -10197,6 +10212,9 @@
   "e2b0680e62014526f684e7c1f7fd7da83a14f5d3": [
     "windows-apps-src\\monetize\\app-metadata-api-for-advertising-networks.md"
   ],
+  "98ed10fa5b95f2de3c1106c3fe4a7fd4e12ead80": [
+    "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
+  ],
   "0ca907fbc73a0e823207d243d338a2f62bf03d78": [
     "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
   ],
@@ -10367,6 +10385,9 @@
   ],
   "bae825e0fecda32df770a1f48038c2eb652a05cc": [
     "windows-apps-src\\monetize\\update-the-package-rollout-percentage-for-an-app-submission.md"
+  ],
+  "c6c1fef3b300efa6c5d1c3f0d48da3792af1cc38": [
+    "windows-apps-src\\monetize\\update-your-app-to-the-latest-advertising-libraries.md"
   ],
   "ea7757189de819d04e4478777fa9e140d9450337": [
     "windows-apps-src\\monetize\\update-your-app-to-the-latest-advertising-libraries.md"
