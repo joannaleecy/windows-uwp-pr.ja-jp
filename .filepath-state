@@ -10574,6 +10574,9 @@
   "19874f940798e76a18b3377a295505f0aef201c7": [
     "windows-apps-src\\publish\\set-custom-permissions-for-account-users.md"
   ],
+  "9553873b49b1494e6d93bbac9cf0bedb510f3777": [
+    "windows-apps-src\\debug-test-perf\\optimize-background-activity.md"
+  ],
   "8deb57ff1e159f767fd1dbfb339c56af3ef10d59": [
     "windows-apps-src\\debug-test-perf\\optimize-background-activity.md"
   ],
