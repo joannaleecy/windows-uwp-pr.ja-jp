@@ -21796,7 +21796,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\71d638c2aa6524a1d2379ba9a3c2c95baebfa134.5f5d49586d2f32282223fb506f26541d00f2fd10.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8b011d2b9f125f5beaf0430ce023162bcdcd9cd2.6e147d66f72246aefacbf53b7a0b83430a6cda4c.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -27637,6 +27637,16 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c6c1fef3b300efa6c5d1c3f0d48da3792af1cc38.b124340b4930286ea7e94f5e1a8c4f4d7652f534.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\audio-video-camera\\audio-graphs.md.054e7a374a3494104a2e9fd405cabd06cdfe25d7.HT": {
+      "SourceFilename": "windows-apps-src\\audio-video-camera\\audio-graphs.md",
+      "XliffHash": "054e7a374a3494104a2e9fd405cabd06cdfe25d7",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2f67bcff626b38015ac54dbcb2d82fdb1b260ce7.5d00c458c851c40c4c541ce99df63972d14dd319.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }

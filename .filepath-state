@@ -125,18 +125,6 @@
   "382899f038e2ac2ad6e34e98b3ba4849e9685d10": [
     "windows-apps-src\\accessibility\\practices-to-avoid.md"
   ],
-  "9733608c7212ab1e26511c33034ad2b626cc5887": [
-    "windows-apps-src\\app-help-guidelines\\external-help.md",
-    "windows-apps-src\\in-app-help\\external-help.md"
-  ],
-  "c978e805fa7d746baf299058c8d98fc04ad7c81b": [
-    "windows-apps-src\\app-help-guidelines\\guidelines-for-app-help.md",
-    "windows-apps-src\\in-app-help\\guidelines-for-app-help.md"
-  ],
-  "f649a43bed09a6aac2c94f4a24591730093dc297": [
-    "windows-apps-src\\app-help-guidelines\\in-app-help.md",
-    "windows-apps-src\\in-app-help\\in-app-help.md"
-  ],
   "d90106876291cbf2e10b0daa5a4fffd435ed3db9": [
     "windows-apps-src\\in-app-help\\in-app-help.md"
   ],
@@ -146,9 +134,8 @@
   "7d396561fda4ad52830255c2755b13496753fc10": [
     "windows-apps-src\\in-app-help\\in-app-help.md"
   ],
-  "179f70a1c421d3d5a73813a9b9675353a8d5f8c2": [
-    "windows-apps-src\\app-help-guidelines\\instructional-ui.md",
-    "windows-apps-src\\in-app-help\\instructional-ui.md"
+  "f649a43bed09a6aac2c94f4a24591730093dc297": [
+    "windows-apps-src\\in-app-help\\in-app-help.md"
   ],
   "446d5e8bb0651df7041fd79b266310d026c09ce4": [
     "windows-apps-src\\app-settings\\app-settings-and-data.md"
@@ -269,6 +256,9 @@
   ],
   "08ebb37679d1dd93458a3ffe846d8bd33574635d": [
     "windows-apps-src\\audio-video-camera\\audio-device-information-properties.md"
+  ],
+  "2f67bcff626b38015ac54dbcb2d82fdb1b260ce7": [
+    "windows-apps-src\\audio-video-camera\\audio-graphs.md"
   ],
   "9a9605032abfe8f42cceae176e86fd1312339ed9": [
     "windows-apps-src\\audio-video-camera\\audio-graphs.md"
@@ -3255,6 +3245,9 @@
   "c9ed3bbcbca901aa8dbfcfb0374dd84d42783959": [
     "windows-apps-src\\in-app-help\\external-help.md"
   ],
+  "9733608c7212ab1e26511c33034ad2b626cc5887": [
+    "windows-apps-src\\in-app-help\\external-help.md"
+  ],
   "0268c6e7ca1e88592cfafecaee9fa7673fbb8faf": [
     "windows-apps-src\\in-app-help\\guidelines-for-app-help.md"
   ],
@@ -3264,6 +3257,9 @@
   "6d72999bb99faae4feb446ec7b4ab7394a71d69f": [
     "windows-apps-src\\in-app-help\\guidelines-for-app-help.md"
   ],
+  "c978e805fa7d746baf299058c8d98fc04ad7c81b": [
+    "windows-apps-src\\in-app-help\\guidelines-for-app-help.md"
+  ],
   "a6c0eb4ee5c0d57a541fcfdc1b3c55860c32ca2a": [
     "windows-apps-src\\in-app-help\\instructional-ui.md"
   ],
@@ -3271,6 +3267,9 @@
     "windows-apps-src\\in-app-help\\instructional-ui.md"
   ],
   "cdb1ea2e21b4c3b60287a8dba0cb6585f420463a": [
+    "windows-apps-src\\in-app-help\\instructional-ui.md"
+  ],
+  "179f70a1c421d3d5a73813a9b9675353a8d5f8c2": [
     "windows-apps-src\\in-app-help\\instructional-ui.md"
   ],
   "2b4bae1606f9b51e2d4901218ebd2d616e4c5edc": [
@@ -7226,6 +7225,9 @@
   ],
   "4cc1e0b495a80e019296b9c3be9e75a37c60224a": [
     "windows-apps-src\\xbox-apps\\whats-new.md"
+  ],
+  "8b011d2b9f125f5beaf0430ce023162bcdcd9cd2": [
+    "windows-apps-src\\whats-new\\windows-10-sdk-preview.md"
   ],
   "71d638c2aa6524a1d2379ba9a3c2c95baebfa134": [
     "windows-apps-src\\whats-new\\windows-10-sdk-preview.md"
