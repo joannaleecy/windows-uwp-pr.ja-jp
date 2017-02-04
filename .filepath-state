@@ -2054,6 +2054,9 @@
   "84f13d6507d141c468fcfd6a2bcf75f5419d65da": [
     "windows-apps-src\\gaming\\compare-opengl-es-2-0-api-design-to-directx.md"
   ],
+  "8e374bcd99f38aaed17d4f8857d86a5ba0cbf758": [
+    "windows-apps-src\\gaming\\complete-code-for-basicloader.md"
+  ],
   "2ac58ebad3e4458f7b90878fb54ff70fb0f9566b": [
     "windows-apps-src\\gaming\\complete-code-for-basicloader.md"
   ],
@@ -2065,6 +2068,9 @@
   ],
   "ab16033c05273a0cd483fdc7a5302a3ff461e4b1": [
     "windows-apps-src\\gaming\\complete-code-for-basicloader.md"
+  ],
+  "a03d81cd37fc15db7b5e34e8ba9ab957f69c208f": [
+    "windows-apps-src\\gaming\\complete-code-for-basicreaderwriter.md"
   ],
   "61f6f58edcb94241623eb4ed643ac95e625cc68e": [
     "windows-apps-src\\gaming\\complete-code-for-basicreaderwriter.md"
@@ -2173,6 +2179,9 @@
   ],
   "1e2039743ba45d577c08c0a6d9c17c7f923b2d86": [
     "windows-apps-src\\gaming\\draw-to-the-screen.md"
+  ],
+  "0631b1638b560787cb0262d9e55dddbc8796d90e": [
+    "windows-apps-src\\gaming\\e2e.md"
   ],
   "c4b7cd51f03f3abf943114652f5bdc492e782a84": [
     "windows-apps-src\\gaming\\e2e.md"
@@ -2615,6 +2624,9 @@
   "af52969011a90f0c665dc8a5508c213d3a73b5b7": [
     "windows-apps-src\\gaming\\setting-up-directx-resources.md"
   ],
+  "619cfc41c232885c07e377e8e5a3dfea3a9ea3c3": [
+    "windows-apps-src\\gaming\\set-up-visual-studio-for-game-development.md"
+  ],
   "63f2216678c04799dec6d9b606b28a950c048881": [
     "windows-apps-src\\gaming\\set-up-visual-studio-for-game-development.md"
   ],
@@ -2699,6 +2711,9 @@
   "4f4ca9626e38ce7449b6476345205d136b3d9a2d": [
     "windows-apps-src\\gaming\\tutorial--adding-a-user-interface.md"
   ],
+  "feed7816bb52fd6000dddf92617c5a1ebce544c7": [
+    "windows-apps-src\\gaming\\tutorial--adding-controls.md"
+  ],
   "d336479d5fec8caa399a3c81b9aaa868e94071f5": [
     "windows-apps-src\\gaming\\tutorial--adding-controls.md"
   ],
@@ -2747,6 +2762,9 @@
   "901b83b1c4a2e572e4fe41e1df59910432982687": [
     "windows-apps-src\\gaming\\tutorial--adding-touch-controls-to-your-directx-game.md"
   ],
+  "d99a369694a4f96e94221be5afd3fb1346e3ccbd": [
+    "windows-apps-src\\gaming\\tutorial--assembling-the-rendering-pipeline.md"
+  ],
   "ea0ea9c8948b73b65755af8477da35c96d4c2ab5": [
     "windows-apps-src\\gaming\\tutorial--assembling-the-rendering-pipeline.md"
   ],
@@ -2758,6 +2776,9 @@
   ],
   "c0c935af257fe52e22cadaffb6e008ddbf9629a8": [
     "windows-apps-src\\gaming\\tutorial--assembling-the-rendering-pipeline.md"
+  ],
+  "2173f03e0e3dd2b39369879f84de183e6ca0a2a2": [
+    "windows-apps-src\\gaming\\tutorial--building-the-games-metro-style-app-framework.md"
   ],
   "02fcf67752060e50ec24816b48e72eb02a25d517": [
     "windows-apps-src\\gaming\\tutorial--building-the-games-metro-style-app-framework.md"
@@ -2779,6 +2800,9 @@
   ],
   "0e409f846c0f2e24c469c84610b22a0171e65018": [
     "windows-apps-src\\gaming\\tutorial--create-your-first-metro-style-directx-game.md"
+  ],
+  "9965c679f9f1ec7dd90f1ff470d90b9a36d247aa": [
+    "windows-apps-src\\gaming\\tutorial--defining-the-main-game-loop.md"
   ],
   "46b45f12420089b042aa5159a1990b16ee2c214a": [
     "windows-apps-src\\gaming\\tutorial--defining-the-main-game-loop.md"
@@ -3731,6 +3755,9 @@
   "4d8a00cf7bd151ab97e9abc10a09a3794a0e292f": [
     "windows-apps-src\\launch-resume\\add-a-splash-screen.md"
   ],
+  "0b5db24805cb0990dcdaeeed5cb9e75e599deda2": [
+    "windows-apps-src\\launch-resume\\app-lifecycle.md"
+  ],
   "78f0f8fec8ee226964ae104740559fceb2528026": [
     "windows-apps-src\\launch-resume\\app-lifecycle.md"
   ],
@@ -3746,6 +3773,9 @@
   "6e7b92e81aa0a00e579e0ca89234a90e68c253f1": [
     "windows-apps-src\\launch-resume\\app-lifecycle.md"
   ],
+  "16afbd548d6e5fa84b99f4efe66f1f3eaa31638a": [
+    "windows-apps-src\\launch-resume\\auto-launching-with-autoplay.md"
+  ],
   "031c263a2bd73b62bf9d2b7a4b0fede00d8ee5db": [
     "windows-apps-src\\launch-resume\\auto-launching-with-autoplay.md"
   ],
@@ -3754,6 +3784,9 @@
   ],
   "2c7dc2ad19867c9f721f7f4cc51c8a7096bc9501": [
     "windows-apps-src\\launch-resume\\auto-launching-with-autoplay.md"
+  ],
+  "8a6dabd3ea9d15993704bee4d4bee86f99e80ce6": [
+    "windows-apps-src\\launch-resume\\create-a-customized-splash-screen.md"
   ],
   "295a0ee8090e05ee88f07ce1f3ce69fe2d4646db": [
     "windows-apps-src\\launch-resume\\create-a-customized-splash-screen.md"
@@ -3872,6 +3905,9 @@
   "6b350ef65f381d18585c8b080c6259f7607c7bf9": [
     "windows-apps-src\\launch-resume\\index.md"
   ],
+  "7de6cd7ef676634e0e0948d105c1efc68bb17a15": [
+    "windows-apps-src\\launch-resume\\launch-default-app.md"
+  ],
   "149d76903657d96e16d46bb416d4290e12fab378": [
     "windows-apps-src\\launch-resume\\launch-default-app.md"
   ],
@@ -3880,6 +3916,9 @@
   ],
   "119b24573163224456d4f847cf3a444fb8420c5e": [
     "windows-apps-src\\launch-resume\\launch-default-app.md"
+  ],
+  "f091bdccba76c7f489c1ab75269b38b361c6b5ad": [
+    "windows-apps-src\\launch-resume\\launch-maps-app.md"
   ],
   "0d6ba02140618a73b6018ac161a4c0285609abbe": [
     "windows-apps-src\\launch-resume\\launch-maps-app.md"
