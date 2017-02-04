@@ -458,6 +458,9 @@
   "cc3553aff7c30a2e84b527dc9e108f7c45b7b21f": [
     "windows-apps-src\\audio-video-camera\\midi.md"
   ],
+  "5547eadeddc37e03ce274f86ac925347d955f1f8": [
+    "windows-apps-src\\audio-video-camera\\playready-client-sdk.md"
+  ],
   "43aac4220d28221fcaf71cece4df07f8c5563c19": [
     "windows-apps-src\\audio-video-camera\\playready-client-sdk.md"
   ],
@@ -1178,6 +1181,9 @@
   "f67efa8a00439de719219f750f0244a17cc26182": [
     "windows-apps-src\\data-access\\index.md"
   ],
+  "974c6006d64dcdbe973880bcd1d3c8acd85fad42": [
+    "windows-apps-src\\data-access\\sqlite-databases.md"
+  ],
   "fb0a6d5318cd50341565114a615a1ffe256bc39c": [
     "windows-apps-src\\data-access\\sqlite-databases.md"
   ],
@@ -1249,6 +1255,9 @@
   ],
   "13857b2ba5946149d04ad4f6eda6828cc11a0640": [
     "windows-apps-src\\debug-test-perf\\beta-testing.md"
+  ],
+  "9067eb4c07690a2b484663c616d02f60df798b6e": [
+    "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
   ],
   "0174293001c47fe51c38faa7ae450277b429ab5c": [
     "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
@@ -1469,6 +1478,9 @@
   "478ba4a24cff3c2df34d98157624c9c4339d432a": [
     "windows-apps-src\\debug-test-perf\\windows-app-certification-kit.md"
   ],
+  "2dab2719eae86487b93b9030b430b84aea7b2737": [
+    "windows-apps-src\\debug-test-perf\\windows-app-certification-kit-tests.md"
+  ],
   "cf4f5ff7e69051538ad583c25c5b928acd900a3f": [
     "windows-apps-src\\debug-test-perf\\windows-app-certification-kit-tests.md"
   ],
@@ -1624,6 +1636,9 @@
   ],
   "508acd449c156fa0f5b14298e4a7700748fc65bb": [
     "windows-apps-src\\devices-sensors\\gatt-scenarios.md"
+  ],
+  "8b911beb60af4c1ade0da46daa78ecf232f40f2e": [
+    "windows-apps-src\\devices-sensors\\generate-3mf.md"
   ],
   "f5200c3c82e4967f6248b10171c1eaeb0d506b5b": [
     "windows-apps-src\\devices-sensors\\generate-3mf.md"
@@ -3368,6 +3383,9 @@
   "c75ee725ce4bc9fc33d9ea13e4ab92ed60bfb04d": [
     "windows-apps-src\\input-and-devices\\define-custom-recognition-constraints.md"
   ],
+  "9789afa69c04f3c8535f1f6ee560d9ac530d329d": [
+    "windows-apps-src\\input-and-devices\\designing-for-tv.md"
+  ],
   "5348b2c536e802fc3f6f8527025e90f401f233cb": [
     "windows-apps-src\\input-and-devices\\designing-for-tv.md"
   ],
@@ -3712,6 +3730,9 @@
   ],
   "4d8a00cf7bd151ab97e9abc10a09a3794a0e292f": [
     "windows-apps-src\\launch-resume\\add-a-splash-screen.md"
+  ],
+  "78f0f8fec8ee226964ae104740559fceb2528026": [
+    "windows-apps-src\\launch-resume\\app-lifecycle.md"
   ],
   "abcc06dbfb1eaa72e756c40cc8a033bbcff04e06": [
     "windows-apps-src\\launch-resume\\app-lifecycle.md"
@@ -4205,6 +4226,9 @@
   "133add15e0e5681ec85a0800c52605262a82f8b4": [
     "windows-apps-src\\maps-and-location\\guidelines-and-checklist-for-detecting-location.md"
   ],
+  "32903e6adfcdb3f667a78e9310495b6edfe8f88e": [
+    "windows-apps-src\\maps-and-location\\guidelines-for-geofencing.md"
+  ],
   "de6130a1f9674479f27bffd0f8b5465a14535dd2": [
     "windows-apps-src\\maps-and-location\\guidelines-for-geofencing.md"
   ],
@@ -4252,6 +4276,9 @@
   ],
   "eb3596236e7de29473635b26f48f0c7e4fa1d49f": [
     "windows-apps-src\\maps-and-location\\routes-and-directions.md"
+  ],
+  "cf206bcb4192364fa029d1b66a273c8525c6c918": [
+    "windows-apps-src\\maps-and-location\\set-up-a-geofence.md"
   ],
   "039ae69a84b2ef1e9518233b3cfdd13e24e845f8": [
     "windows-apps-src\\maps-and-location\\set-up-a-geofence.md"
@@ -5273,6 +5300,9 @@
   "c7d99923a0deac61e289d3a2796b8dd1720430b4": [
     "windows-apps-src\\porting\\getting-started-choosing-a-programming-language.md"
   ],
+  "3ab4e4d95c08292e700ec85f967a03ccfacaedca": [
+    "windows-apps-src\\porting\\getting-started-common-controls.md"
+  ],
   "5494927b2ebe6281fe734ce0de9feddaae913620": [
     "windows-apps-src\\porting\\getting-started-common-controls.md"
   ],
@@ -5321,6 +5351,9 @@
   "d71c0026c8658e8aa88827915b8f2d815f10c6ef": [
     "windows-apps-src\\porting\\getting-started-what-next.md"
   ],
+  "3f939770f9fd39af6c40b92aec0bede1d38d6d9a": [
+    "windows-apps-src\\porting\\getting-started-with-uwp-for-ios-developers.md"
+  ],
   "d139d8d37f5828ca144931754f9a1fec4ebb1605": [
     "windows-apps-src\\porting\\getting-started-with-uwp-for-ios-developers.md"
   ],
@@ -5356,6 +5389,9 @@
   ],
   "53e6c50b7a1b4262f738cd798aa2bd02291512fe": [
     "windows-apps-src\\porting\\selecting-an-approach-to-ios-and-uwp-app-development.md"
+  ],
+  "0d5926d306e4fd26ecba207b3ea85bb3a3bbc956": [
+    "windows-apps-src\\porting\\setting-up-your-mac-with-windows-10.md"
   ],
   "37fca466c0774178aa65bda83570aa95deffbb4f": [
     "windows-apps-src\\porting\\setting-up-your-mac-with-windows-10.md"
@@ -5503,6 +5539,9 @@
   ],
   "dcdf17263dadd71572c942bff5e795928e855c03": [
     "windows-apps-src\\porting\\wpsl-to-uwp-namespace-and-class-mappings.md"
+  ],
+  "fd2fd9851627a6e3e9d4810b0a396b680b693411": [
+    "windows-apps-src\\porting\\wpsl-to-uwp-porting-to-a-uwp-project.md"
   ],
   "e6053a130f8c15050d7b0a4982058fd3f6561869": [
     "windows-apps-src\\porting\\wpsl-to-uwp-porting-to-a-uwp-project.md"
@@ -7301,6 +7340,9 @@
   "33c1888620d4e3c2d95cbf701e9128ce006961da": [
     "windows-apps-src\\whats-new\\windows-10-sdk-preview.md"
   ],
+  "25f1414e2e06dd258fe5c8edc49db5f94401234e": [
+    "windows-apps-src\\whats-new\\windows-10-version-1511.md"
+  ],
   "c755431d1791ddc627130e26333fa85de6235236": [
     "windows-apps-src\\whats-new\\windows-10-version-1511.md"
   ],
@@ -7745,6 +7787,9 @@
   "bb401b73432c072d551814dec9504a7d1742b7d4": [
     "windows-apps-src\\apps-for-education\\index.md"
   ],
+  "d992ac74940cb6f1deed694923e560722d2c4ac3": [
+    "windows-apps-src\\apps-for-education\\take-a-test-api.md"
+  ],
   "071a2ed3ffba80c218ba09d38f4538036b41b3a8": [
     "windows-apps-src\\apps-for-education\\take-a-test-api.md"
   ],
@@ -8003,6 +8048,9 @@
   "5983209e7e107f8cf0a7d2fe9ce8ef734e3af7d4": [
     "windows-apps-src\\input-and-devices\\ink-toolbar.md"
   ],
+  "35f57beedf4986c1b7b073663d2260824289bca2": [
+    "windows-apps-src\\launch-resume\\communicate-with-a-remote-app-service.md"
+  ],
   "8a3a9be5cf3afd8a4416ee767553eccdcd495707": [
     "windows-apps-src\\launch-resume\\communicate-with-a-remote-app-service.md"
   ],
@@ -8144,6 +8192,9 @@
   "ee2a52a54be8510b962f1ef5c40570f3836d28c3": [
     "windows-apps-src\\monetize\\in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md"
   ],
+  "acc125e919b145226609b33c4ad31bd861d07382": [
+    "windows-apps-src\\whats-new\\windows-10-version-1607.md"
+  ],
   "1126141b6a2a639bfe78a039136e4dfd07daa5b2": [
     "windows-apps-src\\whats-new\\windows-10-version-1607.md"
   ],
@@ -8185,6 +8236,9 @@
   ],
   "b035e81776039fba60f239b18efef8fe5b43b2f6": [
     "windows-apps-src\\gaming\\relative-mouse-movement.md"
+  ],
+  "d5d75c9e6099346d6f706899808805f18f5abbe8": [
+    "windows-apps-src\\whats-new\\windows-10-version-1507.md"
   ],
   "f19f7505dcd1551343ee9a10200743d567974ce6": [
     "windows-apps-src\\whats-new\\windows-10-version-1507.md"
@@ -8341,6 +8395,9 @@
   ],
   "d6d2be6c91ddf5fb85cdec759c753db1561f066f": [
     "windows-apps-src\\get-started\\choose-a-uwp-version.md"
+  ],
+  "e417ce35f4600cce2a3e2123f819276aba3688cf": [
+    "windows-apps-src\\gaming\\concept-approval.md"
   ],
   "52f8e71202eba3c1747ff180edc43cd50d3f036f": [
     "windows-apps-src\\gaming\\concept-approval.md"
@@ -8968,6 +9025,9 @@
   ],
   "58e58c212cb6efd76f4afb8d3b6c7a3c5ddf215e": [
     "windows-apps-src\\updates-and-versions\\choose-a-uwp-version.md"
+  ],
+  "4ce198fa2479567b611bb75c78ed74ec4b3a076c": [
+    "windows-apps-src\\launch-resume\\discover-remote-devices.md"
   ],
   "6f1a841f05fdff2e7b1de1ceb3230c3b4f058208": [
     "windows-apps-src\\launch-resume\\discover-remote-devices.md"
@@ -10646,6 +10706,9 @@
   "c99c76fac9303e174b5d804c2f1b99856be25006": [
     "windows-apps-src\\packaging\\create-app-package-with-makeappx-tool.md"
   ],
+  "351e5772d475e6e95c87a6275f5a5a93cc02dd0d": [
+    "windows-apps-src\\launch-resume\\app-services.md"
+  ],
   "91956331d6706c8c1ef56e0e71397a0442d79ee3": [
     "windows-apps-src\\launch-resume\\app-services.md"
   ],
@@ -10654,6 +10717,9 @@
   ],
   "d3d32ec35d4d3483beb58d36a3addf7e01718ecd": [
     "windows-apps-src\\launch-resume\\app-services.md"
+  ],
+  "913a278c893610590d46502e0b36c31f1d5e724e": [
+    "windows-apps-src\\launch-resume\\launch-app-from-file.md"
   ],
   "642eb391f81c6472941bfdaa4b6110c569a9a96d": [
     "windows-apps-src\\launch-resume\\launch-app-from-file.md"
@@ -10664,6 +10730,9 @@
   "1b85261b07c935809fdce5b825e6f9e004f5bedb": [
     "windows-apps-src\\launch-resume\\launch-app-from-file.md"
   ],
+  "fdad866b5373d753a5739ac05c2cdbf9db7ad180": [
+    "windows-apps-src\\launch-resume\\launch-app-with-uri.md"
+  ],
   "22fa78ae0b2b61e67d4b1d5770b7ce4aa159346c": [
     "windows-apps-src\\launch-resume\\launch-app-with-uri.md"
   ],
@@ -10672,6 +10741,9 @@
   ],
   "e4b070db5180538732e08b10ace1aaa196ae5eaa": [
     "windows-apps-src\\launch-resume\\launch-app-with-uri.md"
+  ],
+  "4cdd1e8dcfa3818eb54f1de47ae751e793600ed2": [
+    "windows-apps-src\\launch-resume\\splash-screens.md"
   ],
   "3ed1394fd9284e4c5d07fed57d3d12c186132192": [
     "windows-apps-src\\launch-resume\\splash-screens.md"
