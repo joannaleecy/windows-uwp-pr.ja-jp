@@ -1946,6 +1946,9 @@
   "78e2bbcc4c9182b09138da457c839466b49ac31a": [
     "windows-apps-src\\gaming\\about-the-metro-style-user-interface-and-directx.md"
   ],
+  "41ae550ad998dc82e69abecfde166dae97337b84": [
+    "windows-apps-src\\gaming\\adding-audio-to-the-marble-maze-sample.md"
+  ],
   "2faaa6eac525c0e61679e0ef12dbb62743808dcf": [
     "windows-apps-src\\gaming\\adding-audio-to-the-marble-maze-sample.md"
   ],
@@ -1969,6 +1972,9 @@
   ],
   "ddaa13c6bf7d1bcf5a01d7525389a893a077f4f4": [
     "windows-apps-src\\gaming\\adding-input-and-interactivity-to-the-marble-maze-sample.md"
+  ],
+  "0bd19e1ffa5e6d7643bbe7d37d3163fd77ba6622": [
+    "windows-apps-src\\gaming\\adding-visual-content-to-the-marble-maze-sample.md"
   ],
   "d75d8ffcae13dd852ded4051b7e5605412137c13": [
     "windows-apps-src\\gaming\\adding-visual-content-to-the-marble-maze-sample.md"
@@ -2227,6 +2233,9 @@
   ],
   "83c3fda490d7ab821e8e584291ded642c9c11dd1": [
     "windows-apps-src\\gaming\\game-development-platform-guide.md"
+  ],
+  "069f792427ca68f847af0fd15bbabedb390bc7f9": [
+    "windows-apps-src\\gaming\\glsl-to-hlsl-reference.md"
   ],
   "1644f08611fe78f103799a441590d84c8e9a4d3d": [
     "windows-apps-src\\gaming\\glsl-to-hlsl-reference.md"
@@ -2674,6 +2683,9 @@
   ],
   "8d843d8b22623dfbba3a76eb7ef19a82cc07f04f": [
     "windows-apps-src\\gaming\\simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md"
+  ],
+  "d36abc3776ba3a49575f8194c26da220ad85cdce": [
+    "windows-apps-src\\gaming\\supporting-screen-rotation-directx-and-cpp.md"
   ],
   "7dfd20b1e6d89fcf50d29880ecd6969a38bb8012": [
     "windows-apps-src\\gaming\\supporting-screen-rotation-directx-and-cpp.md"
@@ -9221,6 +9233,9 @@
   "4e7d36025950ec06ff3b675b51d13d0c78c30c04": [
     "windows-apps-src\\graphics-concepts\\blending-stages.md"
   ],
+  "215da16bc862d5534b7d0672872afb266d1cb25a": [
+    "windows-apps-src\\graphics-concepts\\block-compression.md"
+  ],
   "3e10eb0b87f0e79cb4fa911c26d3767d3b115b01": [
     "windows-apps-src\\graphics-concepts\\block-compression.md"
   ],
@@ -9284,6 +9299,9 @@
   "f929d2796cc19daa62110bce9de11e8040842dc1": [
     "windows-apps-src\\graphics-concepts\\compressed-texture-resources.md"
   ],
+  "cf7ce0eef953535f2451ae8e637ab5f12b30936e": [
+    "windows-apps-src\\graphics-concepts\\compute-pipeline.md"
+  ],
   "3de942f0a34cd684db6324278d572ea03e3a0eb1": [
     "windows-apps-src\\graphics-concepts\\compute-pipeline.md"
   ],
@@ -9301,6 +9319,9 @@
   ],
   "86e88e6780baa65425ea69a02c5981116797aceb": [
     "windows-apps-src\\graphics-concepts\\compute-shader-stage--cs-.md"
+  ],
+  "7aa31615cb9890715a17574915ee89ae8864ad8b": [
+    "windows-apps-src\\graphics-concepts\\configuring-depth-stencil-functionality.md"
   ],
   "bdb56022ecfab687d20d0df443ccb33efaf414a6": [
     "windows-apps-src\\graphics-concepts\\configuring-depth-stencil-functionality.md"
@@ -9545,6 +9566,9 @@
   "12e94861a9f4c4d910fe725328682f932214c0ec": [
     "windows-apps-src\\graphics-concepts\\input-assembler-stage--ia-.md"
   ],
+  "d35796dd185f0316e083577541f62e9724e07505": [
+    "windows-apps-src\\graphics-concepts\\introduction-to-buffers.md"
+  ],
   "a8c1fff6c46e0f88704c9b9ecc6aef9337e8521c": [
     "windows-apps-src\\graphics-concepts\\introduction-to-buffers.md"
   ],
@@ -9562,6 +9586,9 @@
   ],
   "cfbcb7414d4f74d5ebfbc6e87f206d0201a75f9e": [
     "windows-apps-src\\graphics-concepts\\introduction-to-rasterization-rules.md"
+  ],
+  "6874582247aa926856f6e1077f657a7b45c961f8": [
+    "windows-apps-src\\graphics-concepts\\introduction-to-textures.md"
   ],
   "91be9ed829f091d009dbb8ddd186b0073e117cfc": [
     "windows-apps-src\\graphics-concepts\\introduction-to-textures.md"
@@ -9770,6 +9797,9 @@
   "6a81c206c4df9a26a6f73a379913edbc7d14285a": [
     "windows-apps-src\\graphics-concepts\\primitives.md"
   ],
+  "12f66e9272f1ced44f70eb9258ba6ddeaf38481e": [
+    "windows-apps-src\\graphics-concepts\\primitive-topologies.md"
+  ],
   "29a9a67c0f05036bcbaf4735724e1653eee3fc1b": [
     "windows-apps-src\\graphics-concepts\\primitive-topologies.md"
   ],
@@ -9842,6 +9872,9 @@
   "e93c65ed3cfc77a8ae13e126b64bfc26cb9ef181": [
     "windows-apps-src\\graphics-concepts\\render-target-view--rtv-.md"
   ],
+  "ecf9e50a22d4be5ae163a4ee1f6bd1e77ad1ab23": [
+    "windows-apps-src\\graphics-concepts\\resources.md"
+  ],
   "4568a3700a600a89672e5c3ff2eb7d18fd4641f4": [
     "windows-apps-src\\graphics-concepts\\resources.md"
   ],
@@ -9850,6 +9883,9 @@
   ],
   "0634807d98eba60d748d4bcc458b0c0ed3c132f8": [
     "windows-apps-src\\graphics-concepts\\resources.md"
+  ],
+  "3a0e17e3204e36ce1ffaa8b105018a44dad988ed": [
+    "windows-apps-src\\graphics-concepts\\resource-types.md"
   ],
   "91c23c87cce27eb88b172a3b3f7ed744dc4367d2": [
     "windows-apps-src\\graphics-concepts\\resource-types.md"
@@ -10366,6 +10402,9 @@
   ],
   "b361a558ecef2030370590eedbef69bd04cf68bd": [
     "windows-apps-src\\launch-resume\\convert-out-of-process-background-task.md"
+  ],
+  "2a8238f0c71ba5901f27e64ab7c435fc21f2a241": [
+    "windows-apps-src\\launch-resume\\create-and-register-an-inproc-background-task.md"
   ],
   "fd4d011ba4c5c0ecfecfe2e0d588d8d0b8b24055": [
     "windows-apps-src\\launch-resume\\create-and-register-an-inproc-background-task.md"

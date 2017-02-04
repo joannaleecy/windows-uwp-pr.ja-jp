@@ -28149,6 +28149,136 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\619cfc41c232885c07e377e8e5a3dfea3a9ea3c3.28fa3d9ea67a9db1d2523084b452b5feed4a7162.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics-concepts\\resources.md.5311048022cf91f6068c169f865cd69ce523ed23.HT": {
+      "SourceFilename": "windows-apps-src\\graphics-concepts\\resources.md",
+      "XliffHash": "5311048022cf91f6068c169f865cd69ce523ed23",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ecf9e50a22d4be5ae163a4ee1f6bd1e77ad1ab23.1ccc429fcbdfecbe23688f724e6404cee3e73f6a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics-concepts\\block-compression.md.c47e00e9e6847a297b8b95e0ecd84cbc04c50c13.HT": {
+      "SourceFilename": "windows-apps-src\\graphics-concepts\\block-compression.md",
+      "XliffHash": "c47e00e9e6847a297b8b95e0ecd84cbc04c50c13",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\215da16bc862d5534b7d0672872afb266d1cb25a.25eee669b24faac7a29b99fa815a4d224cfd2860.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics-concepts\\primitive-topologies.md.344218eeb0a7b5fa64e6821de6f15f14bc1f29ef.HT": {
+      "SourceFilename": "windows-apps-src\\graphics-concepts\\primitive-topologies.md",
+      "XliffHash": "344218eeb0a7b5fa64e6821de6f15f14bc1f29ef",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\12f66e9272f1ced44f70eb9258ba6ddeaf38481e.ad7c13458b3ed6dc6cc37e0ba32f404ef4cddbf9.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\launch-resume\\create-and-register-an-inproc-background-task.md.5940b3ba420947bd0139072162b10e6bab9d98f4.HT": {
+      "SourceFilename": "windows-apps-src\\launch-resume\\create-and-register-an-inproc-background-task.md",
+      "XliffHash": "5940b3ba420947bd0139072162b10e6bab9d98f4",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2a8238f0c71ba5901f27e64ab7c435fc21f2a241.46f41cba646ed2c14e66cd43e631740c64f6566d.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics-concepts\\compute-pipeline.md.88f927015ff2b203bdbe0f75b4170777ad9c9c88.HT": {
+      "SourceFilename": "windows-apps-src\\graphics-concepts\\compute-pipeline.md",
+      "XliffHash": "88f927015ff2b203bdbe0f75b4170777ad9c9c88",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\cf7ce0eef953535f2451ae8e637ab5f12b30936e.949c40ac2323c512cd74076c0bd47d196acfd517.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics-concepts\\configuring-depth-stencil-functionality.md.9711d02def5a3782ed8dba258421c7b34c7d2da5.HT": {
+      "SourceFilename": "windows-apps-src\\graphics-concepts\\configuring-depth-stencil-functionality.md",
+      "XliffHash": "9711d02def5a3782ed8dba258421c7b34c7d2da5",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7aa31615cb9890715a17574915ee89ae8864ad8b.ad9349257a839230410eda9dceda0093f7836682.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics-concepts\\introduction-to-buffers.md.ab9c4bd2ff7707361c7cb0a0401f8a36f35c9b9d.HT": {
+      "SourceFilename": "windows-apps-src\\graphics-concepts\\introduction-to-buffers.md",
+      "XliffHash": "ab9c4bd2ff7707361c7cb0a0401f8a36f35c9b9d",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d35796dd185f0316e083577541f62e9724e07505.9fad431dd585680752cd78dcb6cc902571b77117.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\adding-audio-to-the-marble-maze-sample.md.1cfdbe811a4ae1038c9f481b93b8ad8c0b816791.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\adding-audio-to-the-marble-maze-sample.md",
+      "XliffHash": "1cfdbe811a4ae1038c9f481b93b8ad8c0b816791",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\41ae550ad998dc82e69abecfde166dae97337b84.abd1dab914561e36af5031e9a5635c5b144a2beb.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics-concepts\\introduction-to-textures.md.ff9e2d1f2c6111302050479690a9fb2593eecaf0.HT": {
+      "SourceFilename": "windows-apps-src\\graphics-concepts\\introduction-to-textures.md",
+      "XliffHash": "ff9e2d1f2c6111302050479690a9fb2593eecaf0",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6874582247aa926856f6e1077f657a7b45c961f8.336e29f232744b816187c614600f2ca1413469ac.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\supporting-screen-rotation-directx-and-cpp.md.58a6b9850d951f4deea37e25e52aaa440fa1e54b.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\supporting-screen-rotation-directx-and-cpp.md",
+      "XliffHash": "58a6b9850d951f4deea37e25e52aaa440fa1e54b",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d36abc3776ba3a49575f8194c26da220ad85cdce.d4d69e76d9e167fed4bfa61e3767a3be7139aa4f.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\adding-visual-content-to-the-marble-maze-sample.md.51d604ca5142229c4dd506ce615e50b13c917836.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\adding-visual-content-to-the-marble-maze-sample.md",
+      "XliffHash": "51d604ca5142229c4dd506ce615e50b13c917836",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0bd19e1ffa5e6d7643bbe7d37d3163fd77ba6622.df9c07efd681ff9149fb22622bfb1cf90f28c7c5.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics-concepts\\resource-types.md.32946fc4b3abfc2733e97e38c30413be3be33025.HT": {
+      "SourceFilename": "windows-apps-src\\graphics-concepts\\resource-types.md",
+      "XliffHash": "32946fc4b3abfc2733e97e38c30413be3be33025",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\3a0e17e3204e36ce1ffaa8b105018a44dad988ed.6d540659c72c97b81d751251e8796a286301e3e1.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\glsl-to-hlsl-reference.md.ab6087679a59f054b1f9e7850e44392b4bfdb057.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\glsl-to-hlsl-reference.md",
+      "XliffHash": "ab6087679a59f054b1f9e7850e44392b4bfdb057",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\069f792427ca68f847af0fd15bbabedb390bc7f9.c17b690489d50b396635eae6a65603eb734c9956.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
