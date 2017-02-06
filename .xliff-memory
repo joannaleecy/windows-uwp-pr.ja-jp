@@ -28389,6 +28389,36 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\478827015227546e00acaa6f1f6e558ee7dd6b50.4b9561a7fd0df8244ae7483860af52bb33c9466a.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\TOC.md.8a039f7292c09922477e6773b10a6740e63466a7.HT": {
+      "SourceFilename": "windows-apps-src\\TOC.md",
+      "XliffHash": "8a039f7292c09922477e6773b10a6740e63466a7",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b25d202a59bce3fc7845574ce29f0940fe312fc1.6f676a734d94fd065140127900b3e64f8f34cfc1.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\security\\web-account-manager.md.ae00b5b242b363c04c946c9c06580b61a6ab5f5f.HT": {
+      "SourceFilename": "windows-apps-src\\security\\web-account-manager.md",
+      "XliffHash": "ae00b5b242b363c04c946c9c06580b61a6ab5f5f",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b3489e8d935767a10731a86e61d74a88779dbedc.fa7c772f5c3fe2065f021ddcd103604e5077d98c.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\security\\authentication-and-user-identity.md.dc8e6c87f2f0ff3365551c1863677a0c43a414b9.HT": {
+      "SourceFilename": "windows-apps-src\\security\\authentication-and-user-identity.md",
+      "XliffHash": "dc8e6c87f2f0ff3365551c1863677a0c43a414b9",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a3d604a3a975e053ba94aa26385e377c642ff726.dddeb1cbb5656506be747630bfacf23affb519fa.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

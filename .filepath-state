@@ -6389,6 +6389,9 @@
   "01bc284b74568651012acfc7fb29c8912bb1f4d1": [
     "windows-apps-src\\publish\\write-a-great-app-description.md"
   ],
+  "a3d604a3a975e053ba94aa26385e377c642ff726": [
+    "windows-apps-src\\security\\authentication-and-user-identity.md"
+  ],
   "15a553081e9221fee82e9a50c15bacfa3c7b60b2": [
     "windows-apps-src\\security\\authentication-and-user-identity.md"
   ],
@@ -6617,6 +6620,9 @@
   "d0646aca9863f3f326df9b3a86adb2481fdcda70": [
     "windows-apps-src\\security\\smart-cards.md"
   ],
+  "b3489e8d935767a10731a86e61d74a88779dbedc": [
+    "windows-apps-src\\security\\web-account-manager.md"
+  ],
   "9a173cc29bd69238c31bc8d8bc492046c37c67b9": [
     "windows-apps-src\\security\\web-account-manager.md"
   ],
@@ -6799,6 +6805,9 @@
   ],
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "b25d202a59bce3fc7845574ce29f0940fe312fc1": [
+    "windows-apps-src\\TOC.md"
   ],
   "c7a4130e7f47eadd2574c548b99d53240e09d9ed": [
     "windows-apps-src\\TOC.md"
