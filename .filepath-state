@@ -1292,6 +1292,9 @@
   "638ebca167b2ca56f00a83aab13b15c57b2dca2a": [
     "windows-apps-src\\debug-test-perf\\device-portal-api-hololens.md"
   ],
+  "598bd4946cd34ea484ad20b3a19eb80f3d781a70": [
+    "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
+  ],
   "5902a725a3d37487de26652112b82119af8c1f04": [
     "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
   ],
@@ -5498,6 +5501,9 @@
   "c3fb6a76800198c15ef05da9ba198ac5e73b35a8": [
     "windows-apps-src\\porting\\w8x-to-uwp-input-and-sensors.md"
   ],
+  "5cedf918d53059b923b5a8697e2675e43e266619": [
+    "windows-apps-src\\porting\\w8x-to-uwp-porting-to-a-uwp-project.md"
+  ],
   "62fe48a82c1dd22035af69ff18fafd41546d2b28": [
     "windows-apps-src\\porting\\w8x-to-uwp-porting-to-a-uwp-project.md"
   ],
@@ -5509,6 +5515,9 @@
   ],
   "bd0526404f7e8f7fb87a0798c4e0c06bd9305c19": [
     "windows-apps-src\\porting\\w8x-to-uwp-porting-to-a-uwp-project.md"
+  ],
+  "d713f0f0e0bd5e3f439bef320b12f4922eac03aa": [
+    "windows-apps-src\\porting\\w8x-to-uwp-porting-xaml-and-ui.md"
   ],
   "c3a41379607ca2e7f74e8789285eabd32b699981": [
     "windows-apps-src\\porting\\w8x-to-uwp-porting-xaml-and-ui.md"
@@ -5602,6 +5611,9 @@
   ],
   "273017f4607c25ee56d7400debe59e94acb36d4f": [
     "windows-apps-src\\porting\\wpsl-to-uwp-porting-to-a-uwp-project.md"
+  ],
+  "d1fab0e624e2fa12f885f3baa41b0f9a956b548e": [
+    "windows-apps-src\\porting\\wpsl-to-uwp-porting-xaml-and-ui.md"
   ],
   "d932d191456d2bf03800979f04787d5b404e03eb": [
     "windows-apps-src\\porting\\wpsl-to-uwp-porting-xaml-and-ui.md"
