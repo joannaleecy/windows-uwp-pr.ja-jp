@@ -338,6 +338,9 @@
   "f60152ea846ccd7031f804b45f66dd31e6b4b832": [
     "windows-apps-src\\audio-video-camera\\capture-photos-and-video-with-mediacapture.md"
   ],
+  "4ef44efbfc213d6aa3b09933014a4243b288a3a5": [
+    "windows-apps-src\\audio-video-camera\\custom-video-effects.md"
+  ],
   "4e36d84551d6228d8266cb754912442bcd06855e": [
     "windows-apps-src\\audio-video-camera\\custom-video-effects.md"
   ],
@@ -7664,6 +7667,9 @@
   "405b9b100be93f7098eb384d6b48b8690f5e6309": [
     "windows-apps-src\\porting\\desktop-to-uwp-extensions.md"
   ],
+  "42912aa45e385f6e34078343822dc32510f2b902": [
+    "windows-apps-src\\porting\\hwa-access-features.md"
+  ],
   "87e301680953e9554d65b6689fad0fcde888a35a": [
     "windows-apps-src\\porting\\hwa-access-features.md"
   ],
@@ -7675,6 +7681,9 @@
   ],
   "fb74bfc40750941860dae0a8f811fde4a614e403": [
     "windows-apps-src\\porting\\hwa-access-features.md"
+  ],
+  "fa095bdeb42c98df8a80be8a1e4d26685c27b049": [
+    "windows-apps-src\\porting\\hwa-chrome-conversion.md"
   ],
   "81f3642c82e72bf3e7f85decfd10f8ef88acfc98": [
     "windows-apps-src\\porting\\hwa-chrome-conversion.md"
@@ -7688,6 +7697,9 @@
   "84cdd12e2a38aafeb989c0f33b1212077dc1d98e": [
     "windows-apps-src\\porting\\hwa-chrome-conversion.md"
   ],
+  "e5b0e88edd1b4ce6eb85bd4189cdfbbfec852710": [
+    "windows-apps-src\\porting\\hwa-create-mac.md"
+  ],
   "28dd09e26d9468518893e8e0a42ee34523324f01": [
     "windows-apps-src\\porting\\hwa-create-mac.md"
   ],
@@ -7699,6 +7711,9 @@
   ],
   "3ba820e2ec8a3556874c0c7c7e328831bab783ca": [
     "windows-apps-src\\porting\\hwa-create-mac.md"
+  ],
+  "a643a52a5af9df4de0fa07f6cfda4b9af4dc7221": [
+    "windows-apps-src\\porting\\hwa-create-windows.md"
   ],
   "3702795bdc4723290be751d6d6a0d8a426f693dc": [
     "windows-apps-src\\porting\\hwa-create-windows.md"

@@ -28319,6 +28319,56 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5cedf918d53059b923b5a8697e2675e43e266619.e7edeb85402d07f789fd01f586a4e88620e303f4.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\hwa-access-features.md.a00d33dc41501b2e7fd0e7982514b7949ba03150.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\hwa-access-features.md",
+      "XliffHash": "a00d33dc41501b2e7fd0e7982514b7949ba03150",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\42912aa45e385f6e34078343822dc32510f2b902.79f2954f1959cf27ebe34fc858df952beee1b563.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\hwa-create-mac.md.aa0d98a3a886075dca60c6e8817fdfa0aa997618.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\hwa-create-mac.md",
+      "XliffHash": "aa0d98a3a886075dca60c6e8817fdfa0aa997618",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e5b0e88edd1b4ce6eb85bd4189cdfbbfec852710.9834d6132511ad4265dfb809f606c07e6854e939.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\hwa-chrome-conversion.md.30a2050fd1f0401e98c10f57fda7d7437ceb0763.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\hwa-chrome-conversion.md",
+      "XliffHash": "30a2050fd1f0401e98c10f57fda7d7437ceb0763",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\fa095bdeb42c98df8a80be8a1e4d26685c27b049.6df9f2758d11a254d261d3125d2c6a2cf8782957.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\audio-video-camera\\custom-video-effects.md.1b9e9acadb08e69436ad14993a5681fe25144576.HT": {
+      "SourceFilename": "windows-apps-src\\audio-video-camera\\custom-video-effects.md",
+      "XliffHash": "1b9e9acadb08e69436ad14993a5681fe25144576",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\4ef44efbfc213d6aa3b09933014a4243b288a3a5.1d9ce62059526545f5788e038d72c801b83c21de.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\hwa-create-windows.md.a60d9e99e27631366e0755a3476d60d7058adc57.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\hwa-create-windows.md",
+      "XliffHash": "a60d9e99e27631366e0755a3476d60d7058adc57",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a643a52a5af9df4de0fa07f6cfda4b9af4dc7221.99d3bd4dbb9eb69adff2a000bc53a6cbcba20c06.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
