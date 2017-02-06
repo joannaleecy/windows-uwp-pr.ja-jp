@@ -3020,6 +3020,9 @@
   "3641fdd1f7eb74a11233115d9dfb809ea959926e": [
     "windows-apps-src\\get-started\\enable-your-device-for-development.md"
   ],
+  "478827015227546e00acaa6f1f6e558ee7dd6b50": [
+    "windows-apps-src\\get-started\\get-set-up.md"
+  ],
   "aaf1cc4b40066210a5aa5d77b4a2a1c6be3cc8bc": [
     "windows-apps-src\\get-started\\get-set-up.md"
   ],
@@ -3238,6 +3241,9 @@
   ],
   "197a4b32afc82724803fb93949b288b38de52cc4": [
     "windows-apps-src\\graphics\\composition-effects.md"
+  ],
+  "8be1827350e8489106ff29bd2a1f310fd06dea38": [
+    "windows-apps-src\\graphics\\composition-native-interop.md"
   ],
   "ff51247575ee1b5097a04a5cd5907093cb6c1c8e": [
     "windows-apps-src\\graphics\\composition-native-interop.md"
