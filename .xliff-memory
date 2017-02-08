@@ -24956,7 +24956,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7a354f09e1823b0c55b18b1e9ccbe71734cf4242.adf99f6b6aa63f3d326adbe679d26e35584a995d.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e3e4e957681d14d961e2334b6d3a20582d4b14a5.8aba21aff62cf4396a993e1fa64f2c7697dd806b.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -25176,7 +25176,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\4b0c352149e7cb9057c0d48f3b2dc98d4c7ad55d.b07c9e6eeb983ed435f3c5980eed6d27ea257a1b.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\695aacfde3e018687cb8203430648fd8ad4bb027.fe255762c25e4c03109324ee153fd743d18d517d.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -25356,7 +25356,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b40a59ceed6c9ad18973c86e50fa8657edef1f65.f79938aaf53c4a52063ec1c1a57f5a62f6b91bbf.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5780500e66f34df53c308abc92b4ed38155567d8.65209d99b7459f70af9f4c184f42b61372408ae4.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -25396,7 +25396,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\79cb0209dd7bbb7cae44c915edccd3725defa882.f05cc0da2b4409195b29e275f5d753cb04047721.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0db00e26374e49a1c6149d3d2121a961daa51503.a7c44fa57a6bd09bef1c0724e99613ec3a8c08bf.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -31547,6 +31547,36 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\54dcebb0dc4b1a41acdae655b9caf14f72161f36.3e9a07c1011d872f3f71661f77e27e75d32a8c00.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\manage-app-submissions.md.d2f5076aff351b3f41088b515d728bad5fcc10d7.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\manage-app-submissions.md",
+      "XliffHash": "d2f5076aff351b3f41088b515d728bad5fcc10d7",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\695199250b48d417a14e31e8297025de8c66ccac.493399e1090726d7403771f09166e3757f9260aa.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\index.md.69b7d8c025372748630788bd852f626e1748ae27.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\index.md",
+      "XliffHash": "69b7d8c025372748630788bd852f626e1748ae27",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7b525267c8f4d24af95f6d41d46d33a3adf10f8f.83bc3da0954bbce561f6ab9153b7a4bf52aa97de.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\manage-add-on-submissions.md.0168864afdf9a0f86cf2207f4a5fc7ade190234f.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\manage-add-on-submissions.md",
+      "XliffHash": "0168864afdf9a0f86cf2207f4a5fc7ade190234f",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a7f5b941cb601f4d563daa27e082f0dd77ad8b23.18e5225f0f8e8a0bdd6c55158372ceae794f52b5.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }
