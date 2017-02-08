@@ -6,7 +6,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2f699a5feb46f498a80a0fd5d99a60c4721a17db.3d7165ca6b90d6dfe27fd07b4f5c39d712492a72.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\57c29414deadcf4f1ba5c462b8fe81faa0b38d49.d5a6b7c0a7ab9ff179d3e4f5992a15572fe87a3c.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\index.720b23fbbbd23ed59c43b430a6e93f1a7cd31f11.ja-jp.xlf",
       "LocXliffCommit": "f4949b6a371ff9640aa76dfd4ccf284889b93315"
     },
@@ -646,7 +646,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7e2cbd9e7004f01faf8af83f367eea7cccc75c46.545072423fe9652a602788390d48bb3f6ec431d8.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f64a2bf36786e1f7bb38755e1a6b8bbaa22862a7.a51f1fc6bd8aa112288ad9e250a9af884892148c.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\windows-wheel-interactions.6079f0cc244480085000a25018f624dac5fbfa3c.ja-jp.xlf",
       "LocXliffCommit": "f4949b6a371ff9640aa76dfd4ccf284889b93315"
     },
@@ -756,7 +756,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7a09a80e6be43a9e25c0e7dd3a6cb54295ee7f01.0aae4a625e79f2b59df515372e16972dab11eae2.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ce668d5450f9b47e49e9f2535c420bc9c07d2a30.a478e7cfdaadf3d378213f2f27bbc67f0e9ba4a8.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\index.da2a82bf7ca65a2e741893afe322bd728faa75c4.ja-jp.xlf",
       "LocXliffCommit": "f4949b6a371ff9640aa76dfd4ccf284889b93315"
     },
@@ -1326,7 +1326,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f6c50950a87b5c81db107ddf58a36e9251346c4b.a6138b0fd6f8e79a324c6cce855e867d70574909.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\dcd97e72520b4e814c665dc72b36c895cd8fe2b2.6d650663e3d6fd37854de6bd483449c19bfb3a1a.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\index.d6e9f38c58272fbda56115c34e5b402317c1ea66.ja-jp.xlf",
       "LocXliffCommit": "f4949b6a371ff9640aa76dfd4ccf284889b93315"
     },
@@ -1796,7 +1796,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\11d1a4ca05ca1ed1b9aee6a24facd47167fbdfa3.719c5f823df11623f5240318c8faecc5f6c17f33.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e9db940a6c02a361196480558edd8f37a32cb600.0f3b94dfc350c9bf90b9f217c163679e424ee72b.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\index.fbf3d9a627adba69545b050281feb3391279f52e.ja-jp.xlf",
       "LocXliffCommit": "f4949b6a371ff9640aa76dfd4ccf284889b93315"
     },
@@ -2116,7 +2116,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\282f24c11c30fd7b19c6e340a0fabb84cb5df470.94bed97f9f57b6bb1f827ac80c10999edd6138af.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f76bdf6052228e5588ea7e34d95360f698525eb2.c994b330b0bd5bfac2640e8a33a76599dfc37cdc.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\index.0c16b7fc8370a239b356dfc48f6ddd11d226b6af.ja-jp.xlf",
       "LocXliffCommit": "f4949b6a371ff9640aa76dfd4ccf284889b93315"
     },
@@ -2446,7 +2446,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\859229d963de1b7b51f185f56d75b9834870b1f4.7fead85d5d5b292a9f2c44a07466bdd90b87b82f.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\225f0d2bd5d8a2434c3e548064960f44f1df530e.f7df02d557685fcd54319b6c43aa70d2de3f8047.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\web-to-app-linking.9921741de4371fb28911eab4f61e57b633dfc955.ja-jp.xlf",
       "LocXliffCommit": "f4949b6a371ff9640aa76dfd4ccf284889b93315"
     },
@@ -2456,7 +2456,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b4b3c4a08b210239420d15602914517971c924a5.503edf647b67ed63d9b641e4d635e63f5e3111ee.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\bd6e209d670164bc017d5012199420420dc3eda0.589f2194cb9c6fbb908ea00d952e9288cea49411.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\ink-toolbar.170e398d5be743c69a0ff308127388f211d2b7ee.ja-jp.xlf",
       "LocXliffCommit": "f4949b6a371ff9640aa76dfd4ccf284889b93315"
     },
@@ -3766,7 +3766,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2c523ffacbf6b5d1025e207c2457de91bb2d2527.f3f2c595a2ade5e5e362099dfd50575562faf7c0.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6f2744a571e7a601eca058957cbe181a14143b68.dd8dbd923c3730c701718f5576cf7a601725e6d3.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -3836,7 +3836,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\4b9fa4db6064f6a0abb2f9b6cebf624d3d66d4f1.4e69c0448dec321dfff438602bc0922e695eda5f.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1d8ced4a3dfcf0994d969ad045550ea0cc44a2af.98858babdd0335501fd96c3f67907654bb5821dd.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -3866,7 +3866,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0245f0871df93420d2f05965bde977cf4701a238.a775d59ebac5242bb406f4dd07c95009a85bd840.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\fc52bd3d326a20d0b561ad06b9f4245e7b557f82.c61ac9ec116c7aa343aa391d46515d6b3f2470c8.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -3936,7 +3936,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\3c5397331ab569c85dfaae45466e9679d7acdbdb.6dcc440d01e0c8ebb6737a7f7ec13f31b2413afb.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f8d6c28daea2a3d5be67ad2b5da5a05a46f736cc.e7958546a92fcaedd7ad8984801651f52eca9ac6.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -4006,7 +4006,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0580e9d7059ddedc713670baadbe246563c97e64.86e20a32450bd9dbf30f211feff514d2b3f3d7e3.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2332abe43732299dfb0f4bc265bf1b12877a17aa.820e9c67a299fd7f485336d765151e4841e153b6.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -4046,7 +4046,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\922dc49f87d14b0d3b7e2999843433786ec3a789.679440013074e87c48be224f1b9ed17f42f9a625.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e82eacae06141c873690cccde04c3d871ae9d0eb.3087023c49bcd598327272f6ae321addca7e9751.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -4056,7 +4056,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\eb000f346283cdc4f60c340a94c020c36d86afbe.999f4c6143a1479e8e07ae3b9fdf1547f337b0f5.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8918b120394def3ba12d5932dc66cb38279cc124.86f4dbed7fccf32acc9a1a6555c4159adeecbd65.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -4466,7 +4466,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\34e249b4a3fdf229ae2dfc236a320824c5cb0512.0a60e7efdea8f72eea180e5624b0b80905f70ddf.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8eff676b6b1a60a93d8e35aaf50b0e67e81f69ae.3c9179f6972de9ccdb665259f3c13d073a65a6d4.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -4666,7 +4666,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\04a614820d44552fe8b65849117daadc0034f347.d64d1ef156e23ab6494db9f622452dce84c71239.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0b2b421c2619c1649b3a6c9afb6b0ccafafc473b.2c770589cbde6898155470423682a8e087cf61aa.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -4746,7 +4746,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d2f7fab0f8bb8ef42ef9fb7954449fff822143bb.1b6939e2f7209c9d43d7c216b7c4b1f491e25b11.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\12022ad5ca1b70307b3d5b780ffbc366172113e3.d017e45645229faab109e1f39cc7bf52a1b45d58.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -4856,7 +4856,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0b6b13c0176483f270f18cb965255d37f7e4d9e3.4a302ced031f46402bbbb7473b801ec800e6c305.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9c66df378534825d191740d5eea4beb0f560687e.135a58c898f7a40b57fcfa9ba2906e4c8c1a93c1.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -4866,7 +4866,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\36179aaa3fbdc607bed3a35fbbb8c1e9bb0be85a.b4de23154ece71efd31593f2c50637c67f8fb3e7.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9660d14a1ca28929a213d4ed5a59cdcda73ccc39.e6735c5b407943c9daee5787e48cf7e0a2657499.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -4936,7 +4936,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\930993a33fa299271021fdcc65441bc53c1d8928.1b210dc69e8ffe3b170b86e240e0c7bf5b6fe79c.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9819e632ab6de58eee4358866d3186c0fa31f69f.3e5fad94079f03690be3bf183942dc8f284ff971.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -4986,7 +4986,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a67b98ca2c9c02ae4d0d6ffe95e338b916c11f02.f7f134849e1ac9192739c73b659eff1e70aa22fe.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8c2251c5c78fed10959b89de0d81ff563d0fa3e3.4442834748c43443b26b948750af5827a2803909.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -5016,7 +5016,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0c0929d8415cc0abca83afdae684c09f59d9703f.aa8ef5be8232a12c4aa30f5d217ba06e9abe607d.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\24e966f953928d238f9197359e0b539b8a3e5c3c.97866421a8da39d93a8f3212938f4a021d784623.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -5046,7 +5046,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ec983f4190c292476579bf35a0f55a5ad9d6340e.8d5b289e2e75a52cbcdcb855f34207d8b46d9409.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\238d3520bc4890a030327ad0bc799ab90b83ef40.0fa1c8cc2d5cbc136a9468f3feef0ce8b8cf8153.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -5056,7 +5056,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\cba349ab910e0c94107e677ee49cbf6364c6ce1e.2024826a45f61167c0cac56836c1349236347227.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b5936030f09e52933053f2465659157083b9eec2.ae2307f975cb1ecc64652390bf2ae85af2b239b4.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -5126,7 +5126,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1a24c4b6b5b81e412177859b492879c1b3b244e0.e663df78f26c9608340f600f8b10187548dcd1d5.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\857b1529a933f416a1c61f3afd844f6cb820f3f3.e64912de863f82d01f80e6abdc5e47176b22b619.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -5256,7 +5256,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5a957829a0683783ad8e810d49e513610b928648.843086c4f645ea497a306af31e47c1b72912c98a.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c7ebd56205db2674df5da6d64ecc9332aa96230e.f43a32e8715d43c5b03ad8330704c7b5ea29148f.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -5496,7 +5496,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d3533feeede255b849b4ca0ace28dd8e8e50345b.04680a362a9342e2b9e6428a5d2fc0b3fbebba76.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\51076aed4ae55956164efaf3a3c01461e4b7338b.292168cf5abe02f6a39534283b060cf24a5d3f4e.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -5586,7 +5586,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\56999aa570051196a1fa13c73f286a29862dbc52.67fe70d2701fa35b356ece99bf4d271143673422.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\43cd6db99001974283175cb611d2e06c5da2221c.cbf3880064f8e0adb6496f93c05f2b7eb59863c5.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -5856,7 +5856,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d7fe6c8590d99379cfd90482c369583eaa9e1941.54c7ce3e952ce0c8a7225cd1743c47238a8a683f.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e5cf0a75515458a558e94a9f8bb54913e7df4a14.231229503260f2cc67e56aa282f598f4d432ab81.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -5986,7 +5986,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\17dda4400c8c93b6f2791cf67971aa7a59e35b9e.b08204e028a58c9a83d43d44a893f7c15b1f953d.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\abeadc4fe27858afcdddfeff08362fff69ce713b.e52dc1c9d51939e9e571ff94d77e04739e76bb47.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -6136,7 +6136,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ce0d02c74d67fd1cc45a92221a89bdbaebe21798.c06e8767db1860dbbc054e68a1ce0247fb04ebe3.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5d1926655f44fb54b07e7222911c94ef0e526cd0.fe1f865f9f34db71e5a11cc1623fad5e92ac4b6a.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -6256,7 +6256,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\bd7cd0138cf72ee3a5fbbf73597cb2cf9fdf46ea.4f2163c9405ea2833d26842c60b8a2d0c2e59556.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\41d86777b3e8aa0b7d32c408beec3f55a4a35d7b.ad52bb6105f2a919170a91647567e1e4479f78f7.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -6356,7 +6356,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\23796aeb3b14f28476f90e3f7ed634d7291cbb29.438a860d7afa3d1bc25d2476c18566f94ca393d3.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8847fe572c75bc700d42b10db5621c7e929b4c01.049319a572eac04e27304b688f8b19ab91915a8b.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -6416,7 +6416,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9450b612810a3e402f08a5ec273c67b45010f89f.07696cca599f5847dda6060afad81d299b2cc6a8.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\515c63d5612358cf90684427f8f747e19384c6ff.7fb06b4f2d314158e547bdd705b9c97887d85df9.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -6526,7 +6526,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\05096fab9dce0d858947c90dd6dde06dffca46ef.26f55e889d6d15ce1905edb4e31fb0dd6d491cb4.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\36d19f660bc3c03377f864b1d659a19396917130.fcc898fe246ad14069c17a0999912278b15e42a4.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -6596,7 +6596,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\dffe7b64d62f678299d816846a76eb6c0cdf1ea2.0eb23f793ca70c4f7e82ab50435985cc8ae4e539.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8d4e9a87009b50538adac2357badc0a7dfe8f88c.ae14d1ebe5f0294278ff017ef1f89e74a8a363fd.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -6646,7 +6646,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ffd69dc62dc424661fb3ed2ea8edf9235c22cdad.ebe112e0a599e1e0587b3ada6df6631d8138556d.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7ce922bc800ff5dcff1540b78515aba84e9e529e.4bfc213008bfaf335af0b967b5be68ae43bd972f.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -6896,7 +6896,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\678de6171f8ef18aa0d8501aafcf3a7659f86a79.1512d9ef95a4e00bc8bd4d97567c4db200ac82f4.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5873af515ec1ae9f10c1b5d9e5fe9de5b8dd80a8.07f775f9c0e630ea8db7a6b9b3c4a37a318a1f82.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -6936,7 +6936,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2e6f697c1421b689e36f37cddfcf758767be4834.03857a058af70bedd2ef4b490bb8096afa903acf.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a17a489944fdc2d78831549c1afdc2bd87deabdf.d01550dac96a28eb7963bea62023716cd2256732.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -6946,7 +6946,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\22a5510bb07b55f1347017bfb100ea940cd8b843.b3e06d63d8908e3482179408ccebe231174175a7.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\34bac5b7332bcc258c76f15a6005f82f545eef4d.f916b7f5d85228e278cff167f0a257bb62813bf4.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -6986,7 +6986,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\194070026f6b8ae2f986ebf6e3ca032862d5c4d8.a1b93e0891e195c192d07affe3afd3267d0317f0.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\92d9541bae243a0cf0ea0b7be07f207dff33391d.c02ef558754961a0acce60bfa02a984b7be2d668.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -7076,7 +7076,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2074dffe3927798a4e9041242c588e6243bab004.84da109c17467b1ab8054241c172e8bf4372aa47.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0acb144d79c1d05d68cc7430f4cc99efeadc7c6b.7338565454ea9a3c37298db3150cea27779abd43.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -7166,7 +7166,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a78fd54a0f0e6ff1ac361753b3fff2c5312b4c95.c21a9c98645085335cace83ff09af26b7c9754cb.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\4e7895f65a6d16fc43acab9f1804e5a44bd8cb35.f454aa59fc77dc85b53d018ab531a7241c46e92f.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -7236,7 +7236,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\323dd073463d71d162b83c2623d11cf4fba91585.925bd6b7e591697a55a973aece02e60071c4c374.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\91827b88d7b8ce2a216f8c10b56905b925b6c1ce.38f39111032ffd66e10c3b70fdbdd80f4531ac6e.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -7316,7 +7316,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a0e86591c283a55a7f35c23d577b81646d1ec5a7.f34a9e4311e02a46398a38bd06c410388bc46637.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6be02f9ec4163df510827552e04be78fffe1a8a5.45f12fe58b77e532117dc5feca5aebf331dc2180.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -7496,7 +7496,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1364c732debbb83ff3ea69f70969581b73cc824b.8ced184b6da73cf76b03099a43e4e4033d0bae8a.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\96f9c9ef355382c72423187a7f81635571762071.d8e876c387b11783902c2fb62a73b5179c83cde2.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -7506,7 +7506,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\414f84ec3f8c6c8c21d426c772a4fe933823d1a1.6c38c58fc1247b1817abd74e9da04aa76169d559.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7da8727d3f901cfbab7c68d0b7f7362438d3fc65.fe98d0d477dd6286b863d2f9e6fb7ca592b75887.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -7866,7 +7866,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e795aed32f5fe8a112ebb4b1d285eb535fcd7e2a.f39693e31db2172b4feb083dec60a15c6c70ca55.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ce908bd14065143f71062bf5792d256c7ac775e9.064b927631aa02e5ee90e720daa176fd14d0506c.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -8036,7 +8036,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\234942b187a68d28e1e72356bd7df12c2baf0bd6.b5aad1e310e4835f243f60a7508d50b58fdad944.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9a221672391dfbfb4af664438448307800020c6f.ebe52e3b5b8fef74334573407de1d927414c68b5.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -8366,7 +8366,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9bd3bc7f4dca204886817cbe42f2c4897c07563f.8a2536a5d9ef44d08b66c6b6e736d3d27148a7f5.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\908620cd9f8bb3b1155b3e5d1fd777a91d254ef1.a2d811632f6a3ecb832c4de86ec09fa47a9e6c65.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -8426,7 +8426,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\af7b0705c90e228139bab26b14a187f433002929.d9f7343b1e2ad270bed6f43ef8ab8f64a86b4963.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e9a26e201d5059a0e5f7d41f6f11afbb41549596.26adddcdab371abfea5293cdc1186c1682867d04.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -8596,7 +8596,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\53dd56972e19008e7d990eb82111f9ccbe803be7.d87b280bd4f4cf8c178b5280f056e8176bdedba6.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\23d8c14bfdbfc05a1397fa67cb831d38ec092233.1d8dd0ef83415a58fce275bf3b2233e6449392cf.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -8656,7 +8656,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5015b479cfbd2047cbba0ecac584ae4edddd2486.af6e5cb54e788d3f6328dfd18023e885816e89e1.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\31866c400683c61b432c3fe620487f93a9187771.2a20c2fd684751f89d5bf4221297b86a35c97ec5.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -8686,7 +8686,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2bf385a9721a8b1406dd006a24cfb761fe180a51.1d0a1fa00269c3644c711421ce3e51bc39a9f135.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7a6935e61e6f62fce8335651e0cef261ed491507.16b10d41c9d61568f54d9ce52443a22a95da9b5c.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -8806,7 +8806,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1cb83b2c0c08f5926b2d0b07a17c9f7a94edfbc7.15384c61d78ba8b6e91d318155b6b858a14d8767.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7646cce8c8aafcb881e825be1ad134ad682c362a.4ea96c8b3d703c8bff87d7107dd3a226aa7efb4c.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -8866,7 +8866,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\04f229c88b873d3b8e6ee8762e2729cb06a59a24.d5d5a4712b8b7e6bdec59ee07e5cb9a025214e78.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1fea72237a9ac7d18fb415d5957f959542a833e8.726d9b5e5fc3e2223a2cbc524d1b504a6051b88e.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -8926,7 +8926,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1aafaa48d89057e069323b28e633eabee2ef70e0.eceff6a2381e19d02ed0fc695c437c85b6ecb780.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\bfdb1b218676503699674c97fc962ad8161769dd.7566331a33f0fc1d07a8f746a0339e646939d3a6.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -9296,7 +9296,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b661c6c49738a57ae62d2be674c5f9730a71c9b0.fa76a1dd599aff99162aa4514e804d4bb3208399.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\166e63659d138db2c4a6c49f11a2277eae790529.ac10ea771f451063d659806e9602a3939a6850d5.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -9356,7 +9356,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5f9a1530aaef68c2c9cd72709daddbea3de3aff1.fc5296f92edbb1575ea725ccf30f079c1f4b72e1.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ced83940fb49f5812343fee34cb11582683bd672.a9bb769807387482de99f8f9f1a75ebf8933517f.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -9426,7 +9426,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\24e450e2509278870c75a801c377129b288cf94e.a198209f2947fb5f67fe70243ecc5b589629b442.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e062ed2910e20ba187b8a0726a0061f0dd4b07f8.928f5799b0e3fc3dae1ec4dd87d82530177b9da1.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -9546,7 +9546,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7d0731a271c90b3ce849207a1409de2408c18de9.7d8ffc1df4d9c57e5154516334a1895afe45623f.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\58b41c9d0d8bd7cd07b5a1f4aecf5936422a4ee8.ba5b2150c825fecc5158055a10a6d2acebdaec22.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -9556,7 +9556,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0129c3040dd4aeaed3540aff60df516d589029df.64ac43c3a7803c8733239835ecab54857dc92326.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b14f83d9e834fcefbb3f9d1f9870f81686b44084.aab7a8c4b0d9bd2025b8211690f3e0eb0870a41c.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -9566,7 +9566,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e88827ee74e49e3e789c0aafa9be92d783767a5f.0d1104527de5a6d1256ef2086659c7fac907abdf.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7394d211b580ad82689a79e7cbe4eb4dbf545f46.a58e8dd456f990e17d45bc93c45bc54a40b98650.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -9616,7 +9616,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f3087cc42fe7856955717acf916a8f5033d05451.136e9bd595aa5419e029ad104d50f5d4c684057a.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6fbcf24984fde4b86e94481d6ad1104a827a8c31.929bda70de2e0b7897c1ab27c952626e0c2aba09.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -9736,7 +9736,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6079728aafafa9036293ab4dfda7e9be94f82218.5bf9d05b3c180e72f9b459895f8090319d4bcd3b.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\cfda479d2a05dfac4125688d3666abfb23bc45a2.5055bb0c436118dfc9bf3789d5420c415cf4dfb8.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -9746,7 +9746,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\48f4ae2dca78f6f8a5a6f8153d2166137f11b0a5.fede25642f7ad3aacfb24d72b8a3bed7e6720654.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ab74d720369bd95c10c8804836be1cc747d57931.31baac51a33eedfeab0cfaf624a250a4c711188a.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -9826,7 +9826,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\00142b879b753ca2b2971178cf32a71aecbda9c4.5642e152507e023f020081411856df8253b6539b.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\fd8d538e6431bbff011c99ce8d17736d70f0c0ea.1d656210624211529d478b691bb1401de8c7920d.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -9856,7 +9856,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6a5d2eeb9704a7d34199835cafff02b3fe147128.67419c06703571692d0301ea89d57bb13392b542.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2255897b53367e0bdb7ff60d82487f9923d18b83.92f402d974f88aca1c10129007e021714d587910.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -10196,7 +10196,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b6fbb962c4bfee238159790973096764a9cab2a7.12c050511f61cfa805a5a8a21322720b938a24da.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1aea4f2da584124050665d159b1d83f34368b819.a8ee2f6d06fc3af18b77e924b852684a027810f7.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -10226,7 +10226,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\88f78d75d2e402339f1bc3a45af7fe73f3c06efb.3599dd804605451a43864421abe68ef41d391ca0.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6251ff13e6cc751ad370a43950cfdbb9dca0ecc8.b7b8f35586058bb219865fb398bc00f211fc04a3.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -10236,7 +10236,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d54e5000ae4bdff635cc26c61bc769200a206c0b.a3365483e0bb061db34d845d134aa4fe90387222.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\36a005bd4af09eac94f5b83dd8a2474d0580d556.6fe0fa2f7017244868ae0c7ba55a4c5a04fa3f77.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -10296,7 +10296,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8fe7ae77e75afc071e1f070b9d5c141ada5a5316.3f9a984d68d235cb7e4ba9240ffd6f8dc6feee15.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a66e94ca26a089ffd08b0ba7a4ffb42aa5d8685c.9dff740cd17810ac244605db31600a6f366feec0.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -10306,7 +10306,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\18091a3dadd81494a73b95fae6ac8013b10df250.5b81271a2b4d4ae67cc8db99ddd1e75b3294db08.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e76ae1e85f1512a939f2b7ee50ed205c0c55605b.2220fe7572717c8175ecf6e3d693381aaa73d7e0.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -10546,7 +10546,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2beaeda0a15f375a4bdf7166a6c324ea3c7235fe.c74d3185221bb62c93debf9a7c149c621f495307.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\3d7c8f1ab468e4797096e83fbbf256f46b494439.57d57a1784aa59c903e19f8f932c593c237a8da1.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -10596,7 +10596,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5d22da935ad4f8e5b9fab8de32251b1574d14873.9697d78a2361508217d49f55f23e1e7a394f7f7d.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\30a84f9b36c8ce3ba339f6526ecb8f801f585492.aa82ea1b3e48463077bdbcc4a12b2dcc612c4423.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -10626,7 +10626,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\831654a42708da3437f06f01e08963d4fc5e5cb2.150b4a97ccf6a33c02023d49e521b5280d08b837.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a5315534fc305c85dcf410b4808d2f8ebd844b3e.5813f1840341f60a92a3cbeaf85fdcc777e3171f.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -10736,7 +10736,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a6336e26a10415ef692323bf4113d6002d870c45.1c0b95e49ea8dc6a7e3bb33f009a8cab7696231d.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5f51e1c5a44767e49b5c3dc5f578c2532da11008.17ed413035c18c433ae484c26b5b13db6f8214d4.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -10746,7 +10746,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\213d48f5acbe178889905bdbf49c84eed713108a.ca485f8605b3a7950646b81bd26d83a000788014.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9f7a70bb726fc6eb6f7465068cf33acb7aa33a39.0cf2f8eabe4cf4bd6ad67afc2b6083a257aa868b.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -10836,7 +10836,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\4b616254a2cda36904c75b8e8ab4f4d1df889b75.644ffdf6eb8e9ccdfaff5027354338a435b7b3be.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\bdec771cae57c1bf2afd66feff9530a7a453c18d.2e7ea56f8bb9f105558686eeefe10e3e426cb60f.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -10906,7 +10906,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\36b89f288ff846b2fd4fb03bdd909eeb1f687739.7d9fff95f207992482ab6ebee5e7b593059074d4.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1c1aa77ee989344f5e09ddaeb864d5ddceb03660.4136b16081648bd5401c0a5739e19aac1e433cb7.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -10946,7 +10946,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d882118db5dd4f712c626770e51866e5acc1ba52.ff5e78248adca2b79c4a82efc358d32cf22ee98b.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6c01cc5afa3b3c1266464c9f04c79cea533c9741.90e95564140d6e927cf753356d78ba140b7ae49a.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -10956,7 +10956,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\eecbe00d1e427a74bffbe80fff6dfae78dc8078a.23532873bee7c813fc25a84c9ff1afd055cf1aad.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e2bc7b4a12aed40093985000486b9f3f78967524.1723f6103d53bfb774300277920558ec33b28cb9.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -11026,7 +11026,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\86c29b0aa35e69758075f98a5739b6559fc36699.abd5016f62ac510f5ac8e7f14d1f4097ab92f1cc.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8844196503c45e9488d3fa2a543d588229d01cdd.6946ac1a94b8ac3e7b3ea3bf1d710346caa1e655.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -11076,7 +11076,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0ff187754a3b9cc9ce256a060ec0143b037e17c3.792399d9ed460c02e4864d73af2295105f3ed1bc.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\18d4bac980592b41479e01b8644f9bb9bf291575.c98b9f43dbb14b65a22823683d7520bec48d6129.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -11106,7 +11106,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9e279b82815835cf47c3bfbdd8e205b8cf8cfc44.bd8f6319cad99e9ed0b3300cb590a689daee5dc6.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\541f7e8c45190cfd597869ad1040801d368b77e8.d2fdca1ff977876d79766689006734df53561f05.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -11216,7 +11216,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\cb644c4fbaf5e1c166c4ba5820db08ab8bc39359.fc5e03cf706eca5b2d47ad8619907c98611d0858.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b7bda3b25e2c268926223da429abf559524ad38c.865bb60bfd63f19d4ecec705c6f6eaea534ea18b.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -11526,7 +11526,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\bd78577694b359c9e4e3cb7382dc1ed8047f118d.54199f0ec24732684b04a1d49183058f087939c4.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\629e8c3d35c9b9730c07e9f810909298558ae700.43834e21142efd0a5da0880b766bfcba1ac30586.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -11616,7 +11616,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\709f8f148f3a3348354cdf27a1a29195437eb3d1.797a87eabb9e2abae13cf600fa4283e6bace484e.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6848d1783df4489571fcf493a55447f67e5d6fd9.74b7e9ea3ec56635cd548c400b61ad1760706145.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -11676,7 +11676,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ffd18b745ec6fae2063b266782aa6b095e835ee7.9d7f71d794818758152ef13292e1128a5869e7ea.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\59090536600e3e45345832c6ca61baa3fe1f5b15.e857b5bc9cc8495b0754ebf69e24bca15da3fcb1.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -11816,7 +11816,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7ddd5e77ba845032d16e5798616813a0dfc8b561.bc39863c9d5f9e2d3ecdf9daf8338317afd98fd6.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\616340bcc5159dce12d3b888697ac4f60d30f175.e2c022e4f4fa4ed81f2a62110a3634d1efb45176.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -11906,7 +11906,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\71f28fa26b8f10789f957efc137d1654f1fccf15.0bc388ecaa907385b719fc7f317fb79323f4d61c.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ff4686aeefbce41330a0fb3bf112a30ffe2b504e.bc005bd6700565bfbae89f93b301974c1959a283.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -12036,7 +12036,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0aedfa84b2efc153e8b184a26a2ce82d17e60cb0.f054c9a9be9d6dfc2e37d3cf68396918ae7123cc.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0a33aaf71dbf23e991591f790f7327d812b060ef.213479a68a8f02c741e753251c1e17fff3f66624.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -13586,7 +13586,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\78146489be6b32fe317c5a570e6c5065d77ad129.66fb4684905e316490a61352a0ef2b569668841a.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a2bd3308863b6343a7616bf86e0b0036f1631bcd.16069a5cc68d2d1e1a70e9b78e1c2cc3a72bb2be.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -13616,7 +13616,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\09961f8228008962d75a98b4c5cab22a92b3e498.30eff00060ec91c0f955a3a229466b793f4ded33.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\4deda6efa9b9b9ea03bee76855e30c8e9a290480.bfd4fd90d62f1b6d05006441cf1819715bc7953b.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -13626,7 +13626,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\90c4b876fb6551877cbee3208d9cb197006d1e40.c42dd4704db1aaaded7f1d3e35f354559972fa1e.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\87947b5bd1c1db008a21828c3940475c2b53fd6d.1bf70f73dc0492a8454d0f7d5835c30c4058915e.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -13656,7 +13656,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e75941ea97a7e341d0eeccfac25a854633a0aa6c.6a688d1d02cec7806e6cdf2c09704e7ce367b7ab.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f67d3ea2293e50a04bdbb4277fa4ad9e46834473.6a074c4331ca7d5791696fc980bde9ab8094fd20.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -13716,7 +13716,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\435eb8795a661ea9ada2f31d1bea52776838f889.b7b780fc4e7ff5e48639909e80c99cd2be75d341.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\bc3a34d16f8245ef2e932c46e76ce965ce8755b7.92c7c5cebd8694a2d8f3835e8480c60f41adeae5.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -13756,7 +13756,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6443f79d40e5164fff5e468f8ee8b7637353c449.4529cb6250c87bab199d48fef4869118efefb317.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ef4527f72898c8c5a6ad9c56d975966402894b2c.674cfecd52699808e071d220d5ff23b55a8c753d.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -13836,7 +13836,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1037b6771eb0733da9f2ffa5f90bc1eb9c00edfa.3c4c104c79776ae0540e9f09a471cfe15bd1ea80.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5f9ede6a2e645a644e4650f3af7e5476bd52dd53.50b1be0d098e1d53cdf9d0496d8ec830a344c1b7.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -13846,7 +13846,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b2b8fe91b6a45cdb41c0f8e3369c969abec0ff11.97a736e9a6d0cc5bdcd70cdd2665a64fb7254129.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1e0755134a47b6acfb48f735ea56c4aa3c46be14.71c4998e47ed5b93c03dcfe59366040c39fa0547.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -13876,7 +13876,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\dcfc33c84ca9ae8eafe912ff3cec6547a9536089.11a81330cb72be33e1c0ccf940ad630e65227df4.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\657149304048a88bf85f0dd6f205e7db0497e591.77c2d7bc5e55a16e67d5c14670b933d730c74661.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -13886,7 +13886,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7cb9804c97e8b70ac024cd0f4f95ffd986ccdc44.b252eac1d95d1eb0a420d4ff1b380632b171fc8b.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c737e27df4a911d3fcbdcb3128ece865bda2b703.9685c1c19af290ab254ca58f5737cd1374e325b1.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -13906,7 +13906,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1ef01749de1ec3899bae4c0ef65e88e9fdae9223.0e35f493b2efbc09c5e2025b914fd260c999396c.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\bde9588176c1e52ccab169ad3f51ad15781e06ee.fbe6f01d4803b4aeffa1f6522b7abd6ffa1fbc76.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -14056,7 +14056,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ab8be0ac3593eb06edff516acb0fe7cd8f8e4c35.da4a601bbb178e0224458d93b0f0a3c6838c0804.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\da64e23714035b6763104d48430371469272a939.014687fbaf2f723541c2633f653537f4692d225c.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -14086,7 +14086,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\22488dc425edf1fbd9fa4d71ce4312e0d8cb1e5c.3a5e8caff34a84299c098ba563ecf0c5b46999da.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b9bde047a70d31105680361d34cf71b33f708f93.a64db681df0258ded78fead24203c23aa24d6325.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -14166,7 +14166,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\66b55603c3366dfd614143ffbe280cfbdac1c757.b7195d4a1a4fb1fa8657a9a2b8c020025e34938a.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5bad765ff182fcd2fb573c3aa766fdaaaef1e2a3.3929a72d59cca5d8c5d2d49dcef1cf9cc82bbde5.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -25866,7 +25866,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\22ba4145b62ecc386c9a548ae2a3f1d4d87d2d85.767e40c3b7fe720d585fa4c2d61f6ed788caaeda.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\345296a3fa9faeb8daa8e03fbb633863380d2424.3242c8afdc5bf6a34f160d18fbfbc4455eca14fa.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -25886,7 +25886,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2fff239ee9264766e626032afc28aea417e22e5b.e2de192c41bd0085148b5e3d04d24e56421651f6.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8aa68312d6ce81c809c79ddcafe7732944a628be.20b74eb1bcc50da90672f3084dc34d72db275c81.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -25896,7 +25896,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\14fd54df23bd3f32de7cb6c7a8f9495245b10ce6.036c5eea0de4fc5e999c648c7056eaafec879733.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\dd9f45b0ddcc201053ed8e35908da66443e47d72.7964426f6e4d6fb3bda5d47c2daae1671bef2a23.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -27406,7 +27406,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1fac83e3cf6b3f10c2a6ff629de56b62d1391625.11241dcf895853f1ed7a64dfc54a1889481f1f9d.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9e4dec61e275443db42b50ef9a231b5b3c46ffe4.b176077ffa70194b82a39866a20d640b296dc69d.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -27466,7 +27466,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\66c18f3bf0f33de02645b19f4a08534cae92690a.c04565b667becb4d510fc9b7e1c8db3dfcff834a.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\cb15f417c4254776af4548a5b962392431c9a75b.a163f914824422ef31af3488d2faaf229413bcaa.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -28436,7 +28436,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\753757092712355748620216c42e705eeb04226d.85209251f3d72f635564367b5568f6919b14554f.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\bb09e5ff3c60a56a69c5a52d47e3c791b206a84c.a9c918df3798dbb1a53f93fd31c399a88d41e3aa.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -28556,7 +28556,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d9bff09e8c33378b63c979949e582a5fd17eb9d0.f28b195a1507c4de322d7de9de75517f96b158f9.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a0da2fe0b8c859a774588d27d12ce3c9e3f24d9b.a9ff7e11ddac19458fdfbabe80bbe1134a006621.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -28596,7 +28596,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\bd378fa8c4c159a1d22b899385dc27286de5984e.013e176260375804b566f96247d5e7a797346233.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d7f7cfef59c02c3a8930c1bbc2c87cc40675ca22.71766a12a366542a9c98d05b29acf4a381a73e31.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -28626,7 +28626,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d5ae47fe7e2c8423735a44c09cda4f182481c53a.8272f04edac1d45d418af228c673946fa63a935e.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8b10c7f9e2de962aca719055a26d8c3954ea052f.794b5dd6cdba9d4ed173426c637b07d043b92aee.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -28656,7 +28656,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\52512f7d16bc6d50c380ea10b62da597fa47c152.f0096d73629fa44b20c572475d3e1ecfdb2c73dd.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\059fac41c0c0557dbc3d4739c1da78f794505839.19974dce0001e0ace503025a1c484177f5471e63.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -28686,7 +28686,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a823765163fe366898f5aa12c37c9e952b3a9460.a73c8f9aa567a6f7d0240315b62226ef36507f84.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\464097cc3f90c2e84e03e936fb354f4220aff91d.c05fb3c3b74fa22fb113b485bb19522e48c8fcc0.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -28806,7 +28806,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\44d98b970d72142337bd1bf7f28787eed0dac295.39912584207051cf4dbaef08bbaa3fb248df08ae.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\163ca2144f460a3ff992a19c366b3cf6d9654978.b22e1f0425a55e3d4e4e35a3964051c92532804f.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -28886,7 +28886,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a963b72a5ccaa9d0f090ed8de1d13cf8e6bea838.edc2639dee565a3b2b5482a64ea38bccfc68f2ae.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b6781883a3e48d35a558798f369e91c4a7ea3bec.69f6efe2ddbad5e178e5f6321ddd7ca883acbd18.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -28966,7 +28966,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\68fe824f2908ad9ca34b6ad14098e11cdeb986bd.c2cf206a044585d79b48f038b35588f6a8afe3b3.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\60ab406a5908b1a21c7a0f579664b7632722dd4e.d96e44c5765d6cb7f686c94a7c1572286f6df2c1.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -28986,7 +28986,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\555f363a091c6394d7656bd0295b84e730078d23.df5773ceb0de5c45aea4d48934aff61f93b6ebf7.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ccb59581227db82b8566da11d6db731b362ec258.a091ceace78bbbb2f02a83225262e87de3d66cae.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -29116,7 +29116,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7c299f9ff3294f76415782db0e0fe25bc9b86326.6443c908cba6176584f0caba640019c831902d1b.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1aaf5b6864c678d26289270be6a9ad96f5b5e004.40e79442253ff18a3777d69ed9658c9dcc1a454a.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -29176,7 +29176,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\65d473c1560716d9d7ee94217f3b5a8471883d29.627d68aabec5ece2b0fa970183e7d7ecf6594eb2.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\80cc3ec6aab90549c55ff8c8f78b54f5827f61ff.33f803338ef0dbb9bad61d8c2b0d428cab033647.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -29216,7 +29216,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f209f4e4b7025a7857ff4bfbfcfebbaa3dd6e8cc.fca2a0db15ec9e508d610bcb530ef3141812e891.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e3ef31ed9a90122ae0634274ac5794e67017bc2f.70248a67fa5b375d686c7d850859fe308bc86322.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -29306,7 +29306,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ac6f237590db69c88cd2a2c186440e42e805752b.8736ff01e7b6ece48e218d68d55cf16c768affbb.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\fff2eb225bcadaefa6bead622d953dd8b8ed4a76.056931cd80ac1f830bf8cd75ffe3724cc7d1d0bd.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -29326,7 +29326,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\3aeac625a927c48da5f5b6ec692db80eefebf08f.120bfa7a68c2e95bc1f5f24f9585c6e3d90b17fc.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\84d8875cc7b1c8540f54fec78cd675bd96919fd2.972715b26432f6214db2c2412a9a98fed8acfbcf.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -29396,7 +29396,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5891bd5a7e2a34dda265a440d892e318d68e3234.757fe3e583824f333a2a34930426b4296f70217e.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d47bd0a5df654ba723c1c7650ea9779ee5962993.ab9fadcfe1f53a4f2cc919f20ff7802907e39e5c.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -29426,7 +29426,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\20d377b1b4b08655191c50b3ce785fee1c4d6371.a5ec0bd18fe4bafb4e0e3ebbe18adc3df6a94370.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\88e6158bfc5df23e5c2056624e353b38b39c7331.9fb5d3f8d3221393f4398f660b254c6e24f8c5ce.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -29586,7 +29586,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6432e0c7e6bdba7e6de791d6b9a498d57502a4a7.af11fd608bbebe4f817ec08c71da56763c889912.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\4650eaa22f299910bd7956972bd7099ea6d78943.85342487af4cd5b4f2f9a4618b70d05056031d3a.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -29596,7 +29596,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c257a47686df5a9fb966bb40076869262eeeed35.9609a44bf65f3fdc58d70b64570a886d1ef14c3a.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\4b13b9bbbc75de47ed69112680894d5e3f34d8a1.5ae68409336204a7f89a397f0feb818ffe9ecdec.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -29676,7 +29676,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2878c8c9a50ea49ef10d020dd16d13500690431c.4ac569c29f882abe310b70369c7a8a7048076384.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8ee555d335007a09c61247a929705aa2fff2469d.56e6bbd7e74a3fc7f0fdb752f065bcecdee95d09.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -29756,7 +29756,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a62a2ca6806cb4a52366b8b00e32f6bff1605d2d.0dbbf552c229afeb08c71f4fe8f29a2a35c1d458.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\dbe54f5c033a14ad6f9d8acae6b1ec3e62eead67.b9ae3579a39a3f9ba4ed3342abe1d3047021aee3.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -29776,7 +29776,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f11524f43a47a6572d3f7ee6f438fc24645073de.394e464694e98e273babb4f6356844f895527714.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\93dde6fe68275987c16562370ba277072e5467a9.e0d5dc562c77f544784b011234c78986d391b2c8.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -29876,7 +29876,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9b4a38dee3b6edaa5fac4ebed20d4ee365ceee9b.d9f71e2b1cbffcae56f66bf9b32c3f3e64ff410e.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ba9b48f2487016c4df7a14e0dc948dcf01952c99.5f2bdb3a0d996e0755d98d677b703eaef27c3ff3.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -29906,7 +29906,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d7e667b39c86466f5ff2bcd19c7831dab7ec0db7.ff386cc2f8ae179ff2476963dedf4e3420c9f00f.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d1acbde95d3d36cade7242a9f89a2bc01aaf8914.f8b12320fdb581fd18d1d8b152abce1b2d8d13ce.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -29926,7 +29926,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c041bad81de496251233a37adc770c05f350652a.2337eee25d94db71cf8d8d19985b2244df286856.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c3d1cdab94fc8b4f693ef9294cbb12580a9e199b.2b45ef2854eeff095600585ec3f1be342ea59430.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -30006,7 +30006,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a37f883a058459b52b67bdbc32844ac0f98c0541.e9107d166a688b7188b549646379ef8906b510b5.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\93319caaa16afe84a897dbc4bd6370a5cef3cdd1.5abc9160d5384739b708a67916e69ba07b9d4e26.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -30016,7 +30016,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c1e8390ca90487c7b057560f9b93b789ac432b04.c26020f5d276b246bc4d90a66c8032575ecb05d3.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f5ee6f103fa9a7e5f13dc68eb9c6060e6b66e227.ca071ea9aa991b0542f022c0b2e928f069a76ded.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -30026,7 +30026,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2e2a36d22462f6846700ebadbbbf9249dd16babf.2aaca1fc02ebad456ecbe1cc0b3775775a83265c.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\357cf459fffc46e5d77f316af881e1a6e8bd8867.623b1d5ee8bf115ea794795f0bd538115a15337b.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -30056,7 +30056,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\91db3873aa68be2fdda801f042f55b9156e819d6.0c31994993a39371f8749773adca7e294f615d9c.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6c7fa8fc509faf2c662732e7e6b998d355fcbd66.5bd0481318121192c98635531d0dce3d680a7060.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -30066,7 +30066,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0c67e005958b8c1abcda4a7a0f9ae942040ead55.afa0563cd8ce89b98746f059ea764543e3380012.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1955f4981f09c2632fe2236ebd6a772e7b0ed8a1.58c57f94320ab2fdd9f867f21fc10c7defb9aa3e.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -30116,7 +30116,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\52d266a79033cd27f07791f9236a75fdc2ce16b8.485801c56e4be484e8008bcf459724ce89bd2bdd.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\19d4a4e00692bc983a56416951e82f71bf5f6be2.492d60417884f70e652b17e12d9b26e4992de95b.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -30186,7 +30186,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6d2d1565294f183ba983c0c7ad38587dbfc91c44.26574e0a374a2972c9f5b87a0d3d1eebcfd03ec9.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b9734304b813794d615eca4d0c9d852dc8df31c1.b4377237f2e3e116725fa7d19f0ef0ee461006e0.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -30266,7 +30266,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\69d0ac9f454df989b887b5af5d7693fc0f0522ec.ef960efd799c569432a09ce10faba6afd17fc810.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ac1a9b38a9857ae536025e682f98d01135850a19.d0d1961229d5e68064ba1a85daa9871e9c045482.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -30316,7 +30316,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6ffa2ee4d92fc390f254d0772e72e2a8c4c366ef.c0984f0f5d01698fb7752104f1c772149e0b222a.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\18dee2374ad1daa33520438d348aa8ea0805c30a.0b1cf98574b069b7ebfbec4cca9af341f9a07d70.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -30366,7 +30366,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0cd3a38e2d3b7d0bff25ba93ece104854d5d2280.901a611a199bebcd8b276d9a2f6d1b9a2ff098d1.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ec245f07098a662c80517de49ba5637a69b30f35.da24b2a944d241a027488c67b2f004139e2e7a44.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -30416,7 +30416,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\80196e2bf103f4745508be5f747a2d0a5e5e160b.1f9ed87ace96d0f5b465f705356a63125a4db414.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\64cb4871178ad712189e672bbde9f0ca9ffc6d26.059833ace6bc66935c847b770d7edf59c3e55fcd.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -30436,7 +30436,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d4edc419adf73ad2919c8d813c42c91bfca3bf5b.c93cac4e6c41aaf99635903926caac7d2c8b79a2.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\046a3b474aa281b1b09002a922dc2acdb7833599.0c58d1a988d14c8307b1f7753da9bda487b21eff.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -30456,7 +30456,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b12124afbb80b62c65696e773690246084a5a6a7.1e46a88a4aef32af2fef138eeed7f6efad818680.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8d6876ee6235546e74341609a55db995a77323d6.f0439e78f0ae7b67b9c8e7866b73c17eff71de24.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -30476,7 +30476,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5dc4a807d2b14921ae87ab0ce16dd80d371c8b9c.4d622f065631b5c99cc646896d66c70414c2943b.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f207c1b7de4fd4a885c05c6988ecf685359d1d8b.08696d38fd2e8fc8ccca3942084c82da0cba291f.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -30526,7 +30526,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\813cc6f0804a48338311b4ae4751a718176a3ab9.12177c92fe1c7cd75d73ee910bba66b8e01bd6cc.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a7a4c9800d5053e4b20cea578ff03a970179c7bf.142b5243c97db026134e1a74d1ad2edcd225076c.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -30546,7 +30546,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f1793bc62947988a5a2206b152287685e7dda592.68f7dd8f77f3789cb6f46da5343a1dee3a8e4602.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\3cdb1f41fda7bd4e4af1ce9e5f8fb4396da53f63.f2ba0e5679f5bf99cd2b6fcabaca0994a5c7ca33.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -30566,7 +30566,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b52c0384fdb4f39f9a5602f2bfa3349f83837b3c.0153dc8db6a34cdef4af71bf8f00386f6e00c1a3.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ad63a543027ca0a1927eb72c1a7a227788770998.97d1d1c2bd96d58c71b7d14f42deb88a25e0adc7.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -30936,7 +30936,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\176a66a571e152a3c6eed97692e5e0d1e1a9d113.520e9adb6d4ec37c177a60214ebc46a5ae1eb47d.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\66b208909e48392046c92e9fd2e689e28af7e88f.29e4f77a8ca1a196665165af8e62590f937fee12.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -30996,7 +30996,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6fea0979da216aa40c7758c4b1066073b6db9ac5.14340661fc3995eabf32d53d0c568a6a24dfaa47.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\43c4448e7a581dae69f44c64fd2068e79cb6c7ed.ce27f518e6b775792299f704f2fd92e50097370e.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -31116,7 +31116,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\164587d33249d5fe2a8cdc6e9ce66c39a7c5ff58.b28f597f89602c949f74423419d9ea928e7ed62d.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1531059831b4c20d11661eb87fceda7b8dcb7f02.c5347b0cecf42f7a8a2dde0e35f19e16a5c9c419.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -31536,7 +31536,17 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9076c8ecc81f9dfd691e6b425f7dedca88c5b570.2f6eacba6f71e139eddacf34ba2001ec016d24a9.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\fe553fafdf4a6f6175cb4f64514e2572f23968e4.a77aedc3536d7ed226efc5efcb82dad7b4197b4f.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\packaging\\auto-build-package-uwp-apps.md.05b4bdc1b0a0a5a1acdad46538d038e46b9d9a85.HT": {
+      "SourceFilename": "windows-apps-src\\packaging\\auto-build-package-uwp-apps.md",
+      "XliffHash": "05b4bdc1b0a0a5a1acdad46538d038e46b9d9a85",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\54dcebb0dc4b1a41acdae655b9caf14f72161f36.3e9a07c1011d872f3f71661f77e27e75d32a8c00.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }
