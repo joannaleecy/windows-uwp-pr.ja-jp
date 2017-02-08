@@ -7352,6 +7352,9 @@
   "6269cff868f7a4357c3006d65fcc0ad5b7f7932b": [
     "windows-apps-src\\publish\\age-ratings.md"
   ],
+  "13a37a4ae2cea67fdce843ed4e6189797d85b93e": [
+    "windows-apps-src\\publish\\analytics.md"
+  ],
   "ffe080dddcb0b1d831c3fd55f425b8c5a1486e09": [
     "windows-apps-src\\publish\\analytics.md"
   ],
@@ -7378,6 +7381,9 @@
   ],
   "419d41de3ba26f6470ad99b44826f2935aea4eff": [
     "windows-apps-src\\publish\\app-declarations.md"
+  ],
+  "df9bc656a909aeaca7207263c8dc46fd903e45d2": [
+    "windows-apps-src\\publish\\app-install-ads-reports.md"
   ],
   "30b92eaec22d6efb5c4853937d413baa92b09cf6": [
     "windows-apps-src\\publish\\app-install-ads-reports.md"
@@ -7546,6 +7552,9 @@
   ],
   "a6e97968df4e9ab986d364b2573a31b4ba9d1958": [
     "windows-apps-src\\publish\\create-a-custom-app-promotion-campaign.md"
+  ],
+  "a4cee4bd81088fc47ee4d11525297a06381e21b8": [
+    "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md"
   ],
   "c38010db347c3b747bf9e2434021b7589b2542c9": [
     "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md"
@@ -8734,6 +8743,9 @@
   ],
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "0c50255bff27cf5020c7c3a304708f38f2423448": [
+    "windows-apps-src\\TOC.md"
   ],
   "b25d202a59bce3fc7845574ce29f0940fe312fc1": [
     "windows-apps-src\\TOC.md"
@@ -11279,6 +11291,9 @@
   "11cf25fbeacbe3145c9cc3f4a80bdcce3028bf55": [
     "windows-apps-src\\monetize\\create-an-add-on.md"
   ],
+  "f824fe7d37a4a2db4e336fd43c335047e09aa323": [
+    "windows-apps-src\\monetize\\create-an-add-on-submission.md"
+  ],
   "e3e4e957681d14d961e2334b6d3a20582d4b14a5": [
     "windows-apps-src\\monetize\\create-an-add-on-submission.md"
   ],
@@ -11296,6 +11311,9 @@
   ],
   "b7de4b00fb4d48b9f4c542437c38e0282e155a29": [
     "windows-apps-src\\monetize\\create-an-add-on-submission.md"
+  ],
+  "ecc701016ff37e7cc7de0723793efdfe89118c48": [
+    "windows-apps-src\\monetize\\create-an-app-submission.md"
   ],
   "5780500e66f34df53c308abc92b4ed38155567d8": [
     "windows-apps-src\\monetize\\create-an-app-submission.md"
@@ -11522,6 +11540,9 @@
   "20da33d3e06ca97613f4bc317fe8e8fdc9bc73b6": [
     "windows-apps-src\\monetize\\get-an-add-on.md"
   ],
+  "2f6211c1ec399c5b6234ee4181dd319130c606b4": [
+    "windows-apps-src\\monetize\\get-an-add-on-submission.md"
+  ],
   "695aacfde3e018687cb8203430648fd8ad4bb027": [
     "windows-apps-src\\monetize\\get-an-add-on-submission.md"
   ],
@@ -11554,6 +11575,9 @@
   ],
   "ef0c9ff463b89854c9aaa7ee2c8307f4af30fadf": [
     "windows-apps-src\\monetize\\get-an-app.md"
+  ],
+  "1763ba9ebf95c37afbbb219244010f0d6e7cfee4": [
+    "windows-apps-src\\monetize\\get-an-app-submission.md"
   ],
   "0db00e26374e49a1c6149d3d2121a961daa51503": [
     "windows-apps-src\\monetize\\get-an-app-submission.md"
@@ -11684,6 +11708,9 @@
   "058d11938dd6efc961da58a9d937be76beac5978": [
     "windows-apps-src\\monetize\\manage-add-ons.md"
   ],
+  "589946e159202c3ed5d13057642c808d5df4f738": [
+    "windows-apps-src\\monetize\\manage-add-on-submissions.md"
+  ],
   "a7f5b941cb601f4d563daa27e082f0dd77ad8b23": [
     "windows-apps-src\\monetize\\manage-add-on-submissions.md"
   ],
@@ -11713,6 +11740,9 @@
   ],
   "1a1ace9d456089d4bed2dd4ac4f39479dc8faa52": [
     "windows-apps-src\\monetize\\manage-add-on-submissions.md"
+  ],
+  "21a421b057a55120865c01cc3dffb80318ab38ed": [
+    "windows-apps-src\\monetize\\manage-app-submissions.md"
   ],
   "695199250b48d417a14e31e8297025de8c66ccac": [
     "windows-apps-src\\monetize\\manage-app-submissions.md"
@@ -14662,5 +14692,11 @@
   ],
   "46f0f0189b1d7df4cb842a21abffd06dc9a7d2c1": [
     "hub\\TOC.md"
+  ],
+  "af719bbb4cc9def4e9b202c8815320698c6148d0": [
+    "windows-apps-src\\publish\\promote-your-app-report.md"
+  ],
+  "d36b84299b8e469624cef54f89c94744f3f4ae83": [
+    "windows-apps-src\\whats-new\\windows-10-creators-preview.md"
   ]
 }
