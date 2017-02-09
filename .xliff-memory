@@ -31669,6 +31669,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0358443abbfb753ace9276f1cca8dfa0a4745508.4230e44958d07d53bb6551c5259452a39bf67784.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\get-started-tutorial-game-js2d.md.d6905d35aaf16848c3b6b0a5ef01a84289fac199.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\get-started-tutorial-game-js2d.md",
+      "XliffHash": "d6905d35aaf16848c3b6b0a5ef01a84289fac199",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a83f7b37ee84d87bae0285a987628d14cfab1d69.eb595d6616325e766f8e0ef13d43a3fda319cb65.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
