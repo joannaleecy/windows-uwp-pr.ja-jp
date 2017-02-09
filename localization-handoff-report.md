@@ -1,11 +1,33 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [windows-apps-src\xaml-platform\binding-markup-extension.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/993511baef4e3b167d2c1bcb02da6434e83ed3de?path=windows-apps-src%2Fxaml-platform%2Fbinding-markup-extension.md&_a=contents) | HandedOffSuccess | [Details](#0358443abbfb753ace9276f1cca8dfa0a47455087834)
 
 ## Item Details
+##### <a name='0358443abbfb753ace9276f1cca8dfa0a47455087834'></a> Source: [windows-apps-src\xaml-platform\binding-markup-extension.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/993511baef4e3b167d2c1bcb02da6434e83ed3de?path=windows-apps-src%2Fxaml-platform%2Fbinding-markup-extension.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [binding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/df9ee80b12fde4579f80bf23bffa4c0c8222bd9d?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fbinding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-02-09 18:32:48
+* Handoff Reason: Include
+* Handoff Name: 
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Handback Name: 
+* Current Target File: [windows-apps-src\xaml-platform\binding-markup-extension.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/94b4321bb5dd263955ca2211a312bbd0b2b4b105?path=windows-apps-src%2Fxaml-platform%2Fbinding-markup-extension.md&_a=contents)
+* Current Handback File: [binding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/1aa649d9aea9534cd7eb0453080e5e7830e9b3fa?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fbinding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ja-jp.xlf&_a=contents)
+* Current Handback Datetime: 2016-11-30 15:16:15
+* Bilingual File: [binding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/1aa649d9aea9534cd7eb0453080e5e7830e9b3fa?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fbinding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ja-jp.xlf&_a=contents)
+* Bilingual Datetime: 2016-11-30 15:23:26
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
