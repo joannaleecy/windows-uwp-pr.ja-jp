@@ -2435,6 +2435,9 @@
   "d6cb8bd32766157b1edf886621bdc605ca160db5": [
     "windows-apps-src\\files\\file-access-permissions.md"
   ],
+  "cdef86477570b33e9cd0c7adaaceb8fea12e3d40": [
+    "windows-apps-src\\files\\how-to-track-recently-used-files-and-folders.md"
+  ],
   "c8f8cd6681b4e00e8430d7ddfacdd8fad395365c": [
     "windows-apps-src\\files\\how-to-track-recently-used-files-and-folders.md"
   ],
@@ -2456,6 +2459,9 @@
   "7f4e53e0dd70534912e0c94f350f4c84e7c1f672": [
     "windows-apps-src\\files\\protect-your-enterprise-data-with-edp.md"
   ],
+  "e67a373b5e36d6e1a8a5e738f8c0964c5df8489b": [
+    "windows-apps-src\\files\\quickstart-accessing-homegroup-content.md"
+  ],
   "04d34aa8f1cff2460462fff8100ab345a04d9000": [
     "windows-apps-src\\files\\quickstart-accessing-homegroup-content.md"
   ],
@@ -2468,6 +2474,9 @@
   "d55908186e5e0687c7dbd22fee9d2f7b70ba1707": [
     "windows-apps-src\\files\\quickstart-accessing-homegroup-content.md"
   ],
+  "5c4a4d27e53229524414dd566386251f74577701": [
+    "windows-apps-src\\files\\quickstart-determining-availability-of-microsoft-onedrive-files.md"
+  ],
   "dcc1104fb50b926c76d2c9d28983f91dc76edef0": [
     "windows-apps-src\\files\\quickstart-determining-availability-of-microsoft-onedrive-files.md"
   ],
@@ -2479,6 +2488,9 @@
   ],
   "2289b85a8b26e1827446709e1db97c447b3b7964": [
     "windows-apps-src\\files\\quickstart-determining-availability-of-microsoft-onedrive-files.md"
+  ],
+  "4412ccd88c73854c193e24e0ac4e3f03730a9f39": [
+    "windows-apps-src\\files\\quickstart-getting-file-properties.md"
   ],
   "89dee43da35e9a31bb7a795324119cb429d3734e": [
     "windows-apps-src\\files\\quickstart-getting-file-properties.md"
@@ -3907,6 +3919,9 @@
   ],
   "729c71fbe0db202bd4f5ce15bea87caa973adf80": [
     "windows-apps-src\\get-started\\get-set-up.md"
+  ],
+  "ed4e1ed93b062de0ad6ef274784b6cae1b2018da": [
+    "windows-apps-src\\get-started\\learn-more.md"
   ],
   "0bf7959be6278577cc8fe93011591e4523bee623": [
     "windows-apps-src\\get-started\\learn-more.md"
@@ -14704,6 +14719,9 @@
   ],
   "d36b84299b8e469624cef54f89c94744f3f4ae83": [
     "windows-apps-src\\whats-new\\windows-10-creators-preview.md"
+  ],
+  "d38ae1a19d79dca43f6bf16ccc7368fdf7a911fd": [
+    "windows-apps-src\\get-started\\get-started-tutorial-game-js2d.md"
   ],
   "b58162b04b8389f16afadc3d69e7f4b213c876cb": [
     "windows-apps-src\\get-started\\get-started-tutorial-game-js2d.md"
