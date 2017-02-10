@@ -3920,6 +3920,9 @@
   "729c71fbe0db202bd4f5ce15bea87caa973adf80": [
     "windows-apps-src\\get-started\\get-set-up.md"
   ],
+  "6c02d6b3059401dc8b0eefd636eb9f76244ddace": [
+    "windows-apps-src\\get-started\\learn-more.md"
+  ],
   "ed4e1ed93b062de0ad6ef274784b6cae1b2018da": [
     "windows-apps-src\\get-started\\learn-more.md"
   ],
@@ -7736,6 +7739,9 @@
   "76bce0070da266cc2bc53cda785136a372e2f3bc": [
     "windows-apps-src\\publish\\getting-paid-apps.md"
   ],
+  "2ca0d52279a52e4d60d547929ab780cbee9bf3e4": [
+    "windows-apps-src\\publish\\guidance-for-app-package-management.md"
+  ],
   "54f6d6c786eb0787a441628452d26e46f353b3d8": [
     "windows-apps-src\\publish\\guidance-for-app-package-management.md"
   ],
@@ -8482,6 +8488,9 @@
   ],
   "27f06fe3031d391a03bc5f5b08723983b34308f0": [
     "windows-apps-src\\security\\microsoft-passport-login.md"
+  ],
+  "e33c7bd29fe8750d81ca1304c3854dc1c93d0929": [
+    "windows-apps-src\\security\\microsoft-passport-login-auth-service.md"
   ],
   "7dbc74ff80441e0b128a2f5da53c809145b37325": [
     "windows-apps-src\\security\\microsoft-passport-login-auth-service.md"
@@ -9764,6 +9773,9 @@
   "2f77c565acf272a1a8f147eb07ac6c7f08bf8ef0": [
     "windows-apps-src\\xbox-apps\\wdp-media-capture-api.md"
   ],
+  "c1a2517aa8716cff9201351a12a3c391110aafab": [
+    "windows-apps-src\\xbox-apps\\wdp-user-management.md"
+  ],
   "66fe038fdb54ac5cb9086bf9225d0a5d573b39c8": [
     "windows-apps-src\\xbox-apps\\wdp-user-management.md"
   ],
@@ -10051,6 +10063,9 @@
   ],
   "fb74bfc40750941860dae0a8f811fde4a614e403": [
     "windows-apps-src\\porting\\hwa-access-features.md"
+  ],
+  "260ba1d56f6e313b6447f0c68e685e76a30b3056": [
+    "windows-apps-src\\porting\\hwa-chrome-conversion.md"
   ],
   "84d8875cc7b1c8540f54fec78cd675bd96919fd2": [
     "windows-apps-src\\porting\\hwa-chrome-conversion.md"
@@ -14089,6 +14104,9 @@
   ],
   "5333c3f8ab834a4646c63499565ef28a634f850d": [
     "windows-apps-src\\monetize\\update-your-app-to-the-latest-advertising-libraries.md"
+  ],
+  "a361dd8b74b546aa66f5d0a73cd1b304fe48ffab": [
+    "windows-apps-src\\packaging\\auto-build-package-uwp-apps.md"
   ],
   "54dcebb0dc4b1a41acdae655b9caf14f72161f36": [
     "windows-apps-src\\packaging\\auto-build-package-uwp-apps.md"
