@@ -31679,6 +31679,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a83f7b37ee84d87bae0285a987628d14cfab1d69.eb595d6616325e766f8e0ef13d43a3fda319cb65.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\get-started-tutorial-game-js2d.md.071214e0d7c8d88db87a55cf690d660410f775a0.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\get-started-tutorial-game-js2d.md",
+      "XliffHash": "071214e0d7c8d88db87a55cf690d660410f775a0",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b58162b04b8389f16afadc3d69e7f4b213c876cb.24dd1604a832e0d670eb64187cb8d61542cc305c.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\TOC.md.e497d3416a25a7e34180243f28ae197777218f79.HT": {
+      "SourceFilename": "windows-apps-src\\TOC.md",
+      "XliffHash": "e497d3416a25a7e34180243f28ae197777218f79",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1ab6fd947eb338a9d0cce41e811d0ef88b6882d6.3982c376123ab1285580573777542cf9083dfc04.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

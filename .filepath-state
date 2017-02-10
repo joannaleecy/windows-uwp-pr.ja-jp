@@ -8744,6 +8744,9 @@
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "1ab6fd947eb338a9d0cce41e811d0ef88b6882d6": [
+    "windows-apps-src\\TOC.md"
+  ],
   "0c50255bff27cf5020c7c3a304708f38f2423448": [
     "windows-apps-src\\TOC.md"
   ],
@@ -14701,6 +14704,9 @@
   ],
   "d36b84299b8e469624cef54f89c94744f3f4ae83": [
     "windows-apps-src\\whats-new\\windows-10-creators-preview.md"
+  ],
+  "b58162b04b8389f16afadc3d69e7f4b213c876cb": [
+    "windows-apps-src\\get-started\\get-started-tutorial-game-js2d.md"
   ],
   "a83f7b37ee84d87bae0285a987628d14cfab1d69": [
     "windows-apps-src\\get-started\\get-started-tutorial-game-js2d.md"
