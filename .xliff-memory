@@ -6896,7 +6896,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5873af515ec1ae9f10c1b5d9e5fe9de5b8dd80a8.07f775f9c0e630ea8db7a6b9b3c4a37a318a1f82.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\28cc32e782dd565a522836aeead7a49c0f798cc1.78bc93b6b5f3585e13962852aeade4074654d196.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -31757,6 +31757,66 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\260ba1d56f6e313b6447f0c68e685e76a30b3056.1d702e197f713c861b4c42d76541e7439b30724c.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\enterprise\\wip-dev-guide.md.8f504252c33731ffb2514e9ea160023250a3746e.HT": {
+      "SourceFilename": "windows-apps-src\\enterprise\\wip-dev-guide.md",
+      "XliffHash": "8f504252c33731ffb2514e9ea160023250a3746e",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a1452f989bd94e11e51cdafe2f2ab0dd90edfb5f.8f4df6754c3a2138665194d112712c12d9e32995.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\TOC.md.89ee1e75330debe09350dc388a97773a7b786afd.HT": {
+      "SourceFilename": "windows-apps-src\\TOC.md",
+      "XliffHash": "89ee1e75330debe09350dc388a97773a7b786afd",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\44e6fb95ad2b67901064512350d3039b82ba6e78.868e71e19609e4c83aff59fd28e3ad4ba09b9fce.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\data-access\\index.md.b09d62c68e3a02d452b49da19c13f84d86f68b5a.HT": {
+      "SourceFilename": "windows-apps-src\\data-access\\index.md",
+      "XliffHash": "b09d62c68e3a02d452b49da19c13f84d86f68b5a",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b235a3cfcf89309f8e4392a8c8e9e219ce5081b8.33bb074991f29f0def8409bd3d6c73c266de160e.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\contacts-and-calendar\\integrating-with-contacts.md.ea5498ef8ae7a5ca7cd49ec73fdd7fc402a5412b.HT": {
+      "SourceFilename": "windows-apps-src\\contacts-and-calendar\\integrating-with-contacts.md",
+      "XliffHash": "ea5498ef8ae7a5ca7cd49ec73fdd7fc402a5412b",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\95a1a29b6914d73214054001c02d61f7b365a271.1d5fad7f8f2cc797b0927e6c69543804a0cb9eeb.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\universal-application-platform-guide.md.08865b4073280227ddd4d07175e3eb751b3e1d39.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\universal-application-platform-guide.md",
+      "XliffHash": "08865b4073280227ddd4d07175e3eb751b3e1d39",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\65f40ea13c2cd62f971bf76de9492102e8868e32.6b3a1f1fcf9c121f05bc88be49c95d9900a2c422.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\data-access\\entity-framework-7-with-sqlite-for-csharp-apps.md.a891d022ec4b8d47155d656667b710d86e5eb2db.HT": {
+      "SourceFilename": "windows-apps-src\\data-access\\entity-framework-7-with-sqlite-for-csharp-apps.md",
+      "XliffHash": "a891d022ec4b8d47155d656667b710d86e5eb2db",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\4afc8b294256212b218eb81ead4ba7c3dc05e5f1.599dfa6032264709e0560aaf4c64fb739c92e8b3.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }

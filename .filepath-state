@@ -1535,6 +1535,9 @@
   "9ee42532cb7f13d611e2365d7c9cf8f0532dd1c5": [
     "windows-apps-src\\controls-and-patterns\\xaml-theme-resources.md"
   ],
+  "4afc8b294256212b218eb81ead4ba7c3dc05e5f1": [
+    "windows-apps-src\\data-access\\entity-framework-7-with-sqlite-for-csharp-apps.md"
+  ],
   "2ab2a12f6c2bc2f0f8853b404afaf13bf80635b7": [
     "windows-apps-src\\data-access\\entity-framework-7-with-sqlite-for-csharp-apps.md"
   ],
@@ -1549,6 +1552,9 @@
   ],
   "07244b35b2ec20227bccc43638b56b9fda88956a": [
     "windows-apps-src\\data-access\\entity-framework-7-with-sqlite-for-csharp-apps.md"
+  ],
+  "b235a3cfcf89309f8e4392a8c8e9e219ce5081b8": [
+    "windows-apps-src\\data-access\\index.md"
   ],
   "0f7aff1c9e7354fcf92d24ed8acb88b41a23d377": [
     "windows-apps-src\\data-access\\index.md"
@@ -3976,6 +3982,9 @@
   ],
   "ddba8a7fe517ecb538a5632355fcb73a17fe54f7": [
     "windows-apps-src\\get-started\\sign-up.md"
+  ],
+  "65f40ea13c2cd62f971bf76de9492102e8868e32": [
+    "windows-apps-src\\get-started\\universal-application-platform-guide.md"
   ],
   "f1e69b302f9b979423e2b38a11cd477b1b805a4b": [
     "windows-apps-src\\get-started\\universal-application-platform-guide.md"
@@ -8768,6 +8777,9 @@
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "44e6fb95ad2b67901064512350d3039b82ba6e78": [
+    "windows-apps-src\\TOC.md"
+  ],
   "1ab6fd947eb338a9d0cce41e811d0ef88b6882d6": [
     "windows-apps-src\\TOC.md"
   ],
@@ -10271,6 +10283,9 @@
   "88a55c9ed64d5f52f959a1c68618dc5296dc24d6": [
     "windows-apps-src\\monetize\\create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md"
   ],
+  "28cc32e782dd565a522836aeead7a49c0f798cc1": [
+    "windows-apps-src\\graphics\\using-the-visual-layer-with-xaml.md"
+  ],
   "5873af515ec1ae9f10c1b5d9e5fe9de5b8dd80a8": [
     "windows-apps-src\\graphics\\using-the-visual-layer-with-xaml.md"
   ],
@@ -10541,6 +10556,9 @@
   "9d931ef590f895406e9d516110e6d200789558c7": [
     "windows-apps-src\\contacts-and-calendar\\integrating-social-feeds-into-contact-cards.md"
   ],
+  "95a1a29b6914d73214054001c02d61f7b365a271": [
+    "windows-apps-src\\contacts-and-calendar\\integrating-with-contacts.md"
+  ],
   "da64e23714035b6763104d48430371469272a939": [
     "windows-apps-src\\contacts-and-calendar\\integrating-with-contacts.md"
   ],
@@ -10675,6 +10693,9 @@
   ],
   "2afc1250aa9d7a6cf6c9c8cb45dd2379b9d36984": [
     "windows-apps-src\\devices-sensors\\bluetooth-dev-faq.md"
+  ],
+  "a1452f989bd94e11e51cdafe2f2ab0dd90edfb5f": [
+    "windows-apps-src\\enterprise\\wip-dev-guide.md"
   ],
   "5bad765ff182fcd2fb573c3aa766fdaaaef1e2a3": [
     "windows-apps-src\\enterprise\\wip-dev-guide.md"
