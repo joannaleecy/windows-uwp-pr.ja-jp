@@ -31819,6 +31819,56 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\4afc8b294256212b218eb81ead4ba7c3dc05e5f1.599dfa6032264709e0560aaf4c64fb739c92e8b3.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\launch-resume\\run-minimized-with-extended-execution.md.362822321c72685dd7914a85ecb54e013d7b4726.HT": {
+      "SourceFilename": "windows-apps-src\\launch-resume\\run-minimized-with-extended-execution.md",
+      "XliffHash": "362822321c72685dd7914a85ecb54e013d7b4726",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ecd7b0e67cabf61b4d53809e828e283830f89b25.7c80c1b2b24fa2d34ff91e42d4bd445da92ca4d8.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\universal-application-platform-guide.md.7183b2f036eeb13a6757fe6752c8f5b0f6736e06.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\universal-application-platform-guide.md",
+      "XliffHash": "7183b2f036eeb13a6757fe6752c8f5b0f6736e06",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\165b71495ef2e02f5a4bfe7c7d9728ce123a6b4d.566b44e22788d80d3952de67484744ed400d62b0.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\style\\typography.md.9e3802c5ba7de587cbf46b3a038fc740750db645.HT": {
+      "SourceFilename": "windows-apps-src\\style\\typography.md",
+      "XliffHash": "9e3802c5ba7de587cbf46b3a038fc740750db645",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\416554bb8ee2d07e282c1df19c72fb8348b7b23d.27828721d5c28c5f7e31c0b1501b7bd34ae3bbfa.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\get-started-tutorial-game-js2d.md.f8d45fc881a304378049b3f2e98cf95b72c7e57f.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\get-started-tutorial-game-js2d.md",
+      "XliffHash": "f8d45fc881a304378049b3f2e98cf95b72c7e57f",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ec34ebee9344661ba5239567da694dec65573e8f.1ce6aea38a85774cd8bebeb7c383f22f33b22466.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\app-settings\\guidelines-for-app-settings.md.c8081380cc7d9e2d16db72548c130e88032de217.HT": {
+      "SourceFilename": "windows-apps-src\\app-settings\\guidelines-for-app-settings.md",
+      "XliffHash": "c8081380cc7d9e2d16db72548c130e88032de217",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5ac73629e5deacdd84d21f63f459096a348cb4a2.c49ed8bfec053e514ed02e98a53567775d10eb40.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

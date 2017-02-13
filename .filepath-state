@@ -197,6 +197,9 @@
   "52bf5b65412918e522b57ba06d83c67771086a93": [
     "windows-apps-src\\app-settings\\app-settings-and-data.md"
   ],
+  "5ac73629e5deacdd84d21f63f459096a348cb4a2": [
+    "windows-apps-src\\app-settings\\guidelines-for-app-settings.md"
+  ],
   "e995023cd8a4216c60d5691f9f87be3aff9d8498": [
     "windows-apps-src\\app-settings\\guidelines-for-app-settings.md"
   ],
@@ -3982,6 +3985,9 @@
   ],
   "ddba8a7fe517ecb538a5632355fcb73a17fe54f7": [
     "windows-apps-src\\get-started\\sign-up.md"
+  ],
+  "165b71495ef2e02f5a4bfe7c7d9728ce123a6b4d": [
+    "windows-apps-src\\get-started\\universal-application-platform-guide.md"
   ],
   "65f40ea13c2cd62f971bf76de9492102e8868e32": [
     "windows-apps-src\\get-started\\universal-application-platform-guide.md"
@@ -8644,6 +8650,9 @@
   ],
   "5e4decdfdda0cad59d80395440f974d4ff3303a6": [
     "windows-apps-src\\style\\sound.md"
+  ],
+  "416554bb8ee2d07e282c1df19c72fb8348b7b23d": [
+    "windows-apps-src\\style\\typography.md"
   ],
   "a10d1b164513f9abce48c51bdfe5f6e4c3bdf79d": [
     "windows-apps-src\\style\\typography.md"
@@ -14453,6 +14462,9 @@
   "2927588bc096ef1ed9e8451cea73ba78efa9d7c0": [
     "windows-apps-src\\publish\\understand-irs-tax-forms.md"
   ],
+  "ecd7b0e67cabf61b4d53809e828e283830f89b25": [
+    "windows-apps-src\\launch-resume\\run-minimized-with-extended-execution.md"
+  ],
   "b7bda3b25e2c268926223da429abf559524ad38c": [
     "windows-apps-src\\launch-resume\\run-minimized-with-extended-execution.md"
   ],
@@ -14758,6 +14770,9 @@
   ],
   "d36b84299b8e469624cef54f89c94744f3f4ae83": [
     "windows-apps-src\\whats-new\\windows-10-creators-preview.md"
+  ],
+  "ec34ebee9344661ba5239567da694dec65573e8f": [
+    "windows-apps-src\\get-started\\get-started-tutorial-game-js2d.md"
   ],
   "d38ae1a19d79dca43f6bf16ccc7368fdf7a911fd": [
     "windows-apps-src\\get-started\\get-started-tutorial-game-js2d.md"
