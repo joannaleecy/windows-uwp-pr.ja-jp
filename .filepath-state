@@ -6539,6 +6539,9 @@
   "e91f0bbb203ef1c77ad1435b1a3f10aa53c3a483": [
     "windows-apps-src\\maps-and-location\\set-up-a-geofence.md"
   ],
+  "99429e0fd9e8072916b5e337e3e2ee131f4e85aa": [
+    "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
+  ],
   "65bfdd7983d9f1561b1a9bfd54ddc19c8849260d": [
     "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
   ],
@@ -6752,6 +6755,9 @@
   "d7ecb5205d9668f83d2619869baafd569b581078": [
     "windows-apps-src\\monetize\\create-an-adcontrol-in-javascript.md"
   ],
+  "005ae4e12729d2c94d458e45c21af9028797f5ae": [
+    "windows-apps-src\\monetize\\create-and-run-your-first-experiment-with-a-b-testing.md"
+  ],
   "e0bc305e3ca3e8cc5522487e0306cceeb89606a1": [
     "windows-apps-src\\monetize\\create-and-run-your-first-experiment-with-a-b-testing.md"
   ],
@@ -6769,6 +6775,9 @@
   ],
   "65785e53b2e5ba788dbda533373737e193e1c792": [
     "windows-apps-src\\monetize\\create-and-run-your-first-experiment-with-a-b-testing.md"
+  ],
+  "9ffcbda2b6d861a60d53e7ac2af4392abce61b47": [
+    "windows-apps-src\\monetize\\define-your-experiment-in-the-dev-center-dashboard.md"
   ],
   "3f7f7cb5e7ee0d35349ef41f0e7eddde3102ba8e": [
     "windows-apps-src\\monetize\\define-your-experiment-in-the-dev-center-dashboard.md"
@@ -6788,6 +6797,9 @@
   "fa209464e247e7073da2197ddd0b9a5344f3763b": [
     "windows-apps-src\\monetize\\define-your-experiment-in-the-dev-center-dashboard.md"
   ],
+  "bb272c5589c0734e04bdb591e766d4c6bd1b07a2": [
+    "windows-apps-src\\monetize\\developer-information.md"
+  ],
   "18b060bdd951f06a07c867929c2ce1988ad11585": [
     "windows-apps-src\\monetize\\developer-information.md"
   ],
@@ -6805,6 +6817,9 @@
   ],
   "70692d09c037d9e5802734bc5de6a6c79799bffb": [
     "windows-apps-src\\monetize\\developer-information.md"
+  ],
+  "3c0f6acec62991e4893c00df3cf6320dc6bc9d7b": [
+    "windows-apps-src\\monetize\\developer-walkthroughs.md"
   ],
   "fb0653e65af24062aa0c5f8d4c72f2747d1036b1": [
     "windows-apps-src\\monetize\\developer-walkthroughs.md"
@@ -6916,6 +6931,9 @@
   ],
   "c9f2ad67413380a8393c8e00871e69af4bb2905a": [
     "windows-apps-src\\monetize\\error-handling-in-xamlc-walkthrough.md"
+  ],
+  "7c65f424341517072b06aaba30929f17303dcf1f": [
+    "windows-apps-src\\monetize\\error-handling-with-advertising-libraries.md"
   ],
   "62e24c2e0b8c34ae3d4bb75a50686ea75e6bd3ab": [
     "windows-apps-src\\monetize\\error-handling-with-advertising-libraries.md"
@@ -7052,6 +7070,9 @@
   "a79cd324d57151318445df0dedd35a98d9c9f915": [
     "windows-apps-src\\monetize\\get-in-app-acquisitions.md"
   ],
+  "e1f6ed0cd86c3152c246fea971e413c2c6e5f0fc": [
+    "windows-apps-src\\monetize\\get-started-with-microsoft-advertising-libraries.md"
+  ],
   "290ca6610b8f2f6b7f68fd5a5e26ffb577a5e5e2": [
     "windows-apps-src\\monetize\\get-started-with-microsoft-advertising-libraries.md"
   ],
@@ -7151,6 +7172,9 @@
   "1482450a8e5039ffd61a90f7cd38738115c5f2f0": [
     "windows-apps-src\\monetize\\important-notice-eula.md"
   ],
+  "92041e38970efd604097fa2af6c2a5c0d4a81f34": [
+    "windows-apps-src\\monetize\\index.md"
+  ],
   "49ef1a5984cebfe9bf47821eb5e00e9fb67af86f": [
     "windows-apps-src\\monetize\\index.md"
   ],
@@ -7244,6 +7268,9 @@
   "5d7f81e16f3ecdc73fba5010cfbc6082a19cd24c": [
     "windows-apps-src\\monetize\\interstitial-ad-sample-code-in-javascript.md"
   ],
+  "4420b3872aba4a261e259455c126109b45c21bf9": [
+    "windows-apps-src\\monetize\\known-issues-for-the-advertising-libraries.md"
+  ],
   "dcf4a2d38dc6997e80368e92a34774c8e9aa86c3": [
     "windows-apps-src\\monetize\\known-issues-for-the-advertising-libraries.md"
   ],
@@ -7298,6 +7325,9 @@
   "ccbf6f99820ebc9a9245066899b2bd3be69319e7": [
     "windows-apps-src\\monetize\\manage-a-large-catalog-of-in-app-products.md"
   ],
+  "a972e6dea823504d5a213c5b8ea084432b0b613c": [
+    "windows-apps-src\\monetize\\manage-your-experiment.md"
+  ],
   "2b66482de131c0128608357d0c0328d6cb8cca85": [
     "windows-apps-src\\monetize\\manage-your-experiment.md"
   ],
@@ -7342,6 +7372,9 @@
   ],
   "d614919debd979a475e93909199851390d242deb": [
     "windows-apps-src\\monetize\\query-for-products.md"
+  ],
+  "33d6f0c543b0c9d5425e66f536bd1099136546f4": [
+    "windows-apps-src\\monetize\\release-notes-for-the-advertising-libraries.md"
   ],
   "c3fb4128301ace5d15ee7bfe8b06a0239232966f": [
     "windows-apps-src\\monetize\\release-notes-for-the-advertising-libraries.md"
@@ -7546,6 +7579,9 @@
   ],
   "4a8b43ac0b6752b78e998ac16776b84e9ddda09f": [
     "windows-apps-src\\monetize\\troubleshooting-guides.md"
+  ],
+  "0667dce6e4b13853324037f7b6c2e9f884162688": [
+    "windows-apps-src\\monetize\\ui-and-user-experience-guidelines.md"
   ],
   "c25b4e2ab40a965a2c39a0d5e1b45c9a53bd36b0": [
     "windows-apps-src\\monetize\\ui-and-user-experience-guidelines.md"
@@ -12068,6 +12104,9 @@
   "34cce6acc786fe34b3d94faaec57011474e029ff": [
     "windows-apps-src\\input-and-devices\\access-keys.md"
   ],
+  "73ba2fd1a109e0e8d0b0f64bfafa793c4d9323e5": [
+    "windows-apps-src\\monetize\\create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md"
+  ],
   "0884cb9807cfe6b6bc4f6f10908bc1ec7984b160": [
     "windows-apps-src\\monetize\\create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md"
   ],
@@ -13064,6 +13103,9 @@
   "2a469506c8b440e1aa8555ac57b88f2026ae4d8e": [
     "windows-apps-src\\publish\\set-your-add-on-product-id.md"
   ],
+  "88e0bb4ceb9cba12d1eb5857761f5b59afaa15f2": [
+    "windows-apps-src\\monetize\\add-advertisements-to-video-content.md"
+  ],
   "afe79a6780cb1fbff761c815a1300c042846a2cb": [
     "windows-apps-src\\monetize\\add-advertisements-to-video-content.md"
   ],
@@ -13117,6 +13159,9 @@
   ],
   "324bdcd8ae61826a2be765f6a6a93441036d6984": [
     "windows-apps-src\\layout\\navigate-between-two-pages.md"
+  ],
+  "71928b67d3c2799b3d8d3711f6f7e5a3610e9c76": [
+    "windows-apps-src\\monetize\\migrate-from-admediatorcontrol-to-adcontrol.md"
   ],
   "79d2ae26640529e2b0d14e74dc7f3fbd1b6e3f21": [
     "windows-apps-src\\monetize\\migrate-from-admediatorcontrol-to-adcontrol.md"
@@ -13205,6 +13250,9 @@
   "1f77ca4191de09361bae752ba72fd6239c44ad1b": [
     "windows-apps-src\\gaming\\concept-approval.md"
   ],
+  "04cfa46b84392afcc474127595bcd720f7a70804": [
+    "windows-apps-src\\monetize\\code-examples-for-the-windows-store-submission-api.md"
+  ],
   "a5c8e3be6e1ab8e3ae0393043fe455a8776564ac": [
     "windows-apps-src\\monetize\\code-examples-for-the-windows-store-submission-api.md"
   ],
@@ -13229,6 +13277,9 @@
   "df29d34b7e1b4b4e2ee715ecc013758df65fc9c3": [
     "windows-apps-src\\monetize\\code-examples-for-the-windows-store-submission-api.md"
   ],
+  "5171fb89b9485ed314a8c7f0322db89019e9d512": [
+    "windows-apps-src\\monetize\\commit-a-flight-submission.md"
+  ],
   "7a4f869d359d2545aa0e6889f1fac4b6bb900bd7": [
     "windows-apps-src\\monetize\\commit-a-flight-submission.md"
   ],
@@ -13246,6 +13297,9 @@
   ],
   "a9ea8de7b92b254c7bb8d63a5a3ea41afdd2d966": [
     "windows-apps-src\\monetize\\commit-a-flight-submission.md"
+  ],
+  "3ab65675822f9b9c88e5c613c4394b295e7430e1": [
+    "windows-apps-src\\monetize\\commit-an-add-on-submission.md"
   ],
   "3b5b4917928d33221bfdd780f1b9be16dada2a01": [
     "windows-apps-src\\monetize\\commit-an-add-on-submission.md"
@@ -13265,6 +13319,9 @@
   "f9b9e5801f94101156850086c16311cf567b1e7d": [
     "windows-apps-src\\monetize\\commit-an-add-on-submission.md"
   ],
+  "bbfaaa016d4c45e20afec8a98a1c1d87b6dd9bd4": [
+    "windows-apps-src\\monetize\\commit-an-app-submission.md"
+  ],
   "41854efc604ac65b6390976d075d84429656d6b6": [
     "windows-apps-src\\monetize\\commit-an-app-submission.md"
   ],
@@ -13282,6 +13339,9 @@
   ],
   "14698cfcd57d71682c40a8820a8a3d2c43dd3567": [
     "windows-apps-src\\monetize\\commit-an-app-submission.md"
+  ],
+  "64064e8eaa7586f3ea8fbf569aa08f8789aa5c52": [
+    "windows-apps-src\\monetize\\create-a-flight.md"
   ],
   "7bdedeff528bd70798a408eefeb637039b0f66df": [
     "windows-apps-src\\monetize\\create-a-flight.md"
@@ -13301,6 +13361,9 @@
   "35823bd1fd0c059ebc9b2107c31400a7ad788a1e": [
     "windows-apps-src\\monetize\\create-a-flight.md"
   ],
+  "db970741540838475fd461a81c8e15764bfb5d84": [
+    "windows-apps-src\\monetize\\create-a-flight-submission.md"
+  ],
   "9355fcf70551125390dd93f285826d092c66e03c": [
     "windows-apps-src\\monetize\\create-a-flight-submission.md"
   ],
@@ -13319,6 +13382,9 @@
   "2ca6824039077d5d3ceba2c643d52a62c77104e4": [
     "windows-apps-src\\monetize\\create-a-flight-submission.md"
   ],
+  "903bbaf0ad515dcf23c4248744b428876805082e": [
+    "windows-apps-src\\monetize\\create-an-add-on.md"
+  ],
   "8d74f9bd89025cb34211379ba8c6e554bc9383c0": [
     "windows-apps-src\\monetize\\create-an-add-on.md"
   ],
@@ -13336,6 +13402,9 @@
   ],
   "11cf25fbeacbe3145c9cc3f4a80bdcce3028bf55": [
     "windows-apps-src\\monetize\\create-an-add-on.md"
+  ],
+  "2f7fe530d98713f8261d5511e03186040bcd18e6": [
+    "windows-apps-src\\monetize\\create-an-add-on-submission.md"
   ],
   "8fbec7f8c15293afbe39eaf84dd8908dbcd508b8": [
     "windows-apps-src\\monetize\\create-an-add-on-submission.md"
@@ -13361,6 +13430,9 @@
   "b7de4b00fb4d48b9f4c542437c38e0282e155a29": [
     "windows-apps-src\\monetize\\create-an-add-on-submission.md"
   ],
+  "9ea2d53835e74c9da80c364f0cfdb600b2ddcb88": [
+    "windows-apps-src\\monetize\\create-an-app-submission.md"
+  ],
   "572b432b430355c508a7a49c55edbf6d5ca0f8b5": [
     "windows-apps-src\\monetize\\create-an-app-submission.md"
   ],
@@ -13384,6 +13456,9 @@
   ],
   "dc5fcdd7a3181e07874b761c7183c6c539591704": [
     "windows-apps-src\\monetize\\create-an-app-submission.md"
+  ],
+  "ccf3808cfcb68582d527f19e35bbb00e7f63d182": [
+    "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
   ],
   "7f6ae80d9557bb643b139592aec1a8e82669144c": [
     "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
@@ -13415,6 +13490,9 @@
   "8467cddd5eec2348cd35f4f5dc1564b47813a6ca": [
     "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
   ],
+  "59b9c0b2cc503a56e0a1c9a75ce5ef471983c699": [
+    "windows-apps-src\\monetize\\csharp-code-examples-for-the-windows-store-submission-api.md"
+  ],
   "f5f45629bcd51d724d0b73a0d9ab13ef0245133f": [
     "windows-apps-src\\monetize\\csharp-code-examples-for-the-windows-store-submission-api.md"
   ],
@@ -13432,6 +13510,9 @@
   ],
   "d2fc29f8f2fc6cc78c1cb04c68844215a3e3eafe": [
     "windows-apps-src\\monetize\\csharp-code-examples-for-the-windows-store-submission-api.md"
+  ],
+  "e20661cef4ac7cad17ea5a62d37e9b217061809c": [
+    "windows-apps-src\\monetize\\delete-a-flight.md"
   ],
   "5ed1b363476dbc407b78bda4155fc0914def6d09": [
     "windows-apps-src\\monetize\\delete-a-flight.md"
@@ -13451,6 +13532,9 @@
   "eae25f9a19523b928e30baaf0ffe0eec6e779ed2": [
     "windows-apps-src\\monetize\\delete-a-flight.md"
   ],
+  "1b69fb04742e30a80b258613385b40ce8999306c": [
+    "windows-apps-src\\monetize\\delete-a-flight-submission.md"
+  ],
   "e2861f24fc14cb8e86c803efdea8948f04f3bf38": [
     "windows-apps-src\\monetize\\delete-a-flight-submission.md"
   ],
@@ -13468,6 +13552,9 @@
   ],
   "9712f0ef68cc3614c9961183dba8b67a71c0ec39": [
     "windows-apps-src\\monetize\\delete-a-flight-submission.md"
+  ],
+  "74149837e43b65998069c8724b5cd6c55df8703b": [
+    "windows-apps-src\\monetize\\delete-an-add-on.md"
   ],
   "6e793163e7426d88144ea32a810758c80cb39b29": [
     "windows-apps-src\\monetize\\delete-an-add-on.md"
@@ -13487,6 +13574,9 @@
   "8c28205ca004bd63b3f6a3fea2971cf927f7e2e4": [
     "windows-apps-src\\monetize\\delete-an-add-on.md"
   ],
+  "a1f2a545b75ac4416ac016d36836328b24433917": [
+    "windows-apps-src\\monetize\\delete-an-add-on-submission.md"
+  ],
   "cb0c8a3771e35ca9f150391d1b10965d4de1c292": [
     "windows-apps-src\\monetize\\delete-an-add-on-submission.md"
   ],
@@ -13504,6 +13594,9 @@
   ],
   "b0068876803ea62dbf1d5329ddda19912a4f94d7": [
     "windows-apps-src\\monetize\\delete-an-add-on-submission.md"
+  ],
+  "20ac77960c47e21daddec845abef73887ee93710": [
+    "windows-apps-src\\monetize\\delete-an-app-submission.md"
   ],
   "b86ca2cedd660e5a696aae50f71464ae80a005ec": [
     "windows-apps-src\\monetize\\delete-an-app-submission.md"
@@ -13523,6 +13616,9 @@
   "4109414e684fc38f461f9e97af38839cb83330fc": [
     "windows-apps-src\\monetize\\delete-an-app-submission.md"
   ],
+  "198db630fbba8d4145454a6912f118225b13ac1c": [
+    "windows-apps-src\\monetize\\get-add-ons-for-an-app.md"
+  ],
   "5e670571021bc6301ec3530625973eca5175ba7d": [
     "windows-apps-src\\monetize\\get-add-ons-for-an-app.md"
   ],
@@ -13540,6 +13636,9 @@
   ],
   "5a2dc318509b99c4d58632d5eedaeb3e465c524d": [
     "windows-apps-src\\monetize\\get-add-ons-for-an-app.md"
+  ],
+  "921d33c033704de711112c30feae7dbbfebc732b": [
+    "windows-apps-src\\monetize\\get-a-flight.md"
   ],
   "b154c090262eb67df75111fbbebc6396903b89ee": [
     "windows-apps-src\\monetize\\get-a-flight.md"
@@ -13559,6 +13658,9 @@
   "fb8328981a45e353987a62d7794158c2e1179087": [
     "windows-apps-src\\monetize\\get-a-flight.md"
   ],
+  "11f3acf59f2293e715bab1a7c63a2e0d16d23bab": [
+    "windows-apps-src\\monetize\\get-a-flight-submission.md"
+  ],
   "294d02f9815ec04a2158d0b668c92e2f90daf54e": [
     "windows-apps-src\\monetize\\get-a-flight-submission.md"
   ],
@@ -13576,6 +13678,9 @@
   ],
   "e2929ad3e2bb71ba3de5f74a82c4b0a43504dbd6": [
     "windows-apps-src\\monetize\\get-a-flight-submission.md"
+  ],
+  "bb31d8cbe60703aff179913648556f408ba65586": [
+    "windows-apps-src\\monetize\\get-all-add-ons.md"
   ],
   "d644423fc3d9eb3074fbadf3d305cd4fe97dac32": [
     "windows-apps-src\\monetize\\get-all-add-ons.md"
@@ -13595,6 +13700,9 @@
   "64d40badaa4664e4f516900e82d290f60a499149": [
     "windows-apps-src\\monetize\\get-all-add-ons.md"
   ],
+  "93e973eb20835160e6b580bc932ce559b47e0ce1": [
+    "windows-apps-src\\monetize\\get-all-apps.md"
+  ],
   "2c4f66286e1d59e716d8495a86b808fe34b867a4": [
     "windows-apps-src\\monetize\\get-all-apps.md"
   ],
@@ -13613,6 +13721,9 @@
   "6180cc4ef94df3e28af4843685e16f2d1fdfa7ac": [
     "windows-apps-src\\monetize\\get-all-apps.md"
   ],
+  "a79c93c1ed7d38b4de1da2bbd05456fd0884692e": [
+    "windows-apps-src\\monetize\\get-an-add-on.md"
+  ],
   "e90bb7dce0d0b6d47a0f08481a925a22b6f29681": [
     "windows-apps-src\\monetize\\get-an-add-on.md"
   ],
@@ -13630,6 +13741,9 @@
   ],
   "20da33d3e06ca97613f4bc317fe8e8fdc9bc73b6": [
     "windows-apps-src\\monetize\\get-an-add-on.md"
+  ],
+  "0dcf96182bd44df34da5a9789994659a8c2e47ba": [
+    "windows-apps-src\\monetize\\get-an-add-on-submission.md"
   ],
   "68d115cf4126657b61b975424508c16756f159ef": [
     "windows-apps-src\\monetize\\get-an-add-on-submission.md"
@@ -13655,6 +13769,9 @@
   "887615bfc07549d82a295bae99dd31f722546341": [
     "windows-apps-src\\monetize\\get-an-add-on-submission.md"
   ],
+  "6087bf65ac297b12f92a9082db4e6a12e93130ef": [
+    "windows-apps-src\\monetize\\get-an-app.md"
+  ],
   "1a5a214ade5785acd059acdf1d8c440bd754850d": [
     "windows-apps-src\\monetize\\get-an-app.md"
   ],
@@ -13672,6 +13789,9 @@
   ],
   "ef0c9ff463b89854c9aaa7ee2c8307f4af30fadf": [
     "windows-apps-src\\monetize\\get-an-app.md"
+  ],
+  "f564bb9ccf21cb7968993b2df1caa260f30a9bb9": [
+    "windows-apps-src\\monetize\\get-an-app-submission.md"
   ],
   "0cb87f4878c6de749730ab5931641e7f437f175c": [
     "windows-apps-src\\monetize\\get-an-app-submission.md"
@@ -13697,6 +13817,9 @@
   "b092658a22b76f044000fb6accc90382dc3bd360": [
     "windows-apps-src\\monetize\\get-an-app-submission.md"
   ],
+  "dc0aa91aa417689866aa6bd666f0446c0eb2e242": [
+    "windows-apps-src\\monetize\\get-app-data.md"
+  ],
   "5745d4dbc141f16be2321549224a6984864005f3": [
     "windows-apps-src\\monetize\\get-app-data.md"
   ],
@@ -13718,6 +13841,9 @@
   "23839faca120976a07e666b9d6861aa8750898ad": [
     "windows-apps-src\\monetize\\get-app-data.md"
   ],
+  "c5cbedc868725bf1ad81179f59d7a2ac9a3a0818": [
+    "windows-apps-src\\monetize\\get-flights-for-an-app.md"
+  ],
   "2a8bdc474af8411264e3c5a17bdc3af3b78ae6b6": [
     "windows-apps-src\\monetize\\get-flights-for-an-app.md"
   ],
@@ -13735,6 +13861,9 @@
   ],
   "eddac4b37f6f00bad33f543f0e55415a5dcea887": [
     "windows-apps-src\\monetize\\get-flights-for-an-app.md"
+  ],
+  "06367fd2110b66fc36babf137a12b482df4f7d40": [
+    "windows-apps-src\\monetize\\get-status-for-a-flight-submission.md"
   ],
   "7fdb47977347be46655101f2cb6f682b3753ddd8": [
     "windows-apps-src\\monetize\\get-status-for-a-flight-submission.md"
@@ -13754,6 +13883,9 @@
   "9c087a01d8a499f8dd31c428f0c1abdbe9b19fac": [
     "windows-apps-src\\monetize\\get-status-for-a-flight-submission.md"
   ],
+  "691e512c2a072748434d092286f0ab36a90f91f2": [
+    "windows-apps-src\\monetize\\get-status-for-an-add-on-submission.md"
+  ],
   "4d786c53b4689c68fe9f6e001ceb16537fc0f662": [
     "windows-apps-src\\monetize\\get-status-for-an-add-on-submission.md"
   ],
@@ -13771,6 +13903,9 @@
   ],
   "e5be4ee466c204255a074adae4d150860286ba0a": [
     "windows-apps-src\\monetize\\get-status-for-an-add-on-submission.md"
+  ],
+  "f8bfae09e44f02b740885709e9c22f370412538c": [
+    "windows-apps-src\\monetize\\get-status-for-an-app-submission.md"
   ],
   "92b996b2d0741395e24e8d314989c961bc49f231": [
     "windows-apps-src\\monetize\\get-status-for-an-app-submission.md"
@@ -13790,6 +13925,9 @@
   "f93b26201ea45dc456013737fef0382aadb56e7f": [
     "windows-apps-src\\monetize\\get-status-for-an-app-submission.md"
   ],
+  "ff5e857e0f5ce110ab7afc64bd2faa28f7bea517": [
+    "windows-apps-src\\monetize\\java-code-examples-for-the-windows-store-submission-api.md"
+  ],
   "27790165acd9f8533257fae1d55b30fc620464fd": [
     "windows-apps-src\\monetize\\java-code-examples-for-the-windows-store-submission-api.md"
   ],
@@ -13807,6 +13945,9 @@
   ],
   "7f7de7c7d9fa9131d38da48e13ce449f4440962d": [
     "windows-apps-src\\monetize\\java-code-examples-for-the-windows-store-submission-api.md"
+  ],
+  "b442f48b7d03f0f972882ec240dbc1f37f018fd9": [
+    "windows-apps-src\\monetize\\manage-add-ons.md"
   ],
   "2c5b6596b74eda5d109d346c684e2e461dd2b6b9": [
     "windows-apps-src\\monetize\\manage-add-ons.md"
@@ -13828,6 +13969,9 @@
   ],
   "058d11938dd6efc961da58a9d937be76beac5978": [
     "windows-apps-src\\monetize\\manage-add-ons.md"
+  ],
+  "92c47b59e0c341bf9b0d608dfbf5b2ae2b7885df": [
+    "windows-apps-src\\monetize\\manage-add-on-submissions.md"
   ],
   "a84584ca1d4326eff698802bad13e4339ecb5175": [
     "windows-apps-src\\monetize\\manage-add-on-submissions.md"
@@ -13864,6 +14008,9 @@
   ],
   "1a1ace9d456089d4bed2dd4ac4f39479dc8faa52": [
     "windows-apps-src\\monetize\\manage-add-on-submissions.md"
+  ],
+  "f5b47546b8070bf05aa24faee5a6e32f48142a31": [
+    "windows-apps-src\\monetize\\manage-app-submissions.md"
   ],
   "7c4e1cd4a597beda026e912e93cdaffe47feffc4": [
     "windows-apps-src\\monetize\\manage-app-submissions.md"
@@ -13904,6 +14051,9 @@
   "ef7727befa20606800fb9747f9402be9be5cc9e4": [
     "windows-apps-src\\monetize\\manage-app-submissions.md"
   ],
+  "b560c2c12dc2fd7984287d039d20c121698aef85": [
+    "windows-apps-src\\monetize\\manage-flights.md"
+  ],
   "3109160781b6b8ee6720c483a8b94714c4fafff5": [
     "windows-apps-src\\monetize\\manage-flights.md"
   ],
@@ -13924,6 +14074,9 @@
   ],
   "626a59ba848c9ae1d97b85b67ef2c76eed49065a": [
     "windows-apps-src\\monetize\\manage-flights.md"
+  ],
+  "79105b14e14a0739625f8db4d84bf90cafb33d85": [
+    "windows-apps-src\\monetize\\manage-flight-submissions.md"
   ],
   "1ebf1673230611aa81929e748bda9525101e6c2b": [
     "windows-apps-src\\monetize\\manage-flight-submissions.md"
@@ -13952,6 +14105,9 @@
   "9fc42f3abf1d876f271d18c1747ed7462dd20bd6": [
     "windows-apps-src\\monetize\\manage-flight-submissions.md"
   ],
+  "a46907ecfea1de60b8a32cdaea7076f056a41ff5": [
+    "windows-apps-src\\monetize\\python-code-examples-for-the-windows-store-submission-api.md"
+  ],
   "b1fa0eedc7df1582678a7e737b598a54bb4a9ddd": [
     "windows-apps-src\\monetize\\python-code-examples-for-the-windows-store-submission-api.md"
   ],
@@ -13969,6 +14125,9 @@
   ],
   "1f8d415744d53120191f02a17aed4b7b04fa2f57": [
     "windows-apps-src\\monetize\\python-code-examples-for-the-windows-store-submission-api.md"
+  ],
+  "94f457603c9114c7fa450c04d08e1486677d8d7c": [
+    "windows-apps-src\\monetize\\update-a-flight-submission.md"
   ],
   "5cb54902d7e1f66825aa823e9b119ca6175e6927": [
     "windows-apps-src\\monetize\\update-a-flight-submission.md"
@@ -13988,6 +14147,9 @@
   "baf9f4a3b72ab439439be4f73ca7fc11d48a3c84": [
     "windows-apps-src\\monetize\\update-a-flight-submission.md"
   ],
+  "867a8495d5dea50d5b362822955e7605eddf4bb9": [
+    "windows-apps-src\\monetize\\update-an-add-on-submission.md"
+  ],
   "95123ec7fd6c406dfd5cbb101c32c2bcddd396f8": [
     "windows-apps-src\\monetize\\update-an-add-on-submission.md"
   ],
@@ -14005,6 +14167,9 @@
   ],
   "ac126d8e8cf8301399a3248a1d65e19805e70255": [
     "windows-apps-src\\monetize\\update-an-add-on-submission.md"
+  ],
+  "316d6b0d901216039929bb34f04e2deea889771b": [
+    "windows-apps-src\\monetize\\update-an-app-submission.md"
   ],
   "fdecced04a62024115af4eb69e57da38579ebc44": [
     "windows-apps-src\\monetize\\update-an-app-submission.md"
@@ -16397,6 +16562,9 @@
   "e2b0680e62014526f684e7c1f7fd7da83a14f5d3": [
     "windows-apps-src\\monetize\\app-metadata-api-for-advertising-networks.md"
   ],
+  "67c993796e7221e736ab9bda0c95310bf87e7ef2": [
+    "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
+  ],
   "cd4661916f4c2a3196ef974d4d6c2c9736cb55a5": [
     "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
   ],
@@ -16424,6 +16592,9 @@
   "d840fbe66e5ccb439148c7849e44b923a5586740": [
     "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
   ],
+  "30063afd989b70e486b04cb3233fbd82ec537c98": [
+    "windows-apps-src\\monetize\\finalize-the-package-rollout-for-a-flight-submission.md"
+  ],
   "8aa665150bf73f17d4a555a9b044bdc02dca6b08": [
     "windows-apps-src\\monetize\\finalize-the-package-rollout-for-a-flight-submission.md"
   ],
@@ -16444,6 +16615,9 @@
   ],
   "7e08aa793ee0f889995e8ec80554c6b6e41bd8b6": [
     "windows-apps-src\\monetize\\finalize-the-package-rollout-for-a-flight-submission.md"
+  ],
+  "b1a21f2b95379df51416f7876bb686a9cd4c378d": [
+    "windows-apps-src\\monetize\\finalize-the-package-rollout-for-an-app-submission.md"
   ],
   "2582bcd61adc631dd55386435292dd0bee2a3045": [
     "windows-apps-src\\monetize\\finalize-the-package-rollout-for-an-app-submission.md"
@@ -16508,6 +16682,9 @@
   "551416caf19e16b6d6ab95fcd98aa8fbbb1587f1": [
     "windows-apps-src\\monetize\\get-ad-performance-data.md"
   ],
+  "05453b91c2f2a2a12e31f09fd1d0f8864528dd94": [
+    "windows-apps-src\\monetize\\get-package-rollout-info-for-a-flight-submission.md"
+  ],
   "64dbe43285a7a3ac2b943b180533829753f4af39": [
     "windows-apps-src\\monetize\\get-package-rollout-info-for-a-flight-submission.md"
   ],
@@ -16528,6 +16705,9 @@
   ],
   "72dcad2c6f278e81c8f4fbbc7353c1aada123862": [
     "windows-apps-src\\monetize\\get-package-rollout-info-for-a-flight-submission.md"
+  ],
+  "a03da21676c0511bcf2e724f763e762555a6b5f3": [
+    "windows-apps-src\\monetize\\get-package-rollout-info-for-an-app-submission.md"
   ],
   "603471fa5c388eb20a18ffb54bdb9560063d797c": [
     "windows-apps-src\\monetize\\get-package-rollout-info-for-an-app-submission.md"
@@ -16550,6 +16730,9 @@
   "c7a3a12625594533af550921ae580842fa59be08": [
     "windows-apps-src\\monetize\\get-package-rollout-info-for-an-app-submission.md"
   ],
+  "daf0308345196bc32618de117b2a7828f6fbd393": [
+    "windows-apps-src\\monetize\\halt-the-package-rollout-for-a-flight-submission.md"
+  ],
   "2a93b0016722493f29195397146299ea0e7a7c6d": [
     "windows-apps-src\\monetize\\halt-the-package-rollout-for-a-flight-submission.md"
   ],
@@ -16570,6 +16753,9 @@
   ],
   "d51c2fa2babb78a35317ab846685530f5c3b4a16": [
     "windows-apps-src\\monetize\\halt-the-package-rollout-for-a-flight-submission.md"
+  ],
+  "87d2d8f0b6aad2539f753e6e30baa880deb58cae": [
+    "windows-apps-src\\monetize\\halt-the-package-rollout-for-an-app-submission.md"
   ],
   "bb7d5084049bf0925ea947bbe4502ec5bc5c3b4d": [
     "windows-apps-src\\monetize\\halt-the-package-rollout-for-an-app-submission.md"
@@ -16637,6 +16823,9 @@
   "ca9e27944cc4504400191ef1620949b1e8b64ff2": [
     "windows-apps-src\\monetize\\retail-demo-experience.md"
   ],
+  "27b624ec19c424bf2c027f2a5c0095ce9e94203a": [
+    "windows-apps-src\\monetize\\update-the-package-rollout-percentage-for-a-flight-submission.md"
+  ],
   "d030de2484f3d974329e377b999b948a1762d11e": [
     "windows-apps-src\\monetize\\update-the-package-rollout-percentage-for-a-flight-submission.md"
   ],
@@ -16658,6 +16847,9 @@
   "2822390c60818baeb8d98789fdcf04bd7cd2daba": [
     "windows-apps-src\\monetize\\update-the-package-rollout-percentage-for-a-flight-submission.md"
   ],
+  "6ddb6244567608ccec8993bf9e48163cd5f6fbab": [
+    "windows-apps-src\\monetize\\update-the-package-rollout-percentage-for-an-app-submission.md"
+  ],
   "3a6fc4a94437957a550b5d9c7fc8e4650418a1ef": [
     "windows-apps-src\\monetize\\update-the-package-rollout-percentage-for-an-app-submission.md"
   ],
@@ -16678,6 +16870,9 @@
   ],
   "bae825e0fecda32df770a1f48038c2eb652a05cc": [
     "windows-apps-src\\monetize\\update-the-package-rollout-percentage-for-an-app-submission.md"
+  ],
+  "dbd7cee43419457c0ffa1f228fd9b005ea3f8e05": [
+    "windows-apps-src\\monetize\\update-your-app-to-the-latest-advertising-libraries.md"
   ],
   "207fa3b2e147f8b081f83e1ac135512faa54f994": [
     "windows-apps-src\\monetize\\update-your-app-to-the-latest-advertising-libraries.md"
@@ -17368,6 +17563,9 @@
   ],
   "7878f6efda9b3b3e8e4e2c9fb97fffdb45374bb9": [
     "windows-apps-src\\monetize\\manage-targeting-profiles-for-ad-campaigns.md"
+  ],
+  "6a345fe3d8d5f8e9df7a01d94a8101d31aa312e5": [
+    "windows-apps-src\\monetize\\respond-to-reviews-using-windows-store-services.md"
   ],
   "2896f322017da739c0a0a8f65f0113cf8b2d9e84": [
     "windows-apps-src\\monetize\\respond-to-reviews-using-windows-store-services.md"
