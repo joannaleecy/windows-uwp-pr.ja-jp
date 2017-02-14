@@ -8807,6 +8807,9 @@
   "ac18d3b036c1ec9290212097a0f9a0feb962d915": [
     "windows-apps-src\\publish\\common-questions.md"
   ],
+  "6f07c5c68efde0174b6ef6a90ee98854e984e643": [
+    "windows-apps-src\\publish\\create-a-custom-app-promotion-campaign.md"
+  ],
   "762deee7436e94f4ea2e3576d55fe46955b3b7ba": [
     "windows-apps-src\\publish\\create-a-custom-app-promotion-campaign.md"
   ],
@@ -17284,6 +17287,9 @@
   ],
   "a7481872df2931273542815b9797c4fb09d46c90": [
     "windows-apps-src\\packaging\\sign-app-package-using-signtool.md"
+  ],
+  "f487965dfbb006cdd7256022aa742b506928957c": [
+    "windows-apps-src\\porting\\desktop-to-uwp-packaging-dot-net.md"
   ],
   "856642bb1d5f59c26af5945826cff5bf740e56f5": [
     "windows-apps-src\\porting\\desktop-to-uwp-packaging-dot-net.md"

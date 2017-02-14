@@ -25886,7 +25886,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\856642bb1d5f59c26af5945826cff5bf740e56f5.20b74eb1bcc50da90672f3084dc34d72db275c81.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f487965dfbb006cdd7256022aa742b506928957c.6cc0e05c4807726d99ac0acc8f952e1f44bceb78.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -32007,6 +32007,16 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8e0ad7c2992605f97b1596a104edb552a8b9c82d.0258ff982647f1a49a3ab7b6fc10a11ea8ee8b42.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\publish\\create-a-custom-app-promotion-campaign.md.b133fe2718d0706a58173746e018fb3f1288c699.HT": {
+      "SourceFilename": "windows-apps-src\\publish\\create-a-custom-app-promotion-campaign.md",
+      "XliffHash": "b133fe2718d0706a58173746e018fb3f1288c699",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6f07c5c68efde0174b6ef6a90ee98854e984e643.09763c37d1a2833685102595682d7a2c6957436b.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }
