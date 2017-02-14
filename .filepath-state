@@ -3527,6 +3527,9 @@
   "1be2c49dc88dcaecfa1d349f9dda7a9cc0619b92": [
     "windows-apps-src\\gaming\\glsl-to-hlsl-reference.md"
   ],
+  "3d7a93ed0b1ce78cba278232eb5325e463c12789": [
+    "windows-apps-src\\gaming\\handling-device-lost-scenarios.md"
+  ],
   "2202d8ea4584f7755464fd3035829d348cfbff8d": [
     "windows-apps-src\\gaming\\handling-device-lost-scenarios.md"
   ],
@@ -11066,6 +11069,9 @@
   "6030f666f213865a92d071210fe66f587c1bffb1": [
     "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
   ],
+  "8e0ad7c2992605f97b1596a104edb552a8b9c82d": [
+    "windows-apps-src\\xbox-apps\\known-issues.md"
+  ],
   "2b65f274e0dde604ddd44ecfa9e10117f7f9ed56": [
     "windows-apps-src\\xbox-apps\\known-issues.md"
   ],
@@ -11215,6 +11221,9 @@
   ],
   "91e530a3313d53c4e693b88a64b849f3188a72de": [
     "windows-apps-src\\xbox-apps\\how-to-disable-mouse-mode.md"
+  ],
+  "30fc3e357eaea0d36a5deba1b0ea85c2d9bc990e": [
+    "windows-apps-src\\xbox-apps\\turn-off-overscan.md"
   ],
   "4d3048d18af12a6f8eb8ea6383cc10fedbd546af": [
     "windows-apps-src\\xbox-apps\\turn-off-overscan.md"

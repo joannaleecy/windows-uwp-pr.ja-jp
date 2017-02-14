@@ -31979,6 +31979,36 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e65b288aa1fb8d83f78e937786be3e4c365e1ca1.ceb039969c6a3b43973d2a13d3f25542e81cf7d0.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\xbox-apps\\turn-off-overscan.md.cb0e30b04075ceba106733b22c85febc6f755fa8.HT": {
+      "SourceFilename": "windows-apps-src\\xbox-apps\\turn-off-overscan.md",
+      "XliffHash": "cb0e30b04075ceba106733b22c85febc6f755fa8",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\30fc3e357eaea0d36a5deba1b0ea85c2d9bc990e.838257f2930282fd604f78c7a8e22bbbce5d7e09.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\handling-device-lost-scenarios.md.18933f8a7372222fc72a60311600bcec335f5ac5.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\handling-device-lost-scenarios.md",
+      "XliffHash": "18933f8a7372222fc72a60311600bcec335f5ac5",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\3d7a93ed0b1ce78cba278232eb5325e463c12789.4a2b34adfb32a4a3259f9c1260a0bd2f05d15ebf.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\xbox-apps\\known-issues.md.702bb00314b4d1e2bcdb7ffeb6b3a711147a3c7d.HT": {
+      "SourceFilename": "windows-apps-src\\xbox-apps\\known-issues.md",
+      "XliffHash": "702bb00314b4d1e2bcdb7ffeb6b3a711147a3c7d",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8e0ad7c2992605f97b1596a104edb552a8b9c82d.0258ff982647f1a49a3ab7b6fc10a11ea8ee8b42.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
