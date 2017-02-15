@@ -12106,7 +12106,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\76ea26bdd37eff1c2febdff644e7bc95595a1a1a.dc02d45e4ccbb67de3dae20b059a5f7e6082566a.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7eaddcfc2d02805e60043132328ef482872a9000.c42adb70ab04bf92b2101494e4bd65990f4e4130.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -32907,6 +32907,36 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d1575c686080fb8c4c35c032cdc1beca587aeb37.f956829dc5e11b092367f6d209ac90cbae743331.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\packaging\\auto-build-package-uwp-apps.md.0e4c9509f820f8372430f37af45efce45c5646ef.HT": {
+      "SourceFilename": "windows-apps-src\\packaging\\auto-build-package-uwp-apps.md",
+      "XliffHash": "0e4c9509f820f8372430f37af45efce45c5646ef",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f4c68af97e5d5b11a0c5320c9fa6040b9ab94e5a.2c1bfdbbcd5e2046cfc3cabf880338aaba2f55a2.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\debug-test-perf\\optimize-animations-and-media.md.d5e398e1c14bc64fc37a63a0cc46834094876df1.HT": {
+      "SourceFilename": "windows-apps-src\\debug-test-perf\\optimize-animations-and-media.md",
+      "XliffHash": "d5e398e1c14bc64fc37a63a0cc46834094876df1",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\29383c65d36b7bc9e5946e4c55298ac0e04107c6.0a5d0ebda807adaa82b9abbbcfbb39787ef26236.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\xbox-apps\\multi-user-applications.md.ff9db4fae8a379dace7cdab0ce69c6e455ea52e8.HT": {
+      "SourceFilename": "windows-apps-src\\xbox-apps\\multi-user-applications.md",
+      "XliffHash": "ff9db4fae8a379dace7cdab0ce69c6e455ea52e8",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b150b50c1072a96ae0017bae848eeff94bb07ce0.2d9a947f6a2a846ec64c944549f6d5e013966da3.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }

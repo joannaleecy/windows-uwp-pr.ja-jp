@@ -2219,6 +2219,9 @@
   "4be8fd69752dac70c316164fca79bb73c6666c43": [
     "windows-apps-src\\debug-test-perf\\mvvm-performance-tips.md"
   ],
+  "29383c65d36b7bc9e5946e4c55298ac0e04107c6": [
+    "windows-apps-src\\debug-test-perf\\optimize-animations-and-media.md"
+  ],
   "a60956fd8b3320cf51c1a850afe064539f0c5893": [
     "windows-apps-src\\debug-test-perf\\optimize-animations-and-media.md"
   ],
@@ -9233,6 +9236,9 @@
   "aa35a1e46c5fea9bb64602af3842735f1914b039": [
     "windows-apps-src\\publish\\make-your-app-easier-to-promote.md"
   ],
+  "7eaddcfc2d02805e60043132328ef482872a9000": [
+    "windows-apps-src\\publish\\manage-account-users.md"
+  ],
   "76ea26bdd37eff1c2febdff644e7bc95595a1a1a": [
     "windows-apps-src\\publish\\manage-account-users.md"
   ],
@@ -11209,6 +11215,9 @@
   ],
   "18c8d1fcd696f336601dc6c531424fe8bfb78304": [
     "windows-apps-src\\xbox-apps\\known-issues.md"
+  ],
+  "b150b50c1072a96ae0017bae848eeff94bb07ce0": [
+    "windows-apps-src\\xbox-apps\\multi-user-applications.md"
   ],
   "dc47ac96f1894bb35256875038a302d6fda60682": [
     "windows-apps-src\\xbox-apps\\multi-user-applications.md"
@@ -16999,6 +17008,9 @@
   ],
   "5333c3f8ab834a4646c63499565ef28a634f850d": [
     "windows-apps-src\\monetize\\update-your-app-to-the-latest-advertising-libraries.md"
+  ],
+  "f4c68af97e5d5b11a0c5320c9fa6040b9ab94e5a": [
+    "windows-apps-src\\packaging\\auto-build-package-uwp-apps.md"
   ],
   "a361dd8b74b546aa66f5d0a73cd1b304fe48ffab": [
     "windows-apps-src\\packaging\\auto-build-package-uwp-apps.md"
