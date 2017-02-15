@@ -13286,6 +13286,9 @@
   "ef605f9d749148240ecee5e0ecfd473f8440ca25": [
     "windows-apps-src\\launch-resume\\launch-ringtone-picker.md"
   ],
+  "70576c28cbcdef66a6ec6e325435096a49070a58": [
+    "windows-apps-src\\updates-and-versions\\application-development-for-windows-as-a-service.md"
+  ],
   "b9e9436fb07665b3a6fd19374be469802956d718": [
     "windows-apps-src\\updates-and-versions\\application-development-for-windows-as-a-service.md"
   ],
@@ -14272,6 +14275,9 @@
   ],
   "ec533c5a021d006787a7d217fa7f5eb98835fdd3": [
     "windows-apps-src\\monetize\\update-an-app-submission.md"
+  ],
+  "04af6dc567910fb2e5e579af5ba24a29e067b595": [
+    "windows-apps-src\\packaging\\self-install-package-updates.md"
   ],
   "af2e794bd24513f4b12933bca2a9bf5f46da6902": [
     "windows-apps-src\\packaging\\self-install-package-updates.md"
@@ -17351,6 +17357,9 @@
   "bb0f3ff68b7dc15623e4f337e589989354e08b65": [
     "windows-apps-src\\launch-resume\\splash-screens.md"
   ],
+  "068a940a54048b10e8f66bd3267b3a22c42beb50": [
+    "windows-apps-src\\publish\\understand-irs-tax-forms.md"
+  ],
   "c14e8ebf45b8c184b6d7b36490dd9eeb04948708": [
     "windows-apps-src\\publish\\understand-irs-tax-forms.md"
   ],
@@ -17606,6 +17615,9 @@
   "71f633c724c95b46dc48c8ab3573ac0cc6c90479": [
     "windows-apps-src\\porting\\desktop-to-uwp-packaging-dot-net.md"
   ],
+  "07f0a9a417790091e6ec522f720db7fe85ef5520": [
+    "windows-apps-src\\monetize\\manage-ad-campaigns.md"
+  ],
   "d87bda7329ee4a873a577b34f94efd7b9dcdeb6e": [
     "windows-apps-src\\monetize\\manage-ad-campaigns.md"
   ],
@@ -17620,6 +17632,9 @@
   ],
   "922ef4582f90a7a997f5400cc3033496e3d136ca": [
     "windows-apps-src\\monetize\\manage-ad-campaigns.md"
+  ],
+  "329b930b8c5d94f422fcca3f4b1645c1d111565b": [
+    "windows-apps-src\\monetize\\manage-creatives-for-ad-campaigns.md"
   ],
   "9084b6af71acf4f7d97381d442dca367386b1ea1": [
     "windows-apps-src\\monetize\\manage-creatives-for-ad-campaigns.md"
@@ -17638,6 +17653,9 @@
   ],
   "d655f161251705a4c53d572951978ae4da51ecab": [
     "windows-apps-src\\monetize\\manage-creatives-for-ad-campaigns.md"
+  ],
+  "9867d26cc0aca4f53a6b7b8d61736839a8636bbf": [
+    "windows-apps-src\\monetize\\manage-delivery-lines-for-ad-campaigns.md"
   ],
   "02f29a2d9d86c29a8ecbd2840fb4f7e93e5115c6": [
     "windows-apps-src\\monetize\\manage-delivery-lines-for-ad-campaigns.md"
@@ -17692,6 +17710,9 @@
   ],
   "fbb145a78a137ce6f7c3255c8909b00600f0923f": [
     "windows-apps-src\\monetize\\respond-to-reviews-using-windows-store-services.md"
+  ],
+  "d1575c686080fb8c4c35c032cdc1beca587aeb37": [
+    "windows-apps-src\\monetize\\run-ad-campaigns-using-windows-store-services.md"
   ],
   "bf199e6cfb7e905d4f0427d9b590849a3cd9d8dc": [
     "windows-apps-src\\monetize\\run-ad-campaigns-using-windows-store-services.md"

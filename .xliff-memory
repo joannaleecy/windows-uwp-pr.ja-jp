@@ -10736,7 +10736,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c14e8ebf45b8c184b6d7b36490dd9eeb04948708.17ed413035c18c433ae484c26b5b13db6f8214d4.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\068a940a54048b10e8f66bd3267b3a22c42beb50.a98149e20434719d36786110e669224cd611fe2e.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -10836,7 +10836,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b9e9436fb07665b3a6fd19374be469802956d718.2e7ea56f8bb9f105558686eeefe10e3e426cb60f.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\70576c28cbcdef66a6ec6e325435096a49070a58.2318dd15e1fd9b5988152a5ca2ee6abcbd6c5a05.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -32857,6 +32857,56 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0dc9582a0a041f6e30a2bebaa22843983d633cee.00af746670b7db023b6796ba39e61fa979359a82.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\manage-ad-campaigns.md.f70c933f9d261f04f120080f881b612b37c9b863.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\manage-ad-campaigns.md",
+      "XliffHash": "f70c933f9d261f04f120080f881b612b37c9b863",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\07f0a9a417790091e6ec522f720db7fe85ef5520.0d516f369ecb5f73ac5fac7d55ece600d0172a0a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\packaging\\self-install-package-updates.md.62bdeed36d8a73a046093fb4ee97a729fb81d5d2.HT": {
+      "SourceFilename": "windows-apps-src\\packaging\\self-install-package-updates.md",
+      "XliffHash": "62bdeed36d8a73a046093fb4ee97a729fb81d5d2",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\04af6dc567910fb2e5e579af5ba24a29e067b595.3475de328a08f280473ab318a78ea6c6bcb3e53a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\manage-creatives-for-ad-campaigns.md.73c77dd3cb6cdb8ca56deac90fec047ead8bf815.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\manage-creatives-for-ad-campaigns.md",
+      "XliffHash": "73c77dd3cb6cdb8ca56deac90fec047ead8bf815",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\329b930b8c5d94f422fcca3f4b1645c1d111565b.543562d974a186812a8b326209ec33a9ca8121ae.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\manage-delivery-lines-for-ad-campaigns.md.9ea0e37c2e0ad23e2df8ab11eedd135016379c3a.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\manage-delivery-lines-for-ad-campaigns.md",
+      "XliffHash": "9ea0e37c2e0ad23e2df8ab11eedd135016379c3a",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9867d26cc0aca4f53a6b7b8d61736839a8636bbf.8327fa2952d80e0e2d1b58df0e7f5dee5ac01d03.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\run-ad-campaigns-using-windows-store-services.md.b1e44e9b141c054a4b3477172bd385d457a80d8c.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\run-ad-campaigns-using-windows-store-services.md",
+      "XliffHash": "b1e44e9b141c054a4b3477172bd385d457a80d8c",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d1575c686080fb8c4c35c032cdc1beca587aeb37.f956829dc5e11b092367f6d209ac90cbae743331.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }
