@@ -6755,6 +6755,9 @@
   "d7ecb5205d9668f83d2619869baafd569b581078": [
     "windows-apps-src\\monetize\\create-an-adcontrol-in-javascript.md"
   ],
+  "6f90799bf3b31d7c5e6412984dd247e8d849948d": [
+    "windows-apps-src\\monetize\\create-and-run-your-first-experiment-with-a-b-testing.md"
+  ],
   "005ae4e12729d2c94d458e45c21af9028797f5ae": [
     "windows-apps-src\\monetize\\create-and-run-your-first-experiment-with-a-b-testing.md"
   ],
@@ -7481,6 +7484,9 @@
   "705955faf7ddd67f80098f8c3ac7b2844553de95": [
     "windows-apps-src\\monetize\\set-up-ad-units-in-your-app.md"
   ],
+  "2e4d402f1de4d868c7ceca8f525303079d1a1acf": [
+    "windows-apps-src\\monetize\\submit-an-app-with-ads-to-the-windows-store.md"
+  ],
   "c48c9e47382334371d64352288cf50fea3e8a487": [
     "windows-apps-src\\monetize\\submit-an-app-with-ads-to-the-windows-store.md"
   ],
@@ -7501,6 +7507,9 @@
   ],
   "d58ef53312bb6dd58e3a1e5c24d6ec26b6a49e69": [
     "windows-apps-src\\monetize\\submit-your-app-and-configure-ad-mediation.md"
+  ],
+  "6f8e679a31da140911306110027e1fdc041df399": [
+    "windows-apps-src\\monetize\\supported-ad-sizes-for-banner-ads.md"
   ],
   "46c52666a21d7e33021fc3dc0ca8bfd3af4daae6": [
     "windows-apps-src\\monetize\\supported-ad-sizes-for-banner-ads.md"
@@ -10319,6 +10328,9 @@
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "50e048a2772c2e9bf2182f6965502892ec94b090": [
+    "windows-apps-src\\TOC.md"
+  ],
   "35147ce7502e2357cf5df35da23346ce6f9b6deb": [
     "windows-apps-src\\TOC.md"
   ],
@@ -12875,6 +12887,9 @@
   "33004b5229167bedd4cbafe5279709f1225ed02c": [
     "windows-apps-src\\monetize\\in-app-purchases-and-trials.md"
   ],
+  "cfc79c9a9981d104fe22273d62708003e3beecf1": [
+    "windows-apps-src\\monetize\\in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md"
+  ],
   "36f8b275114a669450122a364947c5decb36ea78": [
     "windows-apps-src\\monetize\\in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md"
   ],
@@ -13456,6 +13471,9 @@
   ],
   "dc5fcdd7a3181e07874b761c7183c6c539591704": [
     "windows-apps-src\\monetize\\create-an-app-submission.md"
+  ],
+  "bb21e50227a99850cc393085fb86680cf55d6c7a": [
+    "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
   ],
   "ccf3808cfcb68582d527f19e35bbb00e7f63d182": [
     "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
@@ -14284,6 +14302,9 @@
   ],
   "c3088c2498a94c988359dd08c6c900ad9a6c4f95": [
     "windows-apps-src\\publish\\respond-to-customer-feedback.md"
+  ],
+  "2d2f586a1125f12c1034e002e2245e0fe155c1b4": [
+    "windows-apps-src\\publish\\payment-thresholds-methods-and-timeframes.md"
   ],
   "f1816f2ebce160a30460d49de6bd185eea1e2262": [
     "windows-apps-src\\publish\\payment-thresholds-methods-and-timeframes.md"
@@ -16562,6 +16583,9 @@
   "e2b0680e62014526f684e7c1f7fd7da83a14f5d3": [
     "windows-apps-src\\monetize\\app-metadata-api-for-advertising-networks.md"
   ],
+  "cd3c8cacde5d786af0aac16cdd78b06b3a815051": [
+    "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
+  ],
   "67c993796e7221e736ab9bda0c95310bf87e7ef2": [
     "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
   ],
@@ -17135,6 +17159,9 @@
   "1990a3ad4e56fa039d024c53a04b021e60bed145": [
     "windows-apps-src\\layout\\grid-tutorial.md"
   ],
+  "77018d3df8c76fe9b0c739a092eab96c1e380171": [
+    "windows-apps-src\\monetize\\get-details-for-an-error-in-your-app.md"
+  ],
   "cfab1c8f5149d4c6d02a9fa94287a4e204a11a7f": [
     "windows-apps-src\\monetize\\get-details-for-an-error-in-your-app.md"
   ],
@@ -17155,6 +17182,9 @@
   ],
   "cd72e58ec252c556cf0f2e5ce071744e8fac6c9e": [
     "windows-apps-src\\monetize\\get-details-for-an-error-in-your-app.md"
+  ],
+  "f9058ba75bf237480fb00e780ac0472618127805": [
+    "windows-apps-src\\monetize\\get-the-stack-trace-for-an-error-in-your-app.md"
   ],
   "fb99c65e91e02e3e60b12258e30083183c213324": [
     "windows-apps-src\\monetize\\get-the-stack-trace-for-an-error-in-your-app.md"
@@ -17399,6 +17429,9 @@
   "ad10f5758f4a66552f9c4e4750667e8d13f4c09f": [
     "windows-apps-src\\gaming\\ui-navigation-controller.md"
   ],
+  "46f5cb04fcea1b06205999743205396a875ebbce": [
+    "windows-apps-src\\monetize\\get-response-info-for-app-reviews.md"
+  ],
   "a1d4fe1748cb9e3e58fa3f74d5094c2ec857e74a": [
     "windows-apps-src\\monetize\\get-response-info-for-app-reviews.md"
   ],
@@ -17422,6 +17455,9 @@
   ],
   "45c3605cebc74597030be4f22d0c65cdc0a58768": [
     "windows-apps-src\\monetize\\get-response-info-for-app-reviews.md"
+  ],
+  "d418e64bf1608591e877da8339d1dda308611285": [
+    "windows-apps-src\\monetize\\submit-responses-to-app-reviews.md"
   ],
   "8dd6c63545a38cb6478ff4f6764e2b29e9f4215b": [
     "windows-apps-src\\monetize\\submit-responses-to-app-reviews.md"
@@ -17519,6 +17555,9 @@
   "922ef4582f90a7a997f5400cc3033496e3d136ca": [
     "windows-apps-src\\monetize\\manage-ad-campaigns.md"
   ],
+  "9084b6af71acf4f7d97381d442dca367386b1ea1": [
+    "windows-apps-src\\monetize\\manage-creatives-for-ad-campaigns.md"
+  ],
   "923913d641d2c79a067ba338298a5506c1f6bcf1": [
     "windows-apps-src\\monetize\\manage-creatives-for-ad-campaigns.md"
   ],
@@ -17534,6 +17573,9 @@
   "d655f161251705a4c53d572951978ae4da51ecab": [
     "windows-apps-src\\monetize\\manage-creatives-for-ad-campaigns.md"
   ],
+  "02f29a2d9d86c29a8ecbd2840fb4f7e93e5115c6": [
+    "windows-apps-src\\monetize\\manage-delivery-lines-for-ad-campaigns.md"
+  ],
   "707e2c4c2a511d764dd677bab8e0fc11529c02a7": [
     "windows-apps-src\\monetize\\manage-delivery-lines-for-ad-campaigns.md"
   ],
@@ -17548,6 +17590,9 @@
   ],
   "d0d6aa1a1a4b48f14e538c1471e766da09c0aae2": [
     "windows-apps-src\\monetize\\manage-delivery-lines-for-ad-campaigns.md"
+  ],
+  "69b9f40507a6fe1810d93dd024c5295dc0e196c7": [
+    "windows-apps-src\\monetize\\manage-targeting-profiles-for-ad-campaigns.md"
   ],
   "1c37ccd7cec9d5ee3ab823b0d2dc9173e1870908": [
     "windows-apps-src\\monetize\\manage-targeting-profiles-for-ad-campaigns.md"
@@ -17581,6 +17626,9 @@
   ],
   "fbb145a78a137ce6f7c3255c8909b00600f0923f": [
     "windows-apps-src\\monetize\\respond-to-reviews-using-windows-store-services.md"
+  ],
+  "bf199e6cfb7e905d4f0427d9b590849a3cd9d8dc": [
+    "windows-apps-src\\monetize\\run-ad-campaigns-using-windows-store-services.md"
   ],
   "bfce0c6ddcaf8e63088ae9c913336a96b8aacead": [
     "windows-apps-src\\monetize\\run-ad-campaigns-using-windows-store-services.md"
