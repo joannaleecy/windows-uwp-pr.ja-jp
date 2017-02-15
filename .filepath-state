@@ -2423,6 +2423,9 @@
   "bfbf4a630b1874f718a1ebd41caf96c72e2f05c5": [
     "windows-apps-src\\debug-test-perf\\windows-runtime-components-and-optimizing-interop.md"
   ],
+  "73423d32dc4e3d78d4281a5d86dcbdb4e33a741b": [
+    "windows-apps-src\\devices-sensors\\3d-print-from-app.md"
+  ],
   "af7095e8aa51d7578b8f6219e7e10f7769d396f2": [
     "windows-apps-src\\devices-sensors\\3d-print-from-app.md"
   ],
@@ -2438,6 +2441,9 @@
   "b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7": [
     "windows-apps-src\\devices-sensors\\3d-print-from-app.md"
   ],
+  "af636e445d2cad70922b8f846140e0886cf7ef28": [
+    "windows-apps-src\\devices-sensors\\3d-printing.md"
+  ],
   "c4c43edcee86b545e5b6d08a2fef1a3620f0f0bb": [
     "windows-apps-src\\devices-sensors\\3d-printing.md"
   ],
@@ -2452,6 +2458,9 @@
   ],
   "f3e01344bf7879e8992f4f7976c65ca0b7e616b1": [
     "windows-apps-src\\devices-sensors\\3d-printing.md"
+  ],
+  "354ed6c8d2a58bff68c798e66bfde0be03c5b140": [
+    "windows-apps-src\\devices-sensors\\aep-service-class-ids.md"
   ],
   "4d638bdbb18c259180a3efdf01ec402c3ad0009a": [
     "windows-apps-src\\devices-sensors\\aep-service-class-ids.md"
@@ -2501,6 +2510,9 @@
   "cd6b62350cc38f82c458f7649d12685895b5b9a3": [
     "windows-apps-src\\devices-sensors\\bluetooth.md"
   ],
+  "88474544e0cc6ee91a1c50f65b327c339b9be170": [
+    "windows-apps-src\\devices-sensors\\build-a-device-selector.md"
+  ],
   "268411ec63dfa34bc20882556d4c0f57aadcc906": [
     "windows-apps-src\\devices-sensors\\build-a-device-selector.md"
   ],
@@ -2515,6 +2527,9 @@
   ],
   "091767d6f223ce2b4538dafb1c81595015589013": [
     "windows-apps-src\\devices-sensors\\build-a-device-selector.md"
+  ],
+  "d67146cd0382032eddf8cfe1b47f9348727cb79a": [
+    "windows-apps-src\\devices-sensors\\calibrate-sensors.md"
   ],
   "c2a00630142c1524080d15f95e1b32327024b588": [
     "windows-apps-src\\devices-sensors\\calibrate-sensors.md"
@@ -2531,6 +2546,9 @@
   "8b669d7f939da9ee93e5a49d2f6434d5573e23c0": [
     "windows-apps-src\\devices-sensors\\calibrate-sensors.md"
   ],
+  "568c11a41552cb4e63d2e9b685ff5fc84abbe70b": [
+    "windows-apps-src\\devices-sensors\\customize-the-print-preview-ui.md"
+  ],
   "29155377443337df9883fde8730c1e5756e121a9": [
     "windows-apps-src\\devices-sensors\\customize-the-print-preview-ui.md"
   ],
@@ -2545,6 +2563,9 @@
   ],
   "dd64266c2015e1bb640cf159b0836b9819cf7845": [
     "windows-apps-src\\devices-sensors\\customize-the-print-preview-ui.md"
+  ],
+  "68e427a4d94b7c599e1fec375f0f66b5ff2704e0": [
+    "windows-apps-src\\devices-sensors\\device-information-properties.md"
   ],
   "dbe72dd476903083518dcf4b9d299b04e87f6e85": [
     "windows-apps-src\\devices-sensors\\device-information-properties.md"
@@ -2612,6 +2633,9 @@
   "2aa1a86a2cb0b413fae5fbcd87599a9f1a822324": [
     "windows-apps-src\\devices-sensors\\enumerate-devices.md"
   ],
+  "b738ccfbb6d7d3ab3741c224092f698e4d537f6e": [
+    "windows-apps-src\\devices-sensors\\enumerate-devices-over-a-network.md"
+  ],
   "659464757c70b9ef2296e07fcb655079a07ef53c": [
     "windows-apps-src\\devices-sensors\\enumerate-devices-over-a-network.md"
   ],
@@ -2626,6 +2650,9 @@
   ],
   "5f62063a7b9c80b8c3715b539a9ebe2505dc9ae0": [
     "windows-apps-src\\devices-sensors\\enumerate-devices-over-a-network.md"
+  ],
+  "6d3251e9e67f7a49b51493bf13216bfd72826d62": [
+    "windows-apps-src\\devices-sensors\\epson-esc-pos-with-formatting.md"
   ],
   "8a10881219a7c75f15e24970917c46b7683972df": [
     "windows-apps-src\\devices-sensors\\epson-esc-pos-with-formatting.md"
@@ -2687,6 +2714,9 @@
   "0671ad8deef7c0062172e3a441d206efb15de7dd": [
     "windows-apps-src\\devices-sensors\\get-battery-info.md"
   ],
+  "ad97e8ed52d0d302823f61d1acb9c482e0c9ef38": [
+    "windows-apps-src\\devices-sensors\\host-card-emulation.md"
+  ],
   "d17c79b46b7ac36b0fc8be89dedfee5e0401e128": [
     "windows-apps-src\\devices-sensors\\host-card-emulation.md"
   ],
@@ -2732,6 +2762,9 @@
   "283f0a0cfc7b3827e70ea79490818bc259d98ad1": [
     "windows-apps-src\\devices-sensors\\out-of-band-pairing.md"
   ],
+  "8bde7d6b65ae6fd96c38e2748a4e7ea0f9821aa2": [
+    "windows-apps-src\\devices-sensors\\pair-devices.md"
+  ],
   "fd46bb583c51ec735cd5f4c7c6a4f20b80c00c5a": [
     "windows-apps-src\\devices-sensors\\pair-devices.md"
   ],
@@ -2749,6 +2782,9 @@
   ],
   "502a1a650d327e914ffef049278581851ad4ec3b": [
     "windows-apps-src\\devices-sensors\\pair-devices.md"
+  ],
+  "b9bf56e9f4fa4632623ae2d644a4e9958ee02443": [
+    "windows-apps-src\\devices-sensors\\print-from-your-app.md"
   ],
   "df1c2b8f7c8a8dbdbc4eb7a62d80789ffd37a767": [
     "windows-apps-src\\devices-sensors\\print-from-your-app.md"
@@ -2780,6 +2816,9 @@
   "1e30bfb4f80d955d28799e6a6d5c22b82379a8fc": [
     "windows-apps-src\\devices-sensors\\printing-and-scanning.md"
   ],
+  "5233437bf1676cd63b4beebaf6b7004df2a8f0c6": [
+    "windows-apps-src\\devices-sensors\\scan-from-your-app.md"
+  ],
   "795af2eb8d8df890b23828ecf9858b3414bd029b": [
     "windows-apps-src\\devices-sensors\\scan-from-your-app.md"
   ],
@@ -2794,6 +2833,9 @@
   ],
   "9f06f774fd1ed3a13386a4403f98336babeb1506": [
     "windows-apps-src\\devices-sensors\\scan-from-your-app.md"
+  ],
+  "a05cc1d0da255eddb5c6659e7c9d44f3faf4101d": [
+    "windows-apps-src\\devices-sensors\\send-or-receive-files-with-rfcomm.md"
   ],
   "7a440f08cf9e91e7d7860fee82de57352975998a": [
     "windows-apps-src\\devices-sensors\\send-or-receive-files-with-rfcomm.md"
@@ -2840,6 +2882,9 @@
   "73ee42a275d0c0f0a08ddf19ddde4eabd21a7191": [
     "windows-apps-src\\devices-sensors\\sensors.md"
   ],
+  "f0665bf071b4c75ee6a3ea8bcc11cefb357c6825": [
+    "windows-apps-src\\devices-sensors\\use-the-accelerometer.md"
+  ],
   "6d8ac651384bcf10681c0546ca98e15e1ea2c6ee": [
     "windows-apps-src\\devices-sensors\\use-the-accelerometer.md"
   ],
@@ -2854,6 +2899,9 @@
   ],
   "8ce3baf2b030096ae5cfc56f31b97ec58e138a44": [
     "windows-apps-src\\devices-sensors\\use-the-accelerometer.md"
+  ],
+  "04634214aaa32a1beda05b5b127ccc2e0e141bad": [
+    "windows-apps-src\\devices-sensors\\use-the-compass.md"
   ],
   "d012730b28d873c993682ee2b4d27ecb9eba6cc9": [
     "windows-apps-src\\devices-sensors\\use-the-compass.md"
@@ -2870,6 +2918,9 @@
   "05c13ff71e1c6dcfb84d46e37445c1699211951a": [
     "windows-apps-src\\devices-sensors\\use-the-compass.md"
   ],
+  "6f50ad39420f3154c437a58d19971ed01e638528": [
+    "windows-apps-src\\devices-sensors\\use-the-gyrometer.md"
+  ],
   "351f8416b763746e003f37414607417db299bbab": [
     "windows-apps-src\\devices-sensors\\use-the-gyrometer.md"
   ],
@@ -2884,6 +2935,9 @@
   ],
   "f53ae8de70ddca0d8293283012bedb8a39ac7ac1": [
     "windows-apps-src\\devices-sensors\\use-the-gyrometer.md"
+  ],
+  "6544d4a598edb12d8d114bb27fac84831ce31d14": [
+    "windows-apps-src\\devices-sensors\\use-the-inclinometer.md"
   ],
   "8a6d8b447bfc859e0f3867b0c05783ffd5f6fdcf": [
     "windows-apps-src\\devices-sensors\\use-the-inclinometer.md"
@@ -2900,6 +2954,9 @@
   "17828018f2c8db8a5a60d839e7f73904de7a1a24": [
     "windows-apps-src\\devices-sensors\\use-the-inclinometer.md"
   ],
+  "4bfe0e3904695edd848ef4c9a7b960d8cc01d4c9": [
+    "windows-apps-src\\devices-sensors\\use-the-light-sensor.md"
+  ],
   "ac702ae7978e63cded3836c4a8c5d531cae7e5af": [
     "windows-apps-src\\devices-sensors\\use-the-light-sensor.md"
   ],
@@ -2914,6 +2971,9 @@
   ],
   "fe1b9a508e3b540f202e187dbe1696423c7cd373": [
     "windows-apps-src\\devices-sensors\\use-the-light-sensor.md"
+  ],
+  "435c2d7ca1bf2a256356c28a83d51e493d98e014": [
+    "windows-apps-src\\devices-sensors\\use-the-orientation-sensor.md"
   ],
   "cbfb5ed9d4898fdb4642aee786f4b009337d3a82": [
     "windows-apps-src\\devices-sensors\\use-the-orientation-sensor.md"
@@ -3451,6 +3511,9 @@
   ],
   "1e2039743ba45d577c08c0a6d9c17c7f923b2d86": [
     "windows-apps-src\\gaming\\draw-to-the-screen.md"
+  ],
+  "d85d018bb35c53097df701a4729346cfb4fd05a2": [
+    "windows-apps-src\\gaming\\e2e.md"
   ],
   "a8b28295a21d020d41f7416dd039a9a4003fb9b2": [
     "windows-apps-src\\gaming\\e2e.md"
@@ -9190,6 +9253,9 @@
   ],
   "2beba2cd6f818782750c812829bc04a9297048a1": [
     "windows-apps-src\\publish\\manage-account-users.md"
+  ],
+  "0dc9582a0a041f6e30a2bebaa22843983d633cee": [
+    "windows-apps-src\\publish\\manage-app-names.md"
   ],
   "08425cdcf3ad1697488cf94c70d29b5b2d373ae6": [
     "windows-apps-src\\publish\\manage-app-names.md"
