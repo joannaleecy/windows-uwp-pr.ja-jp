@@ -33149,6 +33149,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d9808feeabfa4ffce19d0e669352331804dfd751.d71c6e8db898e64b94860ffb481273d95540758e.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\enterprise\\wip-hub.md.1f840e1ef37ad2b00d2cbdcad53571df74c5c38d.HT": {
+      "SourceFilename": "windows-apps-src\\enterprise\\wip-hub.md",
+      "XliffHash": "1f840e1ef37ad2b00d2cbdcad53571df74c5c38d",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f624d20d33f560f151b40bd1a405711d697fd4cb.2d905ecd21ff2c21b57c007d14a885ce32c07b58.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\enterprise\\wip-dev-guide.md.fb04bc0e6ac30014f2150e4a566a3589c7a66180.HT": {
+      "SourceFilename": "windows-apps-src\\enterprise\\wip-dev-guide.md",
+      "XliffHash": "fb04bc0e6ac30014f2150e4a566a3589c7a66180",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7d555d4c8b9f749f1a924166176090efc291d4c2.08e36110aece349a19dad0979fc56c9362528d96.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

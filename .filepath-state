@@ -12725,6 +12725,9 @@
   "2afc1250aa9d7a6cf6c9c8cb45dd2379b9d36984": [
     "windows-apps-src\\devices-sensors\\bluetooth-dev-faq.md"
   ],
+  "7d555d4c8b9f749f1a924166176090efc291d4c2": [
+    "windows-apps-src\\enterprise\\wip-dev-guide.md"
+  ],
   "4453227ea7947d6940d367c81a989049b570dcce": [
     "windows-apps-src\\enterprise\\wip-dev-guide.md"
   ],
@@ -12748,6 +12751,9 @@
   ],
   "82b674c72126c66aff34b0396a2c32f88023dd25": [
     "windows-apps-src\\enterprise\\wip-dev-guide.md"
+  ],
+  "f624d20d33f560f151b40bd1a405711d697fd4cb": [
+    "windows-apps-src\\enterprise\\wip-hub.md"
   ],
   "429996f64a8e5d403eb23b5e4f8aab79de2cfa57": [
     "windows-apps-src\\enterprise\\wip-hub.md"
