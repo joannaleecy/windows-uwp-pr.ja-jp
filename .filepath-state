@@ -10400,6 +10400,9 @@
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "6217f897718141805a96e750dfd3bf5ac164c6ad": [
+    "windows-apps-src\\TOC.md"
+  ],
   "50e048a2772c2e9bf2182f6965502892ec94b090": [
     "windows-apps-src\\TOC.md"
   ],
@@ -12962,10 +12965,10 @@
   "33004b5229167bedd4cbafe5279709f1225ed02c": [
     "windows-apps-src\\monetize\\in-app-purchases-and-trials.md"
   ],
-  "cfc79c9a9981d104fe22273d62708003e3beecf1": [
+  "36f8b275114a669450122a364947c5decb36ea78": [
     "windows-apps-src\\monetize\\in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md"
   ],
-  "36f8b275114a669450122a364947c5decb36ea78": [
+  "cfc79c9a9981d104fe22273d62708003e3beecf1": [
     "windows-apps-src\\monetize\\in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md"
   ],
   "787007b870675749d96afa59a6e9cb5f3be68991": [
@@ -16664,10 +16667,10 @@
   "e2b0680e62014526f684e7c1f7fd7da83a14f5d3": [
     "windows-apps-src\\monetize\\app-metadata-api-for-advertising-networks.md"
   ],
-  "cd3c8cacde5d786af0aac16cdd78b06b3a815051": [
+  "67c993796e7221e736ab9bda0c95310bf87e7ef2": [
     "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
   ],
-  "67c993796e7221e736ab9bda0c95310bf87e7ef2": [
+  "cd3c8cacde5d786af0aac16cdd78b06b3a815051": [
     "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
   ],
   "cd4661916f4c2a3196ef974d4d6c2c9736cb55a5": [
