@@ -3656,6 +3656,9 @@
   "dd7319b254dcaaa5da7a7055bbde299f5e7e62a3": [
     "windows-apps-src\\gaming\\how-to-suspend-an-app-directx-and-cpp.md"
   ],
+  "e68f0d559e6dbd7791104310a985ca99e0131c99": [
+    "windows-apps-src\\gaming\\implementing-depth-buffers-for-shadow-mapping.md"
+  ],
   "00e823b667a4622f6fa2dd213c3277bec9d616a2": [
     "windows-apps-src\\gaming\\implementing-depth-buffers-for-shadow-mapping.md"
   ],
@@ -3670,6 +3673,9 @@
   ],
   "a323c299d588cdcff7b83d538a705d64207c96b2": [
     "windows-apps-src\\gaming\\implementing-depth-buffers-for-shadow-mapping.md"
+  ],
+  "934da17db46ae84463dda9704adb4a6f46cc203b": [
+    "windows-apps-src\\gaming\\index.md"
   ],
   "c3a24c15f61204f3ecbc0587cf54e1da69ee712c": [
     "windows-apps-src\\gaming\\index.md"
@@ -3821,6 +3827,9 @@
   "dff8bf0f8723055e955cd32042f14f58037494b5": [
     "windows-apps-src\\gaming\\opengl-es-2-0-to-directx-11-1-reference.md"
   ],
+  "cf83b02a6388f71f94641e7c24e011a540790fa0": [
+    "windows-apps-src\\gaming\\optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md"
+  ],
   "c7cb4b72ed035e77a2054daffa9f105449f3b501": [
     "windows-apps-src\\gaming\\optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md"
   ],
@@ -3896,6 +3905,9 @@
   "aab0c3e9f3816e0657dfb6fec4917d62f2be5280": [
     "windows-apps-src\\gaming\\port-from-opengl-es-2-0-to-directx-11-1.md"
   ],
+  "ea89fe1e87099f96b78e06664bd2a252d18ddc26": [
+    "windows-apps-src\\gaming\\porting-considerations.md"
+  ],
   "49b265ba3736af09f5dbb2d5812011385cdfc77d": [
     "windows-apps-src\\gaming\\porting-considerations.md"
   ],
@@ -3925,6 +3937,9 @@
   ],
   "3cfc483052d12b89cf2707e7b9ebd666e5c49e3d": [
     "windows-apps-src\\gaming\\porting-guides.md"
+  ],
+  "d25495b282dce38c3dcad0ec996c185e64165b13": [
+    "windows-apps-src\\gaming\\porting-uniforms-and-attributes.md"
   ],
   "43b568b046246931e24ded5f40f56d3f24d1b05a": [
     "windows-apps-src\\gaming\\porting-uniforms-and-attributes.md"
@@ -4268,6 +4283,9 @@
   "c0c935af257fe52e22cadaffb6e008ddbf9629a8": [
     "windows-apps-src\\gaming\\tutorial--assembling-the-rendering-pipeline.md"
   ],
+  "9c19c2ca89b2d38929ade8596c10beb3c3a16104": [
+    "windows-apps-src\\gaming\\tutorial--building-the-games-metro-style-app-framework.md"
+  ],
   "82a44a3499297b3988815ad10091cd351a194cbd": [
     "windows-apps-src\\gaming\\tutorial--building-the-games-metro-style-app-framework.md"
   ],
@@ -4285,6 +4303,9 @@
   ],
   "9dea19c87c4049c73a938b1cd5576644f7b0f8b9": [
     "windows-apps-src\\gaming\\tutorial--building-the-games-metro-style-app-framework.md"
+  ],
+  "8518a350f0c999d6110305c51f46fe12e5b590f0": [
+    "windows-apps-src\\gaming\\tutorial--create-your-first-metro-style-directx-game.md"
   ],
   "c447818009cf4720b96976a4540689993e450952": [
     "windows-apps-src\\gaming\\tutorial--create-your-first-metro-style-directx-game.md"
@@ -4411,6 +4432,9 @@
   ],
   "3a8ea00144b707bc4bf01a26a91ca7f7567b31de": [
     "windows-apps-src\\gaming\\walkthrough-sample-ports-from-opengl-es-2-0.md"
+  ],
+  "ee5d1f0af65debe309c64fc334a1c2bd5dc15f98": [
+    "windows-apps-src\\gaming\\walkthrough--simple-port-from-direct3d-9-to-11-1.md"
   ],
   "1e3f9b7fbfaa110661ebb111c60d0089757dc885": [
     "windows-apps-src\\gaming\\walkthrough--simple-port-from-direct3d-9-to-11-1.md"
@@ -10399,6 +10423,9 @@
   ],
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "7a2a87850fbcc40faa85a9254c00ba9ec8fdbfa4": [
+    "windows-apps-src\\TOC.md"
   ],
   "6217f897718141805a96e750dfd3bf5ac164c6ad": [
     "windows-apps-src\\TOC.md"
@@ -17794,5 +17821,35 @@
   ],
   "a83f7b37ee84d87bae0285a987628d14cfab1d69": [
     "windows-apps-src\\get-started\\get-started-tutorial-game-js2d.md"
+  ],
+  "0fe07d43c5da86d323136f3305166bd51d963756": [
+    "windows-apps-src\\gaming\\directx-add-features.md"
+  ],
+  "2633bba5425ca78c3f109a4571fd8c0529f17b56": [
+    "windows-apps-src\\gaming\\directx-fundamentals.md"
+  ],
+  "d0494015e4cd2811cc0f21ccc983f621575f1de4": [
+    "windows-apps-src\\gaming\\directx-game-input.md"
+  ],
+  "6f725b6d7181973ae5db4532f4bd2b755472d5dd": [
+    "windows-apps-src\\gaming\\directx-getting-started.md"
+  ],
+  "9fb2c8c92cdf5a498f3e3db4d9250c9dcdfe204f": [
+    "windows-apps-src\\gaming\\directx-optimization-and-advanced-topics.md"
+  ],
+  "742501139b8ffb6a728b2e44b4dd0ac8b319e566": [
+    "windows-apps-src\\gaming\\directx-programming.md"
+  ],
+  "3bd5f6ced66ba52aef4a0aa0580f348e3faa0a09": [
+    "windows-apps-src\\gaming\\directx-samples.md"
+  ],
+  "0ae1a0c0f5c7b3e1a1b4a688e192cb3b3d7e8912": [
+    "windows-apps-src\\gaming\\game-development-videos.md"
+  ],
+  "1191a188e2f06c83f3807c2bbf880950b79a6352": [
+    "windows-apps-src\\gaming\\planning.md"
+  ],
+  "565640b1c5a3742c5471cd2282403be0ef592f69": [
+    "windows-apps-src\\gaming\\uwp-programming.md"
   ]
 }
