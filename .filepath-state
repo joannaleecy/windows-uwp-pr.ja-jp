@@ -3518,6 +3518,9 @@
   "1e2039743ba45d577c08c0a6d9c17c7f923b2d86": [
     "windows-apps-src\\gaming\\draw-to-the-screen.md"
   ],
+  "1752900a206d4b74c6d677b29c97a60ad8a95238": [
+    "windows-apps-src\\gaming\\e2e.md"
+  ],
   "d85d018bb35c53097df701a4729346cfb4fd05a2": [
     "windows-apps-src\\gaming\\e2e.md"
   ],
@@ -16702,6 +16705,9 @@
   ],
   "e2b0680e62014526f684e7c1f7fd7da83a14f5d3": [
     "windows-apps-src\\monetize\\app-metadata-api-for-advertising-networks.md"
+  ],
+  "7130507f85e1a7df3e76510ef2fb9fe75a544ec7": [
+    "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
   ],
   "43840e17fbb31265e1c9964737d044721be719d0": [
     "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"

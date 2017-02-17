@@ -33189,6 +33189,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b26d725ce50a1bd8e63377dc8ed6876007811905.4af0d1791bad8a9c7937a881edd1359fbb621233.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\e2e.md.bf696152986c304a5d7e85dcc79b18d2923154be.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\e2e.md",
+      "XliffHash": "bf696152986c304a5d7e85dcc79b18d2923154be",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1752900a206d4b74c6d677b29c97a60ad8a95238.374f1529590ee505b1039e81fef4b5ea8afc0bef.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md.e37c5d5978e7d1cf0264a77988453b8a413a3aeb.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md",
+      "XliffHash": "e37c5d5978e7d1cf0264a77988453b8a413a3aeb",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7130507f85e1a7df3e76510ef2fb9fe75a544ec7.2e7439a21e74f372c1b8e512e62776f4d064939a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
