@@ -16703,6 +16703,9 @@
   "e2b0680e62014526f684e7c1f7fd7da83a14f5d3": [
     "windows-apps-src\\monetize\\app-metadata-api-for-advertising-networks.md"
   ],
+  "43840e17fbb31265e1c9964737d044721be719d0": [
+    "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
+  ],
   "67c993796e7221e736ab9bda0c95310bf87e7ef2": [
     "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
   ],
@@ -17203,6 +17206,9 @@
   ],
   "28906c98d2826f5312e01713e2621159c6b24923": [
     "windows-apps-src\\publish\\create-customer-segments.md"
+  ],
+  "b26d725ce50a1bd8e63377dc8ed6876007811905": [
+    "windows-apps-src\\publish\\send-push-notifications-to-your-apps-customers.md"
   ],
   "471b2c04fe7e0bae82ab53ca7cd83be747ee8364": [
     "windows-apps-src\\publish\\send-push-notifications-to-your-apps-customers.md"
