@@ -33209,6 +33209,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7130507f85e1a7df3e76510ef2fb9fe75a544ec7.2e7439a21e74f372c1b8e512e62776f4d064939a.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\update-your-app-to-the-latest-advertising-libraries.md.188534c5b63e0a621db3b335531b6d454c2d9268.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\update-your-app-to-the-latest-advertising-libraries.md",
+      "XliffHash": "188534c5b63e0a621db3b335531b6d454c2d9268",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\25435ebf314327db7288ac853819c90ebba35669.7331024724ce4d9ac4a5c31032d734f49e0020bf.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
