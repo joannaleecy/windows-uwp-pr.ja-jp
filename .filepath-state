@@ -5114,6 +5114,9 @@
   "179f70a1c421d3d5a73813a9b9675353a8d5f8c2": [
     "windows-apps-src\\in-app-help\\instructional-ui.md"
   ],
+  "84a4aebb5c41e713c0038cd203b320ff607fa25a": [
+    "windows-apps-src\\index.md"
+  ],
   "2b4bae1606f9b51e2d4901218ebd2d616e4c5edc": [
     "windows-apps-src\\index.md"
   ],
@@ -10433,6 +10436,9 @@
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "aa13a98abd6ea9ec0a863de78cc7efba051cab3c": [
+    "windows-apps-src\\TOC.md"
+  ],
   "7a2a87850fbcc40faa85a9254c00ba9ec8fdbfa4": [
     "windows-apps-src\\TOC.md"
   ],
@@ -10684,6 +10690,9 @@
   ],
   "77858a864929c99425f9c008e8f6fb8dfbad0b44": [
     "windows-apps-src\\xaml-platform\\custom-attached-properties.md"
+  ],
+  "7c06b3e0d5bea4048b1a2c545336352c409a711b": [
+    "windows-apps-src\\xaml-platform\\custom-dependency-properties.md"
   ],
   "e00dc35c97c9e1c2eea0183d90bcc722322a7fce": [
     "windows-apps-src\\xaml-platform\\custom-dependency-properties.md"
@@ -17881,5 +17890,17 @@
   ],
   "565640b1c5a3742c5471cd2282403be0ef592f69": [
     "windows-apps-src\\gaming\\uwp-programming.md"
+  ],
+  "79465b67c3baaa3a837ac311d8cd1d1a10ab33b2": [
+    "windows-apps-src\\devices-sensors\\barcode-scanner.md"
+  ],
+  "e74c03ed2e3ff0f2695cd15f486e653f0c5eda53": [
+    "windows-apps-src\\devices-sensors\\cash-drawer.md"
+  ],
+  "9ebef819004e8c4f861bf1474ce3f873c471fef8": [
+    "windows-apps-src\\devices-sensors\\magnetic-stripe-reader.md"
+  ],
+  "815d7400d14c6d70f1cf81d83ef7d059a2c85c66": [
+    "windows-apps-src\\devices-sensors\\pos-printer.md"
   ]
 }

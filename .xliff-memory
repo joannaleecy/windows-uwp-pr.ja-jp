@@ -10036,7 +10036,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e00dc35c97c9e1c2eea0183d90bcc722322a7fce.fd6b4e31b0609d0db19b4949b86e3a3abaad0841.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7c06b3e0d5bea4048b1a2c545336352c409a711b.824910aafe4e973335ec7182f2dc4ccb3f1c126d.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -33237,6 +33237,66 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6f834c91cd0c71f6d7687d9f69224ed747e45a6d.33fcd11f086d3f271c4e31a8c080b6583dee5784.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\devices-sensors\\barcode-scanner.md.877c700834e23cd7cb67df72d6f066ef07cbf247.HT": {
+      "SourceFilename": "windows-apps-src\\devices-sensors\\barcode-scanner.md",
+      "XliffHash": "877c700834e23cd7cb67df72d6f066ef07cbf247",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\79465b67c3baaa3a837ac311d8cd1d1a10ab33b2.468a92db71a3c1abbffd691c199d22a9efc2a5e5.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\devices-sensors\\magnetic-stripe-reader.md.f76679355d0da728798f5e4c40f6c9e908269990.HT": {
+      "SourceFilename": "windows-apps-src\\devices-sensors\\magnetic-stripe-reader.md",
+      "XliffHash": "f76679355d0da728798f5e4c40f6c9e908269990",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9ebef819004e8c4f861bf1474ce3f873c471fef8.1a0f2c91a8886e12b6ee09c07f2f944213f06413.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\devices-sensors\\pos-printer.md.0a344f22933374d49e3d7c85c85faecae9553269.HT": {
+      "SourceFilename": "windows-apps-src\\devices-sensors\\pos-printer.md",
+      "XliffHash": "0a344f22933374d49e3d7c85c85faecae9553269",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\815d7400d14c6d70f1cf81d83ef7d059a2c85c66.5125aee4f73bbc9cf677c76e50abccc81a0713d3.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\TOC.md.b8cd4963a6eaa7fa11cb6091990f7019596d09db.HT": {
+      "SourceFilename": "windows-apps-src\\TOC.md",
+      "XliffHash": "b8cd4963a6eaa7fa11cb6091990f7019596d09db",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\aa13a98abd6ea9ec0a863de78cc7efba051cab3c.7d6904a41ab151fb5063a4a921fd309d46e60ce9.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\devices-sensors\\cash-drawer.md.ca4e7a22454b989114fc63a9564093157b7e2a80.HT": {
+      "SourceFilename": "windows-apps-src\\devices-sensors\\cash-drawer.md",
+      "XliffHash": "ca4e7a22454b989114fc63a9564093157b7e2a80",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e74c03ed2e3ff0f2695cd15f486e653f0c5eda53.34d02400aa544b5eef7d6a9a0747c56bd3041db7.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\index.md.998f8284c56e3561a8092393c161e2cd1839c35b.HT": {
+      "SourceFilename": "windows-apps-src\\index.md",
+      "XliffHash": "998f8284c56e3561a8092393c161e2cd1839c35b",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\84a4aebb5c41e713c0038cd203b320ff607fa25a.bf3fe3fcfd3edfdfbe0f94d9aee8631f2833371c.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }
