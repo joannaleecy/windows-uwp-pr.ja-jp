@@ -3,7 +3,7 @@
     "content":
       [
         {
-          "files": ["**/**.md"],
+          "files": ["**/**.md", "**/**.yml"],
           "exclude": ["**/obj/**", "**/.filepath-state", "**/.translation-state", "**/.localization-handback-report.md", "**/.localization-handoff-report.md", "**/.localization-report.md"]
         }
       ],
@@ -15,7 +15,11 @@
     ],
     "globalMetadata": {
         "ROBOTS": "INDEX, FOLLOW",
-        "Search.Product": "eADQiWindows 10XVcnh"
+        "Search.Product": "eADQiWindows 10XVcnh",
+	  "uhfHeaderId": "MSDocsHeader-WinUWP",
+        "titleSuffix": "UWP app developer",
+	  "breadcrumb_path":  "/windows/uwp/breadcrumbs/toc.json",
+	  "extendBreadcrumb": true
     },
     "externalReference": [
     ],
