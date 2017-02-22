@@ -9347,6 +9347,9 @@
   "3859918d94ad7ffcf1c331ca5a0ca6540387886f": [
     "windows-apps-src\\publish\\managing-your-profile.md"
   ],
+  "87620783d5301b2f4eed140c2220d9c24eb30fdb": [
+    "windows-apps-src\\publish\\mobile-operator-billing.md"
+  ],
   "cbf519d5755adb13f6a41845b4771ac459d880cc": [
     "windows-apps-src\\publish\\mobile-operator-billing.md"
   ],
@@ -17827,6 +17830,9 @@
   ],
   "1fac83e3cf6b3f10c2a6ff629de56b62d1391625": [
     "windows-apps-src\\publish\\installs-report.md"
+  ],
+  "b98a082f9d1da5102d5f6ecc511850183d63e251": [
+    "hub\\index.md"
   ],
   "e7d3c58041ed7f515c788296b510ac1b0b5344ad": [
     "hub\\index.md"

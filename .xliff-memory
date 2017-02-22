@@ -27466,7 +27466,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e7d3c58041ed7f515c788296b510ac1b0b5344ad.a163f914824422ef31af3488d2faaf229413bcaa.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b98a082f9d1da5102d5f6ecc511850183d63e251.5d59ad1c0cd32a2d238efb84d755b9309cb33d44.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -33297,6 +33297,16 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\84a4aebb5c41e713c0038cd203b320ff607fa25a.bf3fe3fcfd3edfdfbe0f94d9aee8631f2833371c.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\publish\\mobile-operator-billing.md.81b3f5fea0b515d36bd244aa6c8e7d165575c77a.HT": {
+      "SourceFilename": "windows-apps-src\\publish\\mobile-operator-billing.md",
+      "XliffHash": "81b3f5fea0b515d36bd244aa6c8e7d165575c77a",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\87620783d5301b2f4eed140c2220d9c24eb30fdb.245f77295706ec85827852ea66a85bbbeb1e08cc.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }
