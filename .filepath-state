@@ -8549,6 +8549,9 @@
   "273017f4607c25ee56d7400debe59e94acb36d4f": [
     "windows-apps-src\\porting\\wpsl-to-uwp-porting-to-a-uwp-project.md"
   ],
+  "83e63d76e0fc1c1b0e8465ad5b5656779ac43f09": [
+    "windows-apps-src\\porting\\wpsl-to-uwp-porting-xaml-and-ui.md"
+  ],
   "1ec72aec1e94ff92ef30fcc206456c7614107c98": [
     "windows-apps-src\\porting\\wpsl-to-uwp-porting-xaml-and-ui.md"
   ],
