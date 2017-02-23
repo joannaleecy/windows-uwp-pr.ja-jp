@@ -1031,6 +1031,9 @@
   "6b41c8b1888b61c82aa3d54244151b08d963658d": [
     "windows-apps-src\\controls-and-patterns\\auto-suggest-box.md"
   ],
+  "17657232b4671719407363688dbdb58917d9cf1c": [
+    "windows-apps-src\\controls-and-patterns\\buttons.md"
+  ],
   "935234db5fb1f234eab6f7e922a3ffab5785143d": [
     "windows-apps-src\\controls-and-patterns\\buttons.md"
   ],
@@ -1141,6 +1144,9 @@
   ],
   "4c6ee696dff8d8e0ddc3a9b62d0309e999762dc6": [
     "windows-apps-src\\controls-and-patterns\\control-templates.md"
+  ],
+  "34c3aab3e9a04eb535014182c0dbc8c140670b89": [
+    "windows-apps-src\\controls-and-patterns\\custom-transport-controls.md"
   ],
   "39d2f22810414cd8f6ca6b73e18883ebcb98454d": [
     "windows-apps-src\\controls-and-patterns\\custom-transport-controls.md"
@@ -1315,6 +1321,9 @@
   ],
   "ef57c6d1a00797e2a68291475b6a38778e5d73ad": [
     "windows-apps-src\\controls-and-patterns\\master-details.md"
+  ],
+  "51d8a53de21623516d6d582834cf9d854f2a5403": [
+    "windows-apps-src\\controls-and-patterns\\media-playback.md"
   ],
   "04727af979bca12316516b5f267532b93dc3c9b4": [
     "windows-apps-src\\controls-and-patterns\\media-playback.md"
@@ -10703,6 +10712,9 @@
   "77858a864929c99425f9c008e8f6fb8dfbad0b44": [
     "windows-apps-src\\xaml-platform\\custom-attached-properties.md"
   ],
+  "b26ee59be9c309326eeb93546d3702bc161513f3": [
+    "windows-apps-src\\xaml-platform\\custom-dependency-properties.md"
+  ],
   "7c06b3e0d5bea4048b1a2c545336352c409a711b": [
     "windows-apps-src\\xaml-platform\\custom-dependency-properties.md"
   ],
@@ -10735,6 +10747,9 @@
   ],
   "a0a4edc8d59219aea3a47a18ea991e4267782026": [
     "windows-apps-src\\xaml-platform\\customresource-markup-extension.md"
+  ],
+  "e46a092298ce183212384155492ea73a79ebe86f": [
+    "windows-apps-src\\xaml-platform\\dependency-properties-overview.md"
   ],
   "bde6fb616fe5fa237158647fb79fad4d2c5c7648": [
     "windows-apps-src\\xaml-platform\\dependency-properties-overview.md"
@@ -10795,6 +10810,9 @@
   ],
   "832e757c5bbdc10c2f0f10db127d3f21932313b3": [
     "windows-apps-src\\xaml-platform\\move-draw-commands-syntax.md"
+  ],
+  "3209028f151608c83e69d6750e978132a6c8b83c": [
+    "windows-apps-src\\xaml-platform\\property-path-syntax.md"
   ],
   "7bf88dcbdced6e99de543fcac7bbd5a09a5299d2": [
     "windows-apps-src\\xaml-platform\\property-path-syntax.md"
@@ -11005,6 +11023,9 @@
   ],
   "1d04755cc9a2b7689d5373772803b6697227b18a": [
     "windows-apps-src\\xaml-platform\\x-class-attribute.md"
+  ],
+  "0fd1e58549ba19397948864fe5fe0b31fcaf01d7": [
+    "windows-apps-src\\xaml-platform\\x-deferloadstrategy-attribute.md"
   ],
   "cd4dc888d9a608b0c2dfc861accfe637384ab34e": [
     "windows-apps-src\\xaml-platform\\x-deferloadstrategy-attribute.md"

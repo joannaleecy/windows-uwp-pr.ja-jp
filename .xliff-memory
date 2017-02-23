@@ -33369,6 +33369,76 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\83e63d76e0fc1c1b0e8465ad5b5656779ac43f09.bf423972dfe9e1f7d53f219334a5283a3b8409ce.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\xaml-platform\\property-path-syntax.md.efb97802f713314d9a6726e9c19d6f6e141f0a6f.HT": {
+      "SourceFilename": "windows-apps-src\\xaml-platform\\property-path-syntax.md",
+      "XliffHash": "efb97802f713314d9a6726e9c19d6f6e141f0a6f",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\3209028f151608c83e69d6750e978132a6c8b83c.d8f956d87c4facbe8b5368f5ed618d5bd490ef10.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\xaml-platform\\x-deferloadstrategy-attribute.md.3fb706daa92a09ed89b40144c3bdfdf7cd3d9e92.HT": {
+      "SourceFilename": "windows-apps-src\\xaml-platform\\x-deferloadstrategy-attribute.md",
+      "XliffHash": "3fb706daa92a09ed89b40144c3bdfdf7cd3d9e92",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0fd1e58549ba19397948864fe5fe0b31fcaf01d7.7667c0af21a1d1c5a9c1ec4312259ab02035fae7.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\buttons.md.a48b86490f6b9a4b90a1e3348d55e01d94afa1aa.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\buttons.md",
+      "XliffHash": "a48b86490f6b9a4b90a1e3348d55e01d94afa1aa",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\17657232b4671719407363688dbdb58917d9cf1c.6dac1d746b398d9d06c8694a21dd60578129c058.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\xaml-platform\\custom-dependency-properties.md.1ff77ad9f6f6740a3aa01775527deb0876251233.HT": {
+      "SourceFilename": "windows-apps-src\\xaml-platform\\custom-dependency-properties.md",
+      "XliffHash": "1ff77ad9f6f6740a3aa01775527deb0876251233",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b26ee59be9c309326eeb93546d3702bc161513f3.ec45dcd5d1918caea9d9d99e06c1cf794311bc84.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\custom-transport-controls.md.9e68b47f05e1021e54eaec56a2cb80c829a2e9b0.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\custom-transport-controls.md",
+      "XliffHash": "9e68b47f05e1021e54eaec56a2cb80c829a2e9b0",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\34c3aab3e9a04eb535014182c0dbc8c140670b89.7e38f8a152e307e55502f779aebd8825a473dd9a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\media-playback.md.d08d5f4e02172482ae3d1aa7b65f4c66c562b9df.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\media-playback.md",
+      "XliffHash": "d08d5f4e02172482ae3d1aa7b65f4c66c562b9df",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\51d8a53de21623516d6d582834cf9d854f2a5403.fa5edbb990b156344b2e3aeb2a074fb9920ab905.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\xaml-platform\\dependency-properties-overview.md.e709ca2576927c70c578bb0386e330d84e956814.HT": {
+      "SourceFilename": "windows-apps-src\\xaml-platform\\dependency-properties-overview.md",
+      "XliffHash": "e709ca2576927c70c578bb0386e330d84e956814",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e46a092298ce183212384155492ea73a79ebe86f.d3cc503e1df1d8bd9d0f29d5deb3792f56064768.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
