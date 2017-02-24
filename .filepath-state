@@ -4613,6 +4613,9 @@
   "729c71fbe0db202bd4f5ce15bea87caa973adf80": [
     "windows-apps-src\\get-started\\get-set-up.md"
   ],
+  "364889ca15bdae717557187c7b05c23d976b83f7": [
+    "windows-apps-src\\get-started\\learn-more.md"
+  ],
   "6c02d6b3059401dc8b0eefd636eb9f76244ddace": [
     "windows-apps-src\\get-started\\learn-more.md"
   ],
@@ -8065,6 +8068,9 @@
   ],
   "312c8fb0bbbb6231da91e7d477b800a797160e96": [
     "windows-apps-src\\packaging\\packaging-uwp-apps.md"
+  ],
+  "ce32bd7ebaca20827a637c456b2dbe82811817cb": [
+    "windows-apps-src\\porting\\android-ios-uwp-map.md"
   ],
   "912186f90fcfea38f22dea30c954a15198701077": [
     "windows-apps-src\\porting\\android-ios-uwp-map.md"

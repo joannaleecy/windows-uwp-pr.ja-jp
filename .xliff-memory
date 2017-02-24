@@ -31716,7 +31716,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6c02d6b3059401dc8b0eefd636eb9f76244ddace.6c9c36a0ae557ca7eb175aa602156b20577e81d7.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\364889ca15bdae717557187c7b05c23d976b83f7.509989e049474043a1844d977051dcab566a6492.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -33457,6 +33457,16 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\3ebc7e4b3055c43f52d1e7b5125ce942404bec66.a8737f8620c749b1f45845c4315b389e6db9a2b3.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\android-ios-uwp-map.md.b0cb03465d8d105b5087e2bf04bf4a6e1da99f35.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\android-ios-uwp-map.md",
+      "XliffHash": "b0cb03465d8d105b5087e2bf04bf4a6e1da99f35",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ce32bd7ebaca20827a637c456b2dbe82811817cb.6fa3f4e890afc184715a85a364276d4ddb93a9ba.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }
