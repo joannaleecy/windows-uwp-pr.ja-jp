@@ -2090,6 +2090,9 @@
   "6c697782683bca6671c01aa0941a78bc66fb052a": [
     "windows-apps-src\\debug-test-perf\\device-portal.md"
   ],
+  "347d658f346ab14c60a4468c4a9935e555c2e016": [
+    "windows-apps-src\\debug-test-perf\\device-portal-api-core.md"
+  ],
   "ce82550dddc1d496838d3e1b97dad6aed28d8861": [
     "windows-apps-src\\debug-test-perf\\device-portal-api-core.md"
   ],
@@ -4573,6 +4576,9 @@
   ],
   "e928b4bb116ad98ffe7c225ac1ef2306e56a13ea": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
+  ],
+  "7d4ccae133ad6bb9d8621368d3623e10eb21c103": [
+    "windows-apps-src\\get-started\\enable-your-device-for-development.md"
   ],
   "dc1bf476c93ef9843c20244f24a199c7888eb4a5": [
     "windows-apps-src\\get-started\\enable-your-device-for-development.md"
@@ -12787,6 +12793,9 @@
   ],
   "2afc1250aa9d7a6cf6c9c8cb45dd2379b9d36984": [
     "windows-apps-src\\devices-sensors\\bluetooth-dev-faq.md"
+  ],
+  "1d4c0c83c2b1ad98ea2e8ae5bcb50f0a1390657e": [
+    "windows-apps-src\\enterprise\\wip-dev-guide.md"
   ],
   "7d555d4c8b9f749f1a924166176090efc291d4c2": [
     "windows-apps-src\\enterprise\\wip-dev-guide.md"
