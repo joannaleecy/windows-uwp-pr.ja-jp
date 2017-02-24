@@ -33489,6 +33489,36 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1d4c0c83c2b1ad98ea2e8ae5bcb50f0a1390657e.964a9fe0e00522da8d97d7fa6df704b677becc65.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\launch-resume\\access-sensors-and-devices-from-a-background-task.md.d573f94b1d3234e4d8ad772e12bad47c51558b21.HT": {
+      "SourceFilename": "windows-apps-src\\launch-resume\\access-sensors-and-devices-from-a-background-task.md",
+      "XliffHash": "d573f94b1d3234e4d8ad772e12bad47c51558b21",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9acef8f03bcdd4a9c4d40133ab2507853d4d0145.852aaeaa9e68a109e23fc3a779a26244f914b7a8.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\enterprise\\wip-dev-guide.md.5307407e9f8665dbdf93b707ae79fabe088b44eb.HT": {
+      "SourceFilename": "windows-apps-src\\enterprise\\wip-dev-guide.md",
+      "XliffHash": "5307407e9f8665dbdf93b707ae79fabe088b44eb",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\177ae021672024c2f2efea757382e86df48c16c3.6336747760897e9947b9b3a234c256f158511eb7.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\launch-resume\\debug-a-background-task.md.95a8fe9c0e126cb4b2bcbfc50321affce34620cf.HT": {
+      "SourceFilename": "windows-apps-src\\launch-resume\\debug-a-background-task.md",
+      "XliffHash": "95a8fe9c0e126cb4b2bcbfc50321affce34620cf",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\46b60f180642e509eca76a68d78b1099008746eb.bde108bd45533560d91506623ad3007453925d4b.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
