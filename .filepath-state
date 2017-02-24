@@ -2615,6 +2615,9 @@
   "b36dd4d77821a65b1f435d755f7bb415b2e386ee": [
     "windows-apps-src\\devices-sensors\\enable-device-capabilities.md"
   ],
+  "d96d01216a37c4e8dbcd0fcd0eb83ccb4859b288": [
+    "windows-apps-src\\devices-sensors\\enable-usermode-access.md"
+  ],
   "555355a16ca78f5ce9d6a3ccade082fd96f7fa1b": [
     "windows-apps-src\\devices-sensors\\enable-usermode-access.md"
   ],
@@ -10453,6 +10456,9 @@
   ],
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "3ebc7e4b3055c43f52d1e7b5125ce942404bec66": [
+    "windows-apps-src\\TOC.md"
   ],
   "012ccd40898cd65cad0a0752c17977e3635095d9": [
     "windows-apps-src\\TOC.md"
