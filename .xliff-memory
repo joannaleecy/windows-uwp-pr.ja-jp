@@ -33519,6 +33519,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\46b60f180642e509eca76a68d78b1099008746eb.bde108bd45533560d91506623ad3007453925d4b.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\enterprise\\wip-dev-guide.md.51830c6f45b5a36636a394c28736985b85345f94.HT": {
+      "SourceFilename": "windows-apps-src\\enterprise\\wip-dev-guide.md",
+      "XliffHash": "51830c6f45b5a36636a394c28736985b85345f94",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ea7a40abda7acef5e2c649ff5b0922ef0801ea9f.b56e10a38bdd77f1f67702408f957014bdc6b72e.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
