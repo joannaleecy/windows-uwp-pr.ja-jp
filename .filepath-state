@@ -950,18 +950,6 @@
   "5a375851f5b9be63c9780b806dd45721b0f8291f": [
     "windows-apps-src\\contacts-and-calendar\\selecting-contacts.md"
   ],
-  "5e53332ae3596341e4322bc16882cf678672083d": [
-    "windows-apps-src\\contacts-and-calendar\\selecting-contacts.md"
-  ],
-  "d989d2331379667efce5939eb5ca0f48ba69724f": [
-    "windows-apps-src\\contacts-and-calendar\\selecting-contacts.md"
-  ],
-  "c1b5b4c64b8e50b016a6f5aa5d495aaf31d16ade": [
-    "windows-apps-src\\contacts-and-calendar\\selecting-contacts.md"
-  ],
-  "7181a51a91997124b2c5c8ba184261de63de9caf": [
-    "windows-apps-src\\contacts-and-calendar\\selecting-contacts.md"
-  ],
   "3d2edd2e26633abacce07a2a6fe9f8c9d14b0afe": [
     "windows-apps-src\\contacts-and-calendar\\sending-an-sms-message.md"
   ],
@@ -5147,18 +5135,6 @@
   "555e340d55c9a2fec6204ffd4759e17d68d8a746": [
     "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
   ],
-  "2b70356f5d28f9884292d816e71838ec4591dad7": [
-    "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
-  ],
-  "3463c6f10b2fdcd935116d5f7a02d3d70b501b73": [
-    "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
-  ],
-  "7270f8f6834de6906faed14ceed53adc39ea8f1b": [
-    "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
-  ],
-  "c832c3c3626ac5f75eaac4317b6779c410693742": [
-    "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
-  ],
   "a5819dcea72c8956e1ecdc6f9844499e98aa2d1c": [
     "windows-apps-src\\input-and-devices\\cortana-design-guidelines.md"
   ],
@@ -5177,31 +5153,7 @@
   "9442787d187bab77adc0b24d1f270d7ceffc9092": [
     "windows-apps-src\\input-and-devices\\cortana-interactions.md"
   ],
-  "b3adb444389716274f32d1f62af026b625624ea7": [
-    "windows-apps-src\\input-and-devices\\cortana-interactions.md"
-  ],
-  "0026be1527cd46abba8a40ada8bd41c2f8b70380": [
-    "windows-apps-src\\input-and-devices\\cortana-interactions.md"
-  ],
-  "1667ebb4213d3303f9afee89d4bd3ff751672059": [
-    "windows-apps-src\\input-and-devices\\cortana-interactions.md"
-  ],
-  "8dcf45951723c0bf2302b59ef475f3b0fa973d5e": [
-    "windows-apps-src\\input-and-devices\\cortana-interactions.md"
-  ],
   "e1138c23985325f7b22470336e723ef745949cd6": [
-    "windows-apps-src\\input-and-devices\\custom-text-input.md"
-  ],
-  "6c9afe44006f173f7f261e1013024b6412d68703": [
-    "windows-apps-src\\input-and-devices\\custom-text-input.md"
-  ],
-  "4ed9fb99803cdf17b801770dadcaacc097586d88": [
-    "windows-apps-src\\input-and-devices\\custom-text-input.md"
-  ],
-  "b5a7ab1298ccd4c1e8bbf4a456677a7d16fe477a": [
-    "windows-apps-src\\input-and-devices\\custom-text-input.md"
-  ],
-  "afcc64e6b000df1a7380b4cc22101ebb1826d7cd": [
     "windows-apps-src\\input-and-devices\\custom-text-input.md"
   ],
   "53e12e2f3ff6e87af3de2dc6f80370376f18f9e7": [
@@ -5217,18 +5169,6 @@
     "windows-apps-src\\input-and-devices\\deep-link-into-your-app-from-cortana.md"
   ],
   "f8af866b36cbc8748a878814ec9d46eec340dc5b": [
-    "windows-apps-src\\input-and-devices\\define-custom-recognition-constraints.md"
-  ],
-  "52e38acbde0fe1b7a53c210e4988ab34c8aacd50": [
-    "windows-apps-src\\input-and-devices\\define-custom-recognition-constraints.md"
-  ],
-  "ec040aa0a420ae655e6ad0f4e2c337e2a7ad7efd": [
-    "windows-apps-src\\input-and-devices\\define-custom-recognition-constraints.md"
-  ],
-  "248dc2bf8cec42d60fad155cfde0bdee9ec7c064": [
-    "windows-apps-src\\input-and-devices\\define-custom-recognition-constraints.md"
-  ],
-  "c75ee725ce4bc9fc33d9ea13e4ab92ed60bfb04d": [
     "windows-apps-src\\input-and-devices\\define-custom-recognition-constraints.md"
   ],
   "572073c2c577f3f6833b9cbee303875e378d6030": [
@@ -5249,18 +5189,6 @@
   "66afc2412323817f15594bb25e8f86475fc6f73f": [
     "windows-apps-src\\input-and-devices\\device-primer.md"
   ],
-  "058858be62a2d6bf3afc0c9461090d0211b39ebd": [
-    "windows-apps-src\\input-and-devices\\device-primer.md"
-  ],
-  "89eb4e0e9ea6b405851d176ab8acaa5462935c27": [
-    "windows-apps-src\\input-and-devices\\device-primer.md"
-  ],
-  "df478ee390deed3b4a069230988c2baf964e2996": [
-    "windows-apps-src\\input-and-devices\\device-primer.md"
-  ],
-  "ea19592ea98eb7d9a1b47c1a8cf8f1990ca33797": [
-    "windows-apps-src\\input-and-devices\\device-primer.md"
-  ],
   "cb679c01d1d494da435bad0eac6aa0c7d7e4d62f": [
     "windows-apps-src\\input-and-devices\\dynamically-modify-voice-command-definition--vcd--phrase-lists.md"
   ],
@@ -5274,18 +5202,6 @@
     "windows-apps-src\\input-and-devices\\dynamically-modify-voice-command-definition--vcd--phrase-lists.md"
   ],
   "0bbde7caec4ff52898e9b76c3104b9aa484dea27": [
-    "windows-apps-src\\input-and-devices\\enable-continuous-dictation.md"
-  ],
-  "075748ffdb557fd32abb58d0497b78e8f57646f6": [
-    "windows-apps-src\\input-and-devices\\enable-continuous-dictation.md"
-  ],
-  "12dea6df8c3afa0c74ad41a959f0fd88f393821c": [
-    "windows-apps-src\\input-and-devices\\enable-continuous-dictation.md"
-  ],
-  "aa223ff5b00e7ecba1a8566b8cf7488a5eadf508": [
-    "windows-apps-src\\input-and-devices\\enable-continuous-dictation.md"
-  ],
-  "f4353807c83cbf91c385b31acfd481abb6ea5aed": [
     "windows-apps-src\\input-and-devices\\enable-continuous-dictation.md"
   ],
   "1c58ef4e48a91a57643e39f7fd87a700904e77dd": [
@@ -5369,64 +5285,16 @@
   "70dbf24b53a36f7ee55ce387f713ce2abc79a87c": [
     "windows-apps-src\\input-and-devices\\guidelines-for-textselection.md"
   ],
-  "40c27746a8364ca9f22288b9bfc128dd2b317815": [
-    "windows-apps-src\\input-and-devices\\guidelines-for-textselection.md"
-  ],
-  "39b0da6114f4f21dadb798f3941b421fdc15fa3c": [
-    "windows-apps-src\\input-and-devices\\guidelines-for-textselection.md"
-  ],
-  "89bc4add7b6361e5646a12d1ccd799ad55e097eb": [
-    "windows-apps-src\\input-and-devices\\guidelines-for-textselection.md"
-  ],
-  "bb3a231a842698c18fc496c87705d269dfbeaa58": [
-    "windows-apps-src\\input-and-devices\\guidelines-for-textselection.md"
-  ],
   "28dfadf6010aed3fb2ed0d03b73f92631c17fcf4": [
     "windows-apps-src\\input-and-devices\\guidelines-for-user-interaction.md"
   ],
   "422d396e9810d6ebe083a6346c8ec8f032ef1fb3": [
     "windows-apps-src\\input-and-devices\\guidelines-for-visualfeedback.md"
   ],
-  "00d05638de0080a6df2e5e0d971caaea424fd6ef": [
-    "windows-apps-src\\input-and-devices\\guidelines-for-visualfeedback.md"
-  ],
-  "cb5c9603cb18963871efa1f6382092b38a9ded99": [
-    "windows-apps-src\\input-and-devices\\guidelines-for-visualfeedback.md"
-  ],
-  "6b24b5958dad95fe65975c23917922aef03f1366": [
-    "windows-apps-src\\input-and-devices\\guidelines-for-visualfeedback.md"
-  ],
-  "ab7a6cfabb98eaf841849f5045e7ebce1ec86d65": [
-    "windows-apps-src\\input-and-devices\\guidelines-for-visualfeedback.md"
-  ],
   "5923b02d2d41a9d5311f39cb02f0bc58f5f6188c": [
     "windows-apps-src\\input-and-devices\\handle-pointer-input.md"
   ],
-  "d93583c4d6eeaa8e81bda4672d38386f07e7dcc5": [
-    "windows-apps-src\\input-and-devices\\handle-pointer-input.md"
-  ],
-  "29ada968c6d563f0f88a9d8b32af5058bbf7bd35": [
-    "windows-apps-src\\input-and-devices\\handle-pointer-input.md"
-  ],
-  "d7c895b8df97e6f58b9c9f4d8a69206fae787d51": [
-    "windows-apps-src\\input-and-devices\\handle-pointer-input.md"
-  ],
-  "ba4288d93924d3a32a0a659dea67af28fb607987": [
-    "windows-apps-src\\input-and-devices\\handle-pointer-input.md"
-  ],
   "8449d48dd8f3b50aaede6f85f41094d9073606a9": [
-    "windows-apps-src\\input-and-devices\\identify-input-devices.md"
-  ],
-  "8131f56572c4266b5987669d4195ab94d1fd5206": [
-    "windows-apps-src\\input-and-devices\\identify-input-devices.md"
-  ],
-  "d47508b9de51ebe45ddd7ad796681a8d16de1aed": [
-    "windows-apps-src\\input-and-devices\\identify-input-devices.md"
-  ],
-  "408fb45eb81a53755a9ae78da711e073cb8c507a": [
-    "windows-apps-src\\input-and-devices\\identify-input-devices.md"
-  ],
-  "20230362a38d4541fbed25ac822c96032f7b6d8f": [
     "windows-apps-src\\input-and-devices\\identify-input-devices.md"
   ],
   "4092969ce730e74ad2359dd0fd7ada9c9ef4c00a": [
@@ -5502,18 +5370,6 @@
     "windows-apps-src\\input-and-devices\\launch-a-foreground-app-with-voice-commands-in-cortana.md"
   ],
   "05986651e6197f189046b5d868b6ee27f1ba411e": [
-    "windows-apps-src\\input-and-devices\\manage-issues-with-audio-input.md"
-  ],
-  "780d2d9da10df7d5f4d3cfcbc9435bf6ef7dbb36": [
-    "windows-apps-src\\input-and-devices\\manage-issues-with-audio-input.md"
-  ],
-  "a04eef56b6871a754e99fa7ec970c5136ff20729": [
-    "windows-apps-src\\input-and-devices\\manage-issues-with-audio-input.md"
-  ],
-  "549d586b1e726650e11aada7b7904adbd34ecf19": [
-    "windows-apps-src\\input-and-devices\\manage-issues-with-audio-input.md"
-  ],
-  "a6f6e4c04f608898d2871113f38fe647b62bf8a5": [
     "windows-apps-src\\input-and-devices\\manage-issues-with-audio-input.md"
   ],
   "be99225c0691c8813a071a314ab3df4573fb11f5": [
@@ -5612,61 +5468,13 @@
   "93314c29de926b988d01da09a6ce7feb21fdcf20": [
     "windows-apps-src\\input-and-devices\\set-speech-recognition-timeouts.md"
   ],
-  "e8b6d1db99d7076b6f46cc6a97db36bdff62562f": [
-    "windows-apps-src\\input-and-devices\\set-speech-recognition-timeouts.md"
-  ],
-  "bcb03eb9f3a9cf638be4f722988a66b17124ab24": [
-    "windows-apps-src\\input-and-devices\\set-speech-recognition-timeouts.md"
-  ],
-  "73129a25d3e6978acaa02cd736a7d25f148012ac": [
-    "windows-apps-src\\input-and-devices\\set-speech-recognition-timeouts.md"
-  ],
-  "770a34c7c190540456a2748290b0aa557fcc1800": [
-    "windows-apps-src\\input-and-devices\\set-speech-recognition-timeouts.md"
-  ],
   "dfd7a85475b006e7af6bfc010a8b548e2306f436": [
-    "windows-apps-src\\input-and-devices\\specify-the-speech-recognizer-language.md"
-  ],
-  "28a1af4079a943c61f547ecf57d802287a3f191f": [
-    "windows-apps-src\\input-and-devices\\specify-the-speech-recognizer-language.md"
-  ],
-  "f36ae04a493f072ac3e8d1314ec85c93a20ca48f": [
-    "windows-apps-src\\input-and-devices\\specify-the-speech-recognizer-language.md"
-  ],
-  "50890cd1ca149e554bee33bb12f0d0231c1ebc46": [
-    "windows-apps-src\\input-and-devices\\specify-the-speech-recognizer-language.md"
-  ],
-  "42ddaea1de6dc4354e776b7d6db79486a6b3057e": [
     "windows-apps-src\\input-and-devices\\specify-the-speech-recognizer-language.md"
   ],
   "0175a7ca7e2bbeb97f526dffb3c6fee7b8eb8819": [
     "windows-apps-src\\input-and-devices\\speech-interactions.md"
   ],
-  "9e9ba56fd9d9a3b33d6dc7eadb999d0fcf159d3e": [
-    "windows-apps-src\\input-and-devices\\speech-interactions.md"
-  ],
-  "dc1015a60a554133b8d1e279d6dffc1e9a6fada8": [
-    "windows-apps-src\\input-and-devices\\speech-interactions.md"
-  ],
-  "840c3f95736e1fbefbce83eb8b6115bad40ac43f": [
-    "windows-apps-src\\input-and-devices\\speech-interactions.md"
-  ],
-  "5080fe9496b7a13336b42a83fd569e44f43ba2db": [
-    "windows-apps-src\\input-and-devices\\speech-interactions.md"
-  ],
   "49cd1e7ac0fceff7e39679f337ea4c029fa98806": [
-    "windows-apps-src\\input-and-devices\\speech-recognition.md"
-  ],
-  "79e40abde2265a8e6f760bd00768a18b06f69116": [
-    "windows-apps-src\\input-and-devices\\speech-recognition.md"
-  ],
-  "73388f3563a2ee2160f5ae33cbc517b1d098088e": [
-    "windows-apps-src\\input-and-devices\\speech-recognition.md"
-  ],
-  "98922affa9b92512108c83a45759eea90489080c": [
-    "windows-apps-src\\input-and-devices\\speech-recognition.md"
-  ],
-  "a4de0955eb6bd01ef5279b5b8d553fe1d1dd50f2": [
     "windows-apps-src\\input-and-devices\\speech-recognition.md"
   ],
   "96b8d942e3e57a100672233a1ddf8d27963ece98": [
@@ -5684,46 +5492,10 @@
   "f3eee810f11d1d079da8436ba6d7eac6d0982cb3": [
     "windows-apps-src\\input-and-devices\\touch-interactions.md"
   ],
-  "c78122e3bd1a860359cb482ff54fe7cfc673081e": [
-    "windows-apps-src\\input-and-devices\\touch-interactions.md"
-  ],
-  "ce6056514bce447e9b386a1dc4c1ba9c58370f12": [
-    "windows-apps-src\\input-and-devices\\touch-interactions.md"
-  ],
-  "adb46f359091d1adba13d9da53da8b073fd79592": [
-    "windows-apps-src\\input-and-devices\\touch-interactions.md"
-  ],
-  "26f80e2619ea7b80a49d54278507c83461fe2336": [
-    "windows-apps-src\\input-and-devices\\touch-interactions.md"
-  ],
   "f58b2c244a99580b038609c5bd5ef0a4c3ffe030": [
     "windows-apps-src\\input-and-devices\\touchpad-interactions.md"
   ],
-  "fe0bc3c6a178aa635ab8a5463e9c7663f27e8ccc": [
-    "windows-apps-src\\input-and-devices\\touchpad-interactions.md"
-  ],
-  "8c86c17c3105588b119f5110a17aa77f0ffab7ad": [
-    "windows-apps-src\\input-and-devices\\touchpad-interactions.md"
-  ],
-  "7bf471d1fe8fcfa78bf4f59d514190909f0c961c": [
-    "windows-apps-src\\input-and-devices\\touchpad-interactions.md"
-  ],
-  "dd91c8a6c58c25799a0c43b8632fade5309850cc": [
-    "windows-apps-src\\input-and-devices\\touchpad-interactions.md"
-  ],
   "215cf54a5d6ed1b0c514768817cc11d1a85627e2": [
-    "windows-apps-src\\input-and-devices\\use-input-scope-to-change-the-touch-keyboard.md"
-  ],
-  "43cbc8999d21d0534c4b6e557822345a69f66007": [
-    "windows-apps-src\\input-and-devices\\use-input-scope-to-change-the-touch-keyboard.md"
-  ],
-  "17191e0c680333bb337aa04ed7f4e023ac6ff3f8": [
-    "windows-apps-src\\input-and-devices\\use-input-scope-to-change-the-touch-keyboard.md"
-  ],
-  "3bf9a9a23d5e4f0f2913ebe0001c819f965c31b5": [
-    "windows-apps-src\\input-and-devices\\use-input-scope-to-change-the-touch-keyboard.md"
-  ],
-  "caaa6228f2d5b2bb6566ccb285d90a396a1caf01": [
     "windows-apps-src\\input-and-devices\\use-input-scope-to-change-the-touch-keyboard.md"
   ],
   "9acef8f03bcdd4a9c4d40133ab2507853d4d0145": [
@@ -5967,18 +5739,6 @@
     "windows-apps-src\\launch-resume\\handle-uri-activation.md"
   ],
   "82a72e66447b5a44138e32a6010b54b6e9e7df5f": [
-    "windows-apps-src\\launch-resume\\how-to-create-and-consume-an-app-service.md"
-  ],
-  "3dcf6a8191553deac5821346718a202bc362c7ff": [
-    "windows-apps-src\\launch-resume\\how-to-create-and-consume-an-app-service.md"
-  ],
-  "6ac04077ed210c00516defdec5927d7a80b1043f": [
-    "windows-apps-src\\launch-resume\\how-to-create-and-consume-an-app-service.md"
-  ],
-  "90dd4f28c4e2e9bed40585170d9c35bb21db5969": [
-    "windows-apps-src\\launch-resume\\how-to-create-and-consume-an-app-service.md"
-  ],
-  "81786f6bf76d1d3840d5cd8c6191550b98a248b2": [
     "windows-apps-src\\launch-resume\\how-to-create-and-consume-an-app-service.md"
   ],
   "8aa2070606f7ef077dfa4392d576f212b2f8ea84": [
@@ -11948,21 +11708,6 @@
   "6f6edf982ffd329561b35c51ca19ee7a6fa92bf0": [
     "windows-apps-src\\design-downloads\\index.md"
   ],
-  "57c29414deadcf4f1ba5c462b8fe81faa0b38d49": [
-    "windows-apps-src\\design-downloads\\index.md"
-  ],
-  "2f699a5feb46f498a80a0fd5d99a60c4721a17db": [
-    "windows-apps-src\\design-downloads\\index.md"
-  ],
-  "6071cb0fb6b698f0241e9152e3ffc5bfa5be3487": [
-    "windows-apps-src\\design-downloads\\index.md"
-  ],
-  "cd072f87b66dcce9299e2519553cfc72ce1171f3": [
-    "windows-apps-src\\design-downloads\\index.md"
-  ],
-  "d18696de51451552aef14c55d2a1b62c6037fb59": [
-    "windows-apps-src\\design-downloads\\index.md"
-  ],
   "6bcc81d80bb3e2167b6d6e5ee078279bd830f04c": [
     "windows-apps-src\\input-and-devices\\index.md"
   ],
@@ -11993,55 +11738,10 @@
   "1034588565032301cb0746d79a122e8388dad8f9": [
     "windows-apps-src\\layout\\index.md"
   ],
-  "ce668d5450f9b47e49e9f2535c420bc9c07d2a30": [
-    "windows-apps-src\\layout\\index.md"
-  ],
-  "7a09a80e6be43a9e25c0e7dd3a6cb54295ee7f01": [
-    "windows-apps-src\\layout\\index.md"
-  ],
-  "b4d2462b2476e662645296bcf8b12ae84dcf4b20": [
-    "windows-apps-src\\layout\\index.md"
-  ],
-  "9d42d4ee6b89744a4bfde6460737b2df1439ba3e": [
-    "windows-apps-src\\layout\\index.md"
-  ],
-  "e643b7029d5bc417437f7a1b8586424ac4345c3b": [
-    "windows-apps-src\\layout\\index.md"
-  ],
   "cce852d20dfce74740163009d72c02cfb58cc523": [
     "windows-apps-src\\style\\index.md"
   ],
-  "dcd97e72520b4e814c665dc72b36c895cd8fe2b2": [
-    "windows-apps-src\\style\\index.md"
-  ],
-  "f6c50950a87b5c81db107ddf58a36e9251346c4b": [
-    "windows-apps-src\\style\\index.md"
-  ],
-  "33c225a648053a0d9a0df86a800998133603c0d5": [
-    "windows-apps-src\\style\\index.md"
-  ],
-  "0f65291fc0bd483a309d4e60a4f5c6032c2274f9": [
-    "windows-apps-src\\style\\index.md"
-  ],
-  "488eac85e7ab724dd3dbc6d5972cd330d972134b": [
-    "windows-apps-src\\style\\index.md"
-  ],
   "d05db2899fe2ad26eaf5e200ae2673b8efafddd0": [
-    "windows-apps-src\\usability\\index.md"
-  ],
-  "f76bdf6052228e5588ea7e34d95360f698525eb2": [
-    "windows-apps-src\\usability\\index.md"
-  ],
-  "282f24c11c30fd7b19c6e340a0fabb84cb5df470": [
-    "windows-apps-src\\usability\\index.md"
-  ],
-  "47b8934c853cb326375f41c2ed19d12111e3a0cc": [
-    "windows-apps-src\\usability\\index.md"
-  ],
-  "d8f4d3a9e4be896f10730847387e21c12b01b089": [
-    "windows-apps-src\\usability\\index.md"
-  ],
-  "011d4e7dcebc20e0568fd5bdc4a207a66597f073": [
     "windows-apps-src\\usability\\index.md"
   ],
   "3ed4fff6cb7d85fe36a732cc10224ddfe3565d4f": [
@@ -12911,21 +12611,6 @@
   "dd307bd6d7551c1e95de29360a8601484b37e742": [
     "windows-apps-src\\input-and-devices\\ink-toolbar.md"
   ],
-  "bd6e209d670164bc017d5012199420420dc3eda0": [
-    "windows-apps-src\\input-and-devices\\ink-toolbar.md"
-  ],
-  "b4b3c4a08b210239420d15602914517971c924a5": [
-    "windows-apps-src\\input-and-devices\\ink-toolbar.md"
-  ],
-  "49d25ecb25ae41df49f651e9d28ddd3232a4f824": [
-    "windows-apps-src\\input-and-devices\\ink-toolbar.md"
-  ],
-  "4a01bf86b52509c8e58ec5c256c3554836726717": [
-    "windows-apps-src\\input-and-devices\\ink-toolbar.md"
-  ],
-  "5983209e7e107f8cf0a7d2fe9ce8ef734e3af7d4": [
-    "windows-apps-src\\input-and-devices\\ink-toolbar.md"
-  ],
   "0cac219625fbc7b6526c81cf11f010589d2bf000": [
     "windows-apps-src\\launch-resume\\communicate-with-a-remote-app-service.md"
   ],
@@ -13005,24 +12690,6 @@
     "windows-apps-src\\launch-resume\\reduce-memory-usage.md"
   ],
   "df5d232cc997c0c888b3a2f092efeb937e991a85": [
-    "windows-apps-src\\launch-resume\\web-to-app-linking.md"
-  ],
-  "225f0d2bd5d8a2434c3e548064960f44f1df530e": [
-    "windows-apps-src\\launch-resume\\web-to-app-linking.md"
-  ],
-  "859229d963de1b7b51f185f56d75b9834870b1f4": [
-    "windows-apps-src\\launch-resume\\web-to-app-linking.md"
-  ],
-  "66e8e3cd83d08ca97ab9d10772e8f62cf85a70d6": [
-    "windows-apps-src\\launch-resume\\web-to-app-linking.md"
-  ],
-  "f420f11b5d4ec348b95030fbf1f30a05cf829840": [
-    "windows-apps-src\\launch-resume\\web-to-app-linking.md"
-  ],
-  "ce84071917602a313d29b53b06f5659254aa6278": [
-    "windows-apps-src\\launch-resume\\web-to-app-linking.md"
-  ],
-  "524a0897b6b8a8d17bb7493dc4d9e4357d8c1456": [
     "windows-apps-src\\launch-resume\\web-to-app-linking.md"
   ],
   "b667fce28002845c8472daa34bf126adcb3d6906": [
@@ -16740,21 +16407,6 @@
     "windows-apps-src\\graphics-concepts\\world-transform.md"
   ],
   "8fee77ab244f778e9890e986e050a80fa38381d4": [
-    "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md"
-  ],
-  "f64a2bf36786e1f7bb38755e1a6b8bbaa22862a7": [
-    "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md"
-  ],
-  "7e2cbd9e7004f01faf8af83f367eea7cccc75c46": [
-    "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md"
-  ],
-  "20aa66baa2eb07f279bd01f5960b3a7e954d2e5d": [
-    "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md"
-  ],
-  "8f4b03b069b5ca94cc134f1f955f1817d07f9b61": [
-    "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md"
-  ],
-  "96b9a2e213c36b8f92664185e9cdcaea6d457368": [
     "windows-apps-src\\input-and-devices\\windows-wheel-interactions.md"
   ],
   "015a37c8d85174e6494690a67b4dc23b1cce5712": [
