@@ -8108,6 +8108,9 @@
   "f8bcda0cd2e31026f90f3a84a15674c00691f01d": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
   ],
+  "b1b67be0a3a9a29338454cdd3508ec9ec66d932f": [
+    "windows-apps-src\\porting\\desktop-to-uwp-root.md"
+  ],
   "4a42b34f1aaaab47652d86f9c576d09f27c4308e": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
@@ -8131,6 +8134,9 @@
   ],
   "1ef54c3c45113e434333058d0f039e213ea8eed2": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
+  ],
+  "7482599456319e44694ac15fa58cfd5d540aeaad": [
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
   "824aba36d2881cf516c5b9dab2bdc79503d10369": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
@@ -8864,6 +8870,9 @@
   "250e94c2766227cabad791db6d994bcfb1a2ac33": [
     "windows-apps-src\\publish\\app-package-requirements.md"
   ],
+  "72beedaf83c684d0cfab7416d25804a34d4ac62a": [
+    "windows-apps-src\\publish\\app-promotion-and-customer-engagement.md"
+  ],
   "16b1a2c4bbdb85cbde0478befc76d4d2c01e36d3": [
     "windows-apps-src\\publish\\app-promotion-and-customer-engagement.md"
   ],
@@ -9050,6 +9059,9 @@
   "4901812fa55451718548fd4624a92a921ab2aaa7": [
     "windows-apps-src\\publish\\create-platform-specific-descriptions.md"
   ],
+  "957caca6fb71cb8cfe5a84e258c0679b0780e6a3": [
+    "windows-apps-src\\publish\\create-your-app-by-reserving-a-name.md"
+  ],
   "68cbc80112d589156a9bf08347be8dca46f88cf3": [
     "windows-apps-src\\publish\\create-your-app-by-reserving-a-name.md"
   ],
@@ -9065,6 +9077,9 @@
   "1be7229086e1f2f932e0945334098d89a9978b70": [
     "windows-apps-src\\publish\\create-your-app-by-reserving-a-name.md"
   ],
+  "b994d4c46a319f7f5714685666295f079c31d8df": [
+    "windows-apps-src\\publish\\define-pricing-and-market-selection.md"
+  ],
   "acf14f886f36d74941769954041325514a386e86": [
     "windows-apps-src\\publish\\define-pricing-and-market-selection.md"
   ],
@@ -9079,6 +9094,9 @@
   ],
   "3fb8594748d303216a4437983604b5d78c993934": [
     "windows-apps-src\\publish\\define-pricing-and-market-selection.md"
+  ],
+  "11014e111b96e271d9e0aaeef44de4d0b0df0532": [
+    "windows-apps-src\\publish\\dev-center-insider-program.md"
   ],
   "c939035cb0ad187d29c42a092ba97af2bf43ed02": [
     "windows-apps-src\\publish\\dev-center-insider-program.md"
@@ -9221,6 +9239,9 @@
   "76bce0070da266cc2bc53cda785136a372e2f3bc": [
     "windows-apps-src\\publish\\getting-paid-apps.md"
   ],
+  "fade9058a1b6bf7896d853745bef4b119c0bff5d": [
+    "windows-apps-src\\publish\\guidance-for-app-package-management.md"
+  ],
   "2ca0d52279a52e4d60d547929ab780cbee9bf3e4": [
     "windows-apps-src\\publish\\guidance-for-app-package-management.md"
   ],
@@ -9250,6 +9271,9 @@
   ],
   "a92a2ab8f11c46217d1d7b63f86c5bf68757d3fb": [
     "windows-apps-src\\publish\\health-report.md"
+  ],
+  "ef76bf9a26336f89b1b1a93099dec56191823a2e": [
+    "windows-apps-src\\publish\\how-your-app-appears-in-the-store-for-windows-10-customers.md"
   ],
   "c9b6e1df1a033a4f7e6be0fa67ee4977cfded460": [
     "windows-apps-src\\publish\\how-your-app-appears-in-the-store-for-windows-10-customers.md"
@@ -9641,6 +9665,9 @@
   "debd24d97f4fa22d450b1c5335937326ddb2af56": [
     "windows-apps-src\\publish\\set-iap-pricing-and-availability.md"
   ],
+  "10333de456b913adf1c35a0df08f9b99ad4d4fa0": [
+    "windows-apps-src\\publish\\setting-up-your-payout-account-and-tax-forms.md"
+  ],
   "7e4499d203a71173dc60326cede323e588b78d3f": [
     "windows-apps-src\\publish\\setting-up-your-payout-account-and-tax-forms.md"
   ],
@@ -9676,6 +9703,9 @@
   ],
   "3d14f1d11290942a90498f7aff4dc324daa3a84e": [
     "windows-apps-src\\publish\\supported-languages.md"
+  ],
+  "11aa6897ba62992c1f743c9b94ba072bac2e8071": [
+    "windows-apps-src\\publish\\tax-details-for-paid-apps.md"
   ],
   "d4731afcd0a6849d56828d474871ba809097102c": [
     "windows-apps-src\\publish\\tax-details-for-paid-apps.md"
@@ -10474,6 +10504,9 @@
   ],
   "ea45e3b61f7646b5df978f36961bd6264ff08fe2": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "b2862eafd87da16447a51174e2e8f2321fb4cd53": [
+    "windows-apps-src\\TOC.md"
   ],
   "3ebc7e4b3055c43f52d1e7b5125ce942404bec66": [
     "windows-apps-src\\TOC.md"
@@ -11390,6 +11423,9 @@
   "c3ca70936e30ce67b19971e5ccbb01fa89253f35": [
     "windows-apps-src\\xbox-apps\\system-resource-allocation.md"
   ],
+  "9a9592fb2b775f582467c7e77a975f2dab9d0df4": [
+    "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md"
+  ],
   "dc2804500b3862035c4293b485cd1231770e81da": [
     "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md"
   ],
@@ -11662,6 +11698,9 @@
   ],
   "73f701a2608c6ce8d10cab817683ada4e9eecc08": [
     "windows-apps-src\\xbox-apps\\development-lanes-unity.md"
+  ],
+  "04c8ecdcbabcbf7919d40f8f0195575e5349afab": [
+    "windows-apps-src\\porting\\desktop-to-uwp-signing.md"
   ],
   "18b84123aa833a5e24a2f7994a1d0a75c2f0ea9b": [
     "windows-apps-src\\porting\\desktop-to-uwp-signing.md"
@@ -12029,6 +12068,9 @@
   "82131efdd83d9b7aced7a164025a17401f827cba": [
     "windows-apps-src\\publish\\microsoft-advertising-payment-process.md"
   ],
+  "5817c203c35d7a187a7dcd7d8f973acc30466b1e": [
+    "windows-apps-src\\porting\\desktop-to-uwp-extensions.md"
+  ],
   "cc55f7041587f444abebbe9a062b2a9de6623a95": [
     "windows-apps-src\\porting\\desktop-to-uwp-extensions.md"
   ],
@@ -12340,6 +12382,9 @@
   ],
   "f9313d3c8b93ba13074c547f1f63c9f3204f0f58": [
     "windows-apps-src\\xbox-apps\\wdp-updatepolicy-api.md"
+  ],
+  "c753ad9338087af22e986718c73c7cd2659a2dc5": [
+    "windows-apps-src\\porting\\desktop-to-uwp-supported-api.md"
   ],
   "4e649e3167701ee54503d0f4bff6bda86b8f4464": [
     "windows-apps-src\\porting\\desktop-to-uwp-supported-api.md"
@@ -13213,6 +13258,9 @@
   ],
   "76ea807f1f8306bb964a61d1c81e9bf578e4b344": [
     "windows-apps-src\\publish\\add-on-acquisitions-report.md"
+  ],
+  "7de8b6db65bb9ec58f16643dc8b477c274513c9a": [
+    "windows-apps-src\\publish\\add-on-submissions.md"
   ],
   "585b98d0e25dd29f8ff91e75f9f196337fd6040d": [
     "windows-apps-src\\publish\\add-on-submissions.md"
@@ -17162,6 +17210,9 @@
   "681019d708b859d117992cde6d2ad3d37fa4833a": [
     "windows-apps-src\\packaging\\auto-build-package-uwp-apps.md"
   ],
+  "e6f4e95c6c984247e7da58aedd3c64e42433072c": [
+    "windows-apps-src\\porting\\desktop-to-uwp-behind-the-scenes.md"
+  ],
   "450a2f42ef7325e47244102c38240c37835799d9": [
     "windows-apps-src\\porting\\desktop-to-uwp-behind-the-scenes.md"
   ],
@@ -17179,6 +17230,9 @@
   ],
   "c261f40734ab40475ca3a8e0b7c3bea7b64afacd": [
     "windows-apps-src\\porting\\desktop-to-uwp-behind-the-scenes.md"
+  ],
+  "d405b52b0aa4b75feda59764563c7aa527bdd97b": [
+    "windows-apps-src\\porting\\desktop-to-uwp-debug.md"
   ],
   "fcf9793aafc1436e9a265ce159fca42f65afe8c2": [
     "windows-apps-src\\porting\\desktop-to-uwp-debug.md"
@@ -17198,6 +17252,9 @@
   "537ac8e83d5f54bf83ec0e05b71be354651000f2": [
     "windows-apps-src\\porting\\desktop-to-uwp-debug.md"
   ],
+  "ff7a5a834e8654adde9730002f383d4a275a38ab": [
+    "windows-apps-src\\porting\\desktop-to-uwp-distribute.md"
+  ],
   "60db45f959d9242672b775566aae2e8b4fb48adc": [
     "windows-apps-src\\porting\\desktop-to-uwp-distribute.md"
   ],
@@ -17215,6 +17272,9 @@
   ],
   "fbe8a77e3d5735b14088efb0ff6aa01be8d4badf": [
     "windows-apps-src\\porting\\desktop-to-uwp-distribute.md"
+  ],
+  "c134276434da0f9ab0417de20bdeacbf33dd06fe": [
+    "windows-apps-src\\porting\\desktop-to-uwp-known-issues.md"
   ],
   "04a5e9404d08d6b69dbb68e818f193c5e4bca7b6": [
     "windows-apps-src\\porting\\desktop-to-uwp-known-issues.md"
@@ -17236,6 +17296,9 @@
   ],
   "d3ed0af32c9a44078d0f772d7fc130121f5d4970": [
     "windows-apps-src\\porting\\desktop-to-uwp-known-issues.md"
+  ],
+  "ffc23cbf1edd8f46776321426252cc2845ed4714": [
+    "windows-apps-src\\porting\\desktop-to-uwp-prepare.md"
   ],
   "c6baa7bdb9f1f8227eebcc189cc7f158a39820c1": [
     "windows-apps-src\\porting\\desktop-to-uwp-prepare.md"
@@ -17740,6 +17803,9 @@
   ],
   "a7481872df2931273542815b9797c4fb09d46c90": [
     "windows-apps-src\\packaging\\sign-app-package-using-signtool.md"
+  ],
+  "538064201894797c6c6f3193b1fccf5524d470da": [
+    "windows-apps-src\\porting\\desktop-to-uwp-packaging-dot-net.md"
   ],
   "f487965dfbb006cdd7256022aa742b506928957c": [
     "windows-apps-src\\porting\\desktop-to-uwp-packaging-dot-net.md"
