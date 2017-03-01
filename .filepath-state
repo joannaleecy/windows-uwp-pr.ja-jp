@@ -4010,6 +4010,9 @@
   "104e311e4c5a971d3bd6af8017adb205556fca40": [
     "windows-apps-src\\packaging\\install-universal-windows-apps-with-the-winappdeploycmd-tool.md"
   ],
+  "97796e1c45bfa01fbb2d47723f77113fea3f286a": [
+    "windows-apps-src\\packaging\\packaging-uwp-apps.md"
+  ],
   "9a41470c3e64373435a30de028b477ac1f5b2a36": [
     "windows-apps-src\\packaging\\packaging-uwp-apps.md"
   ],
@@ -4780,6 +4783,9 @@
   ],
   "cbf519d5755adb13f6a41845b4771ac459d880cc": [
     "windows-apps-src\\publish\\mobile-operator-billing.md"
+  ],
+  "71e98d5b3fb2db56f78461fbcdbb8f3c774e19a7": [
+    "windows-apps-src\\publish\\monetize-with-ads.md"
   ],
   "7cbb4de70dec929271716fdf300c7783a9fe718c": [
     "windows-apps-src\\publish\\monetize-with-ads.md"
@@ -7343,6 +7349,9 @@
   "c4149a711cf262dcca0f9dcfdc444cbcb4e2c0f5": [
     "windows-apps-src\\monetize\\create-an-add-on-submission.md"
   ],
+  "13b1b1cc83b6a8659bf38f5a97caf8b2f50a3ee0": [
+    "windows-apps-src\\monetize\\create-an-app-submission.md"
+  ],
   "1d28c9bfce595e38f13a9595bbfef03d390d205a": [
     "windows-apps-src\\monetize\\create-an-app-submission.md"
   ],
@@ -7508,6 +7517,9 @@
   "176e3b584137e503c4adfe2eb612d9329226baac": [
     "windows-apps-src\\monetize\\get-an-app.md"
   ],
+  "2ecdb66818c020dc3bc608fbd65a97d43b8688ab": [
+    "windows-apps-src\\monetize\\get-an-app-submission.md"
+  ],
   "222330bf8229c01af380e86e1dc5e6f30f158d45": [
     "windows-apps-src\\monetize\\get-an-app-submission.md"
   ],
@@ -7601,6 +7613,9 @@
   "589946e159202c3ed5d13057642c808d5df4f738": [
     "windows-apps-src\\monetize\\manage-add-on-submissions.md"
   ],
+  "f6f0342619f91190bf021842c3ac3b0c61964d25": [
+    "windows-apps-src\\monetize\\manage-app-submissions.md"
+  ],
   "f5b47546b8070bf05aa24faee5a6e32f48142a31": [
     "windows-apps-src\\monetize\\manage-app-submissions.md"
   ],
@@ -7618,6 +7633,9 @@
   ],
   "51d7481d0491c85bddcae906a846cb8773f33417": [
     "windows-apps-src\\monetize\\manage-flights.md"
+  ],
+  "98240f3a1f40f020474c62537d6b0444fe10bb99": [
+    "windows-apps-src\\monetize\\manage-flight-submissions.md"
   ],
   "672b269e85d3fca7ef9b750f69eced6d174ac140": [
     "windows-apps-src\\monetize\\manage-flight-submissions.md"
@@ -7660,6 +7678,9 @@
   ],
   "8b06973c7c6949851bf786b1fb37026eee4b5fad": [
     "windows-apps-src\\monetize\\update-an-add-on-submission.md"
+  ],
+  "a4b7816d0d6e47282864992044eea58eaaa05d1d": [
+    "windows-apps-src\\monetize\\update-an-app-submission.md"
   ],
   "198b3c95f8cf58d2e5fc79d240acc22b3488a798": [
     "windows-apps-src\\monetize\\update-an-app-submission.md"
@@ -9164,6 +9185,9 @@
   "9b4a38dee3b6edaa5fac4ebed20d4ee365ceee9b": [
     "windows-apps-src\\monetize\\get-package-rollout-info-for-an-app-submission.md"
   ],
+  "804e447f5b650a986580752fcba2a29014560e98": [
+    "windows-apps-src\\monetize\\halt-the-package-rollout-for-a-flight-submission.md"
+  ],
   "8bf8d6aa93d19fc02717d821a5503a67d812b881": [
     "windows-apps-src\\monetize\\halt-the-package-rollout-for-a-flight-submission.md"
   ],
@@ -9178,6 +9202,9 @@
   ],
   "b52c0384fdb4f39f9a5602f2bfa3349f83837b3c": [
     "windows-apps-src\\monetize\\halt-the-package-rollout-for-a-flight-submission.md"
+  ],
+  "7bc86db250f27f0785bf505a15975bcf65cb5eff": [
+    "windows-apps-src\\monetize\\halt-the-package-rollout-for-an-app-submission.md"
   ],
   "6ae23eaa701f290903ff514b4e222c527a848082": [
     "windows-apps-src\\monetize\\halt-the-package-rollout-for-an-app-submission.md"
