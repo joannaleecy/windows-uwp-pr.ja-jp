@@ -1,14 +1,22 @@
 ---
 author: WilliamsJason
-title: "UWP を開発するときに、Xbox One で Fiddler を使用する方法"
+title: "UWP を開発するときに Xbox One で Fiddler を使用する方法"
 description: "フリーウェアの Fiddler ツールを使って、UWP Xbox One 開発機でのネットワーク トラフィックを確認する方法について説明します。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 9c133c77-fe9d-4b81-b4b3-462936333aa3
 translationtype: Human Translation
-ms.sourcegitcommit: 11c6cffab7934937b6d89c30e4d03ae752f6b3b7
-ms.openlocfilehash: 241fa495c7277fe2bf4feafeb4062842f97e59b1
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: c7ebd56205db2674df5da6d64ecc9332aa96230e
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# UWP を開発するときに、Xbox One で Fiddler を使用する方法
+# <a name="how-to-use-fiddler-with-xbox-one-when-developing-for-uwp"></a>UWP を開発するときに Xbox One で Fiddler を使用する方法
 
 Fiddler は、Xbox One 開発機とインターネットの間のすべての HTTP および HTTPS トラフィックをログに記録する Web デバッグ プロキシです。 Fiddler を使って、Xbox サービスと証明書利用者 Web サービスとの間のトラフィックをログに記録し、Web サービスの呼び出しを確認してデバッグします。 
 
@@ -18,7 +26,7 @@ Fiddler はフリーウェアであり、[Fiddler の Web サイト](http://www.
 
 Fiddler は、コンソールで報告されるネットワーク ステータスに影響を与える場合があります。 Fiddler を実行しているコンピューターからのアップストリーム接続が無効になっている場合、コンソールの認証の有効期限が切れるまで、コンソールでこの切断が検出されない可能性があります。 Fiddler を使っている場合、Fiddler を使って切断をシミュレートするのではなく、必ずコンソールと Fiddler を実行しているコンピューターとの接続を切断してください。
 
-### 開発用 PC に Fiddler をインストールして有効にするには
+### <a name="to-install-and-enable-fiddler-on-your-development-pc"></a>開発用 PC に Fiddler をインストールして有効にするには
 次の手順に従って、Fiddler をインストールし、有効にして、開発機からのトラフィックを監視します。
 
 1. [Fiddler の Web サイト](http://www.fiddler2.com/fiddler2/)に示されている手順に従って、開発用 PC に Fiddler をインストールします。 
@@ -52,7 +60,7 @@ Fiddler は、コンソールで報告されるネットワーク ステータ�
   4. **[Export Root Certificate to Desktop]** をクリックします。
 7. Fiddler を終了して再起動します。
 
-### インターネットへのプロキシとして Fiddler を使用するように開発機を構成するには
+### <a name="to-configure-a-dev-kit-to-use-fiddler-as-its-proxy-to-the-internet"></a>インターネットへのプロキシとして Fiddler を使用するように開発機を構成するには
 
 1. Xbox Device Portal の UI で**ネットワーク** ツールに移動します。
 2. デスクトップにエクスポートした Fiddler のルート証明書を参照します。 
@@ -60,7 +68,7 @@ Fiddler は、コンソールで報告されるネットワーク ステータ�
 4. Fiddler がリッスンしているポート番号 (既定では、Fiddler はポート 8888 を使用) を入力します。 
 5. **[Enable]** をクリックします。 これにより、開発キットが再起動します。
 
-### Fiddler の使用を停止するには
+### <a name="to-stop-using-fiddler"></a>Fiddler の使用を停止するには
 インターネットへのプロキシとしての Fiddler の使用を停止 (し、Fiddler による開発機のすべてのネットワーク トラフィックのトレースを停止) するには、次の操作を行います。
 
 1. Xbox Device Portal の UI で**ネットワーク** ツールに移動します。
@@ -69,16 +77,11 @@ Fiddler は、コンソールで報告されるネットワーク ステータ�
 > [!NOTE]
 > Fiddler がインストールされている各 PC では、異なる Fiddler ルート証明書を使用します。 開発機に Fiddler プロキシを提供するために、複数の PC を使用する可能性がある場合は、PC を切り替えたときに新しいルート証明書を選択する必要があります。 1 台の PC のみを使用している場合は、最初に Fiddler を有効にするときにのみルート証明書を選択する必要があります。 この場合も、IP アドレスとポートを指定する必要があります。
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 - [Fiddler 設定 API のリファレンス](wdp-fiddler-api.md)
 - [よく寄せられる質問](frequently-asked-questions.md)
 - [Xbox One の UWP](index.md)
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

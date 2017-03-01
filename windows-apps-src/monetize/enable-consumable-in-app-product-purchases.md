@@ -3,10 +3,16 @@ author: mcleanbyron
 Description: "ストアの商取引プラットフォームを使ってコンシューマブルなアプリ内製品 (購入、使用、再購入が可能なアイテム) をサポートすると、堅牢かつ信頼性の高いアプリ内購入エクスペリエンスを顧客に提供できます。"
 title: "コンシューマブルなアプリ内製品購入の有効化"
 ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4
-keywords: "アプリ内販売コード サンプル"
+keywords: "UWP, コンシューマブル, アドオン, アプリ内購入, IAP, Windows.ApplicationModel.Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: acb7218bed287f430950d4f8d3621831b269ae18
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7395cf28f96b2f7aa9bc6a1d4c461385d50fcbf6
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -76,9 +82,4 @@ ms.openlocfilehash: acb7218bed287f430950d4f8d3621831b269ae18
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

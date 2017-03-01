@@ -3,16 +3,23 @@ title: "一般的な暗号化タスク"
 description: "これらの記事では、乱数の生成、バッファーの比較、文字列とバイナリ データの間の変換、バイト配列間のコピー、データのエンコードとデコードなどのユニバーサル Windows プラットフォーム (UWP) の一般的な暗号化タスクのコード例を提供します。"
 ms.assetid: 2DE094F4-28E2-4C5D-BF8C-617BD90AB119
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 5122c7d9750a9f37582b27752926da1c9f44b321
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3ce185e4bdd247c8b0ac71401a2ff863c64f880a
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 一般的な暗号化タスク
+# <a name="common-cryptography-tasks"></a>一般的な暗号化タスク
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 これらの記事では、乱数の生成、バッファーの比較、文字列とバイナリ データの間の変換、バイト配列間のコピー、データのエンコードとデコードなどのユニバーサル Windows プラットフォーム (UWP) の一般的な暗号化タスクのコード例を提供します。
 
@@ -25,9 +32,4 @@ ms.openlocfilehash: 5122c7d9750a9f37582b27752926da1c9f44b321
 | [バイト配列間のコピー](copy-to-and-from-byte-arrays.md)                       | 次のコード例は、UWP アプリでバイト配列をコピーする方法を示しています。                             |
 | [データのエンコードとデコード](encode-and-decode-data.md)                                   | 次のコード例は、UWP アプリで base64 データと 16 進データをエンコードおよびデコードする方法を示しています。            |
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

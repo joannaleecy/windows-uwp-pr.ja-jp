@@ -5,13 +5,20 @@ ms.assetid: 59FA3B87-75A6-4B30-BA7C-A0E769D68050
 title: "ストア内のアクセシビリティ"
 label: Accessibility in the Store
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 137e8671655c0d20b0343ee7f87086d271fdc531
-ms.openlocfilehash: 8d987e9c1c9476625b8544ee95abc62e2b2c09f5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1d3a2ce095b4250f5bdc1fdac8b1646184bc3e1e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# ストア内のアクセシビリティ  
+# <a name="accessibility-in-the-store"></a>ストア内のアクセシビリティ  
 
 
 
@@ -42,11 +49,6 @@ Windows ストアで認定を受けるためにアプリを提出している間
 これらの手順と、その実行に役立つリソースへのリンクを確認する場合は、「[アクセシビリティのチェック リスト](accessibility-checklist.md)」をご覧ください。
 
 <span id="related_topics"/>
-## 関連トピック    
+## <a name="related-topics"></a>関連トピック    
 * [アクセシビリティ](accessibility.md) 
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -3,10 +3,16 @@ author: mcleanbyron
 Description: "アプリが無料であるかどうかにかかわらず、コンテンツ、その他のアプリ、アプリの新機能 (ゲームの次のレベルのロック解除など) をアプリ内から直接販売できます。 ここでは、アプリ内で製品を販売できるようにする方法について説明します。"
 title: "アプリ内製品購入の有効化"
 ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
-keywords: "アプリ内販売コード サンプル"
+keywords: "UWP, アドオン, アプリ内購入, IAP, Windows.ApplicationModel.Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: 1cd748cd1b6ca7e85cfb86daba367540af25db88
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b7cd3f5d2c566958aaf83b8f633418ce444a2eaa
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -86,9 +92,4 @@ ms.openlocfilehash: 1cd748cd1b6ca7e85cfb86daba367540af25db88
 * [アプリ内製品の大規模なカタログの管理](manage-a-large-catalog-of-in-app-products.md)
 * [通知を使った製品購入の確認](use-receipts-to-verify-product-purchases.md)
 * [ストア サンプル (試用版とアプリ内購入のデモンストレーション)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

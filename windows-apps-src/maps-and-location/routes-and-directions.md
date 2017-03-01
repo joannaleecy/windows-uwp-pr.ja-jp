@@ -3,13 +3,20 @@ author: msatranjr
 title: "地図へのルートとルート案内の表示"
 description: "ルートとルート案内を要求し、アプリで表示します。"
 ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ルート, マップ, 位置情報, ルート案内"
 translationtype: Human Translation
-ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: eb3596236e7de29473635b26f48f0c7e4fa1d49f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 11519df0c6655d663b31759e9064337a706bbc53
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 地図へのルートとルート案内の表示
+# <a name="display-routes-and-directions-on-a-map"></a>地図へのルートとルート案内の表示
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -25,7 +32,7 @@ ms.openlocfilehash: eb3596236e7de29473635b26f48f0c7e4fa1d49f
 
  
 
-## MapRouteFinder 結果の概要
+## <a name="an-intro-to-maproutefinder-results"></a>MapRouteFinder 結果の概要
 
 
 ルートとルート案内のクラスがどのように関連するかを次に示します。
@@ -36,7 +43,7 @@ ms.openlocfilehash: eb3596236e7de29473635b26f48f0c7e4fa1d49f
 -   [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) には、[**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) オブジェクトのコレクションが含まれています。 **MapRoute** の [**Legs**](https://msdn.microsoft.com/library/windows/apps/dn636973) プロパティを通じてこのコレクションにアクセスします。
 -   各 [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) には、[**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961) オブジェクトのコレクションが含まれています。 **MapRouteLeg** の [**Maneuvers**](https://msdn.microsoft.com/library/windows/apps/dn636959) プロパティを通じてこのコレクションにアクセスします。
 
-## ルート案内の表示
+## <a name="display-directions"></a>ルート案内の表示
 
 
 自動車ルートや徒歩ルート、ルート案内を取得するには、[**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) クラスのメソッド ([**GetDrivingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636943)、[**GetWalkingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636953) など) を呼び出します。 [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) オブジェクトには [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) オブジェクトが含まれており、[**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) プロパティを使ってアクセスできます。
@@ -126,7 +133,7 @@ Turn right onto James St.
 You have reached your destination.
 ```
 
-## ルートの表示
+## <a name="display-routes"></a>ルートの表示
 
 
 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) に [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) を表示するには、**MapRoute** を使って [**MapRouteView**](https://msdn.microsoft.com/library/windows/apps/dn637122) を構成します。 次に、**MapControl** の [**Routes**](https://msdn.microsoft.com/library/windows/apps/dn637047) コレクションに **MapRouteView** を追加します。
@@ -184,17 +191,11 @@ private async void ShowRouteOnMap()
 
 ![ルートが表示されたマップ コントロール。](images/routeonmap.png)
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
 * [UWP の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [地図の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Build 2015 のビデオ: Windows アプリでの電話、タブレット、PC で使用できるマップと位置情報の活用](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [UWP の交通情報アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

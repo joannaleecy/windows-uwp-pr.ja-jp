@@ -12,8 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
-ms.openlocfilehash: c75ee725ce4bc9fc33d9ea13e4ab92ed60bfb04d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 52e38acbde0fe1b7a53c210e4988ab34c8aacd50
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -248,10 +249,5 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

@@ -3,15 +3,22 @@ author: drewbatgit
 ms.assetid: AE98C22B-A071-4206-ABBB-C0F0FB7EF33C
 description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリにアダプティブ ストリーミング マルチメディア コンテンツの再生を追加する方法について説明します。 現在、この機能では、HTTP ライブ ストリーミング (HLS) と Dynamic Adaptive Streaming over HTTP (DASH) コンテンツの再生がサポートされています。"
 title: "アダプティブ ストリーミング"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: d0941887ebc17f3665302fae6c7b0a124dfb5a0b
-ms.openlocfilehash: 431fa345c0135a08c1da68904a8d58d969490a8d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3afd0440d8e552ebc3459c5fe30dd766db3ae8b9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アダプティブ ストリーミング
+# <a name="adaptive-streaming"></a>アダプティブ ストリーミング
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリにアダプティブ ストリーミング マルチメディア コンテンツの再生を追加する方法について説明します。 現在、この機能では、HTTP ライブ ストリーミング (HLS) と Dynamic Adaptive Streaming over HTTP (DASH) コンテンツの再生がサポートされています。
 
@@ -20,7 +27,7 @@ ms.openlocfilehash: 431fa345c0135a08c1da68904a8d58d969490a8d
 > [!NOTE] 
 > この記事のコードは、UWP の[アダプティブ ストリーミングのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/AdaptiveStreaming)を基にしています。
 
-## MediaPlayer と MediaPlayerElement を使った簡単なアダプティブ ストリーミング
+## <a name="simple-adaptive-streaming-with-mediaplayer-and-mediaplayerelement"></a>MediaPlayer と MediaPlayerElement を使った簡単なアダプティブ ストリーミング
 
 UWP アプリでアダプティブ ストリーミング メディアを再生するには、DASH または HLS のマニフェスト ファイルを指す **Uri** オブジェクトを作成します。 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) クラスのインスタンスを作成します。 [**MediaSource.CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912) を呼び出して新しい **MediaSource** オブジェクトを作成し、それを **MediaPlayer** の [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) プロパティに設定します。 [**Play**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Play) を呼び出してメディア コンテンツの作成を開始します。
 
@@ -39,7 +46,7 @@ UWP アプリでアダプティブ ストリーミング メディアを再生�
 > [!NOTE] 
 > Windows 10 バージョン 1607 以降、メディア項目の再生には、**MediaPlayer** クラスを使うことをお勧めします。 **MediaPlayerElement** は、XAML ページの **MediaPlayer** コンテンツをレンダリングするために使われる軽量の XAML コントロールです。 下位互換性を確保するため、**MediaElement**コントロールも引き続きサポートされています。 **MediaPlayer** と **MediaPlayerElement** を使ってメディア コンテンツを再生する方法について詳しくは、「[MediaPlayer を使ったオーディオとビデオの再生](play-audio-and-video-with-mediaplayer.md)」をご覧ください。 **MediaSource** と関連の API を使ってメディア コンテンツを操作する方法について詳しくは、「[メディア項目、プレイリスト、トラック](media-playback-with-mediasource.md)」をご覧ください。
 
-## AdaptiveMediaSource を使ったアダプティブ ストリーミング
+## <a name="adaptive-streaming-with-adaptivemediasource"></a>AdaptiveMediaSource を使ったアダプティブ ストリーミング
 
 アプリで、より高度なアダプティブ ストリーミング機能 (カスタム HTTP ヘッダーの指定、現在のダウンロードや再生のビットレートの監視、アダプティブ ストリーミングのビットレートをシステムで切り替えるタイミングを決定する比率の調整など) を必要とする場合は、[**AdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn946912) オブジェクトを使います。
 
@@ -67,7 +74,7 @@ UWP アプリでアダプティブ ストリーミング メディアを再生�
 
 [!code-cs[AMSBitrateEvents](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSBitrateEvents)]
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 * [メディア再生](media-playback.md)
 * [HLS タグのサポート](hls-tag-support.md) 
 * [MediaPlayer を使ったオーディオとビデオの再生](play-audio-and-video-with-mediaplayer.md)
@@ -76,10 +83,5 @@ UWP アプリでアダプティブ ストリーミング メディアを再生�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

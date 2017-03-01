@@ -3,13 +3,20 @@ author: jnHs
 Description: "自分の他のアプリで、自分のアプリの 1 つを宣伝する広告を無料で作成することができます。 これを「自社広告」と呼びます。"
 title: "自社広告について"
 ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6d0c9aa276a624966b6294db2be8e08a716d42c2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8c4f6597ecb262bf93efa02b695221606521a754
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 自社広告について
+# <a name="about-house-ads"></a>自社広告について
 
 
 自分の他のアプリで、自分のアプリの 1 つを宣伝する広告を無料で作成することができます。 これを「*自社広告*」と呼びます。
@@ -25,7 +32,7 @@ ms.openlocfilehash: 6d0c9aa276a624966b6294db2be8e08a716d42c2
 
  
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [アプリ向けの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)
@@ -33,10 +40,5 @@ ms.openlocfilehash: 6d0c9aa276a624966b6294db2be8e08a716d42c2
 * [アプリのインストールの広告レポート](app-install-ads-reports.md)
 * [よく寄せられる質問](common-questions.md)
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

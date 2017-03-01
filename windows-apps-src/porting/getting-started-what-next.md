@@ -3,17 +3,24 @@ author: mcleblanc
 title: "はじめに - 次の手順"
 ms.assetid: 903046E7-581F-4845-AB80-1A57C42B1B02
 description: "この基本情報を使って、もっと興味深いユニバーサル Windows プラットフォーム (UWP) アプリの作成を今すぐ開始できます。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d71c0026c8658e8aa88827915b8f2d815f10c6ef
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2ca600085c14c43d9d9d37e80efbae30bae650ef
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# はじめに - 次の手順
+# <a name="getting-started-what-next"></a>はじめに: 次の手順
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
-## 次のステップ
+## <a name="next-steps"></a>次のステップ
 
 この基本情報を使って、もっと興味深いユニバーサル Windows プラットフォーム (UWP) アプリの作成を今すぐ開始できます。 次の手順として、次のトピックを読んでから Microsoft Visual Studio を起動し、コードの作成を始めます。
 
@@ -24,20 +31,15 @@ ms.openlocfilehash: d71c0026c8658e8aa88827915b8f2d815f10c6ef
 -   [C# または Visual Basic を使った初めての Windows ランタイム アプリの作成に関するページ](http://go.microsoft.com/fwlink/p/?LinkID=394138): Windows Phone 開発に重点を置いたトピックを説明します。
 -   「[iOS と Android 開発者向けビデオ](https://msdn.microsoft.com/library/windows/apps/dn393982)」: その他のヘルプをビデオで説明します。
 
-さらに、[コミュニティ リソースに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=263513)にアクセスすることもお勧めします。開発者フォーラム、ブログ、開発者キャンプとワークショップ、地域の Microsoft イベントや担当者を通じて情報を入手または交換できます。
+さらに、[コミュニティ リソースに関するページ](https://developer.microsoft.com/en-us/windows/support)にアクセスすることもお勧めします。開発者フォーラム、ブログ、開発者キャンプとワークショップ、地域の Microsoft イベントや担当者を通じて情報を入手または交換できます。
 
 Windows 10 により、新しいアプリの構築機会が開かれます。 開発者の皆さんによって構築された優れたアプリを見る機会を楽しみにしています。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 **iOS 開発者のためのトピック**
 * [iOS 開発者向けリソース](https://msdn.microsoft.com/library/windows/apps/jj945493)
 * [iOS 開発者のための Windows のコントロール](https://msdn.microsoft.com/library/windows/apps/dn263255)
 * [iOS 開発者のための Windows のクックブック](https://msdn.microsoft.com/library/windows/apps/dn263256)
 * [Windows 用アプリ開発ブログ](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

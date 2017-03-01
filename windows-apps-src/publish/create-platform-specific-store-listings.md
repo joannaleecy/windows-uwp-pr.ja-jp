@@ -3,13 +3,20 @@ author: jnHs
 Description: "さまざまなオペレーティング システムを対象とするパッケージを提供する場合、対象のオペレーティング システムごとにストア登録情報の一部をカスタマイズするオプションがあります。"
 title: "プラットフォーム固有のストア登録情報の作成"
 ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
-ms.openlocfilehash: 8d9b026cf09d076cd7f7dc8a72d611e68ddd61c7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: aaeedd655e5ae84dc4ee71683a9831412c8ef5ac
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# プラットフォーム固有のストア登録情報の作成
+# <a name="create-platform-specific-store-listings"></a>プラットフォーム固有のストア登録情報の作成
 
 
 さまざまなオペレーティング システムを対象とするパッケージを提供する場合、対象のオペレーティング システムごとにストア登録情報の一部をカスタマイズするオプションがあります。 このオプションは、パッケージをアップロード済みで、以前の OS バージョン (Windows 8.x 以前または Windows Phone 8.x 以前) 用のパッケージを含めている場合を除き、表示されません。
@@ -20,7 +27,7 @@ ms.openlocfilehash: 8d9b026cf09d076cd7f7dc8a72d611e68ddd61c7
 
 > **注:** 1 つの言語でプラットフォーム固有のストア登録情報を作成しても、アプリでサポートされる他の言語でプラットフォーム固有のストア登録情報が作成されるわけではありません。これは、それらの言語で[ストア登録情報を入力](create-app-store-listings.md)した場合も同様です。 プラットフォーム固有のストア登録情報は、言語ごとに別個に作成する必要があります。
 
-## プラットフォーム固有のストア登録情報の作成
+## <a name="creating-a-platform-specific-store-listing"></a>プラットフォーム固有のストア登録情報の作成
 
 以前の OS バージョン (Windows 8.x 以前または Windows Phone 8.x 以前) をサポートするパッケージを既にアップロードしている場合、**プラットフォーム固有のアプリのストア登録情報を作成**するためのリンクが **[ストア登録情報]** ページの先頭部分に表示されます。
 
@@ -36,7 +43,7 @@ ms.openlocfilehash: 8d9b026cf09d076cd7f7dc8a72d611e68ddd61c7
 
 > **注:** アプリのストア登録情報のすべてのフィールドを、対象となる特定の OS に合わせてカスタマイズできるわけではありません。 詳しくは、「[共有フィールド](create-app-store-listings.md#shared-fields)」をご覧ください。
 
-## プラットフォーム固有のストア登録情報の削除
+## <a name="removing-a-platform-specific-store-listing"></a>プラットフォーム固有のストア登録情報の削除
 
 プラットフォーム固有のストア登録情報を作成した後、そのオペレーティング システムではユーザーに既定のストア登録情報を表示することにした場合は、**[削除]** リンクをクリックします。 それらのユーザーに既定のストア登録情報を表示することを確認したら、**[OK]** をクリックします。 プラットフォーム固有のストア登録情報が削除されます。 後で戻す場合には、上記の手順に従っていつでもそのオペレーティング システム用の新しいプラットフォーム固有のストア登録情報を作成できます。
 
@@ -46,10 +53,5 @@ ms.openlocfilehash: 8d9b026cf09d076cd7f7dc8a72d611e68ddd61c7
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

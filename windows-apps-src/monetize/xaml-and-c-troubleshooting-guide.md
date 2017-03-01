@@ -1,11 +1,18 @@
 ---
 author: mcleanbyron
 ms.assetid: 141900dd-f1d3-4432-ac8b-b98eaa0b0da2
-description: "XAML アプリの Microsoft Advertising ライブラリに関する、開発上の一般的な問題に対する解決策の詳細"
+description: "XAML アプリの Microsoft Advertising ライブラリに関する、開発上の一般的な問題に対する解決策について説明します。"
 title: "XAML と C# のトラブルシューティング ガイド"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 広告, 宣伝, AdControl, トラブルシューティング, XAML, C#"
 translationtype: Human Translation
-ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
-ms.openlocfilehash: 63db8e9899c3337f558fc0e60b1b81cbcf9b0d8d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0d5ba07f3a77f360dcb45c7139a7301cdb623dbb
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -270,9 +277,4 @@ ms.openlocfilehash: 63db8e9899c3337f558fc0e60b1b81cbcf9b0d8d
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -3,13 +3,20 @@ author: DelfCo
 description: "ネットワーク経由でファイルを確実にコピーするには、バックグラウンド転送 API を使います。"
 title: "バックグラウンド転送"
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 177ada6ea8934ca74636454946dfa9c450285167
-ms.openlocfilehash: f8548c85e571d3f0f72f775af4ca40d85e86c163
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 26cf0e8330b9a57d082de7b7255a86ddde3b77d4
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# バックグラウンド転送
+# <a name="background-transfers"></a>バックグラウンド転送
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -26,18 +33,18 @@ ms.openlocfilehash: f8548c85e571d3f0f72f775af4ca40d85e86c163
 
 すぐに完了する可能性がある小さいリソースをダウンロードする場合は、バックグラウンド転送ではなく [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) API を使ってください。
 
-## Windows.Networking.BackgroundTransfer を使う
+## <a name="using-windowsnetworkingbackgroundtransfer"></a>Windows.Networking.BackgroundTransfer を使う
 
 
-### バックグラウンド転送機能はどのように動作するか
+### <a name="how-does-the-background-transfer-feature-work"></a>バックグラウンド転送機能はどのように動作するか
 
 アプリがバックグラウンド転送を使って転送を開始するときは、[**BackgroundDownloader**](https://msdn.microsoft.com/library/windows/apps/br207126) または [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) クラス オブジェクトを使って要求が構成され初期化されます。 それぞれの転送操作は、呼び出し元アプリとは別にシステムによって個別に処理されます。 進行情報はアプリの UI でユーザーに状況を示す場合に利用することができ、アプリで一時停止、再開、キャンセルしたり、転送中にデータを読み取ったりすることができます。 システムによって転送が処理される方法により、スマートな電力消費が実現し、アプリの中断や終了、突然のネットワーク ステータス変化などのイベントが接続アプリで発生したときに起こる可能性のある問題を回避できます。
 
-### バックグラウンド転送での認証されたファイル要求の実行
+### <a name="performing-authenticated-file-requests-with-background-transfer"></a>バックグラウンド転送での認証されたファイル要求の実行
 
 バックグラウンド転送では、基本サーバーとプロキシの資格情報、Cookie をサポートするメソッドが用意されており、それぞれの転送操作で ([**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146) を介して) カスタム HTTP ヘッダーを使うこともできます。
 
-### この機能ではネットワーク ステータスの変化や予期しないシャットダウンにどのように対応するか
+### <a name="how-does-this-feature-adapt-to-network-status-changes-or-unexpected-shutdowns"></a>この機能ではネットワーク ステータスの変化や予期しないシャットダウンにどのように対応するか
 
 バックグラウンド転送機能により、ネットワークの状態が変化したときに各転送操作に対して一貫性のあるエクスペリエンスが保たれます。これは、[接続](https://msdn.microsoft.com/library/windows/apps/hh452990) 機能によって提供される接続とキャリアのデータ プラン ステータスの情報をインテリジェントに利用しています。 さまざまなネットワーク シナリオでの動作を定義するために、アプリは、[**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) によって定義された値を使って、各転送操作のコスト ポリシーを設定します。
 
@@ -59,14 +66,14 @@ ms.openlocfilehash: f8548c85e571d3f0f72f775af4ca40d85e86c163
 
  
 
-## ファイルのアップロード
+## <a name="uploading-files"></a>ファイルのアップロード
 
 
 バックグラウンド転送を使う場合、アップロードは [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) として存在し、操作の再起動や取り消しに使われる多くの制御メソッドを公開します。 アプリのイベント (一時停止、終了など) や接続の変更は、**UploadOperation** を通じてシステムによって自動的に処理されます。アップロードは、アプリの一時停止中も続行し、アプリの終了以降は一時停止して保持されます。 また、[**CostPolicy**](https://msdn.microsoft.com/library/windows/apps/hh701018) プロパティを設定することで、従量制課金接続がインターネット接続のために使われている間もアプリがアップロードを開始するかどうかを指定します。
 
 以下に、基本的なアップロードを作成および初期化する例と、前のアプリ セッションから続いている操作を列挙および再び取り込む例を示します。
 
-### 1 つのファイルのアップロード
+### <a name="uploading-a-single-file"></a>1 つのファイルのアップロード
 
 アップロードの作成は、[**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) から始めます。 このクラスは、アプリで [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) を作成する前に、そのアップロードを構成できるようにするメソッドを提供するために使われます。 次の例は、必要な [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) オブジェクトと [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを使ってこれを行う方法を示しています。
 
@@ -94,7 +101,7 @@ promise = upload.startAsync().then(complete, error, progress);
 
 非同期メソッドの後に then ステートメントが続いています。このステートメントでは、非同期メソッドの呼び出しの結果が返されたときに呼び出される、アプリで定義されたメソッドを指定しています。 このプログラミング パターンについて詳しくは、「[promise を使った JavaScript での非同期プログラミング](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx)」をご覧ください。
 
-### 複数のファイルのアップロード
+### <a name="uploading-multiple-files"></a>複数のファイルのアップロード
 
 **アップロードするファイルと送信先の特定**
 
@@ -160,7 +167,7 @@ contentParts 配列には、アップロード用の各 [**IStorageFile**](https
      };
 ```
 
-### 中断されたアップロード操作の再開
+### <a name="restarting-interrupted-upload-operations"></a>中断されたアップロード操作の再開
 
 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) が完了するか取り消されると、関連するシステム リソースがすべて解放されます。 ただし、これらのイベントのどちらかが発生する前にアプリが終了した場合、アクティブな操作は一時停止され、それぞれに関連付けられているリソースは占有されたままになります。 これらの操作が列挙されずに次のアプリ セッションに再び取り込まれると、それらの操作は完了せず、デバイス リソースを占有したままとなります。
 
@@ -172,7 +179,7 @@ contentParts 配列には、アップロード用の各 [**IStorageFile**](https
 
     [!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_D "持続している操作を列挙する")]
 
-## ファイルのダウンロード
+## <a name="downloading-files"></a>ファイルのダウンロード
 
 バックグラウンド転送を使う場合、各ダウンロードは [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) として存在し、操作の一時停止、再開、再起動、取り消しに使われる多くの制御メソッドを公開します。 アプリのイベント (一時停止、終了など) や接続の変更は、**DownloadOperation** を通じてシステムによって自動的に処理されます。ダウンロードは、アプリの一時停止中も続行し、アプリの終了以降は一時停止して保持されます。 モバイル ネットワーク シナリオの場合、[**CostPolicy**](https://msdn.microsoft.com/library/windows/apps/hh701018) プロパティを設定することで、従量制課金接続がインターネット接続のために使われている間もアプリがダウンロードを開始または続行するかどうかを指定します。
 
@@ -180,7 +187,7 @@ contentParts 配列には、アップロード用の各 [**IStorageFile**](https
 
 以下に、基本的なダウンロードを作成および初期化する例と、前のアプリ セッションから続いている操作を列挙および再び取り込む例を示します。
 
-### バックグラウンド転送によるファイルのダウンロードを構成して開始する
+### <a name="configure-and-start-a-background-transfer-file-download"></a>バックグラウンド転送によるファイルのダウンロードを構成して開始する
 
 URI とファイル名を表す文字列を使って、[**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) オブジェクトと要求されたファイルを格納する [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) とを作成する方法を次の例で示します。 この例では、新しいファイルが定義済みの場所に自動的に配置されます。 または、[**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) を使ってユーザーがファイルを保存するデバイスの場所を指定できるようになります。 [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) に対するコールバックを再び割り当てるために呼び出される **load** メソッドは、アプリの終了以降も持続する場合、このセクションでこの後定義する DownloadOp クラス内にあることに注意してください。
 
@@ -194,13 +201,13 @@ promise = download.startAsync().then(complete, error, progress);
 
 非同期メソッドの後に then ステートメントが続いています。このステートメントでは、非同期メソッドの呼び出しの結果が返されたときに呼び出される、アプリで定義されたメソッドを指定しています。 このプログラミング パターンについて詳しくは、「[プロミスを使った JavaScript での非同期プログラミング](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx)」をご覧ください。
 
-### その他の操作制御メソッドの追加
+### <a name="adding-additional-operation-control-methods"></a>その他の操作制御メソッドの追加
 
 追加の [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) メソッドを実装することによって、制御のレベルを高めることができます。 上の例に次のコードを追加すると、ダウンロードをキャンセルすることができるようになります。
 
 [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_B)]
 
-### 持続している操作の起動時の列挙
+### <a name="enumerating-persisted-operations-at-start-up"></a>持続している操作の起動時の列挙
 
 [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) が完了するか取り消されると、関連するシステム リソースがすべて解放されます。 ただし、これらのイベントのどちらかが発生する前にアプリが終了した場合、ダウンロードは一時停止され、バックグラウンドで保持されます。 以下の例は、持続しているダウンロードを新しいアプリ セッションに再び取り込む方法を示しています。
 
@@ -214,7 +221,7 @@ promise = download.startAsync().then(complete, error, progress);
 
 1.  これで、返された値の一覧を使って、保留中の操作を再開できます。
 
-## 後処理
+## <a name="post-processing"></a>後処理
 
 Windows 10 の新機能は、アプリが実行されていない場合でも、バックグラウンド転送の完了時にアプリケーション コードを実行できる機能です。 たとえば、アプリが開始されるたびに新しいムービーをスキャンするのではなく、ムービーのダウンロードが完了した後で利用可能な映画の一覧を更新できます。 または、アプリでファイル転送が失敗した場合に、別のサーバーまたはポートを使ってもう一度転送し直すことができます。 後処理は成功した転送と失敗した転送の両方で呼び出されるため、これを使って、カスタム エラー処理と再試行ロジックを実装できます。
 
@@ -270,7 +277,7 @@ Windows 10 の新機能は、アプリが実行されていない場合でも、
 
 後処理はフォアグラウンド完了ハンドラーに代わるものではないことにも注意してください。 アプリにフォアグラウンド完了ハンドラーが定義されているときに、ファイル転送の完了時にアプリが実行されている場合は、フォアグラウンド完了ハンドラーとバックグラウンド完了ハンドラーの両方が呼び出されます。 フォアグラウンド タスクとバックグラウンド タスクが呼び出される順序は保証されません。 両方を定義する場合は、2 つのタスクが正常に動作し、同時に実行されても相互に干渉しないことを確認する必要があります。
 
-## 要求のタイムアウト
+## <a name="request-timeouts"></a>要求のタイムアウト
 
 次の 2 つの主要接続タイムアウト シナリオを考慮する必要があります。
 
@@ -280,7 +287,7 @@ Windows 10 の新機能は、アプリが実行されていない場合でも、
 
 > **注:** どちらのシナリオにおいても、バックグラウンド転送はインターネット接続があることを前提に、最高 3 回まで自動的に要求を再試行します。 インターネット接続が検出されないと、検出されるまで別の要求は待機します。
 
-## デバッグのガイダンス
+## <a name="debugging-guidance"></a>デバッグのガイダンス
 
 Microsoft Visual Studio でデバッグ セッションを停止することは、アプリを閉じることに相当します。PUT によるアップロードは一時停止され、POST によるアップロードは終了されます。 デバッグ時であっても、アプリでは、持続しているアップロードを列挙し、再実行や取り消しを行うことができる必要があります。 たとえば、そのデバッグ セッションで以前の操作が重要ではない場合、アプリの起動時に、列挙された持続しているアップロード操作をアプリで取り消すことができます。
 
@@ -298,7 +305,7 @@ Visual Studio を使う 4 つのシナリオで、この問題が発生する可
 機能を追加または削除するマニフェストの更新など、通常のアプリのサービスでは、アプリのエンド ユーザーに対する展開でこの問題は発生しません。
 この問題を回避するには、アプリのすべてのバージョンを完全にアンインストールし、新しい言語、アーキテクチャ、カルチャ、または機能をもう一度展開します。 この操作は、**スタート**画面で行うか、PowerShell と **Remove-AppxPackage** コマンドレットを使って行うことができます。
 
-## Windows.Networking.BackgroundTransfer の例外
+## <a name="exceptions-in-windowsnetworkingbackgroundtransfer"></a>Windows.Networking.BackgroundTransfer の例外
 
 Uniform Resource Identifier (URI) として無効な文字列が、[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) オブジェクトのコンストラクターに渡されると、例外がスローされます。
 
@@ -313,10 +320,5 @@ C++ では、URI として渡される文字列を試行して解析するメソ
 [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 名前空間の非同期メソッドで発生したエラーは、**HRESULT** 値として返されます。 [**BackgroundTransferError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701093) メソッドは、バックグラウンド転送操作からのネットワーク エラーを [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 列挙値に変換するために使われます。 **WebErrorStatus** 列挙値のほとんどは、ネイティブ HTTP または FTP クライアント操作から返されるエラーに対応しています。 アプリは特定の **WebErrorStatus** 列挙値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
 
 パラメーター検証エラーの場合は、例外の **HRESULT** を使って、その例外の原因となったエラーの詳細情報を確認することもできます。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 パラメーター検証エラーではほとんどの場合、返される **HRESULT** は **E\_INVALIDARG** です。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

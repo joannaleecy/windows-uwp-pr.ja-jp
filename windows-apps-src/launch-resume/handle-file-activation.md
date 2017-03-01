@@ -3,9 +3,16 @@ author: TylerMSFT
 title: "ファイルのアクティブ化の処理"
 description: "アプリは、特定のファイルの種類の既定のハンドラーとして登録することができます。"
 ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: ed7aee6add80d31b48006d9dec9e207c449a1912
-ms.openlocfilehash: ffcfa8991e9eb73b8d6a47bb7dd1cd23220097e0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6575ea6480b5c03836f9f44bdb19d8b17d78d16d
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -151,9 +158,4 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

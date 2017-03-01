@@ -6,20 +6,22 @@ ms.assetid: 8D3D1F66-7D17-4DD1-B426-DCCBD534EF00
 label: Cortana-Launch a foreground app
 template: detail.hbs
 redirect_url: https://msdn.microsoft.com/en-us/cortana/voicecommands/launch-a-foreground-app-with-voice-commands-in-cortana
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 6bbfb7877a75081ee422015da0e434cf6fa0ff36
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 391910aa7f71ecb52517925341a611ce7c539a61
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Cortana の音声コマンドを使ったフォアグラウンド アプリのアクティブ化
+# <a name="activate-a-foreground-app-with-voice-commands-through-cortana"></a>Cortana の音声コマンドを使ったフォアグラウンド アプリのアクティブ化
 
 このトピックは https://msdn.microsoft.com/en-us/cortana/voicecommands/launch-a-foreground-app-with-voice-commands-in-cortana に移動されました。
 
 Github: https://github.com/Microsoft/cortana-docs/blob/master/docs/voicecommands/launch-a-foreground-app-with-voice-commands-in-cortana.md
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

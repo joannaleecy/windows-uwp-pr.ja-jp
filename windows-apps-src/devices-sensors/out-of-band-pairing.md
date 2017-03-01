@@ -3,16 +3,23 @@ author: IvorB
 ms.assetid: E9ADC88F-BD4F-4721-8893-0E19EA94C8BA
 title: "帯域外ペアリング"
 description: "帯域外ペアリングを使うと、アプリは検出を行わなくても店舗販売時点管理の周辺機器に接続できます。"
+ms.author: ivorb
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
-ms.openlocfilehash: 283f0a0cfc7b3827e70ea79490818bc259d98ad1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dc0bad7d8625817cfffcc84f89afeed96a07a21f
+ms.lasthandoff: 02/07/2017
 
 ---
-# 帯域外ペアリング
+# <a name="out-of-band-pairing"></a>帯域外ペアリング
 
 帯域外ペアリングを使うと、アプリは検出を行わなくても店舗販売時点管理の周辺機器に接続できます。 アプリは、[**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/windows.devices.pointofservice.aspx) 名前空間を使って、専用の形式に設定された文字列 (帯域外 BLOB) を、目的の周辺機器用の適切な **FromIdAsync** メソッドに渡す必要があります。 **FromIdAsync** が実行されると、ホスト デバイスが周辺機器にペアリングして接続してから、操作が呼び出し元に返されます。
 
-## 帯域外 BLOB の形式
+## <a name="out-of-band-blob-format"></a>帯域外 BLOB の形式
 
 ```json
     "connectionKind":"Network",
@@ -60,7 +67,7 @@ ms.openlocfilehash: 283f0a0cfc7b3827e70ea79490818bc259d98ad1
 | キャッシュ ドロワー | CashDrawerProtocolProvider.dll |
 | スキャナー | BarcodeScannerProtocolProvider.dll |
 
-## 使用例: ネットワーク プリンター
+## <a name="usage-example-network-printer"></a>使用例: ネットワーク プリンター
 
 ```csharp
 String oobBlobNetworkPrinter =
@@ -74,7 +81,7 @@ String oobBlobNetworkPrinter =
 printer = await PosPrinter.FromIdAsync(oobBlobNetworkPrinter);
 ```
 
-## 使用例: Bluetooth プリンター
+## <a name="usage-example-bluetooth-printer"></a>使用例: Bluetooth プリンター
 
 ```csharp
 string oobBlobBTPrinter =
@@ -87,9 +94,4 @@ string oobBlobBTPrinter =
 printer = await PosPrinter.FromIdAsync(oobBlobBTPrinter);
 
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

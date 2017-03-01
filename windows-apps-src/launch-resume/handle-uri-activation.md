@@ -3,13 +3,20 @@ author: TylerMSFT
 title: "URI のアクティブ化の処理"
 description: "URI (Uniform Resource Identifier) スキーム名の既定のハンドラーとしてアプリを登録する方法について説明します。"
 ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 0e0fa6cf082034110e11b9bde910564de8f5048c
-ms.openlocfilehash: 9577ac3dd2b89daaacab4792a4c09fc37c400365
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 233044095bc8e994ef1a425ec7069fc7fdc93b86
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# URI のアクティブ化の処理
+# <a name="handle-uri-activation"></a>URI のアクティブ化の処理
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
@@ -28,7 +35,7 @@ URI スキーム名に登録するのは、その種類の URI スキームの�
 
 > **注**  UWP アプリでは、組み込みのアプリとオペレーティング システムで使うために、特定の URI とファイル拡張子が予約されています。 予約されている URI またはファイル拡張子にアプリを登録しようとしても無視されます。 予約または禁止されいるため、UWP アプリを登録できない URI スキームの一覧 (アルファベット順) については、「[予約済みの URI スキーム名とファイルの種類](reserved-uri-scheme-names.md)」をご覧ください。
 
-## ステップ 1: パッケージ マニフェストに拡張点を指定する
+## <a name="step-1-specify-the-extension-point-in-the-package-manifest"></a>ステップ 1: パッケージ マニフェストに拡張点を指定する
 
 
 アプリは、パッケージ マニフェストに一覧表示される URI スキーム名のアクティブ化イベントだけを受け取ります。 アプリが `alsdk` URI スキーム名を処理することを示す方法は次のとおりです。
@@ -67,7 +74,7 @@ URI スキーム名に登録するのは、その種類の URI スキームの�
           </Extensions>
     ```
 
-## ステップ 2: 適切なアイコンを追加する
+## <a name="step-2-add-the-proper-icons"></a>ステップ 2: 適切なアイコンを追加する
 
 
 URI スキーム名の既定となるアプリは、そのアイコンがシステムのさまざまな場所に表示されます。アイコンは、たとえば [既定のプログラム] コントロール パネルに表示されます。
@@ -76,7 +83,7 @@ URI スキーム名の既定となるアプリは、そのアイコンがシス�
 
 ![ソリューション エクスプローラーで images フォルダー内にあるファイルを表示した様子。 Icon.targetsize と smallTile-sdk の両方に 16、32、48、256 の各ピクセルのバージョンがあります。](images/seviewofimages.png)
 
-## ステップ 3: アクティブ化イベントを処理する
+## <a name="step-3-handle-the-activated-event"></a>ステップ 3: アクティブ化イベントを処理する
 
 
 [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) イベント ハンドラーは、すべてのファイル アクティブ化イベントを受け取ります。 **Kind** プロパティは、アクティブ化イベントの種類を示しています。 次の例では、[**Protocol**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.activation.activationkind.aspx#Protocol) アクティブ化イベントを処理するように設定されています。
@@ -126,7 +133,7 @@ URI スキーム名の既定となるアプリは、そのアイコンがシス�
 
 プロトコルのアクティブ化によって起動されるときは、アプリの先頭ページに戻ることができる UI を含めることを検討してください。
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 
 URI スキーム名は、悪意のあるものも含め、あらゆるアプリや Web サイトから使われる可能性があります。 そのため、その URI で受け取るデータは、信頼できないソースからのデータである可能性があります。 URI で受け取るパラメーターに基づいて永続的な操作を実行しないことをお勧めします。 たとえば、アプリを起動するとユーザーのアカウント ページが表示されるようにするために URI パラメーターを使うことはかまいませんが、ユーザーのアカウントを直接変更するためにプロトコル パラメーターを使うことは行わないことをお勧めします。
@@ -143,7 +150,7 @@ URI スキーム名は、悪意のあるものも含め、あらゆるアプリ�
 
  
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 **完全な例**
@@ -173,9 +180,4 @@ URI スキーム名は、悪意のあるものも含め、あらゆるアプリ�
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

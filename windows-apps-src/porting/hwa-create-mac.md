@@ -3,25 +3,33 @@ author: seksenov
 title: "ホストされた Web アプリ - Mac を使用した Web アプリケーションから Windows アプリへの変換"
 description: "Mac を使用して、Web サイトを、Windows 10 用のユニバーサル Windows プラットフォーム (UWP) アプリに変換します。"
 kw: Hosted Web Apps with a Mac, Porting to Windows 10 with a Mac, Convert website to Windows with Mac, Packaging web application with ManfoldJS for Windows Store, Add website to Windows Store with App Studio
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Mac を使ってホストされた Web アプリ, Mac を使った Windows 10 への移植, Mac を使った Web サイトから Windows への変換, Web サイトから Windows ストアへ, Web アプリ用マニホールド JS, Web アプリ用 App Studio"
+ms.assetid: a4cea1e8-4417-4488-b0e7-45c704dc53e9
 translationtype: Human Translation
-ms.sourcegitcommit: 0458dcd2aab862ccdecf1ebbc51e883405a929a6
-ms.openlocfilehash: 3ba820e2ec8a3556874c0c7c7e328831bab783ca
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 464097cc3f90c2e84e03e936fb354f4220aff91d
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Mac を使用したホストされた Web アプリの作成
+# <a name="create-your-hosted-web-app-using-a-mac"></a>Mac を使用したホストされた Web アプリの作成
 
 Web サイトの URL のみから開始して、Windows 10 用のユニバーサル Windows プラットフォーム アプリをすばやく作成できます。 
 
 > [!NOTE]
-> 以下の手順は、Mac の開発プラットフォームで使用される手順です。 Windows ユーザーの場合は、[Windows 開発プラットフォームを使用する手順](/hwa-create-windows.md)をご覧ください。
+> 以下の手順は、Mac の開発プラットフォームで使用される手順です。 Windows ユーザーの場合は、[Windows 開発プラットフォームを使用する手順](./hwa-create-windows.md)をご覧ください。
 
-## Mac での開発に必要な要素
+## <a name="what-you-need-to-develop-on-mac"></a>Mac での開発に必要な要素
 
 - Web ブラウザー。
 - コマンド プロンプト。
 
-## オプション 1: ManifoldJS
+## <a name="option-1-manifoldjs"></a>オプション 1: ManifoldJS
 
 [ManifoldJS](http://manifoldjs.com/) は、NPM から簡単にインストールできる Node.js アプリです。 Web サイトに関するメタデータが抽出され、Android、iOS、Windows でホストされるネイティブ アプリが生成されます。 サイトに [Web アプリ マニフェスト](https://www.w3.org/TR/appmanifest/)がない場合は、自動的に生成されます。
 
@@ -41,7 +49,7 @@ manifoldjs http://codepen.io/seksenov/pen/wBbVyb/?editors=101
 
 [![ManifoldJS を使用して Mac で UWP Web アプリを公開する](images/hwa-to-uwp/mac_manifoldjs_video.png)](https://sec.ch9.ms/ch9/0a67/9b06e5c7-d7aa-478d-b30d-f99e145a0a67/ManifoldJS_high.mp4 "ManifoldJS を使用して Mac で UWP Web アプリを公開する")
 
-## オプション 2: App Studio
+## <a name="option-2-app-studio"></a>オプション 2: App Studio
 
 [App Studio](http://appstudio.windows.com/) は無料のオンライン アプリ作成ツールで、Windows 10 アプリをすばやく構築することができます。
 
@@ -53,14 +61,9 @@ manifoldjs http://codepen.io/seksenov/pen/wBbVyb/?editors=101
 
 4. 画面の指示に従って、Windows ストアに公開できるパッケージを生成します。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
-- [ユニバーサル Windows プラットフォーム (UWP) 機能にアクセスして Web アプリを強化する](/hwa-access-features.md)
+- [ユニバーサル Windows プラットフォーム (UWP) 機能にアクセスして Web アプリを強化する](./hwa-access-features.md)
 - [ユニバーサル Windows プラットフォーム (UWP) アプリのガイド](http://go.microsoft.com/fwlink/p/?LinkID=397871)
 - [Windows ストア アプリ設計のアセットのダウンロード](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

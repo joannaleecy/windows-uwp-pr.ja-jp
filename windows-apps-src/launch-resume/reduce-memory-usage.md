@@ -1,34 +1,41 @@
 ---
 author: TylerMSFT
-ms.assetid: 
+ms.assetid: 3a3ea86e-fa47-46ee-9e2e-f59644c0d1db
 description: "この記事では、アプリがバックグラウンドに移動したときにメモリ使用量を削減する方法について説明します。"
 title: "アプリがバックグラウンド状態に移行したときのメモリ使用量の削減"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: bf0cb8f072a2a6974ab582329d8b482add37f1d9
-ms.openlocfilehash: 80e89e24236903ab90f7c4fe326782a0a7e5272f
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: ef4527f72898c8c5a6ad9c56d975966402894b2c
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# アプリがバックグラウンドに移動したときの空きメモリ
+# <a name="free-memory-when-your-app-moves-to-the-background"></a>アプリがバックグラウンドに移動したときのメモリの解放
 
 この記事では、アプリが一時停止にされたり、場合によっては終了にされたりすることがないように、バックグラウンド状態に移行したアプリで使用するメモリの量を削減する方法を説明します。
 
-## 新しいバックグラウンド イベント
+## <a name="new-background-events"></a>新しいバックグラウンド イベント
 
 Windows 10 バージョン 1607 では、2 つ新しいアプリケーション ライフ サイクル イベント [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) および [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) が導入されています。 これらのイベントによって、バックグラウンドへの移行とバックグラウンドからの移行をアプリに通知できます。
 
 アプリがバックグラウンドに移行すると、システムにより強制されるメモリ制限が変化する場合があります。 これらのイベントを使用することで、バックグラウンドに移行しているアプリが中断されたり、場合によっては終了されたりしないように、現在のメモリ消費量を確認してリソースを解放し、制限値を下回っている状態を保ちます。
 
-### アプリのメモリ使用量を制御するイベント
+### <a name="events-for-controlling-your-apps-memory-usage"></a>アプリのメモリ使用量を制御するイベント
 
-[MemoryManager.AppMemoryUsageLimitChanging](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.appmemoryusagelimitchanging.aspx) は、アプリで使用できる合計メモリの制限が変更される直前に発生します。 たとえば、アプリがバックグラウンドに移行し、それが Xbox 上である場合、メモリ制限が 1024 MB から 128 MB に変更されます。  
+[MemoryManager.AppMemoryUsageLimitChanging](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.appmemoryusagelimitchanging.aspx) は、アプリで使用できる合計メモリの制限が変更される直前に発生します。 たとえば、アプリがバックグラウンドに移行し、それが Xbox 上である場合、メモリ制限が 1024 MB から 128 MB に変更されます。  
 プラットフォームによってアプリが中断または終了されることを回避するには、このイベントを処理することが最も重要になります。
 
-[MemoryManager.AppMemoryUsageIncreased](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.appmemoryusageincreased.aspx) は、アプリのメモリ消費量が [AppMemoryUsageLevel](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.appmemoryusagelevel.aspx) 列挙値の高い値まで増加したときに発生します。 たとえば、**Low** から **Medium** まで増加した場合です。 このイベントの処理は省略可能ですが、制限未満に留まることについてはまだアプリに責任があるため、処理することをお勧めします。
+[MemoryManager.AppMemoryUsageIncreased](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.appmemoryusageincreased.aspx) は、アプリのメモリ消費量が [AppMemoryUsageLevel](https://msdn.microsoft.com/library/windows/apps/windows.system.appmemoryusagelevel.aspx) 列挙値の高い値まで増加したときに発生します。 たとえば、**Low** から **Medium** まで増加した場合です。 このイベントの処理は省略可能ですが、制限未満に留まることについてはまだアプリに責任があるため、処理することをお勧めします。
 
-[MemoryManager.AppMemoryUsageDecreased](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.appmemoryusagedecreased.aspx) は、アプリのメモリ消費量が **AppMemoryUsageLevel** 列挙値の低い値まで減少したときに発生します。 たとえば、**High** から **Low** まで減少した場合です。 このイベントの処理は省略可能ですが、処理することによって必要に応じてアプリで追加のメモリを割り当てられる可能性があることが示されます。
+[MemoryManager.AppMemoryUsageDecreased](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.appmemoryusagedecreased.aspx) は、アプリのメモリ消費量が **AppMemoryUsageLevel** 列挙値の低い値まで減少したときに発生します。 たとえば、**High** から **Low** まで減少した場合です。 このイベントの処理は省略可能ですが、処理することによって必要に応じてアプリで追加のメモリを割り当てられる可能性があることが示されます。
 
-## フォアグラウンドとバックグラウンドの間の移行の処理
+## <a name="handle-the-transition-between-foreground-and-background"></a>フォアグラウンドとバックグラウンドの間の移行の処理
 
 アプリがフォアグラウンドからバックグラウンドに移動すると、[**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) イベントが発生します。 アプリがフォアグラウンドに戻るときには、[**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) イベントが発生します。 アプリの作成時にこれらのイベントのハンドラーを登録できます。 既定のプロジェクト テンプレートでは、これは、App.xaml.cs の **App** クラス コンストラクターで行われます。
 
@@ -76,9 +83,9 @@ Windows 10 バージョン 1607 では、2 つ新しいアプリケーション 
 
 [!code-cs[CreateRootFrame](./code/ReduceMemory/cs/App.xaml.cs#SnippetCreateRootFrame)]
 
-## ガイドライン
+## <a name="guidelines"></a>ガイドライン
 
-### フォアグラウンドからバックグラウンドへの移動
+### <a name="moving-from-the-foreground-to-the-background"></a>フォアグラウンドからバックグラウンドへの移動
 
 アプリがフォアグラウンドからバックグラウンドに移動すると、アプリの代わりにシステムによって、必要のないバックグラウンドのリソースを解放する動作が実行されます。 たとえば、アプリに代わって UI フレームワークによってキャッシュ済みのテクスチャがフラッシュされ、ビデオ サブシステムによって割り当て済みのメモリが解放されます。 ただし、システムによって中断されたり終了されたりすることを避けるために、アプリでは引き続きメモリ使用量を注意深く監視する必要があります。
 
@@ -91,19 +98,14 @@ Windows 10 バージョン 1607 では、2 つ新しいアプリケーション 
 - パフォーマンス最適化として、**EnteredBackground** ハンドラーではなく、**AppMemoryUsageLimitChanging** イベント ハンドラーで UI リソースを解放することを**考慮**します。 **EnteredBackground/LeavingBackground** イベント ハンドラーでブール値セットを使用し、アプリがバックグラウンドで動作しているかフォアグラウンドで動作しているかを追跡します。 次に、**AppMemoryUsageLimitChanging** イベント ハンドラーで、**AppMemoryUsage** が制限を超えていて、アプリがバックグラウンドで動作している場合は (ブール値に基づく)、UI リソースを解放します。
 - **EnteredBackground** イベントでは時間がかかる操作を実行**しないでください**。アプリケーション間の移行がユーザーに対して遅く表示される可能性があるためです。
 
-### バックグラウンドからフォアグラウンドへの移動
+### <a name="moving-from-the-background-to-the-foreground"></a>バックグラウンドからフォアグラウンドへの移動
 
 アプリがバックグラウンドからフォアグラウンドに移動すると、アプリはまず **AppMemoryUsageLimitChanging** イベントを受け取り、次に **LeavingBackground** イベントを受け取ります。
 
 - **必ず**、**LeavingBackground** イベントを使用して、バックグラウンドに移動したときに破棄した UI リソースを再作成します。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [バックグラウンド メディア再生のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=800141) - アプリがバックグラウンド状態に移行するときにメモリを解放する方法を説明します。
 * [診断ツール](https://blogs.msdn.microsoft.com/visualstudioalm/2015/01/16/diagnostic-tools-debugger-window-in-visual-studio-2015/) - 診断ツールを使用して、ガベージ コレクション イベントを監視し、予想される方法によりアプリでメモリが解放されているかどうかを検証します。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

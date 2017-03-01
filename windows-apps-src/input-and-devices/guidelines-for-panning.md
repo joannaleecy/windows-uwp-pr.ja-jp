@@ -5,9 +5,16 @@ title: "パン"
 ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
 label: Panning
 template: detail.hbs
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: d043555d0b467c6b27bc4f0a3b86ccb1404e16a3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 73e119663483a62d06b29b3212053ba9a0d181ee
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -194,10 +201,5 @@ Windows 8 では 3 種類のパンがサポートされます。
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

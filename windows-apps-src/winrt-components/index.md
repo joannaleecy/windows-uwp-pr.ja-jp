@@ -3,16 +3,23 @@ author: msatranjr
 title: "Windows ランタイム コンポーネント"
 description: "Windows ランタイム コンポーネントは自己完結型オブジェクトで、C#、Visual Basic、JavaScript、C++ など、すべての言語からインスタンス化して使用することができます。"
 ms.assetid: 55887622-828b-4318-87f2-25592268f7c1
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 4e9f3de68c44cf545ceee2efd99d9db8cab08676
-ms.openlocfilehash: e0dfdce921ee910d0440f01b4f816598499925f5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 853bd782ca9b5495aeb74a4aaf3dc53f23d7c282
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Windows ランタイム コンポーネント
+# <a name="windows-runtime-components"></a>Windows ランタイム コンポーネント
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 Windows ランタイム コンポーネントは自己完結型オブジェクトで、C#、Visual Basic、JavaScript、C++ など、すべての言語からインスタンス化して使用することができます。
 
@@ -33,10 +40,5 @@ Visual Studio と C#、Visual Basic、または C++ を使って、ユニバー�
  
 
 
-
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

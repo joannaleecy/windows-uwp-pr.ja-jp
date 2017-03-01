@@ -1,18 +1,25 @@
 ---
 author: jnHs
-Description: "説明が良いと、Windows ストアでアプリが引き立ち、お客様がアプリをダウンロードするための後押しになります。"
+Description: "説明が魅力的であれば、Windows ストアでアプリが引き立ち、お客様がアプリをダウンロードするための後押しになります。"
 title: "人の心をつかむアプリの説明を書く"
 ms.assetid: E477E98E-090A-4ACE-832F-A98D273EFCA0
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 1591a9a84db2d0b00345d522ee5fc076142e0054
-ms.openlocfilehash: 01bc284b74568651012acfc7fb29c8912bb1f4d1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 632d18270a34a7d975aa8d7216e49769a3cd7b84
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 人の心をつかむアプリの説明を書く
+# <a name="write-a-great-app-description"></a>人の心をつかむアプリの説明を書く
 
 
-説明が良いと、Windows ストアでアプリが引き立ち、お客様がアプリをダウンロードするための後押しになります。 [アプリの提出時に入力した説明](create-app-store-listings.md#description)は、アプリのストアの内容に表示されます。 最初の数行は、検索結果や、ストアのアルゴリズム リストにも表示されます。
+説明が魅力的であれば、Windows ストアでアプリが引き立ち、お客様がアプリをダウンロードするための後押しになります。 [アプリの提出時に入力した説明](create-app-store-listings.md#description)は、アプリのストアの内容に表示されます。 最初の数行は、検索結果や、ストアのアルゴリズム リストにも表示されます。
 
 
 アプリを効果的にアピールする説明を書くためのヒントを次にいくつか紹介します。
@@ -36,10 +43,5 @@ ms.openlocfilehash: 01bc284b74568651012acfc7fb29c8912bb1f4d1
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

@@ -3,18 +3,25 @@ author: jnHs
 Description: "分析データを含む .tsv ファイルをダウンロードすると、統計情報と情報をオフラインで確認できます。"
 title: "分析レポートのダウンロード"
 ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 0cd83d5e93952689386bf2ae08fa3bf4e924dbdb
-ms.openlocfilehash: 7ec649d0847e60a6bedadc4164809324a17bf377
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0480c3a35db6aaab1d8f7682dbb2ca5483bc8f5f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 分析レポートのダウンロード
+# <a name="download-analytics-reports"></a>分析レポートのダウンロード
 
 
 分析データを含むファイルをダウンロードすると、統計情報と情報をオフラインで確認できます。
 
-## 特定のレポートをダウンロードするには
+## <a name="to-download-a-specific-report"></a>特定のレポートをダウンロードするには
 
 1.  Windows デベロッパー センター ダッシュボードで、上部のナビゲーション メニューの **[アプリ]** を選択します。
 2.  **[アプリ]** ページで、アプリのいずれかを選択します。
@@ -25,11 +32,6 @@ ms.openlocfilehash: 7ec649d0847e60a6bedadc4164809324a17bf377
 7.  **[集計レベル]** と **[日付の範囲]** ドロップダウン リストで、レポートに適切なオプションを選択します。 選んだレポートの種類によってオプションは異なる可能性があることに注意してください。
 8.  **[レポートのダウンロード]** をクリックして .tsv ファイルを保存し、Microsoft Excel またはタブ区切り値 (TSV) ファイルをサポートしている別のプログラムでファイルを開きます。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 - [分析](analytics.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

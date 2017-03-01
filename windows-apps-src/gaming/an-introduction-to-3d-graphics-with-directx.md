@@ -3,13 +3,20 @@ author: mtoepke
 title: "DirectX ゲームの基本的な 3D グラフィックス"
 description: "DirectX プログラミングを使って、3D グラフィックスの基本的な概念を実装する方法について説明します。"
 ms.assetid: 2989c91f-7b45-7377-4e83-9daa0325e92e
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, DirectX, グラフィックス"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d4b059bed3cb21403b742048d6f6df47780b8aab
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2ac11ce220bc1c62c81df12fbf9c2a41fda1d940
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# DirectX ゲームの基本的な 3D グラフィックス
+# <a name="basic-3d-graphics-for-directx-games"></a>DirectX ゲームの基本的な 3D グラフィックス
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
@@ -18,14 +25,14 @@ DirectX プログラミングを使って、3D グラフィックスの基本的
 
 **目標:** 3D グラフィックス アプリのプログラミング方法を身に付ける。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 
 C++ に習熟していることを前提としています。 また、グラフィックス プログラミングの概念に対する基礎的な知識も必要となります。
 
 **完了までの合計時間:** 30 分。
 
-## 次の段階
+## <a name="where-to-go-from-here"></a>次の段階
 
 
 ここでは、DirectX と C++\\Cx を使って 3D グラフィックスを開発する方法について説明します。 この 5 つのパートから成るチュートリアルでは、[Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466) API と、その他の DirectX サンプルの多くでも使われる概念やコードを紹介しています。 各パートでは、UWP の C++ アプリ向けに DirectX を構成することから始まって、プリミティブのテクスチャリングや効果の追加まで、段階的に構築していきます。
@@ -51,7 +58,7 @@ C++ に習熟していることを前提としています。 また、グラフ
 
 [クイック スタート: DirectX リソースの設定と画像の表示](setting-up-directx-resources.md)
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [Direct3D 11 グラフィックス](https://msdn.microsoft.com/library/windows/desktop/ff476080)
@@ -64,10 +71,5 @@ C++ に習熟していることを前提としています。 また、グラフ
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

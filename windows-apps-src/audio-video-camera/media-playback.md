@@ -1,21 +1,28 @@
 ---
 author: drewbatgit
-ms.assetid: 
+ms.assetid: 25553c4d-fa4f-4130-af9b-97f993fefd43
 description: "このセクションでは、オーディオとビデオを再生するユニバーサル Windows アプリの作成について説明します。"
 title: "メディア再生"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 4349113e3503e0be4afede9bed70c71262435d09
-ms.openlocfilehash: 4dd961d508ccbdfa13dd99946ed03bb2d6e8705a
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 58b41c9d0d8bd7cd07b5a1f4aecf5936422a4ee8
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# メディア再生
+# <a name="media-playback"></a>メディア再生
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 このセクションでは、オーディオとビデオを再生するユニバーサル Windows アプリの作成について説明します。 
 
-## 開発者向けメディア再生機能
+## <a name="media-playback-developer-features"></a>開発者向けメディア再生機能
 
 次の表に、メディア再生機能をアプリに追加するための詳しいガイダンスを提供するハウツー記事の一覧を示します。
  
@@ -31,7 +38,7 @@ ms.openlocfilehash: 4dd961d508ccbdfa13dd99946ed03bb2d6e8705a
 | [PlayReady DRM](playready-client-sdk.md)                                                          | このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリに PlayReady で保護されたメディア コンテンツを追加する方法について説明します。                                                                                                                                                                                |
 | [PlayReady の Encrypted Media Extension](playready-encrypted-media-extension.md)                     | このセクションでは、以前の Windows 8.1 から、Windows 10 バージョンに加えられた変更をサポートするために、PlayReady Web アプリを変更する方法について説明します。                                                                                                                                       |
 
-## メディア再生の SDK サンプル
+## <a name="media-playback-sdk-samples"></a>メディア再生の SDK サンプル
 
 次の SDK サンプルでは、Windows 10 の UWP アプリで利用できるメディア再生機能が示されています。 コンテキスト内でメディア再生 API を使用する方法を確認したり、独自のアプリを作成し始める場合は、以下のサンプルをご利用ください。
 
@@ -42,10 +49,5 @@ ms.openlocfilehash: 4dd961d508ccbdfa13dd99946ed03bb2d6e8705a
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

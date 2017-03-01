@@ -3,13 +3,20 @@ author: jnHs
 Description: "アプリの広告キャンペーンを管理するには、Windows デベロッパー センター ダッシュボードでアプリのページから、[収益化]、[アプリの宣伝] の順にクリックします。"
 title: "広告キャンペーンの管理"
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 71fb1e13c3db45043b312d24ea739ae68751dfb0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b73b8c1ac467bce3d1edcec3582d247e7a90bd29
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 広告キャンペーンの管理
+# <a name="managing-your-ad-campaign"></a>広告キャンペーンの管理
 
 
 アプリの広告キャンペーンを管理するには、Windows デベロッパー センター ダッシュボードでアプリのページから、**[収益化]**、**[アプリの宣伝]** の順にクリックします。 **[アプリの宣伝]** ページには、アプリに関連付けられたすべての広告キャンペーンが一覧表示され、各広告キャンペーンのインプレッション数、クリック数、インストール数が表示されます。 インプレッション数、クリック数、インストール数について詳しくは、「[アプリのインストールの広告レポート](app-install-ads-reports.md)」でこれらの用語の定義をご覧ください。
@@ -24,17 +31,17 @@ ms.openlocfilehash: 71fb1e13c3db45043b312d24ea739ae68751dfb0
     -   **[ご注意ください]** は、広告キャンペーンに注意が必要な問題があることを示します (課金エラーや、検証に失敗したカスタム広告デザインなど)。 問題を修正するには、広告キャンペーン テーブルの **[アクション]** 列のテキストをクリックします。
 -   **キャンペーンの種類**: 広告キャンペーンを有料と[自社](about-house-ads.md)のどちらにするかを指定します。
 
-## レポート
+## <a name="report"></a>レポート
 
 
 広告キャンペーンのパフォーマンスを確認するには、ダッシュボードのナビゲーション ウィンドウで **[分析]**、**[アプリ インストール広告]** の順にクリックします。 このレポートについて詳しくは、「[アプリのインストールの広告レポート](app-install-ads-reports.md)」をご覧ください。
 
-## 広告キャンペーンの編集
+## <a name="edit-an-ad-campaign"></a>広告キャンペーンの編集
 
 
 広告キャンペーンに変更を加えるには、その名前をクリックし、その広告キャンペーンの詳細ページに移動します。 変更を加えたら、**[レビュー]** をクリックして詳細を確認し、**[確認]** をクリックします。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [アプリの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)
@@ -47,10 +54,5 @@ ms.openlocfilehash: 71fb1e13c3db45043b312d24ea739ae68751dfb0
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

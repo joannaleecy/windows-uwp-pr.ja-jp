@@ -3,25 +3,32 @@ author: mtoepke
 title: "レンダリング フレームワークの作成"
 description: "次に、作成した構造と状態をサンプル ゲームで使ってグラフィックスを表示する方法を見てみましょう。"
 ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, レンダリング"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c0c935af257fe52e22cadaffb6e008ddbf9629a8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7b97a70094c953e9614a84979c9f98fc91a82451
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# レンダリング フレームワークの作成
+# <a name="assemble-the-rendering-framework"></a>レンダリング フレームワークの作成
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 これまで、Windows ランタイムで動作するユニバーサル Windows プラットフォーム (UWP) ゲームを構築する方法、ステート マシンを定義してゲームのフローを処理する方法について確認してきました。 次に、作成した構造と状態をサンプル ゲームで使ってグラフィックスを表示する方法を見てみましょう。 ここでは、グラフィックス デバイスの初期化からディスプレイへのグラフィックス オブジェクトの表示まで、レンダリング フレームワークの実装方法について見ていきます。
 
-## 目標
+## <a name="objective"></a>目標
 
 
 -   基本的なレンダリング フレームワークを設定して、UWP DirectX ゲームのグラフィックス出力を表示する方法を理解する。
 
-> **注**   ここでは次のコード ファイルについては説明しませんが、コード ファイルはこのトピックで参照するクラスとメソッドを提供しており、[このトピックの最後でコードとして提供されます](#code_sample)。
+> **注**   ここでは次のコード ファイルについては説明しませんが、コード ファイルはこのトピックで参照するクラスとメソッドを提供しており、[このトピックの最後でコードとして提供されます](#complete-sample-code-for-this-section)。
 -   **Animate.h/.cpp**。
 -   **BasicLoader.h/.cpp**。 メッシュ、シェーダー、テクスチャを同期または非同期で読み込むメソッドを提供します。 これは非常に便利です。
 -   **MeshObject.h/.cpp**、**SphereMesh.h/.cpp**、**CylinderMesh.h/.cpp**、**FaceMesh.h/.cpp**、**WorldMesh.h/.cpp**。 弾に使う球体、円柱形と円すい状の障害物、シューティング ギャラリーの壁など、ゲームで使うオブジェクト プリミティブの定義が含まれます (**GameObject.cpp**にはこれらのプリミティブをレンダリングするためのメソッドが含まれます。このトピックで簡単に説明します)。
@@ -32,7 +39,7 @@ ms.openlocfilehash: c0c935af257fe52e22cadaffb6e008ddbf9629a8
 
  
 
-このセクションでは、ゲーム サンプルの 3 つの主要ファイルを取り上げます ([このトピックの最後でコードとして紹介します](#code_sample))。
+このセクションでは、ゲーム サンプルの 3 つの主要ファイルを取り上げます ([このトピックの最後でコードとして紹介します](#complete-sample-code-for-this-section))。
 
 -   **Camera.h/.cpp**
 -   **GameRenderer.h/.cpp**
@@ -41,7 +48,7 @@ ms.openlocfilehash: c0c935af257fe52e22cadaffb6e008ddbf9629a8
 繰り返しになりますが、メッシュ、頂点、テクスチャなどの 3D プログラミングの基本的な概念を理解しているものとします。 Direct3D 11 のプログラミング全般について詳しくは、「[Direct 3D 11 のプログラミング ガイド](https://msdn.microsoft.com/library/windows/desktop/ff476345)」をご覧ください。
 それでは、ゲームを画面に表示するために必要な作業を見ていきましょう。
 
-## Windows ランタイムと DirectX の概要
+## <a name="an-overview-of-the-windows-runtime-and-directx"></a>Windows ランタイムと DirectX の概要
 
 
 DirectX は、Windows ランタイムと Windows 10 エクスペリエンスの基本となる部分です。 Windows 10 の視覚効果はすべて DirectX の上に構築されており、同じダイレクト ラインを、同じ下位レベルのグラフィックス インターフェイスである [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534) に対して持ちます。DXGI はグラフィックス ハードウェアとそのドライバーにアブストラクション レイヤーを提供します。 DXGI と直接対話するためのすべての Direct3D 11 API を利用できます。 これによって、ゲームで高速かつ高性能なグラフィックスを使用でき、すべての最新のグラフィックス ハードウェア機能にアクセスすることができます。
@@ -50,7 +57,7 @@ UWP アプリに DirectX のサポートを追加するには、[**IFrameworkVie
 
 「[ゲームのユニバーサル Windows プラットフォーム (UWP) アプリ フレームワークの定義](tutorial--building-the-games-metro-style-app-framework.md)」では、レンダラーがゲーム サンプルのアプリ フレームワークにどのように適合するかについて説明しています。 それでは、ゲーム レンダラーをビューに接続して、ゲームの外観を定義するグラフィックスを作成する方法を見ていきましょう。
 
-## レンダラーの定義
+## <a name="defining-the-renderer"></a>レンダラーの定義
 
 
 **GameRenderer** 抽象型は **DirectXBase** レンダラー型から継承され、ステレオ 3-D に対するサポートを追加して、グラフィックス プリミティブの作成と定義を行うシェーダーの定数バッファーとリソースを宣言します。
@@ -143,7 +150,7 @@ Direct3D 11 API は COM API として定義されるため、これらの API �
 
 それでは、このオブジェクトの作成方法を見ていきましょう。
 
-## レンダラーの初期化
+## <a name="initializing-the-renderer"></a>レンダラーの初期化
 
 
 サンプル ゲームでは、この **Initialize** メソッドを **App::SetWindow** の CoreApplication 初期化シーケンスの一部として呼び出します。
@@ -179,7 +186,7 @@ void GameRenderer::Initialize(
 
 DirectXBase の初期化が完了すると、**GameInfoOverlay** オブジェクトが初期化されます。 初期化が完了したら、ゲームのグラフィックス リソースの作成と読み込みを行うためのメソッドを確認します。
 
-## DirectX グラフィックス リソースの作成と読み込み
+## <a name="creating-and-loading-directx-graphics-resources"></a>DirectX グラフィックス リソースの作成と読み込み
 
 
 どのようなゲームでも、まずグラフィックス インターフェイスへの接続を確立し、グラフィックスの描画に必要なリソースを作成してから、これらのグラフィックスを描画するレンダー ターゲットを設定します。 このゲーム サンプル (および Microsoft Visual Studio の **DirectX 11 アプリ (ユニバーサル Windows)** テンプレート) では、このプロセスは 3 つのメソッドを使って実装されます。
@@ -689,7 +696,7 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 
 ゲームには、現在のウィンドウにグラフィックスを表示するためのリソースがあり、ウィンドウが変更されたときにこれらのリソースを再作成できます。 次に、そのウィンドウ内のシーンのプレイヤー ビューを定義するカメラを見てみましょう。
 
-## カメラ オブジェクトの実装
+## <a name="implementing-the-camera-object"></a>カメラ オブジェクトの実装
 
 
 ゲームには、独自の座標系でワールドを更新するためのコードがあります (ワールド空間またはシーン空間と呼ばれることもあります)。 カメラを含むすべてのオブジェクトはこの空間に配置されます。 サンプル ゲームでは、カメラの位置とルック ベクター (カメラからシーンを直接ポイントする "ルック アット" ベクターとシーンに対して垂直かつ上向きの "ルック アップ" ベクター) によってカメラ空間が定義されます。 プロジェクション パラメーターは、最終シーン内でその空間のどのくらいが実際に表示されるのかを決定します。また、視野 (FoV)、縦横比、クリッピング プレーンはプロジェクション変換を定義します。 頂点シェーダーは、次のアルゴリズムを使って (V はベクター、M はマトリックスを表す) モデル座標からデバイス座標への変換を行います。
@@ -851,7 +858,7 @@ void Camera::SetProjParams(
 
 次に、ゲームでフレームワークを作成し、カメラを使ってゲーム グラフィックスを描画する方法を見てみましょう。 この手順には、ゲーム ワールドとその要素で構成されるプリミティブを定義することも含まれます。
 
-## プリミティブの定義
+## <a name="defining-the-primitives"></a>プリミティブの定義
 
 
 ゲーム サンプル コードでは、2 つの基底クラスでプリミティブを定義して実装し、プリミティブ型ごとに対応する特殊化を定義して実装します。
@@ -963,7 +970,7 @@ protected private:
 
 次に、このゲーム サンプルでのプリミティブの基本的なレンダリングを確認しましょう。
 
-## プリミティブのレンダリング
+## <a name="rendering-the-primitives"></a>プリミティブのレンダリング
 
 
 ゲーム サンプルのプリミティブは、次のように、親の **GameObject** クラスに実装された基本の **Render** メソッドを使います。
@@ -1048,7 +1055,7 @@ void MeshObject::Render(_In_ ID3D11DeviceContext *context)
 
 これが実際のレンダリング プロセスで行われます。
 
-## 頂点シェーダーとピクセル シェーダーの作成
+## <a name="creating-the-vertex-and-pixel-shaders"></a>頂点シェーダーとピクセル シェーダーの作成
 
 
 これまでにゲーム サンプルでは、描画するプリミティブと、レンダリングを定義する定数バッファーが定義されました。 これらの定数バッファーは、グラフィックス デバイス上で実行されるシェーダーに対するパラメーター セットとして機能します。 これらのシェーダー プログラムには 2 つの型があります。
@@ -1181,7 +1188,7 @@ float4 main(PixelShaderInput input) : SV_Target
 
 次に、これらのすべての概念 (プリミティブ、カメラ、シェーダー) をまとめて、サンプル ゲームで完全なレンダリング プロセスがどのように構築されるかを見てみましょう。
 
-## 出力用のフレームのレンダリング
+## <a name="rendering-the-frame-for-output"></a>出力用のフレームのレンダリング
 
 
 このメソッドについては、「[メイン ゲーム オブジェクトの定義](tutorial--defining-the-main-game-loop.md)」で簡単に説明しました。 それでは、もう少し詳しく見てみましょう。
@@ -1348,12 +1355,12 @@ void GameRenderer::Render()
 
 これでゲームの表示が更新されます。 このように、これはゲームのグラフィックス フレームワークを実装する基本的なプロセスです。 もちろん、ゲームの規模が大きくなるほど、その複雑な構造 (オブジェクトの型やアニメーション動作の全体の階層など) を処理するために配置する必要のあるアブストラクションは多くなり、メッシュやテクスチャなどのアセットの読み込みと管理を行うためにより複雑なメソッドが必要になります。
 
-## 次のステップ
+## <a name="next-steps"></a>次のステップ
 
 
 次に、他のセクションで簡単に説明した、ゲーム サンプルのいくつかの重要な要素、[ユーザー インターフェイスのオーバーレイ](tutorial--adding-a-user-interface.md)、[入力コントロール](tutorial--adding-controls.md)、[サウンド](tutorial--adding-sound.md)について確認しましょう。
 
-## このセクションのサンプル コード一式
+## <a name="complete-sample-code-for-this-section"></a>このセクションのサンプル コード一式
 
 
 Camera.h
@@ -6311,7 +6318,7 @@ void Material::RenderSetup(
 
  
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [DirectX によるシンプルな UWP ゲームの作成](tutorial--create-your-first-metro-style-directx-game.md)
@@ -6322,10 +6329,5 @@ void Material::RenderSetup(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

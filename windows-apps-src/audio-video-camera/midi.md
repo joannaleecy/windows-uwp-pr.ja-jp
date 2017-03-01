@@ -3,20 +3,27 @@ author: drewbatgit
 ms.assetid: 9146212C-8480-4C16-B74C-D7F08C7086AF
 description: "この記事では、MIDI (Musical Instrument Digital Interface) デバイスを列挙する方法と、ユニバーサル Windows アプリとの間で MIDI メッセージを送受信する方法について説明します。"
 title: MIDI
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: bd494a814155d72642bb721a939fcc8c50668a2d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# MIDI
+# <a name="midi"></a>MIDI
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
 この記事では、MIDI (Musical Instrument Digital Interface) デバイスを列挙する方法と、ユニバーサル Windows アプリとの間で MIDI メッセージを送受信する方法について説明します。
 
-## MIDI デバイスの列挙
+## <a name="enumerate-midi-devices"></a>MIDI デバイスの列挙
 
 MIDI デバイスを列挙して使う前に、次の名前空間をプロジェクトに追加します。
 
@@ -34,7 +41,7 @@ MIDI 出力デバイスの列挙も入力デバイスの列挙とまったく同
 
 [!code-cs[EnumerateMidiOutputDevices](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetEnumerateMidiOutputDevices)]
 
-## デバイス ウォッチャーのヘルパー クラスを作成する
+## <a name="create-a-device-watcher-helper-class"></a>デバイス ウォッチャーのヘルパー クラスを作成する
 
 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) 名前空間の [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446) は、システムにデバイスが追加されるか削除された場合、またはデバイスの情報が更新された場合に、アプリに通知を送信できます。 MIDI 対応アプリでは通常、入力デバイスと出力デバイスの両方に関心があるため、この例では、**DeviceWatcher** パターンを実装するヘルパー クラスを作成して、同じコードを複製することなく MIDI 入力デバイスと MIDI 出力デバイスの両方に使えるようにします。
 
@@ -84,7 +91,7 @@ MIDI デバイスのセレクター文字列を渡して [**DeviceInformation.Cr
 
 [!code-cs[WatcherDestructor](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherDestructor)]
 
-## メッセージを送受信する MIDI ポートを作成する
+## <a name="create-midi-ports-to-send-and-receive-messages"></a>メッセージを送受信する MIDI ポートを作成する
 
 ページの分離コードで、**MyMidiDeviceWatcher** ヘルパー クラスの 2 つのインスタンスを保持するメンバー変数を宣言します。1 つは入力デバイス用、もう 1 つは出力デバイス用です。
 
@@ -122,7 +129,7 @@ MIDI デバイスのセレクター文字列を渡して [**DeviceInformation.Cr
 
 [!code-cs[CleanUp](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetCleanUp)]
 
-## 組み込みの Windows General MIDI シンセサイザーを使用する
+## <a name="using-the-built-in-windows-general-midi-synth"></a>組み込みの Windows General MIDI シンセサイザーを使用する
 
 上記で説明した手法を使用して MIDI 出力デバイスを列挙すると、アプリは、"Microsoft GS Wavetable Synth" という MIDI デバイスを検出します。 このデバイスは、アプリから使用できる組み込みの General MIDI シンセサイザーです。 ただし、組み込みのシンセサイザーの SDK 拡張機能をプロジェクトに含めていない限り、このデバイスへの MIDI アウトポートを作成しようとすると失敗します。
 
@@ -141,10 +148,5 @@ MIDI デバイスのセレクター文字列を渡して [**DeviceInformation.Cr
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

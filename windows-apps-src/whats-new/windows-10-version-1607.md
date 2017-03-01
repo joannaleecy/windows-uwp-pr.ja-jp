@@ -1,21 +1,28 @@
 ---
 author: QuinnRadich
-title: "開発者向けの Windows 10 の新機能、ツールと機能"
-description: "Windows 10 バージョン 1607 と新しい開発者ツールを使うと、新しいユニバーサル Windows プラットフォームによって強化されたツール、機能、そしてエクスペリエンスが利用できます。"
+title: "Windows 10 の開発者向け新着情報"
+description: "Windows 10 バージョン 1607 と新しい開発者ツールでは、新しいユニバーサル Windows プラットフォームによって強化されたツール、機能、エクスペリエンスを利用できます。"
 keywords: "新着情報, 新しい情報, 更新, 更新情報, 機能, 新規, Windows 10, 1607, 7 月, 最新"
+ms.author: quradic
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
 translationtype: Human Translation
-ms.sourcegitcommit: 860019e351f6fc6ce1ff00646413d3727e48de9c
-ms.openlocfilehash: d292d48489fa5001d3cd8af95aa72019107836c1
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: fff2eb225bcadaefa6bead622d953dd8b8ed4a76
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Windows 10 の開発者向け新着情報
+# <a name="whats-new-in-windows-version-1607"></a>Windows バージョン 1607 の新着情報
 
 Windows 10 バージョン 1607 と Windows 開発者ツールの更新プログラムでは、引き続きユニバーサル Windows プラットフォームによって強化されたツール、機能、エクスペリエンスを提供しています。 Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/fwlink/?LinkId=821431)すると、[新しいユニバーサル Windows アプリを作成](https://msdn.microsoft.com/library/windows/apps/bg124288)したり、[Windows の既存のアプリ コード](https://msdn.microsoft.com/library/windows/apps/mt238321)がどのように使えるかを試したりすることができます。
 
 開発者にとって重要な新機能や強化された機能の一覧を以下に示します。 Windows SDK に追加されたすべての新しい名前空間の一覧については、「[Windows 10 バージョン 1607 API の変更点](windows-10-version-1607-api-diff.md)」をご覧ください。 この更新での注目すべき機能について詳しくは、「[Windows 10 の優れた機能](http://go.microsoft.com/fwlink/?LinkId=823181)」をご覧ください。
 
-## Windows 10 バージョン 1607 - 2016 年 7 月
+## <a name="windows-10-version-1607---july-2016"></a>Windows 10 バージョン 1607 - 2016 年 7 月
 
 機能 | 説明
  :---- | :----
@@ -58,9 +65,4 @@ Windows Information Protection (WIP) API | [**WIP**](https://msdn.microsoft.com/
 Windows IOT Core | Windows IoT Core は、Raspberry Pi 3 だけでなく、リモート表示エクスペリエンスを完全にサポートするようになったため、ユーザーは IoT Core デバイスで実行されている UWP アプリケーションをリモートで表示および制御することができます。
 コンパニオン (IoT) デバイスを使った Windows のロック解除 | コンパニオン デバイスは、ユーザー認証のエクスペリエンスを強化するために、Windows 10 のデスクトップと組み合わせて使用できるデバイスです。 [コンパニオン デバイス フレームワーク](https://msdn.microsoft.com/windows/uwp/security/companion-device-unlock)を使用すると、コンパニオン デバイスは、Windows Hello を利用できない場合 (たとえば、Windows 10 のデスクトップに顔認証のカメラまたは指紋リーダーのデバイスがない場合など) でも、Microsoft Passport のための優れたエクスペリエンスを提供できます。
 Winsock | TCP ソケットは、[Winsock](https://tools.ietf.org/html/rfc7413) で TCP_FASTOPEN ソケット オプションを設定することにより、[RFC 7413](https://tools.ietf.org/html/rfc7413) TCP Fast Open を使用するように構成できます。
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

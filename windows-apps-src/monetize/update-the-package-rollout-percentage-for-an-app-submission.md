@@ -2,19 +2,27 @@
 author: mcleanbyron
 description: "アプリの申請に関するパッケージのロールアウト率を更新するには、Windows ストア申請 API のこのメソッドを使います。"
 title: "Windows ストア申請 API を使用したアプリの申請のパッケージ ロールアウト率の更新"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows ストア申請 API, パッケージのロールアウト, アプリの申請, 更新, 割合"
+ms.assetid: 4c82d837-7a25-4f3a-997e-b7be33b521cc
 translationtype: Human Translation
-ms.sourcegitcommit: 9b76a11adfab838b21713cb384cdf31eada3286e
-ms.openlocfilehash: bae825e0fecda32df770a1f48038c2eb652a05cc
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 18dee2374ad1daa33520438d348aa8ea0805c30a
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Windows ストア申請 API を使用したアプリの申請のパッケージ ロールアウト率の更新
+# <a name="update-the-package-rollout-percentage-for-an-app-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアプリの申請のパッケージ ロールアウト率の更新
 
 
 アプリの申請に関する[ロールアウト率を更新する](../publish/gradual-package-rollout.md#setting-the-rollout-percentage)には、Windows ストア申請 API のこのメソッドを使います。 Windows ストア申請 API を使ったアプリ申請の作成プロセスについて詳しくは、「[アプリの申請の管理](manage-app-submissions.md)」をご覧ください。
 
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
@@ -25,7 +33,7 @@ ms.openlocfilehash: bae825e0fecda32df770a1f48038c2eb652a05cc
 
 >**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するためのアクセス許可が付与された Windows デベロッパー センター アカウントでのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
-## 要求
+## <a name="request"></a>要求
 
 このメソッドの構文は次のとおりです。 ヘッダーと要求のパラメーターの使用例と説明については、以下のセクションをご覧ください。
 
@@ -36,7 +44,7 @@ ms.openlocfilehash: bae825e0fecda32df770a1f48038c2eb652a05cc
 <span/>
  
 
-### 要求ヘッダー
+### <a name="request-header"></a>要求ヘッダー
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -44,7 +52,7 @@ ms.openlocfilehash: bae825e0fecda32df770a1f48038c2eb652a05cc
 
 <span/>
 
-### 要求パラメーター
+### <a name="request-parameters"></a>要求パラメーター
 
 | 名前        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -54,11 +62,11 @@ ms.openlocfilehash: bae825e0fecda32df770a1f48038c2eb652a05cc
 
 <span/>
 
-### 要求本文
+### <a name="request-body"></a>要求本文
 
 このメソッドでは要求本文を指定しないでください。
 
-### 要求の例
+### <a name="request-example"></a>要求の例
 
 アプリの申請のパッケージ ロールアウト率を更新する方法の例を次に示します。
 
@@ -67,7 +75,7 @@ POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/su
 Authorization: Bearer <your access token>
 ```
 
-## 応答
+## <a name="response"></a>応答
 
 次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文の値について詳しくは、「[パッケージのロールアウトのリソース](manage-app-submissions.md#package-rollout-object)」をご覧ください。
 
@@ -80,7 +88,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## エラー コード
+## <a name="error-codes"></a>エラー コード
 
 要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。
 
@@ -92,14 +100,9 @@ Authorization: Bearer <your access token>
 <span/>
 
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [段階的なパッケージのロールアウト](../publish/gradual-package-rollout.md)
 * [Windows ストア申請 API を使用したアプリの申請の管理](manage-app-submissions.md)
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

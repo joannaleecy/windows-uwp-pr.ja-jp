@@ -3,38 +3,45 @@ author: jwmsft
 description: "コントロール テンプレート内のプロパティの値を、template 宣言されたコントロールのその他の公開されているプロパティの値にリンクします。 XAML では、TemplateBinding は ControlTemplate 定義内でのみ使用できます。"
 title: "TemplateBinding マークアップ拡張"
 ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4242bb606f29a6b70213dc8cde818ed86c3dda8d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7f279590cc1351efee2552e237ab095674768463
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# {TemplateBinding} マークアップ拡張
+# <a name="templatebinding-markup-extension"></a>{TemplateBinding} マークアップ拡張
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 コントロール テンプレート内のプロパティの値を、template 宣言されたコントロールのその他の公開されているプロパティの値にリンクします。 XAML では、**TemplateBinding** は [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 定義内でのみ使用できます。
 
-## XAML 属性の使用方法
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法
 
 ``` syntax
 <object propertyName="{TemplateBinding sourceProperty}" .../>
 ```
 
-## XAML 属性の使用方法 (テンプレートまたはスタイルの Setter プロパティの場合)
+## <a name="xaml-attribute-usage-for-setter-property-in-template-or-style"></a>XAML 属性の使用方法 (テンプレートまたはスタイルの Setter プロパティの場合)
 
 ``` syntax
 <Setter Property="propertyName" Value="{TemplateBinding sourceProperty}" .../>
 ```
 
-## XAML 値
+## <a name="xaml-values"></a>XAML 値
 
 | 用語 | 説明 |
 |------|-------------|
 | propertyName | setter 構文で設定されるプロパティの名前。 これは依存関係プロパティであることが必要です。 |
 | sourceProperty | template 宣言された型に存在する、別の依存関係プロパティの名前。 |
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 カスタム コントロールの作成者である場合でも、コントロール テンプレートを今あるコントロールに置き換える場合でも、コントロール テンプレートを定義するうえでは **TemplateBinding** を使うことが欠かせません。 詳しくは、「[クイック スタート: コントロール テンプレート](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)」をご覧ください。
 
@@ -52,7 +59,7 @@ XAML の [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/b
 
 **注**  Windows ランタイム XAML プロセッサの実装では、**TemplateBinding** のバッキング クラス表現はありません。 **TemplateBinding** は、XAML マークアップでのみ使用できます。 コードの動作を再現する方法には単純なものがありません。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [クイック スタート: コントロール テンプレート](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
 * [データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)
@@ -60,10 +67,5 @@ XAML の [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/b
 * [XAML の概要](xaml-overview.md)
 * [依存関係プロパティの概要](dependency-properties-overview.md)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

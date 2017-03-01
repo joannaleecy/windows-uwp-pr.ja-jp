@@ -2,16 +2,23 @@
 author: drewbatgit
 ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
 description: "このセクションでは、写真、ビデオ、オーディオをキャプチャ、再生、または編集するユニバーサル Windows (UWP) プラットフォーム アプリの作成について説明します。"
-title: "オーディオ、ビデオ、およびカメラ"
+title: "オーディオ、ビデオ、カメラ"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 77f47bce2a4be3f7c5ee3d320ff6c68e8c7ce6b0
-ms.openlocfilehash: d1aad0800bfe4982a316aa5da719db005b687fa1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2d3b61b35307536bc54f19b5857acfe946a010ce
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="audio-video-and-camera"></a>オーディオ、ビデオ、およびカメラ
+# <a name="audio-video-and-camera"></a>オーディオ、ビデオ、カメラ
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 このセクションでは、写真、ビデオ、オーディオをキャプチャ、再生、または編集するユニバーサル Windows (UWP) プラットフォーム アプリの作成について説明します。
  
@@ -35,7 +42,7 @@ ms.openlocfilehash: d1aad0800bfe4982a316aa5da719db005b687fa1
 
 
 ## <a name="see-also"></a>関連項目
-- [UWP アプリの開発](https://developer.microsoft.com/en-us/windows/develop)
+- [UWP アプリの開発](https://developer.microsoft.com/windows/develop)
 
  
 
@@ -45,10 +52,5 @@ ms.openlocfilehash: d1aad0800bfe4982a316aa5da719db005b687fa1
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

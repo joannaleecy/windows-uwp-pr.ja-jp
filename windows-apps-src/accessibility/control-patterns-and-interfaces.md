@@ -1,21 +1,28 @@
 ---
 author: Xansky
-Description: "Microsoft UI オートメーションのコントロール パターン、それらにアクセスするためにクライアントが使うクラス、それらを実装するためにプロバイダーが使うインターフェイスを示します。"
+Description: "Microsoft UI オートメーションのコントロール パターン、それらにアクセスするためにクライアントが使うクラス、それらを実装するためにプロバイダーが使うインターフェイスを紹介します。"
 ms.assetid: 2091883C-5D0C-44ED-936A-709022926A42
 title: "コントロール パターンとインターフェイス"
 label: Control patterns and interfaces
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 74e5af4c3eb5a2e17c95afce156474b613e966c5
-ms.openlocfilehash: d2ae98f95538c014ef256f5d4a400aabb36c3118
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: bec52abfca19634948e3ad2a1959b51b1df3eced
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# コントロール パターンとインターフェイス  
+# <a name="control-patterns-and-interfaces"></a>コントロール パターンとインターフェイス  
 
 
 
-Microsoft UI オートメーションのコントロール パターン、それらにアクセスするためにクライアントが使うクラス、それらを実装するためにプロバイダーが使うインターフェイスを示します。
+Microsoft UI オートメーションのコントロール パターン、それらにアクセスするためにクライアントが使うクラス、それらを実装するためにプロバイダーが使うインターフェイスを紹介します。
 
 このトピックの表は、Microsoft UI オートメーションのコントロール パターン、 それらにアクセスするために UI オートメーション クライアントが使うクラス、それらを実装するために UI オートメーション プロバイダーが使うインターフェイスを示しています。 **Control pattern** 列には、[**Control Pattern Availability Property Identifiers**](https://msdn.microsoft.com/library/windows/desktop/Ee671199) に一覧表示される定数値として、UI オートメーション クライアントから見たパターン名が表示されます。 UI オートメーション プロバイダーの側から見ると、これらのパターンは [**PatternInterface**](https://msdn.microsoft.com/library/windows/apps/BR242496) の定数名です。 **"クラス プロバイダー インターフェイス"** 列には、カスタム XAML コントロールにこのパターンを提供するためにプロバイダーが実装するインターフェイスの名前が表示されます。
 
@@ -64,12 +71,7 @@ Microsoft UI オートメーションのコントロール パターン、それ
 > Windows Phone ストア アプリでは、ここに示されているすべての UI オートメーションのコントロール パターンがサポートされているわけではありません。 **Annotation**、**Dock**、**Drag**、**DropTarget**、**ObjectModel** がサポートされていないパターンの例です。
 
 <span id="related_topics"/>
-## 関連トピック  
+## <a name="related-topics"></a>関連トピック  
 * [カスタム オートメーション ピア](custom-automation-peers.md)
 * [アクセシビリティ](accessibility.md) 
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

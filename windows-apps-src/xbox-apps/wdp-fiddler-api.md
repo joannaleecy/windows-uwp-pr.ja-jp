@@ -2,16 +2,24 @@
 author: WilliamsJason
 title: "Device Portal の Fiddler API のリファレンス"
 description: "プログラムによって Fiddler のトレースを有効または無効にする方法について説明します。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 translationtype: Human Translation
-ms.sourcegitcommit: 3cc2a4bd1859e46a73f3e806489eac7381fa6c17
-ms.openlocfilehash: bd215058c71118d8b3e5ce81e2302ce8b151c3f6
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 24e966f953928d238f9197359e0b539b8a3e5c3c
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Fiddler 設定 API のリファレンス   
+# <a name="fiddler-settings-api-reference"></a>Fiddler 設定 API のリファレンス   
 この REST API を使って、開発機での Fiddler のネットワーク トレースを有効または無効にすることができます。
 
-## Fiddler のトレースを有効にする
+## <a name="enable-fiddler-tracing"></a>Fiddler のトレースを有効にする
 
 **要求**
 
@@ -54,7 +62,7 @@ HTTP 状態コード      | 説明
 4XX | エラー コード
 5XX | エラー コード
 
-## 開発機で Fiddler のトレースを無効にする
+## <a name="disable-fiddler-tracing-on-the-devkit"></a>開発機で Fiddler のトレースを無効にする
 
 **要求**
 
@@ -95,12 +103,7 @@ HTTP 状態コード      | 説明
 
 * Windows Xbox
 
-## 参照
+## <a name="see-also"></a>参照
 - [Xbox の UWP での Fiddler の構成](uwp-fiddler.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -2,12 +2,20 @@
 author: JordanRh1
 title: "Windows 10 IoT Core でのユーザー モード アクセスの有効化"
 description: "このチュートリアルでは、Windows 10 IoT Core で GPIO、I2C、SPI、および UART へのユーザー モード アクセスを有効にする方法について説明します。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 363e73101157e1c9cc233d87b3964736c260f665
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: ced83940fb49f5812343fee34cb11582683bd672
+ms.lasthandoff: 02/08/2017
 
 ---
-# Windows 10 IoT Core でのユーザー モード アクセスの有効化
+# <a name="enable-usermode-access-on-windows-10-iot-core"></a>Windows 10 IoT Core でのユーザー モード アクセスの有効化
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -22,7 +30,7 @@ Windows 10 IoT Core には、GPIO、I2C、SPI、UART にユーザー モード�
 Windows での低レベル バスへのユーザー モード アクセスは、既存の `GpioClx` および `SpbCx` フレームワークを通じて組み込まれています。 Windows 10 IoT Core でのみ使用可能な *RhProxy* という新しいドライバーが、`GpioClx` リソースと `SpbCx` リソースをユーザー モードに公開します。 API を有効にするには、ユーザー モードに公開する GPIO リソースと SPB リソースのそれぞれで、ACPI テーブル内で rhproxy 用のデバイス ノードが宣言されている必要があります。 このドキュメントでは、ASL の作成と検証について説明します。 
 
 
-## ASL の例
+## <a name="asl-by-example"></a>ASL の例
 
 Raspberry Pi 2 での rhproxy デバイス ノードの宣言について説明します。 最初に、\\_SB スコープで ACPI デバイス宣言を作成します。  
 
@@ -41,7 +49,7 @@ Device(RHPX)
 
 次に、ユーザー モードに公開する GPIO リソースと SPB リソースをそれぞれ宣言します。 プロパティとリソースを関連付けるためにリソース インデックスが使われるため、リソースが宣言される順序は重要です。 複数の I2C または SPI バスが公開されている場合は、最初に宣言されているバスがその種類のバスの '既定' と見なされ、[Windows.Devices.I2c.I2cController](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2ccontroller.aspx) および [Windows.Devices.Spi.SpiController](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spicontroller.aspx) の `GetDefaultAsync()` メソッドによって返されるインスタンスになります。 
 
-### SPI 
+### <a name="spi"></a>SPI 
 
 Raspberry Pi には 2 つの公開されている SPI バスがあります。 SPI0 には 2 つのハードウェア チップ選択線があり、SPI1 には 1 つのハードウェア チップ選択線があります。 各バスの各チップ選択線に 1 つの SPISerialBus() リソース宣言が必要です。 次の 2 つの SPISerialBus リソース宣言は、SPI0 の 2 つのチップ選択線用です。 DeviceSelection フィールドには、ドライバーがハードウェア チップ選択線識別子として解釈する一意の値が含まれます。 DeviceSelection フィールドに入れる正確な値は、ACPI 接続記述子のこのフィールドをドライバーがどのように解釈するかによって異なります。  
 
@@ -152,7 +160,7 @@ Package(2) { "bus-SPI-SPI1", Package() { 2 }},
 
 これにより “SPI1” という名前のバスが作成され、リソース インデックス 2 に関連付けられます。  
 
-#### SPI ドライバーの要件 
+#### <a name="spi-driver-requirements"></a>SPI ドライバーの要件 
 
 * `SpbCx` を使うか、SpbCx と互換性がある必要があります 
 * [MITT SPI テスト](https://msdn.microsoft.com/library/windows/hardware/dn919873.aspx)に合格している必要があります
@@ -160,7 +168,7 @@ Package(2) { "bus-SPI-SPI1", Package() { 2 }},
 * 8 ビットのデータ長をサポートしている必要があります 
 * すべての SPI モード (0、1、2、3) をサポートしている必要があります 
 
-### I2C 
+### <a name="i2c"></a>I2C 
 
 次に、I2C リソースを宣言します。 Raspberry Pi はピン 3 および 5 で単一の I2C バスを公開しています。 
 
@@ -197,7 +205,7 @@ I2CSerialBus() 記述子の次のフィールドは固定されています。
 * ConnectionSpeed 
 * AddressingMode 
 
-#### I2C ドライバーの要件 
+#### <a name="i2c-driver-requirements"></a>I2C ドライバーの要件 
 
 * SpbCx を使うか、SpbCx と互換性がある必要があります 
 * [MITT I2C テスト](https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx)に合格している必要があります 
@@ -205,7 +213,7 @@ I2CSerialBus() 記述子の次のフィールドは固定されています。
 * 100 kHz のクロック周波数をサポートしている必要があります 
 * 400 kHz のクロック周波数をサポートしている必要があります 
 
-### GPIO 
+### <a name="gpio"></a>GPIO 
 
 次に、ユーザー モードに公開されるすべての GPIO ピンを宣言します。 どのピンを公開するかを判断するために、次のガイダンスを提供しています。 
 
@@ -243,7 +251,7 @@ GPIO ピンを宣言するときは、次の要件を順守する必要があり
 
 公開されているピンに複数の代替機能がある場合は、以降の OS による使用のための正しい多重化構成でのピンの初期化はファームウェアが行います。 ピンの機能の動的変更 (“多重化”) は、現在 Windows ではサポートされていません。 
 
-#### サポートされるドライバー モデル 
+#### <a name="supported-drive-modes"></a>サポートされるドライバー モデル 
 
 GPIO コントローラーで高インピーダンス入力と CMOS 出力に加えて組み込みのプル アップおよびプル ダウン抵抗がサポートされている場合は、オプションの SupportedDriveModes プロパティを使って指定する必要があります。 
 
@@ -264,7 +272,7 @@ InputHighImpedance と OutputCmos はほぼすべての GPIO コントローラ�
 
 GPIO 信号が公開されているヘッダーに到達する前にレベル シフターを通過する場合は、ドライブ モードが外部ヘッダーで監視可能でない場合でも、SOC によってサポートされているドライブ モードを宣言します。 たとえば、ピンを抵抗プル アップを備えたオープン ドレインとして表す双方向レベル シフターをピンが通過する場合は、ピンが高インピーダンス入力として構成されている場合でも、公開されたヘッダーで高インピーダンス状態は観測されません。 この場合も、ピンが高インピーダンス入力をサポートすることを宣言する必要があります。 
 
-#### ピンの番号付け 
+#### <a name="pin-numbering"></a>ピンの番号付け 
 
 Windows は、2 つのピンの番号付けスキームをサポートしています。 
 
@@ -287,13 +295,13 @@ Package (2) { “GPIO-PinCount”, 54 },
 
 ボードの既存の公開されたドキュメントと最も互換性のある番号付けスキームを選択します。 たとえば、多くの既存のピン配列図が BCM2835 ピン番号を使っているため、Raspberry Pi はネイティブのピンの番号付けを使います。 200 個を超えるピンから 10 個のピンのみが公開されるため、既存のピン配列図が少なく、連番のピンの番号付けでは開発者のエクスペリエンスが単純化されるので、MinnowBoardMax は連番のピンの番号付けを使います。 連番のピンの番号付けを使うかネイティブのピンの番号付けを使うかの決定は、開発者の混乱を少なくすることを目的として行う必要があります。 
 
-#### GPIO ドライバーの要件 
+#### <a name="gpio-driver-requirements"></a>GPIO ドライバーの要件 
 
 * を使う必要があります `GpioClx`
 * SOC 上でメモリ マッピングする必要があります 
 * エミュレートされた ActiveBoth 割り込み処理を使う必要があります 
 
-### UART 
+### <a name="uart"></a>UART 
 
 UART は Raspberry Pi で書き込み時にサポートされていないため、次の UART 宣言は MinnowBoardMax から行われます。 
 
@@ -326,7 +334,7 @@ Package(2) { "bus-UART-UART2", Package() { 2 }},
 
 ユーザーがユーザー モードからバスにアクセスするために使う識別子である、フレンドリ名 “UART2” がコントローラーに割り当てられます。  
 
-## 実行時のピンの多重化 
+## <a name="runtime-pin-muxing"></a>実行時のピンの多重化 
 
 ピンの多重化は、同じ物理ピンをさまざまな機能のために使う機能です。 I2C コントローラー、SPI コントローラー、GPIO コントローラーなどのいくつかのオンチップ周辺機器が、SOC の同じ物理ピンにルーティングされる可能性があります。 多重化ブロックは、任意の時間にどの機能がピンでアクティブになるかを制御します。 従来は、ファームウェアが機能の割り当てを起動時に確立し、この割り当ては起動セッションを通じて静的なままでした。 実行時のピンの多重化は、実行時にピンの機能の割り当てを再構成する機能を追加します。 実行時にユーザーがピンの機能を選択できるようにすると、ユーザーがボードのピンをすばやく再構成できるようになることで開発が高速化され、静的な構成の場合よりもハードウェアが広い範囲のアプリケーションをサポートできるようになります。 
 
@@ -336,7 +344,7 @@ Windows では、[GpioClx](https://msdn.microsoft.com/library/windows/hardware/h
 
 このドキュメントでは、まずピンの多重化に関与する基となるインターフェイスとプロトコルについて説明してから、GpioClx、SpbCx、SerCx コントローラー ドライバーに対してピンの多重化のサポートを追加する方法について説明します。 
 
-### ピンの多重化のアーキテクチャ 
+### <a name="pin-muxing-architecture"></a>ピンの多重化のアーキテクチャ 
 
 このセクションでは、ピンの多重化に関与する基となるインターフェイスとプロトコルについて説明します。 基となるプロトコルの知識は、GpioClx/SpbCx/SerCx ドライバーによるピンの多重化のサポートに必ずしも必要ではありません。 GpioCls/SpbCx/SerCx ドライバーによるピンの多重化のサポート方法について詳しくは、「[GpioClx クライアント ドライバーでのピンの多重化のサポートの実装](#supporting-muxing-support-in-GpioClx-client-drivers)」と「[SpbCx および SerCx コントローラー ドライバーでの多重化のサポートの使用](#supporting-muxing-in-SpbCx-and-SerCx-controller-drivers)」をご覧ください。 
 
@@ -352,21 +360,21 @@ Windows では、[GpioClx](https://msdn.microsoft.com/library/windows/hardware/h
 
 ![ピンの多重化のクライアントとサーバーの相互作用](images/usermode-access-diagram-1.png)
 
-1.  クライアントは、[EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) コールバックで、ACPI ファームウェアから MsftFunctionConfig リソースを受け取ります。
-2.  クライアントはリソース ハブ ヘルパー関数 `RESOURCE_HUB_CREATE_PATH_FROM_ID()` を使ってリソース ID からパスを作成し、([ZwCreateFile()](https://msdn.microsoft.com/library/windows/hardware/ff566424.aspx)、[IoGetDeviceObjectPointer()](https://msdn.microsoft.com/library/windows/hardware/ff549198.aspx)、または [WdfIoTargetOpen()](https://msdn.microsoft.com/library/windows/hardware/ff548634.aspx) を使って) そのパスに対してハンドルを開きます。
-3.  サーバーがリソース ハブ ヘルパー関数 `RESOURCE_HUB_ID_FROM_FILE_NAME()` を使ってファイル パスからリソース ハブ ID を抽出してから、リソース ハブを照会してリソース記述子を取得します。
-4.  サーバーは記述子内の各ピンの共有の判別を実行し、IRP_MJ_CREATE 要求を完了します。
-5.  クライアントが受け取ったハンドルに対する *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 要求を生成します。
-6.  *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* に応えて、指定された機能を各ピンでアクティブにすることで、サーバーがハードウェアの多重化操作を実行します。
-7.  要求されたピンの多重化構成に応じた操作でクライアントの処理が先に進みます。
-8.  クライアントでピンの多重化が不要になると、ハンドルが閉じられます。
-9.  閉じられたハンドルに応じて、サーバーがピンを初期状態に戻します。
+1.    クライアントは、[EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) コールバックで、ACPI ファームウェアから MsftFunctionConfig リソースを受け取ります。
+2.    クライアントはリソース ハブ ヘルパー関数 `RESOURCE_HUB_CREATE_PATH_FROM_ID()` を使ってリソース ID からパスを作成し、([ZwCreateFile()](https://msdn.microsoft.com/library/windows/hardware/ff566424.aspx)、[IoGetDeviceObjectPointer()](https://msdn.microsoft.com/library/windows/hardware/ff549198.aspx)、または [WdfIoTargetOpen()](https://msdn.microsoft.com/library/windows/hardware/ff548634.aspx) を使って) そのパスに対してハンドルを開きます。
+3.    サーバーがリソース ハブ ヘルパー関数 `RESOURCE_HUB_ID_FROM_FILE_NAME()` を使ってファイル パスからリソース ハブ ID を抽出してから、リソース ハブを照会してリソース記述子を取得します。
+4.    サーバーは記述子内の各ピンの共有の判別を実行し、IRP_MJ_CREATE 要求を完了します。
+5.    クライアントが受け取ったハンドルに対する *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 要求を生成します。
+6.    *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* に応えて、指定された機能を各ピンでアクティブにすることで、サーバーがハードウェアの多重化操作を実行します。
+7.    要求されたピンの多重化構成に応じた操作でクライアントの処理が先に進みます。
+8.    クライアントでピンの多重化が不要になると、ハンドルが閉じられます。
+9.    閉じられたハンドルに応じて、サーバーがピンを初期状態に戻します。
 
-### ピンの多重化のクライアントのためのプロトコルの説明
+###    <a name="protocol-description-for-pin-muxing-clients"></a>ピンの多重化のクライアントのためのプロトコルの説明
 
 このセクションでは、クライアントがピンの多重化機能を使う方法について説明します。 コントローラー ドライバーの代わりにフレームワークがこのプロトコルを実装するため、`SerCx` および `SpbCx` コントローラー ドライバーには適用されません。
 
-####    リソースの解析
+####    <a name="parsing-resources"></a>リソースの解析
 
 WDF ドライバーが [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) ルーチンで `MsftFunctionConfig()` リソースを受け取ります。 MsftFunctionConfig リソースは、次のフィールドで識別できます。
 
@@ -430,7 +438,7 @@ evtDevicePrepareHardware (
 }
 ```
 
-####    リソースの予約とコミット
+####    <a name="reserving-and-committing-resources"></a>リソースの予約とコミット
 
 クライアントでピンの多重化が必要な場合、MsftFunctionConfig リソースを予約してコミットします。 次の例は、クライアントが MsftFunctionConfig リソースを予約してコミットする方法を示しています。
 
@@ -511,11 +519,11 @@ NTSTATUS AcquireFunctionConfigResource (
 
 クライアントがそのリソース ハンドルを閉じると、ピンは多重化されて初期状態に戻され、別のクライアントで取得できるようになります。
 
-### ピンの多重化のサーバーのためのプロトコルの説明
+###    <a name="protocol-description-for-pin-muxing-servers"></a>ピンの多重化のサーバーのためのプロトコルの説明
 
 このセクションでは、ピンの多重化のサーバーがその機能をクライアントに公開する方法について説明します。 クライアント ドライバーの代わりにフレームワークがこのプロトコルを実装するため、`GpioClx` ミニポート ドライバーには適用されません。 `GpioClx` クライアント ドライバーでピンの多重化をサポートする方法について詳しくは、「[GpioClx クライアント ドライバーでの多重化のサポートの実装](#supporting-muxing-support-in-GpioClx-client-drivers)」をご覧ください。
 
-####    IRP_MJ_CREATE 要求の処理
+####    <a name="handling-irpmjcreate-requests"></a>IRP_MJ_CREATE 要求の処理
 
 クライアントは、ピンの多重化のリソースを予約するときにリソースに対してハンドルを開きます。 ピンの多重化のサーバーが、リソース ハブからの再解析操作により *IRP_MJ_CREATE* 要求を受け取ります。 *IRP_MJ_CREATE* 要求の末尾のパス コンポーネントには、16 進数形式の 64 ビット整数であるリソース ハブ ID が含まれています。 サーバーは、reshub.h から `RESOURCE_HUB_ID_FROM_FILE_NAME()` を使ってファイル名からリソース ハブ ID を抽出し、*IOCTL_RH_QUERY_CONNECTION_PROPERTIES* をリソース ハブに送信して `MsftFunctionConfig()` 記述子を取得する必要があります。
 
@@ -523,22 +531,22 @@ NTSTATUS AcquireFunctionConfigResource (
 
 ピンの一覧の各ピンで共有の判別が成功すると、全体的な共有の判別が成功します。 各ピンは次のように判別する必要があります。
 
-*   ピンがまだ予約されていない場合、共有の判別は成功します。
-*   ピンが既に排他的に予約されている場合、共有の判別は失敗します。
-*   ピンが既に共有として予約されていて、
-  * 着信要求が共有されている場合、共有の判定は成功します。
-  * 着信要求が排他的な場合、共有の判別は失敗します。
+*    ピンがまだ予約されていない場合、共有の判別は成功します。
+*    ピンが既に排他的に予約されている場合、共有の判別は失敗します。
+*    ピンが既に共有として予約されていて、
+  *    着信要求が共有されている場合、共有の判定は成功します。
+  *    着信要求が排他的な場合、共有の判別は失敗します。
 
 共有の判別に失敗した場合は、*STATUS_GPIO_INCOMPATIBLE_CONNECT_MODE* で要求を完了する必要があります。 共有の判別に成功した場合は、*STATUS_SUCCESS* で要求を完了する必要があります。
 
 着信要求の共有モードは、[IrpSp->Parameters.Create.ShareAccess](https://msdn.microsoft.com/library/windows/hardware/ff548630.aspx) ではなく MsftFunctionConfig 記述子から取得する必要があることに注意してください。
 
-####    IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS 要求の処理
+####    <a name="handling-ioctlgpiocommitfunctionconfigpins-requests"></a>IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS 要求の処理
 
 クライアントがハンドルを開くことで MsftFunctionConfig リソースの予約に成功した後は、*IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* を送信して実際のハードウェア多重化操作を実行するようサーバーに要求することができます。 サーバーが *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* を受け取ると、ピンの一覧の各ピンは、 
 
-*   PNP_FUNCTION_CONFIG_DESCRIPTOR 構造の PinConfiguration メンバーで指定されたプル モードをハードウェアに設定する必要があります。
-*   PNP_FUNCTION_CONFIG_DESCRIPTOR 構造の FunctionNumber メンバーによって指定された機能に対してピンを多重化する必要があります。
+*    PNP_FUNCTION_CONFIG_DESCRIPTOR 構造の PinConfiguration メンバーで指定されたプル モードをハードウェアに設定する必要があります。
+*    PNP_FUNCTION_CONFIG_DESCRIPTOR 構造の FunctionNumber メンバーによって指定された機能に対してピンを多重化する必要があります。
 
 サーバーはその後、*STATUS_SUCCESS* を使って要求を完了する必要があります。
 
@@ -546,11 +554,11 @@ FunctionNumber の意味はサーバーによって定義され、サーバー�
 
 ハンドルが閉じられたときにサーバーは IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS が受け取られたときの構成にピンを戻す必要があるため、ピンの状態を変更する前に保存する必要があることに注意してください。
 
-####    IRP_MJ_CLOSE 要求の処理
+####    <a name="handling-irpmjclose-requests"></a>IRP_MJ_CLOSE 要求の処理
 
 クライアントで多重化のリソースが不要になったときは、そのハンドルを閉じます。 サーバーが *IRP_MJ_CLOSE* 要求を受け取ったときに、*IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* が受け取られたときの状態にピンを戻す必要があります。 クライアントが *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* を送信しない場合、操作は不要です。 サーバーはその後、共有の判別に関して利用可能とピンをマークし、*STATUS_SUCCESS* を使って要求を完了する必要があります。 *IRP_MJ_CLOSE* の処理と *IRP_MJ_CREATE* の処理を正しく同期してください。
 
-### ACPI テーブルの作成のガイドライン
+###    <a name="authoring-guidelines-for-acpi-tables"></a>ACPI テーブルの作成のガイドライン
 
 このセクションでは、クライアント ドライバーに多重化のリソースを指定する方法について説明します。 `MsftFunctionConfig()` リソースを含むテーブルをコンパイルするために、Microsoft ASL コンパイラ ビルド 14327 以降が必要となることに注意してください。 `MsftFunctionConfig()` リソースは、ピンの多重化のクライアントにハードウェア リソースとして提供されます。 `MsftFunctionConfig()` リソースは、ピンの多重化の変更が必要なドライバーに提供する必要があります。これは通常 SPB およびシリアル コントローラー ドライバーですが、コントローラー ドライバーが多重化構成を扱うため、SPB およびシリアル周辺機器ドライバーには提供しません。
 `MsftFunctionConfig()` ACPI マクロは、次のように定義されています。
@@ -606,7 +614,7 @@ Device(I2C1)
 
 通常コントローラー ドライバーに必要なメモリと割り込みリソースに加えて、`MsftFunctionConfig()` リソースも指定します。 このリソースにより、I2C コントローラー ドライバーが (\\_SB.GPIO0 でデバイス ノードにより管理された) ピン 2 および 3 をプル アップ抵抗が有効になった状態で機能 4 に配置することができます。 
 
-### GpioClx クライアント ドライバーでの多重化サポートのサポート 
+### <a name="supporting-muxing-support-in-gpioclx-client-drivers"></a>GpioClx クライアント ドライバーでの多重化サポートのサポート 
 
 `GpioClx` には、ピンの多重化のための組み込みサポートがあります。 GpioClx ミニポート ドライバー (“GpioClx クライアント ドライバー” とも呼ばれます) が GPIO コントローラー ハードウェアを制御します。 Windows 10 ビルド 14327 以降では、GpioClx ミニポート ドライバーは 2 つの新しい DDI を実装することでピンの多重化のサポートを追加することができます。 
 
@@ -622,7 +630,7 @@ Device(I2C1)
 
 たとえば、ピンの既定の多重化構成が UART で、ピンが GPIO としても使うことができると想定します。 GPIO のピンの接続のために CLIENT_ConnectIoPins が呼び出されると、ピンを GPIO に多重化する必要があり、CLIENT_DisconnectIoPins でピンを UART に多重化して戻す必要があります。 一般的に、_Disconnect ルーチンは _Connect ルーチンによって行われた操作を元に戻す必要があります。 
 
-### SpbCx および SerCx コントローラー ドライバーでの多重化のサポート 
+### <a name="supporting-muxing-in-spbcx-and-sercx-controller-drivers"></a>SpbCx および SerCx コントローラー ドライバーでの多重化のサポート 
 
 Windows 10 ビルド 14327 以降では、`SpbCx` および `SerCx` コントローラー ドライバーをコントローラー ドライバー自体のコードを変更せずにピンの多重化のクライアントにできるようにする、ピンの多重化のための組み込みサポートが `SpbCx` および `SerCx` フレームワークに含まれています。 拡張機能によって、多重化対応の SpbCx/SerCx コントローラー ドライバーに接続する SpbCx/SerCx 周辺機器ドライバーがピンの多重化アクティビティをトリガーします。 
 
@@ -645,11 +653,11 @@ Windows 10 ビルド 14327 以降では、`SpbCx` および `SerCx` コントロ
 * EvtDevicePrepareHardware/EvtDeviceReleaseHardware 
 * EvtDeviceD0Entry/EvtDeviceD0Exit 
 
-## 検証 
+## <a name="verification"></a>検証 
 
 ASL の作成が完了したら、[Hardware Lab Kit (HLK)](https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx) テストを実行し、すべてのリソースが正しく公開され、基になるバスが API の機能的なコントラクトを満たしていることを確認する必要があります。 以降のセクションでは、ファームウェアを再コンパイルせずにテストのために rhproxy デバイス ノードを読み込む方法と、HLK テストを実行する方法について説明します。 
 
-### ACPITABL.dat による ASL のコンパイルと読み込み 
+### <a name="compile-and-load-asl-with-acpitabldat"></a>ACPITABL.dat による ASL のコンパイルと読み込み 
 
 最初の手順では、テスト対象のシステムで ASL ファイルをコンパイルして読み込みます。 ASL の変更をテストするために完全な UEFI のリビルドが必要とならないため、開発と検証の際には ACPITABL.dat を使うことをお勧めします。 
 
@@ -666,24 +674,24 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
     }
 }
 ```
-2.  WDK をダウンロードして asl.exe を取得します。
-3.  次のコマンドを実行して ACPITABL.dat を生成します。
+2.    WDK をダウンロードして asl.exe を取得します。
+3.    次のコマンドを実行して ACPITABL.dat を生成します。
 ```
 asl.exe yourboard.asl
 ```
-4.  生成された ACPITABL.dat ファイルを、テスト対象のシステムの c:\windows\system32 にコピーします。
-5.  テスト対象のシステムでテスト署名を有効にします。
+4.    生成された ACPITABL.dat ファイルを、テスト対象のシステムの c:\windows\system32 にコピーします。
+5.    テスト対象のシステムでテスト署名を有効にします。
 ```
 bcdedit /set testsigning on
 ```
-6.  テスト対象のシステムを再起動します。 システムが ACPITABL.dat で定義された ACPI テーブルをシステム ファームウェア テーブルに追加します。 
-7.  RHPX デバイス ノードがシステムに追加されたことを確認します。
+6.    テスト対象のシステムを再起動します。 システムが ACPITABL.dat で定義された ACPI テーブルをシステム ファームウェア テーブルに追加します。 
+7.    RHPX デバイス ノードがシステムに追加されたことを確認します。
 ```
 devcon status *msft8000
 ```
 devcon の出力は、処理が必要な ASL にバグがある場合にドライバーが初期化に失敗した場合でも、デバイスが存在することを示す必要があります。
 
-### HLK テストの実行
+### <a name="run-the-hlk-tests"></a>HLK テストの実行
 
 HLK マネージャーで rhproxy デバイス ノードを選択すると、適用できるテストが自動的に選択されます。
 
@@ -697,41 +705,41 @@ HLK マネージャーで、[Resource Hub Proxy device] を選択します。
 
 [選択したテストの実行] をクリックします。 各テストに関するその他のドキュメントは、テストを右クリックして [テストの説明] をクリックすることで利用できます。
 
-### その他のテスト用リソース
+###    <a name="more-testing-resources"></a>その他のテスト用リソース
 
 Gpio、I2c、Spi、シリアルのためのシンプルなコマンド ライン ツールが、ms-iot github サンプルのリポジトリ (https://github.com/ms-iot/samples) で利用できます。 これらのツールは、手動でのデバッグに役立ちます。
 
 | ツール | リンク |
 |------|------|
 | GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool   | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool | https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
+| I2cTestTool    | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
+| SpiTestTool |    https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
 | MinComm (シリアル) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
 
-## リソース
+## <a name="resources"></a>リソース
 
 | 移動先 | リンク |
 |-------------|------|
 | ACPI 5.0 の仕様 | http://acpi.info/spec.htm |
 | Asl.exe (Microsoft ASL Compiler) | https://msdn.microsoft.com/library/windows/hardware/dn551195.aspx |
-| Windows.Devices.Gpio  | https://msdn.microsoft.com/library/windows/apps/windows.devices.gpio.aspx | 
+| Windows.Devices.Gpio    | https://msdn.microsoft.com/library/windows/apps/windows.devices.gpio.aspx | 
 | Windows.Devices.I2c | https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.aspx |
 | Windows.Devices.Spi | https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.aspx |
 | Windows.Devices.SerialCommunication | https://msdn.microsoft.com/library/windows/apps/windows.devices.serialcommunication.aspx |
 | Test Authoring and Execution Framework (TAEF) | https://msdn.microsoft.com/library/windows/hardware/hh439725.aspx |
 | SpbCx | https://msdn.microsoft.com/library/windows/hardware/hh450906.aspx |
-| GpioClx   | https://msdn.microsoft.com/library/windows/hardware/hh439508.aspx |
+| GpioClx    | https://msdn.microsoft.com/library/windows/hardware/hh439508.aspx |
 | SerCx | https://msdn.microsoft.com/library/windows/hardware/ff546939.aspx |
 | MITT I2C テスト | https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx |
 | GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool   | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool | https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
+| I2cTestTool    | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
+| SpiTestTool |    https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
 | MinComm (シリアル) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
 | ハードウェア ラボ キット (HLK) | https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx |
 
-## 付録
+## <a name="apendix"></a>付録
 
-### 付録 A - Raspberry Pi ASL の一覧
+### <a name="appendix-a---raspberry-pi-asl-listing"></a>付録 A - Raspberry Pi ASL の一覧
 
 ヘッダーのピン配列: https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsRPi2
 
@@ -893,7 +901,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 
 ```
 
-### 付録 B - MinnowBoardMax ASL の一覧
+### <a name="appendix-b---minnowboardmax-asl-listing"></a>付録 B - MinnowBoardMax ASL の一覧
 
 ヘッダーのピン配列: https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsMBM
 
@@ -928,7 +936,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
     
                 // Index 1     
                 I2CSerialBus(            // Pin 13, 15 of JP1, for SIO_I2C5 (signal)
-                    0xFF,                  // SlaveAddress: bus address (TBD)
+                    0xFF,                  // SlaveAddress: bus address
                     ,                      // SlaveMode: default to ControllerInitiated
                     400000,                // ConnectionSpeed: in Hz
                     ,                      // Addressing Mode: default to 7 bit
@@ -1048,7 +1056,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 }
 ```
 
-### 付録 C - GPIO リソースを生成するためのサンプル Powershell スクリプト
+### <a name="appendix-c---sample-powershell-script-to-generate-gpio-resources"></a>付録 C - GPIO リソースを生成するためのサンプル Powershell スクリプト
 
 次のスクリプトを使って、Raspberry Pi の GPIO リソース宣言を生成することができます。
 
@@ -1083,9 +1091,4 @@ GpioInt(Edge, ActiveBoth, Shared, $($_.PullConfig), 0, "\\_SB.GPI0",) { $($_.Pin
     $resourceIndex += 2;
 }
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

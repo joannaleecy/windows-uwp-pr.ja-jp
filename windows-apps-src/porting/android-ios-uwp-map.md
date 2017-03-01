@@ -2,20 +2,28 @@
 author: GrantMeStrength
 Description: "iOS、Android、Windows 10 のプラットフォーム機能を比較します。"
 Search.Product: eADQiWindows 10XVcnh
-title: "Android や iOS 開発者向けの Windows アプリの概念マッピング"
+title: "Android と iOS 開発者向けの Windows アプリ概念マッピング"
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 translationtype: Human Translation
-ms.sourcegitcommit: a55e7d0945902ce44ebad481475e8324c9859054
-ms.openlocfilehash: 8acd22c44cf6423aba01083d1e32d282c87f44cb
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: e5cf0a75515458a558e94a9f8bb54913e7df4a14
+ms.lasthandoff: 02/08/2017
 
 ---
 
-#Android や iOS 開発者向けの Windows アプリの概念マッピング
+#<a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>Android と iOS 開発者向けの Windows アプリ概念マッピング
 
 このリソースには、Android や iOS のスキルとコードを持つ開発者が Windows 10 とユニバーサル Windows プラットフォーム (UWP) に移行する場合に、それら 3 つのプラットフォーム間でプラットフォームの機能と知識を関連付けるために必要なすべての情報が含まれています。
 
 「[iOS から UWP への移行](ios-to-uwp-root.md)」の移植に関するコンテンツもご覧ください。 このドキュメントは、[ダウンロード](https://www.microsoft.com/download/details.aspx?id=52041)することもできます。
 
-## ユーザー インターフェイス (UI)
+## <a name="user-interface-ui"></a>ユーザー インターフェイス (UI)
 
 
 <table style="width:100%">
@@ -166,7 +174,7 @@ ms.openlocfilehash: 8acd22c44cf6423aba01083d1e32d282c87f44cb
 <td align="left"><strong>音声。</strong> <br><br>音声入力に対する音声認識と、その他の音声機能。</td>
 <td align="left"><strong>Google 音声検索</strong>などの <strong>RecognizerIntent</strong> を実装するアプリで音声入力を提供できます。 <strong>SpeechRecognizer</strong> クラスを使うと、アプリで Google の音声認識 API を使うことができます。</td>
 <td align="left">組み込みの音声認識または音声入力 API はありません。</td>
-<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185615.aspx">音声認識</a></strong> API を使ってフォアグラウンドでアプリを操作できます。 音声認識に基づく <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185598.aspx">Cortana の操作</a></strong>で、フォアグラウンドまたはバックグラウンドでアプリを起動したり、バックグラウンドのアプリを操作したりできます。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185614.aspx">音声操作</a></td>
+<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185615.aspx">音声認識</a></strong> API を使ってフォアグラウンドでアプリを操作できます。 音声認識に基づく <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185598.aspx">Cortana の操作</a></strong>で、フォアグラウンドまたはバックグラウンドでアプリを起動したり、バックグラウンドのアプリを操作したりできます。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185614.aspx">音声認識による対話式操作</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>カスタムのユーザー入力。</strong> <br><br>キーボード、マウス、スタイラスなどの入力を処理します。</td>
@@ -662,9 +670,4 @@ ms.openlocfilehash: 8acd22c44cf6423aba01083d1e32d282c87f44cb
 </tr>
 </tbody>
 </table>
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

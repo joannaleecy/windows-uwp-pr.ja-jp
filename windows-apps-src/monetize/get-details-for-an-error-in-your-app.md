@@ -1,11 +1,18 @@
 ---
 author: mcleanbyron
-ms.assetid: 
+ms.assetid: f0c0325e-ad61-4238-a096-c37802db3d3b
 description: "アプリの特定のエラーに関する詳細データを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。"
 title: "アプリのエラーに関する詳細情報の取得"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ストア サービス, Windows ストア分析 API, エラー, 詳細"
 translationtype: Human Translation
-ms.sourcegitcommit: 767097f068630e5ec171415c05d6dc395c8b26b3
-ms.openlocfilehash: cd72e58ec252c556cf0f2e5ce071744e8fac6c9e
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 1aaf5b6864c678d26289270be6a9ad96f5b5e004
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -160,9 +167,4 @@ Authorization: Bearer <your access token>
 * [Windows ストア サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)
 * [エラー報告データの取得](get-error-reporting-data.md)
 * [アプリのエラーに関するスタック トレースの取得](get-the-stack-trace-for-an-error-in-your-app.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

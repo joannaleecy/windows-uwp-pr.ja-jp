@@ -3,14 +3,21 @@ author: msatranjr
 title: "C++ での Windows ランタイム コンポーネントの作成"
 description: "この記事では、C++ を使って Windows ランタイム コンポーネントを作成する方法を示します。このコンポーネントは、JavaScript (または C#、Visual Basic、C++) を使って構築したユニバーサル Windows アプリから呼び出すことができる DLL です。"
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 65114d476da1a7f9113987ebccc8bdbaca6381a7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 28d03486f6fb2f7a249af82d2c3be6006c9d80ed
+ms.lasthandoff: 02/07/2017
 
 ---
 
 
-# C++ での Windows ランタイム コンポーネントの作成
+# <a name="creating-windows-runtime-components-in-c"></a>C++ での Windows ランタイム コンポーネントの作成
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -27,10 +34,10 @@ JavaScript プロジェクトまたは .NET プロジェクト、および Windo
 
 一般的に、C++ コンポーネントをコーディングする場合、他の .winmd パッケージのコードとの間でデータをやり取りする抽象バイナリ インターフェイス (ABI) の境界を除いて、標準の C++ ライブラリと組み込み型を使います。 境界では、Windows ランタイム型と、それらの型の作成と操作をサポートする Visual C++ の特別な構文を使います。 さらに、Visual C++ コードでは、コンポーネントから生成され、JavaScript、Visual Basic、C# で処理されるイベントの実装に delegate や event などの型を使います。 新しい Visual C++ 構文について詳しくは、「[Visual C++ の言語リファレンス (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx)」をご覧ください。
 
-## 大文字小文字の区別と名前付け規則
+## <a name="casing-and-naming-rules"></a>大文字小文字の区別と名前付け規則
 
 
-### JavaScript の場合
+### <a name="javascript"></a>JavaScript の場合
 
 JavaScript では、大文字と小文字が区別されます。 したがって、次に示す大文字小文字の区別の規則に従う必要があります。
 
@@ -38,11 +45,11 @@ JavaScript では、大文字と小文字が区別されます。 したがっ�
 -   メソッドを呼び出す場合、メソッド名が C++ の側で大文字になっていても、camel 規約に従った大文字小文字の区別を使います。 たとえば、C++ のメソッド GetDate() は、JavaScript では getDate() として呼び出す必要があります。
 -   アクティブ化可能なクラス名や名前空間名には、UNICODE 文字を含めることはできません。
 
-### .NET の場合
+### <a name="net"></a>.NET の場合
 
 .NET 言語では、各言語の通常の大文字と小文字の規則が適用されます。
 
-## オブジェクトのインスタンス化
+## <a name="instantiating-the-object"></a>オブジェクトのインスタンス化
 
 
 Windows ランタイム型のみ ABI の境界を越えて渡すことができます。 コンパイラは、コンポーネントのパブリック メソッドでの戻り値の型または戻り値パラメーターが std::wstring などの型である場合、エラーを発生させます。 Visual C++ コンポーネント拡張 (C++/CX) の組み込み型には、int や double などの通常のスカラーと、その typedef である int32、float64 などがあります。詳しくは、「[型システム (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)」をご覧ください。
@@ -75,7 +82,7 @@ var num = nativeObject.LogCalc(21.5);
 ResultText.Text = num.ToString();
 ```
 
-## C++ の組み込み型、ライブラリ型、および Windows ランタイム型
+## <a name="c-built-in-types-library-types-and-windows-runtime-types"></a>C++ の組み込み型、ライブラリ型、および Windows ランタイム型
 
 
 アクティブ化可能なクラス (ref クラスとも呼ばれます) は、JavaScript、C#、Visual Basic などの他の言語からインスタンス化できるクラスです。 他の言語から利用できるようにするには、コンポーネントに 1 個以上のアクティブ化可能なクラスを含める必要があります。
@@ -90,7 +97,7 @@ Windows ランタイム コンポーネントには、複数のアクティブ�
 
 C++ では、すべてのプリミティブ数値型が既定の名前空間で定義されます。 [Platform](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx) 名前空間には、Windows ランタイム型システムに固有の C++ クラスが含まれます。 このようなクラスには、[Platform::String](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) クラスと [Platform::Object](https://msdn.microsoft.com/library/windows/apps/xaml/hh748265.aspx) クラスがあります。 [Platform::Collections::Map](https://msdn.microsoft.com/library/windows/apps/xaml/hh441508.aspx) クラスや [Platform::Collections::Vector](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx) クラスなどの具象コレクション型は、[Platform::Collections](https://msdn.microsoft.com/library/windows/apps/xaml/hh710418.aspx) 名前空間で定義されます。 これらの型によって実装されるパブリック インターフェイスは、[Windows::Foundation::Collections 名前空間 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh441496.aspx) で定義されます。 JavaScript、C#、および Visual Basic で利用されるのは、この種類のインターフェイスです。 詳しくは、「[型システム (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)」をご覧ください。
 
-## 組み込み型の値を返すメソッド
+## <a name="method-that-returns-a-value-of-built-in-type"></a>組み込み型の値を返すメソッド
 
 ```cpp
     // #include <valarray>
@@ -109,7 +116,7 @@ var num = nativeObject.logCalc(21.5);
 document.getElementById('P2').innerHTML = num;
 ```
 
-## カスタム値の構造体を返すメソッド
+## <a name="method-that-returns-a-custom-value-struct"></a>カスタム値の構造体を返すメソッド
 
 ```cpp
 namespace CppComponent
@@ -180,7 +187,7 @@ private void GetAndSetPlayerData()
 }
 ```
 
-## オーバー ロードされたメソッド
+## <a name="overloaded-methods"></a>オーバー ロードされたメソッド
 
 
 C++ のパブリック ref クラスにはオーバーロードされたメソッドを含めることができますが、JavaScript の場合はオーバーロードされたメソッドを区別する機能が限定されています。 たとえば、以下のシグネチャの相違を区別できます。
@@ -212,12 +219,12 @@ var num = nativeObject.getNumber(9);
 document.getElementById('P4').innerHTML = num;
 ```
 
-## .NET
+## <a name="net"></a>.NET
 
 
 .NET 言語では、.NET Framework クラスの場合と同様に、C ++ の ref クラスのオーバーロードが認識されます。
 
-## DateTime
+## <a name="datetime"></a>DateTime
 
 Windows ランタイムでは、[Windows::Foundation::DateTime](https://msdn.microsoft.com/library/windows/apps/windows.foundation.datetime.aspx) オブジェクトは 1601 年 1 月 1 日の前または後の時間の長さを 100 ナノ秒単位で表した単純な 64 ビットの符号付き整数です。 Windows:Foundation::DateTime オブジェクトには、メソッドはありません。 代わりに、各言語では DateTime をその言語独自の方法で算出します。JavaScript では Date オブジェクト、.NET Framework では System.DateTime 型および System.DateTimeOffset 型を利用します。
 
@@ -272,12 +279,12 @@ private void DateTimeExample()
 }
 ```
 
-## コレクションと配列
+## <a name="collections-and-arrays"></a>コレクションと配列
 
 
 コレクションは、常に、Windows::Foundation::Collections::IVector^ や Windows::Foundation::Collections::IMap^ などの Windows ランタイム型へのハンドルとして ABI の境界を越えて渡されます。 たとえば、Platform::Collections::Map にハンドルを返す場合、Windows::Foundation::Collections::IMap^ に暗黙的に変換されます。 コレクション インターフェイスは、具体的な実装を提供する C++ クラスとは別の名前空間で定義されます。 そのインターフェイスを JavaScript 言語と .NET 言語で利用します。 詳しくは、「[コレクション (C++/CX)](https://msdn.microsoft.com//library/windows/apps/hh700103.aspx)」と「[Array と WriteOnlyArray (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh700131.aspx)」をご覧ください。
 
-## IVector を渡す場合
+## <a name="passing-ivector"></a>IVector を渡す場合
 
 
 ```cpp
@@ -326,7 +333,7 @@ private void SortListItems()
 }
 ```
 
-## IMap を渡す場合
+## <a name="passing-imap"></a>IMap を渡す場合
 
 
 ```cpp
@@ -364,7 +371,7 @@ private void GetDictionary()
 }
 ```
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 
 Visual C++ コンポーネント拡張のパブリック ref クラスは、property キーワードを使って、パブリック データ メンバーをプロパティとして公開します。 この概念は .NET Framework のプロパティと同じです。 単純プロパティは機能が暗黙的であるため、データ メンバーに似ています。 非単純プロパティには、明示的な get アクセサーと set アクセサーがあり、値の "バッキング ストア" である名前付きのプライベート変数があります。 この例では、プライベート メンバー変数 \_propertyAValue は PropertyA のバッキング ストアです。 プロパティの値が変化するときにイベントを生成できます。またクライアント アプリは、そのイベントを受け取るように登録することができます。
@@ -434,12 +441,12 @@ private void GetAProperty()
 }
 ```
 
-## デリゲートおよびイベント
+## <a name="delegates-and-events"></a>デリゲートおよびイベント
 
 
 デリゲートは、関数オブジェクトを表す Windows ランタイム型です。 デリゲートは、後で実行するアクションを指定するために、イベント、コールバック、非同期メソッド呼び出しに関連して使います。 デリゲートは、関数オブジェクトのように、関数の戻り値の型とパラメーターの型を確認するためにコンパイラを有効にすることによってタイプ セーフを提供します。 デリゲートの宣言は関数のシグネチャに似ており、実装はクラス定義に、また呼び出しは関数の呼び出しに似ています。
 
-## イベント リスナーの追加
+## <a name="adding-an-event-listener"></a>イベント リスナーの追加
 
 
 指定されたデリゲート型のパブリック メンバーを宣言するために event キーワードを使うことができます。 クライアント コードは、特定の言語に用意されている標準機能を使ってイベントをサブスクライブします。
@@ -489,7 +496,7 @@ private void objWithEvent_PropertyChangedEvent(object __param0, int __param1)
 }
 ```
 
-## 1 つのイベントに複数のイベント リスナーを追加する
+## <a name="adding-multiple-event-listeners-for-one-event"></a>1 つのイベントに複数のイベント リスナーを追加する
 
 
 JavaScript には、複数のハンドラーで単一のイベントをサブスクライブできるようにする addEventListener メソッドがあります。
@@ -534,7 +541,7 @@ nativeObject.fireEvent("The answer is ");
 
 C# では、前の例で示したように += 演算子を使うことで、任意の数のイベント ハンドラーがイベントをサブスクライブできるようになります。
 
-## 列挙型
+## <a name="enums"></a>列挙型
 
 
 C++ の Windows ランタイム列挙型は、public class enum を使って宣言されます。これは、標準 C++ のスコープ列挙型に似ています。
@@ -569,19 +576,19 @@ Direction[curDirection];
 
 C# と Visual Basic のどちらの言語でも列挙型がサポートされます。 この 2 つの言語では、.NET Framework の列挙型と同様に C ++ パブリック列挙型クラスを認識します。
 
-## 非同期メソッド
+## <a name="asynchronous-methods"></a>非同期メソッド
 
 
 他の Windows ランタイム オブジェクトによって公開される非同期メソッドを利用するには、[task クラス (同時実行ランタイム)](https://msdn.microsoft.com/library/hh750113.aspx) を使います。 詳しくは、「[タスクの並列処理 (同時実行ランタイム)](https://msdn.microsoft.com/library/dd492427.aspx)」をご覧ください。
 
 C++ で非同期メソッドを実装するには、ppltasks.h で定義されている [create\_async](https://msdn.microsoft.com/library/hh750102.aspx) 関数を使います。 詳しくは、「[C++ における Windows ストア アプリ用の非同期操作の作成](https://msdn.microsoft.com/library/vstudio/hh750082.aspx)」をご覧ください。 例については、「[チュートリアル: C++ での基本的な Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)」をご覧ください。 .NET 言語では、.NET Framework で定義される非同期メソッドと同様に C++ 非同期メソッドが利用されます。
 
-## 例外
+## <a name="exceptions"></a>例外
 
 
 Windows ランタイムによって定義された任意の例外の型をスローできます。 Windows ランタイムのどの例外の型からもカスタム型は取得できません。 ただし、COMException をスローし、例外をキャッチするコードがアクセスできるカスタム HRESULT を提供できます。 COMException でカスタム メッセージを指定する方法はありません。
 
-## デバッグのヒント
+## <a name="debugging-tips"></a>デバッグのヒント
 
 
 コンポーネント DLL を含む JavaScript ソリューションをデバッグするときは、コンポーネントでスクリプトのステップ実行またはネイティブ コードのステップ実行を有効にするようにデバッガーを設定できますが、この両方を同時に有効にすることはできません。 設定を変更するには、ソリューション エクスプローラーで JavaScript プロジェクト ノードを選んでから、[プロパティ]、[デバッグ]、[デバッガーの種類] の順に選びます。
@@ -592,12 +599,7 @@ JavaScript コードがコンポーネントのパブリック プロパティ�
 
 C++ Windows ランタイム コンポーネント プロジェクトをソリューションから削除する場合、JavaScript プロジェクトからプロジェクト参照も手動で削除する必要があります。 これを行わないと、後続のデバッグまたはビルド操作が妨げられます。 その後、必要に応じてアセンブリ参照を DLL に追加できます。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [チュートリアル: C++ での基本的な Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

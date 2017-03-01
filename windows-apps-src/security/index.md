@@ -3,16 +3,23 @@ title: "セキュリティ"
 description: "このセクションには、Windows 10 のユニバーサル Windows プラットフォーム (UWP) アプリをセキュリティで保護されたアプリとして構築する方法に関する記事が含まれています。"
 ms.assetid: 41E2EEFB-E8A9-4592-814C-72B703CD952C
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 82f6e2decde2d332bd08b0b9798350b973860f21
-ms.openlocfilehash: b30492c3c74b19d5ce306829302be17ff303723f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e769a9aa7d381a527c1e1504efc52c2ead031c70
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="security"></a>セキュリティ
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 このセクションには、Windows 10 のユニバーサル Windows プラットフォーム (UWP) アプリをセキュリティで保護されたアプリとして構築する方法に関する記事が含まれています。
 
@@ -51,9 +58,4 @@ Windows または UWP での開発が初めての場合は、最初に「[安全
 | [MAC、ハッシュ、および署名](macs-hashes-and-signatures.md)               | この記事では、メッセージ認証コード (MAC)、ハッシュ、署名をアプリで使って、メッセージの改ざんを検出する方法について説明します。                                                                                                                                                                                                                                                                                                                                                                                |
 | [暗号化に関する輸出制限の順守](export-restrictions-on-cryptography.md) | アプリでの暗号化が、認定されない可能性がある方法で使われていないかを判断する際にこの情報をご利用ください。                                                                                                                                                                                                                                                                                                                                                                                                     |
 | [一般的な暗号化タスク](common-cryptography-tasks.md)                     | これらの記事では、乱数の生成、バッファーの比較、文字列とバイナリ データの間の変換、バイト配列間のコピー、データのエンコードとデコードなど、一般的な暗号化タスクのコード例が示されています。                                                                                                                                                                                                                                                                                    |
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

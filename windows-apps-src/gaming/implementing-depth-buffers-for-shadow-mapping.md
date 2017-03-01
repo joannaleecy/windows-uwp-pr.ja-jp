@@ -3,13 +3,20 @@ author: mtoepke
 title: "チュートリアル -- Direct3D 11 の深度バッファーを使ったシャドウ ボリュームの実装"
 description: "このチュートリアルでは、すべての Direct3D 機能レベルのデバイスで Direct3D 11 を使い、深度マップを利用してシャドウ ボリュームをレンダリングする方法について説明します。"
 ms.assetid: d15e6501-1a1d-d99c-d1d8-ad79b849db90
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, DirectX, シャドウ ボリューム, 深度バッファー, DirectX 11"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a323c299d588cdcff7b83d538a705d64207c96b2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 00e823b667a4622f6fa2dd213c3277bec9d616a2
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# チュートリアル - Direct3D 11 の深度バッファーを使ったシャドウ ボリュームの実装
+# <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a>チュートリアル: Direct3D 11 の深度バッファーを使ったシャドウ ボリュームの実装
 
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -49,7 +56,7 @@ ms.openlocfilehash: a323c299d588cdcff7b83d538a705d64207c96b2
 
  
 
-## Direct3D 9 デスクトップに対するシャドウ マップの適用の移植
+## <a name="shadow-mapping-application-to-direct3d-9-desktop-porting"></a>Direct3D 9 デスクトップに対するシャドウ マップの適用の移植
 
 
 Windows 8 で、機能レベル 9\_1 と 9\_3 に深度の比較機能が追加されました。 シャドウ ボリュームを含むレンダリング コードを DirectX 11 に移行できるようになりました。Direct3D 11 レンダラーは機能レベル 9 のデバイスと下位互換性を持ちます。 このチュートリアルでは、Direct3D 11 のアプリやゲームで深度のテストを使って従来のシャドウ ボリュームを実装する方法を説明します。 コードは次のプロセスに対応しています。
@@ -62,12 +69,12 @@ Windows 8 で、機能レベル 9\_1 と 9\_3 に深度の比較機能が追加�
 
 このチュートリアルを終了すると、機能レベル 9\_1 以上と互換性のある Direct3D 11 で互換性のある基本的なシャドウ ボリュームの手法を実装する方法を理解できます。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 
 [ユニバーサル Windows プラットフォーム (UWP) DirectX ゲームの開発環境を準備する](prepare-your-dev-environment-for-windows-store-directx-game-development.md)必要があります。 テンプレートはまだ必要ありませんが、このチュートリアルのコード サンプルをビルドするために Microsoft Visual Studio 2015 が必要です。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 **Direct3D**
@@ -86,10 +93,5 @@ Windows 8 で、機能レベル 9\_1 と 9\_3 に深度の比較機能が追加�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

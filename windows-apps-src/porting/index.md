@@ -2,16 +2,23 @@
 author: mcleblanc
 ms.assetid: ba2ac5f5-1e0d-4f1d-a6f8-6a65b4cff501
 description: "ここでは、既存のアプリをユニバーサル Windows プラットフォーム (UWP) に移行する方法について説明します。UWP で 1 つの Windows 10 アプリ パッケージを作成するだけで、ユーザーはすべての種類のデバイスにそのアプリをインストールすることができます。 アプリは、魅力的な新しいハードウェア、大きな収益を得るチャンス、最新の API セット、アダプティブ UI コントロール、およびマウス、キーボード、タッチ、音声などの幅広い入力形式を活用できます。"
-title: "Windows 10 にアプリを移植する"
+title: "Windows 10 へのアプリの移植"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 5b7b5f985eccf905698d7995d1574967bbec176f
-ms.openlocfilehash: 777542dd6a105b432e25db082cb0e1b7b87101f2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cbb3b501fcaf1e51ca313423e812a4119ffca49c
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Windows 10 にアプリを移植する
+# <a name="porting-apps-to-windows-10"></a>Windows 10 へのアプリの移植
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 ここでは、既存のアプリをユニバーサル Windows プラットフォーム (UWP) に移行する方法について説明します。UWP で 1 つの Windows 10 アプリ パッケージを作成するだけで、ユーザーはすべての種類のデバイスにそのアプリをインストールすることができます。 アプリは、魅力的な新しいハードウェア、大きな収益を得るチャンス、最新の API セット、アダプティブ UI コントロール、およびマウス、キーボード、タッチ、音声などの幅広い入力形式を活用できます。
 
@@ -29,14 +36,9 @@ Windows ランタイム (WinRT) は、ユニバーサル Windows プラットフ
 | [デスクトップから UWP への移行](desktop-to-uwp-root.md) | Win32 および .NET 4.6.1 デスクトップ アプリケーションをユニバーサル Windows プラットフォーム (UWP) アプリに変換します。 |
 | [Web アプリから UWP への移行](hwa-to-uwp-root.md) | Web アプリケーションをユニバーサル Windows プラットフォーム (UWP) アプリに変換します。 * 開発プラットフォームとして Windows または Mac を使用するための手順と、UWP を使用できるように Chrome アプリを変換するための手順が含まれます。 |
  
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [WPF と Silverlight から WinRT への移行](https://msdn.microsoft.com/library/windows/apps/dn263237)
 * [Android から WinRT への移行](https://msdn.microsoft.com/library/windows/apps/jj945421)
 * [Web から WinRT への移行](https://msdn.microsoft.com/library/windows/apps/hh465151)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

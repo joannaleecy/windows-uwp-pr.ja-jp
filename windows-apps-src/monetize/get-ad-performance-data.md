@@ -3,20 +3,27 @@ author: mcleanbyron
 ms.assetid: 235EBA39-8F64-4499-9833-4CCA9C737477
 description: "特定の日付範囲などのオプション フィルターを使って、アプリケーションの広告のパフォーマンスに関する集計データを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。"
 title: "広告のパフォーマンス データの取得"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ストア サービス, Windows ストア分析 API, 広告, パフォーマンス"
 translationtype: Human Translation
-ms.sourcegitcommit: 67845c76448ed13fd458cb3ee9eb2b75430faade
-ms.openlocfilehash: 551416caf19e16b6d6ab95fcd98aa8fbbb1587f1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a9d6226ebb06c1a9322ab44c3001a8b86aab1e5d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 広告のパフォーマンス データの取得
+# <a name="get-ad-performance-data"></a>広告のパフォーマンス データの取得
 
 
 特定の日付範囲などのオプション フィルターを使って、アプリケーションの広告のパフォーマンスに関する集計データを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。 このメソッドは、データを JSON 形式で返します。
 
 このメソッドは、Windows デベロッパー センター ダッシュボードの[広告パフォーマンス レポート](../publish/advertising-performance-report.md)で提供されるデータと同じデータを返します。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 
 このメソッドを使うには、最初に次の作業を行う必要があります。
@@ -26,10 +33,10 @@ ms.openlocfilehash: 551416caf19e16b6d6ab95fcd98aa8fbbb1587f1
 
 詳しくは、「[Windows ストア サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)」をご覧ください。
 
-## 要求
+## <a name="request"></a>要求
 
 
-### 要求の構文
+### <a name="request-syntax"></a>要求の構文
 
 | メソッド | 要求 URI                                                              |
 |--------|--------------------------------------------------------------------------|
@@ -37,7 +44,7 @@ ms.openlocfilehash: 551416caf19e16b6d6ab95fcd98aa8fbbb1587f1
 
 <span />
 
-### 要求ヘッダー
+### <a name="request-header"></a>要求ヘッダー
 
 | ヘッダー        | 型   | 説明           |
 |---------------|--------|--------------------------------|
@@ -45,7 +52,7 @@ ms.openlocfilehash: 551416caf19e16b6d6ab95fcd98aa8fbbb1587f1
 
 <span />
 
-### 要求パラメーター
+### <a name="request-parameters"></a>要求パラメーター
 
 特定のアプリに関する広告のパフォーマンス データを取得するには、*applicationId* パラメーターを使用します。 開発者アカウントに関連付けられているすべてのアプリに関する広告パフォーマンス データを取得するには、*applicationId* パラメーターは省略します。
 
@@ -54,16 +61,16 @@ ms.openlocfilehash: 551416caf19e16b6d6ab95fcd98aa8fbbb1587f1
 | applicationId   | string    | 広告のパフォーマンス データを取得するアプリのストア ID です。 ストア ID は、デベロッパー センター ダッシュボードの[アプリ ID ページ](../publish/view-app-identity-details.md)で確認できます。 ストア ID の例は 9NBLGGH4R315 です。 |    必須ではない      |
 | startDate   | date    | 広告のパフォーマンス データを取得する日付範囲の開始日です。YYYY/MM/DD の形式で指定します。 既定値は、現在の日付から 30 日を差し引いた日付になります。 |    必須ではない      |
 | endDate   | date    | 広告のパフォーマンス データを取得する日付範囲の終了日です。YYYY/MM/DD の形式で指定します。 既定値は、現在の日付から 1 日を差し引いた日付になります。 |    必須ではない      |
-| top   | int    | 要求で返すデータの行数です。 指定されない場合の既定値は、最大値でもある 10000 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。 |    ×      |
-| skip   | int    | クエリでスキップする行数です。 大きなデータ セットを操作するには、このパラメーターを使用します。 たとえば、top=10000 と skip=0 を指定すると、データの最初の 10,000 行が取得され、top=10000 と skip=10000 を指定すると、データの次の 10,000 行が取得されます。 |    ×      |
-| filter   | string    | 応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 詳しくは、次の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。 |    いいえ      |
-| aggregationLevel   | string    | 集計データを取得する時間範囲を指定します。 次のいずれかの文字列を指定できます。<strong>day</strong>、<strong>week</strong>、または <strong>month</strong>。 指定されていない場合、既定値は <strong>day</strong> です。 |    ×      |
+| top   | int    | 要求で返すデータの行数です。 指定されない場合の既定値は、最大値でもある 10000 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。 |    必須ではない      |
+| skip   | int    | クエリでスキップする行数です。 大きなデータ セットを操作するには、このパラメーターを使用します。 たとえば、top=10000 と skip=0 を指定すると、データの最初の 10,000 行が取得され、top=10000 と skip=10000 を指定すると、データの次の 10,000 行が取得されます。 |    必須ではない      |
+| filter   | string    | 応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 詳しくは、次の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。 |    必須ではない      |
+| aggregationLevel   | string    | 集計データを取得する時間範囲を指定します。 次のいずれかの文字列を指定できます。<strong>day</strong>、<strong>week</strong>、または <strong>month</strong>。 指定されていない場合、既定値は <strong>day</strong> です。 |    必須ではない      |
 | orderby   | string    | 結果データ値の順序を指定するステートメントです。 構文は <em>orderby=field [order],field [order],...</em> です。 <em>field</em> パラメーターには、次のいずれかの文字列を指定できます。<ul><li><strong>date</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>adUnitId</strong></li></ul><p><em>order</em> パラメーターは省略可能であり、<strong>asc</strong> または <strong>desc</strong> を指定して、各フィールドを昇順または降順にすることができます。 既定値は <strong>asc</strong> です。</p><p><em>orderby</em> 文字列の例: <em>orderby=date,market</em></p> |    必須ではない      |
 | groupby   | string    | データ集計を指定したフィールドのみに適用するステートメントです。 次のフィールドを指定できます。</p><ul><li><strong>applicationId</strong></li><li><strong>applicationName</strong></li><li><strong>date</strong></li><li><strong>accountCurrencyCode</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>adUnitName</strong></li><li><strong>adUnitId</strong></li><li><strong>pubCenterAppName</strong></li><li><strong>adProvider</strong></li></ul><p><em>groupby</em> パラメーターは、<em>aggregationLevel</em> パラメーターと同時に使用できます。 例: <em>&amp;groupby=applicationId&amp;aggregationLevel=week</em></p> |    必須ではない      |
 
 <span />
  
-### フィルター フィールド
+### <a name="filter-fields"></a>フィルター フィールド
 
 要求本文の *filter* パラメーターには、応答内の行をフィルター処理する 1 つまたは複数のステートメントが含まれます。 各ステートメントには **eq** 演算子または **ne** 演算子と関連付けられるフィールドと値が含まれ、**and** または **or** を使ってステートメントを組み合わせることができます。 *filter* パラメーターの例を次に示します。
 
@@ -82,7 +89,7 @@ ms.openlocfilehash: 551416caf19e16b6d6ab95fcd98aa8fbbb1587f1
 
 <span /> 
 
-### 要求の例
+### <a name="request-example"></a>要求の例
 
 広告のパフォーマンス データを取得するための要求の例を、いくつか次に示します。 *applicationId* 値を、目的のアプリのストア ID に置き換えてください。
 
@@ -94,10 +101,10 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/adsperformance?appl
 Authorization: Bearer <your access token>
 ```
 
-## 応答
+## <a name="response"></a>応答
 
 
-### 応答本文
+### <a name="response-body"></a>応答本文
 
 | 値      | 型   | 説明                                                                                                                                                                                                                                                                            |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -106,7 +113,7 @@ Authorization: Bearer <your access token>
 | TotalCount | int    | クエリの結果データ内の行の総数です。                                                                                                                                                                                                                             |
 
 <span id="ad-performance-values" />
-### 広告のパフォーマンスの値
+### <a name="ad-performance-values"></a>広告のパフォーマンスの値
 
 *Value* 配列の要素には、次の値が含まれます。
 
@@ -130,7 +137,7 @@ Authorization: Bearer <your access token>
 
 <span />
 
-### 応答の例
+### <a name="response-example"></a>応答の例
 
 この要求の JSON 応答の本文の例を次に示します。
 
@@ -172,13 +179,8 @@ Authorization: Bearer <your access token>
 
 ```
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [広告パフォーマンス レポート](../publish/advertising-performance-report.md)
 * [Windows ストア サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

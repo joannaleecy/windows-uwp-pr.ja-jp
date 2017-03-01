@@ -3,25 +3,32 @@ author: mtoepke
 title: "コントロールの追加"
 description: "次は、ゲーム サンプルで 3-D ゲームにムーブ/ルック コントロールを実装する方法と、タッチ コントローラー用、マウス コントローラー用、ゲーム コントローラー用の基本的なコントロールを開発する方法について説明します。"
 ms.assetid: f9666abb-151a-74b4-ae0b-ef88f1f252f8
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, コントロール, 入力"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 49214f3bc14b6a475a77c5dbb7c0f08bb0818df6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d70e9ef8efffd2a78f6c49596e716770a9162b5c
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# コントロールの追加
+# <a name="add-controls"></a>コントロールの追加
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 次は、ゲーム サンプルで 3-D ゲームにムーブ/ルック コントロールを実装する方法と、タッチ コントローラー用、マウス コントローラー用、ゲーム コントローラー用の基本的なコントロールを開発する方法について説明します。
 
-## 目標
+## <a name="objective"></a>目標
 
 
 -   DirectX を使ってマウス/キーボード コントローラー用、タッチ コントローラー用、Xbox コントローラー用のコントロールをユニバーサル Windows プラットフォーム (UWP) ゲームに実装する。
 
-## UWP ゲームのアプリとコントロール
+## <a name="uwp-game-apps-and-controls"></a>UWP ゲームのアプリとコントロール
 
 
 優れた UWP ゲームでは、幅広いインターフェイスをサポートしています。 潜在的なプレイヤーが持っているのは、Windows 10 搭載で物理的なボタンのないタブレット、Xbox コントローラー付属のメディア PC、または高性能マウス/ゲーム キーボード付属の最新デスクトップ ゲーム機かもしれません。 ゲームでは、設計で可能な限り、これらの全デバイスをサポートする必要があります。
@@ -30,7 +37,7 @@ ms.openlocfilehash: 49214f3bc14b6a475a77c5dbb7c0f08bb0818df6
 
 コントロールの詳細と、ムーブ/ルック コントロールの具体的な説明については、「[ゲームのムーブ/ルック コントロール](tutorial--adding-move-look-controls-to-your-directx-game.md)」と「[ゲームのタッチ コントロール](tutorial--adding-touch-controls-to-your-directx-game.md)」をご覧ください。
 
-## コントロールの共通の動作
+## <a name="common-control-behaviors"></a>コントロールの共通の動作
 
 
 タッチ コントロールとマウス/キーボード コントロールのコア実装は、よく似ています。 UWP アプリでは、ポインターは画面上の単なる点です。 これは、マウスをスライドするか、タッチ スクリーンで指をスライドすることで動かせます。 このため、単一のイベント セットを登録でき、プレイヤーがポインターを動かして押すのにマウスとタッチ スクリーンのどちらを使っているかを気にする必要はありません。
@@ -197,11 +204,11 @@ bool MoveLookController::IsFiring()
 
 プレイヤーがゲームのメイン ウィンドウの外にポインターを動かすか、一時停止ボタン (P キーまたは Xbox コントローラーのスタート ボタン) を押すと、ゲームは一時停止する必要があります。 **MoveLookController** は、この押し操作を登録し、**IsPauseRequested** メソッドを呼び出すときにゲーム ループに通知します。 その時点で、**IsPauseRequested** が **true** を返すと、ゲーム ループは **MoveLookController** の **WaitForPress** を呼び出して、コントローラーを **WaitForInput** 状態にします。 **MoveLookController** はこの後、プレイヤーが読み込み、続行、ゲーム終了のいずれかのメニュー項目を選択して、ゲームプレイ入力イベントの処理を終了するまで待機してから、**Active** 状態に戻ります。
 
-[このセクションのコード サンプル一式](#code_sample)をご覧ください。
+[このセクションのコード サンプル一式](#complete-sample-code-for-this-section)をご覧ください。
 
 次は、3 種類のコントロールのそれぞれの実装について少し詳しく説明します。
 
-## 相対マウス コントロールの実装
+## <a name="implementing-relative-mouse-controls"></a>相対マウス コントロールの実装
 
 
 マウス移動が検出された場合は、その移動を使ってカメラの新しいピッチとヨーを特定します。 そのためには、相対マウス コントロールを実装します。相対マウス コントロールでは、動作の絶対 x-y ピクセル座標を記録するのではなく、マウスが移動した相対距離 (移動の開始から停止までのデルタ) を処理します。
@@ -250,7 +257,7 @@ void MoveLookController::OnMouseMoved(
 }
 ```
 
-## タッチ コントロールの実装
+## <a name="implementing-touch-controls"></a>タッチ コントロールの実装
 
 
 タッチ コントロールは、最も複雑であり、効果的にするためには微調整が最も必要であるため、開発が一番難しいコントロールです。 このゲーム サンプルでは、画面を 4 分割した左下の領域内の四角形が方向パッドとして使われ、この領域内で指を左右にスライドするとカメラが左右にスライドし、指を上下にスライドするとカメラが前後に動きます。 画面を 4 分割した右下の領域内の四角形を押すと、弾を撃つことができます。 照準 (ピッチとヨー) は、ムーブとファイア用に使用されていない画面の部分で指をスライドして制御します。指を動かすと、カメラも (十字線が固定された状態で) 同様に動きます。
@@ -471,7 +478,7 @@ void MoveLookController::OnPointerReleased(
 
 以上が、タッチ スクリーン コントロールをゲーム サンプルに実装する方法の基本です。 次は、マウスとキーボードのコントロールについて説明します。
 
-## マウスとキーボードのコントロールの実装
+## <a name="implementing-mouse-and-keyboard-controls"></a>マウスとキーボードのコントロールの実装
 
 
 このゲーム サンプルでは、次のマウスとキーボードのコントロールを実装しています。
@@ -664,7 +671,7 @@ void MoveLookController::OnPointerReleased(
 
 次は、コントロールの最後の種類である Xbox コントローラーについて説明します。 このコントローラーは、ポインター オブジェクトを使わないため、タッチ コントロールやマウス コントロールとは別に処理されます。
 
-## Xbox コントローラーのコントロールの実装
+## <a name="implementing-xbox-controller-controls"></a>Xbox コントローラーのコントロールの実装
 
 
 このゲーム サンプルでは、Xbox コントローラーのサポートは、[XInput](https://msdn.microsoft.com/library/windows/desktop/hh405053) API を呼び出すことで追加されます。この API セットを使うと、ゲーム コントローラーのプログラミングが簡単になります。 このゲーム サンプルでは、Xbox コントローラーの左のアナログ スティックをプレイヤーの動きに使い、右のアナログ スティックをルック コントロールに、右のトリガーをファイア コントロールに使います。 ゲームの一時停止と再開には、スタート ボタンを使います。
@@ -805,12 +812,12 @@ void MoveLookController::UpdateGameController()
 
 以上が、このサンプルでコントロール オプション一式を実装する方法です。 繰り返しますが、優れた UWP アプリでは、さまざまなフォーム ファクターやデバイスを使うプレイヤーが好みの方法でゲームをプレイできるように、幅広いコントロール オプションをサポートしていることを忘れないでください。
 
-## 次のステップ
+## <a name="next-steps"></a>次のステップ
 
 
 UWP DirectX ゲームの主要コンポーネントについて説明してきましたが、1 つだけ残っているコンポーネントがあります。オーディオです。 ミュージックとサウンド効果はどのゲームでも重要であるため、次は、「[サウンドの追加](tutorial--adding-sound.md)」に進んでください。
 
-## このセクションのサンプル コード一式
+## <a name="complete-sample-code-for-this-section"></a>このセクションのサンプル コード一式
 
 
 MoveLookController.h
@@ -1905,7 +1912,7 @@ void MoveLookController::UpdateGameController()
 
  
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 [DirectX によるシンプルな UWP ゲームの作成](tutorial--create-your-first-metro-style-directx-game.md)
@@ -1916,10 +1923,5 @@ void MoveLookController::UpdateGameController()
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

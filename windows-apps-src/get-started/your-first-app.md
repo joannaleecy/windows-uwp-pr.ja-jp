@@ -3,12 +3,19 @@ author: GrantMeStrength
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: "初めてのアプリの作成"
 description: "Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリの作成は、思っているよりも簡単です。"
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b57a461cf9859be26ed69d12b08259d15201403a
-ms.openlocfilehash: 16adf9c9c8de2ca4596f0fcbe503f570971e74a1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1dc003c4683445718de1f14ed3c659fb579482a0
+ms.lasthandoff: 02/07/2017
 
 ---
-# 初めてのアプリの作成
+# <a name="create-your-first-app"></a>初めてのアプリの作成
 
 ようこそ。このチュートリアルは、好みの言語で初めての UWP アプリを作るために役立ちます。 ここでは、次の方法について説明します。
 
@@ -46,7 +53,7 @@ ms.openlocfilehash: 16adf9c9c8de2ca4596f0fcbe503f570971e74a1
 -->
 
 
-### C# と XAML のチュートリアル
+### <a name="c-and-xaml-tutorial"></a>C# と XAML のチュートリアル
 
 .NET、WPF、または Silverlight のスキルを活用し、XAML と C# を使ったアプリを作ります。
 
@@ -58,7 +65,7 @@ ms.openlocfilehash: 16adf9c9c8de2ca4596f0fcbe503f570971e74a1
 * [文字どおりの初心者のための VB の基本](http://www.microsoftvirtualacademy.com/training-courses/vb-fundamentals-for-absolute-beginners)
 * [Windows 10 開発者向けガイド](https://mva.microsoft.com/en-US/training-courses/a-developers-guide-to-windows-10-12618)
 
-### Visual C++ コンポーネント拡張機能 (C++/CX) と XAML のチュートリアル
+### <a name="visual-c-component-extensions-ccx-and-xaml-tutorial"></a>Visual C++ コンポーネント拡張機能 (C++/CX) と XAML のチュートリアル
 
 C++ プログラミングの専門知識を活用し、Visual C++ コンポーネント拡張機能 (C++/CX) と XAML を使ってアプリを作ります。
 
@@ -68,7 +75,7 @@ C++ プログラミングの専門知識を活用し、Visual C++ コンポー�
 
 * [C++: 汎用言語およびライブラリ ジャンプ スタート](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
 
-### JavaScript と HTML のチュートリアル
+### <a name="javascript-and-html-tutorial"></a>JavaScript と HTML のチュートリアル
 
 Web のスキルを活用し、HTML5、カスケード スタイル シート レベル 3 (CSS3)、JavaScript を使ったアプリを作ります。
 
@@ -79,25 +86,24 @@ Web のスキルを活用し、HTML5、カスケード スタイル シート �
 * [文字どおりの初心者のための JavaScript の基本](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
 * [文字どおりの初心者のための HTML5 と CSS3 の基本](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
 
-### Objective-C
+### <a name="objective-c"></a>Objective-C
 
 iOS 開発者以外の場合 
 
 * [iOS 用 Windows ブリッジ](https://developer.microsoft.com/windows/bridges/ios)を使って既存のコードを UWP アプリに変換し、Objective-C での開発を続けてください。
 
 
-## 関連トピック
+### <a name="cross-platform-and-mobile-development"></a>クロスプラットフォームとモバイル開発
 
-* [UWP アプリに関するハウツー記事](https://developer.microsoft.com/windows/develop)
+* Android や iOS をターゲットとする必要がある場合は、 [Xamarin](https://www.xamarin.com) をチェックしてください。
+
+## <a name="related-topics"></a>関連トピック
+
+* [UWP アプリの開発に関するハウツー記事](https://developer.microsoft.com/windows/apps/develop)
 * [UWP 開発者向けコード サンプル](https://developer.microsoft.com/windows/samples)
 * [ユニバーサル Windows アプリとは?](whats-a-uwp.md)
 * [準備](get-set-up.md)
 * [サインアップ](sign-up.md)
 
-
-
-
-
-<!--HONumber=Sep16_HO2-->
 
 

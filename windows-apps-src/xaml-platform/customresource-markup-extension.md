@@ -3,31 +3,38 @@ author: jwmsft
 description: "カスタム リソース検索の実装から取得されたリソースの参照を評価して、任意の XAML 属性の値を提供します。 リソース検索は、CustomXamlResourceLoader クラスの実装によって実行されます。"
 title: "CustomResource マークアップ拡張"
 ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a0a4edc8d59219aea3a47a18ea991e4267782026
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1203987a3003c9f78bbed52b00a81cc3832a1abe
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# {CustomResource} マークアップ拡張
+# <a name="customresource-markup-extension"></a>{CustomResource} マークアップ拡張
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 カスタム リソース検索の実装から取得されたリソースの参照を評価して、任意の XAML 属性の値を提供します。 リソース検索は、[**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) クラスの実装によって実行されます。
 
-## XAML 属性の使用方法
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法
 
 ``` syntax
 <object property="{CustomResource key}" .../>
 ```
 
-## XAML 値
+## <a name="xaml-values"></a>XAML 値
 
 | 用語 | 説明 |
 |------|-------------|
 | key | 要求されたリソースのキー。 キーが最初にどのように割り当てられるかは、現在使用が登録されている [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) クラスの実装に固有のものです。 |
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 **CustomResource** は、カスタム リソース リポジトリのどこかで定義されている値を取得するための手法です。 この手法は比較的高度なものであり、Windows ランタイム アプリのほとんどのシナリオでは使われていません。
 
@@ -43,15 +50,10 @@ ms.openlocfilehash: a0a4edc8d59219aea3a47a18ea991e4267782026
 
 **CustomResource** はマークアップ拡張です。 通常、マークアップ拡張は、属性値をリテラル値やハンドラー名以外にエスケープする必要があり、特定の型やプロパティに対して型コンバーターを指定するのではなく、よりグローバルにその必要がある場合に実装します。 XAML のすべてのマークアップ拡張では、それぞれの属性構文で "\{" と "\}" の文字を使います。これは規約であり、これに従って XAML プロセッサは、マークアップ拡張で属性を処理する必要があることを認識します。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)
 * [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327)
 * [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,15 +3,22 @@ author: TylerMSFT
 title: "バックグラウンド タスクの登録"
 description: "ほとんどのバックグラウンド タスクを安全に登録できる再利用可能な関数の作成方法について説明します。"
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: d65b8d3312e49469bd99d458b45bf5a46f345e6a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: eb3ab08cd26cd39ada38a1428b221157ebf55558
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="register-a-background-task"></a>バックグラウンド タスクの登録
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 **重要な API**
 
@@ -394,9 +401,4 @@ ms.openlocfilehash: d65b8d3312e49469bd99d458b45bf5a46f345e6a
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

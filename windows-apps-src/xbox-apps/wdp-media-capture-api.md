@@ -2,13 +2,21 @@
 author: WilliamsJason
 title: "メディア キャプチャ API のリファレンス"
 description: "メディア キャプチャ API にプログラムでアクセスする方法について説明します。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 3f92c8fd-4096-4972-97da-01ae5db6423c
 translationtype: Human Translation
-ms.sourcegitcommit: 4356bd2cfc7697905ed91d60b5829c06d850e109
-ms.openlocfilehash: 2f77c565acf272a1a8f147eb07ac6c7f08bf8ef0
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 9819e632ab6de58eee4358866d3186c0fa31f69f
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# メディア キャプチャ API のリファレンス #
+# <a name="media-capture-api-reference"></a>メディア キャプチャ API のリファレンス #
 
 **要求**
 
@@ -37,7 +45,7 @@ ms.openlocfilehash: 2f77c565acf272a1a8f147eb07ac6c7f08bf8ef0
 
 * なし
 
-###応答###
+###<a name="response"></a>応答###
 
 **状態コード**
 
@@ -52,10 +60,5 @@ ms.openlocfilehash: 2f77c565acf272a1a8f147eb07ac6c7f08bf8ef0
 **利用可能なデバイス ファミリ**
 
 * Windows Xbox
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

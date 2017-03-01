@@ -1,17 +1,24 @@
 ---
 author: jaster
-ms.assetid: 
+ms.assetid: b7a4ac8a-d91e-461b-a060-cc6fcea8e778
 title: "XAML でのビジュアル レイヤーの使用"
 description: "ビジュアル レイヤー API を既存の XAML コンテンツと組み合わせて使用し、高度なアニメーションや効果を作成する方法について説明します。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: dfda33c70224f32d9c3e8877eabdfcd965521757
-ms.openlocfilehash: 00d663b130202f4513cd1a9d82baed4068d909d3
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 5873af515ec1ae9f10c1b5d9e5fe9de5b8dd80a8
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# XAML でのビジュアル レイヤーの使用
+# <a name="using-the-visual-layer-with-xaml"></a>XAML でのビジュアル レイヤーの使用
 
-## 概要
+## <a name="introduction"></a>概要
 
 ビジュアル レイヤーの機能を利用するほとんどのアプリは、XAML を使用して、メイン UI コンテンツを定義します。 Windows 10 Anniversary Update では、XAML フレームワークやビジュアル レイヤーの新しい機能を利用し、これら 2 つのテクノロジを組み合わせて、魅力的なユーザー エクスペリエンスを簡単に作成することができます。
 XAML とビジュアル レイヤーの "相互運用" 機能を使用すると、XAML API 単独では実現できない、高度なアニメーションや効果を作成できます。 たとえば、次のようなアニメーションや効果を作成できます。
@@ -24,7 +31,7 @@ XAML とビジュアル レイヤーの "相互運用" 機能を使用すると�
 これらの効果やアニメーションは既存の XAML コンテンツに適用できます。このため、新しい機能を活用するために、XAML アプリを大幅に再構成する必要はありません。
 レイアウト アニメーション、シャドウ、ぼかし効果については、以下の「レシピ」セクションで説明しています。 視差効果を実装するコード サンプルについては、[ParallaxingListItems のサンプル](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)をご覧ください。 [WindowsUIDevLabs リポジトリ](https://github.com/Microsoft/WindowsUIDevLabs)にも、アニメーション、シャドウ、効果を実装するためのサンプルがいくつかあります。
 
-## **ElementCompositionPreview** クラス
+## <a name="the-elementcompositionpreview-class"></a>**ElementCompositionPreview** クラス
 
 [**ElementCompositionPreview**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.aspx) は静的クラスであり、XAML とビジュアル レイヤーの相互運用機能を提供します。 ビジュアル レイヤーとその機能の概要については、「[ビジュアル レイヤー](https://msdn.microsoft.com/en-us/windows/uwp/graphics/visual-layer)」をご覧ください。 **ElementCompositionPreview** クラスには、次のメソッドが用意されています。
 
@@ -33,7 +40,7 @@ XAML とビジュアル レイヤーの "相互運用" 機能を使用すると�
 -   [**GetElementChildVisual**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx): **SetElementChildVisual** を使用して設定された Visual を取得します。
 -   [**GetScrollViewerManipulationPropertySet**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx): **ScrollViewer** のスクロール オフセットに基づいて 60 fps のアニメーションを作成する際に使用できるオブジェクトを取得します。
 
-## **ElementCompositionPreview.GetElementVisual** の解説
+## <a name="remarks-on-elementcompositionpreviewgetelementvisual"></a>**ElementCompositionPreview.GetElementVisual** の解説
 
 **ElementCompositionPreview.GetElementVisual** は、指定の **UIElement** をレンダリングするために使用される "ハンドアウト" Visual を返します。 **Visual.Opacity**、**Visual.Offset**、**Visual.Size** などのプロパティは、UIElement の状態に基づいて、XAML フレームワークによって設定されます。 これにより、暗黙的な位置変更アニメーションなどの手法が利用可能になります (「*Recipes*」をご覧ください)。
 
@@ -41,9 +48,9 @@ XAML とビジュアル レイヤーの "相互運用" 機能を使用すると�
 
 その他の注意事項として、ハンドアウト Visual の更新されたプロパティは、対応する UIElement には反映されません。 たとえば、**UIElement.Opacity** を 0.5 に設定すると、対応するハンドアウト Visual の Opacity も 0.5 に設定されます。 ただし、ハンドアウト Visual の **Opacity** を 0.5 に設定した場合、コンテンツが 50% の不透明度で表示されますが、対応する UIElement の Opacity プロパティの値は変更されません。
 
-### **オフセット** アニメーションの例
+### <a name="example-of-offset-animation"></a>**オフセット** アニメーションの例
 
-#### 誤った例
+#### <a name="incorrect"></a>誤った例
 
 ```xml
 <Border>
@@ -56,7 +63,7 @@ XAML とビジュアル レイヤーの "相互運用" 機能を使用すると�
 ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", parallaxAnimation);
 ```
 
-#### 正しい例
+#### <a name="correct"></a>正しい例
 
 ```xml
 <Border>
@@ -71,33 +78,33 @@ ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", par
 ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", parallaxAnimation);
 ```
 
-## **ElementCompositionPreview.SetElementChildVisual** メソッド
+## <a name="the-elementcompositionpreviewsetelementchildvisual-method"></a>**ElementCompositionPreview.SetElementChildVisual** メソッド
 
 **ElementCompositionPreview.SetElementChildVisual** を使用すると、開発者は、要素のビジュアル ツリーの一部として表示される "ハンドイン" Visual を提供できます。 これにより、開発者は、Visual ベースのコンテンツを XAML UI 内部に表示できる、"コンポジション アイランド" を作成できます。 開発者はこの手法の使用については慎重に考慮する必要があります。それは、Visual ベースのコンテンツを使用した場合、XAML コンテンツでは同等のアクセシビリティとユーザー エクスペリエンスの保証が確保されないためです。 そのため、通常この手法は、以下の「レシピ」セクションに記載されているようなカスタム効果の実装で必要となる場合にのみ使用することをお勧めします。
 
-## **GetAlphaMask** メソッド
+## <a name="getalphamask-methods"></a>**GetAlphaMask** メソッド
 
 [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752)、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)、[**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377) は、それぞれ、**GetAlphaMask** と呼ばれるメソッドを実装します。このメソッドは、要素の形状を使用したグレースケール画像を表す **CompositionBrush** を返します。 この **CompositionBrush** は、コンポジション **DropShadow** の入力として使用できます。そのため、シャドウでは、四角形ではなく要素の形状を反映することができます。 これにより、テキスト、アルファを含む画像、図形に対して、ピクセル パーフェクトで輪郭ベースのシャドウを使用することができます。 この API の例については、以下の「*ドロップ シャドウ*」をご覧ください。
 
-## レシピ
+## <a name="recipes"></a>レシピ
 
-### 位置変更アニメーション
+### <a name="reposition-animation"></a>位置変更アニメーション
 
 コンポジションの暗黙的なアニメーションを使用すると、開発者は、要素の親の位置を基準とした、要素のレイアウトにおける変更を自動的にアニメーション化することができます。 たとえば、以下に示すボタンの **Margin** を変更した場合に、その新しいレイアウト位置に対して自動的にアニメーション化が行われます。
 
-#### 実装の概要
+#### <a name="implementation-overview"></a>実装の概要
 
 1.            ターゲット要素のハンドアウト **Visual** を取得します
 2.            **Offset** プロパティの変更を自動的にアニメーション化する **ImplicitAnimationCollection** を作成します
 3.            **ImplicitAnimationCollection** をバッキング Visual に関連付けます
 
-#### XAML
+#### <a name="xaml"></a>XAML
 
 ```xml
 <Button x:Name="RepositionTarget" Content="Click Me" />
 ```
 
-#### C&#35;
+#### <a name="c35"></a>C&#35;
 
 ```csharp
 public MainPage()
@@ -125,11 +132,11 @@ private void InitializeRepositionAnimation(UIElement repositionTarget)
 }
 ```
 
-### ドロップ シャドウ
+### <a name="drop-shadow"></a>ドロップ シャドウ
 
 ピクセル パーフェクトなドロップ シャドウを **UIElement** (たとえば、画像を含んでいる**楕円**) に適用します。 シャドウでは、アプリで作成される **SpriteVisual** が必要となるため、**ElementCompositionPreview.SetElementChildVisual** を使用して、**SpriteVisual** が含まれる “ホスト” 要素を作成する必要があります。
 
-#### 実装の概要
+#### <a name="implementation-overview"></a>実装の概要
 
 1.            ホスト要素のハンドアウト **Visual** を取得します
 2.            Windows.UI.Composition の **DropShadow** を作成します
@@ -139,7 +146,7 @@ private void InitializeRepositionAnimation(UIElement repositionTarget)
 4.            シャドウを新しい **SpriteVisual** にアタッチし、**SpriteVisual** をホスト要素の子として設定します
 5.            **ExpressionAnimation** を使用して、**SpriteVisual** のサイズをホストのサイズにバインドします
 
-#### XAML
+#### <a name="xaml"></a>XAML
 
 ```xml
 <Grid Width="200" Height="200">
@@ -152,7 +159,7 @@ private void InitializeRepositionAnimation(UIElement repositionTarget)
 </Grid>
 ```
 
-#### C&#35;
+#### <a name="c35"></a>C&#35;
 
 ```csharp
 public MainPage()
@@ -189,11 +196,11 @@ private void InitializeDropShadow(UIElement shadowHost, Shape shadowTarget)
 }
 ```
 
-### すりガラス
+### <a name="frosted-glass"></a>すりガラス
 
 背景コンテンツをぼかしたり、濃淡を付けたりする効果を作成します。 開発者は、効果を使用するために Win2D NuGet パッケージをインストールする必要があります。 インストール手順については、[Win2D のホームページ](http://microsoft.github.io/Win2D/html/Introduction.htm) をご覧ください。
 
-#### 実装の概要
+#### <a name="implementation-overview"></a>実装の概要
 
 1.            ホスト要素のハンドアウト **Visual** を取得します
 2.            Win2D と **CompositionEffectSourceParameter** を使用して、ぼかし効果ツリーを作成します
@@ -202,7 +209,7 @@ private void InitializeDropShadow(UIElement shadowHost, Shape shadowTarget)
 5.            **CompositionEffectBrush** を新しい **SpriteVisual** のコンテンツとして設定し、**SpriteVisual** をホスト要素の子として設定します
 6.            **ExpressionAnimation** を使用して、**SpriteVisual** のサイズをホストのサイズにバインドします
 
-#### XAML
+#### <a name="xaml"></a>XAML
 
 ```xml
 <Grid Width="300" Height="300" Grid.Column="1">
@@ -218,7 +225,7 @@ private void InitializeDropShadow(UIElement shadowHost, Shape shadowTarget)
 </Grid>
 ```
 
-#### C&#35;
+#### <a name="c35"></a>C&#35;
 
 ```csharp
 public MainPage()
@@ -227,7 +234,7 @@ public MainPage()
     InitializeFrostedGlass(GlassHost);
 }
 
-private void InitializedFrostedGlass(UIElement glassHost)
+private void InitializeFrostedGlass(UIElement glassHost)
 {
     Visual hostVisual = ElementCompositionPreview.GetElementVisual(glassHost);
     Compositor compositor = hostVisual.Compositor;
@@ -272,16 +279,11 @@ private void InitializedFrostedGlass(UIElement glassHost)
 }
 ```
 
-## その他の情報
+## <a name="additional-resources"></a>その他の情報
 
 -   [ビジュアル レイヤーの概要](https://msdn.microsoft.com/en-us/windows/uwp/graphics/visual-layer)
 -   [**ElementCompositionPreview** クラス](https://msdn.microsoft.com/library/windows/apps/mt608976)
--   [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) に掲載された高度な UI とコンポジションのサンプル
+-   [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) にある高度な UI とコンポジションのサンプル
 -   [BasicXamlInterop のサンプル](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
 -   [ParallaxingListItems のサンプル](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

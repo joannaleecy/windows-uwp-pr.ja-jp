@@ -1,20 +1,27 @@
 ---
 author: jnHs
-Description: "アプリ、アプリ内製品 (IAP)、および Microsoft Advertising による売り上げの支払いを受け取るために、以下の重要な情報を確認する必要があります。"
+Description: "アプリ、アプリ内製品 (IAP)、および Microsoft Advertising による収益の支払いを受け取るために、以下の重要な情報を確認する必要があります。"
 title: "支払いの受け取り"
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: eaf2c2d7032d7df1184a988afce7dbd4f28d3622
-ms.openlocfilehash: 76bce0070da266cc2bc53cda785136a372e2f3bc
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: af5c30aae3927f901bb93fd2c79bfee202754a1e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 支払いの受け取り
+# <a name="getting-paid"></a>支払いの受け取り
 アプリ、アドオン、および Microsoft Advertising による収益の支払いを受け取るために、以下の重要な情報を確認する必要があります。
 
 > **重要:** Windows ストアでのアプリ販売に対して支払いを受けるには、事前に[受取りアカウントを設定して税関連の書類に入力する](setting-up-your-payout-account-and-tax-forms.md)必要があります。
 
-## Windows ストアの手数料
+## <a name="store-fee"></a>Windows ストアの手数料
 
 [開発者アカウントを登録する](http://go.microsoft.com/fwlink/p/?LinkID=615100)際に、開発者は[アプリ開発者契約](https://msdn.microsoft.com/library/windows/apps/hh694058)に同意します。 この契約には、Windows ストアでのアプリ販売に関する、開発者と Microsoft との関係が説明されています。これには、Microsoft がすべての販売に対して課金する Windows ストアの手数料に関する規定も含まれています。
 
@@ -22,7 +29,7 @@ ms.openlocfilehash: 76bce0070da266cc2bc53cda785136a372e2f3bc
 
 Windows ストアの手数料は、アドオンも含めて、Windows ストアで生じたすべてのアプリ販売に適用されます。
 
-## 価格帯
+## <a name="price-tiers"></a>価格帯
 
 価格帯では、アプリを配布するすべての国における販売価格を設定します。 アプリを無料で提供することも、ユーザーがアプリを購入する際に支払う価格を選ぶこともできます。 価格帯は、0.99 米ドルから、段階的に設定されています (1.29 米ドル、1.49 米ドル、1.99 米ドルなど)。 価格が高くなるにつれ、価格の増分も大きくなります。
 
@@ -32,15 +39,15 @@ Windows ストアの手数料は、アドオンも含めて、Windows ストア�
 
 選んだ価格帯には、ユーザーが支払う必要のある売上税や付加価値税が含まれている場合があることに注意してください。 詳しくは、「[有料アプリの税の詳細](tax-details-for-paid-apps.md)」をご覧ください。
 
-## 支払いレポート
+## <a name="payout-reporting"></a>支払いレポート
 
 Windows デベロッパー センター ダッシュ ボードの **[支払の概要]** で、支払い情報に関する詳細を表示し、レポートをダウンロードできます。 ここに表示される情報について詳しくは、「[支払いの要約](payout-summary.md)」をご覧ください。
 
-## 支払いの時期
+## <a name="payout-timeframe"></a>支払いの時期
 
-支払いは毎月行われます (支払いのしきい値に達していて、下記の支払いの保留処理を行っていない場合)。 通常、支払いは、該当する月の 15 日に行われます。 支払いが受取りアカウントに到着するまで、通常は 3 から 10 営業日かかることにご注意ください。 詳しくは、「[支払しきい値、方法、期間](payment-thresholds-methods-and-timeframes.md)」をご覧ください。
+支払いは毎月行われます (支払いのしきい値に達していて、下記の支払いの保留処理を行っていない場合)。 通常、支払いは、該当する月の 15 日に行われます。 支払いが受取りアカウントに到着するまで、通常は 3 ～ 10 営業日かかることに注意してください。 詳しくは、「[支払しきい値、方法、期間](payment-thresholds-methods-and-timeframes.md)」をご覧ください。
 
-##  支払い保留の状態
+##  <a name="payout-hold-status"></a>支払い保留の状態
 
 既定では、上記で説明したように、支払いは毎月行われます。 ただし、支払いを保留にして、アカウントへの支払いの送信を行わないようにするオプションがあります。 支払いを保留にした場合、獲得した収益は引き続き記録され、**支払いの要約**でその詳細が提供されます。 ただし、保留を解除するまでは、アカウントへの支払いは送信されません。 
 
@@ -57,10 +64,5 @@ Windows デベロッパー センター ダッシュ ボードの **[支払の�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

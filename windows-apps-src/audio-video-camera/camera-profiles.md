@@ -3,13 +3,20 @@ author: drewbatgit
 ms.assetid: 42A06423-670F-4CCC-88B7-3DCEEDDEBA57
 description: "この記事では、カメラ プロファイルを使ってさまざまなビデオ キャプチャ デバイスの機能を検出および管理する方法について説明します。 これには、特定の解像度やフレーム レートをサポートするプロファイル、複数のカメラへの同時アクセスをサポートするプロファイル、HDR をサポートするプロファイルを選ぶなどのタスクが含まれます。"
 title: "カメラ プロファイルを使用したカメラ機能の検出と選択"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 625cf715a88837cb920433fa34e47a1e1828a4c8
-ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4e37c2e3bd2ed8738ebba88c55ceaf795e6ca084
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# カメラ プロファイルを使用したカメラ機能の検出と選択
+# <a name="discover-and-select-camera-capabilities-with-camera-profiles"></a>カメラ プロファイルを使用したカメラ機能の検出と選択
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -21,7 +28,7 @@ ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
  
 
-## カメラ プロファイルについて
+## <a name="about-camera-profiles"></a>カメラ プロファイルについて
 
 カメラが搭載されているデバイスによって、キャプチャ解像度、ビデオ キャプチャのフレーム レート、HDR または可変フレーム レート キャプチャなど、サポートされている機能も異なります。 ユニバーサル Windows プラットフォーム (UWP) メディア キャプチャ フレームワークでは、この機能セットが [**MediaCaptureVideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695) に格納されます。 [**MediaCaptureVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926694) オブジェクトで表されるカメラ プロファイルには、メディア記述のコレクションが 3 つ含まれています。1 つは写真のキャプチャ用、1 つはビデオ キャプチャ用、もう 1 つはビデオ プレビュー用です。
 
@@ -31,7 +38,7 @@ ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
 この記事のコード例では、最小限の初期化が、さまざまな機能をサポートするカメラ プロファイルの検出に置き換わっています。検出されたプロファイルは、メディア キャプチャ デバイスの初期化に使用されます。
 
-## カメラ プロファイルをサポートするビデオ デバイスを検出する
+## <a name="find-a-video-device-that-supports-camera-profiles"></a>カメラ プロファイルをサポートするビデオ デバイスを検出する
 
 サポートされているカメラ プロファイルを検索する前に、カメラ プロファイルの使用がサポートされるキャプチャ デバイスを検出する必要があります。 次の例で定義されている **GetVideoProfileSupportedDeviceIdAsync** ヘルパー メソッドでは、[**DeviceInformaion.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) メソッドを使って、すべての利用可能なビデオ キャプチャ デバイスの一覧を取得しています。 個々のデバイスについて静的メソッド [**IsVideoProfileSupported**](https://msdn.microsoft.com/library/windows/apps/dn926714) を呼び出し、ビデオ プロファイルがサポートされるかどうかを確認する処理が、一覧内のすべてのデバイスに対してループで実行されます。 また、各デバイスの [**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) プロパティで、使用するカメラがデバイスの前面にあるか背面にあるかを指定することができます。
 
@@ -43,7 +50,7 @@ ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
 [!code-cs[GetDeviceWithProfileSupport](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetDeviceWithProfileSupport)]
 
-## サポートされている解像度とフレーム レートに基づいてプロファイルを選択する
+## <a name="select-a-profile-based-on-supported-resolution-and-frame-rate"></a>サポートされている解像度とフレーム レートに基づいてプロファイルを選択する
 
 特定の解像度やフレーム レートを確保できるなど、特定の機能が含まれたプロファイルを選択するには、先ほど定義したヘルパー メソッドをまず呼び出して、カメラ プロファイルの使用をサポートするキャプチャ デバイスの ID を取得する必要があります。
 
@@ -57,7 +64,7 @@ ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
 [!code-cs[InitCaptureWithProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitCaptureWithProfile)]
 
-## 同時実行をサポートするプロファイルを選択する
+## <a name="select-a-profile-that-supports-concurrence"></a>同時実行をサポートするプロファイルを選択する
 
 カメラ プロファイルを使うと、デバイスで複数カメラからのビデオ キャプチャが同時にサポートされるかどうかを確認できます。 このシナリオでは、前面カメラ用と背面カメラ用に、2 セットのキャプチャ オブジェクトを作成する必要があります。 各カメラについて、**MediaCapture** と **MediaCaptureInitializationSettings** を作成し、キャプチャ デバイス ID を保持するための文字列を作成します。 また、同時実行がサポートされているかどうかを追跡するためのブール変数を追加します。
 
@@ -71,7 +78,7 @@ ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
 [!code-cs[InitConcurrentMediaCaptures](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitConcurrentMediaCaptures)]
 
-## 既知のプロファイルを使用して HDR ビデオをサポートするプロファイルを検出する
+## <a name="use-known-profiles-to-find-a-profile-that-supports-hdr-video"></a>既知のプロファイルを使用して HDR ビデオをサポートするプロファイルを検出する
 
 HDR をサポートするプロファイルの選択も、他のシナリオと同じように始まります。 **MediaCaptureInitializationSettings** を作成し、キャプチャ デバイス ID を保持する文字列を作成します。 HDR ビデオがサポートされているかどうかを追跡するためのブール変数を追加します。
 
@@ -87,7 +94,7 @@ HDR をサポートするプロファイルの選択も、他のシナリオと�
 
 [!code-cs[FindHDRProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindHDRProfile)]
 
-## 写真とビデオの同時キャプチャがデバイスでサポートされているかどうかを確認する
+## <a name="determine-if-a-device-supports-simultaneous-photo-and-video-capture"></a>写真とビデオの同時キャプチャがデバイスでサポートされているかどうかを確認する
 
 多くのデバイスでは、写真とビデオの同時キャプチャがサポートされます。 キャプチャ デバイスでこの動作がサポートされているかどうかを確認するには、[**MediaCapture.FindAllVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926708) を呼び出して、デバイスでサポートされているすべてのカメラ プロファイルを取得します。 Linq クエリを使って、[**SupportedPhotoMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926703) と [**SupportedRecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926705) に 1 つ以上のエントリがある (プロファイルで同時キャプチャがサポートされていることを意味する) プロファイルを検出します。
 
@@ -95,7 +102,7 @@ HDR をサポートするプロファイルの選択も、他のシナリオと�
 
 このクエリを調整して、同時ビデオ録画以外にも、特定の解像度やその他の機能をサポートするプロファイルを検出することもできます。 また、[**MediaCapture.FindKnownVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926710) を使って [**BalancedVideoAndPhoto**](https://msdn.microsoft.com/library/windows/apps/dn948843) 値を指定し、同時キャプチャをサポートするプロファイルを取得することもできますが、すべてのプロファイルを照会する方が完全な結果を得ることができます。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [カメラ](camera.md)
 * [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
@@ -105,10 +112,5 @@ HDR をサポートするプロファイルの選択も、他のシナリオと�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

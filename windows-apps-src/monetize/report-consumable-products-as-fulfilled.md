@@ -3,16 +3,20 @@ author: mcleanbyron
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: "Windows ストア コレクション API 内のこのメソッドを使用して、コンシューマブルな製品を特定の顧客についてフルフィルメント完了として報告します。 ユーザーがコンシューマブルな製品を再購入するには、アプリまたはサービスがコンシューマブルな製品をそのユーザーについてフルフィルメント完了と報告する必要があります。"
 title: "コンシューマブルな製品をフルフィルメント完了として報告する"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、Windows ストア コレクション API、フルフィルメント、コンシューマブル"
 translationtype: Human Translation
-ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
-ms.openlocfilehash: 54095c7fd3c29fe7596be4c4b5a7148d078a7091
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 201e4fedc5f36202cba4c495ae9344d5a7975d62
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# コンシューマブルな製品をフルフィルメント完了として報告する
-
-
-
+# <a name="report-consumable-products-as-fulfilled"></a>コンシューマブルな製品をフルフィルメント完了として報告する
 
 Windows ストア コレクション API 内のこのメソッドを使用して、コンシューマブルな製品を特定の顧客についてフルフィルメント完了として報告します。 ユーザーがコンシューマブルな製品を再購入するには、アプリまたはサービスがコンシューマブルな製品をそのユーザーについてフルフィルメント完了と報告する必要があります。
 
@@ -21,20 +25,20 @@ Windows ストア コレクション API 内のこのメソッドを使用して
 * コンシューマブルの項目 ID ([製品の照会](query-for-products.md)で **itemId** パラメーターとして返されるもの)、およびユーザー指定の一意の追跡 ID を指定します。 複数の試行で同じ追跡 ID が使用される場合、項目が既に消費されている場合でも同じ結果が返されます。 消費要求が成功したかどうかがわからない場合は、サービスは同じ追跡 ID を使用して消費要求を再送信する必要があります。 追跡 ID は常にその消費要求に関連付けられており、無限に再送信できます。
 * 製品 ID ([製品の照会](query-for-products.md)の **productId** パラメーターで返されるもの)、および以下の要求の本文セクションの **transactionId** パラメーターの記述にあるいずれかのソースから取得されるトランザクション ID を指定します。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 
 このメソッドを使用するための要件:
 
 * `https://onestore.microsoft.com` 対象ユーザー URI を使用して作成した Azure AD アクセス トークン。
-* [アプリのクライアント側コードから生成された](view-and-grant-products-from-a-service.md#step-4) Windows ストア ID キー。
+* コンシューマブルな製品をフルフィルメント完了として報告するユーザーの ID を表す Windows ストア ID キー。
 
-詳しくは、「[サービスからの製品の表示と許可](view-and-grant-products-from-a-service.md)」をご覧ください。
+詳しくは、「[サービスから製品の権利を管理する](view-and-grant-products-from-a-service.md)」をご覧ください。
 
-## 要求
+## <a name="request"></a>要求
 
 
-### 要求の構文
+### <a name="request-syntax"></a>要求の構文
 
 | メソッド | 要求 URI                                                   |
 |--------|---------------------------------------------------------------|
@@ -42,7 +46,7 @@ Windows ストア コレクション API 内のこのメソッドを使用して
 
 <span/> 
 
-### 要求ヘッダー
+### <a name="request-header"></a>要求ヘッダー
 
 | ヘッダー         | タイプ   | 説明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
@@ -53,30 +57,30 @@ Windows ストア コレクション API 内のこのメソッドを使用して
 
 <span/>
 
-### 要求本文
+### <a name="request-body"></a>要求本文
 
 | パラメーター     | タイプ         | 説明         | 必須かどうか |
 |---------------|--------------|---------------------|----------|
-| beneficiary   | UserIdentity | この項目が使用されているユーザー。                                                                                                                                                                                                                                                                 | 必須      |
-| itemId        | String       | [製品の照会](query-for-products.md)で返される itemId 値。 このパラメーターは trackingId と共に使用します。                                                                                                                                                                                                  | 省略可能       |
-| trackingId    | Guid         | 開発者により指定される一意の追跡 ID。 このパラメーターは itemId と共に使用します。                                                                                                                                                                                                                                     | 省略可能       |
-| productId     | String       | [製品の照会](query-for-products.md)で返される productId 値。 このパラメーターは transactionId と共に使用します。                                                                                                                                                                                            | なし       |
-| transactionId | Guid         | 次のいずれかのソースから取得されるトランザクション ID 値。 このパラメーターは productId と共に使用します。  <br/><br/><ul><li>[PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) クラスの [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) プロパティ。</li><li>[RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381)、[RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813)、または [GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811) から返されるアプリまたは製品の通知。</li><li>[製品の照会](query-for-products.md)で返される transactionId パラメーター。</li></ul>                                                                                                                                                                                                                                   | 省略可能       |
+| beneficiary   | UserIdentity | この項目が消費されているユーザー。 詳細については、次の表を参照してください。        | 必須      |
+| itemId        | string       | [製品の照会](query-for-products.md)で返される *itemId* 値。 このパラメーターは *trackingId* と共に使用します。      | 省略可能       |
+| trackingId    | guid         | 開発者により指定される一意の追跡 ID。 このパラメーターは *itemId* と共に使用します。         | 必須ではない       |
+| productId     | string       | [製品の照会](query-for-products.md)で返される *productId* 値。 このパラメーターは *transactionId* と共に使用します。   | 必須ではない       |
+| transactionId | guid         | 次のいずれかのソースから取得されるトランザクション ID 値。 このパラメーターは *productId* と共に使用します。  <br/><br/><ul><li>[PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) クラスの [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) プロパティ。</li><li>[RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381)、[RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813)、または [GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811) から返されるアプリまたは製品の通知。</li><li>[製品の照会](query-for-products.md)で返される *transactionId* パラメーター。</li></ul>   | 省略可能       |
 
  
 <span/>
 
 UserIdentity オブジェクトには以下のパラメーターが含まれています。
 
-| パラメーター            | タイプ   | 説明                                                                                                                                 | 必須かどうか |
-|----------------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| identityType         | string | 文字列値 **b2b** を指定します。                                                                                                           | 必須      |
-| identityValue        | string | [アプリのクライアント側コードから生成された](view-and-grant-products-from-a-service.md#step-4) Windows ストア ID キー。                                                                                                   | 必須      |
-| localTicketReference | string | 返された応答で必要な識別子。 Windows ストア ID キーの *userId* 要求と同じ値を使用することをお勧めします。 | 必須      |
+| パラメーター            | タイプ   | 説明       | 必須かどうか |
+|----------------------|--------|-------------------|----------|
+| identityType         | string | 文字列値 **b2b** を指定します。    | 必須      |
+| identityValue        | string | コンシューマブルな製品をフルフィルメント完了として報告するユーザーの ID を表す [Windows ストア ID キー](view-and-grant-products-from-a-service.md#step-4)。      | 必須      |
+| localTicketReference | string | 返された応答で必要な識別子。 Windows ストア ID キーの *userId* [要求](view-and-grant-products-from-a-service.md#claims-in-a-windows-store-id-key)と同じ値を使用することをお勧めします。 | 必須      |
 
 <span/> 
 
-### 要求の例
+### <a name="request-examples"></a>要求の例
 
 次の例では、*itemId* と *trackingId* を使用します。
 
@@ -118,12 +122,12 @@ Host: collections.md.mp.microsoft.com
 }
 ```
 
-## 応答
+## <a name="response"></a>応答
 
 
 使用が正常に実行された場合、コンテンツは返されません。
 
-### 応答の例
+### <a name="response-example"></a>応答の例
 
 ```syntax
 HTTP/1.1 204 No Content
@@ -135,29 +139,21 @@ MS-ServerId: 030011326
 Date: Tue, 22 Sep 2015 20:40:55 GMT
 ```
 
-## エラー コード
+## <a name="error-codes"></a>エラー コード
 
 
-| コード | エラー        | 内部エラー コード           | 説明                                                                                                                                                                           |
-|------|--------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| コード | エラー        | 内部エラー コード           | 説明           |
+|------|--------------|----------------------------|-----------------------|
 | 401  | 権限がありません | AuthenticationTokenInvalid | Azure AD アクセス トークンが無効です。 場合によっては、ServiceError の詳細に追加情報が含まれていることがあります (トークンの有効期限切れや *appid* 要求の欠落など)。 |
 | 401  | 権限がありません | PartnerAadTicketRequired   | Azure AD アクセス トークンが承認ヘッダーでサービスに渡されませんでした。                                                                                                   |
 | 401  | 権限がありません | InconsistentClientId       | 要求の本文の Windows ストア ID の *clientId* 要求と承認ヘッダーの Azure AD アクセス トークンの *appid* 要求が一致しません。                     |
 
 <span/> 
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
-* [サービスからの製品の表示と許可](view-and-grant-products-from-a-service.md)
+* [サービスから製品の権利を管理する](view-and-grant-products-from-a-service.md)
 * [製品の照会](query-for-products.md)
 * [無料の製品の付与](grant-free-products.md)
 * [Windows ストア ID キーの更新](renew-a-windows-store-id-key.md)
- 
-
- 
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

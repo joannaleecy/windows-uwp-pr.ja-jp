@@ -3,9 +3,16 @@ author: mcleblanc
 description: "宣言型 XAML マークアップ形式での UI の定義は、Windows Phone Silverlight からユニバーサル Windows プラットフォーム (UWP) アプリに非常に適切に変換されます。"
 title: "Windows Phone Silverlight の XAML と UI の UWP への移植"
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 3aa68943724c008e18df63d8b0ae20f448146303
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1ec72aec1e94ff92ef30fcc206456c7614107c98
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -238,7 +245,7 @@ UWP アプリにこれを移植する最も簡単な方法は、[**BitmapIcon**]
     <BitmapIcon UriSource="Assets/winrt_check.png" Width="21" Height="21"/>
 ```
 
-ここで winrt\_check.png は、wpsl\_check.png と同様に、ビットマップ形式のアルファ マスクであり、同じファイルであってもまったくかまいません。 ただし、異なる倍率用に異なるサイズの winrt\_check.png を提供した方が良い場合もあります。 この詳細および **Width** 値と **Height** 値の変更については、このトピックの「[表示/有効ピクセル、視聴距離、スケール ファクター](#view-effective-pixels-viewing-distance-and-scale-factors)」をご覧ください。
+ここで winrt\_check.png は、wpsl\_check.png と同様に、ビットマップ形式のアルファ マスクであり、同じファイルであってもまったくかまいません。 ただし、異なる倍率用に異なるサイズの winrt\_check.png を提供した方が良い場合もあります。 この詳細および **Width** 値と **Height** 値の変更については、このトピックの「[表示ピクセルと有効ピクセル、視聴距離、スケール ファクター](#view-or-effective-pixels-viewing-distance-and-scale-factors)」をご覧ください。
 
 淡色テーマと濃色テーマのビットマップ形式に違いがある場合に適切であるより一般的なアプローチは、2 つの画像アセット (一方が淡色テーマ用の濃色の前景、他方が濃色テーマ用の淡色の前景) を使うことです。 このビットマップ アセット セットの名前を付ける方法について詳しくは、「[修飾子を使ってリソースに名前を付ける方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)」をご覧ください。 イメージ ファイル セットに正しい名前を付けた後、次のようにしてルート名を使って抽象内で参照できます。
 
@@ -355,7 +362,7 @@ UWP アプリのタイルの動作は Windows Phone Silverlight アプリ用の�
 
 「[タイル、バッジ、トースト通知の操作](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259)」をご覧ください。
 
-## <a name="vieweffective-pixels-viewing-distance-and-scale-factors"></a>表示/有効ピクセル、視聴距離、スケール ファクター
+## <a name="view-or-effective-pixels-viewing-distance-and-scale-factors"></a>表示ピクセルと有効ピクセル、視聴距離、スケール ファクター
 
 Windows Phone Silverlight アプリと Windows 10 アプリでは、デバイスの実際の物理サイズと解像度から UI 要素のサイズとレイアウトを抽象化する方法が異なります。 Windows Phone Silverlight アプリでは、このために表示ピクセルを使います。 Windows 10 では、表示ピクセルの概念が有効ピクセルの概念として改良されました。 有効ピクセルの用語の説明、有効ピクセルが何をするものなのか、および有効ピクセルで使うことができる追加の値について、以下に示します。
 
@@ -391,10 +398,5 @@ UWP アプリでは、命令型コードを使って最小サイズ (幅と高�
 ## <a name="related-topics"></a>関連トピック
 
 * [名前空間とクラス マッピング](wpsl-to-uwp-namespace-and-class-mappings.md)
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

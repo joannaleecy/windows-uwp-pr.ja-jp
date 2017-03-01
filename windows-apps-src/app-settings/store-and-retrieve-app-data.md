@@ -5,9 +5,16 @@ title: "設定と他のアプリ データを保存して取得する"
 ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 5f50e490caa5d1d88c2f8315dc47e15b0ae22a05
-ms.openlocfilehash: 08ad1fbddc3db2c8329594419fefdc1aa0659092
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1e615e989a25520cff86c53e383d0cc5e87956d1
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -44,11 +51,13 @@ ms.openlocfilehash: 08ad1fbddc3db2c8329594419fefdc1aa0659092
 
 ## <a name="storing-app-data-in-the-app-data-stores"></a>アプリのデータ ストアにアプリ データを保存する
 
+
 アプリのインストール時には、設定やファイル用に、ユーザーごとの固有のデータ ストアが設定されます。 物理的ストレージはシステムによって管理されるため、このデータの場所や形式を意識することなく、データは他のアプリやユーザーから確実に分離されます。 また、アプリに更新プログラムをインストールするときはデータ ストアの内容が保持され、アプリのアンインストール時にはデータ ストアの内容が完全に削除されます。
 
 各アプリのデータ ストア内には、ローカル ファイル用、ローミング ファイル用、一時ファイル用に 1 つずつ、システム定義のルート ディレクトリがあります。 それぞれのルート ディレクトリに新しいファイルや新しいコンテナーをアプリで追加できます。
 
 ## <a name="local-app-data"></a>ローカル アプリ データ
+
 
 ローカル アプリ データは、アプリ セッション間で保持する必要がある情報のうち、ローミング アプリ データには適していないものに使用されます。 また、他のデバイスには適さないデータもここに格納します。 ローカルに格納されるデータには、一般的なサイズの制限はありません。 ローカル アプリ データ ストアは、ローミングに適さないデータや、大きなデータ セットに使用してください。
 
@@ -451,10 +460,5 @@ localSettings.DeleteContainer("exampleContainer");
 * [**Windows.Storage.ApplicationData.RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625)
 * [**Windows.Storage.ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588)
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

@@ -3,13 +3,20 @@ author: jnHs
 Description: "Windows デベロッパー センター ダッシュボードを使ったアプリの作業では、Windows ストアによってアプリに割り当てられた一意の ID の詳細を表示したり、ストアでのアプリの内容へのリンクを取得したりできます。"
 title: "アプリ ID の詳細の表示"
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a25d87556bb85718f818af5b586f54e6985aaaa4
-ms.openlocfilehash: dc61971865a05e1de17cdcf55ab495fee4917b74
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b9cbe976eb5aece26cac54f7ae8693aef5009ca3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アプリ ID の詳細の表示
+# <a name="view-app-identity-details"></a>アプリ ID の詳細の表示
 
 
 Windows デベロッパー センター ダッシュボードを使ったアプリの作業では、Windows ストアによってアプリに割り当てられた一意の ID の詳細を表示したり、ストアでのアプリの内容へのリンクを取得したりできます。
@@ -18,7 +25,7 @@ Windows デベロッパー センター ダッシュボードを使ったアプ�
 
 > **注**  ID の詳細に関するほとんどの情報を表示するには、アプリの[予約名](create-your-app-by-reserving-a-name.md)が必要です。
 
-## APPX マニフェストに追加する値
+## <a name="values-to-include-in-your-appx-manifest"></a>APPX マニフェストに追加する値
 
 
 次の値を APPX マニフェストに追加する必要があります。 パッケージのビルドに Microsoft Visual Studio を使っており、開発者アカウントに関連付けられている同じ Microsoft アカウントでサインインしている場合は、これらの値は自動的に追加されています。 パッケージを手動でビルドしている場合は、これらの値の追加が必要になります。
@@ -30,7 +37,7 @@ Windows デベロッパー センター ダッシュボードを使ったアプ�
 
 また、アプリ ID を宣言するこれらの値により、パッケージが属している "パッケージ ファミリ" が確定されます。 個々のパッケージには、アーキテクチャやバージョンなど、その他の詳細が含まれています。
 
-## パッケージファミリのその他の値
+## <a name="additional-values-for-package-family"></a>パッケージファミリのその他の値
 
 
 次の値は、アプリのパッケージ ファミリを参照するが、マニフェストには含まれていないその他の値です。
@@ -38,7 +45,7 @@ Windows デベロッパー センター ダッシュボードを使ったアプ�
 -   **パッケージ ファミリ名 (PFN)**: この値は特定の Windows API で使われます。
 -   **パッケージ SID**: アプリに WNS の通知を渡すには、この値が必要になります。 詳しくは、「[Windows プッシュ通知サービス (WNS) の概要](https://msdn.microsoft.com/library/windows/apps/mt187203)」をご覧ください。
 
-## アプリの内容へのリンク
+## <a name="link-to-your-apps-listing"></a>アプリの内容へのリンク
 
 アプリのページへのリンクを共有することで、ユーザーはストアでアプリを見つけやすくなります。 このリンクは、**`https://www.microsoft.com/store/apps/<your app's Store ID>`** の形式で示されます。
 
@@ -54,10 +61,5 @@ Windows デベロッパー センター ダッシュボードを使ったアプ�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

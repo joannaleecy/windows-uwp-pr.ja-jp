@@ -3,13 +3,20 @@ author: mtoepke
 title: "DirectX 9 から DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への移行"
 description: "このセクションでは、DirectX 9 のデスクトップ ゲームを DirectX 11 とユニバーサル Windows プラットフォーム (UWP) に移植する方法について説明します。"
 ms.assetid: 7a3f8ddf-d5b2-1c05-b532-70459befda4e
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, DirectX 9, DirectX 11, 移植"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 875d638a6104cf91b707a2998c9d74e905c945da
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 49b265ba3736af09f5dbb2d5812011385cdfc77d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# DirectX 9 から DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への移行
+# <a name="moving-from-directx-9-to-directx-11-and-universal-windows-platform-uwp"></a>DirectX 9 から DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への移行
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -51,10 +58,5 @@ ms.openlocfilehash: 875d638a6104cf91b707a2998c9d74e905c945da
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

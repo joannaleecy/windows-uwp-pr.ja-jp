@@ -3,16 +3,23 @@ title: "バイト配列間のコピー"
 description: "次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでバイト配列をコピーする方法を示しています。"
 ms.assetid: C343B08C-1FA1-40FD-8CA5-7FC9B707C5E3
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: f700d3d9c09424ef8fffd73a08e12563acbbc497
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9183ca237709100e16afd9ce2f8387ff464021ce
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# バイト配列間のコピー
+# <a name="copy-to-and-from-byte-arrays"></a>バイト配列間のコピー
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでバイト配列をコピーする方法を示しています。
 
@@ -33,8 +40,3 @@ public void ByteArrayCopy()
     CryptographicBuffer.CopyToByteArray(buffer, out newByteArray);
 }
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

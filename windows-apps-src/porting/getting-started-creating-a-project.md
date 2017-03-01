@@ -3,17 +3,24 @@ author: mcleblanc
 ms.assetid: 08C8F359-E8B6-4A45-8F4B-8A1962F0CE38
 description: "Windows にとっての Microsoft Visual Studio は、iOS や Mac OS にとっての Xcode に相当します。 このチュートリアルでは、Visual Studio の使い方に慣れる訓練を行います。"
 title: "Visual Studio でのプロジェクトの作成"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 40dc6a52dbd495a78e5aa0d95a590d3e878d4068
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c8aba48fba1badcfeebc9868215b904c76ac6b98
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# はじめに: プロジェクトの作成
+# <a name="getting-started-creating-a-project"></a>はじめに: プロジェクトの作成
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
-## プロジェクトの作成
+## <a name="creating-a-project"></a>プロジェクトの作成
 
 Windows にとっての Microsoft Visual Studio は、iOS や Mac OS にとっての Xcode に相当します。 このチュートリアルでは、Visual Studio の使い方に慣れる訓練を行います。 このチュートリアルを通して、開始にあたって知っておく必要がある最も基本的な事柄を確認できます。 アプリを作るたびに、この手順に従うことになります。
 
@@ -50,12 +57,7 @@ Visual Studio の場合も、次の図に示すように、いくつかのプロ
 
 ![Visual Studio の [新しいプロジェクト] ダイアログ ボックス](images/ios-to-uwp/ios-to-uwp-vs-choose-template.png)このチュートリアルでは、**[Visual C#]**、**[Windows]**、**[Windows ユニバーサル]**、**[空のアプリ (Windows ユニバーサル)]** の順にタップします。 **[名前]** ボックスに「MyApp」と入力し、**[OK]** をタップします。 Visual Studio によって初めてのプロジェクトが作成され、表示されます。 これで、アプリの設計を開始して、コードを追加できるようになりました。
 
-## 次のステップ
+## <a name="next-step"></a>次のステップ
 
 [はじめに: プログラミング言語の選択](getting-started-choosing-a-programming-language.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

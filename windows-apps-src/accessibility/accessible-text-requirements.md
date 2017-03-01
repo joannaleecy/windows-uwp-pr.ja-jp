@@ -5,13 +5,20 @@ ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
 title: "アクセシビリティに対応したテキストの要件"
 label: Accessible text requirements
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: f36c6a8c191f48c6fb04820c19a98891e46ecf9d
-ms.openlocfilehash: a87e578ae9cfb3fd3104392028f6b7412d23d619
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c1decefe507ccebbaee1055426fbde06eb9670e7
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アクセシビリティに対応したテキストの要件  
+# <a name="accessible-text-requirements"></a>アクセシビリティに対応したテキストの要件  
 
 
 
@@ -20,7 +27,7 @@ ms.openlocfilehash: a87e578ae9cfb3fd3104392028f6b7412d23d619
 
 <span id="contrast_rations"/>
 <span id="CONTRAST_RATIONS"/>
-## コントラスト比  
+## <a name="contrast-ratios"></a>コントラスト比  
 ユーザーはハイ コントラスト モードにいつでも切り替えることができますが、テキスト用のアプリ設計ではこのオプションを最後の手段にする必要があります。 これよりも、アプリのテキストが、テキストと背景とのコントラストのレベルに関して確立されているガイドラインに準拠するようにすることをお勧めします。 コントラストのレベルは、色合いを考慮しない確定的な方法に基づいて評価されます。 たとえば、緑の背景の上に赤のテキストを配置すると、色覚に障碍があるユーザーはそのテキストを読み取ることができない場合があります。 コントラスト比を確認して修正することで、このようなアクセシビリティの問題を防ぐことができます。
 
 ここで説明するテキストのコントラストに関する推奨事項は、「[G18: テキスト (および画像化された文字) とテキストの背景のコントラスト比を 4.5:1 以上にする](http://go.microsoft.com/fwlink/p/?linkid=221823)」という Web アクセシビリティ標準に基づいています。 このガイドラインは、*W3C Techniques for WCAG 2.0* 仕様に含まれています。
@@ -37,7 +44,7 @@ ms.openlocfilehash: a87e578ae9cfb3fd3104392028f6b7412d23d619
 <span id="Text_element_roles"/>
 <span id="text_element_roles"/>
 <span id="TEXT_ELEMENT_ROLES"/>
-## テキスト要素の役割  
+## <a name="text-element-roles"></a>テキスト要素の役割  
 UWP アプリでは、次の既定の要素 (一般に*テキスト要素*または*テキスト編集コントロール*と呼ばれる) を使うことができます。
 
 * [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652): 役割は [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
@@ -52,7 +59,7 @@ XAML のテキスト モデルでは、静的なテキスト、[**TextBlock**](h
 <span id="Auto-suggest_accessibility"/>
 <span id="auto-suggest_accessibility"/>
 <span id="AUTO-SUGGEST_ACCESSIBILITY"/>
-## 自動提案のアクセシビリティ  
+## <a name="auto-suggest-accessibility"></a>自動提案のアクセシビリティ  
 ユーザーが入力フィールドに入力すると、潜在的な候補の一覧が表示される場合、この種のシナリオは自動提案と呼ばれます。 これは、メールの**宛先:** 行フィールド、Windows の Cortana 検索ボックス、Microsoft Edge の URL 入力フィールド、天気予報アプリの場所入力フィールドなどでよく使用されます。 XAML の [**AutosuggestBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox) や HTML の組み込みコントロールを使用している場合、このエクスペリエンスは既定で用意されています。 このエクスペリエンスをアクセシビリティ対応にするには、入力フィールドと一覧を関連付ける必要があります。 これについては、「[自動提案の実装](#implementing_auto-suggest)」セクションで説明しています。
 
 ナレーターは、特別な候補の表示モードによって、このタイプのエクスペリエンスをアクセシビリティ対応にするように更新されました。 大まかに言うと、編集フィールドと一覧が正しく接続されている場合、エンドユーザーには次のようなメリットがあります。
@@ -69,7 +76,7 @@ _候補一覧の例_
 <span id="Implementing_auto-suggest"/>
 <span id="implementing_auto-suggest"/>
 <span id="IMPLEMENTING_AUTO-SUGGEST"/>
-### 自動提案の実装  
+### <a name="implementing-auto-suggest"></a>自動提案の実装  
 このエクスペリエンスをアクセシビリティ対応にするには、UIA ツリーで、入力フィールドと一覧が関連付けられている必要があります。 この関連付けは、デスクトップ アプリの [UIA_ControllerForPropertyId](https://msdn.microsoft.com/windows/desktop/ee684017) プロパティまたは UWP アプリの [ControlledPeers](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) プロパティを使って設定されます。
 
 自動提案のエクスペリエンスには、大まかに 2 つの種類があります。
@@ -86,10 +93,10 @@ _既定の選択がある場合の例_
 ![既定の選択がない一覧](images/autosuggest-no-default-selection.png)<br/>
 _既定の選択がない場合の例_
 
-### XAML の実装  
+### <a name="xaml-implementation"></a>XAML の実装  
 XAML の既定の [**AutosuggestBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox) を使用している場合、既にすべての準備が完了しています。 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox) と一覧を使って独自の自動提案エクスペリエンスを作成している場合は、**TextBox** で一覧を [**AutomationProperties.ControlledPeers**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) として設定する必要があります。 [**ControlledPeers**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) プロパティを追加または削除するたびに、このプロパティの **AutomationPropertyChanged** イベントを発生させる必要があります。また、この記事で既に説明したシナリオのタイプに応じて、独自の [**SelectionItemPatternOnElementSelected**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) イベントまたは [**LayoutInvalidated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) イベントを発生させる必要があります。
 
-### HTML の実装  
+### <a name="html-implementation"></a>HTML の実装  
 HTML で組み込みのコントロールを使っている場合は、UIA 実装が既にマップされています。 既に準備されている実装の例を次に示します。
 
 ``` HTML
@@ -105,13 +112,13 @@ HTML で組み込みのコントロールを使っている場合は、UIA 実�
 <span id="Text_in_graphics"/>
 <span id="text_in_graphics"/>
 <span id="TEXT_IN_GRAPHICS"/>
-## グラフィックス内のテキスト  
+## <a name="text-in-graphics"></a>グラフィックス内のテキスト  
 可能な限り、テキストをグラフィックスに含めないでください。 たとえば、アプリで [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 要素として表示されるイメージ ソース ファイルにテキストを含めると、支援技術ではそのテキストのアクセスや読み取りを自動的に行うことはできません。 グラフィックス内でテキストを使う必要がある場合は、"alt テキスト" に相当するものとして指定する [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) の値に、そのテキストまたはテキストの意味の要約を含めてください。 これは、テキスト文字をベクトルから [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) の一部として作成する場合や、[**Glyphs**](https://msdn.microsoft.com/library/windows/apps/BR209921) を使って作成する場合も同様です。
 
 <span id="Text_font_size"/>
 <span id="text_font_size"/>
 <span id="TEXT_FONT_SIZE"/>
-## テキストのフォント サイズ  
+## <a name="text-font-size"></a>テキストのフォント サイズ  
 小さすぎて読むことができないサイズのテキスト フォントが使われているだけで、多くのユーザーが、アプリのテキストを読みにくいと感じます。 この問題は、アプリの UI のテキストを最初から適切な大きさにすることで防止できます。 Windows に含まれる支援技術もあり、これらの支援技術では、ユーザーがアプリの表示サイズや通常の表示を変更できるようにします。
 
 * 一部のユーザーはアクセシビリティ対応オプションとして 1 インチあたりのドット数 (dpi) の値を変更します。 このオプションは、**[コンピューターの簡単操作]** の **[画面上の項目を拡大します]** から利用できます。この操作は、**コントロール パネル**の UI の **[デスクトップのカスタマイズ]** / **[ディスプレイ]** にリダイレクトされます。 ディスプレイ デバイスの機能に左右されるため、実際に使用できるサイズ変更のオプションは異なる場合があります。
@@ -120,7 +127,7 @@ HTML で組み込みのコントロールを使っている場合は、UIA 実�
 <span id="Text_scale_factor"/>
 <span id="text_scale_factor"/>
 <span id="TEXT_SCALE_FACTOR"/>
-## テキストの倍率  
+## <a name="text-scale-factor"></a>テキストの倍率  
 さまざまなテキスト要素とコントロールには [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.istextscalefactorenabled) プロパティがあります。 このプロパティの既定値は **true** です。 値が **true** の場合、電話の **[テキストの拡大縮小]** 設定 (**[設定] &gt; [コンピューターの簡単操作]**) に応じて、対象要素のテキストのサイズが拡大されます。 拡大縮小は、**FontSize** が大きいテキストよりも、**FontSize** が小さいテキストにより大きな影響を及ぼします。 ただし、要素の **IsTextScaleFactorEnabled** プロパティを **false** に設定することで自動拡大を無効にすることができます。 次のマークアップを使って電話の **[テキスト サイズ]** 設定を調整し、**TextBlock** がどうなるのかを確認してください。
 
 XAML
@@ -163,15 +170,10 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 * [**TextElement**](https://msdn.microsoft.com/library/windows/apps/BR209967) クラスと派生クラス
 
 <span id="related_topics"/>
-## 関連トピック  
+## <a name="related-topics"></a>関連トピック  
 * [アクセシビリティ](accessibility.md)
 * [基本的なアクセシビリティ情報](basic-accessibility-information.md)
 * [XAML テキスト表示のサンプル](http://go.microsoft.com/fwlink/p/?linkid=238579)
 * [XAML テキスト編集のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=251417)
 * [XAML アクセシビリティ サンプル](http://go.microsoft.com/fwlink/p/?linkid=238570) 
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

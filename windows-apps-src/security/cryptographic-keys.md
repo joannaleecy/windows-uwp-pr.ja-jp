@@ -3,21 +3,28 @@ title: "暗号化キー"
 description: "この記事では、標準のキー派生関数を使ってキーを派生させる方法、および対称キーと非対称キーを使ってコンテンツを暗号化する方法について説明します。"
 ms.assetid: F35BEBDF-28C5-4F91-A94E-F7D862B6ED59
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: e7fba930c108744815f261e7d01d198626d7e7c9
-ms.openlocfilehash: 420c8daa47fb36e8b7cebbc7a18bc8eb666188d3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1396382c90b370aa9d610749a92dd256c92dedab
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 暗号化キー
+# <a name="cryptographic-keys"></a>暗号化キー
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
 この記事では、標準のキー派生関数を使ってキーを派生させる方法、および対称キーと非対称キーを使ってコンテンツを暗号化する方法について説明します。 
 
-## 対称キー
+## <a name="symmetric-keys"></a>対称キー
 
 
 秘密鍵の暗号化とも呼ばれる対称キーの暗号化には、暗号化にも暗号化解除にも使われるキーが必要です。 [**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) クラスを使って対称アルゴリズムを指定し、キーを作成またはインポートできます。 [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) クラスで静的メソッドを使って、アルゴリズムとキーでデータを暗号化および暗号化解除できます。
@@ -42,7 +49,7 @@ CBC などの一部のモードでは、最初の暗号テキスト ブロック
 
 次の例に、[**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) クラスを使って対称キーを作成し、それを使ってデータを暗号化および暗号化解除する方法を示します。
 
-## 非対称キー
+## <a name="asymmetric-keys"></a>非対称キー
 
 
 非対称キーの暗号化 (公開キーの暗号化とも呼ばれます) は、公開キーと秘密キーを使って暗号化および暗号化解除します。 これらのキーは異なるものですが、数学的に関連性があります。 通常、秘密キーは秘密として保持され、データの暗号化解除に使われます。一方、公開キーは関係者に配布され、データの暗号化に使われます。 非対称キーの暗号化は、データ署名にも役立ちます。
@@ -61,7 +68,7 @@ CBC などの一部のモードでは、最初の暗号テキスト ブロック
 
 [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) オブジェクトを使うと、非対称アルゴリズムまたは署名アルゴリズムの指定、短期的なキー ペアの作成またはインポート、キー ペアの公開キー部分のインポートが可能になります。
 
-## キーの派生
+## <a name="deriving-keys"></a>キーの派生
 
 
 多くの場合、共有シークレットから追加キーを派生する必要があります。 [**KeyDerivationAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241518) クラスおよび [**KeyDerivationParameters**](https://msdn.microsoft.com/library/windows/apps/br241524) クラスの次の専用メソッドのいずれかを使って、キーを派生できます。
@@ -73,9 +80,4 @@ CBC などの一部のモードでは、最初の暗号テキスト ブロック
 | [**BuildForSP80056a**](https://msdn.microsoft.com/library/windows/apps/br241527)  | SP800-56A キー派生関数で使う KeyDerivationParameters オブジェクトを作成します。                                                 |
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

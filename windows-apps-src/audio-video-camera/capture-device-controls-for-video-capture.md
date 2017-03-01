@@ -3,13 +3,20 @@ author: drewbatgit
 ms.assetid: 708170E1-777A-4E4A-9F77-5AB28B88B107
 description: "この記事では、ビデオ キャプチャの拡張シナリオ (HDR ビデオ、露出の優先順位など) を手動デバイス制御によって有効にする方法を示します。"
 title: "ビデオ キャプチャのための手動カメラ制御"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: daeb92e51a005825f1e410da9c924afc723297f1
-ms.openlocfilehash: 5a51ee9c67eb421c2478ca46f415879afb609210
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cd6326ebad94c33fd03bf39f2dfd11f1c27e9b37
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# ビデオ キャプチャのための手動カメラ制御
+# <a name="manual-camera-controls-for-video-capture"></a>ビデオ キャプチャのための手動カメラ制御
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -25,7 +32,7 @@ ms.openlocfilehash: 5a51ee9c67eb421c2478ca46f415879afb609210
 > [!NOTE] 
 > この記事の内容は、写真やビデオの基本的なキャプチャ機能を実装するための手順を紹介した「[MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)」で取り上げた概念やコードに基づいています。 そちらの記事で基本的なメディア キャプチャのパターンを把握してから、高度なキャプチャ シナリオに進むことをお勧めします。 この記事で紹介しているコードは、MediaCapture のインスタンスが既に作成され、適切に初期化されていることを前提としています。
 
-## HDR ビデオ
+## <a name="hdr-video"></a>HDR ビデオ
 
 ハイ ダイナミック レンジ (HDR) ビデオ機能では、HDR 処理をキャプチャ デバイスのビデオ ストリームに適用します。 HDR ビデオがサポートされているかどうかを確認するには、[**HdrVideoControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn926682) プロパティを選びます。
 
@@ -35,7 +42,7 @@ HDR ビデオ処理を有効または無効にするには、[**HdrVideoControl.
 
 [!code-cs[SetHdrVideoMode](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetHdrVideoMode)]
 
-## 露出の優先順位
+## <a name="exposure-priority"></a>露出の優先順位
 
 [**ExposurePriorityVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926644) は、有効であれば、キャプチャ デバイスからのビデオ フレームを評価し、ローライト シーンのビデオがキャプチャされているかどうかを判断します。 その場合は、各フレームの露出時間を長くし、キャプチャしたビデオの画質を向上するために、キャプチャするビデオのフレーム レートが引き下げられます。
 
@@ -45,7 +52,7 @@ HDR ビデオ処理を有効または無効にするには、[**HdrVideoControl.
 
 [!code-cs[EnableExposurePriority](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEnableExposurePriority)]
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [カメラ](camera.md)
 * [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
@@ -55,10 +62,5 @@ HDR ビデオ処理を有効または無効にするには、[**HdrVideoControl.
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

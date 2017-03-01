@@ -1,15 +1,22 @@
 ---
 author: jnHs
 Description: "pubCenter の Microsoft Advertising は、Windows デベロッパー センターに統合されました。"
-title: "pubCenter-デベロッパー センターの統合"
+title: "pubCenter とデベロッパー センターの統合"
 ms.assetid: C1EB51DF-7850-45F4-B565-FF5A690EBD8D
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 609d1dd2b154b8096871ef5fbf3e26245f46dc5c
-ms.openlocfilehash: 5a7fb36d22b4f30465602c96ddc252602e462207
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e29476296eb1fc8288cc37dd5ca71ef78476727a
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# pubCenter-デベロッパー センターの統合
+# <a name="pubcenter-dev-center-integration"></a>pubCenter とデベロッパー センターの統合
 
 pubCenter の Microsoft Advertising は、Windows デベロッパー センターに統合されました。 **2016 年 10 月 1 日以降、pubCenter へのアクセスが無効になり、Microsoft Advertising の売り上げに関するすべての支払い情報は、デベロッパー センターで管理することとなりました。** 詳しくは、次のよく寄せられる質問をご覧ください。
 
@@ -54,9 +61,4 @@ Microsoft Advertising の支払しきい値は、50 米ドル (または現地�
 
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

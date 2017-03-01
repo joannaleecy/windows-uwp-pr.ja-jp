@@ -3,12 +3,19 @@ author: mcleblanc
 ms.assetid: 16976d00-1564-49fe-81ad-2568e25e9e41
 title: "デバッグ、テスト、パフォーマンス"
 description: "Microsoft Visual Studio を使って、アプリのデバッグとテストを行います。 Windows ストアの認定プロセスに向けてアプリを準備するには、Windows アプリ認定キットを使います。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 3867bca43bef549fc67b202e329e884ee1ff8fa0
-ms.openlocfilehash: 527ad3c4ade1df2a4737df5fba81a1a72ee35c0f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 831a29950d8f8658e1a584d8a33256ff4121c706
+ms.lasthandoff: 02/07/2017
 
 ---
-# デバッグ、テスト、パフォーマンス
+# <a name="debugging-testing-and-performance"></a>デバッグ、テスト、パフォーマンス
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
@@ -24,10 +31,5 @@ Microsoft Visual Studio を使って、アプリのデバッグとテストを�
 | [Windows Device Portal](device-portal.md) | Windows Device Portal では、ネットワーク経由でリモートから、または USB 接続によって、デバイスの構成と管理を行えます。 |
 | [Windows アプリ認定キット](windows-app-certification-kit.md) | 作成したアプリが認定を受けるために最も適した方法は、[Windows アプリ認定キット](http://go.microsoft.com/fwlink/p/?LinkID=309666)を使うことです。 |
 | [パフォーマンス](performance-and-xaml-ui.md) | ユーザーは、高い応答性と自然な使用感、そしてバッテリーが消耗しないことをアプリに期待しています。 技術的には、パフォーマンスは機能要件ではありませんが、パフォーマンスを機能として扱うことで、ユーザーの期待に沿うことができます。 鍵となる要因は、目標の明確化と測定の実施です。 パフォーマンスが重要なシナリオを決定し、優れたパフォーマンスとは何を意味するかを定義します。 次に、プロジェクトの初期とライフサイクル全体で十分な回数の測定を行って、目標を達成できることを確認します。 |
-
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

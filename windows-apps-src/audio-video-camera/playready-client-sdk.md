@@ -3,15 +3,22 @@ author: eliotcowley
 ms.assetid: DD8FFA8C-DFF0-41E3-8F7A-345C5A248FC2
 description: "このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリに PlayReady で保護されたメディア コンテンツを追加する方法について説明します。"
 title: PlayReady DRM
+ms.author: elcowle
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 3c0b72b674ce02a1802a50c512e98b9aeba3bfe1
-ms.openlocfilehash: 97a3002c1e61d8f7d31b81a3a80d7473a5dc6077
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 161a048a4bfa9479821aec542db17ded8243d231
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="playready-drm"></a>PlayReady DRM
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
 このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリに PlayReady で保護されたメディア コンテンツを追加する方法について説明します。
@@ -35,7 +42,7 @@ PlayReady DRM を使うと、開発者はコンテンツ プロバイダーが�
 -   PlayReady のエラー コードを定義する Windows.Media.Protection.PlayReadyErrors.h と Windows.Media.Protection.PlayReadyResults.h ヘッダーは、Windows ソフトウェア開発キット (Windows SDK) の一部になりました。
 -   永続的でないライセンスの事前の取得を提供します。
 
-    以前のバージョンの PlayReady DRM は、永続的でないライセンスの事前取得をサポートしませんでした。 この機能は、このバージョンに追加されました。 これにより、最初のフレームまでの時間を減らすことができます。 詳しくは、「[再生する前に永続的でないライセンスを事前に取得する](#proactively_acquire_a_non_persistent_license_before_playback)」をご覧ください。
+    以前のバージョンの PlayReady DRM は、永続的でないライセンスの事前取得をサポートしませんでした。 この機能は、このバージョンに追加されました。 これにより、最初のフレームまでの時間を減らすことができます。 詳しくは、「[再生する前に永続的でないライセンスを事前に取得する](#proactively-acquire-a-non-persistent-license-before-playback)」をご覧ください。
 
 -   1 つのメッセージで複数のライセンスを取得できるようにします。
 
@@ -49,7 +56,7 @@ PlayReady DRM を使うと、開発者はコンテンツ プロバイダーが�
 -   永続的でないライセンスで、時間ベースの制限 (有効期限、最初のプレイ後の有効期限切れ、リアルタイムの有効期限を含む) のサポートを追加しました。
 -   HDCP Type 1 (Windows 10 ではバージョン 2.2) ポリシーのサポートを追加しました。
 
-    詳しくは、「[考慮事項](#things_to_consider)」をご覧ください。
+    詳しくは、「[考慮事項](#things-to-consider)」をご覧ください。
 
 -   Miracast が暗黙的な出力となりました。
 -   セキュア ストップが追加されました。
@@ -397,7 +404,8 @@ PlayReady で保護された UWP アプリの作成を開始する前に、次�
 -   Windows 10。
 -   UWP アプリ用の PlayReady DRM のサンプルをコンパイルする場合、サンプルをコンパイルするには Microsoft Visual Studio 2015 以降を使う必要があります。 引き続き、Microsoft Visual Studio 2013 を使って、Windows 8.1 ストア アプリ用の PlayReady DRM の任意のサンプルをコンパイルできます。
 
-アプリで MPEG-2/H.262 コンテンツの再生を計画している場合は、[Windows 8.1 Media Center Pack](http://go.microsoft.com/fwlink/p/?LinkId=626876) をダウンロードしてインストールする必要もあります。
+<!--This is no longer available-->
+<!--If you are planning to play back MPEG-2/H.262 content on your app, you must also download and install [Windows 8.1 Media Center Pack](http://go.microsoft.com/fwlink/p/?LinkId=626876).-->
 
 ## <a name="playready-windows-store-app-migration-guide"></a>PlayReady Windows ストア アプリの移行ガイド
 
@@ -509,10 +517,5 @@ Xbox One において UWP アプリで PlayReady DRM を使用するには、ま
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

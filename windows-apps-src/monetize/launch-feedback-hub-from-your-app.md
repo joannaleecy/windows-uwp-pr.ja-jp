@@ -3,9 +3,16 @@ author: mcleanbyron
 Description: "アプリからフィードバック Hub を起動してフィードバックを送信することをユーザーにお勧めできます。"
 title: "アプリからのフィードバック Hub の起動"
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, フィードバック Hub, 起動"
 translationtype: Human Translation
-ms.sourcegitcommit: a3c4ebc9bfda5ed41363de139d43a6a2c7934e0e
-ms.openlocfilehash: 54c6503add19ead5226da5a862b199bc3f305b7e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 65a54d96b556b58a83af58b3d52d666372f337bb
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -76,9 +83,4 @@ ms.openlocfilehash: 54c6503add19ead5226da5a862b199bc3f305b7e
 ## <a name="related-topics"></a>関連トピック
 
 * [フィードバック レポート](../publish/feedback-report.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

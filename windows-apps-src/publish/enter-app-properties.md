@@ -3,31 +3,38 @@ author: jnHs
 Description: "アプリの申請プロセスの [アプリケーションのプロパティ] ページでは、アプリのカテゴリを定義し、ハードウェアの基本設定や他の宣言を指定できます。"
 title: "アプリのプロパティの入力"
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 345350cea16b850e49f6f958e304654aba1299bb
-ms.openlocfilehash: d2eb9a62dcaadca599136f4505f85e3ba94c0189
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 008c073844332aadbc17def774aae16f3ae01513
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アプリのプロパティの入力
+# <a name="enter-app-properties"></a>アプリのプロパティの入力
 
 [アプリの申請プロセス](app-submissions.md)の **[アプリケーションのプロパティ]** ページでは、アプリのカテゴリを定義し、ハードウェアの基本設定や他の宣言を指定できます。 ここでは、このページのオプションと、この情報を入力するときに考慮する必要がある事項を順に説明します。
 
 > **注:** 年齢区分は、提出プロセスの別のページになりました。 詳しくは、「[年齢区分](age-ratings.md)」をご覧ください。
 
-## カテゴリとサブカテゴリ
+## <a name="category-and-subcategory"></a>カテゴリとサブカテゴリ
 
 このセクションでは、ストアでアプリの分類に使われるカテゴリ (および該当する場合はサブカテゴリ) を指定します。 アプリを提出するには、カテゴリを指定することが必要です。
 
 詳しくは、「[カテゴリとサブカテゴリの一覧](category-and-subcategory-table.md)」をご覧ください。
 
-## 製品の宣言
+## <a name="product-declarations"></a>製品の宣言
 
 アプリにいずれかの宣言を適用するかどうかを指定するには、このセクションのチェック ボックスを使います。 これは、アプリがどのように表示されるか、特定のユーザーに提供されるかどうか、またはユーザーがアプリをどのように使うことができるかに影響を与える可能性があります。
 
 詳しくは、「[アプリの宣言](app-declarations.md)」をご覧ください。
 
-## システム要件
+## <a name="system-requirements"></a>システム要件
 
 このセクションには、アプリを正常に実行して操作するために特定のハードウェア機能が必要かどうか、または推奨されているかどうかを指定するオプションがあります。 各ハードウェア項目を **[最小ハードウェア]** か **[推奨されるハードウェア]** (またはその両方) として指定するチェック ボックスをオンにできます (または該当するオプションを指定できます)。
 
@@ -50,10 +57,5 @@ ms.openlocfilehash: d2eb9a62dcaadca599136f4505f85e3ba94c0189
 
 > **ヒント** メモリや DirectX レベルの最小要件を満たしていないデバイスに UWP アプリをまったくダウンロードできないようにするには、StoreManifest XML ファイルで最小要件を指定します。 詳しくは、「[StoreManifest のスキーマ (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335)」をご覧ください。
 
-
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

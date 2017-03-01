@@ -3,13 +3,20 @@ author: mcleanbyron
 ms.assetid: 527660fb-8e32-41b4-89cb-d422ed48c69b
 description: "このセクションのチュートリアルでは、Microsoft Advertising ライブラリを使ってアプリにバナー広告やビデオのスポット広告を追加する方法について説明します。"
 title: "Microsoft Advertising ライブラリに関する開発者向けチュートリアル"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 広告, Advertising, チュートリアル"
 translationtype: Human Translation
-ms.sourcegitcommit: 20baef9a06b6cdb4ca4f48f71a8e9e2a34192b0f
-ms.openlocfilehash: 40759b1ca7c9e62c985e1ae5844bc3032a2940a2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fb1d2e8ea3a5747523f77106b98d033b70df5a95
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Microsoft Advertising ライブラリに関する開発者向けチュートリアル
+# <a name="developer-walkthroughs-for-the-microsoft-advertising-libraries"></a>Microsoft Advertising ライブラリに関する開発者向けチュートリアル
 
 
 
@@ -18,7 +25,7 @@ ms.openlocfilehash: 40759b1ca7c9e62c985e1ae5844bc3032a2940a2
 
 C# と C++ を使って JavaScript/HTML アプリと XAML アプリに広告バナーやビデオのスポット広告を追加する方法を示す完全なサンプル プロジェクトについては、[GitHub の広告サンプル](http://aka.ms/githubads)をご覧ください。
 
-## このセクションの内容
+## <a name="in-this-section"></a>このセクションの内容
 
 |  トピック    | 説明 |               
 |----------|-------|
@@ -33,9 +40,4 @@ C# と C++ を使って JavaScript/HTML アプリと XAML アプリに広告バ�
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

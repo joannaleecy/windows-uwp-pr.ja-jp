@@ -3,16 +3,23 @@ author: mtoepke
 title: "BasicLoader のコード一式"
 description: "メッシュ オブジェクト、テクスチャ オブジェクト、さまざまなシェーダー オブジェクトなどの一般的なグラフィックス リソースを変換して読み込むクラスとメソッドのコード一式です。"
 ms.assetid: b37f5852-278c-57b8-0834-002fb837e158
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、ゲーム、BasicLoader"
 translationtype: Human Translation
-ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
-ms.openlocfilehash: ab16033c05273a0cd483fdc7a5302a3ff461e4b1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d6714030031a4986c8a5495fc02a5c68fb0aa4d8
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# BasicLoader のコード一式
+# <a name="complete-code-for-basicloader"></a>BasicLoader のコード一式
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 メッシュ オブジェクト、テクスチャ オブジェクト、さまざまなシェーダー オブジェクトなどの一般的なグラフィックス リソースを変換して読み込むクラスとメソッドのコード一式です。
 
@@ -20,28 +27,28 @@ ms.openlocfilehash: ab16033c05273a0cd483fdc7a5302a3ff461e4b1
 
 -   [テクノロジ](#technologies)
 -   [必要条件](#requirements)
--   [コードの表示 (C++)](#view-the-code-c-)
+-   [コードの表示 (C++)](#view-the-code-c)
 
 <span id="download_locations"></span>
-## ダウンロード場所
+## <a name="download-location"></a>ダウンロード場所
 
 
 このサンプルはダウンロードできません。
 
-## テクノロジ
+## <a name="technologies"></a>テクノロジ
 
 **プログラミング言語** - C++  
 **プログラミング モデル** - Windows ランタイム
 
-## 要件
+## <a name="requirements"></a>要件
 
 **サポートされている最小のクライアント** - Windows 10                              
 **サポートされている最小のサーバー** - Windows Server 2016 Technical Preview 
 
 
-## コードの表示 (C++)
+## <a name="view-the-code-c"></a>コードの表示 (C++)
 
-## BasicLoader.h
+## <a name="basicloaderh"></a>BasicLoader.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -222,7 +229,7 @@ private:
 };
 ```
 
-## BasicLoader.cpp
+## <a name="basicloadercpp"></a>BasicLoader.cpp
 
 
 ```cpp
@@ -1107,10 +1114,5 @@ task<void> BasicLoader::LoadMeshAsync(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

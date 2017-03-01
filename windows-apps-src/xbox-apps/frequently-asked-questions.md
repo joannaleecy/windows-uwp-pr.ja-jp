@@ -2,15 +2,23 @@
 author: Mtoepke
 title: "よく寄せられる質問"
 description: "Xbox の UWP についてのよく寄せられる質問。"
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 translationtype: Human Translation
-ms.sourcegitcommit: 1ee75d73cc42455677bc2c0df08b41f33fc4f7b0
-ms.openlocfilehash: a6d410e3a4873bb96fba46789b28185c392a7492
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 059fac41c0c0557dbc3d4739c1da78f794505839
+ms.lasthandoff: 02/08/2017
 
 ---
 
 # <a name="frequently-asked-questions"></a>よく寄せられる質問
 
-期待どおりに動作しない場合には、 このページのよく寄せられる質問を確認します。 また、「[既知の問題](known-issues.md)」と「[ユニバーサル Windows アプリの開発](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop)」のフォーラムも確認します。 
+期待どおりに動作しない場合には、 このページのよく寄せられる質問を確認します。 また、「[既知の問題](known-issues.md)」と「[ユニバーサル Windows アプリの開発](https://go.microsoft.com/fwlink/?linkid=839446)」のフォーラムも確認します。 
 
 ### <a name="why-are-my-games-and-apps-not-working"></a>作成したゲームとアプリが動作しない
 
@@ -38,6 +46,9 @@ ms.openlocfilehash: a6d410e3a4873bb96fba46789b28185c392a7492
 ### <a name="will-my-games-and-apps-still-work-if-i-activate-developer-mode"></a>開発者モードをアクティブ化してもゲームやアプリは動作しますか
 
 はい、開発者モードからリテール モードに切り替えて、ゲームをプレイできます。 詳しくは、「[Xbox One の開発者モードのアクティブ化](devkit-activation.md)」をご覧ください。 
+
+### <a name="can-i-develop-and-publish-x86-apps-for-xbox"></a>Xbox 用の x86 アプリを開発および公開できますか
+Xbox では、x86 アプリの開発または x86 アプリのストアへの申請をサポートしなくなりました。 
 
 ### <a name="will-i-lose-my-games-and-apps-or-saved-changes"></a>ゲームやアプリ、保存した変更を失うことがありますか
 
@@ -131,9 +142,4 @@ TVHelpers は、JavaScript と XAML/C# のサンプルとライブラリです�
 ## <a name="see-also"></a>関連項目
 - [Xbox One の UWP の既知の問題](known-issues.md)
 - [Xbox One の UWP](index.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

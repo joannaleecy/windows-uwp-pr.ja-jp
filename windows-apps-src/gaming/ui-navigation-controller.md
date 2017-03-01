@@ -1,17 +1,24 @@
 ---
 author: mithom
 title: "UI ナビゲーション コントローラー"
-description: "Windows.Gaming.Input UI ナビゲーション コントローラー API を使用して、UI ナビゲーション用のさまざまな種類の入力デバイスを検出して読み込みます。"
+description: "Windows.Gaming.Input UI ナビゲーション コントローラー API を使うと、UI ナビゲーション用のさまざまな種類の入力デバイスを検出して読み取ることができます。"
 ms.assetid: 5A14926D-8C2E-4DE8-AAFB-BEEB9BFE91A5
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, UI, ナビゲーション"
 translationtype: Human Translation
-ms.sourcegitcommit: d0cfc41e5ae79844f3948ed2c326bf9913c066a4
-ms.openlocfilehash: ad10f5758f4a66552f9c4e4750667e8d13f4c09f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5b5789b90cefb6ba22c2a3d8b5ebbb45be5b0dad
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="ui-navigation-controller"></a>UI ナビゲーション コントローラー
 
-このページでは、[Windows.Gaming.Input.UINavigationController][uinavigationcontroller] とユニバーサル Windows プラットフォーム (UWP) 用の関連 API を使った、UI ナビゲーション デバイスを対象にしたプログラミングの基礎について説明します。
+このページでは、[Windows.Gaming.Input.UINavigationController][uinavigationcontroller] とユニバーサル Windows プラットフォーム (UWP) 用の関連 API を使った UI ナビゲーション デバイス向けプログラミングの基礎について説明します。
 
 ここでは、次の項目について紹介します。
 * 接続されている UI ナビゲーション デバイスとそのユーザーの一覧を収集する方法
@@ -229,9 +236,4 @@ if (OptionalUINavigationButtons::Context1 == (reading.OptionalButtons & Optional
 [uinavigationreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationreading.aspx
 [requireduinavigationbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.requireduinavigationbuttons.aspx
 [optionaluinavigationbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.optionaluinavigationbuttons.aspx
-
-
-
-<!--HONumber=Dec16_HO4-->
-
 

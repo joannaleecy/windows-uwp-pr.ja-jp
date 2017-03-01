@@ -1,20 +1,27 @@
 ---
 author: mtoepke
 title: "ゲームのタッチ コントロール"
-description: "ここでは、DirectX を使って基本的なタッチ コントロールをユニバーサル Windows プラットフォーム (UWP) C++ ゲームに追加する方法について説明します。"
+description: "ここでは、DirectX を使うユニバーサル Windows プラットフォーム (UWP) C++ ゲームに、基本的なタッチ コントロールを追加する方法について説明します。"
 ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, タッチ, コントロール, DirectX, 入力"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 901b83b1c4a2e572e4fe41e1df59910432982687
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 44d5071ee0cd695351c77630d699a1a060f477d6
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# ゲームのタッチ コントロール
+# <a name="touch-controls-for-games"></a>ゲームのタッチ コントロール
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-ここでは、DirectX を使って基本的なタッチ コントロールをユニバーサル Windows プラットフォーム (UWP) C++ ゲームに追加する方法について説明します。 具体的には、平面に固定されたカメラを動かすタッチ ベースのコントロールを、指またはスタイラスでドラッグするとカメラの視点がシフトする Direct3D 環境に追加する方法を紹介します。
+ここでは、DirectX を使うユニバーサル Windows プラットフォーム (UWP) C++ ゲームに、基本的なタッチ コントロールを追加する方法について説明します。 具体的には、平面に固定されたカメラを動かすタッチ ベースのコントロールを、指またはスタイラスでドラッグするとカメラの視点がシフトする Direct3D 環境に追加する方法を紹介します。
 
 これらのコントロールは、プレイヤーが地図やプレイフィールドなどの 3D 環境でドラッグしてスクロールまたはパンを行うゲームに組み込むことができます。 たとえば、戦略ゲームやパズル ゲームでは、これらのコントロールを使って、プレイヤーが左右にパンすることで画面より大きいゲーム環境を確認できるようにすることが可能です。
 
@@ -22,12 +29,12 @@ ms.openlocfilehash: 901b83b1c4a2e572e4fe41e1df59910432982687
 
  
 
-## 目標
+## <a name="objectives"></a>目標
 
 
 -   DirectX ゲームで平面に固定されたカメラをパンする簡単なタッチ ドラッグ コントロールを作成する。
 
-## 基本的なタッチ イベントのインフラストラクチャのセットアップ
+## <a name="set-up-the-basic-touch-event-infrastructure"></a>基本的なタッチ イベントのインフラストラクチャのセットアップ
 
 
 まず、この例ではコントローラーの基本型として、**CameraPanController** を定義します。 ここでは、コントローラーを抽象的な概念、つまりユーザーが実行できる動作のセットとして定義します。
@@ -126,7 +133,7 @@ public:
 
 次は、これらのコンポーネントどうしを接続してみましょう。
 
-## 基本的なタッチ イベントの作成
+## <a name="create-the-basic-touch-events"></a>基本的なタッチ イベントの作成
 
 
 Windows ランタイムのイベント ディスパッチャーは、アプリで処理するイベントを 3 つ提供します。
@@ -204,7 +211,7 @@ void CameraPanController::OnPointerReleased(
 }
 ```
 
-## タッチ コントロールとコントローラーの状態の初期化
+## <a name="initialize-the-touch-controls-and-the-controller-state"></a>タッチ コントロールとコントローラーの状態の初期化
 
 
 次は、イベントをフックして、カメラ コントローラーの状態の基本的なフィールドをすべて初期化しましょう。
@@ -238,7 +245,7 @@ void CameraPanController::Initialize( _In_ CoreWindow^ window )
 
 **Initialize** は、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) インスタンスへの参照をパラメーターとして使い、先ほど作成したイベント ハンドラーをその **CoreWindow** の適切なイベントに登録します。
 
-## カメラ コントローラーの位置の取得と設定
+## <a name="getting-and-setting-the-position-of-the-camera-controller"></a>カメラ コントローラーの位置の取得と設定
 
 
 シーン空間内のカメラ コントローラーの位置の取得と設定を行うメソッドをいくつか定義してみましょう。
@@ -272,7 +279,7 @@ DirectX::XMFLOAT3 CameraPanController::get_FixedLookPoint()
 
 **get\_FixedLookPoint** は、この例では、x-y 平面に垂直な視点を取得するパブリック プロパティです。 固定カメラに対して斜めの角度を作る場合は、このメソッドを変更して、x、y、z 座標値の計算時に三角関数 sin と cos を使うことができます。
 
-## カメラ コントローラーの状態情報の更新
+## <a name="updating-the-camera-controller-state-information"></a>カメラ コントローラーの状態情報の更新
 
 
 次は、**m\_panPointerPosition** で追跡したポインターの座標情報を、3D シーン空間における新しい座標情報に変換する計算を実行します。 Windows ストア アプリは、アプリのメイン ループが更新されるたびに、このメソッドを呼び出します。 ここで、ビューポートへのプロジェクションの前にビュー マトリックスを更新するためにアプリに渡す新しい位置情報を計算します。
@@ -320,7 +327,7 @@ void CameraPanController::Update( CoreWindow ^window )
 
 タッチまたはマウスの揺れでカメラのパンが不適切に動かないように、ポインターの周りに直径 32 ピクセルのデッド ゾーンを設定します。 また、速度値もあります。この例では、デッド ゾーンを超えるポインターのピクセル トラバーサルに対して 1:1 です。 この動作を調整し、移動速度を低下または上昇させることができます。
 
-## カメラの新しい位置によるビュー マトリックスの更新
+## <a name="updating-the-view-matrix-with-the-new-camera-position"></a>カメラの新しい位置によるビュー マトリックスの更新
 
 
 これで、カメラのフォーカスが合っているシーン空間の座標の取得ができます。この座標は、アプリに指定した時間ごとに更新されます (たとえばアプリのメイン ループでは 60 秒ごと)。 次の疑似コードは、実装できる呼び出し動作を示しています。
@@ -349,10 +356,5 @@ void CameraPanController::Update( CoreWindow ^window )
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

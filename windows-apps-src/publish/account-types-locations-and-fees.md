@@ -3,13 +3,20 @@ author: jnHs
 ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: "アカウントの種類、場所、料金"
 description: "個人用、会社用の開発者アカウントを多数の国と地域に提供しています。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 93b6d952e42949917a0fff5b39f3f194f49531d5
-ms.openlocfilehash: 0712a74ffaa691a90a1f57d0ee7f9c0ea3fcc510
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0e59913e18bdc521eb37b874f90a2ce0442373ce
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アカウントの種類、場所、料金
+# <a name="account-types-locations-and-fees"></a>アカウントの種類、場所、料金
 
 開発者アカウントには、個人のアカウントと会社のアカウントの 2 種類が用意されています。 開発者アカウントは、多数の [国と地域](#developer-account-and-app-submission-markets) に提供されています。 どちらの種類のアカウントでも、アプリをストアに公開し、追加の Microsoft 開発者プログラムに参加できます。
 
@@ -41,7 +48,7 @@ ms.openlocfilehash: 0712a74ffaa691a90a1f57d0ee7f9c0ea3fcc510
 
 会社のアカウントについては、Symantec または Dun & Bradstreet を使って、ユーザーが会社の代理としてアカウントを作る権限を持っていることを確認します。 この処理には、数日から数週間かかることがあり、多くの場合は会社への電話連絡が行われます (そのため、登録フォームに入力するときには最新の連絡先を指定してください)。 検証が終わるまで会社のアカウントからアプリを送ることはできませんが、検証を待つ間にも、[アプリ名の予約](https://msdn.microsoft.com/library/windows/apps/JJ657967)、Windows デベロッパー センター ダッシュボードへのアクセス、アプリの構築とテストを行うことができます。
 
-## 開発者アカウントとアプリ提出の市場
+## <a name="developer-account-and-app-submission-markets"></a>開発者アカウントとアプリ提出の市場
 
 次の表にある国や地域にお住まいの方、またはその国や地域で事業を経営している方は、開発者アカウントに登録してアプリを提出することができます。
 
@@ -251,15 +258,10 @@ ms.openlocfilehash: 0712a74ffaa691a90a1f57d0ee7f9c0ea3fcc510
 
 \* この市場では、PayPal を使用して、受取りアカウントを支払うことはできますが、開発者アカウントの登録料を支払うことはできません。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [開発者アカウントを開く](opening-a-developer-account.md)
 * [受取りアカウントの設定と税関連の書類](setting-up-your-payout-account-and-tax-forms.md)
 * [支払いの受け取り](getting-paid-apps.md)
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

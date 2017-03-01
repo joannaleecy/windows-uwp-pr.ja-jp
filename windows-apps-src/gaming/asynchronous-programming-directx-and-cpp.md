@@ -3,20 +3,27 @@ author: mtoepke
 title: "非同期プログラミング (DirectX と C++)"
 description: "このトピックでは、DirectX で非同期プログラミングやスレッディングを使う際のさまざまな考慮事項について取り上げます。"
 ms.assetid: 17613cd3-1d9d-8d2f-1b8d-9f8d31faaa6b
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、ゲーム、非同期プログラミング、DirectX"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1faf25f7c7ad7cc96c8490149acf1c430478616c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fe3798e475654d4d0ae7773ac26889906d40b3df
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 非同期プログラミング (DirectX と C++)
+# <a name="asynchronous-programming-directx-and-c"></a>非同期プログラミング (DirectX と C++)
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 このトピックでは、DirectX で非同期プログラミングやスレッディングを使う際のさまざまな考慮事項について取り上げます。
 
-## 非同期プログラミングと DirectX
+## <a name="async-programming-and-directx"></a>非同期プログラミングと DirectX
 
 
 DirectX の学習経験や使用経験にかかわらず、グラフィックス処理パイプラインはすべてシングル スレッドで実行することをお勧めします。 ゲーム内のシーンには、排他的アクセスを必要とするリソースがいたるところに使われています。ビットマップやシェーダーといった各種アセットはその代表的な例です。 しかも、これらのリソースへのアクセスは、並列スレッド間ですべて同期させる必要があります。 レンダリングは、複数のスレッドで並列化することの難しい処理です。
@@ -37,7 +44,7 @@ DirectX の学習経験や使用経験にかかわらず、グラフィックス
 
  
 
-## Direct3D デバイスでのマルチスレッド化
+## <a name="multithreading-with-direct3d-devices"></a>Direct3D デバイスでのマルチスレッド化
 
 
 デバイス コンテキストのマルチスレッド化は、Direct3D 機能レベル 11\_0 以上をサポートするグラフィックス デバイスでしか利用できません。 しかし、ゲーム専用機など、数多くのプラットフォームに搭載されている強力な GPU は最大限に活用したいものです。 たとえば、単純なケースでは、ヘッドアップ ディスプレイ (HUD) オーバーレイのレンダリングを 3D シーンのレンダリングとプロジェクションから切り離し、2 つのコンポーネントに独立した並列パイプラインを割り当てることができます。 どちらのスレッドも、同じ [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) を使ってリソース オブジェクト (テクスチャ、メッシュ、シェーダーなど、各種アセット) を作成、管理する必要がありますが、ID3D11DeviceContext はシングル スレッドであり、安全にアクセスするには何らかの同期機構 (クリティカル セクションなど) を実装する必要があります。 また、異なるスレッドのデバイス コンテキストに対し、(遅延レンダリング用の) 別々のコマンド リストを作成している間、これらのコマンド リストを同じ **ID3D11DeviceContext** インスタンスで同時に再生することはできません。
@@ -46,14 +53,14 @@ DirectX の学習経験や使用経験にかかわらず、グラフィックス
 
 開発しているアプリが、コマンド リストの処理用とフレームの表示用に別々のスレッドをサポートする場合、GPU はアクティブにしておきましょう。体感的な引っかかりや遅延を生じることなく適切なタイミングでフレームを表示すると共に、コマンド リストを処理することができます。 この場合、スレッドごとに別個の [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) を使い、D3D11\_RESOURCE\_MISC\_SHARED フラグを使ってリソース作成することによって、リソース (テクスチャなど) を共有します。 このシナリオでは、処理用のスレッドで [**ID3D11DeviceContext::Flush**](https://msdn.microsoft.com/library/windows/desktop/ff476425) を呼び出し、コマンド リストの実行を完了してから、表示用のスレッドで、リソース オブジェクトの処理結果を表示する必要があります。
 
-## 遅延レンダリング
+## <a name="deferred-rendering"></a>遅延レンダリング
 
 
 遅延レンダリングは、グラフィックス コマンドを後から再生できるようにコマンド リストに記録するもので、一方のスレッドでレンダリングを行いながら、別のスレッドで、レンダリングに使うコマンドを記録するしくみになっています。 必要なコマンドがすべて揃った後、最終的な表示オブジェクト (フレーム バッファー、テクスチャなどのグラフィックス出力) を生成したスレッド上で、それらのコマンドを実行することができます。
 
 遅延コンテキストは、(イミディエイト コンテキストを作成する) [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) や [**D3D11CreateDeviceAndSwapChain**](https://msdn.microsoft.com/library/windows/desktop/ff476083) ではなく、[**ID3D11Device::CreateDeferredContext**](https://msdn.microsoft.com/library/windows/desktop/ff476505) を使って作成します。 詳しくは、「[イミディエイト レンダリングおよびディファード レンダリング](https://msdn.microsoft.com/library/windows/desktop/ff476892)」をご覧ください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [Direct3D 11 でのマルチスレッドの概要](https://msdn.microsoft.com/library/windows/desktop/ff476891)
@@ -64,10 +71,5 @@ DirectX の学習経験や使用経験にかかわらず、グラフィックス
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

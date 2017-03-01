@@ -3,13 +3,20 @@ author: mtoepke
 title: "ユニバーサル Windows プラットフォーム (UWP) DirectX ゲームのパッケージ化"
 description: "規模の大きいユニバーサル Windows プラットフォーム (UWP) ゲーム (特に、地域固有のアセットや機能オプションによる高解像度アセットを伴って複数言語をサポートするゲーム) は、サイズが容易に膨張する可能性があります。"
 ms.assetid: 68254203-c43c-684f-010a-9cfa13a32a77
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, DirectX, パッケージ"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: bc861d98563107b2c67e94281e79d97bed6dee9b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: db31338d908f4c18eaa6b5090b8cf35ac5305655
+ms.lasthandoff: 02/07/2017
 
 ---
 
-#  ユニバーサル Windows プラットフォーム (UWP) DirectX ゲームのパッケージ化
+#  <a name="package-your-universal-windows-platform-uwp-directx-game"></a>ユニバーサル Windows プラットフォーム (UWP) DirectX ゲームのパッケージ化
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -27,7 +34,7 @@ ms.openlocfilehash: bc861d98563107b2c67e94281e79d97bed6dee9b
 
 UWP アプリ インストーラーに含まれるこの機能を使用するには、ツールとソースから適切な出力を行いシンプルなパッケージを作成できるように、ゲーム開発の初期段階からアプリとリソース パッケージのディレクトリ レイアウトとファイル命名規則を考慮することが重要になります。 アセットを作成または構成してツールとスクリプトを管理する場合や、リソースの読み込みまたは参照を行うコードを作成する場合は、このドキュメントに示されている規則に従ってください。
 
-## リソース パッケージを作成する理由
+## <a name="why-create-resource-packs"></a>リソース パッケージを作成する理由
 
 
 アプリを作成する場合、特に多くのロケールまたは多様な UWP ハードウェア プラットフォームで販売できるゲーム アプリを作成する場合は、これらのロケールやプラットフォームをサポートするために、多数のファイルの複数バージョンを含める必要が生じることが少なくありません。 たとえば、米国と日本の両方でゲームをリリースする場合、voice ファイルを en-us ロケール向けに英語で 1 セット、jp-jp ロケール向けに日本語で 1 セット用意する必要があります。 また、x86 および x64 プラットフォームと同様に ARM デバイスのゲームで画像を使う場合、同じ画像アセットを 3 回 (CPU アーキテクチャごとに 1 回ずつ) アップロードする必要があります。
@@ -68,7 +75,7 @@ UWP アプリ インストーラーに含まれるこの機能を使用するに
 
  
 
-## ローカライズされた言語リソース パッケージの定義
+## <a name="defining-localized-language-resource-packs"></a>ローカライズされた言語リソース パッケージの定義
 
 
 ロケール固有のファイルは、言語に応じた名前 ("en" など) のプロジェクト ディレクトリに配置します。
@@ -85,7 +92,7 @@ UWP アプリ インストーラーに含まれるこの機能を使用するに
 -   ロケール固有のリソースをアプリ用に指定し、読み込むには、[**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) と [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) の API を使います。 また、これらの API は、ユーザーの設定に基づいて適切なロケールを判別し、ユーザーの適切なリソースを取得するため、特定のロケールが含まれないアセット参照を使ってください。
 -   Microsoft Visual Studio 2015 では、**[プロジェクト]、[ストア]、[アプリ パッケージの作成]** の順に選択して、パッケージを作成します。
 
-## 倍率リソース パッケージの定義
+## <a name="defining-scaling-factor-resource-packs"></a>倍率リソース パッケージの定義
 
 
 Windows 10 では、ユーザー インターフェイスの倍率として、1.0x、1.4x、1.8x の 3 種類が用意されています。 ディスプレイごとの倍率は、いくつかの要因 (画面のサイズ、画面の解像度、画面からユーザーまでの距離の推定値) の組み合わせに基づいてインストール時に値が設定されます。 ユーザーは、倍率を調整して読みやすくすることもできます。 最善のエクスペリエンスを提供するには、ゲームは DPI 対応と倍率認識に対応する必要があります。 この "認識" には、重要なビジュアル アセットについて、3 つの倍率にそれぞれ対応するバージョンを作成するという意味合いが含まれています。 また、ポインター操作とヒット テストも含まれています。
@@ -102,7 +109,7 @@ UWP アプリの各種の倍率に応じたリソース パッケージをサポ
 -   アセットを読み込むには、[**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) の API を使います。 アセット参照は、特定のスケール バリエーションを除外して汎用化 (サフィックスなし) する必要があります。 システムは、ディスプレイの適切なスケール アセットとユーザーの設定を取得します。
 -   Visual Studio 2015 では、**[プロジェクト]、[ストア]、[アプリ パッケージの作成]** の順に選択して、パッケージを作成します。
 
-## DirectX 機能レベル リソース パッケージの定義
+## <a name="defining-directx-feature-level-resource-packs"></a>DirectX 機能レベル リソース パッケージの定義
 
 
 DirectX の機能レベルは、以前のバージョンと現在のバージョンの DirectX (Direct3D) の GPU 機能セットに対応しています。 これには、シェーダー モデルの仕様と機能、シェーダー言語サポート、テクスチャ圧縮サポート、全体的なグラフィックス パイプライン機能が含まれています。
@@ -212,7 +219,7 @@ DirectX の機能レベルは、以前のバージョンと現在のバージョ
 -   Visual Studio 2015 では、**[プロジェクト]、[ストア]、[アプリ パッケージの作成]** の順に選択して、パッケージを作成します。
 -   package.appxmanifest マニフェスト設定で、アプリ バンドルを必ず有効にしてください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [アプリ リソースの定義](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)
@@ -225,10 +232,5 @@ DirectX の機能レベルは、以前のバージョンと現在のバージョ
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

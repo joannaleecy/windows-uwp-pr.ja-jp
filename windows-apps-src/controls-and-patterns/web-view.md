@@ -5,9 +5,16 @@ title: "Web ビュー"
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 9fa226beed09e79ef3e5a294e36f615fa179c470
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9f7f786007a6e251a76fe5c4fcbad5c81b879c53
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="web-view"></a>Web ビュー
@@ -330,10 +337,5 @@ UI スレッドから外れてコンテンツをホストしている Web ビュ
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

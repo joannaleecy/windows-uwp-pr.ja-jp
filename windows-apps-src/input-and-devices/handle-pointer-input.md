@@ -12,8 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
-ms.openlocfilehash: ba4288d93924d3a32a0a659dea67af28fb607987
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d93583c4d6eeaa8e81bda4672d38386f07e7dcc5
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -1109,10 +1110,5 @@ namespace PointerInput
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

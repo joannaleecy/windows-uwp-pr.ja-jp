@@ -3,15 +3,22 @@ author: DelfCo
 description: "ユニバーサル Windows プラットフォーム (UWP) アプリ開発者として、Windows.Networking.Sockets と Winsock の両方を使って、他のデバイスと通信できます。"
 title: "ソケット"
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 4557fa59d377edc2ae5bf5a9be63516d152949bb
-ms.openlocfilehash: 49a9ae4d7d3994ad7fbb78fc9dc60cdd9dca07c3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0e9121dfc590a1a7f67be69b7dbce475e438dd08
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# ソケット
+# <a name="sockets"></a>ソケット
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 **重要な API**
 
@@ -22,7 +29,7 @@ ms.openlocfilehash: 49a9ae4d7d3994ad7fbb78fc9dc60cdd9dca07c3
 
 >**注** [ネットワーク分離](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)の一環として、システムでは、同じコンピューターで実行される 2 つの UWP アプリ間での、ローカル ループバック アドレス (127.0.0.0) または明示的なローカル IP アドレスの指定による、ソケット接続 (Sockets または WinSock) の確立を禁止しています。 つまり、2 つの UWP アプリ間の通信にソケットを使うことはできません。 UWP には、アプリ間で通信するための他のメカニズムが用意されています。 詳しくは、「[アプリ間通信](https://msdn.microsoft.com/windows/uwp/app-to-app/index)」をご覧ください。
 
-## 基本的な TCP ソケット操作
+## <a name="basic-tcp-socket-operations"></a>基本的な TCP ソケット操作
 
 TCP ソケットは、有効期間が長い接続用にどちらの方向にも下位レベルのネットワーク データ転送機能を提供します。 TCP ソケットは、インターネットで使われるほとんどのネットワーク プロトコルのベースとなる機能です。 このセクションでは、UWP アプリで [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間の一部として [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスと [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) クラスを使って TCP ストリーム ソケットでデータを送受信する方法について説明します。 このセクションでは、基本的な TCP 操作を示すためにエコー サーバーおよびクライアントとして機能する非常にシンプルなアプリを作成します。
 
@@ -104,7 +111,7 @@ catch (Exception e)
 }
 ```
 
-## 基本的な UDP ソケット操作
+## <a name="basic-udp-socket-operations"></a>基本的な UDP ソケット操作
 
 UDP ソケットは、確立された接続が必要なネットワーク通信用にどちらの方向にも下位レベルのネットワーク データ転送機能を提供します。 UDP ソケットはどちらのエンドポイントでも接続を保持しないため、リモート コンピューター間のネットワークに高速でシンプルなソリューションを提供します。 ただし、UDP ソケットは、ネットワーク パケットの整合性や、リモートの宛先に到達するかどうかをまったく保証しません。 UDP ソケットを使うアプリケーションの例には、ローカル ネットワーク探索やローカル チャット クライアントなどがあります。 このセクションでは、[**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) クラスを使って、シンプルなエコ サーバーおよびクライアントを作成することで UDP メッセージを送受信する方法を示します。
 
@@ -190,11 +197,11 @@ private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSoc
 }
 ```
 
-## バック グラウンド操作とソケット ブローカー
+## <a name="background-operations-and-the-socket-broker"></a>バック グラウンド操作とソケット ブローカー
 
 アプリがソケットで接続またはデータを受信する場合は、アプリがフォアグラウンドにないときにこれらの操作が正しく実行されるように準備する必要があります。 そのために、ソケット ブローカーを使います。 ソケット ブローカーの使い方について詳しくは、「[バックグラウンドでのネットワーク通信](network-communications-in-the-background.md)」をご覧ください。
 
-## バッチ送信
+## <a name="batched-sends"></a>バッチ送信
 
 Windows 10 以降、Windows.Networking.Sockets はバッチ送信をサポートします。これは、データの複数のバッファーをまとめて送信することで、各バッファーを別々に送信する場合に比べ、コンテキスト切り替えのオーバーヘッドを非常に少なくする方法です。 これは、多くのデータをできるだけ効率的に移動させる必要がある VoIP、VPN、またはその他のタスクをアプリで実行する場合に特に便利です。
 
@@ -235,7 +242,7 @@ foreach (IBuffer packet in packetsToSend)
 await Task.WaitAll(pendingTasks);
 ```
 
-次の例は、バッチ送信と互換性がある方法で、多数のバッファーを送信する別の方法を示しています。 ここでは C# 固有の機能は使われていないため、すべての言語に適用できます (ここでは C# を使っています)。 代わりに、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスと [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) クラスの **OutputStream** メンバーの変更された動作を使っています。これは Windows10 で新しく導入された動作です。
+次の例は、バッチ送信と互換性がある方法で、多数のバッファーを送信する別の方法を示しています。 ここでは C# 固有の機能は使われていないため、すべての言語に適用できます (ここでは C# を使っています)。 代わりに、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスと [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) クラスの **OutputStream** メンバーの変更された動作を使っています。これは Windows 10 で新しく導入された動作です。
 
 ```csharp
 // More efficient way to send packets in Windows 10, using the new behavior of OutputStream.FlushAsync().
@@ -261,16 +268,16 @@ await outputStream.FlushAsync();
 
 -   書き込まれる **IBuffer** インスタンスの内容は、非同期書き込みが完了するまで変更できません。
 -   **FlushAsync**パターンは、**StreamSocket.OutputStream** と **DatagramSocket.OutputStream** のみで機能します。
--   **FlushAsync** パターンは、Windows10 以降でのみ機能します。
+-   **FlushAsync** パターンは、Windows 10 以降でのみ機能します。
 -   状況によっては、**FlushAsync** パターンの代わりに **Task.WaitAll** を使います。
 
-## DatagramSocket でのポートの共有
+## <a name="port-sharing-for-datagramsocket"></a>DatagramSocket でのポートの共有
 
-Windows10 では、[**MulticastOnly**](https://msdn.microsoft.com/library/windows/apps/dn895368) という新しい [**DatagramSocketControl**](https://msdn.microsoft.com/library/windows/apps/hh701190) プロパティが導入されています。このプロパティを使って、対象の **DatagramSocket** を、同じアドレス/ポートにバインドされた他の Win32 または WinRT マルチキャスト ソケットと共存させることができます。
+Windows 10 では、[**MulticastOnly**](https://msdn.microsoft.com/library/windows/apps/dn895368) という新しい [**DatagramSocketControl**](https://msdn.microsoft.com/library/windows/apps/hh701190) プロパティが導入されています。このプロパティを使って、対象の **DatagramSocket** を、同じアドレス/ポートにバインドされた他の Win32 または WinRT マルチキャスト ソケットと共存させることができます。
 
-## StreamSocket クラスによるクライアント証明書の提供
+## <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>StreamSocket クラスによるクライアント証明書の提供
 
-[**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスは、SSL/TLS を使ったアプリの接続先サーバーの認証をサポートします。 場合によっては、アプリは、TLS クライアント証明書を使って自身をサーバーに対して認証する必要があります。 Windows10 では、クライアント証明書を [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) オブジェクトに提供できます (これは TLS ハンドシェイクが開始される前に設定する必要があります)。 サーバーがクライアント証明書を要求した場合、Windows が提供された証明書を使って応答します。
+[**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスは、SSL/TLS を使ったアプリの接続先サーバーの認証をサポートします。 場合によっては、アプリは、TLS クライアント証明書を使って自身をサーバーに対して認証する必要があります。 Windows 10 では、クライアント証明書を [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) オブジェクトに提供できます (これは TLS ハンドシェイクが開始される前に設定する必要があります)。 サーバーがクライアント証明書を要求した場合、Windows が提供された証明書を使って応答します。
 
 これを実装する方法を示すコード スニペットを次に示します。
 
@@ -281,7 +288,7 @@ socket.Control.ClientCertificate = certificate;
 await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 ```
 
-## Windows.Networking.Sockets の例外
+## <a name="exceptions-in-windowsnetworkingsockets"></a>Windows.Networking.Sockets の例外
 
 ソケットと共に使われる [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) クラスのコンストラクターは、有効なホスト名ではない (ホスト名に使うことができない文字が含まれている) 文字列が渡された場合に例外をスローすることができます。 アプリがユーザーから **HostName** の入力を取得する場合、このコンストラクターを try/catch ブロックに配置する必要があります。 例外がスローされた場合、アプリは、ユーザーに通知し、新しいホスト名を要求することができます。
 
@@ -293,14 +300,9 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 
 パラメーター検証エラーの場合は、例外の **HRESULT** を使って、その例外の原因となったエラーの詳細情報を確認することもできます。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 ほとんどのパラメーター検証エラーの場合、返される **HRESULT** は **E\_INVALIDARG** です。
 
-## Winsock API
+## <a name="the-winsock-api"></a>Winsock API
 
 [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673) は、UWP アプリでも同じように使うことができます。 サポートされる Winsock API は Windows Phone 8.1 Microsoft Silverlight に基づいており、ほとんどの型、プロパティ、メソッドが引き続きサポートされます (互換性のために残されていたいくつかの API は削除されます)。 Winsock プログラミングについて詳しくは、[こちら](https://msdn.microsoft.com/library/windows/desktop/ms740673)をご覧ください。
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

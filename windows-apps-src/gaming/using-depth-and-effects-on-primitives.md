@@ -3,13 +3,20 @@ author: mtoepke
 title: "プリミティブに対する深度と各種効果の使用"
 description: "ここでは、深度、視点、色、その他の効果をプリミティブに対して使う方法について説明します。"
 ms.assetid: 71ef34c5-b4a3-adae-5266-f86ba257482a
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, 深度, 効果, プリミティブ, DirectX"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6c58e23a0831a0850a4e28887b4717abedbc7086
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 923bce3dd5f340b97fd6d4e7b31c4ed2e949ca94
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# プリミティブに対する深度と各種効果の使用
+# <a name="use-depth-and-effects-on-primitives"></a>プリミティブに対する深度と各種効果の使用
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -18,7 +25,7 @@ ms.openlocfilehash: 6c58e23a0831a0850a4e28887b4717abedbc7086
 
 **目標:** 3D オブジェクトを作成し、基本的な頂点の照明や色付けをオブジェクトに適用する。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 
 C++ に習熟していることを前提としています。 また、グラフィックス プログラミングの概念に対する基礎的な知識も必要となります。
@@ -27,10 +34,10 @@ C++ に習熟していることを前提としています。 また、グラフ
 
 **完了までの時間:** 20 分。
 
-手順
+<a name="instructions"></a>手順
 ------------
 
-### 1. 立方体変数の定義
+### <a name="1-defining-cube-variables"></a>1. 立方体変数の定義
 
 まず、立方体の **SimpleCubeVertex** 構造体と **ConstantBuffer** 構造体を定義する必要があります。 立方体の頂点の位置と色に加え、その見え方が、これらの構造体によって指定されます。 [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) と [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) を [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) で宣言し、**ConstantBuffer** のインスタンスを宣言します。
 
@@ -62,7 +69,7 @@ private:
     ConstantBuffer m_constantBufferData;
 ```
 
-### 2. 深度ステンシル ビューの作成
+### <a name="2-creating-a-depth-stencil-view"></a>2. 深度ステンシル ビューの作成
 
 レンダー ターゲット ビューに加え、深度ステンシル ビューも作成します。 深度/ステンシル ビューによって、カメラに近いオブジェクトをカメラから遠いオブジェクトの前にレンダリングする Direct3D の処理を効率化できます。 深度ステンシル バッファーのビューを作成する前に、深度ステンシル バッファーを作成する必要があります。 [**D3D11\_TEXTURE2D\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476253) を設定して深度ステンシル バッファーを定義し、その後、[**ID3D11Device::CreateTexture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476521) を呼び出して深度ステンシル バッファーを作成します。 深度ステンシル ビューを作成するには、[**D3D11\_DEPTH\_STENCIL\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476112) を設定して深度ステンシル ビューを定義し、その深度ステンシル ビューの定義と深度ステンシル バッファーを [**ID3D11Device::CreateDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476507) に渡します。
 
@@ -109,7 +116,7 @@ private:
             );
 ```
 
-### 3. ウィンドウに基づく視点の更新
+### <a name="3-updating-perspective-with-the-window"></a>3. ウィンドウに基づく視点の更新
 
 ウィンドウのサイズに応じて定数バッファーの透視投影パラメーターを更新します。 パラメーターは、視野が 70°、深度の範囲が 0.01 ～ 100 に修正されています。
 
@@ -142,7 +149,7 @@ private:
             );
 ```
 
-### 4. 色要素を使った頂点シェーダーとピクセル シェーダーの作成
+### <a name="4-creating-vertex-and-pixel-shaders-with-color-elements"></a>4. 色要素を使った頂点シェーダーとピクセル シェーダーの作成
 
 このアプリでは、前のチュートリアル (「[シェーダーの作成とプリミティブの描画](creating-shaders-and-drawing-primitives.md)」) で説明したものよりも複雑な頂点シェーダーとピクセル シェーダーを作成します。 このアプリの頂点シェーダーは、個々の頂点の位置を投影空間に変換し、頂点の色をピクセル シェーダーに渡します。
 
@@ -332,7 +339,7 @@ private:
         
 ```
 
-### 5. 立方体の回転と描画およびレンダリングされた画像の表示
+### <a name="5-rotating-and-drawing-the-cube-and-presenting-the-rendered-image"></a>5. 立方体の回転と描画およびレンダリングされた画像の表示
 
 シーンをレンダリングして表示し続けるために、無限ループを使います。 立方体のモデル マトリックスを Y 軸を中心に回転させるための値を設定するため、**rotationY** インライン関数 (BasicMath.h) に回転量を指定して呼び出します。 さらに、[**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) を呼び出して定数バッファーを更新し、立方体モデルを回転させます。 [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) を呼び出して、レンダー ターゲットを出力ターゲットとして指定します。 この **OMSetRenderTargets** 呼び出しでは、深度ステンシル ビューを渡します。 [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) を呼び出してレンダー ターゲットを無地の青色にクリアし、[**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) を呼び出して深度バッファーをクリアします。
 
@@ -439,7 +446,7 @@ private:
                 );
 ```
 
-## 要約と次のステップ
+## <a name="summary-and-next-steps"></a>要約と次のステップ
 
 
 深度、視点、色、その他の効果をプリミティブに対して使いました。
@@ -454,10 +461,5 @@ private:
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,14 +3,21 @@ author: TylerMSFT
 title: "予約済みのファイルと URI スキーム名"
 description: "ここでは、アプリで利用できない予約済みのファイルと予約済みの URI スキーム名の一覧を示します。"
 ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP"
 translationtype: Human Translation
-ms.sourcegitcommit: 6f46f5973b9c18ffd7c38bd27cee0a0a21be50e5
-ms.openlocfilehash: c514ae4831f21b4c471b0445b3cf54a6a08ff92a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a0c0b2cee4512bdd6dd888aceae53eec061dac72
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="reserved-file-and-uri-scheme-names"></a>予約済みのファイルと URI スキーム名
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 URI の関連付けを使用すると、別のアプリで特定の URI スキームを起動したときに自分のアプリを自動的に起動できます。 ただし、予約済みであるために使用できない URI の関連付けがいくつかあります。 アプリが予約済みの関連付けを登録する場合、その登録は無視されます。 ここでは、アプリで利用できない予約済みのファイルと予約済みの URI スキーム名の一覧を示します。
 
@@ -115,9 +122,4 @@ URI の関連付けを使用すると、別のアプリで特定の URI スキ�
 <tr><td>inffile</td><td>ms-settings:network-dialup</td><td>scrfile</td><td></td></tr>
 <tr><td>insfile</td><td>ms-settings:network-ethernet</td><td>scriptletfile</td><td></td></tr>
 </table>
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

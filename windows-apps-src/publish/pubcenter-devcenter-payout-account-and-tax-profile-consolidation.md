@@ -3,13 +3,20 @@ author: jnHs
 Description: "Microsoft Advertising の売り上げに対するすべての支払いは、デベロッパー センター受取りアカウントを通じて行われるようになりました。"
 title: "pubCenter とデベロッパー センターの受取りアカウントと税プロファイルの統合"
 ms.assetid: 1EC55E2F-2BC5-4982-A569-A59082A808EC
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: baf488ac70ea2937a8bfda8a47d679a23053578d
-ms.openlocfilehash: e71c038575f1779c0a8d14306b0e4b8fd8eaf959
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5b93669adff4acfe791a2f607e9d8475e6213a31
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# pubCenter とデベロッパー センターの受取りアカウントと税プロファイルの統合
+# <a name="pubcenter-devcenter-payout-account-and-tax-profile-consolidation"></a>pubCenter とデベロッパー センターの受取りアカウントと税プロファイルの統合
 
 2016 年 4 月 1 日以降、Microsoft Advertising の売り上げに対するすべての支払いは、デベロッパー センター受取りアカウントを通じて行われることになりました。 すべての広告管理と支払いレポートに関しては、[Windows デベロッパー センター ダッシュボード](https://developer.microsoft.com/dashboard/apps/overview)にアクセスしてください。 
 
@@ -27,9 +34,4 @@ ms.openlocfilehash: e71c038575f1779c0a8d14306b0e4b8fd8eaf959
 さらにサポートが必要な場合は、[サポート チケット](http://go.microsoft.com/fwlink/p/?LinkId=733342)を作成してください。
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

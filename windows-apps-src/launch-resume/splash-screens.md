@@ -2,9 +2,17 @@
 author: PatrickFarley
 title: "スプラッシュ画面"
 description: "このセクションでは、アプリのスプラッシュ画面を設定および構成する方法について説明します。"
+ms.assetid: 6b954bb3-e5b0-46d1-8afc-fb805536cf6d
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 023e37bb6f9b8d8d780bb0a536cb469c87a31ed4
-ms.openlocfilehash: bb0f3ff68b7dc15623e4f337e589989354e08b65
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 51add4631b807940e051a8f4cbaca92063e41d4a
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -28,8 +36,3 @@ ms.openlocfilehash: bb0f3ff68b7dc15623e4f337e589989354e08b65
 |-------|-------------|
 | [スプラッシュ画面の追加](add-a-splash-screen.md) | アプリのスプラッシュ画面の画像と背景色を設定します。 |
 | [スプラッシュ画面の表示時間の延長](create-a-customized-splash-screen.md) | アプリに追加スプラッシュ画面を作成すれば、より長い時間、スプラッシュ画面を表示することができます。 この追加画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。 |
-
-
-<!--HONumber=Dec16_HO1-->
-
-

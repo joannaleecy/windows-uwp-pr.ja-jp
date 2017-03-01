@@ -3,9 +3,16 @@ author: TylerMSFT
 title: "バックグラウンド タスクを実行するための条件の設定"
 description: "バックグラウンド タスクをいつ実行するかを制御する条件の設定方法について説明します。"
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: c83f861f43209c42dff661e3277e1d8a1b67d37c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 486e0cd3938a09c663e8e805092377709672359f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -178,9 +185,4 @@ ms.openlocfilehash: c83f861f43209c42dff661e3277e1d8a1b67d37c
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

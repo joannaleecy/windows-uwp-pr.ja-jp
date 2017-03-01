@@ -5,13 +5,20 @@ ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
 title: "キーボードのアクセシビリティ"
 label: Keyboard accessibility
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 2215aeae041ff975d99d29ea42350f6ce0f2a681
-ms.openlocfilehash: 112c7be4cb5418332a19565be9b739e7032ba834
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9b1261de60bf0a45940fe9a284d8a5276b42e0a3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# キーボードのアクセシビリティ  
+# <a name="keyboard-accessibility"></a>キーボードのアクセシビリティ  
 
 
 
@@ -20,7 +27,7 @@ ms.openlocfilehash: 112c7be4cb5418332a19565be9b739e7032ba834
 <span id="keyboard_navigation_among_UI_elements"/>
 <span id="keyboard_navigation_among_ui_elements"/>
 <span id="KEYBOARD_NAVIGATION_AMONG_UI_ELEMENTS"/>
-## UI 要素間でのキーボード ナビゲーション  
+## <a name="keyboard-navigation-among-ui-elements"></a>UI 要素間でのキーボード ナビゲーション  
 キーボードでコントロールを操作するにはフォーカスが必要です。ポインターを使わずにフォーカスを移すには、UI 設計でタブ ナビゲーションを使ってコントロールにアクセスできるようにする必要があります。 既定では、コントロールのタブ オーダーは、デザイン サーフェイスに追加された順序、XAML で一覧表示された順序、またはプログラムを使ってコンテナーに追加された順序と同じになります。
 
 ほとんどの場合、XML でのコントロールの定義に基づく既定の順序が最適な順序です。これは特に、スクリーン リーダーで読み取られるコントロールの順序と一致するためです。 ただし、既定の順序は表示順序と対応するとは限りません。 実際の表示位置は親レイアウト コンテナーと特定のプロパティに依存し、それらを子要素で設定することでレイアウトに影響することがあります。 アプリのタブ オーダーが適切に設定されていることを確かめるには、この動作を自身でテストする必要があります。 特に、グリッド形式や表形式で表されるレイアウトを使っている場合は、ユーザーが読み進める順序とタブ オーダーが一致しない可能性があります。 それ自体は必ずしも問題になるとは限りませんが、 必ずタッチ可能な UI とキーボードからアクセス可能な UI の両方についてアプリの機能をテストして、どちらの方法でも UI が適切に動作することを確認してください。
@@ -60,12 +67,12 @@ XAML
 <span id="keyboard_navigation_within_a_UI_element"/>
 <span id="keyboard_navigation_within_a_ui_element"/>
 <span id="KEYBOARD_NAVIGATION_WITHIN_A_UI_ELEMENT"/>
-## UI 要素内でのキーボード ナビゲーション  
+## <a name="keyboard-navigation-within-a-ui-element"></a>UI 要素内でのキーボード ナビゲーション  
 コンポジット要素の場合は、含まれている要素間で正しい内部ナビゲーションが実行できることが重要です。 コンポジット要素では、その現在のアクティブな子を管理して、すべての子要素にフォーカスを設定できるようにする場合のオーバーヘッドを減らすことができます。 このようなコンポジット要素もタブ オーダーに含まれ、キーボード ナビゲーション イベント自体を処理します。 複合コントロールには、多くの場合、コントロールのイベント処理の中に既に内部ナビゲーション ロジックが組み込まれています。 たとえば、項目の方向キー トラバーサルは、既定では [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) コントロール、[**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview) コントロール、[**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) コントロール、[**FlipView**](https://msdn.microsoft.com/library/windows/apps/BR242678) コントロールで有効になります。
 
 <span id="keyboard_activation"/>
 <span id="KEYBOARD_ACTIVATION"/>
-## 特定のコントロール要素に対するポインター操作やイベントの代わりにキーボードを利用  
+## <a name="keyboard-alternatives-to-pointer-actions-and-events-for-specific-control-elements"></a>特定のコントロール要素に対するポインター操作やイベントの代わりにキーボードを利用  
 クリックできる UI 要素をキーボードでも呼び出すことができるようにします。 キーボードで UI 要素を操作するには、要素にフォーカスが必要になります。 フォーカスとタブ ナビゲーションをサポートするのは、[**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) から派生するクラスだけです。
 
 呼び出すことができる UI 要素の場合は、Space キーと Enter キーのキーボード イベント ハンドラーを実装します。 これで、基本のキーボード アクセシビリティのサポートは完全になり、ユーザーはキーボードのみを使って基本のアプリ シナリオを実行できます。つまり、ユーザーはすべての対話型の UI 要素にアクセスしたり、既定の機能をアクティブにすることができます。
@@ -85,7 +92,7 @@ XAML
 
 <span id="keyboard_shortcuts"/>
 <span id="KEYBOARD_SHORTCUTS"/>
-## キーボード ショートカット  
+## <a name="keyboard-shortcuts"></a>キーボード ショートカット  
 キーボードのナビゲーションのアクティブ化をアプリに実装するだけでなく、ショートカットをアプリの機能に実装することをお勧めします。 基本的なキーボードのサポートとしてはタブ ナビゲーションで十分ですが、複雑なフォームではショートカット キーのサポートも追加すると効果的です。 これにより、キーボードとポインティング デバイスの両方を使うユーザーにも使いやすいアプリになります。
 
 *ショートカット*は、ユーザーが効率的にアプリの機能にアクセスできるようにして、生産性を向上させるためのキーの組み合わせです。 ショートカットには次の 2 つの種類があります。
@@ -145,7 +152,7 @@ XAML
 <span id="Implementing_a_key_event_handler"/>
 <span id="implementing_a_key_event_handler"/>
 <span id="IMPLEMENTING_A_KEY_EVENT_HANDLER"/>
-### キー イベント ハンドラーの実装  
+### <a name="implementing-a-key-event-handler"></a>キー イベント ハンドラーの実装  
 キー イベントなどの入力イベントでは、*ルーティング イベント*というイベント概念を使います。 ルーティング イベントは、共通コントロールの親が複数の子要素に対するイベントを処理できるような、合成コントロールの子要素をバブルアップすることがあります。 このイベント モデルは、仕様によりフォーカスの設定やタブ オーダーへの追加ができない複数の複合パートが含まれるコントロールに、ショートカット キーの操作を定義するときに役立ちます。
 
 Ctrl キーなどの修飾キーのチェックを含むキー イベント ハンドラーの記述方法を示すコード例については、「[キーボード操作](https://msdn.microsoft.com/library/windows/apps/Mt185607)」をご覧ください。
@@ -153,7 +160,7 @@ Ctrl キーなどの修飾キーのチェックを含むキー イベント ハ�
 <span id="Keyboard_navigation_for_custom_controls"/>
 <span id="keyboard_navigation_for_custom_controls"/>
 <span id="KEYBOARD_NAVIGATION_FOR_CUSTOM_CONTROLS"/>
-## カスタム コントロールのキーボード ナビゲーション  
+## <a name="keyboard-navigation-for-custom-controls"></a>カスタム コントロールのキーボード ナビゲーション  
 子要素間に空間的な関係が存在する場合は、子要素間を移動するためのキーボード ショートカットとして方向キーを使うことをお勧めします。 ツリー ビュー ノードに、展開折りたたみとノードのアクティブ化を処理するための別のサブ要素がある場合は、左右の方向キーを使って、キーボードの展開折りたたみ機能を提供します。 コントロール コンテンツ内で方向トラバーサルをサポートする指向コントロールがある場合は、適切な方向キーを使ってください。
 
 一般に、カスタム コントロールに対するカスタム キー処理を実装する場合は、クラス ロジックの一部として、[**OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982.aspx) メソッドと [**OnKeyUp**](https://msdn.microsoft.com/library/windows/apps/hh967983.aspx) メソッドのオーバーライドを組み込みます。
@@ -161,7 +168,7 @@ Ctrl キーなどの修飾キーのチェックを含むキー イベント ハ�
 <span id="An_example_of_a_visual_state_for_a_focus_indicator"/>
 <span id="an_example_of_a_visual_state_for_a_focus_indicator"/>
 <span id="AN_EXAMPLE_OF_A_VISUAL_STATE_FOR_A_FOCUS_INDICATOR"/>
-## フォーカス インジケーターの表示状態の例  
+## <a name="an-example-of-a-visual-state-for-a-focus-indicator"></a>フォーカス インジケーターの表示状態の例  
 これまで説明したように、ユーザーがフォーカスを合わせることができるカスタム コントロールには視覚的なフォーカス インジケーターが必要です。 一般に、フォーカス インジケーターは、コントロールを囲む通常の四角形の境界線のすぐ外側に、四角形を描画するだけの簡単なものです。 視覚的なフォーカスに使う [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) は、コントロール テンプレートにおけるコントロールの合成の他の部分に対するピア要素ですが、最初はコントロールにフォーカスがないため、[**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) の値には **Collapsed** が設定されています。 コントロールがフォーカスを取得すると、表示状態が呼び出され、フォーカス表示の **Visibility** が **Visible** に設定されます。 フォーカスが別の場所に移動すると、他の表示状態が呼び出され、**Visibility** が **Collapsed** になります。
 
 既定の XAML コントロールはいずれも、フォーカスを設定できるものであれば、フォーカスを受け取ったときに視覚的なフォーカス インジケーターを適切に表示します。 また、ユーザーが選んでいるテーマに応じて (ハイ コントラスト モードを使っている場合は特に)、外観が異なる可能性があります。UI で XAML コントロールを使っており、コントロール テンプレートを置き換えていない場合は、特に何もしなくても、視覚的なフォーカス インジケーターがコントロールに適切に表示され、動作します。 ただし、コントロールを再テンプレート化する必要がある場合、または XAML コントロールで視覚的なフォーカス インジケーターがどのように実現されているかを理解したい場合のために、このセクションの残りの部分では、XAML とコントロール ロジックにおけるフォーカス インジケーターの処理方法について説明します。
@@ -226,22 +233,17 @@ XAML
 <span id="Keyboard_accessibility_and_Windows_Phone"/>
 <span id="keyboard_accessibility_and_windows_phone"/>
 <span id="KEYBOARD_ACCESSIBILITY_AND_WINDOWS_PHONE"/>
-## キーボードのアクセシビリティと Windows Phone
+## <a name="keyboard-accessibility-and-windows-phone"></a>キーボードのアクセシビリティと Windows Phone
 Windows Phone デバイスには、通常、専用のハードウェア キーボードがありません。 ただし、ソフト入力パネル (SIP) は、複数のキーボード アクセシビリティのシナリオをサポートできます。 スクリーン リーダーは、削除も含めて、**テキスト** SIP からのテキスト入力を読み取ることができます。 スクリーン リーダーは、ユーザーがキーをスキャンしていることを検出して、スキャンされたキー名を読み上げるため、ユーザーは指の位置を知ることができます。 また、キーボード指向のアクセシビリティに関する概念の一部は、キーボードをまったく使わない関連の支援技術の動作に割り当てることもできます。 たとえば、SIP が Tab キーを含まない場合でも、ナレーターは、Tab キーを押した場合と同等のタッチ ジェスチャをサポートします。そのため、UI のコントロールを使って便利なタブ オーダーを設定することが、重要なアクセシビリティの原則であることに変わりはありません。 複雑なコントロール内で部品を移動するために使われる方向キーも、ナレーターのタッチ ジェスチャでサポートされます。 テキスト入力用ではないコントロールにフォーカスが移ると、ナレーターはそのコントロールの操作を呼び出すジェスチャをサポートします。
 
 SIP には Ctrl キーや Alt キーがないため、キーボード ショートカットは通常、Windows Phone アプリには関係ありません。
 
 <span id="related_topics"/>
-## 関連トピック  
+## <a name="related-topics"></a>関連トピック  
 * [アクセシビリティ](accessibility.md)
 * [キーボード操作](https://msdn.microsoft.com/library/windows/apps/Mt185607)
 * [入力: タッチ キーボードのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=246019)
 * [スクリーン キーボードを表示したときの対応のサンプルのページ](http://go.microsoft.com/fwlink/p/?linkid=231633)
 * [XAML アクセシビリティ サンプル](http://go.microsoft.com/fwlink/p/?linkid=238570)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

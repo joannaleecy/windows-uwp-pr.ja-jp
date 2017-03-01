@@ -10,9 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
 translationtype: Human Translation
-ms.sourcegitcommit: b3c9e291c8b22c4b642e87a2caa05b36de519d22
-ms.openlocfilehash: 5983209e7e107f8cf0a7d2fe9ce8ef734e3af7d4
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: bd6e209d670164bc017d5012199420420dc3eda0
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -812,9 +814,4 @@ namespace Ink_Basic_InkToolbar
 * [インクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [単純なインクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620312)
 * [複雑なインクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620314)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

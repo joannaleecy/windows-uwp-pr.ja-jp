@@ -3,23 +3,30 @@ author: TylerMSFT
 title: "Windows マップ アプリの起動"
 description: "アプリから Windows マップ アプリを起動する方法について説明します。"
 ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: a2f09aa510c9c3db6b8eca25f4c8cee98fa0eb46
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c9c359fd424b4c9526ebfc610adc7097bb83cbda
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Windows マップ アプリの起動
+# <a name="launch-the-windows-maps-app"></a>Windows マップ アプリの起動
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-アプリから Windows マップ アプリを起動する方法について説明します。 このトピックでは、**bingmaps:**、**ms-drive-to:**、**ms-walk-to:**、*ms-settings:* の各 URI (Uniform Resource Identifier) スキームについて説明します。 これらの URI スキームを使って、Windows マップ アプリを起動し、特定の地図、ルート案内、検索結果を表示したり、設定アプリから Windows マップ オフライン マップをダウンロードしたりします。
+アプリから Windows マップ アプリを起動する方法について説明します。 このトピックでは、**bingmaps:、ms-drive-to:、ms-walk-to:**、**ms-settings:** の各 URI (Uniform Resource Identifier) スキームについて説明します。 これらの URI スキームを使って、Windows マップ アプリを起動し、特定の地図、ルート案内、検索結果を表示したり、設定アプリから Windows マップ オフライン マップをダウンロードしたりします。
 
 **ヒント** アプリから Windows マップ アプリを起動する方法について詳しくは、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619979)から[ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)をダウンロードしてください。
 
-## URI の概要
+## <a name="introducing-uris"></a>URI の概要
 
 URI スキームを使うと、ハイパーリンクのクリックによって (またはアプリでプログラム的に) アプリを開くことができます。 **mailto:** を使って新しいメールの作成を開始したり、**http:** を使って既定の Web ブラウザーを開いたりできるのと同様に、**bingmaps:**、**ms-drive-to:**、**ms-walk-to:** を使って Windows マップ アプリを開くことができます。
 
@@ -43,9 +50,9 @@ URI スキームについて次に説明します。
 
 **&param1=value1&param2=value2 …**
 
-使用可能なパラメーターの一覧については、[bingmaps:](#bingmaps)、[ms-drive-to:](#msdriveto)、[ms-walk-to:](#mswalkto) のパラメーター リファレンスをご覧ください。 このトピックでも後で例を示します。
+使用可能なパラメーターの一覧については、[bingmaps:](#bingmaps-param-reference)、[ms-drive-to:](#ms-drive-to-param-reference)、[ms-walk-to:](#ms-walk-to-param-reference) のパラメーター リファレンスをご覧ください。 このトピックでも後で例を示します。
 
-## アプリからの URI の起動
+## <a name="launch-a-uri-from-your-app"></a>アプリからの URI の起動
 
 
 アプリから Windows マップ アプリを起動するには、**bingmaps:**、**ms-drive-to:**、または **ms-walk-to:** URI を指定して [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) メソッドを呼び出します。 次の例では、前の例と同じ URI を起動します。 URI によるアプリの起動について詳しくは、「[URI に応じた既定のアプリの起動](launch-default-app.md)」をご覧ください。
@@ -62,12 +69,11 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 この例では、Windows マップ アプリを確実に起動するために [**LauncherOptions**](https://msdn.microsoft.com/library/windows/apps/hh701435) クラスを使っています。
 
-## 既知の場所の表示
-
+## <a name="display-known-locations"></a>既知の場所の表示
 
 地図の中心点とズーム レベルを制御するには、いくつかの方法があります。 *cp* (中心点) パラメーターと *lvl* (ズーム レベル) パラメーターを使う方法が最も簡単な方法であり、これらのパラメーターによって予測可能な結果を得ることができます。 この方法と比べると、*bb* パラメーター (緯度と経度の値で囲まれた領域を指定) を使う方法では予測が難しくなります。これは、このパラメーターでは画面の解像度を考慮し、指定される座標に基づいて地図の中心点とズーム レベルを決定するためです。 これら 3 つのパラメーター (*bb*、*cp*、*lvl*) がすべて指定されていると、*bb* パラメーターは無視されます。
 
-ビューの種類を制御するには、*ss* (Streetside) パラメーターと *sty* (スタイル) パラメーターを使います。 *ss* パラメーターは、Streetside ビューに地図を配置します。 *sty* パラメーターは、道路図、航空写真、3D ビュー表示を切り替えます。 3D スタイルを使う場合、*hdg*、*pit*、*rad* パラメーターを使って 3D ビューを指定できます。 *hdg* はビューの方位を指定します。*pit* はビューのピッチを指定します。*rad* はビューに表示する中心点からの距離を指定します。 これらのパラメーターやその他のパラメーターについて詳しくは、[bingmaps: のパラメーター リファレンス](#bingmaps)をご覧ください。
+ビューの種類を制御するには、*ss* (Streetside) パラメーターと *sty* (スタイル) パラメーターを使います。 *ss* パラメーターは、Streetside ビューに地図を配置します。 *sty* パラメーターは、道路図、航空写真、3D ビュー表示を切り替えます。 3D スタイルを使う場合、*hdg*、*pit*、*rad* パラメーターを使って 3D ビューを指定できます。 *hdg* はビューの方位を指定します。*pit* はビューのピッチを指定します。*rad* はビューに表示する中心点からの距離を指定します。 これらのパラメーターやその他のパラメーターについて詳しくは、[bingmaps: のパラメーター リファレンス](#bingmaps-param-reference)をご覧ください。
 
 | サンプル URI                                                                 | 結果                                                                                                                                                                                                   |
 |----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -85,11 +91,9 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | bingmaps:?cp=47.6204~-122.3491&ss=1                                        | スペース ニードルの Streetside ビューを表示します。                                                                                                                                                           |
 
  
+## <a name="display-search-results"></a>検索結果の表示
 
-## 検索結果の表示
-
-
-ビジネス検索を実行するときには、検索語句をできるだけ具体的に示すための *q* パラメーターを使うことをお勧めします。このパラメーターを *cp* パラメーターまたは *where* パラメーターと組み合わせて使い、場所を指定します。 ユーザーが自身の位置情報を使うためのアクセス許可を地図アプリにまだ与えておらず、ビジネス検索の対象となる場所も指定されていない場合、検索は国レベルで実行され、意味のある結果が返されない可能性があります。 検索結果は最適な地図ビューに表示されます。そのため、*lvl* (ズーム レベル) を設定する必要がない場合は、マップ アプリでズーム レベルを決定できるようにすることをお勧めします。 これらのパラメーターやその他のパラメーターについて詳しくは、[bingmaps: のパラメーター リファレンス](#bingmaps)をご覧ください。
+ビジネス検索を実行するときには、検索語句をできるだけ具体的に示すための *q* パラメーターを使うことをお勧めします。このパラメーターを *cp* パラメーターまたは *where* パラメーターと組み合わせて使い、場所を指定します。 ユーザーが自身の位置情報を使うためのアクセス許可を地図アプリにまだ与えておらず、ビジネス検索の対象となる場所も指定されていない場合、検索は国レベルで実行され、意味のある結果が返されない可能性があります。 検索結果は最適な地図ビューに表示されます。そのため、*lvl* (ズーム レベル) を設定する必要がない場合は、マップ アプリでズーム レベルを決定できるようにすることをお勧めします。 これらのパラメーターやその他のパラメーターについて詳しくは、[bingmaps: のパラメーター リファレンス](#bingmaps-param-reference)をご覧ください。
 
 | サンプル URI                                                    | 結果                                                                                                                                         |
 |---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -100,13 +104,12 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | bingmaps:?q=coffee&where=Seattle                              | シアトルでコーヒーを検索します。                                                                                                                 |
 
  
+## <a name="display-multiple-points"></a>複数のポイントの表示
 
-## 複数のポイントの表示
 
+地図上のポイントのカスタム セットを表示するには、*collection* パラメーターを使います。 ポイントが複数ある場合は、ポイントの一覧が表示されます。 コレクションには 25 個までポイントを含めることができます。これらのポイントは指定された順序で表示されます。 コレクションは、検索要求やルート案内の要求よりも優先されます。 このパラメーターやその他のパラメーターについて詳しくは、[bingmaps: のパラメーター リファレンス](#bingmaps-param-reference)をご覧ください。
 
-地図上のポイントのカスタム セットを表示するには、*collection* パラメーターを使います。 ポイントが複数ある場合は、ポイントの一覧が表示されます。 コレクションには 25 個までポイントを含めることができます。これらのポイントは指定された順序で表示されます。 コレクションは、検索要求やルート案内の要求よりも優先されます。 このパラメーターやその他のパラメーターについて詳しくは、[bingmaps: のパラメーター リファレンス](#bingmaps)をご覧ください。
-
-| サンプル URI                                                                                                                                                         | 結果                                                                                                                   |
+| サンプル URI | 結果                                                                                                                   |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
 | bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace                                                                                                | ラスベガスのシーザーズ パレスを検索し、その結果を地図に表示します (最適な地図のビューで表示されます)。                         |
 | bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&lvl=16                                                                                         | ラスベガスにあるシーザーズ パレスという名前のプッシュピンを表示し、ズーム レベルを 16 に設定します。                                               |
@@ -116,10 +119,10 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
  
 
-## ルート案内と交通情報の表示
+## <a name="display-directions-and-traffic"></a>ルート案内と交通情報の表示
 
 
-*rtp* パラメーターを使って、2 つのポイント間のルート案内を表示できます。これらのポイントは、住所または緯度と軽度の座標で指定できます。 交通情報を表示するには、*trfc* パラメーターを使います。 ルート案内の種類 (自動車、徒歩、乗り換え案内) を指定するには、*mode* パラメーターを使います。 *mode* が指定されていない場合、ルート案内は、ユーザーの交通手段の設定のモードを使って提供されます。 これらのパラメーターやその他のパラメーターについて詳しくは、[bingmaps: のパラメーター リファレンス](#bingmaps)をご覧ください。
+*rtp* パラメーターを使って、2 つのポイント間のルート案内を表示できます。これらのポイントは、住所または緯度と軽度の座標で指定できます。 交通情報を表示するには、*trfc* パラメーターを使います。 ルート案内の種類 (自動車、徒歩、乗り換え案内) を指定するには、*mode* パラメーターを使います。 *mode* が指定されていない場合、ルート案内は、ユーザーの交通手段の設定のモードを使って提供されます。 これらのパラメーターやその他のパラメーターについて詳しくは、[bingmaps: のパラメーター リファレンス](#bingmaps-param-reference)をご覧ください。
 
 ![ルート案内の例](images/windowsmapgcdirections.png)
 
@@ -136,12 +139,12 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
  
 
-## ターン バイ ターン方式のルート案内の表示
+## <a name="display-turn-by-turn-directions"></a>ターン バイ ターン方式のルート案内の表示
 
 
-**ms-drive-to:** と **ms-walk-to:** の各 URI スキームでは、直接ターン バイ ターン方式のルート案内を起動できます。 これらの URI スキームでは、ユーザーの現在の場所からのルート案内のみを提供できます。 ユーザーの現在の場所を含まないポイント間のルート案内を提供する必要がある場合は、前のセクションで説明した **bingmaps:** URI スキームを使います。 これらの URI スキームについて詳しくは、[ms-drive-to:](#msdriveto) と [ms-walk-to:](#mswalkto) のパラメーター リファレンスをご覧ください。
+**ms-drive-to:** と **ms-walk-to:** の各 URI スキームでは、直接ターン バイ ターン方式のルート案内を起動できます。 これらの URI スキームでは、ユーザーの現在の場所からのルート案内のみを提供できます。 ユーザーの現在の場所を含まないポイント間のルート案内を提供する必要がある場合は、前のセクションで説明した **bingmaps:** URI スキームを使います。 これらの URI スキームについて詳しくは、[ms-drive-to:](#ms-drive-to-param-reference) と [ms-walk-to:](#ms-walk-to-param-reference) のパラメーター リファレンスをご覧ください。
 
-> **重要**  **ms-drive-to:** または **ms-walk-to:** の URI スキームが呼び出されると、マップ アプリは、デバイスで GPS 位置情報の修正が行われたことがあるかどうかを確認します。 行われたことがある場合は、ターン バイ ターン方式のルート案内に進みます。 行われたことがない場合は、「[ルート案内と交通情報の表示](#directions)」で説明したルートの概要を表示します。
+> **重要**  **ms-drive-to:** または **ms-walk-to:** の URI スキームが呼び出されると、マップ アプリは、デバイスで GPS 位置情報の修正が行われたことがあるかどうかを確認します。 行われたことがある場合は、ターン バイ ターン方式のルート案内に進みます。 行われたことがない場合は、「[ルート案内と交通情報の表示](#display-directions-and-traffic)」で説明したルートの概要を表示します。
 
  
 
@@ -153,7 +156,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | ms-walk-to:?destination.latitude=47.680504&destination.longitude=-122.328262&destination.name=Green Lake  | 現在の場所からグリーン湖までのターン バイ ターン方式の徒歩ルート案内と共に地図を表示します。 |
 
 
-## オフライン マップのダウンロード
+## <a name="download-offline-maps"></a>オフライン マップのダウンロード
 
 
 **ms-settings:** URI スキームでは、設定アプリで特定のページを直接起動することができます。 **ms-settings:** URI スキームでは、マップ アプリが起動されませんが、設定アプリでオフライン マップ ページを直接起動し、マップ アプリが使用するオフライン マップをダウンロードするための確認ダイアログ ボックスを表示することができます。 URI スキームは、緯度と経度で指定されたポイントを受け取り、そのポイントが含まれる地域のオフライン マップが利用できるかどうかを自動的に判定します。  渡された緯度と経度が複数のダウンロード地域内にある場合、ユーザーは、確認ダイアログ ボックスでダウンロードする地域を選択できます。 そのポイントが含まれる地域のオフライン マップが利用できない場合、設定アプリのオフライン マップ ページがエラー ダイアログと共に表示されます。
@@ -163,7 +166,8 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | ms-settings:maps-downloadmaps?latlong=47.6,-122.3 | 設定アプリで、確認ダイアログ ボックスが表示されたオフライン マップ ページを開き、緯度と経度で指定されたポイントが含まれた地域のマップをダウンロードします。 |
  
 
-## bingmaps: のパラメーター リファレンス
+<span id="bingmaps-param-reference"/>
+## <a name="bingmaps-parameter-reference"></a>bingmaps: のパラメーター リファレンス
 
 
 次に示す各パラメーターの構文は、拡張バッカスナウア記法 (ABNF) を使って表されています。
@@ -382,13 +386,13 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 </table>
 
  
-
+<span id="ms-drive-to-param-reference"/>
 ## ms-drive-to: のパラメーター リファレンス
 
 
 ターン バイ ターン方式の自動車ルート案内の要求を起動する URI は、エンコードする必要がありません。その形式は、次のようになります。
 
-> **注**  この URI スキームでは出発地を指定しません。 常に、現在の場所が出発地であると見なされます。 現在の場所以外の出発地を指定する必要がある場合は、「[ルート案内と交通情報の表示](#directions)」をご覧ください。
+> **注**  この URI スキームでは出発地を指定しません。 常に、現在の場所が出発地であると見なされます。 現在の場所以外の出発地を指定する必要がある場合は、「[ルート案内と交通情報の表示](#display-directions-and-traffic)」をご覧ください。
 
  
 
@@ -399,13 +403,13 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | **destination.name** | 目的地の名前 | 例: destination.name=Redmond, WA | 目的地の名前です。 **destination.name** 値をエンコードする必要はありません。 |
 
  
-
-## ms-walk-to: のパラメーター リファレンス
+<span id="ms-walk-to-param-reference"/>
+## <a name="ms-walk-to-parameter-reference"></a>ms-walk-to: のパラメーター リファレンス
 
 
 ターン バイ ターン方式の徒歩ルート案内の要求を起動する URI は、エンコードする必要がありません。その形式は、次のようになります。
 
-> **注**  この URI スキームでは出発地を指定しません。 常に、現在の場所が出発地であると見なされます。 現在の場所以外の出発地を指定する必要がある場合は、「[ルート案内と交通情報の表示](#directions)」をご覧ください。
+> **注**  この URI スキームでは出発地を指定しません。 常に、現在の場所が出発地であると見なされます。 現在の場所以外の出発地を指定する必要がある場合は、「[ルート案内と交通情報の表示](#display-directions-and-traffic)」をご覧ください。
 
  
 
@@ -416,7 +420,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | **destination.name** | 目的地の名前 | 例: destination.name=Redmond, WA | 目的地の名前です。 **destination.name** 値をエンコードする必要はありません。 |
 
  
-## ms-settings: のパラメーター リファレンス
+## <a name="ms-settings-parameter-reference"></a>ms-settings: のパラメーター リファレンス
 
 
 **ms-settings:** URI スキームのマップ アプリ固有のパラメーターの構文は、次のように定義されます。 **maps-downloadmaps** は、**ms-settings:** URI と共に **ms-settings:maps-downloadmaps?** の形式で指定され、オフライン マップの設定ページを示します。
@@ -429,9 +433,4 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

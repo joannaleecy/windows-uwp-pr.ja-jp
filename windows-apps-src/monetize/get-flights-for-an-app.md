@@ -2,21 +2,28 @@
 author: mcleanbyron
 ms.assetid: B0AD0B8E-867E-4403-9CF6-43C81F3C30CA
 description: "Windows ストア提出 API のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライト情報を取得します。"
-title: "Windows ストア提出 API を使用したアプリのパッケージ フライトの取得"
+title: "Windows ストア申請 API を使用したアプリのパッケージ フライトの取得"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows ストア申請 API, フライト, パッケージ フライト"
 translationtype: Human Translation
-ms.sourcegitcommit: ef90390fcf7d4aa2e040eae65119ac7959f3423f
-ms.openlocfilehash: eddac4b37f6f00bad33f543f0e55415a5dcea887
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ee49b494f3b0dd88229e3f40fd2c5cedb57ffe7c
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Windows ストア提出 API を使用したアプリのパッケージ フライトの取得
+# <a name="get-package-flights-for-an-app-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアプリのパッケージ フライトの取得
 
 
 
 
 Windows デベロッパー センター アカウントに登録するアプリのパッケージ フライトを一覧表示するには、Windows ストア提出 API 内の以下のメソッドを使用します。 パッケージ フライトについて詳しくは、「[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)」をご覧ください。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
@@ -25,7 +32,7 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 >**注:**&nbsp;&nbsp;このメソッドは、Windows ストア提出 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
-## 要求
+## <a name="request"></a>要求
 
 このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
 
@@ -35,7 +42,7 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 <span/>
  
-### 要求ヘッダー
+### <a name="request-header"></a>要求ヘッダー
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -43,7 +50,7 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 <span/>
 
-### 要求パラメーター
+### <a name="request-parameters"></a>要求パラメーター
 
 |  名前  |  型  |  説明  |  必須かどうか  |
 |------|------|------|------|
@@ -53,11 +60,11 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 <span/>
 
-### 要求本文
+### <a name="request-body"></a>要求本文
 
 このメソッドでは要求本文を指定しないでください。
 
-### 要求の例
+### <a name="request-examples"></a>要求の例
 
 次の例は、アプリのすべてのパッケージ フライトを一覧表示する方法を示しています。
 
@@ -73,7 +80,7 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/lis
 Authorization: Bearer <your access token>
 ```
 
-## 応答
+## <a name="response"></a>応答
 
 次の例は、合計 3 個のパッケージ フライトがあるアプリの、1 番目のパッケージ フライトに対する要求が成功した場合に返される JSON 応答本文を示しています。 応答本文の値について詳しくは、次のセクションをご覧ください。
 
@@ -101,7 +108,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-### 応答本文
+### <a name="response-body"></a>応答本文
 
 | 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -111,7 +118,7 @@ Authorization: Bearer <your access token>
 
 <span/>
 
-## エラー コード
+## <a name="error-codes"></a>エラー コード
 
 要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。
 
@@ -122,15 +129,10 @@ Authorization: Bearer <your access token>
 
 <span/>
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [Windows ストア サービスを使用した提出の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [すべてのアプリの入手](get-all-apps.md)
 * [アプリの入手](get-an-app.md)
 * [アプリのアドオンの入手](get-add-ons-for-an-app.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

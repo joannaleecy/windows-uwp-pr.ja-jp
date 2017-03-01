@@ -3,17 +3,24 @@ author: mcleblanc
 title: "アニメーションを始める"
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
 description: "このプロジェクトでは、四角形を移動し、フェード効果を適用した後でもう一度表示します。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: ae08bb25d8ac56ca6e03a5c200e8a0d4e05fbfe3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9dcf81c0c0aee42d6278a3e1eeccc6dd4da61010
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Getting started: アニメーション
+# <a name="getting-started-animation"></a>はじめに: アニメーション
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
-## アニメーションの追加
+## <a name="adding-animations"></a>アニメーションの追加
 
 iOS では、ほとんどの場合、アニメーション効果はプログラムで実現されます。 たとえば、このための方法として、ブロック ベースの **UIView** クラスの **animateWithDuration** メソッド、または以前の非ブロック ベースのメソッドによって提供されるアニメーションを使うことができます。 または、**CALayer** クラスを明示的に使ってレイヤーをアニメーション化することもできます。 Windows アプリでのアニメーションもプログラムで作成できますが、Extensible Application Markup Language (XAML) を使った宣言で定義することもできます。 Microsoft Visual Studio を使用して XAML コードを直接編集できますが、Visual Studio にはユーザーがデザイナーでアニメーションを扱っているときに XAML コードを自動的に作成する、**Blend** というツールも付属しています。 実際、Blend では、グラフィック表示で、完全な Visual Studio プロジェクトを開いて、設計、ビルド、実行できます。 以下のチュートリアルを実行して、実際に試してみてください。
 
@@ -125,12 +132,7 @@ MainPage.xaml ファイルを **XAML** ビューで開くと、デザイナー�
 
 **注:** JavaScript と HTML を使った Windows ストア アプリのアニメーションについて詳しくは、「[UI のアニメーション化 (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165)」をご覧ください。
 
-### 次の手順
+### <a name="next-step"></a>次の手順
 
 [はじめに: 次の手順](getting-started-what-next.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

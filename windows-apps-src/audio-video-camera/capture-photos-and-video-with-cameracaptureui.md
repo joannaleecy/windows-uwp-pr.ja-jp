@@ -3,9 +3,16 @@ author: drewbatgit
 ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
 description: "この記事では、CameraCaptureUI クラスを使用して、Windows に組み込まれているカメラ UI で写真またはビデオをキャプチャする方法を説明します。"
 title: "Windows の組み込みカメラ UI を使った写真とビデオのキャプチャ"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 65508d32995f57672f94dffa4866a86d57903d00
-ms.openlocfilehash: 10ac3f53f0f8128985c39154f74a9348a40641b5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7ddd659bc32eb8328f993fba4bfd4f137ea99d0f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -118,10 +125,5 @@ XAML ページでソフトウェア ビットマップを使用するには、[*
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

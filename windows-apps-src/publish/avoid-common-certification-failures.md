@@ -3,13 +3,20 @@ author: jnHs
 Description: "アプリの認定の妨げになることが多い問題、またはアプリの公開後のスポット チェックで識別された問題を回避するために、このリストを確認します。"
 title: "一般的な認定エラーの回避"
 ms.assetid: 9E9E3841-2F9B-42D4-B5F8-4C7C31E42E3D
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7de2083b2a29baed5a0e6baf0a1e4c4c2f71c9e4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f8b61d14b46614680b84da5aa7e4413159a0cfb1
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 一般的な認定エラーの回避
+# <a name="avoid-common-certification-failures"></a>一般的な認定エラーの回避
 
 
 アプリの認定の妨げになることが多い問題、またはアプリの公開後のスポット チェックで識別された問題を回避するために、このリストを確認します。
@@ -41,10 +48,5 @@ ms.openlocfilehash: 7de2083b2a29baed5a0e6baf0a1e4c4c2f71c9e4
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

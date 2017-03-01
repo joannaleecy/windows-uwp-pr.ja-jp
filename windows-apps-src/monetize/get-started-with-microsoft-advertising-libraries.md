@@ -3,14 +3,20 @@ author: mcleanbyron
 ms.assetid: ae45490f-3eb1-4b7f-8e18-bf82f0ca5d6d
 description: "Microsoft Advertising ライブラリの使用を開始してバナーやビデオのスポット広告をアプリに追加するために必要な情報を得ます。"
 title: "Microsoft Advertising ライブラリの概要"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 広告, 宣伝, 概要"
 translationtype: Human Translation
-ms.sourcegitcommit: 65f8c2b8be053565a903cec4b8d9ccc277cfd41e
-ms.openlocfilehash: b5fe116ea850e93b5208b829e4ed6cec2bc42de0
-
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 81392a218165d4e0c2b954bdc6cb7789f7aa63f1
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Microsoft Advertising ライブラリの概要
+# <a name="get-started-with-the-microsoft-advertising-libraries"></a>Microsoft Advertising ライブラリの概要
 
 
 
@@ -21,7 +27,7 @@ C# と C++ を使って JavaScript/HTML アプリと XAML アプリに広告バ�
 
  
 
-## このセクションの内容
+## <a name="in-this-section"></a>このセクションの内容
 
 | トピック                                                                                                       | 説明                 |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------|
@@ -38,9 +44,4 @@ C# と C++ を使って JavaScript/HTML アプリと XAML アプリに広告バ�
  
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

@@ -3,13 +3,20 @@ author: jnHs
 Description: "アプリ内の広告ユニットのパフォーマンス データを表示するには、Windows デベロッパー センター ダッシュボードにあるアプリ レベルとアカウント レベルの広告パフォーマンス レポートを使います。"
 title: "広告パフォーマンス レポート"
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6b354b1b009bf9e4f2899f7ef97ef8791712f52b
-ms.openlocfilehash: b75d9310e577c77d1caed3e9f34762e925eb11ae
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d53fe17f2d2452e66a6b4f9c1609112c621ede64
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 広告パフォーマンス レポート
+# <a name="advertising-performance-report"></a>広告パフォーマンス レポート
 
 
 アプリ内の広告ユニットのパフォーマンス データを表示するには、Windows デベロッパー センター ダッシュボードにある次のレポートを使うことができます。
@@ -24,7 +31,7 @@ ms.openlocfilehash: b75d9310e577c77d1caed3e9f34762e925eb11ae
 
 以降のセクションでは、これらのレポートについてさらに詳しく説明します。
 
-## アプリ レベルの広告パフォーマンス レポート
+## <a name="app-level-advertising-performance-report"></a>アプリ レベルの広告パフォーマンス レポート
 
 このページは、ダッシュボードで現在選択されているアプリ内の Microsoft 広告ユニットのパフォーマンス データを、グラフ、世界地図、表の形式で提供します。 このレポートを表示するには、ダッシュボードでいずれかのアプリを選択し、ナビゲーション ウィンドウで **[分析]** &gt; **[広告パフォーマンス]** の順にクリックします。
 
@@ -46,13 +53,13 @@ ms.openlocfilehash: b75d9310e577c77d1caed3e9f34762e925eb11ae
 
 データをさらに詳しく分析するには、**[レポートをダウンロード]** を選択し、Microsoft Excel または同様のプログラムで CSV (コンマ区切り値) ファイルを開きます。
 
-## アカウント レベルの広告パフォーマンス レポート
+## <a name="account-level-advertising-performance-report"></a>アカウント レベルの広告パフォーマンス レポート
 
 このページは、開発者アカウントに登録されているアプリ内で使用されている Microsoft 広告ユニットとコミュニティ広告のパフォーマンス データを提供します。 このレポートを表示するには、[ダッシュボード概要] ページに移動し、ナビゲーション ウィンドウの **[広告パフォーマンス]** をクリックします。
 
 このページは次のセクションで構成されます。
 
-### Microsoft Advertising
+### <a name="microsoft-advertising"></a>Microsoft Advertising
 
 このレポートは、アプリで使用されているすべての Microsoft 広告ユニットのパフォーマンスを提供します。 このレポートには、デベロッパー センターのアプリに正常にマップされていない pubCenter 広告ユニットのパフォーマンス データも含まれます。
 
@@ -70,7 +77,7 @@ pubCenter を使ってアプリの広告ユニットを作成しているが、�
 
 データをさらに詳しく分析するには、**[レポートをダウンロード]** を選択し、Microsoft Excel または同様のプログラムで CSV (コンマ区切り値) ファイルを開きます。
 
-### Microsoft コミュニティ広告
+### <a name="microsoft-community-ads"></a>Microsoft コミュニティ広告
 
 このセクションは、ダッシュボードで現在選択されているアプリ内のコミュニティ広告のパフォーマンス データを、グラフと世界地図の形式で提供します。 コミュニティ広告について詳しくは、「[コミュニティ広告について](about-community-ads.md)」をご覧ください。
 
@@ -85,7 +92,7 @@ pubCenter を使ってアプリの広告ユニットを作成しているが、�
 
 グラフ ビューや世界地図ビューでこれらのメトリックのいずれかを分析するには、**[グラフ]** または **[マップ]** をクリックします。 別のメトリックに切り替えるには、グラフや地図の上のヘッダーをクリックします。 地図ビューで、濃い網掛けは高い値を示し、淡い網掛けは低い値を示します。 地図上の特定の国や地域をポイントすることによって、選択したメトリックの値を分析できます。 地図の任意の領域を拡大して、小さい国々のデータを表示することもできます。
 
-## レポートに関する注意事項
+## <a name="notes-about-the-reports"></a>レポートに関する注意事項
 
 ここでは、広告パフォーマンス レポートを使用するときの注意事項を示します。
 
@@ -96,9 +103,4 @@ pubCenter を使ってアプリの広告ユニットを作成しているが、�
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

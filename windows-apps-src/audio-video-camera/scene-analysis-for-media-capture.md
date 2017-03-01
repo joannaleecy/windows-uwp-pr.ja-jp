@@ -3,20 +3,27 @@ author: drewbatgit
 ms.assetid: B5D915E4-4280-422C-BA0E-D574C534410B
 description: "この記事では、SceneAnalysisEffect と FaceDetectionEffect を使ってメディア キャプチャのプレビュー ストリームの内容を分析する方法について説明します。"
 title: "カメラ フレームの分析の効果"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: a5af97156ade8574537e38e50c45b9b15f506980
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c7f46130feac43211bccf57191d940acb8198965
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# カメラ フレームの分析の効果
+# <a name="effects-for-analyzing-camera-frames"></a>カメラ フレームの分析の効果
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\ ]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\ ]
 
 
 この記事では、[**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) と [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) を使ってメディア キャプチャのプレビュー ストリームの内容を分析する方法について説明します。
 
-## シーン分析効果
+## <a name="scene-analysis-effect"></a>シーン分析効果
 
 [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) は、メディア キャプチャのプレビュー ストリームに含まれるビデオ フレームを分析し、キャプチャ結果を向上させるための処理オプションを推奨します。 現時点では、ハイ ダイナミック レンジ (HDR) 処理を使用してキャプチャを向上できるかどうかの検出がサポートされています。
 
@@ -28,13 +35,13 @@ HDR の使用が推奨された場合は、次の方法で実行できます。
 
 -   [**VariablePhotoSequenceControl**](https://msdn.microsoft.com/library/windows/apps/dn640573) でフレームのシーケンスをキャプチャし、カスタム HDR 実装を使って合成します。 詳しくは、「[可変の写真シーケンス](variable-photo-sequence.md)」をご覧ください。
 
-### シーン分析の名前空間
+### <a name="scene-analysis-namespaces"></a>シーン分析の名前空間
 
 シーン分析を使うには、基本的なメディア キャプチャに必要な名前空間に加え、次の名前空間をアプリに追加する必要があります。
 
 [!code-cs[SceneAnalysisUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSceneAnalysisUsing)]
 
-### シーン分析効果を初期化してプレビュー ストリームに追加する
+### <a name="initialize-the-scene-analysis-effect-and-add-it-to-the-preview-stream"></a>シーン分析効果を初期化してプレビュー ストリームに追加する
 
 ビデオ効果は、2 つの API を使って実装されます。1 つは効果の定義であり、キャプチャ デバイスで効果を初期化するために必要となる設定を提供します。もう 1 つは効果のインスタンスであり、効果を制御するために使用できます。 効果のインスタンスには、コードのいたるところからアクセスする必要があるので、通常はそのオブジェクトを保持するメンバー変数を宣言する必要があります。
 
@@ -50,7 +57,7 @@ HDR の使用が推奨された場合は、次の方法で実行できます。
 
 [!code-cs[CreateSceneAnalysisEffectAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateSceneAnalysisEffectAsync)]
 
-### SceneAnalyzed イベント ハンドラーを実装する
+### <a name="implement-the-sceneanalyzed-event-handler"></a>SceneAnalyzed イベント ハンドラーを実装する
 
 シーン分析の結果は、**SceneAnalyzed** イベント ハンドラーに返されます。 ハンドラーに渡された [**SceneAnalyzedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948922) オブジェクトには、[**SceneAnalysisEffectFrame**](https://msdn.microsoft.com/library/windows/apps/dn948907) オブジェクトが含まれ、これには [**HighDynamicRangeOutput**](https://msdn.microsoft.com/library/windows/apps/dn948830) オブジェクトが含まれています。 ハイ ダイナミック レンジ出力の [**Certainty**](https://msdn.microsoft.com/library/windows/apps/dn948833) プロパティの値は、0 ～ 1.0 となります。0 は、HDR 処理によってキャプチャの結果が向上しないことを示します。1.0 は、HDR 処理によって結果が向上することを示します。 HDR を使うかどうかのしきい値を決めておく、またはユーザーに結果を表示してユーザーが決めるようにすることもできます。
 
@@ -58,23 +65,23 @@ HDR の使用が推奨された場合は、次の方法で実行できます。
 
 ハンドラーに渡された [**HighDynamicRangeOutput**](https://msdn.microsoft.com/library/windows/apps/dn948830) オブジェクトには、[**FrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn948834) プロパティもあります。このプロパティは、HDR 処理用の可変の写真シーケンスをキャプチャするために推奨されるフレーム コントローラーを指定します。 詳しくは、「[可変の写真シーケンス](variable-photo-sequence.md)」をご覧ください。
 
-### シーン分析効果をクリーンアップする
+### <a name="clean-up-the-scene-analysis-effect"></a>シーン分析効果をクリーンアップする
 
 キャプチャが終了したら、**MediaCapture** オブジェクトを破棄する前に、効果の [**HighDynamicRangeAnalyzer.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948827) プロパティを false に設定してシーン分析効果を無効にし、[**SceneAnalyzed**](https://msdn.microsoft.com/library/windows/apps/dn948920) イベント ハンドラーの登録を解除する必要があります。 効果が追加されたのはビデオ プレビュー ストリームであるため、ビデオ プレビュー ストリームを指定して [**MediaCapture.ClearEffectsAsync**](https://msdn.microsoft.com/library/windows/apps/br226592) を呼び出します。 最後に、メンバー変数を null に設定します。
 
 [!code-cs[CleanUpSceneAnalysisEffectAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpSceneAnalysisEffectAsync)]
 
-## 顔検出効果
+## <a name="face-detection-effect"></a>顔検出効果
 
 [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) は、メディア キャプチャのプレビュー ストリーム内で顔の位置を特定します。 この効果によって、プレビュー ストリーム内で顔が検出されたときに通知を受け取ることができ、プレビュー フレーム内で検出された顔ごとに境界ボックスが表示されます。 サポートされているデバイスでは、シーン内の最も重要な顔に対して露出の強化やフォーカスが行われます。
 
-### 顔検出の名前空間
+### <a name="face-detection-namespaces"></a>顔検出の名前空間
 
 顔検出を使うには、基本的なメディア キャプチャに必要な名前空間に加え、次の名前空間をアプリに追加する必要があります。
 
 [!code-cs[FaceDetectionUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFaceDetectionUsing)]
 
-### 顔検出効果を初期化してプレビュー ストリームに追加する
+### <a name="initialize-the-face-detection-effect-and-add-it-to-the-preview-stream"></a>顔検出効果を初期化してプレビュー ストリームに追加する
 
 ビデオ効果は、2 つの API を使って実装されます。1 つは効果の定義であり、キャプチャ デバイスで効果を初期化するために必要となる設定を提供します。もう 1 つは効果のインスタンスであり、効果を制御するために使用できます。 効果のインスタンスには、コードのいたるところからアクセスする必要があるので、通常はそのオブジェクトを保持するメンバー変数を宣言する必要があります。
 
@@ -88,7 +95,7 @@ HDR の使用が推奨された場合は、次の方法で実行できます。
 
 [!code-cs[CreateFaceDetectionEffectAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateFaceDetectionEffectAsync)]
 
-### 顔が検出されたときに通知を受け取る
+### <a name="receive-notifications-when-faces-are-detected"></a>顔が検出されたときに通知を受け取る
 
 顔が検出されたときに、ビデオ プレビュー内で検出された顔の周りにボックスを描画するなど、特定の操作を実行するには、[**FaceDetected**](https://msdn.microsoft.com/library/windows/apps/dn948820) イベントに登録します。
 
@@ -98,19 +105,19 @@ HDR の使用が推奨された場合は、次の方法で実行できます。
 
 [!code-cs[FaceDetected](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFaceDetected)]
 
-### 顔検出効果をクリーンアップする
+### <a name="clean-up-the-face-detection-effect"></a>顔検出効果をクリーンアップする
 
 キャプチャが終了したら、**MediaCapture** オブジェクトを破棄する前に、[**FaceDetectionEffect.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948818) で顔検出効果を無効にし、[**FaceDetected**](https://msdn.microsoft.com/library/windows/apps/dn948820) イベント ハンドラーを登録していた場合は登録を解除する必要があります。 効果が追加されたのはビデオ プレビュー ストリームであるため、ビデオ プレビュー ストリームを指定して [**MediaCapture.ClearEffectsAsync**](https://msdn.microsoft.com/library/windows/apps/br226592) を呼び出します。 最後に、メンバー変数を null に設定します。
 
 [!code-cs[CleanUpFaceDetectionEffectAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpFaceDetectionEffectAsync)]
 
-### 検出された顔に対するフォーカスや露出のサポートを確認する
+### <a name="check-for-focus-and-exposure-support-for-detected-faces"></a>検出された顔に対するフォーカスや露出のサポートを確認する
 
 すべてのデバイスに、検出された顔に基づいてフォーカスや露出を調整できるキャプチャ デバイスが搭載されているとは限りません。 顔検出はデバイス リソースを消費するため、キャプチャを強化する機能を使用できるデバイスでのみ顔検出を有効にすることもできます。 顔に基づくキャプチャの最適化が利用可能かどうかを確認するには、初期化された [MediaCapture](capture-photos-and-video-with-mediacapture.md) に対する [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) を取得してから、ビデオ デバイス コントローラーの [**RegionsOfInterestControl**](https://msdn.microsoft.com/library/windows/apps/dn279064) を取得します。 [**MaxRegions**](https://msdn.microsoft.com/library/windows/apps/dn279069) で少なくとも 1 つの領域がサポートされているかどうかを確認します。 次に、[**AutoExposureSupported**](https://msdn.microsoft.com/library/windows/apps/dn279065) または [**AutoFocusSupported**](https://msdn.microsoft.com/library/windows/apps/dn279066) のいずれかが true であるかどうかを確認します。 これらの条件が満たされている場合は、デバイスで顔検出を利用してキャプチャを強化できます。
 
 [!code-cs[AreFaceFocusAndExposureSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetAreFaceFocusAndExposureSupported)]
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [カメラ](camera.md)
 * [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
@@ -120,10 +127,5 @@ HDR の使用が推奨された場合は、次の方法で実行できます。
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,16 +3,23 @@ author: mtoepke
 title: "OpenGL ES 2.0 から Direct3D 11 への移植"
 description: "OpenGL ES 2.0 グラフィックス パイプラインを Direct3D 11 と Windows ランタイムに移植するための記事、概要、チュートリアルを紹介します。"
 ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、ゲーム、OpenGL、Direct3D 11, 移植, グラフィックス"
 translationtype: Human Translation
-ms.sourcegitcommit: 814f056eaff5419b9c28ba63cf32012bd82cc554
-ms.openlocfilehash: aab0c3e9f3816e0657dfb6fec4917d62f2be5280
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 14ed2be84f295570dc95b3f1d28dfdd3720bada4
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# OpenGL ES 2.0 から Direct3D 11 への移植
+# <a name="port-from-opengl-es-20-to-direct3d-11"></a>OpenGL ES 2.0 から Direct3D 11 への移植
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 OpenGL ES 2.0 グラフィックス パイプラインを Direct3D 11 と Windows ランタイムに移植するための記事、概要、チュートリアルを紹介します。
 
@@ -60,10 +67,5 @@ OpenGL ES 2.0 グラフィックス パイプラインを Direct3D 11 と Window
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

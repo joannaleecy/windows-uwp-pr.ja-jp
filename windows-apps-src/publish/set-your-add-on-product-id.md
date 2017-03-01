@@ -3,19 +3,26 @@ author: jnHs
 Description: "Windows デベロッパー センター ダッシュボードで新しいアドオンを作成する際は、製品の種類を指定して、製品 ID を割り当てる必要があります。"
 title: "アドオンの製品の種類と製品 ID を設定する"
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: e59324aca65cf8baacb085da22a20d952fdb8c9a
-ms.openlocfilehash: 2a469506c8b440e1aa8555ac57b88f2026ae4d8e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: abd6c27367476e5f1da11cde14b7d7f08105ad3e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アドオンの製品の種類と製品 ID を設定する
+# <a name="set-your-add-on-product-type-and-product-id"></a>アドオンの製品の種類と製品 ID を設定する
 
 アドオンは、ダッシュボードで作成済みのアプリと関連付けている必要があります (アプリが未申請であっても同様)。 アプリの **[概要]** ページまたは **[アドオン]** ページに **[新しいアドオンを作成する]** ボタンがあります。
 
 このボタンをクリックすると、**[新しいアドオンを作成する]** ページが表示されます。 ここで、製品の種類を指定して、製品 ID を割り当てる必要があります。
 
-## 製品の種類
+## <a name="product-type"></a>製品の種類
 
 まず、提供するアドオンの種類を指定する必要があります。 この選択内容は、ユーザーがアドオンをどのように使うことができるかを示しています。
 
@@ -30,7 +37,7 @@ ms.openlocfilehash: 2a469506c8b440e1aa8555ac57b88f2026ae4d8e
 
 1 回だけ購入できる製品の場合は、**[永続的]** を選択する必要があります。 永続的なアドオンは多くの場合、アプリの追加機能のロックを解除するために使います。 永続的なアドオンは消費されませんが、**[製品の有効期限]** を設定して、設定された期間の後期限が切れるようにすることができます (1 ～ 365 日間のオプションがあります)。 永続的なアドオンの **[製品の有効期限]** の既定値は、**[無期限]** です。つまり、アドオンの期限は切れません。 アドオンの申請プロセスの[アドオンのプロパティ](enter-add-on-properties.md)の手順で、別の期限に変更することができます。
 
-## 製品 ID
+## <a name="product-id"></a>製品 ID
 
 アドオンの一意の製品 ID を入力します。 アドオンの製品 ID は、[アプリのコードで IAP を呼び出す](https://msdn.microsoft.com/library/windows/apps/mt219684)ときに参照する ID になります。
 
@@ -46,10 +53,5 @@ ms.openlocfilehash: 2a469506c8b440e1aa8555ac57b88f2026ae4d8e
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

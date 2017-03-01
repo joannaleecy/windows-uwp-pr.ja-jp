@@ -5,18 +5,25 @@ title: "タイル"
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 37de1a413ac9b5e74c905c140899ec7577a6fae5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 11640527ffdb6883885345646310e5e4b786ad2b
+ms.lasthandoff: 02/07/2017
 
 ---
-# UWP アプリのタイル
+# <a name="tiles-for-uwp-apps"></a>UWP アプリのタイル
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 *タイル*とは、[スタート] メニュー上でアプリを表すものです。 すべてのアプリにはタイルがあります。 Microsoft Visual Studio で作成した新しいユニバーサル Windows プラットフォーム (UWP) アプリ プロジェクトには、アプリの名前とロゴを表示する既定のタイルが含まれます。 このタイルは、アプリを初めてインストールしたときに Windows に表示されます。 アプリをインストールしたら、新しい情報 (ニュース ヘッドライン、最新の未読メッセージの件名など) をユーザーに伝えるようにタイルを変更するなど、通知を通じてタイルの内容を変更できます。
 
-## 既定のタイルを構成する
+## <a name="configure-the-default-tile"></a>既定のタイルを構成する
 
 
 Visual Studio で新しいプロジェクトを作成すると、アプリの名前とロゴを表示する単純な既定のタイルが作成されます。
@@ -76,7 +83,7 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
       </Applications>
 ```
 
-## 通知を使ってタイルをカスタマイズする
+## <a name="use-notifications-to-customize-your-tile"></a>通知を使ってタイルをカスタマイズする
 
 
 アプリをインストールした後は、通知を使ってタイルをカスタマイズできます。 これは、アプリを初めてを起動したときや、プッシュ通知など、イベントへの応答として実行できます。
@@ -100,10 +107,5 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

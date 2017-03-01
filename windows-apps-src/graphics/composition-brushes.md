@@ -3,14 +3,21 @@ author: scottmill
 ms.assetid: 03dd256f-78c0-e1b1-3d9f-7b3afab29b2f
 title: "コンポジションのブラシ"
 description: "ブラシは、その出力で Visual の領域を塗りつぶします。 さまざまなブラシで、出力の種類もさまざまです。"
+ms.author: scotmi
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 11989aafb86d280b93eed7c2e3f016b5914b15ab
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9affb4fab1931c7584d86bfb07797345788c28f9
+ms.lasthandoff: 02/07/2017
 
 ---
-# コンポジションのブラシ
+# <a name="composition-brushes"></a>コンポジションのブラシ
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 ブラシは、その出力で [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) の領域を塗りつぶします。 さまざまなブラシで、出力の種類もさまざまです。 コンポジション API には、次の 3 種類のブラシが用意されています。
 
@@ -27,19 +34,19 @@ ms.openlocfilehash: 11989aafb86d280b93eed7c2e3f016b5914b15ab
 -   [サーフェス ブラシの使用](./composition-brushes.md#using-surface-brush)
 -   [ストレッチと整列の構成](./composition-brushes.md#configuring-stretch-and-alignment)
 
-## 必要条件
+## <a name="prerequisites"></a>必要条件
 
 この概要では、「[コンポジション UI](visual-layer.md)」で説明されているように、基本的なコンポジション アプリケーションの構造を理解していることを前提としています。
 
-## 色の基本
+## <a name="color-basics"></a>色の基本
 
 [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) を使って塗りつぶす前に、色を選択する必要があります。 コンポジション API では、Windows ランタイムの構造体 Color を使って色を表します。 Color 構造体では、sRGB エンコーディングを使用します。 sRGB エンコードは、色をアルファ、赤、緑、青の 4 つのチャンネルに分割します。 各コンポーネントは、浮動小数点値の、通常は 0.0 ～ 1.0 の範囲で表されます。 値が 0.0 の場合はその色がまったく含まれないことを意味し、値が 1.0 の場合はその色が完全に表示されていることを意味します。 アルファ コンポーネントの場合、0.0 は完全に透明な色を表し、1.0 は完全に不透明な色を表します。
 
-### アルファ モード
+### <a name="alpha-modes"></a>アルファ モード
 
 [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) の色の値は、常にストレート アルファとして解釈されます。
 
-## 色ブラシの使用
+## <a name="using-color-brush"></a>色ブラシの使用
 
 色ブラシを作成するには、Compositor.[**CreateColorBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositor.createcolorbrush.aspx) メソッドを呼び出します。このメソッドは [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) を返します。 **CompositionColorBrush** の既定の色は \#00000000 です。 次の図とコードは、黒の色ブラシで描かれた四角形を、色の値が 0x9ACD32 である単色ブラシで塗りつぶす小規模なビジュアル ツリーを示しています。
 
@@ -68,7 +75,7 @@ Visual2.Offset = new Vector3(3, 3, 0);
 
 他のブラシとは異なり、[**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) の作成は比較的安価な操作です。 毎回ほとんどまたはまったくパフォーマンスに影響を与えずに、**CompositionColorBrush** オブジェクトを作成できます。
 
-## サーフェス ブラシの使用
+## <a name="using-surface-brush"></a>サーフェス ブラシの使用
 
 [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) は、コンポジション サーフェス ([**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) オブジェクトで表される) を使ってビジュアルを塗りつぶします。 次の図は、D2D を使って **ICompositionSurface** にレンダリングされたリコリスのビットマップで塗りつぶされた正方形のビジュアルを示しています。
 
@@ -92,7 +99,7 @@ LoadImage(_surfaceBrush, "ms-appx:///Assets/liqorice.png");
 visual.Brush = _surfaceBrush;
 ```
 
-## ストレッチと整列の構成
+## <a name="configuring-stretch-and-alignment"></a>ストレッチと整列の構成
 
 [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 用の [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) の内容が、描画されるビジュアルの領域を満たさない場合があります。 この場合、コンポジション API はブラシの [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx)、[**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio)、および [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) モードの設定を使って、残りの領域を塗りつぶす方法を決定します。
 
@@ -108,14 +115,10 @@ visual.Brush = _surfaceBrush;
 
  
 
- 
+## <a name="related-topics"></a>関連トピック
+[BeginDraw と EndDraw によるコンポジションでの DirectX と Direct2D のネイティブ相互運用](composition-native-interop.md)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

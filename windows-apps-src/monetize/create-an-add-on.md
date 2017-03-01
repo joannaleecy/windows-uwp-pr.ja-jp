@@ -3,13 +3,20 @@ author: mcleanbyron
 ms.assetid: 5BD650D2-AA26-4DE9-8243-374FDB7D932B
 description: "Windows ストア申請 API 内のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されいているアプリのアドオンを作成します。"
 title: "Windows ストア申請 API を使用したアドオンの作成"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、Windows ストア申請 API、アドオンの作成、アプリ内製品、IAP"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 11cf25fbeacbe3145c9cc3f4a80bdcce3028bf55
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0492398872142aabd32d3a4d68d55b4e326f027e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Windows ストア申請 API を使用したアドオンの作成
+# <a name="create-an-add-on-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアドオンの作成
 
 
 
@@ -18,16 +25,16 @@ Windows ストア申請 API 内のこのメソッドを使用して、Windows �
 
 >**注:**&nbsp;&nbsp;このメソッドは、申請なしでアドオンを作成します。 アドオンの申請を作成する方法については、「[アドオンの申請の管理](manage-add-on-submissions.md)」のメソッドをご覧ください。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
+>**注:**&nbsp;&nbsp;このメソッドは、Windows ストア提出 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
-## 要求
+## <a name="request"></a>要求
 
 このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
 
@@ -38,7 +45,7 @@ Windows ストア申請 API 内のこのメソッドを使用して、Windows �
 <span/>
  
 
-### 要求ヘッダー
+### <a name="request-header"></a>要求ヘッダー
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -46,7 +53,7 @@ Windows ストア申請 API 内のこのメソッドを使用して、Windows �
 
 <span/>
 
-### 要求本文
+### <a name="request-body"></a>要求本文
 
 要求本文には次のパラメーターがあります。
  
@@ -58,7 +65,7 @@ Windows ストア申請 API 内のこのメソッドを使用して、Windows �
 
 <span/>
 
-### 要求の例
+### <a name="request-example"></a>要求の例
 
 次の例は、アプリの新しいコンシューマブルなアドオンを作成する方法を示しています。
 
@@ -73,7 +80,7 @@ Content-Type: application/json
 }
 ```
 
-## 応答
+## <a name="response"></a>応答
 
 次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答の本文内の値について詳しくは、[アドオンのリソース](manage-add-ons.md#add-on-object)をご覧ください。
 
@@ -94,7 +101,7 @@ Content-Type: application/json
 }
 ```
 
-## エラー コード
+## <a name="error-codes"></a>エラー コード
 
 要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。
 
@@ -105,16 +112,11 @@ Content-Type: application/json
 
 <span/>
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [アドオンの申請の管理](manage-add-on-submissions.md)
 * [すべてのアドオンの入手](get-all-add-ons.md)
 * [アドオンの入手](get-an-add-on.md)
 * [アドオンの削除](delete-an-add-on.md)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

@@ -3,9 +3,16 @@ author: mcleanbyron
 Description: "このチュートリアルでは、A/B テストを使用して最初の実験を作成、実行、管理します。"
 title: "A/B テストを使用して最初の実験を作成および実行する"
 ms.assetid: 16A2B129-14E1-4C68-86E8-52F1BE58F256
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、Microsoft Store Services SDK、A/B テスト、実験"
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: 65785e53b2e5ba788dbda533373737e193e1c792
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fb9e93747fa77031fe906d9ab7463fc41b73cdeb
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -103,9 +110,4 @@ ms.openlocfilehash: 65785e53b2e5ba788dbda533373737e193e1c792
 * [デベロッパー センター ダッシュボードで実験を定義する](define-your-experiment-in-the-dev-center-dashboard.md)
 * [デベロッパー センター ダッシュボードで実験を管理する](manage-your-experiment.md)
 * [A/B テストを使用してアプリの実験を実行する](run-app-experiments-with-a-b-testing.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

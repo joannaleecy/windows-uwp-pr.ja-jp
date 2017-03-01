@@ -3,13 +3,20 @@ author: mtoepke
 title: "Marble Maze のサンプルへのオーディオの追加"
 description: "このドキュメントでは、オーディオを扱う際に考慮する必要のある主な手法について説明すると共に、それらが Marble Maze でどのように適用されているかを紹介します。"
 ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、オーディオ、ゲーム、サンプル"
 translationtype: Human Translation
-ms.sourcegitcommit: c663692e31a62fdf40df9d706070d0d2ce0e1cdd
-ms.openlocfilehash: 9c35ca4d475783e52ba68d611c7bea49a927a4e5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3530880da3bc74b146c6f6fbb9bb9220caaca0d0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Marble Maze のサンプルへのオーディオの追加
+# <a name="adding-audio-to-the-marble-maze-sample"></a>Marble Maze のサンプルへのオーディオの追加
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
@@ -31,7 +38,7 @@ Marble Maze は、バックグラウンドで再生する音楽に加え、ゲ�
 -   ヘッドホンなどのデバイスの変更は、オーディオ リソースとインターフェイスをすべて解放し、再作成することによって処理します。
 -   ディスク領域とストリーミングのコストを最小限に抑える必要がある場合は、オーディオ ファイルを圧縮します。 それ以外の場合は、オーディオを圧縮しない方が、読み込み速度が高くなります。
 
-## XAudio2 と Microsoft メディア ファンデーションの概要
+## <a name="introducing-xaudio2-and-microsoft-media-foundation"></a>XAudio2 と Microsoft メディア ファンデーションの概要
 
 
 XAudio2 は、ゲームのオーディオ サポートに特化した Windows 向けの低水準オーディオ ライブラリです。 ゲーム用のデジタル シグナル処理 (DSP) やオーディオ グラフ エンジンを備えています。 XAudio2 は前身の DirectSound と XAudio を拡張したものであり、SIMD 浮動小数点アーキテクチャや HD オーディオなどのコンピューター トレンドをサポートします。 また、今日のゲームに求められる複雑なサウンド処理のニーズにも対応します。
@@ -44,7 +51,7 @@ XAudio2 は、ゲームのオーディオ サポートに特化した Windows �
 -   「サブミックス ボイス」はオーディオ データの処理を行う。 たとえば、オーディオ ストリームに変更を加えたり、複数のストリームを 1 つにまとめたりすることができます。 Marble Maze は、サブミックスを使ってリバーブ エフェクトを作成しています。
 -   「マスタリング ボイス」は、ソース ボイスとサブミックス ボイスのデータを結合し、そのデータをオーディオ ハードウェアに送る。
 -   オーディオ グラフは、アクティブなサウンド 1 つにつき 1 つのソース ボイス、0 個以上のサブミックス ボイス、1 つのマスタリング ボイスを含んでいる。
--   ボイスまたはエンジン オブジェクト内でイベントが発生したことは、コールバックによってクライアント コードに通知される。 コールバックを使うことで、XAudio2 がバッファーを残して終了した場合にメモリを再利用したり、オーディオ デバイスが変更された場合 (ヘッドホンの接続時や切断時など) に対応したりできます。 Marble Maze がこの機構を使ってデバイスの変更を処理するしくみについては、このドキュメントの「[ヘッドホンとデバイスの変更の処理](#phones)」セクションで説明します。
+-   ボイスまたはエンジン オブジェクト内でイベントが発生したことは、コールバックによってクライアント コードに通知される。 コールバックを使うことで、XAudio2 がバッファーを残して終了した場合にメモリを再利用したり、オーディオ デバイスが変更された場合 (ヘッドホンの接続時や切断時など) に対応したりできます。 Marble Maze がこの機構を使ってデバイスの変更を処理するしくみについては、このドキュメントの「 [ヘッドホンとデバイスの変更の処理](#handling-headphones-and-device-changes) 」セクションで説明します。
 
 Marble Maze は、2 つのオーディオ エンジン (つまり、2 つの [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) オブジェクト) を使ってオーディオを処理します。 一方のエンジンが BGM を、もう一方のエンジンがゲーム プレイ音を処理します。
 
@@ -54,14 +61,14 @@ Marble Maze は、2 つのオーディオ エンジン (つまり、2 つの [**
 
 XAudio2 について詳しくは、「[プログラミング ガイド](https://msdn.microsoft.com/library/windows/desktop/ee415737)」をご覧ください。 メディア ファンデーションについて詳しくは、[Microsoft メディア ファンデーションに関するページ](https://msdn.microsoft.com/library/windows/desktop/ms694197) をご覧ください。
 
-## オーディオ リソースの初期化
+## <a name="initializing-audio-resources"></a>オーディオ リソースの初期化
 
 
 Marble Maze では、BGM に Windows Media オーディオ (.wma) ファイルが、ゲーム プレイ音に WAV (.wav) ファイルが使われています。 これらの形式は、メディア ファンデーションによってサポートされます。 .wav ファイル形式は XAudio2 がネイティブにサポートしていますが、適切な XAudio2 データ構造体にデータを設定するためには、ゲーム内からファイル形式を手動で解析する必要があります。 メディア ファンデーションを使った方が簡単に .wav ファイルを扱うことができるため、Marble Maze ではメディア ファンデーションを使っています。 メディア ファンデーションでサポートされる全メディア形式の一覧については、「[メディア ファンデーションでサポートされるメディア形式](https://msdn.microsoft.com/library/windows/desktop/dd757927)」をご覧ください。 Marble Maze では、デザイン時と実行時に別々のオーディオ形式を使うことはしていません。また、XAudio2 でサポートされる ADPCM 圧縮機能は使っていません。 XAudio2 の ADPCM 圧縮について詳しくは、「[ADPCM の概要](https://msdn.microsoft.com/library/windows/desktop/ee415711)」をご覧ください。
 
 **MarbleMaze::CreateDeviceIndependentResources** から呼び出される **Audio::CreateResources** メソッドは、ファイルからオーディオ ストリームを読み込み、XAudio2 エンジン オブジェクトを初期化して、ソース ボイス、サブミックス ボイス、マスタリング ボイスを作成します。
 
-###  XAudio2 エンジンの作成
+###  <a name="creating-the-xaudio2-engines"></a>XAudio2 エンジンの作成
 
 既に説明したように、Marble Maze では、オーディオ エンジンを表す [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) オブジェクト (使うオーディオ エンジンごとに 1 つ) を作成します。 オーディオ エンジンを作成するには、[**XAudio2Create**](https://msdn.microsoft.com/library/windows/desktop/ee419212) 関数を呼び出します。 BGM を処理するオーディオ エンジンの作成方法を次の例に示します。
 
@@ -75,7 +82,7 @@ DX::ThrowIfFailed(
 
 UWP アプリでの [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) インターフェイスの扱いは、デスクトップ アプリの場合とは 2 つの点で異なります。 まず、[**XAudio2Create**](https://msdn.microsoft.com/library/windows/desktop/ee419212) を呼び出す前に、**CoInitializeEx** を呼び出す必要はありません。 また、**IXAudio2** では、デバイスの列挙がサポートされません。 オーディオ デバイスの列挙方法については、「[デバイスの列挙](https://msdn.microsoft.com/library/windows/apps/hh464977)」をご覧ください。
 
-###  マスタリング ボイスの作成
+###  <a name="creating-the-mastering-voices"></a>マスタリング ボイスの作成
 
 以下の例では、**Audio::CreateResources** メソッドを使って BGM のマスタリング ボイスを作成しています。 [**IXAudio2::CreateMasteringVoice**](https://msdn.microsoft.com/library/windows/desktop/hh405048) の呼び出しは、2 つの入力チャネルを指定します。 これによって、リバーブ エフェクトのロジックが単純化されます。 **XAUDIO2\_DEFAULT\_SAMPLERATE** の指定は、[サウンド] コントロール パネルで指定されたサンプル レートを使うようにオーディオ エンジンに指示します。 この例では、**m\_musicMasteringVoice** が [**IXAudio2MasteringVoice**](https://msdn.microsoft.com/library/windows/desktop/ee415912) オブジェクトです。
 
@@ -103,7 +110,7 @@ DX::ThrowIfFailed(
 
 ゲーム プレイ音についても、**Audio::CreateResources** メソッドを使い、同様の手順でマスタリング ボイスを作成しますが、*StreamCategory* パラメーターに **AudioCategory\_GameEffects** (既定値) が指定される点が異なります。 BGM の場合は、**AudioCategory\_GameMedia** を指定します。こうすることで、ゲームをプレイしている間、ユーザーは、異なるアプリケーションからの音楽を聴くことができます。 音楽アプリの再生中、**AudioCategory\_GameMedia** オプションによって作成されたボイスはすべて Windows によってミュートされます。 その場合もゲーム プレイ音は聞こえます。ゲーム プレイ音は **AudioCategory\_GameEffects** オプションによって作成されているためです。 オーディオ カテゴリについて詳しくは、[**AUDIO\_STREAM\_CATEGORY**](https://msdn.microsoft.com/library/windows/desktop/hh404178) 列挙体に関するページをご覧ください。
 
-###  リバーブ エフェクトの作成
+###  <a name="creating-the-reverb-effect"></a>リバーブ エフェクトの作成
 
 それぞれのボイスには、オーディオを処理する一連の効果を XAudio2 を使って作成することができます。 そのような一連の効果をエフェクト チェーンと呼びます。 エフェクト チェーンは、1 つまたは複数の効果をボイスに適用するときに使います。 エフェクト チェーンは破壊的に実行できます。つまり、チェーン内の各効果がオーディオ バッファーを上書きできます。 XAudio2 では出力バッファーが無音で初期化される保証がないため、この特性は重要です。 XAudio2 では、エフェクト オブジェクトが、XAPO (Cross-Platform Audio Processing Object) によって表されます。 XAPO について詳しくは、「[XAPO の概要](https://msdn.microsoft.com/library/windows/desktop/ee415735)」をご覧ください。
 
@@ -230,7 +237,7 @@ CreateReverb(
 
 XAudio2 で利用できる効果のソースの一覧については、「[XAudio2 のオーディオ エフェクト](https://msdn.microsoft.com/library/windows/desktop/ee415756)」をご覧ください。
 
-### ファイルからのオーディオ データの読み込み
+### <a name="loading-audio-data-from-file"></a>ファイルからのオーディオ データの読み込み
 
 Marble Maze に定義されている **MediaStreamer** クラスは、メディア ファンデーションを使ってオーディオ リソースをファイルから読み込みます。 Marble Maze は、各オーディオ ファイルの読み込みに **MediaStreamer** オブジェクトを 1 つ使います。
 
@@ -322,7 +329,7 @@ m_maxStreamLengthInBytes =
 m_maxStreamLengthInBytes = (m_maxStreamLengthInBytes + 3) / 4 * 4;
 ```
 
-### ソース ボイスの作成
+### <a name="creating-the-source-voices"></a>ソース ボイスの作成
 
 Marble Maze は、XAudio2 ソース ボイスを作成して、ソース ボイスに含まれるそれぞれのゲーム音と音楽を再生します。 **Audio** クラスには、BGM 用の [**IXAudio2SourceVoice**](https://msdn.microsoft.com/library/windows/desktop/ee415914) オブジェクトと、ゲーム プレイ音を格納する **SoundEffectData** オブジェクトの配列が定義されます。 **SoundEffectData** 構造体は、効果の **IXAudio2SourceVoice** オブジェクトを保持するほか、効果に関連したその他のデータ (オーディオ バッファーなど) を定義します。 Audio.h には **SoundEvent** 列挙体が定義されています。 Marble Maze は、この列挙体を使って各ゲーム プレイ音を識別します。 Audio クラスで、**SoundEffectData** オブジェクトの配列のインデックスとしても、この列挙体が使われます。
 
@@ -393,7 +400,7 @@ else
 }
 ```
 
-## BGM の再生
+## <a name="playing-background-music"></a>BGM の再生
 
 
 ソース ボイスは停止した状態で作成されます。 Marble Maze はゲーム ループ内で BGM を開始します。 **MarbleMaze::Update** の最初の呼び出しで、**Audio::Start** を呼び出して BGM を開始します。
@@ -537,7 +544,7 @@ if(sound == RollingEvent)
 
  
 
-##  ゲームのイベントへの対応
+##  <a name="reacting-to-game-events"></a>ゲームのイベントへの対応
 
 
 ゲームでサウンドの再生と停止のタイミングを制御し、ボリュームやピッチなどのサウンド プロパティを制御するために、**MarbleMaze** クラスには **PlaySoundEffect**、**IsSoundEffectStarted**、**StopSoundEffect**、**SetSoundEffectVolume**、**SetSoundEffectPitch**、**SetSoundEffectFilter** などのメソッドが用意されています。 たとえば、大理石が迷路から落ちた場合、**MarbleMaze::Update** メソッドが **Audio::PlaySoundEffect** メソッドを呼び出して **FallingEvent** サウンドを再生します。
@@ -633,7 +640,7 @@ else
 }
 ```
 
-## イベントの中断と再開への対応
+## <a name="reacting-to-suspend-and-resume-events"></a>イベントの中断と再開への対応
 
 
 ドキュメント「Marble Maze のアプリケーション構造」では、Marble Maze が中断と再開をどのようにサポートするかを説明しています。 ゲームが中断されると、オーディオが一時停止されます。 ゲームが再開されると、オーディオが中断した箇所から再開されます。 このような処理を行うのは、不要な場合はリソースを使わないというベスト プラクティスに従うためです。
@@ -688,7 +695,7 @@ void Audio::ResumeAudio()
 }
 ```
 
-## ヘッドホンとデバイスの変更の処理
+## <a name="handling-headphones-and-device-changes"></a>ヘッドホンとデバイスの変更の処理
 
 
 Marble Maze は、オーディオ デバイスの変更時など、XAudio2 エンジンのエラーをコールバックを使って処理します。 デバイスの変更の一般的な原因は、ユーザーによるヘッドホンの接続と切断です。 デバイスの変更を処理するエンジン コールバックを実装することをお勧めします。 これを行わないと、ユーザーがヘッドホンの接続または切断を行ったときに、ゲームが再開されるまでサウンドの再生が停止します。
@@ -769,7 +776,7 @@ Marble Maze は、利用できるデバイスがない場合に XAudio2 への�
 
  
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [Marble Maze サンプルへの入力と対話機能の追加](adding-input-and-interactivity-to-the-marble-maze-sample.md)
@@ -781,10 +788,5 @@ Marble Maze は、利用できるデバイスがない場合に XAudio2 への�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

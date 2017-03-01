@@ -2,19 +2,27 @@
 author: jwmsft
 title: "バージョン アダプティブ コード"
 description: "以前のバージョンとの互換性を維持しつつ、新しい API を利用する方法について説明します"
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 translationtype: Human Translation
-ms.sourcegitcommit: 24a62c9331d4f651937f3f795fb1e7c9704af2ca
-ms.openlocfilehash: 7656018c61688bddbf23f889a82af4fd6d58c3ea
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: f8d6c28daea2a3d5be67ad2b5da5a05a46f736cc
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# バージョン アダプティブ コード: 以前のバージョンとの互換性を維持しつつ新しい API を使う
+# <a name="version-adaptive-code-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>バージョン アダプティブ コード: 以前のバージョンとの互換性を維持しつつ新しい API を使う
 
 Windows 10 SDK の各リリースには、ユーザーが利用したくなるような魅力的な新機能が追加されています。 ただし、すべてのユーザーがデバイスを最新バージョンの Windows 10 に同時に更新するわけではないため、できるだけ幅広いデバイスでアプリが動作するようにする必要があります。 ここでは、アプリが以前のバージョンの Windows 10 で動作するだけでなく、最新の更新プログラムがインストールされたデバイスでアプリを実行したときに新機能を利用できるように、アプリを設計する方法について説明します。
 
 アプリができるだけ幅広い Windows 10 デバイスをサポートするようにするには、2 つの手順を実行します。 まず、最新の API を対象とするように Visual Studio プロジェクトを構成します。 これは、アプリをコンパイルするときの処理に影響します。 次に、ランタイム チェックを実行して、アプリが実行されているデバイスに存在する API のみを呼び出すことを確認します。
 
-## Visual Studio プロジェクトを構成する
+## <a name="configure-your-visual-studio-project"></a>Visual Studio プロジェクトを構成する
 
 複数の Windows 10 バージョンをサポートするための最初の手順は、Visual Studio プロジェクトで、サポートされる*ターゲット*と*最小*の OS/SDK バージョンを指定することです。
 - *ターゲット*: Visual Studio がアプリ コードをコンパイルし、すべてのツールを実行する際に対象となる SDK バージョン。 この SDK バージョンに含まれているすべての API とリソースは、コンパイル時にアプリ コードで使うことができます。
@@ -44,11 +52,11 @@ Visual Studio で既に作成済みのプロジェクトの最小バージョン
 
 SDK のすべてのリリース版は、「[Windows SDK とエミュレーターのアーカイブ](https://developer.microsoft.com/downloads/sdk-archive)」からダウンロードできます。 最新の Windows Insider Preview SDK は、[Windows Insider](https://insider.windows.com/) サイトの「開発者向け」セクションからダウンロードできます。
 
-## アダプティブ コードを記述する
+## <a name="write-adaptive-code"></a>アダプティブ コードを記述する
 
 アダプティブ コードの記述については、[アダプティブ UI の作成](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml)についての考え方と同じように考えることができます。 最小画面で実行するように基本 UI を設計し、より大きな画面でアプリが実行されていることを検出したときに要素を移動または追加できます。 アダプティブ コードの場合、最小の OS バージョンで実行するように基本コードを記述し、新機能が提供されているより高いバージョンでアプリが実行されていることを検出したときに、機能を手動で選んで追加できます。
 
-### ランタイム API チェック
+### <a name="runtime-api-checks"></a>ランタイム API チェック
 
 呼び出す API が存在するかどうかをテストするために、コードの条件で [Windows.Foundation.Metadata.ApiInformation](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx) クラスを使います。 このテストの条件は、アプリの実行時に必ず評価されますが、API が存在するデバイスに対してのみ **true** と評価され、呼び出しが可能になります。 そのため、特定の OS バージョンでのみ利用できる API を使うアプリを作成するには、バージョン アダプティブ コードを記述できます。
 
@@ -57,7 +65,7 @@ SDK のすべてのリリース版は、「[Windows SDK とエミュレーター
 > [!TIP]
 > さまざまなランタイム API チェックが、アプリのパフォーマンスに影響する可能性があります。 それらの例では、チェックをインラインで示します。 運用コードでは、チェックを一度実行してから結果をキャッシュし、キャッシュされた結果をアプリ全体で使う必要があります。 
 
-### サポートされていないシナリオ
+### <a name="unsupported-scenarios"></a>サポートされていないシナリオ
 
 ほとんどの場合、アプリの最小バージョンを SDK バージョン 10240 に設定したままにし、アプリがそれより新しいバージョンで実行されたときに、ランタイム チェックを使って新しい API を有効にすることができます。 ただし、新機能を使うためにアプリの最小バージョンを上げることが必要になる場合もあります。
 
@@ -65,7 +73,7 @@ SDK のすべてのリリース版は、「[Windows SDK とエミュレーター
 - 以前のバージョンでは使うことができない機能を必要とする新しい API。 サポートされる最小バージョンを、その機能が含まれているバージョンに上げる必要があります。 詳しくは、「[アプリ機能の宣言](../packaging/app-capability-declarations.md)」をご覧ください。
 - generic.xaml に追加された新しいリソース キーのうち、以前のバージョンでは使うことができないリソース キー。 実行時に使われる generic.xaml のバージョンは、デバイスで実行されている OS バージョンによって決まります。 ランタイム API チェックを使って XAML リソースの有無を確認することはできません。 そのため、アプリがサポートする最小バージョンで利用できるリソース キーのみを使う必要があります。そうしないと、[XAMLParseException](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.markup.xamlparseexception.aspx) が原因で実行時にアプリがクラッシュします。
 
-### アダプティブ コードのオプション
+### <a name="adaptive-code-options"></a>アダプティブ コードのオプション
 
 アダプティブ コードを作成するには 2 つの方法があります。 ほとんどの場合、アプリのマークアップを最小バージョンで実行するように記述してから、アプリ コードを使ってより新しい OS 機能 (存在する場合) を活用します。 ただし、表示状態でプロパティを更新する必要があり、OS バージョン間でプロパティ値と列挙値の変更のみがある場合、API の存在に基づいてアクティブ化される拡張可能な状態トリガーを作成できます。
 
@@ -96,11 +104,11 @@ SDK のすべてのリリース版は、「[Windows SDK とエミュレーター
 - セッターを使って値の変更を指定する必要があるため、単純な変更だけを行うことができます。
 - カスタム状態トリガーを設定して使うには、非常に細かい設定が必要です。
 
-## アダプティブ コードの例
+## <a name="adaptive-code-examples"></a>アダプティブ コードの例
 
 このセクションでは、Windows 10 バージョン 1607 (Windows Insider Preview) で新しく追加された API を使うアダプティブ コードの例をいくつか示します。
 
-### 例 1: 新しい列挙値
+### <a name="example-1-new-enum-value"></a>例 1: 新しい列挙値
 
 Windows 10 バージョン 1607 では、[InputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.inputscopenamevalue.aspx) 列挙体に新しい値 **ChatWithoutEmoji** が追加されています。 この新しい入力スコープの入力動作は、**Chat** 入力スコープ (スペルチェック、オートコンプリート、大文字の自動設定) と同じですが、絵文字ボタンのないタッチ キーボードにマップされます。 これは、独自の絵文字ピッカーを作成し、タッチ キーボードに組み込まれている絵文字ボタンを無効にする場合に便利です。 
 
@@ -183,7 +191,7 @@ private void messageBox_Loaded(object sender, RoutedEventArgs e)
 
 XAML またはチェックを含まないコードで ChatWithoutEmoji 値を使うと、ChatWithoutEmoji 値がターゲットの OS バージョンに存在するためエラーなしでコンパイルされます。 また、ターゲットの OS バージョンが含まれたシステムで、エラーなしで実行されます。 ただし、アプリが最小バージョンを使っている OS を含むシステムで実行されると、ChatWithoutEmoji 列挙値が存在しないため実行時にクラッシュします。 そのため、コードでのみこの値を使って、この値が現在のシステムでサポートされている場合だけ呼び出されるように、ランタイム API チェックにラップする必要があります。
 
-### 例 2: 新しいコントロール
+### <a name="example-2-new-control"></a>例 2: 新しいコントロール
 
 通常、新しいバージョンの Windows では、プラットフォームに新機能をもたらす新しいコントロールが UWP API サーフェスに追加されています。 新しいコントロールを活用するには、[ApiInformation.IsTypePresent](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.istypepresent.aspx) メソッドを使います。
 
@@ -326,13 +334,13 @@ public MainPage()
 > [!IMPORTANT]
 > このチェックでは `mediaControl` オブジェクトを `MediaPlayerUserControl` または `MediaElementUserControl` に設定するだけです。 コード内の MediaPlayerElement API と MediaElement API のどちらを使うのかを判断する必要がある他の場所でこれらの条件付きチェックを実行する必要があります。 チェックを一度実行してから結果をキャッシュし、キャッシュされた結果をアプリ全体で使う必要があります。
 
-## 状態トリガーの例
+## <a name="state-trigger-examples"></a>状態トリガーの例
 
 拡張可能な状態トリガーでは、マークアップとコードを一緒に使って、コードでチェックする条件 (ここでは、特定の API が存在するかどうか) に基づいて表示状態の変更をトリガーできます。 関係するオーバーヘッドと、表示状態のみへの制限があるため、一般的なアダプティブ コード シナリオで状態トリガーを使うことはお勧めしません。 
 
 コントロール上のプロパティ値や列挙値の変更など、残りの UI に影響しない、異なる OS バージョン間での小さな UI の変更がある場合のみ、アダプティブ コードに状態トリガーを使ってください。
 
-### 例 1: 新しいプロパティ
+### <a name="example-1-new-property"></a>例 1: 新しいプロパティ
 
 拡張可能な状態トリガーを設定する最初の手順は、[StateTriggerBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.statetriggerbase.aspx) クラスのサブクラスを作成して、API の有無に基づいてアクティブになるカスタム トリガーを作成することです。 この例は、プロパティの有無が XAML に設定されている `_isPresent` 変数に一致する場合にアクティブ化されるトリガーを示しています。
 
@@ -400,7 +408,7 @@ Windows 10 バージョン 1607 では、ユーザーがコントロールを操
 </Grid>
 ```
 
-### 例 2: 新しい列挙値
+### <a name="example-2-new-enum-value"></a>例 2: 新しい列挙値
 
 次の例は、値が存在するかどうかに基づいてさまざまな列挙値を設定する方法を示しています。 カスタム状態トリガーを使って、前のチャットの例と同じ結果を実現します。 この例では、デバイスが Windows 10 バージョン 1607 を実行している場合に、新しい ChatWithoutEmoji 入力スコープを使います。それ以外の場合、**Chat** 入力スコープが使われます。 このトリガーを使う表示状態は、新しい列挙値の有無に基づいて入力スコープが選択される *if-else* スタイルで設定されます。
 
@@ -471,13 +479,8 @@ class IsEnumPresentTrigger : StateTriggerBase
     </VisualStateManager.VisualStateGroups>
 </Grid>
 ```
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 - [UWP アプリ ガイド](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
 - [API コントラクトを使った機能の動的な検出](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

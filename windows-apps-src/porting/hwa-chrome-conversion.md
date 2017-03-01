@@ -3,9 +3,17 @@ author: seksenov
 title: "ホストされた Web アプリ - Chrome アプリからユニバーサル Windows プラットフォーム アプリへの変換"
 description: "Chrome アプリや Chrome 拡張機能を Windows ストア向けのユニバーサル Windows プラットフォーム (UWP) アプリに変換します。"
 kw: Package Chrome Extension for Windows Store tutorial, Port Chrome Extension to Windows 10, How to convert Chrome App to Windows, How to add Chrome Extension to Windows Store, hwa-cli, Hosted Web Apps Command Line Interface CLI Tool, Install Chrome Extension on Windows 10 Device, convert .crx to .AppX
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 用 Chrome 拡張機能, Windows 向け Chrome アプリ, hwa cli, .crx から AppX への変換"
+ms.assetid: 04f37333-48ba-441b-875e-246fbc3e1a4d
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 84cdd12e2a38aafeb989c0f33b1212077dc1d98e
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 84d8875cc7b1c8540f54fec78cd675bd96919fd2
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -46,9 +54,10 @@ Windows ストアのプロンプトで必要事項を入力します。
     During the conversion process, you will be prompted for an Identity Name, Publisher Identity, and Publisher Display Name. To retrieve these values, visit the Dashboard in the [Windows Dev Center](https://developer.microsoft.com/windows).
     - Click on "[Create a new app](https://developer.microsoft.com/dashboard/Application/New)" and reserve your app name.
 ![Windows デベロッパー センターのダッシュボードでの名前の予約](images/hwa-to-uwp/reserve_a_name.png)
-    - 次に、[アプリの管理] セクションの左側のメニューで [アプリ ID] をクリックします。
+    - 次に、左側のメニューの [アプリ管理] セクションで [アプリ ID] クリックします。
     ![Windows デベロッパー センターのダッシュボードの [アプリ ID]](images/hwa-to-uwp/app_identity.png)
-    - ページで入力を求められている 3 つの値が表示されます。1. 識別名: `Package/Identity/Name`
+    - ページで入力を求められている 3 つの値が表示されます。 
+        1. 識別名: `Package/Identity/Name`
         2. 発行元 ID: `Package/Identity/Publisher`
         3. 発行者表示名: `Package/Properties/PublisherDisplayName`
 
@@ -59,13 +68,13 @@ Windows ストア用に Web アプリをパッケージ化した後、PC、タ�
 
 ### <a name="application-content-uri-rules"></a>アプリケーション コンテンツ URI 規則
 
-[アプリケーション コンテンツ URI 規則 (ACUR)](/hwa-access-features.md) またはコンテンツ URI は、アプリ パッケージ マニフェスト内の URL 許可リストによって、ホストされた Web アプリのスコープを定義します。 リモート コンテンツとの相互の通信を制御するために、このリストに含める URL やこのリストから除外する URL を定義する必要があります。 ユーザーが明示的に含まれていない URL をクリックした場合、Windows は既定のブラウザーでターゲット パスを開きます。 ACUR を使うことで、[ユニバーサル Windows API](https://msdn.microsoft.com/library/windows/apps/br211377.aspx) に対する URL アクセスを許可することもできます。
+[アプリケーション コンテンツ URI 規則 (ACUR)](./hwa-access-features.md) またはコンテンツ URI は、アプリ パッケージ マニフェスト内の URL 許可リストによって、ホストされた Web アプリのスコープを定義します。 リモート コンテンツとの相互の通信を制御するために、このリストに含める URL やこのリストから除外する URL を定義する必要があります。 ユーザーが明示的に含まれていない URL をクリックした場合、Windows は既定のブラウザーでターゲット パスを開きます。 ACUR を使うことで、[ユニバーサル Windows API](https://msdn.microsoft.com/library/windows/apps/br211377.aspx) に対する URL アクセスを許可することもできます。
 
 少なくとも、規則にはアプリのスタート ページを含める必要があります。 変換ツールは、スタート ページとそのドメインに基づいて、一連の ACUR を自動的に作成します。 ただし、サーバー上とクライアント上のいずれかに関係なく、プログラムによるリダイレクトがある場合は、それらの宛先を許可リストに追加する必要があります。
 
 *注: ACUR はページのナビゲーションにのみ適用されます。 画像、JavaScript ライブラリ、その他の類似アセットは、これらの制限の影響を受けません。*
 
-多くのアプリは、ログイン フローに、Facebook や Google などのサード パーティのサイトを使用します。 変換ツールは、最も一般的なサイトに基づいて、一連の ACUR を自動的に作成します。 使用する認証の方法がそのリストに含まれておらず、リダイレクト フローである場合は、そのパスを ACUR として追加する必要があります。 [Web 認証ブローカー](/hwa-access-features.md)の使用を検討することもできます。
+多くのアプリは、ログイン フローに、Facebook や Google などのサード パーティのサイトを使用します。 変換ツールは、最も一般的なサイトに基づいて、一連の ACUR を自動的に作成します。 使用する認証の方法がそのリストに含まれておらず、リダイレクト フローである場合は、そのパスを ACUR として追加する必要があります。 [Web 認証ブローカー](./hwa-access-features.md)の使用を検討することもできます。
 
 ### <a name="flash"></a>Flash
 
@@ -95,12 +104,7 @@ Chrome では、バックグラウンド スクリプトとして実行できる
 
 ## <a name="related-topics"></a>関連トピック
 
-- [ユニバーサル Windows プラットフォーム (UWP) 機能にアクセスして Web アプリを強化する](/hwa-access-features.md)
+- [ユニバーサル Windows プラットフォーム (UWP) 機能にアクセスして Web アプリを強化する](./hwa-access-features.md)
 - [ユニバーサル Windows プラットフォーム (UWP) アプリのガイド](http://go.microsoft.com/fwlink/p/?LinkID=397871)
 - [Windows ストア アプリ設計のアセットのダウンロード](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -3,13 +3,20 @@ author: mtoepke
 title: "Direct3D 9 と Direct3D 11 の間の重要な変更点"
 description: "このトピックでは、DirectX 9 と DirectX 11 の大まかな違いについて説明します。"
 ms.assetid: 35a9e388-b25e-2aac-0534-577b15dae364
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, DirectX, Direct3D 9, Direct3D 11, 変更"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9812e3a4528b0ce8abd76b1bfcfb93b1268f362c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e46bb663a5497cb17f396b410fbdcb5d0295e5fe
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Direct3D 9 と Direct3D 11 の間の重要な変更点
+# <a name="important-changes-from-direct3d-9-to-direct3d-11"></a>Direct3D 9 と Direct3D 11 の間の重要な変更点
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -25,12 +32,12 @@ ms.openlocfilehash: 9812e3a4528b0ce8abd76b1bfcfb93b1268f362c
 
 Direct3D 11 は、グラフィックス ハードウェアに対する下位レベルの仮想化インターフェイスである Direct3D 9 と基本的に同じ種類の API です。 これまでどおり、さまざまなハードウェア実装でグラフィックス描画操作を実行できます。 グラフィックス API のレイアウトは Direct3D 9 から変更されています。具体的には、デバイス コンテキストの概念が拡張され、グラフィックス インフラストラクチャ専用の API が追加されました。 Direct3D デバイスに格納されたリソースには、リソース ビューと呼ばれるデータ ポリモーフィズムの新しいメカニズムが用意されています。
 
-## コア API の関数
+## <a name="core-api-functions"></a>コア API の関数
 
 
 Direct3D 9 では、使い始める前に、Direct3D API へのインターフェイスを作成する必要がありました。 Direct3D 11 ユニバーサル Windows プラットフォーム (UWP) ゲームでは、[**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) という静的関数を呼び出して、デバイスとデバイス コンテキストを作成します。
 
-## デバイスとデバイス コンテキスト
+## <a name="devices-and-device-context"></a>デバイスとデバイス コンテキスト
 
 
 Direct3D 11 デバイスは、仮想化グラフィックス アダプターを表します。 これは、GPU へのテクスチャのアップロード、テクスチャ リソースとスワップ チェーン上のビューの作成、テクスチャ サンプラーの作成など、ビデオ メモリ内にリソースを作成するために使います。 Direct3D 11 デバイス インターフェイスの用途の全一覧については、「[**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379)」と「[**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)」をご覧ください。
@@ -39,14 +46,14 @@ Direct3D 11. のデバイス コンテキストは、パイプラインの状態
 
 Direct3D 11 では、[**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) を呼び出して、デバイス ハンドルとデバイス コンテキスト ハンドルの両方を取得します。 また、このメソッドでは、特定のハードウェア機能を要求し、グラフィックス アダプターでサポートされている Direct3D 機能レベルの情報を取得します。 デバイス、デバイス コンテキスト、スレッドの考慮事項について詳しくは、「[Direct3D 11 のデバイスについて](https://msdn.microsoft.com/library/windows/desktop/ff476880)」をご覧ください。
 
-## デバイス インフラストラクチャ、フレーム バッファー、レンダー ターゲット ビュー
+## <a name="device-infrastructure-frame-buffers-and-render-target-views"></a>デバイス インフラストラクチャ、フレーム バッファー、レンダー ターゲット ビュー
 
 
 Direct3D 11 では、[**IDXGIAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174523) と [**IDXGIDevice1**](https://msdn.microsoft.com/library/windows/desktop/hh404543) COM インターフェイスを使って、DirectX Graphic Infrastructure (DXGI) API でデバイス アダプターとハードウェア構成を設定します。 特定の DXGI インターフェイスでバッファーなどのウィンドウ リソース (表示またはオフ スクリーン) を作成し、構成します。[**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) ファクトリ パターンの実装では、フレーム バッファーなどの DXGI リソースを取得します。 DXGI がスワップ チェーンを所有するため、画面にフレームを表示するために DXGI インターフェイスが使われます (「[**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)」をご覧ください)。
 
 [**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) を使って、ゲームと互換性のあるスワップ チェーンを作成します。 HWND のスワップ チェーンを作成する代わりに、コア ウィンドウ (コンポジション (XAML の相互運用機能)) のスワップ チェーンを作成する必要があります。
 
-## デバイス リソースとリソース ビュー
+## <a name="device-resources-and-resource-views"></a>デバイス リソースとリソース ビュー
 
 
 Direct3D 11 では、ビューと呼ばれるビデオ メモリ リソースに対する追加のポリモーフィズム レベルをサポートしています。 基本的には、テクスチャに対する Direct3D 9 オブジェクトは以前は 1 つでしたが、それが 2 つになりました。1 つはデータを保持するテクスチャ リソースで、もう 1 つはレンダリングにビューを使う方法を示すリソース ビューです。 リソースに基づくビューでは、特定の目的にそのリソースを使うことができます。 たとえば、2D テクスチャ リソースを [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) として作成し、それをシェーダーのテクスチャとして使うことができるように、2D テクスチャ リソースに対してシェーダー リソース ビュー ([**ID3D11ShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476628)) を作成します。 また、描画面として使うことができるように、同じ 2D テクスチャ リソースに対してレンダー ターゲット ビュー ([**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)) を作成することもできます。 別の例として、1 つのテクスチャ リソースに対して 2 つの異なるビューを使うと、同じピクセル データが 2 つの異なるピクセル形式で表されます。
@@ -59,7 +66,7 @@ Direct3D 11 では、ビューと呼ばれるビデオ メモリ リソースに
 
 Direct3D デバイス リソース (とリソース ビュー) は、シーンをレンダリングする前に作成します。 デバイス コンテキストは、後で説明するように、レンダリング チェーンを設定するために使われます。
 
-## デバイス コンテキストとレンダリング チェーン
+## <a name="device-context-and-the-rendering-chain"></a>デバイス コンテキストとレンダリング チェーン
 
 
 Direct3D 9 と Direct3D 10.x には、リソースの作成、状態、描画を管理する単一の Direct3D デバイス オブジェクトがありました。 Direct3D 11 では、これまでどおり Direct3D デバイス インターフェイスでリソースの作成を管理しますが、すべての状態と描画操作は Direct3D デバイス コンテキストを使って処理します。 デバイス コンテキスト ([**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) インターフェイス) を使って、レンダリング チェーンを設定する例を次に示します。
@@ -73,7 +80,7 @@ Direct3D 9 と Direct3D 10.x には、リソースの作成、状態、描画を
 
 [**ID3D11DeviceContext::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407) メソッドの 1 つを呼び出すと、レンダー ターゲット ビューにシーンが描画されます。 すべての描画が完了したら、[**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) を呼び出し、DXGI アダプターを使って、完成したフレームを表示します。
 
-## 状態の管理
+## <a name="state-management"></a>状態の管理
 
 
 Direct3D 9 では、SetRenderState、SetSamplerState、SetTextureStageState メソッドで設定された多数の個々のトグルを使って状態の設定を管理しました。 Direct3D 11 では、従来の固定関数パイプラインがサポートされないため、SetTextureStageState の代わりに、ピクセル シェーダー (PS) を記述します。 Direct3D 9 の状態ブロックに相当するものはありません。 代わりに、Direct3D 11 では、レンダリングの状態をグループ化する合理化的な方法を提供する 4 種類の状態オブジェクトを使って状態を管理します。
@@ -82,7 +89,7 @@ Direct3D 9 では、SetRenderState、SetSamplerState、SetTextureStageState メ�
 
 Direct3D 9 アプリケーションを状態オブジェクトに移植する際は、さまざまな状態の組み合わせが、変更できない状態オブジェクトとして表されることに注意してください。 それらは一度作成し、有効な限り再利用する必要があります。
 
-## Direct3D の機能レベル
+## <a name="direct3d-feature-levels"></a>Direct3D の機能レベル
 
 
 Direct3D には、機能レベルと呼ばれるハードウェア サポートを確認するための新しいメカニズムが用意されています。 機能レベルにより、明確に定義された一連の GPU 機能を要求できるようになるため、グラフィックス アダプターが実行できる操作を簡単に判断できます。 たとえば、9\_1 機能レベルでは、シェーダー モデル 2.x など、Direct3D 9 グラフィックス アダプターで提供される機能が実装されます。 9\_1 は最も低い機能レベルであるため、すべてのデバイスで頂点シェーダーとピクセル シェーダーがサポートされると考えることができます。これらは、Direct3D 9 のプログラム可能なシェーダー モデルでサポートされているのと同じステージです。
@@ -93,7 +100,7 @@ Direct3D 9 ゲームを拡張して、より高い Direct3D 機能レベルを�
 
 機能レベルのサポートについて詳しくは、「[Direct3D 機能レベル](https://msdn.microsoft.com/library/windows/desktop/ff476876)」をご覧ください。 Direct3D 11 機能の一覧については、「[Direct3D 11 の機能](https://msdn.microsoft.com/library/windows/desktop/ff476342)」と「[Direct3D 11.1 の機能](https://msdn.microsoft.com/library/windows/desktop/hh404562)」をご覧ください。
 
-## 機能レベルとプログラム可能なパイプライン
+## <a name="feature-levels-and-the-programmable-pipeline"></a>機能レベルとプログラム可能なパイプライン
 
 
 ハードウェアは Direct3D 9 から進化を続けており、いくつかの新しいオプション ステージがプログラム可能なグラフィックス パイプラインに追加されています。 グラフィックス パイプラインの一連のオプションは、Direct3D 機能レベルによって異なります。 機能レベル 10.0 には、GPU でのマルチパス レンダリング用のオプションのストリーム アウトがあるジオメトリ シェーダー ステージが含まれています。 機能レベル 11\_0 には、ハードウェア テセレーションで使うハル シェーダーとドメイン シェーダーが含まれています。 また、DirectCompute シェーダーの完全なサポートも含まれています。一方、機能レベル 10.x には DirectCompute の限定された形式のサポートだけが含まれています。
@@ -112,10 +119,5 @@ Direct3D 9 では、共有配列と一緒に SetVertexShaderConstant と SetPixe
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

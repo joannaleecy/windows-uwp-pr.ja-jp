@@ -2,13 +2,21 @@
 author: Mtoepke
 title: "Xbox の開発環境に UWP を設定する"
 description: "Xbox の開発環境に UWP を設定してテストする手順"
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 8801c0d9-94a5-41a2-bec3-14f523d230df
 translationtype: Human Translation
-ms.sourcegitcommit: e273cc55935f961e0b5493c0648347cba399fa3d
-ms.openlocfilehash: 5ffe0ce35e4aabcfc74e9bfa9017248320925603
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 93319caaa16afe84a897dbc4bd6370a5cef3cdd1
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Xbox の開発環境に UWP を設定する
+# <a name="set-up-your-uwp-on-xbox-development-environment"></a>Xbox の開発環境に UWP を設定する
 
 Xbox の開発環境のユニバーサル Windows プラットフォーム (UWP) は、ローカル ネットワークを介して Xbox One コンソールに接続されている開発用 PC で構成されます。
 開発用 PC には、Windows 10、Visual Studio 2015 Update 2、Windows 10 SDK プレビュー ビルド 14295 などの幅広いサポート ツールが必要です。
@@ -16,30 +24,30 @@ Xbox の開発環境のユニバーサル Windows プラットフォーム (UWP)
 
 この記事では、開発環境を設定およびテストする手順について説明します。
 
-## Visual Studio のセットアップ
+## <a name="visual-studio-setup"></a>Visual Studio のセットアップ
 
-1. Visual Studio2015 Update2 以降をインストールします。 詳しい情報とインストール方法については、「[Windows 10 のダウンロードとツール](https://dev.windows.com/downloads)」をご覧ください。
+1. Visual Studio 2015 Update 2 以降をインストールします。 詳しい情報とインストール方法については、「[Windows 10 のダウンロードとツール](https://dev.windows.com/downloads)」をご覧ください。
 
 1. Visual Studio 2015 Update 2 をインストールするときは、**[ユニバーサル Windows アプリ開発ツール]** チェック ボックスがオンになっていることを確認します。
 
   ![Visual Studio 2015 Update 2 をインストールする](images/vs_install_tools.png)
 
-## Windows 10 SDK のセットアップ
+## <a name="windows-10-sdk-setup"></a>Windows 10 SDK のセットアップ
 
 最新の Windows 10 SDK プレビュー ビルドをインストールします。 インストールについて詳しくは、「[開発者向け Insider Preview 更新プログラムのダウンロード](http://go.microsoft.com/fwlink/p/?LinkId=780552)」をご覧ください。
 
 > [!IMPORTANT]
 > 最新の SDK をインストールする必要があります。ただし、オペレーティング システムの Windows Insider Preview の最新リリースをインストールする必要はありません。
 
-## 開発者モードを有効にする
+## <a name="enabling-developer-mode"></a>開発者モードを有効にする
 
 開発用 PC からアプリケーションを展開する前に、Windows メニューから [設定]、[更新とセキュリティ]、[開発者向け]、[開発者モード] の順に選択して、開発者モードを有効にする必要があります。
 
-## Xbox One の設定
+## <a name="setting-up-your-xbox-one"></a>Xbox One の設定
 
 Xbox One にアプリを展開する前に、ユーザーがコンソールにサインインする必要があります。 既存の Xbox Live アカウントを使用することも、開発者モードで本体の新しいアカウントを作成することもできます。 
 
-## 初めてのアプリケーションを作成する
+## <a name="create-your-first-application"></a>初めてのアプリケーションを作成する
 
 1. 開発用 PC がターゲットの Xbox One コンソールと同じローカル ネットワーク上にあることを確認します。 通常、これらは同じルーターを使用し、同じサブネット上にある必要があります。 ワイヤード (有線) ネットワーク接続をお勧めします。
 
@@ -49,7 +57,7 @@ Xbox One にアプリを展開する前に、ユーザーがコンソールに�
 
 1. 開発用 PC で、**[新しいプロジェクト]** をクリックし、**[Windows]、[ユニバーサル]、[空のアプリケーション]** の順にクリックします。
 
-### C# プロジェクトの開始
+### <a name="starting-a-c-project"></a>C# プロジェクトの開始
 
   ![[新しいプロジェクト] ダイアログ ボックス](images/vs_universal_blank.jpg)
 
@@ -58,13 +66,14 @@ Xbox One にアプリを展開する前に、ユーザーがコンソールに�
 1. リモート デバッグの開発環境を構成します。
 
   1. プロジェクトを右クリックし、**[プロパティ]** をクリックします。
-  1. **[デバッグ]** タブで、**[ターゲット デバイス]** を **[リモート コンピューター]** に変更します。
+  1. **[デバッグ]** タブで、**[プラットフォーム]** を **[アクティブ (x64)]** に変更します  (x86 プラットフォームは Xbox ではサポートされなくなりました)。   
+  1. **[ターゲット デバイス]** を **[リモート コンピューター]** に変更します。
   1. **[リモート コンピューター]** で、システムの IP アドレスまたは Xbox One コンソールのホスト名を入力します。 IP アドレスまたはホスト名の取得について詳しくは、「[Xbox One ツールの概要](introduction-to-xbox-tools.md)」をご覧ください。
   1. **[認証モード]** ドロップダウン リストで、**[ユニバーサル (暗号化されていないプロトコル)]** をクリックします。
 
     ![C# BlankApp プロパティ ページ](images/vs_remote.jpg)
 
-### C++ プロジェクトの開始
+### <a name="starting-a-c-project"></a>C++ プロジェクトの開始
 
   ![C++ プロジェクト](images/vs_universal_cpp_blank.jpg)
 
@@ -79,7 +88,7 @@ Xbox One にアプリを展開する前に、ユーザーがコンソールに�
 
     ![C++ BlankApp プロパティ ページ](images/vs_remote_cpp.jpg)
 
-### PIN を使用してデバイスと Visual Studio をペアリングする
+### <a name="pin-pair-your-device-with-visual-studio"></a>PIN を使用してデバイスと Visual Studio をペアリングする
 
 1. 設定を保存し、Xbox One コンソールが開発者モードになっていることを確認します。
 
@@ -102,7 +111,7 @@ Xbox One にアプリを展開する前に、ユーザーがコンソールに�
 
 
 
-## 参照
+## <a name="see-also"></a>参照
 - [Xbox One で開発者モードを有効にする](devkit-activation.md)  
 - [Windows 10 用のダウンロードとツール](https://dev.windows.com/downloads)  
 - [開発者向け Insider Preview 更新プログラムをダウンロード](http://go.microsoft.com/fwlink/?LinkId=780552)  
@@ -110,9 +119,4 @@ Xbox One にアプリを展開する前に、ユーザーがコンソールに�
 - [Xbox One の UWP](index.md)
 
 ----
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -3,9 +3,16 @@ author: mithom
 title: "ゲームパッドと振動"
 description: "ゲームパッドの検出、読み取り、およびゲームパッドへの振動とリアル コマンドの送信には、Windows.Gaming.Input ゲームパッド API を使用します。"
 ms.assetid: BB03BB8E-255F-4AE8-AC43-1E519CA860FE
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, ゲームパッド, 振動"
 translationtype: Human Translation
-ms.sourcegitcommit: d0cfc41e5ae79844f3948ed2c326bf9913c066a4
-ms.openlocfilehash: 5d64c463b572dfc6da5ed453308c56a05d0a4410
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b92ddbaadd7fd09b252d5c8842ed89daf53a6982
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -314,9 +321,4 @@ gamepad.Vibration = vibration;
 [gamepadreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepadreading.aspx
 [gamepadbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepadbuttons.aspx
 [gamepadvibration]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepadvibration.aspx
-
-
-
-<!--HONumber=Dec16_HO4-->
-
 

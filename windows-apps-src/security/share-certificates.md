@@ -3,13 +3,20 @@ title: "アプリ間での証明書の共有"
 description: "ユーザー ID とパスワードの組み合わせよりも安全な認証を必要とするユニバーサル Windows プラットフォーム (UWP) アプリでは、証明書を認証に使うことができます。"
 ms.assetid: 159BA284-9FD4-441A-BB45-A00E36A386F9
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 189e95695be3621754414708f1a394fe4cea4ecf
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ca4c7b82fdb7f950d3f68323dec37c2f31e02c87
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アプリ間での証明書の共有
+# <a name="share-certificates-between-apps"></a>アプリ間での証明書の共有
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -19,7 +26,7 @@ ms.openlocfilehash: 189e95695be3621754414708f1a394fe4cea4ecf
 
 アプリでは、証明書を使って Web サービスから認証を受けることができます。さらに、複数のアプリで証明書ストアにある 1 つの証明書を使って同じユーザーを認証できます。 証明書がストアに存在しない場合は、PFX ファイルから証明書をインポートするコードをアプリに追加できます。
 
-## Microsoft インターネット インフォメーション サービス (IIS) とクライアント証明書のマッピングの有効化
+## <a name="enable-microsoft-internet-information-services-iis-and-client-certificate-mapping"></a>Microsoft インターネット インフォメーション サービス (IIS) とクライアント証明書のマッピングの有効化
 
 
 この記事では、例を示すために Microsoft インターネット インフォメーション サービス (IIS) を使用します。 IIS は、既定では有効になっていません。 IIS はコントロール パネルから有効にできます。
@@ -29,7 +36,7 @@ ms.openlocfilehash: 189e95695be3621754414708f1a394fe4cea4ecf
 3.  **[インターネット インフォメーション サービス]** を展開して、**[World Wide Web サービス]** を展開します。 **[アプリケーション開発機能]** を展開して、**[ASP.NET 3.5]** と **[ASP.NET 4.5]** を選びます。 これらを選ぶと、自動的に **[インターネット インフォメーション サービス]** が有効になります。
 4.  **[OK]** をクリックして変更を適用します。
 
-## セキュリティで保護された Web サービスの作成と発行
+## <a name="create-and-publish-a-secured-web-service"></a>セキュリティで保護された Web サービスの作成と発行
 
 
 1.  管理者として Microsoft Visual Studio を実行し、スタート ページで **[新しいプロジェクト]** を選びます。 Web サービスを IIS サーバーに発行するには、管理者のアクセス権が必要です。 [新しいプロジェクト] ダイアログで、フレームワークを **[.NET Framework 3.5]**に変更します。 **[Visual C#]** -&gt; **[Web]** -&gt; **[Visual Studio]** -&gt; **[ASP.NET Web サービス アプリケーション]** の順に選びます。 アプリケーションに "FirstContosoBank" という名前を付けます。 **[OK]** をクリックしてプロジェクトを作ります。
@@ -51,7 +58,7 @@ ms.openlocfilehash: 189e95695be3621754414708f1a394fe4cea4ecf
 5.  **[Web の発行]** ダイアログで、新しいプロファイルを作って "ContosoProfile" という名前を付けます。 **[次へ]** をクリックします。
 6.  次のページで、IIS サーバーのサーバー名を入力し、"Default Web Site/FirstContosoBank" のサイト名を指定します。 **[発行]** をクリックして Web サービスを発行します。
 
-## クライアント証明書認証を使うための Web サービスの構成
+## <a name="configure-your-web-service-to-use-client-certificate-authentication"></a>クライアント証明書認証を使うための Web サービスの構成
 
 
 1.  **インターネット インフォメーション サービス (IIS) マネージャー**を実行します。
@@ -64,7 +71,7 @@ ms.openlocfilehash: 189e95695be3621754414708f1a394fe4cea4ecf
 
 前の手順を繰り返すことで、同じクライアント証明書を使ってアクセスできる複数の Web サービスを作成できます。
 
-## 証明書認証を使う Windows ストア アプリの作成
+## <a name="create-a-windows-store-app-that-uses-certificate-authentication"></a>証明書認証を使う Windows ストア アプリの作成
 
 
 これでセキュリティで保護された Web サービスが 1 つ以上できたので、証明書を使ってこれらの Web サービスから認証を受けるアプリを作成できます。 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) オブジェクトを使って認証 Web サービスへの要求を作成する場合、最初の要求にはクライアント証明書が含まれません。 認証 Web サービスは、応答としてクライアント認証を要求します。 この応答を受け取ると、Windows クライアントは自動的に証明書ストアを照会して、使用できるクライアント証明書を取得します。 ユーザーは、これらの証明書の中から Web サービスへの認証に使うものを選ぶことができます。 証明書によってはパスワードで保護されていることがあるので、証明書のパスワードを入力するための手段をユーザーに提供する必要があります。
@@ -203,8 +210,3 @@ ms.openlocfilehash: 189e95695be3621754414708f1a394fe4cea4ecf
 8.  アプリを実行し、セキュリティで保護された Web サービスにログインして、PFX ファイルをローカル証明書ストアにインポートします。
 
 これらの手順を繰り返すことで、同じユーザー証明書を使ってセキュリティで保護された同じ Web サービスや別の Web サービスにアクセスする複数のアプリを作成できます。
-
-
-<!--HONumber=Aug16_HO3-->
-
-

@@ -3,16 +3,23 @@ author: mtoepke
 title: "頂点バッファーと頂点データの移植"
 description: "この手順では、シェーダーが指定された順番で頂点を走査できるようにするインデックス バッファーとメッシュを格納する頂点バッファーを定義します。"
 ms.assetid: 9a8138a5-0797-8532-6c00-58b907197a25
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, 移植, 頂点バッファー, データ, Direct3D"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ee8b3f693e40d9c0fba679a44ebcd4986d06d7ac
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 85e8a47da525c0f5de7e957a0048e245e374dedc
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 頂点バッファーと頂点データの移植
+# <a name="port-the-vertex-buffers-and-data"></a>頂点バッファーと頂点データの移植
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 **重要な API**
@@ -107,9 +114,9 @@ unsigned short cubeIndices[] =
 
 立方体のメッシュを OpenGL ES 2.0 の右手座標系から Direct3D の左手座標系に正常に移植できたことを前提に、両方のモデルで処理する立方体データを読み込む方法を見ていきます。
 
-## 手順
+## <a name="instructions"></a>手順
 
-### 手順 1: 入力レイアウトの作成
+### <a name="step-1-create-an-input-layout"></a>手順 1: 入力レイアウトの作成
 
 OpenGL ES 2.0 では、頂点データを attribute として渡し、シェーダー オブジェクトがそれを受け取って、読み取ります。 通常、シェーダーの GLSL で使われる attribute 名を含む文字列をシェーダー プログラム オブジェクトに渡し、シェーダーに渡すことができるメモリの場所を取得します。 この例では、次のように定義され、フォーマットされたカスタムの Vertex 構造体の一覧を頂点バッファー オブジェクトに含めます。
 
@@ -172,7 +179,7 @@ m_d3dDevice->CreateInputLayout(
 
 ここまでで、入力レイアウトを定義しました。 次は、このレイアウトを使うバッファーを作成し、それを立方体のメッシュ データと一緒に読み込みます。
 
-### 手順 2: 頂点バッファーの作成と読み込み
+### <a name="step-2-create-and-load-the-vertex-buffers"></a>手順 2: 頂点バッファーの作成と読み込み
 
 OpenGL ES 2.0 では、2 つのバッファー (位置データ用と色データ用) を作成します  (また、両方を含む構造体と 1 つのバッファーを作成することもできます)。各バッファーをバインドし、位置データと色データをバッファーに書き込みます。 その後、レンダリング関数の実行時に、もう一度バッファーをバインドし、シェーダーが正しく解釈できるようにバッファー内のデータの形式をシェーダーに通知します。
 
@@ -217,7 +224,7 @@ m_d3dContext->IASetVertexBuffers(
   &offset);
 ```
 
-### 手順 3: インデックス バッファーの作成と読み込み
+### <a name="step-3-create-and-load-the-index-buffer"></a>手順 3: インデックス バッファーの作成と読み込み
 
 インデックス バッファーは、頂点シェーダーが個々の頂点を検索できるようにする効率的な方法です。 これは必須ではありませんが、このサンプルのレンダラーでは使います。 OpenGL ES 2.0 の頂点バッファーと同じように、インデックス バッファーを汎用のバッファーとして作成してバインドし、前に作成した頂点インデックスをインデックス バッファーにコピーします。
 
@@ -287,20 +294,20 @@ m_d3dContext->DrawIndexed(
   0);
 ```
 
-## 前の手順
+## <a name="previous-step"></a>前の手順
 
 
 [シェーダー オブジェクトの移植](port-the-shader-config.md)
 
-## 次の手順
+## <a name="next-step"></a>次の手順
 
 [GLSL の移植](port-the-glsl.md)
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 Direct3D を構築する場合は、[**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) のメソッドを呼び出すコードを切り離して、デバイス リソースを再作成する必要があるたびに呼び出されるメソッドに配置します  (Direct3D プロジェクト テンプレートでは、このコードはレンダラー オブジェクトの **CreateDeviceResource** メソッドに配置されています)。 また、デバイス コンテキスト ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) を更新するコードは **Render** メソッドに配置されています。そこで実際にシェーダー ステージを作成し、データをバインドするためです。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [簡単な OpenGL ES 2.0 レンダラーを Direct3D 11 に移植する方法](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
@@ -314,10 +321,5 @@ Direct3D を構築する場合は、[**ID3D11Device**](https://msdn.microsoft.co
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,13 +3,20 @@ author: drewbatgit
 ms.assetid: 0186EA01-8446-45BA-A109-C5EB4B80F368
 description: "この記事では、AdvancedPhotoCapture クラスを使って、ハイ ダイナミック レンジ (HDR) とローライトの写真をキャプチャする方法について説明します。"
 title: "ハイ ダイナミック レンジ (HDR) とローライトの写真のキャプチャ"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: cd711c2a5eb718521e3bf04ea7d37929dec5fb05
-ms.openlocfilehash: 204e997ebb8484a7a661422b8060fe885bd561a2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e4ed8175e0f35733972474bbcc01cce9830f1e5b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# ハイ ダイナミック レンジ (HDR) とローライトの写真のキャプチャ
+# <a name="high-dynamic-range-hdr-and-low-light-photo-capture"></a>ハイ ダイナミック レンジ (HDR) とローライトの写真のキャプチャ
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -37,21 +44,21 @@ Windows 10 バージョン 1607 以降では、**AdvancedPhotoCapture** によ�
 
 **AdvancedPhotoCapture** クラスの使い方を示す、ユニバーサル Windows のサンプルがあります。コンテキスト内で API を使用する方法を確認したり、独自のアプリを作成し始めたりすることができます。 詳しくは、「[カメラの高度なキャプチャのサンプル](http://go.microsoft.com/fwlink/?LinkID=620517)」をご覧ください。
 
-## 高度な写真キャプチャの名前空間
+## <a name="advanced-photo-capture-namespaces"></a>高度な写真キャプチャの名前空間
 
 この記事のコード例では、基本的なメディア キャプチャに必要な名前空間に加え、次の名前空間の API を使用します。
 
 [!code-cs[HDRPhotoUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHDRPhotoUsing)]
 
-## HDR 写真キャプチャ
+## <a name="hdr-photo-capture"></a>HDR 写真キャプチャ
 
-### HDR 写真キャプチャが現在のデバイスでサポートされているかどうかを調べる
+### <a name="determine-if-hdr-photo-capture-is-supported-on-the-current-device"></a>HDR 写真キャプチャが現在のデバイスでサポートされているかどうかを調べる
 
 この記事で説明されている HDR キャプチャ手法には、[**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) オブジェクトが使われています。 デバイスによっては、**AdvancedPhotoCapture** での HDR キャプチャがサポートされません。 現在アプリを実行しているデバイスが、この手法をサポートしているかどうかを調べるには、**MediaCapture** オブジェクトの [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) を取得し、その [**AdvancedPhotoControl**](https://msdn.microsoft.com/library/windows/apps/mt147840) プロパティを取得します。 ビデオ デバイス コントローラーの [**SupportedModes**](https://msdn.microsoft.com/library/windows/apps/mt147844) コレクションに [**AdvancedPhotoMode.Hdr**](https://msdn.microsoft.com/library/windows/apps/mt147845) が含まれているかどうかを確認してください。 コレクションに含まれている場合、**AdvancedPhotoCapture** を使った HDR キャプチャがサポートされています。
 
 [!code-cs[HdrSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHdrSupported)]
 
-### AdvancedPhotoCapture オブジェクトを構成して準備する
+### <a name="configure-and-prepare-the-advancedphotocapture-object"></a>AdvancedPhotoCapture オブジェクトを構成して準備する
 
 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) インスタンスにはコード内の複数の場所からアクセスする必要があるので、そのオブジェクトを保持するメンバー変数を宣言する必要があります。
 
@@ -65,7 +72,7 @@ Windows 10 バージョン 1607 以降では、**AdvancedPhotoCapture** によ�
 
 [!code-cs[CreateAdvancedCaptureAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateAdvancedCaptureAsync)]
 
-### HDR 写真をキャプチャする
+### <a name="capture-an-hdr-photo"></a>HDR 写真をキャプチャする
 
 HDR の写真をキャプチャするには、[**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) オブジェクトの [**CaptureAsync**](https://msdn.microsoft.com/library/windows/apps/mt181388) メソッドを呼び出します。 このメソッドから返される [**AdvancedCapturedPhoto**](https://msdn.microsoft.com/library/windows/apps/mt181378) オブジェクトの [**Frame**](https://msdn.microsoft.com/library/windows/apps/mt181382) プロパティに、キャプチャされた写真が格納されています。
 
@@ -75,7 +82,7 @@ HDR の写真をキャプチャするには、[**AdvancedPhotoCapture**](https:/
 
 画像をディスクに保存する **SaveCapturedFrameAsync** ヘルパー メソッドについては、この記事で後述しています。
 
-### 必要に応じて参照フレームを取得する
+### <a name="get-optional-reference-frame"></a>必要に応じて参照フレームを取得する
 
 HDR プロセスは複数のフレームをキャプチャします。そのすべてのフレームがキャプチャされると、それらが単一の画像として合成されます。 フレームがキャプチャされた後、HDR プロセス全体が完了する前に、[**OptionalReferencePhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181392) イベントを処理することでそのフレームにアクセスすることができます。 HDR 写真の最終的な結果だけが目的であれば、この処理は不要です。
 
@@ -95,20 +102,20 @@ HDR プロセスは複数のフレームをキャプチャします。そのす�
 
 [!code-cs[OptionalReferencePhotoCaptured](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOptionalReferencePhotoCaptured)]
 
-### すべてのフレームがキャプチャされたときに通知を受け取る
+### <a name="receive-a-notification-when-all-frames-have-been-captured"></a>すべてのフレームがキャプチャされたときに通知を受け取る
 
 HDR 写真のキャプチャには、2 つのステップがあります。 複数のフレームをキャプチャするステップと、その後、それらのフレームが最終的な HDR 画像に加工するステップです。 ソース HDR フレームのキャプチャ中に別のキャプチャを開始することはできませんが、すべてのフレームがキャプチャされた後であれば、HDR の後処理が完了していなくても、キャプチャを開始することができます。 HDR キャプチャが完了すると [**AllPhotosCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181387) イベントが発生するので、そのタイミングで別のキャプチャを開始することができます。 たとえば HDR キャプチャの開始時に UI のキャプチャ ボタンを無効にし、その後 **AllPhotosCaptured** が発生した時点で再度ボタンを有効にする、という使い方が考えられます。
 
 [!code-cs[AllPhotosCaptured](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetAllPhotosCaptured)]
 
-### AdvancedPhotoCapture オブジェクトのクリーンアップ
+### <a name="clean-up-the-advancedphotocapture-object"></a>AdvancedPhotoCapture オブジェクトのクリーンアップ
 
 キャプチャが終了したら、**MediaCapture** オブジェクトを破棄する前に、[**FinishAsync**](https://msdn.microsoft.com/library/windows/apps/mt181391) を呼び出し、メンバー変数を null に設定して [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) オブジェクトをシャットダウンする必要があります。
 
 [!code-cs[CleanUpAdvancedPhotoCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpAdvancedPhotoCapture)]
 
 
-## ローライトの写真のキャプチャ
+## <a name="low-light-photo-capture"></a>ローライトの写真のキャプチャ
 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedPhotoCapture) クラスのローライト機能を使うと、システムは現在のシーンを評価し、必要に応じて、ローライトの状況に合わせてアルゴリズムを適用します。 システムでアルゴリズムが必要ないと判断された場合は、通常のキャプチャが実行されます。
 
 ローライトの写真のキャプチャを使用する前に、現在アプリを実行しているデバイスがこの手法をサポートしているかどうかを調べます。このためには、**MediaCapture** オブジェクトの [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) を取得し、その [**AdvancedPhotoControl**](https://msdn.microsoft.com/library/windows/apps/mt147840) プロパティを取得します。 ビデオ デバイス コントローラーの [**SupportedModes**](https://msdn.microsoft.com/library/windows/apps/mt147844) コレクションに [**AdvancedPhotoMode.LowLight**](https://msdn.microsoft.com/library/windows/apps/mt147845) が含まれているかどうかを確認してください。 コレクションに含まれている場合、**AdvancedPhotoCapture** を使ったローライトのキャプチャがサポートされています。 
@@ -138,10 +145,10 @@ HDR 写真のキャプチャには、2 つのステップがあります。 複�
 
 [!code-cs[CleanUpAdvancedPhotoCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpAdvancedPhotoCapture)]
 
-## AdvancedCapturedPhoto オブジェクトを操作する
+## <a name="working-with-advancedcapturedphoto-objects"></a>AdvancedCapturedPhoto オブジェクトを操作する
 [**AdvancedPhotoCapture.CaptureAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedPhotoCapture.CaptureAsync) は、キャプチャした写真を表す [**AdvancedCapturedPhoto**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedCapturedPhoto) オブジェクトを返します。 このオブジェクトが公開するのは、画像を表す [**CapturedFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedFrame) オブジェクトを返す、[**Frame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedCapturedPhoto.Frame) プロパティです。 [**OptionalReferencePhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedPhotoCapture.OptionalReferencePhotoCaptured) イベントも、イベント引数で **CapturedFrame** オブジェクトを提供します。 この型のオブジェクトを取得した後は、[**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap) の作成や、ファイルへの画像の保存など、多くのことを実行できるようになります。 
 
-## CapturedFrame から SoftwareBitmap を取得する
+## <a name="get-a-softwarebitmap-from-a-capturedframe"></a>CapturedFrame から SoftwareBitmap を取得する
 **SoftwareBitmap** を **CapturedFrame** オブジェクトから取得するのは、オブジェクトの [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedFrame.SoftwareBitmap) プロパティにアクセスするだけなので、簡単です。 ただし、**AdvancedPhotoCapture** での **SoftwareBitmap** の使用は、ほとんどのエンコード形式においてサポートされていないため、使用する前にプロパティが null になっていないことを確認する必要があります。
 
 [!code-cs[SoftwareBitmapFromCapturedFrame](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSoftwareBitmapFromCapturedFrame)]
@@ -152,7 +159,7 @@ HDR 写真のキャプチャには、2 つのステップがあります。 複�
 
 もちろん、ファイルに画像を保存し、別個の手順で **SoftwareBitmap** にファイルを読み込むことも常に可能です。 **SoftwareBitmap** の操作について詳しくは、「[**ビットマップ画像の作成、編集、保存**](imaging.md)」をご覧ください。
 
-## CapturedFrame をファイルに保存する
+## <a name="save-a-capturedframe-to-a-file"></a>CapturedFrame をファイルに保存する
 [**CapturedFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedFrame) クラスは IInputStream インターフェイスを実装するので、[**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapDecoder) への入力として使用できます。その後、[**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder) を使えば画像データをディスクに書き込むことができます。
 
 次の例では、ユーザーの画像ライブラリに新しいフォルダーが作成され、そのフォルダー内にファイルが作成されています。 このディレクトリにアクセスするためには、アプリが **Pictures Library** 機能をアプリ マニフェスト ファイルに含める必要があります。 すると、ファイル ストリームが指定のファイルに開かれます。 次に、**CapturedFrame** からデコーダーを作成するために [**BitmapDecoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapDecoder.CreateAsync) を呼び出します。 その後 [**CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214) がファイル ストリームとデコーダーからエンコーダーを作成します。
@@ -163,13 +170,8 @@ HDR 写真のキャプチャには、2 つのステップがあります。 複�
 
 [!code-cs[SaveCapturedFrameAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSaveCapturedFrameAsync)]
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [カメラ](camera.md)
 * [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -1,28 +1,35 @@
 ---
 author: scottmill
 ms.assetid: 16ad97eb-23f1-0264-23a9-a1791b4a5b95
-title: "BeginDraw と EndDraw によるコンポジションでの DirectX と Direct2D のネイティブ相互運用"
+title: "コンポジションでの DirectX と Direct2D のネイティブ相互運用"
 description: "Windows.UI.Composition API には、コンテンツをコンポジターに直接移行できるようにするネイティブの相互運用インターフェイスが用意されています。"
+ms.author: scotmi
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 4d1bf75fee06c8f4c31ce23c89bf6267ab9e6394
+ms.sourcegitcommit: 3a929e044a6edaa4a6e2393c80d6de6d54875a9e
+ms.openlocfilehash: 8be1827350e8489106ff29bd2a1f310fd06dea38
+ms.lasthandoff: 02/06/2017
 
 ---
-# BeginDraw と EndDraw によるコンポジションでの DirectX と Direct2D のネイティブ相互運用
+# <a name="composition-native-interoperation-with-directx-and-direct2d"></a>コンポジションでの DirectX と Direct2D のネイティブ相互運用
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 Windows.UI.Composition API には、コンテンツをコンポジターに直接移行できるようにするネイティブの相互運用インターフェイス、[**ICompositorInterop**](https://msdn.microsoft.com/library/windows/apps/Mt620068)、[**ICompositionDrawingSurfaceInterop**](https://msdn.microsoft.com/library/windows/apps/Mt620058)、[**ICompositionGraphicsDeviceInterop**](https://msdn.microsoft.com/library/windows/apps/Mt620065) が用意されています。
 
 ネイティブ相互運用は、DirectX テクスチャに対応するサーフェス オブジェクトを中心に構成されています。 サーフェスは [**CompositionGraphicsDevice**](https://msdn.microsoft.com/library/windows/apps/Dn706749) というファクトリ オブジェクトから作成されます。 このオブジェクトは、サーフェスへのビデオ メモリの割り当てに使う Direct2D または Direct3D デバイス オブジェクトに対応します。 コンポジション API により DirectX デバイスが作成されることはありません。 このオブジェクトを作成して **CompositionGraphicsDevice** オブジェクトに渡すのは、アプリケーションの担当です。 アプリケーションは一度に複数の **CompositionGraphicsDevice** オブジェクトを作成できます。複数の **CompositionGraphicsDevice** オブジェクトにレンダリング デバイスと同じ DirectX デバイスを使ってもかまいません。
 
-## サーフェスの作成
+## <a name="creating-a-surface"></a>サーフェスの作成
 
 各 [**CompositionGraphicsDevice**](https://msdn.microsoft.com/library/windows/apps/Dn706749) はサーフェスのファクトリとして機能します。 各サーフェスは初期サイズ (0,0 の場合もあり) で作成されますが、有効ピクセル数はありません。 その初期状態のサーフェスはすぐに、ビジュアル オブジェクト ツリーで、たとえば [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) と [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) によって使えますが、その初期状態のサーフェスは画面出力に影響を与えません。 このサーフェスは、指定したアルファ モードが "不透明" であったとしても、すべての用途で完全に透明です。
 
 場合によっては、DirectX デバイスが使えなくなっています。 この状態になるのは、特に、アプリケーションから特定の DirectX API に無効な引数が渡された場合、グラフィック アダプターがシステムによってリセットされた場合、またはドライバーが更新された場合です。 Direct3D には、非同期的にデバイスが何らかの理由で失われているかどうかの検出に、アプリケーションが使える API があります。 DirectX デバイスが失われている場合、アプリケーションはそのデバイスを破棄した後、新しいデバイスを作成し、問題のある DirectX デバイスに関連付けられていた [**CompositionGraphicsDevice**](https://msdn.microsoft.com/library/windows/apps/Dn706749) オブジェクトすべてに渡す必要があります。
 
-## サーフェスへのピクセルの読み込み
+## <a name="loading-pixels-into-a-surface"></a>サーフェスへのピクセルの読み込み
 
 サーフェスにピクセルを読み込むために、アプリケーションは [**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx) メソッドを呼び出す必要があります。このメソッドが、アプリケーションの要求に応じて、テクスチャや Direct2D のコンテキストを表す DirectX インターフェイスを返します。 アプリケーションはそのテクスチャにピクセルをレンダリングまたはアップロードする必要があります。 その操作が終了したら、アプリケーションは [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) メソッドを呼び出す必要があります。 その時点でのみ新しいピクセルはコンポジションに使えますが、次にビジュアル オブジェクト ツリーへのすべての変更がコミットされるまで、まだ画面には表示されません。 **EndDraw** が呼び出される前に、ビジュアル オブジェクト ツリーがコミットされた場合、進行中の更新は画面に表示されず、サーフェスには引き続き **BeginDraw** の前の内容が表示されます。 **EndDraw** が呼び出されると、BeginDraw によって返されたテクスチャや Direct2D コンテキスト ポインターは無効化されます。 アプリケーションは **EndDraw** の呼び出し後にそのポインターをキャッシュすることはありません。
 
@@ -30,11 +37,11 @@ Windows.UI.Composition API には、コンテンツをコンポジターに直�
 
 アプリケーションが間違った操作を実行した場合、[**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx)、[**SuspendDraw**](https://msdn.microsoft.com/library/windows/apps/mt620064.aspx)、[**ResumeDraw**](https://msdn.microsoft.com/library/windows/apps/mt620062)、[**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) の各メソッドはエラーを返します (無効な引数を渡した場合や、あるサーフェスで **EndDraw** を呼び出す前に、別のサーフェスで **BeginDraw** を呼び出した場合など)。 この種のエラーはアプリケーションのバグを表します。たとえば "fail fast" を使って処理される可能性があります。 DirectX デバイスが失われた場合も、**BeginDraw** はエラーを返すことがあります。 アプリケーションが DirectX デバイスを再作成して再試行できるため、このエラーは致命的ではありません。 このように、アプリケーションでは単にレンダリングをスキップすることで、デバイスが失われた場合に対処する必要があります。 **BeginDraw** が失敗した場合、それがどのような理由であっても、アプリケーションが **EndDraw** を呼び出さないようにしてください。最初の時点で失敗した描画開始が成功することはないためです。
 
-## スクロール
+## <a name="scrolling"></a>スクロール
 
 パフォーマンス上の理由から、アプリケーションが [**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx) を呼び出すとき、返されるテクスチャの内容がサーフェスの前の内容であるとは限りません。 アプリケーションでは、内容がランダムであることを想定して、確実にすべてのピクセルがタッチされるようにする必要があります。そのためには、レンダリング前にサーフェスをクリアするか、更新された四角形全体を十分に埋められる不透明なコンテンツを描画します。 また、テクスチャ ポインターが **BeginDraw** と [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) の呼び出し間でのみ有効であることも相まって、アプリケーションはサーフェスから前の内容をコピーできません。 この理由から、[**Scroll**](https://msdn.microsoft.com/library/windows/apps/mt620063) メソッドが用意されています。このメソッドを使うと、アプリケーションは同じサーフェスでピクセルをコピーできるようになります。
 
-## 使用例
+## <a name="usage-example"></a>使用例
 
 次のサンプルでは、アプリケーションが描画サーフェスを作成する簡単なシナリオを示しており、[**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx) と [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) を使ってサーフェスにテキストを読み込みます。 アプリケーションは次のように、テキストを DirectWrite を使ってレイアウトし、Direct2D を使ってレンダリングします。 コンポジション グラフィックス デバイスは初期化時に直接 Direct2D デバイスを受け取ります。 これにより、**BeginDraw** は ID2D1DeviceContext インターフェイス ポインターを返すことができます。この方法は、アプリケーションが Direct2D コンテキストを作成して、返される ID3D11Texture2D インターフェイスを各描画操作でラップするよりも、かなり効率的です。
 
@@ -266,10 +273,5 @@ private:
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,18 +3,25 @@ author: mcleblanc
 ms.assetid: A5320094-DF53-42FC-A6BA-A958F8E9210B
 title: "Visual Studio を使った Surface Hub アプリのテスト"
 description: "Visual Studio シミュレーターは、UWP アプリの設計、開発、デバッグ、テストを行える環境を提供します。これには Surface Hub 用に作成されたアプリを含みます。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
-ms.openlocfilehash: 1939508e8ace2fe3ed9210d6969d1c68843c32a9
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 426670f9b8d24a770f74aa0bdfaa5abb043c39ef
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Visual Studio を使った Surface Hub アプリのテスト
+# <a name="test-surface-hub-apps-using-visual-studio"></a>Visual Studio を使った Surface Hub アプリのテスト
 Visual Studio シミュレーターは、ユニバーサル Windows プラットフォーム (UWP) アプリの設計、開発、デバッグ、テストを行える環境を提供します。これには Microsoft Surface Hub 用に作成されたアプリを含みます。 シミュレーターでは、Surface Hub と同じユーザー インターフェイスは使用できませんが、Surface Hub の画面サイズと解像度でのアプリの外観と動作をテストするために有用です。
 
 詳しくは、「[シミュレーターでの Windows ストア アプリの実行](https://msdn.microsoft.com/library/hh441475.aspx)」をご覧ください。
 
-## Surface Hub の解像度をシミュレーターに追加する
+## <a name="add-surface-hub-resolutions-to-the-simulator"></a>Surface Hub の解像度をシミュレーターに追加する
 Surface Hub の解像度をシミュレーターに追加するには、次の手順を実行します。
 
 1. **HardwareConfigurations SurfaceHub55.xml** という名前のファイルに次の XML を保存して、55" Surface Hub 用の構成を作成します。  
@@ -65,10 +72,10 @@ Surface Hub の解像度をシミュレーターに追加するには、次の�
 
    > **ヒント**&nbsp;&nbsp;Surface Hub でのエクスペリエンスをより適切にシミュレートするには、[タブレット モードを有効にします](http://windows.microsoft.com/windows-10/getstarted-like-a-tablet)。
 
-## Visual Studio から Surface Hub にアプリを展開する
+## <a name="deploy-apps-to-a-surface-hub-from-visual-studio"></a>Visual Studio から Surface Hub にアプリを展開する
 アプリを手動で展開することは単純なプロセスです。
 
-### 開発者モードを有効にする
+### <a name="enable-developer-mode"></a>開発者モードを有効にする
 既定では、Surface Hub はアプリを Windows ストアからのみインストールします。 他のソースによって署名されたアプリをインストールするには、開発者モードを有効にする必要があります。
 
 > **注**&nbsp;&nbsp;開発者モードを有効にした後、もう一度これを無効にするには、Surface Hub をリセットする必要があります。 デバイスをリセットすると、すべてのローカル ユーザーのファイルと構成が削除され、Windows が再インストールされます。
@@ -81,7 +88,7 @@ Surface Hub の解像度をシミュレーターに追加するには、次の�
 
 3. **[開発者モード]** を選択し、警告メッセージに同意します。
 
-### Visual Studio からアプリを展開する
+### <a name="deploy-your-app-from-visual-studio"></a>Visual Studio からアプリを展開する
 詳しくは、「[ユニバーサル Windows プラットフォーム (UWP) アプリの展開とデバッグ](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps)」をご覧ください。
 
    > **注**&nbsp;&nbsp;この機能には、少なくとも **Visual Studio 2015 Update 1** が必要です。
@@ -99,9 +106,4 @@ Surface Hub の解像度をシミュレーターに追加するには、次の�
 3. **[デバッグの開始 (F5)]** を選択して、Surface Hub にアプリを展開してデバッグします。アプリの展開のみを行うには、Ctrl キーを押しながら F5 キーを押します。
 
    > **ヒント**&nbsp;&nbsp;Surface Hub がようこそ画面に表示された場合は、いずれかのボタンを選んで無視します。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

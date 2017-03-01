@@ -3,13 +3,20 @@ author: mtoepke
 title: "EGL コードと DXGI および Direct3D の比較"
 description: "DirectX Graphics Interface (DXGI) といくつかの Direct3D API は EGL と同じ役割を果たします。 このトピックは EGL の観点から DXGI と Direct3D 11 を理解するのに役立ちます。"
 ms.assetid: 90f5ecf1-dd5d-fea3-bed8-57a228898d2a
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP, EGL, DXGI, Direct3D
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 599196300a393352540abf1154d1508af7b4caa1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7d7e4058eccd39911bd84d3967ef07b93b6ee89d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# EGL コードと DXGI および Direct3D の比較
+# <a name="compare-egl-code-to-dxgi-and-direct3d"></a>EGL コードと DXGI および Direct3D の比較
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -29,7 +36,7 @@ DXGI と Direct3D は EGL に似ており、グラフィックス リソース�
 
  
 
-## DXGI と Direct3D の比較方法
+## <a name="how-does-dxgi-and-direct3d-compare"></a>DXGI と Direct3D の比較方法
 
 
 DXGI および Direct3D と比較したときの EGL の大きなメリットは、比較的簡単にウィンドウ サーフェスへの描画を開始できることです。 これは、OpenGL ES 2.0 と EGL が複数のプラットフォーム プロバイダーによって実装された仕様であるのに対し、DXGI と Direct3D はハードウェア ベンダーのドライバーが準拠する必要のある単一のリファレンスであるためです。 つまり、Microsoft がやるべきことは、特定のベンダーが提供する機能のサブセットに注力したり、ベンダー固有のセットアップ コマンドをよりシンプルな API に結合することで得られた機能のサブセットに注力したりすることではなく、可能な限り幅広いベンダー機能をサポートする API のセットを実装することです。 一方、Direct3D は、非常に幅広いグラフィックス ハードウェア プラットフォームと機能レベルに対応し、プラットフォームで経験を積んだ開発者向けの柔軟性を提供する API の単一のセットを提供します。
@@ -73,7 +80,7 @@ EGL は Direct3D 11 と比べて API が非常に少なくなっています。�
 
  
 
-## 表示のためのウィンドウの取得
+## <a name="obtaining-a-window-for-display"></a>表示のためのウィンドウの取得
 
 
 この例では、Microsoft Windows プラットフォームに固有のウィンドウ リソース用の HWND が eglGetDisplay に渡されます。 Apple の iOS (Cocoa) や Google の Android などの他のプラットフォームには、ウィンドウ リソースへの別のハンドルや参照があり、別の呼び出し構文が存在することもあります。 表示を取得した後で初期化し、優先する構成を設定して、描画先のバック バッファーを持つサーフェスを作成します。
@@ -204,7 +211,7 @@ m_d3dContext->OMSetRenderTargets(
         nullptr);
 ```
 
-## レンダリング コンテキストの作成
+## <a name="creating-a-rendering-context"></a>レンダリング コンテキストの作成
 
 
 EGL 1.4 では、"表示" は、ウィンドウ リソースのセットを表します。 通常は、表示のための "サーフェス" を構成するために、表示オブジェクトに一連の属性を提供し、サーフェスを取得します。 サーフェスのコンテンツを表示するためのコンテキストを作成するには、そのコンテキストを作成したうえで、サーフェスと表示にバインドします。
@@ -282,7 +289,7 @@ D3D11CreateDevice(
 );
 ```
 
-## テクスチャまたは pixmap リソースへの描画
+## <a name="drawing-into-a-texture-or-pixmap-resource"></a>テクスチャまたは pixmap リソースへの描画
 
 
 OpenGL ES 2.0 でテクスチャに描画するには、ピクセル バッファー (PBuffer) を構成します。 それに対して EGLSurface を正常に構成して作成したら、それにレンダリング コンテキストを提供し、シェーダー パイプラインを実行してテクスチャに描画できます。
@@ -329,7 +336,7 @@ m_d3dContext->OMSetRenderTargets(
 
 このテクスチャは、[**ID3D11ShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476628) に関連付けられている場合はシェーダーに渡すことができます。
 
-## 画面への描画
+## <a name="drawing-to-the-screen"></a>画面への描画
 
 
 EGLContext を使ってバッファーの構成とデータの更新を行ったら、それにバインドされているシェーダーを実行し、glDrawElements でバック バッファーに結果を描画します。 eglSwapBuffers を呼び出してバック バッファーを表示します。
@@ -358,7 +365,7 @@ m_d3dContext->DrawIndexed(
 m_swapChainCoreWindow->Present1(1, 0, &parameters);
 ```
 
-## グラフィックス リソースの解放
+## <a name="releasing-graphics-resources"></a>グラフィックス リソースの解放
 
 
 EGL では、eglTerminate に EGLDisplay を渡して、ウィンドウ リソースを解放します。
@@ -371,7 +378,7 @@ EGLBoolean eglTerminate(eglDisplay);
 
 UWP アプリでは、[**CoreWindow::Close**](https://msdn.microsoft.com/library/windows/apps/br208260) で CoreWindow を閉じることができますが、これはセカンダリ UI ウィンドウに対してのみ使うことができます。 プライマリ UI スレッドとその関連の CoreWindow は閉じることはできません。オペレーティング システムによって有効期限切れの処理が行われます。 ただし、セカンダリ CoreWindow が閉じると、[**CoreWindow::Closed**](https://msdn.microsoft.com/library/windows/apps/br208261) イベントが発生します。
 
-## EGL と Direct3D 11 のマッピングを示す API リファレンス
+## <a name="api-reference-mapping-for-egl-to-direct3d-11"></a>EGL と Direct3D 11 のマッピングを示す API リファレンス
 
 
 | EGL API                          | 同様の Direct3D 11 API または動作                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
@@ -412,10 +419,5 @@ UWP アプリでは、[**CoreWindow::Close**](https://msdn.microsoft.com/library
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

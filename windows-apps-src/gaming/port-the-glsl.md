@@ -3,16 +3,23 @@ author: mtoepke
 title: "GLSL の移植"
 description: "バッファーとシェーダー オブジェクトを作成して構成するコードが完成したら、それらのシェーダー内のコードを OpenGL ES 2.0 の GL シェーダー言語 (GLSL) から Direct3D 11 の上位レベル シェーダー言語 (HLSL) に移植します。"
 ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, GLSL, 移植"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 883f4423f72f044435ffc0ee9eccdcd5b0d63bfa
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7416a4dafe24f86243a3a9962d01db1dc7b61031
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# GLSL の移植
+# <a name="port-the-glsl"></a>GLSL の移植
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
 **重要な API**
@@ -53,10 +60,10 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 
 ここでは、定数バッファーはレジスタ b0 を使って、パックされたバッファーを保持します。 b\# という形式ですべてのレジスタを参照します。 HLSL での定数バッファー、レジスタ、データ パッキングの実装について詳しくは、「[シェーダー定数 (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581)」をご覧ください。
 
-手順
+<a name="instructions"></a>手順
 ------------
 
-### 手順 1: 頂点シェーダーの移植
+### <a name="step-1-port-the-vertex-shader"></a>手順 1: 頂点シェーダーの移植
 
 この簡単な OpenGL ES 2.0 の例では、頂点シェーダーに 3 つの入力があります。1 つの定数のモデル ビュー プロジェクション 4x4 マトリックスと 2 つの 4 座標ベクトルです。 これら 2 つのベクトルには、頂点の位置と色が含まれます。 シェーダーでは、ラスタライズするために、位置ベクトルをパースペクティブ座標に変換し、それを gl\_Position 組み込みメソッドに割り当てます。 また、頂点の色は、ラスタライズ時に補間のために varying 変数にコピーされます。
 
@@ -115,7 +122,7 @@ PixelShaderInput main(VertexShaderInput input)
 
 出力のデータ型 PixelShaderInput は、ラスタライズ時に設定され、フラグメント (ピクセル) シェーダーに渡されます。
 
-### 手順 2: フラグメント シェーダーの移植
+### <a name="step-2-port-the-fragment-shader"></a>手順 2: フラグメント シェーダーの移植
 
 GLSL のフラグメント シェーダーの例は非常に簡単です。補完された色値を gl\_FragColor 組み込みメソッドに渡します。 OpenGL ES 2.0 では、それを既定のレンダー ターゲットに書き込みます。
 
@@ -150,7 +157,7 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 位置のピクセルの色はレンダー ターゲットに書き込まれます。 次に、「[画面への描画](draw-to-the-screen.md)」でそのレンダー ターゲットのコンテンツを表示する方法を見ていきます。
 
-## 前の手順
+## <a name="previous-step"></a>前の手順
 
 
 [頂点バッファーと頂点データの移植](port-the-vertex-buffers-and-data-config.md) 次の手順
@@ -168,7 +175,7 @@ HLSL セマンティクスと定数バッファーのパッキングについて
 -   各シェーダーのターゲットとする Direct3D 機能レベルを確認する。 機能レベル 9\_\* のセマンティクスは 11\_1 のセマンティクスと異なります。
 -   SV\_POSITION セマンティクスは関連する補間後の位置データを座標値に解決します。x は 0 からレンダー ターゲットの幅までの値に、y は 0 からレンダー ターゲットの高さまでの値になり、z は元の同次座標 w の値で割られ (z/w)、w は 1 を元の w の値で割った値 (1/w) になります。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 [簡単な OpenGL ES 2.0 レンダラーを Direct3D 11 に移植する方法](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
@@ -185,10 +192,5 @@ HLSL セマンティクスと定数バッファーのパッキングについて
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,25 +3,32 @@ author: DBirtolo
 ms.assetid: 23001DA5-C099-4C02-ACE9-3597F06ECBF4
 title: "AEP サービス クラス ID"
 description: "アソシエーション エンドポイント (AEP) サービスは、デバイスが特定のプロトコル経由でサポートするサービスのプログラミング コントラクトを提供します。 これらのサービスのいくつかでは、サービスの参照時に使う必要がある識別子が設定されています。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 61d8891a97403057fe34c66dbecc6962b05e087e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d2259c82acf700d21f4c3f51a367180bb976f636
+ms.lasthandoff: 02/07/2017
 
 ---
-# AEP サービス クラス ID
+# <a name="aep-service-class-ids"></a>AEP サービス クラス ID
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
-<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
+**重要な API**
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 アソシエーション エンドポイント (AEP) サービスは、デバイスが特定のプロトコル経由でサポートするサービスのプログラミング コントラクトを提供します。 これらのサービスのいくつかでは、サービスの参照時に使う必要がある識別子が設定されています。 これらのコントラクトは、**System.Devices.AepService.ServiceClassId** プロパティで識別されます。 このトピックでは、既知の AEP サービス クラス ID のいくつかを一覧表示します。 AEP サービス クラス ID は、カスタム クラス ID によってプロトコルに適用することもできます。
 
 アプリの開発者は、使用予定の AEP サービスに対するクエリを制限するために、クラス ID に基づいて高度なクエリ構文 (AQS) フィルターを使う必要があります。 これによって、関連サービスへのクエリ結果が制限され、デバイスのパフォーマンス、バッテリ寿命、およびサービス品質が大幅に向上します。 たとえば、アプリケーションでこれらのサービス クラス ID を使って、デバイスを Miracast の同期または DLNA デジタル メディア レンダラー (DMR) として使うことができます。 デバイスとサービスが互いにどのようにやり取りするかについて詳しくは、「[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991)」をご覧ください。
 
-## Bluetooth および Bluetooth LE サービス
+## <a name="bluetooth-and-bluetooth-le-services"></a>Bluetooth および Bluetooth LE サービス
 
 Bluetooth サービスは、Bluetooth プロトコルまたは Bluetooth LE プロトコルの 2 つのプロトコルのいずれかに分類されます。 これらのプロトコルの識別子は次のとおりです。
 
@@ -70,13 +77,13 @@ Bluetooth プロトコルは複数のサービスをサポートしており、�
 
 利用可能な Bluetooth サービスの完全なリストについては、Bluetooth のプロトコルとサービスのページ ([ここ](http://go.microsoft.com/fwlink/p/?LinkID=619586) と [ここ](http://go.microsoft.com/fwlink/p/?LinkID=619587)) をご覧ください。 また、[**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571) API を使って一般的な GATT サービスをいくつか取得することもできます。
 
-## Bluetooth LE のカスタム サービス
+## <a name="custom-bluetooth-le-services"></a>Bluetooth LE のカスタム サービス
 
 Bluetooth LE のカスタム サービスは、次のプロトコル識別子を使います。{bb7bb05e-5972-42b5-94fc76eaa7084d49}
 
 カスタム プロファイルは、独自に定義された GUID を使って定義します。 このカスタム GUID は、**System.Devices.AepService.ServiceClassId** に対して使う必要があります。
 
-## UPnP サービス
+## <a name="upnp-services"></a>UPnP サービス
 
 UPnP サービスは、次のプロトコル識別子を使います。{0e261de4-12f0-46e6-91ba428607ccef64}
 
@@ -99,7 +106,7 @@ UPnP サービスは、次のプロトコル識別子を使います。{0e261de4
 
  
 
-## WSD サービス
+## <a name="wsd-services"></a>WSD サービス
 
 WSD サービスは、次のプロトコル識別子を使います。{782232aa-a2f9-4993-971baedc551346b0}
 
@@ -112,25 +119,16 @@ WSD サービスは、次のプロトコル識別子を使います。{782232aa-
 
  
 
-## AQS サンプル
+## <a name="aqs-sample"></a>AQS サンプル
 
 この AQS は、DIAL をサポートするすべての UPnP **AssociationEndpointService** オブジェクトに対してフィルターを実行します。 この場合、[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) は **AsssociationEndpointService** に設定されています。
 
 ``` syntax
-System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" AND 
+System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" AND
 System.Devices.AepService.ServiceClassId:="{085DFA4A-3948-53C7-A0D716D8EC26B29B}"
 ```
 
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

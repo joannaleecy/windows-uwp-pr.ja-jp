@@ -3,20 +3,27 @@ author: mtoepke
 title: "アプリ オブジェクトと DirectX"
 description: "DirectX を使ったユニバーサル Windows プラットフォーム (UWP) ゲームでは、Windows UI ユーザー インターフェイスの要素とオブジェクトの多くが使われません。"
 ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、DirectX、アプリ オブジェクト"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 78e2bbcc4c9182b09138da457c839466b49ac31a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7d3290633ead698a6c42c3accdbd2012ccfd7065
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アプリ オブジェクトと DirectX
+# <a name="the-app-object-and-directx"></a>アプリ オブジェクトと DirectX
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 DirectX を使ったユニバーサル Windows プラットフォーム (UWP) ゲームでは、Windows UI ユーザー インターフェイスの要素とオブジェクトの多くが使われません。 逆に、それらのアプリは Windows ランタイム スタックの下位レベルで実行されることから、アプリ オブジェクトに直接アクセスして相互運用するという基本的な方法でユーザー インターフェイス フレームワークと相互運用する必要があります。 ここでは、この相互運用をいつどのように行うかと、DirectX 開発者が UWP アプリの開発でこのモデルを効果的に使う方法を説明します。
 
-## 重要なコア ユーザー インターフェイスの名前空間
+## <a name="the-important-core-user-interface-namespaces"></a>重要なコア ユーザー インターフェイスの名前空間
 
 
 最初に、UWP アプリに (**using** を使って) 必要な Windows ランタイムの名前空間を示します。 後で詳しく説明します。
@@ -31,7 +38,7 @@ DirectX を使ったユニバーサル Windows プラットフォーム (UWP) �
 
  
 
-## Windows ランタイム アプリ オブジェクト
+## <a name="the-windows-runtime-app-object"></a>Windows ランタイム アプリ オブジェクト
 
 
 UWP アプリでは、ウィンドウとビュー プロバイダーを取得します。これらはビューの取得元となり、スワップ チェーン (表示バッファー) の接続先となります。 このビューは、実行中のアプリでウィンドウ固有のイベントにフックすることもできます。 アプリ オブジェクトの親ウィンドウ ([**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 型で定義) を取得するには、前のコード スニペットで行ったように、[**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482) を実装する型を作成します。
@@ -58,7 +65,7 @@ UWP アプリでは、ウィンドウとビュー プロバイダーを取得し
 
 上記の基本事項を踏まえて、このアプローチを拡張するその他のオプションを説明します。
 
-## コア ユーザー インターフェイスの型
+## <a name="core-user-interface-types"></a>コア ユーザー インターフェイスの型
 
 
 Windows ランタイムには、他にも次のような便利なコア ユーザー インターフェイスの型があります。
@@ -79,12 +86,12 @@ Windows ランタイムには、他にも次のような便利なコア ユー�
 
 要するに、アプリ オブジェクトがビュー プロバイダー ファクトリを提供します。 このファクトリがビュー プロバイダーを作成し、アプリの親ウィンドウをインスタンス化します。 ビュー プロバイダーが、アプリの親ウィンドウに対してアプリのビューを定義します。 次に、ビューと親ウィンドウについて詳しく説明します。
 
-## CoreApplicationView の動作とプロパティ
+## <a name="coreapplicationview-behaviors-and-properties"></a>CoreApplicationView の動作とプロパティ
 
 
 [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) は、現在のアプリ ビューを表します。 アプリ ビューは、初期化時にアプリ シングルトンによって作成されますが、アクティブ化されるまでアクティブになりません。 ビューを表示する [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) を取得するには、そのビューの [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) プロパティにアクセスします。また、ビューのアクティブ化イベントと非アクティブ化イベントを処理するには、[**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントにデリゲートを登録します。
 
-## CoreWindow の動作とプロパティ
+## <a name="corewindow-behaviors-and-properties"></a>CoreWindow の動作とプロパティ
 
 
 アプリ オブジェクトが初期化されるときに、[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) インスタンスである親ウィンドウが作成され、ビュー プロバイダーに渡されます。 アプリに表示するウィンドウがある場合はそれが表示され、そうでない場合はビューの初期化のみが行われます。
@@ -93,7 +100,7 @@ Windows ランタイムには、他にも次のような便利なコア ユー�
 
 ウィンドウに使うウィンドウ イベント ディスパッチャーを取得することもできます。そのためには、[**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) のインスタンスを提供する [**CoreWindow.Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208264) プロパティにアクセスします。
 
-## CoreDispatcher の動作とプロパティ
+## <a name="coredispatcher-behaviors-and-properties"></a>CoreDispatcher の動作とプロパティ
 
 
 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 型のウィンドウに使うイベント ディスパッチのスレッド動作を決定できます。 この型には、ウィンドウ イベント処理を開始する特に重要なメソッド [**CoreDispatcher.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) があります。 アプリで間違ったオプションを指定してこのメソッドを呼び出すと、さまざまな予期しないイベント処理動作が発生する可能性があります。
@@ -109,7 +116,7 @@ Windows ランタイムには、他にも次のような便利なコア ユー�
 
 DirectX を使った UWP アプリでは、[**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217) オプションを使って、グラフィックスの更新を中断する可能性があるブロック動作を防ぐ必要があります。
 
-## DirectX 開発者向けの ASTA の考慮事項
+## <a name="asta-considerations-for-directx-devs"></a>DirectX 開発者向けの ASTA の考慮事項
 
 
 DirectX を使った UWP アプリの実行時の形式を定義するアプリ オブジェクトは、アプリケーション シングルスレッド アパートメント (ASTA) というスレッド モデルを使ってアプリの UI ビューをホストします。 DirectX を使った UWP アプリを開発している場合、そのアプリからディスパッチするすべてのスレッドは [**Windows::System::Threading**](https://msdn.microsoft.com/library/windows/apps/br229642) API または [**CoreWindow::CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) を使う必要があるので、ASTA のプロパティについては十分に理解していると考えられます  (アプリから [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) を呼び出すことで ASTA の [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) オブジェクトを取得できます)。
@@ -152,10 +159,5 @@ ASTA スレッドで実行するために元のコードを移植している場
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

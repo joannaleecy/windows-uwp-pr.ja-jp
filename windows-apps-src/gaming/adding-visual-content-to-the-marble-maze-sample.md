@@ -3,9 +3,16 @@ author: mtoepke
 title: "Marble Maze サンプルへの視覚的なコンテンツの追加"
 description: "このドキュメントでは、Marble Maze ゲームがユニバーサル Windows プラットフォーム (UWP) アプリ環境で Direct3D と Direct2D をどのように使うかについて説明します。パターンを学習することにより、独自のゲーム コンテンツの開発に活用できます。"
 ms.assetid: 6e43422e-e1a1-b79e-2c4b-7d5b4fa88647
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、ゲーム、サンプル、DirectX、グラフィックス"
 translationtype: Human Translation
-ms.sourcegitcommit: eb0115bf83627a9ba8209cce6bdd9edecc165ddf
-ms.openlocfilehash: 6b7880703d40d6ef5ed5f42f3e09bc5573170e1f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b8ee07dc45e53f2ea73f87111fa9eb155854f10a
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -446,7 +453,7 @@ sPSInput main(sVSInput input)
 
 入力アセンブリのステージの状態について詳しくは、「[入力アセンブラー ステージ](https://msdn.microsoft.com/library/windows/desktop/bb205116)」と「[入力アセンブラー ステージの基礎知識](https://msdn.microsoft.com/library/windows/desktop/bb205117)」をご覧ください。
 
-頂点シェーダーとピクセル シェーダーを使ってシーンをレンダリングするプロセスについては、このドキュメントの「[シーンのレンダリング](#rendering_the_scene)」で説明しています。
+頂点シェーダーとピクセル シェーダーを使ってシーンをレンダリングするプロセスについては、このドキュメントの「[シーンのレンダリング](#rendering-the-scene)」で説明しています。
 
 ### <a name="creating-the-constant-buffer"></a>定数バッファーの作成
 
@@ -735,7 +742,7 @@ m_d3dContext->ClearDepthStencilView(
 
  
 
-このドキュメントの「[シェーダーの読み込み](#loading_shaders)」では、頂点シェーダーが作成されるときに入力レイアウトがどのように作成されるかについて説明しています。 次の例は、**MarbleMaze::Render** メソッドで [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) メソッドを使ってこのレイアウトを現在のレイアウトとして設定する方法を示します。
+このドキュメントの「[シェーダーの読み込み](#loading-shaders)」では、頂点シェーダーが作成されるときに入力レイアウトがどのように作成されるかについて説明しています。 次の例は、**MarbleMaze::Render** メソッドで [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) メソッドを使ってこのレイアウトを現在のレイアウトとして設定する方法を示します。
 
 ```cpp
 m_d3dContext->IASetInputLayout(m_inputLayout.Get());
@@ -864,7 +871,7 @@ parameters.pScrollOffset = nullptr;
 HRESULT hr = m_swapChain->Present1(1, 0, &parameters);
 ```
 
-この例では、**m\_swapChain** は [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) オブジェクトです。 このオブジェクトの初期化については、このドキュメントの「[Direct3D と Direct2D の初期化](#initializing)」で説明しています。
+この例では、**m\_swapChain** は [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) オブジェクトです。 このオブジェクトの初期化については、このドキュメントの「[Direct3D と Direct2D の初期化](#initializing-direct3d-and-direct2d)」で説明しています。
 
 [**IDXGISwapChain1::Present**](https://msdn.microsoft.com/library/windows/desktop/hh446797) の最初のパラメーター *SyncInterval* は、フレームを表示する前に待機する必要がある垂直ブランクの数を指定します。 Marble Maze では 1 を指定して、次の垂直ブランクまで待機することを指定しています。 垂直ブランクは、モニターで 1 フレームの描画が終了してから次のフレームが開始するまでの時間です。
 
@@ -901,10 +908,5 @@ else
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

@@ -3,14 +3,21 @@ author: msatranjr
 ms.assetid: 28B30708-FE08-4BE9-AE11-5429F963C330
 title: Bluetooth GATT
 description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリ用の Bluetooth Generic Attribute Profile (GATT) の概要と、3 つの一般的な GATT シナリオのサンプル コードについて説明します。"
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
-ms.openlocfilehash: 508acd449c156fa0f5b14298e4a7700748fc65bb
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c6187f4bfe6f2940b8dbfea0e6441f2fa9ac2c66
+ms.lasthandoff: 02/07/2017
 
 ---
-# Bluetooth GATT
+# <a name="bluetooth-gatt"></a>Bluetooth GATT
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 ** 重要な API **
 
@@ -19,7 +26,7 @@ ms.openlocfilehash: 508acd449c156fa0f5b14298e4a7700748fc65bb
 
 この記事では、3 つの一般的な GATT シナリオのコード例と一緒に、ユニバーサル Windows プラットフォーム (UWP) アプリでの Bluetooth 汎用属性プロファイル (GATT) の概要を説明します。シナリオとは、Bluetooth データの取得、Bluetooth LE 温度測定装置の制御、および Bluetooth LE デバイス データの表示方法の制御です。
 
-## 概要
+## <a name="overview"></a>概要
 
 開発者は、[**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) 名前空間で API を使って Bluetooth LE のサービス、記述子、および特性にアクセスすることができます。 Bluetooth LE デバイスは、その機能をコレクションを通じて公開します。コレクションには次の情報が含まれています。
 
@@ -44,7 +51,7 @@ Bluetooth GATT API が公開するのは、生のトランスポートへのア�
 
 Bluetooth SIG は、利便性向上のため、[一連のプロファイル](http://go.microsoft.com/fwlink/p/?LinkID=317977)を一般公開しています。
 
-## Bluetooth データの取得
+## <a name="retrieve-bluetooth-data"></a>Bluetooth データの取得
 
 この例のアプリは、Bluetooth LE Health Thermometer Service を実装する Bluetooth デバイスから温度の測定値を取り込みます。 アプリでは、新しい温度測定値が利用可能な状態になったときに通知を受け取ることができるように指定します。 "Thermometer Characteristic Value Changed" イベントのハンドラーを登録することにより、フォアグラウンドでの実行中、特性値が変化したときに、そのイベント通知を受け取ります。
 
@@ -165,7 +172,7 @@ void MainPage::TemperatureMeasurementChanged(
 }
 ```
 
-## Bluetooth LE 温度計デバイスの制御
+## <a name="control-a-bluetooth-le-thermometer-device"></a>Bluetooth LE 温度計デバイスの制御
 
 この例の UWP アプリは、架空の Bluetooth LE 温度計デバイスのコントローラーとして機能します。 [**HealthThermometer**](https://msdn.microsoft.com/library/windows/apps/Dn297603) プロファイルの標準的な特性に加え、デバイスには形式特性が宣言されており、ユーザーは摂氏または華氏で温度の測定値を取得することができます。 このアプリは、形式と測定期間を単一の値として確実に設定するために、信頼性の高い書き込みトランザクションを使っています。
 
@@ -285,7 +292,7 @@ void MainPage::Initialize()
 
 ```
 
-## Bluetooth LE デバイス データの表示制御
+## <a name="control-the-presentation-of-bluetooth-le-device-data"></a>Bluetooth LE デバイス データの表示制御
 
 Bluetooth LE デバイスは、現在のバッテリ レベルをユーザーに知らせるバッテリ サービスを公開している場合があります。 バッテリ サービスには、[**PresentationFormats**](https://msdn.microsoft.com/library/windows/apps/Dn263742) というオプションの記述子があり、バッテリ レベル データの表示に活用することができます。 このシナリオでは、そうしたデバイスと連携し、**PresentationFormats** プロパティを使って特性値の形式を設定したうえでその値をユーザーに表示するアプリの例を紹介します。
 
@@ -397,10 +404,5 @@ void MainPage::BatteryLevelChanged(
 ```
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,13 +3,20 @@ author: mcleanbyron
 ms.assetid: 4804e371-065e-4d5a-ab1a-9c5732f52a9e
 description: "スポット広告やバナー広告でサポートされている国や地域について説明します。"
 title: "Microsoft Advertising でサポートされる市場"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 広告, Advertising, 市場"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6150c885c4159911932bf8d7c3848b1e182b2f61
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Microsoft Advertising でサポートされる市場
+# <a name="supported-markets-for-microsoft-advertising"></a>Microsoft Advertising でサポートされる市場
 
 
 
@@ -17,7 +24,7 @@ ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
 スポット広告やバナー広告は、次の国や地域でサポートされています。
 
 <span id="interstitialads"/>
-## スポット広告
+## <a name="interstitial-ads"></a>スポット広告
 
 -   オーストラリア
 
@@ -40,7 +47,7 @@ ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
 -   米国
 
 <span id="bannerads"/>
-## バナー広告
+## <a name="banner-ads"></a>バナー広告
 
 
 -   アフガニスタン
@@ -312,9 +319,4 @@ ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

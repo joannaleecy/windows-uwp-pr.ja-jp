@@ -3,13 +3,20 @@ author: mtoepke
 title: "Direct3D 11 への OpenGL ES 2.0 のマッピング"
 description: "OpenGL ES 2.0 から Direct3D へのグラフィックス アーキテクチャの移植プロセスを初めて開始する場合は、API 間の主要な違いについて把握しておいてください。"
 ms.assetid: 7f9b136c-aa22-04b3-d385-6e9e1f38b948
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, OpenGL, Direct3D, 移植"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d21bbf905797a7b0c14e666f1ec31a85203b30db
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1298f165444b31c75ca9d98f04eb82a58be46e5b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Direct3D 11 への OpenGL ES 2.0 のマッピング
+# <a name="map-opengl-es-20-to-direct3d-11"></a>Direct3D 11 への OpenGL ES 2.0 のマッピング
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -49,7 +56,7 @@ OpenGL ES 2.0 から Direct3D へのグラフィックス アーキテクチャ�
 
  
 
-## 特定の OpenGL ES 2.0 プロバイダーに関する注意事項
+## <a name="notes-on-specific-opengl-es-20-providers"></a>特定の OpenGL ES 2.0 プロバイダーに関する注意事項
 
 
 これらのトピックでは、Khronos OpenGL ES 2.0 仕様とプラットフォームにとらわれない C を使います。iOS と Android はいずれも同じ仕様を使い、これらのプラットフォーム向けに作成された OpenGL ES 2.0 コードは、ここで解説するコード スニペットに非常によく似ています。ただし、これらは通常、オブジェクト指向の API として公開されます。 また、各プラットフォームの複雑さと言語の違いが原因で、特にメソッドのパラメーターの型や、一般的な言語構文に若干の相違がある場合があります。 たとえば iOS は、Objective-C を使います。 Android は C++ を使うことができますが、開発者は純粋な Java の実装に依存している場合があります。 この点を考慮しても、これらのトピックは全体的な概念としては有益であり、OpenGL ES API の構造と用途は異なりません。
@@ -60,10 +67,5 @@ OpenGL ES 2.0 から Direct3D へのグラフィックス アーキテクチャ�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

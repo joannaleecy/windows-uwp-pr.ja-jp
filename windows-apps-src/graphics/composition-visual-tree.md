@@ -3,18 +3,25 @@ author: scottmill
 ms.assetid: f1297b7d-1a10-52ae-dd84-6d1ad2ae2fe6
 title: "コンポジションのビジュアル ツリー"
 description: "コンポジションのビジュアル オブジェクト ツリー構造は、コンポジション API の他のすべての機能でベースとして使われます。 この API により、開発者は 1 つまたは複数のビジュアル オブジェクトを作成して定義できます。それぞれがビジュアル オブジェクト ツリーの 1 つのノードを表します。"
+ms.author: scotmi
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: 0603939bb62b107a781cb3804bcf92aeac7a6155
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e6e40d60708189235c02a21df7e232d52ecfbfe4
+ms.lasthandoff: 02/07/2017
 
 ---
-# コンポジションのビジュアル ツリー
+# <a name="composition-visual-tree"></a>コンポジションのビジュアル ツリー
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 コンポジションのビジュアル オブジェクト ツリー構造は、コンポジション API の他のすべての機能でベースとして使われます。 この API により、開発者は 1 つまたは複数のビジュアル オブジェクトを作成して定義できます。それぞれがビジュアル オブジェクト ツリーの 1 つのノードを表します。
 
-## ビジュアル オブジェクト
+## <a name="visuals"></a>ビジュアル オブジェクト
 
 ビジュアル オブジェクト ツリー構造には、3 種類のビジュアル オブジェクトが含まれ、加えて、ビジュアル オブジェクトの内容に影響を与える基本ブラシ クラスと複数のサブクラスがあります。
 
@@ -24,7 +31,7 @@ ms.openlocfilehash: 0603939bb62b107a781cb3804bcf92aeac7a6155
 -   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) から派生し、ブラシを関連付けることができます。それにより、ビジュアル オブジェクトは画像、効果、単色などのピクセルをレンダリングできるようになります。
 -   [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398) – ビジュアル オブジェクトの内容に効果を適用できます。 CompositionBrush には多数のサブクラスがあります。
 
-## CompositionVisual のサンプル
+## <a name="the-compositionvisual-sample"></a>CompositionVisual のサンプル
 
 このサンプルでは、画面にクリックしてドラッグできる複数の単色の正方形を使います。 正方形がクリックされると、前面に移動して 45 度回転し、ドラッグされると不透明になります。
 
@@ -46,7 +53,7 @@ ms.openlocfilehash: 0603939bb62b107a781cb3804bcf92aeac7a6155
 
 このサンプルでは、アニメーションや複雑な効果のような概念は取り上げていませんが、それらのシステムで使われるビルディング ブロックは含まれています。
 
-## コンポジターの作成
+## <a name="creating-a-compositor"></a>コンポジターの作成
 
 [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) を作成し、ファクトリ用に変数に格納するのは簡単です。 次のスニペットでは、新しい **Compositor** の作成方法を示しています。
 
@@ -54,7 +61,7 @@ ms.openlocfilehash: 0603939bb62b107a781cb3804bcf92aeac7a6155
 _compositor = new Compositor();
 ```
 
-## SpriteVisual と ColorBrush の作成
+## <a name="creating-a-spritevisual-and-colorbrush"></a>SpriteVisual と ColorBrush の作成
 
 [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) を使って、必要なときにオブジェクト、たとえば [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) や [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) を作成するのは簡単です。
 
@@ -65,7 +72,7 @@ visual.Brush = _compositor.CreateColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xF
 
 これはわずか数行のコードですが、強力な概念を示しており、[**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) オブジェクトは効果システムの中核となります。 **SpriteVisual** を使うと、色、画像、効果の作成で高い柔軟性と関係性を得られます。 **SpriteVisual** は、ブラシで (この例では単色) で 2D 四角形を塗りつぶすことのできるビジュアル オブジェクトの一種です。
 
-## ビジュアル オブジェクトのクリップ
+## <a name="clipping-a-visual"></a>ビジュアル オブジェクトのクリップ
 
 [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) は、[**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) に対するクリップを作成するためにも使えます。 次に示しているのは、ビジュアル オブジェクトの両側をトリミングする [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) を使ったサンプルからの例です。
 
@@ -80,7 +87,7 @@ _currentVisual.Clip = clip;
 
 注: API の他のオブジェクトと同様、[**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) のプロパティにもアニメーションを適用できます。
 
-## <span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>クリップの回転
+## <a name="span-idrotatingaclipspanspan-idrotatingaclipspanspan-idrotatingaclipspanrotating-a-clip"></a><span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>クリップの回転
 
 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) は回転により変換できます。 [**RotationAngle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.rotationangle) では、ラジアンと度の両方がサポートされています。 既定ではラジアンになりますが、次のコードに示しているように、度を指定するのは簡単です。
 
@@ -90,7 +97,7 @@ child.RotationAngleInDegrees = 45.0f;
 
 Rotation は、変換が簡単になるように API に用意された一連の変換コンポーネントのほんの一例です。 そのほかにも Offset、Scale、Orientation、RotationAxis、4x4 TransformMatrix などがあります。
 
-## 不透明度の設定
+## <a name="setting-opacity"></a>不透明度の設定
 
 ビジュアル オブジェクトの不透明度の設定も簡単で、浮動小数値を使って指定するだけです。 たとえば、このサンプルでは、すべての正方形の不透明度は .8 から始めています。
 
@@ -100,7 +107,7 @@ visual.Opacity = 0.8f;
 
 Rotation と同様、[**Opacity**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.opacity) のプロパティにもアニメーションを適用できます。
 
-## コレクション内のビジュアル オブジェクトの位置変更
+## <a name="changing-the-visuals-position-in-the-collection"></a>コレクション内のビジュアル オブジェクトの位置変更
 
 コンポジション API を使うと、[**VisualCollection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection) でのビジュアル オブジェクトの位置を多数の方法で変更できます。たとえば、[**InsertAbove**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertabove) を使うと、別のビジュアル オブジェクトの上に、[**InsertBelow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertbelow) を使うと、下に配置できます。[**InsertAtTop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertattop) を使うと、先頭に、[**InsertAtBottom**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertatbottom) を使うと、末尾に移動できます。
 
@@ -110,7 +117,7 @@ Rotation と同様、[**Opacity**](https://msdn.microsoft.com/library/windows/ap
 parent.Children.InsertAtTop(_currentVisual);
 ```
 
-## 完全な例
+## <a name="full-example"></a>完全な例
 
 完全なサンプルでは、これまで説明した概念のすべてを一緒に使って、[**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) オブジェクトの単純なツリーを作成してたどり、XAML、WWA、または DirectX を使わずに不透明度を変更しています。 このサンプルでは、どのように子 **Visual** オブジェクトが作成されて追加され、プロパティが変更されるかを示しています。
 
@@ -506,10 +513,5 @@ namespace compositionvisual
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

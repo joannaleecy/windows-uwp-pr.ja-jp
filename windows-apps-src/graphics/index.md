@@ -3,12 +3,19 @@ author: Jwmsft
 ms.assetid: ad7a739c-fd70-4068-9007-da28028abea3
 title: "グラフィックスとアニメーション"
 description: "このセクションのトピックでは、ストア アプリでのグラフィックスとアニメーションの使用の概要について説明します。"
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e06be76cadffd0ee116b0cfd28c90176e25656d5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fafb0e013e1eef5fba2c5ec24b235df5c3c8429a
+ms.lasthandoff: 02/07/2017
 
 ---
-# グラフィックスとアニメーション
+# <a name="graphics-and-animation"></a>グラフィックスとアニメーション
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
@@ -35,10 +42,5 @@ ms.openlocfilehash: e06be76cadffd0ee116b0cfd28c90176e25656d5
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

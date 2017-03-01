@@ -3,16 +3,23 @@ author: TylerMSFT
 title: "スプラッシュ画面の表示時間の延長"
 description: "アプリに追加スプラッシュ画面を作成すると、より長い時間、スプラッシュ画面を表示することができます。 この追加画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。"
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: bec87d2e208ca6f8d310de139692ef13f052b915
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 220e2e1bee237120acd35d2a4111bf7390b8e619
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# スプラッシュ画面の表示時間の延長
+# <a name="display-a-splash-screen-for-more-time"></a>スプラッシュ スクリーンの表示時間の延長
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 **重要な API**
@@ -36,7 +43,7 @@ ms.openlocfilehash: bec87d2e208ca6f8d310de139692ef13f052b915
 
 次の手順を使うと、既定のスプラッシュ画面とよく似た追加スプラッシュ画面を作成できます。
 
-## **[空白のページ]** 項目を既にあるアプリに追加する
+## <a name="add-a-blank-page-item-to-your-existing-app"></a>**[空白のページ]** 項目を既にあるアプリに追加する
 
 
 また、このトピックでは、C#、Visual Basic、C++ を使って、既にあるユニバーサル Windows プラットフォーム (UWP) アプリ プロジェクト用の追加スプラッシュ画面を作成することを想定しています。
@@ -47,7 +54,7 @@ ms.openlocfilehash: bec87d2e208ca6f8d310de139692ef13f052b915
 
 **[空白のページ]** 項目を追加すると、2 つのファイルが生成されます。1 つはマークアップ用 (ExtendedSplash.xaml)、もう 1 つはコード用 (ExtendedSplash.xaml.cs) です。
 
-## 追加スプラッシュ画面の基本的な XAML
+## <a name="essential-xaml-for-an-extended-splash-screen"></a>追加スプラッシュ画面の基本的な XAML
 
 
 次の手順に従って、追加スプラッシュ画面にイメージやプログレス コントロールを追加します。
@@ -74,7 +81,7 @@ ExtendedSplash.xaml ファイルで次の操作を行います。
 
  
 
-## 追加スプラッシュ画面クラスの基本的なコード
+## <a name="essential-code-for-an-extended-splash-screen-class"></a>追加スプラッシュ画面クラスの基本的なコード
 
 
 追加スプラッシュ画面はウィンドウのサイズ (Windows のみ) や向きの変更に応答する必要があります。 ウィンドウのサイズがどのように変更されても追加スプラッシュ画面が適切に表示されるように、使う画像の位置は更新される必要があります。
@@ -234,7 +241,7 @@ ExtendedSplash.xaml ファイルで次の操作を行います。
 
     App.xaml.cs ファイルで起動アクティブ化ハンドラーを変更するときは、アプリの以前の [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) が **Terminated** だった場合にも `loadstate` を true に設定します。 その場合、`RestoreStateAsync` メソッドは、アプリを前の状態に復元します。 アプリの起動、中断、終了の概要については、「[アプリのライフサイクル](app-lifecycle.md)」をご覧ください。
 
-## 起動アクティブ化ハンドラーの変更
+## <a name="modify-the-launch-activation-handler"></a>起動アクティブ化ハンドラーの変更
 
 
 アプリが起動されるとき、スプラッシュ画面の情報がアプリの起動アクティブ化イベント ハンドラーに渡されます。 この情報を使って、追加スプラッシュ画面ページにイメージを適切に配置できます。 このスプラッシュ画面の情報は、アプリの [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) ハンドラーに渡されるアクティブ化イベント引数から取得できます (次のコードの `args` 変数を参照)。
@@ -257,7 +264,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 }
 ```
 
-## コードを完成させる
+## <a name="complete-code"></a>コードを完成させる
 
 
 > **注:** 次のコードは、前の手順に示したスニペットとは少し異なります。
@@ -416,7 +423,7 @@ namespace SplashScreenExample
 
 App.xaml.cs: このプロジェクトは、UWP アプリの **[新しいアプリケーション (XAML)]** プロジェクト テンプレートを使って Visual Studio 2015 で作成されました。 `OnNavigationFailed` と `OnSuspending` の両方のイベント ハンドラーは自動的に生成され、追加スプラッシュ画面を実装するために変更する必要はありません。 このトピックでは、`OnLaunched` のみを変更します。
 
-アプリにプロジェクト テンプレートを使わなかった場合、[**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) ナビゲーションを使用しないように変更した `OnLaunched` の例については、手順 4「[起動アクティブ化ハンドラーの変更](#modify_the_launch_activation_handler)」をご覧ください。
+アプリにプロジェクト テンプレートを使わなかった場合、[**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) ナビゲーションを使用しないように変更した `OnLaunched` の例については、手順 4「[起動アクティブ化ハンドラーの変更](#modify-the-launch-activation-handler)」をご覧ください。
 
 ```cs
 using System;
@@ -533,7 +540,7 @@ namespace SplashScreenExample
 }
 ```
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [アプリのライフサイクル](app-lifecycle.md)
@@ -548,9 +555,4 @@ namespace SplashScreenExample
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

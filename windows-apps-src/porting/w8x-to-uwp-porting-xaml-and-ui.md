@@ -3,9 +3,16 @@ author: mcleblanc
 description: "宣言型 XAML マークアップ形式での UI の定義は、ユニバーサル 8.1 アプリからユニバーサル Windows プラットフォーム (UWP) アプリに適切に変換されます。"
 title: "Windows ランタイム 8.x の XAML と UI の UWP への移植"
 ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: ea8844925cc227d9f082595b039dd68164ad1228
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 19a6ef29265c22d1bb02464a76ab20e487c67ce4
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -81,9 +88,9 @@ ms.openlocfilehash: ea8844925cc227d9f082595b039dd68164ad1228
 
 チャームと統合されるコードを変更する必要はありません。ただし、いくつかの UI をアプリに追加して、Windows 10 シェルに含まれていないチャーム バーの代わりに使う必要があります。 Windows 10 で実行されるユニバーサル 8.1 アプリには、独自の代替 UI があります。このような UI は、アプリのタイトル バーにシステムが表示するクロムによって提供されます。
 
-## <a name="controls-and-control-stylestemplates"></a>コントロールとコントロール スタイル/テンプレート
+## <a name="controls-and-control-styles-and-templates"></a>コントロールとコントロール スタイルおよびテンプレート
 
-Windows 10 で実行されるユニバーサル 8.1 アプリでは、コントロールに関して 8.1 の外観と動作が維持されます。 ただし、そのアプリを Windows 10 アプリに移植すると、外観と動作が異なる場合があるので、注意してください。 コントロールのアーキテクチャと設計は、Windows 10 アプリでは基本的に変更はありません。ほとんどの変更は、[デザイン言語](#design-language)、単純化、操作性の向上に関連するものです。
+Windows 10 で実行されるユニバーサル 8.1 アプリでは、コントロールに関して 8.1 の外観と動作が維持されます。 ただし、そのアプリを Windows 10 アプリに移植すると、外観と動作が異なる場合があるので、注意してください。 コントロールのアーキテクチャと設計は、Windows 10 アプリでは基本的に変更はありません。ほとんどの変更は、[デザイン言語](#design-language-in-windows-10)、単純化、操作性の向上に関連するものです。
 
 **注**   PointerOver 表示状態は、Windows 10 アプリと Windows ストア アプリのカスタム スタイル/テンプレートには関連しますが、Windows Phone ストア アプリのカスタム スタイル/テンプレートには関連しません。 このことから (および Windows 10 アプリでサポートされているシステム リソース キーのため)、アプリを Windows 10 に移植するときは、Windows ストア アプリからカスタム スタイル/テンプレートを再利用することをお勧めします。
 カスタムのスタイル/テンプレートで、確実に最新の表示状態のセットを使い、既定のスタイル/テンプレートに対するパフォーマンスの向上を活用するには、Windows 10 の新しい既定のテンプレートのコピーを編集し、カスタマイズを再適用します。 パフォーマンス向上の 1 つの例として、以前に **ContentPresenter** または Panel を囲んでいた **Border** が削除され、子要素が境界線を表示するようになりました。
@@ -99,7 +106,7 @@ Windows 10 で実行されるユニバーサル 8.1 アプリでは、コント�
 | [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | Windows 10 アプリでは、[**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) で [**EdgeGesture.Completed**](https://msdn.microsoft.com/library/windows/apps/hh701622) イベントも [**UIElement.RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984) イベントも処理されません。 タップまたはスワイプにも応答しません。 ただし、これらのイベントを処理し、[**IsOpen**](https://msdn.microsoft.com/library/windows/apps/hh701939) を設定するオプションがあります。 |
 | [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584)、[**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) や [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) に加えられた視覚的な変化によってアプリの外観がどうなるかを確認してください。 モバイル デバイスで実行される Windows 10 アプリでは、これらのコントロールを使っても選択ページへは移動されません。ただし、簡易非表示に対応したポップアップが使われます。 |
 | [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584)、[**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | Windows 10 アプリでは、[**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) または [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) をポップアップ内に配置することはできません。 ポップアップ型のコントロールにこれらのコントロールを表示する場合は、[**DatePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn625013) と [**TimePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn608313) を使うことができます。 |
-| **GridView**、**ListView** | **GridView**/**ListView** については、「[GridView/ListView changes](#gridview)」をご覧ください。 |
+| **GridView**、**ListView** | **GridView**/**ListView** については、「[GridView と ListView の変更](#gridview-and-listview-changes)」をご覧ください。 |
 | [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) | Windows Phone ストア アプリでは、[**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) コントロールは最後のセクションから最初のセクションに折り返します。 Windows ストア アプリと Windows 10 アプリでは、ハブ セクションは折り返しません。 |
 | [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) | Windows Phone ストア アプリでは、[**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) コントロールの背景画像は、ハブ セクションに対する視差効果で移動します。 Windows ストア アプリと Windows 10 アプリでは、視差効果は使われません。 |
 | [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843)  | ユニバーサル 8.1 アプリでは、[**HubSection.IsHeaderInteractive**](https://msdn.microsoft.com/library/windows/apps/dn251917) プロパティにより、セクション ヘッダーとその横に表示される山形のグリフが対話型になります。 Windows 10 アプリでは、ヘッダーの横に対話型の "詳細表示" アフォーダンスが表示されますが、ヘッダーそのものは対話型にはなりません。 **IsHeaderInteractive** により、操作で [**Hub.SectionHeaderClick**](https://msdn.microsoft.com/library/windows/apps/dn251953) イベントが発生するかどうかが決まります。 |
@@ -107,8 +114,8 @@ Windows 10 で実行されるユニバーサル 8.1 アプリでは、コント�
 | **ListPickerFlyout**、**PickerFlyout**  | **ListPickerFlyout** と **PickerFlyout** は、Windows 10 アプリでは使われなくなりました。 単一選択ポップアップの場合は、[**MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/dn299030) を使います。より複雑なエクスペリエンスの場合は、[**Flyout**](https://msdn.microsoft.com/library/windows/apps/dn279496) を使います。 |
 | [**PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519) | [**PasswordBox.IsPasswordRevealButtonEnabled**](https://msdn.microsoft.com/library/windows/apps/hh702579) プロパティは、Windows 10 アプリでは使われなくなり、設定しても効果はありません。 代わりに [**PasswordBox.PasswordRevealMode**](https://msdn.microsoft.com/library/windows/apps/dn890867) を使います。このプロパティでは、既定で **Peek** が設定されます (これにより、Windows ストア アプリのようにパスワードを表示するボタンが表示されます)。 「[パスワード ボックスのガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596103)」もご覧ください。 |
 | [**Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) | [**Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) はユニバーサル コントロールとなり、モバイル デバイスでの利用のみに限定されていた制限が排除されました。 |
-| [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252771) | ユニバーサル デバイス ファミリでは [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252803) が実装されていますが、モバイル デバイスでは部分的に機能しません。 「[AutoSuggestBox に使用されない SearchBox](#searchbox)」をご覧ください。 |
-| **SemanticZoom** | **SemanticZoom** については、「[SemanticZoom に関する変更](#semantic-zoom)」をご覧ください。 |
+| [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252771) | ユニバーサル デバイス ファミリでは [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252803) が実装されていますが、モバイル デバイスでは部分的に機能しません。 「[AutoSuggestBox に使用されない SearchBox](#searchbox-deprecated-in-favor-of-autosuggestbox)」をご覧ください。 |
+| **SemanticZoom** | **SemanticZoom** については、「[SemanticZoom に関する変更](#semanticzoom-changes)」をご覧ください。 |
 | [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)  | [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) の既定のプロパティの一部が変更されています。 [**HorizontalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209549) が **Auto**、[**VerticalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209589) が **Auto**、[**ZoomMode**](https://msdn.microsoft.com/library/windows/apps/br209601) が **Disabled** です。 新しい既定値がアプリに対して適切でない場合は、スタイルで変更するか、コントロール自体のローカル値として変更できます。  |
 | [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | Windows ストア アプリでは、スペル チェックは既定で [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) に対してオフになります。 Windows Phone ストア アプリと Windows 10 アプリでは、既定でオンになります。 |
 | [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) の既定のフォント サイズは 11 から 15 に変更されました。 |
@@ -137,9 +144,9 @@ UWP アプリのコントロールについて詳しくは、「[機能別コン
 
 Windows 10 アプリ向けのすべてスケール ファクターは 100%、125%、150%、200%、250%、300%、400% ですが、すべてのスケール ファクターをサポートすることはお勧めしません。 すべてのスケール ファクターのアセットを提供した場合、ストアでは、各デバイスに合った適切なサイズのアセットが選ばれ、それらのアセットのみがダウンロードされます。 ストアでは、デバイスの DPI に基づいて、ダウンロードするアセットが選ばれます。 140%% や 220%% などのスケール ファクターで Windows ストア アプリのアセットを再利用できますが、アプリは新しいスケール ファクターのいずれかで実行されるため、一部のビットマップ スケーリングを回避できなくなります。 状況に合った最適な結果を得ることができるかどうかを確認するために、さまざまなデバイスでアプリをテストしてください。
 
-Windows ストア アプリの XAML マークアップを再利用できます。Windows ストア アプリでは、リテラルの寸法値がマークアップで使われています (図形や他の要素に関するサイズの設定や、文字体裁のために使われている場合があります)。 ただし、場合によっては、ユニバーサル 8.1 アプリ用のデバイスに比べ、Windows 10 アプリ用のデバイスではより大きなスケール ファクターが使われます (たとえば、140%% であった場合に 150%%、180%% であった場合に 200%% など)。 したがって、Windows 10 でこれらのリテラル値が大きすぎる場合は、それらの値に 0.8 を乗算してみてください。 詳しくは、「[ユニバーサル Windows プラットフォーム (UWP) アプリ用レスポンシブ デザイン 101](https://msdn.microsoft.com/library/windows/apps/dn958435)」をご覧ください。
+Windows ストア アプリの XAML マークアップを再利用できます。Windows ストア アプリでは、リテラルの寸法値がマークアップで使われています (図形や他の要素に関するサイズの設定や、文字体裁のために使われている場合があります)。 ただし、場合によっては、ユニバーサル 8.1 アプリ用のデバイスに比べ、Windows 10 アプリ用のデバイスではより大きなスケール ファクターが使われます (たとえば、140%% であった場合に 150%%、180%% であった場合に 200%% など)。 したがって、Windows 10 でこれらのリテラル値が大きすぎる場合は、それらの値に 0.8 を乗算してみてください。 詳しくは、「[UWP アプリ用レスポンシブ デザイン 101](https://msdn.microsoft.com/library/windows/apps/dn958435)」をご覧ください。
 
-## <a name="gridviewlistview-changes"></a>GridView/ListView に関する変更
+## <a name="gridview-and-listview-changes"></a>GridView と ListView の変更
 
 コントロールを縦方向へスクロールするために、[**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) の既定の style setter に対していくつかの変更が行われました (横方向へのスクロールではありません。これについては既定で対応しています)。 プロジェクトに含まれている既定のスタイルのコピーを編集した場合、そのコピーにはこれらの変更が適用されていないため、手動で変更を加える必要があります。 一連の変更を以下にまとめます。
 
@@ -457,7 +464,7 @@ Windows ストア アプリと Windows Phone ストア アプリでは、既定�
 
 Windows ストア アプリと Windows Phone ストア アプリでは、テキストの既定の言語が、ビルドの言語または en-us に設定されます。 Windows 10 アプリでは、Windows の既定の言語はアプリの最上位の言語 (フォント フォールバック) に設定されます。 [**FrameworkElement.Language**](https://msdn.microsoft.com/library/windows/apps/hh702066) を明示的に設定できますが、そのプロパティの値を設定しないと、フォントの優れたフォールバック動作を得ることができます。
 
-詳しくは、「[フォントのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)」と「[UWP アプリの設計](http://go.microsoft.com/fwlink/p/?LinkID=533896)」をご覧ください。 テキスト コントロールの変更については、上記の「[コントロール](#controls)」セクションもご覧ください。
+詳しくは、「[フォントのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)」と「[UWP アプリの設計](http://go.microsoft.com/fwlink/p/?LinkID=533896)」をご覧ください。 テキスト コントロールの変更については、上記の「[コントロール](#controls-and-control-styles-and-templates)」セクションもご覧ください。
 
 ## <a name="theme-changes"></a>テーマの変更
 
@@ -481,10 +488,5 @@ Windows ストア アプリと Windows Phone ストア アプリでは、テキ�
 ```
 
 次のトピックは、「 [入出力、デバイス、アプリ モデルの移植](w8x-to-uwp-input-and-sensors.md)」です。
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

@@ -2,20 +2,27 @@
 author: jnHs
 Description: "アドオンを一括管理すると、更新プログラムを個別に提出するのではなく、複数のアドオンに対して同時に変更を加えることができます。"
 title: "アドオンの一括管理"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 6d1ffcc1-b3c6-4e2f-8fbe-d243b20a6272
 translationtype: Human Translation
-ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
-ms.openlocfilehash: 9d387cf3a7850301660a672e3255a762ecd3bd4a
-
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 3d7c8f1ab468e4797096e83fbbf256f46b494439
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# アドオンの一括管理
+# <a name="manage-add-ons-in-bulk"></a>アドオンの一括管理
 
 > **重要** 現在この機能は、[デベロッパー センター Insider Program](dev-center-insider-program.md) に参加している開発者アカウントでのみ利用できます。 すべての開発者が利用できるようになるまでに、この機能の実装は変更される可能性があります。 この暫定版ドキュメントでは、この機能のしくみに関する基本的な情報について説明します。
 
 アドオンを一括管理すると、更新プログラムを個別に提出するのではなく、複数のアドオンに対して同時に変更を加えることができます。 この機能にアクセスするには、アプリの概要ページから **[アドオンの一括管理]** をクリックします。
 
-## 現在のアドオン情報のエクスポート
+## <a name="export-current-add-on-info"></a>現在のアドオン情報のエクスポート
 
 最初に、.csv テンプレート ファイルをダウンロードする必要があります。 既にアドオンが作成されている場合、このファイルには、アドオンに関する情報が含まれています。 まだアドオンが作成されていない場合、このファイルは空のファイルとなり、新しいアドオンに関する情報を入力することができます。
 
@@ -26,19 +33,19 @@ ms.openlocfilehash: 9d387cf3a7850301660a672e3255a762ecd3bd4a
 | 列名               | 説明                            | 必須かどうか      |
 |---------------------------|----------------------------------|----------------------|
 | 製品 ID    |  アドオン固有の[製品 ID](set-your-add-on-product-id.md#product-id) です。  | はい。 アドオンを公開した後は変更できません。 |
-| Action |テンプレートをインポートするときに適用する操作です。 サポートされる値は、**Submit** (新しいアドオンの提出、または以前に公開されたアドオンの更新)、および **CreateDraft** (アドオンをストアに提出せずに、変更を保存) です。 |  はい |
-| 製品の種類  | アドオンの[製品の種類](set-your-add-on-product-id.md#product-type)です。 サポートされる値は **Consumable** または **Durable** です。 |   はい。 アドオンを公開した後は変更できません。 |
-| 製品の有効期限  | 永続的なアドオンでは、この列には **Forever** (有効期限が切れない製品)、または期間を設定します。 利用可能な期間の値は、**1day、3days、5days、7days、14days、30days、60days、90days、180days、365days** です。    | はい (製品の種類が Durable (永続的) である場合) |
-| コンテンツの種類  | アドオンの[コンテンツの種類](enter-add-on-properties.md#content-type)です。 ほとんどのアドオンでは、 これは **ElectronicSoftwareDownload** になります。 利用可能なその他の値は、**ElectronicBooks、ElectronicMagazineSingleIssue、ElectronicNewspaperSingleIssue、MusicDownload、MusicStreaming、OnlineDataStorageServices、VideoDownload、VideoStreaming、SoftwareAsAService** です。 |    はい |
-| タグ   | アプリの実装で使用される[タグ](enter-add-on-properties.md#custom-developer-data) (**カスタムの開発者データ**とも呼ばれます) 情報です。省略可能です。 | いいえ |
-| 基本価格    | 提供するアドオンの基準となる[価格帯](set-add-on-pricing-and-availability.md#base-price)です。 **Free** を指定するか、**0.99USD** といった形式で有効な価格帯を指定する必要があります。 | はい |
-| リリース日  | アドオンを公開する日付。 利用可能な値は、**Immediate**、**Manual**、または [ISO 8601 標準](http://go.microsoft.com/fwlink/p/?LinkId=817237)に準拠している日付文字列です。 | はい |
-| タイトル    | ユーザーに対して表示されるアドオンの名前です。先頭には言語コードとセミコロンが付きます。 たとえば、英語 (米国) で “Example Title” というタイトルを使用する場合は、「*en-us;Example Title*」と入力します。 他の言語用にタイトルを追加する場合は、セミコロンでそれらのタイトルを区切ります。 各タイトルは、100 文字以下で指定する必要があります。  | はい |
-|説明   | ユーザーに表示する省略可能な追加情報です。先頭には言語-ロケールコードとセミコロンが付きます。 たとえば、英語 (米国) で “This is an example” という説明を使用する場合は、「*en-us;This is an example*」と入力します。 他の言語用に説明を追加する場合は、セミコロンでそれらのタイトルを区切ります。 各説明は、200 文字以下で指定する必要があります。    | いいえ |
-| 市場 | アドオンの提供先となる、1 つまたは複数の[市場](define-pricing-and-market-selection.md#windows-store-consumer-markets)です。 各市場はセミコロンで区切ります。 |  はい |
-|キーワード | アプリの実装で使用される[キーワード](enter-add-on-properties.md#keywords)です。省略可能です。 | いいえ |
+| Action |テンプレートをインポートするときに適用する操作です。 サポートされる値は、**Submit** (新しいアドオンの提出、または以前に公開されたアドオンの更新)、および **CreateDraft** (アドオンをストアに提出せずに、変更を保存) です。 |     はい |
+| 製品の種類    | アドオンの[製品の種類](set-your-add-on-product-id.md#product-type)です。 サポートされる値は **Consumable** または **Durable** です。 |    はい。 アドオンを公開した後は変更できません。 |
+| 製品の有効期限    | 永続的なアドオンでは、この列には **Forever** (有効期限が切れない製品)、または期間を設定します。 利用可能な期間の値は、**1day、3days、5days、7days、14days、30days、60days、90days、180days、365days** です。    | はい (製品の種類が Durable (永続的) である場合) |
+| コンテンツの種類    | アドオンの[コンテンツの種類](enter-add-on-properties.md#content-type)です。 ほとんどのアドオンでは、 これは **ElectronicSoftwareDownload** になります。 利用可能なその他の値は、**ElectronicBooks、ElectronicMagazineSingleIssue、ElectronicNewspaperSingleIssue、MusicDownload、MusicStreaming、OnlineDataStorageServices、VideoDownload、VideoStreaming、SoftwareAsAService** です。 |    はい |
+| タグ    | アプリの実装で使用される[タグ](enter-add-on-properties.md#custom-developer-data) (**カスタムの開発者データ**とも呼ばれます) 情報です。省略可能です。 | いいえ |
+| 基本価格    | 提供するアドオンの基準となる[価格帯](set-add-on-pricing-and-availability.md#base-price)です。 **Free** を指定するか、**0.99USD** といった形式で有効な価格帯を指定する必要があります。 |    はい |
+| リリース日    | アドオンを公開する日付。 利用可能な値は、**Immediate**、**Manual**、または [ISO 8601 標準](http://go.microsoft.com/fwlink/p/?LinkId=817237)に準拠している日付文字列です。 | はい |
+| タイトル    | ユーザーに対して表示されるアドオンの名前です。先頭には言語コードとセミコロンが付きます。 たとえば、英語 (米国) で “Example Title” というタイトルを使用する場合は、「*en-us;Example Title*」と入力します。 他の言語用にタイトルを追加する場合は、セミコロンでそれらのタイトルを区切ります。 各タイトルは、100 文字以下で指定する必要があります。     | はい |
+|説明    | ユーザーに表示する省略可能な追加情報です。先頭には言語-ロケールコードとセミコロンが付きます。 たとえば、英語 (米国) で “This is an example” という説明を使用する場合は、「*en-us;This is an example*」と入力します。 他の言語用に説明を追加する場合は、セミコロンでそれらのタイトルを区切ります。 各説明は、200 文字以下で指定する必要があります。    | いいえ |
+| 市場 |    アドオンの提供先となる、1 つまたは複数の[市場](define-pricing-and-market-selection.md#windows-store-consumer-markets)です。 各市場はセミコロンで区切ります。 |    はい |
+|キーワード |    アプリの実装で使用される[キーワード](enter-add-on-properties.md#keywords)です。省略可能です。 | いいえ |
 
-## アドオンのインポート
+## <a name="import-add-ons"></a>アドオンのインポート
 
 変更内容をインポートする前に、必要な変更内容に基づいて、ダウンロードした .csv ファイルを更新する必要があります。
 
@@ -49,10 +56,5 @@ ms.openlocfilehash: 9d387cf3a7850301660a672e3255a762ecd3bd4a
 新しいアドオンを提出するには、新しい行を追加して、新しいアドオンに関する情報を入力します。 必要な情報はすべて必ず入力してください。 
 
 すべての変更を行ったら、.csv ファイルを保存し (同じファイル名を使用)、指定されたフィールドにファイルをドラッグして (または **[ファイルの参照]** をクリックして)、ファイルをアップロードします。 変更の概要が表示されます。提出する前に修正する必要があるエラーがある場合は、エラーも表示されます。 情報が正しいことを確認して、**[ストアに提出]** をクリックします。 各アドオンに対して、提供された情報を使用して、申請プロセスが開始されます。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

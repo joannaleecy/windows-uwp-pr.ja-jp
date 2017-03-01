@@ -2,14 +2,22 @@
 author: awkoren
 Description: "Desktop to UWP Bridge について理解し、Windows デスクトップ アプリケーション (Win32、WPF、Windows フォームなど) をユニバーサル Windows プラットフォーム (UWP) アプリに変換しましょう。"
 Search.Product: eADQiWindows 10XVcnh
-title: "Desktop Bridge でデスクトップ アプリをユニバーサル Windows プラットフォーム (UWP) 用に変換する"
+title: "デスクトップ ブリッジでデスクトップ アプリをユニバーサル Windows プラットフォーム (UWP) 用に変換する"
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 translationtype: Human Translation
-ms.sourcegitcommit: 462d2b13cefc6abb4d7c6f814ec4ee659e4afde8
-ms.openlocfilehash: 1ef54c3c45113e434333058d0f039e213ea8eed2
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: dd9f45b0ddcc201053ed8e35908da66443e47d72
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# <a name="bring-your-desktop-app-to-the-universal-windows-platform-uwp-with-the-desktop-bridge"></a>Desktop Bridge でデスクトップ アプリをユニバーサル Windows プラットフォーム (UWP) 用に変換する
+# <a name="bring-your-desktop-app-to-the-universal-windows-platform-uwp-with-the-desktop-bridge"></a>デスクトップ ブリッジでデスクトップ アプリをユニバーサル Windows プラットフォーム (UWP) 用に変換する
 
 Desktop to UWP Bridge について理解し、Windows デスクトップ アプリケーションをユニバーサル Windows プラットフォーム (UWP) アプリに変換しましょう。
 
@@ -87,14 +95,10 @@ Desktop Bridge の内部的なしくみについては、「[Desktop Bridge の�
 | [Desktop Bridge を使って手動でアプリを UWP アプリに変換する](desktop-to-uwp-manual-conversion.md) | 手動でアプリ パッケージとマニフェストを作成する方法について説明します。 |
 | [Desktop Bridge アプリの拡張機能](desktop-to-uwp-extensions.md) | 拡張機能を使って、スタートアップ タスクやエクスプローラー統合などの機能を有効にして、変換済みのアプリを強化します。 |
 | [Desktop Bridge で変換されたアプリでサポートされている UWP API](desktop-to-uwp-supported-api.md) | 変換されたデスクトップ アプリで利用可能な UWP API を確認します。 |
-| [Desktop Bridge で変換されたアプリのデバッグ](desktop-to-uwp-debug.md) | 変換済みのアプリをデバッグするためのオプションについて説明します。 | 
+| [Visual Studio による .NET デスクトップ アプリ用デスクトップ ブリッジ パッケージ ガイド](desktop-to-uwp-packaging-dot-net.md) | .NET アプリを編集、デバッグ、パッケージ化できるように Visual Studio ソリューションを構成します。 | 
+| [デスクトップ ブリッジで変換されたアプリのデバッグ](desktop-to-uwp-debug.md) | 変換済みのアプリをデバッグするためのオプションについて説明します。 | 
 | [Desktop Bridge を使用して変換したアプリに署名する](desktop-to-uwp-signing.md) | 証明書を使って変換済みのアプリ パッケージに署名する方法について説明します。 |
 | [Desktop Bridge で変換されたアプリの配布](desktop-to-uwp-distribute.md) | 変換済みのアプリをユーザーに配布する方法を確認します。  |
 | [Desktop Bridge の内側](desktop-to-uwp-behind-the-scenes.md) | Desktop to UWP Bridge の内部的な処理について詳しく説明します。 | 
 | [Desktop Bridge に関する既知の問題](desktop-to-uwp-known-issues.md) | Desktop to UWP Bridge に関する既知の問題について説明します。 | 
 | [デスクトップ アプリから UWP へのブリッジのコード サンプル](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | 変換されたアプリの機能を示す GitHub のコード サンプルです。 |
-
-
-<!--HONumber=Dec16_HO3-->
-
-

@@ -3,15 +3,22 @@ author: jwmsft
 description: "Binding マークアップ拡張は、XAML の読み込み時に Binding クラスのインスタンスに変換されます。"
 title: "Binding マークアップ拡張"
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 3ad7dd8261ceb549de6bd9a5ae513e6f6fdb8d49
-ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c2d6590d21607cec7718617a0657e28ba56c072e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# {Binding} マークアップ拡張
+# <a name="binding-markup-extension"></a>{Binding} マークアップ拡張
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 **注:** Windows 10 では、パフォーマンスと開発者の生産性向上のために最適化された新しいバインド メカニズムが利用できます。 「[{x:Bind} マークアップ拡張](x-bind-markup-extension.md)」をご覧ください。
 
@@ -21,7 +28,7 @@ ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
 
 **{Binding}** には、ローカル値と同じ依存関係プロパティの優先順位があります。命令型コードにローカル値を設定すると、マークアップに設定されたすべての **{Binding}** の影響がなくなります。
 
-## XAML 属性の使用方法
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法
 
 
 ``` syntax
@@ -41,7 +48,7 @@ ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
 | *propName* | [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) オブジェクトで設定するプロパティの文字列名。 たとえば、"Converter" です。 |
 | *value* | プロパティに設定する値。 引数の構文は、下記の「[{Binding} で設定できる Binding クラスのプロパティ](#properties-of-binding)」セクションで示しているプロパティによって異なります。 |
 
-## プロパティ パス
+## <a name="property-path"></a>プロパティ パス
 
 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) は、バインド先のプロパティ (ソース プロパティ) を表します。 Path は位置パラメーターであるため、パラメーター名を明示的に使用する (`{Binding Path=EmployeeID}`) ことも、最初の無名パラメーターとして指定する (`{Binding EmployeeID}`) こともできます。
 
@@ -57,7 +64,7 @@ ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
 
 プロパティ パスの文字列の構文、アニメーション機能領域のプロパティ パス、[**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) オブジェクトの作成について詳しくは、「[プロパティ パス構文](property-path-syntax.md)」をご覧ください。
 
-## {Binding} で設定できる Binding クラスのプロパティ
+## <a name="properties-of-the-binding-class-that-can-be-set-with-binding"></a>{Binding} で設定できる Binding クラスのプロパティ
 
 
 **{Binding}** は、*bindingProperties* プレースホルダー構文で示されます。これは、マークアップ拡張で設定可能な [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) の読み取り/書き込みプロパティが複数あるためです。 プロパティは、*propName*=*value* ペアをコンマで区切ることにより、任意の順序で設定できます。 プロパティによっては、型変換をサポートしていない型が必要なものがあります。そのため、これらのプロパティでは、**{Binding}** 内で入れ子にされた独自のマークアップ拡張が必要です。
@@ -87,7 +94,7 @@ ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
 
 **ヒント:** [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) や [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) のように、値に 1 つの中かっこを指定する必要がある場合は、`\{` のように円記号 (バックスラッシュ) を中かっこの前に付けます。 別の方法として、エスケープする必要がある中かっこを含む文字列全体を `ConverterParameter='{Mix}'` のように別の種類の引用符で囲みます。
 
-## 例
+## <a name="examples"></a>例
 
 ```XML
 <!-- binding a UI element to a view model -->    
@@ -118,14 +125,9 @@ ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
 
 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826) プロパティの値が別のマークアップ拡張 [{StaticResource} マークアップ拡張](staticresource-markup-extension.md) を使っていることに注意してください。つまり、ここでは入れ子になったマークアップ拡張が 2 つ使われています。 内側のものが最初に評価されます。このため、リソースが取得されると、バインドに使える実用的な [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) (リソースの `local:S2Formatter` 要素によってインスタンス化されるカスタム クラス) が存在することになります。
 
-## ツールのサポート
+## <a name="tools-support"></a>ツールのサポート
 
 Microsoft Visual Studio の Microsoft IntelliSense では、XAML マークアップ エディターで **{Binding}** を作成している間、データ コンテキストのプロパティが表示されます。 「{Binding」と入力するとすぐに、[**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) に適したデータ コンテキスト プロパティがドロップダウンに表示されます。 IntelliSense は、[**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) の他のプロパティに関しても役立ちます。 これが機能するためには、マークアップ ページにデータ コンテキストまたは設計時のデータ コンテキストを設定する必要があります。 **[定義へ移動]** (F12) は、**{Binding}** でも機能します。 または、データ バインディングのダイアログを使うこともできます。
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

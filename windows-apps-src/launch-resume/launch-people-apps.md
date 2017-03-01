@@ -3,21 +3,28 @@ author: TylerMSFT
 title: "People アプリの起動"
 description: "ここでは、ms-people URI スキームについて説明します。 アプリでこの URI スキームを使って People アプリを起動し、特定のアクションを実行できます。"
 ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 3125ec2a73410f3d3f5b13e154ea30b1319a9a1e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 25abea87eaf374a1a8b5432c522d51bd7bbc1c1e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# People アプリの起動
+# <a name="launch-the-people-app"></a>People アプリの起動
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
 ここでは、**ms-people:** URI スキームについて説明します。 アプリでこの URI スキームを使って People アプリを起動し、特定のアクションを実行できます。
 
-## ms-people: URI スキーム リファレンス
+## <a name="ms-people-uri-scheme-reference"></a>ms-people: URI スキーム リファレンス
 
 
 <table>
@@ -82,7 +89,7 @@ ms.openlocfilehash: 3125ec2a73410f3d3f5b13e154ea30b1319a9a1e
 
  
 
-## ms-people:search: のパラメーター リファレンス
+## <a name="ms-peoplesearch-parameter-reference"></a>ms-people:search: のパラメーター リファレンス
 
 
 <table>
@@ -111,7 +118,7 @@ ms.openlocfilehash: 3125ec2a73410f3d3f5b13e154ea30b1319a9a1e
 
  
 
-## ms-people:viewcontact: のパラメーター リファレンス
+## <a name="ms-peopleviewcontact-parameter-reference"></a>ms-people:viewcontact: のパラメーター リファレンス
 
 
 <table>
@@ -163,7 +170,7 @@ ms.openlocfilehash: 3125ec2a73410f3d3f5b13e154ea30b1319a9a1e
 
  
 
-## ms-people:savetocontact: のパラメーター リファレンス
+## <a name="ms-peoplesavetocontact-parameter-reference"></a>ms-people:savetocontact: のパラメーター リファレンス
 
 
 <table>
@@ -206,9 +213,4 @@ ms.openlocfilehash: 3125ec2a73410f3d3f5b13e154ea30b1319a9a1e
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

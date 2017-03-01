@@ -3,21 +3,28 @@ author: jnHs
 Description: "Windows ストアに申請するために、次のガイドラインに従ってアプリのパッケージを準備してください。"
 title: "アプリ パッケージの要件"
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: c15d4153f6ae83cc7bf1ae02d834bd07189e38ab
-ms.openlocfilehash: 250e94c2766227cabad791db6d994bcfb1a2ac33
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 59660de0adb6ff1247ea90f0ace3bcca35f19d1a
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アプリ パッケージの要件
+# <a name="app-package-requirements"></a>アプリ パッケージの要件
 
 Windows ストアに申請するために、次のガイドラインに従ってアプリのパッケージを準備してください。
 
-## Windows ストアに向けてアプリのパッケージを構築する前に
+## <a name="before-you-build-your-apps-package-for-the-windows-store"></a>Windows ストアに向けてアプリのパッケージを構築する前に
 
 [Windows アプリ認定キットでアプリをテスト](https://msdn.microsoft.com/library/windows/apps/mt186449) したことを確認してください。 また、さまざまな種類のハードウェアでアプリをテストすることをお勧めします。 アプリが認定され、Windows ストアから入手できるようになるまでの間、アプリをインストールして実行できるのは、開発者用ライセンスを持つコンピューター上のみになります。
 
-## Microsoft Visual Studio を使ったアプリ パッケージのビルド
+## <a name="building-the-app-package-using-microsoft-visual-studio"></a>Microsoft Visual Studio を使ったアプリ パッケージのビルド
 
 開発環境として Microsoft Visual Studio を使っている場合は、アプリ パッケージを迅速かつ簡単に作成するための組み込みツールが既に用意されています。 詳しくは、「[アプリのパッケージ化](https://msdn.microsoft.com/library/windows/apps/mt270969)」をご覧ください。
 
@@ -30,7 +37,7 @@ Visual Studio でパッケージを作るときは、必ず、開発者アカウ
 
 アプリのパッケージに、信頼された証明機関が発行する証明書で署名する必要はありません。
 
-### アプリ バンドル
+### <a name="app-bundles"></a>アプリ バンドル
 
 アプリの対象が Windows 8.1、Windows Phone 8.1、およびそれ以降である場合は、Visual Studio でアプリ バンドル (.appxbundle) を生成することによって、ユーザーがダウンロードするアプリのサイズを小さくすることができます。 その利便性が発揮されるのは、言語固有のアセットや多様な画像倍率のアセット、特定バージョンの Microsoft DirectX に適用されるリソースを定義した場合などです。
 
@@ -39,7 +46,7 @@ Visual Studio でパッケージを作るときは、必ず、開発者アカウ
 
 アプリ バンドルが使われている場合、ユーザーは、自分に関係したファイルだけをダウンロードすればよく、すべてのリソースをダウンロードする必要はありません。 アプリ バンドルについて詳しくは、「[アプリのパッケージ化](https://msdn.microsoft.com/library/windows/apps/mt270969)」と「[Windows 10 用ユニバーサル Windows アプリのパッケージ化](http://go.microsoft.com/fwlink/p/?LinkId=620193 )」をご覧ください。
 
-## 手動によるアプリ パッケージのビルド
+## <a name="building-the-app-package-manually"></a>手動によるアプリ パッケージのビルド
 
 パッケージの作成に Visual Studio を使わない場合は、[パッケージ マニフェストを手動で作成](https://msdn.microsoft.com/library/windows/apps/br211476) する必要があります。
 
@@ -61,17 +68,17 @@ Visual Studio でパッケージを作るときは、必ず、開発者アカウ
 -   [**Package/Dependencies**](https://msdn.microsoft.com/library/windows/apps/br211428)
 -   [**Package/Resources**](https://msdn.microsoft.com/library/windows/apps/br211462)
 
-## パッケージの形式の要件
+## <a name="package-format-requirements"></a>パッケージの形式の要件
 
 アプリのパッケージは、次の要件に準拠している必要があります。
 
 | アプリ パッケージの性質 | 要件                                                          |
 |----------------------|----------------------------------------------------------------------|
-| パッケージのサイズ         | .appxbundle: バンドルあたり最大 25 GB <br>Windows 8.1 を対象とする .appx パッケージ: パッケージあたり最大 8 GB <br> Windows 8 を対象とする .appx パッケージ: パッケージあたり最大 2 GB <br> Windows Phone 8.1 を対象とする .appx パッケージ: パッケージあたり最大 4 GB <br> .xap パッケージ: パッケージあたり最大 1 GB                                                                           |
+| パッケージのサイズ         | .appxbundle: バンドルあたり最大 25 GB <br>Windows 10 を対象とする .appx パッケージ: パッケージあたり最大 25 GB<br>Windows 8.1 を対象とする .appx パッケージ: パッケージあたり最大 8 GB <br> Windows 8 を対象とする .appx パッケージ: パッケージあたり最大 2 GB <br> Windows Phone 8.1 を対象とする .appx パッケージ: パッケージあたり最大 4 GB <br> .xap パッケージ: パッケージあたり最大 1 GB                                                                           |
 | ブロック マップ ハッシュ     | SHA2-256 アルゴリズム                                                   |
  
 
-## StoreManifest XML ファイル
+## <a name="storemanifest-xml-file"></a>StoreManifest XML ファイル
 
 StoreManifest.xml は、必要に応じてアプリ パッケージに含めることのできる構成ファイルです。 その目的は、Windows ストア デバイス アプリとしてアプリを宣言する機能や、パッケージ マニフェストの対象外となるデバイスに適用される要件を宣言する機能などを有効にすることです。 StoreManifest.xml はアプリ パッケージと共に提出し、アプリのメイン プロジェクトのルート フォルダーにあることが必要です。 詳しくは、「[StoreManifest スキーマ](https://msdn.microsoft.com/library/windows/apps/mt617325)」をご覧ください。
 
@@ -81,10 +88,5 @@ StoreManifest.xml は、必要に応じてアプリ パッケージに含める�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

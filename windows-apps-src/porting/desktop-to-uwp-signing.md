@@ -3,21 +3,29 @@ author: awkoren
 Description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) に変換したデスクトップ アプリに署名する方法について説明します。"
 Search.Product: eADQiWindows 10XVcnh
 title: "Desktop to UWP Bridge を使用して変換したアプリに署名します。"
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 232c3012-71ff-4f76-a81e-b1758febb596
 translationtype: Human Translation
-ms.sourcegitcommit: fe96945759739e9260d0cdfc501e3e59fb915b1e
-ms.openlocfilehash: 2db978089a6334214c3b4c85dbde8d4a4e846092
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: b5936030f09e52933053f2465659157083b9eec2
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Desktop Bridge を使用して変換したアプリに署名する
+# <a name="sign-an-app-converted-with-the-desktop-bridge"></a>デスクトップ ブリッジを使用して変換したアプリに署名する
 
 この記事では、ユニバーサル Windows プラットフォーム (UWP) に変換したデスクトップ アプリに署名する方法について説明します。 .appx パッケージを展開する前に、証明書で署名する必要があります。
 
-## Desktop App Converter (DAC) を使った自動的な署名
+## <a name="automatically-sign-using-the-desktop-app-converter-dac"></a>Desktop App Converter (DAC) を使った自動的な署名
 
 DAC を実行しているときに ```-Sign``` フラグを使用して、.appx パッケージに自動的に署名します。 詳細については、「[Desktop App Converter プレビュー](desktop-to-uwp-run-desktop-app-converter.md)」をご覧ください。
 
-## SignTool.exe を使った手動での署名
+## <a name="manually-sign-using-signtoolexe"></a>SignTool.exe を使った手動での署名
 
 最初に MakeCert.exe を使用して証明書を作成します。 パスワードの入力を求められた場合は、[なし] を選択します。 
 
@@ -40,9 +48,9 @@ C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 
 上記の 3 つのツールはすべて Microsoft Windows 10 SDK に含まれています。 これらのツールを直接呼び出すには、コマンド プロンプトから ```C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\VsDevCmd.bat``` スクリプトを呼び出します。
 
-## 一般的なエラー
+## <a name="common-errors"></a>一般的なエラー
 
-### 発行元と証明書の不一致により、Signtool で「エラー: SignerSign() が失敗しました」(-2147024885/0x8007000b) というエラーが発生する
+### <a name="publisher-and-cert-mismatch-causes-signtool-error-error-signersign-failed--21470248850x8007000b"></a>発行元と証明書の不一致により、Signtool で「エラー: SignerSign() が失敗しました」(-2147024885/0x8007000b) というエラーが発生する
 
 appx マニフェストの発行元エントリは、署名に使用する証明書のサブジェクトと一致する必要があります。  次の方法のいずれかを使用して、証明書のサブジェクトを表示できます。 
 
@@ -66,7 +74,7 @@ appx マニフェストの発行元エントリは、署名に使用する証明
 certutil -dump <cert_file.pfx>
 ```
 
-### Authenticode 署名が破損しているか、形式が正しくない
+### <a name="corrupted-or-malformed-authenticode-signatures"></a>Authenticode 署名が破損しているか、形式が正しくない
 
 このセクションでは、AppX パッケージ内の移植可能な実行可能ファイル (PE) で、Authenticode 署名が破損しているかまたは形式が正しくない問題を特定する方法について説明します。 任意のバイナリ形式 (.exe、.dll、.chm など) の PE ファイルに対する無効な Authenticode 署名によって、パッケージが正しく署名されない場合や、AppX パッケージから展開できない場合があります。 
 
@@ -85,13 +93,8 @@ AppX パッケージに署名するときに、SignTool.exe で、壊れてい�
 
 これらの形式が正しくないバイナリを修正するには、上記の要件に準拠していることを確認します。
 
-## 参照
+## <a name="see-also"></a>参照
 
 - [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)
 - [SignTool.exe (署名ツール)](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
 - [SignTool を使ってアプリ パッケージに署名する方法](https://msdn.microsoft.com/library/windows/desktop/jj835835.aspx)
-
-
-<!--HONumber=Nov16_HO1-->
-
-

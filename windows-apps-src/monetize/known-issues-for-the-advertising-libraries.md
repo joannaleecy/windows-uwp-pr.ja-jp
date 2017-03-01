@@ -3,46 +3,53 @@ author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
 description: "Microsoft Store Services SDK の Microsoft Advertising ライブラリの現在のリリースにおける既知の問題について説明します。"
 title: "Microsoft Advertising ライブラリに関する既知の問題"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, UWP, 広告, Advertising, 既知の問題"
 translationtype: Human Translation
-ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
-ms.openlocfilehash: 7d0eeda4deac304fb9b573b6ed206a191f037a3e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 54e3361ce9fdfc67495d41903b8b291931b7ee9f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Microsoft Advertising ライブラリに関する既知の問題
+# <a name="known-issues-for-the-microsoft-advertising-libraries"></a>Microsoft Advertising ライブラリに関する既知の問題
 
 
 
 
 このトピックでは、Microsoft Store Services SDK (UWP アプリ用) と、Windows および Windows Phone 8.x 用の Microsoft Advertising SDK (Windows 8.1 アプリおよび Windows Phone 8.x アプリ用) の Microsoft Advertising ライブラリの現在のリリースに関する既知の問題を示します。
 
-## Microsoft Store Services SDK のインストールには、Visual Studio Tools for Universal Windows Apps が必要
+## <a name="installation-of-microsoft-store-services-sdk-requires-visual-studio-tools-for-universal-windows-apps"></a>Microsoft Store Services SDK のインストールには、Visual Studio Tools for Universal Windows Apps が必要
 
 Visual Studio 2015 と共に [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) をインストールするには、Visual Studio Tools for Universal Windows Apps のバージョン 1.1 以降がインストールされている必要があります。 詳しくは、Visual Studio の[リリース ノート](http://go.microsoft.com/fwlink/?LinkID=624516)をご覧ください。
 
-## Windows Phone 8.x Silverlight プロジェクト
+## <a name="windows-phone-8x-silverlight-projects"></a>Windows Phone 8.x Silverlight プロジェクト
 
 Windows および Windows Phone 8.x 用の Microsoft Advertising SDK では、Windows Phone 8.x Silverlight プロジェクトのサポートが制限されています。 詳しくは、「[アプリでの広告の表示](display-ads-in-your-app.md#silverlight_support)」をご覧ください。
 
 Windows Phone 8.x Silverlight プロジェクト用の Microsoft Advertising アセンブリを入手するには、[Windows および Windows Phone 8.x 用の Microsoft Advertising SDK](http://aka.ms/store-8-sdk) をインストールします。次に、プロジェクトを Visual Studio で開き、**[プロジェクト]** > **[接続済みサービスを追加します]** > **[Ad Mediator]** の順に移動して、アセンブリを自動的にダウンロードします。 その後、広告仲介を使用しない場合は、広告メディエーターの参照をプロジェクトから削除できます。 詳しくは、「[Windows Phone Silverlight の AdControl](adcontrol-in-windows-phone-silverlight.md)」をご覧ください。
 
-## XAML での不明な AdControl インターフェイス
+## <a name="adcontrol-interface-unknown-in-xaml"></a>XAML での不明な AdControl インターフェイス
 
 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) の XAML マークアップに、そのインターフェイスが不明であることを示す青い破線が表示される場合があります。 これは、x86 をターゲットとして設定している場合にのみ発生するもので、無視してかまいません。
 
-## 以前の広告要求からの lastError
+## <a name="lasterror-from-previous-ad-request"></a>以前の広告要求からの lastError
 
 以前の広告要求の **lastError** が残っている場合、次の広告呼び出し中にこのイベントが 2 回を発生する可能性があります。 その一方で新しい広告要求が行われ、有効な広告が生成されると、この動作によって混乱が生じる可能性があります。
 
-## スポット広告と電話のナビゲーション ボタン
+## <a name="interstitial-ads-and-navigation-buttons-on-phones"></a>スポット広告と電話のナビゲーション ボタン
 
 ハードウェア ボタンの代わりにソフトウェアの **"戻る"**、**"スタート"**、**"検索"** ボタンがある携帯電話 (またはエミュレーター) では、ビデオ スポット広告のカウントダウン タイマー ボタンとクリックスルー ボタンが隠れる場合があります。
 
-## 最近作成した広告がアプリに提供されない
+## <a name="recently-created-ads-are-not-being-served-to-your-app"></a>最近作成した広告がアプリに提供されない
 
 その広告が最近 (1 日以内) 作成された広告の場合は、すぐに利用可能にならない場合があります。 編集コンテンツに関する承認が済んでいる場合、広告は、広告サーバーによって処理され、インベントリとして利用可能になった時点で提供されるようになります。
 
-## アプリに広告が表示されない
+## <a name="no-ads-are-shown-in-your-app"></a>アプリに広告が表示されない
 
 広告が表示されない場合、ネットワーク エラーを含むさまざまな理由があります。 次の理由も考えられます。
 
@@ -56,7 +63,7 @@ Windows Phone 8.x Silverlight プロジェクト用の Microsoft Advertising ア
 
 [フォーラム](http://go.microsoft.com/fwlink/p/?LinkId=401266)に質問を投稿することもできます。
 
-## ライブ広告ではなくテスト広告がアプリに表示される
+## <a name="test-ads-are-showing-in-your-app-instead-of-live-ads"></a>ライブ広告ではなくテスト広告がアプリに表示される
 
 ライブ広告が想定されているときでもテスト広告が表示される場合があります。 これは、次の状況で発生することがあります。
 
@@ -66,7 +73,7 @@ Windows Phone 8.x Silverlight プロジェクト用の Microsoft Advertising ア
 
 ライブ広告ユニットによってテスト広告が提供されているとき、Windows デベロッパー センターには、広告ユニットの状態として **"Active and serving test ads"** が表示されます。 現時点で、これは、電話アプリには適用されません。
 
-## 廃止され、現在無効となっている広告ユニット ID とアプリケーション ID のテスト値
+## <a name="obsolete-test-values-for-ad-unit-id-and-application-id-no-longer-working"></a>廃止され、現在無効となっている広告ユニット ID とアプリケーション ID のテスト値
 
 以下の Windows Phone Silverlight アプリ用の次のテスト値は廃止され、現在無効になっています。 既存のプロジェクトでこれらのテスト値を使用している場合は、「[テスト モードの値](test-mode-values.md)」で提供されている値を使用するようにプロジェクトを更新してください。
 
@@ -78,7 +85,7 @@ Windows Phone 8.x Silverlight プロジェクト用の Microsoft Advertising ア
 | test_client     |  Image480_80   |
 
 <span id="reference_errors"/>
-## プロジェクトのターゲットを "Any CPU" に設定すると参照エラーが発生する
+## <a name="reference-errors-caused-by-targeting-any-cpu-in-your-project"></a>プロジェクトのターゲットを "Any CPU" に設定すると参照エラーが発生する
 
 Microsoft Advertising ライブラリを使う場合、プロジェクトで **"Any CPU"** をターゲットにすることはできません。 プロジェクトのターゲットを **Any CPU** プラットフォームに設定した場合、次のような参照を追加した後で警告が表示される場合があります。
 
@@ -94,21 +101,21 @@ Microsoft Advertising ライブラリを使う場合、プロジェクトで **"
 
 ![createapppackages](images/13-16280cb1-a838-42b9-9256-eac7f33f5603.png)
 
-## JavaScript/HTML アプリでの Z オーダー
+## <a name="z-order-in-javascripthtml-apps"></a>JavaScript/HTML アプリでの Z オーダー
 
 JavaScript/HTML アプリでは、z オーダーの予約済みの MAX-10 の範囲に要素を配置しないでください。 この唯一の例外として、Skype アプリの着信通知などの割り込みオーバーレイがあります。
 
 <span id="bkmk-ui"/>
-## 境界線を使わない
+## <a name="do-not-use-borders"></a>境界線を使わない
 
 **AdControl** によってその親クラスから継承される境界線に関連するプロパティを設定すると、広告の配置に関して問題が発生します。
 
-## 詳細情報
+## <a name="more-information"></a>詳細情報
 
 
 最新の既知の問題についての詳細を調べたり、Microsoft Advertising ライブラリに関連する質問を投稿したりするには、[フォーラム](http://go.microsoft.com/fwlink/p/?LinkId=401266)をご利用ください。
 
-## サポート
+## <a name="support"></a>サポート
 
 
 Microsoft Advertising ライブラリに関する問題について製品サポートに問い合わせる場合は、[サポート ページ](https://go.microsoft.com/fwlink/p/?LinkId=331508)にアクセスし、**[In-App 広告]** を選択してください。
@@ -116,9 +123,4 @@ Microsoft Advertising ライブラリに関する問題について製品サポ�
  
 
  
-
-
-
-<!--HONumber=Sep16_HO2-->
-
 

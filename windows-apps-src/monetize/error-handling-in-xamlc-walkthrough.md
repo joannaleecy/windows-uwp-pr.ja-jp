@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: cf0d2709-21a1-4d56-9341-d4897e405f5d
 description: "アプリで AdControl エラーをキャッチする方法について説明します。"
 title: "XAML/C# ウォークスルーでのエラー処理"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 広告, 宣伝, エラー処理, XAML, C#"
 translationtype: Human Translation
-ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
-ms.openlocfilehash: c9f2ad67413380a8393c8e00871e69af4bb2905a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7bfb809f1b5511ba27faf1bdd664c24da109e2f3
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -84,9 +91,4 @@ ms.openlocfilehash: c9f2ad67413380a8393c8e00871e69af4bb2905a
 * [GitHub の広告サンプル](http://aka.ms/githubads)
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

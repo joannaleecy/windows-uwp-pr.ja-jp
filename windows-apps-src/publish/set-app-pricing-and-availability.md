@@ -3,25 +3,32 @@ author: jnHs
 Description: "アプリ申請プロセスの [価格と使用可能状況] のページでは、アプリの料金、無料の試用版を提供するかどうか、およびいつ、どこで、どのようにアプリをユーザーに提供するかを決定できます。"
 title: "アプリの価格と使用可能状況の設定"
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 2ce776b69eed7d5803db7a37b54c4b00f58dc6c0
-ms.openlocfilehash: e5b956f819af3cbbd7e00d77de77a15678a2ab4c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9971f61947759ff23adf7ccc5204ea27287f4720
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アプリの価格と使用可能状況の設定
+# <a name="set-app-pricing-and-availability"></a>アプリの価格と使用可能状況の設定
 
 
 [アプリ申請プロセス](app-submissions.md)の **[価格と使用可能状況]** のページでは、アプリの料金、無料の試用版を提供するかどうか、およびいつ、どこで、どのようにアプリをユーザーに提供するかを決定できます。 ここでは、このページのオプションと、この情報を入力するときに考慮する必要がある事項を順に説明します。
 
-## 基本価格
+## <a name="base-price"></a>基本価格
 
 
 このページの最初の項目では、アプリの基準価格を選ぶことができます。 アプリを無料で提供することも、使用可能な価格帯のいずれかを選ぶこともできます。 アプリを申請するには、基本価格を指定することが必要です。
 
 詳細については、「[価格と市場の選択の定義](define-pricing-and-market-selection.md)」を参照してください。
 
-## 無料試用版
+## <a name="free-trial"></a>無料試用版
 
 
 多くの開発者は、ストアが提供する試用版の機能を使って、ユーザーが無料でアプリを試用できるようにすることを選択します。 既定では、アプリは無料試用版として利用できません。無料試用版を提供する場合は、**[無料試用版]** ドロップダウンで値を選びます。
@@ -32,17 +39,17 @@ ms.openlocfilehash: e5b956f819af3cbbd7e00d77de77a15678a2ab4c
 
 > **注**  Windows Phone 8.1 以前のユーザーには、期限付きの試用版は表示されません。
 
-## 市場と特別価格
+## <a name="markets-and-custom-prices"></a>市場と特別価格
 
 
 既定では、アプリは販売できるすべての市場にこの基本価格で公開されます。 **[市場と特別価格]** セクションでは、これらの設定を変更して特定の市場を追加または除外することも、アプリを提供するいずれかの市場でアプリの価格を変更することもできます。 詳細については、「[価格と市場の選択の定義](define-pricing-and-market-selection.md)」を参照してください。
 
-## セール価格
+## <a name="sale-pricing"></a>セール価格
 
 
 期間限定でアプリを割引価格で提供する場合は、特売を作成し、そのスケジュールを設定できます。 詳しくは、「[アプリとアドオンの販売](put-apps-and-add-ons-on-sale.md)」をご覧ください。
 
-## 配布と表示
+## <a name="distribution-and-visibility"></a>配布と表示
 
 
 **[配布と表示]** セクションでは、アプリを検出および取得する方法についての制限を設定できます。
@@ -57,18 +64,18 @@ ms.openlocfilehash: e5b956f819af3cbbd7e00d77de77a15678a2ab4c
 
 > **注**  新しいユーザーへのアプリの提供を完全に停止するには、[アプリの概要] ページで **[アプリの提供を停止する]** をクリックします。 アプリの提供を停止することを確認した後、数時間以内にアプリはストアに表示されなくなり、どのような方法を使っても新しいユーザーが入手することはできなくなります。 この操作は、ここで選んだすべてのオプションより優先されます。新しいユーザーはまったく入手できなくなります。 新しいユーザーが再び入手できるようにする場合は、[アプリの概要] ページで **[アプリを提供する]** をクリックします。 詳しくは、「[アプリをストアから削除する](guidance-for-app-package-management.md#removing-an-app-from-the-store)」をご覧ください。
 
-## Windows 10 デバイス ファミリ
+## <a name="windows-10-device-families"></a>Windows 10 デバイス ファミリ
 
 今後、デバイス ファミリの利用可否は申請の**[パッケージ]** ページで管理されます。 詳しくは、「[デバイス ファミリの利用可否](upload-app-packages.md#device-family-availability)」をご覧ください。
 
-## 組織のライセンス
+## <a name="organizational-licensing"></a>組織のライセンス
 
 
 既定では、アプリは組織がボリューム購入できるように提供されます。 このセクションでは、アプリを提供するかどうかとその方法を指定できます。
 
 詳しくは、「[組織のライセンス オプション](organizational-licensing.md)」をご覧ください。
 
-## 公開日
+## <a name="publish-date"></a>公開日
 
 
 **[公開日]** セクションのオプションを選ぶことで、アプリ (または更新プログラム) が公開される時期を指定できます。
@@ -83,9 +90,4 @@ ms.openlocfilehash: e5b956f819af3cbbd7e00d77de77a15678a2ab4c
  
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

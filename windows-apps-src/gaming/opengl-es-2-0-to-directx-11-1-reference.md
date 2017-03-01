@@ -3,13 +3,20 @@ author: mtoepke
 title: "OpenGL ES 2.0 から Direct3D 11 への移行のためのリファレンス"
 description: "OpenGL ES 2.0 から Direct3D 11 への移植の際に API マッピングや簡単なコード サンプルを探す場合は、これらのリファレンス トピックをご覧ください。"
 ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, OpenGL, Direct3D 11"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: dff8bf0f8723055e955cd32042f14f58037494b5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 03d06a7d6df558552be67288909a1dad93369e12
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# OpenGL ES 2.0 から Direct3D 11 への移行のためのリファレンス
+# <a name="opengl-es-20-to-direct3d-11-reference"></a>OpenGL ES 2.0 から Direct3D 11 への移行のためのリファレンス
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -43,10 +50,5 @@ OpenGL ES 2.0 から Direct3D 11 への移植の際に API マッピングや簡
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

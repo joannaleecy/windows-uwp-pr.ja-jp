@@ -1,21 +1,28 @@
 ---
 author: mcleanbyron
 Description: "Windows デベロッパー センター ダッシュボードを使用して、ユニバーサル Windows プラットフォーム (UWP) アプリの A/B テストを実行することができます。"
-title: "A/B テストを使用してアプリの試験的機能を実行する"
+title: "A/B テストを使用してアプリの実験を実行する"
 ms.assetid: 790B4B37-C72D-4CEA-97AF-D226B2216DCC
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Microsoft Store Services SDK, A/B テスト, 実験"
 translationtype: Human Translation
-ms.sourcegitcommit: 126fee708d82f64fd2a49b844306c53bb3d4cc86
-ms.openlocfilehash: f6c8e830a3ffcff8db9c280b6a9df5b515b1a356
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 02e6ebbe6d3c02d08ae21ea71e7daa38b7e77255
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# A/B テストを使用してアプリの試験的機能を実行する
+# <a name="run-app-experiments-with-ab-testing"></a>A/B テストを使用してアプリの実験を実行する
 
 Windows デベロッパー センター ダッシュ ボードを使用して、ユニバーサル Windows プラットフォーム (UWP) アプリから実行時に取得できるリモート変数を定義できます。また、それらの値のバリエーションをユーザーに対してテストし、望ましいユーザー動作を導くための最も効果的な値を識別することができます。 アプリでリモート変数を使用することで、アプリ内購入、サインアップ フロー、キャプション、広告配信などのアプリ エクスペリエンスを構成できます。
 
 A/B テストの目標は、より魅力的なアプリ エクスペリエンスを提供することによってコンバージョン率を改善 (アプリ内購入が増えるなど) できる可能性が高いリモート変数値のバリエーションを特定することです。 有望なバリエーションを識別したら、アプリを再公開しなくても、すぐに試験的機能を終了してデベロッパー センター ダッシュボードからユーザー全体にそのバリエーションを有効にすることができます。
 
-## A/B テストを作成および実行する
+## <a name="create-and-run-an-ab-test"></a>A/B テストを作成および実行する
 
 A/B テストを作成および実行するには、次の手順に従います。
 
@@ -26,16 +33,16 @@ A/B テストを作成および実行するには、次の手順に従います�
 
 エンド ツー エンドのプロセスを示すチュートリアルについては、「[A/B テストを使用して最初の試験的機能を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)」をご覧ください。
 
-## 必要条件
+## <a name="requirements"></a>必要条件
 
 Windows デベロッパー センターの A/B テストは、UWP アプリのみでサポートされています。
 
 A/B テストを実行する前に、開発用コンピューターを設定する必要があります。
 
 * [ここ](../get-started/get-set-up.md)で説明する指示に従って、UWP 開発のための開発用コンピューターを設定します。
-* [Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk) をインストールします。 試験的機能用の API に加えて、この SDK は広告を表示したり、アプリのフィードバックを収集するフィードバック Hub にユーザーを誘導するなど、その他の機能のための API も提供します。 
+* [Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk) をインストールします。 試験的機能用の API に加えて、この SDK は広告を表示したり、アプリのフィードバックを収集するフィードバック Hub にユーザーを誘導するなど、その他の機能のための API も提供します。
 
-## ベスト プラクティス
+## <a name="best-practices"></a>ベスト プラクティス
 
 最も有用な結果を得るには、A/B テストを実行しているときに、次の推奨事項に従うことをお勧めします。
 
@@ -43,7 +50,7 @@ A/B テストを実行する前に、開発用コンピューターを設定す�
 * 統計的に重要でアクション可能なデータを十分収集するために、少なくとも 2 ～ 4 週間はテストを実行します。
 
 <span id="terms" />
-## 関連用語
+## <a name="related-terms"></a>関連用語
 
 |  用語  |  説明  |
 |--------|--------------|
@@ -55,16 +62,11 @@ A/B テストを実行する前に、開発用コンピューターを設定す�
 | ビュー イベント    |  試験的機能の一部であるバリエーションのチェックをユーザーが開始するときのアクティビティを表す任意の文字列です。 通常、これはコード内のイベントの名前です。 ユーザーがバリエーションのチェックを開始すると、このビュー イベント文字列がアプリ コードによってデベロッパー センターに送信されます。 詳しくは、「[アプリで試験的機能のコードを記述する](code-your-experiment-in-your-app.md)」をご覧ください。
 | コンバージョン イベント    |  試験的機能の目標を表す任意の文字列です。 通常、これはコード内のイベントの名前です。 ユーザーが目標に到達すると、このコンバージョン イベント文字列がアプリ コードによってデベロッパー センターに送信されます。 詳しくは、「[アプリで試験的機能のコードを記述する](code-your-experiment-in-your-app.md)」をご覧ください。  
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [プロジェクトを作成し、デベロッパー センター ダッシュボードでリモート変数を定義する](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
 * [アプリの実験用のコードを記述する](code-your-experiment-in-your-app.md)
 * [デベロッパー センター ダッシュボードで実験を定義する](define-your-experiment-in-the-dev-center-dashboard.md)
 * [デベロッパー センター ダッシュボードで実験を管理する](manage-your-experiment.md)
 * [A/B テストを使用して最初の実験を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

@@ -3,16 +3,23 @@ author: TylerMSFT
 title: "ファイルに応じた既定のアプリの起動"
 description: "ファイルに応じて既定のアプリを起動する方法について説明します。"
 ms.assetid: BB45FCAF-DF93-4C99-A8B5-59B799C7BD98
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: c87f66a39e6ae7733ecc75006510b6aede699d4f
-ms.openlocfilehash: 20cbd0ef20cc81c81f686100579059321e3c56fa
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1ab65f210c5fd01460cbe9f63f8b94f6935a630e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# ファイルに応じた既定のアプリの起動
+# <a name="launch-the-default-app-for-a-file"></a>ファイルに応じた既定のアプリの起動
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 **重要な API**
@@ -21,7 +28,7 @@ ms.openlocfilehash: 20cbd0ef20cc81c81f686100579059321e3c56fa
 
 ファイルに応じて既定のアプリを起動する方法について説明します。 多くのアプリでは、アプリ自体で処理できないファイルを操作する必要が生じる場合があります。 たとえば、さまざまな種類のファイルを受け取るメール アプリは、これらのファイルを既定のハンドラーで起動する手段を備えている必要があります。 以下の手順では、[**Windows.System.Launcher**](https://msdn.microsoft.com/library/windows/apps/br241801) API を使って、アプリがそれ自体で処理できないファイルの既定のハンドラーを起動する方法を示します。
 
-## ファイル オブジェクトを取得する
+## <a name="get-the-file-object"></a>ファイル オブジェクトを取得する
 
 
 最初にファイルの [**Windows.Storage.StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを取得します。
@@ -30,7 +37,7 @@ ms.openlocfilehash: 20cbd0ef20cc81c81f686100579059321e3c56fa
 
 ファイルが既知のフォルダー内にある場合には、[**Windows.Storage.KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) クラスのプロパティで [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) を取得し、[**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) メソッドで [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを取得します。
 
-## ファイルを起動する
+## <a name="launch-the-file"></a>ファイルを起動する
 
 
 Windows には、ファイルの既定のハンドラーを起動するためのいくつかの異なるオプションが用意されています。 これらのオプションについて、次の表とセクションで説明します。
@@ -42,7 +49,7 @@ Windows には、ファイルの既定のハンドラーを起動するための
 | 推奨されるアプリ フォールバックを使った起動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 指定されたファイルを既定のハンドラーで起動します。 ハンドラーがシステムにインストールされていない場合は、ストアにあるアプリをユーザーに勧めます。 |
 | 画面上に留まった適切なビューを使った起動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) (Windows のみ) | 指定されたファイルを既定のハンドラーで起動します。 起動後も画面上に留まるように指定し、特定のウィンドウ サイズを要求します。 [**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) はモバイル デバイス ファミリではサポートされていません。   |
  
-### 既定の起動
+### <a name="default-launch"></a>既定の起動
 
 既定のアプリを起動するには、[**Windows.System.Launcher.LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) メソッドを呼び出します。 この例では [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) メソッドを使って、このアプリ パッケージに含まれる画像ファイル test.png を起動します。
 
@@ -128,7 +135,7 @@ Windows には、ファイルの既定のハンドラーを起動するための
 > }
 > ```
 
-### [プログラムから開く] を使った起動
+### <a name="open-with-launch"></a>[プログラムから開く] を使った起動
 
 [**LauncherOptions.DisplayApplicationPicker**](https://msdn.microsoft.com/library/windows/apps/hh701438) を **true** に設定して [**Windows.System.Launcher.LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) メソッドを呼び出して、ユーザーが **[プログラムから開く]** ダイアログ ボックスで選んだアプリを起動します。
 
@@ -342,7 +349,7 @@ Windows には、ファイルの既定のハンドラーを起動するための
 > }
 > ```
 
-### 画面上に留まった適切なビューを使った起動 (Windows のみ)
+### <a name="launch-with-a-desired-remaining-view-windows-only"></a>画面上に留まった適切なビューを使った起動 (Windows のみ)
 
 [**LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461) を呼び出すソース アプリは、ファイルの起動後も画面上に留まることを要求できます。 既定では、利用可能なスペース全体がソース アプリとファイルを処理するターゲット アプリとで均等に共有されます。 ソース アプリでは、[**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) プロパティを使って、利用可能なスペースをソース アプリのウィンドウがどの程度占めるかをオペレーティング システムに指示できます。 
               この **DesiredRemainingView** では、ファイルの起動後にソース アプリが画面上に留まる必要がなく、ターゲット アプリに完全に置き換わってもよいことも示せます。 このプロパティは呼び出し元アプリの優先ウィンドウのサイズだけを指定します。 画面に同時に表示されている可能性のある他のアプリの動作は指定しません。
@@ -419,7 +426,7 @@ Windows には、ファイルの既定のハンドラーを起動するための
 > }
 > ```
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 起動するアプリをアプリが選ぶことはできません。 どのアプリを起動するかはユーザーが決めます。 ユーザーは、ユニバーサル Windows プラットフォーム (UWP) アプリまたは Windows デスクトップ アプリを選択できます。
 
@@ -432,7 +439,7 @@ Windows には、ファイルの既定のハンドラーを起動するための
 > **注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 **処理手順**
@@ -452,9 +459,4 @@ Windows には、ファイルの既定のハンドラーを起動するための
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

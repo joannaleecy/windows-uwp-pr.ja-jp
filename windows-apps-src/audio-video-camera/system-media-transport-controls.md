@@ -3,13 +3,20 @@ author: drewbatgit
 ms.assetid: EFCF84D0-2F4C-454D-97DA-249E9EAA806C
 description: "SystemMediaTransportControls クラスを使うと、Windows に組み込まれているシステム メディア トランスポート コントロールをアプリで使って、現在アプリで再生中のメディアに関してコントロールに表示されるメタデータを更新できるようになります。"
 title: "システム メディア トランスポート コントロールの手動制御"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 34cb2fec3071add8617fe2bee2eaf50356611ac6
-ms.openlocfilehash: 471cf095109fc9bbfcb241dd6eb480603c3df655
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8b8af1942ed50df9f382773113a903360f8cb19b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# システム メディア トランスポート コントロールの手動制御
+# <a name="manual-control-of-the-system-media-transport-controls"></a>システム メディア トランスポート コントロールの手動制御
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\ ]
 
@@ -17,7 +24,7 @@ Windows 10 バージョン 1607 以降、[ **MediaPlayer** ](https://msdn.micros
 
 SMTC の手動コントロールの実装が必要になるシナリオがいくつかあります。 たとえば、[ **MediaTimelineController** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController) を使って 1 つ以上のメディア プレーヤーの再生を制御する場合です。 複数のメディア プレーヤーを使用していて、アプリ用に SMTC の 1 つのインスタンスだけが必要な場合もそうです。 [ **MediaElement** ](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaElement) を使ってメディアを再生する場合は、SMTC を手動で制御する必要があります。
 
-## トランスポート コントロールをセットアップする
+## <a name="set-up-transport-controls"></a>トランスポート コントロールをセットアップする
 **MediaPlayer** 使ってメディアを再生している場合は、[**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.SystemMediaTransportControls) プロパティにアクセスして [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.SystemMediaTransportControls) のインスタンスを取得できます。 SMTC を手動で制御する場合は、[ **CommandManager.IsEnabled** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) プロパティを false に設定して、**MediaPlayer** によって提供される自動統合を無効にする必要があります。
 
 > [!NOTE] 
@@ -37,7 +44,7 @@ SMTC の手動コントロールの実装が必要になるシナリオがいく
 
 [!code-cs[RegisterButtonPressed](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetRegisterButtonPressed)]
 
-## システム メディア トランスポート コントロールの押されたボタンを処理する
+## <a name="handle-system-media-transport-controls-button-presses"></a>システム メディア トランスポート コントロールの押されたボタンを処理する
 
 [**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) イベントは、有効なボタンの 1 つが押されたときにシステム トランスポート コントロールで発生します。 イベント ハンドラーに渡される [**SystemMediaTransportControlsButtonPressedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn278683) の [**Button**](https://msdn.microsoft.com/library/windows/apps/dn278685) プロパティは、有効なボタンのうちどれが押されたかを示す [**SystemMediaTransportControlsButton**](https://msdn.microsoft.com/library/windows/apps/dn278681) 列挙体のメンバーです。
 
@@ -45,13 +52,13 @@ SMTC の手動コントロールの実装が必要になるシナリオがいく
 
 [!code-cs[SystemMediaTransportControlsButtonPressed](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetSystemMediaTransportControlsButtonPressed)]
 
-## 現在のメディアの状態でシステム メディア トランスポート コントロールを更新する
+## <a name="update-the-system-media-transport-controls-with-the-current-media-status"></a>現在のメディアの状態でシステム メディア トランスポート コントロールを更新する
 
 システムで現在の状態を反映してコントロールを更新できるように、メディアの状態が変更されたときには、それを [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) に通知する必要があります。 そのためには、メディアの状態が変更されたときに発生する [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) の [**CurrentStateChanged**](https://msdn.microsoft.com/library/windows/apps/br227375) イベント内から、[**PlaybackStatus**](https://msdn.microsoft.com/library/windows/apps/dn278719) プロパティを適切な [**MediaPlaybackStatus**](https://msdn.microsoft.com/library/windows/apps/dn278665) 値に設定します。
 
 [!code-cs[SystemMediaTransportControlsStateChange](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetSystemMediaTransportControlsStateChange)]
 
-## メディアの情報と縮小表示でシステム メディア トランスポート コントロールを更新する
+## <a name="update-the-system-media-transport-controls-with-media-info-and-thumbnails"></a>メディアの情報と縮小表示でシステム メディア トランスポート コントロールを更新する
 
 [**SystemMediaTransportControlsDisplayUpdater**](https://msdn.microsoft.com/library/windows/apps/dn278686) クラスを使って、現在再生されているメディア項目の曲のタイトルやアルバム アートなど、トランスポート コントロールに表示されるメディア情報を更新します。 [**SystemMediaTransportControls.DisplayUpdater**](https://msdn.microsoft.com/library/windows/apps/dn278707) プロパティを使って、このクラスのインスタンスを取得します。 一般的なシナリオの場合、メタデータを渡すための推奨される方法は、現在再生中のメディア ファイルを渡して [**CopyFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn278694) を呼び出すことです。 表示アップデーターによって、ファイルからメタデータと縮小表示画像が自動的に抽出されます。
 
@@ -63,7 +70,7 @@ SMTC の手動コントロールの実装が必要になるシナリオがいく
 
 [!code-cs[SystemMediaTransportControlsUpdaterManual](./code/SMTCWin10/cs/MainPage.xaml.cs#SystemMediaTransportControlsUpdaterManual)]
 
-## システム メディア トランスポート コントロールのタイムライン プロパティを更新する
+## <a name="update-the-system-media-transport-controls-timeline-properties"></a>システム メディア トランスポート コントロールのタイムライン プロパティを更新する
 
 システム トランスポート コントロールには、メディア項目の現在の再生位置、開始時刻、終了時刻など、現在再生中のメディア項目のタイムラインに関する情報が表示されます。 システム メディア トランスポート コントロールのタイムライン プロパティを更新するには、新しい [**SystemMediaTransportControlsTimelineProperties**](https://msdn.microsoft.com/library/windows/apps/mt218746) オブジェクトを作成します。 再生中のメディア項目の現在の状態を反映するように、オブジェクトのプロパティを設定します。 [**SystemMediaTransportControls.UpdateTimelineProperties**](https://msdn.microsoft.com/library/windows/apps/mt218760) を呼び出して、コントロールのタイムラインを更新します。
 
@@ -77,7 +84,7 @@ SMTC の手動コントロールの実装が必要になるシナリオがいく
 
 -   システム コントロールは、メディアの再生と同期させておくことをお勧めします。そのためには、再生中にこれらのプロパティを約 5 秒ごとに更新し、一時停止や新しい位置へのシークなど、再生に変更が加えられたときには、再度更新します。
 
-## プレーヤーのプロパティの変更に応答する
+## <a name="respond-to-player-property-changes"></a>プレーヤーのプロパティの変更に応答する
 
 再生中のメディア項目の状態ではなく、メディア プレーヤー自体の現在の状態に関連した、一連のシステム トランスポート コントロール プロパティがあります。 これらの各プロパティは、ユーザーが関連するコントロールを調整したときに発生するイベントと対応しています。 これらのプロパティとイベントを次に示します。
 
@@ -98,7 +105,7 @@ SMTC の手動コントロールの実装が必要になるシナリオがいく
 
 -   これらのプレーヤー プロパティ イベントの 1 つが発生するためには、プロパティの初期値を設定する必要があります。 たとえば、[**PlaybackRateChangeRequested**](https://msdn.microsoft.com/library/windows/apps/mt218757) は、[**PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/mt218756) プロパティの値を少なくとも 1 回設定するまでは発生しません。
 
-## バックグラウンド オーディオに対してシステム メディア トランスポート コントロールを使う
+## <a name="use-the-system-media-transport-controls-for-background-audio"></a>バックグラウンド オーディオに対してシステム メディア トランスポート コントロールを使う
 
 **MediaPlayer** によって提供される自動 SMTC 統合を使用していない場合は、SMTC と手動で統合してバック グラウンド オーディオを有効にする必要があります。 少なくとも、アプリで [ **IsPlayEnabled** ](https://msdn.microsoft.com/library/windows/apps/dn278714) と [**IsPauseEnabled** ](https://msdn.microsoft.com/library/windows/apps/dn278713) を true に設定して、再生ボタンと一時停止ボタンを有効にする必要があります。 アプリは、[**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) イベントも処理する必要があります。 アプリがこれらの要件を満たしていない場合、アプリがバックグラウンドに移動したときにオーディオ再生は停止します。
 
@@ -106,7 +113,7 @@ SMTC の手動コントロールの実装が必要になるシナリオがいく
 
 バックグラウンドでのオーディオ再生について詳しくは、「[バックグラウンドでのメディアの再生](background-audio.md)」をご覧ください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 * [メディア再生](media-playback.md)
 * [システム メディア トランスポート コントロールとの統合](integrate-with-systemmediatransportcontrols.md) 
 * [システム メディア トランスポートのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 
@@ -115,10 +122,5 @@ SMTC の手動コントロールの実装が必要になるシナリオがいく
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

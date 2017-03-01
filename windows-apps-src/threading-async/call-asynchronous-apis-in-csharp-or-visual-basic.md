@@ -3,12 +3,19 @@ author: TylerMSFT
 ms.assetid: 066711E0-D5C4-467E-8683-3CC64EDBCC83
 title: "C# または Visual Basic での非同期 API の呼び出し"
 description: "ユニバーサル Windows プラットフォーム (UWP) には、時間がかかる可能性がある操作を実行しているときでも、アプリの応答性を保つために、さまざまな非同期 API が用意されています。"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、C#、Visual Basic、非同期"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: da2c6eddcc842e176e31b1a1628c91994efb1969
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0bafeaf66ec95732d2444debcfdca7b9406ddc4e
+ms.lasthandoff: 02/07/2017
 
 ---
-# C# または Visual Basic での非同期 API の呼び出し
+# <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>C# または Visual Basic での非同期 API の呼び出し
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
@@ -19,7 +26,7 @@ ms.openlocfilehash: da2c6eddcc842e176e31b1a1628c91994efb1969
 
 ユニバーサル Windows プラットフォーム (UWP) のほとんどの非同期 API には、対応する同期 API がありません。そのため、UWP アプリで C# または Visual Basic を使って非同期 API を利用する方法を理解しておく必要があります。 次に、UWP の非同期 API を呼び出す方法を示します。
 
-## 非同期 API の使用
+## <a name="using-asynchronous-apis"></a>非同期 API の使用
 
 
 非同期メソッドには、表記の規則により "Async" で終わる名前が付いています。 通常、非同期 API は、ユーザーがボタンをクリックしたときなど、ユーザーの操作に応じて呼び出します。 イベント ハンドラーでの非同期メソッドの呼び出しは、最も簡単な非同期 API の使用方法の 1 つです。 ここでは、例として **await** 演算子を使います。
@@ -40,7 +47,7 @@ ms.openlocfilehash: da2c6eddcc842e176e31b1a1628c91994efb1969
 
 **await** 演算子を使うメリットは、架空の `RetrieveFeed` メソッドを使った場合のコードとそれほど違いがないという点です。 C# または Visual Basic で **await** 演算子を使わずに非同期コードを記述する方法もありますが、このようなコードでは、非同期で実行するしくみに重点が置かれる傾向があります。 これにより、非同期コードが記述しづらく、わかりにくく、保守しにくいものになります。 **await** 演算子を使うことによって、コードが複雑になることなく、非同期アプリのメリットを享受できます。
 
-## 戻り値の型と非同期 API の結果
+## <a name="return-types-and-results-of-asynchronous-apis"></a>戻り値の型と非同期 API の結果
 
 
 [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) へのリンクをたどると、**RetrieveFeedAsync** の戻り値の型が [**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485) ではないことがわかると思います。 戻り値の型は、`IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress>` になります。 構文そのものを見ると、非同期 API は結果を含むオブジェクトを返します。 非同期メソッドが待機可能であると考えることは一般的であり、有用な場合もありますが、**await** 演算子は、実際にはメソッドではなくメソッドの戻り値を制御します。 **await** 演算子を適用すると、メソッドによって返されるオブジェクトの **GetResult** を呼び出した結果が取得されます。 この例では、**SyndicationFeed** は **RetrieveFeedAsync.GetResult()** の結果です。
@@ -68,7 +75,7 @@ ms.openlocfilehash: da2c6eddcc842e176e31b1a1628c91994efb1969
 
 「[**UWP アプリの .NET**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx)」で定義されている非同期メソッドの戻り値の型は [**Task**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.aspx) または [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/dd321424.aspx) です。 **Task** を返すメソッドは、[**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx) を返す UWP の非同期メソッドに似ています。 どちらの場合も、非同期メソッドの結果は **void** です。 戻り値の型 **Task&lt;TResult&gt;** は、タスク実行時の非同期メソッドの結果が `TResult` 型パラメーターと同じ型であるという点で、[**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598) に似ています。 **UWP アプリ用 .NET** とタスクの使い方について詳しくは、「[Windows ランタイム アプリ用 .NET の概要](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)」をご覧ください。
 
-## エラーの処理
+## <a name="handling-errors"></a>エラーの処理
 
 
 **await** 演算子を使って非同期メソッドから結果を取得する場合は、同期メソッドの場合と同じように、**try/catch** ブロックを使って非同期メソッドで発生するエラーを処理できます。 前の例では、**RetrieveFeedAsync** メソッドと **await** 操作が **try/catch** ブロックでラップされて、例外がスローされたときにエラーを処理するようになっています。
@@ -77,7 +84,7 @@ ms.openlocfilehash: da2c6eddcc842e176e31b1a1628c91994efb1969
 
 **ヒント:** Microsoft Visual Studio 2005 の C# 以降では、**catch** ブロックで **await** を使うことができます。
 
-## 要約と次のステップ
+## <a name="summary-and-next-steps"></a>要約と次のステップ
 
 ここで説明した非同期メソッドの呼び出しのパターンは、イベント ハンドラーで非同期 API を呼び出す場合に使う最も簡単な方法です。 このパターンは、**void** または **Sub** (Visual Basic) を返すオーバーライドされたメソッドで非同期メソッドを呼び出す場合にも使うことができます。
 
@@ -109,9 +116,4 @@ Tech Tuesdays Live Twitter Chats: Photography Tips, Tricks and Essentials, 7/25/
 How to: Buy a Green PC, 7/22/2011 9:13:22 AM -07:00
 Windows 7 themes: the distinctive artwork of Cheng Ling, 7/20/2011 9:53:07 AM -07:00
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

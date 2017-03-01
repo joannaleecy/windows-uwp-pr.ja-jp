@@ -5,9 +5,16 @@ title: "タッチ キーボードの表示への応答"
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
+keywords: "キーボード, アクセシビリティ, ナビゲーション, フォーカス, テキスト, 入力, ユーザーの操作"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 7db7c360c1e6e3cadf6423d888240bb2f0f4651a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c08e33b95241ce95c7670e197e67496b774897cb
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -145,10 +152,5 @@ public class MyApplication
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

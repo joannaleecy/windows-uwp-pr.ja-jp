@@ -5,15 +5,16 @@ title: "UWP アプリでのペン操作と Windows Ink"
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in UWP apps
 template: detail.hbs
-keywords: "Windows Ink, Windows の手書き入力, DirectInk, InkPresenter, InkCanvas"
+keywords: "Windows Ink, Windows の手書き入力, DirectInk, InkPresenter, InkCanvas, 手書き認識, ユーザー操作, 入力"
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: c5e42f812cc0ed128ebb5c533ef72539baeef93d
-ms.openlocfilehash: f2de946ca7210cf3f4c170c73902c1a727067e7c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fd65e2ea02ea52425656e584b3fa495512030c76
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -494,9 +495,4 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -1,13 +1,20 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "ユニバーサル Windows プラットフォーム (UWP) のユーザー操作は、入力/出力ソース (マウス、キーボード、ペン、タッチ、タッチパッド、音声、Cortana、コントローラー、ジェスチャ、視線など) の組み合わせと、拡張エクスペリエンスを可能にするさまざまなモード (修飾子) (マウス ホイールとボタン、ペンの消しゴムとバレル ボタン、タッチ キーボード、バックグラウンド アプリ サービスなど) で構成されます。"
+Description: "ユニバーサル Windows プラットフォーム (UWP) のユーザー操作は、入力/出力ソース (マウス、キーボード、ペン、タッチ、タッチパッド、音声、Cortana、コントローラー、ジェスチャ、視線入力など) の組み合わせと、拡張エクスペリエンスを可能にするさまざまなモード (修飾子) (マウス ホイールとボタン、ペンの消しゴムとバレル ボタン、タッチ キーボード、バックグラウンド アプリ サービスなど) で構成されます。"
 title: "操作の基本情報"
 ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
 label: Interaction primer
 template: detail.hbs
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: b754e3f039e4dca0949bb31fe1da52f6a404dfb4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d11efb262dfbdd604dc249f19ae35e4110369654
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -16,7 +23,7 @@ ms.openlocfilehash: b754e3f039e4dca0949bb31fe1da52f6a404dfb4
 
 ![Windows の入力の種類](images/input-interactions/icons-inputdevices03.png)
 
-ユニバーサル Windows プラットフォーム (UWP) のユーザー操作は、入力/出力ソース (マウス、キーボード、ペン、タッチ、タッチパッド、音声、**Cortana**、コントローラー、ジェスチャ、視線など) の組み合わせと、拡張エクスペリエンスを可能にするさまざまなモード (修飾子) (マウス ホイールとボタン、ペンの消しゴムとバレル ボタン、タッチ キーボード、バックグラウンド アプリ サービスなど) で構成されます。
+ユニバーサル Windows プラットフォーム (UWP) のユーザー操作は、入力/出力ソース (マウス、キーボード、ペン、タッチ、タッチパッド、音声、**Cortana**、コントローラー、ジェスチャ、視線入力など) の組み合わせと、拡張エクスペリエンスを可能にするさまざまなモード (修飾子) (マウス ホイールとボタン、ペンの消しゴムとバレル ボタン、タッチ キーボード、バックグラウンド アプリ サービスなど) で構成されます。
 
 UWP では "スマート" な状況依存の対話式操作システムが採用されているため、ほとんどの場合、アプリが受け取った固有の入力の種類を個別に処理する必要はありません。 たとえば、タップや長押しなどの静的ジェスチャ、スライドでのパン操作などの操作ジェスチャ、またはデジタル インクのレンダリング操作をサポートするために、汎用的なポインターの種類として処理されるタッチ、タッチパッド、マウス、ペン入力があります。
 
@@ -347,9 +354,4 @@ Windows でサポートされている対話式操作のエクスペリエンス
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -1,15 +1,22 @@
 ---
 author: mcleblanc
 description: "UI の背後には、ビジネス レイヤーとデータ レイヤーがあります。"
-title: "Windows Phone Silverlight ビジネス レイヤーとデータ レイヤーから UWP への移植"
+title: "Windows Phone Silverlight のビジネス レイヤーとデータ レイヤーの UWP への移植"
 ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 6e6cea49064f49a15b557aad037c5baaa1e9b57b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 40b3d2b5b4bafac25726e27fd19a2cd5d71c4fa3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-#  <a name="porting-windows-phone-silverlight-business-and-data-layers-to-uwp"></a>Windows Phone Silverlight ビジネス レイヤーとデータ レイヤーから UWP への移植
+#  <a name="porting-windows-phone-silverlight-business-and-data-layers-to-uwp"></a>Windows Phone Silverlight のビジネス レイヤーとデータ レイヤーの UWP への移植
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -138,10 +145,5 @@ UWP アプリでの写真、音楽、ビデオ ファイルへのアクセスに
 
 * [名前空間とクラス マッピング](wpsl-to-uwp-namespace-and-class-mappings.md)
  
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

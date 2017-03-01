@@ -3,13 +3,20 @@ author: TylerMSFT
 title: "アプリのアクティブ化の処理"
 description: "OnLaunched メソッドをオーバーライドすることで、アプリのアクティブ化を処理する方法について説明します。"
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a1bb0d5d24291fad1acab41c149dd9d763610907
-ms.openlocfilehash: e41a683026a4543545556e98f6b4e9194099b362
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b6d41cc48ccf43e343aba9c844c2d74b49b1496e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アプリのアクティブ化の処理
+# <a name="handle-app-activation"></a>アプリのアクティブ化の処理
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -17,7 +24,7 @@ ms.openlocfilehash: e41a683026a4543545556e98f6b4e9194099b362
 
 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドをオーバーライドすることで、アプリのアクティブ化を処理する方法について説明します。
 
-## 起動ハンドラーを上書きする
+## <a name="override-the-launch-handler"></a>起動ハンドラーを上書きする
 
 アプリがアクティブ化されると、その理由にかかわらず、システムから [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントが送信されます。 アクティブ化の種類の一覧については、[**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) 列挙型をご覧ください。
 
@@ -97,7 +104,7 @@ ms.openlocfilehash: e41a683026a4543545556e98f6b4e9194099b362
 > }
 > ```
 
-## アプリが一時停止後に終了された場合は、アプリケーション データを復元する
+## <a name="restore-application-data-if-app-was-suspended-then-terminated"></a>アプリが一時停止後に終了された場合は、アプリケーション データを復元する
 
 
 ユーザーが終了したアプリに切り替えると、システムは [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントを送信します。このとき、[**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) は **Launch** に設定され、[**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) は **Terminated** または **ClosedByUser** に設定されます。 アプリでは、保存されているアプリ データを読み込み、表示されているコンテンツを更新する必要があります。
@@ -157,11 +164,11 @@ ms.openlocfilehash: e41a683026a4543545556e98f6b4e9194099b362
 
 [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) の値が **NotRunning** である場合は、アプリがアプリケーション データの保存に失敗しているため、初めて起動するときのように最初からアプリをやり直す必要があります。
 
-## 解説
+## <a name="remarks"></a>解説
 
 > **注**  Windows Phone ストア アプリでは、アプリが現在一時停止中で、ユーザーがプライマリ タイルまたはアプリの一覧からアプリを再起動した場合でも、[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントの後に、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) イベントが常に発生します。 現在のウィンドウにコンテンツ セットが既にある場合、アプリは初期化をスキップすることがあります。 [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) プロパティをチェックすると、アプリがプライマリ タイルとセカンダリ タイルのどちらから起動されたかを調べ、その情報に基づいて新しいアプリ エクスペリエンスを表示するか、アプリ エクスペリエンスを再開するかを判断できます。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [アプリの中断の処理](suspend-an-app.md)
 * [アプリの再開の処理](resume-an-app.md)
@@ -176,9 +183,4 @@ ms.openlocfilehash: e41a683026a4543545556e98f6b4e9194099b362
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

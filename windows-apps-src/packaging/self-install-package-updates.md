@@ -3,20 +3,27 @@ author: mcleanbyron
 ms.assetid: 414ACC73-2A72-465C-BD15-1B51CB2334F2
 title: "アプリのパッケージの更新をダウンロードしてインストールする"
 description: "デベロッパー センター ダッシュ ボードでパッケージを必須としてマークする方法と、パッケージ更新をダウンロードしてインストールするためのコードをアプリ内に記述する方法について説明します。"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b96d4074a8960db314313c612955900c6a05dc48
-ms.openlocfilehash: 4da8ffe72435501876a1e859d10a16cf19eb11fd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ffd1af9475791b8190f9364d85f7a7fa23548856
+ms.lasthandoff: 02/07/2017
 
 ---
-# アプリのパッケージの更新をダウンロードしてインストールする
+# <a name="download-and-install-package-updates-for-your-app"></a>アプリのパッケージの更新をダウンロードしてインストールする
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 Windows 10 バージョン 1607 以降では、[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間の API を使用して、現在のアプリに対するパッケージ更新をプログラムからチェックし、更新後のパッケージをダウンロードしてインストールすることができます。 また、[Windows デベロッパー センター ダッシュボードで必須としてマークされている](#mandatory-dashboard)パッケージを照会し、必須の更新がインストールされるまで機能を無効にすることもできます。
 
 これらの機能は、ユーザー ベースが使用しているアプリや関連サービスを、自動的に最新バージョンに維持するために役立ちます。
 
-## API の概要
+## <a name="api-overview"></a>API の概要
 
 Windows 10 バージョン 1607 以降を対象としたアプリでは、[StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) クラスの次のメソッドを使用して、パッケージの更新をダウンロードし、インストールすることができます。
 
@@ -37,7 +44,7 @@ Windows 10 バージョン 1607 以降を対象としたアプリでは、[Store
 
 <span/>
 
-## コード例
+## <a name="code-examples"></a>コード例
 
 次のコード例は、アプリでパッケージの更新をダウンロードし、インストールする方法を示したものです。 これらの例は、次のことを前提としています。
 * コードは、[Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) のコンテキスト内で実行されます。
@@ -47,7 +54,7 @@ Windows 10 バージョン 1607 以降を対象としたアプリでは、[Store
 
 <span/>
 
-### すべてのパッケージ更新をダウンロードしてインストールする
+### <a name="download-and-install-all-package-updates"></a>すべてのパッケージ更新をダウンロードしてインストールする
 
 次のコード例は、利用可能なすべてのパッケージ更新をダウンロードしてインストールする方法を示したものです。  
 
@@ -98,7 +105,7 @@ public async Task DownloadAndInstallAllUpdatesAsync()
 }
 ```
 
-### 必須のパッケージ更新を処理する
+### <a name="handle-mandatory-package-updates"></a>必須のパッケージ更新を処理する
 
 次のコード例は、前の例とは別に作成されたもので、[Windows デベロッパー センター ダッシュ ボードで必須としてマークされている](#mandatory-dashboard)更新パッケージがあるかどうかを確認する方法を示したものです。 通常、必須のパッケージ更新を正常にダウンロードまたはインストールできない場合は、ユーザーに不便のない方法でアプリのエクスペリエンスをダウングレードする必要があります。
 
@@ -213,7 +220,7 @@ private void HandleMandatoryPackageError()
 ```
 
 <span id="mandatory-dashboard" />
-## デベロッパー センター ダッシュ ボードでパッケージ申請を必須にする
+## <a name="make-a-package-submission-mandatory-in-the-dev-center-dashboard"></a>デベロッパー センター ダッシュ ボードでパッケージ申請を必須にする
 
 Windows 10 バージョン 1607 以降を対象としたアプリのパッケージ申請を作成する際には、パッケージを必須としてマークし、それが必須になる日時を指定することができます。 このプロパティが設定されている場合、利用可能なパッケージの更新がこの記事の前半で説明した API を通じて検出されると、アプリは更新パッケージが必須であることを認識し、更新がインストールされるまで、その動作を変更することができます (たとえば、機能を無効にするなど)。
 
@@ -228,9 +235,4 @@ Windows 10 バージョン 1607 以降を対象としたアプリのパッケー
 デベロッパー センター ダッシュ ボードでのパッケージの構成について詳しくは、「[アプリ パッケージのアップロード](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages)」をご覧ください。
 
   >**注**&nbsp;&nbsp;[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)を作成する場合は、フライトの**パッケージ**ページで同様の UI を使用して、パッケージを必須としてマークできます。 その場合、必須のパッケージ更新は、フライト グループのメンバーであるユーザーにのみ適用されます。
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

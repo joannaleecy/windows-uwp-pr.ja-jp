@@ -3,6 +3,16 @@ layout: HubPage
 hide_bc: true
 title: "Windows に関するドキュメント"
 description: "Windows ソリューションの構築とメンテナンスに役立つ、開発者、ハードウェア、および IT 技術者向けのドキュメントを検索します。"
+ms.assetid: 56bbc230-b855-426e-b849-4f65a747b944
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: hub-page
+ms.prod: windows
+translationtype: Human Translation
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: cb15f417c4254776af4548a5b962392431c9a75b
+ms.lasthandoff: 02/08/2017
+
 ---
 <div id="main" class="v2">
   <div class="container">
@@ -84,7 +94,7 @@ description: "Windows ソリューションの構築とメンテナンスに役�
                                         <div class="cardText">
                                             <h3>UWP アプリ</h3>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/apps/getstarted">作業の開始</a>
+                                                <a href="https://developer.microsoft.com/windows/apps/getstarted">開始</a>
                                             </p>
                                             <p>
                                                 <a href="https://developer.microsoft.com/windows/apps/design">設計</a>
@@ -115,7 +125,7 @@ description: "Windows ソリューションの構築とメンテナンスに役�
                                         <div class="cardText">
                                             <h3>デスクトップ</h3>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/desktop/getstarted">作業の開始</a>
+                                                <a href="https://developer.microsoft.com/windows/desktop/getstarted">開始</a>
                                             </p>
                                             <p>
                                                 <a href="https://developer.microsoft.com/windows/desktop/design">設計</a>
@@ -146,7 +156,7 @@ description: "Windows ソリューションの構築とメンテナンスに役�
                                         <div class="cardText">
                                             <h3>ゲーム</h3>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/games/getstarted">作業の開始</a>
+                                                <a href="https://developer.microsoft.com/windows/games/getstarted">開始</a>
                                             </p>
                                             <p>
                                                 <a href="https://developer.microsoft.com/windows/games/design">UI 設計</a>
@@ -205,7 +215,7 @@ description: "Windows ソリューションの構築とメンテナンスに役�
                                         <div class="cardText">
                                             <h3>Holographic</h3>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/getting_started">作業の開始</a>
+                                                <a href="https://developer.microsoft.com/windows/holographic/getting_started">開始</a>
                                             </p>
                                             <p>
                                                 <a href="https://developer.microsoft.com/windows/holographic/academy">アカデミー</a>
@@ -529,7 +539,4 @@ description: "Windows ソリューションの構築とメンテナンスに役�
         </li>
     </ul>
 </div>
-
-
-<!--HONumber=Jan17_HO5-->
 

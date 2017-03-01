@@ -1,13 +1,20 @@
 ---
 author: DelfCo
-Description: "Windows.Globalization.DateTimeFormatting API でカスタム パターンを使うと、日付と時刻を好みどおりの形式で表示することができます。"
+Description: "Windows.Globalization.DateTimeFormatting API でカスタム パターンを使うと、日付と時刻を好みの形式で表示できます。"
 title: "パターンを使った日付と時刻の書式設定"
 ms.assetid: 012028B3-9DA2-4E72-8C0E-3E06BEC3B3FE
 label: Use patterns to format dates and times
 template: detail.hbs
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 564062173544ab368d8dd7fc8fe2c35e9d518444
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c28210a6fca27976a2a4428d8001da87951f1e87
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -15,7 +22,7 @@ ms.openlocfilehash: 564062173544ab368d8dd7fc8fe2c35e9d518444
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-[**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) API でカスタム パターンを使うと、日付と時刻を必要な形式で表示することができます。
+[**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) API でカスタム パターンを使うと、日付と時刻を好みの形式で表示できます。
 
 <div class="important-apis" >
 <b>重要な API</b><br/>
@@ -190,10 +197,5 @@ var mydateplustimefmt = new dtf.DateTimeFormatter(mydateplustime);
  
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

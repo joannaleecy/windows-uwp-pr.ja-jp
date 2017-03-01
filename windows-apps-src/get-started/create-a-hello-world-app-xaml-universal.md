@@ -3,9 +3,16 @@ author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: "Hello, world アプリを作成する (XAML)"
 description: "このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象にした単純な Hello, world アプリを Extensible Application Markup Language (XAML) を使って C# で作る方法について説明します。"
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 7e76c9abd4157c22b38d79b178f5f07827d336ca
-ms.openlocfilehash: e928b4bb116ad98ffe7c225ac1ef2306e56a13ea
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 16622dbd9914907f75c8392f8e4de6e1c10b049c
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -23,7 +30,6 @@ ms.openlocfilehash: e928b4bb116ad98ffe7c225ac1ef2306e56a13ea
 ## <a name="before-you-start"></a>はじめに...
 
 -   [ユニバーサル Windows アプリとは](whats-a-uwp.md)?
--   [Windows 10 の新着情報](https://dev.windows.com/whats-new-windows-10-dev-preview)
 -   このチュートリアルを行うには、Windows 10 と Visual Studio 2015 が必要です。 [準備してください](get-set-up.md)。
 -   また、Visual Studio の既定のウィンドウ レイアウトを使用することを前提としています。 既定のレイアウトを変更した場合は、**[ウィンドウ]** メニューの **[ウィンドウ レイアウトのリセット]** を使って、レイアウトをリセットできます。
 
@@ -256,9 +262,4 @@ private async void button_Click(object sender, RoutedEventArgs e)
 これで、Windows 10 と UWP 用の初めてのアプリを作成しました。
 
 アプリで使うコントロールを XAML によってレイアウトする方法については、[グリッドに関するチュートリアル](../layout/grid-tutorial.md)で学習するか、直接[次のステップ](learn-more.md)に進んでください。
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

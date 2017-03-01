@@ -3,16 +3,23 @@ author: mtoepke
 title: "ゲーム ループの移植"
 description: "IFrameworkView を作成して、全画面表示の CoreWindow を制御する方法など、ユニバーサル Windows プラットフォーム (UWP) ゲームのウィンドウを実装する方法とゲーム ループを移植する方法について説明します。"
 ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, 移植, ゲーム ループ, Direct3D 9, DirectX 11"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8d843d8b22623dfbba3a76eb7ef19a82cc07f04f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 23631bf464095e1d2f2aab97740d89c6a82f4a70
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# ゲーム ループの移植
+# <a name="port-the-game-loop"></a>ゲーム ループの移植
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 **要約**
 
@@ -23,7 +30,7 @@ ms.openlocfilehash: 8d843d8b22623dfbba3a76eb7ef19a82cc07f04f
 
 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) を作成して、全画面表示の [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) を制御する方法など、ユニバーサル Windows プラットフォーム (UWP) ゲームのウィンドウを実装する方法とゲーム ループを移植する方法について説明します。 「[チュートリアル: DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への簡単な Direct3D 9 アプリの移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)」のパート 3 です。
 
-## ウィンドウの作成
+## <a name="create-a-window"></a>ウィンドウの作成
 
 
 Direct3D 9 のビューポートを使ってデスクトップ ウィンドウを設定するためには、デスクトップ アプリ用の従来のウィンドウ フレームワークを実装する必要がありました。 また、HWND の作成、ウィンドウ サイズの設定、ウィンドウ処理コールバックの提供、ウィンドウの表示などを実行する必要もありました。
@@ -69,7 +76,7 @@ public:
 };
 ```
 
-## ゲーム ループの移植
+## <a name="port-the-game-loop"></a>ゲーム ループの移植
 
 
 次に、Direct3D 9 の実装のゲーム ループを見てみましょう。 このコードは、アプリの main 関数内に存在します。 このループの各反復では、ウィンドウ メッセージを処理するか、フレームをレンダリングします。
@@ -121,7 +128,7 @@ while (true)
 
 これで、DirectX 9 の例と同じように、基本的なグラフィックス インフラストラクチャをセットアップし、同じカラフルな立方体をレンダリングする UWP アプリが完成しました。
 
-## 次の段階
+## <a name="where-do-i-go-from-here"></a>次の段階
 
 
 「[DirectX 11 の移植に関する FAQ](directx-porting-faq.md)」をブックマークに追加してください。
@@ -140,10 +147,5 @@ Windows ストア ゲームの開発に関する次の詳しい記事をご覧�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

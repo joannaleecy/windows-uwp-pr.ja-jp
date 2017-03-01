@@ -3,9 +3,16 @@ author: scottmill
 ms.assetid: 386faf59-8f22-2e7c-abc9-d04216e78894
 title: "コンポジションのアニメーション"
 description: "コンポジション オブジェクトと効果の多くのプロパティは、キー フレーム アニメーションや数式アニメーションを使って、時間の経過や計算に基づいて UI 要素のプロパティを変更することによりアニメーション化できます。"
+ms.author: scotmi
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 9ea05f7ba76c7813b200a4c8cd021613f980355d
-ms.openlocfilehash: 72b70dd2ae4de385f2a4711477aebb6d7023158c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 85b2e5006e8f2b9d2d2f78bab044032210011f41
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="composition-animations"></a>コンポジションのアニメーション
@@ -24,7 +31,7 @@ Windows.UI.Composition WinRT API によって、統合された API レイヤー
 
 **暗黙的なアニメーション**は、開発者がアプリのコア ロジックとは別に、再利用可能な個々のアニメーションまたは一連のアニメーションを定義できるようにする、一種のアニメーションです。 暗黙的なアニメーションを使用すると、開発者は、*テンプレート*を作成し、そのテンプレートをトリガーでフックできます。 これらのトリガーはプロパティの変更であり、明示的な割り当てによって発生します。 テンプレートは 1 つのアニメーションまたはアニメーション グループとして定義できます。 アニメーション グループは、アニメーション テンプレートのコレクションで、明示的に、またはトリガーによって、まとめて開始することができます。 暗黙的なアニメーションを使用すると、プロパティ値の変更とアニメーション化が必要になるたびに、明示的な KeyFrameAnimations を作成しなくてもよくなります。
 
-**数式アニメーション**は、Windows 10 の 11 月の更新プログラム (ビルド 10586) のビジュアル レイヤーで導入されたアニメーションの種類です。 数式アニメーションの背景にあるのは、開発者が、[Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) プロパティと、フレームごとに評価および更新される個別の値の間に数学的な関係を構築できるようにするという考え方です。 開発者はコンポジション オブジェクトのプロパティやプロパティ セットを参照したり、数学関数ヘルパーを使用したり、入力を参照したりすることで、これらの数学的な関係を導き出します。 数式によって、Windows プラットフォームで、視差や固定ヘッダーなどのエクスペリエンスが実現され、スムーズに処理できます。  
+**数式アニメーション**は、Windows 10 の 11 月の更新プログラム (ビルド 10586) のビジュアル レイヤーで導入されたアニメーションの種類です。 数式アニメーションの背景にあるのは、開発者が、[Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) プロパティと、フレームごとに評価および更新される個別の値の間に数学的な関係を構築できるようにするという考え方です。 開発者はコンポジション オブジェクトのプロパティやプロパティ セットを参照したり、数学関数ヘルパーを使用したり、入力を参照したりすることで、これらの数学的な関係を導き出します。 数式によって、Windows プラットフォームで、視差や固定ヘッダーなどのエクスペリエンスが実現され、スムーズに処理できます。  
 
 ## <a name="why-composition-animations"></a>コンポジション アニメーションを使う理由
 **パフォーマンス**  
@@ -43,36 +50,36 @@ Windows.UI.Composition WinRT API によって、統合された API レイヤー
 また、[コンポジションに関する GitHub のページ](http://go.microsoft.com/fwlink/?LinkID=789439)で、API の使い方についてのサンプルや、動作している API の高品質のサンプルもご覧ください。
  
 ## <a name="what-can-you-animate-with-composition-animations"></a>コンポジション アニメーションでアニメーション化できる対象
-コンポジション アニメーションは、[Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) や **InsetClip** など、コンポジション オブジェクトの多くのプロパティに適用できます。 コンポジション アニメーションは、コンポジション効果やプロパティ セットに適用することもできます。 **アニメーション化する対象を選択するときは、その型に注意します。その型を使って、構築するキー フレーム アニメーションの型や、数式を解決する必要がある型を決定します。**  
+コンポジション アニメーションは、[Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) や **InsetClip** など、コンポジション オブジェクトの多くのプロパティに適用できます。 コンポジション アニメーションは、コンポジション効果やプロパティ セットに適用することもできます。 **アニメーション化する対象を選択するときは、その型に注意します。その型を使って、構築するキー フレーム アニメーションの型や、数式を解決する必要がある型を決定します。**  
  
 ### <a name="visual"></a>Visual
-|アニメーション化が可能な Visual プロパティ|  型|
+|アニメーション化が可能な Visual プロパティ|    型|
 |------|------|
-|AnchorPoint|   Vector2|
-|CenterPoint|   Vector3|
+|AnchorPoint|    Vector2|
+|CenterPoint|    Vector3|
 |Offset|    Vector3|
-|Opacity|   Scalar|
-|Orientation|   Quaternion|
-|RotationAngle| Scalar|
+|Opacity|    Scalar|
+|Orientation|    Quaternion|
+|RotationAngle|    Scalar|
 |RotationAngleInDegrees|    Scalar|
-|RotationAxis|  Vector3|
-|Scale| Vector3|
-|Size|  Vector2|
-|TransformMatrix*|  Matrix4x4|
+|RotationAxis|    Vector3|
+|Scale|    Vector3|
+|Size|    Vector2|
+|TransformMatrix*|    Matrix4x4|
 *TransformMatrix プロパティ全体を Matrix4x4 としてアニメーション化する場合は、ExpressionAnimation を使用する必要があります。 それ以外の場合は、マトリックスの個々のセルをターゲットにして、KeyFrame または ExpressionAnimation を使用できます。  
 
 ### <a name="insetclip"></a>InsetClip
-|アニメーション化が可能な InsetClip プロパティ|   型|
+|アニメーション化が可能な InsetClip プロパティ|    型|
 |-------------------------------|-------|
-|BottomInset|   Scalar|
-|LeftInset| Scalar|
+|BottomInset|    Scalar|
+|LeftInset|    Scalar|
 |RightInset|    Scalar|
-|TopInset|  Scalar|
+|TopInset|    Scalar|
 
 ## <a name="visual-sub-channel-properties"></a>Visual サブ チャネルのプロパティ
-[Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) のプロパティをアニメーション化できるほか、これらのプロパティの*サブ チャネル* コンポーネントもアニメーション化のターゲットにすることができます。 たとえば、オフセット全体ではなく、[Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) の X オフセットだけをアニメーション化できます。 アニメーション化では、Vector3 Offset プロパティか、Offset プロパティの Scalar X コンポーネントをターゲットにすることができます。 プロパティの個々のサブ チャネル コンポーネントをターゲットにできるほか、複数のコンポーネントをターゲットにすることもできます。 たとえば、Scale の X および Y コンポーネントをターゲットにすることができます。
+[Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) のプロパティをアニメーション化できるほか、これらのプロパティの*サブ チャネル* コンポーネントもアニメーション化のターゲットにすることができます。 たとえば、オフセット全体ではなく、[Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) の X オフセットだけをアニメーション化できます。 アニメーション化では、Vector3 Offset プロパティか、Offset プロパティの Scalar X コンポーネントをターゲットにすることができます。 プロパティの個々のサブ チャネル コンポーネントをターゲットにできるほか、複数のコンポーネントをターゲットにすることもできます。 たとえば、Scale の X および Y コンポーネントをターゲットにすることができます。
 
-|アニメーション化が可能な Visual サブ チャネルのプロパティ|  型|
+|アニメーション化が可能な Visual サブ チャネルのプロパティ|    型|
 |----------------------------------------|------|
 |AnchorPoint.x、y|Scalar|
 |AnchorPoint.xy|Vector2|
@@ -95,20 +102,20 @@ Windows.UI.Composition WinRT API によって、統合された API レイヤー
 *Brush プロパティの Color サブチャネルのアニメーション化は少し異なります。 StartAnimation() を Visual.Brush にアタッチし、アニメーション化するプロパティをパラメーターで "Color" として宣言します  (色のアニメーション化については後で詳しく説明します)
 
 ## <a name="property-sets-and-effects"></a>プロパティ セットと効果
-[Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) と InsetClip のプロパティをアニメーション化するだけでなく、PropertySet や Effect のプロパティをアニメーション化することもできます。 プロパティ セットの場合は、プロパティを定義し、コンポジションのプロパティ セットに格納します。このプロパティは、後でアニメーションのターゲットにすることができます (同時に別のアニメーションで参照することもできます)。 これについては、次のセクションで詳しく説明します。  
+[Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) と InsetClip のプロパティをアニメーション化するだけでなく、PropertySet や Effect のプロパティをアニメーション化することもできます。 プロパティ セットの場合は、プロパティを定義し、コンポジションのプロパティ セットに格納します。このプロパティは、後でアニメーションのターゲットにすることができます (同時に別のアニメーションで参照することもできます)。 これについては、次のセクションで詳しく説明します。  
 
 効果の場合は、コンポジション効果 API を使ってグラフィック効果を定義できます (詳しくは、「[効果の概要](./composition-effects.md)」をご覧ください)。 効果をできることに加えて、効果のプロパティ値をアニメーション化することもできます。 これを行うには、スプライト ビジュアルの Brush プロパティのプロパティ コンポーネントをターゲットに設定します。
 
 ## <a name="quick-formula-getting-started-with-composition-animations"></a>早わかり: コンポジション アニメーションの概要
 さまざまな種類のアニメーションを作成および使用する方法について詳しい説明に入る前に、コンポジション アニメーションを作成する方法について簡単な概要を以下に示します。  
-1.  アニメーション化するプロパティ、サブ チャネル プロパティ、効果を決定し、その型を書き留めておきます。  
-2.  アニメーションのための新しいオブジェクトを作成します。これは、キー フレーム アニメーションまたは数式アニメーションです。  
+1.    アニメーション化するプロパティ、サブ チャネル プロパティ、効果を決定し、その型を書き留めておきます。  
+2.    アニメーションのための新しいオブジェクトを作成します。これは、キー フレーム アニメーションまたは数式アニメーションです。  
     *  キー フレーム アニメーションの場合は、アニメーション化するプロパティの型と一致する型のキー フレーム アニメーションを作成していることを確認します。  
     *  数式アニメーションの型は 1 つだけです。  
-3.  アニメーションのコンテンツを定義します。キー フレームを挿入するか、または数式の文字列を定義します。  
+3.    アニメーションのコンテンツを定義します。キー フレームを挿入するか、または数式の文字列を定義します。  
     *  キー フレーム アニメーションでは、キー フレームの値が、アニメーション化するプロパティと同じ型であることを確認します。  
     *  数式アニメーションでは、数式の文字列が、アニメーション化するプロパティと同じ型に解決されることを確認します。  
-4.  アニメーション化するプロパティを持つ [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) でアニメーションを開始します。StartAnimation を呼び出して、アニメーション化するプロパティの名前 (文字列形式) とアニメーションのオブジェクトをパラメーターとして含めます。  
+4.    アニメーション化するプロパティを持つ [Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) でアニメーションを開始します。StartAnimation を呼び出して、アニメーション化するプロパティの名前 (文字列形式) とアニメーションのオブジェクトをパラメーターとして含めます。  
 
 ```cs
 // KeyFrame Animation Example to target Opacity property
@@ -137,12 +144,12 @@ _targetVisual.StartAnimation("Opacity", expression);
  
 ### <a name="creating-your-animation-and-defining-keyframes"></a>アニメーションの作成とキー フレームの定義
 キー フレーム アニメーションを作成するには、アニメーション化するプロパティの型に関連付けられたコンポジター オブジェクトのコンストラクター メソッドを使います。 キー フレーム アニメーションには、次のようなさまざまな型があります。
-*   ColorKeyFrameAnimation
-*   QuaternionKeyFrameAnimation
-*   ScalarKeyFrameAnimation
-*   Vector2KeyFrameAnimation
-*   Vector3KeyFrameAnimation
-*   Vector4KeyFrameAnimation  
+*    ColorKeyFrameAnimation
+*    QuaternionKeyFrameAnimation
+*    ScalarKeyFrameAnimation
+*    Vector2KeyFrameAnimation
+*    Vector3KeyFrameAnimation
+*    Vector4KeyFrameAnimation  
 
 Vector3 キー フレーム アニメーションを作成する例:     
 ```cs
@@ -150,9 +157,9 @@ var animation = _compositor.CreateVector3KeyFrameAnimation();
 ```
 
 各キー フレーム アニメーションは、2 つのコンポーネント (オプションで第 3 のコンポーネント) を定義する個々のキー フレーム セグメントを挿入することによって作成されます。  
-*   時間: 正規化されたキー フレームの進行状況 (0.0 ～ 1.0)
-*   値: 特定の時間状態でのアニメーション化する値の特定の値
-*   (省略可能) イージング関数: 前のキー フレームと現在のキー フレームの間の補間を記述する関数 (このトピックで後で説明します)。  
+*    時間: 正規化されたキー フレームの進行状況 (0.0 ～ 1.0)
+*    値: 特定の時間状態でのアニメーション化する値の特定の値
+*    (省略可能) イージング関数: 前のキー フレームと現在のキー フレームの間の補間を記述する関数 (このトピックで後で説明します)。  
 
 アニメーションの中間点にキー フレームを挿入する例:
 ```cs
@@ -160,21 +167,21 @@ animation.InsertKeyFrame(0.5f, new Vector3(50.0f, 80.0f, 0.0f));
 ```
 
 **注:** キー フレーム アニメーションを使って色をアニメーション化する場合は、さらにいくつかの事項に注意する必要があります。
-1.  StartAnimation を [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) ではなく Visual.Brush にアタッチし、アニメーション化するプロパティのパラメーターとして **Color** を指定します。
-2.  キー フレームの "値" コンポーネントは、Windows.UI 名前空間の Colors オブジェクトによって定義されます。
-3.  InterpolationColorSpace プロパティを設定することによって、補間を行う色空間を定義できます。 表示される値は次のとおりです。
-    *   CompositionColorSpace.Rgb
-    *   CompositionColorSpace.Hsl
+1.    StartAnimation を [Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) ではなく Visual.Brush にアタッチし、アニメーション化するプロパティのパラメーターとして **Color** を指定します。
+2.    キー フレームの "値" コンポーネントは、Windows.UI 名前空間の Colors オブジェクトによって定義されます。
+3.    InterpolationColorSpace プロパティを設定することによって、補間を行う色空間を定義できます。 表示される値は次のとおりです。
+    *    CompositionColorSpace.Rgb
+    *    CompositionColorSpace.Hsl
 
 
 ## <a name="keyframe-animation-properties"></a>キー フレーム アニメーションのプロパティ
 キー フレーム アニメーションと個々のキー フレームを定義すると、アニメーションの複数のプロパティを定義できます。
-*   DelayTime: StartAnimation() が呼び出されてからアニメーションが開始されるまでの時間
-*   Duration: アニメーションの継続時間
-*   IterationBehavior: アニメーションの繰り返し動作の回数または無制限
-*   IterationCount: キー フレーム アニメーションが繰り返される有限の回数
-*   KeyFrame Count: 特定のキー フレーム アニメーションのキー フレームの数
-*   StopBehavior: StopAnimation が呼び出されたときのアニメーションのプロパティ値の動作を指定する  
+*    DelayTime: StartAnimation() が呼び出されてからアニメーションが開始されるまでの時間
+*    Duration: アニメーションの継続時間
+*    IterationBehavior: アニメーションの繰り返し動作の回数または無制限
+*    IterationCount: キー フレーム アニメーションが繰り返される有限の回数
+*    KeyFrame Count: 特定のキー フレーム アニメーションのキー フレームの数
+*    StopBehavior: StopAnimation が呼び出されたときのアニメーションのプロパティ値の動作を指定する  
 *   Direction: アニメーションの再生方向を指定する。  
 
 アニメーションの継続時間を 5 秒間に設定する例:  
@@ -185,8 +192,8 @@ animation.Duration = TimeSpan.FromSeconds(5);
 ## <a name="easing-functions"></a>イージング関数
 イージング関数 (CompositionEasingFunction) は、前のキー フレーム値から現在のキー フレーム値への中間値の進行状況を指定します。 キーフレームのイージング関数を指定しない場合、既定の曲線が使用されます。  
 2 種類のイージング関数がサポートされています。
-*   線形
-*   3 次ベジエ  
+*    線形
+*    3 次ベジエ  
 *   ステップ  
 
 3 次ベジエは、拡大/縮小が可能な滑らかな曲線を記述するためによく使用されるパラメトリック関数です。 コンポジション キー フレーム アニメーションで使う場合は、Vector2 オブジェクトである 2 つの制御点を定義します。 これらの制御点は、曲線の形状を定義するために使用されます。 [こちらのサイト](http://cubic-bezier.com/#0,-0.01,.48,.99)などのサイトで、次の 2 つの制御点で 3 次ベジエ曲線を作成する方法を視覚化してみることをお勧めします。
@@ -204,10 +211,10 @@ animation.InsertKeyFrame(0.5f, new Vector3(50.0f, 80.0f, 0.0f), easeIn);
 ```
 
 ## <a name="starting-and-stopping-keyframe-animations"></a>キー フレーム アニメーションの開始と停止
-アニメーションとキー フレームを定義したら、アニメーションを接続できます。 アニメーションを開始する場合、アニメーション化する [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx)、アニメーション化するターゲット プロパティ、アニメーションへの参照を指定します。 これを行うには、StartAnimation() 関数を呼び出します。 プロパティで StartAnimation() を呼び出すと、以前に実行されていたアニメーションは切断されて削除されます。  
+アニメーションとキー フレームを定義したら、アニメーションを接続できます。 アニメーションを開始する場合、アニメーション化する [Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx)、アニメーション化するターゲット プロパティ、アニメーションへの参照を指定します。 これを行うには、StartAnimation() 関数を呼び出します。 プロパティで StartAnimation() を呼び出すと、以前に実行されていたアニメーションは切断されて削除されます。  
 **注:** アニメーション化するために選択したプロパティへの参照は、文字列の形式です。  
 
-[Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) の Offset プロパティでアニメーションを設定して開始する例:  
+[Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) の Offset プロパティでアニメーションを設定して開始する例:  
 ```cs
 targetVisual.StartAnimation("Offset", animation);
 ```  
@@ -215,15 +222,15 @@ targetVisual.StartAnimation("Offset", animation);
 サブ チャネル プロパティをターゲットにする場合は、アニメーション化するプロパティを定義する文字列にサブ チャネルを追加します。 上記の例では、構文は StartAnimation ("Offset.X, animation2) に変換されます。ここで、animation2 は ScalarKeyFrameAnimation です。  
 
 アニメーションを開始した後、アニメーションが終了する前に停止することもできます。 これを行うには、StopAnimation() 関数を使います。  
-[Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) の Offset プロパティでアニメーションを停止する例:    
+[Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) の Offset プロパティでアニメーションを停止する例:    
 ```cs
 targetVisual.StopAnimation("Offset");
 ```
 
 明示的に停止されたときのアニメーションの動作を定義することもできます。 そのためには、アニメーションの StopBehavior プロパティを定義します。 次の 3 つのオプションがあります。
-*   LeaveCurrentValue: アニメーションは、アニメーション化されたプロパティの値をアニメーションの最後に計算された値としてマークします。
-*   SetToFinalValue: アニメーションは、アニメーション化されたプロパティの値を最後のキー フレームの値としてマークします。
-*   SetToInitialValue: アニメーションは、アニメーション化されたプロパティの値を最初のキー フレームの値としてマークします。  
+*    LeaveCurrentValue: アニメーションは、アニメーション化されたプロパティの値をアニメーションの最後に計算された値としてマークします。
+*    SetToFinalValue: アニメーションは、アニメーション化されたプロパティの値を最後のキー フレームの値としてマークします。
+*    SetToInitialValue: アニメーションは、アニメーション化されたプロパティの値を最初のキー フレームの値としてマークします。  
 
 キー フレーム アニメーションの StopBehavior プロパティを設定する例:  
 ```cs
@@ -259,7 +266,7 @@ myScopeBatch.Resume();
 次のコード スニペットと図は、バッチで終了状態を追跡するためにアニメーションを集計する例を示しています。 この例では、アニメーション 1、3、4 はこのバッチにより終了状態が追跡されますが、アニメーション 2 の終了状態は追跡されません。  
 ```cs
 myScopedBatch.End();
-CompositionScopedBatch myScopedBatch =  _compositor.CreateScopedBatch(CompositionBatchTypes.Animation);
+CompositionScopedBatch myScopedBatch =     _compositor.CreateScopedBatch(CompositionBatchTypes.Animation);
 // Start Animation1
 […]
 myScopedBatch.Suspend();
@@ -277,7 +284,7 @@ myScopedBatch.End();
 ## <a name="batching-a-single-animations-completion-event"></a>1 つのアニメーションの完了イベントを一括処理
 1 つのアニメーションが終了するタイミングを判断する場合、ターゲットのアニメーションのみを含むスコープ指定されたバッチを作成する必要があります。 以下に例を示します。  
 ```cs
-CompositionScopedBatch myScopedBatch =  _compositor.CreateScopedBatch(CompositionBatchTypes.Animation);
+CompositionScopedBatch myScopedBatch =     _compositor.CreateScopedBatch(CompositionBatchTypes.Animation);
 Visual.StartAnimation("Opacity", myAnimation);
 myScopedBatch.End();
 ```
@@ -306,10 +313,10 @@ IsEnded プロパティは、特定のバッチにアニメーションを追加
 
 ## <a name="creating-and-attaching-your-expression-animation"></a>数式アニメーションの作成とアタッチ
 数式アニメーションを作成するための構文について説明する前に、いくつかの基本原則を示します。  
-*   数式アニメーションでは、定義済みの数学方程式を使って、各フレームでアニメーション化するプロパティの値を決定します。
-*   数学方程式は文字列として数式に入力されます。
-*   数学方程式の出力は、アニメーション化するプロパティと同じ型に解決される必要があります。 型が一致しない場合、数式を計算するときにエラーが出力されます。 方程式が NaN (数値/0) に解決される場合、システムでは前回計算された値が使用されます。
-*   数式アニメーションの*有効期間は無期限*であるため、停止するまで継続して実行されます。  
+*    数式アニメーションでは、定義済みの数学方程式を使って、各フレームでアニメーション化するプロパティの値を決定します。
+*    数学方程式は文字列として数式に入力されます。
+*    数学方程式の出力は、アニメーション化するプロパティと同じ型に解決される必要があります。 型が一致しない場合、数式を計算するときにエラーが出力されます。 方程式が NaN (数値/0) に解決される場合、システムでは前回計算された値が使用されます。
+*    数式アニメーションの*有効期間は無期限*であるため、停止するまで継続して実行されます。  
 
 数式アニメーションを作成するには、コンポジション オブジェクトのコンストラクターを使って、数学的な式を指定します。  
  
@@ -317,7 +324,7 @@ IsEnded プロパティは、特定のバッチにアニメーションを追加
 ```cs
 var expression = _compositor.CreateExpressionAnimation("0.2 + 0.3");
 ```
-アニメーションを実行するには、キー フレーム アニメーションと同様に、数式アニメーション定義した後、アニメーションを Visual にアタッチし、アニメーション化するプロパティを宣言する必要があります。 ここでは、引き続き前の例を使って、数式アニメーションを [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) の Opacity プロパティ (Scalar 型) にアタッチします。  
+アニメーションを実行するには、キー フレーム アニメーションと同様に、数式アニメーション定義した後、アニメーションを Visual にアタッチし、アニメーション化するプロパティを宣言する必要があります。 ここでは、引き続き前の例を使って、数式アニメーションを [Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) の Opacity プロパティ (Scalar 型) にアタッチします。  
 ```cs
 targetVisual.StartAnimation("Opacity", expression);
 ```
@@ -330,11 +337,11 @@ targetVisual.StartAnimation("Opacity", expression);
 ### <a name="operators-precedence-and-associativity"></a>演算子、優先順位、結合性
 数式文字列では、方程式のさまざまな構成要素間の数学的な関係を記述するために使用される標準的な演算子の使用がサポートされています。  
 
-|カテゴリ|  演算子|
+|カテゴリ|    演算子|
 |--------|-----------|
-|単項| -|
+|単項|    -|
 |乗算|    * /|
-|加算|  + -|
+|加算|    + -|
 |剰余| %|  
 
 同様に、式を評価するときには、C# 言語の仕様で定義されている演算子の優先順位と結合性に準拠します。 言い換えると、演算子の基本的な順序に準拠します。  
@@ -345,21 +352,21 @@ targetVisual.StartAnimation("Opacity", expression);
 ```
 
 ### <a name="property-parameters"></a>プロパティのパラメーター
-プロパティのパラメーターは、数式アニメーションの最も強力な構成要素の 1 つです。 数式文字列では、[Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx)、コンポジション プロパティ セット、他の C# オブジェクトなど、他のオブジェクトのプロパティ値を参照できます。   
+プロパティのパラメーターは、数式アニメーションの最も強力な構成要素の 1 つです。 数式文字列では、[Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx)、コンポジション プロパティ セット、他の C# オブジェクトなど、他のオブジェクトのプロパティ値を参照できます。   
 
 数式文字列でこれらを使用するには、数式アニメーションに対するパラメーターとして、参照を定義する必要があります。 そのためには、数式で使用される文字列を実際のオブジェクトにマッピングします。 これにより、数式を評価するときに、値を計算するために検査する対象がシステムで認識されます。 数式に含めるオブジェクトの型と相互に関連するさまざまな型のパラメーターがあります。  
 
-|型|  パラメーターを作成する関数|
+|型|    パラメーターを作成する関数|
 |----|------------------------------|
 |Scalar|    SetScalarParameter(String ref, Scalar obj)|
 |Vector|    SetVector2Parameter(String ref, Vector2 obj)<br/>SetVector3Parameter(String ref, Vector3 obj)<br/>SetVector4Parameter(String ref, Vector4 obj)|
 |Matrix|    SetMatrix3x2Parameter(String ref, Matrix3x2 obj)<br/>SetMatrix4x4Parameter(String ref, Matrix4x4 obj)|
 |Quaternion|    SetQuaternionParameter(String ref, Quaternion obj)|
-|Color| SetColorParameter(String ref, Color obj)|
-|CompositionObject| SetReferenceParameter(String ref, Composition object obj)|
+|Color|    SetColorParameter(String ref, Color obj)|
+|CompositionObject|    SetReferenceParameter(String ref, Composition object obj)|
 |Boolean| SetBooleanParameter(String ref, Boolean obj)|  
 
-次の例では、他の 2 つのコンポジションの [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) と基本的な System.Numerics Vector3 オブジェクトのオフセットを参照する数式アニメーションを作成します。  
+次の例では、他の 2 つのコンポジションの [Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) と基本的な System.Numerics Vector3 オブジェクトのオフセットを参照する数式アニメーションを作成します。  
 ```cs
 var commonOffset = new Vector3(25.0, 17.0, 10.0);
 var expression = _compositor.CreateExpressionAnimation("SomeOffset / ParentOffset + additionalOffset);
@@ -382,7 +389,7 @@ expression.SetReferenceParameter("sharedProperties", _sharedProperties);
 
 最後に、他のオブジェクトのプロパティを参照する場合、数式文字列で、または参照パラメーターの一部として、サブチャネル プロパティを参照することもできます。  
  
-次の例では、2 つの [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) から Offset プロパティの x サブチャネルを参照します。まず数式文字列自体で参照し、次にパラメーター参照を作成するときに参照します。
+次の例では、2 つの [Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) から Offset プロパティの x サブチャネルを参照します。まず数式文字列自体で参照し、次にパラメーター参照を作成するときに参照します。
 Offset の X コンポーネントを参照する場合、パラメーターの型を前の例のような Vector3 ではなく、Scalar パラメーターに変更していることに注意してください。  
 ```cs
 var expression = _compositor.CreateExpressionAnimation("xOffset/ ParentOffset.X");
@@ -406,21 +413,21 @@ var expression = _compositor.CreateExpressionAnimation("Offset / Vector3(targetX
 ```
 
 ヘルパー関数やコンストラクターの詳しい一覧については、「付録」セクションまたは次の一覧から各型の説明をご覧ください。  
-*   [Scalar](#scalar)
-*   [Vector2](#vector2)
-*   [Vector3](#vector3)
-*   [Matrix3x2](#matrix3x2)
-*   [Matrix4x4](#matrix4x4)
-*   [Quaternion](#quaternion)
-*   [Color](#color)  
+*    [Scalar](#scalar)
+*    [Vector2](#vector2)
+*    [Vector3](#vector3)
+*    [Matrix3x2](#matrix3x2)
+*    [Matrix4x4](#matrix4x4)
+*    [Quaternion](#quaternion)
+*    [Color](#color)  
 
 ### <a name="expression-keywords"></a>数式のキーワード
 数式文字列を評価するときに異なる方法で処理される、特殊な "キーワード" を利用できます。 これらは "キーワード" と見なされるため、プロパティ参照の文字列パラメーターとしては使用できません。  
  
-|キーワード|   説明|
+|キーワード|    説明|
 |-------|--------------|
 |this.StartingValue| アニメーション化されるプロパティの開始値への参照を提供します。|
-|this.CurrentValue| プロパティの現在の "既知" の値への参照を提供します。|
+|this.CurrentValue|    プロパティの現在の "既知" の値への参照を提供します。|
 |Pi| 円周率の値を参照するキーワードです。|
 
 次の例では、this.StartingValue キーワードの使い方を示しています。  
@@ -437,17 +444,17 @@ var expression = _compositor.CreateExpressionAnimation("this.StartingValue + del
 条件ステートメントによって、特定の条件に基づいて、異なる数学的な関係を使ってアニメーション化するプロパティの値を計算するような数式を作成できます。 true または false のステートメントの式として、3 項演算子は入れ子にできます。  
 
 条件ステートメントでは、次の条件演算子がサポートされています。 
-*   等しい (==)
-*   等しくない (!=)
-*   より小さい (<)
-*   以下 (<=)
-*   より大きい (>)
-*   以上 (>=)  
+*    等しい (==)
+*    等しくない (!=)
+*    より小さい (<)
+*    以下 (<=)
+*    より大きい (>)
+*    以上 (>=)  
 
 条件ステートメント内の演算子や関数として次の要素がサポートされています。
-*   Not: ! / Not(bool1)
-*   And: && / And(bool1, bool2)
-*   Or: || / Or(bool1, bool2)  
+*    Not: ! / Not(bool1)
+*    And: && / And(bool1, bool2)
+*    Or: || / Or(bool1, bool2)  
 
 条件を使用する数式アニメーションの例を次に示します。  
 ```cs
@@ -479,7 +486,7 @@ _parallaxExpression.SetScalarParameter("StartOffset", 0.0f);
 _parallaxExpression.SetScalarParameter("ParallaxValue", 0.5f);
 _parallaxExpression.SetScalarParameter("ItemHeight", 0.0f);
 _parallaxExpression.SetReferenceParameter("ScrollManipulation", _scrollProperties);
-_parallaxExpression.Expression = "(ScrollManipulation.Translation.Y + StartOffset - (0.5 *  ItemHeight)) * ParallaxValue - (ScrollManipulation.Translation.Y + StartOffset - (0.5   * ItemHeight))";
+_parallaxExpression.Expression = "(ScrollManipulation.Translation.Y + StartOffset - (0.5 *     ItemHeight)) * ParallaxValue - (ScrollManipulation.Translation.Y + StartOffset - (0.5     * ItemHeight))";
 ```
 
 ## <a name="animating-with-property-sets"></a>プロパティ セットを使ったアニメーション化
@@ -547,8 +554,8 @@ _target.StartAnimation(“Opacity”, exp);
 アニメーションでは、ユーザーに対する動作を効果的に表すことができます。 コンテンツをアニメーション化する方法は複数ありますが、これまでに説明した方法はすべて、明示的にアニメーションを*開始*する必要があります。 この方法では、アニメーションを開始するタイミングの定義は完全に制御できますが、プロパティ値が変更されるたびにアニメーションが必要になる場合の管理は難しくなります。 この状況は、アニメーションを定義するアプリの "パーソナリティ" が、アプリのコア コンポーネントとインフラストラクチャを定義するアプリの "ロジック" から分離されている場合によく発生します。 暗黙的なアニメーションにより、簡単かつ明確に、アニメーションをアプリのコア ロジックから切り離して定義することができます。 このようなアニメーションは、フックして、特定のプロパティ変更トリガーで実行できます。
 
 ### <a name="setting-up-your-implicitanimationcollection"></a>ImplicitAnimationCollection の設定  
-暗黙的なアニメーションは、その他の **CompositionAnimation** オブジェクト (**KeyFrameAnimation** または **ExpressionAnimation**) によって定義されます。 **ImplicitAnimationCollection** は、プロパティ変更*トリガー"*が満たされたときに開始される **CompositionAnimation** オブジェクトのセットを表します。 アニメーションを定義するときは、必ず **Target** プロパティを設定してください。これにより、開始時にアニメーションのターゲットとなる [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) プロパティが定義されます。 **Target** のプロパティとして使用できるのは、アニメーション化可能な [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) プロパティだけです。
-以下のコード スニペットでは、**Vector3KeyFrameAnimation** が 1 つ作成され、**ImplicitAnimationCollection** の一部として定義されます。 その後、**ImplicitAnimationCollection** は、[Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) の **ImplicitAnimation** プロパティに接続されるため、トリガーが満たされると、アニメーションが開始されます。  
+暗黙的なアニメーションは、その他の **CompositionAnimation** オブジェクト (**KeyFrameAnimation** または **ExpressionAnimation**) によって定義されます。 **ImplicitAnimationCollection** は、プロパティ変更*トリガー"*が満たされたときに開始される **CompositionAnimation** オブジェクトのセットを表します。 アニメーションを定義するときは、必ず **Target** プロパティを設定してください。これにより、開始時にアニメーションのターゲットとなる [Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) プロパティが定義されます。 **Target** のプロパティとして使用できるのは、アニメーション化可能な [Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) プロパティだけです。
+以下のコード スニペットでは、**Vector3KeyFrameAnimation** が 1 つ作成され、**ImplicitAnimationCollection** の一部として定義されます。 その後、**ImplicitAnimationCollection** は、[Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) の **ImplicitAnimation** プロパティに接続されるため、トリガーが満たされると、アニメーションが開始されます。  
 ```csharp
 Vector3KeyFrameAnimation animation = _compositor.CreateVector3KeyFrameAnimation();
 animation.DelayTime =  TimeSpan.FromMilliseconds(index);
@@ -561,8 +568,8 @@ visual.ImplicitAnimations = implicitAnimationCollection;
 
 
 ### <a name="triggering-when-the-implicitanimation-starts"></a>ImplicitAnimation 開始時のトリガー  
-トリガーという言葉は、アニメーションが暗黙的に開始されるタイミングを説明するときに使用されます。 現在、トリガーは、[Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) でアニメーション化可能なプロパティのいずれかに対する変更として定義されています。この変更は、プロパティの明示的な設定を通じて発生します。 たとえば、**Offset** トリガーを **ImplicitAnimationCollection** に配置し、アニメーションを関連付けると、ターゲット [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) の **Offset** に対する更新が、コレクション内のアニメーションを使用して新しい値に変化します。  
-ここでは、この追加行を挿入して、トリガーをターゲット [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) の **Offset** プロパティに設定します。  
+トリガーという言葉は、アニメーションが暗黙的に開始されるタイミングを説明するときに使用されます。 現在、トリガーは、[Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) でアニメーション化可能なプロパティのいずれかに対する変更として定義されています。この変更は、プロパティの明示的な設定を通じて発生します。 たとえば、**Offset** トリガーを **ImplicitAnimationCollection** に配置し、アニメーションを関連付けると、ターゲット [Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) の **Offset** に対する更新が、コレクション内のアニメーションを使用して新しい値に変化します。  
+ここでは、この追加行を挿入して、トリガーをターゲット [Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) の **Offset** プロパティに設定します。  
 ```csharp
 implicitAnimationCollection["Offset"] = animation;
 ```  
@@ -580,7 +587,7 @@ animationGroup.Add(animationA);
 animationGroup.Add(animationB);
 ```   
 グループが作成されたら、個々のアニメーションをアニメーション グループに追加できます。 個々のアニメーションを明示的に開始する必要はありません。これらはすべて、**StartAnimationGroup** が呼び出されたとき (明示的なシナリオの場合) またはトリガーが満たされたとき (暗黙的なシナリオの場合) に開始されます。  
-グループに追加されたアニメーションで、**Target** プロパティが定義されていることを確認してください。 これにより、ターゲット [Visual](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.visual.aspx) のどのプロパティがアニメーション化されるかが定義されます。
+グループに追加されたアニメーションで、**Target** プロパティが定義されていることを確認してください。 これにより、ターゲット [Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx) のどのプロパティがアニメーション化されるかが定義されます。
 
 ### <a name="using-animation-groups-with-implicit-animations"></a>暗黙的なアニメーションでのアニメーション グループの使用  
 開発者は、トリガーが満たされたときにアニメーション グループ形式の一連のアニメーションが開始されるような、暗黙的なアニメーションを作成できます。 この場合、トリガーが満たされた時点で開始されるアニメーションのセットとしてアニメーション グループを定義します。  
@@ -643,11 +650,11 @@ class PropertyAnimation
 |Max (Float value1, Float value2)| value1 と value2 で大きい方の浮動小数点数値を返します。|  
 |Min (Float value1, Float value2)| value1 と value2 で小さい方の浮動小数点数値を返します。|  
 |Lerp(Float value1, Float value2, Float progress)| 進行状況に基づいて 2 つのスカラー値の線形補間によって計算された結果を表す浮動小数点数値を返します (注: 進行状況は 0.0 ～ 1.0 です)。|  
-|Slerp(Float value1, Float value2, Float progress)| 進行状況に基づいて 2 つの浮動小数点数値の球面補間によって計算された結果を表す浮動小数点数値を返します (注: 進行状況は 0.0 ～ 1.0 です)。|  
+|Slerp(Float value1, Float value2, Float progress)|    進行状況に基づいて 2 つの浮動小数点数値の球面補間によって計算された結果を表す浮動小数点数値を返します (注: 進行状況は 0.0 ～ 1.0 です)。|  
 |Mod(Float value1, Float value2)| value1 を value2 で除算した結果の余りの浮動小数点数値を返します。|  
 |Ceil(Float value)| 次に大きい整数に丸められた Float パラメーターを返します。|  
 |Floor(Float value)| 次に小さい整数に丸められた Float パラメーターを返します。|  
-|Sqrt(Float value)| Float パラメーターの平方根を返します。|  
+|Sqrt(Float value)|    Float パラメーターの平方根を返します。|  
 |Square(Float value)| Float パラメーターの 2 乗を返します。|  
 |Sin(Float value1)| Float パラメーターの正弦を返します。|
 |Asin(Float value2)| Float パラメーターの逆正弦を返します。|
@@ -658,72 +665,72 @@ class PropertyAnimation
 |Round(Float value)| 最も近い整数に丸められた Float パラメーターを返します。|
 |Log10(Float value)| Float パラメーターの対数 (底 10) を返します。|
 |Ln(Float value)| Float パラメーターの自然対数を返します。|
-|Pow(Float value, Float power)| Float パラメーターの指定されたべき乗の結果を返します。|
+|Pow(Float value, Float power)|    Float パラメーターの指定されたべき乗の結果を返します。|
 |ToDegrees(Float radians)| 度に変換された Float パラメーターを返します。|
 |ToRadians(Float degrees)| ラジアンに変換された Float パラメーターを返します。|
 
 ### <a name="vector2"></a>Vector2  
 
-|関数とコンストラクターの演算|   説明|
+|関数とコンストラクターの演算|    説明|
 |-----------------------------------|--------------|
-|Abs (Vector2 value)|   各コンポーネントに適用された絶対値を含む Vector2 を返します。|
-|Clamp (Vector2 value1, Vector2 min, Vector2 max)|  各コンポーネントのクランプされた値を格納する Vector2 を返します。|
-|Max (Vector2 value1, Vector2 value2)|  value1 および value2 の対応する各コンポーネントに Max を実行した Vector2 を返します。|
-|Min (Vector2 value1, Vector2 value2)|  value1 および value2 の対応する各コンポーネントに Min を実行した Vector2 を返します。|
+|Abs (Vector2 value)|    各コンポーネントに適用された絶対値を含む Vector2 を返します。|
+|Clamp (Vector2 value1, Vector2 min, Vector2 max)|    各コンポーネントのクランプされた値を格納する Vector2 を返します。|
+|Max (Vector2 value1, Vector2 value2)|    value1 および value2 の対応する各コンポーネントに Max を実行した Vector2 を返します。|
+|Min (Vector2 value1, Vector2 value2)|    value1 および value2 の対応する各コンポーネントに Min を実行した Vector2 を返します。|
 |Scale(Vector2 value, Float factor)|    ベクターの各コンポーネントにスケール ファクターを乗算した Vector2 を返します。|
 |Transform(Vector2 value, Matrix3x2 matrix)|    Vector2 と Matrix3x2 の間で線形変換を実行した (ベクターとマトリックスを乗算した) 結果の Vector2 を返します。|
-|Lerp(Vector2 value1, Vector2 value2, Float progress)|  進行状況に基づいて 2 つの Vector2 値の線形補間によって計算された結果を表す Vector2 を返します (注: 進行状況は 0.0 ～ 1.0 です)。|
-|Length(Vector2 value)| Vector2 の長さ/大きさを表す浮動小数点数値を返します。|
+|Lerp(Vector2 value1, Vector2 value2, Float progress)|    進行状況に基づいて 2 つの Vector2 値の線形補間によって計算された結果を表す Vector2 を返します (注: 進行状況は 0.0 ～ 1.0 です)。|
+|Length(Vector2 value)|    Vector2 の長さ/大きさを表す浮動小数点数値を返します。|
 |LengthSquared(Vector2)|    Vector2 の長さ/大きさの 2 乗を表す浮動小数点数値を返します。|
-|Distance(Vector2 value1, Vector2 value2)|  2 つの Vector2 値の間の距離を表す浮動小数点数値を返します。|
-|DistanceSquared(Vector2 value1, Vector2 value2)|   2 つの Vector2 値の間の距離の 2 乗を表す浮動小数点数値を返します。|
-|Normalize(Vector2 value)|  すべてのコンポーネントが正規化されているパラメーターの単位ベクトルを表す Vector2 を返します。|
-|Vector2(Float x, Float y)| 2 つの Float パラメーターを使用して Vector2 を作成します。|
+|Distance(Vector2 value1, Vector2 value2)|    2 つの Vector2 値の間の距離を表す浮動小数点数値を返します。|
+|DistanceSquared(Vector2 value1, Vector2 value2)|    2 つの Vector2 値の間の距離の 2 乗を表す浮動小数点数値を返します。|
+|Normalize(Vector2 value)|    すべてのコンポーネントが正規化されているパラメーターの単位ベクトルを表す Vector2 を返します。|
+|Vector2(Float x, Float y)|    2 つの Float パラメーターを使用して Vector2 を作成します。|
 
 ### <a name="vector3"></a>Vector3  
 
-|関数とコンストラクターの演算|   説明|
+|関数とコンストラクターの演算|    説明|
 |-----------------------------------|--------------|
-|Abs (Vector3 value)|   各コンポーネントに適用された絶対値を含む Vector3 を返します。|
-|Clamp (Vector3 value1, Vector3 min, Vector3 max)|  各コンポーネントのクランプされた値を格納する Vector3 を返します。|
-|Max (Vector3 value1, Vector3 value2)|  value1 および value2 の対応する各コンポーネントに Max を実行した Vector3 を返します。|
-|Min (Vector3 value1, Vector3 value2)|  value1 および value2 の対応する各コンポーネントに Min を実行した Vector3 を返します。|
+|Abs (Vector3 value)|    各コンポーネントに適用された絶対値を含む Vector3 を返します。|
+|Clamp (Vector3 value1, Vector3 min, Vector3 max)|    各コンポーネントのクランプされた値を格納する Vector3 を返します。|
+|Max (Vector3 value1, Vector3 value2)|    value1 および value2 の対応する各コンポーネントに Max を実行した Vector3 を返します。|
+|Min (Vector3 value1, Vector3 value2)|    value1 および value2 の対応する各コンポーネントに Min を実行した Vector3 を返します。|
 |Scale(Vector3 value, Float factor)|    ベクターの各コンポーネントにスケール ファクターを乗算した Vector3 を返します。|
-|Lerp(Vector3 value1, Vector3 value2, Float progress)|  進行状況に基づいて 2 つの Vector3 値の線形補間によって計算された結果を表す Vector3 を返します (注: 進行状況は 0.0 ～ 1.0 です)。|
-|Length(Vector3 value)| Vector3 の長さ/大きさを表す浮動小数点数値を返します。|
+|Lerp(Vector3 value1, Vector3 value2, Float progress)|    進行状況に基づいて 2 つの Vector3 値の線形補間によって計算された結果を表す Vector3 を返します (注: 進行状況は 0.0 ～ 1.0 です)。|
+|Length(Vector3 value)|    Vector3 の長さ/大きさを表す浮動小数点数値を返します。|
 |LengthSquared(Vector3)|    Vector3 の長さ/大きさの 2 乗を表す浮動小数点数値を返します。|
-|Distance(Vector3 value1, Vector3 value2)|  2 つの Vector3 値の間の距離を表す浮動小数点数値を返します。|
-|DistanceSquared(Vector3 value1, Vector3 value2)|   2 つの Vector3 値の間の距離の 2 乗を表す浮動小数点数値を返します。|
-|Normalize(Vector3 value)|  すべてのコンポーネントが正規化されているパラメーターの単位ベクトルを表す Vector3 を返します。|
+|Distance(Vector3 value1, Vector3 value2)|    2 つの Vector3 値の間の距離を表す浮動小数点数値を返します。|
+|DistanceSquared(Vector3 value1, Vector3 value2)|    2 つの Vector3 値の間の距離の 2 乗を表す浮動小数点数値を返します。|
+|Normalize(Vector3 value)|    すべてのコンポーネントが正規化されているパラメーターの単位ベクトルを表す Vector3 を返します。|
 |Vector3(Float x, Float y, Float z)|    3 つの Float パラメーターを使用して Vector3 を作成します。|
 
 ### <a name="vector4"></a>Vector4  
 
-|関数とコンストラクターの演算|   説明|
+|関数とコンストラクターの演算|    説明|
 |-----------------------------------|--------------|
-|Abs (Vector4 value)|   各コンポーネントに適用された絶対値を含む Vector3 を返します。|
-|Clamp (Vector4 value1, Vector4 min, Vector4 max)|  各コンポーネントのクランプされた値を格納する Vector4 を返します。|
-|Max (Vector4 value1 Vector4 value2)|   value1 および value2 の対応する各コンポーネントに Max を実行した Vector4 を返します。|
-|Min (Vector4 value1 Vector4 value2)|   value1 および value2 の対応する各コンポーネントに Min を実行した Vector4 を返します。|
+|Abs (Vector4 value)|    各コンポーネントに適用された絶対値を含む Vector3 を返します。|
+|Clamp (Vector4 value1, Vector4 min, Vector4 max)|    各コンポーネントのクランプされた値を格納する Vector4 を返します。|
+|Max (Vector4 value1 Vector4 value2)|    value1 および value2 の対応する各コンポーネントに Max を実行した Vector4 を返します。|
+|Min (Vector4 value1 Vector4 value2)|    value1 および value2 の対応する各コンポーネントに Min を実行した Vector4 を返します。|
 |Scale(Vector3 value, Float factor)|    ベクターの各コンポーネントにスケール ファクターを乗算した Vector3 を返します。|
 |Transform(Vector4 value, Matrix4x4 matrix)|    Vector4 と Matrix4x4 の間で線形変換を実行した (ベクターとマトリックスを乗算した) 結果の Vector4 を返します。|
-|Lerp(Vector4 value1, Vector4 value2, Float progress)|  進行状況に基づいて 2 つの Vector4 値の線形補間によって計算された結果を表す Vector4 を返します (注: 進行状況は 0.0 ～ 1.0 です)。|
-|Length(Vector4 value)| Vector4 の長さ/大きさを表す浮動小数点数値を返します。|
+|Lerp(Vector4 value1, Vector4 value2, Float progress)|    進行状況に基づいて 2 つの Vector4 値の線形補間によって計算された結果を表す Vector4 を返します (注: 進行状況は 0.0 ～ 1.0 です)。|
+|Length(Vector4 value)|    Vector4 の長さ/大きさを表す浮動小数点数値を返します。|
 |LengthSquared(Vector4)|    Vector4 の長さ/大きさの 2 乗を表す浮動小数点数値を返します。|
-|Distance(Vector4 value1, Vector4 value2)|  2 つの Vector4 値の間の距離を表す浮動小数点数値を返します。|
-|DistanceSquared(Vector4 value1, Vector4 value2)|   2 つの Vector4 値の間の距離の 2 乗を表す浮動小数点数値を返します。|
-|Normalize(Vector4 value)|  すべてのコンポーネントが正規化されているパラメーターの単位ベクトルを表す Vector4 を返します。|
-|Vector4(Float x, Float y, Float z, Float w)|   4 つの Float パラメーターを使用して Vector4 を作成します。|
+|Distance(Vector4 value1, Vector4 value2)|    2 つの Vector4 値の間の距離を表す浮動小数点数値を返します。|
+|DistanceSquared(Vector4 value1, Vector4 value2)|    2 つの Vector4 値の間の距離の 2 乗を表す浮動小数点数値を返します。|
+|Normalize(Vector4 value)|    すべてのコンポーネントが正規化されているパラメーターの単位ベクトルを表す Vector4 を返します。|
+|Vector4(Float x, Float y, Float z, Float w)|     4 つの Float パラメーターを使用して Vector4 を作成します。|
 
 ### <a name="matrix3x2"></a>Matrix3x2  
 
-|関数とコンストラクターの演算|   説明|
+|関数とコンストラクターの演算|    説明|
 |-----------------------------------|--------------|
-|Scale(Matrix3x2 value, Float factor)|  マトリックスの各コンポーネントにスケール ファクターを乗算した Matrix3x2 を返します。|
-|Inverse(Matrix 3x2 value)| 逆マトリックスを表す Matrix3x2 オブジェクトを返します。|
-|Matrix3x2(Float M11, Float M12, Float M21, Float M22, Float M31, Float M32)|   6 つの Float パラメーターを使用して Matrix3x2 を作成します。|
-|Matrix3x2.CreateFromScale(Vector2 scale)|  スケールを表す Vector2 から Matrix3x2 を構築します。<br/>\[scale.X, 0.0<br/> 0.0, scale.Y<br/> 0.0, 0.0 \]|
-|Matrix3x2.CreateFromTranslation(Vector2 translation)|  平行移動を表す Vector2 から Matrix3x2 を構築します。<br/>\[1.0, 0.0,<br/> 0.0, 1.0,<br/> translation.X, translation.Y\]|  
+|Scale(Matrix3x2 value, Float factor)|    マトリックスの各コンポーネントにスケール ファクターを乗算した Matrix3x2 を返します。|
+|Inverse(Matrix 3x2 value)|    逆マトリックスを表す Matrix3x2 オブジェクトを返します。|
+|Matrix3x2(Float M11, Float M12, Float M21, Float M22, Float M31, Float M32)|    6 つの Float パラメーターを使用して Matrix3x2 を作成します。|
+|Matrix3x2.CreateFromScale(Vector2 scale)|    スケールを表す Vector2 から Matrix3x2 を構築します。<br/>\[scale.X, 0.0<br/> 0.0, scale.Y<br/> 0.0, 0.0 \]|
+|Matrix3x2.CreateFromTranslation(Vector2 translation)|    平行移動を表す Vector2 から Matrix3x2 を構築します。<br/>\[1.0, 0.0,<br/> 0.0, 1.0,<br/> translation.X, translation.Y\]|  
 |Matrix3x2.CreateSkew(Float x, Float y, Vector2 centerpoint)| スキューを表す 2 つの浮動小数点数値と Vector2 から Matrix3x2 を構築します。<br/>\[1.0, Tan(y),<br/>Tan(x), 1.0,<br/>-centerpoint.Y * Tan(x), -centerpoint.X * Tan(y)\]|  
 |Matrix3x2.CreateRotation(Float radians)| 回転 (ラジアン単位) から Matrix3x2 を構築します。<br/>\[Cos(radians), Sin(radians),<br/>-Sin(radians), Cos(radians),<br/>0.0, 0.0 \]|   
 |Matrix3x2.CreateTranslation(Vector2 translation)| CreateFromTranslation と同じ。|      
@@ -732,14 +739,14 @@ class PropertyAnimation
     
 ### <a name="matrix4x4"></a>Matrix4x4  
 
-|関数とコンストラクターの演算|   説明|
+|関数とコンストラクターの演算|    説明|
 |-----------------------------------|--------------|
-|Scale(Matrix4x4 value, Float factor)|  マトリックスの各コンポーネントにスケール ファクターを乗算した Matrix4x4 を返します。|
+|Scale(Matrix4x4 value, Float factor)|    マトリックスの各コンポーネントにスケール ファクターを乗算した Matrix4x4 を返します。|
 |Inverse(Matrix4x4)|    逆マトリックスを表す Matrix4x4 オブジェクトを返します。|
-|Matrix4x4(Float M11, Float M12, Float M13, Float M14,<br/>Float M21, Float M22, Float M23, Float M24,<br/>    Float M31, Float M32, Float M33, Float M34,<br/>    Float M41, Float M42, Float M43, Float M44)| 16 個の Float パラメーターを使用して Matrix4x4 を作成します。|
-|Matrix4x4.CreateFromScale(Vector3 scale)|  スケールを表す Vector3 から Matrix4x4 を構築します。<br/>\[scale.X, 0.0, 0.0, 0.0,<br/> 0.0, scale.Y, 0.0, 0.0,<br/> 0.0, 0.0, scale.Z, 0.0,<br/> 0.0, 0.0, 0.0, 1.0\]|
-|Matrix4x4.CreateFromTranslation(Vector3 translation)|  平行移動を表す Vector3 から Matrix4x4 を構築します。<br/>\[1.0, 0.0, 0.0, 0.0,<br/> 0.0, 1.0, 0.0, 0.0,<br/> 0.0, 0.0, 1.0, 0.0,<br/> translation.X, translation.Y, translation.Z, 1.0\]|
-|Matrix4x4.CreateFromAxisAngle(Vector3 axis, Float angle)|  Vector3 軸と角度を表す浮動小数点数値から Matrix4x4 を構築します。|
+|Matrix4x4(Float M11, Float M12, Float M13, Float M14,<br/>Float M21, Float M22, Float M23, Float M24,<br/>       Float M31, Float M32, Float M33, Float M34,<br/>       Float M41, Float M42, Float M43, Float M44)|    16 個の Float パラメーターを使用して Matrix4x4 を作成します。|
+|Matrix4x4.CreateFromScale(Vector3 scale)|    スケールを表す Vector3 から Matrix4x4 を構築します。<br/>\[scale.X, 0.0, 0.0, 0.0,<br/> 0.0, scale.Y, 0.0, 0.0,<br/> 0.0, 0.0, scale.Z, 0.0,<br/> 0.0, 0.0, 0.0, 1.0\]|
+|Matrix4x4.CreateFromTranslation(Vector3 translation)|    平行移動を表す Vector3 から Matrix4x4 を構築します。<br/>\[1.0, 0.0, 0.0, 0.0,<br/> 0.0, 1.0, 0.0, 0.0,<br/> 0.0, 0.0, 1.0, 0.0,<br/> translation.X, translation.Y, translation.Z, 1.0\]|
+|Matrix4x4.CreateFromAxisAngle(Vector3 axis, Float angle)|    Vector3 軸と角度を表す浮動小数点数値から Matrix4x4 を構築します。|
 |Matrix4x4(Matrix3x2 matrix)| Matrix3x2 を使用して Matrix4x4 を構築します。<br/>\[matrix.11, matrix.12, 0, 0,<br/>matrix.21, matrix.22, 0, 0,<br/>0, 0, 1, 0,<br/>matrix.31, matrix.32, 0, 1\]|  
 |Matrix4x4.CreateTranslation(Vector3 translation)| CreateFromTranslation と同じ。|  
 |Matrix4x4.CreateScale(Vector3 scale)| CreateFromScale と同じ。|  
@@ -747,32 +754,27 @@ class PropertyAnimation
 
 ### <a name="quaternion"></a>Quaternion  
 
-|関数とコンストラクターの演算|   説明|
+|関数とコンストラクターの演算|    説明|
 |-----------------------------------|--------------|
-|Slerp(Quaternion value1, Quaternion value2, Float progress)|   進行状況に基づいて 2 つの Quaternion の球面補間によって計算された結果を表す Quaternion を返します (注: 進行状況は 0.0 ～ 1.0 です)。|
-|Concatenate(Quaternion value1 Quaternion value2)|  2 つの Quaternion の連結を表す Quaternion (結合された 2 つの個別の回転を表す Quaternion) を返します。|
-|Length(Quaternion value)|  Quaternion の長さ/大きさを表す浮動小数点数値を返します。|
-|LengthSquared(Quaternion)| Quaternion の長さ/大きさの 2 乗を表す浮動小数点数値を返します。|
-|Normalize(Quaternion value)|   コンポーネントが正規化された Quaternion を返します。|
+|Slerp(Quaternion value1, Quaternion value2, Float progress)|    進行状況に基づいて 2 つの Quaternion の球面補間によって計算された結果を表す Quaternion を返します (注: 進行状況は 0.0 ～ 1.0 です)。|
+|Concatenate(Quaternion value1 Quaternion value2)|    2 つの Quaternion の連結を表す Quaternion (結合された 2 つの個別の回転を表す Quaternion) を返します。|
+|Length(Quaternion value)|    Quaternion の長さ/大きさを表す浮動小数点数値を返します。|
+|LengthSquared(Quaternion)|    Quaternion の長さ/大きさの 2 乗を表す浮動小数点数値を返します。|
+|Normalize(Quaternion value)|    コンポーネントが正規化された Quaternion を返します。|
 |Quaternion.CreateFromAxisAngle(Vector3 axis, Scalar angle)|    Vector3 軸と角度を表すスカラーから Quaternion を構築します。|
 |Quaternion(Float x, Float y, Float z, Float w)|    4 つの浮動小数点数値から Quaternion を構築します。|
 
 ### <a name="color"></a>Color
 
-|関数とコンストラクターの演算|   説明|
+|関数とコンストラクターの演算|    説明|
 |-----------------------------------|--------------|
-|ColorLerp(Color colorTo, Color colorFrom, Float progress)| 特定の進行状況に基づいて 2 つの Color オブジェクト間で計算された線形補間値を表す Color オブジェクトを返します  (注: 進行状況は 0.0 ～ 1.0 です)。|
-|ColorLerpRGB(Color colorTo, Color colorFrom, Float progress)|  特定の進行状況に基づいて、RGB 色空間の 2 つのオブジェクト間で計算された線形補間値を表す Color オブジェクトを返します |
-|ColorLerpHSL(Color colorTo, Color colorFrom, Float progress)|  特定の進行状況に基づいて、HSL 色空間の 2 つのオブジェクト間で計算された線形補間値を表す Color オブジェクトを返します |
-|ColorArgb(Float a, Float r, Float g, Float b)| ARGB コンポーネントで定義される Color を表すオブジェクトを作成します。|
-|ColorHsl(Float h, Float s, Float l)|   HSL コンポーネントで定義される Color を表すオブジェクトを作成します (注: 色相は 0 ～ 2pi で定義されます)。|
+|ColorLerp(Color colorTo, Color colorFrom, Float progress)|    特定の進行状況に基づいて 2 つの Color オブジェクト間で計算された線形補間値を表す Color オブジェクトを返します  (注: 進行状況は 0.0 ～ 1.0 です)。|
+|ColorLerpRGB(Color colorTo, Color colorFrom, Float progress)|    特定の進行状況に基づいて、RGB 色空間の 2 つのオブジェクト間で計算された線形補間値を表す Color オブジェクトを返します |
+|ColorLerpHSL(Color colorTo, Color colorFrom, Float progress)|    特定の進行状況に基づいて、HSL 色空間の 2 つのオブジェクト間で計算された線形補間値を表す Color オブジェクトを返します |
+|ColorArgb(Float a, Float r, Float g, Float b)|    ARGB コンポーネントで定義される Color を表すオブジェクトを作成します。|
+|ColorHsl(Float h, Float s, Float l)|    HSL コンポーネントで定義される Color を表すオブジェクトを作成します (注: 色相は 0 ～ 2pi で定義されます)。|
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

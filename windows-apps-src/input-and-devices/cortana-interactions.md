@@ -12,8 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 76b012ab4cf737f00fc986c81c88fd48339867fc
-ms.openlocfilehash: 8dcf45951723c0bf2302b59ef475f3b0fa973d5e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b3adb444389716274f32d1f62af026b625624ea7
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -45,10 +46,5 @@ Cortanaの機能とサービスに関する開発者向けドキュメントは�
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

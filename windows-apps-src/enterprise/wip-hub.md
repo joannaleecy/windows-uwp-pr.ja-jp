@@ -1,13 +1,21 @@
 ---
 author: normesta
-Description: "ここでは、Windows 情報保護 (WIP) と、ファイル、バッファー、クリップボード、ネットワーク、バックグラウンド タスク、ロックの背後でのデータ保護との関係についての開発者向けの詳しい情報について説明します。"
+Description: "ここでは、Windows 情報保護 (WIP) と、ファイル、バッファー、クリップボード、ネットワーク、バックグラウンド タスク、ロックの背後でのデータ保護との関係について、開発者向けに全体像を説明します。"
 MS-HAID: dev\_enterprise.edp\_hub
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "Windows 情報保護 (WIP)"
+ms.author: normesta
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows 情報保護, 企業データ, エンタープライズ データ保護, EDP, 対応アプリ"
+ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 translationtype: Human Translation
-ms.sourcegitcommit: 8a0ce7282ffaf76bcea94eec5ec3e3ceb99aa5ac
-ms.openlocfilehash: 81bd77d0153c17c80ccdce77332ed57fb751c8ec
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: b9bde047a70d31105680361d34cf71b33f708f93
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -16,6 +24,7 @@ ms.openlocfilehash: 81bd77d0153c17c80ccdce77332ed57fb751c8ec
 __注__ Windows 情報保護 (WIP) ポリシーは、Windows 10 Version 1607 に適用することができます。
 
 WIP では、組織で定義されているポリシーを適用することによって、組織に属しているデータを保護します。 アプリがこれらのポリシーに含まれている場合、アプリによって生成されたすべてのデータにはポリシーの制限が適用されます。 このトピックは、ユーザーの個人データに影響を与えずに、これらのポリシーをより適切に適用するアプリを作成する際に役立ちます。
+<iframe src="https://channel9.msdn.com/Blogs/Windows-Development-for-the-Enterprise/Securing-Enterprise-Data-with-Windows-Information-Protection/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
 ## <a name="first-what-is-wip"></a>WIP とは
 
@@ -91,9 +100,4 @@ MDM ポリシーではこのフラグは必要ありませんが、MAM ポリシ
 
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

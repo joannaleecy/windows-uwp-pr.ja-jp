@@ -3,16 +3,23 @@ author: mtoepke
 title: "シェーダー オブジェクトの移植"
 description: "OpenGL ES 2.0 から簡単なレンダラーを移植する場合、最初の手順では、Direct3D 11 の対応する頂点シェーダー オブジェクトとフラグメント シェーダー オブジェクトを設定し、コンパイル後にメイン プログラムがシェーダー オブジェクトと通信できるようにします。"
 ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, 移植, シェーダー, Direct3D, OpenGL"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 478b5615834ea946a6a327fc2cbf54651e21b695
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f683e8b6ad04b1350adae1c962da09e2f15f5cec
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# シェーダー オブジェクトの移植
+# <a name="port-the-shader-objects"></a>シェーダー オブジェクトの移植
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 **重要な API**
@@ -28,10 +35,10 @@ OpenGL ES 2.0 から簡単なレンダラーを移植する場合、最初の手
 
 OpenGL ES 2.0 と同じように、Direct3D のコンパイル済みシェーダーは描画コンテキストに関連付ける必要があります。 ただし、Direct3D にはもともとシェーダー プログラム オブジェクトという概念がありません。そのため、代わりに、シェーダーを [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) に直接割り当てる必要があります。 この手順では、OpenGL ES 2.0 のシェーダー オブジェクトを作成してバインドするプロセスに従い、Direct3D で対応する API の動作を実現します。
 
-手順
+<a name="instructions"></a>手順
 ------------
 
-### 手順 1: シェーダーのコンパイル
+### <a name="step-1-compile-the-shaders"></a>手順 1: シェーダーのコンパイル
 
 この簡単な OpenGL ES 2.0 のサンプルでは、シェーダーをテキスト ファイルとして保存し、実行時コンパイルのために文字列データとして読み込みます。
 
@@ -102,7 +109,7 @@ auto createPSTask = loadPSTask.then([this](Platform::Array<byte>^ fileData) {
 };
 ```
 
-### 手順 2: 頂点シェーダーとフラグメント (ピクセル) シェーダーの作成と読み込み
+### <a name="step-2-create-and-load-the-vertex-and-fragment-pixel-shaders"></a>手順 2: 頂点シェーダーとフラグメント (ピクセル) シェーダーの作成と読み込み
 
 OpenGL ES 2.0 にはシェーダー "プログラム" という概念があります。この概念は、CPU で実行されるメイン プログラムと GPU で実行されるシェーダーの間のインターフェイスとして機能します。 シェーダーはコンパイルされ (またはコンパイル済みのソースから読み込まれ)、プログラムに関連付けられることで、GPU で実行できるようになります。
 
@@ -181,7 +188,7 @@ m_d3dContext->PSSetShader(
   0);
 ```
 
-### 手順 3: シェーダーに渡すデータの定義
+### <a name="step-3-define-the-data-to-supply-to-the-shaders"></a>手順 3: シェーダーに渡すデータの定義
 
 OpenGL ES 2.0 の例では、シェーダー パイプラインに対して宣言する次の **uniform** が 1 つあります。
 
@@ -298,11 +305,11 @@ m_d3dContext->UpdateSubresource(
 
 同じように頂点バッファーを作成して更新します。これについては、次の手順の「[頂点バッファーと頂点データの移植](port-the-vertex-buffers-and-data-config.md)」で説明します。
 
-次の手順
+<a name="next-step"></a>次の手順
 ---------
 
 [頂点バッファーと頂点データの移植](port-the-vertex-buffers-and-data-config.md)
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 [簡単な OpenGL ES 2.0 レンダラーを Direct3D 11 に移植する方法](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
@@ -319,10 +326,5 @@ m_d3dContext->UpdateSubresource(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

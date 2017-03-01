@@ -3,22 +3,29 @@ author: eliotcowley
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
 description: "このセクションでは、以前の Windows 8.1 から、Windows 10 バージョンに加えられた変更をサポートするために、PlayReady Web アプリを変更する方法について説明します。"
 title: "PlayReady の Encrypted Media Extension"
+ms.author: elcowle
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 15b8c2cac08e59cfd9bd2c97c3a146cbc2be5548
-ms.openlocfilehash: eb85d9ea29917788612e0aa755465dbd6d1b9ba9
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0698a01b1f846581422c5ecf4d47a45dd22762c4
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# PlayReady の Encrypted Media Extension
+# <a name="playready-encrypted-media-extension"></a>PlayReady の Encrypted Media Extension
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 このセクションでは、以前の Windows 8.1 から、Windows 10 バージョンに加えられた変更をサポートするために、PlayReady Web アプリを変更する方法について説明します。
 
 Internet Explorer で PlayReady メディア要素を使うと、開発者はコンテンツ プロバイダーが定義したアクセス ルールを適用しながら、ユーザーに PlayReady コンテンツを提供することのできる Web アプリを作成することができます。 ここでは、HTML5 と JavaScript のみを使って、既存の Web アプリに PlayReady メディア要素を追加する方法について説明します。
 
-## PlayReady の Encrypted Media Extension の新機能
+## <a name="whats-new-in-playready-encrypted-media-extension"></a>PlayReady の Encrypted Media Extension の新機能
 
 このセクションでは、Windows 10 で PlayReady コンテンツ保護を有効にするために PlayReady Encrypted Media Extension (EME) に加えられた変更を示します。
 
@@ -34,7 +41,7 @@ Internet Explorer で PlayReady メディア要素を使うと、開発者はコ
     Windows 8.1 のように PlayReady オブジェクトと複数のキー識別子 (KeyID) を使うか、[Content Decryption Model データ (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) と複数の KeyID を使うことができます。
 
     > [!NOTE]
-    > Windows10 では、複数のキー識別子が CDMData の &lt;KeyID&gt; でサポートされます。
+    > Windows 10 では、複数のキー識別子が CDMData の &lt;KeyID&gt; でサポートされます。
 
 -   リアルタイムの有効期限のサポートや期間限定ライセンス (LDL) が追加されました。
 
@@ -54,13 +61,13 @@ Internet Explorer で PlayReady メディア要素を使うと、開発者はコ
 
     この機能は、コンテンツの再生を最大解像度に制限するために追加されました (ライセンスではなく、より強力なキーを所有している場合にも制限を受けます)。 これは、複数のストリーム サイズが 1 つのキーでエンコードされる状況をサポートします。
 
-## PlayReady の Encrypted Media Extension のサポート
+## <a name="encrypted-media-extension-support-in-playready"></a>PlayReady の Encrypted Media Extension のサポート
 
 このセクションでは、PlayReady でサポートされている W3C 暗号化メディア拡張機能のバージョンについて説明します。
 
 Web アプリ用の PlayReady は、現在 [2013 年 5 月 10 日付けの W3C Encrypted Media Extension (EME) 草案](http://www.w3.org/TR/2013/WD-encrypted-media-20130510/)に準拠しています。 このサポートは、将来のバージョンの Windows では更新された EME 仕様に合わせて変更されます。
 
-## ハードウェア DRM の使用
+## <a name="use-hardware-drm"></a>ハードウェア DRM の使用
 
 このセクションでは、Web アプリで PlayReady ハードウェア DRM を使う方法と、保護されたコンテンツがハードウェア DRM をサポートしていない場合にそれを無効にする方法について説明します。
 
@@ -71,7 +78,7 @@ PlayReady ハードウェア DRM を使うには、JavaScript Web アプリは�
 > [!NOTE]
 > HEVC コンテンツがサポートされているかどうかを判断するには、`com.microsoft.playready` をインスタンス化した後で、[**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) メソッドを使います。
 
-## Web アプリにセキュア ストップを追加する
+## <a name="add-secure-stop-to-your-web-app"></a>Web アプリにセキュア ストップを追加する
 
 このセクションでは、Web アプリにセキュア ストップを追加する方法を説明します。
 
@@ -261,7 +268,7 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 > [!NOTE]
 > 前のセキュア ストップのデータの `<SessionID>B64 encoded session ID</SessionID>` は、アスタリスク (\*) にすることができます。これは、記録されたすべてのセキュア ストップ セッション用のワイルドカードです。 つまり、**SessionID** タグは特定のセッションにするか、すべてのセキュア ストップ セッションを選択するワイルドカード (\*) にすることができます。
 
-## Encrypted Media Extension のプログラミングについての考慮事項
+## <a name="programming-considerations-for-encrypted-media-extension"></a>Encrypted Media Extension のプログラミングについての考慮事項
 
 このセクションでは、PlayReady 対応の Windows 10 用の Web アプリを作成するときに検討する必要があるプログラミングの考慮事項を示します。
 
@@ -295,15 +302,10 @@ function foo() {
 
 詳しくは、[サンプル アプリケーション](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738)をご覧ください。
 
-## 参照
+## <a name="see-also"></a>参照
 - [PlayReady DRM](playready-client-sdk.md)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

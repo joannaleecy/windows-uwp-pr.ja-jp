@@ -3,13 +3,20 @@ title: "Web 認証ブローカー"
 description: "この記事では、OpenID や OAuth などの認証プロトコルを使うオンライン ID プロバイダー (Facebook、Twitter、Flickr、Instagram など) にユニバーサル Windows プラットフォーム (UWP) アプリを接続する方法について説明します。"
 ms.assetid: 05F06961-1768-44A7-B185-BCDB74488F85
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: ea3d3e1df07c8cf9701e7bd39af006cd681ef1fe
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d9e7fbb560b7dc3e608c22494a44fce70621173b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Web 認証ブローカー
+# <a name="web-authentication-broker"></a>Web 認証ブローカー
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -21,12 +28,12 @@ ms.openlocfilehash: ea3d3e1df07c8cf9701e7bd39af006cd681ef1fe
 
  
 
-## アプリのオンライン プロバイダーへの登録
+## <a name="register-your-app-with-your-online-provider"></a>アプリのオンライン プロバイダーへの登録
 
 
 アプリを接続先のオンライン ID プロバイダーに登録する必要があります。 アプリを登録する方法については、ID プロバイダーに確認してください。 通常、登録すると、オンライン プロバイダーからアプリの ID や秘密鍵が提供されます。
 
-## 認証要求の URI の作成
+## <a name="build-the-authentication-request-uri"></a>認証要求の URI の作成
 
 
 要求の URI は、オンライン プロバイダーに対する認証要求の送信先のアドレスと、必要なその他の情報 (アプリ ID またはシークレット、認証後にユーザーが転送されるリダイレクト URI、必要な応答の型など) で構成されます。 必要なパラメーターについては、プロバイダーに確認してください。
@@ -43,7 +50,7 @@ System.Uri startURI = new System.Uri(startURL);
 System.Uri endURI = new System.Uri(endURL);
 ```
 
-## オンライン プロバイダーへの接続
+## <a name="connect-to-the-online-provider"></a>オンライン プロバイダーへの接続
 
 
 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) メソッドを呼び出してオンライン ID プロバイダーに接続し、アクセス トークンを取得します。 このメソッドは、前の手順で作った URI を *requestUri* パラメーターとして受け取り、ユーザーのリダイレクト先の URI を *callbackUri* パラメーターとして受け取ります。
@@ -84,7 +91,7 @@ catch (Exception ex)
 
 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) に加え、[**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) 名前空間には [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425) メソッドが含まれています。 このメソッドは呼び出さないでください。 これは Windows Phone 8.1 のみを対象とするアプリ用に設計されたもので、Windows 10 以降では推奨されません。
 
-## シングル サインオン (SSO) を使った接続
+## <a name="connecting-with-single-sign-on-sso"></a>シングル サインオン (SSO) を使った接続
 
 
 既定では、Web 認証ブローカーは Cookie の保存を許可していません。 そのため、アプリ ユーザーは (たとえば、プロバイダーのログイン ダイアログのチェック ボックスをオンにして) ログオン状態を維持することを示した場合でも、そのプロバイダーのリソースにアクセスするたびにログインする必要があります。 SSO を使ってログインするには、オンライン ID プロバイダーが Web 認証ブローカーに対して SSO を有効にしており、*callbackUri * パラメーターを受け取らない [**AuthenticateAsync **](https://msdn.microsoft.com/library/windows/apps/br212068) のオーバーロードをアプリで呼び出す必要があります。
@@ -124,12 +131,12 @@ catch (Exception ex)
 }
 ```
 
-## デバッグ
+## <a name="debugging"></a>デバッグ
 
 
 Web 認証ブローカー API のトラブルシューティングには、操作ログの確認や Fiddler を使った Web 要求と応答の確認など、いくつかの方法があります。
 
-### 操作ログ
+### <a name="operational-logs"></a>操作ログ
 
 問題の原因の多くは、操作ログを使って特定できます。 Web サイト開発者向けの専用のイベント ログ チャネルである Microsoft-Windows-WebAuth\\Operational を使うと、Web 認証ブローカーで Web ページが処理される過程を把握できます。 これを有効にするには、eventvwr.exe を起動し、アプリケーションとサービス ログvices\\Microsoft\\Windows\\WebAuth で操作ログを有効にします。 また、Web 認証ブローカーは Web サーバー上で自身を識別するために、ユーザー エージェント文字列に一意の文字列を追加します。 その文字列は、"MSAuthHost/1.0" です。 バージョン番号は今後変更される可能性があるため、コード内のそれに依存しないようにしてください。 ユーザー エージェント文字列全体の例とデバッグの全ステップは次のとおりです。
 
@@ -146,7 +153,7 @@ Web 認証ブローカー API のトラブルシューティングには、操�
     -   ナビゲーション エラー: AuthHost が HttpStatusCode を含む URL でナビゲーション エラーを検出。
     -   ナビゲーションの終了: 終了 URL を検出。
 
-### Fiddler
+### <a name="fiddler"></a>Fiddler
 
 Fiddler Web デバッガーはアプリに対して使うことができます。
 
@@ -176,8 +183,3 @@ Fiddler Web デバッガーはアプリに対して使うことができます�
     ```
 
 3.  Fiddler への受信トラフィック用のファイアウォール規則を追加します。
-
-
-<!--HONumber=Aug16_HO3-->
-
-

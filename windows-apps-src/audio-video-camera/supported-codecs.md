@@ -2,14 +2,21 @@
 author: drewbatgit
 ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: "この記事では、UWP アプリ用のオーディオとビデオのコーデックおよび形式のサポートを示します。"
-title: "サポートされるコーデック"
+title: "サポートされているコーデック"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 7bd0002d62519757cf582d6070a22890a0e1837e
-ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2c477e9dc0cc86534a179edb8e3a9415f4872d93
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# サポートされるコーデック
+# <a name="supported-codecs"></a>サポートされているコーデック
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
@@ -18,7 +25,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
 以下の表では、"D" はデコーダーのサポートを示し、"E" はエンコーダーのサポートを示します。
 
-## オーディオのコーデックおよび形式のサポート
+## <a name="audio-codec--format-support"></a>オーディオのコーデックおよび形式のサポート
 
 次の表は、各デバイス ファミリのオーディオのコーデックと形式のサポートを示しています。
 
@@ -27,7 +34,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### デスクトップ
+### <a name="desktop"></a>デスクトップ
 
 <table>
 <colgroup>
@@ -338,7 +345,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### モバイル
+### <a name="mobile"></a>モバイル
 
 <table>
 <colgroup>
@@ -649,7 +656,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### IoT Core (x86)
+### <a name="iot-core-x86"></a>IoT Core (x86)
 
 <table>
 <colgroup>
@@ -960,7 +967,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### IoT Core (ARM)
+### <a name="iot-core-arm"></a>IoT Core (ARM)
 
 <table>
 <colgroup>
@@ -1271,7 +1278,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### Xbox
+### <a name="xbox"></a>Xbox
 
 <table>
 <colgroup>
@@ -1582,7 +1589,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-## ビデオのコーデックおよび形式のサポート
+## <a name="video-codec--format-support"></a>ビデオのコーデックおよび形式のサポート
 
 次の表は、各デバイス ファミリのビデオのコーデックと形式のサポートを示しています。
 
@@ -1592,7 +1599,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### デスクトップ
+### <a name="desktop"></a>デスクトップ
 
 <table>
 <colgroup>
@@ -1811,7 +1818,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### モバイル
+### <a name="mobile"></a>モバイル
 
 <table>
 <colgroup>
@@ -2030,7 +2037,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### IoT Core (x86)
+### <a name="iot-core-x86"></a>IoT Core (x86)
 
 <table>
 <colgroup>
@@ -2249,7 +2256,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### IoT (ARM)
+### <a name="iot-arm"></a>IoT (ARM)
 
 <table>
 <colgroup>
@@ -2468,7 +2475,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### Xbox
+### <a name="xbox"></a>Xbox
 
 <table>
 <colgroup>
@@ -2685,7 +2692,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 </tbody>
 </table>
 
-## イメージのコーデックおよび形式のサポート 
+## <a name="image-codec--format-support"></a>イメージのコーデックおよび形式のサポート 
 
 <table>
 <colgroup>
@@ -2757,8 +2764,3 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 <sup>3</sup> 特定のカメラの Raw 形式のみがサポートされています。  
 
 イメージ コーデックの詳細については、「[ネイティブ WIC コーデック](https://msdn.microsoft.com/library/windows/desktop/gg430027.aspx)」をご覧ください。
-
-
-<!--HONumber=Nov16_HO1-->
-
-

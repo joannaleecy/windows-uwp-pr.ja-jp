@@ -3,23 +3,30 @@ author: mcleblanc
 description: "クロスプラットフォーム アプリを開発するときの選択肢"
 title: "iOS と UWP のアプリ開発方法の選択"
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 53e6c50b7a1b4262f738cd798aa2bd02291512fe
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9317ea8690d5696d4a9e55b3a88f1a2ff83d8bfd
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# iOS と UWP のアプリ開発方法の選択
+# <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>iOS と UWP のアプリ開発方法の選択
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 クロスプラットフォーム アプリを開発するときの選択肢
 
-## iOS と Windows の両方をサポートするための最適な方法
+## <a name="whats-the-best-way-to-support-both-ios-and-windows"></a>iOS と Windows の両方をサポートするための最適な方法
 
 Windows と iOS はまったく違うものに見えるかもしれませんが、増え続けるツールと手法が、両方のプラットフォーム (Android も含めて) をサポートするアプリを作成する場合に非常に役に立ちます。 最適なソリューションは、作成するアプリの種類によって、またゼロから始めるか既存のプロジェクトを移植するかによって異なります。
 
-## 新しいアプリの作成
+## <a name="writing-a-new-app"></a>新しいアプリの作成
 
 ゼロから始める場合、次のように自由に選べる多くのオプションがあります。
 
@@ -39,7 +46,7 @@ Windows と iOS はまったく違うものに見えるかもしれませんが�
 
     XNA の後継にあたります。 これは、オープン ソースのクロスプラットフォーム フレームワークです。つまり、物理エンジン、2D および 3D グラフィック サポートにより、多くのプラットフォーム向けに C# でアプリを作成できます。
 
-## 既存のアプリの適応変更
+## <a name="adapting-an-existing-app"></a>既存のアプリの適応変更
 
 既存の iOS アプリを使う場合、オプションが少し制限されます。 ただし、何も失われません。
 
@@ -55,7 +62,7 @@ Windows と iOS はまったく違うものに見えるかもしれませんが�
 
     OpenGL ES 2.0 プロジェクトを移植する中間の手順で ANGLE を使います。 ANGLE では、OpenGL ES API 呼び出しを DirectX 11 API 呼び出しに変換することにより、Windows で OpenGL ES コンテンツを実行することができます。
 
-## その他のクロスプラットフォームの作成ツール
+## <a name="other-cross-platform-authoring-tools"></a>その他のクロスプラットフォームの作成ツール
 
 -   [GameSalad](http://go.microsoft.com/fwlink/p/?LinkID=320480)
 
@@ -92,10 +99,5 @@ Windows と iOS はまったく違うものに見えるかもしれませんが�
 -   [PlayCanvas](http://go.microsoft.com/fwlink/p/?LinkID=394061)
 
     HTML ベースのゲーム開発用ツール。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,9 +3,16 @@ author: mcleanbyron
 Description: "デベロッパー センター ダッシュ ボードで実験を定義し、アプリでその実験のコードを記述したら、実験をアクティブ化し、デベロッパー センター ダッシュ ボードを使用して、実験の結果を確認できます。"
 title: "デベロッパー センター ダッシュボードで実験を管理する"
 ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Microsoft Store Services SDK, A/B テスト, 実験"
 translationtype: Human Translation
-ms.sourcegitcommit: bedaa31018d24f23e3e63c6b552b0d3116d7f415
-ms.openlocfilehash: 18e7956e627589dca694b46472fea631c1ebe6b7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: bc73d2b63b94f9700fc5013d3ea51a92cabd7ca3
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -58,9 +65,4 @@ ms.openlocfilehash: 18e7956e627589dca694b46472fea631c1ebe6b7
 * [デベロッパー センター ダッシュボードで実験を定義する](define-your-experiment-in-the-dev-center-dashboard.md)
 * [A/B テストを使用して最初の実験を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)
 * [A/B テストを使用してアプリの実験を実行する](run-app-experiments-with-a-b-testing.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

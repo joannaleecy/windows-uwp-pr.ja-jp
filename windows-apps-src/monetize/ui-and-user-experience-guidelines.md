@@ -3,21 +3,28 @@ author: mcleanbyron
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: "アプリ内広告の UI とユーザー エクスペリエンスのガイドラインについて説明します。"
 title: "アプリ内広告の UI とユーザー エクスペリエンスのガイドライン"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 広告, 宣伝, ガイドライン, ベスト プラクティス"
 translationtype: Human Translation
-ms.sourcegitcommit: e44392a1dc69a98655ba7e576d2af102a608acaa
-ms.openlocfilehash: ce39829cd6cd2dfb0c6a3aef930dd8fa82351b75
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e1c3fef6e8cc7cc483b72b6ba142d323055c960c
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="ui-and-user-experience-guidelines-for-ads-in-apps"></a>アプリ内広告の UI とユーザー エクスペリエンスのガイドライン
 
-この記事では、アプリ内のバナー広告とスポット広告を使って優れたエクスペリエンスを提供するためのガイドラインを示します。 アプリの外観を設計する方法については、「[設計および UI](https://developer.microsoft.com/windows/design)」をご覧ください。
+この記事では、アプリ内のバナー広告とスポット広告を使って優れたエクスペリエンスを提供するためのガイドラインを示します。 アプリの外観を設計する方法については、「[設計および UI](https://developer.microsoft.com/windows/apps/design)」をご覧ください。
 
->**重要**&nbsp;&nbsp;アプリ内での広告の使用は、Windows ストアのポリシーに準拠している必要があります。準拠するポリシーには、[ポリシー 10.10](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) (広告行為と広告コンテンツ) などがありますが、これに限定されるわけではありません。 特に、アプリ内のバナー広告またはスポット広告の実装は、Windows ストアのポリシー、[ポリシー 10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) の要件を満たしている必要があります。 この記事では、このポリシーに違反する実装の例を示します。 これらの例は、このポリシーの適切な理解を助ける手段として、情報提供のみを目的として提供されています。 これらの例は、すべてを網羅しているわけではありません。ここに記載されていなくても、Windows ストアのポリシーに違反する例は多数存在する可能性があります。
+>**重要**&nbsp;&nbsp;アプリ内での広告の使用は、Windows ストアのポリシーに準拠している必要があります。準拠するポリシーには、[ポリシー 10.10](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) (広告行為と広告コンテンツ) などがありますが、これに限定されるわけではありません。 特に、アプリ内のバナー広告またはスポット広告の実装は、Windows ストアのポリシー、[ポリシー 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) の要件を満たしている必要があります。 この記事では、このポリシーに違反する実装の例を示します。 これらの例は、このポリシーの適切な理解を助ける手段として、情報提供のみを目的として提供されています。 これらの例は、すべてを網羅しているわけではありません。ここに記載されていなくても、Windows ストアのポリシーに違反する例は多数存在する可能性があります。
 
 ## <a name="guidelines-for-banner-ads"></a>バナー広告のガイドライン
 
-以下のセクションでは、[AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) を使用して、アプリ内でバナー広告を実装する際の推奨事項と Windows ストアのポリシー、[ポリシー 10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) に違反する実装の例を紹介します。
+以下のセクションでは、[AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) を使用して、アプリ内でバナー広告を実装する際の推奨事項と Windows ストアのポリシー、[ポリシー 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) に違反する実装の例を紹介します。
 
 ### <a name="best-practices"></a>ベスト プラクティス
 
@@ -49,7 +56,7 @@ ms.openlocfilehash: ce39829cd6cd2dfb0c6a3aef930dd8fa82351b75
 <span />
 ### <a name="examples-of-policy-violations"></a>ポリシー違反の例
 
-このセクションでは、Windows ストアのポリシー、[ポリシー10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) に違反するバナー広告シナリオの例を示します。 これらの例は、このポリシーの適切な理解を助ける手段として、説明目的にのみ提供されています。 これらの例は、すべてを網羅しているわけではありません。ここに記載されていなくても、ポリシー 10.10.1 に違反する例は多数存在する可能性があります。
+このセクションでは、Windows ストアのポリシー、[ポリシー10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) に違反するバナー広告シナリオの例を示します。 これらの例は、このポリシーの適切な理解を助ける手段として、説明目的にのみ提供されています。 これらの例は、すべてを網羅しているわけではありません。ここに記載されていなくても、ポリシー 10.10.1 に違反する例は多数存在する可能性があります。
 
 * [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) の不透明度を変更したり、(最初に [AdControl.Suspend](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.suspend.aspx) を呼び出さずに) **AdControl**の上に他のコントロールを配置するなど、バナー広告をユーザーが表示する能力を妨げる操作を行う。
 
@@ -68,7 +75,7 @@ ms.openlocfilehash: ce39829cd6cd2dfb0c6a3aef930dd8fa82351b75
 
 洗練された方法でスポット広告を使うと、ユーザー満足度を損なうことなく、アプリの収益を飛躍的に向上させることができます。 使い方が不適切だと、スポット広告は逆効果になる可能性があります。
 
-以下のセクションでは、[InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) を使用して、アプリ内でスポット広告を実装する際の推奨事項と Windows ストアのポリシー、[ポリシー 10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) に違反する実装の例を紹介します。 ポリシーに関連する問題を除き、アプリについて最もよく理解しているのは開発者の皆様であるため、ベスト プラクティスに関する最終的な判断は開発者の皆様に委ねています。 留意する最も重要な点は、アプリの評価と収益が密接に結びついていることです。
+以下のセクションでは、[InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) を使用して、アプリ内でスポット広告を実装する際の推奨事項と Windows ストアのポリシー、[ポリシー 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) に違反する実装の例を紹介します。 ポリシーに関連する問題を除き、アプリについて最もよく理解しているのは開発者の皆様であるため、ベスト プラクティスに関する最終的な判断は開発者の皆様に委ねています。 留意する最も重要な点は、アプリの評価と収益が密接に結びついていることです。
 
 ### <a name="best-practices"></a>ベスト プラクティス
 
@@ -132,7 +139,7 @@ ms.openlocfilehash: ce39829cd6cd2dfb0c6a3aef930dd8fa82351b75
 <span />
 ### <a name="examples-of-policy-violations"></a>ポリシー違反の例
 
-このセクションでは、Windows ストアのポリシー、[ポリシー10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) に違反するスポット広告シナリオの例を示します。 これらの例は、このポリシーの適切な理解を助ける手段として、説明目的にのみ提供されています。 これらの例は、すべてを網羅しているわけではありません。ここに記載されていなくても、ポリシー 10.10.1 に違反する例は多数存在する可能性があります。
+このセクションでは、Windows ストアのポリシー、[ポリシー10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) に違反するスポット広告シナリオの例を示します。 これらの例は、このポリシーの適切な理解を助ける手段として、説明目的にのみ提供されています。 これらの例は、すべてを網羅しているわけではありません。ここに記載されていなくても、ポリシー 10.10.1 に違反する例は多数存在する可能性があります。
 
 * スポット広告コンテナー上に UI 要素を配置する。
 
@@ -153,9 +160,4 @@ ms.openlocfilehash: ce39829cd6cd2dfb0c6a3aef930dd8fa82351b75
  
 
  
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

@@ -3,12 +3,19 @@ author: mcleblanc
 ms.assetid: EAC34672-5C12-402D-920B-6F2835EA5ACE
 title: "プロファイリングとパフォーマンスに関するツール"
 description: "Microsoft には、ユニバーサル Windows プラットフォーム (UWP) アプリのパフォーマンスを改善する際に役立つツールがいくつか用意されています。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 5bbd14fb53cae67bbb827f94e695b2703e07fc34
-ms.openlocfilehash: 3d0cf5f983efdee116bcf8b87398fe376efca3c6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 51304d873261466afc9014224b918b82603f00e8
+ms.lasthandoff: 02/07/2017
 
 ---
-# プロファイリングとパフォーマンスに関するツール
+# <a name="tools-for-profiling-and-performance"></a>プロファイリングとパフォーマンスに関するツール
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -26,10 +33,5 @@ Microsoft には、ユニバーサル Windows プラットフォーム (UWP) ア
 | [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/apps/xaml/hh448170.aspx) | Windows アセスメント & デプロイメント キット (Windows ADK) に付属する Windows Performance Analyzer (WPA) は、Windows Performance Recorder (WPR)、Xperf、または Assessment Platform で実行される評価により記録される Windows イベント トレーシング (ETW) イベントのグラフとデータ テーブルを作成するツールです。 WPA は、分析のためにどのイベント トレース ログ (ETL) ファイルでも開くことができます。 |
 
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

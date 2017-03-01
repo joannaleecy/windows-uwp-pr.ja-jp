@@ -5,11 +5,17 @@ title: "Cortana の設計ガイドライン"
 ms.assetid: A92C084B-9913-4718-9A04-569D51ACE55D
 label: Guidelines
 template: detail.hbs
-keywords: "Cortana, Cortana のキャンバス, Cortana の設計, ユーザー インターフェイス, 音声コマンド, VCD, ユーザー操作, 入力"
 redirect_url: https://msdn.microsoft.com/en-us/cortana/voicecommands/voicecommand-design-guidelines
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 76b012ab4cf737f00fc986c81c88fd48339867fc
-ms.openlocfilehash: 9e156ee056a6f0bfb72baec1e23e189308f71313
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a5819dcea72c8956e1ecdc6f9844499e98aa2d1c
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -18,9 +24,4 @@ ms.openlocfilehash: 9e156ee056a6f0bfb72baec1e23e189308f71313
 このトピックは https://msdn.microsoft.com/en-us/cortana/voicecommands/voicecommand-design-guidelines に移動されました。
 
 Github: https://github.com/Microsoft/cortana-docs/blob/master/docs/voicecommands/voicecommand-design-guidelines.md
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

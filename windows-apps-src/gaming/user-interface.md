@@ -3,27 +3,34 @@ author: mtoepke
 title: "DirectX ゲーム プロジェクト テンプレート"
 description: "ユニバーサル Windows プラットフォーム (UWP) および DirectX ゲームを作成するためのテンプレートについて説明します。"
 ms.assetid: 41b6cd76-5c9a-e2b7-ef6f-bfbf6ef7331d
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, DirectX, テンプレート"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1e91814825a0944f9a70fdc7bbc6e8ef78215f29
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8b25dcd0de8d82e8bf8b6bf651ac6c264ade48c9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# DirectX ゲーム プロジェクト テンプレート
+# <a name="directx-game-project-templates"></a>DirectX ゲーム プロジェクト テンプレート
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 DirectX とユニバーサル Windows プラットフォーム (UWP) のテンプレートは、ゲームの出発点として使ってプロジェクトをすばやく作成することができます。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 
 プロジェクトを作成するには、次の作業が必要です。
 
 -   [Microsoft Visual Studio 2015 をダウンロードします](https://www.visualstudio.com/vs-2015-product-editions)。 Visual Studio 2015 には、デバッグ ツールなど、グラフィックス プログラミングのためのツールが含まれています。 DirectX グラフィックス、ゲーム機能、ツールの概要については、「[DirectX ゲーム開発用の Visual Studio ツール](set-up-visual-studio-for-game-development.md)」をご覧ください。
 
-## テンプレートの選択
+## <a name="choosing-a-template"></a>テンプレートの選択
 
 
 Visual Studio 2015 には、DirectX と UWP のテンプレートが 3 つ用意されています。
@@ -34,7 +41,7 @@ Visual Studio 2015 には、DirectX と UWP のテンプレートが 3 つ用意
 
 どちらのテンプレートを使うかは、必要なパフォーマンスと利用するテクノロジによって異なります。
 
-## テンプレートの構造
+## <a name="template-structure"></a>テンプレートの構造
 
 
 DirectX ユニバーサル Windows テンプレートには、次のファイルが含まれています。
@@ -60,7 +67,7 @@ DirectX ユニバーサル Windows テンプレートには、次のファイル
     -   d3dx12.h - D3DX12 ユーティリティ ライブラリが含まれています。 このファイルは、DirectX 12 アプリ (ユニバーサル Windows) にのみ表示されます。
 -   アセット - アプリケーションが使うロゴとスプラッシュ画面の画像です。
 
-## 次のステップ
+## <a name="next-steps"></a>次のステップ
 
 
 これで、出発点に立つことができました。次は、ゲーム開発の知識と Windows ストア ゲームの開発スキルを学びます。
@@ -86,10 +93,5 @@ DirectX ユニバーサル Windows テンプレートには、次のファイル
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -10,13 +10,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 7a6f0be15105bc70e580eaaf581152338c56bed7
-ms.openlocfilehash: 3641fdd1f7eb74a11233115d9dfb809ea959926e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dc1bf476c93ef9843c20244f24a199c7888eb4a5
+ms.lasthandoff: 02/07/2017
 
 ---
+
 # <a name="enable-your-device-for-development"></a>デバイスを開発用に有効にする
 
-アプリを作成する前に、開発用 PC と、コードのテストを実行するデバイスの両方で、開発者モードを有効にする必要があります。
+アプリを作成する前に、開発用 PC と、コードのテストを実行するデバイスの両方で、開発者モードを有効にする必要があります。 
+
+![デバイスを開発用に有効にする](images/developer-poster.png)
 
 ## <a name="use-developer-features"></a>開発者向け機能を使用する
 
@@ -77,7 +81,7 @@ Windows 10 バージョン 1511 以前の Visual Studio で UWP アプリ プロ
 
 デバイス固有のセットアップ手順については、以下をご覧ください。
 - [デスクトップ用 Device Portal](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
-- [HoloLens 用 Device Portal](https://dev.windows.com/holographic/using_the_windows_device_portal)
+- [HoloLens 用 Device Portal](https://developer.microsoft.com/windows/holographic/using_the_windows_device_portal)
 - [IoT 用 Device Portal](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
 - [モバイル用 Device Portal](../debug-test-perf/device-portal-mobile.md)
 - [Xbox 用 Device Portal](../debug-test-perf/device-portal-xbox.md)
@@ -215,9 +219,4 @@ Windows 8.1 デバイスでアプリを作成またはサイドローディン�
 その後、このトピックで説明されているように、開発用のデバイスを有効にする必要があります。これにより、このデバイスで開発を継続できます。 有効にしない場合、アプリをデバッグしたり、パッケージを作成しようとしたりすると、エラーが発生する可能性があります。 このエラーの例を次に示します。
 
 エラー: DEP0700: アプリケーションの登録に失敗しました。
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

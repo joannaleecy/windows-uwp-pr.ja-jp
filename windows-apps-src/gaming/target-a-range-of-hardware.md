@@ -3,13 +3,20 @@ author: mtoepke
 title: "ハードウェアの範囲でのシャドウ マップのサポート"
 description: "より高速なデバイスでは高品質なシャドウを、性能が低いデバイスではよりすばやいシャドウをレンダリングします。"
 ms.assetid: d97c0544-44f2-4e29-5e02-54c45e0dff4e
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, UWP, ゲーム, シャドウ マップ, DirectX"
 translationtype: Human Translation
-ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
-ms.openlocfilehash: a2e2ed02025352bd5583abeed8856a216eab4ead
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e4cffcf1e9655d5bc5dacbfc17cb64b5671d7551
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# ハードウェアの範囲でのシャドウ マップのサポート
+# <a name="support-shadow-maps-on-a-range-of-hardware"></a>ハードウェアの範囲でのシャドウ マップのサポート
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -17,7 +24,7 @@ ms.openlocfilehash: a2e2ed02025352bd5583abeed8856a216eab4ead
 
 より高速なデバイスでは高品質なシャドウを、性能が低いデバイスではよりすばやいシャドウをレンダリングします。 「[チュートリアル: Direct3D 11 の深度バッファーを使ったシャドウ ボリュームの実装](implementing-depth-buffers-for-shadow-mapping.md)」のパート 4 です。
 
-## フィルターの種類の比較
+## <a name="comparison-filter-types"></a>フィルターの種類の比較
 
 
 パフォーマンス ペナルティに対する余裕がデバイスにある場合にのみ、リニア フィルタリングを使います。 通常、Direct3D 機能レベル 9\_1 のデバイスには、シャドウにリニア フィルタリングを使うだけの処理能力がありません。 そうしたデバイスでは、代わりにポイント フィルタリングを使います。 リニア フィルタリングを使う場合は、シャドウのエッジをブレンドするようにピクセル シェーダーを調整します。
@@ -102,17 +109,17 @@ float3 shadow = (1.0f - lighting) * ambient;
 return float4(input.color * (light + shadow), 1.f);
 ```
 
-## シャドウ バッファーのサイズ
+## <a name="shadow-buffer-size"></a>シャドウ バッファーのサイズ
 
 
 シャドウ マップを大きくするとブロックノイズが発生しなくなりますが、グラフィックス メモリ内の領域を多く消費します。 ゲームでさまざまなシャドウ マップのサイズを試し、さまざまなデバイスとディスプレイ サイズで結果を確認してください。 少ないグラフィックス メモリで良い結果が得られるように、カスケードされたシャドウ マップなどの最適化を検討してください。 「[シャドウ深度マップを向上させるための一般的な方法](https://msdn.microsoft.com/library/windows/desktop/ee416324)」をご覧ください。
 
-## シャドウ バッファーの深度
+## <a name="shadow-buffer-depth"></a>シャドウ バッファーの深度
 
 
 シャドウ バッファーの精度を上げると、深度のテスト結果がより正確になり、z バッファー ファイティングなどの問題を避けるのに役立ちます。 ただし、シャドウ マップを大きくした場合と同じように、精度を上げると、消費するメモリの量が多くなります。 ゲームで異なる深度の精度の種類 (DXGI\_FORMAT\_R24G8\_TYPELESS と DXGI\_FORMAT\_R16\_TYPELESS) を使って、さまざまな機能レベルで速度と品質を確認してください。
 
-## プリコンパイル済みシェーダーの最適化
+## <a name="optimizing-precompiled-shaders"></a>プリコンパイル済みシェーダーの最適化
 
 
 ユニバーサル Windows プラットフォーム (UWP) アプリでは動的シェーダー コンパイルを使うことができますが、動的シェーダー リンクを使う方が高速に処理できます。 また、コンパイラ ディレクティブと `#ifdef` ブロックを使って、異なるバージョンのシェーダーを作成することができます。 この処理を実行するには、テキスト エディターで Visual Studio プロジェクト ファイルを開き、HLSL の `<FxcCompiler>` エントリを (それぞれ適切なプリプロセッサの定義を含めて) 複数追加します。 このとき、ファイル名を別々にする必要があることに注意してください。この例では、バージョンが異なるシェーダーの名前に \_point と \_linear が追加されます。
@@ -175,10 +182,5 @@ return float4(input.color * (light + shadow), 1.f);
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -1,30 +1,38 @@
 ---
 author: QuinnRadich
-Description: "Windows アプリを使う方法をユーザーに説明する UI をデザインします。"
+Description: "Windows ストア アプリを使う方法をユーザーに説明するユーザー インターフェイス (UI) をデザインします。"
 title: "説明 UI のデザインのガイドライン"
 label: Instructional UI
 template: detail.hbs
+ms.author: quradic
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: c87e2f06-339d-4413-b585-172752964f56
 translationtype: Human Translation
-ms.sourcegitcommit: 08b0b88e8ef17c2a8f264df5db4f971c8c49ab2e
-ms.openlocfilehash: 6fc4840ce37d05bbaf0e423049d79b4e0c4febfc
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: b9734304b813794d615eca4d0c9d852dc8df31c1
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 説明 UI のガイドライン
+# <a name="instructional-ui-guidelines"></a>説明 UI のガイドライン
 
-\[ Windows 10 のユニバーサル Windows プラットフォーム (UWP) アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-特定のタッチ操作など、ユーザーにわかりにくいアプリの機能をユーザーに伝えると便利な場合があります。 このような場合は、わかりにくいと思われる機能をユーザーが検出し使用できるように、UI を使ってユーザーに指示を示す必要があります。
 
-## <span id="when_to_use_instructional_ui"></span><span id="WHEN_TO_USE_INSTRUCTIONAL_UI"></span>説明 UI を使う状況
+アプリでの特定のタッチ操作など、ユーザーにとって自明ではない機能について、ユーザーに伝えると有用な場合があります。 このような場合は、ユーザーが気付かない場合もある機能について、ユーザー インターフェイス (UI) を使ってユーザーに指示を表示する必要があります。
+
+## <a name="when-to-use-instructional-ui"></a>説明 UI を使う状況
 
 説明 UI は、慎重に使用します。 多用されると、煩わしく、無視されやすくなり、効果が低くなります。
 
-説明 UI は、タッチ ジェスチャや、ユーザーが関心を持つ設定など、重要だがわかりにくいアプリの機能をユーザーが探すことができるようにするために使用します。 アプリの新機能や変更点など、知らせない場合には見落とす可能性のある情報を、ユーザーに知らせるためにも使用できます。
+説明 UI は、タッチ ジェスチャや、ユーザーが関心を持つ設定など、重要だが自明でないアプリの機能をユーザーに示すために使用します。 アプリの新機能や変更点など、知らせない場合には見落とす可能性のある情報を、ユーザーに知らせるためにも使用できます。
 
 アプリがタッチ ジェスチャに依存したものでない場合には、アプリの基本的な機能をユーザーに説明するために説明 UI を使用しないようにします。
 
-## <span id="writing_instructional_ui"></span><span id="WRITING_INSTRUCTIONAL_UI"></span>説明 UI の作成の原則
+## <a name="principles-of-writing-instructional-ui"></a>説明 UI の作成の原則
 
 ユーザーにとって適切で、ユーザーのためになるように、説明 UI を使うと、ユーザー エクスペリエンスを向上できます。 良い説明 UI の原則を示します。
 
@@ -36,19 +44,19 @@ ms.openlocfilehash: 6fc4840ce37d05bbaf0e423049d79b4e0c4febfc
 
 -   **基本的な機能:** アプリを使うためにユーザーに説明を必要とする場合には、アプリの設計をより直感的なものにすることを検討します。
 -   **自明な機能:** 説明なしでもユーザーが機能を理解できる場合には、説明 UI はユーザーの妨げになります。
--   **複雑な機能:** 説明 UI は簡潔である必要があります。 複雑な機能に関心のあるユーザーは、通常、自分でその機能の説明を検索します。
+-   **複雑な機能:** 説明 UI は簡潔である必要があります。複雑な機能に関心のあるユーザーは、通常、自分で情報を検索するので、表示する必要はありません。
 
 説明 UI がユーザーの妨げにならないようにします。 次のことを避けるようにします。
 
 -   **重要な情報を見えなくする:** 説明 UI がアプリの他の機能の妨げにならないようにします。
 -   **参加を強制する:** ユーザーが説明 UI を無視しても、アプリの操作を進められる必要があります。
--   **情報を繰り返し表示:** ユーザーが最初に無視した場合、説明 UI はユーザーを何度もわずらわせないようにします。 説明 UI の再表示を設定に追加することは、より効果的な解決策です。
+-   **情報を繰り返し表示:** ユーザーが最初に無視した場合、説明 UI はユーザーを何度もわずらわせないようにします。 説明 UI の再表示を設定に追加するのは、優れたソリューションです。
 
-## <span id="examples_of_instructional_ui"></span><span id="EXAMPLES_OF_INSTRUCTIONAL_UI"></span>説明 UI の例
+## <a name="examples-of-instructional-ui"></a>説明 UI の例
 
-ここでは、ユーザーに役立つ説明 UI の例をいくつか示します。
+ここでは、説明 UI がユーザーの習得に役立ついくつかの例を示します。
 
--   **ユーザーがタッチ操作を見つけられるようにする。** 次のスクリーン ショットには、*Cut the Rope* というゲーム内でタッチ ジェスチャを使う方法をプレイヤーに教える説明 UI が示されています。
+-   **ユーザーがタッチ操作を見つけられるようにする。** 次のスクリーン ショットには、Cut the Rope というゲーム内でタッチ ジェスチャを使う方法をプレイヤーに教える説明 UI が示されています。
 
     ![説明 UI のメッセージ ("縄を切るには、縄を横切るようにスライド") が表示されているゲームのスクリーン ショット](images/in-game-controls-3.png)
 
@@ -66,12 +74,7 @@ ms.openlocfilehash: 6fc4840ce37d05bbaf0e423049d79b4e0c4febfc
     |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
     | ![Windows メール アプリのスクリーン ショット](images/instructional-ui-mail.png) | ![設定ポップアップが表示された Windows メール アプリのスクリーン ショット](images/instructional-ui-mail-flyout.png) |
 
-## <span id="related_topics"></span>関連記事
+## <a name="related-articles"></a>関連記事
 
 * [アプリのヘルプのガイドライン](guidelines-for-app-help.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

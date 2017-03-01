@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 description: "Windows ストア申請 API を使用して、Windows デベロッパー センター アカウントに登録されているアプリの申請をプログラムで作成および管理します。"
 title: "Windows ストア サービスを使用した申請の作成と管理"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、Windows ストア申請 API"
 translationtype: Human Translation
-ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
-ms.openlocfilehash: 8467cddd5eec2348cd35f4f5dc1564b47813a6ca
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f73470c456bf59544bc702b137da64f57c6a6943
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -22,9 +29,11 @@ ms.openlocfilehash: 8467cddd5eec2348cd35f4f5dc1564b47813a6ca
 
 
 <span id="not_supported" />
->**重要**
+>**重要な注意**
 
 > * この API は、API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 このアクセス許可は、開発者アカウントに対して段階的に有効になります。現時点では、すべてのアカウントでこのアクセス許可が有効になっているわけではありません。 以前のアクセス権を要求するには、デベロッパー センター ダッシュボードにログオンし、ダッシュ ボードの下部にある **[フィードバック]** をクリックします。その後、フィードバック領域で **[申請 API]** を選択し、要求を提出します。 自分のアカウントでこのアクセス許可が有効になると、メールが届きます。
+<br/><br/>
+>* この API を使用してアプリ、パッケージ フライト、アドオンの申請を作成する場合は、申請をさらに変更するには、デベロッパー センターのダッシュボードではなく、API のみを使用して行ってください。 最初に API を使用して作成した申請をダッシュボードを使用して変更した場合、その申請を API を使用して変更またはコミットすることはできなくなります。 場合によっては、申請がエラー状態のままとなり、申請プロセスを進行できないことがあります。 この問題が発生した場合は、申請を削除して、新しい申請を作成する必要があります。
 <br/><br/>
 > * この API は、2016 年 8 月にデベロッパー センター ダッシュボードに導入された特定の機能を使用するアプリまたはアドオンで使用できません。これには、必須のアプリの更新プログラムとストアで管理されるコンシューマブルなアドオンが含まれますが、これらに限定されません。 このような機能のいずれかを使用するアプリまたはアドオンで Windows ストア申請 API を使うと、API から 409 エラー コードが返されます。 この場合は、ダッシュボードを使ってアドオンまたはアプリの申請を管理する必要があります。
 
@@ -111,17 +120,19 @@ Azure AD アクセス トークンを取得したら、Windows ストア申請 A
 * [Java のコード例](java-code-examples-for-the-windows-store-submission-api.md)
 * [Python のコード例](python-code-examples-for-the-windows-store-submission-api.md)
 
+>**注:**&nbsp;&nbsp;上記のコード例に加えて、Windows ストア申請 API 上にコマンドライン インターフェイスを実装するオープン ソースの PowerShell モジュールも提供されています。 このモジュールは [StoreBroker](https://aka.ms/storebroker) を呼び出します。 このモジュールを使用すると、Windows ストア申請 API を直接呼び出すのではなく、コマンドラインからアプリ、フライト、アドオンの申請を管理できます。またこのソースを参照して、この API を呼び出す方法の例を参照することもできます。 StoreBroker モジュールは、Microsoft 社内でも、多くのファースト パーティ アプリケーションをストアに申請する主要な方法として積極的に使用されています。 詳しくは、[GitHub の StoreBroker のページ](https://aka.ms/storebroker)をご覧ください。
+
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-| 問題      | 解決策                                          |
+| 問題      | 解決方法                                          |
 |---------------|---------------------------------------------|
-| Windows ストア申請 API を PowerShell から呼び出した後、[ConvertFrom-Json](https://technet.microsoft.com/en-us/library/hh849898.aspx) コマンドレットを使って API の応答データを JSON 形式から PowerShell オブジェクトに変換し、[ConvertTo-Json](https://technet.microsoft.com/en-us/library/hh849922.aspx) コマンドレットを使ってもう一度 JSON 形式に変換すると、応答データが破損します。 |  既定では、[ConvertTo-Json](https://technet.microsoft.com/en-us/library/hh849922.aspx) コマンドレットの *-Depth* パラメーターは、2 レベルのオブジェクトに設定されます。これは、Windows ストア申請 API から返される JSON オブジェクトの大半にとって浅すぎます。 [ConvertTo-Json](https://technet.microsoft.com/en-us/library/hh849922.aspx) コマンドレットを呼び出すときは、*-Depth* パラメーターを大きな値 (たとえば 20) に設定します。 |
+| Windows ストア申請 API を PowerShell から呼び出した後、[ConvertFrom-Json](https://technet.microsoft.com/library/hh849898.aspx) コマンドレットを使って API の応答データを JSON 形式から PowerShell オブジェクトに変換し、[ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx) コマンドレットを使ってもう一度 JSON 形式に変換すると、応答データが破損します。 |  既定では、[ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx) コマンドレットの *-Depth* パラメーターは、2 レベルのオブジェクトに設定されます。これは、Windows ストア申請 API から返される JSON オブジェクトの大半にとって浅すぎます。 [ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx) コマンドレットを呼び出すときは、*-Depth* パラメーターを大きな値 (たとえば 20) に設定します。 |
 
 ## <a name="additional-help"></a>追加のヘルプ
 
 Windows ストア申請 API に関する質問がある場合やこの API を使った申請の管理にサポートが必要な場合は、次のリソースを使ってください。
 
-* Microsoft の[フォーラム](https://social.msdn.microsoft.com/Forums/windowsapps/en-us/home?forum=wpsubmit)で質問します。
+* Microsoft の[フォーラム](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=wpsubmit)で質問します。
 * Microsoft の[サポート ページ](https://developer.microsoft.com/windows/support)にアクセスし、デベロッパー センター ダッシュボードのサポート オプションのいずれかを要求します。 問題の種類とカテゴリを選択するよう求められた場合は、**[App submission and certification]** (アプリの申請と認定) と **[Submitting an app]** (アプリの申請) をそれぞれ選択します。  
 
 ## <a name="related-topics"></a>関連トピック
@@ -133,9 +144,4 @@ Windows ストア申請 API に関する質問がある場合やこの API を�
 * [パッケージ フライトの管理](manage-flights.md)
 * [パッケージ フライトの申請の管理](manage-flight-submissions.md)
  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

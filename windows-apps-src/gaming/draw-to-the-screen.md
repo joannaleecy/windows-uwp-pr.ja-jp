@@ -3,16 +3,23 @@ author: mtoepke
 title: "画面への描画"
 description: "最後に、回転する立方体を画面に描画するコードを移植します。"
 ms.assetid: cc681548-f694-f613-a19d-1525a184d4ab
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, DirectX, グラフィックス"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1e2039743ba45d577c08c0a6d9c17c7f923b2d86
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1fe28d17aa8c943de9a2bcf6c2230237e0c931d0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 画面への描画
+# <a name="draw-to-the-screen"></a>画面への描画
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
 **重要な API**
@@ -70,9 +77,9 @@ Direct3D ランタイムは [**ID3D11Texture2D**](https://msdn.microsoft.com/lib
 
 EGL と EGLContext の型に関連する Direct3D デバイス コンテキストについて詳しくは、「[DXGI と Direct3D の EGL コードの比較](moving-from-egl-to-dxgi.md)」をご覧ください。
 
-## 手順
+## <a name="instructions"></a>手順
 
-### 手順 1: シーンのレンダリングと表示
+### <a name="step-1-rendering-the-scene-and-displaying-it"></a>手順 1: シーンのレンダリングと表示
 
 立方体のデータを更新した後 (この例では y 軸を中心に少し回転させる) で、Render メソッドはビューポートを描画コンテキスト (EGLContext) のサイズに設定します。 このコンテキストには、構成済みのディスプレイ (EGLDisplay) を使ってウィンドウ サーフェス (EGLSurface) に表示される色のバッファーが含まれます。 この時点で、この例では、頂点データの属性を更新する、インデックス バッファーを再バインドする、立方体を描画する、表示サーフェスへのシェーディング パイプラインによって描画される色のバッファーでスワップするという一連の処理を行います。
 
@@ -199,16 +206,16 @@ void RenderObject::Render()
 
 [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) が呼び出されると、フレームが構成済みのディスプレイに出力されます。
 
-## 前のステップ
+## <a name="previous-step"></a>前のステップ
 
 
 [GLSL の移植](port-the-glsl.md)
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 この例では、デバイス リソース (特にユニバーサル Windows プラットフォーム (UWP) DirectX アプリのデバイス リソース) の構成に伴う複雑さが目立っていません。 テンプレート コード全体を調べることをお勧めします。その中でも、ウィンドウとデバイス リソースの設定と管理に関係する部分に注目してください。 UWP アプリは中断/再開イベントだけではなく回転イベントもサポートする必要がありますが、テンプレートを通じて、インターフェイスの喪失や表示パラメーターの変更を処理するうえでのベスト プラクティスを確かめることができます。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [簡単な OpenGL ES 2.0 レンダラーを Direct3D 11 に移植する方法](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
@@ -222,10 +229,5 @@ void RenderObject::Render()
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

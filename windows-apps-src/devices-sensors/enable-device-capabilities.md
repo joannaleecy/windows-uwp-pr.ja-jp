@@ -3,19 +3,26 @@ author: DBirtolo
 ms.assetid: 949D1CE0-DD7D-420E-904D-758FADEBE85A
 title: "デバイス機能を有効にする"
 description: "このチュートリアルでは、Microsoft Visual Studio のデバイス機能の宣言方法について説明します。 カメラ、マイク、位置センサー、その他のデバイスをアプリで使うことができるようにします。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: b36dd4d77821a65b1f435d755f7bb415b2e386ee
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 15b12bfafea71705a9c18464461a73e3e2f05563
+ms.lasthandoff: 02/07/2017
 
 ---
-# デバイス機能を有効にする
+# <a name="enable-device-capabilities"></a>デバイス機能を有効にする
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 このチュートリアルでは、Microsoft Visual Studio でデバイス機能を宣言する方法について説明します。 カメラ、マイク、位置センサー、その他のデバイスをアプリで使うことができるようにします。
 
-## アプリで使うデバイス機能を指定する
+## <a name="specify-the-device-capabilities-your-app-will-use"></a>アプリで使うデバイス機能を指定する
 
 
 Windows アプリでは、特定の種類のデバイスを使う場合にアプリ パッケージ マニフェストに指定する必要があります。 Visual Studio では、ほとんどの機能を[マニフェスト デザイナー](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx)で宣言できます。また、「[パッケージ マニフェストでデバイス機能を (手動で) 指定する方法](https://msdn.microsoft.com/library/windows/apps/Dn263092)」で説明しているように、機能を手動で追加することもできます。 このチュートリアルでは、マニフェスト デザイナーを使っていることを前提としています。
@@ -56,7 +63,7 @@ Windows アプリでは、特定の種類のデバイスを使う場合にアプ
 | Bluetooth RFCOMM |  | Basic Rate/Extended Data Rate (BR/EDR) トランスポートをサポートする API にアクセスできるようにし、Windows ストア アプリが Serial Port Profile (SPP) を実装するデバイスにアクセスできるようにします。 この機能を使うには、子要素が必要です。 詳しくは、「[Bluetooth のデバイス機能を指定する方法](https://msdn.microsoft.com/library/windows/apps/Dn263090)」をご覧ください。 |
 | pointOfService |  | POS (店舗販売時点管理) バー コード スキャナーや磁気ストライプ リーダーにアクセスできるようにします。 Windows Phone では、この機能はサポートされていません。 | 
 
-## デバイスとの通信に Windows ランタイム API を使用する
+## <a name="use-the-windows-runtime-api-for-communicating-with-your-device"></a>デバイスとの通信に Windows ランタイム API を使用する
 
 次の表では、上記の機能の一部と Windows ランタイム API を関連付けています。
 
@@ -73,10 +80,5 @@ Windows アプリでは、特定の種類のデバイスを使う場合にアプ
 | Bluetooth GATT           | [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) | 
 | Bluetooth RFCOMM         | [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) | 
 | Point of Service (POS)   | [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) |
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

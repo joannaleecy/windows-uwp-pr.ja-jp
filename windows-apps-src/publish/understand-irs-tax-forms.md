@@ -2,9 +2,17 @@
 author: jnHs
 Description: "マイクロソフトが発行する税関連の書類について、どのような開発者がその書類を受け取るのか、いつ書類が利用できるようになるのかなどを説明します。"
 title: "マイクロソフトが発行する IRS の税関連の書類について"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 translationtype: Human Translation
-ms.sourcegitcommit: 684a76a503a0adefb1754059ffa6aa8d4d8d940b
-ms.openlocfilehash: 2927588bc096ef1ed9e8451cea73ba78efa9d7c0
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 5f51e1c5a44767e49b5c3dc5f578c2532da11008
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -54,10 +62,10 @@ EIN: \*\*\*\*\*4442<br>
     <td valign="top">上のいずれの理由も該当しません。</td>
     <td valign="top">なし</td>
   </tr>
-</table>
-
-
-<table>
+  <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">&nbsp;</td>
+  </tr>
   <tr>
      <th>米国在住の開発者で有料アプリを販売しており、以下の条件を満たす場合 </th>
      <th> 以下の書類を受け取る</th>
@@ -119,9 +127,4 @@ EIN: \*\*\*\*\*0505<br>
 
 
 > **注:** **IRS の税関連の書類**に関する質問や懸案事項が他にもある場合は、[サポート チケット](http://aka.ms/storesupport)を作成してください。 マイクロソフトは特定の税金の事情に関する質問にはお答えできません。これらの質問については、税務の専門家にお問い合わせください。
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

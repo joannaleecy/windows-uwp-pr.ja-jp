@@ -3,13 +3,20 @@ author: mtoepke
 title: "チュートリアル -- DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への簡単な Direct3D 9 アプリの移植"
 description: "この移植作業では、Direct3D 9 から Direct3D 11 とユニバーサル Windows プラットフォーム (UWP) に簡単なレンダリング フレームワークを移植する方法について説明します。"
 ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, DirectX, 移植, Direct3D 9, Direct3D 11"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 53e0b3f5a69f133e74430b1a2e32a13180569f06
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1e3f9b7fbfaa110661ebb111c60d0089757dc885
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# チュートリアル: DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への簡単な Direct3D 9 アプリの移植
+# <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>チュートリアル: DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への簡単な Direct3D 9 アプリの移植
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -62,36 +69,23 @@ ms.openlocfilehash: 53e0b3f5a69f133e74430b1a2e32a13180569f06
 
 このチュートリアルでは、簡素化のため [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) を使用しており、XAML の相互運用には対応しない点に注意してください。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 
 [UWP DirectX ゲームの開発環境を準備する](prepare-your-dev-environment-for-windows-store-directx-game-development.md)必要があります。 テンプレートはまだ必要ありませんが、このチュートリアルのコード サンプルを読み込むには Microsoft Visual Studio 2015 が必要です。
 
 このチュートリアルで説明する DirectX 11 と UWP のプログラミングの概念について詳しくは、「[DirectX 9 からの DirectX 11 と Windows ストアへの移行](porting-considerations.md)」をご覧ください。
 
-## 関連トピック
-
+## <a name="related-topics"></a>関連トピック
 
 **Direct3D**
-[Direct3D 9 での HLSL シェーダーの記述](https://msdn.microsoft.com/library/windows/desktop/bb944006)
 
-[テンプレートからの DirectX ゲーム プロジェクトの作成](user-interface.md)
+* [Direct3D 9 での HLSL シェーダーの記述](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+* [DirectX ゲーム プロジェクト テンプレート](user-interface.md)
 
 **Windows ストア**
-[**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
 
-[**オブジェクト演算子 (^) へのハンドル (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx
-
- 
-
- 
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
+* [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
+* [**オブジェクトへのハンドル演算子 (^)**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)
 
 

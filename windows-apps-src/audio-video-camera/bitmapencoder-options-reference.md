@@ -2,14 +2,21 @@
 author: laurenhughes
 ms.assetid: 98BD79B3-F420-43C5-98D3-52EBDDB479A0
 description: "この記事では、BitmapEncoder で使用できるエンコーディング オプションを示します。"
-title: "BitmapEncoder オプション リファレンス"
+title: "BitmapEncoder オプションのリファレンス"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: fd5b52a1d431b9396a4b162077d4f8d6246cd597
-ms.openlocfilehash: 4edf119d0f8830fec9ece34f1a7eb8f3ffbe67dd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c29c05e7397e87851ebb0fa5fa29df3b9b58907b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# BitmapEncoder オプション リファレンス
+# <a name="bitmapencoder-options-reference"></a>BitmapEncoder オプションのリファレンス
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
@@ -31,7 +38,7 @@ ms.openlocfilehash: 4edf119d0f8830fec9ece34f1a7eb8f3ffbe67dd
 
  
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [ビットマップ画像の作成、編集、保存](imaging.md)
 * [サポートされているコーデック](supported-codecs.md)
@@ -40,10 +47,5 @@ ms.openlocfilehash: 4edf119d0f8830fec9ece34f1a7eb8f3ffbe67dd
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

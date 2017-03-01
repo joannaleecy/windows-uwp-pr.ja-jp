@@ -3,20 +3,27 @@ author: mtoepke
 title: "サウンドの追加"
 description: "この手順では、シューティング ゲームのサンプルで XAudio2 API を使ってサウンド再生用のオブジェクトを作る方法について説明します。"
 ms.assetid: aa05efe2-2baa-8b9f-7418-23f5b6cd2266
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, サウンド"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e44bc1046310b57cffa3eb4009e91885c61470eb
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 11553a22274a36094a3e839e8fda648f78cfaaf8
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# サウンドの追加
+# <a name="add-sound"></a>サウンドの追加
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 この手順では、シューティング ゲームのサンプルで [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) API を使ってサウンド再生用のオブジェクトを作る方法について説明します。
 
-## 目標
+## <a name="objective"></a>目標
 
 
 -   [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) を使ってサウンド出力を追加する。
@@ -27,7 +34,7 @@ ms.openlocfilehash: e44bc1046310b57cffa3eb4009e91885c61470eb
 -   **MediaReader.h/.cpp**。 このコードは、オーディオ .wav ファイルをローカル ストレージから読み取るメソッドを定義します。
 -   **SoundEffect.h/.cpp**。 このコードは、ゲーム内サウンド再生用のオブジェクトを定義します。
 
-## オーディオ エンジンの定義
+## <a name="defining-the-audio-engine"></a>オーディオ エンジンの定義
 
 
 このゲーム サンプルは、開始されると、ゲームのオーディオ リソースを割り当てる **Audio** オブジェクトを作ります。 このオブジェクトを宣言するコードは次のとおりです。
@@ -54,7 +61,7 @@ protected:
 
 **Audio::MusicEngine** と **Audio::SoundEffectEngine** のメソッドは、各種類のオーディオのマスターリング ボイスを定義する [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) オブジェクトへの参照を返します。 マスターリング ボイスは、再生に使われるオーディオ デバイスです。 サウンド データ バッファーをマスターリング ボイスに直接送信することはできませんが、他の種類のボイスに送信されたデータは、聞くマスターリング ボイスに転送する必要があります。
 
-## オーディオ リソースの初期化
+## <a name="initializing-the-audio-resources"></a>オーディオ リソースの初期化
 
 
 このサンプルでは、[**XAudio2Create**](https://msdn.microsoft.com/library/windows/desktop/ee419212) を呼び出して、ミュージックとサウンド効果のエンジンの [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) オブジェクトを初期化します。 これらのエンジンをインスタンス化した後、次に示すように、[**IXAudio2::CreateMasteringVoice**](https://msdn.microsoft.com/library/windows/desktop/hh405048) を呼び出して、各エンジンのマスターリング ボイスを作ります。
@@ -91,7 +98,7 @@ void Audio::CreateDeviceIndependentResources()
 
 ミュージックまたはサウンド効果のオーディオ ファイルが読み込まれると、このメソッドはマスターリング ボイスの [**IXAudio2::CreateSourceVoice**](https://msdn.microsoft.com/library/windows/desktop/ee418607) を呼び出し、これによって再生用のソース ボイスのインスタンスが作られます。 このためのコードについては、ゲーム サンプルでオーディオ ファイルを読み込む方法を確認した後で説明します。
 
-## オーディオ ファイルの読み取り
+## <a name="reading-an-audio-file"></a>オーディオ ファイルの読み取り
 
 
 このゲーム サンプルでは、オーディオ形式のファイルを読み取るコードは **MediaReader.cpp** に定義されています。 エンコードされた .wav オーディオ ファイル **MediaReader::LoadMedia** を読み取るメソッドは次のようになります。
@@ -264,7 +271,7 @@ myTarget->HitSound()->Initialize(
 
 これで、サンプル ゲームのオーディオ ファイルがメモリに格納されたので、次は、ゲーム中にこのファイルが再生される方法を見てみましょう。
 
-## オーディオ ファイルの再生
+## <a name="playing-back-an-audio-file"></a>オーディオ ファイルの再生
 
 
 ```cpp
@@ -306,14 +313,14 @@ void SoundEffect::PlaySound(_In_ float volume)
 
 これで、弾が標的に当たるたびに、**SoundEffect::PlaySound** が呼び出されて音が再生されます。
 
-## 次のステップ
+## <a name="next-steps"></a>次のステップ
 
 
 これで、ユニバーサル Windows プラットフォーム (UWP) DirectX ゲーム開発のクイック ツアーは終了です。 今までの説明から、Windows 8 用に作成するゲームで快適なエクスペリエンスを実現するためには何をする必要があるかをご理解いただけたと思います。 作成するゲームは、さまざまな Windows 8 デバイスとプラットフォームで実行される可能性があるため、グラフィックス、コントロール、ユーザー インターフェイス、オーディオなどのコンポーネントは、できる限り幅広い構成に対応するように設計してください。
 
 今までの説明で使ったゲーム サンプルを変更する方法について詳しくは、「[ゲーム サンプルの拡張](tutorial-resources.md)」をご覧ください。
 
-## このセクションのサンプル コード一式
+## <a name="complete-sample-code-for-this-section"></a>このセクションのサンプル コード一式
 
 
 Audio.h
@@ -560,10 +567,5 @@ void SoundEffect::PlaySound(_In_ float volume)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

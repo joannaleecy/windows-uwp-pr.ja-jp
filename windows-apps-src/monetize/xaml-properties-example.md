@@ -1,17 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: d074e9d5-b3e0-4f16-b1e4-02b32ac99b2c
-description: "値に **AdControl** プロパティを割り当てる方法について説明します。"
+description: "**AdControl** のプロパティに値を割り当てる方法について説明します。"
 title: "AdControl XAML プロパティの例"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 広告, 宣伝, AdControl, XAML, プロパティ"
 translationtype: Human Translation
-ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
-ms.openlocfilehash: f33e4048a1a9aa68ecc627d81ca15858027720c1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dbcc08b1373c7f73d5b9ebf541ec82bb01fd9df3
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="adcontrol-xaml-properties-example"></a>AdControl XAML プロパティの例
 
-次の XAML の例では、値に [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) プロパティを割り当てる方法を示しています。 プロパティが設定されていない場合、**AdControl** は、アプリのユーザー エクスペリエンスと一貫性がある広告を作成する既定値を使います。
+次の XAML の例は、[AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) のプロパティに値を割り当てる方法を示しています。 プロパティが設定されていない場合、**AdControl** は、アプリのユーザー エクスペリエンスと一貫性がある広告を作成する既定値を使います。
 
 これらの値は例です。 実際のコードでは、これらの関数とプロパティの値を対象のアプリに適した値に設定します。
 
@@ -33,9 +40,4 @@ ms.openlocfilehash: f33e4048a1a9aa68ecc627d81ca15858027720c1
 * [GitHub の広告サンプル](http://aka.ms/githubads)
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

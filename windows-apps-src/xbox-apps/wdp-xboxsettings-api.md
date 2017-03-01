@@ -2,16 +2,24 @@
 author: payzer
 title: "Device Portal の Xbox 開発者向け設定 API のリファレンス"
 description: "Xbox 開発者向け設定にアクセスする方法について説明します。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 translationtype: Human Translation
-ms.sourcegitcommit: c51eff41e63d815f6298b4fc46a9b11314bc8bc9
-ms.openlocfilehash: 5a983714cda9b5a5f45e555e2cb6f980f082a003
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: a17a489944fdc2d78831549c1afdc2bd87deabdf
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 開発者向け設定 API のリファレンス   
+# <a name="developer-settings-api-reference"></a>開発者向け設定 API のリファレンス   
 この API を使用して、開発に役立つ Xbox One 設定にアクセスできます。
 
-## すべての開発者向け設定を一度に取得する
+## <a name="get-all-developer-settings-at-once"></a>すべての開発者向け設定を一度に取得する
 
 **要求**
 
@@ -51,7 +59,7 @@ HTTP 状態コード      | 説明
 4XX | エラー コード
 5XX | エラー コード
 
-## 設定を一度に 1 つ取得する
+## <a name="get-settings-one-at-a-time"></a>設定を一度に 1 つ取得する
 設定は個別に取得することもできます。
 
 **要求**
@@ -92,7 +100,7 @@ HTTP 状態コード      | 説明
 4XX | エラー コード
 5XX | エラー コード
 
-## 設定の値を設定する
+## <a name="set-the-value-of-a-setting"></a>設定の値を設定する
 設定の値を設定できます。
 
 **要求**
@@ -133,10 +141,5 @@ HTTP 状態コード      | 説明
 **利用可能なデバイス ファミリ**
 
 * Windows Xbox
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

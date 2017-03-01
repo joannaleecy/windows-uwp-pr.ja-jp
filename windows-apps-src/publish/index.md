@@ -1,14 +1,22 @@
 ---
 author: jnHs
 Description: "Windows アプリを Windows ストアに公開する方法を紹介します。"
+title: "Windows アプリの公開"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 translationtype: Human Translation
-ms.sourcegitcommit: f894decad6a88ad3923e0bd5c54a6f4906555081
-ms.openlocfilehash: 6e2b6158a586fa82780664cd2ef2de0b425a1f1d
-
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 43cd6db99001974283175cb611d2e06c5da2221c
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Windows アプリの公開
+# <a name="publish-windows-apps"></a>Windows アプリの公開
 
 Windows デベロッパー センター ダッシュ ボードを使用すると、アプリを Windows ストアに公開できます。 
 
@@ -29,9 +37,4 @@ Windows デベロッパー センター ダッシュ ボードを使用すると
 | [支払いの受け取り](getting-paid-apps.md) | アプリ、アドオン、および Microsoft Advertising による売り上げの受け取りについて詳細を確認します。 |
 | [ストアのポリシーと倫理規定](https://msdn.microsoft.com/library/windows/apps/dn764939.aspx) | このセクションでは、Windows アプリとコンテンツに適用される[ストアのポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx)および[アプリの品質](https://msdn.microsoft.com/library/windows/apps/mt652261.aspx)基準と、開発者が従う必要のある[倫理規定](https://msdn.microsoft.com/library/windows/apps/dn764941.aspx)について説明します。 |
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

@@ -1,13 +1,20 @@
 ---
 author: mijacobs
-Description: "この記事では、アダプティブ タイル テンプレートを使って、ローカル タイル通知をプライマリ タイルやセカンダリ タイルに送信する方法について説明します "
+Description: "この記事では、アダプティブ タイル テンプレートを使って、ローカル タイル通知をプライマリ タイルやセカンダリ タイルに送信する方法について説明します。"
 title: "ローカル タイル通知の送信"
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 label: TBD
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: bbc09a6638fd7c0798e49600bd74388d5bb4629d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 77f09a875ce5e5cbdf72644ef937048dd53a0116
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="send-a-local-tile-notification"></a>ローカル タイル通知の送信
@@ -295,10 +302,5 @@ var notification = new TileNotification(doc);
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

@@ -2,13 +2,21 @@
 author: payzer
 title: "Device Portal の SMB API のリファレンス"
 description: "SMB API にプログラムでアクセスする方法について説明します。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 1f0eb76e-fe3e-4674-a27e-229beec7e63d
 translationtype: Human Translation
-ms.sourcegitcommit: 3d76bf181baa9dfd973467d43241230fddf2daf7
-ms.openlocfilehash: d6a097c84e6b967c41507d9e60c266f0bacb93fe
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: fc52bd3d326a20d0b561ad06b9f4245e7b557f82
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 開発者向けフォルダー API のリファレンス   
+# <a name="developer-folder-api-reference"></a>開発者向けフォルダー API のリファレンス   
 標準的なエクスプローラーを使って、Xbox One の開発に関連するファイルにアクセスできます。 これにより、ファイルを簡単に表示したり、PC から本体に置き換えることができます。
 
 **要求**
@@ -52,9 +60,4 @@ HTTP 状態コード      | 説明
 **利用可能なデバイス ファミリ**
 
 * Windows Xbox
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

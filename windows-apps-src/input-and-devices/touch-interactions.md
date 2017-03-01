@@ -12,8 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
-ms.openlocfilehash: 26f80e2619ea7b80a49d54278507c83461fe2336
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c78122e3bd1a860359cb482ff54fe7cfc673081e
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -649,10 +650,5 @@ End Sub
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

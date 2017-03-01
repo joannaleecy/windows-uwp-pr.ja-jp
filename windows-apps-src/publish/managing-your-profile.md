@@ -3,16 +3,23 @@ author: jnHs
 ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
 title: "アカウントの設定とプロファイル情報の管理"
 description: "開発者アカウントの設定とプロファイル情報の表示および更新は、統合 Windows デベロッパー センター ダッシュボードの [アカウントの設定] セクションで行うことができます。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
-ms.openlocfilehash: 3859918d94ad7ffcf1c331ca5a0ca6540387886f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5ca55f04d919e273017530ab4c14d09c7a2ec20a
+ms.lasthandoff: 02/07/2017
 
 ---
-# アカウントの設定とプロファイル情報の管理
+# <a name="managing-your-account-settings-and-profile-info"></a>アカウントの設定とプロファイル情報の管理
 
 開発者アカウントの設定とプロファイル情報の表示および更新は、[Windows デベロッパー センター ダッシュボード](using-the-windows-dev-center-dashboard.md)の **[アカウントの設定]** セクションで行うことができます。
 
-## アカウントの設定
+## <a name="account-settings"></a>アカウントの設定
 
 **[アカウントの設定]** ページには、アカウントの詳細が表示されます。また、情報の表示や更新を行うことができる他のページへのリンクも表示されます。
 
@@ -20,7 +27,7 @@ ms.openlocfilehash: 3859918d94ad7ffcf1c331ca5a0ca6540387886f
 
 **注**  個々のアプリの ID に関する詳細は、各アプリの [[アプリ ID](view-app-identity-details.md)] ページで確認できます。
 
-## 連絡先情報
+## <a name="contact-info"></a>連絡先情報
 
 **[連絡先情報]** セクションには、アカウントを設定するときに指定した情報が表示されます。 この情報は、ご利用のアカウントについて Microsoft からご連絡を差し上げる際に使われます。
 
@@ -28,15 +35,10 @@ ms.openlocfilehash: 3859918d94ad7ffcf1c331ca5a0ca6540387886f
 
 発行者の表示名を変更した場合、もう一度アカウントを確認する必要があります。 アプリの公開後に発行者の表示名を変更する場合は、アプリのパッケージ内にある発行者の表示名を変更してから、アカウントの再確認が終了した後、更新したパッケージを使ってアプリをもう一度提出する必要があります。
 
-## Additional settings and info (追加の設定と情報)
+## <a name="additional-settings-and-info"></a>Additional settings and info (追加の設定と情報)
 
 このセクションには、[受取りアカウントと税務フォームを準備する](setting-up-your-payout-account-and-tax-forms.md)ためのリンクも表示されます。 これらの準備は、アプリやアドオンの代金を請求する前に行う必要があります。
 
 一部のプログラムでは、アカウントの機能を拡張できるようにするためのコードが用意されている場合があります。これらの機能は、**[アカウント設定]** で入力できます。 このページでは、[テスト用にロック解除した Windows Phone 8 デバイスや Windows Phone 8.1 デバイス](http://go.microsoft.com/fwlink/p/?LinkId=533897)に関する詳細を確認することもできます。また、[デベロッパー センター Insider Program](dev-center-insider-program.md) をオプトインまたはオプトアウトすることもできます。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

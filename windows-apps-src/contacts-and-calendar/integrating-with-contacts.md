@@ -3,13 +3,21 @@ author: normesta
 description: "連絡先カードの操作の横にアプリを追加する方法を説明する"
 MSHAttr: PreferredLib:/library/windows/apps
 title: "アプリを連絡先カードの操作に接続する"
+ms.author: normesta
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 連絡先, 連絡先カード, 注釈"
+ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 translationtype: Human Translation
-ms.sourcegitcommit: 5c0f6ef1f1a346a66ca554a415d9f24c8a314ae1
-ms.openlocfilehash: 034dc2b7be69763416192014abe24b9bf924c443
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: da64e23714035b6763104d48430371469272a939
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# アプリを連絡先カードの操作に接続する
+# <a name="connect-your-app-to-actions-on-a-contact-card"></a>アプリを連絡先カードの操作に接続する
 
 アプリは、連絡先カードまたはミニ連絡先カードの操作の横に表示できます。 ユーザーは、プロファイル ページを開く、通話を行う、メッセージを送信するなど、操作を実行するアプリを選ぶことができます。
 
@@ -19,11 +27,11 @@ ms.openlocfilehash: 034dc2b7be69763416192014abe24b9bf924c443
 
 完全なサンプルについては、[連絡先カードの統合のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)をご覧ください。
 
-## 連絡先を検索または作成する
+## <a name="find-or-create-a-contact"></a>連絡先を検索または作成する
 
 他のユーザーとつながるのをサポートするアプリの場合、Windows で連絡先を検索してから注釈を付けます。 連絡先を管理するアプリの場合、連絡先を Windows 連絡先リストに追加してから、注釈を付けることができます。
 
-### 連絡先を検索する
+### <a name="find-a-contact"></a>連絡先を検索する
 
 連絡先は、名前、メール アドレス、または電話番号を使って検索します。
 
@@ -37,7 +45,7 @@ contacts = await contactStore.FindContactsAsync(emailAddress);
 Contact contact = contacts[0];
 ```
 
-### 連絡先を作成する
+### <a name="create-a-contact"></a>連絡先を作成する
 
 アドレス帳のようなアプリの場合、連絡先を作成してから連絡先一覧に追加します。
 
@@ -71,7 +79,7 @@ await contactList.SaveContactAsync(contact);
 
 ```
 
-## 注釈を使って各連絡先にタグを付ける
+## <a name="tag-each-contact-with-an-annotation"></a>注釈を使って各連絡先にタグを付ける
 
 アプリで実行できる操作 (例: ビデオ通話やメッセージング) の一覧を使って各連絡先にタグを付けます。
 
@@ -101,7 +109,7 @@ annotation.SupportedOperations = ContactAnnotationOperations.Message |
 await annotationList.TrySaveAnnotationAsync(annotation);
 ```
 
-## 各操作を登録する
+## <a name="register-for-each-operation"></a>各操作を登録する
 
 パッケージ マニフェストに、注釈を記載した各操作を登録します。
 
@@ -135,7 +143,7 @@ Visual Studio のマニフェスト デザイナーの **[宣言]** タブで追
 
 ![マニフェスト デザイナーの [宣言] タブ](images/manifest-designer-protocols.png)
 
-## 連絡先カードの操作の横にあるアプリを見つける
+## <a name="find-your-app-next-to-actions-in-a-contact-card"></a>連絡先カードの操作の横にあるアプリを見つける
 
 People アプリを開きます。 アプリは、注釈とパッケージ マニフェストで指定した各操作の横に表示されます。
 
@@ -143,7 +151,7 @@ People アプリを開きます。 アプリは、注釈とパッケージ マ�
 
 ユーザーが操作のためにアプリを選ぶと、次回ユーザーが連絡先カードを開いたときに、そのアプリがその操作用の既定のアプリとして表示されます。
 
-## ミニ連絡先カードの操作の横にあるアプリを見つける
+## <a name="find-your-app-next-to-actions-in-a-mini-contact-card"></a>ミニ連絡先カードの操作の横にあるアプリを見つける
 
 ミニ連絡先カードでは、操作を表すタブにアプリが表示されます。
 
@@ -174,7 +182,7 @@ public async void OpenContactCard(object sender, RoutedEventArgs e)
 
 連絡先カードと同様、ユーザーが前回使ったアプリを各タブが記憶しているため、アプリに簡単に戻ることができます。
 
-## ユーザーが連絡先カードでアプリを選んだときに操作を実行する
+## <a name="perform-operations-when-users-select-your-app-in-a-contact-card"></a>ユーザーが連絡先カードでアプリを選んだときに操作を実行する
 
 **App.cs** ファイル内の [Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330) メソッドをオーバーライドし、ユーザーをアプリ内のページに移動します。 それを行う方法の 1 つについては、[連絡先カードの統合のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)をご覧ください。
 
@@ -209,9 +217,4 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 ```
 
 ```args.uri.scheme``` プロパティには操作の名前、```args.uri.Query``` プロパティにはユーザーの ID が含まれています。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

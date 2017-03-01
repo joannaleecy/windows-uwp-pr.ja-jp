@@ -5,9 +5,16 @@ title: "画像とイメージ ブラシ"
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
 label: Images and image brushes
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 98b3a9739b1906b7abb529cea1e7d433118cbcdd
-ms.openlocfilehash: 6adb5c106ccbe7d5dccda405b301daf8ce4e69f4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6bbde4da0b580c07ed189b96ec84ed50a77a5363
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="images-and-image-brushes"></a>画像とイメージ ブラシ
@@ -156,8 +163,3 @@ Windows 10 バージョン 1607 からは、**Image** 要素で、アニメー�
 -   [オーディオ、ビデオ、およびカメラ](https://msdn.microsoft.com/windows/uwp/audio-video-camera/index)
 -   [**Image クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)
 -   [**ImageBrush クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx)
-
-
-<!--HONumber=Dec16_HO1-->
-
-

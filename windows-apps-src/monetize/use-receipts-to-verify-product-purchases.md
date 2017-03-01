@@ -1,21 +1,28 @@
 ---
 author: mcleanbyron
 ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
-description: "製品購入が成功した各 Windows ストアのトランザクションでは、必要に応じてトランザクションの通知を返すことができます。"
-title: "通知を使った製品購入の確認"
+description: "製品購入が成功した各 Windows ストアのトランザクションでは、必要に応じてトランザクションの受領通知を返すことができます。"
+title: "受領通知を使った製品購入の確認"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, アプリ内購入, IAP, 受領通知, Windows.ApplicationModel.Store"
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: 55631d364ca6f2d76d214eca6d00fbdd969c0e15
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2ada9038f9bd355bb4ab9f81967ebb2d47701cd8
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="use-receipts-to-verify-product-purchases"></a>通知を使った製品購入の確認
+# <a name="use-receipts-to-verify-product-purchases"></a>受領通知を使った製品購入の確認
 
 
 >**注**&nbsp;&nbsp;この記事では、[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間のメンバーを使って、アプリ内での購入の受領通知を取得および検証する方法について説明します。 アプリがこの名前空間の代わりに、Windows 10 Version 1607 で導入された [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) を使用する場合、アプリ内での購入に関する受領通知を取得するための API は提供されていません。 ただし、Windows ストア コレクション API の REST メソッドを使って、購入トランザクションのデータを取得することができます。 詳しくは、「[アプリ内購入の受領通知](in-app-purchases-and-trials.md#receipts)」をご覧ください。
 
 
-製品購入が成功した各 Windows ストアのトランザクションでは、必要に応じてトランザクションの通知を返すことができます。 この通知は、ユーザーに対する製品と金銭的コストの一覧を掲載します。
+製品購入が成功した各 Windows ストアのトランザクションでは、必要に応じてトランザクションの受領通知を返すことができます。 この通知は、ユーザーに対する製品と金銭的コストの一覧を掲載します。
 
 この情報は、ユーザーがアプリを購入したことや、Windows ストアからアドオン (アプリ内製品または IAP とも呼ばれます) の購入が行われたことをアプリで確認する必要がある場合などに役立ちます。 たとえば、ダウンロードしたコンテンツを提供するゲームを想像してください。 ゲーム コンテンツを購入したユーザーが別のデバイスでゲームをする場合、そのユーザーが既にコンテンツを所有していることを確認する必要があります。 以下にその方法を示します。
 
@@ -141,9 +148,4 @@ ms.openlocfilehash: 55631d364ca6f2d76d214eca6d00fbdd969c0e15
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

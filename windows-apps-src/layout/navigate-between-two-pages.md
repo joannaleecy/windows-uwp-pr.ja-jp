@@ -6,9 +6,16 @@ ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
 template: detail.hbs
 op-migration-status: ready
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 324bdcd8ae61826a2be765f6a6a93441036d6984
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 84e144e612567a977a6c4e1502719dabbc488329
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -367,10 +374,5 @@ Page1::Page1()
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

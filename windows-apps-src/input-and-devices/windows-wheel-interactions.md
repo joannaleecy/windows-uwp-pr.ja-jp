@@ -10,9 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 translationtype: Human Translation
-ms.sourcegitcommit: eb86863d6ce2e545b3e534ef6cafb220904e3dc8
-ms.openlocfilehash: 96b9a2e213c36b8f92664185e9cdcaea6d457368
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: f64a2bf36786e1f7bb38755e1a6b8bbaa22862a7
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -666,8 +668,3 @@ private void ActivateGridAtLocation(Point Location)
 [ユニバーサル Windows プラットフォーム のサンプル (C# と C++)](https://go.microsoft.com/fwlink/?linkid=832713)
 
 [Windows の従来のデスクトップのサンプル](https://aka.ms/radialcontrollerclassicsample)
-
-
-<!--HONumber=Dec16_HO3-->
-
-

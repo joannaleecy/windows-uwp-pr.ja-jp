@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 9621641A-7462-425D-84CC-101877A738DA
 description: "UWP アプリで AdMediatorControl を AdControl に移行する方法について説明します。"
 title: "UWP アプリ用 AdMediatorControl から AdControl への移行"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 広告, Advertising, AdMediatorControl, AdControl, 移行"
 translationtype: Human Translation
-ms.sourcegitcommit: 2b5dbf872dd7aad48373f6a6df3dffbcbaee8090
-ms.openlocfilehash: 6e7e833327dce4b49e44b7485908c8a507b217ef
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 83235595a6a7f9e9b0b5d8de154d6e5d8a8db8ef
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -158,9 +165,4 @@ Microsoft の自社広告または AdDuplex に加えて Microsoft の有料広�
 
   > [!div class="tabbedCodeSnippets"]
   [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/ExamplePage1.xaml.cs#Snippet5)]
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

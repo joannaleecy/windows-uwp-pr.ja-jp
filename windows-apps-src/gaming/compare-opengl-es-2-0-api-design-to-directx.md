@@ -3,16 +3,23 @@ author: mtoepke
 title: "OpenGL ES 2.0 から Direct3D への移植の計画"
 description: "iOS または Android プラットフォームからゲームを移植している場合、OpenGL ES 2.0 に多大な投資を行ってこられたものと思われます。"
 ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、ゲーム、OpenGL、Direct3D"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 84f13d6507d141c468fcfd6a2bcf75f5419d65da
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d2642abbfbfc6030aa00f68f30d4a45eb0e86ee1
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# OpenGL ES 2.0 から Direct3D への移植の計画
+# <a name="plan-your-port-from-opengl-es-20-to-direct3d"></a>OpenGL ES 2.0 から Direct3D への移植の計画
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
 **重要な API**
@@ -26,7 +33,7 @@ iOS または Android プラットフォームからゲームを移植してい�
 
 OpenGL ES 2.0 から Direct3D 11 にグラフィックスを移植する際に注意する必要のある事柄を次に示します。
 
-## 特定の OpenGL ES 2.0 プロバイダーに関する注意事項
+## <a name="notes-on-specific-opengl-es-20-providers"></a>特定の OpenGL ES 2.0 プロバイダーに関する注意事項
 
 
 このセクションの移植に関するトピックでは、Khronos Group によって作成された OpenGL ES 2.0 仕様の Windows 実装を参照します。 OpenGL ES 2.0 コード サンプルは、いずれも Visual Studio 2012 と基本的な Windows C 構文を使って開発されたものです。 Objective-C (iOS) または Java (Android) コードベースから移植する場合は、用意されている OpenGL ES 2.0 コード サンプルで、類似の API 呼び出し構文またはパラメーターが使われていない可能性があることに注意してください。 このガイダンスでは、できるだけプラットフォームにとらわれずに説明します。
@@ -35,19 +42,19 @@ OpenGL ES 2.0 から Direct3D 11 にグラフィックスを移植する際に�
 
 これらのトピックの Direct3D 11 のサンプルでは、Microsoft Windows C++ とコンポーネント拡張 (CX) を使います。 このバージョンの C++ の構文について詳しくは、「[Visual C++](https://msdn.microsoft.com/library/windows/apps/60k1461a.aspx)」、「[ランタイム プラットフォーム向けのコンポーネント拡張](https://msdn.microsoft.com/library/windows/apps/xey702bw.aspx)」、「[クイック リファレンス (C++\\CX)](https://msdn.microsoft.com/library/windows/apps/br212455.aspx)」をご覧ください。
 
-## ハードウェア要件とリソースについて
+## <a name="understand-your-hardware-requirements-and-resources"></a>ハードウェア要件とリソースについて
 
 
 OpenGL ES 2.0 でサポートされる一連のグラフィックス処理機能は、Direct3D 9.1 で提供される機能にほぼ対応しています。 Direct3D 11 で提供される高度な機能を利用する場合は、移植の計画段階では [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080) のドキュメントを、最初の作業を終えた段階では「[DirectX 9 からユニバーサル Windows プラットフォーム (UWP) への移植](porting-your-directx-9-game-to-windows-store.md)」のトピックをご覧ください。
 
 初期移植作業を簡単にするには、Visual Studio の Direct3D テンプレートを利用してください。 基本的なレンダラーが既に構成されており、ウィンドウの変更と Direct3D 機能レベルに関するリソースの再作成などの UWP アプリ機能がサポートされています。
 
-## Direct3D の機能レベルについて
+## <a name="understand-direct3d-feature-levels"></a>Direct3D の機能レベルについて
 
 
 Direct3D 11 は、9\_1 (Direct3D 9.1) から 11\_1 のハードウェア "機能レベル" をサポートしています。 これらの機能レベルは、特定のグラフィックス機能とリソースの可用性を示します。 通常、ほとんどの OpenGL ES 2.0 プラットフォームで Direct3D 9.1 (機能レベル 9\_1) の機能セットがサポートされています。
 
-## DirectX のグラフィックス機能と API の確認
+## <a name="review-directx-graphics-features-and-apis"></a>DirectX のグラフィックス機能と API の確認
 
 
 | API ファミリ                                                | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -61,7 +68,7 @@ Direct3D 11 は、9\_1 (Direct3D 9.1) から 11\_1 のハードウェア "機能
 
  
 
-## Windows ランタイム API とテンプレート ライブラリの確認
+## <a name="review-the-windows-runtime-apis-and-template-library"></a>Windows ランタイム API とテンプレート ライブラリの確認
 
 
 Windows ランタイム API は、UWP アプリの全体的なインフラストラクチャを提供します。 詳しくは、[ここ](https://msdn.microsoft.com/library/windows/apps/br211377) をご覧ください。
@@ -75,7 +82,7 @@ Windows ランタイム API は、UWP アプリの全体的なインフラスト
 
 また、Windows ランタイム C++ テンプレート ライブラリ (WRL) は、Windows ランタイム コンポーネントを作成して使うための下位レベルの方法を提供するテンプレート ライブラリです。 UWP アプリ用の Direct3D 11 API は、スマート ポインター ([ComPtr](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)) など、このライブラリ内のインターフェイスおよび型と組み合わせたときに最適に動作します。 WRL について詳しくは、「[Windows ランタイム C++ テンプレート ライブラリ (WRL)](https://msdn.microsoft.com/library/windows/apps/hh438466.aspx)」をご覧ください。
 
-## 座標系の変更
+## <a name="change-your-coordinate-system"></a>座標系の変更
 
 
 ときとして初期移植作業に混乱を招く違いは、OpenGL の従来の右手による座標系から Direct3D の既定の左手による座標系への変更です。 座標モデルにおけるこの変更は、頂点バッファーの設定と構成から、マトリックスの数学関数の多くに至るまで、ゲームの多くの部分に影響します。 2 つの最も重要な変更は次のとおりです。
@@ -104,7 +111,7 @@ Windows ランタイム API は、UWP アプリの全体的なインフラスト
 
  
 
-## OpenGL ES2.0 から Direct3D 11 への移植についてよく寄せられる質問
+## <a name="opengl-es20-to-direct3d-11-porting-frequently-asked-questions"></a>OpenGL ES2.0 から Direct3D 11 への移植についてよく寄せられる質問
 
 
 -   質問: "通常、自分の OpenGL コードで特定の文字列やパターンを検索し、それを対応する Direct3D の要素と置き換えることはできますか"
@@ -116,10 +123,5 @@ Windows ランタイム API は、UWP アプリの全体的なインフラスト
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

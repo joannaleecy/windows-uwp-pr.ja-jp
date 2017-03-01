@@ -3,20 +3,27 @@ author: drewbatgit
 ms.assetid: D20C8E01-4E78-4115-A2E8-07BB3E67DDDC
 description: "この記事では、デバイスのライトにアクセスして使う方法を説明します (存在する場合)。 ライト機能は、デバイスのカメラやカメラのフラッシュ機能とは別に管理されます。"
 title: "カメラに依存しない懐中電灯"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 1b32633abc9365bf88137dff7c36ba0f2ad05d72
-ms.openlocfilehash: 8c256d8aba08d42fa00b46a01c8b7e773a0ab40c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 54251b965f94da70614bcd81f70b9af53cb6168d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# カメラに依存しない懐中電灯
+# <a name="camera-independent-flashlight"></a>カメラに依存しない懐中電灯
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
 この記事では、デバイスのライトにアクセスして使う方法を説明します (存在する場合)。 ライト機能は、デバイスのカメラやカメラのフラッシュ機能とは別に管理されます。 この記事では、ライトへの参照の取得および設定の調整に加えて、使用されていないときにライトのリソースを正しく解放する方法と、ライトが別のアプリで使用されている場合に利用状況の変化を検出する方法も説明します。
 
-## デバイスの既定のライトを取得する
+## <a name="get-the-devices-default-lamp"></a>デバイスの既定のライトを取得する
 
 デバイスの既定のライトを取得するには、[**Lamp.GetDefaultAsync**](https://msdn.microsoft.com/library/windows/apps/dn894327) を呼び出します。 ライト関連 API は、[**Windows.Devices.Lights**](https://msdn.microsoft.com/library/windows/apps/dn894331) 名前空間にあります。 これらの API にアクセスするには、この名前空間の using ディレクティブをあらかじめ追加しておく必要があります。
 
@@ -30,7 +37,7 @@ ms.openlocfilehash: 8c256d8aba08d42fa00b46a01c8b7e773a0ab40c
 
 返されたオブジェクトが **null** の場合、そのデバイスでは **Lamp** API がサポートされていません。 一部のデバイスでは、ライトが物理的には存在していても、**Lamp** API がサポートされていないことがあります。
 
-## ライト セレクター文字列を使って特定のランプを取得する
+## <a name="get-a-specific-lamp-using-the-lamp-selector-string"></a>ライト セレクター文字列を使って特定のランプを取得する
 
 デバイスによっては、複数のライトが組み込まれている場合があります。 デバイスで利用可能なライトの一覧を取得するには、[**GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn894328) を呼び出すことによってデバイスのセレクター文字列を取得します。 このセレクター文字列は、[**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) に渡すことができます。 これは、さまざまな種類の多数のデバイスを列挙するために使うメソッドです。セレクター文字列はこのメソッドに対し、ライト デバイスのみを返すように伝えます。 **FindAllAsync** から返される [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) オブジェクトは、デバイスで利用可能なライトを表す [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) オブジェクトのコレクションになります。 一覧からいずれかのオブジェクトを選択し、[**Id**](https://msdn.microsoft.com/library/windows/apps/br225437) プロパティを [**Lamp.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn894326) に渡すと、要求されたライトへの参照を取得できます。 この例では、**System.Linq** 名前空間の **GetFirstOrDefault** 拡張メソッドを使って、[**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) プロパティの値が **Back** である **DeviceInformation** オブジェクトを選択しています。これにより、デバイス エンクロージャの背面にあるライトが選択されます (存在する場合)。
 
@@ -40,7 +47,7 @@ ms.openlocfilehash: 8c256d8aba08d42fa00b46a01c8b7e773a0ab40c
 
 [!code-cs[GetLampWithSelectionString](./code/Lamp/cs/MainPage.xaml.cs#SnippetGetLampWithSelectionString)]
 
-## ライトの設定を調整する
+## <a name="adjust-lamp-settings"></a>ライトの設定を調整する
 
 [**Lamp**](https://msdn.microsoft.com/library/windows/apps/dn894310) クラスのインスタンスを作成した後、[**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn894330) プロパティを **true** に設定することで、ライトをオンにします。
 
@@ -54,7 +61,7 @@ ms.openlocfilehash: 8c256d8aba08d42fa00b46a01c8b7e773a0ab40c
 
 [!code-cs[LampSettingsColor](./code/Lamp/cs/MainPage.xaml.cs#SnippetLampSettingsColor)]
 
-## ライトの利用状況が変化したら通知されるよう登録する
+## <a name="register-to-be-notified-if-the-lamp-availability-changes"></a>ライトの利用状況が変化したら通知されるよう登録する
 
 ライトへのアクセス権は、アクセスを要求した最新のアプリに付与されます。 このため、別のアプリが起動され、現在のアプリで使用中のライト リソースが要求された場合は、別のアプリからリソースが解放されるまで、現在のアプリではライトを制御できなくなります。 ライトの利用状況が変化したときに通知を受け取るには、[**Lamp.AvailabilityChanged**](https://msdn.microsoft.com/library/windows/apps/dn894317) イベントに対するハンドラーを登録します。
 
@@ -64,23 +71,18 @@ ms.openlocfilehash: 8c256d8aba08d42fa00b46a01c8b7e773a0ab40c
 
 [!code-cs[AvailabilityChangedHandler](./code/Lamp/cs/MainPage.xaml.cs#SnippetAvailabilityChangedHandler)]
 
-## 使用していないライト リソースを適切に破棄する
+## <a name="properly-dispose-of-the-lamp-resource-when-not-in-use"></a>使用していないライト リソースを適切に破棄する
 
 ライトの使用が終わったら、ライトを無効にして [**Lamp.Close**](https://msdn.microsoft.com/library/windows/apps/dn894320) を呼び出すことにより、他のアプリがライトにアクセスできるようリソースを解放する必要があります。 C# を使用している場合、このプロパティは **Dispose** メソッドにマップされています。 [**AvailabilityChanged**](https://msdn.microsoft.com/library/windows/apps/dn894317) に登録した場合は、ライト リソースを破棄するときにハンドラーの登録を解除する必要があります。 ライト リソースを破棄するコードの適切な場所は、アプリによって異なります。 ライト アクセスのスコープを単一のページに限定するには、リソースを [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509) イベントで解放します。
 
 [!code-cs[DisposeLamp](./code/Lamp/cs/MainPage.xaml.cs#SnippetDisposeLamp)]
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 - [メディア再生](media-playback.md)
 
  
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

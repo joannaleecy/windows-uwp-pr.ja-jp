@@ -3,9 +3,16 @@ author: mithom
 title: "ゲームの入力"
 description: "このセクションでは、ユニバーサル Windows プラットフォーム (UWP) ゲームのゲームパッドなどの入力デバイスを操作する方法を示します。"
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, 入力"
 translationtype: Human Translation
-ms.sourcegitcommit: 858bf6a0862d6459b2bac22d8ab9431b51332fef
-ms.openlocfilehash: 8d1cfa840e359ad1f6a890ed7e7425d387393e15
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ee6017648974d5283f59708550092f26d88388ce
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -61,9 +68,4 @@ UWP ゲームでのヘッドセットの使用方法について詳しくは、�
 
 [Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
 [Windows.Gaming.Input.Custom]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.gaming.input.custom.aspx
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

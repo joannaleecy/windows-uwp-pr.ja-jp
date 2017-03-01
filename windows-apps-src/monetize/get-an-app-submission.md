@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: BF296C25-A2E6-48E4-9D08-0CCDB5FAE0C8
 description: "既存のアプリの申請のデータを取得するには、Windows ストア申請 API 内の以下のメソッドを使用します。"
 title: "Windows ストア申請 API を使用したアプリの申請の取得"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows ストア申請 API, アプリの申請"
 translationtype: Human Translation
-ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
-ms.openlocfilehash: b092658a22b76f044000fb6accc90382dc3bd360
+ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
+ms.openlocfilehash: 1763ba9ebf95c37afbbb219244010f0d6e7cfee4
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -77,7 +84,8 @@ Authorization: Bearer <your access token>
     "trialPeriod": "FifteenDays",
     "marketSpecificPricings": {},
     "sales": [],
-    "priceId": "Tier2"
+    "priceId": "Tier2",
+    "isAdvancedPricingModel": "true"
   },
   "visibility": "Public",
   "targetPublishMode": "Manual",
@@ -189,9 +197,4 @@ Authorization: Bearer <your access token>
 * [アプリの申請の更新](update-an-app-submission.md)
 * [アプリの申請の削除](delete-an-app-submission.md)
 * [アプリの申請の状態の取得](get-status-for-an-app-submission.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

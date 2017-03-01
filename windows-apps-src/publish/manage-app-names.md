@@ -3,18 +3,25 @@ author: jnHs
 Description: "アプリについて予約したすべての名前の表示、(他言語用の、またはアプリ名を変更するための) 追加の名前の予約、不要になった予約済みの名前の削除を行います。"
 title: "アプリ名の管理"
 ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 48952b5d4f2565d06ec79475f88fbabf93fd0f70
-ms.openlocfilehash: e5616be7c3f1b767e4a73af3c6fbc168333090cc
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5b34723eb6d336eeacb7437a926cae7f1d3ca871
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アプリ名の管理
+# <a name="manage-app-names"></a>アプリ名の管理
 
 
 アプリについて予約したすべての名前の表示、(他言語用の、またはアプリ名を変更するための) 追加の名前の予約、不要になった名前の削除を行うことができます。 これを行うには、Windows デベロッパー センター ダッシュボードで、目的のアプリの **[アプリ管理]** セクションの **[アプリ名の管理]** ページに進みます。
 
-## アプリの追加の名前の予約
+## <a name="reserve-additional-names-for-your-app"></a>アプリの追加の名前の予約
 
 同じアプリに使用する複数のアプリ名を予約できます。 これは、複数の言語でアプリを提供している場合、さまざまな言語の異なる名前を使用する場合に特に役立ちます。 また、これを使って、まだ公開していないアプリの名前を変更することもできます。
 
@@ -24,7 +31,7 @@ ms.openlocfilehash: e5616be7c3f1b767e4a73af3c6fbc168333090cc
 
 必要に応じて、ここで引き続き追加のアプリ名を予約できます。
 
-## アプリ名の削除
+## <a name="delete-app-names"></a>アプリ名の削除
 
 以前に予約した名前を使用しなくなった場合は、ここで削除することによって予約を解除できます。 この操作によって名前はすぐに他の開発者が予約して使うことができるようになるため、操作を行う前に確認してください。
 
@@ -32,7 +39,7 @@ ms.openlocfilehash: e5616be7c3f1b767e4a73af3c6fbc168333090cc
 
 アプリには、少なくとも 1 つの予約済みの名前が必要です。 ダッシュボードからアプリを完全に削除する (そのアプリについて予約したすべての名前も解除する) には、アプリの **[概要]** ページから **[このアプリを削除する]** をクリックします。
 
-## 公開済みアプリの名前の変更
+## <a name="rename-an-app-that-has-already-been-published"></a>公開済みアプリの名前の変更
 
 既に Windows ストアで公開されているアプリの名前を変更する場合は、(前に説明した手順に従って) アプリの新しい名前を予約し、アプリの新しい申請を作成することによってアプリ名を変更できます。 ストアでアプリを新しい名前で表示するには、新しい名前を含めるようにパッケージを更新する必要があります。 アプリ マニフェストの [**Package/Properties/DisplayName**](https://msdn.microsoft.com/library/windows/apps/dn423240) 要素で新しい名前を使い、アプリの名前を含むすべてのグラフィックスとテキストを更新します。 また、アプリの説明も確認し、説明の中でアプリ名が使われている場合は名前を変更する必要があります。
 
@@ -44,10 +51,5 @@ ms.openlocfilehash: e5616be7c3f1b767e4a73af3c6fbc168333090cc
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

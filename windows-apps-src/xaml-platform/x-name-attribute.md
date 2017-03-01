@@ -3,31 +3,38 @@ author: jwmsft
 description: "コード ビハインドまたは一般的なコードからインスタンス化されたオブジェクトにアクセスするために、オブジェクト要素を一意に識別します。"
 title: "xName 属性"
 ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: ebda34ce4d9483ea72dec3bf620de41c98d7a9aa
-ms.openlocfilehash: 1a70bffd6e6990ece4565b919846503b95ae8f61
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a80a5cdeae5adc2af59072400aa42428eac28431
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# x:Name 属性
+# <a name="xname-attribute"></a>x:Name 属性
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 コード ビハインドまたは一般的なコードからインスタンス化されたオブジェクトにアクセスするために、オブジェクト要素を一意に識別します。 基になるプログラミング モデルに適用後の **x:Name** は、コンストラクターによって返されるオブジェクト参照を保持する変数と等価であると見なすことができます。
 
-## XAML 属性の使用方法
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法
 
 ``` syntax
 <object x:Name="XAMLNameValue".../>
 ```
 
-## XAML 値
+## <a name="xaml-values"></a>XAML 値
 
 | 用語 | 説明 |
 |------|-------------|
 | XAMLNameValue | XamlName の文法の制限に準拠する文字列。 |
 
-##  XamlName の文法
+##  <a name="xamlname-grammar"></a>XamlName の文法
 
 XAML 実装でキーとして使われる文字列の規範となる文法を次に示します。
 
@@ -44,7 +51,7 @@ CombiningCharacter::= none
 -   Unicode 文字範囲はサポートされていません。
 -   名前の先頭を数字にすることはできません。 一部のツールの実装では、ユーザーが数字を先頭文字として指定した場合、文字列の先頭にアンダースコア (\_) 文字が付加されます。または、ツールによって、数字が含まれる他の値に基づいて **x:Name** 値が自動生成されます。
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 指定した **x:Name** は、XAML が処理されるときに基になるコードで生成されるフィールドの名前となり、そのフィールドにオブジェクトへの参照が保持されます。 このフィールドの作成は、MSBuild ターゲットの手順で実行されます。この手順で、XAML ファイルの部分クラスとそのコード ビハインドも加えられます。 この動作は、必ずしも XAML 言語で指定されているわけではなく、XAML のユニバーサル Windows プラットフォーム (UWP) のプログラミング モデルやアプリケーション モデルで **x:Name** を使うために適用されている特別な実装です。
 
@@ -56,7 +63,7 @@ CombiningCharacter::= none
 
 **注:** 特に C++/CX アプリの場合、**x:Name** 参照のバッキング フィールドが、XAML ファイルまたはページのルート要素に対して作成されません。 C++ のコード ビハインドからルート オブジェクトを参照する必要がある場合は、他の API またはツリー走査を使ってください。 たとえば、既知の名前付き子要素に対して [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出した後、[**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) を呼び出します。
 
-### x:Name などの Name プロパティ
+### <a name="xname-and-other-name-properties"></a>x:Name などの Name プロパティ
 
 UWP XAML で使われる一部の型にも、**Name** という名前のプロパティがあります。 [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735)、[**TextElement.Name**](https://msdn.microsoft.com/library/windows/apps/hh702125) などです。
 
@@ -64,13 +71,8 @@ UWP XAML で使われる一部の型にも、**Name** という名前のプロ�
 
 **注**  [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) は通常、**x:Name** で設定された値を変更するときには使いませんが、この原則の例外となるシナリオもあります。 一般的なシナリオでは、XAML 名前スコープの作成と定義は XAML プロセッサの操作です。 **FrameworkElement.Name** を実行時に変更すると、XAML 名前スコープとプライベート フィールドの名前付けの調整の整合性が損なわれ、コード ビハインドで追跡するのが難しくなる可能性があります。
 
-### x:Name と x:Key
+### <a name="xname-and-xkey"></a>x:Name と x:Key
 
 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 内の要素に属性として **x:Name** を適用すると、[x:Key 属性](x-key-attribute.md)の代わりとしての役割を果たします (**ResourceDictionary** 内のどの要素にも x:Key または x:Name 属性があるというのが規則です)。これは、[ストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/mt187354)によく見られます。 詳しくは、「[ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)」の各セクションをご覧ください。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

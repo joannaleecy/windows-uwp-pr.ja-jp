@@ -2,9 +2,17 @@
 author: jnHs
 Description: "支払の送金にかかる推定時間、支払しきい値、および支払を受けることができる Microsoft マーケットプレースは、お住まいの国/地域および受取りアカウントの種類によって異なる可能性があります。"
 title: "支払しきい値、方法、期間"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 translationtype: Human Translation
-ms.sourcegitcommit: d5ec64bbd1e8b10c17ff5c43d89e6652eadb2367
-ms.openlocfilehash: 4fd7a23f6d6c880e490f93dba248b6c1e43c7053
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 7da8727d3f901cfbab7c68d0b7f7362438d3fc65
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -24,7 +32,7 @@ ms.openlocfilehash: 4fd7a23f6d6c880e490f93dba248b6c1e43c7053
 
 | 支払方法 | 受取りアカウントに到着するまでの日数 |
 |--------------------|--------------------------------------------|
-| PayPal | 1 営業日 | 
+| PayPal | 1 営業日 |    
 | ACH/SEPA |2 ～ 3 営業日 |
 | 電信送金 | 7 ～ 10 営業日 |
 
@@ -4161,9 +4169,4 @@ ms.openlocfilehash: 4fd7a23f6d6c880e490f93dba248b6c1e43c7053
     <td>なし</td>
   </tr>
 </table>
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

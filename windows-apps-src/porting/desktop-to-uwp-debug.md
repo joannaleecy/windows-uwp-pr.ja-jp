@@ -2,14 +2,22 @@
 author: awkoren
 Description: "Desktop to UWP Bridge を使用して Windows デスクトップ アプリケーション (Win32、WPF、および Windows フォーム) から変換したユニバーサル Windows プラットフォーム (UWP) アプリを展開してデバッグします。"
 Search.Product: eADQiWindows 10XVcnh
-title: "Desktop Bridge で変換されたアプリのデバッグ"
+title: "デスクトップ ブリッジで変換されたアプリのデバッグ"
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 translationtype: Human Translation
-ms.sourcegitcommit: dba00371b29b3179a6dc3bdd96a092437331e61a
-ms.openlocfilehash: 537ac8e83d5f54bf83ec0e05b71be354651000f2
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 9660d14a1ca28929a213d4ed5a59cdcda73ccc39
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# <a name="debug-apps-converted-with-the-desktop-bridge"></a>Desktop Bridge で変換されたアプリのデバッグ
+# <a name="debug-apps-converted-with-the-desktop-bridge"></a>デスクトップ ブリッジで変換されたアプリのデバッグ
 
 このトピックには、Desktop to UWP Bridge による変換後のアプリの正常なデバッグに役立つ情報が含まれています。 変換済みのアプリをデバッグするには、いくつかのオプションがあります。
 
@@ -53,7 +61,7 @@ Visual Studio では、新しいパッケージ プロジェクトがサポー�
 
     PackageLayout に、上で説明した、コンバーターによって作られた AppX のルートの場所を設定します。 次に、実行するタイルを選択します。
 
-8.  AppXFileList.xml を開いて編集します。 このファイルでは、Win32 のデバッグ用ビルドの出力を、コンバーターでビルドされる AppX レイアウトにコピーする方法を定義します。 既定では、このファイルに、サンプルのタグとコメントが設定されたプレース ホルダーが含まれています。
+8.    AppXFileList.xml を開いて編集します。 このファイルでは、Win32 のデバッグ用ビルドの出力を、コンバーターでビルドされる AppX レイアウトにコピーする方法を定義します。 既定では、このファイルに、サンプルのタグとコメントが設定されたプレース ホルダーが含まれています。
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -118,9 +126,9 @@ Visual Studio では、新しいパッケージ プロジェクトがサポー�
 
     ![alt](images/desktop-to-uwp/debug-5.png)
 
-10. それでは最後に、Win32 コードにブレークポイントを設定して、F5 キーを押してデバッガーを起動しましょう。 Win32 アプリケーションで行った更新が AppX パッケージにコピーされ、Visual Studio 内から直接デバッグできるようになります。
+10.    それでは最後に、Win32 コードにブレークポイントを設定して、F5 キーを押してデバッガーを起動しましょう。 Win32 アプリケーションで行った更新が AppX パッケージにコピーされ、Visual Studio 内から直接デバッグできるようになります。
 
-11. アプリケーションを更新する場合は、MakeAppX を使ってアプリをもう一度パッケージ化する必要があります。 詳細については、「[アプリ パッケージ ツール (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)」をご覧ください。 
+11.    アプリケーションを更新する場合は、MakeAppX を使ってアプリをもう一度パッケージ化する必要があります。 詳細については、「[アプリ パッケージ ツール (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)」をご覧ください。 
 
 複数のビルド構成がある場合 (たとえばリリース用とデバッグ用)、次を AppXFileList.xml ファイルに追加して、Win32 ビルドをさまざまな場所からコピーできます。
 
@@ -134,7 +142,7 @@ Visual Studio では、新しいパッケージ プロジェクトがサポー�
 
 また、UWP 用アプリケーションは更新するが Win32 用にはそのままビルドする場合は、特定のコード パスを有効にする条件付きコンパイルを使うこともできます。 
 
-1.  次の例では、コードは DesktopUWP 用のときにのみコンパイルされ、WinRT API を使ってタイルに表示されます。 
+1.    次の例では、コードは DesktopUWP 用のときにのみコンパイルされ、WinRT API を使ってタイルに表示されます。 
 
     ```C#
     [Conditional("DesktopUWP")]
@@ -148,17 +156,17 @@ Visual Studio では、新しいパッケージ プロジェクトがサポー�
     }
     ```
 
-2.  Configuration Manager を使用して、新しいビルド構成を追加できます。
+2.    Configuration Manager を使用して、新しいビルド構成を追加できます。
 
     ![alt](images/desktop-to-uwp/debug-6.png)
 
     ![alt](images/desktop-to-uwp/debug-7.png)
 
-3.  次に、プロジェクト プロパティに、条件付きコンパイル シンボルのサポートを追加します。
+3.    次に、プロジェクト プロパティに、条件付きコンパイル シンボルのサポートを追加します。
 
     ![alt](images/desktop-to-uwp/debug-8.png)
 
-4.  追加した UWP API をターゲットとしてビルドする場合には、ビルド ターゲットを DesktopUWP に切り替えられるようになりました。
+4.    追加した UWP API をターゲットとしてビルドする場合には、ビルド ターゲットを DesktopUWP に切り替えられるようになりました。
 
 ## <a name="plmdebug"></a>PLMDebug 
 
@@ -174,9 +182,4 @@ PLMDebug は Windows SDK に含まれています。 詳しくは、「[**PLMDeb
 Invoke-CommandInDesktopPackage [-PackageFamilyName] <string> [-AppId] <string> [-Command] <string> [[-Args]
     <string>]  [<CommonParameters>]
 ```
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

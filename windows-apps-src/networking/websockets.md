@@ -3,15 +3,22 @@ author: DelfCo
 description: "WebSocket は、クライアントとサーバー間の高速で安全な双方向通信を、HTTP(S) を使った Web 経由で実現するメカニズムを提供します。"
 title: WebSocket
 ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ff2429e1e9ea56c414978c126497551b1e1864b8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 203face64ddb925601d23274c4e9cf9ab6d7c6f8
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# WebSocket
+# <a name="websockets"></a>WebSocket
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 **重要な API**
 
@@ -36,7 +43,7 @@ WebSocket は、クライアントとサーバー間の高速で安全な双方�
 
 WebSocket 接続を暗号化するには、たとえば `wss://www.contoso.com/mywebservice` といった wss: URI スキームを使います。
 
-## MessageWebSocket を使う
+## <a name="using-messagewebsocket"></a>MessageWebSocket を使う
 
 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) により、分割されたメッセージを何回かに分けて読み取ることができます。 **MessageWebSocket** は、メッセージがそれほど大きくないシナリオでよく使われます。 UTF-8 とバイナリ ファイルの両方がサポートされています。
 
@@ -114,7 +121,7 @@ WebSocket 接続を暗号化するには、たとえば `wss://www.contoso.com/m
 
 WebSocket 接続を初期化した後、コードは、データを適切に送受信するために次のアクティビティを実行する必要があります。
 
-### MessageWebSocket.MessageReceived イベント用のコールバックを実装する
+### <a name="implement-a-callback-for-the-messagewebsocketmessagereceived-event"></a>MessageWebSocket.MessageReceived イベント用のコールバックを実装する
 
 接続を確立して WebSocket でデータを送信する前に、アプリは、データが受信されたときに通知を受け取るためのイベント コールバックを登録する必要があります。 [**MessageWebSocket.MessageReceived**](https://msdn.microsoft.com/library/windows/apps/br241358) イベントが発生すると、登録したコールバックが呼び出され、[**MessageWebSocketMessageReceivedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br226852) からデータを受け取ります。 次の例は、送信されるメッセージが UTF-8 形式であるという前提で記述されています。
 
@@ -145,7 +152,7 @@ WebSocket 接続を初期化した後、コードは、データを適切に送�
 >}
 >```
 
-###  MessageWebSocket.Closed イベント用のコールバックを実装する
+###  <a name="implement-a-callback-for-the-messagewebsocketclosed-event"></a>MessageWebSocket.Closed イベント用のコールバックを実装する
 
 接続を確立して WebSocket でデータを送信する前に、アプリは、WebSocket サーバーによって WebSocket が閉じられたときに通知を受け取るためのイベント コールバックを登録する必要があります。 [**MessageWebSocket.Closed**](https://msdn.microsoft.com/library/windows/apps/hh701364) イベントが発生すると、登録したコールバックが呼び出され、接続が WebSocket サーバーによって閉じられたことが伝えられます。
 
@@ -172,7 +179,7 @@ WebSocket 接続を初期化した後、コードは、データを適切に送�
 >}
 >```
 
-###  WebSocket でメッセージを送信する
+###  <a name="send-a-message-on-a-websocket"></a>WebSocket でメッセージを送信する
 
 接続が確立されたら、WebSocket クライアントはサーバーにデータを送信できます。 [**DataWriter.StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) メソッドは、符号なし整数にマッピングされるパラメーターを返します。 これにより、メッセージを送信するタスクの定義方法と、接続を行うタスクの定義方法とは異なるものになります。
 
@@ -224,7 +231,7 @@ WebSocket 接続を初期化した後、コードは、データを適切に送�
 >}
 >```
 
-## WebSocket での高度なコントロールの使用
+## <a name="using-advanced-controls-with-websockets"></a>WebSocket での高度なコントロールの使用
 
 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) と [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) では、高度なコントロールの使い方に関して同じモデルが採用されています。 上記の主要なクラスには、それぞれに高度なコントロールにアクセスするための関連クラスがあります。
 
@@ -241,7 +248,7 @@ WebSocket 接続を初期化した後、コードは、データを適切に送�
 -   [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) における高度なコントロールでは、アプリは常に、接続操作を発行する前にプロパティを設定しておく必要があります。 この要件を満たすため、コントロール プロパティは、**StreamWebSocket** オブジェクトを作成したらすぐに設定することをお勧めします。 [**StreamWebSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/br226933) メソッドが呼び出された後は、コントロール プロパティを設定しないでください。
 -   メッセージ型以外の [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) に関する高度なコントロールでは常に、接続操作を発行する前にプロパティを設定しておく必要があります。 **MessageWebSocket** の作成したらすぐにすべてのコントロール プロパティを設定することをお勧めします。 メッセージ型以外については、[**MessageWebSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/br226859) メソッドが呼び出された後は、コントロール プロパティを変更しないでください。
 
-## WebSocket の情報クラス
+## <a name="websocket-information-classes"></a>WebSocket の情報クラス
 
 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) と [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) には、WebSocket インスタンスについての追加情報を提供するクラスがそれぞれあります。
 
@@ -251,13 +258,13 @@ WebSocket 接続を初期化した後、コードは、データを適切に送�
 
 どちらの情報クラスについても、すべてのプロパティは読み取り専用であり、また WebSocket オブジェクトの有効期間中はいつでも現在の情報を取得できます。
 
-## ネットワーク例外を処理する
+## <a name="handling-network-exceptions"></a>ネットワーク例外を処理する
 
 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) または [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 操作で発生したエラーは **HRESULT** 値として返されます。 ネットワーク エラーを WebSocket 操作から [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 列挙値に変換するには、[**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) メソッドを使います。 **WebErrorStatus** 列挙値のほとんどは、ネイティブ HTTP クライアント操作から返されるエラーに対応しています。 アプリは特定の **WebErrorStatus** 列挙値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更することができます。
 
 パラメーター検証エラーの場合は、例外の **HRESULT** を使って、その例外の原因となったエラーの詳細情報を確認することもできます。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 パラメーター検証エラーではほとんどの場合、返される **HRESULT** は **E\_INVALIDARG** です。
 
-## WebSocket の操作に対してタイムアウトを設定する
+## <a name="setting-timeouts-on-websocket-operations"></a>WebSocket の操作に対してタイムアウトを設定する
 
 MessageWebSocket クラスと StreamWebSocket クラスは、内部システム サービスを使って WebSocket クライアントに要求を送信し、サーバーからの応答を受信します。 WebSocket の接続操作で既定されているタイムアウト値は 60 秒です。 WebSocket をサポートする HTTP サーバーが、ネットワーク停止によって一時的にダウンするかブロックされているために WebSocket の接続要求に応答できない場合は、内部システム サービスは 60 秒待った後でエラーを返し、それによって WebSocket の ConnectAsync メソッドに例外がスローされます。 URI 内の HTTP サーバー名に対する名前クエリで複数の IP アドレスが返されると、内部システム サービスは最大で 5 つのサイトの IP アドレスに接続を試みますが、その場合は各アドレスについて既定のタイムアウト時間である 60 秒待ちます。 すなわち、WebSocket 接続要求を行うアプリが複数の IP アドレスに接続を試みる場合は、エラーが返されて例外がスローされまで、数分間の待機が発生する可能性があります。 この動作は、ユーザーからはまるでアプリが停止しているかのように見えることがあります。 WebSocket 接続確立後の送受信操作における既定のタイムアウト値は 30 秒です。
 
@@ -341,10 +348,5 @@ MessageWebSocket クラスと StreamWebSocket クラスは、内部システム 
         });
     }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

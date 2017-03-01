@@ -3,18 +3,25 @@ author: jnHs
 Description: "アプリが人の目に留まるようにしましょう。 アプリの品質を高めることのほかにも、Windows ストアやその他のサイトで注目を集めるためにできることがあります。"
 title: "アプリの販売促進を容易にする"
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: aa35a1e46c5fea9bb64602af3842735f1914b039
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 07cca18b97a50fe8ced8b76094d358b948d18535
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アプリの販売促進を容易にする
+# <a name="make-your-app-easier-to-promote"></a>アプリの販売促進を容易にする
 
 
 アプリが人の目に留まるようにしましょう。 アプリの品質を高めることのほかにも、Windows ストアやその他のサイトで注目を集めるためにできることがあります。
 
-## Windows ストアのおすすめアプリ要件
+## <a name="windows-store-requirements-for-featured-apps"></a>Windows ストアのおすすめアプリ要件
 
 
 Windows ストアでは、さまざまなアプリをカテゴリ別またはテーマ別にまとめて表示しています。 優れたアプリが多すぎて、すべてをおすすめアプリにすることはできません。おすすめアプリに選ばれることを保証することもできません。 ただし、アプリがストア内でプロモーション用としての検討対象になるように、できることがいくつかあります。
@@ -45,10 +52,5 @@ Windows ストアでは、さまざまなアプリをカテゴリ別またはテ
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

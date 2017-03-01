@@ -1,13 +1,20 @@
 ---
 author: Xansky
-Description: "キーボード ナビゲーション、色とコントラストの設定、サポート支援技術を備えたアクセシビリティ対応 Windows 10 UWP アプリの開発について説明します。"
+Description: "キーボード ナビゲーション、色とコントラストの設定、支援技術を備えたアクセシビリティ対応 Windows 10 UWP アプリの開発について説明します。"
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
 title: "包括性を備えた Windows 10 アプリの開発"
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 91f6a9d50b66064da7023599adbb058656fb1007
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 47c28e0629150ccbdf532afc645fe973c3dc8804
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -37,7 +44,7 @@ ms.openlocfilehash: 91f6a9d50b66064da7023599adbb058656fb1007
 * UI にコントロールがどのようにレイアウトされ、まとめられているか?
 * 重要なコントロール グループが存在するか?
     * 存在する場合は、それらのグループに別のレベルのグループが含まれているか?
-*   コントロール間を移動する場合、Tab キーまたは特別なナビゲーション (矢印キー)、あるいはその両方を使用する必要があるか?
+*     コントロール間を移動する場合、Tab キーまたは特別なナビゲーション (矢印キー)、あるいはその両方を使用する必要があるか?
 
 目的は、ユーザーがどのように UI がレイアウトされているかを理解し、操作できるコントロールがどれかを識別できるように支援することです。 ユーザーがナビゲーションを 1 周するのに押す必要がある Tab キーの回数が多すぎる場合、関連するコントロールを 1 つにまとめられないか検討します。 ハイブリッド コントロールなど、関連するいくつかのコントロールは、調査段階の早い段階で対応する必要がある場合があります。 製品の開発を開始した後でキーボード ナビゲーションをやり直すことは難しいため、早い段階で慎重に計画するようにします。  
 
@@ -83,9 +90,4 @@ UWP アプリでは、システム カラーを上書きしない限り、既定
 * [アクセシビリティ ソフトウェアのエンジニアリング](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft アクセシビリティ開発者ハブ](https://msdn.microsoft.com/enable)
 * [アクセシビリティ](accessibility.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

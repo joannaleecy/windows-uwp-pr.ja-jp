@@ -3,20 +3,27 @@ author: jnHs
 Description: "Windows ストアではバージョン番号に関する特定の規則が適用され、別の OS バージョンでは機能が多少異なります。"
 title: "パッケージ バージョンの番号付け"
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: ca273ab6d881b350c2f5a48eafee38c74ac0f36a
-ms.openlocfilehash: 2668152ba471986e00831bdcf46e5a2feba54dcd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dfa8191be375998021f233711ae433f8a5d4e44b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# パッケージ バージョンの番号付け
+# <a name="package-version-numbering"></a>パッケージ バージョンの番号付け
 
 
 提供する各パッケージには、バージョン番号がある必要があります (アプリ マニフェストの **Package/Identity** 要素の **Version** 属性の値として提供されます)。 Windows ストアではバージョン番号に関する特定の規則が適用され、別の OS バージョンでは機能が多少異なります。
 
 > **注:** このトピックは "パッケージ" について説明していますが、特に記載のない限り、.appx ファイルと .appxbundle ファイルのバージョン番号にも同じ規則が適用されます。
 
-## Windows 10 パッケージのバージョン番号付け
+## <a name="version-numbering-for-windows-10-packages"></a>Windows 10 パッケージのバージョン番号付け
 
 
 Windows 10 パッケージのバージョン番号は、同じアプリについて公開中の Windows 8、Windows 8.1、Windows Phone 8.1 のパッケージ (または前に公開したこれらの OS バージョンのパッケージ) のバージョン番号より常に大きい必要があります  (詳しくは、「[以前に公開したアプリに Windows 10 用のパッケージを追加する](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app)」をご覧ください)。
@@ -33,7 +40,7 @@ Windows 10 パッケージのバージョン番号は、同じアプリについ
 
 次の例は、バージョン番号を管理して複数の申請でユーザーに目的のパッケージを提供する方法について説明します。
 
-### 例: 複数の申請で 1 つのパッケージに移行する
+### <a name="example-moving-to-a-single-package-over-multiple-submissions"></a>例: 複数の申請で 1 つのパッケージに移行する
 
 Windows 10 では、すべての場所で実行される単一のコードベースを記述することができます。 これにより、新しいクロスプラットフォーム プロジェクトの開始がはるかに簡単になります。 ただし、さまざまな理由から、既存のコードベースを結合してすぐに 1 つのプロジェクトを作成したくない場合があります。
 
@@ -48,7 +55,7 @@ Windows 10 では、すべての場所で実行される単一のコードベー
 
 > **注:** どの場合でも、ユーザーのデバイスでは条件を満たす最も大きいバージョン番号のパッケージを受け取ります。 たとえば、上記の 3 番目の申請では、OS バージョン 10.0.10250.0 以上で v1.1.5.0 を取得できる場合でも、すべてのデスクトップ デバイスが v1.1.10.0 を取得します。 1.1.10.0 は利用可能な最も大きいバージョン番号であるため、これが取得するパッケージになります。
 
-### 新規の取得のためにバージョン番号を使用して以前配布したパッケージにロールバックする
+### <a name="using-version-numbering-to-roll-back-to-a-previously-shipped-package-for-new-acquisitions"></a>新規の取得のためにバージョン番号を使用して以前配布したパッケージにロールバックする
 
 以前の Windows 10 パッケージ ファイルのコピーを維持する場合は、リリースに関する問題が見つかった場合にストア内のアプリのパッケージを以前の Windows 10 パッケージにロールバックすることができます。 これは、問題を修正する間のユーザーの中断を限定するための一時的な方法です。
 
@@ -56,7 +63,7 @@ Windows 10 では、すべての場所で実行される単一のコードベー
 
 問題があるパッケージを既に受信したユーザーの問題を解決するためには、できるだけ早く問題のあるパッケージよりも大きいバージョン番号を持つ新しい Windows 10 パッケージを申請することです。 その申請の認定プロセスが完了すると、それがより大きいバージョン番号になるため、すべてのユーザーが新しいパッケージに更新されます。
 
-## Windows 8.1 (以前) と Windows Phone 8.1 パッケージのバージョン番号付け
+## <a name="version-numbering-for-windows-81-and-earlier-and-windows-phone-81-packages"></a>Windows 8.1 (以前) と Windows Phone 8.1 パッケージのバージョン番号付け
 
 Windows Phone 8.1 を対象とする .appx パッケージでは、新しい申請のパッケージのバージョン番号は最後の申請 (または、以前の申請) に含まれるパッケージの番号より常に大きい必要があります。
 
@@ -79,9 +86,4 @@ Windows 8 と Windows 8.1 を対象とする .appx パッケージでは、ア�
 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | x86, v1.0.0.2 <br> x64, v1.0.0.2 <br> ARM, v1.0.0.2 | 対応するアーキテクチャ用の v1.0.0.2  | 特定のアーキテクチャ用の v1.0.0.1 のアプリを実行している場合は v1.0.0.1 から v1.0.0.2 に更新。 |
  
 > **注:** .appx パッケージとは異なり、.xap パッケージのバージョン番号は、特定の顧客にどのパッケージを提供するかを決める場合に考慮されません。 特定の .xap パッケージから新しいパッケージへと顧客を更新するには、新しい提出で以前の .xap を削除してください。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 
