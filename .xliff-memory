@@ -33919,6 +33919,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b2168242d5464dbf41f12c777aa5672753a4ae6e.cc82d538fa0e95efb5ffef2c45a35927532c612b.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "hub\\index.md.e8de5f2de7c0da3ce44364ec715e1df513ab90b3.HT": {
+      "SourceFilename": "hub\\index.md",
+      "XliffHash": "e8de5f2de7c0da3ce44364ec715e1df513ab90b3",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\491d5a849d2073cebd142d7e1d3470cf6a2e3464.a9ae410f2334befda409afdd8d70f79485e164bc.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
