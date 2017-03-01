@@ -1016,6 +1016,9 @@
   "495e1d395ff332e37ae4ceeac956834eb930d7f8": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-choosing-a-notification-delivery-method.md"
   ],
+  "27d3de280201d92ee98f6e8a17afd85f76acd7d5": [
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-create-adaptive-tiles.md"
+  ],
   "9861d2c1d92c167249d3cf127ee470d1e2d535f1": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-create-adaptive-tiles.md"
   ],
@@ -1996,6 +1999,9 @@
   ],
   "738be6a129158fbd6058ff7407aca0b8ece7ea3e": [
     "windows-apps-src\\gaming\\developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md"
+  ],
+  "8d260d4cd08c50a289749122f18693489f6d3193": [
+    "windows-apps-src\\gaming\\directx-and-xaml-interop.md"
   ],
   "6934ac8bfbff487e57d0097cb129faf853a3eb9f": [
     "windows-apps-src\\gaming\\directx-and-xaml-interop.md"
@@ -6464,6 +6470,9 @@
   "176a66a571e152a3c6eed97692e5e0d1e1a9d113": [
     "windows-apps-src\\porting\\desktop-to-uwp-extensions.md"
   ],
+  "ca65ef5a5c6b07f92a9162d20eff2607fb4df595": [
+    "windows-apps-src\\porting\\hwa-access-features.md"
+  ],
   "3bfa34b43071d93425419a446d7f701529b9feca": [
     "windows-apps-src\\porting\\hwa-access-features.md"
   ],
@@ -6472,6 +6481,9 @@
   ],
   "555f363a091c6394d7656bd0295b84e730078d23": [
     "windows-apps-src\\porting\\hwa-access-features.md"
+  ],
+  "b2168242d5464dbf41f12c777aa5672753a4ae6e": [
+    "windows-apps-src\\porting\\hwa-chrome-conversion.md"
   ],
   "260ba1d56f6e313b6447f0c68e685e76a30b3056": [
     "windows-apps-src\\porting\\hwa-chrome-conversion.md"
@@ -9608,6 +9620,9 @@
   "59a1ff149e51dc7d057d01145c0aeaedfa5468d6": [
     "windows-apps-src\\porting\\desktop-to-uwp-packaging-dot-net.md"
   ],
+  "fe1eeb4e67917633997bdc4fbeabf87be497c3ad": [
+    "windows-apps-src\\monetize\\manage-ad-campaigns.md"
+  ],
   "07f0a9a417790091e6ec522f720db7fe85ef5520": [
     "windows-apps-src\\monetize\\manage-ad-campaigns.md"
   ],
@@ -9622,6 +9637,9 @@
   ],
   "922ef4582f90a7a997f5400cc3033496e3d136ca": [
     "windows-apps-src\\monetize\\manage-ad-campaigns.md"
+  ],
+  "d94ff7863de620beab2ef67c4a6e5c4a50cf273d": [
+    "windows-apps-src\\monetize\\manage-creatives-for-ad-campaigns.md"
   ],
   "329b930b8c5d94f422fcca3f4b1645c1d111565b": [
     "windows-apps-src\\monetize\\manage-creatives-for-ad-campaigns.md"
@@ -9641,6 +9659,9 @@
   "d655f161251705a4c53d572951978ae4da51ecab": [
     "windows-apps-src\\monetize\\manage-creatives-for-ad-campaigns.md"
   ],
+  "419dbc2ef8de66b0cb8cf51b483174f5c086a092": [
+    "windows-apps-src\\monetize\\manage-delivery-lines-for-ad-campaigns.md"
+  ],
   "9867d26cc0aca4f53a6b7b8d61736839a8636bbf": [
     "windows-apps-src\\monetize\\manage-delivery-lines-for-ad-campaigns.md"
   ],
@@ -9658,6 +9679,9 @@
   ],
   "d0d6aa1a1a4b48f14e538c1471e766da09c0aae2": [
     "windows-apps-src\\monetize\\manage-delivery-lines-for-ad-campaigns.md"
+  ],
+  "46b85638b93334a02636ec285f0818f949f2612b": [
+    "windows-apps-src\\monetize\\manage-targeting-profiles-for-ad-campaigns.md"
   ],
   "69b9f40507a6fe1810d93dd024c5295dc0e196c7": [
     "windows-apps-src\\monetize\\manage-targeting-profiles-for-ad-campaigns.md"

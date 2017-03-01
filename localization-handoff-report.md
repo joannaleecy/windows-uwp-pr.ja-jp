@@ -1,27 +1,26 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 9
+ Total Files | 8
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\monetize\create-an-app-submission.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/70507b297a0bfa4a9686481b8ee4019ef61db859?path=windows-apps-src%2Fmonetize%2Fcreate-an-app-submission.md&_a=contents) | HandedOffSuccess | [Details](#13b1b1cc83b6a8659bf38f5a97caf8b2f50a3ee04457)
- [windows-apps-src\monetize\get-an-app-submission.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/70507b297a0bfa4a9686481b8ee4019ef61db859?path=windows-apps-src%2Fmonetize%2Fget-an-app-submission.md&_a=contents) | HandedOffSuccess | [Details](#2ecdb66818c020dc3bc608fbd65a97d43b8688ab4490)
- [windows-apps-src\monetize\halt-the-package-rollout-for-a-flight-submission.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/70507b297a0bfa4a9686481b8ee4019ef61db859?path=windows-apps-src%2Fmonetize%2Fhalt-the-package-rollout-for-a-flight-submission.md&_a=contents) | HandedOffSuccess | [Details](#804e447f5b650a986580752fcba2a29014560e984512)
- [windows-apps-src\monetize\halt-the-package-rollout-for-an-app-submission.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/70507b297a0bfa4a9686481b8ee4019ef61db859?path=windows-apps-src%2Fmonetize%2Fhalt-the-package-rollout-for-an-app-submission.md&_a=contents) | HandedOffSuccess | [Details](#7bc86db250f27f0785bf505a15975bcf65cb5eff4513)
- [windows-apps-src\monetize\manage-app-submissions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/70507b297a0bfa4a9686481b8ee4019ef61db859?path=windows-apps-src%2Fmonetize%2Fmanage-app-submissions.md&_a=contents) | HandedOffSuccess | [Details](#f6f0342619f91190bf021842c3ac3b0c61964d254560)
- [windows-apps-src\monetize\manage-flight-submissions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/70507b297a0bfa4a9686481b8ee4019ef61db859?path=windows-apps-src%2Fmonetize%2Fmanage-flight-submissions.md&_a=contents) | HandedOffSuccess | [Details](#98240f3a1f40f020474c62537d6b0444fe10bb994563)
- [windows-apps-src\monetize\update-an-app-submission.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/70507b297a0bfa4a9686481b8ee4019ef61db859?path=windows-apps-src%2Fmonetize%2Fupdate-an-app-submission.md&_a=contents) | HandedOffSuccess | [Details](#a4b7816d0d6e47282864992044eea58eaaa05d1d4593)
- [windows-apps-src\packaging\packaging-uwp-apps.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/bce2b0c5f04cf4d3c77b37f465019ba8847674f1?path=windows-apps-src%2Fpackaging%2Fpackaging-uwp-apps.md&_a=contents) | HandedOffSuccess | [Details](#97796e1c45bfa01fbb2d47723f77113fea3f286a4651)
- [windows-apps-src\publish\monetize-with-ads.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/20f27f6ab3438df1862756ffc67feb36b66fc3f4?path=windows-apps-src%2Fpublish%2Fmonetize-with-ads.md&_a=contents) | HandedOffSuccess | [Details](#71e98d5b3fb2db56f78461fbcdbb8f3c774e19a74869)
+ [windows-apps-src\controls-and-patterns\tiles-and-notifications-create-adaptive-tiles.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/5bf09b1d3a339e633417225d87fdd5aa1d028897?path=windows-apps-src%2Fcontrols-and-patterns%2Ftiles-and-notifications-create-adaptive-tiles.md&_a=contents) | HandedOffSuccess | [Details](#27d3de280201d92ee98f6e8a17afd85f76acd7d52268)
+ [windows-apps-src\gaming\directx-and-xaml-interop.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/08041d01b3b266b67a4408218ecd5eee515495b9?path=windows-apps-src%2Fgaming%2Fdirectx-and-xaml-interop.md&_a=contents) | HandedOffSuccess | [Details](#8d260d4cd08c50a289749122f18693489f6d31932573)
+ [windows-apps-src\monetize\manage-ad-campaigns.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/f08e67a97c818c6f3d9622a83918125b62b5d050?path=windows-apps-src%2Fmonetize%2Fmanage-ad-campaigns.md&_a=contents) | HandedOffSuccess | [Details](#fe1eeb4e67917633997bdc4fbeabf87be497c3ad4557)
+ [windows-apps-src\monetize\manage-creatives-for-ad-campaigns.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/f08e67a97c818c6f3d9622a83918125b62b5d050?path=windows-apps-src%2Fmonetize%2Fmanage-creatives-for-ad-campaigns.md&_a=contents) | HandedOffSuccess | [Details](#d94ff7863de620beab2ef67c4a6e5c4a50cf273d4561)
+ [windows-apps-src\monetize\manage-delivery-lines-for-ad-campaigns.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/f08e67a97c818c6f3d9622a83918125b62b5d050?path=windows-apps-src%2Fmonetize%2Fmanage-delivery-lines-for-ad-campaigns.md&_a=contents) | HandedOffSuccess | [Details](#419dbc2ef8de66b0cb8cf51b483174f5c086a0924562)
+ [windows-apps-src\monetize\manage-targeting-profiles-for-ad-campaigns.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/f08e67a97c818c6f3d9622a83918125b62b5d050?path=windows-apps-src%2Fmonetize%2Fmanage-targeting-profiles-for-ad-campaigns.md&_a=contents) | HandedOffSuccess | [Details](#46b85638b93334a02636ec285f0818f949f2612b4565)
+ [windows-apps-src\porting\hwa-access-features.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/72835d2cdd25e3bee93894c8783f9e9e71067e15?path=windows-apps-src%2Fporting%2Fhwa-access-features.md&_a=contents) | HandedOffSuccess | [Details](#ca65ef5a5c6b07f92a9162d20eff2607fb4df5954676)
+ [windows-apps-src\porting\hwa-chrome-conversion.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/b9ccd4013a243e1a92bfedb3a3012f68203f9a9a?path=windows-apps-src%2Fporting%2Fhwa-chrome-conversion.md&_a=contents) | HandedOffSuccess | [Details](#b2168242d5464dbf41f12c777aa5672753a4ae6e4677)
 
 ## Item Details
-##### <a name='13b1b1cc83b6a8659bf38f5a97caf8b2f50a3ee04457'></a> Source: [windows-apps-src\monetize\create-an-app-submission.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/70507b297a0bfa4a9686481b8ee4019ef61db859?path=windows-apps-src%2Fmonetize%2Fcreate-an-app-submission.md&_a=contents)
+##### <a name='27d3de280201d92ee98f6e8a17afd85f76acd7d52268'></a> Source: [windows-apps-src\controls-and-patterns\tiles-and-notifications-create-adaptive-tiles.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/5bf09b1d3a339e633417225d87fdd5aa1d028897?path=windows-apps-src%2Fcontrols-and-patterns%2Ftiles-and-notifications-create-adaptive-tiles.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [create-an-app-submission.d6d0c3588ca5d2a377e551d71b2d30a9df87ec2a.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/62e34872cbe7182394ad78362153b3bf0db31e90?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fcreate-an-app-submission.d6d0c3588ca5d2a377e551d71b2d30a9df87ec2a.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-01 19:53:47
+* Handoff File: [tiles-and-notifications-create-adaptive-tiles.a3537ad1a37c0180318730d25d779ce32d83d8ae.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/78bda13a9a5cfb544711d0cd10450150033ec4f4?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Ftiles-and-notifications-create-adaptive-tiles.a3537ad1a37c0180318730d25d779ce32d83d8ae.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-03-01 21:50:17
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -29,18 +28,18 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\monetize\create-an-app-submission.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fmonetize%2Fcreate-an-app-submission.md&_a=contents)
-* Current Handback File: [create-an-app-submission.d6d0c3588ca5d2a377e551d71b2d30a9df87ec2a.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fcreate-an-app-submission.d6d0c3588ca5d2a377e551d71b2d30a9df87ec2a.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\controls-and-patterns\tiles-and-notifications-create-adaptive-tiles.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fcontrols-and-patterns%2Ftiles-and-notifications-create-adaptive-tiles.md&_a=contents)
+* Current Handback File: [tiles-and-notifications-create-adaptive-tiles.a3537ad1a37c0180318730d25d779ce32d83d8ae.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Ftiles-and-notifications-create-adaptive-tiles.a3537ad1a37c0180318730d25d779ce32d83d8ae.ja-jp.xlf&_a=contents)
 * Current Handback Datetime: 2017-03-01 13:53:50
-* Bilingual File: [create-an-app-submission.d6d0c3588ca5d2a377e551d71b2d30a9df87ec2a.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fcreate-an-app-submission.d6d0c3588ca5d2a377e551d71b2d30a9df87ec2a.ja-jp.xlf&_a=contents)
+* Bilingual File: [tiles-and-notifications-create-adaptive-tiles.a3537ad1a37c0180318730d25d779ce32d83d8ae.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Ftiles-and-notifications-create-adaptive-tiles.a3537ad1a37c0180318730d25d779ce32d83d8ae.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 
-##### <a name='2ecdb66818c020dc3bc608fbd65a97d43b8688ab4490'></a> Source: [windows-apps-src\monetize\get-an-app-submission.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/70507b297a0bfa4a9686481b8ee4019ef61db859?path=windows-apps-src%2Fmonetize%2Fget-an-app-submission.md&_a=contents)
+##### <a name='8d260d4cd08c50a289749122f18693489f6d31932573'></a> Source: [windows-apps-src\gaming\directx-and-xaml-interop.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/08041d01b3b266b67a4408218ecd5eee515495b9?path=windows-apps-src%2Fgaming%2Fdirectx-and-xaml-interop.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [get-an-app-submission.e4d89c99211d2c2eb6f962fed154ea5ebaecbc0e.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/62e34872cbe7182394ad78362153b3bf0db31e90?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fget-an-app-submission.e4d89c99211d2c2eb6f962fed154ea5ebaecbc0e.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-01 19:53:47
+* Handoff File: [directx-and-xaml-interop.b0eb8efed053e1dcc3f3ee7effb8a1d6f30b455e.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/78bda13a9a5cfb544711d0cd10450150033ec4f4?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fdirectx-and-xaml-interop.b0eb8efed053e1dcc3f3ee7effb8a1d6f30b455e.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-03-01 21:50:17
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -48,18 +47,18 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\monetize\get-an-app-submission.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fmonetize%2Fget-an-app-submission.md&_a=contents)
-* Current Handback File: [get-an-app-submission.e4d89c99211d2c2eb6f962fed154ea5ebaecbc0e.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fget-an-app-submission.e4d89c99211d2c2eb6f962fed154ea5ebaecbc0e.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\gaming\directx-and-xaml-interop.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fgaming%2Fdirectx-and-xaml-interop.md&_a=contents)
+* Current Handback File: [directx-and-xaml-interop.b0eb8efed053e1dcc3f3ee7effb8a1d6f30b455e.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fdirectx-and-xaml-interop.b0eb8efed053e1dcc3f3ee7effb8a1d6f30b455e.ja-jp.xlf&_a=contents)
 * Current Handback Datetime: 2017-03-01 13:53:49
-* Bilingual File: [get-an-app-submission.e4d89c99211d2c2eb6f962fed154ea5ebaecbc0e.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fget-an-app-submission.e4d89c99211d2c2eb6f962fed154ea5ebaecbc0e.ja-jp.xlf&_a=contents)
+* Bilingual File: [directx-and-xaml-interop.b0eb8efed053e1dcc3f3ee7effb8a1d6f30b455e.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fdirectx-and-xaml-interop.b0eb8efed053e1dcc3f3ee7effb8a1d6f30b455e.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 
-##### <a name='804e447f5b650a986580752fcba2a29014560e984512'></a> Source: [windows-apps-src\monetize\halt-the-package-rollout-for-a-flight-submission.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/70507b297a0bfa4a9686481b8ee4019ef61db859?path=windows-apps-src%2Fmonetize%2Fhalt-the-package-rollout-for-a-flight-submission.md&_a=contents)
+##### <a name='fe1eeb4e67917633997bdc4fbeabf87be497c3ad4557'></a> Source: [windows-apps-src\monetize\manage-ad-campaigns.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/f08e67a97c818c6f3d9622a83918125b62b5d050?path=windows-apps-src%2Fmonetize%2Fmanage-ad-campaigns.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [halt-the-package-rollout-for-a-flight-submission.254017613bb91efc8fe48ee89529d32968504b58.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/62e34872cbe7182394ad78362153b3bf0db31e90?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fhalt-the-package-rollout-for-a-flight-submission.254017613bb91efc8fe48ee89529d32968504b58.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-01 19:53:47
+* Handoff File: [manage-ad-campaigns.d9cbf8afd215929d26ea826c3851dbf0f3d72d9d.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/78bda13a9a5cfb544711d0cd10450150033ec4f4?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmanage-ad-campaigns.d9cbf8afd215929d26ea826c3851dbf0f3d72d9d.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-03-01 21:50:17
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -67,18 +66,18 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\monetize\halt-the-package-rollout-for-a-flight-submission.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fmonetize%2Fhalt-the-package-rollout-for-a-flight-submission.md&_a=contents)
-* Current Handback File: [halt-the-package-rollout-for-a-flight-submission.254017613bb91efc8fe48ee89529d32968504b58.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fhalt-the-package-rollout-for-a-flight-submission.254017613bb91efc8fe48ee89529d32968504b58.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\monetize\manage-ad-campaigns.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fmonetize%2Fmanage-ad-campaigns.md&_a=contents)
+* Current Handback File: [manage-ad-campaigns.d9cbf8afd215929d26ea826c3851dbf0f3d72d9d.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmanage-ad-campaigns.d9cbf8afd215929d26ea826c3851dbf0f3d72d9d.ja-jp.xlf&_a=contents)
 * Current Handback Datetime: 2017-03-01 13:53:49
-* Bilingual File: [halt-the-package-rollout-for-a-flight-submission.254017613bb91efc8fe48ee89529d32968504b58.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fhalt-the-package-rollout-for-a-flight-submission.254017613bb91efc8fe48ee89529d32968504b58.ja-jp.xlf&_a=contents)
+* Bilingual File: [manage-ad-campaigns.d9cbf8afd215929d26ea826c3851dbf0f3d72d9d.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmanage-ad-campaigns.d9cbf8afd215929d26ea826c3851dbf0f3d72d9d.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 
-##### <a name='7bc86db250f27f0785bf505a15975bcf65cb5eff4513'></a> Source: [windows-apps-src\monetize\halt-the-package-rollout-for-an-app-submission.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/70507b297a0bfa4a9686481b8ee4019ef61db859?path=windows-apps-src%2Fmonetize%2Fhalt-the-package-rollout-for-an-app-submission.md&_a=contents)
+##### <a name='d94ff7863de620beab2ef67c4a6e5c4a50cf273d4561'></a> Source: [windows-apps-src\monetize\manage-creatives-for-ad-campaigns.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/f08e67a97c818c6f3d9622a83918125b62b5d050?path=windows-apps-src%2Fmonetize%2Fmanage-creatives-for-ad-campaigns.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [halt-the-package-rollout-for-an-app-submission.861d0cf499f6c4723febeea5bbb95ad98f32fd16.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/62e34872cbe7182394ad78362153b3bf0db31e90?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fhalt-the-package-rollout-for-an-app-submission.861d0cf499f6c4723febeea5bbb95ad98f32fd16.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-01 19:53:47
+* Handoff File: [manage-creatives-for-ad-campaigns.e9f6f5270d6e77feecbcd0252d1ece4847eca7d3.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/78bda13a9a5cfb544711d0cd10450150033ec4f4?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmanage-creatives-for-ad-campaigns.e9f6f5270d6e77feecbcd0252d1ece4847eca7d3.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-03-01 21:50:17
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -86,18 +85,18 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\monetize\halt-the-package-rollout-for-an-app-submission.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fmonetize%2Fhalt-the-package-rollout-for-an-app-submission.md&_a=contents)
-* Current Handback File: [halt-the-package-rollout-for-an-app-submission.861d0cf499f6c4723febeea5bbb95ad98f32fd16.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fhalt-the-package-rollout-for-an-app-submission.861d0cf499f6c4723febeea5bbb95ad98f32fd16.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\monetize\manage-creatives-for-ad-campaigns.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fmonetize%2Fmanage-creatives-for-ad-campaigns.md&_a=contents)
+* Current Handback File: [manage-creatives-for-ad-campaigns.e9f6f5270d6e77feecbcd0252d1ece4847eca7d3.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmanage-creatives-for-ad-campaigns.e9f6f5270d6e77feecbcd0252d1ece4847eca7d3.ja-jp.xlf&_a=contents)
 * Current Handback Datetime: 2017-03-01 13:53:49
-* Bilingual File: [halt-the-package-rollout-for-an-app-submission.861d0cf499f6c4723febeea5bbb95ad98f32fd16.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fhalt-the-package-rollout-for-an-app-submission.861d0cf499f6c4723febeea5bbb95ad98f32fd16.ja-jp.xlf&_a=contents)
+* Bilingual File: [manage-creatives-for-ad-campaigns.e9f6f5270d6e77feecbcd0252d1ece4847eca7d3.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmanage-creatives-for-ad-campaigns.e9f6f5270d6e77feecbcd0252d1ece4847eca7d3.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 
-##### <a name='f6f0342619f91190bf021842c3ac3b0c61964d254560'></a> Source: [windows-apps-src\monetize\manage-app-submissions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/70507b297a0bfa4a9686481b8ee4019ef61db859?path=windows-apps-src%2Fmonetize%2Fmanage-app-submissions.md&_a=contents)
+##### <a name='419dbc2ef8de66b0cb8cf51b483174f5c086a0924562'></a> Source: [windows-apps-src\monetize\manage-delivery-lines-for-ad-campaigns.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/f08e67a97c818c6f3d9622a83918125b62b5d050?path=windows-apps-src%2Fmonetize%2Fmanage-delivery-lines-for-ad-campaigns.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [manage-app-submissions.289b450373e235be4b37005d83b6cc18ffe2de1f.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/62e34872cbe7182394ad78362153b3bf0db31e90?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmanage-app-submissions.289b450373e235be4b37005d83b6cc18ffe2de1f.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-01 19:53:47
+* Handoff File: [manage-delivery-lines-for-ad-campaigns.4d660479167f1cd478309bfa19e80d3eba0562a1.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/78bda13a9a5cfb544711d0cd10450150033ec4f4?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmanage-delivery-lines-for-ad-campaigns.4d660479167f1cd478309bfa19e80d3eba0562a1.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-03-01 21:50:17
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -105,18 +104,18 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\monetize\manage-app-submissions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fmonetize%2Fmanage-app-submissions.md&_a=contents)
-* Current Handback File: [manage-app-submissions.289b450373e235be4b37005d83b6cc18ffe2de1f.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmanage-app-submissions.289b450373e235be4b37005d83b6cc18ffe2de1f.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\monetize\manage-delivery-lines-for-ad-campaigns.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fmonetize%2Fmanage-delivery-lines-for-ad-campaigns.md&_a=contents)
+* Current Handback File: [manage-delivery-lines-for-ad-campaigns.4d660479167f1cd478309bfa19e80d3eba0562a1.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmanage-delivery-lines-for-ad-campaigns.4d660479167f1cd478309bfa19e80d3eba0562a1.ja-jp.xlf&_a=contents)
 * Current Handback Datetime: 2017-03-01 13:53:50
-* Bilingual File: [manage-app-submissions.289b450373e235be4b37005d83b6cc18ffe2de1f.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmanage-app-submissions.289b450373e235be4b37005d83b6cc18ffe2de1f.ja-jp.xlf&_a=contents)
+* Bilingual File: [manage-delivery-lines-for-ad-campaigns.4d660479167f1cd478309bfa19e80d3eba0562a1.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmanage-delivery-lines-for-ad-campaigns.4d660479167f1cd478309bfa19e80d3eba0562a1.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 
-##### <a name='98240f3a1f40f020474c62537d6b0444fe10bb994563'></a> Source: [windows-apps-src\monetize\manage-flight-submissions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/70507b297a0bfa4a9686481b8ee4019ef61db859?path=windows-apps-src%2Fmonetize%2Fmanage-flight-submissions.md&_a=contents)
+##### <a name='46b85638b93334a02636ec285f0818f949f2612b4565'></a> Source: [windows-apps-src\monetize\manage-targeting-profiles-for-ad-campaigns.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/f08e67a97c818c6f3d9622a83918125b62b5d050?path=windows-apps-src%2Fmonetize%2Fmanage-targeting-profiles-for-ad-campaigns.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [manage-flight-submissions.4afa7ab4e2a440847d3697a5ec10333c28907677.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/62e34872cbe7182394ad78362153b3bf0db31e90?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmanage-flight-submissions.4afa7ab4e2a440847d3697a5ec10333c28907677.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-01 19:53:47
+* Handoff File: [manage-targeting-profiles-for-ad-campaigns.5f3320549bcdc430de3dca8c30f155e0a3e51312.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/78bda13a9a5cfb544711d0cd10450150033ec4f4?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmanage-targeting-profiles-for-ad-campaigns.5f3320549bcdc430de3dca8c30f155e0a3e51312.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-03-01 21:50:17
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -124,18 +123,18 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\monetize\manage-flight-submissions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fmonetize%2Fmanage-flight-submissions.md&_a=contents)
-* Current Handback File: [manage-flight-submissions.4afa7ab4e2a440847d3697a5ec10333c28907677.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmanage-flight-submissions.4afa7ab4e2a440847d3697a5ec10333c28907677.ja-jp.xlf&_a=contents)
-* Current Handback Datetime: 2017-03-01 13:53:49
-* Bilingual File: [manage-flight-submissions.4afa7ab4e2a440847d3697a5ec10333c28907677.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmanage-flight-submissions.4afa7ab4e2a440847d3697a5ec10333c28907677.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\monetize\manage-targeting-profiles-for-ad-campaigns.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fmonetize%2Fmanage-targeting-profiles-for-ad-campaigns.md&_a=contents)
+* Current Handback File: [manage-targeting-profiles-for-ad-campaigns.5f3320549bcdc430de3dca8c30f155e0a3e51312.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmanage-targeting-profiles-for-ad-campaigns.5f3320549bcdc430de3dca8c30f155e0a3e51312.ja-jp.xlf&_a=contents)
+* Current Handback Datetime: 2017-03-01 13:53:50
+* Bilingual File: [manage-targeting-profiles-for-ad-campaigns.5f3320549bcdc430de3dca8c30f155e0a3e51312.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmanage-targeting-profiles-for-ad-campaigns.5f3320549bcdc430de3dca8c30f155e0a3e51312.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 
-##### <a name='a4b7816d0d6e47282864992044eea58eaaa05d1d4593'></a> Source: [windows-apps-src\monetize\update-an-app-submission.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/70507b297a0bfa4a9686481b8ee4019ef61db859?path=windows-apps-src%2Fmonetize%2Fupdate-an-app-submission.md&_a=contents)
+##### <a name='ca65ef5a5c6b07f92a9162d20eff2607fb4df5954676'></a> Source: [windows-apps-src\porting\hwa-access-features.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/72835d2cdd25e3bee93894c8783f9e9e71067e15?path=windows-apps-src%2Fporting%2Fhwa-access-features.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [update-an-app-submission.9431ea5b6d437b2ac8c568f5f86b672ece34606f.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/62e34872cbe7182394ad78362153b3bf0db31e90?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fupdate-an-app-submission.9431ea5b6d437b2ac8c568f5f86b672ece34606f.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-01 19:53:47
+* Handoff File: [hwa-access-features.d65749f67f75525126fe277c559bf776d7a270ff.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/78bda13a9a5cfb544711d0cd10450150033ec4f4?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fhwa-access-features.d65749f67f75525126fe277c559bf776d7a270ff.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-03-01 21:50:17
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -143,18 +142,18 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\monetize\update-an-app-submission.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fmonetize%2Fupdate-an-app-submission.md&_a=contents)
-* Current Handback File: [update-an-app-submission.9431ea5b6d437b2ac8c568f5f86b672ece34606f.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fupdate-an-app-submission.9431ea5b6d437b2ac8c568f5f86b672ece34606f.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\porting\hwa-access-features.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fporting%2Fhwa-access-features.md&_a=contents)
+* Current Handback File: [hwa-access-features.d65749f67f75525126fe277c559bf776d7a270ff.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fhwa-access-features.d65749f67f75525126fe277c559bf776d7a270ff.ja-jp.xlf&_a=contents)
 * Current Handback Datetime: 2017-03-01 13:53:49
-* Bilingual File: [update-an-app-submission.9431ea5b6d437b2ac8c568f5f86b672ece34606f.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fupdate-an-app-submission.9431ea5b6d437b2ac8c568f5f86b672ece34606f.ja-jp.xlf&_a=contents)
+* Bilingual File: [hwa-access-features.d65749f67f75525126fe277c559bf776d7a270ff.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fhwa-access-features.d65749f67f75525126fe277c559bf776d7a270ff.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 
-##### <a name='97796e1c45bfa01fbb2d47723f77113fea3f286a4651'></a> Source: [windows-apps-src\packaging\packaging-uwp-apps.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/bce2b0c5f04cf4d3c77b37f465019ba8847674f1?path=windows-apps-src%2Fpackaging%2Fpackaging-uwp-apps.md&_a=contents)
+##### <a name='b2168242d5464dbf41f12c777aa5672753a4ae6e4677'></a> Source: [windows-apps-src\porting\hwa-chrome-conversion.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/b9ccd4013a243e1a92bfedb3a3012f68203f9a9a?path=windows-apps-src%2Fporting%2Fhwa-chrome-conversion.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [packaging-uwp-apps.9882a5c7945644f3b49e175219fa2d2976ceaa51.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/62e34872cbe7182394ad78362153b3bf0db31e90?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fpackaging-uwp-apps.9882a5c7945644f3b49e175219fa2d2976ceaa51.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-01 19:53:47
+* Handoff File: [hwa-chrome-conversion.c959399677411c30b912220c9e4956e3f1167f27.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/78bda13a9a5cfb544711d0cd10450150033ec4f4?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fhwa-chrome-conversion.c959399677411c30b912220c9e4956e3f1167f27.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-03-01 21:50:17
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -162,29 +161,10 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\packaging\packaging-uwp-apps.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fpackaging%2Fpackaging-uwp-apps.md&_a=contents)
-* Current Handback File: [packaging-uwp-apps.9882a5c7945644f3b49e175219fa2d2976ceaa51.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fpackaging-uwp-apps.9882a5c7945644f3b49e175219fa2d2976ceaa51.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\porting\hwa-chrome-conversion.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fporting%2Fhwa-chrome-conversion.md&_a=contents)
+* Current Handback File: [hwa-chrome-conversion.c959399677411c30b912220c9e4956e3f1167f27.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fhwa-chrome-conversion.c959399677411c30b912220c9e4956e3f1167f27.ja-jp.xlf&_a=contents)
 * Current Handback Datetime: 2017-03-01 13:53:49
-* Bilingual File: [packaging-uwp-apps.9882a5c7945644f3b49e175219fa2d2976ceaa51.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fpackaging-uwp-apps.9882a5c7945644f3b49e175219fa2d2976ceaa51.ja-jp.xlf&_a=contents)
-* Bilingual Datetime: 2017-03-01 14:04:45
-* [Back to Top](#report-top)
-
-##### <a name='71e98d5b3fb2db56f78461fbcdbb8f3c774e19a74869'></a> Source: [windows-apps-src\publish\monetize-with-ads.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/20f27f6ab3438df1862756ffc67feb36b66fc3f4?path=windows-apps-src%2Fpublish%2Fmonetize-with-ads.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [monetize-with-ads.f772e82217dbd21448da2a05253270cef4089e6b.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/62e34872cbe7182394ad78362153b3bf0db31e90?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmonetize-with-ads.f772e82217dbd21448da2a05253270cef4089e6b.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-01 19:53:47
-* Handoff Reason: Include
-* Handoff Name: 
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Handback Name: 
-* Current Target File: [windows-apps-src\publish\monetize-with-ads.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fpublish%2Fmonetize-with-ads.md&_a=contents)
-* Current Handback File: [monetize-with-ads.f772e82217dbd21448da2a05253270cef4089e6b.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmonetize-with-ads.f772e82217dbd21448da2a05253270cef4089e6b.ja-jp.xlf&_a=contents)
-* Current Handback Datetime: 2017-03-01 13:53:49
-* Bilingual File: [monetize-with-ads.f772e82217dbd21448da2a05253270cef4089e6b.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fmonetize-with-ads.f772e82217dbd21448da2a05253270cef4089e6b.ja-jp.xlf&_a=contents)
+* Bilingual File: [hwa-chrome-conversion.c959399677411c30b912220c9e4956e3f1167f27.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fhwa-chrome-conversion.c959399677411c30b912220c9e4956e3f1167f27.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 

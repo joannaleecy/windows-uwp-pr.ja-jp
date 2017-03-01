@@ -33839,6 +33839,86 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\804e447f5b650a986580752fcba2a29014560e98.19371cddfff84e70fcd3d3957445d435b497ef1b.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\hwa-access-features.md.7795bc66030d781bc967c6c172d486992caa391a.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\hwa-access-features.md",
+      "XliffHash": "7795bc66030d781bc967c6c172d486992caa391a",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ca65ef5a5c6b07f92a9162d20eff2607fb4df595.7cf98ba484e85b337314e75b088adf57272940b3.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\manage-delivery-lines-for-ad-campaigns.md.d5eeece22de50ae5ef5668e60bbf48a240f04481.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\manage-delivery-lines-for-ad-campaigns.md",
+      "XliffHash": "d5eeece22de50ae5ef5668e60bbf48a240f04481",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\419dbc2ef8de66b0cb8cf51b483174f5c086a092.74d768383606ad880ce3ee24834935d73517fa76.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\manage-ad-campaigns.md.ec47e92581ed6b5c5468c29b3b39142a04ba0631.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\manage-ad-campaigns.md",
+      "XliffHash": "ec47e92581ed6b5c5468c29b3b39142a04ba0631",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\fe1eeb4e67917633997bdc4fbeabf87be497c3ad.fe58463d139044d2fe45c0c7f1f3c0e201a2fbe8.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\directx-and-xaml-interop.md.5160c5ff8853d397ca56e7b9a9d01d3f5d156a05.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\directx-and-xaml-interop.md",
+      "XliffHash": "5160c5ff8853d397ca56e7b9a9d01d3f5d156a05",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8d260d4cd08c50a289749122f18693489f6d3193.82cf38c0bb231ed4de322d8b656b25b13b49b949.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\manage-creatives-for-ad-campaigns.md.511801b1876ed24d5bac3246409abf4b41102926.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\manage-creatives-for-ad-campaigns.md",
+      "XliffHash": "511801b1876ed24d5bac3246409abf4b41102926",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d94ff7863de620beab2ef67c4a6e5c4a50cf273d.73f1398009a2b71f75bb64beaeb332d4a462e5f9.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\manage-targeting-profiles-for-ad-campaigns.md.8968e3ec88876f863247bff33612a59d9e5aced0.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\manage-targeting-profiles-for-ad-campaigns.md",
+      "XliffHash": "8968e3ec88876f863247bff33612a59d9e5aced0",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\46b85638b93334a02636ec285f0818f949f2612b.13b7468eb194f46833df4da11b57718f9803319b.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-create-adaptive-tiles.md.9e3f029aee424e8698c73ff94db35b43460d6040.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-create-adaptive-tiles.md",
+      "XliffHash": "9e3f029aee424e8698c73ff94db35b43460d6040",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\27d3de280201d92ee98f6e8a17afd85f76acd7d5.3401b38eb1745ff90a682d7726e13d8f672e2cde.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\hwa-chrome-conversion.md.9c5683b4779dbbe12fa5db92188078702cc10534.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\hwa-chrome-conversion.md",
+      "XliffHash": "9c5683b4779dbbe12fa5db92188078702cc10534",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b2168242d5464dbf41f12c777aa5672753a4ae6e.cc82d538fa0e95efb5ffef2c45a35927532c612b.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
