@@ -33749,6 +33749,36 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ca57ff45d440ebd68f7fb85b7d6a5da0a9f1995c.9ed3aa81bf34fe7bb041df867b5d7a5e80cfd3bd.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\xbox-apps\\index.md.ab7dda80a9e493fb1937b44c3b52dac33fc81949.HT": {
+      "SourceFilename": "windows-apps-src\\xbox-apps\\index.md",
+      "XliffHash": "ab7dda80a9e493fb1937b44c3b52dac33fc81949",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\82c8fd0945ed49f8accf5e101acfbea151caa3a1.1646e264c45dde8680dbe3c259e1e0ff5a565109.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\xbox-apps\\frequently-asked-questions.md.bb1221c46bb96eb98decf3546d813a1f6217ab80.HT": {
+      "SourceFilename": "windows-apps-src\\xbox-apps\\frequently-asked-questions.md",
+      "XliffHash": "bb1221c46bb96eb98decf3546d813a1f6217ab80",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ac4a09180a678e8da197bfb030e27fa001eb74f0.332c13f21419757ef25b0a3757ea1d232363bada.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\e2e.md.dce5a5ff6622be3c0d0cfd4951cbdc386810d4cc.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\e2e.md",
+      "XliffHash": "dce5a5ff6622be3c0d0cfd4951cbdc386810d4cc",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\dc53c72735b704982f383ca804a8080c2440b473.180c4bf109ae088918e0bdb6eaa468fe4a4de037.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

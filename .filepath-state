@@ -2006,6 +2006,9 @@
   "1fe28d17aa8c943de9a2bcf6c2230237e0c931d0": [
     "windows-apps-src\\gaming\\draw-to-the-screen.md"
   ],
+  "dc53c72735b704982f383ca804a8080c2440b473": [
+    "windows-apps-src\\gaming\\e2e.md"
+  ],
   "1752900a206d4b74c6d677b29c97a60ad8a95238": [
     "windows-apps-src\\gaming\\e2e.md"
   ],
@@ -5873,6 +5876,9 @@
   "ef9906a2b3695a64867ed39da02f3dc129683375": [
     "windows-apps-src\\xbox-apps\\devkit-deactivation.md"
   ],
+  "ac4a09180a678e8da197bfb030e27fa001eb74f0": [
+    "windows-apps-src\\xbox-apps\\frequently-asked-questions.md"
+  ],
   "04545ea18e8810f086bab516ce1d79bb85bc9bdc": [
     "windows-apps-src\\xbox-apps\\frequently-asked-questions.md"
   ],
@@ -5893,6 +5899,9 @@
   ],
   "c5d6735acd7b01d31c5cf2503da4f72be29e999e": [
     "windows-apps-src\\xbox-apps\\getting-started.md"
+  ],
+  "82c8fd0945ed49f8accf5e101acfbea151caa3a1": [
+    "windows-apps-src\\xbox-apps\\index.md"
   ],
   "46a3552d2b3e55834ea4f764c7636897bfa0fd39": [
     "windows-apps-src\\xbox-apps\\index.md"
