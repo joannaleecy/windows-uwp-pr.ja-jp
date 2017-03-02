@@ -33939,6 +33939,36 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c735555afce1cb9045b7ab0e0cfaa436aeff4d97.2a75f60e5f5dd9f715ec393cc2cdb30183bcceac.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\accessibility\\custom-automation-peers.md.f83a70818bb513977cf6d5a4e62ba0f338d09052.HT": {
+      "SourceFilename": "windows-apps-src\\accessibility\\custom-automation-peers.md",
+      "XliffHash": "f83a70818bb513977cf6d5a4e62ba0f338d09052",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\72f5bd1c0483fba0c43e99626ee5d0451fedde3e.3a6f48a3b3d450ba6c1e2aa4e3b6841bced13d80.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\debug-test-perf\\device-portal-mobile.md.9e39f330be7f248a4a91bca621a50d2b170eced2.HT": {
+      "SourceFilename": "windows-apps-src\\debug-test-perf\\device-portal-mobile.md",
+      "XliffHash": "9e39f330be7f248a4a91bca621a50d2b170eced2",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c55e288b7fb8f3b93c76efb45573d2157a0e347d.c94851968f604dde140f2be9b699d0449b54a5cd.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\xbox-apps\\known-issues.md.1d1a3d1a5a033ab5633d49bed33f8c84a8306e30.HT": {
+      "SourceFilename": "windows-apps-src\\xbox-apps\\known-issues.md",
+      "XliffHash": "1d1a3d1a5a033ab5633d49bed33f8c84a8306e30",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\94bc5b8b04fd4f4e1439fb014ef83f0e1f363874.26ebd70ac1488362915eaa5a3ec0d3b847c32302.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
