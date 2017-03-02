@@ -5267,6 +5267,9 @@
   "bc7f68f1133d34712ba7e6e519eda55e9c9c8670": [
     "windows-apps-src\\security\\smart-cards.md"
   ],
+  "e5e4f615ae66b3e551456258270f316df8f3c0d1": [
+    "windows-apps-src\\security\\web-account-manager.md"
+  ],
   "04ebf2743d102811d428e6b74eda85bf3846e2c4": [
     "windows-apps-src\\security\\web-account-manager.md"
   ],
@@ -9358,6 +9361,9 @@
   ],
   "bd378fa8c4c159a1d22b899385dc27286de5984e": [
     "windows-apps-src\\porting\\desktop-to-uwp-known-issues.md"
+  ],
+  "c735555afce1cb9045b7ab0e0cfaa436aeff4d97": [
+    "windows-apps-src\\porting\\desktop-to-uwp-prepare.md"
   ],
   "ffc23cbf1edd8f46776321426252cc2845ed4714": [
     "windows-apps-src\\porting\\desktop-to-uwp-prepare.md"
