@@ -33976,7 +33976,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\608d381857c1dbb2ec659e7e901d911686cb8984.2ce2e24a1c8c88579fb635edb97829ef6ac17c48.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5d3dbe205fd3f4260f761d9372a573fe568b3638.ab0fdc54c5ed37817ee84c614199d9652fde344f.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -34106,7 +34106,67 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a342de58e3f204cc66f701dec644e976b05592c3.caead32241f382edd3be5b65694438e3094d2da9.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\dd547cd0abe208cfc1b38eb01fa64c5e8f5e0f1b.c0719f4e5f187bb9b33742808737229d60f44dbf.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\devices-sensors\\pos-printer.md.5103ef9900cae325d04f42532064899330c4c1c6.HT": {
+      "SourceFilename": "windows-apps-src\\devices-sensors\\pos-printer.md",
+      "XliffHash": "5103ef9900cae325d04f42532064899330c4c1c6",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d8340af651157bb6fae82785812f259c16d0a6c0.883d269b17f1c9e040736154cd438f87992a78b2.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\whats-a-uwp.md.ba154cb3044c8674e768746aa1114bf7d3d080d6.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\whats-a-uwp.md",
+      "XliffHash": "ba154cb3044c8674e768746aa1114bf7d3d080d6",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\3fb6562d08cbcefec5277f938fc00570210d7aa4.80aaa66ffae61fa86e34615b098819c7dace5df7.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\devices-sensors\\cash-drawer.md.e8025168bdc67c89e9325eb2e2f8102601522e45.HT": {
+      "SourceFilename": "windows-apps-src\\devices-sensors\\cash-drawer.md",
+      "XliffHash": "e8025168bdc67c89e9325eb2e2f8102601522e45",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\376272356cf720ddd9519f0077e771a1016abb1e.4567d9bcd2614f908461964472afdf935a010eb7.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\devices-sensors\\magnetic-stripe-reader.md.92dc55017a06a0ca20b161d3bef628284a0fac7a.HT": {
+      "SourceFilename": "windows-apps-src\\devices-sensors\\magnetic-stripe-reader.md",
+      "XliffHash": "92dc55017a06a0ca20b161d3bef628284a0fac7a",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a11fe7a63c0444ac986e7bfe0d50472249e5196e.592c408c9c3b754521499a0256c5ee458dcddd02.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\publish\\set-your-add-on-product-id.md.5501bfa986942f7b126e336d95418a81e31ed059.HT": {
+      "SourceFilename": "windows-apps-src\\publish\\set-your-add-on-product-id.md",
+      "XliffHash": "5501bfa986942f7b126e336d95418a81e31ed059",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d0ed5dfabf430b578bfb3e922ca3b1fc6e955aa5.8dcd1ad808372356a0836f6dfb49f2c2b048f9f0.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\devices-sensors\\barcode-scanner.md.14d419d5cfe83502535f85e8b706d318e7da4b8d.HT": {
+      "SourceFilename": "windows-apps-src\\devices-sensors\\barcode-scanner.md",
+      "XliffHash": "14d419d5cfe83502535f85e8b706d318e7da4b8d",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8d9ef9bc08fa666c2af1348450f7a5fb0a0c7b65.2661ff1fc8c2d2c4296f1a96dc1d7be9988da1e8.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }
