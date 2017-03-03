@@ -1235,6 +1235,9 @@
   "e0521048c880022cafa59802dbf2cceb33b97841": [
     "windows-apps-src\\debug-test-perf\\beta-testing.md"
   ],
+  "6f399136be121288dcff4b482f9e022fc0323181": [
+    "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
+  ],
   "a7ce6c003c24a1efd03cc48419438b59e4f2ec11": [
     "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
   ],
@@ -1453,6 +1456,9 @@
   ],
   "2dab2719eae86487b93b9030b430b84aea7b2737": [
     "windows-apps-src\\debug-test-perf\\windows-app-certification-kit-tests.md"
+  ],
+  "a4296c7ba149abce2173e816aa99406a44f75618": [
+    "windows-apps-src\\debug-test-perf\\windows-runtime-components-and-optimizing-interop.md"
   ],
   "83b9b125a494016d7eabf33166826ad2dd489050": [
     "windows-apps-src\\debug-test-perf\\windows-runtime-components-and-optimizing-interop.md"
@@ -3944,6 +3950,9 @@
   "88b9de66bbbb16e8079d68b888462765892d2092": [
     "windows-apps-src\\networking\\network-communications-in-the-background.md"
   ],
+  "a2220b8c31877efdbef6a102efdb32158a709939": [
+    "windows-apps-src\\networking\\networking-basics.md"
+  ],
   "522d81d78b254fcc6488839170fe5f35c7fe4988": [
     "windows-apps-src\\networking\\networking-basics.md"
   ],
@@ -4166,6 +4175,9 @@
   "c73a1d1695e3b8a2eee8f073a5d25586a24a9d24": [
     "windows-apps-src\\porting\\setting-up-your-mac-with-windows-10.md"
   ],
+  "3262563863ee68624d52969877535f2d5a8d615f": [
+    "windows-apps-src\\porting\\update-your-visual-studio-2015-rc-project-to-rtm.md"
+  ],
   "5866cd7eca3a40ddd1d045ad81ec895053da1a00": [
     "windows-apps-src\\porting\\update-your-visual-studio-2015-rc-project-to-rtm.md"
   ],
@@ -4192,6 +4204,9 @@
   ],
   "b29626498a39cdf357907834798c430fe4a67294": [
     "windows-apps-src\\porting\\w8x-to-uwp-case-study-bookstore2.md"
+  ],
+  "69fb8a27de806e843c16a2876548ade821dd3ed3": [
+    "windows-apps-src\\porting\\w8x-to-uwp-case-study-quizgame.md"
   ],
   "367a77885f20b9cffc4cb1bcbfd6520a06c8516e": [
     "windows-apps-src\\porting\\w8x-to-uwp-case-study-quizgame.md"
@@ -4280,6 +4295,9 @@
   "73ae8cad288de7100ffa9976466b8f8001a568a5": [
     "windows-apps-src\\porting\\wpsl-to-uwp-input-and-sensors.md"
   ],
+  "8f1507260822c10a554ef8c6bfbda4f9eff89e4b": [
+    "windows-apps-src\\porting\\wpsl-to-uwp-namespace-and-class-mappings.md"
+  ],
   "c78f59b1d34c8b996bdb8c5caef60e3360c5ddf5": [
     "windows-apps-src\\porting\\wpsl-to-uwp-namespace-and-class-mappings.md"
   ],
@@ -4288,6 +4306,9 @@
   ],
   "212676b860922fa32ab980c5616bf767864e834b": [
     "windows-apps-src\\porting\\wpsl-to-uwp-namespace-and-class-mappings.md"
+  ],
+  "558bbe9947c32c98010bb658e3fd482224b272ed": [
+    "windows-apps-src\\porting\\wpsl-to-uwp-porting-to-a-uwp-project.md"
   ],
   "95cd7958979dd5c2a7955bb098c8b34fbf024b0f": [
     "windows-apps-src\\porting\\wpsl-to-uwp-porting-to-a-uwp-project.md"
