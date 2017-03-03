@@ -4145,6 +4145,9 @@
   "8b1d7259d16ba963d19c7656ff2572fa659a1710": [
     "windows-apps-src\\porting\\getting-started-with-uwp-for-ios-developers.md"
   ],
+  "fc4590f9fd976fcf87bcd24355261061e6900b98": [
+    "windows-apps-src\\porting\\index.md"
+  ],
   "c002eab5f56780f2bc35beda80c2aeeed65f0890": [
     "windows-apps-src\\porting\\index.md"
   ],
@@ -4174,6 +4177,9 @@
   ],
   "c73a1d1695e3b8a2eee8f073a5d25586a24a9d24": [
     "windows-apps-src\\porting\\setting-up-your-mac-with-windows-10.md"
+  ],
+  "95161b564ceb150cdab9d3320707a7e062be0778": [
+    "windows-apps-src\\porting\\update-your-visual-studio-2015-rc-project-to-rtm.md"
   ],
   "3262563863ee68624d52969877535f2d5a8d615f": [
     "windows-apps-src\\porting\\update-your-visual-studio-2015-rc-project-to-rtm.md"
@@ -5464,6 +5470,9 @@
   ],
   "2a7c5930752c759c3875826d0046603a63981341": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "865dabb274c2ba4bf35eae8ecd345b66032eabb2": [
+    "windows-apps-src\\TOC.md"
   ],
   "b2862eafd87da16447a51174e2e8f2321fb4cd53": [
     "windows-apps-src\\TOC.md"
