@@ -34069,6 +34069,46 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\865dabb274c2ba4bf35eae8ecd345b66032eabb2.ea9a4c5991ad55e04357067b651d8b2d171a686f.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\update-your-visual-studio-2015-rc-project-to-rtm.md.1c48fcf54cefeed3fd5b3924f838dc78c33b579c.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\update-your-visual-studio-2015-rc-project-to-rtm.md",
+      "XliffHash": "1c48fcf54cefeed3fd5b3924f838dc78c33b579c",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\4527b3a3cf0aaae7ced5eaebcbc1ad023b24c379.511342f2d1a95c427c8d11f4c5ad6af54a09c3ec.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\xbox-apps\\known-issues.md.28895ec7d650cebf7d0e9836c2fde98d64b6a88e.HT": {
+      "SourceFilename": "windows-apps-src\\xbox-apps\\known-issues.md",
+      "XliffHash": "28895ec7d650cebf7d0e9836c2fde98d64b6a88e",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\203d1abede2607617e0175103f54bf3068d53ff4.5a488394d6efaf84e50e41861b99f0796f8fdd04.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\w8x-to-uwp-root.md.e215fd82d2a7a1621c7a42a3450c463a4e862a99.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\w8x-to-uwp-root.md",
+      "XliffHash": "e215fd82d2a7a1621c7a42a3450c463a4e862a99",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\37da1d6385bf18fcf44f6425b843715e1a462379.c84ca70d2edd55721114ed8fd20d2ced8ac098b8.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\publish\\dev-center-insider-program.md.c7ac5d85c9ad67731b7a618b8b50b675cb80e4b5.HT": {
+      "SourceFilename": "windows-apps-src\\publish\\dev-center-insider-program.md",
+      "XliffHash": "c7ac5d85c9ad67731b7a618b8b50b675cb80e4b5",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a342de58e3f204cc66f701dec644e976b05592c3.caead32241f382edd3be5b65694438e3094d2da9.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
