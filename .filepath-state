@@ -4583,6 +4583,9 @@
   "acf14f886f36d74941769954041325514a386e86": [
     "windows-apps-src\\publish\\define-pricing-and-market-selection.md"
   ],
+  "936c0056827f1e0a3e76007906345391a4f0a7e8": [
+    "windows-apps-src\\publish\\dev-center-insider-program.md"
+  ],
   "11014e111b96e271d9e0aaeef44de4d0b0df0532": [
     "windows-apps-src\\publish\\dev-center-insider-program.md"
   ],
@@ -4789,6 +4792,9 @@
   ],
   "86263a37d3f8554fd656dd20af1f3766976e574b": [
     "windows-apps-src\\publish\\managing-your-profile.md"
+  ],
+  "608d381857c1dbb2ec659e7e901d911686cb8984": [
+    "windows-apps-src\\publish\\mobile-operator-billing.md"
   ],
   "87620783d5301b2f4eed140c2220d9c24eb30fdb": [
     "windows-apps-src\\publish\\mobile-operator-billing.md"

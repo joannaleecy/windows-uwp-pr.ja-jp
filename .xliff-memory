@@ -33969,6 +33969,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\94bc5b8b04fd4f4e1439fb014ef83f0e1f363874.26ebd70ac1488362915eaa5a3ec0d3b847c32302.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\publish\\mobile-operator-billing.md.83f6ca85b6264a08453784c1e4a1444b4e0953c9.HT": {
+      "SourceFilename": "windows-apps-src\\publish\\mobile-operator-billing.md",
+      "XliffHash": "83f6ca85b6264a08453784c1e4a1444b4e0953c9",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\608d381857c1dbb2ec659e7e901d911686cb8984.2ce2e24a1c8c88579fb635edb97829ef6ac17c48.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\publish\\dev-center-insider-program.md.650e6ac92bfba472bfedc7dcfd37678b49c42de8.HT": {
+      "SourceFilename": "windows-apps-src\\publish\\dev-center-insider-program.md",
+      "XliffHash": "650e6ac92bfba472bfedc7dcfd37678b49c42de8",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\936c0056827f1e0a3e76007906345391a4f0a7e8.b08c210d267b928ae4a5a463c7b446c4269d4e29.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
