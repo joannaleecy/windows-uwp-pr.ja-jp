@@ -5489,6 +5489,9 @@
   "2a7c5930752c759c3875826d0046603a63981341": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "e3acc7b349bf54b5f4aff1aa87fd780af1e5a0ef": [
+    "windows-apps-src\\TOC.md"
+  ],
   "865dabb274c2ba4bf35eae8ecd345b66032eabb2": [
     "windows-apps-src\\TOC.md"
   ],
@@ -7015,6 +7018,9 @@
   ],
   "5a13348b7cb8fd60e6edf70250137a2c663f2de0": [
     "windows-apps-src\\devices-sensors\\bluetooth-dev-faq.md"
+  ],
+  "a2888b804e66e2630e4ae93b0be31974740d9f99": [
+    "windows-apps-src\\enterprise\\wip-dev-guide.md"
   ],
   "ea7a40abda7acef5e2c649ff5b0922ef0801ea9f": [
     "windows-apps-src\\enterprise\\wip-dev-guide.md"
@@ -9842,6 +9848,9 @@
   "af719bbb4cc9def4e9b202c8815320698c6148d0": [
     "windows-apps-src\\publish\\promote-your-app-report.md"
   ],
+  "86488f8119446599ada6da7c34e0a65234ce4964": [
+    "windows-apps-src\\whats-new\\windows-10-creators-preview.md"
+  ],
   "d36b84299b8e469624cef54f89c94744f3f4ae83": [
     "windows-apps-src\\whats-new\\windows-10-creators-preview.md"
   ],
@@ -9922,5 +9931,11 @@
   ],
   "815d7400d14c6d70f1cf81d83ef7d059a2c85c66": [
     "windows-apps-src\\devices-sensors\\pos-printer.md"
+  ],
+  "11be75de5d315a7c0e46b2699130a062bad1b2df": [
+    "windows-apps-src\\get-started\\get-started-tutorial-game-mg2d.md"
+  ],
+  "7ac12e03901755c61dc8b90aeaf9b775f774e2d0": [
+    "windows-apps-src\\whats-new\\windows-10-build-15021-api-diff.md"
   ]
 }

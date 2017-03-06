@@ -34169,6 +34169,56 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8d9ef9bc08fa666c2af1348450f7a5fb0a0c7b65.2661ff1fc8c2d2c4296f1a96dc1d7be9988da1e8.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\whats-new\\windows-10-build-15021-api-diff.md.b36876c2bd2ae2bcd687732e79748c63a0c376ca.HT": {
+      "SourceFilename": "windows-apps-src\\whats-new\\windows-10-build-15021-api-diff.md",
+      "XliffHash": "b36876c2bd2ae2bcd687732e79748c63a0c376ca",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7ac12e03901755c61dc8b90aeaf9b775f774e2d0.75bce74bee62c5c40825822d5322a3df4952893a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\TOC.md.66cfd9ac6b081638d7383aa8643490ce36020b0e.HT": {
+      "SourceFilename": "windows-apps-src\\TOC.md",
+      "XliffHash": "66cfd9ac6b081638d7383aa8643490ce36020b0e",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e3acc7b349bf54b5f4aff1aa87fd780af1e5a0ef.4c5328e7b830bbb2c89558d8b8fc6b3385439ea9.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\whats-new\\windows-10-creators-preview.md.17a6aa0cbde975759454a3279e9500d735232416.HT": {
+      "SourceFilename": "windows-apps-src\\whats-new\\windows-10-creators-preview.md",
+      "XliffHash": "17a6aa0cbde975759454a3279e9500d735232416",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\86488f8119446599ada6da7c34e0a65234ce4964.60640eedeff48368c10b56630089ec14dfaf9dc5.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\get-started-tutorial-game-mg2d.md.e75472cede58ca02a63d0fe531ee299b26a59a47.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\get-started-tutorial-game-mg2d.md",
+      "XliffHash": "e75472cede58ca02a63d0fe531ee299b26a59a47",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\11be75de5d315a7c0e46b2699130a062bad1b2df.9eb27994feaa5805b0508d5cf7181a96c563c8d6.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\enterprise\\wip-dev-guide.md.e986cac640fd2d038266a016aee9295f6fa93ab9.HT": {
+      "SourceFilename": "windows-apps-src\\enterprise\\wip-dev-guide.md",
+      "XliffHash": "e986cac640fd2d038266a016aee9295f6fa93ab9",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a2888b804e66e2630e4ae93b0be31974740d9f99.ed1142aa266d38836524a9acbdd01984d5cc48f9.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
