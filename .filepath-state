@@ -2324,11 +2324,17 @@
   "8592a2855cdb7524462dbc2f761f0077a421af09": [
     "windows-apps-src\\get-started\\universal-application-platform-guide.md"
   ],
+  "59699357065a34579e234a3473964eeccc930554": [
+    "windows-apps-src\\get-started\\whats-a-uwp.md"
+  ],
   "3fb6562d08cbcefec5277f938fc00570210d7aa4": [
     "windows-apps-src\\get-started\\whats-a-uwp.md"
   ],
   "0507086a7c7ea67f43f61feef6dc5c8de5afe2e5": [
     "windows-apps-src\\get-started\\whats-a-uwp.md"
+  ],
+  "163aa57c1d6d85a409214ff1d233a4dc48a408c3": [
+    "windows-apps-src\\get-started\\your-first-app.md"
   ],
   "c2327f8dcc54e11c493037c64eae146c000f864b": [
     "windows-apps-src\\get-started\\your-first-app.md"
@@ -3070,6 +3076,9 @@
   ],
   "d0081343672effaa69f8e17404059cc05b599436": [
     "windows-apps-src\\launch-resume\\handle-uri-activation.md"
+  ],
+  "fe6d70394af430e34e26b3fdbce2da61ca0572b0": [
+    "windows-apps-src\\launch-resume\\how-to-create-and-consume-an-app-service.md"
   ],
   "82a72e66447b5a44138e32a6010b54b6e9e7df5f": [
     "windows-apps-src\\launch-resume\\how-to-create-and-consume-an-app-service.md"
@@ -4390,6 +4399,9 @@
   ],
   "b9f12f201e6896e526b9fc1faafce09693dcaf7d": [
     "windows-apps-src\\publish\\about-house-ads.md"
+  ],
+  "9f6cdace7d619ede77956fb081756e0bc5682e16": [
+    "windows-apps-src\\publish\\account-types-locations-and-fees.md"
   ],
   "c417691e90de49c62da8a5dc957b29d628caee75": [
     "windows-apps-src\\publish\\account-types-locations-and-fees.md"
@@ -9593,6 +9605,9 @@
   "634ffbcac0215496266b4ec1e9eebd2a19895fff": [
     "windows-apps-src\\packaging\\create-app-package-with-makeappx-tool.md"
   ],
+  "1a9647a9b915359f00ac22c88b715c9e938f6110": [
+    "windows-apps-src\\launch-resume\\app-services.md"
+  ],
   "63c0634905b14ca9f9546c9fcc678c05edb67780": [
     "windows-apps-src\\launch-resume\\app-services.md"
   ],
@@ -9977,8 +9992,14 @@
   "7ac12e03901755c61dc8b90aeaf9b775f774e2d0": [
     "windows-apps-src\\whats-new\\windows-10-build-15021-api-diff.md"
   ],
+  "1556cd049de767966e6beead50941ebfff443736": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-js-uwp.md"
+  ],
   "5da9d720e15ce088810743c1315e3ca0900f227f": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-js-uwp.md"
+  ],
+  "bb72e7787764fd549891651df47794dfe1948247": [
+    "windows-apps-src\\get-started\\get-started-tutorial-game-js3d.md"
   ],
   "b2e86cd6f7a888fa229b452b7af4b1e34f89c428": [
     "windows-apps-src\\get-started\\get-started-tutorial-game-js3d.md"
