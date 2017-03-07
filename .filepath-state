@@ -4079,6 +4079,9 @@
   "24682c6468915fc5e66b43a5fda9aa8a12efdba5": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
+  "502b19e861448f3f023209d515de7685963c15ee": [
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
+  ],
   "7482599456319e44694ac15fa58cfd5d540aeaad": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
@@ -4913,6 +4916,9 @@
   "c48befc20bfba377811ef5cb57880270f65ddbc3": [
     "windows-apps-src\\publish\\payout-summary.md"
   ],
+  "71bd71dfea4e9b4c87e7a96d3ab457c4fb97f1a2": [
+    "windows-apps-src\\publish\\pubcenter-dev-center-integration.md"
+  ],
   "322ab4cc7590cf9d6d46036560b0db431bfdaa42": [
     "windows-apps-src\\publish\\pubcenter-dev-center-integration.md"
   ],
@@ -4921,6 +4927,9 @@
   ],
   "f800bdc5f0987732bfe9f1fc59fd2d13a3523a61": [
     "windows-apps-src\\publish\\pubcenter-dev-center-integration.md"
+  ],
+  "d625f9474156855599df20681e7bfc673bb84554": [
+    "windows-apps-src\\publish\\pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md"
   ],
   "216300bd3f27a0c5e9b37788b97d3b99e4ccaaf5": [
     "windows-apps-src\\publish\\pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md"
@@ -5488,6 +5497,9 @@
   ],
   "2a7c5930752c759c3875826d0046603a63981341": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "93e2c81ce987222d29e9f40c188b4290fec9c96e": [
+    "windows-apps-src\\TOC.md"
   ],
   "e3acc7b349bf54b5f4aff1aa87fd780af1e5a0ef": [
     "windows-apps-src\\TOC.md"
@@ -9934,6 +9946,9 @@
   ],
   "11be75de5d315a7c0e46b2699130a062bad1b2df": [
     "windows-apps-src\\get-started\\get-started-tutorial-game-mg2d.md"
+  ],
+  "22bfed3cd355b6920323e4945263be8903a375b1": [
+    "windows-apps-src\\whats-new\\windows-10-build-15021-api-diff.md"
   ],
   "7ac12e03901755c61dc8b90aeaf9b775f774e2d0": [
     "windows-apps-src\\whats-new\\windows-10-build-15021-api-diff.md"
