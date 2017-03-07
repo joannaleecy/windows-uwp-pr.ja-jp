@@ -5522,6 +5522,9 @@
   "2a7c5930752c759c3875826d0046603a63981341": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "0754dbe256aa5906626e9a97f130d658aa19d06c": [
+    "windows-apps-src\\TOC.md"
+  ],
   "e6820dd6557c4ede3821284a58e7f73e0b77f89b": [
     "windows-apps-src\\TOC.md"
   ],
@@ -6686,6 +6689,9 @@
   "4445d47663318a4d37c097d62dfc9a59b7f15723": [
     "windows-apps-src\\style\\fonts.md"
   ],
+  "669a59227e06a976ee567eeea7717787727a51ff": [
+    "windows-apps-src\\style\\segoe-ui-symbol-font.md"
+  ],
   "8c7f3bb1b4412e39ce3f64f86b4eef65d5332a81": [
     "windows-apps-src\\style\\segoe-ui-symbol-font.md"
   ],
@@ -6866,6 +6872,9 @@
   "e8baeef2e3b66043af4da5b6958f95c6a3f3b47d": [
     "windows-apps-src\\audio-video-camera\\handle-device-orientation-with-mediacapture.md"
   ],
+  "7bf47b166dfd05b906b37deded909d5a3b26ac6e": [
+    "windows-apps-src\\audio-video-camera\\hls-tag-support.md"
+  ],
   "ea39953c1b5f284e705f76469f43cddf2541228b": [
     "windows-apps-src\\audio-video-camera\\hls-tag-support.md"
   ],
@@ -6877,6 +6886,9 @@
   ],
   "bbf8f853131dac02b1c7ebad3d7152f33cf4cfd1": [
     "windows-apps-src\\audio-video-camera\\hls-tag-support.md"
+  ],
+  "588367c1e4c1676641d57bbd33df6bdaf0c854da": [
+    "windows-apps-src\\audio-video-camera\\import-media-from-a-device.md"
   ],
   "1d4f780a5b3841318d582424c31b1465ed31b6dd": [
     "windows-apps-src\\audio-video-camera\\import-media-from-a-device.md"
@@ -10003,5 +10015,11 @@
   ],
   "b2e86cd6f7a888fa229b452b7af4b1e34f89c428": [
     "windows-apps-src\\get-started\\get-started-tutorial-game-js3d.md"
+  ],
+  "9ca8f2d1783a73ae38fed1d3ee1e58b809ddd2aa": [
+    "windows-apps-src\\audio-video-camera\\dash-profile-support.md"
+  ],
+  "ede7e8d5e9cce39850edbdb70a715d76c78f0c01": [
+    "windows-apps-src\\get-started\\prerelease-apis.md"
   ]
 }
