@@ -2264,8 +2264,14 @@
   "34a1d665bc98a5224ef7707994138ba40d70763b": [
     "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
   ],
+  "1a90b6c030f019190224c47db3624a49ed05b4a9": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
+  ],
   "915f77e308d6384aa539f78cc307842dd51cd9f4": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
+  ],
+  "0bea2fce6ad56c2305a81672ce352cb2b8454dbe": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
   ],
   "16622dbd9914907f75c8392f8e4de6e1c10b049c": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
@@ -2275,6 +2281,9 @@
   ],
   "dc1bf476c93ef9843c20244f24a199c7888eb4a5": [
     "windows-apps-src\\get-started\\enable-your-device-for-development.md"
+  ],
+  "1e07b1235299b1f462ac9e8fa5f9bf6f6c861633": [
+    "windows-apps-src\\get-started\\get-set-up.md"
   ],
   "96b6b477efd42b46b8aaf553de2482e1946c9cd7": [
     "windows-apps-src\\get-started\\get-set-up.md"
@@ -2320,6 +2329,9 @@
   ],
   "0507086a7c7ea67f43f61feef6dc5c8de5afe2e5": [
     "windows-apps-src\\get-started\\whats-a-uwp.md"
+  ],
+  "c2327f8dcc54e11c493037c64eae146c000f864b": [
+    "windows-apps-src\\get-started\\your-first-app.md"
   ],
   "1dc003c4683445718de1f14ed3c659fb579482a0": [
     "windows-apps-src\\get-started\\your-first-app.md"
@@ -5497,6 +5509,9 @@
   ],
   "2a7c5930752c759c3875826d0046603a63981341": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "6f2b6711e0d1996f4dfaf1a35197c30bc1b28585": [
+    "windows-apps-src\\TOC.md"
   ],
   "93e2c81ce987222d29e9f40c188b4290fec9c96e": [
     "windows-apps-src\\TOC.md"
@@ -9866,6 +9881,9 @@
   "d36b84299b8e469624cef54f89c94744f3f4ae83": [
     "windows-apps-src\\whats-new\\windows-10-creators-preview.md"
   ],
+  "aacd3477794a5721a0117ac6b3554ae49ae25398": [
+    "windows-apps-src\\get-started\\get-started-tutorial-game-js2d.md"
+  ],
   "ec34ebee9344661ba5239567da694dec65573e8f": [
     "windows-apps-src\\get-started\\get-started-tutorial-game-js2d.md"
   ],
@@ -9944,6 +9962,9 @@
   "815d7400d14c6d70f1cf81d83ef7d059a2c85c66": [
     "windows-apps-src\\devices-sensors\\pos-printer.md"
   ],
+  "060c83db4a30b3a273f092effcfd3a82b4c00884": [
+    "windows-apps-src\\get-started\\get-started-tutorial-game-mg2d.md"
+  ],
   "11be75de5d315a7c0e46b2699130a062bad1b2df": [
     "windows-apps-src\\get-started\\get-started-tutorial-game-mg2d.md"
   ],
@@ -9952,5 +9973,8 @@
   ],
   "7ac12e03901755c61dc8b90aeaf9b775f774e2d0": [
     "windows-apps-src\\whats-new\\windows-10-build-15021-api-diff.md"
+  ],
+  "5da9d720e15ce088810743c1315e3ca0900f227f": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-js-uwp.md"
   ]
 }

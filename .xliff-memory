@@ -34269,6 +34269,86 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\502b19e861448f3f023209d515de7685963c15ee.c5d57e7dd738a1d3bb19c4d6e91e5dad3688c686.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\your-first-app.md.33faa92b1e7a7353b4480de6e2b005d1e11e6b48.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\your-first-app.md",
+      "XliffHash": "33faa92b1e7a7353b4480de6e2b005d1e11e6b48",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c2327f8dcc54e11c493037c64eae146c000f864b.d18aecc4461046d336da9e02453b26679e8facd4.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md.09cbf8d45e42efe9489749653a2b7f93e6a1228e.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md",
+      "XliffHash": "09cbf8d45e42efe9489749653a2b7f93e6a1228e",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0bea2fce6ad56c2305a81672ce352cb2b8454dbe.1b5240003285a11656e8cc822435d8f0569a333c.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\create-a-hello-world-app-js-uwp.md.f0b0747fcf47866e8ff5f79092b8545db39e0487.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\create-a-hello-world-app-js-uwp.md",
+      "XliffHash": "f0b0747fcf47866e8ff5f79092b8545db39e0487",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5da9d720e15ce088810743c1315e3ca0900f227f.b80d6ff7d6796c8663119c936617200fde32ae31.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\get-set-up.md.3c82485ce2e22e2df864e07fc1a9099217f9d37c.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\get-set-up.md",
+      "XliffHash": "3c82485ce2e22e2df864e07fc1a9099217f9d37c",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1e07b1235299b1f462ac9e8fa5f9bf6f6c861633.0123699b4b3f1cf1a09400bb7219d3e36be0e247.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\get-started-tutorial-game-mg2d.md.4dd406694a314bc49e822a118ae54af40c0d8178.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\get-started-tutorial-game-mg2d.md",
+      "XliffHash": "4dd406694a314bc49e822a118ae54af40c0d8178",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\060c83db4a30b3a273f092effcfd3a82b4c00884.66f5502fc0ee75b83dc755fec0e7e54067ca0576.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\get-started-tutorial-game-js2d.md.372db8c7b35c1fce995cb20b9d83f865656a29ce.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\get-started-tutorial-game-js2d.md",
+      "XliffHash": "372db8c7b35c1fce995cb20b9d83f865656a29ce",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\aacd3477794a5721a0117ac6b3554ae49ae25398.84e1f3a2b322f55bc4f80b1aea34de77b62040f3.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\TOC.md.def80fa56f6d6fff6c9e411aee303beb241f01b0.HT": {
+      "SourceFilename": "windows-apps-src\\TOC.md",
+      "XliffHash": "def80fa56f6d6fff6c9e411aee303beb241f01b0",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\6f2b6711e0d1996f4dfaf1a35197c30bc1b28585.4e47c8a1e7013c46b9b5863eedc5759656ddd2d6.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md.c9cec7802c0f0c553eea5190181a7a2f0666e30f.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md",
+      "XliffHash": "c9cec7802c0f0c553eea5190181a7a2f0666e30f",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1a90b6c030f019190224c47db3624a49ed05b4a9.c80698d02e3bdc63be2c9ad7d3d09c4e14bfabce.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
