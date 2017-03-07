@@ -5510,6 +5510,9 @@
   "2a7c5930752c759c3875826d0046603a63981341": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "e6820dd6557c4ede3821284a58e7f73e0b77f89b": [
+    "windows-apps-src\\TOC.md"
+  ],
   "6f2b6711e0d1996f4dfaf1a35197c30bc1b28585": [
     "windows-apps-src\\TOC.md"
   ],
@@ -9976,5 +9979,8 @@
   ],
   "5da9d720e15ce088810743c1315e3ca0900f227f": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-js-uwp.md"
+  ],
+  "b2e86cd6f7a888fa229b452b7af4b1e34f89c428": [
+    "windows-apps-src\\get-started\\get-started-tutorial-game-js3d.md"
   ]
 }
