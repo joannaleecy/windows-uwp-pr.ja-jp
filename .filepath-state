@@ -2264,6 +2264,9 @@
   "ce94dda0eaf156f1e09fefbd76f50bc764050970": [
     "windows-apps-src\\gaming\\work-with-networking-in-your-directx-game.md"
   ],
+  "09772f5c96ffaa55497fb591dbabde7fc6549edd": [
+    "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
+  ],
   "34a1d665bc98a5224ef7707994138ba40d70763b": [
     "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
   ],
@@ -4040,6 +4043,9 @@
   "3c2a36d56f732aa5878498c387ba7b5b5f8991f5": [
     "windows-apps-src\\packaging\\app-capability-declarations.md"
   ],
+  "369e157c6019e7cd3e81540783d86b9ed20601af": [
+    "windows-apps-src\\packaging\\index.md"
+  ],
   "6db2e94c346b4cac724a1e2e2998dd1afa780684": [
     "windows-apps-src\\packaging\\index.md"
   ],
@@ -4057,6 +4063,9 @@
   ],
   "104e311e4c5a971d3bd6af8017adb205556fca40": [
     "windows-apps-src\\packaging\\install-universal-windows-apps-with-the-winappdeploycmd-tool.md"
+  ],
+  "b83f378c1c13ae2b50e637a94cd078e3adec2a20": [
+    "windows-apps-src\\packaging\\packaging-uwp-apps.md"
   ],
   "97796e1c45bfa01fbb2d47723f77113fea3f286a": [
     "windows-apps-src\\packaging\\packaging-uwp-apps.md"
@@ -4103,10 +4112,10 @@
   "24682c6468915fc5e66b43a5fda9aa8a12efdba5": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
-  "502b19e861448f3f023209d515de7685963c15ee": [
+  "7482599456319e44694ac15fa58cfd5d540aeaad": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
-  "7482599456319e44694ac15fa58cfd5d540aeaad": [
+  "502b19e861448f3f023209d515de7685963c15ee": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
   "824aba36d2881cf516c5b9dab2bdc79503d10369": [
@@ -5524,6 +5533,9 @@
   ],
   "2a7c5930752c759c3875826d0046603a63981341": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "f18ea3b18c74a1bf444936fc68ed8d702e22fe9f": [
+    "windows-apps-src\\TOC.md"
   ],
   "0754dbe256aa5906626e9a97f130d658aa19d06c": [
     "windows-apps-src\\TOC.md"
@@ -9242,6 +9254,9 @@
   "2878c8c9a50ea49ef10d020dd16d13500690431c": [
     "windows-apps-src\\monetize\\app-metadata-api-for-advertising-networks.md"
   ],
+  "885b999839db8433127d97439d62f57a4c70b273": [
+    "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
+  ],
   "7130507f85e1a7df3e76510ef2fb9fe75a544ec7": [
     "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
   ],
@@ -9608,6 +9623,9 @@
   "d5ae47fe7e2c8423735a44c09cda4f182481c53a": [
     "windows-apps-src\\monetize\\get-the-stack-trace-for-an-error-in-your-app.md"
   ],
+  "fdb1424b4d418b260e755d218e12c86140b997d6": [
+    "windows-apps-src\\packaging\\create-app-package-with-makeappx-tool.md"
+  ],
   "c5018dc12d84a65a4984e8585cc88afc1c6ea551": [
     "windows-apps-src\\packaging\\create-app-package-with-makeappx-tool.md"
   ],
@@ -9722,6 +9740,9 @@
   "164587d33249d5fe2a8cdc6e9ce66c39a7c5ff58": [
     "windows-apps-src\\monetize\\submit-responses-to-app-reviews.md"
   ],
+  "47bd2d7db1517c7cb54b018ee014e3714e71cf3e": [
+    "windows-apps-src\\packaging\\create-certificate-package-signing.md"
+  ],
   "4bf35c15fe0c24b26c9500dafdd11786a8bb65df": [
     "windows-apps-src\\packaging\\create-certificate-package-signing.md"
   ],
@@ -9733,6 +9754,9 @@
   ],
   "655e3907e2003b4e82c834e7568762208e399253": [
     "windows-apps-src\\packaging\\create-certificate-package-signing.md"
+  ],
+  "5cbff0011a4a96c61d7f7bad7e57bd130e09c39b": [
+    "windows-apps-src\\packaging\\sign-app-package-using-signtool.md"
   ],
   "3292f48da86fed1a62620333238cc5d280f8ed9c": [
     "windows-apps-src\\packaging\\sign-app-package-using-signtool.md"
@@ -10024,5 +10048,8 @@
   ],
   "ede7e8d5e9cce39850edbdb70a715d76c78f0c01": [
     "windows-apps-src\\get-started\\prerelease-apis.md"
+  ],
+  "8eca88588b2e444450daccd997aebb9e838a90d4": [
+    "windows-apps-src\\packaging\\manual-packaging-root.md"
   ]
 }
