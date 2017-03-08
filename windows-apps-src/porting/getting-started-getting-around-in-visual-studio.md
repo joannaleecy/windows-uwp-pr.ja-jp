@@ -3,17 +3,24 @@ author: mcleblanc
 description: "Visual Studio の操作方法"
 title: "Visual Studio の操作方法"
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3f23745d161965d08a35abbef31b8e4342cf1ff6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 57341e52ad51e446e6828e5b4ba6228094152d7f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# はじめに: Visual Studio の操作方法
+# <a name="getting-started-getting-around-in-visual-studio"></a>はじめに: Visual Studio の操作方法
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
-## Microsoft Visual Studio の操作方法
+## <a name="getting-around-in-microsoft-visual-studio"></a>Microsoft Visual Studio の操作方法
 
 ここでは、前の手順で作ったプロジェクトに戻り、Microsoft Visual Studio 統合開発環境 (IDE) の操作方法について示します。
 
@@ -27,7 +34,7 @@ Microsoft Visual Studio もこれによく似ています。ただし、既定�
 
 これに少し違和感を感じる場合、Visual Studio ではウィンドウを並べ替えて、ソース ファイルを画面の左側に、ツールボックスを右側に配置することができます。 実際に、任意のウィンドウのタイトル バーをクリックしてドラッグすることによって位置変更ができ、リリースするとドッキングされる位置を示すボックスが影付きで表示されます。 多くのウィンドウのタイトル バーにも小さな描画ピン アイコンがあります。 これにより、パネルをそのまま固定して、その場所にロックできます。 ウィンドウのピン留めを外して、領域を節約するために折りたたむことができます。これは、モニターが幅の狭い側にある場合に便利です。 失敗した場合 (ご安心ください。すべて対応できます) は、**[ウィンドウ]** メニューの **[ウィンドウ レイアウトのリセット]** をクリックして順序を復元します。
 
-## コントロールの追加、プロパティの設定、イベントへの応答
+## <a name="adding-controls-setting-their-properties-and-responding-to-events"></a>コントロールの追加、プロパティの設定、イベントへの応答
 
 次は、プロジェクトにコントロールをいくつか追加しましょう。 ここでは、コントロールのプロパティをいくつか変更した後、コントロールのイベントの 1 つに応答するコードを記述します。
 
@@ -119,13 +126,8 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 
 アプリを中止するには、Visual Studio に戻り、**[デバッグ]** メニュー、**[デバッグの停止]** の順にタップします (または、単に Shift キーを押しながら F5 キーを押します)。 Visual Studio では、多数の異なるデバイスでアプリを試して、各デバイスでの動作を確認してみてください。
 
-## 次のステップ
+## <a name="next-step"></a>次のステップ
 
 [はじめに: コモン コントロール](getting-started-common-controls.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

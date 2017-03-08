@@ -3,18 +3,25 @@ author: mcleblanc
 ms.assetid: 159681E4-BF9E-4A57-9FEE-EC7ED0BEFFAD
 title: "MVVM と言語のパフォーマンスに関するヒント"
 description: "このトピックでは、ソフトウェアの設計パターンとプログラミング言語の選択に関連するいくつかのパフォーマンスの考慮事項について説明します。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4be8fd69752dac70c316164fca79bb73c6666c43
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5833422a3074ddfa581011d91c8364bddb3c3088
+ms.lasthandoff: 02/07/2017
 
 ---
-# MVVM と言語のパフォーマンスに関するヒント
+# <a name="mvvm-and-language-performance-tips"></a>MVVM と言語のパフォーマンスに関するヒント
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 このトピックでは、ソフトウェアの設計パターンとプログラミング言語の選択に関連するいくつかのパフォーマンスの考慮事項について説明します。
 
-## Model-View-ViewModel (MVVM) パターン
+## <a name="the-model-view-viewmodel-mvvm-pattern"></a>Model-View-ViewModel (MVVM) パターン
 
 Model-View-ViewModel (MVVM) パターンは、多くの XAML アプリで共通です  (MVVM は、Fowler の Model-View-Presenter パターンの説明によく似ていますが、これは XAML に合わせて調整されました)。 MVVM パターンの問題は、このパターンが原因となり、誤ってアプリのレイヤーおよび割り当てが過剰になる可能性があることです。 MVVM を使用する利点は次のとおりです。
 
@@ -28,7 +35,7 @@ MVVM パターンには、複数の具体的な定義と、それを実装する
 -   MVVM では、一般的な DelegateCommand または RelayCommand ヘルパーなどの ICommand を使用して、ビュー モデルに Button.Click を接続することが一般的です。 ただし、これらのコマンドは、CanExecuteChanged イベント リスナー、ワーキング セットの増加、ページの起動/ナビゲーション時間の増加など、余分な割り当てとなります。 **推奨事項:** 便利な ICommand インターフェイスを使用する代わりに、分離コードにイベント ハンドラーを配置し、ビュー イベントにイベント ハンドラーを接続することを検討して、それらのイベントが発生したときに、ビュー モデルでコマンドを呼び出します。 コマンドが利用できない場合、ボタンを無効にするコードを追加する必要があります。
 -   MVVM では、UI の使用可能なすべての構成でページを作成し、Visibility プロパティを VM でのプロパティにバインドすることによって、ツリーの一部を折りたたむことが一般的です。 これにより、起動時間と、場合によってはワーキング セットが不必要に増加します (ツリーの一部は表示されない可能性があるため)。 **推奨事項:** x:DeferLoadStrategy 機能を使って、ツリーの不要な部分をスタートアップから延期します。 また、ページのさまざまなモードについて個別のユーザー コントロールを作成し、分離コードを使って必要なコントロールのみを読み込みます。
 
-## C++/CX の推奨事項
+## <a name="ccx-recommendations"></a>C++/CX の推奨事項
 
 -   **最新バージョンを使います**。 C++/CX コンパイラは継続的にパフォーマンスが向上しています。 アプリが最新のツールセットを使ってビルドされていることを確認します。
 -   **RTTI (/GR-) を無効にします**。 RTTI はコンパイラで既定でオンになっているため、ビルド環境でオフにしない限り、RTTI を使用している可能性があります。 RTTI には大きなオーバーヘッドがあるため、コードが RTTI に大きく依存していない限り、オフにしてください。 XAML フレームワークには、コードで RTTI を使用するという要件はありません。
@@ -41,10 +48,5 @@ MVVM パターンには、複数の具体的な定義と、それを実装する
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

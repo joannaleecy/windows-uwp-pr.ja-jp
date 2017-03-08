@@ -3,21 +3,28 @@ author: mtoepke
 title: "深度バッファーのデバイス リソースの作成"
 description: "シャドウ ボリュームの深度のテストをサポートするために必要な Direct3D デバイス リソースを作成する方法について説明します。"
 ms.assetid: 86d5791b-1faa-17e4-44a8-bbba07062756
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、ゲーム、Direct3D、深度バッファー"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 85fb020e7d476d3b2095875376903c5e28f08d94
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 87e4248545288f4725e0cf0b104a75f1925ad3a3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 深度バッファーのデバイス リソースの作成
+# <a name="create-depth-buffer-device-resources"></a>深度バッファーのデバイス リソースの作成
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 シャドウ ボリュームの深度のテストをサポートするために必要な Direct3D デバイス リソースを作成する方法について説明します。 「[チュートリアル: Direct3D 11 の深度バッファーを使ったシャドウ ボリュームの実装](implementing-depth-buffers-for-shadow-mapping.md)」のパート 1 です。
 
-## 必要なリソース
+## <a name="resources-youll-need"></a>必要なリソース
 
 
 シャドウ ボリュームの深度マップをレンダリングするには、次の Direct3D デバイス依存リソースが必要です。
@@ -32,7 +39,7 @@ ms.openlocfilehash: 85fb020e7d476d3b2095875376903c5e28f08d94
 
 これらのリソースの作成をデバイス依存リソースの作成ルーチンに含める必要があることに注意してください。そうすれば、新しいデバイス ドライバーがインストールされたり、別のグラフィックス アダプターに接続されているモニターにユーザーがアプリを移動したりした場合などに、レンダラーがデバイス依存リソースを再作成できます。
 
-## サポートされている機能
+## <a name="check-feature-support"></a>サポートされている機能
 
 
 深度マップを作成する前に、Direct3D デバイスで [**CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) メソッドを呼び出し、**D3D11\_FEATURE\_D3D9\_SHADOW\_SUPPORT** を要求して、[**D3D11\_FEATURE\_DATA\_D3D9\_SHADOW\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/jj247569) 構造体を提供します。
@@ -54,7 +61,7 @@ if (isD3D9ShadowSupported.SupportsDepthAsTextureWithLessEqualComparisonFilter)
 
 この構造体がサポートされていない場合は、サンプル比較関数を呼び出すシェーダー モデル 4 レベル 9\_x 向けにコンパイルされたシェーダーを読み込まないようにしてください。 この機能がサポートされない場合、GPU がレガシ デバイスであり、ドライバーが更新されていないため WDDM 1.2 以上がサポートされないというケースがほとんどです。 デバイスが機能レベル 10\_0 以上をサポートしている場合は、代わりにシェーダー モデル 4\_0 向けにコンパイルされたサンプル比較を読み込むことができます。
 
-## 深度バッファーの作成
+## <a name="create-depth-buffer"></a>深度バッファーの作成
 
 
 まず、高精度深度形式の深度マップを作成してください。 最初に、一致するシェーダー リソース ビュー プロパティを設定します。 デバイス メモリの不足やハードウェアでサポートされない形式などが原因でリソースの作成が失敗した場合は、低精度形式を試して、照合するプロパティを変更してください。
@@ -107,7 +114,7 @@ hr = pD3DDevice->CreateShaderResourceView(
     );
 ```
 
-## 比較の状態の作成
+## <a name="create-comparison-state"></a>比較の状態の作成
 
 
 ここで、比較サンプラーの状態オブジェクトを作成します。 機能レベル 9\_1 では D3D11\_COMPARISON\_LESS\_EQUAL のみがサポートされます。 フィルタリングの選択肢について詳しくは、「[ハードウェアの範囲でのシャドウ マップのサポート](target-a-range-of-hardware.md)」をご覧ください。シャドウ マップの高速化のために、ポイント フィルタリングを選ぶこともできます。
@@ -146,7 +153,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-## レンダリングの状態の作成
+## <a name="create-render-states"></a>レンダリングの状態の作成
 
 
 次に、前面のカリングを有効にするために使用できるレンダリングの状態を作成します。 機能レベル 9\_1 のデバイスの場合、**DepthClipEnable** を **true** に設定する必要があります。
@@ -182,7 +189,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-## 定数バッファーの作成
+## <a name="create-constant-buffers"></a>定数バッファーの作成
 
 
 ライトの位置からのレンダリングのために定数バッファーを忘れずに作成してください。 シェーダーにライトの位置を指定するために、この定数バッファーを使うこともできます。 ポイント ライトには遠近投影マトリックスを使い、指向性ライト (太陽光など) には正投影マトリックスを使います。
@@ -239,7 +246,7 @@ context->UpdateSubresource(
     );
 ```
 
-## ビューポートの作成
+## <a name="create-a-viewport"></a>ビューポートの作成
 
 
 シャドウ マップにレンダリングするための個別のビューポートが必要です。 ビューポートはデバイス ベースのリソースではありません。コードの別の場所で自由に作成できます。 シャドウ マップと同時にビューポートを作成すると、ビューポートのサイズとシャドウ マップのサイズの整合性を保つのが簡単になります。
@@ -261,10 +268,5 @@ m_shadowViewport.MaxDepth = 1.f;
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

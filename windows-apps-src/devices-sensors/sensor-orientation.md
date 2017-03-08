@@ -3,14 +3,21 @@ author: DBirtolo
 ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
 title: "センサーの向き"
 description: "Accelerometer、Gyrometer、Compass、Inclinometer、および OrientationSensor の各クラスのセンサー データは、基準軸によって定義されます。 これらの軸はデバイスの横長の向きで定義され、ユーザーがデバイスの向きを変えると、デバイスと共に回転します。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 62b4042cf1c6296c908a12feb5b2fcbd2b9b8734
-ms.openlocfilehash: 9deb0327f67350af49ba19224a75e766ff9805d7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d9e54efb077bf46faf30e2ce3052fb0c860d0409
+ms.lasthandoff: 02/07/2017
 
 ---
-# センサーの向き
+# <a name="sensor-orientation"></a>センサーの向き
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 ** 重要な API **
 
@@ -19,7 +26,7 @@ ms.openlocfilehash: 9deb0327f67350af49ba19224a75e766ff9805d7
 
 [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687)、[**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718)、[**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705)、[**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766)、および [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) の各クラスのセンサー データは、基準軸によって定義されます。 これらの軸はデバイスの横長の向きで定義され、ユーザーがデバイスの向きを変えると、デバイスと共に回転します。 アプリが自動回転をサポートしており、ユーザーがデバイスを回転させたときに連動して向きが変わる場合、センサー データを使う前に回転に合わせて調整する必要があります。
 
-## 表示の向きとデバイスの向き
+## <a name="display-orientation-vs-device-orientation"></a>表示の向きとデバイスの向き
 
 センサーの基準軸について理解するために、画面の向きとデバイスの向きを区別する必要があります。 画面の向きはテキストの向きであり、画面上に画像が表示されます。それに対してデバイスの向きは、デバイスの実際の配置です。 次の図では、デバイスとディスプレイの向きは共に**横向き**です (示されているセンサー軸は、横向き優先デバイスにのみ適用されることに注意してください)。
 
@@ -35,7 +42,7 @@ ms.openlocfilehash: 9deb0327f67350af49ba19224a75e766ff9805d7
 
 向きの値は、[**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Dn264258) クラスの [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.getforcurrentview.aspx) メソッドと [**CurrentOrientation**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.currentorientation.aspx) プロパティを使って照会することができます。 次に、[**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/BR226142) 列挙値と比較することによってロジックを作成できます。 サポートするすべての向きについて、その向きへの基準軸の変換をサポートする必要があることに注意してください。
 
-## 横向き優先デバイスと縦向き優先デバイス
+## <a name="landscape-first-vs-portrait-first-devices"></a>横向き優先デバイスと縦向き優先デバイス
 
 製造元は、横向き優先および縦向き優先のいずれのデバイスも製造します。 参照フレームは、横向き優先デバイス (デスクトップやノート PC など) と縦向き優先デバイス (電話や一部のタブレットなど) によって異なります。 次の表は、横向き優先デバイスと縦向き優先デバイスの両方のセンサー軸を示しています。
 
@@ -46,13 +53,13 @@ ms.openlocfilehash: 9deb0327f67350af49ba19224a75e766ff9805d7
 | **LandscapeFlipped ** | ![LandscapeFlipped の向きの横向き優先デバイス](images/sensor-orientation-4.PNG) | ![LandscapeFlipped の向きの縦向き優先デバイス](images/sensor-orientation-5.PNG) | 
 | **PortraitFlipped** | ![PortraitFlipped の向きの横向き優先デバイス](images/sensor-orientation-6.PNG)| ![PortraitFlipped の向きの縦向き優先デバイス](images/sensor-orientation-7.PNG) |
 
-## ディスプレイをブロードキャストするデバイスとヘッドレス デバイス
+## <a name="devices-broadcasting-display-and-headless-devices"></a>ディスプレイをブロードキャストするデバイスとヘッドレス デバイス
 
 一部のデバイスは、別のデバイスにディスプレイをブロードキャストする機能を備えています。 たとえば、タブレットで、プロジェクターにディスプレイを横方向にブロードキャストできます。 このシナリオでは、デバイスの向きが、ディスプレイを表示しているものではなく、元のデバイスに基づいていることに留意することが重要です。 したがって、加速度計は、タブレットのデータを報告します。
 
 さらに、一部のデバイスにはディスプレイがありません。 これらのデバイスでは、デバイスの既定の向きは縦です。
 
-## 表示と向きとコンパスの方位
+## <a name="display-orientation-and-compass-heading"></a>表示と向きとコンパスの方位
 
 
 コンパスの方位は基準軸に依存するため、デバイスの向きと共に変化します。 次の表に基づいて補正します (ユーザーが北を向いていると仮定します)。
@@ -99,7 +106,7 @@ private void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
 }
 ```
 
-## 加速度計とジャイロメーターでの表示の向き
+## <a name="display-orientation-with-the-accelerometer-and-gyrometer"></a>加速度計とジャイロメーターでの表示の向き
 
 表示の向きに合わせた加速度計とジャイロメーターのデータの変換を、次の表に示します。
 
@@ -153,7 +160,7 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 }
 ```
 
-## 表示の向きとデバイスの向き
+## <a name="display-orientation-and-device-orientation"></a>表示の向きとデバイスの向き
 
 [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) データは別の方法で変更する必要があります。 複数の向きとして Z 軸に対する反時計回りの回転を考えてみます。この場合、ユーザーの向きを元に戻すには、回転を逆にする必要があります。 四元数データの場合、オイラーの公式を使って、基準四元数により回転を定義できます。また、基準回転マトリックスを使うこともできます。
 
@@ -167,10 +174,5 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 | **縦向き**         | 90                                 | cos(-45⁰) + (i + j + k)*sin(-45⁰)       | \[0 1 0<br/>-1 0 0<br/>0 0 1]              |
 | **LandscapeFlipped** | 180                                | 0 - i - j - k                           | \[1 0 0<br/> 0 1 0<br/> 0 0 1]               |
 | **PortraitFlipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[0 -1 0<br/> 1  0 0<br/> 0  0 1]             |
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

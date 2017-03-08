@@ -9,9 +9,16 @@ ms.assetid: 0CD395CD-E2AB-429D-BB49-56A71C5CC35D
 label: XAML custom panels overview (Windows apps)
 template: detail.hbs
 op-migration-status: ready
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: ff8d604be663b711bebf358f3256a5e6c55fb047
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1925d6b10eb23a6382bd63e812cade1311da178a
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -211,9 +218,4 @@ protected override Size ArrangeOverride(Size finalSize)
 
 **概念**
 * [配置、余白、およびパディング](alignment-margin-padding.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -3,13 +3,20 @@ author: msatranjr
 title: "C# および Visual Basic での Windows ランタイム コンポーネントの作成"
 description: ".NET Framework 4.5 以降では、マネージ コードを使って独自の Windows ランタイム型を作成し、Windows ランタイム コンポーネントにパッケージ化することができます。"
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: e7793cd27d996ce2adbfebfbad91541bdccf0d82
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 31fddae1c163f46a56fb78f5ac29e11a84e2ddd9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# C# および Visual Basic での Windows ランタイム コンポーネントの作成
+# <a name="creating-windows-runtime-components-in-c-and-visual-basic"></a>C# および Visual Basic での Windows ランタイム コンポーネントの作成
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -20,7 +27,7 @@ Visual Basic または C# を利用して UWP アプリでのみ使うコンポ�
 
 この記事は、次のセクションで構成されています。
 
-## Windows ランタイム コンポーネントでの型の宣言
+## <a name="declaring-types-in-windows-runtime-components"></a>Windows ランタイム コンポーネントでの型の宣言
 
 
 内部的には、コンポーネントの Windows ランタイム型は、ユニバーサル Windows アプリで許可されている .NET Framework の機能をすべて使うことができます  (詳しくは、「[UWP アプリの .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)」の概要をご覧ください。外部的には、型のメンバーはパラメーターと戻り値の Windows ランタイム型だけを公開できます。 Windows ランタイム コンポーネントから公開される .NET Framework 型の制限事項を次に示します。
@@ -41,14 +48,14 @@ Visual Basic または C# を利用して UWP アプリでのみ使うコンポ�
 -   パブリック構造体はパブリック フィールド以外のメンバーを持つことができません。また、それらのフィールドは値型または文字列であることが必要です。
 -   パブリック クラスは **sealed** (Visual Basic では **NotInheritable**) であることが必要です。 プログラミング モデルでポリモーフィズムが必要となる場合は、パブリック インターフェイスを作成し、ポリモーフィックにする必要があるクラスにそのインターフェイスを実装できます。
 
-## コンポーネントのデバッグ
+## <a name="debugging-your-component"></a>コンポーネントのデバッグ
 
 
 ユニバーサル Windows アプリとコンポーネントの両方がマネージ コードで作成されている場合、それらを同時にデバッグできます。
 
 C++ を使ってユニバーサル Windows アプリの一部としてコンポーネントをテストしている場合、マネージ コードとネイティブ コードを同時にデバッグできます。 既定では、ネイティブ コードのみになります。
 
-## **ネイティブ C++ コードとマネージ コードの両方をデバッグするには**
+## **<a name="to-debug-both-native-c-code-and-managed-code"></a>ネイティブ C++ コードとマネージ コードの両方をデバッグするには**
 
 1.  Visual C++ プロジェクトのショートカット メニューを開き、**[プロパティ]** をクリックします。
 2.  プロパティ ページの **[構成プロパティ]** で、**[デバッグ]** を選びます。
@@ -57,14 +64,14 @@ C++ を使ってユニバーサル Windows アプリの一部としてコンポ�
 
 JavaScript を使ってユニバーサル Windows アプリの一部としてコンポーネントをテストしている場合、既定では、ソリューションは JavaScript デバッグ モードになります。 Visual Studio では、JavaScript とマネージ コードを同時にデバッグすることはできません。
 
-## **JavaScript ではなくマネージ コードをデバッグするには**
+## **<a name="to-debug-managed-code-instead-of-javascript"></a>JavaScript ではなくマネージ コードをデバッグするには**
 
 1.  JavaScript プロジェクトのショートカット メニューを開き、**[プロパティ]** を選びます。
 2.  プロパティ ページの **[構成プロパティ]** で、**[デバッグ]** を選びます。
 3.  **[デバッガーの種類]** を選び、ドロップダウン リスト ボックスで、**[スクリプトのみ]** を **[マネージのみ]** に変更します。 **[OK]** をクリックします。
 4.  マネージ コードのブレークポイントを設定し、通常どおりにデバッグします。
 
-## マネージ コードへの Windows ランタイム型の引き渡し
+## <a name="passing-windows-runtime-types-to-managed-code"></a>マネージ コードへの Windows ランタイム型の引き渡し
 
 
 「Windows ランタイム コンポーネントでの型の宣言」セクションで既に説明したように、特定の .NET Framework 型はパブリック クラスのメンバーのシグネチャに示される場合があります。 これは、マネージ コードで Windows ランタイムを通常どおりに使うことができるようにするために、.NET Framework が提供するサポートの一部です。 これには、プリミティブ型と一部のクラスやインターフェイスが含まれます。 コンポーネントが JavaScript または C++ コードから使われる場合は、.NET Framework 型が呼び出し元に対してどのように表示されるかを理解することが重要です。 JavaScript を使った例については、「[チュートリアル: C# または Visual Basic での単純なコンポーネントの作成と JavaScript からの呼び出し](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)」をご覧ください。 このセクションでは、よく使われる型について説明します。
@@ -106,12 +113,12 @@ Windows ランタイムでは、IMap&lt;K, V&gt; と IMapView&lt;K, V&gt; は IK
 
 インターフェイスがマネージ コード内に表示される方法によって、これらのインターフェイスを実装する型の表示方法が決まります。 たとえば、PropertySet クラスは IMap&lt;K, V&gt; を実装しますが、これはマネージ コードでは IDictionary&lt;TKey, TValue&gt; として表示されます。 PropertySet は、IMap&lt;K, V&gt; ではなく IDictionary&lt;TKey, TValue&gt; を実装したように示されるため、マネージ コードでは、PropertySet は .NET Framework ディクショナリの Add メソッドと同様な動作をする Add メソッドを保持しているように表示されます。 この場合、Insert メソッドは保持していないように表示されます。 この例については、「[チュートリアル: C# または Visual Basic での単純なコンポーネントの作成と JavaScript からの呼び出し](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)」の記事をご覧ください。
 
-## Windows ランタイムへのマネージ型の引き渡し
+## <a name="passing-managed-types-to-the-windows-runtime"></a>Windows ランタイムへのマネージ型の引き渡し
 
 
 前のセクションで説明したように、一部の Windows ランタイム型は、コンポーネントのメンバーのシグニチャ内、または IDE で使う場合は Windows ランタイム メンバーのシグニチャ内で、.NET Framework 型として表示される場合があります。 .NET Framework 型をこれらのメンバーに渡すか、またはコンポーネントのメンバーの戻り値として使うと、対応する Windows ランタイム型として Windows ランタイム側のコードに表示されます。 コンポーネントが JavaScript から呼び出されたときの影響に関する例については、[「チュートリアル: C# または Visual Basic での単純なコンポーネントの作成と JavaScript からの呼び出し」](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)の「コンポーネントからマネージ型を返す」セクションをご覧ください。
 
-## オーバー ロードされたメソッド
+## <a name="overloaded-methods"></a>オーバー ロードされたメソッド
 
 
 Windows ランタイムでは、メソッドはオーバーロードできます。 ただし、同じ数のパラメーターを持つ複数のオーバーロードを宣言した場合、これらのオーバーロードのうち 1 つのみに [Windows.Foundation.Metadata.DefaultOverloadAttribute](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.defaultoverloadattribute.aspx) 属性を適用する必要があります。 この属性が適用されるオーバーロードが、JavaScript から呼び出すことができる唯一のオーバーロードになります。 たとえば、次のコードでは、**int** (Visual Basic では **Integer**) を受け取るオーバーロードが既定のオーバーロードです。
@@ -142,7 +149,7 @@ Windows ランタイムでは、メソッドはオーバーロードできます
 
 コンストラクターに DefaultOverloadAttribute 属性を適用することはできません。 クラスのすべてのコンストラクターは、異なる数のパラメーターを持つ必要があります。
 
-## IStringable の実装
+## <a name="implementing-istringable"></a>IStringable の実装
 
 
 Windows 8.1 以降では、Windows ランタイムに IStringable インターフェイスが用意されています。そのメソッドは IStringable.ToString の 1 つだけで、Object.ToString で提供されるサポートに相当する基本的な書式設定のサポートを提供します。 Windows ランタイム コンポーネントでエクスポートしたパブリック マネージ型に IStringable を実装する場合は、次の制限があります。
@@ -178,7 +185,7 @@ Windows 8.1 以降では、Windows ランタイムに IStringable インター�
 
 IStringable を実装するマネージ型やその ToString の実装を隠すマネージ型をネイティブ コードから呼び出すと、さまざまな状況で予期しない動作を引き起こす可能性があります。
 
-## 非同期操作
+## <a name="asynchronous-operations"></a>非同期操作
 
 
 コンポーネントで非同期メソッドを実装するには、メソッド名の最後に "Async" を追加し、非同期アクションまたは非同期操作を表す、次の Windows ランタイム インターフェイスのいずれかを返します。IAsyncAction、IAsyncActionWithProgress&lt;TProgress&gt;、IAsyncOperation&lt;TResult&gt;、IAsyncOperationWithProgress&lt;TResult, TProgress&gt;。
@@ -253,7 +260,7 @@ function asyncExample(id) {
 
 取り消しや進行状況の報告をオプションでサポートする非同期メソッドを作成する場合は、キャンセル トークンや IProgress&lt;T&gt; インターフェイスのパラメーターを持たないオーバーロードを追加することを検討してください。
 
-## 例外のスロー
+## <a name="throwing-exceptions"></a>例外のスロー
 
 
 Windows アプリ用 .NET に含まれている例外の型は、どれでもスローすることができます。 Windows ランタイム コンポーネントで独自のパブリック型の例外を宣言することはできませんが、非パブリック型を宣言し、スローすることはできます。
@@ -271,7 +278,7 @@ Windows アプリ用 .NET に含まれている例外の型は、どれでもス
 
 > **注:** HRESULT には負の値を使ってください。 正の値は成功と解釈されるので、JavaScript や C++ の呼び出し元で例外がスローされなくなります。
 
-## イベントの宣言と発生
+## <a name="declaring-and-raising-events"></a>イベントの宣言と発生
 
 イベントのデータを保持する型を宣言する場合、EventArgs は Windows ランタイム型ではないので、EventArgs の代わりに Object から派生させます。 [EventHandler&lt;TEventArgs&gt;](https://msdn.microsoft.com/library/db0etb8x.aspx) をイベントの型として使い、イベント引数の型をジェネリック型引数として使います。 イベントは .NET Framework アプリケーションの場合と同様に発生させます。
 
@@ -279,21 +286,16 @@ Windows ランタイム コンポーネントが JavaScript や C++ で使われ
 
 カスタム イベント アクセサーを実装する場合 (Visual Basic では **Custom** キーワードでイベントを宣言する場合) は、実装で Windows ランタイムのイベント パターンに従う必要があります。 「[Windows ランタイム コンポーネントのカスタム イベントおよびイベント アクセサー](custom-events-and-event-accessors-in-windows-runtime-components.md)」をご覧ください。 C# や Visual Basic コードでイベントを処理する場合でも、通常の .NET Framework のイベントとして表示されます。
 
-## 次の手順
+## <a name="next-steps"></a>次の手順
 
 
 ユーザーが独自に使う Windows ランタイム コンポーネントを作成した後で、そのコンポーネントにカプセル化されている機能が他の開発者の役に立つ場合があります。 他の開発者に配布するためにコンポーネントをパッケージ化する方法は 2 つあります。 「[マネージ Windows ランタイム コンポーネントの配布](https://msdn.microsoft.com/library/jj614475.aspx)」をご覧ください。
 
 Visual Basic と C# の言語の機能、および Windows ランタイムに関する .NET Framework のサポートについて詳しくは、「[Visual Basic および C# 言語リファレンス](https://msdn.microsoft.com/library/windows/apps/xaml/br212458.aspx)」をご覧ください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [Windows ストア アプリ用 .NET の概要](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
 * [UWP アプリの .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
 * [チュートリアル: 単純な Windows ランタイム コンポーネントの作成と JavaScript からの呼び出し](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

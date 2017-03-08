@@ -3,21 +3,28 @@ author: jwmsft
 description: "Template settings (テンプレート設定) クラス"
 title: "Template settings (テンプレート設定) クラス"
 ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 8a52535e54a321bab6b34b6a73c53222e88d2151
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 983158dfa258eeac6305a7aa000afba7311500d3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Template settings (テンプレート設定) クラス
+# <a name="template-settings-classes"></a>Template settings (テンプレート設定) クラス
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 UI にコントロールを追加し、コントロールのプロパティを設定して、イベント ハンドラーをアタッチできることを前提としています。 アプリにコントロールを追加する方法については、「[コントロールの追加とイベントの処理](https://msdn.microsoft.com/library/windows/apps/mt228345)」をご覧ください。 読者が既定のテンプレートのコピーを作成、編集して、コントロール用のカスタム テンプレートを定義する方法の基本を知っていることも前提にしています。 これについて詳しくは、「[クイック スタート: コントロール テンプレート](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)」をご覧ください。
 
-## **TemplateSettings** クラスのシナリオ
+## <a name="the-scenario-for-templatesettings-classes"></a>**TemplateSettings** クラスのシナリオ
 
 **TemplateSettings** クラスは、コントロールの新しいコントロール テンプレートを定義する際に使用されるプロパティのセットを提供します。 プロパティには、UI 要素の特定部分のサイズのピクセル値などの値があります。 これらの値は、通常は上書きまたはアクセスすることが簡単ではないコントロール ロジックから計算した値であることもあります。 一部のプロパティには、部分の切り替えとアニメーションを制御する **From** および **To** 値としての目的があるため、関連する **TemplateSettings** プロパティがペアになっています。
 
@@ -34,7 +41,7 @@ UI にコントロールを追加し、コントロールのプロパティを�
 
 **TemplateSettings** プロパティは常に、コードではなく XAML で使うことを想定しています。 親コントロールの読み取り専用 **TemplateSettings** プロパティの読み取り専用サブプロパティです。 [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) ベースの新しいクラスを作成し、そのためコントロール ロジックに影響を与える可能性があるカスタム コントロールの高度なシナリオについては、コントロールから再度テンプレートを作成するユーザーに役立つ情報を伝えるために、コントロールにカスタムの **TemplateSettings** プロパティを定義することをお勧めします。 そのプロパティの読み取り専用の値として、テンプレートの測定値、アニメーションの配置などに関係する情報項目ごとに、読み取り専用プロパティを持つコントロールに関連した新しい **TemplateSettings** クラスを定義し、コントロール ロジックを使って初期化されたそのクラスのランタイム インスタンスを呼び出し元に渡します。 **TemplateSettings** クラスは [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) から派生し、プロパティでプロパティ変更コールバックに依存関係プロパティ システムを使用できるようにします。 ただし、プロパティの依存関係プロパティの識別子はパブリック API として公開されないため、**TemplateSettings** プロパティは、呼び出し元に対して読み取り専用にすることを意図したものです。
 
-## コントロール テンプレートで **TemplateSettings** を使う方法
+## <a name="how-to-use-templatesettings-in-a-control-template"></a>コントロール テンプレートで **TemplateSettings** を使う方法
 
 次に示す例は、基盤になる既定の XAML コントロール テンプレートに含まれています。 この特定の例は、[**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) の既定のテンプレートを基にしています。
 
@@ -95,13 +102,8 @@ UI にコントロールを追加し、コントロールのプロパティを�
 **注**  
 コントロール テンプレートの一部として **TemplateSettings** 値を使う場合は、値の型に一致したプロパティを設定してください。 そうしないと、バインドのターゲットの型を **TemplateSettings** 値の異なるソース型から変換できるように、バインドの値のコンバーターを作成することが必要になる場合があります。 詳しくは、「[**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903)」をご覧ください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [クイック スタート: コントロール テンプレート](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

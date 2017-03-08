@@ -3,13 +3,20 @@ author: mcleanbyron
 ms.assetid: 8C1E9E36-13AF-4386-9D0F-F9CB320F02F5
 description: "Windows ストア申請 API のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトを作成します。"
 title: "Windows ストア申請 API を使用したパッケージ フライトの作成"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、Windows ストア申請 API、フライトの作成"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 35823bd1fd0c059ebc9b2107c31400a7ad788a1e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2b2b8acb1cfa2a1eaa0ce586cace250cedb5cf71
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Windows ストア申請 API を使用したパッケージ フライトの作成
+# <a name="create-a-package-flight-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したパッケージ フライトの作成
 
 
 
@@ -18,16 +25,16 @@ Windows ストア申請 API のこのメソッドを使用して、Windows デ�
 
 >**注:**&nbsp;&nbsp;このメソッドは、申請なしでパッケージ フライトを作成します。 パッケージ フライトの申請を作成するには、「[パッケージ フライト申請の管理](manage-flight-submissions.md)」のメソッドをご覧ください。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
 * このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
+>**注:**&nbsp;&nbsp;このメソッドは、Windows ストア提出 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
-## 要求
+## <a name="request"></a>要求
 
 このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
 
@@ -38,15 +45,15 @@ Windows ストア申請 API のこのメソッドを使用して、Windows デ�
 <span/>
  
 
-### 要求ヘッダー
+### <a name="request-header"></a>要求ヘッダー
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
 <span/>
 
-### 要求パラメーター
+### <a name="request-parameters"></a>要求パラメーター
 
 | 名前        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -54,7 +61,7 @@ Windows ストア申請 API のこのメソッドを使用して、Windows デ�
 
 <span/>
 
-### 要求本文
+### <a name="request-body"></a>要求本文
 
 要求本文には次のパラメーターがあります。
  
@@ -66,7 +73,7 @@ Windows ストア申請 API のこのメソッドを使用して、Windows デ�
 
 <span/>
 
-### 要求の例
+### <a name="request-example"></a>要求の例
 
 次の例は、ストア ID 9WZDNCRD911W を持つアプリの新しいパッケージ フライトを作成する方法を示しています。
 
@@ -84,7 +91,7 @@ Content-Type: application/json
 
 ```
 
-## 応答
+## <a name="response"></a>応答
 
 次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文の値について詳しくは、次のセクションをご覧ください。
 
@@ -99,7 +106,7 @@ Content-Type: application/json
 }
 ```
 
-### 応答本文
+### <a name="response-body"></a>応答本文
 
 | 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -110,7 +117,7 @@ Content-Type: application/json
 
 <span/>
 
-## エラー コード
+## <a name="error-codes"></a>エラー コード
 
 要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。
 
@@ -120,14 +127,9 @@ Content-Type: application/json
 | 409  | 現在の状態が原因でパッケージ フライトを作成できませんでした。または、[Windows ストア申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能がアプリで使用されています。 |   
 <span/>
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [パッケージ フライトの取得](get-a-flight.md)
 * [パッケージ フライトの削除](delete-a-flight.md)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

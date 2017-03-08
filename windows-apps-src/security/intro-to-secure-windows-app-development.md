@@ -3,9 +3,16 @@ title: "安全な Windows アプリの開発について"
 description: "この概要記事は、ユニバーサル Windows プラットフォーム (UWP) アプリをセキュリティで保護されたアプリとして作成する作業を加速するさまざまな Windows 10 プラットフォーム機能を、アプリの設計者と開発者が深く理解するのに役立ちます。"
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a70a59283fe664bef9ddab56df57a9fc46c91033
-ms.openlocfilehash: 2ac9edf074ceb91d5cfea17228f0a39fef200b74
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1faf53dc2f1d919af072cd52593292fc552317e9
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -28,7 +35,7 @@ Windows 10 のセキュリティ機能を利用する利点を次にいくつか
 -   これらのセキュリティ シナリオに対応するカスタム コードを実装する場合よりも、作成、テスト、保守の対象となるコードの量は少なくなります。
 -   オペレーティング システムを使用して、アプリのリソースと、ローカルまたはリモートのシステム リソースにアプリがアクセスする方法を制御するため、アプリの安定性と安全性が高まります。
 
-認証時に、特定のサービスへのアクセスを要求するユーザーの ID が検証されます。 Windows 10 のコンポーネントである Microsoft Passport と Windows Hello は、Windows アプリでより安全な認証メカニズムを作成するのに役立ちます。 これらコンポーネントを利用すると、暗証番号 (PIN)、またはユーザーの指紋、顔、虹彩などの生体認証を使って、アプリ用の多要素認証を実装できます。
+認証時に、特定のサービスへのアクセスを要求するユーザーの ID が検証されます。 Windows Hello は、Windows アプリでより安全な認証メカニズムを作成するのに役立つ Windows 10 のコンポーネントです。 これらコンポーネントを利用すると、暗証番号 (PIN)、またはユーザーの指紋、顔、虹彩などの生体認証を使って、アプリ用の多要素認証を実装できます。
 
 移動中データとは、接続とそれを通してやり取りされるメッセージを表します。 これの例は、Web サービスを使用したリモート サーバーからのデータ取得です。 Secure Sockets Layer (SSL) と Secure Hypertext Transfer Protocol (HTTPS) を使うことで、接続の安全性が確保されます。 仲介するものがこれらのメッセージにアクセスするのを防ぎ、または承認されていないアプリが Web サービスと通信するのを防ぐことが、移動中データを保護するうえでの鍵となります。
 
@@ -155,24 +162,24 @@ Azure AD では単一要素認証を実装することもできますが、通�
 
 さらに、Azure AD は OAuth プロバイダーとして使用でき、さまざまなプラットフォームのアプリに対する認証および承認メカニズムを標準ユーザーに提供できます。 詳しくは、「[Azure Active Directory](https://azure.microsoft.com/services/active-directory/)」および「[Azure の多要素認証](https://azure.microsoft.com/services/multi-factor-authentication/)」をご覧ください。
 
-## <a name="24-microsoft-passport-and-windows-hello"></a>2.4 Microsoft Passport と Windows Hello
+## <a name="24-windows-hello"></a>2.4 Windows Hello
 
 
-Windows 10 では、便利な多要素認証メカニズムがオペレーティング システムに組み込まれています。 含まれている 2 つのコンポーネントは、Microsoft Passport と Windows Hello と呼ばれます。 Windows Hello は、Windows 10 に組み込まれた新しい生体認証サインイン システムです。 Windows Hello はオペレーティング システムに直接組み込まれているため、顔または指紋を識別して、ユーザーのデバイスのロックを解除できます。 Windows のセキュリティ保護された資格情報ストアは、デバイス上の生体認証データを保護します。
+Windows 10 では、便利な多要素認証メカニズムがオペレーティング システムに組み込まれています。 Windows Hello は、Windows 10 に組み込まれた新しい生体認証サインイン システムです。 Windows Hello はオペレーティング システムに直接組み込まれているため、顔または指紋を識別して、ユーザーのデバイスのロックを解除できます。 Windows のセキュリティ保護された資格情報ストアは、デバイス上の生体認証データを保護します。
 
-Windows Hello は、個々のユーザーを認識するための堅牢な方法をデバイスに提供します。これにより、ユーザーと要求されたサービス (またはデータ項目) との間のパスの最初の部分が処理されます。 デバイスがユーザーを認識しても、要求されたリソースへのアクセス権を与えるかどうかを決める前に、ユーザーをまだ認証する必要があります。 Microsoft Passport は、Windows に完全に統合された強固な 2 要素認証 (2FA) を行い、再利用可能なパスワードを、特定のデバイスと生体認証ジェスチャまたは PIN の組み合わせに置き換えます。 PIN は、Microsoft Passport の登録時にユーザーが指定します。
+Windows Hello は、個々のユーザーを認識するための堅牢な方法をデバイスに提供します。これにより、ユーザーと要求されたサービス (またはデータ項目) との間のパスの最初の部分が処理されます。 デバイスがユーザーを認識しても、要求されたリソースへのアクセス権を与えるかどうかを決める前に、ユーザーをまだ認証する必要があります。 Windows Hello は、Windows に完全に統合された強固な 2 要素認証 (2FA) も行い、再利用可能なパスワードを、特定のデバイスと生体認証ジェスチャまたは PIN の組み合わせに置き換えます。 PIN は、Microsoft アカウントの登録時にユーザーが指定します。
 
-Microsoft Passport は、従来の 2FA システムの単なる代替機能ではありません。 概念的にはスマート カードと似ています。文字列比較ではなく、暗号化プリミティブを使用して認証が行われます。ユーザーのキー マテリアルは、が改ざんされにくいハードウェア内にセキュリティ保護されています。 Microsoft Passport では、スマート カード展開に必要なインフラストラクチャ コンポーネントも追加する必要はありません。 具体的には、現在、公開キー基盤 (PKI) を所持していない場合は、証明書を管理するための PKI は必要ありません。 Microsoft Passport では、スマート カードの主な利点である、仮想スマート カードの展開の柔軟性と物理スマート カードの堅牢なセキュリティを組み合わせ、それぞれの欠点を排除しています。
+Windows Hello は、従来の 2FA システムの単なる代替機能ではありません。 概念的にはスマート カードと似ています。文字列比較ではなく、暗号化プリミティブを使用して認証が行われます。ユーザーのキー マテリアルは、が改ざんされにくいハードウェア内にセキュリティ保護されています。 Microsoft Hello では、スマート カード展開に必要なインフラストラクチャ コンポーネントも追加する必要はありません。 具体的には、現在、公開キー基盤 (PKI) を所持していない場合は、証明書を管理するための PKI は必要ありません。 Windows Hello では、スマート カードの主な利点である、仮想スマート カードの展開の柔軟性と物理スマート カードの堅牢なセキュリティを組み合わせ、それぞれの欠点を排除しています。
 
-ユーザーがデバイスを使って認証する前に、デバイスを Microsoft Passport に登録する必要があります。 Microsoft Passport は非対称 (公開/秘密キー) の暗号化を使用しています。この暗号化では、相手が秘密キーを使って暗号化解除できるデータを、公開キーを使用して暗号化します。 Microsoft Passport では、公開/秘密キーの組のセットを作成し、デバイスのトラステッド プラットフォーム モジュール (TPM) チップに秘密キーを書き込みます。 デバイスが登録されると、UWP アプリは、システム API を呼び出してユーザーの公開キーを取得することができ、このキーを使ってユーザーをサーバーに登録することができます。
+ユーザーがデバイスを使って認証する前に、デバイスを Windows Hello に登録する必要があります。 Windows Hello は非対称 (公開/秘密キー) の暗号化を使用しています。この暗号化では、相手が秘密キーを使って暗号化解除できるデータを、公開キーを使用して暗号化します。 Windows Hello では、公開/秘密キーの組のセットを作成し、デバイスのトラステッド プラットフォーム モジュール (TPM) チップに秘密キーを書き込みます。 デバイスが登録されると、UWP アプリは、システム API を呼び出してユーザーの公開キーを取得することができ、このキーを使ってユーザーをサーバーに登録することができます。
 
 アプリの登録ワークフローは、次のようになります。
 
-![Microsoft Passport 登録](images/secure-passport.png)
+![Windows Hello の登録](images/secure-passport.png)
 
 収集する登録情報には、この単純なシナリオよりも多くの識別情報が含まれる場合があります。 たとえば、アプリが、バンキング用などのセキュリティで保護されたサービスにアクセスする場合、サインアップ プロセスの一部として ID やその他の項目の証明を要求する必要があります。 すべての条件が満たされると、ユーザーの公開キーがバックエンドに保存され、次回ユーザーがサービスを利用するときの検証でこの公開キーが使われます。
 
-Microsoft Passport と Windows Hello について詳しくは、「[Microsoft Passport ガイド](https://msdn.microsoft.com/library/mt589441)」および「[Microsoft Passport 開発者向けガイド](microsoft-passport.md)」をご覧ください。
+Windows Hello について詳しくは、「[Windows Hello ガイド](https://msdn.microsoft.com/library/mt589441)」および「[Windows Hello 開発者向けガイド](microsoft-passport.md)」をご覧ください。
 
 ## <a name="3-data-in-flight-security-methods"></a>3 移動中データに関するセキュリティ保護の方法
 
@@ -447,7 +454,7 @@ public void SampleReusableHash()
 ## <a name="5-summary"></a>5 まとめ
 
 
-Windows 10 のユニバーサル Windows プラットフォームには、オペレーティング システムの機能を活用してより安全なアプリを作成する方法が数多くあります。 単一要素、多要素、または OAuth ID プロバイダーを利用する仲介の認証などさまざまな認証シナリオで、最も一般的な認証問題を軽減する API があります。 Windows Hello によって、ユーザーを認識する新しい生体認証サインイン システムが提供されます。また、Windows Hello を使うことで、正しい ID を意図的に回避するような操作をアクティブに阻止することができます。 Microsoft Passport は Windows Hello と連携して、キーと証明書に関する複数の層を提供します。これらの層は、トラステッド プラットフォーム モジュールの外部で公開されたり、使われたりすることは決してありません。 また、より詳細なセキュリティ レイヤーを、オプションである構成証明識別キーや証明書の利用時に使うことができます。
+Windows 10 のユニバーサル Windows プラットフォームには、オペレーティング システムの機能を活用してより安全なアプリを作成する方法が数多くあります。 単一要素、多要素、または OAuth ID プロバイダーを利用する仲介の認証などさまざまな認証シナリオで、最も一般的な認証問題を軽減する API があります。 Windows Hello によって、ユーザーを認識する新しい生体認証サインイン システムが提供されます。また、Windows Hello を使うことで、正しい ID を意図的に回避するような操作をアクティブに阻止することができます。 さらに、キーと証明書に関する複数の層も提供されます。これらの層は、トラステッド プラットフォーム モジュールの外部で公開されたり、使われたりすることは決してありません。 また、より詳細なセキュリティ レイヤーを、オプションである構成証明識別キーや証明書の利用時に使うことができます。
 
 移動中データの安全性を確保するには、SSL 経由で安全にリモート システムと通信し、SSL のピン留めを使用してサーバーの信頼性を検証することができる API が利用できます。 安全かつ制御された方法で API を発行することに関しては、Azure API 管理が、API のエンドポイントを不明瞭化する機能が加わったプロキシを使用して、Web 経由での API 公開用の強力な構成オプションを提供することにより支援します。 これらの API へのアクセスは API キーを使用することによりセキュリティが確保され、パフォーマンスを制御するために API の呼び出しを抑制することが可能です。
 
@@ -459,7 +466,7 @@ Windows 10 のユニバーサル Windows プラットフォームには、オペ
 ### <a name="61-how-to-articles"></a>6.1 ハウツー記事
 
 -   [認証とユーザー ID](authentication-and-user-identity.md)
--   [Microsoft Passport](microsoft-passport.md)
+-   [Windows Hello](microsoft-passport.md)
 -   [資格情報保管ボックス](credential-locker.md)
 -   [Web 認証ブローカー](web-authentication-broker.md)
 -   [指紋生体認証](fingerprint-biometrics.md)
@@ -499,8 +506,3 @@ Windows 10 のユニバーサル Windows プラットフォームには、オペ
 -   [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585)
 -   [**Windows.Security.ExchangeActiveSyncProvisioning**](https://msdn.microsoft.com/library/windows/apps/hh701506)
 -   [**Windows.Security.EnterpriseData**](https://msdn.microsoft.com/library/windows/apps/dn279153)
-
-
-<!--HONumber=Dec16_HO1-->
-
-

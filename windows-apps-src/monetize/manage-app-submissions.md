@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: "Windows デベロッパー センター アカウントに登録するアプリの申請を管理するには、以下の Windows ストア申請 API のメソッドを使います。"
 title: "Windows ストア申請 API を使用したアプリの申請の管理"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows ストア申請 API, アプリの申請"
 translationtype: Human Translation
-ms.sourcegitcommit: 020c8b3f4d9785842bbe127dd391d92af0962117
-ms.openlocfilehash: ef7727befa20606800fb9747f9402be9be5cc9e4
+ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
+ms.openlocfilehash: 21a421b057a55120865c01cc3dffb80318ab38ed
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -13,12 +20,14 @@ ms.openlocfilehash: ef7727befa20606800fb9747f9402be9be5cc9e4
 
 Windows ストア申請 API には、段階的なパッケージのロールアウトなど、アプリの申請を管理するために使用できるメソッドが用意されています。 Windows ストア申請 API の概要については、「[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。この API を使用するための前提条件などの情報があります。
 
->**注:**&nbsp;&nbsp;これらのメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
+>**注:**&nbsp;&nbsp;これらのメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 このアクセス許可は、開発者アカウントに対して段階的に有効になります。現時点では、すべてのアカウントでこのアクセス許可が有効になっているわけではありません。 以前のアクセス権を要求するには、デベロッパー センター ダッシュボードにログオンし、ダッシュ ボードの下部にある **[フィードバック]** をクリックします。その後、フィードバック領域で **[申請 API]** を選択し、要求を提出します。 自分のアカウントでこのアクセス許可が有効になると、メールが届きます。
+
+>**重要**&nbsp;&nbsp;Windows ストア申請 API を使ってアプリの提出を作成する場合、必ずデベロッパー センター ダッシュボードではなく API のみを使って申請をさらに変更してください。 最初に API を使って作成した申請を、ダッシュボードを使って変更した場合、API を使ってその申請を変更またはコミットすることができなくなります。 場合によっては、申請がエラー状態のままになり、申請プロセスを進めることができなくなります。 この場合、申請を削除して新しい申請を作成する必要があります。
 
 <span id="methods-for-app-submissions" />
 ## <a name="methods-for-managing-app-submissions"></a>アプリの申請を管理するためのメソッド
 
-アプリの申請を取得、作成、更新、コミット、または削除するには、次のメソッドを使用します。
+アプリの申請を取得、作成、更新、コミット、または削除するには、次のメソッドを使用します。 これらのメソッドを使用するには、アプリをお客様自身のデベロッパー センター アカウントに用意し、まずダッシュボードでそのアプリの申請を 1 つ作成しておく必要があります。 詳しくは、「[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)」をご覧ください。
 
 <table>
 <colgroup>
@@ -146,6 +155,8 @@ Windows ストア申請 API には、段階的なパッケージのロールア�
 * [Java のコード例](java-code-examples-for-the-windows-store-submission-api.md)
 * [Python のコード例](python-code-examples-for-the-windows-store-submission-api.md)
 
+>**注**&nbsp;&nbsp;上に示したコード例に加えて、Windows ストア申請 API の上にコマンド ライン インターフェイスを実装するオープンソースの PowerShell モジュールも用意しています。 このモジュールは、[StoreBroker](https://aka.ms/storebroker) と呼ばれています。 このモジュールを使うと、Windows ストア申請 API を直接呼び出さずにコマンド ラインからアプリ、フライト、アドオンの申請を管理できます。または、ソースをそのまま参照して、この API を呼び出す方法の他の例を確認できます。 StoreBroker モジュールは、多くのファースト パーティ アプリケーションをストアに申請する主要な方法として Microsoft 内で積極的に使っています。 詳しくは、[GitHub の StoreBroker に関するページ](https://aka.ms/storebroker)をご覧ください。
+
 <span id="manage-gradual-package-rollout">
 ## <a name="methods-for-managing-a-gradual-package-rollout"></a>段階的なパッケージのロールアウトを管理するためのメソッド
 
@@ -212,7 +223,8 @@ Windows ストア申請 API には、段階的なパッケージのロールア�
     "trialPeriod": "FifteenDays",
     "marketSpecificPricings": {},
     "sales": [],
-    "priceId": "Tier2"
+    "priceId": "Tier2",
+    "isAdvancedPricingModel": "true"
   },
   "visibility": "Public",
   "targetPublishMode": "Manual",
@@ -330,7 +342,7 @@ Windows ストア申請 API には、段階的なパッケージのロールア�
 | enterpriseLicensing           |  string  |  アプリのエンタープライズ ライセンス動作を示す[エンタープライズ ライセンス値](#enterprise-licensing)のいずれかです。  |    
 | allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  [アプリを将来の Windows 10 デバイス ファミリで利用できるようにする](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)ことを Microsoft が許可されているかどうかを示すします。    |    
 | allowTargetFutureDeviceFamilies           | object   |  キーと値のペアのディクショナリです。各キーは [Windows 10 デバイス ファミリ](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families) を表し、各値は指定されたデバイス ファミリをアプリがターゲットにできるかどうかを示すブール値です。     |    
-| friendlyName           |   string  |  表示目的で使用される、アプリのフレンドリ名です。       |  
+| friendlyName           |   文字列  |  デベロッパー センター ダッシュボードに表示される申請のフレンドリ名です。 この値は、申請を作成するときに生成されます。       |  
 
 
 <span id="listing-object" />
@@ -353,8 +365,8 @@ Windows ストア申請 API には、段階的なパッケージのロールア�
 |  copyrightAndTrademarkInfo                |   string      |  (省略可能) [著作権や商標の情報](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#copyright-and-trademark-info)です。  |
 |  keywords                |  array       |  結果にアプリが表示される確率を高める[キーワード](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#keywords)の配列です。    |
 |  licenseTerms                |    string     | アプリの[ライセンス条項](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#additional-license-terms) (省略可能) です。     |
-|  privacyPolicy                |   string      |   アプリの[プライバシー ポリシー](https://msdn.microsoft.com/windows/uwp/publish/privacy-policy)の URL です。    |
-|  supportContact                |   string      |  アプリの[サポートの連絡先情報](https://msdn.microsoft.com/windows/uwp/publish/support-contact-info)の URL またはメール アドレスです。     |
+|  privacyPolicy                |   string      |   アプリの[プライバシー ポリシー](../publish/create-app-store-listings.md#privacy-policy)の URL です。    |
+|  supportContact                |   string      |  アプリの[サポートの連絡先情報](../publish/create-app-store-listings.md#support-contact-info)の URL またはメール アドレスです。     |
 |  websiteUrl                |   string      |  アプリの [Web ページ](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#website)の URL です。    |    
 |  description               |    string     |   アプリの登録情報の[説明](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#description)です。   |     
 |  features               |    array     |  アプリの[機能](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#app-features)を示す最大 20 個の文字列の配列です。     |
@@ -387,7 +399,8 @@ Windows ストア申請 API には、段階的なパッケージのロールア�
 |  trialPeriod               |    string     |  アプリの試用期間を示す文字列です。 次のいずれかの値を使用できます。 <ul><li>NoFreeTrial</li><li>OneDay</li><li>TrialNeverExpires</li><li>SevenDays</li><li>FifteenDays</li><li>ThirtyDays</li></ul>    |
 |  marketSpecificPricings               |    object     |  キーと値のペアのディクショナリです。各キーは 2 文字の ISO 3166-1 alpha-2 の国コードで、各値は[価格帯](#price-tiers)です。 これらの項目は、[特定の市場でのアプリのカスタム価格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)を表します。 このディクショナリに含まれる項目は、指定された市場の *priceId* の値によって指定されている基本価格を上書きします。      |     
 |  sales               |   array      |  **推奨されなくなった値**です。 アプリの販売情報が保持される[販売リソース](#sale-object)の配列です。   |     
-|  priceId               |   string      |  アプリの[基本価格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#base-price)を規定する[価格帯](#price-tiers)です。   |
+|  priceId               |   文字列      |  アプリの[基本価格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#base-price)を規定する[価格帯](#price-tiers)です。   |     
+|  isAdvancedPricingModel               |   ブール値      |  **true** の場合、開発者アカウントは 0.99 USD ～ 1999.99 USD の拡張された価格セットにアクセスできます。 **false** の場合、開発者アカウントは 0.99 USD ～ 999.99 USD の元の価格帯セットにアクセスできます。 各種価格帯について詳しくは、「[価格帯](#price-tiers)」をご覧ください。<br/><br/>**注**&nbsp;&nbsp;このフィールドは読み取り専用です。   |
 
 
 <span id="sale-object" />
@@ -547,14 +560,14 @@ Windows ストア申請 API には、段階的なパッケージのロールア�
 <span id="price-tiers" />
 ### <a name="price-tiers"></a>価格帯
 
-次の値は、アプリの申請に利用できる価格帯を表します。
+次の値は、[価格リソース](#pricing-object)における、アプリの申請に利用できる価格帯を表します。
 
 | 値           | 説明        |
 |-----------------|------|
 |  Base               |   価格帯が設定されていない場合、アプリの基本価格が使用されます。      |     
 |  NotAvailable              |   アプリは指定された地域で提供されていません。    |     
 |  Free              |   アプリは無償です。    |    
-|  Tier2 ～ Tier194               |   Tier2 は .99 USD の価格帯を表します。 Tier の数字が大きくなるにつれて、より高い価格帯を表します (1.29 USD、1.49 USD、1.99 USD など)。    |
+|  Tier*xxx*               |   アプリの価格帯を指定する文字列 (**Tier<em>xxxx</em>** の形式)。 現在のところ、次の範囲の価格帯がサポートされています。<br/><br/><ul><li>[価格リソース](#pricing-object)の *isAdvancedPricingModel* 値が **true** の場合、アカウントで利用可能な価格帯値は **Tier1012** - **Tier1424** です。</li><li>[価格リソース](#pricing-object)の *isAdvancedPricingModel* 値が **false** の場合、アカウントで利用可能な価格帯値は **Tier2** - **Tier96** です。</li></ul>各価格帯に関連付けられた市場固有の価格を含む、開発者アカウントで利用可能な価格帯の詳しい表を参照するには、デベロッパー センター ダッシュボードでいずれかのアプリ申請の**[価格と使用可能状況]** ページにアクセスし、**[市場と特別価格]** セクションで **[view table]** (表を表示) リンクをクリックします (一部の開発者アカウントでは、このリンクは **[Pricing]** (価格) セクションにあります)。    |
 
 
 <span id="enterprise-licensing" />
@@ -598,9 +611,4 @@ Windows ストア申請 API には、段階的なパッケージのロールア�
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [Windows ストア申請 API を使用したアプリ データの取得](get-app-data.md)
 * [デベロッパー センター ダッシュボードからのアプリの申請](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

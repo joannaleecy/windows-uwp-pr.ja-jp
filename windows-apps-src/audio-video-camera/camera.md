@@ -1,30 +1,37 @@
 ---
 author: drewbatgit
-ms.assetid: 
+ms.assetid: 370f2c14-4f1e-47b3-9197-24205ab255a3
 description: "この記事では、UWP アプリで使用可能なカメラ機能と、その使用方法を示すハウツー記事へのリンクを示します。"
 title: "カメラ"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: f9f85359bd24e0a642bf9cbe3c76f6bfac7866f8
-ms.openlocfilehash: 8759a7cdb1d516f9c88f866887861c2f28085b5b
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 0b2b421c2619c1649b3a6c9afb6b0ccafafc473b
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# カメラ
+# <a name="camera"></a>カメラ
 
 このセクションでは、カメラやマイクを使って写真、ビデオ、オーディオをキャプチャするユニバーサル Windows プラットフォーム (UWP) アプリの作成について説明します。
 
-##Windows 組み込みのカメラ UI を使う
+##<a name="use-the-windows-built-in-camera-ui"></a>Windows 組み込みのカメラ UI を使う
 | トピック                                                                                             | 説明                                                                                                                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Windows の組み込みカメラ UI を使った写真とビデオのキャプチャ](capture-photos-and-video-with-cameracaptureui.md) | [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CameraCaptureUI) クラスを使用して、Windows に組み込まれているカメラ UI で写真またはビデオをキャプチャする方法を説明します。 ユーザーが写真やビデオをキャプチャしてアプリに結果を返すだけでよい場合は、これが最も早くて簡単な方法です。  |
-##基本的な MediaCapture タスク
+##<a name="basic-mediacapture-tasks"></a>基本的な MediaCapture タスク
 | トピック                                                                                             | 説明                                                                                                                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [カメラ プレビューの表示](simple-camera-preview-access.md) | UWP アプリで XAML ページ内にカメラ プレビュー ストリームをすばやく表示する方法を示します。 |
 | [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md) | [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) クラスを使用して写真やビデオをキャプチャする最も簡単な方法を示します。 **MediaCapture** クラスは、キャプチャ パイプラインに対する低レベルの制御を提供し、高度なキャプチャ シナリオを実現する、堅牢な一連の API を公開しますが、この記事では基本的なメディア キャプチャをアプリにすばやく簡単に追加できるようにすることを目的としています。 |
 | [モバイル デバイスのカメラ UI の機能](camera-ui-features-for-mobile-devices.md) | モバイル デバイス上にのみある特殊カメラの UI 機能を活用する方法を示します。  |
                                                                                                                
-##高度な MediaCapture タスク   
+##<a name="advanced-mediacapture-tasks"></a>高度な MediaCapture タスク   
                                                                                                                
 | トピック                                                                                             | 説明                                                                                                                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -41,7 +48,7 @@ ms.openlocfilehash: 8759a7cdb1d516f9c88f866887861c2f28085b5b
 | [プレビュー フレームの取得](get-a-preview-frame.md) | メディア キャプチャのプレビュー ストリームから単一のプレビュー フレームを取得する方法について説明します。  |                                                                                                   
 
 
-## カメラ用の UWP アプリ サンプル
+## <a name="uwp-app-samples-for-camera"></a>カメラ用の UWP アプリ サンプル
 
 * [カメラの顔検出サンプル](http://go.microsoft.com/fwlink/p/?LinkID=619486&clcid=0x409)
 * [カメラのプレビュー フレーム サンプル](http://go.microsoft.com/fwlink/p/?LinkID=620516&clcid=0x409)
@@ -52,7 +59,7 @@ ms.openlocfilehash: 8759a7cdb1d516f9c88f866887861c2f28085b5b
 * [カメラのスターター キット](http://go.microsoft.com/fwlink/p/?LinkID=619479&clcid=0x409)
 * [カメラのビデオ手ブレ補正効果サンプル](http://go.microsoft.com/fwlink/p/?LinkID=620519&clcid=0x409)
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [オーディオ、ビデオ、カメラ](index.md)
  
@@ -61,10 +68,5 @@ ms.openlocfilehash: 8759a7cdb1d516f9c88f866887861c2f28085b5b
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

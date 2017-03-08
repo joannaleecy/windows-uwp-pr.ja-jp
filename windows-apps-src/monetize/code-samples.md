@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 4a311d20-ba8c-4816-8091-35726428dc94
 description: "Microsoft Advertising ライブラリの AdControl クラスおよび InterstitialAd クラスのプロパティ、メソッド、イベントの使用方法を示す追加のサンプルを紹介します。"
 title: "コード サンプル"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、広告、宣伝、コード サンプル"
 translationtype: Human Translation
-ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
-ms.openlocfilehash: a8f18048915927f9e93d4469e7288e5a06a69070
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ae6e806f8aead387afe55dec2d70c04b7fc21284
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -38,9 +45,4 @@ C# と C++ を使って JavaScript/HTML アプリと XAML アプリに広告バ�
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

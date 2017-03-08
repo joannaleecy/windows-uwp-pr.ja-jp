@@ -5,9 +5,16 @@ title: "言語と地域の管理"
 ms.assetid: 22D3A937-736A-4121-8285-A55DED56E594
 label: Manage language and region
 template: detail.hbs
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: f9c30e68d5cc94769c9304234db0276e34e1d945
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c9d42dfd76c613c615e35aaa02e54037cd666b47
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -222,10 +229,5 @@ Windows は、標準的でわかりやすい方法で言語の対応付けの優
  
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

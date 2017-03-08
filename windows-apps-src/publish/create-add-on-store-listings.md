@@ -3,18 +3,25 @@ author: jnHs
 Description: "アドオンを申請するとき、ストア登録情報の手順で入力した情報がユーザーに表示されます。"
 title: "アドオンのストア登録情報の作成"
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
-ms.openlocfilehash: 607dab75b8e446109cbb60c6c149732501f5b43c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ecf24a0a51734d159a412824d6b43d76d92b3002
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アドオンのストア登録情報の作成
+# <a name="create-add-on-store-listings"></a>アドオンのストア登録情報の作成
 
 
 **ストア登録情報**の手順で入力した情報は、アドオンを申請する際、アドオンを入手するためのオプションを表示したときにユーザーに表示されます。 ストア登録情報は、ユーザーを最も引きつける方法でアドオンを正確に表すように慎重に検討してください。 また、このストア登録情報は、さまざまな言語でカスタマイズすることができます。
 
-## 言語
+## <a name="languages"></a>言語
 
 
 ストア登録情報を入力する前に、1 つ以上の[言語](supported-languages.md)を指定する必要があります。 アプリがサポートするすべての言語でストア登録情報を提供することをお勧めします。
@@ -25,15 +32,15 @@ ms.openlocfilehash: 607dab75b8e446109cbb60c6c149732501f5b43c
 
 ストア登録情報を編集するには、アドオンの申請の概要で言語名をクリックします。 言語ごとに入力できる情報は次のとおりです。
 
-## Title (タイトル)
+## <a name="title"></a>Title (タイトル)
 
 ここにはタイトルを入力します。これは、このアドオンの名前としてユーザーに表示されます。 タイトルは、最大 100 文字入力できます。
 
-## 説明
+## <a name="description"></a>説明
 
 タイトルより多くの情報を表示する場合、ここに最大 200 文字入力することができます。 このフィールドは省略可能です。
 
-## アイコン
+## <a name="icon"></a>アイコン
 
 ユーザーに表示できる画像を指定するオプションもあります。 このアイコンには、300 x 300 ピクセルの .png ファイルを使用する必要があります。
 
@@ -43,10 +50,5 @@ ms.openlocfilehash: 607dab75b8e446109cbb60c6c149732501f5b43c
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

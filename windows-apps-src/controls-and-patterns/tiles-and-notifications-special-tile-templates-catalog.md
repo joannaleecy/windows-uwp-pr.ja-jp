@@ -5,9 +5,16 @@ title: "特別なタイル テンプレート"
 ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 label: TBD
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 813a9a5fe27f3c0874eab80223afd6b3ac7be07a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 791722752ee6ab6de92f5717d62ed03d833f184c
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="special-tile-templates"></a>特別なタイル テンプレート
@@ -267,10 +274,5 @@ TileContent content = new TileContent()
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

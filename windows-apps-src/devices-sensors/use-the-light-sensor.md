@@ -3,16 +3,23 @@ author: DBirtolo
 ms.assetid: 15BAB25C-DA8C-4F13-9B8F-EA9E4270BCE9
 title: "光センサーの使用"
 description: "環境光センサーを使って環境光の変化を検出する方法を説明します。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: fe1b9a508e3b540f202e187dbe1696423c7cd373
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f3ebf555d943e302ed5f505a91659bf1d9489e17
+ms.lasthandoff: 02/07/2017
 
 ---
-# 光センサーの使用
+# <a name="use-the-light-sensor"></a>光センサーの使用
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
-** 重要な API **
+**重要な API**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**LightSensor**](https://msdn.microsoft.com/library/windows/apps/BR225790)
@@ -21,17 +28,17 @@ ms.openlocfilehash: fe1b9a508e3b540f202e187dbe1696423c7cd373
 
 ユーザーの環境の変化に反応するアプリを作成するための環境センサーは各種存在しますが、環境光センサーはその中の 1 つです。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 Extensible Application Markup Language (XAML)、Microsoft Visual C#、イベントについて理解している必要があります。
 
 使うデバイスやエミュレーターが環境光センサーをサポートしている必要があります。
 
-## シンプルな光センサー アプリを作成する
+## <a name="create-a-simple-light-sensor-app"></a>シンプルな光センサー アプリを作成する
 
 このセクションは、次の 2 つのサブセクションに分かれています。 最初のサブセクションでは、シンプルな光センサー アプリケーションを最初から作成するために必要な手順を示します。 次のサブセクションでは、作成したアプリについて説明します。
 
-###  手順
+###  <a name="instructions"></a>手順
 
 -   **[Visual C#]** プロジェクト テンプレートから **[空白のアプリ (ユニバーサル Windows]** を選んで、新しいプロジェクトを作成します。
 
@@ -65,8 +72,8 @@ Extensible Application Markup Language (XAML)、Microsoft Visual C#、イベン�
         public sealed partial class BlankPage : Page
         {
             private LightSensor _lightsensor; // Our app' s lightsensor object
-           
-            // This event handler writes the current light-sensor reading to 
+
+            // This event handler writes the current light-sensor reading to
             // the textbox named "txtLUX" on the app' s main page.
 
             private void ReadingChanged(object sender, LightSensorReadingChangedEventArgs e)
@@ -133,7 +140,7 @@ Extensible Application Markup Language (XAML)、Microsoft Visual C#、イベン�
 
 -   アプリを停止するには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押すか、**[デバッグ]**、**[デバッグの停止]** の順にクリックします。
 
-###  説明
+###  <a name="explanation"></a>説明
 
 上に示した例では、ごく短いコードを作成するだけで、光センサー入力をアプリに組み込むことができることがわかります。
 
@@ -153,7 +160,7 @@ _lightsensor.ReportInterval = reportInterval;
 **ReadingChanged** メソッドで、新しい光センサー データをキャプチャしています。 センサーのドライバーは、センサーから新しいデータを受け取るたびに、このイベント ハンドラーを使ってアプリに値を渡します。 このアプリの場合、このイベント ハンドラーが次の行で登録されています。
 
 ```csharp
-_lightsensor.ReadingChanged += new TypedEventHandler<LightSensor, 
+_lightsensor.ReadingChanged += new TypedEventHandler<LightSensor,
 LightSensorReadingChangedEventArgs>(ReadingChanged);
 ```
 
@@ -164,14 +171,8 @@ LightSensorReadingChangedEventArgs>(ReadingChanged);
  <TextBlock x:Name="txtLuxValue" HorizontalAlignment="Left" Height="44" Margin="224,38,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="217"/>
 ```
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [LightSensor サンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=241381)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

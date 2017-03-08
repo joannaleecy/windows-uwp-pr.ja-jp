@@ -6,9 +6,16 @@ ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
 op-migration-status: ready
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: d0c1858727d4a19e699d2ec9cf5d869460873524
-ms.openlocfilehash: 25a84e7a72fb87faea47845d7d32a5c3071a78a7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 72596a2d902dff72af76c84115bc1eb0be8fa743
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -250,10 +257,5 @@ UWP アプリにおいて効果的で便利なマルチページ ナビゲーシ
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

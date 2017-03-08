@@ -4,12 +4,20 @@ Description: "リスト ビューで引っ張って更新パターンを使い�
 title: "引っ張って更新"
 label: Pull-to-refresh
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: aaeb1e74-b795-4015-bf41-02cb1d6f467e
 translationtype: Human Translation
-ms.sourcegitcommit: 508a09e0c12006c00dbdf7675516b41119eab8a6
-ms.openlocfilehash: ef5773f9885a5286ac7ca7c256e6a83167316389
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: e062ed2910e20ba187b8a0726a0061f0dd4b07f8
+ms.lasthandoff: 02/08/2017
 
 ---
-# 引っ張って更新
+# <a name="pull-to-refresh"></a>引っ張って更新
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,11 +27,11 @@ ms.openlocfilehash: ef5773f9885a5286ac7ca7c256e6a83167316389
 
 ![引っ張って更新のサンプル](images/ptr-phone-1.png)
 
-## 適切なパターンの選択
+## <a name="is-this-the-right-pattern"></a>適切なパターンの選択
 
 ユーザーが定期的に更新するデータのリストやグリッドがあり、アプリがモバイルやタッチ操作主体のデバイスで実行されることが多いときは、引っ張って更新パターンを使います。
 
-## 引っ張って更新を実装する
+## <a name="implement-pull-to-refresh"></a>引っ張って更新を実装する
 
 引っ張って更新を実装するには、操作イベントを処理してユーザーがリストを下に引っ張ったときに検出し、視覚的なフィードバックを表示し、データを更新する必要があります。 ここでは、「[引っ張って更新のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620635)」でこれらがどのように行われているかを見ていきます。 ここではすべてのコードを示さないため、GitHub でサンプルをダウンロードするか、コードを表示してください。
 
@@ -35,7 +43,7 @@ RefreshableListView は、更新が必要な時期と更新インジケーター
 
 > **注意**&nbsp;&nbsp;サンプルのコードは、[**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) にも適用されます。 GridView を変更するには、ListView ではなく GridView からカスタム クラスを派生し、GridView の既定のテンプレートを変更します。
 
-## 更新インジケーターを追加する
+## <a name="add-a-refresh-indicator"></a>更新インジケーターを追加する
 
 アプリが引っ張って更新をサポートしていることがユーザーにわかるように、視覚的なフィードバックを表示することが重要です。 RefreshableListView には、XAML でインジケーターを表示するように設定できる `RefreshIndicatorContent` プロパティがあります。 また、`RefreshIndicatorContent` を設定しない場合にフォールバックする既定のテキスト インジケータも含まれています。
 
@@ -134,7 +142,7 @@ RefreshableListView は、更新が必要な時期と更新インジケーター
 </Storyboard>
 ```
 
-## スクロール ビューアー操作イベントを処理する
+## <a name="handle-scroll-viewer-manipulation-events"></a>スクロール ビューアー操作イベントを処理する
 
 リスト ビュー コントロールのテンプレートには、ユーザーがリスト項目をスクロールできるようにする組み込みの [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) が含まれています。 引っ張って更新を実装するには、いくつかの関連するイベントのほか、組み込みのスクロール ビューアーでの操作イベントを処理する必要があります。 操作イベントについて詳しくは、「[タッチ操作](../input-and-devices/touch-interactions.md)」をご覧ください。
 
@@ -192,7 +200,7 @@ if (this.RefreshRequested != null)
 
 引っ張って更新が行われるのは、タッチ操作によってリストが引き下げられたときだけです。 PointerPressed イベント ハンドラーで、どの種類のポインターがイベントを発生させたかをチェックし、それがタッチ ポインターであったかどうかを示す変数 (`m_pointerPressed`) を設定します。 この変数は DirectManipulationStarted ハンドラーで使われます。 ポインターがタッチ ポインターでない場合は、DirectManipulationStarted ハンドラーは何もせずに戻ります。
 
-## 引っ張って更新のイベントを追加する
+## <a name="add-pull-and-refresh-events"></a>引っ張って更新のイベントを追加する
 
 'RefreshableListView' は 2 つのイベントを追加します。これらをアプリで処理して、データを更新し、更新インジケーターを管理することができます。
 
@@ -224,21 +232,16 @@ private async void listView_RefreshRequested(object sender, RefreshableListView.
 
 サンプルでは、アプリによって更新インジケーターのコンテンツが提供および制御されます。 更新インジケーターを起動、停止、およびをリセットできるように、ユーザーがリストを引っ張ったことを 'PullProgressChanged' イベントが通知します。 
 
-## コンポジションのアニメーション
+## <a name="composition-animations"></a>コンポジションのアニメーション
 
 既定では、スクロール バーが一番上に達するとスクロール ビューアーのコンテンツは停止します。 ユーザーがリストを引き下げ続けられるようにするには、ビジュアル レイヤーにアクセスし、リストのコンテンツをアニメーション化する必要があります。 サンプルでは、このために[コンポジション アニメーション](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation)、具体的には[数式アニメーション](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations)を使います。
 
 サンプルでは、主に `CompositionTarget_Rendering` イベント ハンドラーと `UpdateCompositionAnimations` メソッドがこの処理を行います。
 
-## 関連記事
+## <a name="related-articles"></a>関連記事
 
 - [コントロールのスタイル](styling-controls.md)
 - [タッチ操作](../input-and-devices/touch-interactions.md)
 - [リスト ビューとグリッド ビュー](listview-and-gridview.md)
 - [リスト ビュー項目テンプレート](listview-item-templates.md)
 - [数式アニメーション](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations)
-
-
-<!--HONumber=Aug16_HO3-->
-
-

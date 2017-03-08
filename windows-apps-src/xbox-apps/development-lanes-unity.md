@@ -2,13 +2,21 @@
 author: JordanEllis6809
 title: "Xbox の UWP への Unity ゲームの移行"
 description: "Xbox での Unity UWP 開発。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: fca3267a-0c0f-4872-8017-90384fb34215
 translationtype: Human Translation
-ms.sourcegitcommit: ea3bea2e5d6de0e55615de701a69e90d81f0f553
-ms.openlocfilehash: 73f701a2608c6ce8d10cab817683ada4e9eecc08
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 6c01cc5afa3b3c1266464c9f04c79cea533c9741
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Xbox の UWP への Unity ゲームの移行
+# <a name="bringing-unity-games-to-uwp-on-xbox"></a>Xbox の UWP への Unity ゲームの移行
 
 
 このチュートリアルでは、既に Unity のゲームが存在し、ビルドおよび展開する準備ができていることを前提としています。
@@ -17,13 +25,13 @@ ms.openlocfilehash: 73f701a2608c6ce8d10cab817683ada4e9eecc08
 
 Unity UWP プロジェクトのバージョン管理については、 「[UWP プロジェクトのバージョン管理](development-lanes-unity-versioning.md)」をご覧ください
 
-## 手順 0: Unity が正しくインストールされていることを確認する
+## <a name="step-0-ensure-unity-is-installed-correctly"></a>手順 0: Unity が正しくインストールされていることを確認する
 
 Unity をインストールするときに、以下のコンポーネントを選択する必要があります。
 
 ![Unity のインストール コンポーネント](images/unity-install-components.png)
 
-## 手順 1: UWP ソリューションを構築する
+## <a name="step-1-building-the-uwp-solution"></a>手順 1: UWP ソリューションを構築する
 
 Unity ゲーム プロジェクトで、**[File] -> [Build Settings]** から **[Build Settings]** ウィンドウを開き、Windows ストア オプション メニューに移動します。
 
@@ -37,7 +45,7 @@ Unity で新しい Visual Studio ソリューションを作成できたので�
 
 ![UWP VS ソリューション](images/uwp-vs-solution.png)
 
-## 手順 2: ゲームを展開する
+## <a name="step-2-deploying-your-game"></a>手順 2: ゲームを展開する
 
 **[UWP]** フォルダーに新しく作成されたソリューションを開き、ターゲット プラットフォームを **[x64]** に変更します。
 
@@ -45,20 +53,15 @@ Unity で新しい Visual Studio ソリューションを作成できたので�
 
 これで、ゲームの UWP Visual Studio ソリューションの準備ができました。[こちらの手順に従うことによって](getting-started.md)、ゲームを製品版の Xbox One に正常に展開できます。
 
-## 手順 3: 変更とリビルド
+## <a name="step-3-modify-and-rebuild"></a>手順 3: 変更とリビルド
 
 スクリプトではないものに変更を行った場合、これらの変更がゲームの UWP ビルドに表示されるようにするために、(__手順 1__ の説明に従って) エディター内からプロジェクトをリビルドする必要があります。
 
-## UWP プロジェクトのバージョン管理
+## <a name="versioning-your-uwp-project"></a>UWP プロジェクトのバージョン管理
 
 この新しく生成された UWP ディレクトリの一部をバージョン管理に追加することが必要になる一般的な状況がいくつかあります。 たとえば、新しい依存関係を UWP プロジェクト (たとえば Xbox Live SDK など) に追加する場合です。  この例の詳細については、[UWP プロジェクトのバージョン管理](development-lanes-unity-versioning.md)で説明します。
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 - [既存のゲームの Xbox への移行](development-lanes-landing.md)
 - [Xbox One の UWP](index.md)
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

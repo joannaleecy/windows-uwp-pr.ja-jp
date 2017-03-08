@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: "Windows ストア分析 API を使って、自分または自分の組織の Windows デベロッパー センター アカウントに登録されたアプリの分析データをプログラムで取得することができます。"
 title: "Windows ストア サービスを使った分析データへのアクセス"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、ストア サービス、Windows ストア分析 API"
 translationtype: Human Translation
-ms.sourcegitcommit: 1a2e856cddf9998eeb8b0132c2fb79f5188c218b
-ms.openlocfilehash: 596cc5054367acf0d3609a34b764bc7fcf33ea0b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1538f06b09bd4143750c10a2774137f87359ebce
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -67,15 +74,12 @@ POST URI の *tenant\_id* の値と *client \_id* および *client \_secret* �
 
 Azure AD アクセス トークンを取得したら、Windows ストア分析 API を呼び出すことができます。 各メソッドの構文については、次の記事をご覧ください。 各メソッドの **Authorization** ヘッダーにアクセス トークンを渡す必要があります。
 
-* [アプリの入手数の取得](get-app-acquisitions.md)
-* [アドオンの入手数の取得](get-in-app-acquisitions.md)
-* [エラー報告データの取得](get-error-reporting-data.md)
-* [アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)
-* [アプリのエラーに関するスタック トレースの取得](get-the-stack-trace-for-an-error-in-your-app.md)
-* [アプリの評価の取得](get-app-ratings.md)
-* [アプリのレビューの取得](get-app-reviews.md)
-* [広告のパフォーマンス データの取得](get-ad-performance-data.md)
-* [広告キャンペーンのパフォーマンス データの取得](get-ad-campaign-performance-data.md)
+| シナリオ       | 説明      |
+|---------------|--------------------|
+| 取得 |  アプリとアドオンの取得データを取得します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[アプリの取得数の取得](get-app-acquisitions.md)</li><li>[アドオンの取得数の取得](get-in-app-acquisitions.md)</li></ul> |
+| エラー | アプリのエラーに関するデータを取得します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[エラー報告データの取得](get-error-reporting-data.md)</li><li>[アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)</li><li>[アプリのエラーに関するスタック トレースの取得](get-the-stack-trace-for-an-error-in-your-app.md)</li></ul> |
+| 評価とレビュー | アプリの評価とレビュー情報を取得します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[アプリの評価の取得](get-app-ratings.md)</li><li>[アプリのレビューの取得](get-app-reviews.md)</li></ul> |
+| アプリ内広告と広告キャンペーン | アプリ内広告とプロモーションの広告キャンペーンのパフォーマンス データを取得します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[広告のパフォーマンス データの取得](get-ad-performance-data.md)</li><li>[広告キャンペーンのパフォーマンス データの取得](get-ad-campaign-performance-data.md)</li></ul> |
 
 ## <a name="code-example"></a>コードの例
 
@@ -117,11 +121,5 @@ Windows ストア分析 API は、エラー コードとメッセージが含ま
 * [アプリの評価の取得](get-app-ratings.md)
 * [アプリのレビューの取得](get-app-reviews.md)
 * [広告のパフォーマンス データの取得](get-ad-performance-data.md)
-* [広告キャンペーンのパフォーマンス データの取得](get-ad-campaign-performance-data.md)
- 
-
-
-
-<!--HONumber=Dec16_HO4-->
-
+* [プロモーション キャンペーンのパフォーマンス データの取得](get-ad-campaign-performance-data.md)
 

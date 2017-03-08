@@ -4,9 +4,17 @@ Description: "反転リストを使って新しい項目を下部に追加しま
 title: "反転リスト"
 label: Inverted lists
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 52c1d63d-69c1-48d6-a234-6f39296e4bfd
 translationtype: Human Translation
-ms.sourcegitcommit: 5f50e490caa5d1d88c2f8315dc47e15b0ae22a05
-ms.openlocfilehash: de90c49dfc961241c1da028c8f7278e370a810bd
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 0a33aaf71dbf23e991591f790f7327d812b060ef
+ms.lasthandoff: 02/08/2017
 
 ---
 # <a name="inverted-lists"></a>反転リスト
@@ -39,7 +47,7 @@ ms.openlocfilehash: de90c49dfc961241c1da028c8f7278e370a810bd
 この例は、リスト ビューの項目を下部に配置する方法や、項目に変更があったときに最後の項目をビュー内に維持するように指定する方法を示しています。
  
  **XAML**
-```xaml
+ ```xaml
 <ListView>
     <ListView.ItemsPanel>
         <ItemsPanelTemplate>
@@ -55,9 +63,4 @@ ms.openlocfilehash: de90c49dfc961241c1da028c8f7278e370a810bd
 - 送信者のメッセージと受信者のメッセージを両側に配置して、ユーザーが会話のフローを簡単に理解できるようにします。
 - ユーザーが既に会話の末尾を読んでいて次のメッセージを待っている場合は、既存のメッセージを上に移動して最新のメッセージを表示するアニメーションを表示します。
 - ユーザーが会話の末尾を読んでいない場合は、項目を移動することによってユーザーの集中を妨害してはいけません。
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

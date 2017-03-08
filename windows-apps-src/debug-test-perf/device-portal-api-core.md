@@ -3,9 +3,16 @@ author: dbirtolo
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: "デバイス ポータル コア API リファレンス"
 description: "Windows Device Portal コア REST API について説明します。これによって、データにアクセスし、プログラムを使ってデバイスを制御することが可能になります。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b4222774dc4b0f9cdcac871311f5ead69c1e70a9
-ms.openlocfilehash: 3bacb9ac42e157afaed5e9e0e6438654db03ff28
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 10d8799b73a941a4a0eb89fd369d67b2fc6a68c2
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -216,13 +223,13 @@ HTTP 状態コード      | 説明
 **利用可能なデバイス ファミリ**
 
 * Windows Mobile
-* Windows Desktop
+* Windows デスクトップ
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## <a name="device-manager"></a>デバイス マネージャー
+## Device manager
 ---
 ### <a name="get-the-installed-devices-on-the-machine"></a>コンピューターにインストールされているデバイスを取得する
 
@@ -277,11 +284,11 @@ HTTP 状態コード      | 説明
 **利用可能なデバイス ファミリ**
 
 * Windows Mobile
-* Windows Desktop
+* Windows デスクトップ
 * IoT
 
 ---
-## <a name="dump-collection"></a>ダンプの収集
+## Dump collection
 ---
 ### <a name="get-the-list-of-all-crash-dumps-for-apps"></a>アプリのすべてのクラッシュ ダンプの一覧を取得する
 
@@ -861,11 +868,11 @@ HTTP 状態コード      | 説明
 <br />
 **利用可能なデバイス ファミリ**
 
-* Windows Desktop
+* Windows デスクトップ
 * IoT
 
 ---
-## <a name="etw"></a>ETW
+## ETW
 ---
 ### <a name="create-a-realtime-etw-session-over-a-websocket"></a>websocket 経由でリアルタイムの ETW セッションを作成する
 
@@ -925,7 +932,7 @@ provider *{guid}* disable | *{guid}* で指定されたプロバイダー (括�
     "Events":[
         {
             "Timestamp": int,
-            "Provider": string,
+            "ProviderName": string,
             "ID": int, 
             "TaskName": string,
             "Keyword": int,
@@ -1055,12 +1062,12 @@ GET | /api/etw/customproviders
 **利用可能なデバイス ファミリ**
 
 * Windows Mobile
-* Windows Desktop
+* Windows デスクトップ
 * HoloLens
 * IoT
 
 ---
-## <a name="os-information"></a>OS 情報
+## OS information
 ---
 ### <a name="get-the-machine-name"></a>コンピューター名を取得する
 
@@ -1262,13 +1269,13 @@ HTTP 状態コード      | 説明
 **利用可能なデバイス ファミリ**
 
 * Windows Mobile
-* Windows Desktop
+* Windows デスクトップ
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## <a name="performance-data"></a>パフォーマンス データ
+## Performance data
 ---
 ### <a name="get-the-list-of-running-processes"></a>実行中のプロセスの一覧を取得する
 
@@ -1404,13 +1411,13 @@ HTTP 状態コード      | 説明
 **利用可能なデバイス ファミリ**
 
 * Windows Mobile
-* Windows Desktop
+* Windows デスクトップ
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## <a name="power"></a>電源
+## Power
 ---
 ### <a name="get-the-current-battery-state"></a>現在のバッテリ状態を取得する
 
@@ -1827,11 +1834,11 @@ HTTP 状態コード      | 説明
 <br />
 **利用可能なデバイス ファミリ**
 
-* Windows Desktop
+* Windows デスクトップ
 * IoT
 
 ---
-## <a name="remote-control"></a>リモート制御
+## Remote control
 ---
 ### <a name="restart-the-target-computer"></a>ターゲット コンピューターを再起動する
 
@@ -1913,13 +1920,13 @@ HTTP 状態コード      | 説明
 **利用可能なデバイス ファミリ**
 
 * Windows Mobile
-* Windows Desktop
+* Windows デスクトップ
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## <a name="task-manager"></a>タスク マネージャー
+## Task manager
 ---
 ### <a name="start-a-modern-app"></a>最新のアプリを起動する
 
@@ -2013,13 +2020,13 @@ HTTP 状態コード      | 説明
 **利用可能なデバイス ファミリ**
 
 * Windows Mobile
-* Windows Desktop
+* Windows デスクトップ
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## <a name="networking"></a>ネットワーク
+## Networking
 ---
 ### <a name="get-the-current-ip-configuration"></a>現在の IP 構成を取得する
 
@@ -2330,13 +2337,13 @@ HTTP 状態コード      | 説明
 **利用可能なデバイス ファミリ**
 
 * Windows Mobile
-* Windows Desktop
+* Windows デスクトップ
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## <a name="windows-error-reporting-wer"></a>Windows エラー報告 (WER)
+## Windows Error Reporting (WER)
 ---
 ### <a name="download-a-windows-error-reporting-wer-file"></a>Windows エラー報告 (WER) ファイルをダウンロードする
 
@@ -2497,12 +2504,12 @@ HTTP 状態コード      | 説明
 <br />
 **利用可能なデバイス ファミリ**
 
-* Windows Desktop
+* Windows デスクトップ
 * HoloLens
 * IoT
 
 ---
-## <a name="windows-performance-recorder-wpr"></a>Windows Performance Recorder (WPR) 
+## Windows Performance Recorder (WPR) 
 ---
 ### <a name="start-tracing-with-a-custom-profile"></a>カスタム プロファイルを使用してトレースを開始する
 
@@ -2960,12 +2967,12 @@ HTTP 状態コード      | 説明
 **利用可能なデバイス ファミリ**
 
 * Windows Mobile
-* Windows Desktop
+* Windows デスクトップ
 * HoloLens
 * IoT
 
 ---
-## <a name="dns-sd-tags"></a>DNS SD タグ 
+## DNS-SD Tags 
 ---
 ### <a name="view-tags"></a>タグを表示する
 
@@ -3465,8 +3472,3 @@ HTTP 状態コード      | 説明
 * HoloLens
 * Xbox
 * IoT
-
-
-<!--HONumber=Dec16_HO1-->
-
-

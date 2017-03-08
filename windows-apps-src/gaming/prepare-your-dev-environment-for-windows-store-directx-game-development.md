@@ -3,23 +3,30 @@ author: mtoepke
 title: "ゲームのプロジェクト テンプレートとツール"
 description: "ユニバーサル Windows プラットフォーム (UWP) 用の DirectX ゲームのプログラミングを開始するために必要な手順について説明します。"
 ms.assetid: d5afd5d3-ad01-0f16-3ddf-2c4eb86b68a7
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, テンプレート, ツール, DirectX"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 360ffe86a6b2033510cb7d4b790477c80d5d1205
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2991efd40862eb1cd8842432b3eed3bbe49c8eb2
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# ゲームのプロジェクト テンプレートとツール
+# <a name="project-templates-and-tools-for-games"></a>ゲームのプロジェクト テンプレートとツール
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 このトピックでは、ユニバーサル Windows プラットフォーム (UWP) 用の DirectX ゲームのプログラミングを開始するために必要な手順について説明します。
 
 まず、Visual Studio が必要です。
 
-## Visual Studio の入手
+## <a name="get-visual-studio"></a>Visual Studio の入手
 
 
 [Microsoft Visual Studio 2015 をダウンロードしてインストールします](https://www.visualstudio.com/vs-2015-product-editions)。
@@ -53,7 +60,7 @@ ms.openlocfilehash: 360ffe86a6b2033510cb7d4b790477c80d5d1205
 
  
 
-## 次の手順
+## <a name="next-steps"></a>次の手順
 
 
 既にあるゲームを移植する場合は、次のトピックをご覧ください。
@@ -77,10 +84,5 @@ ms.openlocfilehash: 360ffe86a6b2033510cb7d4b790477c80d5d1205
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -5,9 +5,16 @@ title: "ターゲット設定"
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
 template: detail.hbs
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 9710e3060410428e1a4b7cfe89442c7df8602ed2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fd4ba842a1d6f9eec6012a930a5dda5d7ff7c249
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -173,10 +180,5 @@ Windows では、ここで示した最小サイズや推奨する余白サイズ
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

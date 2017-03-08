@@ -10,9 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 011d4e7dcebc20e0568fd5bdc4a207a66597f073
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: f76bdf6052228e5588ea7e34d95360f698525eb2
+ms.lasthandoff: 02/08/2017
 
 ---
 # <a name="usability-for-uwp-apps"></a>UWP アプリの操作性
@@ -198,9 +200,4 @@ Windows は世界中で利用されており、文化、地域、言語の異な
   </div>
 </div>
 </div>
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

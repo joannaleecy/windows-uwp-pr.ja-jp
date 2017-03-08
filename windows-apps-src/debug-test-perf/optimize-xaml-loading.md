@@ -3,14 +3,21 @@ author: mcleblanc
 ms.assetid: 569E8C27-FA01-41D8-80B9-1E3E637D5B99
 title: "XAML マークアップの最適化"
 description: "UI が複雑な場合は、XAML マークアップを解析し、メモリ内にオブジェクトを構築するのに時間がかかります。 以下に、アプリでの XAML マークアップの解析および読み込み時間や、メモリ効率の向上に役立つヒントを紹介します。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 655603e7fa8687480b5376806bc199afecd425fd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 24a5696a6e835a40b9b4e800677596514b56d53b
+ms.lasthandoff: 02/07/2017
 
 ---
-# XAML マークアップの最適化
+# <a name="optimize-your-xaml-markup"></a>XAML マークアップの最適化
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 UI が複雑な場合は、XAML マークアップを解析し、メモリ内にオブジェクトを構築するのに時間がかかります。 以下に、アプリでの XAML マークアップの解析および読み込み時間や、メモリ効率の向上に役立つヒントを紹介します。
 
@@ -84,7 +91,7 @@ UI が複雑な場合は、XAML マークアップを解析し、メモリ内に
 
 上の反例の効率を高めるには、`SecondPageTextBrush` を SecondPage.xaml に、`ThirdPageTextBrush` を ThirdPage.xaml に移動します。 `InitialPageTextBrush` は、どの場合でもアプリケーション リソースをアプリの起動時に解析する必要があるため、App.xaml 内に残しておくことができます。
 
-## 要素数の最少化
+## <a name="minimize-element-count"></a>要素数の最少化
 
 XAML プラットフォームでは大量の要素を表示できますが、目的のビジュアルを満たすためのページ上の要素の数を減らすと、アプリ レイアウトの作成とレンダリングをより速く行うことができます。
 
@@ -106,7 +113,7 @@ XAML プラットフォームでは大量の要素を表示できますが、目
 
 -   同じベクターベースの要素を十分な回数再利用する場合は、代わりに [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 要素を使うと効率がさらに高まります。 ベクターベース要素は、CPU が個々の要素をそれぞれ個別に作成する必要があるため、負荷が高くなる可能性があります。 画像ファイルは 1 回デコードするだけ済みます。
 
-## 同じように見える複数のブラシを 1 つのリソースに統合する
+## <a name="consolidate-multiple-brushes-that-look-the-same-into-one-resource"></a>同じように見える複数のブラシを 1 つのリソースに統合する
 
 XAML プラットフォームは、よく使われるオブジェクトをキャッシュして、何度も再利用できるようにします。 しかし、あるマークアップで宣言されているブラシが別のマークアップで宣言されているブラシと同じであるかどうかは簡単に判断できません。 ここでは、例として [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) を用いますが、[**GradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210068) のほうが使う可能性が高く、より重要です。
 
@@ -146,7 +153,7 @@ XAML プラットフォームは、よく使われるオブジェクトをキャ
 </Page>
 ```
 
-## 過剰な描画の最小化
+## <a name="minimize-overdrawing"></a>過剰な描画の最小化
 
 過剰な描画とは、同じスクリーン ピクセル単位で複数のオブジェクトが描画されることを指します。 ただし、このガイダンスと要素数を最小限に抑えたいという要求は両立しません。
 
@@ -240,7 +247,7 @@ XAML プラットフォームは、よく使われるオブジェクトをキャ
 
 [**DebugSettings.IsOverdrawHeatMapEnabled**](https://msdn.microsoft.com/library/windows/apps/Hh701823) を視覚的な診断として使います。 以前はなかったオブジェクトが描画され、シーン内に表示されていることがわかります。
 
-## 静的コンテンツのキャッシュ
+## <a name="cache-static-content"></a>静的コンテンツのキャッシュ
 
 過剰な描画の別の原因として、多数の重複する要素から作成される図形があります。 コンポジット図形を含む [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) で [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR228084) を **BitmapCache** に設定した場合、プラットフォームで要素が一度ビットマップでレンダリングされ、過剰な描画の代わりにそのビットマップの各フレームが使われます。
 
@@ -272,7 +279,7 @@ XAML プラットフォームは、よく使われるオブジェクトをキャ
 
 [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR228084) を使っていることに注目してください。 サブ図形がアニメーション化されている場合は、この方法を使わないでください。その目的に反し、各フレームでビットマップ キャッシュを再生成することが必要になる可能性があるためです。
 
-## ResourceDictionaries
+## <a name="resourcedictionaries"></a>ResourceDictionaries
 
 ResourceDictionaries は通常、ある程度グローバル レベルでリソースを格納する場合に使用されます。 アプリの複数の場所で参照する必要があるリソースです。 たとえば、スタイル、ブラシ、テンプレートです。 一般的に、要求されない限りリソースがインスタンス化されないようにするために ResourceDictionaries を最適化します。 少し注意を払う必要がある場合がいくつかあります。
 
@@ -280,17 +287,12 @@ ResourceDictionaries は通常、ある程度グローバル レベルでリソ�
 
 **UserControl 内の ResourceDictionaries**。 UserControl 内で定義された ResourceDictionaries ではパフォーマンスが低下します。 プラットフォームは、UserControl のすべてのインスタンスに対して、このような ResourceDictionary のコピーを作成します。 よく使われる UserControl を使っている場合、UserControl から ResourceDictionary を移動し、ページ レベルに配置します。
 
-## XBF2 の使用
+## <a name="use-xbf2"></a>XBF2 の使用
 
 XBF2 は、実行時にすべてのテキスト解析コストを回避する XAML マークアップのバイナリ表現です。 また、読み込みとツリーの作成のためにバイナリを最適化し、VSM、ResourceDictionary、Styles などのヒープやオブジェクトの作成コストを改善するために XAML 型の "高速パス" を使用できるようにします。 これは完全にメモリ マッピングされるため、XAML ページの読み込みや読み取りにヒープは使用されません。 さらに、appx に保存している XAML ページのディスク使用量が削減されます。 XBF2 はよりコンパクトな表現であり、同等の XAML/XBF1 ファイルのディスク使用量を最大 50% 削減できます。 たとえば、組み込みのフォト アプリの場合、XBF2 への変換によって、およそ 1 MB の XBF1 アセットが 400 KB の XBF2 アセットに縮小され、約 60% の削減が実現されました。 また、CPU で 15 ～ 20%、Win32 ヒープで 10 ～ 15% のメリットをアプリにもたらします。
 
 フレームワークが提供する XAML の組み込みのコントロールとディクショナリは、既に XBF2 に完全に対応しています。 独自のアプリでは、プロジェクト ファイルで TargetPlatformVersion 8.2 以降を宣言していることを確認します。
 
 XBF2 があるかどうかを確認するには、バイナリ エディターでアプリを開きます。XBF2 がある場合、12 番目と 13 番目のバイトは 00 02 です。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

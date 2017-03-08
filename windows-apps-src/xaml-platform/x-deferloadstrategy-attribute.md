@@ -3,13 +3,20 @@ author: jwmsft
 title: "xDeferLoadStrategy 属性"
 description: "xDeferLoadStrategy は、要素とその子の作成を遅延させます。起動時間は短くなりますが、メモリ使用量は若干増加します。 影響を受けるそれぞれの要素によって、メモリ使用量が約 600 バイト増加します。"
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
-ms.openlocfilehash: c1a0515ea4298b6eb870bdf69e452f774962cdd8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4ccc18920a98b3c2258b4965e96fa063124d0546
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# x:DeferLoadStrategy 属性
+# <a name="xdeferloadstrategy-attribute"></a>x:DeferLoadStrategy 属性
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
@@ -17,13 +24,13 @@ ms.openlocfilehash: c1a0515ea4298b6eb870bdf69e452f774962cdd8
 
 ただし、遅延のための予約により、影響を受ける要素ごとにメモリ使用量が約 600 バイト増えます。 遅延させる要素ツリーが大きいほど、起動時間がより節約されます。ただし、メモリ使用量のコストは増加します。 したがって、この属性を過剰に使うとパフォーマンスが低下する可能性があります。
 
-## XAML 属性の使用方法
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法
 
 ``` syntax
 <object x:DeferLoadStrategy="Lazy" .../>
 ```
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 **x:DeferLoadStrategy** を使う際の制約を以下に示します。
 
@@ -59,7 +66,7 @@ ms.openlocfilehash: c1a0515ea4298b6eb870bdf69e452f774962cdd8
 
 一般的なガイドラインでは、必要なパフォーマンスが得られていることを確認するために、作業の前と後にアプリケーションを測定します。
 
-## 例
+## <a name="example"></a>例
 
 ```xml
 <Grid x:Name="DeferredGrid" x:DeferLoadStrategy="Lazy">
@@ -86,10 +93,5 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
     this.FindName("DeferredGrid"); // This will realize the deferred grid
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

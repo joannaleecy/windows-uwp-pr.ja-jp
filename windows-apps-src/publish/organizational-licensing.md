@@ -3,13 +3,20 @@ author: jnHs
 Description: "ビジネス向け Windows ストアでアプリでボリューム購入を提供するかどうか、および、どのように提供するかは、アプリの申請の [価格と使用可能状況] ページの [組織のライセンス] セクションで指定できます。"
 title: "組織のライセンス オプション"
 ms.assetid: 1EB139B0-67E7-4F66-AAEF-491B1E52E96F
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 4a297b7a2a2383a825a848ed6939f9743733253f
-ms.openlocfilehash: f3c1ee23e53e3c31a577eb3be03e3fc3055f1ec2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0fb906dc84085d3006be7f5f25d895e1150f9265
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 組織のライセンス オプション
+# <a name="organizational-licensing-options"></a>組織のライセンス オプション
 
 
 ビジネス向け Windows ストアでアプリでボリューム購入を提供するかどうか、および、どのように提供するかは、アプリの申請の [[価格と使用可能状況]](set-app-pricing-and-availability.md#organizational-licensing) ページの **[組織のライセンス]** セクションで指定できます。
@@ -18,7 +25,7 @@ ms.openlocfilehash: f3c1ee23e53e3c31a577eb3be03e3fc3055f1ec2
 
 > **注**  各アプリの選択は、それぞれ独立して構成します。 アプリの基本設定は、新しい申請を作成することでいつでも変更できます。また、変更は申請が[認定プロセス](the-app-certification-process.md)を完了した後に有効になります。
 
-## 組織へのアプリの提供の許可
+## <a name="allowing-your-app-to-be-offered-to-organizations"></a>組織へのアプリの提供の許可
 
 既定では、**[ストアで管理される (オンライン) ボリューム ライセンスと配布に基づいて組織がこのアプリを購入できるようにする]** チェック ボックスはオンになっています。 これは、組織がボリューム取得できるアプリのカタログにアプリを含め、ストアのオンライン ライセンス システムでアプリのライセンスが管理されるようにすることを意味します。
 
@@ -28,7 +35,7 @@ ms.openlocfilehash: f3c1ee23e53e3c31a577eb3be03e3fc3055f1ec2
 
 > **ヒント**  基幹業務 (LOB) アプリを特定の組織に対してのみ公開するには、企業の関連付けを設定して、組織がアプリをプライベート ストアに直接追加できるようにします。 詳しくは、「[LOB アプリの企業への配布](distribute-lob-apps-to-enterprises.md)」をご覧ください。
 
-## 未接続状態 (オフライン) のライセンスの許可
+## <a name="allowing-disconnected-offline-licensing"></a>未接続状態 (オフライン) のライセンスの許可
 
 
 オフラインのライセンスに対応したアプリを多くの組織が必要としています。 たとえば、一部の組織では、インターネットに接続することがまったくないか、ほとんどないデバイスにアプリを展開する必要があります。 このようなユーザーがアプリを利用できるようにする場合は、**[組織に対して、組織で管理される (オフライン) ライセンスと配布を許可する]** というチェック ボックスをオンにします。
@@ -40,7 +47,7 @@ ms.openlocfilehash: f3c1ee23e53e3c31a577eb3be03e3fc3055f1ec2
 > **重要** .xap パッケージでは、オフラインのライセンスはサポートされていません。  
 
  
-## 有料アプリのサポート
+## <a name="paid-app-support"></a>有料アプリのサポート
 
 現在、特定の市場の開発者アカウントは、ビジネス向け Windows ストアでボリューム取得用に有料アプリを提供することができます。 
 
@@ -85,9 +92,4 @@ ms.openlocfilehash: f3c1ee23e53e3c31a577eb3be03e3fc3055f1ec2
 - スイス
 - 英国
 - 米国
-
-
-
-<!--HONumber=Sep16_HO3-->
-
 

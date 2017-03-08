@@ -3,23 +3,30 @@ author: msatranjr
 title: "Windows ランタイム コンポーネントでのエラー状態の診断"
 description: "この記事では、マネージ コードで記述された Windows ランタイム コンポーネントでの制限に関する追加情報について説明します。"
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP"
 translationtype: Human Translation
-ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: da02ed10336ea2381213fd5fada153db4cc06ab1
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Windows ランタイム コンポーネントでのエラー状態の診断
+# <a name="diagnosing-windows-runtime-component-error-conditions"></a>Windows ランタイム コンポーネントでのエラー状態の診断
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 この記事では、マネージ コードで記述された Windows ランタイム コンポーネントでの制限に関する追加情報について説明します。 ここでは、[Winmdexp.exe (Windows ランタイム メタデータ エクスポート ツール)](https://msdn.microsoft.com/library/hh925576.aspx) からのエラー メッセージに示されている情報についても説明します。また、「[C# および Visual Basic での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-csharp-and-visual-basic.md)」に記載されている制限事項の情報について補足説明します。
 
 この記事では、すべてのエラーが説明されているわけではありません。 ここで説明するエラーは一般的なカテゴリにまとめられており、各カテゴリには、関連するエラー メッセージの表が示されています。 この表を利用するには、メッセージ テキストで検索するか (プレース ホルダーの特定の値は省略してください)、メッセージ番号で検索してください。 必要な情報が見つからない場合は、この記事の最後にあるフィードバック ボタンをご利用ください。ドキュメントの内容を充実させるためにご協力をお願いします。 フィードバックを送る際には、エラー メッセージを含めてください。 また、Microsoft Connect の Web サイトで問題点をご連絡していただくこともできます。
 
-## 非同期インターフェイスの実装に関するエラー メッセージで示される型が正しくない
+## <a name="error-message-for-implementing-async-interface-provides-incorrect-type"></a>非同期インターフェイスの実装に関するエラー メッセージで示される型が正しくない
 
 
 マネージ型の Windows ランタイム コンポーネントは、非同期処理や非同期操作を表すユニバーサル Windows プラットフォーム (UWP) インターフェイス ([IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx)、[IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx)、[IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx)、[IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)) を実装することはできません。 代わりに、.NET Framework には、Windows ランタイム コンポーネントの非同期操作を生成するための [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) クラスが用意されています。 非同期インターフェイスを実装しようとしたときに Winmdexp.exe により表示されるエラー メッセージでは、このクラスが誤って以前の名前の AsyncInfoFactory として示されます。 .NET Framework では、AsyncInfoFactory クラスが使われなくなりました。
@@ -34,7 +41,7 @@ ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
 
  
 
-## mscorlib.dll または System.Runtime.dll への参照が指定されていない
+## <a name="missing-references-to-mscorlibdll-or-systemruntimedll"></a>mscorlib.dll または System.Runtime.dll への参照が指定されていない
 
 
 この問題は、コマンド ラインから Winmdexp.exe を使う場合にのみ発生します。 .NET Framework のコア参照アセンブリから mscorlib.dll と System.Runtime.dll の両方への参照を含めるには、/reference オプションを使うことをお勧めします。コア参照アセンブリは、"%ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETCore\\v4.5" (32 ビット コンピューターの場合は、"%ProgramFiles%\\...") にあります。
@@ -46,7 +53,7 @@ ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
 
  
 
-## 演算子のオーバーロードが許可されていない
+## <a name="operator-overloading-is-not-allowed"></a>演算子のオーバーロードが許可されていない
 
 
 マネージ コードで記述された Windows ランタイム コンポーネントでは、パブリック型のオーバーロードされた演算子を公開することはできません。
@@ -61,7 +68,7 @@ ms.openlocfilehash: 02cb16d88add782321ca86a27fcb8b5c6d1bab34
 
  
 
-## クラスのコンストラクターに同じ数のパラメーターがある
+## <a name="constructors-on-a-class-have-the-same-number-of-parameters"></a>クラスのコンストラクターに同じ数のパラメーターがある
 
 
 UWP のクラスは、指定された数のパラメーターを持つコンストラクターを 1 つしか保持できません。たとえば、**String** 型の 1 つのパラメーターを持つコンストラクターと **int** 型 (Visual Basic の **Integer**) の 1 つのパラメーターを持つコンストラクターを両方保持することはできません。 唯一の回避策は、各コンストラクターで異なる数のパラメーターを使うことです。
@@ -72,7 +79,7 @@ UWP のクラスは、指定された数のパラメーターを持つコンス�
 
  
 
-## 同じ数のパラメーターを持つオーバーロードには既定値を指定する必要がある
+## <a name="must-specify-a-default-for-overloads-that-have-the-same-number-of-parameters"></a>同じ数のパラメーターを持つオーバーロードには既定値を指定する必要がある
 
 
 UWP では、オーバーロードされたメソッドの 1 つが既定のオーバーロードとして指定されている場合にのみ、同じ数のパラメーターを持つことができます。 「[C# および Visual Basic での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-csharp-and-visual-basic.md)」の「オーバーロードされたメソッド」をご覧ください。
@@ -84,7 +91,7 @@ UWP では、オーバーロードされたメソッドの 1 つが既定のオ�
 
  
 
-## 出力ファイルの名前空間のエラーと無効な名前
+## <a name="namespace-errors-and-invalid-names-for-the-output-file"></a>出力ファイルの名前空間のエラーと無効な名前
 
 
 ユニバーサル Windows プラットフォームでは、Windows メタデータ (.winmd) ファイルに含まれるすべてのパブリック型は、.winmd ファイルの名前を共有する名前空間、またはそのファイル名のサブ名前空間に含まれている必要があります。 たとえば、Visual Studio プロジェクトの名前が A.B (つまり、Windows ランタイム コンポーネントが A.B.winmd) の場合、パブリック クラス A.B.Class1 と A.B.C.Class2 を含めることができますが、A.Class3 (WME0006) または D.Class4 (WME1044) を含めることはできません。
@@ -118,7 +125,7 @@ Windows ランタイム コンポーネントの型には、名前空間と同�
 
  
 
-## 無効なユニバーサル Windows プラットフォーム型である型をエクスポートする
+## <a name="exporting-types-that-arent-valid-universal-windows-platform-types"></a>無効なユニバーサル Windows プラットフォーム型である型をエクスポートする
 
 
 コンポーネントのパブリック インターフェイスは UWP 型のみを公開する必要があります。 ただし、.NET Framework には、.NET Framework や UWP とはわずかに異なる多数の一般的な型に対応したマッピングが用意されています。 これにより、.NET Framework の開発者は、新しい型を習得せずに、使い慣れた型を使うことができます。 マップされた .NET Framework 型は、コンポーネントのパブリック インターフェイスで使うことができます。 [「C# および Visual Basic での Windows ランタイム コンポーネントの作成」](creating-windows-runtime-components-in-csharp-and-visual-basic.md)の「Windows ランタイム コンポーネントの宣言型」と「ユニバーサル Windows プラットフォーム型のマネージ コードへの引き渡し」、および「 [.NET Framework での Windows ランタイム型の対応付け](net-framework-mappings-of-windows-runtime-types.md)」をご覧ください。
@@ -168,7 +175,7 @@ Windows ランタイム コンポーネントの型には、名前空間と同�
 
  
 
-## 使うことができない型のフィールドを含む構造体
+## <a name="structures-that-contain-fields-of-disallowed-types"></a>使うことができない型のフィールドを含む構造体
 
 
 UWP では、構造体にはフィールドのみを含めることができ、フィールドは構造体にのみ含めることができます。 これらのフィールドはパブリック型である必要があります。 有効なフィールド型には、列挙体、構造体、およびプリミティブ型があります。
@@ -179,7 +186,7 @@ UWP では、構造体にはフィールドのみを含めることができ、�
 
  
 
-## メンバーのシグネチャ内における配列の制限
+## <a name="restrictions-on-arrays-in-member-signatures"></a>メンバーのシグネチャ内における配列の制限
 
 
 UWP では、メンバーのシグネチャ内の配列は 1 次元で、下限を 0 (ゼロ) に指定する必要があります。 `myArray[][]` (Visual Basic の `myArray()()`) など、入れ子になった配列型を使うことはできません。
@@ -196,7 +203,7 @@ UWP では、メンバーのシグネチャ内の配列は 1 次元で、下限�
 
  
 
-## 配列パラメーターでは、配列の内容が読み取り可能であるか書き込み可能であるかどうかを指定する必要がある
+## <a name="array-parameters-must-specify-whether-array-contents-are-readable-or-writable"></a>配列パラメーターでは、配列の内容が読み取り可能であるか書き込み可能であるかどうかを指定する必要がある
 
 
 UWP では、パラメーターは読み取り専用または書き込み専用に指定する必要があります。 パラメーターは、**ref** (Visual Basic では [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) 属性のない **ByRef**) とマークすることはできません。 これは配列の内容に適用されるため、配列パラメーターは配列の内容が読み取り専用または書き込み専用であるかどうかを示す必要があります。 **out** パラメーター (Visual Basic では OutAttribute 属性のある **ByRef** パラメーター) の方向は明確ですが、値によって渡される配列パラメーター (Visual Basic の ByVal) はマークする必要があります。 [「Windows ランタイム コンポーネントに配列を渡す方法」](passing-arrays-to-a-windows-runtime-component.md)をご覧ください。
@@ -211,7 +218,7 @@ UWP では、パラメーターは読み取り専用または書き込み専用�
 | WME1106      | メソッド '{0}' には、配列パラメーター '{1}' が指定されています。 Windows ランタイムでは、配列パラメーターの内容が読み取り可能または書き込み可能である必要があります。 {2} または {3} を '{1}' に適用してください。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 
 
-## "value" という名前のパラメーターを持つメンバー
+## <a name="member-with-a-parameter-named-value"></a>"value" という名前のパラメーターを持つメンバー
 
 
 UWP では、戻り値は出力パラメーターであると見なされ、パラメーターの名前は一意である必要があります。 既定では、Winmdexp.exe は戻り値に "value" という名前を設定します。 メソッドに "value" という名前のパラメーターがあると、エラー WME1092 が発生します。 これを修正するには 2 つの方法があります。
@@ -245,13 +252,8 @@ JavaScript コードは、戻り値も含め、メソッドの出力パラメー
 | WME1092 | メソッド '\{0}' には、既定の戻り値の名前と同じ '\{1}' という名前のパラメーターが指定されています。 このパラメーターに別の名前を使用するか、System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute を使用して、戻り値の名前を明示的に指定してください。<br/>**注:** 既定の名前は、プロパティ アクセサーでは "returnValue"、その他のすべてのメソッドでは "value" となります。 |
  
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [C# および Visual Basic での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 * [Winmdexp.exe (Windows ランタイム メタデータ エクスポート ツール)](https://msdn.microsoft.com/library/hh925576.aspx)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

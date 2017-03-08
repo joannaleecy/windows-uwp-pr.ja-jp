@@ -3,15 +3,22 @@ author: DelfCo
 description: "ネットワーク対応アプリで実行する必要がある事柄について説明します。"
 title: "ネットワークの基本"
 ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 28cf7084fd7ea6ad41c7c2817522891617928abb
-ms.openlocfilehash: 13457b7da3472f3530805198a74b3a6b2ff78f50
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d24d1ff9408585246aae4c4849d3af5e8f4846be
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="networking-basics"></a>ネットワークの基本
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 ネットワーク対応アプリで実行する必要がある事柄について説明します。
 
@@ -37,8 +44,7 @@ ms.openlocfilehash: 13457b7da3472f3530805198a74b3a6b2ff78f50
 
 ## <a name="communicating-when-your-app-is-not-in-the-foreground"></a>アプリがフォア グラウンドにないときの通信
 
-
-              「[バックグラウンド タスクによるアプリのサポート](https://msdn.microsoft.com/library/windows/apps/mt299103)」には、アプリがフォアグラウンドでないときにバックグラウンド タスクを使って処理を実行する方法に関する一般的な情報が含まれています。 具体的には、アプリがフォアグラウンド アプリでないときにネットワーク経由でそのアプリのデータが到着した場合は、到着通知を受け取るための特別な手順のコードを実行する必要があります。 Windows 8 では、このためにコントロール チャネル トリガーを使っていました。これらのトリガーは、Windows 10 でも引き続きサポートされます。 コントロール チャネル トリガーの使い方について詳しくは[**ここ**](https://msdn.microsoft.com/library/windows/apps/hh701032)をご覧ください。 Windows 10 の新しいテクノロジでは、プッシュ対応ストリーム ソケットなどのいくつかのシナリオでオーバーヘッドが小さい優れた機能であるソケット ブローカーとソケット アクティビティ トリガーを利用できます。
+「[バックグラウンド タスクによるアプリのサポート](https://msdn.microsoft.com/library/windows/apps/mt299103)」には、アプリがフォアグラウンドでないときにバックグラウンド タスクを使って処理を実行する方法に関する一般的な情報が含まれています。 具体的には、アプリがフォアグラウンド アプリでないときにネットワーク経由でそのアプリのデータが到着した場合は、到着通知を受け取るための特別な手順のコードを実行する必要があります。 Windows 8 では、このためにコントロール チャネル トリガーを使っていました。これらのトリガーは、Windows 10 でも引き続きサポートされます。 コントロール チャネル トリガーの使い方について詳しくは[**ここ**](https://msdn.microsoft.com/library/windows/apps/hh701032)をご覧ください。 Windows 10 の新しいテクノロジでは、プッシュ対応ストリーム ソケットなどのいくつかのシナリオでオーバーヘッドが小さい優れた機能であるソケット ブローカーとソケット アクティビティ トリガーを利用できます。
 
 アプリで [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)、または [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) を使っている場合は、開いているソケットの所有権をシステムが提供するソケット ブローカーに移譲した後、フォアグラウンドから離れるか、アプリを終了できます。 移譲されたソケットで接続が行われるか、そのソケットでトラフィックが到着すると、アプリまたは指定されたバックグラウンド タスクがアクティブ化します。 アプリが実行されていない場合は、開始されます。 その後、ソケット ブローカーは、[**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) を使って、新しいトラフィックが到着していることをアプリに通知します。 アプリは、ソケット ブローカーからソケットを取り戻し、そのソケットのトラフィックを処理します。 つまり、アプリがネットワーク トラフィックをアクティブに処理していないときに消費するシステム リソースが非常に少なくなります。
 
@@ -419,10 +425,5 @@ Networking API は、例外の原因についての詳しい情報を取得す�
 
 * [Windows 10 での Networking API の機能強化](http://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
  
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

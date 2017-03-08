@@ -3,13 +3,20 @@ title: "データのエンコードとデコード"
 description: "次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリで base64 データと 16 進データをエンコードおよびデコードする方法を示しています。"
 ms.assetid: 2CC23863-E840-48F4-B087-0479045743AC
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: b07a040cafd2248f12fee571552632080e117692
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cdf4ee8d67048111b1e5e76bfd99ac555fb749ca
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# データのエンコードとデコード
+# <a name="encode-and-decode-data"></a>データのエンコードとデコード
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -41,9 +48,4 @@ public void EncodeDecodeHex()
     String strHexNew = CryptographicBuffer.EncodeToHexString(buffer);
 }
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

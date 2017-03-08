@@ -3,15 +3,22 @@ author: Xansky
 description: "UWP アプリで連絡先とカレンダーの情報を使う方法。"
 title: "連絡先とカレンダー"
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 連絡先, カレンダー, 予定, メール メッセージ"
 translationtype: Human Translation
-ms.sourcegitcommit: c21a5f0f859e3a80d01786caaf6941c3d0b11c18
-ms.openlocfilehash: 0b93ab3f5e0a622fb924a752ec581bbb9df32936
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f0e61f5c586ccd1225fb9e4edf5ab93580cfd043
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 連絡先とカレンダー
+# <a name="contacts-and-calendar"></a>連絡先とカレンダー
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 ユーザーどうしがコンテンツ、メール、カレンダー情報、メッセージを共有したり、提供された機能を活用したりできるように、連絡先と予定へのアクセスを有効にします。
 
@@ -27,16 +34,11 @@ ms.openlocfilehash: 0b93ab3f5e0a622fb924a752ec581bbb9df32936
 
  
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [予定 API のサンプル](http://go.microsoft.com/fwlink/p/?linkid=309836)
 * [連絡先マネージャー API のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=310079)
 * [連絡先ピッカー アプリのサンプル](http://go.microsoft.com/fwlink/p/?linkid=231575)
 * [連絡先に関連する操作の処理のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=320151)
 * [連絡先カードの統合のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

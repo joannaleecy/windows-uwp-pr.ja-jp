@@ -2,9 +2,17 @@
 author: TylerMSFT
 description: "延長実行を使用して、アプリが最小化されているときにアプリの実行を保持する方法について説明します。"
 title: "延長実行を使った最小化状態での実行"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
 translationtype: Human Translation
-ms.sourcegitcommit: e9fcb1f0d1248de25d576029d50070792ad72182
-ms.openlocfilehash: 40b2a15379129142a84c4a5caf4317dc50041e06
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: b7bda3b25e2c268926223da429abf559524ad38c
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -241,9 +249,4 @@ static class ExtendedExecutionHelper
 [バックグラウンド転送](https://msdn.microsoft.com/en-us/windows/uwp/networking/background-transfers)  [Battery Awareness and Background Activity (バッテリー対策とバックグラウンド アクティビティ)](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  
 [MemoryManager クラス](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.aspx)  
 [バックグラウンドでのメディアの再生](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

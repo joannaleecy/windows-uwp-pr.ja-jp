@@ -3,13 +3,20 @@ author: mtoepke
 title: "Direct3D 11 の初期化"
 description: "Direct3D デバイスとデバイス コンテキストへのハンドルを取得する方法や、DXGI を使ってスワップ チェーンを設定する方法など、Direct3D 9 の初期化コードを Direct3D 11 に変換する方法について説明します。"
 ms.assetid: 1bd5e8b7-fd9d-065c-9ff3-1a9b1c90da29
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, Direct3D 11, 初期化, 移植, Direct3D 9"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 723321983418a714ec375db99a0df7f8455c0464
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d4c4c905ad7d7452251ad13d95cbdc53b137c6c8
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Direct3D 11 の初期化
+# <a name="initialize-direct3d-11"></a>Direct3D 11 の初期化
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -23,7 +30,7 @@ ms.openlocfilehash: 723321983418a714ec375db99a0df7f8455c0464
 
 Direct3D デバイスとデバイス コンテキストへのハンドルを取得する方法や、DXGI を使ってスワップ チェーンを設定する方法など、Direct3D 9 の初期化コードを Direct3D 11 に変換する方法について説明します。 「[チュートリアル: DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への簡単な Direct3D 9 アプリの移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)」のパート 1 です。
 
-## Direct3D デバイスの初期化
+## <a name="initialize-the-direct3d-device"></a>Direct3D デバイスの初期化
 
 
 Direct3D 9 では、[**IDirect3D9::CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174313) を呼び出して、Direct3D デバイスへのハンドルを作成しました。 最初に [**IDirect3D9 interface**](https://msdn.microsoft.com/library/windows/desktop/bb174300) へのポインターを取得し、Direct3D デバイスとスワップ チェーンの構成を制御するさまざまなパラメーターを指定しました。 それを実行する前に、[**GetDeviceCaps**](https://msdn.microsoft.com/library/windows/desktop/dd144877) を呼び出して、デバイスが実行できない処理を求めていないことを確認しました。
@@ -115,7 +122,7 @@ device.As(&m_d3dDevice);
 context.As(&m_d3dContext);
 ```
 
-## スワップ チェーンの作成
+## <a name="create-a-swap-chain"></a>スワップ チェーンの作成
 
 
 Direct3D 11 には、DirectX Graphics Infrastructure (DXGI) と呼ばれるデバイス API が含まれています。 DXGI インターフェイスを使うと、(たとえば、) スワップ チェーンを構成する方法を制御し、共有デバイスを設定できます。 Direct3D の初期化のこの手順では、DXGI を使って、スワップ チェーンを作成します。 デバイスを作成しているため、インターフェイス チェーンに従って DXGI アダプターに戻ることができます。
@@ -178,7 +185,7 @@ dxgiDevice->SetMaximumFrameLatency(1);
 
 これで、レンダリングのためにバック バッファーを設定できるようになりました。
 
-## レンダー ターゲットとしてのバック バッファーの構成
+## <a name="configure-the-back-buffer-as-a-render-target"></a>レンダー ターゲットとしてのバック バッファーの構成
 
 
 最初に、バック バッファーへのハンドルを取得する必要があります  (バック バッファーは DXGI スワップ チェーンによって所有されますが、DirectX 9 では Direct3D デバイスによって所有されることに注意してください)。次に、バック バッファーを使ってレンダー ターゲット *ビュー*を作成することで、バック バッファーをレンダー ターゲットとして使うように Direct3D デバイスに指示します。
@@ -227,10 +234,5 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

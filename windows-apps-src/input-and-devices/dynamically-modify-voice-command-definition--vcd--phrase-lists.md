@@ -6,20 +6,22 @@ ms.assetid: 98024EAC-EC0E-44AA-AEC5-A611BA7C5884
 label: Modify VCD phrase lists
 template: detail.hbs
 redirect_url: https://msdn.microsoft.com/en-us/cortana/voicecommands/dynamically-modify-voice-command-definition--vcd--phrase-lists
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 4a010fc5d1be3167bcca93231f740d6f087f303e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cb679c01d1d494da435bad0eac6aa0c7d7e4d62f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 音声コマンド定義 (VCD) の語句一覧の動的変更
+# <a name="dynamically-modify-vcd-phrase-lists"></a>音声コマンド定義 (VCD) の語句一覧の動的変更
 
 このトピックは https://msdn.microsoft.com/en-us/cortana/voicecommands/dynamically-modify-voice-command-definition--vcd--phrase-lists に移動されました。
 
 Github: https://github.com/Microsoft/cortana-docs/blob/master/docs/voicecommands/dynamically-modify-voice-command-definition--vcd--phrase-lists.md
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

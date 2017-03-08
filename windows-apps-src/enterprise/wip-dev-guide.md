@@ -4,13 +4,21 @@ Description: "このガイドは、Windows 情報保護 (WIP) ポリシーによ
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "企業データと個人データの両方を使用する対応アプリの作成"
+ms.author: normesta
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, WIP, Windows 情報保護, 企業データ, エンタープライズ データ保護, EDP, 対応アプリ"
+ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
 translationtype: Human Translation
-ms.sourcegitcommit: bf1c47e9cca45b626a45ca664bf2bb4be9c529e0
-ms.openlocfilehash: 82b674c72126c66aff34b0396a2c32f88023dd25
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 5bad765ff182fcd2fb573c3aa766fdaaaef1e2a3
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 企業データと個人データの両方を使用する対応アプリの作成
+# <a name="build-an-enlightened-app-that-consumes-both-enterprise-data-and-personal-data"></a>企業データと個人データの両方を使用する対応アプリの作成
 
 __注__ Windows 情報保護 (WIP) ポリシーは、Windows 10 Version 1607 に適用することができます。
 
@@ -24,7 +32,7 @@ WIP と対応アプリについて詳しくは、「[Windows Information Protect
 
 各作業を実行する準備ができたら、始めましょう。
 
-## 最初に必要なものを収集する
+## <a name="first-gather-what-you-need"></a>最初に必要なものを収集する
 
 以下が必要となります。
 
@@ -32,7 +40,7 @@ WIP と対応アプリについて詳しくは、「[Windows Information Protect
 
 * Windows 10 Version 1607 を実行している開発コンピューター。 Visual Studio をテスト VM にインストールしている場合は、テスト VM を使用することもできます。
 
-## 開発環境のセットアップ
+## <a name="setup-your-development-environment"></a>開発環境のセットアップ
 
 以下の作業を行います。
 
@@ -110,7 +118,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.Data.Xml.Dom;
 ```
 
-## アプリを実行するオペレーティング システムが WIP をサポートしているかどうかを確認する
+## <a name="determine-whether-the-operating-system-that-runs-your-app-supports-wip"></a>アプリを実行するオペレーティング システムが WIP をサポートしているかどうかを確認する
 
 [**IsApiContractPresent**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.metadata.apiinformation.isapicontractpresent.aspx) 関数を使用して、これを確認します。
 
@@ -129,7 +137,7 @@ else
 
 Windows 情報保護は、Windows 10 バージョン 1607 でサポートされます。
 
-## 企業データの読み取り
+## <a name="read-enterprise-data"></a>企業データの読み取り
 
 ファイル、ネットワーク エンドポイント、クリップボードのデータ、および共有コントラクトから受け取ったデータはすべて、エンタープライズ ID を保持しています。
 
@@ -137,7 +145,7 @@ Windows 情報保護は、Windows 10 バージョン 1607 でサポートされ�
 
 最初にファイルの場合について説明します。
 
-### データをファイルから読み取る
+### <a name="read-data-from-a-file"></a>データをファイルから読み取る
 
 **手順 1: ファイル ハンドルを取得する**
 
@@ -194,7 +202,7 @@ var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
 var buffer = await Windows.Storage.FileIO.ReadBufferAsync(file);
 ```
 
-### データをネットワーク エンドポイントから読み取る
+### <a name="read-data-from-a-network-endpoint"></a>データをネットワーク エンドポイントから読み取る
 
 企業のエンドポイントから読み取るように、保護されたスレッド コンテキストを作成します。
 
@@ -328,7 +336,7 @@ public static async Task<IBuffer> getDataFromNetworkResource(Uri resourceURI)
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)
 
-### クリップボードからデータを読み取る
+### <a name="read-data-from-the-clipboard"></a>クリップボードからデータを読み取る
 
 **クリップボードからのデータを使用するアクセス許可を取得する**
 
@@ -425,7 +433,7 @@ private async void PasteText(bool isNewEmptyDocument)
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
 
 
-### 共有コントラクトからデータを読み取る
+### <a name="read-data-from-a-share-contract"></a>共有コントラクトからデータを読み取る
 
 従業員がアプリで自分の情報を共有するように選んだ場合、アプリではその情報の内容を含んでいる新しい項目が開きます。
 
@@ -479,11 +487,11 @@ protected override async void OnShareTargetActivated(ShareTargetActivatedEventAr
 [ProtectionPolicyEvaluationResult](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicyevaluationresult.aspx)<br>
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
 
-## 企業データの保護
+## <a name="protect-enterprise-data"></a>企業データの保護
 
 アプリの外部に送られる企業データを保護します。 データをページ内に表示するとき、データをファイルやネットワーク エンドポイントに保存するとき、または共有コントラクトを使用してデータを保存するときに、データはアプリの外部に送られます。
 
-### <a id="display-data"></a>ページ内に表示されるデータを保護する
+### <a name="a-iddisplay-dataaprotect-data-that-appears-in-pages"></a><a id="display-data"></a>ページ内に表示されるデータを保護する
 
 データをページ内に表示するとき、Windows に対して、そのデータの種類 (個人用または企業用) を知らせます。 そのためには、現在のアプリ ビューに*タグ*を付けるか、アプリのプロセス全体にタグを付けます。
 
@@ -529,7 +537,7 @@ bool result =
 > **API** <br>
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
 
-### ファイルでデータを保護する
+### <a name="protect-data-to-a-file"></a>ファイルでデータを保護する
 
 保護されたファイルを作成し、そのファイルに書き込みを行います。
 
@@ -600,7 +608,7 @@ FileProtectionInfo fileProtectionInfo =
 
 
 
-### バック グラウンド プロセスとして、データをファイルで保護する
+### <a name="protect-data-to-a-file-as-a-background-process"></a>バック グラウンド プロセスとして、データをファイルで保護する
 
 このコードは、デバイスの画面がロックされている間に実行できます。 管理者が "ロックの背後でのデータ保護 (DPL)" という安全なポリシーを構成した場合、Windows によって、保護されたリソースへのアクセスに必要な暗号化キーがデバイスのメモリから削除されます。 これにより、デバイスを紛失した場合のデータ漏洩を防ぐことができます。 これと同じ機能によって、保護されたファイルのハンドルを閉じたときに、ファイルに関連付けられているキーも削除されます。
 
@@ -664,7 +672,7 @@ else if (protectedFileCreateResult.ProtectionInfo.Status == FileProtectionStatus
 [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx)<br>
 [ProtectedFileCreateResult.Stream](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectedfilecreateresult.stream.aspx)<br>
 
-### ファイルの一部を保護する
+### <a name="protect-part-of-a-file"></a>ファイルの一部を保護する
 
 ほとんどの場合、企業データと個人データを別々に保管するとデータがよりわかりやすく整理されますが、必要に応じてこれらのデータを同じファイルに格納することもできます。 たとえば、Microsoft Outlook では、個人用のメールと共に企業用のメールを 1 つのアーカイブ ファイルに保管できます。
 
@@ -740,7 +748,7 @@ await Windows.Storage.FileIO.WriteTextAsync
     "'></EnterpriseDataMarker>");
 ```
 
-### ファイルの保護されている部分を読み取る
+### <a name="read-the-protected-part-of-a-file"></a>ファイルの保護されている部分を読み取る
 
 ファイルから企業データを読み取る方法を次に示します。
 
@@ -820,7 +828,7 @@ else if (dataProtectionInfo.Status == DataProtectionStatus.Revoked)
 [DataProtectionManager.GetProtectionInfoAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.dataprotectionmanager.getstreamprotectioninfoasync.aspx)<br>
 
 
-### フォルダーでデータを保護する
+### <a name="protect-data-to-a-folder"></a>フォルダーでデータを保護する
 
 フォルダーを作成し、保護することができます。 これにより、そのフォルダーに追加したすべての項目は自動的に保護されます。
 
@@ -855,7 +863,7 @@ private async Task<bool> CreateANewFolderAndProtectItAsync(string folderName, st
 [FileProtectionInfo.Status](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.status.aspx)
 
 
-### ネットワーク エンドポイントでデータを保護する
+### <a name="protect-data-to-a-network-end-point"></a>ネットワーク エンドポイントでデータを保護する
 
 保護されたスレッド コンテキストを作成し、そのデータを企業のエンドポイントに送信します。  
 
@@ -907,7 +915,7 @@ else
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)<br>
 [ProtectionPolicyManager.CreateCurrentThreadNetworkContext](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext.aspx)
 
-### アプリが共有コントラクトを介して共有しているデータを保護する
+### <a name="protect-data-that-your-app-shares-through-a-share-contract"></a>アプリが共有コントラクトを介して共有しているデータを保護する
 
 ユーザーがアプリからコンテンツを共有できるようにする場合は、共有コントラクトを実装し、[**DataTransferManager.DataRequested**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) イベントを処理する必要があります。
 
@@ -939,7 +947,7 @@ private void OnDataRequested(DataTransferManager sender, DataRequestedEventArgs 
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)
 
 
-### 別の場所にコピーしたファイルを保護する
+### <a name="protect-files-that-you-copy-to-another-location"></a>別の場所にコピーしたファイルを保護する
 
 ```csharp
 private async void CopyProtectionFromOneFileToAnother
@@ -961,7 +969,7 @@ private async void CopyProtectionFromOneFileToAnother
 [FileProtectionManager.CopyProtectionAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.copyprotectionasync.aspx)<br>
 
 
-### デバイスの画面がロックされているときに、企業データを保護する
+### <a name="protect-enterprise-data-when-the-screen-of-the-device-is-locked"></a>デバイスの画面がロックされているときに、企業データを保護する
 
 デバイスがロックされているときは、メモリ内の機密データをすべて削除します。 ユーザーがデバイスをロック解除したとき、アプリではデータを安全に元に戻すことができます。
 
@@ -969,7 +977,7 @@ private async void CopyProtectionFromOneFileToAnother
 
 画面がロック解除されていることをアプリで認識できるように、[**ProtectionPolicyManager.ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedaccessresumed.aspx) イベントを処理します。 このイベントは、管理者がロック ポリシーに従って安全なデータ保護を構成しているかどうかに関係なく発生します。
 
-#### 画面がロックされているときに、メモリの機密データを削除する
+#### <a name="remove-sensitive-data-in-memory-when-the-screen-is-locked"></a>画面がロックされているときに、メモリの機密データを削除する
 
 機密データを保護し、保護されたファイル上でアプリが開いていたすべてのファイル ストリームを閉じることによって、システムでは、機密データがメモリ内にキャッシュされなくなります。
 
@@ -1015,7 +1023,7 @@ private async void ProtectionPolicyManager_ProtectedAccessSuspending(object send
 [ProtectedAccessSuspendingEventArgs.GetDeferral](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectedaccesssuspendingeventargs.getdeferral.aspx)<br>
 [Deferral.Complete](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx)<br>
 
-#### デバイスがロック解除されたときに、機密データを元に戻す
+#### <a name="add-back-sensitive-data-when-the-device-is-unlocked"></a>デバイスがロック解除されたときに、機密データを元に戻す
 
 [**ProtectionPolicyManager.ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedaccessresumed.aspx) は、デバイスがロック解除され、キーがデバイスで再び利用可能になったときに発生します。
 
@@ -1050,7 +1058,7 @@ private async void ProtectionPolicyManager_ProtectedAccessResumed(object sender,
 [DataProtectionManager.UnprotectAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.dataprotectionmanager.unprotectasync.aspx)<br>
 [BufferProtectUnprotectResult.Status](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.bufferprotectunprotectresult.aspx)<br>
 
-## 保護されたコンテンツが無効になった場合の企業データの処理
+## <a name="handle-enterprise-data-when-protected-content-is-revoked"></a>保護されたコンテンツが無効になった場合の企業データの処理
 
 デバイスが MDM から登録解除されたとき、またはポリシー管理者が企業データへのアクセスを明示的に無効にしたときに、アプリに通知する必要がある場合は、[**ProtectionPolicyManager_ProtectedContentRevoked**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedcontentrevoked.aspx) イベントを処理します。
 
@@ -1081,15 +1089,10 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
 > **API** <br>
 [ProtectionPolicyManager_ProtectedContentRevoked](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedcontentrevoked.aspx)<br>
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 [Windows 情報保護 (WIP) API のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
  
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

@@ -2,21 +2,24 @@
 author: GrantMeStrength
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: "準備"
-description: "準備は、思っているよりも簡単です。 次の手順に従って、Windows 10 用のユニバーサル Windows プラットフォーム (UWP) アプリの作成を開始してください。"
+description: "準備は、思っているよりも簡単です。 次の手順に従って、Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリの作成を開始してください。"
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 75c036fc934a8071f17a8690a22a03e10c4fe1d4
-ms.openlocfilehash: 729c71fbe0db202bd4f5ce15bea87caa973adf80
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 96b6b477efd42b46b8aaf553de2482e1946c9cd7
+ms.lasthandoff: 02/07/2017
 
 ---
-# 準備
+# <a name="get-set-up"></a>準備
 
-準備は、思っているよりも簡単です。 次の手順に従って、Windows 10 用のユニバーサル Windows プラットフォーム (UWP) アプリの作成を開始してください。
+準備は、思っているよりも簡単です。 次の手順に従って、Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリの作成を開始してください。
 
-> [!NOTE]
-> Mac をご利用ですか。 あるいはご使用の PC にまだ何もインストールしたくありませんか。 [Build2016 のコーディングの課題のためにセットアップされた Web ベースの仮想マシン](https://developer.microsoft.com/windows/projects/events/build2016/all/codingchallenges)をお試しください。
-
-
-## 1. Windows 10 を入手
+## <a name="1-get-windows-10"></a>1. Windows 10 の入手
 
 UWP アプリを開発するには、Windows の最新バージョンが必要です。
 
@@ -28,7 +31,7 @@ MSDN サブスクリプション会員の方は、 ISO をここからダウン�
 
 
 
-## 2. Visual Studio のダウンロードまたは更新
+## <a name="2-download-or-update-visual-studio"></a>2. Visual Studio のダウンロードまたは更新
 
 Microsoft Visual Studio 2015 は、アプリの設計、コード化、テスト、デバッグに役立ちます。
 
@@ -40,31 +43,28 @@ Visual Studio をインストールする場合は、カスタム オプショ�
 
 ![UWP 用の Visual Studio ツール](images/vs-2015-community-setup.png)
 
-## 3. デバイスを開発用に有効にする
+Visual Studio に関するヘルプが必要な場合は、 [Visual Studio の概要に関するページ](https://www.visualstudio.com/vs/getting-started)をご覧ください。
+
+## <a name="3-enable-your-device-for-development"></a>3. デバイスを開発用に有効にする
 
 UWP アプリのテストは実際の PC と電話で行うことが重要です。 PC または Windows Phone にアプリを展開するには、PC または電話を開発用に有効にする必要があります。
 
 -   詳しい手順については、「[デバイスを開発用に有効にする](enable-your-device-for-development.md)」をご覧ください。
 
-## 4. アプリ開発者としての登録
+## <a name="4-register-as-an-app-developer"></a>4. アプリ開発者としての登録
 
 アプリの開発をすぐに開始できますが、ストアへの提出前に開発者アカウントが必要です。
 
 -   開発者アカウントを取得するには、[サインアップ](sign-up.md) ページに移動します。
 
-## 次の手順
+## <a name="whats-next"></a>次の手順
 
 ツールをインストールして開発者用ライセンスまたは開発者アカウントを取得したら、チュートリアルを使って最初のアプリを作成します。
 
 -   [初めてのアプリの作成](your-first-app.md)のチュートリアル
 
-## その他のツールとダウンロード
+## <a name="want-more-tools-and-downloads"></a>その他のツールとダウンロード
 
 ツールとダウンロードの一覧については、「[ダウンロード](http://go.microsoft.com/fwlink/p/?linkid=285935)」をご覧ください。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

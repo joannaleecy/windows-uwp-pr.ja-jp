@@ -6,9 +6,16 @@ ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
 isNew: true
 label: Date picker
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 76d5cd756f462ebaad5a200cf4bcf7f4076e4652
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 19551174cebd33785ac21910b52adf31e354373b
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="date-picker"></a>日付の選択コントロール
@@ -65,9 +72,4 @@ birthDatePicker.Header = "Date of birth";
 - [カレンダーの日付の選択コントロール](calendar-date-picker.md)
 - [カレンダー ビュー](calendar-view.md)
 - [時刻の選択コントロール](time-picker.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

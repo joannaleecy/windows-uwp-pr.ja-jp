@@ -3,13 +3,20 @@ author: mtoepke
 title: "Marble Maze サンプルの基礎"
 description: "このドキュメントでは、Marble Maze プロジェクトの基本的な特性について説明します。たとえば、Windows ランタイム環境で Visual C++ をどのように使うか、どのように作られ、構成され、ビルドされるかなどです。"
 ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, サンプル, DirectX, 基礎"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c9aafbf7d8061893180a1a823c2c1cafd9ef7a7f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cc155d7a454cabe5c0d820f5d74313dfeaf01830
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Marble Maze サンプルの基礎
+# <a name="marble-maze-sample-fundamentals"></a>Marble Maze サンプルの基礎
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -29,7 +36,7 @@ ms.openlocfilehash: c9aafbf7d8061893180a1a823c2c1cafd9ef7a7f
 -   ほとんどの場合、予期しないエラーを処理するには、結果コードではなく例外処理を使います。
 -   アプリのエラーの発見に役立てるために、コード分析ツールと共に SAL 注釈を使います。
 
-## Visual Studio プロジェクトの作成
+## <a name="creating-the-visual-studio-project"></a>Visual Studio プロジェクトの作成
 
 
 サンプルをダウンロードおよび展開してある場合は、Visual Studio で MarbleMaze.sln ソリューション ファイルを開くと、コードが表示されます。 また、MSDN サンプル ギャラリーの [DirectX Marble Maze ゲームのサンプルに関するページ](http://go.microsoft.com/fwlink/?LinkId=624011)で、**[コードの参照]** タブを選択してソースを表示することもできます。
@@ -44,7 +51,7 @@ Marble Maze の Visual Studio プロジェクトを作ったときには、既�
 
 Windows ストアで入手するすべての UWP アプリは、アプリ パッケージの形式で提供されます。 アプリ パッケージには、アプリについての情報が記載されたパッケージ マニフェストが含まれています。 たとえば、アプリの機能 (つまり、保護されたシステム リソースやユーザー データへの必要なアクセス) を指定できます。 アプリで特定の機能が必須であると決めた場合は、パッケージ マニフェストを使って、必要な機能を宣言します。 マニフェストでは、サポートされているデバイスの回転、タイル画像、スプラッシュ画面など、プロジェクト プロパティを指定することもできます。 アプリ パッケージについて詳しくは、「[アプリのパッケージ化](https://msdn.microsoft.com/library/windows/apps/mt270969)」をご覧ください。
 
-##  ゲームのビルド、展開、実行
+##  <a name="building-deploying-and-running-the-game"></a>ゲームのビルド、展開、実行
 
 
 UWP アプリ プロジェクトのビルド方法は、一般的なプロジェクトのビルド方法と同じです。 メニュー バーで、**[ビルド]、[ソリューションのビルド]** の順にクリックします。ビルド手順によってコードがコンパイルされ、UWP アプリとして使えるようにパッケージ化されます。
@@ -53,7 +60,7 @@ UWP アプリ プロジェクトのビルド方法は、一般的なプロジェ
 
 プロジェクトを展開したら、Marble Maze タイルを選んでゲームを実行します。 または、Visual Studio のメニュー バーで、**[デバッグ]**、[デバッグの開始] の順にクリックします。
 
-###  ゲームの制御
+###  <a name="controlling-the-game"></a>ゲームの制御
 
 Marble Maze の制御には、タッチ、加速度計、Xbox 360 コントローラー、マウスを使えます。
 
@@ -65,7 +72,7 @@ Marble Maze の制御には、タッチ、加速度計、Xbox 360 コントロ�
 -   ゲームを再開始するには、コントローラーの [戻る] ボタンやキーボードの Home キーを使います。
 -   ハイ スコア表が表示されている場合に、すべてのスコアをクリアするには、[戻る] ボタンか Home キーを使います。
 
-##  コードの規則
+##  <a name="code-conventions"></a>コードの規則
 
 
 Windows ランタイムは、特別なアプリケーション環境だけで実行される UWP アプリの作成に使うプログラミング インターフェイスです。 このようなアプリは、認定された関数、データ型、デバイスを使い、Windows ストアから配布されます。 Windows ランタイムの最も基本となる部分を構成しているのは、アプリケーション バイナリ インターフェイス (ABI) です。 ABI は、JavaScript、.NET 言語、Visual C++ など、複数のプログラミング言語から Windows ランタイム API にアクセスできるようにするための基礎となるバイナリ コントラクトです。
@@ -81,7 +88,7 @@ Marble Maze は、ヒープに割り当てられたオブジェクトを **^** �
 
 C++ UWP アプリで使える言語拡張機能について詳しくは、「[Visual C++ 言語のリファレンス (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh699871)」をご覧ください。
 
-###  エラー処理
+###  <a name="error-handling"></a>エラー処理
 
 Marble Maze では、予期しないエラーに対応する主な方法として例外処理を使います。 ゲーム コードでは従来、エラーを示すためにログやエラー コード (**HRESULT** 値など) を使ってきましたが、例外処理には 2 つの主な利点があります。 1 つ目は、コードが読みやすく、保守しやすいことです。 コードの観点からは、例外処理はエラー処理ルーティンに効率よくエラーを伝達することができます。 エラー コードを使った場合は通常、個々の関数で明示的にエラーを伝達する必要があります。 2 つ目の利点は、例外が発生したところで中断するように Visual Studio デバッガーを構成すれば、エラーが発生したときに、その位置やコンテキストですぐに止めることができることです。 例外処理は、Windows ランタイムでも広く使われています。 したがって、自分のコード内で例外処理を使うことにより、あらゆるエラー処理を 1 つのモデルに統合することができます。
 
@@ -104,7 +111,7 @@ Marble Maze では、予期しないエラーに対応する主な方法とし�
 
 -   予期しないエラーのために **HRESULT** を使うことは避けるようにお勧めしますが、より重要なのは、コードのフローを制御するために例外処理を使わないようにすることです。 そのため、コードのフローを制御するために必要な場合は、**HRESULT** 戻り値を使う方が適切です。
 
-###  SAL 注釈
+###  <a name="sal-annotations"></a>SAL 注釈
 
 アプリのエラーの発見に役立てるために、コード分析ツールと共に SAL 注釈を使います。
 
@@ -126,12 +133,12 @@ void LoadMesh(
 
 利用できる注釈の完全なリストは、sal.h で定義されています。 詳しくは、「[SAL 注釈](https://msdn.microsoft.com/library/windows/apps/ms235402.aspx)」をご覧ください。
 
-## 次の手順
+## <a name="next-steps"></a>次の手順
 
 
 Marble Maze アプリケーション コードの構造と、DirectX UWP アプリの構造と従来のデスクトップ アプリケーションの構造の違いについての情報を、「[Marble Maze のアプリケーション構造](marble-maze-application-structure.md)」で読みます。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [Marble Maze のアプリケーション構造](marble-maze-application-structure.md)
@@ -143,10 +150,5 @@ Marble Maze アプリケーション コードの構造と、DirectX UWP アプ�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

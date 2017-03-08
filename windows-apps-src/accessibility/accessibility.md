@@ -2,16 +2,23 @@
 author: Xansky
 Description: "ユニバーサル Windows プラットフォーム (UWP) アプリに関連するアクセシビリティの概念について紹介します。"
 ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
-title: "アクセシビリティ"
+title: "ユーザー補助"
 label: Accessibility
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 13894c199a95060395886635ebb7c294f18c9d6b
-ms.openlocfilehash: 8974ea067e033796c491781997067aafea773d96
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c7275475e245d8fd68eb2979c16d0afe6ddc4a4c
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アクセシビリティ  
+# <a name="accessibility"></a>ユーザー補助  
 
 
 
@@ -39,11 +46,6 @@ ms.openlocfilehash: 8974ea067e033796c491781997067aafea773d96
 | [コントロール パターンとインターフェイス](control-patterns-and-interfaces.md) | Microsoft UI オートメーションのコントロール パターン、それらにアクセスするためにクライアントが使うクラス、それらを実装するためにプロバイダーが使うインターフェイスを示します。 |
 
 <span id="related_topics"/>
-## 関連トピック  
+## <a name="related-topics"></a>関連トピック  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179) 
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

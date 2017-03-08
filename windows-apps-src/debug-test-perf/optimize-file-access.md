@@ -3,14 +3,21 @@ author: mcleblanc
 ms.assetid: 40122343-1FE3-4160-BABE-6A2DD9AF1E8E
 title: "ファイル アクセスの最適化"
 description: "ファイル システムに効率的にアクセスすることで、ディスクの待ち時間とメモリ/CPU サイクルによるパフォーマンスの問題を回避するユニバーサル Windows プラットフォーム (UWP) アプリを作成します。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 165105c141405cd752f876c822f76a5002d38678
-ms.openlocfilehash: 53fd6f4c28eaa7d3976658a84dd0aefb4255ff91
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 31869b116096052bed9e1c462de3f93e4d1335c2
+ms.lasthandoff: 02/07/2017
 
 ---
-# ファイル アクセスの最適化
+# <a name="optimize-file-access"></a>ファイル アクセスの最適化
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 ファイル システムに効率的にアクセスすることで、ディスクの待ち時間とメモリ/CPU サイクルによるパフォーマンスの問題を回避するユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 
@@ -125,9 +132,9 @@ ms.openlocfilehash: 53fd6f4c28eaa7d3976658a84dd0aefb4255ff91
 > ```
 `Windows.Storage.ApplicationData.Current.LocalFolder` などの Windows.Storage オブジェクトで複数の操作を実行する場合は、対象のストレージ ソースを参照するローカル変数を作成すると、アクセスのたびに中間オブジェクトを再作成する必要がなくなります。
 
-## C# と Visual Basic におけるストリームのパフォーマンス
+## <a name="stream-performance-in-c-and-visual-basic"></a>C# と Visual Basic におけるストリームのパフォーマンス
 
-### UWP ストリームと .NET ストリーム間のバッファリング
+### <a name="buffering-between-uwp-and-net-streams"></a>UWP ストリームと .NET ストリーム間のバッファリング
 
 UWP ストリーム ([**Windows.Storage.Streams.IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718)、[**IOutputStream**](https://msdn.microsoft.com/library/windows/apps/BR241728) など) から .NET ストリーム ([**System.IO.Stream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.aspx)) への変換が必要になるケースは少なくありません。 たとえば、UWP アプリを作成しているとき、ストリームを扱う従来の .NET コードを、UWP のファイル システムで利用する場合に活用できます。 Windows ストア アプリ用 .NET API には、.NET と UWP 間のストリーム型変換を行う拡張メソッドが用意されています。 詳しくは、「[**WindowsRuntimeStreamExtensions**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx)」をご覧ください。
 
@@ -188,7 +195,7 @@ UWP のストリーム アダプターには、アプリの実行速度を高め
 
 ここに示した既定のバッファリング動作は、UWP のストリームを .NET のストリームに変換するほとんどのシナリオに対応します。 しかし、パフォーマンス強化の観点から、シナリオによっては、バッファリングの動作を調整した方がよい場合もあります。
 
-### 大きなデータ セットの操作
+### <a name="working-with-large-data-sets"></a>大きなデータ セットの操作
 
 大きなデータ セットの読み取りまたは書き込みを行う場合、そのスループットを向上させるには、[**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx)、[**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx)、[**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx) の各拡張メソッドに指定するバッファー サイズを増やします。 これによって、ストリーム アダプターに割り当てられる内部バッファーのサイズが大きくなります。 たとえば、大きなファイルから取得したストリームを XML パーサーに渡すと、パーサーが、ストリームから小刻みにデータを読み取り、多数の読み取りが連続して発生することがあります。 バッファーを大きくすると、基になる UWP ストリームに対する呼び出しの回数を減らし、パフォーマンスを大きく高めることができます。
 
@@ -228,16 +235,11 @@ Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 
 多数のストリームを同時に扱うとき、必要に応じてバッファーのメモリ オーバーヘッドを削減 (または排除) することができます。 ストリーム アダプターに指定するバッファーを小さくするか、*bufferSize* パラメーターを 0 に設定してバッファリングを完全にオフにすることもできます。 大規模な読み取りと書き込みをマネージ ストリームに対して行う場合、バッファリングしなくても良好なスループット パフォーマンスを確保できます。
 
-### 待機時間の影響を受けやすい操作の実行
+### <a name="performing-latency-sensitive-operations"></a>待機時間の影響を受けやすい操作の実行
 
 バッファリングを回避した方がよいケースは他にもあります。読み取りと書き込みの待機時間を短くする必要があり、基になる UWP ストリームから大きなブロック単位で読み取ることが適していないケースが該当します。 たとえば、ネットワーク通信のストリームを使う場合、読み取りと書き込みの待機時間を短くする必要があります。
 
 チャット アプリでは、ネットワーク インターフェイス経由でストリームを使い、メッセージをやり取りすることが考えられます。 この場合、バッファーにメッセージが満たされるまで待機するのではなく、完成したメッセージをすぐに送信する必要があります。 [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforread.aspx)、[**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx)、[**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx) の各拡張メソッドを呼び出す際にバッファー サイズを 0 に設定した場合、そのアダプターでは、バッファーが割り当てられず、すべての呼び出しについて、基になる UWP ストリームが直接操作されます。
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

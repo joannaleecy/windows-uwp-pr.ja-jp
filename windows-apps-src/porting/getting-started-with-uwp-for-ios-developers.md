@@ -3,13 +3,20 @@ author: mcleblanc
 description: "iOS 開発者のための UWP の概要"
 title: "iOS 開発者のための UWP の概要"
 ms.assetid: 9F67068B-E578-4C70-B3E0-DFF150FA9BDD
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 14f93a3cc8f5ada23f95a503acd2703044defe61
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8b1d7259d16ba963d19c7656ff2572fa659a1710
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# iOS 開発者のための UWP の概要
+# <a name="getting-started-with-uwp-for-ios-developers"></a>iOS 開発者のための UWP の概要
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
@@ -21,7 +28,7 @@ Windows 10 では、デスクトップ、ノート PC、タブレット、電話
 
 結論は、アプリを単に移植することは避けて、アプリの **(作り直し)** をして、新機能と新しいデバイスを利用することです。 最大公約数で満足せずに、ライブ タイル、通知、Cortana の操作など、Windows 10 独自の機能を使うリッチなエクスペリエンスを作成します。
 
-これらのチュートリアルを行うには、Windows 10 と Microsoft Visual Studio の両方がインストールされたコンピューターが必要です。 これらは、[Windows ストア アプリ プログラミングの開発者向けダウンロードに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=302144)からダウンロードできます。 PC がなくても 心配しないでください。Mac を使うことができます。詳しくは、「[Mac への Windows および開発者ツールのインストール](setting-up-your-mac-with-windows-10.md)」をご覧ください。
+これらのチュートリアルを行うには、Windows 10 と Microsoft Visual Studio の両方がインストールされたコンピューターが必要です。 これらは、[Windows ストア アプリ プログラミングの開発者向けダウンロードに関するページ](https://developer.microsoft.com/en-us/windows/downloads)からダウンロードできます。 PC がなくても 心配しないでください。Mac を使うことができます。詳しくは、「[Mac への Windows および開発者ツールのインストール](setting-up-your-mac-with-windows-10.md)」をご覧ください。
 
 | トピック | 説明 |
 |-------|-------------|
@@ -39,9 +46,4 @@ Windows 10 では、デスクトップ、ノート PC、タブレット、電話
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

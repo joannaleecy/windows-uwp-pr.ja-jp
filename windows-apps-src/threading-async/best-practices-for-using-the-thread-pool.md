@@ -3,19 +3,26 @@ author: TylerMSFT
 ms.assetid: 95CF7F3D-9E3A-40AC-A083-D8A375272181
 title: "スレッド プールを使うためのベスト プラクティス"
 description: "このトピックでは、スレッド プールを使った操作のベスト プラクティスについて説明します。"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、スレッド、スレッド プール"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 796625fe5c1892ac99195a4920dbc7e539aebf76
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d3b45da6a11bab926812682c209207bbbb436bf1
+ms.lasthandoff: 02/07/2017
 
 ---
-# スレッド プールを使うためのベスト プラクティス
+# <a name="best-practices-for-using-the-thread-pool"></a>スレッド プールを使うためのベスト プラクティス
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
 このトピックでは、スレッド プールを使った操作のベスト プラクティスについて説明します。
 
-## 推奨
+## <a name="dos"></a>推奨
 
 
 -   スレッド プールを使って、アプリの並列処理を実行します。
@@ -34,7 +41,7 @@ ms.openlocfilehash: 796625fe5c1892ac99195a4920dbc7e539aebf76
 
 -   使用の時点でリソース割り当ての失敗を許容できない場合は、あらかじめ割り当てられた作業項目を使用します。
 
-## 非推奨
+## <a name="donts"></a>非推奨
 
 
 -   *period* の値が 1 ミリ秒未満 (0 秒を含む) の定期タイマーを作成しないでください。 この場合、作業項目は 1 回限りのタイマーとして動作します。
@@ -47,16 +54,10 @@ ms.openlocfilehash: 796625fe5c1892ac99195a4920dbc7e539aebf76
 
 -   あらかじめ割り当てられた作業項目を複数回実行する場合は、1 回実行するたびに再初期化してください。 [定期的な作業項目の作成](create-a-periodic-work-item.md)
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [定期的な作業項目の作成](create-a-periodic-work-item.md)
 * [スレッド プールへの作業項目の送信](submit-a-work-item-to-the-thread-pool.md)
 * [タイマーを使った作業項目の送信](use-a-timer-to-submit-a-work-item.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

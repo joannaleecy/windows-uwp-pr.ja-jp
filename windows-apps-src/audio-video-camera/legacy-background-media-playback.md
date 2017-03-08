@@ -1,32 +1,39 @@
 ---
 author: drewbatgit
-ms.assetid: 
+ms.assetid: 3848cd72-eccd-400e-93ff-13649cd81b6c
 description: "この記事では、従来のバックグラウンドでのメディアの再生モデルを使用するアプリにサポートを提供したり、新しいモデルに移行するためのガイダンスを提供します。"
 title: "従来のバックグラウンドでのメディアの再生"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 545841e00af8324ae023378e666b71ef49a4a3b5
-ms.openlocfilehash: 2f55941de8b163a4c457fc292e968dc638fffde0
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 9c66df378534825d191740d5eea4beb0f560687e
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 従来のバックグラウンドでのメディアの再生
+# <a name="legacy-background-media-playback"></a>従来のバックグラウンドでのメディアの再生
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 この記事では、UWP アプリにバックグラウンド オーディオのサポートを追加できる従来の 2 プロセスのモデルについて説明します。 Windows 10 バージョン 1607 以降では、バックグラウンド オーディオ用に 1 プロセスのモデルが提供されているため、より簡単に実装できます。 バックグラウンド オーディオに対する現在の推奨事項について詳しくは、「[バックグラウンドでのメディアの再生](background-audio.md)」をご覧ください。 この記事は、従来の 2 プロセスのモデルを使用して既に開発されたアプリにサポートを提供することを目的としています。
 
-## バックグラウンド オーディオのアーキテクチャ
+## <a name="background-audio-architecture"></a>バックグラウンド オーディオのアーキテクチャ
 
 バックグラウンド再生を実行するアプリは、2 つのプロセスで構成されています。 最初のプロセスはメイン アプリです。アプリ UI とクライアント ロジックを含んでおり、フォアグラウンドで実行されます。 2 番目のプロセスはバックグラウンド再生タスクです。すべての UWP アプリのバックグラウンド タスクと同様、[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) を実装しています。 バックグラウンド タスクには、オーディオ再生のロジックとバックグラウンド サービスが含まれています。 バックグラウンド タスクは、システム メディア トランスポート コントロールを通じてシステムと通信します。
 
 次の図は、システムの設計概要を簡単に示しています。
 
 ![Windows 10 のバックグラウンド オーディオのアーキテクチャ](images/backround-audio-architecture-win10.png)
-## MediaPlayer
+## <a name="mediaplayer"></a>MediaPlayer
 
 [**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) 名前空間には、バックグラウンドでオーディオを再生するために使用する API が含まれています。 再生が発生するアプリごとに、単一の [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) インスタンスが存在します。 バックグラウンド オーディオ アプリは、**MediaPlayer** クラスのメソッドを呼び出し、プロパティを設定することで、現在のトラックの設定、再生の開始、一時停止、早送り、巻き戻しなどのコマンドを行います。 MediaPlayer オブジェクトのインスタンスには、常に [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) プロパティを通じてアクセスします。
 
-## MediaPlayer プロキシとスタブ
+## <a name="mediaplayer-proxy-and-stub"></a>MediaPlayer プロキシとスタブ
 
 アプリのバックグラウンド プロセスから **BackgroundMediaPlayer.Current** にアクセスすると、**MediaPlayer** インスタンスがバックグラウンド タスク ホストでアクティブ化され、直接操作できるようになります。
 
@@ -34,19 +41,19 @@ ms.openlocfilehash: 2f55941de8b163a4c457fc292e968dc638fffde0
 
 フォアグラウンドとバックグラウンドの両方のプロセスで、**MediaPlayer** インスタンスのほとんどのプロパティにアクセスできます。ただし、[**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) と [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) は例外で、これらはバックグラウンド プロセスからのみアクセスできます。 フォアグラウンド アプリとバックグラウンド プロセスはいずれも、[**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/dn652609)、[**MediaEnded**](https://msdn.microsoft.com/library/windows/apps/dn652603)、[**MediaFailed**](https://msdn.microsoft.com/library/windows/apps/dn652606) など、メディア固有のイベントに関する通知を受け取ることができます。
 
-## プレイリスト
+## <a name="playback-lists"></a>プレイリスト
 
 バックグラウンド オーディオ アプリケーションの一般的なシナリオでは、複数の項目が連続して再生されます。 これをバックグラウンド プロセスで最も簡単に実行するには、[**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) オブジェクトを使います。このオブジェクトは、[**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) プロパティに割り当てることで、**MediaPlayer** のソースとして設定できます。
 
 バックグラウンド プロセスに設定された **MediaPlaybackList** にフォアグラウンド プロセスからアクセスすることはできません。
 
-## システム メディア トランスポート コントロール
+## <a name="system-media-transport-controls"></a>システム メディア トランスポート コントロール
 
 ユーザーは、アプリの UI を直接使用しなくても、Bluetooth デバイス、SmartGlass、システム メディア トランスポート コントロールなどの手段で、オーディオの再生を制御できます。 バックグラウンド タスクでは、[**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) クラスを使って、ユーザーが開始するこれらのシステム イベントの受信登録を行います。
 
 バックグラウンド プロセスから **SystemMediaTransportControls** インスタンスを取得するには、[**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) プロパティを使います。 フォアグラウンド アプリは、[**SystemMediaTransportControls.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708) を呼び出すことでクラスのインスタンスを取得しますが、返されるインスタンスはフォアグラウンドのみのインスタンスであり、バックグラウンド タスクとは関係ありません。
 
-## タスク間のメッセージ送信
+## <a name="sending-messages-between-tasks"></a>タスク間のメッセージ送信
 
 バックグラウンド オーディオ アプリの 2 つのプロセス間で通信することが必要になる場合があります。 たとえば、新しいトラックの再生が始まるときにバックグラウンド タスクからフォアグラウンド タスクに通知し、新しい曲のタイトルをフォアグラウンド タスクに送って画面に表示させることがあります。
 
@@ -54,7 +61,7 @@ ms.openlocfilehash: 2f55941de8b163a4c457fc292e968dc638fffde0
 
 データは引数としてメッセージ送信メソッドに渡され、次にメッセージ受信イベント ハンドラーに渡されます。 データを渡すには、[**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) クラスを使います。 このクラスは、文字列をキーとして格納し、その他の値の型を値として格納するディクショナリです。 渡すことができるのは、整数型、文字列型、ブール型など、単純型の値です。
 
-## バックグラウンド タスクの有効期間
+## <a name="background-task-life-cycle"></a>バックグラウンド タスクの有効期間
 
 バックグラウンド タスクの有効期間は、アプリの現在の再生状態に密接に関係します。 たとえば、ユーザーがオーディオ再生を一時停止すると、システムは状況に応じてアプリを終了させたり、取り消したりします。 オーディオが再生されることなく一定の時間が経過すると、システムが自動的にバックグラウンド タスクをシャットダウンします。
 
@@ -80,15 +87,15 @@ ms.openlocfilehash: 2f55941de8b163a4c457fc292e968dc638fffde0
 
 -   タスクの取り消しまたは完了が適切に終わらない場合。
 
-## バックグラウンド オーディオ タスクの有効期間に関するシステム ポリシー
+## <a name="system-policies-for-background-audio-task-lifetime"></a>バックグラウンド オーディオ タスクの有効期間に関するシステム ポリシー
 
 バックグラウンド オーディオ タスクの有効期間をシステムでどのように管理するかを決定するには、次のポリシーが役立ちます。
 
-### Exclusivity (排他)
+### <a name="exclusivity"></a>Exclusivity (排他)
 
 このサブポリシーが有効であれば、バックグラウンド オーディオ タスクの数が常に 1 件以内に制限されます。 モバイルやその他の非デスクトップ SKU で有効に設定されます。
 
-### 無通信タイムアウト
+### <a name="inactivity-timeout"></a>無通信タイムアウト
 
 リソースの制約により、システムは、非アクティブな状態が一定期間続いた後にバックグラウンド タスクを終了する可能性があります。
 
@@ -100,7 +107,7 @@ ms.openlocfilehash: 2f55941de8b163a4c457fc292e968dc638fffde0
 
 両方の条件が満たされている場合、バックグラウンド メディアのシステム ポリシーは、タイマーを開始します。 タイマーの有効期限が切れたときにどちらの条件にも変化がない場合、バックグラウンド メディアのシステム ポリシーによってバックグラウンド タスクが終了されます。
 
-### Shared Lifetime (共有の有効期間)
+### <a name="shared-lifetime"></a>Shared Lifetime (共有の有効期間)
 
 このサブポリシーが有効であれば、バックグラウンド タスクがフォアグラウンド タスクの有効期間に依存するように強制されます。 ユーザーまたはシステムによってフォアグラウンド タスクがシャットダウンされると、バックグラウンド タスクもシャットダウンされます。
 
@@ -121,10 +128,5 @@ ms.openlocfilehash: 2f55941de8b163a4c457fc292e968dc638fffde0
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

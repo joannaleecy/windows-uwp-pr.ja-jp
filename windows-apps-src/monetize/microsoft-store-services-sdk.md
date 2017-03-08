@@ -3,17 +3,24 @@ author: mcleanbyron
 Description: "Microsoft Store Services SDK が提供するライブラリとツールを利用すると、収益とユーザーの獲得を図る機能をアプリに追加できます。"
 title: Microsoft Store Services SDK
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP, Microsoft Store Services SDK
 translationtype: Human Translation
-ms.sourcegitcommit: 011b370b7bd7ad7c7d8f60281261b6da954e2256
-ms.openlocfilehash: 840a5e76d409f547d55e558262af09c8fa36a544
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7a8dcb282ea3df16ee8a12247a07af27cbf65b3a
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Microsoft Store Services SDK
+# <a name="microsoft-store-services-sdk"></a>Microsoft Store Services SDK
 
 Microsoft Store Services SDK が提供する機能を利用すると、ユニバーサル Windows プラットフォーム (UWP) アプリで収益を獲得したり、ユーザーとのエンゲージメントを行ったりできます。たとえば、アプリで広告を表示したり、A/B テストを行ったりできます。 この SDK は、Visual Studio 2015 とそれ以降のバージョンの Visual Studio 用の拡張です。
 
-## SDK によりサポートされるシナリオ
+## <a name="scenarios-supported-by-the-sdk"></a>SDK によりサポートされるシナリオ
 
 この SDK では現在、UWP アプリ用の次のシナリオがサポートされています。 今後、エンゲージメントと収益化に関する新しいシナリオがサポートされる予定です。 この SDK の API に関するリファレンス ドキュメントについては、「[Microsoft Store Services SDK API リファレンス](https://msdn.microsoft.com/library/windows/apps/mt691886.aspx)」をご覧ください。
 
@@ -26,7 +33,7 @@ Microsoft Store Services SDK が提供する機能を利用すると、ユニバ
 |  [UWP アプリでの広告の表示](display-ads-in-your-app.md)    |  UWP アプリで [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) または [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) コントロールを使用して、バナー広告またはスポット広告を表示し、収益を向上します。<br/><br/>**注**&nbsp;&nbsp; Microsoft Store Services SDK は Windows 10 の UWP アプリのみをサポートします。 Windows 8.1 および Windows Phone 8.x アプリで広告を表示するには、[Windows および Windows Phone 8.x 用の Microsoft Advertising SDK](http://aka.ms/store-8-sdk) を使用します。  |
 
 <span id="prerequisites" />
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 Microsoft Store Services SDK には以下が必要となります。
 
@@ -36,7 +43,7 @@ Microsoft Store Services SDK には以下が必要となります。
 >**注**&nbsp;&nbsp;Visual Studio 2015 の Microsoft Store Services SDK をインストールするには、Visual Studio Tools for Universal Windows Apps のバージョン 1.1 以降がインストールされている必要があります。 Visual Studio Tools for Universal Windows Apps のこの更新について詳しくは、[リリース ノート](http://go.microsoft.com/fwlink/?LinkID=624516)をご覧ください。
 
 <span id="install" />
-## SDK のインストール
+## <a name="install-the-sdk"></a>SDK のインストール
 
 開発用コンピューターで Visual Studio 2015 (またはそれ以降のリリース) を使用するために Microsoft Store Services SDK をインストールするには、2 つのオプションがあります。
 
@@ -48,13 +55,13 @@ Microsoft Store Services SDK には以下が必要となります。
 >**注**&nbsp;&nbsp;Visual Studio 2015 の Microsoft Store Services SDK をインストールするには、Visual Studio Tools for Universal Windows Apps のバージョン 1.1 以降がインストールされている必要があります。 Visual Studio Tools for Universal Windows Apps のこの更新について詳しくは、[リリース ノート](http://go.microsoft.com/fwlink/?LinkID=624516)をご覧ください。
 
 <span id="install-msi" />
-### MSI によるインストール
+### <a name="install-via-msi"></a>MSI によるインストール
 
 MSI インストーラーを使って Microsoft Store Services SDK をインストールするには
 
 1.  Visual Studio 2015 (またはそれ以降のリリース) のすべてのインスタンスを閉じます。 Microsoft Advertising SDK、Universal Ad Client SDK、Ad Mediator 拡張、または Microsoft Store Engagement and Monetization SDK の以前のバージョンを以前にインストールしていた場合は、これらの SDK のバージョンをアンインストールします。
 
-2.  **コマンド プロンプト** ウィンドウを開き、次のコマンドを実行して、Visual Studio と共にインストールされている可能性があり、コンピューター上のインストールされているプログラムの一覧には表示されない可能性がある、古い広告 SDK のバージョンをすべて削除します。
+2.    **コマンド プロンプト** ウィンドウを開き、次のコマンドを実行して、Visual Studio と共にインストールされている可能性があり、コンピューター上のインストールされているプログラムの一覧には表示されない可能性がある、古い広告 SDK のバージョンをすべて削除します。
   ```
   MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
   MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
@@ -70,13 +77,13 @@ MSI インストーラーを使って Microsoft Store Services SDK をインス�
   または、プロジェクトで初めて SDK を使う場合には、[適切な Microsoft Store Services SDK ライブラリの参照をプロジェクトに追加](#references)します。
 
 <span id="install-nuget" />
-### NuGet によるインストール
+### <a name="install-via-nuget"></a>NuGet によるインストール
 
 NuGet を使って Microsoft Store Services SDK ライブラリを特定のプロジェクトにインストールするには
 
 1.  Visual Studio 2015 (またはそれ以降のリリース) のすべてのインスタンスを閉じます。 Microsoft Advertising SDK、Universal Ad Client SDK、Ad Mediator 拡張、または Microsoft Store Engagement and Monetization SDK の以前のバージョンを以前にインストールしていた場合は、これらの SDK のバージョンをアンインストールします。
 
-2.  **コマンド プロンプト** ウィンドウを開き、次のコマンドを実行して、Visual Studio と共にインストールされている可能性があり、コンピューター上のインストールされているプログラムの一覧には表示されない可能性がある、古い広告 SDK のバージョンをすべて削除します。
+2.    **コマンド プロンプト** ウィンドウを開き、次のコマンドを実行して、Visual Studio と共にインストールされている可能性があり、コンピューター上のインストールされているプログラムの一覧には表示されない可能性がある、古い広告 SDK のバージョンをすべて削除します。
   ```
   MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
   MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
@@ -100,7 +107,7 @@ NuGet を使って Microsoft Store Services SDK ライブラリを特定のプ�
   または、プロジェクトで初めて SDK を使う場合には、[適切な Microsoft Store Services SDK ライブラリの参照をプロジェクトに追加](#references)します。
 
 <span id="references" />
-## SDK ライブラリへの参照をプロジェクトを追加する
+## <a name="add-sdk-library-references-to-your-project"></a>SDK ライブラリへの参照をプロジェクトを追加する
 
 MSI インストーラーまたは NuGet により Microsoft Store Services SDK をインストールしたら、次の手順に従って UWP プロジェクトで SDK ライブラリを参照します。
 
@@ -121,18 +128,18 @@ MSI インストーラーまたは NuGet により Microsoft Store Services SDK 
 >**注**&nbsp;&nbsp;NuGet により SDK ライブラリをインストールした場合には、プロジェクトには **Microsoft Advertising SDK for XAML** または **Microsoft Advertising SDK for JavaScript** に加え、**Microsoft.Services.Store.SDK** の参照が含まれています。 **Microsoft.Services.Store.SDK** の参照は (その中のライブラリではなく) NuGet パッケージを表し、これは無視することができます。
 
 <span id="framework" />
-## SDK のフレームワーク パッケージを理解する
+## <a name="understanding-framework-packages-in-the-sdk"></a>SDK のフレームワーク パッケージを理解する
 
 Microsoft Store Services SDK の以下のライブラリは*フレームワーク パッケージ*として構成されています。
 
-* Microsoft.Advertising.dll。 このライブラリには、[Microsoft.Advertising](https://msdn.microsoft.com/en-us/library/windows/apps/mt313187.aspx) のアドバタイズ API と [Microsoft.Advertising.WinRT.UI](https://msdn.microsoft.com/en-us/library/windows/apps/microsoft.advertising.winrt.ui.aspx) 名前空間が含まれます。
-* Microsoft.Services.Store.Engagement.dll。 このライブラリには、[Microsoft.Services.Store.Engagement](https://msdn.microsoft.com/en-us/library/windows/apps/microsoft.services.store.engagement.aspx) 名前空間の API が含まれています。
+* Microsoft.Advertising.dll。 このライブラリには、[Microsoft.Advertising](https://msdn.microsoft.com/library/windows/apps/mt313187.aspx) のアドバタイズ API と [Microsoft.Advertising.WinRT.UI](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aspx) 名前空間が含まれます。
+* Microsoft.Services.Store.Engagement.dll。 このライブラリには、[Microsoft.Services.Store.Engagement](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.aspx) 名前空間の API が含まれています。
 
 これらのライブラリを使用するバージョンのアプリをユーザーがインストールすると、これらのライブラリは、修正されてパフォーマンスが向上した新しいバージョンのライブラリが公開されるたびに、ユーザーのデバイスで Windows Update によって自動的に更新されます。 これにより、利用できる最新バージョンのライブラリがユーザーのデバイスに確実にインストールされます。
 
 これらのライブラリに新しい API や機能が導入された新しいバージョンの SDK がリリースされた場合は、これらの機能を使用するために最新バージョンの SDK をインストールする必要があります。 このシナリオでは、更新されたアプリをストアに公開する必要もあります。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [Microsoft Store Services SDK API リファレンス](https://msdn.microsoft.com/library/windows/apps/mt691886.aspx)
 * [A/B テストによる実験の実行](run-app-experiments-with-a-b-testing.md)
@@ -140,9 +147,4 @@ Microsoft Store Services SDK の以下のライブラリは*フレームワー�
 * [デベロッパー センターのプッシュ通知を受信するようにアプリを設定する](configure-your-app-to-receive-dev-center-notifications.md)
 * [デベロッパー センターのカスタム イベントをログに記録する](log-custom-events-for-dev-center.md)
 * [アプリでの広告の表示](display-ads-in-your-app.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

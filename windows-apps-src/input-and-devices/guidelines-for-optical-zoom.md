@@ -5,9 +5,16 @@ title: "光学式ズームとサイズ変更のガイドライン"
 ms.assetid: 51a0007c-8a5d-4c44-ac9f-bbbf092b8a00
 label: Optical zoom and resizing
 template: detail.hbs
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 2776fe18d20286a3beaf8ba280976316e40119dd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 567c3bc66c78924bc33ec3a336db6e2ce8592d68
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -15,7 +22,7 @@ ms.openlocfilehash: 2776fe18d20286a3beaf8ba280976316e40119dd
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-この記事では、Windows のズームと要素のサイズ変更について説明し、アプリでこのような新しい対話式操作のメカニズムを使うときのユーザー エクスペリエンスのガイドラインを示します。
+この記事では、Windows のズームとサイズ変更の要素について説明し、アプリでこのような対話式操作のメカニズムを使うためのユーザー エクスペリエンスのガイドラインを示します。
 
 <div class="important-apis" >
 <b>重要な API</b><br/>
@@ -97,10 +104,5 @@ ms.openlocfilehash: 2776fe18d20286a3beaf8ba280976316e40119dd
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

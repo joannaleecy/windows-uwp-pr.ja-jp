@@ -3,9 +3,16 @@ author: msatranjr
 title: "C++ での基本的な Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し#"
 description: "このチュートリアルでは、JavaScript、C#、または Visual Basic から呼び出すことができる基本的な Windows ランタイム コンポーネント DLL を作成する方法について説明します。"
 ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 0085d3edb2ec1fbe14ce268c54532cd246a73dde
+ms.sourcegitcommit: 3c073879ab847a3e1af454e0c1550d8af0f78b3e
+ms.openlocfilehash: e02d7fabf6337fa23ab97858046c3b089c39a087
+ms.lasthandoff: 01/19/2017
 
 ---
 
@@ -16,13 +23,13 @@ ms.openlocfilehash: 0085d3edb2ec1fbe14ce268c54532cd246a73dde
 
 このチュートリアルでは、JavaScript、C#、または Visual Basic から呼び出すことができる基本的な Windows ランタイム コンポーネント DLL を作成する方法について説明します。 このチュートリアルを開始する前に、抽象バイナリ インターフェイス (ABI)、ref クラス、Visual C++ コンポーネント拡張などの概念を必ず理解しておいてください。ref クラスの操作が容易になります。 詳しくは、「[C++ での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-cpp.md)」および「[Visual C++ の言語リファレンス (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx)」をご覧ください。
 
-## C++ コンポーネント DLL の作成
+## <a name="creating-the-c-component-dll"></a>C++ コンポーネント DLL の作成
 
 この例では、最初にコンポーネント プロジェクトを作成しますが、JavaScript プロジェクトを最初に作成しても構いません。 順序は重要ではありません。
 
 コンポーネントのメイン クラスには、プロパティとメソッドの定義およびイベント宣言の例が含まれています。 これらは方法を示すことだけを目的に用意されており、 必須ではありません。この例では、生成されたコードはすべて独自のコードに置き換えます。
 
-## **C++ コンポーネント プロジェクトを作成するには**
+## **<a name="to-create-the-c-component-project"></a>C++ コンポーネント プロジェクトを作成するには**
 
 Visual Studio のメニュー バーで、**[ファイル]、[新規作成]、[プロジェクト]** の順にクリックします。
 
@@ -32,7 +39,7 @@ Visual Studio のメニュー バーで、**[ファイル]、[新規作成]、[�
 
 **[OK]** をクリックします。
 
-## **コンポーネントにアクティブ化可能なクラスを追加するには**
+## **<a name="to-add-an-activatable-class-to-the-component"></a>コンポーネントにアクティブ化可能なクラスを追加するには**
 
 アクティブ化可能なクラスとは、クライアント コードで **new** 式 (Visual Basic では **New**、C++ では **ref new**) を使って作成できるクラスのことです。 コンポーネントでは、**public ref class sealed** として宣言します。 実際には、Class1.h ファイルと .cpp ファイルに ref クラスが既に含まれています。 名前を変更することはできますが、この例では既定の名前 (Class1) を使います。 必要に応じて、コンポーネント内で追加の ref クラスまたは regular クラスを定義できます。 ref クラスについて詳しくは、「[型システム (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)」をご覧ください。
 
@@ -47,7 +54,7 @@ Visual Studio のメニュー バーで、**[ファイル]、[新規作成]、[�
 
 collection.h は、Windows ランタイムによって定義されている言語に依存しないインターフェイスを実装する C++ の具象クラス (Platform::Collections::Vector クラスや Platform::Collections::Map クラスなど) のヘッダー ファイルです。 amp ヘッダーは、GPU で計算を実行する際に使用されます。 Windows ランタイムには amp ヘッダーに相当するものはありませんが、これらはプライベートであるため、問題はありません。 一般に、パフォーマンス上の理由から、コンポーネント内部では ISO C++ コードと標準ライブラリを使います。Windows ランタイム型で表現する必要があるのは、Windows ランタイム インターフェイスだけです。
 
-## 名前空間スコープでデリゲートを追加するには
+## <a name="to-add-a-delegate-at-namespace-scope"></a>名前空間スコープでデリゲートを追加するには
 
 デリゲートとは、メソッドのパラメーターと戻り値の型を定義するコンストラクトです。 イベントは特定のデリゲート型のインスタンスであり、イベントにサブスクライブするイベント ハンドラー メソッドには、デリゲートで指定されているシグネチャが必要です。 次のコードでは、int を受け取り、void を返すデリゲート型を定義します。 次に、このコードでこの型のパブリック イベントを宣言します。これにより、クライアント コードはイベントが発生したときに呼び出されるメソッドを提供できるようになります。
 
@@ -59,7 +66,7 @@ public delegate void PrimeFoundHandler(int result);
 
 Visual Studio に貼り付けたときにコードが整列されていない場合は、Ctrl + K + D キーを押すと、ファイル全体のインデントが修正されます。
 
-## パブリック メンバーを追加するには
+## <a name="to-add-the-public-members"></a>パブリック メンバーを追加するには
 
 クラスで 3 つのパブリック メソッドと 1 つのパブリック イベントを公開します。 最初のメソッドは常に高速で実行されるので、同期メソッドです。 他の 2 つのメソッドは時間がかかる場合があるので、UI スレッドをブロックしないように非同期にします。 これらのメソッドは、IAsyncOperationWithProgress と IAsyncActionWithProgress を返します。 前者は結果を返す非同期メソッドを定義し、後者は void を返す非同期メソッドを定義します。 また、これらのインターフェイスにより、クライアント コードは操作の進行状況の更新を受け取ることができます。
 
@@ -78,7 +85,7 @@ public:
         event PrimeFoundHandler^ primeFoundEvent;
 
 ```
-## プライベート メンバーを追加するには
+## <a name="to-add-the-private-members"></a>プライベート メンバーを追加するには
 
 クラスには 3 つのプライベート メンバーが含まれています。数値計算用の 2 つのヘルパー メソッドと、ワーカー スレッドから UI スレッドにイベント呼び出しをマーシャリングするために使われる CoreDispatcher オブジェクトです。
 
@@ -88,7 +95,7 @@ private:
         Windows::UI::Core::CoreDispatcher^ m_dispatcher;
 ```
 
-## ヘッダーと名前空間のディレクティブを追加するには
+## <a name="to-add-the-header-and-namespace-directives"></a>ヘッダーと名前空間のディレクティブを追加するには
 
 Class1.cpp で、次の #include ディレクティブを追加します。
 
@@ -107,7 +114,7 @@ using namespace Windows::Foundation;
 using namespace Windows::UI::Core;
 ```
 
-## ComputeResult の実装を追加するには
+## <a name="to-add-the-implementation-for-computeresult"></a>ComputeResult の実装を追加するには
 
 Class1.cpp で、次のメソッド実装を追加します。 このメソッドは呼び出しスレッドで同期的に実行されますが、C++ AMP を使って GPU での計算を並列化するため、非常に高速です。 詳しくは、「C++ AMP の概要」をご覧ください。 結果は Platform::Collections::Vector<T> 具象型に追加されます。この型は、返されるときに Windows::Foundation::Collections::IVector<T> に暗黙的に変換されます。
 
@@ -141,7 +148,7 @@ IVector<double>^ Class1::ComputeResult(double input)
     return res;
 }
 ```
-## GetPrimesOrdered とそのヘルパー メソッドの実装を追加するには
+## <a name="to-add-the-implementation-for-getprimesordered-and-its-helper-method"></a>GetPrimesOrdered とそのヘルパー メソッドの実装を追加するには
 
 Class1.cpp で、GetPrimesOrdered と is_prime ヘルパー メソッドの実装を追加します。 GetPrimesOrdered は、concurrent_vector クラスと parallel_for 関数ループを使って作業を分割し、プログラムが実行されているコンピューターのリソースを最大限に使って結果を生成します。 結果の計算、保存、並べ替えが終わると、結果は Platform::Collections::Vector<T> に追加され、Windows::Foundation::Collections::IVector<T> としてクライアント コードに返されます。
 
@@ -211,7 +218,7 @@ IAsyncOperationWithProgress<IVector<int>^, double>^ Class1::GetPrimesOrdered(int
 }
 ```
 
-## GetPrimesUnordered の実装を追加するには
+## <a name="to-add-the-implementation-for-getprimesunordered"></a>GetPrimesUnordered の実装を追加するには
 
 C++ コンポーネントを作成する最後の手順として、Class1.cpp で GetPrimesUnordered の実装を追加します。 このメソッドは、すべての結果が見つかるまで待たずに、結果が見つかるたびに各結果を返します。 各結果はイベント ハンドラー内で返され、UI にリアルタイムで表示されます。 ここでも進行状況レポーターが使われていることに注意してください。 このメソッドも、is_prime ヘルパー メソッドを使います。
 
@@ -273,11 +280,11 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 }
 ```
 
-## JavaScript クライアント アプリケーションの作成
+## <a name="creating-a-javascript-client-app"></a>JavaScript クライアント アプリケーションの作成
 
 C# クライアントだけを作成する場合は、このセクションをスキップして構いません。
 
-## JavaScript プロジェクトを作成するには
+## <a name="to-create-a-javascript-project"></a>JavaScript プロジェクトを作成するには
 
 ソリューション エクスプローラーで、[ソリューション] ノードのショートカット メニューを開き、**[追加]、[新しいプロジェクト]** の順にクリックします。
 
@@ -295,7 +302,7 @@ WinRT_CPP へのプロジェクト参照を追加します。
 
 中央ペインで [WinRT_CPP] を選択し、**[OK]** をクリックします。
 
-## JavaScript イベント ハンドラーを呼び出す HTML を追加するには
+## <a name="to-add-the-html-that-invokes-the-javascript-event-handlers"></a>JavaScript イベント ハンドラーを呼び出す HTML を追加するには
 
 default.html ページの <body> ノードに、次の HTML を貼り付けます。
 
@@ -333,7 +340,7 @@ default.html ページの <body> ノードに、次の HTML を貼り付けま�
  </div>
 ```
 
-## スタイルを追加するには
+## <a name="to-add-styles"></a>スタイルを追加するには
 
 default.css で body スタイルを削除し、次のスタイルを追加します。
 
@@ -368,7 +375,7 @@ font-size:smaller;
 }
 ```
 
-## コンポーネント DLL を呼び出す JavaScript イベント ハンドラーを追加するには
+## <a name="to-add-the-javascript-event-handlers-that-call-into-the-component-dll"></a>コンポーネント DLL を呼び出す JavaScript イベント ハンドラーを追加するには
 
 default.js ファイルの末尾に次の関数を追加します。 これらの関数は、メイン ページのボタンが選択されたときに呼び出されます。 JavaScript が C++ クラスをアクティブにして、そのメソッドを呼び出し、戻り値を使って HTML ラベルを設定する手順に注目してください。
 
@@ -450,9 +457,9 @@ args.setPromise(WinJS.UI.processAll().then( function completed() {
 
 F5 キーを押してアプリを実行します。
 
-## C# クライアント アプリケーションの作成
+## <a name="creating-a-c-client-app"></a>C# クライアント アプリケーションの作成
 
-## C# プロジェクトを作成するには
+## <a name="to-create-a-c-project"></a>C# プロジェクトを作成するには
 
 ソリューション エクスプローラーで、[ソリューション] ノードのショートカット メニューを開き、**[追加]、[新しいプロジェクト]** の順にクリックします。
 
@@ -470,7 +477,7 @@ WinRT_CPP へのプロジェクト参照を追加します。
 
 中央ペインで [WinRT_CPP] を選択し、**[OK]** をクリックします。
 
-## ユーザー インターフェイスを定義する XAML を追加するには
+## <a name="to-add-the-xaml-that-defines-the-user-interface"></a>ユーザー インターフェイスを定義する XAML を追加するには
 
 MainPage.xaml 内の Grid 要素に次のコードをコピーします。
 
@@ -492,7 +499,7 @@ MainPage.xaml 内の Grid 要素に次のコードをコピーします。
 </ScrollViewer>
 ```
 
-## ボタンのイベント ハンドラーを追加するには
+## <a name="to-add-the-event-handlers-for-the-buttons"></a>ボタンのイベント ハンドラーを追加するには
 
 ソリューション エクスプローラーで、MainPage.xaml.cs を開きます  (このファイルは MainPage.xaml の下に入れ子になっていることがあります)。System.Text の using ディレクティブを追加し、MainPage クラスに対数計算用のイベント ハンドラーを追加します。
 
@@ -593,25 +600,25 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## アプリの実行
+## <a name="running-the-app"></a>アプリの実行
 
 ソリューション エクスプローラーでプロジェクト ノードのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** をクリックして、C# プロジェクトまたは JavaScript プロジェクトをスタートアップ プロジェクトとして選択します。 デバッグして実行する場合は、F5 キーを押します。デバッグせずに実行する場合は、Ctrl キーを押しながら F5 キーを押します。
 
-## オブジェクト ブラウザーでのコンポーネントの検査 (省略可能)
+## <a name="inspecting-your-component-in-object-browser-optional"></a>オブジェクト ブラウザーでのコンポーネントの検査 (省略可能)
 
 オブジェクト ブラウザーで、.winmd ファイルで定義されているすべての Windows ランタイム型を検査できます。 これには、Platform 名前空間と既定の名前空間の型が含まれます。 ただし、Platform::Collections 名前空間の型は、winmd ファイルではなく、collections.h ヘッダー ファイルで定義されているため、オブジェクト ブラウザーでは表示されません。
 
-## **コンポーネントを検査するには**
+## **<a name="to-inspect-a-component"></a>コンポーネントを検査するには**
 
 メニュー バーで、**[表示]、[オブジェクト ブラウザー]** の順にクリックします (または、Ctrl + Alt + J キーを押します)。
 
 オブジェクト ブラウザーの左ペインで、[WinRT\_CPP] ノードを展開して、コンポーネントで定義されている型とメソッドを表示します。
 
-## デバッグのヒント
+## <a name="debugging-tips"></a>デバッグのヒント
 
 デバッグ操作を向上させるには、パブリックな Microsoft シンボル サーバーからデバッグ シンボルをダウンロードします。
 
-## **デバッグ シンボルをダウンロードするには**
+## **<a name="to-download-debugging-symbols"></a>デバッグ シンボルをダウンロードするには**
 
 メニュー バーで、**[ツール]、[オプション]** の順にクリックします。
 
@@ -629,12 +636,7 @@ JavaScript コードがコンポーネントのパブリック プロパティ�
 
 C++ Windows ランタイム コンポーネント プロジェクトをソリューションから削除する場合、JavaScript プロジェクトからプロジェクト参照も手動で削除する必要があります。 これを行わないと、後続のデバッグまたはビルド操作が妨げられます。 その後、必要に応じてアセンブリ参照を DLL に追加できます。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [C++ での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-cpp.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

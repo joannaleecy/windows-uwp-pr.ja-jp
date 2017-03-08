@@ -5,12 +5,19 @@ title: "定期的な通知の概要"
 ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
 label: TBD
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 37858532004f477672f2c19adad93a22ca989f39
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f77bdb61fdb596720a857960094c959b344db9af
+ms.lasthandoff: 02/07/2017
 
 ---
-# 定期的な通知の概要
+# <a name="periodic-notification-overview"></a>定期的な通知の概要
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
@@ -25,21 +32,21 @@ ms.openlocfilehash: 37858532004f477672f2c19adad93a22ca989f39
 
  
 
-## しくみ
+## <a name="how-it-works"></a>しくみ
 
 
 定期的な通知では、アプリでクラウド サービスをホストする必要があります。 このサービスは、アプリをインストールしているすべてのユーザーによって定期的にポーリングされます。 Windows では、ポーリング間隔 (1 時間に 1 回など) に従って URI に HTTP GET 要求を送り、この要求に対する応答として提供される要求したタイルまたはバッジのコンテンツ (XML 形式) をダウンロードして、アプリのタイルにそのコンテンツを表示します。
 
 定期的な更新をトースト通知で使うことはできません。 トーストの配信には、[スケジュールされた通知](https://msdn.microsoft.com/library/windows/apps/hh465417)または[プッシュ通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)が適しています。
 
-## URI の場所と XML コンテンツ
+## <a name="uri-location-and-xml-content"></a>URI の場所と XML コンテンツ
 
 
 ポーリングする URI には、HTTP や HTTPS の有効な Web アドレスを使うことができます。
 
 クラウド サーバーからの応答には、ダウンロードされたコンテンツが含まれます。 URI から返されるコンテンツは、[タイル](tiles-and-notifications-adaptive-tiles-schema.md)または[バッジ](https://msdn.microsoft.com/library/windows/apps/br212851)の XML スキーマの仕様に準拠し、UTF-8 の形式でエンコードされている必要があります。 仕様で規定されている HTTP ヘッダーを使うと、通知の[有効期限](#expiry)や[タグ](#taggo)を指定することができます。
 
-## ポーリングの動作
+## <a name="polling-behavior"></a>ポーリングの動作
 
 
 ポーリングを開始するには次のメソッドのいずれかを呼び出します。
@@ -50,21 +57,25 @@ ms.openlocfilehash: 37858532004f477672f2c19adad93a22ca989f39
 
 これらのいずれかのメソッドを呼び出すと、URI がすぐにポーリングされて、受け取ったコンテンツでタイルやバッジが更新されます。 この最初のポーリングの後は、要求した間隔で更新が提供されます。 ポーリングは、明示的に停止するか ([**TileUpdater.StopPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701697) を使用)、アプリをアンインストールするか、(セカンダリ タイルの場合は) タイルを削除するまで続けられます。 それまでの間は、アプリが起動されなくても、タイルやバッジの更新がないかどうかを調べるために継続的にポーリングが行われます。
 
-### 繰り返し間隔
+### <a name="the-recurrence-interval"></a>繰り返し間隔
 
 繰り返し間隔は、上記のメソッドのパラメーターとして指定します。 Windows は要求された間隔でポーリングを適切に実行しますが、多少の誤差が生じる場合もあります。 Windows の判断により、要求したポーリング間隔よりも最大で 15 分ほど遅れる可能性があります。
 
-### 開始時刻
+### <a name="the-start-time"></a>開始時刻
 
 必要に応じて、ポーリングを開始する時刻を指定できます。 タイルのコンテンツが 1 日に 1 回しか変更されないようなアプリでは、 ポーリングの開始時刻をクラウド サービスの更新時刻の直後に設定することをお勧めします。 たとえば、毎朝 8 時にその日のサービス品が公開されるショッピング サイトであれば、午前 8 時すぎにポーリングを行ってタイルの新しいコンテンツがないかどうかを調べます。
 
 開始時刻を指定した場合、メソッドを最初に呼び出したときに、すぐにポーリングが行われコンテンツが確認されます。 それ以降の定期的なポーリングは、指定した開始時刻の 15 分以内に開始されます。
 
-### 自動再試行の動作
+### <a name="automatic-retry-behavior"></a>自動再試行の動作
 
-URI がポーリングされるのは、デバイスがオンラインになっている場合だけです。 ネットワークが利用可能でも、任意の理由で URI にアクセスできない場合は、ポーリング間隔の反復が 1 回スキップされ、次の間隔で再び URI がポーリングされます。 ポーリング間隔に達したときにデバイスがオフ、スリープ、休止状態になっていた場合、URI は、デバイスがオフ状態やスリープ状態から回復したときにポーリングされます。
+URI がポーリングされるのは、デバイスがオンラインになっている場合だけです。 ネットワークが利用可能でも、任意の理由で URI にアクセスできない場合は、ポーリング間隔の反復が 1 回スキップされ、次の間隔で再び URI がポーリングされます。 ポーリング間隔に達したときにデバイスがオフ、スリープ、または休止状態になっていた場合、URI は、デバイスがオフ状態やスリープ状態から回復したときにポーリングされます。
 
-## タイル通知とバッジ通知の有効期限
+### <a name="handling-app-updates"></a>アプリの更新プログラムの処理
+
+ポーリング URI を変更するアプリの更新プログラムをリリースする場合は、タイルが必ず新しい URI を使用するように、新しい URI と共に StartPeriodicUpdate を呼び出す、毎日の[時刻のトリガーによるバックグラウンド タスク](../launch-resume/run-a-background-task-on-a-timer-.md)を追加する必要があります。 そうしないと、ユーザーがアプリの更新プログラムを受け取ってもアプリを起動しない場合、ユーザーのタイルは古い URI を使い続けるため、URI が無効になった場合や返されたペイロードが存在しないローカル画像を参照している場合に、表示に失敗することがあります。
+
+## <a name="expiration-of-tile-and-badge-notifications"></a>タイル通知とバッジ通知の有効期限
 
 
 既定では、定期的なタイル通知とバッジ通知は、ダウンロードされたときから 3 日後に有効期限切れになります。 通知の有効期限が切れると、バッジ、タイル、キューからコンテンツが削除され、ユーザーに表示されなくなります。 すべての定期的なタイル通知とバッジ通知には、アプリや通知に適した時間を使って有効期限を明示的に設定し、コンテンツの意味がなくなっても保持されないようにすることをお勧めします。 明示的な有効期限は、コンテンツの存続期間が決まっている場合に重要です。 また、クラウド サービスにアクセスできなくなった場合や、ユーザーがネットワークに長時間接続していない場合に、古いコンテンツが確実に削除されます。
@@ -73,7 +84,7 @@ URI がポーリングされるのは、デバイスがオンラインになっ�
 
 たとえば、株式市場の取引が活発な日は、株価の更新の有効期限をポーリング間隔の有効期限の 2 倍に設定することをお勧めします (ポーリング間隔が 30 分の場合は有効期限を受け取り後 1 時間にするなど)。 また、ニュース アプリの場合、毎日のニュースを表示するタイルの更新の有効期限は 1 日が適しています。
 
-## 通知キューでの定期的な通知
+## <a name="periodic-notifications-in-the-notification-queue"></a>通知キューでの定期的な通知
 
 
 定期的なタイルの更新は[通知の循環](https://msdn.microsoft.com/library/windows/apps/hh781199)と併用できます。 既定では、スタート画面のタイルには、新しい通知によって置き換えられるまで、1 つの通知のコンテンツが表示されます。 循環を有効にすると、最大で 5 つの通知がキューに入れられ、タイルに循環して表示されます。
@@ -84,30 +95,18 @@ URI がポーリングされるのは、デバイスがオンラインになっ�
 
 詳しくは、「[通知キューの使用](https://msdn.microsoft.com/library/windows/apps/hh781199)」をご覧ください。
 
-### 通知キューを有効にする
+### <a name="enabling-the-notification-queue"></a>通知キューを有効にする
 
 通知キューを実装するには、最初に、タイルに対してキューを有効にする必要があります (「[ローカル通知で通知キューを使用する方法](https://msdn.microsoft.com/library/windows/apps/hh465429)」を参照)。 キューを有効にする呼び出しはアプリの存続期間で 1 回だけ実行する必要がありますが、アプリが起動されるたびに呼び出しても問題はありません。
 
-### 一度に複数の通知をポーリングする
+### <a name="polling-for-more-than-one-notification-at-a-time"></a>一度に複数の通知をポーリングする
 
 Windows でダウンロードを行うタイルの通知ごとに、一意の URI を指定する必要があります。 [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945) メソッドを使うと、通知キューで使う URI を一度に 5 つまで指定できます。 各 URI がポーリングされ、ほぼ同じ時間にそれぞれ 1 つの通知ペイロードが返されます。 ポーリングされる各 URI からは、それぞれ固有の有効期限とタグ値を返すこともできます。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [定期的な通知のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh761461)
 * [バッジの定期的な通知を設定する方法](https://msdn.microsoft.com/library/windows/apps/hh761476)
 * [タイルの定期的な通知を設定する方法](https://msdn.microsoft.com/library/windows/apps/hh761476)
  
-
- 
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

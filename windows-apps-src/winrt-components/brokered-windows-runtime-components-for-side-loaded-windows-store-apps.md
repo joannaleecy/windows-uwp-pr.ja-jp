@@ -2,9 +2,17 @@
 author: msatranjr
 title: "Windows ランタイム コンポーネント"
 description: "このホワイト ペーパーでは、ビジネスに欠かせない重要な操作を提供する既存のコードを、タッチ対応の .NET アプリで使用できるようにする機能について説明します。これは、Windows 10 でサポートされるエンタープライズ向けの機能です。"
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 translationtype: Human Translation
-ms.sourcegitcommit: 019d3d256becb06ad88cc87962c86829fcfb80cf
-ms.openlocfilehash: 2ac22675f44fab8ff123c26151efc25aad01b3a0
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 8844196503c45e9488d3fa2a543d588229d01cdd
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -575,10 +583,5 @@ struct PersonStruct
 
 -   [企業への Windows ストア アプリの展開](http://go.microsoft.com/fwlink/p/?LinkID=264770)
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

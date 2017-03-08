@@ -3,15 +3,22 @@ author: TylerMSFT
 title: "バックグラウンド タスクのガイドライン"
 description: "アプリがバックグラウンド タスクを実行するための要件を満たしていることを確認します。"
 ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: 2d03c7f47461422fef7a0905df7e68b3e65c33f0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5e03fbb7971e5526d542d409bccb1c7fee6fd3ee
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="guidelines-for-background-tasks"></a>バックグラウンド タスクのガイドライン
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください。\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください。\]
 
 アプリがバック グラウンド タスクを実行するための要件を満たしていることを確認します。
 
@@ -19,7 +26,7 @@ ms.openlocfilehash: 2d03c7f47461422fef7a0905df7e68b3e65c33f0
 
 バックグラウンド タスクの開発時とアプリの公開前に、次のガイダンスについて検討します。
 
-バックグラウンド タスクを使用してバックグラウンドでメディアを再生する場合は、「[バックグラウンドでのメディアの再生](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)」をご覧ください。その操作を簡単に行うために Windows 10 バージョン 1607 で強化された機能について説明されています。
+バックグラウンド タスクを使用してバックグラウンドでメディアを再生する場合は、「[バックグラウンドでのメディアの再生](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)」をご覧ください。その操作を簡単に行うために Windows 10 バージョン 1607 で強化された機能について説明されています。
 
 **インプロセス バックグラウンド タスクとアウトプロセス バックグラウンド タスク:** Windows 10 バージョン 1607 には、フォアグラウンド アプリと同じプロセスでバックグラウンド コードを実行できる[インプロセス バックグラウンド タスク](create-and-register-an-inproc-background-task.md) が導入されました。 インプロセス バックグラウンド タスクとアウトプロセス バックグラウンド タスクのどちらを使用するかを決定するときは、以下の事項を検討してください。
 
@@ -27,14 +34,14 @@ ms.openlocfilehash: 2d03c7f47461422fef7a0905df7e68b3e65c33f0
 |--------------|--------|
 |復元性   | バックグラウンド プロセスが別のプロセスで実行されている場合、バックグラウンド プロセスでクラッシュが発生してもフォアグラウンド アプリケーションがダウンしません。 さらに、実行時間制限を過ぎて実行された場合、アプリ内からでもバックグラウンド アクティビティを終了できます。 フォアグラウンド プロセスとバックグラウンド プロセスが互いに通信する必要がない場合は、バックグラウンド処理をフォアグラウンド アプリとは別のタスクに分離することをお勧めします (インプロセス バックグラウンド タスクの主な利点の 1 つは、プロセス間通信が不要になることであるためです)。 |
 |シンプルさ    | インプロセス バックグラウンド タスクでは、プロセス間通信が不要のため、記述内容は複雑になりません。  |
-|使用可能なトリガー | インプロセス バックグラウンド タスクでは、[DeviceUseTrigger](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396)、[DeviceServicingTrigger](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx)、**IoTStartupTask** の各トリガーがサポートされていません。 |
+|使用可能なトリガー | インプロセス バックグラウンド タスクでは、[DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396)、[DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx)、**IoTStartupTask** の各トリガーがサポートされていません。 |
 |VoIP | インプロセス バックグラウンド タスクでは、アプリケーション内での VoIP バックグラウンド タスクのアクティブ化がサポートされていません。 |  
 
 **CPU の割り当て:** バックグラウンド タスクは、トリガーの種類に基づいて取得するウォールクロック時間の長さによって使用が制限されます。 ほとんどのトリガーは、使用時間がウォールクロック時間で 30 秒に制限されますが、負荷の高いタスクを完了するために最大 10 分実行できるトリガーもあります。 バッテリの寿命を長くし、フォアグラウンド アプリのユーザー エクスペリエンスを高めるため、バックグラウンド タスクは軽量にしてください。 バックグラウンド タスクに適用されるリソースの制約については、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
 
 **バックグラウンド タスクを管理する:** アプリでは、登録済みのバックグラウンド タスクの一覧を取得し、進行状況ハンドラーと完了ハンドラーを登録して、各イベントを適切に処理する必要があります。 バックグラウンド タスク クラスでは、進行状況、キャンセル、完了を報告する必要があります。 詳しくは、「[取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)」と「[バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)」をご覧ください。
 
-**Use [BackgroundTaskDeferral](https://msdn.microsoft.com/library/windows/apps/hh700499)を使用する:** バックグラウンド タスク クラスで非同期コードを実行する場合は、保留を使ってください。 それ以外の場合、[Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) メソッド (インプロセス バックグラウンド タスクの場合は [OnBackgroundActivated](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) メソッド) により、バックグラウンド タスクが途中で終了する可能性があります。 詳しくは、「[アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」をご覧ください
+**Use [BackgroundTaskDeferral](https://msdn.microsoft.com/library/windows/apps/hh700499)を使用する:** バックグラウンド タスク クラスで非同期コードを実行する場合は、保留を使ってください。 それ以外の場合、[Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) メソッド (インプロセス バックグラウンド タスクの場合は [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) メソッド) により、バックグラウンド タスクが途中で終了する可能性があります。 詳しくは、「[アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」をご覧ください
 
 別の方法として、保留を 1 回要求し、**async/await** を使って、非同期メソッドの呼び出しを完了させることもできます。 **await** メソッドを呼び出した後、保留を閉じます。
 
@@ -93,7 +100,7 @@ ms.openlocfilehash: 2d03c7f47461422fef7a0905df7e68b3e65c33f0
 * [インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)
 * [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
 * [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
-* [バックグラウンドでのメディアの再生](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
+* [バックグラウンドでのメディアの再生](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
 * [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
 * [バックグラウンド タスクの登録](register-a-background-task.md)
@@ -108,9 +115,4 @@ ms.openlocfilehash: 2d03c7f47461422fef7a0905df7e68b3e65c33f0
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

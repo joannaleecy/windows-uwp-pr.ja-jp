@@ -3,13 +3,20 @@ author: mtoepke
 title: "ゲーム プログラミング リソース"
 description: "Windows でのゲーム プログラミングについて詳しくは、次のリソースをご覧ください。"
 ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、ゲーム、プログラミング"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9d7e21a10686a22299e644600414c73f5b4991e7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 736f5f5864edc9c7a976e8e0f062779ddd1f86c5
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# ゲーム プログラミング リソース
+# <a name="game-programming-resources"></a>ゲーム プログラミング リソース
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
@@ -17,25 +24,25 @@ ms.openlocfilehash: 9d7e21a10686a22299e644600414c73f5b4991e7
 
 Windows でのゲーム プログラミングについて詳しくは、次のリソースをご覧ください。
 
-## ゲーム プログラミング リファレンス
+## <a name="game-programming-reference"></a>ゲーム プログラミング リファレンス
 
 
 -   [グラフィックスとゲーミング](https://msdn.microsoft.com/library/windows/desktop/ee663279)
 -   [OpenGL リファレンスに関するページ](http://go.microsoft.com/fwlink/p/?LinkID=288875)
 
-## ゲーム設計のガイダンス
+## <a name="game-design-guidance"></a>ゲーム設計のガイダンス
 
 
 -   [Windows ストア アプリの UX ガイドラインの索引](https://msdn.microsoft.com/library/windows/apps/hh465424)
 
-## ブログ
+## <a name="blogs"></a>ブログ
 
 
 -   [Windows と DirectX SDK 向けのゲームに関するブログ]( http://go.microsoft.com/fwlink/p/?LinkID=288873)
 -   [DirectX 開発者ブログ]( http://go.microsoft.com/fwlink/p/?LinkID=288874)
 -   [Shawn Hargreaves のブログ]( http://go.microsoft.com/fwlink/p/?LinkID=288872) (XNA のゲームの情報)
 
-## ツールキット
+## <a name="toolkits"></a>ツールキット
 
 
 -   [DirectX ツール キットに関するページ](  http://go.microsoft.com/fwlink/p/?LinkID=248929)
@@ -44,7 +51,7 @@ Windows でのゲーム プログラミングについて詳しくは、次の�
 -   [Win2D](https://github.com/Microsoft/Win2D) - GPU アクセラレーションを使った即時モードの 2D グラフィックス レンダリング用の、使いやすい Windows ランタイム API です。
 -   [Windows ストア用 ANGLE](http://go.microsoft.com/fwlink/p/?linkid=618387) - OpenGL ES API 呼び出しを DirectX 11 API 呼び出しに変換することにより、Windows で OpenGL ES コンテンツを実行します。
 
-## GDC 2015 のゲーム開発セッションのビデオ
+## <a name="gdc-2015-game-dev-session-videos"></a>GDC 2015 のゲーム開発セッションのビデオ
 
 
 -   [Microsoft エコシステム全体でのゲームの未来](http://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem) - Phil Spencer
@@ -62,14 +69,14 @@ Windows でのゲーム プログラミングについて詳しくは、次の�
 -   [Windows コアの世界向けのゲームの設計](http://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World) – Todd Williams、Shai Hinitz
 -   [Windows 10 向け PC ゲーム](http://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10) – Chuck walbourn
 
-## //build 2015 セッションのビデオ
+## <a name="build-2015-session-videos"></a>//build 2015 セッションのビデオ
 
 
 -   [Win2D の紹介: C# での DirectX を活用した描画](https://channel9.msdn.com/Events/Build/2015/2-631) – Simon Tao
 -   [ANGLE: Windows での OpenGL ES 2.0 グラフィックス コードの実行](https://channel9.msdn.com/Events/Build/2015/3-686) – Tony Balogh
 -                 [高度な DirectX12 グラフィックスとパフォーマンス](https://channel9.msdn.com/Events/Build/2015/3-673) – Max McMullen
 
-## その他のリソース
+## <a name="other-resources"></a>その他のリソース
 
 
 -   [CodePlex](http://go.microsoft.com/fwlink/p/?LinkID=76627)
@@ -81,10 +88,5 @@ Windows でのゲーム プログラミングについて詳しくは、次の�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

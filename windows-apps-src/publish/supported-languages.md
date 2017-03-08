@@ -3,20 +3,27 @@ author: jnHs
 Description: "アプリは、100 以上の言語で Windows ストアに提出できます。"
 title: "サポートされている言語"
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3d14f1d11290942a90498f7aff4dc324daa3a84e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b9d0720ee56430320cfc4ca2725fb3e0ac8049e5
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# サポートされている言語
+# <a name="supported-languages"></a>サポートされている言語
 
 
 アプリは、100 以上の言語で Windows ストアに提出できます。
 
 アプリで言語を構成する方法について詳しくは、「[グローバリゼーションとローカライズ](../globalizing/globalizing-portal.md)」と「[言語と地域の管理](../globalizing/manage-language-and-region.md)」をご覧ください。 複数の言語をサポートするアプリを作るのに役立つ[多言語アプリ ツールキット](https://msdn.microsoft.com/library/windows/apps/xaml/jj572370)も用意されています。
 
-## サポートされている言語
+## <a name="supported-languages"></a>サポートされている言語
 
 
 Windows ストアでサポートされている言語を次に示します。 アプリは、これらの言語のうち、少なくとも 1 言語をサポートしている必要があります。また、ここに記載されていない言語コードを指定することはできません。
@@ -135,10 +142,5 @@ Windows ストアでサポートされている言語を次に示します。 �
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

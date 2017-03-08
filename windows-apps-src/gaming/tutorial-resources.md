@@ -5,13 +5,19 @@ description: "これで、 基本的なユニバーサル Windows プラット�
 ms.assetid: a1432c45-569e-7ecd-4098-f5ad6da9327e
 keywords:
 - "DirectX、XAML"
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 17d34f0edcbe6729fe63204123faf4b7393beea7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e3f4abdb0a0f42d1b25a3adc1a78ab414affa77a
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# ゲーム サンプルの紹介
+# <a name="extend-the-game-sample"></a>ゲーム サンプルの紹介
 
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -22,7 +28,7 @@ ms.openlocfilehash: 17d34f0edcbe6729fe63204123faf4b7393beea7
 -   [Direct3D 11 の概要](https://msdn.microsoft.com/library/windows/desktop/ff476345)
 -   [Direct3D 11 のリファレンス](https://msdn.microsoft.com/library/windows/desktop/ff476147)
 
-## ゲーム サンプルの紹介: オーバーレイに XAML を適用
+## <a name="extending-the-game-sample-using-xaml-for-the-overlay"></a>ゲーム サンプルの紹介: オーバーレイに XAML を適用
 
 
 ここでは、オーバーレイに対し Direct2D に代わり XAML を使う方法について詳しい説明を行っていません。 XAML には、Direct2D に比べ、ユーザー インターフェイス要素を描画するときの利点が数多くあります。最も重要な利点は、Windows 10 の外観を DirectX ゲームに統合する作業が容易になるという点です。 UWP アプリを定義する共通した要素、スタイル、動作の多くが XAML モデルに緊密に統合されるため、ゲーム開発者による実装作業がはるかに容易になります。 作成するゲームのデザインに複雑なユーザー インターフェイスが含まれる場合は、Direct2D の代わりに XAML の使用を検討してください。
@@ -191,7 +197,7 @@ XAML で定義された [**SwapChainBackgroundPanel**](https://msdn.microsoft.co
 
 このプロセスについて詳しくは、[DirectX と XAML の相互運用性](https://msdn.microsoft.com/library/windows/apps/hh825871)に関するトピックをご覧ください。
 
-## XAML ゲーム サンプルの XAML コード ビハインドのコード一式
+## <a name="complete-code-for-the-xaml-game-sample-xaml-codebehinds"></a>XAML ゲーム サンプルの XAML コード ビハインドのコード一式
 
 
 XAML バージョンの Direct3D 11.1 シューティング ゲーム サンプルで使用するコード ビハインドのコード一式を示します。
@@ -1517,10 +1523,5 @@ void MainPage::OnResetButtonClicked(Object^ sender, RoutedEventArgs^ args)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -2,13 +2,21 @@
 author: Mtoepke
 title: "Xbox One の UWP"
 description: "Xbox One でユニバーサル Windows プラットフォーム (UWP) アプリを構築する方法。"
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
 translationtype: Human Translation
-ms.sourcegitcommit: 7a53a7a9e786ebe04963a827bdfbc5beb69819eb
-ms.openlocfilehash: d46add99bccd41b4d278e58f79b356714fa4a038
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 36d19f660bc3c03377f864b1d659a19396917130
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Xbox One の UWP
+# <a name="uwp-on-xbox-one"></a>Xbox One の UWP
 
 Xbox One でユニバーサル Windows プラットフォーム (UWP) 向けのアプリの構築を始めましょう。
 
@@ -35,14 +43,9 @@ Xbox One の UWP は、アプリ開発とゲーム開発の両方をサポート
 |[Xbox One で開発者モードを無効にする](devkit-deactivation.md)| Xbox One で開発者モードを無効にする方法について説明します。 |
 |[Xbox One でまだサポートされていない UWP 機能](http://go.microsoft.com/fwlink/p/?LinkId=760755)|  Xbox One でまだ完全に機能していない UWP 機能について説明します。|  
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 - [Xbox One の UWP アプリの概要](http://go.microsoft.com/fwlink/p/?LinkId=780786) 
 - [Windows 10 UWP アプリの自動起動](automate-launching-uwp-apps.md)
 - [ゲーム開発用の CPUSets](cpusets-games.md)
   
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

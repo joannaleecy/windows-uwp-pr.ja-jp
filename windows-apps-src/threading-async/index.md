@@ -3,12 +3,19 @@ author: TylerMSFT
 ms.assetid: beac6333-655a-4bcf-9caf-bba15f715ea5
 title: "スレッド化と非同期プログラミング"
 description: "スレッド化と非同期プログラミングによって、アプリは並列スレッドで作業を非同期的に実行できます。"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 非同期, スレッド, スレッド化"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8962e24e393f0b7961f618f90cd38ead9e54dda4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fb249a1c7a562cb4b1eb7ff8590e8525c00c64f2
+ms.lasthandoff: 02/07/2017
 
 ---
-# スレッド化と非同期プログラミング
+# <a name="threading-and-async-programming"></a>スレッド化と非同期プログラミング
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
@@ -35,13 +42,4 @@ ms.openlocfilehash: 8962e24e393f0b7961f618f90cd38ead9e54dda4
 | [定期的な作業項目の作成](create-a-periodic-work-item.md)                                                   | 定期的に実行される作業項目の作成方法を説明します。 |
 | [スレッド プールへの作業項目の送信](submit-a-work-item-to-the-thread-pool.md)                               | スレッド プールに作業項目を送信することで独立したスレッドで作業を実行する方法について説明します。 |
 | [タイマーを使った作業項目の送信](use-a-timer-to-submit-a-work-item.md)                                       | タイマーが終了した後に実行される作業項目の作成方法を説明します。 |
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

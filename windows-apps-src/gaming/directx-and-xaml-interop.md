@@ -3,16 +3,23 @@ author: mtoepke
 title: "DirectX と XAML の相互運用機能"
 description: "ユニバーサル Windows プラットフォーム (UWP) ゲームで Extensible Application Markup Language (XAML) と Microsoft DirectX を組み合わせて使うことができます。"
 ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, DirectX, XAML の相互運用機能"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 167709c7ba3470c144924801cb8cf18ffa544c5d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6934ac8bfbff487e57d0097cb129faf853a3eb9f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# DirectX と XAML の相互運用機能
+# <a name="directx-and-xaml-interop"></a>DirectX と XAML の相互運用機能
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 ユニバーサル Windows プラットフォーム (UWP) ゲームまたはアプリで Extensible Application Markup Language (XAML) と Microsoft DirectX を組み合わせて使うことができます。 XAML と DirectX を組み合わせれば、DirectX でレンダリングしたコンテンツと相互運用できる柔軟なユーザー インターフェイス フレームワークを構築できます。これは、グラフィックスを多用するアプリで特に役立ちます。 ここでは、DirectX を使った UWP アプリの構造について説明し、DirectX と連携する UWP アプリを構築するときに使う重要な型を示します。
 
@@ -22,7 +29,7 @@ ms.openlocfilehash: 167709c7ba3470c144924801cb8cf18ffa544c5d
 
  
 
-## XAML と DirectX
+## <a name="xaml-and-directx"></a>XAML と DirectX
 
 DirectX には、2D と 3D のグラフィックス用に、Direct2D と Microsoft Direct3D という 2 つの強力なライブラリがあります。 XAML でも基本的な 2D のプリミティブと効果はサポートされますが、モデリングやゲームなどの多くのアプリでは、より複雑なグラフィックス サポートが必要になります。 そのようなアプリでは、Direct2D と Direct3D を使ってグラフィックスの一部または全体をレンダリングし、それ以外の部分には XAML を使うことができます。
 
@@ -41,7 +48,7 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
 
 -   リアルタイムで更新されるグラフィックスを DirectX を使って表示する場合や、短い待ち時間で定期的に更新を行う必要がある場合は、[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) クラスを使います。これにより、XAML フレームワークの更新タイマーに同期せずにグラフィックスを更新することができます。 この型を使うと、グラフィックス デバイスのスワップ チェーン ([**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)) に直接アクセスし、XAML をレンダー ターゲットの上に配置できます。 この型は、ゲームなどの全画面の DirectX アプリで XAML ベースのユーザー インターフェイスが必要な場合に便利です。 Microsoft DirectX Graphics Infrastructure (DXGI)、Direct2D、Direct3D も含めて、この方法を使うには、DirectX に関する知識が必要です。 詳しくは、「[Direct3D 11 用プログラミング ガイド](https://msdn.microsoft.com/library/windows/desktop/ff476345)」をご覧ください。
 
-## SurfaceImageSource
+## <a name="surfaceimagesource"></a>SurfaceImageSource
 
 
 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) は、DirectX で描画を行うための共有サーフェイスを提供し、ビットからアプリのコンテンツを構成します。
@@ -124,7 +131,7 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
 
  
 
-## VirtualSurfaceImageSource
+## <a name="virtualsurfaceimagesource"></a>VirtualSurfaceImageSource
 
 
 [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) は、コンテンツが画面に収まらず、仮想化しないと最適なレンダリングにならない場合に、[**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) を拡張します。
@@ -256,7 +263,7 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
 
     3.  [**IVirtualSurfaceImageSourceNative::EndDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848324) を呼び出します。 結果のビットマップが返されます。
 
-## SwapChainPanel とゲーム
+## <a name="swapchainpanel-and-gaming"></a>SwapChainPanel とゲーム
 
 
 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) は、高パフォーマンスのグラフィックスやゲームをサポートするために設計された Windows ランタイム型です。この型でスワップ チェーンを直接管理します。 この例では、独自の DirectX スワップ チェーンを作成し、レンダリングされるコンテンツの表示を管理します。
@@ -353,7 +360,7 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
 
     XAML 要素は、Windows ランタイムのレイアウトやレンダリング ロジックから更新が通知されると更新されます。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [**Win2D**](http://microsoft.github.io/Win2D/html/Introduction.htm)
 * [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041)
@@ -368,10 +375,5 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

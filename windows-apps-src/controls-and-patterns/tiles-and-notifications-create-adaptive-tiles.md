@@ -5,9 +5,16 @@ title: "アダプティブ タイルの作成"
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: d51aacb31f41cbd9c065b013ffb95b83a6edaaf4
-ms.openlocfilehash: a00796da398d6e0246caac43b18fb688a9e03fce
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 53b130c3f97440bd381adda5c40532d46823ce02
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="create-adaptive-tiles"></a>アダプティブ タイルの作成
@@ -1399,10 +1406,5 @@ TileWide = new TileBinding()
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

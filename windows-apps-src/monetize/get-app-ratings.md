@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
 description: "特定の日付範囲などのオプション フィルターを使って集計評価データを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。"
 title: "アプリの評価の取得"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ストア サービス, Windowsストア分析 API, 評価"
 translationtype: Human Translation
-ms.sourcegitcommit: 7d05c8953f1f50be0b388a044fe996f345d45006
-ms.openlocfilehash: 86685984256459e0bb125340daa1616b09982429
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 25f057eba5827be34b4fcf9d31a6e0ae71dc9893
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -156,9 +163,4 @@ Authorization: Bearer <your access token>
 * [アドオンの入手数の取得](get-in-app-acquisitions.md)
 * [エラー報告データの取得](get-error-reporting-data.md)
 * [アプリのレビューの取得](get-app-reviews.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

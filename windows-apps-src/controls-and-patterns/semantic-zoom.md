@@ -5,9 +5,16 @@ title: "セマンティック ズーム"
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: b3ca48b678fb4e1ddb4b26ad7add723474527591
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 29c80f1120a503968e426325aad818dd7a62e87c
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="semantic-zoom"></a>セマンティック ズーム
@@ -199,10 +206,5 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

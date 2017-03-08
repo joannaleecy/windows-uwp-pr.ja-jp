@@ -3,14 +3,21 @@ author: scottmill
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
 title: "コンポジション効果"
 description: "効果 API を使用すると、開発者は UI のレンダリング方法をカスタマイズできます。"
+ms.author: scotmi
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 7330af081021788a17bf6ec320267b4ea2fc3115
-ms.openlocfilehash: 197a4b32afc82724803fb93949b288b38de52cc4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ecf1c8a35838c1a05fabb5d76a2d0574c90a98db
+ms.lasthandoff: 02/07/2017
 
 ---
-# <a name="composition-effects"></a>コンポジションの効果
+# <a name="composition-effects"></a>コンポジション効果
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) WinRT API により、アニメーション化可能な効果プロパティを持つ画像と UI にリアルタイムの効果を適用できます。 この概要では、コンポジションのビジュアルに効果を適用するために使用できる機能に目を通します。
 
@@ -244,10 +251,5 @@ brush.Surface = imageSource.Surface;
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

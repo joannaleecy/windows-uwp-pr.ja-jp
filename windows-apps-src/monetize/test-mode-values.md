@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 2ed21281-f996-402d-a968-d1320a4691df
 description: "この記事に示されているテスト用のアプリケーション ID と広告ユニット ID の値を使って、テスト時にアプリでどのように広告がレンダリングされるかを確認します。"
 title: "テスト モードの値"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 広告, Advertising, テスト"
 translationtype: Human Translation
-ms.sourcegitcommit: 2b5dbf872dd7aad48373f6a6df3dffbcbaee8090
-ms.openlocfilehash: dcc83c3d654cfb290981f27ec2923fd3b37c5a8f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 89818e91ff1c1b8fee2ca82951742ed7e55a2a5a
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -69,9 +76,4 @@ ms.openlocfilehash: dcc83c3d654cfb290981f27ec2923fd3b37c5a8f
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -3,16 +3,23 @@ author: msatranjr
 title: "2D、3D、Streetside ビューでの地図の表示"
 description: "MapControl クラスを使って、アプリにカスタマイズできる地図を表示します。 このトピックでは、航空写真 3D ビューと Streetside ビューについても紹介します。"
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 地図, 位置情報, マップ コントロール, マップ ビュー"
 translationtype: Human Translation
-ms.sourcegitcommit: d00ba80ac7d0f033a69ad070dc8ee681cbd0ed18
-ms.openlocfilehash: 09f87f66802e5143c8eac7fce8fc2118f3d31340
+ms.sourcegitcommit: 32b5230d62f23430393fc51c73f80fa46bd525fa
+ms.openlocfilehash: 7a1687ceb188fdd28943f807b877b28e93ae6937
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>2D、3D、Streetside ビューでの地図の表示
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) クラスを使って、アプリにカスタマイズできる地図を表示します。 このトピックでは、航空写真 3D ビューと Streetside ビューについても紹介します。
@@ -26,7 +33,7 @@ ms.openlocfilehash: 09f87f66802e5143c8eac7fce8fc2118f3d31340
 
 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) を追加することによって、XAML ページに地図を表示します。 **MapControl** を使うには、XAML ページまたはコード内に [**Windows.UI.Xaml.Controls.Maps**](https://msdn.microsoft.com/library/windows/apps/dn610751) 名前空間の宣言が必要です。 ツールボックスからコントロールをドラッグすると、この名前空間宣言が自動的に追加されます。 XAML ページに **MapControl** を手動で追加する場合は、ページの上部に名前空間宣言を手動で追加する必要があります。
 
-次の例では、基本的なマップ コントロールを表示し、タッチ入力を受け付けるだけでなくズーム コントロールとチルト コントロールを表示するように地図を構成しています。 地図の外観をカスタマイズする方法について詳しくは、「[地図の構成](#mapconfig)」をご覧ください。
+次の例では、基本的なマップ コントロールを表示し、タッチ入力を受け付けるだけでなくズーム コントロールとチルト コントロールを表示するように地図を構成しています。 地図の外観をカスタマイズする方法について詳しくは、「[地図の構成](#configure-the-map)」をご覧ください。
 
 ```xml
 <Page
@@ -46,7 +53,7 @@ ms.openlocfilehash: 09f87f66802e5143c8eac7fce8fc2118f3d31340
        ZoomInteractionMode="GestureAndControl"
        TiltInteractionMode="GestureAndControl"   
        MapServiceToken="EnterYourAuthenticationKeyHere"/>
-  
+
  </Grid>
 </Page>
 ```
@@ -137,7 +144,7 @@ switch (accessStatus)
 
 2D 地図に表示する位置を変更するには、[**TrySetViewAsync**](https://msdn.microsoft.com/library/windows/apps/dn637060) メソッドのいずれかのオーバーロードを呼び出します。 そのメソッドを使って、[**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005)、[**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068)、[**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019)、[**Pitch**](https://msdn.microsoft.com/library/windows/apps/dn637044) の新しい値を指定します。 また、ビューが変わるときに使うアニメーションをオプションで指定することもできます。そのためには、[**MapAnimationKind**](https://msdn.microsoft.com/library/windows/apps/dn637002) 列挙値の定数を指定します。
 
-3D 地図の場所を変更するには、代わりに [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296) メソッドを使います。 詳しくは、「[3D ビューの表示](#display3d)」をご覧ください。
+3D 地図の場所を変更するには、代わりに [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296) メソッドを使います。 詳しくは、「[3D ビューの表示](#display-aerial-3d-views)」をご覧ください。
 
 地図上に [**GeoboundingBox**](https://msdn.microsoft.com/library/windows/apps/dn607949) の内容を表示するには、[**TrySetViewBoundsAsync**](https://msdn.microsoft.com/library/windows/apps/dn637065) メソッドを呼び出します。 たとえばこのメソッドを使うと、地図上にルートやルートの一部を表示することができます。 詳しくは、「[地図へのルートとルート案内の表示](routes-and-directions.md)」をご覧ください。
 
@@ -320,11 +327,4 @@ private async void display3DLocation()
 * [Build 2015 のビデオ: Windows アプリでの電話、タブレット、PC で使用できるマップと位置情報の活用](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [UWP の交通情報アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)
-
-
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

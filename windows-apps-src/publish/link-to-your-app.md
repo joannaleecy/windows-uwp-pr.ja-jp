@@ -3,18 +3,25 @@ author: jnHs
 Description: "ストアのアプリの内容ページにリンクすることで、ユーザーがアプリを見つけやすくすることができます。"
 title: "アプリへのリンク"
 ms.assetid: 5420B65C-7ECE-4364-8959-D1683684E146
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: d36f14604bd8c2ce0d5778a67f5b5b9460d9fbf3
-ms.openlocfilehash: 8e4756fa7cb7b808e543453e69b5bb3f09ffd5ce
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 59f19dbf0cd66679805a9fcf3054427a22fb0e8f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アプリへのリンク
+# <a name="link-to-your-app"></a>アプリへのリンク
 
 
 ストアのアプリの内容ページにリンクすることで、ユーザーがアプリを見つけやすくすることができます。
 
-## ストアのアプリの内容へのリンク
+## <a name="getting-the-link-to-your-apps-store-listing"></a>ストアのアプリの内容へのリンク
 
 
 ストアのアプリの内容へのリンクは、ダッシュボードにある各アプリの **[アプリ管理]** セクションの [[アプリ ID]](view-app-identity-details.md) ページで確認できます。
@@ -27,7 +34,7 @@ ms.openlocfilehash: 8e4756fa7cb7b808e543453e69b5bb3f09ffd5ce
 
  
 
-## Windows ストア バッジを使ったストアのアプリの内容へのリンク
+## <a name="linking-to-your-apps-store-listing-with-the-windows-store-badge"></a>Windows ストア バッジを使ったストアのアプリの内容へのリンク
 
 
 カスタム バッジを使ってアプリの内容に直接リンクし、ユーザーにアプリが Windows ストアにあることを知らせることができます。
@@ -38,7 +45,7 @@ ms.openlocfilehash: 8e4756fa7cb7b808e543453e69b5bb3f09ffd5ce
 
  
 
-## Windows ストアのアプリへの直接リンク
+## <a name="linking-directly-to-your-app-in-the-windows-store"></a>Windows ストアのアプリへの直接リンク
 
 
 ブラウザーを開いて **ms-windows-store:** URI スキームを使わなくても、Windows ストアを起動して、直接アプリの内容ページに移動するリンクを作成できます。
@@ -57,10 +64,5 @@ Windows ストア プロトコルの使用について詳しくは、「[Windows
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,25 +3,32 @@ author: jwmsft
 description: "XAML マークアップで、プロパティに null 値を指定します。"
 title: "xNull マークアップ拡張"
 ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c81acb985c54a8dc799df5ad9c811577777dbf9b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7be1caeca3427f75263019dbdba92c8695b6dde3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# {x:Null} マークアップ拡張
+# <a name="xnull-markup-extension"></a>{x:Null} マークアップ拡張
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 XAML マークアップで、プロパティに **null** 値を指定します。
 
-## XAML 属性の使用方法
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法
 
 ``` syntax
 <object property="{x:Null}" .../>
 ```
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 **null** は、C# と C++ の null 参照キーワードです。 Microsoft Visual Basic の null 参照キーワードは **Nothing** です。
 
@@ -29,15 +36,10 @@ XAML マークアップで、プロパティに **null** 値を指定します�
 
 一部の Windows ランタイム型では、null を使うことができます。 null 許容型に **null** が既定値として設定されていない場合に備え、**{x:Null}** を使って XAML 内で **null** 値に設定することができます。 Visual C++ コンポーネント拡張機能 (C++/CX) を使う場合、null 許容型は [**Platform::IBox<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/jj606120.aspx) として表されます。 Microsoft .NET 言語を使う場合、null 許容型は [**Nullable<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx) として表されます。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [**Nullable<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx)
 * [**IReference<T>**](https://msdn.microsoft.com/library/windows/apps/br225864)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

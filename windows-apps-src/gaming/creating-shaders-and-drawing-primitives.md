@@ -3,16 +3,23 @@ author: mtoepke
 title: "シェーダーの作成とプリミティブの描画"
 description: "ここでは、HLSL ソース ファイルを使い、シェーダーをコンパイルして作成する方法について説明します。作成したシェーダーを使って、ディスプレイ上にプリミティブを描画することができます。"
 ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、ゲーム、シェーダー、プリミティブ、DirectX"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 36ce1c3c0df0dd9dd4f5cf3d31282d5b15050f5c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 62f4b9b641a3c365659e44893a8a7801f2c1f6c0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# シェーダーの作成とプリミティブの描画
+# <a name="create-shaders-and-drawing-primitives"></a>シェーダーの作成とプリミティブの描画
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 ここでは、HLSL ソース ファイルを使い、シェーダーをコンパイルして作成する方法について説明します。作成したシェーダーを使って、ディスプレイ上にプリミティブを描画することができます。
 
@@ -20,7 +27,7 @@ ms.openlocfilehash: 36ce1c3c0df0dd9dd4f5cf3d31282d5b15050f5c
 
 **目標:** シェーダーを作成し、プリミティブを描画する。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 
 C++ に習熟していることを前提としています。 また、グラフィックス プログラミングの概念に対する基礎的な知識も必要となります。
@@ -29,9 +36,9 @@ C++ に習熟していることを前提としています。 また、グラフ
 
 **完了までの時間:** 20 分。
 
-## 手順
+## <a name="instructions"></a>手順
 
-### 1. HLSL ソース ファイルのコンパイル
+### <a name="1-compiling-hlsl-source-files"></a>1. HLSL ソース ファイルのコンパイル
 
 Microsoft Visual Studio は [fxc.exe](https://msdn.microsoft.com/library/windows/desktop/bb232919) HLSL コード コンパイラを使って .hlsl ソース ファイル (SimpleVertexShader.hlsl と SimplePixelShader.hlsl) を .cso バイナリ シェーダー オブジェクト ファイル (SimpleVertexShader.cso と SimplePixelShader.cso) にコンパイルします。 HLSL コード コンパイラについて詳しくは、「エフェクト コンパイラ ツール」をご覧ください。 シェーダー コードのコンパイルについて詳しくは、「[シェーダーのコンパイル](https://msdn.microsoft.com/library/windows/desktop/bb509633)」をご覧ください。
 
@@ -74,11 +81,11 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-### 2. ディスクからのデータの読み取り
+### <a name="2-reading-data-from-disk"></a>2. ディスクからのデータの読み取り
 
 DirectX 11 アプリ (ユニバーサル Windows) テンプレート内の DirectXHelper.h から DX::ReadDataAsync 関数を使って、ディスク上のファイルからデータを非同期的に読み取ります。
 
-### 3. 頂点シェーダーとピクセル シェーダーの作成
+### <a name="3-creating-vertex-and-pixel-shaders"></a>3. 頂点シェーダーとピクセル シェーダーの作成
 
 SimpleVertexShader.cso ファイルからデータを読み取り、そのデータを *vertexShaderBytecode* バイト配列に割り当てます。 このバイト配列を使って [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) を呼び出し、頂点シェーダー ([**ID3D11VertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476641)) を作成します。 三角形が確実に描画されるように、SimpleVertexShader.hlsl ソースで頂点の深度値を 0.5 に設定します。 [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) 構造体の配列に値を設定して頂点シェーダー コードのレイアウトを記述し、その後、[**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) を呼び出してレイアウトを作成します。 配列には頂点の位置を定義するレイアウト要素が 1 つあります。 SimplePixelShader.cso ファイルからデータを読み取り、そのデータを *pixelShaderBytecode* バイト配列に割り当てます。 このバイト配列を使って [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) を呼び出し、ピクセル シェーダー ([**ID3D11PixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476576)) を作成します。 三角形を黄色にするために、SimplePixelShader.hlsl ソースでピクセル値を (1,1,1,1) に設定します。 この値を変更することで色を変えることができます。
 
@@ -197,7 +204,7 @@ SimpleVertexShader.cso ファイルからデータを読み取り、そのデー
 
 頂点シェーダー、ピクセル シェーダー、頂点シェーダー レイアウト、頂点バッファー、インデックス バッファーを使って、黄色の三角形を描画します。
 
-### 4. 三角形の描画とレンダリングされた画像の表示
+### <a name="4-drawing-the-triangle-and-presenting-the-rendered-image"></a>4. 三角形の描画とレンダリングされた画像の表示
 
 シーンをレンダリングして表示し続けるために、無限ループを使います。 [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) を呼び出して、レンダー ターゲットを出力ターゲットとして指定します。 [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) の呼び出しに { 0.071f, 0.04f, 0.561f, 1.0f } を渡して、レンダー ターゲットを無地の青色にクリアします。
 
@@ -277,7 +284,7 @@ SimpleVertexShader.cso ファイルからデータを読み取り、そのデー
                 );
 ```
 
-## 要約と次のステップ
+## <a name="summary-and-next-steps"></a>要約と次のステップ
 
 
 ここでは、頂点シェーダーとピクセル シェーダーを使って、黄色の三角形を作成し描画しました。
@@ -292,10 +299,5 @@ SimpleVertexShader.cso ファイルからデータを読み取り、そのデー
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

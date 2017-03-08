@@ -3,19 +3,26 @@ author: jwmsft
 description: "ここでは、Windows ランタイム アプリの開発者を対象に、XAML 言語と XAML の概念を紹介し、Windows ランタイム アプリを作成する際に XAML でオブジェクトを宣言したり属性を設定したりするためのさまざまな方法について説明します。"
 title: "XAML の概要"
 ms.assetid: 48041B37-F1A8-44A4-BB8E-1D4DE30E7823
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 57b406f8210a9de729deec1fd2003973ac91f9cd
-ms.openlocfilehash: b32ff4bd37a86b991a0bdfe16328304827eb01a0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 12cb0c8b911c0ddb3a45e49568c5846d4359eeba
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# XAML の概要
+# <a name="xaml-overview"></a>XAML の概要
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 ここでは、Windows ランタイム アプリの開発者を対象に、XAML 言語と XAML の概念を紹介し、Windows ランタイム アプリを作成する際に XAML でオブジェクトを宣言したり属性を設定したりするためのさまざまな方法について説明します。
 
-## XAML とは
+## <a name="what-is-xaml"></a>XAML とは
 
 XAML (Extensible Application Markup Language) は宣言型言語の一種です。 具体的には、XAML では、複数のオブジェクトの間の階層的な関係を示す言語構造と、型の拡張をサポートするバッキング型変換を使って、オブジェクトの初期化とオブジェクトのプロパティの設定を行うことができます。 表示される UI 要素を宣言型 XAML マークアップで作成できます。 さらに、各 XAML ファイルに別のコード ビハインド ファイルを関連付けて、イベントに応答することも、XAML で宣言したオブジェクトを操作することもできます。
 
@@ -23,15 +30,15 @@ XAML 言語では、開発プロセスにおけるさまざまなツールや役
 
 Windows ランタイム アプリ プロジェクトの一部としてみた場合、XAML ファイルは .xaml というファイル名拡張子を持つ XML ファイルです。
 
-## 基本的な XAML 構文
+## <a name="basic-xaml-syntax"></a>基本的な XAML 構文
 
 XAML には、XML に基づく基本的な構文があります。 定義上、有効な XAML は、有効な XML でもある必要があります。 しかし、XAML には、XML 1.0 仕様に基づいて有効な XML でありつつも、別のより完全な意味が割り当てられた構文概念もあります。 たとえば、属性の文字列値またはコンテンツとしてではなく要素内でプロパティ値を設定できる*プロパティ要素構文*がサポートされています。 標準 XML と比較すると、XAML プロパティ要素は、名前にドットを含む要素であるため、プレーン XML でも有効ではありますが、同じ意味にはなりません。
 
-## XAML と Microsoft Visual Studio
+## <a name="xaml-and-microsoft-visual-studio"></a>XAML と Microsoft Visual Studio
 
 Microsoft Visual Studio では、XAML テキスト エディターでも、もっとグラフィカル指向の XAML デザイン サーフェイスでも、有効な XAML 構文の生成を支援する機能を使うことができます。 そのため、Visual Studio を使ってアプリの XAML を作成するときは、キー入力のたびに構文を気にかける必要はありません。 IDE は有効な XAML 構文を記述できるように支援してくれます。たとえば、オート コンプリートによるヒント、Microsoft IntelliSense でのドロップダウン リストによる候補の表示、ツールボックスでの UI 要素ライブラリの表示などの機能があります。 それでも、XAML を初めて使う場合は、XAML 構文の規則と、リファレンスなどのトピックでの XAML 構文の解説で制限や選択肢の説明に使われることがある用語を確認しておくと役に立ちます。 XAML 構文の細かな点について詳しくは、「[XAML 構文のガイド](xaml-syntax-guide.md)」をご覧ください。
 
-## XAML 名前空間
+## <a name="xaml-namespaces"></a>XAML 名前空間
 
 一般的なプログラミングでは、名前空間とは、プログラミング エンティティの識別子がどのように解釈されるかを決定する、整理のための概念です。 名前空間を使うことで、プログラミング フレームワークは、ユーザーが宣言した識別子とフレームワークで宣言された識別子を区別し、名前空間の修飾により識別子を明確化し、名前スコープの規則を強制的に適用したりすることができます。 XAML には、XAML 言語でこの目的を果たすための独自の XAML 名前空間の概念があります。 XAML では、XML 言語の名前空間の概念が次のように応用および拡張されています。
 
@@ -53,7 +60,7 @@ Microsoft Visual Studio では、XAML テキスト エディターでも、も�
 >
 ```
 
-## XAML 言語の XAML 名前空間
+## <a name="the-xaml-language-xaml-namespace"></a>XAML 言語の XAML 名前空間
 
 ほぼすべての Windows ランタイム XAML ファイルで宣言される特定の XAML 名前空間が、XAML 言語の名前空間です。 この名前空間は、言語仕様に従って XAML 言語で定義される要素と概念を含みます。 慣例として、XAML 言語の XAML 名前空間はプレフィックス "x" にマップされます。 Windows ランタイム アプリ プロジェクトの既定のプロジェクト テンプレートとファイル テンプレートでは、既定の XAML 名前空間 (プレフィックスなし、`xmlns=` のみ) と XAML 言語の XAML 名前空間 (プレフィックス "x") の両方がルート要素の一部として必ず定義されます。
 
@@ -69,7 +76,7 @@ Microsoft Visual Studio では、XAML テキスト エディターでも、も�
 
 XAML 言語の XAML 名前空間には、その他のプログラミング構成要素もありますが、あまり一般的ではありません。
 
-## XAML 名前空間へのカスタム型のマッピング
+## <a name="mapping-custom-types-to-xaml-namespaces"></a>XAML 名前空間へのカスタム型のマッピング
 
 XAML の言語として最も強力な機能の 1 つが、Windows ランタイム アプリの XAML ボキャブラリを簡単に拡張できることです。 アプリのプログラミング言語で独自のカスタム型を定義でき、XAML マークアップでそのカスタム型を参照できます。 カスタム型による機能拡張のサポートは、基本的に XAML 言語のしくみに組み込まれています。 フレームワークやアプリの開発者は、XAML が参照するバッキング オブジェクトを作成する責任を負います。 フレームワークもアプリ開発者も、ボキャブラリ内のオブジェクトが何を表現し、基本的な XAML 構文規則を超えて何を行うかについて仕様にバインドされることはありません (XAML 言語の XAML 名前空間の型がなすべきことについて期待されることはありますが、Windows ランタイムはすべての必要なサポートを提供しています)。
 
@@ -83,11 +90,11 @@ Windows ランタイム コア ライブラリ以外のライブラリとメタ�
 
 Visual C++ コンポーネント拡張機能 (C++/CX) に関する特別な考慮事項も含めて、カスタム型の XAML 名前空間マッピングについて詳しくは、「[XAML 名前空間と名前空間マッピング](xaml-namespaces-and-namespace-mapping.md)」を参照してください。
 
-## その他の XAML 名前空間
+## <a name="other-xaml-namespaces"></a>その他の XAML 名前空間
 
 プレフィックス "d" (デザイナー名前空間を示す) や、プレフィックス "mc" (マークアップ互換性を示す) を定義している XAML ファイルもよく使われます。 一般に、これらはインフラストラクチャ サポートのために使うか、設計時のツールでシナリオを実現するために使います。 詳しくは、[「XAML 名前空間」トピックの「その他の XAML 名前空間」セクション](xaml-namespaces-and-namespace-mapping.md#other-XAML-namespaces)をご覧ください。
 
-## マークアップ拡張
+## <a name="markup-extensions"></a>マークアップ拡張
 
 マークアップ拡張は、XAML 言語の概念であり、Windows ランタイム XAML 実装でよく使われています。 マークアップ拡張は、しばしば、単純にバッキング型に基づいて要素を宣言するのとは違って、値または挙動に XAML ファイルでアクセスできる、ある種の "ショートカット" を表します。 マークアップ拡張によっては、構文の合理化、または、異なる XAML ファイル間での整理を目標として、プレーン文字列や入れ子になった追加要素を使ってプロパティを設定できます。
 
@@ -130,7 +137,7 @@ Windows ランタイムは、[{x:Null} マークアップ拡張](x-null-markup-e
 
 マークアップ拡張のため、属性内のリテラル "{" 値には特別な構文が必要です。 詳しくは、「[XAML 構文のガイド](xaml-syntax-guide.md)」をご覧ください。
 
-## イベント
+## <a name="events"></a>イベント
 
 XAML は、オブジェクトとそのプロパティを記述するための宣言型言語ですが、マークアップ内のオブジェクトにイベント ハンドラーをアタッチするための構文も備えています。 XAML イベント構文では、Windows ランタイム プログラミング モデルを利用して、XAML で宣言されたイベントを統合できます。 イベントの名前は、そのイベントが処理されるオブジェクトの属性名として指定します。 属性値には、コードで定義するイベント ハンドラー関数の名前を指定します。 XAML プロセッサはこの名前を使って、読み込まれたオブジェクト ツリーにデリゲート表現を作成し、指定されたハンドラーを内部ハンドラー リストに追加します。 Windows ランタイム アプリの大半は、マークアップ ソースとコード ビハインド ソースの両方によって定義されます。
 
@@ -181,23 +188,23 @@ namespace App1
 
 **注** C++/CX の場合、コード ビハインド ファイルは 2 つあります。1 つはヘッダー (.xaml.h) で、もう 1 つは実装 (.xaml.cpp) です。 実装は、ヘッダーを参照し、コード ビハインド接続用のエントリ ポイントを表す技術的なヘッダーです。
 
-## リソース ディクショナリ
+## <a name="resource-dictionaries"></a>リソース ディクショナリ
 
 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) の作成は、通常はリソース ディクショナリを XAML ページの領域または別の XAML ファイルとして記述すれば完了する、一般的なタスクです。 リソース ディクショナリとその使用方法は、概念的に広い範囲にわたるので、このトピックでは扱いません。 詳しくは、「[ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)」をご覧ください。
 
-## XAML と XML
+## <a name="xaml-and-xml"></a>XAML と XML
 
 XAML 言語は、基本的に XML 言語に基づいています。 ただし、XAML は XML と比較して大幅に拡張されています。 特にバッキング型の概念に対する関係からスキーマの概念が大きく異なるほか、アタッチされたメンバーやマークアップ拡張などの言語要素が追加されています。 **xml:lang** は XAML で有効ですが、解析動作の際ではなく実行時に作用し、一般的にフレームワーク レベルのプロパティに対するエイリアスが設定されます。 詳しくは、「[**FrameworkElement.Language**](https://msdn.microsoft.com/library/windows/apps/hh702066)」をご覧ください。 **xml:base** はマークアップで有効ですが、パーサーでは無視されます。 **xml:space** は有効ですが、「[XAML と空白](xaml-and-whitespace.md)」で説明されているシナリオ以外では使われません。 **encoding** 属性は XAML で有効です。 サポートされているのは UTF-8 エンコードと UTF-16 エンコードだけです。 UTF-32 エンコードはサポートされていません。
 
-###  XAML での大文字と小文字の区別
+###  <a name="case-sensitivity-in-xaml"></a>XAML での大文字と小文字の区別
 
 XAML は、大文字と小文字を区別します。 XAML は XML を基にしているため、XML と同じく大文字と小文字が区別されます。 XAML 要素と属性の名前では、大文字と小文字が区別されます。 属性の値は、場合によって大文字と小文字が区別されます。これは、特定のプロパティに対して属性値がどのように処理されるかによって決まります。 たとえば、属性値で列挙型のメンバー名が宣言されている場合、その列挙型メンバーの値を返すためにメンバー名文字列を型変換する組み込みの動作では、大文字と小文字は区別されません。 一方、**Name** プロパティの値と、**Name** プロパティで宣言した名前に基づきオブジェクトを操作するユーティリティ メソッドでは、名前の文字列の大文字と小文字が区別されます。
 
-## XAML 名前スコープ
+## <a name="xaml-namescopes"></a>XAML 名前スコープ
 
 XAML 言語では、XAML 名前スコープという概念が定義されています。 XAML 名前スコープの概念は、XAML 要素に適用された **x:Name** や **Name** の値が XAML プロセッサによってどのように扱われるか (特に名前を一意の識別子として使うスコープ) に影響します。 XAML 名前スコープについては、別のトピックで詳しく説明します。「[XAML 名前スコープ](xaml-namescopes.md)」をご覧ください。
 
-## 開発プロセスでの XAML の役割
+## <a name="the-role-of-xaml-in-the-development-process"></a>開発プロセスでの XAML の役割
 
 XAML は、アプリ開発プロセスにおいて重要な役割を果たします。
 
@@ -211,7 +218,7 @@ XAML は、アプリ開発プロセスにおいて重要な役割を果たしま
 
 開発プロセスにおける役割によっては、XAML を使う機会がそれほどない場合もあります。 XAML ファイルと対話する度合いは、使っている開発環境、ツールボックスやプロパティ エディターなどの対話型のデザイン環境機能を使っているかどうか、Windows ランタイム アプリの範囲と目的によっても異なります。 それでも、アプリの開発時には、テキスト エディターや XML エディターを使って要素レベルで XAML ファイルの編集を行うこともありえます。 ここに示された情報を理解することで、XAML のテキスト表現や XML 表現を正確に編集できるようになります。さらに、XAML ファイルがツール、マークアップのコンパイル処理、Windows ランタイム アプリのランタイム フェーズによって使われる際に、XAML ファイルの宣言と目的の妥当性を保持することができます。
 
-## 読み込みパフォーマンスを向上させるための XAML の最適化
+## <a name="optimize-your-xaml-for-load-performance"></a>読み込みパフォーマンスを向上させるための XAML の最適化
 
 パフォーマンスを向上させるためのベスト プラクティスを使って XAML で UI 要素を定義するためのヒントを次に示します。 これらのヒントの多くは XAML リソースの使用に関するものですが、便宜上、一般的な XAML の概要を示すこのトピックにおいても紹介します。 XAML リソースについて詳しくは、「[ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)」をご覧ください。 パフォーマンス向上のヒントについて詳しくは、パフォーマンスに悪影響を及ぼすため避ける必要のある XAML の実例も含めて、「[XAML マークアップの最適化](https://msdn.microsoft.com/library/windows/apps/mt204779)」をご覧ください。
 
@@ -223,7 +230,7 @@ XAML は、アプリ開発プロセスにおいて重要な役割を果たしま
 -   UI 要素の範囲を超えた描画を避け、[**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) などのコンテナーを使うようにします。 基本的に、同じピクセルを複数回描画しないでください。 過剰な描画とそのテスト方法について詳しくは、[**DebugSettings.IsOverdrawHeatMapEnabled**](https://msdn.microsoft.com/library/windows/apps/hh701823) をご覧ください。
 -   [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) や [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) には既定の項目テンプレートを使います。これらには、リスト項目が多数あるビジュアル ツリーを作成する際に発生するパフォーマンスの問題を解決する特殊な **Presenter** ロジックが用意されています。
 
-## XAML のデバッグ
+## <a name="debugging-xaml"></a>XAML のデバッグ
 
 XAML はマークアップ言語であるため、Microsoft Visual Studio が備えている一般的なデバッグ方法のいくつかは使うことができません。 たとえば、XAML ファイル内にブレークポイントを設定する方法がありません。 ただし、アプリの開発中に、UI 定義や他の XAML マークアップを使って問題のデバッグをサポートできる方法があります。
 
@@ -236,10 +243,5 @@ XAML は、Visual Studio などの IDE や XAML デザイン サーフェイス�
 **注** コードで C++/CX を使うアプリは、特定の [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774) を受け取りません。 ただし、例外のメッセージによって、エラーの原因が XAML 関連であることが明らかになります。このメッセージには、**XamlParseException** と同様に、XAML ファイル内の行番号などのコンテキスト情報も含まれています。
 
 Windows ランタイム アプリのデバッグについて詳しくは、「[デバッグ セッションの開始](https://msdn.microsoft.com/library/windows/apps/xaml/hh781607.aspx)」をご覧ください。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

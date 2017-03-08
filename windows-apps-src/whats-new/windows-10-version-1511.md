@@ -1,19 +1,26 @@
 ---
 author: QuinnRadich
-title: "Windows 10 バージョン 1511 の新着情報 - 2015 年 11 月"
-description: "Windows 10 バージョン 1511 と新しい開発者ツールを使うと、新しいユニバーサル Windows プラットフォームによって強化されたツール、機能、そしてエクスペリエンスが利用できます。"
+title: "Windows 10 バージョン 1511 の新着情報"
+description: "Windows 10 バージョン 1511 と新しい開発者ツールでは、新しいユニバーサル Windows プラットフォームによって強化されたツール、機能、エクスペリエンスを利用できます。"
 keywords: "新着情報, 新しい情報, 更新, 更新情報, 機能, 新規, Windows 10, 1511, 11 月"
+ms.author: quradic
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+ms.assetid: 0d6c65c5-2ad5-46c7-964e-a3a9833c94ce
 translationtype: Human Translation
-ms.sourcegitcommit: 5646bf7681b5b028031eab02f8dd5c352d4b9cc1
-ms.openlocfilehash: 7f6a0879db5e3ec660866c0c08b9b7c7ca773644
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: d1acbde95d3d36cade7242a9f89a2bc01aaf8914
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Windows の新着情報
+# <a name="whats-new-in-windows-version-1511"></a>Windows 10 バージョン 1511 の新着情報
 
 Windows 10 バージョン 1511 と Windows 開発者ツールの更新プログラムでは、引き続きユニバーサル Windows プラットフォームによって強化されたツール、機能、エクスペリエンスを提供しています。 Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/fwlink/?LinkId=821431)すると、[新しいユニバーサル Windows アプリを作成](https://msdn.microsoft.com/library/windows/apps/bg124288)したり、[Windows の既存のアプリ コード](https://msdn.microsoft.com/library/windows/apps/mt238321)がどのように使えるかを試したりすることができます。
 
-## Windows 10 バージョン 1511 - 2015 年 11 月
+## <a name="windows-10-version-1511---november-2015"></a>Windows 10 バージョン 1511 - 2015 年 11 月
 
 機能 | 説明
  :---- | :----
@@ -29,9 +36,4 @@ Smart Card API | 複数の SmartCardCryptogram API が [Windows.Devices.SmartCar
 Updated Storage API | [Windows.Storage.DownloadsFolder クラス](https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.aspx)では、特定の[ユーザー](https://msdn.microsoft.com/library/windows/apps/windows.system.user.aspx)のダウンロード フォルダーに[ファイルを作成](https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.createfileforuserasync.aspx)したり、[フォルダーを作成](https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.createfolderforuserasync.aspx)したりできるようになりました。 [Windows.Storage.StorageLibrary クラス](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagelibrary.aspx)では、特定の[ユーザー](https://msdn.microsoft.com/library/windows/apps/windows.system.user.aspx)の[特定のライブラリを取得](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagelibrary.getlibraryforuserasync.aspx)できるようになりました。
 Windows アプリ認定キット | Windows アプリ認定キットが更新され、テストも改善されました。 更新のリストについては、[Windows アプリ認定キット](https://developer.microsoft.com/windows/develop/app-certification-kit)のページをご覧ください。
 デザインに関するダウンロード | Adobe Photoshop 用の新しい UWP アプリ デザイン テンプレートをご覧ください。 Microsoft PowerPoint と Adobe Illustrator のテンプレートも更新され、ガイドラインの PDF 版も利用可能になりました。 [デザインに関するダウンロード](https://developer.microsoft.com/windows/design/assets)のページをご覧ください。
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

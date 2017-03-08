@@ -3,34 +3,39 @@ author: mcleanbyron
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: "Azure AD クライアント ID に関連付けられているアプリでユーザーが所有しているすべての製品を取得するには、Windows ストア コレクション API のこのメソッドを使用します。 スコープを指定して特定の製品を照会することができ、また他のフィルターを使用することもできます。"
 title: "製品の照会"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows ストア コレクション API, 製品の表示"
 translationtype: Human Translation
-ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
-ms.openlocfilehash: d614919debd979a475e93909199851390d242deb
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 29db10862533e7b15c7a676fc3aecd4ba58f9514
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 製品の照会
-
-
+# <a name="query-for-products"></a>製品の照会
 
 
 Azure AD クライアント ID に関連付けられているアプリでユーザーが所有しているすべての製品を取得するには、Windows ストア コレクション API のこのメソッドを使用します。 スコープを指定して特定の製品を照会することができ、また他のフィルターを使用することもできます。
 
 このメソッドは、アプリからのメッセージに対する応答としてサービスから呼び出されるように設計されています。 サービスで、スケジュールに従って定期的にすべてのユーザーをポーリングしないでください。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 
 このメソッドを使用するための要件:
 
 * `https://onestore.microsoft.com` 対象ユーザー URI を使用して作成した Azure AD アクセス トークン。
-* [アプリのクライアント側コードから生成された](view-and-grant-products-from-a-service.md#step-4) Windows ストア ID キー。
+* 取得対象の製品を所有するユーザーの ID を表す Windows ストア ID キー。
 
-詳しくは、「[サービスからの製品の表示と許可](view-and-grant-products-from-a-service.md)」をご覧ください。
+詳しくは、「[サービスから製品の権利を管理する](view-and-grant-products-from-a-service.md)」をご覧ください。
 
-## 要求
+## <a name="request"></a>要求
 
-### 要求の構文
+### <a name="request-syntax"></a>要求の構文
 
 | メソッド | 要求 URI                                                 |
 |--------|-------------------------------------------------------------|
@@ -38,7 +43,7 @@ Azure AD クライアント ID に関連付けられているアプリでユー�
 
 <span/>
  
-### 要求ヘッダー
+### <a name="request-header"></a>要求ヘッダー
 
 | ヘッダー         | タイプ   | 説明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
@@ -49,41 +54,41 @@ Azure AD クライアント ID に関連付けられているアプリでユー�
 
 <span/>
 
-### 要求本文
+### <a name="request-body"></a>要求本文
 
-| パラメーター         | タイプ         | 説明                                                                                                                                                                                                                                                          | 必須かどうか |
-|-------------------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| beneficiaries     | UserIdentity | 製品照会の対象となるユーザーを表す UserIdentity オブジェクト。                                                                                                                                                                                           | 必須      |
-| continuationToken | string       | 製品のセットが複数ある場合、ページ制限に達すると、応答本文で継続トークンが返されます。 残りの製品を取得する後続の呼び出しで、この継続トークンを指定します。                                                      | 省略可能       |
-| maxPageSize       | number       | 1 つの応答で返す製品の最大数。 既定値および最大値は 100 です。                                                                                                                                                                      | 省略可能       |
-| modifiedAfter     | datetime     | 指定した場合、この日付以降に変更された製品だけがサービスから返されます。                                                                                                                                                                             | 省略可能       |
-| parentProductId   | string       | 指定した場合、指定されたアプリに対応するアドオンだけがサービスから返されます。                                                                                                                                                                                    | 省略可能       |
-| productSkuIds     | ProductSkuId | 指定した場合、指定された製品/SKU のペアに該当する製品だけがサービスから返されます。                                                                                                                                                                        | 省略可能       |
-| productTypes      | string       | 指定した場合、指定された製品タイプに一致する製品だけがサービスから返されます。 サポートされている製品タイプは **Application**、**Durable**、および **UnmanagedConsumable** です。                                                                                       | 省略可能       |
+| パラメーター         | タイプ         | 説明         | 必須かどうか |
+|-------------------|--------------|---------------------|----------|
+| beneficiaries     | UserIdentity | 製品照会の対象となるユーザーを表す UserIdentity オブジェクト。 詳細については、次の表をご覧ください。    | 必須      |
+| continuationToken | string       | 製品のセットが複数ある場合、ページ制限に達すると、応答本文で継続トークンが返されます。 残りの製品を取得する後続の呼び出しで、この継続トークンを指定します。       | 省略可能       |
+| maxPageSize       | number       | 1 つの応答で返す製品の最大数。 既定値および最大値は 100 です。                 | 省略可能       |
+| modifiedAfter     | datetime     | 指定した場合、この日付以降に変更された製品だけがサービスから返されます。        | 省略可能       |
+| parentProductId   | string       | 指定した場合、指定されたアプリに対応するアドオンだけがサービスから返されます。      | 省略可能       |
+| productSkuIds     | list&lt;ProductSkuId&gt; | 指定した場合、指定された製品/SKU のペアに該当する製品だけがサービスから返されます。 詳細については、次の表をご覧ください。      | 省略可能       |
+| productTypes      | string       | 指定した場合、指定された製品タイプに一致する製品だけがサービスから返されます。 サポートされている製品タイプは **Application**、**Durable**、および **UnmanagedConsumable** です。     | 省略可能       |
 | validityType      | string       | **All** に設定した場合、有効期限が切れた項目を含む、ユーザーのすべての製品が返されます。 **Valid** に設定した場合、その時点で有効な製品だけが返されます (つまり、アクティブな状態で、開始日が現在より前、終了日が現在より後である製品)。 | 省略可能       |
 
 <span/>
 
 UserIdentity オブジェクトには以下のパラメーターが含まれています。
 
-| パラメーター            | タイプ   | 説明                                                                                                                                                                                                                  | 必須かどうか |
-|----------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| identityType         | string | 文字列値 **b2b** を指定します。                                                                                                                                                                                            | 必須      |
-| identityValue        | string | [アプリのクライアント側コードから生成された](view-and-grant-products-from-a-service.md#step-4) Windows ストア ID キー。                                                                                                                                                                                     | 必須      |
+| パラメーター            | タイプ   |  説明      | 必須かどうか |
+|----------------------|--------|----------------|----------|
+| identityType         | string | 文字列値 **b2b** を指定します。    | 必須      |
+| identityValue        | string | 照会する製品のユーザーの ID を表す [Windows ストア ID キー](view-and-grant-products-from-a-service.md#step-4)。  | 必須      |
 | localTicketReference | string | 返された製品で必要な識別子。 応答本文で返された項目には、一致する *localTicketReference* があります。 Windows ストア ID キーの *userId* 要求と同じ値を使用することをお勧めします。 | 必須      |
 
 <span/> 
 
 ProductSkuId オブジェクトには以下のパラメーターが含まれています。
 
-| パラメーター | タイプ   | 説明                                                                                                                                                                                                                                                                                                            | 必須かどうか |
-|-----------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| productId | string | Windows ストア カタログのストア ID。 ストア ID は、デベロッパー センター ダッシュボードの[アプリ ID ページ](../publish/view-app-identity-details.md)で確認できます。 ストア ID の例は 9WZDNCRFJ3Q8 です。 | 必須      |
-| skuID     | string | Windows ストア カタログの SKU ID。 SKU ID の例は "0010" です。                                                                                                                                                                                                                                                | 必須      |
+| パラメーター | タイプ   | 説明          | 必須かどうか |
+|-----------|--------|----------------------|----------|
+| productId | string | Windows ストア カタログ内の[製品](in-app-purchases-and-trials.md#products-skus-and-availabilities)の[ストア ID](in-app-purchases-and-trials.md#store-ids)。 製品のストア ID の例は、9NBLGGH42CFD です。 | 必須      |
+| skuID     | string | Windows ストア カタログ内の製品の [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) の[ストア ID](in-app-purchases-and-trials.md#store-ids)。 SKU のストア ID の例は、0010 です。       | 必須      |
 
 <span/>
 
-### 要求の例
+### <a name="request-example"></a>要求の例
 
 ```syntax
 POST https://collections.mp.microsoft.com/v6.0/collections/query HTTP/1.1
@@ -115,45 +120,45 @@ Content-Type: application/json
 }
 ```
 
-## 応答
+## <a name="response"></a>応答
 
 
-### 応答本文
+### <a name="response-body"></a>応答本文
 
-| パラメーター         | タイプ                     | 説明                                                                                                                                                                                | 必須かどうか |
-|-------------------|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+| パラメーター         | タイプ                     | 説明          | 必須かどうか |
+|-------------------|--------------------------|-----------------------|----------|
 | continuationToken | string                   | 製品のセットが複数ある場合、ページ制限に達すると、このトークンが返されます。 残りの製品を取得する後続の呼び出しで、この継続トークンを指定できます。 | 省略可能       |
-| Items             | CollectionItemContractV6 | 指定したユーザーの製品の配列。                                                                                                                                               | 省略可能       |
+| items             | CollectionItemContractV6 | 指定したユーザーの製品の配列。 詳細については、次の表をご覧ください。        | 省略可能       |
 
 <span/> 
 
 CollectionItemContractV6 オブジェクトには以下のパラメーターが含まれています。
 
-| パラメーター            | タイプ               | 説明                                                                                                                                        | 必須かどうか |
-|----------------------|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| acquiredDate         | datetime           | ユーザーが項目を取得した日付。                                                                                                      | 必須      |
-| campaignId           | string             | この項目の購入時に提供されたキャンペーン ID。                                                                                  | 省略可能       |
-| devOfferId           | string             | アプリ内購入からのプラン ID。                                                                                                              | 省略可能       |
-| endDate              | datetime           | 項目の終了日。                                                                                                                          | 必須      |
-| fulfillmentData      | string             | 該当なし                                                                                                                                                | 省略可能       |
-| inAppOfferToken      | string             | Windows デベロッパー センター ダッシュボードで項目に割り当てられている、開発者が指定した製品 ID 文字列。 製品 ID の例は "product123" です。 | 省略可能       |
-| itemId               | string             | ユーザーが所有する他の項目からこのコレクション項目を識別する ID。 この ID は製品ごとに一意です。                                          | 必須      |
-| localTicketReference | string             | 要求本文の `localTicketReference` で指定された ID。                                                                      | 必須      |
-| modifiedDate         | datetime           | この項目が最後に更新された日付。                                                                                                              | 必須      |
-| orderId              | string             | 存在する場合、この項目が取得された注文 ID。                                                                                          | 省略可能       |
-| orderLineItemId      | string             | 存在する場合、この項目が取得された特定の注文の行項目。                                                                | 省略可能       |
-| ownershipType        | string             | 文字列 "OwnedByBeneficiary"。                                                                                                                   | 必須      |
-| productId            | string             | Windows ストア カタログからのアプリのストア ID。 ストア ID の例は 9WZDNCRFJ3Q8 です。                                                            | 必須      |
-| productType          | string             | **Application**、**Durable**、および **UnmanagedConsumable** の製品タイプのいずれか。                                                     | 必須      |
-| purchasedCountry     | string             | 該当なし。                                                                                                                                               | 省略可能       |
-| purchaser            | IdentityContractV6 | 存在する場合、項目の購入者の ID を表します。 下記に示すこのオブジェクトの詳細を参照してください。                                      | 省略可能       |
-| quantity             | number             | 項目の数量。 現在、これは常に 1 になります。                                                                                        | 省略可能       |
-| skuId                | string             | Windows ストア カタログの SKU ID。 SKU ID の例は "0010" です。                                                                            | 必須      |
-| skuType              | string             | SKU のタイプ。 可能な値は **Trial**、**Full**、および **Rental** です。                                                                      | 必須      |
-| startDate            | datetime           | 項目の有効期間の開始日。                                                                                                         | 必須      |
-| status               | string             | アイテムの状態。 可能な値は **Active**、**Expired**、**Revoked**、および **Banned** です。                                              | 必須      |
-| tags                 | string             | 該当なし。                                                                                                                                                | 必須      |
-| transactionId        | guid               | この項目の購入の結果としてのトランザクション ID。 フルフィルメント完了として項目を報告するのに使用できます。                                       | 必須      |
+| パラメーター            | タイプ               | 説明            | 必須かどうか |
+|----------------------|--------------------|-------------------------|----------|
+| acquiredDate         | datetime           | ユーザーが項目を取得した日付。                  | 必須      |
+| campaignId           | string             | この項目の購入時に提供されたキャンペーン ID。                  | 省略可能       |
+| devOfferId           | string             | アプリ内購入からのプラン ID。              | 省略可能       |
+| endDate              | datetime           | 項目の終了日。              | 必須      |
+| fulfillmentData      | string             | 該当なし         | 省略可能       |
+| inAppOfferToken      | string             | Windows デベロッパー センター ダッシュボードで項目に割り当てられている、開発者が指定した製品 ID 文字列。 製品 ID の例は *product123* です。 | 省略可能       |
+| itemId               | string             | ユーザーが所有する他の項目からこのコレクション項目を識別する ID。 この ID は製品ごとに一意です。   | 必須      |
+| localTicketReference | string             | 要求本文の *localTicketReference* で指定された ID。                  | 必須      |
+| modifiedDate         | datetime           | この項目が最後に更新された日付。              | 必須      |
+| orderId              | string             | 存在する場合、この項目が取得された注文 ID。              | 省略可能       |
+| orderLineItemId      | string             | 存在する場合、この項目が取得された特定の注文の行項目。              | 省略可能       |
+| ownershipType        | string             | 文字列 *OwnedByBeneficiary*。   | 必須      |
+| productId            | string             | Windows ストア カタログ内の[製品](in-app-purchases-and-trials.md#products-skus-and-availabilities)の[ストア ID](in-app-purchases-and-trials.md#store-ids)。 製品のストア ID の例は、9NBLGGH42CFD です。          | 必須      |
+| productType          | string             | **Application**、**Durable**、および **UnmanagedConsumable** の製品タイプのいずれか。        | 必須      |
+| purchasedCountry     | string             | 該当なし。   | 省略可能       |
+| purchaser            | IdentityContractV6 | 存在する場合、項目の購入者の ID を表します。 下記に示すこのオブジェクトの詳細を参照してください。        | 省略可能       |
+| quantity             | number             | 項目の数量。 現在、これは常に 1 になります。      | 省略可能       |
+| skuId                | string             | Windows ストア カタログ内の[製品](in-app-purchases-and-trials.md#products-skus-and-availabilities)の SKU の[ストア ID](in-app-purchases-and-trials.md#store-ids)。 SKU のストア ID の例は、0010 です。     | 必須      |
+| skuType              | string             | SKU のタイプ。 可能な値は **Trial**、**Full**、および **Rental** です。        | 必須      |
+| startDate            | datetime           | 項目の有効期間の開始日。       | 必須      |
+| status               | string             | アイテムの状態。 可能な値は **Active**、**Expired**、**Revoked**、および **Banned** です。    | 必須      |
+| tags                 | string             | 該当なし。    | 必須      |
+| transactionId        | guid               | この項目の購入の結果としてのトランザクション ID。 フルフィルメント完了として項目を報告するのに使用できます。      | 必須      |
 
 <span/> 
 
@@ -161,12 +166,12 @@ IdentityContractV6 オブジェクトには以下のパラメーターが含ま�
 
 | パラメーター     | タイプ   | 説明                                                                        | 必須かどうか |
 |---------------|--------|------------------------------------------------------------------------------------|----------|
-| identityType  | string | 値 **"pub"** を格納します。                                                      | 必須      |
+| identityType  | string | 値 *pub* を格納します。                                                      | 必須      |
 | identityValue | string | 指定された Windows ストア ID キーの *publisherUserId* の文字列値。 | 必須      |
 
 <span/> 
 
-### 応答の例
+### <a name="response-example"></a>応答の例
 
 ```syntax
 HTTP/1.1 200 OK
@@ -208,15 +213,10 @@ Date: Tue, 22 Sep 2015 20:28:18 GMT
 }
 ```
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
-* [サービスからの製品の表示と許可](view-and-grant-products-from-a-service.md)
+* [サービスから製品の権利を管理する](view-and-grant-products-from-a-service.md)
 * [コンシューマブルな製品をフルフィルメント完了として報告する](report-consumable-products-as-fulfilled.md)
 * [無料の製品の付与](grant-free-products.md)
 * [Windows ストア ID キーの更新](renew-a-windows-store-id-key.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

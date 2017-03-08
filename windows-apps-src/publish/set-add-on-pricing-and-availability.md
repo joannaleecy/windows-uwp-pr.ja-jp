@@ -3,23 +3,30 @@ author: jnHs
 Description: "アドオンを申請するときに、[価格と使用可能状況] ページのオプションで、アドオンの料金やユーザーに提供する方法を指定します。"
 title: "アドオンの価格と使用可能状況の設定"
 ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 0edf45e997f36a82a8bfcb92c1d8fd2c79242461
-ms.openlocfilehash: 17fe4e836dc75e0dfd44389a503a6a94afe44f42
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e16cd437a1ee2b53a263ad29cd8e93b3d2e40bed
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アドオンの価格と使用可能状況の設定
+# <a name="set-add-on-pricing-and-availability"></a>アドオンの価格と使用可能状況の設定
 
 
 アドオンを申請するときに、**[価格と使用可能状況]** ページのオプションで、アドオンの料金やユーザーに提供する方法を指定します。
 
-## 基本価格
+## <a name="base-price"></a>基本価格
 
 
 アドオンの基本価格を選ぶ必要があります。 これらの価格帯は、0.99 米ドルから始まるアプリの価格帯と同じです。 また、アドオンを無料で提供するためのオプションもあります。
 
-## 市場と特別価格
+## <a name="markets-and-custom-prices"></a>市場と特別価格
 
 
 既定では、アドオンは販売できるすべての市場 (今後追加される可能性のある市場も含む) にその基本価格で公開されます。
@@ -28,12 +35,12 @@ ms.openlocfilehash: 17fe4e836dc75e0dfd44389a503a6a94afe44f42
 
 詳しい情報と利用可能な市場の一覧については、「[価格と市場の選択の定義](define-pricing-and-market-selection.md)」をご覧ください。
 
-## セール価格
+## <a name="sale-pricing"></a>セール価格
 
 
 期間限定でアドオンを割引価格で提供する場合は、特売を作成し、そのスケジュールを設定できます。 詳しくは、「[アプリとアドオンの販売](put-apps-and-add-ons-on-sale.md)」をご覧ください。
 
-## 配布と表示
+## <a name="distribution-and-visibility"></a>配布と表示
 
 
 アドオンをユーザーが購入できるようにするかどうかを指定できます。 次のいずれかのオプションを選びます。
@@ -45,7 +52,7 @@ ms.openlocfilehash: 17fe4e836dc75e0dfd44389a503a6a94afe44f42
  > **注**  この設定を選択した場合や、アプリのコードからアドオンを削除するアプリの更新プログラムを提出した場合でも、オペレーティング システムに関係なく、アドオンを購入済みのユーザーには影響しません。
 
 
-## 公開日
+## <a name="publish-date"></a>公開日
 
 **[公開日]** セクションのオプションを選ぶことで、アドオンの申請が公開される時期を指定できます。
 
@@ -60,10 +67,5 @@ ms.openlocfilehash: 17fe4e836dc75e0dfd44389a503a6a94afe44f42
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,30 +3,37 @@ author: msatranjr
 Description: "マップ コントロールでは、地図および上空からの写真、ルート案内、検索結果、交通情報を表示できます。"
 title: "マップのガイドライン"
 ms.assetid: 7B5B6BC9-D1EC-4978-8876-20B78EF44797
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、マップ コントロール、マップ、位置情報"
 translationtype: Human Translation
-ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: e094e29220a0f8fcae6ca2af36ab86ecd22b520d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ad6267e0294e4a62c1e586c066ce9d0489940d7d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# マップ コントロール
+# <a name="map-control"></a>マップ コントロール
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
 マップ コントロールでは、地図、航空写真 3D ビュー、方向、検索結果、トラフィックを表示できます。 マップ上には、現在地、ルート、関心のあるポイントを表示できます。 また、航空写真 3D ビュー、Streetside ビュー、交通情報、乗り換え情報、周辺情報を表示することもできます。
 
 ![マップの例 (基本ビュー)](./images/win10fa/controls-maps-basic.jpg)
 
-## 適切なコントロールの選択
+## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 
 アプリ固有の地理情報または一般的な地理情報を表示できるアプリ内でマップが必要な場合に、マップ コントロールを使います。 アプリにマップ コントロールを含めておくことで、ユーザーはアプリの外部に移動することなく情報を得ることができます。
 
 **注:** その情報を得るためにユーザーがアプリの外部に移動してもかまわない場合は、Windows マップ アプリを利用することも検討してください。 アプリから Windows マップ アプリを起動し、特定の地図、ルート案内、検索結果を表示することができます。 詳しくは、「[Windows マップ アプリの起動](https://msdn.microsoft.com/library/windows/apps/mt228341)」をご覧ください。
 
-## 例
+## <a name="examples"></a>例
 
 
 次の例では、Streetside ビューを使用したマップを示しています。
@@ -46,7 +53,7 @@ ms.openlocfilehash: e094e29220a0f8fcae6ca2af36ab86ecd22b520d
 ![3D マップ ビューと Streetside ビューを組み合わせた例](./images/win10fa/controls-maps-3dstreetview.png)
 
 
-## 推奨事項
+## <a name="recommendations"></a>推奨事項
 
 
 -   ユーザーが地理情報を表示するためにパンとズームを過度に使用しなくて済むように、十分な画面領域 (または画面全体) を使用してマップを表示します。
@@ -55,7 +62,7 @@ ms.openlocfilehash: e094e29220a0f8fcae6ca2af36ab86ecd22b520d
 
 -   マップ シーンに関心のあるポイントを埋め込むには、[**MapElements**](https://msdn.microsoft.com/library/windows/apps/dn637034) を使います。その他の情報も、マップ シーンのオーバーレイとして表示される一時的な UI に表示できます。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [2D、3D、Streetside ビューでの地図の表示](https://msdn.microsoft.com/library/windows/apps/mt219695)
@@ -67,13 +74,4 @@ ms.openlocfilehash: e094e29220a0f8fcae6ca2af36ab86ecd22b520d
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

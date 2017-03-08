@@ -3,13 +3,20 @@ author: jnHs
 Description: "自分のアプリと他の開発者が公開したアプリを相互に販売促進 (クロス プロモーション) することができます。 この機能をコミュニティ広告と呼びます。"
 title: "コミュニティ広告について"
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 90e63d53c68e25816fd1f7b532792d9ad6dc2cc6
-ms.openlocfilehash: db771fbd56db55b5767e4e335dcb10514f7a0bae
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 13963ddf9f745c6de2e6d7ef7d948f649b2f6f5e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# コミュニティ広告について
+# <a name="about-community-ads"></a>コミュニティ広告について
 
 アプリで **AdMediatorControl** または **AdControl** を使用してバナー広告を表示する場合は、Windows ストア内の自分のアプリと他の開発者のアプリを無料で相互に販売促進 (クロス プロモーション) することができます。 この機能を*コミュニティ広告*と呼びます。  
 
@@ -22,7 +29,7 @@ ms.openlocfilehash: db771fbd56db55b5767e4e335dcb10514f7a0bae
 * クレジットは、すべてのアクティブなコミュニティ広告キャンペーンで均等に分割され、コミュニティ広告キャンペーンの対象となる国の現在の市場レートの eCPM 値に基づいてアプリの広告インプレッション数に変換されます。
 * アプリ内のコミュニティ広告のパフォーマンスを追跡するには、[アカウント レベルの広告パフォーマンス レポート](advertising-performance-report.md#account-level-advertising-performance-report)をご覧ください。
 
-## コミュニティ広告にオプトインする方法
+## <a name="how-to-opt-in-to-community-ads"></a>コミュニティ広告にオプトインする方法
 
 コミュニティ広告にオプトインするには、次の手順を実行します。
 
@@ -33,13 +40,8 @@ ms.openlocfilehash: db771fbd56db55b5767e4e335dcb10514f7a0bae
 3. アプリの[広告キャンペーンを作成](create-an-ad-campaign-for-your-app.md)します。 キャンペーンの種類として **[Free community ads]** (無料のコミュニティ広告) を選択します。
 
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [広告による収益獲得](monetize-with-ads.md)
 * [アプリ向けの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

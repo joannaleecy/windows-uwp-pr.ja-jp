@@ -4,13 +4,19 @@ Description: "名前を予約してアプリを作成したら、そのアプリ
 title: "アプリの申請"
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: "チェック リスト"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: ce9858da15cac0e34a2bb2c68c25ba63ec79af4c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: df66981ae8355ea62128a881f02fd6fb891ffb30
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アプリの申請
+# <a name="app-submissions"></a>アプリの申請
 
 
 [名前を予約してアプリを作成](create-your-app-by-reserving-a-name.md)したら、そのアプリを公開するための作業を開始できます。 まず、**申請**を作成します。
@@ -21,14 +27,14 @@ ms.openlocfilehash: ce9858da15cac0e34a2bb2c68c25ba63ec79af4c
 
 > **注**&nbsp;&nbsp;ドキュメントのこのセクションでは、デベロッパー センターでアプリの申請を作成する方法について説明します。 ここで説明する方法以外に、[Windows ストア申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使用してアプリの申請を自動化することもできます。
 
-## アプリの申請用チェック リスト
+## <a name="app-submission-checklist"></a>アプリの申請用チェック リスト
 
 
 ここで示しているのは、アプリの申請を作成するときに提供できる詳細情報と、詳細情報のリンクです。
 
 提供または指定する情報は必須のものと、 省略可能なものがあります。提供されている既定値は必要に応じて変更できます。
 
-### [価格と使用可能状況] ページ
+### <a name="pricing-and-availability-page"></a>[価格と使用可能状況] ページ
 | フィールド名                    | コメント                                       | 詳しい情報                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **基本価格**                | 必須                                    | [基本価格](set-app-pricing-and-availability.md#base-price)              |
@@ -41,7 +47,7 @@ ms.openlocfilehash: ce9858da15cac0e34a2bb2c68c25ba63ec79af4c
 
 <span/>
 
-### [アプリケーションのプロパティ] ページ
+### <a name="app-properties-page"></a>[アプリケーションのプロパティ] ページ
 
 | フィールド名                    | コメント                                       | 詳しい情報                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
@@ -51,7 +57,7 @@ ms.openlocfilehash: ce9858da15cac0e34a2bb2c68c25ba63ec79af4c
 
 <span/>
 
-### [年齢区分] ページ
+### <a name="age-ratings-page"></a>[年齢区分] ページ
 
 | フィールド名                    | コメント                                       | 詳しい情報                          |
 |-------------------------------|---------------------------------------------|----------------------------------------|
@@ -59,7 +65,7 @@ ms.openlocfilehash: ce9858da15cac0e34a2bb2c68c25ba63ec79af4c
 
 <span/>
 
-### [パッケージ] ページ
+### <a name="packages-page"></a>[パッケージ] ページ
 
 | フィールド名                    | コメント                                  | 詳しい情報                          |
 |-------------------------------|----------------------------------------|----------------------------------------|
@@ -70,7 +76,7 @@ ms.openlocfilehash: ce9858da15cac0e34a2bb2c68c25ba63ec79af4c
 
 <span/>
 
-### ストア登録情報
+### <a name="store-listings"></a>ストア登録情報
 
 必須情報のすべてを、アプリでサポートする言語のうち、少なくとも 1 つの言語で用意する必要があります。 [ストア登録情報](create-app-store-listings.md)は、アプリでサポートするすべての言語で用意することをお勧めします。また[追加の言語でストア登録情報を用意](create-app-store-listings.md#store-listing-languages)することもできます。
 
@@ -93,7 +99,7 @@ ms.openlocfilehash: ce9858da15cac0e34a2bb2c68c25ba63ec79af4c
 
 <span/>
 
-### [認定を求めるにあたってのコメント] ページ
+### <a name="notes-for-certification-page"></a>[認定を求めるにあたってのコメント] ページ
 
 | フィールド名                    | コメント                                       | 詳しい情報                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
@@ -102,9 +108,4 @@ ms.openlocfilehash: ce9858da15cac0e34a2bb2c68c25ba63ec79af4c
 <span/>
 
 **注**&nbsp;&nbsp;基幹業務 (LOB) アプリを企業に直接公開する方法については、「[LOB アプリの企業への配布](distribute-lob-apps-to-enterprises.md)」をご覧ください。
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

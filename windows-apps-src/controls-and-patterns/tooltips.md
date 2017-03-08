@@ -5,10 +5,16 @@ title: "ヒント"
 ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 1ed8bc2339b0616ea5e34b640bb572693d397cce
-
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d5ea37534ab88391954f72cbf80b21fd994dc1ee
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="tooltips"></a>ヒント
@@ -72,9 +78,4 @@ Bing Maps アプリのヒントです。
 関連トピック
 
 * [**ToolTip クラス**](https://msdn.microsoft.com/library/windows/apps/br227608)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

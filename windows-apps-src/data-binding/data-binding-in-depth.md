@@ -3,14 +3,21 @@ author: mcleblanc
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: "データ バインディングの詳細"
 description: "データ バインディングは、アプリの UI でデータを表示し、必要に応じてそのデータとの同期を保つ方法です。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: fa3a3cf6194f04a05301ae4dfb75a7a21ff22e73
-ms.openlocfilehash: fca2c9a795e38983f439d6df5c5a7394c29c1217
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d96565479d970bca724614768361ba390ab9d668
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="data-binding-in-depth"></a>データ バインディングの詳細
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
 **重要な API**
@@ -649,10 +656,5 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | Mode | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | Mode には、OneTime、OneWay、TwoWay を指定できます。 {x:Bind} の既定値は OneTime で、{Binding} の既定値は OneWay です。 | 
 | UpdateSourceTrigger | サポートされない | `<Binding UpdateSourceTrigger="Default [or] PropertyChanged [or] Explicit"/>` | {x:Bind} では、TextBox.Text を除くすべての場合に PropertyChanged 動作を使います。TextBox.Text では、フォーカスが失われるまで待機してソースを更新します。 | 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

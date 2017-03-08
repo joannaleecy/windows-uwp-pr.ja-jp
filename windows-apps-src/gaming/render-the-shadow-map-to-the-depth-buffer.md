@@ -3,21 +3,28 @@ author: mtoepke
 title: "深度バッファーへのシャドウ マップのレンダリング"
 description: "ライトの視点からレンダリングして、シャドウ ボリュームを表す 2 次元の深度マップを作成します。"
 ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、ゲーム、レンダリング、シャドウ マップ、深度バッファー、Direct3D"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 337aa63ee30b05da51d5b224cb0013519e11504d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 27b7c9a5fb69a19eed5941bf06068d5237ec101e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 深度バッファーへのシャドウ マップのレンダリング
+# <a name="render-the-shadow-map-to-the-depth-buffer"></a>深度バッファーへのシャドウ マップのレンダリング
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 ライトの視点からレンダリングして、シャドウ ボリュームを表す 2 次元の深度マップを作成します。 深度マップでは、シャドウ内にレンダリングされる空間をマークします。 「[チュートリアル: Direct3D 11 の深度バッファーを使ったシャドウ ボリュームの実装](implementing-depth-buffers-for-shadow-mapping.md)」のパート 2 です。
 
-## 深度バッファーの消去
+## <a name="clear-the-depth-buffer"></a>深度バッファーの消去
 
 
 深度バッファーにレンダリングする前に、必ず深度バッファーを消去します。
@@ -27,7 +34,7 @@ context->ClearRenderTargetView(m_deviceResources->GetBackBufferRenderTargetView(
 context->ClearDepthStencilView(m_shadowDepthView.Get(), D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 ```
 
-## 深度バッファーへのシャドウ マップのレンダリング
+## <a name="render-the-shadow-map-to-the-depth-buffer"></a>深度バッファーへのシャドウ マップのレンダリング
 
 
 シャドウのレンダリング パスでは、深度バッファーを指定しますが、レンダー ターゲットは指定しません。
@@ -124,7 +131,7 @@ void ShadowSceneRenderer::RenderShadowMap()
 
 **視錐台の最適化:** 深度バッファーの精度を最大限に高めるために、実装では視錐台を厳密に計算してください。 シャドウの方法に関するヒントについては、「[シャドウ深度マップを向上させるための一般的な方法](https://msdn.microsoft.com/library/windows/desktop/ee416324)」をご覧ください。
 
-## シャドウ パスの頂点シェーダー
+## <a name="vertex-shader-for-shadow-pass"></a>シャドウ パスの頂点シェーダー
 
 
 簡略化したバージョンの頂点シェーダーを使って、ライト空間内の頂点の位置だけをレンダリングします。 照明法線や二次変換などを含めないでください。
@@ -153,10 +160,5 @@ PixelShaderInput main(VertexShaderInput input)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

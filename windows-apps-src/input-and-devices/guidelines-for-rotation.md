@@ -5,9 +5,16 @@ title: "回転"
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 3217dd6bda6d9692ff450133af23002a7040347b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6b5d2e6a41c1566c7c03b61b91bf9c641f674cea
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -126,10 +133,5 @@ Windows 8 では、自由、制約付き、複合の 3 種類の回転をサポ
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

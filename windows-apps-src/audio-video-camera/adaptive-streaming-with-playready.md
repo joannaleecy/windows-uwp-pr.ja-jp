@@ -3,13 +3,20 @@ author: eliotcowley
 ms.assetid: BF877F23-1238-4586-9C16-246F3F25AE35
 description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリに、Microsoft PlayReady コンテンツ保護を使ったマルチメディア コンテンツのアダプティブ ストリーミングを追加する方法について説明します。"
 title: "PlayReady を使ったアダプティブ ストリーミング"
+ms.author: elcowle
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 8534598b1f3cf49b15a73d03f6f19e67877b25d0
-ms.openlocfilehash: 22e430fd6dafe49fb3bf599fec91a9ab3dbd6b95
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 861ec2823080192a5b2d9b557af14ca5e3ab43fb
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# PlayReady を使ったアダプティブ ストリーミング
+# <a name="adaptive-streaming-with-playready"></a>PlayReady を使ったアダプティブ ストリーミング
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -58,7 +65,7 @@ private string playReadyChallengeCustomData = "";
 private const uint MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED = 0x8004B895;
 ```
 
-## MediaProtectionManager の設定
+## <a name="setting-up-the-mediaprotectionmanager"></a>MediaProtectionManager の設定
 
 PlayReady コンテンツ保護を UWP アプリに追加するには、[MediaProtectionManager](https://msdn.microsoft.com/library/windows/apps/br207040) オブジェクトを設定する必要があります。 これは、[**AdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn946912) オブジェクトを初期化するときに行います。
 
@@ -136,7 +143,7 @@ private async void ProtectionManager_ServiceRequested(
 }
 ```
 
-## 個別化サービス要求
+## <a name="individualization-service-requests"></a>個別化サービス要求
 
 次のコードでは、PlayReady 個別化サービス要求を事後対応的に行います。 要求は、パラメーターとして関数に渡します。 呼び出しは try/catch ブロックで囲み、例外がない場合は要求が正常に完了したと見なされます。
 
@@ -187,7 +194,7 @@ async void ProActiveIndivRequest()
 }
 ```
 
-## ライセンス取得サービス要求
+## <a name="license-acquisition-service-requests"></a>ライセンス取得サービス要求
 
 代わりに、要求が [PlayReadyLicenseAcquisitionServiceRequest](https://msdn.microsoft.com/library/windows/apps/dn986285) であった場合、次の関数を呼び出して PlayReady ライセンスを要求および取得します。 要求が成功したかどうかを、渡した **MediaProtectionServiceCompletion** オブジェクトに通知し、要求を完了します。
 
@@ -269,7 +276,7 @@ async void LicenseAcquisitionRequest(
 }
 ```
 
-## AdaptiveMediaSource の初期化
+## <a name="initializing-the-adaptivemediasource"></a>AdaptiveMediaSource の初期化
 
 最後に、特定の [Uri](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) と [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926) から作成された [AdaptiveMediaSource](https://msdn.microsoft.com/library/windows/apps/dn946912) を初期化するための関数が必要になります。 **Uri** は、メディア ファイル (HLS または DASH) へのリンクです。**MediaElement** は、XAML で定義されます。
 
@@ -292,15 +299,10 @@ async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
 
 この関数は、アダプティブ ストリーミングの開始をどのイベント (たとえば、ボタン クリック イベント) で処理する場合でも呼び出すことができます。
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 - [PlayReady DRM](playready-client-sdk.md)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

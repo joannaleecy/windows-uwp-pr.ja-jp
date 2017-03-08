@@ -3,10 +3,16 @@ author: mcleanbyron
 Description: "ユーザーがアプリを無料で使うことができる試用期間を設け、その期間中は一部の機能を除外または制限することで、アプリを通常版にアップグレードするようユーザーに促すことができます。"
 title: "試用版での機能の除外または制限"
 ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056
-keywords: "無料試用版のコード サンプル"
+keywords: "Windows 10, UWP, 試用, アプリ内購入, IAP, Windows.ApplicationModel.Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: 0d377677237264e2dad290c7d49c47800c255138
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8b55c837e63792e6da4e684602e79d99ad7cff1e
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -120,9 +126,4 @@ ms.openlocfilehash: 0d377677237264e2dad290c7d49c47800c255138
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

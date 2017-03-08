@@ -3,9 +3,16 @@ author: mcleblanc
 description: "移植プロセスを開始するとき、2 つの方法から選ぶことができます。"
 title: "Windows ランタイム 8.x プロジェクトの UWP プロジェクトへの移植&quot;"
 ms.assetid: 2dee149f-d81e-45e0-99a4-209a178d415a
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: bd0526404f7e8f7fb87a0798c4e0c06bd9305c19
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d711d981a674d1516b12ee11c379e679c45dcb60
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -33,8 +40,8 @@ ms.openlocfilehash: bd0526404f7e8f7fb87a0798c4e0c06bd9305c19
 -   すべてのデバイス ファミリに共通するファイルについては、特に考慮する必要はありません。 これらのファイルは、実行対象となるすべてのデバイス ファミリで、アプリが使うファイルです。 これには、XAML マークアップ ファイル、命令型ソース コード ファイル、アセット ファイルが含まれます。
 -   実行されているデバイス ファミリをアプリで検出し、そのデバイス ファミリ専用に設計されたビューに移動させることができます。 詳しくは、「[アプリが実行されているプラットフォームの検出](w8x-to-uwp-input-and-sensors.md)」をご覧ください。
 -   プラットフォームを検出するための代替方法がない場合に役立つと考えられる同様の手法として、マークアップ ファイルや **ResourceDictionary** ファイル (またはこのファイルが保存されているフォルダー) に対して特殊な名前を設定する方法があります。この特殊な名前によって、アプリが特定のデバイス ファミリで実行される場合にのみ、これらのファイルが実行時に自動的に読み込まれるようになります。 この手法については、「[Bookstore1](w8x-to-uwp-case-study-bookstore1.md)」のケース スタディをご覧ください。
--   Windows 10 のみをサポートする必要がある場合は、ユニバーサル 8.1 アプリのソース コードに含まれている多数の条件付きコンパイル ディレクティブを削除できます。 このトピックの「[条件付きコンパイルとアダプティブ コード](#reviewing-conditional-compilation)」をご覧ください。
--   一部のデバイス ファミリでのみ利用できる機能 (プリンター、スキャナー、またはカメラのボタンなど) を使うには、アダプティブ コードを記述します。 このトピックの「[条件付きコンパイルとアダプティブ コード](#reviewing-conditional-compilation)」に記載されている 3 番目の例をご覧ください。
+-   Windows 10 のみをサポートする必要がある場合は、ユニバーサル 8.1 アプリのソース コードに含まれている多数の条件付きコンパイル ディレクティブを削除できます。 このトピックの「[条件付きコンパイルとアダプティブ コード](#conditional-compilation-and-adaptive-code)」をご覧ください。
+-   一部のデバイス ファミリでのみ利用できる機能 (プリンター、スキャナー、またはカメラのボタンなど) を使うには、アダプティブ コードを記述します。 このトピックの「[条件付きコンパイルとアダプティブ コード](#conditional-compilation-and-adaptive-code)」に記載されている 3 番目の例をご覧ください。
 -   Windows 8.1、Windows Phone 8.1、および Windows 10 をサポートする必要がある場合は、3 つのプロジェクトを同じソリューション内に保持し、共有プロジェクトを使ってコードを共有することができます。 または、プロジェクト間でソース コード ファイルを共有することができます。 Visual Studio でこのような処理を行うには、**ソリューション エクスプローラー**でプロジェクトを右クリックして **[既存項目の追加]** を選択し、共有するファイルを選択して **[リンクとして追加]** をクリックします。 リンクしたプロジェクトを確認できるファイル システム上の共通のフォルダーにソース コード ファイルを格納します。 また、ソース コントロールに追加することを忘れないでください。
 -   ソース コード レベルではなくバイナリ レベルでの再利用については、「[C# および Visual Basic での Windows ランタイム コンポーネントの作成](http://msdn.microsoft.com/library/windows/apps/xaml/br230301.aspx)」をご覧ください。 また、Windows 8.1、Windows Phone 8.1、Windows 10 (.NET Core) の各アプリ用の .NET Framework で利用できる .NET API のサブセットやフル バージョンの .NET Framework をサポートするポータブル クラス ライブラリがあります。 ポータブル クラス ライブラリ アセンブリは、これらのプラットフォームすべてとバイナリ レベルで互換性があります。 Visual Studio を使って、ポータブル クラス ライブラリをターゲットとするプロジェクトを作成します。 「[汎用性のあるクラス ライブラリを使用したプラットフォーム間の開発](http://msdn.microsoft.com/library/gg597391.aspx)」をご覧ください。
 
@@ -62,11 +69,11 @@ ms.openlocfilehash: bd0526404f7e8f7fb87a0798c4e0c06bd9305c19
 
 API を実装するデバイス ファミリがアプリのターゲットではない場合は、[**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) クラスを使って、API を呼び出す前に API の有無をテストする必要があります (これはアダプティブ コードと呼ばれます)。 このテストの条件は、アプリの実行時に必ず評価されますが、API が存在するデバイスに対してのみ true と評価され、呼び出しが可能になります。 ユニバーサル API が存在するかどうかを最初に確認した後では、拡張 SDK とアダプティブ コードのみを使います。 次のセクションで、例をいくつか示します。
 
-「[アプリ パッケージ マニフェスト](#appxpackage)」もご覧ください。
+「[アプリ パッケージ マニフェスト](#app-package-manifest)」もご覧ください。
 
 ## <a name="conditional-compilation-and-adaptive-code"></a>条件付きコンパイルとアダプティブ コード
 
-コード ファイルが Windows 8.1 と Windows Phone 8.1 の両方で動作するように、条件付きコンパイル (C# プリプロセッサ ディレクティブによる条件付きコンパイル) を使っている場合は、Windows 10 に対して実行される集約作業を考慮して、その条件付きコンパイルを確認できます。 この集約作業では、Windows 10 アプリで、いくつかの条件を完全に削除できることを意味します。 削除されない条件は、次に説明するように実行時チェックに変更します。
+コード ファイルが Windows 8.1 と Windows Phone 8.1 の両方で動作するように、条件付きコンパイル (C# プリプロセッサ ディレクティブによる条件付きコンパイル) を使っている場合は、Windows 10 で行われた集約作業を考慮して、その条件付きコンパイルを見直すことができます。 この集約作業では、Windows 10 アプリで、いくつかの条件を完全に削除できることを意味します。 削除されない条件は、次に説明するように実行時チェックに変更します。
 
 **注**   1 つのコード ファイルで Windows 8.1、Windows Phone 8.1、Windows 10 をサポートする場合も、同様の確認作業を実行できます。 プロジェクトのプロパティ ページで Windows 10 プロジェクトを確認すると、プロジェクトでは条件付きコンパイル シンボルとして WINDOWS\_UAP が定義されていることがわかります。 このため、このシンボルを WINDOWS\_APP や WINDOWS\_PHONE\_APP と組み合わせて使うことができます。 次の例では、ユニバーサル 8.1 アプリから条件付きコンパイルを削除し、Windows 10 アプリ用の同等のコードで置き換えるシンプルなケースを紹介します。
 
@@ -159,9 +166,9 @@ private void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input
 
 ## <a name="app-package-manifest"></a>アプリ パッケージ マニフェスト
 
-「 [Windows 10 の変更点](https://msdn.microsoft.com/library/windows/apps/dn705793) 」トピックには、Windows 10 のパッケージ マニフェスト スキーマ リファレンスに対する変更点 (追加、削除、変更された要素など) が記載されています。 このスキーマのすべての要素、属性、タイプに関するリファレンス情報については、「[要素の階層](https://msdn.microsoft.com/library/windows/apps/dn934819)」をご覧ください。 Windows Phone ストア アプリを移植する場合は、移植先のアプリ マニフェスト内の **pm:PhoneIdentity** 要素が、移植元のアプリのアプリ マニフェスト内の要素と一致していることを確認してください (詳しくは、「[**pm:PhoneIdentity**](https://msdn.microsoft.com/library/windows/apps/dn934763)」トピックをご覧ください)。
+「 [Windows 10 の変更点](https://msdn.microsoft.com/library/windows/apps/dn705793) 」トピックには、Windows 10 のパッケージ マニフェスト スキーマ リファレンスに対する変更点 (追加、削除、変更された要素など) が記載されています。 このスキーマのすべての要素、属性、型に関するリファレンス情報については、「[要素の階層](https://msdn.microsoft.com/library/windows/apps/dn934819)」をご覧ください。 Windows Phone ストア アプリを移植する場合、または Windows Phone ストアのアプリに対する更新となるアプリを作成する場合は、**pm:PhoneIdentity** 要素が、以前のアプリのアプリ マニフェストの値と一致していることを確認してください (ストアからアプリに割り当てられたものと同じ GUID を使用してください)。 これにより、アプリのユーザーが Windows 10 にアップグレードした場合に、新しいアプリが確実に更新プログラムとして配布され、アプリの重複を避けることができます。 詳しくは、[**pm:PhoneIdentity**](https://msdn.microsoft.com/library/windows/apps/dn934763) のリファレンス トピックをご覧ください。
 
-プロジェクトの設定 (すべての拡張 SDK の参照を含む) により、アプリが呼び出すことができる API サーフェス領域が決定されます。 ただし、ユーザーがアプリをストアからインストールできる実際のデバイスのセットを決定するのは、アプリ パッケージ マニフェストです。 詳しくは、「[**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903)」の例をご覧ください。
+アプリが呼び出すことのできる API サーフェス領域は、プロジェクトの設定 (拡張 SDK の参照を含む) によって決定されます。 ただし、ユーザーがアプリをストアからインストールできる実際のデバイスのセットを決定するのは、アプリ パッケージ マニフェストです。 詳しくは、「[**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903)」の例をご覧ください。
 
 さまざまな宣言、機能、および一部の機能で必要となる他の設定を指定するように、アプリ パッケージ マニフェストを編集できます。 Visual Studio アプリ パッケージ マニフェスト エディターを使って、編集できます。 **ソリューション エクスプローラー**が表示されていない場合は、**[表示]** メニューから選択します。 **[Package.appxmanifest]** をダブルクリックします。 マニフェスト エディター ウィンドウが開きます。 変更する適切なタブを選び、保存します。
 
@@ -173,10 +180,5 @@ private void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input
 * [テンプレート (C#、C++、Visual Basic) を使った Windows ストア アプリ開発に着手する](https://msdn.microsoft.com/library/windows/apps/hh768232)
 * [Windows ランタイム コンポーネントの作成](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 * [Cross-Platform Development with the Portable Class Library (.NET Framework を使用したプラットフォーム間の開発)](http://msdn.microsoft.com/library/gg597391.aspx)
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

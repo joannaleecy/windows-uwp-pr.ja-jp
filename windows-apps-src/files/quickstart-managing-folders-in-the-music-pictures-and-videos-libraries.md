@@ -3,9 +3,16 @@ author: laurenhughes
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
 title: "ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー"
 description: "音楽、画像、またはビデオの既存のフォルダーを対応するライブラリに追加できます。 ライブラリからフォルダーを削除したり、ライブラリ内のフォルダーの一覧を取得したり、保存した写真、音楽、ビデオにアクセスしたりすることもできます。"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: 4e2b7d10e1d24427aede21ccae176d7cd55f9de8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 18acfda780211a008a3c5febdcbff2bf007ff379
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -243,9 +250,4 @@ using (var sourceStream = await sourceFile.OpenReadAsync())
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

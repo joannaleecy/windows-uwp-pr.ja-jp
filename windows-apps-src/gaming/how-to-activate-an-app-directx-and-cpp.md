@@ -3,20 +3,27 @@ author: mtoepke
 title: "アプリをアクティブ化する方法 (DirectX と C++)"
 description: "ここでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリのアクティブ化エクスペリエンスを定義する方法について説明します。"
 ms.assetid: b07c7da1-8a5e-5b57-6f77-6439bf653a53
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, DirectX, アクティブ化"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0b13604d2b0349817881a5c1c56c311931c90759
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4d3585e28ca4a3665a881df4f16a3cc3f82fcc52
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アプリをアクティブ化する方法 (DirectX と C++)
+# <a name="how-to-activate-an-app-directx-and-c"></a>アプリをアクティブ化する方法 (DirectX と C++)
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 ここでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリのアクティブ化エクスペリエンスを定義する方法について説明します。
 
-## アプリのアクティブ化イベント ハンドラーを登録する
+## <a name="register-the-app-activation-event-handler"></a>アプリのアクティブ化イベント ハンドラーを登録する
 
 
 まず、[**CoreApplicationView::Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントを処理するための登録を行います。このイベントは、アプリが開始され、オペレーティング システムによって初期化されるときに発生します。
@@ -36,7 +43,7 @@ void App::Initialize(CoreApplicationView^ applicationView)
 }
 ```
 
-## アプリの CoreWindow インスタンスをアクティブ化する
+## <a name="activate-the-corewindow-instance-for-the-app"></a>アプリの CoreWindow インスタンスをアクティブ化する
 
 
 アプリの起動時に、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) への参照を取得する必要があります。 **CoreWindow** には、アプリがウィンドウ イベントの処理に使うウィンドウ イベント メッセージ ディスパッチャーが含まれています。 アプリのアクティブ化イベントのコールバックで、[**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) を呼び出して、この参照を取得します。 この参照を取得したら、[**CoreWindow::Activate**](https://msdn.microsoft.com/library/windows/apps/br208254) を呼び出して、メイン アプリ ウィンドウをアクティブ化します。
@@ -49,7 +56,7 @@ void App::OnActivated(CoreApplicationView^ applicationView, IActivatedEventArgs^
 }
 ```
 
-## メイン アプリ ウィンドウのイベント メッセージの処理の開始
+## <a name="start-processing-event-message-for-the-main-app-window"></a>メイン アプリ ウィンドウのイベント メッセージの処理の開始
 
 
 作成したコールバックは、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) の [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) によって処理されるイベント メッセージとして発生します。 このコールバックは、アプリのメイン ループ (ビュー プロバイダーの [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) メソッドで実装) から [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) を呼び出さない場合は呼び出されません。
@@ -79,7 +86,7 @@ void App::Run()
 }
 ```
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [アプリを一時停止する方法 (DirectX と C++)](how-to-suspend-an-app-directx-and-cpp.md)
@@ -91,10 +98,5 @@ void App::Run()
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -1,14 +1,22 @@
 ---
 author: awkoren
 Description: "この記事では、Desktop to UWP Bridge の内部的な処理について詳しく説明します。"
-title: "Desktop Bridge の内側"
+title: "デスクトップ ブリッジの内側"
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 translationtype: Human Translation
-ms.sourcegitcommit: fe96945759739e9260d0cdfc501e3e59fb915b1e
-ms.openlocfilehash: c261f40734ab40475ca3a8e0b7c3bea7b64afacd
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: e9a26e201d5059a0e5f7d41f6f11afbb41549596
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Desktop Bridge の内側
+# <a name="behind-the-scenes-of-the-desktop-bridge"></a>デスクトップ ブリッジの内側
 
 この記事では、Desktop to UWP Bridge の内部的な処理について詳しく説明します。
 
@@ -16,13 +24,13 @@ Desktop to UWP Bridge の主な目的は、他のアプリとの互換性を維�
 
 変換済みのアプリ パッケージは、完全に信頼できるデスクトップ専用アプリケーションであり、仮想化やサンド ボックス化は行われません。 このため、従来のデスクトップ アプリケーションと同じように、他のアプリとやり取りすることが可能です。
 
-## インストール 
+## <a name="installation"></a>インストール 
 
 アプリ パッケージは *C:\Program Files\WindowsApps\package_name* にインストールされ、実行可能プログラム名は *app_name.exe* になります。 各パッケージ フォルダーには、変換済みのアプリ用の XML 名前空間を含むマニフェスト (AppxManifest.xml という名前) が含まれています。 マニフェスト ファイル内の ```<EntryPoint>``` 要素で、完全信頼アプリを参照します。 アプリが起動されると、アプリ コンテナー内では実行されず、ユーザーが通常実行するように実行されます。
 
 展開後、パッケージ ファイルは読み取り専用としてマークされ、オペレーティング システムによって厳重にロックダウンされます。 これらのファイルが改ざんされると、Windows によりアプリの起動が回避されます。 
 
-## ファイル システム
+## <a name="file-system"></a>ファイル システム
 
 ブリッジでは、アプリの状態を含めるために、アプリによる AppData への変更がキャプチャされます。 作成、削除、更新など、ユーザーの AppData フォルダー (例: *C:\Users\user_name\AppData*) に対する書き込みはすべて、書き込み時にユーザーごと、アプリごとのプライベートな場所にコピーされます。 つまり、変換済みアプリが AppData への編集を行っているように見えても、実際に行われているのはプライベート コピーへの変更です。 このように書き込みのリダイレクトを行うことで、アプリによって行われたすべてのファイル変更をシステムで追跡できます。 これにより、アプリのアンインストール時にシステムがこれらのファイルをクリーンアップできるため、システムの "劣化" を抑え、ユーザーから見たアプリ削除の操作を改善することができます。 
 
@@ -30,7 +38,7 @@ Desktop to UWP Bridge の主な目的は、他のアプリとの互換性を維�
 
 変換済みアプリ パッケージ内のファイルまたはフォルダーへの書き込みは、許可されていません。 パッケージに含まれないファイルやフォルダーへの書き込みは、ブリッジでは無視され、ユーザーにアクセス許可があれば許可されます。
 
-### 一般的な操作
+### <a name="common-operations"></a>一般的な操作
 
 一般的なファイル システム操作とブリッジでの処理方法を以下に示します。 
 
@@ -41,7 +49,7 @@ AppData 内の書き込み | 書き込み時に、ユーザーごと、アプリ
 パッケージ内の書き込み | 許可されていません。 パッケージは読み取り専用です。 | *C:\Program Files\WindowsApps\package_name* 内の書き込みは、許可されていません。
 パッケージ外の書き込み | ブリッジでは無視されます。 ユーザーにアクセス許可があれば、許可されます。 | *C:\Windows\System32\foo.dll* への書き込みは、パッケージに *C:\Program Files\WindowsApps\package_name\VFS\SystemX86\foo.dll* が含まれておらずユーザーにアクセス許可があれば許可されます。
 
-### パッケージ化された VFS の場所
+### <a name="packaged-vfs-locations"></a>パッケージ化された VFS の場所
 
 次の表は、パッケージの一部として含まれるファイルが、システム上でアプリのためにどのように配置されるかを示しています。 これらのファイルは、アプリではここに示されているシステム内の場所にあると認識されますが、実際にはリダイレクトされており、*C:\Program Files\WindowsApps\package_name\VFS* 内の場所に配置されます。 FOLDERID の場所は [**KNOWNFOLDERID**](https://msdn.microsoft.com/library/windows/desktop/dd378457.aspx) 定数で示されます。
 
@@ -62,7 +70,7 @@ FOLDERID_System\driverstore | AppVSystem32Driverstore | x86、amd64
 FOLDERID_System\logfiles | AppVSystem32Logfiles | x86、amd64 
 FOLDERID_System\spool | AppVSystem32Spool | x86、amd64 
 
-## レジストリ
+## <a name="registry"></a>レジストリ
 
 ブリッジでは、レジストリがファイル システムと同じように処理されます。 変換済みアプリ パッケージには、registry.dat ファイルが含まれています。このファイルは、実際のレジストリ内の *HKLM\Software* に論理的に対応しています。 実行時には、この仮想レジストリのハイブの内容がネイティブ システム ハイブにマージされ、両方が一括して表示されます。 たとえば、registry.dat に単一のキー "Foo" が含まれている場合、実行時に *HKLM\Software* を読み取ると、(すべてのネイティブ システム キーに加えて) "Foo" も含まれているように表示されます。 
 
@@ -72,7 +80,7 @@ HKCU 以下の書き込みはすべて、書き込み時にユーザーごと、
 
 書き込みはすべて、パッケージのアップグレード中には保持され、アプリが完全に削除された場合にのみ削除されます。 
 
-### 一般的な操作
+### <a name="common-operations"></a>一般的な操作
 
 一般的なレジストリ操作とブリッジでの処理方法を以下に示します。 
 
@@ -83,12 +91,7 @@ HKCU 以下の書き込み | 書き込み時に、ユーザーごと、アプリ
 パッケージ内の書き込み | 許可されていません。 パッケージは読み取り専用です。 | 対応するキー/値がパッケージ ハイブに存在する場合、*HKLM\Software* 以下の書き込みは許可されません。
 パッケージ外の書き込み | ブリッジでは無視されます。 ユーザーにアクセス許可があれば、許可されます。 | *HKLM\Software* 以下の書き込みは、対応するキー/値がパッケージに含まれておらずユーザーに適切なアクセス許可があれば許可されます。
 
-## アンインストール 
+## <a name="uninstallation"></a>アンインストール 
 
 パッケージがユーザーによってアンインストールされると、*C:\Program Files\WindowsApps\package_name* 以下にあるすべてのファイルとフォルダーが削除されます。また、AppData またはレジストリにリダイレクトされ、ブリッジによってキャプチャされた書き込みも削除されます。 
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

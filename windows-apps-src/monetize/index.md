@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 4e8cc0c0-b14c-472c-9e1c-4601d10289d2
 description: "Windows SDK、Microsoft Store Services SDK、および Windows ストアは、アプリによる収益の向上と顧客エンゲージメントによるユーザー獲得のための、多くの機能を提供します。"
 title: "収益化、顧客エンゲージメント、ストア サービス"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 収益化, エンゲージメント, プロモーション, ストア サービス"
 translationtype: Human Translation
-ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
-ms.openlocfilehash: e8a4c40dbc715d82d6f41fef8a49df5bfdfa79ae
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5a3497d5aa1c8a4415b7b4fb9f7888448ae74f9f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -35,9 +42,4 @@ Windows ストアの手数料に関する説明とアプリの収益を受け取
 * [ユーザー セグメントを作成する](../publish/create-customer-segments.md)
 * [フィードバック レポート](../publish/feedback-report.md)
 * [利用状況レポート](../publish/usage-report.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

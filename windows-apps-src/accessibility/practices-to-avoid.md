@@ -5,12 +5,19 @@ ms.assetid: 024A9B70-9821-45BB-93F1-61C0B2ECF53E
 title: "アクセシビリティ対応にするために避ける事項"
 label: Accessibility practices to avoid
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 014fb096817a25651188821fa59b202d260781d5
-ms.openlocfilehash: 382899f038e2ac2ad6e34e98b3ba4849e9685d10
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 27e91fad32818a920f393cba703773ea7fddcf0d
+ms.lasthandoff: 02/07/2017
 
 ---
-# アクセシビリティ対応にするために避ける事項
+# <a name="accessibility-practices-to-avoid"></a>アクセシビリティ対応にするために避ける事項
 
 アクセシビリティ対応のユニバーサル Windows プラットフォーム (UWP) アプリを作成する際は、こちらの避ける事項の一覧をご覧ください。 
 
@@ -29,13 +36,8 @@ ms.openlocfilehash: 382899f038e2ac2ad6e34e98b3ba4849e9685d10
 * **ユーザー コンテキストを変えたり自動的に機能をアクティブ化しないようにします。** コンテキストやアクティブ化の変更は、フォーカスのある UI 要素上でユーザーが直接操作したときにだけ行うようにします。 ユーザー コンテキストの変更には、フォーカスの変更、新しいコンテンツの表示、別のページへの移動が含まれます。 ユーザーと無関係に行われるコンテキストの変更は、障碍のあるユーザーを混乱させる可能性があります。 この要件の例外としては、サブメニューの表示、フォームの検証、別のコントロールでのヘルプ テキストの表示、非同期イベントへの応答によるコンテキストの変更などがあります。
 
 <span id="related_topics"/>
-## 関連トピック  
+## <a name="related-topics"></a>関連トピック  
 * [アクセシビリティ](accessibility.md)
 * [ストア内のアクセシビリティ](accessibility-in-the-store.md)
 * [アクセシビリティのチェック リスト](accessibility-checklist.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

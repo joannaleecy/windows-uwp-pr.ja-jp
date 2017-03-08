@@ -3,19 +3,26 @@ author: jwmsft
 description: "ランタイム オブジェクト グラフの相対関係に関するバインドのソースを指定する手段を提供します。"
 title: "RelativeSource マークアップ拡張"
 ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: ec4c9b87655425e82a1cb792d0acc6bee265e9d2
-ms.openlocfilehash: b6af0ce865713ed0da39a87aa63799d3f89b7e89
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 46b48e8e1ef1efbff7248ddf54c22e5a8bc29deb
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# {RelativeSource} マークアップ拡張
+# <a name="relativesource-markup-extension"></a>{RelativeSource} マークアップ拡張
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 ランタイム オブジェクト グラフの相対関係に関するバインドのソースを指定する手段を提供します。
 
-## XAML 属性の使用方法 (Self モード)
+## <a name="xaml-attribute-usage-self-mode"></a>XAML 属性の使用方法 (Self モード)
 
 ``` syntax
 <Binding RelativeSource="{RelativeSource Self}" .../>
@@ -23,7 +30,7 @@ ms.openlocfilehash: b6af0ce865713ed0da39a87aa63799d3f89b7e89
 <object property="{Binding RelativeSource={RelativeSource Self} ...}" .../>
 ```
 
-## XAML 属性の使用方法 (TemplatedParent モード)
+## <a name="xaml-attribute-usage-templatedparent-mode"></a>XAML 属性の使用方法 (TemplatedParent モード)
 
 ``` syntax
 <Binding RelativeSource="{RelativeSource TemplatedParent}" .../>
@@ -31,14 +38,14 @@ ms.openlocfilehash: b6af0ce865713ed0da39a87aa63799d3f89b7e89
 <object property="{Binding RelativeSource={RelativeSource TemplatedParent} ...}" .../>
 ```
 
-## XAML 値
+## <a name="xaml-values"></a>XAML 値
 
 | 用語 | 説明 |
 |------|-------------|
 | {RelativeSource Self} | <strong>Self</strong> の [<strong>Mode</strong>](https://msdn.microsoft.com/library/windows/apps/br209915) 値を生成します。 ターゲット要素をこのバインドのソースとして使う必要があります。 要素の 1 つのプロパティを同じ要素の別のプロパティにバインドする場合に便利です。 |
 | {RelativeSource TemplatedParent} | このバインドのソースとして適用される [<strong>ControlTemplate</strong>](https://msdn.microsoft.com/library/windows/apps/br209391) を生成します。 ランタイム情報をテンプレート レベルでバインドに適用する場合に便利です。 | 
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) では、**Binding** オブジェクト要素の属性または [{Binding} マークアップ拡張](binding-markup-extension.md)内のコンポーネントとして [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) を設定できます。 これが、2 つの異なる XAML 構文が示されている理由です。
 
@@ -59,17 +66,12 @@ ms.openlocfilehash: b6af0ce865713ed0da39a87aa63799d3f89b7e89
 
 **注**  XAML での **RelativeSource** の使用法には、意図されている使用法、つまり、バインド式の一部として XAML で [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) の値を設定する方法のみが示されています。 ただし、値が [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913) のプロパティを設定する場合は、理論的にそれ以外の使用法も可能です。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [XAML の概要](xaml-overview.md)
 * [データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [{Binding} マークアップ拡張](binding-markup-extension.md)
 * [**バインディング**](https://msdn.microsoft.com/library/windows/apps/br209820)
 * [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

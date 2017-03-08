@@ -3,14 +3,20 @@ author: mcleanbyron
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
 description: "Microsoft Advertising ライブラリをインストールする方法について説明します。"
 title: "Microsoft Advertising ライブラリのインストール"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 広告, 宣伝, インストール, SDK, ライブラリ"
 translationtype: Human Translation
-ms.sourcegitcommit: 126fee708d82f64fd2a49b844306c53bb3d4cc86
-ms.openlocfilehash: c717fa693c6edf8757c3eef79d60193434104bd8
-
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 034b597c945f9f12700ac442e4b3014b0bc84c78
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Microsoft Advertising ライブラリのインストール
+# <a name="install-the-microsoft-advertising-libraries"></a>Microsoft Advertising ライブラリのインストール
 
 
 
@@ -23,7 +29,7 @@ Windows 8.1 および Windows Phone 8.x 用の XAML アプリと JavaScript/HTML
 
 Windows Phone Silverlight 8.x アプリ向けには、Microsoft Advertising ライブラリは NuGet パッケージとして提供されています。このパッケージは、ダウンロードしてプロジェクトにインストールできます。 詳しくは、「[Windows Phone Silverlight の AdControl](adcontrol-in-windows-phone-silverlight.md)」をご覧ください。
 
-## 広告用のライブラリの名前
+## <a name="library-names-for-advertising"></a>広告用のライブラリの名前
 
 
 Windows および Windows Phone 8.x 用の Microsoft Store Services SDK と Microsoft Advertising SDK には、いくつか次のような広告ライブラリが用意されています。
@@ -100,9 +106,4 @@ Windows および Windows Phone 8.x 用の Microsoft Store Services SDK と Micr
  
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

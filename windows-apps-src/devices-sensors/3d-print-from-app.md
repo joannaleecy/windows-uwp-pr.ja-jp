@@ -3,16 +3,23 @@ author: PatrickFarley
 title: "アプリからの 3D 印刷"
 description: "ユニバーサル Windows アプリに 3D 印刷機能を追加する方法について説明します。 このトピックでは、3D モデルが印刷可能であり、正しい形式になっていることを確認した後で 3D 印刷ダイアログを起動する方法について説明します。"
 ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: e2b88b0eb88d0a3d8d1a5fb944bd4d00a50012e0
-ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 89ab7a65df0a8415d508e5831a22b2c522308f95
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アプリからの 3D 印刷
+# <a name="3d-printing-from-your-app"></a>アプリからの 3D 印刷
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 
 **重要な API**
@@ -24,7 +31,7 @@ ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
 > [!NOTE]
 > このガイドのサンプル コードでは、簡単にするためにエラー レポートと処理が大幅に簡略化されています。
 
-## クラス セットアップ
+## <a name="class-setup"></a>クラス セットアップ
 
 
 3D 印刷機能を搭載するクラスで、[**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/dn998169) 名前空間を追加します。
@@ -39,7 +46,7 @@ ms.openlocfilehash: b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7
 
 [!code-cs[DeclareVars](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetDeclareVars)]
 
-## シンプルな UI の作成
+## <a name="create-a-simple-ui"></a>シンプルな UI の作成
 
 このサンプルでは、プログラム メモリにファイルを読み込む読み込みボタン、必要に応じてファイルを変更する修正ボタン、印刷ジョブを開始する印刷ボタンの 3 つのユーザー コントロールを使います。 次のコードで、これらのボタン (クリック イベント ハンドラー付き) をクラスの XAML ファイルに作成します。
 
@@ -51,7 +58,7 @@ UI フィードバック用に **TextBlock** を追加します。
 
 
 
-## 3D データの取得
+## <a name="get-the-3d-data"></a>3D データの取得
 
 
 アプリでは、さまざまな方法で、3D 形状データを取得することができます。 たとえば、3D スキャンからデータを取得したり、Web リソースからのモデル データをダウンロードしたり、数式やユーザー入力を使ってプログラムによって 3D メッシュを生成したりできます。 ここでは簡単にするために、3D データ ファイル (一般的なファイルの種類のいずれか) をデバイスのストレージからプログラム メモリに読み込む方法を示します。 [3D Builder モデル ライブラリ](https://developer.microsoft.com/windows/hardware/3d-builder-model-library)には幅広いモデルが用意されており、デバイスに簡単にダウンロードできます。
@@ -60,7 +67,7 @@ UI フィードバック用に **TextBlock** を追加します。
 
 [!code-cs[FileLoad](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetFileLoad)]
 
-## 3D Builder による 3D Manufacturing Format (.3mf) への変換
+## <a name="use-3d-builder-to-convert-to-3d-manufacturing-format-3mf"></a>3D Builder による 3D Manufacturing Format (.3mf) への変換
 
 これで、3D データ ファイルをアプリのメモリに読み込むことができます。 ただし、3D 形状データには、さまざまな形式がありますが、すべてが 3D 印刷に効率的であるわけではありません。 Windows 10 では、すべての 3D 印刷タスクについて 3D Manufacturing Format (.3mf) というファイル形式を使います。
 
@@ -76,7 +83,7 @@ UI フィードバック用に **TextBlock** を追加します。
 
 [!code-cs[FileCheck](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetFileCheck)]
 
-## 3D 印刷可能なモデル データへの修復
+## <a name="repair-model-data-for-3d-printing"></a>3D 印刷可能なモデル データへの修復
 
 .3mf 形式であっても、すべての 3D モデル データが印刷可能なわけではありません。 どこを埋めて何を空洞のままにするかをプリンターに正しく判断させるには、印刷する (各) モデルが 1 つのシームレスなメッシュであること、モデルの面の法線が外側を向いていること、またモデルがマニホールド形状であることが必要条件となります。 これらの問題は、さまざまな形で現れることがあり、図形が複雑な場合は、見つけるのが難しいことがあります。 幸いなことに、最新のソフトウェア ソリューションは、多くの場合、元データの形状を印刷可能な 3D 図形に変換するのに十分な機能を備えています。 これはモデルの*修復*と呼ばれ、`OnFixClick` メソッドで行われます。
 
@@ -88,7 +95,7 @@ UI フィードバック用に **TextBlock** を追加します。
 
 [!code-cs[SaveModel](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetSaveModel)]
 
-## 印刷タスクの実行: TaskRequested ハンドラーの作成
+## <a name="execute-printing-task-create-a-taskrequested-handler"></a>印刷タスクの実行: TaskRequested ハンドラーの作成
 
 
 3D 印刷ダイアログをユーザーに表示してユーザーが印刷を開始したときに、アプリが目的のパラメーターを 3D 印刷パイプラインに渡す必要があります。 3D 印刷 API によって、**TaskRequested** イベントが発生します。 このイベントを適切に処理するメソッドを記述する必要があります。 通常どおり、ハンドラー メソッドはイベントと同じ型である必要があります。**TaskRequested** イベントには、パラメーター [**Print3DManager**](https://msdn.microsoft.com/library/windows/apps/dn998029) (センダー オブジェクトへの参照) と [**Print3DTaskRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn998051) オブジェクト (ほとんどの関連情報を保持するオブジェクト) があります。 戻り値の型は **void** です。
@@ -114,7 +121,7 @@ UI フィードバック用に **TextBlock** を追加します。
 > [!NOTE]  
 > これらのイベントに `Task_Submitting` および `Task_Completed` メソッドを登録するには、それらを実装する必要があります。
 
-## 印刷タスクの実行: 3D 印刷ダイアログを開く
+## <a name="execute-printing-task-open-3d-print-dialog"></a>印刷タスクの実行: 3D 印刷ダイアログを開く
 
 
 最後に 3D 印刷ダイアログを起動する短いコードが必要になります。 従来の印刷ダイアログ ウィンドウと同じように、3D 印刷ダイアログでも、最後に使った印刷オプションがいくつか表示され、ユーザーは使うプリンターを (USB かネットワーク接続かに関係なく) 選択することができます。
@@ -131,20 +138,11 @@ UI フィードバック用に **TextBlock** を追加します。
 
 [!code-cs[DeregisterMyTaskRequested](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetDeregisterMyTaskRequested)]
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 [3MF パッケージの生成](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf)  
 [3D 印刷の UWP サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

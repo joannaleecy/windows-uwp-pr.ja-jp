@@ -3,20 +3,27 @@ description: "この記事では、ユニバーサル Windows プラットフォ
 title: "データの受信"
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b8d627da82da463b87ace2a2ef6e739b1caafaa2
-ms.openlocfilehash: 0092fe2832eeafbc4e7cfa36a3444b9551a4f672
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1d15bfb6bfed16d1b71313fd5a5f29ceeef3bd3e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# データの受信
+# <a name="receive-data"></a>データの受信
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
 この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで、共有コントラクトを使用して別のアプリから共有されたコンテンツを受け取る方法について説明します。 共有コントラクトを使うと、ユーザーが共有機能を呼び出したときに、アプリをオプションとして提示できます。
 
-## アプリを共有ターゲットとして宣言する
+## <a name="declare-your-app-as-a-share-target"></a>アプリを共有ターゲットとして宣言する
 
 ユーザーが共有を選択すると、ターゲット アプリの一覧が表示されます。 アプリを一覧に表示するには、そのアプリが共有コントラクトをサポートしていることを宣言する必要があります。 こうすることで、そのアプリでコンテンツを受け取ることができるとシステムに通知できます。
 
@@ -24,7 +31,7 @@ ms.openlocfilehash: 0092fe2832eeafbc4e7cfa36a3444b9551a4f672
 2.  **[宣言]** タブを開きます。
 3.  **[使用可能な宣言]** ボックスの一覧の **[共有ターゲット]** を選び、**[追加]** をクリックします。
 
-## ファイルの種類と形式を選択する
+## <a name="choose-file-types-and-formats"></a>ファイルの種類と形式を選択する
 
 次に、サポートするファイルの種類とデータ形式を決定します。 共有 API では、テキスト、HTML、ビットマップなど複数の標準形式がサポートされます。 カスタムのファイルの種類とデータ形式を指定することもできます。 これを行う場合は、その種類と形式をソース アプリが認識している必要があります。そうしないと、ソース アプリはその形式を使ってデータを共有できません。
 
@@ -42,7 +49,7 @@ ms.openlocfilehash: 0092fe2832eeafbc4e7cfa36a3444b9551a4f672
 2.  **[宣言]** ページの **[データ形式]** セクションを開き、**[新規追加]**をクリックします。
 3.  サポートすデータ形式の名前を入力します。たとえば、「テキスト」と入力します。
 
-## 共有のアクティブ化の処理
+## <a name="handle-share-activation"></a>共有のアクティブ化の処理
 
 ユーザーが (通常は共有 UI の使用可能なターゲット アプリの一覧から) アプリを選ぶと、[**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Application.OnShareTargetActivated(Windows.ApplicationModel.Activation.ShareTargetActivatedEventArgs)) イベントが発生します。 アプリはこのイベントを処理して、ユーザーが共有するデータを処理する必要があります。
 
@@ -68,7 +75,7 @@ if (shareOperation.Data.Contains(StandardDataFormats.Text))
 } 
 ```
 
-## 共有状態の報告
+## <a name="report-sharing-status"></a>共有状態の報告
 
 場合によっては、ユーザーが共有するデータをアプリが処理するのに時間がかかることがあります。 たとえば、ファイルまたは画像のコレクションを共有する場合などです。 このような項目は単純なテキスト文字列より大きいため、処理に時間がかかります。
 
@@ -98,7 +105,7 @@ shareOperation.ReportCompleted();
 
 これらのメソッドを使う場合は、通常、前に説明した順序で呼び出し、2 回以上呼び出さないようにしてください。 ただし、ターゲット アプリが [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted) の前に [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved) を呼び出すことができる場合があります。 たとえば、アプリがアクティブ化ハンドラーのタスクの一部としてデータを受信できるが、ユーザーが **[共有]** ボタンをクリックするまで **ReportStarted** を呼び出さない場合です。
 
-## 共有が成功した場合に QuickLink を返す
+## <a name="return-a-quicklink-if-sharing-was-successful"></a>共有が成功した場合に QuickLink を返す
 
 ユーザーがアプリでコンテンツを受け取ることを選んだときは、[**QuickLink**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink) を作成することをお勧めします。 **QuickLink** は、情報をアプリと簡単に共有できるようにするショートカットのようなものです。 たとえば、あらかじめ友人のメール アドレスが構成された新しいメール メッセージを開く **QuickLink** を作成できます。
 
@@ -128,7 +135,7 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 }
 ```
 
-## 参照 
+## <a name="see-also"></a>参照 
 
 * [アプリ間通信](index.md)
 * [データの共有](share-data.md)
@@ -140,9 +147,4 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 * [ReportStarted](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportstarted.aspx)
 * [QuickLink](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.aspx)
 * [QuickLInkId](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.id.aspx)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

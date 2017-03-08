@@ -3,10 +3,16 @@ author: mcleanbyron
 ms.assetid: B356C442-998F-4B2C-B550-70070C5E4487
 description: "Windows.Services.Store 名前空間を使用して、アプリまたはそのいずれかのアドオンを購入する方法について説明します。"
 title: "アプリとアドオンのアプリ内購入の有効化"
-keywords: "アプリ内販売コード サンプル"
+keywords: "Windows 10, UWP, アドオン, アプリ内購入, IAP, Windows.Services.Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: 05a93f3124324d7308f5494ad14a15bfd6a4e698
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4b45d8b34bed361471c1fc95594ad6fd28e41fa6
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -52,9 +58,4 @@ Windows 10 バージョン 1607 以降を対象とするアプリは、[Windows.
 * [コンシューマブルなアドオン購入の有効化](enable-consumable-add-on-purchases.md)
 * [アプリの試用版の実装](implement-a-trial-version-of-your-app.md)
 * [ストア サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

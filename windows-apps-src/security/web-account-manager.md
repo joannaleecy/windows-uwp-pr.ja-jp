@@ -1,15 +1,23 @@
 ---
-title: "Web アカウント マネージャーによる ID プロバイダーへの接続"
-description: "この記事では、新しい Windows 10 Web アカウント マネージャー API を使って、AccountsSettingsPane を使い、ユニバーサル Windows プラットフォーム (UWP) アプリを外部の ID プロバイダー (Microsoft、Facebook など) に接続する方法について説明します。"
+title: "Web アカウント マネージャー"
+description: "この記事では、新しい Windows 10 Web アカウント マネージャー API を使って、AccountsSettingsPane を表示し、ユニバーサル Windows プラットフォーム (UWP) アプリを外部の ID プロバイダー (Microsoft や Facebook など) に接続する方法について説明します。"
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 translationtype: Human Translation
-ms.sourcegitcommit: 0aef3cc9a3312a647197d8b2a7b815ed42d54fa3
-ms.openlocfilehash: 10851432b6e28934ab60041d23a5cf319671f704
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: c3d1cdab94fc8b4f693ef9294cbb12580a9e199b
+ms.lasthandoff: 02/08/2017
 
 ---
-# <a name="connect-to-identity-providers-with-web-account-manager"></a>Web アカウント マネージャーによる ID プロバイダーへの接続
+# <a name="web-account-manager"></a>Web アカウント マネージャー
 
-この記事では、新しい Windows 10 Web アカウント マネージャー API を使って、AccountsSettingsPane を表示し、ユニバーサル Windows プラットフォーム (UWP) アプリを外部の ID プロバイダー (Microsoft、Facebook など) に接続する方法について説明します。 ユーザーの Microsoft アカウントを使うためのユーザーの許可を求める方法、アクセス トークンを取得する方法、基本的な操作 (プロファイル データの取得や OneDrive へのファイルのアップロードなど) を実行する方法について説明します。 この手順は、ユーザーの許可を得て、Web アカウント マネージャーをサポートする ID プロバイダーにアクセスするための手順と似ています。
+この記事では、新しい Windows 10 Web アカウント マネージャー API を使って、AccountsSettingsPane を表示し、ユニバーサル Windows プラットフォーム (UWP) アプリを外部の ID プロバイダー (Microsoft や Facebook など) に接続する方法について説明します。 ユーザーの Microsoft アカウントを使うためのユーザーの許可を求める方法、アクセス トークンを取得する方法、基本的な操作 (プロファイル データの取得や OneDrive へのファイルのアップロードなど) を実行する方法について説明します。 この手順は、ユーザーの許可を得て、Web アカウント マネージャーをサポートする ID プロバイダーにアクセスするための手順と似ています。
 
 > 注: 完全なコード サンプルについては、「[GitHub の WebAccountManagement サンプル](http://go.microsoft.com/fwlink/p/?LinkId=620621)」をご覧ください。
 
@@ -33,7 +41,7 @@ ms.openlocfilehash: 10851432b6e28934ab60041d23a5cf319671f704
 
 ```C#
 private void LoginButton_Click(object sender, RoutedEventArgs e)
-{   
+{    
 }
 ```
 
@@ -328,7 +336,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
     var twitterProvider = new WebAccountProvider("twitter", "Twitter", new Uri(@"ms-appx:///Assets/twitter-auth-icon.png")); 
     var twitterCmd = new WebAccountProviderCommand(twitterProvider, GetTwitterTokenAsync);
-    e.WebAccountProviderCommands.Add(twitterCmd);   
+    e.WebAccountProviderCommands.Add(twitterCmd);    
     
     // other code here
 }
@@ -351,7 +359,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 {
     // other code here 
     
-    args.HeaderText = "MyAwesomeApp works best if you're signed in.";   
+    args.HeaderText = "MyAwesomeApp works best if you're signed in.";     
     
     // other code here
 }
@@ -398,9 +406,4 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 [Web 認証ブローカー](web-authentication-broker.md)
 
 [WebAccountManagement サンプル](http://go.microsoft.com/fwlink/p/?LinkId=620621)
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

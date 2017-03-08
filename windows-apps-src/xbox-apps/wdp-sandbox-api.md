@@ -2,16 +2,24 @@
 author: payzer
 title: "Device Portal の Xbox Live サンド ボックス API のリファレンス"
 description: "Xbox Live サンド ボックスにプログラムでアクセスする方法について説明します。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 72c7459c-420a-4da9-8afa-191a846185a5
 translationtype: Human Translation
-ms.sourcegitcommit: a857ba338a971e651653193ff2149f08b1665a36
-ms.openlocfilehash: 2a0bfa2eecffb2b0f5ed0bc691cb90bcd7191321
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 629e8c3d35c9b9730c07e9f810909298558ae700
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Xbox Live サンド ボックス API のリファレンス   
+# <a name="xbox-live-sandbox-api-reference"></a>Xbox Live サンド ボックス API のリファレンス   
 この REST API を使用して、Xbox Live サンド ボックスを取得および設定できます。
 
-## Xbox Live サンド ボックスを取得する
+## <a name="get-the-xbox-live-sandbox"></a>Xbox Live サンド ボックスを取得する
 
 **要求**
 
@@ -46,7 +54,7 @@ HTTP 状態コード      | 説明
 4XX | エラー コード
 5XX | エラー コード
 
-## Xbox Live サンド ボックスを設定する
+## <a name="set-the-xbox-live-sandbox"></a>Xbox Live サンド ボックスを設定する
 次の要求を使用して、デバイスの Xbox Live サンド ボックスを変更できます。 Xbox One では、設定を有効にするためにデバイスを再起動する必要があることに注意してください。
 
 **要求**
@@ -86,10 +94,5 @@ HTTP 状態コード      | 説明
 **利用可能なデバイス ファミリ**
 
 * Windows Xbox
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

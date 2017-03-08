@@ -3,16 +3,23 @@ author: msatranjr
 title: "関心のあるポイント (POI) の地図への表示"
 description: "プッシュピン、画像、図形、XAML UI 要素を使って、関心のあるポイント (POI) を地図に追加します。"
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 地図, 位置情報, プッシュピン"
 translationtype: Human Translation
-ms.sourcegitcommit: d00ba80ac7d0f033a69ad070dc8ee681cbd0ed18
-ms.openlocfilehash: 8afdb41d6790bb9647a6b89086c4b86872940c51
+ms.sourcegitcommit: 32b5230d62f23430393fc51c73f80fa46bd525fa
+ms.openlocfilehash: c8fdc16b99a9d2d57f71e32e008fa668c3404835
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="display-points-of-interest-poi-on-a-map"></a>関心のあるポイント (POI) の地図への表示
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 プッシュピン、画像、図形、XAML UI 要素を使って、関心のあるポイント (POI) を地図に追加します。 POI は、地図上の特定のポイントであり、関心のあるものを表します。 たとえば、企業、市区町村、友人の所在地を示すことができます。
@@ -28,13 +35,13 @@ XAML ユーザー インターフェイス要素 ([**Button**](https://msdn.micr
 以上の説明をまとめると次のようになります。
 
 -   
-              プッシュピンなどの画像をオプションのテキストと共に表示するには、[MapIcon を地図に追加](#mapicon)
+              プッシュピンなどの画像をオプションのテキストと共に表示するには、[MapIcon を地図に追加](#add-a-mapicon)
 -   
-              マルチポイント図形を表示するには、[MapPolygon を地図に追加](#mappolygon)
+              マルチポイント図形を表示するには、[MapPolygon を地図に追加](#add-a-mappolygon)
 -   
-              地図に線を表示するには、[MapPolyline を地図に追加](#mappolyline)
+              地図に線を表示するには、[MapPolyline を地図に追加](#add-a-mappolyline)
 -   
-              カスタム UI 要素を表示するには、[XAML を地図に追加](#mapxaml)
+              カスタム UI 要素を表示するには、[XAML を地図に追加](#add-xaml)
 
 地図に配置する要素の数が多い場合、[地図にタイル画像をオーバーレイする](overlay-tiled-images.md)ことを検討します。 地図に道路情報を表示するには、「[ルートとルート案内の表示](routes-and-directions.md)」をご覧ください。
 
@@ -108,7 +115,7 @@ private void mapPolygonAddButton_Click(object sender, Windows.UI.Xaml.RoutedEven
          new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
 
    });
-           
+
    mapPolygon.ZIndex = 1;
    mapPolygon.FillColor = Colors.Red;
    mapPolygon.StrokeColor = Colors.Blue;
@@ -133,7 +140,7 @@ private void mapPolylineAddButton_Click(object sender, Windows.UI.Xaml.RoutedEve
          new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude-0.001 },                
          new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
    });
-              
+
    mapPolyline.StrokeColor = Colors.Black;
    mapPolyline.StrokeThickness = 3;
    mapPolyline.StrokeDashed = true;
@@ -230,11 +237,4 @@ private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 * [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)
 * [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103)
 * [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114)
-
-
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -3,17 +3,24 @@ author: mcleblanc
 ms.assetid: E2B73380-D673-48C6-9026-96976D745017
 description: "コモン コントロールの概要"
 title: "コモン コントロールの概要"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2cd4b7344074c795f14a56cddbe7807c9ffefafe
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 91ea875987d5e1659fff337f95f790ef59286d03
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# はじめに: コモン コントロール
+# <a name="getting-started-common-controls"></a>はじめに: コモン コントロール
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
-## コモン コントロールの一覧
+## <a name="common-controls-list"></a>コモン コントロールの一覧
 
 前のセクションで扱ったコントロールは、ボタンとテキストブロックの 2 つのみでした。 もちろん、これ以外にもたくさんのコントロールが用意されています。 ここでは、アプリやそれに対応する iOS アプリで使用するいくつかのコモン コントロールを紹介します。 ここでは、iOS コントロールをアルファベット順に並べ、その横に最も似ているユニバーサル Windows プラットフォーム (UWP) コントロールを示しています。
 
@@ -22,8 +29,8 @@ UWP コントロールが優れている点は、実行されているデバイ�
 | iOS のコントロール (クラス/プロトコル) | 対応する Windows ストア アプリのコントロール |
 |------------------------------|--------------------------------------|
 | アクティビティ インジケーター (**UIActivityIndicatorView**) | [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) <br/> 「[クイック スタート: プログレス コントロールの追加](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)」もご覧ください。 |
-| 広告バナー ビュー (**ADBannerView**) と広告バナー ビュー デリゲート (**ADBannerViewDelegate**) | 「[Microsoft Advertising SDK](http://go.microsoft.com/fwlink/p/?LinkId=263494)」をご覧ください。 |
-| ボタン (UIButton) | [Button](https://msdn.microsoft.com/library/windows/apps/br209265) <br/> 「[クイック スタート: ボタン コントロールの追加](https://msdn.microsoft.com/library/windows/apps/xaml/jj153346)」もご覧ください。 |
+| 広告バナー ビュー (**ADBannerView**) と広告バナー ビュー デリゲート (**ADBannerViewDelegate**) | [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) <br/> 「[アプリでの広告の表示](../monetize/display-ads-in-your-app.md)」もご覧ください。 |
+| ボタン (UIButton) | [ボタン](https://msdn.microsoft.com/library/windows/apps/br209265) <br/> 「[クイック スタート: ボタン コントロールの追加](https://msdn.microsoft.com/library/windows/apps/xaml/jj153346)」もご覧ください。 |
 | 日付の選択 (UIDatePicker) | [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) |
 | 画像ビュー (UIImageView) | [Image](https://msdn.microsoft.com/library/windows/apps/br242752) <br/> 「[Image と ImageBrush](https://msdn.microsoft.com/library/windows/apps/mt280382)」もご覧ください。 |
 | ラベル (UILabel) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/> 「[クイック スタート: テキストの表示](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392)」もご覧ください。 |
@@ -50,18 +57,13 @@ UWP コントロールが優れている点は、実行されているデバイ�
 
 **注:** JavaScript と HTML を使った Windows ストア アプリのコントロールの一覧については、「[コントロールの一覧](https://msdn.microsoft.com/library/windows/apps/hh465453)」をご覧ください。
 
-### 次のステップ
+### <a name="next-step"></a>次のステップ
 
 [はじめに: ナビゲーション](getting-started-navigation.md)
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [Build 2014: XAML UI とコントロールの説明](http://go.microsoft.com/fwlink/p/?LinkID=397897)
 * [Build 2014: 共通の XAML UI フレームワークを使ったアプリの開発](http://go.microsoft.com/fwlink/p/?LinkID=397898)
 * [Build 2014: Visual Studio を使った XAML 集約型アプリの構築に関するページ](http://go.microsoft.com/fwlink/p/?LinkID=397876)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

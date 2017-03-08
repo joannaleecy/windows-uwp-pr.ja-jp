@@ -5,9 +5,16 @@ title: "UWP アプリ用のフォント"
 ms.assetid: 1B8B90AD-CDC4-4997-ACDE-871C1E94A929
 label: Fonts
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 0b25dc91a5ec82a83ae24a41854e9eeab8990128
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9e09569eaad194c6b945444579dc37dec0fdc76c
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -311,10 +318,5 @@ ms.openlocfilehash: 0b25dc91a5ec82a83ae24a41854e9eeab8990128
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

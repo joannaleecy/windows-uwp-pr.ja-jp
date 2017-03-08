@@ -3,23 +3,30 @@ author: jwmsft
 description: "XAML での添付プロパティの概念を説明し、例をいくつか紹介します。"
 title: "添付プロパティの概要"
 ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: ebda34ce4d9483ea72dec3bf620de41c98d7a9aa
-ms.openlocfilehash: 06797a616ab828932db6c9d4250b7de253e5d0b2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5185eb704f94e33031684aef761c701398c0dbd7
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 添付プロパティの概要
+# <a name="attached-properties-overview"></a>添付プロパティの概要
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 *添付プロパティ*は、XAML の概念です。 添付プロパティは、追加のプロパティ/値ペアをオブジェクトに設定できますが、このプロパティは元のオブジェクト定義の一部ではありません。 添付プロパティは、一般に、所有者型のオブジェクト モデルで従来のプロパティ ラッパーを持たない特殊な形式の依存関係プロパティとして定義されます。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 依存関係プロパティの基本的な概念を理解し、「[依存関係プロパティの概要](dependency-properties-overview.md)」を読んでいることを前提としています。
 
-## XAML での添付プロパティ
+## <a name="attached-properties-in-xaml"></a>XAML での添付プロパティ
 
 XAML では、_AttachedPropertyProvider.PropertyName_ 構文を使って添付プロパティを設定します。 XAML で [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) を設定する例を次に示します。
 
@@ -31,7 +38,7 @@ XAML では、_AttachedPropertyProvider.PropertyName_ 構文を使って添付�
 
 **注:** ここでは、添付プロパティの一例として [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) を使っていますが、その理由を全部説明しているわけではありません。 **Canvas.Left** の用途や、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) がそのレイアウトの子を処理する方法について詳しくは、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) のリファレンス トピックまたは「[XAML を使ったレイアウトの定義](https://msdn.microsoft.com/library/windows/apps/mt228350)」をご覧ください。
 
-## 添付プロパティを使う理由
+## <a name="why-use-attached-properties"></a>添付プロパティを使う理由
 
 添付プロパティは、リレーションシップ内の別々のオブジェクトが実行時に情報をやり取りするのを防ぐようなコーディング規則を回避する方法の 1 つです。 共通の基底クラスにプロパティを設定し、各オブジェクトがそのプロパティを取得、設定できるようにすることも可能です。 ただ、このようにする可能性のあるシナリオの数はきわめて多く、共有できるプロパティによって基底クラスが大きくなるおそれがあります。 何百もの子孫のうちわずか 2 つしか使わないプロパティが存在するなどという事態が発生することも考えられます。 これでは、優れたクラス設計にはなりません。 この問題に対処するため、添付プロパティの概念では、自らのクラス構造では定義されないプロパティに対してオブジェクトが値を割り当てられるようになっています。 定義クラスでは、オブジェクト ツリーで各種オブジェクトが作成された後、実行時に子オブジェクトから値を読み取ります。
 
@@ -39,7 +46,7 @@ XAML では、_AttachedPropertyProvider.PropertyName_ 構文を使って添付�
 
 添付プロパティを実装するには、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) クラスは、[**Canvas.LeftProperty**](https://msdn.microsoft.com/library/windows/apps/br209272) という名前の静的な [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) フィールドを定義します。 次に **Canvas** では、[**SetLeft**](https://msdn.microsoft.com/library/windows/apps/br209273) メソッドと [**GetLeft**](https://msdn.microsoft.com/library/windows/apps/br209269) メソッドを添付プロパティのパブリック アクセサーとして提供して、XAML の設定とランタイム値のアクセスの両方を可能にします。 XAML と依存関係プロパティ システムに対しては、この API のセットは添付プロパティ用の特定の XAML 構文を使い、依存関係プロパティ ストアに値を格納するパターンを実現できます。
 
-## 所有する型による添付プロパティの使用方法
+## <a name="how-the-owning-type-uses-attached-properties"></a>所有する型による添付プロパティの使用方法
 
 添付プロパティは任意の XAML 要素 (または基になる [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)) に設定できますが、プロパティを設定することによって具体的な結果が生成されたり、値がアクセスされたりするわけではありません。 添付プロパティを定義する型は、一般に次のいずれかのシナリオに従います。
 
@@ -49,13 +56,13 @@ XAML では、_AttachedPropertyProvider.PropertyName_ 構文を使って添付�
 
 これらのシナリオや所有する型について詳しくは、「[カスタム添付プロパティ](custom-attached-properties.md)」の「Canvas.Left の詳細」セクションをご覧ください。
 
-## コードでの添付プロパティ
+## <a name="attached-properties-in-code"></a>コードでの添付プロパティ
 
 添付プロパティには、他の依存関係プロパティのような、取得および設定アクセスを容易にする標準的なプロパティ ラッパーがありません。 これは、添付プロパティが設定されているインスタンスのコード中心のオブジェクト モデルに、その添付プロパティが組み込まれているとは限らないからです。 (他の型で設定できると同時に、所有する型では従来の方法で使われる添付プロパティを定義することもできますが、決して一般的ではありません。)
 
 コードでは 2 つの方法で添付プロパティを設定できます。1 つはプロパティ システムの API を使う方法、もう 1 つは XAML パターン アクセサーを使う方法です。 これらの方法は最終的な結果という点ではほぼ同じため、どちらを使うかは主にコーディング スタイルによって決まります。
 
-### プロパティ システムを使う場合
+### <a name="using-the-property-system"></a>プロパティ システムを使う場合
 
 Windows ランタイムの添付プロパティは依存関係プロパティとして実装されるため、プロパティ システムを使って共有依存関係プロパティ ストアに値を格納できます。 したがって、添付プロパティは所有するクラスで依存関係プロパティ ID を公開します。
 
@@ -63,7 +70,7 @@ Windows ランタイムの添付プロパティは依存関係プロパティと
 
 コードで添付プロパティの値を取得するには、[**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) メソッドを呼び出し、同じく ID となる [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) フィールドを渡します。
 
-### XAML アクセサー パターンを使う場合
+### <a name="using-the-xaml-accessor-pattern"></a>XAML アクセサー パターンを使う場合
 
 XAML をオブジェクト ツリーに解析するときは、XAML プロセッサが添付プロパティの値を設定できる必要があります。 添付プロパティの所有者型は、**Get***PropertyName* と **Set***PropertyName* の形式で名前を付けた専用のアクセサー メソッドを実装する必要があります。 この専用のアクセサー メソッドは、コードで添付プロパティを取得または設定する方法の 1 つでもあります。 コードの観点からすると、添付プロパティは、プロパティ アクセサーではなくメソッド アクセサーを持つバッキング フィールドに似ています。このバッキング フィールドは、どのオブジェクトにも存在する可能性があり、具体的に定義する必要はありません。
 
@@ -95,11 +102,11 @@ XAML をオブジェクト ツリーに解析するときは、XAML プロセッ
     //Canvas::SetTop(myCheckBox, 75);
 ```
 
-## カスタム添付プロパティ
+## <a name="custom-attached-properties"></a>カスタム添付プロパティ
 
 カスタム添付プロパティの定義方法に関するコード例と添付プロパティを使うシナリオに関する詳しい情報については、「[カスタム添付プロパティ](custom-attached-properties.md)」をご覧ください。
 
-## 添付プロパティ参照の特別な構文
+## <a name="special-syntax-for-attached-property-references"></a>添付プロパティ参照の特別な構文
 
 添付プロパティ名に含まれるドットは、識別パターンの重要な部分です。 ドットが別の意味に解釈される構文または状況では、あいまいさが生じる場合があります。 たとえば、バインディング パスではドットがオブジェクト モデル トラバーサルと見なされます。 あいまいさに関してほとんどの場合、添付プロパティ用の特別な構文によって、内部のドットは添付プロパティの *owner***.***property* 区切り文字として解析されています。
 
@@ -109,7 +116,7 @@ XAML をオブジェクト ツリーに解析するときは、XAML プロセッ
  
 - 添付プロパティをリソース ファイルから **x:Uid** へのリソース参照のターゲット プロパティとして指定するには、コードスタイルの完全に修飾された **using:** 宣言を角かっこ ("\[\]") で囲む特別な構文を使って、故意にスコープ ブレークを作成します。 たとえば、<TextBlock x:Uid="Title" /> という要素が存在する場合、そのインスタンスの **Canvas.Top** 値をターゲットとするリソース ファイル内のリソース キーは、"Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top" となります。 リソース ファイルと XAML について詳しくは、「[クイック スタート: UI リソースの翻訳](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)」をご覧ください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [カスタム添付プロパティ](custom-attached-properties.md)
 * [依存関係プロパティの概要](dependency-properties-overview.md)
@@ -117,10 +124,5 @@ XAML をオブジェクト ツリーに解析するときは、XAML プロセッ
 * [クイック スタート: UI リソースの翻訳](https://msdn.microsoft.com/library/windows/apps/hh943060)
 * [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)
 * [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

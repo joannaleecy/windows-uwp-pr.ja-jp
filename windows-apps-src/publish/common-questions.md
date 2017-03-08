@@ -1,11 +1,18 @@
 ---
-author: jnHs
+author: shawjohn
 Description: "広告キャンペーンに関してよく寄せられる質問"
 title: "広告キャンペーンに関してよく寄せられる質問"
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
+ms.author: johnshaw
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 584407ea0e0fee4ec74dac0b656db59b7f694391
-ms.openlocfilehash: ac18d3b036c1ec9290212097a0f9a0feb962d915
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 20a05337052392446d733af7da180f9466fef05f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -33,7 +40,7 @@ ms.openlocfilehash: ac18d3b036c1ec9290212097a0f9a0feb962d915
 
 ## <a name="where-will-my-ad-appear"></a>自分の広告はどこに表示されますか。
 
-広告は、アプリの年齢区分と OS のバージョンを共有するアプリに表示されます。 Windows ストアでアプリを公開するときに、これらのプロパティを設定します。
+広告は、アプリの年齢区分と OS のバージョンを共有するアプリに表示されます。 Windows ストアでアプリを公開するときに、これらのプロパティを設定します。 「ユニバーサル」キャンペーンでは、広告は MSN.com、Outlook.com、Skype など、Microsoft の豪華なラインナップでも表示されます。
 
 広告キャンペーンは、以下の国または地域で現在サポートされています。
 
@@ -64,9 +71,4 @@ ms.openlocfilehash: ac18d3b036c1ec9290212097a0f9a0feb962d915
 * [自社広告について](about-house-ads.md)
 * [コミュニティ広告について](about-community-ads.md)
 * [アプリのインストールの広告レポート](app-install-ads-reports.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

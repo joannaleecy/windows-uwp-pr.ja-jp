@@ -3,20 +3,27 @@ author: mtoepke
 title: "ユニバーサル Windows プラットフォーム (UWP) アプリのゲーム テクノロジ"
 description: "このガイドでは、ユニバーサル Windows プラットフォーム UWP ゲームの開発に利用できるテクノロジについて説明します。"
 ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, テクノロジ, DirectX"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 83c3fda490d7ab821e8e584291ded642c9c11dd1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7f6ad043299efa2aae7abdb1f1e0a7e898d40836
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# ユニバーサル Windows プラットフォーム (UWP) アプリのゲーム テクノロジ
+# <a name="game-technologies-for-universal-windows-platform-uwp-apps"></a>ユニバーサル Windows プラットフォーム (UWP) アプリのゲーム テクノロジ
 
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 このガイドでは、ユニバーサル Windows プラットフォーム UWP ゲームの開発に利用できるテクノロジについて説明します。
 
-##  ゲーム開発向けの Windows 10 のメリット
+##  <a name="benefits-of-windows-10-for-game-development"></a>ゲーム開発向けの Windows 10 のメリット
 
 
 Windows 10 で UWP が導入されたことにより、作成した Windows 10 のタイトルはすべての Microsoft プラットフォームに対応できます。 以前のバージョンの Windows から無料で移行できるため、Windows 10 のユーザー数は着実に増加しています。 これらの 2 つの事実を組み合わせると、Windows 10 のタイトルは、Windows ストアを通じて膨大な数のユーザーに提供できることを意味します。
@@ -26,12 +33,12 @@ Windows 10 で UWP が導入されたことにより、作成した Windows 10 �
 -   メモリのページングの削減および全体的なメモリ システム サイズの削減
 -   グラフィックス メモリの管理機能の向上により、フォアグラウンドのゲームに、より多くのメモリがアクティブに割り当てられ、保護されます。
 
-## C++ と DirectX を使った UWP ゲーム
+## <a name="uwp-games-with-c-and-directx"></a>C++ と DirectX を使った UWP ゲーム
 
 
 高パフォーマンスを必要とするリアルタイム ゲームでは、DirectX API を使用する必要があります。 DirectX は、3D ゲームなど、高パフォーマンスを必要とするゲームやマルチメディア アプリケーションを作成するための、ネイティブ API のコレクションです。 DirectX API はネイティブであるため、DirectX と共に使用できる言語は C++ のみです。
 
-## 開発環境
+## <a name="development-environment"></a>開発環境
 
 
 UWP 用のゲームを作成するには、Visual Studio 2015 をインストールして開発環境をセットアップする必要があります。 Visual Studio 2015 を使うことによって、UWP アプリを作成でき、ゲーム開発用のツールが提供されます。
@@ -41,12 +48,12 @@ UWP 用のゲームを作成するには、Visual Studio 2015 をインストー
 
 詳しくは、「ユニバーサル Windows プラットフォームと DirectX ゲーム プログラミング環境の準備」をご覧ください。
 
-## DirectX ゲーム プロジェクト テンプレートの概要
+## <a name="getting-started-with-directx-game-project-templates"></a>DirectX ゲーム プロジェクト テンプレートの概要
 
 
 開発環境をセットアップすると、DirectX 関連のプロジェクト テンプレートのいずれかを使って UWP DirectX ゲームを作成できます。 Visual Studio 2015 には、新しい UWP DirectX プロジェクトを作成するためのテンプレートとして、**DirectX 11 アプリ (ユニバーサル Windows)**、**DirectX 12 アプリ (ユニバーサル Windows)**、**DirectX 11 および XAML アプリ (ユニバーサル Windows)** の 3 つがあります。 詳しくは、「[テンプレートからのユニバーサル Windows プラットフォームおよび DirectX ゲーム プロジェクトの作成](user-interface.md)」をご覧ください。
 
-## Windows 10 API
+## <a name="windows-10-apis"></a>Windows 10 API
 
 
 Windows 10 では、ゲーム開発に役立つさまざまな API を利用できます。 3D グラフィックス、2D グラフィックス、オーディオ、入力、テキスト リソース、ユーザー インターフェイス、ネットワークなど、ゲームのほとんどすべての側面にかかわる API が用意されています。
@@ -316,19 +323,19 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
 
      
 
-## Xbox Live サービス
+## <a name="xbox-live-services"></a>Xbox Live サービス
 
 
 Xbox Live 機能セット (Xbox とのクロス プレイ、達成度、ゲーマースコアなど) が Windows 10 でも利用できます。 近日中に、ID@Xbox を使って作業することによって、UWP ゲームに Live を含めることができるようになる予定です。 また、将来的には、お客様のユニバーサル アプリ プラットフォームのゲームを、Xbox One 向けにも出荷できるようにサポートする予定です。 詳しくは、[ID@Xbox](http://www.xbox.com/developers/id) に関するページをご覧ください。
 
-##  DirectX と UWP を使ったゲーム作成の代替手段
+##  <a name="alternatives-to-writing-games-with-directx-and-uwp"></a>DirectX と UWP を使ったゲーム作成の代替手段
 
 
-### DirectX を使わない UWP ゲーム
+### <a name="uwp-games-without-directx"></a>DirectX を使わない UWP ゲーム
 
 カード ゲームやボード ゲームなど、最低限のパフォーマンスの要件を満たす単純なゲームは、DirectX を使わずに作成でき、必ずしも C++ で記述されている必要はありません。 このような種類のゲームでは、C#、Visual Basic、C++、HTML/JavaScript など、UWP でサポートされている言語のいずれかを利用できます。 パフォーマンスと負荷の高いグラフィックスがゲームで必要な場合は、[JavaScript と HTML5 のタッチ ゲームのサンプル](http://code.msdn.microsoft.com/windowsapps/JavaScript-and-HTML5-touch-d96f6031)を参考にしてください。
 
-### ゲーム エンジン
+### <a name="game-engines"></a>ゲーム エンジン
 
 Windows ゲーム開発 API を使って独自のゲーム エンジンを作成する代替手段として、Windows ゲーム開発 API を基にして作成された多くの高品質ゲーム エンジンを、Windows プラットフォームでのゲームの開発に利用できます。 ゲーム エンジンまたはライブラリを検討する場合、複数のオプションがあります。
 
@@ -339,7 +346,7 @@ Windows ゲーム開発 API を使って独自のゲーム エンジンを作成
 -   人工知能と経路探索エンジン: AI と経路探索エンジンは、ゲーム内でエージェントの動作を制御するためのフレームワークを提供します。
 -   特殊な用途のエンジン: インベントリ システムやダイアログ ツリーなど、発生する可能性があるほぼすべてのゲーム開発関連タスクを処理するために、さまざまな追加のエンジンが存在します。
 
-## ストアへのゲームの提出
+## <a name="submitting-a-game-to-the-store"></a>ストアへのゲームの提出
 
 
 ゲームを公開する準備ができたら、開発者アカウントを作成して、ゲームを Windows ストアに提出する必要があります。
@@ -352,10 +359,5 @@ Windows ストアへのゲームの提出については、<https://dev.windows.
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

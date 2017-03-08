@@ -3,9 +3,16 @@ author: PatrickFarley
 ms.assetid: 24351dad-2ee3-462a-ae78-2752bb3374c2
 title: "バッテリー節約機能の利用"
 description: "システムと連携して、バッテリー効率の高い方法でバックグラウンド タスクを使用する UWP アプリを作成します。"
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 73b19e54b863693aece045e5b653bc0583a676bb
-ms.openlocfilehash: 854ec43d075f8adc1f875d3b9e5e2d818434edb9
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 045dfeb4696a4854b114d88da2a2cbb75d621a58
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -13,7 +20,7 @@ ms.openlocfilehash: 854ec43d075f8adc1f875d3b9e5e2d818434edb9
 
 ユニバーサル Windows アプリは、すべてのデバイス ファミリで一貫して動作する必要があります。 バッテリー駆動デバイスにおいて、消費電力は、アプリの全体的なユーザー エクスペリエンスを左右する重要な要因です。 バッテリー残量が 1 日中持続する終日バッテリー駆動はすべてのユーザーにとって望ましい機能ですが、それにはデバイスにインストールされているすべてのソフトウェアが効率的に動作する必要があるため、その点を考慮した開発が求められます。 
 
-バックグラウンド タスクの動作は、ほとんどの場合、アプリの合計電力コストを決定する最大の要因です。 バックグラウンド タスクとは、アプリを開かずにシステムに登録されるあらゆるプログラムの動作を指します。 詳しくは、「[アウトプロセス バックグラウンド タスクの作成と登録](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-an-outofproc-background-task)」をご覧ください
+バックグラウンド タスクの動作は、ほとんどの場合、アプリの合計電力コストを決定する最大の要因です。 バックグラウンド タスクとは、アプリを開かずにシステムに登録されるあらゆるプログラムの動作を指します。 詳しくは、「[アウトプロセス バックグラウンド タスクの作成と登録](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)」をご覧ください
 
 ## <a name="background-activity-allowance"></a>バックグラウンド アクティビティの許容量
 
@@ -47,12 +54,7 @@ Windows 10 Version 1607 では、ユーザーは設定アプリの **[バッテ�
 
 ## <a name="related-topics"></a>関連トピック
 
-* [アウトプロセス バックグラウンド タスクの作成と登録](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-an-outofproc-background-task)  
+* [アウトプロセス バックグラウンド タスクの作成と登録](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
 * [パフォーマンスの計画](https://msdn.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

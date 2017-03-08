@@ -3,15 +3,22 @@ author: DelfCo
 description: "Windows.Web.Syndication 名前空間の機能を利用し、RSS や Atom の標準に従って生成される概要フィードを使って、最新の人気の高い Web コンテンツを取得または作成します。"
 title: "RSS/Atom フィード"
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a30b58737befaae10a1dbb30416f338d8eb1cbb1
-ms.openlocfilehash: 623c11eba097a072b456738b84750eb4b2d888bb
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: da28caa7703a04b1d11254d9c894cf02b044ab64
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="rssatom-feeds"></a>RSS/Atom フィード
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 **重要な API**
 
@@ -230,9 +237,4 @@ function displayCurrentItem() {
     });
 }
 ```
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

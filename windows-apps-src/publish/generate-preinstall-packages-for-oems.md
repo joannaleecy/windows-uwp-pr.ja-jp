@@ -3,25 +3,32 @@ author: jnHs
 Description: "開発者アカウントに適切なアクセス許可が付与されている場合、OEM がイメージにアプリを含めるために使うことができるプレインストール パッケージを生成してダウンロードできます。"
 title: "OEM 向けのプレインストール パッケージの生成"
 ms.assetid: AC3A45E8-7BBD-44E9-B2D3-B74B7C9B2BC9
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1c08ab2e29e70e198ee72798f29e7667254272fd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 962b6b7361da8b88d13b37219fab538e1510c961
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# OEM 向けのプレインストール パッケージの生成
+# <a name="generate-preinstall-packages-for-oems"></a>OEM 向けのプレインストール パッケージの生成
 
 
 開発者アカウントに適切なアクセス許可が付与されている場合、OEM がイメージにアプリを含めるために使うことができるプレインストール パッケージを生成してダウンロードできます。 プレインストールのアクセス許可は、OEM がスポンサーである開発者アカウントでのみ有効です。
 
-## 重要なプレインストールに関するポリシーと制限事項
+## <a name="important-preinstall-policy--limitations"></a>重要なプレインストールに関するポリシーと制限事項
 
 
 プレインストール アプリは、最新のストア ライセンスが適用されるように、Windows デベロッパー センターを通じて認定を受ける必要があります。これにより、プレインストール アプリでストアに接続し、アプリの更新プログラムを受信できます。
 
 既にプレインストールされているすべてのアプリは、すべての市場で、現在も将来も無料である必要があります。
 
-## プレインストール パッケージの生成
+## <a name="generating-preinstall-packages"></a>プレインストール パッケージの生成
 
 
 プレインストールのアクセス許可を持つアカウントが有効になったら、次の手順を実行します。
@@ -36,7 +43,7 @@ ms.openlocfilehash: 1c08ab2e29e70e198ee72798f29e7667254272fd
 
 この .zip ファイルを OEM に提供することによって、OEM ではこのファイルを OS イメージに含めることができます。
 
-## サポート
+## <a name="support"></a>サポート
 
 
 プレインストール パッケージの生成についてさらに不明な点がある場合は、<partnerops@microsoft.com> までメールでお問合せください。
@@ -47,10 +54,5 @@ ms.openlocfilehash: 1c08ab2e29e70e198ee72798f29e7667254272fd
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

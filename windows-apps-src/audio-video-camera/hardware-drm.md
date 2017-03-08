@@ -3,15 +3,22 @@ author: eliotcowley
 ms.assetid: A7E0DA1E-535A-459E-9A35-68A4150EE9F5
 description: "このトピックでは、PlayReady ハードウェア ベースのデジタル著作権管理 (DRM) をユニバーサル Windows プラットフォーム (UWP) アプリに追加する方法の概要を示します。"
 title: "ハードウェア DRM"
+ms.author: elcowle
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 56d79a93704021fc18d3e72d00738d0ce7acba91
-ms.openlocfilehash: 643b67c3975a8aea6791c834a9ca3178b9762257
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a6d2ea23cb0720d8fe6c7aa581c42db6e025d146
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# ハードウェア DRM
+# <a name="hardware-drm"></a>ハードウェア DRM
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 このトピックでは、PlayReady ハードウェア ベースのデジタル著作権管理 (DRM) をユニバーサル Windows プラットフォーム (UWP) アプリに追加する方法の概要を示します。
 
@@ -20,7 +27,7 @@ ms.openlocfilehash: 643b67c3975a8aea6791c834a9ca3178b9762257
 
 最近では、価値の高いコンテンツをアプリで再生するためのアクセス許可を付与できるように、ハードウェア ベースの保護に移行するコンテンツ プロバイダーが多くなっています。 PlayReady がこのニーズを満たすために、暗号化コアのハードウェアの実装の強力なサポートが追加されました。 このサポートにより、複数のデバイス プラットフォーム上で、高解像度 (1080 p) と超高解像度 (UHD) のコンテンツを安全に再生できます。 キー マテリアル (秘密キー、コンテンツ キー、これらのキーを派生またはロック解除するために使われるその他のキー マテリアルを含みます)、および暗号化解除された圧縮および非圧縮ビデオ サンプルは、ハードウェア セキュリティを利用して保護されます。
 
-## Windows TEE 実装
+## <a name="windows-tee-implementation"></a>Windows TEE 実装
 
 このトピックでは、Windows 10 で信頼された実行環境 (TEE) を実装する方法の概要を簡単に示します。
 
@@ -28,7 +35,7 @@ Windows TEE 実装の詳細については、このドキュメントでは説�
 
 ![Windows TEE コンポーネント図](images/windowsteecomponentdiagram720.jpg)
 
-## ハードウェア DRM を使うための考慮事項
+## <a name="considerations-for-using-hardware-drm"></a>ハードウェア DRM を使うための考慮事項
 
 このトピックでは、ハードウェア DRM を使うように設計されたアプリを開発するときに考慮する必要がある事項について、簡単な一覧を使って説明します。 「[PlayReady DRM](playready-client-sdk.md#output-protection)」で説明されているように、Windows 10 用 PlayReady HWDRM では、すべての出力の保護は、出力の保護の動作に影響を与える Windows TEE 実装内から適用されます。
 
@@ -54,7 +61,7 @@ HWDRM を使うときは、次の項目も考慮してください。
 
 ハードウェアでライセンスの暗号化を解除できないことが原因で再生エラーが発生するのを防ぐために、PlayReady は、見つかったグラフィックス カードごとに、個別 HDS を使います。 これにより、PlayReady は、通常は既にライセンスを持っているコンテンツのライセンスの取得を試みます (ソフトウェア DRM の場合、またはハードウェアの変更がない場合、PlayReady はライセンスを再取得する必要はありません)。 したがって、アプリが、ハードウェア DRM の使用中に永続的なライセンスを取得した場合、アプリは、エンド ユーザーがグラフィックス カードを取り付けた (または取り外した) 場合にそのライセンスが実質的に失われるケースに対応できる必要があります。 これは一般的なシナリオではないため、ハードウェアの変更後にコンテンツが再生されなくなった場合、クライアント/サーバー コードでハードウェアの変更を処理する方法の調査よりも、サポートへの問い合わせの対応が必要になることがあります。
 
-## ハードウェア DRM のオーバーライド
+## <a name="override-hardware-drm"></a>ハードウェア DRM のオーバーライド
 
 このセクションでは、再生するコンテンツがハードウェア DRM (HWDRM) をサポートしていない場合に、ハードウェア DRM をオーバーライドする方法について説明します。
 
@@ -82,7 +89,7 @@ mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectio
 -   他の \*.hds ファイルがある場合は、ハードウェア DRM を使っています。
 -   PlayReady フォルダー全体を削除して、テストを再試行することもできます。
 
-## ハードウェア DRM の種類を検出する
+## <a name="detect-the-type-of-hardware-drm"></a>ハードウェア DRM の種類を検出する
 
 このセクションでは、システムでサポートされているハードウェア DRM の種類を検出する方法について説明します。
 
@@ -96,11 +103,6 @@ boolean PlayReadyStatics->CheckSupportedHardware(PlayReadyHardwareDRMFeatures en
 
 [**PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://msdn.microsoft.com/library/windows/apps/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel.aspx) プロパティを使って、クライアント証明書のセキュリティ レベルを取得し、ハードウェア DRM がサポートされているかどうか判断することもできます。 返された証明書のセキュリティ レベルが 3000 以上でない限り、クライアントが個別化またはプロビジョニングされていないか (この場合、このプロパティは 0 を返します)、ハードウェア DRM が使われていません (この場合、このプロパティは 3000 未満の値を返します)。
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 - [PlayReady DRM](playready-client-sdk.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

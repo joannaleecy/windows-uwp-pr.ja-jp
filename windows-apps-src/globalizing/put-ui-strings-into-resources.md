@@ -5,9 +5,16 @@ title: "UI 文字列をリソースに格納する"
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Put UI strings into resources
 template: detail.hbs
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: dff1e6df480a1ffc0e2441c78b942ccd0ee2126c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7f10efbf452510e783a646f4c868b65f49e00c15
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -128,10 +135,5 @@ auto str = loader->GetString("Farewell");
  
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

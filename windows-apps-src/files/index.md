@@ -3,9 +3,16 @@ author: laurenhughes
 ms.assetid: 1901c4c2-5161-435d-bc7b-f40c69cdb138
 title: "ファイル、フォルダー、およびライブラリ"
 description: "アプリの設定の読み取りと書き込み、ファイルやフォルダーのピッカー、ビデオ ライブラリやミュージック ライブラリなどのセキュリティで保護された特別なサンドボックス化された場所について説明します。"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: e248a0898772f1fde38e312b1cbd24da5b2946a7
+ms.sourcegitcommit: 3c073879ab847a3e1af454e0c1550d8af0f78b3e
+ms.openlocfilehash: 0baa58915bfac91d618a6da84f37174e41f7377f
+ms.lasthandoff: 01/19/2017
 
 ---
  # <a name="files-folders-and-libraries"></a>ファイル、フォルダー、およびライブラリ
@@ -37,9 +44,4 @@ ms.openlocfilehash: e248a0898772f1fde38e312b1cbd24da5b2946a7
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

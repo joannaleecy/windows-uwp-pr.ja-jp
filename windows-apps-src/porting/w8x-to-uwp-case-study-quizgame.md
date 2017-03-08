@@ -3,9 +3,16 @@ author: mcleblanc
 ms.assetid: 88e16ec8-deff-4a60-bda6-97c5dabc30b8
 description: "このトピックでは、機能しているピア ツー ピアのクイズ ゲームに関する WinRT 8.1 サンプル アプリを、Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリへ移植する場合のケース スタディについて説明します。"
 title: "Windows ランタイム 8.x から UWP へのケース スタディ - QuizGame ピア ツー ピアのサンプル アプリ"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 62d747a06f26bd2d069d2f23f36f48249fd11e95
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2756fc75b7a780ae0361671127423dcb898cae4b
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -193,9 +200,4 @@ Windows 10 のボタンのテンプレートでは、ボタンに関するタッ
 ## <a name="conclusion"></a>まとめ
 
 このケース スタディで移植したアプリは、複数のプロジェクト、1 つのクラス ライブラリ、および多くのコードやユーザー インターフェイスを含んでいるため、比較的複雑なアプリになっています。 それでも、移植は非常に簡単に行われました。 移植を簡単に行うことができた直接的な原因は、Windows 10 開発者プラットフォームと、Windows 8.1 および Windows Phone 8.1 プラットフォームが類似していることです。 また、元のアプリがモデル、ビュー モデル、およびビューを別個に維持するように設計されていたことも、その原因の 1 つです。
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

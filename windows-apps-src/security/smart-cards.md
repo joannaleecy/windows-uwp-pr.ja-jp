@@ -1,28 +1,35 @@
 ---
 title: "スマート カード"
-description: "このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリでセキュリティで保護されたネットワーク サービスにスマート カードを使って、ユーザーを接続する方法のほか、物理スマート カード リーダーにアクセスする方法、仮想スマート カードの作成方法、スマート カードとの通信方法、ユーザーの認証方法、ユーザーの Pin のリセット方法、スマート カードを削除または切断する方法などについて説明します。"
+description: "このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリでセキュリティで保護されたネットワーク サービスにスマート カードを使って、ユーザーを接続する方法のほか、物理スマート カード リーダーにアクセスする方法、仮想スマート カードの作成方法、スマート カードとの通信方法、ユーザーの認証方法、ユーザーの PIN のリセット方法、スマート カードを削除または切断する方法などについて説明します。"
 ms.assetid: 86524267-50A0-4567-AE17-35C4B6D24745
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea21aeee5dd93bb44de3a1793b352d2046b3839
-ms.openlocfilehash: d0646aca9863f3f326df9b3a86adb2481fdcda70
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 42062dc9dcc11e3db6ddbb761e158d75e1259950
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# スマート カード
+# <a name="smart-cards"></a>スマート カード
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
 このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリでセキュリティで保護されたネットワーク サービスにスマート カードを使って、ユーザーを接続する方法のほか、物理スマート カード リーダーにアクセスする方法、仮想スマート カードの作成方法、スマート カードとの通信方法、ユーザーの認証方法、ユーザーの Pin のリセット方法、スマート カードを削除または切断する方法などについて説明します。 
 
-## アプリ マニフェストの構成
+## <a name="configure-the-app-manifest"></a>アプリ マニフェストの構成
 
 
 アプリでスマート カードや仮想スマート カードを使ってユーザーを認証するには、あらかじめプロジェクトの Package.appxmanifest ファイルで、**共有ユーザー証明書**機能を設定しておく必要があります。
 
-## 接続されているカード リーダーとスマート カードへのアクセス
+## <a name="access-connected-card-readers-and-smart-cards"></a>接続されているカード リーダーとスマート カードへのアクセス
 
 
 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) に指定されているデバイス ID を [**SmartCardReader.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn263890) メソッドに渡すと、リーダーや装着されているスマート カードを照会することができます。 返されたリーダー デバイスに現在装着されているスマート カードにアクセスするには、[**SmartCardReader.FindAllCardsAsync**](https://msdn.microsoft.com/library/windows/apps/dn263887) を呼び出します。
@@ -56,7 +63,7 @@ private void reader_CardAdded(SmartCardReader sender, CardAddedEventArgs args)
 
 その後、返された各 [**SmartCard**](https://msdn.microsoft.com/library/windows/apps/dn297565) オブジェクトを [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) に渡すことで、その構成へのアクセスやカスタマイズを行うメソッドを使えるようになります。
 
-## 仮想スマート カードの作成
+## <a name="create-a-virtual-smart-card"></a>仮想スマート カードの作成
 
 
 アプリで [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) を使って仮想スマート カードを作成するには、まずフレンドリ名、管理者キー、[**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642) を提供する必要があります。 通常、フレンドリ名は既にアプリに用意されている可能性がありますが、アプリではさらに、管理者キーを提供し、現在の **SmartCardPinPolicy** のインスタンスを生成する必要があります。その後、これらの 3 つの値をすべて [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830) に渡します。
@@ -80,7 +87,7 @@ SmartCardProvisioning provisioning = await
 
 関連付けられた [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) オブジェクトが [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830) から返されたら、仮想スマート カードのプロビジョニングが完了し、使う準備ができたことになります。
 
-## 認証チャレンジの処理
+## <a name="handle-authentication-challenges"></a>認証チャレンジの処理
 
 
 スマート カードや仮想スマート カードを使って認証するには、カードに格納されている管理者キーのデータと、認証サーバーまたは管理ツールによって管理されている管理者キーのデータとの間で、チャレンジを完了する動作をアプリに実装する必要があります。
@@ -107,7 +114,7 @@ static class ChallengeResponseAlgorithm
 
 このコードは、このトピックの残りの部分で説明する、認証操作を完了する方法や、スマート カードまたは仮想スマート カードの情報に変更を適用する方法の中で使われます。
 
-## スマート カードまたは仮想スマート カード認証の応答の確認
+## <a name="verify-smart-card-or-virtual-smart-card-authentication-response"></a>スマート カードまたは仮想スマート カード認証の応答の確認
 
 
 これで認証チャレンジのロジックが定義されたので、リーダーと通信してスマート カードにアクセスするか、その代わりに仮想スマート カードにアクセスして、認証を行うことができます。
@@ -135,7 +142,7 @@ using (SmartCardChallengeContext context =
 }
 ```
 
-## ユーザー PIN の変更またはリセット
+## <a name="change-or-reset-a-user-pin"></a>ユーザー PIN の変更またはリセット
 
 
 スマート カードに関連付けられている PIN を変更するには、次の手順に従います。
@@ -184,7 +191,7 @@ bool result = await provisioning.RequestPinResetAsync(
 }
 ```
 
-## スマート カードまたは仮想スマート カードの取り外し
+## <a name="remove-a-smart-card-or-virtual-smart-card"></a>スマート カードまたは仮想スマート カードの取り外し
 
 
 物理スマート カードが取り外されると、カードの削除時に [**CardRemoved**](https://msdn.microsoft.com/library/windows/apps/dn263875) イベントが発生します。
@@ -202,8 +209,3 @@ reader.CardRemoved += HandleCardRemoved;
 bool result = await SmartCardProvisioning
     .RequestVirtualSmartCardDeletionAsync(card);
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

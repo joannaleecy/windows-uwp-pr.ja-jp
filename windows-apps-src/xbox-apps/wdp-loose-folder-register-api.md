@@ -2,13 +2,21 @@
 author: WilliamsJason
 title: "Device Portal のルース フォルダー登録 API のリファレンス"
 description: "ルース フォルダー登録 API にプログラムでアクセスする方法について説明します。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: efdf4214-9738-4df6-bf1f-ed7141696ef6
 translationtype: Human Translation
-ms.sourcegitcommit: ef0f1339b77a8d1f60a677b2ff19a63b68f0d6cd
-ms.openlocfilehash: 42dc5e16065f1a2252f63743269970cf85fb0b95
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 5d1926655f44fb54b07e7222911c94ef0e526cd0
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# アプリをルース フォルダーに登録する  
+# <a name="register-an-app-in-a-loose-folder"></a>アプリをルース フォルダーに登録する  
 
 **要求**
 
@@ -58,10 +66,5 @@ HTTP 状態コード      | 説明
 2 つ目の方法は、/api/filesystem/apps/file に対して POST を実行することで、個々のファイルを適切な場所にコピーする方法です。この場合、knownfolderid には DevelopmentFiles を指定し、packagefullname は空にして、ファイル名とパスを適切に提供します (パスは LooseApps で始まっている必要があります)。
 
 3 つ目の方法は、[/api/app/packagemanager/upload](wdp-folder-upload.md) を使ってフォルダー全体を一度にコピーする方法です。この場合、destinationFolder には d:\developmentfiles\looseapps の下に配置されるフォルダーの名前を指定し、ペイロードはディレクトリ コンテンツの原則に従ったマルチパートの http 本文になります。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

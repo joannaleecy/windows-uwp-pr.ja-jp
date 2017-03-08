@@ -6,9 +6,16 @@ ms.assetid: 07A7E022-EEE9-4C81-AF07-F80868665994
 label: Layout panels
 template: detail.hbs
 op-migration-status: ready
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 98b3a9739b1906b7abb529cea1e7d433118cbcdd
-ms.openlocfilehash: b1c3d5ca03a99e2fff1c37cfddfb7a00db45d251
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 329c4c507e94b08f948f4984dfbd96239eb3cd9d
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="layout-panels"></a>レイアウト パネル
@@ -225,9 +232,4 @@ Canvas パネルは慎重に使用する必要があります。 UI 要素の位
 ## <a name="panels-for-itemscontrol"></a>ItemsControl 用のパネル
 
 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx) に項目を表示するための [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) としてのみ使用できる特殊な用途のパネルがいくつかあります。 このようなパネルには、[**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemsstackpanel.aspx)、[**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemswrapgrid.aspx)、[**VirtualizingStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.virtualizingstackpanel.aspx)、[**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.wrapgrid.aspx) があります。 一般的な UI のレイアウトに、これらのパネルを使うことはできません。
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

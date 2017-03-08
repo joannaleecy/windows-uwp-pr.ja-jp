@@ -2,18 +2,26 @@
 author: mcleanbyron
 description: "パッケージ フライトに関するパッケージのロールアウトを停止するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
 title: "Windows ストア申請 API を使用して、パッケージ フライトに関するパッケージのロールアウトを停止する"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windowsストア申請 API, パッケージのロールアウト, フライトの申請, 停止"
+ms.assetid: f8ee0687-a421-48e7-a6eb-3fd5633c352b
 translationtype: Human Translation
-ms.sourcegitcommit: 9b76a11adfab838b21713cb384cdf31eada3286e
-ms.openlocfilehash: d51c2fa2babb78a35317ab846685530f5c3b4a16
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: ad63a543027ca0a1927eb72c1a7a227788770998
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Windows ストア申請 API を使用して、パッケージ フライトに関するパッケージのロールアウトを停止する
+# <a name="halt-the-package-rollout-for-a-package-flight-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用して、パッケージ フライトに関するパッケージのロールアウトを停止する
 
 
 パッケージ フライトの申請に関する[パッケージのロールアウトを停止する](../publish/gradual-package-rollout.md#completing-the-rollout)には、Windows ストア申請 API に含まれる以下のメソッドを使用します。 Windows ストア申請 API を使ったパッケージ フライトの申請の作成プロセスについて詳しくは、「[パッケージ フライトの申請の管理](manage-flight-submissions.md)」をご覧ください。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
@@ -22,9 +30,9 @@ ms.openlocfilehash: d51c2fa2babb78a35317ab846685530f5c3b4a16
 * デベロッパー センターのアカウントでアプリの申請を作成します。 この操作は、デベロッパー センター ダッシュボードまたは[アプリ申請の作成](create-an-app-submission.md)メソッドを使って実行できます。
 * 申請に関する段階的なパッケージのロールアウトを有効にします。 これは、[デベロッパー センター ダッシュボード](../publish/gradual-package-rollout.md)で行うことも、[Windows ストア申請 API](manage-flight-submissions.md#manage-gradual-package-rollout) を使用して行うこともできます。
 
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントでのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
+>**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するためのアクセス許可が付与された Windows デベロッパー センター アカウントでのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
-## 要求
+## <a name="request"></a>要求
 
 このメソッドの構文は次のとおりです。 ヘッダーと要求のパラメーターの使用例と説明については、以下のセクションをご覧ください。
 
@@ -35,7 +43,7 @@ ms.openlocfilehash: d51c2fa2babb78a35317ab846685530f5c3b4a16
 <span/>
  
 
-### 要求ヘッダー
+### <a name="request-header"></a>要求ヘッダー
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -43,7 +51,7 @@ ms.openlocfilehash: d51c2fa2babb78a35317ab846685530f5c3b4a16
 
 <span/>
 
-### 要求パラメーター
+### <a name="request-parameters"></a>要求パラメーター
 
 | 名前        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -53,11 +61,11 @@ ms.openlocfilehash: d51c2fa2babb78a35317ab846685530f5c3b4a16
 
 <span/>
 
-### 要求本文
+### <a name="request-body"></a>要求本文
 
 このメソッドでは要求本文を指定しないでください。
 
-### 要求の例
+### <a name="request-example"></a>要求の例
 
 パッケージ フライトの申請に関するパッケージのロールアウトを停止する方法の例を次に示します。
 
@@ -66,7 +74,7 @@ POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/fl
 Authorization: Bearer <your access token>
 ```
 
-## 応答
+## <a name="response"></a>応答
 
 次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文の値について詳しくは、「[パッケージのロールアウトのリソース](manage-flight-submissions.md#package-rollout-object)」をご覧ください。
 
@@ -79,7 +87,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## エラー コード
+## <a name="error-codes"></a>エラー コード
 
 要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。
 
@@ -91,14 +99,9 @@ Authorization: Bearer <your access token>
 <span/>
 
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [段階的なパッケージのロールアウト](../publish/gradual-package-rollout.md)
 * [Windows ストア申請 API を使用したパッケージ フライトの申請の管理](manage-flight-submissions.md)
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

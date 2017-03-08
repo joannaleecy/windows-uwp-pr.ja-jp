@@ -3,35 +3,42 @@ author: jnHs
 Description: "Windows ストアでアプリやコンテンツの販売を促進する方法について説明します。 これらのガイドラインでは、利用可能なアセットの使用方法について説明し、印刷、テレビ、ソーシャル メディア、デジタル広告でアプリの販売を促進するための推奨事項を紹介します。"
 title: "Windows ストア アプリのマーケティング ガイドライン"
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b6662344996a83c3f1460af8b7387bf7cfd4b087
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 518631e791746259dc4ee6f23184c8fc01ace427
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Windows ストア アプリのマーケティング ガイドライン
+# <a name="windows-store-app-marketing-guidelines"></a>Windows ストア アプリのマーケティング ガイドライン
 
 Windows ストアでアプリやコンテンツの販売を促進する方法について説明します。 これらのガイドラインでは、利用可能なアセットの使用方法について説明し、印刷、テレビ、ソーシャル メディア、デジタル広告でアプリの販売を促進するための推奨事項を紹介します。
 
-## ストア バッジ
+## <a name="store-badges"></a>ストア バッジ
 
 Windows ストア内でアプリの内容により多くのユーザーを集客するのに役立つ、特殊なプロモーション用のバッジを作成しました。 これらのバッジは 44 の言語で利用できます。 これらのイメージを使う場合、特定の要件に従う必要があることに注意してください。これらの要件は、使用例やガイドラインと共に、PDF ファイルでご確認いただけます。
 
 [![ダウンロード ボタン](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769) Windows ストアのマーケティング ガイドライン (PDF、英語)
 
-## バッジ ジェネレーターと画像
+## <a name="badge-generator-and-images"></a>バッジ ジェネレーターと画像
 
 [バッジ ジェネレーター](http://go.microsoft.com/fwlink/p/?LinkID=534236) を使って、(好みの言語で) ストア バッジを表示しストアのアプリの内容ページに直接リンクする HTML を生成できます。 バッジ画像のセット一式を (PNG および PDF 形式で) 以下のリンクからダウンロードすることもできます。
 
 [![ダウンロード ボタン](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529771) すべてのバッジ画像
 
-## デバイスの画像
+## <a name="device-images"></a>デバイスの画像
 
 アプリの販売を促進するために、Windows デバイスで実行しているときにどのように表示されるかを示すことが必要になる場合があります。 Microsoft では、電話、タブレット、ノート PC、PC など、さまざまなデバイス シャーシの画像を用意しており、その中から選んで使うことができます。 これらの画像の使用方法に関するベスト プラクティスと技術仕様については、[Windows ストアのマーケティング ガイドライン](http://go.microsoft.com/fwlink/p/?LinkId=529769) をご覧ください。
 
 [![ダウンロード ボタン](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) Windows デバイスの図
 
-## Microsoft マークのライセンス
+## <a name="license-to-microsoft-marks"></a>Microsoft マークのライセンス
 
 *Microsoft マーク*とは、[バッジ ジェネレーター](http://go.microsoft.com/fwlink/p/?LinkID=534236)のページで説明するロゴ、*Microsoft バッジ*と *Windows ストア タイル*を意味します。 これらのバッジを使うには、以下の作業を行う必要があります。
 
@@ -51,10 +58,5 @@ Microsoft は、Microsoft マークおよび関連する営業権の唯一の所
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,23 +3,30 @@ author: jnHs
 Description: "ストアにアプリを提出した後にエラーが発生した場合、「認定プロセス」を続行するためにそれを解決する必要があります。"
 title: "申請エラーの解決"
 ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP"
 translationtype: Human Translation
-ms.sourcegitcommit: e295011db20d151f54e2581f8c67014b30261eb6
-ms.openlocfilehash: 71f8ee9e2b8d1f892711ada30c58eefde250cca3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4b97cb009078039582bfcff6cdaa678f1dd9b979
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 申請エラーの解決
+# <a name="resolve-submission-errors"></a>申請エラーの解決
 
 ストアにアプリを提出した後にエラーが発生した場合、「[認定プロセス](the-app-certification-process.md)」を続行するためにそれを解決する必要があります。 エラー メッセージには、どのような問題があるのか、問題を修正するために何をする必要があるのかが示されます。 以下に、これらのエラーの解決に役立つ追加情報をいくつか示します。
 
-## UWP アプリ
+## <a name="uwp-apps"></a>UWP アプリ
 
 UWP アプリを提出する場合は、パッケージ ファイルがストア向けに Visual Studio によって生成された .appxupload ファイルでない場合に、前処理の間にエラーが表示されることがあります。 アプリのパッケージ ファイルを作成するときは、「[Windows 10 のユニバーサル Windows アプリをパッケージ化する](../packaging/packaging-uwp-apps.md)」の手順に従い、提出の[パッケージ](upload-app-packages.md) ページでは、appx や .appxbundle ではなく .appxupload ファイルだけをアップロードしてください。
 
 コンパイル エラーが表示される場合は、リリース モードでアプリケーションを正常にビルドできることを確認します。 詳しくは、[.NET ネイティブ内部コンパイラ エラーに関するページ](http://go.microsoft.com/fwlink/p/?LinkID=613098)をご覧ください。
 
-## Windows Phone アプリ
+## <a name="windows-phone-apps"></a>Windows Phone アプリ
 
 前処理中に Windows Phone のパッケージに関する問題が検出されると、**エラー 2001** が表示されることがあります。 ほとんどの場合は、アプリのパッケージをリビルドしてエラーを修正する必要があります。 処理が完了したら、[パッケージ](upload-app-packages.md) ページで古いパッケージを新しいパッケージに置き換えてから、**[ストアに提出]** をもう一度クリックします。
 
@@ -33,7 +40,7 @@ UWP アプリを提出する場合は、パッケージ ファイルがストア
 
 アプリの提出後に発生する可能性のある他のエラーは、**エラー 1300** です。 これは、1 つ以上のアセンブリ (またはパッケージ全体) が既にプリコンパイルされているときに発生します。 この問題を解決するには、Microsoft Visual Studio でアプリのパッケージをリビルドし、新たに生成されたパッケージを提出します。
 
-## 名前/ID エラー
+## <a name="nameidentity-errors"></a>名前/ID エラー
 
 「**パッケージ内で見つかった名前が、予約したアプリ名のいずれにも該当しません。アプリ名を予約するか、この言語に対応した正しいアプリ名でパッケージを更新してください**」ということを示すエラーが表示された場合、パッケージに誤った名前を入力した可能性があります。 また、このエラーは、デベロッパー センターで予約していないアプリ名を使用している場合にも発生することがあります。 通常、このエラーは次の手順に従って解決できます。
 
@@ -48,10 +55,5 @@ UWP アプリを提出する場合は、パッケージ ファイルがストア
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

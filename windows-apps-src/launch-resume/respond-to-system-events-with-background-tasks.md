@@ -3,15 +3,22 @@ author: TylerMSFT
 title: "バックグラウンド タスクによるシステム イベントへの応答"
 description: "SystemTrigger イベントに応答するバックグラウンド タスクを作成する方法について説明します。"
 ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: 1774b853839e65fd08acb9eb8f9cbb1735cd9bee
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 797ee8930a01f9934692067139a3fd5321ae36df
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="respond-to-system-events-with-background-tasks"></a>バックグラウンド タスクによるシステム イベントへの応答
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 **重要な API**
 
@@ -92,9 +99,4 @@ ms.openlocfilehash: 1774b853839e65fd08acb9eb8f9cbb1735cd9bee
 * [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
 * [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
 * [Windows ストア アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

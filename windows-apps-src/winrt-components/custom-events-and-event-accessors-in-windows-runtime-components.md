@@ -3,20 +3,27 @@ author: msatranjr
 title: "Windows ランタイム コンポーネントのカスタム イベントおよびイベント アクセサー"
 description: ".NET Framework が Windows ランタイム コンポーネントをサポートすることにより、ユニバーサル Windows プラットフォーム (UWP) のイベント パターンと .NET Framework のイベント パターンの違いを意識することなく、イベント コンポーネントを簡単に宣言することができます。"
 ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: c1beff6cbfefdfd3c11c9b16e18519c02c201930
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6bac2575b3855357076d4272a423c9c689118b2b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Windows ランタイム コンポーネントのカスタム イベントおよびイベント アクセサー
+# <a name="custom-events-and-event-accessors-in-windows-runtime-components"></a>Windows ランタイム コンポーネントのカスタム イベントおよびイベント アクセサー
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 .NET Framework が Windows ランタイム コンポーネントをサポートすることにより、ユニバーサル Windows プラットフォーム (UWP) のイベント パターンと .NET Framework のイベント パターンの違いを意識することなく、イベント コンポーネントを簡単に宣言することができます。 ただし、Windows ランタイム コンポーネントのカスタム イベント アクセサーを宣言する場合、UWP で使われるパターンに従う必要があります。
 
-## イベントの登録
+## <a name="registering-events"></a>イベントの登録
 
 
 UWP のイベントを処理するための登録を行うと、add アクセサーはトークンを返します。 登録を解除するには、このトークンを remove アクセサーに渡します。 これは、UWP イベントの add と remove アクセサーが、これまで使ってきたアクセサーとは異なるシグニチャを持つことを意味します。
@@ -117,16 +124,11 @@ C# ユーザー: UWP イベント パターンでカスタム イベント ア�
 
 Visual Basic ユーザー: .NET Framework では、イベントは登録されたすべてのイベント ハンドラーを表すマルチキャスト デリゲートにすぎません。 イベントを発生させることは、デリゲートを呼び出すことを意味します。 一般に、Visual Basic の構文はデリゲートとの対話を非表示にします。また、スレッド セーフに関するメモに説明されているように、コンパイラはデリゲートを呼び出す前にデリゲートをコピーします。 Windows ランタイム コンポーネントでカスタム イベントを作成する場合、デリゲートを直接扱う必要があります。 これは、たとえばハンドラーを個別に呼び出す場合、[MulticastDelegate.GetInvocationList](https://msdn.microsoft.com/library/system.multicastdelegate.getinvocationlist.aspx) メソッドを使って、イベント ハンドラーごとに個別のデリゲートが含まれる配列を取得できることも意味します。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [イベント (Visual Basic)](https://msdn.microsoft.com/library/ms172877.aspx)
 * [イベント (C# プログラミング ガイド)](https://msdn.microsoft.com/library/awbftdfh.aspx)
 * [Windows ストア アプリ用 .NET の概要](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
 * [UWP アプリの .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
 * [チュートリアル: 単純な Windows ランタイム コンポーネントの作成と JavaScript からの呼び出し](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -3,13 +3,20 @@ author: mtoepke
 title: "ゲーム プログラミング用の Visual Studio ツール"
 description: "Visual Studio で利用できる DirectX 固有のツールの概要。"
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, UWP, ゲーム, Visual Studio, ツール, DirectX"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 59fe007601d16f6586ec52c0026e161ad6350a1e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5f5c1ef45dd476565d302ef10f8d47ab2b819993
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# ゲーム プログラミング用の Visual Studio ツール
+# <a name="visual-studio-tools-for-game-programming"></a>ゲーム プログラミング用の Visual Studio ツール
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -24,7 +31,7 @@ Visual Studio Ultimate を使って、DirectX アプリを開発する場合は�
 
 このトピックでは、こうしたグラフィックス ツールの概要について説明します。
 
-## イメージ エディター
+## <a name="image-editor"></a>イメージ エディター
 
 
 イメージ エディターは、DirectX で使うリッチ テクスチャと画像形式の種類を操作するのに使います。 イメージ エディターでは、次の形式をサポートしています。
@@ -38,7 +45,7 @@ Visual Studio Ultimate を使って、DirectX アプリを開発する場合は�
 -   .tif、.tiff
 -   .tga
 
-ビルド時にこれらを .dds ファイルに変換するには、[ビルド カスタマイズ ファイル](#custom)を作成します。
+ビルド時にこれらを .dds ファイルに変換するには、[ビルド カスタマイズ ファイル](#build-customizations-for-3d-assets)を作成します。
 
 詳しくは、「[テクスチャおよびイメージの使用](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx)」をご覧ください。
 
@@ -46,10 +53,10 @@ Visual Studio Ultimate を使って、DirectX アプリを開発する場合は�
 
  
 
-## モデル エディター
+## <a name="model-editor"></a>モデル エディター
 
 
-モデル エディターを使うと、基本的な 3D モデルをゼロから作成するや、フル機能を備えた 3D モデリング ツールで作成したもっと複雑な 3D モデルの表示や変更を行うことができます。 モデル エディターでは、DirectX アプリの開発で使われるいくつかの 3D モデル形式をサポートしています。 ビルド時に次のファイルを .cmo ファイルに変換する[ビルド カスタマイズ ファイル](#custom)を作成できます。
+モデル エディターを使うと、基本的な 3D モデルをゼロから作成するや、フル機能を備えた 3D モデリング ツールで作成したもっと複雑な 3D モデルの表示や変更を行うことができます。 モデル エディターでは、DirectX アプリの開発で使われるいくつかの 3D モデル形式をサポートしています。 ビルド時に次のファイルを .cmo ファイルに変換する[ビルド カスタマイズ ファイル](#build-customizations-for-3d-assets)を作成できます。
 
 -   .fbx
 -   .dae
@@ -65,7 +72,7 @@ Visual Studio Ultimate を使って、DirectX アプリを開発する場合は�
 
  
 
-## シェーダー デザイナー
+## <a name="shader-designer"></a>シェーダー デザイナー
 
 
 HLSL でのプログラミングがわからない場合でも、シェーダー デザイナーを使うと、ゲームやアプリのカスタムの視覚効果を作成できます。
@@ -80,7 +87,7 @@ HLSL でのプログラミングがわからない場合でも、シェーダー
 -   .cso (バイトコード)
 -   .h (HLSL バイトコード配列)
 
-ビルド時にこれらの形式を .cso ファイルに変換するには、[ビルド カスタマイズ ファイル](#custom)を作成します。
+ビルド時にこれらの形式を .cso ファイルに変換するには、[ビルド カスタマイズ ファイル](#build-customizations-for-3d-assets)を作成します。
 
 シェーダー エディターでエクスポートした HLSL コードの一部を次に示します。 これは、ランバート照明ノードのコードだけです。
 
@@ -108,7 +115,7 @@ float3 LambertLighting(
 
 詳しくは、「[シェーダーの操作](https://msdn.microsoft.com/library/windows/apps/hh873117.aspx)」をご覧ください。
 
-## 3D アセットのビルドのカスタマイズ
+## <a name="build-customizations-for-3d-assets"></a>3D アセットのビルドのカスタマイズ
 
 
 プロジェクトにビルドのカスタマイズを追加して、リソースを Visual Studio で利用できる形式に変換できます。 その後で、アプリにアセットを読み込み、他の DirectX アプリと同じように DirectX リソースを作成し、設定して、アセットを使うことができます。
@@ -121,7 +128,7 @@ float3 LambertLighting(
 
 詳しくは、「[ゲームまたはアプリケーションでの 3-D アセットの使用](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx)」をご覧ください。
 
-## DirectX グラフィックスのデバッグ
+## <a name="debugging-directx-graphics"></a>DirectX グラフィックスのデバッグ
 
 
 Visual Studio には、グラフィックス固有のデバッグ ツールが用意されています。 これらのツールを使って、次のような項目をデバッグします。
@@ -148,10 +155,5 @@ Visual Studio には、グラフィックス固有のデバッグ ツールが�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

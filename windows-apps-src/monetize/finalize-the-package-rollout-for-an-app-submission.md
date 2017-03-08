@@ -2,18 +2,26 @@
 author: mcleanbyron
 description: "Windows ストア申請 API でこのメソッドを使用し、アプリの申請に関するパッケージのロールアウトを完了します。"
 title: "Windows ストア申請 API を使用して、アプリの申請に関するパッケージのロールアウトを完了する"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windowsストア申請 API, パッケージのロールアウト, アプリの申請, 最終処理"
+ms.assetid: c7dd39e6-5162-455a-b03b-1ed76bffcf6e
 translationtype: Human Translation
-ms.sourcegitcommit: 9b76a11adfab838b21713cb384cdf31eada3286e
-ms.openlocfilehash: 5a6bbf5e242b7284fb2a5de66252b354bfa09909
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 6c7fa8fc509faf2c662732e7e6b998d355fcbd66
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Windows ストア申請 API を使用して、アプリの申請に関するパッケージのロールアウトを完了する
+# <a name="finalize-the-package-rollout-for-an-app-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用して、アプリの申請に関するパッケージのロールアウトを完了する
 
 
 Windows ストア申請 API でこのメソッドを使用し、アプリの申請に関する[パッケージのロールアウトを完了](../publish/gradual-package-rollout.md#completing-the-rollout)します。 Windows ストア申請 API を使ったアプリの申請の作成プロセスについて詳しくは、「[アプリの申請の管理](manage-app-submissions.md)」をご覧ください。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
@@ -22,9 +30,9 @@ Windows ストア申請 API でこのメソッドを使用し、アプリの申�
 * デベロッパー センターのアカウントでアプリの申請を作成します。 この操作は、デベロッパー センター ダッシュボードまたは[アプリ申請の作成](create-an-app-submission.md)メソッドを使って実行できます。
 * 申請に関する段階的なパッケージのロールアウトを有効にします。 これは、[デベロッパー センター ダッシュボード](../publish/gradual-package-rollout.md)で行うことも、[Windows ストア申請 API](manage-app-submissions.md#manage-gradual-package-rollout) を使用して行うこともできます。
 
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントでのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
+>**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するためのアクセス許可が付与された Windows デベロッパー センター アカウントでのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
-## 要求
+## <a name="request"></a>要求
 
 このメソッドの構文は次のとおりです。 ヘッダーと要求のパラメーターの使用例と説明については、以下のセクションをご覧ください。
 
@@ -35,7 +43,7 @@ Windows ストア申請 API でこのメソッドを使用し、アプリの申�
 <span/>
  
 
-### 要求ヘッダー
+### <a name="request-header"></a>要求ヘッダー
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -43,7 +51,7 @@ Windows ストア申請 API でこのメソッドを使用し、アプリの申�
 
 <span/>
 
-### 要求パラメーター
+### <a name="request-parameters"></a>要求パラメーター
 
 | 名前        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -52,11 +60,11 @@ Windows ストア申請 API でこのメソッドを使用し、アプリの申�
 
 <span/>
 
-### 要求本文
+### <a name="request-body"></a>要求本文
 
 このメソッドでは要求本文を指定しないでください。
 
-### 要求の例
+### <a name="request-example"></a>要求の例
 
 パッケージ フライトの申請に関するパッケージのロールアウトを完了する方法の例を次に示します。
 
@@ -65,7 +73,7 @@ POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/su
 Authorization: Bearer <your access token>
 ```
 
-## 応答
+## <a name="response"></a>応答
 
 次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文の値について詳しくは、「[パッケージのロールアウトのリソース](manage-app-submissions.md#package-rollout-object)」をご覧ください。
 
@@ -79,26 +87,21 @@ Authorization: Bearer <your access token>
 ```
 
 
-## エラー コード
+## <a name="error-codes"></a>エラー コード
 
 要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。
 
 | エラー コード |  説明   |
 |--------|------------------|
 | 404  | 申請は見つかりませんでした。 |
-| 409  | このコードは、次のエラーのいずれかを示します。<br/><br/><ul><li>申請が、段階的なロールアウト操作に対して有効な状態になっていません (このメソッドを呼び出す前に、申請を公開し、 [packageRolloutStatus](manage-app-submissions.md#package-rollout-object) の値を **PackageRolloutInProgress** に設定する必要があります)。</li><li>申請が、指定されたアプリに属していません。</li><li>アプリは、[Windows ストア申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センターのダッシュボード機能を使用します。</li></ul> |   
+| 409  | このコードは、次のエラーのいずれかを示します。<br/><br/><ul><li>申請が、段階的なロールアウト操作に対して有効な状態になっていません (このメソッドを呼び出す前に、申請を公開し、[packageRolloutStatus](manage-app-submissions.md#package-rollout-object) の値を **PackageRolloutInProgress** に設定する必要があります)。</li><li>申請が、指定されたアプリに属していません。</li><li>アプリは、[Windows ストア申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センターのダッシュボード機能を使用します。</li></ul> |   
 
 <span/>
 
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [段階的なパッケージのロールアウト](../publish/gradual-package-rollout.md)
 * [Windows ストア申請 API を使用したアプリの申請の管理](manage-app-submissions.md)
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

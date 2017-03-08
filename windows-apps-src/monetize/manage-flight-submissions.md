@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
 description: "Windows デベロッパー センター アカウントに登録するアプリのパッケージ フライトの申請を管理するには、以下の Windows ストア申請 API のメソッドを使います。"
 title: "Windows ストア申請 API を使用したパッケージ フライトの申請の管理"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows ストア申請 API, フライトの申請"
 translationtype: Human Translation
-ms.sourcegitcommit: 41203bffb65de3d4d6cc0fec2c7436e0b9d5821b
-ms.openlocfilehash: 9fc42f3abf1d876f271d18c1747ed7462dd20bd6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 71e759773beedef302a78a439b1a2a77a72dc85f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -13,12 +20,14 @@ ms.openlocfilehash: 9fc42f3abf1d876f271d18c1747ed7462dd20bd6
 
 Windows ストア申請 API には、段階的なパッケージのロールアウトなど、アプリのパッケージ フライトの申請を管理するために使用できるメソッドが用意されています。 Windows ストア申請 API の概要については、「[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。この API を使用するための前提条件などの情報があります。
 
->**注:**&nbsp;&nbsp;これらのメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。 これらのメソッドを使用してパッケージ フライトの申請を作成または管理するには、パッケージ フライトをお客様自身のデベロッパー センター アカウントに用意しておく必要があります。 パッケージ フライトは、[デベロッパー センター ダッシュボードを使用する](https://msdn.microsoft.com/windows/uwp/publish/package-flights)か、「[パッケージ フライトの管理](manage-flights.md)」の説明に従って Windows ストア申請 API のメソッドを使用して、作成できます。
+>**注:**&nbsp;&nbsp;これらのメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 このアクセス許可は、開発者アカウントに対して段階的に有効になります。現時点では、すべてのアカウントでこのアクセス許可が有効になっているわけではありません。 以前のアクセス権を要求するには、デベロッパー センター ダッシュボードにログオンし、ダッシュ ボードの下部にある **[フィードバック]** をクリックします。その後、フィードバック領域で **[申請 API]** を選択し、要求を提出します。 自分のアカウントでこのアクセス許可が有効になると、メールが届きます。
+
+>**重要**&nbsp;&nbsp;Windows ストア申請 API を使ってパッケージ フライトの提出を作成する場合、必ずデベロッパー センター ダッシュボードではなく API のみを使って申請をさらに変更してください。 最初に API を使って作成した申請を、ダッシュボードを使って変更した場合、API を使ってその申請を変更またはコミットすることができなくなります。 場合によっては、申請がエラー状態のままになり、申請プロセスを進めることができなくなります。 この場合、申請を削除して新しい申請を作成する必要があります。
 
 <span id="methods-for-package-flight-submissions" />
 ## <a name="methods-for-managing-package-flight-submissions"></a>パッケージ フライトの申請を管理するためのメソッド
 
-パッケージ フライトの申請を取得、作成、更新、コミット、または削除するには、次のメソッドを使用します。
+パッケージ フライトの申請を取得、作成、更新、コミット、または削除するには、次のメソッドを使用します。 これらのメソッドを使用するには、パッケージ フライトをお客様自身のデベロッパー センター アカウントに用意しておく必要があります。 パッケージ フライトは、[デベロッパー センター ダッシュボードを使用する](https://msdn.microsoft.com/windows/uwp/publish/package-flights)か、「[パッケージ フライトの管理](manage-flights.md)」の説明に従って Windows ストア申請 API のメソッドを使用して、作成できます。
 
 <table>
 <colgroup>
@@ -143,6 +152,8 @@ Windows ストア申請 API には、段階的なパッケージのロールア�
 * [C# のコード例](csharp-code-examples-for-the-windows-store-submission-api.md)
 * [Java のコード例](java-code-examples-for-the-windows-store-submission-api.md)
 * [Python のコード例](python-code-examples-for-the-windows-store-submission-api.md)
+
+>**注**&nbsp;&nbsp;上に示したコード例に加えて、Windows ストア申請 API の上にコマンド ライン インターフェイスを実装するオープンソースの PowerShell モジュールも用意しています。 このモジュールは、[StoreBroker](https://aka.ms/storebroker) と呼ばれています。 このモジュールを使うと、Windows ストア申請 API を直接呼び出さずにコマンド ラインからアプリ、フライト、アドオンの申請を管理できます。または、ソースをそのまま参照して、この API を呼び出す方法の他の例を確認できます。 StoreBroker モジュールは、多くのファースト パーティ アプリケーションをストアに申請する主要な方法として Microsoft 内で積極的に使っています。 詳しくは、[GitHub の StoreBroker に関するページ](https://aka.ms/storebroker)をご覧ください。
 
 <span id="manage-gradual-package-rollout">
 ## <a name="manage-a-gradual-package-rollout-for-a-package-flight-submission"></a>パッケージ フライトの申請の段階的なパッケージのロールアウトを管理する
@@ -411,9 +422,4 @@ Windows ストア申請 API には、段階的なパッケージのロールア�
 * [パッケージ フライトの申請のコミット](commit-a-flight-submission.md)
 * [パッケージ フライトの申請の削除](delete-a-flight-submission.md)
 * [パッケージ フライトの申請の状態の取得](get-status-for-a-flight-submission.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

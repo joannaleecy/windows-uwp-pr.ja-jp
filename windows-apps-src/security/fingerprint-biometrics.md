@@ -3,13 +3,20 @@ title: "指紋生体認証"
 description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリに指紋生体認証を追加する方法について説明します。"
 ms.assetid: 55483729-5F8A-401A-8072-3CD611DDFED2
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: d2dfbc6c69e8ee97a01bbf0d7ae82488ca62e3cb
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 84e191df23f10f81a3588662f9ba1505cee12e21
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 指紋生体認証
+# <a name="fingerprint-biometrics"></a>指紋生体認証
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -17,7 +24,7 @@ ms.openlocfilehash: d2dfbc6c69e8ee97a01bbf0d7ae82488ca62e3cb
 
 この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリに指紋生体認証を追加する方法について説明します。 特定の操作に対してユーザーの同意を得る必要がある場合は、指紋認証の要求を含めると、アプリのセキュリティを高めることができます。 たとえば、アプリ内購入を承認する前や制限されたリソースにアクセスする前に指紋認証を要求できます。 指紋認証は、[**Windows.Security.Credentials.UI**](https://msdn.microsoft.com/library/windows/apps/hh701356) 名前空間の [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) クラスを使って管理されます。
 
-## デバイスに指紋リーダーがあるかどうかをチェックする
+## <a name="check-the-device-for-a-fingerprint-reader"></a>デバイスに指紋リーダーがあるかどうかをチェックする
 
 
 デバイスに指紋リーダーがあるかどうかを調べるには、[**UserConsentVerifier.CheckAvailabilityAsync**](https://msdn.microsoft.com/library/windows/apps/dn279138) メソッドを呼び出します。 デバイスで指紋認証がサポートされている場合も、アプリでは、指紋認証を有効または無効にする設定オプションをユーザーに提供する必要があります。
@@ -64,7 +71,7 @@ public async System.Threading.Tasks.Task<string> CheckFingerprintAvailability()
 }
 ```
 
-## 同意を求めて、結果を返す
+## <a name="request-consent-and-return-results"></a>同意を求めて、結果を返す
 
 
 指紋のスキャンによってユーザーの同意を求めるには、[**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139) メソッドを呼び出します。 指紋認証を行うには、あらかじめユーザーが指紋データベースに指紋の "署名" を追加している必要があります。
@@ -123,8 +130,3 @@ private async System.Threading.Tasks.Task<string> RequestConsent(string userMess
     return returnMessage;
 }
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

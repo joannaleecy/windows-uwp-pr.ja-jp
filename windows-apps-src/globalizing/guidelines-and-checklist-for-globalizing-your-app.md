@@ -6,9 +6,16 @@ title: "グローバリゼーションとローカライズのガイドライン
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
 label: Do's and don'ts
 template: detail.hbs
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 72849c304d2150fd7fe6768181a504f94ef98d5f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a5b3945f67ec1aa52b588b6364dbd04533968d24
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -189,10 +196,5 @@ ms.openlocfilehash: 72849c304d2150fd7fe6768181a504f94ef98d5f
  
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

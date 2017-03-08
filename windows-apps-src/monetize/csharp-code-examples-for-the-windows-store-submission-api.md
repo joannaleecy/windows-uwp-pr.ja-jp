@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: FABA802F-9CB2-4894-9848-9BB040F9851F
 description: "このセクションの C# コード例を使用して、Windows ストア申請 API を使用する方法をご確認ください。"
 title: "Windows ストア申請 API の C# コード例"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、Windows ストア申請 API、コード例"
 translationtype: Human Translation
-ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
-ms.openlocfilehash: d2fc29f8f2fc6cc78c1cb04c68844215a3e3eafe
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c71555eb854e5dcf6cbccf89e9b0b8ffe35ab0e4
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -120,9 +127,4 @@ ms.openlocfilehash: d2fc29f8f2fc6cc78c1cb04c68844215a3e3eafe
 ## <a name="related-topics"></a>関連トピック
 
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

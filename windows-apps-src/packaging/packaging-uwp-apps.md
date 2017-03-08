@@ -3,14 +3,21 @@ author: laurenhughes
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: "UWP アプリのパッケージ化"
 description: "ユニバーサル Windows プラットフォーム (UWP) アプリを販売、またはその他のユーザーに配布するには、appxupload パッケージを作成する必要があります。"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6decb122b56bb8835b4d0fc5178af61b59455876
-ms.openlocfilehash: 312c8fb0bbbb6231da91e7d477b800a797160e96
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ca57f50f4827ba5de7a140f1353ba864c5e2fb6c
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="packaging-uwp-apps"></a>UWP アプリのパッケージ化
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 ユニバーサル Windows プラットフォーム (UWP) アプリを販売、またはその他のユーザーに配布するには、appxupload パッケージを作成する必要があります。 appxupload を作成すると、別の appx パッケージがテストとサイドローディング用に生成されます。 デバイスに appx パッケージをサイドローディングすることで、アプリを直接配布できます。 この記事では、UWP アプリ パッケージを構成、作成、テストする方法について説明します。 サイドローディングについて詳しくは、「[Windows 10 でのアプリのサイドローディング](https://technet.microsoft.com/library/mt269549.aspx)」をご覧ください。
 
@@ -130,8 +137,3 @@ UWP アプリ パッケージは、デスクトップ アプリとは異なり�
 
     **注:** タブレットでショートカット メニューを開くには、右クリックする画面をタッチし、完全な円が表示されてから指を離します。 指を放した後にショートカット メニューが表示されます。
 4.  スタート ボタンをクリックし、起動するアプリの名前を入力します。
-
-
-<!--HONumber=Dec16_HO1-->
-
-

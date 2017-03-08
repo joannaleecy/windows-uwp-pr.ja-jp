@@ -1,17 +1,24 @@
 ---
 author: TylerMSFT
-title: "バックグラウンド タスクのライブ タイルの更新"
-description: "アプリのライブ タイルを新しいコンテンツで更新するためにバックグラウンド タスクを使います。"
+title: "バックグラウンド タスクによるライブ タイルの更新"
+description: "アプリのライブ タイルを新しいコンテンツで更新するには、バックグラウンド タスクを使います。"
 Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: d651a5dbf8478de238944cac36ea13429b0f1849
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 76521772e4f93ee143ad698ad798f4b88ebcf3a7
+ms.lasthandoff: 02/07/2017
 
 ---
 
 
-# バックグラウンド タスクのライブ タイルの更新
+# <a name="update-a-live-tile-from-a-background-task"></a>バックグラウンド タスクによるライブ タイルの更新
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -22,13 +29,13 @@ ms.openlocfilehash: d651a5dbf8478de238944cac36ea13429b0f1849
 -   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 
-アプリのライブ タイルを新しいコンテンツで更新するためにバックグラウンド タスクを使います。
+アプリのライブ タイルを新しいコンテンツで更新するには、バックグラウンド タスクを使います。
 
 アプリにライブ タイルを追加する方法について説明するビデオをご覧ください。
 
 <iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/afb47cc5-edd3-4262-ae45-8f0e3ae664ac/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">One Dev Minute - バックグラウンド タスクからのライブ タイルの更新</iframe>
 
-## バックグラウンド タスク プロジェクトを作る
+## <a name="create-the-background-task-project"></a>バックグラウンド タスク プロジェクトを作る
 
 
 アプリのライブ タイルを有効にするには、新しい Windows ランタイム コンポーネント プロジェクトをソリューションに追加します。 このプロジェクトは個別のアセンブリです。ユーザーがアプリをインストールするとき、OS ではこのプロジェクトがバックグラウンドで読み込まれ、実行されます。
@@ -38,7 +45,7 @@ ms.openlocfilehash: d651a5dbf8478de238944cac36ea13429b0f1849
 3.  プロジェクトに "BackgroundTasks" という名前を付け、**[OK]** をクリックまたはタップします。 Microsoft Visual Studio によって、新しいプロジェクトがソリューションに追加されます。
 4.  メイン プロジェクトで、BackgroundTasks プロジェクトへの参照を追加します。
 
-## バックグラウンド タスクの実装
+## <a name="implement-the-background-task"></a>バックグラウンド タスクの実装
 
 
 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) インターフェイスを実装して、アプリのライブ タイルを更新するクラスを作ります。 バックグラウンドの作業は、Run メソッドで実行されます。 この場合、タスクによって MSDN ブログの配信フィードが取得されます。 非同期コードの実行中にタスクが途中で終了するのを防ぐには、保留を取得します。
@@ -141,7 +148,7 @@ namespace BackgroundTasks
 }
 ```
 
-## パッケージ マニフェストの設定
+## <a name="set-up-the-package-manifest"></a>パッケージ マニフェストの設定
 
 
 パッケージ マニフェストを設定するには、そのマニフェストを開き、新しいバックグラウンド タスクの宣言を追加します。 タスクのエントリ ポイントを設定します。このエントリ ポイントには、名前空間を含めてクラスの名前を指定します。
@@ -158,7 +165,7 @@ namespace BackgroundTasks
 9.  **[小さいロゴ]** フィールドに、30x30 ピクセルのアイコンへのパスを設定します。
 10. **[ワイド ロゴ]** フィールドに、310x150 ピクセルのアイコンへのパスを設定します。
 
-## バックグラウンド タスクの登録
+## <a name="register-the-background-task"></a>バックグラウンド タスクの登録
 
 
 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) を作って、タスクを登録します。
@@ -240,7 +247,7 @@ namespace ContosoApp
 }
 ```
 
-## バックグラウンド タスクのデバッグ
+## <a name="debug-the-background-task"></a>バックグラウンド タスクのデバッグ
 
 
 バックグラウンド タスクをデバッグするには、タスクの Run メソッドにブレークポイントを設定します。 **[デバッグの場所]** ツール バーで、バックグラウンド タスクを選びます。 この操作によって、システムで Run メソッドがすぐに呼び出されます。
@@ -255,7 +262,7 @@ namespace ContosoApp
 8.  デバッグを停止するには、Shift キーを押しながら F5 キーを押すか、**[デバッグ]、[デバッグの停止]** の順にタップします。
 9.  スタート画面にあるアプリのタイルに戻ります。 数秒後、アプリのタイルにタイル通知が表示されます。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
@@ -267,9 +274,4 @@ namespace ContosoApp
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

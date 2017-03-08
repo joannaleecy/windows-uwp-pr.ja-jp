@@ -6,9 +6,16 @@ title: "グローバリゼーションとローカライズ"
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 3149eb8275cc74c61ff0e35963f3fd1dbdc4e833
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fa7757a8657abfc84ee905cb05b0b3addc59f64e
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -93,10 +100,5 @@ Windows は世界中で利用されており、文化、地域、言語の異な
  
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

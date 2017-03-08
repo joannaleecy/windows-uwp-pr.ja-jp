@@ -14,8 +14,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
-ms.openlocfilehash: caaa6228f2d5b2bb6566ccb285d90a396a1caf01
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 43cbc8999d21d0534c4b6e557822345a69f66007
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -262,9 +263,4 @@ phoneNumberTextBox.InputScope = new InputScope()
 |------------------------------------------------------------|------------------------------------------------------------------|
 | ![既定の Windows タッチ キーボード](images/input-scopes/kbdpcdefault.png)<br>**Default** と同じレイアウト。| ![名前または電話番号用 Windows Phone タッチ キーボード](images/input-scopes/kbdwpnameorphonenumber.png)<br>**;** キーと **@** キーがあります。 **&amp;123** キーの代わりに **123** キーがあり、これで電話のキーパッドが表示されます (**TelephoneNumber** を参照してください)。|
 |機能の可用性:<ul><li>スペル チェック: 既定では有効だが、無効にすることも可能</li><li>自動修正: 常に無効</li><li>大文字の自動設定: 常に有効</li><li>予測入力: 常に無効</li></ul> | 機能の可用性:<ul><li>スペル チェック: 既定では無効だが、有効にすることも可能</li><li>自動修正: 既定では無効だが、有効にすることも可能</li><li>大文字の自動設定: 既定では無効だが、有効にすることも可能。 各単語の最初の文字を大文字にする。</li><li>予測入力: 既定では無効だが、有効にすることも可能</li></ul> |
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

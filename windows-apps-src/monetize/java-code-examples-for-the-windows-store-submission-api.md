@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 4920D262-B810-409E-BA3A-F68AADF1B1BC
 description: "このセクションの Java コード例を使用して、Windows ストア申請 API を使用する方法をご確認ください。"
 title: "Windows ストア申請 API の Java コード例"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows ストア申請 API, コード例"
 translationtype: Human Translation
-ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
-ms.openlocfilehash: 7f7de7c7d9fa9131d38da48e13ce449f4440962d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9bf6885129176a75265d073c3f92b9f899bc265d
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -121,9 +128,4 @@ ms.openlocfilehash: 7f7de7c7d9fa9131d38da48e13ce449f4440962d
 ## <a name="related-topics"></a>関連トピック
 
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

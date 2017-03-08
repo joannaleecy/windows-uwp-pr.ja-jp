@@ -3,13 +3,20 @@ author: jnHs
 Description: "アプリの提出時に、[認定の注意書き] ページを使って、認定審査担当者に追加情報を提供することができます。 この情報は、アプリを正しく審査するために使用されます。"
 title: "認定の注意書き"
 ms.assetid: 4A740A5F-F39F-4FE2-9391-EE00DB46B25A
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9f8bc1fc435c0ee25220c60d68a5adaa34ff6214
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 92a110879f6ff92b3e1e41964ff6acea6b7cb5ec
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 認定の注意書き
+# <a name="notes-for-certification"></a>認定の注意書き
 
 
 アプリの提出時に、**[認定の注意書き]** ページを使って、認定審査担当者に追加情報を提供することができます。 この情報は、アプリを正しく審査するために使用されます。
@@ -44,10 +51,5 @@ ms.openlocfilehash: 9f8bc1fc435c0ee25220c60d68a5adaa34ff6214
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

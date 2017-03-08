@@ -5,9 +5,16 @@ title: "チェック ボックス"
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 874d1a7200359ecc46b26b306b208946c7a6f273
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: aeac6f2326fa7a80f8d90f1c10333933fa562a00
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="check-boxes"></a>チェック ボックス
@@ -298,10 +305,5 @@ private void SetCheckedState()
 -   [ラジオ ボタン](radio-button.md)
 -   [トグル スイッチ](toggles.md)
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

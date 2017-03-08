@@ -3,15 +3,22 @@ author: jwmsft
 ms.assetid: b632a6cc-3503-4ab8-bfd1-dde731bd89ab
 description: "このセクションのトピックでは、作成するアプリ全般に当てはまるプログラミングの概念について説明します。"
 title: "XAML プラットフォーム"
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: bd2423c9c58a2c6bf20b0b15715b9e9e7aa219dd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1930f3a215b7bc0980b1fb4a8c83b6cfadd1e373
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# XAML プラットフォーム
+# <a name="xaml-platform"></a>XAML プラットフォーム
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 このセクションのトピックでは、プログラミング言語として C#、Microsoft Visual Basic、または Visual C++ コンポーネント拡張機能 (C++/CX) を使い、UI 定義として XAML を使う場合に、作成するアプリ全般に当てはまるプログラミングの概念について説明します。 ここでは、プロパティとイベントの使い方や、ユニバーサル Windows プラットフォーム (UWP) アプリ プログラミングへのその適用法など、基本的なプログラミングの概念について説明します。 ユニバーサル Windows プラットフォーム (UWP) は、依存関係プロパティ システムを追加することで、C#、Visual Basic、C++/CX のプロパティとその値の概念を拡張します。 このセクションのトピックでは、UWP で使われる XAML 言語についても説明し、XAML を使って UWP アプリの UI を定義する方法に関する基本的なシナリオと高度なトピックも取り上げています。
  
@@ -25,9 +32,4 @@ ms.openlocfilehash: bd2423c9c58a2c6bf20b0b15715b9e9e7aa219dd
 | [イベントとルーティング イベントの概要](events-and-routed-events-overview.md) | このトピックでは、Windows ランタイム アプリで、プログラミング言語に C#、Visual Basic、または C++/CX、UI 定義に XAML を使う場合のイベントのプログラミングの概念について説明します。 イベントのハンドラーは、UI 要素の宣言の一部として XAML で割り当てることも、コードで追加することもできます。 Windows ランタイムは**ルーティング イベント**をサポートしており、特定の入力イベントとデータ イベントを、その発生元オブジェクト以外のオブジェクトで処理できます。 ルーティング イベントは、コントロール テンプレートを定義する際や、ページまたはレイアウト コンテナーを使う際に役立ちます。 |
 
  
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

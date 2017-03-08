@@ -5,9 +5,16 @@ title: "ナビゲーション ウィンドウのガイドライン"
 ms.assetid: 8FB52F5E-8E72-4604-9222-0B0EC6A97541
 label: Nav pane
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 3aed1658f0a9fa81677f5089d343969840ab33f1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a5f15129c424c92ac537116458c8433f6c96fa87
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="nav-panes"></a>ナビゲーション ウィンドウ
@@ -125,9 +132,4 @@ ms.openlocfilehash: 3aed1658f0a9fa81677f5089d343969840ab33f1
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

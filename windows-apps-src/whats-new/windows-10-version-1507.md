@@ -1,15 +1,22 @@
 ---
 author: QuinnRadich
 Description: "Windows 10 バージョン 1507 と開発者ツールの更新プログラムでは、引き続きユニバーサル Windows プラットフォームによって強化されたツール、機能、およびエクスペリエンスを提供しています。"
-title: "Windows 10 バージョン 1507 の新着情報 - 2015 年 7 月"
+title: "Windows 10 バージョン 1507 の新着情報"
 keywords: "新着情報, 新しい情報, 更新, 更新情報, 機能, 新規, Windows 10, 1507"
+ms.author: quradic
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
 translationtype: Human Translation
-ms.sourcegitcommit: 5646bf7681b5b028031eab02f8dd5c352d4b9cc1
-ms.openlocfilehash: 0388f444431f9716a1f311c8c2dfc8db2de83df3
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 4650eaa22f299910bd7956972bd7099ea6d78943
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Windows 10 バージョン 1507 の新着情報
+# <a name="whats-new-in-windows-10-version-1507"></a>Windows 10 バージョン 1507 の新着情報
 
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -19,7 +26,7 @@ Windows 10 と新しい開発者ツールを使うと、新しいユニバーサ
 
 以下では、Windows 10 バージョン 1507 の新機能をそれぞれ見ていきます。
 
-## アダプティブ レイアウト
+## <a name="adaptive-layouts"></a>アダプティブ レイアウト
 
 機能 | 説明
  :---- | ----:
@@ -28,7 +35,7 @@ StateTriggers | 新しい [VisualState.StateTriggers](https://msdn.microsoft.com
 Setter | [VisualStateManager](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager.aspx) でプロパティの変更を定義する際に使うマークアップが、新しい [VisualState.Setters](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstate.setters.aspx) 構文によって単純化されています。 [StackPanel](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx) の向きを横から縦にするなど、プロパティの変更を適用するとき、従来であれば、ストーリーボードを使ってアニメーションを作成する必要がありました。 ユニバーサル Windows アプリでは、次のように単純化された Setter 構文を使うことができます。 <setter target="stackPanel1.Orientation" value="Vertical" />
 
 
-## XAML の機能
+## <a name="xaml-features"></a>XAML の機能
 
 機能 | 説明
  :---- | :----
@@ -46,7 +53,7 @@ MediaTransportControls | [MediaElement](https://msdn.microsoft.com/library/windo
 手描き入力 | [InkCanvas](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) コントロールと、基になる [InkPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx) クラスにより、C++、C#、または Visual Basic で Windows ランタイム アプリに堅牢な手描き入力機能をさらに簡単に使用できるようになりました。 [InkCanvas](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) コントロールは、インク ストロークの描画とレンダリングのためのオーバーレイ領域を定義します。 このコントロールの機能 (入力、処理、レンダリング) は、[InkPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx)、[InkStroke](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkstroke.aspx)、[InkRecognizers](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkrecognizer.aspx)、[InkSynchronizer](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inksynchronizer.aspx) の各クラスから提供されます。 **重要:** これらのクラスは、JavaScript を使っている Windows アプリではサポートされていません。
 
 
-## 更新された XAML の機能
+## <a name="updated-xaml-features"></a>更新された XAML の機能
 
 機能 | 説明
  :---- | :----
@@ -72,7 +79,7 @@ AutoSuggestBox | Windows Phone 8.1 の [AutoSuggestBox](https://msdn.microsoft.c
 ContentDialog | Windows Phone 8.1 の [ContentDialog](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx) コントロールは、すべてのデバイス ファミリのユニバーサル Windows アプリで使用できるようになりました。 ContentDialog を使えば、ありとあらゆるデバイスで適切に機能するカスタマイズ可能なモーダル ダイアログを表示できます。
 Pivot | Windows Phone 8.1 の [Pivot](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.aspx) コントロールは、すべてのデバイス ファミリのユニバーサル Windows アプリで使用できるようになりました。 モバイル デバイスとデスクトップ デバイスに対応したアプリで、同じ Pivot コントロールを使用できるようになりました。 Pivot は、画面サイズと入力の種類に基づいてアダプティブ動作を提供します。 各ピボット項目の異なる情報のビューで、タブに似た動作を提供するように Pivot コントロールのスタイルを指定できます。
 
-## テキスト
+## <a name="text"></a>テキスト
 
 機能 | 説明
  :---- | :----
@@ -83,7 +90,7 @@ Windows の基本的なテキスト API | 新しい [Windows.UI.Text.Core](https
 双方向テキストの処理の改善 | XAML テキスト コントロールの新しい API により、双方向テキストの処理が改善され、さまざまな入力言語でテキスト配置と段落の方向がより適切に設定されるようになりました。 TextReadingOrder プロパティの既定値が DetectFromContent に変更されたため、読む方向の検出のサポートが既定で有効になります。 また、PasswordBox、RichEditBox、TextBox にも TextReadingOrder プロパティが追加されました。 テキスト コントロールの TextAlignment プロパティを新しい DetectFromContent 値に設定すると、配置をコンテンツから自動的に検出できます。
 テキストの描画 | Windows 10 では、ほとんどの状況で、XAML アプリのテキストが Windows 8.1 のほぼ 2 倍の速度で描画されます。 ほとんどの場合は、変更しなくても、アプリでこの速度向上の恩恵を受けることができます。 また、描画速度の向上のほか、XAML アプリの一般的なメモリ消費量が 5% 減少します。
 
-## アプリケーション モデル
+## <a name="application-model"></a>アプリケーション モデル
 
 機能 | 説明
  :---- | :----
@@ -95,7 +102,7 @@ Cortana | 音声コマンドが Cortana の基本機能を拡張し、外部ア�
 アプリ サービス | アプリ サービスは、Windows 10 でアプリが他のアプリにサービスを提供する方法の 1 つです。 アプリ サービスは、バックグラウンド タスクの形式を取ります。 フォアグラウンド アプリは、別のアプリでアプリ サービスを呼び出してバックグラウンドでタスクを実行できます。 アプリ サービス API のリファレンス情報については、[Windows.ApplicationModel.AppService](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.appservice.aspx) をご覧ください。
 アプリ パッケージ マニフェスト | Windows 10 の[パッケージ マニフェスト スキーマ](https://msdn.microsoft.com/library/windows/apps/br211474.aspx)のリファレンスへの更新には、追加、削除、変更された要素が含まれています。 このスキーマのすべての要素、属性、タイプに関するリファレンス情報については、「[要素の階層](https://msdn.microsoft.com/library/windows/apps/dn934819.aspx)」をご覧ください。
 
-## デバイス
+## <a name="devices"></a>デバイス
 
 機能 | 説明
  :---- | :----
@@ -108,7 +115,7 @@ MIDI デバイス | 新しい [Windows.Devices.Midi](https://msdn.microsoft.com/
 カスタム センサーのサポート | [Windows.Devices.Sensors.Custom](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.custom.aspx) 名前空間により、ハードウェアの開発者は CO2 センサーのような新しいカスタム センサーの種類を定義できます。
 ホスト ベースのカード エミュレーション (HCE) | ホスト カード エミュレーションを使うと、OS でホストされている NFC カード エミュレーション サービスを実装すると同時に、NFC 無線経由で外部リーダー ターミナルと通信することができます。 バックグラウンド タスクをトリガーして NFC 経由でスマートカードをエミュレートするには、[SmartCardTrigger](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.background.smartcardtrigger.aspx) クラスを使います。 [SmartCardTriggerType](https://msdn.microsoft.com/library/windows/apps/xaml/windows.devices.smartcards.smartcardtriggertype.aspx) 列挙型の EmulatorHostApplicationActivated 値によりアプリは、HCE イベントが発生したことを認識します。
 
-## グラフィックス
+## <a name="graphics"></a>グラフィックス
 
 機能 | 説明
  :---- | :----
@@ -116,7 +123,7 @@ DirectX | Windows 10 の DirectX 12 では、DirectX の中核を担う 3D グ�
 SoftwareBitmapSource | ユニバーサル Windows アプリでは、XAML 画像のソースとして新しい [SoftwareBitmapSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.softwarebitmapsource.aspx) を使うことができます。 これにより、エンコードされていない画像を XAML フレームワークに渡し、XAML フレームワークによる画像のデコードをバイパスして、すぐに画面に表示することができます。 カメラから直接低遅延で写真をレンダリングする、カスタムの画像デコーダーを使う、DirectX サーフェイスからフレームをキャプチャする、メモリ内の画像をゼロから作成し、待機時間とメモリのオーバーヘッドを低く抑えながら XAML で直接すべてレンダリングするなど、非常に高速な画像のレンダリングを実現できます。
 遠近投影カメラ | ユニバーサル Windows アプリでは、XAML の新しい Transform3D API を使って、XAML ツリー (シーン) に遠近法変換を適用することができます。適用すると、その 1 つのシーン全体の変換 (カメラ) に従ってすべての XAML 子要素が変換されます。 従来は、これを実現するには、MatrixTransform と複雑な数式を使う必要がありましたが、Transform3D によりその作業が大幅に簡略化されるうえに、この効果をアニメーション化することもできます。 詳しくは、[UIElement.Transform3D](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx) プロパティ、[Transform3D](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.media3d.transform3d.aspx)、[CompositeTransform3D](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.media3d.compositetransform3d.aspx)、[PerspectiveTransform3D](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.media3d.perspectivetransform3d.aspx) をご覧ください。
 
-## メディア
+## <a name="media"></a>メディア
 
 機能 | 説明
  :---- | :----
@@ -131,7 +138,7 @@ MediaElement と Image を使ったキャスト | [MediaElement](https://msdn.mi
 メディア コンポジション用オーバーレイ | 新しい [MediaOverlay](https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.editing.mediaoverlay.aspx) API と [MediaOverlayLayer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.editing.mediaoverlaylayer.aspx) API によって、静的または動的なメディア コンテンツからなる複数のレイヤーをメディア コンポジションに追加するのがこれまでより簡単になりました。 レイヤーごとに不透明度、位置、およびタイミングを調整できるので、入力レイヤー用の独自のカスタム コンポジターを実装することもできます。
 新しい効果フレームワーク | [Windows.Media.Effects](https://msdn.microsoft.com/library/windows/apps/windows.media.effects.aspx) 名前空間では、オーディオとビデオ ストリームに効果を追加するためのシンプルで直感的なフレームワークが提供されます。 このフレームワークには、独自のオーディオ エフェクトやビデオ エフェクトを作成してメディア パイプラインに挿入するために実装できる基本的なインターフェイスが含まれています。
 
-## ネットワーク
+## <a name="networking"></a>ネットワーク
 
 機能 | 説明
  :---- | :----
@@ -141,7 +148,7 @@ MediaElement と Image を使ったキャスト | [MediaElement](https://msdn.mi
 Wi-Fi Direct API の更新内容 | デバイス ブローカーが更新され、アプリを離れることなくデバイスのペアリングができるようになりました。 [Windows.Devices.WiFiDirect](https://msdn.microsoft.com/library/windows/apps/windows.devices.wifidirect.aspx) 名前空間に行われた追加により、デバイスを他のデバイスから検出できるようにしたり、デバイスで着信接続の通知を待機したりできます。<br /><br />**注:** このリリースでは、Wi-Fi Direct の機能強化は UX に組み込まれておらず、プッシュ ボタンによるペアリングのみがサポートされています。 また、このリリースでは、アクティブな接続は 1 つだけサポートされます。
 JSON サポートの強化 | [Windows.Data.Json](https://msdn.microsoft.com/library/windows/apps/windows.data.json.aspx) 名前空間では、デバッグ セッションで JSON オブジェクトを変換する場合に、既存の標準定義のサポートと開発者エクスペリエンスが強化されています。
 
-## セキュリティ
+## <a name="security"></a>セキュリティ
 
 機能 | 説明
  :---- | :----
@@ -150,7 +157,7 @@ Microsoft Passport | Microsoft Passport は、パスワードの代わりに非�
 業務用 Microsoft Passport | 業務用 Microsoft Passport は、パスワード、スマート カード、仮想スマート カードを使用しない Azure Active Directory アカウントを使って Windows にサインインする、もう 1 つの方法です。 このポリシー設定は、有効にするか、無効するかを選択できます。
 トークン ブローカー | トークンのブローカーは、アプリがオンライン ID プロバイダー (Facebook など) に接続しやすくなる新しい認証フレームワークです。 アカウントのユーザー名とパスワードの管理や、効率の高い UI などの機能により、ユーザーの認証エクスペリエンスが大幅に改善されます。
 
-## システム サービス
+## <a name="system-services"></a>システム サービス
 
 機能 | 説明
  :---- | :----
@@ -159,20 +166,20 @@ Microsoft Passport | Microsoft Passport は、パスワードの代わりに非�
 ユーザー情報 | [Windows.System](https://msdn.microsoft.com/library/windows/apps/windows.system.aspx) 名前空間の新しい API により、ユーザー名やアカウントの画像など、ユーザーに関する情報にアクセスしやすくなります。 ログインやログアウトなどのユーザー イベントに応答する機能も提供されます。
 メモリ管理とプロファイリング | [Windows.System](https://msdn.microsoft.com/library/windows/apps/windows.system.aspx) のメモリ プロファイリング API のサポートがすべてのプラットフォームに拡張され、その全体的な機能が、新しいクラスと機能で強化されています。
 
-## ストレージ
+## <a name="storage"></a>ストレージ
 
 機能 | 説明
  :---- | :----
 Windows Phone で利用可能なファイル検索 API | アプリの発行者は、アプリ マニフェストに拡張機能を追加し、アプリを登録して、発行する他のアプリとストレージ フォルダーを共有できます。 共有したストレージの場所を取得するには、[Windows.Storage.ApplicationData.GetPublisherCacheFolder](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.getpublishercachefolder.aspx) メソッドを呼び出します。 Windows ランタイム アプリの強力なセキュリティ モデルでは、一般的にアプリ間でのデータ共有はできません。 しかし、同じ発行元のアプリ間では、ユーザー単位でファイルと設定を共有すると便利な場合があります。
 
-## ツール
+## <a name="tools"></a>ツール
 
 機能 | 説明
  :---- | :----
 Visual Studio のライブ ビジュアル ツリー機能 | Visual Studio に、新しいライブ ビジュアル ツリー機能が搭載されました。 デバッグの際にこの機能を使うことで、アプリのビジュアル ツリーの状態をすばやく把握し、要素のプロパティの設定を検出することができます。 また、この機能を利用するとアプリの実行中にプロパティ値を変更できるため、アプリを再起動せずに調整したり、さまざまな設定を試したりできます。
 トレース ログ | [TraceLogging](https://msdn.microsoft.com/library/windows/desktop/dn904636(v=vs.85).aspx) は、ユーザー モード アプリとカーネル モード ドライバー用の新しいイベント トレース API です。[Windows イベント トレーシング](https://msdn.microsoft.com/library/windows/desktop/bb968803(v=vs.85).aspx) (ETW) を基にして構築されています。 この API は、インストルメンテーション マニフェストの XML ファイルを別に用意する必要なく、コードを実装して構造化データをイベントに含めるための簡単な方法を提供します。 対象となるさまざまな開発者に対応するために、WinRT、.NET、C/C++ の TraceLogging API が用意されています。
 
-## ユーザー エクスペリエンス
+## <a name="user-experience"></a>ユーザー エクスペリエンス
 
 機能 | 説明
  :---- | :----
@@ -180,7 +187,7 @@ Visual Studio のライブ ビジュアル ツリー機能 | Visual Studio に�
 さまざまなアプリケーション プラットフォーム間でのドラッグ アンド ドロップ機能 | 新しい [Windows.ApplicationModel.DataTransfer.DragDrop](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.dragdrop.aspx) 名前空間により、ユニバーサル Windows アプリでドラッグ アンド ドロップ機能が提供されます。 従来、デスクトップ プログラムの一般的なドラッグ アンド ドロップ シナリオ (フォルダーから Outlook のメール メッセージにドキュメントをドラッグして添付するなど) は、ユニバーサル Windows アプリでは実現できませんでした。 これらの新しい API をアプリで使うと、ユーザーはさまざまなユニバーサル Windows アプリとデスクトップの間でデータを簡単に移動できます。 <br /><br />アプリ間でのドラッグ アンド ドロップをサポートするために、次の新しい API が XAML に追加されました。[ListViewBase.DragItemsCompleted](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.dragitemscompleted.aspx) <br />UIElement: [CanDrag](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.candrag.aspx)、[DragStarting](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.dragstarting.aspx)、[StartDragAsync](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.startdragasync.aspx)、[DropCompleted](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.dropcompleted.aspx)  <br />[DragOperationDeferral](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dragoperationdeferral.aspx)、[DragUI](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dragui.aspx)、[DragUIOverride](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.draguioverride.aspx) <br />DragEventArgs: [AcceptedOperation](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.drageventargs.acceptedoperation.aspx)、[DataView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.drageventargs.dataview.aspx)、[DragUIOverride](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.drageventargs.draguioverride.aspx)、[GetDeferral](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.drageventargs.getdeferral.aspx)、[Modifiers](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.drageventargs.modifiers.aspx) <br />[DragItemsCompletedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.dragitemscompletedeventargs.aspx)、[DropCompletedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dropcompletedeventargs.aspx)、[DragStartingEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dragstartingeventargs.aspx)
 カスタム ウィンドウ タイトル バー | デスクトップ デバイス ファミリの UWP アプリで、[ApplicationViewTitleBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.applicationviewtitlebar.aspx) クラスと [ApplicationView.TitleBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.applicationview.titlebar.aspx) プロパティおよび [Window.SetTitleBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.applicationview.titlebar.aspx) メソッドを組み合わせて使うことで、既定の Windows タイトル バーのコンテンツを独自のカスタム XAML コンテンツに置き換えることができるようになりました。 カスタム XAML は "システム クロム" として扱われるため、入力イベントはアプリではなく Windows によって処理されます。 そのため、カスタム タイトル バーのコンテンツをクリックした場合でも、ユーザーはウィンドウをドラッグしたり、サイズを変更したりできます。
 
-## Web
+## <a name="web"></a>Web
 
 機能 | 説明
  :---- | :----
@@ -199,9 +206,4 @@ WebView.ClearTemporaryWebDataAsync メソッド | ユーザーが XAML WebView �
 
 
 ---
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

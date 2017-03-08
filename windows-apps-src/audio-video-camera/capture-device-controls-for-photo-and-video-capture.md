@@ -3,13 +3,20 @@ author: drewbatgit
 ms.assetid: 831123A7-1F40-4B74-AE9F-69AC9883B4AD
 description: "この記事では、光学式手ブレ補正やスムーズ ズームなど、写真とビデオのキャプチャに関する拡張シナリオを可能にするために、手動デバイス制御を使う方法について説明します。"
 title: "写真とビデオのキャプチャのための手動カメラ制御"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 4c6a7aabb39b3835e042481ccae7da60e899e7cf
-ms.openlocfilehash: 13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: be3c421c2b8d7b4bb71ddaa984ff925f0563f1f6
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 写真とビデオのキャプチャのための手動カメラ制御
+# <a name="manual-camera-controls-for-photo-and-video-capture"></a>写真とビデオのキャプチャのための手動カメラ制御
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -27,7 +34,7 @@ ms.openlocfilehash: 13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38
 
 [!code-cs[VideoControllersUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoControllersUsing)]
 
-## 露出
+## <a name="exposure"></a>露出
 
 [**ExposureControl**](https://msdn.microsoft.com/library/windows/apps/dn278910) によって、写真やビデオのキャプチャ時に使用されるシャッター速度を設定できます。
 
@@ -54,7 +61,7 @@ ms.openlocfilehash: 13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38
 > [!IMPORTANT]
 > 自動露出モードは、プレビュー ストリームが実行中であるときにのみサポートされます。 自動露出をオンにする前に、プレビュー ストリームが実行されていることを確認します。
 
-## 露出補正
+## <a name="exposure-compensation"></a>露出補正
 
 [**ExposureCompensationControl**](https://msdn.microsoft.com/library/windows/apps/dn278897) によって、写真やビデオのキャプチャ時に使用される露出補正を設定できます。
 
@@ -74,7 +81,7 @@ ms.openlocfilehash: 13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38
 
 [!code-cs[EvValueChanged](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetEvValueChanged)]
 
-## フラッシュ
+## <a name="flash"></a>フラッシュ
 
 [**FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) によって、フラッシュを有効または無効にしたり、フラッシュを使うかどうかをシステムが動的に判断する、自動フラッシュを有効にしたりすることができます。 このコントロールによって、サポートされているデバイスで自動赤目軽減を有効にすることもできます。 これらの設定はすべて写真のキャプチャに適用されます。 [**TorchControl**](https://msdn.microsoft.com/library/windows/apps/dn279077) は、ビデオ キャプチャ時のトーチのオンとオフを切り替える別のコントロールです。
 
@@ -101,11 +108,11 @@ ms.openlocfilehash: 13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38
 > [!NOTE] 
 >  一部のデバイスでは、[**TorchControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn279078) が true に設定されている場合でも、デバイスがプレビュー ストリームを実行中で、アクティブにビデオをキャプチャ中ではない限り、トーチは発光しません。 推奨される処理の順序は、ビデオのプレビューを有効にし、**Enabled** を true に設定してトーチを有効にした後、ビデオ キャプチャを開始するという順序です。 一部のデバイスでは、プレビューを開始した後もトーチが点灯しません。 その他のデバイスでは、トーチはビデオのキャプチャを開始するまで点灯しません。
 
-## フォーカス
+## <a name="focus"></a>フォーカス
 
 [**FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788) オブジェクトでは、カメラのフォーカスを調整するためによく使用される 3 種類の方法である、連続オート フォーカス、タップしてフォーカス、手動フォーカスがサポートされています。 カメラ アプリでこれらの 3 つの方法がすべてをサポートされている可能性がありますが、分かりやすくするために、この記事ではそれぞれの手法を個別に説明します。 このセクションでは、フォーカス アシスト ライトを有効にする方法も説明します。
 
-### 連続オート フォーカス
+### <a name="continuous-autofocus"></a>連続オート フォーカス
 
 連続オート フォーカスを有効にすると、カメラに対して、動的にフォーカスを調整して、写真やビデオの被写体にフォーカスを合わせ続けるように指示されます。 この例では、ラジオ ボタンを使用して連続オート フォーカスのオンとオフを切り替えます。
 
@@ -124,7 +131,7 @@ ms.openlocfilehash: 13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38
 > [!IMPORTANT]
 > オート フォーカス モードは、プレビュー ストリームが実行中であるときにのみサポートされます。 連続オート フォーカスをオンにする前に、プレビュー ストリームが実行されていることを確認します。
 
-### タップしてフォーカス
+### <a name="tap-to-focus"></a>タップしてフォーカス
 
 タップしてフォーカスの手法では、[**FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788) と [**RegionsOfInterestControl**](https://msdn.microsoft.com/library/windows/apps/dn279064) を使って、キャプチャ デバイスでフォーカスを合わせるキャプチャ フレームのサブ領域を指定します。 フォーカスの領域は、プレビュー ストリームが表示されている画面をユーザーがタップすることによって決定されます。
 
@@ -187,7 +194,7 @@ ms.openlocfilehash: 13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38
 
 [!code-cs[ConvertUiTapToPreviewRect](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetConvertUiTapToPreviewRect)]
 
-### 手動フォーカス
+### <a name="manual-focus"></a>手動フォーカス
 
 手動フォーカスの手法では、**スライダー** コントロールを使って、キャプチャ デバイスの現在フォーカスの深度を設定します。 ラジオ ボタンを使って、手動フォーカスのオンとオフを切り替えます。
 
@@ -209,7 +216,7 @@ ms.openlocfilehash: 13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38
 
 [!code-cs[FocusSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocusSlider)]
 
-### フォーカス ライトの有効化
+### <a name="enable-the-focus-light"></a>フォーカス ライトの有効化
 
 サポートされているデバイスで、デバイスのフォーカスを支援するフォーカス アシスト ライトを有効にすることができます。 この例では、チェック ボックスを使って、フォーカス アシスト ライトを有効または無効にします。
 
@@ -223,7 +230,7 @@ ms.openlocfilehash: 13a767d8e75a64dc0e65bbfbc85f6c6cd2491f38
 
 [!code-cs[FocusLightCheckBox](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocusLightCheckBox)]
 
-## ISO 速度
+## <a name="iso-speed"></a>ISO 速度
 
 [**IsoSpeedControl**](https://msdn.microsoft.com/library/windows/apps/dn297850) によって、写真やビデオのキャプチャ時に使用される ISO 速度を設定できます。
 
@@ -247,7 +254,7 @@ ISO 速度値は、デバイスでサポートされている範囲内である�
 
 [!code-cs[IsoCheckBox](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetIsoCheckBox)]
 
-## 光学式手ブレ補正
+## <a name="optical-image-stabilization"></a>光学式手ブレ補正
 
 光学式手ブレ補正 (OIS) は、ハードウェア キャプチャ デバイスを物理的に操作することで、キャプチャしたビデオ ストリームを補正します。これにより、デジタル補正より優れた結果が生まれます。 OIS がサポートされていないデバイスでは、VideoStabilizationEffect を使用して、キャプチャしたビデオにデジタル手ブレ補正を行うことができます。 詳しくは、「[ビデオ キャプチャの効果](effects-for-video-capture.md)」をご覧ください。
 
@@ -259,14 +266,14 @@ OIS を有効または無効にするには、[**OpticalImageStabilizationContro
 
 [!code-cs[SetOpticalImageStabilizationMode](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetOpticalImageStabilizationMode)]
 
-## 電源周波数
+## <a name="powerline-frequency"></a>電源周波数
 一部のカメラ デバイスでは、現在の環境の AC 電源周波数を認識し、それに応じたアンチフリッカー処理をサポートします。 電源周波数の自動認識をサポートするデバイスもあれば、周波数を手動で設定する必要があるデバイスもあります。 次のコード例は、デバイスの電源周波数のサポートを判別し、必要に応じて、周波数を手動で設定する方法を示します。 
 
 まず [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency) 型の出力パラメーターを渡して **VideoDeviceController** メソッド [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898) を呼び出します。この呼び出しが失敗した場合、現在のデバイスでは電源周波数の制御がサポートされていません。 機能がサポートされている場合、自動モードの設定を試みることで、自動モードがサポートされているかどうかを確認できます。 これを行うには、値 **Auto ** を渡して [**TrySetPowerlineFrequency** ](https://msdn.microsoft.com/library/windows/apps/br206899) を呼び出します。 呼び出しに成功した場合、自動電源周波数機能がサポートされています。 デバイスで電源周波数の制御はサポートされているが、周波数の自動検出はサポートされていない場合、**TrySetPowerlineFrequency** を使って周波数を手動で設定できます。 次の例で、**MyCustomFrequencyLookup** は、デバイスの現在の場所における正しい周波数を判定するために実装するカスタム メソッドです。 
 
 [!code-cs[PowerlineFrequency](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetPowerlineFrequency)]
 
-## ホワイト バランス
+## <a name="white-balance"></a>ホワイト バランス
 
 [**WhiteBalanceControl**](https://msdn.microsoft.com/library/windows/apps/dn279104) によって、写真やビデオのキャプチャ時に使用されるホワイト バランスを設定できます。
 
@@ -296,7 +303,7 @@ OIS を有効または無効にするには、[**OpticalImageStabilizationContro
 > [!IMPORTANT]
 > **ColorTemperaturePreset.Auto** プリセット値は、ホワイト バランス レベルを自動調整するようにシステムに指示します。 ホワイト バランス レベルが各フレームで同じである必要がある写真シーケンスのキャプチャなど、一部のシナリオでは、現在の自動値にコントロールをロックすることもできます。 これを行うには、[**SetPresetAsync**](https://msdn.microsoft.com/library/windows/apps/dn279113) を呼び出して、**Manual** プリセットを指定します。[**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn279114) を使って、コントロールの値を設定しないでください。 これにより、デバイスは現在の値にロックされます。 現在のコントロールの値を読み取って、返された値を **SetValueAsync** に渡すことはしないでください。この値が正しいことは保証されないためです。
 
-## ズーム
+## <a name="zoom"></a>ズーム
 
 [**ZoomControl**](https://msdn.microsoft.com/library/windows/apps/dn608149) によって、写真やビデオのキャプチャ時に使用されるズーム レベルを設定できます。
 
@@ -318,7 +325,7 @@ OIS を有効または無効にするには、[**OpticalImageStabilizationContro
 
 [!code-cs[ZoomSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetZoomSlider)]
 
-### ピンチ ジェスチャを使ったスムーズなズーム
+### <a name="smooth-zoom-using-pinch-gesture"></a>ピンチ ジェスチャを使ったスムーズなズーム
 
 前のセクションで説明したように、スムーズ ズームがサポートされているキャプチャ デバイスでスムーズ ズーム モードを使用すると、異なるデジタル ズーム レベル間での切り替えがスムーズになります。これによりユーザーは、キャプチャ操作中にズーム レベルを動的に調整することができます。切り替えを個々に行う必要がなく、不快感もありません。 このセクションでは、ピンチ ジェスチャに応答してズーム レベルを調整する方法について説明します。
 
@@ -338,13 +345,8 @@ OIS を有効または無効にするには、[**OpticalImageStabilizationContro
 
 [!code-cs[ManipulationDelta](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetManipulationDelta)]
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [カメラ](camera.md)
 * [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

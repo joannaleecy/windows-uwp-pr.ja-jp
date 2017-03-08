@@ -2,13 +2,21 @@
 author: TylerMSFT
 title: "ms-tonepicker スキーム"
 description: "このトピックでは、ms-tonepicker URI スキームと、このスキームを使ってトーンの選択コントロールを表示し、トーンの選択、トーンの保存、トーンのフレンドリ名を取得する方法について説明します。"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 0c17e4fb-7241-4da9-b457-d6d3a7aefccb
 translationtype: Human Translation
-ms.sourcegitcommit: 4c7037cc91603af97a64285fd6610445de0523d6
-ms.openlocfilehash: ef605f9d749148240ecee5e0ecfd473f8440ca25
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: bc3a34d16f8245ef2e932c46e76ce965ce8755b7
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# ms-tonepicker URI スキームを使ったトーンの選択と保存
+# <a name="choose-and-save-tones-using-the-ms-tonepicker-uri-scheme"></a>ms-tonepicker URI スキームを使ったトーンの選択と保存
 
 ここでは、**ms-tonepicker:** URI スキームの使い方について説明します。 この URI スキームを使って実行できる操作は次のとおりです。
 - トーンの選択コントロールがデバイスにあるかどうかを確認します。
@@ -16,13 +24,13 @@ ms.openlocfilehash: ef605f9d749148240ecee5e0ecfd473f8440ca25
 - サウンド ファイル トークンを入力として受け取り、デバイスに保存するトーン セーバーを表示します。 保存されたトーンは、トーンの選択コントロールから利用できるようになります。 トーンにはフレンドリ名を付けることもできます。
 - トーン トークンをフレンドリ名に変換します。
 
-## ms-tonepicker: URI スキーム リファレンス
+## <a name="ms-tonepicker-uri-scheme-reference"></a>ms-tonepicker: URI スキーム リファレンス
 
 この URI スキームは、URI スキーム文字列を利用して引数を渡すことはせず、[ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx) を介して引数を渡します。 すべての文字列で、大文字と小文字が区別されます。
 
 以下のセクションでは、特定のタスクを実行するために渡される引数を示します。
 
-## タスク: トーンの選択コントロールがデバイスにあるかどうかを確認する
+## <a name="task-determine-if-the-tone-picker-is-available-on-the-device"></a>タスク: トーンの選択コントロールがデバイスにあるかどうかを確認する
 ```cs
 var status = await Launcher.QueryUriSupportAsync(new Uri("ms-tonepicker:"),     
                                      LaunchQuerySupportType.UriForResults,
@@ -34,7 +42,7 @@ if (status != LaunchQuerySupportStatus.Available)
 }
 ```
 
-## タスク: トーンの選択コントロールを表示する
+## <a name="task-display-the-tone-picker"></a>タスク: トーンの選択コントロールを表示する
 
 トーンの選択コントロールを表示するために渡すことができる引数は、次のとおりです。
 
@@ -44,7 +52,7 @@ if (status != LaunchQuerySupportStatus.Available)
 | CurrentToneFilePath | string | いいえ | 既存のトーン トークン。 | トーンの選択コントロールに現在のトーンとして表示されるトーン。 この値が設定されていない場合、既定では、一覧の最初のトーンが選ばれます。<br>これは厳密にはファイル パスではありません。 トーンの選択コントロールから返された `ToneToken` の値から、`CurrenttoneFilePath` に適した値を取得できます。  |
 | TypeFilter | string | いいえ | "Ringtones"、"Notifications"、"Alarms"、"None" | 選択コントロールに追加するトーンを選択します。 フィルターが指定されていない場合は、すべてのトーンが表示されます。 |
 
-<br>[LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx) に返される値は次のとおりです。
+<br>[LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx) に返される値は次のとおりです。
 
 | 戻り値 | 型 | 値 | 説明 |
 |--------------|------|-------|-------------|
@@ -80,7 +88,7 @@ if (result.Status == LaunchUriStatus.Success)
 }
 ```
 
-## タスク: トーン セーバーを表示する
+## <a name="task-display-the-tone-saver"></a>タスク: トーン セーバーを表示する
 
 トーン セーバーを表示するために渡すことができる引数は、次のとおりです。
 
@@ -90,7 +98,7 @@ if (result.Status == LaunchUriStatus.Success)
 | ToneFileSharingToken | string | はい | 保存する着信音ファイルの [SharedStorageAccessManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.aspx) ファイル共有トークン。 | 特定のサウンド ファイルを着信音として保存します。 サポートされるファイル コンテンツの種類は、MPEG オーディオと x-ms-wma オーディオです。 |
 | DisplayName | string | いいえ | 指定したトーンのフレンドリ名。 | 指定した着信音を保存するときに使用する表示名を設定します。 |
 
-<br>[LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx) に返される値は次のとおりです。
+<br>[LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx) に返される値は次のとおりです。
 
 | 戻り値 | 型 | 値 | 説明 |
 |--------------|------|-------|-------------|
@@ -144,7 +152,7 @@ if (result.Status == LaunchUriStatus.Success)
  }
 ```
 
-## タスク: トーン トークンをフレンドリ名に変換する
+## <a name="task-convert-a-tone-token-to-its-friendly-name"></a>タスク: トーン トークンをフレンドリ名に変換する
 
 トーンのフレンドリ名を取得するために渡すことができる引数は、次のとおりです。
 
@@ -153,7 +161,7 @@ if (result.Status == LaunchUriStatus.Success)
 | Action | string | はい | "GetToneName" | トーンのフレンドリ名を取得することを示します。 |
 | ToneToken | string | はい | トーンのトークン | 表示名を取得する対象となるトーン トークン。 |
 
-<br>[LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx) に返される値は次のとおりです。
+<br>[LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx) に返される値は次のとおりです。
 
 | 戻り値 | 型 | 値 | 説明 |
 |--------------|------|-------|-------------|
@@ -194,9 +202,4 @@ using (var connection = new AppServiceConnection())
     }
 }
 ```
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

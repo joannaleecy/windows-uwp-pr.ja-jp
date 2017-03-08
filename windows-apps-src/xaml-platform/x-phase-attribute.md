@@ -1,41 +1,48 @@
 ---
 author: jwmsft
 title: "xPhase 属性"
-description: "ListView 項目と GridView 項目を段階的にレンダリングし、パン エクスペリエンスを向上させるには、xPhase を xBind マークアップ拡張と共に使います。"
+description: "ListView や GridView の項目を段階的にレンダリングし、パン エクスペリエンスを向上させるには、xPhase を xBind マークアップ拡張と共に使用します。"
 ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: c6100f59bb91bc3c6451fc2167d914b0a4a36ded
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 873da2adeea277e0f8f869703aac782c21b0419e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# x:Phase 属性
+# <a name="xphase-attribute"></a>x:Phase 属性
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
-[**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 項目と [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 項目を段階的にレンダリングし、パン エクスペリエンスを向上させるには、**x:Phase** を [{x:Bind} マークアップ拡張](x-bind-markup-extension.md)と共に使用します。 **x:Phase** では、宣言的な方法により、[**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) イベントを使ってリスト項目のレンダリングを手動で制御するのと同じ結果を得ることができます。 「[GridView と ListView の項目を段階的に更新する](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally)」もご覧ください。
+[**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) や [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) の項目を段階的にレンダリングし、パン エクスペリエンスを向上させるには、**x:Phase** を [{x:Bind} マークアップ拡張](x-bind-markup-extension.md)と共に使用します。 **x:Phase** では、宣言的な方法により、[**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) イベントを使ってリスト項目のレンダリングを手動で制御するのと同じ結果を得ることができます。 「[GridView と ListView の項目を段階的に更新する](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally)」もご覧ください。
 
-## XAML 属性の使用方法
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法
 
 
 ``` syntax
 <object x:Phase="PhaseValue".../>
 ```
 
-## XAML 値
+## <a name="xaml-values"></a>XAML 値
 
 
 | 用語 | 説明 |
 |------|-------------|
 | PhaseValue | 要素が処理されるフェーズを示す数値。 既定値は 0 です。 | 
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 タッチ操作でリストをすばやくパンした場合やマウス ホイールを使用した場合、データ テンプレートの複雑さによっては、リスト項目をすばやくレンダリングできず、スクロール速度に追いつかないことがあります。 これは、電話やタブレットなど、電力効率に優れた CPU を搭載したポータブル デバイスに特に当てはまります。
 
 フェージングにより、データ テンプレートを段階的にレンダリングできるので、コンテンツに優先順位を付け、最も重要な要素を最初にレンダリングできます。 これにより、すばやくパンした場合でも各項目のコンテンツの一部をリストに表示でき、時間が許す限り各テンプレートの要素がより多くレンダリングされます。
 
-## 例
+## <a name="example"></a>例
 
 ```xml
 <DataTemplate x:Key="PhasedFileTemplate" x:DataType="model:FileItem">
@@ -77,10 +84,5 @@ ms.openlocfilehash: c6100f59bb91bc3c6451fc2167d914b0a4a36ded
 フェージングは、 [{x:Bind}](x-bind-markup-extension.md) バインディングにのみ影響し、 [{Binding}](binding-markup-extension.md) バインディングには影響しません。
 
 フェージングが適用されるのは、フェージングを認識するコントロールを使用して項目テンプレートがレンダリングされるときのみです。 Windows 10 の場合は、[**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) です。 フェージングは、他の項目コントロールで使用されるデータ テンプレートには適用されません。また、[**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) または [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) セクション (この場合、すべての UI 要素が同時にデータ バインドされる) などの他のシナリオでも適用されません。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -12,8 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
-ms.openlocfilehash: a4de0955eb6bd01ef5279b5b8d553fe1d1dd50f2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 79e40abde2265a8e6f760bd00768a18b06f69116
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -226,10 +227,5 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

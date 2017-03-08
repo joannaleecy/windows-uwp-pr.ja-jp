@@ -3,9 +3,16 @@ author: TylerMSFT
 title: "バックグラウンド タスクによるアプリのサポート"
 description: "このセクションの各トピックでは、トリガーに対応して軽量コードをバックグラウンドで実行する方法について説明します。"
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: 9f83717657fddf2df51589aae75a3aa21c6ef5da
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a9ac85483c3d7e252f24147088b928de6e781dc6
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -17,7 +24,7 @@ ms.openlocfilehash: 9f83717657fddf2df51589aae75a3aa21c6ef5da
 
 ## <a name="playing-media-in-the-background"></a>バックグラウンドでのメディア再生
 
-Windows 10 バージョン 1607 以降では、バックグラウンドでのオーディオ再生がより簡単になりました。 詳しくは、「[バックグラウンドでのメディアの再生](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)」をご覧ください。
+Windows 10 バージョン 1607 以降では、バックグラウンドでのオーディオ再生がより簡単になりました。 詳しくは、「[バックグラウンドでのメディアの再生](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)」をご覧ください。
 
 ## <a name="in-process-and-out-of-process-background-tasks"></a>インプロセスとアウトプロセスのバックグラウンド タスク
 
@@ -162,7 +169,7 @@ Windows 10 バージョン 1607 では、バックグラウンド タスクを�
 
 **関連するバックグラウンド タスクのガイダンス**
 
-* [バックグラウンドでのメディアの再生](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
+* [バックグラウンドでのメディアの再生](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [バックグラウンド タスクからのセンサーやデバイスへのアクセス](access-sensors-and-devices-from-a-background-task.md)
 * [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
 * [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
@@ -179,9 +186,4 @@ Windows 10 バージョン 1607 では、バックグラウンド タスクを�
 * [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)
 * [Windows ストア アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 * [Windows ストア デバイス アプリによるデバイスの同期と更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -3,13 +3,20 @@ author: mcleanbyron
 ms.assetid: C09F4B7C-6324-4973-980A-A60035792EFC
 description: "Windows ストア申請 API 内のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されているアプリの新しいアドオンの申請を作成します。"
 title: "Windows ストア申請 API を使用したアドオンの申請の作成"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、Windows ストア申請 API、アドオンの申請の作成、アプリ内製品、IAP"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: b7de4b00fb4d48b9f4c542437c38e0282e155a29
+ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
+ms.openlocfilehash: f824fe7d37a4a2db4e336fd43c335047e09aa323
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Windows ストア申請 API を使用したアドオンの申請の作成
+# <a name="create-an-add-on-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアドオンの申請の作成
 
 
 
@@ -20,7 +27,7 @@ Windows ストア申請 API 内のこのメソッドを使用して、Windows �
 
 >**注:**&nbsp;&nbsp;このメソッドは、既存のアドオンの申請を作成します。 アドオンを作成するには、[アドオンの作成](create-an-add-on.md)メソッドを使います。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
@@ -30,7 +37,7 @@ Windows ストア申請 API 内のこのメソッドを使用して、Windows �
 
 >**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
-## 要求
+## <a name="request"></a>要求
 
 このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
 
@@ -41,15 +48,15 @@ Windows ストア申請 API 内のこのメソッドを使用して、Windows �
 <span/>
  
 
-### 要求ヘッダー
+### <a name="request-header"></a>要求ヘッダー
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
 <span/>
 
-### 要求パラメーター
+### <a name="request-parameters"></a>要求パラメーター
 
 | 名前        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -57,11 +64,11 @@ Windows ストア申請 API 内のこのメソッドを使用して、Windows �
 
 <span/>
 
-### 要求本文
+### <a name="request-body"></a>要求本文
 
 このメソッドでは要求本文を指定しないでください。
 
-### 要求の例
+### <a name="request-example"></a>要求の例
 
 次の例は、アドオンの新しい申請を作成する方法を示しています。
 
@@ -70,7 +77,7 @@ POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/s
 Authorization: Bearer <your access token>
 ```
 
-## 応答
+## <a name="response"></a>応答
 
 次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文には、新しい申請に関する情報が含まれています。 応答本文内の値について詳しくは、[アドオンの申請のリソース](manage-add-on-submissions.md#add-on-submission-object)をご覧ください。
 
@@ -116,7 +123,8 @@ Authorization: Bearer <your access token>
          }
       }
     ],
-    "priceId": "Free"
+    "priceId": "Free",
+    "isAdvancedPricingModel": "true"
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
   "targetPublishMode": "Immediate",
@@ -146,7 +154,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## エラー コード
+## <a name="error-codes"></a>エラー コード
 
 要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。
 
@@ -158,7 +166,7 @@ Authorization: Bearer <your access token>
 <span/>
 
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [アドオンの申請の管理](manage-add-on-submissions.md)
@@ -167,9 +175,4 @@ Authorization: Bearer <your access token>
 * [アドオンの申請の更新](update-an-add-on-submission.md)
 * [アドオンの申請の削除](delete-an-add-on-submission.md)
 * [アドオンの申請の状態の取得](get-status-for-an-add-on-submission.md)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

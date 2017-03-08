@@ -8,9 +8,16 @@ title: "ResourceDictionary と XAML リソースの参照"
 ms.assetid: E3CBFA3D-6AF5-44E1-B9F9-C3D3EA8A25CE
 label: ResourceDictionary and XAML resource references
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP"
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 7af5c6635ae659ce033f377a9eed4b819287b384
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e24b411c5a966d48e4db07a4ddfce1248454e78d
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>ResourceDictionary と XAML リソースの参照
@@ -491,10 +498,5 @@ C\# または Microsoft Visual Basic コードでは、インデクサー ([**It
  
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

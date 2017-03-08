@@ -3,13 +3,20 @@ author: mtoepke
 title: "ゲームのムーブ/ルック コントロール"
 description: "ここでは、マウスとキーボードの従来のムーブ/ルック コントロール (マウスルック コントロールとも呼ばれます) を DirectX ゲームに追加する方法について説明します。"
 ms.assetid: 4b4d967c-3de9-8a97-ae68-0327f00cc933
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, ムーブ/ルック, コントロール"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d5bd0a43c1f261e6a12ed947e497d3e45d0ab6a7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 40af05538aa6a6fff6e159fe8aa8812090e8b44b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>ゲームのムーブ/ルック コントロール
+# <a name="span-iddevgamingtutorialaddingmove-lookcontrolstoyourdirectxgamespanmove-look-controls-for-games"></a><span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>ゲームのムーブ/ルック コントロール
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -22,13 +29,13 @@ ms.openlocfilehash: d5bd0a43c1f261e6a12ed947e497d3e45d0ab6a7
 
 これらのコントロールは、ゲームでは一般的に WASD コントロールと呼ばれます。WASD コントロールでは、x-z 平面に固定されたカメラを動かすのに W、A、S、D のキーを使用し、x 軸と y 軸を中心としたカメラの回転を制御するのにマウスを使用します。
 
-## 目標
+## <a name="objectives"></a>目標
 
 
 -   マウス/キーボード用とタッチ スクリーン用の両方の基本的なムーブ/ルック コントロールを DirectX ゲームに追加する。
 -   3D 環境のナビゲートに使う主観カメラを実装する。
 
-## タッチ コントロールの実装に関する注意
+## <a name="a-note-on-touch-control-implementations"></a>タッチ コントロールの実装に関する注意
 
 
 タッチ コントロールには、2 つのコントローラーを実装します。1 つはカメラの視点に相対的な x-z 平面の動きを扱うムーブ コントローラー、もう 1 つはカメラの視点を合わせるためのルック コントローラーです。 ムーブ コントローラーはキーボードの WASD ボタンに相当し、ルック コントローラーはマウスに相当します。 ただし、タッチ コントロールでは、方向入力、または仮想的な WASD ボタンとして機能する画面の領域を定義する必要があります。画面の残りの部分は、ルック コントロール用の入力領域として機能します。
@@ -39,7 +46,7 @@ ms.openlocfilehash: d5bd0a43c1f261e6a12ed947e497d3e45d0ab6a7
 
 タッチ ポインター (マウスではなく) を画面の左下で動かす場合、上方向に動かすとカメラは前方に動きます。 下方向に動かすとカメラは後方に動きます。 ムーブ コントローラーのポインター領域内でポインターを左右に動かす場合にも同じことが当てはまります。 この領域外ではルック コントローラーになるため、カメラを単にタッチまたはドラッグして、希望の向きにします。
 
-## 基本的な入力イベントのインフラストラクチャのセットアップ
+## <a name="set-up-the-basic-input-event-infrastructure"></a>基本的な入力イベントのインフラストラクチャのセットアップ
 
 
 まず、マウスとキーボードからの入力イベントの処理と、その入力に基づいたカメラの視点の更新を行うコントロール クラスを作成する必要があります。 実装するのはムーブ/ルック コントロールであるため、**MoveLookController** という名前を付けます。
@@ -184,7 +191,7 @@ internal:
 
 これで、ムーブ/ルック コントロールの実装に必要なコンポーネントがすべて揃いました。 次は、これらのコンポーネントどうしを接続してみましょう。
 
-## 基本的な入力イベントを作成する
+## <a name="create-the-basic-input-events"></a>基本的な入力イベントを作成する
 
 
 Windows ランタイムのイベント ディスパッチャーは、**MoveLookController** クラスのインスタンスで処理するイベントを 5 つ提供します。
@@ -376,7 +383,7 @@ void MoveLookController::OnKeyUp(
 
 キーが離されると、状態を false にリセットします。 **Update** を呼び出すと、これらの方向移動状態が確認され、それに従ってカメラが動きます。 これは、タッチ実装より少し簡単です。
 
-## タッチ コントロールとコントローラーの状態の初期化
+## <a name="initialize-the-touch-controls-and-the-controller-state"></a>タッチ コントロールとコントローラーの状態の初期化
 
 
 次は、イベントをフックして、コントローラー状態の全フィールドを初期化しましょう。
@@ -423,7 +430,7 @@ void MoveLookController::Initialize( _In_ CoreWindow^ window )
 
 **Initialize** は、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) インスタンスへの参照をパラメーターとして使い、先ほど作成したイベント ハンドラーをその **CoreWindow** の適切なイベントに登録します。 このハンドラーは、ムーブ ポインターとルック ポインターの ID を初期化し、タッチ スクリーンのムーブ コントローラー実装用のコマンド ベクターをゼロに設定して、アプリの起動時にカメラが正面を向くように設定します。
 
-## カメラの位置と向きの取得と設定
+## <a name="getting-and-setting-the-position-and-orientation-of-the-camera"></a>カメラの位置と向きの取得と設定
 
 
 ビューポートに対してカメラの位置の取得と設定を行うメソッドをいくつか定義してみましょう。
@@ -464,7 +471,7 @@ DirectX::XMFLOAT3 MoveLookController::get_LookPoint()
 }
 ```
 
-## コントローラーの状態情報の更新
+## <a name="updating-the-controller-state-info"></a>コントローラーの状態情報の更新
 
 
 次は、**m\_movePointerPosition** で追跡したポインターの座標情報を、ワールド座標系における新しい座標情報に変換する計算を実行します。 Windows ストア アプリは、アプリのメイン ループが更新されるたびに、このメソッドを呼び出します。 このため、ビュー マトリックスをビューポートへのプロジェクションの前に更新するためにアプリに渡す新しい視点位置情報は、ここで計算します。
@@ -556,7 +563,7 @@ void MoveLookController::Update(CoreWindow ^window)
 
 プレイヤーの視点の最後の位置は、計算された速度を最後の位置に加えたものであり、この位置は、レンダラーが **get\_Position** メソッドを呼び出すときにレンダラーが読み取ります (通常は各フレームのセットアップ中)。 その後、移動コマンドをゼロにリセットします。
 
-## カメラの新しい位置によるビュー マトリックスの更新
+## <a name="updating-the-view-matrix-with-the-new-camera-position"></a>カメラの新しい位置によるビュー マトリックスの更新
 
 
 カメラのフォーカスが合っているシーン空間の座標を取得できます。この座標は、アプリに指定した時間ごとに更新されます (たとえばアプリのメイン ループでは 60 秒ごと)。 次の疑似コードは、実装できる呼び出し動作を示しています。
@@ -585,10 +592,5 @@ myFirstPersonCamera->SetViewParameters(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

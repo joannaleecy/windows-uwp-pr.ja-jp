@@ -3,16 +3,23 @@ author: msatranjr
 Description: "このトピックでは、ユーザーの位置にアクセスする必要があるアプリを構築する際のパフォーマンス ガイドラインを説明します。"
 title: "位置認識アプリのガイドライン"
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 位置, 地図, 位置情報"
 translationtype: Human Translation
-ms.sourcegitcommit: 7159aea3feef96781575825d019a379e0eadc603
-ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f52f2f7a33edcbb0bd360c7b336cc3988abb80f5
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 位置認識アプリのガイドライン
+# <a name="guidelines-for-location-aware-apps"></a>位置認識アプリのガイドライン
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
 
 
 **重要な API**
@@ -22,7 +29,7 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 
 このトピックでは、ユーザーの位置にアクセスする必要があるアプリを構築する際のパフォーマンス ガイドラインを説明します。
 
-## 推奨事項
+## <a name="recommendations"></a>推奨事項
 
 
 -   location オブジェクトは、アプリで位置データが必要になった場合にのみ使用を開始します。
@@ -100,13 +107,13 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 
     Windows ランタイム API は磁力計以外のすべてのセンサーにアクセスできます。 フュージョン センサーの方がロー センサーよりも正確で安定していますが、より多くの電力を使います。 用途に適したセンサーを使う必要があります。 詳しくは、「[センサー](https://msdn.microsoft.com/library/windows/apps/mt187358)」をご覧ください。
 
-**コネクト スタンバイ** 
+**コネクト スタンバイ**
 - PC がコネクト スタンバイ状態にある場合、[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトはいつでもインスタンス化できます。 しかし、**Geolocator** オブジェクトは集約する対象のセンサーを見つけることができず、[**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) の呼び出しは 7 秒後にタイムアウトします。[**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) イベント リスナーの呼び出しは行われず、[**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) イベント リスナーは 1 回呼び出され、そのステータスは **NoData** となります。
 
-## その他の使い方のガイダンス
+## <a name="additional-usage-guidance"></a>その他の使い方のガイダンス
 
 
-### 位置情報設定の変更を検出する
+### <a name="detecting-changes-in-location-settings"></a>位置情報設定の変更を検出する
 
 ユーザーは、**設定**アプリの**位置情報に関するプライバシー設定**を使って、位置情報機能を無効にすることができます。
 
@@ -119,7 +126,7 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 
 位置情報サービスからは、データが利用可能になったときにデータが返されます。 最初に誤差の範囲が大きい位置情報を返し、より正確な情報が利用可能になったときに位置情報を更新する場合があります。 ユーザーの位置情報を表示するアプリでは、通常、より正確な情報が利用可能になったときに位置情報を更新する必要があります。
 
-### 位置情報のグラフィック表示
+### <a name="graphical-representations-of-location"></a>位置情報のグラフィック表示
 
 アプリでは、[**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) を使って、ユーザーの現在の位置情報を地図に明確に示すようにします。 精度の幅は、主に、誤差の範囲が半径約 10 m、半径約 100 m、半径 1 km 超、という 3 種類があります。 精度情報を使うことにより、アプリでは、利用可能なデータの状況に応じて位置情報を正確に表示することができるようになります。 マップ コントロールを使用する方法に関する一般的な情報については、「[2D、3D、Streetside ビューでの地図の表示](https://msdn.microsoft.com/library/windows/apps/mt219695)」をご覧ください。
 
@@ -140,7 +147,7 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 -   切り替え時のアニメーションをスムーズにし、切り替えを高速かつ滑らかに保ちます。
 -   数回の連続的な報告があるのを待ってから、精度が変わったと判断します。これにより、不要なズームが頻繁に行われるのを防ぐことができます。
 
-### 位置情報のテキスト表示
+### <a name="textual-representations-of-location"></a>位置情報のテキスト表示
 
 天気アプリや地域情報アプリなどアプリの種類によっては、さまざまな精度の位置情報をテキストで表現することが必要になります。 位置情報は、データが提供する精度レベルまでに抑えて、明確に表示するようにします。
 
@@ -148,7 +155,7 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 -   精度が約 100 m 相当 (Wi-Fi の解像度) の場合、受信した位置情報データはある程度正確です。市の名前までの情報を表示することをお勧めします。 それより詳しい、近隣地域の地名の使用は避けてください。
 -   1 km 超の精度 (IP による解決) の場合は、都道府県の名前、または国/地域の名前のみ表示します。
 
-### プライバシーに関する考慮事項
+### <a name="privacy-considerations"></a>プライバシーに関する考慮事項
 
 ユーザーの地理的な位置情報は、個人を特定できる情報 (PII) に当たります。 ユーザーのプライバシーの保護に関するガイダンスについては、次の Web サイトをご覧ください。
 
@@ -156,7 +163,7 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 
 <!--For more info, see [Guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md).-->
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [ジオフェンスのセットアップ](https://msdn.microsoft.com/library/windows/apps/mt219702)
 * [現在の位置情報の取得](https://msdn.microsoft.com/library/windows/apps/mt219698)
@@ -166,13 +173,4 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Sep16_HO3-->
-
 

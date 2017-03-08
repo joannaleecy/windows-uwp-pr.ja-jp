@@ -3,16 +3,23 @@ author: laurenhughes
 ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
 title: "ファイルの作成、書き込み、および読み取り"
 description: "StorageFile オブジェクトを使ってファイルの読み取りと書き込みを行います。"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: 0709d9c9126dc4523eae58d5db8d9037a2fb618e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ae2754f543a3bc799b3d5af4c5c3c46f654c1ed7
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="create-write-and-read-a-file"></a>ファイルの作成、書き込み、および読み取り
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 **重要な API**
@@ -256,9 +263,4 @@ Dim dataReader As New DataReader(inputStream)
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

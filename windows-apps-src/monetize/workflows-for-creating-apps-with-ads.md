@@ -1,16 +1,22 @@
 ---
 author: mcleanbyron
 ms.assetid: fcebd659-438b-4d03-bc73-6b662ed6f1f3
-description: "広告を含むアプリの開発と公開のプロセスの詳細"
+description: "広告を含むアプリを開発して公開するプロセスについて詳しく説明します。"
 title: "広告を含むアプリを作成するためのワークフロー"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 広告, 宣伝, AdControl, InterstitialAd"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 0f832674f0e635f609f09fa15acead109b1d67ff
-
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f01b69502d41a7128ac5f59589f6d014d92f52a3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 広告を含むアプリを作成するためのワークフロー
+# <a name="workflows-for-creating-apps-with-ads"></a>広告を含むアプリを作成するためのワークフロー
 
 
 
@@ -31,13 +37,13 @@ ms.openlocfilehash: 0f832674f0e635f609f09fa15acead109b1d67ff
 
 各手順について詳しくは、対応する以下のセクションをご覧ください。
 
-## Windows デベロッパー センター アカウントの設定
+## <a name="set-up-your-windows-dev-center-account"></a>Windows デベロッパー センター アカウントの設定
 
-アプリを公開して広告を受信するには Windows デベロッパー センターでアカウントを持っている必要があります。 これは、広告仲介を使っていても同じです。 また、広告に関連するアプリの管理は Windows デベロッパー センターで行います。 アプリで広告を管理する Microsoft pubCenter を使った場合、これが Windows デベロッパー センターの機能に置き換えられています。
+アプリを公開して広告を受信するには、Windows デベロッパー センターのアカウントが必要です。 広告に関連するアプリの管理も Windows デベロッパー センターで行います。 Microsoft pubCenter を使ってアプリの広告を管理したことがある場合、この機能は Windows デベロッパー センターの機能に置き換えられています。
 
-Windows デベロッパー センターでアカウントを設定するには、[ホーム ページ](https://dev.windows.com/windows-apps)にアクセスします。 詳細については、Windows デベロッパー センターの[ヘルプ ページ](https://dev.windows.com/develop)で入手できます。
+Windows デベロッパー センターでアカウントをセットアップするには、[こちらのページ](http://go.microsoft.com/fwlink/p/?LinkId=615100)にアクセスしてください。
 
-## テスト モードの値を使ったアプリの開発
+## <a name="develop-your-app-using-test-mode-values"></a>テスト モードの値を使ったアプリの開発
 
 次の各チュートリアルの指示に従って、[AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) または [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) を追加し、アプリに広告を表示します。
 
@@ -50,11 +56,11 @@ Windows デベロッパー センターでアカウントを設定するには�
 
 C# と C++ を使って JavaScript/HTML アプリと XAML アプリに広告バナーやビデオのスポット広告を追加する方法を示す完全なサンプル プロジェクトについては、[GitHub の広告サンプル](http://aka.ms/githubads)をご覧ください。
 
-## ライブ広告を受信するアプリの設定
+## <a name="configure-your-app-to-receive-live-ads"></a>ライブ広告を受信するアプリの設定
 
 アプリのテストが終了し、Windows デベロッパー センターに提出する準備ができたら、[Windows デベロッパー センター ダッシュボード](https://msdn.microsoft.com/library/windows/apps/mt170658.aspx)から取得したアプリケーション ID と広告ユニット ID の値を使うためにアプリのコードを更新する必要があります。 ライブ アプリでテスト用の値を使うと、アプリでライブ広告は表示されません。 詳しくは、「[アプリで広告ユニットをセットアップする](set-up-ad-units-in-your-app.md)」をご覧ください。
 
-## アプリの提出
+## <a name="submit-your-app"></a>アプリの提出
 
 アプリの開発を完了した後は、Windows デベロッパー センター ダッシュ ボードを使って Windows ストアでアプリを公開できます。 Windows ストアのすべてのアプリに対する適合要件に加えて、広告を表示するアプリは、その他のいくつかの要件を満たす必要があります。 詳しくは、「[広告を含むアプリを Windows ストアに提出する](submit-an-app-with-ads-to-the-windows-store.md)」をご覧ください。
 
@@ -63,9 +69,4 @@ C# と C++ を使って JavaScript/HTML アプリと XAML アプリに広告バ�
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

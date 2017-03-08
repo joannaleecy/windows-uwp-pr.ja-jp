@@ -1,19 +1,26 @@
 ---
 author: drewbatgit
-ms.assetid: 
+ms.assetid: c43d4af3-9a1a-4eae-a137-1267c293c1b5
 description: "この記事では、モバイル デバイス上にのみある特殊カメラの UI 機能を活用する方法を示します。"
 title: "モバイル デバイスのカメラ UI の機能"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 77d1709cd42253c229b01df21ae3416e57c1c2ab
-ms.openlocfilehash: ec437d7111b1490f52bfc53b3ad2cd06f0c66ef3
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: ab74d720369bd95c10c8804836be1cc747d57931
+ms.lasthandoff: 02/08/2017
 
 ---
 
-#モバイル デバイスのカメラ UI の機能
+#<a name="camera-ui-features-for-mobile-devices"></a>モバイル デバイスのカメラ UI の機能
 
 この記事では、モバイル デバイス上にのみある特殊カメラの UI 機能を活用する方法を示します。 
 
-## モバイル拡張をプロジェクトに追加する 
+## <a name="add-the-mobile-extension-to-your-project"></a>モバイル拡張をプロジェクトに追加する 
 
 これらの機能を使用するには、ユニバーサル アプリ プラットフォーム用 Microsoft Mobile Extension SDK への参照をプロジェクトに追加する必要があります。
 
@@ -25,7 +32,7 @@ ms.openlocfilehash: ec437d7111b1490f52bfc53b3ad2cd06f0c66ef3
 
 3.  **[Microsoft Mobile Extension SDK for Universal App Platform]**(ユニバーサル アプリ プラットフォーム用 Microsoft Mobile Extension SDK) チェック ボックスをオンにします。
 
-## ステータス バーを非表示にする
+## <a name="hide-the-status-bar"></a>ステータス バーを非表示にする
 
 モバイル デバイスには、デバイスに関する状態情報をユーザーに通知する [**StatusBar**](https://msdn.microsoft.com/library/windows/apps/dn633864) コントロールがあります。 このコントロールが表示される領域は、画面上でメディア キャプチャ UI の表示に干渉する可能性があります。 [**HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339) を呼び出すことでステータス バーを非表示にできますが、呼び出しは、この API が利用可能かどうかを [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/dn949016) メソッドで確認する条件ブロック内で行う必要があります。 このメソッドは、ステータス バーをサポートするモバイル デバイスでのみ true を返します。 アプリの起動時や、またはカメラからプレビューを開始するときには、ステータス バーを非表示にする必要があります。
 
@@ -35,7 +42,7 @@ ms.openlocfilehash: ec437d7111b1490f52bfc53b3ad2cd06f0c66ef3
 
 [!code-cs[ShowStatusBar](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetShowStatusBar)]
 
-## ハードウェア カメラ ボタンを使う
+## <a name="use-the-hardware-camera-button"></a>ハードウェア カメラ ボタンを使う
 
 一部のモバイル デバイスには、専用のハードウェア カメラ ボタンが用意されていることがあります。この仕様は、ユーザーによっては画面上のコントロールより好まれます。 このハードウェア カメラ ボタンが押されたときに通知を受け取るには、[**HardwareButtons.CameraPressed**](https://msdn.microsoft.com/library/windows/apps/dn653805) イベントのハンドラーを登録します。 この API を利用できるのはモバイル デバイスのみであるため、この場合も **IsTypePresent** を使用して、この API が現在のデバイスでサポートされているかどうかをアクセス前に確認する必要があります。
 
@@ -54,7 +61,7 @@ ms.openlocfilehash: ec437d7111b1490f52bfc53b3ad2cd06f0c66ef3
 > [!NOTE]
 > この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブ ドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。                                                                                   |
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [カメラ](camera.md)
 * [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
@@ -62,10 +69,5 @@ ms.openlocfilehash: ec437d7111b1490f52bfc53b3ad2cd06f0c66ef3
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

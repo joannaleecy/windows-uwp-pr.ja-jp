@@ -7,9 +7,16 @@ isNew: true
 label: History and backwards navigation
 template: detail.hbs
 op-migration-status: ready
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 5f7f40d754ec9408fe5b4ba18d6d64bd49cb449f
-ms.openlocfilehash: bfff3a4787a37156ef3232372a125db60678ebac
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ea937ba237f4b0c58deff2b8d342337512e0de5f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -302,10 +309,5 @@ Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO4-->
 
 

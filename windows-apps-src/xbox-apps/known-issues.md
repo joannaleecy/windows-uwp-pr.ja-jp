@@ -2,9 +2,17 @@
 author: Mtoepke
 title: "Xbox One 開発者プログラムの UWP の既知の問題"
 description: 
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
 translationtype: Human Translation
-ms.sourcegitcommit: 3f0647bb76340ccbd538e9e4fefe173924d6baf4
-ms.openlocfilehash: 18c8d1fcd696f336601dc6c531424fe8bfb78304
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 4b13b9bbbc75de47ed69112680894d5e3f34d8a1
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -177,12 +185,52 @@ Sometimes this is resolved by sorting a column on the table.-->
 Occasionally, selecting the “Manage Windows Device Portal” option in Dev Home will cause Dev Home to silently exit to the Home screen. 
 This is caused by a failure in the WDP infrastructure on the console and can be resolved by restarting the console.-->
 
+## <a name="knownfoldersmediaserverdevices-caveat-on-xbox"></a>Xbox での KnownFolders.MediaServerDevices の注意事項
+
+デスクトップでは、メディア サーバーが PC と "ペアリング" されており、どのサーバーが現在オンラインかをデバイス関連付けサービスが常に追跡しているため、初期ファイル システム クエリが現在オンラインのペアリング済みサーバーの一覧をすぐに返すことができます。
+
+Xbox では、サーバーを追加または削除する UI がないため、初期ファイル システム クエリは常に空の一覧を返します。 クエリを作成して ContentsChanged イベントにサブスクライブし、通知を受け取るたびにクエリを更新する必要があります。 サーバーは少しずつ明らかになり、ほとんどは 3 秒以内に検出されます。
+
+シンプルなサンプル コード:
+
+```
+namespace TestDNLA {
+
+    public sealed partial class MainPage : Page {
+        public MainPage() {
+            this.InitializeComponent();
+        }
+
+        private async void FindFiles_Click(object sender, RoutedEventArgs e) {
+            try {
+                StorageFolder library = KnownFolders.MediaServerDevices;
+                var folderQuery = library.CreateFolderQuery();
+                folderQuery.ContentsChanged += FolderQuery_ContentsChanged;
+                IReadOnlyList<StorageFolder> rootFolders = await folderQuery.GetFoldersAsync();
+                if (rootFolders.Count == 0) {
+                    Debug.WriteLine("No Folders found");
+                } else {
+                    Debug.WriteLine("Folders found");
+                }
+            } catch (Exception ex) {
+                Debug.WriteLine("Error: " + ex.Message);
+            } finally {
+                Debug.WriteLine("Done");
+            }
+        }
+
+        private async void FolderQuery_ContentsChanged(Windows.Storage.Search.IStorageQueryResultBase sender, object args) {
+            Debug.WriteLine("Folder added " + sender.Folder.Name);
+            IReadOnlyList<StorageFolder> topLevelFolders = await sender.Folder.GetFoldersAsync();
+            foreach (StorageFolder topLevelFolder in topLevelFolders) {
+                Debug.WriteLine(topLevelFolder.Name);
+            }
+        }
+    }
+}
+```
+
 ## <a name="see-also"></a>関連項目
 - [よく寄せられる質問](frequently-asked-questions.md)
 - [Xbox One の UWP](index.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

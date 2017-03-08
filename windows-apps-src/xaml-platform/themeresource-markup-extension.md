@@ -3,31 +3,38 @@ author: jwmsft
 description: "現在アクティブなテーマに応じて異なるリソースを取得する追加のシステム ロジックと共に、リソースへの参照を評価して任意の XAML 属性の値を提供します。"
 title: "ThemeResource マークアップ拡張"
 ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 9c657f906e6dedb259b8a98373f56ac5a63bd845
-ms.openlocfilehash: 803c62987c3a019fc576c6f1d0c343e042ba947b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9175c998aa0dffb861697c2206c4202193b9bd9f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# {ThemeResource} マークアップ拡張
+# <a name="themeresource-markup-extension"></a>{ThemeResource} マークアップ拡張
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 現在アクティブなテーマに応じて異なるリソースを取得する追加のシステム ロジックと共に、リソースへの参照を評価して任意の XAML 属性の値を提供します。 [{StaticResource} マークアップ拡張](staticresource-markup-extension.md)と同様、リソースは [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) で定義されており、**ThemeResource** の使用は **ResourceDictionary** 内のそのリソースのキーを参照します。
 
-## XAML 属性の使用方法
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法
 
 ``` syntax
 <object property="{ThemeResource key}" .../>
 ```
 
-## XAML 値
+## <a name="xaml-values"></a>XAML 値
 
 | 用語 | 説明 |
 |------|-------------|
 | key | 要求されたリソースのキー。 このキーは、[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) によって最初に割当てられます。 リソース キーとしては、XamlName の文法で定義されている任意の文字列を使うことができます。 |
  
-## 注釈
+## <a name="remarks"></a>注釈
 
 **ThemeResource** は、XAML リソース ディクショナリ内の別の場所で定義されている XAML 属性の値を取得するための手法です。 このマークアップ拡張は、[{StaticResource} マークアップ拡張](staticresource-markup-extension.md)と同じ基本的な目的を果たします。 {StaticResource} マークアップ拡張との動作の違いとして、**ThemeResource** 参照では、システムによってどのテーマが現在使われているかに応じて、一次検索場所として異なるディクショナリを動的に使うことができます。
 
@@ -46,7 +53,7 @@ Windows ランタイム XAML プロセッサの実装では、**ThemeResource** 
 
 **ThemeResource** はマークアップ拡張です。 通常、マークアップ拡張は、属性値をリテラル値やハンドラー名以外にエスケープする必要があり、特定の型やプロパティに対して型コンバーターを指定するのではなく、よりグローバルにその必要がある場合に実装します。 XAML のすべてのマークアップ拡張では、それぞれの属性構文で "{" と "}" の文字を使います。これは規約であり、これに従って XAML プロセッサは、マークアップ拡張で属性を処理する必要があることを認識します。
 
-### {StaticResource} ではなく {ThemeResource} を使う状況とその方法
+### <a name="when-and-how-to-use-themeresource-rather-than-staticresource"></a>{StaticResource} ではなく {ThemeResource} を使う状況とその方法
 
 **ThemeResource** がリソース ディクショナリの項目に解決される規則は、通常、**StaticResource** の場合と同じです。 **ThemeResource** 検索は [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) のコレクションで参照される [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) ファイルまで拡張できます。これは、**StaticResource** の場合も同じです。 その違いは、**ThemeResource** では実行時に再評価を行うことができるのに対し、**StaticResource** では再評価を行うことができない点にあります。
 
@@ -68,13 +75,13 @@ Windows ランタイムには、特に **ThemeResource** から参照するた�
 
 **注**  テーマ切り替え時の `{ThemeResource}` および実行時リソースの評価は Windows 8.1 XAML ではサポートされますが、Windows 8 をターゲットとするアプリの XAML ではサポートされません。
 
-### システム リソース
+### <a name="system-resources"></a>システム リソース
 
 一部のテーマ リソースは、システム リソース値を基になるサブ値として参照します。 システム リソースは、どの XAML リソース ディクショナリにも含まれていない特殊なリソース値です。 これらの値は、Windows ランタイム XAML サポートの動作に依存してシステム自体から値を転送し、XAML リソースが参照できる形式でその値を表します。 たとえば、"SystemColorButtonFaceColor" という名前の、RGB 色を表すシステム リソースがあります。 この色は、Windows ランタイムと Windows ランタイム アプリだけに限定されないシステム カラーとテーマの観点に基づきます。
 
 通常、システム リソースは、ハイ コントラスト テーマの基になる値です。 ユーザーはハイ コントラスト テーマの色の選択を管理します。ユーザーは、同様に Windows ランタイム アプリに固有ではないシステム機能を使って、これらの選択を行います。 システム リソースを **ThemeResource** 参照として参照すると、Windows ランタイム アプリのハイ コントラスト テーマの既定の動作で、ユーザーによって制御されシステムによって公開される、テーマに固有のこれらの値を使うことができます。 また、これらの参照は、システムによって実行時のテーマの変更が検出された場合に再評価のマークが付けられます。
 
-### {ThemeResource} の使用例
+### <a name="an-example-themeresource-usage"></a>{ThemeResource} の使用例
 
 **ThemeResource** の使い方の例として、既定の generic.xaml ファイルと themeresources.xaml ファイルから抜粋した XAML の例を示します。 ここでは、1 つのテンプレート (既定の [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)) と、テーマの変更に対応するための 2 つのプロパティ ([**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) と [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414)) の宣言方法について注目します。
 
@@ -135,27 +142,22 @@ Windows ランタイムには、特に **ThemeResource** から参照するた�
 
 この [**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) 値は、システム リソースに対するもう 1 つの **ThemeResource** 参照です。 システム リソースを参照し、テーマの変更に応じてシステム リソースを変更する場合は、**ThemeResource** を使って参照を行う必要があります。
 
-## Windows 8 の動作
+## <a name="windows-8-behavior"></a>Windows 8 の動作
 
 Windows 8 では **ThemeResource** マークアップ拡張はサポートされていませんでしたが、Windows 8.1 以降で利用できるようになりました。 また、Windows 8 は、Windows ランタイム アプリのテーマ関連リソースの動的切り替えをサポートしていません。 XAML テンプレートとスタイルのテーマ変更を認識するには、アプリを再起動する必要がありました。 これは褒められたユーザー エクスペリエンスではありません。そのため、アプリを再コンパイルして Windows 8.1 をターゲットにすることを強くお勧めします。そうすれば、**ThemeResource** を利用したスタイルを使うことができ、ユーザーがテーマを切り替えたときに動的にテーマを切り替えることができます。 Windows 8 用にコンパイルしたアプリは、Windows 8.1 上で実行しても Windows 8 のときと同じ動作になります。
 
-## 設計時ツールの **{ThemeResource}** マークアップ拡張のサポート
+## <a name="design-time-tools-support-for-the-themeresource-markup-extension"></a>設計時ツールの **{ThemeResource}** マークアップ拡張のサポート
 
-MicrosoftVisual Studio 2013 では、XAML ページで **{ThemeResource}** マークアップ拡張を使うときに Microsoft IntelliSense のドロップダウンに可能なキー値を含めることができます。 たとえば、「{ThemeResource」と入力するとすぐに、[XAML テーマ リソース](https://msdn.microsoft.com/library/windows/apps/mt187274)のリソース キーが表示されます。
+Microsoft Visual Studio 2013 では、XAML ページで **{ThemeResource}** マークアップ拡張を使うときに Microsoft IntelliSense のドロップダウンに可能なキー値を含めることができます。 たとえば、「{ThemeResource」と入力するとすぐに、[XAML テーマ リソース](https://msdn.microsoft.com/library/windows/apps/mt187274)のリソース キーが表示されます。
 
 **{ThemeResource}** の一部としてリソース キーが存在すると、**[定義へ移動]** (F12 キー) 機能でそのリソースを解決して、テーマ リソースが定義されている設計時の generic.xaml を表示できます。 テーマ リソースを何度も定義されるため (テーマごとに)、**[定義へ移動]** ではファイルで見つかった最初の定義に移動します。これは **Default** の定義です。 他の定義が必要な場合は、ファイル内のキー名を検索して、他のテーマの定義を参照できます。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)
 * [XAML テーマ リソース](https://msdn.microsoft.com/library/windows/apps/mt187274)
 * [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
 * [x:Key 属性](x-key-attribute.md)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

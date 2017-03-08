@@ -3,14 +3,21 @@ author: mcleblanc
 ms.assetid: 3A477380-EAC5-44E7-8E0F-18346CC0C92F
 title: "ListView と GridView のデータ仮想化"
 description: "データ仮想化によって ListView と GridView のパフォーマンスと起動時間を向上させます。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: e44dd5c2c3c9fb252062af3a6a9f409e1777a878
-ms.openlocfilehash: 0a16dc27db6fb1e04e1ab0c575077ca10b97f12d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0b1dfaeb098ac4b73c89f4d1a51ec658312aee4e
+ms.lasthandoff: 02/07/2017
 
 ---
-# ListView と GridView のデータ仮想化
+# <a name="listview-and-gridview-data-virtualization"></a>ListView と GridView のデータ仮想化
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 **注**  詳しくは、//build/ セッション「[Dramatically Increase Performance when Users Interact with Large Amounts of Data in GridView and ListView (ユーザーが GridView と ListView で大量のデータを操作するときのパフォーマンスを大幅に向上させる)](https://channel9.msdn.com/Events/Build/2013/3-158)」をご覧ください。
 
@@ -27,7 +34,7 @@ ms.openlocfilehash: 0a16dc27db6fb1e04e1ab0c575077ca10b97f12d
 
 以降では、段階的なデータ仮想化とランダム アクセスのデータ仮想化の手法について詳しく説明します。
 
-## 段階的なデータ仮想化
+## <a name="incremental-data-virtualization"></a>段階的なデータ仮想化
 
 段階的なデータ仮想化では、データを連続的にダウンロードします。 段階的なデータ仮想化を実行する [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) を使って、数百万の項目のコレクションを表示できますが、最初は 50 個の項目だけが読み込まれます。 ユーザーがパン/スクロールすると、次の 50 個の項目が読み込まれます。 項目が読み込まれると、スクロール バーのサムはサイズが小さくなります。 この種のデータ仮想化では、次のインターフェイスを実装するデータ ソース クラスを記述します。
 
@@ -39,7 +46,7 @@ ms.openlocfilehash: 0a16dc27db6fb1e04e1ab0c575077ca10b97f12d
 
 項目コントロールは、既存のデータの終わりに近づいたときに [**ISupportIncrementalLoading.HasMoreItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.hasmoreitems) を呼び出します。 **true** が返された場合は、アドバタイズされた読み込む項目数を渡す [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.loadmoreitemsasync) を呼び出します。 データの読み込み元 (ローカル ディスク、ネットワーク、またはクラウド) に応じて、アドバタイズされた項目数とは異なる数の項目を読み込むことができます。 たとえば、サービスは 50 項目のバッチをサポートしているが、項目コントロールは 10 項目のみを要求している場合、50 項目を読み込むことができます。 バックエンドからデータを読み込んでリストに追加した後、[**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) または [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) 経由で変更通知を発行して、項目コントロールが新しい項目を認識できるようにします。 さらに、実際に読み込んだ項目の数を返します。 アドバタイズされた数よりも少ない項目を読み込むか、項目コントロールが途中でさらにパン/スクロールされた場合は、データ ソースをもう一度呼び出して、さらに項目を読み込むサイクルが続けられます。 詳しくは、Windows 8.1 の [XAML データ バインディングのサンプル](https://code.msdn.microsoft.com/windowsapps/Data-Binding-7b1d67b5)をダウンロードしてご覧ください。また、Windows 10 アプリでソース コードを再利用することもできます。
 
-## ランダム アクセスのデータ仮想化
+## <a name="random-access-data-virtualization"></a>ランダム アクセスのデータ仮想化
 
 ランダム アクセスのデータ仮想化を使うと、データ セット内の任意の位置からデータを読み込むことができます。 ランダム アクセスのデータ仮想化を実行する [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) を、100 万の項目があるコレクションを表示するために使うと、100,000 番目から 100,050 番目の項目を読み込むことができます。 ユーザーが一覧の先頭に移動すると、コントロールは 1 番目から 50 番目の項目を読み込みます。 スクロール バーのサムは、常に **ListView** に 100 万の項目が含まれていることを示します。 スクロール バーのサムの位置は、表示されている項目がコレクションのデータ セット全体で相対的にどこに位置しているかを示します。 この種のデータ仮想化は、必要なメモリを大幅に減らし、コレクションの読み込み時間を大きく短縮します。 これを有効にするには、データをオンデマンドで取得し、ローカル キャッシュを管理し、次のインターフェイスを実装するデータ ソース クラスを記述する必要があります。
 
@@ -79,10 +86,5 @@ ms.openlocfilehash: 0a16dc27db6fb1e04e1ab0c575077ca10b97f12d
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO4-->
 
 

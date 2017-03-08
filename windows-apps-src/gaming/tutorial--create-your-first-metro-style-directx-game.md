@@ -7,13 +7,19 @@ keywords:
 - "DirectX ゲームのサンプル"
 - "ゲームのサンプル, ユニバーサル Windows プラットフォーム (UWP)"
 - "Direct3D 11 ゲーム"
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 0e409f846c0f2e24c469c84610b22a0171e65018
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3ffce29c3ad7088dd24b848cb159b85a4db158e3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# DirectX を使った単純なユニバーサル Windows プラットフォーム (UWP) ゲームの作成
+# <a name="create-a-simple-universal-windows-platform-uwp-game-with-directx"></a>DirectX を使った単純なユニバーサル Windows プラットフォーム (UWP) ゲームの作成
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -22,12 +28,12 @@ ms.openlocfilehash: 0e409f846c0f2e24c469c84610b22a0171e65018
 
 UWP ゲーム開発の手法と考慮事項について説明します。 完全なエンド ツー エンドのゲームを示すのではなく、 むしろ、UWP DirectX ゲーム開発の主要な概念に焦点を当てて、これらの概念に関係する Windows ランタイム固有の考慮事項を示します。
 
-## 目標
+## <a name="objective"></a>目標
 
 
 -   UWP DirectX ゲームの基本的な概念とコンポーネントを使い、DirectX を使って UWP ゲームをより快適に設計できるようになること。
 
-## 始める前に理解しておく必要があること
+## <a name="what-you-need-to-know-before-starting"></a>始める前に理解しておく必要があること
 
 
 説明を始める前に、次の事項について理解しておく必要があります。
@@ -38,7 +44,7 @@ UWP ゲーム開発の手法と考慮事項について説明します。 完全
 -   Windows プログラミングの基本的な概念。
 -   [Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx) および [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh404569) API に関する基本的な知識。
 
-##  Windows ストア Direct3D シューティング ゲームのサンプル
+##  <a name="the-windows-store-direct3d-shooting-game-sample"></a>Windows ストア Direct3D シューティング ゲームのサンプル
 
 
 このサンプルは、プレーヤーが動く標的に弾を撃つ、簡単なファーストパーソン シューティング ギャラリーを実装しています。 標的に命中するたびにポイントが与えられ、プレーヤーは難度が上がっていく 6 つのレベルを進むことができます。 レベルの最後に、ポイントが集計されて、プレーヤーに最終スコアが与えられます。
@@ -74,10 +80,5 @@ UWP ゲーム開発の手法と考慮事項について説明します。 完全
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

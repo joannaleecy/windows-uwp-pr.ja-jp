@@ -3,13 +3,20 @@ author: drewbatgit
 ms.assetid: 9BA3F85A-970F-411C-ACB1-B65768B8548A
 description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで XAML ページ内にカメラ プレビュー ストリームをすばやく表示する方法について説明します。"
 title: "カメラ プレビューの表示"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6aacd5ef8043c9c89116a1d287174210f02f7d62
-ms.openlocfilehash: 5eb53d1527f2cd002dfb66110f1f1f3618458b3a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d65d09349850f580d8bcee2d3875b38b8ed189f1
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# カメラ プレビューの表示
+# <a name="display-the-camera-preview"></a>カメラ プレビューの表示
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -17,7 +24,7 @@ ms.openlocfilehash: 5eb53d1527f2cd002dfb66110f1f1f3618458b3a
 
 写真やビデオをキャプチャするカメラ アプリの作成方法について詳しくは、「[MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)」をご覧ください。
 
-## アプリ マニフェストに機能宣言を追加する
+## <a name="add-capability-declarations-to-the-app-manifest"></a>アプリ マニフェストに機能宣言を追加する
 
 アプリからデバイスのカメラにアクセスするには、アプリでデバイス機能 ( *webcam* と *microphone* ) の使用を宣言する必要があります。 
 
@@ -27,7 +34,7 @@ ms.openlocfilehash: 5eb53d1527f2cd002dfb66110f1f1f3618458b3a
 2.  **[機能]** タブをクリックします。
 3.  **[Web カメラ]** のボックスと **[マイク]** のボックスをオンにします。
 
-## ページに CaptureElement コントロールを追加する
+## <a name="add-a-captureelement-to-your-page"></a>ページに CaptureElement コントロールを追加する
 
 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) を使って、XAML ページ内にプレビュー ストリームを表示します。
 
@@ -35,7 +42,7 @@ ms.openlocfilehash: 5eb53d1527f2cd002dfb66110f1f1f3618458b3a
 
 
 
-## MediaCapture を使ってプレビュー ストリームを開始する
+## <a name="use-mediacapture-to-start-the-preview-stream"></a>MediaCapture を使ってプレビュー ストリームを開始する
 
 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) オブジェクトは、デバイスのカメラに対するアプリのインターフェイスです。 このクラスは、Windows.Media.Capture 名前空間のメンバーです。 この記事の例では、既定のプロジェクト テンプレートに含まれている API に加えて、[**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) 名前空間と [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx) 名前空間の API も使われます。
 
@@ -60,13 +67,13 @@ ms.openlocfilehash: 5eb53d1527f2cd002dfb66110f1f1f3618458b3a
 [!code-cs[StartPreviewAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartPreviewAsync)]
 
 
-## プレビュー ストリームをシャットダウンする
+## <a name="shut-down-the-preview-stream"></a>プレビュー ストリームをシャットダウンする
 
 プレビュー ストリームを使い終わったら、必ずストリームをシャットダウンして関連するリソースを適切に破棄し、デバイスで他のアプリがカメラを使うことができるようにしてください。 プレビュー ストリームをシャットダウンするために必要な手順は次のとおりです。
 
 -   現在、カメラがプレビューを表示中の場合は、[**StopPreviewAsync** ](https://msdn.microsoft.com/library/windows/apps/br226622) を呼び出してプレビュー ストリームを停止します。 プレビューが実行されていないときに **StopPreviewAsync** を呼び出すと、例外がスローされます。
--   **CaptureElement** の [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) プロパティを null に設定します。 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx) を使用して、この呼び出しが UI スレッドで実行されることを確認します。
--   **MediaCapture** オブジェクトの [**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) メソッドを呼び出してオブジェクトを解放します。 再度、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx) を使用して、この呼び出しが UI スレッドで実行されることを確認します。
+-   **CaptureElement** の [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) プロパティを null に設定します。 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx) を使用して、この呼び出しが UI スレッドで実行されることを確認します。
+-   **MediaCapture** オブジェクトの [**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) メソッドを呼び出してオブジェクトを解放します。 再度、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx) を使用して、この呼び出しが UI スレッドで実行されることを確認します。
 -   **MediaCapture** メンバー変数を null に設定します。
 -   [**RequestRelease**](https://msdn.microsoft.com/library/windows/apps/Windows.System.Display.DisplayRequest.RequestRelease) を呼び出して、アクティブでないときに画面をオフにできるようにします。
 
@@ -85,14 +92,9 @@ ms.openlocfilehash: 5eb53d1527f2cd002dfb66110f1f1f3618458b3a
 [!code-cs[SuspendingHandler](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSuspendingHandler)]
 
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [カメラ](camera.md)
 * [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [プレビュー フレームの取得](get-a-preview-frame.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

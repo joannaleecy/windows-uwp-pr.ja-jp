@@ -3,12 +3,20 @@ author: awkoren
 Description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) に変換したデスクトップ アプリに署名する方法について説明します。"
 Search.Product: eADQiWindows 10XVcnh
 title: "変換されたデスクトップ アプリでサポートされている UWP API"
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 translationtype: Human Translation
-ms.sourcegitcommit: 3751b16837a1e12f68954b2dec7dfaf0fb8554b6
-ms.openlocfilehash: c99d103fe5d613c5b654ba2b0bb83987a7fcb944
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: f5ee6f103fa9a7e5f13dc68eb9c6060e6b66e227
+ms.lasthandoff: 02/08/2017
 
 ---
-# Desktop Bridge で変換されたアプリでサポートされている UWP API
+# <a name="supported-uwp-apis-for-apps-converted-with-the-desktop-bridge"></a>デスクトップ ブリッジで変換されたアプリでサポートされている UWP API
 
 変換されたデスクトップ アプリは、UWP アプリに完全に移行されていない場合でも、さまざまなユニバーサル Windows プラットフォーム (UWP) API を使うことができます。 この記事では、変換されたアプリが使うことができるクラスについて説明します。 
 
@@ -38,14 +46,14 @@ ms.openlocfilehash: c99d103fe5d613c5b654ba2b0bb83987a7fcb944
 
 フル デスクトップ アプリケーションに利用できる一部の UWP API は、変換されたアプリではサポートされていません。 変換前にデスクトップ アプリケーションで UWP API を使っていた場合、それらの API が引き続きサポートされていることを確認してください。 詳しくは、[デスクトップ アプリ用の Windows ランタイム API に関する記事](https://msdn.microsoft.com/library/windows/desktop/dn554295(v=vs.85).aspx)をご覧ください。
 
-## API の一覧
+## <a name="list-of-apis"></a>API の一覧
 
 変換されたアプリでサポートされる UWP API の詳しい一覧を次に示します。 [変換されたアプリで新たにサポートされる API](#new) または [変換されたアプリとデスクトップ アプリケーションの両方でサポートされる API](#both) を表示することができます。 
 
-WinRT API の使用方法を示した例については、GitHub で[デスクトップ アプリから UWP へのブリッジのコード サンプル](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)および[ユニバーサル Windows プラットフォーム (UWP) のアプリ サンプル](https://github.com/Microsoft/Windows-universal-samples)をご覧ください。
+WinRT API の使用方法を示した例については、GitHub で[デスクトップ アプリから UWP へのブリッジのコード サンプル](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)および[ユニバーサル Windows プラットフォーム (UWP) のアプリ サンプル](https://github.com/Microsoft/Windows-universal-samples)をご覧ください。 Windows 用アプリの構築に関するブログの[デスクトップ アプリケーションからの Windows 10 API の呼び出しに関する投稿](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application)もご覧ください。 
 
 <span id="new" />
-### 新たに変換されたアプリでサポートされる API
+### <a name="apis-supported-in-newly-converted-apps"></a>新たに変換されたアプリでサポートされる API
 
 * [Windows.ApplicationModel.DataTransfer.DataProviderHandler](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataProviderHandler)
 * [Windows.ApplicationModel.DataTransfer.DataRequest](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest)
@@ -371,7 +379,7 @@ WinRT API の使用方法を示した例については、GitHub で[デスク�
 * [Windows.UI.StartScreen.JumpListItem](https://msdn.microsoft.com/library/windows/apps/Windows.UI.StartScreen.JumpListItem)
 
 <span id="both" />
-### 変換されたアプリとデスクトップ アプリケーションの両方でサポートされている API
+### <a name="apis-supported-in-both-converted-apps-and-desktop-applications"></a>変換されたアプリとデスクトップ アプリケーションの両方でサポートされている API
 
 * [Windows.ApplicationModel.Core.AppListEntry](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.AppListEntry)
 * [Windows.ApplicationModel.DataTransfer.DataPackage](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage)
@@ -1037,9 +1045,4 @@ WinRT API の使用方法を示した例については、GitHub で[デスク�
 * [Windows.Web.Syndication.SyndicationPerson](https://msdn.microsoft.com/library/windows/apps/Windows.Web.Syndication.SyndicationPerson)
 * [Windows.Web.Syndication.SyndicationText](https://msdn.microsoft.com/library/windows/apps/Windows.Web.Syndication.SyndicationText)
 * [Windows.Web.WebError](https://msdn.microsoft.com/library/windows/apps/Windows.Web.WebError)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

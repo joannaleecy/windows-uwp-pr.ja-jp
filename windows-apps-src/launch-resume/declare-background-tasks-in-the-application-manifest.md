@@ -3,16 +3,23 @@ author: TylerMSFT
 title: "アプリケーション マニフェストでのバックグラウンド タスクの宣言"
 description: "アプリ マニフェストでバックグラウンド タスクを拡張機能として宣言し、バックグラウンド タスクを使うことができるようにします。"
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
-ms.openlocfilehash: b3518780600b9fe8f9be5af48eb5ee6022ec350f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 364edc93c52d3c7c8cbe5f1a85c8ca751eb44b35
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アプリケーション マニフェストでのバックグラウンド タスクの宣言
+# <a name="declare-background-tasks-in-the-application-manifest"></a>アプリケーション マニフェストでのバックグラウンド タスクの宣言
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 **重要な API**
@@ -29,7 +36,7 @@ ms.openlocfilehash: b3518780600b9fe8f9be5af48eb5ee6022ec350f
 
 このトピックでは、1 つ以上のバックグラウンド タスク クラスが作られていて、少なくとも 1 つのトリガーに応答して実行されるようにアプリで各バックグラウンド タスクを登録するものとします。
 
-## 手動での拡張機能の追加
+## <a name="add-extensions-manually"></a>手動での拡張機能の追加
 
 
 アプリケーション マニフェスト (Package.appxmanifest) を開き、Application 要素に移動します。 Extensions 要素を作ります (まだ存在していない場合)。
@@ -55,7 +62,7 @@ ms.openlocfilehash: b3518780600b9fe8f9be5af48eb5ee6022ec350f
  </Application>
 ```
 
-## バックグラウンド タスク拡張機能の追加
+## <a name="add-a-background-task-extension"></a>バックグラウンド タスク拡張機能の追加
 
 
 最初のバックグラウンド タスクを宣言します。
@@ -102,7 +109,7 @@ ms.openlocfilehash: b3518780600b9fe8f9be5af48eb5ee6022ec350f
 ```
 
 
-## バックグラウンド タスク拡張機能の追加
+## <a name="add-additional-background-task-extensions"></a>バックグラウンド タスク拡張機能の追加
 
 アプリで登録する追加のバックグラウンド タスク クラスごとに、手順 2. を繰り返します。
 
@@ -147,11 +154,11 @@ ms.openlocfilehash: b3518780600b9fe8f9be5af48eb5ee6022ec350f
 </Applications>
 ```
 
-## 別のプロセスで実行されるバックグラウンド タスクを宣言する
+## <a name="declare-your-background-task-to-run-in-a-different-process"></a>別のプロセスで実行されるバックグラウンド タスクを宣言する
 
 Windows 10 バージョン 1507 での新機能により、バックグラウンド タスクを BackgroundTaskHost.exe (既定でバックグラウンド タスクが実行されるプロセス) とは別のプロセスで実行できるようになりました。  2 つのオプションがあります。フォアグラウンド アプリケーションと同じプロセスで実行する。BackgroundTaskHost.exe の 1 つのインスタンスで実行する。これは同じアプリケーションのバックグラウンド タスクの他のインスタンスとは別のインスタンスです。  
 
-### フォアグラウンド アプリケーションで実行する
+### <a name="run-in-the-foreground-application"></a>フォアグラウンド アプリケーションで実行する
 
 フォアグラウンド アプリケーションと同じプロセスで実行されるバック グラウンド タスクを宣言する XML の例を次に示します。 `Executable` 属性に注意してください。
 
@@ -168,7 +175,7 @@ Windows 10 バージョン 1507 での新機能により、バックグラウン
 > [!Note]
 > Executable 要素は、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) など、Executable 要素を必要とするバックグラウンド タスクと共に使ってください。  
 
-### 別のバックグラウンド ホスト プロセスで実行する
+### <a name="run-in-a-different-background-host-process"></a>別のバックグラウンド ホスト プロセスで実行する
 
 BackgroundTaskHost.exe プロセスで実行されるが、同じアプリのバックグラウンド タスクの他のインスタンスとは別に実行される、バックグラウンド タスクを宣言する XML の例を示します。 共に実行されるバックグラウンド タスクを指定する、`ResourceGroup`属性に注意してください。
 
@@ -203,15 +210,10 @@ BackgroundTaskHost.exe プロセスで実行されるが、同じアプリのバ
 ```
 
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
 * [バックグラウンド タスクの登録](register-a-background-task.md)
 * [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

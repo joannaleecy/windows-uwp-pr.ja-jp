@@ -5,9 +5,16 @@ title: "アプリ設定のガイドライン"
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: dc2fb58250ed1cc032271adc4bae98872e6f612a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e995023cd8a4216c60d5691f9f87be3aff9d8498
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -20,7 +27,7 @@ ms.openlocfilehash: dc2fb58250ed1cc032271adc4bae98872e6f612a
 
 ## <a name="should-i-include-a-settings-page-in-my-app"></a>アプリに設定ページを含めるかどうか
 
-アプリ設定のページに含めるアプリのオプションには、次のようなものがあります。 
+アプリ設定のページに含めるアプリのオプションには、次のようなものがあります。
 
 -   アプリの動作に影響するが、頻繁な再調整を必要としない構成オプション。たとえば、天気予報アプリで温度の既定の単位として摂氏または華氏を選ぶ機能、メール アプリでアカウント設定を変更する機能、通知に関する設定、アクセシビリティ オプションなどです。
 -   音楽、効果音、配色テーマなど、ユーザーの設定に基づくオプション。
@@ -51,17 +58,17 @@ ms.openlocfilehash: dc2fb58250ed1cc032271adc4bae98872e6f612a
 
 **アプリ バー**
 
-アプリ バーやツール バー (通常は、ハブやタブ/ピボットのナビゲーション レイアウトに含まれる) を使っている場合、エントリ ポイントを [その他] ポップアップ メニューの最後の項目として配置します。 設定のエントリ ポイントを簡単に検索できることがアプリで重要となる場合は、[その他] ポップアップ メニューではなく、アプリ バーに直接エントリ ポイントを配置します。
+[アプリ バー](../controls-and-patterns/app-bars.md)またはツール バーを使っている場合、設定のエントリ ポイントを [その他] オーバーフロー メニューの最後の項目として配置します。 設定のエントリ ポイントを簡単に検索できることがアプリで重要となる場合は、オーバーフローではなく、アプリ バーに直接エントリ ポイントを配置します。
 
 ![アプリ バーでのアプリ設定のエントリ ポイント](images/appsettings-entrypoint-tabs.png)
 
-**Hub**
+**ハブ**
 
-ハブ レイアウトを使っている場合は、アプリ設定のエントリ ポイントをアプリ バーの [その他] ポップアップ メニュー内に配置することをお勧めします。
+ハブ レイアウトを使っている場合は、アプリ設定のエントリ ポイントをアプリ バーの [その他] オーバーフロー メニュー内に配置することをお勧めします。
 
 **タブ/ピボット**
 
-タブやピボットのレイアウトでは、アプリ設定のエントリ ポイントをナビゲーション内のトップレベルのいずれかの項目として配置することはお勧めしません。 代わりに、アプリ設定のエントリ ポイントをアプリ バーの [その他] ポップアップ メニュー内に配置することをお勧めします。
+タブやピボットのレイアウトでは、アプリ設定のエントリ ポイントをナビゲーション内のトップレベルのいずれかの項目として配置することはお勧めしません。 代わりに、アプリ設定のエントリ ポイントをアプリ バーの [その他] オーバーフロー メニュー内に配置することをお勧めします。
 
 **マスター/詳細**
 
@@ -80,6 +87,22 @@ ms.openlocfilehash: dc2fb58250ed1cc032271adc4bae98872e6f612a
 
 ![電話におけるアプリ設定のページのレイアウト](images/appsettings-layout-navpane-mobile.png)
 
+## <a name="color-mode-settings"></a>"カラー モード" の設定
+
+
+アプリでユーザーがアプリのカラー モードを選択できるようにする場合は、"モードを選ぶ" という見出しを持つ[ラジオ ボタン](../controls-and-patterns/radio-button.md)または[コンボ ボックス](../controls-and-patterns/lists.md#drop-down-lists)を使ってこれらのオプションを表示します。 オプションは次のようになっている必要があります。
+- 明るい
+- 暗い
+- Windows の既定
+
+また、Windows 設定アプリの [色] ページへのハイパーリンクを追加して、ユーザーが Windowsの既定のテーマを確認できるようにすることもお勧めします。 ハイパーリンク テキストには、"Windows の色の設定" という文字列を使用します。
+
+![[モードを選ぶ] セクション](images/appsettings_mode.png)
+
+<div class=”microsoft-internal-note”>
+[モードを選ぶ] セクションの優先テキスト文字列を示す詳細な赤線は、[UNI](http://uni/DesignDepot.FrontEnd/#/ProductNav/2543/0/dv/?t=Windows%7CControls%7CColorMode&f=RS2)で利用できます。
+</div>
+
 ## <a name="about-section-and-give-feedback-button"></a>"バージョン情報" のセクションと "フィードバックを送信する" ためのボタン
 
 
@@ -87,12 +110,10 @@ ms.openlocfilehash: dc2fb58250ed1cc032271adc4bae98872e6f612a
 
 "使用条件" や "プライバシーに関する声明" は、テキストの折り返しを使い、[ハイパーリンク ボタン](../controls-and-patterns/hyperlinks.md)として設定します。
 
-!["バージョン情報” のセクションと "フィードバックを送信する" ためのボタン](images/appsettings-about.png)
-
-## <a name="recommendations"></a>推奨事項
+!["バージョン情報" のセクションと "フィードバックを送信する" ためのボタン](images/appsettings-about.png)
 
 
-## <a name="app-settings-page-content"></a>アプリ設定のページの内容
+## <a name="recommended-page-content"></a>推奨されるページのコンテンツ
 
 
 アプリ設定のページに含める項目の一覧を作成したら、次のガイドラインを考慮してください。
@@ -105,9 +126,7 @@ ms.openlocfilehash: dc2fb58250ed1cc032271adc4bae98872e6f612a
 -   使用頻度の高い設定にそれぞれ独自のエントリを割り当てられるように、使用頻度の低い設定は 1 つのエントリにまとめます。 情報のみを含むコンテンツやリンクは、"バージョン情報" の設定に配置します。
 -   [アクセス許可] ウィンドウの機能と重複しないようにします。 このウィンドウは既定で用意されており、その内容を変更することはできません。
 
-##  <a name="add-settings-content-to-settings-flyouts"></a>設定ポップアップへの設定コンテンツの追加
-
-
+-   設定ポップアップへの設定コンテンツの追加
 -   コンテンツは 1 列で上から下に表示し、必要に応じてスクロールできるようにします。 スクロールの長さは画面の高さの 2 倍までに抑えます。
 -   アプリ設定では次のコントロールを使います。
 
@@ -131,10 +150,4 @@ ms.openlocfilehash: dc2fb58250ed1cc032271adc4bae98872e6f612a
 * [プログレス コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465469)
 * [アプリ データの保存と取得](https://msdn.microsoft.com/library/windows/apps/mt299098)
 * [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288)
-
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

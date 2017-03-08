@@ -3,16 +3,23 @@ author: mtoepke
 title: "ゲームと DirectX"
 description: "ユニバーサル Windows プラットフォーム (UWP) は、ゲームを作り、配布し、収益を得るための新たな機会を提供します。 新しいゲームの開始または既存のゲームの移植について説明します。"
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, DirectX"
 translationtype: Human Translation
-ms.sourcegitcommit: 708e998e414f01bc6544d7f2435e7145ac84902b
-ms.openlocfilehash: 6437f3620afadd0b421bf11f1aa4f86558d50de1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c3a24c15f61204f3ecbc0587cf54e1da69ee712c
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# ゲームと DirectX
+# <a name="games-and-directx"></a>ゲームと DirectX
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 ユニバーサル Windows プラットフォーム (UWP) は、ゲームを作り、配布し、収益を得るための新たな機会を提供します。 新しいゲームの開始または既存のゲームの移植について説明します。
 
@@ -69,10 +76,5 @@ ms.openlocfilehash: 6437f3620afadd0b421bf11f1aa4f86558d50de1
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

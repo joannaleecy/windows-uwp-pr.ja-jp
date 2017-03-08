@@ -3,9 +3,16 @@ author: jnHs
 Description: "アプリを申請する際に、アプリ パッケージのアップロード中にエラーが発生した場合は、ストアにアプリを申請する前にそれらのエラーを解決する必要があります。"
 title: "パッケージのアップロード エラーの解決"
 ms.assetid: 0D01E43C-F3A7-4FA2-B479-1B5579FF531A
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP"
 translationtype: Human Translation
-ms.sourcegitcommit: 2ff09d43cd39967028b39b4f602f4dfdf2cbcdcc
-ms.openlocfilehash: 4f7f9698d8b8b17654b6f2e0420c7cdc6031f018
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 92a46c556303b88f8d506f5315e23d4e2b2edf5f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -37,10 +44,5 @@ Windows Phone 8.1 用に以前公開されていたアプリを更新すると�
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

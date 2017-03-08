@@ -3,9 +3,16 @@ author: TylerMSFT
 title: "タイマーでのバックグラウンド タスクの実行"
 description: "1 回限りのバックグラウンド タスクをスケジュールする方法、または定期的なバックグラウンド タスクを実行する方法について説明します。"
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: 488bbbf1dbe99d653dded0af78a8fd22c7429cde
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3708a9b7768d4fb7fbb6af0e55836471a2ba29ed
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -120,9 +127,4 @@ ms.openlocfilehash: 488bbbf1dbe99d653dded0af78a8fd22c7429cde
 * [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
 * [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
 * [Windows ストア アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

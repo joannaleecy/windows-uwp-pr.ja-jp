@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
 description: "Microsoft Store Services SDK の Microsoft Advertising ライブラリを使って Windows 10、Windows 8.1、または Windows Phone 8.1 アプリにスポット広告を組み込む方法について説明します。"
 title: "スポット広告"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, UWP, 広告, Advertising, スポット"
 translationtype: Human Translation
-ms.sourcegitcommit: 2b5dbf872dd7aad48373f6a6df3dffbcbaee8090
-ms.openlocfilehash: fae0fc57eca3477bf46a6f3ac43ec35781241a6e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fb1cdd018ed496b59290825ee84d10ac70a0e46d
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -230,9 +237,4 @@ Microsoft Advertising ライブラリを使う場合、プロジェクトで **"
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

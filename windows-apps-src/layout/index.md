@@ -10,9 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: e643b7029d5bc417437f7a1b8586424ac4345c3b
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: ce668d5450f9b47e49e9f2535c420bc9c07d2a30
+ms.lasthandoff: 02/08/2017
 
 ---
 # <a name="layout-for-uwp-apps"></a>UWP アプリのレイアウト
@@ -86,10 +88,5 @@ XAML プロパティとレイアウト パネルを使って、アプリの応�
 </div>
 </div>
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

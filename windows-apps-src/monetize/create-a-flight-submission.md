@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
 description: "Windows ストア申請 API 内のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されているアプリの新しいパッケージ フライトの申請を作成します。"
 title: "Windows ストア申請 API を使用したパッケージ フライト申請の作成"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、Windows ストア申請 API、フライトの申請の作成"
 translationtype: Human Translation
-ms.sourcegitcommit: 020c8b3f4d9785842bbe127dd391d92af0962117
-ms.openlocfilehash: 2ca6824039077d5d3ceba2c643d52a62c77104e4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d3e3c74d8afcd3b9055b64a0d06f207b1e02d598
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -131,9 +138,4 @@ Authorization: Bearer <your access token>
 * [パッケージ フライトの申請の更新](update-a-flight-submission.md)
 * [パッケージ フライトの申請の削除](delete-a-flight-submission.md)
 * [パッケージ フライトの申請の状態の取得](get-status-for-a-flight-submission.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

@@ -3,13 +3,20 @@ author: mtoepke
 title: "レンダリング フレームワークの変換"
 description: "ジオメトリ バッファーを移植する方法、HLSL シェーダー プログラムをコンパイルして読み込む方法、Direct3D 11 のレンダリング チェーンを実装する方法など、Direct3D 9 の簡単なレンダリング フレームワークを Direct3D 11 に変換する方法について説明します。"
 ms.assetid: f6ca1147-9bb8-719a-9a2c-b7ee3e34bd18
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, レンダリング フレームワーク, 変換, Direct3D 9, Direct3D 11"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c5cdddbf2bf75da761f4439ef2d890170c6681c5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d33a694cf835ba3d997a7c4a111349c117e2493e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# レンダリング フレームワークの変換
+# <a name="convert-the-rendering-framework"></a>レンダリング フレームワークの変換
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -23,7 +30,7 @@ ms.openlocfilehash: c5cdddbf2bf75da761f4439ef2d890170c6681c5
 
 ジオメトリ バッファーを移植する方法、HLSL シェーダー プログラムをコンパイルして読み込む方法、Direct3D 11 のレンダリング チェーンを実装する方法など、Direct3D 9 の簡単なレンダリング フレームワークを Direct3D 11 に変換する方法について説明します。 「[チュートリアル: DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への簡単な Direct3D 9 アプリの移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)」のパート 2 です。
 
-## HLSL シェーダーへのエフェクトの変換
+## <a name="convert-effects-to-hlsl-shaders"></a>HLSL シェーダーへのエフェクトの変換
 
 
 次の例は、従来のエフェクト API 向けに記述された、ハードウェアの頂点変換とパススルー色データの簡単な D3DX の手法です。
@@ -180,7 +187,7 @@ PS_OUTPUT main(PS_INPUT In)
 }
 ```
 
-## シェーダーのコンパイルと読み込み
+## <a name="compile-and-load-shaders"></a>シェーダーのコンパイルと読み込み
 
 
 Direct3D 9 ゲームでは、プログラム可能なパイプラインを実装する便利な方法として Effects ライブラリをよく使いました。 エフェクトは [**D3DXCreateEffectFromFile function**](https://msdn.microsoft.com/library/windows/desktop/bb172768) メソッドを使って実行時にコンパイルできます。
@@ -263,7 +270,7 @@ const D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
 };
 ```
 
-## ジオメトリ リソースの作成
+## <a name="create-geometry-resources"></a>ジオメトリ リソースの作成
 
 
 Direct3D 9 では、ジオメトリ リソースを格納するために、Direct3D デバイスにバッファーを作成し、メモリをロックして、CPU メモリから GPU メモリにデータをコピーしました。
@@ -316,7 +323,7 @@ m_d3dDevice->CreateBuffer(
     );
 ```
 
-## レンダリング チェーンの実装
+## <a name="implement-the-rendering-chain"></a>レンダリング チェーンの実装
 
 
 Direct3D 9 ゲームでは、エフェクト ベースのレンダリング チェーンをよく使いました。 この種のレンダリング チェーンでは、エフェクト オブジェクトを設定し、それを必要なリソースと一緒に提供して、各パスをレンダリングできるようにします。
@@ -490,10 +497,5 @@ m_swapChain->Present(1, 0);
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

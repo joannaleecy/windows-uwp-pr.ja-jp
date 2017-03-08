@@ -1,11 +1,18 @@
 ---
 author: drewbatgit
-ms.assetid: 
+ms.assetid: 66d0c3dc-81f6-4d9a-904b-281f8a334dd0
 description: "この記事では、MediaCapture クラスを使用して写真やビデオをキャプチャする最も簡単な方法を示します。"
 title: "MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 9cbe7948767ba45e8ef495a9349621969957ab04
-ms.openlocfilehash: 98f71104b5a95f9327a0b3f879e4dbb91b74b581
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 8918b120394def3ba12d5932dc66cb38279cc124
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -59,7 +66,7 @@ XAML ページに表示する方法など、**SoftwareBitmap** オブジェク�
 
 [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.Streams.InMemoryRandomAccessStream) を作成し、[**CapturePhotoToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.CapturePhotoToStreamAsync) を呼び出して、ストリームと、使用する画像形式を指定する [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.ImageEncodingProperties) オブジェクトを渡して、写真をストリームにキャプチャします。 自分でオブジェクトを初期化することによって、カスタム エンコード プロパティを作成することもできますが、このクラスには、[**ImageEncodingProperties.CreateJpeg**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.ImageEncodingProperties.CreateJpeg) など、一般的なエンコード形式用の静的メソッドが用意されています。 次に、[**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFile.OpenAsync) を呼び出すことにより、出力ファイルへのファイル ストリームを作成します。 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapDecoder) を作成して、インメモリ ストリームから画像をデコードします。次に、[**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder) を作成して、[**CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder.CreateForTranscodingAsync) を呼び出すことによって画像をファイルにエンコードします。
 
-必要に応じて、[**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapPropertySet) オブジェクトを作成し、イメージ エンコーダーで [**SetPropertiesAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/br226252.aspx) を呼び出して、画像ファイルに写真に関するメタデータを含めることができます。 エンコード プロパティについて詳しくは、「[**画像のメタデータ**](image-metadata.md)」をご覧ください。 デバイスの向きを正しく処理することは、ほとんどの写真アプリに不可欠です。 詳しくは、「[**MediaCapture を使ってデバイスの向きを処理する**](handle-device-orientation-with-mediacapture.md)」をご覧ください。
+必要に応じて、[**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapPropertySet) オブジェクトを作成し、イメージ エンコーダーで [**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252.aspx) を呼び出して、画像ファイルに写真に関するメタデータを含めることができます。 エンコード プロパティについて詳しくは、「[**画像のメタデータ**](image-metadata.md)」をご覧ください。 デバイスの向きを正しく処理することは、ほとんどの写真アプリに不可欠です。 詳しくは、「[**MediaCapture を使ってデバイスの向きを処理する**](handle-device-orientation-with-mediacapture.md)」をご覧ください。
 
 最後に、エンコーダー オブジェクトで [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder.FlushAsync) を呼び出して、写真をインメモリ ストリームからファイルにコード変換します。
 
@@ -133,10 +140,5 @@ Windows 10 バージョン 1607 以降では、ビデオの録画を一時停止
 * [MediaCapture を使ってデバイスの向きを処理する](handle-device-orientation-with-mediacapture.md)
 * [ビットマップ画像の作成、編集、保存](imaging.md)
 * [ファイル、フォルダー、およびライブラリ](https://msdn.microsoft.com/windows/uwp/files/index)
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

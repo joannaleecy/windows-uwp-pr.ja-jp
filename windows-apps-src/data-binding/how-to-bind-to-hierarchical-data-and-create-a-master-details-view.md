@@ -3,14 +3,21 @@ author: mcleblanc
 ms.assetid: 0C69521B-47E0-421F-857B-851B0E9605F2
 title: "階層データをバインドしてマスター/詳細ビューを作る方法"
 description: "チェーン内でバインドされた CollectionViewSource インスタンスに項目コントロールをバインドすると、階層データの複数レベルのマスター/詳細 (リスト/詳細とも呼ばれる) ビューを作成することができます。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
-ms.openlocfilehash: 91786a785eece1448a36ebf48b8c8ef5c131e609
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 107d4a9778b377370632b6e8d37ad3216858d251
+ms.lasthandoff: 02/07/2017
 
 ---
-# 階層データをバインドしてマスター/詳細ビューを作る方法
+# <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>階層データをバインドしてマスター/詳細ビューを作る方法
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 > **注**  [マスター/詳細のサンプル](http://go.microsoft.com/fwlink/p/?linkid=619991)もご覧ください。
@@ -23,15 +30,15 @@ ms.openlocfilehash: 91786a785eece1448a36ebf48b8c8ef5c131e609
 
 ![スポーツ階層のマスター/詳細ビュー](images/xaml-masterdetails.png)
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 このトピックでは、基本的な UWP アプリを作成できることを前提としています。 初めて UWP アプリを作る場合の手順については、「[C# または Visual Basic を使った初めての UWP アプリの作成](https://msdn.microsoft.com/library/windows/apps/Hh974581)」をご覧ください。
 
-## プロジェクトの作成
+## <a name="create-the-project"></a>プロジェクトの作成
 
 最初に、**"新しいアプリケーション (Windows ユニバーサル)"** プロジェクトを新規作成します。 プロジェクトに "MasterDetailsBinding" という名前を付けます。
 
-## データ モデルを作る
+## <a name="create-the-data-model"></a>データ モデルを作る
 
 プロジェクトに新しいクラスを追加して ViewModel.cs という名前を付け、次のコードを追加します。 これは、バインディング ソース クラスになります。
 
@@ -104,7 +111,7 @@ namespace MasterDetailsBinding
 }
 ```
 
-## ビューを作る
+## <a name="create-the-view"></a>ビューを作る
 
 次に、マークアップのページを表すクラスからバインディング ソース クラスを公開します。 これを行うには、**LeagueList** 型のプロパティを **MainPage** に追加します。
 
@@ -221,10 +228,5 @@ namespace MasterDetailsBinding
  
 
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

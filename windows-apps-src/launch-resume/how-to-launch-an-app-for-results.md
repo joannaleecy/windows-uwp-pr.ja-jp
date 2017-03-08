@@ -3,13 +3,20 @@ author: TylerMSFT
 title: "結果を取得するためのアプリの起動"
 description: "別のアプリからアプリを起動し、2 つのアプリの間でデータを交換する方法について説明します。 これは、&quot;結果を取得するためのアプリの起動&quot; と呼ばれます。"
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
-ms.openlocfilehash: d8d7f73e06d627eaa53deaf26f778c122113a9d6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ec46f3287deefca67dab96fe12b3380c7dbd6ed9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 結果を取得するためのアプリの起動
+# <a name="launch-an-app-for-results"></a>結果を取得するためのアプリの起動
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -26,7 +33,7 @@ Windows 10 での新しいアプリ間通信 API により、各 Windows アプ�
 
 結果を得るために起動するアプリは、起動されたアプリと呼ばれます。 アプリを起動するアプリは、呼び出し元アプリと呼ばれます。 この例では、呼び出し元アプリと、起動されたアプリの両方を記述します。
 
-## 手順 1: 結果を取得するために起動するアプリで処理されるプロトコルを登録する
+## <a name="step-1-register-the-protocol-to-be-handled-in-the-app-that-youll-launch-for-results"></a>手順 1: 結果を取得するために起動するアプリで処理されるプロトコルを登録する
 
 
 起動アプリの Package.appxmanifest ファイルで、プロトコル拡張機能を **&lt;Application&gt;** セクションに追加します。 この例では、**test-app2app** という名前の架空プロトコルを使います。
@@ -55,7 +62,7 @@ Windows 10 での新しいアプリ間通信 API により、各 Windows アプ�
 </Applications>
 ```
 
-## 手順 2: 結果を取得するために起動するアプリで Application.OnActivated をオーバーライドする
+## <a name="step-2-override-applicationonactivated-in-the-app-that-youll-launch-for-results"></a>手順 2: 結果を取得するために起動するアプリで Application.OnActivated をオーバーライドする
 
 
 このメソッドが起動アプリにまだ存在しない場合は、App.xaml.cs で定義されている `App` クラス内に作成します。
@@ -87,7 +94,7 @@ protected override void OnActivated(IActivatedEventArgs args)
 
 Package.appxmanifest ファイル内のプロトコル拡張機能では **ReturnResults** が **always** と指定されているため、上記のコードでは `args` を [**ProtocolForResultsActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn906905) に直接キャストすることができます。このとき、**ProtocolForResultsActivatedEventArgs** のみが、このアプリの **OnActivated** に送信されます。 結果を取得するための起動以外の方法でアプリがアクティブ化される可能性がある場合は、結果を取得するためにアプリが起動されたかどうかを判別するために [**IActivatedEventArgs.Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) プロパティが [**ActivationKind.ProtocolForResults**](https://msdn.microsoft.com/library/windows/apps/br224693) を返すかどうかを確認してください。
 
-## 手順 3: 結果を取得するために起動するアプリに ProtocolForResultsOperation フィールドを追加する
+## <a name="step-3-add-a-protocolforresultsoperation-field-to-the-app-you-launch-for-results"></a>手順 3: 結果を取得するために起動するアプリに ProtocolForResultsOperation フィールドを追加する
 
 
 ```cs
@@ -96,7 +103,7 @@ private Windows.System.ProtocolForResultsOperation _operation = null;
 
 [**ProtocolForResultsOperation**](https://msdn.microsoft.com/library/windows/apps/dn906913) フィールドを使うと、起動されたアプリが呼び出し元のアプリに結果を返すことができるようになった場合に、そのタイミングを通知することができます。 この例では、このフィールドは **LaunchedForResultsPage** クラスに追加されます。これは、結果を取得するための起動処理をそのページから実行し、そのページにアクセスする必要があるためです。
 
-## 手順 4: 結果を取得するために起動するアプリで OnNavigatedTo() をオーバーライドする
+## <a name="step-4-override-onnavigatedto-in-the-app-you-launch-for-results"></a>手順 4: 結果を取得するために起動するアプリで OnNavigatedTo() をオーバーライドする
 
 
 結果を取得するためにアプリを起動するときに表示するページで、[**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) メソッドをオーバーライドします。 このメソッドがまだ存在しない場合は、&lt;ページ名&gt;.xaml.cs で定義されているページのクラス内に作成します。 ファイルの先頭に、次の **using** ステートメントが含まれていることを確認します。
@@ -127,7 +134,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 private Windows.System.ProtocolForResultsOperation _operation = null;
 ```
 
-## 手順 5: 呼び出し元のアプリにデータを返すコードを記述する
+## <a name="step-5-write-code-to-return-data-to-the-calling-app"></a>手順 5: 呼び出し元のアプリにデータを返すコードを記述する
 
 
 起動アプリで、[**ProtocolForResultsOperation**](https://msdn.microsoft.com/library/windows/apps/dn906913) を使って呼び出し元のアプリにデータを返します。 次のコード例では、呼び出し元のアプリに返す値を格納する [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) オブジェクトが作成されます。 その後で、**ProtocolForResultsOperation** フィールドを使って、呼び出し元のアプリに値を送信します。
@@ -138,7 +145,7 @@ private Windows.System.ProtocolForResultsOperation _operation = null;
     _operation.ReportCompleted(result);
 ```
 
-## 手順 6: 結果を取得するためにアプリを起動し、返されたデータを取得するコードを記述する
+## <a name="step-6-write-code-to-launch-the-app-for-results-and-get-the-returned-data"></a>手順 6: 結果を取得するためにアプリを起動し、返されたデータを取得するコードを記述する
 
 
 次のコード例に示すように、呼び出し元のアプリの非同期メソッド内で、アプリを起動します。 **using** ステートメントは、コードをコンパイルするために必要となります。
@@ -180,7 +187,7 @@ async Task<string> LaunchAppForResults()
 string familyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;
 ```
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 
 この方法の例については、結果を取得するためのアプリの起動の概要を説明した "hello world" アプリをご覧ください。 重要な注意点は、新しい [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) API を使うと、アプリを非同期的に起動し、[**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) クラスを使って通信できるようになることです。 **ValueSet** を使って渡すデータは、100 KB に制限されます。 より多くのデータを渡す必要がある場合は、アプリ間で渡すことができるファイル トークンを作成するための、[**SharedStorageAccessManager**](https://msdn.microsoft.com/library/windows/apps/dn889985) クラスを使ってファイルを共有することができます。 たとえば、`inputData` という名前の **ValueSet** を指定し、起動アプリと共有するファイルのトークンを格納できます。
@@ -191,7 +198,7 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
 
 その後で、**LaunchUriForResultsAsync** を使って、トークンを起動アプリに渡します。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [**LaunchUri**](https://msdn.microsoft.com/library/windows/apps/hh701476)
@@ -201,9 +208,4 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -1,14 +1,22 @@
 ---
 author: JordanEllis6809
 title: "Xbox での HTML ゲーム開発"
-description: "Xbox での HTML UWP ゲーム開発です。"
+description: "Xbox での HTML UWP ゲーム開発。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: edd40cc4-2604-4bc6-bd81-f671389a70fa
 translationtype: Human Translation
-ms.sourcegitcommit: c20aaad74acde12cdf2b7db342dac2c8c376560b
-ms.openlocfilehash: 992182f69fe65967771b8bf75b1cb9883da3633a
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 9f7a70bb726fc6eb6f7465068cf33acb7aa33a39
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# HTML ゲームの Xbox での UWP への移行
+# <a name="bringing-html-games-to-uwp-on-xbox"></a>HTML ゲームの Xbox での UWP への移行
 Xbox One は HTML 5 ゲーム用の優れたプラットフォームです。 HTML 5 ゲームは、[Microsoft Edge](https://developer.microsoft.com/microsoft-edge/) ブラウザー エンジンで実行されます。 Microsoft Edge は高速で、WebGL やキャンバスなど、HTML 5 と CSS 3 の機能を完全にサポートしています。
 
 [Construct 2](https://www.scirra.com/blog/176/announcing-xbox-one-export-beta) などの一般的なゲーム エンジンは Xbox One に対応しています。 すべての HTML のフレームワークとエンジンをテストしたわけではありませんが、これまでの状況を見ると、ほとんどが Xbox One で機能すると考えられます。
@@ -19,12 +27,7 @@ Xbox One はユニバーサル Windows プラットフォームで実行され�
 
 最初に、好みのエンジンをダウンロードし、Windows 10 アプリの手順を確認します。 また、コンソールを開発キットとして使用する方法と Visual Studio から展開する方法については、「[ファースト ステップ ガイド](getting-started.md)」をご覧ください。
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 - [既存のゲームの Xbox への移行](development-lanes-landing.md)
 - [Xbox One の UWP](index.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -1,21 +1,28 @@
 ---
 author: drewbatgit
-ms.assetid: 
+ms.assetid: eb690f2b-3bf8-4a65-99a4-2a3a8c7760b7
 description: "この記事では、システム メディア トランスポート コントロールを操作する方法について説明します。"
 title: "システム メディア トランスポート コントロールとの統合"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 34cb2fec3071add8617fe2bee2eaf50356611ac6
-ms.openlocfilehash: 702d5911f6e76d6c047fcc97c1117456ae04c3e5
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 166e63659d138db2c4a6c49f11a2277eae790529
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# システム メディア トランスポート コントロールとの統合
+# <a name="integrate-with-the-system-media-transport-controls"></a>システム メディア トランスポート コントロールとの統合
 
 この記事では、システム メディア トランスポート コントロール (SMTC) を操作する方法について説明します。 SMTC は、すべての Windows 10 デバイスに共通する一連のコントロールで、再生に [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) を使うすべての実行中のアプリのメディア再生をユーザーが制御するための一貫した方法を提供します。
 
 SMTC との統合を示す完全なサンプルについては、[github のシステム メディア トランスポート コントロールのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)をご覧ください。
                     
-##SMTC との自動統合
+##<a name="automatic-integration-with-smtc"></a>SMTC との自動統合
 Windows 10 バージョン 1607 以降、メディアの再生に [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) クラスを使う UWP アプリは、既定で SMTC と自動的に統合されます。 **MediaPlayer** の新しいインスタンスをインスタンス化し、[**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource)、[**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem)、または [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList) をプレーヤーの [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) プロパティに割り当てるだけで、SMTC にアプリ名が表示され、SMTC コントロールを使って再生リストから再生、一時停止、再生リスト内の移動を行うことができます。 
 
 アプリは一度に複数の **MediaPlayer** オブジェクトを作成し、使うことができます。 アプリ内のアクティブな **MediaPlayer** インスタンスごとに、SMTC に個別のタブが作成されるため、ユーザーはアクティブなメディア プレーヤーとその他の実行中のアプリのメディア プレーヤーを切り替えることができます。 SMTC で現在選択されているメディア プレーヤーが、コントロールが影響を与えるメディア プレーヤーとなります。
@@ -24,14 +31,14 @@ Windows 10 バージョン 1607 以降、メディアの再生に [**MediaPlayer
 
 **MediaSource**、**MediaPlaybackItem**、**MediaPlaybackList** の操作について詳しくは、「[メディア項目、プレイリスト、トラック](media-playback-with-mediasource.md)」をご覧ください。
 
-##SMTC で表示するメタデータを追加する
+##<a name="add-metadata-to-be-displayed-by-the-smtc"></a>SMTC で表示するメタデータを追加する
 ビデオや曲のタイトルなど、SMTC でメディア項目に表示するメタデータを追加または変更する場合、メディア項目を表す **MediaPlaybackItem** の表示プロパティを更新する必要があります。 まず、[**GetDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.GetDisplayProperties) を呼び出して、[**MediaItemDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties) オブジェクトへの参照を取得します。 次に、[**Type**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.Type) プロパティを持つ項目に、メディアの種類 (音楽またはビデオ) を設定します。 その後、指定したメディアの種類によって、[**MusicProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.MusicProperties) または [**VideoProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.VideoProperties) のフィールドを設定できます。 最後に、[**ApplyDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/mt489923) を呼び出して、メディア項目のメタデータを更新します。
 
 [!code-cs[SetVideoProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetVideoProperties)]
 
 [!code-cs[SetMusicProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetMusicProperties)]
 
-##CommandManager を使って既定の SMTC コマンドを変更またはオーバーライドする
+##<a name="use-commandmanager-to-modify-or-override-the-default-smtc-commands"></a>CommandManager を使って既定の SMTC コマンドを変更またはオーバーライドする
 アプリでは、[**MediaPlaybackCommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager) クラスを使って SMTC コントロールの動作を変更または完全にオーバーライドできます。 [**CommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.CommandManager) プロパティにアクセスすると、**MediaPlayer** クラスのインスタンスごとにコマンド マネージャー インスタンスを取得できます。
 
 既定では **MediaPlaybackList** の次の項目にスキップする *Next* コマンドなどのすべてのコマンドに、コマンド マネージャーは [**NextReceived**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.NextReceived) のような受信イベントと、[**NextBehavior**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.NextBehavior) のようにコマンドの動作を管理するオブジェクトを公開します。 
@@ -65,13 +72,13 @@ Windows 10 バージョン 1607 以降、メディアの再生に [**MediaPlayer
 最後に、保留オブジェクトで [**Complete**](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Deferral.Complete) が呼び出されて、システムはコマンドの処理が完了したことを把握できます。
 
 [!code-cs[PreviousReceived](./code/SMTC_RS1/cs/MainPage.xaml.cs#SnippetPreviousReceived)]
-                
-##SMTC の手動制御
+                 
+##<a name="manual-control-of-the-smtc"></a>SMTC の手動制御
 この記事で既に説明したように、SMTC はアプリによって作成される **MediaPlayer** のすべてのインスタンスに関する情報を自動的に検出して表示します。 **MediaPlayer** のインスタンスを複数使うが、SMTC ではアプリのエントリを 1 つだけ提供する場合、自動統合を使うのではなく、SMTC を手動で制御する必要があります。 また、[**MediaTimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController) を使って 1 つ以上のメディア プレーヤーを制御する場合、手動 SMTC 統合を使う必要があります。 アプリが **MediaPlayer** 以外の API ([**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioGraph) クラスなど) を使ってメディアを再生する場合も、ユーザーが SMTC を使ってアプリを制御できるように、手動 SMTC 統合を実装する必要があります。 SMTC を手動で制御する方法について詳しくは、「[システム メディア トランスポート コントロールの手動制御](system-media-transport-controls.md)」をご覧ください。
 
 
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 * [メディア再生](media-playback.md)
 * [MediaPlayer を使ったオーディオとビデオの再生](play-audio-and-video-with-mediaplayer.md)
 * [システム メディア トランスポート コントロールの手動制御](system-media-transport-controls.md)
@@ -82,10 +89,5 @@ Windows 10 バージョン 1607 以降、メディアの再生に [**MediaPlayer
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

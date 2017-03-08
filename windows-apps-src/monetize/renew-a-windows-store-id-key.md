@@ -3,18 +3,25 @@ author: mcleanbyron
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: "このメソッドを使って、Windows ストアのキーを更新します。"
 title: "Windows ストア ID キーの更新"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、Windows ストア コレクション API、Windows ストア購入 API、Windows ストア ID キー、更新"
 translationtype: Human Translation
-ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
-ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b740cf431607f1748a8513a02746a70560d09da2
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Windows ストア ID キーの更新
+# <a name="renew-a-windows-store-id-key"></a>Windows ストア ID キーの更新
 
 
 このメソッドを使って、Windows ストアのキーを更新します。 [Windows ストア ID キーを生成](view-and-grant-products-from-a-service.md#step-4)する場合、キーは 90 日間有効です。 キーの有効期限が切れた後で、有効期限が切れたキーとこのメソッドを使用して新しいキーを再ネゴシエートできます。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 
 このメソッドを使用するための要件:
@@ -22,11 +29,11 @@ ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
 * `https://onestore.microsoft.com` 対象ユーザー URI を使用して作成した Azure AD アクセス トークン。
 * [アプリのクライアント側コードから生成された](view-and-grant-products-from-a-service.md#step-4) 有効期限切れの Windows ストア ID キー。
 
-詳しくは、「[サービスからの製品の表示と許可](view-and-grant-products-from-a-service.md)」をご覧ください。
+詳しくは、「[サービスから製品の権利を管理する](view-and-grant-products-from-a-service.md)」をご覧ください。
 
-## 要求
+## <a name="request"></a>要求
 
-### 要求の構文
+### <a name="request-syntax"></a>要求の構文
 
 | キーの種類    | メソッド | 要求 URI                                              |
 |-------------|--------|----------------------------------------------------------|
@@ -35,7 +42,7 @@ ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
 
 <span/>
 
-### 要求ヘッダー
+### <a name="request-header"></a>要求ヘッダー
 
 | ヘッダー         | タイプ   | 説明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
@@ -45,7 +52,7 @@ ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
 
 <span/>
 
-### 要求本文
+### <a name="request-body"></a>要求本文
 
 | パラメーター     | タイプ   | 説明                       | 必須かどうか |
 |---------------|--------|-----------------------------------|----------|
@@ -54,7 +61,7 @@ ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
 
 <span/> 
 
-### 要求の例
+### <a name="request-example"></a>要求の例
 
 ```syntax
 POST https://collections.mp.microsoft.com/v6.0/b2b/keys/renew HTTP/1.1
@@ -68,10 +75,10 @@ Host: collections.mp.microsoft.com
 }
 ```
 
-## 応答
+## <a name="response"></a>応答
 
 
-### 応答本文
+### <a name="response-body"></a>応答本文
 
 | パラメーター | タイプ   | 説明                                                                                                            | 必須かどうか |
 |-----------|--------|------------------------------------------------------------------------------------------------------------------------|----------|
@@ -79,7 +86,7 @@ Host: collections.mp.microsoft.com
 
 <span/>
 
-### 応答の例
+### <a name="response-example"></a>応答の例
 
 ```syntax
 HTTP/1.1 200 OK
@@ -96,7 +103,7 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 }
 ```
 
-## エラー コード
+## <a name="error-codes"></a>エラー コード
 
 
 | コード | エラー        | 内部エラー コード           | 説明                                                                                                                                                                           |
@@ -106,16 +113,11 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 <span/>
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
-* [サービスからの製品の表示と許可](view-and-grant-products-from-a-service.md)
+* [サービスから製品の権利を管理する](view-and-grant-products-from-a-service.md)
 * [製品の照会](query-for-products.md)
 * [コンシューマブルな製品をフルフィルメント完了として報告する](report-consumable-products-as-fulfilled.md)
 * [無料の製品の付与](grant-free-products.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

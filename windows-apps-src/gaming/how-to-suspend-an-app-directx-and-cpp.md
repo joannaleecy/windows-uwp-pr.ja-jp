@@ -3,20 +3,27 @@ author: mtoepke
 title: "アプリを一時停止する方法 (DirectX と C++)"
 description: "このトピックでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリをシステムが一時停止するときに重要なシステム状態とアプリ データを保存する方法について説明します。"
 ms.assetid: 5dd435e5-ec7e-9445-fed4-9c0d872a239e
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, 一時停止, DirectX"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: dd7319b254dcaaa5da7a7055bbde299f5e7e62a3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 028350f3e4bf6bda5a72663c009e8117c9311b3e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アプリを一時停止する方法 (DirectX と C++)
+# <a name="how-to-suspend-an-app-directx-and-c"></a>アプリを一時停止する方法 (DirectX と C++)
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 このトピックでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリをシステムが一時停止するときに重要なシステム状態とアプリ データを保存する方法について説明します。
 
-## suspending イベント ハンドラーに登録する
+## <a name="register-the-suspending-event-handler"></a>suspending イベント ハンドラーに登録する
 
 
 まず、[**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) イベントを処理するための登録を行います。このイベントは、ユーザーまたはシステムの動作によってアプリが一時停止の状態に移ったときに発生します。
@@ -35,7 +42,7 @@ void App::Initialize(CoreApplicationView^ applicationView)
 }
 ```
 
-## 一時停止の前に任意のアプリ データを保存する
+## <a name="save-any-app-data-before-suspending"></a>一時停止の前に任意のアプリ データを保存する
 
 
 アプリでは、[**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) イベントを処理する時点で、ハンドラー関数で重要なアプリケーション データを保存できます。 アプリで [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) Storage API を使って、シンプルなアプリケーション データを同期的に保存する必要があります。 ゲームを開発している場合は、重要なゲームの状態の情報を保存します。 オーディオ処理の一時停止も忘れずに行います。
@@ -91,7 +98,7 @@ void App::Run()
 }
 ```
 
-## Trim() を呼び出す
+## <a name="call-trim"></a>Trim() を呼び出す
 
 
 Windows 8.1 以降では、DirectX を使った Windows ストア アプリはいずれも、中断時に [**IDXGIDevice3::Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346) を呼び出す必要があります。 この呼び出しは、アプリに割り当てた一時バッファーをすべて解放するようにグラフィックス ドライバーに対して指示するものであり、アプリが中断状態にある間に終了してメモリ リソースが再利用される可能性を低く抑えることができます。 Windows 8.1 では、これが認定要件となっています。
@@ -126,12 +133,12 @@ void DX::DeviceResources::Trim()
 }
 ```
 
-## 任意の排他リソースとファイル ハンドルを解放する
+## <a name="release-any-exclusive-resources-and-file-handles"></a>任意の排他リソースとファイル ハンドルを解放する
 
 
 アプリでは、[**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) イベントを処理する時点で、排他リソースとファイル ハンドルを解放することもできます。 排他リソースとファイル ハンドルを明示的に解放すると、自分のアプリが使っていないときに他のアプリが排他リソースとファイル ハンドルにアクセスできるようになります。 アプリが終了後にアクティブ化されるときに、排他リソースとファイル ハンドルを開く必要があります。
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 
 ユーザーが別のアプリまたはデスクトップに切り替えると、システムはアプリを中断します。 ユーザーが元のアプリに戻すと、システムはアプリを再開します。 システムがアプリを再開した時点で、変数とデータ構造の内容は、システムがアプリを一時停止する前の状態と同じです。 システムはアプリを厳密に一時停止前の状態に復元するので、ユーザーからはアプリがバックグラウンドで実行していたように見えます。
@@ -140,7 +147,7 @@ void DX::DeviceResources::Trim()
 
 アプリが終了されるときは、システムはアプリに通知を送らないので、アプリは中断されたときにアプリケーション データを保存し、排他リソースとファイル ハンドルを解放して、アプリが終了後アクティブ化されるときにそれらを復元する必要があります。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [アプリを再開する方法 (DirectX と C++)](how-to-resume-an-app-directx-and-cpp.md)
 * [アプリをアクティブ化する方法 (DirectX と C++)](how-to-activate-an-app-directx-and-cpp.md)
@@ -151,10 +158,5 @@ void DX::DeviceResources::Trim()
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

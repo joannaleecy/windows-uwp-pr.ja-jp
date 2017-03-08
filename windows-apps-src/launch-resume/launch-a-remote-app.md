@@ -1,10 +1,18 @@
 ---
 author: TylerMSFT
 title: "リモート デバイスでのアプリの起動"
-description: Learn how to launch an app on a remote device using Project "Rome".
+description: "&quot;Rome&quot; プロジェクトを使って、リモート デバイスでアプリを起動する方法について説明します。"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 translationtype: Human Translation
-ms.sourcegitcommit: 4e94ee5b3c56f3ec20e3592b97348c291297a670
-ms.openlocfilehash: d429ea4a6f8d52445c99cb170bb41c3fc1515dde
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: e3ef31ed9a90122ae0634274ac5794e67017bc2f
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -59,13 +67,8 @@ Windows 10 Version 1607 以降で実行される UWP アプリは、同じく Wi
 
 ## <a name="related-topics"></a>関連トピック
 
-[リモート システムの API リファレンス](https://msdn.microsoft.com/en-us/library/windows/apps/Windows.System.RemoteSystems)  
+[リモート システムの API リファレンス](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
 [接続されるアプリやデバイス ("Rome" プロジェクト) の概要](connected-apps-and-devices.md)  
 [リモート デバイスの検出](discover-remote-devices.md)  
 [Remote Systems sample (リモート システムのサンプル)](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)では、リモート システムを検出する方法、リモート システムでアプリを起動する方法、アプリ サービスを使って 2 つのシステム上で実行しているアプリ間でメッセージを送信する方法が説明されています。
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

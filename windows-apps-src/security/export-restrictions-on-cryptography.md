@@ -3,13 +3,20 @@ title: "暗号化に関する輸出制限の順守"
 description: "Windows ストアで認定されない原因となり得るような暗号化がアプリで使われていないかを判断するためにこの情報をご利用ください。"
 ms.assetid: 204C7D1D-6F08-4AEE-A333-434D715E7617
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: a6bd271ddfece1cc104243b8800f6473df14c275
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 265f0f0d9db1a8ae53a8d6561e289f8e303e08b1
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 暗号化に関する輸出制限の順守
+# <a name="export-restrictions-on-cryptography"></a>暗号化に関する輸出制限の順守
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -26,7 +33,7 @@ Windows ストアで認定されない原因となり得るような暗号化が
 
 暗号化を含む技術の輸出を管理する輸出管理規制 (EAR) の情報については、[暗号化技術を使う品目に対する輸出管理規制に関する Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245645)をご覧ください。
 
-## 管理対象の使用
+## <a name="governed-uses"></a>管理対象の使用
 
 まず、輸出管理規制の対象となる暗号化の種類をアプリが使っているかどうかを判断します。 この質問には、ここで一覧に示している例も含まれていますが、この一覧が暗号化の応用のすべてではないことに注意してください。
 
@@ -42,7 +49,7 @@ Windows ストアで認定されない原因となり得るような暗号化が
 
 暗号化の適用に関する最新の一覧については、[暗号化技術を使う品目に対する輸出管理規制に関する Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245645)をご覧ください。
 
-## 制限なしの使用
+## <a name="non-restricted-uses"></a>制限なしの使用
 
 一部の暗号化の適用は制限されていません。 次のタスクは、制限を受けません。
 
@@ -57,9 +64,4 @@ Windows ストアで認定されない原因となり得るような暗号化が
 アプリがこの一覧に含まれないタスクについて暗号化を呼び出す、サポートする、組み込む、または使う場合は、輸出規制品目番号 (ECCN) が必要です。
 
 ECCN を持っていない場合は、[ECCN についての質問とその回答が掲載された Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245646)をご覧ください。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

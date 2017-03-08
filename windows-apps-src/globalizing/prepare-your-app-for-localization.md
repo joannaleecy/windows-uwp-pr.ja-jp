@@ -5,9 +5,16 @@ title: "ローカライズのためにアプリの準備をする"
 ms.assetid: 06E1D4BB-59EA-4D71-99AC-7CB93D2A58A7
 label: Prepare your app for localization
 template: detail.hbs
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 4eb57a836cace6cc41ccd15b74ecc9f62f8b0f60
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a56e0940539928723f6fb3b906d1212f80676768
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -170,10 +177,5 @@ ms.openlocfilehash: 4eb57a836cace6cc41ccd15b74ecc9f62f8b0f60
  
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

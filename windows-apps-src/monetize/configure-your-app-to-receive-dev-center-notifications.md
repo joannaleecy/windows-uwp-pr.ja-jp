@@ -2,9 +2,17 @@
 author: mcleanbyron
 Description: "Windows デベロッパー センターから送信されるプッシュ通知を受信する UWP アプリを登録する方法について説明します。"
 title: "デベロッパー センターのプッシュ通知を受信するようにアプリを設定する"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、Microsoft Store Services SDK、ターゲット プッシュ通知、デベロッパー センター"
+ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: d840fbe66e5ccb439148c7849e44b923a5586740
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: a7a4c9800d5053e4b20cea578ff03a970179c7bf
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -44,7 +52,7 @@ Windows デベロッパー センター ダッシュボードの **[プッシュ
     <span/>
     >**重要**&nbsp;&nbsp; アプリが [CreatePushNotificationChannelForApplicationAsync](https://msdn.microsoft.com/library/windows/apps/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync.aspx) を呼び出して WNS の通知チャネルを作成する場合、コードで [CreatePushNotificationChannelForApplicationAsync](https://msdn.microsoft.com/library/windows/apps/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync.aspx) および [RegisterNotificationChannelAsync()](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) オーバーロードを同時に呼び出さないようにします。 これらのメソッドの両方を呼び出す必要がある場合は、それらを順番に呼び出すようにして、もう一方のメソッドを呼び出す前に別のメソッドの戻りを待つようにします。
 
-  * デベロッパー センターからターゲット プッシュ通知に使用するチャネル URI を指定する場合、[RegisterNotificationChannelAsync(StoreServicesNotificationChannelParameters)](https://msdn.microsoft.com/library/windows/apps/mt771191.aspx) オーバーロードを呼び出します。 たとえば、アプリが既に Windows プッシュ通知サービス (WNS) を使用していて、同じチャネル URI を使用する場合は、次のようにします。 まず [StoreServicesNotificationChannelParameters](https://msdns.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.aspx) オブジェクトを作成し、[CustomNotificationChannelUri](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.customnotificationchanneluri.aspx) プロパティをチャネル URI に割り当てる必要があります。
+  * デベロッパー センターからターゲット プッシュ通知に使用するチャネル URI を指定する場合、[RegisterNotificationChannelAsync(StoreServicesNotificationChannelParameters)](https://msdn.microsoft.com/library/windows/apps/mt771191.aspx) オーバーロードを呼び出します。 たとえば、アプリが既に Windows プッシュ通知サービス (WNS) を使用していて、同じチャネル URI を使用する場合は、次のようにします。 まず [StoreServicesNotificationChannelParameters](https://msdn.microsoft.com/en-us/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.aspx) オブジェクトを作成し、[CustomNotificationChannelUri](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.customnotificationchanneluri.aspx) プロパティをチャネル URI に割り当てる必要があります。
 
     > [!div class="tabbedCodeSnippets"]
     [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#RegisterNotificationChannelAsync2)]
@@ -90,11 +98,6 @@ Windows デベロッパー センター ダッシュボードの **[プッシュ
 
 * [アプリのユーザーにプッシュ通知を送信する](../publish/send-push-notifications-to-your-apps-customers.md)
 * [Windows プッシュ通知サービス (WNS) の概要](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
-* [通知チャネルを要求、作成、保存する方法](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh868221)
+* [通知チャネルを要求、作成、保存する方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh868221)
 * [Microsoft Store Services SDK](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

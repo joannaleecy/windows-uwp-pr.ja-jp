@@ -3,16 +3,23 @@ author: mtoepke
 title: "BasicReaderWriter のコード一式"
 description: "バイナリ データ ファイル全般の読み書きを行うクラスとメソッドのコード一式です。"
 ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、ゲーム、BasicReaderWriter"
 translationtype: Human Translation
-ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
-ms.openlocfilehash: de6ab2687cfbe7b485e51bc90811b1988e29fb7e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1dc7ba0b25ceeb5b27bc718bed1db0e2db39b6c0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# BasicReaderWriter のコード一式
+# <a name="complete-code-for-basicreaderwriter"></a>BasicReaderWriter のコード一式
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 バイナリ データ ファイル全般の読み書きを行うクラスとメソッドのコード一式です。 [BasicLoader](complete-code-for-basicloader.md) クラスで使われます。
 
@@ -20,29 +27,29 @@ ms.openlocfilehash: de6ab2687cfbe7b485e51bc90811b1988e29fb7e
 
 -   [テクノロジ](#technologies)
 -   [必要条件](#requirements)
--   [コードの表示 (C++)](#view-the-code-c-)
+-   [コードの表示 (C++)](#view-the-code-c)
 
 
-## ダウンロード場所
+## <a name="download-location"></a>ダウンロード場所
 
 このサンプルはダウンロードできません。
 
 
-## テクノロジ
+## <a name="technologies"></a>テクノロジ
 
 **プログラミング言語** - C++  
 **プログラミング モデル** - Windows ランタイム
 
 
-## 要件
+## <a name="requirements"></a>要件
 
  **サポートされている最小のクライアント** - Windows 10       
  **サポートされている最小のサーバー** - Windows Server 2016 Technical Preview 
 
-## コードの表示 (C++)
+## <a name="view-the-code-c"></a>コードの表示 (C++)
 
 
-## BasicReaderWriter.h
+## <a name="basicreaderwriterh"></a>BasicReaderWriter.h
 
 
 ```cpp
@@ -91,7 +98,7 @@ internal:
 };
 ```
 
-## BasicReaderWriter.cpp
+## <a name="basicreaderwritercpp"></a>BasicReaderWriter.cpp
 
 
 ```cpp
@@ -262,10 +269,5 @@ task<void> BasicReaderWriter::WriteDataAsync(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

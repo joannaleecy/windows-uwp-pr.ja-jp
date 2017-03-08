@@ -3,14 +3,20 @@ author: mcleanbyron
 ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
 description: "アプリをストアに提出する前に、Windows デベロッパー センター ダッシュ ボードからアプリケーション ID と広告ユニット ID の値をアプリに追加する方法について説明します。"
 title: "アプリの広告ユニットをセットアップする"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 広告, Advertising, 広告ユニット"
 translationtype: Human Translation
-ms.sourcegitcommit: c6e0cf98c6eb2cdc656d5b4555d794ff6a94d2bc
-ms.openlocfilehash: 705955faf7ddd67f80098f8c3ac7b2844553de95
-
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 32a934f1d113d561c72ab3ac48a8ef3d0820c176
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アプリの広告ユニットをセットアップする
+# <a name="set-up-ad-units-in-your-app"></a>アプリの広告ユニットをセットアップする
 
 
 
@@ -32,7 +38,7 @@ ms.openlocfilehash: 705955faf7ddd67f80098f8c3ac7b2844553de95
 
  
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 [テスト モードの値](test-mode-values.md)
 
@@ -40,9 +46,4 @@ ms.openlocfilehash: 705955faf7ddd67f80098f8c3ac7b2844553de95
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

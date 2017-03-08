@@ -1,11 +1,21 @@
 ---
 author: Jwmsft
+Description: "コマンド バーを使うと、ユーザーはアプリの最も一般的なタスクに簡単にアクセスできます。"
+title: "アプリ バーとコマンド バー"
 label: App bars/command bars
 template: detail.hbs
 op-migration-status: ready
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 868b4145-319b-4a97-82bd-c98d966144db
 translationtype: Human Translation
-ms.sourcegitcommit: a652189d0595bb6dffbc5228a91a68261eb7e5ef
-ms.openlocfilehash: c6d295a21825d1e89eaafcba59ca3a1b85669da9
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: b14f83d9e834fcefbb3f9d1f9870f81686b44084
+ms.lasthandoff: 02/08/2017
 
 ---
 # <a name="app-bar-and-command-bar"></a>アプリ バーとコマンド バー
@@ -298,9 +308,4 @@ ClosedDisplayMode を変更してユーザーにヒントを表示すると、�
 
 * [UWP アプリのコマンド設計の基本](../layout/commanding-basics.md)
 * [**CommandBar クラス**](https://msdn.microsoft.com/library/windows/apps/dn279427)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

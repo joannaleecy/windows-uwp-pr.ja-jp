@@ -3,13 +3,20 @@ author: mcleanbyron
 ms.assetid: AC74B4FA-5554-4C03-9683-86EE48546C05
 description: "Windows ストア申請 API でこのメソッドを使用して、新しいアドオンまたは更新されたアドオンの申請を Windows デベロッパー センターにコミットします。"
 title: "Windows ストア申請 API を使用したアドオン申請のコミット"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、Windows ストア申請 API、アドオンの申請のコミット、アプリ内製品、IAP"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: f9b9e5801f94101156850086c16311cf567b1e7d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: bb8fb30a8dace9c9e32cc233bf6b73046263a22d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Windows ストア申請 API を使用したアドオン申請のコミット
+# <a name="commit-an-add-on-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアドオン申請のコミット
 
 
 
@@ -18,7 +25,7 @@ Windows ストア申請 API でこのメソッドを使用して、新しいア�
 
 コミット操作が Windows ストア申請 API を使ったアドオン申請プロセスにどのように適合するかについては、[アドオン申請の管理に関するページ](manage-add-on-submissions.md)をご覧ください。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
@@ -28,7 +35,7 @@ Windows ストア申請 API でこのメソッドを使用して、新しいア�
 
 >**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
-## 要求
+## <a name="request"></a>要求
 
 このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
 
@@ -39,15 +46,15 @@ Windows ストア申請 API でこのメソッドを使用して、新しいア�
 <span/>
  
 
-### 要求ヘッダー
+### <a name="request-header"></a>要求ヘッダー
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
 <span/>
 
-### 要求パラメーター
+### <a name="request-parameters"></a>要求パラメーター
 
 | 名前        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -56,11 +63,11 @@ Windows ストア申請 API でこのメソッドを使用して、新しいア�
 
 <span/>
 
-### 要求本文
+### <a name="request-body"></a>要求本文
 
 このメソッドでは要求本文を指定しないでください。
 
-### 要求の例
+### <a name="request-example"></a>要求の例
 
 次の例は、アドオンの申請をコミットする方法を示しています。
 
@@ -69,7 +76,7 @@ POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/s
 Authorization: Bearer <your access token>
 ```
 
-## 応答
+## <a name="response"></a>応答
 
 次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文の値について詳しくは、次のセクションをご覧ください。
 
@@ -79,15 +86,15 @@ Authorization: Bearer <your access token>
 }
 ```
 
-### 応答本文
+### <a name="response-body"></a>応答本文
 
 | 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| status           | string  | 申請の状態。 次のいずれかの値を使用できます。 <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>  |
+| status           | string  | 提出の状態。 次のいずれかの値を使用できます。 <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>  |
 
 <span/>
 
-## エラー コード
+## <a name="error-codes"></a>エラー コード
 
 要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。
 
@@ -100,7 +107,7 @@ Authorization: Bearer <your access token>
 <span/>
 
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [アドオンの申請の取得](get-an-add-on-submission.md)
@@ -108,9 +115,4 @@ Authorization: Bearer <your access token>
 * [アドオンの申請の更新](update-an-add-on-submission.md)
 * [アドオンの申請の削除](delete-an-add-on-submission.md)
 * [アドオンの申請の状態の取得](get-status-for-an-add-on-submission.md)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

@@ -3,13 +3,20 @@ author: dbirtolo
 title: "バックグラウンド タスクからのセンサーやデバイスへのアクセス"
 description: "DeviceUseTrigger を使うと、フォアグラウンド アプリが中断しているときにも、バックグラウンドでユニバーサル Windows アプリからセンサーや周辺機器にアクセスできます。"
 ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
-ms.openlocfilehash: 060cec50933860407679edbad5d2cd8a6d3e0396
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ea665aee9d8e65f5542de96863dee5b9eec9e346
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# バックグラウンド タスクからのセンサーやデバイスへのアクセス
+# <a name="access-sensors-and-devices-from-a-background-task"></a>バックグラウンド タスクからのセンサーやデバイスへのアクセス
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
@@ -22,17 +29,17 @@ ms.openlocfilehash: 060cec50933860407679edbad5d2cd8a6d3e0396
 > [!Important]
 > **DeviceUseTrigger** は、インプロセスのバックグラウンド タスクで使うことはできません。 このトピックの情報は、アウトプロセスで実行されるバックグラウンド タスクにのみ当てはまります。
 
-## デバイス バックグラウンド タスクの概要
+## <a name="device-background-task-overview"></a>デバイス バックグラウンド タスクの概要
 
 アプリがユーザーに表示されなくなると、Windows はメモリと CPU リソースを解放するためにそのアプリを中断または終了します。 こうすることで、他のアプリがフォアグラウンドで実行できるようにし、バッテリの消費量を減らします。 このとき、バックグラウンド タスクの助けがないと、進行中のデータ イベントが失われます。 Windows には、バックグラウンド タスク トリガー [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) があり、アプリが中断状態になっても、各種のデバイスやセンサーでの時間のかかる同期操作や監視操作をバックグラウンドで安全に実行できるようにします。 アプリのライフサイクルについて詳しくは、「[起動、再開、バックグラウンド タスク](index.md)」をご覧ください。 バックグラウンド タスクについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
 
 **注**  ユニバーサル Windows アプリでは、バックグラウンドでデバイスを同期するために、アプリによるバックグラウンド同期をユーザーが許可する必要があります。 さらに、デバイスを PC に接続して I/O をアクティブにし、最長 10 分のバックグラウンド処理を実行できるようにする必要があります。 ポリシーの適用については、このトピックの後半で詳しく説明します。
 
-### 制限: 重要なデバイス操作
+### <a name="limitation-critical-device-operations"></a>制限: 重要なデバイス操作
 
 時間がかかるファームウェア更新など、一部の重要なデバイス操作は、[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) では実行できません。 このような操作は PC でのみ、[**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) を使う特権アプリによってのみ実行できます。 *特権アプリ*とは、これらの操作を実行する権限をデバイス製造元から与えられているアプリです。 デバイス メタデータを使って、どのアプリがデバイスの特権アプリであるか (存在する場合) を指定します。 詳しくは、「[Windows ストア デバイス アプリによるデバイスの同期と更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)」をご覧ください。
 
-## DeviceUseTrigger バックグラウンド タスクでサポートされているプロトコル/API
+## <a name="protocolsapis-supported-in-a-deviceusetrigger-background-task"></a>DeviceUseTrigger バックグラウンド タスクでサポートされているプロトコル/API
 
 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) を使うバックグラウンド タスクは、システム トリガーのバックグラウンド タスクでサポートされない多くの API またはプロトコルを使うやり取りを、アプリでできるようにします。 ユニバーサル Windows アプリでは、次のプロトコルがサポートされます。
 
@@ -48,7 +55,7 @@ ms.openlocfilehash: 060cec50933860407679edbad5d2cd8a6d3e0396
 | IDeviceIOControl | ![DeviceServicingTrigger でサポートされています。](images/ap-tools.png)                                                                                                                       |
 | センサー API      | ![DeviceServicingTrigger でサポートされています](images/ap-tools.png) ([ユニバーサル デバイス ファミリ](https://msdn.microsoft.com/library/windows/apps/dn894631)のセンサーのみ)。 |
 
-## バックグラウンド タスクをアプリ パッケージ マニフェストに登録する
+## <a name="registering-background-tasks-in-the-app-package-manifest"></a>バックグラウンド タスクをアプリ パッケージ マニフェストに登録する
 
 アプリは、バックグランド タスクの一部として動作するコードで同期操作と更新操作を実行します。 このコードは、[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) を実装する Windows ランタイム クラス (または JavaScript アプリ専用の JavaScript ページ) に埋め込まれます。 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクを使用するには、システム トリガーのバックグラウンド タスクと同じように、フォアグラウンド アプリのマニフェスト ファイルでそれを宣言する必要があります。
 
@@ -64,7 +71,7 @@ ms.openlocfilehash: 060cec50933860407679edbad5d2cd8a6d3e0396
 </Extensions>
 ```
 
-## DeviceUseTrigger の使用について
+## <a name="introduction-to-using-deviceusetrigger"></a>DeviceUseTrigger の使用について
 
 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) を使うには、次の基本的な手順を実行します。 バックグラウンド タスクについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
 
@@ -91,21 +98,21 @@ ms.openlocfilehash: 060cec50933860407679edbad5d2cd8a6d3e0396
 
 **ヒント**  サンプルをダウンロードして、これらのバックグラウンド タスクの動作を確認してください。 PC でこれを実行する方法を示す例については、[カスタム USB デバイスのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=301975 ) をご覧ください。 電話の例は、[バックグラウンド センサーのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=393307) に関するページをご覧ください。
  
-## 頻度とフォアグランドの制限
+## <a name="frequency-and-foreground-restrictions"></a>頻度とフォアグランドの制限
 
 アプリが操作を実行する頻度に制限はありません。ただし、[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスク操作は一度に 1 つしか実行できません (他の種類のバックグラウンド タスクには影響しません)。また、バックグラウンド タスクを開始できるのは、アプリがフォアグラウンドで動作しているときだけです。 アプリがフォアグラウンドにない場合は、**DeviceUseTrigger** を使うバックグラウンド タスクを開始することはできません。 実行中のバックグラウンド タスクが完了した後でなければ、次の **DeviceUseTrigger** バックグラウンド タスクを開始できません。
 
-## デバイスの制限
+## <a name="device-restrictions"></a>デバイスの制限
 
 各アプリは [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクの登録と実行は 1 つのみに制限されていますが、(アプリが実行される) デバイスでは、複数のアプリに複数の **DeviceUseTrigger** バックグラウンド タスクの登録と実行が許可されている場合があります。 デバイスによっては、すべてのアプリの **DeviceUseTrigger** バックグラウンド タスクの合計数に制限があります。 これにより、リソースに制約のあるデバイスでバッテリを節約できます。 詳しくは、次の表をご覧ください。
 
 1 つの [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクから、アプリは周辺機器またはセンサーに数の制限なくアクセスできます。唯一の制限は、前の表に記載されているサポートされるプロトコルと API によるものです。
 
-## バックグラウンド タスクのポリシー
+## <a name="background-task-policies"></a>バックグラウンド タスクのポリシー
 
 アプリが [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクを使うときは Windows のポリシーが適用されます。 これらのポリシーが満たされない場合は、バックグラウンド タスクが中止される場合があります。 このようなバックグラウンド タスクを使ってデバイスやセンサーを操作するときは、これらのポリシー要件を考慮する必要があります。
 
-### タスク開始のポリシー
+### <a name="task-initiation-policies"></a>タスク開始のポリシー
 
 次の表は、ユニバーサル Windows アプリに適用されるタスク開始ポリシーを示しています。
 
@@ -122,7 +129,7 @@ ms.openlocfilehash: 060cec50933860407679edbad5d2cd8a6d3e0396
 | サポートされている API とプロトコルを使う場合は、アプリが 1 つの [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクからアクセスできる周辺機器またはセンサーの最大数。 | 無制限 |
 | バックグラウンド タスクは、400 ミリ秒の CPU 時間を、画面がロックされている場合は 1 分ごとに消費し (1 GHz CPU の場合)、画面がロックされていない場合は 5 分ごとに消費する。 このポリシーを満たさない場合、タスクが取り消される可能性があります。 | ![ポリシーが適用される](images/ap-tools.png) |
  
-### 実行時のポリシー チェック
+### <a name="runtime-policy-checks"></a>実行時のポリシー チェック
 
 タスクがバックグラウンドで実行されるとき、Windows によって次の実行時ポリシー要件が適用されます。 いずれかの実行時要件が満たされなくなった時点で、デバイス バックグラウンド タスクが中止されます。
 
@@ -138,11 +145,11 @@ ms.openlocfilehash: 060cec50933860407679edbad5d2cd8a6d3e0396
 |  | モバイル デバイス ファミリ: 時間制限なし。 リソースを節約するには、同時に実行できるタスクを 1 つか 2 つに制限。 |
 | アプリが終了していない。 | ![ポリシー チェックが適用される](images/ap-tools.png) |
 
-## ベスト プラクティス
+## <a name="best-practices"></a>ベスト プラクティス
 
 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクを使うアプリのベスト プラクティスを次に示します。
 
-### バックグラウンド タスクのプログラミング
+### <a name="programming-a-background-task"></a>バックグラウンド タスクのプログラミング
 
 アプリで [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクを使うと、ユーザーがアプリを切り替え、フォアグラウンド アプリが Windows によって中断状態になったとき、フォアグラウンド アプリで開始された同期操作や監視操作をバックグラウンドに引き継ぐことができます。 このモデルに従って、バックグラウンド タスクを登録、実行、登録解除することをお勧めします。
 
@@ -168,16 +175,11 @@ ms.openlocfilehash: 060cec50933860407679edbad5d2cd8a6d3e0396
 
     -   アプリが終了すると、バックグラウンド タスクが取り消され、既存のイベント ハンドラーが既存のバックグラウンド タスクから切断されます。 これによって、バックグラウンド タスクの状態を判断できなくなります。 バックグラウンド タスクを登録解除して取り消すことで、キャンセル コードがバックグランド タスクを適切に中止できます。
 
-### バックグラウンド タスクの中止
+### <a name="cancelling-a-background-task"></a>バックグラウンド タスクの中止
 
 フォアグラウンド アプリからバックグラウンドで実行中のタスクを中止するには、[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクを登録するためにアプリで使っている [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) オブジェクトの Unregister メソッドを使います。 **BackgroundTaskRegistration** の [**Unregister**](https://msdn.microsoft.com/library/windows/apps/br229869) メソッドを使ってバックグラウンド タスクを登録解除すると、バックグラウンド タスク インフラストラクチャによってバックグラウンド タスクが取り消されます。
 
 また、[**Unregister**](https://msdn.microsoft.com/library/windows/apps/br229869) メソッドには、現在実行中のバックグラウンド タスク インスタンスを (完了前に) 中断するかどうかを示すブール値 (true または false) が指定されます。 詳しくは、**Unregister** の API リファレンスをご覧ください。
 
 [**Unregister**](https://msdn.microsoft.com/library/windows/apps/br229869) に加え、[**BackgroundTaskDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504) も呼び出す必要があります。 こうすることで、バックグラウンド タスクに関連付けられた非同期操作が終了したことがシステムに通知されます。
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

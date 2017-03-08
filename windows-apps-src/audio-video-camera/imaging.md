@@ -3,15 +3,22 @@ author: laurenhughes
 ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
 description: "この記事では、BitmapDecoder と BitmapEncoder を使って画像ファイルを読み込んだり保存したりする方法のほか、SoftwareBitmap オブジェクトを使ってビットマップ画像を表現する方法について説明します。"
 title: "ビットマップ画像の作成、編集、保存"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: fd5b52a1d431b9396a4b162077d4f8d6246cd597
-ms.openlocfilehash: ed153b4ebd2f1b6b26f922786b3c005a57d8255d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8aa20d434b4ea89d972712e48131e9a965476d1d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# ビットマップ画像の作成、編集、保存
+# <a name="create-edit-and-save-bitmap-images"></a>ビットマップ画像の作成、編集、保存
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\ ]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\ ]
 
 
 この記事では、[**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) と [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) を使って画像ファイルを読み込んだり保存したりする方法のほか、[**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) オブジェクトを使ってビットマップ画像を表現する方法について説明します。
@@ -28,7 +35,7 @@ ms.openlocfilehash: ed153b4ebd2f1b6b26f922786b3c005a57d8255d
 
 [!code-cs[名前空間](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetNamespaces)]
 
-## BitmapDecoder で画像ファイルから SoftwareBitmap を作成する
+## <a name="create-a-softwarebitmap-from-an-image-file-with-bitmapdecoder"></a>BitmapDecoder で画像ファイルから SoftwareBitmap を作成する
 
 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) をファイルから作成するには、画像データを含んだ [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) のインスタンスを取得します。 この例では、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) を使って、画像ファイルをユーザーが選択できるようにしています。
 
@@ -38,7 +45,7 @@ ms.openlocfilehash: ed153b4ebd2f1b6b26f922786b3c005a57d8255d
 
 [!code-cs[CreateSoftwareBitmapFromFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateSoftwareBitmapFromFile)]
 
-## BitmapEncoder で SoftwareBitmap をファイルに保存する
+## <a name="save-a-softwarebitmap-to-a-file-with-bitmapencoder"></a>BitmapEncoder で SoftwareBitmap をファイルに保存する
 
 **SoftwareBitmap** をファイルに保存するには、画像の保存先となる **StorageFile** のインスタンスを取得します。 この例では、[**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) を使って、出力ファイルをユーザーが選択できるようにしています。
 
@@ -56,7 +63,7 @@ ms.openlocfilehash: ed153b4ebd2f1b6b26f922786b3c005a57d8255d
 
 [!code-cs[UseEncodingOptions](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetUseEncodingOptions)]
 
-## SoftwareBitmap と XAML Image コントロールを使う
+## <a name="use-softwarebitmap-with-a-xaml-image-control"></a>SoftwareBitmap と XAML Image コントロールを使う
 
 [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) コントロールを使って XAML ページ内に画像を表示するには、まず XAML ページで **Image** コントロールを定義します。
 
@@ -70,13 +77,13 @@ ms.openlocfilehash: ed153b4ebd2f1b6b26f922786b3c005a57d8255d
 
 **SoftwareBitmapSource** を [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) の [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/br210105) として使用して **SoftwareBitmap** を設定することもできます。
 
-## WriteableBitmap から SoftwareBitmap を作成する
+## <a name="create-a-softwarebitmap-from-a-writeablebitmap"></a>WriteableBitmap から SoftwareBitmap を作成する
 
 [**SoftwareBitmap.CreateCopyFromBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887370) を呼び出して、**WriteableBitmap** の **PixelBuffer** プロパティを指定することで、既存の **WriteableBitmap** から **SoftwareBitmap** を作成し、ピクセル データを設定することができます。 新しく作成する **WriteableBitmap** のピクセル形式は第 2 引数で指定できます。 新しい画像のサイズは、**WriteableBitmap** の [**PixelWidth**](https://msdn.microsoft.com/library/windows/apps/br243253) プロパティと [**PixelHeight**](https://msdn.microsoft.com/library/windows/apps/br243251) プロパティを使って指定してください。
 
 [!code-cs[WriteableBitmapToSoftwareBitmap](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetWriteableBitmapToSoftwareBitmap)]
 
-## SoftwareBitmap をプログラムから作成または編集する
+## <a name="create-or-edit-a-softwarebitmap-programmatically"></a>SoftwareBitmap をプログラムから作成または編集する
 
 ここまでは、画像ファイルを使った方法を紹介してきました。 新しい **SoftwareBitmap** をプログラム コードから作成し、同じ手法を用いて **SoftwareBitmap** のピクセル データにアクセスし、変更を加えることもできます。
 
@@ -96,7 +103,7 @@ COM インターフェイス [**IMemoryBufferByteAccess**](https://msdn.microsof
 
 このメソッドは、Windows ランタイム型よりも低いレベルの RAW バッファーにアクセスするため、**unsafe** キーワードを使って宣言する必要があります。 また、Microsoft Visual Studio でアンセーフ コードのコンパイルを許可するようにプロジェクトを構成する必要があります。プロジェクトの **[プロパティ]** ページを開き、**[ビルド]** プロパティ ページをクリックして、**[アンセーフ コードの許可]** チェック ボックスをオンにしてください。
 
-## Direct3D サーフェスから SoftwareBitmap を作成する
+## <a name="create-a-softwarebitmap-from-a-direct3d-surface"></a>Direct3D サーフェスから SoftwareBitmap を作成する
 
 Direct3D サーフェスから **SoftwareBitmap** オブジェクトを作成するには、プロジェクトで [**Windows.Graphics.DirectX.Direct3D11**](https://msdn.microsoft.com/library/windows/apps/dn895104) 名前空間を追加する必要があります。
 
@@ -106,19 +113,19 @@ Direct3D サーフェスから **SoftwareBitmap** オブジェクトを作成す
 
 [!code-cs[CreateSoftwareBitmapFromSurface](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateSoftwareBitmapFromSurface)]
 
-## SoftwareBitmap を異なるピクセル形式に変換する
+## <a name="convert-a-softwarebitmap-to-a-different-pixel-format"></a>SoftwareBitmap を異なるピクセル形式に変換する
 
 **SoftwareBitmap** クラスの静的メソッド [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) を使うと、既にある **SoftwareBitmap** から、指定したピクセル形式とアルファ モードを使った新しい **SoftwareBitmap** を簡単に作成することができます。 新しく作成されたビットマップには、画像データのコピーが別に存在します。 新しいビットマップに変更を加えても、元のビットマップには一切影響しません。
 
 [!code-cs[Convert](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetConvert)]
 
-## 画像ファイルのトランスコード
+## <a name="transcode-an-image-file"></a>画像ファイルのトランスコード
 
 画像ファイルを [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) から [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) に直接トランスコードすることができます。 トランスコードの対象となるファイルから [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) を作成します。 入力ストリームから新しい **BitmapDecoder** を作成します。 エンコーダーの書き込み先となる新しい [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) を作成し、[**BitmapEncoder.CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214) を呼び出します。このとき引数には、インメモリ ストリームとデコーダー オブジェクトを渡してください。 必要なエンコード プロパティを設定します。 入力画像ファイルのプロパティのうち、エンコーダーに対して明示的に指定しなかったプロパティはすべて元のまま、出力ファイルに書き込まれます。 [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216) を呼び出すと、インメモリ ストリームへのエンコードをエンコーダーが開始します。 最後に、ファイル ストリームとインメモリ ストリームを先頭までシークし、[**CopyAsync**](https://msdn.microsoft.com/library/windows/apps/hh701827) を呼び出してインメモリ ストリームをファイル ストリームに書き込みます。
 
 [!code-cs[TranscodeImageFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetTranscodeImageFile)]
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [BitmapEncoder オプション リファレンス](bitmapencoder-options-reference.md)
 * [画像のメタデータ](image-metadata.md)
@@ -128,10 +135,5 @@ Direct3D サーフェスから **SoftwareBitmap** オブジェクトを作成す
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

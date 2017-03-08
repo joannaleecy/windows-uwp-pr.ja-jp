@@ -3,19 +3,26 @@ author: jwmsft
 description: "ここでは、パスの形状を XAML 属性値として指定するために使うことのできる、移動と描画のコマンド (ミニ言語) について説明します。"
 title: "移動と描画のコマンド構文"
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: 832e757c5bbdc10c2f0f10db127d3f21932313b3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ea01f8191190db0a9b13b8081bc6fef687369c13
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 移動と描画のコマンド構文
+# <a name="move-and-draw-commands-syntax"></a>移動と描画のコマンド構文
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 ここでは、パスの形状を XAML 属性値として指定するために使うことのできる、移動と描画のコマンド (ミニ言語) について説明します。 移動と描画のコマンドは、ベクター グラフィックや図形の出力に対応するさまざまなデザイン ツールやグラフィックス ツールで、シリアル化形式や交換形式として使われます。
 
-## 移動と描画のコマンド文字列を使うプロパティ
+## <a name="properties-that-use-move-and-draw-command-strings"></a>移動と描画のコマンド文字列を使うプロパティ
 
 移動と描画のコマンド構文は、XAML の内部型コンバーターによってサポートされます。コンバーターはコマンドを解析し、実行時にグラフィックス表現を生成します。 この表現は、基本的には完成したベクター セットであり、そのまま表示することができます。 ただし、ベクター自体では表現の詳細までは定義されないため、他の値を要素に設定する必要もあります。 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) オブジェクトについては、[**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) や [**Stroke**](https://msdn.microsoft.com/library/windows/apps/br243383) などのプロパティに値を設定してから、その **Path** を何らかの方法でビジュアル ツリーに関連付ける必要もあります。 [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) オブジェクトでは、[**Foreground**](https://msdn.microsoft.com/library/windows/apps/dn251974) プロパティを設定します。
 
@@ -28,11 +35,11 @@ Windows ランタイムには、移動と描画のコマンドを表す文字列
 
 [**PathGeometry.Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) でも移動と描画のコマンドを使うことができます。 移動と描画のコマンドを使う [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) オブジェクトは、[**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057) オブジェクトに含まれる他の [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) 型と結合して、[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) の値として使うこともできます。 ただし、この使い方は、属性定義のデータで移動と描画のコマンドを使う方法ほど一般的ではありません。
 
-## 移動と描画のコマンドの使用と **PathGeometry** の使用
+## <a name="using-move-and-draw-commands-versus-using-a-pathgeometry"></a>移動と描画のコマンドの使用と **PathGeometry** の使用
 
 Windows ランタイム XAML では、移動と描画のコマンドにより、単一の [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/br210143) オブジェクトと [**Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) プロパティの値を持つ [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) が生成されます。 各描画コマンドは、その単一の **PathFigure** の [**Segments**](https://msdn.microsoft.com/library/windows/apps/br210164) コレクションに [**PathSegment**](https://msdn.microsoft.com/library/windows/apps/br210174) 派生クラスを生成します。移動コマンドは [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/br210166) を変更します。終了コマンドがある場合は、[**IsClosed**](https://msdn.microsoft.com/library/windows/apps/br210159) が **true** に設定されます。 実行時に **Data** の値を調べると、この構造をオブジェクト モデルとしてたどることができます。
 
-## 基本構文
+## <a name="the-basic-syntax"></a>基本構文
 
 移動と描画のコマンド構文を簡単にまとめると、次のようになります。
 
@@ -56,7 +63,7 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 コンマを 10 進数の小数点として使わないでください。コマンド文字列は XAML によって解釈され、**en-us** ロケール以外で使われるカルチャ固有の数値形式の規則は考慮されません。
 
-## 構文仕様
+## <a name="syntax-specifics"></a>構文仕様
 
 **塗りつぶしルール**
 
@@ -222,7 +229,7 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 10 進数や整数を使う代わりに、指数表記を使うこともできます。 たとえば、`+1.e17` は有効な値です。
 
-## 移動と描画のコマンドを生成するデザイン ツール
+## <a name="design-tools-that-produce-move-and-draw-commands"></a>移動と描画のコマンドを生成するデザイン ツール
 
 Blend for Microsoft Visual Studio 2015 で**ペン** ツールやその他の描画ツールを使うと、通常、[**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) オブジェクトが移動と描画のコマンドと共に生成されます。
 
@@ -230,16 +237,11 @@ Windows ランタイムのコントロール用の既定の XAML テンプレー
 
 その他のよく使われるベクター グラフィックス デザイン ツールにも、ベクターを XAML 形式で出力できるエクスポーターやプラグインがあります。 これらは通常、レイアウト コンテナーに [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) オブジェクトを作成し、[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) に移動と描画のコマンドを設定します。 XAML には、別々のブラシを適用できるように複数の **Path** 要素が含まれている場合があります。 これらのエクスポーターやプラグインの多くは、本来は Windows Presentation Foundation (WPF) の XAML や Silverlight 用に作成されたものですが、XAML のパス構文は Windows ランタイム XAML と同じです。 通常、エクスポーターからの XAML の大部分を Windows ランタイムの XAML ページに直接貼り付けることができます  (ただし、変換後の XAML に **RadialGradientBrush** が含まれている場合、このブラシは Windows ランタイム XAML でサポートされないため、使うことはできません)。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [図形の描画](https://msdn.microsoft.com/library/windows/apps/mt280380)
 * [ブラシの使用](https://msdn.microsoft.com/library/windows/apps/mt280383)
 * [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356)
 * [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

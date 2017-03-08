@@ -3,14 +3,20 @@ author: mcleanbyron
 ms.assetid: 278114aa-2a44-4d63-a1d2-d512d8aababc
 description: "Microsoft Store Services SDK の Microsoft Advertising ライブラリについての一般的な開発者向けの情報をお知らせします。"
 title: "Microsoft Advertising ライブラリの開発者向け情報"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 広告, Advertising"
 translationtype: Human Translation
-ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
-ms.openlocfilehash: 70692d09c037d9e5802734bc5de6a6c79799bffb
-
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 44b5266a104b2f706537cea2167b395487f275d2
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Microsoft Advertising ライブラリの開発者向け情報
+# <a name="developer-information-about-the-microsoft-advertising-libraries"></a>Microsoft Advertising ライブラリの開発者向け情報
 
 
 
@@ -18,7 +24,7 @@ ms.openlocfilehash: 70692d09c037d9e5802734bc5de6a6c79799bffb
 このセクションのトピックでは、Microsoft Store Services SDK (UWP アプリ用) および Microsoft Advertising SDK (Windows 8.1 アプリと Windows Phone 8.x アプリ用) に含まれる Microsoft Advertising ライブラリに関する、開発者に役立つ情報を提供します。
 
 
-## このセクションの内容
+## <a name="in-this-section"></a>このセクションの内容
 
 | トピック                                                                                                       | 説明                 |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------|
@@ -35,9 +41,4 @@ ms.openlocfilehash: 70692d09c037d9e5802734bc5de6a6c79799bffb
  
 
  
-
-
-
-<!--HONumber=Sep16_HO2-->
-
 

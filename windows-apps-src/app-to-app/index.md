@@ -3,9 +3,16 @@ ms.assetid: E0728EB0-DFC3-4203-A367-8997B16E2328
 description: "ここでは、共有コントラクトの使用、コピーと貼り付け、ドラッグ アンド ドロップなど、ユニバーサル Windows プラットフォーム (UWP) アプリ間でデータを共有する方法について説明します。"
 title: "アプリ間通信"
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: ea67ae5b568d1c51af3bb951fe3a68a8def8a556
-ms.openlocfilehash: 951e2ea29a47e362d9fdee0f597d2e7c808212b6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4e8c90996324e7481a7a4dab5a1ff3f30b139276
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -21,6 +28,8 @@ ms.openlocfilehash: 951e2ea29a47e362d9fdee0f597d2e7c808212b6
 
 共有コントラクトに加えて、アプリは、ドラッグ アンド ドロップやコピーと貼り付けなど、データを転送するための従来の手法を統合することもできます。 UWP アプリ間の通信だけでなく、こうした手法はデスクトップ アプリケーション間の共有もサポートします。
 
+
+
 ## <a name="in-this-section"></a>このセクションの内容
 
 | トピック | 説明 |
@@ -32,9 +41,4 @@ ms.openlocfilehash: 951e2ea29a47e362d9fdee0f597d2e7c808212b6
 
 ## <a name="see-also"></a>関連項目
 - [UWP アプリの開発](https://developer.microsoft.com/windows/develop)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

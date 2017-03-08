@@ -6,9 +6,16 @@ ms.assetid: BAF9956F-FAAF-47FB-A7DB-8557D2548D88
 label: Show multiple views for an app
 template: detail.hbs
 op-migration-status: ready
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: f5af27fd0be0782ce38258c0ac404dbff9c5c197
-ms.openlocfilehash: 09447ad4545f3839d39a4b9191b51718455e7c00
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 011a6e50c22a1ef245a9be11e3a5d7f9e270d5bc
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -141,10 +148,5 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

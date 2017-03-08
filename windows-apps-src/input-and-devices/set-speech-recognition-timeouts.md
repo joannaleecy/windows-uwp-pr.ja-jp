@@ -12,8 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
-ms.openlocfilehash: 770a34c7c190540456a2748290b0aa557fcc1800
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e8b6d1db99d7076b6f46cc6a97db36bdff62562f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -62,10 +63,5 @@ recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

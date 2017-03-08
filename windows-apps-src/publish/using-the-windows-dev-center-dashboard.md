@@ -1,18 +1,25 @@
 ---
 author: jnHs
-Description: "Windows デベロッパー センター ダッシュボードを利用すると、Windows デバイス向けのすべてのアプリの管理と申請を 1 か所で行うことができます。"
+Description: "Windows デベロッパー センター ダッシュボードを使うと、Windows デバイス向けのすべてのアプリの管理と申請を 1 か所で行うことができます。"
 title: "Windows デベロッパー センター ダッシュボードの使用"
 ms.assetid: FB63F773-71AC-464E-BDE1-21C429FB2B0B
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
-ms.openlocfilehash: 2ccec6e85666ef328f4aa0baa8ba6a705986a4c4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a4dfc6003c681bb0379f25d94bb144940467d15e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Windows デベロッパー センター ダッシュボードの使用
+# <a name="using-the-windows-dev-center-dashboard"></a>Windows デベロッパー センター ダッシュボードの使用
 
 
-Windows デベロッパー センター ダッシュボードを利用すると、Windows デバイス向けのすべてのアプリの管理と申請を 1 か所で行うことができます。
+Windows デベロッパー センター ダッシュボードを使うと、Windows デバイス向けのすべてのアプリの管理と申請を 1 か所で行うことができます。
 
 > **注**   Windows デベロッパー センター ダッシュボードにアクセスするには、[開発者アカウント](http://go.microsoft.com/fwlink/p/?LinkId=615100)が必要です。
 
@@ -22,7 +29,7 @@ Windows デベロッパー センター ダッシュボードを利用すると�
 
 デベロッパー センター ダッシュボードでは、[アプリの管理および構成サービス](app-management-and-services.md)、[分析データの確認](analytics.md)、[支払いレポート](payout-summary.md)、[アプリの宣伝と顧客エンゲージメントの獲得](app-promotion-and-customer-engagement.md)、[ベータ テスト](beta-testing-and-targeted-distribution.md)、[LOB アプリの企業への配布](distribute-lob-apps-to-enterprises.md)などの機能も提供されます。
 
-## 統合ダッシュボードを使うためのヒント
+## <a name="tips-for-using-the-unified-dashboard"></a>統合ダッシュボードを使うためのヒント
 
 Windows 8.1、Windows Phone 8.1、またはそれ以前の OS バージョン向けのアプリを公開したことがある場合は、「[ストアにおける Windows 10 ユーザー向けのアプリの表示形式](how-your-app-appears-in-the-store-for-windows-10-customers.md)」をご覧になり、Windows 10 ユーザーに対応したアプリの掲載ページの変更、および新しいダッシュボードでアプリの情報がどのように分類されるかについて、詳しい情報を確認してください。
 
@@ -34,10 +41,5 @@ Windows 8.1、Windows Phone 8.1、またはそれ以前の OS バージョン向
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

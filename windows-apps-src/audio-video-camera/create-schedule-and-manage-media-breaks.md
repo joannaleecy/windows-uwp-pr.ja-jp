@@ -1,22 +1,29 @@
 ---
 author: drewbatgit
-ms.assetid: 
+ms.assetid: 0309c7a1-8e4c-4326-813a-cbd9f8b8300d
 description: "この記事では、メディア再生アプリ用にメディアの中断を作成、スケジュール、管理する方法について説明します。"
 title: "メディアの中断の作成、スケジュール、管理"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 2e969e53a29a98223f26353a5444ca9d9ebe2641
-ms.openlocfilehash: 0fe495f3eb2c15ccff4a672abd904dc43cfdf193
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 8d4e9a87009b50538adac2357badc0a7dfe8f88c
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# メディアの中断の作成、スケジュール、管理
+# <a name="create-schedule-and-manage-media-breaks"></a>メディアの中断の作成、スケジュール、管理
 
 この記事では、メディア再生アプリ用にメディアの中断を作成、スケジュール、管理する方法について説明します。 通常、メディアの中断は、オーディオ広告やビデオ広告をメディア コンテンツに挿入する目的で使います。 Windows 10 バージョン 1607 以降では、[**MediaBreakManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager) クラスを使って、[**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) で再生する任意の [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) にメディアの中断を簡単かつ迅速に追加できます。
 
 
 メディアの中断を 1 つ以上スケジュールすると、再生中の指定した時間に、システムがメディア コンテンツを自動的に再生します。 **MediaBreakManager** では、ユーザーがメディアを中断、終了、またはスキップしたときにアプリが反応できるように、イベントが提供されています。 [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) にアクセスしてメディアの中断を確認し、ダウンロードや進行状況の更新のバッファリングなどのイベントを監視することもできます。
 
-## メディアの中断のスケジュール
+## <a name="schedule-media-breaks"></a>メディアの中断のスケジュール
 各 **MediaPlaybackItem** オブジェクトには、アイテムの再生時に再生されるメディアの中断の構成に使う独自の [**MediaBreakSchedule**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSchedule) があります。 アプリでメディアの中断を使うための最初の手順は、メイン再生コンテンツ用の [ **MediaPlaybackItem** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) の作成です。 
 
 [!code-cs[MoviePlaybackItem](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetMoviePlaybackItem)]
@@ -51,12 +58,12 @@ ms.openlocfilehash: 0fe495f3eb2c15ccff4a672abd904dc43cfdf193
 
 [!code-cs[MidrollBreak2](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetMidrollBreak2)]
 
-## メディアの中断のスキップ
+## <a name="skip-media-breaks"></a>メディアの中断のスキップ
 この記事で既に説明したように、**MediaPlaybackItem** の [**CanSkip**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.CanSkip) プロパティを設定し、ユーザーが組み込みコントロールを使ってコンテンツをスキップできないようにすることができます。 ただし、いつでもコードから [**SkipCurrentBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.SkipCurrentBreak) を呼び出すと現在の中断をスキップできます。
 
 [!code-cs[SkipButtonClick](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetSkipButtonClick)]
 
-## MediaBreak イベントの処理
+## <a name="handle-mediabreak-events"></a>MediaBreak イベントの処理
 
 メディアの中断の状態の変化に基づいてアクションを実行するために登録できる、メディアの中断に関連するいくつかのイベントがあります。
 
@@ -80,12 +87,12 @@ ms.openlocfilehash: 0fe495f3eb2c15ccff4a672abd904dc43cfdf193
 
 [!code-cs[BreakSeekedOver](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakSeekedOver)]
 
-## 現在のメディアの中断に関する情報の取得
+## <a name="get-information-about-the-current-media-break"></a>現在のメディアの中断に関する情報の取得
 この時期で既に説明したように、[**CurrentItemIndex**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList.CurrentItemIndex) プロパティを使うと、現在再生されているメディアの中断内のメディア アイテムを調べることができます。 UI を更新するため、現在再生中のアイテムを定期的にチェックできます。 必ず、最初に [**CurrentBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.CurrentBreak) プロパティが null でないかどうかをチェックしてください。 プロパティが null の場合、現在再生中のメディアの中断はありません。
 
 [!code-cs[GetCurrentBreakItemIndex](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetGetCurrentBreakItemIndex)]
 
-## 現在の再生セッションへのアクセス
+## <a name="access-the-current-playback-session"></a>現在の再生セッションへのアクセス
 [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) オブジェクトは、**MediaPlayer** クラスを使って、現在再生中のメディア コンテンツに関連するデータとイベントを提供します。 [ **MediaBreakManager** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager) にも、再生中のメディアの中断コンテンツに特に関連するデータとイベントを取得するためにアクセスできる **MediaPlaybackSession** があります。 再生セッションから入手できる情報には、現在の再生状態、再生中か一時停止中か、コンテンツ内の現在の再生位置などがあります。 メディアの中断コンテンツの縦横比がメイン コンテンツと異なる場合、[**NaturalVideoWidth**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoWidth) プロパティおよび [**NaturalVideoHeight**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoHeight) プロパティと [**NaturalVideoSizeChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoSizeChanged) を使って、ビデオ UI を調整することができます。 アプリのパフォーマンスに関する貴重な利用統計情報を示す、[**BufferingStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingStarted)、[**BufferingEnded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingEnded)、[**DownloadProgressChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.DownloadProgressChanged) などのイベントを受け取ることもできます。
 
 次の例では、**BufferingProgressChanged イベント**のハンドラーを登録します。イベント ハンドラーでは、UI が更新されて現在のバッファリングの進行状況が表示されます。
@@ -94,7 +101,7 @@ ms.openlocfilehash: 0fe495f3eb2c15ccff4a672abd904dc43cfdf193
 
 [!code-cs[BufferingProgressChanged](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBufferingProgressChanged)]
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 * [メディア再生](media-playback.md)
 * [MediaPlayer を使ったオーディオとビデオの再生](play-audio-and-video-with-mediaplayer.md)
 * [システム メディア トランスポート コントロールの手動制御](system-media-transport-controls.md)
@@ -105,10 +112,5 @@ ms.openlocfilehash: 0fe495f3eb2c15ccff4a672abd904dc43cfdf193
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,19 +3,26 @@ author: mcleblanc
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: "Windows アプリ認定キット"
 description: "作成したアプリを Windows ストアに公開する、または、Windows 認定を受ける一番の方法は、認定のためアプリを提出する前に、ローカルでアプリの検証とテストを行うことです。 このトピックでは、Windows アプリ認定キットのインストール方法と実行方法について説明します。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 478ba4a24cff3c2df34d98157624c9c4339d432a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f30eaa7edf229872170a3f661c931787938acb2d
+ms.lasthandoff: 02/07/2017
 
 ---
-# Windows アプリ認定キット
+# <a name="windows-app-certification-kit"></a>Windows アプリ認定キット
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 作成したアプリを [Windows ストアに公開](https://msdn.microsoft.com/library/windows/apps/Hh694062)する、または [Windows 認定](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)を受ける最善の方法は、認定のためアプリを提出する前に、ローカルでアプリの検証とテストを行うことです。 このトピックでは、[Windows アプリ認定キット](http://go.microsoft.com/fwlink/p/?LinkID=309666)のインストール方法と実行方法について説明します。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 ユニバーサル Windows アプリのテストの前提条件:
 
@@ -28,7 +35,7 @@ ms.openlocfilehash: 478ba4a24cff3c2df34d98157624c9c4339d432a
 
 最新の [Windows アプリ認定キット]( http://go.microsoft.com/fwlink/p/?LinkID=309666)をインストールすると、コンピューターにインストールされているキットの以前のバージョンが置き換えられます。
 
-## Windows アプリ認定キットを使った Windows アプリをインタラクティブに検証する
+## <a name="validate-your-windows-app-using-the-windows-app-certification-kit-interactively"></a>Windows アプリ認定キットを使った Windows アプリをインタラクティブに検証する
 
 1.  **[スタート]** メニューから、**[アプリ]**、**[Windows キット]** の順に進み、**[Windows アプリ認定キット]** をクリックします。
 
@@ -52,7 +59,7 @@ ms.openlocfilehash: 478ba4a24cff3c2df34d98157624c9c4339d432a
 
  
 
-## コマンド ラインから Windows アプリ認定キットを使った Windows アプリを検証する
+## <a name="validate-your-windows-app-using-the-windows-app-certification-kit-from-a-command-line"></a>コマンド ラインから Windows アプリ認定キットを使った Windows アプリを検証する
 
 **重要**  Windows アプリ認定キットは、アクティブなユーザー セッションで実行する必要があります。
 
@@ -78,7 +85,7 @@ ms.openlocfilehash: 478ba4a24cff3c2df34d98157624c9c4339d432a
 
 **注:** Windows アプリ認定キットのコマンド ラインについて詳しく知るには、次のコマンドを入力します。 `appcert.exe /?`
 
-## 低電力コンピューターでのテスト
+## <a name="testing-with-a-low-power-computer"></a>低電力コンピューターでのテスト
 
 Windows アプリ認定キットで使用するパフォーマンス テストのしきい値は、低電力コンピューターのパフォーマンスに基づいて設定します。
 
@@ -86,7 +93,7 @@ Windows アプリ認定キットで使用するパフォーマンス テスト�
 
 低電力コンピューターの進化に伴い、パフォーマンスの特性が時間の経過と共に変化する可能性があります。 アプリが最新のパフォーマンス要件を満たすように、最新の [Windows ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/Dn764944) を参照し、最新版の Windows アプリ認定キットでアプリをテストしてください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [Windows アプリ認定キットのテスト](windows-app-certification-kit-tests.md)
 * [Windows ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/Dn764944)
@@ -96,10 +103,5 @@ Windows アプリ認定キットで使用するパフォーマンス テスト�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

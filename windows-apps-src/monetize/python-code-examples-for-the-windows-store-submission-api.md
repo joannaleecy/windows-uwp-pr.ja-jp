@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 8AC56AAF-8D8C-4193-A6B3-BB5D0669D994
 description: "このセクションの Python コード例を使用して、Windows ストア申請 API を使用する方法をご確認ください。"
 title: "Windows ストア申請 API の Python コード例"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows ストア申請 API, コード例"
 translationtype: Human Translation
-ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
-ms.openlocfilehash: 1f8d415744d53120191f02a17aed4b7b04fa2f57
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f787fd042982e4e5a965c9bb77ef72a8dabb6ae9
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -88,9 +95,4 @@ ms.openlocfilehash: 1f8d415744d53120191f02a17aed4b7b04fa2f57
 ## <a name="related-topics"></a>関連トピック
 
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

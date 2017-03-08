@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 89178FD9-850B-462F-9016-1AD86D1F6F7F
 description: "Windows.Services.Store 名前空間を使って、現在のアプリまたはそのアドオンのストアに関連する製品情報を取得する方法について説明します。"
 title: "アプリとアドオンの製品情報の取得"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, アプリ内購入, IAP, アドオン, Windows.Services.Store"
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: dd58103d22314081985cd5ce0f98f2f25e1e7287
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7e486c451174cd24429dc35cda07d22fe2b28745
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -77,9 +84,4 @@ Windows 10 バージョン 1607以降をターゲットとするアプリは、[
 * [コンシューマブルなアドオン購入の有効化](enable-consumable-add-on-purchases.md)
 * [アプリの試用版の実装](implement-a-trial-version-of-your-app.md)
 * [ストア サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

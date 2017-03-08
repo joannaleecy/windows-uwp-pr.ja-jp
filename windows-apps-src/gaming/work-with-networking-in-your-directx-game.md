@@ -3,20 +3,27 @@ author: mtoepke
 title: "ゲームのネットワーク"
 description: "ネットワーク機能を開発し、DirectX ゲームに組み込む方法について説明します。"
 ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, ネットワーク, DirectX"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2a9b42ab2cab6a1f4330759c0ff114e985eb3c20
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ce94dda0eaf156f1e09fefbd76f50bc764050970
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# ゲームのネットワーク
+# <a name="networking-for-games"></a>ゲームのネットワーク
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 ネットワーク機能を開発し、DirectX ゲームに組み込む方法について説明します。
 
-## 概要
+## <a name="concepts-at-a-glance"></a>概要
 
 
 単純なスタンドアロン ゲームか多人数のマルチプレイヤー ゲームかにかかわらず、DirectX ゲームには、さまざまなネットワーク機能を使うことができます。 ネットワークの最も単純な用途は、一元的なネットワーク サーバーにユーザー名とゲーム スコアを保存することです。
@@ -35,7 +42,7 @@ Networking API は、インフラストラクチャ (クライアント サー�
 
 ネットワーク分離は、Windows で採用されているアプリ セキュリティ モデルの一部です。 Windows がネットワークの境界を能動的に検出し、ネットワーク アクセスの制限を強制的に適用することによって、ネットワーク分離が実現されています。 アプリがネットワーク アクセスのスコープを定義するには、ネットワーク分離機能を宣言する必要があります。 この機能を宣言しないと、アプリはネットワーク リソースにアクセスできません。 Windows でアプリにネットワーク分離が適用されるしくみについて詳しくは、「[ネットワーク分離機能を構成する方法](https://msdn.microsoft.com/library/windows/apps/hh770532)」をご覧ください。
 
-## 設計時の考慮事項
+## <a name="design-considerations"></a>設計時の考慮事項
 
 
 DirectX ゲームに使うことのできる Networking API は、多数あります。 このため、適切な API を選ぶことが重要です。 Windows では、アプリがインターネットまたはプライベート ネットワーク上で他のコンピューターやデバイスと通信するために使うことができるさまざまな Networking API がサポートされています。 最初のステップは、アプリに必要なネットワーク機能を理解することです。
@@ -47,7 +54,7 @@ DirectX ゲームに使うことのできる Networking API は、多数あり�
 -   UDP とソケット - 信頼性の低いネットワーク転送を低いオーバーヘッドで提供します。 UDP は、待機時間を短くする必要があり、ある程度のパケット損失を許容できるゲーム操作に使われます。 これは、ファイティング ゲーム、シューティング、トレーサー、ネットワーク オーディオ、ボイス チャットなどによく使われます。 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) クラスは、Windows ストア ゲームで使うことができる UDP ソケットを提供します。 **DatagramSocket** クラスは、[**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間の関連クラスと共に使われます。
 -   HTTP クライアント - HTTP サーバーへの、信頼性の高い接続を実現します。 最も一般的なネットワーク シナリオは、Web サイトにアクセスして情報を取得または保存することです。 単純な例としては、Web サイトを使ってユーザー情報とゲームのスコアを保存するゲームが考えられます。 HTTP クライアントは、SSL と組み合わせてセキュリティを強化すると、ログイン、購入、アセットのトレーディング、ゲーム キャラクターの作成、管理に使うことができます。 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) クラスは、Windows ストア ゲームで使う最新の HTTP クライアント API を提供します。 **HttpClient** クラスは、[**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 名前空間の関連クラスと共に使われます。
 
-## DirectX ゲームでのネットワーク例外の処理
+## <a name="handling-network-exceptions-in-your-directx-game"></a>DirectX ゲームでのネットワーク例外の処理
 
 
 DirectX ゲームでのネットワーク例外の発生は、重大な問題やエラーを示します。 Networking API を使う場合、例外はさまざまな理由で発生します。 リモート ホストやサーバー側でネットワーク接続を変更したなど、ネットワークの問題のために例外が発生することもよくあります。
@@ -74,7 +81,7 @@ Networking API は、例外の原因についての詳しい情報を取得す�
 -   例外の原因となったエラーの **HRESULT** 値を取得するメソッド。 可能な **HRESULT** 値の一覧はサイズが大きく指定されていません。 Networking API の 1 つを使っている場合は **HRESULT** の値を取得できます。
 -   **HRESULT** 値を列挙値に変換するヘルパー メソッド。 可能な列挙値の一覧は指定されていて、比較的小さいサイズです。 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 内のソケット クラスにヘルパー メソッドを使うことができます。
 
-### Windows.Networking.Sockets の例外
+### <a name="exceptions-in-windowsnetworkingsockets"></a>Windows.Networking.Sockets の例外
 
 ソケットと共に使われる [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) クラスのコンストラクターは、有効なホスト名ではない (ホスト名に使うことができない文字が含まれている) 文字列が渡された場合に例外をスローすることができます。 アプリがゲームのピア接続用にユーザーから **HostName** の入力を取得する場合、このコンストラクターを try/catch ブロックに配置する必要があります。 例外がスローされた場合、アプリは、ユーザーに通知し、新しいホスト名を要求することができます。
 
@@ -217,7 +224,7 @@ using namespace Windows::Networking::Sockets;
 
 ```
 
-### Windows.Web.Http の例外
+### <a name="exceptions-in-windowswebhttp"></a>Windows.Web.Http の例外
 
 [**Windows::Web::Http::HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) と共に使われる [**Windows::Foundation::Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) クラスのコンストラクターは、有効な URI ではない (URI に使うことができない文字が含まれている) 文字列が渡された場合に例外をスローすることができます。 C++ では、URI として渡される文字列を試行して解析するメソッドはありません。 アプリがユーザーから **Windows::Foundation::Uri** の入力を取得する場合、このコンストラクターを try/catch ブロックに配置する必要があります。 例外がスローされた場合、アプリは、ユーザーに通知して、新しい URI を要求することができます。
 
@@ -362,7 +369,7 @@ using namespace Windows::Web::Http;
 
 ```
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 **その他のリソース**
@@ -389,9 +396,4 @@ using namespace Windows::Web::Http;
 * [HttpClient のサンプル]( http://go.microsoft.com/fwlink/p/?linkid=242550)
 * [近接通信のサンプル](http://go.microsoft.com/fwlink/p/?linkid=245082)
 * [StreamSocket のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=243037)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

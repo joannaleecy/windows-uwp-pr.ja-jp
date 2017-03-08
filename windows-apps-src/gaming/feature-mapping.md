@@ -3,13 +3,20 @@ author: mtoepke
 title: "DirectX 11 API への DirectX 9 の機能のマッピング"
 description: "Direct3D 9 ゲームで使う機能が Direct3D 11 とユニバーサル Windows プラットフォーム (UWP) にどのように変換されるかについて説明します。"
 ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, DirectX 9, DirectX 11, 移植"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6ab76921f1e8b613010f99eba6a141daca128ea5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 58847adcb94f7e730bcdcd98767282811d555016
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# DirectX 11 API への DirectX 9 の機能のマッピング
+# <a name="map-directx-9-features-to-directx-11-apis"></a>DirectX 11 API への DirectX 9 の機能のマッピング
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -23,7 +30,7 @@ ms.openlocfilehash: 6ab76921f1e8b613010f99eba6a141daca128ea5
 
 Direct3D 9 ゲームで使う機能が Direct3D 11 とユニバーサル Windows プラットフォーム (UWP) にどのように変換されるかについて説明します。
 
-## DirectX 11 API への Direct3D 9 のマッピング
+## <a name="mapping-direct3d-9-to-directx-11-apis"></a>DirectX 11 API への Direct3D 9 のマッピング
 
 
 [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466) はこれまでと同じく DirectX グラフィックスの土台ですが、API は DirectX 9 以降変更されています。
@@ -34,7 +41,7 @@ Direct3D 9 ゲームで使う機能が Direct3D 11 とユニバーサル Windows
 
 Direct3D 11 の機能の完全な一覧については、「[Direct3D 11 の機能](https://msdn.microsoft.com/library/windows/desktop/ff476342)」と「[Direct3D 11 の機能](https://msdn.microsoft.com/library/windows/desktop/hh404562)」をご覧ください。
 
-## Direct2D 9 から Direct2D 11 への移行
+## <a name="moving-from-direct2d-9-to-direct2d-11"></a>Direct2D 9 から Direct2D 11 への移行
 
 
 [Direct2D (Windows)](https://msdn.microsoft.com/library/windows/desktop/dd370990) は、これまでどおり DirectX グラフィックスと Windows の重要な一部です。 これまでどおり Direct2D を使って 2D ゲームを描画したり、Direct3D の上にオーバーレイ (HUD) を描画したりできます。
@@ -45,7 +52,7 @@ Direct2D は Direct3D に基づいているため、DXGI とデバイス コン�
 
 [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) API は、Direct2D を使って書式付きテキストのサポートを追加します。 「[DirectWrite の紹介](https://msdn.microsoft.com/library/windows/desktop/dd371554)」をご覧ください。
 
-## 推奨されなくなったヘルパー ライブラリの置き換え
+## <a name="replace-deprecated-helper-libraries"></a>推奨されなくなったヘルパー ライブラリの置き換え
 
 
 D3DX と DXUT は推奨されなくなったため、UWP ゲームでは使うことができません。 これらのヘルパー ライブラリでは、テクスチャの読み込みやメッシュの読み込みなどのタスク用にリソースが提供されていました。
@@ -54,7 +61,7 @@ D3DX と DXUT は推奨されなくなったため、UWP ゲームでは使う�
 -   「[DirectX を使った単純なユニバーサル Windows プラットフォーム (UWP) ゲームの作成](tutorial--create-your-first-metro-style-directx-game.md)」では、グラフィックス、ファイルの読み込み、UI、コントロール、サウンドなど、一般的なゲーム プログラミング タスクを示します。
 -   [DirectX ツール キット](http://go.microsoft.com/fwlink/p/?LinkID=248929) コミュニティのプロジェクトには、Direct3D 11 および UWP アプリで利用できるヘルパー クラスが用意されています。
 
-## FX から HLSL へのシェーダー プログラムの移行
+## <a name="move-shader-programs-from-fx-to-hlsl"></a>FX から HLSL へのシェーダー プログラムの移行
 
 
 Effects を含め、D3DX ユーティリティ ライブラリ (D3DX 9、D3DX 10、D3DX 11) は、UWP では推奨されなくなりました。 UWP のすべての DirectX ゲームは、Effects を使わずに、[HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561) を使ってグラフィックス パイプラインを実行します。
@@ -65,21 +72,21 @@ Visual Studio は、シェーダー オブジェクトをコンパイルする�
 
 Direct3D 11 ではシェーダー モデル 5 が導入されましたが、これには Direct3D 機能レベル 11\_0 以上が必要です。 「[Direct3D 11 の HLSL シェーダー モデル 5 の機能](https://msdn.microsoft.com/library/windows/desktop/ff471419)」をご覧ください。
 
-## XNAMath と D3DXMath の置き換え
+## <a name="replace-xnamath-and-d3dxmath"></a>XNAMath と D3DXMath の置き換え
 
 
 XNAMath (または D3DXMath) を使ったコードは [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) に移行する必要があります。 DirectXMath には、x86、x64、ARM の間で移植可能な型が含まれています。 「[XNA Math ライブラリからのコードの移行](https://msdn.microsoft.com/library/windows/desktop/ee418730)」をご覧ください。
 
 DirectXMath の浮動小数点型はシェーダーで使うと便利です。 たとえば、[**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) と [**XMFLOAT4X4**](https://msdn.microsoft.com/library/windows/desktop/ee419621) は、定数バッファーのデータの整列に便利です。
 
-## XAudio2 (とバックグラウンド オーディオ) への DirectSound の置き換え
+## <a name="replace-directsound-with-xaudio2-and-background-audio"></a>XAudio2 (とバックグラウンド オーディオ) への DirectSound の置き換え
 
 
 DirectSound では、UWP はサポートされていません。
 
 -   ゲームにサウンド効果を追加するには [XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049) を使います。
 
-##  XInput と UWP API への DirectInput の置き換え
+##  <a name="replace-directinput-with-xinput-and-uwp-apis"></a>XInput と UWP API への DirectInput の置き換え
 
 
 DirectInput では、UWP はサポートされていません。
@@ -88,12 +95,12 @@ DirectInput では、UWP はサポートされていません。
 -   ゲーム コントローラーのサポート (とゲーム コントローラーのヘッドセットのサポート) には [XInput](https://msdn.microsoft.com/library/windows/desktop/ee417001) 1.4 を使います。 デスクトップと UWP に共有コード ベースを使う場合は、下位互換性について、「[XInput のバージョン](https://msdn.microsoft.com/library/windows/desktop/hh405051)」をご覧ください。
 -   ゲームでアプリ バーを使う必要がある場合は、[**EdgeGesture**](https://msdn.microsoft.com/library/windows/apps/hh701600) イベントに登録します。
 
-## DirectShow の代わりに Microsoft メディア ファンデーションを使う
+## <a name="use-microsoft-media-foundation-instead-of-directshow"></a>DirectShow の代わりに Microsoft メディア ファンデーションを使う
 
 
 DirectShow は DirectX API (または Windows API) にはもう含まれていません。 [Microsoft メディア ファンデーション](https://msdn.microsoft.com/library/windows/desktop/ms694197)は共有サーフェイスを使って Direct3D にビデオ コンテンツを提供します。 「[Direct3D 11 のビデオ API](https://msdn.microsoft.com/library/windows/desktop/hh447677)」をご覧ください。
 
-## ネットワーク コードへの DirectPlay の置き換え
+## <a name="replace-directplay-with-networking-code"></a>ネットワーク コードへの DirectPlay の置き換え
 
 
 Microsoft DirectPlay は推奨されなくなりました。 ゲームでネットワーク サービスを使う場合は、UWP の要件に準拠しているネットワーク コードを提供する必要があります。 次の API を使います。
@@ -113,7 +120,7 @@ Microsoft DirectPlay は推奨されなくなりました。 ゲームでネッ�
 
 アプリの中断中は、すべての UWP アプリ (ゲームを含む) で特定の種類のバックグラウンド タスクを使って接続を維持します。 中断されている間、ゲームが接続状態を保存する必要がある場合は、「[ネットワークの基本](https://msdn.microsoft.com/library/windows/apps/mt280233)」をご覧ください。
 
-## 関数のマッピング
+## <a name="function-mapping"></a>関数のマッピング
 
 
 Direct3D 9 から Direct3D 11 にコードの変換を行う場合は、次の表を参考にしてください。 これは、デバイスとデバイス コンテキストの区別にも役立ちます。
@@ -235,7 +242,7 @@ Direct3D 9 から Direct3D 11 にコードの変換を行う場合は、次の�
 
  
 
-## サーフェス形式のマッピング
+## <a name="surface-format-mapping"></a>サーフェス形式のマッピング
 
 
 Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を参考にしてください。
@@ -670,10 +677,5 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

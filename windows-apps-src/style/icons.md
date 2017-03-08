@@ -5,9 +5,16 @@ title: "アイコン"
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: f8cb9c36b42936b8dfd24bbd5f88e2cf500e930f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9ae92b196015fb958e90409f947c1e42184ec0d4
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -176,9 +183,4 @@ ms.openlocfilehash: f8cb9c36b42936b8dfd24bbd5f88e2cf500e930f
 ## <a name="related-articles"></a>関連記事
 
 * [タイルとアイコン アセットのガイドライン](../controls-and-patterns/tiles-and-notifications-app-assets.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

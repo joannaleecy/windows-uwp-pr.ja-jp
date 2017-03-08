@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
 description: "既存のアドオンの申請のデータを取得するには、Windows ストア申請 API 内の以下のメソッドを使用します。"
 title: "Windows ストア申請 API を使用したアドオン申請の取得"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows ストア申請 API, アドオンの申請, アプリ内製品, IAP"
 translationtype: Human Translation
-ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
-ms.openlocfilehash: 887615bfc07549d82a295bae99dd31f722546341
+ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
+ms.openlocfilehash: 2f6211c1ec399c5b6234ee4181dd319130c606b4
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -100,7 +107,8 @@ Authorization: Bearer <your access token>
       "US": "Tier4",
     },
     "sales": [],
-    "priceId": "Free"
+    "priceId": "Free",
+    "isAdvancedPricingModel": "true"
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
   "targetPublishMode": "Immediate",
@@ -151,9 +159,4 @@ Authorization: Bearer <your access token>
 * [アドオンの申請の更新](update-an-add-on-submission.md)
 * [アドオンの申請の削除](delete-an-add-on-submission.md)
 * [アドオンの申請の状態の取得](get-status-for-an-add-on-submission.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

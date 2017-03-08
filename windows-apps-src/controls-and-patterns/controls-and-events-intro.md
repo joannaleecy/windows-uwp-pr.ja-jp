@@ -5,9 +5,16 @@ title: "コントロールとパターンの概要"
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and patterns
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 8a9a9009574b46ff3ae5b05569fb871a49e2f1ea
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 93297899c341366788f1d7dfa06507c1f3003884
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="intro-to-controls-and-patterns"></a>コントロールとパターンの概要
@@ -138,14 +145,9 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 
 ## <a name="related-topics"></a>関連トピック
 
--   [機能別コントロールのインデックス](controls-by-function.md)
--   [Windows.UI.Xaml.Controls 名前空間](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
--   [レイアウト](../layout/index.md)
--   [スタイル](../style/index.md)
--   [ユーザビリティ](../usability/index.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
+-     [機能別コントロールのインデックス](controls-by-function.md)
+-     [Windows.UI.Xaml.Controls 名前空間](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+-     [レイアウト](../layout/index.md)
+-     [スタイル](../style/index.md)
+-     [ユーザビリティ](../usability/index.md)
 

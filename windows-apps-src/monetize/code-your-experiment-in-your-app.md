@@ -3,9 +3,16 @@ author: mcleanbyron
 Description: "ユニバーサル Windows プラットフォーム (UWP) アプリで A/B テストを実行するには、アプリで実験用のコードを記述する必要があります。"
 title: "アプリの実験用のコードを記述する"
 ms.assetid: 6A5063E1-28CD-4087-A4FA-FBB511E9CED5
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Microsoft Store Services SDK, A/B テスト, 実験"
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: cc32e2688bce636e1f4bda02aade4ed1d94f3e28
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d5c46c896aad3dfbc0f6f9bdb010652507654cb0
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -110,9 +117,4 @@ ms.openlocfilehash: cc32e2688bce636e1f4bda02aade4ed1d94f3e28
 * [デベロッパー センター ダッシュボードで実験を管理する](manage-your-experiment.md)
 * [A/B テストを使用して最初の試験的機能を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)
 * [A/B テストを使用してアプリの実験を実行する](run-app-experiments-with-a-b-testing.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -3,9 +3,16 @@ author: mcleblanc
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: "モバイル用 Device Portal"
 description: "Windows Device Portal で、モバイル デバイスの構成と管理をリモートから行う方法について説明します。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: ea4f755afbf16d4ba5043ebb6be586f19dcc4370
-ms.openlocfilehash: c39c1a843c4f466e1999b4e80bf87f5842ad1996
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 54660777706fbfdc54b08da025c2f280f194c010
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="device-portal-for-mobile"></a>モバイル用 Device Portal
@@ -75,8 +82,3 @@ Windows Mobile Device Portal には、任意のプロセスを強制終了する
 - パフォーマンス トレース (WPR) 
 - デバイス
 - ネットワーク
-
-
-<!--HONumber=Dec16_HO1-->
-
-

@@ -3,14 +3,21 @@ author: Jwmsft
 ms.assetid: 90F07341-01F4-4205-8161-92DD2EB49860
 title: "XAML UI 用の 3-D 遠近効果"
 description: "視点の変換を使って、3D 効果を Windows ランタイム アプリのコンテンツに適用することができます。 たとえば、次に示すように、オブジェクトが回転してユーザーに近づいたり離れたりするように見せることができます。"
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 54bcd19419f31563f910b705fce8128bca33825b
-ms.openlocfilehash: 543dfb60b1fa70e2fceebbdd03da8a301eb9d08f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b0855392c9e9e3f18d08a16cf39cdfa5c0910701
+ms.lasthandoff: 02/07/2017
 
 ---
-# XAML UI 用の 3-D 遠近効果
+# <a name="3-d-perspective-effects-for-xaml-ui"></a>XAML UI 用の 3-D 遠近効果
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 視点の変換を使って、3D 効果を Windows ランタイム アプリのコンテンツに適用することができます。 たとえば、次に示すように、オブジェクトが回転してユーザーに近づいたり離れたりするように見せることができます。
 
@@ -43,7 +50,7 @@ ms.openlocfilehash: 543dfb60b1fa70e2fceebbdd03da8a301eb9d08f
 
 [このサンプルを実行する](http://go.microsoft.com/fwlink/p/?linkid=236112)
 
-## PlaneProjection クラス
+## <a name="planeprojection-class"></a>PlaneProjection クラス
 
 [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) を使って [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) の [**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection) プロパティを設定することで、UIElement に 3D 効果を適用できます。 **PlaneProjection** は、変換を空間内でどのようにレンダリングするかを定義します。 単純な場合の例を次に示します。
 
@@ -141,7 +148,7 @@ ms.openlocfilehash: 543dfb60b1fa70e2fceebbdd03da8a301eb9d08f
 
 [このスライダー サンプルを実行](http://go.microsoft.com/fwlink/p/?linkid=236112)すると、回転の中心の位置をさまざまに変えながらオブジェクトの回転を試すことができます。
 
-## オブジェクトの配置
+## <a name="positioning-an-object"></a>オブジェクトの配置
 
 ここまで、空間内でオブジェクトを回転させる方法について説明しました。 以下のプロパティを使うと、空間内でこれらの回転したオブジェクトを互いに相対的に配置できます。
 
@@ -180,12 +187,7 @@ ms.openlocfilehash: 543dfb60b1fa70e2fceebbdd03da8a301eb9d08f
 
 このサンプルでは、オブジェクトが回転しても移動方向が変わらないことがわかります。 これは、オブジェクトが回転に関係なく画面の X 軸に沿って移動しているためです。
 
-## オブジェクトの配置
+## <a name="positioning-an-object"></a>オブジェクトの配置
 
 [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) を使って対応できる場合よりもさらに複雑な疑似 3D のシナリオに対しては、[**Matrix3DProjection**](https://msdn.microsoft.com/library/windows/apps/BR210128) 型および [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/BR243266) 型を使うことができます。 **Matrix3DProjection** には、どの [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) にも適用できる完全な 3D 変換マトリックスが備えられているため、任意のモデル変換マトリックスおよび視点マトリックスを要素に適用できます。 これらの API は最小限のものであるため、使用する場合は、3D 変換マトリックスを正しく作成するコードを記述する必要があります。 そのため、単純な 3D シナリオには、**PlaneProjection** を使う方が簡単です。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

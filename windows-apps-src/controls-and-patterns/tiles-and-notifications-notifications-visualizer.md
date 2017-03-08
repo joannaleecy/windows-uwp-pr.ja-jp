@@ -5,9 +5,16 @@ title: Notifications Visualizer
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 label: TBD
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: d51aacb31f41cbd9c065b013ffb95b83a6edaaf4
-ms.openlocfilehash: 20e73c2de82bcc76c94fff38163dddac7ef9d8a9
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f7269e3fde1f5dbca278b2b9047b392049ee452c
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="notifications-visualizer"></a>Notifications Visualizer
@@ -56,8 +63,3 @@ Notifications Visualizer にはさまざまなサンプル ペイロードが付
 * [アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)
 * [アダプティブ タイル テンプレート: スキーマとドキュメント](tiles-and-notifications-adaptive-tiles-schema.md)
 * [Tiles and toasts (タイルとトースト) (MSDN ブログ)](http://blogs.msdn.com/b/tiles_and_toasts/)
-
-
-<!--HONumber=Dec16_HO1-->
-
-

@@ -3,13 +3,20 @@ author: mtoepke
 title: "Marble Maze サンプルへの入力と対話機能の追加"
 description: "ユニバーサル Windows プラットフォーム (UWP) アプリ ゲームは、デスクトップ コンピューター、ノート PC、タブレットなど、さまざまなデバイスで実行されます。"
 ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、ゲーム、入力、サンプル"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ddaa13c6bf7d1bcf5a01d7525389a893a077f4f4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dc667be326950151b08bbaded6d4e9a0b109523b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Marble Maze サンプルへの入力と対話機能の追加
+# <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>Marble Maze サンプルへの入力と対話機能の追加
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
@@ -29,7 +36,7 @@ ms.openlocfilehash: ddaa13c6bf7d1bcf5a01d7525389a893a077f4f4
 -   Xbox 360 コントローラーと加速度計では、ポーリングがサポートされています。 つまり、必要に応じてデータをポーリングできます。 タッチの場合は、入力処理コードで利用できるデータ構造にタッチ イベントを記録します。
 -   入力値を共通形式に正規化します。 ゲームの他のコンポーネント (物理シミュレーションなど) が入力を解釈する方法を簡略化でき、さまざまな画面解像度で動作するゲームが作成しやすくなります。
 
-## Marble Maze でサポートされる入力デバイス
+## <a name="input-devices-supported-by-marble-maze"></a>Marble Maze でサポートされる入力デバイス
 
 
 Marble Maze は、メニュー項目の選択に関して Xbox 360 共通コントローラー デバイス、マウス、タッチをサポートし、ゲーム プレイの制御に関して Xbox 360 コントローラー、マウス、タッチ、加速度計をサポートします。 Marble Maze は、XInput API を使ってコントローラーの入力をポーリングします。 アプリケーションは、タッチ デバイスを通じて指先での入力をトラッキングし、応答することができます。 加速度計は、x、y、z 軸方向に加えられた力を測定するセンサーです。 Windows ランタイムを使うと、Windows ランタイムのイベント処理機構を通じてタッチ イベントを受け取るだけでなく、加速度計デバイスの現在の状態をポーリングすることもできます。
@@ -42,7 +49,7 @@ Marble Maze は、メニュー項目の選択に関して Xbox 360 共通コン�
 
  
 
-## 入力デバイスの初期化
+## <a name="initializing-input-devices"></a>入力デバイスの初期化
 
 
 Xbox 360 コントローラーは初期化を必要としません。 タッチを初期化するには、ポインターがアクティブになったとき (たとえばユーザーがマウス ボタンを押すか画面に触れたとき)、離されたとき、移動されたときなどのウィンドウ イベントを登録する必要があります。 加速度計を初期化するには、アプリケーションの初期化時に [**Windows::Devices::Sensors::Accelerometer**](https://msdn.microsoft.com/library/windows/apps/br225687) オブジェクトを作成する必要があります。
@@ -79,10 +86,10 @@ Accelerometer オブジェクトは、次の例に示すように MarbleMaze::In
 m_accelerometer = Windows::Devices::Sensors::Accelerometer::GetDefault();
 ```
 
-##  メニューの操作
+##  <a name="navigating-the-menus"></a>メニューの操作
 
 
-###  Xbox 360 コントローラーの入力のトラッキング
+###  <a name="tracking-xbox-360-controller-input"></a>Xbox 360 コントローラーの入力のトラッキング
 
 メニューの操作には、次のようにマウス、タッチ、Xbox 360 コントローラーを使うことができます。
 
@@ -91,7 +98,7 @@ m_accelerometer = Windows::Devices::Sensors::Accelerometer::GetDefault();
 -   ゲームを一時停止または再開するには、[スタート] ボタンを使います。
 -   操作を選択するには、マウスでそのメニュー項目をクリックします。
 
-###  タッチとマウスによる入力のトラッキング
+###  <a name="tracking-touch-and-mouse-input"></a>タッチとマウスによる入力のトラッキング
 
 Xbox 360 コントローラーの入力をトラッキングするために、**MarbleMaze::Update** メソッドは入力動作を定義するボタンの配列を定義します。 XInput から提供されるのは、コントローラーの現在の状態のみです。 そのため、**MarbleMaze::Update** も 2 つの配列を定義します。使用可能な各 Xbox 360 コントローラーについて、各ボタンが前のフレームの間に押されたかどうかと、各ボタンが現在押されているかどうかをこれらの配列によってトラッキングします。
 
@@ -243,7 +250,7 @@ case GameState::InGamePaused:
 memcpy(wasButtonDown, isButtonDown, sizeof(wasButtonDown));
 ```
 
-### タッチとマウスによる入力のトラッキング
+### <a name="tracking-touch-and-mouse-input"></a>タッチとマウスによる入力のトラッキング
 
 タッチとマウスによる入力では、メニュー項目は、ユーザーがその項目をタッチまたはクリックしたときに選択されます。 次の例は、**MarbleMaze::Update** メソッドがポインターの入力を処理してメニュー項目を選択する方法を示します。 **m\_pointQueue** メンバー変数は、ユーザーが画面上でタッチまたはクリックした場所をトラッキングします。 Marble Maze のポインター入力の収集方法については、このドキュメントの「ポインターの入力の処理」で詳しく説明します。
 
@@ -277,7 +284,7 @@ void UserInterface::HitTest(D2D1_POINT_2F point)
 }
 ```
 
-### ゲームの状態の更新
+### <a name="updating-the-game-state"></a>ゲームの状態の更新
 
 コントローラーとタッチの入力を処理した後、**MarbleMaze::Update** メソッドは、いずれかのボタンが押された場合にゲームの状態を更新します。
 
@@ -295,7 +302,7 @@ if (m_highScoreButton.IsPressed())
 }
 ```
 
-##  ゲーム プレイの制御
+##  <a name="controlling-game-play"></a>ゲーム プレイの制御
 
 
 ゲーム ループと **MarbleMaze::Update** メソッドは、連携してゲーム オブジェクトの状態を更新します。 多様なデバイスからの入力を受け付けるゲームを開発する場合、すべてのデバイスからの入力を一連の変数に蓄積することで保守しやすいコードを作成することができます。 **MarbleMaze::Update** メソッドは、すべてのデバイスからの動作を蓄積する一連の変数を定義します。
@@ -307,7 +314,7 @@ float combinedTiltY = 0.0f;
 
 入力機構は入力デバイスによって異なります。 たとえば、ポインターの入力は Windows ランタイムのイベント処理モデルを使って処理されます。 これに対して、Xbox 360 コントローラーからの入力データは必要なときに自分でポーリングします。 デバイスごとに定められた入力機構に常に従うことをお勧めします。 このセクションでは、Marble Maze が各デバイスからの入力を読み取り、結合された入力値を更新し、結合された入力値を使ってゲームの状態を更新する方法について説明します。
 
-###  ポインターの入力の処理
+###  <a name="processing-pointer-input"></a>ポインターの入力の処理
 
 ポインターの入力を処理するときは、[**Windows::UI::Core::CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208217) メソッドを呼び出してウィンドウ イベントを処理します。 このメソッドは、ゲーム ループ内でシーンの更新またはレンダリングの前に呼び出します。 Marble Maze は、このメソッドに **CoreProcessEventsOption::ProcessAllIfPresent** を渡してキュー内のすべてのイベントを処理した後、すぐに制御を戻します。 イベントの処理後に Marble Maze はレンダリングを行い、次のフレームを表示します。
 
@@ -391,7 +398,7 @@ for (TouchMap::const_iterator iter = m_touches.cbegin(); iter != m_touches.cend(
 }
 ```
 
-### 加速度計の入力の処理
+### <a name="processing-accelerometer-input"></a>加速度計の入力の処理
 
 加速度計の入力を処理するために、**MarbleMaze::Update** メソッドは [**Windows::Devices::Sensors::Accelerometer::GetCurrentReading**](https://msdn.microsoft.com/library/windows/apps/br225699) メソッドを呼び出します。 このメソッドは、加速度計の測定値を表す [**Windows::Devices::Sensors::AccelerometerReading**](https://msdn.microsoft.com/library/windows/apps/br225688) オブジェクトを返します。 **Windows::Devices::Sensors::AccelerometerReading::AccelerationX** プロパティと **Windows::Devices::Sensors::AccelerometerReading::AccelerationY** プロパティは、x 軸方向と y 軸方向の重力加速度をそれぞれ保持します。
 
@@ -415,7 +422,7 @@ if (m_accelerometer != nullptr)
 
 ユーザーのコンピューターに加速度計が搭載されているかどうかは不確かなため、加速度計のポーリングを行う前には必ず、有効な Accelerometer オブジェクトがあることを確認してください。
 
-### Xbox 360 コントローラーの入力の処理
+### <a name="processing-xbox-360-controller-input"></a>Xbox 360 コントローラーの入力の処理
 
 次の例は、**MarbleMaze::Update** メソッドが Xbox 360 コントローラーからの読み取りを行い、結合された入力値を更新する方法を示します。 **MarbleMaze::Update** メソッドは for ループを使って、接続されたコントローラーから入力を受け取ることができるようにします。 **XInputGetState** メソッドは、XINPUT\_STATE オブジェクトにコントローラーの現在の状態を設定します。 **combinedTiltX** 値と **combinedTiltY** 値は、左スティックの x 値と y 値に従って更新されます。
 
@@ -450,7 +457,7 @@ XInput は、左スティックの定数 **XINPUT\_GAMEPAD\_LEFT\_THUMB\_DEADZON
 
  
 
-###  ゲームの状態への入力の適用
+###  <a name="applying-input-to-the-game-state"></a>ゲームの状態への入力の適用
 
 デバイスは、さまざまな方法で入力値を報告します。 たとえば、ポインターの入力は通常、画面座標で報告されますが、コントローラーの入力の形式は、それとはまったく異なることが考えられます。 複数のデバイスからの入力を一連の入力値に結合する際の課題の 1 つに、正規化 (共通形式への値の変換) があります。 Marble Maze は、値を範囲 \[-1.0, 1.0\] にスケーリングすることによって正規化します。 Xbox 360 コントローラーの入力を正規化するために、Marble Maze は入力値を 32768 で除算します。これは、サムスティックの入力値が常に -32768 ～ 32767 の範囲内であるためです。 このセクションで既に説明した **PointToTouch** 関数は、画面座標をおよそ -1.0 ～ +1.0 の範囲内の正規化された値に変換することによって同様の結果を得ます。
 
@@ -505,12 +512,12 @@ if (marblePosition.z >= resetDepth)
 
 このセクションでは、物理シミュレーションのしくみについては説明しません。 詳しくは、Marble Maze のソースの Physics.h と Physics.cpp をご覧ください。
 
-## 次の手順
+## <a name="next-steps"></a>次の手順
 
 
 オーディオを扱う際の主な手法については、「[Marble Maze サンプルへのオーディオの追加](adding-audio-to-the-marble-maze-sample.md)」をご覧ください。 このドキュメントでは、Marble Maze が Microsoft メディア ファンデーションと XAudio2 を使ってオーディオ リソースの読み込み、ミキシング、再生を行う方法について説明しています。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [Marble Maze のサンプルへのオーディオの追加](adding-audio-to-the-marble-maze-sample.md)
@@ -523,10 +530,5 @@ if (marblePosition.z >= resetDepth)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

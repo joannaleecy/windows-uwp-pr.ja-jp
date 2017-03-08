@@ -3,29 +3,36 @@ author: jwmsft
 description: "XAML 添付プロパティを依存関係プロパティとして実装する方法と、添付プロパティを XAML で使うために必要なアクセサー変換を定義する方法を説明します。"
 title: "カスタム添付プロパティ"
 ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 21ca5391fc4f29c33b3501d05d5ebed986188a3e
-ms.openlocfilehash: 77858a864929c99425f9c008e8f6fb8dfbad0b44
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e05c1b2e8c8391901c28c12b57415ec0e599859d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# カスタム添付プロパティ
+# <a name="custom-attached-properties"></a>カスタム添付プロパティ
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 *添付プロパティ*は、XAML の概念です。 添付プロパティは、通常は依存関係プロパティの特殊な形式として定義されます。 このトピックでは、添付プロパティを依存関係プロパティとして実装する方法と、添付プロパティを XAML で使うために必要なアクセサー変換を定義する方法を説明します。
 
-## 必要条件
+## <a name="prerequisites"></a>必要条件
 
 依存関係プロパティを既にある依存関係プロパティのユーザーの観点から理解し、「[依存関係プロパティの概要](dependency-properties-overview.md)」を読んでいることを前提としています。 「[添付プロパティの概要](attached-properties-overview.md)」も読んでいる必要があります。 このトピックの例を参考にするには、XAML について理解し、C++、C#、または Visual Basic を使った基本的な Windows ランタイム アプリを作る方法を理解している必要もあります。
 
-## 添付プロパティのシナリオ
+## <a name="scenarios-for-attached-properties"></a>添付プロパティのシナリオ
 
 定義クラス以外のクラスで利用できるプロパティ設定メカニズムが必要な場合は、添付プロパティを作成できます。 その最も一般的なシナリオは、レイアウトとサービス サポートです。 既にあるレイアウト プロパティの例として、[**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) と [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) があります。 レイアウトのシナリオでは、レイアウト制御要素の子要素として存在する要素は親要素に対するレイアウト要件を個別に表現でき、それぞれ、親が添付プロパティとして定義するプロパティ値を設定します。 Windows ランタイム API のサービス サポートのシナリオの例は、[**ScrollViewer.IsZoomChainingEnabled**](https://msdn.microsoft.com/library/windows/apps/br209561) など、[**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) の添付プロパティのセットです。
 
 **注意:** ただし、Windows ランタイム XAML 実装の制限があるため、カスタム添付プロパティをアニメーション化することはできません。
 
-## カスタム添付プロパティの登録
+## <a name="registering-a-custom-attached-property"></a>カスタム添付プロパティの登録
 
 他の種類で使う添付プロパティを厳密に定義する場合、プロパティが登録されているクラスが [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) から派生する必要はありません。 ただし、添付プロパティが依存関係プロパティでもある標準モデルに従う場合は、バッキング プロパティ ストアを使うことができるように、アクセサーのターゲット パラメーターで **DependencyObject** を使う必要があります。
 
@@ -35,7 +42,7 @@ ms.openlocfilehash: 77858a864929c99425f9c008e8f6fb8dfbad0b44
 
 **重要:** アクセサーを正しく定義しないと、XAML プロセッサは添付プロパティにアクセスできず、それを使おうとするユーザーにはおそらく XAML パーサー エラーが返されます。 また、デザイン ツールとコーディング ツールは、参照されるアセンブリでカスタム依存関係プロパティを検出した場合に、"\*Property" という識別子の命名規則に依存することがよくあります。
 
-## アクセサー
+## <a name="accessors"></a>アクセサー
 
 **Get**_PropertyName_ アクセサーのシグネチャは次のようにする必要があります。
 
@@ -59,7 +66,7 @@ Visual Basic の場合は、次のようになります。
 
 **注:** プロパティ要素構文で使うことを意図した添付プロパティを定義することもできます。 その場合、値の型変換は必要ではありませんが、意図した値を XAML で確実に作成できるようにする必要があります。 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) は、プロパティ要素の使用だけをサポートする既存の添付プロパティの例です。
 
-## コードの例
+## <a name="code-example"></a>コードの例
 
 この例は、([**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) メソッドを使った) 依存関係プロパティの登録と、カスタム添付プロパティの **Get** アクセサーと **Set** アクセサーを示しています。 この例では、添付プロパティ名は `IsMovable` です。 したがって、アクセサーの名前は `GetIsMovable` と `SetIsMovable` にする必要があります。 添付プロパティの所有者は `GameService` という名前の独自の UI を持たないサービス クラスです。その目的は **GameService.IsMovable** 添付プロパティを使うときに、添付プロパティ サービスを提供することだけです。
 
@@ -174,7 +181,7 @@ GameService::RegisterDependencyProperties() {
 }
 ```
 
-## XAML でのカスタム添付プロパティの使用
+## <a name="using-your-custom-attached-property-in-xaml"></a>XAML でのカスタム添付プロパティの使用
 
 添付プロパティを定義し、そのサポート メンバーをカスタム型の一部として含めたら、定義を XAML で利用できるようにする必要があります。 そのためには、関連クラスを含むコード名前空間を参照する XAML 名前空間をマップする必要があります。 添付プロパティをライブラリの一部として定義した場合は、そのライブラリをアプリのアプリ パッケージの一部として含める必要があります。
 
@@ -202,7 +209,7 @@ XAML の XML 名前空間マッピングは、通常は XAML ページのルー�
 
 **注:** XAML UI を C++ で作る場合は、XAML ページが添付プロパティを定義するカスタム型を使うたびに、そのカスタム型のヘッダーを含める必要があります。 各 XAML ページには、.xaml.h コード ビハインド ヘッダーが関連付けられています。 ここに、添付プロパティの所有者型の定義のヘッダーを (**\#include** を使って) 含める必要があります。
 
-## カスタム添付プロパティの値型
+## <a name="value-type-of-a-custom-attached-property"></a>カスタム添付プロパティの値型
 
 カスタム添付プロパティの値型として使われる型は、使用方法、定義、または使用方法と定義の両方に影響します。 添付プロパティの値型は、複数の場所で (**Get** アクセサー メソッドと **Set** アクセサー メソッド両方のシグネチャで、また [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) 呼び出しの *propertyType* パラメーターとして) 宣言されます。
 
@@ -211,7 +218,7 @@ XAML の XML 名前空間マッピングは、通常は XAML ページのルー�
 - 添付プロパティはそのままにすることができますが、添付プロパティでは、添付プロパティがプロパティ要素であり、値がオブジェクト要素として宣言される使用方法のみサポートできます。 この場合、プロパティ型はオブジェクト要素としての XAML の使用をサポートする必要があります。 既にある Windows ランタイム参照クラスの場合は、XAML 構文を調べて、型が XAML オブジェクト要素の使用をサポートすることを確認します。
 - 添付プロパティはそのままにすることができますが、文字列として表現できる **Binding** や **StaticResource** などの XAML 参照手法で属性を使う場合にのみ使います。
 
-## **Canvas.Left** の例に関する詳細
+## <a name="more-about-the-canvasleft-example"></a>**Canvas.Left** の例に関する詳細
 
 添付プロパティの使用法として前に挙げた例では、[**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 添付プロパティを設定するさまざまな方法を説明しました。 しかし、それによって [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) がオブジェクトとやり取りする方法やタイミングがどのように変わるのでしょうか。 ここでは、この例をさらに詳しく検討します。添付プロパティを実装しており、他のオブジェクトで添付プロパティの値が検出された場合に、典型的な添付プロパティの所有者クラスが添付プロパティの値に対して実行する処理を理解するのは意味のあることだからです。
 
@@ -237,16 +244,11 @@ XAML の XML 名前空間マッピングは、通常は XAML ページのルー�
 
 **注:** パネルの動作方法について詳しくは、「[XAML カスタム パネルの概要](https://msdn.microsoft.com/library/windows/apps/mt228351)」をご覧ください。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833)
 * [添付プロパティの概要](attached-properties-overview.md)
 * [カスタム依存関係プロパティ](custom-dependency-properties.md)
 * [XAML の概要](xaml-overview.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

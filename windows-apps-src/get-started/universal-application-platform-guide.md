@@ -3,13 +3,20 @@ author: TylerMSFT
 title: "ユニバーサル Windows プラットフォームの紹介"
 description: "Windows 10 を搭載するさまざまなデバイスで実行できるユニバーサル Windows プラットフォーム (UWP) アプリについて説明します。"
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 98dd2da8e16552fcde9790bd77f17a2100b63d4f
-ms.openlocfilehash: 170bbb4e22b3ac642b0dfd0c9136d3dd39d519d0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f1e69b302f9b979423e2b38a11cd477b1b805a4b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# ユニバーサル Windows プラットフォームの紹介
+# <a name="intro-to-the-universal-windows-platform"></a>ユニバーサル Windows プラットフォームの紹介
 
 ここでは、次の項目について説明します。
 
@@ -27,7 +34,7 @@ Windows 10 では、Windows ランタイム モデルをさらに進化させ、
 
 UWP アプリはさまざまなフォーム ファクターと入力モダリティを備えた多様な種類のデバイスで実行されるため、各デバイスに合わせて調整して、各デバイスの独自の機能のロックを解除する必要があります。 デバイスはデバイス固有の API を保証された API レイヤーに追加します。 これらの固有な API に条件付きでアクセスするコードを作成して、アプリが他のデバイスで異なるエクスペリエンスを表示している間に 1 種類のデバイスに固有の機能の使い勝手をよくすることができます。 アダプティブ UI コントロールと新しいレイアウト パネルを使うと、UI をさまざまな画面解像度で調整できます。
 
-## デバイス ファミリ
+## <a name="device-families"></a>デバイス ファミリ
 
 Windows 8.1 アプリと Windows Phone 8.1 アプリがターゲットとするオペレーティング システム (OS) は、Windows または Windows Phone です。 Windows 10 では、オペレーティング システムをターゲットにする代わりに、1 つまたは複数のデバイス ファミリに設定されたアプリをターゲットにします。 デバイス ファミリに基づいて、デバイス ファミリのデバイス全体で想定できる API、システム特性、動作を特定します。 ストアからアプリをインストールできる一連のデバイスも決定します。 次にデバイス ファミリの階層を示します。
 
@@ -71,7 +78,7 @@ Windows 8.1 アプリと Windows Phone 8.1 アプリがターゲットとする�
 
 既定では、Microsoft Visual Studio はアプリ パッケージ マニフェスト ファイルでターゲット デバイス ファミリとして **Windows.Universal** を指定します。 アプリがターゲットとする 1 つまたは複数のデバイス ファミリをストアで指定するには、Package.appxmanifest ファイルの [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 要素を手動で構成します。
 
-## UI とユニバーサル入力
+## <a name="ui-and-universal-input"></a>UI とユニバーサル入力
 
 UWP アプリは、異なる形式の入力、画面の解像度、DPI 密度、その他の固有の特性を備えた、多くの異なる種類のデバイスで実行できます。 Windows 10 には、新しいユニバーサル コントロール、レイアウト パネル、およびアプリが動作するデバイスに UI を対応させるためのツールが用意されています。 たとえば、アプリがデスクトップ コンピューターとモバイル デバイスで実行されている場合、画面の解像度の違いを利用して UI を調整することができます。
 
@@ -84,7 +91,7 @@ Windows では、UI を次の機能を備えた複数のデバイスを対象と
 -   さまざまな画面の解像度に合わせて変化する UI の設計に役立つツール
 -   デバイス間での解像度と DPI の相違を調整するアダプティブ スケーリング
 
-### ユニバーサル コントロールとレイアウト パネル
+### <a name="universal-controls-and-layout-panels"></a>ユニバーサル コントロールとレイアウト パネル
 
 Windows 10 には、calendar and split ビューなどの新しいコントロールが含まれています。 以前は Windows Phone のみで使用できたピボット コントロールも、ユニバーサル デバイス ファミリで使用できるようになりました。
 
@@ -100,7 +107,7 @@ Windows 10 には、calendar and split ビューなどの新しいコントロ�
 
 使用可能な画面領域の量に基づいて全体的な UI レイアウトを調整するために、Windows 10 ではアダプティブ パネルとデザイン状態が導入されています。
 
-### アダプティブ パネルでアダプティブ UI を設計する
+### <a name="design-adaptive-ui-with-adaptive-panels"></a>アダプティブ パネルでアダプティブ UI を設計する
 
 レイアウト パネルでは、利用可能な領域に応じて、子にサイズと位置を指定します。 たとえば、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) は子を連続的に順序付けます (横方向または縦方向)。 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) は子をセルに配置する CSS グリッドのようなものです。
 
@@ -118,7 +125,7 @@ Windows 10 には、calendar and split ビューなどの新しいコントロ�
 </RelativePanel>
 ```
 
-### 表示状態のトリガーを使用して、利用可能な画面上のスペースに対応できる UI を構築する
+### <a name="use-visual-state-triggers-to-build-ui-that-can-adapt-to-available-screen-space"></a>表示状態のトリガーを使用して、利用可能な画面上のスペースに対応できる UI を構築する
 
 UI はウィンドウ サイズの変化への対応が必要になる場合があります。 アダプティブな表示状態により、ウィンドウのサイズの変化に応じて表示状態を変更できます。
 
@@ -162,7 +169,7 @@ StateTriggers は表示状態がアクティブ化されるしきい値を定義
 </Grid>
 ```
 
-### ツール
+### <a name="tooling"></a>ツール
 
 既定では、できるだけ幅広いデバイス ファミリをターゲットにします。 特定のデバイスでのアプリの外観とレイアウトを表示する準備ができたら、Visual Studio のデバイス プレビュー ツール バーを使用して、小規模または中規模のモバイル デバイス、PC、または大画面テレビで、UI をプレビューします。 このようにして、アダプティブ表示状態を調整して、テストすることができます。
 
@@ -170,13 +177,13 @@ StateTriggers は表示状態がアクティブ化されるしきい値を定義
 
 サポートするすべてのデバイスの種類について事前に決定する必要はありません。 プロジェクトには、追加のデバイス サイズを後で追加することができます。
 
-### アダプティブ スケーリング
+### <a name="adaptive-scaling"></a>アダプティブ スケーリング
 
 Windows 10 には、既存のスケーリング モデルの進化形が導入されています。 表示スケール ベクター コンテンツに加えて、さまざまな画面サイズと画面の解像度で UI 要素に一貫したサイズを提供するスケール ファクターの統合されたセットがあります。 スケール ファクターは、iOS や Android などの他のオペレーティング システムのスケール ファクターとも互換性があります。 これにより、これらのプラットフォーム間でのアセットの共有が簡単になります。
 
 ストアでは、デバイスの DPI の一部に基づいて、ダウンロードするアセットが選ばれます。 デバイスに最適なアセットのみがダウンロードされます。
 
-### 共通の入力処理
+### <a name="common-input-handling"></a>共通の入力処理
 
 マウス、キーボード、タッチ、ペン、コントローラー (たとえば、Xbox コントローラー) などのさまざまな入力を処理するユニバーサル コントロールを使ってユニバーサル Windows アプリをビルドすることができます。 従来、手描き入力はペン入力のみに関連付けられていましたが、Windows 10 では、一部のデバイスでのタッチ、およびポインター入力によって手描き入力ができます。 手描き入力は、多くのデバイス (モバイル デバイスなど) でサポートされており、数行のコードだけで簡単に組み込むことができます。
 
@@ -187,7 +194,7 @@ Windows 10 には、既存のスケーリング モデルの進化形が導入�
 -   [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) は、デバイスで使用可能な入力モダリティを特定するために、デバイス機能の照会をサポートするデバイス API です。
 -   新しい [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) XAML コントロールと [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) Windows ランタイム API によって、インク ストローク データにアクセスできます。
 
-## コードの記述
+## <a name="writing-code"></a>コードの記述
 
 [Visual Studio での Windows 10 プロジェクト](https://msdn.microsoft.com/library/windows/apps/dn609832.aspx#target_win10) に使用するプログラミング言語オプションには、Visual C++、C#、Visual Basic、JavaScript が含まれます。 Visual C++、C#、Visual Basic については、完全な再現性を持つ、ネイティブ UI エクスペリエンスのために XAML を使うことができます。 Visual C++ については、XAML の代わりに、または XAML に加えて、DirectX での描画を選ぶことができます。 JavaScript については、プレゼンテーション レイヤーは HTML になり、HTML はもちろん、クロスプラットフォーム Web 標準です。 コードと UI の大部分はユニバーサルで、すべての場所で同様に実行されます。 特定のデバイス ファミリに合わせて調整されたコードと特定のフォーム ファクターに合わせて調整された UI については、アダプティブ コードとアダプティブ UI を使用するオプションがあります。 これらの異なる場合を詳しく見てみましょう。
 
@@ -249,7 +256,7 @@ C++/CX で記述された UWP アプリまたは Windows ランタイム コン�
 
 UWP アプリに利用可能な Win32 API の完全な一覧については、「[UWP アプリの API セット](https://msdn.microsoft.com/library/windows/desktop/mt186421)」と「[UWP アプリの DLL](https://msdn.microsoft.com/library/windows/desktop/mt186422)」をご覧ください。
 
-## ユーザー エクスペリエンス
+## <a name="user-experience"></a>ユーザー エクスペリエンス
 
 ユニバーサル Windows アプリによって、実行されているデバイスの固有の機能を利用することができます。 アプリでは、デスクトップ デバイスのすべての機能、タブレットの直接的で自然な操作 (タッチ/ペン入力を含む)、モバイル デバイスの移植性と便利さ、[Surface Hub](http://go.microsoft.com/fwlink/?LinkId=526365) の協調機能、UWP アプリをサポートするその他のデバイスを使うことができます。
 
@@ -271,18 +278,13 @@ UWP アプリに利用可能な Win32 API の完全な一覧については、�
 
     従来の操作エクスペリエンスについて詳しくは、「[テキストとテキスト入力のガイドライン](https://msdn.microsoft.com/library/windows/apps/dn611864)」をご覧ください。
 
-## ダッシュボードによるユニバーサル Windows アプリの申請
+## <a name="submit-a-universal-windows-app-through-your-dashboard"></a>ダッシュボードによるユニバーサル Windows アプリの申請
 
 
 新しい統合 Windows デベロッパー センター ダッシュボードにより、Windows デバイス向けのすべてのアプリの管理と申請を 1 か所で行うことができます。 新しい機能が追加されたことで、より高度な管理が可能になった一方、プロセスは簡単になりました。 また、詳しい[分析レポート](https://msdn.microsoft.com/library/windows/apps/mt148522)に加えて、[支払いの詳細](https://msdn.microsoft.com/library/windows/apps/dn986925)も得られるようになりました。いずれも[アプリの宣伝と顧客エンゲージメントの獲得](https://msdn.microsoft.com/library/windows/apps/mt148526)に役立ちます。
 
 Windows ストアにアプリ公開の申請をする方法については、「[統合 Windows デベロッパー センター ダッシュボードの使用](../publish/using-the-windows-dev-center-dashboard.md)」をご覧ください。
 
-## 関連項目 ##
-別の入門資料については、「[Windows 10 デバイス向け Windows アプリのビルドの概要](https://msdn.microsoft.com/en-us/magazine/dn973012.aspx)」をご覧ください。
-
-
-
-<!--HONumber=Nov16_HO1-->
-
+## <a name="see-also"></a>関連項目 ##
+別の入門資料については、「[Windows 10 デバイス向け Windows アプリのビルドの概要](https://msdn.microsoft.com/magazine/dn973012.aspx)」をご覧ください。
 

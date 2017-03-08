@@ -2,16 +2,24 @@
 author: rmpablos
 title: "UWP アプリの自動ビルドを設定する"
 description: "サイドロード パッケージやストア パッケージを生成する自動ビルドを構成する方法について説明します。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 translationtype: Human Translation
-ms.sourcegitcommit: 1e30c20b38b9e6b00cd4f56bf9ffb3752ceed6a9
-ms.openlocfilehash: 681019d708b859d117992cde6d2ad3d37fa4833a
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 54dcebb0dc4b1a41acdae655b9caf14f72161f36
+ms.lasthandoff: 02/08/2017
 
 ---
-# UWP アプリの自動ビルドを設定する
+# <a name="set-up-automated-builds-for-your-uwp-app"></a>UWP アプリの自動ビルドを設定する
 
 Visual Studio Team Services (VSTS) を使用して、UWP プロジェクトの自動ビルドを作成できます。 この記事では、そのためのさまざまな方法について取り上げます。  また、AppVeyor などの他のビルド システムと統合できるようにコマンド ラインを使用してこれらのタスクを実行する方法も示します。 
 
-## 適切な種類のビルド エージェントを選択する
+## <a name="select-the-right-type-of-build-agent"></a>適切な種類のビルド エージェントを選択する
 
 ビルド プロセスの実行時に VSTS で使用するビルド エージェントの種類を選択します。 ホスト ビルド エージェントは、最も一般的なツールや SDK と共に展開され、ほとんどのシナリオで動作します ([ホスト ビルド サーバー上のソフトウェアに関する記事](https://www.visualstudio.com/en-us/docs/build/admin/agents/hosted-pool#software)をご覧ください)。 ただし、ビルド ステップをより細かく制御する必要がある場合は、カスタム ビルド エージェントを作成できます。 次の表は、この意思決定を行うのに役立ちます。
 
@@ -27,7 +35,7 @@ Visual Studio Team Services (VSTS) を使用して、UWP プロジェクトの�
 
 >注: Windows Anniversary Update SDK (ビルド14393) を対象とする場合、ホスト ビルド プールは SDK 10586 および 10240 のみをサポートするため、カスタム ビルド エージェントを設定する必要があります。 詳しくは、「[UWP バージョンの選択](https://msdn.microsoft.com/en-us/windows/uwp/updates-and-versions/choose-a-uwp-version)」をご覧ください。
 
-#### カスタム ビルド エージェントを作成する (省略可能)
+#### <a name="create-a-custom-build-agent-optional"></a>カスタム ビルド エージェントを作成する (省略可能)
 
 カスタム ビルド エージェントを作成する場合は、ユニバーサル Windows プラットフォームのツールが必要です。 これらのツールは、Visual Studio に含まれています。 Visual Studio の Community Edition を使用できます。
 
@@ -37,7 +45,7 @@ UWP 単体テストを実行するには、以下の操作を実行する必要�
 
 次に、自動ビルドを設定する方法について説明します。
 
-## 自動ビルドを設定する
+## <a name="set-up-an-automated-build"></a>自動ビルドを設定する
 まず、VSTS で利用可能な既定の UWP ビルドの定義について説明し、さらに高度なビルド タスクを実行できるようにその定義を構成する方法を示します。
 
 **ソース コード リポジトリにプロジェクトの証明書を追加する**
@@ -64,13 +72,13 @@ VSTS で最初のビルド定義を作成するには、[ビルド] タブに移
 - シンボルの発行
 - 成果物の公開: drop
 
-#### NuGet の復元のビルド タスクを構成する
+#### <a name="configure-the-nuget-restore-build-task"></a>NuGet の復元のビルド タスクを構成する
 
 このタスクでは、プロジェクトで定義されている NuGet パッケージを復元します。 一部のパッケージには、NuGet.exe のカスタム バージョンが必要です。 カスタム バージョンを必要とするパッケージを使っている場合、リポジトリでそのバージョンの NuGet.exe を参照し、詳細プロパティの *[NuGet.exe へのパス]* で指定します。
 
 ![既定のビルド定義](images/building-screen4.png)
 
-#### ソリューションのビルドのビルド タスクを構成する
+#### <a name="configure-the-build-solution-build-task"></a>ソリューションのビルドのビルド タスクを構成する
 
 このタスクは、作業フォルダーにあるすべてのソリューションをバイナリにコンパイルし、出力 AppX ファイルを生成します。 このタスクでは、MSBuild の引数を使用します。  これらの引数の値を指定する必要があります。 次の表をガイドとして使用してください。 
 
@@ -97,7 +105,7 @@ $() 構文で定義されたパラメーターは、ビルド定義で定義さ�
 
 すべての定義済みの変数を表示するには、[ビルド変数の使用に関するページ](https://www.visualstudio.com/docs/build/define/variables)をご覧ください。
 
-#### 成果物の公開のビルド タスクを構成する 
+#### <a name="configure-the-publish-artifact-build-task"></a>成果物の公開のビルド タスクを構成する 
 このタスクは、VSTS で生成される成果物を格納します。 成果物は、ビルド結果ページの [成果物] タブで確認できます。 VSTS は、以前に定義した `$Build.ArtifactStagingDirectory)\AppxPackages` フォルダーを使用します。
 
 ![成果物](images/building-screen6.png)
@@ -107,7 +115,7 @@ $() 構文で定義されたパラメーターは、ビルド定義で定義さ�
 
 >注: 既定では、VSTS エージェントによって、生成された最新の appx が維持されます。 現在のビルドの成果物のみを格納する場合は、バイナリ ディレクトリをクリーンアップするようにビルドを構成します。 そのためには、`Build.Clean` という名前の変数を追加し、その変数の値を `all` に設定します。 詳しくは、[リポジトリの指定に関するページ](https://www.visualstudio.com/en-us/docs/build/define/repository#how-can-i-clean-the-repository-in-a-different-way)をご覧ください。
 
-#### 自動ビルドの種類
+#### <a name="the-types-of-automated-builds"></a>自動ビルドの種類
 次に、ビルド定義を使って自動ビルドを作成します。 次の表では、作成できる自動ビルドの各種類について説明します。 
 
 |**ビルドの種類**|**成果物**|**推奨される頻度**|**説明**|
@@ -119,7 +127,7 @@ $() 構文で定義されたパラメーターは、ビルド定義で定義さ�
 1 つずつを構成する方法を見てみましょう。
 
 
-## 継続的インテグレーション (CI) ビルドを設定する 
+## <a name="set-up-a-continuous-integration-ci-build"></a>継続的インテグレーション (CI) ビルドを設定する 
 この種類のビルドは、すばやくコードに関連する問題を診断するのに役立ちます。 通常、1 つのプラットフォーム用にのみ実行され、.NETネイティブ ツール チェーンで処理する必要はありません。 また、CI ビルドを使って、テスト結果のレポートを生成する単体テストを実行できます。  
 
 CI ビルドの一環として UWP 単体テストを実行する場合、ホスト ビルド エージェントではなく、カスタム ビルド エージェントを使用する必要があります。
@@ -127,7 +135,7 @@ CI ビルドの一環として UWP 単体テストを実行する場合、ホス
 >注: 複数のアプリを同じソリューションにバンドルすると、エラーが発生する可能性があります。 このようなエラーを解決する方法については、「[複数のアプリを同じソリューションにバンドルした場合に表示されるエラーを解決する](#bundle-errors)」をご覧ください。 
 
 
-### CI ビルド定義を構成する
+### <a name="configure-a-ci-build-definition"></a>CI ビルド定義を構成する
 既定の UWP テンプレートを使用して、ビルド定義を作成します。 次に、チェックインごとに実行するトリガーを構成します。  
 
 ![CI トリガー](images/building-screen7.png)
@@ -135,14 +143,14 @@ CI ビルドの一環として UWP 単体テストを実行する場合、ホス
 CI ビルドはユーザーに対して展開されないため、CD ビルドとの混同を避けるために、異なるバージョン番号によって管理することをお勧めします。 たとえば、`$(BuildDefinitionName)_0.0.$(DayOfYear)$(Rev:.r)` のように指定します。
 
 
-#### 単体テスト用のカスタム ビルド エージェントを構成する
+#### <a name="configure-a-custom-build-agent-for-unit-testing"></a>単体テスト用のカスタム ビルド エージェントを構成する
 
 1. 最初に、お使いの PC で開発者モードを有効にします。 デバイスを開発用に有効にする方法に関するページをご覧ください。 2. サービスを対話型プロセスとして実行できるように設定します。 Windows でのエージェントの展開に関するページをご覧ください。 3. エージェントに署名証明書を展開します。
 
 そのためには、.cer ファイルをダブルクリックし、[ローカル コンピューター] を選択して、信頼されたユーザーのストアを選択します。
 
 <span id="uwp-unit-tests" />
-### UWP 単体テストを実行するようにビルド定義を構成する
+### <a name="configure-the-build-definition-to-run-uwp-unit-tests"></a>UWP 単体テストを実行するようにビルド定義を構成する
 単体テストを実行するには、Visual Studio テスト ビルド ステップを使用します。
 
 
@@ -157,26 +165,26 @@ $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp.UnitTest\x86\MyUWPApp.Un
 >注: コマンド ラインからローカルに単体テストを実行するには、次のコマンドを使います。
 `"%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe"`
 
-#### テスト結果にアクセスする
+#### <a name="access-test-results"></a>テスト結果にアクセスする
 VSTS では、ビルドの概要ページに、単体テストを実行する各ビルドのテスト結果が表示されます。  そこから、[テスト結果] ページを開いてテスト結果の詳細を確認できます。 
 
 ![テスト結果](images/building-screen9.png)
 
-#### CI ビルドの速度を向上させる
+#### <a name="improve-the-speed-of-a-ci-build"></a>CI ビルドの速度を向上させる
 チェックインの品質を監視する目的にのみ CI ビルドを使用する場合は、ビルド時間を短縮できます。
 
-#### CI ビルドの速度を向上させるには
-1.  1 つのプラットフォーム向けにのみビルドします。
-2.  BuildPlatform 変数を編集して、x86 のみを使用します。 ![CI を構成する](images/building-screen10.png) 
-3.  ビルド ステップで、[MSBuild 引数] プロパティに「/p:AppxBundle=Never」を追加し、[プラットフォーム] プロパティを設定します。 ![プラットフォームを構成する](images/building-screen11.png)
-4.  単体テスト プロジェクトで、.NET Native を無効にします。 
+#### <a name="to-improve-the-speed-of-a-ci-build"></a>CI ビルドの速度を向上させるには
+1.    1 つのプラットフォーム向けにのみビルドします。
+2.    BuildPlatform 変数を編集して、x86 のみを使用します。 ![CI を構成する](images/building-screen10.png) 
+3.    ビルド ステップで、[MSBuild 引数] プロパティに「/p:AppxBundle=Never」を追加し、[プラットフォーム] プロパティを設定します。 ![プラットフォームを構成する](images/building-screen11.png)
+4.    単体テスト プロジェクトで、.NET Native を無効にします。 
 
 そのためには、プロジェクト ファイルを開き、プロジェクトのプロパティで、`UseDotNetNativeToolchain` プロパティを `false` に設定します。
 
 >注:  .NET Native ツール チェーンは依然としてワークフローの重要な部分であるため、リリース ビルドをテストするにはこのツール チェーンを使用する必要があります。 
 
 <span id="bundle-errors" />
-#### 複数のアプリを同じソリューションにバンドルした場合に表示されるエラーを解決する 
+#### <a name="address-errors-that-appear-when-you-bundle-more-than-one-app-in-the-same-solution"></a>複数のアプリを同じソリューションにバンドルした場合に表示されるエラーを解決する 
 ソリューションに複数の UWP プロジェクトを追加し、バンドルを作成しようとすると、次のようなエラーが表示される場合があります。 
 
 ```
@@ -192,11 +200,11 @@ MakeAppx(0,0): Error : Error info: error 80080204: The package with file name "A
 
 その後、ビルド ステップから MSBuild の `AppxBundle` 引数を削除します。
 
-## サイドロード用の継続的配置ビルドの設定
+## <a name="set-up-a-continuous-deployment-build-for-sideloading"></a>サイドロード用の継続的配置ビルドの設定
 この種類のビルドが完了したら、ユーザーは、ビルド結果ページの [成果物] セクションから appxbundle ファイルをダウンロードできます。 より完全な配布を作成することでアプリのベータ テストを行う場合は、HockeyApp サービスを使用できます。 このサービスは、ベータ テスト、ユーザー分析、クラッシュ診断用の高度な機能を提供します。
 
 
-### ビルドにバージョン番号を適用する
+### <a name="applying-version-numbers-to-your-builds"></a>ビルドにバージョン番号を適用する
 
 マニフェスト ファイルには、アプリのバージョン番号が含まれています。  バージョン番号を変更するには、ソース コントロール リポジトリ内のマニフェスト ファイルを更新します。 アプリのバージョン番号を更新するもう 1 つの方法は、VSTS によって生成されるビルド番号を使用し、アプリをコンパイルする直前にアプリ マニフェストを変更する方法です。 ソース コード リポジトリにはこれらの変更をコミットしないでください。
 
@@ -226,7 +234,7 @@ CI_MyUWPApp_1.1.2501.0
 `$(AppxVersion)` 変数にバージョン番号が含まれています。 この番号を他のビルド ステップで使用できます。 
 
 
-#### 省略可能: HockeyApp と統合する
+#### <a name="optional-integrate-with-hockeyapp"></a>省略可能: HockeyApp と統合する
 まず、Visual Studio 拡張機能 [HockeyApp](https://marketplace.visualstudio.com/items?itemName=ms.hockeyapp) をインストールします。 
 
 >注: VSTS 管理者としてこの拡張機能をインストールする必要があります。 
@@ -252,7 +260,7 @@ $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUW
 
 サイドロードされたパッケージをインストールして実行する手順については、このガイドで[後述します](#sideloading-best-practices)。 
 
-## ストアにパッケージを提出する継続的配置ビルドを設定する 
+## <a name="set-up-a-continuous-deployment-build-that-submits-a-package-to-the-store"></a>ストアにパッケージを提出する継続的配置ビルドを設定する 
 
 ストア提出パッケージを生成するには、Visual Studio のストア関連付けウィザードを使用してストアにアプリを関連付けます。
 
@@ -271,7 +279,7 @@ $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUW
 これにより、ストアに提出できる appxupload ファイルが生成されます。
 
 
-#### ストアへの自動提出を構成する
+#### <a name="configure-automatic-store-submission"></a>ストアへの自動提出を構成する
 
 Visual Studio Team Services の Windows ストア用の拡張機能を使用してストア API と統合し、appxupload パッケージをストアに送信します。
 
@@ -290,16 +298,16 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 >注:  このビルドは手動でアクティブ化する必要があります。 これを使用して既存のアプリを更新することはできますが、ストアへの最初の提出に使用することはできません。 詳しくは、「[Windows ストア サービスを使用した申請の作成と管理](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services)」をご覧ください。
 
-## ベスト プラクティス
+## <a name="best-practices"></a>ベスト プラクティス
 
 <span id="sideloading-best-practices"/>
-### アプリのサイドロードのベスト プラクティス
+### <a name="best-practices-for-sideloading-apps"></a>アプリのサイドロードのベスト プラクティス
 
 ストアに公開せずに、アプリを配布する場合は、直接デバイスにアプリをサイドロードできます。ただし、それらのデバイスは、アプリ パッケージの署名に使用された証明書を信頼している必要があります。 
 
 `Add-AppDevPackage.ps1` PowerShell スクリプトを使用してアプリをインストールします。 このスクリプトは、ローカル コンピューターの信頼されたルート証明書セクションに証明書を追加し、appx ファイルをインストールまたは更新します。
 
-#### Windows 10 Anniversary Update でのアプリのサイドロード
+#### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>Windows 10 Anniversary Update でのアプリのサイドロード
 Windows 10 Anniversary Update では、appxbundle ファイルをダブルクリックし、ダイアログ ボックスで [インストール] ボタンを選択してアプリをインストールできます。 
 
 
@@ -310,11 +318,11 @@ Windows 10 Anniversary Update では、appxbundle ファイルをダブルクリ
 VSTS や HockeyApp などの Web サイトから appx パッケージを配布する場合は、お使いのブラウザーで信頼済みサイトの一覧にそのサイトを追加する必要があります。 そうしないと、Windows は、ファイルがロックされているものとしてマークします。 
 
 <span id="certificates-best-practices"/>
-### 署名証明書のベスト プラクティス 
+### <a name="best-practices-for-signing-certificates"></a>署名証明書のベスト プラクティス 
 Visual Studio では、各プロジェクト用の証明書が生成されます。 これにより、有効な証明書の整理された一覧を維持することは困難です。 複数のアプリを作成することを計画している場合は、すべてのアプリに署名するための単一の証明書を作成できます。 その後、その証明書を信頼している各デバイスでは、別の証明書をインストールしなくても、アプリをサイドロードすることができます。 詳しくは、[アプリ パッケージの署名証明書を作成する方法に関するページ](https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx)をご覧ください。
 
 
-#### 署名証明書を作成する
+#### <a name="create-a-signing-certificate"></a>署名証明書を作成する
 証明書を作成するには、[MakeCert.exe](https://msdn.microsoft.com/en-us/library/windows/desktop/ff548309(%09v=vs.85).aspx) ツールを使用します。 次の例では、MakeCert.exe ツールを使って証明書を作成します。
 
 ```
@@ -333,7 +341,7 @@ MakeCert /n publisherName /r /h 0 /eku "1.3.6.1.5.5.7.3.3,1.3.6.1.4.1.311.10.3.1
 
 >注: ユーザーによって信頼済みのエンタープライズ証明書を使用することもできます。
 
-#### UWP アプリに署名する
+#### <a name="sign-your-uwp-app"></a>UWP アプリに署名する
 Visual Studio と MSBuild は、アプリの署名に使う証明書を管理するためのさまざまなオプションを提供します。
 
 そのオプションの 1 つは、ソリューションに証明書と共に秘密キー (通常、.PFX ファイルの形式) を含めて、プロジェクト ファイルで pfx を参照することです。 マニフェスト エディターの [パッケージ] タブを使ってこれを管理できます。
@@ -343,21 +351,16 @@ Visual Studio と MSBuild は、アプリの署名に使う証明書を管理す
 
 もう 1 つのオプションは、ビルド コンピューター (現在のユーザー/個人) に証明書をインストールし、[証明書ストアから選択] オプションを使用することです。 これによって、プロジェクト ファイル内で証明書の拇印が指定されるため、プロジェクトのビルドに使用されるすべてのコンピューターに証明書をインストールする必要があります。
 
-#### ターゲット デバイスで署名証明書を信頼する
+#### <a name="trust-the-signing-certificate-in-the-target-devices"></a>ターゲット デバイスで署名証明書を信頼する
 ターゲット デバイスでは、アプリをインストールする前に、証明書を信頼する必要があります。 
 
 ローカル コンピューターの証明書ストアの信頼されたユーザーまたは信頼のルートの場所に証明書の公開キーを登録します。
 
 証明書を登録する最も簡単な方法は、.cer ファイルをダブルクリックし、ウィザードの手順に従って、ローカル コンピューターの信頼されたユーザー ストアに証明書を保存することです。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 * [Windows 用の .NETアプリを構築する](https://www.visualstudio.com/en-us/docs/build/get-started/dot-net) 
 * [UWP アプリのパッケージ化](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
 * [Windows 10 での LOB アプリのサイドローディング](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
 * [アプリ パッケージの署名証明書を作成する方法](https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

@@ -3,17 +3,25 @@ author: awkoren
 Description: "手動で Windows デスクトップ アプリケーション (Win32、WPF、Windows フォームなど) をユニバーサル Windows プラットフォーム (UWP) アプリに変換する方法を示します。"
 Search.Product: eADQiWindows 10XVcnh
 title: "手動で Windows デスクトップ アプリケーションをユニバーサル Windows プラットフォーム (UWP) アプリに変換する"
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 translationtype: Human Translation
-ms.sourcegitcommit: b612b2c94de79f48a375ae3469c35dee6ce3939d
-ms.openlocfilehash: 73f30d564fcec1b748b4d59ff545e25b62b1c719
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 345296a3fa9faeb8daa8e03fbb633863380d2424
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# <a name="manually-convert-your-app-to-uwp-using-the-desktop-bridge"></a>Desktop Bridge を使って手動でアプリを UWP アプリに変換する
+# <a name="manually-convert-your-app-to-uwp-using-the-desktop-bridge"></a>デスクトップ ブリッジを使って手動でアプリを UWP アプリに変換する
 
 [Desktop App Converter (DAC)](desktop-to-uwp-run-desktop-app-converter.md) を使用すると簡単な操作で自動的に変換されるため、インストーラーの処理について不明確な点がある場合に便利です。 ただし、アプリが Xcopy を使用してインストールされる場合や、アプリのインストーラーがシステムに加える変更について詳しい知識がある場合は、アプリ パッケージとマニフェストを手動で作成することもできます。 ここでは、パッケージを手動で作成する手順を紹介します。 また、DAC ではプレートなしのアセットをアプリに追加することはできませんが、これを手動で実行する方法についても説明します。 
 
-手順は次のとおりです。
+ここでは、手動で変換する方法について説明します。 .NET アプリがあり、Visual Studio を使用している場合は、代わりに、「[Visual Studio による .NET デスクトップ アプリ用のデスクトップ ブリッジ パッケージ ガイド](desktop-to-uwp-packaging-dot-net.md)」をご覧ください。  
 
 ## <a name="create-a-manifest-by-hand"></a>マニフェストを手動で作成する
 
@@ -107,17 +115,10 @@ MakeCert.exe を実行したときにパスワードの入力を求められた�
 
 2. 各 44 x 44 画像のコピーを同じフォルダーに作成し、ファイル名の末尾に *.targetsize-44_altform-unplated* を追加します。 これにより、同じ画像で異なる名前のアイコンが、2 つずつフォルダーに保存されます。 たとえばプロセスを完了すると、assets フォルダーに *MYAPP_44x44.png* と *MYAPP_44x44.targetsize-44_altform-unplated.png* ができます (注: 前者は、VisualElements 属性 *Square44x44Logo* の下の appxmanifest で参照されるアイコン)。 
 
-3.  AppXManifest で、作業対象のすべてのアイコンの BackgroundColor を透明に設定します。 この属性は、各アプリケーションの VisualElements の下にあります。
+3.    AppXManifest で、作業対象のすべてのアイコンの BackgroundColor を透明に設定します。 この属性は、各アプリケーションの VisualElements の下にあります。
 
-4.  CMD を開き、パッケージのルート フォルダーにディレクトリを変更した後、コマンド ```makepri createconfig /cf priconfig.xml /dq en-US``` を実行して priconfig.xml ファイルを作成します。
+4.    CMD を開き、パッケージのルート フォルダーにディレクトリを変更した後、コマンド ```makepri createconfig /cf priconfig.xml /dq en-US``` を実行して priconfig.xml ファイルを作成します。
 
-5.  CMD を使い、ディレクトリはパッケージのルート フォルダーのまま、コマンド ```makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``` を使って resources.pri ファイルを作成します。 たとえば、アプリのコマンドは、```makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``` のようになります。 
+5.    CMD を使い、ディレクトリはパッケージのルート フォルダーのまま、コマンド ```makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``` を使って resources.pri ファイルを作成します。 たとえば、アプリのコマンドは、```makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``` のようになります。 
 
-6.  次の手順の説明に従って AppX をパッケージ化し、結果を確認します。
-
-
-
-
-<!--HONumber=Dec16_HO1-->
-
-
+6.    次の手順の説明に従って AppX をパッケージ化し、結果を確認します。

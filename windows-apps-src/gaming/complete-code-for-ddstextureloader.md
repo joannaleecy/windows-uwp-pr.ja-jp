@@ -3,16 +3,23 @@ author: mtoepke
 title: "DDSTextureLoader のコード一式"
 description: "メモリから DDS テクスチャを読み込むクラスとメソッドのコード一式です。"
 ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、ゲーム、DDSTextureLoader"
 translationtype: Human Translation
-ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
-ms.openlocfilehash: edcddb162d58b5f05248c7cd94b6079207e4a318
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7daf10ad577b2b67c6ca5554f6555deb89f16229
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# DDSTextureLoader のコード一式
+# <a name="complete-code-for-ddstextureloader"></a>DDSTextureLoader のコード一式
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 メモリから DDS テクスチャを読み込むクラスとメソッドのコード一式です。
 
@@ -23,27 +30,27 @@ ms.openlocfilehash: edcddb162d58b5f05248c7cd94b6079207e4a318
 -   [コードの表示 (C++)](#view-the-code-c)
 
 
-## ダウンロード場所
+## <a name="download-location"></a>ダウンロード場所
 
 
 このサンプルはダウンロードできません。
 
-## テクノロジ
+## <a name="technologies"></a>テクノロジ
 
 **プログラミング言語** - C++    
 **プログラミング モデル** - Windows ランタイム
 
-## 要件
+## <a name="requirements"></a>要件
 
 **サポートされている最小のクライアント** - Windows 10                               
 **サポートされている最小のサーバー** - Windows Server 2016 Technical Preview
 
 
 
-## コードの表示 (C++)
+## <a name="view-the-code-c"></a>コードの表示 (C++)
 
 
-## DDSTextureLoader.h
+## <a name="ddstextureloaderh"></a>DDSTextureLoader.h
 
 
 ```cpp
@@ -76,7 +83,7 @@ void CreateDDSTextureFromMemory(
     );
 ```
 
-## DDSTextureLoader.cpp
+## <a name="ddstextureloadercpp"></a>DDSTextureLoader.cpp
 
 
 ```cpp
@@ -1222,10 +1229,5 @@ void CreateDDSTextureFromMemory(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

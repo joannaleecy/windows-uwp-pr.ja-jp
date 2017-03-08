@@ -2,28 +2,42 @@
 author: mcleanbyron
 description: "サポートされている最新の Microsoft Advertising ライブラリを使用し、アプリで引き続きバナー広告を受信できるように、アプリを更新する方法について説明します。"
 title: "最新の Microsoft Advertising ライブラリを使用するようにアプリを更新する"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 広告, 宣伝, AdControl, AdMediatorControl, 移行"
+ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 translationtype: Human Translation
-ms.sourcegitcommit: 2b5dbf872dd7aad48373f6a6df3dffbcbaee8090
-ms.openlocfilehash: 5333c3f8ab834a4646c63499565ef28a634f850d
-
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 3cdb1f41fda7bd4e4af1ce9e5f8fb4396da53f63
+ms.lasthandoff: 02/08/2017
 
 ---
 
 # <a name="update-your-app-to-the-latest-microsoft-advertising-libraries"></a>最新の Microsoft Advertising ライブラリを使用するようにアプリを更新する
 
-2017 年 1 月から、以前の Advertising SDK リリースを使用しているアプリでは、Microsoft からバナー広告が提供されません。 **AdControl** または **AdMediatorControl** を使用してバナーを表示する既存アプリ (ストアに公開済みまたは開発中) がある場合に、2017 年 1 月以降も引き続きアプリでバナー広告を受信するには、最新の Advertising SDK を使用できるようにアプリの更新が必要になることがあります。 ここに記載されている手順に従って、この変更による影響をアプリが受けるかどうかを判断し、必要であればアプリの更新方法を確認してください。
+**AdControl** または **AdMediatorControl** を使ってアプリ内に Microsoft Advertising のバナー広告を表示する場合、次の SDK だけがサポートされます。
 
-この変更による影響を受けるアプリで、最新の Advertising SDK を使用できるように更新を行わなかった場合、2017 年 1 月以降の動作が次のようになります。
+* [Microsoft Store Services SDK](http://aka.ms/store-services-sdk) (UWP アプリ向け)
+* [Windows および Windows Phone 8.x 用 Microsoft Advertising SDK](http://aka.ms/store-8-sdk) (Windows 8.1 および Windows Phone 8.x アプリ向け)
 
-* アプリ内の **AdControl** コントロールや **AdMediatorControl** コントロールにはバナー広告が提供されず、これらのコントロールから広告収入を得ることができなくなります。
+これらの SDK が提供される以前には、Windows アプリと Windows Phone アプリ向けに、いくつかの古い広告 SDK がリリースされていました。 このような以前の広告 SDK リリースはサポートされなくなりました。 今後、以前の SDK を使っているアプリへのバナー広告の提供は停止される予定です。
+
+**AdControl** または **AdMediatorControl** を使ってバナー広告を表示する既存のアプリ (ストアに公開済みまたは開発中) がある場合、今後も引き続きアプリでバナー広告を受信するには、ターゲット プラットフォーム向けの最新の Advertising SDK を使うようにアプリの更新が必要になることがあります。 ここに記載されている手順に従って、この変更による影響をアプリが受けるかどうかを判断し、必要であればアプリの更新方法を確認してください。
+
+この変更の影響を受けるアプリでは、最新の Advertising SDK を使うようにアプリを更新しないと、サポート対象外の広告 SDK リリースを使用しているアプリへのバナー広告の提供が停止されたときに、動作が次のように変更されます。
+
+* アプリ内の **AdControl** コントロールや **AdMediatorControl** コントロールにバナー広告が提供されず、これらのコントロールから広告収入を得ることができなくなります。
 
 * アプリ内の **AdControl** または **AdMediatorControl** から新しい広告が要求されると、コントロールの **ErrorOccurred** イベントが発生し、イベント引数の **ErrorCode** プロパティに **NoAdAvailable** という値が設定されます。
 
-この変更に関する追加のコンテキストを提供できるように、Interactive Advertising Bureau (IAB) の [Mobile Rich-media Ad Interface Definitions (MRAID) 1.0 仕様](http://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf)を通じて HTML5 リッチ メディアを処理する機能を含む最小限の機能に対応していない、以前の Advertising SDK リリースのサポートが廃止されます。 多くの広告主様がこれらの機能を必要とされているため、Microsoft ではこの変更を行うことで、より魅力的なアプリのエコシステムを広告主様に提供し、開発者様の収益アップを図ります。
+この変更に関する追加のコンテキストを提供するために、最小限の機能セットに対応していない以前の広告 SDK リリースはサポートされなくなりました。必要な機能には、Interactive Advertising Bureau (IAB) の [Mobile Rich-media Ad Interface Definitions (MRAID) 1.0 仕様](http://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf)を通じて HTML5 リッチ メディアを処理する機能などが含まれます。 多くの広告主様がこれらの機能を必要とされているため、Microsoft ではこの変更を行うことで、より魅力的なアプリのエコシステムを広告主様に提供し、開発者様の収益アップを図ります。
 
 問題が発生した場合やサポートが必要な場合は、[サポートにお問い合わせください](http://go.microsoft.com/fwlink/?LinkId=393643)。
 
->**注:**&nbsp;&nbsp;[Microsoft Store Services SDK](http://aka.ms/store-services-sdk) (UWP アプリ用) または [Windows および Windows Phone 8.x 用の Microsoft Advertising SDK](http://aka.ms/store-8-sdk) (Windows 8.1 アプリおよび Windows Phone 8.x アプリ用) を使用できるようにアプリを更新済みの場合、アプリでは既に最新の Advertising SDK が使用されているため、アプリをさらに変更する必要はありません。
+>**注:**&nbsp;&nbsp;アプリで既に [Microsoft Store Services SDK](http://aka.ms/store-services-sdk) (UWP アプリ向け) または [Windows および Windows Phone 8.x 用 Microsoft Advertising SDK](http://aka.ms/store-8-sdk) (Windows 8.1 アプリおよび Windows Phone 8.x アプリ向け) を使っている場合、またはこれらの SDK のいずれかを使うようにアプリを更新済みである場合は、利用可能な最新の SDK が既に使われているため、それ以上の変更をアプリに加える必要はありません。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -123,13 +137,13 @@ ms.openlocfilehash: 5333c3f8ab834a4646c63499565ef28a634f850d
 
 **Windows 8.0 アプリ**
 
-* Windows 8.0 をターゲットとするアプリには、2017 年 1 月以降、バナー広告は提供されません。 インプレッション数が失われないように、Windows 10 をターゲットとする UWP アプリにプロジェクトを変換することをお勧めします。 現在、ほとんどの Windows 8.0 アプリ トラフィックが Windows 10 デバイスで送受信されています。
+* Windows 8.0 をターゲットとするアプリへのバナー広告の提供は終了しました。 インプレッション数が失われないように、Windows 10 をターゲットとする UWP アプリにプロジェクトを変換することをお勧めします。 現在、ほとんどの Windows 8.0 アプリのトラフィックは Windows 10 デバイスで送受信されています。
 
 <span/>
 
 **Windows Phone 7.x アプリ**
 
-* 2017 年 1 月以降、Windows Phone 7.x をターゲットとするアプリにはバナー広告が提供されません。 インプレッション数が失われないように、プロジェクトを Windows Phone 8.1 アプリに変換するか、Windows 10 をターゲットとする UWP アプリに変換することをお勧めします。 現在、ほとんどの Windows 7.x アプリ トラフィックが Windows Phone 8.1 または Windows 10 のデバイスで送受信されています。
+* Windows Phone 7.x をターゲットとするアプリへのバナー広告の提供は終了しました。 インプレッション数が失われないように、プロジェクトを Windows Phone 8.1 アプリに変換するか、Windows 10 をターゲットとする UWP アプリに変換することをお勧めします。 現在、ほとんどの Windows 7.x アプリ トラフィックが Windows Phone 8.1 または Windows 10 のデバイスで送受信されています。
 
 <span/>
 
@@ -167,9 +181,9 @@ ms.openlocfilehash: 5333c3f8ab834a4646c63499565ef28a634f850d
 
   >**注:**&nbsp;&nbsp;開発用コンピューターで Visual Studio が開いている場合は、閉じてから、以下の手順を実行します。
 
-1.  開発用コンピューターから、以前のバージョンの Microsoft Advertising SDK および Ad Mediator SDK をアンインストールします。
+1.    開発用コンピューターから、以前のバージョンの Microsoft Advertising SDK および Ad Mediator SDK をアンインストールします。
 
-2.  **コマンド プロンプト** ウィンドウを開き、次のコマンドを実行することによって、Visual Studio と共にインストールされている以前の SDK のバージョンをすべて削除します。これらのバージョンは、コンピューターにインストールされているプログラムの一覧には表示されない可能性があります。
+2.    **コマンド プロンプト** ウィンドウを開き、次のコマンドを実行することによって、Visual Studio と共にインストールされている以前の SDK のバージョンをすべて削除します。これらのバージョンは、コンピューターにインストールされているプログラムの一覧には表示されない可能性があります。
 
   > [!div class="tabbedCodeSnippets"]
   ```syntax
@@ -178,7 +192,7 @@ ms.openlocfilehash: 5333c3f8ab834a4646c63499565ef28a634f850d
   MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
   ```
 
-3.  アプリに対応する最新の SDK をインストールします。
+3.    アプリに対応する最新の SDK をインストールします。
   * Windows 10 の UWP アプリの場合は、[Microsoft Store Services SDK](http://aka.ms/store-services-sdk) をインストールします。
   * 以前の OS バージョンをターゲットとするアプリの場合は、[Windows および Windows Phone 8.x の Microsoft Advertising SDK](http://aka.ms/store-8-sdk) をインストールします。
 
@@ -238,16 +252,11 @@ ms.openlocfilehash: 5333c3f8ab834a4646c63499565ef28a634f850d
 
 アプリをテストし、バナーが正常に提供されることを確認します。
 
-アプリの前のバージョンが既にストアに公開されている場合は、Windows デベロッパー センターのダッシュボードで、更新されたアプリの[申請を新しく作成](https://msdns.microsoft.com/windows/uwp/publish/app-submissions)して、アプリを再公開します。
+アプリの前のバージョンが既にストアに公開されている場合は、Windows デベロッパー センターのダッシュボードで、更新されたアプリの[申請を新しく作成](../publish/app-submissions.md)して、アプリを再公開します。
 
 
 
 
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

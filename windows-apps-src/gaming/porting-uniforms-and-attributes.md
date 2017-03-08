@@ -3,13 +3,20 @@ author: mtoepke
 title: "OpenGL ES 2.0 のバッファー、uniform、頂点 attribute と Direct3D の比較"
 description: "OpenGL ES 2.0 から Direct3D 11 に移植するプロセスでは、アプリとシェーダー プログラムの間でデータを受け渡すための構文と API の動作を変更する必要があります。"
 ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, OpenGL, Direct3D, バッファー, uniform, 頂点属性"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d3a1c0d3a37f24bdf4dfec1118aa206dfd6b9ac1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 43b568b046246931e24ded5f40f56d3f24d1b05a
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# OpenGL ES 2.0 のバッファー、uniform、頂点 attribute と Direct3D の比較
+# <a name="compare-opengl-es-20-buffers-uniforms-and-vertex-attributes-to-direct3d"></a>OpenGL ES 2.0 のバッファー、uniform、頂点 attribute と Direct3D の比較
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -37,7 +44,7 @@ OpenGL ES 2.0 では、4 つの方法で (定数データは uniform として�
 
  
 
-## バッファーの移植
+## <a name="port-buffers"></a>バッファーの移植
 
 
 OpenGL ES 2.0 では、どの種類のバッファーでも、作成してバインドするプロセスは、通常、次のパターンに従います。
@@ -119,7 +126,7 @@ m_d3dDevice->CreateRenderTargetView(
   &m_d3dRenderTargetViewWin);
 ```
 
-## Direct3D の定数バッファーへの uniform と uniform バッファー オブジェクトの変更
+## <a name="change-uniforms-and-uniform-buffer-objects-to-direct3d-constant-buffers"></a>Direct3D の定数バッファーへの uniform と uniform バッファー オブジェクトの変更
 
 
 OpenGL ES 2.0 では、uniform は個々のシェーダー プログラムに定数データを渡すためのメカニズムです。 このデータをシェーダーが変更することはできません。
@@ -184,7 +191,7 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 
 定数バッファーごとにレジスタを宣言する必要があります。 Direct3D 機能レベルによって、利用できるレジスタの最大数が異なります。そのため、ターゲットとする最も低い機能レベルの最大数を超えないようにしてください。
 
-## Direct3D の入力レイアウトと HLSL セマンティクスへの頂点 attribute の移植
+## <a name="port-vertex-attributes-to-a-direct3d-input-layouts-and-hlsl-semantics"></a>Direct3D の入力レイアウトと HLSL セマンティクスへの頂点 attribute の移植
 
 
 頂点データはシェーダー パイプラインで変更できるため、OpenGL ES 2.0 では、頂点データを "uniform" ではなく "attribute" として指定する必要があります  (これは最近のバージョンの OpenGL と GLSL で変更されました)。頂点の位置、法線、接線、色値などの頂点固有のデータは、attribute 値としてシェーダーに渡します。 これらの attribute 値は、頂点データの各要素の特定のオフセットに対応しています。たとえば、1 つ目の attribute は個々の頂点の位置コンポーネントを指し、2 つ目は法線を指します。
@@ -298,10 +305,5 @@ struct VertexShaderInput
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

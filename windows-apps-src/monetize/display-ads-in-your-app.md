@@ -3,18 +3,25 @@ author: mcleanbyron
 ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
 description: "Microsoft Store Services SDK は、アプリに広告を表示して収益を得るためのいくつかの方法を提供します。"
 title: "アプリでの広告の表示"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Advertising, バナー、スポット広告"
 translationtype: Human Translation
-ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
-ms.openlocfilehash: 35dfe2864958a15cf01133d6017b7dd03f382e4a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b6343d8a011a3e62a3b714c7dab280c9d9a8f81d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アプリでの広告の表示
+# <a name="display-ads-in-your-app"></a>アプリでの広告の表示
 
 
 ユニバーサル Windows プラットフォーム (UWP) と Windows ストアは、アプリに広告を表示して収益を得るためのいくつかの方法を提供します。
 
-## Microsoft Advertising ライブラリを使用したバナーおよびビデオのスポット広告の表示
+## <a name="display-banner-and-video-interstitial-ads-using-the-microsoft-advertising-libraries"></a>Microsoft Advertising ライブラリを使用したバナーおよびビデオのスポット広告の表示
 
 UWP アプリと Windows 8.1 および Windows Phone 8.x 用のアプリに、バナーやビデオのスポット広告を含めることにより、収益を増やすことができます。 広告は、PC、タブレット、電話用の Windows アプリに表示されます。 Windows デベロッパー センターのダッシュボードの [広告パフォーマンス レポート](../publish/advertising-performance-report.md) を使って、広告のパフォーマンスをリアルタイムで監視できます。
 
@@ -29,7 +36,7 @@ UWP アプリと Windows 8.1 および Windows Phone 8.x 用のアプリに、�
 | XAML/C# アプリでバナー広告を表示します。     | 「[XAML および .NET の AdControl](adcontrol-in-xaml-and--net.md)」をご覧ください。        |
 | HTML/JavaScript アプリでバナー広告を表示します。     | 「[HTML 5 および Javascript の AdControl](adcontrol-in-html-5-and-javascript.md)」をご覧ください。        |
 | Windows Phone Silverlight 8.x アプリにバナー広告を表示します。     | 「[Windows Phone Silverlight の AdControl](adcontrol-in-windows-phone-silverlight.md)」をご覧ください。        |
-| アプリにビデオのスポット広告を表示します。     | 「[スポット広告](interstitial-ads.md)」をご覧ください。       |
+| アプリにスポット広告を表示します。     | 「[スポット広告](interstitial-ads.md)」をご覧ください。       |
 | JavaScript と HTML を使って記述されたユニバーサル Windows プラットフォーム (UWP) アプリで、ビデオ コンテンツに広告を追加します。   |  「[HTML 5 および JavaScript によるビデオ コンテンツへの広告の追加](add-advertisements-to-video-content.md)」をご覧ください。  |
 | バナーやスポット広告をアプリに追加する方法を説明するサンプル プロジェクトをダウンロードします。     |「[GitHub の広告サンプル](http://aka.ms/githubads)」をご覧ください。       |
 | アプリの [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) エラーに対処します。     | 「[エラー処理](error-handling-with-advertising-libraries.md)」および「[AdControl エラー処理](adcontrol-error-handling.md)」のウォークスルーをご覧ください。       |
@@ -38,14 +45,14 @@ UWP アプリと Windows 8.1 および Windows Phone 8.x 用のアプリに、�
 
                             
 
-## バナー広告での広告仲介の使用 (Windows 8.1 と Windows Phone 8.x)
+## <a name="use-ad-mediation-for-banner-ads-windows-81-and-windows-phone-8x"></a>バナー広告での広告仲介の使用 (Windows 8.1 と Windows Phone 8.x)
 
 Windows 8.1 および Windows Phone 8.x 用アプリで **AdMediatorControl** クラスを使うことで、複数の広告ネットワークからバナー広告を表示して広告の収益を最適化できます。 このコントロールをアプリに追加した後に、Windows デベロッパー センター ダッシュボードで広告仲介の設定を構成すると、選択した広告ネットワークからのバナー広告要求の仲介が行われます。 詳しくは、「[広告仲介を追加して広告収益を最大限に高める](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx)」をご覧ください。
 
 >**注**&nbsp;&nbsp;**AdMediatorControl** クラスを使用した広告の仲介は、Windows 10 用の UWP アプリでは現在サポートされていません。 * サーバー側の広告仲介は、UWP アプリ で間もなく利用可能になる予定です。この場合、バナー広告 (**AdControl**) とビデオ スポット広告 (**InterstitialAd**) には同じ API が使用されます。 UWP アプリ での **AdMediatorControl** から **AdControl** への移行に関するガイダンスについては、「[UWP アプリでAdControlにAdMediatorControlから移行](migrate-from-admediatorcontrol-to-adcontrol.md)」をご覧ください。
 
 <span id="silverlight_support"/>
-## Windows Phone 8.x Silverlight プロジェクト用の広告のサポート
+## <a name="advertising-support-for-windows-phone-8x-silverlight-projects"></a>Windows Phone 8.x Silverlight プロジェクト用の広告のサポート
 
 Windows Phone 8.x Silverlight プロジェクトでのいくつかの開発者シナリオは、サポートされません。 詳しくは、次の表をご覧ください。
 
@@ -54,14 +61,9 @@ Windows Phone 8.x Silverlight プロジェクトでのいくつかの開発者�
 | Windows Phone 8.0 Silverlight     |  Microsoft ユニバーサル広告クライアント SDK または Microsoft Advertising SDK の以前のリリースの **AdControl** または **AdMediatorControl** を使用している既存の Windows Phone 8.0 Silverlight プロジェクトがあり、アプリが既に Windows ストアで公開されている場合、プロジェクトの変更とリビルドを行い、デバイスで変更のデバッグまたはテストを行うことができます。 エミュレーターでのプロジェクトのデバッグまたはテストはサポートされません。  |  サポートされません。  |
 | Windows Phone 8.1 Silverlight    |  以前の SDK の **AdControl** または **AdMediatorControl** を使用している既存の Windows Phone 8.1 Silverlight プロジェクトがある場合、プロジェクトの変更とリビルドを行うことができます。 ただし、アプリをテストまたはデバッグするには、エミュレーターでアプリを実行し、アプリケーション ID と広告ユニット ID に[テスト モードの値](test-mode-values.md)を使用する必要があります。 デバイス上でのアプリのデバッグやテストはサポートされません。  |   新しい Windows Phone 8.1 Silverlight プロジェクトに **AdControl** または **AdMediatorControl** を追加することができます。 ただし、アプリをテストまたはデバッグするには、エミュレーターでアプリを実行し、アプリケーション ID と広告ユニット ID に[テスト モードの値](test-mode-values.md)を使用する必要があります。 デバイス上でのアプリのデバッグやテストはサポートされません。 |
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [Microsoft Store Services SDK](microsoft-store-services-sdk.md)
 * [広告によるアプリの収益の獲得](http://go.microsoft.com/fwlink/p/?LinkId=699559)
 * [広告パフォーマンス レポート](../publish/advertising-performance-report.md)
-
-
-
-<!--HONumber=Sep16_HO2-->
-
 

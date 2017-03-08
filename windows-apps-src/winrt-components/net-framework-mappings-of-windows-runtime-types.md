@@ -3,20 +3,27 @@ author: msatranjr
 title: ".NET Framework での Windows ランタイム型の対応付け"
 description: "次の表は、.NET Framework での、ユニバーサル Windows プラットフォーム (UWP) 型と .NET Framework 型の間の対応付けを示しています。"
 ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 1367664cc4278bb555764cbfdf13ce6653f94920
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ab2c2307376f3fad8cd404f7ddf8056f1ef2e8d3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# .NET Framework での Windows ランタイム型の対応付け
+# <a name="net-framework-mappings-of-windows-runtime-types"></a>.NET Framework での Windows ランタイム型の対応付け
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 次の表は、.NET Framework での、ユニバーサル Windows プラットフォーム (UWP) 型と .NET Framework 型の間の対応付けを示しています。 マネージ コードで記述されたユニバーサル Windows アプリでは、IntelliSense は UWP 型ではなく .NET Framework 型を表示します。 たとえば、Windows ランタイム メソッドが IVector&lt;string&gt; 型のパラメーターを受け取る場合、IntelliSense は IList&lt;string&gt; 型のパラメーターを表示します。 同様に、マネージ コードで記述された Windows ランタイム コンポーネントでは、.NET Framework 型をメンバーのシグネチャ内で使います。 [Windows ランタイム メタデータ エクスポート ツール (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) で Windows ランタイム コンポーネントを生成すると、.NET Framework 型は、対応する UWP 型になります。
 
-## 対応表
+## <a name="mapping-tables"></a>対応表
 
 
 UWP と .NET Framework の両方で同じ名前空間名と型名を持つ型の大部分は、構造体です (または列挙体など、構造体に関連付けられている型)。 UWP では、構造体にはフィールド以外にメンバーがなく、.NET Framework では非表示になるヘルパー型が必要です。 これらの構造体の .NET Framework バージョンには、非表示のヘルパー型の機能を提供するプロパティとメソッドがあります。
@@ -80,12 +87,7 @@ UWP と .NET Framework の両方で同じ名前空間名と型名を持つ型の
 
  
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [C# および Visual Basic での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

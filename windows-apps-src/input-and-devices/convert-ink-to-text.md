@@ -12,8 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 76b012ab4cf737f00fc986c81c88fd48339867fc
-ms.openlocfilehash: c832c3c3626ac5f75eaac4317b6779c410693742
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2b70356f5d28f9884292d816e71838ec4591dad7
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -682,9 +683,4 @@ string str = "Recognition result\n";
 
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

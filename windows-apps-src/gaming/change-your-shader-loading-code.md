@@ -3,16 +3,23 @@ author: mtoepke
 title: "OpenGL ES 2.0 と Direct3D のシェーダー パイプラインの比較"
 description: "概念的には、Direct3D 11 のシェーダー パイプラインは OpenGL ES 2.0 のそれとよく似ています。"
 ms.assetid: 3678a264-e3f9-72d2-be91-f79cd6f7c4ca
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, OpenGL, Direct3D, シェーダー パイプライン"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 144e3374c16118418872f6c473c5f39101fbfce0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 20d02d9b9724c0cfd8120d4d38fa476b9efa3bb3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# OpenGL ES 2.0 と Direct3D のシェーダー パイプラインの比較
+# <a name="compare-the-opengl-es-20-shader-pipeline-to-direct3d"></a>OpenGL ES 2.0 と Direct3D のシェーダー パイプラインの比較
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
 **重要な API**
@@ -23,7 +30,7 @@ ms.openlocfilehash: 144e3374c16118418872f6c473c5f39101fbfce0
 
 概念的には、Direct3D 11 のシェーダー パイプラインは OpenGL ES 2.0 のそれとよく似ています。 ただし、API の設計という点では、シェーダー ステージを作成、管理するための主要コンポーネントは、[**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) と [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) という 2 つのプライマリ インターフェイスに含まれています。 このトピックでは、OpenGL ES 2.0 の一般的なシェーダー パイプライン API パターンが、Direct3D 11 におけるこれらのインターフェイスの何に対応するかを説明します。
 
-## Direct3D 11 のシェーダー パイプラインについて
+## <a name="reviewing-the-direct3d-11-shader-pipeline"></a>Direct3D 11 のシェーダー パイプラインについて
 
 
 シェーダー オブジェクトは [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) や [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) などの [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) インターフェイスのメソッドで作成されます。
@@ -39,7 +46,7 @@ Direct3D 11 グラフィックス パイプラインは、[**ID3D11DeviceContext
 
 (ジオメトリ シェーダー、ハル シェーダー、テッセレーター、ドメイン シェーダーのステージもありますが、OpenGL ES 2.0 には類似するものがないので、ここでは説明しません) これらのステージのメソッドの詳しい一覧については、[**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) と [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) のリファレンス ページをご覧ください。 **ID3D11DeviceContext1** は Direct3D 11 向けに **ID3D11DeviceContext** を拡張したものです。
 
-## シェーダーの作成
+## <a name="creating-a-shader"></a>シェーダーの作成
 
 
 Direct3D では、シェーダー リソースは、コンパイルと読み込みの前に作成されません。このリソースは HLSL が読み込まれたときに作成されます。 そのため、GL\_VERTEX\_SHADER や GL\_FRAGMENT\_SHADER など、特定の型の初期化されたシェーダー リソースを作成する glCreateShader に相当する関数はありません。 Direct3D では、シェーダーは HLSL が [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) や [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) などの特定の関数で読み込まれた後で作成されます。これらの関数は、パラメーターとして型とコンパイルされた HLSL を受け取ります。
@@ -50,7 +57,7 @@ Direct3D では、シェーダー リソースは、コンパイルと読み込�
 
  
 
-## シェーダーのコンパイル
+## <a name="compiling-a-shader"></a>シェーダーのコンパイル
 
 
 Direct3D のシェーダーは、ユニバーサル Windows プラットフォーム (UWP) アプリのコンパイル済みシェーダー オブジェクト (.cso) ファイルとしてプリコンパイルし、いずれかの Windows ランタイム ファイル API を使って読み込む必要があります  (デスクトップ アプリは実行時にテキスト ファイルからのシェーダーや文字列をコンパイルできます)。CSO ファイルは、Microsoft Visual Studio プロジェクトに含まれる任意の .hlsl ファイルから作成され、同じ名前が保持されます。ただし、ファイル拡張子は .cso です。 出荷時に、これらがパッケージに含まれていることを確かめてください。
@@ -62,7 +69,7 @@ Direct3D のシェーダーは、ユニバーサル Windows プラットフォ�
 
  
 
-## シェーダーの読み込み
+## <a name="loading-a-shader"></a>シェーダーの読み込み
 
 
 シェーダーの作成に関するセクションで触れたように、Direct3D 11 では、対応する CSO ファイルがバッファーに読み込まれ、次の表のいずれかのメソッドに渡されたときに、シェーダーを作成します。
@@ -73,7 +80,7 @@ Direct3D のシェーダーは、ユニバーサル Windows プラットフォ�
 
  
 
-## パイプラインの設定
+## <a name="setting-up-the-pipeline"></a>パイプラインの設定
 
 
 OpenGL ES 2.0 には、実行のための複数のシェーダーを含む "シェーダー プログラム" オブジェクトがあります。 個々のシェーダーはシェーダー プログラム オブジェクトにアタッチされます。 ただし、Direct3D 11 では、レンダリング コンテキスト ([**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)) を直接操作して、そのコンテキストでシェーダーを作成します。
@@ -109,7 +116,7 @@ D3D11CreateDevice(
 );
 ```
 
-## ビューポートの設定
+## <a name="setting-the-viewports"></a>ビューポートの設定
 
 
 Direct3D 11 のビューポートの設定は、OpenGL ES 2.0 でのビューポートの設定方法とよく似ています。 Direct3D 11 では、構成済みの [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722) で [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) を呼び出します。
@@ -132,7 +139,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
  
 
-## 頂点シェーダーの構成
+## <a name="configuring-the-vertex-shaders"></a>頂点シェーダーの構成
 
 
 Direct3D 11 の頂点シェーダーの構成は、シェーダーの読み込み時に行われます。 Uniform は [**ID3D11DeviceContext1::VSSetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh446795) を使って定数バッファーとして渡されます。
@@ -145,7 +152,7 @@ Direct3D 11 の頂点シェーダーの構成は、シェーダーの読み込�
 
  
 
-## ピクセル シェーダーの構成
+## <a name="configuring-the-pixel-shaders"></a>ピクセル シェーダーの構成
 
 
 Direct3D 11 のピクセル シェーダーの構成は、シェーダーの読み込み時に行われます。 Uniform は [**ID3D11DeviceContext1::PSSetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh404649) を使って定数バッファーとして渡されます。
@@ -158,7 +165,7 @@ Direct3D 11 のピクセル シェーダーの構成は、シェーダーの読�
 
  
 
-## 最終結果の生成
+## <a name="generating-the-final-results"></a>最終結果の生成
 
 
 パイプラインが完了したら、バック バッファーにシェーダー ステージの結果を描画します。 Direct3D 11 では、このとき、描画コマンドを呼び出して結果をバック バッファーのカラー マップとして出力し、そのバック バッファーをディスプレイに送信します。これは Open GL ES 2.0 と同様です。
@@ -170,7 +177,7 @@ Direct3D 11 のピクセル シェーダーの構成は、シェーダーの読�
 
  
 
-## HLSL への GLSL の移植
+## <a name="porting-glsl-to-hlsl"></a>HLSL への GLSL の移植
 
 
 GLSL と HLSL は、複合型のサポートと全体的な構文以外はそれほど違いません。 最も簡単な移植方法は、一般的な OpenGL ES 2.0 の命令と定義を HLSL の対応する要素にエイリアシングすることです。 グラフィックス インターフェイスでサポートされる HLSL の機能セットを表現するために、Direct3D ではシェーダー モデル バージョンを使います。OpenGL には、HLSL 向けに異なるバージョン仕様があります。 次の表では、他のバージョンの観点から、Direct3D 11 と OpenGL ES 2.0 に対して定義されているシェーダー言語機能セットについて、簡単に示します。
@@ -184,7 +191,7 @@ GLSL と HLSL は、複合型のサポートと全体的な構文以外はそれ
 
 2 つのシェーダー言語の違いと一般的な構文のマッピングについて詳しくは、「[GLSL と HLSL の対応を示すリファレンス](glsl-to-hlsl-reference.md)」をご覧ください。
 
-## HLSL セマンティクスへの OpenGL 組み込みメソッドの移植
+## <a name="porting-the-opengl-intrinsics-to-hlsl-semantics"></a>HLSL セマンティクスへの OpenGL 組み込みメソッドの移植
 
 
 Direct3D 11 HLSL セマンティクスは、uniform や属性名と同様に、アプリとシェーダー プログラムの間で渡される値を識別するために使われる文字列です。 使用できる文字列はさまざまですが、用途を示す文字列 (POSITION、COLOR など) を使うことをお勧めします。 これらのセマンティクスは、定数バッファーまたはバッファー入力レイアウトを構成する際に割り当てます。 類似する値に別のレジスタを使うために、セマンティクスに 0 ～ 7 の範囲の数値を追加できます。 COLOR0、COLOR1、COLOR2 などです。
@@ -246,10 +253,5 @@ Direct3D でのセマンティクスの使用について詳しくは、「[HLSL
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

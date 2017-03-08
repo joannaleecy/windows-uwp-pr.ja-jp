@@ -3,9 +3,16 @@ author: mcleblanc
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: "Windows Device Portal の概要"
 description: "Windows Device Portal で、ネットワーク経由でリモートから、または USB 接続によって、デバイスの構成と管理を行うための方法を説明します。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
-ms.openlocfilehash: 6c697782683bca6671c01aa0941a78bc66fb052a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8dfbdad7604e3aa7fad60ed777d16b4acd56b5ab
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal の概要
@@ -73,21 +80,21 @@ Phone | 開発者モードで有効化する | 80| 443 | http://127.0.0.1:10080
 
 **アプリをインストールするには**
 
-1.  [アプリ パッケージを作成](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx)したら、デバイス上にリモートでインストールできます。 Visual Studio でビルドすると、出力フォルダーが生成されます。
+1.    [アプリ パッケージを作成](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx)したら、デバイス上にリモートでインストールできます。 Visual Studio でビルドすると、出力フォルダーが生成されます。
 
     ![アプリのインストール](images/device-portal/iot-installapp0.png)
-2.  [参照] をクリックして、アプリ パッケージ (.appx) を検索します。
-3.  [参照] をクリックして、証明書ファイル (.cer) を検索します。 (デバイスによっては不要です。)
-4.  依存関係を追加します。 1 つ以上ある場合は、それぞれを個別に追加します。     
-5.  **[Deploy]** (展開) の下の **[Go]** (進む) をクリックします。 
-6.  別のアプリをインストールするには、**[Reset]** (リセット) ボタンをクリックしてフィールドをクリアします。
+2.    [参照] をクリックして、アプリ パッケージ (.appx) を検索します。
+3.    [参照] をクリックして、証明書ファイル (.cer) を検索します。 (デバイスによっては不要です。)
+4.    依存関係を追加します。 1 つ以上ある場合は、それぞれを個別に追加します。     
+5.    **[Deploy]** (展開) の下の **[Go]** (進む) をクリックします。 
+6.    別のアプリをインストールするには、**[Reset]** (リセット) ボタンをクリックしてフィールドをクリアします。
 
 
 **アプリをアンインストールするには**
 
-1.  アプリが実行中でないことを確認します。 
-2.  実行中の場合、[Running apps] に移動してそのアプリを閉じます。 アプリの実行中にアンインストールすると、そのアプリを再インストールしようとするときに問題が発生することがあります。 
-3.  準備ができたら、**[Uninstall]** (アンインストール) をクリックします。
+1.    アプリが実行中でないことを確認します。 
+2.    実行中の場合、[Running apps] に移動してそのアプリを閉じます。 アプリの実行中にアンインストールすると、そのアプリを再インストールしようとするときに問題が発生することがあります。 
+3.    準備ができたら、**[Uninstall]** (アンインストール) をクリックします。
 
 ### <a name="processes"></a>プロセス
 
@@ -197,9 +204,4 @@ DNS-SD レコードでアドバタイズされる HTTP ポートですべての�
 #### <a name="cross-site-websocket-hijacking-cswsh-protection"></a>クロスサイト WebSocket ハイジャック (CSWSH) に対する保護
 
 [CSWSH 攻撃](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html)を防御するために、Device Portal に対して WebSocket 接続を開くすべてのクライアントは、Host ヘッダーと一致する Origin ヘッダーも提供する必要があります。  これにより、Device Portal に対して、要求が Device Portal の UI または有効なクライアント アプリケーションからの要求であることを証明します。  Origin ヘッダーがない場合、要求は拒否されます。 
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

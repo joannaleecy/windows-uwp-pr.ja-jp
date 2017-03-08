@@ -3,9 +3,16 @@ author: drewbatgit
 ms.assetid: 09BA9250-A476-4803-910E-52F0A51704B1
 description: "この記事では、IMediaEncodingProperties インターフェイスを使用して、カメラのプレビュー ストリームとキャプチャした写真/ビデオの解像度およびフレーム レートを設定する方法を説明します。"
 title: "MediaCapture の形式、解像度、およびフレーム レートの設定"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6c3ed4ab773fe821acaee7d5b8c70fdc8770de81
-ms.openlocfilehash: 828cbddd9568bd4e9d0a571880a867afff293e34
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8c8defd41ea1b65ac78d159b52eea926c7252e9e
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -86,10 +93,5 @@ ms.openlocfilehash: 828cbddd9568bd4e9d0a571880a867afff293e34
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

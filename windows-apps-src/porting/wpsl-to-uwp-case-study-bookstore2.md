@@ -3,9 +3,16 @@ author: mcleblanc
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: "このケース スタディは、Bookstore で説明されている情報に基づいて作成されています。ここでは、最初に、グループ化されたデータを LongListSelector に表示する Windows Phone Silverlight アプリについて取り上げます。"
 title: "Windows Phone Silverlight から UWP へのケース スタディ - Bookstore2"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: c85473d8c3267e4f0ccd6018fe5ee349fdf39284
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7fbe63cba4a825641ea96b39c39d5845758051cb
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -299,9 +306,4 @@ Phone アプリを基にして作業を開始したため、この段階のプ�
 ## <a name="conclusion"></a>まとめ
 
 このケース スタディには、前のケース スタディよりも複雑なユーザー インターフェイスが関連しています。 Windows Phone Silverlight の  **LongListSelector** に関するすべての機能や概念などが、**SemanticZoom**、**ListView**、**GridView**、**CollectionViewSource** の形式を使って UWP アプリで利用できることを学習しました。 UWP アプリで命令型コードやマークアップの両方を再利用 (コピーと編集) して、最小および最大の Windows デバイスのフォーム ファクターや、その中間のあらゆるサイズに合わせて調整された機能、UI、および操作を実現する方法について説明しました。
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

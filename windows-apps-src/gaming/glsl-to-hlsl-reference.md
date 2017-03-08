@@ -3,30 +3,37 @@ author: mtoepke
 title: "GLSL と HLSL の対応を示すリファレンス"
 description: "グラフィックス アーキテクチャを OpenGL ES 2.0 から Direct3D 11 に移植してユニバーサル Windows プラットフォーム (UWP) 向けのゲームを作成する際は、OpenGL シェーダー言語 (GLSL) コードを Microsoft 上位レベル シェーダー言語 (HLSL) コードに移植します。"
 ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, GLSL, HLSL, OpenGL, DirectX, シェーダー"
 translationtype: Human Translation
-ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: 1be2c49dc88dcaecfa1d349f9dda7a9cc0619b92
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f2d5f5a363abf026e865ed07221ba9075a6a67e7
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# GLSL と HLSL の対応を示すリファレンス
+# <a name="glsl-to-hlsl-reference"></a>GLSL と HLSL の対応を示すリファレンス
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
 [グラフィックス アーキテクチャを OpenGL ES 2.0 から Direct3D 11 に移植して](port-from-opengl-es-2-0-to-directx-11-1.md)ユニバーサル Windows プラットフォーム (UWP) 向けのゲームを作成する際は、OpenGL シェーダー言語 (GLSL) コードを Microsoft 上位レベル シェーダー言語 (HLSL) コードに移植します。 ここで参照される GLSL は OpenGL ES 2.0 とは互換性がありません。HLSL は Direct3D 11 と互換性があります。 Direct3D 11 と以前のバージョンの Direct3D の違いについては、「[機能のマッピング](feature-mapping.md)」をご覧ください。
 
--   [OpenGL ES 2.0 と Direct3D 11 の比較](#compare)
--   [HLSL への GLSL 変数の移植](#variables)
--   [HLSL への GLSL の型の移植](#types)
--   [HLSL への GLSL の定義済みグローバル変数の移植](#porting_glsl_pre-defined_global_variables_to_hlsl)
--   [HLSL への GLSL 変数の移植の例](#example1)
-    -   [GLSL での uniform、attribute、および varying](#uniform___attribute__and_varying_in_glsl)
-    -   [HLSL での定数バッファーとデータ転送](#constant_buffers_and_data_transfers_in_hlsl)
--   [Direct3D への OpenGL のレンダリング コードの移植例](#example2)
--   [関連トピック](#related_topics)
+-   [OpenGL ES 2.0 と Direct3D 11 の比較](#comparing-opengl-es-20-with-direct3d-11)
+-   [HLSL への GLSL 変数の移植](#porting-glsl-variables-to-hlsl)
+-   [HLSL への GLSL の型の移植](#porting-glsl-types-to-hlsl)
+-   [HLSL への GLSL の定義済みグローバル変数の移植](#porting-glsl-pre-defined-global-variables-to-hlsl)
+-   [HLSL への GLSL 変数の移植の例](#examples-of-porting-glsl-variables-to-hlsl)
+    -   [GLSL での uniform、attribute、および varying](#uniform-attribute-and-varying-in-glsl)
+    -   [HLSL での定数バッファーとデータ転送](#constant-buffers-and-data-transfers-in-hlsl)
+-   [Direct3D への OpenGL のレンダリング コードの移植例](#examples-of-porting-opengl-rendering-code-to-direct3d)
+-   [関連トピック](#related-topics)
 
-## OpenGL ES 2.0 と Direct3D 11 の比較
+## <a name="comparing-opengl-es-20-with-direct3d-11"></a>OpenGL ES 2.0 と Direct3D 11 の比較
 
 
 OpenGL ES 2.0 と Direct3D 11 には多くの類似点があります。 どちらも、類似したレンダリング パイプラインとグラフィックス機能があります。 ただし、Direct3D 11 はレンダリングの実装と API であり、仕様ではありません。OpenGL ES 2.0 はレンダリングの仕様と API であり、実装ではありません。 Direct3D 11 と OpenGL ES 2.0 は通常、次の点で異なります。
@@ -69,11 +76,11 @@ GLSL と HLSL は一般に次の点で異なります。
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left">[変数](#variables)ストレージ修飾子</td>
+<td align="left">[変数](#porting-glsl-variables-to-hlsl)ストレージ修飾子</td>
 <td align="left">入力レイアウトの宣言による定数バッファーとデータ転送</td>
 </tr>
 <tr class="even">
-<td align="left"><p>[型](#types)</p>
+<td align="left"><p>[型](#porting-glsl-types-to-hlsl)</p>
 <p>一般的なベクター型: vec2/3/4</p>
 <p>lowp、mediump、highp</p></td>
 <td align="left"><p>一般的なベクター型: float2/3/4</p>
@@ -112,7 +119,7 @@ GLSL と HLSL は一般に次の点で異なります。
 
 GLSL では、事前定義されたグローバル変数として OpenGL の状態の多くを示します。 たとえば、GLSL では、**gl\_Position** 変数を使って頂点の位置を指定し、**gl\_FragColor** 変数を使ってフラグメントの色を指定します。 HLSL では、アプリ コードからシェーダーに Direct3D の状態を明示的に渡します。 たとえば、Direct3D と HLSL を使う場合は、頂点シェーダーへの入力が頂点バッファーのデータ形式に一致し、アプリ コードの定数バッファーの構造がシェーダー コードの定数バッファー ([cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581)) の構造と一致する必要があります。
 
-## HLSL への GLSL 変数の移植
+## <a name="porting-glsl-variables-to-hlsl"></a>HLSL への GLSL 変数の移植
 
 
 GLSL では、グローバル シェーダーの変数の宣言に修飾子を適用し、その変数にシェーダーの特定の動作を割り当てます。 HLSL では、シェーダーとやり取りする引数を使ってシェーダーのフローを定義するため、これらの修飾子は必要ではありません。
@@ -161,7 +168,7 @@ GLSL では、修飾子のない変数は、各シェーダーに対してプラ
 
 テクスチャ (HLSL での [Texture2D](https://msdn.microsoft.com/library/windows/desktop/ff471525)) と関連のサンプラー (HLSL での [SamplerState](https://msdn.microsoft.com/library/windows/desktop/bb509644)) にデータを渡すときに、通常は、ピクセル シェーダーのグローバル変数としてこれらを宣言します。
 
-## HLSL への GLSL の型の移植
+## <a name="porting-glsl-types-to-hlsl"></a>HLSL への GLSL の型の移植
 
 
 HLSL に GLSL の型を移植する場合は、次の表を参考にしてください。
@@ -269,7 +276,7 @@ HLSL に GLSL の型を移植する場合は、次の表を参考にしてくだ
 
  
 
-## HLSL への GLSL の定義済みグローバル変数の移植
+## <a name="porting-glsl-pre-defined-global-variables-to-hlsl"></a>HLSL への GLSL の定義済みグローバル変数の移植
 
 
 GLSL の定義済みグローバル変数を HLSL に移植する場合は、次の表を参考にしてください。
@@ -377,14 +384,14 @@ GLSL の定義済みグローバル変数を HLSL に移植する場合は、次
 
  
 
-頂点シェーダーの入力とピクセル シェーダーの入力に位置や色などを指定するには、セマンティクスを使います。 入力レイアウトのセマンティクス値と頂点シェーダーの入力を一致させる必要があります。 例については、「[HLSL への GLSL 変数の移植の例](#example1)」をご覧ください。 HLSL セマンティクスについて詳しくは、「[セマンティクス](https://msdn.microsoft.com/library/windows/desktop/bb509647)」をご覧ください。
+頂点シェーダーの入力とピクセル シェーダーの入力に位置や色などを指定するには、セマンティクスを使います。 入力レイアウトのセマンティクス値と頂点シェーダーの入力を一致させる必要があります。 例については、「[HLSL への GLSL 変数の移植の例](#examples-of-porting-glsl-variables-to-hlsl)」をご覧ください。 HLSL セマンティクスについて詳しくは、「[セマンティクス](https://msdn.microsoft.com/library/windows/desktop/bb509647)」をご覧ください。
 
-## HLSL への GLSL 変数の移植の例
+## <a name="examples-of-porting-glsl-variables-to-hlsl"></a>HLSL への GLSL 変数の移植の例
 
 
 ここでは、OpenGL/GLSL コードの GLSL 変数の使用例と、Direct3D/HLSL コードでの相当する例を紹介します。
 
-### GLSL での uniform、attribute、および varying
+### <a name="uniform-attribute-and-varying-in-glsl"></a>GLSL での uniform、attribute、および varying
 
 OpenGL のアプリ コード
 
@@ -428,7 +435,7 @@ gl_FragColor = vec4(colorVarying, 1.0);
 }
 ```
 
-### HLSL での定数バッファーとデータ転送
+### <a name="constant-buffers-and-data-transfers-in-hlsl"></a>HLSL での定数バッファーとデータ転送
 
 データを HLSL の頂点シェーダーに渡し、それがピクセル シェーダーに渡されるしくみの例を示します。 アプリ コードでは、頂点と定数バッファーを定義します。 次に、頂点シェーダー コードで、定数バッファーを [cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581) として定義し、頂点単位のデータとピクセル シェーダーの入力データを格納します。 ここでは、**VertexShaderInput** および **PixelShaderInput** と呼ばれる構造を使います。
 
@@ -507,7 +514,7 @@ float4 main(PixelShaderInput input) : SV_Target
 }
 ```
 
-## Direct3D への OpenGL のレンダリング コードの移植例
+## <a name="examples-of-porting-opengl-rendering-code-to-direct3d"></a>Direct3D への OpenGL のレンダリング コードの移植例
 
 
 ここでは、OpenGL ES 2.0 コードのレンダリングの例と、Direct3D 11 コードでの相当する例を紹介します。
@@ -556,7 +563,7 @@ m_d3dDeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST
 m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
 ```
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [OpenGL ES 2.0 から Direct3D 11 への移植](port-from-opengl-es-2-0-to-directx-11-1.md)
@@ -567,10 +574,5 @@ m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

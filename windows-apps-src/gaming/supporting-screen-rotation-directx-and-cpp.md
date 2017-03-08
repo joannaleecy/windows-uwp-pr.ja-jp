@@ -1,15 +1,22 @@
 ---
 author: mtoepke
 title: "画面の向きのサポート (DirectX と C++)"
-description: "ここでは、UWP DirectX アプリで、Windows 10 デバイスのグラフィックス ハードウェアを効率的、効果的に使って画面の回転を処理するためのベスト プラクティスについて説明します。"
+description: "ここでは、UWP DirectX アプリで、Windows 10 デバイスのグラフィックス ハードウェアを効率的、効果的に使って画面の向きを処理するためのベスト プラクティスについて説明します。"
 ms.assetid: f23818a6-e372-735d-912b-89cabeddb6d4
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, 画面の向き, DirectX"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 101ee7a6d0760abfc40145b21478947c0563a346
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 606d32d16ad94e45cb63c73f1869735a9fbd7d25
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 画面の向きのサポート (DirectX と C++)
+# <a name="supporting-screen-orientation-directx-and-c"></a>画面の向きのサポート (DirectX と C++)
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -37,7 +44,7 @@ Windows 10 では、表示の向きのモードとして、次の 4 つが定義
 2.  [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801) を使って、Windows 10 にスワップ チェーンの向きを通知します。
 3.  レンダリング コードを変更して、デバイスのユーザーによる向きに合わせた画像を生成します。
 
-## スワップ チェーンのサイズ変更とその内容の事前回転
+## <a name="resizing-the-swap-chain-and-pre-rotating-its-contents"></a>スワップ チェーンのサイズ変更とその内容の事前回転
 
 
 UWP DirectX アプリで基本的な表示サイズ変更とその内容の事前回転を行うには、次の手順を実装します。
@@ -344,7 +351,7 @@ void DX::DeviceResources::CreateWindowSizeDependentResources()
 
     正しいマトリックスが、表示の向きを決定するために Windows 10 によって提供されるデータ ([**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) の結果など) に基づいて選ばれ、シーンの各ピクセル (Direct2D) または頂点 (Direct3D) に乗算されて、画面の向きに合わせた回転が行われます。 Direct2D では画面の原点が左上隅として定義されていますが、Direct3D では原点がウィンドウの論理的中央として定義されていることに注意してください。
 
-> **注**   回転で使われる 2-D 変換とその定義方法について詳しくは、「[画面の回転のためのマトリックスの適用 (2-D)](#defining_matrices_2d)」をご覧ください。 回転で使われる 3-D 変換について詳しくは、「[画面の回転のためのマトリックスの適用 (3-D)](#defining_matrices_3d)」をご覧ください。
+> **注**   回転で使われる 2-D 変換とその定義方法について詳しくは、「[画面の回転のためのマトリックスの適用 (2-D)](#appendix-a-applying-matrices-for-screen-rotation-2-d)」をご覧ください。 回転で使われる 3-D 変換について詳しくは、「[画面の回転のためのマトリックスの適用 (3-D)](#appendix-b-applying-matrices-for-screen-rotation-3-d)」をご覧ください。
 
  
 
@@ -360,7 +367,7 @@ void DX::DeviceResources::CreateWindowSizeDependentResources()
 
 ここで、スワップ チェーンを表示します。
 
-## CoreWindowResizeManager の使用による回転の遅延の短縮
+## <a name="reduce-the-rotation-delay-by-using-corewindowresizemanager"></a>CoreWindowResizeManager の使用による回転の遅延の短縮
 
 
 既定では、Windows 10 はすべてのアプリに (モデルや言語に関係なく)、画像の回転を完了するための短いながらも目立つ程度の時間枠を提供します。 ただし、アプリがここで説明したいずれかの方法で回転の計算を行った場合は、この時間枠が閉じる前に処理を完了できる可能性があります。 残った時間は返して、回転アニメーションを完了するために使いたいと思うでしょう。 ここで、[**CoreWindowResizeManager**](https://msdn.microsoft.com/library/windows/apps/jj215603) が登場します。
@@ -385,10 +392,10 @@ resizeManager->NotifyLayoutCompleted();
 
 3 つ目の項目で示したように、アプリが [**NotifyLayoutCompleted**](https://msdn.microsoft.com/library/windows/apps/jj215605) を呼び出すと、Windows 10 はタイムアウトの時間枠を停止し、回転アニメーションを完了して、アプリに制御を返します。これで、アプリは新しい表示の向きで描画を行うようになります。 全体的な効果は、アプリの動作が少し滑らかで機敏になり、効率もいくらか向上することです。
 
-## 付録 A: 画面の回転のためのマトリックスの適用 (2-D)
+## <a name="appendix-a-applying-matrices-for-screen-rotation-2-d"></a>付録 A: 画面の向きのためのマトリックスの適用 (2-D)
 
 
-[回転プロセスの最適化](#rotation)のサンプル (および [DXGI スワップ チェーンの回転のサンプル](http://go.microsoft.com/fwlink/p/?linkid=257600)) で既にお気付きかもしれませんが、回転マトリックスは Direct2D 出力用と Direct3D 出力用とに分けてきました。 まずは、2-D マトリックスを見てみましょう。
+[スワップ チェーンのサイズ変更とその内容の事前回転](#resizing-the-swap-chain-and-pre-rotating-its-contents)のサンプル　コード (および [DXGI スワップ チェーンの回転のサンプル](http://go.microsoft.com/fwlink/p/?linkid=257600)) で既にお気付きかもしれませんが、回転マトリックスは Direct2D 出力用と Direct3D 出力用とに分けてきました。 まずは、2-D マトリックスを見てみましょう。
 
 Direct2D コンテンツと Direct3D コンテンツに同じ回転マトリックスを適用できない理由は、次の 2 つです。
 
@@ -482,10 +489,10 @@ default:
 
 次にスワップ チェーンを表示するときは、2-D 画像が新しい表示の向きに合わせて回転されています。
 
-## 付録 B: 画面の回転のためのマトリックスの適用 (3-D)
+## <a name="appendix-b-applying-matrices-for-screen-rotation-3-d"></a>付録 B: 画面の向きのためのマトリックスの適用 (3-D)
 
 
-[回転プロセスの最適化](#rotation)のサンプル (および [DXGI スワップ チェーンの回転のサンプル](http://go.microsoft.com/fwlink/p/?linkid=257600)) では、画面の向きごとに特定の変換マトリックスを定義しました。 ここでは、3-D シーンを回転させるためのマトリックスを見てみましょう。 前と同じように、4 つのそれぞれの向きのために、マトリックスのセットを作成します。 丸めエラー、つまりわずかな視覚的アーティファクトを避けるために、コード内でマトリックスを明示的に宣言します。
+[スワップ チェーンのサイズ変更とその内容の事前回転](#resizing-the-swap-chain-and-pre-rotating-its-contents)のコード例 (および [DXGI スワップ チェーンの回転のサンプル](http://go.microsoft.com/fwlink/p/?linkid=257600)) では、画面の向きごとに特定の変換マトリックスを定義しました。 ここでは、3-D シーンを回転させるためのマトリックスを見てみましょう。 前と同じように、4 つのそれぞれの向きのために、マトリックスのセットを作成します。 丸めエラー、つまりわずかな視覚的アーティファクトを避けるために、コード内でマトリックスを明示的に宣言します。
 
 これらの 3-D 回転マトリックスは、次のようにセットアップします。 次のコード例で示されているマトリックスは、カメラの 3-D シーン空間内の点を定義する頂点を 0°、90°、180°、または 270° 回転させる、標準的な回転マトリックスです。 シーン内の各頂点の \[x, y, z\] 座標値は、シーンの 2-D プロジェクションが計算されるときに、この回転マトリックスによって乗算されます。
 
@@ -554,10 +561,5 @@ m_constantBufferData.projection = mul(m_constantBufferData.projection, m_rotatio
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

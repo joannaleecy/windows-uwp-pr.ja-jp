@@ -3,16 +3,23 @@ author: mtoepke
 title: "簡単な OpenGL ES 2.0 レンダラーを Direct3D 11 に移植する方法"
 description: "最初の移植作業では、基本から始めます。Visual Studio 2015 の DirectX 11 アプリ (ユニバーサル Windows) テンプレートに対応するように、頂点シェーディングされた回転する立方体の簡単なレンダラーを OpenGL ES 2.0 から Direct3D に移植します。"
 ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, OpenGL, Direct3D 11, 移植"
 translationtype: Human Translation
-ms.sourcegitcommit: 814f056eaff5419b9c28ba63cf32012bd82cc554
-ms.openlocfilehash: 307b611eece3de6288d67e1e340368763f26fa2e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 71b4b42d2665cbeb43cbdbe2dbab9119a8f68ce9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 簡単な OpenGL ES 2.0 レンダラーを Direct3D 11 に移植する方法
+# <a name="how-to-port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>簡単な OpenGL ES 2.0 レンダラーを Direct3D 11 に移植する方法
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 この移植作業では、基本から始めます。Visual Studio 2015 の DirectX 11 アプリ (ユニバーサル Windows) テンプレートに対応するように、頂点シェーディングされた回転する立方体の簡単なレンダラーを OpenGL ES 2.0 から Direct3D に移植します。 この移植プロセスでは、次について説明します。
 
@@ -81,19 +88,19 @@ typedef struct
 
  
 
-## 理解しておく必要があること
+## <a name="what-you-need-to-know"></a>理解しておく必要があること
 
 
-### テクノロジ
+### <a name="technologies"></a>テクノロジ
 
 -   [Microsoft Visual C++](http://msdn.microsoft.com/library/vstudio/60k1461a.aspx)
 -   OpenGL ES 2.0
 
-### 前提条件
+### <a name="prerequisites"></a>前提条件
 
 -   省略可能です。 「[DXGI と Direct3D の EGL コードの比較](moving-from-egl-to-dxgi.md)」をご覧ください。 このトピックを読むと、DirectX によって提供されるグラフィックス インターフェイスについて理解を深めることができます。
 
-## <span id="keylinks_steps_heading"></span>ステップ
+## <a name="span-idkeylinksstepsheadingspansteps"></a><span id="keylinks_steps_heading"></span>ステップ
 
 
 <table>
@@ -129,7 +136,7 @@ typedef struct
 
  
 
-## <span id="additional_resources"></span>その他の情報
+## <a name="span-idadditionalresourcesspanadditional-resources"></a><span id="additional_resources"></span>その他の情報
 
 
 -   [UWP DirectX ゲーム プログラミング環境の準備](prepare-your-dev-environment-for-windows-store-directx-game-development.md)
@@ -142,10 +149,5 @@ typedef struct
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,9 +3,16 @@ author: jnHs
 Description: "アプリ内のアフィリエイト広告のパフォーマンス データを表示するには、Windows デベロッパー センター ダッシュボードにあるアプリ レベルとアカウント レベルのアフィリエイト パフォーマンス レポートを使います。"
 title: "アフィリエイト パフォーマンス レポート"
 ms.assetid: 38AD494C-0F85-4FED-8732-9064D1FC503D
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 9646b9614bb2935db5880cad9bf1a58648330671
-ms.openlocfilehash: 76bb607fb0abf11c863be24489a4eea0747a4e40
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3b85abb11049a1e52e9d6a9cc61aebab407207a4
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -47,9 +54,4 @@ ms.openlocfilehash: 76bb607fb0abf11c863be24489a4eea0747a4e40
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -3,9 +3,16 @@ author: mithom
 title: "レーシング ハンドルとフォース フィードバック"
 description: "レーシング ハンドルの検出、機能の特定、読み取り、およびレーシング ハンドルへのフォース フィードバック コマンドの送信には、Windows.Gaming.Input レーシング ハンドル API を使用します。"
 ms.assetid: 6287D87F-6F2E-4B67-9E82-3D6E51CBAFF9
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, レーシング ハンドル, フォース フィードバック"
 translationtype: Human Translation
-ms.sourcegitcommit: d0cfc41e5ae79844f3948ed2c326bf9913c066a4
-ms.openlocfilehash: ea2c1f359424f042b9563e2723c1eb34ee8ddff0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ca8413a857fd4d8925a6767280a32a8336eeba19
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -380,9 +387,4 @@ else
 [wheelmotor]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheel.wheelmotor.aspx
 [racingwheelreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheelreading.aspx
 [racingwheelbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheelbuttons.aspx
-
-
-
-<!--HONumber=Dec16_HO4-->
-
 

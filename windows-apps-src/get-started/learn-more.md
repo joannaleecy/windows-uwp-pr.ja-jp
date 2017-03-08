@@ -10,8 +10,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 7a6f0be15105bc70e580eaaf581152338c56bed7
-ms.openlocfilehash: 7b1d2c1dc83bf0b6d24c1de134102f14542c907d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0bf7959be6278577cc8fe93011591e4523bee623
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -19,9 +20,9 @@ ms.openlocfilehash: 7b1d2c1dc83bf0b6d24c1de134102f14542c907d
 
 # <a name="whats-next"></a>次の手順
 
-アプリを作成して Windows ストアに公開するには、どこから手を着ければよいのでしょうか。 UWP プラットフォームでの開発が初めての場合は、<a href="https://channel9.msdn.com/">Channel 9</a> のビデオと <a href="https://www.microsoftvirtualacademy.com">Microsoft Virtual Academy</a> のコースをお試しください。 既に XAML と C# を使用している場合は、以下のトピックを参照するか、直接「[GitHub からユニバーサル Windows プラットフォーム (UWP) のサンプルを取得する](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)」にお進みください。
+アプリを作成して Windows ストアに公開するには、どこから手を着ければよいのでしょうか。 UWP プラットフォームでの開発が初めての場合は、<a href="https://channel9.msdn.com/">Channel 9</a> のビデオと <a href="https://mva.microsoft.com">Microsoft Virtual Academy</a> のコースをお試しください。 既に XAML と C# を使用している場合は、以下のトピックを参照するか、直接「[GitHub からユニバーサル Windows プラットフォーム (UWP) のサンプルを取得する](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)」にお進みください。
 
-アプリの作成では、数多くの便利なツールやフレームワークを利用することができ、それらの多くがクロスプラットフォーム開発をサポートします。 たとえば、2 Dゲームを作成する場合は、<a href="http://www.monogame.net">Monogame</a> の使用を検討してください。 3D ゲームの開発用には <a href="http://www.unity3d.com">Unity</a> があり、モバイル デバイスが中心の場合は <a href="http://www.xamarin.com">Xamarin</a> が便利です。
+アプリの作成では、数多くの便利なツールやフレームワークを利用することができ、それらの多くがクロスプラットフォーム開発をサポートします。 たとえば、2D ゲームを作成する場合は、<a href="http://www.monogame.net">Monogame</a> の使用を検討してください。または、多くの [JavaScript/HTML フレームワーク](https://html5gameengine.com/)の中から一部を使うこともできます。 3D ゲームの開発用には <a href="http://www.unity3d.com">Unity</a> があり、モバイル デバイスが中心の場合は <a href="http://www.xamarin.com">Xamarin</a> が便利です。
 
 初めて開発する場合は、まず、UWP 関連のトピックを通読して、UWP プラットフォームがどのようなものかを理解されることをお勧めします。そのうえで、XAML コントロールを使用し、さらにカスタマイズして、ユーザー インターフェイスを作成する方法をお調べください。 アプリのレイアウトには XAML を使います (使用方法について詳しくは、[このチュートリアル](../layout/grid-tutorial.md)をご覧ください)。しかし、XAML の真価は*データ バインディング*使用することです。データ バインディングは、アプリに表示する情報とコントロールを関連付けることができます。Windows プラットフォームでの開発が初めての場合、この概念を理解することが重要です。 
 <table class="wdg-noborder">
@@ -94,7 +95,7 @@ ms.openlocfilehash: 7b1d2c1dc83bf0b6d24c1de134102f14542c907d
 
 ## <a name="finding-help-in-the-dev-center"></a>デベロッパー センターでのヘルプの検索
 
-[Microsoft デベロッパー センター](http://devcenter.microsoft.com)には、さまざまなツール、フレームワーク、およびプラットフォームについて大量のドキュメントがあります。 トピックやサンプルを検索するときは、UWP 関連のコンテンツを閲覧していることを確認してください。 適切なコンテンツを閲覧するには、
+[Microsoft デベロッパー センター](http://developer.microsoft.com)には、さまざまなツール、フレームワーク、およびプラットフォームについて大量のドキュメントがあります。 トピックやサンプルを検索するときは、UWP 関連のコンテンツを閲覧していることを確認してください。 適切なコンテンツを閲覧するには、
 API リファレンス コンテンツではなく、概念コンテンツを参照します。概念コンテンツのトピックであれば、URL に "UWP" という文字が含まれています。 API コンテンツのパスには、"Windows Runtime API" という文字が含まれています。 
 
 ![UWP の概念トピックの例](images/devcenter-topic2.png)
@@ -147,7 +148,7 @@ API リファレンス コンテンツではなく、概念コンテンツを参
 <td align="left"><strong>移植</strong></td>
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/Mt238321">Android と iOS のスキルを利用して UWP アプリをすばやく作成できます。</a></td>
 </tr>
-<tr class="odd" style="background-color: #f2f2f2">
+<tr class="even" style="background-color: #f2f2f2">
 <td align="left"><strong>Windows ブリッジ</strong></td>
 <td align="left"><a href="https://developer.microsoft.com/windows/bridges">以前のアプリや iOS アプリを更新して UWP アプリにするためのツールです。</a></td>
 </tr>
@@ -155,13 +156,17 @@ API リファレンス コンテンツではなく、概念コンテンツを参
 <td align="left"><strong>Xamarin</strong></td>
 <td align="left"><a href="https://www.xamarin.com">C# を使って、iOS、Android、および Windows 10 用のアプリを作成できます。</a></td>
 </tr>
-<tr class="odd" style="background-color: #ffffff">
+<tr class="even" style="background-color: #f2f2f2">
 <td align="left"><strong>タスクのスニペット</strong></td>
 <td align="left"><a href="https://github.com/Microsoft/Windows-task-snippets">細かくても便利なタスクを実行できる、すぐに使用できるコードを提供しています。</a></td>
 </tr>
-<tr class="odd" style="background-color: #f2f2f2">
+<tr class="odd" style="background-color: #ffffff">
 <td align="left"><strong>使い方に関するトピック</strong></td>
 <td align="left"><a href="https://developer.microsoft.com/windows/develop">特定の UWP 機能についてのサンプル コードを提供しています。</a></td>
+</tr>
+<tr class="even" style="background-color: #f2f2f2">
+<td align="left"><strong>ハードウェア</strong></td>
+<td align="left"><a href="https://www.microsoftstore.com/store/msusa/en_US/cat/Developer/categoryID.69418300?icid=en_US_Store_UH_BusEd_Dev">Microsoft ストアの開発者向けハードウェア。</a></td>
 </tr>
 </table>
 
@@ -169,10 +174,5 @@ API リファレンス コンテンツではなく、概念コンテンツを参
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

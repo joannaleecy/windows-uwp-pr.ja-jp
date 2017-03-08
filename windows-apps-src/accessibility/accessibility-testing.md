@@ -5,19 +5,26 @@ ms.assetid: 272D9C9E-B179-4F5A-8493-926D007A0225
 title: "アクセシビリティ テスト"
 label: Accessibility testing
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 82d43f6553be280831c0a739680a2f9c833286f9
-ms.openlocfilehash: cc988037a8b3270045c7dd5faac4bf7d69fd6274
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: bf56b564b383ee90e276416bf1dda29f55bb771c
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アクセシビリティ テスト  
+# <a name="accessibility-testing"></a>アクセシビリティ テスト  
 
 ユニバーサル Windows プラットフォーム (UWP) アプリをアクセシビリティ対応にするためのテスト手順です。
 
 <span id="run_accessibility_testing_tools"/>
 <span id="RUN_ACCESSIBILITY_TESTING_TOOLS"/>
-## アクセシビリティ テスト ツールを実行する  
+## <a name="run-accessibility-testing-tools"></a>アクセシビリティ テスト ツールを実行する  
 Windows ソフトウェア開発キット (Windows SDK) には、[**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239)、[**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521)、[**UI Accessibility Checker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985) などアクセシビリティのテスト ツールが複数用意されています。 これらのツールは、アプリのアクセシビリティを確認するのに役立ちます。 アプリのすべてのシナリオと UI 要素を確認してください。
 
 アクセシビリティ テスト ツールは、Microsoft Visual Studio のコマンド プロンプト、または Windows SDK のツール フォルダー (開発コンピューター上の Windows SDK のインストール ディレクトリの bin サブディレクトリ) から起動できます。
@@ -25,13 +32,13 @@ Windows ソフトウェア開発キット (Windows SDK) には、[**AccScope**](
 <span id="AccScope"/>
 <span id="accscope"/>
 <span id="ACCSCOPE"/>
-### **AccScope**  
+### **<a name="accscope"></a>AccScope**  
 
 開発者やテスト担当者は、[**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) ツールを使って、アプリ開発サイクルの遅い段階のテスト フェーズではなく、アプリの開発フェーズ、設計フェーズ、場合によってはより早い段階のプロトタイプ フェーズで、アプリのアクセシビリティを評価できます。 このツールは、特にアプリのナレーター アクセシビリティ シナリオのテストを意図しています。
 
 <span id="inspect"/>
 <span id="INSPECT"/>
-### **Inspect**  
+### **<a name="inspect"></a>Inspect**  
 
 [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) を使うと、任意の UI 要素を選んで、そのアクセシビリティ データを表示できます。 Microsoft UI オートメーションのプロパティと制御パターンを表示し、UI オートメーション ツリー内のオートメーション要素のナビゲーション構造をテストできます。 UI の開発時に **Inspect** を使って、アクセシビリティ属性が UI オートメーションでどのように現れるか確認します。 属性は、既定の XAML コントロールに既に実装されている UI オートメーション サポートのものである場合や、 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties) 添付プロパティとして、XAML マークアップで設定した特定の値のものである場合があります。
 
@@ -41,17 +48,17 @@ Windows ソフトウェア開発キット (Windows SDK) には、[**AccScope**](
 
 <span id="ui_accessibility_checker"/>
 <span id="UI_ACCESSIBILITY_CHECKER"/>
-### **UI Accessibility Checker**  
+### **<a name="ui-accessibility-checker"></a>UI Accessibility Checker**  
 **UI Accessibility Checker (AccChecker)** は、実行時にアクセシビリティの問題を検出するのに役立ちます。 UI が完成したら、**AccChecker** を使って、さまざまなシナリオをテストし、実行時のアクセシビリティ情報が正しいことを確認して、実行時の問題を検出します。 **AccChecker** は UI モードまたはコマンド ライン モードで実行できます。 UI モード ツールを実行するには、Windows ソフトウェア開発キット (Windows SDK) の bin ディレクトリの **AccChecker** ディレクトリを開き、acccheckui.exe を実行し、**[ヘルプ]** メニューをクリックしてください。
 
 <span id="ui_automation_verify"/>
 <span id="UI_AUTOMATION_VERIFY"/>
-### **UI Automation Verify**  
+### **<a name="ui-automation-verify"></a>UI Automation Verify**  
 **UI Automation Verify (UIA Verify)** は、UI オートメーション実装のテストと検証を自動で行うフレームワークです。 **UIA Verify** は、テスト コードに統合することができ、UI オートメーション シナリオの定期的な自動テストやスポット チェックを行うことができます。 **UIA Verify** を実行するには、UIAVerify サブディレクトリから VisualUIAVerifyNative.exe を実行します。
 
 <span id="accessible_event_watcher"/>
 <span id="ACCESSIBLE_EVENT_WATCHER"/>
-### **Accessible Event Watcher**  
+### **<a name="accessible-event-watcher"></a>Accessible Event Watcher**  
 [**Accessible Event Watcher (AccEvent)**](https://msdn.microsoft.com/library/windows/desktop/Dd317979) は、UI の変更が発生した場合に、アプリの UI 要素が UI オートメーションと Microsoft Active Accessibility の適切なイベントを発生させるかどうかをテストします。 UI の変更は、フォーカスが移動したときや、UI 要素の呼び出しまたは選択が行われたとき、状態またはプロパティが変更された場合に発生することがあります。
 
 > [!NOTE]
@@ -59,12 +66,12 @@ Windows ソフトウェア開発キット (Windows SDK) には、[**AccScope**](
 
 <span id="test_keyboard_accessibility"/>
 <span id="TEST_KEYBOARD_ACCESSIBILITY"/>
-## キーボード アクセシビリティをテストする  
+## <a name="test-keyboard-accessibility"></a>キーボード アクセシビリティをテストする  
 キーボード アクセシビリティをテストするには、マウスを取り外す (タブレット デバイスを使っている場合は、スクリーン キーボードを使う) ことが最も良い方法です。 キーボード アクセシビリティのナビゲーションをテストするには、_Tab_ キーを使います。 すべての対話型 UI 要素に _Tab_ キーで移動できる必要があります。 コンポジット UI 要素については、方向キーを使って要素の部分間を移動できることを確認します。 たとえば、キーボードのキーを使って項目の一覧間を移動できる必要があります。 さらに、すべての対話型 UI 要素を、フォーカスがあるときにキーボードで実行できる (通常は Enter キーまたは Space キーを使う) ことを確認します。
 
 <span id="verify_the_contrast_ratio_of_visible_text"/>
 <span id="VERIFY_THE_CONTRAST_RATIO_OF_VISIBLE_TEXT"/>
-## 表示テキストのコントラスト比を確認する  
+## <a name="verify-the-contrast-ratio-of-visible-text"></a>表示テキストのコントラスト比を確認する  
 色コントラスト ツールを使って、表示テキストのコントラスト比が適切であることを検証します。 ただし、非アクティブな UI 要素や、何も情報を伝えず、意味を変えることなく再配置できるロゴまたは装飾テキストは、例外です。 コントラスト比と例外について詳しくは、「[アクセシビリティに対応したテキストの要件](accessible-text-requirements.md)」をご覧ください。 コントラスト比をテストできるツールについては、[Techniques for WCAG 2.0 の G18 (リソース セクション)](http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources) をご覧ください。
 
 > [!NOTE]
@@ -72,17 +79,17 @@ Windows ソフトウェア開発キット (Windows SDK) には、[**AccScope**](
 
 <span id="verify_your_app_in_high_contrast"/>
 <span id="VERIFY_YOUR_APP_IN_HIGH_CONTRAST"/>
-## アプリをハイ コントラストで確認する  
+## <a name="verify-your-app-in-high-contrast"></a>アプリをハイ コントラストで確認する  
 ハイ コントラスト テーマがアクティブになっている状態でアプリを使って、すべての UI 要素が適切に表示されることを確認します。 すべてのテキストを読み取ることができ、すべての画像がクリアに表示されている必要があります。 XAML テーマ ディクショナリのリソースまたはコントロール テンプレートを調整し、コントロールが原因であるテーマの問題があれば修正します。 ハイ コントラストの重大な問題の原因がテーマまたはコントロール (イメージ ファイルなど) でない場合は、ハイ コントラスト テーマがアクティブになっているときに使う別のバージョンを用意します。
 
 <span id="verify_your_app_with_make_everything_on_your_screen_bigger"/>
 <span id="VERIFY_YOUR_APP_WITH_MAKE_EVERYTHING_ON_YOUR_SCREEN_BIGGER"/>
-## アプリの表示設定を確認する  
+## <a name="verify-your-app-with-display-settings"></a>アプリの表示設定を確認する  
 ディスプレイの 1 インチあたりのドット数 (dpi) の値を調整するシステム ディスプレイ オプションを使い、DPI の値の変更に合わせてアプリの UI が正常に拡大縮小されることを確認します  (一部のユーザーはアクセシビリティ対応オプションとして DPI の値を変更します。これは、**[コンピューターの簡単操作]** からだけでなく各種の表示プロパティでも設定できます)。問題が見つかった場合は、[レイアウトとスケーリングのガイドライン](https://msdn.microsoft.com/library/windows/apps/Dn611863) に従い、さまざまなスケール ファクター用のリソースを追加します。
 
 <span id="verify_main_app_scenarios_by_using_narrator"/>
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
-## ナレーターでアプリの主要なシナリオを確認する  
+## <a name="verify-main-app-scenarios-by-using-narrator"></a>ナレーターでアプリの主要なシナリオを確認する  
 ナレーターを使ってアプリの画面の読み上げをテストするには、以下の手順を実行します。
 
 **次の手順に従って、マウスとキーボードでナレーターを使ってアプリをテストします。**
@@ -129,7 +136,7 @@ Windows 10 バージョン 1607 以降では、ナレーターで新しい開発
 <span id="Examine_the_UI_Automation_representation_for_your_app"/>
 <span id="examine_the_ui_automation_representation_for_your_app"/>
 <span id="EXAMINE_THE_UI_AUTOMATION_REPRESENTATION_FOR_YOUR_APP"/>
-## アプリの UI オートメーションの表現を確認する  
+## <a name="examine-the-ui-automation-representation-for-your-app"></a>アプリの UI オートメーションの表現を確認する  
 前述したいくつかの UI オートメーション テスト ツールでは、アプリがどのように見えるかを緩慢に考慮するのではなく、UI オートメーション要素の構造としてアプリを表現する方法についてアプリを確認する手段を提供しています。 この方法によって、UI オートメーション クライアント (主に支援技術) がアクセシビリティのシナリオでアプリを操作します。
 
 [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) ツールでは、視覚的な表現またはリストのいずれかとして UI オートメーション要素を表示できるので、アプリについて特に興味深いビューが得られます。 視覚エフェクトを使うと、アプリの UI の視覚的な外観に関連するように各部にドリルダウンできます。 すべてのロジックを UI に割り当てる前に、最初期の UI プロトタイプのアクセシビリティをテストすることさえ可能であり、アプリの視覚的な対話操作とアクセシビリティ シナリオのナビゲーションについて双方のバランスを確認できます。
@@ -137,14 +144,9 @@ Windows 10 バージョン 1607 以降では、ナレーターで新しい開発
 テスト可能な側面の 1 つとして、表示したくない要素が UI オートメーション要素ビューに表示されるかどうかがあります。 ビューから除外したい要素、または反対に欠落する要素が見つかった場合に、アクセシビリティ ビューで XAML コントロールの表示を調整するために [**AutomationProperties.AccessibilityView XAML**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.accessibilityview) 添付プロパティを使用できます。 基本的なアクセシビリティ ビューを確認した後、コントロール ビューに公開される対話型の各部分にユーザーがアクセスできるかどうかについて、方向キーによって使用可能なタブ シーケンスまたは空間的なナビゲーションを再確認することもお勧めします。
 
 <span id="related_topics"/>
-## 関連トピック  
+## <a name="related-topics"></a>関連トピック  
 * [アクセシビリティ](accessibility.md)
 * [避ける事項](practices-to-avoid.md)
 * [UI オートメーション](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
 * [Windows のアクセシビリティ](http://go.microsoft.com/fwlink/p/?LinkId=320802) 
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

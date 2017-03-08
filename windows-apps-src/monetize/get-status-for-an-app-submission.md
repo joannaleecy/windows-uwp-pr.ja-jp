@@ -2,30 +2,37 @@
 author: mcleanbyron
 ms.assetid: 039B8810-5C9E-4DB9-A6AF-33E7401311FF
 description: "Windows ストア提出 API 内のこのメソッドを使用して、アプリの提出ステータスを取得します。"
-title: "Windows ストア提出 API を使用したアプリの提出ステータスの取得"
+title: "Windows ストア申請 API を使用したアプリの申請ステータスの取得"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows ストア申請 API, アプリの申請, ステータス"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: f93b26201ea45dc456013737fef0382aadb56e7f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 757a5e0d09cc7c8c6838b595dba34670d93a8536
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Windows ストア提出 API を使用したアプリの提出ステータスの取得
+# <a name="get-the-status-of-an-app-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアプリの申請ステータスの取得
 
 
 
 
 Windows ストア提出 API 内のこのメソッドを使用して、アプリの提出ステータスを取得します。 Windows ストア提出 API を使ったアプリの提出の作成プロセスについて詳しくは、「[アプリの提出の管理](manage-app-submissions.md)」をご覧ください。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
-* Windows ストア提出 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
+* Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
 * このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
 >**注:**&nbsp;&nbsp;このメソッドは、Windows ストア提出 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
-## 要求
+## <a name="request"></a>要求
 
 このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
 
@@ -36,15 +43,15 @@ Windows ストア提出 API 内のこのメソッドを使用して、アプリ�
 <span/>
  
 
-### 要求ヘッダー
+### <a name="request-header"></a>要求ヘッダー
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
 <span/>
 
-### 要求パラメーター
+### <a name="request-parameters"></a>要求パラメーター
 
 | 名前        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -53,11 +60,11 @@ Windows ストア提出 API 内のこのメソッドを使用して、アプリ�
 
 <span/>
 
-### 要求本文
+### <a name="request-body"></a>要求本文
 
 このメソッドでは要求本文を指定しないでください。
 
-### 要求の例
+### <a name="request-example"></a>要求の例
 
 次の例は、アプリの提出ステータスを取得する方法を示しています。
 
@@ -66,7 +73,7 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/sub
 Authorization: Bearer <your access token>
 ```
 
-## 応答
+## <a name="response"></a>応答
 
 次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文には、指定された提出に関する情報が含まれています。 応答本文の値について詳しくは、次のセクションをご覧ください。
 
@@ -81,7 +88,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-### 応答本文
+### <a name="response-body"></a>応答本文
 
 | 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -90,7 +97,7 @@ Authorization: Bearer <your access token>
 
 <span/>
 
-## エラー コード
+## <a name="error-codes"></a>エラー コード
 
 要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。
 
@@ -102,17 +109,12 @@ Authorization: Bearer <your access token>
 <span/>
 
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
-* [Windows ストア サービスを使用した提出の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
+* [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [アプリの提出の取得](get-an-app-submission.md)
 * [アプリの提出の作成](create-an-app-submission.md)
 * [アプリの提出のコミット](commit-an-app-submission.md)
 * [アプリの提出の更新](update-an-app-submission.md)
 * [アプリの提出の削除](delete-an-app-submission.md)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

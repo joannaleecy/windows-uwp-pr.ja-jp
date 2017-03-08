@@ -1,18 +1,25 @@
 ---
 author: jnHs
-Description: "Windows Phone 8.1 以前を対象としたアプリでマップ サービスを使うには、アプリのコードに含めるマップ サービス アプリケーション ID とトークンが必要です。 デベロッパー センター ダッシュボードで、[マップ] ページの [サービス] セクションでこのトークンを取得できます。"
+Description: "Windows Phone 8.1 以前を対象としたアプリでマップ サービスを使うには、アプリのコードに含めるマップ サービス アプリケーション ID とトークンが必要です。 このトークンは、デベロッパー センター ダッシュボードの [マップ] ページの [サービス] セクションで取得できます。"
 title: "マップ サービスの使用"
 ms.assetid: E5EE6B56-B86F-4D62-B16A-F023FE98EFAB
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 5ba722ae17fce33ff3a6860c17c1ed5f3e6790b8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1657c092d09761b7e1db82252295356384faf68a
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# マップ サービスの使用
+# <a name="use-map-services"></a>マップ サービスの使用
 
 
-Windows Phone 8.1 以前を対象としたアプリでマップ サービスを使うには、アプリのコードに含めるマップ サービス アプリケーション ID とトークンが必要です。 デベロッパー センター ダッシュボードで、**[マップ]** ページの **[サービス]** セクションでこのトークンを取得できます。
+Windows Phone 8.1 以前を対象としたアプリでマップ サービスを使うには、アプリのコードに含めるマップ サービス アプリケーション ID とトークンが必要です。 このトークンは、デベロッパー センター ダッシュボードの **[マップ]** ページの **[サービス]** セクションで取得できます。
 
 > **注**  他のオペレーティング システムを対象としたアプリでマップ サービスを使うには、[Bing Maps デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=614880)にアクセスしてください。 詳しくは、「[マップ認証キーの要求](https://msdn.microsoft.com/library/windows/apps/mt219694)」をご覧ください。
 
@@ -28,10 +35,5 @@ Windows Phone 8.1 以前を対象としたアプリでマップ サービスを�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

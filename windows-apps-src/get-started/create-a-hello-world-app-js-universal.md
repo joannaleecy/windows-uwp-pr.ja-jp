@@ -1,11 +1,18 @@
 ---
 author: GrantMeStrength
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
-title: Create a "Hello, world" app (JS)
+title: "Hello, world アプリを作成する (JS)"
 description: "このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象にした単純な Hello, world アプリを JavaScript と HTML で作る方法について説明します。"
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 1a4aea3d31bad97fa0933e1274c037a4bb8d81bb
-ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 915f77e308d6384aa539f78cc307842dd51cd9f4
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="create-a-hello-world-app-js"></a>Hello, world アプリを作成する (JS)
@@ -493,10 +500,5 @@ WinJS コントロールのイベント ハンドラーを登録する方法は�
 
 これで、JavaScript と HTML を使って Windows 10 と UWP 用の初めてのアプリを作成しました。
 
-次の手順 [WinJS](https://developer.microsoft.com/en-us/windows/develop/winjs) ドキュメントは、JavaScript 用 Windows ライブラリの利用に役立ちます。
-
-
-
-<!--HONumber=Dec16_HO1-->
-
+次の手順 [WinJS](https://developer.microsoft.com/windows/develop/winjs) ドキュメントで JavaScript 用 Windows ライブラリについて学習するか、直接[次の手順](learn-more.md)に進んでください。
 

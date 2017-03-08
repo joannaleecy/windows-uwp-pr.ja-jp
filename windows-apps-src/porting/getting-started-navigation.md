@@ -3,17 +3,24 @@ author: mcleblanc
 title: "ナビゲーションの概要"
 description: "ナビゲーションの概要"
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: daf56299b3a5e81bb756bc9fcb8112da044b00f3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: febafd9a36f021bdbf06692a34c8691d1008018f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# はじめに: ナビゲーション
+# <a name="getting-started-navigation"></a>はじめに: ナビゲーション
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
-## ナビゲーションの追加
+## <a name="adding-navigation"></a>ナビゲーションの追加
 
 iOS では、アプリのナビゲーション用に **UINavigationController** クラスが用意されています。ビューのプッシュ/ポップ操作を通じて、アプリを定義する **UIViewControllers** の階層を作ることができます。
 
@@ -80,13 +87,8 @@ public BlankPage()
 
 **注:** JavaScript と HTML を使った Windows ストア アプリのナビゲーションについて詳しくは、「[クイック スタート: 単一ページ ナビゲーションの使用](https://msdn.microsoft.com/library/windows/apps/hh452768)」をご覧ください。
  
-### 次のステップ
+### <a name="next-step"></a>次のステップ
 
 [はじめに: アニメーション](getting-started-animation.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

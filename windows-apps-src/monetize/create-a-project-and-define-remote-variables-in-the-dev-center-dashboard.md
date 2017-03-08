@@ -3,19 +3,26 @@ author: mcleanbyron
 Description: "ユニバーサル Windows プラットフォーム (UWP) アプリで A/B テストを実施する前に、デベロッパー センター ダッシュボードでプロジェクトを作成し、リモート変数を定義する必要があります。"
 title: "プロジェクトを作成し、デベロッパー センター ダッシュボードでリモート変数を定義する"
 ms.assetid: C3809FF1-0A6A-4715-B989-BE9D0E8C9013
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、Microsoft Store Services SDK、A/B テスト、実験"
 translationtype: Human Translation
-ms.sourcegitcommit: 32c1b379ee3913e267664e6d125fbc3daf480bb3
-ms.openlocfilehash: 88a55c9ed64d5f52f959a1c68618dc5296dc24d6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ad24e9a52458b826f3ce1bc7aba3dbdcf302f87d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# プロジェクトを作成し、デベロッパー センター ダッシュボードでリモート変数を定義する
+# <a name="create-a-project-and-define-remote-variables-in-the-dev-center-dashboard"></a>プロジェクトを作成し、デベロッパー センター ダッシュボードでリモート変数を定義する
 
 実験を始めるには、デベロッパー センター ダッシュボードでアプリの実験[プロジェクト](run-app-experiments-with-a-b-testing.md#terms)を作成し、アプリがアクセスできるリモート変数を定義します。
 
 次の手順では、プロジェクトを作成するための主な手順について説明します。 プロジェクトの作成と実験の実行のプロセスについて詳しく示すチュートリアルについては、「[A/B テストを使用して最初の実験を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)」をご覧ください。
 
-## 手順
+## <a name="instructions"></a>手順
 
 1. [デベロッパー センター ダッシュボード](https://dev.windows.com/overview)にサインインします。
 2. **[アプリ]** で、実験を作成するアプリを選択します。
@@ -31,20 +38,15 @@ ms.openlocfilehash: 88a55c9ed64d5f52f959a1c68618dc5296dc24d6
 >**注**&nbsp;&nbsp;プロジェクトの実験がアクティブなときに、リモート変数を編集、追加、削除することはできません。 この制限により、アクティブな実験のコントロール グループのデータの整合性を保護できます。
 
 
-## 次の手順
+## <a name="next-steps"></a>次の手順
 
 プロジェクトを作成すると、[アプリの実験用のコードを記述](code-your-experiment-in-your-app.md)して、アプリでリモートの変数値を取得し始めることができ、[プロジェクトで実験を作成](define-your-experiment-in-the-dev-center-dashboard.md)することができます。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [アプリの実験用のコードを記述する](code-your-experiment-in-your-app.md)
 * [デベロッパー センター ダッシュボードで実験を定義する](define-your-experiment-in-the-dev-center-dashboard.md)
 * [デベロッパー センター ダッシュボードで試験的機能を管理する](manage-your-experiment.md)
 * [A/B テストを使用して最初の試験的機能を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)
 * [A/B テストを使用してアプリの実験を実行する](run-app-experiments-with-a-b-testing.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

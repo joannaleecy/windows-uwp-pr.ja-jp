@@ -13,8 +13,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 8a040033f99d6e8cac04b44dcec58c6b306eda54
-ms.openlocfilehash: a138e0ba73da792a63f1c22ee4342a8157f2a136
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 572073c2c577f3f6833b9cbee303875e378d6030
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -416,7 +417,7 @@ public App()
 }
 ```
 
-HTML/JavaScript のサンプル コードなどの詳細情報については、「[マウス モードを無効にする方法](https://msdn.microsoft.com/windows/uwp/xbox-apps/how-to-disable-mouse-mode)」をご覧ください。
+HTML/JavaScript のサンプル コードなどの詳細情報については、「[マウス モードを無効にする方法](../xbox-apps/how-to-disable-mouse-mode.md)」をご覧ください。
 
 次の図は、マウス モードでのゲームパッド/リモコンのボタンのマッピングを示しています。
 
@@ -595,7 +596,7 @@ HTML/JavaScript のサンプル コードなどの詳細情報については、
 
 ![テキスト、アプリ、その他の項目のサイズを変更する](images/designing-for-tv/ui-scaling.png) 
 
-Xbox One ではこのようなシステム設定はありません。ただし、UWP の UI 要素をテレビ用に適切なサイズにするために、拡大縮小率は既定で **200%** (XAML アプリの場合) および **150%** (HTML アプリの場合) に設定されます。 他のデバイスで UI 要素のサイズが適切に設定されていれば、テレビでも適切なサイズになります。 Xbox One ではアプリは 1080 p (1920 x 1080 ピクセル) で表示されます。 そのため、PC などの他のデバイスからアプリを移植する場合は、[アダプティブ手法](https://msdn.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)を利用して 960 x 540 ピクセル、100% のスケーリング (または HTML アプリの場合、1280 x 720 ピクセル、100% のスケーリング) で UI が適切に表示されるようにしてください。
+Xbox One ではこのようなシステム設定はありません。ただし、UWP の UI 要素をテレビ用に適切なサイズにするために、拡大縮小率は既定で **200%** (XAML アプリの場合) および **150%** (HTML アプリの場合) に設定されます。 他のデバイスで UI 要素のサイズが適切に設定されていれば、テレビでも適切なサイズになります。 Xbox One ではアプリは 1080 p (1920 x 1080 ピクセル) で表示されます。 そのため、PC などの他のデバイスからアプリを移植する場合は、[アダプティブ手法](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)を利用して 960 x 540 ピクセル、100% のスケーリング (または HTML アプリの場合、1280 x 720 ピクセル、100% のスケーリング) で UI が適切に表示されるようにしてください。
 
 Xbox 用の設計では、1 つの解像度 (1920 x 1080) だけを考慮すればよいため、PC の設計とは少し異なります。 ユーザーがそれ以上の解像度のテレビを使っていても関係ありません。UWP アプリは常に 1080 p に拡大縮小されます。
 
@@ -639,7 +640,7 @@ bool result =
 
 `result` 無効化に成功したかどうかが通知されます。
 
-HTML/JavaScript のサンプル コードなどの詳細情報については、「[スケーリングを無効にする方法](https://msdn.microsoft.com/windows/uwp/xbox-apps/disable-scaling)」をご覧ください。
+HTML/JavaScript のサンプル コードなどの詳細情報については、「[スケーリングを無効にする方法](../xbox-apps/disable-scaling.md)」をご覧ください。
 
 UI 要素の適切なサイズを計算するときに、このトピックで説明した*有効*ピクセルの値を倍にして (または HTML アプリの場合は 1.5 倍にして) *実際*のピクセル値にすることを忘れないでください。
 
@@ -675,7 +676,7 @@ UI 要素の適切なサイズを計算するときに、このトピックで�
 
 ### <a name="drawing-ui-to-the-edge"></a>端までの UI の描画
 
-ユーザーに没入感を提供するために、特定の UI 要素を使って画面の端まで拡張することをお勧めします。 [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx)、[ナビゲーション ウィンドウ](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/nav-pane)、[CommandBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) などを使えます。
+ユーザーに没入感を提供するために、特定の UI 要素を使って画面の端まで拡張することをお勧めします。 [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx)、[ナビゲーション ウィンドウ](../controls-and-patterns/nav-pane.md)、[CommandBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) などを使えます。
 
 一方、対話型の要素とテキストは画面の端に表示されることを常に避け、一部のテレビで表示が切れないようにすることも重要です。 画面の端 5% 以内には重要でない視覚効果のみを描画することをお勧めします。 「[UI 要素のサイズ](#ui-element-sizing)」で説明したように、Xbox One コンソールの既定の拡大縮小率 200% に従っている UWP アプリは、960 x 540 epx の領域を使います。そのため、アプリの UI では重要な UI を以下の領域に置かないようにします。
 
@@ -981,7 +982,7 @@ if (IsTenFoot)
 
 ![Pivot focus around headers](images/designing-for-tv/pivot-headers-focus.png)-->
 
-[Pivot.IsHeaderItemsCarouselEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabled.aspx) プロパティを `true` に設定すると、選択したピボット ヘッダーが常に最初の位置に移動する代わりに、ピボットが常に同じ位置に固定されます。 ヘッダーの折り返しを煩わしいと感じるユーザーもいるため、これでテレビなどの大画面表示でエクスペリエンスが向上します。 すべてのピボット ヘッダーが同時に画面に収まらない場合、ユーザーは表示されるスクロール バーを使って他のヘッダーを表示できますが、最良のエクスペリエンスを提供するためには、すべてのピボット ヘッダーが画面に収まることを確認する必要があります。 詳しくは、「[タブとピボット](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tabs-pivot)」をご覧ください。
+[Pivot.IsHeaderItemsCarouselEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabled.aspx) プロパティを `true` に設定すると、選択したピボット ヘッダーが常に最初の位置に移動する代わりに、ピボットが常に同じ位置に固定されます。 ヘッダーの折り返しを煩わしいと感じるユーザーもいるため、これでテレビなどの大画面表示でエクスペリエンスが向上します。 すべてのピボット ヘッダーが同時に画面に収まらない場合、ユーザーは表示されるスクロール バーを使って他のヘッダーを表示できますが、最良のエクスペリエンスを提供するためには、すべてのピボット ヘッダーが画面に収まることを確認する必要があります。 詳しくは、「[タブとピボット](../controls-and-patterns/tabs-pivot.md)」をご覧ください。
 
 <!--If you find it necessary to wrap headers, you can set it so that it doesn't show the selected header in the left-most position, like it does by default. When you set `Pivot.IsHeaderItemsCarouselEnabled="False"`, the selected header will move left by the minimal amount required to become fully visible. This is the recommended approach for 10-foot design.
 
@@ -991,7 +992,7 @@ if (IsTenFoot)
 
 ナビゲーション ウィンドウ (*ハンバーガー メニュー*とも呼ばれる) は、UWP アプリでよく使われるナビゲーション コントロールです。 通常、リスト スタイルのメニューから選択できる複数のオプションを表示するウィンドウであり、ユーザーに異なるページを表示します。 一般的に、このウィンドウは領域を節約するために折りたたまれた状態で表示され、ユーザーがボタンをクリックすることで開くことができます。 
 
-ナビゲーション ウィンドウは、マウスやタッチを使う場合に非常にアクセシビリティが高く、ゲームパッド/リモコンを使う場合はウィンドウを開くボタンに移動する必要があるためアクセシビリティは低くなります。 そのため、ユーザーがページの左端まで移動してナビゲーション ウィンドウを開くことができるだけでなく、**表示**ボタンでナビゲーション ウィンドウを開く操作を可能にすることをお勧めします。 これにより、ユーザーは非常に簡単にウィンドウの内容にアクセスすることができます。 さまざまな画面サイズでのナビゲーション ウィンドウの動作と、ゲームパッド/リモコンでのナビゲーションのベスト プラクティスについては、「[ナビゲーション ウィンドウ](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/nav-pane)」をご覧ください。
+ナビゲーション ウィンドウは、マウスやタッチを使う場合に非常にアクセシビリティが高く、ゲームパッド/リモコンを使う場合はウィンドウを開くボタンに移動する必要があるためアクセシビリティは低くなります。 そのため、ユーザーがページの左端まで移動してナビゲーション ウィンドウを開くことができるだけでなく、**表示**ボタンでナビゲーション ウィンドウを開く操作を可能にすることをお勧めします。 これにより、ユーザーは非常に簡単にウィンドウの内容にアクセスすることができます。 さまざまな画面サイズでのナビゲーション ウィンドウの動作と、ゲームパッド/リモコンでのナビゲーションのベスト プラクティスについては、「[ナビゲーション ウィンドウ](../controls-and-patterns/nav-pane.md)」をご覧ください。
 
 ### <a name="commandbar-labels"></a>CommandBar のラベル
 
@@ -1011,7 +1012,7 @@ if (IsTenFoot)
 
 ### <a name="button-styles"></a>ボタンのスタイル
 
-標準的な UWP ボタンもテレビで適切に機能しますが、ボタンのいくつかの視覚スタイルは、より UI に注意を引きます。そのため、すべてのプラットフォーム、特に 10 フィート エクスペリエンスでは、どこにフォーカスがあるかを明確に通知できるというメリットがあるため、検討することをお勧めします。 そのようなスタイルについて詳しくは、「[ボタン](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/buttons)」をご覧ください。
+標準的な UWP ボタンもテレビで適切に機能しますが、ボタンのいくつかの視覚スタイルは、より UI に注意を引きます。そのため、すべてのプラットフォーム、特に 10 フィート エクスペリエンスでは、どこにフォーカスがあるかを明確に通知できるというメリットがあるため、検討することをお勧めします。 そのようなスタイルについて詳しくは、「[ボタン](../controls-and-patterns/buttons.md)」をご覧ください。
 
 ### <a name="nested-ui-elements"></a>入れ子になった UI 要素
 
@@ -1124,9 +1125,4 @@ bool IsTenFoot = (Windows.System.Profile.AnaylticsInfo.VersionInfo.DeviceFamily 
 - [ユニバーサル Windows プラットフォーム (UWP) アプリ用デバイスの基本情報](device-primer.md)
 - [ゲームパッドとリモコンの操作](gamepad-and-remote-interactions.md)
 - [UWP アプリのサウンド](../style/sound.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

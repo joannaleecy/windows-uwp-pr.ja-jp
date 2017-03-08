@@ -3,31 +3,38 @@ author: jwmsft
 description: "マークアップ要素の一意の識別子を提供します。 ユニバーサル Windows プラットフォーム (UWP) XAML では、.resw リソース ファイルのリソースを使うときなど、XAML のローカライズのプロセスとツールでこの一意の識別子が使われます。"
 title: "xUid ディレクティブ"
 ms.assetid: 9FD6B62E-D345-44C6-B739-17ED1A187D69
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c94db1dc1095f53dc836f78768ecc826470343d5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3fa6cf80bf569703a7fbbc532c9114bee89c7403
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# x:Uid ディレクティブ
+# <a name="xuid-directive"></a>x:Uid ディレクティブ
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 マークアップ要素の一意の識別子を提供します。 ユニバーサル Windows プラットフォーム (UWP) XAML では、.resw リソース ファイルのリソースを使うときなど、XAML のローカライズのプロセスとツールでこの一意の識別子が使われます。
 
-## XAML 属性の使用方法
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法
 
 ``` syntax
 <object x:Uid="stringID".../>
 ```
 
-## XAML 値
+## <a name="xaml-values"></a>XAML 値
 
 | 用語 | 説明 |
 |------|-------------|
 | stringID | アプリ内の XAML 要素を一意に識別し、リソース ファイルのリソース パスの一部となる文字列です。 注釈をご覧ください。| 
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 XAML でオブジェクト要素を識別するには **x:Uid** を使います。 このオブジェクト要素は通常、コントロール クラスか、UI に表示される要素のインスタンスです。 **x:Uid** で使う文字列とリソース ファイルで使う文字列の関係として、リソース ファイルの文字列は **x:Uid** の後にドット (.)、その次にローカライズ対象要素の特定のプロパティの名前が続きます。 次に例を示します。
 
@@ -46,10 +53,5 @@ UWP XAML での **x:Uid** の一意性の規則は、以前使われていた XA
 場合によっては、パッケージ リソース インデックスの (PRI) システムの組み込みの機能ではなく、リソース パスを使います。 **x:Uid** 値として使われる文字列はいずれも、ms-resource:///Resources/ で始まり **x:Uid** 文字列を含むリソース パスを定義します。 パスは、リソース ファイルで指定するプロパティ名か、ターゲットに設定するプロパティ名で終わります。
 
 Windows ランタイム XAML では、プロパティ要素に **x:Uid** を含めることはできません。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

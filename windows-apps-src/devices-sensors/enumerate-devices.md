@@ -3,16 +3,23 @@ author: DBirtolo
 ms.assetid: 4311D293-94F0-4BBD-A22D-F007382B4DB8
 title: "デバイスの列挙"
 description: "列挙用の名前空間によって、システムに内部接続されているデバイス、外部接続されているデバイス、ワイヤレス プロトコルまたはネットワーク プロトコル経由で検出できるデバイスを検索できます。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 23a600fdcf972fcb291653e8aac447e035c12c6d
-ms.openlocfilehash: 2aa1a86a2cb0b413fae5fbcd87599a9f1a822324
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 05ba89322a72763660a49b9e14a2d318eacc56a6
+ms.lasthandoff: 02/07/2017
 
 ---
-# デバイスの列挙
+# <a name="enumerate-devices"></a>デバイスの列挙
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
-## サンプル
+## <a name="samples"></a>サンプル
 
 利用可能なデバイスすべてを列挙する最も簡単な方法は、(下のセクションで詳しく取り上げられているように) [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx) コマンドを使用してスナップショットを取ることです。
 
@@ -24,7 +31,7 @@ async void enumerateSnapshot(){
 
 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API のより高度な使い方を示すサンプルをダウンロードするには、[ここ](http://go.microsoft.com/fwlink/?LinkID=620536)をクリックしてください。
 
-## 列挙 API
+## <a name="enumeration-apis"></a>列挙 API
 
 列挙用の名前空間によって、システムに内部接続されているデバイス、外部接続されているデバイス、ワイヤレス プロトコルまたはネットワーク プロトコル経由で検出できるデバイスを検索できます。 利用可能なデバイスを列挙するために使う API は、[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 名前空間です。 このような API を使う理由は、次のようなものがあります。
 
@@ -53,7 +60,7 @@ async void enumerateSnapshot(){
 -   現在検出可能なデバイスを列挙して変更を監視する
 -   バックグラウンド タスクで現在検出可能なデバイスを列挙して変更を監視する
 
-## DeviceInformation オブジェクト
+## <a name="deviceinformation-objects"></a>DeviceInformation オブジェクト
 
 
 列挙 API の操作では、[**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトを頻繁に使う必要があります。 これらのオブジェクトには、デバイスに関する利用可能な情報のほとんどが含まれています。 次の表は、ユーザーが関心を持つ **DeviceInformation** プロパティのいくつかを紹介しています。 完全な一覧については、**DeviceInformation** のリファレンス ページをご覧ください。
@@ -66,7 +73,7 @@ async void enumerateSnapshot(){
 
  
 
-## DevicePicker UI
+## <a name="devicepicker-ui"></a>DevicePicker UI
 
 
 [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) は、Windows から提供されるコントロールであり、ユーザーが一覧からデバイスを選択できるようにする小さな UI を作成します。 **DevicePicker** ウィンドウは、いくつかの方法でカスタマイズできます。
@@ -84,7 +91,7 @@ async void enumerateSnapshot(){
 
 キャスト メディア コンテンツと DIAL を使う場合は、それぞれに独自のピッカーが用意されています。 [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn972525) と [**DialDevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn946783) です。
 
-## ネットワークのスナップショットの列挙
+## <a name="enumerate-a-snapshot-of-devices"></a>ネットワークのスナップショットの列挙
 
 
 [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) がニーズに合わず、より柔軟な方法が必要になることがあります。 たとえば、独自の UI を作成する場合や、ユーザーに UI を表示せずにデバイスを列挙する場合などが考えられます。 そのような場合は、デバイスのスナップショットを列挙することができます。 そのためには、システムに現在接続されているデバイスやシステムとペアリングされているデバイスを調べます。 ただし、この方法では、利用可能なデバイスのスナップショットが確認されるだけであるため、一覧を列挙した後に接続されたデバイスは検出できないことに注意する必要があります。 デバイスが更新または削除された場合に通知を受け取ることもできません。 注意すべき潜在的なもう 1 つのデメリットは、この方法では列挙がすべて完了するまで結果が表示されないことです。 このため、**AssociationEndpoint** オブジェクト、**AssociationEndpointContainer** オブジェクト、または **AssociationEndpointService** オブジェクトに関心がある場合は、この方法を使うべきではありません。これらのオブジェクトは、ネットワーク プロトコルまたはワイヤレス プロトコル経由で検出されるからです。 これを完了するには最長で 30 秒かかります。 このような場合は、[**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) オブジェクトを使って利用可能なデバイスを列挙する必要があります。
@@ -99,7 +106,7 @@ async void enumerateSnapshot(){
 
 
 
-## デバイスの列挙と監視
+## <a name="enumerate-and-watch-devices"></a>デバイスの列挙と監視
 
 
 デバイスをより強力かつ柔軟な方法で列挙するには、[**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) を作成します。 この方法では、デバイスを列挙するときの柔軟性が最も高くなります。 現在存在するデバイスを列挙できるだけでなく、デバイス セレクターに一致するデバイスの追加、削除、プロパティの変更が行われた場合に通知を受け取ることもできます。 **DeviceWatcher** を作成するときにデバイス セレクターを指定します。 デバイス セレクターについて詳しくは、「[デバイス セレクターのビルド](build-a-device-selector.md)」をご覧ください。 ウォッチャーを作成すると、指定した条件に一致するデバイスについて次の通知を受け取れるようになります。
@@ -114,7 +121,7 @@ async void enumerateSnapshot(){
 
 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) を作成するには、いずれかの [**CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.createwatcher.aspx) メソッドを使います。 これらのメソッドは、目的のデバイスを指定できるようにオーバーロードされています。 オーバーロードを使うには、[**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) を指定するか、デバイス セレクターを渡します。 デバイス セレクターとは、列挙するデバイスを指定する AQS 文字列です。 詳しくは、「[デバイス セレクターのビルド](build-a-device-selector.md)」をご覧ください。 デバイスから取得する目的のプロパティを指定することもできます。 その場合、指定したプロパティが、コレクションで返される各 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトのプロパティ バックで利用可能になります。 すべてのデバイスの種類ですべてのプロパティを使うことができるわけではないことに注意してください。 どのデバイスの種類でどのプロパティを使うことができるかについては、「[デバイス情報プロパティ](device-information-properties.md)」をご覧ください。
 
-## バックグラウンド タスクによるデバイスの監視
+## <a name="watch-devices-as-a-background-task"></a>バックグラウンド タスクによるデバイスの監視
 
 
 バックグラウンド タスクによるデバイスの監視は、上で説明した [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) を作成する方法によく似ています。 実際、最初に前のセクションの説明に従って通常の **DeviceWatcher** オブジェクトを作成する必要があります。 オブジェクトを作成したら、[**DeviceWatcher.Start**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.start) の代わりに [**GetBackgroundTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx) を使います。 **GetBackgroundTrigger** を呼び出すときに目的の通知 (追加、削除、更新) を指定する必要があります。 更新または削除を要求する際には追加も要求する必要があります。 トリガーを登録すると、すぐにバックグラウンドで **DeviceWatcher** の実行が開始されます。 それ以降、条件に一致する新しい通知を受け取るたびに、バックグラウンド タスクがアプリケーションをトリガーして、前回のトリガー以降の最新の変更が提供されます。
@@ -135,7 +142,7 @@ async void enumerateSnapshot(){
 
 バックグラウンド タスクとしてのスキャンをサポートしていないプロトコルが [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) に含まれていてもトリガーは機能しますが、 そのプロトコルで更新や結果を取得することはできません。 その他のプロトコルやデバイスの更新は通常どおりに検出されます。
 
-## DeviceInformationKind の使用
+## <a name="using-deviceinformationkind"></a>DeviceInformationKind の使用
 
 
 ほとんどの場合、[**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトの [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) を気にする必要はありません。 お使いのデバイス API で返されるデバイス セレクターでは、多くの場合、その API で使うための正しい種類のデバイス オブジェクトが取得されることが保証されているからです。 しかし、デバイスの **DeviceInformation** を取得する際に、対応するデバイス API がなく、デバイス セレクターを取得できない場合もあります。 そのような場合は、独自のセレクターを作成する必要があります。 たとえば、Web Services on Devices には専用の API がありませんが、[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API を使ってそれらのデバイスを検出し、情報を取得できます。その後、ソケット API でそれらを使うことができます。
@@ -146,7 +153,7 @@ async void enumerateSnapshot(){
 
 **AssociationEndpoint** オブジェクト、**AssociationEndpointContainer** オブジェクト、または **AssociationEndpointService** オブジェクトを列挙する場合、ワイヤレス プロトコルまたはネットワーク プロトコル経由で列挙することになります。 この状況では、[**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx) を使わずに、[**CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.createwatcher.aspx) を使うことをお勧めします。 その理由は、ネットワーク経由で検索すると、[**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx) が生成されるまで、検索操作が 10 秒以上タイムアウトされないことが頻発するためです。 **FindAllAsync** は、**EnumerationCompleted** がトリガーされるまでその操作を完了しません。 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) を使う場合は、**EnumerationCompleted** が呼び出されるタイミングに関係なく、リアルタイムに近い結果を取得できます。
 
-## 後で使うためにデバイスを保存する
+## <a name="save-a-device-for-later-use"></a>後で使うためにデバイスを保存する
 
 
 すべての [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトが、[**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) と [**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx) の 2 つの情報を組み合わせて個別に識別されています。 この 2 つの情報を手元に残しておくと、**DeviceInformation** オブジェクトが失われたとしても、この情報を [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx) に渡して再び作成することができます。 この場合、アプリと統合するデバイスのユーザー設定を保存できます。
@@ -158,10 +165,5 @@ async void enumerateSnapshot(){
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

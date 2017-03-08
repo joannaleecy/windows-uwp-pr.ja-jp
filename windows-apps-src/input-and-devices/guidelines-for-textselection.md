@@ -12,8 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
-ms.openlocfilehash: bb3a231a842698c18fc496c87705d269dfbeaa58
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 40c27746a8364ca9f22288b9bfc128dd2b317815
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -140,10 +141,5 @@ UWP アプリでカスタム オブジェクト操作を実装する場合は、
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

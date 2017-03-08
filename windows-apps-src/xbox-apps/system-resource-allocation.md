@@ -2,13 +2,21 @@
 author: Mtoepke
 title: "Xbox One 上の UWP アプリとゲームのシステム リソース"
 description: "Xbox 上の UWP のシステム リソース"
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 12e87019-4315-424e-b73c-426d565deef9
 translationtype: Human Translation
-ms.sourcegitcommit: 9187e39e1be8b98ad8315487633dfebd068491e6
-ms.openlocfilehash: c3ca70936e30ce67b19971e5ccbb01fa89253f35
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 8d6876ee6235546e74341609a55db995a77323d6
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Xbox One 上の UWP アプリとゲームのシステム リソース
+# <a name="system-resources-for-uwp-apps-and-games-on-xbox-one"></a>Xbox One 上の UWP アプリとゲームのシステム リソース
 
 Xbox One で実行されている UWP アプリとゲームは、システムやその他のアプリとリソースを共有します。 そのため、UWP アプリやゲームは次のリソースにアクセスできます。
 
@@ -23,17 +31,14 @@ Xbox One で実行されている UWP アプリとゲームは、システムや
 
 * システムで実行されているアプリとゲームの数に応じて、GPU の 45% を共有します。
 
-* Xbox One の UWP は、DirectX 11 の機能レベル 10 をサポートしています。 現時点では DirectX 12 はサポートされていません。 
+* Xbox One の UWP は、DirectX 11 の機能レベル 10 をサポートしています。 現時点では DirectX 12 はサポートされていません。
+
+* アプリを Xbox 向けに開発またはストアに提出するには、必ず x64 アーキテクチャをターゲットにする必要があります。  
 
 **アプリケーション開発**の場合、標準的な PC と比較して、利用可能なリソースが制限される可能性があることに留意する必要があります。
 
 **ゲーム開発**の場合、Xbox One は、他のゲーム コンソールと同様に、その潜在的な機能を最大限に利用するために特定のハードウェア ベースの開発キットを必要とする、特殊なハードウェアであることに留意する必要があります。 Xbox One のハードウェアの機能を最大限に利用する必要があるゲームを開発している場合、[ID@XBOX](http://www.xbox.com/Developers/id) プログラムに登録することで、DirectX 12 のサポートを含む Xbox One 開発キットにアクセスできます。
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 - [Xbox One の UWP](index.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

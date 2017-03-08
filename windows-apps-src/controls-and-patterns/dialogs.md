@@ -4,9 +4,17 @@ Description: "ダイアログとポップアップは、ユーザーが要求し
 title: "ダイアログとポップアップ"
 label: Dialogs
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP"
+ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: bc428b42324cd584dfaee1db3c9eb834d30cd69d
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: e76ae1e85f1512a939f2b7ee50ed205c0c55605b
+ms.lasthandoff: 02/08/2017
 
 ---
 # <a name="dialogs-and-flyouts"></a>ダイアログとポップアップ
@@ -306,9 +314,4 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 - [メニューとコンテキスト メニュー](menus.md)
 - [**Flyout クラス**](https://msdn.microsoft.com/library/windows/apps/dn279496)
 - [**ContentDialog クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

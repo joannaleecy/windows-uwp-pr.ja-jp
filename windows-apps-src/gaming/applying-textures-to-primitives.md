@@ -3,13 +3,20 @@ author: mtoepke
 title: "プリミティブへのテクスチャの適用"
 description: "ここでは、生のテクスチャ データを読み込み、そのデータを、「プリミティブに対する深度と各種効果の使用」で作成した立方体を使って 3D プリミティブに適用します。"
 ms.assetid: aeed09e3-c47a-4dd9-d0e8-d1b8bdd7e9b4
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、ゲーム、テクスチャ、DirectX"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 5533b086557be44b27e4e371c0d71bc8bc6310b0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cc25d7bcc5809dd10b43418ccd42f78c10d1336e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# プリミティブへのテクスチャの適用
+# <a name="apply-textures-to-primitives"></a>プリミティブへのテクスチャの適用
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
@@ -18,7 +25,7 @@ ms.openlocfilehash: 5533b086557be44b27e4e371c0d71bc8bc6310b0
 
 **目標:** プリミティブにテクスチャを適用する。
 
-## 必要条件
+## <a name="prerequisites"></a>必要条件
 
 
 C++ に習熟していることを前提としています。 また、グラフィックス プログラミングの概念に対する基礎的な知識も必要となります。
@@ -27,10 +34,10 @@ C++ に習熟していることを前提としています。 また、グラフ
 
 **完了までの時間:** 20 分。
 
-手順
+<a name="instructions"></a>手順
 ------------
 
-### 1. テクスチャの適用対象となる立方体の変数を定義する
+### <a name="1-defining-variables-for-a-textured-cube"></a>1. テクスチャの適用対象となる立方体の変数を定義する
 
 まず、テクスチャの適用対象となる立方体の **BasicVertex** 構造体と **ConstantBuffer** 構造体を定義する必要があります。 立方体の頂点の位置、方向、テクスチャに加え、その見え方が、これらの構造体によって指定されます。 それ以外は、前のチュートリアル (「[プリミティブに対する深度と各種効果の使用](using-depth-and-effects-on-primitives.md)」) と同様の変数を宣言します。
 
@@ -63,7 +70,7 @@ private:
     ConstantBuffer m_constantBufferData;
 ```
 
-### 2. サーフェス要素とテクスチャ要素を使って頂点シェーダーとピクセル シェーダーを作成する
+### <a name="2-creating-vertex-and-pixel-shaders-with-surface-and-texture-elements"></a>2. サーフェス要素とテクスチャ要素を使って頂点シェーダーとピクセル シェーダーを作成する
 
 ここでは、前のチュートリアル (「[プリミティブに対する深度と各種効果の使用](using-depth-and-effects-on-primitives.md)」) で作成したものよりも複雑な頂点シェーダーとピクセル シェーダーを作成します。 このアプリの頂点シェーダーは、個々の頂点の位置を投影空間に変換し、頂点のテクスチャ座標をピクセル シェーダーに渡します。
 
@@ -267,7 +274,7 @@ private:
        });
 ```
 
-### 3. テクスチャとサンプラーの作成
+### <a name="3-creating-textures-and-samplers"></a>3. テクスチャとサンプラーの作成
 
 ここでは、前のチュートリアル (「[プリミティブに対する深度と各種効果の使用](using-depth-and-effects-on-primitives.md)」) のように色を適用するのではなく、テクスチャ データを立方体に適用します。
 
@@ -391,7 +398,7 @@ private:
         float degree = 0.0f;
 ```
 
-### 4. テクスチャを適用した立方体の回転と描画およびレンダリングされた画像の表示
+### <a name="4-rotating-and-drawing-the-textured-cube-and-presenting-the-rendered-image"></a>4. テクスチャを適用した立方体の回転と描画およびレンダリングされた画像の表示
 
 前のチュートリアルと同様、シーンをレンダリングして表示し続けるために無限ループを使います。 立方体のモデル マトリックスを Y 軸を中心に回転させるための値を設定するため、**rotationY** インライン関数 (BasicMath.h) に回転量を指定して呼び出します。 さらに、[**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) を呼び出して定数バッファーを更新し、立方体モデルを回転させます。 次に、[**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) を呼び出して、レンダー ターゲットと深度ステンシル ビューを指定します。 [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) を呼び出してレンダー ターゲットを無地の青色にクリアし、[**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) を呼び出して深度バッファーをクリアします。
 
@@ -512,7 +519,7 @@ private:
                 );
 ```
 
-## 要約
+## <a name="summary"></a>要約
 
 
 ここでは、生のテクスチャ データを読み込んで、そのデータを 3D プリミティブに適用しました。
@@ -523,10 +530,5 @@ private:
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

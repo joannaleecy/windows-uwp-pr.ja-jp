@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 37F2C162-4910-4336-BEED-8536C88DCA65
 description: "Windows デベロッパー センター アカウントに登録するアプリのパッケージ フライトを管理するには、以下の Windows ストア申請 API のメソッドを使います。"
 title: "Windows ストア申請 API を使用したパッケージ フライトの管理"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows ストア申請 API, フライト"
 translationtype: Human Translation
-ms.sourcegitcommit: 020c8b3f4d9785842bbe127dd391d92af0962117
-ms.openlocfilehash: 626a59ba848c9ae1d97b85b67ef2c76eed49065a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 51d7481d0491c85bddcae906a846cb8773f33417
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -13,7 +20,9 @@ ms.openlocfilehash: 626a59ba848c9ae1d97b85b67ef2c76eed49065a
 
 アプリのパッケージ フライトを管理するには、Windows ストア申請 API の次のメソッドを使用します。 Windows ストア申請 API の概要については、「[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。この API を使用するための前提条件などの情報があります。
 
->**注:**&nbsp;&nbsp;これらのメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。 以下のメソッドは、パッケージ フライトの取得、作成、または削除にしか使用できません。 パッケージ フライトの申請を作成するには、「[パッケージ フライトの申請の管理](manage-flight-submissions.md)」のメソッドをご覧ください。
+>**注:**&nbsp;&nbsp;これらのメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 このアクセス許可は、開発者アカウントに対して段階的に有効になります。現時点では、すべてのアカウントでこのアクセス許可が有効になっているわけではありません。 以前のアクセス権を要求するには、デベロッパー センター ダッシュボードにログオンし、ダッシュ ボードの下部にある **[フィードバック]** をクリックします。その後、フィードバック領域で **[申請 API]** を選択し、要求を提出します。 自分のアカウントでこのアクセス許可が有効になると、メールが届きます。
+
+以下のメソッドは、パッケージ フライトの取得、作成、または削除にしか使用できません。 パッケージ フライトの申請を作成するには、「[パッケージ フライトの申請の管理](manage-flight-submissions.md)」のメソッドをご覧ください。
 
 <table>
 <colgroup>
@@ -55,9 +64,4 @@ Windows ストア申請 API に関するすべての[前提条件](create-and-ma
 
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [パッケージ フライトの申請の管理](manage-flight-submissions.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

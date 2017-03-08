@@ -2,23 +2,31 @@
 author: DelfCo
 description: "アプリがプロセス ライフタイム管理と連携する方法をデバッグしてテストするためのツールと手法。"
 title: "プロセス ライフタイム管理 (PLM) のテスト ツールとデバッグ ツール"
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
 translationtype: Human Translation
-ms.sourcegitcommit: cbf3d2bb1466ca06e397561ad90d95db28e7136d
-ms.openlocfilehash: 1ea7b969ce0b8992306bb8a2d2b569905cc0cc67
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: a5315534fc305c85dcf410b4808d2f8ebd844b3e
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# プロセス ライフタイム管理 (PLM) のテスト ツールとデバッグ ツール
+# <a name="testing-and-debugging-tools-for-process-lifetime-management-plm"></a>プロセス ライフタイム管理 (PLM) のテスト ツールとデバッグ ツール
 
 UWP アプリと従来のデスクトップ アプリケーションの主な違いの 1 つは、UWP のタイトルがプロセス ライフサイクル管理 (PLM) の対象となるアプリ コンテナーに配置されることです。 ランタイム ブローカー サービスによって、UWP アプリはすべてのプラットフォームで中断、再開、または終了することができ、このような状態遷移を処理するコードをテストまたはデバッグするときに状態遷移を強制する目的で使う専用ツールがあります。
 
-## Visual Studio 2015 の機能
+## <a name="features-in-visual-studio-2015"></a>Visual Studio 2015 の機能
 
 Visual Studio 2015 の組み込みのデバッガーを使うと、UWP 専用の機能を使うときの潜在的な問題を調査することができます。 タイトルを実行してデバッグするときに表示される **[ライフサイクル イベント]** ツール バーを使うと、アプリケーションをさまざまな PLM の状態へと強制できます。
 
 ![[ライフサイクル イベント] ツールバー](images/gs-debug-uwp-apps-001.png)
 
-## PLMDebug ツール
+## <a name="the-plmdebug-tool"></a>PLMDebug ツール
 
 PLMDebug.exe は、アプリケーション パッケージの PLM の状態を制御できるようにするコマンド ライン ツールであり、Windows SDK の一部としてリリースされています。 インストール後、ツールは既定で *C:\Program Files (x86)\Windows Kits\10\Debuggers\x64* に配置されます。 
 
@@ -78,12 +86,7 @@ plmdebug /enableDebug 279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwg
 
 **/enableDebug** のすべての呼び出しは、後ほど **/disableDebug** スイッチを使って別の PLMDebug の呼び出しに結合する必要があります。 さらに、デバッガーのパスは絶対パスにする必要があります (相対パスはサポートされていません)。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 - [UWP アプリの展開とデバッグ](deploying-and-debugging-uwp-apps.md)
 - [デバッグ、テスト、パフォーマンス](index.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

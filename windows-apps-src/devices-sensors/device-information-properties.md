@@ -3,19 +3,26 @@ author: DBirtolo
 ms.assetid: 4A4C2802-E674-4C04-8A6D-D7C1BBF1BD20
 title: "デバイス情報プロパティ"
 description: "デバイスにはそれぞれ DeviceInformation プロパティが関連付けられており、特定の情報が必要な場合やデバイス セレクターを作成する場合に使うことができます。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dbe72dd476903083518dcf4b9d299b04e87f6e85
+ms.lasthandoff: 02/07/2017
 
 ---
-# デバイス情報プロパティ
+# <a name="device-information-properties"></a>デバイス情報プロパティ
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-** 重要な API **
+**重要な API**
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 デバイスにはそれぞれ [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) プロパティが関連付けられており、特定の情報が必要な場合やデバイス セレクターを作成する場合に使うことができます。 これらのプロパティを AQS フィルターとして指定して、列挙するデバイスを絞り込むことにより、指定した特徴を持つデバイスを見つけることができます。 また、各デバイスについて返される情報を指定するために使うこともできます。 これにより、アプリケーションに返されるデバイス情報を指定できます。
 
@@ -23,17 +30,17 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトは、ID ([**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id))、種類 ([**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx))、プロパティ バック ([**DeviceInformation.Properties**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.properties.aspx)) で構成されています。 **DeviceInformation** オブジェクトのその他のプロパティはすべて **Properties** プロパティ バッグから派生します。 たとえば、[**Name**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.name) は **System.ItemNameDisplay** から派生します。 つまり、このプロパティ バッグには、その他のプロパティを決定するために必要な情報が常に含まれています。
 
-## プロパティの要求
+## <a name="requesting-properties"></a>プロパティの要求
 
 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトには、[**Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) や [**Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx) などの基本的なプロパティがいくつか用意されていますが、ほとんどのプロパティは、[**Properties**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.properties.aspx) の下にあるプロパティ バッグに格納されています。 このため、プロパティ バッグには、プロパティ バッグからプロパティを提供するのに使われるプロパティが含まれています。 たとえば、[System.ItemNameDisplay](https://msdn.microsoft.com/library/windows/desktop/Bb760770) を使うと、[**Name**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.name) プロパティを提供できます。 これは、わかりやすい名前を持つ一般的な既知のプロパティの一例です。 このように、Windows はわかりやすい名前を付け、プロパティの照会を簡単にしています。
 
 要求できるプロパティは、わかりやすい名前を持つ一般的なプロパティだけではありません。 基になる GUID とプロパティ ID (PID) を指定することで、個別のデバイスまたはドライバーによって提供されたカスタム プロパティも含め、利用可能なすべてのプロパティを要求できます。 カスタム プロパティの指定形式は「`{GUID} PID`」です。 たとえば、「`{744e3bed-3684-4e16-9f8a-07953a8bf2ab} 7`」のように指定します。
 
-一部のプロパティは、[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/BR225393kind) のすべてのオブジェクトで共通していますが、ほとんどのプロパティは特定の種類に固有です。 以下のセクションでは、**DeviceInformationKind** ごとに並べ替えた共通プロパティの一部を紹介しています。 さまざまな種類の関係性について詳しくは、「**DeviceInformationKind**」をご覧ください。
+一部のプロパティは、[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind) のすべてのオブジェクトで共通していますが、ほとんどのプロパティは特定の種類に固有です。 以下のセクションでは、**DeviceInformationKind** ごとに並べ替えた共通プロパティの一部を紹介しています。 さまざまな種類の関係性について詳しくは、「**DeviceInformationKind**」をご覧ください。
 
-## DeviceInterface プロパティ
+## <a name="deviceinterface-properties"></a>DeviceInterface プロパティ
 
-**DeviceInterface** は既定で最も一般的な [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/BR225393kind) オブジェクトで、アプリのシナリオに使われます。 これは、デバイス API が別の特定の **DeviceInformationKind** を示さない限り使用すべきオブジェクトの種類です。
+**DeviceInterface** は既定で最も一般的な [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind) オブジェクトで、アプリのシナリオに使われます。 これは、デバイス API が別の特定の **DeviceInformationKind** を示さない限り使用すべきオブジェクトの種類です。
 
 | 名前                                  | タイプ    | 説明                                                                                                                                                                                                                                                                                                                                                                                               |
 |---------------------------------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -48,7 +55,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## デバイスのプロパティ
+## <a name="device-properties"></a>デバイスのプロパティ
 
 | 名前                                  | タイプ       | 説明                                                                                                                                                                                                                                                                              |
 |---------------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -66,7 +73,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## DeviceContainer プロパティ
+## <a name="devicecontainer-properties"></a>DeviceContainer プロパティ
 
 | 名前                              | タイプ       | 説明                                                                                                                                                        |
 |-----------------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -86,7 +93,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## DeviceInterfaceClass プロパティ
+## <a name="deviceinterfaceclass-properties"></a>DeviceInterfaceClass プロパティ
 
 | 名前                       | タイプ   | 説明                            |
 |----------------------------|--------|----------------------------------------|
@@ -94,7 +101,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## AssociationEndpoint プロパティ
+## <a name="associationendpoint-properties"></a>AssociationEndpoint プロパティ
 
 | 名前                                  | タイプ       | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |---------------------------------------|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -115,7 +122,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## AssociationEndpointContainer プロパティ
+## <a name="associationendpointcontainer-properties"></a>AssociationEndpointContainer プロパティ
 
 | 名前                                                | タイプ       | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |-----------------------------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -137,7 +144,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## AssociationEndpointService プロパティ
+## <a name="associationendpointservice-properties"></a>AssociationEndpointService プロパティ
 
 | 名前                                            | タイプ    | 説明                                                                                                      |
 |-------------------------------------------------|---------|------------------------------------------------------------------------------------------------------------------|
@@ -154,13 +161,4 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

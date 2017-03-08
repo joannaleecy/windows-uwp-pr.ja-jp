@@ -3,20 +3,27 @@ author: mtoepke
 title: "アプリを再開する方法 (DirectX と C++)"
 description: "このトピックでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリをシステムが再開するときに重要なアプリケーション データを復元する方法について説明します。"
 ms.assetid: 5e6bb673-6874-ace5-05eb-f88c045f2178
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 再開, DirectX"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 978f779eaeb732b549657751c11cd2192728999b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0ef4617417526cd2e39ce968e4d682b4015e22d3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アプリを再開する方法 (DirectX と C++)
+# <a name="how-to-resume-an-app-directx-and-c"></a>アプリを再開する方法 (DirectX と C++)
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 このトピックでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリをシステムが再開するときに重要なアプリケーション データを復元する方法について説明します。
 
-## resuming イベント ハンドラーに登録する
+## <a name="register-the-resuming-event-handler"></a>resuming イベント ハンドラーに登録する
 
 
 [**CoreApplication::Resuming**](https://msdn.microsoft.com/library/windows/apps/br205859) イベントを処理するために登録します。このイベントは、ユーザーがアプリを切り替えてから、アプリに戻ったことを示します。
@@ -37,7 +44,7 @@ void App::Initialize(CoreApplicationView^ applicationView)
 }
 ```
 
-## 一時停止の後で表示されるコンテンツを更新する
+## <a name="refresh-displayed-content-after-suspension"></a>一時停止の後で表示されるコンテンツを更新する
 
 
 アプリでは、Resuming イベントを処理する時点で、表示されているコンテンツを更新できます。 [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) のハンドラーで保存した任意のアプリを復元し、処理を再開します。 ゲーム開発の場合、オーディオ エンジンを一時停止していたら、ここで再開します。
@@ -80,12 +87,12 @@ void App::Run()
 }
 ```
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 
 ユーザーが別のアプリまたはデスクトップに切り替えると、システムはアプリを中断します。 ユーザーが元のアプリに戻すと、システムはアプリを再開します。 システムがアプリを再開した時点で、変数とデータ構造の内容は、システムがアプリを一時停止する前の状態と同じです。 システムはアプリを厳密に一時停止前の状態に復元するので、ユーザーからはアプリがバックグラウンドで実行していたように見えます。 しかし、アプリは長時間一時停止している場合があるので、アプリが一時停止している間に変化した可能性のある表示コンテンツを更新し、レンダリングやオーディオ処理スレッドを再開する必要があります。 以前の一時中止イベント中にゲームの状態データを保存してある場合は、ここで復元します。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [アプリを一時停止する方法 (DirectX と C++)](how-to-suspend-an-app-directx-and-cpp.md)
 * [アプリをアクティブ化する方法 (DirectX と C++)](how-to-activate-an-app-directx-and-cpp.md)
@@ -96,10 +103,5 @@ void App::Run()
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

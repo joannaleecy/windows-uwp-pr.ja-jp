@@ -1,16 +1,23 @@
 ---
 author: mijacobs
 Description: "タイル、バッジ、トースト、通知を使用して、アプリへのエントリ ポイントを提供し、ユーザーに最新情報を提示する方法について説明します。"
-title: "タイル、バッジ、通知"
+title: "タイル、バッジ、および通知"
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: dbc178f5df541e482f4a2e86c6662ead1992a1ce
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f8b063f45afadda50fa9ea091bf6cba71a25e8c1
+ms.lasthandoff: 02/07/2017
 
 ---
-# UWP アプリのタイル、バッジ、通知
+# <a name="tiles-badges-and-notifications-for-uwp-apps"></a>UWP アプリのタイル、バッジ、通知
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
@@ -27,7 +34,7 @@ ms.openlocfilehash: dbc178f5df541e482f4a2e86c6662ead1992a1ce
 <p><em>プッシュ通知</em>または <em>直接通知</em>は、Windows プッシュ通知サービス (WNS) またはバックグラウンド タスクのいずれかからアプリに送信される通知です。 これらの通知には、関心のあるイベントが発生したことをユーザーに通知することで応答するか、お好みの方法で応答することができます。</p>
 
  
-## タイル 
+## <a name="tiles"></a>タイル 
 <table>
 <colgroup>
 <col width="50%" />
@@ -63,7 +70,7 @@ ms.openlocfilehash: dbc178f5df541e482f4a2e86c6662ead1992a1ce
 </tbody>
 </table>
 
-## 通知
+## <a name="notifications"></a>通知
 
 
 <table>
@@ -121,10 +128,5 @@ ms.openlocfilehash: dbc178f5df541e482f4a2e86c6662ead1992a1ce
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

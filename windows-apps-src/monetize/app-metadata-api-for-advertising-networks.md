@@ -2,19 +2,27 @@
 author: mcleanbyron
 description: "アプリのメタデータ REST API を使用して、アプリの特定の種類のメタデータにアクセスする方法について説明します。 この API は、広告ネットワークで使用することにより、Windows ストア内のアプリに関する情報を取得し、広告主への広告スペースの販売を向上させることを目的としています。"
 title: "広告ネットワーク用のアプリのメタデータ API"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、広告ネットワーク、アプリのメタデータ"
+ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
 translationtype: Human Translation
-ms.sourcegitcommit: 97f7d8e5ebc2df1752a182d5765b6a8b28b539e5
-ms.openlocfilehash: e2b0680e62014526f684e7c1f7fd7da83a14f5d3
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 8ee555d335007a09c61247a929705aa2fff2469d
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 広告ネットワーク用のアプリのメタデータ API
+# <a name="app-metadata-api-for-advertising-networks"></a>広告ネットワーク用のアプリのメタデータ API
 
 広告ネットワークでは、*アプリのメタデータ API* を使用してプログラムで Windows ストア内のアプリに関するメタデータを取得します。これには、アプリのストア登録情報の説明やカテゴリ、アプリが 13 歳未満の子供を対象とするかどうかなどの詳細が含まれます。 この API へのアクセスは、現在、Microsoft によって API へのアクセス許可が付与されている開発者に制限されています。
 
 この記事では、[アプリのメタデータ API ポータル](https://admetadata.portal.azure-api.net/)を使用して API へのアクセスを要求する方法、API にアクセスするためのサブスクリプション キーを取得する方法、API を呼び出す方法について説明します。
 
-## アクセスを要求する
+## <a name="request-access"></a>アクセスを要求する
 
 広告ネットワークでは、次の手順に従って、アプリのメタデータ API へのアクセスを要求できます。
 
@@ -26,7 +34,7 @@ ms.openlocfilehash: e2b0680e62014526f684e7c1f7fd7da83a14f5d3
 要求が送信されてから、約 24 時間以内に、要求が許可されたか、拒否されたかをメールで通知します。
 
 <span id="get-key" />
-## サブスクリプション キーを取得する
+## <a name="get-your-subscription-key"></a>サブスクリプション キーを取得する
 
 アプリのメタデータ API へのアクセスが許可されている場合は、次の手順に従ってサブスクリプション キーを取得します。 API の呼び出しの要求ヘッダーでこのキーを渡す必要があります。
 
@@ -35,7 +43,7 @@ ms.openlocfilehash: e2b0680e62014526f684e7c1f7fd7da83a14f5d3
 3. ページの **[サブスクリプション]** セクションで、**[主キー]** の横にある **[表示]** をクリックします。 これが自分のサブスクリプション キーです。 後で API を呼び出すときに使用できるように、このキーをコピーします。
 
 <span id="call-the-api" />
-## API を呼び出す
+## <a name="call-the-api"></a>API を呼び出す
 
 サブスクリプション キーを確認したら、任意のプログラミング言語から、HTTP REST 構文を使用して、API を呼び出すことができます。 API の構文については、後の「[API 構文](#syntax)」をご覧ください。 C#、JavaScript、Python、およびその他のいくつかの言語でコード例を表示するには、アプリのメタデータ API ポータルの **[API]** タブをクリックし、**[アプリの詳細]** をクリックして、ページの下部にある **[コード サンプル]** セクションを参照します。
 
@@ -46,7 +54,7 @@ ms.openlocfilehash: e2b0680e62014526f684e7c1f7fd7da83a14f5d3
 
 
 <span id="syntax" />
-## API 構文
+## <a name="api-syntax"></a>API 構文
 
 このメソッドの要求の構文は次のとおりです。
 
@@ -57,7 +65,7 @@ ms.openlocfilehash: e2b0680e62014526f684e7c1f7fd7da83a14f5d3
 <span/>
  
 
-### 要求ヘッダー
+### <a name="request-header"></a>要求ヘッダー
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -65,7 +73,7 @@ ms.openlocfilehash: e2b0680e62014526f684e7c1f7fd7da83a14f5d3
 
 <span/>
 
-### 要求パラメーター
+### <a name="request-parameters"></a>要求パラメーター
 
 | 名前        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------|
@@ -73,7 +81,7 @@ ms.openlocfilehash: e2b0680e62014526f684e7c1f7fd7da83a14f5d3
 
 <span/>
 
-### 要求の例
+### <a name="request-example"></a>要求の例
 
 次の例は、ストア ID が 9NBLGGH29DM8 であるアプリのメタデータを取得する方法を示しています。
 
@@ -82,7 +90,7 @@ GET https://admetadata.azure-api.net/v1/app/9NBLGGH29DM8 HTTP/1.1
 Ocp-Apim-Subscription-Key: <subscription key>
 ```
 
-### 応答本文
+### <a name="response-body"></a>応答本文
 
 次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。
 
@@ -127,9 +135,4 @@ Ocp-Apim-Subscription-Key: <subscription key>
  
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

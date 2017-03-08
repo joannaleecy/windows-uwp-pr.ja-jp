@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
 description: "特定の日付範囲などのオプション フィルターを使ってレビュー データを取得するには、Windows ストア分析 API でこのメソッドを使います。"
 title: "アプリのレビューの取得"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ストア サービス, Windowsストア分析 API, レビュー"
 translationtype: Human Translation
-ms.sourcegitcommit: 7d05c8953f1f50be0b388a044fe996f345d45006
-ms.openlocfilehash: 49d3f3cb608f3207306af443c67b684a0ae9f319
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 68ad995341d0d4bedbe566e8a491a80b9b0a8ed2
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -13,6 +20,8 @@ ms.openlocfilehash: 49d3f3cb608f3207306af443c67b684a0ae9f319
 
 
 特定の日付範囲などのオプション フィルターを使って JSON 形式でレビュー データを取得するには、Windows ストア分析 API でこのメソッドを使います。 この情報は、Windows デベロッパー センター ダッシュボードの[レビュー レポート](../publish/reviews-report.md)でも確認することができます。
+
+レビューを取得した後、Windows ストア レビュー API の[アプリのレビューへの返信情報の取得](get-response-info-for-app-reviews.md)および[アプリ レビューへの返信の提出](submit-responses-to-app-reviews.md)のメソッドを使って、プログラムでレビューに返信できます。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -82,7 +91,7 @@ ms.openlocfilehash: 49d3f3cb608f3207306af443c67b684a0ae9f319
 | notHelpfulCount  | eq、ne  | レビューが役に立たないとマークされた回数です。  |
 | responseDate  | eq、ne  | 応答が送信された日付です。  |
 | responseText  | eq、ne、contains  | 応答のテキスト コンテンツです。  |
-
+| id  | eq、ne  | レビューの ID です (これは GUID です)。        |
 
 <span/> 
 
@@ -139,6 +148,7 @@ Authorization: Bearer <your access token>
 | notHelpfulCount        | number  | レビューが役に立たないとマークされた回数です。               |
 | responseDate           | string  | 応答が送信された日付です。                 |
 | responseText           | string  | 応答のテキスト コンテンツです。        |
+| id                     | string  | レビューの ID です (これは GUID です)。 この ID は、[アプリのレビューへの返信情報の取得](get-response-info-for-app-reviews.md)と[アプリ レビューへの返信の提出](submit-responses-to-app-reviews.md)メソッドで使用できます。       |
 
 <span/> 
 
@@ -171,7 +181,8 @@ Authorization: Bearer <your access token>
       "helpfulCount": 0,
       "notHelpfulCount": 0,
       "responseDate": "2015-08-07T01:50:22.9874488Z",
-      "responseText": "1"
+      "responseText": "1",
+      "id": "6be543ff-1c9c-4534-aced-af8b4fbe0316"
     }
   ],
   "@nextLink": null,
@@ -183,13 +194,10 @@ Authorization: Bearer <your access token>
 
 * [レビュー レポート](../publish/reviews-report.md)
 * [Windows ストア サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)
+* [アプリのレビューへの返信情報の取得](get-response-info-for-app-reviews.md)
+* [アプリのレビューへの返信の提出](submit-responses-to-app-reviews.md)
 * [アプリの入手数の取得](get-app-acquisitions.md)
 * [アドオンの入手数の取得](get-in-app-acquisitions.md)
 * [エラー報告データの取得](get-error-reporting-data.md)
 * [アプリの評価の取得](get-app-ratings.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

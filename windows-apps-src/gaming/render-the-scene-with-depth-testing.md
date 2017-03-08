@@ -3,21 +3,28 @@ author: mtoepke
 title: "深度のテストを使ったシーンのレンダリング"
 description: "シャドウ効果を作成するには、頂点 (またはジオメトリ) シェーダーとピクセル シェーダーに深度のテストを追加します。"
 ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、ゲーム、レンダリング、シーン、深度のテスト、Direct3D、シャドウ"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6351cc9f6efe0d4bffb54961624a35b4a9f4136a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 538ebe9a604daaa5a444b0f7f1764770eec8ce7c
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 深度のテストを使ったシーンのレンダリング
+# <a name="render-the-scene-with-depth-testing"></a>深度のテストを使ったシーンのレンダリング
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 シャドウ効果を作成するには、頂点 (またはジオメトリ) シェーダーとピクセル シェーダーに深度のテストを追加します。 「[チュートリアル: Direct3D 11 の深度バッファーを使ったシャドウ ボリュームの実装](implementing-depth-buffers-for-shadow-mapping.md)」のパート 3 です。
 
-## ライトの視錐台の変換の追加
+## <a name="include-transformation-for-light-frustum"></a>ライトの視錐台の変換の追加
 
 
 頂点シェーダーで、各頂点の変換後のライト空間位置を計算する必要があります。 定数バッファーを使って、ライト空間のモデル、ビュー、プロジェクションの各マトリックスを提供します  また、この定数バッファーを使って、照明計算用にライトの位置と法線を提供することもできます。 ライト空間内の変換された位置は深度のテスト時に使います。
@@ -61,7 +68,7 @@ PixelShaderInput main(VertexShaderInput input)
 
 次に、ピクセル シェーダーでは、頂点シェーダーから提供された補完済みのライト空間位置を使って、ピクセルがシャドウ内かどうかをテストします。
 
-## 位置がライトの視錐台内かどうかのテスト
+## <a name="test-whether-the-position-is-in-the-light-frustum"></a>位置がライトの視錐台内かどうかのテスト
 
 
 最初に、X 座標と Y 座標を正規化して、ピクセルがライトの視錐台内かどうかをチェックします。 両方が範囲 \[0, 1\] 内の場合は、ピクセルがシャドウ内にある可能性があります。 それ以外の場合は、深度のテストをスキップできます。 シェーダーでは、[Saturate](https://msdn.microsoft.com/library/windows/desktop/hh447231) を呼び出し、結果を元の値と比較することで、これをすばやくテストできます。
@@ -83,7 +90,7 @@ if ((saturate(shadowTexCoords.x) == shadowTexCoords.x) &&
 {
 ```
 
-## シャドウ マップに対する深度のテスト
+## <a name="depth-test-against-the-shadow-map"></a>シャドウ マップに対する深度のテスト
 
 
 サンプル比較関数 ([SampleCmp](https://msdn.microsoft.com/library/windows/desktop/bb509696) または [SampleCmpLevelZero](https://msdn.microsoft.com/library/windows/desktop/bb509697)) を使って、深度マップに対するライト空間内のピクセルの深度をテストします。 正規化されたライト空間の深度値 (`z / w`) を計算し、その値を比較関数に渡します。 サンプラーでは LessOrEqual 比較テストを使うため、比較テストに合格すると組み込みメソッドの関数は 0 を返します。これは、そのピクセルがシャドウの内側にあることを示しています。
@@ -115,7 +122,7 @@ lighting = float(shadowMap.SampleCmpLevelZero(
     );
 ```
 
-## シャドウの内側または外側の照明の計算
+## <a name="compute-lighting-in-or-out-of-shadow"></a>シャドウの内側または外側の照明の計算
 
 
 ピクセルがシャドウの内側にない場合は、ピクセル シェーダーは直接照明を計算し、それをピクセル値に追加します。
@@ -161,10 +168,5 @@ return float4(input.color * ambient, 1.f);
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

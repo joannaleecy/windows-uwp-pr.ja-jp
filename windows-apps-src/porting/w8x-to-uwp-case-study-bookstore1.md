@@ -3,9 +3,16 @@ author: mcleblanc
 title: "Windows ランタイム 8.x から UWP へのケース スタディ - Bookstore1"
 ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
 description: "このトピックでは、シンプルなユニバーサル 8.1 アプリを Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリへ移植するケース スタディについて説明します。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 348012b4a23e60e24d2185baf71cbe147e30053a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7299138cb45e9eb5e0e1b7eb349a68034e66ee3b
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -126,9 +133,4 @@ Bookstore1\_81 アプリでは、Windows 8.1 と Windows Phone 8.1 のオペレ�
 また、新しいビュー モデルを移行することは、概してスムーズなプロセスであることを確認しました。 ただし、ユーザー インターフェイスや、フォーム ファクターのサポートは、移植する際に注意が必要と考えられる項目です。
 
 次のケース スタディは「[Bookstore2](w8x-to-uwp-case-study-bookstore2.md)」です。ここでは、グループ化されたデータへのアクセスと表示について説明します。
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

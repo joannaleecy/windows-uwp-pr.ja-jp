@@ -3,14 +3,21 @@ author: DBirtolo
 ms.assetid: F8A741B4-7A6A-4160-8C5D-6B92E267E6EA
 title: "デバイスのペアリング"
 description: "一部のデバイスは、使う前にペアリングする必要があります。 Windows.Devices.Enumeration 名前空間では、デバイスをペアリングするための 3 つの異なる方法がサポートされています。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 502a1a650d327e914ffef049278581851ad4ec3b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7349188a9b735ac887c1afbc09c572f598407471
+ms.lasthandoff: 02/07/2017
 
 ---
-# デバイスのペアリング
+# <a name="pair-devices"></a>デバイスのペアリング
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
 ** 重要な API **
@@ -27,23 +34,23 @@ ms.openlocfilehash: 502a1a650d327e914ffef049278581851ad4ec3b
 
  
 
-## 自動ペアリング
+## <a name="automatic-pairing"></a>自動ペアリング
 
 
 アプリケーションでデバイスを使いたいが、デバイスがペアリングされているかどうかは重要でない場合があります。 単に、デバイスに関連付けられている機能を使用できるようにする場合です。 たとえば、アプリで Web カメラからイメージをキャプチャするだけの場合、必ずしもデバイス自体ではなく、イメージのキャプチャだけが重要となります。 対象のデバイスで使用できるデバイス API がある場合は、自動ペアリングが該当します。
 
 この場合は、単にデバイスに関連付けられている API を使い、必要に応じて呼び出しを行い、必要になる可能性のあるペアリングをシステムが処理することを信頼します。 機能を使うためにペアリングする必要がないデバイスもあります。 デバイスをペアリングする必要がない場合、デバイス API はバックグラウンドでペアリング アクションを処理するため、アプリにその機能を統合する必要はありません。 アプリには、特定のデバイスがペアリングされているかや、ペアリングする必要があるかどうかに関する情報がありませんが、それでもデバイスにアクセスし、その機能を使うことができます。
 
-## 基本ペアリング
+## <a name="basic-pairing"></a>基本ペアリング
 
 
 基本ペアリングは、アプリケーションがデバイスのペアリングを試行するために [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API を使うときに行われます。 このシナリオでは、Windows にペアリングの試行とその処理を許可します。 ユーザーの操作が必要な場合は、Windows によって処理されます。 また、デバイスのペアリングが必要な場合や、自動ペアリングを試行する、関連するデバイス API がない場合も、基本ペアリングを使用します。 単に、デバイスを使用できるようにする場合でも、最初にペアリングする必要があります。
 
 基本ペアリングを試行するためには、対象のデバイス用の [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトを最初に入手する必要があります。 オブジェクトを入手したら、[**DeviceInformation.Pairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) プロパティを操作します。これは、[**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) オブジェクトです。 ペアリングを試みるには、[**DeviceInformationPairing.PairAsync**](https://msdn.microsoft.com/library/windows/apps/mt608800) を呼び出します。 ペアリング アクションの完了を試みる時間をアプリに与えるために、結果を **await** する必要があります。 ペアリング アクションの結果が返され、エラーが返されない限り、デバイスはペアリングされます。
 
-基本ペアリングを使っている場合は、デバイスのペアリング状態に関する追加情報にもアクセスできます。 たとえば、ペアリング状態 ([**IsPaired**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx_ispaired)) と、デバイスがペアリングできるかどうか ([**CanPair**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx_canpair)) がわかります。 これらはどちらも [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) オブジェクトのプロパティです。 自動ペアリングを使っている場合、該当する [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトを入手しない限り、この情報にアクセスできない可能性があります。
+基本ペアリングを使っている場合は、デバイスのペアリング状態に関する追加情報にもアクセスできます。 たとえば、ペアリング状態 ([**IsPaired**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.ispaired.aspx)) と、デバイスがペアリングできるかどうか ([**CanPair**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.canpair.aspx)) がわかります。 これらはどちらも [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) オブジェクトのプロパティです。 自動ペアリングを使っている場合、該当する [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトを入手しない限り、この情報にアクセスできない可能性があります。
 
-## カスタム ペアリング
+## <a name="custom-pairing"></a>カスタム ペアリング
 
 
 カスタム ペアリングでは、アプリでペアリング プロセスを処理できます。 これにより、アプリはペアリング プロセス用にサポートされている [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) を指定できます。 必要に応じて、ユーザーと対話する独自のユーザー インターフェイスも作成します。 ペアリング プロセスの進行に対するアプリの影響を少し高めたり、独自のペアリング ユーザー インターフェイスを表示するときに、カスタム ペアリングを使います。
@@ -54,14 +61,14 @@ ms.openlocfilehash: 502a1a650d327e914ffef049278581851ad4ec3b
 
 カスタム ペアリングは常にシステム レベルの操作であることを認識することが重要です。 このため、デスクトップまたは Windows Phone を操作している場合、ペアリングが発生するときに、システム ダイアログが常にユーザーに表示されます。 これは、これらの両方のプラットフォームが、ユーザーの同意を必要とするユーザー エクスペリエンスを発生させるためです。 このダイアログは自動的に生成されるため、これらのプラットフォームを使用中に **ConfirmOnly** の [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) を選ぶ場合に、独自のダイアログを作る必要はありません。 他の **DevicePairingKinds** については、特定の **DevicePairingKinds** 値に応じて、いくつかの特別な処理を実行する必要があります。 さまざまな **DevicePairingKinds** の値のカスタム ペアリングを処理する方法の例については、サンプルをご覧ください。
 
-## ペアリング解除
+## <a name="unpairing"></a>ペアリング解除
 
 
 デバイスのペアリング解除が該当するのは、上記で説明した基本ペアリングまたはカスタム ペアリングのシナリオのみです。 自動ペアリングを使っている場合、アプリはデバイスのペアリング状態を記憶しないため、ペアリング解除する必要はありません。 それでもデバイスをペアリング解除する場合のプロセスは、実装するのが基本ペアリングまたはカスタム ペアリングかにかかわらず同じです。 これは、追加情報を提供したり、ペアリング解除プロセスにかかわったりする必要がないためです。
 
 デバイスをペアリング解除する最初の手順は、ペアリング解除するデバイスの [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトを入手することです。 次に、[**DeviceInformation.Pairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) プロパティを取得し、[**DeviceInformationPairing.UnpairAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.unpairasync) を呼び出す必要があります。 ペアリングと同様に、結果を **await** します。 ペアリング解除アクションの結果が返され、エラーが返されない限り、デバイスはペアリング解除されます。
 
-## サンプル
+## <a name="sample"></a>サンプル
 
 
 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API の使い方を示すサンプルをダウンロードするには、[ここ](http://go.microsoft.com/fwlink/?LinkID=620536)をクリックしてください。
@@ -72,10 +79,5 @@ ms.openlocfilehash: 502a1a650d327e914ffef049278581851ad4ec3b
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

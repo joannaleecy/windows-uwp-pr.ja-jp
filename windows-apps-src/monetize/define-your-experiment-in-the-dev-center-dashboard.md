@@ -3,21 +3,28 @@ author: mcleanbyron
 Description: "ユニバーサル Windows プラットフォーム (UWP) アプリで A/B テストを実施する前に、デベロッパー センター ダッシュボードで実験を定義する必要があります。"
 title: "デベロッパー センター ダッシュボードで実験を定義する"
 ms.assetid: 675F2ADE-0D4B-41EB-AA4E-56B9C8F32C41
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Microsoft Store Services SDK, A/B テスト, 実験"
 translationtype: Human Translation
-ms.sourcegitcommit: b33e003af6e12df5eedfe150155db6777c5c62f6
-ms.openlocfilehash: fa209464e247e7073da2197ddd0b9a5344f3763b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f07e842ebdcb25056218b96d192b4ff0f086bd0c
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# デベロッパー センター ダッシュボードで実験を定義する
+# <a name="define-your-experiment-in-the-dev-center-dashboard"></a>デベロッパー センター ダッシュボードで実験を定義する
 
-[デベロッパー センター ダッシュボードでプロジェクトを作成し、リモート変数を定義](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)し、[アプリの実験用のコードを記述](code-your-experiment-in-your-app.md)したら、プロジェクトで実験を作成することができます。 実験を作成するときは、ゴールとユーザーが受け取るバリエーションを定義します。
+[デベロッパー センター ダッシュボードでプロジェクトを作成して、リモート変数を定義](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)し、[アプリの実験用のコードを記述](code-your-experiment-in-your-app.md)したら、プロジェクトで実験を作成することができます。 実験を作成するときは、ゴールとユーザーが受け取るバリエーションを定義します。
 
 実験の作成および実行のプロセスについて詳しく示すチュートリアルについては、「[A/B テストを使用して最初の実験を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)」をご覧ください。
 
 <span id="get-an-api-key" />
 <span id="create-an-experiment" />
-## 実験を作成する
+## <a name="create-your-experiment"></a>実験を作成する
 
 1. [デベロッパー センター ダッシュボード](https://dev.windows.com/overview)にサインインします。
 2. **[アプリ]** で、実験を作成するアプリを選択します。
@@ -38,7 +45,7 @@ ms.openlocfilehash: fa209464e247e7073da2197ddd0b9a5344f3763b
   >**注**&nbsp;&nbsp;デベロッパー センターで報告されるのは、24 時間以内に発生した、各ユーザー ビューの最初のコンバージョン イベントのみです。 ユーザーが 24 時間以内にアプリで複数のコンバージョン イベントをトリガーした場合は、最初のコンバージョン イベントのみ報告されます。 これは、コンバージョンを行ったユーザーの数を最大化することをゴールとしていた場合に、単一のユーザーによって、サンプルのユーザー グループの実験の結果が歪曲されないようにすることを目的としています。
 
 <span id="define-the-variations-and-settings-for-the-experiment" />
-### 実験のリモート変数とバリエーションを定義する
+### <a name="define-the-remote-variables-and-variations-for-your-experiment"></a>実験のリモート変数とバリエーションを定義する
 
 次に、実験のリモート[変数](run-app-experiments-with-a-b-testing.md#terms)と[バリエーション](run-app-experiments-with-a-b-testing.md#terms)を定義します。
 
@@ -50,7 +57,7 @@ ms.openlocfilehash: fa209464e247e7073da2197ddd0b9a5344f3763b
 4. 実験のそれぞれ一意のバリエーションに、変数の値を編集します (つまり、コントロールのバリエーション以外のバリエーションです)。
 
 <span id="save-and-activate-your-experiment" />
-### 実験を保存してアクティブ化する
+### <a name="save-and-activate-your-experiment"></a>実験を保存してアクティブ化する
 
 実験の必須フィールドへの入力が完了したら、**[保存]** をクリックして実験を保存します。
 
@@ -59,7 +66,7 @@ ms.openlocfilehash: fa209464e247e7073da2197ddd0b9a5344f3763b
 > **重要**  1 つのプロジェクトには、同時に 1 つのアクティブな実験のみを含むことができます。 実験をアクティブ化した後は、実験の作成時に **[編集可能な実験]** チェック ボックスをオンにしていない場合、実験のパラメーターを変更できなくなります。 アプリで実験のコードを記述してから実験をアクティブ化することをお勧めします。
 
 <span id="test_experiments"/>
-## 内部テスト用の実験を作成する
+## <a name="create-an-experiment-for-internal-testing"></a>内部テスト用の実験を作成する
 
 コントロールされたユーザー (たとえば社内のテスター) で実験のテストを行い、すべてのバリエーションが予想どおりに動作していることを確認してから、一般のユーザーを対象に実験をアクティブ化することをお勧めします。 **[編集可能な実験]** のオプションを選択した実験を作成することにより、これを実現できます。
 
@@ -73,20 +80,15 @@ ms.openlocfilehash: fa209464e247e7073da2197ddd0b9a5344f3763b
 4. 複製された実験で、ターゲットのバリエーションの配布が正しいことを確認します。
 5. 複製された実験をアクティブ化して、ユーザーに実験をリリースします。
 
-## 次の手順
+## <a name="next-steps"></a>次の手順
 
 デベロッパー センター ダッシュボードで実験を定義し、アプリでその実験のコードを記述したら、[デベロッパー センター ダッシュボードで実験を実行および管理します](manage-your-experiment.md)。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [プロジェクトを作成し、デベロッパー センター ダッシュボードでリモート変数を定義する](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
 * [アプリの実験用のコードを記述する](code-your-experiment-in-your-app.md)
 * [デベロッパー センター ダッシュボードで実験を管理する](manage-your-experiment.md)
 * [A/B テストを使用して最初の実験を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)
 * [A/B テストを使用してアプリの実験を実行する](run-app-experiments-with-a-b-testing.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

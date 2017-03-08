@@ -3,23 +3,30 @@ author: jnHs
 Description: "デベロッパー センターの登録プロセス中に VAT ID 番号の入力を求められた場合は、以下の情報を参考にしてください。"
 title: "VAT 情報"
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9ff913999f0697b379df868277fb45597150aa6e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a26cb43d230cd7dbb050254cceb70d3158c3af5d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# VAT 情報
+# <a name="vat-info"></a>VAT 情報
 
 
 デベロッパー センターの登録プロセス中に VAT ID 番号の入力を求められた場合は、以下の情報を参考にしてください。
 
-## VAT 番号について
+## <a name="understanding-vat-numbers"></a>VAT 番号について
 
 
 付加価値税 (VAT) 番号は、欧州連合の国と地域に使用されている識別番号です。 詳しくは、欧州連合の公式 [VIES サイト](http://go.microsoft.com/fwlink/p/?LinkId=258372)をご覧ください。
 
-## VAT 番号で使用される形式
+## <a name="accepted-formats-for-vat-numbers"></a>VAT 番号で使用される形式
 
 
 Microsoft では税務に関する助言を提供しておらず、次の情報はガイダンスとしてのみ提供しています。 Microsoft に対して VAT 番号を提供するうえでこのガイダンスが十分でない場合は、最新の変更について管轄の税務機関に確認してください。
@@ -247,10 +254,5 @@ Microsoft では税務に関する助言を提供しておらず、次の情報�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -6,15 +6,22 @@ ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
 dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
 label: Auto-suggest box
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 6b41c8b1888b61c82aa3d54244151b08d963658d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3700751db4b00405d3f2b5b41f6e487a32b56f38
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="auto-suggest-box"></a>自動提案ボックス
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-AutoSuggestBox を使って、ユーザーが入力と同時に選べる候補リストを表示します。
+入力に応じてユーザーが選択できる候補の一覧を表示するには、AutoSuggestBox を使います。
 
 ![自動提案ボックス](images/controls/auto-suggest-box-open.png)
 
@@ -173,9 +180,4 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 - [**TextBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Windows.UI.Xaml.Controls PasswordBox クラス**](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [String.Length プロパティ](https://msdn.microsoft.com/library/system.string.length.aspx)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

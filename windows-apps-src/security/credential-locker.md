@@ -3,16 +3,23 @@ title: "資格情報保管ボックス"
 description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで資格情報保管ボックスを使ってユーザーの資格情報を安全に保管し、ユーザーの Microsoft アカウントを使ってデバイス間をローミングする方法について説明します。"
 ms.assetid: 7BCC443D-9E8A-417C-B275-3105F5DED863
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: 2d5e1fada82e0c39ad0dce31c779ac80005aff17
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d72432aa5f9ccc40d4f822f5d76c1e09b606e33a
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 資格情報保管ボックス
+# <a name="credential-locker"></a>資格情報保管ボックス
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
 この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで資格情報保管ボックスを使ってユーザーの資格情報を安全に保管し、ユーザーの Microsoft アカウントを使ってデバイス間をローミングする方法について説明します。
@@ -21,7 +28,7 @@ ms.openlocfilehash: 2d5e1fada82e0c39ad0dce31c779ac80005aff17
 
 ドメイン アカウントの場合、資格情報保管ボックスは動作が少し異なります。 Microsoft アカウントと共に格納された資格情報がある場合、そのアカウントをドメイン アカウント (職場で使うアカウントなど) に関連付けると、資格情報はドメイン アカウントにローミングされます。 ただし、ドメイン アカウントでのサインオン中に追加された新しい資格情報はローミングされません。 これは、ドメインのプライベートな資格情報がドメイン外部に公開されないようにするためです。
 
-## ユーザー資格情報の格納
+## <a name="storing-user-credentials"></a>ユーザー資格情報の格納
 
 
 1.  [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089) 名前空間の [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) オブジェクトを使って、資格情報保管ボックスへの参照を取得します。
@@ -33,7 +40,7 @@ vault.Add(new Windows.Security.Credentials.PasswordCredential(
     "My App", username, password));
 ```
 
-## ユーザー資格情報の取得
+## <a name="retrieving-user-credentials"></a>ユーザー資格情報の取得
 
 
 [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) オブジェクトへの参照を取得した後、資格情報保管ボックスからユーザー資格情報を取得するには、いくつかの方法があります。
@@ -104,7 +111,7 @@ private Windows.Security.Credentials.PasswordCredential GetCredentialFromLocker(
 }
 ```
 
-## ユーザー資格情報の削除
+## <a name="deleting-user-credentials"></a>ユーザー資格情報の削除
 
 
 資格情報保管ボックスからのユーザー資格情報の削除も、2 段階のプロセスで簡単に行うことができます。
@@ -119,7 +126,7 @@ vault.Remove(new Windows.Security.Credentials.PasswordCredential(
     "My App", username, password));
 ```
 
-## ベスト プラクティス
+## <a name="best-practices"></a>ベスト プラクティス
 
 
 資格情報保管ボックスはパスワードのみに使い、大きいデータ BLOB には使わないようにします。
@@ -130,8 +137,3 @@ vault.Remove(new Windows.Security.Credentials.PasswordCredential(
 -   ユーザーがパスワードの保存を選んでいる。
 
 アプリ データまたはローミングの設定を使って資格情報をプレーンテキストに格納しないでください。
-
-
-<!--HONumber=Aug16_HO3-->
-
-

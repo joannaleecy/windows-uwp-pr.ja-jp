@@ -3,16 +3,23 @@ author: PatrickFarley
 title: "ジオコーディングと逆ジオコーディングの実行"
 description: "住所から地理的な位置への変換 (ジオコーディング) や地理的な位置から住所への変換 (逆ジオコーディング) を行うには、Windows.Services.Maps 名前空間の MapLocationFinder クラスのメソッドを呼び出します。"
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ジオコーディング, 地図, 位置情報"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d42708a82f99e345183b6cbcb87cfdd136b10e52
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 16be7bcafaf286a71e79fb4bca01511ddc7a1ae0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# ジオコーディングと逆ジオコーディングの実行
+# <a name="perform-geocoding-and-reverse-geocoding"></a>ジオコーディングと逆ジオコーディングの実行
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 住所から地理的な位置への変換 (ジオコーディング) や地理的な位置から住所への変換 (逆ジオコーディング) を行うには、[**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間の [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) クラスのメソッドを呼び出します。
@@ -32,7 +39,7 @@ ms.openlocfilehash: d42708a82f99e345183b6cbcb87cfdd136b10e52
 
  
 
-## 位置情報の取得 (ジオコーディング)
+## <a name="get-a-location-geocode"></a>位置情報の取得 (ジオコーディング)
 
 
 住所や地名を地理的な位置に変換する (ジオコーディング) には、次に示している手順を実行します。
@@ -81,7 +88,7 @@ private async void geocodeButton_Click(object sender, RoutedEventArgs e)
 result = (47.6406099647284,-122.129339994863)
 ```
 
-## 住所の取得 (逆ジオコーディング)
+## <a name="get-an-address-reverse-geocode"></a>住所の取得 (逆ジオコーディング)
 
 
 地理的な位置を住所に変換する (逆ジオコーディング) には、次に示している手順を実行します。
@@ -123,7 +130,7 @@ private async void reverseGeocodeButton_Click(object sender, RoutedEventArgs e)
 town = Redmond
 ```
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
 * [UWP の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
@@ -133,11 +140,4 @@ town = Redmond
 * [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550)
 * [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)
 * [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

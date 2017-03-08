@@ -5,9 +5,16 @@ title: "UWP アプリでのモーションとアニメーション"
 ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
 label: Motion
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 53b6108a472e021caa0d11327c1457b3f6ca8aac
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fc0c4f50cc7970fe6ff4cfa5c631a03a9f216470
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -15,7 +22,7 @@ ms.openlocfilehash: 53b6108a472e021caa0d11327c1457b3f6ca8aac
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-目的がはっきりし、適切にデザインされたアニメーションは、アプリを生き生きとさせ、精巧で洗練された印象を与えます。 コンテキストの変化がわかりやすく、視覚的な切り替えがエクスペリエンスに結び付きます。
+目的がはっきりとしており、適切にデザインされたアニメーションは、アプリに強い印象を与え、精巧で完成度の高い操作性を感じさせます。 コンテキストの変化がわかりやすく、視覚的な切り替えがエクスペリエンスに結び付きます。
 
 ## <a name="benefits-of-animation"></a>アニメーションの利点
 
@@ -106,9 +113,4 @@ ms.openlocfilehash: 53b6108a472e021caa0d11327c1457b3f6ca8aac
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

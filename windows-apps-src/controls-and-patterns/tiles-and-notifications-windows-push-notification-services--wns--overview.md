@@ -5,9 +5,16 @@ title: "Windows プッシュ通知サービス (WNS) の概要"
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 label: TBD
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 43f708d8baa379049837074f62e61e9e243513df
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: adc09ec19572d190bc756dee63d3e735d512f4f1
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -260,10 +267,5 @@ async public void CheckForEnergySaving()
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

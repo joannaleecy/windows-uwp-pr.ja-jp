@@ -3,13 +3,20 @@ author: jwmsft
 description: "xBind マークアップ拡張は Binding の代わりです。 xBind では、Binding の機能のいくつかが省略されていますが、Binding よりも短い時間および少ないメモリで動作し、より適切なデバッグをサポートしています。"
 title: "xBind マークアップ拡張"
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 2dc706412684ded7fe4e98c6d01fb75ae65abd5f
-ms.openlocfilehash: b7d1dd183ba35e4b694a80d3e43628c928b218e5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a82cb66c66b593c0241a651e4df34e3998a106c6
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# {x:Bind} マークアップ拡張
+# <a name="xbind-markup-extension"></a>{x:Bind} マークアップ拡張
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -25,7 +32,7 @@ XAML のコンパイル時に、**{x:Bind}** は、データ ソースのプロ�
 -   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame)
 -   [XAML UI の基本のサンプル](http://go.microsoft.com/fwlink/p/?linkid=619992)
 
-## XAML 属性の使用方法
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法
 
 ``` syntax
 <object property="{x:Bind}" .../>
@@ -45,11 +52,11 @@ XAML のコンパイル時に、**{x:Bind}** は、データ ソースのプロ�
 | _propName_ | Binding オブジェクトで設定するプロパティの文字列名。 たとえば、"Converter" です。 |
 | _value_ | プロパティに設定する値。 引数の構文は、設定されているプロパティによって異なります。 値がそれ自体マークアップ拡張である _propName_=_value_ の使用例を示します: `Converter={StaticResource myConverterClass}`。 詳しくは、以下の「[{x:Bind} で設定できるプロパティ](#properties-you-can-set)」をご覧ください。 | 
 
-## プロパティ パス
+## <a name="property-path"></a>プロパティ パス
 
 *PropertyPath* は **{x:Bind}** 式の **Path** です。 **Path** は、バインディング先のプロパティ、サブプロパティ、フィールド、またはメソッドの値 (ソース) を指定するプロパティ パスです。 **Path** プロパティの名前は、`{Binding Path=...}` のように明示的に指定することができます。 または、`{Binding ...}` のように省略することもできます。
 
-### プロパティのパスの解決
+### <a name="property-path-resolution"></a>プロパティのパスの解決
 
 **{x:Bind}** は、既定のソースとして **DataContext** を使わず、代わりにページまたはユーザー コントロール自体を使います。 したがって、ページまたはユーザー コントロールのコード ビハインドでプロパティ、フィールド、およびメソッドが検索されます。 通常、ビュー モデルを **{x:Bind}** に公開するには、ページまたはユーザー コントロールのコード ビハインドに新しいフィールドまたはプロパティを追加する必要があります。 プロパティ パスのステップは、ドット (.) で区切ります。複数の区切り記号を指定することで、連続するサブプロパティを走査できます。 バインドされているオブジェクトを実装するために使用するプログラミング言語に関係なく、ドット区切り記号を使います。
 
@@ -59,7 +66,7 @@ C++/CX の場合、**{x:Bind}** はページまたはデータ モデルのプ�
 
 **x:Bind** では、**ElementName=xxx** をバインド式の一部として使用する必要はありません。 **x:Bind** では、要素の名前をバインディングのパスの先頭部分として使用できません。これは、名前付き要素が、ルート バインディング ソースを表すページまたはユーザー コントロール内のフィールドになるためです。
 
-### コレクション
+### <a name="collections"></a>コレクション
 
 データ ソースがコレクションである場合、プロパティ パスには、位置またはインデックスによりコレクション内の項目を指定できます。 たとえば "Teams\[0\].Players" の場合、"0" をリテラル "\[\]" で囲むことで、インデックス 0 で始まるコレクション内の最初の項目を要求します。
 
@@ -69,18 +76,18 @@ C++/CX の場合、**{x:Bind}** はページまたはデータ モデルのプ�
 
 文字列インデクサーを使うには、インデックス化されるプロパティの型に基づいて、モデルで **IDictionary&lt;string, T&gt;** または **IMap&lt;string, T&gt;** を実装する必要があります。 インデックス付きプロパティの型が **IObservableMap** をサポートしており、バインディングが OneWay または TwoWay の場合、そのプロパティは登録され、それらのインターフェイスで変更通知をリッスンします。 変更検出ロジックは、特定のインデックス付きの値に影響を与えない場合でも、すべてのコレクションの変更に基づいて更新されます。 これは、リッスンしているロジックがコレクションのすべてのインスタンス間で共通であるためです。
 
-### 添付プロパティ
+### <a name="attached-properties"></a>添付プロパティ
 
 添付プロパティにバインドするには、クラスおよびプロパティ名をドットの後のかっこ内に含める必要があります。 たとえば、**Text="{x:Bind Button22.(Grid.Row)}"** などです。 プロパティが Xaml 名前空間で宣言されていない場合は、そのプロパティの前に xml 名前空間を付ける必要があります。これはドキュメントの先頭でコード名前空間にマップする必要があります。
 
-### キャスト
+### <a name="casting"></a>キャスト
 
 コンパイル済みのバインドは、厳密に型指定され、パスの各ステップの型を解決します。 返される型にメンバーがない場合は、コンパイル時に失敗します。 キャストを指定して、オブジェクトの実際の型をバインディングに通知することができます。 次の場合、**obj** は型オブジェクトのプロパティですが、テキスト ボックスを含んでいます。したがって、**Text="{x:Bind ((TextBox)obj).Text}"** または **Text="{x:Bind obj.(TextBox.Text)}"** を使用できます。
 groups3 field in **Text="{x:Bind ((data:SampleDataGroup)groups3\[0\]).Title}"** の **groups3** フィールドは、オブジェクトのディクショナリです。したがって、**data:SampleDataGroup** にキャストする必要があります。 既定の XAML 名前空間の一部ではないコード名前空間にオブジェクトの型をマップするための xml **data:** 名前空間のプレフィックスの使用法に注意してください。
 
 _注: C# スタイルのキャスト構文は添付プロパティ構文より柔軟であり、今後はこの構文が推奨されます。_
 
-## バインディング パス内の関数
+## <a name="functions-in-binding-paths"></a>バインディング パス内の関数
 
 Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスのリーフ ステップとしての関数の使用をサポートします。 これにより次のことが可能になります。
 - 値の変換を実現するためのより簡単な方法
@@ -116,13 +123,13 @@ class ColorEntry
 }
 
 ```
-### 関数の構文
+### <a name="function-syntax"></a>関数の構文
 ``` Syntax
 Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Order.ShipAddr.Zip, 'Contoso'), Mode=OneTime}"
              |      Path to function         |    Path argument   |       Path argument       | Const arg |  Bind Props
 ```
 
-### 関数へのパス
+### <a name="path-to-the-function"></a>関数へのパス
 関数へのパスは、他のプロパティ パスと同じように指定され、関数を見つけるためにドット (.)、インデクサー、またはキャストを含めることができます。
 
 静的関数は、XMLNamespace:ClassName.MethodName 構文を使って指定できます。 たとえば、ページの先頭で **xmlns:sys="using:System"** が指定されているものとすると、**&lt;CalendarDatePicker Date="\{x:Bind sys:DateTime.Parse(TextBlock1.Text)\}" /&gt;** は DateTime.Parse 関数にマップします。
@@ -136,7 +143,7 @@ Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Orde
 - 関数の戻り値の型は、バインディングを使用しているプロパティの型と一致する必要があります。
 
 
-### 関数の引数
+### <a name="function-arguments"></a>関数の引数
 複数の関数引数をコンマ (,) で区切って指定できます。
 - バインディング パス – そのオブジェクトにバインドする場合と同じ構文です。
   - モードが OneWay/TwoWay の場合は、変更検出が実行されて、オブジェクトが変化するとバインディングが再評価されます。
@@ -144,10 +151,10 @@ Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Orde
 - 定数 - たとえば -123.456
 - ブール値 – "x:True" または "x:False" と指定します
 
-### 双方向の関数バインド
+### <a name="two-way-function-bindings"></a>双方向の関数バインド
 双方向のバインディング シナリオでは、逆方向のバインドのために第 2 の関数を指定する必要があります。 これは、**BindBack** バインド プロパティを使って行います (例: **Text="\{x:Bind a.MyFunc(b), BindBack=a.MyFunc2\}"**)。 関数が受け取る必要のある引数は 1 つで、モデルにプッシュバックする必要のある値です。
 
-## イベント バインディング
+## <a name="event-binding"></a>イベント バインディング
 
 イベント バインディングは、コンパイル済みのバインドの固有の機能です。 これにより、バインディングを使用するイベントのハンドラーを指定でき、それをコード ビハインドのメソッドにする必要はありません。 たとえば、**Click="{x:Bind rootFrame.GoForward}"** などです。
 
@@ -161,7 +168,7 @@ Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Orde
 
 プロパティ パスの文字列構文について詳しくは、ここで説明した **{x:Bind}** に対する違いに注意して、「[プロパティ パス構文](property-path-syntax.md)」をご覧ください。
 
-##   {x:Bind} で設定できるプロパティ
+##  <a name="properties-that-you-can-set-with-xbind"></a> {x:Bind} で設定できるプロパティ
 
 
 **{x:Bind}** は、*bindingProperties* プレースホルダー構文で示されます。これは、マークアップ拡張で設定可能な読み取り/書き込みプロパティが複数あるためです。 プロパティは、*propName*=*value* ペアをコンマで区切ることにより、任意の順序で設定できます。 バインド式に改行を含めることはできないことに注意してください。 プロパティによっては、型変換をサポートしていない型が必要なものがあります。そのため、これらのプロパティでは、**{x:Bind}** 内で入れ子にされた独自のマークアップ拡張が必要です。
@@ -181,7 +188,7 @@ Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Orde
 
 **注:** マークアップを **{Binding}** から **{x:Bind}** に変換する場合は、**Mode** プロパティの既定値の違いに注意してください。
  
-## 注釈
+## <a name="remarks"></a>注釈
 
 **{x:Bind}** は、その利点を得るために、生成されたコードを使用するので、コンパイル時に型情報が必要です。 つまり、型が事前にわかっていない場合は、プロパティにバインドできません。 このため、**{x:Bind}** は、型が **Object** で、実行時に変更されることもある **DataContext** プロパティと共に使用することはできません。
 
@@ -203,7 +210,7 @@ Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Orde
 
 **{x:Bind}** は、マークアップ拡張のみです。このようなバインディングをプログラムで作成したり操作したりする方法はありません。 マークアップ拡張について詳しくは、「[XAML の概要](xaml-overview.md)」をご覧ください。
 
-## 例
+## <a name="examples"></a>例
 
 ```XML
 <Page x:Class="QuizGame.View.HostView" ... >
@@ -221,9 +228,4 @@ Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Orde
     </StackPanel>
   </DataTemplate>
 ```
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

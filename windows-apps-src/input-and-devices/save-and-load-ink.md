@@ -5,15 +5,16 @@ title: "Windows Ink ストローク データの保存と取得"
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
-keywords: "Windows Ink, Windows の手書き入力, DirectInk, InkPresenter, InkCanvas, ISF, Ink Serialized Format"
+keywords: "Windows Ink, Windows の手書き入力, DirectInk, InkPresenter, InkCanvas, ISF, Ink Serialized Format, ユーザー操作, 入力"
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 11bd4c1d8c4f675fb1dad38e249d64324fa29ecf
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7c4f0ac39decede933f10fc94ebeb09fa41415e4
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -450,10 +451,5 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

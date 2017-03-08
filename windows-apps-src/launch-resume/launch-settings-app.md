@@ -3,15 +3,22 @@ author: TylerMSFT
 title: "Windows 設定アプリの起動"
 description: "アプリから Windows 設定アプリを起動する方法について説明します。 ここでは、ms-settings URI スキームについて説明します。 Windows 設定アプリを起動して特定の設定ページを表示するには、この URI スキームを使います。"
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 1135feec72510e6cbe955161ac169158a71097b9
-ms.openlocfilehash: f762d7eb70a0e9119f32350a815691109f994c75
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e4cc17bf268ddb470c3c64dfe3e471053d8fca55
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="launch-the-windows-settings-app"></a>Windows 設定アプリの起動
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 **重要な API**
 
@@ -376,9 +383,4 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
         <td>ms-settings:developers</td>
     </tr>
 </table><br/>
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

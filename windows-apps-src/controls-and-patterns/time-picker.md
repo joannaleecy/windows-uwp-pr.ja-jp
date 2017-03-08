@@ -1,19 +1,26 @@
 ---
 author: Jwmsft
-Description: "TimePicker は、ユーザーがタッチ、マウス、またはキーボード入力を使って時刻値を選択できる標準化された方法です。"
+Description: "時刻の選択コントロールは、ユーザーがタッチ、マウス、またはキーボード入力を使って時刻値を選択できる標準化された方法です。"
 title: "時刻の選択コントロール"
 ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
 label: Time picker
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: cfe38564f54f61b2d48918f5dd5bf41e7c57b965
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5cd0b42f05ca246005b09faa0e926bc2e625d2c1
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="time-picker"></a>時刻の選択コントロール
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-TimePicker は、ユーザーがタッチ、マウス、またはキーボード入力を使って時刻値を選択できる標準化された方法です。 
+時刻の選択コントロールは、ユーザーがタッチ、マウス、またはキーボード入力を使って時刻値を選択できる標準化された方法です。 
 
 <div class="important-apis" >
 <b>重要な API</b><br/>
@@ -62,9 +69,4 @@ arrivalTimePicker.Header = "Arrival time";
 - [カレンダーの日付の選択コントロール](calendar-date-picker.md)
 - [カレンダー ビュー](calendar-view.md)
 - [日付の選択コントロール](date-picker.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

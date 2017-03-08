@@ -12,8 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
-ms.openlocfilehash: 5080fe9496b7a13336b42a83fd569e44f43ba2db
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9e9ba56fd9d9a3b33d6dc7eadb999d0fcf159d3e
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -239,10 +240,5 @@ TTS では、プレーンテキストまたは SSML から音声出力が生成�
  
 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

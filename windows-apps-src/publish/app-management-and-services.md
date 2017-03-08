@@ -3,23 +3,30 @@ author: jnHs
 Description: "Windows デベロッパー センター ダッシュボードで各アプリに関連する詳細を管理および表示し、プッシュ通知、A/B テスト、マップなどのサービスを構成します。"
 title: "アプリの管理とサービス"
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 9611b3cc87c29e29a19b87a5b5f37bef1a71dfbb
-ms.openlocfilehash: d5244bda2cefa146e3c481270fe72fdb8f2d35cf
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1aaab8d122968265ff17b352a53b69081e84f01e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# アプリの管理とサービス
+# <a name="app-management-and-services"></a>アプリの管理とサービス
 
 Windows デベロッパー センター ダッシュボードで各アプリに関連する詳細を管理および表示し、プッシュ通知、A/B テスト、マップなどのサービスを構成できます。
 
 ダッシュボードでアプリを操作するとき、左側のナビゲーション メニューに **[サービス]** と **[アプリ管理]** のセクションが表示されます。 これらのセクションを展開すると、次の機能にアクセスできます。
 
-## サービス
+## <a name="services"></a>サービス
 
 **[サービス]** セクションでは、アプリのいくつかの異なるサービスを管理できます。
 
-### プッシュ通知
+### <a name="push-notifications"></a>プッシュ通知
 
 **[プッシュ通知]** セクションでは、アプリのユーザーを対象としたプッシュ通知を作成して送信できます。 すべてのアプリのユーザーにプッシュ通知を送信することも、[顧客セグメント](create-customer-segments.md)で定義した基準を満たす、Windows 10 ユーザーのサブセットに送信することもできます。 詳しくは、「[アプリの顧客にターゲット プッシュ通知を送信する](send-push-notifications-to-your-apps-customers.md)」をご覧ください。
 
@@ -31,13 +38,13 @@ Windows デベロッパー センター ダッシュボードで各アプリに�
 
 -   **Microsoft プッシュ通知サービス (MPNS)** は、Windows Phone の .xap パッケージと一緒に使うことができます。 ここで構成を行わなくても、認証されていない通知を限られた数送信することができますが、制限が減らないように認証済みの通知を使うことをお勧めします。 MPNS を使っている場合、**[プッシュ通知]** のフィールドに証明書をアップロードする必要があります。 詳しくは、「[Windows Phone 8 のプッシュ通知を送信するように認証済み Web サービスを設定する](http://go.microsoft.com/fwlink/p/?LinkId=528736)」をご覧ください。
 
-### Experimentation
+### <a name="experimentation"></a>Experimentation
 
 **[Experimentation]** ページを使うと、ユニバーサル Windows プラットフォーム (UWP) アプリの試験的機能を作成し、A/B テストを実行できます。 アプリの機能の変更をすべてのユーザー向けに有効にする前に、一部のユーザーに対して変更 (またはバリエーション) の有効性を A/B テストで測定します。
 
 詳しくは、「[A/B テストを使用してアプリの試験的機能を実行する](../monetize/run-app-experiments-with-a-b-testing.md)」をご覧ください。
 
-### マップ
+### <a name="maps"></a>マップ
 
 Windows Phone 8.1 以前を対象としたアプリでマップ サービスを使うには、アプリのコードに含めるマップ サービス アプリケーション ID とトークンが必要です。 **[マップ]** ページの **[サービス]** セクションでこのトークンを取得できます。
 
@@ -45,29 +52,29 @@ Windows Phone 8.1 以前を対象としたアプリでマップ サービスを�
 
 詳しくは、「[マップ サービスの使用](use-map-services.md)」をご覧ください。
 
-### 製品のコレクションと購入
+### <a name="product-collections-and-purchases"></a>製品のコレクションと購入
 
 Windows ストア コレクション API と Windows ストア購入 API を使用してアプリとアドオンの所有者情報にアクセスするには、関連する Azure AD クライアント ID をここに入力する必要があります。 これらの変更が有効になるまで最大で 16 時間かかることに注意してください。
 
 詳しくは、「[サービスからの製品の表示と許可](https://msdn.microsoft.com/library/windows/apps/mt609002)」をご覧ください。
 
-## アプリ管理
+## <a name="app-management"></a>アプリ管理
 
 **[アプリ管理]** セクションでは、ID とパッケージの詳細を表示し、アプリの名前を管理できます。
 
-### アプリ ID
+### <a name="app-identity"></a>アプリ ID
 
 このページには、アプリの内容へのリンクの URL など、ストア内のアプリの一意の ID に関連する詳細情報が表示されます。
 
 詳しくは、「[アプリ ID の詳細の表示](view-app-identity-details.md)」をご覧ください。
 
-### アプリ名の管理
+### <a name="manage-app-names"></a>アプリ名の管理
 
 ここでは、アプリのために予約したすべての名前を確認できます。 追加の名前の予約や、使わなくなったの名前の削除は、ここで行うことができます。
 
 詳しくは、「[アプリ名の管理](manage-app-names.md)」をご覧ください。
 
-### 現在のパッケージ
+### <a name="current-packages"></a>現在のパッケージ
 
 このページでは、公開されたすべてのパッケージに関連する詳しい情報を確認することができます。
 
@@ -80,9 +87,4 @@ OEM アクセス許可を持つ開発者は、**[現在のパッケージ]** ペ
  
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

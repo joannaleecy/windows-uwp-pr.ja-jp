@@ -3,16 +3,23 @@ author: mtoepke
 title: "基本的なメッシュの作成と表示"
 description: "3-D のユニバーサル Windows プラットフォーム (UWP) ゲームでは、通常は多角形を使ってゲーム内のオブジェクトやサーフェスを表現します。"
 ms.assetid: bfe0ed5b-63d8-935b-a25b-378b36982b7d
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、ゲーム、メッシュ、DirectX"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b8795438053adebfbd36cada86a8ef13afb3eef2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f7dc55c0a7653616a86f1cca41521c7b25c070f9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 基本的なメッシュの作成と表示
+# <a name="create-and-display-a-basic-mesh"></a>基本的なメッシュの作成と表示
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 3-D のユニバーサル Windows プラットフォーム (UWP) ゲームでは、通常は多角形を使ってゲーム内のオブジェクトやサーフェスを表現します。 そのような多角形によるオブジェクトやサーフェスの構造を構成する頂点のリストをメッシュと呼びます。 ここでは、立方体オブジェクトの基本的なメッシュを作り、シェーダー パイプラインに渡してレンダリングと表示を行います。
 
@@ -20,21 +27,21 @@ ms.openlocfilehash: b8795438053adebfbd36cada86a8ef13afb3eef2
 
  
 
-## 理解しておく必要があること
+## <a name="what-you-need-to-know"></a>理解しておく必要があること
 
 
-### テクノロジ
+### <a name="technologies"></a>テクノロジ
 
 -   [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh769064)
 
-### 前提条件
+### <a name="prerequisites"></a>前提条件
 
 -   線形代数と 3-D 座標系の基本的な知識
 -   Visual Studio 2015 Direct3D テンプレート
 
-## 手順
+## <a name="instructions"></a>手順
 
-### 手順 1: モデルのメッシュを構成する
+### <a name="step-1-construct-the-mesh-for-the-model"></a>手順 1: モデルのメッシュを構成する
 
 ほとんどのゲームでは、ゲーム オブジェクトのメッシュは特定の頂点データが含まれるファイルからロードされます。 頂点の順序はアプリに依存していますが、通常は帯状または扇状にシリアル化されます。 頂点データは、ソフトウェア ソースからのものを使うことも、手動で作ることもできます。 頂点シェーダーが効果的に処理できる方法でデータを解釈するかどうかはゲーム次第です。
 
@@ -63,7 +70,7 @@ SimpleCubeVertex cubeVertices[] =
 
 最終的に 8 つの頂点があり、それぞれに特定の色が割り当てられています。 頂点/色の各ペアは、この例で使う頂点のフル データになっています。 頂点バッファーを指定する場合は、この具体的なレイアウトを念頭に置いておく必要があります。 この入力レイアウトを頂点シェーダーに渡して、頂点データが頂点シェーダーで理解されるようにします。
 
-### 手順 2: 入力レイアウトを設定する
+### <a name="step-2-set-up-the-input-layout"></a>手順 2: 入力レイアウトを設定する
 
 現在、頂点はメモリ内に取り込まれています。 ただし、グラフィックス デバイスには専用のメモリがあり、このメモリにアクセスするには Direct3D を使います。 頂点データをグラフィックス デバイスに取り込んで処理するには、言ってみればその方法を明らかにしておく必要があります。グラフィックス デバイスがゲームから頂点データを受け取ったときに解釈できるように、頂点データをどのように配置するのかを宣言しておく必要があるのです。 それには、[**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575) を使います。
 
@@ -102,7 +109,7 @@ m_d3dDevice->CreateInputLayout(
 
 [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) を呼び出し、Direct3D デバイスで入力レイアウトを作ります。 次に、データを実際に保持できるバッファーを作る必要があります。
 
-### 手順 3: 頂点バッファーを設定する
+### <a name="step-3-populate-the-vertex-buffers"></a>手順 3: 頂点バッファーを設定する
 
 頂点バッファーには、メッシュの各三角形の頂点のリストが含まれます。 各頂点は、このリストで一意である必要があります。 この例では、立方体に 8 個の頂点があります。 頂点シェーダーはグラフィックス デバイス上で実行され、頂点バッファーからデータを読み取ります。データは、前の手順で指定した入力レイアウトに基づいて解釈されます。
 
@@ -135,7 +142,7 @@ m_d3dDevice->CreateBuffer(
 
 頂点がロードされます。 しかし、これらの頂点を処理する順序はどうなるのでしょうか。 順序はインデックスのリストを頂点に割り当てるときに処理されます。インデックスの順序が頂点シェーダーが頂点を処理する順序になります。
 
-### 手順 4: インデックス バッファーを設定する
+### <a name="step-4-populate-the-index-buffers"></a>手順 4: インデックス バッファーを設定する
 
 これから各頂点のインデックスのリストを用意します。 インデックスは頂点バッファーで頂点の位置に対応し、0 から始まります。 この様子を視覚化するために、メッシュの各頂点に ID のような固有の番号が割り当てられていると考えます。 この ID は、頂点バッファーで頂点の位置を表す整数です。
 
@@ -179,7 +186,7 @@ unsigned short cubeIndices[] =
 
 さまざまなインデックス リストの手法について詳しくは、「[プリミティブ トポロジ](https://msdn.microsoft.com/library/windows/desktop/bb205124)」をご覧ください。
 
-### 手順 5: 変換マトリックス用の定数バッファーを作る
+### <a name="step-5-create-a-constant-buffer-for-your-transformation-matrices"></a>手順 5: 変換マトリックス用の定数バッファーを作る
 
 頂点の処理を開始する前に、実行時に各頂点に適用 (乗算) する変換マトリックスを指定する必要があります。 ほとんどの 3-D ゲームには、3 種類の変換マトリックスがあります。
 
@@ -300,7 +307,7 @@ m_d3dDeviceContext->IASetIndexBuffer(
 
 よくできました。 入力の組み立ては完了です。 レンダリングの準備はすべて整いました。 それでは頂点シェーダーを使ってみましょう。
 
-### 手順 6: 頂点シェーダーでメッシュを処理する
+### <a name="step-6-process-the-mesh-with-the-vertex-shader"></a>手順 6: 頂点シェーダーでメッシュを処理する
 
 メッシュを定義する頂点を格納する頂点バッファーと、頂点の処理順序を定義するインデックス バッファーができたので、これから頂点シェーダーに頂点を送信します。 頂点シェーダーのコードは、コンパイルされた上位レベル シェーダー言語として表されます。頂点バッファー内の頂点ごとに 1 回実行されるため、頂点ごとに変換を実行できます。 最終的な結果は、通常は 2-D プロジェクションになります。
 
@@ -369,7 +376,7 @@ PixelShaderInput SimpleVertexShader(VertexShaderInput input)
 
 **PixelShaderInput** は、頂点シェーダーのメインの関数から返されるデータのレイアウトを指定します。 頂点の処理が完了すると、2-D プロジェクション空間における頂点の位置と、頂点ごとの照明に使われる色を返します。 グラフィックス カードは、シェーダーによるデータ出力を使って "フラグメント" (可能性のあるピクセル) を計算します。フラグメントは、パイプラインの次の段階でピクセル シェーダーが実行されたときに色が付きます。
 
-### 手順 7: ピクセル シェーダーでメッシュを渡す
+### <a name="step-7-passing-the-mesh-through-the-pixel-shader"></a>手順 7: ピクセル シェーダーでメッシュを渡す
 
 通常、グラフィックス パイプラインのこの段階では、オブジェクトのプロジェクションされたサーフェスの見えている部分でピクセル単位の操作を実行します  (テクスチャが好まれます)。ただし、これはサンプルなので、この段階では素通りするだけにします。
 
@@ -398,7 +405,7 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 
 このコードを頂点シェーダーの HLSL とは別の HLSL ファイルに配置します (たとえば SimplePixelShader.hlsl)。 このコードは、ビューポート (描画先画面の一部分のメモリ内表現) で見えているピクセルごとに 1 回実行されます。この場合のビューポートは、画面全体にマッピングされます。 これで、グラフィックス パイプラインはすべて定義されました。
 
-### 手順 8: メッシュのラスタライズと表示
+### <a name="step-8-rasterizing-and-displaying-the-mesh"></a>手順 8: メッシュのラスタライズと表示
 
 パイプラインを実行しましょう。 手順は簡単です。[**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/bb173565) を呼び出します。
 
@@ -426,7 +433,7 @@ m_swapChain->Present(1, 0);
 
 これで、終わりです。 モデルがたくさんあるシーンでは、複数の頂点バッファーとインデックス バッファーを使ってください。モデルのタイプごとにシェーダーがある場合もあります。 各モデルには専用の座標系があり、定数バッファーで定義したマトリックスを使って、座標系を共有されるワールド座標系に変換する必要があることに注意してください。
 
-## 注釈
+## <a name="remarks"></a>注釈
 
 このトピックでは、シンプルなジオメトリを自分で作り、表示する方法について取り上げました。 より複雑なジオメトリをファイルからロードしてサンプル専用の頂点バッファー オブジェクト (.vbo) 形式に変換する方法について詳しくは、「[DirectX ゲームでリソースをロードする方法](load-a-game-asset.md)」をご覧ください。
 
@@ -435,7 +442,7 @@ m_swapChain->Present(1, 0);
 
  
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 * [DirectX ゲームでリソースをロードする方法](load-a-game-asset.md)
@@ -446,10 +453,5 @@ m_swapChain->Present(1, 0);
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

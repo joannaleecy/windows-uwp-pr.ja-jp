@@ -3,15 +3,22 @@ author: drewbatgit
 ms.assetid: B5E3A66D-0453-4D95-A3DB-8E650540A300
 description: "この記事では、MediaProcessingTrigger とバックグラウンド タスクを使って、バックグラウンドでメディア ファイルを処理する方法について説明します。"
 title: "バックグラウンドでのメディア ファイルの処理"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: fb0e8a535ff4e27530fa45aca80b21f17a523c7b
-ms.openlocfilehash: 8a65ce9ed9de050bbcee2612bf53c5bfd44ffc72
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c7f3262c30797c8ce447b3e97a5cb7dd6d2ea025
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# バックグラウンドでのメディア ファイルの処理
+# <a name="process-media-files-in-the-background"></a>バックグラウンドでのメディア ファイルの処理
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 この記事では、[**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) とバックグラウンド タスクを使って、バックグラウンドでメディア ファイルを処理する方法について説明します。
@@ -24,7 +31,7 @@ ms.openlocfilehash: 8a65ce9ed9de050bbcee2612bf53c5bfd44ffc72
 -   [起動、再開、バックグラウンド タスク](https://msdn.microsoft.com/library/windows/apps/mt227652)
 -   [タイル、バッジ、および通知](https://msdn.microsoft.com/library/windows/apps/mt185606)
 
-## メディア処理のバックグラウンド タスクの作成
+## <a name="create-a-media-processing-background-task"></a>メディア処理のバックグラウンド タスクの作成
 
 Microsoft Visual Studio で既存のソリューションにバックグラウンド タスクを追加するには、コンポーネントの名前を入力します。
 
@@ -82,7 +89,7 @@ Microsoft Visual Studio で既存のソリューションにバックグラウ�
 
 [!code-cs[OnCanceled](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetOnCanceled)]
 
-## バックグラウンド タスクの登録と起動
+## <a name="register-and-launch-the-background-task"></a>バックグラウンド タスクの登録と起動
 
 フォアグラウンド アプリからバックグラウンド タスクを起動するには、フォアグラウンド アプリの Package.appmanifest ファイルを更新して、アプリがバックグラウンド タスクを使っていることをシステムに認識させる必要があります。
 
@@ -140,10 +147,5 @@ Microsoft Visual Studio で既存のソリューションにバックグラウ�
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

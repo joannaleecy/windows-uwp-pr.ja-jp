@@ -3,13 +3,20 @@ author: drewbatgit
 ms.assetid: 84729E44-10E9-4D7D-8575-6A9D97467ECD
 description: "このトピックでは、FaceDetector を使って画像内の顔を検出する方法について説明します。 FaceTracker は、ビデオ フレームのシーケンスで顔を経時的に追跡するように最適化されています。"
 title: "画像やビデオでの顔の検出"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 7526d5ddfbaa6f5128ef5775bc75cc48768f647d
-ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 72e5804ea592dc2a9478cba766decaadf611e88e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 画像やビデオでの顔の検出
+# <a name="detect-faces-in-images-or-videos"></a>画像やビデオでの顔の検出
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -22,7 +29,7 @@ ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
 
 この記事のコードは、[基本的な顔検出](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)と[基本的な顔追跡](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)のサンプルを基にしています。 これらのサンプルをダウンロードし、該当するコンテキストで使われているコードを確認することも、サンプルを独自のアプリの開始点として使うこともできます。
 
-## 1 つの画像内の顔を検出する
+## <a name="detect-faces-in-a-single-image"></a>1 つの画像内の顔を検出する
 
 [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) クラスを使うと、静止画像内の 1 つまたは複数の顔を検出できます。
 
@@ -68,7 +75,7 @@ ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
 
 [!code-cs[ShowDetectedFaces](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetShowDetectedFaces)]
 
-## フレームのシーケンスで顔を追跡する
+## <a name="track-faces-in-a-sequence-of-frames"></a>フレームのシーケンスで顔を追跡する
 
 ビデオ内の顔を検出する場合は、[**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) よりも [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) クラスを使う方が効率的です。実装手順はほとんど同じです。 **FaceTracker** では、前に処理したフレームに関する情報を使って検出処理を最適化します。
 
@@ -92,7 +99,7 @@ ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [メディア キャプチャのシーン分析](scene-analysis-for-media-capture.md)
 * [基本的な顔検出のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
@@ -100,9 +107,4 @@ ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
 * [カメラ](camera.md)
 * [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [メディア再生](media-playback.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

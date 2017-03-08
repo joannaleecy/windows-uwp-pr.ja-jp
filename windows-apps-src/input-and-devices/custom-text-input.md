@@ -12,8 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
-ms.openlocfilehash: afcc64e6b000df1a7380b4cc22101ebb1826d7cd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6c9afe44006f173f7f261e1013024b6412d68703
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -167,10 +168,5 @@ ms.openlocfilehash: afcc64e6b000df1a7380b4cc22101ebb1826d7cd
 **サンプルのアーカイブ**
 * [XAML テキスト編集のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkID=251417)
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

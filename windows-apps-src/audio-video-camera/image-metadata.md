@@ -3,20 +3,27 @@ author: laurenhughes
 ms.assetid: D5D98044-7221-4C2A-9724-56E59F341AB0
 description: "この記事では、画像のメタデータ プロパティを読み取ったり書き込んだりする方法のほか、GeotagHelper ユーティリティ クラスを使ってファイルに位置情報タグを設定する方法について説明します。"
 title: "画像のメタデータ"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: fd5b52a1d431b9396a4b162077d4f8d6246cd597
-ms.openlocfilehash: 958033bc054da292c85f8df0a57cf964696c82bd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: af9a4c243c939ddc04e5d0763b58df00e70d7017
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 画像のメタデータ
+# <a name="image-metadata"></a>画像のメタデータ
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
 この記事では、画像のメタデータ プロパティを読み取ったり書き込んだりする方法のほか、[**GeotagHelper**](https://msdn.microsoft.com/library/windows/apps/dn903683) ユーティリティ クラスを使ってファイルに位置情報タグを設定する方法について説明します。
 
-## 画像のプロパティ
+## <a name="image-properties"></a>画像のプロパティ
 
 ファイルの内容に関連した情報には、[**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225) プロパティから返される [**StorageItemContentProperties**](https://msdn.microsoft.com/library/windows/apps/hh770642) オブジェクトを使ってアクセスできます。 画像に固有のプロパティを取得するには、[**GetImagePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh770646) を呼び出します。 それによって返される [**ImageProperties**](https://msdn.microsoft.com/library/windows/apps/br207718) オブジェクトは、画像のタイトルやキャプチャの日付など、基本的な画像メタデータのフィールドを含んだメンバーを公開します。
 
@@ -32,7 +39,7 @@ ms.openlocfilehash: 958033bc054da292c85f8df0a57cf964696c82bd
 
 -   サポート対象外のプロパティを取得しようとすると null 値が返される場合があります。返されたメタデータの値を使う前に必ず、null のチェックを行ってください。
 
-## 位置情報タグ ヘルパー
+## <a name="geotag-helper"></a>位置情報タグ ヘルパー
 
 GeotagHelper は、地理データを含んだ画像へのタグ付けを支援するユーティリティ クラスです。[**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603) API を直接使って簡単にタグを設定することができます。メタデータの形式を手動で解析したり構築したりする必要はありません。
 
@@ -54,7 +61,7 @@ GeotagHelper は、地理データを含んだ画像へのタグ付けを支援�
 
 [!code-cs[GetGeoData](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetGeoData)]
 
-## 画像メタデータのデコードとエンコード
+## <a name="decode-and-encode-image-metadata"></a>画像メタデータのデコードとエンコード
 
 画像データを操作する最も高度な方法は、[**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) または [BitmapEncoder](bitmapencoder-options-reference.md) を使って、プロパティの読み取りと書き込みをストリーム レベルで行うことです。 これらの操作では、読み取りまたは書き込みの対象データを Windows プロパティを使って指定できるほか、要求するプロパティのパスを Windows Imaging Component (WIC) のメタデータ クエリ言語を使って指定することもできます。
 
@@ -79,7 +86,7 @@ GeotagHelper は、地理データを含んだ画像へのタグ付けを支援�
 
 -   エンコーダーに関連付けられている画像が、要求したプロパティのいずれかをサポートしていない場合、[**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) はエラー コード 0x88982F41 で失敗します。
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [イメージング](imaging.md)
  
@@ -88,10 +95,5 @@ GeotagHelper は、地理データを含んだ画像へのタグ付けを支援�
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

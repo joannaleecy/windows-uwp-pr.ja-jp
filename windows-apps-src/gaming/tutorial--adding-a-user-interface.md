@@ -3,25 +3,32 @@ author: mtoepke
 title: "ユーザー インターフェイスの追加"
 description: "これまでは、サンプル ゲームでメイン ゲーム オブジェクトと基本的なレンダリング フレームワークを実装する方法について確認してきました。"
 ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, ゲーム, ユーザー インターフェイス, DirectX"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4f4ca9626e38ce7449b6476345205d136b3d9a2d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cb8cb8eae3328a9010553b7f3e041b8f2dbd8c02
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# ユーザー インターフェイスの追加
+# <a name="add-a-user-interface"></a>ユーザー インターフェイスの追加
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 これまでは、サンプル ゲームでメイン ゲーム オブジェクトと基本的なレンダリング フレームワークを実装する方法について確認してきました。 次は、サンプル ゲームでゲームの状態に関するフィードバックをプレイヤーに提供する方法を見てみましょう。 ここでは、単純なメニュー オプションとヘッドアップ ディスプレイ コンポーネントを、3-D グラフィックス パイプラインの出力の上に追加する方法について説明します。
 
-## 目標
+## <a name="objective"></a>目標
 
 
 -   ユーザー インターフェイスの基本的なグラフィックスと動作をユニバーサル Windows プラットフォーム (UWP) DirectX ゲームに追加する。
 
-## ユーザー インターフェイスのオーバーレイ
+## <a name="the-user-interface-overlay"></a>ユーザー インターフェイスのオーバーレイ
 
 
 テキスト要素とユーザー インターフェイス要素を DirectX ゲームで表示するにはさまざまな方法がありますが、ここでは、[Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx) (テキスト要素の場合は [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038)) という 1 つの方法を中心に説明します。
@@ -34,7 +41,7 @@ Direct2D は、ピクセル ベースのプリミティブと効果の描画に�
 
 このゲーム サンプルには、2 つの主要 UI コンポーネントがあります。スコアとゲーム内コントロールを表示するヘッドアップ ディスプレイと、ゲームの状態のテキストとオプション (一時停止情報やレベル開始オプションなど) を表示するために使うオーバーレイです。
 
-### Direct2D を使ったヘッドアップ ディスプレイ
+### <a name="using-direct2d-for-a-heads-up-display"></a>Direct2D を使ったヘッドアップ ディスプレイ
 
 これは、視覚効果のないゲーム サンプルのゲーム内ヘッドアップ ディスプレイです。 シンプルですっきりしているため、プレイヤーは 3-D の世界のナビゲートと標的を撃つことに集中できます。 優れたインターフェイスやヘッドアップ ディスプレイは、プレイヤーがいつでも簡単にゲーム内のイベントを処理したり、イベントに反応したりできるようにします。
 
@@ -177,7 +184,7 @@ void GameHud::Render(
 
  
 
-### オーバーレイによるゲームの状態情報の表示
+### <a name="displaying-game-state-information-with-an-overlay"></a>オーバーレイによるゲームの状態情報の表示
 
 ヘッドアップ ディスプレイのほかに、このゲーム サンプルには 5 つのゲームの状態を表すオーバーレイがあり、そのすべてで、大きな黒の四角形のプリミティブに、プレイヤーが読むテキストが表示されます  (ムーブ/ルック コントローラーは、これらの状態ではアクティブではないため、その四角形は描画されません)。これらのオーバーレイの状態は次のとおりです。
 
@@ -203,7 +210,7 @@ void GameHud::Render(
 
 次は、これら 5 つの状態のオーバーレイを初期化して描画する方法について説明します。
 
-### オーバーレイの初期化と描画
+### <a name="initializing-and-drawing-the-overlay"></a>オーバーレイの初期化と描画
 
 これら 5 つの明示的な状態には、共通点がいくつかあります。まず、画面の中央の黒の四角形を背景として使います。次に、表示されるテキストは、タイトル テキストまたは本文テキストです。そして、テキストは Segoe UI フォントであり、黒の四角形の上に描画されます。 このため、必要とされるリソースと、それらを実装する方法は、よく似ています。
 
@@ -370,7 +377,7 @@ void GameInfoOverlay::RecreateDpiDependentResources()
 
 これで、オーバーレイに必要なのは、表示するテキストのみになりました。
 
-### オーバーレイでのゲームの状態の表示
+### <a name="representing-game-state-in-the-overlay"></a>オーバーレイでのゲームの状態の表示
 
 このゲーム サンプルの 5 つのオーバーレイの状態には、それぞれに対応するメソッドが **GameInfoOverlay** オブジェクトにあります。 これらのメソッドは、さまざまなオーバーレイを描画して、ゲーム自体に関する明示的な情報をプレイヤーに伝えます。 この内容は、もちろん、タイトル文字列と本文文字列という 2 つの文字列で表示されます。 このサンプルでは既にこの情報用のリソースとレイアウトを **RecreateDeviceResources** メソッドに構成しているため、提供が必要なのは、オーバーレイの状態に固有の文字列のみです。
 
@@ -502,11 +509,11 @@ void DirectXApp::SetGameInfoOverlay(GameInfoOverlayState state)
 
 これで、ゲーム サンプルでゲームの状態に基づいたテキスト情報をプレイヤーに表示できるようになりました。
 
-### 次のステップ
+### <a name="next-steps"></a>次のステップ
 
 次のトピックの「[コントロールの追加](tutorial--adding-controls.md)」では、プレイヤーがこのゲーム サンプルを操作する方法と、入力によってゲームの状態がどのように変わるかについて説明します。
 
-### このセクションのサンプル コード一式
+### <a name="complete-sample-code-for-this-section"></a>このセクションのサンプル コード一式
 
 GameHud.h
 
@@ -1478,7 +1485,7 @@ void GameInfoOverlay::SetAction(GameInfoOverlayCommand action)
 }
 ```
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 
 [DirectX によるシンプルな UWP ゲームの作成](tutorial--create-your-first-metro-style-directx-game.md)
@@ -1489,10 +1496,5 @@ void GameInfoOverlay::SetAction(GameInfoOverlayCommand action)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

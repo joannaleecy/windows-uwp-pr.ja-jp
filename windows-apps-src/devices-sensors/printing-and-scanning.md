@@ -3,14 +3,21 @@ author: DBirtolo
 ms.assetid: 95481C7E-E905-4477-955B-90D292634E2E
 title: "印刷とスキャン"
 description: "このセクションでは、ユニバーサル Windows アプリから印刷およびスキャンする方法について説明します。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1e30bfb4f80d955d28799e6a6d5c22b82379a8fc
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e05d6278472af75fb97f33eb840f6ecf28d33670
+ms.lasthandoff: 02/07/2017
 
 ---
-# 印刷とスキャン
+# <a name="printing-and-scanning"></a>印刷とスキャン
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 このセクションでは、ユニバーサル Windows アプリから印刷およびスキャンする方法について説明します。
 
@@ -21,16 +28,11 @@ ms.openlocfilehash: 1e30bfb4f80d955d28799e6a6d5c22b82379a8fc
 | [印刷プレビュー UI のカスタマイズ](customize-the-print-preview-ui.md) | このセクションでは、印刷プレビュー UI の印刷オプションや設定をカスタマイズする方法について説明します。 |
 | [アプリからスキャンする](scan-from-your-app.md) | フラットベッド、フィーダー、自動構成の各スキャン ソースを使ってアプリからコンテンツをスキャンする方法について説明します。|
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [印刷のガイドラインの設計](https://msdn.microsoft.com/library/windows/apps/Hh868178)
 * [//Build 2015 のビデオ: Windows 10 で印刷するアプリの開発](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [UWP 印刷サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619984)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

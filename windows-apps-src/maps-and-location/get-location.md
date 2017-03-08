@@ -3,13 +3,20 @@ author: PatrickFarley
 title: "ユーザーの位置情報の取得"
 description: "ユーザーの位置情報を検索し、位置の変更に対応します。 ユーザーの位置情報へのアクセスは、設定アプリのプライバシー設定で管理されています。 このトピックでは、アプリにユーザーの位置情報へのアクセス許可が与えられているかどうかを確認する方法についても説明します。"
 ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 地図, 位置情報, 位置情報機能"
 translationtype: Human Translation
-ms.sourcegitcommit: bdb6cbd0b0ccb7b6aa04cf6ba98bb154af325515
-ms.openlocfilehash: 1172aae67169295ac6f2446c839a1cce5a84fa36
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fec870534c7e028ea85e8aa5242f09569e082b96
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# ユーザーの位置情報の取得
+# <a name="get-the-users-location"></a>ユーザーの位置情報の取得
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -21,7 +28,7 @@ ms.openlocfilehash: 1172aae67169295ac6f2446c839a1cce5a84fa36
 
 -   [ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-## 位置情報機能を有効にする
+## <a name="enable-the-location-capability"></a>位置情報機能を有効にする
 
 
 1.  **ソリューション エクスプローラー**で、**package.appxmanifest** をダブルクリックし、**[機能]** タブを選びます。
@@ -34,12 +41,12 @@ ms.openlocfilehash: 1172aae67169295ac6f2446c839a1cce5a84fa36
   </Capabilities>
 ```
 
-## 現在の位置情報を取得する
+## <a name="get-the-current-location"></a>現在の位置情報を取得する
 
 
 このセクションでは、[**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603) 名前空間の API を使ってユーザーの地理的な位置を検出する方法について説明します。
 
-### 手順 1. ユーザーの位置情報へのアクセス許可を求める
+### <a name="step-1-request-access-to-the-users-location"></a>手順 1. ユーザーの位置情報へのアクセス許可を求める
 
 アプリに Consentless Location 機能 (「注意」を参照) がない場合は、ユーザーの位置情報へアクセスする前に、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) メソッドを使用してユーザーの位置情報へのアクセス許可を求める必要があります。 **RequestAccessAsync** メソッドは UI スレッドから呼び出す必要があり、アプリがフォアグラウンドで実行されている必要があります。 アプリがユーザーの位置情報にアクセスするには、先にユーザーがその情報へのアクセス許可をアプリに与える必要があります。\*
 
@@ -55,7 +62,7 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 
 >注意: Consentless Location 機能により、アプリはユーザーによる明示的な許可を必要とせずに、意図的にあいまいにされた (不正確な) 位置情報を取得できます (ただしシステム全体の位置情報スイッチは **on** のままである必要があります)。 アプリで Consentless Location を使用する方法について詳しくは、[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx) クラスの [**AllowFallbackToConsentlessPositions**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions) メソッドをご覧ください。
 
-### 手順 2. ユーザーの位置情報を取得し、位置情報のアクセス許可の変更を登録する
+### <a name="step-2-get-the-users-location-and-register-for-changes-in-location-permissions"></a>手順 2. ユーザーの位置情報を取得し、位置情報のアクセス許可の変更を登録する
 
 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) メソッドは、現在の位置情報に対して 1 回限りの読み取りを実行します。 ここでは、**switch** ステートメントを (前の例で示した) **accessStatus** と共に使って、ユーザーの位置情報へのアクセス許可が与えられている場合にのみ動作するように指定します。 ユーザーの位置情報へのアクセス許可が与えられた場合は、コードによって [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトが作成され、位置情報へのアクセス許可の変更が登録され、ユーザーの位置情報が要求されます。
 
@@ -70,7 +77,7 @@ switch (accessStatus)
 
         // Subscribe to the StatusChanged event to get updates of location status changes.
         _geolocator.StatusChanged += OnStatusChanged;
-                        
+
         // Carry out the operation.
         Geoposition pos = await geolocator.GetGeopositionAsync();
 
@@ -91,7 +98,7 @@ switch (accessStatus)
 }
 ```
 
-### 手順 3. 位置情報へのアクセス許可の変更を処理する
+### <a name="step-3-handle-changes-in-location-permissions"></a>手順 3. 位置情報へのアクセス許可の変更を処理する
 
 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトは [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) イベントをトリガーして、ユーザーの位置情報設定が変化したことを示します。 このイベントは、引数の **Status**  プロパティ ([**PositionStatus**](https://msdn.microsoft.com/library/windows/apps/br225599) 型) を使って、対応する状態を渡します。 このメソッドは UI スレッドから呼び出されず、[**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) オブジェクトが UI の変更を呼び出します。
 
@@ -114,7 +121,7 @@ async private void OnStatusChanged(Geolocator sender, StatusChangedEventArgs e)
                 break;
 
             case PositionStatus.Initializing:
-                // Location platform is attempting to acquire a fix. 
+                // Location platform is attempting to acquire a fix.
                 ScenarioOutput_Status.Text = "Initializing";
                 _rootPage.NotifyUser("Location platform is attempting to obtain a position.", NotifyType.StatusMessage);
                 break;
@@ -138,7 +145,7 @@ async private void OnStatusChanged(Geolocator sender, StatusChangedEventArgs e)
                 break;
 
             case PositionStatus.NotInitialized:
-                // The location platform is not initialized. This indicates that the application 
+                // The location platform is not initialized. This indicates that the application
                 // has not made a request for location data.
                 ScenarioOutput_Status.Text = "Not initialized";
                 _rootPage.NotifyUser("No request for location is made yet.", NotifyType.StatusMessage);
@@ -159,14 +166,14 @@ async private void OnStatusChanged(Geolocator sender, StatusChangedEventArgs e)
 }
 ```
 
-## 位置情報の更新への対応
+## <a name="respond-to-location-updates"></a>位置情報の更新への対応
 
 
 このセクションでは、[**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) イベントを使って、特定の期間におけるユーザーの位置の更新情報を受け取る方法について説明します。 ユーザーはいつでも位置情報へのアクセス許可を取り消すことができるため、前のセクションで説明したように、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) を呼び出して [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) イベントを使うことが重要になります。
 
 このセクションでは、既に位置情報機能を有効にし、フォアグラウンド アプリの UI スレッドから [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) を呼び出していることを前提としています。
 
-### 手順 1. レポート間隔を定義し、位置情報の更新を登録する
+### <a name="step-1-define-the-report-interval-and-register-for-location-updates"></a>手順 1. レポート間隔を定義し、位置情報の更新を登録する
 
 この例では、**switch** ステートメントを (前の例で示した) **accessStatus** と共に使って、ユーザーの位置情報へのアクセス許可が与えられている場合にのみ動作するように指定します。 ユーザーの位置情報へのアクセス許可が与えられた場合は、コードによって [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトが作成され、追跡の種類の指定と位置情報の更新の登録が行われます。
 
@@ -192,7 +199,7 @@ switch (accessStatus)
 
         // Subscribe to StatusChanged event to get updates of location status changes.
         _geolocator.StatusChanged += OnStatusChanged;
-                    
+
         _rootPage.NotifyUser("Waiting for update...", NotifyType.StatusMessage);
         LocationDisabledMessage.Visibility = Visibility.Collapsed;
         StartTrackingButton.IsEnabled = false;
@@ -211,7 +218,7 @@ switch (accessStatus)
 }
 ```
 
-### 手順 2. 位置情報の更新を処理する
+### <a name="step-2-handle-location-updates"></a>手順 2. 位置情報の更新を処理する
 
 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトは [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) イベントをトリガーし、構成方法に応じて、ユーザーの位置が変化したことまたは時間が経過したことを示します。 このイベントは、引数の **Position** プロパティ ([**Geoposition**](https://msdn.microsoft.com/library/windows/apps/br225543)) を使って、対応する位置を渡します。 この例では、メソッドは UI スレッドから呼び出されず、[**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) オブジェクトが UI の変更を呼び出します。
 
@@ -228,14 +235,14 @@ async private void OnPositionChanged(Geolocator sender, PositionChangedEventArgs
 }
 ```
 
-## 位置情報のプライバシー設定を変更する
+## <a name="change-the-location-privacy-settings"></a>位置情報のプライバシー設定を変更する
 
 
 位置情報のプライバシー設定でアプリにユーザーの位置情報へのアクセス許可を与えていない場合は、**設定**アプリの **[位置情報のプライバシー設定]** へのリンクを用意することをお勧めします。 この例では、ハイパーリンク コントロールを使って、`ms-settings:privacy-location` という URI に移動します。
 
 ```xml
 <!--Set Visibility to Visible when access to location is denied -->  
-<TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic" 
+<TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic"
                  Visibility="Collapsed" Margin="0,15,0,0" TextWrapping="Wrap" >
           <Run Text="This app is not able to access Location. Go to " />
               <Hyperlink NavigateUri="ms-settings:privacy-location">
@@ -253,7 +260,7 @@ using Windows.System;
 bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-location"));
 ```
 
-## アプリのトラブルシューティングを行う
+## <a name="troubleshoot-your-app"></a>アプリのトラブルシューティングを行う
 
 
 アプリがユーザーの位置情報にアクセスする前に、デバイスで **[位置情報]** を有効にする必要があります。 **設定**アプリで、次の**位置情報に関するプライバシー設定**がオンになっていることを確認します。
@@ -262,16 +269,9 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 -   位置情報サービス設定の **[位置情報]** が **オン** になっている
 -   **[位置情報を使うことができるアプリを選ぶ]** で、アプリが **オン** になっている
 
-## 関連トピック
+## <a name="related-topics"></a>関連トピック
 
 * [UWP の位置情報のサンプル](http://go.microsoft.com/fwlink/p/?linkid=533278)
 * [ジオフェンスの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn631756)
 * [位置認識アプリの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465148)
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

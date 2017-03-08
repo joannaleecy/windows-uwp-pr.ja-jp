@@ -3,9 +3,16 @@ author: mcleblanc
 description: "デバイス自体とそのセンサーに統合するコードには、ユーザーに対する入力と出力が含まれます。"
 title: "入出力、デバイス、アプリ モデルの Windows ランタイム 8.x から UWP への移植&quot;"
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: c3fb6a76800198c15ef05da9ba198ac5e73b35a8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 69fdeed812eb6add3eeacb0e776e7477e061979f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -74,10 +81,5 @@ bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out device
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

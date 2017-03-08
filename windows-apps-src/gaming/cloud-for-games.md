@@ -3,21 +3,28 @@ author: joannaleecy
 title: "UWP ゲーム用のクラウド サービスの使用"
 description: "UWP ゲーム用のバックエンドとしてクラウドを実装することについて説明します。"
 ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
+ms.author: joanlee
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10、UWP、ゲーム、クラウド サービス"
 translationtype: Human Translation
-ms.sourcegitcommit: 2584a08e0a869ab3c5f11c192f0a5a6eeb223d61
-ms.openlocfilehash: 598384993e0e2931773cdb30e0909af6b771590e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 72f357cbf8e370512f9230978de546aa3d54c660
+ms.lasthandoff: 02/07/2017
 
 ---
-#  UWP ゲーム用のクラウド サービスの使用
+#  <a name="using-cloud-services-for-uwp-games"></a>UWP ゲーム用のクラウド サービスの使用
 
 Windows 10 のユニバーサル Windows プラットフォーム (UWP) では、Microsoft デバイス間でのゲームの開発のために使用できる一連の API が用意されています。 複数のプラットフォームやデバイスを対象としてゲームを開発する場合、クラウド バックエンドを使って、需要に応じてゲームをスケーリングすることができます。
 
-##  クラウド コンピューティングとは
+##  <a name="what-is-cloud-computing"></a>クラウド コンピューティングとは
 
 クラウド コンピューティングでは、需要に応じてインターネット経由で IT リソースやアプリケーションを利用することにより、デバイスのデータを保存および処理します。 _クラウド_という用語は、不特定の場所からアクセスできる外部の膨大なリソース (ローカル リソースではない) の可用性を表すメタファーです。
 クラウド コンピューティングの原則により、リソースやソフトウェアを利用するための新しい方法が提供されます。 ユーザーは、完全な製品やリソースの料金を事前に支払う必要がなくなり、代わりに、プラットフォーム、ソフトウェア、リソースをサービスとして利用できます。 クラウド プロバイダーは通常、使用量やサービス プランに基づいて顧客に料金を請求します。
 
-##  クラウド サービスを使う理由
+##  <a name="why-use-cloud-services"></a>クラウド サービスを使う理由
 
 ゲームでクラウド サービスを使う利点の 1 つは、物理サーバー ハードウェアに事前に投資する必要がなく、後で使用量やサービス プランに従って支払うだけで済むことです。 これは、新しいゲーム タイトルの開発に伴うリスクを管理するための 1 つの方法です。 
 
@@ -29,7 +36,7 @@ Windows 10 のユニバーサル Windows プラットフォーム (UWP) では�
 
 さらに、非同期のマルチプレイヤーのしくみを使うソーシャル ゲームなど、負荷の高いゲーム データ管理機能を必要とするゲームを、クラウド サービスを使って実装できます。
 
-##  ゲーム開発企業によるクラウド テクノロジの使用方法
+##  <a name="how-game-companies-use-the-cloud-technology"></a>ゲーム開発企業によるクラウド テクノロジの使用方法
 
 さまざまな開発者がどのようにゲームにクラウド ソリューションを実装しているかについて説明します。
 
@@ -103,23 +110,23 @@ Windows 10 のユニバーサル Windows プラットフォーム (UWP) では�
 </table>
 
     
-### その他のリンク
+### <a name="other-links"></a>その他のリンク
 
 * [Hitcents、Game Troopers、InnoSpark の秘密のソースとしての Azure](http://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
 * [Bizspark プログラムで Azure を使用しているゲーム関連新興企業](https://blogs.technet.microsoft.com/bizspark_featured_startups/2015/09/25/azure-open-for-gaming-startups/)
 
 
-## クラウド バックエンドを設計する方法
+## <a name="how-to-design-your-cloud-backend"></a>クラウド バックエンドを設計する方法
 
 プロデューサーやゲーム設計者は、ゲームの特徴やゲームに必要な機能について話し合いますが、ゲームのインフラストラクチャをどのように設計するかについての検討から始めることをお勧めします。 さまざまなデバイスや複数の主要プラットフォームを対象にゲームを開発する場合、Azure をゲームのバックエンドとして使用できます。
 
-### ステップ バイ ステップの学習ガイド
+### <a name="step-by-step-learning-guides"></a>ステップ バイ ステップの学習ガイド
 
 * [ビルド 2016 Codelabs: Microsoft Azure App Service と Microsoft SQL Azure バックエンドを使ってゲームのスコアを保存する](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
 * [ゲームのモバイル エンゲージメント戦略の設計](https://azure.microsoft.com/documentation/articles/mobile-engagement-gaming-scenario/)
 * [Unity の iOS 展開向けの Azure Mobile Engagement の使用](https://azure.microsoft.com/documentation/articles/mobile-engagement-unity-ios-get-started/)
 
-### IaaS、PaaS、SaaS について
+### <a name="understanding-iaas-paas-or-saas"></a>IaaS、PaaS、SaaS について
 
 まず、ゲームに最適なサービスのレベルについて検討する必要があります。 次の 3 つのサービスの相違点を把握することにより、バックエンドを構築に必要なアプローチを決定できます。
 
@@ -136,7 +143,7 @@ Windows 10 のユニバーサル Windows プラットフォーム (UWP) では�
     サービスとしてのソフトウェアは、通常、既に構築済みであり、既存のクラウド プラットフォームでホストされているアプリケーションです。 それらのサービスでゲームの実行をより簡単に開始できるように設計されています。
 
 
-### Azure を使ったゲーム インフラストラクチャの設計
+### <a name="design-your-game-infrastructure-using-azure"></a>Azure を使ったゲーム インフラストラクチャの設計
 
 Azure のクラウド サービスをゲームに使用するためのいくつかの方法を以下に示します。 Azure は、Windows や Linux、および Ruby、Python、Java、PHP などのオープン ソース テクノロジと連携して動作します。 詳しくは、「[ゲームのための Azure](https://azure.microsoft.com/solutions/gaming/)」をご覧ください。
 
@@ -162,7 +169,7 @@ Azure のクラウド サービスをゲームに使用するためのいくつ�
 | 使用と顧客維持を促進するマーケティング キャンペーンの作成  | データ分析に基づいて対象となるプレイヤーにプッシュ通知を送信し、特定のゲーム操作に対する関心を引き出して利用を促進する | [Mobile engagement](https://azure.microsoft.com/services/mobile-engagement/) |  すべての主要なプラットフォーム (iOS、Android、Windows、Windows Phone) でのゲームプレイ時間とユーザー維持率を向上させる |
 
 
-##  新興企業と開発者向けのリソース
+##  <a name="startup-and-developer-resources"></a>新興企業と開発者向けのリソース
 
 * [Microsoft BizSpark](https://www.microsoft.com/bizspark/)
 
@@ -172,7 +179,7 @@ Azure のクラウド サービスをゲームに使用するためのいくつ�
 
     マルチプレイヤーのゲームプレイ、クロスプラットフォームのマッチメイ キング、ゲーマースコア、達成度、ランキングなどの Xbox Live の機能を Windows 10 ゲームにも追加する場合は、ID@Xbox にサインアップして、創造性を発揮し、成功を最大限にするために必要なツールを入手してください。 ID@Xbox への登録を申し込む前に、[Windows デベロッパー センター](https://developer.microsoft.com/windows/programs/join)で開発者アカウントを登録してください。
 
-## ゲームのバックエンド向けのサービスとしてのソフトウェア
+## <a name="software-as-a-service-for-game-backend"></a>ゲームのバックエンド向けのサービスとしてのソフトウェア
 
 主要なクラウド サービス プロバイダーに基づいてゲーム用のクラウド バックエンドを提供している企業の一部を紹介します。
 
@@ -188,7 +195,7 @@ Azure のクラウド サービスをゲームに使用するためのいくつ�
 
     Playfab は、シンプルかつ迅速に、世界規模のライブ ゲーム管理とバックエンド テクノロジを、モバイル、PC、コンソールのゲームにもたらします。
 
-## 関連リンク
+## <a name="related-links"></a>関連リンク
 
 * [Windows 10 ゲーム開発ガイド](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
 * [ゲームのための Azure](https://azure.microsoft.com/solutions/gaming/)
@@ -199,9 +206,4 @@ Azure のクラウド サービスをゲームに使用するためのいくつ�
  
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 
