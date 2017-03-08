@@ -4580,6 +4580,9 @@
   "bdf7c061ffb8cb8cdbacd4793b3047c7ddbbe08d": [
     "windows-apps-src\\publish\\common-questions.md"
   ],
+  "2016d8ce3b3afe116ff44aeb17047d93257c17a2": [
+    "windows-apps-src\\publish\\create-a-custom-app-promotion-campaign.md"
+  ],
   "6f07c5c68efde0174b6ef6a90ee98854e984e643": [
     "windows-apps-src\\publish\\create-a-custom-app-promotion-campaign.md"
   ],
@@ -10024,6 +10027,9 @@
   ],
   "11be75de5d315a7c0e46b2699130a062bad1b2df": [
     "windows-apps-src\\get-started\\get-started-tutorial-game-mg2d.md"
+  ],
+  "aa9d4f0e3724e8490777d3e1893297d3c89bc2be": [
+    "windows-apps-src\\whats-new\\windows-10-build-15021-api-diff.md"
   ],
   "22bfed3cd355b6920323e4945263be8903a375b1": [
     "windows-apps-src\\whats-new\\windows-10-build-15021-api-diff.md"
