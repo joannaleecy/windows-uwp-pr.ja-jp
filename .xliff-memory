@@ -34599,6 +34599,36 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8fc855ffa4ae6d7ecd6af4ffd2e3b6c29032522a.422773965462efe69cf52bc08bb6a51faaae78aa.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md.19138b4ff32ddd1ba92c18c1b8cd4575a925dcac.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md",
+      "XliffHash": "19138b4ff32ddd1ba92c18c1b8cd4575a925dcac",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5fd2df2cf53be4019b1b4c6ba02636c09863cd78.1df71a0acc81f2b7e4adb977216ce847da907dbc.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\packaging\\install-universal-windows-apps-with-the-winappdeploycmd-tool.md.90a819f273ca5c57ba9b0a5171cc1e15b63d1c96.HT": {
+      "SourceFilename": "windows-apps-src\\packaging\\install-universal-windows-apps-with-the-winappdeploycmd-tool.md",
+      "XliffHash": "90a819f273ca5c57ba9b0a5171cc1e15b63d1c96",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\eb4ad93f60c2e5062c2f5d99d852538484f965da.8172db167b5044bc16dfae66a1fecad9fcb81fd0.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\files\\access-the-sd-card.md.efda2a9444ec99e870261d78f52a0140425eddb4.HT": {
+      "SourceFilename": "windows-apps-src\\files\\access-the-sd-card.md",
+      "XliffHash": "efda2a9444ec99e870261d78f52a0140425eddb4",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\89dfed0cbd8a4a87f432a747e4155cdef3bbc757.1a6051e3c4af8233f3bca78b7693e4d938b88ce4.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

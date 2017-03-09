@@ -1,22 +1,21 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 4
+ Total Files | 3
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a36e973372eb4182e9eaf501b10c3fbb183d728a?path=windows-apps-src%2Fget-started%2Fcreate-a-basic-windows-10-app-in-cpp.md&_a=contents) | HandedOffSuccess | [Details](#8fc855ffa4ae6d7ecd6af4ffd2e3b6c29032522a2684)
- [windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a36e973372eb4182e9eaf501b10c3fbb183d728a?path=windows-apps-src%2Fget-started%2Fcreate-a-hello-world-app-xaml-universal.md&_a=contents) | HandedOffSuccess | [Details](#ecd260418abb608d1e08ee1744f72697faa25a182686)
- [windows-apps-src\get-started\your-first-app.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a36e973372eb4182e9eaf501b10c3fbb183d728a?path=windows-apps-src%2Fget-started%2Fyour-first-app.md&_a=contents) | HandedOffSuccess | [Details](#0b7ae55c6f12a657739cda6f8280d7006411c3cc3109)
- [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a36e973372eb4182e9eaf501b10c3fbb183d728a?path=windows-apps-src%2FTOC.md&_a=contents) | HandedOffSuccess | [Details](#b66451c0d3d2281fdc8308b48a4957c1c54f72e37849)
+ [windows-apps-src\files\access-the-sd-card.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a582dacf72d53ae77fb31fcc009301d1aa1f8ada?path=windows-apps-src%2Ffiles%2Faccess-the-sd-card.md&_a=contents) | HandedOffSuccess | [Details](#89dfed0cbd8a4a87f432a747e4155cdef3bbc7572534)
+ [windows-apps-src\packaging\install-universal-windows-apps-with-the-winappdeploycmd-tool.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a582dacf72d53ae77fb31fcc009301d1aa1f8ada?path=windows-apps-src%2Fpackaging%2Finstall-universal-windows-apps-with-the-winappdeploycmd-tool.md&_a=contents) | HandedOffSuccess | [Details](#eb4ad93f60c2e5062c2f5d99d852538484f965da4673)
+ [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a582dacf72d53ae77fb31fcc009301d1aa1f8ada?path=windows-apps-src%2Fporting%2Fdesktop-to-uwp-run-desktop-app-converter.md&_a=contents) | HandedOffSuccess | [Details](#5fd2df2cf53be4019b1b4c6ba02636c09863cd784689)
 
 ## Item Details
-##### <a name='8fc855ffa4ae6d7ecd6af4ffd2e3b6c29032522a2684'></a> Source: [windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a36e973372eb4182e9eaf501b10c3fbb183d728a?path=windows-apps-src%2Fget-started%2Fcreate-a-basic-windows-10-app-in-cpp.md&_a=contents)
+##### <a name='89dfed0cbd8a4a87f432a747e4155cdef3bbc7572534'></a> Source: [windows-apps-src\files\access-the-sd-card.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a582dacf72d53ae77fb31fcc009301d1aa1f8ada?path=windows-apps-src%2Ffiles%2Faccess-the-sd-card.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [create-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/ac85fa24416ad51750c85ead4702dfcfda4adccb?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fcreate-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-09 00:15:11
+* Handoff File: [access-the-sd-card.3d5a671aca7d69a5e5391049e99993f38156acc2.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/e1ef8cfad96a8fb2a1cd2442131eb1d0f4138a0b?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Faccess-the-sd-card.3d5a671aca7d69a5e5391049e99993f38156acc2.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-03-09 02:15:38
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -24,18 +23,18 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fget-started%2Fcreate-a-basic-windows-10-app-in-cpp.md&_a=contents)
-* Current Handback File: [create-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fcreate-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\files\access-the-sd-card.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Ffiles%2Faccess-the-sd-card.md&_a=contents)
+* Current Handback File: [access-the-sd-card.3d5a671aca7d69a5e5391049e99993f38156acc2.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Faccess-the-sd-card.3d5a671aca7d69a5e5391049e99993f38156acc2.ja-jp.xlf&_a=contents)
 * Current Handback Datetime: 2017-03-01 13:53:49
-* Bilingual File: [create-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fcreate-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.ja-jp.xlf&_a=contents)
+* Bilingual File: [access-the-sd-card.3d5a671aca7d69a5e5391049e99993f38156acc2.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Faccess-the-sd-card.3d5a671aca7d69a5e5391049e99993f38156acc2.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 
-##### <a name='ecd260418abb608d1e08ee1744f72697faa25a182686'></a> Source: [windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a36e973372eb4182e9eaf501b10c3fbb183d728a?path=windows-apps-src%2Fget-started%2Fcreate-a-hello-world-app-xaml-universal.md&_a=contents)
+##### <a name='eb4ad93f60c2e5062c2f5d99d852538484f965da4673'></a> Source: [windows-apps-src\packaging\install-universal-windows-apps-with-the-winappdeploycmd-tool.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a582dacf72d53ae77fb31fcc009301d1aa1f8ada?path=windows-apps-src%2Fpackaging%2Finstall-universal-windows-apps-with-the-winappdeploycmd-tool.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/ac85fa24416ad51750c85ead4702dfcfda4adccb?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fcreate-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-09 00:15:11
+* Handoff File: [install-universal-windows-apps-with-the-winappdeploycmd-tool.35efc75d02349fa7a3de1cc06d8eeca7b5ad10e2.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/e1ef8cfad96a8fb2a1cd2442131eb1d0f4138a0b?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Finstall-universal-windows-apps-with-the-winappdeploycmd-tool.35efc75d02349fa7a3de1cc06d8eeca7b5ad10e2.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-03-09 02:15:38
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -43,18 +42,18 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fget-started%2Fcreate-a-hello-world-app-xaml-universal.md&_a=contents)
-* Current Handback File: [create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fcreate-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\packaging\install-universal-windows-apps-with-the-winappdeploycmd-tool.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fpackaging%2Finstall-universal-windows-apps-with-the-winappdeploycmd-tool.md&_a=contents)
+* Current Handback File: [install-universal-windows-apps-with-the-winappdeploycmd-tool.35efc75d02349fa7a3de1cc06d8eeca7b5ad10e2.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Finstall-universal-windows-apps-with-the-winappdeploycmd-tool.35efc75d02349fa7a3de1cc06d8eeca7b5ad10e2.ja-jp.xlf&_a=contents)
 * Current Handback Datetime: 2017-03-01 13:53:49
-* Bilingual File: [create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fcreate-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.ja-jp.xlf&_a=contents)
+* Bilingual File: [install-universal-windows-apps-with-the-winappdeploycmd-tool.35efc75d02349fa7a3de1cc06d8eeca7b5ad10e2.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Finstall-universal-windows-apps-with-the-winappdeploycmd-tool.35efc75d02349fa7a3de1cc06d8eeca7b5ad10e2.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 
-##### <a name='0b7ae55c6f12a657739cda6f8280d7006411c3cc3109'></a> Source: [windows-apps-src\get-started\your-first-app.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a36e973372eb4182e9eaf501b10c3fbb183d728a?path=windows-apps-src%2Fget-started%2Fyour-first-app.md&_a=contents)
+##### <a name='5fd2df2cf53be4019b1b4c6ba02636c09863cd784689'></a> Source: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a582dacf72d53ae77fb31fcc009301d1aa1f8ada?path=windows-apps-src%2Fporting%2Fdesktop-to-uwp-run-desktop-app-converter.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [your-first-app.19ca9c0c35670e18229e0b580d71fcd038654594.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/ac85fa24416ad51750c85ead4702dfcfda4adccb?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fyour-first-app.19ca9c0c35670e18229e0b580d71fcd038654594.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-09 00:15:11
+* Handoff File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/e1ef8cfad96a8fb2a1cd2442131eb1d0f4138a0b?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fdesktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-03-09 02:15:38
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -62,29 +61,10 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\get-started\your-first-app.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fget-started%2Fyour-first-app.md&_a=contents)
-* Current Handback File: [your-first-app.19ca9c0c35670e18229e0b580d71fcd038654594.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fyour-first-app.19ca9c0c35670e18229e0b580d71fcd038654594.ja-jp.xlf&_a=contents)
-* Current Handback Datetime: 2017-03-01 13:53:49
-* Bilingual File: [your-first-app.19ca9c0c35670e18229e0b580d71fcd038654594.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fyour-first-app.19ca9c0c35670e18229e0b580d71fcd038654594.ja-jp.xlf&_a=contents)
-* Bilingual Datetime: 2017-03-01 14:04:45
-* [Back to Top](#report-top)
-
-##### <a name='b66451c0d3d2281fdc8308b48a4957c1c54f72e37849'></a> Source: [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/a36e973372eb4182e9eaf501b10c3fbb183d728a?path=windows-apps-src%2FTOC.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/ac85fa24416ad51750c85ead4702dfcfda4adccb?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-09 00:15:11
-* Handoff Reason: Include
-* Handoff Name: 
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Handback Name: 
-* Current Target File: [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2FTOC.md&_a=contents)
-* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf&_a=contents)
-* Current Handback Datetime: 2017-03-01 13:53:49
-* Bilingual File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fporting%2Fdesktop-to-uwp-run-desktop-app-converter.md&_a=contents)
+* Current Handback File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fdesktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf&_a=contents)
+* Current Handback Datetime: 2017-03-01 13:53:50
+* Bilingual File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fdesktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 

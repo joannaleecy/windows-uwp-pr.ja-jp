@@ -1844,6 +1844,9 @@
   "4ee5c8aebe0f959480e8211aae314a1f26111dd7": [
     "windows-apps-src\\enterprise\\index.md"
   ],
+  "89dfed0cbd8a4a87f432a747e4155cdef3bbc757": [
+    "windows-apps-src\\files\\access-the-sd-card.md"
+  ],
   "c1680c33c1798382c23e52946ce515911a6c9018": [
     "windows-apps-src\\files\\access-the-sd-card.md"
   ],
@@ -4058,6 +4061,9 @@
   "182ec36ea8c3225afe8c848f29d70ce06c1af67c": [
     "windows-apps-src\\packaging\\index.md"
   ],
+  "eb4ad93f60c2e5062c2f5d99d852538484f965da": [
+    "windows-apps-src\\packaging\\install-universal-windows-apps-with-the-winappdeploycmd-tool.md"
+  ],
   "7f0680bec789a4cf76bd2b65027561702c215f3c": [
     "windows-apps-src\\packaging\\install-universal-windows-apps-with-the-winappdeploycmd-tool.md"
   ],
@@ -4114,6 +4120,9 @@
   ],
   "24682c6468915fc5e66b43a5fda9aa8a12efdba5": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
+  ],
+  "5fd2df2cf53be4019b1b4c6ba02636c09863cd78": [
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
   "7482599456319e44694ac15fa58cfd5d540aeaad": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
