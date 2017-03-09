@@ -2264,17 +2264,17 @@
   "ce94dda0eaf156f1e09fefbd76f50bc764050970": [
     "windows-apps-src\\gaming\\work-with-networking-in-your-directx-game.md"
   ],
+  "8fc855ffa4ae6d7ecd6af4ffd2e3b6c29032522a": [
+    "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
+  ],
   "09772f5c96ffaa55497fb591dbabde7fc6549edd": [
     "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
   ],
   "34a1d665bc98a5224ef7707994138ba40d70763b": [
     "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
   ],
-  "1a90b6c030f019190224c47db3624a49ed05b4a9": [
-    "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
-  ],
-  "915f77e308d6384aa539f78cc307842dd51cd9f4": [
-    "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
+  "ecd260418abb608d1e08ee1744f72697faa25a18": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
   ],
   "0bea2fce6ad56c2305a81672ce352cb2b8454dbe": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
@@ -2338,6 +2338,9 @@
   ],
   "0507086a7c7ea67f43f61feef6dc5c8de5afe2e5": [
     "windows-apps-src\\get-started\\whats-a-uwp.md"
+  ],
+  "0b7ae55c6f12a657739cda6f8280d7006411c3cc": [
+    "windows-apps-src\\get-started\\your-first-app.md"
   ],
   "163aa57c1d6d85a409214ff1d233a4dc48a408c3": [
     "windows-apps-src\\get-started\\your-first-app.md"
@@ -5536,6 +5539,9 @@
   ],
   "2a7c5930752c759c3875826d0046603a63981341": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "b66451c0d3d2281fdc8308b48a4957c1c54f72e3": [
+    "windows-apps-src\\TOC.md"
   ],
   "f18ea3b18c74a1bf444936fc68ed8d702e22fe9f": [
     "windows-apps-src\\TOC.md"
