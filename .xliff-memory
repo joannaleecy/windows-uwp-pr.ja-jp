@@ -34629,6 +34629,36 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\89dfed0cbd8a4a87f432a747e4155cdef3bbc757.1a6051e3c4af8233f3bca78b7693e4d938b88ce4.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\devices-sensors\\deploy-scanner-profiles-with-mdm.md.bda94dab3a4235bc41afd46a500f7ca94de59d95.HT": {
+      "SourceFilename": "windows-apps-src\\devices-sensors\\deploy-scanner-profiles-with-mdm.md",
+      "XliffHash": "bda94dab3a4235bc41afd46a500f7ca94de59d95",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\51d3b90dd7f202fd86285bb3f95c78ded4a8b6d8.3d0a4ccd181596dde2a2d4fb9f3258593d5af3bd.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\TOC.md.41c733e4c8ca547e6eca2791230e529cb1dbcb8a.HT": {
+      "SourceFilename": "windows-apps-src\\TOC.md",
+      "XliffHash": "41c733e4c8ca547e6eca2791230e529cb1dbcb8a",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e5bbb71cf0ed7c53aafc6204bf690460d39f32f4.7fb9a7628d1cec18505ed62cae5f8968f1ccbcdd.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\devices-sensors\\point-of-service.md.6d017900ea423dca0929be67b80542ddbad623b9.HT": {
+      "SourceFilename": "windows-apps-src\\devices-sensors\\point-of-service.md",
+      "XliffHash": "6d017900ea423dca0929be67b80542ddbad623b9",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\fc0df17d73c7a75661410287706cc152c7b90448.e7f9b22669a3155ca174553c25bc5cc281e33068.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

@@ -5549,6 +5549,9 @@
   "2a7c5930752c759c3875826d0046603a63981341": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "e5bbb71cf0ed7c53aafc6204bf690460d39f32f4": [
+    "windows-apps-src\\TOC.md"
+  ],
   "b66451c0d3d2281fdc8308b48a4957c1c54f72e3": [
     "windows-apps-src\\TOC.md"
   ],
@@ -7994,6 +7997,9 @@
   "ab47829c42c683b12ddea9fb185a6dc1f5321a1f": [
     "windows-apps-src\\debug-test-perf\\pgo-for-uwp.md"
   ],
+  "fc0df17d73c7a75661410287706cc152c7b90448": [
+    "windows-apps-src\\devices-sensors\\point-of-service.md"
+  ],
   "e7149e407e3f3813dfa26e59bf2cb18a7194751d": [
     "windows-apps-src\\devices-sensors\\point-of-service.md"
   ],
@@ -10072,5 +10078,8 @@
   ],
   "8eca88588b2e444450daccd997aebb9e838a90d4": [
     "windows-apps-src\\packaging\\manual-packaging-root.md"
+  ],
+  "51d3b90dd7f202fd86285bb3f95c78ded4a8b6d8": [
+    "windows-apps-src\\devices-sensors\\deploy-scanner-profiles-with-mdm.md"
   ]
 }
