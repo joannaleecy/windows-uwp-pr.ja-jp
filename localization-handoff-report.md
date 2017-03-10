@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\create-a-custom-app-promotion-campaign.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/38e91e19ebf58d2361252889d72ccd1ef4554acd?path=windows-apps-src%2Fpublish%2Fcreate-a-custom-app-promotion-campaign.md&_a=contents) | HandedOffSuccess | [Details](#1e56b1df4b5501ded5db799c3ad67f97c0e1cfcd4845)
+ [windows-apps-src\controls-and-patterns\buttons.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/dfa6db23293cca897129d4b13b1c9e9d8f2cd1a0?path=windows-apps-src%2Fcontrols-and-patterns%2Fbuttons.md&_a=contents) | HandedOffSuccess | [Details](#e5c8b5056581540abd5e0ddf75da7785648df1d5747)
 
 ## Item Details
-##### <a name='1e56b1df4b5501ded5db799c3ad67f97c0e1cfcd4845'></a> Source: [windows-apps-src\publish\create-a-custom-app-promotion-campaign.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/38e91e19ebf58d2361252889d72ccd1ef4554acd?path=windows-apps-src%2Fpublish%2Fcreate-a-custom-app-promotion-campaign.md&_a=contents)
+##### <a name='e5c8b5056581540abd5e0ddf75da7785648df1d5747'></a> Source: [windows-apps-src\controls-and-patterns\buttons.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/dfa6db23293cca897129d4b13b1c9e9d8f2cd1a0?path=windows-apps-src%2Fcontrols-and-patterns%2Fbuttons.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [create-a-custom-app-promotion-campaign.220d97eaa84a1e4742a64b01094a0451e54772a7.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/1f8b4f4199b0f1a80eeaf9cde510d65d127260d8?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fcreate-a-custom-app-promotion-campaign.220d97eaa84a1e4742a64b01094a0451e54772a7.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-10 02:13:37
+* Handoff File: [buttons.31112261824f51e327866163a363c3880c81536e.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/4fde9c96fe6db2412ea7ea7180374f05d4c7aa42?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fbuttons.31112261824f51e327866163a363c3880c81536e.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-03-10 18:14:50
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,10 +21,10 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\publish\create-a-custom-app-promotion-campaign.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fpublish%2Fcreate-a-custom-app-promotion-campaign.md&_a=contents)
-* Current Handback File: [create-a-custom-app-promotion-campaign.220d97eaa84a1e4742a64b01094a0451e54772a7.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fcreate-a-custom-app-promotion-campaign.220d97eaa84a1e4742a64b01094a0451e54772a7.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\controls-and-patterns\buttons.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fcontrols-and-patterns%2Fbuttons.md&_a=contents)
+* Current Handback File: [buttons.31112261824f51e327866163a363c3880c81536e.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fbuttons.31112261824f51e327866163a363c3880c81536e.ja-jp.xlf&_a=contents)
 * Current Handback Datetime: 2017-03-01 13:53:49
-* Bilingual File: [create-a-custom-app-promotion-campaign.220d97eaa84a1e4742a64b01094a0451e54772a7.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fcreate-a-custom-app-promotion-campaign.220d97eaa84a1e4742a64b01094a0451e54772a7.ja-jp.xlf&_a=contents)
+* Bilingual File: [buttons.31112261824f51e327866163a363c3880c81536e.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fbuttons.31112261824f51e327866163a363c3880c81536e.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 

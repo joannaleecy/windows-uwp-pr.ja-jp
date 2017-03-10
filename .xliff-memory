@@ -34749,6 +34749,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1e56b1df4b5501ded5db799c3ad67f97c0e1cfcd.b546f50d55392f26aefc63c578c3daf5d4a7e293.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\buttons.md.0c550abceacfbbdd54d5d6a0753cd4c14cc2dfb0.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\buttons.md",
+      "XliffHash": "0c550abceacfbbdd54d5d6a0753cd4c14cc2dfb0",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e5c8b5056581540abd5e0ddf75da7785648df1d5.0a568a31f6722d354993b909d15cb65d3986ad4b.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
