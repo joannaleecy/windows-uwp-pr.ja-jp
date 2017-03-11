@@ -1,4 +1,7 @@
 {
+  "d8240af0a610541cea5352ed841a08eb7093db96": [
+    "windows-apps-src\\accessibility\\accessibility.md"
+  ],
   "e635b60af031928caea0bf6dd05f2bff873695c9": [
     "windows-apps-src\\accessibility\\accessibility.md"
   ],
@@ -25,6 +28,9 @@
   ],
   "2d179007db4b1c4c1a53e7f18aed64a3d96d35bf": [
     "windows-apps-src\\accessibility\\accessibility-in-the-store.md"
+  ],
+  "f0fd2e03c58ac5ffa575cf2381df4c652422efea": [
+    "windows-apps-src\\accessibility\\accessibility-overview.md"
   ],
   "930cb34ec87d7433ffe1d433351c45d4bb727328": [
     "windows-apps-src\\accessibility\\accessibility-overview.md"
@@ -2347,6 +2353,9 @@
   ],
   "0507086a7c7ea67f43f61feef6dc5c8de5afe2e5": [
     "windows-apps-src\\get-started\\whats-a-uwp.md"
+  ],
+  "5425f203122bbbc2d2bc415eb8fde98837587718": [
+    "windows-apps-src\\get-started\\your-first-app.md"
   ],
   "0b7ae55c6f12a657739cda6f8280d7006411c3cc": [
     "windows-apps-src\\get-started\\your-first-app.md"
@@ -5563,6 +5572,9 @@
   ],
   "2a7c5930752c759c3875826d0046603a63981341": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "ae2bd5aba2a67424f7fa9db3c64315c9f3795259": [
+    "windows-apps-src\\TOC.md"
   ],
   "e5bbb71cf0ed7c53aafc6204bf690460d39f32f4": [
     "windows-apps-src\\TOC.md"
