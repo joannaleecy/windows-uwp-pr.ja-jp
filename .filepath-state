@@ -3938,6 +3938,9 @@
   "987d52022489f3ad1eabef047ee6114de448d4ec": [
     "windows-apps-src\\monetize\\using-windows-store-services.md"
   ],
+  "0ce3af354e7589a0608270b9d0805654d2a59ff9": [
+    "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md"
+  ],
   "7f4f74c887509e772fd01dbdcfe28d86c583fbc1": [
     "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md"
   ],
@@ -5575,6 +5578,9 @@
   ],
   "2a7c5930752c759c3875826d0046603a63981341": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "198efe7a58103ed1c4700eaaa7adcac3cd208fba": [
+    "windows-apps-src\\TOC.md"
   ],
   "ae2bd5aba2a67424f7fa9db3c64315c9f3795259": [
     "windows-apps-src\\TOC.md"
@@ -10144,5 +10150,11 @@
   ],
   "51d3b90dd7f202fd86285bb3f95c78ded4a8b6d8": [
     "windows-apps-src\\devices-sensors\\deploy-scanner-profiles-with-mdm.md"
+  ],
+  "527b35d6d83dc54f68838c67c33cfc266edf5275": [
+    "windows-apps-src\\monetize\\change-the-billing-state-of-a-subscription-for-a-user.md"
+  ],
+  "5c8a612f5bec1f3cb82a4042ba8c7fcab8cfadfd": [
+    "windows-apps-src\\monetize\\get-subscriptions-for-a-user.md"
   ]
 }

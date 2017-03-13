@@ -34809,6 +34809,46 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1ca6c1ac8497bfa7caca14505b53292e8a4febcb.fe52722502439efeb098eaee4d7a2c3fb25525d9.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\change-the-billing-state-of-a-subscription-for-a-user.md.59b98bafa9865acb4e879132a826c20f05e4cde1.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\change-the-billing-state-of-a-subscription-for-a-user.md",
+      "XliffHash": "59b98bafa9865acb4e879132a826c20f05e4cde1",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\527b35d6d83dc54f68838c67c33cfc266edf5275.a0059cd9fb0c125a4abb60e5e9fa7295b0d98bae.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\get-subscriptions-for-a-user.md.d6c4887bf34a83ac0f147da519d23b926b6e282e.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\get-subscriptions-for-a-user.md",
+      "XliffHash": "d6c4887bf34a83ac0f147da519d23b926b6e282e",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5c8a612f5bec1f3cb82a4042ba8c7fcab8cfadfd.81afadfd5a8e77d4e1381a8ef404736710d14672.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md.16a36e88cce42421e962fb48d4df10399b03760e.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md",
+      "XliffHash": "16a36e88cce42421e962fb48d4df10399b03760e",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0ce3af354e7589a0608270b9d0805654d2a59ff9.cb004e9e3fb19d673ec6c3d8284705dcb07ee04f.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\TOC.md.701d4782511537335cfe5c955c9d7272a0ab0527.HT": {
+      "SourceFilename": "windows-apps-src\\TOC.md",
+      "XliffHash": "701d4782511537335cfe5c955c9d7272a0ab0527",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\198efe7a58103ed1c4700eaaa7adcac3cd208fba.bc3e2dcae93e7539ed3cf8a922224383fe397f1e.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
