@@ -33846,7 +33846,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ca65ef5a5c6b07f92a9162d20eff2607fb4df595.7cf98ba484e85b337314e75b088adf57272940b3.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\4ffa27546a4b667a86f22412297f52026d7773e9.386aef23013f72918ff8180e2319e566da33f540.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -34847,6 +34847,16 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\198efe7a58103ed1c4700eaaa7adcac3cd208fba.bc3e2dcae93e7539ed3cf8a922224383fe397f1e.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md.92f289412a8cc111fd40bd6917151a86302f09b2.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md",
+      "XliffHash": "92f289412a8cc111fd40bd6917151a86302f09b2",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1f5930a9917933937a1a0103fe118a2ccdf2d47f.aa978cbf24037fb4710a277edba2c624de193692.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }
