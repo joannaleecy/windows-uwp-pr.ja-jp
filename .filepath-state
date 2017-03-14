@@ -3134,6 +3134,9 @@
   "7a9bc30d21fc10b85f2700334b3be05b9e7be7a1": [
     "windows-apps-src\\launch-resume\\how-to-launch-an-app-for-results.md"
   ],
+  "412876d0b05b2e703482f8cc79a1f07268ac200f": [
+    "windows-apps-src\\launch-resume\\index.md"
+  ],
   "476977f11d7fcdb3ef441c038869f247f53f16bf": [
     "windows-apps-src\\launch-resume\\index.md"
   ],
@@ -7229,8 +7232,14 @@
   "5983209e7e107f8cf0a7d2fe9ce8ef734e3af7d4": [
     "windows-apps-src\\input-and-devices\\ink-toolbar.md"
   ],
+  "3848ab99538ab198f92890ac06da733169084f6a": [
+    "windows-apps-src\\launch-resume\\communicate-with-a-remote-app-service.md"
+  ],
   "0cac219625fbc7b6526c81cf11f010589d2bf000": [
     "windows-apps-src\\launch-resume\\communicate-with-a-remote-app-service.md"
+  ],
+  "7ddd0d46c73090fd69beed1d5f381d0f931804a0": [
+    "windows-apps-src\\launch-resume\\connected-apps-and-devices.md"
   ],
   "c2d41ce8e22b509b27507f94df0cb9415ddef6e5": [
     "windows-apps-src\\launch-resume\\connected-apps-and-devices.md"
@@ -7240,6 +7249,9 @@
   ],
   "2e2a36d22462f6846700ebadbbbf9249dd16babf": [
     "windows-apps-src\\launch-resume\\connected-apps-and-devices.md"
+  ],
+  "15ab4c39f4da1bb524f912d4e6ab6b3e6a5f34c6": [
+    "windows-apps-src\\launch-resume\\launch-a-remote-app.md"
   ],
   "2722aae29c3fa5d704237a74e1c887aaa6013316": [
     "windows-apps-src\\launch-resume\\launch-a-remote-app.md"
@@ -8032,6 +8044,9 @@
   ],
   "0b8e0b07960ae0c93261f022bca435efc394df99": [
     "windows-apps-src\\updates-and-versions\\choose-a-uwp-version.md"
+  ],
+  "0991d136bcc7b2b07e97bcf4018c1040e71dae0c": [
+    "windows-apps-src\\launch-resume\\discover-remote-devices.md"
   ],
   "c655ebf4d02f0de6e07d70ac0d81e33f20388741": [
     "windows-apps-src\\launch-resume\\discover-remote-devices.md"
