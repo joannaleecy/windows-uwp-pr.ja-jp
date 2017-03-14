@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\gaming\e2e.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/6476254170fc1e87eca19d49f4a181c65f58deaf?path=windows-apps-src%2Fgaming%2Fe2e.md&_a=contents) | HandedOffSuccess | [Details](#9398efedb5d4818e247be42132bdb752067b54262584)
+ [windows-apps-src\packaging\self-install-package-updates.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/e3ab5f165073cbb38a6b5ace80c6656046a14678?path=windows-apps-src%2Fpackaging%2Fself-install-package-updates.md&_a=contents) | HandedOffSuccess | [Details](#07b8b769cbcaf86bfa70a562de568cab65c91a774677)
 
 ## Item Details
-##### <a name='9398efedb5d4818e247be42132bdb752067b54262584'></a> Source: [windows-apps-src\gaming\e2e.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/6476254170fc1e87eca19d49f4a181c65f58deaf?path=windows-apps-src%2Fgaming%2Fe2e.md&_a=contents)
+##### <a name='07b8b769cbcaf86bfa70a562de568cab65c91a774677'></a> Source: [windows-apps-src\packaging\self-install-package-updates.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/e3ab5f165073cbb38a6b5ace80c6656046a14678?path=windows-apps-src%2Fpackaging%2Fself-install-package-updates.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/79ff207c3b3d51c5b096fd973c5d4467a894735c?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fe2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-14 19:33:13
+* Handoff File: [self-install-package-updates.660548fc7cf10428b4ce9987eb40ec1d8b237590.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/53a5233a92ec042cafd7161db2a66041c34958c6?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fself-install-package-updates.660548fc7cf10428b4ce9987eb40ec1d8b237590.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-03-14 21:33:40
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,10 +21,10 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\gaming\e2e.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fgaming%2Fe2e.md&_a=contents)
-* Current Handback File: [e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fe2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\packaging\self-install-package-updates.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fpackaging%2Fself-install-package-updates.md&_a=contents)
+* Current Handback File: [self-install-package-updates.660548fc7cf10428b4ce9987eb40ec1d8b237590.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fself-install-package-updates.660548fc7cf10428b4ce9987eb40ec1d8b237590.ja-jp.xlf&_a=contents)
 * Current Handback Datetime: 2017-03-01 13:53:49
-* Bilingual File: [e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fe2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf&_a=contents)
+* Bilingual File: [self-install-package-updates.660548fc7cf10428b4ce9987eb40ec1d8b237590.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fself-install-package-updates.660548fc7cf10428b4ce9987eb40ec1d8b237590.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 

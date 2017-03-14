@@ -34879,6 +34879,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9398efedb5d4818e247be42132bdb752067b5426.ca4d1f4508c1d79deb6ca47665377318b8b3594f.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\packaging\\self-install-package-updates.md.1ccab98fe946d8297ef56d70d9b812c7b7ef4d46.HT": {
+      "SourceFilename": "windows-apps-src\\packaging\\self-install-package-updates.md",
+      "XliffHash": "1ccab98fe946d8297ef56d70d9b812c7b7ef4d46",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\07b8b769cbcaf86bfa70a562de568cab65c91a77.68372d936dfb4f0ece0e2da1fd1d48e8dc556db7.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
