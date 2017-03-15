@@ -34939,6 +34939,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7ddd0d46c73090fd69beed1d5f381d0f931804a0.127d27032ecdc0097e4c677273a48b37e4c712c0.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md.5b23590e228175dda5d18b0245879085ba3b47b1.HT": {
+      "SourceFilename": "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md",
+      "XliffHash": "5b23590e228175dda5d18b0245879085ba3b47b1",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\006c7e8aca50f2d3b239c275740b90da566e8954.20ee22554912f6c7187a57b2c723237f4590e071.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\manage-targeting-profiles-for-ad-campaigns.md.8921a27be3146e0f45e56037d769cef0d8fe11f2.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\manage-targeting-profiles-for-ad-campaigns.md",
+      "XliffHash": "8921a27be3146e0f45e56037d769cef0d8fe11f2",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\30fb160e389edd18fb3782d332b5603fc6207757.12e98b869578dd7f4cccf5859442b2808db6cdf2.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

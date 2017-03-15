@@ -4646,6 +4646,9 @@
   "7920e2ba2fd4222ba012a98751e35133b36ac334": [
     "windows-apps-src\\publish\\create-a-custom-app-promotion-campaign.md"
   ],
+  "006c7e8aca50f2d3b239c275740b90da566e8954": [
+    "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md"
+  ],
   "c3ca8a50601dafbaf096feb0c60f59941f87a420": [
     "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md"
   ],
@@ -9967,6 +9970,9 @@
   ],
   "d0d6aa1a1a4b48f14e538c1471e766da09c0aae2": [
     "windows-apps-src\\monetize\\manage-delivery-lines-for-ad-campaigns.md"
+  ],
+  "30fb160e389edd18fb3782d332b5603fc6207757": [
+    "windows-apps-src\\monetize\\manage-targeting-profiles-for-ad-campaigns.md"
   ],
   "46b85638b93334a02636ec285f0818f949f2612b": [
     "windows-apps-src\\monetize\\manage-targeting-profiles-for-ad-campaigns.md"
