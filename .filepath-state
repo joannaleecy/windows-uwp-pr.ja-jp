@@ -2309,6 +2309,9 @@
   "dc1bf476c93ef9843c20244f24a199c7888eb4a5": [
     "windows-apps-src\\get-started\\enable-your-device-for-development.md"
   ],
+  "202480cd8e9107e18c7fa8c84a17089177f91dcb": [
+    "windows-apps-src\\get-started\\get-set-up.md"
+  ],
   "1e07b1235299b1f462ac9e8fa5f9bf6f6c861633": [
     "windows-apps-src\\get-started\\get-set-up.md"
   ],
@@ -2359,6 +2362,9 @@
   ],
   "0507086a7c7ea67f43f61feef6dc5c8de5afe2e5": [
     "windows-apps-src\\get-started\\whats-a-uwp.md"
+  ],
+  "fb47fe0c92a5debb2f9539fae0edc61f74d460c3": [
+    "windows-apps-src\\get-started\\your-first-app.md"
   ],
   "5425f203122bbbc2d2bc415eb8fde98837587718": [
     "windows-apps-src\\get-started\\your-first-app.md"
@@ -10066,6 +10072,9 @@
   ],
   "d36b84299b8e469624cef54f89c94744f3f4ae83": [
     "windows-apps-src\\whats-new\\windows-10-creators-preview.md"
+  ],
+  "89dbb45ac39c1f5d30864b99bb3fcff038d034f4": [
+    "windows-apps-src\\get-started\\get-started-tutorial-game-js2d.md"
   ],
   "aacd3477794a5721a0117ac6b3554ae49ae25398": [
     "windows-apps-src\\get-started\\get-started-tutorial-game-js2d.md"
