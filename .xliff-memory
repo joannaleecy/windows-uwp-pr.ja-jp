@@ -34989,6 +34989,46 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\fb47fe0c92a5debb2f9539fae0edc61f74d460c3.c10e871c8a56c5aa20d5d15a63f75821c2673637.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md.f86da41521600abaca395ca3bc764392a18f51f8.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md",
+      "XliffHash": "f86da41521600abaca395ca3bc764392a18f51f8",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\95e447550705d606483c20ec34cca6c97b03785c.b3433a83eec5d4386c78c6d90ad6d5b2225abba5.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\style\\color.md.835f854610f3daede9c37a95a9db228f53a4f3c9.HT": {
+      "SourceFilename": "windows-apps-src\\style\\color.md",
+      "XliffHash": "835f854610f3daede9c37a95a9db228f53a4f3c9",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0d4266d1335198cffb74900b0d1eb2bb48cd1879.b5d3a35d7747c76f73ad8fb90ed000f2a3b12322.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\enable-your-device-for-development.md.a1100af15272b175079618a6f98a1e12811a3628.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\enable-your-device-for-development.md",
+      "XliffHash": "a1100af15272b175079618a6f98a1e12811a3628",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\fe4763eaa3d3f81e906d80e388fc96a873aa2b72.8a944e369ae9e4f9f1ad5c1ec98af83e53ba2a90.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md.b46ae0502968694cc60b84461a4a62d06230c763.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md",
+      "XliffHash": "b46ae0502968694cc60b84461a4a62d06230c763",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b8959a81e3497bc0a9d165e0ec73862f390a4c82.bb26ca8a5bd94df9c6aa4ee18fa77da469086e2a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

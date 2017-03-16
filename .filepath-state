@@ -2279,6 +2279,9 @@
   "ce94dda0eaf156f1e09fefbd76f50bc764050970": [
     "windows-apps-src\\gaming\\work-with-networking-in-your-directx-game.md"
   ],
+  "b8959a81e3497bc0a9d165e0ec73862f390a4c82": [
+    "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
+  ],
   "8fc855ffa4ae6d7ecd6af4ffd2e3b6c29032522a": [
     "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
   ],
@@ -2288,6 +2291,9 @@
   "34a1d665bc98a5224ef7707994138ba40d70763b": [
     "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
   ],
+  "95e447550705d606483c20ec34cca6c97b03785c": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
+  ],
   "ecd260418abb608d1e08ee1744f72697faa25a18": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
   ],
@@ -2296,6 +2302,9 @@
   ],
   "16622dbd9914907f75c8392f8e4de6e1c10b049c": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
+  ],
+  "fe4763eaa3d3f81e906d80e388fc96a873aa2b72": [
+    "windows-apps-src\\get-started\\enable-your-device-for-development.md"
   ],
   "1ca6c1ac8497bfa7caca14505b53292e8a4febcb": [
     "windows-apps-src\\get-started\\enable-your-device-for-development.md"
@@ -5455,6 +5464,9 @@
   ],
   "925ccc34e5fd323484a7783532737dd0dbfe63dc": [
     "windows-apps-src\\security\\web-authentication-broker.md"
+  ],
+  "0d4266d1335198cffb74900b0d1eb2bb48cd1879": [
+    "windows-apps-src\\style\\color.md"
   ],
   "8ad2f88cecb4481f40a52555b6a37485be7cbab4": [
     "windows-apps-src\\style\\color.md"
