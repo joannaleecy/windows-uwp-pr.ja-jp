@@ -2372,6 +2372,9 @@
   "0507086a7c7ea67f43f61feef6dc5c8de5afe2e5": [
     "windows-apps-src\\get-started\\whats-a-uwp.md"
   ],
+  "54c80c7d1f4620f0270752167684dd4ce11b9c5c": [
+    "windows-apps-src\\get-started\\your-first-app.md"
+  ],
   "fb47fe0c92a5debb2f9539fae0edc61f74d460c3": [
     "windows-apps-src\\get-started\\your-first-app.md"
   ],
@@ -3566,6 +3569,9 @@
   "4cb0b288b37117178a722c3437ac12aa392e3e34": [
     "windows-apps-src\\monetize\\additional-help.md"
   ],
+  "cb10a81c2fac1a14ae6e3a7eec20953d4267164d": [
+    "windows-apps-src\\monetize\\code-samples.md"
+  ],
   "7f6ddabc2dcf5a7d619b8402ca34c94c8ae20c66": [
     "windows-apps-src\\monetize\\code-samples.md"
   ],
@@ -3614,6 +3620,9 @@
   "44b5266a104b2f706537cea2167b395487f275d2": [
     "windows-apps-src\\monetize\\developer-information.md"
   ],
+  "17391bda754195d2cf66ddc2e5e22ed445a37ef0": [
+    "windows-apps-src\\monetize\\developer-walkthroughs.md"
+  ],
   "3c0f6acec62991e4893c00df3cf6320dc6bc9d7b": [
     "windows-apps-src\\monetize\\developer-walkthroughs.md"
   ],
@@ -3622,6 +3631,9 @@
   ],
   "fb1d2e8ea3a5747523f77106b98d033b70df5a95": [
     "windows-apps-src\\monetize\\developer-walkthroughs.md"
+  ],
+  "5cda15fbcac1c3ceeda3101879c4abf05298dc16": [
+    "windows-apps-src\\monetize\\display-ads-in-your-app.md"
   ],
   "1f723229a13e9eed20d9872285e78510fafbee99": [
     "windows-apps-src\\monetize\\display-ads-in-your-app.md"
@@ -3713,6 +3725,9 @@
   "be69a45586f4b7d66740d141dcc350eafd16bb53": [
     "windows-apps-src\\monetize\\get-in-app-acquisitions.md"
   ],
+  "6d94f814e8c11327f0cb65ec6b65db9c4ad161fa": [
+    "windows-apps-src\\monetize\\get-started-with-microsoft-advertising-libraries.md"
+  ],
   "e1f6ed0cd86c3152c246fea971e413c2c6e5f0fc": [
     "windows-apps-src\\monetize\\get-started-with-microsoft-advertising-libraries.md"
   ],
@@ -3743,6 +3758,9 @@
   "c2c9998eccd470f574cc34314635de4c62f3f171": [
     "windows-apps-src\\monetize\\important-notice-eula.md"
   ],
+  "f2a08962769a5eb00151c26a08d151630df8c2d3": [
+    "windows-apps-src\\monetize\\index.md"
+  ],
   "92041e38970efd604097fa2af6c2a5c0d4a81f34": [
     "windows-apps-src\\monetize\\index.md"
   ],
@@ -3751,6 +3769,9 @@
   ],
   "5a3497d5aa1c8a4415b7b4fb9f7888448ae74f9f": [
     "windows-apps-src\\monetize\\index.md"
+  ],
+  "3304efd659a32176a44c33d9df4e8062b3bc7700": [
+    "windows-apps-src\\monetize\\install-the-microsoft-advertising-libraries.md"
   ],
   "3c87e84eb200d74ba4e92fd2d632f9d3935d3303": [
     "windows-apps-src\\monetize\\install-the-microsoft-advertising-libraries.md"
@@ -3767,11 +3788,17 @@
   "87eb36d7a77bfb6a283a3e668781ee9c99d6947f": [
     "windows-apps-src\\monetize\\install-the-microsoft-universal-ad-client-sdk.md"
   ],
+  "a7c499fda4d9f09d1604af76d2206d3898e1a07a": [
+    "windows-apps-src\\monetize\\interstitial-ads.md"
+  ],
   "0eaa7e5a8579d7609a895340648a43b92906fac8": [
     "windows-apps-src\\monetize\\interstitial-ads.md"
   ],
   "fb1cdd018ed496b59290825ee84d10ac70a0e46d": [
     "windows-apps-src\\monetize\\interstitial-ads.md"
+  ],
+  "2c0020ff7d750a97380c351358ec6aafb996125f": [
+    "windows-apps-src\\monetize\\interstitial-ad-sample-code-in-c.md"
   ],
   "1271d8c59a4da8eacefbf70351ac8f2ead29b7f6": [
     "windows-apps-src\\monetize\\interstitial-ad-sample-code-in-c.md"
@@ -3779,11 +3806,17 @@
   "4c57cf4909028d5aa81c75d9e1b6f1bf28d41ad7": [
     "windows-apps-src\\monetize\\interstitial-ad-sample-code-in-c.md"
   ],
+  "192ea42e9d55bbafcd6c6dbd463681832ac28c86": [
+    "windows-apps-src\\monetize\\interstitial-ad-sample-code-in-javascript.md"
+  ],
   "f771115eef23cc41523c0a7da08afc109fd9d990": [
     "windows-apps-src\\monetize\\interstitial-ad-sample-code-in-javascript.md"
   ],
   "91a54bdd2e41b3e7df0ee0aad32448ab9ed66ac0": [
     "windows-apps-src\\monetize\\interstitial-ad-sample-code-in-javascript.md"
+  ],
+  "33bf3c2db5db7e8ec07df3f4d13cc0ad074e99a3": [
+    "windows-apps-src\\monetize\\known-issues-for-the-advertising-libraries.md"
   ],
   "4420b3872aba4a261e259455c126109b45c21bf9": [
     "windows-apps-src\\monetize\\known-issues-for-the-advertising-libraries.md"
@@ -3860,6 +3893,9 @@
   "49c9b8e60da9239c948265fb22563013019da259": [
     "windows-apps-src\\monetize\\select-and-manage-your-ad-networks.md"
   ],
+  "daf0887462a4c84aa827a6261793a0eaf4d512ca": [
+    "windows-apps-src\\monetize\\set-up-ad-units-in-your-app.md"
+  ],
   "2437ba55032e82c0212ab44b09d642a08839d548": [
     "windows-apps-src\\monetize\\set-up-ad-units-in-your-app.md"
   ],
@@ -3899,6 +3935,9 @@
   "6150c885c4159911932bf8d7c3848b1e182b2f61": [
     "windows-apps-src\\monetize\\supported-markets-for-microsoft-advertising.md"
   ],
+  "ec5b1c1723a7f58b20234d703fc786647268a3b3": [
+    "windows-apps-src\\monetize\\test-mode-values.md"
+  ],
   "d366677e6f96f2dc7df08d2e1cb8aafad81475ba": [
     "windows-apps-src\\monetize\\test-mode-values.md"
   ],
@@ -3928,6 +3967,9 @@
   ],
   "f81fba28ccbaa504d5c5674d3d04b2ab5b05f8f0": [
     "windows-apps-src\\monetize\\troubleshooting-guides.md"
+  ],
+  "75a68977e5edb996a5e2fc1ae9265d11b7492ad9": [
+    "windows-apps-src\\monetize\\ui-and-user-experience-guidelines.md"
   ],
   "0667dce6e4b13853324037f7b6c2e9f884162688": [
     "windows-apps-src\\monetize\\ui-and-user-experience-guidelines.md"
@@ -3976,6 +4018,9 @@
   ],
   "291e1c4d707e8987d29ae5840248918543d7d12a": [
     "windows-apps-src\\monetize\\what-is-the-difference-admediatorcontrol-or-adcontrol.md"
+  ],
+  "93b56259314c54a56cd8ebbef89694319a95e41c": [
+    "windows-apps-src\\monetize\\workflows-for-creating-apps-with-ads.md"
   ],
   "0523e3a5cc51222ee1252c77b81fc5e436899f51": [
     "windows-apps-src\\monetize\\workflows-for-creating-apps-with-ads.md"
@@ -4961,6 +5006,9 @@
   "cbf519d5755adb13f6a41845b4771ac459d880cc": [
     "windows-apps-src\\publish\\mobile-operator-billing.md"
   ],
+  "6418fe1b47ac89e8decb135aa9a2108b3b95ef82": [
+    "windows-apps-src\\publish\\monetize-with-ads.md"
+  ],
   "71e98d5b3fb2db56f78461fbcdbb8f3c774e19a7": [
     "windows-apps-src\\publish\\monetize-with-ads.md"
   ],
@@ -5161,6 +5209,9 @@
   ],
   "dfcae306d0589dcedec4f19cb3b1306d900cbea1": [
     "windows-apps-src\\publish\\supported-languages.md"
+  ],
+  "9c660e480402c584fad2b0f6444d7051d1cd234b": [
+    "windows-apps-src\\publish\\tax-details-for-paid-apps.md"
   ],
   "11aa6897ba62992c1f743c9b94ba072bac2e8071": [
     "windows-apps-src\\publish\\tax-details-for-paid-apps.md"
