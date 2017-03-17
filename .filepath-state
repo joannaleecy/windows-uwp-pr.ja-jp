@@ -2327,6 +2327,9 @@
   "96b6b477efd42b46b8aaf553de2482e1946c9cd7": [
     "windows-apps-src\\get-started\\get-set-up.md"
   ],
+  "0c21257db05a058c2d92f32218b73d920cc7156c": [
+    "windows-apps-src\\get-started\\learn-more.md"
+  ],
   "364889ca15bdae717557187c7b05c23d976b83f7": [
     "windows-apps-src\\get-started\\learn-more.md"
   ],
@@ -5665,6 +5668,9 @@
   ],
   "2a7c5930752c759c3875826d0046603a63981341": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "97425f5ce7ea06409c0e99d9dc5ba6bcffc024fc": [
+    "windows-apps-src\\TOC.md"
   ],
   "ae2bd5aba2a67424f7fa9db3c64315c9f3795259": [
     "windows-apps-src\\TOC.md"
