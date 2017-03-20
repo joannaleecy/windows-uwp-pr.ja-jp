@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\controls-and-patterns\nav-pane.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/af78c24cb20962135833322b666f37311798b579?path=windows-apps-src%2Fcontrols-and-patterns%2Fnav-pane.md&_a=contents) | HandedOffSuccess | [Details](#2d48a92d5af75f8543f7b69ac59865e51bd334ee2243)
+ [windows-apps-src\monetize\code-your-experiment-in-your-app.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/6cc97dc88344ec7697af44709c102aa7bbe37884?path=windows-apps-src%2Fmonetize%2Fcode-your-experiment-in-your-app.md&_a=contents) | HandedOffSuccess | [Details](#253fad084e9fe8a40f652b39c254175dba8d81fd4250)
 
 ## Item Details
-##### <a name='2d48a92d5af75f8543f7b69ac59865e51bd334ee2243'></a> Source: [windows-apps-src\controls-and-patterns\nav-pane.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/af78c24cb20962135833322b666f37311798b579?path=windows-apps-src%2Fcontrols-and-patterns%2Fnav-pane.md&_a=contents)
+##### <a name='253fad084e9fe8a40f652b39c254175dba8d81fd4250'></a> Source: [windows-apps-src\monetize\code-your-experiment-in-your-app.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/6cc97dc88344ec7697af44709c102aa7bbe37884?path=windows-apps-src%2Fmonetize%2Fcode-your-experiment-in-your-app.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [nav-pane.d6c3b77138be76c3243ad01a275a61809f6018b6.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/9f54a3e0b1d35921b357ede3f9d38efdc54f19e9?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fnav-pane.d6c3b77138be76c3243ad01a275a61809f6018b6.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-20 17:28:28
+* Handoff File: [code-your-experiment-in-your-app.ecef6b7f13ebf77fb7057ec2b2c647f02eb5c098.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/b18ec4f7703a3680804ac7efff1e54e36cfeaf8b?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fcode-your-experiment-in-your-app.ecef6b7f13ebf77fb7057ec2b2c647f02eb5c098.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-03-20 19:33:18
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,10 +21,10 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\controls-and-patterns\nav-pane.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fcontrols-and-patterns%2Fnav-pane.md&_a=contents)
-* Current Handback File: [nav-pane.d6c3b77138be76c3243ad01a275a61809f6018b6.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fnav-pane.d6c3b77138be76c3243ad01a275a61809f6018b6.ja-jp.xlf&_a=contents)
-* Current Handback Datetime: 2017-03-01 13:53:49
-* Bilingual File: [nav-pane.d6c3b77138be76c3243ad01a275a61809f6018b6.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fnav-pane.d6c3b77138be76c3243ad01a275a61809f6018b6.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\monetize\code-your-experiment-in-your-app.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fmonetize%2Fcode-your-experiment-in-your-app.md&_a=contents)
+* Current Handback File: [code-your-experiment-in-your-app.ecef6b7f13ebf77fb7057ec2b2c647f02eb5c098.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fcode-your-experiment-in-your-app.ecef6b7f13ebf77fb7057ec2b2c647f02eb5c098.ja-jp.xlf&_a=contents)
+* Current Handback Datetime: 2017-03-01 13:53:50
+* Bilingual File: [code-your-experiment-in-your-app.ecef6b7f13ebf77fb7057ec2b2c647f02eb5c098.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fcode-your-experiment-in-your-app.ecef6b7f13ebf77fb7057ec2b2c647f02eb5c098.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 
