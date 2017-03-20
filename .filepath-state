@@ -584,18 +584,6 @@
   "0664bf2ba1934908511e1b4504941c04a4055a49": [
     "windows-apps-src\\contacts-and-calendar\\sending-email.md"
   ],
-  "7edfcf2e1a73fe522693c4b328d5d72a8759d5cb": [
-    "windows-apps-src\\controls-and-patterns\\active-canvas.md"
-  ],
-  "4b65783394dbaaeaf3c0c55f3ca434c0e0ecd15e": [
-    "windows-apps-src\\controls-and-patterns\\active-canvas.md"
-  ],
-  "22b195475c48f7447c4c08431472efa0ffd48e31": [
-    "windows-apps-src\\controls-and-patterns\\active-canvas.md"
-  ],
-  "490c45fb8dc565e4ae0b890d26f28d698b58f255": [
-    "windows-apps-src\\controls-and-patterns\\active-canvas.md"
-  ],
   "6dc3c9d15ebbda67dd055adb4b9d5548b6ac81e3": [
     "windows-apps-src\\controls-and-patterns\\app-bars.md"
   ],
@@ -5675,6 +5663,9 @@
   "2a7c5930752c759c3875826d0046603a63981341": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "4c6c090e8dc9e0a9104a45a0c9c52dd3939e4c5d": [
+    "windows-apps-src\\TOC.md"
+  ],
   "97425f5ce7ea06409c0e99d9dc5ba6bcffc024fc": [
     "windows-apps-src\\TOC.md"
   ],
@@ -6853,15 +6844,6 @@
   ],
   "769b548da172e6f29f290b3799bc455d9e9a2670": [
     "windows-apps-src\\xbox-apps\\development-lanes-unity-versioning.md"
-  ],
-  "1782540069254f30b241022b687f493110d3b280": [
-    "windows-apps-src\\layout\\active-canvas.md"
-  ],
-  "56b2a2c5a00ee81da296e724ed883e974f5796c1": [
-    "windows-apps-src\\layout\\active-canvas.md"
-  ],
-  "c148434e49a649f82b424301f88f73a8f483ae5f": [
-    "windows-apps-src\\layout\\active-canvas.md"
   ],
   "7d72d5251000e16349efa8d4f7716e12d22764d6": [
     "windows-apps-src\\style\\fonts.md"
