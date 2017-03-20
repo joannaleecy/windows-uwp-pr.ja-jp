@@ -1,20 +1,19 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\learn-more.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3f3898bfba14cb7660b0498b7dc54b97a9845bb8?path=windows-apps-src%2Fget-started%2Flearn-more.md&_a=contents) | HandedOffSuccess | [Details](#0c21257db05a058c2d92f32218b73d920cc7156c3104)
- [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3f3898bfba14cb7660b0498b7dc54b97a9845bb8?path=windows-apps-src%2FTOC.md&_a=contents) | HandedOffSuccess | [Details](#97425f5ce7ea06409c0e99d9dc5ba6bcffc024fc7849)
+ [windows-apps-src\controls-and-patterns\nav-pane.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/af78c24cb20962135833322b666f37311798b579?path=windows-apps-src%2Fcontrols-and-patterns%2Fnav-pane.md&_a=contents) | HandedOffSuccess | [Details](#2d48a92d5af75f8543f7b69ac59865e51bd334ee2243)
 
 ## Item Details
-##### <a name='0c21257db05a058c2d92f32218b73d920cc7156c3104'></a> Source: [windows-apps-src\get-started\learn-more.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3f3898bfba14cb7660b0498b7dc54b97a9845bb8?path=windows-apps-src%2Fget-started%2Flearn-more.md&_a=contents)
+##### <a name='2d48a92d5af75f8543f7b69ac59865e51bd334ee2243'></a> Source: [windows-apps-src\controls-and-patterns\nav-pane.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/af78c24cb20962135833322b666f37311798b579?path=windows-apps-src%2Fcontrols-and-patterns%2Fnav-pane.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/1c722e872e5d16c628fe14b9fb0af2770d92b234?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Flearn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-17 19:32:08
+* Handoff File: [nav-pane.d6c3b77138be76c3243ad01a275a61809f6018b6.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/9f54a3e0b1d35921b357ede3f9d38efdc54f19e9?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fnav-pane.d6c3b77138be76c3243ad01a275a61809f6018b6.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-03-20 17:28:28
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -22,29 +21,10 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\get-started\learn-more.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fget-started%2Flearn-more.md&_a=contents)
-* Current Handback File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Flearn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ja-jp.xlf&_a=contents)
-* Current Handback Datetime: 2017-03-01 13:53:50
-* Bilingual File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Flearn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ja-jp.xlf&_a=contents)
-* Bilingual Datetime: 2017-03-01 14:04:45
-* [Back to Top](#report-top)
-
-##### <a name='97425f5ce7ea06409c0e99d9dc5ba6bcffc024fc7849'></a> Source: [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3f3898bfba14cb7660b0498b7dc54b97a9845bb8?path=windows-apps-src%2FTOC.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/1c722e872e5d16c628fe14b9fb0af2770d92b234?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-17 19:32:08
-* Handoff Reason: Include
-* Handoff Name: 
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Handback Name: 
-* Current Target File: [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2FTOC.md&_a=contents)
-* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\controls-and-patterns\nav-pane.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fcontrols-and-patterns%2Fnav-pane.md&_a=contents)
+* Current Handback File: [nav-pane.d6c3b77138be76c3243ad01a275a61809f6018b6.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fnav-pane.d6c3b77138be76c3243ad01a275a61809f6018b6.ja-jp.xlf&_a=contents)
 * Current Handback Datetime: 2017-03-01 13:53:49
-* Bilingual File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf&_a=contents)
+* Bilingual File: [nav-pane.d6c3b77138be76c3243ad01a275a61809f6018b6.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fnav-pane.d6c3b77138be76c3243ad01a275a61809f6018b6.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 

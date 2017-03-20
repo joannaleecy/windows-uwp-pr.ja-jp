@@ -35229,6 +35229,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\97425f5ce7ea06409c0e99d9dc5ba6bcffc024fc.db692606894f6f6436e012f67ebf4a8a1cfcc674.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\nav-pane.md.75a430e79a6c9c5d0dd0ef8af75c9d2af927e7fd.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\nav-pane.md",
+      "XliffHash": "75a430e79a6c9c5d0dd0ef8af75c9d2af927e7fd",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2d48a92d5af75f8543f7b69ac59865e51bd334ee.015c412e46f0c6eedbeef4013639dbb7e98ed75b.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
