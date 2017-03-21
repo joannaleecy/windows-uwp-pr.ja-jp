@@ -4746,7 +4746,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b07aaf62372d284160d36f5f0fe7156e5b310e7d.d017e45645229faab109e1f39cc7bf52a1b45d58.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\91ef8471386bc252be3167977d560bed62edee62.a9625e78399ba40ff25db4d75bbef50ba0cb6da7.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\devkit-activation.22024c3019b2f91b62bafe755f4aefb6138eab84.ja-jp.xlf",
       "LocXliffCommit": "14c84f4f3190a8231e848b2f586d80bc5a0f80c8"
     },
@@ -35257,6 +35257,16 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\40dc7119204ca3704bcc40f807a4bd6e031e7231.45cbc6a154f395b9a5608e01868759c9686520d9.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\interstitial-ads.md.16fdefbb9ac1b30cee49058c889e0354e2cf9eb7.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\interstitial-ads.md",
+      "XliffHash": "16fdefbb9ac1b30cee49058c889e0354e2cf9eb7",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b617fd5a4ebd9e1510980ed9deaac36f62b264a1.a58f002ee842dd743661dae1e9ea2f6021326302.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }

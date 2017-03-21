@@ -3791,6 +3791,9 @@
   "87eb36d7a77bfb6a283a3e668781ee9c99d6947f": [
     "windows-apps-src\\monetize\\install-the-microsoft-universal-ad-client-sdk.md"
   ],
+  "b617fd5a4ebd9e1510980ed9deaac36f62b264a1": [
+    "windows-apps-src\\monetize\\interstitial-ads.md"
+  ],
   "a7c499fda4d9f09d1604af76d2206d3898e1a07a": [
     "windows-apps-src\\monetize\\interstitial-ads.md"
   ],
@@ -6139,6 +6142,9 @@
   ],
   "a37f883a058459b52b67bdbc32844ac0f98c0541": [
     "windows-apps-src\\xbox-apps\\development-environment-setup.md"
+  ],
+  "91ef8471386bc252be3167977d560bed62edee62": [
+    "windows-apps-src\\xbox-apps\\devkit-activation.md"
   ],
   "b07aaf62372d284160d36f5f0fe7156e5b310e7d": [
     "windows-apps-src\\xbox-apps\\devkit-activation.md"
