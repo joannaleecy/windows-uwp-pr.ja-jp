@@ -3500,6 +3500,9 @@
   "8a143359948e536d30efb425055969ae8ac0987f": [
     "windows-apps-src\\maps-and-location\\set-up-a-geofence.md"
   ],
+  "aa33af63a49d890b3c60ec1bee32528cfc78af93": [
+    "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
+  ],
   "99429e0fd9e8072916b5e337e3e2ee131f4e85aa": [
     "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
   ],
@@ -5669,6 +5672,9 @@
   "2a7c5930752c759c3875826d0046603a63981341": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "9e57ab584d91c60f30c24773f8350b8c7c06c564": [
+    "windows-apps-src\\TOC.md"
+  ],
   "4c6c090e8dc9e0a9104a45a0c9c52dd3939e4c5d": [
     "windows-apps-src\\TOC.md"
   ],
@@ -6142,6 +6148,9 @@
   ],
   "a37f883a058459b52b67bdbc32844ac0f98c0541": [
     "windows-apps-src\\xbox-apps\\development-environment-setup.md"
+  ],
+  "d8ce552ef05ae1f5a02ed402bd800080ef177e6a": [
+    "windows-apps-src\\xbox-apps\\devkit-activation.md"
   ],
   "91ef8471386bc252be3167977d560bed62edee62": [
     "windows-apps-src\\xbox-apps\\devkit-activation.md"
@@ -10097,6 +10106,9 @@
   "0cd3a38e2d3b7d0bff25ba93ece104854d5d2280": [
     "windows-apps-src\\monetize\\run-ad-campaigns-using-windows-store-services.md"
   ],
+  "7912775e17a70c1d6fe9810c780017dcfa2db60e": [
+    "windows-apps-src\\publish\\installs-report.md"
+  ],
   "b0f18caa452f862f5aa5b765def76b830e968a2e": [
     "windows-apps-src\\publish\\installs-report.md"
   ],
@@ -10267,5 +10279,35 @@
   ],
   "51d3b90dd7f202fd86285bb3f95c78ded4a8b6d8": [
     "windows-apps-src\\devices-sensors\\deploy-scanner-profiles-with-mdm.md"
+  ],
+  "fca846b2a7ec117a99aff1764eb0acffb1a9f11f": [
+    "windows-apps-src\\monetize\\download-the-cab-file-for-an-oem-hardware-error.md"
+  ],
+  "9a8539a3d9d8f85fd9277165eb393eb372459b0a": [
+    "windows-apps-src\\monetize\\download-the-cab-file-for-a-windows-10-driver-error.md"
+  ],
+  "622ad656a64381e80549bc286a4d30490e488631": [
+    "windows-apps-src\\monetize\\download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md"
+  ],
+  "a631dc23e6c0fb07e93a8658e0f266fcb289a167": [
+    "windows-apps-src\\monetize\\get-app-installs.md"
+  ],
+  "7cfd5f84e625bad042014dd98eeee3b4f9bcff5c": [
+    "windows-apps-src\\monetize\\get-details-for-an-oem-hardware-error.md"
+  ],
+  "faa298a582535d4371140aad08c7e75d5f8515cc": [
+    "windows-apps-src\\monetize\\get-details-for-a-windows-10-driver-error.md"
+  ],
+  "fbf1ee456080ff228abde061dbfef859baf79465": [
+    "windows-apps-src\\monetize\\get-details-for-a-windows-7-or-windows-8.x-driver-error.md"
+  ],
+  "ea2465feda869a07eef06b57a5ca8b4e04cf99f1": [
+    "windows-apps-src\\monetize\\get-error-reporting-data-for-windows-10-drivers.md"
+  ],
+  "bac99a46ccf890437216c60eaf406299e9172d30": [
+    "windows-apps-src\\monetize\\get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md"
+  ],
+  "d35c405ae3e8a2f5e4d7fdd70594b51cdf9941c1": [
+    "windows-apps-src\\monetize\\get-oem-hardware-error-reporting-data.md"
   ]
 }

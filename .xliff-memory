@@ -4746,7 +4746,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\91ef8471386bc252be3167977d560bed62edee62.a9625e78399ba40ff25db4d75bbef50ba0cb6da7.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d8ce552ef05ae1f5a02ed402bd800080ef177e6a.c352e4f79dc7fcf41ddbd0113a88dae57ddc558a.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\devkit-activation.22024c3019b2f91b62bafe755f4aefb6138eab84.ja-jp.xlf",
       "LocXliffCommit": "14c84f4f3190a8231e848b2f586d80bc5a0f80c8"
     },
@@ -35267,6 +35267,136 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b617fd5a4ebd9e1510980ed9deaac36f62b264a1.a58f002ee842dd743661dae1e9ea2f6021326302.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\get-app-installs.md.a86062fc5fa6948c308c95846e985dd2f8106c90.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\get-app-installs.md",
+      "XliffHash": "a86062fc5fa6948c308c95846e985dd2f8106c90",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a631dc23e6c0fb07e93a8658e0f266fcb289a167.09f1d413c6ae117b3c6ecb020ed46b06b9f4a24e.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\publish\\installs-report.md.f053e6091bbc399d969382415d2c08c7e056ed71.HT": {
+      "SourceFilename": "windows-apps-src\\publish\\installs-report.md",
+      "XliffHash": "f053e6091bbc399d969382415d2c08c7e056ed71",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7912775e17a70c1d6fe9810c780017dcfa2db60e.7285d7194bc6a8ec53dc77bf2ad878cb0d2f8670.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\get-details-for-a-windows-10-driver-error.md.2f1ef949ac3aa9cb2d62d86a38ee36ff0cf5db81.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\get-details-for-a-windows-10-driver-error.md",
+      "XliffHash": "2f1ef949ac3aa9cb2d62d86a38ee36ff0cf5db81",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\faa298a582535d4371140aad08c7e75d5f8515cc.eeef66a0d77f22fecbdbe4405daace7feb78b79c.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\download-the-cab-file-for-an-oem-hardware-error.md.67baf96e1e15a3aa9139d755078aa21c3e560c7c.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\download-the-cab-file-for-an-oem-hardware-error.md",
+      "XliffHash": "67baf96e1e15a3aa9139d755078aa21c3e560c7c",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\fca846b2a7ec117a99aff1764eb0acffb1a9f11f.891a524038f62e74043f5da23718cada8f1ba976.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\get-details-for-an-oem-hardware-error.md.64a5d4dc24ff845355a4119e6b0e07ed293cb517.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\get-details-for-an-oem-hardware-error.md",
+      "XliffHash": "64a5d4dc24ff845355a4119e6b0e07ed293cb517",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7cfd5f84e625bad042014dd98eeee3b4f9bcff5c.a6287fc7a10addc1fbd0a16e8308023d9a996667.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\download-the-cab-file-for-a-windows-10-driver-error.md.b2a1633a3044aba34c542ba89b925e4edcf44869.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\download-the-cab-file-for-a-windows-10-driver-error.md",
+      "XliffHash": "b2a1633a3044aba34c542ba89b925e4edcf44869",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9a8539a3d9d8f85fd9277165eb393eb372459b0a.9db30d3a5ed1f3bc754175f9230b6598b0dc8e0d.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\get-details-for-a-windows-7-or-windows-8.x-driver-error.md.833d632bad1c04d0c0637beef950d17c24356de8.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\get-details-for-a-windows-7-or-windows-8.x-driver-error.md",
+      "XliffHash": "833d632bad1c04d0c0637beef950d17c24356de8",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\fbf1ee456080ff228abde061dbfef859baf79465.d6f3a8f2896073dfd64441f1345fc926702105e6.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md.1f6e7fe95ed56ce5c2597a9398e7cdcf5071b4bb.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md",
+      "XliffHash": "1f6e7fe95ed56ce5c2597a9398e7cdcf5071b4bb",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\622ad656a64381e80549bc286a4d30490e488631.953644cf1ed7296c33055db35326f2cebbdfaf05.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md.7ad2a7247c6b675a007abed1931343841804ed91.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md",
+      "XliffHash": "7ad2a7247c6b675a007abed1931343841804ed91",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\aa33af63a49d890b3c60ec1bee32528cfc78af93.bc0947617feb50586634ec4fd0600ae11bb23196.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\get-error-reporting-data-for-windows-10-drivers.md.e2a3a51121c8ef5975bed144b9758b5b61d965ea.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\get-error-reporting-data-for-windows-10-drivers.md",
+      "XliffHash": "e2a3a51121c8ef5975bed144b9758b5b61d965ea",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\ea2465feda869a07eef06b57a5ca8b4e04cf99f1.8d775c3e2c1fc25e360b43f3284371fd7342d950.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md.bd83db26480abe7fca83282851fe6f5030c3a103.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md",
+      "XliffHash": "bd83db26480abe7fca83282851fe6f5030c3a103",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\bac99a46ccf890437216c60eaf406299e9172d30.f38933ba5f7225290459fcb898c6b4ddec4a8b93.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\TOC.md.fc4f6a4ef30f7d5649d9204b823f19b91b5178b8.HT": {
+      "SourceFilename": "windows-apps-src\\TOC.md",
+      "XliffHash": "fc4f6a4ef30f7d5649d9204b823f19b91b5178b8",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9e57ab584d91c60f30c24773f8350b8c7c06c564.02eddc767ea75c6ca4fd838e3fe881ad0d9f57f8.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\get-oem-hardware-error-reporting-data.md.bbc6fdd6b72e8e8a1a1125dfb5e68bc21a4e98ad.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\get-oem-hardware-error-reporting-data.md",
+      "XliffHash": "bbc6fdd6b72e8e8a1a1125dfb5e68bc21a4e98ad",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d35c405ae3e8a2f5e4d7fdd70594b51cdf9941c1.04ff792a1fad64bfaee8930059606b77e3b5acb5.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }
