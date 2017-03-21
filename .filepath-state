@@ -152,6 +152,9 @@
   "1fec7c58bab571a89b2bab6851d00d69246766d8": [
     "windows-apps-src\\app-settings\\app-settings-and-data.md"
   ],
+  "493e491bd16b7346046394d66587788caf06db4f": [
+    "windows-apps-src\\app-settings\\guidelines-for-app-settings.md"
+  ],
   "33e2caa6e7745548b4a73a769ce813bf077de0e0": [
     "windows-apps-src\\app-settings\\guidelines-for-app-settings.md"
   ],
@@ -10126,6 +10129,9 @@
   ],
   "af719bbb4cc9def4e9b202c8815320698c6148d0": [
     "windows-apps-src\\publish\\promote-your-app-report.md"
+  ],
+  "40dc7119204ca3704bcc40f807a4bd6e031e7231": [
+    "windows-apps-src\\whats-new\\windows-10-creators-preview.md"
   ],
   "86488f8119446599ada6da7c34e0a65234ce4964": [
     "windows-apps-src\\whats-new\\windows-10-creators-preview.md"

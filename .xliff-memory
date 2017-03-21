@@ -31866,7 +31866,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\33e2caa6e7745548b4a73a769ce813bf077de0e0.c49ed8bfec053e514ed02e98a53567775d10eb40.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\493e491bd16b7346046394d66587788caf06db4f.ea79efda2d856a6bd9ea1750af7a12c8d4aca04a.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -35247,6 +35247,16 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\4c6c090e8dc9e0a9104a45a0c9c52dd3939e4c5d.fe0d95f8c8ccdd1af94fddfb550c3d2cb6102997.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\whats-new\\windows-10-creators-preview.md.d63f01dd82aafce698398e46c61e8fea6d038d12.HT": {
+      "SourceFilename": "windows-apps-src\\whats-new\\windows-10-creators-preview.md",
+      "XliffHash": "d63f01dd82aafce698398e46c61e8fea6d038d12",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\40dc7119204ca3704bcc40f807a4bd6e031e7231.45cbc6a154f395b9a5608e01868759c9686520d9.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }
