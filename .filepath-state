@@ -227,6 +227,9 @@
   "77533d4aca3cc84e0a021a0faac57f5afbbefdd7": [
     "windows-apps-src\\app-to-app\\use-edp-to-protect-enterprise-data-transferred-between-apps.md"
   ],
+  "d83819b36574935a7cdea04dba9ff5a87956a187": [
+    "windows-apps-src\\audio-video-camera\\adaptive-streaming.md"
+  ],
   "37d953456c6f4b1eec9aa675e7cda0585f34f63c": [
     "windows-apps-src\\audio-video-camera\\adaptive-streaming.md"
   ],
@@ -295,6 +298,9 @@
   ],
   "e047b3e3caef6e3a443a785d912642c71bf16812": [
     "windows-apps-src\\audio-video-camera\\camera-profiles.md"
+  ],
+  "d0d7a429cf702455d969e1ac1c62def6181e8dd0": [
+    "windows-apps-src\\audio-video-camera\\capture-device-controls-for-photo-and-video-capture.md"
   ],
   "d37a140abc597129a448e15f2af1582831f91794": [
     "windows-apps-src\\audio-video-camera\\capture-device-controls-for-photo-and-video-capture.md"
@@ -503,6 +509,9 @@
   "4451dc73633dc41679dbe3f4eac3cdd8a3532314": [
     "windows-apps-src\\audio-video-camera\\simple-camera-preview-access.md"
   ],
+  "0973195b8777a0154b733ba2625327bb9296bd6b": [
+    "windows-apps-src\\audio-video-camera\\supported-codecs.md"
+  ],
   "2967505a03582fead90f55075bfd7c5f97b603f0": [
     "windows-apps-src\\audio-video-camera\\supported-codecs.md"
   ],
@@ -520,6 +529,9 @@
   ],
   "a0d551c5ee9598f9ea79709f61921ad7ed088e23": [
     "windows-apps-src\\audio-video-camera\\system-media-transport-controls.md"
+  ],
+  "c9e6a6437e427ca6b5bd063d467fd713526ea8ee": [
+    "windows-apps-src\\audio-video-camera\\transcode-media-files.md"
   ],
   "142e1967f952f2e4343a89909f217f06d0687b25": [
     "windows-apps-src\\audio-video-camera\\transcode-media-files.md"
@@ -1655,6 +1667,9 @@
   "c9b833aea273441f22df335b551d148b3fcbe7dc": [
     "windows-apps-src\\devices-sensors\\get-battery-info.md"
   ],
+  "bc8064cd5446ca4c481c60b08cdf626ec85be646": [
+    "windows-apps-src\\devices-sensors\\host-card-emulation.md"
+  ],
   "ad97e8ed52d0d302823f61d1acb9c482e0c9ef38": [
     "windows-apps-src\\devices-sensors\\host-card-emulation.md"
   ],
@@ -2359,6 +2374,9 @@
   ],
   "8592a2855cdb7524462dbc2f761f0077a421af09": [
     "windows-apps-src\\get-started\\universal-application-platform-guide.md"
+  ],
+  "3b00d66139595f514543271a4bed4aa4e9965cee": [
+    "windows-apps-src\\get-started\\whats-a-uwp.md"
   ],
   "59699357065a34579e234a3473964eeccc930554": [
     "windows-apps-src\\get-started\\whats-a-uwp.md"
@@ -3719,6 +3737,9 @@
   "68ad995341d0d4bedbe566e8a491a80b9b0a8ed2": [
     "windows-apps-src\\monetize\\get-app-reviews.md"
   ],
+  "dc5c4092368c0b395e42be122a9e0e7feec8f03e": [
+    "windows-apps-src\\monetize\\get-error-reporting-data.md"
+  ],
   "a683f8024233e96d01675a9b27a619b9eac4e077": [
     "windows-apps-src\\monetize\\get-error-reporting-data.md"
   ],
@@ -3742,6 +3763,9 @@
   ],
   "81392a218165d4e0c2b954bdc6cb7789f7aa63f1": [
     "windows-apps-src\\monetize\\get-started-with-microsoft-advertising-libraries.md"
+  ],
+  "ec590eb8c653e364230006c6d3a08045829f5fc5": [
+    "windows-apps-src\\monetize\\grant-free-products.md"
   ],
   "f7509be016f32282478d6ebf0e373b2540537d3d": [
     "windows-apps-src\\monetize\\grant-free-products.md"
@@ -5672,6 +5696,9 @@
   "2a7c5930752c759c3875826d0046603a63981341": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "019682eaa51e2e22b46966a916195a9d7e81ba3a": [
+    "windows-apps-src\\TOC.md"
+  ],
   "9e57ab584d91c60f30c24773f8350b8c7c06c564": [
     "windows-apps-src\\TOC.md"
   ],
@@ -5800,6 +5827,9 @@
   ],
   "c4c12151b4a06aa4280af6cc5bcc3e4c69cea4cc": [
     "windows-apps-src\\winrt-components\\index.md"
+  ],
+  "a69ad9bdff70dc04f9bdf9eb4f5117a22a005969": [
+    "windows-apps-src\\winrt-components\\net-framework-mappings-of-windows-runtime-types.md"
   ],
   "52ee215054bc998e3152f1c3e09c32d955da88d3": [
     "windows-apps-src\\winrt-components\\net-framework-mappings-of-windows-runtime-types.md"
@@ -7565,6 +7595,9 @@
   "83235595a6a7f9e9b0b5d8de154d6e5d8a8db8ef": [
     "windows-apps-src\\monetize\\migrate-from-admediatorcontrol-to-adcontrol.md"
   ],
+  "d3ac29b5ab8666d80b8f18a479537956da738f2a": [
+    "windows-apps-src\\get-started\\application-development-for-windows-as-a-service.md"
+  ],
   "72ac67b17fc519d374798e5121b309f664ff6b1b": [
     "windows-apps-src\\get-started\\application-development-for-windows-as-a-service.md"
   ],
@@ -7579,6 +7612,9 @@
   ],
   "084ce01ffd5e99501095ba74518a58c6a2148543": [
     "windows-apps-src\\launch-resume\\launch-ringtone-picker.md"
+  ],
+  "deebfc4c80b09445c5e6ba55951e6f06054fbf42": [
+    "windows-apps-src\\updates-and-versions\\application-development-for-windows-as-a-service.md"
   ],
   "70576c28cbcdef66a6ec6e325435096a49070a58": [
     "windows-apps-src\\updates-and-versions\\application-development-for-windows-as-a-service.md"
@@ -7711,6 +7747,9 @@
   ],
   "13ab2cbfddb8db9f9a0de6f20c5dca0057afb2c3": [
     "windows-apps-src\\monetize\\create-an-app-submission.md"
+  ],
+  "ca8bb623d06da0001b1b0751a5ac1ccc310bbd84": [
+    "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
   ],
   "bb21e50227a99850cc393085fb86680cf55d6c7a": [
     "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
@@ -9803,9 +9842,6 @@
   "ddf9676fd817eb333a80110c8d2d7d87a93d6b2d": [
     "windows-apps-src\\layout\\grid-tutorial.md"
   ],
-  "77018d3df8c76fe9b0c739a092eab96c1e380171": [
-    "windows-apps-src\\monetize\\get-details-for-an-error-in-your-app.md"
-  ],
   "cfab1c8f5149d4c6d02a9fa94287a4e204a11a7f": [
     "windows-apps-src\\monetize\\get-details-for-an-error-in-your-app.md"
   ],
@@ -9815,8 +9851,8 @@
   "7c299f9ff3294f76415782db0e0fe25bc9b86326": [
     "windows-apps-src\\monetize\\get-details-for-an-error-in-your-app.md"
   ],
-  "f9058ba75bf237480fb00e780ac0472618127805": [
-    "windows-apps-src\\monetize\\get-the-stack-trace-for-an-error-in-your-app.md"
+  "77018d3df8c76fe9b0c739a092eab96c1e380171": [
+    "windows-apps-src\\monetize\\get-details-for-an-error-in-your-app.md"
   ],
   "fb99c65e91e02e3e60b12258e30083183c213324": [
     "windows-apps-src\\monetize\\get-the-stack-trace-for-an-error-in-your-app.md"
@@ -9825,6 +9861,9 @@
     "windows-apps-src\\monetize\\get-the-stack-trace-for-an-error-in-your-app.md"
   ],
   "d5ae47fe7e2c8423735a44c09cda4f182481c53a": [
+    "windows-apps-src\\monetize\\get-the-stack-trace-for-an-error-in-your-app.md"
+  ],
+  "f9058ba75bf237480fb00e780ac0472618127805": [
     "windows-apps-src\\monetize\\get-the-stack-trace-for-an-error-in-your-app.md"
   ],
   "fdb1424b4d418b260e755d218e12c86140b997d6": [
@@ -10309,5 +10348,8 @@
   ],
   "d35c405ae3e8a2f5e4d7fdd70594b51cdf9941c1": [
     "windows-apps-src\\monetize\\get-oem-hardware-error-reporting-data.md"
+  ],
+  "1bde2c24db6faa843d9118f330867e7f66b22e7e": [
+    "windows-apps-src\\audio-video-camera\\codec-query.md"
   ]
 }
