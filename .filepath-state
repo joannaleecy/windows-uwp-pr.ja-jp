@@ -2375,6 +2375,9 @@
   "8592a2855cdb7524462dbc2f761f0077a421af09": [
     "windows-apps-src\\get-started\\universal-application-platform-guide.md"
   ],
+  "2afb5cbc74b381e85fa861562e7de57d877b0c7f": [
+    "windows-apps-src\\get-started\\whats-a-uwp.md"
+  ],
   "3b00d66139595f514543271a4bed4aa4e9965cee": [
     "windows-apps-src\\get-started\\whats-a-uwp.md"
   ],
@@ -7594,6 +7597,9 @@
   ],
   "83235595a6a7f9e9b0b5d8de154d6e5d8a8db8ef": [
     "windows-apps-src\\monetize\\migrate-from-admediatorcontrol-to-adcontrol.md"
+  ],
+  "4a5c3a502c857c286078e21563246aee62ae4f5f": [
+    "windows-apps-src\\get-started\\application-development-for-windows-as-a-service.md"
   ],
   "d3ac29b5ab8666d80b8f18a479537956da738f2a": [
     "windows-apps-src\\get-started\\application-development-for-windows-as-a-service.md"
