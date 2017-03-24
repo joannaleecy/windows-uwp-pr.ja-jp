@@ -1,34 +1,19 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\input-and-devices\dynamically-modify-voice-command-definition-vcd-phrase-lists.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/c0320bf6f2e3b9796ffdc26494470743bfed4e6c?path=windows-apps-src%2Finput-and-devices%2Fdynamically-modify-voice-command-definition-vcd-phrase-lists.md&_a=contents) | HandedOffSuccess | [Details](#b15d4a9321e692864e0179ba8108a55686934f4d3472)
- [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/c0320bf6f2e3b9796ffdc26494470743bfed4e6c?path=windows-apps-src%2FTOC.md&_a=contents) | HandedOffSuccess | [Details](#9e3d820235fae343b0f83b56004afb4cb1353c6c7857)
+ [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/f14379e6e45cab8cc386cc43e2ccd1444f1e950e?path=windows-apps-src%2FTOC.md&_a=contents) | HandedOffSuccess | [Details](#a3864ec782a27111080aff96cecf3f2289b2f95d7857)
 
 ## Item Details
-##### <a name='b15d4a9321e692864e0179ba8108a55686934f4d3472'></a> Source: [windows-apps-src\input-and-devices\dynamically-modify-voice-command-definition-vcd-phrase-lists.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/c0320bf6f2e3b9796ffdc26494470743bfed4e6c?path=windows-apps-src%2Finput-and-devices%2Fdynamically-modify-voice-command-definition-vcd-phrase-lists.md&_a=contents)
+##### <a name='a3864ec782a27111080aff96cecf3f2289b2f95d7857'></a> Source: [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/f14379e6e45cab8cc386cc43e2ccd1444f1e950e?path=windows-apps-src%2FTOC.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [dynamically-modify-voice-command-definition-vcd-phrase-lists.ca91892738f49ece658addb10d9ff8498384d62b.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/ef8497ffe6cb70733abef182c8b1e2f544e1882e?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fdynamically-modify-voice-command-definition-vcd-phrase-lists.ca91892738f49ece658addb10d9ff8498384d62b.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-24 16:52:32
-* Handoff Reason: Include
-* Handoff Name: 
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Handback Name: 
-* [Back to Top](#report-top)
-
-##### <a name='9e3d820235fae343b0f83b56004afb4cb1353c6c7857'></a> Source: [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/c0320bf6f2e3b9796ffdc26494470743bfed4e6c?path=windows-apps-src%2FTOC.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/ef8497ffe6cb70733abef182c8b1e2f544e1882e?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-24 16:52:32
+* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/c0eda07bc0c3486163bce82c62210cb632d0830c?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-03-24 18:52:53
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
