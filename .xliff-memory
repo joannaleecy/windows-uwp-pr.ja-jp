@@ -35436,7 +35436,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\019682eaa51e2e22b46966a916195a9d7e81ba3a.0c2a83ed53e44a81763c0557799c82aaa4a242b1.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9e3d820235fae343b0f83b56004afb4cb1353c6c.27f7bba5070fc8b83cf22b54ad22a025e15a1473.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -35537,6 +35537,16 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2afb5cbc74b381e85fa861562e7de57d877b0c7f.1b35d57f2d00cfc7e884c37b7e070b5561cca24d.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\dynamically-modify-voice-command-definition-vcd-phrase-lists.md.6d3860e6f4aa7ad0a9a2c073b1ef98386284c91e.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\dynamically-modify-voice-command-definition-vcd-phrase-lists.md",
+      "XliffHash": "6d3860e6f4aa7ad0a9a2c073b1ef98386284c91e",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b15d4a9321e692864e0179ba8108a55686934f4d.24ed6f9d1c7b5948084d7284d1ee6df42b9a053c.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }

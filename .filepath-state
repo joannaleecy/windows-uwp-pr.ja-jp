@@ -2714,12 +2714,6 @@
   "ea19592ea98eb7d9a1b47c1a8cf8f1990ca33797": [
     "windows-apps-src\\input-and-devices\\device-primer.md"
   ],
-  "cb679c01d1d494da435bad0eac6aa0c7d7e4d62f": [
-    "windows-apps-src\\input-and-devices\\dynamically-modify-voice-command-definition--vcd--phrase-lists.md"
-  ],
-  "1a64c4f179f40117c8ca601be05f6673bc3000e4": [
-    "windows-apps-src\\input-and-devices\\dynamically-modify-voice-command-definition--vcd--phrase-lists.md"
-  ],
   "0bbde7caec4ff52898e9b76c3104b9aa484dea27": [
     "windows-apps-src\\input-and-devices\\enable-continuous-dictation.md"
   ],
@@ -5698,6 +5692,9 @@
   ],
   "2a7c5930752c759c3875826d0046603a63981341": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "9e3d820235fae343b0f83b56004afb4cb1353c6c": [
+    "windows-apps-src\\TOC.md"
   ],
   "019682eaa51e2e22b46966a916195a9d7e81ba3a": [
     "windows-apps-src\\TOC.md"
@@ -10357,5 +10354,8 @@
   ],
   "1bde2c24db6faa843d9118f330867e7f66b22e7e": [
     "windows-apps-src\\audio-video-camera\\codec-query.md"
+  ],
+  "b15d4a9321e692864e0179ba8108a55686934f4d": [
+    "windows-apps-src\\input-and-devices\\dynamically-modify-voice-command-definition-vcd-phrase-lists.md"
   ]
 }

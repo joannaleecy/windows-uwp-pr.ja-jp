@@ -6,15 +6,15 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\application-development-for-windows-as-a-service.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/da3950b5f3d1edabc1b86274ca10975063e35c8e?path=windows-apps-src%2Fget-started%2Fapplication-development-for-windows-as-a-service.md&_a=contents) | HandedOffSuccess | [Details](#4a5c3a502c857c286078e21563246aee62ae4f5f2682)
- [windows-apps-src\get-started\whats-a-uwp.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/da3950b5f3d1edabc1b86274ca10975063e35c8e?path=windows-apps-src%2Fget-started%2Fwhats-a-uwp.md&_a=contents) | HandedOffSuccess | [Details](#2afb5cbc74b381e85fa861562e7de57d877b0c7f3108)
+ [windows-apps-src\input-and-devices\dynamically-modify-voice-command-definition-vcd-phrase-lists.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/c0320bf6f2e3b9796ffdc26494470743bfed4e6c?path=windows-apps-src%2Finput-and-devices%2Fdynamically-modify-voice-command-definition-vcd-phrase-lists.md&_a=contents) | HandedOffSuccess | [Details](#b15d4a9321e692864e0179ba8108a55686934f4d3472)
+ [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/c0320bf6f2e3b9796ffdc26494470743bfed4e6c?path=windows-apps-src%2FTOC.md&_a=contents) | HandedOffSuccess | [Details](#9e3d820235fae343b0f83b56004afb4cb1353c6c7857)
 
 ## Item Details
-##### <a name='4a5c3a502c857c286078e21563246aee62ae4f5f2682'></a> Source: [windows-apps-src\get-started\application-development-for-windows-as-a-service.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/da3950b5f3d1edabc1b86274ca10975063e35c8e?path=windows-apps-src%2Fget-started%2Fapplication-development-for-windows-as-a-service.md&_a=contents)
+##### <a name='b15d4a9321e692864e0179ba8108a55686934f4d3472'></a> Source: [windows-apps-src\input-and-devices\dynamically-modify-voice-command-definition-vcd-phrase-lists.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/c0320bf6f2e3b9796ffdc26494470743bfed4e6c?path=windows-apps-src%2Finput-and-devices%2Fdynamically-modify-voice-command-definition-vcd-phrase-lists.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [application-development-for-windows-as-a-service.c15099eb2d254be26aa42260cb08f3c54a113b4e.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/dcc48a87d542e0e8e2bb0fe7d46fe59c11c4bce0?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fapplication-development-for-windows-as-a-service.c15099eb2d254be26aa42260cb08f3c54a113b4e.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-22 16:55:00
+* Handoff File: [dynamically-modify-voice-command-definition-vcd-phrase-lists.ca91892738f49ece658addb10d9ff8498384d62b.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/ef8497ffe6cb70733abef182c8b1e2f544e1882e?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fdynamically-modify-voice-command-definition-vcd-phrase-lists.ca91892738f49ece658addb10d9ff8498384d62b.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-03-24 16:52:32
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -22,15 +22,13 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Bilingual File: [application-development-for-windows-as-a-service.860abc133e8df8b088250b3f4c1e3f9dbc27f891.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/45bb80a1337ad6ceb2ce0fac6be3ceb14a5b4b6e?path=ol-handback%2FMicrosoft%2Fwindows-apps.ja-jp%2Fmaster%2Fapplication-development-for-windows-as-a-service.860abc133e8df8b088250b3f4c1e3f9dbc27f891.ja-jp.xlf&_a=contents)
-* Bilingual Datetime: 2016-10-24 15:45:53
 * [Back to Top](#report-top)
 
-##### <a name='2afb5cbc74b381e85fa861562e7de57d877b0c7f3108'></a> Source: [windows-apps-src\get-started\whats-a-uwp.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/da3950b5f3d1edabc1b86274ca10975063e35c8e?path=windows-apps-src%2Fget-started%2Fwhats-a-uwp.md&_a=contents)
+##### <a name='9e3d820235fae343b0f83b56004afb4cb1353c6c7857'></a> Source: [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/c0320bf6f2e3b9796ffdc26494470743bfed4e6c?path=windows-apps-src%2FTOC.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [whats-a-uwp.2407afdd4d00b61c6f3405995b6e0e11a0507a9d.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/dcc48a87d542e0e8e2bb0fe7d46fe59c11c4bce0?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fwhats-a-uwp.2407afdd4d00b61c6f3405995b6e0e11a0507a9d.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-22 16:55:00
+* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/ef8497ffe6cb70733abef182c8b1e2f544e1882e?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-03-24 16:52:32
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -38,10 +36,10 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\get-started\whats-a-uwp.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fget-started%2Fwhats-a-uwp.md&_a=contents)
-* Current Handback File: [whats-a-uwp.2407afdd4d00b61c6f3405995b6e0e11a0507a9d.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fwhats-a-uwp.2407afdd4d00b61c6f3405995b6e0e11a0507a9d.ja-jp.xlf&_a=contents)
-* Current Handback Datetime: 2017-03-01 13:53:50
-* Bilingual File: [whats-a-uwp.2407afdd4d00b61c6f3405995b6e0e11a0507a9d.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fwhats-a-uwp.2407afdd4d00b61c6f3405995b6e0e11a0507a9d.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2FTOC.md&_a=contents)
+* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf&_a=contents)
+* Current Handback Datetime: 2017-03-01 13:53:49
+* Bilingual File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 
