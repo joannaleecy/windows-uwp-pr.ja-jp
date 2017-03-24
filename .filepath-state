@@ -3593,6 +3593,9 @@
   "ae6e806f8aead387afe55dec2d70c04b7fc21284": [
     "windows-apps-src\\monetize\\code-samples.md"
   ],
+  "e22e217a0ae96ee38b97c07562cc8ce02ad87079": [
+    "windows-apps-src\\monetize\\code-your-experiment-in-your-app.md"
+  ],
   "253fad084e9fe8a40f652b39c254175dba8d81fd": [
     "windows-apps-src\\monetize\\code-your-experiment-in-your-app.md"
   ],
@@ -3608,6 +3611,9 @@
   "d2ceafb9781ca2b9cd640e65d9bb420f0bf37928": [
     "windows-apps-src\\monetize\\create-an-adcontrol-in-javascript.md"
   ],
+  "8da21ae0968540cf43994673ceeeefa92cf56b18": [
+    "windows-apps-src\\monetize\\create-and-run-your-first-experiment-with-a-b-testing.md"
+  ],
   "6f90799bf3b31d7c5e6412984dd247e8d849948d": [
     "windows-apps-src\\monetize\\create-and-run-your-first-experiment-with-a-b-testing.md"
   ],
@@ -3619,6 +3625,9 @@
   ],
   "fb9e93747fa77031fe906d9ab7463fc41b73cdeb": [
     "windows-apps-src\\monetize\\create-and-run-your-first-experiment-with-a-b-testing.md"
+  ],
+  "26ab98d3a4d22c6b2ebf6fee8ed559b2ddd07dad": [
+    "windows-apps-src\\monetize\\define-your-experiment-in-the-dev-center-dashboard.md"
   ],
   "9ffcbda2b6d861a60d53e7ac2af4392abce61b47": [
     "windows-apps-src\\monetize\\define-your-experiment-in-the-dev-center-dashboard.md"
@@ -3869,6 +3878,9 @@
   "54e3361ce9fdfc67495d41903b8b291931b7ee9f": [
     "windows-apps-src\\monetize\\known-issues-for-the-advertising-libraries.md"
   ],
+  "70607e99ba646cab1805c13e8779871c1e3ec611": [
+    "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
+  ],
   "3e3a77d7010adba654f1fe06d3f2d77dda87ee8f": [
     "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
   ],
@@ -3883,6 +3895,9 @@
   ],
   "e8e4e55ab08900457e4f847ccea705838169c39c": [
     "windows-apps-src\\monetize\\manage-a-large-catalog-of-in-app-products.md"
+  ],
+  "67f09d20f937d86319e9f27362c69dea21d579ae": [
+    "windows-apps-src\\monetize\\manage-your-experiment.md"
   ],
   "a972e6dea823504d5a213c5b8ea084432b0b613c": [
     "windows-apps-src\\monetize\\manage-your-experiment.md"
@@ -4753,6 +4768,9 @@
   ],
   "7920e2ba2fd4222ba012a98751e35133b36ac334": [
     "windows-apps-src\\publish\\create-a-custom-app-promotion-campaign.md"
+  ],
+  "c23dd0769807a323a82c5da8fa3ed9c340a8aadb": [
+    "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md"
   ],
   "006c7e8aca50f2d3b239c275740b90da566e8954": [
     "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md"
@@ -7616,6 +7634,9 @@
   "b42b57f385857301bb74037dbb5c0c7200653316": [
     "windows-apps-src\\monetize\\add-advertisements-to-video-content.md"
   ],
+  "7fa775c319e1d84f8b73e42723d9fb36fdd03b73": [
+    "windows-apps-src\\monetize\\microsoft-store-services-sdk.md"
+  ],
   "a409e02b8aafcaf7e0d603e9ff4dd79af98579ca": [
     "windows-apps-src\\monetize\\microsoft-store-services-sdk.md"
   ],
@@ -9529,6 +9550,9 @@
   ],
   "2878c8c9a50ea49ef10d020dd16d13500690431c": [
     "windows-apps-src\\monetize\\app-metadata-api-for-advertising-networks.md"
+  ],
+  "fb8541c45c11668edb0241e530b79387531a631f": [
+    "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
   ],
   "885b999839db8433127d97439d62f57a4c70b273": [
     "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
