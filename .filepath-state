@@ -3770,6 +3770,9 @@
   "be69a45586f4b7d66740d141dcc350eafd16bb53": [
     "windows-apps-src\\monetize\\get-in-app-acquisitions.md"
   ],
+  "f506fa6145aede8e69aad8c5a7e76f11e5db66d4": [
+    "windows-apps-src\\monetize\\get-started-with-microsoft-advertising-libraries.md"
+  ],
   "6d94f814e8c11327f0cb65ec6b65db9c4ad161fa": [
     "windows-apps-src\\monetize\\get-started-with-microsoft-advertising-libraries.md"
   ],
@@ -3799,6 +3802,9 @@
   ],
   "a879944dc14ca161c3e52a49ffe4a8cebfa7d69f": [
     "windows-apps-src\\monetize\\html-properties-example.md"
+  ],
+  "a224e77274151e477d49ac139a6fcc57352bc82d": [
+    "windows-apps-src\\monetize\\important-notice-eula.md"
   ],
   "6197d5af6102a5572807ccb9a522e60eed09e4ac": [
     "windows-apps-src\\monetize\\important-notice-eula.md"
@@ -3920,6 +3926,9 @@
   "29db10862533e7b15c7a676fc3aecd4ba58f9514": [
     "windows-apps-src\\monetize\\query-for-products.md"
   ],
+  "f3d07df6e64c96e9070cb82bd7ac6e96b9cad1ee": [
+    "windows-apps-src\\monetize\\release-notes-for-the-advertising-libraries.md"
+  ],
   "33d6f0c543b0c9d5425e66f536bd1099136546f4": [
     "windows-apps-src\\monetize\\release-notes-for-the-advertising-libraries.md"
   ],
@@ -3961,6 +3970,9 @@
   ],
   "32a934f1d113d561c72ab3ac48a8ef3d0820c176": [
     "windows-apps-src\\monetize\\set-up-ad-units-in-your-app.md"
+  ],
+  "41991c1964e107625f93e9133d2397c2b972d718": [
+    "windows-apps-src\\monetize\\submit-an-app-with-ads-to-the-windows-store.md"
   ],
   "2e4d402f1de4d868c7ceca8f525303079d1a1acf": [
     "windows-apps-src\\monetize\\submit-an-app-with-ads-to-the-windows-store.md"
@@ -5728,6 +5740,9 @@
   ],
   "2a7c5930752c759c3875826d0046603a63981341": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "081ec642b0b3e6f6f61c7fb7efc5e55f5e7b3fdb": [
+    "windows-apps-src\\TOC.md"
   ],
   "a3864ec782a27111080aff96cecf3f2289b2f95d": [
     "windows-apps-src\\TOC.md"
