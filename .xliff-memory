@@ -35839,6 +35839,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f506fa6145aede8e69aad8c5a7e76f11e5db66d4.d373801651c949f763c514904e3aac25da4bd4d6.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md.4652a5ed2324801ba19d39f3e55a9fbc599d70c1.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md",
+      "XliffHash": "4652a5ed2324801ba19d39f3e55a9fbc599d70c1",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c2220760ba5532964dbde718e92ea695922143d3.e43e39d3d0a9927b3dcaffb79b5f66b9136df590.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
