@@ -3551,17 +3551,26 @@
   "17d087b8174b057501795d76c5dc29d5f91b1050": [
     "windows-apps-src\\monetize\\adcontrol-events-in-javascript.md"
   ],
+  "5380f892687781e11d14251db49ba54f6541eed1": [
+    "windows-apps-src\\monetize\\adcontrol-in-html-5-and-javascript.md"
+  ],
   "606c9f251efb1291bcd62785576d927b0767730d": [
     "windows-apps-src\\monetize\\adcontrol-in-html-5-and-javascript.md"
   ],
   "cda74aaf6301f0cc04c5a9ae5c2aad5cf43d8b7e": [
     "windows-apps-src\\monetize\\adcontrol-in-html-5-and-javascript.md"
   ],
+  "bd8920bf2325db499fecc85246c31b568824211b": [
+    "windows-apps-src\\monetize\\adcontrol-in-windows-phone-silverlight.md"
+  ],
   "743b9faccaa120f1904b592fc09a965dc7878e03": [
     "windows-apps-src\\monetize\\adcontrol-in-windows-phone-silverlight.md"
   ],
   "1f4606f5bb5446d8749f80e2bf4772a0b6db48b3": [
     "windows-apps-src\\monetize\\adcontrol-in-windows-phone-silverlight.md"
+  ],
+  "1ec902bc5b738684436e2ed2c6dc693adb739e57": [
+    "windows-apps-src\\monetize\\adcontrol-in-xaml-and--net.md"
   ],
   "9db232709d3aa4ca1b7a6c6672cb2d1c1dea5049": [
     "windows-apps-src\\monetize\\adcontrol-in-xaml-and--net.md"
@@ -3704,11 +3713,17 @@
   "b7cd3f5d2c566958aaf83b8f633418ce444a2eaa": [
     "windows-apps-src\\monetize\\enable-in-app-product-purchases.md"
   ],
+  "5c3b144681df7298cc40bd228011ab7e2ed82682": [
+    "windows-apps-src\\monetize\\error-handling-in-javascript-walkthrough.md"
+  ],
   "5b3e9b66ea0b52e9a44b6c71c3d7107a86b038df": [
     "windows-apps-src\\monetize\\error-handling-in-javascript-walkthrough.md"
   ],
   "935ce9ca17d2b9d4a63496ab0b254960bd68e23d": [
     "windows-apps-src\\monetize\\error-handling-in-javascript-walkthrough.md"
+  ],
+  "9cf6868de13ceae1ef8cb01561e395d865a02c4b": [
+    "windows-apps-src\\monetize\\error-handling-in-xamlc-walkthrough.md"
   ],
   "d6c048397a5f7fd6c9a6cd625a7ff5ce0b6c29bf": [
     "windows-apps-src\\monetize\\error-handling-in-xamlc-walkthrough.md"
@@ -3847,6 +3862,9 @@
   ],
   "87eb36d7a77bfb6a283a3e668781ee9c99d6947f": [
     "windows-apps-src\\monetize\\install-the-microsoft-universal-ad-client-sdk.md"
+  ],
+  "ec6deb7ca52ad2c42d5addbae73b1f4b21b1b7ed": [
+    "windows-apps-src\\monetize\\interstitial-ads.md"
   ],
   "b617fd5a4ebd9e1510980ed9deaac36f62b264a1": [
     "windows-apps-src\\monetize\\interstitial-ads.md"
@@ -7649,6 +7667,9 @@
   "a1e02b118cff128e60ca168acbe53ea0f2c0fefc": [
     "windows-apps-src\\publish\\set-your-add-on-product-id.md"
   ],
+  "94dff928ded2342c13f6f0bd05fa170742533ffa": [
+    "windows-apps-src\\monetize\\add-advertisements-to-video-content.md"
+  ],
   "88e0bb4ceb9cba12d1eb5857761f5b59afaa15f2": [
     "windows-apps-src\\monetize\\add-advertisements-to-video-content.md"
   ],
@@ -7675,6 +7696,9 @@
   ],
   "2a39ee9764e3ae864ddeb3233f1da3eca2e9d7c6": [
     "windows-apps-src\\layout\\navigate-between-two-pages.md"
+  ],
+  "31ea29acc14a727dfa2588229fef16e0a7d0af23": [
+    "windows-apps-src\\monetize\\migrate-from-admediatorcontrol-to-adcontrol.md"
   ],
   "71928b67d3c2799b3d8d3711f6f7e5a3610e9c76": [
     "windows-apps-src\\monetize\\migrate-from-admediatorcontrol-to-adcontrol.md"
@@ -8075,6 +8099,9 @@
   "55a6b548246e801c9fcc0392265263123f24de00": [
     "windows-apps-src\\monetize\\manage-add-ons.md"
   ],
+  "b08cdddd3cb6d9537ef7be40706d3151cd40f6c9": [
+    "windows-apps-src\\monetize\\manage-add-on-submissions.md"
+  ],
   "7743faa9e2fda84d85468193ff46c87bab267a6c": [
     "windows-apps-src\\monetize\\manage-add-on-submissions.md"
   ],
@@ -8086,6 +8113,9 @@
   ],
   "589946e159202c3ed5d13057642c808d5df4f738": [
     "windows-apps-src\\monetize\\manage-add-on-submissions.md"
+  ],
+  "845f637b6e36e5c9af89d5192fbe0f0897878cbc": [
+    "windows-apps-src\\monetize\\manage-app-submissions.md"
   ],
   "f6f0342619f91190bf021842c3ac3b0c61964d25": [
     "windows-apps-src\\monetize\\manage-app-submissions.md"
@@ -8107,6 +8137,9 @@
   ],
   "51d7481d0491c85bddcae906a846cb8773f33417": [
     "windows-apps-src\\monetize\\manage-flights.md"
+  ],
+  "6bd74257ac6fbd2551ba9cca65441538e84bc7a9": [
+    "windows-apps-src\\monetize\\manage-flight-submissions.md"
   ],
   "98240f3a1f40f020474c62537d6b0444fe10bb99": [
     "windows-apps-src\\monetize\\manage-flight-submissions.md"
@@ -9710,6 +9743,9 @@
   "d9bff09e8c33378b63c979949e582a5fd17eb9d0": [
     "windows-apps-src\\monetize\\halt-the-package-rollout-for-an-app-submission.md"
   ],
+  "6e19574a85105d54d691892969b80b0c34aa96af": [
+    "windows-apps-src\\monetize\\log-custom-events-for-dev-center.md"
+  ],
   "b2fad3ea78a2007b2519e4b0b27276f9f003af2c": [
     "windows-apps-src\\monetize\\log-custom-events-for-dev-center.md"
   ],
@@ -9757,6 +9793,9 @@
   ],
   "6ffa2ee4d92fc390f254d0772e72e2a8c4c366ef": [
     "windows-apps-src\\monetize\\update-the-package-rollout-percentage-for-an-app-submission.md"
+  ],
+  "a5a78db3a456cf0fdd56799584452ee610aba254": [
+    "windows-apps-src\\monetize\\update-your-app-to-the-latest-advertising-libraries.md"
   ],
   "25435ebf314327db7288ac853819c90ebba35669": [
     "windows-apps-src\\monetize\\update-your-app-to-the-latest-advertising-libraries.md"
