@@ -1472,6 +1472,9 @@
   "3a2ce9efbe4ba98aa428e0a4efda5e0788baba1b": [
     "windows-apps-src\\debug-test-perf\\windows-app-certification-kit.md"
   ],
+  "de14975be2a89c7fd8283093d04de79f44bfbefb": [
+    "windows-apps-src\\debug-test-perf\\windows-app-certification-kit-tests.md"
+  ],
   "2dab2719eae86487b93b9030b430b84aea7b2737": [
     "windows-apps-src\\debug-test-perf\\windows-app-certification-kit-tests.md"
   ],
@@ -2066,6 +2069,9 @@
   "58847adcb94f7e730bcdcd98767282811d555016": [
     "windows-apps-src\\gaming\\feature-mapping.md"
   ],
+  "cd6cc1bfb10b75ce3dc43accdad97c1baa5b4f2c": [
+    "windows-apps-src\\gaming\\game-development-platform-guide.md"
+  ],
   "7f6ad043299efa2aae7abdb1f1e0a7e898d40836": [
     "windows-apps-src\\gaming\\game-development-platform-guide.md"
   ],
@@ -2137,6 +2143,9 @@
   ],
   "e255bceae44ace0722a2df0c53d60ec0f8fa35fe": [
     "windows-apps-src\\gaming\\plan-your-directx-port.md"
+  ],
+  "82ee92b0b5b4c63378437070000126a39886925e": [
+    "windows-apps-src\\gaming\\port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md"
   ],
   "71b4b42d2665cbeb43cbdbe2dbab9119a8f68ce9": [
     "windows-apps-src\\gaming\\port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md"
@@ -6547,6 +6556,9 @@
   ],
   "d7e667b39c86466f5ff2bcd19c7831dab7ec0db7": [
     "windows-apps-src\\whats-new\\windows-10-version-1511.md"
+  ],
+  "9059e7b693fc5b0690d101430a08e356dde1fbec": [
+    "windows-apps-src\\xbox-apps\\development-lanes-custom-cpp.md"
   ],
   "7fd316ba63d0b5e6a98e96841905b13d3680a39f": [
     "windows-apps-src\\xbox-apps\\development-lanes-custom-cpp.md"
