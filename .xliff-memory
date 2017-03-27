@@ -35899,6 +35899,36 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\82ee92b0b5b4c63378437070000126a39886925e.78daf34c1d4f91897db34d473957a3df44aee7bc.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\winrt-components\\brokered-windows-runtime-components-for-side-loaded-windows-store-apps.md.06ff938c467cd65d7759dd48986357565a975ee9.HT": {
+      "SourceFilename": "windows-apps-src\\winrt-components\\brokered-windows-runtime-components-for-side-loaded-windows-store-apps.md",
+      "XliffHash": "06ff938c467cd65d7759dd48986357565a975ee9",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\49ee297e4a3f18c9a8d698b7362aa2d977e3a29b.c11455bc841d6b0f353fd7a398cd8473ce889c8a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-badges.md.52e3086612227f0fcf8eee76a6d220fb62e9918f.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-badges.md",
+      "XliffHash": "52e3086612227f0fcf8eee76a6d220fb62e9918f",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8a3ee1984f72bbd0b8c1e300ca6b2c00aa13809c.53ffccff73c608d17afadb284023b444f15aa113.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\winrt-components\\raising-events-in-windows-runtime-components.md.f508b3ab0333f30f0800f911075ac2452dada646.HT": {
+      "SourceFilename": "windows-apps-src\\winrt-components\\raising-events-in-windows-runtime-components.md",
+      "XliffHash": "f508b3ab0333f30f0800f911075ac2452dada646",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\12ab21497956d103d2193dc3edf182a3f4ecf49e.a79b39ee28501e13b95a506e57778676090edd7c.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

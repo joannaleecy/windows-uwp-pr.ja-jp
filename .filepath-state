@@ -5936,6 +5936,9 @@
   "cd065bb0288bffb903889269b30db59da2c4d7f2": [
     "windows-apps-src\\winrt-components\\passing-arrays-to-a-windows-runtime-component.md"
   ],
+  "12ab21497956d103d2193dc3edf182a3f4ecf49e": [
+    "windows-apps-src\\winrt-components\\raising-events-in-windows-runtime-components.md"
+  ],
   "abd46f788c8947da4c8704baf0f0ea802fff38ef": [
     "windows-apps-src\\winrt-components\\raising-events-in-windows-runtime-components.md"
   ],
@@ -6752,6 +6755,9 @@
   "ae4d4ed33b9bd10a2b01b336c942ad3212de6533": [
     "windows-apps-src\\publish\\manage-iaps-in-bulk.md"
   ],
+  "49ee297e4a3f18c9a8d698b7362aa2d977e3a29b": [
+    "windows-apps-src\\winrt-components\\brokered-windows-runtime-components-for-side-loaded-windows-store-apps.md"
+  ],
   "e3acc609e5db083bda023643ef4dae4c5d9d0248": [
     "windows-apps-src\\winrt-components\\brokered-windows-runtime-components-for-side-loaded-windows-store-apps.md"
   ],
@@ -7357,6 +7363,9 @@
   ],
   "719893b5ea33428446df6ab388ecd705d5fd2cd5": [
     "windows-apps-src\\controls-and-patterns\\pull-to-refresh.md"
+  ],
+  "8a3ee1984f72bbd0b8c1e300ca6b2c00aa13809c": [
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-badges.md"
   ],
   "eea89ac8c4d7a02faee9277b0015d759340af6d6": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-badges.md"
