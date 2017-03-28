@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/772b4dde3af410d6400acd8daa8eac205bcd9af0?path=windows-apps-src%2FTOC.md&_a=contents) | HandedOffSuccess | [Details](#2e7c59b7b19a3d916e9f6eb5df4521b7cd31f1027857)
+ [windows-apps-src\publish\opening-a-developer-account.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/979f60b7383d719d80b691482e7a1bbb814355ea?path=windows-apps-src%2Fpublish%2Fopening-a-developer-account.md&_a=contents) | HandedOffSuccess | [Details](#159f4e58db22083b14b0c90d44f61b85e59789e44904)
 
 ## Item Details
-##### <a name='2e7c59b7b19a3d916e9f6eb5df4521b7cd31f1027857'></a> Source: [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/772b4dde3af410d6400acd8daa8eac205bcd9af0?path=windows-apps-src%2FTOC.md&_a=contents)
+##### <a name='159f4e58db22083b14b0c90d44f61b85e59789e44904'></a> Source: [windows-apps-src\publish\opening-a-developer-account.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/979f60b7383d719d80b691482e7a1bbb814355ea?path=windows-apps-src%2Fpublish%2Fopening-a-developer-account.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/531e48922201dad9ac2a69f76c5befd1d6d9150d?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-28 01:11:00
+* Handoff File: [opening-a-developer-account.e6ad57f5ecc4903fa66445564d8d99a243bd1db7.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/07f39ac423d4f1f2ec11c047252ce84ce0da193b?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fopening-a-developer-account.e6ad57f5ecc4903fa66445564d8d99a243bd1db7.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-03-28 15:51:07
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,10 +21,10 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2FTOC.md&_a=contents)
-* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf&_a=contents)
-* Current Handback Datetime: 2017-03-01 13:53:49
-* Bilingual File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\publish\opening-a-developer-account.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fpublish%2Fopening-a-developer-account.md&_a=contents)
+* Current Handback File: [opening-a-developer-account.e6ad57f5ecc4903fa66445564d8d99a243bd1db7.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fopening-a-developer-account.e6ad57f5ecc4903fa66445564d8d99a243bd1db7.ja-jp.xlf&_a=contents)
+* Current Handback Datetime: 2017-03-01 13:53:50
+* Bilingual File: [opening-a-developer-account.e6ad57f5ecc4903fa66445564d8d99a243bd1db7.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fopening-a-developer-account.e6ad57f5ecc4903fa66445564d8d99a243bd1db7.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 
