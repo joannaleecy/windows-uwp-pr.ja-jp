@@ -923,6 +923,9 @@
   "9071c7dfddba15738d7bad482fd14f7cbffaa1f7": [
     "windows-apps-src\\controls-and-patterns\\segoe-ui-symbol-font.md"
   ],
+  "f7ad738c64ab55b4485161985ebd8cc40e7c54a9": [
+    "windows-apps-src\\controls-and-patterns\\semantic-zoom.md"
+  ],
   "c5a34805941d72981f84a5d515e01d404fb30650": [
     "windows-apps-src\\controls-and-patterns\\semantic-zoom.md"
   ],
@@ -2515,6 +2518,9 @@
   ],
   "9639f959fb2b261997e7e44598e13c21de285f1a": [
     "windows-apps-src\\graphics\\animations-overview.md"
+  ],
+  "5f59b5d0ab906af78d41739286a196a9f2b2794f": [
+    "windows-apps-src\\graphics\\composition-animation.md"
   ],
   "dd4e14654954fe5cbc61cfcceca10f988bb13ec2": [
     "windows-apps-src\\graphics\\composition-animation.md"
@@ -9625,6 +9631,9 @@
   ],
   "0c67e005958b8c1abcda4a7a0f9ae942040ead55": [
     "windows-apps-src\\launch-resume\\create-and-register-an-inproc-background-task.md"
+  ],
+  "8de9a2910705d7c2acf8b0507622ec114fb5ea21": [
+    "windows-apps-src\\monetize\\app-metadata-api-for-advertising-networks.md"
   ],
   "d377fe7e1eb71132ffa21dd1b11dddf9ca9bb084": [
     "windows-apps-src\\monetize\\app-metadata-api-for-advertising-networks.md"

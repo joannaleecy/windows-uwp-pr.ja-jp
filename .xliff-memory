@@ -35949,6 +35949,36 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\159f4e58db22083b14b0c90d44f61b85e59789e4.22f3c8ce596d5d7f73892c8b3707ff1c4cf8a54e.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\app-metadata-api-for-advertising-networks.md.a270c21b1b2a5d15ad5eef1d6ac9d3cbf797e2f9.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\app-metadata-api-for-advertising-networks.md",
+      "XliffHash": "a270c21b1b2a5d15ad5eef1d6ac9d3cbf797e2f9",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8de9a2910705d7c2acf8b0507622ec114fb5ea21.5edd658e04410a75da0677ba8ec711d40e918363.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics\\composition-animation.md.f0d6971f3acfc3ac9639679de5ae894d78fb852e.HT": {
+      "SourceFilename": "windows-apps-src\\graphics\\composition-animation.md",
+      "XliffHash": "f0d6971f3acfc3ac9639679de5ae894d78fb852e",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5f59b5d0ab906af78d41739286a196a9f2b2794f.ecbf04ceafb1f8e495e59797709ecff35b86b0cb.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\controls-and-patterns\\semantic-zoom.md.8d21ff2b0df02b6265cfc404ed11c339ac857424.HT": {
+      "SourceFilename": "windows-apps-src\\controls-and-patterns\\semantic-zoom.md",
+      "XliffHash": "8d21ff2b0df02b6265cfc404ed11c339ac857424",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f7ad738c64ab55b4485161985ebd8cc40e7c54a9.9590b15e5346a20ec346d59991ab576b604c21b0.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
