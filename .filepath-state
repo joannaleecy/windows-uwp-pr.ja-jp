@@ -3161,6 +3161,9 @@
   "d0081343672effaa69f8e17404059cc05b599436": [
     "windows-apps-src\\launch-resume\\handle-uri-activation.md"
   ],
+  "6ab9831615e63da92780ea729a8c7fe308e879ec": [
+    "windows-apps-src\\launch-resume\\how-to-create-and-consume-an-app-service.md"
+  ],
   "fe6d70394af430e34e26b3fdbce2da61ca0572b0": [
     "windows-apps-src\\launch-resume\\how-to-create-and-consume-an-app-service.md"
   ],
