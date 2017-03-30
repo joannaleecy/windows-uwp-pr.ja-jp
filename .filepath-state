@@ -152,9 +152,6 @@
   "1fec7c58bab571a89b2bab6851d00d69246766d8": [
     "windows-apps-src\\app-settings\\app-settings-and-data.md"
   ],
-  "b4d368c13b47d49575b4186296b1a9e74951a34b": [
-    "windows-apps-src\\app-settings\\guidelines-for-app-settings.md"
-  ],
   "493e491bd16b7346046394d66587788caf06db4f": [
     "windows-apps-src\\app-settings\\guidelines-for-app-settings.md"
   ],
@@ -164,13 +161,16 @@
   "5ac73629e5deacdd84d21f63f459096a348cb4a2": [
     "windows-apps-src\\app-settings\\guidelines-for-app-settings.md"
   ],
+  "b4d368c13b47d49575b4186296b1a9e74951a34b": [
+    "windows-apps-src\\app-settings\\guidelines-for-app-settings.md"
+  ],
   "e995023cd8a4216c60d5691f9f87be3aff9d8498": [
     "windows-apps-src\\app-settings\\guidelines-for-app-settings.md"
   ],
-  "c787388fad9241bd6ae568d85681df6332553b41": [
+  "8c50d0eb51240f458fcd1510abb02ce471aa1152": [
     "windows-apps-src\\app-settings\\store-and-retrieve-app-data.md"
   ],
-  "8c50d0eb51240f458fcd1510abb02ce471aa1152": [
+  "c787388fad9241bd6ae568d85681df6332553b41": [
     "windows-apps-src\\app-settings\\store-and-retrieve-app-data.md"
   ],
   "1e615e989a25520cff86c53e383d0cc5e87956d1": [
@@ -350,12 +350,6 @@
   "c20c735d38e6baabe2f8bc0c7c682706d3946ed9": [
     "windows-apps-src\\audio-video-camera\\capture-photos-and-video-with-mediacapture.md"
   ],
-  "8c298705d03a0735d7b3c9cffaffbbdab77cd096": [
-    "windows-apps-src\\audio-video-camera\\custom-video-effects.md"
-  ],
-  "b6d334d6d3362eb827d4685752f5fda215765234": [
-    "windows-apps-src\\audio-video-camera\\custom-video-effects.md"
-  ],
   "5a2e44448877ddc7906a8d4e41ec9c0b809f9a7e": [
     "windows-apps-src\\audio-video-camera\\custom-video-effects.md"
   ],
@@ -363,6 +357,12 @@
     "windows-apps-src\\audio-video-camera\\custom-video-effects.md"
   ],
   "68fe824f2908ad9ca34b6ad14098e11cdeb986bd": [
+    "windows-apps-src\\audio-video-camera\\custom-video-effects.md"
+  ],
+  "8c298705d03a0735d7b3c9cffaffbbdab77cd096": [
+    "windows-apps-src\\audio-video-camera\\custom-video-effects.md"
+  ],
+  "b6d334d6d3362eb827d4685752f5fda215765234": [
     "windows-apps-src\\audio-video-camera\\custom-video-effects.md"
   ],
   "3af1a18f7ceceb359c0545293f2b82ec9fd53c09": [
@@ -611,24 +611,6 @@
   "0664bf2ba1934908511e1b4504941c04a4055a49": [
     "windows-apps-src\\contacts-and-calendar\\sending-email.md"
   ],
-  "181930afde0351078c3f829f741a6c118e7edfb5": [
-    "windows-apps-src\\controls-and-patterns\\active-canvas.md"
-  ],
-  "7edfcf2e1a73fe522693c4b328d5d72a8759d5cb": [
-    "windows-apps-src\\controls-and-patterns\\active-canvas.md"
-  ],
-  "4b65783394dbaaeaf3c0c55f3ca434c0e0ecd15e": [
-    "windows-apps-src\\controls-and-patterns\\active-canvas.md"
-  ],
-  "22b195475c48f7447c4c08431472efa0ffd48e31": [
-    "windows-apps-src\\controls-and-patterns\\active-canvas.md"
-  ],
-  "490c45fb8dc565e4ae0b890d26f28d698b58f255": [
-    "windows-apps-src\\controls-and-patterns\\active-canvas.md"
-  ],
-  "6591cc293f6065bf86315711e016e0d8972f3e7f": [
-    "windows-apps-src\\controls-and-patterns\\app-bars.md"
-  ],
   "6dc3c9d15ebbda67dd055adb4b9d5548b6ac81e3": [
     "windows-apps-src\\controls-and-patterns\\app-bars.md"
   ],
@@ -641,6 +623,9 @@
   "f1c3957653994870bc24bdc76ace8e06335ca617": [
     "windows-apps-src\\controls-and-patterns\\app-bars.md"
   ],
+  "6591cc293f6065bf86315711e016e0d8972f3e7f": [
+    "windows-apps-src\\controls-and-patterns\\app-bars.md"
+  ],
   "85c23206d421d061b81f46645b6e6820fb079df3": [
     "windows-apps-src\\controls-and-patterns\\auto-suggest-box.md"
   ],
@@ -650,10 +635,10 @@
   "701fa285a28ce5c46789164903f17ebb9842c551": [
     "windows-apps-src\\controls-and-patterns\\auto-suggest-box.md"
   ],
-  "432cade07814c7a5228363d84867929abe12bd5c": [
+  "e5c8b5056581540abd5e0ddf75da7785648df1d5": [
     "windows-apps-src\\controls-and-patterns\\buttons.md"
   ],
-  "e5c8b5056581540abd5e0ddf75da7785648df1d5": [
+  "432cade07814c7a5228363d84867929abe12bd5c": [
     "windows-apps-src\\controls-and-patterns\\buttons.md"
   ],
   "51b31246ef2ad61ab023bd9700dc536b6df60ddb": [
@@ -818,9 +803,6 @@
   "a22a6aba81f124751d4e81486199dc00f4c03ed5": [
     "windows-apps-src\\controls-and-patterns\\labels.md"
   ],
-  "c3f3896fca88cbf7a5bb4192e7458cc07a061b6d": [
-    "windows-apps-src\\controls-and-patterns\\lists.md"
-  ],
   "4c17bab575be207106abfac44104bb32bcffd6ac": [
     "windows-apps-src\\controls-and-patterns\\lists.md"
   ],
@@ -828,6 +810,9 @@
     "windows-apps-src\\controls-and-patterns\\lists.md"
   ],
   "4dd760f8b82505f74d5a8133ffaa1e82f91f6b10": [
+    "windows-apps-src\\controls-and-patterns\\lists.md"
+  ],
+  "c3f3896fca88cbf7a5bb4192e7458cc07a061b6d": [
     "windows-apps-src\\controls-and-patterns\\lists.md"
   ],
   "57fd59c54b7dfe3a8c12519bbac1dcd47d8c0854": [
@@ -863,10 +848,10 @@
   "4e0ba9b5c654333944a7320404858e34a2dc43d3": [
     "windows-apps-src\\controls-and-patterns\\media-playback.md"
   ],
-  "5250ab31a6a7d52b871c3be0f68467180a1fde93": [
+  "2d48a92d5af75f8543f7b69ac59865e51bd334ee": [
     "windows-apps-src\\controls-and-patterns\\nav-pane.md"
   ],
-  "2d48a92d5af75f8543f7b69ac59865e51bd334ee": [
+  "5250ab31a6a7d52b871c3be0f68467180a1fde93": [
     "windows-apps-src\\controls-and-patterns\\nav-pane.md"
   ],
   "95b81ec199451ad14adf18d52fc7c6de2b2f3b7c": [
@@ -1157,9 +1142,6 @@
   "acfdec78ffb58e438d336d42066af66e961cef9c": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-windows-push-notification-services--wns--overview.md"
   ],
-  "93b07905370e7bf9cf0ed61c4c47fc5094448989": [
-    "windows-apps-src\\controls-and-patterns\\tiles-badges-notifications.md"
-  ],
   "4a9a1b18984ed418fc31061ff2ee392230117609": [
     "windows-apps-src\\controls-and-patterns\\tiles-badges-notifications.md"
   ],
@@ -1167,6 +1149,9 @@
     "windows-apps-src\\controls-and-patterns\\tiles-badges-notifications.md"
   ],
   "25857247a4dcc8e5618fd2ccd006aa0bffb6e52e": [
+    "windows-apps-src\\controls-and-patterns\\tiles-badges-notifications.md"
+  ],
+  "93b07905370e7bf9cf0ed61c4c47fc5094448989": [
     "windows-apps-src\\controls-and-patterns\\tiles-badges-notifications.md"
   ],
   "83ef423ce4e6fd57726879dd83a704c47cc43744": [
@@ -1280,9 +1265,6 @@
   "c99e48235078a1d5cdad59386bce29f7eaea93f8": [
     "windows-apps-src\\data-binding\\index.md"
   ],
-  "b8fd6d80d15229b617ea794a6325859e2dd5b1b2": [
-    "windows-apps-src\\debug-test-perf\\best-practices-for-your-app-s-startup-performance.md"
-  ],
   "9ab3eeeffbab26f5d26d28160a750c50d53b7e96": [
     "windows-apps-src\\debug-test-perf\\best-practices-for-your-app-s-startup-performance.md"
   ],
@@ -1290,6 +1272,9 @@
     "windows-apps-src\\debug-test-perf\\best-practices-for-your-app-s-startup-performance.md"
   ],
   "f4e54295ab65c6d74259fa1ecd3939fba734c958": [
+    "windows-apps-src\\debug-test-perf\\best-practices-for-your-app-s-startup-performance.md"
+  ],
+  "b8fd6d80d15229b617ea794a6325859e2dd5b1b2": [
     "windows-apps-src\\debug-test-perf\\best-practices-for-your-app-s-startup-performance.md"
   ],
   "a48a18fdb2c75f334a4ac9cb5916cab6b43d8c7e": [
@@ -1307,9 +1292,6 @@
   "a7ce6c003c24a1efd03cc48419438b59e4f2ec11": [
     "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
   ],
-  "0a1f314af01a000724816ecec41d2309be85c947": [
-    "windows-apps-src\\debug-test-perf\\device-portal.md"
-  ],
   "e729236ae7d506eb59af1a38506931865eff4f14": [
     "windows-apps-src\\debug-test-perf\\device-portal.md"
   ],
@@ -1317,6 +1299,9 @@
     "windows-apps-src\\debug-test-perf\\device-portal.md"
   ],
   "8891ba8cd925327e2d019b6306f1912a3eef9235": [
+    "windows-apps-src\\debug-test-perf\\device-portal.md"
+  ],
+  "0a1f314af01a000724816ecec41d2309be85c947": [
     "windows-apps-src\\debug-test-perf\\device-portal.md"
   ],
   "347d658f346ab14c60a4468c4a9935e555c2e016": [
@@ -1337,13 +1322,31 @@
   "5ed8ffe0a409569777fbf4e56a90ab3b80cd395c": [
     "windows-apps-src\\debug-test-perf\\device-portal-api-hololens.md"
   ],
+  "7b8b396078d59cc2ab3180e9af8b6017fd5edbda": [
+    "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
+  ],
   "7bdaf8d783d807094a60cf069e97c2be8267331f": [
     "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
   ],
   "c0d5d8e33e42d99aa28aaaf5091220705e719e31": [
     "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
   ],
-  "7b8b396078d59cc2ab3180e9af8b6017fd5edbda": [
+  "598bd4946cd34ea484ad20b3a19eb80f3d781a70": [
+    "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
+  ],
+  "5902a725a3d37487de26652112b82119af8c1f04": [
+    "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
+  ],
+  "f780866b327685a7256da8b40be81dd765d10c4d": [
+    "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
+  ],
+  "3436a95124071045c8ec89ed8ddf644ccc80c29f": [
+    "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
+  ],
+  "3ccc805d0132330b23e41129684546068f8fe1df": [
+    "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
+  ],
+  "7be27f5fb15676c5330f22995dd044899eddfd3d": [
     "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
   ],
   "00dec1110ba8cc27f759f05bc4a6f352a235d18d": [
@@ -1391,9 +1394,6 @@
   "10e51e93e0f9babf7d57a388055af065c320adc4": [
     "windows-apps-src\\debug-test-perf\\index.md"
   ],
-  "3b30b0c16885d2e51730e1c352b57e6104c98537": [
-    "windows-apps-src\\debug-test-perf\\keep-the-ui-thread-responsive.md"
-  ],
   "921af1b7f408bed5f846af631592755d48a37dd4": [
     "windows-apps-src\\debug-test-perf\\keep-the-ui-thread-responsive.md"
   ],
@@ -1401,6 +1401,9 @@
     "windows-apps-src\\debug-test-perf\\keep-the-ui-thread-responsive.md"
   ],
   "6af3bb96305c57b142fb0d01bbebbb95468e3fbd": [
+    "windows-apps-src\\debug-test-perf\\keep-the-ui-thread-responsive.md"
+  ],
+  "3b30b0c16885d2e51730e1c352b57e6104c98537": [
     "windows-apps-src\\debug-test-perf\\keep-the-ui-thread-responsive.md"
   ],
   "722389a7440110eaffa5458e8ef5e85fccb39671": [
@@ -1412,9 +1415,6 @@
   "c3716b6df76e67af2211508e3cf72b99df1a6b4d": [
     "windows-apps-src\\debug-test-perf\\listview-and-gridview-data-optimization.md"
   ],
-  "cc0fe913ecc094fc13ae018ea01281c400a50d1a": [
-    "windows-apps-src\\debug-test-perf\\mvvm-performance-tips.md"
-  ],
   "2c803083a9f7a279a6cfb70087c5cd1f0c3def1e": [
     "windows-apps-src\\debug-test-perf\\mvvm-performance-tips.md"
   ],
@@ -1422,6 +1422,9 @@
     "windows-apps-src\\debug-test-perf\\mvvm-performance-tips.md"
   ],
   "e116015e45cc6fd9e1edd4095a20cf66287dde75": [
+    "windows-apps-src\\debug-test-perf\\mvvm-performance-tips.md"
+  ],
+  "cc0fe913ecc094fc13ae018ea01281c400a50d1a": [
     "windows-apps-src\\debug-test-perf\\mvvm-performance-tips.md"
   ],
   "29383c65d36b7bc9e5946e4c55298ac0e04107c6": [
@@ -1463,9 +1466,6 @@
   "760a9b90618be55ec03dcd048a54757fd2dcd5b8": [
     "windows-apps-src\\debug-test-perf\\optimize-suspend-resume.md"
   ],
-  "0cbd8a53816cf6cafcfe84ad9eae7240e4951cdd": [
-    "windows-apps-src\\debug-test-perf\\optimize-xaml-loading.md"
-  ],
   "9728eced6de3d246dc1ec9950b90d77fea0d576d": [
     "windows-apps-src\\debug-test-perf\\optimize-xaml-loading.md"
   ],
@@ -1473,6 +1473,9 @@
     "windows-apps-src\\debug-test-perf\\optimize-xaml-loading.md"
   ],
   "5504d7ac9776be41e032d13ec9e14cbe1acc931a": [
+    "windows-apps-src\\debug-test-perf\\optimize-xaml-loading.md"
+  ],
+  "0cbd8a53816cf6cafcfe84ad9eae7240e4951cdd": [
     "windows-apps-src\\debug-test-perf\\optimize-xaml-loading.md"
   ],
   "226b2fd19777deb5135d1e1f059596883f95d3d3": [
@@ -1493,9 +1496,6 @@
   "a673c8ceb8e7edfe4c8d8425199d6c5268fe7f9a": [
     "windows-apps-src\\debug-test-perf\\performance-and-xaml-ui.md"
   ],
-  "b3d55033d65f7b45ce5beaf74a906ef227739386": [
-    "windows-apps-src\\debug-test-perf\\planning-and-measuring-performance.md"
-  ],
   "d80ff77c380d8c4f03cb2ef415126cba46d77062": [
     "windows-apps-src\\debug-test-perf\\planning-and-measuring-performance.md"
   ],
@@ -1503,6 +1503,9 @@
     "windows-apps-src\\debug-test-perf\\planning-and-measuring-performance.md"
   ],
   "6ee41c3ba6d0c23e8ddbaf1f44d6c2a0564334ee": [
+    "windows-apps-src\\debug-test-perf\\planning-and-measuring-performance.md"
+  ],
+  "b3d55033d65f7b45ce5beaf74a906ef227739386": [
     "windows-apps-src\\debug-test-perf\\planning-and-measuring-performance.md"
   ],
   "ed2f7dc63e478d3dde2eb58b502d373db3181501": [
@@ -2060,19 +2063,52 @@
   "7d3290633ead698a6c42c3accdbd2012ccfd7065": [
     "windows-apps-src\\gaming\\about-the-metro-style-user-interface-and-directx.md"
   ],
+  "3530880da3bc74b146c6f6fbb9bb9220caaca0d0": [
+    "windows-apps-src\\gaming\\adding-audio-to-the-marble-maze-sample.md"
+  ],
   "c5ab2698e6d14b68413e026b7522b5d28f516556": [
     "windows-apps-src\\gaming\\adding-audio-to-the-marble-maze-sample.md"
   ],
-  "3530880da3bc74b146c6f6fbb9bb9220caaca0d0": [
+  "41ae550ad998dc82e69abecfde166dae97337b84": [
+    "windows-apps-src\\gaming\\adding-audio-to-the-marble-maze-sample.md"
+  ],
+  "2faaa6eac525c0e61679e0ef12dbb62743808dcf": [
+    "windows-apps-src\\gaming\\adding-audio-to-the-marble-maze-sample.md"
+  ],
+  "302ee0d6d8bf34754a67d243e1dd5f97cca34c91": [
+    "windows-apps-src\\gaming\\adding-audio-to-the-marble-maze-sample.md"
+  ],
+  "d207e8bcf572badc2ae06b86423f52552c2ef0cf": [
+    "windows-apps-src\\gaming\\adding-audio-to-the-marble-maze-sample.md"
+  ],
+  "9c35ca4d475783e52ba68d611c7bea49a927a4e5": [
+    "windows-apps-src\\gaming\\adding-audio-to-the-marble-maze-sample.md"
+  ],
+  "0b2a0cb240431a49ef2bdb82a188f3dcb0294fc5": [
     "windows-apps-src\\gaming\\adding-audio-to-the-marble-maze-sample.md"
   ],
   "dc667be326950151b08bbaded6d4e9a0b109523b": [
     "windows-apps-src\\gaming\\adding-input-and-interactivity-to-the-marble-maze-sample.md"
   ],
+  "b8ee07dc45e53f2ea73f87111fa9eb155854f10a": [
+    "windows-apps-src\\gaming\\adding-visual-content-to-the-marble-maze-sample.md"
+  ],
   "d62d962f204bf522649f6e13038725355e2b0559": [
     "windows-apps-src\\gaming\\adding-visual-content-to-the-marble-maze-sample.md"
   ],
-  "b8ee07dc45e53f2ea73f87111fa9eb155854f10a": [
+  "0bd19e1ffa5e6d7643bbe7d37d3163fd77ba6622": [
+    "windows-apps-src\\gaming\\adding-visual-content-to-the-marble-maze-sample.md"
+  ],
+  "d75d8ffcae13dd852ded4051b7e5605412137c13": [
+    "windows-apps-src\\gaming\\adding-visual-content-to-the-marble-maze-sample.md"
+  ],
+  "d61f92e3e51e6b63b547083a26c1bde719156bd6": [
+    "windows-apps-src\\gaming\\adding-visual-content-to-the-marble-maze-sample.md"
+  ],
+  "702bc31e2d58868ef7848d4f181b0ebe9b061d18": [
+    "windows-apps-src\\gaming\\adding-visual-content-to-the-marble-maze-sample.md"
+  ],
+  "6b7880703d40d6ef5ed5f42f3e09bc5573170e1f": [
     "windows-apps-src\\gaming\\adding-visual-content-to-the-marble-maze-sample.md"
   ],
   "736f5f5864edc9c7a976e8e0f062779ddd1f86c5": [
@@ -2093,16 +2129,52 @@
   "d2642abbfbfc6030aa00f68f30d4a45eb0e86ee1": [
     "windows-apps-src\\gaming\\compare-opengl-es-2-0-api-design-to-directx.md"
   ],
+  "d6714030031a4986c8a5495fc02a5c68fb0aa4d8": [
+    "windows-apps-src\\gaming\\complete-code-for-basicloader.md"
+  ],
   "75063f3f00c2c79eb292a1689715b19d5aced617": [
     "windows-apps-src\\gaming\\complete-code-for-basicloader.md"
   ],
-  "d6714030031a4986c8a5495fc02a5c68fb0aa4d8": [
+  "8e374bcd99f38aaed17d4f8857d86a5ba0cbf758": [
     "windows-apps-src\\gaming\\complete-code-for-basicloader.md"
+  ],
+  "2ac58ebad3e4458f7b90878fb54ff70fb0f9566b": [
+    "windows-apps-src\\gaming\\complete-code-for-basicloader.md"
+  ],
+  "a990b329797ea29311c0ec15d2288b09df80017d": [
+    "windows-apps-src\\gaming\\complete-code-for-basicloader.md"
+  ],
+  "f781626b6fc0f7b922048db1dead0255b2d9cb25": [
+    "windows-apps-src\\gaming\\complete-code-for-basicloader.md"
+  ],
+  "ab16033c05273a0cd483fdc7a5302a3ff461e4b1": [
+    "windows-apps-src\\gaming\\complete-code-for-basicloader.md"
+  ],
+  "355e5a65a16e5e2df9bb039383f68dda16ff23a2": [
+    "windows-apps-src\\gaming\\complete-code-for-basicloader.md"
+  ],
+  "1dc7ba0b25ceeb5b27bc718bed1db0e2db39b6c0": [
+    "windows-apps-src\\gaming\\complete-code-for-basicreaderwriter.md"
   ],
   "d6cdecc4c8162fe04dc2d59c6c501a71a05ae932": [
     "windows-apps-src\\gaming\\complete-code-for-basicreaderwriter.md"
   ],
-  "1dc7ba0b25ceeb5b27bc718bed1db0e2db39b6c0": [
+  "a03d81cd37fc15db7b5e34e8ba9ab957f69c208f": [
+    "windows-apps-src\\gaming\\complete-code-for-basicreaderwriter.md"
+  ],
+  "61f6f58edcb94241623eb4ed643ac95e625cc68e": [
+    "windows-apps-src\\gaming\\complete-code-for-basicreaderwriter.md"
+  ],
+  "75a454d12b0e8ec3f7502fb09161227de29fdb5c": [
+    "windows-apps-src\\gaming\\complete-code-for-basicreaderwriter.md"
+  ],
+  "1e440af615938976e16ecd7e5f847771f9a33bc1": [
+    "windows-apps-src\\gaming\\complete-code-for-basicreaderwriter.md"
+  ],
+  "de6ab2687cfbe7b485e51bc90811b1988e29fb7e": [
+    "windows-apps-src\\gaming\\complete-code-for-basicreaderwriter.md"
+  ],
+  "46762d7b7234be9ff7b4c288a09162d4f942a707": [
     "windows-apps-src\\gaming\\complete-code-for-basicreaderwriter.md"
   ],
   "7daf10ad577b2b67c6ca5554f6555deb89f16229": [
@@ -2132,10 +2204,10 @@
   "1fe28d17aa8c943de9a2bcf6c2230237e0c931d0": [
     "windows-apps-src\\gaming\\draw-to-the-screen.md"
   ],
-  "419d0ba0e16b4ce81defac64beb7f073643da46b": [
+  "9398efedb5d4818e247be42132bdb752067b5426": [
     "windows-apps-src\\gaming\\e2e.md"
   ],
-  "9398efedb5d4818e247be42132bdb752067b5426": [
+  "419d0ba0e16b4ce81defac64beb7f073643da46b": [
     "windows-apps-src\\gaming\\e2e.md"
   ],
   "dc53c72735b704982f383ca804a8080c2440b473": [
@@ -2159,10 +2231,28 @@
   "7f6ad043299efa2aae7abdb1f1e0a7e898d40836": [
     "windows-apps-src\\gaming\\game-development-platform-guide.md"
   ],
+  "f2d5f5a363abf026e865ed07221ba9075a6a67e7": [
+    "windows-apps-src\\gaming\\glsl-to-hlsl-reference.md"
+  ],
   "c7047713951bf98ac110e10a65d1ac7b4ccef9ff": [
     "windows-apps-src\\gaming\\glsl-to-hlsl-reference.md"
   ],
-  "f2d5f5a363abf026e865ed07221ba9075a6a67e7": [
+  "069f792427ca68f847af0fd15bbabedb390bc7f9": [
+    "windows-apps-src\\gaming\\glsl-to-hlsl-reference.md"
+  ],
+  "1644f08611fe78f103799a441590d84c8e9a4d3d": [
+    "windows-apps-src\\gaming\\glsl-to-hlsl-reference.md"
+  ],
+  "3110d8e2fa8d826e73c69f53001ed0f25ef24d48": [
+    "windows-apps-src\\gaming\\glsl-to-hlsl-reference.md"
+  ],
+  "54fe7f6b1384874713cdc7515abad55a25991d78": [
+    "windows-apps-src\\gaming\\glsl-to-hlsl-reference.md"
+  ],
+  "1be2c49dc88dcaecfa1d349f9dda7a9cc0619b92": [
+    "windows-apps-src\\gaming\\glsl-to-hlsl-reference.md"
+  ],
+  "02a3ba1768b6fa7b09b6c9f637a72d88c0cef604": [
     "windows-apps-src\\gaming\\glsl-to-hlsl-reference.md"
   ],
   "3d7a93ed0b1ce78cba278232eb5325e463c12789": [
@@ -2282,10 +2372,28 @@
   "1aeb4ef581254ae914efae4bc38853611dbde488": [
     "windows-apps-src\\gaming\\setting-up-directx-resources.md"
   ],
+  "5f5c1ef45dd476565d302ef10f8d47ab2b819993": [
+    "windows-apps-src\\gaming\\set-up-visual-studio-for-game-development.md"
+  ],
   "16673334ebe36e094df5de4fcf2c270eaafcc9d5": [
     "windows-apps-src\\gaming\\set-up-visual-studio-for-game-development.md"
   ],
-  "5f5c1ef45dd476565d302ef10f8d47ab2b819993": [
+  "619cfc41c232885c07e377e8e5a3dfea3a9ea3c3": [
+    "windows-apps-src\\gaming\\set-up-visual-studio-for-game-development.md"
+  ],
+  "63f2216678c04799dec6d9b606b28a950c048881": [
+    "windows-apps-src\\gaming\\set-up-visual-studio-for-game-development.md"
+  ],
+  "bcdf1ffe7fbc85b9fe9504f841aa8f8842629803": [
+    "windows-apps-src\\gaming\\set-up-visual-studio-for-game-development.md"
+  ],
+  "a195cbddd578b847abbb5544555fda229830368c": [
+    "windows-apps-src\\gaming\\set-up-visual-studio-for-game-development.md"
+  ],
+  "59fe007601d16f6586ec52c0026e161ad6350a1e": [
+    "windows-apps-src\\gaming\\set-up-visual-studio-for-game-development.md"
+  ],
+  "2202474f24e93aab32ec9f4e85e765616cbae056": [
     "windows-apps-src\\gaming\\set-up-visual-studio-for-game-development.md"
   ],
   "d4c4c905ad7d7452251ad13d95cbdc53b137c6c8": [
@@ -2297,10 +2405,28 @@
   "23631bf464095e1d2f2aab97740d89c6a82f4a70": [
     "windows-apps-src\\gaming\\simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md"
   ],
+  "606d32d16ad94e45cb63c73f1869735a9fbd7d25": [
+    "windows-apps-src\\gaming\\supporting-screen-rotation-directx-and-cpp.md"
+  ],
   "f9377056917b83bedf5628cc92360ec34dfdafa1": [
     "windows-apps-src\\gaming\\supporting-screen-rotation-directx-and-cpp.md"
   ],
-  "606d32d16ad94e45cb63c73f1869735a9fbd7d25": [
+  "d36abc3776ba3a49575f8194c26da220ad85cdce": [
+    "windows-apps-src\\gaming\\supporting-screen-rotation-directx-and-cpp.md"
+  ],
+  "7dfd20b1e6d89fcf50d29880ecd6969a38bb8012": [
+    "windows-apps-src\\gaming\\supporting-screen-rotation-directx-and-cpp.md"
+  ],
+  "bf593502f13acf1485fe80ed0c12a204055b70a6": [
+    "windows-apps-src\\gaming\\supporting-screen-rotation-directx-and-cpp.md"
+  ],
+  "388a585d9a027cd41fcd87a24258e9a2ffb2fd5c": [
+    "windows-apps-src\\gaming\\supporting-screen-rotation-directx-and-cpp.md"
+  ],
+  "101ee7a6d0760abfc40145b21478947c0563a346": [
+    "windows-apps-src\\gaming\\supporting-screen-rotation-directx-and-cpp.md"
+  ],
+  "8da32494e0bb0bd48d485c946df1c9a5baec7fbe": [
     "windows-apps-src\\gaming\\supporting-screen-rotation-directx-and-cpp.md"
   ],
   "e4cffcf1e9655d5bc5dacbfc17cb64b5671d7551": [
@@ -2309,10 +2435,28 @@
   "cb8cb8eae3328a9010553b7f3e041b8f2dbd8c02": [
     "windows-apps-src\\gaming\\tutorial--adding-a-user-interface.md"
   ],
+  "d70e9ef8efffd2a78f6c49596e716770a9162b5c": [
+    "windows-apps-src\\gaming\\tutorial--adding-controls.md"
+  ],
   "c81c91974fd07494e794bf6025261b83003c8780": [
     "windows-apps-src\\gaming\\tutorial--adding-controls.md"
   ],
-  "d70e9ef8efffd2a78f6c49596e716770a9162b5c": [
+  "feed7816bb52fd6000dddf92617c5a1ebce544c7": [
+    "windows-apps-src\\gaming\\tutorial--adding-controls.md"
+  ],
+  "d336479d5fec8caa399a3c81b9aaa868e94071f5": [
+    "windows-apps-src\\gaming\\tutorial--adding-controls.md"
+  ],
+  "36e231d01ae54e9f8c0c863aaa15ae97e528d0d7": [
+    "windows-apps-src\\gaming\\tutorial--adding-controls.md"
+  ],
+  "36000ac6ebe017e1cdc4fd64d26d9b4385af43b4": [
+    "windows-apps-src\\gaming\\tutorial--adding-controls.md"
+  ],
+  "49214f3bc14b6a475a77c5dbb7c0f08bb0818df6": [
+    "windows-apps-src\\gaming\\tutorial--adding-controls.md"
+  ],
+  "b3297ffd92d9a61d73c574def7e8101dc9196a69": [
     "windows-apps-src\\gaming\\tutorial--adding-controls.md"
   ],
   "40af05538aa6a6fff6e159fe8aa8812090e8b44b": [
@@ -2324,16 +2468,34 @@
   "44d5071ee0cd695351c77630d699a1a060f477d6": [
     "windows-apps-src\\gaming\\tutorial--adding-touch-controls-to-your-directx-game.md"
   ],
-  "d2fac13e4ed06fb750cd20cf104a10475edabebb": [
-    "windows-apps-src\\gaming\\tutorial--assembling-the-rendering-pipeline.md"
-  ],
   "7b97a70094c953e9614a84979c9f98fc91a82451": [
     "windows-apps-src\\gaming\\tutorial--assembling-the-rendering-pipeline.md"
   ],
-  "4f9247eb53c5b531bf99788fb867f102024352f7": [
-    "windows-apps-src\\gaming\\tutorial--building-the-games-metro-style-app-framework.md"
+  "d2fac13e4ed06fb750cd20cf104a10475edabebb": [
+    "windows-apps-src\\gaming\\tutorial--assembling-the-rendering-pipeline.md"
+  ],
+  "d99a369694a4f96e94221be5afd3fb1346e3ccbd": [
+    "windows-apps-src\\gaming\\tutorial--assembling-the-rendering-pipeline.md"
+  ],
+  "ea0ea9c8948b73b65755af8477da35c96d4c2ab5": [
+    "windows-apps-src\\gaming\\tutorial--assembling-the-rendering-pipeline.md"
+  ],
+  "19da57f41240b22504b384d13b90c624c8ff6386": [
+    "windows-apps-src\\gaming\\tutorial--assembling-the-rendering-pipeline.md"
+  ],
+  "12ba2620695c09e18c9f006b6596015091bd2433": [
+    "windows-apps-src\\gaming\\tutorial--assembling-the-rendering-pipeline.md"
+  ],
+  "c0c935af257fe52e22cadaffb6e008ddbf9629a8": [
+    "windows-apps-src\\gaming\\tutorial--assembling-the-rendering-pipeline.md"
+  ],
+  "5eb6ea7ad1a30f020c155007396383b88d10c0a8": [
+    "windows-apps-src\\gaming\\tutorial--assembling-the-rendering-pipeline.md"
   ],
   "9c19c2ca89b2d38929ade8596c10beb3c3a16104": [
+    "windows-apps-src\\gaming\\tutorial--building-the-games-metro-style-app-framework.md"
+  ],
+  "4f9247eb53c5b531bf99788fb867f102024352f7": [
     "windows-apps-src\\gaming\\tutorial--building-the-games-metro-style-app-framework.md"
   ],
   "82a44a3499297b3988815ad10091cd351a194cbd": [
@@ -2351,10 +2513,28 @@
   "4530da268a7ba93a6c2716faddc54a02ea798b23": [
     "windows-apps-src\\gaming\\tutorial--create-your-first-metro-style-directx-game.md"
   ],
+  "f81b3eaa9b896295386232f99b789dc3857b3bad": [
+    "windows-apps-src\\gaming\\tutorial--defining-the-main-game-loop.md"
+  ],
   "dedad45a85c1ae9377fa211ce9a2ed5fc7e59062": [
     "windows-apps-src\\gaming\\tutorial--defining-the-main-game-loop.md"
   ],
-  "f81b3eaa9b896295386232f99b789dc3857b3bad": [
+  "9965c679f9f1ec7dd90f1ff470d90b9a36d247aa": [
+    "windows-apps-src\\gaming\\tutorial--defining-the-main-game-loop.md"
+  ],
+  "46b45f12420089b042aa5159a1990b16ee2c214a": [
+    "windows-apps-src\\gaming\\tutorial--defining-the-main-game-loop.md"
+  ],
+  "2462c7dafe5d9d41526558330a0fe2149bc62df4": [
+    "windows-apps-src\\gaming\\tutorial--defining-the-main-game-loop.md"
+  ],
+  "700384f4a373f9c22bea5554eb51b91655830899": [
+    "windows-apps-src\\gaming\\tutorial--defining-the-main-game-loop.md"
+  ],
+  "8af939fee50540e5213e624703400d99cbb6785f": [
+    "windows-apps-src\\gaming\\tutorial--defining-the-main-game-loop.md"
+  ],
+  "66e40c150b5eb4f57c9cddfaf472c56601b3fa0b": [
     "windows-apps-src\\gaming\\tutorial--defining-the-main-game-loop.md"
   ],
   "2d36c8f8f4e3f51928f1c7707e0cb6f69386645d": [
@@ -2447,10 +2627,10 @@
   "dc1bf476c93ef9843c20244f24a199c7888eb4a5": [
     "windows-apps-src\\get-started\\enable-your-device-for-development.md"
   ],
-  "69638a4bd85bd64959bb91b019f0c05bef5f933a": [
+  "202480cd8e9107e18c7fa8c84a17089177f91dcb": [
     "windows-apps-src\\get-started\\get-set-up.md"
   ],
-  "202480cd8e9107e18c7fa8c84a17089177f91dcb": [
+  "69638a4bd85bd64959bb91b019f0c05bef5f933a": [
     "windows-apps-src\\get-started\\get-set-up.md"
   ],
   "1e07b1235299b1f462ac9e8fa5f9bf6f6c861633": [
@@ -2651,13 +2831,25 @@
   "aa3385e145fd3344a70cd4a4ce4ce7663e3132e2": [
     "windows-apps-src\\graphics\\composition-effects.md"
   ],
+  "8be1827350e8489106ff29bd2a1f310fd06dea38": [
+    "windows-apps-src\\graphics\\composition-native-interop.md"
+  ],
   "92301637cabdd6ca0dd2d66435ab1d1be809f075": [
     "windows-apps-src\\graphics\\composition-native-interop.md"
   ],
   "697f136a10ddc776b9b94c881b202a9084a66684": [
     "windows-apps-src\\graphics\\composition-native-interop.md"
   ],
-  "8be1827350e8489106ff29bd2a1f310fd06dea38": [
+  "ff51247575ee1b5097a04a5cd5907093cb6c1c8e": [
+    "windows-apps-src\\graphics\\composition-native-interop.md"
+  ],
+  "4d1bf75fee06c8f4c31ce23c89bf6267ab9e6394": [
+    "windows-apps-src\\graphics\\composition-native-interop.md"
+  ],
+  "c2086e703e3972d4dd38dc1b7147bfa5f01231cf": [
+    "windows-apps-src\\graphics\\composition-native-interop.md"
+  ],
+  "b5308c8023990996a93277dd1bcfb8298c0bbf4f": [
     "windows-apps-src\\graphics\\composition-native-interop.md"
   ],
   "85def1cb24ee6915d0835b2fb071e92105367d26": [
@@ -2981,10 +3173,10 @@
   "603e7a581504e9f07f69dd9d300251d3dbb44946": [
     "windows-apps-src\\input-and-devices\\interact-with-a-background-app-in-cortana.md"
   ],
-  "e9d8e42219e3c427a6edf83a2bd5c589db515c01": [
+  "eb6423dfb96f5f38ac375ac77e024aa0e36e6528": [
     "windows-apps-src\\input-and-devices\\keyboard-interactions.md"
   ],
-  "eb6423dfb96f5f38ac375ac77e024aa0e36e6528": [
+  "e9d8e42219e3c427a6edf83a2bd5c589db515c01": [
     "windows-apps-src\\input-and-devices\\keyboard-interactions.md"
   ],
   "53ee08b33bcbbd895d0c6ea6cd621eeec2af40f5": [
@@ -3035,10 +3227,10 @@
   "0735f8feb6ed344dc66434a4aeabdc811d9a391b": [
     "windows-apps-src\\input-and-devices\\multiple-input-design-guidelines.md"
   ],
-  "efca6bea0c0dd32bfcbc6f8846b63f0da94f28bb": [
+  "f39cc87b133f4fdca35daec9160228e33ef8b284": [
     "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
   ],
-  "f39cc87b133f4fdca35daec9160228e33ef8b284": [
+  "efca6bea0c0dd32bfcbc6f8846b63f0da94f28bb": [
     "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
   ],
   "fd65e2ea02ea52425656e584b3fa495512030c76": [
@@ -3047,10 +3239,10 @@
   "bed856376fc0d70d4e595a61bc69ba49ccbd706f": [
     "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
   ],
-  "98f8d335b3fe2909c35abf2b67bd0a0e8a5a33a6": [
+  "e5df6f9be948c7ffb5cfe5aa38463c711eb93966": [
     "windows-apps-src\\input-and-devices\\respond-to-the-presence-of-the-touch-keyboard.md"
   ],
-  "e5df6f9be948c7ffb5cfe5aa38463c711eb93966": [
+  "98f8d335b3fe2909c35abf2b67bd0a0e8a5a33a6": [
     "windows-apps-src\\input-and-devices\\respond-to-the-presence-of-the-touch-keyboard.md"
   ],
   "c08e33b95241ce95c7670e197e67496b774897cb": [
@@ -3059,10 +3251,10 @@
   "06d2c5ccb4cd42d4d24c17dfb16d6328b50e6905": [
     "windows-apps-src\\input-and-devices\\respond-to-the-presence-of-the-touch-keyboard.md"
   ],
-  "a8984902033b4bb773b7c9689a929846840a07d4": [
+  "81d3a37103f1dcea6b68850d163fa5cc9aded5bc": [
     "windows-apps-src\\input-and-devices\\save-and-load-ink.md"
   ],
-  "81d3a37103f1dcea6b68850d163fa5cc9aded5bc": [
+  "a8984902033b4bb773b7c9689a929846840a07d4": [
     "windows-apps-src\\input-and-devices\\save-and-load-ink.md"
   ],
   "7c4f0ac39decede933f10fc94ebeb09fa41415e4": [
@@ -3329,13 +3521,13 @@
   "fcc1d056fc3a4cb8d57ae5082e62cf0b802bb4e7": [
     "windows-apps-src\\launch-resume\\launch-default-app.md"
   ],
-  "c8d45a1f98021dd68d6aaf01d1bef504b6235101": [
-    "windows-apps-src\\launch-resume\\launch-maps-app.md"
-  ],
   "cfaa7c96a3ec8bf50f19ee699ff74b037500a838": [
     "windows-apps-src\\launch-resume\\launch-maps-app.md"
   ],
   "c9c359fd424b4c9526ebfc610adc7097bb83cbda": [
+    "windows-apps-src\\launch-resume\\launch-maps-app.md"
+  ],
+  "c8d45a1f98021dd68d6aaf01d1bef504b6235101": [
     "windows-apps-src\\launch-resume\\launch-maps-app.md"
   ],
   "f16ea404d4a458949fce7ae0ec8756aa3a17aa01": [
@@ -3605,14 +3797,26 @@
   "edf4a87f364ac89f8b1257310ac02f9cbe356922": [
     "windows-apps-src\\maps-and-location\\controls-map.md"
   ],
+  "7a1687ceb188fdd28943f807b877b28e93ae6937": [
+    "windows-apps-src\\maps-and-location\\display-maps.md"
+  ],
   "3198867897d917559e743060605f6e0f5c1978af": [
     "windows-apps-src\\maps-and-location\\display-maps.md"
   ],
   "458e0fb93761dce8052e34f716cb00416b3a0566": [
     "windows-apps-src\\maps-and-location\\display-maps.md"
   ],
-  "7a1687ceb188fdd28943f807b877b28e93ae6937": [
+  "4126738c3814847c8c2aa7f1e54d25ac78ef7f0d": [
     "windows-apps-src\\maps-and-location\\display-maps.md"
+  ],
+  "54e5a09659d79cd2371e9d9211ad12d03cf67356": [
+    "windows-apps-src\\maps-and-location\\display-maps.md"
+  ],
+  "09f87f66802e5143c8eac7fce8fc2118f3d31340": [
+    "windows-apps-src\\maps-and-location\\display-maps.md"
+  ],
+  "c8fdc16b99a9d2d57f71e32e008fa668c3404835": [
+    "windows-apps-src\\maps-and-location\\display-poi.md"
   ],
   "d788c54eb2fa95581f6ee056facfc83b49b950cf": [
     "windows-apps-src\\maps-and-location\\display-poi.md"
@@ -3620,7 +3824,13 @@
   "69578099b06da8cd2decbcf0798bb57fce560757": [
     "windows-apps-src\\maps-and-location\\display-poi.md"
   ],
-  "c8fdc16b99a9d2d57f71e32e008fa668c3404835": [
+  "cb7ff4bc0749d5c0262dd20d9fa9326f863c9226": [
+    "windows-apps-src\\maps-and-location\\display-poi.md"
+  ],
+  "69dcb489324a150977aae4a1530567e4d8edb746": [
+    "windows-apps-src\\maps-and-location\\display-poi.md"
+  ],
+  "8afdb41d6790bb9647a6b89086c4b86872940c51": [
     "windows-apps-src\\maps-and-location\\display-poi.md"
   ],
   "a68898e86ad2e901499077e8f856c5318a7feae7": [
@@ -3650,10 +3860,28 @@
   "f5d1427f2c5f6cc139b461b81661d83bee9104b6": [
     "windows-apps-src\\maps-and-location\\guidelines-and-checklist-for-detecting-location.md"
   ],
+  "e21b5b89c95a6b4988e1e95fc924ec3eefd46942": [
+    "windows-apps-src\\maps-and-location\\guidelines-for-geofencing.md"
+  ],
   "67ce7db6d05f14318d60559ab8d44cd06552b808": [
     "windows-apps-src\\maps-and-location\\guidelines-for-geofencing.md"
   ],
-  "e21b5b89c95a6b4988e1e95fc924ec3eefd46942": [
+  "32903e6adfcdb3f667a78e9310495b6edfe8f88e": [
+    "windows-apps-src\\maps-and-location\\guidelines-for-geofencing.md"
+  ],
+  "de6130a1f9674479f27bffd0f8b5465a14535dd2": [
+    "windows-apps-src\\maps-and-location\\guidelines-for-geofencing.md"
+  ],
+  "5f614694d81873e1f0c3bbb9d9a90ad2f178dff2": [
+    "windows-apps-src\\maps-and-location\\guidelines-for-geofencing.md"
+  ],
+  "28a735d29e36ab4e4fa75a7dc53f1b9b2c4d1237": [
+    "windows-apps-src\\maps-and-location\\guidelines-for-geofencing.md"
+  ],
+  "0a152fbc444e252ed8c2a822036e00b8869703ac": [
+    "windows-apps-src\\maps-and-location\\guidelines-for-geofencing.md"
+  ],
+  "d631885eced58d360d3e0442cbb49ede7b9b86c3": [
     "windows-apps-src\\maps-and-location\\guidelines-for-geofencing.md"
   ],
   "33cf0a7a69ff40434ecb46977e4a6f67ca2a07e4": [
@@ -3665,13 +3893,25 @@
   "5f163596f3331a2672076f4fcc0e1d8e711a6685": [
     "windows-apps-src\\maps-and-location\\index.md"
   ],
+  "dd52df5f95b25e26ddb0fb8db50c9faf27df02ee": [
+    "windows-apps-src\\maps-and-location\\overlay-tiled-images.md"
+  ],
   "c219bf977ba18893a17a8e2a457703e263cf999f": [
     "windows-apps-src\\maps-and-location\\overlay-tiled-images.md"
   ],
   "5f23f47678323c9ee986e87c56857948d29a7289": [
     "windows-apps-src\\maps-and-location\\overlay-tiled-images.md"
   ],
-  "dd52df5f95b25e26ddb0fb8db50c9faf27df02ee": [
+  "0340247f83fe43d3ffebef841969b1977fc3508c": [
+    "windows-apps-src\\maps-and-location\\overlay-tiled-images.md"
+  ],
+  "7715d41bdfadc667dbef3daada99f1548c779275": [
+    "windows-apps-src\\maps-and-location\\overlay-tiled-images.md"
+  ],
+  "a00d3d27161310077a0690cef7e4d11a5209bee7": [
+    "windows-apps-src\\maps-and-location\\overlay-tiled-images.md"
+  ],
+  "71d044eb19e71786da39ca71d4f4fbd2d87645be": [
     "windows-apps-src\\maps-and-location\\overlay-tiled-images.md"
   ],
   "62f0f26cc9a78a29e6fab5a8f762e0b28b7df6a3": [
@@ -4460,6 +4700,9 @@
   "66cbfb0fe9561c6db2c70747a0237229804f1737": [
     "windows-apps-src\\packaging\\packaging-uwp-apps.md"
   ],
+  "ce32bd7ebaca20827a637c456b2dbe82811817cb": [
+    "windows-apps-src\\porting\\android-ios-uwp-map.md"
+  ],
   "912186f90fcfea38f22dea30c954a15198701077": [
     "windows-apps-src\\porting\\android-ios-uwp-map.md"
   ],
@@ -4470,9 +4713,6 @@
     "windows-apps-src\\porting\\android-ios-uwp-map.md"
   ],
   "cffaba8cd14887859174adb22e5024591dc1bf41": [
-    "windows-apps-src\\porting\\android-ios-uwp-map.md"
-  ],
-  "ce32bd7ebaca20827a637c456b2dbe82811817cb": [
     "windows-apps-src\\porting\\android-ios-uwp-map.md"
   ],
   "f8bcda0cd2e31026f90f3a84a15674c00691f01d": [
@@ -4664,14 +4904,29 @@
   "c269c0792eef2e4748a921fdb4d9852d8b1b76c9": [
     "windows-apps-src\\porting\\w8x-to-uwp-input-and-sensors.md"
   ],
+  "d711d981a674d1516b12ee11c379e679c45dcb60": [
+    "windows-apps-src\\porting\\w8x-to-uwp-porting-to-a-uwp-project.md"
+  ],
   "a847ad4573279e7878e6e36b0222e79d914bd7cb": [
     "windows-apps-src\\porting\\w8x-to-uwp-porting-to-a-uwp-project.md"
   ],
   "1b0beec8cec456cc2a04ed1f56a0dd6d170ac9be": [
     "windows-apps-src\\porting\\w8x-to-uwp-porting-to-a-uwp-project.md"
   ],
-  "d711d981a674d1516b12ee11c379e679c45dcb60": [
+  "5cedf918d53059b923b5a8697e2675e43e266619": [
     "windows-apps-src\\porting\\w8x-to-uwp-porting-to-a-uwp-project.md"
+  ],
+  "62fe48a82c1dd22035af69ff18fafd41546d2b28": [
+    "windows-apps-src\\porting\\w8x-to-uwp-porting-to-a-uwp-project.md"
+  ],
+  "32282fa30ca67b70629911507bc6610b49581597": [
+    "windows-apps-src\\porting\\w8x-to-uwp-porting-to-a-uwp-project.md"
+  ],
+  "bd0526404f7e8f7fb87a0798c4e0c06bd9305c19": [
+    "windows-apps-src\\porting\\w8x-to-uwp-porting-to-a-uwp-project.md"
+  ],
+  "19a6ef29265c22d1bb02464a76ab20e487c67ce4": [
+    "windows-apps-src\\porting\\w8x-to-uwp-porting-xaml-and-ui.md"
   ],
   "5772c1e76306b18f5228c741e87fe487d6a22a30": [
     "windows-apps-src\\porting\\w8x-to-uwp-porting-xaml-and-ui.md"
@@ -4679,7 +4934,13 @@
   "e9990c376d1010860f35cc35c058298206fbfaed": [
     "windows-apps-src\\porting\\w8x-to-uwp-porting-xaml-and-ui.md"
   ],
-  "19a6ef29265c22d1bb02464a76ab20e487c67ce4": [
+  "d713f0f0e0bd5e3f439bef320b12f4922eac03aa": [
+    "windows-apps-src\\porting\\w8x-to-uwp-porting-xaml-and-ui.md"
+  ],
+  "c3a41379607ca2e7f74e8789285eabd32b699981": [
+    "windows-apps-src\\porting\\w8x-to-uwp-porting-xaml-and-ui.md"
+  ],
+  "ea8844925cc227d9f082595b039dd68164ad1228": [
     "windows-apps-src\\porting\\w8x-to-uwp-porting-xaml-and-ui.md"
   ],
   "37da1d6385bf18fcf44f6425b843715e1a462379": [
@@ -4766,10 +5027,10 @@
   "95cd7958979dd5c2a7955bb098c8b34fbf024b0f": [
     "windows-apps-src\\porting\\wpsl-to-uwp-porting-to-a-uwp-project.md"
   ],
-  "6056009d788a87ac369a0bb3ef0606d88fd39725": [
+  "83e63d76e0fc1c1b0e8465ad5b5656779ac43f09": [
     "windows-apps-src\\porting\\wpsl-to-uwp-porting-xaml-and-ui.md"
   ],
-  "83e63d76e0fc1c1b0e8465ad5b5656779ac43f09": [
+  "6056009d788a87ac369a0bb3ef0606d88fd39725": [
     "windows-apps-src\\porting\\wpsl-to-uwp-porting-xaml-and-ui.md"
   ],
   "1ec72aec1e94ff92ef30fcc206456c7614107c98": [
@@ -5603,13 +5864,25 @@
   "bf264778b0ad4296eada538f0fcf11847f5f3add": [
     "windows-apps-src\\publish\\write-a-great-app-description.md"
   ],
+  "ddc397e5155190902dc00ff54190bcb8ac95ce1e": [
+    "windows-apps-src\\security\\authentication-and-user-identity.md"
+  ],
   "26f197c6196ede239fc15853d5a5d7389e9c27a4": [
     "windows-apps-src\\security\\authentication-and-user-identity.md"
   ],
   "8f9f06d549a5e21b0a201e67ee8a5c935994109b": [
     "windows-apps-src\\security\\authentication-and-user-identity.md"
   ],
-  "ddc397e5155190902dc00ff54190bcb8ac95ce1e": [
+  "a3d604a3a975e053ba94aa26385e377c642ff726": [
+    "windows-apps-src\\security\\authentication-and-user-identity.md"
+  ],
+  "15a553081e9221fee82e9a50c15bacfa3c7b60b2": [
+    "windows-apps-src\\security\\authentication-and-user-identity.md"
+  ],
+  "5ed154b3d31e8741972edc8c8a0fd343f41d4167": [
+    "windows-apps-src\\security\\authentication-and-user-identity.md"
+  ],
+  "e748b319cdeda82aadaf8516e41883a3e32dc10c": [
     "windows-apps-src\\security\\authentication-and-user-identity.md"
   ],
   "1fb3424b56da696aa5fa99603209b379c1a5b66e": [
@@ -5801,12 +6074,6 @@
   "bc7f68f1133d34712ba7e6e519eda55e9c9c8670": [
     "windows-apps-src\\security\\smart-cards.md"
   ],
-  "ecb4cca6cb8c31c310a51179eb61ab64d34e570b": [
-    "windows-apps-src\\security\\web-account-manager.md"
-  ],
-  "d27b344ee0c89b7a9d18abd757a31caa8b1530a6": [
-    "windows-apps-src\\security\\web-account-manager.md"
-  ],
   "e5e4f615ae66b3e551456258270f316df8f3c0d1": [
     "windows-apps-src\\security\\web-account-manager.md"
   ],
@@ -5817,6 +6084,12 @@
     "windows-apps-src\\security\\web-account-manager.md"
   ],
   "c041bad81de496251233a37adc770c05f350652a": [
+    "windows-apps-src\\security\\web-account-manager.md"
+  ],
+  "ecb4cca6cb8c31c310a51179eb61ab64d34e570b": [
+    "windows-apps-src\\security\\web-account-manager.md"
+  ],
+  "d27b344ee0c89b7a9d18abd757a31caa8b1530a6": [
     "windows-apps-src\\security\\web-account-manager.md"
   ],
   "0c5ca9146dd3b5bc04433ef9680af0c2d1009bf7": [
@@ -5840,10 +6113,16 @@
   "4939fcd6add6b2f57ca6b51f36f8101e08288332": [
     "windows-apps-src\\style\\color.md"
   ],
+  "ed2d580568b73e787ad7b980981e025652232a83": [
+    "windows-apps-src\\style\\content-transition-animations.md"
+  ],
   "30aead233595f0007d855395cecef5a9bb6c44e5": [
     "windows-apps-src\\style\\content-transition-animations.md"
   ],
-  "ed2d580568b73e787ad7b980981e025652232a83": [
+  "2b3e0196b573fb426c9cd71fc613819a2dd2d615": [
+    "windows-apps-src\\style\\content-transition-animations.md"
+  ],
+  "dc233ef821259701eb93c09d1bdefcfa3d9bb69f": [
     "windows-apps-src\\style\\content-transition-animations.md"
   ],
   "07df77f295e6454376b2fd8bcc7f12c9b2956bbc": [
@@ -5864,43 +6143,79 @@
   "8da696721d234fdbc3b775177313f636658b918a": [
     "windows-apps-src\\style\\motion.md"
   ],
-  "236d52fac0b082a9bc319b990068420ac48463ee": [
-    "windows-apps-src\\style\\motion-dragdrop.md"
-  ],
   "e71b936be1649f8ede394b019369176c7e3ca631": [
     "windows-apps-src\\style\\motion-dragdrop.md"
   ],
-  "a56e82e7e59878f9bdf29b8f37c0b052ced08ce9": [
-    "windows-apps-src\\style\\motion-edgebased.md"
+  "236d52fac0b082a9bc319b990068420ac48463ee": [
+    "windows-apps-src\\style\\motion-dragdrop.md"
+  ],
+  "58934982554aa3caf0060c84df113d483e62e1d2": [
+    "windows-apps-src\\style\\motion-dragdrop.md"
+  ],
+  "c975ba3d03c06009710f4f57edf8a4cc517ad90c": [
+    "windows-apps-src\\style\\motion-dragdrop.md"
   ],
   "925826f2702474a0003f2ca2dee6ff10992f5f25": [
     "windows-apps-src\\style\\motion-edgebased.md"
   ],
-  "7a5f40ac50c86171807aaf0e5f872bb08a44a52c": [
-    "windows-apps-src\\style\\motion-fade.md"
+  "a56e82e7e59878f9bdf29b8f37c0b052ced08ce9": [
+    "windows-apps-src\\style\\motion-edgebased.md"
+  ],
+  "a835e57c3ae778149cda933d57cf74408b74b416": [
+    "windows-apps-src\\style\\motion-edgebased.md"
+  ],
+  "1be51a8ff4a63f32834c7eb04b70d17dc41de13b": [
+    "windows-apps-src\\style\\motion-edgebased.md"
   ],
   "cbe1a4ca77f0d6e15b3d12b2b3a0f2f8363530ae": [
     "windows-apps-src\\style\\motion-fade.md"
   ],
+  "7a5f40ac50c86171807aaf0e5f872bb08a44a52c": [
+    "windows-apps-src\\style\\motion-fade.md"
+  ],
+  "9999c353bfc7a72f04ba8ae0052212f9f2166703": [
+    "windows-apps-src\\style\\motion-fade.md"
+  ],
+  "028e3462a0bf34af0486864508b1ac049fdf60ed": [
+    "windows-apps-src\\style\\motion-fade.md"
+  ],
+  "e1fc86e5110da8926194e20947552337216d4a72": [
+    "windows-apps-src\\style\\motion-list.md"
+  ],
   "67019e5adf1923794528958debc48068fc591736": [
     "windows-apps-src\\style\\motion-list.md"
   ],
-  "e1fc86e5110da8926194e20947552337216d4a72": [
+  "b6c57d1ceadd0785a51c518bc51f93892aa472d5": [
+    "windows-apps-src\\style\\motion-list.md"
+  ],
+  "a795cf52c3d062d2131832ac3bc765f45097e849": [
     "windows-apps-src\\style\\motion-list.md"
   ],
   "c208b67829e2053302ec0cc7c6da013b89cee8b3": [
     "windows-apps-src\\style\\motion-pointer.md"
   ],
+  "cb5d70784e758b4e18092b75df9e0d77243af7fc": [
+    "windows-apps-src\\style\\motion-popup-animations.md"
+  ],
   "43bfbe114e12867cfd5afadec40585a988dc0469": [
     "windows-apps-src\\style\\motion-popup-animations.md"
   ],
-  "cb5d70784e758b4e18092b75df9e0d77243af7fc": [
+  "45219532db704e76e8e85e2926ea9190fba3c7a4": [
     "windows-apps-src\\style\\motion-popup-animations.md"
+  ],
+  "2b135fb62d871c559892e6b1e968767b7be716bd": [
+    "windows-apps-src\\style\\motion-popup-animations.md"
+  ],
+  "912c96bb11f1ad5ba743c74ba6a4ca7f029bcbbb": [
+    "windows-apps-src\\style\\motion-reposition.md"
   ],
   "35ea4e8b2b15cad7dc58339d07e45136257d5e8f": [
     "windows-apps-src\\style\\motion-reposition.md"
   ],
-  "912c96bb11f1ad5ba743c74ba6a4ca7f029bcbbb": [
+  "38c3cb8a31708722bb207f2ad39b073262c6ce6f": [
+    "windows-apps-src\\style\\motion-reposition.md"
+  ],
+  "ba8679a5f06895cef52cbc229f4487997a17bf35": [
     "windows-apps-src\\style\\motion-reposition.md"
   ],
   "6c7745b5702d22bc201dbc173af3765097685514": [
@@ -5996,13 +6311,13 @@
   "2a7c5930752c759c3875826d0046603a63981341": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "45a4229439980908ff122e996f71ea784a30572d": [
+    "windows-apps-src\\TOC.md"
+  ],
   "bdd2cb5ee9ea8acc48333d27ed6baa81c7e7929a": [
     "windows-apps-src\\TOC.md"
   ],
   "5cdb23bd941a984e55b8eaa5a11bcb253799c0fa": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "45a4229439980908ff122e996f71ea784a30572d": [
     "windows-apps-src\\TOC.md"
   ],
   "30f996611bb9d9b8cb867f0edbe78a2980b7c489": [
@@ -6419,10 +6734,10 @@
   "17307228a5bd0eac0291885fd3220d8de5d88c6d": [
     "windows-apps-src\\xaml-platform\\x-class-attribute.md"
   ],
-  "e9353f2e34f694d49b3dda88c746fef4556809ef": [
+  "0fd1e58549ba19397948864fe5fe0b31fcaf01d7": [
     "windows-apps-src\\xaml-platform\\x-deferloadstrategy-attribute.md"
   ],
-  "0fd1e58549ba19397948864fe5fe0b31fcaf01d7": [
+  "e9353f2e34f694d49b3dda88c746fef4556809ef": [
     "windows-apps-src\\xaml-platform\\x-deferloadstrategy-attribute.md"
   ],
   "cd4dc888d9a608b0c2dfc861accfe637384ab34e": [
@@ -6539,10 +6854,10 @@
   "ef9906a2b3695a64867ed39da02f3dc129683375": [
     "windows-apps-src\\xbox-apps\\devkit-deactivation.md"
   ],
-  "afa033621a05b0c07211dfa4e34be26a92c6277a": [
+  "ac4a09180a678e8da197bfb030e27fa001eb74f0": [
     "windows-apps-src\\xbox-apps\\frequently-asked-questions.md"
   ],
-  "ac4a09180a678e8da197bfb030e27fa001eb74f0": [
+  "afa033621a05b0c07211dfa4e34be26a92c6277a": [
     "windows-apps-src\\xbox-apps\\frequently-asked-questions.md"
   ],
   "04545ea18e8810f086bab516ce1d79bb85bc9bdc": [
@@ -6593,10 +6908,10 @@
   "4b05770875feaa3e2fa8a5eb18749a8e28e53f6e": [
     "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
   ],
-  "14b5b93d5d4c3df86277b793053566b577a06b27": [
+  "203d1abede2607617e0175103f54bf3068d53ff4": [
     "windows-apps-src\\xbox-apps\\known-issues.md"
   ],
-  "203d1abede2607617e0175103f54bf3068d53ff4": [
+  "14b5b93d5d4c3df86277b793053566b577a06b27": [
     "windows-apps-src\\xbox-apps\\known-issues.md"
   ],
   "94bc5b8b04fd4f4e1439fb014ef83f0e1f363874": [
@@ -6773,9 +7088,6 @@
   "96b15fd648196d1f5c638abb57205b96e9ceac0f": [
     "windows-apps-src\\devices-sensors\\nfc.md"
   ],
-  "acec46a73020560f9f4d1f0d65615ec8cceb0733": [
-    "windows-apps-src\\xbox-apps\\whats-new.md"
-  ],
   "5546177401630e8938f0d25d77ea42afdbfb55d7": [
     "windows-apps-src\\xbox-apps\\whats-new.md"
   ],
@@ -6786,6 +7098,9 @@
     "windows-apps-src\\xbox-apps\\whats-new.md"
   ],
   "a13c4c019faf1a989784fb322ac6810720da54ea": [
+    "windows-apps-src\\xbox-apps\\whats-new.md"
+  ],
+  "acec46a73020560f9f4d1f0d65615ec8cceb0733": [
     "windows-apps-src\\xbox-apps\\whats-new.md"
   ],
   "7e37846e7696213093e84d7409c6900e0aad5ed5": [
@@ -6800,12 +7115,6 @@
   "6a6276b7dbe1765fafe56d5e4490e0340100d763": [
     "windows-apps-src\\whats-new\\windows-10-sdk-preview.md"
   ],
-  "18473a297e80bb7e0f3c0755e1c3854ef8a9b716": [
-    "windows-apps-src\\whats-new\\windows-10-version-1511.md"
-  ],
-  "241a6198382d1e526ee81681364de3ded92c64de": [
-    "windows-apps-src\\whats-new\\windows-10-version-1511.md"
-  ],
   "90cdd188ba9c2c271badd5467156e16f7ca42df4": [
     "windows-apps-src\\whats-new\\windows-10-version-1511.md"
   ],
@@ -6813,6 +7122,12 @@
     "windows-apps-src\\whats-new\\windows-10-version-1511.md"
   ],
   "d7e667b39c86466f5ff2bcd19c7831dab7ec0db7": [
+    "windows-apps-src\\whats-new\\windows-10-version-1511.md"
+  ],
+  "18473a297e80bb7e0f3c0755e1c3854ef8a9b716": [
+    "windows-apps-src\\whats-new\\windows-10-version-1511.md"
+  ],
+  "241a6198382d1e526ee81681364de3ded92c64de": [
     "windows-apps-src\\whats-new\\windows-10-version-1511.md"
   ],
   "9059e7b693fc5b0690d101430a08e356dde1fbec": [
@@ -7157,13 +7472,13 @@
   "176a66a571e152a3c6eed97692e5e0d1e1a9d113": [
     "windows-apps-src\\porting\\desktop-to-uwp-extensions.md"
   ],
-  "4364bec338e6361d616b58424f6cf550443e5069": [
-    "windows-apps-src\\porting\\hwa-access-features.md"
-  ],
   "4ffa27546a4b667a86f22412297f52026d7773e9": [
     "windows-apps-src\\porting\\hwa-access-features.md"
   ],
   "ca65ef5a5c6b07f92a9162d20eff2607fb4df595": [
+    "windows-apps-src\\porting\\hwa-access-features.md"
+  ],
+  "4364bec338e6361d616b58424f6cf550443e5069": [
     "windows-apps-src\\porting\\hwa-access-features.md"
   ],
   "3bfa34b43071d93425419a446d7f701529b9feca": [
@@ -7175,10 +7490,10 @@
   "555f363a091c6394d7656bd0295b84e730078d23": [
     "windows-apps-src\\porting\\hwa-access-features.md"
   ],
-  "dad1ec229dc4b2632cf55168da8bcbe69e0f381a": [
+  "b2168242d5464dbf41f12c777aa5672753a4ae6e": [
     "windows-apps-src\\porting\\hwa-chrome-conversion.md"
   ],
-  "b2168242d5464dbf41f12c777aa5672753a4ae6e": [
+  "dad1ec229dc4b2632cf55168da8bcbe69e0f381a": [
     "windows-apps-src\\porting\\hwa-chrome-conversion.md"
   ],
   "260ba1d56f6e313b6447f0c68e685e76a30b3056": [
@@ -7190,12 +7505,6 @@
   "3aeac625a927c48da5f5b6ec692db80eefebf08f": [
     "windows-apps-src\\porting\\hwa-chrome-conversion.md"
   ],
-  "fecafa6210069df5b42ed4e1fcd754c62c462fb2": [
-    "windows-apps-src\\porting\\hwa-create-mac.md"
-  ],
-  "e59b39ab8386b74d5481fef8043390083bf3f4d2": [
-    "windows-apps-src\\porting\\hwa-create-mac.md"
-  ],
   "dc8d05b13ab9be90e79f01216b707bc876128ed3": [
     "windows-apps-src\\porting\\hwa-create-mac.md"
   ],
@@ -7205,11 +7514,11 @@
   "a823765163fe366898f5aa12c37c9e952b3a9460": [
     "windows-apps-src\\porting\\hwa-create-mac.md"
   ],
-  "c5b79f27de51aeffa8881d6121015f685152e609": [
-    "windows-apps-src\\porting\\hwa-create-windows.md"
+  "fecafa6210069df5b42ed4e1fcd754c62c462fb2": [
+    "windows-apps-src\\porting\\hwa-create-mac.md"
   ],
-  "9c2df3b441990b1e0f17df3cd442772d75091bac": [
-    "windows-apps-src\\porting\\hwa-create-windows.md"
+  "e59b39ab8386b74d5481fef8043390083bf3f4d2": [
+    "windows-apps-src\\porting\\hwa-create-mac.md"
   ],
   "e135b63e2ba5f455dbbf6524e5519a33acd822b0": [
     "windows-apps-src\\porting\\hwa-create-windows.md"
@@ -7218,6 +7527,12 @@
     "windows-apps-src\\porting\\hwa-create-windows.md"
   ],
   "a963b72a5ccaa9d0f090ed8de1d13cf8e6bea838": [
+    "windows-apps-src\\porting\\hwa-create-windows.md"
+  ],
+  "c5b79f27de51aeffa8881d6121015f685152e609": [
+    "windows-apps-src\\porting\\hwa-create-windows.md"
+  ],
+  "9c2df3b441990b1e0f17df3cd442772d75091bac": [
     "windows-apps-src\\porting\\hwa-create-windows.md"
   ],
   "c9239f3a3c14bf9da99e60cfef8154eefb4305b4": [
@@ -7235,9 +7550,6 @@
   "6f4ce0f0f1d7fc55bcad35eda872d89e156f105f": [
     "windows-apps-src\\xbox-apps\\uwp-fiddler.md"
   ],
-  "b5804478dd5358e5634289a9e7c081263890cbd9": [
-    "windows-apps-src\\xbox-apps\\wdp-fiddler-api.md"
-  ],
   "02b1a056cd7e711b1fc4533c353570209153f9e8": [
     "windows-apps-src\\xbox-apps\\wdp-fiddler-api.md"
   ],
@@ -7248,6 +7560,9 @@
     "windows-apps-src\\xbox-apps\\wdp-fiddler-api.md"
   ],
   "0d7bd1092b7c75336c9ce25274500bdbb9029b26": [
+    "windows-apps-src\\xbox-apps\\wdp-fiddler-api.md"
+  ],
+  "b5804478dd5358e5634289a9e7c081263890cbd9": [
     "windows-apps-src\\xbox-apps\\wdp-fiddler-api.md"
   ],
   "3b796c31e6b284cea628ba68a34799cf9317ee2e": [
@@ -7286,10 +7601,10 @@
   "37b6d028ed0ca864b15546ae7741b3bd213d3f6f": [
     "windows-apps-src\\style\\segoe-ui-symbol-font.md"
   ],
-  "90c20fa62d30c8dce5e61c8dc0a023c2d7d326b1": [
+  "8fa82dfa5fe91b5c8c68e2def05caa8a81cfd142": [
     "windows-apps-src\\controls-and-patterns\\dialogs.md"
   ],
-  "8fa82dfa5fe91b5c8c68e2def05caa8a81cfd142": [
+  "90c20fa62d30c8dce5e61c8dc0a023c2d7d326b1": [
     "windows-apps-src\\controls-and-patterns\\dialogs.md"
   ],
   "ba29bd309b3fdaeeee5bfa143a0f74a58b8bd1c5": [
@@ -7304,9 +7619,6 @@
   "2d7e439e0582983963fe7b68e162c1de6ad2d3ee": [
     "windows-apps-src\\controls-and-patterns\\dialogs.md"
   ],
-  "e1eaec92e18604dd7885a8dc6a11438e924ca1fe": [
-    "windows-apps-src\\controls-and-patterns\\menus.md"
-  ],
   "3e194902b9fb166600ee58ec601993dc808a6853": [
     "windows-apps-src\\controls-and-patterns\\menus.md"
   ],
@@ -7319,10 +7631,13 @@
   "5787771559eba6375f877e0e2e59fbd086a0898b": [
     "windows-apps-src\\controls-and-patterns\\menus.md"
   ],
-  "bb6c680f53f41f3a1e6c8c5fc3903d15df40f5db": [
-    "windows-apps-src\\debug-test-perf\\app-analysis.md"
+  "e1eaec92e18604dd7885a8dc6a11438e924ca1fe": [
+    "windows-apps-src\\controls-and-patterns\\menus.md"
   ],
   "d38b41852a225e9a4fb1f571dc4749c45f3c5956": [
+    "windows-apps-src\\debug-test-perf\\app-analysis.md"
+  ],
+  "bb6c680f53f41f3a1e6c8c5fc3903d15df40f5db": [
     "windows-apps-src\\debug-test-perf\\app-analysis.md"
   ],
   "30f8dd0171ed120733cc513bbf6d9ea40849584e": [
@@ -7400,9 +7715,6 @@
   "ee7add261787dbe43b6144a39f9728480b020ec4": [
     "windows-apps-src\\apps-for-education\\index.md"
   ],
-  "34eb550a8558eea8f24a47faf4e62ec2729d574c": [
-    "windows-apps-src\\apps-for-education\\take-a-test-api.md"
-  ],
   "e308280fcecf825061ddf503ce91f8607fcece72": [
     "windows-apps-src\\apps-for-education\\take-a-test-api.md"
   ],
@@ -7410,6 +7722,9 @@
     "windows-apps-src\\apps-for-education\\take-a-test-api.md"
   ],
   "69d0ac9f454df989b887b5af5d7693fc0f0522ec": [
+    "windows-apps-src\\apps-for-education\\take-a-test-api.md"
+  ],
+  "34eb550a8558eea8f24a47faf4e62ec2729d574c": [
     "windows-apps-src\\apps-for-education\\take-a-test-api.md"
   ],
   "1b99b959cfdde997f7995c1bdf40d51921b2f1d5": [
@@ -7592,10 +7907,10 @@
   "94b19aa76d0108438dcfbbfb756715af7cf453cb": [
     "windows-apps-src\\contacts-and-calendar\\integrating-with-contacts.md"
   ],
-  "78b598b932a59adcb804bf294805cc6dddf7b75e": [
+  "50c18f0ef72ad990971323921eae282c76c70be3": [
     "windows-apps-src\\controls-and-patterns\\inking-controls.md"
   ],
-  "50c18f0ef72ad990971323921eae282c76c70be3": [
+  "78b598b932a59adcb804bf294805cc6dddf7b75e": [
     "windows-apps-src\\controls-and-patterns\\inking-controls.md"
   ],
   "541f7e8c45190cfd597869ad1040801d368b77e8": [
@@ -7607,10 +7922,10 @@
   "3a366441218ce6ff4727e797afe76484649bd78f": [
     "windows-apps-src\\controls-and-patterns\\inking-controls.md"
   ],
-  "c8ed32f75158925a732d9195232eb3868931e75b": [
+  "332271894b5e11657bd2b0b1ca40f0bd7620889d": [
     "windows-apps-src\\controls-and-patterns\\inverted-lists.md"
   ],
-  "332271894b5e11657bd2b0b1ca40f0bd7620889d": [
+  "c8ed32f75158925a732d9195232eb3868931e75b": [
     "windows-apps-src\\controls-and-patterns\\inverted-lists.md"
   ],
   "0a33aaf71dbf23e991591f790f7327d812b060ef": [
@@ -7757,10 +8072,10 @@
   "5983209e7e107f8cf0a7d2fe9ce8ef734e3af7d4": [
     "windows-apps-src\\input-and-devices\\ink-toolbar.md"
   ],
-  "ad3a9328f031f6da50bec77fdebc4dc622bbfd3b": [
+  "3848ab99538ab198f92890ac06da733169084f6a": [
     "windows-apps-src\\launch-resume\\communicate-with-a-remote-app-service.md"
   ],
-  "3848ab99538ab198f92890ac06da733169084f6a": [
+  "ad3a9328f031f6da50bec77fdebc4dc622bbfd3b": [
     "windows-apps-src\\launch-resume\\communicate-with-a-remote-app-service.md"
   ],
   "0cac219625fbc7b6526c81cf11f010589d2bf000": [
@@ -7886,12 +8201,6 @@
   "787007b870675749d96afa59a6e9cb5f3be68991": [
     "windows-apps-src\\monetize\\in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md"
   ],
-  "dd9643cf0751f0ea5e67c94b920293c6f44f5156": [
-    "windows-apps-src\\whats-new\\windows-10-version-1607.md"
-  ],
-  "96d0e666bb56167328380f24ced0af391472c6cb": [
-    "windows-apps-src\\whats-new\\windows-10-version-1607.md"
-  ],
   "bac2705bd57c0b6874c58eaac66b4ecb19ebb5af": [
     "windows-apps-src\\whats-new\\windows-10-version-1607.md"
   ],
@@ -7899,6 +8208,12 @@
     "windows-apps-src\\whats-new\\windows-10-version-1607.md"
   ],
   "ac6f237590db69c88cd2a2c186440e42e805752b": [
+    "windows-apps-src\\whats-new\\windows-10-version-1607.md"
+  ],
+  "dd9643cf0751f0ea5e67c94b920293c6f44f5156": [
+    "windows-apps-src\\whats-new\\windows-10-version-1607.md"
+  ],
+  "96d0e666bb56167328380f24ced0af391472c6cb": [
     "windows-apps-src\\whats-new\\windows-10-version-1607.md"
   ],
   "ed689ec32efe1af2e52656cf777225660eef054f": [
@@ -7922,12 +8237,6 @@
   "5dc4a807d2b14921ae87ab0ce16dd80d371c8b9c": [
     "windows-apps-src\\gaming\\relative-mouse-movement.md"
   ],
-  "6dc7a4215f7610b6f2ad74dc6a16d7e1dcc7636e": [
-    "windows-apps-src\\whats-new\\windows-10-version-1507.md"
-  ],
-  "de10443c0e1f641bdbaef9f091b280e1065506e3": [
-    "windows-apps-src\\whats-new\\windows-10-version-1507.md"
-  ],
   "8f7f3f6b3436c987324a1072a1fbab1bd045c5bd": [
     "windows-apps-src\\whats-new\\windows-10-version-1507.md"
   ],
@@ -7935,6 +8244,12 @@
     "windows-apps-src\\whats-new\\windows-10-version-1507.md"
   ],
   "6432e0c7e6bdba7e6de791d6b9a498d57502a4a7": [
+    "windows-apps-src\\whats-new\\windows-10-version-1507.md"
+  ],
+  "6dc7a4215f7610b6f2ad74dc6a16d7e1dcc7636e": [
+    "windows-apps-src\\whats-new\\windows-10-version-1507.md"
+  ],
+  "de10443c0e1f641bdbaef9f091b280e1065506e3": [
     "windows-apps-src\\whats-new\\windows-10-version-1507.md"
   ],
   "1c2001e93fd06cc93fa5cfe9d2a10a029e13c82d": [
@@ -8029,9 +8344,6 @@
   ],
   "7a8dcb282ea3df16ee8a12247a07af27cbf65b3a": [
     "windows-apps-src\\monetize\\microsoft-store-services-sdk.md"
-  ],
-  "ef5773f9885a5286ac7ca7c256e6a83167316389": [
-    "windows-apps-src\\controls-and-patterns\\pull-to-refresh-rs3.md"
   ],
   "7e1529d641920c93ce7914c39d38001c2cbdfd78": [
     "windows-apps-src\\layout\\navigate-between-two-pages.md"
@@ -8651,10 +8963,10 @@
   "0b8e0b07960ae0c93261f022bca435efc394df99": [
     "windows-apps-src\\updates-and-versions\\choose-a-uwp-version.md"
   ],
-  "616d0e2c41fadf8a37962ef43af969d66652688b": [
+  "0991d136bcc7b2b07e97bcf4018c1040e71dae0c": [
     "windows-apps-src\\launch-resume\\discover-remote-devices.md"
   ],
-  "0991d136bcc7b2b07e97bcf4018c1040e71dae0c": [
+  "616d0e2c41fadf8a37962ef43af969d66652688b": [
     "windows-apps-src\\launch-resume\\discover-remote-devices.md"
   ],
   "c655ebf4d02f0de6e07d70ac0d81e33f20388741": [
@@ -8714,9 +9026,6 @@
   "eccff6f037890fdd375eb150520db99a67aa718d": [
     "windows-apps-src\\gaming\\monetization-for-games.md"
   ],
-  "bc67025dedceeaa285614ab4735d71ecc9cd4f3b": [
-    "windows-apps-src\\get-started\\get-uwp-app-samples.md"
-  ],
   "e576150cd06000405fa4754e147fbc1546cdf703": [
     "windows-apps-src\\get-started\\get-uwp-app-samples.md"
   ],
@@ -8724,6 +9033,9 @@
     "windows-apps-src\\get-started\\get-uwp-app-samples.md"
   ],
   "f11524f43a47a6572d3f7ee6f438fc24645073de": [
+    "windows-apps-src\\get-started\\get-uwp-app-samples.md"
+  ],
+  "bc67025dedceeaa285614ab4735d71ecc9cd4f3b": [
     "windows-apps-src\\get-started\\get-uwp-app-samples.md"
   ],
   "a63136f04570c4bf964c461f7296c930f5e168b5": [
@@ -8816,16 +9128,16 @@
   "9304749785bd51a39f178a62650b31c80639b3dd": [
     "windows-apps-src\\graphics-concepts\\blending-stages.md"
   ],
-  "e56f6b671ac27404184519b514628bff7ed02592": [
-    "windows-apps-src\\graphics-concepts\\block-compression.md"
-  ],
-  "6a30536f851214a29e49c0da74e4fe8ff16dfb82": [
-    "windows-apps-src\\graphics-concepts\\block-compression.md"
-  ],
   "d67ec99494dc0b598d9eeb8c4aa5b29255a415ac": [
     "windows-apps-src\\graphics-concepts\\block-compression.md"
   ],
   "45f860a184400f0d50584ae0fa2e5a8a777f1651": [
+    "windows-apps-src\\graphics-concepts\\block-compression.md"
+  ],
+  "e56f6b671ac27404184519b514628bff7ed02592": [
+    "windows-apps-src\\graphics-concepts\\block-compression.md"
+  ],
+  "6a30536f851214a29e49c0da74e4fe8ff16dfb82": [
     "windows-apps-src\\graphics-concepts\\block-compression.md"
   ],
   "f79d04675722c2bcc84c9c79f4da338c7b46732d": [
@@ -8882,16 +9194,16 @@
   "c863eb45a21fa23213aff09e7f1b284292343568": [
     "windows-apps-src\\graphics-concepts\\compressed-texture-resources.md"
   ],
-  "05e06c102c0e1f74c5ed36c527ebfd5101e55900": [
-    "windows-apps-src\\graphics-concepts\\compute-pipeline.md"
-  ],
-  "d3a0ea0c1ce9cd491e52d93be52efb387a9c1077": [
-    "windows-apps-src\\graphics-concepts\\compute-pipeline.md"
-  ],
   "05d7802ce766078d28b17e94ac21da9640368aaf": [
     "windows-apps-src\\graphics-concepts\\compute-pipeline.md"
   ],
   "e6c2fdf148e582360a125c3cd98013dc6b424535": [
+    "windows-apps-src\\graphics-concepts\\compute-pipeline.md"
+  ],
+  "05e06c102c0e1f74c5ed36c527ebfd5101e55900": [
+    "windows-apps-src\\graphics-concepts\\compute-pipeline.md"
+  ],
+  "d3a0ea0c1ce9cd491e52d93be52efb387a9c1077": [
     "windows-apps-src\\graphics-concepts\\compute-pipeline.md"
   ],
   "910965862f923750a8be6beb59dcd6ac7edf7e69": [
@@ -8903,16 +9215,16 @@
   "4be5d0332905d1dffe90549d5fc49a0d7693b286": [
     "windows-apps-src\\graphics-concepts\\compute-shader-stage--cs-.md"
   ],
-  "0543ef5fa8364b2db88d2baef8d803563e890210": [
-    "windows-apps-src\\graphics-concepts\\configuring-depth-stencil-functionality.md"
-  ],
-  "5e6eeab657cceab223cc79494f8d0fbc6c0b4bdb": [
-    "windows-apps-src\\graphics-concepts\\configuring-depth-stencil-functionality.md"
-  ],
   "9064c65732287777c90fe3987cda61c087e49508": [
     "windows-apps-src\\graphics-concepts\\configuring-depth-stencil-functionality.md"
   ],
   "6814e5ee5aa99558830af4da3b43d102048f8bcb": [
+    "windows-apps-src\\graphics-concepts\\configuring-depth-stencil-functionality.md"
+  ],
+  "0543ef5fa8364b2db88d2baef8d803563e890210": [
+    "windows-apps-src\\graphics-concepts\\configuring-depth-stencil-functionality.md"
+  ],
+  "5e6eeab657cceab223cc79494f8d0fbc6c0b4bdb": [
     "windows-apps-src\\graphics-concepts\\configuring-depth-stencil-functionality.md"
   ],
   "755c80e895281b93e9e37144526ed1790c63199f": [
@@ -9149,16 +9461,16 @@
   "1e6ad426006eb702d091016a184a48c3c8064e04": [
     "windows-apps-src\\graphics-concepts\\input-assembler-stage--ia-.md"
   ],
-  "79213454749d9223293603457435f796743edb26": [
-    "windows-apps-src\\graphics-concepts\\introduction-to-buffers.md"
-  ],
-  "05d7ac0e3416c5b4f607fd128cd45db4271886fc": [
-    "windows-apps-src\\graphics-concepts\\introduction-to-buffers.md"
-  ],
   "837350bc4ea354312fc8057cba8cf77208bd3277": [
     "windows-apps-src\\graphics-concepts\\introduction-to-buffers.md"
   ],
   "ec2d181daca8f9ece8e1d364cd58234feb85977a": [
+    "windows-apps-src\\graphics-concepts\\introduction-to-buffers.md"
+  ],
+  "79213454749d9223293603457435f796743edb26": [
+    "windows-apps-src\\graphics-concepts\\introduction-to-buffers.md"
+  ],
+  "05d7ac0e3416c5b4f607fd128cd45db4271886fc": [
     "windows-apps-src\\graphics-concepts\\introduction-to-buffers.md"
   ],
   "1c22f17991462ddf190ece2baa0360fa3e1d12a5": [
@@ -9170,16 +9482,16 @@
   "796ebafa06cefe1874906d4bcae1dc21008e3487": [
     "windows-apps-src\\graphics-concepts\\introduction-to-rasterization-rules.md"
   ],
-  "4cc15c91aaf30d6a8f1441ae3ac90244dbbfae43": [
-    "windows-apps-src\\graphics-concepts\\introduction-to-textures.md"
-  ],
-  "95b930bd08629a966e9905d7dc91e738bac2d877": [
-    "windows-apps-src\\graphics-concepts\\introduction-to-textures.md"
-  ],
   "d642668a9af1e62f232e13e411e51e6d850de7f5": [
     "windows-apps-src\\graphics-concepts\\introduction-to-textures.md"
   ],
   "ccdca1396673b0eed9ef74c5f0ce3a6f97e02b6d": [
+    "windows-apps-src\\graphics-concepts\\introduction-to-textures.md"
+  ],
+  "4cc15c91aaf30d6a8f1441ae3ac90244dbbfae43": [
+    "windows-apps-src\\graphics-concepts\\introduction-to-textures.md"
+  ],
+  "95b930bd08629a966e9905d7dc91e738bac2d877": [
     "windows-apps-src\\graphics-concepts\\introduction-to-textures.md"
   ],
   "7f4ca6fdbd93d42dbefd955f31bd514b93886d03": [
@@ -9380,16 +9692,16 @@
   "8ba2c2fc43ab5a03c9eb6e884a3e4f26a0b023ce": [
     "windows-apps-src\\graphics-concepts\\primitives.md"
   ],
-  "0c81503d984d92714e62f4f730dca8f96c621044": [
-    "windows-apps-src\\graphics-concepts\\primitive-topologies.md"
-  ],
-  "82c3966bfe31e473cb0b1542f896ecc40278973d": [
-    "windows-apps-src\\graphics-concepts\\primitive-topologies.md"
-  ],
   "d0d6bed3cbccd37fcd4fc835273099e8d26f671d": [
     "windows-apps-src\\graphics-concepts\\primitive-topologies.md"
   ],
   "487de51420cd6ce747d0257920429e9015bc1864": [
+    "windows-apps-src\\graphics-concepts\\primitive-topologies.md"
+  ],
+  "0c81503d984d92714e62f4f730dca8f96c621044": [
+    "windows-apps-src\\graphics-concepts\\primitive-topologies.md"
+  ],
+  "82c3966bfe31e473cb0b1542f896ecc40278973d": [
     "windows-apps-src\\graphics-concepts\\primitive-topologies.md"
   ],
   "cb6704383bafe9ee3e5785701c78f92e84b90b3d": [
@@ -9455,28 +9767,28 @@
   "9e1e7198aa5cf18341d85a898615ad350532625e": [
     "windows-apps-src\\graphics-concepts\\render-target-view--rtv-.md"
   ],
-  "410241fb939d7f9012f0ed4622bde08af9333884": [
-    "windows-apps-src\\graphics-concepts\\resources.md"
-  ],
-  "e289ba69c103f26ce89b581a8ce8fb4b6bfb1938": [
-    "windows-apps-src\\graphics-concepts\\resources.md"
-  ],
   "361e5e1489e976776015ec9401f1473b9d3c8bdd": [
     "windows-apps-src\\graphics-concepts\\resources.md"
   ],
   "a95762696905bcb5e1ae900c96a47ee9fc5d1a73": [
     "windows-apps-src\\graphics-concepts\\resources.md"
   ],
-  "67ab3e888f1cd56578e6119f181d291f9bae5777": [
-    "windows-apps-src\\graphics-concepts\\resource-types.md"
+  "410241fb939d7f9012f0ed4622bde08af9333884": [
+    "windows-apps-src\\graphics-concepts\\resources.md"
   ],
-  "d0e542f78dc8e627bfb1dee86a97ce439af546ae": [
-    "windows-apps-src\\graphics-concepts\\resource-types.md"
+  "e289ba69c103f26ce89b581a8ce8fb4b6bfb1938": [
+    "windows-apps-src\\graphics-concepts\\resources.md"
   ],
   "77f1b408533d37ecf18bdc1c6c364e6d6c88b94d": [
     "windows-apps-src\\graphics-concepts\\resource-types.md"
   ],
   "1e21222b97f7a8711de93345623d2d82b3e8e4d2": [
+    "windows-apps-src\\graphics-concepts\\resource-types.md"
+  ],
+  "67ab3e888f1cd56578e6119f181d291f9bae5777": [
+    "windows-apps-src\\graphics-concepts\\resource-types.md"
+  ],
+  "d0e542f78dc8e627bfb1dee86a97ce439af546ae": [
     "windows-apps-src\\graphics-concepts\\resource-types.md"
   ],
   "919de99d9f0680ea63f70a027344c49f3fbd093e": [
@@ -9998,10 +10310,10 @@
   "06ee953588945677cb623269d9b104d3f35d83bb": [
     "windows-apps-src\\launch-resume\\convert-out-of-process-background-task.md"
   ],
-  "8d65c68a4e26bf0d0787551fa075bb8844da864f": [
+  "f89537416b409642adab894ba9e3a413e4b0b828": [
     "windows-apps-src\\launch-resume\\create-and-register-an-inproc-background-task.md"
   ],
-  "f89537416b409642adab894ba9e3a413e4b0b828": [
+  "8d65c68a4e26bf0d0787551fa075bb8844da864f": [
     "windows-apps-src\\launch-resume\\create-and-register-an-inproc-background-task.md"
   ],
   "1955f4981f09c2632fe2236ebd6a772e7b0ed8a1": [
@@ -10388,12 +10700,6 @@
   "045dfeb4696a4854b114d88da2a2cbb75d621a58": [
     "windows-apps-src\\debug-test-perf\\optimize-background-activity.md"
   ],
-  "84faa2aadddeb6331898240b4350dce4df341282": [
-    "windows-apps-src\\layout\\grid-tutorial.md"
-  ],
-  "248b345cdca2077315cbb0a0f8890ea3dd13f19a": [
-    "windows-apps-src\\layout\\grid-tutorial.md"
-  ],
   "094cabc642884f57af2dbeb5125a2a8b81365824": [
     "windows-apps-src\\layout\\grid-tutorial.md"
   ],
@@ -10404,6 +10710,12 @@
     "windows-apps-src\\layout\\grid-tutorial.md"
   ],
   "ddf9676fd817eb333a80110c8d2d7d87a93d6b2d": [
+    "windows-apps-src\\layout\\grid-tutorial.md"
+  ],
+  "84faa2aadddeb6331898240b4350dce4df341282": [
+    "windows-apps-src\\layout\\grid-tutorial.md"
+  ],
+  "248b345cdca2077315cbb0a0f8890ea3dd13f19a": [
     "windows-apps-src\\layout\\grid-tutorial.md"
   ],
   "cfab1c8f5149d4c6d02a9fa94287a4e204a11a7f": [
@@ -10927,35 +11239,5 @@
   ],
   "45e66b252f68a90803fddec3b860a7435864ae82": [
     "windows-apps-src\\monetize\\send-requests-to-the-store.md"
-  ],
-  "3a9ce6f3f17dddc60d99cbdd29a870636b9be47b": [
-    "windows-apps-src\\controls-and-patterns\\rating.md"
-  ],
-  "b76a787d44cf85e592d7c0df4edd26e139c06f57": [
-    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-primary-tile-apis.md"
-  ],
-  "bc8995bc2dcf496867595379663de2e01291e5a2": [
-    "windows-apps-src\\layout\\content-as-objects.md"
-  ],
-  "d8c80737bf940881e0963fed24a5440778242d62": [
-    "windows-apps-src\\style\\balancing-style-and-consistency.md"
-  ],
-  "e4e593a8319a56adaddba63d7b8ee0907755f0a2": [
-    "windows-apps-src\\style\\connected-animation.md"
-  ],
-  "c36bac93304f448729a728cb02528a07b3aeffce": [
-    "windows-apps-src\\style\\parallax.md"
-  ],
-  "8240767f640efe2b05bbcfa23adc7becb164ef12": [
-    "windows-apps-src\\style\\reveal.md"
-  ],
-  "ef6a4e62b2f33c614ddd34872a4af645dac55ba3": [
-    "windows-apps-src\\xaml-platform\\x-load-attribute.md"
-  ],
-  "26ba653068548cb950a9e61d6374531905ac401d": [
-    "windows-apps-src\\xbox-apps\\uwp-deployinfo-api.md"
-  ],
-  "ab954010d51e93712ad24b727fc067c3974d87d9": [
-    "windows-apps-src\\xbox-apps\\uwp-networkcredentials-api.md"
   ]
 }
