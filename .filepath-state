@@ -3713,6 +3713,9 @@
   "0f0ff42ec8e3a52ccab3ed6d9015c09510af6378": [
     "windows-apps-src\\layout\\custom-panels-overview.md"
   ],
+  "5147d584854c78e32b4c4d4d6f6860124ea9a421": [
+    "windows-apps-src\\layout\\design-and-ui-intro.md"
+  ],
   "4ca7e133f930ff4663de0cc1769ac26caa9f44ad": [
     "windows-apps-src\\layout\\design-and-ui-intro.md"
   ],
@@ -11116,6 +11119,9 @@
   ],
   "3bd5f6ced66ba52aef4a0aa0580f348e3faa0a09": [
     "windows-apps-src\\gaming\\directx-samples.md"
+  ],
+  "c71b0f31cb505b4324dd02f84af0df168b49461d": [
+    "windows-apps-src\\gaming\\game-development-videos.md"
   ],
   "0ae1a0c0f5c7b3e1a1b4a688e192cb3b3d7e8912": [
     "windows-apps-src\\gaming\\game-development-videos.md"
