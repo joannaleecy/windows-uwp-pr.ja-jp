@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\tax-details-for-paid-apps.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/9f511be99860a3b3e08860d697469760890ff4e7?path=windows-apps-src%2Fpublish%2Ftax-details-for-paid-apps.md&_a=contents) | HandedOffSuccess | [Details](#8cc3297fc225fa38483cd379826bb5d28ae8f36e4932)
+ [windows-apps-src\launch-resume\run-minimized-with-extended-execution.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/924d1b9b22e299fc8cf04cc4750bdb715ff7437d?path=windows-apps-src%2Flaunch-resume%2Frun-minimized-with-extended-execution.md&_a=contents) | HandedOffSuccess | [Details](#614af08c9f588c051213efbcfe3b9032a61824bf3919)
 
 ## Item Details
-##### <a name='8cc3297fc225fa38483cd379826bb5d28ae8f36e4932'></a> Source: [windows-apps-src\publish\tax-details-for-paid-apps.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/9f511be99860a3b3e08860d697469760890ff4e7?path=windows-apps-src%2Fpublish%2Ftax-details-for-paid-apps.md&_a=contents)
+##### <a name='614af08c9f588c051213efbcfe3b9032a61824bf3919'></a> Source: [windows-apps-src\launch-resume\run-minimized-with-extended-execution.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/924d1b9b22e299fc8cf04cc4750bdb715ff7437d?path=windows-apps-src%2Flaunch-resume%2Frun-minimized-with-extended-execution.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [tax-details-for-paid-apps.dabd93b4ae33f057b5755bdbfd54af1f2c7ebbad.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/d62736ec8baf8cd1218f7c532e5f6d99ac0b9b2b?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Ftax-details-for-paid-apps.dabd93b4ae33f057b5755bdbfd54af1f2c7ebbad.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-03-30 23:21:12
+* Handoff File: [run-minimized-with-extended-execution.cc3e491e5329f6ff69f0d7de209075d6a4e2bae6.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/7edfa7fc52574b71ff280fd312a553b0863872a6?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Frun-minimized-with-extended-execution.cc3e491e5329f6ff69f0d7de209075d6a4e2bae6.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-03-31 19:24:10
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,10 +21,10 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\publish\tax-details-for-paid-apps.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fpublish%2Ftax-details-for-paid-apps.md&_a=contents)
-* Current Handback File: [tax-details-for-paid-apps.dabd93b4ae33f057b5755bdbfd54af1f2c7ebbad.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Ftax-details-for-paid-apps.dabd93b4ae33f057b5755bdbfd54af1f2c7ebbad.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\launch-resume\run-minimized-with-extended-execution.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Flaunch-resume%2Frun-minimized-with-extended-execution.md&_a=contents)
+* Current Handback File: [run-minimized-with-extended-execution.cc3e491e5329f6ff69f0d7de209075d6a4e2bae6.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Frun-minimized-with-extended-execution.cc3e491e5329f6ff69f0d7de209075d6a4e2bae6.ja-jp.xlf&_a=contents)
 * Current Handback Datetime: 2017-03-01 13:53:49
-* Bilingual File: [tax-details-for-paid-apps.dabd93b4ae33f057b5755bdbfd54af1f2c7ebbad.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Ftax-details-for-paid-apps.dabd93b4ae33f057b5755bdbfd54af1f2c7ebbad.ja-jp.xlf&_a=contents)
+* Bilingual File: [run-minimized-with-extended-execution.cc3e491e5329f6ff69f0d7de209075d6a4e2bae6.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Frun-minimized-with-extended-execution.cc3e491e5329f6ff69f0d7de209075d6a4e2bae6.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 
