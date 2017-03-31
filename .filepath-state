@@ -11480,23 +11480,38 @@
   "5a71c33e5774ca196ca0dd60070669e5c9165394": [
     "windows-apps-src\\whats-new\\windows-10-version-1703-api-diff.md"
   ],
+  "3a577e52c7b17d557e235a3a6d182f882d1a283d": [
+    "windows-apps-src\\xbox-apps\\dev-home.md"
+  ],
   "ab28b2c96739147ec5bdabc645ac90fb5d581e83": [
     "windows-apps-src\\xbox-apps\\dev-home.md"
   ],
   "21756e66532775ecc3ac6cbd184fd5af118ff58c": [
     "windows-apps-src\\xbox-apps\\devhome-capture.md"
   ],
+  "d821fec54c969f8bdbabe804912818de5165dc44": [
+    "windows-apps-src\\xbox-apps\\devhome-home.md"
+  ],
   "31c6dd1fb29bb03658fcb25ce1d36f2038a5cf15": [
     "windows-apps-src\\xbox-apps\\devhome-home.md"
   ],
+  "b8168a06b40a8371490cb78194f880c536021b91": [
+    "windows-apps-src\\xbox-apps\\devhome-live.md"
+  ],
   "47124be1ead3d9bbc80738488d853947eea4a263": [
     "windows-apps-src\\xbox-apps\\devhome-live.md"
+  ],
+  "711444b8000cf16cf77d9489d5b1221a483e4234": [
+    "windows-apps-src\\xbox-apps\\devhome-networking.md"
   ],
   "f9f7d23ea01c72fa9e0258a842bd27811e3e322a": [
     "windows-apps-src\\xbox-apps\\devhome-networking.md"
   ],
   "0525c7deb5d44cf126df8963ed6125d8aec310d0": [
     "windows-apps-src\\xbox-apps\\devhome-performance.md"
+  ],
+  "1fc5861c41e4ee10d39f3839f7a09ee2f2a10b05": [
+    "windows-apps-src\\xbox-apps\\devhome-settings.md"
   ],
   "bfd2ef51fb0044eacad71df7999603348aa636f2": [
     "windows-apps-src\\xbox-apps\\devhome-settings.md"
