@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\style\color.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/812f6347e6da2533871a826ba70a228719830a92?path=windows-apps-src%2Fstyle%2Fcolor.md&_a=contents) | HandedOffSuccess | [Details](#d19dd2b2733bf918f55fd29311e3b4c47a9a7f6e5122)
+ [windows-apps-src\layout\navigation-basics.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/066ce779bc7537a0793c4d764ff812ae369f769f?path=windows-apps-src%2Flayout%2Fnavigation-basics.md&_a=contents) | HandedOffSuccess | [Details](#38dcfa2236c05235476e0ec93a03b7518e057a864253)
 
 ## Item Details
-##### <a name='d19dd2b2733bf918f55fd29311e3b4c47a9a7f6e5122'></a> Source: [windows-apps-src\style\color.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/812f6347e6da2533871a826ba70a228719830a92?path=windows-apps-src%2Fstyle%2Fcolor.md&_a=contents)
+##### <a name='38dcfa2236c05235476e0ec93a03b7518e057a864253'></a> Source: [windows-apps-src\layout\navigation-basics.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/066ce779bc7537a0793c4d764ff812ae369f769f?path=windows-apps-src%2Flayout%2Fnavigation-basics.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [color.0395eb0e5ede1939b9b46492efe596c9853dcace.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/c79b4b53627b3fc9fbac90a04c882c49f3776b8d?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fcolor.0395eb0e5ede1939b9b46492efe596c9853dcace.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-04-04 17:20:41
+* Handoff File: [navigation-basics.7c4a46b210ca48bfb5649445cc7eeddd5c9ef38c.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/3b5f5609ef4f0137e15987c4d0f44c1d9272c7cc?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fnavigation-basics.7c4a46b210ca48bfb5649445cc7eeddd5c9ef38c.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-04-04 19:21:38
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,10 +21,10 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\style\color.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fstyle%2Fcolor.md&_a=contents)
-* Current Handback File: [color.0395eb0e5ede1939b9b46492efe596c9853dcace.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fcolor.0395eb0e5ede1939b9b46492efe596c9853dcace.ja-jp.xlf&_a=contents)
-* Current Handback Datetime: 2017-03-01 13:53:49
-* Bilingual File: [color.0395eb0e5ede1939b9b46492efe596c9853dcace.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fcolor.0395eb0e5ede1939b9b46492efe596c9853dcace.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\layout\navigation-basics.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Flayout%2Fnavigation-basics.md&_a=contents)
+* Current Handback File: [navigation-basics.7c4a46b210ca48bfb5649445cc7eeddd5c9ef38c.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fnavigation-basics.7c4a46b210ca48bfb5649445cc7eeddd5c9ef38c.ja-jp.xlf&_a=contents)
+* Current Handback Datetime: 2017-03-01 13:53:50
+* Bilingual File: [navigation-basics.7c4a46b210ca48bfb5649445cc7eeddd5c9ef38c.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fnavigation-basics.7c4a46b210ca48bfb5649445cc7eeddd5c9ef38c.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 

@@ -37759,6 +37759,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d19dd2b2733bf918f55fd29311e3b4c47a9a7f6e.3a52125be5c9678809feb18a31fed10997e5119c.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\layout\\navigation-basics.md.b1b7f54107c16906cfe17098ad52d21c7e8b27cb.HT": {
+      "SourceFilename": "windows-apps-src\\layout\\navigation-basics.md",
+      "XliffHash": "b1b7f54107c16906cfe17098ad52d21c7e8b27cb",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\38dcfa2236c05235476e0ec93a03b7518e057a86.f06f8512af7f7818e8a5a2511723b66c66bd54e8.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
