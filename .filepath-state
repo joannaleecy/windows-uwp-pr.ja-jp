@@ -3557,6 +3557,9 @@
   "2a08a153126e8186344c26dedd1207a17a98b771": [
     "windows-apps-src\\launch-resume\\launch-people-apps.md"
   ],
+  "7cad0e57daef442f6d66696d8e2047b49074aa0b": [
+    "windows-apps-src\\launch-resume\\launch-settings-app.md"
+  ],
   "e9d66feb6117fddfff62c217b55da813a63c4331": [
     "windows-apps-src\\launch-resume\\launch-settings-app.md"
   ],
@@ -5603,6 +5606,9 @@
   "86263a37d3f8554fd656dd20af1f3766976e574b": [
     "windows-apps-src\\publish\\managing-your-profile.md"
   ],
+  "8fd1e9e2350152f050db2eeaba94a695f1a4657a": [
+    "windows-apps-src\\publish\\mobile-operator-billing.md"
+  ],
   "5d3dbe205fd3f4260f761d9372a573fe568b3638": [
     "windows-apps-src\\publish\\mobile-operator-billing.md"
   ],
@@ -5822,6 +5828,9 @@
   "dfcae306d0589dcedec4f19cb3b1306d900cbea1": [
     "windows-apps-src\\publish\\supported-languages.md"
   ],
+  "d8a8269eb64151cc8927ded434174e307c46185e": [
+    "windows-apps-src\\publish\\tax-details-for-paid-apps.md"
+  ],
   "8cc3297fc225fa38483cd379826bb5d28ae8f36e": [
     "windows-apps-src\\publish\\tax-details-for-paid-apps.md"
   ],
@@ -5839,6 +5848,9 @@
   ],
   "86e1f19280d113c8419497c5b740f319ded7f50d": [
     "windows-apps-src\\publish\\tax-details-for-paid-apps.md"
+  ],
+  "bc151b8897a3e16b51b4123926600858f71bd583": [
+    "windows-apps-src\\publish\\the-app-certification-process.md"
   ],
   "87fc6e35a2a9818478aca4119850ae20165d2a64": [
     "windows-apps-src\\publish\\the-app-certification-process.md"
@@ -8294,6 +8306,9 @@
   "dc5e67823521db455e12fa4b16d8204c20bff621": [
     "windows-apps-src\\monetize\\implement-a-trial-version-of-your-app.md"
   ],
+  "5783087b164be023888779d290b00c2d5d82c19d": [
+    "windows-apps-src\\monetize\\in-app-purchases-and-trials.md"
+  ],
   "d9416306fe8e124a58780f7faf4c11aafcead042": [
     "windows-apps-src\\monetize\\in-app-purchases-and-trials.md"
   ],
@@ -8873,6 +8888,9 @@
   "55a6b548246e801c9fcc0392265263123f24de00": [
     "windows-apps-src\\monetize\\manage-add-ons.md"
   ],
+  "1d7ac5ed2e743cca77cfc0334792ad3da49bedfb": [
+    "windows-apps-src\\monetize\\manage-add-on-submissions.md"
+  ],
   "482c61d651ec6a54f5d1866bd3ddbb2d42bcef68": [
     "windows-apps-src\\monetize\\manage-add-on-submissions.md"
   ],
@@ -8890,6 +8908,9 @@
   ],
   "589946e159202c3ed5d13057642c808d5df4f738": [
     "windows-apps-src\\monetize\\manage-add-on-submissions.md"
+  ],
+  "d83559914d97848799722c714a64a2c49917419d": [
+    "windows-apps-src\\monetize\\manage-app-submissions.md"
   ],
   "3e87b5fbe802d37a38ed940146c4ad56d1d23857": [
     "windows-apps-src\\monetize\\manage-app-submissions.md"
@@ -8917,6 +8938,9 @@
   ],
   "51d7481d0491c85bddcae906a846cb8773f33417": [
     "windows-apps-src\\monetize\\manage-flights.md"
+  ],
+  "e44db778a39e0ea4682c6ce429543f5188c41c76": [
+    "windows-apps-src\\monetize\\manage-flight-submissions.md"
   ],
   "8f4d8175233eceb5646e6b899f3db0da44ed22d6": [
     "windows-apps-src\\monetize\\manage-flight-submissions.md"
@@ -10472,10 +10496,10 @@
   "2878c8c9a50ea49ef10d020dd16d13500690431c": [
     "windows-apps-src\\monetize\\app-metadata-api-for-advertising-networks.md"
   ],
-  "fb8541c45c11668edb0241e530b79387531a631f": [
+  "09a87f3a4bd7f204ecb7843ff3ce58e9e60b9ce7": [
     "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
   ],
-  "09a87f3a4bd7f204ecb7843ff3ce58e9e60b9ce7": [
+  "fb8541c45c11668edb0241e530b79387531a631f": [
     "windows-apps-src\\monetize\\configure-your-app-to-receive-dev-center-notifications.md"
   ],
   "885b999839db8433127d97439d62f57a4c70b273": [
@@ -10660,6 +10684,9 @@
   ],
   "6ffa2ee4d92fc390f254d0772e72e2a8c4c366ef": [
     "windows-apps-src\\monetize\\update-the-package-rollout-percentage-for-an-app-submission.md"
+  ],
+  "2bf263d5586eb1cee0b7a2574304e249bf21c328": [
+    "windows-apps-src\\monetize\\update-your-app-to-the-latest-advertising-libraries.md"
   ],
   "bf3b21863458c232004848cb41613c6cac3d86bd": [
     "windows-apps-src\\monetize\\update-your-app-to-the-latest-advertising-libraries.md"
