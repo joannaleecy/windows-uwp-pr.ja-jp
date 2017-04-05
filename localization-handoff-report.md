@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\layout\navigation-basics.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/066ce779bc7537a0793c4d764ff812ae369f769f?path=windows-apps-src%2Flayout%2Fnavigation-basics.md&_a=contents) | HandedOffSuccess | [Details](#38dcfa2236c05235476e0ec93a03b7518e057a864253)
+ [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/685d98b81b0931cf763cc0fb289a5787afc01e0c?path=windows-apps-src%2FTOC.md&_a=contents) | HandedOffSuccess | [Details](#66b849c35696272ec228773340c94433e8a9d6c37930)
 
 ## Item Details
-##### <a name='38dcfa2236c05235476e0ec93a03b7518e057a864253'></a> Source: [windows-apps-src\layout\navigation-basics.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/066ce779bc7537a0793c4d764ff812ae369f769f?path=windows-apps-src%2Flayout%2Fnavigation-basics.md&_a=contents)
+##### <a name='66b849c35696272ec228773340c94433e8a9d6c37930'></a> Source: [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/685d98b81b0931cf763cc0fb289a5787afc01e0c?path=windows-apps-src%2FTOC.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [navigation-basics.7c4a46b210ca48bfb5649445cc7eeddd5c9ef38c.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/3b5f5609ef4f0137e15987c4d0f44c1d9272c7cc?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fnavigation-basics.7c4a46b210ca48bfb5649445cc7eeddd5c9ef38c.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-04-04 19:21:38
+* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/310804812e076714b418b7706b6bd0be29ad07bd?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-04-05 15:24:45
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,10 +21,10 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\layout\navigation-basics.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Flayout%2Fnavigation-basics.md&_a=contents)
-* Current Handback File: [navigation-basics.7c4a46b210ca48bfb5649445cc7eeddd5c9ef38c.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fnavigation-basics.7c4a46b210ca48bfb5649445cc7eeddd5c9ef38c.ja-jp.xlf&_a=contents)
-* Current Handback Datetime: 2017-03-01 13:53:50
-* Bilingual File: [navigation-basics.7c4a46b210ca48bfb5649445cc7eeddd5c9ef38c.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fnavigation-basics.7c4a46b210ca48bfb5649445cc7eeddd5c9ef38c.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2FTOC.md&_a=contents)
+* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf&_a=contents)
+* Current Handback Datetime: 2017-03-01 13:53:49
+* Bilingual File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 
