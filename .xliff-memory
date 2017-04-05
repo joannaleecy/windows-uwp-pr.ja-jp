@@ -36396,7 +36396,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0a1f314af01a000724816ecec41d2309be85c947.a2c635d1bc26fdb542b25963d4530f3915bd7c3c.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9cdc3f2cdab104f85e6b3370edd4fcecd554f34d.153d90811e52c9e810aad4c0b22b25290905aba9.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -37787,6 +37787,36 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\138faa1f0161b433b07229ee73737adeb232fa76.fb0c5ad8535f856fcc07cded62c6d003528f4441.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\debug-test-perf\\device-portal-plugin.md.c39129cc4aac0320af48121c2d97e3392195d568.HT": {
+      "SourceFilename": "windows-apps-src\\debug-test-perf\\device-portal-plugin.md",
+      "XliffHash": "c39129cc4aac0320af48121c2d97e3392195d568",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\d59ec1a4ff37e6fb798074d98c7ad64e984be11e.554b78dbd1d2198f1ed6254bf3fdec09d4b7f8c3.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\layout\\design-and-ui-intro.md.f9a8db0e98d4e267e61ccd5cd7442498beea3cdb.HT": {
+      "SourceFilename": "windows-apps-src\\layout\\design-and-ui-intro.md",
+      "XliffHash": "f9a8db0e98d4e267e61ccd5cd7442498beea3cdb",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\322d2168bbb64c91b60b5259840845d404c779b2.75ec7ae210eddbaf3e8787e0fcc0fa89b964d963.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\launch-resume\\guidelines-for-background-tasks.md.7e32ac8bb7931e7f3d1b1adceb6f50d9b35ec711.HT": {
+      "SourceFilename": "windows-apps-src\\launch-resume\\guidelines-for-background-tasks.md",
+      "XliffHash": "7e32ac8bb7931e7f3d1b1adceb6f50d9b35ec711",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\070c6d008e703eba60288d28834bb73dcb71fcc2.ac2a57f46f033b3ac5f97558973b9a840fba8e64.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }

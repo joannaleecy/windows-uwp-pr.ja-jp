@@ -1310,6 +1310,9 @@
   "a7ce6c003c24a1efd03cc48419438b59e4f2ec11": [
     "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
   ],
+  "9cdc3f2cdab104f85e6b3370edd4fcecd554f34d": [
+    "windows-apps-src\\debug-test-perf\\device-portal.md"
+  ],
   "0a1f314af01a000724816ecec41d2309be85c947": [
     "windows-apps-src\\debug-test-perf\\device-portal.md"
   ],
@@ -3431,6 +3434,9 @@
   "1fb81ec470d60af63948419cd327de731455bcf4": [
     "windows-apps-src\\launch-resume\\declare-background-tasks-in-the-application-manifest.md"
   ],
+  "070c6d008e703eba60288d28834bb73dcb71fcc2": [
+    "windows-apps-src\\launch-resume\\guidelines-for-background-tasks.md"
+  ],
   "2036e9791eca34dbddbfbfd97390215e8fb592ab": [
     "windows-apps-src\\launch-resume\\guidelines-for-background-tasks.md"
   ],
@@ -3730,6 +3736,9 @@
   ],
   "0f0ff42ec8e3a52ccab3ed6d9015c09510af6378": [
     "windows-apps-src\\layout\\custom-panels-overview.md"
+  ],
+  "322d2168bbb64c91b60b5259840845d404c779b2": [
+    "windows-apps-src\\layout\\design-and-ui-intro.md"
   ],
   "5147d584854c78e32b4c4d4d6f6860124ea9a421": [
     "windows-apps-src\\layout\\design-and-ui-intro.md"
@@ -11452,6 +11461,9 @@
   ],
   "1c019ca0d0ab8bd02155bff0c61f851ed17a36ff": [
     "windows-apps-src\\composition\\visual-layer.md"
+  ],
+  "d59ec1a4ff37e6fb798074d98c7ad64e984be11e": [
+    "windows-apps-src\\debug-test-perf\\device-portal-plugin.md"
   ],
   "8185d71d3e5963c1679111ff2a4ec04cc338cb4b": [
     "windows-apps-src\\debug-test-perf\\device-portal-plugin.md"
