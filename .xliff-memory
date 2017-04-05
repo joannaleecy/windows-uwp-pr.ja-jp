@@ -37779,6 +37779,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\66b849c35696272ec228773340c94433e8a9d6c3.d4cf1f90fbf1e0f047ce59e3c7f3ec4653eadf2d.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics-concepts\\graphics-pipeline.md.c523a41e2a9da51aa2e5f015118a98427f980174.HT": {
+      "SourceFilename": "windows-apps-src\\graphics-concepts\\graphics-pipeline.md",
+      "XliffHash": "c523a41e2a9da51aa2e5f015118a98427f980174",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\138faa1f0161b433b07229ee73737adeb232fa76.fb0c5ad8535f856fcc07cded62c6d003528f4441.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/685d98b81b0931cf763cc0fb289a5787afc01e0c?path=windows-apps-src%2FTOC.md&_a=contents) | HandedOffSuccess | [Details](#66b849c35696272ec228773340c94433e8a9d6c37930)
+ [windows-apps-src\graphics-concepts\graphics-pipeline.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/39d4e8ea11242331843ad5393ba23edd40b2227c?path=windows-apps-src%2Fgraphics-concepts%2Fgraphics-pipeline.md&_a=contents) | HandedOffSuccess | [Details](#138faa1f0161b433b07229ee73737adeb232fa763215)
 
 ## Item Details
-##### <a name='66b849c35696272ec228773340c94433e8a9d6c37930'></a> Source: [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/685d98b81b0931cf763cc0fb289a5787afc01e0c?path=windows-apps-src%2FTOC.md&_a=contents)
+##### <a name='138faa1f0161b433b07229ee73737adeb232fa763215'></a> Source: [windows-apps-src\graphics-concepts\graphics-pipeline.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/39d4e8ea11242331843ad5393ba23edd40b2227c?path=windows-apps-src%2Fgraphics-concepts%2Fgraphics-pipeline.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/310804812e076714b418b7706b6bd0be29ad07bd?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-04-05 15:24:45
+* Handoff File: [graphics-pipeline.03473b7357ac85a5d5914a62a104f3135a838835.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/72a0eadb65f8b0aa685c1b68a82a052c63defe2e?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fgraphics-pipeline.03473b7357ac85a5d5914a62a104f3135a838835.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-04-05 17:19:31
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,10 +21,10 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2FTOC.md&_a=contents)
-* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\graphics-concepts\graphics-pipeline.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fgraphics-concepts%2Fgraphics-pipeline.md&_a=contents)
+* Current Handback File: [graphics-pipeline.03473b7357ac85a5d5914a62a104f3135a838835.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fgraphics-pipeline.03473b7357ac85a5d5914a62a104f3135a838835.ja-jp.xlf&_a=contents)
 * Current Handback Datetime: 2017-03-01 13:53:49
-* Bilingual File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf&_a=contents)
+* Bilingual File: [graphics-pipeline.03473b7357ac85a5d5914a62a104f3135a838835.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fgraphics-pipeline.03473b7357ac85a5d5914a62a104f3135a838835.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 

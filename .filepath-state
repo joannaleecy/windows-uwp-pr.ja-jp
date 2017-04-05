@@ -9506,6 +9506,9 @@
   "2eb6d66a01687da838a1924622573c2b5df05f29": [
     "windows-apps-src\\graphics-concepts\\geometry-shader-stage--gs-.md"
   ],
+  "138faa1f0161b433b07229ee73737adeb232fa76": [
+    "windows-apps-src\\graphics-concepts\\graphics-pipeline.md"
+  ],
   "af583deb51b93bffc05c4371466fa8412bb0476d": [
     "windows-apps-src\\graphics-concepts\\graphics-pipeline.md"
   ],
