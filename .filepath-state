@@ -7574,6 +7574,9 @@
   "b265fb5c6d01f083fac16c36f4d1c12e023a62b6": [
     "windows-apps-src\\publish\\microsoft-advertising-payment-process.md"
   ],
+  "4ba1471c6517e2853998b5f9d32060416fbec1bc": [
+    "windows-apps-src\\porting\\desktop-to-uwp-extensions.md"
+  ],
   "c45a60dd9c8c23760e99157b3f41925d27ecda98": [
     "windows-apps-src\\porting\\desktop-to-uwp-extensions.md"
   ],
