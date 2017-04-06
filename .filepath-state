@@ -908,6 +908,9 @@
   "1b211728c7147e8effeee60604ff5eb531e406af": [
     "windows-apps-src\\controls-and-patterns\\radio-button.md"
   ],
+  "5ddcae14d2bf689775e3ef21121dd7ec30aecf2a": [
+    "windows-apps-src\\controls-and-patterns\\resourcedictionary-and-xaml-resource-references.md"
+  ],
   "40f1bdad88ebcbd226dc935730766449d40d4595": [
     "windows-apps-src\\controls-and-patterns\\resourcedictionary-and-xaml-resource-references.md"
   ],
@@ -1208,6 +1211,9 @@
   "fc26bef8f9d94c7af78689e9c7ab0ef1d2f06caa": [
     "windows-apps-src\\controls-and-patterns\\web-view.md"
   ],
+  "16540e3a22521bc23fc2b8705e05b92adf64fe1a": [
+    "windows-apps-src\\controls-and-patterns\\xaml-theme-resources.md"
+  ],
   "a591600ac31b1582d4ce133a6539884d4616639f": [
     "windows-apps-src\\controls-and-patterns\\xaml-theme-resources.md"
   ],
@@ -1472,6 +1478,9 @@
   "b110376a533b2b39aad497bf395b1433585f65ed": [
     "windows-apps-src\\debug-test-perf\\optimize-file-access.md"
   ],
+  "20bb4658d3c3229ea3fa44015dda7086e835f7cf": [
+    "windows-apps-src\\debug-test-perf\\optimize-gridview-and-listview.md"
+  ],
   "3cd3695f6a7ec9c2d29fdd1826635973aab809a9": [
     "windows-apps-src\\debug-test-perf\\optimize-gridview-and-listview.md"
   ],
@@ -1702,6 +1711,9 @@
   ],
   "edafffe1dbed2c02beab78d846a41ff1a282ade5": [
     "windows-apps-src\\devices-sensors\\enable-device-capabilities.md"
+  ],
+  "3688cee5c906a85084d306473c20271ba11ec66c": [
+    "windows-apps-src\\devices-sensors\\enable-usermode-access.md"
   ],
   "d96d01216a37c4e8dbcd0fcd0eb83ccb4859b288": [
     "windows-apps-src\\devices-sensors\\enable-usermode-access.md"
@@ -3707,6 +3719,9 @@
   "18fd71d8d38c1c12992c934c4fbaf188083fe0ab": [
     "windows-apps-src\\layout\\alignment-margin-padding.md"
   ],
+  "e8fa304ff82617aaec30a3f2300ebf4d986850b1": [
+    "windows-apps-src\\layout\\boxpanel-example-custom-panel.md"
+  ],
   "54144561884ba5ac5b4115db6cd30d774dac2584": [
     "windows-apps-src\\layout\\boxpanel-example-custom-panel.md"
   ],
@@ -5608,6 +5623,9 @@
   ],
   "86263a37d3f8554fd656dd20af1f3766976e574b": [
     "windows-apps-src\\publish\\managing-your-profile.md"
+  ],
+  "90f3e27036b276ef32173c51b2a8acab8c474bbb": [
+    "windows-apps-src\\publish\\mobile-operator-billing.md"
   ],
   "8fd1e9e2350152f050db2eeaba94a695f1a4657a": [
     "windows-apps-src\\publish\\mobile-operator-billing.md"
@@ -7576,6 +7594,9 @@
   ],
   "176a66a571e152a3c6eed97692e5e0d1e1a9d113": [
     "windows-apps-src\\porting\\desktop-to-uwp-extensions.md"
+  ],
+  "c05844935aad13fe2df67e08272d088564e65ea1": [
+    "windows-apps-src\\porting\\hwa-access-features.md"
   ],
   "c0a1f62a8568367dae926211be81974281645731": [
     "windows-apps-src\\porting\\hwa-access-features.md"
