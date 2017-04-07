@@ -37949,6 +37949,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\4ba1471c6517e2853998b5f9d32060416fbec1bc.4307f04729ddf05e694e2ae149a77665bb8b8a88.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\globalizing\\using-mrt-for-converted-desktop-apps-and-games.md.6fdd35e6238a50f714bb51966443cf0f9475e8f3.HT": {
+      "SourceFilename": "windows-apps-src\\globalizing\\using-mrt-for-converted-desktop-apps-and-games.md",
+      "XliffHash": "6fdd35e6238a50f714bb51966443cf0f9475e8f3",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a4daa6f9cf6162c7e63a3e2ad566dbd5977fff22.bc6cc97dcdea3d4494d5a54470f033cbf1570c7d.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
