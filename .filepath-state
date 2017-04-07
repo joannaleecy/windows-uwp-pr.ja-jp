@@ -7724,6 +7724,9 @@
   "769b548da172e6f29f290b3799bc455d9e9a2670": [
     "windows-apps-src\\xbox-apps\\development-lanes-unity-versioning.md"
   ],
+  "339ca70a0bf8e1cb4b1a966ca59ded6d85dfa04f": [
+    "windows-apps-src\\style\\fonts.md"
+  ],
   "7d72d5251000e16349efa8d4f7716e12d22764d6": [
     "windows-apps-src\\style\\fonts.md"
   ],
@@ -10829,6 +10832,9 @@
   "bd378fa8c4c159a1d22b899385dc27286de5984e": [
     "windows-apps-src\\porting\\desktop-to-uwp-known-issues.md"
   ],
+  "3466a819b23876ce6a3f5e730b39ad13f5aaf276": [
+    "windows-apps-src\\porting\\desktop-to-uwp-prepare.md"
+  ],
   "89907274c1ff9d4f05f7aeea41a9515ab1948f9d": [
     "windows-apps-src\\porting\\desktop-to-uwp-prepare.md"
   ],
@@ -11557,6 +11563,9 @@
   ],
   "29810e4a362651e24c45228fc2546bf1f38a921b": [
     "windows-apps-src\\packaging\\create-cgm.md"
+  ],
+  "c1ab3b539d23ebb6f4f96db52c629460c5ae85f9": [
+    "windows-apps-src\\packaging\\optional-packages.md"
   ],
   "9d44194cc1560681244a6fc1e05b70289dd46822": [
     "windows-apps-src\\packaging\\optional-packages.md"

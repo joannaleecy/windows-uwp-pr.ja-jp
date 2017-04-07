@@ -36876,7 +36876,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9d44194cc1560681244a6fc1e05b70289dd46822.e1c70bd9048ccc18dc78e4d1b289ec3fad5ea8ae.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c1ab3b539d23ebb6f4f96db52c629460c5ae85f9.6987b93de0c4bd0b1f8f69f014d13a0762728d5a.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -37987,6 +37987,26 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\7f05fb3400118ea5f1e3f29de30b71e6d6ac4019.76a01fcf7065857e0c88a7dacb393178869188f9.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\style\\fonts.md.2ce38dea52751bf0e30cd047d21a3b89e5c4dd84.HT": {
+      "SourceFilename": "windows-apps-src\\style\\fonts.md",
+      "XliffHash": "2ce38dea52751bf0e30cd047d21a3b89e5c4dd84",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\339ca70a0bf8e1cb4b1a966ca59ded6d85dfa04f.1469ab817b359e4ea03e1a93336457c46d545729.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\desktop-to-uwp-prepare.md.fe863120d9e11592233cfc2d99a04ea7717a39f4.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\desktop-to-uwp-prepare.md",
+      "XliffHash": "fe863120d9e11592233cfc2d99a04ea7717a39f4",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\3466a819b23876ce6a3f5e730b39ad13f5aaf276.5bbd2bdeb4df93c9c4cccec290dd989c9d661714.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }
