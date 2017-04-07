@@ -7598,6 +7598,9 @@
   "176a66a571e152a3c6eed97692e5e0d1e1a9d113": [
     "windows-apps-src\\porting\\desktop-to-uwp-extensions.md"
   ],
+  "5887f2ff4095ff64ff266d78641a7de44fe81fab": [
+    "windows-apps-src\\porting\\hwa-access-features.md"
+  ],
   "c05844935aad13fe2df67e08272d088564e65ea1": [
     "windows-apps-src\\porting\\hwa-access-features.md"
   ],
@@ -11519,6 +11522,9 @@
   "1c019ca0d0ab8bd02155bff0c61f851ed17a36ff": [
     "windows-apps-src\\composition\\visual-layer.md"
   ],
+  "7f05fb3400118ea5f1e3f29de30b71e6d6ac4019": [
+    "windows-apps-src\\debug-test-perf\\device-portal-plugin.md"
+  ],
   "d59ec1a4ff37e6fb798074d98c7ad64e984be11e": [
     "windows-apps-src\\debug-test-perf\\device-portal-plugin.md"
   ],
@@ -11557,6 +11563,9 @@
   ],
   "0b8ee004dac8a907e283390922056383e8022060": [
     "windows-apps-src\\packaging\\streaming-install.md"
+  ],
+  "e934f26b2f1a479195e76fb732724c2b9989b0c3": [
+    "windows-apps-src\\whats-new\\windows-10-version-1703.md"
   ],
   "6a494ed43c8d262e74d68bfadcb2dfc5e936a484": [
     "windows-apps-src\\whats-new\\windows-10-version-1703.md"
