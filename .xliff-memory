@@ -10586,7 +10586,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\bccc087b561699ec72bb99cd160d532b95c49530.2b8d1da80fb6523d52716fc906a1cb674bfa24d1.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\52418a08f1db51569eb63fd61a4d0b12745f643a.e2be516c4a97609f10c6b39539670ef1b2661490.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.ja-jp\\master\\midi.ea90da0ed7be0e0a24e515a916b12e74f5adce06.ja-jp.xlf",
       "LocXliffCommit": "14c84f4f3190a8231e848b2f586d80bc5a0f80c8"
     },
@@ -37466,7 +37466,7 @@
       "TranslationType": 1,
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
-      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\4ca8e015def40613e0b457a86642d6a78ec8f7b2.665c3bdd215c2388456d19a7bf7128b467bef2c2.xml",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\95ddc64aa04e56f7aed7c85a6d9ac3483ede650f.1134c99af5e431a0e1a885d455543d12543479d8.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     },
@@ -38007,6 +38007,76 @@
       "IsArchived": false,
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\3466a819b23876ce6a3f5e730b39ad13f5aaf276.5bbd2bdeb4df93c9c4cccec290dd989c9d661714.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\audio-video-camera\\audio-graphs.md.a7aac01a0ccaebb67e18f5c062534056766f1c40.HT": {
+      "SourceFilename": "windows-apps-src\\audio-video-camera\\audio-graphs.md",
+      "XliffHash": "a7aac01a0ccaebb67e18f5c062534056766f1c40",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1b286a9fcfd71bb2dc219fb3c03a363a41d24346.3ffafe4236b905044d7a09ce4381ef24a7abfdb3.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\audio-video-camera\\dash-profile-support.md.bb825c598b986af744f38e00cf6c8d829980fabd.HT": {
+      "SourceFilename": "windows-apps-src\\audio-video-camera\\dash-profile-support.md",
+      "XliffHash": "bb825c598b986af744f38e00cf6c8d829980fabd",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c7f95f85fc37f5a9ee9450c05e89ec13d233e075.d67261ea89680b1b0e35abdeb6b717ee05fadd3c.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\audio-video-camera\\simple-camera-preview-access.md.58f6a55c511b003e6056f791a4c8db44c5fabdfd.HT": {
+      "SourceFilename": "windows-apps-src\\audio-video-camera\\simple-camera-preview-access.md",
+      "XliffHash": "58f6a55c511b003e6056f791a4c8db44c5fabdfd",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a2d6bcd5c58844def50547c1b4e29f7783e8ef3e.3fe4f5c048e8c8fafe4baf1f82e7f4b08ad40b25.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\audio-video-camera\\adaptive-streaming.md.39e251852df67742a101b53ab108d1df0cb811cf.HT": {
+      "SourceFilename": "windows-apps-src\\audio-video-camera\\adaptive-streaming.md",
+      "XliffHash": "39e251852df67742a101b53ab108d1df0cb811cf",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c758fd1895a4b6c2c250e72c64d8df451fc32d04.43d522d29de0e3420d8f1078b6ae7b5891e9fa8b.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\style\\connected-animation.md.70dfc15b2ff33f5a2a6b3202fe10ebe0da2670dd.HT": {
+      "SourceFilename": "windows-apps-src\\style\\connected-animation.md",
+      "XliffHash": "70dfc15b2ff33f5a2a6b3202fe10ebe0da2670dd",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\48cbbea5b3fca366ebfecc8d66fe1f399863b8b0.311deccd6b37e759de6d74ecebe0c3923f4b4555.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\audio-video-camera\\play-audio-and-video-with-mediaplayer.md.9d328f62acb1e9a7699541bc8963b510c8e6c1c7.HT": {
+      "SourceFilename": "windows-apps-src\\audio-video-camera\\play-audio-and-video-with-mediaplayer.md",
+      "XliffHash": "9d328f62acb1e9a7699541bc8963b510c8e6c1c7",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\4119111d47698c7c47efc74073b9fca90cf35718.46a74daf366bcdfe4dccf223c7abd208a7fc2a87.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\composition\\composition-brushes.md.ddfb08ad6291e22a640319fac7bc9c6af2a1d676.HT": {
+      "SourceFilename": "windows-apps-src\\composition\\composition-brushes.md",
+      "XliffHash": "ddfb08ad6291e22a640319fac7bc9c6af2a1d676",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\483ad1146fe47e20b486a4ece59eab12368f0d4e.ef9cf1ed86880c63b52e7c9aa5341d23870ed9db.xml",
       "LocXliff": null,
       "LocXliffCommit": null
     }

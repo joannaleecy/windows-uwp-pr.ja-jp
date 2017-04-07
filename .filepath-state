@@ -233,6 +233,9 @@
   "77533d4aca3cc84e0a021a0faac57f5afbbefdd7": [
     "windows-apps-src\\app-to-app\\use-edp-to-protect-enterprise-data-transferred-between-apps.md"
   ],
+  "c758fd1895a4b6c2c250e72c64d8df451fc32d04": [
+    "windows-apps-src\\audio-video-camera\\adaptive-streaming.md"
+  ],
   "27b3342065d77e887e35c20ad2a2a37536b59cfe": [
     "windows-apps-src\\audio-video-camera\\adaptive-streaming.md"
   ],
@@ -265,6 +268,9 @@
   ],
   "574b925d8c291d51caa683616fdd47b1b8c972b0": [
     "windows-apps-src\\audio-video-camera\\audio-device-information-properties.md"
+  ],
+  "1b286a9fcfd71bb2dc219fb3c03a363a41d24346": [
+    "windows-apps-src\\audio-video-camera\\audio-graphs.md"
   ],
   "5d98b5366160ca52c02330a05e8b8d749e2296bd": [
     "windows-apps-src\\audio-video-camera\\audio-graphs.md"
@@ -464,6 +470,9 @@
   "bc49b2842f541abebefea4cbbb70d206124c7fa1": [
     "windows-apps-src\\audio-video-camera\\media-compositions-and-editing.md"
   ],
+  "95ddc64aa04e56f7aed7c85a6d9ac3483ede650f": [
+    "windows-apps-src\\audio-video-camera\\media-playback-with-mediasource.md"
+  ],
   "4ca8e015def40613e0b457a86642d6a78ec8f7b2": [
     "windows-apps-src\\audio-video-camera\\media-playback-with-mediasource.md"
   ],
@@ -475,6 +484,9 @@
   ],
   "6eb9c4f33a339c37d4c2db8af7e284713b3b670f": [
     "windows-apps-src\\audio-video-camera\\media-playback-with-mediasource.md"
+  ],
+  "52418a08f1db51569eb63fd61a4d0b12745f643a": [
+    "windows-apps-src\\audio-video-camera\\midi.md"
   ],
   "bccc087b561699ec72bb99cd160d532b95c49530": [
     "windows-apps-src\\audio-video-camera\\midi.md"
@@ -523,6 +535,9 @@
   ],
   "c9a34b531a290ac24eb9faa52dc6beb699499416": [
     "windows-apps-src\\audio-video-camera\\set-media-encoding-properties.md"
+  ],
+  "a2d6bcd5c58844def50547c1b4e29f7783e8ef3e": [
+    "windows-apps-src\\audio-video-camera\\simple-camera-preview-access.md"
   ],
   "5e6a38c34f080310eeca7e904ef21e399639de71": [
     "windows-apps-src\\audio-video-camera\\simple-camera-preview-access.md"
@@ -8006,6 +8021,9 @@
   "a9be919c7fe14164ee0879a4ff336e8bb866d0fa": [
     "windows-apps-src\\audio-video-camera\\media-playback.md"
   ],
+  "4119111d47698c7c47efc74073b9fca90cf35718": [
+    "windows-apps-src\\audio-video-camera\\play-audio-and-video-with-mediaplayer.md"
+  ],
   "747a923e74f5076f40eee246a8c07510fbf65db5": [
     "windows-apps-src\\audio-video-camera\\play-audio-and-video-with-mediaplayer.md"
   ],
@@ -11435,6 +11453,9 @@
   "b2e86cd6f7a888fa229b452b7af4b1e34f89c428": [
     "windows-apps-src\\get-started\\get-started-tutorial-game-js3d.md"
   ],
+  "c7f95f85fc37f5a9ee9450c05e89ec13d233e075": [
+    "windows-apps-src\\audio-video-camera\\dash-profile-support.md"
+  ],
   "9ca8f2d1783a73ae38fed1d3ee1e58b809ddd2aa": [
     "windows-apps-src\\audio-video-camera\\dash-profile-support.md"
   ],
@@ -11498,11 +11519,11 @@
   "b76a787d44cf85e592d7c0df4edd26e139c06f57": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-primary-tile-apis.md"
   ],
-  "bc8995bc2dcf496867595379663de2e01291e5a2": [
-    "windows-apps-src\\layout\\content-as-objects.md"
-  ],
   "d8c80737bf940881e0963fed24a5440778242d62": [
     "windows-apps-src\\style\\balancing-style-and-consistency.md"
+  ],
+  "48cbbea5b3fca366ebfecc8d66fe1f399863b8b0": [
+    "windows-apps-src\\style\\connected-animation.md"
   ],
   "2ab2f18bb2add8916d2dd78c42b44984a9d2bc40": [
     "windows-apps-src\\style\\connected-animation.md"
@@ -11512,6 +11533,9 @@
   ],
   "ef6a4e62b2f33c614ddd34872a4af645dac55ba3": [
     "windows-apps-src\\xaml-platform\\x-load-attribute.md"
+  ],
+  "483ad1146fe47e20b486a4ece59eab12368f0d4e": [
+    "windows-apps-src\\composition\\composition-brushes.md"
   ],
   "228ff167796871f6c6ffd1d6c21dc89e89dda78d": [
     "windows-apps-src\\composition\\composition-brushes.md"
