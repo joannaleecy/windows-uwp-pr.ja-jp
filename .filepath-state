@@ -7418,6 +7418,9 @@
   "c4fabe12c230b3ce9a5cc3f211bacc524acbd4a2": [
     "windows-apps-src\\xbox-apps\\wdp-smb-api.md"
   ],
+  "5e4e16f0ebe8f6ac1d2600addba93bb0d67aabc2": [
+    "windows-apps-src\\xbox-apps\\wdp-xboxsettings-api.md"
+  ],
   "43e4bb289d12439bbc0f6de347d187b067288d51": [
     "windows-apps-src\\xbox-apps\\wdp-xboxsettings-api.md"
   ],
@@ -11644,5 +11647,8 @@
   ],
   "a4daa6f9cf6162c7e63a3e2ad566dbd5977fff22": [
     "windows-apps-src\\globalizing\\using-mrt-for-converted-desktop-apps-and-games.md"
+  ],
+  "13e1c5670d360b7732038e6a6e78aa55eb4f6756": [
+    "windows-apps-src\\xbox-apps\\wdp-xboxinfo-api.md"
   ]
 }
