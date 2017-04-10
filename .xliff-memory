@@ -38099,6 +38099,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5e4e16f0ebe8f6ac1d2600addba93bb0d67aabc2.70bed68e93ff1d357cef3a7c447ab94db4d4a6d3.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\winrt-components\\raising-events-in-windows-runtime-components.md.0446ad51385232fa879bc7b92b9f9160915fdcf4.HT": {
+      "SourceFilename": "windows-apps-src\\winrt-components\\raising-events-in-windows-runtime-components.md",
+      "XliffHash": "0446ad51385232fa879bc7b92b9f9160915fdcf4",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\253500f2f2e77f1d32868107fc42210510d6e20d.21c386e7e755de18f4372b58ad8f97425ef6053b.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

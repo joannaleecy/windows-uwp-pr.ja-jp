@@ -6605,6 +6605,9 @@
   "cd065bb0288bffb903889269b30db59da2c4d7f2": [
     "windows-apps-src\\winrt-components\\passing-arrays-to-a-windows-runtime-component.md"
   ],
+  "253500f2f2e77f1d32868107fc42210510d6e20d": [
+    "windows-apps-src\\winrt-components\\raising-events-in-windows-runtime-components.md"
+  ],
   "12ab21497956d103d2193dc3edf182a3f4ecf49e": [
     "windows-apps-src\\winrt-components\\raising-events-in-windows-runtime-components.md"
   ],
