@@ -38109,6 +38109,106 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\253500f2f2e77f1d32868107fc42210510d6e20d.21c386e7e755de18f4372b58ad8f97425ef6053b.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\composition\\lighting.md.bdfc2e44d1280de3ed83ecf19d89ca093fe7c8f9.HT": {
+      "SourceFilename": "windows-apps-src\\composition\\lighting.md",
+      "XliffHash": "bdfc2e44d1280de3ed83ecf19d89ca093fe7c8f9",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\38161fad09ed8f7e11ef30213eab353e59e83db3.ac733fc066f1e56356676f9822e84cffedb6f427.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\change-the-billing-state-of-a-subscription-for-a-user.md.611b158abd911d6519a3d60890b7c8e3af81864e.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\change-the-billing-state-of-a-subscription-for-a-user.md",
+      "XliffHash": "611b158abd911d6519a3d60890b7c8e3af81864e",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\21cc44e1f8537e5352323e72774dce6559e9de79.b5944637c9ad69ecd5ed755c8e8956b7bdc5751a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\TOC.md.db5933c524fb633d3b846c6b5756fe3a191b3597.HT": {
+      "SourceFilename": "windows-apps-src\\TOC.md",
+      "XliffHash": "db5933c524fb633d3b846c6b5756fe3a191b3597",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\bc6c483458759527af3f463d1d3507f4d74cd693.a59f8fec0de53edb3e7c8a0f6bc101980a140a15.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\composition\\composition-brushes.md.f74b28d9ca4ed29c2ed2e509bfd4e00c208ccfb7.HT": {
+      "SourceFilename": "windows-apps-src\\composition\\composition-brushes.md",
+      "XliffHash": "f74b28d9ca4ed29c2ed2e509bfd4e00c208ccfb7",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\fe813f8b21753ebe64b1e6c12e44aee37870c1d8.201f1d8117e19e053396ffc662a00ac96bdb6ae7.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md.65b95f12af3fe2876d6a409a1a4a31ef6575e055.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md",
+      "XliffHash": "65b95f12af3fe2876d6a409a1a4a31ef6575e055",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b6d99b73c5a69cf811cd00d57c770e33ad385929.2c396594b3ddef990b484dc820927db7c420515b.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\packaging\\app-capability-declarations.md.a9c0a7449c416e6f98e6f34c100d4eebe975afda.HT": {
+      "SourceFilename": "windows-apps-src\\packaging\\app-capability-declarations.md",
+      "XliffHash": "a9c0a7449c416e6f98e6f34c100d4eebe975afda",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5f090ec9ab661594767f0b983bf761bada345da9.b067596bfab608dbe401db71673d12f64a830b62.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\monetize\\get-subscriptions-for-a-user.md.c6f9c566d710ab85b058c62bba1e87a6ffe499a1.HT": {
+      "SourceFilename": "windows-apps-src\\monetize\\get-subscriptions-for-a-user.md",
+      "XliffHash": "c6f9c566d710ab85b058c62bba1e87a6ffe499a1",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\2bdadfdef25aeba46c1841fd99ba411a7c91b9f2.d7c2b9f1eb76f28d8e4db1741a58e1af07db511e.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics\\using-brushes.md.d5793606ec6e5e419e40fbf8468c3e213d3f7647.HT": {
+      "SourceFilename": "windows-apps-src\\graphics\\using-brushes.md",
+      "XliffHash": "d5793606ec6e5e419e40fbf8468c3e213d3f7647",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\e0d1f20224437106b468c9ba6602e6ce952ea0bf.303a4b62c5a11fd79021e1da9285f7ddbf364c05.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\composition\\composition-effects.md.3454d8b36210d59288dbcde1e1e00bfd2e9ac2d0.HT": {
+      "SourceFilename": "windows-apps-src\\composition\\composition-effects.md",
+      "XliffHash": "3454d8b36210d59288dbcde1e1e00bfd2e9ac2d0",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\550677b8491a8ded5755fa9c90b987e81c0db30d.836d203bc64b010eff5e020c7b3417947098838b.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\composition\\using-the-visual-layer-with-xaml.md.265c8d7eced8990f66e430d6f167cf4f126203be.HT": {
+      "SourceFilename": "windows-apps-src\\composition\\using-the-visual-layer-with-xaml.md",
+      "XliffHash": "265c8d7eced8990f66e430d6f167cf4f126203be",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5a45b5d4fd60fd3854634c4c8d93d25391428d56.c5b446b212e464228d7d6d0b4615842a726992a1.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

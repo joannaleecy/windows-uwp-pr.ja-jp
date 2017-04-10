@@ -2924,6 +2924,9 @@
   "a02ae1447b80a667b4f6790ff498ea5add9fd4a0": [
     "windows-apps-src\\graphics\\transforms-overview.md"
   ],
+  "e0d1f20224437106b468c9ba6602e6ce952ea0bf": [
+    "windows-apps-src\\graphics\\using-brushes.md"
+  ],
   "71bac3ed2c62df9b47bf16881acbc5e401697a5f": [
     "windows-apps-src\\graphics\\using-brushes.md"
   ],
@@ -4589,6 +4592,9 @@
   "987d52022489f3ad1eabef047ee6114de448d4ec": [
     "windows-apps-src\\monetize\\using-windows-store-services.md"
   ],
+  "b6d99b73c5a69cf811cd00d57c770e33ad385929": [
+    "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md"
+  ],
   "ea3171db6edcaaf2cec2d474aff6a9e814ec1e9d": [
     "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md"
   ],
@@ -4720,6 +4726,9 @@
   ],
   "d6ba2bf4ee3884b27c7c3666944cfea1357296a4": [
     "windows-apps-src\\networking\\which-networking-technology.md"
+  ],
+  "5f090ec9ab661594767f0b983bf761bada345da9": [
+    "windows-apps-src\\packaging\\app-capability-declarations.md"
   ],
   "a65a17bf6801deeb138194d584fc85f0576cd141": [
     "windows-apps-src\\packaging\\app-capability-declarations.md"
@@ -6419,6 +6428,9 @@
   "2a7c5930752c759c3875826d0046603a63981341": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "bc6c483458759527af3f463d1d3507f4d74cd693": [
+    "windows-apps-src\\TOC.md"
+  ],
   "ad17d9e5a27a947adca283b317093c5950437516": [
     "windows-apps-src\\TOC.md"
   ],
@@ -7715,6 +7727,9 @@
   "6f4ce0f0f1d7fc55bcad35eda872d89e156f105f": [
     "windows-apps-src\\xbox-apps\\uwp-fiddler.md"
   ],
+  "b5804478dd5358e5634289a9e7c081263890cbd9": [
+    "windows-apps-src\\xbox-apps\\wdp-fiddler-api.md"
+  ],
   "02b1a056cd7e711b1fc4533c353570209153f9e8": [
     "windows-apps-src\\xbox-apps\\wdp-fiddler-api.md"
   ],
@@ -7725,9 +7740,6 @@
     "windows-apps-src\\xbox-apps\\wdp-fiddler-api.md"
   ],
   "0d7bd1092b7c75336c9ce25274500bdbb9029b26": [
-    "windows-apps-src\\xbox-apps\\wdp-fiddler-api.md"
-  ],
-  "b5804478dd5358e5634289a9e7c081263890cbd9": [
     "windows-apps-src\\xbox-apps\\wdp-fiddler-api.md"
   ],
   "3b796c31e6b284cea628ba68a34799cf9317ee2e": [
@@ -11360,6 +11372,9 @@
   "a83f7b37ee84d87bae0285a987628d14cfab1d69": [
     "windows-apps-src\\get-started\\get-started-tutorial-game-js2d.md"
   ],
+  "550677b8491a8ded5755fa9c90b987e81c0db30d": [
+    "windows-apps-src\\composition\\composition-effects.md"
+  ],
   "769727c8e128046cac44767dcd05b1b952af51ee": [
     "windows-apps-src\\composition\\composition-effects.md"
   ],
@@ -11474,6 +11489,18 @@
   "51d3b90dd7f202fd86285bb3f95c78ded4a8b6d8": [
     "windows-apps-src\\devices-sensors\\deploy-scanner-profiles-with-mdm.md"
   ],
+  "21cc44e1f8537e5352323e72774dce6559e9de79": [
+    "windows-apps-src\\monetize\\change-the-billing-state-of-a-subscription-for-a-user.md"
+  ],
+  "527b35d6d83dc54f68838c67c33cfc266edf5275": [
+    "windows-apps-src\\monetize\\change-the-billing-state-of-a-subscription-for-a-user.md"
+  ],
+  "2bdadfdef25aeba46c1841fd99ba411a7c91b9f2": [
+    "windows-apps-src\\monetize\\get-subscriptions-for-a-user.md"
+  ],
+  "5c8a612f5bec1f3cb82a4042ba8c7fcab8cfadfd": [
+    "windows-apps-src\\monetize\\get-subscriptions-for-a-user.md"
+  ],
   "fca846b2a7ec117a99aff1764eb0acffb1a9f11f": [
     "windows-apps-src\\monetize\\download-the-cab-file-for-an-oem-hardware-error.md"
   ],
@@ -11540,6 +11567,15 @@
   "ef6a4e62b2f33c614ddd34872a4af645dac55ba3": [
     "windows-apps-src\\xaml-platform\\x-load-attribute.md"
   ],
+  "26ba653068548cb950a9e61d6374531905ac401d": [
+    "windows-apps-src\\xbox-apps\\uwp-deployinfo-api.md"
+  ],
+  "ab954010d51e93712ad24b727fc067c3974d87d9": [
+    "windows-apps-src\\xbox-apps\\uwp-networkcredentials-api.md"
+  ],
+  "fe813f8b21753ebe64b1e6c12e44aee37870c1d8": [
+    "windows-apps-src\\composition\\composition-brushes.md"
+  ],
   "483ad1146fe47e20b486a4ece59eab12368f0d4e": [
     "windows-apps-src\\composition\\composition-brushes.md"
   ],
@@ -11551,6 +11587,9 @@
   ],
   "2d4ae9fc62f53baf293399bf38f500c3a9fe7b57": [
     "windows-apps-src\\composition\\composition-visual-tree.md"
+  ],
+  "5a45b5d4fd60fd3854634c4c8d93d25391428d56": [
+    "windows-apps-src\\composition\\using-the-visual-layer-with-xaml.md"
   ],
   "e2c131d973a281f771e1f93a9e29a4a31e329086": [
     "windows-apps-src\\composition\\using-the-visual-layer-with-xaml.md"
@@ -11653,5 +11692,8 @@
   ],
   "13e1c5670d360b7732038e6a6e78aa55eb4f6756": [
     "windows-apps-src\\xbox-apps\\wdp-xboxinfo-api.md"
+  ],
+  "38161fad09ed8f7e11ef30213eab353e59e83db3": [
+    "windows-apps-src\\composition\\lighting.md"
   ]
 }
