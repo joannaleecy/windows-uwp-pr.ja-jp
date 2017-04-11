@@ -2879,6 +2879,74 @@
   "9639f959fb2b261997e7e44598e13c21de285f1a": [
     "windows-apps-src\\graphics\\animations-overview.md"
   ],
+  "bda0f17419edc679a84c11b1966b18e43c6d04af": [
+    "windows-apps-src\\graphics\\composition-animation.md"
+  ],
+  "5f59b5d0ab906af78d41739286a196a9f2b2794f": [
+    "windows-apps-src\\graphics\\composition-animation.md",
+    "windows-apps-src\\composition\\composition-animation.md"
+  ],
+  "dd4e14654954fe5cbc61cfcceca10f988bb13ec2": [
+    "windows-apps-src\\graphics\\composition-animation.md"
+  ],
+  "85b2e5006e8f2b9d2d2f78bab044032210011f41": [
+    "windows-apps-src\\graphics\\composition-animation.md"
+  ],
+  "5cf1217a187ad4d271a4fb31fe4e5abb6127cd05": [
+    "windows-apps-src\\graphics\\composition-animation.md"
+  ],
+  "30096bcaaf468b8b646103f22ff9f5b29dd3a09f": [
+    "windows-apps-src\\graphics\\composition-brushes.md"
+  ],
+  "71ffd720dac0be29f003da965054db16ae8e39c0": [
+    "windows-apps-src\\graphics\\composition-brushes.md"
+  ],
+  "9affb4fab1931c7584d86bfb07797345788c28f9": [
+    "windows-apps-src\\graphics\\composition-brushes.md"
+  ],
+  "9420c902029b9b464861922ff235a8cf601fe3d9": [
+    "windows-apps-src\\graphics\\composition-effects.md"
+  ],
+  "769727c8e128046cac44767dcd05b1b952af51ee": [
+    "windows-apps-src\\graphics\\composition-effects.md",
+    "windows-apps-src\\composition\\composition-effects.md"
+  ],
+  "645dd56f4e15b48f93c66deece44c696b599016f": [
+    "windows-apps-src\\graphics\\composition-native-interop.md"
+  ],
+  "8be1827350e8489106ff29bd2a1f310fd06dea38": [
+    "windows-apps-src\\graphics\\composition-native-interop.md"
+  ],
+  "92301637cabdd6ca0dd2d66435ab1d1be809f075": [
+    "windows-apps-src\\graphics\\composition-native-interop.md"
+  ],
+  "697f136a10ddc776b9b94c881b202a9084a66684": [
+    "windows-apps-src\\graphics\\composition-native-interop.md"
+  ],
+  "ff51247575ee1b5097a04a5cd5907093cb6c1c8e": [
+    "windows-apps-src\\graphics\\composition-native-interop.md"
+  ],
+  "4d1bf75fee06c8f4c31ce23c89bf6267ab9e6394": [
+    "windows-apps-src\\graphics\\composition-native-interop.md"
+  ],
+  "c2086e703e3972d4dd38dc1b7147bfa5f01231cf": [
+    "windows-apps-src\\graphics\\composition-native-interop.md"
+  ],
+  "b5308c8023990996a93277dd1bcfb8298c0bbf4f": [
+    "windows-apps-src\\graphics\\composition-native-interop.md"
+  ],
+  "da4f4b5cb51c23429fcede5d86317ca3ed9d79b0": [
+    "windows-apps-src\\graphics\\composition-visual-tree.md"
+  ],
+  "85def1cb24ee6915d0835b2fb071e92105367d26": [
+    "windows-apps-src\\graphics\\composition-visual-tree.md"
+  ],
+  "e6e40d60708189235c02a21df7e232d52ecfbfe4": [
+    "windows-apps-src\\graphics\\composition-visual-tree.md"
+  ],
+  "5d432b5e5d83faa2dda86f6cddd6dc02bc773e6a": [
+    "windows-apps-src\\graphics\\composition-visual-tree.md"
+  ],
   "193e9cbbcfae3d01b6a6aecd78993947f2098184": [
     "windows-apps-src\\graphics\\drawing-shapes.md"
   ],
@@ -2938,6 +3006,12 @@
   ],
   "3ff9bf4810f69c408ee572572f6d2a6052ca3bac": [
     "windows-apps-src\\graphics\\using-brushes.md"
+  ],
+  "5b808b96b9fe7edeac4f025962f40152917628f9": [
+    "windows-apps-src\\graphics\\visual-layer.md"
+  ],
+  "d1c676808b8b63f42b89a22862eaab63ddc94141": [
+    "windows-apps-src\\graphics\\visual-layer.md"
   ],
   "5b07b46627ca19f2a3cc02e72212a9870d778c7c": [
     "windows-apps-src\\home.md"
@@ -7133,6 +7207,9 @@
   "b12124afbb80b62c65696e773690246084a5a6a7": [
     "windows-apps-src\\xbox-apps\\system-resource-allocation.md"
   ],
+  "0a37c88ffbe2c383b3ba2d9c7bd0bacca373cf54": [
+    "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md"
+  ],
   "7d0fffaae1daee1c797571141ea9624af1b90769": [
     "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md"
   ],
@@ -7855,6 +7932,21 @@
   ],
   "ad24e9a52458b826f3ce1bc7aba3dbdcf302f87d": [
     "windows-apps-src\\monetize\\create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md"
+  ],
+  "bd898f54f97e1205a388121694abc8beb302b415": [
+    "windows-apps-src\\graphics\\using-the-visual-layer-with-xaml.md"
+  ],
+  "28cc32e782dd565a522836aeead7a49c0f798cc1": [
+    "windows-apps-src\\graphics\\using-the-visual-layer-with-xaml.md"
+  ],
+  "5873af515ec1ae9f10c1b5d9e5fe9de5b8dd80a8": [
+    "windows-apps-src\\graphics\\using-the-visual-layer-with-xaml.md"
+  ],
+  "678de6171f8ef18aa0d8501aafcf3a7659f86a79": [
+    "windows-apps-src\\graphics\\using-the-visual-layer-with-xaml.md"
+  ],
+  "d7a99df1d9403491a217e94888708b98a99ffb7f": [
+    "windows-apps-src\\graphics\\using-the-visual-layer-with-xaml.md"
   ],
   "f9313d3c8b93ba13074c547f1f63c9f3204f0f58": [
     "windows-apps-src\\xbox-apps\\wdp-updatepolicy-api.md"
@@ -9217,6 +9309,9 @@
   ],
   "ab47829c42c683b12ddea9fb185a6dc1f5321a1f": [
     "windows-apps-src\\debug-test-perf\\pgo-for-uwp.md"
+  ],
+  "0b9a8acc349c0c0af2cb18c9c98207c6a6c23834": [
+    "windows-apps-src\\devices-sensors\\point-of-service.md"
   ],
   "fc0df17d73c7a75661410287706cc152c7b90448": [
     "windows-apps-src\\devices-sensors\\point-of-service.md"
@@ -11381,9 +11476,6 @@
   "550677b8491a8ded5755fa9c90b987e81c0db30d": [
     "windows-apps-src\\composition\\composition-effects.md"
   ],
-  "769727c8e128046cac44767dcd05b1b952af51ee": [
-    "windows-apps-src\\composition\\composition-effects.md"
-  ],
   "0fe07d43c5da86d323136f3305166bd51d963756": [
     "windows-apps-src\\gaming\\directx-add-features.md"
   ],
@@ -11416,6 +11508,9 @@
   ],
   "565640b1c5a3742c5471cd2282403be0ef592f69": [
     "windows-apps-src\\gaming\\uwp-programming.md"
+  ],
+  "efca7fa6756e54a092eaec965dc4f547f37f68f7": [
+    "windows-apps-src\\devices-sensors\\barcode-scanner.md"
   ],
   "8d9ef9bc08fa666c2af1348450f7a5fb0a0c7b65": [
     "windows-apps-src\\devices-sensors\\barcode-scanner.md"
@@ -11545,9 +11640,6 @@
   ],
   "b15d4a9321e692864e0179ba8108a55686934f4d": [
     "windows-apps-src\\input-and-devices\\dynamically-modify-voice-command-definition-vcd-phrase-lists.md"
-  ],
-  "5f59b5d0ab906af78d41739286a196a9f2b2794f": [
-    "windows-apps-src\\composition\\composition-animation.md"
   ],
   "45e66b252f68a90803fddec3b860a7435864ae82": [
     "windows-apps-src\\monetize\\send-requests-to-the-store.md"

@@ -38229,6 +38229,106 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\3ce396eeb248a0384fe6a64d70bcfeb53d3c7f72.407b4bd3d2c8ce9e8f29185396bd0c1b041f72c3.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics\\composition-animation.md.dfec7a2f67af9d6621c53246003ecdccfcc0a24b.HT": {
+      "SourceFilename": "windows-apps-src\\graphics\\composition-animation.md",
+      "XliffHash": "dfec7a2f67af9d6621c53246003ecdccfcc0a24b",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\bda0f17419edc679a84c11b1966b18e43c6d04af.7b46388f98c1c6ea4e46f51790d8644a5dcd07e0.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\devices-sensors\\point-of-service.md.294d97c493a03ed1ccdfadf3db090a7b39426036.HT": {
+      "SourceFilename": "windows-apps-src\\devices-sensors\\point-of-service.md",
+      "XliffHash": "294d97c493a03ed1ccdfadf3db090a7b39426036",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0b9a8acc349c0c0af2cb18c9c98207c6a6c23834.d1aabc5940b83cfd9a3d856fe308732bf811af4a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics\\visual-layer.md.6d8796ee240f7a9d06447516d27d1535d8491906.HT": {
+      "SourceFilename": "windows-apps-src\\graphics\\visual-layer.md",
+      "XliffHash": "6d8796ee240f7a9d06447516d27d1535d8491906",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\5b808b96b9fe7edeac4f025962f40152917628f9.66bcd88d5d529ac63a9e8d05a1efad9bc4857949.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics\\composition-native-interop.md.a5fb698b543bb486f0a9f6970c22cb1e84199da8.HT": {
+      "SourceFilename": "windows-apps-src\\graphics\\composition-native-interop.md",
+      "XliffHash": "a5fb698b543bb486f0a9f6970c22cb1e84199da8",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\645dd56f4e15b48f93c66deece44c696b599016f.c081320cd4c9d33d310ae289fd5512ed42233827.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md.bf13079ce9438cf8422664f3a522f11ad8c012cc.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md",
+      "XliffHash": "bf13079ce9438cf8422664f3a522f11ad8c012cc",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\0a37c88ffbe2c383b3ba2d9c7bd0bacca373cf54.3ce4c4454489d9229eaf87ebc91df495f73a8d42.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics\\composition-effects.md.71b8d61961ebb99983a4628a30e3a1743d98adb0.HT": {
+      "SourceFilename": "windows-apps-src\\graphics\\composition-effects.md",
+      "XliffHash": "71b8d61961ebb99983a4628a30e3a1743d98adb0",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9420c902029b9b464861922ff235a8cf601fe3d9.fcd0d278223c7f4f0faf7789958a349531774342.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics\\composition-brushes.md.ffed16fd17d342a9f2d976bad0427772b12d0fed.HT": {
+      "SourceFilename": "windows-apps-src\\graphics\\composition-brushes.md",
+      "XliffHash": "ffed16fd17d342a9f2d976bad0427772b12d0fed",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\30096bcaaf468b8b646103f22ff9f5b29dd3a09f.53d5417f236a83cd83d58b50f2b61d9f1dee2956.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\devices-sensors\\barcode-scanner.md.0baebf9d34d61d0f39c2376ffe4fa436f024e7a7.HT": {
+      "SourceFilename": "windows-apps-src\\devices-sensors\\barcode-scanner.md",
+      "XliffHash": "0baebf9d34d61d0f39c2376ffe4fa436f024e7a7",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\efca7fa6756e54a092eaec965dc4f547f37f68f7.92a357d2dccd468a41d68baddb854ea80b17d406.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics\\composition-visual-tree.md.1338c1240f89b28d02b29be5156be8b017c855fa.HT": {
+      "SourceFilename": "windows-apps-src\\graphics\\composition-visual-tree.md",
+      "XliffHash": "1338c1240f89b28d02b29be5156be8b017c855fa",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\da4f4b5cb51c23429fcede5d86317ca3ed9d79b0.d23850ded3a25f13d8a131cdf3e32c0178bdd75a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\graphics\\using-the-visual-layer-with-xaml.md.64c4eab35fb18624934a39af0ffdcb5db96e1972.HT": {
+      "SourceFilename": "windows-apps-src\\graphics\\using-the-visual-layer-with-xaml.md",
+      "XliffHash": "64c4eab35fb18624934a39af0ffdcb5db96e1972",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\bd898f54f97e1205a388121694abc8beb302b415.f261458c6f5c5e9bec60c5dabe85c0f30fcf2a41.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
