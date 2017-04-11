@@ -38329,6 +38329,26 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\bd898f54f97e1205a388121694abc8beb302b415.f261458c6f5c5e9bec60c5dabe85c0f30fcf2a41.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md.37cb4e5a047425aa482c5e59e6436488dfaf1941.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md",
+      "XliffHash": "37cb4e5a047425aa482c5e59e6436488dfaf1941",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8782a42a522fbc450fded8e73f8a25ec25124bde.cb7d470b6f98789df930fdd3aeee2084f66b1405.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md.0d743245c2bf9fd2a68940c66a235a1f434ce184.HT": {
+      "SourceFilename": "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md",
+      "XliffHash": "0d743245c2bf9fd2a68940c66a235a1f434ce184",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8489cbd78618085999754ffe432cf68fedabcd91.69615689956f2eb23926f748ebbaa2d26aaf3d82.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

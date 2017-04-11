@@ -4903,6 +4903,9 @@
   "24682c6468915fc5e66b43a5fda9aa8a12efdba5": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
+  "8489cbd78618085999754ffe432cf68fedabcd91": [
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
+  ],
   "eaa5fd2fdde370d0e33476d1c4bc15ecc688132a": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
@@ -7206,6 +7209,9 @@
   ],
   "b12124afbb80b62c65696e773690246084a5a6a7": [
     "windows-apps-src\\xbox-apps\\system-resource-allocation.md"
+  ],
+  "8782a42a522fbc450fded8e73f8a25ec25124bde": [
+    "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md"
   ],
   "0a37c88ffbe2c383b3ba2d9c7bd0bacca373cf54": [
     "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md"
