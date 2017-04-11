@@ -2792,6 +2792,9 @@
   "8db30b627b84b181c2445f3b054d3bc9ee47a9f9": [
     "windows-apps-src\\globalizing\\adjust-layout-and-fonts--and-support-rtl.md"
   ],
+  "fa8133550aa2ece40ac464349d7c216a9a6d093f": [
+    "windows-apps-src\\globalizing\\globalizing-portal.md"
+  ],
   "f46a48e6f93dc152a76ab5791d722dbe757a90b6": [
     "windows-apps-src\\globalizing\\globalizing-portal.md"
   ],
@@ -6427,6 +6430,9 @@
   ],
   "2a7c5930752c759c3875826d0046603a63981341": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "3ce396eeb248a0384fe6a64d70bcfeb53d3c7f72": [
+    "windows-apps-src\\TOC.md"
   ],
   "bc6c483458759527af3f463d1d3507f4d74cd693": [
     "windows-apps-src\\TOC.md"
