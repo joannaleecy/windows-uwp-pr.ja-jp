@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9b33388429f72dcc7acb9803d00a407ed35589a0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: fd469f2a037871b04e67227ad132261711a17511
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="improve-garbage-collection-performance"></a>ガベージ コレクションのパフォーマンスの向上
 
@@ -84,7 +82,6 @@ C# と Visual Basic で記述されたユニバーサル Windows プラットフ
  
 
  
-
 
 
 

@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 31869b116096052bed9e1c462de3f93e4d1335c2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 967ed4b6db682524bd06f81d4c6d7771cc41d84b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="optimize-file-access"></a>ファイル アクセスの最適化
 
@@ -240,6 +238,5 @@ Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 バッファリングを回避した方がよいケースは他にもあります。読み取りと書き込みの待機時間を短くする必要があり、基になる UWP ストリームから大きなブロック単位で読み取ることが適していないケースが該当します。 たとえば、ネットワーク通信のストリームを使う場合、読み取りと書き込みの待機時間を短くする必要があります。
 
 チャット アプリでは、ネットワーク インターフェイス経由でストリームを使い、メッセージをやり取りすることが考えられます。 この場合、バッファーにメッセージが満たされるまで待機するのではなく、完成したメッセージをすぐに送信する必要があります。 [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforread.aspx)、[**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx)、[**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx) の各拡張メソッドを呼び出す際にバッファー サイズを 0 に設定した場合、そのアダプターでは、バッファーが割り当てられず、すべての呼び出しについて、基になる UWP ストリームが直接操作されます。
-
 
 

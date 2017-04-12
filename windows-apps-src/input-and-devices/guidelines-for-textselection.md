@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 40c27746a8364ca9f22288b9bfc128dd2b317815
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 70dbf24b53a36f7ee55ce387f713ce2abc79a87c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="selecting-text-and-images"></a>テキストと画像の選択
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -67,9 +64,9 @@ Windows の言語フレームワークによって公開されるビルトイン
 **編集可能なコンテンツと編集不可のコンテンツ**
 
 
-タッチでは、選択操作は主に挿入カーソルの設定や単語の選択を行うタップ、選択範囲の変更を行うスライドなどのジェスチャを通じて実行されます。 他の Windows タッチ操作と同様に、時間制限のある対話式操作は情報 UI を表示するための長押しジェスチャに制限されます。 詳しくは、「[視覚的なフィードバックのガイドライン](guidelines-for-visualfeedback.md)」をご覧ください。
+タッチでは、選択操作は主に挿入カーソルの設定や単語の選択を行うタップ、選択範囲の変更を行うスライドなどのジェスチャを通じて実行されます。 他の Windowsタッチ操作と同様に、時間制限のある対話式操作は情報 UI を表示するための長押しジェスチャに制限されます。 詳しくは、「[視覚的なフィードバックのガイドライン](guidelines-for-visualfeedback.md)」をご覧ください。
 
-Windows では、選択操作のために "編集可能" と "編集不可" の 2 つの状態が認識され、その状態に合わせて選択 UI、フィードバック、機能が調整されます。
+Windowsでは、選択操作のために "編集可能" と "編集不可" の 2 つの状態が認識され、その状態に合わせて選択 UI、フィードバック、機能が調整されます。
 
 **編集可能なコンテンツ**
 
@@ -138,7 +135,6 @@ UWP アプリでカスタム オブジェクト操作を実装する場合は、
  
 
  
-
 
 
 

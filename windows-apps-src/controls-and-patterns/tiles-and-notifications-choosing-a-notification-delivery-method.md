@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 42cb565c9cb1592d90d9f46d2faf783117d0a8bd
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 39418d553eceb6b38d9b0cecc633c984f38465b9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="choose-a-notification-delivery-method"></a>通知配信方法の選択
 
@@ -172,7 +170,6 @@ API 呼び出しはローカルですが、通知では Web 画像を参照で�
  
 
  
-
 
 
 

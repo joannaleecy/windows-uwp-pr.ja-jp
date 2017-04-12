@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、ゲーム、レンダリング、シーン、深度のテスト、Direct3D、シャドウ"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 538ebe9a604daaa5a444b0f7f1764770eec8ce7c
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="render-the-scene-with-depth-testing"></a>深度のテストを使ったシーンのレンダリング
 
 
@@ -165,7 +162,6 @@ return float4(input.color * ambient, 1.f);
  
 
  
-
 
 
 

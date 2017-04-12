@@ -6,13 +6,11 @@ ms.assetid: 3250F729-4FDD-4AD4-B856-B8BA575C3375
 label: Touch design guidelines
 template: detail.hbs
 redirect_url: https://msdn.microsoft.com/windows/uwp/input-and-devices/touch-interactions
-translationtype: Human Translation
-ms.sourcegitcommit: 2db7aaccfd56b1bdfda099b197a695bad8a9cba1
 ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# タッチの設計ガイドライン
+# <a name="touch-design-guidelines"></a>タッチの設計ガイドライン
 
 
 
@@ -20,7 +18,7 @@ ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
 
 タッチ用に最適化される一方で、さまざまな入力デバイスで一貫した機能を提供する、直観的で独特なユーザー対話式操作エクスペリエンスを備えたユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>推奨と非推奨
+## <a name="span-iddosanddontsspanspan-iddosanddontsspanspan-iddosanddontsspandos-and-donts"></a><span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>推奨と非推奨
 
 
 -   期待される主な入力方法としてタッチ操作を使うアプリを設計します。
@@ -31,7 +29,7 @@ ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
 -   できるだけ時間制限のある操作を使わないようにします (適切な使用例: 長押し)。
 -   できる限り、操作の区別に使われた数の指は使わないようにします。
 
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>その他の使い方のガイダンス
+## <a name="span-idadditionalusageguidancespanspan-idadditionalusageguidancespanspan-idadditionalusageguidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>その他の使い方のガイダンス
 
 
 まず、タッチがユーザーの主な入力方法になるという想定でアプリを設計します。 プラットフォーム コントロールを使う場合は、タッチパッド、マウス、ペン/スタイラスをサポートするために追加のプログラミングを行う必要はありません。Windows8 では、それらが無料で提供されます。
@@ -163,7 +161,7 @@ ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
 
 -   適切な説明と視覚的な合図を使うと、高度な対話式操作を非常に効果的に使用できます。
 
-## <span id="related_topics"></span>関連記事
+## <a name="span-idrelatedtopicsspanrelated-articles"></a><span id="related_topics"></span>関連記事
 
 **開発者向け (XAML)**
 * [タッチ操作](https://msdn.microsoft.com/library/windows/apps/mt185617)
@@ -173,11 +171,5 @@ ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
  
 
 
-
-
-
-
-
-<!--HONumber=Sep16_HO3-->
 
 

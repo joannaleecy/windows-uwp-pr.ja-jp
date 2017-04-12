@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7eeb8b79b3c50593470f62c3eddd29a9f218d528
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 29383c65d36b7bc9e5946e4c55298ac0e04107c6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="optimize-animations-media-and-images"></a>アニメーション、メディア、画像の最適化
 
@@ -111,7 +109,9 @@ XAML フレームワークでは、レンダリングの対象がビデオ コ�
 
 埋め込みモードの場合は、ビデオの上に重ねて XAML 要素を描画しないでください。 描画すると、画面を合成するためにフレームワークが追加作業を行うことになります。 この場合は、ビデオの上に重ねずに、たとえば、埋め込みメディア要素の下にトランスポート コントロールを配置すると、最適化が行われます。 次の画像では、赤色のバーが一連のトランスポート コントロール (再生、一時停止、停止など) を示しています。
 
-![要素がオーバーレイされている MediaPlayerElement](images/videowithoverlay.png) メディアが全画面ではないときは、メディアの上にこれらのコントロールを重ねて配置しないでください。 代わりに、メディアがレンダリングされる領域の外にトランスポート コントロールを配置します。 次の画像では、コントロールがメディアの下に配置されています。
+![要素がオーバーレイされている MediaPlayerElement](images/videowithoverlay.png)
+
+メディアが全画面ではないときは、メディアの上にこれらのコントロールを重ねて配置しないでください。 代わりに、メディアがレンダリングされる領域の外にトランスポート コントロールを配置します。 次の画像では、コントロールがメディアの下に配置されています。
 
 ![要素が隣接している MediaPlayerElement](images/videowithneighbors.png)
 
@@ -154,7 +154,7 @@ XAML フレームワークでは、レンダリングの対象がビデオ コ�
 してはいけない例:
 
 ```xaml
-<Image Source="ms-appx:///Assets/highresCar.jpg" 
+<Image Source="ms-appx:///Assets/highresCar.jpg"
        Width="300" Height="200"/>    <!-- BAD CODE DO NOT USE.-->
 ```
 
@@ -163,7 +163,7 @@ XAML フレームワークでは、レンダリングの対象がビデオ コ�
 ```xaml
 <Image>
     <Image.Source>
-    <BitmapImage UriSource="ms-appx:///Assets/highresCar.jpg" 
+    <BitmapImage UriSource="ms-appx:///Assets/highresCar.jpg"
                  DecodePixelWidth="300" DecodePixelHeight="200"/>
     </Image.Source>
 </Image>
@@ -273,14 +273,14 @@ XAML には内部の最適化機能があり、ソフトウェア メモリ内�
 > picker.FileTypeFilter.Add(".jpeg");
 > picker.FileTypeFilter.Add(".png");
 > picker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
-> 
+>
 > StorageFile file = await picker.PickSingleFileAsync();
-> 
+>
 > StorageItemThumbnail fileThumbnail = await file.GetThumbnailAsync(ThumbnailMode.SingleItem, 64);
-> 
+>
 > BitmapImage bmp = new BitmapImage();
 > bmp.SetSource(fileThumbnail);
-> 
+>
 > Image img = new Image();
 > img.Source = bmp;
 > ```
@@ -291,14 +291,14 @@ XAML には内部の最適化機能があり、ソフトウェア メモリ内�
 > picker.FileTypeFilter.Add(".jpeg")
 > picker.FileTypeFilter.Add(".png")
 > picker.SuggestedStartLocation = PickerLocationId.PicturesLibrary
-> 
+>
 > Dim file As StorageFile = Await picker.PickSingleFileAsync()
-> 
+>
 > Dim fileThumbnail As StorageItemThumbnail = Await file.GetThumbnailAsync(ThumbnailMode.SingleItem, 64)
-> 
+>
 > Dim bmp As New BitmapImage()
 > bmp.SetSource(fileThumbnail)
-> 
+>
 > Dim img As New Image()
 > img.Source = bmp
 > ```
@@ -306,5 +306,3 @@ XAML には内部の最適化機能があり、ソフトウェア メモリ内�
 ### <a name="decode-images-once"></a>1 回だけの画像のデコード
 
 画像が複数回デコードされないようにするには、メモリ ストリームを使わずに、URI から [**Image.Source**](https://msdn.microsoft.com/library/windows/apps/BR242760) プロパティを割り当てます。 XAML フレームワークでは、複数の場所にある同じ URI をデコードされた 1 つの画像に関連付けることができます。しかし、同じデータを含む複数のメモリ ストリームに対しては同じ処理を行うことができず、メモリ ストリームごとにデコードされた画像を作成します。
-
-

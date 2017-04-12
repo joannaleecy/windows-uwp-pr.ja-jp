@@ -2,21 +2,17 @@
 title: "ステンシル バッファー"
 description: "ステンシル バッファーは、イメージ内のピクセルをマスクし、特殊効果を生成するために使用されます。"
 ms.assetid: 544B3B9E-31E3-41DA-8081-CC3477447E94
-keywords:
-- "ステンシル バッファー"
+keywords: "ステンシル バッファー"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 981d9d25b860d1c168227c9f67537cf033165aac
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 131b573d990db4d24f33b33c38e4534a7932571b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="stencil-buffers"></a>ステンシル バッファー
 
 
@@ -112,7 +108,6 @@ Direct3D アプリケーションでは、スワイプに同様の手法を使�
  
 
  
-
 
 
 

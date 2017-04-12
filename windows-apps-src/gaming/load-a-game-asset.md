@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、ゲーム、DirectX、リソースの読み込み"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 032cde6294093a2c0a1c582312b9353a146e94da
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="load-resources-in-your-directx-game"></a>DirectX ゲームでのリソースの読み込み
 
 
@@ -81,7 +78,7 @@ ms.lasthandoff: 02/07/2017
 
 非同期読み込みは、並列パターン ライブラリ (PPL) の **task** テンプレートを使って処理します。 **task** にはメソッド呼び出しが含まれています。その後に、非同期呼び出しの完了後にその結果を処理するラムダが続きます。通常の形式は次のとおりです: 
 
-`task<generic return type>(async code to execute).then((parameters for lambda){ lambda code contents });`。
+`task<generic return type>(async code to execute).then((parameters for lambda){ lambda code contents });`.
 
 タスクは、**.then()** 構文を使って連結できます。したがって、ある操作の完了後、その操作の結果に依存する別の非同期操作を実行できます。 このように、プレイヤーにはほぼ見えない方法で、個別のスレッドで複雑なアセットの読み込み、変換、管理を行うことができます。
 
@@ -710,7 +707,6 @@ task<void> BasicLoader::LoadShaderAsync(
  
 
  
-
 
 
 

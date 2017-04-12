@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 77f09a875ce5e5cbdf72644ef937048dd53a0116
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e2e22ed0ead8793cd898693a4805acaa94f0377a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="send-a-local-tile-notification"></a>ローカル タイル通知の送信
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -299,7 +297,6 @@ var notification = new TileNotification(doc);
  
 
  
-
 
 
 

@@ -11,11 +11,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 0327d8c1-8329-4be2-84e3-66e1e9a0aa60
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 515c63d5612358cf90684427f8f747e19384c6ff
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 3e194902b9fb166600ee58ec601993dc808a6853
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="menus-and-context-menus"></a>メニューとコンテキスト メニュー
 
@@ -171,4 +169,3 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 ## <a name="related-articles"></a>関連記事
 
 - [**MenuFlyout クラス**](https://msdn.microsoft.com/library/windows/apps/dn299030)
-

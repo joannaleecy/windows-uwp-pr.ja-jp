@@ -11,11 +11,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 52c1d63d-69c1-48d6-a234-6f39296e4bfd
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 0a33aaf71dbf23e991591f790f7327d812b060ef
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 332271894b5e11657bd2b0b1ca40f0bd7620889d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="inverted-lists"></a>反転リスト
 
@@ -63,4 +61,3 @@ ms.lasthandoff: 02/08/2017
 - 送信者のメッセージと受信者のメッセージを両側に配置して、ユーザーが会話のフローを簡単に理解できるようにします。
 - ユーザーが既に会話の末尾を読んでいて次のメッセージを待っている場合は、既存のメッセージを上に移動して最新のメッセージを表示するアニメーションを表示します。
 - ユーザーが会話の末尾を読んでいない場合は、項目を移動することによってユーザーの集中を妨害してはいけません。
-

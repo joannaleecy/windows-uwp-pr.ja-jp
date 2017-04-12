@@ -1,6 +1,6 @@
 ---
 author: mtoepke
-title: "OpenGL ES 2.0 のバッファー、uniform、頂点 attribute と Direct3D の比較"
+title: "OpenGL ES 2.0 のバッファー、uniform、頂点属性 を Direct3D に移植する"
 description: "OpenGL ES 2.0 から Direct3D 11 に移植するプロセスでは、アプリとシェーダー プログラムの間でデータを受け渡すための構文と API の動作を変更する必要があります。"
 ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
 ms.author: mtoepke
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, OpenGL, Direct3D, バッファー, uniform, 頂点属性"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 43b568b046246931e24ded5f40f56d3f24d1b05a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d25495b282dce38c3dcad0ec996c185e64165b13
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="compare-opengl-es-20-buffers-uniforms-and-vertex-attributes-to-direct3d"></a>OpenGL ES 2.0 のバッファー、uniform、頂点 attribute と Direct3D の比較
 
 
@@ -302,7 +299,6 @@ struct VertexShaderInput
  
 
  
-
 
 
 

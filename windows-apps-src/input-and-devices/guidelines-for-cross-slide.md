@@ -5,13 +5,11 @@ title: "クロススライドのガイドライン"
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
 label: Cross-slide
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# クロススライドのガイドライン
+# <a name="guidelines-for-cross-slide"></a>クロススライドのガイドライン
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
@@ -25,14 +23,14 @@ ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
 
 クロススライドは、スワイプ ジェスチャによる選択や、スライド ジェスチャによるドラッグ (移動) 操作をサポートするために使います。
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>推奨と非推奨
+## <a name="span-iddosanddontsspanspan-iddosanddontsspanspan-iddosanddontsspandos-and-donts"></a><span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>推奨と非推奨
 
 
 -   クロススライドは、単一の方向にスクロールするリストやコレクションに使います。
 -   クロススライドは、タップ操作が別の目的で使われる場合に、項目を選ぶために使います。
 -   キューに項目を追加するためにクロススライドを使わないでください。
 
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>その他の使い方のガイダンス
+## <a name="span-idadditionalusageguidancespanspan-idadditionalusageguidancespanspan-idadditionalusageguidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>その他の使い方のガイダンス
 
 
 選択とドラッグは、1 方向 (垂直または水平) にパンできるコンテンツ領域内でだけ行うことができます。 これらの操作が機能するには、1 つのパン方向がロックされていて、ジェスチャがパン方向に対して垂直な方向に行われる必要があります。
@@ -128,7 +126,7 @@ ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
 
 複数のオブジェクトを移動する必要がある場合は、ユーザーが複数の項目を選択してから、すべてを同時にドラッグできるようにします。
 
-## <span id="related_topics"></span>関連記事
+## <a name="span-idrelatedtopicsspanrelated-articles"></a><span id="related_topics"></span>関連記事
 
 
 **サンプル**
@@ -150,11 +148,5 @@ ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
  
 
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

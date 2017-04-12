@@ -2,21 +2,17 @@
 title: "テクスチャ"
 description: "テクスチャは、コンピュータで作成した 3D 画像にリアルさを加えるための強力なツールです。 Direct3D は広範囲のテクスチャリング機能セットをサポートし、高度なテクスチャリング手法に簡単にアクセスできる方法を開発者に提供します。"
 ms.assetid: B9E85C9E-B779-4852-9166-6FA2240B7046
-keywords:
-- "テクスチャ"
+keywords: "テクスチャ"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4c78099f6bd30956c45a907a960a595288e0eaf4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ef5c72f3c667c63cb48c469349ae26c364050c19
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="textures"></a>テクスチャ
 
 
@@ -73,7 +69,7 @@ ms.lasthandoff: 02/07/2017
 </tr>
 <tr class="odd">
 <td align="left"><p>[圧縮テクスチャ リソース](compressed-texture-resources.md)</p></td>
-<td align="left"><p>テクスチャ マップは、視覚的な詳細を追加するために 3 次元形状に描画されるデジタル画像です。 テクスチャ マップは、ラスター化時に 3D の形状にマッピングされます。このプロセスではシステム バスとメモリの両方を大量に消費することがあります。 テクスチャによって消費されるメモリ量を減らすために、Direct3D ではテクスチャ サーフェスの圧縮がサポートされています。 Direct3D デバイスの中には、圧縮テクスチャ サーフェスを標準でサポートするものもあります。</p></td>
+<td align="left"><p>テクスチャ マップとは、視覚的な詳細を追加するために 3 次元形状で描画された、デジタル画像です。 テクスチャ マップは、ラスター化時に 3D の形状にマッピングされます。このプロセスではシステム バスとメモリの両方を大量に消費することがあります。 テクスチャによって消費されるメモリ量を減らすために、Direct3D ではテクスチャ サーフェスの圧縮がサポートされています。 Direct3D デバイスの中には、圧縮テクスチャ サーフェスを標準でサポートするものもあります。</p></td>
 </tr>
 </tbody>
 </table>
@@ -83,12 +79,11 @@ ms.lasthandoff: 02/07/2017
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[Direct3D Graphics の学習ガイド](index.md)
+[Direct3D グラフィックスの学習ガイド](index.md)
 
  
 
  
-
 
 
 

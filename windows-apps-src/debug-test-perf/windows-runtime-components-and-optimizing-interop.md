@@ -9,13 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 722a14b7fbad2a8914888a6d6a135e88d1aa8095
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a4296c7ba149abce2173e816aa99406a44f75618
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-# <a name="universal-windows-platform-components-and-optimizing-interop"></a>ユニバーサル Windows プラットフォーム コンポーネントと相互運用性の最適化
+# <a name="uwp-components-and-optimizing-interop"></a>UWPコンポーネントと相互運用性の最適化
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -34,7 +32,7 @@ UWP には、UWP アプリの作成に使用できるすべての言語からア
 UWP アプリを C# または Visual Basic で開発する際、最もよく使用される API は、UWP API と UWP アプリ用 .NET API の 2 つです。 一般に、UWP で定義される型は "Windows." で始まる名前空間にあります。 また、.NET 型は "System." で始まる名前空間にあります。 ただし、例外もあります。 UWP アプリ用 .NET に含まれる型は、使う際に相互運用性を必要としません。 UWP を使っている領域のパフォーマンスが低い場合は、代わりに UWP アプリ用 .NET を使うことで良好なパフォーマンスを得られることがあります。
 
 **注:**  
-Windows 10 と共に提供される UWP コンポーネントの大部分は C++ で実装されているため、これらを C# または Visual Basic から使う場合は、相互運用性の境界を越える必要があります。 通常の場合と同様に、アプリのパフォーマンスに UWP コンポーネントが影響を与えているかどうかを調査した後で、コードの変更に注力してください。
+Windows10 と共に提供される UWP コンポーネントの大部分は C++ で実装されているため、これらを C# または Visual Basic から使う場合は、相互運用性の境界を越える必要があります。 通常の場合と同様に、アプリのパフォーマンスに UWP コンポーネントが影響を与えているかどうかを調査した後で、コードの変更に注力してください。
 
 このトピックでは、"UWP コンポーネント" とは、C# または Visual Basic 以外の言語で記述されたコンポーネントを指すものとします。
 
@@ -93,5 +91,4 @@ C++ または JavaScript で記述されたアプリに使う UWP コンポー�
 高パフォーマンスなアプリを実現するためのすべての推奨事項は、高パフォーマンスなコンポーネントを実現する際にも当てはまります。 コンポーネントを測定してトラフィックが大きいパターンを持つ API を特定し、それらの領域については、少ない呼び出しでユーザーが作業を実行できるようにする API を提供することを検討してください。 UWP は、それを利用するアプリが相互運用性の境界を何度も行き来しなくても済むように、その設計には膨大な労力が費やされています。
 
  
-
 

@@ -9,20 +9,18 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7349188a9b735ac887c1afbc09c572f598407471
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8bde7d6b65ae6fd96c38e2748a4e7ea0f9821aa2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="pair-devices"></a>デバイスのペアリング
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
-** 重要な API **
+**重要な API**
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 一部のデバイスは、使う前にペアリングする必要があります。 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 名前空間では、デバイスをペアリングするための 3 つの異なる方法がサポートされています。
 
@@ -48,7 +46,7 @@ ms.lasthandoff: 02/07/2017
 
 基本ペアリングを試行するためには、対象のデバイス用の [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトを最初に入手する必要があります。 オブジェクトを入手したら、[**DeviceInformation.Pairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) プロパティを操作します。これは、[**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) オブジェクトです。 ペアリングを試みるには、[**DeviceInformationPairing.PairAsync**](https://msdn.microsoft.com/library/windows/apps/mt608800) を呼び出します。 ペアリング アクションの完了を試みる時間をアプリに与えるために、結果を **await** する必要があります。 ペアリング アクションの結果が返され、エラーが返されない限り、デバイスはペアリングされます。
 
-基本ペアリングを使っている場合は、デバイスのペアリング状態に関する追加情報にもアクセスできます。 たとえば、ペアリング状態 ([**IsPaired**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.ispaired.aspx)) と、デバイスがペアリングできるかどうか ([**CanPair**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.canpair.aspx)) がわかります。 これらはどちらも [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) オブジェクトのプロパティです。 自動ペアリングを使っている場合、該当する [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトを入手しない限り、この情報にアクセスできない可能性があります。
+基本ペアリングを使っている場合は、デバイスのペアリング状態に関する追加情報にもアクセスできます。 たとえば、ペアリング状態 ([**IsPaired**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing#Windows_Devices_Enumeration_DeviceInformationPairing_IsPaired)) と、デバイスがペアリングできるかどうか ([**CanPair**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing#Windows_Devices_Enumeration_DeviceInformationPairing_CanPair)) がわかります。 これらはどちらも [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) オブジェクトのプロパティです。 自動ペアリングを使っている場合、該当する [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトを入手しない限り、この情報にアクセスできない可能性があります。
 
 ## <a name="custom-pairing"></a>カスタム ペアリング
 
@@ -76,8 +74,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
-
-
-
-

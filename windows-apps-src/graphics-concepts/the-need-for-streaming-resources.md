@@ -2,21 +2,17 @@
 title: "ストリーミング リソースのニーズ"
 description: "ストリーミング リソースは、アクセスされないサーフェスの領域を保存して GPU メモリを無駄にしないために、また、隣接するタイルをまたいでフィルター処理する方法をハードウェアに伝えるために必要です。"
 ms.assetid: A88BE65B-104F-4176-9809-C12580A3684C
-keywords:
-- "ストリーミング リソースのニーズ"
+keywords: "ストリーミング リソースのニーズ"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: cdd98fcf0772cdcd1e2a75ecaf7d2e0b661e134b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5060d0076d93f8bca7e1547c4d9fb05ad4b1a3f5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="the-need-for-streaming-resources"></a>ストリーミング リソースのニーズ
 
 
@@ -83,7 +79,6 @@ Direct3D のテクスチャ フィルター パスとレンダリング パス�
  
 
  
-
 
 
 

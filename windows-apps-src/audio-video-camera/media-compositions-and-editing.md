@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d31cb88d1cea00bd291478b612b1759b1d6fd0b4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 66d14ae9335edcc5535d0dcc37cca2273874f61d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="media-compositions-and-editing"></a>メディアのコンポジションと編集
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -156,7 +153,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

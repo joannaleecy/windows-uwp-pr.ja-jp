@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, DirectX, アクティブ化"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 4d3585e28ca4a3665a881df4f16a3cc3f82fcc52
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="how-to-activate-an-app-directx-and-c"></a>アプリをアクティブ化する方法 (DirectX と C++)
 
 
@@ -95,7 +92,6 @@ void App::Run()
  
 
  
-
 
 
 

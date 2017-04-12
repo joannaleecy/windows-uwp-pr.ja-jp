@@ -14,11 +14,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 51e5a3dac6ab8682cd9d10efafb7e1e38f9d53d4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a591600ac31b1582d4ce133a6539884d4616639f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="xaml-theme-resources"></a>XAML テーマ リソース
 
@@ -446,6 +444,5 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 ```
 
 "HighContrast" ディクショナリでは、[{StaticResource} マークアップ拡張](../xaml-platform/staticresource-markup-extension.md)ではなく [{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)が引き続き使われていることに注意してください。 この状況は、ガイドラインで既に説明した例外に当てはまります。 "HighContrast" テーマに使われるブラシの値のほとんどは、システムによって全体的に制御される色から選択されますが、これらは特別な名前付きのリソース (名前に 'SystemColor' というプレフィックスが付いているもの) として XAML に公開されています。 ハイ コントラスト設定で使う特定の色は、コンピューターの簡単操作を通じてユーザーが設定できるようになっています。 これらの色の選択は、特別な名前付きのリソースに適用されます。 XAML フレームワークでは、システム レベルでの変更の検出時にこれらのブラシを更新する場合にも、同じテーマ変更イベントを使用します。 ここで {ThemeResource} マークアップ拡張が使われているのはこのためです。
-
 
 

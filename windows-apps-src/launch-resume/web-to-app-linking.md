@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 225f0d2bd5d8a2434c3e548064960f44f1df530e
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: df5d232cc997c0c888b3a2f092efeb937e991a85
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="support-web-to-app-linking-with-app-uri-handlers"></a>アプリの URI ハンドラーを使用して Web とアプリのリンクをサポートする
 
 Web とアプリのリンクをサポートすることによって、アプリを利用するようにユーザーを導く方法について説明します。 Web とアプリのリンクを使用すると、アプリと Web サイトを関連付けることができます。 ユーザーが Web サイトへの http リンクや https リンクを開くと、ブラウザーが開くのではなく、アプリが起動されます。 アプリがインストールされていない場合は、ブラウザーで Web サイトを開くためのリンクが提供されます。 検証済みのコンテンツ所有者だけがリンクに登録できるため、ユーザーはこのエクスペリエンスを信頼することができます。
@@ -199,4 +196,3 @@ protected override void OnActivated(IActivatedEventArgs e)
 [URI のアクティブ化の処理](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 
 [関連付けによる起動のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)では、LaunchUriAsync() API の使用方法を説明します。
-

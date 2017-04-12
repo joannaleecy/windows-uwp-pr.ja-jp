@@ -2,21 +2,17 @@
 title: "線リスト"
 description: "線リストとは、独立した直線セグメントの一覧を指します。 線リストは、3D シーンに氷雨や豪雨を追加する場合などに便利です。 アプリケーションは、頂点の配列を入力することで線リストを作成します。"
 ms.assetid: 42BF32A1-3535-42A3-82C5-3945CB309F2C
-keywords:
-- "線リスト"
+keywords: "線リスト"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 64ab9106986cd3fe5109b47710a7057ad6869c8d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8ebe6c67bd6b68023f59599cdcbd1f8f44f80e84
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="line-lists"></a>線リスト
 
 
@@ -71,7 +67,6 @@ d3dDevice->DrawPrimitive( D3DPT_LINELIST, 0, 3 );
  
 
  
-
 
 
 

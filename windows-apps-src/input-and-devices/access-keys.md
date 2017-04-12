@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e866c3afc551cf9604809cf7fec36efd7bfa439c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8d62135680e13f866654c168364bb3393651bd2d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="access-keys"></a>アクセス キー
 
 運動障碍を持つユーザーなど、マウスの使用が難しいユーザーは、通常、アプリ内の移動やアプリの操作にキーボードを使用します。  XAML フレームワークでは、タブ ナビゲーションとアクセス キーによって UI 要素へのキーボード アクセスを提供できます。
@@ -388,4 +385,3 @@ public sealed partial class ScopedAccessKeys : Page
         }
     }
 ```
-

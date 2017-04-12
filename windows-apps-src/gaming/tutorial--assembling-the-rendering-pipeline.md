@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, レンダリング"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 7b97a70094c953e9614a84979c9f98fc91a82451
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="assemble-the-rendering-framework"></a>レンダリング フレームワークの作成
 
 
@@ -701,7 +698,7 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 
 ゲームには、独自の座標系でワールドを更新するためのコードがあります (ワールド空間またはシーン空間と呼ばれることもあります)。 カメラを含むすべてのオブジェクトはこの空間に配置されます。 サンプル ゲームでは、カメラの位置とルック ベクター (カメラからシーンを直接ポイントする "ルック アット" ベクターとシーンに対して垂直かつ上向きの "ルック アップ" ベクター) によってカメラ空間が定義されます。 プロジェクション パラメーターは、最終シーン内でその空間のどのくらいが実際に表示されるのかを決定します。また、視野 (FoV)、縦横比、クリッピング プレーンはプロジェクション変換を定義します。 頂点シェーダーは、次のアルゴリズムを使って (V はベクター、M はマトリックスを表す) モデル座標からデバイス座標への変換を行います。
 
-`              V(device) = V(model) x M(model-to-world) x M(world-to-view) x M(view-to-device)           `。
+`              V(device) = V(model) x M(model-to-world) x M(world-to-view) x M(view-to-device)           `.
 
 -   `M(model-to-world)`  はモデル座標からワールド座標への変換マトリックスです。 このマトリックスは、プリミティブによって提供されます。 (このページのプリミティブについてのセクションで確認します。)
 -   `M(world-to-view)`  はワールド座標からビュー座標への変換マトリックスです。 このマトリックスは、カメラのビュー マトリックスによって提供されます。
@@ -6326,7 +6323,6 @@ void Material::RenderSetup(
  
 
  
-
 
 
 

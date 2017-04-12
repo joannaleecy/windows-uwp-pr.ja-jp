@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, ネットワーク, DirectX"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: ce94dda0eaf156f1e09fefbd76f50bc764050970
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="networking-for-games"></a>ゲームのネットワーク
 
 
@@ -396,4 +393,3 @@ using namespace Windows::Web::Http;
 * [HttpClient のサンプル]( http://go.microsoft.com/fwlink/p/?linkid=242550)
 * [近接通信のサンプル](http://go.microsoft.com/fwlink/p/?linkid=245082)
 * [StreamSocket のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=243037)
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, オーディオ, DirectX"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 2fd568b8424585106c83d128a55f85909f35f2b8
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="audio-for-games"></a>ゲームのオーディオ
 
 
@@ -320,7 +317,6 @@ XAudio2 は、DirectX 用のオーディオ ミキシング ライブラリで�
  
 
  
-
 
 
 

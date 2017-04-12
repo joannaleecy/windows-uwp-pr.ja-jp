@@ -2,21 +2,17 @@
 title: "ビュー変換"
 description: "ビュー変換は、ビューアーをワールド空間に配置し、頂点をカメラ空間に変換します。"
 ms.assetid: DA4C2051-4C28-4ABF-8C06-241C8CB87F2F
-keywords:
-- "ビュー変換"
+keywords: "ビュー変換"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 08687ab044c460417d967047c1dd9fd473f06091
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 62b0958bfa298ed924a62de73c1747f353e63033
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="view-transform"></a>ビュー変換
 
 
@@ -45,7 +41,6 @@ Direct3D は、ワールド行列とビュー行列を使っていくつかの�
  
 
  
-
 
 
 

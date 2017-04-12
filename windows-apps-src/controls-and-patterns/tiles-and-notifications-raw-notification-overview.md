@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b8d695dbf3aa662a760f162b6fcb818d90f45c38
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0ea40ff57bf6923b8fea05de6d07863e13e5ad9c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 # <a name="raw-notification-overview"></a>直接通知の概要
@@ -129,7 +127,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

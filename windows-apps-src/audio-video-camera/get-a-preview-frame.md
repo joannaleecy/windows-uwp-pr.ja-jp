@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 420f9b8c3bb6573fbc12bc974ef2382b9ba6ec03
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3dca5108988e4a3c0fe3903d26f31733685d66a4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="get-a-preview-frame"></a>プレビュー フレームの取得
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
@@ -65,7 +62,6 @@ Direct3D API で画像を扱う場合は、プレビュー フレームの [**ID
  
 
  
-
 
 
 

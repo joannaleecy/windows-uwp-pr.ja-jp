@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f6df625d9eaab9db1bd3aed96d3f07160001ae70
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4c17bab575be207106abfac44104bb32bcffd6ac
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="lists"></a>リスト
 
@@ -263,4 +261,3 @@ ms.lasthandoff: 02/07/2017
 - [**GridView クラス**](https://msdn.microsoft.com/library/windows/apps/br242705)
 - [**ComboBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209348)
 - [**ListBox クラス**](https://msdn.microsoft.com/library/windows/apps/br242868)
-

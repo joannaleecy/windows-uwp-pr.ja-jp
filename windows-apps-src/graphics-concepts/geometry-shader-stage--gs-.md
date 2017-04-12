@@ -2,21 +2,17 @@
 title: "ジオメトリ シェーダー (GS) ステージ"
 description: "ジオメトリ シェーダー (GS) ステージでは、プリミティブの全体の三角形、線、点が、隣接する頂点と共に処理されます。"
 ms.assetid: 8A1350DD-B006-488F-9DAF-14CD2483BA4E
-keywords:
-- "ジオメトリ シェーダー (GS) ステージ"
+keywords: "ジオメトリ シェーダー (GS) ステージ"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1a4c6ab45f53eb2156ae82f562d775682c1b79ed
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 05ef26d8ad596a89cb1e9f2bb44d0e1b062097ee
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="geometry-shader-gs-stage"></a>ジオメトリ シェーダー (GS) ステージ
 
 
@@ -40,7 +36,7 @@ ms.lasthandoff: 02/07/2017
 -   Fur/Fin の生成
 -   シャドウ ボリュームの生成
 -   単一パスでのキューブマップへのレンダリング
--   プリミティブ単位のマテリアル スワッピング
+-   プリミティブ単位のマテリアル スワップ
 -   プリミティブ単位のマテリアル セットアップ: この機能にはプリミティブ データとしての重心座標の生成も含まれています。これにより、ピクセル シェーダーはカスタム属性補間を実行できます。
 
 ## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>入力
@@ -89,7 +85,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

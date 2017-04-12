@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, デバッグ, テスト, パフォーマンス"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a7ce6c003c24a1efd03cc48419438b59e4f2ec11
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6f399136be121288dcff4b482f9e022fc0323181
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="deploying-and-debugging-uwp-apps"></a>UWP アプリの展開とデバッグ
 
-# <a name="deploying-and-debugging-universal-windows-platform-uwp-apps"></a>ユニバーサル Windows プラットフォーム (UWP) アプリの展開とデバッグ
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 この記事では、さまざまな展開およびデバッグのターゲットを指定する手順について説明します。
 
@@ -95,7 +92,7 @@ C++ または JavaScript UWP アプリ用のリモート コンピューター �
 
 **[認証なし]** に変更するには、**[リモート デバッガー]** で **[ツール]** -&gt; **[オプション]** の順にクリックし、**[認証なし]** に設定します。 リモート デバッガーを設定したら、ホスト デバイスが[開発者モード](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)に設定されていることを確認する必要があります。 その後、開発コンピューターから展開できます。
 
-詳しくは、[Remote Tools for Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=717039) ダウンロード ページをご覧ください。
+詳しくは、[Visual Studio ダウンロード センター](https://www.visualstudio.com/downloads/)のページをご覧ください。
 
 ## <a name="authentication-modes"></a>認証モード
 
@@ -229,4 +226,3 @@ WinDbg のすべてのコマンドの一覧については、[デバッガー �
 ## <a name="related-topics"></a>関連トピック
 - [プロセス ライフタイム管理 (PLM) のテスト ツールとデバッグ ツール](testing-debugging-plm.md)
 - [デバッグ、テスト、パフォーマンス](index.md)
-

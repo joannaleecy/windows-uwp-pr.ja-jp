@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 9c66df378534825d191740d5eea4beb0f560687e
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 68695125c2056adca8186120db7875cb3a68baf8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="legacy-background-media-playback"></a>従来のバックグラウンドでのメディアの再生
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -125,7 +122,6 @@ ms.lasthandoff: 02/08/2017
  
 
  
-
 
 
 

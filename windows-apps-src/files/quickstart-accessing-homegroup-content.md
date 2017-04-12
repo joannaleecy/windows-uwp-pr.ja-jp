@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 04d34aa8f1cff2460462fff8100ab345a04d9000
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e67a373b5e36d6e1a8a5e738f8c0964c5df8489b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="accessing-homegroup-content"></a>ホームグループ コンテンツへのアクセス
 
@@ -215,4 +213,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

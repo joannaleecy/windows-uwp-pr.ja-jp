@@ -9,13 +9,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3dcf6a8191553deac5821346718a202bc362c7ff
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: fe6d70394af430e34e26b3fdbce2da61ca0572b0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-and-consume-an-app-service"></a>アプリ サービスの作成と利用
 
 
@@ -25,6 +22,8 @@ ms.lasthandoff: 02/07/2017
 他のユニバーサル Windows プラットフォーム (UWP) アプリにサービスを提供できる UWP アプリを作成する方法と、それらのサービスを利用する方法について説明します。
 
 Windows 10 バージョン 1607 以降では、ホスト アプリと同じプロセスで実行されるアプリ サービスを作成できます。 この記事では、別のバックグラウンド プロセスで実行されるアプリ サービスの作成に重点を置いて説明します。 プロバイダーと同じプロセスで実行されるアプリ サービスの詳細については、「[ホスト アプリと同じプロセスで実行するようにアプリ サービスを変換する](convert-app-service-in-process.md)」をご覧ください。
+
+その他のアプリ サービスのサンプルについては、[ユニバーサル Windows プラットフォーム (UWP) アプリのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)をご覧ください。
 
 ## <a name="create-a-new-app-service-provider-project"></a>新しいアプリ サービス プロバイダー プロジェクトの作成
 
@@ -383,4 +382,4 @@ namespace MyAppService
 
 * [ホスト アプリと同じプロセスで実行するようにアプリ サービスを変換する](convert-app-service-in-process.md)
 * [バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)
-
+* [ユニバーサル Windows プラットフォーム (UWP) アプリのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)

@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: 3c073879ab847a3e1af454e0c1550d8af0f78b3e
-ms.openlocfilehash: 3abf2b7e9ff59099dafaa753f3a8ccf257dbc19a
-ms.lasthandoff: 01/19/2017
-
+ms.openlocfilehash: d3be03785e977229c6aa38dba728e6ef6552a23e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 <a name="data-binding-overview"></a>データ バインディングの概要
 =====================
@@ -442,4 +440,3 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 
 ## <a name="see-also"></a>関連項目
 - [データ バインディング](index.md)
-

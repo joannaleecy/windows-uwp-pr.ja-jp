@@ -2,21 +2,17 @@
 title: "データ型の変換"
 description: "次のセクションでは、Direct3D がデータ型の間の変換を処理する方法について説明します。"
 ms.assetid: B50AB8DE-CAED-465B-B18C-81F3A984B8AC
-keywords:
-- "データ型の変換"
+keywords: "データ型の変換"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d6c9e684f4e555bc725077696973be2d3f15a2c5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6813f7b55957c185a85fe82b90297b6ba5a470eb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="data-type-conversion"></a>データ型の変換
 
 
@@ -226,9 +222,9 @@ Direct3D では、次の 2 つの状況で固定小数点整数表現を使用�
 <td align="left"><p>浮動小数点型の数値 n を固定小数点整数 i.f に変換する一般的な手順は次のとおりです。ここで、i は整数部ビット数 (符号付き)、f は小数部ビット数です。</p>
 <ul>
 <li>FixedMin = -2⁽ⁱ⁻¹⁾ を計算します。</li>
-<li>FixedMax = 2⁽ⁱ⁻¹⁾ - 2<sup>(-f) を計算します。</sup></li>
-<li>n が NaN の場合、結果は 0 です。n が +Inf の場合の結果は FixedMax*2<sup>f</sup>で、n が -Inf の場合の結果は FixedMin*2<sup>f です。</sup></li>
-<li>n &gt;= FixedMax の場合の結果は Fixedmax*2<sup>f</sup> で、n &lt;= FixedMin の場合の結果は FixedMin*2<sup>f です。</sup></li>
+<li>FixedMax = 2⁽ⁱ⁻¹⁾ - 2<sup>(-f)</sup> を計算します。</li>
+<li>n が NaN の場合、結果は 0 です。n が +Inf の場合の結果は FixedMax*2<sup>f</sup> で、n が -Inf の場合の結果は FixedMin*2<sup>f</sup> です。</li>
+<li>n &gt;= FixedMax の場合の結果は Fixedmax*2<sup>f</sup> で、n &lt;= FixedMin の場合の結果は FixedMin*2<sup>f</sup> です。</li>
 <li>それ以外の場合は、n*2<sup>f</sup> を計算して整数に変換します。</li>
 </ul>
 <p>実装では、上の最後の手順で得られた整数と無限大精度値 n*2<sup>f</sup> との比較で、D3D<em>xx</em>_FLOAT32_TO_INTEGER_TOLERANCE_IN_ULP ULP の誤差が許容されます。</p></td>
@@ -253,7 +249,6 @@ Direct3D では、次の 2 つの状況で固定小数点整数表現を使用�
  
 
  
-
 
 
 

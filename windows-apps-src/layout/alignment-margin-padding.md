@@ -12,11 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: aba82e911a0641378378bee66d0b07e665ac4b5a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 86052c0d3224ffe2a9312d2e48c5398a7466eeb0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="alignment-margin-and-padding"></a>配置、余白、およびパディング
 
@@ -83,4 +81,3 @@ ms.lasthandoff: 02/07/2017
 * [**FrameworkElement.VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)
 * [**FrameworkElement.Margin**](https://msdn.microsoft.com/library/windows/apps/br208724)
 * [**Control.Padding**](https://msdn.microsoft.com/library/windows/apps/br209459)
-

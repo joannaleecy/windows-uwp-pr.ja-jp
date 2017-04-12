@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 831a29950d8f8658e1a584d8a33256ff4121c706
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ad8a5823d48e2e92ac0e65bbfa73fbc1229e00f2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="debugging-testing-and-performance"></a>デバッグ、テスト、パフォーマンス
 
@@ -31,5 +29,4 @@ Microsoft Visual Studio を使って、アプリのデバッグとテストを�
 | [Windows Device Portal](device-portal.md) | Windows Device Portal では、ネットワーク経由でリモートから、または USB 接続によって、デバイスの構成と管理を行えます。 |
 | [Windows アプリ認定キット](windows-app-certification-kit.md) | 作成したアプリが認定を受けるために最も適した方法は、[Windows アプリ認定キット](http://go.microsoft.com/fwlink/p/?LinkID=309666)を使うことです。 |
 | [パフォーマンス](performance-and-xaml-ui.md) | ユーザーは、高い応答性と自然な使用感、そしてバッテリーが消耗しないことをアプリに期待しています。 技術的には、パフォーマンスは機能要件ではありませんが、パフォーマンスを機能として扱うことで、ユーザーの期待に沿うことができます。 鍵となる要因は、目標の明確化と測定の実施です。 パフォーマンスが重要なシナリオを決定し、優れたパフォーマンスとは何を意味するかを定義します。 次に、プロジェクトの初期とライフサイクル全体で十分な回数の測定を行って、目標を達成できることを確認します。 |
-
 

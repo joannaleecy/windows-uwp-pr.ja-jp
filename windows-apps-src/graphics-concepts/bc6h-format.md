@@ -2,21 +2,17 @@
 title: "BC6H 形式"
 description: "BC6H 形式は、ソース データのハイ ダイナミック レンジ (HDR) 色空間をサポートするように設計されたテクスチャ圧縮形式です。"
 ms.assetid: 6781D967-9262-4EE7-B354-7A6D0EA0498E
-keywords:
-- "BC6H 形式"
+keywords: "BC6H 形式"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a1cc569adbf15876693e91ac92e6bd364a267cb7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2bca4f5e86229a9b6ffc622a65628f1b588c9ac6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="bc6h-format"></a>BC6H 形式
 
 
@@ -323,7 +319,7 @@ unsigned short finish_unquantize(int comp)
 }
 ```
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連項目
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [テクスチャのブロック圧縮](texture-block-compression.md)
@@ -331,7 +327,6 @@ unsigned short finish_unquantize(int comp)
  
 
  
-
 
 
 

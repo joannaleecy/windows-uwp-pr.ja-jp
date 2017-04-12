@@ -12,13 +12,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 情報保護, 企業データ, エンタープライズ データ保護, EDP, 対応アプリ"
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: b9bde047a70d31105680361d34cf71b33f708f93
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: f624d20d33f560f151b40bd1a405711d697fd4cb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-information-protection-wip"></a>Windows 情報保護 (WIP)
 
 __注__ Windows 情報保護 (WIP) ポリシーは、Windows 10 Version 1607 に適用することができます。
@@ -66,11 +63,11 @@ WIP API を使用してアプリを対応させてから、アプリをエンタ
 
 **C を使用して作成するユニバーサル Windows プラットフォーム (UWP) アプリの場合#**
 
-[Build an enlightened app that consumes both enterprise and personal data (企業データと個人データの両方を使用する対応アプリの作成)](wip-dev-guide.md)。
+[Windows 情報保護 (WIP) 開発者向けガイド](wip-dev-guide.md)。
 
 **C++ を使用して作成するデスクトップ アプリの場合**
 
-[Build an enlightened app that consumes both enterprise and personal data (C++) (企業データと個人データの両方を使用する対応アプリの作成 (C++))](http://go.microsoft.com/fwlink/?LinkId=822192)。
+[Windows 情報保護 (WIP) 開発者向けガイド (C++)](http://go.microsoft.com/fwlink/?LinkId=822192)。
 
 
 ## <a name="create-non-enlightened-enterprise-app"></a>エンタープライズ非対応アプリの作成
@@ -100,4 +97,3 @@ MDM ポリシーではこのフラグは必要ありませんが、MAM ポリシ
 
 
  
-

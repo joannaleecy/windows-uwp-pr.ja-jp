@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: e3ef31ed9a90122ae0634274ac5794e67017bc2f
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 15ab4c39f4da1bb524f912d4e6ab6b3e6a5f34c6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launch-an-app-on-a-remote-device"></a>リモート デバイスでのアプリの起動
 
 この記事では、Windows アプリをリモート デバイスで起動する方法について説明します。
@@ -70,5 +67,4 @@ Windows 10 Version 1607 以降で実行される UWP アプリは、同じく Wi
 [リモート システムの API リファレンス](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
 [接続されるアプリやデバイス ("Rome" プロジェクト) の概要](connected-apps-and-devices.md)  
 [リモート デバイスの検出](discover-remote-devices.md)  
-[Remote Systems sample (リモート システムのサンプル)](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)では、リモート システムを検出する方法、リモート システムでアプリを起動する方法、アプリ サービスを使って 2 つのシステム上で実行しているアプリ間でメッセージを送信する方法が説明されています。
-
+[リモート システムのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)では、リモート システムを検出する方法、リモート システムでアプリを起動する方法、アプリ サービスを使って 2 つのシステム上で実行しているアプリ間でメッセージを送信する方法が説明されています。

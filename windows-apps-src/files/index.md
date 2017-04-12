@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: 3c073879ab847a3e1af454e0c1550d8af0f78b3e
-ms.openlocfilehash: 0baa58915bfac91d618a6da84f37174e41f7377f
-ms.lasthandoff: 01/19/2017
-
+ms.openlocfilehash: 77969b423ba955c50937a45955e2e490118b2c13
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
  # <a name="files-folders-and-libraries"></a>ファイル、フォルダー、およびライブラリ
 
@@ -44,4 +42,3 @@ ms.lasthandoff: 01/19/2017
  
 
  
-

@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 127bf79ebe17e6156a95d4aae168e42b7ff53aa1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5da40bb4c680416f0766cf0d1a171f95358ea63e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="calendar-date-and-time-controls"></a>カレンダー、日付、および時刻コントロール
 
@@ -127,4 +125,3 @@ XAML の日付および時刻コントロールで使用される日付オブジ
 - [**CalendarDatePicker クラス**](https://msdn.microsoft.com/library/windows/apps/dn950083)
 - [**DatePicker クラス**](https://msdn.microsoft.com/library/windows/apps/dn298584)
 - [**TimePicker クラス**](https://msdn.microsoft.com/library/windows/apps/dn299280)
-

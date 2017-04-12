@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、ゲーム、DDSTextureLoader"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 7daf10ad577b2b67c6ca5554f6555deb89f16229
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="complete-code-for-ddstextureloader"></a>DDSTextureLoader のコード一式
 
 
@@ -1226,7 +1223,6 @@ void CreateDDSTextureFromMemory(
  
 
  
-
 
 
 

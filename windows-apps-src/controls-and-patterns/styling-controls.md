@@ -14,13 +14,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 60eb44ab45873b638181bb4b3194e443d21356bc
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b9bc1e68e26830a283ed49b753f63a8f7ae63637
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="styling-controls"></a>コントロールのスタイル
 
 
@@ -157,5 +154,4 @@ XAML フレームワークを使って、さまざまな方法でアプリの外
 ## <a name="the-template-property"></a>テンプレート プロパティ
 
 スタイル setter は、[**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) の [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465) プロパティに使うことができ、実際に、一般的な XAML スタイルとアプリの XAML リソースの主要な部分を構成しています。 詳しくは、「[コントロール テンプレート](control-templates.md)」をご覧ください。
-
 

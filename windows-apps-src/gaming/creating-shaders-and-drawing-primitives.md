@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、ゲーム、シェーダー、プリミティブ、DirectX"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 62f4b9b641a3c365659e44893a8a7801f2c1f6c0
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-shaders-and-drawing-primitives"></a>シェーダーの作成とプリミティブの描画
 
 
@@ -296,7 +293,6 @@ SimpleVertexShader.cso ファイルからデータを読み取り、そのデー
  
 
  
-
 
 
 

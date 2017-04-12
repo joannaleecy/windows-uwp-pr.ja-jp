@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 4deda6efa9b9b9ea03bee76855e30c8e9a290480
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 588367c1e4c1676641d57bbd33df6bdaf0c854da
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="import-media-from-a-device"></a>デバイスからのメディアのインポート
 
 この記事では、利用可能なメディア ソースの検索、ビデオ、写真、サイドカー ファイルなどのファイルのインポート、ソース デバイスからインポートしたファイルの削除など、デバイスからメディアをインポートする方法について説明します。
@@ -62,7 +59,7 @@ ms.lasthandoff: 02/08/2017
 [!code-cs[GeneratorIncrementalLoadingClass](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetGeneratorIncrementalLoadingClass)]
 
 
-# <a name="find-available-sources-from-which-media-can-be-imported"></a>メディアをインポートできる利用可能なソースを見つける
+## <a name="find-available-sources-from-which-media-can-be-imported"></a>メディアをインポートできる利用可能なソースを見つける
 
 ソース検索ボタンのクリック ハンドラーで、静的メソッド [**PhotoImportManager.FindAllSourcesAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportManager.FindAllSourcesAsync) を呼び出し、メディアをインポート可能なデバイスのシステム検索を開始します。 操作の完了を待機した後、返される一覧内の各 [**PhotoImportSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource) オブジェクトをループ処理し、エントリを **ComboBox** に追加します。ソース オブジェクト自体に **Tag** プロパティを設定して、ユーザーが選択するときに簡単にソース オブジェクトを取得できるようにします。
 
@@ -76,13 +73,13 @@ ms.lasthandoff: 02/08/2017
 
 [!code-cs[SourcesSelectionChanged](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetSourcesSelectionChanged)]
 
-# <a name="find-items-to-import"></a>インポートする項目を見つける
+## <a name="find-items-to-import"></a>インポートする項目を見つける
 
 この後の手順で使用する [**PhotoImportSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSession) 型および [**PhotoImportFindItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult) 型のクラス メンバー 変数を追加します。
 
 [!code-cs[DeclareImport](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetDeclareImport)]
 
-FindItems メソッドで、**CancellationTokenSource** 変数を初期化して、必要に応じて検索操作の取り消しに使用できるようにします。 **try** ブロック内で、ユーザーが選択した [**PhotoImportSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource) オブジェクトで [**CreateImportSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource.CreateImportSession) を呼び出して、新しいインポート セッションを作成します。 検索操作の進行状況を表示するためのコールバックを提供するために、新しい [**Progress**](https://msdn.microsoft.com/library/hh193692.aspx) オブジェクトを作成します。 次に、[**FindItemsAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSession.FindItemsAsync(Windows.Media.Import.PhotoImportContentTypeFilter,Windows.Media.Import.PhotoImportItemSelectionMode) を呼び出して、検索操作を開始します。 [**PhotoImportContentTypeFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportContentTypeFilter) の値を提供して、写真、ビデオ、またはその両方を返す必要があるかどうかを指定します。 [**PhotoImportItemSelectionMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItemSelectionMode) の値を提供して、[**IsSelected**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem.IsSelected) プロパティが true に設定されているときに、すべてのメディア項目を返すのか、メディア項目を何も返さないのか、新しいメディア項目のみを返すのかを指定します。 このプロパティは、ListBox 項目テンプレートの、各メディア項目のチェック ボックスにバインドされます。
+FindItems メソッドで、**CancellationTokenSource** 変数を初期化して、必要に応じて検索操作の取り消しに使用できるようにします。 **try** ブロック内で、ユーザーが選択した [**PhotoImportSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource) オブジェクトで [**CreateImportSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource.CreateImportSession) を呼び出して、新しいインポート セッションを作成します。 検索操作の進行状況を表示するためのコールバックを提供するために、新しい [**Progress**](https://msdn.microsoft.com/library/hh193692.aspx) オブジェクトを作成します。 次に、[**FindItemsAsync**](https://docs.microsoft.com/uwp/api/windows.media.import.photoimportsession#Windows_Media_Import_PhotoImportSession_FindItemsAsync_Windows_Media_Import_PhotoImportContentTypeFilter_Windows_Media_Import_PhotoImportItemSelectionMode_) を呼び出して、検索操作を開始します。 [**PhotoImportContentTypeFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportContentTypeFilter) の値を提供して、写真、ビデオ、またはその両方を返す必要があるかどうかを指定します。 [**PhotoImportItemSelectionMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItemSelectionMode) の値を提供して、[**IsSelected**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem.IsSelected) プロパティが true に設定されているときに、すべてのメディア項目を返すのか、メディア項目を何も返さないのか、新しいメディア項目のみを返すのかを指定します。 このプロパティは、ListBox 項目テンプレートの、各メディア項目のチェック ボックスにバインドされます。
 
 **FindItemsAsync** は [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) を返します。 拡張メソッド [**AsTask**](https://msdn.microsoft.com/library/hh779750.aspx) は、待機可能で、キャンセル トークンを使用して取り消し可能であり、提供された **Progress** オブジェクトを使用して進行状況を報告するタスクの作成に使用されます。
 
@@ -121,6 +118,5 @@ FindItems メソッドで、**CancellationTokenSource** 変数を初期化して
 
 
  
-
 
 

@@ -2,21 +2,17 @@
 title: "ストリーミング リソースで利用可能な操作"
 description: "このセクションでは、ストリーミング リソースで実行できる操作を示します。"
 ms.assetid: 700D8C54-0E20-4B2B-BEA3-20F6F72B8E24
-keywords:
-- "ストリーミング リソースで利用可能な操作"
+keywords: "ストリーミング リソースで利用可能な操作"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0413aaeddd34b41bdf5c2bd3c0adbfd730787572
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 86f610131d406db69cfcf23be51fca839d889772
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="operations-available-on-streaming-resources"></a>ストリーミング リソースで利用可能な操作
 
 
@@ -37,7 +33,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

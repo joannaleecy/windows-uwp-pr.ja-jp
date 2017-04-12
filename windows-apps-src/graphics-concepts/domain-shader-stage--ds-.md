@@ -2,21 +2,17 @@
 title: "ドメイン シェーダー (DS) ステージ"
 description: "ドメイン シェーダー (DS) ステージでは、パッチ内の細分化されたポイントの頂点の位置を計算します。つまり、各ドメイン サンプルに対応する頂点の位置を計算します。"
 ms.assetid: 673CC04A-A74F-495F-AFB7-49157538749C
-keywords:
-- "ドメイン シェーダー (DS) ステージ"
+keywords: "ドメイン シェーダー (DS) ステージ"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8bb2b3c731f3612b7142bfd136b3d57d277c2e03
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3a94f30af955853a87958ae65a548f63c78b83ac
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="domain-shader-ds-stage"></a>ドメイン シェーダー (DS) ステージ
 
 
@@ -69,7 +65,6 @@ void main( out    MyDSOutput result,
  
 
  
-
 
 
 

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 647a0228299e90026307fdd516ac71da2473ff0d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0992c0fc3c6fe9d70b7867275d28e6bba78171ab
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="audio-device-information-properties"></a>オーディオ デバイス情報のプロパティ
 
 この記事では、オーディオ デバイスに関連するデバイス情報プロパティを示します。 Windows では、ハードウェア デバイスにはそれぞれ [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) プロパティが関連付けられており、デバイスについての特定の情報が必要な場合やデバイス セレクターを作成する場合に使うことができる、デバイスに関する詳細情報を提供します。 Windows でのデバイスの列挙に関する一般的な情報については、「[デバイスの列挙](../devices-sensors/enumerate-devices.md)」と「[デバイス情報プロパティ](../devices-sensors/device-information-properties.md)」をご覧ください。
@@ -35,7 +32,6 @@ ms.lasthandoff: 02/07/2017
 * [デバイス情報プロパティ](../devices-sensors/device-information-properties.md)
 * [デバイス セレクターのビルド](../devices-sensors/build-a-device-selector.md)
 * [メディア再生](media-playback.md)
-
 
 
 

@@ -2,25 +2,21 @@
 title: "環境光"
 description: "環境光は、シーンに一定のライティングを付加します。"
 ms.assetid: C34FA65A-3634-4A4B-B183-4CDA89F4DC95
-keywords:
-- "環境光"
+keywords: "環境光"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 77865a483f226fba912c03e2f9abe17eaa7fbee0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c03e3a67af7da1326e254a687c77c9c0fd1d5403
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="ambient-lighting"></a>環境光
 
 
-環境光は、シーンに一定のライティングを付加します。 このライティングは、頂点法線、ライトの方向、ライトの位置、範囲、減衰などのライティング要因に依存しないため、すべてのオブジェクトの頂点を同じように照らします。 環境光はすべての方向で一定であり、オブジェクトのすべてのピクセルを同じ色にします。 計算は高速ですが、オブジェクトはフラットに見え、リアル感が劣ります。
+環境光は、シーンに一定のライティングを付加します。 頂点法線、光の方向、光の位置、減衰などの他の照明要素に依存していないため、すべてのオブジェクト頂点を同じように照らします。 環境光は、すべての方向において一定であり、オブジェクトのすべてのピクセルが同じように色付けされます。 計算は高速ですが、オブジェクトはフラットに見え、リアル感が劣ります。
 
 環境光は最も短時間で実現できるライティングですが、リアル感は最も劣ります。 Direct3D には、ライトを作成せずに使用できる 1 つのグローバル環境光プロパティがあります。 または、任意のライト オブジェクトを設定して、環境光を実現することもできます。
 
@@ -83,7 +79,7 @@ Ambient.a = 0.0f;
 
 オブジェクトをよりリアルに見せるには、環境光に加えて、ディフューズ ライティングやスペキュラ ライティングを適用します。
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連項目
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [光源の計算](mathematics-of-lighting.md)
@@ -91,7 +87,6 @@ Ambient.a = 0.0f;
  
 
  
-
 
 
 

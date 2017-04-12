@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, メイン オブジェクト"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: f81b3eaa9b896295386232f99b789dc3857b3bad
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="define-the-main-game-object"></a>メイン ゲーム オブジェクトの定義
 
 
@@ -3625,7 +3622,6 @@ XMFLOAT3 AnimateCirclePosition::Evaluate(_In_ float t)
  
 
  
-
 
 
 

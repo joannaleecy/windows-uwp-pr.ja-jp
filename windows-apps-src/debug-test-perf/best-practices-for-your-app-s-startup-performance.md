@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b59a4eb056e36156b847c769778b2609863ec1fc
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9ab3eeeffbab26f5d26d28160a750c50d53b7e96
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>アプリ起動時のパフォーマンスのベスト プラクティス
 
@@ -367,5 +365,4 @@ PageStackEntry には、Frame.Navigate() メソッドに渡されたパラメー
 ページをキャッシュすると、インスタンス化が回避され、ナビゲーションのパフォーマンスが向上することにより、パフォーマンス面のメリットとなる可能性があります。 ページのキャッシュが過剰になると、ワーキング セットに影響を及ぼすため、パフォーマンスが低下する可能性があります。
 
 したがって、アプリケーションで適切なページのキャッシュを使用することをお勧めします。 たとえば、アプリがフレームに項目の一覧を表示する場合、項目をタップすると、アプリはフレームをその項目の詳細ページに移動します。 この一覧ページは、キャッシュするように設定することをお勧めします。 詳細ページがすべての項目で同じである場合、このページもキャッシュすることをお勧めします。 ただし、詳細ページの種類が異なる場合は、キャッシュを無効のままにしておくことをお勧めします。
-
 

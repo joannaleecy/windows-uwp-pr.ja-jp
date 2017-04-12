@@ -11,11 +11,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: f04d1a3c-7dcd-4bc8-9586-3396923b312e
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 41d86777b3e8aa0b7d32c408beec3f55a4a35d7b
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: e5c8b5056581540abd5e0ddf75da7785648df1d5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="buttons"></a>ボタン
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -30,9 +28,6 @@ ms.lasthandoff: 02/08/2017
 <li>[**Button クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)</li>
 <li>[**RepeatButton クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx)</li>
 <li>[**Click イベント**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)</li>
-<li> </li>
-<li> </li>
-<li> </li>
 </ul>
 </div>
 
@@ -88,7 +83,7 @@ private async void SubmitButton_Click(object sender, RoutedEventArgs e)
 
 ポインターがボタンの上にあるときに、指やスタイラスでそのボタンをタップするか、マウスの左ボタンを押すと、ボタンでは [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) イベントが発生します。 ボタンにキーボード フォーカスがある場合は、Enter キーまたは Space キーを押しても、Click イベントが発生します。
 
-通常、ボタンでは低レベルな [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) イベントを処理できません。これに代わる Click 動作があるためです。 詳しくは、「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/en-us/library/windows/apps/mt185584.aspx)」をご覧ください。
+通常、ボタンでは低レベルな [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) イベントを処理できません。これに代わる Click 動作があるためです。 詳しくは、「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584.aspx)」をご覧ください。
 
 ボタンで Click イベントが発生する方法を変えるには、[**ClickMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.clickmode.aspx) プロパティを変更します。 ClickMode の既定値は **Release** です。 ClickMode が **Hover** の場合、キーボード操作やタッチ操作によって Click イベントを発生させることはできません。 
 
@@ -97,7 +92,7 @@ private async void SubmitButton_Click(object sender, RoutedEventArgs e)
 
 ボタンは [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.aspx) です。 その XAML コンテンツ プロパティは [**Content**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx) で、`<Button>A button's content</Button>` のような XMAL 構文を使用できます。 任意のオブジェクトをボタンのコンテンツとして設定できます。 コンテンツが [UIElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx) の場合、ボタンにレンダリングされます。 コンテンツが別のタイプのオブジェクトの場合、その文字列表現がボタンに表示されます。
 
-ここでは、バナナの画像とテキストを含む **StackPanel** がボタンのコンテンツとして設定されます。
+ここでは、オレンジの画像とテキストを含む **StackPanel** がボタンのコンテンツとして設定されます。
 
 ```xaml
 <Button Click="Button_Click" 
@@ -187,6 +182,5 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 - [トグル スイッチ](toggles.md)
 - [チェック ボックス](checkbox.md)
 - [**Button クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
-
 
 

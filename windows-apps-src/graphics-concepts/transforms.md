@@ -2,21 +2,17 @@
 title: "変換"
 description: "Direct3D の処理の中で、ジオメトリを固定機能ジオメトリ パイプラインに通す部分を担うのが変換エンジンです。"
 ms.assetid: 0DF2A99A-335C-4D14-9720-6D7996DD635A
-keywords:
-- "変換"
+keywords: "変換"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2036573c0a5b2967bda38473b126b85f259c278c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 342dd40bd6cc69ebf1faf93753b91096e7ecfbe9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="transforms"></a>変換
 
 
@@ -66,7 +62,6 @@ Direct3D の処理の中で、ジオメトリを固定機能ジオメトリ パ�
  
 
  
-
 
 
 

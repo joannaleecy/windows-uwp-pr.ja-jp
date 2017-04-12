@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e4cc17bf268ddb470c3c64dfe3e471053d8fca55
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e9d66feb6117fddfff62c217b55da813a63c4331
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launch-the-windows-settings-app"></a>Windows 設定アプリの起動
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -383,4 +380,3 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
         <td>ms-settings:developers</td>
     </tr>
 </table><br/>
-

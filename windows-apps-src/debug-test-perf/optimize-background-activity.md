@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 045dfeb4696a4854b114d88da2a2cbb75d621a58
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="optimize-background-activity"></a>バックグラウンド アクティビティの最適化
 
 ユニバーサル Windows アプリは、すべてのデバイス ファミリで一貫して動作する必要があります。 バッテリー駆動デバイスにおいて、消費電力は、アプリの全体的なユーザー エクスペリエンスを左右する重要な要因です。 バッテリー残量が 1 日中持続する終日バッテリー駆動はすべてのユーザーにとって望ましい機能ですが、それにはデバイスにインストールされているすべてのソフトウェアが効率的に動作する必要があるため、その点を考慮した開発が求められます。 
@@ -56,5 +53,4 @@ Windows 10 Version 1607 では、ユーザーは設定アプリの **[バッテ�
 
 * [アウトプロセス バックグラウンド タスクの作成と登録](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
 * [パフォーマンスの計画](https://msdn.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
-
 

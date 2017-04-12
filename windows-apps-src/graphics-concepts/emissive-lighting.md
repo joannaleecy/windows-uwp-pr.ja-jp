@@ -2,25 +2,21 @@
 title: "放射光"
 description: "放射光は、白熱光などオブジェクトによって放射される光です。"
 ms.assetid: 262EB9E2-DF96-401F-93D6-51A7BB60074B
-keywords:
-- "放射光"
+keywords: "放射光"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 50bc904e5810340846b3fd84ffca214d07d38750
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6e67a38f1ec7d036646abd06d641e8bf9d900ce3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="emissive-lighting"></a>放射光
 
 
-*放射光*は、白熱光などオブジェクトによって放射される光です。 放射を使用すると、レンダリングされたオブジェクトは自己発光しているように見えます。 放射はオブジェクトの色に影響し、暗いマテリアルが明るくなったり、部分的に放射される光の色になったりする場合があります。
+*放射光*は、白熱光などオブジェクトによって放射される光です。 放射によって、レンダリングされるオブジェクトが自己発光しているように見えます。 放射はオブジェクトの色に影響し、暗いマテリアルが明るくなったり、部分的に放射される光の色になったりする場合があります。
 
 放射光は単一の項で表されます。
 
@@ -59,7 +55,6 @@ Cₑ の値は、color 1 または color 2 です。 頂点の色が指定され
  
 
  
-
 
 
 

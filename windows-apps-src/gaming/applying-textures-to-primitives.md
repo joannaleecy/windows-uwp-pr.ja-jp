@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、ゲーム、テクスチャ、DirectX"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: cc25d7bcc5809dd10b43418ccd42f78c10d1336e
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="apply-textures-to-primitives"></a>プリミティブへのテクスチャの適用
 
 
@@ -25,7 +22,7 @@ ms.lasthandoff: 02/07/2017
 
 **目標:** プリミティブにテクスチャを適用する。
 
-## <a name="prerequisites"></a>必要条件
+## <a name="prerequisites"></a>前提条件
 
 
 C++ に習熟していることを前提としています。 また、グラフィックス プログラミングの概念に対する基礎的な知識も必要となります。
@@ -527,7 +524,6 @@ private:
  
 
  
-
 
 
 

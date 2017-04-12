@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, 収益化"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: eccff6f037890fdd375eb150520db99a67aa718d
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 #  <a name="monetization-for-games"></a>ゲームの収益化
 
@@ -180,7 +178,7 @@ AdControl を使って広告を表示する場合は、ゲーム内に表示さ�
 |AdType             | AdUnitId  | AppId                              |
 |-------------------|-----------|------------------------------------|
 |バナー広告         |10865270   |3f83fe91-d6be-434d-a0ae-7351c5a997f1|
-|スポット広告   |11389925   |d25517cb-12d4-4699-8bdc-52040c712cab|
+|スポット広告    |11389925   |d25517cb-12d4-4699-8bdc-52040c712cab|
 
 設計と実装のプロセスに役立つベスト プラクティスを次に示します。
 
@@ -225,8 +223,8 @@ Unity を使って作成された Windows 10 UWP ゲームに AdDuplex SDK を�
 |キャンペーンの種類             | ゲームの広告が表示されるアプリ                                                                                                                                                                   |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |有料                      |ゲームのデバイスまたはカテゴリに一致するアプリ。                                                                                                                                                   |
-|コミュニティ (無料)            |コミュニティ広告キャンペーンにオプト インしている他の開発者が公開するアプリ。 詳しくは、「[コミュニティ広告について](https://msdn.microsoft.com/windows/uwp/publish/about-community-ads)」をご覧ください。|
-|自社 (無料)                |自社が公開したアプリのみ。 詳しくは、「[自社広告について](https://msdn.microsoft.com/windows/uwp/publish/about-house-ads)」をご覧ください。                                                            |
+|コミュニティ (無料)               |コミュニティ広告キャンペーンにオプト インしている他の開発者が公開するアプリ。 詳しくは、「[コミュニティ広告について](https://msdn.microsoft.com/windows/uwp/publish/about-community-ads)」をご覧ください。|
+|自社 (無料)                   |自社が公開したアプリのみ。 詳しくは、「[自社広告について](https://msdn.microsoft.com/windows/uwp/publish/about-house-ads)」をご覧ください。                                                            |
 
 ## <a name="related-links"></a>関連リンク
 
@@ -235,4 +233,4 @@ Unity を使って作成された Windows 10 UWP ゲームに AdDuplex SDK を�
 * [分析](https://msdn.microsoft.com/windows/uwp/publish/analytics)
 * [グローバリゼーションとローカライズ](https://msdn.microsoft.com/windows/uwp/globalizing/globalizing-portal)
 * [アプリの試用版の実装](https://msdn.microsoft.com/windows/uwp/monetize/implement-a-trial-version-of-your-app)
-* [A/B テストを使用してアプリの試験的機能を実行する](https://msdn.microsoft.com/windows/uwp/monetize/run-app-experiments-with-a-b-testing)
+* [A/B テストを使用してアプリの実験を実行する](https://msdn.microsoft.com/windows/uwp/monetize/run-app-experiments-with-a-b-testing)

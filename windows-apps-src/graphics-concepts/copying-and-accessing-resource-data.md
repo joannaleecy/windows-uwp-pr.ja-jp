@@ -2,21 +2,17 @@
 title: "リソース データのコピーとアクセス"
 description: "使用法フラグは、アプリケーションがリソース データをどのように使用するかを示し、リソースを可能な限りメモリのパフォーマンスの高い領域に配置します。 リソース データはリソース間でコピーされ、CPU または GPU がパフォーマンスに影響を与えることなくリソースにアクセスできるようにします。"
 ms.assetid: 6A09702D-0FF2-4EA6-A353-0F95A3EE34E2
-keywords:
-- "リソース データのコピーとアクセス"
+keywords: "リソース データのコピーとアクセス"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1dc6853a5675b6e22300650a5c44519436c391d0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e26e6abf4b15584f8c04a837dcc6bd23aad0f1d0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="copying-and-accessing-resource-data"></a>リソース データのコピーとアクセス
 
 
@@ -139,7 +135,6 @@ Direct3D の非同期呼び出し (メソッドの大多数の呼び出し、お
  
 
  
-
 
 
 

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、ゲーム、Direct3D、深度バッファー"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 87e4248545288f4725e0cf0b104a75f1925ad3a3
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-depth-buffer-device-resources"></a>深度バッファーのデバイス リソースの作成
 
 
@@ -265,7 +262,6 @@ m_shadowViewport.MaxDepth = 1.f;
  
 
  
-
 
 
 

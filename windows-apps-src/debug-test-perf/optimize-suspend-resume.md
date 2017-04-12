@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2771d7dae6df171855297ab988bbd00ecfa55d1d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 491ce616f557d26ad7a5fdf1c068f1c9784bd046
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="optimize-suspendresume"></a>中断/再開の最適化
 
@@ -92,7 +90,6 @@ UWP のプロセス継続時間システムは、さまざまな理由でアプ�
  
 
  
-
 
 
 

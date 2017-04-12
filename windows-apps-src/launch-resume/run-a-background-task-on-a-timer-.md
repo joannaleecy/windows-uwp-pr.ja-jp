@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3708a9b7768d4fb7fbb6af0e55836471a2ba29ed
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6f834c91cd0c71f6d7687d9f69224ed747e45a6d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="run-a-background-task-on-a-timer"></a>タイマーでのバックグラウンド タスクの実行
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -46,13 +43,13 @@ ms.lasthandoff: 02/07/2017
 
     たとえば、次のトリガーではバックグラウンド タスクは 1 時間に 1 回実行されます。
 
-    > [!div class="tabbedCodeSnippets"]
-    > ```cs
-    > TimeTrigger hourlyTrigger = new TimeTrigger(60, false);
-    > ```
-    > ```cpp
-    > TimeTrigger ^ hourlyTrigger = ref new TimeTrigger(60, false);
-    > ```
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> TimeTrigger hourlyTrigger = new TimeTrigger(60, false);
+> ```
+> ```cpp
+> TimeTrigger ^ hourlyTrigger = ref new TimeTrigger(60, false);
+> ```
 
 ## <a name="optional-add-a-condition"></a>(省略可能) 条件の追加
 
@@ -60,50 +57,50 @@ ms.lasthandoff: 02/07/2017
 
     この例では、条件が **UserPresent** に設定されているため、トリガー後、ユーザーがアクティブになった場合にタスクが 1 回だけ実行されます。 指定できる条件の一覧については、「[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)」をご覧ください。
 
-    > [!div class="tabbedCodeSnippets"]
-    > ```cs
-    > SystemCondition userCondition = new SystemCondition(SystemConditionType.UserPresent);
-    > ```
-    > ```cpp
-    > SystemCondition ^ userCondition = ref new SystemCondition(SystemConditionType::UserPresent)
-    > ```
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> SystemCondition userCondition = new SystemCondition(SystemConditionType.UserPresent);
+> ```
+> ```cpp
+> SystemCondition ^ userCondition = ref new SystemCondition(SystemConditionType::UserPresent)
+> ```
 
 ##  <a name="call-requestaccessasync"></a>RequestAccessAsync() の呼び出し
 
 -   [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) バックグラウンド タスクを登録しようとする前に、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494) を呼び出します。
 
-    > [!div class="tabbedCodeSnippets"]
-    > ```cs
-    > BackgroundExecutionManager.RequestAccessAsync();
-    > ```
-    > ```cpp
-    > BackgroundExecutionManager::RequestAccessAsync();
-    > ```
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> BackgroundExecutionManager.RequestAccessAsync();
+> ```
+> ```cpp
+> BackgroundExecutionManager::RequestAccessAsync();
+> ```
 
 ## <a name="register-the-background-task"></a>バックグラウンド タスクの登録
 
 -   バックグラウンド タスクの登録関数を呼び出してバックグラウンド タスクを登録します。 バックグラウンド タスクの登録について詳しくは、「[バックグラウンド タスクの登録](register-a-background-task.md)」をご覧ください。
 
 > [!Important]
-> アプリと同じプロセスで実行されるバックグラウンド タスクについては、`entryPoint` を設定しません。アプリとは別のプロセスで実行されるバックグラウンド タスクについては、`entryPoint` を名前空間 '.' (およびバックグラウンド タスクの実装を含んだクラスの名前) に設定します。
+> アプリと同じプロセスで実行されるバックグラウンド タスクについては、`entryPoint` を設定しません。アプリとは別のプロセスで実行されるバックグラウンド タスクについては、`entryPoint` を、"名前空間 + '.' + バックグラウンド タスクの実装を含んだクラス名" の形式で設定します。
 
     The following code registers a background task that runs out-of-process:
 
-    > > [!div class="tabbedCodeSnippets"]
-    > ```cs
-    > string entryPoint = "Tasks.ExampleBackgroundTaskClass";
-    > string taskName   = "Example hourly background task";
-    >
-    > BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
-    > ```
-    > ```cpp
-    > String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass";
-    > String ^ taskName   = "Example hourly background task";
-    >
-    > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
-    > ```
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> string entryPoint = "Tasks.ExampleBackgroundTaskClass";
+> string taskName   = "Example hourly background task";
+>
+> BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
+> ```
+> ```cpp
+> String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass";
+> String ^ taskName   = "Example hourly background task";
+>
+> BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
+> ```
 
-    > **Note**  Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
+> **注**  バックグラウンド タスクの登録パラメーターは登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 バックグラウンド タスクの登録が失敗するシナリオをアプリが適切に処理するようにします。タスクを登録しようとした後で、有効な登録オブジェクトを持っていることを前提として動作するアプリは、クラッシュする場合があります。
 
 
 ## <a name="remarks"></a>注釈
@@ -127,4 +124,3 @@ ms.lasthandoff: 02/07/2017
 * [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
 * [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
 * [Windows ストア アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-

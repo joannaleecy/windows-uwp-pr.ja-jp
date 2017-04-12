@@ -12,11 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2131b6db9d9d72b574a0d0bed7c07aef7fcc4f37
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 51d8a53de21623516d6d582834cf9d854f2a5403
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="media-player"></a>メディア プレーヤー
 
@@ -48,7 +46,7 @@ Windows 10 Get Started アプリのメディア プレイヤー。
 ![Windows 10 Get Started アプリのメディア要素](images/control-examples/mtc_getstarted_example.png)
 
 ## <a name="create-a-media-player"></a>メディア プレーヤーの作成
-XAML で [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) オブジェクトを作成してアプリにメディアを追加し、オーディオやビデオ ファイルを指定する [**MediaSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx) に [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) を設定します。
+XAML で [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) オブジェクトを作成してアプリにメディアを追加し、オーディオやビデオ ファイルを指定する [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx) に [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) を設定します。
 
 この XAML は [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) を作成し、その [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) プロパティをアプリのローカルにあるビデオ ファイルの URI に設定するコードを示します。 ページが読み込まれると、**MediaPlayerElement** によって再生が開始します。 メディアがすぐに再生されないようにするには、[**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.autoplay.aspx) プロパティを **false** に設定します。
 
@@ -88,7 +86,7 @@ XAML で [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/app
 
 
 ### <a name="set-the-media-source"></a>メディア ソースを設定する
-ネットワーク上のファイルまたはアプリに埋め込まれたファイルを再生する場合は、ファイルのパスを使用して [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) プロパティを [**MediaSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx) に設定します。
+ネットワーク上のファイルまたはアプリに埋め込まれたファイルを再生する場合は、ファイルのパスを使用して [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) プロパティを [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx) に設定します。
 
 **ヒント**  インターネットからファイルを開くには、アプリのマニフェスト (Package.appxmanifest) で **Internet (Client)** 機能を宣言する必要があります。 機能の宣言について詳しくは、「[アプリ機能の宣言](https://msdn.microsoft.com/library/windows/apps/mt270968)」をご覧ください。
 
@@ -136,7 +134,7 @@ private void LoadMediaFromString(string path)
 }
 ```
 
-メディア ソースをアプリに埋め込まれたメディア ファイルに設定するには、**ms-appx:///** で始まるパスで [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) を初期化し、その Uri で [**MediaSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx) を作成してから、[**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) をその Uri に設定します。 たとえば、**Videos** サブフォルダーにある **video1.mp4** というファイルのパスは、**ms-appx:///Videos/video1.mp4** のようになります。
+メディア ソースをアプリに埋め込まれたメディア ファイルに設定するには、**ms-appx:///** で始まるパスで [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) を初期化し、その Uri で [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx) を作成してから、[**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) をその Uri に設定します。 たとえば、**Videos** サブフォルダーにある **video1.mp4** というファイルのパスは、**ms-appx:///Videos/video1.mp4** のようになります。
 
 次のコードは、XAML で定義した [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) の [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) プロパティを **ms-appx:///Videos/video1.mp4** に設定します。
 
@@ -172,9 +170,9 @@ private void LoadEmbeddedAppFile()
 
     [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) クラスを使って、メディア ファイルを選びます。 **FileOpenPicker** が表示するファイルの種類を指定する [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) を設定します。 [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) を呼び出して、ファイル ピッカーを起動し、ファイルを取得します。
 
-2.  [**MediaSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx) を使用して、選んだメディア ファイルを [**MediaPlayerElement.Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) として設定します。
+2.  [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx) を使用して、選んだメディア ファイルを [**MediaPlayerElement.Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) として設定します。
 
-    [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) から返された [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) を使用するには、[**MediaSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx) で [**CreateFromStorageFile**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.createfromstoragefile.aspx) メソッドを呼び出して、それを [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) の [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) として設定する必要があります。 その後、[**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) で [**Play**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.play.aspx) を呼び出して、メディアを開始します。
+    [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) から返された [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) を使用するには、[**MediaSource**](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx) で [**CreateFromStorageFile**](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.createfromstoragefile.aspx) メソッドを呼び出して、それを [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) の [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) として設定する必要があります。 その後、[**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) で [**Play**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.play.aspx) を呼び出して、メディアを開始します。
 
 
 この例は、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) を使ってファイルを選び、そのファイルを [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) の [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) に設定する方法を示しています。
@@ -215,8 +213,8 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 ### <a name="set-the-poster-source"></a>ポスター ソースを設定する
 [**PosterSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.PosterSource.aspx) プロパティを使って、メディアの読み込みが終わるまで [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) に視覚的な表示を提供することができます。 **PosterSource** は、スクリーン ショットや映画のポスターなど、メディアの代わりに表示される画像です。 **PosterSource** は、次のような状況で表示されます。
 
--   有効なソースが設定されていないとき。 たとえば、[**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) が設定されていないとき、**Source** が **Null** に設定されているとき、またはソースが無効であるとき ([**MediaFailed**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.mediafailed.aspx) イベントが発生したときと同様) です。
--   メディアの読み込み中。 たとえば、有効なソースが設定されていても、[**MediaOpened**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.mediaopened.aspx) イベントがまだ発生していないときです。
+-   有効なソースが設定されていないとき。 たとえば、[**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) が設定されていないとき、**Source** が **Null** に設定されているとき、またはソースが無効であるとき ([**MediaFailed**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.mediafailed.aspx) イベントが発生したときと同様) です。
+-   メディアの読み込み中。 たとえば、有効なソースが設定されていても、[**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.mediaopened.aspx) イベントがまだ発生していないときです。
 -   別のデバイスにメディアをストリーミングしているとき。
 -   メディアがオーディオのみであるとき。
 
@@ -251,7 +249,7 @@ private DisplayRequest appDisplayRequest = null;
 
 3.  ビデオの再生が再生エラーによって停止、一時停止、中断したときには必ず、[**RequestRelease**](https://msdn.microsoft.com/library/windows/apps/br241819) を呼び出して表示要求を解放します。 アプリにアクティブな表示要求がなくなった場合、Windows は、デバイスが使われていないときには表示を暗くし、最終的には電源をオフにしてバッテリーを節約します。
 
-    各 [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) には、[**PlaybackRate**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackrate.aspx)、[**PlaybackState**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstate.aspx)、[**Position**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.position.aspx) など、メディア再生のさまざまな側面を制御する [**MediaPlaybackSession**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.aspx) 型の [**PlaybackSession**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx) があります。 ここでは、[**MediaPlayer.PlaybackSession**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx) で [**PlaybackStateChanged**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstatechanged.aspx) イベントを使って、表示要求を解放する必要がある状況を検出します。 次に、[**NaturalVideoHeight**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacksession.naturalvideoheight.aspx) プロパティを使って、オーディオ ファイルとビデオ ファイルのどちらが再生されているかを確認し、ビデオが再生されている場合にのみ画面をアクティブなままにします。
+    各 [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) には、[**PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackrate.aspx)、[**PlaybackState**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstate.aspx)、[**Position**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.position.aspx) など、メディア再生のさまざまな側面を制御する [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.aspx) 型の [**PlaybackSession**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx) があります。 ここでは、[**MediaPlayer.PlaybackSession**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.playbacksession.aspx) で [**PlaybackStateChanged**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.playbackstatechanged.aspx) イベントを使って、表示要求を解放する必要がある状況を検出します。 次に、[**NaturalVideoHeight**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacksession.naturalvideoheight.aspx) プロパティを使って、オーディオ ファイルとビデオ ファイルのどちらが再生されているかを確認し、ビデオが再生されている場合にのみ画面をアクティブなままにします。
     ```xaml
 <MediaPlayerElement x:Name="mpe" Source="Media/video1.mp4"/>
     ```
@@ -292,10 +290,10 @@ private DisplayRequest appDisplayRequest = null;
     ```
 
 ### <a name="control-the-media-player-programmatically"></a>プログラムでメディア プレーヤーを制御する
-[**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) には、[**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) プロパティを介してオーディオやビデオの再生を制御するプロパティ、メソッド、イベントが多数用意されています。 プロパティ、メソッド、イベントの完全な一覧については、[**MediaPlayer**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.aspx) のリファレンス ページをご覧ください。
+[**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) には、[**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) プロパティを介してオーディオやビデオの再生を制御するプロパティ、メソッド、イベントが多数用意されています。 プロパティ、メソッド、イベントの完全な一覧については、[**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx) のリファレンス ページをご覧ください。
 
 ### <a name="advanced-media-playback-scenarios"></a>高度なメディア再生のシナリオ
-プレイリストを再生するような複雑なメディア再生のシナリオでは、オーディオ言語間を切り替えたり、カスタム メタデータ トラックを作成したりするため、[**MediaPlayerElement.Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) を [**MediaPlaybackItem**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybackitem.aspx) または [**MediaPlaybackList**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacklist.aspx) に設定します。 さまざまな高度なメディア機能を有効にする方法について詳しくは、デベロッパー センターの[**メディアの再生**](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/media-playback-with-mediasource)のページをご覧ください。
+プレイリストを再生するような複雑なメディア再生のシナリオでは、オーディオ言語間を切り替えたり、カスタム メタデータ トラックを作成したりするため、[**MediaPlayerElement.Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) を [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackitem.aspx) または [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacklist.aspx) に設定します。 さまざまな高度なメディア機能を有効にする方法について詳しくは、デベロッパー センターの[**メディアの再生**](https://msdn.microsoft.com/windows/uwp/audio-video-camera/media-playback-with-mediasource)のページをご覧ください。
 
 ### <a name="enable-full-window-video-rendering"></a>フル ウィンドウのビデオ レンダリングを有効にする
 
@@ -360,9 +358,9 @@ private void PictureSize_Click(object sender, RoutedEventArgs e)
 
 ### <a name="enable-low-latency-playback"></a>待機時間が短い再生を可能にする
 
-[**RealTimePlayback**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.realtimeplayback.aspx) プロパティを **true** に設定すると、[**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) の再生の最初の待機時間を短くすることができます。 これは双方向通信アプリには重要で、ゲームのシナリオにも適用できる場合があります。 このモードでは、リソースがより多く消費され、電力効率が低下する点に注意してください。
+[**RealTimePlayback**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.realtimeplayback.aspx) プロパティを **true** に設定すると、[**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) の再生の最初の待機時間を短くすることができます。 これは双方向通信アプリには重要で、ゲームのシナリオにも適用できる場合があります。 このモードでは、リソースがより多く消費され、電力効率が低下する点に注意してください。
 
-この例では、[**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) を作って、[**RealTimePlayback**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.realtimeplayback.aspx) を **true** に設定します。
+この例では、[**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) を作って、[**RealTimePlayback**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.realtimeplayback.aspx) を **true** に設定します。
 
 
 ```csharp
@@ -386,4 +384,3 @@ mp.MediaPlayer.RealTimePlayback = true;
 
 - [UWP アプリのコマンド設計の基本](https://msdn.microsoft.com/library/windows/apps/dn958433)
 - [UWP アプリのコンテンツ デザインの基本](https://msdn.microsoft.com/library/windows/apps/dn958434)
-

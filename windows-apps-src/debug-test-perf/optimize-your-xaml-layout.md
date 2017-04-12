@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d4eae4379fb74d36a97db9be9a100408825682a7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 226b2fd19777deb5135d1e1f059596883f95d3d3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="optimize-your-xaml-layout"></a>XAML レイアウトの最適化
 
@@ -189,5 +187,4 @@ UI でこれらのパネルの周囲に [**Border**](https://msdn.microsoft.com/
 通常、パフォーマンスは、個々のパネルを選択するときの検討事項ではありません。 パネルの選択は、実装しようとする UI に最も近いレイアウトの動作を実現するパネルを検討することによって行われます。 たとえば、[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)、[**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546) のいずれかを選択する場合、実装の概念的モデルに最も近いマッピングを提供するパネルを選択する必要があります。
 
 どの XAML パネルもパフォーマンスが高くなるように最適化されており、同様の UI ではどのパネルのパフォーマンスも同様です。
-
 

@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4dc1cd837b7ac7849125e0a1737873fec4a15cd3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 34c3aab3e9a04eb535014182c0dbc8c140670b89
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="create-custom-transport-controls"></a>カスタム トランスポート コントロールを作成する
 
@@ -269,7 +267,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 
 MediaTransportControls の "seek" コントロールは、[**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx) 要素により提供されます。 このコントロールをカスタマイズする 1 つの方法として、シーク動作の細かさを変更できます。
 
-既定のシーク スライダーは 100 の部分に分かれているため、シーク動作はその数のセクションに限定されます。 シーク スライダーの細かさを変更するには、[**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) の [**MediaOpened**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.mediaopened.aspx) イベント ハンドラーで XAML ビジュアル ツリーから Slider を取得します。 この例では、[**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.visualtreehelper.aspx) を使って Slider への参照を取得し、メディアが 120 分より長い場合に、スライダーの既定のステップ間隔を 1% から 0.1% (1000 ステップ) に変更する方法を示しています。 MediaPlayerElement には、`MediaPlayerElement1` という名前が付けられています。
+既定のシーク スライダーは 100 の部分に分かれているため、シーク動作はその数のセクションに限定されます。 シーク スライダーの細かさを変更するには、[**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) の [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.mediaopened.aspx) イベント ハンドラーで XAML ビジュアル ツリーから Slider を取得します。 この例では、[**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.visualtreehelper.aspx) を使って Slider への参照を取得し、メディアが 120 分より長い場合に、スライダーの既定のステップ間隔を 1% から 0.1% (1000 ステップ) に変更する方法を示しています。 MediaPlayerElement には、`MediaPlayerElement1` という名前が付けられています。
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -292,4 +290,3 @@ private void MediaPlayerElement_MediaPlayer_MediaOpened(object sender, RoutedEve
 ## <a name="related-articles"></a>関連記事
 
 - [メディア再生](media-playback.md)
-

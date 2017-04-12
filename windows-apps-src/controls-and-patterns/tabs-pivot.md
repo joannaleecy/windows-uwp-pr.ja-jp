@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 93df9051bc0ae724e2c47f5ce5f73da3910c30ce
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 197feb30f769f4e34a576abeb52bd17d4006bb42
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="pivot-and-tabs"></a>ピボットとタブ
 
@@ -143,4 +141,3 @@ Pivot は [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xam
 ## <a name="related-topics"></a>関連トピック
 - [ナビゲーション デザインの基本](../layout/navigation-basics.md)
 - [**ピボットのサンプル**](http://go.microsoft.com/fwlink/p/?LinkId=619903)
-

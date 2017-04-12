@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 8918b120394def3ba12d5932dc66cb38279cc124
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: dbdc65fb842c6f8d6439f0041a33d991e27bd6b6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -140,5 +137,4 @@ Windows 10 バージョン 1607 以降では、ビデオの録画を一時停止
 * [MediaCapture を使ってデバイスの向きを処理する](handle-device-orientation-with-mediacapture.md)
 * [ビットマップ画像の作成、編集、保存](imaging.md)
 * [ファイル、フォルダー、およびライブラリ](https://msdn.microsoft.com/windows/uwp/files/index)
-
 

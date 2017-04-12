@@ -11,32 +11,20 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a5f15129c424c92ac537116458c8433f6c96fa87
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2d48a92d5af75f8543f7b69ac59865e51bd334ee
+ms.sourcegitcommit: d1d53f5100edffe3f3ee57b853dc8cd1568fe7a2
+translationtype: HT
 ---
 # <a name="nav-panes"></a>ナビゲーション ウィンドウ
-
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 ナビゲーション ウィンドウは、さまざまなトップ レベルのナビゲーション項目を使うことができるパターンです。これにより、画面領域を節約することができます。 ナビゲーション ウィンドウはモバイル アプリに広く使われていますが、大きい画面でも適切に機能します。 オーバーレイとして使うと、ユーザーがボタンを押すまでウィンドウは折りたたまれたままで邪魔にならないため、小さい画面で便利です。 固定モードで使うと、ウィンドウは開いたままであるため、十分な画面領域がある場合に便利です。
 
 ![ナビゲーション ウィンドウの例](images/navHero.png)
 
-<div class="important-apis" >
-<b>重要な API</b><br/>
-<ul>
-<li>[**SplitView クラス**](https://msdn.microsoft.com/library/windows/apps/dn864360)</li>
-<li> </li>
-<li> </li>
-<li> </li>
-<li> </li>
-<li> </li>
-</ul>
-</div>
 
+**重要な API**
+
+* [**SplitView クラス**](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
 ## <a name="is-this-the-right-pattern"></a>適切なパターンの選択
 
@@ -54,9 +42,6 @@ ms.lasthandoff: 02/07/2017
 
 このパターンのコードの実装をテストする場合は、GitHub から [XAML ナビゲーションのソリューション](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlNavigation)をダウンロードします。
 
-<div class="microsoft-internal-note">
-[UNI](http://uni/DesignDepot.FrontEnd/#/Search?c=t&t=Windows%2BRS1%2BControls&f=NavPane_Hamburger) 上でナビゲーション ウィンドウとハンバーガーが利用できることを示す赤線。
-</div>
 
 ### <a name="pane"></a>ウィンドウ
 
@@ -132,4 +117,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fcc1d056fc3a4cb8d57ae5082e62cf0b802bb4e7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f74a93714b32613b6bee606a3916961b861b2d08
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launch-the-default-app-for-a-uri"></a>URI に応じた既定のアプリの起動
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -221,4 +218,3 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 `ms-windows-store://home/`
 
 詳しくは、「[Windows ストア アプリの起動](launch-store-app.md)」をご覧ください。
-

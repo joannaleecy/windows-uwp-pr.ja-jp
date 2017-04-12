@@ -2,21 +2,17 @@
 title: "階層 3"
 description: "階層 3 では、階層 2 の機能に加えて、ストリーミング リソース向けの Texture3D のサポートが追加されます。"
 ms.assetid: 86E2F311-A221-4C87-BA89-642FF388FAEB
-keywords:
-- "階層 3"
+keywords: "階層 3"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 087969fde7b6c7a163fbfc9e0d5669ad5568d19a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 992801ff70d9b99752af2b70be72674225e3573f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="tier-3"></a>階層 3
 
 
@@ -30,7 +26,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

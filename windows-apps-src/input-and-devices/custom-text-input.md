@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6c9afe44006f173f7f261e1013024b6412d68703
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e1138c23985325f7b22470336e723ef745949cd6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="custom-text-input"></a>カスタム テキスト入力
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -167,6 +164,5 @@ ms.lasthandoff: 02/07/2017
  
 **サンプルのアーカイブ**
 * [XAML テキスト編集のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkID=251417)
-
 
 

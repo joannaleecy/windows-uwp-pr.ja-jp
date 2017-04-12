@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 予定, カレンダー"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8fe8c0172d50cfe65bc8e695ffeb6899a228bdd2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2f220e8efadfca824a1ec4f41045f18dcc61ffb1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="manage-appointments"></a>予定の管理
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
@@ -577,4 +574,3 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
  
 
  
-

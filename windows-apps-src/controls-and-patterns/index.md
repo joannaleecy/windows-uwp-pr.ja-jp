@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
-translationtype: Human Translation
-ms.sourcegitcommit: 412a3f70861c6cd1bbf003fe0bd78c8547a5f3f8
 ms.openlocfilehash: 7b525267c8f4d24af95f6d41d46d33a3adf10f8f
-ms.lasthandoff: 02/08/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>UWP アプリのコントロールとパターン
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 

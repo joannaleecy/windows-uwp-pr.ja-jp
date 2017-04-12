@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 791722752ee6ab6de92f5717d62ed03d833f184c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 11c8fbdfd8653fe93ab712c865dc1d23e7a76581
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="special-tile-templates"></a>特別なタイル テンプレート
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -271,7 +269,6 @@ TileContent content = new TileContent()
  
 
  
-
 
 
 

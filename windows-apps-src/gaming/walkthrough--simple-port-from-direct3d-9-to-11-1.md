@@ -1,6 +1,6 @@
 ---
 author: mtoepke
-title: "チュートリアル -- DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への簡単な Direct3D 9 アプリの移植"
+title: "チュートリアル -- Direct3D 9 の DirectX 11 および UWP への移植"
 description: "この移植作業では、Direct3D 9 から Direct3D 11 とユニバーサル Windows プラットフォーム (UWP) に簡単なレンダリング フレームワークを移植する方法について説明します。"
 ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 ms.author: mtoepke
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, DirectX, 移植, Direct3D 9, Direct3D 11"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1e3f9b7fbfaa110661ebb111c60d0089757dc885
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ee5d1f0af65debe309c64fc334a1c2bd5dc15f98
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>チュートリアル: DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への簡単な Direct3D 9 アプリの移植
 
 
@@ -87,5 +84,4 @@ ms.lasthandoff: 02/07/2017
 
 * [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
 * [**オブジェクトへのハンドル演算子 (^)**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)
-
 

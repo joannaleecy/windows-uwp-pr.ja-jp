@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c9d42dfd76c613c615e35aaa02e54037cd666b47
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7c5c7024fbcf3533150f470b15cabc8a9d1d2cb3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="manage-language-and-region"></a>言語と地域の管理
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -227,7 +224,6 @@ Windows は、標準的でわかりやすい方法で言語の対応付けの優
  
 
  
-
 
 
 

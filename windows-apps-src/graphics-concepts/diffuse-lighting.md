@@ -2,25 +2,21 @@
 title: "拡散光"
 description: "拡散光は、ライトの方向とオブジェクトのサーフェス法線の両方に依存します。"
 ms.assetid: 8AF78742-76B1-4BBB-86E3-94AE6F48B847
-keywords:
-- "拡散光"
+keywords: "拡散光"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 256d3ed1dd6236abe4ca93e362c52316eb548bda
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d7916bf421a56125691da9be3505039e9cb1d71d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="diffuse-lighting"></a>拡散光
 
 
-*拡散光*は、ライトの方向とオブジェクトのサーフェス法線の両方に依存します。 拡散光は、変化するライトの方向と変化するサーフェス法線ベクトルの結果として、オブジェクトのサーフェス各所で異なります。 拡散光は、オブジェクトの頂点ごとに変化するため、その計算には時間がかかりますが、オブジェクトにシェーディングが適用され、3 次元 (3D) の奥行を与えるという利点があります。
+*拡散光*は、ライトの方向とオブジェクトのサーフェス法線の両方に依存します。 光の方向を変更し、サーフェスの法線ベクトルを変更すると、拡散光がオブジェクトのサーフェス上で変化します。 拡散光は、オブジェクトの頂点ごとに変化するため、その計算には時間がかかりますが、オブジェクトにシェーディングが適用され、3 次元 (3D) の奥行を与えるという利点があります。
 
 任意の減衰効果について光の強さを調整した後、照明エンジンは、頂点法線の角度および入射光の方向から、頂点から反射する残りの光量を計算します。 照明エンジンは、指向性ライトについては、距離による減衰がないためこの手順をスキップします。 システムでは、拡散と鏡面の 2 種類の反射を考慮し、異なる指揮を使用してそれぞれの反射する光量を決定します。
 
@@ -75,7 +71,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

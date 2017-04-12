@@ -2,21 +2,17 @@
 title: "ラスター化規則の概要"
 description: "頂点として指定された点が、画面上のピクセルと正確に一致しないことはよくあります。 この場合、Direct3D は三角形のラスター化ルールを適用し、指定された三角形に適用するピクセルを決定します。"
 ms.assetid: 4232CDBA-F669-4417-9378-F9013E83462C
-keywords:
-- "ラスター化規則の概要"
+keywords: "ラスター化規則の概要"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b7814c01d18e7a5ef121d151438a25921f35aaf2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1c22f17991462ddf190ece2baa0360fa3e1d12a5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="introduction-to-rasterization-rules"></a>ラスター化規則の概要
 
 
@@ -79,7 +75,6 @@ Direct3D により使われる三角形のラスター化ルールのこの説�
  
 
  
-
 
 
 

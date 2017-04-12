@@ -9,19 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2c477e9dc0cc86534a179edb8e3a9415f4872d93
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0973195b8777a0154b733ba2625327bb9296bd6b
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
 # <a name="supported-codecs"></a>サポートされているコーデック
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
-この記事では、UWP アプリ用のオーディオ、ビデオ、およびイメージのコーデックと形式のサポートを示します。
+この記事では、各デバイス ファミリの既定で、UWP アプリで利用可能なオーディオ、ビデオ、イメージのコーデックと形式を示します。 これらの表では、指定のデバイス ファミリの Windows 10 のインストールに含まれているコーデックを示していることに注意してください。 ユーザーやアプリが、利用可能な追加のコーデックをインストールする場合があります。 実行時に、特定のデバイスで現在利用可能なコーデックのセットを照会できます。 詳しくは、「[デバイスにインストールされているコーデックの照会](codec-query.md)」をご覧ください。
 
 以下の表では、"D" はデコーダーのサポートを示し、"E" はエンコーダーのサポートを示します。
 
@@ -2761,6 +2758,6 @@ ms.lasthandoff: 02/07/2017
 
 <sup>1</sup> BC5 圧縮による BC1 を使用した DDS イメージがサポートされています。  
 <sup>2</sup> 非 RAW 形式の埋め込みプレビューを含む DNG イメージがサポートされています。  
-<sup>3</sup> 特定のカメラの Raw 形式のみがサポートされています。  
+<sup>3</sup> 特定のカメラの RAW 形式のみがサポートされています。  
 
 イメージ コーデックの詳細については、「[ネイティブ WIC コーデック](https://msdn.microsoft.com/library/windows/desktop/gg430027.aspx)」をご覧ください。

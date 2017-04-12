@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 1d8ced4a3dfcf0994d969ad045550ea0cc44a2af
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: f2754cea4442fd0333b620f82d1db92d8be1c578
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="custom-audio-effects"></a>カスタムのオーディオ特殊効果
 
 この記事では、オーディオ ストリームのカスタム効果を作成するための [**IBasicAudioEffect**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IBasicAudioEffect) インターフェイスを実装する Windows ランタイム コンポーネントを作成する方法について説明します。 カスタム効果は、デバイスのカメラへのアクセスを提供する [MediaCapture](https://msdn.microsoft.com/library/windows/apps/br241124)、メディア クリップから複雑なコンポジションを作成するための [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646)、さまざまなオーディオ入力、出力、サブミックス ノードのグラフをすばやくアセンブルできる [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioGraph) など、さまざまな Windows ランタイム API で使用できます。
@@ -154,7 +151,6 @@ TimeIndependent [**TimeIndependent**](https://msdn.microsoft.com/library/windows
 * [メディア再生](media-playback.md)
 
  
-
 
 
 

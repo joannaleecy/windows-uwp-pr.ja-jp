@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f66617e3131399a1cfcac17f258cc3b42c6810d2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d80ff77c380d8c4f03cb2ef415126cba46d77062
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="planning-for-performance"></a>パフォーマンスの計画
 
@@ -197,5 +195,4 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 ## <a name="optimizing"></a>最適化
 
 アプリのパフォーマンスが重要なコード パスのみ最適化します。この場所に最も多くの時間を費やします。 プロファイリングによって、どの場所がこれに該当するかがわかります。 多くの場合、優れた設計のソフトウェアを作成することと、最高レベルの最適化を実現したコードを記述することは、両立しません。 一般的に、パフォーマンスがそれほど重視されない領域では、開発者の生産性や優れたソフトウェア設計を優先することが適切です。
-
 

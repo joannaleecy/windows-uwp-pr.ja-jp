@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, EGL, DXGI, Direct3D
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 7d7e4058eccd39911bd84d3967ef07b93b6ee89d
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="compare-egl-code-to-dxgi-and-direct3d"></a>EGL コードと DXGI および Direct3D の比較
 
 
@@ -416,7 +413,6 @@ UWP アプリでは、[**CoreWindow::Close**](https://msdn.microsoft.com/library
  
 
  
-
 
 
 

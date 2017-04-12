@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、広告、宣伝、AdControl、エラー処理"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 49109b58aad7dc671fc29e7a5f12bb73e8a7d139
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8811ebf32fb1951a33230e5844a51cd8b4621a41
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adcontrol-error-handling"></a>AdControl エラー処理
 
 
@@ -32,4 +29,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

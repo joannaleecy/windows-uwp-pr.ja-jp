@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 220e2e1bee237120acd35d2a4111bf7390b8e619
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0a7a51cdd330bc361b7d0cec3a002c5b1aee9de4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="display-a-splash-screen-for-more-time"></a>スプラッシュ スクリーンの表示時間の延長
 
 
@@ -555,4 +552,3 @@ namespace SplashScreenExample
  
 
  
-

@@ -2,21 +2,17 @@
 title: "トライアングル ストリップ"
 description: "トライアングル ストリップとは、接続された一連の三角形を指します。 三角形どうしがつながっているため、アプリケーションでは、各三角形の 3 つの頂点すべてを繰り返し指定する必要がありません。"
 ms.assetid: BACC74C5-14E5-4ECC-9139-C2FD1808DB82
-keywords:
-- "トライアングル ストリップ"
+keywords: "トライアングル ストリップ"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 910b4b6aa536e0956b06c33a796a8d929e77acb9
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: fa94534e10bcf124f0a5ba24e59a51b525f2d44e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="triangle-strips"></a>トライアングル ストリップ
 
 
@@ -85,7 +81,6 @@ d3dDevice->DrawPrimitive( D3DPT_TRIANGLESTRIP, 0, 4);
  
 
  
-
 
 
 

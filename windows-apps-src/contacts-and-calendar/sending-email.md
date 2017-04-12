@@ -9,13 +9,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b14f1a0fc77a8b7df241afbb92f4db223545d81f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 67c2f808050547f5a56cbeb4e1087cdf3555727d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="send-email"></a>メールの送信
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -75,7 +72,6 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
  
 
  
-
 
 
 

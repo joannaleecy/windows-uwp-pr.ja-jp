@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d65d09349850f580d8bcee2d3875b38b8ed189f1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5e6a38c34f080310eeca7e904ef21e399639de71
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="display-the-camera-preview"></a>カメラ プレビューの表示
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -97,4 +94,3 @@ ms.lasthandoff: 02/07/2017
 * [カメラ](camera.md)
 * [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [プレビュー フレームの取得](get-a-preview-frame.md)
-

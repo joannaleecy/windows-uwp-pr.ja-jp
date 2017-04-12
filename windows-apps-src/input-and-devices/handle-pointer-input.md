@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d93583c4d6eeaa8e81bda4672d38386f07e7dcc5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5923b02d2d41a9d5311f39cb02f0bc58f5f6188c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="handle-pointer-input"></a>ポインター入力の処理
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -1107,7 +1104,6 @@ namespace PointerInput
  
 
  
-
 
 
 

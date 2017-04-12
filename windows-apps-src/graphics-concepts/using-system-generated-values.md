@@ -2,21 +2,17 @@
 title: "システム生成値の使用"
 description: "システム生成値は、シェーダー操作で一定の効率を実現するために、入力アセンブラー (IA) ステージで (ユーザー指定の入力セマンティクスに基づいて) 生成されます。"
 ms.assetid: C7CBA81D-68CA-4E9A-95E3-8185C280C843
-keywords:
-- "システム生成値の使用"
+keywords: "システム生成値の使用"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 41a2fca9daf288f4c25f10500e332d2983e6a62d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f2b9918161f99a6a841e57d9b2705093eb85809b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="span-iddirect3dconceptsusingsystem-generatedvaluesspanusing-system-generated-values"></a><span id="direct3dconcepts.using_system-generated_values"></span>システム生成値の使用
 
 
@@ -106,7 +102,6 @@ IA ステージは、各プリミティブにプリミティブ ID を追加し�
  
 
  
-
 
 
 

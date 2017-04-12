@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 11640527ffdb6883885345646310e5e4b786ad2b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e0fccee6ede019b6bb8d8792956d2dca791bf63b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="tiles-for-uwp-apps"></a>UWP アプリのタイル
 
@@ -104,7 +102,6 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
  
 
  
-
 
 
 

@@ -2,21 +2,17 @@
 title: "Texture3D サブリソースのタイル表示"
 description: "次の表に、Texture3D サブリソースがどのようにタイル表示されるかを示します。"
 ms.assetid: 210D03E4-CF12-47E0-BA2F-C8D059B17D3E
-keywords:
-- "Texture3D サブリソースのタイル表示"
+keywords: "Texture3D サブリソースのタイル表示"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6f6c2648ceefae5b13b481decc37be4047d938d4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3232ac03c2d0079faabff40b9325e819f8aca147
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="texture3d-subresource-tiling"></a>Texture3D サブリソースのタイル表示
 
 
@@ -50,7 +46,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

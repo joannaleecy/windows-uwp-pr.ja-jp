@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 70b737625f5301d3147f4570b4e6f7216c2212c7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6d3251e9e67f7a49b51493bf13216bfd72826d62
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="epson-escpos-with-formatting"></a>書式設定における Epson ESC/POS
 
@@ -63,4 +61,3 @@ printJob.ExecuteAsync();
 ```
 
 利用可能なコマンドなど、ESC/POS について詳しくは、[Epson ESC/POS に関する FAQ](http://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf) をご覧ください。 [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) と利用可能な機能について詳しくは、MSDN の「[PointofService プリンター](https://msdn.microsoft.com/library/windows/apps/Mt426652)」をご覧ください。
-

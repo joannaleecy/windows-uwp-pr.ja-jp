@@ -1,27 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: C09F4B7C-6324-4973-980A-A60035792EFC
-description: "Windows ストア申請 API 内のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されているアプリの新しいアドオンの申請を作成します。"
-title: "Windows ストア申請 API を使用したアドオンの申請の作成"
+description: "Windows デベロッパー センター アカウントに登録されているアプリの新しいアドオンの申請を作成するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "アドオンの申請の作成"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、Windows ストア申請 API、アドオンの申請の作成、アプリ内製品、IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
-ms.openlocfilehash: f824fe7d37a4a2db4e336fd43c335047e09aa323
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 3bf7379856a5011d5323351d7952091b0ff9d179
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="create-an-add-on-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアドオンの申請の作成
-
+# <a name="create-an-add-on-submission"></a>アドオンの申請の作成
 
 
 
-Windows ストア申請 API 内のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されているアプリの新しいアドオン (アプリ内製品または IAP とも呼ばれます) の申請を作成します。 このメソッドを使って新しい申請を正常に作成したら、[申請を更新](update-an-add-on-submission.md)して申請データに必要な変更を加え、取り込んで公開するために[申請をコミット](commit-an-add-on-submission.md)します。
+
+Windows デベロッパー センター アカウントに登録されているアプリの新しいアドオン (アプリ内製品または IAP とも呼ばれます) の申請を作成するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。 このメソッドを使って新しい申請を正常に作成したら、[申請を更新](update-an-add-on-submission.md)して申請データに必要な変更を加え、取り込んで公開するために[申請をコミット](commit-an-add-on-submission.md)します。
 
 このメソッドが Windows ストア申請 API を使ったアドオンの申請の作成プロセスにどのように適合するかについては、「[アドオンの申請の管理](manage-add-on-submissions.md)」をご覧ください。
 
@@ -124,7 +121,7 @@ Authorization: Bearer <your access token>
       }
     ],
     "priceId": "Free",
-    "isAdvancedPricingModel": "true"
+    "isAdvancedPricingModel": true
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
   "targetPublishMode": "Immediate",
@@ -175,4 +172,3 @@ Authorization: Bearer <your access token>
 * [アドオンの申請の更新](update-an-add-on-submission.md)
 * [アドオンの申請の削除](delete-an-add-on-submission.md)
 * [アドオンの申請の状態の取得](get-status-for-an-add-on-submission.md)
-

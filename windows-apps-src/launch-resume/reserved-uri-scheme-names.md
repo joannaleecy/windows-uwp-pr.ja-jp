@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a0c0b2cee4512bdd6dd888aceae53eec061dac72
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 98735ce2d102c1a0b7b054b9d70038fe5f9dc40c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="reserved-file-and-uri-scheme-names"></a>予約済みのファイルと URI スキーム名
 
@@ -122,4 +120,3 @@ URI の関連付けを使用すると、別のアプリで特定の URI スキ�
 <tr><td>inffile</td><td>ms-settings:network-dialup</td><td>scrfile</td><td></td></tr>
 <tr><td>insfile</td><td>ms-settings:network-ethernet</td><td>scriptletfile</td><td></td></tr>
 </table>
-

@@ -2,21 +2,17 @@
 title: "ベクター、頂点、四元数"
 description: "Direct3D では、頂点は位置と方向を表します。 プリミティブの各頂点は、位置を決定するベクトル、色、テクスチャ座標、および方向を決定する法線ベクトルによって示されます。"
 ms.assetid: 94EC3D59-43FC-4509-A233-916E9FA8381E
-keywords:
-- "ベクター、頂点、四元数"
+keywords: "ベクター、頂点、四元数"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 61017fd2f0d91fb953543857741146bb607a36f3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7b0fa178db12c421f5964f0dec2b8c6391ee1973
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="vectors-vertices-and-quaternions"></a>ベクター、頂点、四元数
 
 
@@ -42,7 +38,6 @@ Direct3D では、頂点は位置と方向を表します。 プリミティブ�
  
 
  
-
 
 
 

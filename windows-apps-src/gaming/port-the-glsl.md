@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, GLSL, 移植"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 7416a4dafe24f86243a3a9962d01db1dc7b61031
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="port-the-glsl"></a>GLSL の移植
 
 
@@ -189,7 +186,6 @@ HLSL セマンティクスと定数バッファーのパッキングについて
  
 
  
-
 
 
 

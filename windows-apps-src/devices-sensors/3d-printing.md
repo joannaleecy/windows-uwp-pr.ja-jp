@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: de1c06d67db78cdc4638c27220d25f769912308e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: af636e445d2cad70922b8f846140e0886cf7ef28
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="3d-printing"></a>3D 印刷
 
@@ -37,4 +35,3 @@ ms.lasthandoff: 02/07/2017
 * [Unity サンプルからの UWP 3D 印刷](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrintingFromUnity)
 
  
-

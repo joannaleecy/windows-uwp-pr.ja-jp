@@ -2,21 +2,17 @@
 title: "ストリーム出力 (SO) ステージ"
 description: "ストリーム出力 (SO) ステージでは、直前のアクティブなステージからメモリ内の 1 つ以上のバッファーに、頂点データを連続して出力 (ストリーミング) します。 メモリにストリーミングされたデータは、CPU からの入力データまたはリード バックとして、パイプラインに再循環させることができます。"
 ms.assetid: DE89E99F-39BC-4B34-B80F-A7D373AA7C0A
-keywords:
-- "ストリーム出力 (SO) ステージ"
+keywords: "ストリーム出力 (SO) ステージ"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 52a5e886cb2e5ddd8f9bda459f7bd658fb3f7a1b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 07bc125426854bdd82c7cebaed6f3585197353db
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="stream-output-so-stage"></a>ストリーム出力 (SO) ステージ
 
 
@@ -61,7 +57,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

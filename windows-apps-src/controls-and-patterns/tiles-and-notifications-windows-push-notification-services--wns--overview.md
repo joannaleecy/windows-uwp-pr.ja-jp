@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: adc09ec19572d190bc756dee63d3e735d512f4f1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 35268ea199c139680c4a11c30744ecf54867e592
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-push-notification-services-wns-overview"></a>Windows プッシュ通知サービス (WNS) の概要
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -264,7 +261,6 @@ async public void CheckForEnergySaving()
  
 
  
-
 
 
 

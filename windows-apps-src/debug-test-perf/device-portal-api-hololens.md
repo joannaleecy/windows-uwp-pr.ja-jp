@@ -3,18 +3,17 @@ author: mcleblanc
 ms.assetid: 41ac0142-4d86-4bb3-b580-36d0d6956091
 title: "HoloLens 用 Device Portal API リファレンス"
 description: "HoloLens 用の Windows Device Portal REST API について説明します。これらの API を使うと、プログラムからデータにアクセスしてデバイスを制御できます。"
-translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 638ebca167b2ca56f00a83aab13b15c57b2dca2a
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-# HoloLens 用 Device Portal API リファレンス
+# <a name="device-portal-api-reference-for-hololens"></a>HoloLens 用 Device Portal API リファレンス
 
 Windows Device Portal の機能はすべて、REST API の上に構築されています。REST API は、プログラムからデータにアクセスしてデバイスを制御するために使用できます。
 
-## ホログラフィック OS
+## <a name="holographic-os"></a>ホログラフィック OS
 ---
-### Device Portal の HTTPS 要件を取得する
+### <a name="get-https-requirements-for-the-device-portal"></a>Device Portal の HTTPS 要件を取得する
 
 **要求**
 
@@ -46,7 +45,7 @@ GET | /api/holographic/os/webmanagement/settings/https
 - 標準の状態コード。
 
 ---
-### 保存されている瞳孔間距離 (IPD) を取得する
+### <a name="get-the-stored-interpupillary-distance-ipd"></a>保存されている瞳孔間距離 (IPD) を取得する
 
 **要求**
 
@@ -78,7 +77,7 @@ GET | /api/holographic/os/settings/ipd
 - 標準の状態コード。
 
 ---
-### HoloLens 固有の ETW プロバイダーの一覧を取得する
+### <a name="get-a-list-of-hololens-specific-etw-providers"></a>HoloLens 固有の ETW プロバイダーの一覧を取得する
 
 **要求**
 
@@ -110,7 +109,7 @@ GET | /api/holographic/os/etw/customproviders
 - 標準の状態コード。
 
 ---
-### アクティブなすべてのサービスの状態を返す
+### <a name="return-the-state-for-all-active-services"></a>アクティブなすべてのサービスの状態を返す
 
 **要求**
 
@@ -142,7 +141,7 @@ GET | /api/holographic/os/services
 - 標準の状態コード。
 
 ---
-### Device Portal の HTTPS 要件を設定する
+### <a name="set-the-https-requirement-for-the-device-portal"></a>Device Portal の HTTPS 要件を設定する
 
 **要求**
 
@@ -178,7 +177,7 @@ required   | (**必須**) Device Portal で HTTPS を必要とするかどうか
 - 標準の状態コード。
 
 ---
-### 瞳孔間距離 (IPD) を設定する
+### <a name="set-the-interpupillary-distance-ipd"></a>瞳孔間距離 (IPD) を設定する
 
 **要求**
 
@@ -214,9 +213,9 @@ ipd   | (**必須**) 保存する新しい IPD 値。 この値はミリメー�
 - 標準の状態コード。
 
 ---
-## ホログラフィックの認識
+## Holographic perception
 ---
-### WebSocket のアップグレードを受け入れ、ミラージュ クライアントを実行する
+### <a name="accept-websocket-upgrades-and-run-a-mirage-client-that-sends-updates"></a>WebSocket のアップグレードを受け入れ、ミラージュ クライアントを実行する
 
 **要求**
 
@@ -252,9 +251,9 @@ clientmode   | (**必須**) 追跡モードを決定します。 値を **active
 - 標準の状態コード。
 
 ---
-## ホログラフィックの温度
+## Holographic thermal
 ---
-### デバイスの温度ステージを取得する
+### <a name="get-the-thermal-stage-of-the-device"></a>デバイスの温度ステージを取得する
 
 **要求**
 
@@ -284,16 +283,16 @@ GET | /api/holographic/
 --- | ---
 1 | 正常
 2 | 中温
-3 | 臨界
+3 | 重大
 
 **状態コード**
 
 - 標準の状態コード。
 
 ---
-## HSimulation の制御
+## HSimulation control
 ---
-### 制御ストリームを作成する、または作成されたストリームにデータをポストする
+### <a name="create-a-control-stream-or-post-data-to-a-created-stream"></a>制御ストリームを作成する、または作成されたストリームにデータをポストする
 
 **要求**
 
@@ -330,7 +329,7 @@ streamid   | (**作成されたストリームにポストする場合は必須*
 - 標準の状態コード。
 
 ---
-### 制御ストリームを削除する
+### <a name="delete-a-control-stream"></a>制御ストリームを削除する
 
 **要求**
 
@@ -362,7 +361,7 @@ DELETE | /api/holographic/simulation/control/stream
 - 標準の状態コード。
 
 ---
-### 制御ストリームを取得する
+### <a name="get-a-control-stream"></a>制御ストリームを取得する
 
 **要求**
 
@@ -394,7 +393,7 @@ GET/WebSocket | /api/holographic/simulation/control/stream
 - 標準の状態コード。
 
 ---
-### シミュレーション モードを取得する
+### <a name="get-the-simluation-mode"></a>シミュレーション モードを取得する
 
 **要求**
 
@@ -426,7 +425,7 @@ GET | /api/holographic/simulation/control/mode
 - 標準の状態コード。
 
 ---
-### シミュレーション モードを設定する
+### <a name="set-the-simluation-mode"></a>シミュレーション モードを設定する
 
 **要求**
 
@@ -462,9 +461,9 @@ mode   | (**必須**) シミュレーション モードを示します。 指�
 - 標準の状態コード。
 
 ---
-## HSimulation の再生
+## HSimulation playback
 ---
-### レコーディングを削除する
+### <a name="delete-a-recording"></a>レコーディングを削除する
 
 **要求**
 
@@ -500,7 +499,7 @@ recording   | (**必須**) 削除するレコーディングの名前。
 - 標準の状態コード。
 
 ---
-### すべてのレコーディングを取得する
+### <a name="get-all-recordings"></a>すべてのレコーディングを取得する
 
 **要求**
 
@@ -532,7 +531,7 @@ GET | /api/holographic/simulation/playback/files
 - 標準の状態コード。
 
 ---
-### 読み込まれたレコーディング内のデータの種類を取得する
+### <a name="get-the-types-of-data-in-a-loaded-recording"></a>読み込まれたレコーディング内のデータの種類を取得する
 
 **要求**
 
@@ -568,7 +567,7 @@ recording   | (**必須**) 対象とするレコーディングの名前。
 - 標準の状態コード。
 
 ---
-### 読み込まれたすべてのレコーディングを取得する
+### <a name="get-all-the-loaded-recordings"></a>読み込まれたすべてのレコーディングを取得する
 
 **要求**
 
@@ -600,7 +599,7 @@ GET | /api/holographic/simulation/playback/session/files
 - 標準の状態コード。
 
 ---
-### レコーディングの現在の再生状態を取得する 
+### <a name="get-the-current-playback-state-of-a-recording"></a>レコーディングの現在の再生状態を取得する 
 
 **要求**
 
@@ -636,7 +635,7 @@ recording   | (**必須**) 対象とするレコーディングの名前。
 - 標準の状態コード。
 
 ---
-### レコーディングを読み込む
+### <a name="load-a-recording"></a>レコーディングを読み込む
 
 **要求**
 
@@ -672,7 +671,7 @@ recording   | (**必須**) 読み込むレコーディングの名前。
 - 標準の状態コード。
 
 ---
-### レコーディングを一時停止する
+### <a name="pause-a-recording"></a>レコーディングを一時停止する
 
 **要求**
 
@@ -708,7 +707,7 @@ recording   | (**必須**) 一時停止するレコーディングの名前。
 - 標準の状態コード。
 
 ---
-### レコーディングを再生する
+### <a name="play-a-recording"></a>レコーディングを再生する
 
 **要求**
 
@@ -744,7 +743,7 @@ recording   | (**必須**) 再生するレコーディングの名前。
 - 標準の状態コード。
 
 ---
-### レコーディングを停止する
+### <a name="stop-a-recording"></a>レコーディングを停止する
 
 **要求**
 
@@ -780,7 +779,7 @@ recording   | (**必須**) 停止するレコーディングの名前。
 - 標準の状態コード。
 
 ---
-### レコーディングをアンロードする
+### <a name="unload-a-recording"></a>レコーディングをアンロードする
 
 **要求**
 
@@ -816,7 +815,7 @@ recording   | (**必須**) アンロードするレコーディングの名前�
 - 標準の状態コード。
 
 ---
-### レコーディングをアップロードする
+### <a name="upload-a-recording"></a>レコーディングをアップロードする
 
 **要求**
 
@@ -848,9 +847,9 @@ POST | /api/holographic/simulation/playback/file
 - 標準の状態コード。
 
 ---
-## HSimulation のレコーディング
+## HSimulation recording
 ---
-### レコーディングの状態を取得する
+### <a name="get-the-recording-state"></a>レコーディングの状態を取得する
 
 **要求**
 
@@ -882,7 +881,7 @@ GET | /api/holographic/simulation/recording/status
 - 標準の状態コード。
 
 ---
-### レコーディングを開始する
+### <a name="start-a-recording"></a>レコーディングを開始する
 
 **要求**
 
@@ -925,7 +924,7 @@ singleSpatialMappingFrame   | (**省略可能**) 単一の空間マッピング 
 - 標準の状態コード。
 
 ---
-### 現在のレコーディングを停止する
+### <a name="stop-the-current-recording"></a>現在のレコーディングを停止する
 
 **要求**
 
@@ -957,9 +956,9 @@ POST | /api/holographic/simulation/recording/stop
 - 標準の状態コード。
 
 ---
-## 複合現実キャプチャ
+## Mixed reality capture
 ---
-### デバイスから複合現実キャプチャ (MRC) レコーディングを削除する
+### <a name="delete-a-mixed-reality-capture-mrc-recording-from-the-device"></a>デバイスから複合現実キャプチャ (MRC) レコーディングを削除する
 
 **要求**
 
@@ -995,7 +994,7 @@ filename   | (**必須**) 削除するビデオ ファイルの名前。 この�
 - 標準の状態コード。
 
 ---
-### 複合現実キャプチャ (MRC) ファイルをダウンロードする
+### <a name="download-a-mixed-reality-capture-mrc-file"></a>複合現実キャプチャ (MRC) ファイルをダウンロードする
 
 **要求**
 
@@ -1032,7 +1031,7 @@ op   | (**省略可能**) ストリームをダウンロードする場合は、
 - 標準の状態コード。
 
 ---
-### 複合現実キャプチャ (MRC) の設定を取得する
+### <a name="get-the-mixed-reality-capture-mrc-settings"></a>複合現実キャプチャ (MRC) の設定を取得する
 
 **要求**
 
@@ -1064,7 +1063,7 @@ GET | /api/holographic/mrc/settings
 - 標準の状態コード。
 
 ---
-### 複合現実キャプチャ (MRC) レコーディングの状態を取得する
+### <a name="get-the-status-of-the-mixed-reality-capture-mrc-recording"></a>複合現実キャプチャ (MRC) レコーディングの状態を取得する
 
 **要求**
 
@@ -1096,7 +1095,7 @@ GET | /api/holographic/mrc/status
 - 標準の状態コード。
 
 ---
-### 複合現実キャプチャ (MRC) ファイルのリストを取得する
+### <a name="get-the-list-of-mixed-reality-capture-mrc-files"></a>複合現実キャプチャ (MRC) ファイルのリストを取得する
 
 **要求**
 
@@ -1128,7 +1127,7 @@ GET | /api/holographic/mrc/files
 - 標準の状態コード。
 
 ---
-### 複合現実キャプチャ (MRC) の設定を行う
+### <a name="set-the-mixed-reality-capture-mrc-settings"></a>複合現実キャプチャ (MRC) の設定を行う
 
 **要求**
 
@@ -1160,7 +1159,7 @@ POST | /api/holographic/mrc/settings
 - 標準の状態コード。
 
 ---
-### 複合現実キャプチャ (MRC) レコーディングを開始する
+### <a name="starts-a-mixed-reality-capture-mrc-recording"></a>複合現実キャプチャ (MRC) レコーディングを開始する
 
 **要求**
 
@@ -1192,7 +1191,7 @@ POST | /api/holographic/mrc/video/control/start
 - 標準の状態コード。
 
 ---
-### 現在の複合現実キャプチャ (MRC) レコーディングを停止する
+### <a name="stop-the-current-mixed-reality-capture-mrc-recording"></a>現在の複合現実キャプチャ (MRC) レコーディングを停止する
 
 **要求**
 
@@ -1224,7 +1223,7 @@ POST | /api/holographic/mrc/video/control/stop
 - 標準の状態コード。
 
 ---
-### 複合現実キャプチャ (MRC) の写真を撮る
+### <a name="take-a-mixed-reality-capture-mrc-photo"></a>複合現実キャプチャ (MRC) の写真を撮る
 
 **要求**
 
@@ -1256,9 +1255,9 @@ GET | /api/holographic/mrc/photo
 - 標準の状態コード。
 
 ---
-## 複合現実のストリーミング
+## Mixed reality streaming
 ---
-### フラグメント化 mp4 のチャンク ダウンロードを開始する
+### <a name="initiates-a-chunked-download-of-a-fragmented-mp4"></a>フラグメント化 mp4 のチャンク ダウンロードを開始する
 
 **要求**
 
@@ -1297,7 +1296,7 @@ loopback   | (**省略可能**) アプリケーション オーディオをキ�
 - 標準の状態コード。
 
 ---
-### フラグメント化 mp4 のチャンク ダウンロードを開始する
+### <a name="initiates-a-chunked-download-of-a-fragmented-mp4"></a>フラグメント化 mp4 のチャンク ダウンロードを開始する
 
 **要求**
 
@@ -1336,7 +1335,7 @@ loopback   | (**省略可能**) アプリケーション オーディオをキ�
 - 標準の状態コード。
 
 ---
-### フラグメント化 mp4 のチャンク ダウンロードを開始する
+### <a name="initiates-a-chunked-download-of-a-fragmented-mp4"></a>フラグメント化 mp4 のチャンク ダウンロードを開始する
 
 **要求**
 
@@ -1375,7 +1374,7 @@ loopback   | (**省略可能**) アプリケーション オーディオをキ�
 - 標準の状態コード。
 
 ---
-### フラグメント化 mp4 のチャンク ダウンロードを開始する
+### <a name="initiates-a-chunked-download-of-a-fragmented-mp4"></a>フラグメント化 mp4 のチャンク ダウンロードを開始する
 
 **要求**
 
@@ -1412,9 +1411,3 @@ loopback   | (**省略可能**) アプリケーション オーディオをキ�
 **状態コード**
 
 - 標準の状態コード。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

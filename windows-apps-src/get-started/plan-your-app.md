@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 21e08e22e6c6ebada4445a05f32d2bd37244758f
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="plan-your-universal-windows-platform-uwp-app"></a>ユニバーサル Windows プラットフォーム (UWP) アプリの計画
 
 Microsoft のデザイン チームのアプリ作成プロセスは、5 つの段階 (概念、構造、ダイナミクス、視覚、プロトタイプ) で構成されています。 同様のプロセスを採用して、だれもが楽しめるエクスペリエンスを実現することをお勧めします。
@@ -242,4 +239,3 @@ Microsoft のデザイン チームのアプリ作成プロセスは、5 つの�
 設計のやり直しを避けるために、アプリの開発があまり進まないうちに、設計内容またはプロトタイプをガイドライン、ユーザーの印象、要件に照らして検証します。 それぞれの機能について、アプリの改善に役立つ UX ガイドラインと、Windows ストアでアプリを公開するために必要なストア要件があります。 [Windows アプリ認定キット](https://developer.microsoft.com/windows/develop/app-certification-kit)を使って、ストア要件を技術的に満たすかどうかのテストを実行できます。 また、Microsoft Visual Studio のパフォーマンス ツールを使って、すべてのシナリオでユーザーに快適なエクスペリエンスを提供しているかどうかを確認できます。
 
 [UWP アプリの詳細な UX ガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465424)を使って、重要な機能に集中して取り組みます。 [Visual Studio パフォーマンス ツール](https://msdn.microsoft.com/library/windows/apps/hh696636.aspx)を使って、各アプリのシナリオのパフォーマンスを分析します。
-

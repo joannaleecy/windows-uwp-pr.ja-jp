@@ -2,21 +2,17 @@
 title: "タイル プールの作成"
 description: "アプリケーションは、Direct3D デバイスごとに 1 つ以上のタイル プールを作成できます。 各タイル プールの合計サイズは、Direct3D 11 のリソース サイズの上限に制限されます。上限はグラフィックス処理装置 (GPU) の RAM の約 1/4 です。"
 ms.assetid: BD51EDD3-4AD3-4733-B014-DD77B9D743BB
-keywords:
-- "タイル プールの作成"
+keywords: "タイル プールの作成"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5289bcb57572ede45c6853b0077f5baa82af7ca2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 315c1b2e1a2b8c89b432a89278ae1b3b240c5ad5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="tile-pool-creation"></a>タイル プールの作成
 
 
@@ -32,7 +28,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

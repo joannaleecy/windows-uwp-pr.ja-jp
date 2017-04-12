@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fd4ba842a1d6f9eec6012a930a5dda5d7ff7c249
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: dbd5d649dbb9efd95b61f1cffa8266143c5bf2d9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="guidelines-for-targeting"></a>ターゲット設定のガイドライン
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -177,7 +174,6 @@ Windows では、ここで示した最小サイズや推奨する余白サイズ
  
 
  
-
 
 
 

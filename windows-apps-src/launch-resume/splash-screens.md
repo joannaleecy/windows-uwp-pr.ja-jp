@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 51add4631b807940e051a8f4cbaca92063e41d4a
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="splash-screens"></a>スプラッシュ画面
 
 すべての UWP アプリにはスプラッシュ画面が必要です。スプラッシュ画面は、画像と背景色を合成したもので、どちらもカスタマイズすることができます。

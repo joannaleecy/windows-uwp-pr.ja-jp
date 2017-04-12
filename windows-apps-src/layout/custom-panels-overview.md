@@ -15,13 +15,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1925d6b10eb23a6382bd63e812cade1311da178a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: aeea966a40b551bf4fc54901e622f57745720c43
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xaml-custom-panels-overview"></a>XAML カスタム パネルの概要
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -67,7 +64,7 @@ ms.lasthandoff: 02/07/2017
 </local:CustomPanel>
 ```
 
-XAML パーサーがこのマークアップを読み取るときに、[**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) は、すべての [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 派生型の XAML コンテンツ プロパティであると認識されるため、パーサーは、[**Children** プロパティの [**UIElementCollection**](https://msdn.microsoft.com/library/windows/apps/br227633) 値に 2 つの **Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 要素を追加します。 XAML コンテンツ プロパティにより、UI 定義の XAML マークアップで親子関係を効率化しやすくなります。 XAML コンテンツ プロパティの詳細と、XAML の解析時のコレクション プロパティの設定方法については、「[基本的な XAML 構文のガイド](https://msdn.microsoft.com/library/windows/apps/mt185596)」を参照してください。
+XAML パーサーがこのマークアップを読み取るときに、Children は、すべての Panel 派生型の XAML コンテンツ プロパティであると認識されるため、パーサーは、Children プロパティの UIElementCollection 値に 2 つの Button 要素を追加します。 XAML コンテンツ プロパティにより、UI 定義の XAML マークアップで親子関係を効率化しやすくなります。 XAML コンテンツ プロパティの詳細と、XAML の解析時のコレクション プロパティの設定方法については、「[基本的な XAML 構文のガイド](https://msdn.microsoft.com/library/windows/apps/mt185596)」を参照してください。
 
 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) プロパティの値を維持しているコレクション型は [**UIElementCollection**](https://msdn.microsoft.com/library/windows/apps/br227633) クラスです。 **UIElementCollection** は、適用された項目の型として [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) を使う、厳密に型指定されたコレクションです。 **UIElement** は、多くの実用的な UI 要素型によって継承されている基本型であるため、ここでは、型が意図的に緩やかに適用されています。 ただし、[**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) が [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) の直接の子になることができない点は適用されます。これは一般に、UI に表示され、レイアウトに含まれると予想されている要素のみが、**Panel** の子要素となることを意味します。
 
@@ -218,4 +215,3 @@ protected override Size ArrangeOverride(Size finalSize)
 
 **概念**
 * [配置、余白、およびパディング](alignment-margin-padding.md)
-

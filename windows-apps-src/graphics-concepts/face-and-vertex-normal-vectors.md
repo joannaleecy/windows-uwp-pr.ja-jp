@@ -2,21 +2,17 @@
 title: "面と頂点の法線ベクトル"
 description: "メッシュ内の各面には、垂直な単位法線ベクトルがあります。 ベクトルの方向は、頂点が定義された順序によって、また座標系が右手系であるか左手系であるかによって決まります。"
 ms.assetid: 02333579-9749-4612-B121-23F97898A3E0
-keywords:
-- "面と頂点の法線ベクトル"
+keywords: "面と頂点の法線ベクトル"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 48a87cc9766d7fb6d0e3ac42e7956b27264af0db
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 04725508694370c1fff20ae34736fbd05948328c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="face-and-vertex-normal-vectors"></a>面と頂点の法線ベクトル
 
 
@@ -96,7 +92,6 @@ DrawPrimitive メソッドを使用してシーンをレンダリングする場
  
 
  
-
 
 
 

@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、ゲーム、クラウド サービス"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 72f357cbf8e370512f9230978de546aa3d54c660
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>UWP ゲーム用のクラウド サービスの使用
 
@@ -149,7 +147,7 @@ Azure のクラウド サービスをゲームに使用するためのいくつ�
 
 | 要件                 | アクティビティのシナリオ                            | 提供されるサービス                      | サービスの機能                               |
 |-----------------------------------|-----------------------------------------------|---------------------------------------|----------------------------------------------------|
-| クラウドでのドメインのホスティング     | 効率的に DNS クエリに応答する            | [Azure DNS](https://azure.microsoft.com/services/dns/) | 高パフォーマンスと高可用性を備えたドメインのホスティング  |
+| クラウドでのドメインのホスティング     | 効率的に DNS クエリに応答する            | [Azure DNS](https://azure.microsoft.com/services/dns/) | 高パフォーマンスと高可用性を備えたドメインのホスティング    |
 | サインイン、本人確認      | ゲーマーがサインインし、ゲーマーの ID が認証される  | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) | 多要素認証を備えた、あらゆるクラウドとオンプレミス Web アプリへのシングル サインオン            |
 | サービスとしてのインフラストラクチャ モデル (IaaS) を使用したゲーム      | ゲームがクラウド内の仮想マシンでホストされる       | [Azure VM](https://azure.microsoft.com/services/virtual-machines/) | 組み込みの仮想ネットワークと負荷分散の機能や、オンプレミス システムとのハイブリッド整合性機能を備えたゲーム サーバーとして、1 から数千台の仮想マシンのインスタンスにスケーリング           |
 | サービスとしてのプラットフォーム モデル (PaaS) を使用した Web ゲームやモバイル ゲーム            | ゲームが管理対象のプラットフォームでホストされる                | [Azure App Service](https://azure.microsoft.com/services/app-service/) | Web サイトやモバイル ゲーム用の PaaS (つまり Azure VMs とミドルウェア/開発ツール/BI/DB 管理)   |
@@ -159,25 +157,25 @@ Azure のクラウド サービスをゲームに使用するためのいくつ�
 | スケーラブルなリレーショナル ゲーム データベース| データベースへのゲーム内のトランザクションなど、リレーショナル データの構造化されたストレージ | [Azure SQL Database](https://azure.microsoft.com/services/sql-database/)| サービスとしての SQL データベース ([VM 上の SQL との比較](https://azure.microsoft.com/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/))  |
 | スケーラブルで分散型の待機時間が短いゲーム データベース| 柔軟なスキーマによる、ゲーム データやプレイヤー データの高速の読み取り、書き込み、照会 | [Azure DocumentDB](https://azure.microsoft.com/services/documentdb/)| 待機時間の短い、サービスとしての NoSQL ドキュメント データベース   |
 | 独自のデータ センターと Azure サービスを使用する | ゲームは独自のデータ センターから取得され、クライアント デバイスに送信される | [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) | 組織で独自のデータ センターからの Azure サービスを提供することで、より多くのことを実現できる  |
-| 大量のデータ チャンクの転送| Azure CDN により、ゲームの画像、オーディオ、ビデオなどの大きなファイルを、ユーザーに最も近いコンテンツ配信ネットワーク (CDN) の POP の場所から送信できる    | [Azure Content Delivery Network](https://azure.microsoft.com/services/cdn/) | Azure CDN は、集中管理された大規模なノードの最新ネットワーク トポロジをベースに構築されており、突然のトラフィック スパイクや大きな負荷を処理することにより処理速度と可用性が大幅に向上し、ユーザー エクスペリエンスの向上につながる  |
+| 大量のデータ チャンクの転送| Azure CDN により、ゲームの画像、オーディオ、ビデオなどの大きなファイルを、ユーザーに最も近いコンテンツ配信ネットワーク (CDN) の POP の場所から送信できる     | [Azure Content Delivery Network](https://azure.microsoft.com/services/cdn/) | Azure CDN は、集中管理された大規模なノードの最新ネットワーク トポロジをベースに構築されており、突然のトラフィック スパイクや大きな負荷を処理することにより処理速度と可用性が大幅に向上し、ユーザー エクスペリエンスの向上につながる  |
 | 短い待機時間               | より細かい制御とデータの分離の保証により、高速でスケーラブルなゲームを構築するためのキャッシュを実行する。ゲームのマッチメイキング機能の向上にも利用できる | [Azure Redis Cache](https://azure.microsoft.com/services/cache/) | 高速でスケーラブルな Azure アプリケーションを実現するための高スループットで、一貫性のある低待機時間のデータ アクセス  |
 | 高スケーラビリティ、低待機時間 | 待機時間の短い読み取りと書き込みによりゲーム ユーザー数の変動を処理する | [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) | 複雑で待機時間が短く、データを多用するシナリオを実現し、一度により多くのユーザーを処理できるように拡張できる。 Service Fabric により、ステートレス アプリケーションで必要な、独立したストアやキャッシュを作成することなくゲームを構築できる |
 | デバイスから 1 秒あたり数百万件のイベントを収集する機能                         | デバイスから 1 秒あたり数百万件のイベントをログに記録する | [Azure イベント ハブ](https://azure.microsoft.com/services/event-hubs/) | ゲーム、Web サイト、アプリ、デバイスからのクラウド規模の利用統計情報の取り込み  |
 | リアルタイムのゲーム データの処理  | ゲームプレイを向上させるためにゲーム データのリアルタイム分析を実行する| [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/) | クラウドでのリアルタイムのストリーム処理  |
-| 予測的なゲームプレイの開発         | ゲーマーのデータに基づいてカスタマイズされた動的なゲームプレイを作成する  | [Azure Machine Learning](https://azure.microsoft.com/services/machine-learning/) | 完全に管理されているクラウド サービスにより、簡単に予測分析ソリューションを構築、展開、共有できる  |
+| 予測的なゲームプレイの開発          | ゲーマーのデータに基づいてカスタマイズされた動的なゲームプレイを作成する    | [Azure Machine Learning](https://azure.microsoft.com/services/machine-learning/) | 完全に管理されているクラウド サービスにより、簡単に予測分析ソリューションを構築、展開、共有できる  |
 | ゲーム データの収集と分析| リレーショナル データベースと非リレーショナル データベースからのデータの大規模な並列処理 | [Azure Data Warehouse](https://azure.microsoft.com/services/sql-data-warehouse/)| エンタープライズ クラスの機能を備えたサービスとしての柔軟なデータ ウェアハウス   |
-| 使用と顧客維持を促進するマーケティング キャンペーンの作成  | データ分析に基づいて対象となるプレイヤーにプッシュ通知を送信し、特定のゲーム操作に対する関心を引き出して利用を促進する | [Mobile engagement](https://azure.microsoft.com/services/mobile-engagement/) |  すべての主要なプラットフォーム (iOS、Android、Windows、Windows Phone) でのゲームプレイ時間とユーザー維持率を向上させる |
+| 使用と顧客維持を促進するマーケティング キャンペーンの作成  |    データ分析に基づいて対象となるプレイヤーにプッシュ通知を送信し、特定のゲーム操作に対する関心を引き出して利用を促進する | [Mobile engagement](https://azure.microsoft.com/services/mobile-engagement/) |  すべての主要なプラットフォーム (iOS、Android、Windows、Windows Phone) でのゲームプレイ時間とユーザー維持率を向上させる |
 
 
 ##  <a name="startup-and-developer-resources"></a>新興企業と開発者向けのリソース
 
 * [Microsoft BizSpark](https://www.microsoft.com/bizspark/)
 
-    Microsoft BizSpark は、Azure クラウド サービス、ソフトウェア、サポートを無料で利用できるようにすることで新興企業を支援するグローバル プログラムです。 BizSpark メンバーには、5 つの Visual Studio Enterprise with MSDN サブスクリプションと、それぞれ月額 150 ドルの Azure クレジットが付与されます。 5 人の開発者で合計 1 か月あたり 750 ドル相当の Azure サービスを利用できます。 BizSpark を利用できるのは、株式非公開で、設立から 5 年以内、年間収益が 100 万ドル未満の企業です。 マイクロソフトでは、新興企業の成功を支援することで、より価値のある長期的なパートナーシップを構築できると考えています。
+    Microsoft BizSpark は、Azure クラウド サービス、ソフトウェア、サポートを無料で利用できるようにすることで新興企業を支援するグローバル プログラムです。 BizSpark メンバーには、5 つの Visual Studio Enterprise with MSDN サブスクリプションと、それぞれ月額 150 ドルの Azure クレジットが付与されます。 5 人の開発者で合計 1 か月あたり 750 ドル相当の Azure サービスを利用できます。 BizSpark を利用できるのは、株式非公開で、設立から 5 年以内、年間収益が 100 万ドル未満の企業です。 Microsoft では、新興企業の成功を支援することで、より価値のある長期的なパートナーシップを構築できると考えています。
     
 * [ID@Xbox](http://www.xbox.com/Developers/id)
 
-    マルチプレイヤーのゲームプレイ、クロスプラットフォームのマッチメイ キング、ゲーマースコア、達成度、ランキングなどの Xbox Live の機能を Windows 10 ゲームにも追加する場合は、ID@Xbox にサインアップして、創造性を発揮し、成功を最大限にするために必要なツールを入手してください。 ID@Xbox への登録を申し込む前に、[Windows デベロッパー センター](https://developer.microsoft.com/windows/programs/join)で開発者アカウントを登録してください。
+    マルチプレイヤーのゲームプレイ、クロスプラットフォームのマッチメイキング、ゲーマースコア、達成度、ランキングなどの Xbox Live の機能を Windows 10 ゲームにも追加する場合は、ID@Xbox にサインアップして、創造性を発揮し、成功を最大限にするために必要なツールを入手してください。 ID@Xbox への登録を申し込む前に、[Windows デベロッパー センター](https://developer.microsoft.com/windows/programs/join)で開発者アカウントを登録してください。
 
 ## <a name="software-as-a-service-for-game-backend"></a>ゲームのバックエンド向けのサービスとしてのソフトウェア
 
@@ -206,4 +204,3 @@ Azure のクラウド サービスをゲームに使用するためのいくつ�
  
 
  
-

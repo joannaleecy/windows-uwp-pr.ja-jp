@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: bd6e209d670164bc017d5012199420420dc3eda0
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: dd307bd6d7551c1e95de29360a8601484b37e742
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="add-an-inktoolbar-to-a-universal-windows-platform-uwp-inking-app"></a>InkToolbar をユニバーサル Windows プラットフォーム (UWP) 手書き入力アプリに追加する
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -814,4 +811,3 @@ namespace Ink_Basic_InkToolbar
 * [インクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [単純なインクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620312)
 * [複雑なインクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620314)
-

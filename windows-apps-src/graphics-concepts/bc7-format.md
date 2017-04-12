@@ -2,21 +2,17 @@
 title: "BC7 形式"
 description: "BC7 形式は、RGB および RGBA データの高品質圧縮に使用される、テクスチャ圧縮形式です。"
 ms.assetid: 788B6E8C-9A1F-45F9-BE49-742285E8D8A6
-keywords:
-- "BC7 形式"
+keywords: "BC7 形式"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 73b6700a902c33c0af0c9314d2869f98f3f53d21
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ae67966d6f49c9cb97621b4613d61e321c9fdba0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="bc7-format"></a>BC7 形式
 
 
@@ -350,7 +346,7 @@ BC7 では、次のいずれかの方法でアルファ成分をエンコード�
 
     デコーダーは、デコード後にチャネルの順序を RGBA に戻すため、内部ブロックの形式は開発者には見えません。 別の色成分とアルファ成分を持つ黒は、2 つのセットのインデックス データも持っています。1 つはベクター化されたチャネル セット用で、もう 1 つはスカラー チャネル用です。 (モード 4 の場合、これらのインデックスの幅はそれぞれ \[2 ビットまたは 3 ビット\] と異なります。 モード 4 には、ベクトルまたはスカラー チャネルが 3 ビット インデックスを使用するかどうかを指定する、1 ビットのセレクターも含まれています。)
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連項目
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [テクスチャのブロック圧縮](texture-block-compression.md)
@@ -358,7 +354,6 @@ BC7 では、次のいずれかの方法でアルファ成分をエンコード�
  
 
  
-
 
 
 

@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6ff820d49ef6fe788a44822d8f966ce54b2730ae
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ed43df4e1702064fbff0bd2f6fa4e4d736edc48c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="progress-controls"></a>プログレス コントロール
 
@@ -180,4 +178,3 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 **開発者向け (XAML)**
 - [プログレス コントロールの追加](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)
 - [Windows Phone 向けのカスタム進行状況不定バーを作成する方法](http://go.microsoft.com/fwlink/p/?LinkID=392426)
-

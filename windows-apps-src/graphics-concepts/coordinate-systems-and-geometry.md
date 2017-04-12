@@ -2,21 +2,17 @@
 title: "座標系とジオメトリ"
 description: "Direct3D アプリケーションをプログラムするには、3D ジオメトリの原理を実務で熟知していることが必要です。 ここでは、3D シーンを作成するための最も重要なジオメトリの概念について説明します。"
 ms.assetid: E82EB0A9-0678-496B-96B3-8993BA580099
-keywords:
-- "座標系とジオメトリ"
+keywords: "座標系とジオメトリ"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 655e8587d103843bf2e040519b60f82160bc7b5d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 01885f6e2014e1659b1e59cc13bc6ce275f1ad03
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="coordinate-systems-and-geometry"></a>座標系とジオメトリ
 
 
@@ -63,11 +59,11 @@ Direct3D アプリケーションをプログラムするには、3D ジオメ�
 </tr>
 <tr class="odd">
 <td align="left"><p>[変換](transforms.md)</p></td>
-<td align="left"><p>Direct3D の機能の一部で、ジオメトリを固定機能ジオメトリ パイプラインに挿入する変換エンジンです。 モデルとビューアーをワールド座標に配置し、画面に表示するための頂点を投影し、ビューポートに頂点をクリップします。 さらに変換エンジンは照明計算を実行し、各頂点における拡散成分および鏡面成分を決定します。</p></td>
+<td align="left"><p>Direct3D の機能の一部で、ジオメトリを固定機能ジオメトリ パイプラインに挿入する変換エンジンです。 変換エンジンは、モデルとビューアーをワールド座標に配置し、画面表示のために頂点を投影し、ビューポートに頂点をクリッピングします。 さらに変換エンジンは照明計算を実行し、各頂点における拡散成分および鏡面成分を決定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[ビューポートとクリッピング](viewports-and-clipping.md)</p></td>
-<td align="left"><p>"ビューポート<em></em>" とは、3D シーンが投影される 2 次元 (2D) の矩形です。 Direct3D の場合、この矩形は、レンダー ターゲットとして使用される Direct3D サーフェス内の座標として存在します。 プロジェクション変換は、頂点をビューポートに使用される座標系に変換します。 さらに、ビューポートはレンダー ターゲット サーフェスの深度値の範囲を指定できます。この範囲は、通常、0.0 ～ 1.0 です。</p></td>
+<td align="left"><p>"ビューポート<em></em>" とは、3D シーンが投影される 2 次元 (2D) の矩形です。 Direct3D では、この四角形は Direct3D サーフェス内の座標として存在し、システムによってレンダー ターゲットとして使われます。 射影変換は、頂点をビューポートで使われる座標系に変換します。 さらに、ビューポートはレンダー ターゲット サーフェスの深度値の範囲を指定できます。この範囲は、通常、0.0 ～ 1.0 です。</p></td>
 </tr>
 </tbody>
 </table>
@@ -77,12 +73,11 @@ Direct3D アプリケーションをプログラムするには、3D ジオメ�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[Direct3D Graphics の学習ガイド](index.md)
+[Direct3D グラフィックスの学習ガイド](index.md)
 
  
 
  
-
 
 
 

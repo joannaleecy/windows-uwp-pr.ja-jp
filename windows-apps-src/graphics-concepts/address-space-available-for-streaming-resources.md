@@ -2,21 +2,17 @@
 title: "ストリーミング リソースに利用可能なアドレス空間"
 description: "このセクションでは、リソースのストリーミングに利用できる仮想アドレス空間を指定します。"
 ms.assetid: 145EB4A3-3910-4126-BC7E-A4CF53E2A098
-keywords:
-- "ストリーミング リソースに利用可能なアドレス空間"
+keywords: "ストリーミング リソースに利用可能なアドレス空間"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c120e79518abfed35cbb6b0da6fc659b13602a3f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a63136f04570c4bf964c461f7296c930f5e168b5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="address-space-available-for-streaming-resources"></a>ストリーミング リソースに利用可能なアドレス空間
 
 
@@ -30,7 +26,7 @@ ms.lasthandoff: 02/07/2017
 
 CPU と GPU の間で共有されるページ テーブルを持つ将来のシステムでは、使用可能なアドレス空間は、プロセス内のすべての CPU と GPU 割り当ての間で共有されます。
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連項目
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [ストリーミング リソースの作成パラメーター](streaming-resource-creation-parameters.md)
@@ -38,7 +34,6 @@ CPU と GPU の間で共有されるページ テーブルを持つ将来のシ�
  
 
  
-
 
 
 

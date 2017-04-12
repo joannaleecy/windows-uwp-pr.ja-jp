@@ -1,6 +1,6 @@
 ---
 author: mtoepke
-title: "チュートリアル -- Direct3D 11 の深度バッファーを使ったシャドウ ボリュームの実装"
+title: "チュートリアル -- Direct3D 11 のシャドウ ボリュームの深度バッファー"
 description: "このチュートリアルでは、すべての Direct3D 機能レベルのデバイスで Direct3D 11 を使い、深度マップを利用してシャドウ ボリュームをレンダリングする方法について説明します。"
 ms.assetid: d15e6501-1a1d-d99c-d1d8-ad79b849db90
 ms.author: mtoepke
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, DirectX, シャドウ ボリューム, 深度バッファー, DirectX 11"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 00e823b667a4622f6fa2dd213c3277bec9d616a2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e68f0d559e6dbd7791104310a985ca99e0131c99
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a>チュートリアル: Direct3D 11 の深度バッファーを使ったシャドウ ボリュームの実装
 
 
@@ -90,7 +87,6 @@ Windows 8 で、機能レベル 9\_1 と 9\_3 に深度の比較機能が追加�
  
 
  
-
 
 
 

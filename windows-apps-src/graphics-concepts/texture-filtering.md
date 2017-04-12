@@ -2,21 +2,17 @@
 title: "テクスチャ フィルタリング"
 description: "プリミティブが 3D プリミティブから 2D 画面へのマッピングによってレンダリングされるときに、テクスチャ フィルタリングによって、プリミティブの 2D レンダリングされた画像の各ピクセルの色が生成されます。"
 ms.assetid: 1CCF4138-5D48-4B07-9490-996844F994D8
-keywords:
-- "テクスチャ フィルタリング"
+keywords: "テクスチャ フィルタリング"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 97b2dc04c518bfec4b09a50707c08767932f05c6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 43dccdc8a8834830b6c15fcfc1cd56216e27ee90
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="texture-filtering"></a>テクスチャ フィルタリング
 
 
@@ -56,11 +52,11 @@ Direct3D は、次のテクスチャ フィルタリング手法をサポート�
 </tr>
 <tr class="even">
 <td align="left"><p>[バイリニア テクスチャ フィルタリング](bilinear-texture-filtering.md)</p></td>
-<td align="left"><p><em>バイリニア フィルタリング</em>では、サンプリング ポイントに最も近い 4 つのテクセルの加重平均を計算します。 このフィルタリング手法は、最近点フィルタリングよりも正確で一般的です。 このアプローチは最新のグラフィックス ハードウェアに実装されているため、効率的です。</p></td>
+<td align="left"><p><em>バイリニア フィルタリング</em>は、サンプリング ポイントに最も近い 4 つのテクセルの加重平均を計算します。 このフィルタリング手法は、最近点フィルタリングよりも正確で一般的です。 このアプローチは最新のグラフィックス ハードウェアに実装されているため、効率的です。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[異方性テクスチャ フィルタ リング](anisotropic-texture-filtering.md)</p></td>
-<td align="left"><p><em>サーフェスがスクリーンの平面に対して角度をなして配置されている 3D オブジェクトのテクセルに見られるゆがみを異方性</em>と呼びます。 異方性プリミティブのピクセルをテクセルにマッピングすると、形状がゆがみます。</p></td>
+<td align="left"><p>サーフェスがスクリーンの平面に対して角度をなして配置されている 3D オブジェクトのテクセルに見られるゆがみを<em>異方性</em>と呼びます。 異方性プリミティブのピクセルをテクセルにマッピングすると、形状がゆがみます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[ミップマップでのテクスチャ フィルタリング](texture-filtering-with-mipmaps.md)</p></td>
@@ -79,7 +75,6 @@ Direct3D は、次のテクスチャ フィルタリング手法をサポート�
  
 
  
-
 
 
 

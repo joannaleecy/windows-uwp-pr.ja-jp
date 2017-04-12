@@ -2,21 +2,17 @@
 title: "テクスチャのブロック圧縮"
 description: "Direct3D 11 では、テクスチャのブロック圧縮 (BC) サポートが拡張され、BC6H および BC7 アルゴリズムが組み込まれています。"
 ms.assetid: 63506C46-BF14-464B-B20C-8B8F359E7AFE
-keywords:
-- "テクスチャのブロック圧縮"
+keywords: "テクスチャのブロック圧縮"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3930d5d2350fcbb7878edec8a5a93dfd4c36caee
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3288232e0010c1b23d58992cfd6c9f038a74a552
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="texture-block-compression"></a>テクスチャのブロック圧縮
 
 
@@ -103,7 +99,6 @@ BC7 形式では、4 x 4 のピクセル ブロックごとに異なるエンコ
  
 
  
-
 
 
 

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, ユーザー インターフェイス, DirectX"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: cb8cb8eae3328a9010553b7f3e041b8f2dbd8c02
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="add-a-user-interface"></a>ユーザー インターフェイスの追加
 
 
@@ -1493,7 +1490,6 @@ void GameInfoOverlay::SetAction(GameInfoOverlayCommand action)
  
 
  
-
 
 
 

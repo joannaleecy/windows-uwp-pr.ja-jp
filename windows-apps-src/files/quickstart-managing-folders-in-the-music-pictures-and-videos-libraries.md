@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 18acfda780211a008a3c5febdcbff2bf007ff379
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9c5c63cb7c0f9dda33c66283806bfd2624ca0b3c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー
 
 
@@ -250,4 +247,3 @@ using (var sourceStream = await sourceFile.OpenReadAsync())
  
 
  
-

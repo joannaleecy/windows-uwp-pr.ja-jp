@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ae0fab5d09779ccfcc1c9b15e29921c07f0f6c6d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b92febc902f293c4b6e5db8838a220a36becbf43
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="rich-edit-box"></a>リッチ エディット ボックス
 
@@ -218,4 +216,3 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 - [テキスト入力のガイドライン](text-controls.md)
 - [**TextBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Windows.UI.Xaml.Controls PasswordBox クラス**](https://msdn.microsoft.com/library/windows/apps/br227519)
-

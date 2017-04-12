@@ -11,13 +11,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: c3e73f9b-4839-4804-b379-c95b0ca4fbe8
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 64cb4871178ad712189e672bbde9f0ca9ffc6d26
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: ced5455cb910a4872aca23491970688888cff70b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="guidelines-for-app-help"></a>アプリのヘルプのガイドライン
 
 
@@ -69,6 +66,5 @@ ms.lasthandoff: 02/08/2017
 詳細なチュートリアル、高度な機能、ヘルプ トピックのライブラリなど、アプリケーション内に収めるには大きすぎるコンテンツは、外部の Web ページへのリンクとすることが適切です。 これらのリンクは、ユーザーをアプリケーションから切り離すため、できる限り慎重に使用します。
 
 [外部のヘルプに関するガイドラインをご覧ください。](external-help.md)
-
 
 

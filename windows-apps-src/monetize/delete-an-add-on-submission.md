@@ -1,27 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: D677E126-C3D6-46B6-87A5-6237EBEDF1A9
-description: "既存のアドオンの申請を削除するには、Windows ストア申請 API のこのメソッドを使います。"
-title: "Windows ストア申請 API を使用したアドオンの申請の削除"
+description: "既存のアドオンの申請を削除するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "アドオンの申請の削除"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア申請 API, アドオンの申請, 削除, アプリ内製品, IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 117ed98dc961231cdbc7258b1097b7e0452efe35
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a1f2a545b75ac4416ac016d36836328b24433917
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="delete-an-add-on-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアドオンの申請の削除
-
+# <a name="delete-an-add-on-submission"></a>アドオンの申請の削除
 
 
 
-既存のアドオン (アプリ内製品 (IAP) とも呼ばれます) を削除するには、Windows ストア申請 API 内のこのメソッドを使います。
+
+既存のアドオン (アプリ内製品または IAP とも呼ばれます) を削除するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -30,7 +27,7 @@ ms.lasthandoff: 02/07/2017
 * Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
 * このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア提出 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
+>**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
 ## <a name="request"></a>要求
 
@@ -93,10 +90,9 @@ Authorization: Bearer <your access token>
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Windows ストア サービスを使用した提出の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-* [アドオンの提出の取得](get-an-add-on-submission.md)
+* [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
+* [アドオンの申請の取得](get-an-add-on-submission.md)
 * [アドオンの申請の作成](create-an-add-on-submission.md)
 * [アドオンの申請のコミット](commit-an-add-on-submission.md)
 * [アドオンの申請の更新](update-an-add-on-submission.md)
 * [アドオンの申請の状態の取得](get-status-for-an-add-on-submission.md)
-

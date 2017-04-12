@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、概念の承認"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 43c4448e7a581dae69f44c64fd2068e79cb6c7ed
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: f05789d87f3260aa02d1e0dd33490b248efb42a7
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="concept-approval"></a>概念の承認
 
 Xbox で動作するゲームの開発を始める場合は、そのゲームに関する提案をマイクロソフトに提出し、ゲームの公開前に*概念の承認*を受ける必要があります。 このような概要を事前に提出することで、ゲームの計画全体で起こりうる問題点や課題をプロセスの初期段階で特定できるため、マイクロソフト側とゲーム開発者側の双方にメリットをもたらします。 コンテンツが過度に通俗的、攻撃的、不快ではないことと、ターゲット プラットフォームで快適に動作することを確認してください。 提出された提案はマイクロソフト側で審査し、結果をお知らせします。
@@ -24,8 +21,8 @@ Xbox で動作するゲームの開発を始める場合は、そのゲームに
 
 ## <a name="submit-your-concept-for-approval"></a>承認を受けるために概念を提出する
 
-独立したゲーム開発者または発行元の場合、ID@Xbox プログラムを通じて、概念を承認を受けるために提出することができます。 ID@Xbox について確認し、[こちら](http://www.xbox.com/Developers/id)からお申し込みください。
+独立したゲーム開発者または発行元の場合、ID@Xbox プログラムを通じて、承認を受けるために概念を提出することができます。 ID@Xbox について確認し、[こちらから](http://www.xbox.com/Developers/id)お申し込みください。
 
-ID@Xbox 開発者の方には、既にゲーム情報フォーム (GIF) へのリンクをお送りしました。このフォームを使ってゲームの概念を提出してください。 ご質問がある場合は、[id@xbox.com](mailto:id@xbox.com) までメールをお送りください。
+ID@Xbox 開発者の方には、既にゲーム情報フォーム (GIF) へのリンクをお送りしました。このフォームを使ってゲームの概念を提出してください。 ご不明の点については、[id@xbox.com](mailto:id@xbox.com) までお問い合わせください。
 
-マイクロソフトと既にライセンス契約を締結している場合、概念の提出については、Microsoft アカウント チームにお問い合わせください。
+Microsoft と既にライセンス契約を締結している場合、概念の提出については、Microsoft アカウント チームにお問い合わせください。

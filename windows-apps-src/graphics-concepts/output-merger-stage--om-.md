@@ -2,21 +2,17 @@
 title: "出力マージャー (OM) ステージ"
 description: "出力マージャー (OM) ステージでは、各種出力データ (ピクセル シェーダー値、深度とステンシルの情報) をレンダー ターゲットおよび深度/ステンシル バッファーの内容と結合し、最終的なパイプラインの結果を生成します。"
 ms.assetid: ED2DC4A0-2B92-47AF-884A-BFC2183C78B8
-keywords:
-- "出力マージャー (OM) ステージ"
+keywords: "出力マージャー (OM) ステージ"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1d88d8403a0a91f9eaddcfd7fba46ca3d1fd183a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 35d242502441d9f7539a811fbcd376ac6e0b8794
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="output-merger-om-stage"></a>出力マージャー (OM) ステージ
 
 
@@ -119,7 +115,7 @@ sRGB レンダー ターゲットを使用する際、ランタイムはブレ�
 
  
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連項目
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [グラフィックス パイプライン](graphics-pipeline.md)
@@ -127,7 +123,6 @@ sRGB レンダー ターゲットを使用する際、ランタイムはブレ�
  
 
  
-
 
 
 

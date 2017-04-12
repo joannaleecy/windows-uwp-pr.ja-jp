@@ -9,13 +9,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5e53332ae3596341e4322bc16882cf678672083d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5a375851f5b9be63c9780b806dd45721b0f8291f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="select-contacts"></a>連絡先の選択
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -235,4 +232,3 @@ public class ContactItemAdapter
 ## <a name="summary-and-next-steps"></a>要約と次のステップ
 
 ここでは、連絡先ピッカーを使って連絡先情報を取得する基本的な方法について説明しました。 連絡先や連絡先選択ツールの使い方に関するその他の例については、GitHub から [ユニバーサル Windows アプリのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619979) をダウンロードしてください。
-

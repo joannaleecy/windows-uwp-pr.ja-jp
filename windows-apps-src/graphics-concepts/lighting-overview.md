@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: cb5391dcd210b28b2971d39cfe8c9f2964889839
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7f4ca6fdbd93d42dbefd955f31bd514b93886d03
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="lighting-overview"></a>光源の概要
 
 Direct3D の光源を使うときは、Direct3D が照明のディテールを自動的に処理できるようにします。 詳しい知識のあるユーザーは、必要に応じて自分で光源を実行することもできます。
@@ -81,7 +78,6 @@ Direct3D は、組み合わせることで最終的な色を生み出す 4 つ�
  
 
  
-
 
 
 

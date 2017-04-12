@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8342d53c5d53e06f6793ce1d125c26f0e3880c07
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a05cc1d0da255eddb5c6659e7c9d44f3faf4101d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="bluetooth-rfcomm"></a>Bluetooth RFCOMM
 
@@ -371,4 +369,3 @@ void OnConnectionReceived(
     });
 }
 ```
-

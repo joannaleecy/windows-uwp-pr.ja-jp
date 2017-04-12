@@ -12,16 +12,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 53e12e2f3ff6e87af3de2dc6f80370376f18f9e7
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="deep-link-from-cortana-to-a-background-app"></a>Cortana からバックグラウンド アプリへのディープ リンク
 
 このトピックは https://msdn.microsoft.com/en-us/cortana/voicecommands/deep-link-into-your-app-from-cortana に移動されました。
 
 Github: https://github.com/Microsoft/cortana-docs/blob/master/docs/voicecommands/deep-link-into-your-app-from-cortana.md
-

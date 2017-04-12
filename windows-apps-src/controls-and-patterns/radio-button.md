@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: aa53060a281a452d47461602866d1b67edc161aa
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 33a8b62a378e4a9abe20be04a49c94d886144cc5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="radio-buttons"></a>ラジオ ボタン
 
@@ -197,4 +195,3 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 **開発者向け (XAML)**
 - [**Windows.UI.Xaml.Controls RadioButton クラス**](https://msdn.microsoft.com/library/windows/apps/br227544)
-

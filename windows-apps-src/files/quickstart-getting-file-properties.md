@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 89dee43da35e9a31bb7a795324119cb429d3734e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4412ccd88c73854c193e24e0ac4e3f03730a9f39
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="get-file-properties"></a>ファイルのプロパティの取得
 
@@ -141,4 +139,3 @@ foreach (Windows.Storage.StorageFile file in files)
  
 
  
-

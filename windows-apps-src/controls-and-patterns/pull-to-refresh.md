@@ -11,11 +11,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: aaeb1e74-b795-4015-bf41-02cb1d6f467e
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: e062ed2910e20ba187b8a0726a0061f0dd4b07f8
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 0d10a0c7f269cc6c7d0b2e9476a926226fe94f82
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="pull-to-refresh"></a>引っ張って更新
 

@@ -2,21 +2,17 @@
 title: "ラスター化ルール"
 description: "ラスター化ルールは、ベクトル データをラスター データにマップする方法を定義します。"
 ms.assetid: B604725F-96A5-4DB6-B597-9EC57FBBC024
-keywords:
-- "ラスター化ルール"
+keywords: "ラスター化ルール"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9267cd0e9d01b8af6a697fbdf90c33cbca786df2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c7385f936f8e7bed23433e241aea3806a0d75bdf
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="rasterization-rules"></a>ラスター化ルール
 
 
@@ -128,7 +124,7 @@ API は、品質レベルの数によってマルチサンプリングのハー�
 
 実際には、微分と重心サンプリングを組み合わせないことをお勧めします。 プリミティブの補間された属性が、補外されないことが重要である状況で、重心サンプリングが役立つ場合があります。ただし、これには、プリミティブのエッジがピクセルを横切る位置を (連続して変更するのではなく) ジャンプするような属性や、LOD を算出するテクスチャー サンプリング処理で使用できない微分などのトレードオフが伴います。
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連項目
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [付録](appendix.md)
@@ -138,7 +134,6 @@ API は、品質レベルの数によってマルチサンプリングのハー�
  
 
  
-
 
 
 

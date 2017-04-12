@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 07c6447a2f28c087c18e37e0036b43e7d7b312e5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 04634214aaa32a1beda05b5b127ccc2e0e141bad
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="use-the-compass"></a>コンパスの使用
 
@@ -181,4 +179,3 @@ CompassReadingChangedEventArgs>(ReadingChanged);
  
 
  
-

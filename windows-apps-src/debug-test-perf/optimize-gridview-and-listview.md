@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 96902d7532aed1510d959b45528cc71e0e6dca70
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3cd3695f6a7ec9c2d29fdd1826635973aab809a9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="listview-and-gridview-ui-optimization"></a>ListView と GridView の UI の最適化
 
@@ -324,5 +322,4 @@ private void lst-ChoosingItemContainer
 異なる項目テンプレートを使う項目が均一に分布していない場合、パン中に新しい項目テンプレートを作成することが必要になる可能性が高く、仮想化によって提供される利点の多くが打ち消されます。 さらに、項目テンプレート セレクターでは、特定のコンテナーが現在のデータ項目用に再利用できるかどうかを評価する際に、対象として検討される候補は 5 つだけです。 このため、アプリで項目テンプレート セレクターを使用する前に、データが項目テンプレート セレクターでの使用に適しているかどうかを慎重に検討する必要があります。 コレクションがほぼ同種の項目で構成される場合、セレクターはほとんど毎回 (状況によっては常に) 同じ種類を返すことになります。 ほぼ同種の中のまれな例外を処理するためにかかるコストに注意し、[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) (または 2 つの項目コントロール) の使用が妥当であるかどうかを検討します。
 
  
-
 

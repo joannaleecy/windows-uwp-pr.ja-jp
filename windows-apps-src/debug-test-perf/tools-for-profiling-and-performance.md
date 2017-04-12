@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 51304d873261466afc9014224b918b82603f00e8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0a1a955d464fe875afdeef74d3ffa23a43e1406b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="tools-for-profiling-and-performance"></a>プロファイリングとパフォーマンスに関するツール
 
@@ -33,5 +31,4 @@ Microsoft には、ユニバーサル Windows プラットフォーム (UWP) ア
 | [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/apps/xaml/hh448170.aspx) | Windows アセスメント & デプロイメント キット (Windows ADK) に付属する Windows Performance Analyzer (WPA) は、Windows Performance Recorder (WPR)、Xperf、または Assessment Platform で実行される評価により記録される Windows イベント トレーシング (ETW) イベントのグラフとデータ テーブルを作成するツールです。 WPA は、分析のためにどのイベント トレース ログ (ETL) ファイルでも開くことができます。 |
 
  
-
 

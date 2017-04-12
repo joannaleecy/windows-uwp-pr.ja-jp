@@ -12,13 +12,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fa7757a8657abfc84ee905cb05b0b3addc59f64e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f46a48e6f93dc152a76ab5791d722dbe757a90b6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="globalization-and-localization"></a>グローバリゼーションとローカライズ
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -98,7 +95,6 @@ Windows は世界中で利用されており、文化、地域、言語の異な
  
 
  
-
 
 
 

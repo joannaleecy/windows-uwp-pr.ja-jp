@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0b1dfaeb098ac4b73c89f4d1a51ec658312aee4e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 722389a7440110eaffa5458e8ef5e85fccb39671
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="listview-and-gridview-data-virtualization"></a>ListView と GridView のデータ仮想化
 
@@ -83,7 +81,6 @@ ms.lasthandoff: 02/07/2017
 -   クエリの結果が変更されるときにサービスによって提供される通知の種類は何か。 項目がンデックス 33 に挿入されたことがわかるか。 サービスがキーとオフセットに基づくクエリをサポートする場合は、インデックスだけを使うよりも適している可能性があります。
 -   項目のプリフェッチをいかにスマートに実行するか。 必要な項目を予測するためにスクロールの方向と速度を追跡する予定ですか。
 -   キャッシュの消去をどの程度積極的に行うか。 これはメモリとエクスペリエンスのトレードオフです。
-
 
 
 

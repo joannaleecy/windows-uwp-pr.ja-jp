@@ -2,21 +2,17 @@
 title: "入力アセンブラー (IA) ステージ"
 description: "入力アセンブラー (IA) ステージは、三角形、線、点などのパイプラインにプリミティブ データと隣接性データを提供し (セマンティクス ID など)、まだ処理されていないプリミティブの処理を減らすことでシェーダーの効率を高めます。"
 ms.assetid: AF1DC611-C872-47F1-BF1A-92C68C8903E6
-keywords:
-- "入力アセンブラー (IA) ステージ"
+keywords: "入力アセンブラー (IA) ステージ"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8bdabf3a49417974acb6a134da07e9702573bf2d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3093fc58a3432fae64e9324773a9277d907a15fd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="input-assembler-ia-stage"></a>入力アセンブラー (IA) ステージ
 
 
@@ -79,7 +75,6 @@ IA ステージは、データをプリミティブにアセンブルして、�
  
 
  
-
 
 
 

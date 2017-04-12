@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 24a5696a6e835a40b9b4e800677596514b56d53b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9728eced6de3d246dc1ec9950b90d77fea0d576d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="optimize-your-xaml-markup"></a>XAML マークアップの最適化
 
@@ -294,5 +292,4 @@ XBF2 は、実行時にすべてのテキスト解析コストを回避する XA
 フレームワークが提供する XAML の組み込みのコントロールとディクショナリは、既に XBF2 に完全に対応しています。 独自のアプリでは、プロジェクト ファイルで TargetPlatformVersion 8.2 以降を宣言していることを確認します。
 
 XBF2 があるかどうかを確認するには、バイナリ エディターでアプリを開きます。XBF2 がある場合、12 番目と 13 番目のバイトは 00 02 です。
-
 

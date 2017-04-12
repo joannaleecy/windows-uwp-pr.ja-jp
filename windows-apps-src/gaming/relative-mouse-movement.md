@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, マウス, 入力"
 ms.assetid: 08c35e05-2822-4a01-85b8-44edb9b6898f
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: f207c1b7de4fd4a885c05c6988ecf685359d1d8b
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: dff08052af7f005366f9cb5154b307c13a316953
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="relative-mouse-movement-and-corewindow"></a>相対マウス移動と CoreWindow
 
 ゲームでは、マウスが、多くのプレイヤーにとって馴染みのある一般的な制御手段として使われています。ファーストパーソン シューティング ゲームやサード パーソン シューティング ゲーム、リアルタイムの戦略ゲームなど、さまざまなジャンルのゲームでマウスは不可欠な存在となっています。 ここでは、相対マウス制御の実装について説明します。相対マウス制御では、システム カーソルは使われません。画面の絶対座標を取得するのではなく、マウス移動の間隔をピクセル デルタとして追跡します。

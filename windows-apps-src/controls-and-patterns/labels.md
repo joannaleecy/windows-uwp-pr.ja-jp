@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 54610e29b0fcaa8b7e90cf00676098a2ea50b827
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b14c775896984095f580aed8cf41d010f408f67e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="labels"></a>ラベル
 
@@ -68,7 +66,6 @@ XAML では、多くのコントロールに組み込みの Header プロパテ�
  
 
  
-
 
 
 

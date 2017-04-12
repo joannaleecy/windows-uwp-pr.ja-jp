@@ -9,11 +9,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: ced83940fb49f5812343fee34cb11582683bd672
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: d96d01216a37c4e8dbcd0fcd0eb83ccb4859b288
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="enable-usermode-access-on-windows-10-iot-core"></a>Windows 10 IoT Core でのユーザー モード アクセスの有効化
 
@@ -711,9 +709,9 @@ Gpio、I2c、Spi、シリアルのためのシンプルなコマンド ライン
 
 | ツール | リンク |
 |------|------|
-| GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool    | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool |    https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
+| GpioTestTool | https://developer.microsoft.com/windows/iot/samples/gpiotesttool |
+| I2cTestTool    | https://developer.microsoft.com/windows/iot/samples/I2cTestTool | 
+| SpiTestTool |    https://developer.microsoft.com/windows/iot/samples/spitesttool |
 | MinComm (シリアル) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
 
 ## <a name="resources"></a>リソース
@@ -731,9 +729,9 @@ Gpio、I2c、Spi、シリアルのためのシンプルなコマンド ライン
 | GpioClx    | https://msdn.microsoft.com/library/windows/hardware/hh439508.aspx |
 | SerCx | https://msdn.microsoft.com/library/windows/hardware/ff546939.aspx |
 | MITT I2C テスト | https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx |
-| GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool    | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool |    https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
+| GpioTestTool | https://developer.microsoft.com/windows/iot/samples/GPIOTestTool |
+| I2cTestTool    | https://developer.microsoft.com/windows/iot/samples/I2cTestTool | 
+| SpiTestTool |    https://developer.microsoft.com/windows/iot/samples/spitesttool |
 | MinComm (シリアル) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
 | ハードウェア ラボ キット (HLK) | https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx |
 
@@ -741,7 +739,7 @@ Gpio、I2c、Spi、シリアルのためのシンプルなコマンド ライン
 
 ### <a name="appendix-a---raspberry-pi-asl-listing"></a>付録 A - Raspberry Pi ASL の一覧
 
-ヘッダーのピン配列: https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsRPi2
+ヘッダーのピン配列: https://developer.microsoft.com/windows/iot/samples/PinMappingsRPi2
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -903,7 +901,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 
 ### <a name="appendix-b---minnowboardmax-asl-listing"></a>付録 B - MinnowBoardMax ASL の一覧
 
-ヘッダーのピン配列: https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsMBM
+ヘッダーのピン配列: https://developer.microsoft.com/windows/iot/samples/PinMappingsMBM
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -1091,4 +1089,3 @@ GpioInt(Edge, ActiveBoth, Shared, $($_.PullConfig), 0, "\\_SB.GPI0",) { $($_.Pin
     $resourceIndex += 2;
 }
 ```
-

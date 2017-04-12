@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d96565479d970bca724614768361ba390ab9d668
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f1941a73937db19394e590026a16a023d025bba2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="data-binding-in-depth"></a>データ バインディングの詳細
 
@@ -655,6 +653,5 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | Source | サポートされない | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | {x:Bind} では、代わりにプロパティまたは静的パスを使います。 | 
 | Mode | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | Mode には、OneTime、OneWay、TwoWay を指定できます。 {x:Bind} の既定値は OneTime で、{Binding} の既定値は OneWay です。 | 
 | UpdateSourceTrigger | サポートされない | `<Binding UpdateSourceTrigger="Default [or] PropertyChanged [or] Explicit"/>` | {x:Bind} では、TextBox.Text を除くすべての場合に PropertyChanged 動作を使います。TextBox.Text では、フォーカスが失われるまで待機してソースを更新します。 | 
-
 
 

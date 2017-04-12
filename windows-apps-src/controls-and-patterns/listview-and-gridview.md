@@ -11,11 +11,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: f8532ba0-5510-4686-9fcf-87fd7c643e7b
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: fd8d538e6431bbff011c99ce8d17736d70f0c0ea
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 57fd59c54b7dfe3a8c12519bbac1dcd47d8c0854
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="listview-and-gridview"></a>ListView と GridView
 
@@ -522,4 +520,3 @@ ListView コントロールと GridView コントロールは、項目内、項�
 - [リスト](lists.md)
 - [リスト ビュー項目テンプレート](listview-item-templates.md)
 - [ドラッグ アンド ドロップ](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
-

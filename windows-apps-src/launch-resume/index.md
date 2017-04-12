@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 40400b8b17da9b010c0f03e9976201a1def025f8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 412876d0b05b2e703482f8cc79a1f07268ac200f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launching-resuming-and-background-tasks"></a>起動、再開、バックグラウンド タスク
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
@@ -107,7 +104,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="remote-systems"></a>リモート システム
 
-「[接続されているアプリとデバイス ("Rome" プロジェクト)](connected-apps-and-devices.md)」セクションでは、Remote Systems プラットフォームを使って、リモート デバイスの検出、リモート デバイスでのアプリの起動、リモート デバイス上のアプリ サービスとの通信を行う方法について説明します。
+「[接続されているアプリやデバイス ("Rome" プロジェクト)](connected-apps-and-devices.md)」セクションでは、Remote Systems プラットフォームを使って、リモート デバイスの検出、リモート デバイスでのアプリの起動、リモート デバイス上のアプリ サービスとの通信を行う方法について説明します。
 
 | トピック | 説明 |
 |-------|-------------|
@@ -123,4 +120,3 @@ ms.lasthandoff: 02/07/2017
 |-------|-------------|
 | [スプラッシュ画面の追加](add-a-splash-screen.md) | アプリのスプラッシュ画面の画像と背景色を設定します。 |
 | [スプラッシュ画面の表示時間の延長](create-a-customized-splash-screen.md) | アプリに追加スプラッシュ画面を作成すれば、より長い時間、スプラッシュ画面を表示することができます。 この追加画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。 |
-

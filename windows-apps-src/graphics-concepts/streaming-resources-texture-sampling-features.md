@@ -2,21 +2,17 @@
 title: "ストリーミング リソース テクスチャ サンプリング機能"
 description: "ストリーミング リソース テクスチャ サンプリングの機能は複数あります。たとえば、マップの領域についてシェーダー状態のフィードバックを取得する機能、アクセスされている全データがリソース内にマップされたかどうか確認する機能、マップされていないことがわかっているミップマップ ストリーミング リソース内の領域をシェーダーが避けられるようにクランプする機能、テクスチャ フィルターのフットプリント全体に完全にマップされる最小の LOD を検出する機能などがあります。"
 ms.assetid: C2B2DD69-8354-417A-894D-6235A8B48B53
-keywords:
-- "ストリーミング リソース テクスチャ サンプリング機能"
+keywords: "ストリーミング リソース テクスチャ サンプリング機能"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8bcd4ec264dce2962b9057e1f04309d54f3bf3d6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7d03ba6eec780a3c05e4d15247c423852d7d75f6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="streaming-resources-texture-sampling-features"></a>ストリーミング リソース テクスチャ サンプリング機能
 
 
@@ -81,7 +77,6 @@ LOD 追跡用の最小/最大フィルタリングのユーティリティは、
  
 
  
-
 
 
 

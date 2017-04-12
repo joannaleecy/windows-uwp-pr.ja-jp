@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0cac219625fbc7b6526c81cf11f010589d2bf000
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3848ab99538ab198f92890ac06da733169084f6a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="communicate-with-a-remote-app-service"></a>リモート アプリ サービスとの通信
 
 URI を使ってリモート デバイスでアプリを起動するのに加えて、リモート デバイスでも*アプリ サービス*を実行して通信できます。 どの Windows ベースのデバイスでも、クライアント デバイス、またはホスト デバイスのいずれかとして使うことができます。 これにより、アプリをフォアグラウンドにしなくても、接続されているデバイスとやり取りする方法がほぼ無限になります。
@@ -94,4 +91,3 @@ URI を使ってリモート デバイスでアプリを起動するのに加え
 [アプリ サービスの作成と利用](how-to-create-and-consume-an-app-service.md)  
 [リモート システムの API リファレンス](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
 [リモート システムのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)
-

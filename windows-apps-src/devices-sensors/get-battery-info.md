@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f78c828faded1d7efbd82bc41245052ce95862c7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b136c53cd39028c15ff55be803ae314c773a9be6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="get-battery-information"></a>バッテリー情報の取得
 
@@ -342,5 +340,4 @@ namespace App1
 **ヒント:** [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) オブジェクトから数値を受け取るには、**ローカル コンピューター**または (Windows Phone などの) 外部**デバイス**上のアプリをデバッグします。 デバイス エミュレーターでデバッグした場合、**BatteryReport** オブジェクトは容量や消費率のプロパティに **null** を返します。
 
  
-
 

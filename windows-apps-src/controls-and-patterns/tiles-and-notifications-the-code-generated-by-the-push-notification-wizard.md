@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 96086cb73a091964b2108c64dcc5ce6b32891629
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3aadc2c4d7e40b2d5df6bc32c5c040c5f5cc1e56
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="code-generated-by-the-push-notification-wizard"></a>プッシュ通知ウィザードにより生成されるコード
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -252,7 +249,6 @@ Window Azure のモバイル サービスの柔軟性が不十分な場合、C# 
  
 
  
-
 
 
 

@@ -9,11 +9,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 7394d211b580ad82689a79e7cbe4eb4dbf545f46
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 3dabc5ad2833eecfec1f397bdd5bf7f2b807a48d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="bluetooth-developer-faq"></a>Bluetooth に関する開発者向け FAQ
 
@@ -47,5 +45,4 @@ Windows 10 リリース 1511 以降では、開発者はこのペアリング処
 Bluetooth RFCOMM (クラシック) デバイスでは必要ありません。 Windows 10 リリース 1607 以降では、簡単に近くにあるデバイスを照会し、そのデバイスに接続できます。 更新された[RFCOMM チャット サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat)で、この機能について説明しています。 
 
 この機能は、Bluetooth Low Energy (GATT クライアント) では使用できないため、これらのデバイスにアクセスするために、[設定] ページで、または [Windows.Devices.Enumeration](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.aspx) API を使ってペアリングを行う必要があります。
-
 

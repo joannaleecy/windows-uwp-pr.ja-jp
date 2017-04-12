@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, UI, ナビゲーション"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 5b5789b90cefb6ba22c2a3d8b5ebbb45be5b0dad
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="ui-navigation-controller"></a>UI ナビゲーション コントローラー
 
 このページでは、[Windows.Gaming.Input.UINavigationController][uinavigationcontroller] とユニバーサル Windows プラットフォーム (UWP) 用の関連 API を使った UI ナビゲーション デバイス向けプログラミングの基礎について説明します。
@@ -236,4 +233,3 @@ if (OptionalUINavigationButtons::Context1 == (reading.OptionalButtons & Optional
 [uinavigationreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationreading.aspx
 [requireduinavigationbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.requireduinavigationbuttons.aspx
 [optionaluinavigationbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.optionaluinavigationbuttons.aspx
-

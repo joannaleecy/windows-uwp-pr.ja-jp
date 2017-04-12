@@ -10,13 +10,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 連絡先, 連絡先カード, 注釈"
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: da64e23714035b6763104d48430371469272a939
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: e882566fcc81941669dd4844235bcbd899ea3079
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>アプリを連絡先カードの操作に接続する
 
 アプリは、連絡先カードまたはミニ連絡先カードの操作の横に表示できます。 ユーザーは、プロファイル ページを開く、通話を行う、メッセージを送信するなど、操作を実行するアプリを選ぶことができます。
@@ -186,11 +183,11 @@ public async void OpenContactCard(object sender, RoutedEventArgs e)
 
 **App.cs** ファイル内の [Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330) メソッドをオーバーライドし、ユーザーをアプリ内のページに移動します。 それを行う方法の 1 つについては、[連絡先カードの統合のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)をご覧ください。
 
-ページのコード ビハインド ファイルで、[Page.OnNavigatedTo](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page.onnavigatedto.aspx) メソッドをオーバーライドします。 連絡先カードは、このメソッドに操作の名前とユーザーの ID を渡します。
+ページのコード ビハインド ファイルで、[Page.OnNavigatedTo](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.onnavigatedto.aspx) メソッドをオーバーライドします。 連絡先カードは、このメソッドに操作の名前とユーザーの ID を渡します。
 
 ビデオ通話や音声通話を開始するには、[VoIP のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP)をご覧ください。 [WIndows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx) 名前空間にすべての API が見つかります。
 
-メッセージングを容易にするには、[Windows.ApplicationModel.Chat](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.chat.aspx) 名前空間をご覧ください。
+メッセージングを容易にするには、[Windows.ApplicationModel.Chat](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.aspx) 名前空間をご覧ください。
 
 別のアプリを起動することもできます。 これを行うのが次のコードです。
 
@@ -217,4 +214,3 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 ```
 
 ```args.uri.scheme``` プロパティには操作の名前、```args.uri.Query``` プロパティにはユーザーの ID が含まれています。
-

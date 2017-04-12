@@ -2,21 +2,17 @@
 title: "不透明なテクスチャと 1 ビットのアルファ テクスチャ"
 description: "テクスチャ形式 BC1 は、不透明なテクスチャや単一の透明色を持つテクスチャに使います。"
 ms.assetid: 8C53ACDD-72ED-4307-B4F3-2FCF9A9F53EC
-keywords:
-- "不透明なテクスチャと 1 ビットのアルファ テクスチャ"
+keywords: "不透明なテクスチャと 1 ビットのアルファ テクスチャ"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f3718785527cd3d686fd81c3706f3f9284b96fba
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 56a63e5536523eaf290465bba73a436008bee2f7
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="span-iddirect3dconceptsopaqueand1-bitalphatexturesspanopaque-and-1-bit-alpha-textures"></a><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>不透明なテクスチャと 1 ビットのアルファ テクスチャ
 
 
@@ -171,7 +167,6 @@ Bitmap Word\_1 のレイアウトは次のようになります。
  
 
  
-
 
 
 

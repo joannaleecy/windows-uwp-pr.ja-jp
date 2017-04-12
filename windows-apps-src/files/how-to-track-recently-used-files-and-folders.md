@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c8f8cd6681b4e00e8430d7ddfacdd8fad395365c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cdef86477570b33e9cd0c7adaaceb8fea12e3d40
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="track-recently-used-files-and-folders"></a>最近使ったファイルやフォルダーの追跡
 
@@ -110,4 +108,3 @@ MRU の上限である 25 項目に達している場合、新しい項目を追
  
 
  
-

@@ -11,13 +11,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 6208b71b-37a7-40f5-91b0-19b665e7458a
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 19d4a4e00692bc983a56416951e82f71bf5f6be2
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 659a2871e540398d34b93c288d34fb80699c36c9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="in-app-help-pages"></a>アプリ内ヘルプのページ
 
 多くの場合、ヘルプはアプリケーション内でユーザーがヘルプの表示を選択したときに表示されることが望ましい方法です。
@@ -62,4 +59,3 @@ Sometimes, it can be useful to provide more information about a feature when a u
 ## <a name="related-articles"></a>関連記事
 
 * [Guidelines for app help](guidelines-for-app-help.md)
-

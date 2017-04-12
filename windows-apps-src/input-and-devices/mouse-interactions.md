@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 94a92c184f4c695caf29cb7a185842ccd72e4c53
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: be99225c0691c8813a071a314ab3df4573fb11f5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="mouse-interactions"></a>マウス操作
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -68,7 +65,7 @@ ms.lasthandoff: 02/07/2017
 <td align="left"><p>右クリックによる選択とコマンド</p></td>
 <td align="left"><p>右クリックして、ナビゲーション バー (使用できる場合) と、グローバル コマンドを含むアプリ バーを表示します。 要素を右クリックして選択し、その要素に対応する状況依存のコマンドを備えたアプリ バーを表示します。</p>
 <div class="alert">
-<strong>注</strong> 選択やアプリ バーのコマンドが適切な UI 動作ではない場合は、右クリックでショートカット メニューを表示します。 ただし、すべてのコマンド動作にアプリ バーを使うことを強くお勧めします。
+<strong>注</strong>  選択コマンドやアプリ バーのコマンドが適切な UI 動作ではない場合は、右クリックでコンテキスト メニューを表示します。 ただし、すべてのコマンド動作にアプリ バーを使うことを強くお勧めします。
 </div>
 <div>
  
@@ -133,8 +130,8 @@ ms.lasthandoff: 02/07/2017
 -   クリック可能な要素には常に矢印カーソル (![矢印カーソル](images/cursor-arrow.png)) を使います。 リンクなどのインタラクティブな要素には手の形のポインティング カーソル (![手の形のポインティング カーソル](images/cursor-pointinghand.png)) を使いません。 代わりに、前に説明したホバー効果を使います。
 -   選択可能なテキストにはテキスト カーソル (![テキスト カーソル](images/cursor-text.png)) を使います。
 -   ドラッグやトリミングなど、移動がメインの操作である場合は、移動カーソル (![移動カーソル](images/cursor-move.png)) を使います。 スタート画面のタイルなどでのナビゲーションがメインの操作である場合は、要素に対して移動カーソルを使いません。
--   サイズ変更ができるオブジェクトに対しては、横、縦、対角線のサイズ変更カーソル (![縦のサイズ変更カーソル](images/cursor-vertical.png)、 ![横のサイズ変更カーソル](images/cursor-horizontal.png)、 ![対角線のサイズ変更カーソル (左下、右上)](images/cursor-diagonal2.png)、 ![対角線のサイズ変更カーソル (左上、右下)](images/cursor-diagonal1.png)) を使います。
--   地図など、固定キャンバス内のコンテンツのパンを行うときは、手でつかむ形のカーソル (![手でつかむ形のカーソル (開いた状態)](images/cursor-pan1.png)、 ![手でつかむ形のカーソル (つかんだ状態)](images/cursor-pan2.png)) を使います。
+-   サイズ変更ができるオブジェクトに対しては、横、縦、対角線のサイズ変更カーソル (![縦のサイズ変更カーソル](images/cursor-vertical.png), ![横のサイズ変更カーソル](images/cursor-horizontal.png), ![対角線のサイズ変更カーソル (左下、右上)](images/cursor-diagonal2.png), ![対角線のサイズ変更カーソル (左上、右下)](images/cursor-diagonal1.png)) を使います。
+-   地図など、固定キャンバス内のコンテンツのパンを行うときは、手でつかむ形のカーソル (![手でつかむ形のカーソル (開いた状態)](images/cursor-pan1.png), ![手でつかむ形のカーソル (つかんだ状態)](images/cursor-pan2.png)) を使います。
 
 ## <a name="related-articles"></a>関連記事
 
@@ -156,7 +153,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

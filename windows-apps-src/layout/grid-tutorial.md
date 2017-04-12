@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 87947b5bd1c1db008a21828c3940475c2b53fd6d
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 094cabc642884f57af2dbeb5125a2a8b81365824
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-a-simple-weather-app-by-using-grid-and-stackpanel"></a>Grid と StackPanel を使った単純な天気予報アプリの作成
 
 ここでは、XAML の **Grid** 要素と **StackPanel** 要素を使って単純な天気予報アプリのレイアウトを作成します。 これらのツールを使用すると、Windows 10 が実行されたすべてのデバイスで動作する魅力ある外観のアプリを作成できます。 このチュートリアルの所要時間は 10 ～ 20 分です。
@@ -123,4 +120,3 @@ XAML において、**Grid** は一連の行と列で構成されます。 **Gri
 UWP アプリのレイアウト設計の概要については、「[UWP アプリ設計の概要](https://msdn.microsoft.com/windows/uwp/layout/design-and-ui-intro)」をご覧ください。
 
 さまざまな画面サイズに適応できるレスポンシブ レイアウトの作成については、「[XAML を使ったページ レイアウトの定義](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml)」をご覧ください。
-

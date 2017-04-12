@@ -12,13 +12,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7bb706c94d26b1d27e7b9bf94ca3cfa7a57b41a6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f45c1d955d901366b0160d148cef88ce015aeaa2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="streaming-resources"></a>ストリーミング リソース
 
 
@@ -63,14 +60,13 @@ ms.lasthandoff: 02/07/2017
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[Direct3D Graphics の学習ガイド](index.md)
+[Direct3D グラフィックスの学習ガイド](index.md)
 
 [リソース](resources.md)
 
  
 
  
-
 
 
 

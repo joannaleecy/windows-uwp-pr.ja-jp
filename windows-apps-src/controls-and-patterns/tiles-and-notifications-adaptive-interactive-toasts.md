@@ -11,15 +11,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b1962e58d3513ddff908a0d556731d83cce20af4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d9808feeabfa4ffce19d0e669352331804dfd751
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="adaptive-and-interactive-toast-notifications"></a>アダプティブ トースト通知と対話型トースト通知
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 アダプティブ トースト通知と対話型トースト通知を使うと、より多くのコンテンツやオプションのインライン画像を含み、オプションのユーザー操作を備えた柔軟性のあるポップアップ通知を作成できます。
 
@@ -118,6 +116,29 @@ ToastContent content = new ToastContent()
     }
 };
 ```
+
+次に、トーストを [XmlDocument](https://msdn.microsoft.com/en-us/library/windows/apps/windows.data.xml.dom.xmldocument.aspx) オブジェクトに変換する必要があります。 トーストを (ここでは content.xml という名前の) XML ファイル内で定義する場合、次のコードを使用します。
+
+```CSharp
+string xmlText = File.ReadAllText("content.xml");
+XmlDocument xmlContent = new XmlDocument();
+xmlContent.LoadXml(xmlText);
+```
+
+または、C# でトースト テンプレートを定義する場合、次を使用します。
+
+```CSharp
+XmlDocument xmlContent = content.GetXml();
+```
+
+その後、XMLDocument の作成方法に関係なく、次のコードを使ってそのトーストを作成および送信できます。
+
+```CSharp
+ToastNotification notification = new ToastNotification(xmlContent);
+ToastNotificationManager.CreateToastNotifier().Show(notification);
+```
+
+トースト通知を表示する完全なアプリの例については、「[Quickstart on Sending a local toast notifications (ローカル トースト通知の送信に関するクイック スタート)](https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10)」をご覧ください。
 
 構造体の視覚的な表示は、次のようになります。
 
@@ -249,9 +270,9 @@ ToastContent content = new ToastContent()
 
  
 
-**操作を使った通知の例 1**
+**操作を使った通知**
 
-この例は、次のようになります。
+この例では、2 つの応答操作が可能な通知を作成します。
 
 ```XML
 <toast launch="app-defined-string">
@@ -309,73 +330,11 @@ ToastContent content = new ToastContent()
 
 ![操作を使った通知の例 1](images/adaptivetoasts-xmlsample02.jpg)
 
- 
 
-**操作を使った通知の例 2**
-
-この例は、次のようになります。
-
-```XML
-<toast launch="app-defined-string">
-  <visual>
-    <binding template="ToastGeneric">
-      <text>Restaurant suggestion...</text>
-      <text>We noticed that you are near Wasaki. Thomas left a 5 star rating after his last visit, do you want to try it?</text>
-    </binding>
-  </visual>
-  <actions>
-    <action activationType="foreground" content="Reviews" arguments="reviews" />
-    <action activationType="protocol" content="Show map" arguments="bingmaps:?q=sushi" />
-  </actions>
-</toast>
-```
-
-```CSharp
-ToastContent content = new ToastContent()
-{
-    Launch = "app-defined-string",
- 
-    Visual = new ToastVisual()
-    {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = "Restaurant suggestion..."
-                },
- 
-                new AdaptiveText()
-                {
-                    Text = "We noticed that you are near Wasaki. Thomas left a 5 star rating after his last visit, do you want to try it?"
-                }
-            }
-        }
-    },
- 
-    Actions = new ToastActionsCustom()
-    {
-        Buttons =
-        {
-            new ToastButton("Reviews", "reviews"),
- 
-            new ToastButton("Show map", "bingmaps:?q=sushi")
-            {
-                ActivationType = ToastActivationType.Protocol
-            }
-        }
-    }
-};
-```
-
-![操作を使った通知の例 2](images/adaptivetoasts-xmlsample03.jpg)
-
- 
 
 **テキスト入力と操作を使った通知の例 1**
 
-この例は、次のようになります。
+この例では、2 つの応答操作に加えて、テキスト入力を受け取る通知を作成します。
 
 ```XML
 <toast launch="developer-defined-string">
@@ -456,7 +415,7 @@ ToastContent content = new ToastContent()
 
 **テキスト入力と操作を使った通知の例 2**
 
-この例は、次のようになります。
+この例では、テキスト入力と単一の操作を受け取る通知を作成します。
 
 ```XML
 <toast launch="developer-defined-string">
@@ -533,7 +492,7 @@ ToastContent content = new ToastContent()
 
 **選択入力と操作を使った通知**
 
-この例は、次のようになります。
+この例では、ドロップダウン選択メニューと、2 つの実行可能な操作を使った通知を作成します。
 
 ```XML
 <toast launch="developer-defined-string">
@@ -617,7 +576,7 @@ ToastContent content = new ToastContent()
 
 **リマインダー通知**
 
-この例は、次のようになります。
+前の例のように選択メニューと 2 つの操作を使用して、リマインダー通知を作成できます。
 
 ```XML
 <toast scenario="reminder" launch="action=viewEvent&amp;eventId=1983">

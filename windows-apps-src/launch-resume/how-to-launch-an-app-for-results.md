@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ec46f3287deefca67dab96fe12b3380c7dbd6ed9
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8aa2070606f7ef077dfa4392d576f212b2f8ea84
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launch-an-app-for-results"></a>結果を取得するためのアプリの起動
 
 
@@ -208,4 +205,3 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
  
 
  
-

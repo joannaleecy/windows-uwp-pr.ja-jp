@@ -1,27 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: F94AF8F6-0742-4A3F-938E-177472F96C00
-description: "Windows ストア申請 API でこのメソッドを使用して、新しいパッケージ フライトまたは更新されたパッケージ フライトの申請を Windows デベロッパー センターにコミットします。"
-title: "Windows ストア申請 API を使用したパッケージ フライト申請のコミット"
+description: "新しいパッケージ フライトの申請または更新されたパッケージ フライトの申請を Windows デベロッパー センターにコミットするには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "パッケージ フライトの申請のコミット"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、Windows ストア申請 API、フライトの申請のコミット"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 305c9280b00fbbd669bee31732e831238054f177
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5171fb89b9485ed314a8c7f0322db89019e9d512
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="commit-a-package-flight-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したパッケージ フライト申請のコミット
-
+# <a name="commit-a-package-flight-submission"></a>パッケージ フライトの申請のコミット
 
 
 
-Windows ストア申請 API でこのメソッドを使用して、新しいパッケージ フライトまたは更新されたパッケージ フライトの申請を Windows デベロッパー センターにコミットします。 コミット アクションにより、申請データ (関連パッケージを含む) がアップロードされたことがデベロッパー センターに通知されます。 通知を受けたデベロッパー センターは、申請データに対する変更をインジェストと公開のためにコミットします。 適切にコミットされると、申請に対する変更はデベロッパー センター ダッシュボードに表示されます。
+
+新しいパッケージ フライトの申請または更新されたパッケージ フライトの申請を Windows デベロッパー センターにコミットするには、Windows ストア申請 API に含まれる以下のメソッドを使用します。 コミット アクションにより、申請データ (関連パッケージを含む) がアップロードされたことがデベロッパー センターに通知されます。 通知を受けたデベロッパー センターは、申請データに対する変更をインジェストと公開のためにコミットします。 適切にコミットされると、申請に対する変更はデベロッパー センター ダッシュボードに表示されます。
 
 コミット操作が Windows ストア申請 API を使ったパッケージ フライト申請の作成プロセスにどのように適合するかについては、[パッケージ フライト申請の管理に関するページ](manage-flight-submissions.md)をご覧ください。
 
@@ -91,7 +88,7 @@ Authorization: Bearer <your access token>
 
 | 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| status           | string  | 提出の状態。 次のいずれかの値を使用できます。 <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>  |
+| status           | string  | 申請の状態。 次のいずれかの値を使用できます。 <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>  |
 
 <span/>
 
@@ -117,4 +114,3 @@ Authorization: Bearer <your access token>
 * [パッケージ フライトの申請の更新](update-a-flight-submission.md)
 * [パッケージ フライトの申請の削除](delete-a-flight-submission.md)
 * [パッケージ フライトの申請の状態の取得](get-status-for-a-flight-submission.md)
-

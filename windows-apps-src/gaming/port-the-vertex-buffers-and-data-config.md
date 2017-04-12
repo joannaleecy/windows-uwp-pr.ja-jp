@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, 移植, 頂点バッファー, データ, Direct3D"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 85e8a47da525c0f5de7e957a0048e245e374dedc
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="port-the-vertex-buffers-and-data"></a>頂点バッファーと頂点データの移植
 
 
@@ -318,7 +315,6 @@ Direct3D を構築する場合は、[**ID3D11Device**](https://msdn.microsoft.co
  
 
  
-
 
 
 

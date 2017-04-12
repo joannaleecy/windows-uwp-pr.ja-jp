@@ -2,21 +2,17 @@
 title: "テクスチャの折り返し"
 description: "テクスチャの折り返しによって、Direct3D が各頂点に指定されたテクスチャ座標を使って、テクスチャが適用された多角形をラスタライズする際の基本的な方法が変更されます。"
 ms.assetid: C28FB369-9A91-4D57-A96D-4A5D36484B35
-keywords:
-- "テクスチャの折り返し"
+keywords: "テクスチャの折り返し"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4743672c757fbbe67770e95d61080ac678c600ac
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a5c53a4a9fdaf166e9010da1e72f43b8dccf81e2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="texture-wrapping"></a>テクスチャの折り返し
 
 
@@ -59,7 +55,6 @@ u 方向で折り返しが有効になっているので、テクスチャ処理
  
 
  
-
 
 
 

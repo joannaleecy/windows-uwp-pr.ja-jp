@@ -4,30 +4,26 @@ ms.assetid: CAC6A7C7-3348-4EC4-8327-D47EB6E0C238
 title: "SD カードへのアクセス"
 description: "オプションの microSD カードに重要度の低いデータを保存したり、これらのデータにアクセスしたりすることができます (特に内部ストレージに制限がある低コストのモバイル デバイスの場合)。"
 ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 03/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3fc8bbaa0b665b640974b5342b2b60c9b7f90143
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows 10, UWP, SD カード, ストレージ"
+ms.openlocfilehash: 89dfed0cbd8a4a87f432a747e4155cdef3bbc757
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="access-the-sd-card"></a>SD カードへのアクセス
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
-オプションの microSD カード上にある重要度の低いデータに保存およびアクセスできます (特に内部ストレージに制限がある低コストのモバイル デバイス)。
+オプションの microSD カードに重要度の低いデータを保存したり、これらのデータにアクセスしたりすることができます (特に内部ストレージに制限があり、microSD カード用のスロットがある低コストのモバイル デバイスの場合)。
 
 ほとんどの場合、アプリで SD カード上のファイルの保存とアクセスを行うには、アプリ マニフェスト ファイルで **removableStorage** 機能を指定する必要があります。 通常、アプリから保存したりアクセスしたりするファイルの種類を処理対象として登録することも必要です。
 
 次の方法を使って、オプションの SD カードに対してファイルの保存とアクセスを行うことができます。
-
 - ファイル ピッカー
-
 - [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) API
 
 ## <a name="what-you-can-and-cant-access-on-the-sd-card"></a>SD カードでアクセスできるデータとアクセスできないデータ
@@ -35,15 +31,12 @@ ms.lasthandoff: 02/07/2017
 ### <a name="what-you-can-access"></a>アクセスできるデータ
 
 - アプリでファイルの読み取りと書き込みを実行するには、そのファイルの種類が処理対象となるように、アプリでアプリ マニフェスト ファイルに登録する必要があります。
-
 - アプリでは、フォルダーの作成と管理も実行できます。
 
 ### <a name="what-you-cant-access"></a>アクセスできないデータ
 
 - アプリでは、システム フォルダーとそのフォルダー内のファイルを参照したり、アクセスしたりすることはできません。
-
 - 隠し属性でマークされたファイルを参照することはできません。 通常、隠し属性は、データを誤って削除するというリスクを減らすために使われます。
-
 - [**KnownFolders.DocumentsLibrary**](https://msdn.microsoft.com/library/windows/apps/br227152) を使ってドキュメント ライブラリを参照したり、ドキュメント ライブラリにアクセスしたりすることはできません。 ただしファイル システムを走査することによって、SD カード上のドキュメント ライブラリにアクセスすることはできます。
 
 ## <a name="security-and-privacy-considerations"></a>セキュリティとプライバシーに関する考慮事項
@@ -51,7 +44,6 @@ ms.lasthandoff: 02/07/2017
 アプリが SD カードのグローバルな場所にファイルを保存する場合、それらのファイルは暗号化されないため、通常は他のアプリからアクセスすることができます。
 
 - SD カードがデバイスに挿入されている間、SD カード上のファイルは、同じファイルの種類を処理対象として登録している他のアプリからアクセスすることができます。
-
 - SD カードをデバイスから取り外し、PC で開くと、ファイルはエクスプローラーに表示されるため、他のアプリからアクセスすることができます。
 
 アプリを SD カードにインストールし、ファイルを SD カードの [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) に保存する場合、それらのファイルは暗号化されるため、他のアプリからアクセスすることはできません。
@@ -78,23 +70,24 @@ SD カードのファイルにアクセスするには通常、次のことを�
 ```csharp
 using Windows.Storage;
 
-...
+// Get the logical root folder for all external storage devices.
+StorageFolder externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
 
-            // Get the logical root folder for all external storage devices.
-            StorageFolder externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
+// Get the first child folder, which represents the SD card.
+StorageFolder sdCard = (await externalDevices.GetFoldersAsync()).FirstOrDefault();
 
-            // Get the first child folder, which represents the SD card.
-            StorageFolder sdCard = (await externalDevices.GetFoldersAsync()).FirstOrDefault();
-
-            if (sdCard != null)
-            {
-                // An SD card is present and the sdCard variable now contains a reference to it.
-            }
-            else
-            {
-                // No SD card is present.
-            }
+if (sdCard != null)
+{
+    // An SD card is present and the sdCard variable now contains a reference to it.
+}
+else
+{
+    // No SD card is present.
+}
 ```
+
+> [!NOTE]
+> SDカード リーダーが内蔵のリーダー (ノート PC や PC のスロットなど) である場合、KnownFolders.RemovableDevices によってアクセスできない場合があります。
 
 ### <a name="querying-the-contents-of-the-sd-card"></a>SD カードのコンテンツの照会
 
@@ -107,7 +100,6 @@ SD カードを走査するにはバックグラウンド スレッドを使う�
 [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) から取得したパスを使って SD カード上のファイル システムにアクセスした場合のメソッドの動作を次に示します。
 
 -   [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227273) メソッドは、処理対象として登録したファイル拡張子と、指定したメディア ライブラリ機能に関連付けられているファイル拡張子との和集合を返します。
-
 -   アクセスしようとするファイルの拡張子を処理対象として登録しなかった場合、[**GetFileFromPathAsync**](https://msdn.microsoft.com/library/windows/apps/br227206) メソッドは失敗します。
 
 ## <a name="identifying-the-individual-sd-card"></a>個々の SD カードの識別
@@ -121,35 +113,32 @@ SD カードが最初にマウントされると、オペレーティング シ�
 ```csharp
 using Windows.Storage;
 
-...
+// Get the logical root folder for all external storage devices.
+StorageFolder externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
 
-            // Get the logical root folder for all external storage devices.
-            StorageFolder externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
+// Get the first child folder, which represents the SD card.
+StorageFolder sdCard = (await externalDevices.GetFoldersAsync()).FirstOrDefault();
 
-            // Get the first child folder, which represents the SD card.
-            StorageFolder sdCard = (await externalDevices.GetFoldersAsync()).FirstOrDefault();
+if (sdCard != null)
+{
+    var allProperties = sdCard.Properties;
+    IEnumerable<string> propertiesToRetrieve = new List<string> { "WindowsPhone.ExternalStorageId" };
 
-            if (sdCard != null)
-            {
-                var allProperties = sdCard.Properties;
-                IEnumerable<string> propertiesToRetrieve = new List<string> { "WindowsPhone.ExternalStorageId" };
+    var storageIdProperties = await allProperties.RetrievePropertiesAsync(propertiesToRetrieve);
 
-                var storageIdProperties = await allProperties.RetrievePropertiesAsync(propertiesToRetrieve);
+    string cardId = (string)storageIdProperties["WindowsPhone.ExternalStorageId"];
 
-                string cardId = (string)storageIdProperties["WindowsPhone.ExternalStorageId"];
-
-                if (...) // If cardID matches the cached ID of a recognized card.
-                {
-                    // Card is recognized. Index contents opportunistically.
-                }
-                else
-                {
-                    // Card is not recognized. Index contents immediately.
-                }
-            }
+    if (...) // If cardID matches the cached ID of a recognized card.
+    {
+        // Card is recognized. Index contents opportunistically.
+    }
+    else
+    {
+        // Card is not recognized. Index contents immediately.
+    }
+}
 ```
 
  
 
  
-

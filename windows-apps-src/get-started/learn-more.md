@@ -9,32 +9,29 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0bf7959be6278577cc8fe93011591e4523bee623
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0c21257db05a058c2d92f32218b73d920cc7156c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 # <a name="whats-next"></a>次の手順
 
-アプリを作成して Windows ストアに公開するには、どこから手を着ければよいのでしょうか。 UWP プラットフォームでの開発が初めての場合は、<a href="https://channel9.msdn.com/">Channel 9</a> のビデオと <a href="https://mva.microsoft.com">Microsoft Virtual Academy</a> のコースをお試しください。 既に XAML と C# を使用している場合は、以下のトピックを参照するか、直接「[GitHub からユニバーサル Windows プラットフォーム (UWP) のサンプルを取得する](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)」にお進みください。
+アプリを作成して Windows ストアに公開するには、どこから手を着ければよいのでしょうか。 UWP プラットフォームでの開発が初めての場合は、<a href="https://channel9.msdn.com/">Channel 9</a> のビデオと <a href="https://mva.microsoft.com">Microsoft Virtual Academy</a> や [LinkedIn Learning](https://www.linkedin.com/topic/windows-programming) のコースをお試しください。 既に Windows での開発に関する知識がある場合は、以下のトピックを参照するか、直接[サンプルをダウンロード](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)してください。
 
 アプリの作成では、数多くの便利なツールやフレームワークを利用することができ、それらの多くがクロスプラットフォーム開発をサポートします。 たとえば、2D ゲームを作成する場合は、<a href="http://www.monogame.net">Monogame</a> の使用を検討してください。または、多くの [JavaScript/HTML フレームワーク](https://html5gameengine.com/)の中から一部を使うこともできます。 3D ゲームの開発用には <a href="http://www.unity3d.com">Unity</a> があり、モバイル デバイスが中心の場合は <a href="http://www.xamarin.com">Xamarin</a> が便利です。
 
-初めて開発する場合は、まず、UWP 関連のトピックを通読して、UWP プラットフォームがどのようなものかを理解されることをお勧めします。そのうえで、XAML コントロールを使用し、さらにカスタマイズして、ユーザー インターフェイスを作成する方法をお調べください。 アプリのレイアウトには XAML を使います (使用方法について詳しくは、[このチュートリアル](../layout/grid-tutorial.md)をご覧ください)。しかし、XAML の真価は*データ バインディング*使用することです。データ バインディングは、アプリに表示する情報とコントロールを関連付けることができます。Windows プラットフォームでの開発が初めての場合、この概念を理解することが重要です。 
+ゲーム以外のアプリを初めて開発する場合は、まず、UWP 関連のトピックを通読して、UWP プラットフォームがどのようなものかを理解されることをお勧めします。そのうえで、XAML コントロールを使用し、さらにカスタマイズして、ユーザー インターフェイスを作成する方法をお調べください。 アプリのデザインには XAML を使います (使用方法について詳しくは、[このチュートリアル](../layout/grid-tutorial.md)をご覧ください)。しかし、XAML の真価は*データ バインディング*使用することです。データ バインディングは、アプリに表示する情報とコントロールを関連付けることができます。Windows プラットフォームでの開発が初めての場合、この概念を理解することが重要です。 
 <table class="wdg-noborder">
 <tr>
- <td width=60><img src="images/icon3.png" width=64></td>
+ <td width=60><img src="images/icon3.png" alt="Bullet point" width=64></td>
     <td><h2>UWP と UWP アプリのライフサイクル</h2><p>アプリが起動するしくみや、別のアプリを起動したときの処理はどのようになっているのでしょうか。 以下のトピックでは、それについて説明しています。</p> <ul>
     <li><a href="https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">ユニバーサル Windows プラットフォーム (UWP) アプリのガイド</a></li>
     <li><a href="https://msdn.microsoft.com/windows/uwp/launch-resume/app-lifecycle">UWP アプリのライフサイクル</a></li>
     <li><a href="https://developer.microsoft.com/windows/windows-10-for-developers">Windows 10 の優れた機能</a></ul></td>  
 </tr>
 <tr>
- <td width=60><img src="images/icon7.png" width=64></td>
+ <td width=60><img src="images/icon7.png" alt="Bullet point" width=64></td>
     <td><h2>UX と UI</h2><p>自由に使うことができるコントロールとその使い方を知りたい場合は、 以下のトピックをご覧ください。コントロールとコードが連携するしくみや、アプリの外観に合わせてコントロールをカスタマイズする方法を説明しています。</p> <ul>
     <li><a href="https://developer.microsoft.com/windows/design">設計と UI</a></li>
     <li><a href="https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml">XAML を使ったページ レイアウトの定義</a></li>
@@ -46,7 +43,7 @@ ms.lasthandoff: 02/07/2017
     </ul></td>  
 </tr>
 <tr>
- <td width=60><img src="images/icon6.png" width=64></td>
+ <td width=60><img src="images/icon6.png" alt="Bullet point" width=64></td>
     <td><h2>データとサービス</h2><p>コードによって自動的にリストやグリッドを設定できるデータ バインドについて説明します。 外部リソースにリンクして、データをアプリに取り込む方法を知ることができます。</p> <ul>
     <li><a href="https://msdn.microsoft.com/windows/uwp/data-binding/index">データ バインディング</a></li>
     <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/listview-and-gridview">ListViews、GridViews、およびデータ バインディング</a></li>
@@ -54,14 +51,14 @@ ms.lasthandoff: 02/07/2017
     </ul></td>  
 </tr>
 <tr>
- <td width=60><img src="images/icon4.png" width=64></td>
+ <td width=60><img src="images/icon4.png" alt="Bullet point" width=64></td>
     <td><h2>公開</h2><p>作成したアプリを公開して、収益を得ましょう。 アプリがストアで公開されるようになるまでのプロセスを詳しく説明します。</p> <ul>
     <li><a href="https://msdn.microsoft.com/windows/uwp/publish/index">Windows アプリの公開</a></li>
     <li><a href="https://msdn.microsoft.com/windows/uwp/packaging/index">アプリのパッケージ化</a></li>
     </ul></td>  
 </tr>
 <tr>
- <td width=60><img src="images/icon2.png" width=64></td>
+ <td width=60><img src="images/icon2.png" alt="Bullet point" width=64></td>
     <td><h2>その他のリソース</h2><p>サンプル、チュートリアル、ビデオ、その他のツール、SDK を利用して、 アプリをレベル アップしましょう。</p>
     <ul>
     <li><a href="https://developer.microsoft.com/windows/develop">ハウツー記事</a></li>
@@ -95,12 +92,10 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="finding-help-in-the-dev-center"></a>デベロッパー センターでのヘルプの検索
 
-[Microsoft デベロッパー センター](http://developer.microsoft.com)には、さまざまなツール、フレームワーク、およびプラットフォームについて大量のドキュメントがあります。 トピックやサンプルを検索するときは、UWP 関連のコンテンツを閲覧していることを確認してください。 適切なコンテンツを閲覧するには、
-API リファレンス コンテンツではなく、概念コンテンツを参照します。概念コンテンツのトピックであれば、URL に "UWP" という文字が含まれています。 API コンテンツのパスには、"Windows Runtime API" という文字が含まれています。 
+[docs.microsoft.com](http://docs.microsoft.com) サイトには、さまざまなツール、フレームワーク、およびプラットフォームについて大量のドキュメントがあります。 トピックやサンプルを参照するときは、UWP 関連のコンテンツを閲覧していることを確認してください。 UWP のリファレンスは [Windows デベロッパー センター](https://developer.microsoft.com/windows/apps)に用意されています。必要な API のリファレンスについては、[UWP アプリの開発に関するページ](https://docs.microsoft.com/uwp/api/)をご覧ください。
+UWP に関するコンテンツを表示している場合、URL パスには **uwp** が含まれており、ページの上部にも次のようにパスが表示されます。
 
-![UWP の概念トピックの例](images/devcenter-topic2.png)
-
-![UWP のリファレンス トピックの例](images/devcenter-topic1.png)
+![UWP 関連のドキュメントの検索](images/UWP-docs.png)
 
 検索エンジンを使う場合は、"Windows アプリ開発" を検索文字列に追加すると、UWP コンテンツが検索される可能性がかなり高くなります。
 
@@ -169,7 +164,6 @@ API リファレンス コンテンツではなく、概念コンテンツを参
 <td align="left"><a href="https://www.microsoftstore.com/store/msusa/en_US/cat/Developer/categoryID.69418300?icid=en_US_Store_UH_BusEd_Dev">Microsoft ストアの開発者向けハードウェア。</a></td>
 </tr>
 </table>
-
 
 
 

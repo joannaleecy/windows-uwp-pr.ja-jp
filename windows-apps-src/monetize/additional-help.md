@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、広告、ヘルプ"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4cb0b288b37117178a722c3437ac12aa392e3e34
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 16d107835402c78ddd67109fc4b11fe93e6413e4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="additional-help"></a>追加のヘルプ
 
 
@@ -38,4 +35,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

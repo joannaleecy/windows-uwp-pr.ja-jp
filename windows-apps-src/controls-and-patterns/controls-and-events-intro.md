@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 93297899c341366788f1d7dfa06507c1f3003884
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 14186f0623f16426a98b5184020736bd4321857d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="intro-to-controls-and-patterns"></a>コントロールとパターンの概要
 
@@ -150,4 +148,3 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 -     [レイアウト](../layout/index.md)
 -     [スタイル](../style/index.md)
 -     [ユーザビリティ](../usability/index.md)
-

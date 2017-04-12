@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: ef4527f72898c8c5a6ad9c56d975966402894b2c
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 7c8b8eb3ae3c097a346144c57d7899cb5e9584f5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="free-memory-when-your-app-moves-to-the-background"></a>アプリがバックグラウンドに移動したときのメモリの解放
 
 この記事では、アプリが一時停止にされたり、場合によっては終了にされたりすることがないように、バックグラウンド状態に移行したアプリで使用するメモリの量を削減する方法を説明します。
@@ -108,4 +105,3 @@ Windows 10 バージョン 1607 では、2 つ新しいアプリケーション 
 
 * [バックグラウンド メディア再生のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=800141) - アプリがバックグラウンド状態に移行するときにメモリを解放する方法を説明します。
 * [診断ツール](https://blogs.msdn.microsoft.com/visualstudioalm/2015/01/16/diagnostic-tools-debugger-window-in-visual-studio-2015/) - 診断ツールを使用して、ガベージ コレクション イベントを監視し、予想される方法によりアプリでメモリが解放されているかどうかを検証します。
-

@@ -1,7 +1,7 @@
 ---
 author: mtoepke
-title: "ユニバーサル Windows プラットフォーム (UWP) DirectX ゲームの入力待ち時間の最適化"
-description: "入力待ち時間はゲーム エクスペリエンスに大きな影響を与えるため、最適化するとゲームがより洗練されたものに感じられます。"
+title: "UWP DirectX ゲームの入力待ち時間の最適化"
+description: "入力待ち時間は、ゲームの操作性に大きな影響を与えるため、最適化するとゲームがより洗練されたものに感じられます。"
 ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
 ms.author: mtoepke
 ms.date: 02/08/2017
@@ -9,19 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, DirectX, 入力待ち時間"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c7cb4b72ed035e77a2054daffa9f105449f3b501
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cf83b02a6388f71f94641e7c24e011a540790fa0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>ユニバーサル Windows プラットフォーム (UWP) DirectX ゲームの入力待ち時間の最適化
 
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-入力待ち時間は、ゲーム エクスペリエンスに大きな影響を与えるため、最適化するとゲームがより洗練されたものに感じられます。 また、適切な入力イベントの最適化によってバッテリー残量を節約できます。 適切な CoreDispatcher 入力イベント処理オプションを選択して、ゲームで入力ができる限り滑らかに処理されるようにする方法を説明します。
+入力待ち時間は、ゲームの操作性に大きな影響を与えるため、最適化するとゲームがより洗練されたものに感じられます。 また、適切な入力イベントの最適化によってバッテリー残量を節約できます。 適切な CoreDispatcher 入力イベント処理オプションを選択して、ゲームで入力ができる限り滑らかに処理されるようにする方法を説明します。
 
 ## <a name="input-latency"></a>入力待ち時間
 
@@ -261,7 +258,6 @@ Windows 8.1 では、DXGI にスワップ チェーンの **DXGI\_SWAP\_CHAIN\_F
  
 
  
-
 
 
 

@@ -14,11 +14,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3a8a2ccde21ba1e2b16545ae26ebe5e8908ec6b8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 825b6a8b2689143b5a68b9e7e1862ac2e6e92d28
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="control-templates"></a>コントロール テンプレート
 
@@ -214,7 +212,6 @@ XAML の例を見ると、一部の属性について [{ThemeResource} マーク
 * [カスタム テキスト編集コントロールのサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomEditControl)
 
  
-
 
 
 

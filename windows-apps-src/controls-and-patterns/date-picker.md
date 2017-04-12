@@ -3,7 +3,7 @@ author: Jwmsft
 Description: "DatePicker は、ユーザーがタッチ、マウス、またはキーボード入力を使ってローカライズされた日付値を選択できる標準化された方法です。"
 title: "日付の選択コントロール"
 ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
-isNew: true
+isNew: True
 label: Date picker
 template: detail.hbs
 ms.author: jimwalk
@@ -12,11 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 19551174cebd33785ac21910b52adf31e354373b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 114e91276ee4f080ead825b655fc05fcf460bacb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="date-picker"></a>日付の選択コントロール
 
@@ -72,4 +70,3 @@ birthDatePicker.Header = "Date of birth";
 - [カレンダーの日付の選択コントロール](calendar-date-picker.md)
 - [カレンダー ビュー](calendar-view.md)
 - [時刻の選択コントロール](time-picker.md)
-

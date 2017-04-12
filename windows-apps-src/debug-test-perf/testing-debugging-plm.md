@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: a5315534fc305c85dcf410b4808d2f8ebd844b3e
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 14b8892790b2a2b486b2ddd3e8cb529545c327bd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="testing-and-debugging-tools-for-process-lifetime-management-plm"></a>プロセス ライフタイム管理 (PLM) のテスト ツールとデバッグ ツール
 
 UWP アプリと従来のデスクトップ アプリケーションの主な違いの 1 つは、UWP のタイトルがプロセス ライフサイクル管理 (PLM) の対象となるアプリ コンテナーに配置されることです。 ランタイム ブローカー サービスによって、UWP アプリはすべてのプラットフォームで中断、再開、または終了することができ、このような状態遷移を処理するコードをテストまたはデバッグするときに状態遷移を強制する目的で使う専用ツールがあります。
@@ -89,4 +86,3 @@ plmdebug /enableDebug 279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwg
 ## <a name="related-topics"></a>関連トピック
 - [UWP アプリの展開とデバッグ](deploying-and-debugging-uwp-apps.md)
 - [デバッグ、テスト、パフォーマンス](index.md)
-

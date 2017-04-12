@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 60d4e40d056671f19149a031eb7774809060729e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 02215be4cff7bbd42bdc1911777f62bacd22b6c7
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>自動再生による自動起動
 
 
@@ -584,4 +581,3 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
  
 
  
-

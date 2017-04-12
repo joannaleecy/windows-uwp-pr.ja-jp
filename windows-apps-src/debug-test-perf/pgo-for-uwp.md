@@ -1,13 +1,11 @@
 ---
 title: "ユニバーサル Windows プラットフォーム (UWP) アプリにおけるガイド付き最適化のプロファイル (PGO) の実行"
 author: erwals-msft
-translationtype: Human Translation
-ms.sourcegitcommit: cb0c425b9764cb20aeab500a0c47db9f573a0042
 ms.openlocfilehash: 60182879f9cf3d364974d6ec4d3c26ec76e0e105
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# ユニバーサル Windows プラットフォーム アプリにおけるガイド付き最適化のプロファイルの実行 
+# <a name="running-profile-guided-optimization-on-universal-windows-platform-apps"></a>ユニバーサル Windows プラットフォーム アプリにおけるガイド付き最適化のプロファイルの実行 
  
 このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリに対してガイド付き最適化のプロファイル (PGO) を適用するための手順を説明します。 従来の win32 アプリケーションで利用可能な手順の一部は UWP アプリでは利用できません。そのため、UWP 開発者にとって最適化がより簡単かつ利用しやすくなるよう、PGO を組み込むために必要な方法を説明することを目標としています。
 
@@ -77,14 +75,8 @@ PGO を DirectX 11 アプリ テンプレートに適用するには、次の手
  
 10. プロジェクトがビルドされたら、リンカーによって pgomgr.exe が呼び出され、すべての `<PGDName>!*.pgc` ファイルが既定の重み 1 が設定された .pgd にマージされます。作成されるアプリケーションは、プロファイリング データに基づいて最適化されます。
 
-## 参照
+## <a name="see-also"></a>参照
 - [パフォーマンス](performance-and-xaml-ui.md)
 
  
-
-
-
-
-<!--HONumber=Sep16_HO2-->
-
 

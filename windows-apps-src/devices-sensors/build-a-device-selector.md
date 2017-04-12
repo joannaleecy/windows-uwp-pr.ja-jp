@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e4e3cecc0618d81554dbaae80c3bb4d907c79d31
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 88474544e0cc6ee91a1c50f65b327c339b9be170
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="build-a-device-selector"></a>デバイス セレクターのビルド
 
@@ -117,4 +115,3 @@ System.Devices.IpAddress:=[]
  
 
  
-

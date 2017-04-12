@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f30eaa7edf229872170a3f661c931787938acb2d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 118d4643c3d4fcb8549549e9d58d4b64d64f0885
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="windows-app-certification-kit"></a>Windows アプリ認定キット
 
@@ -100,7 +98,6 @@ Windows アプリ認定キットで使用するパフォーマンス テスト�
  
 
  
-
 
 
 

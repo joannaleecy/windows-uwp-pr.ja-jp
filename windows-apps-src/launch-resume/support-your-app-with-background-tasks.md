@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a9ac85483c3d7e252f24147088b928de6e781dc6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 38f5ecd06d257553a275fb6d5bb508fcd9fdb94d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="support-your-app-with-background-tasks"></a>バックグラウンド タスクによるアプリのサポート
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
@@ -186,4 +183,3 @@ Windows 10 バージョン 1607 では、バックグラウンド タスクを�
 * [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)
 * [Windows ストア アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 * [Windows ストア デバイス アプリによるデバイスの同期と更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)
-

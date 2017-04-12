@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 567c3bc66c78924bc33ec3a336db6e2ce8592d68
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5598f5278b6d4aff1dd9ebd786c6a344e14529ec
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="optical-zoom-and-resizing"></a>光学式ズームとサイズ変更
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -101,7 +98,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

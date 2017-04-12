@@ -2,21 +2,17 @@
 title: "リソースの種類"
 description: "リソースの種類によって、レイアウト (またはメモリ使用量) はそれぞれ異なります。"
 ms.assetid: BCDDF227-1837-44DA-ABD4-E39BCFF2B8EF
-keywords:
-- "リソースの種類"
+keywords: "リソースの種類"
 author: mtoepke
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1e21222b97f7a8711de93345623d2d82b3e8e4d2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 77f1b408533d37ecf18bdc1c6c364e6d6c88b94d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="resource-types"></a>リソースの種類
 
 
@@ -253,4 +249,3 @@ API の中にはリソース全体にアクセスするものもあれば、リ�
 
 
 [リソース](resources.md)
-

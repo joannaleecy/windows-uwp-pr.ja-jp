@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b6d41cc48ccf43e343aba9c844c2d74b49b1496e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f29396111ef11b23783e4bda79d621a1ae7a4d69
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="handle-app-activation"></a>アプリのアクティブ化の処理
 
 
@@ -183,4 +180,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

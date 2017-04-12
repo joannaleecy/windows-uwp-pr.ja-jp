@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1bab50aba53c96907151351c3b0fa81749ff2f88
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 667e418e78af3a7030dfca4310be498403f4966b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="media-items-playlists-and-tracks"></a>メディア項目、プレイリスト、トラック
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\ ]
@@ -229,5 +226,4 @@ Windows 10 バージョン 1607 以降、[**MediaPlayer**](https://msdn.microsof
 * [MediaPlayer を使ったオーディオとビデオの再生](play-audio-and-video-with-mediaplayer.md)
 * [システム メディア トランスポート コントロールとの統合](integrate-with-systemmediatransportcontrols.md)
 * [バックグラウンドでのメディアの再生](background-audio.md)
-
 

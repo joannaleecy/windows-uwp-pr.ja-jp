@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ルート, マップ, 位置情報, ルート案内"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 11519df0c6655d663b31759e9064337a706bbc53
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 62f0f26cc9a78a29e6fab5a8f762e0b28b7df6a3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="display-routes-and-directions-on-a-map"></a>地図へのルートとルート案内の表示
 
 
@@ -198,4 +195,3 @@ private async void ShowRouteOnMap()
 * [地図の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Build 2015 のビデオ: Windows アプリでの電話、タブレット、PC で使用できるマップと位置情報の活用](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [UWP の交通情報アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-

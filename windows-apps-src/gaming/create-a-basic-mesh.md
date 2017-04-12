@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、ゲーム、メッシュ、DirectX"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: f7dc55c0a7653616a86f1cca41521c7b25c070f9
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-and-display-a-basic-mesh"></a>基本的なメッシュの作成と表示
 
 
@@ -450,7 +447,6 @@ m_swapChain->Present(1, 0);
  
 
  
-
 
 
 

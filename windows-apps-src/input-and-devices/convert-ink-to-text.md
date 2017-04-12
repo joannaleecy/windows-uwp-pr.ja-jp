@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2b70356f5d28f9884292d816e71838ec4591dad7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 555e340d55c9a2fec6204ffd4759e17d68d8a746
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="recognize-windows-ink-strokes-as-text"></a>Windows Ink でのストロークのテキスト認識
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -683,4 +680,3 @@ string str = "Recognition result\n";
 
 
  
-

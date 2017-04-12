@@ -2,21 +2,17 @@
 title: "頂点シェーダー (VS) ステージ"
 description: "頂点シェーダー (VS) ステージでは、頂点を処理し、多くの場合は変換、スキン、照明の適用などの操作を実行します。 頂点シェーダーは 1 つの入力頂点を受け取り、1 つの出力頂点を生成します。"
 ms.assetid: 5133C4BB-B4E6-4697-9276-F718AD44869C
-keywords:
-- "頂点シェーダー (VS) ステージ"
+keywords: "頂点シェーダー (VS) ステージ"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6819826d829036c6b2cb2de4f2f42025820de9fe
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 761296a9897ad99ec57527f073a1ad1c2d792966
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="vertex-shader-vs-stage"></a>頂点シェーダー (VS) ステージ
 
 
@@ -62,7 +58,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

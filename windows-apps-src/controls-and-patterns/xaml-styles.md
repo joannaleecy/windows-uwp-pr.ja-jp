@@ -8,12 +8,11 @@ title: "XAML スタイル"
 ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
 label: XAML styles
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: 86f28a0509ead0632c942c6746fea19acac54931
 ms.openlocfilehash: d12358e6fcab2afa039426532d47616d74b22ef4
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-# XAML スタイル
+# <a name="xaml-styles"></a>XAML スタイル
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -21,7 +20,7 @@ ms.openlocfilehash: d12358e6fcab2afa039426532d47616d74b22ef4
 
 XAML フレームワークを使って、さまざまな方法でアプリの外観をカスタマイズできます。 スタイルを使うと、コントロールのプロパティに値を設定し、その設定を再利用することで、複数のコントロールの外観を統一できます。
 
-## スタイルの基本
+## <a name="style-basics"></a>スタイルの基本
 
 スタイルを使うと、視覚的なプロパティの設定を、再利用可能なリソースとして抽出できます。 次の例は、[**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397)、[**BorderThickness**](https://msdn.microsoft.com/library/windows/apps/br209399)、[**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) の各プロパティを設定するスタイルを適用した 3 つのボタンを示しています。 スタイルを適用することで、これらのプロパティを各コントロールで個別に設定しなくて済み、また、コントロールに同じ外観を持たせることができます。
 
@@ -58,7 +57,7 @@ XAML フレームワークを使って、さまざまな方法でアプリの外
 </StackPanel>
 ```
 
-## 暗黙的または明示的なスタイルの適用
+## <a name="apply-an-implicit-or-explicit-style"></a>暗黙的または明示的なスタイルの適用
 
 スタイルをリソースとして定義した場合、それをコントロールに適用するには 2 つの方法があります。
 
@@ -103,7 +102,7 @@ XAML フレームワークを使って、さまざまな方法でアプリの外
 </Grid>
 ```
 
-## 継承スタイルの使用
+## <a name="use-based-on-styles"></a>継承スタイルの使用
 
 スタイルを管理しやすくし、スタイルの再利用を最適化するために、他のスタイルから継承するスタイルを作成できます。 継承したスタイルを作成するには、[**BasedOn**](https://msdn.microsoft.com/library/windows/apps/br208852) プロパティを使います。 他のスタイルから継承するスタイルは、同じ型のコントロール、または基本スタイルのターゲットとなる型から派生したコントロールをターゲットとする必要があります。 たとえば、基本スタイルのターゲットが [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/br209365) である場合、このスタイルに基づくスタイルは、**ContentControl**、または **ContentControl** から派生した型 ([**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)、[**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) など) をターゲットにできます。 継承スタイルに対して設定しない値は、基本スタイルから継承されます。 基本スタイルから値を変更するには、継承スタイルに値を設定して上書きします。 次の例は、同じ基本スタイルから継承したスタイルを持つ **Button** と [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) を示しています。
 
@@ -139,11 +138,11 @@ XAML フレームワークを使って、さまざまな方法でアプリの外
 </StackPanel>
 ```
 
-## ツールを使ってスタイルを簡単に操作
+## <a name="use-tools-to-work-with-styles-easily"></a>ツールを使ってスタイルを簡単に操作
 
 コントロールにスタイルをすばやく適用する方法の 1 つは、Microsoft Visual Studio の XAML デザイン サーフェイスでコントロールを右クリックし、**[スタイルの編集]** または **[テンプレートの編集]** (右クリックしたコントロールによって異なる) をクリックすることです。 その後、**[リソースの適用]** をクリックして既にあるスタイルを適用するか、または **[空アイテムの作成]** をクリックして新しいスタイルを定義できます。 空のスタイルを作成する場合は、ページ、App.xaml ファイル、または別のリソース ディクショナリにそのスタイルを定義できます。
 
-## 軽量なスタイル設定
+## <a name="lightweight-styling"></a>軽量なスタイル設定
 
 システム ブラシのオーバーライドは一般にアプリ レベルまたはページ レベルで行われます。いずれの場合も、色のオーバーライドはそのブラシを参照するすべてのコントロールに影響します。また、XAML では多くのコントロールが同じシステム ブラシを参照できます。
 
@@ -167,7 +166,7 @@ PointerOver (マウスがボタンの上に置かれている)、**PointerPresse
 
 これらのブラシを配置すると、**App.Resources** レベルでオーバーライドし、(単一ページではなく) アプリ全体のすべてのボタンを変更します。
 
-### コントロールごとのスタイル設定
+### <a name="per-control-styling"></a>コントロールごとのスタイル設定
 
 他のケースでは、コントロールの他のバージョンを変更することなく、1 つのページ上の単一のコントロールを特定の方法で表示するように変更することが望ましい方法です。
 
@@ -200,16 +199,10 @@ PointerOver (マウスがボタンの上に置かれている)、**PointerPresse
 
 これは、そのコントロールが存在していたページ上の 1 つの「特別なチェック ボックス」にのみ影響します。
 
-## 既定のシステム スタイルの変更
+## <a name="modify-the-default-system-styles"></a>既定のシステム スタイルの変更
 
 可能であれば、Windows ランタイムの既定の XAML リソースからのスタイルを使う必要があります。 独自のスタイルを定義する必要がある場合は、できるだけこれらの既定のスタイルから継承したスタイルを作成します (このクイック スタートで既に説明したように継承スタイルを使います。元の既定のスタイルのコピーを編集することから始めます)。
 
-## テンプレート プロパティ
+## <a name="the-template-property"></a>テンプレート プロパティ
 
 スタイル setter は、[**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) の [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465) プロパティに使うことができ、実際に、一般的な XAML スタイルとアプリの XAML リソースの主要な部分を構成しています。 詳しくは、「[コントロール テンプレート](control-templates.md)」をご覧ください。
-
-
-
-<!--HONumber=Nov16_HO1-->
-
-

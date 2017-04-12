@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 93dde6fe68275987c16562370ba277072e5467a9
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: e576150cd06000405fa4754e147fbc1546cdf703
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #<a name="get-the-universal-windows-platform-uwp-samples-from-github"></a>GitHub からユニバーサル Windows プラットフォーム (UWP) のサンプルを取得する
 UWP アプリのサンプルは、GitHub のリポジトリを利用して入手できます。 初めて UWP を操作する場合は、[Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "Universal Windows Platform app samples GitHub repository") リポジトリを最初に使用することをお勧めします。このリポジトリには、すべての UWP 機能と API の使用パターンを示すサンプルが含まれています。  
 ![GitHub の UWP サンプルのリポジトリ](images/GitHubUWPSamplesPage.png) デベロッパー センターの「[サンプル](https://developer.microsoft.com/windows/samples "Dev Center samples")」セクションを利用すると、その他のサンプルを探すことができます。  
@@ -54,4 +51,3 @@ zip ファイルをダウンロードしたら、Visual Studio でサンプル�
 問題や質問がある場合は、リポジトリの [Issues] タブを使用して、新しい問題や質問に関する報告を作成します。サポートできる問題や質問については、弊社で対応します。
 
 ![フィードバックの画像](images/GitHubUWPSamplesFeedback.png)
-

@@ -2,21 +2,17 @@
 title: "射影トランスフォーム"
 description: "射影トランスフォームは、カメラの内部を制御します。つまり、カメラのレンズを選ぶことと似ています。 このトランスフォームは、3 種類のトランスフォームの中で最も複雑です。"
 ms.assetid: 378F205D-3800-4477-9820-5EBE6528B14A
-keywords:
-- "射影トランスフォーム"
+keywords: "射影トランスフォーム"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 83679e9a41adcad68f1341328de4c03b10db08e5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cb6704383bafe9ee3e5785701c78f92e84b90b3d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="projection-transform"></a>射影トランスフォーム
 
 
@@ -71,7 +67,7 @@ Direct3D では、ワールド行列、ビュー行列、および射影行列�
 
 Direct3D では、現在設定されている射影行列を使って w ベース深度の計算を実行します。 したがって、トランスフォームで Direct3D を使用しない場合であっても、アプリケーションでは、目的の w ベース機能を取得するために適切な射影行列を設定しておく必要があります。
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連項目
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [トランスフォーム](transforms.md)
@@ -79,7 +75,6 @@ Direct3D では、現在設定されている射影行列を使って w ベー�
  
 
  
-
 
 
 

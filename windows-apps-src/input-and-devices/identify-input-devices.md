@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8131f56572c4266b5987669d4195ab94d1fd5206
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8449d48dd8f3b50aaede6f85f41094d9073606a9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="identify-input-devices"></a>入力デバイスの識別
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -199,7 +196,6 @@ private void GetPointerDevices()
  
 
  
-
 
 
 

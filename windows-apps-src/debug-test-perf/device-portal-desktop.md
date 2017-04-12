@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 7b8b396078d59cc2ab3180e9af8b6017fd5edbda
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="device-portal-for-desktop"></a>デスクトップ用 Device Portal
 
@@ -78,7 +76,7 @@ Device Portal に接続するには、ローカル ホスト接続と、ロー�
 
 - HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service の下
     - UseDynamicPorts: 必要な DWORD。 選択したポート番号を保持するには、これを 0 に設定します。
-    - HttpPort: 必要な DWORD。 Device Portal が HTTP 接続をリッスンするポート番号を指定します。  
+    - HttpPort: 必要な DWORD。 Device Portal が HTTP 接続をリッスンするポート番号を指定します。    
     - HttpsPort: 必要な DWORD。 Device Portal が HTTPS 接続をリッスンするポート番号を指定します。
 
 ## <a name="failure-to-install-developer-mode-package-or-launch-device-portal"></a>開発者モード パッケージのインストールまたは Device Portal の起動のエラー
@@ -112,4 +110,3 @@ Device Portal に接続するには、ローカル ホスト接続と、ロー�
 
 1. [設定] > [更新プログラムとセキュリティ] > [Windows の更新プログラム] で Windows の更新プログラムをチェックします。
 2. すべての更新プログラムを確実に適用するために、コンピューターを再起動します。
-

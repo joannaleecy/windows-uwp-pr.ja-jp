@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、マップ認証キー、マップ コントロール"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 841a3bf42faaaa12df94ad9be2ffc9eb3a833ae5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 42078becbc5853787ca057dcbfb58b8d8de7967d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="request-a-maps-authentication-key"></a>マップ認証キーの要求
 
 
@@ -98,4 +95,3 @@ ms.lasthandoff: 02/07/2017
 * [地図の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Build 2015 のビデオ: Windows アプリでの電話、タブレット、PC で使用できるマップと位置情報の活用](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [UWP の交通情報アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-

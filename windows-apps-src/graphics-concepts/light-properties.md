@@ -2,21 +2,17 @@
 title: "光源のプロパティ"
 description: "光源のプロパティは、光源の種類 (ポイント、指向性、スポットライト)、減衰、色、方向、位置、範囲を表します。"
 ms.assetid: E832C3FD-9921-41C4-87B8-056E16B61B77
-keywords:
-- "光源のプロパティ"
+keywords: "光源のプロパティ"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 76e7c7bb404aadd4962dfbda69c55b3407555772
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 04a985f5005b88d4457551c8a62abd90f08ff1d2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="light-properties"></a>光源のプロパティ
 
 
@@ -77,7 +73,6 @@ Direct3D は光に RGBA 値を使いますが、アルファ色コンポーネ�
  
 
  
-
 
 
 

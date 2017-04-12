@@ -7,22 +7,14 @@ ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
 template: detail.hbs
 op-migration-status: ready
-translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
 ms.openlocfilehash: 816e66629d37b2b9286c6e189518a81f2dc6b691
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="peer-to-peer-navigation-between-two-pages"></a>2 ページ間でのピア ツー ピアのナビゲーション
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 
-
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

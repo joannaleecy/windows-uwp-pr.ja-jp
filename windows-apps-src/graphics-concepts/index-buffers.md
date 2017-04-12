@@ -1,22 +1,18 @@
 ---
 title: "インデックス バッファー"
-description: "インデックス バッファーは、インデックス データを含むメモリ バッファーであり、プリミティブのレンダリングに使用される、頂点バッファーへの整数オフセットです。"
+description: "インデックス バッファー は、インデックス データを格納するメモリ バッファーです。インデックス データは頂点バッファーへの整数オフセットで、プリミティブのレンダリングに使われます。"
 ms.assetid: 14D3DEC5-CF74-488B-BE41-16BF5E3201BE
-keywords:
-- "インデックス バッファー"
+keywords: "インデックス バッファー"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6aa62a7506b37314b1952a6687920a2cdf3deca3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: aeb526032489cac2fdbbc436f98eac0cda59b643
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="index-buffers"></a>インデックス バッファー
 
 
@@ -48,7 +44,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

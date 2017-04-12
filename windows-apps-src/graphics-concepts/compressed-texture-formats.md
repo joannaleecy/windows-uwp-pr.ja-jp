@@ -2,21 +2,17 @@
 title: "圧縮テクスチャ形式"
 description: "このセクションでは、圧縮テクスチャ形式の内部構造について説明します。"
 ms.assetid: 24D17B9F-8CA7-4006-9E0F-178C6B3CAEC9
-keywords:
-- "圧縮テクスチャ形式"
+keywords: "圧縮テクスチャ形式"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4b7d76211c1db31979c3fa52be405a0e74927bb6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1bf94307093913c3b89b1d2a80e1e77d8dec81eb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="compressed-texture-formats"></a>圧縮テクスチャ形式
 
 
@@ -30,7 +26,7 @@ Direct3D では、テクスチャ マップを 4 x 4 のテクセル ブロッ�
 
 BCn 形式のピッチは、ブロック単位ではなくバイト単位で測定されます。 たとえば、幅が 16 である場合、1 ピッチは 4 ブロックになります (BC1 の場合は 4\*8、BC2 または BC3 の場合は 4\*16)。
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連項目
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [圧縮テクスチャ リソース](compressed-texture-resources.md)
@@ -38,7 +34,6 @@ BCn 形式のピッチは、ブロック単位ではなくバイト単位で測�
  
 
  
-
 
 
 

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 6251ff13e6cc751ad370a43950cfdbb9dca0ecc8
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 148bb77f9386864a1b127341aa875beb7123bae9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="play-media-in-the-background"></a>バックグラウンドでのメディアの再生
 この記事では、アプリをフォアグラウンドからバックグラウンドに移動してもメディアの再生を続行できるように、アプリを構成する方法について説明します。 バックグラウンドでの再生とは、ユーザーがアプリを最小化してホーム画面に戻った後や、それ以外の方法でアプリから離れた後も、アプリでオーディオの再生を続行できることを意味します。 
 
@@ -102,7 +99,6 @@ Windows 10 バージョン 1607 では、新しいシングル プロセス モ�
  
 
  
-
 
 
 

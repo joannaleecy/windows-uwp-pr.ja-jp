@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: f8d6c28daea2a3d5be67ad2b5da5a05a46f736cc
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 4076bd9edf26108e896e3a7734c2108a00577cd0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="version-adaptive-code-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>バージョン アダプティブ コード: 以前のバージョンとの互換性を維持しつつ新しい API を使う
 
 Windows 10 SDK の各リリースには、ユーザーが利用したくなるような魅力的な新機能が追加されています。 ただし、すべてのユーザーがデバイスを最新バージョンの Windows 10 に同時に更新するわけではないため、できるだけ幅広いデバイスでアプリが動作するようにする必要があります。 ここでは、アプリが以前のバージョンの Windows 10 で動作するだけでなく、最新の更新プログラムがインストールされたデバイスでアプリを実行したときに新機能を利用できるように、アプリを設計する方法について説明します。
@@ -483,4 +480,3 @@ class IsEnumPresentTrigger : StateTriggerBase
 
 - [UWP アプリ ガイド](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
 - [API コントラクトを使った機能の動的な検出](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
-

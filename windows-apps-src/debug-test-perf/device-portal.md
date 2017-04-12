@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8dfbdad7604e3aa7fad60ed777d16b4acd56b5ab
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e729236ae7d506eb59af1a38506931865eff4f14
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal の概要
 
@@ -204,4 +202,3 @@ DNS-SD レコードでアドバタイズされる HTTP ポートですべての�
 #### <a name="cross-site-websocket-hijacking-cswsh-protection"></a>クロスサイト WebSocket ハイジャック (CSWSH) に対する保護
 
 [CSWSH 攻撃](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html)を防御するために、Device Portal に対して WebSocket 接続を開くすべてのクライアントは、Host ヘッダーと一致する Origin ヘッダーも提供する必要があります。  これにより、Device Portal に対して、要求が Device Portal の UI または有効なクライアント アプリケーションからの要求であることを証明します。  Origin ヘッダーがない場合、要求は拒否されます。 
-

@@ -2,21 +2,17 @@
 title: "深度バッファー"
 description: "深度バッファー (z バッファー) は、ビューから隠される多角形の領域ではなく、レンダリングされるポリゴンの領域を制御する深度情報を格納します。"
 ms.assetid: BE83A1D7-D43D-4013-8817-EFD2B24DC58E
-keywords:
-- "深度バッファー"
+keywords: "深度バッファー"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 541794ea7d5df8534ddfc3272957d0b66813d18c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b33ca3f4c4557578a3f0878308db45281b315201
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="depth-buffers"></a>深度バッファー
 
 
@@ -58,7 +54,6 @@ z バッファーを使うと、レンダリング中にオーバーヘッドが
  
 
  
-
 
 
 

@@ -2,21 +2,17 @@
 title: "カメラの空間変換"
 description: "カメラ空間の頂点は、オブジェクトの頂点をワールド ビュー行列で変換することによって計算します。"
 ms.assetid: 86EDEB95-8348-4FAA-897F-25251B32B076
-keywords:
-- "カメラの空間変換"
+keywords: "カメラの空間変換"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 478202cc8fd4f968539e3081edd6c6feddcec38b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 907df69fdd0c785294283de858a0fcebd0c63513
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="camera-space-transformations"></a>カメラの空間変換
 
 
@@ -57,7 +53,7 @@ L<sub>dir</sub> = norm(V \* Lₚ) これらのパラメータの定義を次の�
 
  
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連項目
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [光源の計算](mathematics-of-lighting.md)
@@ -65,7 +61,6 @@ L<sub>dir</sub> = norm(V \* Lₚ) これらのパラメータの定義を次の�
  
 
  
-
 
 
 

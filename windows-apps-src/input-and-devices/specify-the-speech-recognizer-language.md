@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 28a1af4079a943c61f547ecf57d802287a3f191f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: dfd7a85475b006e7af6bfc010a8b548e2306f436
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="specify-the-speech-recognizer-language"></a>音声認識エンジンの言語の指定
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -130,7 +127,6 @@ SRGS 文法は、[**SpeechRecognitionGrammarFileConstraint**](https://msdn.micro
  
 
  
-
 
 
 

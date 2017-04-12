@@ -9,20 +9,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 34bac5b7332bcc258c76f15a6005f82f545eef4d
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 7bf47b166dfd05b906b37deded909d5a3b26ac6e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="http-live-streaming-hls-tag-support"></a>HTTP ライブ ストリーミング (HLS) タグのサポート
 次の表では、UWP アプリでサポートされている HLS タグを示します。
 
 > [!NOTE] 
 > "X-" で始まるカスタム タグには、「[メディア項目、プレイリスト、トラック](media-playback-with-mediasource.md)」の記事で示されているように、タイミングが設定されたメタデータとしてアクセスできます。
 
-|タグ |導入済みの HLS プロトコルのバージョン|HLS プロトコル ドキュメント草案のバージョン|クライアントに必須|7 月にリリースされた Windows 10|Windows 10 バージョン 1511|Windows 10 バージョン 1606 |
+|タグ |導入済みの HLS プロトコルのバージョン|HLS プロトコル ドキュメント草案のバージョン|クライアントに必須|7 月にリリースされた Windows 10|Windows 10 バージョン 1511|Windows 10 バージョン 1607 |
 |---------------------|-----------|--------------|---------|--------------|-----|-----|
 |4.3.1.  基本タグ                 |             |                   |         |             |     |    |
 | 4.3.1.1.  EXTM3U |1|0|必須|サポートされる|サポートされる|サポートされる|
@@ -90,7 +87,6 @@ ms.lasthandoff: 02/08/2017
  
 
  
-
 
 
 

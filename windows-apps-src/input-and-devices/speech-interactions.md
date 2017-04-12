@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9e9ba56fd9d9a3b33d6dc7eadb999d0fcf159d3e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0175a7ca7e2bbeb97f526dffb3c6fee7b8eb8819
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="speech-interactions"></a>音声操作
 
 
@@ -238,7 +235,6 @@ TTS では、プレーンテキストまたは SSML から音声出力が生成�
  
 
  
-
 
 
 

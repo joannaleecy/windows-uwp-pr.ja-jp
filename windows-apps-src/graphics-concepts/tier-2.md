@@ -2,21 +2,17 @@
 title: "階層 2"
 description: "ストリーミング リソースの階層 2 のサポートで、サイズが 1 つ以上の標準タイル形状であるときのパックされないテクスチャ ミップマップの保証や、詳細レベル (LOD) をクランプするため、およびシェーダーの操作に関する状態を取得するためのシェーダー命令、サンプリングされた値をゼロとして 処理する NULL マッピングされたタイルからの読み取りなど、階層 1 に含まれない機能が追加されます。"
 ms.assetid: 111A28EA-661A-4D29-921A-F2E376A46DC5
-keywords:
-- "階層 2"
+keywords: "階層 2"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0416d6751a002f51310fe609e862b52fd35623a2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c8a1d1c830c201018c3384096d3eeae3b25962b4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="tier-2"></a>階層 2
 
 
@@ -72,7 +68,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

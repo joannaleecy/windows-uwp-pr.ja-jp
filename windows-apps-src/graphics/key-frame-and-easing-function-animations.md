@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2eb40a8787479e6abd03ef2f0adb2d7462bfef16
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7b0eca20b947a69d1e5f2125de8a376594a40320
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="key-frame-animations-and-easing-function-animations"></a>キー フレーム アニメーションとイージング関数のアニメーション
 

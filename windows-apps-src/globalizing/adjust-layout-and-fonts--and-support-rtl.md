@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4b7d34aaf891497af80ed8c94609e6a8fbbd3bec
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9c700928d2ec0da21b518528289034296637eeff
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adjust-layout-and-fonts-and-support-rtl"></a>レイアウトやフォントの調整と RTL のサポート
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -103,11 +100,11 @@ C++:
 ### <a name="rtl-faq"></a>RTL に関するよくある質問 
 
 <dl>
-  <dt> <p><b>Q:</b><b>FlowDirection</b> は、現在の言語の選択に基づいて自動的に設定されるのですか? たとえば、英語を選択すると左から右へ、アラビア語を選択すると右から左へ表示されますか?</p></dt>
+  <dt> <p><b>Q:</b> <b>FlowDirection</b> は、現在の言語の選択に基づいて自動的に設定されますか? たとえば、英語を選択すると左から右へ、アラビア語を選択すると右から左へ表示されますか?</p></dt>
 
   <dd><p><b>A:</b> <b>FlowDirection</b> には、言語によって動作を変える機能はありません。 開発者は、現在表示している言語に応じて <b>FlowDirection</b>を設定する必要があります。 上のサンプル コードをご覧ください</p></dd> 
 
-  <dt> <p><b>Q:</b>ローカライズにあまり詳しくありません。 リソースには、テキストの方向があらかじめ含まれていますか? 現在の言語に基づいてテキストの方向を判断できますか?</p></dt>
+  <dt> <p><b>Q:</b> ローカライズにあまり詳しくありません。 リソースには、テキストの方向があらかじめ含まれていますか? 現在の言語に基づいてテキストの方向を判断できますか?</p></dt>
 
   <dd> <p><b>A:</b> 現在のベスト プラクティスを使用している場合、リソースにはテキストの方向は含まれていません。 開発者は、現在の言語に応じてテキストの方向を決定する必要があります。 これには 2 つの方法があります。 </p>
    <p>推奨されるのは、最も優先順位が高い言語の LayoutDirection を使用して、RootFrame の FlowDirection プロパティを設定する方法です。 RootFrame のすべてのコントロールは、RootFrame から FlowDirection を継承します。</p>
@@ -117,4 +114,3 @@ C++:
 
 ## <a name="related-topics"></a>関連トピック
 [FlowDirection](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.flowdirection.aspx)
-

@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6a6ad55a134a45bf3feb7092cdad78d9f6ee196b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3f04d00da3fce4674f344129910917e9585e8723
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="enterprise-shared-storage"></a>エンタープライズ共有記憶域
 
@@ -77,5 +75,4 @@ IReadOnlyList<StorageFile> sortedItems =
 foreach (StorageFile file in sortedItems)
     Debug.WriteLine(file.Name + ", " + file.DateCreated);
 ```
-
 

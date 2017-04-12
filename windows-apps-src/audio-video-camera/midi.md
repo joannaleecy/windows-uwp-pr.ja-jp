@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: bd494a814155d72642bb721a939fcc8c50668a2d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: bccc087b561699ec72bb99cd160d532b95c49530
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="midi"></a>MIDI
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
@@ -145,7 +142,6 @@ MIDI デバイスのセレクター文字列を渡して [**DeviceInformation.Cr
  
 
  
-
 
 
 

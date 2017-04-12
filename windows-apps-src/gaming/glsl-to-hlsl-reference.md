@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, GLSL, HLSL, OpenGL, DirectX, シェーダー"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: f2d5f5a363abf026e865ed07221ba9075a6a67e7
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="glsl-to-hlsl-reference"></a>GLSL と HLSL の対応を示すリファレンス
 
 
@@ -69,7 +66,7 @@ GLSL と HLSL は一般に次の点で異なります。
 <td align="left">グラフィックス API に統合されたシェーダー コンパイル</td>
 <td align="left">HLSL コンパイラが中間バイナリ表現に[シェーダーをコンパイルし](https://msdn.microsoft.com/library/windows/desktop/bb509633)、その後で Direct3D がそれをドライバーに渡します。
 <div class="alert">
-<strong>注:</strong> このバイナリ表現はハードウェアに依存していません。 通常はアプリの実行時ではなくアプリのビルド時にコンパイルされます。
+<strong>注</strong>  このバイナリ表現はハードウェアに依存していません。 通常はアプリの実行時ではなくアプリのビルド時にコンパイルされます。
 </div>
 <div>
  
@@ -98,7 +95,7 @@ GLSL と HLSL は一般に次の点で異なります。
 <td align="left">行優先マトリックス (既定)</td>
 <td align="left">列優先マトリックス (既定)
 <div class="alert">
-<strong>注:</strong> 1 つの変数のレイアウトを変更するには、<strong>row_major</strong> 型修飾子を使います。 詳しくは、「[変数の構文](https://msdn.microsoft.com/library/windows/desktop/bb509706)」をご覧ください。 コンパイラ フラグまたはプラグマを指定してグローバルな既定値を変更することもできます。
+<strong>注</strong>   1 つの変数のレイアウトを変更するには、<strong>row_major</strong> 型修飾子を使います。 詳しくは、「[変数の構文](https://msdn.microsoft.com/library/windows/desktop/bb509706)」をご覧ください。 コンパイラ フラグまたはプラグマを指定してグローバルな既定値を変更することもできます。
 </div>
 <div>
  
@@ -571,7 +568,6 @@ m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
  
 
  
-
 
 
 

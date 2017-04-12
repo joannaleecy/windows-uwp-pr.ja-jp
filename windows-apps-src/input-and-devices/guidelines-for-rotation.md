@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6b5d2e6a41c1566c7c03b61b91bf9c641f674cea
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 189358c20ce934a946e4f4c034dc058d904b05d3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="rotation"></a>回転
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -71,7 +68,7 @@ ms.lasthandoff: 02/07/2017
 
  
 
-Windows 8 では、自由、制約付き、複合の 3 種類の回転をサポートします。
+Windows8 では、自由、制約付き、複合の 3 種類の回転をサポートします。
 
 <table>
 <colgroup>
@@ -98,7 +95,7 @@ Windows 8 では、自由、制約付き、複合の 3 種類の回転をサポ
 <td align="left">複合回転</td>
 <td align="left"><p>複合回転は自由回転をサポートしますが、([パン](guidelines-for-panning.md)におけるレールのように) 90°単位のスナップ位置のゾーンでは制約付き回転によって強制されます。 ユーザーが各 90° のゾーンの外でオブジェクトを離した場合にはオブジェクトはその位置にとどまりますが、それ以外の場合にはオブジェクトは自動的にスナップ位置まで回転します。</p>
 <div class="alert">
-<strong>注:</strong> ユーザー インターフェイスのレールは、ターゲットの周辺の領域において、特定の値または位置に向けて動きが制約され選択に影響を与える機能です。
+<strong>注:</strong>  ユーザー インターフェイスのレールは、ターゲットの周辺の領域において、特定の値または位置に向けて動きが制約され選択に影響を与える機能です。
 </div>
 <div>
  
@@ -130,7 +127,6 @@ Windows 8 では、自由、制約付き、複合の 3 種類の回転をサポ
  
 
  
-
 
 
 

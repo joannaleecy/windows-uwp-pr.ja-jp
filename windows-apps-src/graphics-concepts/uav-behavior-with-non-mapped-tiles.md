@@ -2,21 +2,17 @@
 title: "マップされていないタイルでの UAV 動作"
 description: "順序指定されていないアクセス ビュー (UAV) の読み取りと書き込みの動作は、ハードウェア サポートのレベルによって異なります。"
 ms.assetid: CDB224E2-CC07-4568-9AAC-C8DC74536561
-keywords:
-- "マップされていないタイルでの UAV 動作"
+keywords: "マップされていないタイルでの UAV 動作"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ecaeca63e6d3d9d9a7e40282b9c4c16b5d24a179
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c5e3b3be467a49839d530fd976c7f756421de218
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="span-iddirect3dconceptsuavbehaviorwithnon-mappedtilesspanuav-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.uav_behavior_with_non-mapped_tiles"></span>マップされていないタイルでの UAV 動作
 
 
@@ -34,7 +30,6 @@ UAV 内のマップされていないタイルから読み取りを行うシェ�
  
 
  
-
 
 
 

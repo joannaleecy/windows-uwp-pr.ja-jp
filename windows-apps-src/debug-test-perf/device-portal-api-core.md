@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 10d8799b73a941a4a0eb89fd369d67b2fc6a68c2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 347d658f346ab14c60a4468c4a9935e555c2e016
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="device-portal-core-api-reference"></a>デバイス ポータル コア API リファレンス
 
 Windows Device Portal の機能はすべて、REST API の上に構築されています。REST API は、プログラムからデータにアクセスしてデバイスを制御するために使用できます。

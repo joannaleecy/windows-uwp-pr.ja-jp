@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, サンプル, DirectX, 3D"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 738be6a129158fbd6058ff7407aca0b8ece7ea3e
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="developing-marble-maze-a-uwp-game-in-c-and-directx"></a>Marble Maze、C++ と DirectX での UWP ゲームの開発
 
 
@@ -57,7 +54,7 @@ Marble Maze では、ユーザーは複数の方法でゲーム ボードを操�
 
 Windows 10 の 3-D ゲームやその他のグラフィックス重視のアプリケーションの作成に関心がある場合は、このセクションを読んでください。 このドキュメントで説明する基本原則とプラクティスを活用して、各自の UWP ゲームを作成してください。 C++ と DirectX のプログラミングの知識または強い興味があれば、このドキュメントを活用するのに役に立ちます。 DirectX の経験がない場合でも、類似の 3-D グラフィックスのプログラミング環境の経験があれば役に立ちます。
 
-ドキュメント「[チュートリアル: DirectX を使った単純な UWP ゲームの作成](tutorial--create-your-first-metro-style-directx-game.md)」に、DirectX と C++ を使った基本的な 3-D シューティング ゲームを実装するサンプルの説明があります。
+ドキュメント「[チュートリアル: DirectX によるシンプルな UWP ゲームの作成](tutorial--create-your-first-metro-style-directx-game.md)」に、DirectX と C++ を使った基本的な 3-D シューティング ゲームを実装するサンプルの説明があります。
 
 ## <a name="what-this-documentation-covers"></a>このドキュメントの内容
 
@@ -106,7 +103,6 @@ Marble Maze には再利用可能なコンポーネントがたくさん用意�
  
 
  
-
 
 
 

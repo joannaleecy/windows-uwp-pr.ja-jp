@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 166e63659d138db2c4a6c49f11a2277eae790529
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: ca8910129ba0993597be905a24fb5b2c5c4061a4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="integrate-with-the-system-media-transport-controls"></a>システム メディア トランスポート コントロールとの統合
 
 この記事では、システム メディア トランスポート コントロール (SMTC) を操作する方法について説明します。 SMTC は、すべての Windows 10 デバイスに共通する一連のコントロールで、再生に [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) を使うすべての実行中のアプリのメディア再生をユーザーが制御するための一貫した方法を提供します。
@@ -86,7 +83,6 @@ Windows 10 バージョン 1607 以降、メディアの再生に [**MediaPlayer
  
 
  
-
 
 
 

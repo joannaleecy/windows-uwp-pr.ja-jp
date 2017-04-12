@@ -2,21 +2,17 @@
 title: "リソース"
 description: "リソースは、Direct3D パイプラインからアクセスできるメモリ内の領域です。"
 ms.assetid: 2E68E5A8-83DA-4DC8-B7F3-B8988CF8090C
-keywords:
-- "リソース"
+keywords: "リソース"
 author: mtoepke
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a95762696905bcb5e1ae900c96a47ee9fc5d1a73
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 361e5e1489e976776015ec9401f1473b9d3c8bdd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="resources"></a>リソース
 
 
@@ -71,9 +67,8 @@ ms.lasthandoff: 02/07/2017
 
 [座標系](coordinate-systems.md)
 
-[Direct3D Graphics の学習ガイド](index.md)
+[Direct3D グラフィックスの学習ガイド](index.md)
 
 [浮動小数点の規則](floating-point-rules.md)
 
 [データ型の変換](data-type-conversion.md)
-

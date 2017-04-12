@@ -1,7 +1,7 @@
 ---
 author: DelfCo
 Description: "広範なユーザー向けにアプリをグローバル化したり、特定の市場を対象にアプリをローカライズするときは、次のベスト プラクティスに従ってください。"
-Search.Refinement.TopicID: 180
+Search.Refinement.TopicID: "180"
 title: "グローバリゼーションとローカライズのガイドライン"
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
 label: Do's and don'ts
@@ -12,13 +12,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a5b3945f67ec1aa52b588b6364dbd04533968d24
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 84d502b9fd10e82be428cd775cc1225d849b68e1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="globalization-and-localization-dos-and-donts"></a>グローバリゼーションとローカライズの推奨と非推奨
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -194,7 +191,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

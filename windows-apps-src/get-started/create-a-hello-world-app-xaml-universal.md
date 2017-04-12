@@ -4,57 +4,64 @@ ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: "Hello, world アプリを作成する (XAML)"
 description: "このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象にした単純な Hello, world アプリを Extensible Application Markup Language (XAML) を使って C# で作る方法について説明します。"
 ms.author: jken
-ms.date: 02/08/2017
+ms.date: 03/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 16622dbd9914907f75c8392f8e4de6e1c10b049c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 95e447550705d606483c20ec34cca6c97b03785c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-a-hello-world-app-xaml"></a>"Hello, world" アプリを作成する (XAML)
 
-このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) 向けの単純な "Hello, world" アプリを XAML と C# で作る方法について説明します。 Microsoft Visual Studio の 1 つのプロジェクトを使って、Windows 10 のすべてのデバイスで実行されるアプリを構築できます。
+このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) 向けの単純な "Hello, world" アプリを XAML と C# で作る方法について説明します。 Microsoft Visual Studio プロジェクトを 1 つ開発すれば、あらゆる Windows 10 デバイスで動作するアプリを構築できます。
 
 ここでは、次の方法について説明します。
 
--   **Windows 10** と **UWP** を対象とする新しい **Visual Studio 2015** プロジェクトを作る。
+-   **Windows 10** と **UWP** を対象とする新しい **Visual Studio 2017** プロジェクトを作る。
 -   スタート ページの UI を変更するように XAML を記述する。
--   Visual Studio でローカル デスクトップと電話エミュレーターに対してプロジェクトを実行する。
+-   Visual Studio のローカル デスクトップでプロジェクトを実行する。
 -   SpeechSynthesizer を使って、ボタンが押されたときにアプリがコンテンツを読み上げるようにする。
+
 
 ## <a name="before-you-start"></a>はじめに...
 
 -   [ユニバーサル Windows アプリとは](whats-a-uwp.md)?
--   このチュートリアルを行うには、Windows 10 と Visual Studio 2015 が必要です。 [準備してください](get-set-up.md)。
+-   このチュートリアルを行うには、Windows 10 と Visual Studio 2017 が必要です。 [準備してください](get-set-up.md)。
 -   また、Visual Studio の既定のウィンドウ レイアウトを使用することを前提としています。 既定のレイアウトを変更した場合は、**[ウィンドウ]** メニューの **[ウィンドウ レイアウトのリセット]** を使って、レイアウトをリセットできます。
 
+> [!NOTE]
+> このチュートリアルでは、Visual Studio Community 2017 を使います。 異なるバージョンの Visual Studio を使っている場合には、見た目が多少異なることがあります。
 
-## <a name="if-you-would-rather-watch-a-video"></a>ビデオを見る場合...
+## <a name="video-summary"></a>ビデオの概要
 
 <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Writing-Your-First-Windows-10-App/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
 
-ステップ バイ ステップ ガイドを読むより視覚的なアプローチをご希望の場合は、このビデオをご覧ください。内容は同じですが、素敵なサウンドトラックが付いています。
+
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>手順 1. Visual Studio で新しいプロジェクトを作る
 
-1.  Visual Studio 2015 を起動します。
+1.  Visual Studio 2017 を起動します。
 
-2.  **[ファイル]** メニューの **[新規作成]、[プロジェクト]** の順にクリックし、*[新しいプロジェクト]* ダイアログを開きます。
+2.  **[ファイル]** メニューの **[新規作成] > [プロジェクト]** を選択し、*[新しいプロジェクト]* ダイアログを開きます。
 
 3.  左側のテンプレートの一覧で、**[インストール済み]、[テンプレート]、[Visual C#]、[Windows]** の順に開いた後、**[ユニバーサル]** を選択して UWP プロジェクト テンプレートの一覧を表示します。
 
-    (ユニバーサル テンプレートが表示されない場合は、Visual Studio 2015 がインストールされていないか、UWP アプリを作成するためのコンポーネントがない可能性があります。 「[準備](get-set-up.md)」を確認してツールを修正してください)。
+    ユニバーサル テンプレートが表示されない場合は、UWP アプリを作成するためのコンポーネントがない可能性があります。 インストール プロセスを繰り返して UWP サポートを追加することもできます (*[新しいプロジェクト]* ダイアログで **[Visual Studio インストーラーを開く]** をクリック)。 「[準備](get-set-up.md)」をご覧ください。
+
+    ![インストール プロセスを繰り返す方法](images/win10-cs-install.png)
 
 4.  **[空白のアプリ (ユニバーサル Windows)]** テンプレートを選択し、**[名前]** に「HelloWorld」と入力します。 **[OK]** を選択します。
 
     ![[新しいプロジェクト] ウィンドウ](images/win10-cs-01.png)
 
-5.  ターゲット バージョンと最小バージョンのダイアログが表示されます。 既定の設定で問題ないため、**[OK]** を選択してプロジェクトを作成します。
+> [!NOTE]
+> Visual Studio を初めて使う場合は、[設定] ダイアログ ボックスが表示され、**開発者モード**を有効にするよう求められることがあります。 開発者モードは、アプリをストアからだけではなく、直接実行するためのアクセス許可など、特定の機能を有効にする特別な設定です。 詳しくは、「[デバイスを開発用に有効にする](enable-your-device-for-development.md)」をご覧ください。 先に進むには、**[開発者モード]** を選択し、**[はい]** をクリックしてダイアログ ボックスを閉じます。
+
+ ![開発者モードのアクティブ化ダイアログ](images/win10-cs-00.png)
+
+5.  ターゲット バージョンと最小バージョンのダイアログが表示されます。 このチュートリアルでは既定の設定で問題ないため、**[OK]** を選択してプロジェクトを作成します。
 
     ![ソリューション エクスプローラーのウィンドウ](images/win10-cs-02.png)
 
@@ -177,47 +184,13 @@ Windows キーを押して **[スタート]** メニューを開き、すべて�
 
    **[デバッグ]** メニューの **[デバッグの停止]** をクリックします。
 
-   または
+   - または -
 
    アプリ ウィンドウを閉じます。
 
-### <a name="start-the-app-on-a-mobile-device-emulator"></a>モバイル デバイス エミュレーターでアプリを起動する
-
-アプリは、すべての Windows 10 デバイスで実行できます。Windows Phone ではどのようになるかを見てみましょう。
-
-Visual Studio では、デスクトップ デバイスでデバッグするオプションに加えて、コンピューターに接続された物理的なモバイル デバイスにアプリをデプロイしてデバッグするか、モバイル デバイス エミュレーターでアプリをデプロイしてデバッグするオプションが用意されています。 メモリとディスプレイの構成がさまざまなデバイスのエミュレーターの中から選ぶことができます。
-
--   **デバイス**
--   **Emulator <SDK version> WVGA 4 inch 512MB**
--   **Emulator <SDK version> WVGA 4 inch 1GB**
--   その他... (他の構成のさまざまなエミュレーター)
-
-(エミュレーターが表示されない場合は、 「[準備](get-set-up.md)」を参照して、ユニバーサル Windows アプリ開発ツールがインストールされていることを確認します。)
-
-**モバイル デバイス エミュレーターでデバッグを開始するには**
-
-1.  画面が小さくメモリが限られているデバイスでアプリをテストすることをお勧めします。そのためには、**[標準]** ツール バーのターゲット デバイス メニュー (![[デバッグの開始] メニュー](images/startdebug-full.png)) で **[Emulator 10.0.14393.0 WVGA 4 inch 512MB]** を選択します。
-
-2.  ツール バーの **[デバッグの開始]** ボタン (![[デバッグの開始] ボタン](images/startdebug-sm.png)) をクリックします。
-
-   または
-
-   **[デバッグ]** メニューの **[デバッグの開始]** をクリックします。
-
-   または
-
-   F5 キーを押します。
-
-Visual Studio で、選択したエミュレーターが起動し、アプリが配置されて起動されます。 アプリを初めて起動するときは少し時間がかかる場合があります。 モバイル デバイス エミュレーターでは、アプリは次のように表示されます。
-
-![モバイル デバイスでのアプリの初期画面](images/win10-cs-09.png)
-
-Windows Phone で Windows 10 を実行している場合は、Windows Phone をコンピューターに接続し、アプリを直接配置して実行できます (ただし、最初に[開発者モードを有効にする](enable-your-device-for-development.md)必要があります)。
-
-
 ## <a name="step-3-event-handlers"></a>手順 4. イベント ハンドラー
 
-"イベント ハンドラー" は複雑なもののように思われますが、イベント (ユーザーによるボタンのクリックなど) が発生したときに呼び出されるコードの別名にすぎません。
+"イベント ハンドラー" は複雑なもののように聞こえますが、イベント (ユーザーによるボタンのクリックなど) が発生したときに呼び出されるコードの別名にすぎません。
 
 1.  アプリの実行を停止します (まだ停止していない場合)。
 
@@ -228,7 +201,7 @@ Windows Phone で Windows 10 を実行している場合は、Windows Phone を�
 3.  *MainPage.xaml.cs* (分離コード ページ) でイベント ハンドラーを編集します。 ここから面白くなります。 既定のイベント ハンドラーは次のようになります。
 
 ```C#
-private void button_Click(object sender, RouteEventArgs e)
+private void Button_Click(object sender, RouteEventArgs e)
 {
 
 }
@@ -237,7 +210,7 @@ private void button_Click(object sender, RouteEventArgs e)
   これを変更して次のようにします。
 
 ```C#
-private async void button_Click(object sender, RoutedEventArgs e)
+private async void Button_Click(object sender, RoutedEventArgs e)
         {
             MediaElement mediaElement = new MediaElement();
             var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
@@ -263,3 +236,12 @@ private async void button_Click(object sender, RoutedEventArgs e)
 
 アプリで使うコントロールを XAML によってレイアウトする方法については、[グリッドに関するチュートリアル](../layout/grid-tutorial.md)で学習するか、直接[次のステップ](learn-more.md)に進んでください。
 
+
+## <a name="see-also"></a>関連項目
+
+* [初めてのアプリ](your-first-app.md)
+* [Windows ストア アプリの公開](https://developer.microsoft.com/store/publish-apps)
+* [UWP アプリの開発に関するハウツー記事](https://developer.microsoft.com/windows/apps/develop)
+* [UWP 開発者向けコード サンプル](https://developer.microsoft.com/windows/samples)
+* [ユニバーサル Windows アプリとは?](whats-a-uwp.md)
+* [Windows アカウントのサインアップ](sign-up.md)

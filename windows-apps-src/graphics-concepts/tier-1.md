@@ -2,21 +2,17 @@
 title: "階層 1"
 description: "このセクションでは、階層 1 のサポートについて説明します。"
 ms.assetid: 153DA429-0C99-4691-AEB4-124FD9B17BE2
-keywords:
-- "階層 1"
+keywords: "階層 1"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: de1010a39655e8ac24e213aa5682e9f739b88ecc
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0c463e2a6ea4f43ea1f3eccab69a94f9d6f13170
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="tier-1"></a>階層 1
 
 
@@ -69,7 +65,6 @@ LOD のクランプとマップされた状態のフィードバックのため�
  
 
  
-
 
 
 

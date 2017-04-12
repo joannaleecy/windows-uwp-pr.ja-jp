@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム、ゲーム開発"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a8b28295a21d020d41f7416dd039a9a4003fb9b2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9398efedb5d4818e247be42132bdb752067b5426
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-10-game-development-guide"></a>Windows 10 ゲーム開発ガイド
 
 
@@ -38,7 +35,7 @@ Windows 10 ゲームを作成すると、スマートフォンから PC、Xbox O
 
 ドキュメントから、開発者向けのプログラム、フォーラム、ブログ、サンプルまで、ゲーム開発に役立つ多くのリソースが用意されています。 ここでは、Windows 10 ゲームの開発を始めるにあたって役立つリソースをまとめています。
 
-> **注**   Xbox One の開発と高度な Windows 10 のゲーム機能 (Xbox Live サービスなど) は、ID@Xbox や Microsoft Studios などのプログラムによって管理されます。 このガイドでは幅広いリソースを取り上げているため、参加しているプログラムや特定の開発の役割によっては、一部のリソースにアクセスできない場合があります。 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com、Game Developer Network (GDN) に解決されるリンクなどです。 Microsoft との提携について詳しくは、「[開発者プログラム](#developer-programs)」をご覧ください。
+> **注**   Xbox One の開発と高度な Windows 10 のゲーム機能 (Xbox Live サービスなど) は、プログラムによって管理されます。 このガイドでは幅広いリソースを取り上げているため、参加しているプログラムや特定の開発の役割によっては、一部のリソースにアクセスできない場合があります。 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com、Game Developer Network (GDN) に解決されるリンクなどです。 Microsoft との提携について詳しくは、「[開発者プログラム](#developer-programs)」をご覧ください。
 
 ### <a name="game-development-documentation"></a>ゲーム開発に関するドキュメント
 
@@ -78,6 +75,10 @@ Windows 10 ゲームを作成すると、スマートフォンから PC、Xbox O
         <td>[Xbox One の UWP アプリの構築](https://msdn.microsoft.com/windows/uwp/xbox-apps/index)</td>
     </tr>
     <tr>
+        <td>HoloLens の UWP</td>
+        <td>[HoloLens の UWP アプリの構築](https://developer.microsoft.com/windows/mixed-reality/development_overview)</td>
+    </tr>
+    <tr>
         <td>Xbox Live に関するドキュメント</td>
         <td>[Xbox Live SDK](http://aka.ms/xsapi2)</td>
     </tr>
@@ -97,7 +98,7 @@ Microsoft では、Windows ゲームの開発と公開に役立ついくつか�
 
 #### <a name="windows-dev-center"></a>Windows デベロッパー センター
 
-Windows ゲームの公開に向けての最初の一歩は、Windows デベロッパー センターで開発者アカウントを登録することです。 開発者アカウントでは、ゲームの名前を予約することや、すべての Windows デバイスに対応する無料ゲームと有料ゲームを Windows ストアに提出することができます。 開発者アカウントを使って、ゲームとゲーム内製品を管理し、詳細な分析を取得したり、世界中のユーザーに優れたエクスペリエンスをサービスで実現することができます。
+Windows ゲームの公開に向けての最初の一歩は、Windows デベロッパー センターで開発者アカウントを登録することです。 開発者アカウントでは、ゲームの名前を予約することや、すべての Windows デバイスに対応する無料ゲームと有料ゲームを Windows ストアに提出することができます。 開発者アカウントを使って、ゲームとゲーム内製品を管理したり、詳細な分析を取得したり、世界中のプレイヤーに優れたエクスペリエンスを提供するサービスを実現することができます。
 
 <table>
     <colgroup>
@@ -106,13 +107,13 @@ Windows ゲームの公開に向けての最初の一歩は、Windows デベロ�
     </colgroup>
     <tr>
         <td>開発者アカウントの登録</td>
-        <td>[サインアップの準備はできましたか。](https://msdn.microsoft.com/library/windows/apps/bg124287)</td>
+        <td>[サインアップの準備はできましたか](https://msdn.microsoft.com/library/windows/apps/bg124287)</td>
     </tr> 
 </table>
 
 #### <a name="idxbox"></a>ID@Xbox
 
-ID@Xbox プログラムでは、認定されたゲーム開発者が Windows と Xbox One 向けに自分でゲームを公開するためのサポートを行います。 Xbox One 向けの開発を行ったり、ゲーマースコア、達成度、ランキングなどの Xbox Live 機能を自分の Windows 10 ゲームでも実現したいと検討されているなら、ID@Xbox にサインアップしてください。 ID@Xbox 開発者になると、創造性を解き放ち、成功の可能性を最大限に引き出すためのツールやサポートを利用できます。 ID@Xbox への登録を申し込む前に、Windows デベロッパー センターで開発者アカウントを登録してください。
+ID@Xbox プログラムを利用すると、認定されたゲーム開発者は Windows や Xbox One 向けに自分でゲームを公開することができます。 Xbox One 向けの開発を行ったり、ゲーマースコア、達成度、ランキングなどの Xbox Live 機能を自分の Windows 10 ゲームでも実現したいと検討されているなら、ID@Xbox にサインアップしてください。 ID@Xbox 開発者になると、創造性を発揮し、成功の可能性を最大限に引き出すためのツールやサポートを利用できます。 ID@Xbox への登録を申し込む前に、Windows デベロッパー センターで開発者アカウントを登録してください。
 
 <table>
     <colgroup>
@@ -126,6 +127,23 @@ ID@Xbox プログラムでは、認定されたゲーム開発者が Windows と
     <tr>
         <td>ID@Xbox コンシューマー向けサイト</td>
         <td>[ID@Xbox](http://www.idatxbox.com/)</td>
+    </tr>
+</table>
+
+#### <a name="xbox-live-creators-program"></a>Xbox Live Creators Program
+
+現在、Xbox Live Creators Program はレビュー版のプログラムです。 このプログラムでは、だれでも Xbox Live を自分のタイトルに統合して、Xbox One や Windows 10 向けに公開することができます。 今すぐプレビュー版にサインアップして、Xbox Live Creators Program で開発を始めましょう。 プレビュー版のプログラムへのサインアップは、現在制限されていますが、利用可能な人数を定期的に増やしていく予定です。
+
+メインの Xbox One ストアで利用できる他の Xbox Live 機能にアクセスしたり、マーケティングと開発に関する専用のサポートを受ける場合は、[ID@Xbox](http://www.xbox.com/Developers/id) プログラムへの登録を申し込んでください。
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>Xbox Live Creators Program プレビュー</td>
+        <td>[Xbox Live をタイトルに統合する](https://developer.microsoft.com/games/xbox/xboxlive/creator)</td>
     </tr>
 </table>
 
@@ -212,16 +230,16 @@ Windows 10 のゲーム機能を理解してゲーム開発をすぐに始める
     </colgroup>
     <tr>
         <td>Windows アプリ開発者フォーラム</td>
-        <td>[Windows ストアとアプリ フォーラム](https://social.msdn.microsoft.com/Forums/home?category=windowsapps)</td>
+        <td>[Windows ストアとアプリ フォーラム](https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps)</td>
     </tr>
     <tr>
         <td>UWP アプリ開発者フォーラム</td>
-        <td>[ユニバーサル Windows プラットフォーム アプリの開発](https://social.msdn.microsoft.com/Forums/home?forum=wpdevelop)</td>
+        <td>[ユニバーサル Windows プラットフォーム アプリの開発](https://social.msdn.microsoft.com/Forums/en-us/home?forum=wpdevelop)</td>
     </tr>
 
     <tr>
         <td>デスクトップ アプリケーション開発者フォーラム</td>
-        <td>[Windows デスクトップ アプリケーション フォーラム](https://social.msdn.microsoft.com/Forums/home?category=windowsdesktopdev)</td>
+        <td>[Windows デスクトップ アプリケーション フォーラム](https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsdesktopdev)</td>
     </tr>
     <tr>
         <td>DirectX Windows ストア ゲーム (アーカイブ済みのフォーラムの投稿)</td>
@@ -232,15 +250,15 @@ Windows 10 のゲーム機能を理解してゲーム開発をすぐに始める
         <td>[XBOX 開発者フォーラム: Windows 10](http://aka.ms/win10devforums)</td>
     </tr>
     <tr>
-        <td>DirectX 早期アクセス プログラムのフォーラム</td>
-        <td>[DirectX 12 フォーラム](http://directx12forum.azurewebsites.net/index.php)</td>
+        <td>DirectX フォーラム</td>
+        <td>[DirectX 12 フォーラム](http://forums.directxtech.com/index.php)</td>
     </tr>
 </table>
 
 
 ### <a name="developer-blogs"></a>開発者ブログ
 
-開発者ブログは、ゲームの開発に関する最新情報が提供されるもう 1 つの優れたリソースです。 新機能、実装の詳細、ベスト プラクティス、アーキテクチャの背景などに関する投稿を見つけることができます。
+開発者ブログは、ゲーム開発に関する最新情報を手に入れることができる、もう 1 つの有用なリソースです。 新機能、実装の詳細、ベスト プラクティス、アーキテクチャの背景などに関する投稿を見つけることができます。
 
 <table>
     <colgroup>
@@ -277,11 +295,11 @@ Windows 10 のゲーム機能を理解してゲーム開発をすぐに始める
     </tr>
     <tr>
         <td>Visual C++ ツール チームのブログ</td>
-        <td>[Visual C++ team blog](http://blogs.msdn.com/b/vcblog/)</td>
+        <td>[Visual C++ Team Blog (Visual C++ チームのブログ)](http://blogs.msdn.com/b/vcblog/)</td>
     </tr>
     <tr>
         <td>ID@Xbox 開発者ブログ</td>
-        <td>[ID@XBOX Developer Blog](http://www.idatxbox.com/category/developer-blog/)</td>
+        <td>[ID@XBOX 開発者ブログ](http://www.idatxbox.com/category/developer-blog/)</td>
     </tr>
 </table>
  
@@ -605,7 +623,7 @@ Direct3D 11.3 は低レベル グラフィック API です。よく利用され
 
 Unity 5 は、2D および 3D ゲームと対話型エクスペリエンスを作成するための、受賞歴のある次世代開発プラットフォームです。 Unity 5 により、新しい芸術性、高度なグラフィックス機能、高い効率性を手に入れることができます。
 
-[Unity のロードマップ](https://unity3d.com/unity/roadmap)では、Unity の将来のバージョンで DirectX 12 のサポートが予定されています。
+Unity 5.4 以降では、Unity は Direct3D 12 の開発をサポートします。
 
 <table>
     <colgroup>
@@ -1505,7 +1523,7 @@ Visual Studio Application Insights は、公開されたゲームのパフォー
 ## <a name="adding-xbox-live-to-your-game"></a>ゲームへの Xbox Live の追加
 
 
-> **注**   Xbox Live の開発は ID@Xbox や Microsoft Studios などのプログラムで管理されます。 このガイドでは幅広いリソースを取り上げているため、プログラムへの参加や特定の開発の役割によっては、一部のリソースにアクセスできない場合があります。 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com、Game Developer Network (GDN) に解決されるリンクなどです。 Microsoft との提携について詳しくは、「[開発者プログラム](#developer-programs)」をご覧ください。
+> **注**   Xbox Live の開発は、さまざまなプログラムで管理されます。 このガイドでは幅広いリソースを取り上げているため、プログラムへの参加や特定の開発の役割によっては、一部のリソースにアクセスできない場合があります。 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com、Game Developer Network (GDN) に解決されるリンクなどです。 Microsoft との提携について詳しくは、「[開発者プログラム](#developer-programs)」をご覧ください。
 
 <table>
     <colgroup>
@@ -1571,4 +1589,3 @@ Visual Studio Application Insights は、公開されたゲームのパフォー
  
 
  
-

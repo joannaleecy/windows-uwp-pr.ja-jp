@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0698a01b1f846581422c5ecf4d47a45dd22762c4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4c2664f214dca41ad5e7a5f82ca50af02cc45737
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="playready-encrypted-media-extension"></a>PlayReady の Encrypted Media Extension
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -41,7 +38,7 @@ Internet Explorer で PlayReady メディア要素を使うと、開発者はコ
     Windows 8.1 のように PlayReady オブジェクトと複数のキー識別子 (KeyID) を使うか、[Content Decryption Model データ (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) と複数の KeyID を使うことができます。
 
     > [!NOTE]
-    > Windows 10 では、複数のキー識別子が CDMData の &lt;KeyID&gt; でサポートされます。
+    > Windows10 では、複数のキー識別子が CDMData の &lt;KeyID&gt; でサポートされます。
 
 -   リアルタイムの有効期限のサポートや期間限定ライセンス (LDL) が追加されました。
 
@@ -304,7 +301,6 @@ function foo() {
 
 ## <a name="see-also"></a>参照
 - [PlayReady DRM](playready-client-sdk.md)
-
 
 
 

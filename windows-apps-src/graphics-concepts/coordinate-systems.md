@@ -2,21 +2,17 @@
 title: "座標系"
 description: "通常、3D グラフィック アプリケーションでは、2 種類のデカルト座標系、つまり左手系と右手系が使用されます。 いずれの座標系においても、x 軸の正の向きは右を指し、y 軸の正の向きは上を指します。"
 ms.assetid: 138D9B81-146F-4E9F-B742-1EDED8FBF2AE
-keywords:
-- "座標系"
+keywords: "座標系"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 47096c67d97212a5090f1a9b9a14e6ca57aa8f18
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 64ee2dee2944af1d256b825fc08fb01c992d3218
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="coordinate-systems"></a>座標系
 
 
@@ -58,7 +54,6 @@ Direct3D は、左手座標系を使用します。 左手および右手座標�
  
 
  
-
 
 
 

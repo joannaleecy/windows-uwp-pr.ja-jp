@@ -2,21 +2,17 @@
 title: "テッセレータ (TS) ステージ"
 description: "テッセレータ (TS) ステージは、ジオメトリ パッチを表すドメインのサンプリング パターンを作成し、サンプルを接続する一連の小さいオブジェクト (三角形、点、または線) を生成します。"
 ms.assetid: 2F006F3D-5A04-4B3F-8BC7-55567EFCFA6C
-keywords:
-- "テッセレータ (TS) ステージ"
+keywords: "テッセレータ (TS) ステージ"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b50139fe60bb36df06e8f50d7b529602f0e6d764
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0a18a2ba4172fb4c7aad1d4e8a071bf077afeead
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="tessellator-ts-stage"></a>テッセレータ (TS) ステージ
 
 
@@ -99,7 +95,6 @@ Direct3D グラフィックス パイプラインは、ハードウェアでテ�
  
 
  
-
 
 
 

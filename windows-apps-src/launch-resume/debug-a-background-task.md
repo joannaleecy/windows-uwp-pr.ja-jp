@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6200a8363c8a638f2ee44bdad6902748fb9adf45
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 46b60f180642e509eca76a68d78b1099008746eb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="debug-a-background-task"></a>バックグラウンド タスクのデバッグ
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -26,7 +23,7 @@ ms.lasthandoff: 02/07/2017
 バックグラウンド タスクをデバッグする方法について説明します。バックグラウンド タスクのアクティブ化のほか、Windows イベント ログでのデバッグ トレースなどについて取り上げます。
 
 ## <a name="debugging-out-of-process-vs-in-process-background-tasks"></a>アウトプロセス バックグラウンド タスクのデバッグとインプロセス バックグラウンド タスクのデバッグ
-このトピックでは主に、ホスト アプリとは別のプロセスで実行されているバックグラウンド タスクについて扱います。 インプロセス バックグラウンド タスクをデバッグする場合、別個のバックグラウンド タスク プロジェクト タスクはいらず、**OnBackgroundActivated()** (インプロセス バックグラウンド コードが実行される場所) にブレークポイントを設定できます。実行するバックグラウンド コードをトリガーする手順については、以下の「[バックグラウンド タスク コードをデバッグするためバックグラウンド タスクを手動でトリガー](#Trigger-background-tasks-manually-to-debug-background-task-code)」をご覧ください。
+このトピックでは主に、ホスト アプリとは別のプロセスで実行されているバックグラウンド タスクについて扱います。 インプロセス バックグラウンド タスクをデバッグする場合、別個のバックグラウンド タスク プロジェクト タスクはいらず、**OnBackgroundActivated()** (インプロセス バックグラウンド コードが実行される場所) にブレークポイントを設定できます。実行するバックグラウンド コードをトリガーする手順については、以下の「[バックグラウンド タスク コードをデバッグするためバックグラウンド タスクを手動でトリガー](#trigger-background-tasks-manually-to-debug-background-task-code)」をご覧ください。
 
 ## <a name="make-sure-the-background-task-project-is-set-up-correctly"></a>バックグラウンド タスク プロジェクトが正しく設定されていることを確認
 
@@ -120,4 +117,3 @@ VS を使ってバックグラウンド タスクをデバッグする方法に�
  
 
  
-

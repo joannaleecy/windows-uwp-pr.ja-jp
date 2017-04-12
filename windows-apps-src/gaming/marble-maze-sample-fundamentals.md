@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, サンプル, DirectX, 基礎"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: cc155d7a454cabe5c0d820f5d74313dfeaf01830
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="marble-maze-sample-fundamentals"></a>Marble Maze サンプルの基礎
 
 
@@ -147,7 +144,6 @@ Marble Maze アプリケーション コードの構造と、DirectX UWP アプ�
  
 
  
-
 
 
 

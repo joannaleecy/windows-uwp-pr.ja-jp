@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、DirectX、アプリ オブジェクト"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 7d3290633ead698a6c42c3accdbd2012ccfd7065
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="the-app-object-and-directx"></a>アプリ オブジェクトと DirectX
 
 
@@ -156,7 +153,6 @@ ASTA スレッドで実行するために元のコードを移植している場
  
 
  
-
 
 
 

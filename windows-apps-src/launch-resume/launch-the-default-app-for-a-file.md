@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1ab65f210c5fd01460cbe9f63f8b94f6935a630e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9727aa78a4df0ab204574b12e827f279144d3fe1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launch-the-default-app-for-a-file"></a>ファイルに応じた既定のアプリの起動
 
 
@@ -459,4 +456,3 @@ Windows には、ファイルの既定のハンドラーを起動するための
  
 
  
-

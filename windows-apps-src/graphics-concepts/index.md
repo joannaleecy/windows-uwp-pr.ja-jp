@@ -1,23 +1,19 @@
 ---
-title: "Direct3D Graphics の学習ガイド"
+title: "Direct3D グラフィックスの学習ガイド"
 description: "Microsoft Direct3D の構築に使われているグラフィックスの概念について説明します。"
 ms.assetid: c3850a92-4d05-4f72-bf0f-6a0c79e841eb
-keywords:
-- "Direct3D Graphics の学習ガイド"
+keywords: "Direct3D グラフィックスの学習ガイド"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e62f9cfde35580dd384ef69fe6e5658d927ce3d8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9d46a13844fafc5f517fce16c39e33257ff8e9a5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="direct3d-graphics-learning-guide"></a>Direct3D Graphics の学習ガイド
+# <a name="direct3d-graphics-learning-guide"></a>Direct3D グラフィックスの学習ガイド
 
 
 Microsoft Direct3D の構築に使われているグラフィックスの概念について説明します。 このドキュメント セットの大部分は、Direct3D のバージョンには依存しておらず、バージョン固有の API ドキュメントで説明されているバックグラウンド情報をさらに必要とするグラフィックス開発者向けに用意されています。
@@ -43,7 +39,7 @@ Microsoft Direct3D の構築に使われているグラフィックスの概念�
 </tr>
 <tr class="even">
 <td align="left"><p>[頂点バッファーとインデックス バッファー](vertex-and-index-buffers.md)</p></td>
-<td align="left"><p><em>頂点バッファー</em>は、頂点データを含むメモリ バッファーです。頂点バッファー内の頂点は、変形、照射、クリッピングを実行するために処理されます。 <em>インデックス バッファー</em>は、インデックス データを含むメモリ バッファーであり、プリミティブのレンダリングに使用される、頂点バッファーへの整数オフセットです。</p></td>
+<td align="left"><p><em>頂点バッファー</em>は、頂点データを格納するメモリ バッファーです。頂点バッファー内の頂点は、変換、照明の適用、クリッピングを実行するために処理されます。 <em>インデックス バッファー</em>は、インデックス データを格納するメモリ バッファーです。インデックス データは頂点バッファーへの整数オフセットで、プリミティブのレンダリングに使われます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[デバイス](devices.md)</p></td>
@@ -93,4 +89,3 @@ Microsoft Direct3D の構築に使われているグラフィックスの概念�
  
 
  
-

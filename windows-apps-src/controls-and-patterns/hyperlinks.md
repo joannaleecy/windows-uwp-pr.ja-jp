@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9af0a58478bbbb0dfc46bb18851ae78735e2c9b1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e2c04ea39eee88c225bfef277037363c084e8eff
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="hyperlinks"></a>ハイパーリンク
 
@@ -164,4 +162,3 @@ ms.lasthandoff: 02/07/2017
 **開発者向け (XAML)**
 - [**Windows.UI.Xaml.Documents.Hyperlink クラス**](https://msdn.microsoft.com/library/windows/apps/dn279356)
 - [**Windows.UI.Xaml.Controls.HyperlinkButton クラス**](https://msdn.microsoft.com/library/windows/apps/br242739)
-

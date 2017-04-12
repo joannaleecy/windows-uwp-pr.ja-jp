@@ -2,21 +2,17 @@
 title: "ワールド変換"
 description: "ワールド変換は、座標系をモデル空間からワールド空間に変更します。モデル空間では、頂点はモデルのローカル原点を基準として相対的に定義されます。"
 ms.assetid: 767B032C-69D0-4583-8FEB-247F4C41E31D
-keywords:
-- "ワールド変換"
+keywords: "ワールド変換"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 45462cf0deb4e0bbf444fd4300a942cf05ad701c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6218747e0522235f1d71510a4ad4b6ce60def4a3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="world-transform"></a>ワールド変換
 
 
@@ -46,7 +42,6 @@ Direct3D は、ユーザーが設定したワールド行列とビュー行列�
  
 
  
-
 
 
 

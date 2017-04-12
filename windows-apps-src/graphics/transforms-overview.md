@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 30f73484bde4948e4b0bac5609197f08be5968a0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2643606fa3dcbf1c95669bb09bef0aae49f86529
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="transforms-overview"></a>変換の概要
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
@@ -138,7 +135,6 @@ Windows 10 では、XAML に新しいプロパティである [**UIElement.Trans
  
 
  
-
 
 
 

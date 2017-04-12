@@ -2,21 +2,17 @@
 title: "光源の計算"
 description: "Direct3D の照明モデルは、環境光、拡散光、反射光、放射光を扱います。 これにより、さまざまな照明の状況に十分対応することができます。 シーン内の照明の合計量は、全体照明と呼ばれます。"
 ms.assetid: D0521F56-050D-4EDF-9BD1-34748E94B873
-keywords:
-- "光源の計算"
+keywords: "光源の計算"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a7745e9a8c15398a3305d32e828e119832d8250c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: fd26d7253de1422f81ff4c0b9bf94d45cd02b2fc
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="mathematics-of-lighting"></a>光源の計算
 
 
@@ -73,7 +69,7 @@ Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive 
 </tr>
 <tr class="even">
 <td align="left"><p>[放射光](emissive-lighting.md)</p></td>
-<td align="left"><p><em>放射光</em>は、オブジェクトにより放射される光 (輝きなど) です。 放射によって、レンダリングされるオブジェクトが自己発光しているように見えます。 放射は、オブジェクトの色に影響を与え、たとえば、暗い素材を明るくしたり、放射される色の一部を引き受けたりすることができます。</p></td>
+<td align="left"><p><em>放射光</em>は、白熱光などオブジェクトによって放射される光です。 放射によって、レンダリングされるオブジェクトが自己発光しているように見えます。 放射は、オブジェクトの色に影響を与え、たとえば、暗い素材を明るくしたり、放射される色の一部を引き受けたりすることができます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[カメラの空間変換](camera-space-transformations.md)</p></td>
@@ -96,7 +92,6 @@ Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive 
  
 
  
-
 
 
 

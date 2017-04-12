@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2d3b61b35307536bc54f19b5857acfe946a010ce
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4264912469d1da56d980b50575926ecf105e1f97
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="audio-video-and-camera"></a>オーディオ、ビデオ、カメラ
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -49,7 +46,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

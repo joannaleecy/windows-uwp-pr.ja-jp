@@ -2,21 +2,17 @@
 title: "テクスチャリングの基本概念"
 description: "コンピューターで作成された初期の 3D 画像は、当時は高度な技術でしたが、ツルツルのプラスチックのような外観になりがちでした。"
 ms.assetid: 3CA3905D-E837-48EB-A81F-319AA1C6537E
-keywords:
-- "テクスチャリングの基本概念"
+keywords: "テクスチャリングの基本概念"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3ee4476995f2d73c9de5027b817fbe68638d1529
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 52c21ff88f09c5136579fabf0b699fd71a8717bd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="basic-texturing-concepts"></a>テクスチャリングの基本概念
 
 
@@ -30,7 +26,7 @@ Direct3D のテクスチャはビットマップであるため、どんなビ�
 
 アプリケーションがハードウェア アブストラクション レイヤー (HAL) デバイスやソフトウェア デバイスを作成する場合、8、16、24、32、64、または 128 ビットのテクスチャを使用できます。
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連項目
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [テクスチャ](textures.md)
@@ -38,7 +34,6 @@ Direct3D のテクスチャはビットマップであるため、どんなビ�
  
 
  
-
 
 
 

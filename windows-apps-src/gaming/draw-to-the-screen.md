@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, DirectX, グラフィックス"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 1fe28d17aa8c943de9a2bcf6c2230237e0c931d0
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="draw-to-the-screen"></a>画面への描画
 
 
@@ -38,14 +35,10 @@ Direct3D を使ってディスプレイに描画するためのグラフィッ�
 
 このサンプルでの比較のために、各 API から該当する型を紹介します。
 
--   [**ID3D11Device1**
-            ](https://msdn.microsoft.com/library/windows/desktop/hh404575): グラフィックス デバイスとそのリソースの仮想表現を提供します。
--   [**ID3D11DeviceContext1**
-            ](https://msdn.microsoft.com/library/windows/desktop/hh404598): バッファーを構成し、レンダリング コマンドを発行するためのインターフェイスを提供します。
--   [**IDXGISwapChain1**
-            ](https://msdn.microsoft.com/library/windows/desktop/hh404631): スワップ チェーンは OpenGL ES 2.0 のバック バッファーに似ています。 これは、ディスプレイに表示する最終的なレンダリング画像を含むグラフィックス アダプターのメモリ領域です。 これは、最新のレンダリングを画面に表示するために、書き込みと "スワップ" を行うことのできるバッファーをいくつか持つため、"スワップ チェーン" と呼ばれます。
--   [**ID3D11RenderTargetView**
-            ](https://msdn.microsoft.com/library/windows/desktop/ff476582): Direct3D デバイス コンテキストの描画先の 2D ビットマップ バッファー (スワップ チェーンによって表示される) が含まれます。 OpenGL ES 2.0 の場合と同様に、レンダー ターゲットは複数作成できます。その一部はスワップ チェーンにバインドされませんが、マルチパス シェーディング手法で利用されます。
+-   [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575): グラフィックス デバイスとそのリソースの仮想表現を提供します。
+-   [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598): バッファーを構成し、レンダリング コマンドを発行するためのインターフェイスを提供します。
+-   [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631): スワップ チェーンは OpenGL ES 2.0 のバック バッファーに似ています。 これは、ディスプレイに表示する最終的なレンダリング画像を含むグラフィックス アダプターのメモリ領域です。 これは、最新のレンダリングを画面に表示するために、書き込みと "スワップ" を行うことのできるバッファーをいくつか持つため、"スワップ チェーン" と呼ばれます。
+-   [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582): Direct3D デバイス コンテキストの描画先の 2D ビットマップ バッファー (スワップ チェーンによって表示される) が含まれます。 OpenGL ES 2.0 の場合と同様に、レンダー ターゲットは複数作成できます。その一部はスワップ チェーンにバインドされませんが、マルチパス シェーディング手法で利用されます。
 
 テンプレートのレンダラー オブジェクトには次のフィールドがあります。
 
@@ -226,7 +219,6 @@ void RenderObject::Render()
  
 
  
-
 
 
 

@@ -2,21 +2,17 @@
 title: "反射光"
 description: "反射光では、光がオブジェクトの表面に当たり、カメラに向かって反射する明るい反射光を指定します。"
 ms.assetid: 71F87137-B00F-48CE-8E6A-F98A139A742A
-keywords:
-- "反射光"
+keywords: "反射光"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 54cb099e768ad1583f686d98375a0f1bcedd4e5d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c57edefa190fbb56b8bbe2a0c06ef2828b780927
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="specular-lighting"></a>反射光
 
 
@@ -122,7 +118,6 @@ Cₛ の値は以下のどちらかになります。
  
 
  
-
 
 
 

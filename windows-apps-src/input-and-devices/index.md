@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 6be02f9ec4163df510827552e04be78fffe1a8a5
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 6bcc81d80bb3e2167b6d6e5ee078279bd830f04c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="inputs-and-devices"></a>入力とデバイス
 
@@ -210,4 +208,3 @@ UWP アプリをサポートするデバイスを理解することは、各フ�
   </div>
 </div>
 </div>
-

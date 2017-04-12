@@ -5,20 +5,17 @@ title: "ゲームパッドとリモコンの操作"
 ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
 label: Gamepad and remote interactions
 template: detail.hbs
-isNew: true
+isNew: True
 ms.author: mijacobs
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b1ee5409cfca253b3bb084b95365d22526c66920
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1c58ef4e48a91a57643e39f7fd87a700904e77dd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="gamepad-and-remote-control-interactions"></a>ゲームパッドとリモコンの操作
 
 ユニバーサル Windows プラットフォーム (UWP) アプリでは、ゲームパッドとリモコンの入力がサポートされます。 ゲームパッドとリモコンは、Xbox とテレビのエクスペリエンスのための主要な入力デバイスです。 UWP アプリはこれらの入力デバイスに最適化される必要があります。これは PC ではキーボードとマウスに最適化し、スマートフォンやタブレットではタッチ入力に最適化することと同様です。 Xbox とテレビに最適化する場合には、アプリがこれらの入力デバイスで十分に機能することを確認することが最も重要なステップです。
@@ -34,4 +31,3 @@ UWP アプリでのゲームパッドやリモコンを使ったユーザー エ
 
 * [マウス モード](designing-for-tv.md#mouse-mode) -
 マウス モードは、XY フォーカス ナビゲーションでは十分でないときに、アプリでマウスのエクスペリエンスをエミュレートします。
-

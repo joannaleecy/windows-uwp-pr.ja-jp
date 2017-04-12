@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c3779262c24ef1bd124330fc7709b38abead1a7a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b033c58fed79db197858db99d71ad6a174a9a662
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="calendar-view"></a>カレンダー ビュー
 
@@ -207,4 +205,3 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 - [カレンダーの日付の選択コントロール](calendar-date-picker.md)
 - [日付の選択コントロール](date-picker.md)
 - [時刻の選択コントロール](time-picker.md)
-

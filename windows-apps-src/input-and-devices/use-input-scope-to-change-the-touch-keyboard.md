@@ -13,13 +13,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 43cbc8999d21d0534c4b6e557822345a69f66007
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 215cf54a5d6ed1b0c514768817cc11d1a85627e2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="use-input-scope-to-change-the-touch-keyboard"></a>入力スコープを使用してタッチ キーボードを変更する
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -212,7 +209,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![電話番号用 Windows タッチ キーボード](images/input-scopes/kbdpccurrencyamountandsymbol.png)| ![電話番号用 Windows Phone タッチ キーボード](images/input-scopes/kbdwptelephonenumber.png)<br>キーボードは、電話のキーパッドに似ています。 ピリオド キーを長押しすると、追加オプション ( , ( ) X .  ) が表示されます。 + を入力するには、0 キーを長押しします。 |
+| ![電話番号用 Windows タッチ キーボード](images/input-scopes/kbdpccurrencyamountandsymbol.png)| ![電話番号用 Windows Phone タッチ キーボード](images/input-scopes/kbdwptelephonenumber.png)<br>キーボードは、電話のキーパッドに似ています。 ピリオド キーを長押しすると、追加オプション ( , ( ) X .  ). + を入力するには、0 キーを長押しします。 |
 |**CurrencyAmountAndSymbol** および **TelephoneNumber** と同じ。 | 機能の可用性:<ul><li>スペル チェック: 常に無効</li><li>自動修正: 常に無効</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 常に無効</li></ul> |
 
 ### <a name="search"></a>Search
@@ -243,7 +240,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![数式用 Windows タッチ キーボード](images/input-scopes/kbdpcformula.png)<br>**%** キー、**$** キー、**+** キーもあります。| ![数式用 Windows Phone タッチ キーボード](images/input-scopes/kbdwpformula.png)<br>ピリオド キーを長押しすると、追加オプション ( - ! ? , ) が表示されます。 **=** キーを長押しすると、追加オプション ( ( ) : &lt; &gt; ) が表示されます。 |
+| ![数式用 Windows タッチ キーボード](images/input-scopes/kbdpcformula.png)<br>**%** キー、**$** キー、**+** キーもあります。| ![数式用 Windows Phone タッチ キーボード](images/input-scopes/kbdwpformula.png)<br>ピリオド キーを長押しすると、追加オプション ( - ! ? , ). **=** キーを長押しすると、追加オプション ( ( ) : &lt; &gt; ) が表示されます。 |
 |機能の可用性:<ul><li>スペル チェック: 既定では無効だが、有効にすることも可能</li><li>自動修正: 常に無効</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 常に無効</li></ul> | 機能の可用性:<ul><li>スペル チェック: 既定では有効だが、無効にすることも可能</li><li>自動修正: 既定では有効だが、無効にすることも可能</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 既定では有効だが、無効にすることも可能</li></ul> |
 
 ### <a name="chat"></a>Chat
@@ -263,4 +260,3 @@ phoneNumberTextBox.InputScope = new InputScope()
 |------------------------------------------------------------|------------------------------------------------------------------|
 | ![既定の Windows タッチ キーボード](images/input-scopes/kbdpcdefault.png)<br>**Default** と同じレイアウト。| ![名前または電話番号用 Windows Phone タッチ キーボード](images/input-scopes/kbdwpnameorphonenumber.png)<br>**;** キーと **@** キーがあります。 **&amp;123** キーの代わりに **123** キーがあり、これで電話のキーパッドが表示されます (**TelephoneNumber** を参照してください)。|
 |機能の可用性:<ul><li>スペル チェック: 既定では有効だが、無効にすることも可能</li><li>自動修正: 常に無効</li><li>大文字の自動設定: 常に有効</li><li>予測入力: 常に無効</li></ul> | 機能の可用性:<ul><li>スペル チェック: 既定では無効だが、有効にすることも可能</li><li>自動修正: 既定では無効だが、有効にすることも可能</li><li>大文字の自動設定: 既定では無効だが、有効にすることも可能。 各単語の最初の文字を大文字にする。</li><li>予測入力: 既定では無効だが、有効にすることも可能</li></ul> |
-

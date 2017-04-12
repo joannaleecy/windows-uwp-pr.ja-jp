@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、地図、位置情報、画像、オーバーレイ"
-translationtype: Human Translation
-ms.sourcegitcommit: 32b5230d62f23430393fc51c73f80fa46bd525fa
 ms.openlocfilehash: dd52df5f95b25e26ddb0fb8db50c9faf27df02ee
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="overlay-tiled-images-on-a-map"></a>地図へのタイル画像のオーバーレイ
 
 
@@ -372,4 +369,3 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
 * [地図の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Build 2015 のビデオ: Windows アプリでの電話、タブレット、PC で使用できるマップと位置情報の活用](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [UWP の交通情報アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-

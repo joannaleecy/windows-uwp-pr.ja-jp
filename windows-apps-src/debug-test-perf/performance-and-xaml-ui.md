@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 38a78b8af1555bdb4409c967bd27e5967b5c40aa
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 51befe8b6b30418599fc1dd04a059f3b053046ad
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="performance"></a>パフォーマンス
 
@@ -40,5 +38,4 @@ ms.lasthandoff: 02/07/2017
 | [ファイル アクセスの最適化](optimize-file-access.md) | ファイル システムに効率的にアクセスすることで、ディスクの待ち時間とメモリ/CPU サイクルによるパフォーマンスの問題を回避する UWP アプリを作成します。 |
 | [Windows ランタイム コンポーネントと相互運用性の最適化](windows-runtime-components-and-optimizing-interop.md) | 相互運用性のパフォーマンスの問題を回避しながら、ネイティブ型とマネージ型の間で UWP コンポーネントと相互運用機能を使う UWP アプリを作成します。 |
 | [プロファイリングとパフォーマンスに関するツール](tools-for-profiling-and-performance.md) | Microsoft には、UWP アプリのパフォーマンスを改善する際に役立つツールがいくつか用意されています。|
-
 

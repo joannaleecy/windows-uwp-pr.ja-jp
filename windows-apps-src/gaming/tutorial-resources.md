@@ -3,20 +3,16 @@ author: mtoepke
 title: "ゲーム サンプルの紹介"
 description: "これで、 基本的なユニバーサル Windows プラットフォーム (UWP) DirectX 3D ゲームの主なコンポーネントについては理解できました。"
 ms.assetid: a1432c45-569e-7ecd-4098-f5ad6da9327e
-keywords:
-- "DirectX、XAML"
+keywords: "DirectX、XAML"
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e3f4abdb0a0f42d1b25a3adc1a78ab414affa77a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2d36c8f8f4e3f51928f1c7707e0cb6f69386645d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="extend-the-game-sample"></a>ゲーム サンプルの紹介
 
 
@@ -195,7 +191,7 @@ XAML で定義された [**SwapChainBackgroundPanel**](https://msdn.microsoft.co
             );
 ```
 
-このプロセスについて詳しくは、[DirectX と XAML の相互運用性](https://msdn.microsoft.com/library/windows/apps/hh825871)に関するトピックをご覧ください。
+このプロセスについて詳しくは、[DirectX と XAML の相互運用機能](https://msdn.microsoft.com/library/windows/apps/hh825871)に関するトピックをご覧ください。
 
 ## <a name="complete-code-for-the-xaml-game-sample-xaml-codebehinds"></a>XAML ゲーム サンプルの XAML コード ビハインドのコード一式
 
@@ -1520,7 +1516,6 @@ void MainPage::OnResetButtonClicked(Object^ sender, RoutedEventArgs^ args)
  
 
  
-
 
 
 

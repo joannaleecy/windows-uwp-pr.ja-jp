@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ea665aee9d8e65f5542de96863dee5b9eec9e346
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9acef8f03bcdd4a9c4d40133ab2507853d4d0145
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="access-sensors-and-devices-from-a-background-task"></a>バックグラウンド タスクからのセンサーやデバイスへのアクセス
 
 
@@ -123,9 +120,7 @@ ms.lasthandoff: 02/07/2017
 | サポートされているデバイスの周辺機器用 API (USB、HID、Bluetooth、センサーなどでは Windows ランタイム API) を使って、アプリが対象デバイスにアクセスできる。 アプリがデバイスまたはセンサーにアクセスできない場合、バックグラウンド タスクへのアクセスが拒否されます。 | ![ポリシーが適用される](images/ap-tools.png) |
 | アプリで指定されているバックグラウンド タスクのエントリ ポイントがアプリ パッケージ マニフェストに登録されている。 | ![ポリシーが適用される](images/ap-tools.png) |
 | アプリごとに [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクが 1 つのみ実行されている。 | ![ポリシーが適用される](images/ap-tools.png) |
-| (アプリが実行されている) デバイスの [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクの最大数に達していない。 | デスクトップ デバイス ファミリ: 同時に登録して実行できるタスク数に制限なし。 |
-|  |  |
-|  | モバイル デバイス ファミリ: 512 MB デバイスでは 1 タスク。それ以外のデバイスでは 2 タスクを同時に登録して実行可能。 |
+| (アプリが実行されている) デバイスの [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクの最大数に達していない。 | **デスクトップ デバイス ファミリ**: 同時に登録して実行できるタスク数に制限なし。 **モバイル デバイス ファミリ**: 512 MB デバイスでは 1 タスク。それ以外のデバイスでは 2 タスクを同時に登録して実行可能。 |
 | サポートされている API とプロトコルを使う場合は、アプリが 1 つの [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクからアクセスできる周辺機器またはセンサーの最大数。 | 無制限 |
 | バックグラウンド タスクは、400 ミリ秒の CPU 時間を、画面がロックされている場合は 1 分ごとに消費し (1 GHz CPU の場合)、画面がロックされていない場合は 5 分ごとに消費する。 このポリシーを満たさない場合、タスクが取り消される可能性があります。 | ![ポリシーが適用される](images/ap-tools.png) |
  
@@ -140,9 +135,7 @@ ms.lasthandoff: 02/07/2017
 | 対象デバイスがシステムに接続されている (ワイヤレス デバイスの場合は、接続範囲内にある)。 | ![ポリシー チェックが適用される](images/ap-tools.png) |
 | デバイスに対して標準的な I/O を実行する (5 秒ごとに 1 I/O)。 | ![ポリシー チェックが適用される](images/ap-tools.png) |
 | アプリがタスクを中止していない。 | ![ポリシー チェックが適用される](images/ap-tools.png) |
-| 実時間の制限 (アプリがバックグラウンドでタスクを実行できる最長時間)。 | デスクトップ デバイス ファミリ: 10 分。 |
-|  |  |
-|  | モバイル デバイス ファミリ: 時間制限なし。 リソースを節約するには、同時に実行できるタスクを 1 つか 2 つに制限。 |
+| 実時間の制限 (アプリがバックグラウンドでタスクを実行できる最長時間)。 | **デスクトップ デバイス ファミリ**: : 10 分。 **モバイル デバイス ファミリ** : 時間制限なし。 リソースを節約するには、同時に実行できるタスクを 1 つか 2 つに制限。 |
 | アプリが終了していない。 | ![ポリシー チェックが適用される](images/ap-tools.png) |
 
 ## <a name="best-practices"></a>ベスト プラクティス
@@ -182,4 +175,3 @@ ms.lasthandoff: 02/07/2017
 また、[**Unregister**](https://msdn.microsoft.com/library/windows/apps/br229869) メソッドには、現在実行中のバックグラウンド タスク インスタンスを (完了前に) 中断するかどうかを示すブール値 (true または false) が指定されます。 詳しくは、**Unregister** の API リファレンスをご覧ください。
 
 [**Unregister**](https://msdn.microsoft.com/library/windows/apps/br229869) に加え、[**BackgroundTaskDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504) も呼び出す必要があります。 こうすることで、バックグラウンド タスクに関連付けられた非同期操作が終了したことがシステムに通知されます。
-

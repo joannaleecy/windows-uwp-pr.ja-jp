@@ -11,11 +11,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 60a29717-56f2-4388-a9ff-0098e34d5896
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: cfda479d2a05dfac4125688d3666abfb23bc45a2
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: b3b41e81f48f790c85377208816668ba302d3738
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="nested-ui-in-list-items"></a>リスト項目の入れ子になった UI
 
@@ -310,4 +308,3 @@ public static class DependencyObjectExtensions
     }
 }
 ```
-

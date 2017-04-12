@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c20b64cdc2a1335d4739d6790512eddd76bc8a08
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 26345315e9e09d2fd9134ba7264028c460d888ea
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>Microsoft Emulator for Windows 10 Mobile を使ったテスト
 
@@ -662,5 +660,4 @@ Windows 10 ツールを使う際に生じた質問の答えを探したり、問
 * [エミュレーターで Windows Phone アプリを実行する](https://msdn.microsoft.com/library/windows/apps/xaml/dn632391.aspx)
 * [Windows と Windows Phone SDK のアーカイブ](https://dev.windows.com/downloads/sdk-archive)
  
-
 

@@ -3,30 +3,27 @@ author: normesta
 Description: "このガイドは、Windows 情報保護 (WIP) ポリシーによって管理される企業データ、および個人データを処理するように、アプリを対応させる場合に役立ちます。"
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: "企業データと個人データの両方を使用する対応アプリの作成"
+title: "Windows 情報保護 (WIP) 開発者向けガイド"
 ms.author: normesta
-ms.date: 02/08/2017
+ms.date: 02/24/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, WIP, Windows 情報保護, 企業データ, エンタープライズ データ保護, EDP, 対応アプリ"
 ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 5bad765ff182fcd2fb573c3aa766fdaaaef1e2a3
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: a2888b804e66e2630e4ae93b0be31974740d9f99
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="build-an-enlightened-app-that-consumes-both-enterprise-data-and-personal-data"></a>企業データと個人データの両方を使用する対応アプリの作成
-
-__注__ Windows 情報保護 (WIP) ポリシーは、Windows 10 Version 1607 に適用することができます。
+# <a name="windows-information-protection-wip-developer-guide"></a>Windows 情報保護 (WIP) 開発者向けガイド
 
 *対応*アプリは企業データと個人データを区別し、管理者によって定義された Windows 情報保護 (WIP) ポリシーに基づいて、どちらを保護するかを判別します。
 
-このガイドでは、こうしたアプリの作成方法について説明します。 アプリの作成が完了すると、ポリシー管理者はこのようなアプリを信頼し、アプリによる組織のデータの利用を許可することができます。 また、従業員は、組織のモバイル デバイス管理 (MDM) から登録を解除した場合や、完全に組織を去ることになった場合でも、デバイス上の個人データをそのまま残す方法を望んでいます。
+このガイドでは、こうしたアプリの作成方法について説明します。 アプリの作成が完了すると、ポリシー管理者はこのようなアプリを信頼し、アプリによる組織のデータの利用を許可することができます。 また、従業員からも、組織のモバイル デバイス管理 (MDM) から登録を解除した場合や、完全に組織を去ることになった場合でも、デバイス上の個人データをそのまま残す方法が望まれています。
 
-WIP と対応アプリについて詳しくは、「[Windows Information Protection (WIP)](wip-hub.md)」(Windows 情報保護 (WIP)) をご覧ください。
+__注__ このガイドは、UWP アプリを対応アプリにするのに役立ちます。 C++ Windowsデスクトップ アプリを対応アプリにする場合は、「[Windows 情報保護 (WIP) 開発者向けガイド (C++)](http://go.microsoft.com/fwlink/?LinkId=822192)」をご覧ください。
+
+WIP と対応アプリについて詳しくは、「[Windows 情報保護 (WIP)](wip-hub.md)」をご覧ください。
 
 完全なサンプルは、[ここ](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/EnterpriseDataProtection)にあります。
 
@@ -36,37 +33,38 @@ WIP と対応アプリについて詳しくは、「[Windows Information Protect
 
 以下が必要となります。
 
-* Windows 10 Version 1607 を実行するテスト仮想マシン (VM)。 このテスト VM でアプリをデバッグします。
+* Windows 10 Version 1607 以上を実行するテスト仮想マシン (VM)。 このテスト VM でアプリをデバッグします。
 
-* Windows 10 Version 1607 を実行している開発コンピューター。 Visual Studio をテスト VM にインストールしている場合は、テスト VM を使用することもできます。
+* Windows 10 Version 1607 以上を実行している開発コンピューター。 Visual Studio をテスト VM にインストールしている場合は、テスト VM を使用することもできます。
 
 ## <a name="setup-your-development-environment"></a>開発環境のセットアップ
 
 以下の作業を行います。
 
-* テスト VM に WIP Setup Developer Assistant をインストールします。
+* [テスト VM に WIP Setup Developer Assistant をインストールする](#install-assistant)
 
-* WIP Setup Developer Assistant を使用して保護ポリシーを作成します。
+* [WIP Setup Developer Assistant を使用して保護ポリシーを作成する](#create-protection-policy)
 
-* Visual Studio プロジェクトをセットアップします。
+* [Visual Studio プロジェクトをセットアップする](#setup-vs-project)
 
-* リモート デバッグをセットアップします。
+* [リモート デバッグをセットアップする](#setup-remote-debugging)
 
-* 名前空間をコード ファイルに追加します。
+* [名前空間をコード ファイルに追加する](#add-namespaces)
 
-**テスト VM に WIP Setup Developer Assistant をインストールする**
+<span id="install-assistant" />
+### <a name="install-the-wip-setup-developer-assistant-onto-your-test-vm"></a>テスト VM に WIP Setup Developer Assistant をインストールする
 
  テスト VM で Windows 情報保護ポリシーを設定するには、このツールを使用します。
 
  このツールは、[WIP Setup Developer Assistant に関するページ](https://www.microsoft.com/store/p/wip-setup-developer-assistant/9nblggh526jf)でダウンロードできます。
-
-**保護ポリシーを作成する**
+<span id="create-protection-policy" />
+### <a name="create-a-protection-policy"></a>保護ポリシーを作成する
 
 WIP Setup Developer Assistant 内の各セクションに情報を追加することによって、ポリシーを定義します。 その使用方法について詳しくは、すべての設定の横にある [ヘルプ] アイコンを選択します。
 
 このツールの使用方法に関する一般的なガイダンスについては、アプリのダウンロード ページで、バージョンに関する注意事項のセクションを参照してください。
-
-**Visual Studio プロジェクトをセットアップする**
+<span id="setup-vs-project" />
+### <a name="setup-a-visual-studio-project"></a>Visual Studio プロジェクトをセットアップする
 
 1. 開発コンピューターで、プロジェクトを開きます。
 
@@ -94,57 +92,71 @@ WIP Setup Developer Assistant 内の各セクションに情報を追加する�
     ```
 
     このようにすることで、制限された機能をサポートしていないバージョンの Windows オペレーティング システムでアプリを実行した場合に、Windows は ``enterpriseDataPolicy`` 機能を無視します。
-
-**リモート デバッグをセットアップする**
+<span id="setup-remote-debugging" />
+### <a name="setup-remote-debugging"></a>リモート デバッグをセットアップする
 
 VM 以外のコンピューターでアプリを開発している場合にのみ、テスト VM に Visual Studio リモート ツールをインストールします。 次に、開発用コンピューターでリモート デバッガーを起動し、アプリがテスト VM で実行されているかどうかを確認します。
 
 「[リモート PC の手順](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps#remote-pc-instructions)」をご覧ください。
-
-**名前空間をコード ファイルに追加する**
+<span id="add-namespaces" />
+### <a name="add-these-namespaces-to-your-code-files"></a>名前空間をコード ファイルに追加する
 
 以下の using ステートメントをコード ファイルの先頭に追加します (このガイドのスニペットでこれらのステートメントが使用されます)。
 
 ```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Windows.Security.EnterpriseData;
-using Windows.ApplicationModel.DataTransfer;
 using Windows.Web.Http;
 using Windows.Storage.Streams;
+using Windows.ApplicationModel.DataTransfer;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml;
+using Windows.ApplicationModel.Activation;
 using Windows.Web.Http.Filters;
 using Windows.Storage;
-using Windows.Foundation.Metadata;
-using Windows.UI.Xaml.Controls;
 using Windows.Data.Xml.Dom;
+using Windows.Foundation.Metadata;
+using Windows.Web.Http.Headers;
 ```
 
-## <a name="determine-whether-the-operating-system-that-runs-your-app-supports-wip"></a>アプリを実行するオペレーティング システムが WIP をサポートしているかどうかを確認する
+## <a name="determine-whether-to-use-wip-apis-in-your-app"></a>アプリで WIP API を使用するかどうかを決定する
 
-[**IsApiContractPresent**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.metadata.apiinformation.isapicontractpresent.aspx) 関数を使用して、これを確認します。
+アプリを実行するオペレーティング システムが WIP をサポートしていることと、デバイスで WIP が有効になっていることを確認します。
 
 ```csharp
-bool wipSupported = ApiInformation.IsApiContractPresent("Windows.Security.EnterpriseData.EnterpriseDataContract", 3);
+bool use_WIP_APIs = false;
 
-if (wipSupported)
+if ((ApiInformation.IsApiContractPresent
+    ("Windows.Security.EnterpriseData.EnterpriseDataContract", 3)
+    && ProtectionPolicyManager.IsProtectionEnabled))
 {
-    // WIP is supported on the platform
+    use_WIP_APIs = true;
 }
 else
 {
-    // WIP is not supported on the platform
+    use_WIP_APIs = false;
 }
 ```
-
-Windows 情報保護は、Windows 10 バージョン 1607 でサポートされます。
+オペレーティング システムが WIP をサポートしていない場合や、デバイスで WIP が有効になっていない場合は、WIP API を呼び出さないでください。
 
 ## <a name="read-enterprise-data"></a>企業データの読み取り
 
-ファイル、ネットワーク エンドポイント、クリップボードのデータ、および共有コントラクトから受け取ったデータはすべて、エンタープライズ ID を保持しています。
+保護されたファイル、ネットワーク エンドポイント、クリップボード データ、および共有コントラクトから受け取ったデータを読み取るには、アプリがアクセスを要求する必要があります。
 
-それらのソースからデータを読み取るには、アプリで、エンタープライズ ID がポリシーによって管理されていることを確認する必要があります。
+Windows 情報保護は、アプリが保護ポリシーの許可一覧にある場合、アプリにアクセス許可を付与します。
 
-最初にファイルの場合について説明します。
+**このセクションの内容**
 
+* [データをファイルから読み取る](#read-file)
+* [データをネットワーク エンドポイントから読み取る](#read-network)
+* [クリップボードからデータを読み取る](#read-clipboard)
+* [共有コントラクトからデータを読み取る](#read-contract)
+
+<span id="read-file" />
 ### <a name="read-data-from-a-file"></a>データをファイルから読み取る
 
 **手順 1: ファイル ハンドルを取得する**
@@ -159,22 +171,15 @@ Windows 情報保護は、Windows 10 バージョン 1607 でサポートされ�
 
 **手順 2: アプリでファイルを開くことができるかどうかを確認する**
 
-ファイルが保護されているかどうかを確認します。 保護されているファイルについては、以下の 2 つの条件に該当する場合にそのファイルを開くことができます。
-
-* ファイルの ID がポリシーによって管理されている。
-* アプリがポリシーの許可リストに登録されている。
-
-これらの条件のどちらかに該当しない場合、[**ProtectionPolicyManager.IsIdentityManaged**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.isidentitymanaged.aspx) は **false** を返し、そのファイルを開くことはできません。
+[FileProtectionManager.GetProtectionInfoAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.getprotectioninfoasync.aspx) を呼び出して、アプリでファイルを開くことができるかどうかを判断します。
 
 ```csharp
 FileProtectionInfo protectionInfo = await FileProtectionManager.GetProtectionInfoAsync(file);
 
-if (protectionInfo.Status == FileProtectionStatus.Protected)
+if ((protectionInfo.Status != FileProtectionStatus.Protected &&
+    protectionInfo.Status != FileProtectionStatus.Unprotected))
 {
-    if (!ProtectionPolicyManager.IsIdentityManaged(protectionInfo.Identity))
-    {
-        return false;
-    }
+    return false;
 }
 else if (protectionInfo.Status == FileProtectionStatus.Revoked)
 {
@@ -182,6 +187,11 @@ else if (protectionInfo.Status == FileProtectionStatus.Revoked)
     // saying that the user's data has been revoked.
 }
 ```
+
+[FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx) の値が **Protected** である場合、ファイルは保護されており、アプリがポリシーの許可リストに含まれているため、アプリでファイルを開くことができることを意味します。
+
+[FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx) の値が **UnProtected** である場合、ファイルは保護されていないため、アプリがポリシーの許可リストになくても、アプリでファイルを開くことができることをいみします。
+
 > **API** <br>
 [FileProtectionManager.GetProtectionInfoAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.getprotectioninfoasync.aspx)<br>
 [FileProtectionInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.aspx)<br>
@@ -201,7 +211,7 @@ var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
 ```csharp
 var buffer = await Windows.Storage.FileIO.ReadBufferAsync(file);
 ```
-
+<span id="read-network" />
 ### <a name="read-data-from-a-network-endpoint"></a>データをネットワーク エンドポイントから読み取る
 
 企業のエンドポイントから読み取るように、保護されたスレッド コンテキストを作成します。
@@ -231,17 +241,17 @@ string identity = await ProtectionPolicyManager.
 また、そのポリシーによって管理されている企業のネットワーク リソースにアクセスすることもできます。
 
 ```csharp
-HttpClient client = null;
-
 if (!string.IsNullOrEmpty(identity))
 {
     using (ThreadNetworkContext threadNetworkContext =
             ProtectionPolicyManager.CreateCurrentThreadNetworkContext(identity))
     {
-        client = new HttpClient();
-
-        // Add code here to get data from the endpoint.
+        return await GetDataFromNetworkRedirectHelperMethod(resourceURI);
     }
+}
+else
+{
+    return await GetDataFromNetworkRedirectHelperMethod(resourceURI);
 }
 ```
 この例では、ソケット呼び出しが ``using`` ブロック内に指定されています。 これを行わない場合は、リソースを取得した後で、スレッド コンテキストを必ず閉じてください。 「[ThreadNetworkContext.Close](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.threadnetworkcontext.close.aspx)」をご覧ください。
@@ -258,9 +268,57 @@ if (!string.IsNullOrEmpty(identity))
 **手順 3: リソースをバッファーに読み取る**
 
 ```csharp
-IBuffer data = await client.GetBufferAsync(resourceURI);
+private static async Task<IBuffer> GetDataFromNetworkHelperMethod(Uri resourceURI)
+{
+    HttpClient client;
+
+    client = new HttpClient();
+
+    try { return await client.GetBufferAsync(resourceURI); }
+
+    catch (Exception) { return null; }
+}
 ```
 
+**(省略可能) 保護されたスレッド コンテキストを作成する代わりにヘッダー トークンを使用する**
+
+```csharp
+public static async Task<IBuffer> GetDataFromNetworkbyUsingHeader(Uri resourceURI)
+{
+    HttpClient client;
+
+    Windows.Networking.HostName hostName =
+        new Windows.Networking.HostName(resourceURI.Host);
+
+    string identity = await ProtectionPolicyManager.
+        GetPrimaryManagedIdentityForNetworkEndpointAsync(hostName);
+
+    if (!string.IsNullOrEmpty(identity))
+    {
+        client = new HttpClient();
+
+        HttpRequestHeaderCollection headerCollection = client.DefaultRequestHeaders;
+
+        headerCollection.Add("X-MS-Windows-HttpClient-EnterpriseId", identity);
+
+        return await GetDataFromNetworkbyUsingHeaderHelperMethod(client, resourceURI);
+    }
+    else
+    {
+        client = new HttpClient();
+        return await GetDataFromNetworkbyUsingHeaderHelperMethod(client, resourceURI);
+    }
+
+}
+
+private static async Task<IBuffer> GetDataFromNetworkbyUsingHeaderHelperMethod(HttpClient client, Uri resourceURI)
+{
+
+    try { return await client.GetBufferAsync(resourceURI); }
+
+    catch (Exception) { return null; }
+}
+```
 
 **ページのリダイレクトを処理する**
 
@@ -271,63 +329,44 @@ Web サーバーは、トラフィックをより最新バージョンのリソ�
 その後で、その応答の URI を使用して、エンドポイントの ID を取得します。 その方法の 1 つを次に示します。
 
 ```csharp
-public static async Task<IBuffer> getDataFromNetworkResource(Uri resourceURI)
+private static async Task<IBuffer> GetDataFromNetworkRedirectHelperMethod(Uri resourceURI)
 {
-    bool finalURL = false;
+    HttpClient client = null;
+
+    HttpBaseProtocolFilter filter = new HttpBaseProtocolFilter();
+    filter.AllowAutoRedirect = false;
+
+    client = new HttpClient(filter);
 
     HttpResponseMessage response = null;
 
-    while (!finalURL)
-    {
-
-        Windows.Networking.HostName hostName =
-            new Windows.Networking.HostName(resourceURI.Host);
-
-        string identity = await ProtectionPolicyManager.
-            GetPrimaryManagedIdentityForNetworkEndpointAsync(hostName);
-
-        HttpClient client = null;
-
-        HttpBaseProtocolFilter filter = new HttpBaseProtocolFilter();
-        filter.AllowAutoRedirect = false;
-
-        if (!string.IsNullOrEmpty(m_EnterpriseId))
-        {
-            using (ThreadNetworkContext threadNetworkContext =
-                    ProtectionPolicyManager.CreateCurrentThreadNetworkContext(identity))
-            {
-                client = new HttpClient(filter);
-            }
-        }
-        else
-        {
-            client = new HttpClient(filter);
-        }
         HttpRequestMessage message = new HttpRequestMessage(HttpMethod.Get, resourceURI);
         response = await client.SendRequestAsync(message);
 
-        if (response.StatusCode == HttpStatusCode.MultipleChoices &&
-            response.StatusCode == HttpStatusCode.MovedPermanently &&
-            response.StatusCode == HttpStatusCode.Found &&
-            response.StatusCode == HttpStatusCode.SeeOther &&
-            response.StatusCode == HttpStatusCode.NotModified &&
-            response.StatusCode == HttpStatusCode.UseProxy &&
-            response.StatusCode == HttpStatusCode.TemporaryRedirect &&
-            response.StatusCode == HttpStatusCode.PermanentRedirect)
-        {
-            resourceURI = message.RequestUri;
-        }
-        else
-        {
-            finalURL = true;
-        }
+    if (response.StatusCode == HttpStatusCode.MultipleChoices ||
+        response.StatusCode == HttpStatusCode.MovedPermanently ||
+        response.StatusCode == HttpStatusCode.Found ||
+        response.StatusCode == HttpStatusCode.SeeOther ||
+        response.StatusCode == HttpStatusCode.NotModified ||
+        response.StatusCode == HttpStatusCode.UseProxy ||
+        response.StatusCode == HttpStatusCode.TemporaryRedirect ||
+        response.StatusCode == HttpStatusCode.PermanentRedirect)
+    {
+        message = new HttpRequestMessage(HttpMethod.Get, message.RequestUri);
+        response = await client.SendRequestAsync(message);
+
+        try { return await response.Content.ReadAsBufferAsync(); }
+
+        catch (Exception) { return null; }
     }
+    else
+    {
+        try { return await response.Content.ReadAsBufferAsync(); }
 
-    IBuffer data = await response.Content.ReadAsBufferAsync();
-
-    return data;
-
+        catch (Exception) { return null; }
+    }
 }
+
 ```
 
 > **API** <br>
@@ -336,6 +375,7 @@ public static async Task<IBuffer> getDataFromNetworkResource(Uri resourceURI)
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)
 
+<span id="read-clipboard" />
 ### <a name="read-data-from-the-clipboard"></a>クリップボードからデータを読み取る
 
 **クリップボードからのデータを使用するアクセス許可を取得する**
@@ -432,7 +472,7 @@ private async void PasteText(bool isNewEmptyDocument)
 [ProtectionPolicyEvaluationResult](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicyevaluationresult.aspx)<br>
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
 
-
+<span id="read-share" />
 ### <a name="read-data-from-a-share-contract"></a>共有コントラクトからデータを読み取る
 
 従業員がアプリで自分の情報を共有するように選んだ場合、アプリではその情報の内容を含んでいる新しい項目が開きます。
@@ -491,7 +531,20 @@ protected override async void OnShareTargetActivated(ShareTargetActivatedEventAr
 
 アプリの外部に送られる企業データを保護します。 データをページ内に表示するとき、データをファイルやネットワーク エンドポイントに保存するとき、または共有コントラクトを使用してデータを保存するときに、データはアプリの外部に送られます。
 
-### <a name="a-iddisplay-dataaprotect-data-that-appears-in-pages"></a><a id="display-data"></a>ページ内に表示されるデータを保護する
+**このセクションの内容**
+
+* [ページ内に表示されるデータを保護する](#protect-pages)
+* [バック グラウンド プロセスとして、データをファイルで保護する](#protect-background)
+* [ファイルの一部を保護する](#protect-part-file)
+* [ファイルの保護されている部分を読み取る](#read-protected)
+* [フォルダーでデータを保護する](#protect-folder)
+* [ネットワーク エンドポイントでデータを保護する](#protect-network)
+* [アプリが共有コントラクトを介して共有しているデータを保護する](#protect-share)
+* [別の場所にコピーしたファイルを保護する](#protect-other-location)
+* [デバイスの画面がロックされているときに、企業データを保護する](#protect-locked)
+
+<span id="protect-pages" />
+### <a name="protect-data-that-appears-in-pages"></a>ページ内に表示されるデータを保護する
 
 データをページ内に表示するとき、Windows に対して、そのデータの種類 (個人用または企業用) を知らせます。 そのためには、現在のアプリ ビューに*タグ*を付けるか、アプリのプロセス全体にタグを付けます。
 
@@ -537,6 +590,7 @@ bool result =
 > **API** <br>
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
 
+<span id="protect-file" />
 ### <a name="protect-data-to-a-file"></a>ファイルでデータを保護する
 
 保護されたファイルを作成し、そのファイルに書き込みを行います。
@@ -572,8 +626,7 @@ FileProtectionInfo fileProtectionInfo =
 *ストリームを書き込む*
 
 ```csharp
-    if (fileProtectionInfo.Identity == identity &&
-        fileProtectionInfo.Status == FileProtectionStatus.Protected)
+    if (fileProtectionInfo.Status == FileProtectionStatus.Protected)
     {
         var stream = await storageFile.OpenAsync(FileAccessMode.ReadWrite);
 
@@ -591,8 +644,7 @@ FileProtectionInfo fileProtectionInfo =
 *バッファーを書き込む*
 
 ```csharp
-     if (fileProtectionInfo.Identity == identity &&
-         fileProtectionInfo.Status == FileProtectionStatus.Protected)
+     if (fileProtectionInfo.Status == FileProtectionStatus.Protected)
      {
          var buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(
              enterpriseData, Windows.Security.Cryptography.BinaryStringEncoding.Utf8);
@@ -606,8 +658,7 @@ FileProtectionInfo fileProtectionInfo =
 [FileProtectionInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.aspx)<br>
 [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx)<br>
 
-
-
+<span id="protect-background" />
 ### <a name="protect-data-to-a-file-as-a-background-process"></a>バック グラウンド プロセスとして、データをファイルで保護する
 
 このコードは、デバイスの画面がロックされている間に実行できます。 管理者が "ロックの背後でのデータ保護 (DPL)" という安全なポリシーを構成した場合、Windows によって、保護されたリソースへのアクセスに必要な暗号化キーがデバイスのメモリから削除されます。 これにより、デバイスを紛失した場合のデータ漏洩を防ぐことができます。 これと同じ機能によって、保護されたファイルのハンドルを閉じたときに、ファイルに関連付けられているキーも削除されます。
@@ -645,8 +696,7 @@ ProtectedFileCreateResult protectedFileCreateResult =
 この例では、ストリームをファイルに書き込みます。
 
 ```csharp
-if (protectedFileCreateResult.ProtectionInfo.Identity == identity &&
-    protectedFileCreateResult.ProtectionInfo.Status == FileProtectionStatus.Protected)
+if (protectedFileCreateResult.ProtectionInfo.Status == FileProtectionStatus.Protected)
 {
     IOutputStream outputStream =
         protectedFileCreateResult.Stream.GetOutputStreamAt(0);
@@ -672,6 +722,7 @@ else if (protectedFileCreateResult.ProtectionInfo.Status == FileProtectionStatus
 [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx)<br>
 [ProtectedFileCreateResult.Stream](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectedfilecreateresult.stream.aspx)<br>
 
+<span id="protect-part-file" />
 ### <a name="protect-part-of-a-file"></a>ファイルの一部を保護する
 
 ほとんどの場合、企業データと個人データを別々に保管するとデータがよりわかりやすく整理されますが、必要に応じてこれらのデータを同じファイルに格納することもできます。 たとえば、Microsoft Outlook では、個人用のメールと共に企業用のメールを 1 つのアーカイブ ファイルに保管できます。
@@ -747,7 +798,7 @@ await Windows.Storage.FileIO.WriteTextAsync
     (metaDataFile, "<EnterpriseDataMarker start='0' end='" + enterpriseData.Length.ToString() +
     "'></EnterpriseDataMarker>");
 ```
-
+<span id="read-protected" />
 ### <a name="read-the-protected-part-of-a-file"></a>ファイルの保護されている部分を読み取る
 
 ファイルから企業データを読み取る方法を次に示します。
@@ -827,7 +878,7 @@ else if (dataProtectionInfo.Status == DataProtectionStatus.Revoked)
 [DataProtectionInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.dataprotectioninfo.aspx)<br>
 [DataProtectionManager.GetProtectionInfoAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.dataprotectionmanager.getstreamprotectioninfoasync.aspx)<br>
 
-
+<span id="protect-folder" />
 ### <a name="protect-data-to-a-folder"></a>フォルダーでデータを保護する
 
 フォルダーを作成し、保護することができます。 これにより、そのフォルダーに追加したすべての項目は自動的に保護されます。
@@ -844,8 +895,7 @@ private async Task<bool> CreateANewFolderAndProtectItAsync(string folderName, st
     FileProtectionInfo fileProtectionInfo =
         await FileProtectionManager.ProtectAsync(newStorageFolder, identity);
 
-    if (fileProtectionInfo.Identity != identity ||
-        fileProtectionInfo.Status != FileProtectionStatus.Protected)
+    if (fileProtectionInfo.Status != FileProtectionStatus.Protected)
     {
         // Protection failed.
         return false;
@@ -862,7 +912,7 @@ private async Task<bool> CreateANewFolderAndProtectItAsync(string folderName, st
 [FileProtectionInfo.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.identity.aspx)<br>
 [FileProtectionInfo.Status](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.status.aspx)
 
-
+<span id="protect-network" />
 ### <a name="protect-data-to-a-network-end-point"></a>ネットワーク エンドポイントでデータを保護する
 
 保護されたスレッド コンテキストを作成し、そのデータを企業のエンドポイントに送信します。  
@@ -915,6 +965,7 @@ else
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)<br>
 [ProtectionPolicyManager.CreateCurrentThreadNetworkContext](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext.aspx)
 
+<span id="protect-share" />
 ### <a name="protect-data-that-your-app-shares-through-a-share-contract"></a>アプリが共有コントラクトを介して共有しているデータを保護する
 
 ユーザーがアプリからコンテンツを共有できるようにする場合は、共有コントラクトを実装し、[**DataTransferManager.DataRequested**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) イベントを処理する必要があります。
@@ -946,7 +997,7 @@ private void OnDataRequested(DataTransferManager sender, DataRequestedEventArgs 
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)
 
-
+<span id="protect-other-location" />
 ### <a name="protect-files-that-you-copy-to-another-location"></a>別の場所にコピーしたファイルを保護する
 
 ```csharp
@@ -968,7 +1019,7 @@ private async void CopyProtectionFromOneFileToAnother
 > **API** <br>
 [FileProtectionManager.CopyProtectionAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.copyprotectionasync.aspx)<br>
 
-
+<span id="protect-locked" />
 ### <a name="protect-enterprise-data-when-the-screen-of-the-device-is-locked"></a>デバイスの画面がロックされているときに、企業データを保護する
 
 デバイスがロックされているときは、メモリ内の機密データをすべて削除します。 ユーザーがデバイスをロック解除したとき、アプリではデータを安全に元に戻すことができます。
@@ -1092,7 +1143,3 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
 ## <a name="related-topics"></a>関連トピック
 
 [Windows 情報保護 (WIP) API のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
- 
-
- 
-

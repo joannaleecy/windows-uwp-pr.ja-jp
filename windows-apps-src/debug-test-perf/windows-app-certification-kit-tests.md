@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: e1a7b61d8f5dfe6ae3477f349d23674d700d002b
 ms.openlocfilehash: 2dab2719eae86487b93b9030b430b84aea7b2737
-ms.lasthandoff: 02/04/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 ## <a name="windows-app-certification-kit-tests"></a>Windows アプリ認定キットのテスト
 
@@ -676,4 +674,3 @@ JavaScript のバックグラウンド タスクがあるアプリは、バッ�
  
 
  
-

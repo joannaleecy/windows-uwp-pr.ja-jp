@@ -9,31 +9,28 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4b8d8b81b1807681d3aa3c5ed61359a5da64dfac
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3fd841f824e09ab74c303571e5d917c56c659b9b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="add-a-splash-screen"></a>スプラッシュ スクリーンの追加
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
-Microsoft Visual Studio 2015 を使ってアプリのスプラッシュ画面の画像と背景色を設定します。
+Microsoft Visual Studio2015 を使ってアプリのスプラッシュ画面の画像と背景色を設定します。
 
-## <a name="set-the-splash-screen-image-and-background-color-in-visual-studio-2015"></a>Visual Studio 2015 でスプラッシュ画面の画像と背景色を設定する
+## <a name="set-the-splash-screen-image-and-background-color-in-visual-studio-2015"></a>Visual Studio2015 でスプラッシュ画面の画像と背景色を設定する
 
 
-Visual Studio 2015 テンプレートを使ってアプリを作成すると、既定の画像がプロジェクトに追加され、スプラッシュ画面の画像として設定されます。 スプラッシュ画面の既定の背景色は既定で薄い灰色に設定されます。 アプリのスプラッシュ画面の既定の画像や色を変更する場合は、次の手順を実行します。
+Visual Studio2015 テンプレートを使ってアプリを作成すると、既定の画像がプロジェクトに追加され、スプラッシュ画面の画像として設定されます。 スプラッシュ画面の既定の背景色は既定で薄い灰色に設定されます。 アプリのスプラッシュ画面の既定の画像や色を変更する場合は、次の手順を実行します。
 
-1.  Visual Studio 2015 で既にあるユニバーサル Windows プラットフォーム (UWP) アプリ プロジェクトを開きます。
+1.  Visual Studio2015 で既にあるユニバーサル Windows プラットフォーム (UWP) アプリ プロジェクトを開きます。
 2.  **ソリューション エクスプ ローラー**から "Package.appxmanifest" ファイルを開きます。 メニュー バーから **[プロジェクト]** &gt; **[ストア]** &gt; **[アプリケーション マニフェストの編集]** を選んで、このファイルを開くこともできます。
 3.  **[ビジュアル資産]** タブを開き、[Package.appxmanifest] ウィンドウの左側にある **[すべてのイメージ資産]** ウィンドウから **[スプラッシュ画面]** を選びます。 初めてスプラッシュ画面を変更する場合は、**[スプラッシュ画面]** に "Assets\\SplashScreen.png" というパスが表示されます。
 
-    次のスクリーン ショットは、Visual Studio 2015 での [Package.appxmanifest] ウィンドウを示しています。 プロジェクトの種類に応じて、表示されるビジュアル資産が若干異なります。
+    次のスクリーン ショットは、Visual Studio2015 での [Package.appxmanifest] ウィンドウを示しています。 プロジェクトの種類に応じて、表示されるビジュアル資産が若干異なります。
 
     ![Visual Studio 2013 で表示される [package.appxmanifest] ウィンドウのスクリーン ショット](images/appmanifest.png)
 
@@ -81,4 +78,3 @@ Visual Studio 2015 テンプレートを使ってアプリを作成すると、
  
 
  
-

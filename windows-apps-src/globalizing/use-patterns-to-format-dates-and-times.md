@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c28210a6fca27976a2a4428d8001da87951f1e87
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ced02d2307263e85af158298eefc2e109702d2fb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="use-patterns-to-format-dates-and-times"></a>パターンを使った日付と時刻の書式設定
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -195,7 +192,6 @@ var mydateplustimefmt = new dtf.DateTimeFormatter(mydateplustime);
  
 
  
-
 
 
 

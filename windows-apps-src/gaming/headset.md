@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, ヘッドセット"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 04baee2a3011cee63933fe1fdab759d1b6d29c89
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="headset"></a>ヘッドセット
 
 このページでは、[Windows.Gaming.Input.Headset][headset] とユニバーサル Windows プラットフォーム (UWP) 用の関連 API を使った、ヘッドセットを対象にしたプログラミングの基礎について説明します。
@@ -77,4 +74,3 @@ inputDevice.HeadsetDisconnected += ref new TypedEventHandler<IGameController^, H
 [igamecontroller.headsetconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetconnected.aspx
 [igamecontroller.headsetdisconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetdisconnected.aspx
 [headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.headset.aspx
-

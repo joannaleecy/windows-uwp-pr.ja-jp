@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、マップ コントロール、マップ、位置情報"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ad6267e0294e4a62c1e586c066ce9d0489940d7d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: fb1bf78d247ca291ee40405d4143cbb6bc85230f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="map-control"></a>マップ コントロール
 
 
@@ -74,4 +71,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

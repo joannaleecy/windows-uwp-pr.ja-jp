@@ -9,13 +9,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 75b7dde9ba658cc427845cb1c1d2cab9c2117d17
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d2dad86795fe97514ff08750fb90a884e93cea02
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリのライフサイクル
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -232,4 +229,3 @@ Windows 10 バージョン 1607 以降では、アプリは、アプリ自体と
  
 
  
-

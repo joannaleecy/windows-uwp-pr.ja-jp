@@ -2,21 +2,17 @@
 title: "リソースの選択"
 description: "リソースは、3D パイプラインで使用されるデータのコレクションです。"
 ms.assetid: 6BAD6287-2930-42F8-BF51-69A379D1D2C3
-keywords:
-- "リソースの選択"
+keywords: "リソースの選択"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 73f2d2f6b6a925a425c94bcf1b5f957a82569236
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1722558dfbb9620d4d265a2a479109366780a514
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="choosing-a-resource"></a>リソースの選択
 
 
@@ -89,7 +85,7 @@ CPU によるリソースの更新が比較的高頻度 (フレームごとに 1
 
 この例のように、シェーダー テクスチャの読み取りとレンダー ターゲットの書き込みを分離することで、パフォーマンスが向上する場合があります。 実際にどうなるかを確かめるには、アプリケーションに両方の方法を実装して、パフォーマンスの違いを測定する必要があります。
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連項目
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [リソース](resources.md)
@@ -97,7 +93,6 @@ CPU によるリソースの更新が比較的高頻度 (フレームごとに 1
  
 
  
-
 
 
 

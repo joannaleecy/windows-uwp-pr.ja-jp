@@ -2,21 +2,17 @@
 title: "圧縮テクスチャ リソース"
 description: "テクスチャ マップとは、視覚的な詳細を追加するために 3 次元形状で描画された、デジタル画像です。"
 ms.assetid: 2DD5FF94-A029-4694-B103-26946C8DFBC1
-keywords:
-- "圧縮テクスチャ リソース"
+keywords: "圧縮テクスチャ リソース"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 16432df29e040455227b5400690d24902fec10d6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2bfe93bf5b50fb1206611697113a84cebe0e35d0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="compressed-texture-resources"></a>圧縮テクスチャ リソース
 
 
@@ -74,7 +70,7 @@ Direct3D では、3D モデルのテクスチャに使用する、サーフェ�
 
  
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連項目
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
 [テクスチャ](textures.md)
@@ -82,7 +78,6 @@ Direct3D では、3D モデルのテクスチャに使用する、サーフェ�
  
 
  
-
 
 
 

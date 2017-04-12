@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, サンプル, DirectX, 構造"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 1045bed8d7e4e8f9ead1c144dda02f900d0eb996
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="marble-maze-application-structure"></a>Marble Maze のアプリケーション構造
 
 
@@ -378,7 +375,6 @@ void MarbleMaze::LoadState()
  
 
  
-
 
 
 
