@@ -2,13 +2,11 @@
 author: JordanEllis6809
 title: "Unity - UWP プロジェクトのバージョン管理"
 description: "UWP プロジェクトをバージョン管理します。"
-translationtype: Human Translation
-ms.sourcegitcommit: a1b759b00e35092323b8c4634907dd5c0fffa68c
 ms.openlocfilehash: 3b796c31e6b284cea628ba68a34799cf9317ee2e
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# Unity: UWP プロジェクトのバージョン管理
+# <a name="unity-version-control-your-uwp-project"></a>Unity: UWP プロジェクトのバージョン管理
 
 ユニバーサル Windows プラットフォーム (UWP) を使って Xbox 用の Unity ゲームをまだ構築していない場合には、  まず「[Xbox の UWP への Unity ゲームの移行](development-lanes-unity.md)」をご覧ください。
 
@@ -46,7 +44,7 @@ ms.openlocfilehash: 3b796c31e6b284cea628ba68a34799cf9317ee2e
 
 ![UWP ビルド ディレクトリ](images/uwp-build-directory.png)  
 
-## フォルダー  
+## <a name="folders"></a>フォルダー  
 
 `Assets` | ***含める*** | Windows ストアの画像が格納されています  
 `Data`   | ***無視*** | Unity でプロジェクト (シーン、シェーダー、スクリプト、プレハブなど) のコンパイル先となる場所です  
@@ -54,7 +52,7 @@ ms.openlocfilehash: 3b796c31e6b284cea628ba68a34799cf9317ee2e
 `Properties` | ***含める*** | 開発者が変更できる高度な設定が格納されています  
 `Unprocessed` | ***無視*** | Unity の `.dll` ファイルと `.pdb` ファイルが格納されています  
 
-## ファイル  
+## <a name="files"></a>ファイル  
 
 `App.cs` | ***含める*** | UWP アプリケーションのエントリ ポイントであり、他のソース ファイルを使って、変更、拡張することができます  
 `Package.appxmanifest` | ***含める*** | AppX のパッケージ マニフェストです  
@@ -62,7 +60,7 @@ ms.openlocfilehash: 3b796c31e6b284cea628ba68a34799cf9317ee2e
 `ScrapyardPhoenix.csproj` | ***含める*** | UWP ビルド ターゲットを記述します。新しい依存関係を UWP プロジェクトに追加した場合、この `*.csproj` ファイルにその情報が格納されます  
 `ScrapyardPhoenix.csproj.user` | ***無視*** | このファイルにはローカル ユーザーの情報が格納されます
 
-## 結果として得られる .gitignore
+## <a name="resulting-gitignore"></a>結果として得られる .gitignore
 
     ##################################################################
     # The original .gitignore file can be found at
@@ -88,7 +86,7 @@ ms.openlocfilehash: 3b796c31e6b284cea628ba68a34799cf9317ee2e
 
 UWP フォルダーのバージョン管理については、[これらの例](https://bitbucket.org/Unity-Technologies/windowsstoreappssamples/overview)もご覧ください。
 
-## UWP アプリへの依存関係の追加
+## <a name="adding-dependencies-to-your-uwp-app"></a>UWP アプリへの依存関係の追加
 
 依存関係を **Plugins** フォルダーの下の **Unity Assets** フォルダーに置くことにより、DLL と WINMD に依存関係を追加します。次に Inspector でそれを選択し、ターゲット プラットフォーム設定を適切に設定します。
 
@@ -96,12 +94,6 @@ UWP フォルダーのバージョン管理については、[これらの例](h
 
 ***ScrapyardPhoenix (ユニバーサル Windows)*** が、Xbox Live SDK などへの参照を追加する対象のプロジェクトです。
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 - [既存のゲームの Xbox への移行](development-lanes-landing.md)
 - [Xbox One の UWP](index.md)
-
-
-
-<!--HONumber=Aug16_HO4-->
-
-

@@ -12,13 +12,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 84e144e612567a977a6c4e1502719dabbc488329
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7e1529d641920c93ce7914c39d38001c2cbdfd78
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="peer-to-peer-navigation-between-two-pages"></a>2 ページ間でのピア ツー ピアのナビゲーション
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -371,7 +368,6 @@ Page1::Page1()
  
 
  
-
 
 
 

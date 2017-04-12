@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP"
 ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: ce908bd14065143f71062bf5792d256c7ac775e9
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 8ce325c212b9f5aba11ab35f3cfcfeea9a44bcbe
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="respond-to-customer-feedback"></a>顧客のフィードバックに返信する
 
 [フィードバック レポート](feedback-report.md)を使用して、Windows 10 のユーザーがフィードバック Hub で入力したアプリ関連のフィードバックを確認し、そのフィードバックに直接返信することができます。 フィードバック Hub ですべてのユーザー向けに返信を投稿 (単独のコメントとして投稿したり、特定のフィードバックのステータスを更新して説明を追加するなど) すると、新機能やバグ修正に関する情報を顧客に通知したり、アプリの改善方法に関するより詳細なフィードバックを募ることができます。 また、フィードバックを入力した顧客への返信を、メールとして直接送信することもできます。
@@ -64,4 +61,3 @@ Windows デベロッパー センターでは、アプリ関連のフィード�
 > **注** 顧客は、開発者から不適切なフィードバック返信を受け取った場合、そのことを Microsoft に報告できます。 また顧客は、メールによるフィードバック返信の受信をオプトアウトすることもできます。
 
 顧客との関係はお客様の責任です。 開発者と顧客との間の係争に Microsoft は関与しません。 ただし、顧客からの製品のフィードバック内容が不適切であると思われる場合は、[サポート チケット](http://go.microsoft.com/fwlink/p/?LinkID=401178)を送信してください。
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア プロモーション API, 広告キャンペーン"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: bde9588176c1e52ccab169ad3f51ad15781e06ee
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: fe1eeb4e67917633997bdc4fbeabf87be497c3ad
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="manage-ad-campaigns"></a>広告キャンペーンの管理
 
 アプリのプロモーション用の広告キャンペーンを作成、編集、取得するには、[Windows ストア プロモーション API](run-ad-campaigns-using-windows-store-services.md) 内のこれらのメソッドを使用します。 このメソッドを使って作成した各キャンペーンに関連付けることができるのは、1 つのアプリのみです。
@@ -33,7 +30,10 @@ ms.lasthandoff: 02/08/2017
 これらのメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Windows ストア プロモーション API に関するすべての[前提条件](run-ad-campaigns-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* これらのメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
+
+  >**注**&nbsp;&nbsp;前提条件の一部として、[デベロッパー センター ダッシュボードで有料の広告キャンペーンを少なくとも 1 つ作成する](../publish/create-an-ad-campaign-for-your-app.md)必要があります。また、ダッシュボードで、広告キャンペーンの支払い方法を少なくとも 1 つ追加する必要があります。 この API を使用して作成した広告キャンペーンの配信ラインでは、ダッシュ ボードの **[アプリの宣伝]** ページで選んだ既定の支払い方法に対して自動的に請求が行われます。
+
+* これらのメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
 
 <span/> 
 ## <a name="request"></a>要求
@@ -66,7 +66,7 @@ ms.lasthandoff: 02/08/2017
 | fetch  |  整数   | 要求で返すデータの行数です。    |       
 | campaignSetSortColumn  |  文字列   | 応答本文で、指定されたフィールドにより[キャンペーン](#campaign) オブジェクトを順序付けます。 構文は <em>CampaignSetSortColumn=field</em> です。ここで、<em>field</em> パラメーターは次のいずれかの文字列になります。</p><ul><li><strong>id</strong></li><li><strong>createdDateTime</strong></li></ul><p>既定値は **createdDateTime** です。     |     
 | isDescending  |  ブール値   | 応答本文で、[キャンペーン](#campaign) オブジェクトを降順または昇順で並べ替えます。   |         
-| applicationId  |  文字列   | 指定された[ストア ID](in-app-purchases-and-trials.md#store-ids) を持つアプリに関連付けられた広告キャンペーンのみ返す場合は、この値を使います。 製品のストア ID の例は、9nblggh42cfd です。   |         
+| storeProductId  |  文字列   | 指定された[ストア ID](in-app-purchases-and-trials.md#store-ids) を持つアプリに関連付けられた広告キャンペーンのみ返す場合は、この値を使います。 製品のストア ID の例は、9nblggh42cfd です。   |         
 | label  |  文字列   | [キャンペーン](#campaign) オブジェクトに指定された*ラベル*が含まれる広告キャンペーンのみ返す場合は、この値を使います。    |       |    
 
 <span/>
@@ -85,7 +85,7 @@ Authorization: Bearer <your access token>
 
 {
     "name": "Contoso App Campaign",
-    "applicationId": "9nblggh42cfd",
+    "storeProductId": "9nblggh42cfd",
     "configuredStatus": "Active",
     "objective": "DriveInstalls",
     "type": "Community"
@@ -102,7 +102,7 @@ Authorization: Bearer <your access token>
 次の例は、GET メソッドを呼び出して、作成日により並べ替えられた一連の広告キャンペーンを問い合わせる方法を示しています。
 
 ```json
-GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/campaign?applicationId=9nblggh42cfd&fetch=100&skip=0&campaignSetSortColumn=createdDateTime HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/campaign?storeProductId=9nblggh42cfd&fetch=100&skip=0&campaignSetSortColumn=createdDateTime HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
@@ -117,7 +117,7 @@ Authorization: Bearer <your access token>
         "id": 31043481,
         "name": "Contoso App Campaign",
         "createdDate": "2017-01-17T10:12:15Z",
-        "applicationId": "9nblggh42cfd",
+        "storeProductId": "9nblggh42cfd",
         "configuredStatus": "Active",
         "effectiveStatus": "Active",
         "effectiveStatusReasons": [
@@ -148,7 +148,7 @@ Authorization: Bearer <your access token>
 |  configuredStatus   |  文字列   |  開発者により指定された広告キャンペーンのステータスを指定する次のいずれかの値です。 <ul><li>**Active**</li><li>**Inactive**</li></ul>     |  ×     |  Active    |   〇    |       
 |  effectiveStatus   |  文字列   |   システム検証に基づいて広告キャンペーンの有効ステータスを指定する次のいずれかの値です。 <ul><li>**Active**</li><li>**Inactive**</li><li>**Processing**</li></ul>    |    〇   |      |   ×      |       
 |  effectiveStatusReasons   |  配列   |  広告キャンペーンの有効ステータスの理由を指定する次のうち 1 つ以上の値です。 <ul><li>**AdCreativesInactive**</li><li>**BillingFailed**</li><li>**AdLinesInactive**</li><li>**ValidationFailed**</li><li>**Failed**</li></ul>      |  〇     |     |    ×     |       
-|  applicationId   |  文字列   |  この広告キャンペーンが関連付けられているアプリの[ストア ID](in-app-purchases-and-trials.md#store-ids) です。 製品のストア ID の例は、9nblggh42cfd です。     |   〇    |      |  〇     |       
+|  storeProductId   |  文字列   |  この広告キャンペーンが関連付けられているアプリの[ストア ID](in-app-purchases-and-trials.md#store-ids) です。 製品のストア ID の例は、9nblggh42cfd です。     |   〇    |      |  〇     |       
 |  labels   |  配列   |   キャンペーンのカスタム ラベルを表す 1 つ以上の文字列です。 これらのラベルは、キャンペーンの検索とタグ付けに使われます。    |   ×    |  null    |    ×     |       
 |  type   | 文字列    |  キャンペーンの種類を指定する次のいずれかの値です。 <ul><li>**有料**</li><li>**自社**</li><li>**コミュニティ**</li></ul>      |   〇    |      |   〇    |       
 |  objective   |  文字列   |  キャンペーンの目的を指定する次のいずれかの値です。 <ul><li>**DriveInstall**</li><li>**DriveReengagement**</li><li>**DriveInAppPurchase**</li></ul>     |   ×    |  DriveInstall    |   〇    |       
@@ -162,4 +162,3 @@ Authorization: Bearer <your access token>
 * [広告キャンペーンの対象プロファイルの管理](manage-targeting-profiles-for-ad-campaigns.md)
 * [広告キャンペーンのクリエイティブの管理](manage-creatives-for-ad-campaigns.md)
 * [広告キャンペーンのパフォーマンス データの取得](get-ad-campaign-performance-data.md)
-

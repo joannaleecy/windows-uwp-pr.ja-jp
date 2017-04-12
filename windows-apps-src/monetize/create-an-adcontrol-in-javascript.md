@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、広告、AdControl、javascript"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d2ceafb9781ca2b9cd640e65d9bb420f0bf37928
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b669925c3b630ddbfe82086231c46c951072244b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-an-adcontrol-in-javascript"></a>JavaScript での AdControl の作成
 
 
@@ -56,4 +53,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 広告, Advertising, 広告ユニット"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 32a934f1d113d561c72ab3ac48a8ef3d0820c176
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: daf0887462a4c84aa827a6261793a0eaf4d512ca
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="set-up-ad-units-in-your-app"></a>アプリの広告ユニットをセットアップする
 
 
@@ -28,22 +25,29 @@ ms.lasthandoff: 02/07/2017
 ライブ アプリのアプリケーション ID と広告ユニットをセットアップするには
 
 1.  Windows デベロッパー センター ダッシュボードで、アプリを選択し、**[収益化]、[広告で収入を増やす]** の順にクリックします。
-2.  このページの **[Microsoft Advertising 広告ユニット]** セクションで広告ユニットを作成します。 広告ユニットの種類として、**AdControl** を使っている場合は **[バナー]** を、**InterstitialAd** を使っている場合は **[ビデオ (スポット)]** を選びます。 このページについて詳しくは、「[広告で収入を増やす](../publish/monetize-with-ads.md)」をご覧ください。
 
-3.  生成された広告ユニットごとに、**アプリケーション ID** と**広告ユニット ID** がこのページに表示されます。 アプリに広告を表示するには、アプリのコードでこれらの値を使う必要があります。
+2.  このページの **[Microsoft Advertising 広告ユニット]** セクションで広告ユニットを作成します。 広告ユニットの種類は、状況に応じて次のオプションを選択します。
 
-    * アプリにバナー広告を表示する場合は、これらの値を **AdControl** オブジェクトの **ApplicationId** プロパティと **AdUnitId** プロパティに割り当てる必要があります。
+  * アプリで **AdControl** を使用してバナー広告を表示している場合は、広告ユニットの種類として **[バナー]** を選択します。
 
-    * アプリでスポット広告ビデオを表示する場合は、**InterstitialAd** オブジェクトの **RequestAd** メソッドにこれらの値を渡します。
+  * アプリで **InterstitialAd** を使用してビデオ スポット広告やバナー スポット広告を表示している場合は、**[ビデオ (スポット)]** または **[バナー (スポット)]** を選択します (表示するスポット広告の種類に対応した適切なオプションを必ず選択してください)。
 
- 
+3.  生成された広告ユニットごとに、**アプリケーション ID** と**広告ユニット ID** がこのページに表示されます。 アプリに広告を表示するには、アプリのコードでこれらの値を使用する必要があります。
+
+  * アプリにバナー広告を表示する場合は、これらの値を **AdControl** オブジェクトの [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) プロパティと [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) プロパティに割り当てる必要があります。 詳しくは、「[XAML および .NET の AdControl](adcontrol-in-xaml-and--net.md)」、または「[HTML 5 および Javascript の AdControl](adcontrol-in-html-5-and-javascript.md)」をご覧ください。
+
+  * アプリでスポット広告を表示する場合は、**InterstitialAd** オブジェクトの [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) メソッドにこれらの値を渡します。 詳しくは、「[スポット広告](interstitial-ads.md)」をご覧ください。
+
+**[広告で収入を増やす]** ページについて詳しくは、「[広告による収益獲得](../publish/monetize-with-ads.md)」をご覧ください。
 
 ## <a name="related-topics"></a>関連トピック
 
-[テスト モードの値](test-mode-values.md)
+* [テスト モードの値](test-mode-values.md)
+* [XAML および .NET の AdControl](adcontrol-in-xaml-and--net.md)
+* [HTML 5 および Javascript の AdControl](adcontrol-in-html-5-and-javascript.md)
+* [スポット広告](interstitial-ads.md)
 
 
  
 
  
-

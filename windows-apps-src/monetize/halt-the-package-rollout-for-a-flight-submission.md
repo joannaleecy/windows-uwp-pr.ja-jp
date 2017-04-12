@@ -1,25 +1,23 @@
 ---
 author: mcleanbyron
 description: "パッケージ フライトに関するパッケージのロールアウトを停止するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
-title: "Windows ストア申請 API を使用して、パッケージ フライトに関するパッケージのロールアウトを停止する"
+title: "フライトに関するロールアウトを停止する"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, Windowsストア申請 API, パッケージのロールアウト, フライトの申請, 停止"
+keywords: "Windows 10, UWP, Windows ストア申請 API, パッケージのロールアウト, フライトの申請, 停止"
 ms.assetid: f8ee0687-a421-48e7-a6eb-3fd5633c352b
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: ad63a543027ca0a1927eb72c1a7a227788770998
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 804e447f5b650a986580752fcba2a29014560e98
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="halt-the-rollout-for-a-flight"></a>フライトに関するロールアウトを停止する
 
-# <a name="halt-the-package-rollout-for-a-package-flight-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用して、パッケージ フライトに関するパッケージのロールアウトを停止する
+パッケージ フライトの申請に関する[ロールアウトを停止する](../publish/gradual-package-rollout.md#completing-the-rollout)には、Windows ストア申請 API に含まれる以下のメソッドを使用します。 Windows ストア申請 API を使ったパッケージ フライトの申請の作成プロセスについて詳しくは、「[パッケージ フライトの申請の管理](manage-flight-submissions.md)」をご覧ください。
 
-
-パッケージ フライトの申請に関する[パッケージのロールアウトを停止する](../publish/gradual-package-rollout.md#completing-the-rollout)には、Windows ストア申請 API に含まれる以下のメソッドを使用します。 Windows ストア申請 API を使ったパッケージ フライトの申請の作成プロセスについて詳しくは、「[パッケージ フライトの申請の管理](manage-flight-submissions.md)」をご覧ください。
+>**注**&nbsp;&nbsp;パッケージ フライトの申請に関するロールアウトを停止してから、[新しいパッケージ フライトの申請を作成する](create-a-flight-submission.md)場合、新しい申請は停止した申請を複製したものになります。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -81,7 +79,7 @@ Authorization: Bearer <your access token>
 ```json
 {
     "isPackageRollout": true,
-    "packageRolloutPercentage": 0,
+    "packageRolloutPercentage": 0.0,
     "packageRolloutStatus": "PackageRolloutStopped",
     "fallbackSubmissionId": "1212922684621243058"
 }
@@ -104,4 +102,3 @@ Authorization: Bearer <your access token>
 * [段階的なパッケージのロールアウト](../publish/gradual-package-rollout.md)
 * [Windows ストア申請 API を使用したパッケージ フライトの申請の管理](manage-flight-submissions.md)
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-

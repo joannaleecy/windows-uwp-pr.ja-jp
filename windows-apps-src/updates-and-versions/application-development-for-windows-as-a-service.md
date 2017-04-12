@@ -1,21 +1,18 @@
 ---
-title: "サービスとしての Windows アプリケーション開発 (Windows 10)"
-description: "アプリのリリースを分離し、特定の Windows ビルドからサポートします。"
-author: jdeckerMS
-ms.author: jdecker
+title: "サービスとしての Windows のアプリ開発"
+description: "アプリのリリースとサポートを特定の Windows ビルドから切り離します。"
+author: jken
+ms.author: jken
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: bdec771cae57c1bf2afd66feff9530a7a453c18d
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: deebfc4c80b09445c5e6ba55951e6f06054fbf42
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
 # <a name="application-development-for-windows-as-a-service"></a>サービスとしての Windows アプリケーション開発
 
 **適用対象**
@@ -35,7 +32,7 @@ Microsoft は Windows Insider に Insider プレビュー ビルドをリリー�
 
 **品質更新プログラム** セキュリティの問題解決やその他の重要なバグ修正を提供します。 品質更新プログラムは、現在サポートされている個々の機能を改善するために、毎月 1 回以上の間隔で提供されます。 Microsoft は、Update Tuesday (Patch Tuesday とも呼ばれます) の品質更新プログラムの公開を継続します。 また、Microsoft はユーザーのニーズへの対応が必要なとき、Update Tuesday のプロセス以外で Windows 10 向けの追加の品質更新プログラムを公開することがあります。
 
-Windows 10 の開発時、ユーザーが求める機能やエクスペリエンスを Microsoft がこれまでより迅速に提供できるように、Windows 製品のエンジニアリングおよびリリース サイクルを合理化しました。 また、機能更新プログラムと品質更新プログラムを配信およびインストールするための新しい手段を開発しました。これにより、展開および継続的な管理が簡略化され、最新の Windows の機能とエクスペリエンスによって最新の環境に保たれる従業員の基盤が広がり、総保有コストが削減されます。 それに伴い、Current Branch (CB)、Current Branch for Business (CBB)、および Long-Term Servicing Branch (LTSB) と呼ばれる新しいサービス オプションを実装しました。これらは、エンタープライズ環境で以前より多くのデバイスをより新しい状態に保つための実際的なソリューションを提供します。
+Windows10 の開発時、ユーザーが求める機能やエクスペリエンスを Microsoft がこれまでより迅速に提供できるように、Windows 製品のエンジニアリングおよびリリース サイクルを合理化しました。 また、機能更新プログラムと品質更新プログラムを配信およびインストールするための新しい手段を開発しました。これにより、展開および継続的な管理が簡略化され、最新の Windows の機能とエクスペリエンスによって最新の環境に保たれる従業員の基盤が広がり、総保有コストが削減されます。 それに伴い、Current Branch (CB)、Current Branch for Business (CBB)、および Long-Term Servicing Branch (LTSB) と呼ばれる新しいサービス オプションを実装しました。これらは、エンタープライズ環境で以前より多くのデバイスをより新しい状態に保つための実際的なソリューションを提供します。
 
 次の表は、さまざまなサービス ブランチと、各ブランチの重要な特性を示しています。
 
@@ -93,7 +90,7 @@ Windows 10 で OS のバージョンがインクリメントされています�
 -   アプリが特定の API 機能に依存している場合は、正しい API バージョンをターゲットにしてください。
 -   APISet または別のパブリック API を使用して変更を検出し、そのバージョンは機能や修正プログラムのプロキシとして使用しないでください。 仕様変更があり、しかも適切なチェックが公開されていない場合、それはバグです。
 -   アプリがその他の方法 (レジストリ、ファイルのバージョン、オフセット、カーネル モード、ドライバーなどの方法) でバージョン チェックを行わないことを確認します。 アプリでどうしてもバージョンを確認する必要がある場合は、メジャー番号、マイナー番号、およびビルド番号を返す GetVersion API を使用します。
--   [GetVersion](http://go.microsoft.com/fwlink/?LinkID=780555) API を使用している場合は、この API の動作が Windows 8.1 以降に変更されていることにご注意ください。
+-   [GetVersion](http://go.microsoft.com/fwlink/?LinkID=780555) API を使用している場合は、この API の動作が Windows8.1 以降に変更されていることにご注意ください。
 
 マルウェア対策やファイアウォール アプリなどのアプリを所有している場合は、通常のフィードバックのチャンネルを通じて、または Windows Insider プログラムから対応してください。
 
@@ -164,4 +161,3 @@ Windows Insider に登録する前に、参加するユーザーについて次�
 
 ## <a name="related-topics"></a>関連トピック
 [更新プログラムおよびアップグレードに関する Windows 10 のサービス オプション](https://technet.microsoft.com/itpro/windows/manage/introduction-to-windows-10-servicing)
-

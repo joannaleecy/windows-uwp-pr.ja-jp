@@ -5,12 +5,10 @@ title: "UWP アプリでの位置変更アニメーション"
 ms.assetid: 25D1EE31-5C25-4F21-B34C-FBD8FB1C8FFF
 label: Motion--Reposition
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
 ms.openlocfilehash: 912c96bb11f1ad5ba743c74ba6a4ca7f029bcbbb
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="reposition-animations"></a>位置変更アニメーション
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -43,11 +41,5 @@ ms.openlocfilehash: 912c96bb11f1ad5ba743c74ba6a4ca7f029bcbbb
  
 
 
-
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

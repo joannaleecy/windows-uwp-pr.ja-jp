@@ -9,16 +9,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, アプリ, インストール, インストール, レポート, 分析"
 ms.assetid: 46c08fd2-00bd-4be5-b29f-01a3b5fea4c2
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 9e4dec61e275443db42b50ef9a231b5b3c46ffe4
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 7912775e17a70c1d6fe9810c780017dcfa2db60e
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
 # <a name="installs-report"></a>インストール レポート
 
-Windows デベロッパー センター ダッシュボードの**インストール** レポートでは、ユーザーがアプリを Windows 10 デバイスに正常にインストールした回数を確認できます。 このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md)してオフラインで表示することもできます。
+Windows デベロッパー センター ダッシュボードの**インストール** レポートでは、ユーザーがアプリを Windows 10 デバイスに正常にインストールした回数を確認できます。 このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md)してオフラインで表示することもできます。 または、[Windows ストア分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) で [アプリのインストール数の取得](../monetize/get-app-installs.md)メソッドを使って、プログラムでこのデータを取得できます。
 
 
 ## <a name="apply-filters"></a>フィルターの適用
@@ -65,4 +62,3 @@ Windows デベロッパー センター ダッシュボードの**インスト�
  
 
  
-

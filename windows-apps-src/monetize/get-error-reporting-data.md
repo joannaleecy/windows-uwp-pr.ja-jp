@@ -2,23 +2,20 @@
 author: mcleanbyron
 ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: "特定の日付範囲などのオプション フィルターを使って集計エラー報告データを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。"
-title: "エラー報告データの取得"
+title: "アプリのエラー報告データの取得"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ストア サービス, Windows ストア分析 API, エラー"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0d99318a2a8deba78503163c76a425c132e7de01
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: dc5c4092368c0b395e42be122a9e0e7feec8f03e
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
+# <a name="get-error-reporting-data-for-your-app"></a>アプリのエラー報告データの取得
 
-# <a name="get-error-reporting-data"></a>エラー報告データの取得
-
-特定の日付範囲などのオプション フィルターを使って JSON 形式のアプリの集計エラー報告データを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。 この情報は、Windows デベロッパー センター ダッシュボードの[状態レポート](../publish/health-report.md)の **[エラー]** セクションでも確認できます。
+特定の日付範囲などのオプション フィルターを使ってアプリの集計エラー報告データを JSON 形式で取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。 この情報は、Windows デベロッパー センター ダッシュボードの[状態レポート](../publish/health-report.md)の **[エラー]** セクションでも確認できます。
 
 追加のエラー情報を取得するには、「[アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)」と「[アプリのエラーに関するスタック トレースの取得](get-the-stack-trace-for-an-error-in-your-app.md)」のメソッドを使います。
 
@@ -45,7 +42,7 @@ ms.lasthandoff: 02/07/2017
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
 <span/> 
 
@@ -176,4 +173,3 @@ Authorization: Bearer <your access token>
 * [アドオンの入手数の取得](get-in-app-acquisitions.md)
 * [アプリの評価の取得](get-app-ratings.md)
 * [アプリのレビューの取得](get-app-reviews.md)
-

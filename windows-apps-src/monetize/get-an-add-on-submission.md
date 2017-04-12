@@ -1,24 +1,21 @@
 ---
 author: mcleanbyron
 ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
-description: "既存のアドオンの申請のデータを取得するには、Windows ストア申請 API 内の以下のメソッドを使用します。"
-title: "Windows ストア申請 API を使用したアドオン申請の取得"
+description: "既存のアドオンの申請に関するデータを取得するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "アドオンの申請の取得"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア申請 API, アドオンの申請, アプリ内製品, IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
-ms.openlocfilehash: 2f6211c1ec399c5b6234ee4181dd319130c606b4
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 21bed5bd2b0c3b4e1fb2224cce9f6e3c9a2fd6b4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="get-an-add-on-submission"></a>アドオンの申請の取得
 
-# <a name="get-an-add-on-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアドオン申請の取得
-
-既存のアドオン (アプリ内製品 (IAP) とも呼ばれます) 申請のデータを取得するには、Windows ストア申請 API 内のこのメソッドを使います。 Windows ストア申請 API を使ったアドオンの申請の作成プロセスについて詳しくは、「[アドオンの申請の管理](manage-add-on-submissions.md)」をご覧ください。
+既存のアドオン (アプリ内製品または IAP とも呼ばれます) の申請に関するデータを取得するには、Windows ストア申請 API に含まれる以下のメソッドを使います。 Windows ストア申請 API を使ったアドオンの申請の作成プロセスについて詳しくは、「[アドオンの申請の管理](manage-add-on-submissions.md)」をご覧ください。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -108,7 +105,7 @@ Authorization: Bearer <your access token>
     },
     "sales": [],
     "priceId": "Free",
-    "isAdvancedPricingModel": "true"
+    "isAdvancedPricingModel": true
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
   "targetPublishMode": "Immediate",
@@ -159,4 +156,3 @@ Authorization: Bearer <your access token>
 * [アドオンの申請の更新](update-an-add-on-submission.md)
 * [アドオンの申請の削除](delete-an-add-on-submission.md)
 * [アドオンの申請の状態の取得](get-status-for-an-add-on-submission.md)
-

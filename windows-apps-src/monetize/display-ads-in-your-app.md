@@ -9,24 +9,25 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Advertising, バナー、スポット広告"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b6343d8a011a3e62a3b714c7dab280c9d9a8f81d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ceae17d34ba400876f912ba9932d76f59d773e63
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
 # <a name="display-ads-in-your-app"></a>アプリでの広告の表示
 
 
 ユニバーサル Windows プラットフォーム (UWP) と Windows ストアは、アプリに広告を表示して収益を得るためのいくつかの方法を提供します。
 
-## <a name="display-banner-and-video-interstitial-ads-using-the-microsoft-advertising-libraries"></a>Microsoft Advertising ライブラリを使用したバナーおよびビデオのスポット広告の表示
+## <a name="display-banner-and-interstitial-ads-using-the-microsoft-advertising-libraries"></a>Microsoft Advertising ライブラリを使用したバナーおよびスポット広告の表示
 
-UWP アプリと Windows 8.1 および Windows Phone 8.x 用のアプリに、バナーやビデオのスポット広告を含めることにより、収益を増やすことができます。 広告は、PC、タブレット、電話用の Windows アプリに表示されます。 Windows デベロッパー センターのダッシュボードの [広告パフォーマンス レポート](../publish/advertising-performance-report.md) を使って、広告のパフォーマンスをリアルタイムで監視できます。
+バナーやスポット広告をアプリに組み込むと、アプリでより多くの収益を得ることができます。
 
-アプリにこれらの広告を含めるには、[Microsoft Store Services SDK](http://aka.ms/store-em-sdk) (UWP アプリ 用) と [Windows および Windows Phone 8.x 用の Microsoft Advertising SDK](http://aka.ms/store-8-sdk) (Windows 8.1とWindows Phone 8.x アプリ用) で配布されている、Advertising ライブラリの **AdControl** と** InterstitialAd** コントロールを使用します。
+* *バナー広告*は、アプリ内のページの一部分 (通常はアプリの上部または下部) を利用する小さな広告です。
+* *スポット広告*は、通常、強制的にユーザーにビデオを視聴させたり、アプリやゲームを続行するために広告をクリックスルーさせたりする、全画面表示の広告です。 UWP アプリ用にサポートしているスポット広告には、ビデオおよびバナーの 2 種類があります。
 
+アプリにこれらの広告を組み込むには、[Microsoft Store Services SDK](http://aka.ms/store-em-sdk) (UWP アプリ向け) と [Windows および Windows Phone 8.x 用の Microsoft Advertising SDK](http://aka.ms/store-8-sdk) (Windows 8.1 アプリとWindows Phone 8.x アプリ向け) で配布されている、Advertising ライブラリの **AdControl** コントロールと** InterstitialAd** コントロールを使用します。
+
+Windows デベロッパー センターのダッシュボードの [広告パフォーマンス レポート](../publish/advertising-performance-report.md) を使って、広告のパフォーマンスをリアルタイムで監視できます。
 
 次のトピックでは、Windows Advertising ライブラリに関連する一般的なタスクに関する情報を提供します。
 
@@ -47,9 +48,10 @@ UWP アプリと Windows 8.1 および Windows Phone 8.x 用のアプリに、�
 
 ## <a name="use-ad-mediation-for-banner-ads-windows-81-and-windows-phone-8x"></a>バナー広告での広告仲介の使用 (Windows 8.1 と Windows Phone 8.x)
 
-Windows 8.1 および Windows Phone 8.x 用アプリで **AdMediatorControl** クラスを使うことで、複数の広告ネットワークからバナー広告を表示して広告の収益を最適化できます。 このコントロールをアプリに追加した後に、Windows デベロッパー センター ダッシュボードで広告仲介の設定を構成すると、選択した広告ネットワークからのバナー広告要求の仲介が行われます。 詳しくは、「[広告仲介を追加して広告収益を最大限に高める](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx)」をご覧ください。
+Windows 8.1 アプリおよび Windows Phone 8.x アプリでは、**AdMediatorControl** クラスを使うことで、複数の広告ネットワークからバナー広告を表示して広告の収益を最適化できます。 このコントロールをアプリに追加した後に、Windows デベロッパー センター ダッシュボードで広告仲介の設定を構成すると、選択した広告ネットワークからのバナー広告要求の仲介が行われます。 詳しくは、「[広告仲介を追加して広告収益を最大限に高める](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx)」をご覧ください。
 
->**注**&nbsp;&nbsp;**AdMediatorControl** クラスを使用した広告の仲介は、Windows 10 用の UWP アプリでは現在サポートされていません。 * サーバー側の広告仲介は、UWP アプリ で間もなく利用可能になる予定です。この場合、バナー広告 (**AdControl**) とビデオ スポット広告 (**InterstitialAd**) には同じ API が使用されます。 UWP アプリ での **AdMediatorControl** から **AdControl** への移行に関するガイダンスについては、「[UWP アプリでAdControlにAdMediatorControlから移行](migrate-from-admediatorcontrol-to-adcontrol.md)」をご覧ください。
+> [!NOTE]
+> **AdMediatorControl** クラスを使用した広告仲介は、Windows 10 用の UWP アプリでは現在サポートされていません。 サーバー側の広告仲介は、UWP アプリで間もなく利用可能になる予定です。この場合、バナー広告 (**AdControl**) とスポット広告 (**InterstitialAd**) には同じ API が使用されます。 UWP アプリ での **AdMediatorControl** から **AdControl** への移行に関するガイダンスについては、「[UWP アプリ用 AdMediatorControl から AdControl への移行](migrate-from-admediatorcontrol-to-adcontrol.md)」をご覧ください。
 
 <span id="silverlight_support"/>
 ## <a name="advertising-support-for-windows-phone-8x-silverlight-projects"></a>Windows Phone 8.x Silverlight プロジェクト用の広告のサポート
@@ -66,4 +68,3 @@ Windows Phone 8.x Silverlight プロジェクトでのいくつかの開発者�
 * [Microsoft Store Services SDK](microsoft-store-services-sdk.md)
 * [広告によるアプリの収益の獲得](http://go.microsoft.com/fwlink/p/?LinkId=699559)
 * [広告パフォーマンス レポート](../publish/advertising-performance-report.md)
-

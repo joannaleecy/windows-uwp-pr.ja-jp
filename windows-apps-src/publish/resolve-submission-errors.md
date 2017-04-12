@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4b97cb009078039582bfcff6cdaa678f1dd9b979
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b72b5593f4266a015b14e2b61a70c87ce199cdfd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="resolve-submission-errors"></a>申請エラーの解決
 
 ストアにアプリを提出した後にエラーが発生した場合、「[認定プロセス](the-app-certification-process.md)」を続行するためにそれを解決する必要があります。 エラー メッセージには、どのような問題があるのか、問題を修正するために何をする必要があるのかが示されます。 以下に、これらのエラーの解決に役立つ追加情報をいくつか示します。
@@ -52,7 +49,6 @@ UWP アプリを提出する場合は、パッケージ ファイルがストア
  
 
  
-
 
 
 

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a4ee1fd29b276958ed6a18b4eadcd89d5ea914b6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 37da1d6385bf18fcf44f6425b843715e1a462379
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="move-from-windows-runtime-8x-to-uwp"></a>Windows ランタイム 8.x から UWP への移行
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -63,10 +60,6 @@ ms.lasthandoff: 02/07/2017
 
 移植前または移植中に、同様の目的を持つコードがレイヤー内に集められ、随意に散在しないように、アプリがリファクタリングによって向上するかどうかを考慮します。 前述したように、アプリをレイヤーにファクタリングすることで、アプリの適合性、テスト、以降の読み取りと維持が容易になります。 Model-View-ViewModel ([MVVM](http://msdn.microsoft.com/magazine/dd419663.aspx)) パターンに従うと、機能をより再利用可能にすることができます。 このパターンにより、アプリのデータ部、ビジネス部、UI 部の相互の分離性が維持されます。 UI 内であっても、状態と動作を別個に維持し、視覚効果から個別にテスト可能にすることができます。 MVVM により、データおよびビジネス ロジックを 1 回記述すれば、UI に関係なく、それをすべてのデバイスで使うことができます。 各デバイスで、ビュー モデルとビュー部品の多くを再利用できる可能性があります。
 
-## <a name="if-you-have-a-microsoft-visual-studio-2015-rc-project"></a>Microsoft Visual Studio 2015 RC プロジェクトがある場合
-
-Microsoft Visual Studio 2015 RC で作成した Windows 10 プロジェクトがある場合は、「[UWP Microsoft Visual Studio 2015 RC プロジェクトを RTM に更新する](update-your-visual-studio-2015-rc-project-to-rtm.md)」をご覧ください。
- 
 | トピック | 説明 |
 |-------|-------------|
 | [プロジェクトの移植](w8x-to-uwp-porting-to-a-uwp-project.md) | 移植プロセスを開始するとき、2 つの方法から選ぶことができます。 1 つは、既にあるプロジェクト ファイル (アプリ パッケージ マニフェストなど) のコピーを編集する方法です。この方法については、[アプリをユニバーサル Windows プラットフォーム (UWP) へ移行する](https://msdn.microsoft.com/library/mt148501.aspx)に記載されているプロジェクト ファイルの更新に関する説明をご覧ください。 もう 1 つの方法は、Visual Studio で新しい Windows 10 プロジェクトを作成し、お使いのファイルをそのプロジェクトにコピーする方法です。 |
@@ -83,5 +76,3 @@ Microsoft Visual Studio 2015 RC で作成した Windows 10 プロジェクトが
 * [Windows ランタイム リファレンス](https://msdn.microsoft.com/library/windows/apps/br211377)
 * [すべての Windows デバイスを対象としたユニバーサル Windows アプリの構築](http://go.microsoft.com/fwlink/p/?LinkID=397871)
 * [アプリの UX の設計](https://msdn.microsoft.com/library/windows/apps/hh767284)
-
-

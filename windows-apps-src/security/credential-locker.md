@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d72432aa5f9ccc40d4f822f5d76c1e09b606e33a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 86862ae7eb630515f45ca2a5705c325e235e9bc0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="credential-locker"></a>資格情報保管ボックス
 
 

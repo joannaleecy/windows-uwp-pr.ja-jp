@@ -1,25 +1,22 @@
 ---
 author: mcleanbyron
 ms.assetid: 8C63D33B-557D-436E-9DDA-11F7A5BFA2D7
-description: "既存のアドオンの申請を更新するには、Windows ストア申請 API のこのメソッドを使います。"
-title: "Windows ストア申請 API を使用したアドオンの申請の更新"
+description: "既存のアドオンの申請を更新するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "アドオンの申請の更新"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア申請 API, アドオンの申請, 更新, アプリ内製品, IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8b06973c7c6949851bf786b1fb37026eee4b5fad
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 867a8495d5dea50d5b362822955e7605eddf4bb9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="update-an-add-on-submission"></a>アドオンの申請の更新
 
-# <a name="update-an-add-on-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアドオンの申請の更新
 
-
-既存のアドオン (アプリ内製品 (IAP) とも呼ばれます) 申請を更新するには、Windows ストア申請 API 内のこのメソッドを使います。 このメソッドを使って申請を正常に更新した後は、インジェストと公開のために[申請をコミット](commit-an-add-on-submission.md)する必要があります。
+既存のアドオン (アプリ内製品または IAP とも呼ばれます) の申請を更新するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。 このメソッドを使って申請を正常に更新した後は、インジェストと公開のために[申請をコミット](commit-an-add-on-submission.md)する必要があります。
 
 このメソッドが Windows ストア申請 API を使ったアドオンの申請の作成プロセスにどのように適合するかについては、「[アドオンの申請の管理](manage-add-on-submissions.md)」をご覧ください。
 
@@ -213,4 +210,3 @@ Content-Type: application/json
 * [アドオンの申請のコミット](commit-an-add-on-submission.md)
 * [アドオンの申請の削除](delete-an-add-on-submission.md)
 * [アドオンの申請の状態の取得](get-status-for-an-add-on-submission.md)
-

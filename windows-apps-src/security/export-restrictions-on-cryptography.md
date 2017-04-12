@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 265f0f0d9db1a8ae53a8d6561e289f8e303e08b1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a2d2582150146ed8f7eb416e9d6e2c8f990ff818
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="export-restrictions-on-cryptography"></a>暗号化に関する輸出制限の順守
 
 
@@ -64,4 +61,3 @@ Windows ストアで認定されない原因となり得るような暗号化が
 アプリがこの一覧に含まれないタスクについて暗号化を呼び出す、サポートする、組み込む、または使う場合は、輸出規制品目番号 (ECCN) が必要です。
 
 ECCN を持っていない場合は、[ECCN についての質問とその回答が掲載された Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245646)をご覧ください。
-

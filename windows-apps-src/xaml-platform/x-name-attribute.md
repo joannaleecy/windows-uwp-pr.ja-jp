@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a80a5cdeae5adc2af59072400aa42428eac28431
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9fa472869ed3b81a9f688652a487b1b93986b777
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xname-attribute"></a>x:Name 属性
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
@@ -74,5 +71,4 @@ UWP XAML で使われる一部の型にも、**Name** という名前のプロ�
 ### <a name="xname-and-xkey"></a>x:Name と x:Key
 
 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 内の要素に属性として **x:Name** を適用すると、[x:Key 属性](x-key-attribute.md)の代わりとしての役割を果たします (**ResourceDictionary** 内のどの要素にも x:Key または x:Name 属性があるというのが規則です)。これは、[ストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/mt187354)によく見られます。 詳しくは、「[ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)」の各セクションをご覧ください。
-
 

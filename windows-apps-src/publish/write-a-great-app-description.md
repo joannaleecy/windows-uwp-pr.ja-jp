@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 632d18270a34a7d975aa8d7216e49769a3cd7b84
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 27848c7aef38999c37c8a2675783d243614f05e2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="write-a-great-app-description"></a>人の心をつかむアプリの説明を書く
 
 
@@ -40,7 +37,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: "サポートされている最新の Microsoft Advertising ライブラリを使用し、アプリで引き続きバナー広告を受信できるように、アプリを更新する方法について説明します。"
-title: "最新の Microsoft Advertising ライブラリを使用するようにアプリを更新する"
+title: "最新の Advertising ライブラリを使用するようにアプリを更新する"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,31 +9,32 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 広告, 宣伝, AdControl, AdMediatorControl, 移行"
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 3cdb1f41fda7bd4e4af1ce9e5f8fb4396da53f63
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 25435ebf314327db7288ac853819c90ebba35669
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="update-your-app-to-the-latest-advertising-libraries"></a>最新の Advertising ライブラリを使用するようにアプリを更新する
 
-# <a name="update-your-app-to-the-latest-microsoft-advertising-libraries"></a>最新の Microsoft Advertising ライブラリを使用するようにアプリを更新する
+Microsoft Advertising からバナー広告を表示するアプリで、2017 年 4 月 1 日以降も引き続きバナー広告を受信できるようにするには、次の SDK のいずれかから **AdControl** または **AdMediatorControl** を使用する必要があります。
 
-**AdControl** または **AdMediatorControl** を使ってアプリ内に Microsoft Advertising のバナー広告を表示する場合、次の SDK だけがサポートされます。
+  * [Microsoft Store Services SDK](http://aka.ms/store-services-sdk) (UWP アプリ向け)
+  * [Windows および Windows Phone 8.x 用 Microsoft Advertising SDK](http://aka.ms/store-8-sdk) (Windows 8.1 アプリおよび Windows Phone 8.x アプリ向け)
 
-* [Microsoft Store Services SDK](http://aka.ms/store-services-sdk) (UWP アプリ向け)
-* [Windows および Windows Phone 8.x 用 Microsoft Advertising SDK](http://aka.ms/store-8-sdk) (Windows 8.1 および Windows Phone 8.x アプリ向け)
+これらの SDK が提供されるまでは、Windows アプリと Windows Phone アプリ向けに、いくつかの古い Advertising SDK でこれらのコントロールがリリースされていました。 このような以前の Advertising SDK リリースはサポートされなくなりました。 2017 年 4 月 1 日以降、Microsoft では、以前の Advertising SDK リリースを使用しているアプリへのバナー広告の提供を停止する予定です。このバナー広告の提供停止は、警告を行うことなく、任意の時点で実施される可能性があります。
 
-これらの SDK が提供される以前には、Windows アプリと Windows Phone アプリ向けに、いくつかの古い広告 SDK がリリースされていました。 このような以前の広告 SDK リリースはサポートされなくなりました。 今後、以前の SDK を使っているアプリへのバナー広告の提供は停止される予定です。
+**AdControl** または **AdMediatorControl** を使用してバナーを表示するアプリ (ストアに公開済みまたは開発中) が既にある場合は、この記事の手順に従って、この変更によってアプリが影響を受けるかどうかを判断し、必要な場合はアプリの更新方法を確認してください。
 
-**AdControl** または **AdMediatorControl** を使ってバナー広告を表示する既存のアプリ (ストアに公開済みまたは開発中) がある場合、今後も引き続きアプリでバナー広告を受信するには、ターゲット プラットフォーム向けの最新の Advertising SDK を使うようにアプリの更新が必要になることがあります。 ここに記載されている手順に従って、この変更による影響をアプリが受けるかどうかを判断し、必要であればアプリの更新方法を確認してください。
+>**注**&nbsp;&nbsp;また 2017 年 4 月 1 日以降、複数のアプリで使用されているすべての広告ユニット向けのバナー広告の提供も停止する予定です。 この変更に対応するために、各広告ユニットは必ず 1 つのアプリだけで使用するようにしてください。
 
-この変更の影響を受けるアプリでは、最新の Advertising SDK を使うようにアプリを更新しないと、サポート対象外の広告 SDK リリースを使用しているアプリへのバナー広告の提供が停止されたときに、動作が次のように変更されます。
+## <a name="more-details-about-this-change"></a>この変更の詳細
+
+この変更に関する追加のコンテキストを提供できるように、Interactive Advertising Bureau (IAB) の [Mobile Rich-media Ad Interface Definitions (MRAID) 1.0 仕様](http://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf)を通じて HTML5 リッチ メディアを処理する機能を含む最小限の機能に対応していない、以前の Advertising SDK リリースのサポートが廃止されます。 多くの広告主様がこれらの機能を必要とされているため、Microsoft ではこの変更を行うことで、より魅力的なアプリのエコシステムを広告主様に提供し、開発者様の収益アップを図ります。
+
+この変更の影響を受けるアプリでは、ターゲット プラットフォームに対応した最新の Advertising SDK を使用するようにアプリを更新しないと、サポート対象外の Advertising SDK リリースを使用しているアプリへのバナー広告の提供が停止されたときに、動作が次のようになります。
 
 * アプリ内の **AdControl** コントロールや **AdMediatorControl** コントロールにバナー広告が提供されず、これらのコントロールから広告収入を得ることができなくなります。
 
 * アプリ内の **AdControl** または **AdMediatorControl** から新しい広告が要求されると、コントロールの **ErrorOccurred** イベントが発生し、イベント引数の **ErrorCode** プロパティに **NoAdAvailable** という値が設定されます。
-
-この変更に関する追加のコンテキストを提供するために、最小限の機能セットに対応していない以前の広告 SDK リリースはサポートされなくなりました。必要な機能には、Interactive Advertising Bureau (IAB) の [Mobile Rich-media Ad Interface Definitions (MRAID) 1.0 仕様](http://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf)を通じて HTML5 リッチ メディアを処理する機能などが含まれます。 多くの広告主様がこれらの機能を必要とされているため、Microsoft ではこの変更を行うことで、より魅力的なアプリのエコシステムを広告主様に提供し、開発者様の収益アップを図ります。
 
 問題が発生した場合やサポートが必要な場合は、[サポートにお問い合わせください](http://go.microsoft.com/fwlink/?LinkId=393643)。
 
@@ -259,4 +260,3 @@ ms.lasthandoff: 02/08/2017
 
 
  
-

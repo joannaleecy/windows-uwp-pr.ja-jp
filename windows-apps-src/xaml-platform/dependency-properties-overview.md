@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: eaf52a930b5419f0c2a53aa14c9dc0fba5b404f6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e46a092298ce183212384155492ea73a79ebe86f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="dependency-properties-overview"></a>依存関係プロパティの概要
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -56,7 +53,7 @@ ms.lasthandoff: 02/07/2017
 |------|-------------|
 | 依存関係プロパティ | [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 識別子上に存在するプロパティ (下記参照)。 この識別子は通常、定義する **DependencyObject** 派生クラスの静的メンバーとして使用できます。 |
 | 依存関係プロパティ識別子 | プロパティを識別する定数値です。通常はパブリックで、読み取り専用です。 |
-| プロパティ ラッパー | Windows ランタイム プロパティの呼び出し可能な **get** 実装と **set** 実装。 または、元の定義の言語固有のプロジェクション。  **get** プロパティ ラッパーの実装は [**GetValue**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobject.getvalue.aspx) を呼び出して、該当する依存関係プロパティの識別子を渡します。 | 
+| プロパティ ラッパー | Windows ランタイム プロパティの呼び出し可能な **get** 実装と **set** 実装。 または、元の定義の言語固有のプロジェクション。  **get** プロパティ ラッパーの実装は [**GetValue**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.getvalue.aspx) を呼び出して、該当する依存関係プロパティの識別子を渡します。 | 
 
 プロパティ ラッパーは呼び出し元に対して便利なだけではありません。プロパティの Windows ランタイム定義を使用するプロセス、ツール、プロジェクションに対する依存関係プロパティの公開も行います。
 
@@ -186,7 +183,7 @@ XAML ではなく、コードを使ってバインドを確立することもで
 
 プロパティ変更動作は、依存関係プロパティという用語で "依存関係" という言葉の起源です。 他のプロパティの値によって影響を受ける可能性のあるプロパティで有効な値を維持することは、多くのフレームワークにおいて、開発上の難しい問題です。 Windows ランタイムのプロパティ システムでは、各依存関係プロパティでプロパティ値が変更されるたびに呼び出されるコールバックを指定できます。 このコールバックを使用して、一般的な同期方法で、関連プロパティ値を通知または変更できます。 多くの既存の依存関係プロパティに、プロパティ変更動作があります。 また、同様のコールバック動作をカスタム依存関係プロパティに追加し、独自のプロパティ変更コールバックを実装することもできます。 例については、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」をご覧ください。
 
-Windows 10 では、[ **RegisterPropertyChangedCallback** ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) メソッドが導入されています。 これによりアプリケーション コードは、[ **DependencyObject**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobject.aspx) のインスタンスで依存関係プロパティが変更された場合の変更通知を登録できます。
+Windows 10 では、[ **RegisterPropertyChangedCallback** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) メソッドが導入されています。 これによりアプリケーション コードは、[ **DependencyObject**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.aspx) のインスタンスで依存関係プロパティが変更された場合の変更通知を登録できます。
 
 ### <a name="default-value-and-clearvalue"></a>既定値と **ClearValue**
 
@@ -212,5 +209,4 @@ Windows 10 では、[ **RegisterPropertyChangedCallback** ](https://msdn.microso
 **依存関係プロパティに関連する API**
 * [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
 * [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)
-
 

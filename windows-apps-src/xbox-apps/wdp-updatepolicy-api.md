@@ -2,22 +2,20 @@
 author: payzer
 title: "Device Portal Xbox Developer 開発機更新ポリシー API リファレンス"
 description: "プログラムで本体の更新ポリシーを設定する方法について説明します。"
-translationtype: Human Translation
-ms.sourcegitcommit: 8f02e0c2f6fa30a3ac56945347c5bec253189bd8
 ms.openlocfilehash: f9313d3c8b93ba13074c547f1f63c9f3204f0f58
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 注: この API は、次の Developer Preview で予定されています。
 
-# システム更新ポリシー API リファレンス   
+# <a name="system-update-policy-api-reference"></a>システム更新ポリシー API リファレンス   
 この API を使うと、本体に適用されている更新ポリシーを確認し、新しい更新ポリシーに変更できます。
 
 重要: ほとんどの本体は、この API を呼び出そうとすると "アクセス拒否" 応答を受信します。 これは、更新ポリシーを変更できない開発用本体があるためです。
 
 この API は、製品版の本体ではなく、開発者モードの本体の更新ポリシーを変更します。
 
-## 本体の更新ポリシーを取得する
+## <a name="get-the-console-update-policy"></a>本体の更新ポリシーを取得する
 
 **要求**
 
@@ -58,7 +56,7 @@ HTTP 状態コード      | 説明
 4XX | エラー コード
 5XX | エラー コード
 
-## 本体のシステム更新ポリシーを設定する
+## <a name="set-a-consoles-system-update-policy"></a>本体のシステム更新ポリシーを設定する
 この API を使うと、本体のシステム更新グループのメンバーシップを切り替えることができます。
 
 注: 本体が属することのできるシステム更新グループは一度に 1 つだけです。
@@ -109,10 +107,4 @@ HTTP 状態コード      | 説明
 **利用可能なデバイス ファミリ**
 
 * Windows Xbox
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

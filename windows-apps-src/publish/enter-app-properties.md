@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 008c073844332aadbc17def774aae16f3ae01513
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 31385fe3edb9d9f38a4f444c84ef189faed49985
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="enter-app-properties"></a>アプリのプロパティの入力
 
 [アプリの申請プロセス](app-submissions.md)の **[アプリケーションのプロパティ]** ページでは、アプリのカテゴリを定義し、ハードウェアの基本設定や他の宣言を指定できます。 ここでは、このページのオプションと、この情報を入力するときに考慮する必要がある事項を順に説明します。
@@ -56,6 +53,5 @@ ms.lasthandoff: 02/07/2017
 また指定したハードウェアについての実行時のチェックをアプリにも追加することをお勧めします。これは、選択した機能がユーザーのデバイスにないことをストアが常に検出できるとは限らず、また、警告が表示されていてもユーザーはアプリをダウンロードできるためです。
 
 > **ヒント** メモリや DirectX レベルの最小要件を満たしていないデバイスに UWP アプリをまったくダウンロードできないようにするには、StoreManifest XML ファイルで最小要件を指定します。 詳しくは、「[StoreManifest のスキーマ (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335)」をご覧ください。
-
 
 

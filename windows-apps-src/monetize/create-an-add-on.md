@@ -1,27 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: 5BD650D2-AA26-4DE9-8243-374FDB7D932B
-description: "Windows ストア申請 API 内のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されいているアプリのアドオンを作成します。"
-title: "Windows ストア申請 API を使用したアドオンの作成"
+description: "Windows デベロッパー センター アカウントに登録されるアプリのアドオンを作成するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "アドオンの作成"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、Windows ストア申請 API、アドオンの作成、アプリ内製品、IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0492398872142aabd32d3a4d68d55b4e326f027e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 903bbaf0ad515dcf23c4248744b428876805082e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="create-an-add-on-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアドオンの作成
-
+# <a name="create-an-add-on"></a>アドオンの作成
 
 
 
-Windows ストア申請 API 内のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されているアプリのアドオン (アプリ内製品または IAP とも呼ばれます) を作成します。
+
+Windows デベロッパー センター アカウントに登録されているアプリのアドオン (アプリ内製品または IAP とも呼ばれます) を作成するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。
 
 >**注:**&nbsp;&nbsp;このメソッドは、申請なしでアドオンを作成します。 アドオンの申請を作成する方法については、「[アドオンの申請の管理](manage-add-on-submissions.md)」のメソッドをご覧ください。
 
@@ -32,7 +29,7 @@ Windows ストア申請 API 内のこのメソッドを使用して、Windows �
 * Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
 * このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア提出 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
+>**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
 ## <a name="request"></a>要求
 
@@ -49,7 +46,7 @@ Windows ストア申請 API 内のこのメソッドを使用して、Windows �
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
 <span/>
 
@@ -119,4 +116,3 @@ Content-Type: application/json
 * [すべてのアドオンの入手](get-all-add-ons.md)
 * [アドオンの入手](get-an-add-on.md)
 * [アドオンの削除](delete-an-add-on.md)
-

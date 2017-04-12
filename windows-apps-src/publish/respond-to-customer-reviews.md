@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 06be2dad7022a25e07a159bec7f1d007ff608ed3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7de4e53df32979d87a19b7d0556ef716b901687b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="respond-to-customer-reviews"></a>顧客のレビューに返信する
 
 
@@ -54,4 +51,3 @@ Microsoft は、返信が不適切であるという報告が非常に多い場�
 
 
 顧客の声を聞いて返信するのは第一歩に過ぎません。 彼らのフィードバックに対応することも重要です。 大幅な改善を行う場合は、アプリを更新するための[新しい申請を作成](app-submissions.md)して、ストアで自信を持ってお知らせしてください。
-

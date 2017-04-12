@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ストア サービス, Windows ストア分析 API, アプリの入手数"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9a716acb00b7a86429c444555c491b48cbc2c4b0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b6ffd8300871e06d8b93682bed8d42546d1b88fc
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="get-app-acquisitions"></a>アプリの入手数の取得
 
 
@@ -44,7 +41,7 @@ ms.lasthandoff: 02/07/2017
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
 <span/> 
 
@@ -88,7 +85,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="request-example"></a>要求の例
 
-アプリの入手データを取得するためのいくつかの要求の例を次に示します。 *applicationId* 値を、目的のアプリのストア ID に置き換えてください。
+アプリの入手データを取得するための要求の例を、いくつか次に示します。 *applicationId* 値を、目的のアプリのストア ID に置き換えてください。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0  HTTP/1.1
@@ -105,7 +102,7 @@ Authorization: Bearer <your access token>
 
 | 値      | 型   | 説明                  |
 |------------|--------|-------------------------------------------------------|
-| Value      | array  | 集計評価データが含まれるオブジェクトの配列です。 各オブジェクトのデータについて詳しくは、次の「[入手値](#acquisition-values)」セクションをご覧ください。                                                                                                                      |
+| Value      | array  | アプリに関する集計入手データが含まれるオブジェクトの配列です。 各オブジェクトのデータについて詳しくは、次の「[入手値](#acquisition-values)」セクションをご覧ください。                                                                                                                      |
 | @nextLink  | string | データの追加ページがある場合、この文字列には、データの次のページを要求するために使用できる URI が含まれます。 たとえば、要求の **top** パラメーターが 10000 に設定されたが、クエリの入手データに 10,000 を超える行が含まれている場合に、この値が返されます。 |
 | TotalCount | int    | クエリの結果データ内の行の総数です。                                                                                                                                                                                                                             |
 
@@ -167,4 +164,3 @@ Authorization: Bearer <your access token>
 * [エラー報告データの取得](get-error-reporting-data.md)
 * [アプリの評価の取得](get-app-ratings.md)
 * [アプリのレビューの取得](get-app-reviews.md)
-

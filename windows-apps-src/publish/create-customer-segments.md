@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 1c1aa77ee989344f5e09ddaeb864d5ddceb03660
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 2ba423d7f7624575e7cf743e9589d31a90d05295
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-customer-segments"></a>ユーザー セグメントを作成する
 
 プロモーションやエンゲージメントの目的で、ユーザー ベースのサブセットをターゲットに設定する場合があります。 これを行うには、Windows デベロッパー センターで、選択した統計上の条件や収益上の条件を満たす Windows 10 ユーザーを含む[ユーザー グループ](create-customer-groups.md) (*セグメント*とも呼ばれます) を作成します。
@@ -65,4 +62,3 @@ ms.lasthandoff: 02/08/2017
 
 - **[包含条件の定義]** セクションで、より多くのユーザーがセグメントに含まれるように、フィルター条件を調整します。
 - **[ユーザー グループ]** ページの **[非アクティブのセグメント]**] セクションで **[更新]** を選択して、現在セグメントに十分なユーザーが含まれているかどうかを確認します。 たとえば、最初にセグメントを作成した後で、セグメント条件を満たした多くのユーザーがアプリをダウンロードした場合などにこの方法が有効となる場合があります。
-

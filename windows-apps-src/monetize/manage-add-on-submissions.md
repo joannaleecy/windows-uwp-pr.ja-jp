@@ -1,24 +1,21 @@
 ---
 author: mcleanbyron
 ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
-description: "Windows デベロッパー センター アカウントに登録するアプリのアドオンの申請を管理するには、以下の Windows ストア申請 API のメソッドを使います。"
-title: "Windows ストア申請 API を使用したアドオンの申請の管理"
+description: "Windows デベロッパー センター アカウントに登録されているアプリのアドオンの申請を管理するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "アドオンの申請の管理"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア申請 API, アドオン, 申請, アプリ内製品, IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
-ms.openlocfilehash: 589946e159202c3ed5d13057642c808d5df4f738
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 7743faa9e2fda84d85468193ff46c87bab267a6c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="manage-add-on-submissions"></a>アドオンの申請の管理
 
-# <a name="manage-add-on-submissions-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアドオンの申請の管理
-
-Windows ストア申請 API には、アプリのアドオン (アプリ内製品 (IAP) とも呼ばれます) 申請を管理するために使用できるメソッドが用意されています。 Windows ストア申請 API の概要については、「[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。この API を使用するための前提条件などの情報があります。
+Windows ストア申請 API には、アプリのアドオン (アプリ内製品または IAP とも呼ばれます) 申請を管理するために使用できるメソッドが用意されています。 Windows ストア申請 API の概要については、「[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。この API を使用するための前提条件などの情報があります。
 
 >**注:**&nbsp;&nbsp;これらのメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 このアクセス許可は、開発者アカウントに対して段階的に有効になります。現時点では、すべてのアカウントでこのアクセス許可が有効になっているわけではありません。 以前のアクセス権を要求するには、デベロッパー センター ダッシュボードにログオンし、ダッシュ ボードの下部にある **[フィードバック]** をクリックします。その後、フィードバック領域で **[申請 API]** を選択し、要求を提出します。 自分のアカウントでこのアクセス許可が有効になると、メールが届きます。
 
@@ -198,7 +195,7 @@ Windows ストア申請 API には、アプリのアドオン (アプリ内製�
     },
     "sales": [],
     "priceId": "Free",
-    "isAdvancedPricingModel": "true"
+    "isAdvancedPricingModel": true
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
   "targetPublishMode": "Immediate",
@@ -379,4 +376,3 @@ Windows ストア申請 API には、アプリのアドオン (アプリ内製�
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [Windows ストア申請 API を使用したアドオンの管理](manage-add-ons.md)
 * [デベロッパー センター ダッシュボードからのアドオンの申請](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)
-

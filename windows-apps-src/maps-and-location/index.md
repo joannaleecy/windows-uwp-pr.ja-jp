@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 地図, 位置情報, マップ サービス"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6ab167cb032cffba11e7e90e3aefe91bd1c21d74
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 33cf0a7a69ff40434ecb46977e4a6f67ca2a07e4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="maps-and-location-overview"></a>地図と位置情報の概要
 
 
@@ -86,4 +83,3 @@ ms.lasthandoff: 02/07/2017
 * [個人データにアクセスするアプリの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/hh768223)
 * [Build 2015 のビデオ: Windows アプリでの電話、タブレット、PC で使用できるマップと位置情報の活用](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [UWP の交通情報アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-

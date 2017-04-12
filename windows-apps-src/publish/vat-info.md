@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a26cb43d230cd7dbb050254cceb70d3158c3af5d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c931b4d8d2241efb80a3a87ba4550a045ea3b675
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="vat-info"></a>VAT 情報
 
 
@@ -251,7 +248,6 @@ Microsoft では税務に関する助言を提供しておらず、次の情報�
  
 
  
-
 
 
 

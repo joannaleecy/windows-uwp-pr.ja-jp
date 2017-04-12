@@ -2,32 +2,34 @@
 author: mcleanbyron
 ms.assetid: dc632a4c-ce48-400b-8e6e-1dddbd13afff
 description: "プロモーション用の広告キャンペーンの配信ラインを管理するには、Windows ストア プロモーション API 内の以下のメソッドを使用します。"
-title: "広告キャンペーンの配信ラインの管理"
+title: "配信ラインの管理"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア プロモーション API, 広告キャンペーン"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 5f9ede6a2e645a644e4650f3af7e5476bd52dd53
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 419dbc2ef8de66b0cb8cf51b483174f5c086a092
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="manage-delivery-lines"></a>配信ラインの管理
 
-# <a name="manage-delivery-lines-for-ad-campaigns"></a>広告キャンペーンの配信ラインの管理
-
-1 つ以上の*配信ライン*を作成してインベントリを購入し、プロモーション用の広告キャンペーンの広告を配信するには、Windows ストア プロモーション API 内のこれらのメソッドを使用します。 配信ラインごとに、ターゲットと入札額を設定できます。また、予算と使用したいクリエイティブへのリンクを設定することで、支払い額を決定できます。
+1 つ以上の*配信ライン*を作成してインベントリを購入し、プロモーション用の広告キャンペーンの広告を配信するには、Windows ストア プロモーション API に含まれる以下のメソッドを使用します。 配信ラインごとに、ターゲットと入札額を設定できます。また、予算と使用したいクリエイティブへのリンクを設定することで、支払い額を決定できます。
 
 配信ラインと広告キャンペーン、対象プロファイル、クリエイティブ間の関係について詳しくは、「[Windows ストア サービスを使用した広告キャンペーンの実行](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api)」をご覧ください。
+
+>**注**&nbsp;&nbsp;この API を使用して広告キャンペーンの配信ラインを正しく作成するには、事前に、[デベロッパー センター ダッシュボードの **[アプリの宣伝]** ページを使用して、有料の広告キャンペーンを 1 つ作成する](../publish/create-an-ad-campaign-for-your-app.md)必要があります。また、このページで支払い方法を少なくとも 1 つ追加する必要があります。 これを行うと、この API を使用して、広告キャンペーンの請求可能な配信ラインを正しく作成することができます。 API を使用して作成した広告キャンペーンでは、ダッシュ ボードの **[アプリの宣伝]** ページで選んだ既定の支払い方法に対して自動的に請求が行われます。
 
 ## <a name="prerequisites"></a>前提条件
 
 これらのメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Windows ストア プロモーション API に関するすべての[前提条件](run-ad-campaigns-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* これらのメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
+
+  >**注**&nbsp;&nbsp;前提条件の一部として、[デベロッパー センター ダッシュボードで有料の広告キャンペーンを少なくとも 1 つ作成する](../publish/create-an-ad-campaign-for-your-app.md)必要があります。また、ダッシュボードで、広告キャンペーンの支払い方法を少なくとも 1 つ追加する必要があります。 この API を使用して作成した配信ラインでは、ダッシュ ボードの **[アプリの宣伝]** ページで選んだ既定の支払い方法に対して自動的に請求が行われます。
+
+* これらのメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
 
 ## <a name="request"></a>要求
 
@@ -160,4 +162,3 @@ Authorization: Bearer <your access token>
 * [広告キャンペーンの対象プロファイルの管理](manage-targeting-profiles-for-ad-campaigns.md)
 * [広告キャンペーンのクリエイティブの管理](manage-creatives-for-ad-campaigns.md)
 * [広告キャンペーンのパフォーマンス データの取得](get-ad-campaign-performance-data.md)
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ae120cedbf0ab42fcb091ba5b01b58e8796d6a4a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 97b19021745c8a9e7200262ad7103bd890813d64
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="troubleshooting-porting-windows-phone-silverlight-to-uwp"></a>Windows Phone Silverlight から UWP への移植に関するトラブルシューティング
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -55,7 +52,7 @@ XAML 解析例外は診断が難しい場合があります。特に、わかり
 | XAML パーサーまたはコンパイラで、エラー "_接続可能なプロパティ [...] が見つかりませんでした [...]_" または "_接続可能なメンバー [...] が不明です_" が発生します。 | これは、添付プロパティではなく、型によって発生します。この場合には、既に該当する型に対してエラーが発生しており、そのエラーを修正すれば、このエラーも解消されます。 直ちに発生する例としては、`phone:PhoneApplicationPage.Resources`、`phone:PhoneApplicationPage.DataContext` などが挙げられます。 | 
 |XAML のパーサーやコンパイラ、またはランタイム例外で、"_リソース '"&lt;リソースキー&gt;" を解決できませんでした_" というエラーが発生します。 | リソース キーは、ユニバーサル Windows プラットフォーム (UWP) アプリに適用されません。 同等の正しいリソースを探し、マークアップを更新します。 直ちに発生する例としては、`PhoneTextNormalStyle` などのシステム **TextBlock** スタイル キーが挙げられます。 |
 | C# コンパイラで、エラー "_型または名前空間名 '&lt;名前&gt;' が見つかりませんでした [...]_" または "_型または名前空間名 '&lt;名前&gt;' が名前空間 [...] に存在しませんでした_" または "_型または名前空間名 '&lt;名前&gt;' が現在のコンテキストに存在しません_" が発生します。 | これはおそらく、コンパイラで型に対する適切な UWP の名前空間がまだ認識されていないことを示します。 問題解決のために Visual Studio の **[解決]** コマンドを使うことができます。 <br/>API がユニバーサル デバイス ファミリと呼ばれる API のセットに含まれていない場合 (つまり、API が拡張 SDK で実装されている場合)、[拡張 SDK](wpsl-to-uwp-porting-to-a-uwp-project.md) を使います。<br/>移植がそれほど簡単ではない場合もあります。 直ちに発生する例としては、`DesignerProperties`、`BitmapImage` などが挙げられます。 | 
-|アプリが終了するデバイス上で実行している場合、または Visual Studio からの起動時に、エラー "Windows ストア アプリ […] をアクティブ化できません。 アクティブ化要求がエラー "Windows がターゲット アプリケーションと通信できませんでした" により失敗します。 これは通常、ターゲット アプリケーションのプロセスが中止したことを示します。 […]” が表示されます。 | この問題は、初期化時に独自のページ、またはバインド プロパティ (またはその他の型) で実行する命令型コードにあることが考えられます。 また、アプリの終了時に表示される XAML ファイルの解析でエラーが発生した可能性があります (Visual Studio から起動した場合は、これは起動ページになります)。 無効なリソース キーを検索するか、このトピックの「[問題の検出](#tracking-down-issues)」セクションのガイダンスを実行します。|
+|アプリが終了するデバイス上で実行している場合、または Visual Studio からの起動時に、エラー "Windows ストア アプリ […] をアクティブ化できません。 アクティブ化要求がエラー "Windows がターゲット アプリケーションと通信できませんでした" により失敗します。 これは通常、ターゲット アプリケーションのプロセスが中止したことを示します。 […]”. | この問題は、初期化時に独自のページ、またはバインド プロパティ (またはその他の型) で実行する命令型コードにあることが考えられます。 また、アプリの終了時に表示される XAML ファイルの解析でエラーが発生した可能性があります (Visual Studio から起動した場合は、これは起動ページになります)。 無効なリソース キーを検索するか、このトピックの「[問題の検出](#tracking-down-issues)」セクションのガイダンスを実行します。|
 | _XamlCompiler エラー WMC0055: テキスト値 '&lt;ストリーム ジオメトリ&gt;' を 'RectangleGeometry' 型の 'Clip' プロパティに割り当てることができません_ | UWP では、[Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) と XAML C++ UWP アプリの型を使います。 |
 | _XamlCompiler エラー WMC0001: XML 名前空間 [...] で 'RadialGradientBrush' 型が不明です_ | UWP には、**RadialGradientBrush** 型がありません。 マークアップから **RadialGradientBrush** を削除し、[Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) と XAML C++ UWP アプリのその他の型を使います。 |
 | _XamlCompiler エラー WMC0011: 要素 '&lt;UIElement 型&gt;' のメンバー 'OpacityMask' が不明です_ | UWP の  [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) と XAML C++ UWP アプリを使います。 |
@@ -65,5 +62,4 @@ XAML 解析例外は診断が難しい場合があります。特に、わかり
 | InitializeComponent が xaml.cs ファイルで呼び出されると、System.InvalidCastException がスローされます。 | これは、同じ xaml.cs ファイルを共有している xaml ファイルが複数あり (少なくとも 1 つは MRT 修飾されたファイル)、要素が持つ x:Name 属性が 2 つの xaml ファイル間で整合性がとれていない場合に発生することがあります。 両方の xaml ファイルで同じ要素に同じ名前を追加してみるか、どちらの名前も省略してください。 | 
 
 次のトピックは、「[XAML と UI の移植](wpsl-to-uwp-porting-xaml-and-ui.md)」です。
-
 

@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 6d1ffcc1-b3c6-4e2f-8fbe-d243b20a6272
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 3d7c8f1ab468e4797096e83fbbf256f46b494439
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: d5ef4c90aa9bb66ff6589d3dbe7aa6491fbf80a5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="manage-add-ons-in-bulk"></a>アドオンの一括管理
 
 > **重要** 現在この機能は、[デベロッパー センター Insider Program](dev-center-insider-program.md) に参加している開発者アカウントでのみ利用できます。 すべての開発者が利用できるようになるまでに、この機能の実装は変更される可能性があります。 この暫定版ドキュメントでは、この機能のしくみに関する基本的な情報について説明します。
@@ -56,5 +53,4 @@ ms.lasthandoff: 02/08/2017
 新しいアドオンを提出するには、新しい行を追加して、新しいアドオンに関する情報を入力します。 必要な情報はすべて必ず入力してください。 
 
 すべての変更を行ったら、.csv ファイルを保存し (同じファイル名を使用)、指定されたフィールドにファイルをドラッグして (または **[ファイルの参照]** をクリックして)、ファイルをアップロードします。 変更の概要が表示されます。提出する前に修正する必要があるエラーがある場合は、エラーも表示されます。 情報が正しいことを確認して、**[ストアに提出]** をクリックします。 各アドオンに対して、提供された情報を使用して、申請プロセスが開始されます。
-
 

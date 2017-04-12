@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 838b70d5925627710875a498d0cc91efb3e0adf7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: dd1d0f01968a71dc2120316eb2c33baf0c9d0841
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="health-report"></a>状態レポート
 
 
@@ -63,4 +60,3 @@ Windows デベロッパー センター ダッシュボードの**状態**レポ
  
 
  
-

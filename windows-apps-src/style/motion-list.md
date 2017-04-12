@@ -5,12 +5,10 @@ title: "UWP アプリでの追加と削除のアニメーション"
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
 ms.openlocfilehash: e1fc86e5110da8926194e20947552337216d4a72
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="add-and-delete-animations"></a>追加と削除のアニメーション
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -49,11 +47,5 @@ ms.openlocfilehash: e1fc86e5110da8926194e20947552337216d4a72
  
 
 
-
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

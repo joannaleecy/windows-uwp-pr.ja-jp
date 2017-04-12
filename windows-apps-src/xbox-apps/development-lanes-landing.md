@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 9ac96766-df89-4403-89f2-200549436921
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: e82eacae06141c873690cccde04c3d871ae9d0eb
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 1f2306469468bf1990534d27ca633bba3a582a33
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="bringing-existing-games-to-xbox"></a>既存のゲームの Xbox への移行
 
 
@@ -33,4 +30,3 @@ ms.lasthandoff: 02/08/2017
 ## <a name="see-also"></a>関連項目
 
 - [Xbox One の UWP](index.md)
-

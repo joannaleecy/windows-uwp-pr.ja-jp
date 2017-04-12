@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "アプリで Microsoft Advertising の広告仲介を使ったり、バナーやスポット広告ビデオを表示したりする場合は、[収益化]、[広告で収入を増やす] ページの順に選択して、広告の使用を管理します。"
+Description: "アプリで Microsoft Advertising の広告仲介を使ったり、バナーやスポット広告を表示したりする場合は、[収益化]、[広告で収入を増やす] ページの順に選択して、広告の使用を管理します。"
 title: "広告による収益獲得"
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e82431c9b39999af9fe19ac147a6c031b9a3edc3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6418fe1b47ac89e8decb135aa9a2108b3b95ef82
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="monetize-with-ads"></a>広告による収益獲得
 
 
-アプリで **AdMediatorControl**、**AdControl**、または **InterstitialAd** コントロールを使用してバナー広告またはビデオのスポット広告を表示する場合は、**[収益化]** &gt; **[広告で収入を増やす]** ページで広告の使用を管理します。
+アプリで **AdMediatorControl**、**AdControl**、または **InterstitialAd** コントロールを使用してバナー広告またはスポット広告を表示する場合は、**[収益化]**、**[広告で収入を増やす]** ページの順に選択して、広告の使用を管理します。
 
 ## <a name="windows-ad-mediation"></a>Windows 広告仲介
 
@@ -52,26 +49,25 @@ Microsoft アフィリエイト広告をアプリに表示する場合は、こ�
 
 このセクションを使って、Microsoft Advertising 広告ユニットを作成できます。 次のシナリオでのみ、広告ユニットを作成する必要があります。
 
--   アプリで [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) オブジェクトを使って、Microsoft Advertising のバナー広告を表示する。
--   アプリで [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) オブジェクトを使って、Microsoft Advertising のスポット広告ビデオを表示する。
+-   アプリで [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) オブジェクトを使ってバナー広告を表示する。
+-   アプリで [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx)オブジェクトを使ってスポット広告を表示する。
 
 これらのシナリオの広告ユニットを作成するには
 
 1.  広告ユニットに名前を付けます。
-2.  広告ユニットの種類 (**[バナー]** または **[ビデオ (スポット)]**) を選びます。
+2.  広告ユニットの種類 (**[バナー]**、**[ビデオ (スポット)]**、または **[バナー (スポット)]**) を選択します。
 3.  デバイスの種類 (**[モバイル]** または **[PC/タブレット]**) を選びます。
 4.  **[広告ユニットを作成]** をクリックします。
 
 広告ユニットは、このセクションの下部にある表に表示されます。 広告ユニットごとに**アプリケーション ID** と**広告ユニット ID** が表示されます。 アプリに広告を表示するには、コードでこれらの値を使う必要があります。
 
--   アプリにバナー広告を表示する場合は、これらの値を [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) オブジェクトの [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) プロパティと [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) プロパティに割り当てる必要があります。
--   アプリでスポット広告ビデオを表示する場合は、[InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) オブジェクトの [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) メソッドにこれらの値を渡します。
+-   アプリにバナー広告を表示する場合は、これらの値を [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) オブジェクトの [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) プロパティと [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) プロパティに割り当てる必要があります。 詳しくは、「[XAML および .NET の AdControl](../monetize/adcontrol-in-xaml-and--net.md)」、または「[HTML5 および JavaScript の AdControl](../monetize/adcontrol-in-html-5-and-javascript.md)」をご覧ください。
+-   アプリでスポット広告を表示する場合は、[InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) オブジェクトの [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) メソッドにこれらの値を渡します。 詳しくは、「[スポット広告](../monetize/interstitial-ads.md)」をご覧ください。
 
-> **注**  アプリで広告仲介を使って、Microsoft Advertising からバナー広告を表示する (つまり、**AdMediatorControl** オブジェクトを使う) 場合は、広告ユニットを要求する必要はありません。 このシナリオでは、Microsoft Advertising 広告ユニットが自動的に生成されます。
-
- 
+> **注**  アプリで **AdMediatorControl** オブジェクトを使って、Microsoft Advertising からバナー広告を表示する場合は、広告ユニットを要求する必要はありません。 このシナリオでは、Microsoft Advertising 広告ユニットが自動的に生成されます。
 
  
 
  
 
+ 

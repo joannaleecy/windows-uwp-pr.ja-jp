@@ -1,29 +1,26 @@
 ---
 author: mcleanbyron
 ms.assetid: ae45490f-3eb1-4b7f-8e18-bf82f0ca5d6d
-description: "Microsoft Advertising ライブラリの使用を開始してバナーやビデオのスポット広告をアプリに追加するために必要な情報を得ます。"
-title: "Microsoft Advertising ライブラリの概要"
+description: "Microsoft Advertising ライブラリの使用を開始してバナー広告やスポット広告をアプリに追加する際に必要となる情報を確認してください。"
+title: "Advertising ライブラリの概要"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 広告, 宣伝, 概要"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 81392a218165d4e0c2b954bdc6cb7789f7aa63f1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f506fa6145aede8e69aad8c5a7e76f11e5db66d4
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
-# <a name="get-started-with-the-microsoft-advertising-libraries"></a>Microsoft Advertising ライブラリの概要
-
+# <a name="get-started-with-the-advertising-libraries"></a>Advertising ライブラリの概要
 
 
 
-このトピックでは、Microsoft Advertising ライブラリの使用を開始してバナーやビデオのスポット広告をアプリに追加するために必要な情報を提供します。 このセクションでこのトピックを参照した後は、[開発者向けのチュートリアル](developer-walkthroughs.md)に移動してアプリで広告を表示するコードを記述する方法の例を参照してください。
 
-C# と C++ を使って JavaScript/HTML アプリと XAML アプリに広告バナーやビデオのスポット広告を追加する方法を示す完全なサンプル プロジェクトについては、[GitHub の広告サンプル](http://aka.ms/githubads)をご覧ください。
+このトピックでは、Microsoft Advertising ライブラリの使用を開始してバナー広告やスポット広告をアプリに追加する際に必要となる情報について説明します。 このセクションでこのトピックを参照した後は、[開発者向けのチュートリアル](developer-walkthroughs.md)に移動してアプリで広告を表示するコードを記述する方法の例を参照してください。
+
+C# と C++ を使って JavaScript/HTML アプリと XAML アプリにバナー広告やスポット広告を追加する方法を示す完全なサンプル プロジェクトについては、[GitHub の広告サンプル](http://aka.ms/githubads)をご覧ください。
 
  
 
@@ -38,10 +35,8 @@ C# と C++ を使って JavaScript/HTML アプリと XAML アプリに広告バ�
 | [リリース ノート](release-notes-for-the-advertising-libraries.md)         |  Microsoft Store Services SDK (UWP アプリ用) と、Windows および Windows Phone 8.x 用の Microsoft Advertising SDK (Windows 8.1 アプリおよび Windows Phone 8.x アプリ用) の Microsoft Advertising ライブラリの現在のリリースに関するリリース ノートを示します。   |
 | [既知の問題](known-issues-for-the-advertising-libraries.md)      |  Microsoft Store Services SDK (UWP アプリ用) と、Windows および Windows Phone 8.x 用の Microsoft Advertising SDK (Windows 8.1 アプリおよび Windows Phone 8.x アプリ用) の Microsoft Advertising ライブラリの現在のリリースに関する既知の問題を示します。   |
 | [追加のヘルプ](additional-help.md)                                    |   広告のあるアプリの開発に関するその他のリソースへのリンクを提供します。  |
-| [重要な注意事項 - EULA](important-notice-eula.md)                                    |   Microsoft Advertising ライブラリのソフトウェア ライセンス条項 (EULA) に関する詳細について説明します。   |
 
 
  
 
  
-

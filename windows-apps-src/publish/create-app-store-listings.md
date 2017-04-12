@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dcce4d53dd095c634f893d40f87eaf69cf546f1d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 84b00674e06433625010a976f7237b26ea062d7c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-app-store-listings"></a>アプリのストア登録情報の作成
 
 
@@ -120,4 +117,3 @@ ms.lasthandoff: 02/07/2017
 アプリのプライバシー ポリシーがある場合、URL をここに入力します。 開発者には、アプリがプライバシーに関する法令と規制に準拠するようにし、必要に応じてプライバシー ポリシーを提供する責任があります。
 
 **重要:** アプリ用に既定のプライバシー ポリシーは用意されていません。 同様に、アプリは Microsoft のプライバシー ポリシーの対象にはなりません。 アプリにプライバシー ポリシーが必要かどうかを確認するには、「[アプリ開発者契約](https://msdn.microsoft.com/library/windows/apps/hh694058)」と「[Windows ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1)」をご覧ください。
-

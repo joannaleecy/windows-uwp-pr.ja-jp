@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 84187230ee8e10c5e9a1a75f67065e202c4bff00
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1fb3424b56da696aa5fa99603209b379c1a5b66e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="intro-to-certificates"></a>証明書の概要
 
 
@@ -103,5 +100,4 @@ X.509 バージョン 3 の証明書には、バージョン 1 とバージョ�
 | サブジェクト代替名     | 証明書要求のサブジェクトに対する 1 つ以上の別名形式を指定します。 別名形式の例として、メール アドレス、DNS 名、IP アドレス、URI などがあります。                           |
 | Subject Directory Attributes (サブジェクト ディレクトリ属性) | 証明書サブジェクトの国籍など、識別属性を指定します。 この拡張機能の値は、OID と値のペアが連続する形になります。                                                              |
 | サブジェクト キー識別子       | 証明書サブジェクトが保持する複数の公開キーを区別します。 この拡張機能の値は、通常は、キーの SHA-1 ハッシュです。                                                                   |
-
 

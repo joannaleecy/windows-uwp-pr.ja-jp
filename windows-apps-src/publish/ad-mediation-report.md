@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3f3f3dd3b594e174def693b7decd21a5753172b9
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f79c8491c04c21fb3933d6bcde0d942bd1629fb0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="ad-mediation-report"></a>広告メディエーション レポート
 
 
@@ -68,7 +65,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

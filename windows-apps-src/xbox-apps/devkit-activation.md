@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 12022ad5ca1b70307b3d5b780ffbc366172113e3
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: d8ce552ef05ae1f5a02ed402bd800080ef177e6a
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
 # <a name="xbox-one-developer-mode-activation"></a>Xbox One 開発者モードのアクティブ化
 
 * [開発者モードの動作](#how-developer-mode-works)
@@ -38,36 +35,24 @@ Xbox One には、*リテール* モード (1) と*開発者*モード (2) の 2
 2.    Xbox One ストアから、開発者モードのアクティブ化用アプリを検索してインストールします。  
     ![開発者モードのアクティブ化用アプリのインストール](images/activation-store-search.png)
 
-3.    **[マイ コレクション]** > **[アプリ]** に移動します。
-
+3.    **[マイ コレクション]** > **[アプリ]** に移動します。  
     ![開発者モードのアクティブ化用アプリ](images/activation-step-3.png)
-4. 開発者モードのアクティブ化用アプリを開きます。    
-    
-    > [!NOTE]
-    > ゲームやアプリを実行するには、リテール モードに切り替える必要があります。 サイドローディングしたアプリは、開発者モードでのみ動作します。
+
+4. 開発者モードのアクティブ化用アプリを開きます。 ゲームやアプリを実行するには、リテール モードに切り替える必要があります。 サイドローディングしたアプリは、開発者モードでのみ動作します。
 
 5.    開発者モードのアクティブ化用アプリに表示されたコードを書き留めます。  
-
     ![アクティブ化手順 5](images/activation-step-5.png)  
     
 6.    [developer.microsoft.com/xboxactivate](https://developer.microsoft.com/xboxactivate) にアクセスします。
 7.    デベロッパー センター アカウントを使ってデベロッパー センターにサインインします。  
-8.    開発者モードのアクティブ化用アプリに表示されたアクティブ化コードを入力します。   
-   
-    > [!NOTE]
-    > アカウントに関連付けられているアクティブ化の数には制限があります。 開発者モードがアクティブになると、アカウントに関連付けられているアクティブ化の 1 つが使われたことを示す通知がデベロッパー センターに表示されます。 
-    
+8.    開発者モードのアクティブ化用アプリに表示されたアクティブ化コードを入力します。 アカウントに関連付けられているアクティブ化の数には制限があります。 開発者モードがアクティブになると、アカウントに関連付けられているアクティブ化の 1 つが使われたことを示す通知がデベロッパー センターに表示されます。  
     ![アクティブ化手順 8](images/activation-step-8.png)    
     
-9.    **[Agree and activate]** (同意してアクティブ化) をクリックします。 ページの再読み込みが行われ、デバイスが表に追加されます。
-    
-    > [!NOTE]
-    > Xbox One 開発者モードのライセンス認証プログラム契約は、[Xbox One開発者モードのライセンス認証プログラム](http://go.microsoft.com/fwlink/p/?LinkId=760399) にあります。
+9.    **[Agree and activate]** (同意してアクティブ化) をクリックします。 ページの再読み込みが行われ、デバイスが表に追加されます。 Xbox One 開発者モードのライセンス認証プログラム契約は、[Xbox One開発者モードのライセンス認証プログラム](http://go.microsoft.com/fwlink/p/?LinkId=760399) にあります。
 
 10.    アクティブ化コードを入力すると、アクティブ化プロセスの進行状況が表示されます。  
     
 11.    アクティブ化の完了後、開発者モードのアクティブ化用アプリを開き、**[Switch and restart]** (切り替えて再起動) をクリックして、開発者モードに移行します。 これは通常の再起動よりも時間がかかります。  
-
     ![アクティブ化手順 12](images/activation-step-12.png)   
     
 
@@ -86,4 +71,3 @@ Xbox One には、*リテール* モード (1) と*開発者*モード (2) の 2
 ## <a name="see-also"></a>参照
 - [Xbox One 開発者モードの非アクティブ化](devkit-deactivation.md)
 - [Xbox One の UWP](index.md)
-

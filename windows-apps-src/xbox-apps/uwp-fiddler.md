@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 9c133c77-fe9d-4b81-b4b3-462936333aa3
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: c7ebd56205db2674df5da6d64ecc9332aa96230e
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: bbf916145107b465ddd2fe7e4805e6139f4597d3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="how-to-use-fiddler-with-xbox-one-when-developing-for-uwp"></a>UWP を開発するときに Xbox One で Fiddler を使用する方法
 
 Fiddler は、Xbox One 開発機とインターネットの間のすべての HTTP および HTTPS トラフィックをログに記録する Web デバッグ プロキシです。 Fiddler を使って、Xbox サービスと証明書利用者 Web サービスとの間のトラフィックをログに記録し、Web サービスの呼び出しを確認してデバッグします。 
@@ -81,7 +78,6 @@ Fiddler は、コンソールで報告されるネットワーク ステータ�
 - [Fiddler 設定 API のリファレンス](wdp-fiddler-api.md)
 - [よく寄せられる質問](frequently-asked-questions.md)
 - [Xbox One の UWP](index.md)
-
 
 
 

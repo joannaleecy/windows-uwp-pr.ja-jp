@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e2cdcf5d06fdbe6f510a416bd1da28e7cf6a51d5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 10333de456b913adf1c35a0df08f9b99ad4d4fa0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="setting-up-your-payout-account-and-tax-forms"></a>受取りアカウントの設定と税関連の書類
 
 
@@ -30,8 +27,8 @@ Windows ストアでのアプリ販売に対して支払いを受けるには、
 
 [開発者アカウントを設定](opening-a-developer-account.md)した後、Windows ストアでアプリ (またはアドオン) の販売を開始するまでに、次の 2 つを行っておく必要があります。
 
--   [受取りアカウントの設定](#setting_up_your_payout_account)
--   [税関連の書類の入力](#paying_taxes)
+-   [受取りアカウントの設定](#payout-account)
+-   [税関連の書類の入力](#tax-forms)
 
 > **注**  アプリの収益を受け取る方法とタイミングについて詳しくは、「[支払いの受け取り](getting-paid-apps.md)」をご覧ください。
 
@@ -42,7 +39,7 @@ Windows ストアでのアプリ販売に対して支払いを受けるには、
 
 受取りアカウントは、販売による収益を Microsoft から送金するために使われる銀行口座です。 この銀行口座は、開発者アカウントを登録したのと同じ国に存在する必要があります。
 
-> **注**  一部の市場では、受取りアカウントに PayPal を使用できます。 特定の市場で PayPal がサポートされているかどうかについては、「[アカウントの種類、場所、料金](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)」をご覧ください。詳しくは、この後の「[PayPal 情報](#paypal)」をお読みください。
+> **注**  一部の市場では、受取りアカウントに PayPal を使用できます。 特定の市場で PayPal がサポートされているかどうかについては、「[アカウントの種類、場所、料金](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)」をご覧ください。詳しくは、この後の「[PayPal 情報](#paypal-info)」をお読みください。
 
  
 **受取りアカウントを設定するには**
@@ -124,7 +121,7 @@ Microsoft は、支払いの初回実行時に 3 つの書類をすべてお送�
 ## <a name="tax-forms"></a>税関連の書類
 
 
-[開発者アカウントの登録](opening-a-developer-account.md)と[受取りアカウント](#receiving_payments)の設定が完了したら、次の手順を実行して Windows ストアの*税務プロファイル*を作ることができます。
+[開発者アカウントの登録](opening-a-developer-account.md)と[受取りアカウント](#payout-account)の設定が完了したら、次の手順を実行して Windows ストアの*税務プロファイル*を作ることができます。
 
 -   住所と国籍がある国を指定する
 -   該当する税関連の書類を入力する
@@ -160,7 +157,6 @@ Microsoft から支払いを受ける場合や、租税条約上の権利を申�
  
 
  
-
 
 
 

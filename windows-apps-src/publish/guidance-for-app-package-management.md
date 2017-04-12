@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 54f6d6c786eb0787a441628452d26e46f353b3d8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: fade9058a1b6bf7896d853745bef4b119c0bff5d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="guidance-for-app-package-management"></a>アプリ パッケージ管理のガイダンス
 
 
@@ -23,7 +20,7 @@ ms.lasthandoff: 02/07/2017
 
 -   [OS のバージョンとパッケージの配布](#os-versions-and-package-distribution)
 -   [以前に公開したアプリに Windows 10 用のパッケージを追加する](#adding-packages-for-windows-10-to-a-previously-published-app)
--   [Windows Phone 8.1 に対するパッケージの互換性を維持する](#maintaining-package-compatibility-for-windows-phone-8-1)
+-   [Windows Phone 8.1 に対するパッケージの互換性を維持する](#maintaining-package-compatibility-for-windows-phone-81)
 -   [アプリをストアから削除する](#removing-an-app-from-the-store)
 -   [これまでサポートされていたデバイス ファミリ用のパッケージを削除する](#removing-packages-for-a-previously-supported-device-family)
 
@@ -82,28 +79,27 @@ ms.lasthandoff: 02/07/2017
 ## <a name="adding-packages-for-windows-10-to-a-previously-published-app"></a>以前に公開したアプリに Windows 10 用のパッケージを追加する
 
 
-ストアにアプリがあり、Windows 10 用にアプリを更新する場合、「[パッケージ](upload-app-packages.md)」の手順で、新しい申請を作成し、UWP の .appxupload パッケージを追加します。 アプリが認定プロセスに合格すると、Windows 10 にアップグレードする前に既にアプリを所有していたユーザーは、ストアから更新プログラムとして UWP パッケージを取得できます。 この UWP パッケージは、Windows 10 のユーザーが新規の取得として利用することもできます。
+ストアに Windows 8.x や Windows Phone 8.x を対象とするアプリがあり、Windows 10 用にアプリを更新する場合、「[パッケージ](upload-app-packages.md)」の手順で、新しい申請を作成し、UWP の .appxupload パッケージを追加します。 アプリが認定プロセスに合格すると、既にアプリを所有していたユーザーは、ストアから更新プログラムとして UWP パッケージを取得できます。 この UWP パッケージは、Windows 10 のユーザーが新規の取得として利用することもできます。
 
 > **重要**  Windows 10 のユーザーが UWP パッケージを取得した後は、以前の OS バージョン用のパッケージを使用するようにそのユーザーをロールバックすることはできません。 申請に追加する前に、Windows 10 で UWP パッケージを十分にテストしたことを確認します。
 
 その他のパッケージを同時に更新したり、申請にその他の変更を加えたりすることもできます (たとえば、以前の OS バージョンのユーザーに表示するために、[プラットフォーム固有の説明を作成](create-platform-specific-descriptions.md)することができます)。 必要に応じて、その他すべてをまったく同じにすることもできます。
 
-> **注**  Windows 10 パッケージのバージョン番号は、同じアプリについて公開中の Windows 8、Windows 8.1、Windows Phone 8.1 のパッケージ (または前に公開したこれらの OS バージョンのパッケージ) のバージョン番号より大きい必要があります。 Windows 10 のバージョンの番号付けについて詳しくは、「[パッケージ バージョンの番号付け](package-version-numbering.md)」をご覧ください。
+> **注**  Windows 10 パッケージのバージョン番号は、同じアプリについて公開中の Windows 8、Windows 8.1、Windows Phone 8.1 のパッケージ (または前に公開したこれらの OS バージョンのパッケージ) のバージョン番号より大きい必要があります。 詳しくは、「[パッケージ バージョンの番号付け](package-version-numbering.md)」をご覧ください。
 
 新しい申請が認定プロセスを完了すると、Windows 10 を利用していないユーザーが使用できるようにしたその他のパッケージと共に、UWP パッケージが使用できるようになります。
 
 ストア用の UWP アプリのパッケージ化について詳しくは、「[Windows 10 用ユニバーサル Windows アプリのパッケージ化](http://go.microsoft.com/fwlink/p/?LinkId=620193 )」をご覧ください。
 
-> **重要**  ユニバーサル デバイス ファミリを対象にしたパッケージを提供している場合、以前のオペレーティング システム (Windows Phone 8、Windows 8.1 など) で既にアプリを持っていて Windows 10 にアップグレードするユーザーは、Windows 10 ユニバーサル パッケージに更新されることに注意してください。
+> **重要**  ユニバーサル デバイス ファミリを対象にしたパッケージを提供している場合、以前のオペレーティング システム (Windows Phone 8、Windows 8.1 など) で既にアプリを持っていて Windows 10 にアップグレードするユーザーは、Windows 10 パッケージに更新されることに注意してください。
 > 
-> これは、申請の「[価格と使用可能状況](set-app-pricing-and-availability.md#windows-10-device-families)」の手順で特定のデバイス ファミリを除外していた場合にも当てはまります。**[デバイス ファミリ]** の選択は新規の利用者にしか適用されないためです。 以前のすべてのユーザーに新しい Windows 10 パッケージを取得させることを避けたい場合は、サポート対象の特定のデバイス ファミリのみを含めるように appx マニフェストの [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 要素を更新する必要があります。
+> これは、申請の「[デバイス ファミリの利用可否](upload-app-packages.md#device-family-availability)」の手順で特定のデバイス ファミリを除外していた場合にも当てはまります。**[デバイス ファミリの利用可否]** の選択は新規の利用者にしか適用されないためです。 以前のすべてのユーザーに新しい Windows 10 パッケージを取得させることを避けたい場合は、サポート対象の特定のデバイス ファミリのみを含めるように appx マニフェストの [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 要素を更新する必要があります。
 > 
-> たとえば、Windows 10 にアップグレードした Windows 8 と Windows 8.1 のユーザーだけが UWP アプリを取得し、Windows Phone 8.1 以前のユーザーには以前の (Windows Phone 8 または Windows Phone 8.1 を対象にした) パッケージのままにするとします。 これを行うには、appx マニフェストの [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) を、Microsoft Visual Studio の既定の appx マニフェストに含まれる **Windows.Universal** 値 (ユニバーサル デバイス ファミリ用) のままにするのではなく、**Windows.Desktop** (デスクトップ デバイス ファミリ用) のみを含むように更新する必要があります。 ユニバーサル デバイス ファミリまたはモバイル デバイス ファミリ (**Windows.Universal** または **Windows.Universal**) のどちらかを対象にした UWP パッケージは申請しないでください。 この場合、Windows 10 モバイルのユーザーが UWP パッケージを取得することはなくなります。
+> たとえば、Windows 10 にアップグレードした Windows 8 と Windows 8.1 のユーザーだけが UWP アプリを取得し、Windows Phone 8.1 以前のユーザーには以前の (Windows Phone 8 または Windows Phone 8.1 を対象にした) パッケージのままにするとします。 これを行うには、appx マニフェストの [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) を、Microsoft Visual Studio の既定の appx マニフェストに含まれる **Windows.Universal** 値 (ユニバーサル デバイス ファミリ用) のままにするのではなく、**Windows.Desktop** (デスクトップ デバイス ファミリ用) のみを含むように更新する必要があります。 ユニバーサル デバイス ファミリまたはモバイル デバイス ファミリ (**Windows.Universal** または **Windows.Universal**) のどちらかを対象にした UWP パッケージは申請しないでください。 この場合、Windows 10 Mobile のユーザーが UWP パッケージを取得することはなくなります。
 > 
-> デバイス ファミリについて詳しくは、「[ユニバーサル Windows プラットフォーム (UWP) アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください。
+> デバイス ファミリについて詳しくは、「[ユニバーサル Windows プラットフォーム (UWP) アプリのガイド](../get-started/universal-application-platform-guide.md)」をご覧ください。
 
 ## <a name="maintaining-package-compatibility-for-windows-phone-81"></a>Windows Phone 8.1 に対するパッケージの互換性を維持する
-
 
 Windows Phone 8.1 用に以前公開されていたアプリを更新する場合、パッケージの種類に関する特定の要件が適用されます。
 
@@ -115,7 +111,6 @@ Windows Phone 8.1 用に以前公開されていたアプリを更新する場�
 これらの規則に従わない場合、パッケージのアップロード エラーとなり申請を完了できません。
 
 ## <a name="removing-an-app-from-the-store"></a>アプリをストアから削除する
-
 
 ユーザーへのアプリの提供を完全に停止し、事実上 "非公開" にする必要が生じることがあります。 これを行うには、[アプリの概要] ページで **[アプリの提供を停止する]** をクリックします。 アプリを入手不可にすることを確認した後、数時間以内にストアに表示されなくなり、プロモーション コードを含むどのような方法を使っても新しいユーザーが入手することができなくなります。
 
@@ -129,7 +124,6 @@ Windows Phone 8.1 用に以前公開されていたアプリを更新する場�
 
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>これまでサポートされていたデバイス ファミリ用のパッケージを削除する
 
-
 これまでアプリでサポートされていた特定のデバイス ファミリ用のパッケージをすべて削除する場合、**[パッケージ]** ページでの変更を保存する前に、この削除を実行してもよいかどうかを確認するメッセージが表示されます。
 
 これまでアプリでサポートされていたデバイス ファミリ用のパッケージを削除する申請を発行すると、新しいユーザーは、そのデバイス ファミリでアプリを入手することができなくなります。 そのデバイス ファミリ向けのパッケージを提供するための別の更新プログラムは、後でいつでも公開することができます。
@@ -139,7 +133,6 @@ Windows Phone 8.1 用に以前公開されていたアプリを更新する場�
  
 
  
-
 
 
 

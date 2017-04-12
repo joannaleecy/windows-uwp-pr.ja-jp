@@ -2,7 +2,7 @@
 author: GrantMeStrength
 Description: "iOS、Android、Windows 10 のプラットフォーム機能を比較します。"
 Search.Product: eADQiWindows 10XVcnh
-title: "Android と iOS 開発者向けの Windows アプリ概念マッピング"
+title: "Android と iOS 開発者向けの Windows の概念"
 ms.author: jken
 ms.date: 02/08/2017
 ms.topic: article
@@ -10,14 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: e5cf0a75515458a558e94a9f8bb54913e7df4a14
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: ce32bd7ebaca20827a637c456b2dbe82811817cb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-#<a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>Android と iOS 開発者向けの Windows アプリ概念マッピング
+#<a name="windows-concepts-for-android-and-ios-developers"></a>Android と iOS 開発者向けの Windows の概念
 
 このリソースには、Android や iOS のスキルとコードを持つ開発者が Windows 10 とユニバーサル Windows プラットフォーム (UWP) に移行する場合に、それら 3 つのプラットフォーム間でプラットフォームの機能と知識を関連付けるために必要なすべての情報が含まれています。
 
@@ -46,7 +43,7 @@ ms.lasthandoff: 02/08/2017
 <td align="left"><strong>デザイン言語。</strong><br><br>プラットフォーム上のアプリの外観と動作方法を規定する規則のセット。</td>
 <td align="left"><strong>Android のマテリアル デザイン</strong> ガイドラインに、Android の設計者や開発者が従う視覚言語が示されています。</td>
 <td align="left"><strong>ヒューマン インターフェイス ガイドライン</strong>に、iOS の設計者や開発者向けのアドバイスが示されています。</td>
-<td align="left"><a href="https://dev.windows.com/design"><strong>「UWP アプリのデザイン</strong></a>」で、すべての Windows 10 デバイスで優れた外観を持つアプリを作成する方法について説明しています。 ユーザー インターフェイス (UI) デザインの基本、レスポンシブ デザイン テクニック、詳細なガイドラインの完全な一覧が示されています。<br/></td>
+<td align="left">「<a href="https://dev.windows.com/design"><strong>UWP アプリのデザイン</strong></a>」で、すべての Windows 10 デバイスで優れた外観を持つアプリを作成する方法について説明しています。 ユーザー インターフェイス (UI) デザインの基本、レスポンシブ デザイン テクニック、詳細なガイドラインの完全な一覧が示されています。<br/></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>ユーザー インターフェイス マークアップ言語。</strong> <br><br>UI とそのコンポーネントをレンダリングし、記述するマークアップ言語。 プラットフォームごとに、ビジュアル編集とマークアップ編集のためのエディターが提供されています。<br/></td>
@@ -57,19 +54,19 @@ ms.lasthandoff: 02/08/2017
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>組み込みのユーザー インターフェイス コントロール。</strong> <br><br>ボタン、リスト コントロール、テキスト コントロールなど、プラットフォームで提供される、再利用可能な UI 要素。</td>
 <td align="left">ウィジェット、レイアウト、テキスト フィールド、コンテナー、日付/時刻コントロール、専門的なコントロールとして参照される、作成済みの<strong>ビュー</strong>と<strong>ビュー グループ</strong>のクラス。</td>
-<td align="left"><strong>Xcode オブジェクトのライブラリにあり、UIKit ユーザー インターフェイス カタログに掲載されたビュー</strong>と<strong>コントロール</strong>。 ビューには、イメージ ビュー、ピッカー ビュー、スクロール ビューが含まれます。 コントロールには、ボタン、日付選択コントロール、テキスト フィールドが含まれます。</td>
+<td align="left">Xcode オブジェクトのライブラリにあり、UIKit ユーザー インターフェイス カタログに掲載された<strong>ビュー</strong>と<strong>コントロール</strong>。 ビューには、イメージ ビュー、ピッカー ビュー、スクロール ビューが含まれます。 コントロールには、ボタン、日付選択コントロール、テキスト フィールドが含まれます。</td>
 <td align="left">XAML プラットフォームでは、ボタン、リスト コントロール、パネル、テキスト コントロール、コマンド バー、ファイル ピッカー、メディア、インク入力など、さまざまな<strong>ビルトイン コントロール</strong>が提供されます。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228345.aspx">コントロールの追加とイベントの処理</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>コントロール イベントの処理。</strong> <br><br>UI コントロール内でイベントがトリガーされるときに実行されるロジックを定義します。</td>
-<td align="left"><strong>XML またはプログラムでイベント ハンドラー</strong>と<strong>イベント リスナー</strong>を追加します。</td>
+<td align="left">XML またはプログラムで<strong>イベント ハンドラー</strong>と<strong>イベント リスナー</strong>を追加します。</td>
 <td align="left">コントロールから<strong>ターゲット</strong>へ<strong>操作</strong>メッセージが送信されます。</td>
 <td align="left">XAML ページに接続されている<strong>コード ビハインド ファイル</strong>に、XAML コントロールのイベントを処理するメソッドを定義できます。 <strong>イベント ハンドラー</strong>は常に、コードで記述します。 ただし、XAML マークアップまたはコードでそれらのハンドラーをイベントにフックすることができます。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228345.aspx">コントロールの追加とイベントの処理</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt185584.aspx">イベントとルーティング イベントの概要</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>データ バインディング。</strong> <br><br>アプリの UI でデータを表示し、必要に応じてそのデータと同じ状態を保つことができるソフトウェアの設計パターンです。</td>
 <td align="left"><strong>データ バインディング ライブラリ</strong>が提供されています。ただし、まだベータ版です。</td>
-<td align="left">iOS では、組み込みのバインディング システムは存在しません。 <strong>サード パーティのライブラリを使うか追加コードを記述すると、キー値監視</strong>を作成してデータ バインディングを実行できます。 コントロールは、データを取得するためにデリゲート/コールバックの方法を使います。</td>
+<td align="left">iOS では、組み込みのバインディング システムは存在しません。 サード パーティのライブラリを使うか追加コードを記述すると、<strong>キー値監視</strong>を作成してデータ バインディングを実行できます。 コントロールは、データを取得するためにデリゲート/コールバックの方法を使います。</td>
 <td align="left">UWP プラットフォームが<strong>データ バインディング</strong>を処理します。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt204783.aspx">{x:Bind}</a></strong> マークアップ拡張を使ってバインディングのパフォーマンスを向上させるか、<strong><a href="https://msdn.microsoft.com/library/windows/apps/mt204782.aspx">{Binding}</a></strong> を使ってより多くの機能を利用できます。 その後は、プラットフォームで<strong>一方向バインディング</strong>を使ってデータ ソースからの値を UI に表示するか、<strong>双方向バインディング</strong>で値の監視も行い、値が変わったら UI を更新するか、バインディングの構成方法を選ぶだけです。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt210947.aspx">データ バインディング</a></td>
 </tr>
 <tr class="even">
@@ -135,7 +132,7 @@ ms.lasthandoff: 02/08/2017
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>階層型ナビゲーション。</strong> <br><br>階層の親と子のページ間を移動します。</td>
-<td align="left"><strong>他の<strong>アクティビティ</strong>を読み込む<strong>インテント</strong>と一緒にリスト</strong>、<strong>グリッド リスト</strong>、<strong>ボタン</strong>などのコントロールを使うと、<strong>子孫のナビゲーション</strong>ができます。</td>
+<td align="left">他の<strong>アクティビティ</strong>を読み込む<strong>インテント</strong>と一緒に<strong>リスト</strong>、<strong>グリッド リスト</strong>、<strong>ボタン</strong>などのコントロールを使うと、<strong>子孫のナビゲーション</strong>ができます。</td>
 <td align="left"><strong>ナビゲーション コントローラー</strong>を使うと、ユーザーが階層のレベルの間を移動できます。</td>
 <td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">ハブ</a></strong>を使うと、子ページに移動する場合に選ぶことができるコンテンツのプレビューをユーザーに表示できます。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">マスター/詳細</a></strong>を使うと、ユーザーは対応する [詳細] セクションの横に表示される項目の概要の一覧から項目を選ぶことができます。<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">ナビゲーション</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">2 つのページ間の移動</a></td>
 </tr>
@@ -222,7 +219,7 @@ ms.lasthandoff: 02/08/2017
 <tr class="even">
 <td align="left"><strong>クラウド バックアップ サービス。</strong> <br><br>プラットフォームで提供される、アプリのデータ バックアップ サービス。</td>
 <td align="left">Android の<strong>バックアップ マネージャー</strong>が Google の <strong>Android バックアップ サービス</strong>でアプリケーション データのバックアップを処理します。</td>
-<td align="left"><strong>アプリ データなどのバックアップを処理するようにユーザーが iCloud バックアップ</strong>を構成できます。 iCloud と互換性のある<strong>コア データ</strong>、<strong>iCloud のキー値ストア</strong>、<strong>iCloud ドキュメント ストレージ</strong>を使うアプリ。</td>
+<td align="left">アプリ データなどのバックアップを処理するようにユーザーが <strong>iCloud バックアップ</strong>を構成できます。 iCloud と互換性のある<strong>コア データ</strong>、<strong>iCloud のキー値ストア</strong>、<strong>iCloud ドキュメント ストレージ</strong>を使うアプリ。</td>
 <td align="left">ローミング <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx">ApplicationData API</a></strong> (<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.roamingfolder.aspx">RoamingFolder</a></strong> と <a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.roamingsettings.aspx"><strong>RoamingSettings</strong></a> を含む) を使って保存したアプリ データは、自動的にクラウドおよびユーザーの他のデバイスと同じ状態に保たれます。 最新に保つ処理は、ユーザーの Microsoft アカウントで実行されます。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/hh465094.aspx">アプリのデータのローミングのガイドライン</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
@@ -301,7 +298,7 @@ ms.lasthandoff: 02/08/2017
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>アプリのライフサイクル。</strong> <br><br>アプリの起動時、中断時、再開時、終了時にイベントを処理し、アプリケーションの状態を保存/復元したり他のタスクを実行したりする機会を提供します。</td>
-<td align="left">アクティビティのそれぞれに、<strong>再開</strong>などの状態を持つ独自の<strong>アクティビティ ライフサイクル</strong>があります。 <strong><strong>onResume</strong> などのライフサイクル コールバック</strong>が<strong>アクティビティ クラス</strong>に実装されます。</td>
+<td align="left">アクティビティのそれぞれに、<strong>再開</strong>などの状態を持つ独自の<strong>アクティビティ ライフサイクル</strong>があります。 <strong>onResume</strong> などの<strong>ライフサイクル コールバック</strong>が<strong>アクティビティ クラス</strong>に実装されます。</td>
 <td align="left"><strong>アプリケーションのライフサイクル</strong>には<strong>中断</strong>などの状態があります。 <strong>applicationDidEnterBackground:</strong> などのメソッドを<strong>アプリケーションのデリゲート オブジェクト</strong>に実装して、状態が変わったときにコードを実行できます。</td>
 <td align="left">アプリケーションには<strong>アプリの実行状態</strong> NotRunning、Activated、Running、Suspending、Suspended、Resuming があります。<br/><br/><strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.aspx">Application クラス</a></strong>のメソッド OnLaunched、OnActivated、Suspending、Resuming をアプリに実装して、状態が変わったときにコードを実行できます。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt243287.aspx">アプリのライフサイクル</a></td>
 </tr>
@@ -473,8 +470,8 @@ ms.lasthandoff: 02/08/2017
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>タイルとバッジ。</strong> <br><br>ホーム画面上でユーザーに更新プログラムを表示します。</td>
-<td align="left"><strong>アプリのウィジェット</strong>は、ホーム画面に埋め込むことができ、定期的な更新プログラムを受け取ることができる、アプリケーションのビューです。 <strong>Android にはバッジ システム</strong>は存在しません。 タイルと同じシステムは存在しません。</td>
-<td align="left"><strong>iOS にはタイルやウィジェット</strong>は存在しません。 ローカルまたはリモートの通知に基づいて変更できる数字付きで、<strong>バッジ</strong>をアイコンに追加することができます。</td>
+<td align="left"><strong>アプリのウィジェット</strong>は、ホーム画面に埋め込むことができ、定期的な更新プログラムを受け取ることができる、アプリケーションのビューです。 Android には<strong>バッジ システム</strong>は存在しません。 タイルと同じシステムは存在しません。</td>
+<td align="left">iOS には<strong>タイルやウィジェット</strong>は存在しません。 ローカルまたはリモートの通知に基づいて変更できる数字付きで、<strong>バッジ</strong>をアイコンに追加することができます。</td>
 <td align="left">アプリにはスタート画面にピン留めできる<strong>タイル</strong>があり、装飾文字と数字付きで選択したテキスト、画像、<strong>バッジ</strong>を表示するために使うことができます。 プッシュ通知または定義済みのスケジュールに基づいて、アプリからタイルのコンテンツを更新することができます。 タイルはアダプティブにでき、表示される場所に従って変更できます。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt185605.aspx">タイルの作成</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt590880.aspx">アダプティブ タイルの作成</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt187193.aspx">通知配信方法の選択</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465403.aspx">タイルとバッジのガイドライン</a></td>
 </tr>
 <tr class="even">
@@ -486,7 +483,7 @@ ms.lasthandoff: 02/08/2017
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>ローカル通知のスケジュール。</strong> <br><br>スケジュールされた時刻にアプリから送信されるローカル通知。</td>
 <td align="left">通知とアクションは <strong>NotificationCompat.Builder</strong> を使って定義し、<strong>AlarmManager</strong> と <strong>BroadcastReceiver</strong> を使ってアプリ内でスケジュール設定したり処理したりできます。</td>
-<td align="left">ローカル通知は <strong>UILocalNotification</strong> を使って作成し、** UILocalNotification.scheduleLocalNotification:<strong> でスケジュール設定できます。 | トースト通知は </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtoastnotification.aspx">ScheduledToastNotification</a><strong> を使ってスケジュール設定できます。 タイル通知をアプリから送信するには </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.tilenotification.aspx">TileNotification クラス</a><strong>を使い、タイル通知をスケジュール設定するには <a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtilenotification.aspx">ScheduledTileNotification</a> を使います。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt631604.aspx">アダプティブ トースト通知と対話型トースト通知</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt593299.aspx">ローカル タイル通知の送信</a> | | </strong>プッシュ通知の送信。** プッシュ通知のサーバーから送信され、必要に応じてアプリで処理される通知。</td>
+<td align="left">ローカル通知は <strong>UILocalNotification</strong> を使って作成し、** UILocalNotification.scheduleLocalNotification でスケジュール設定できます。<strong> | トースト通知は </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtoastnotification.aspx">ScheduledToastNotification</a><strong> を使ってスケジュール設定できます。タイル通知をアプリから送信するには </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.tilenotification.aspx">TileNotification クラス</a><strong>を使い、タイル通知をスケジュール設定するには <a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtilenotification.aspx">ScheduledTileNotification</a> を使います。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt631604.aspx">アダプティブ トースト通知と対話型トースト通知</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt593299.aspx">ローカル タイル通知の送信</a> | | </strong>プッシュ通知の送信。** プッシュ通知のサーバーから送信され、必要に応じてアプリで処理される通知。</td>
 <td align="left"><strong>Google Cloud Messaging</strong> が Android のプッシュ通知のサポートを提供します。</td>
 </tr>
 </tbody>
@@ -579,7 +576,7 @@ ms.lasthandoff: 02/08/2017
 <tr class="even">
 <td align="left"><strong>地図の表示。</strong> <br><br><strong>組み込みの対話式の地図</strong>を表示し、<strong>関心のあるポイント</strong>を追加します。</td>
 <td align="left"><strong>Google Maps Android API</strong> の <strong>GoogleMap</strong>、<strong>MapFragment</strong>、<strong>MapView</strong> クラスで、アプリに地図を埋め込むことができます。 関心のあるポイントを表示するには、<strong>マーカー</strong>と、カスタマイズ可能な <strong>Marker</strong> クラスを使います。</td>
-<td align="left">地図を iOS アプリに埋め込むには、<strong>MapKit フレームワーク</strong>の <strong>MKMapView</strong> クラスを使います。 <strong></strong><strong>MKPointAnnotation</strong> などのオブジェクト クラスや <strong>MKPinAnnotationView</strong> などのビュー クラスを使ってアプリにアノテーションを追加して、関心のあるポイントを表示できます。</td>
+<td align="left">地図を iOS アプリに埋め込むには、<strong>MapKit フレームワーク</strong>の <strong>MKMapView</strong> クラスを使います。 <strong>MKPointAnnotation</strong> などのオブジェクト クラスや <strong>MKPinAnnotationView</strong> などのビュー クラスを使ってアプリに<strong>アノテーション</strong>を追加して、関心のあるポイントを表示できます。</td>
 <td align="left">アプリに地図を埋め込むには、2D、3D、Streetside ビューを表示する組み込みの <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx">MapControl</a></strong> XAML コントロールを使います。 プッシュピン、画像、図形を使って関心のあるポイントを追加するには、<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapicon.aspx">MapIcon</a></strong>、<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mappolygon.aspx">MapPolygon</a></strong>、<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mappolyline.aspx">MapPolyline</a></strong> などのクラスを使います。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219695.aspx">2D、3D、Streetside ビューでの地図の表示</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219696.aspx">関心のあるポイント (POI) の地図への表示</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
@@ -670,4 +667,3 @@ ms.lasthandoff: 02/08/2017
 </tr>
 </tbody>
 </table>
-

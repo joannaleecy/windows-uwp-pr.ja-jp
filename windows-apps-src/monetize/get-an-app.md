@@ -1,27 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
-description: "Windows ストア申請 API のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されている特定のアプリに関する情報を取得します。"
-title: "Windows ストア申請 API を使用したアプリの取得"
+description: "Windows デベロッパー センター アカウントに登録されている特定のアプリに関する情報を取得するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "アプリの入手"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア申請 API, アプリ"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 176e3b584137e503c4adfe2eb612d9329226baac
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6087bf65ac297b12f92a9082db4e6a12e93130ef
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-an-app-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアプリの取得
-
+# <a name="get-an-app"></a>アプリの入手
 
 
 
-Windows ストア申請 API のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されている特定のアプリに関する情報を取得します。
+
+Windows デベロッパー センター アカウントに登録されている特定のアプリに関する情報を取得するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -30,7 +27,7 @@ Windows ストア申請 API のこのメソッドを使用して、Windows デ�
 * Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
 * このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア提出 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
+>**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
 ## <a name="request"></a>要求
 
@@ -104,14 +101,13 @@ Authorization: Bearer <your access token>
 | エラー コード |  説明   |
 |--------|------------------|
 | 404  | 指定したアプリは見つかりませんでした。 |
-| 409  | アプリは、[Windows ストア提出 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センターのダッシュボード機能を使用します。  |
+| 409  | アプリは、[Windows ストア申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センターのダッシュボード機能を使用します。  |
 
 <span/>
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Windows ストア サービスを使用した提出の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
+* [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [すべてのアプリの入手](get-all-apps.md)
 * [アプリのパッケージ フライトの入手](get-flights-for-an-app.md)
 * [アプリのアドオンの入手](get-add-ons-for-an-app.md)
-

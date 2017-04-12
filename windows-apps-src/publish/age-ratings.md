@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6841355976d74a21429df1c91dced9b702a3af4a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2546ef6141095a0033f197e1e43e68276253aba3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="age-ratings"></a>年齢区分
 
 [アプリの申請プロセス](app-submissions.md)の **[年齢区分]** ページでアプリに関する情報を提供すると、[International Age Ratings Coalition (IARC)](http://go.microsoft.com/fwlink/p/?LinkId=716854) 評価システムが管理する適切な年齢区分とコンテンツ区分を受け取ることができます。 これらの区分は、アプリのコンテンツの適切性に関する区分であって、アプリの対象ユーザーの年齢ではありません。
@@ -54,4 +51,3 @@ ms.lasthandoff: 02/07/2017
 | 12+ (12 歳以上対象) | この区分のアプリの場合、いくぶん露出箇所が多い性的でない裸体を含めることができます。また、非現実的な登場人物に対する多少の写実的な暴力や、現実的な人間や動物に対する非写実的な暴力が許されます。 この年齢区分には、性的でない限り、粗野な言葉も含めることができます。 また、この年齢区分以上を対象とするアプリでは、非管理下で (i) オンライン ソーシャル ネットワークへのアクセスや、(ii) 他のゲーム プレーヤーやオンライン上の知り合いを含むサード パーティとの個人情報の共有を提供することが許されます。 (管理下にあると見なされるためには、共有機能を使う際に保護者の許可が必要になる、保護者による制限機能をアプリに含める必要があり、[Notes for certification](notes-for-certification.md) (認定を求めるにあたってのコメント) にそれを明記し、機能について説明する必要があります。) |
 | 16+ (16 歳以上対象) | この年齢区分のアプリでは、最低限の流血を伴う現実的な暴力や、性的行為の表現が許されます。 ストアのポリシーに示された限度内で、薬物やたばこの使用、犯罪行為などを描くことができ、12 歳以上対象のアプリよりも粗野な言葉づかいの制限が緩和されます。                                                                                                                           |
 | 18+ (成人対象)            | この年齢区分のゲームには、成人利用者のみを対象にした、激しい、不快な、または具体的な暴力表現、血液や流血の表現を含めることができます。 すべてのコンテンツは、[コンテンツ ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944) の基準を満たしている必要があります。                                                                                                                                                            |
-

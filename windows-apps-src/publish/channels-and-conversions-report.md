@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、チャネル、コンバージョン、レポート、分析"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 60f639c6bad73273a6cc7f83cf65fdf321211ba1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cbdd2e530594b97847196941580e2837d71698d0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="channels-and-conversions-report"></a>チャネルとコンバージョン レポート
 
 
@@ -99,4 +96,3 @@ Windows デベロッパー センター ダッシュボードの**チャネル�
  
 
  
-

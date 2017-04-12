@@ -1,27 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: 1A69A388-B1CC-4D2C-886B-EA07E6E60252
-description: "既存のパッケージ フライトの申請を削除するには、Windows ストア申請 API 内の以下のメソッドを使用します。"
-title: "Windows ストア申請 API を使用したパッケージ フライト申請の削除"
+description: "既存のパッケージ フライトの申請を削除するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "パッケージ フライトの申請の削除"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア申請 API, フライトの申請, 削除, パッケージ フライト"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e720b8551949335faa0407cbc159c217d4b91343
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1b69fb04742e30a80b258613385b40ce8999306c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="delete-a-package-flight-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したパッケージ フライト申請の削除
-
+# <a name="delete-a-package-flight-submission"></a>パッケージ フライトの申請の削除
 
 
 
-既存のパッケージ フライトの申請を削除するには、Windows ストア申請 API 内の以下のメソッドを使用します。
+
+既存のパッケージ フライトの申請を削除するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -30,7 +27,7 @@ ms.lasthandoff: 02/07/2017
 * Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
 * このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア提出 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
+>**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
 ## <a name="request"></a>要求
 
@@ -101,4 +98,3 @@ Authorization: Bearer <your access token>
 * [パッケージ フライトの申請のコミット](commit-a-flight-submission.md)
 * [パッケージ フライトの申請の更新](update-a-flight-submission.md)
 * [パッケージ フライトの申請の状態の取得](get-status-for-a-flight-submission.md)
-

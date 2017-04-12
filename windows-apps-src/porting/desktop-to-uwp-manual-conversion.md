@@ -1,25 +1,22 @@
 ---
-author: awkoren
+author: normesta
 Description: "手動で Windows デスクトップ アプリケーション (Win32、WPF、Windows フォームなど) をユニバーサル Windows プラットフォーム (UWP) アプリに変換する方法を示します。"
 Search.Product: eADQiWindows 10XVcnh
-title: "手動で Windows デスクトップ アプリケーションをユニバーサル Windows プラットフォーム (UWP) アプリに変換する"
-ms.author: alkoren
-ms.date: 02/08/2017
+title: "Desktop to UWP Bridge と手動での変換"
+ms.author: normesta
+ms.date: 03/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 345296a3fa9faeb8daa8e03fbb633863380d2424
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 8d09a0349620e071f5c4d680df18f716e3b10a8e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="desktop-to-uwp-bridge-manual-conversion"></a>Desktop to UWP Bridge: 手動での変換
 
-# <a name="manually-convert-your-app-to-uwp-using-the-desktop-bridge"></a>デスクトップ ブリッジを使って手動でアプリを UWP アプリに変換する
-
-[Desktop App Converter (DAC)](desktop-to-uwp-run-desktop-app-converter.md) を使用すると簡単な操作で自動的に変換されるため、インストーラーの処理について不明確な点がある場合に便利です。 ただし、アプリが Xcopy を使用してインストールされる場合や、アプリのインストーラーがシステムに加える変更について詳しい知識がある場合は、アプリ パッケージとマニフェストを手動で作成することもできます。 ここでは、パッケージを手動で作成する手順を紹介します。 また、DAC ではプレートなしのアセットをアプリに追加することはできませんが、これを手動で実行する方法についても説明します。 
+[Desktop App Converter (DAC)](desktop-to-uwp-run-desktop-app-converter.md) を使用すると簡単な操作で自動的に変換されるため、インストーラーの処理について不明確な点がある場合に便利です。 ただし、アプリが Xcopy を使用してインストールされる場合や、アプリのインストーラーがシステムに加える変更について詳しい知識がある場合は、アプリ パッケージとマニフェストを手動で作成することもできます。 ここでは、パッケージを手動で作成する手順を紹介します。 また、DAC ではプレートなしのアセットをアプリに追加することはできませんが、これを手動で実行する方法についても説明します。
 
 ここでは、手動で変換する方法について説明します。 .NET アプリがあり、Visual Studio を使用している場合は、代わりに、「[Visual Studio による .NET デスクトップ アプリ用のデスクトップ ブリッジ パッケージ ガイド](desktop-to-uwp-packaging-dot-net.md)」をご覧ください。  
 
@@ -69,11 +66,11 @@ _appxmanifest.xml_ ファイルには、(少なくとも) 次のような内容�
 
 ## <a name="run-the-makeappx-tool"></a>MakeAppX ツールを実行する
 
-[アプリ パッケージ ツール (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx) を使用して、プロジェクトの AppX を生成します。 MakeAppx.exe は Windows 10 SDK に同梱されています。 
+[アプリ パッケージ ツール (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx) を使用して、プロジェクトの Windows アプリ パッケージを生成します。 MakeAppx.exe は Windows 10 SDK に同梱されています。
 
-MakeAppx を実行するには、まず前の手順で説明したマニフェスト ファイルを作成していることを確認します。 
+MakeAppx を実行するには、まず前の手順で説明したマニフェスト ファイルを作成していることを確認します。
 
-次に、マッピング ファイルを作成します。 このファイルは、**[Files]** から始まり、ディスク上の各ソース フィルのリスト、パッケージ内のターゲット パスが続きます。 次に例を示します。 
+次に、マッピング ファイルを作成します。 このファイルは、**[Files]** から始まり、ディスク上の各ソース フィルのリスト、パッケージ内のターゲット パスが続きます。 次に例を示します。
 
 ```
 [Files]
@@ -83,7 +80,7 @@ MakeAppx を実行するには、まず前の手順で説明したマニフェ�
 "MyCustomManifest.xml"       "AppxManifest.xml"
 ```
 
-最後に、以下のコマンドを実行します。 
+最後に、以下のコマンドを実行します。
 
 ```cmd
 MakeAppx.exe pack /f mapping_filepath /p filepath.appx
@@ -91,16 +88,16 @@ MakeAppx.exe pack /f mapping_filepath /p filepath.appx
 
 ## <a name="sign-your-appx-package"></a>AppX パッケージに署名する
 
-Add-AppxPackage コマンドレットを使うには、展開するアプリケーション パッケージ (.appx) が署名されている必要があります。 .appx パッケージに署名するには、Microsoft Windows 10 SDK に付属している [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx) を使います。
+Add-AppxPackage コマンドレットを使うには、展開するアプリケーション パッケージ (.appx) が署名されている必要があります。 Windows アプリ パッケージに署名するには、Microsoft Windows 10 SDK に付属している [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx) を使います。
 
-使用例: 
+使用例:
 
 ```cmd
 C:\> MakeCert.exe -r -h 0 -n "CN=<publisher_name>" -eku 1.3.6.1.5.5.7.3.3 -pe -sv <my.pvk> <my.cer>
 C:\> pvk2pfx.exe -pvk <my.pvk> -spc <my.cer> -pfx <my.pfx>
 C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 ```
-MakeCert.exe を実行したときにパスワードの入力を求められたら、**[なし]** を選択します。 証明書と署名について詳しくは、以下をご覧ください。 
+MakeCert.exe を実行したときにパスワードの入力を求められたら、**[なし]** を選択します。 証明書と署名について詳しくは、以下をご覧ください。
 
 - [方法: 開発中に使う一時的な証明書を作成する](https://msdn.microsoft.com/library/ms733813.aspx)
 - [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)
@@ -109,16 +106,16 @@ MakeCert.exe を実行したときにパスワードの入力を求められた�
 <span id="unplated-assets" />
 ## <a name="add-unplated-assets"></a>プレートなしのアセットを追加する
 
-タスク バーに表示されるアプリの 44 x 44 アセットを任意で構成する方法を次に示します。 
+タスク バーに表示されるアプリの 44 x 44 アセットを任意で構成する方法を次に示します。
 
 1. 正しい 44 x 44 画像を取得し、画像保存用のフォルダー (つまり、Assets) にコピーします。
 
-2. 各 44 x 44 画像のコピーを同じフォルダーに作成し、ファイル名の末尾に *.targetsize-44_altform-unplated* を追加します。 これにより、同じ画像で異なる名前のアイコンが、2 つずつフォルダーに保存されます。 たとえばプロセスを完了すると、assets フォルダーに *MYAPP_44x44.png* と *MYAPP_44x44.targetsize-44_altform-unplated.png* ができます (注: 前者は、VisualElements 属性 *Square44x44Logo* の下の appxmanifest で参照されるアイコン)。 
+2. 各 44 x 44 画像のコピーを同じフォルダーに作成し、ファイル名の末尾に *.targetsize-44_altform-unplated* を追加します。 これにより、同じ画像で異なる名前のアイコンが、2 つずつフォルダーに保存されます。 たとえばプロセスを完了すると、assets フォルダーに *MYAPP_44x44.png* と *MYAPP_44x44.targetsize-44_altform-unplated.png* ができます (注: 前者は、VisualElements 属性 *Square44x44Logo* の下の appxmanifest で参照されるアイコン)。
 
 3.    AppXManifest で、作業対象のすべてのアイコンの BackgroundColor を透明に設定します。 この属性は、各アプリケーションの VisualElements の下にあります。
 
 4.    CMD を開き、パッケージのルート フォルダーにディレクトリを変更した後、コマンド ```makepri createconfig /cf priconfig.xml /dq en-US``` を実行して priconfig.xml ファイルを作成します。
 
-5.    CMD を使い、ディレクトリはパッケージのルート フォルダーのまま、コマンド ```makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``` を使って resources.pri ファイルを作成します。 たとえば、アプリのコマンドは、```makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``` のようになります。 
+5.    CMD を使い、ディレクトリはパッケージのルート フォルダーのまま、コマンド ```makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``` を使って resources.pri ファイルを作成します。 たとえば、アプリのコマンドは、```makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``` のようになります。
 
-6.    次の手順の説明に従って AppX をパッケージ化し、結果を確認します。
+6.    次の手順の説明に従って Windows アプリ パッケージをパッケージ化し、結果を確認します。

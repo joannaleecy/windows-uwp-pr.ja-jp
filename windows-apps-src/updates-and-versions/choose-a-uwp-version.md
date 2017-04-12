@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: e2bc7b4a12aed40093985000486b9f3f78967524
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 2fe7d9017919166992b13a5cc5f058591fecda3e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="choose-a-uwp-version"></a>UWP バージョンの選択
 
 Microsoft Visual Studio で UWP アプリを作成するときは、ターゲットのバージョンを選択できます。 現時点では、可能なバージョンは次の 3つだけです。
@@ -46,4 +43,3 @@ Visual Studio の **[新しいユニバーサル Windows プロジェクト]** �
 * コードでは、**[最小バージョン]** で指定されたバージョンに含まれているすべての API を自由に (つまり、条件チェックなしに) 呼び出すことができます。
 * 必ず **[最小バージョン]** を実行するデバイスでコードをテストして、**[ターゲット バージョン]** のみに存在する API を必要とすることなく動作することを確認してください。
 * プロジェクトのコンパイルに使用するすべての参照 (コントラクト winmds) は、**[ターゲット バージョン]** の値によって特定されます。 しかしそれらの参照により、(**[最小バージョン]** で) サポートを宣言したデバイスに存在しない API への呼び出しを含むコードもコンパイルできます。 したがって、**[最小バージョン]** の後に導入されたすべての API は、アダプティブ コード経由で呼び出す必要があります。 アダプティブ コードについて詳しくは、「[ユニバーサル Windows プラットフォーム (UWP) アプリのガイド](../get-started/universal-application-platform-guide.md)」をご覧ください。
-

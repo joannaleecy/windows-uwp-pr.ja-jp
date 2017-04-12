@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 98158e8dc1531c1d4059b5462a6839d775fb6336
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0d4266d1335198cffb74900b0d1eb2bb48cd1879
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="color"></a>色
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -150,10 +147,30 @@ Windows では、色もカスタマイズが可能です。 各ユーザーが�
 既定では、ハイパーリンクにはユーザーのアクセント カラーが使用されます。 ページの背景と似ていてハイパーリンクが目立たない場合は、適用するアクセント カラーの色調を調整してコントラストを強調できます。
 
 
-<div class="uwpd-image-with-caption">
-    <img src="images/shades.png" alt="A single accent color with its 6 shades" />
-    <div>既定のアクセント カラーのさまざまな色調。</div>
-</div>
+<table class="uwpd-color-table" style="border: solid 4px white; width: 30pc">
+   <caption>既定のアクセント カラーのさまざまな色調。</caption>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #A6D8FF; color: black">3 段階明るい色調</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #76B9ED; color: black">2 段階明るい色調</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #429CE3; color: black">1 段階明るい色調</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #0078D7; color: white">サンプルのアクセント カラー</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #005A9E; color: white">1 段階暗い色調</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #004275; color: white">2 段階暗い色調</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #002642; color: white">3 段階暗い色調</td>
+    </tr>
+</table>
 
 <div class="uwpd-image-with-caption">
     <img src="images/action_center_redline_zoom.png" alt="Redlines for Colored Action Center" />
@@ -223,4 +240,3 @@ Windows では、色もカスタマイズが可能です。 各ユーザーが�
 
 * [XAML スタイル](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)
 * [XAML テーマ リソース](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)
-

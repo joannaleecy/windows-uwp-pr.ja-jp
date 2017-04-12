@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 83c7f52f0d55773c3bb0d5802eb1166aa6cf40a7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7eaddcfc2d02805e60043132328ef482872a9000
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="manage-account-users"></a>アカウント ユーザーの管理
 
 
@@ -279,4 +276,3 @@ Azure AD アプリケーションが Microsoft Azure AD でデータの読み取
  
 
  
-

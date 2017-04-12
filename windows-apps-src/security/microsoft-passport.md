@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f77de7b7a3c89a57855afba59028f55d8e8bb39c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e22176049652717af5ad222f7e6c8a30d447ce1b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-hello"></a>Windows Hello
 
 

@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: "Windows ストア分析 API を使って、自分または自分の組織の Windows デベロッパー センター アカウントに登録されたアプリの分析データをプログラムで取得することができます。"
-title: "Windows ストア サービスを使った分析データへのアクセス"
+title: "ストア サービスを使った分析データへのアクセス"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 03/17/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10、UWP、ストア サービス、Windows ストア分析 API"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1538f06b09bd4143750c10a2774137f87359ebce
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows 10, UWP, ストア サービス, Windows ストア分析 API"
+ms.openlocfilehash: aa33af63a49d890b3c60ec1bee32528cfc78af93
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
-# <a name="access-analytics-data-using-windows-store-services"></a>Windows ストア サービスを使った分析データへのアクセス
+# <a name="access-analytics-data-using-store-services"></a>ストア サービスを使った分析データへのアクセス
 
 *Windows ストア分析 API* を使って、自分または自分の組織の Windows デベロッパー センター アカウントに登録されたアプリの分析データをプログラムで取得することができます。 この API では、アプリおよびアドオン (アプリ内製品または IAP とも呼ばれます) の入手数、エラー、アプリの評価とレビューに関するデータを取得できます。 この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
 
@@ -74,12 +71,20 @@ POST URI の *tenant\_id* の値と *client \_id* および *client \_secret* �
 
 Azure AD アクセス トークンを取得したら、Windows ストア分析 API を呼び出すことができます。 各メソッドの構文については、次の記事をご覧ください。 各メソッドの **Authorization** ヘッダーにアクセス トークンを渡す必要があります。
 
+| シナリオ       | メソッド      |
+|---------------|--------------------|
+| 入手数とインストール数 |  <ul><li>[アプリの入手数の取得](get-app-acquisitions.md)</li><li>[アドオンの入手数の取得](get-in-app-acquisitions.md)</li><li>[アプリのインストール数の取得](get-app-installs.md)</li></ul> |
+| アプリのエラー | <ul><li>[エラー報告データの取得](get-error-reporting-data.md)</li><li>[アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)</li><li>[アプリのエラーに関するスタック トレースの取得](get-the-stack-trace-for-an-error-in-your-app.md)</li></ul> |
+| 評価とレビュー | <ul><li>[アプリの評価の取得](get-app-ratings.md)</li><li>[アプリのレビューの取得](get-app-reviews.md)</li></ul> |
+| アプリ内広告と広告キャンペーン | <ul><li>[広告のパフォーマンス データの取得](get-ad-performance-data.md)</li><li>[広告キャンペーンのパフォーマンス データの取得](get-ad-campaign-performance-data.md)</li></ul> |
+
+次の追加のメソッドは、[Windows ハードウェア デベロッパー センター プログラム](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)に参加している開発者アカウントで利用できます。
+
 | シナリオ       | 説明      |
 |---------------|--------------------|
-| 取得 |  アプリとアドオンの取得データを取得します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[アプリの取得数の取得](get-app-acquisitions.md)</li><li>[アドオンの取得数の取得](get-in-app-acquisitions.md)</li></ul> |
-| エラー | アプリのエラーに関するデータを取得します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[エラー報告データの取得](get-error-reporting-data.md)</li><li>[アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)</li><li>[アプリのエラーに関するスタック トレースの取得](get-the-stack-trace-for-an-error-in-your-app.md)</li></ul> |
-| 評価とレビュー | アプリの評価とレビュー情報を取得します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[アプリの評価の取得](get-app-ratings.md)</li><li>[アプリのレビューの取得](get-app-reviews.md)</li></ul> |
-| アプリ内広告と広告キャンペーン | アプリ内広告とプロモーションの広告キャンペーンのパフォーマンス データを取得します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[広告のパフォーマンス データの取得](get-ad-performance-data.md)</li><li>[広告キャンペーンのパフォーマンス データの取得](get-ad-campaign-performance-data.md)</li></ul> |
+| Windows 10 ドライバーのエラー (IHV 向け) |  <ul><li>[Windows 10 のドライバーに関するエラー報告データを取得する](get-error-reporting-data-for-windows-10-drivers.md)</li><li>[Windows 10 のドライバー エラーに関する詳細を取得する](get-details-for-a-windows-10-driver-error.md)</li><li>[Windows 10 のドライバー エラーに関する CAB ファイルをダウンロードする](download-the-cab-file-for-a-windows-10-driver-error.md)</li></ul> |
+| Windows 7/Windows 8.x ドライバーのエラー (IHV 向け) |  <ul><li>[Windows 7 や Windows 8.x のドライバーに関するエラー報告データを取得する](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)</li><li>[Windows 7 や Windows 8.x のドライバー エラーに関する詳細を取得する](get-details-for-a-windows-7-or-windows-8.x-driver-error.md)</li><li>[Windows 7 や Windows 8.x のドライバー エラーに関する CAB ファイルをダウンロードする](download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md)</li></ul> |
+| ハードウェア エラー (OEM 向け) |  <ul><li>[OEM ハードウェア エラー報告データを取得する](get-oem-hardware-error-reporting-data.md)</li><li>[OEM ハードウェア エラーの詳細を取得する](get-details-for-an-oem-hardware-error.md)</li><li>[OEM ハードウェア エラーの CAB ファイルをダウンロードする](download-the-cab-file-for-an-oem-hardware-error.md)</li></ul> |
 
 ## <a name="code-example"></a>コードの例
 
@@ -110,16 +115,3 @@ Windows ストア分析 API は、エラー コードとメッセージが含ま
     "source":"AnalyticsAPI"
 }
 ```
-
-## <a name="related-topics"></a>関連トピック
-
-* [アプリの入手数の取得](get-app-acquisitions.md)
-* [アドオンの入手数の取得](get-in-app-acquisitions.md)
-* [エラー報告データの取得](get-error-reporting-data.md)
-* [アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)
-* [アプリのエラーに関するスタック トレースの取得](get-the-stack-trace-for-an-error-in-your-app.md)
-* [アプリの評価の取得](get-app-ratings.md)
-* [アプリのレビューの取得](get-app-reviews.md)
-* [広告のパフォーマンス データの取得](get-ad-performance-data.md)
-* [プロモーション キャンペーンのパフォーマンス データの取得](get-ad-campaign-performance-data.md)
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア コレクション API, 製品の表示"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 29db10862533e7b15c7a676fc3aecd4ba58f9514
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="query-for-products"></a>製品の照会
 
 
@@ -45,9 +42,9 @@ Azure AD クライアント ID に関連付けられているアプリでユー�
  
 ### <a name="request-header"></a>要求ヘッダー
 
-| ヘッダー         | タイプ   | 説明                                                                                           |
+| ヘッダー         | 型   | 説明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。                           |
+| Authorization  | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。                           |
 | Host           | string | 値 **collections.mp.microsoft.com** に設定する必要があります。                                            |
 | Content-Length | number | 要求の本文の長さ。                                                                       |
 | Content-Type   | string | 要求と応答の種類を指定します。 現時点では、サポートされている唯一の値は **application/json** です。 |
@@ -219,4 +216,3 @@ Date: Tue, 22 Sep 2015 20:28:18 GMT
 * [コンシューマブルな製品をフルフィルメント完了として報告する](report-consumable-products-as-fulfilled.md)
 * [無料の製品の付与](grant-free-products.md)
 * [Windows ストア ID キーの更新](renew-a-windows-store-id-key.md)
-

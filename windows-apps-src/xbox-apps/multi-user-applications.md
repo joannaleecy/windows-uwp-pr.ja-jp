@@ -9,19 +9,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 2dde6ed3-7f53-48a6-aebe-2605230decb8
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 31866c400683c61b432c3fe620487f93a9187771
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: b150b50c1072a96ae0017bae848eeff94bb07ce0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="introduction-to-multi-user-applications"></a>マルチ ユーザー アプリケーションの概要
 
 このトピックは、Xbox のマルチ ユーザー モデルの簡単な概要となるものです。
-
-> [!NOTE]
-> マルチ ユーザー アプリケーションは現在有効になっていません。 
 
 Xbox One ユーザー モデルは、複数のユーザーが単一のデバイスで互いに協力しながらゲームをプレイできるゲーム機本体の要件に合わせて調整されています。 それぞれが自分のコントローラーを持つ複数のユーザーがサインインして、同時に 1 つの対話型セッションでコンソールを使用できます。 これは、他の Windows デバイスとは異なります。 次に例を示します。
 * **Windows のデスクトップ PC** では、同じデバイスを使用する複数のユーザーが許可されますが、各ユーザーに独自の対話型セッションがあり、各セッションはデバイス上の他のセッションから完全に独立しています。
@@ -58,4 +52,3 @@ Windows.System.UserDeviceAssociation.FindUserFromDeviceId メソッドを使用�
 
 ## <a name="see-also"></a>参照
 - [Xbox One の UWP](index.md)
-

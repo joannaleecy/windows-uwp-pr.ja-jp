@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 260aa6c4bae2f7e9d051e172f83563f430e4e6c4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 88d4b155acb38a3ab11cc180d112fb3434af87a0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xaml-and-whitespace"></a>XAML と空白
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
@@ -57,5 +54,4 @@ XML と同じように、XAML での空白文字には、スペース、改行�
 `xml:space="preserve"`: この属性は、空白を保持する必要がある要素のレベルで指定します。 これを指定すると、見た目に直感的な入れ子としてマークアップ要素を配置するためにコード エディターまたはデザイン サーフェイスによって追加される場合があるスペースも含め、すべての空白が保持されることに注意してください。 これらのスペースのレンダリングは、包含要素のコンテンツ モデルの問題でもあります。 ルート レベルで `xml:space="preserve"` を指定することはお勧めしません。大半のオブジェクト モデルは、いずれにしても空白を重要なものと見なしていないためです。 文字列内で空白をレンダリングする要素、または空白が重要となるコレクションである要素のレベルに限定してこの属性を設定することが、より適切な方法です。
 
 エンティティと改行なしスペース: XAML は、テキスト オブジェクト モデル内への任意の Unicode エンティティの配置をサポートしています。 (UTF-8 エンコードでの) 改行なしスペースなど、専用のエンティティを使うことができます。 また、改行なしスペース文字をサポートするリッチ テキスト コントロールも使うことができます。 インデントなどのレイアウト特性をシミュレートするのにエンティティを使っている場合は注意が必要です。その理由は、エンティティの実行時出力は、パネルや余白の適切な使用など、一般的なレイアウト機能よりも、数が多いほうの要因によって変わるためです。
-
 

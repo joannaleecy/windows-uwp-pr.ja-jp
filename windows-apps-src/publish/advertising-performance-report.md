@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d53fe17f2d2452e66a6b4f9c1609112c621ede64
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e12cec828704a839092c1a6cb618ce8a46b83093
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="advertising-performance-report"></a>広告パフォーマンス レポート
 
 
@@ -103,4 +100,3 @@ pubCenter を使ってアプリの広告ユニットを作成しているが、�
  
 
  
-

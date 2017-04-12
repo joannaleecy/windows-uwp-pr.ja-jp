@@ -1,37 +1,34 @@
 ---
-author: awkoren
+author: normesta
 Description: "この記事では、Desktop to UWP Bridge を使用してアプリを変換する前に理解しておく必要のあることについて説明します。 アプリの変換プロセス準備に多くの作業は必要ありません。"
 Search.Product: eADQiWindows 10XVcnh
-title: "Desktop to UWP Bridge 用にアプリを準備する"
-ms.author: alkoren
-ms.date: 02/08/2017
+title: "Desktop to UWP Bridge での準備"
+ms.author: normesta
+ms.date: 03/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 238d3520bc4890a030327ad0bc799ab90b83ef40
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 1f18efd5738d357ee88b481c65fc02f503afb703
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="prepare-an-app-for-conversion-with-the-desktop-bridge"></a>デスクトップ ブリッジでの変換用にアプリを準備する
+# <a name="desktop-to-uwp-bridge-prepare"></a>Desktop to UWP Bridge: 準備
 
 この記事では、Desktop to UWP Bridge を使用してアプリを変換する前に理解しておく必要のあることについて説明します。 変換プロセス用にアプリを準備するためには多くの作業を行う必要はありませんが、以下の項目のいずれかがアプリケーションに当てはまる場合には、変換の前に対処する必要があります。 ライセンスと自動更新は Windows ストアで処理されるため、これらの機能はコードベースから削除できます。
 
-+ __アプリでバージョン 4.6.1 よりも前のバージョンの .NET を使用している__。 .NET 4.6.1 のみがサポートされています。 変換する前にアプリのターゲットを .NET 4.6.1 に変更する必要があります。 
++ __アプリでバージョン 4.6.1 よりも前のバージョンの .NET を使用している__。 .NET 4.6.1 のみがサポートされています。 変換する前にアプリのターゲットを .NET 4.6.1 に変更する必要があります。
 
 + __常に管理者特権のセキュリティ権限でアプリを実行する__。 アプリは、対話ユーザーとして実行中にも機能する必要があります。 Windows ストアからアプリをインストールするユーザーはシステム管理者ではない可能性があります。そのため、アプリは、標準ユーザーでは正しく動作しない、管理者だけが実行できる方法で実行する必要があります。
 
 + __アプリにカーネル モード ドライバーや Windows サービスが必要__。 ブリッジはアプリには適していますが、システム アカウントで実行する必要があるカーネル モード ドライバーや Windows サービスはサポートしていません。 Windows サービスの代わりに、[バックグラウンド タスク](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)を使います。
 
-+ __アプリのモジュールが AppX パッケージに含まれていないプロセスに読み込まれるインプロセスである__。 これは許可されていません。つまり、[シェルの拡張機能](https://msdn.microsoft.com/library/windows/desktop/dd758089.aspx)などのインプロセスの拡張機能はサポートされていません。 ただし、同じパッケージに 2 つのアプリが含まれている場合に、そのアプリ間でプロセス間通信することはできます。
++ __アプリのモジュールが Windows アプリ パッケージに含まれていないプロセスに読み込まれるインプロセスである。 これは許可されていません。つまり、[シェルの拡張機能](https://msdn.microsoft.com/library/windows/desktop/dd758089.aspx)などのインプロセスの拡張機能はサポートされていません。 ただし、同じパッケージに 2 つのアプリが含まれている場合に、そのアプリ間でプロセス間通信することはできます。
 
-+ __アプリが [SetDllDirectory](https://msdn.microsoft.com/library/windows/desktop/ms686203) または [AddDllDirectory](https://msdn.microsoft.com/library/windows/desktop/hh310513)__ を呼び出す。 現在、これらの関数は変換されたアプリでサポートされていません。 今後のリリースでサポートが追加される予定です。 この問題を回避するには、これらの関数を使うために配置している .dll をすべてパッケージのルートにコピーします。 
++ __アプリが [SetDllDirectory](https://msdn.microsoft.com/library/windows/desktop/ms686203) または [AddDllDirectory](https://msdn.microsoft.com/library/windows/desktop/hh310513)__ を呼び出す。 現在、これらの関数は変換されたアプリでサポートされていません。 今後のリリースでサポートが追加される予定です。 この問題を回避するには、これらの関数を使うために配置している .dll をすべてパッケージのルートにコピーします。
 
-+ __アプリでカスタム アプリケーション ユーザー モデル ID (AUMID) を使う__。 プロセスから [SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422.aspx) を呼び出して独自の AUMID を設定する場合、アプリ モデル環境/AppX パッケージでその目的で生成された AUMID しか使えません。 カスタムの AUMID を定義することはできません。
++ __アプリでカスタム アプリケーション ユーザー モデル ID (AUMID) を使う__。 プロセスから [SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422.aspx) を呼び出して独自の AUMID を設定する場合、アプリ モデル環境/Windows アプリ パッケージでその目的で生成された AUMID しか使えません。 カスタムの AUMID を定義することはできません。
 
 + __アプリが HKEY_LOCAL_MACHINE (HKLM) レジストリ ハイブを変更する__。 アプリから HKLM キーを作成しようとしたり、変更のために開こうとしたりすると、アクセス拒否エラーが発生します。 アプリには、レジストリを仮想化した独自のプライベート ビューがあるため、ユーザーやマシン全体のレジストリ ハイブ (HKLM はこれに相当) の概念は適用されないことに注意してください。 HKLM を使って実現していたことを、HKEY_CURRENT_USER (HKCU) に書き込むなど別の方法で実現する必要があります。
 
@@ -47,13 +44,13 @@ ms.lasthandoff: 02/08/2017
 
 + __アプリで UIAccess が必要__。 アプリケーションが UAC マニフェストの `requestedExecutionLevel` 要素で `UIAccess=true` を指定している場合の UWP への変換は現在サポートされていません。 詳しくは、「[UI オートメーション セキュリティの概要](https://msdn.microsoft.com/library/ms742884.aspx)」をご覧ください。
 
-+ __他のプロセスで使用できるように COM オブジェクトや GAC アセンブリをアプリで公開している__。 現在のリリースでは、AppX パッケージ外部の実行可能ファイルから生成されたプロセスで使用できるように、アプリが COM オブジェクトや GAC アセンブリを公開することはできません。 パッケージ内のプロセスは、通常どおり、COM オブジェクトや GAC アセンブリを登録して使用できますが、外部からは認識されません。 つまり、OLE などの相互運用機能のシナリオは、外部プロセスによって呼び出された場合、機能しません。 
++ __他のプロセスで使用できるように COM オブジェクトや GAC アセンブリをアプリで公開している__。 現在のリリースでは、Windows アプリ パッケージ外部の実行可能ファイルから生成されたプロセスで使用できるように、アプリが COM オブジェクトや GAC アセンブリを公開することはできません。 パッケージ内のプロセスは、通常どおり、COM オブジェクトや GAC アセンブリを登録して使用できますが、外部からは認識されません。 つまり、OLE などの相互運用機能のシナリオは、外部プロセスによって呼び出された場合、機能しません。
 
-+ __サポートされていない方法でアプリが C ランタイム ライブラリ (CRT) にリンクされている__。 Microsoft C/C++ ランタイム ライブラリは、Microsoft Windows オペレーティング システムのプログラミングのルーチンを提供します。 これらのルーチンは、C および C++ 言語では提供されない、多くの一般的なプログラミング タスクを自動化します。 アプリで C/C++ ランタイム ライブラリを使用している場合、サポートされている方法でリンクされていることを確認する必要があります。 
-    
-    Visual Studio 2015 は、現在のバージョンの CRT に対して、コードで共通の DLL ファイルを使用できるようにするダイナミック リンクと、コードに直接ライブラリをリンクするスタティック リンクの両方をサポートしています。 可能であれば、アプリで VS 2015 へのダイナミック リンクを使用することをお勧めします。 
++ __サポートされていない方法でアプリが C ランタイム ライブラリ (CRT) にリンクされている__。 Microsoft C/C++ ランタイム ライブラリは、Microsoft Windows オペレーティング システムのプログラミングのルーチンを提供します。 これらのルーチンは、C および C++ 言語では提供されない、多くの一般的なプログラミング タスクを自動化します。 アプリで C/C++ ランタイム ライブラリを使用している場合、サポートされている方法でリンクされていることを確認する必要があります。
 
-    以前のバージョンの Visual Studio でのサポートは異なります。 詳しくは、次の表をご覧ください。 
+    Visual Studio 2015 は、現在のバージョンの CRT に対して、コードで共通の DLL ファイルを使用できるようにするダイナミック リンクと、コードに直接ライブラリをリンクするスタティック リンクの両方をサポートしています。 可能であれば、アプリで VS 2015 へのダイナミック リンクを使用することをお勧めします。
+
+    以前のバージョンの Visual Studio でのサポートは異なります。 詳しくは、次の表をご覧ください。
 
     <table>
     <th>Visual Studio のバージョン</td><th>ダイナミック リンク</th><th>スタティック リンク</th></th>
@@ -64,26 +61,24 @@ ms.lasthandoff: 02/08/2017
     <tr><td>2013 (VC 12)</td><td>サポートされる</td><td>サポートされない</td>
     <tr><td>2015 (VC 14)</td><td>サポートされる</td><td>サポートされる</td>
     </table>
-    
+
     注: いずれの場合も、最新の公開されている CRT にリンクする必要があります。
 
 + __アプリが Windows サイドバイサイド フォルダーからアセンブリをインストールする/読み込む__。 たとえば、アプリが C ランタイム ライブラリ VC8 または VC9 を使用しており、Windows サイドバイサイド フォルダーから動的にリンクしている、つまり、コードが共有フォルダーから共通の DLL ファイルを使用しているとします。 これはサポートされていません。 再頒布可能なライブラリ ファイルをコードに直接リンクして、静的にリンクする必要があります。
 
-+ __アプリが、System32/SysWOW64 フォルダーの依存関係を使っている__。 DLL が機能するためには、AppX パッケージの仮想ファイル システム部分にそれらの DLL を含める必要があります。 これにより、アプリは DLL が **System32**/**SysWOW64** フォルダーにインストールされている場合と同じように動作します。 パッケージのルートで **VFS** という名前のフォルダーを作成します。 そのフォルダー内に、**SystemX64** フォルダーと **SystemX86**フォルダーを作成します。 **SystemX86** フォルダーに DLL の 32 ビット バージョンを格納し、**SystemX64** フォルダーに 64 ビット バージョンを格納します。
++ __アプリが、System32/SysWOW64 フォルダーの依存関係を使っている__。 DLL が機能するためには、Windows アプリ パッケージの仮想ファイル システム部分にそれらの DLL を含める必要があります。 これにより、アプリは DLL が **System32**/**SysWOW64** フォルダーにインストールされている場合と同じように動作します。 パッケージのルートで **VFS** という名前のフォルダーを作成します。 そのフォルダー内に、**SystemX64** フォルダーと **SystemX86**フォルダーを作成します。 **SystemX86** フォルダーに DLL の 32 ビット バージョンを格納し、**SystemX64** フォルダーに 64 ビット バージョンを格納します。
 
-+ __アプリが Dev11 VCLibs フレームワーク パッケージを使っている__。 VCLibs 11 ライブラリは、AppX パッケージで依存関係として定義されている場合、Windows ストアから直接インストールできます。 これを行うには、`<Dependencies>` ノードの下に、以下を追加して変更する必要があります。  
++ __アプリが Dev11 VCLibs フレームワーク パッケージを使っている__。 VCLibs 11 ライブラリは、Windows アプリ パッケージで依存関係として定義されている場合、Windows ストアから直接インストールできます。 これを行うには、`<Dependencies>` ノードの下に、以下を追加して変更する必要があります。  
 `<PackageDependency Name="Microsoft.VCLibs.110.00.UWPDesktop" MinVersion="11.0.24217.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />`  
 Windows ストアからインストールするとき、アプリをインストールする前に VCLibs 11 フレームワークの適切なバージョン (x86 または x64) がインストールされます。  
 アプリがサイドローディングによってインストールされる場合は、依存関係がインストールされません。 コンピューター上に依存関係を手動でインストールするには、[VC 11.0 Desktop Bridge 用フレームワーク パッケージ](https://www.microsoft.com/download/details.aspx?id=53340&WT.mc_id=DX_MVP4025064)をダウンロードしてインストールする必要があります。 これらのシナリオについて詳しくは、「[Using Visual C++ Runtime in Centennial project (Centennial プロジェクトで Visual C++ ラインタイムを使用する)](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project/)」をご覧ください。
 
-+ __アプリにカスタム ジャンプ リストが含まれる__。 ジャンプ リストを使用する場合は、いくつかの問題と注意事項があります。 
++ __アプリにカスタム ジャンプ リストが含まれる__。 ジャンプ リストを使用する場合は、いくつかの問題と注意事項があります。
 
     - __アプリのアーキテクチャが OS と一致しない。__  現在、アプリと OS のアーキテクチャが一致しない場合 (x64 Windows で実行されている x86 アプリなど)、ジャンプ リストは正しく機能しません。 現時点では、アプリを再コンパイルしてアーキテクチャを一致させる以外に回避策はありません。
 
-    - __アプリがジャンプ リストの項目を作成して、[ICustomDestinationList::SetAppID](https://msdn.microsoft.com/library/windows/desktop/dd378403(v=vs.85).aspx) または [SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422(v=vs.85).aspx) を呼び出す__。 プログラムによって AppID をコードに設定しないでください。 そうすると、ジャンプ リストの項目が表示されません。 アプリにカスタム ID が必要な場合は、マニフェスト ファイルを使用して指定してください。 手順については、「[Desktop Bridge を使って手動でアプリを UWP アプリに変換する](desktop-to-uwp-manual-conversion.md)」を参照してください。 アプリケーションの AppID は *YOUR_PRAID_HERE* セクションに指定されます。 
+    - __アプリがジャンプ リストの項目を作成して、[ICustomDestinationList::SetAppID](https://msdn.microsoft.com/library/windows/desktop/dd378403(v=vs.85).aspx) または [SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422(v=vs.85).aspx) を呼び出す__。 プログラムによって AppID をコードに設定しないでください。 そうすると、ジャンプ リストの項目が表示されません。 アプリにカスタム ID が必要な場合は、マニフェスト ファイルを使用して指定してください。 手順については、「[Desktop Bridge を使って手動でアプリを UWP アプリに変換する](desktop-to-uwp-manual-conversion.md)」を参照してください。 アプリケーションの AppID は *YOUR_PRAID_HERE* セクションに指定されます。
 
-    - __アプリが、パッケージ内の実行可能ファイルを参照するジャンプ リスト シェル リンクを追加します__。 ジャンプ リストから直接、パッケージ内の実行可能ファイルを起動することはできません (アプリ自体の .exe の絶対パスを使用する場合は除く)。 アプリの実行エイリアスを登録し (これで、まるで PATH に指定されているかのように、キーワードを使って変換済みのアプリを起動できます)、リンク先のパスにこのエイリアスを設定します。 appExecutionAlias 拡張機能の使い方について詳しくは、「[Desktop Bridge アプリの拡張機能](desktop-to-uwp-extensions.md)」をご覧ください。 元の .exe に一致するジャンプ リストのリンク アセットが必要な場合は、他のカスタム項目と同様に、[**SetIconLocation**](https://msdn.microsoft.com/library/windows/desktop/bb761047(v=vs.85).aspx) を使用してアイコンなどのアセットを設定し、PKEY_Title を使用して名前を表示します。 
+    - __アプリが、パッケージ内の実行可能ファイルを参照するジャンプ リスト シェル リンクを追加します__。 ジャンプ リストから直接、パッケージ内の実行可能ファイルを起動することはできません (アプリ自体の .exe の絶対パスを使用する場合は除く)。 アプリの実行エイリアスを登録し (これで、まるで PATH に指定されているかのように、キーワードを使って変換済みのアプリを起動できます)、リンク先のパスにこのエイリアスを設定します。 appExecutionAlias 拡張機能の使い方について詳しくは、「[Desktop Bridge アプリの拡張機能](desktop-to-uwp-extensions.md)」をご覧ください。 元の .exe に一致するジャンプ リストのリンク アセットが必要な場合は、他のカスタム項目と同様に、[**SetIconLocation**](https://msdn.microsoft.com/library/windows/desktop/bb761047(v=vs.85).aspx) を使用してアイコンなどのアセットを設定し、PKEY_Title を使用して名前を表示します。
 
     - __アプリが、絶体パスを使用して、アプリのパッケージ内のアセットを参照するジャンプ リスト項目を追加します__。 アプリのインストール パスが、パッケージが更新されるときに変更され、アセット (アイコン、ドキュメント、実行可能ファイルなど) の場所が変わる場合があります。 ジャンプ リストの項目が、そのようなアセットを絶対パスで参照している場合、アプリのジャンプ リストを定期的に (アプリの起動時など) 更新して、パスが正しく解決されるようにします。 または、UWP [**Windows.UI.StartScreen.JumpList**](https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.jumplist.aspx) API を使用します。この API では、package-relative ms-resource URI スキーマ (これは言語、DPI、ハイ コントラストにも対応します) を使用して、文字列アセットと画像アセットを参照できます。
-
-

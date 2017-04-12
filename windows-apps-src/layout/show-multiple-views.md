@@ -12,13 +12,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 011a6e50c22a1ef245a9be11e3a5d7f9e270d5bc
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 87f3d5e75b361d1ba9d2c304e58542803da66cd4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="show-multiple-views-for-an-app"></a>アプリの複数のビューの表示
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -145,7 +142,6 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
  
 
  
-
 
 
 

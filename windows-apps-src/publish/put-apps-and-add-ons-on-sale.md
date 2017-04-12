@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5823fce5aa5b5d0e98bc43828dc7469a08fdb9d0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7c88e927a88dbef928deedd6f92b2aa7b60da1cf
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="put-apps-and-add-ons-on-sale"></a>アプリとアドオンの販売
 
 期間限定で特売することにより Windows ストアでアプリやアドオンの販促活動をすることができます。
@@ -71,5 +68,4 @@ ms.lasthandoff: 02/07/2017
 申請の認定プロセスが完了するまでに特売が開始されない場合、削除された特売が実行されることはありません。 既に終了した特売を削除した場合は、**[価格と使用可能状況]** ページから特売が削除されるだけです。
 
 > **重要:** ストアのアプリの内容を表示するとユーザーはスケジュールされた終了日を確認できるため、開始後に特売を削除することはお勧めしません。 既に始まっている特売を削除した場合、特売は認定プロセスが完了した時点で終了するため、潜在的なユーザーに不満を感じさせる可能性があります。
-
 

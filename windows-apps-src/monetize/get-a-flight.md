@@ -1,27 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: 87708690-079A-443D-807E-D2BF9F614DDF
-description: "Windows デベロッパー センター アカウントに登録するアプリのパッケージ フライトのデータを取得するには、Windows ストア提出 API 内の以下のメソッドを使用します。"
-title: "Windows ストア申請 API を使用したパッケージ フライトの取得"
+description: "Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトに関するデータを取得するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "パッケージ フライトの取得"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア申請 API, フライト, パッケージ フライト"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ae8014dadfb838cfd14202a673654be3a012c8bf
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 921d33c033704de711112c30feae7dbbfebc732b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-a-package-flight-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したパッケージ フライトの取得
-
+# <a name="get-a-package-flight"></a>パッケージ フライトの取得
 
 
 
-Windows デベロッパー センター アカウントに登録するアプリのパッケージ フライトのデータを取得するには、Windows ストア提出 API 内の以下のメソッドを使用します。
+
+Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトに関するデータを取得するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -30,7 +27,7 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 * Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
 * このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア提出 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
+>**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
 ## <a name="request"></a>要求
 
@@ -105,20 +102,20 @@ Authorization: Bearer <your access token>
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | flightId            | string  | パッケージ フライトの ID。 この値は、デベロッパー センターによって提供されます。  |
 | friendlyName           | string  | 開発者によって指定されているパッケージ フライトの名前。   |  
-| lastPublishedFlightSubmission       | object | パッケージ フライトの最後に公開された提出に関する情報を提供するオブジェクト。 詳しくは、以下の「[提出オブジェクト](#submission_object)」セクションをご覧ください。  |
-| pendingFlightSubmission        | object  |  パッケージ フライトの現在保留中の提出に関する情報を提供するオブジェクト。 詳しくは、以下の「[提出オブジェクト](#submission_object)」セクションをご覧ください。  |   
+| lastPublishedFlightSubmission       | object | パッケージ フライトの最後に公開された申請に関する情報を提供するオブジェクト。 詳しくは、以下の「[申請オブジェクト](#submission_object)」セクションをご覧ください。  |
+| pendingFlightSubmission        | object  |  パッケージ フライトの現在保留中の申請に関する情報を提供するオブジェクト。 詳しくは、以下の「[申請オブジェクト](#submission_object)」セクションをご覧ください。  |   
 | groupIds           | array  | パッケージ フライトに関連付けられているフライト グループの ID を含む文字列の配列。 フライト グループについて詳しくは、「[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)」をご覧ください。   |
 | rankHigherThan           | string  | 現在のパッケージ フライトの次に低位のパッケージ フライトのフレンドリ名。 フライト グループのランク付けについて詳しくは、「[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)」をご覧ください。  |
 
 <span id="submission_object" />
-### <a name="submission-object"></a>提出オブジェクト
+### <a name="submission-object"></a>申請オブジェクト
 
-応答本文の *lastPublishedFlightSubmission* と *pendingFlightSubmission* の値には、パッケージ フライトの提出に関するリソース情報を提供するオブジェクトが含まれています。 これらのオブジェクトには、次の値があります。
+応答本文の *lastPublishedFlightSubmission* と *pendingFlightSubmission* の値には、パッケージ フライトの申請に関するリソース情報を提供するオブジェクトが含まれています。 これらのオブジェクトには、次の値があります。
 
 | 値           | 型    | 説明                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id            | string  | 提出 ID。    |
-| resourceLocation   | string  | 提出の完全なデータを取得するために基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI に付加できる相対パス。                                                                                                                                               |
+| id            | string  | 申請 ID。    |
+| resourceLocation   | string  | 申請の完全なデータを取得するために、ベースとなる ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI に付加できる相対パス。                                                                                                                                               |
  
 <span/>
 
@@ -130,13 +127,12 @@ Authorization: Bearer <your access token>
 |--------|---------------------  |
 | 400  | 要求が無効です。 |
 | 404  | 指定されたパッケージ フライトは見つかりませんでした。   |   
-| 409  | アプリは、[Windows ストア提出 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センターのダッシュボード機能を使用します。 |                                                                                                 
+| 409  | アプリは、[Windows ストア申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センターのダッシュボード機能を使用します。 |                                                                                                 
 
 <span/>
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Windows ストア サービスを使用した提出の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
+* [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [パッケージ フライトの作成](create-a-flight.md)
 * [パッケージ フライトの削除](delete-a-flight.md)
-

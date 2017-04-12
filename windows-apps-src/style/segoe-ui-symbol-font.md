@@ -1,7 +1,7 @@
 ---
 author: mijacobs
 Description: "この記事には、Segoe MDL2 Assets フォントに付属しているグリフの一覧と、その使い方のガイダンスが含まれています。"
-Search.Refinement.TopicID: 184
+Search.Refinement.TopicID: "184"
 title: "Segoe MDL2 アイコンのガイドライン"
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
 label: Segoe MDL2 icons
@@ -12,13 +12,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0869bd8f26a6baf0a6b174812526fe7d80487dec
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 669a59227e06a976ee567eeea7717787727a51ff
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="segoe-mdl2-icons"></a>Segoe MDL2 アイコン
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -63,7 +60,7 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 
 ## <a name="icon-list"></a>アイコン一覧
 
-<table>
+<table style="background-color: white; color: black">
 
  <tr>
   <td>記号</td>
@@ -5150,7 +5147,6 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 
 
  
-
 
 
 

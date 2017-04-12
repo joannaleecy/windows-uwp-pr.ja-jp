@@ -1,27 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: AD80F9B3-CED0-40BD-A199-AB81CDAE466C
-description: "Windows ストア申請 API のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトを削除します。"
-title: "Windows ストア申請 API を使用したパッケージ フライトの削除"
+description: "Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトを削除するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "パッケージ フライトの削除"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア申請 API, フライトの削除"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 781fda9708867dd2f09957e1f06b80e220534e02
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e20661cef4ac7cad17ea5a62d37e9b217061809c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="delete-a-package-flight-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したパッケージ フライトの削除
-
+# <a name="delete-a-package-flight"></a>パッケージ フライトの削除
 
 
 
-Windows ストア申請 API のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトを削除します。
+
+Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトを削除するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。
 
 
 ## <a name="prerequisites"></a>前提条件
@@ -31,7 +28,7 @@ Windows ストア申請 API のこのメソッドを使用して、Windows デ�
 * Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
 * このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア提出 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
+>**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
 ## <a name="request"></a>要求
 
@@ -97,4 +94,3 @@ Authorization: Bearer <your access token>
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [パッケージ フライトの作成](create-a-flight.md)
 * [パッケージ フライトの取得](get-a-flight.md)
-

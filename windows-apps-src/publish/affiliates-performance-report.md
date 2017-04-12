@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3b85abb11049a1e52e9d6a9cc61aebab407207a4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5187a644e4a952a8d3b199c68c2266e6e7c634f1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="affiliates-performance-report"></a>アフィリエイト パフォーマンス レポート
 
 [Microsoft アフィリエイト広告プログラムにオプトインした](about-affiliate-ads.md)場合は、アプリに表示されるアフィリエイト広告のパフォーマンス データを、Windows デベロッパー センター ダッシュボードの次のレポートで確認できます。
@@ -54,4 +51,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

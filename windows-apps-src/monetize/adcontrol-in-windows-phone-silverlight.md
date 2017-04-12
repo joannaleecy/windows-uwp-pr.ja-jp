@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、広告、宣伝、AdControl、Silverlight、Windows Phone"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1f4606f5bb5446d8749f80e2bf4772a0b6db48b3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 743b9faccaa120f1904b592fc09a965dc7878e03
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adcontrol-in-windows-phone-silverlight"></a>Windows Phone Silverlight の AdControl
 
 このチュートリアルでは、Windows Phone 8.1 用または Windows Phone 8.0 用の Silverlight アプリで [AdControl](https://msdn.microsoft.com/library/windows/apps/hh524191.aspx) クラスを使ってバナー広告を表示する方法について説明します。
@@ -135,4 +132,3 @@ ms.lasthandoff: 02/07/2017
 
 
  
-

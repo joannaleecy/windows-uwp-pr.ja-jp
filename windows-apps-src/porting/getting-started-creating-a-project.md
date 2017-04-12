@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c8aba48fba1badcfeebc9868215b904c76ac6b98
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 76307f16fddc094331847f11855d2dbf0467dddf
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="getting-started-creating-a-project"></a>はじめに: プロジェクトの作成
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
@@ -60,4 +57,3 @@ Visual Studio の場合も、次の図に示すように、いくつかのプロ
 ## <a name="next-step"></a>次のステップ
 
 [はじめに: プログラミング言語の選択](getting-started-choosing-a-programming-language.md)
-

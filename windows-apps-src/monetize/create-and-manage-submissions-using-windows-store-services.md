@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 description: "Windows ストア申請 API を使用して、Windows デベロッパー センター アカウントに登録されているアプリの申請をプログラムで作成および管理します。"
-title: "Windows ストア サービスを使用した申請の作成と管理"
+title: "申請の作成と管理"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、Windows ストア申請 API"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f73470c456bf59544bc702b137da64f57c6a6943
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ca8bb623d06da0001b1b0751a5ac1ccc310bbd84
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
-# <a name="create-and-manage-submissions-using-windows-store-services"></a>Windows ストア サービスを使用した申請の作成と管理
+# <a name="create-and-manage-submissions"></a>申請の作成と管理
 
 
 *Windows ストア申請 API* を使用し、自分または自分の組織の Windows デベロッパー センター アカウントに対して、アプリ、アドオン (アプリ内製品または IAP とも呼ばれます)、パッケージ フライトの申請をプログラムによって照会して、作成します。 この API は、アカウントで多数のアプリやアドオンを管理しており、こうしたアセットの申請プロセスを自動化および最適化する場合に便利です。 この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
@@ -33,7 +30,7 @@ ms.lasthandoff: 02/07/2017
 
 > * この API は、API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 このアクセス許可は、開発者アカウントに対して段階的に有効になります。現時点では、すべてのアカウントでこのアクセス許可が有効になっているわけではありません。 以前のアクセス権を要求するには、デベロッパー センター ダッシュボードにログオンし、ダッシュ ボードの下部にある **[フィードバック]** をクリックします。その後、フィードバック領域で **[申請 API]** を選択し、要求を提出します。 自分のアカウントでこのアクセス許可が有効になると、メールが届きます。
 <br/><br/>
->* この API を使用してアプリ、パッケージ フライト、アドオンの申請を作成する場合は、申請をさらに変更するには、デベロッパー センターのダッシュボードではなく、API のみを使用して行ってください。 最初に API を使用して作成した申請をダッシュボードを使用して変更した場合、その申請を API を使用して変更またはコミットすることはできなくなります。 場合によっては、申請がエラー状態のままとなり、申請プロセスを進行できないことがあります。 この問題が発生した場合は、申請を削除して、新しい申請を作成する必要があります。
+>* この API を使用してアプリ、パッケージ フライト、アドオンの申請を作成する場合は、申請をさらに変更するには、デベロッパー センターのダッシュボードではなく、API のみを使用して行ってください。 最初に API を使って作成した申請を、ダッシュボードを使って変更した場合、API を使ってその申請を変更またはコミットすることができなくなります。 場合によっては、申請がエラー状態のままになり、申請プロセスを進めることができなくなります。 この問題が発生した場合は、申請を削除して、新しい申請を作成する必要があります。
 <br/><br/>
 > * この API は、2016 年 8 月にデベロッパー センター ダッシュボードに導入された特定の機能を使用するアプリまたはアドオンで使用できません。これには、必須のアプリの更新プログラムとストアで管理されるコンシューマブルなアドオンが含まれますが、これらに限定されません。 このような機能のいずれかを使用するアプリまたはアドオンで Windows ストア申請 API を使うと、API から 409 エラー コードが返されます。 この場合は、ダッシュボードを使ってアドオンまたはアプリの申請を管理する必要があります。
 
@@ -107,7 +104,7 @@ Azure AD アクセス トークンを取得したら、Windows ストア申請 A
 
 | シナリオ       | 説明                                                                 |
 |---------------|----------------------------------------------------------------------|
-| アプリ |  Windows デベロッパー センター アカウントに登録されているすべてのアプリのデータを取得し、アプリの申請を作成します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[アプリ データの入手](get-app-data.md)</li><li>[アプリの申請の管理](manage-app-submissions.md)</li></ul> |
+| アプリ |  Windows デベロッパー センター アカウントに登録されているすべてのアプリのデータを取得し、アプリの申請を作成します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[アプリ データの取得](get-app-data.md)</li><li>[アプリの申請の管理](manage-app-submissions.md)</li></ul> |
 | アドオン | アプリのアドオンを取得、作成、または削除した後、そのアドオンの申請を取得、作成、または削除します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[アドオンの管理](manage-add-ons.md)</li><li>[アドオンの申請の管理](manage-add-on-submissions.md)</li></ul> |
 | パッケージ フライト | アプリのパッケージ フライトを取得、作成、または削除した後、パッケージ フライトの申請を取得、作成、または削除します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[パッケージ フライトの管理](manage-flights.md)</li><li>[パッケージ フライトの申請の管理](manage-flight-submissions.md)</li></ul> |
 
@@ -120,7 +117,7 @@ Azure AD アクセス トークンを取得したら、Windows ストア申請 A
 * [Java のコード例](java-code-examples-for-the-windows-store-submission-api.md)
 * [Python のコード例](python-code-examples-for-the-windows-store-submission-api.md)
 
->**注:**&nbsp;&nbsp;上記のコード例に加えて、Windows ストア申請 API 上にコマンドライン インターフェイスを実装するオープン ソースの PowerShell モジュールも提供されています。 このモジュールは [StoreBroker](https://aka.ms/storebroker) を呼び出します。 このモジュールを使用すると、Windows ストア申請 API を直接呼び出すのではなく、コマンドラインからアプリ、フライト、アドオンの申請を管理できます。またこのソースを参照して、この API を呼び出す方法の例を参照することもできます。 StoreBroker モジュールは、Microsoft 社内でも、多くのファースト パーティ アプリケーションをストアに申請する主要な方法として積極的に使用されています。 詳しくは、[GitHub の StoreBroker のページ](https://aka.ms/storebroker)をご覧ください。
+>**注**&nbsp;&nbsp;上に示したコード例に加えて、Windows ストア申請 API の上にコマンド ライン インターフェイスを実装するオープンソースの PowerShell モジュールも用意しています。 このモジュールは、[StoreBroker](https://aka.ms/storebroker) と呼ばれています。 このモジュールを使うと、Windows ストア申請 API を直接呼び出さずにコマンド ラインからアプリ、フライト、アドオンの申請を管理できます。または、ソースをそのまま参照して、この API を呼び出す方法の他の例を確認できます。 StoreBroker モジュールは、Microsoft 社内でも、多くのファースト パーティ アプリケーションをストアに申請する主要な方法として積極的に使用されています。 詳しくは、[GitHub の StoreBroker のページ](https://aka.ms/storebroker)をご覧ください。
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
@@ -137,11 +134,9 @@ Windows ストア申請 API に関する質問がある場合やこの API を�
 
 ## <a name="related-topics"></a>関連トピック
 
-* [アプリ データの入手](get-app-data.md)
+* [アプリ データの取得](get-app-data.md)
 * [アプリの申請の管理](manage-app-submissions.md)
 * [アドオンの管理](manage-add-ons.md)
 * [アドオンの申請の管理](manage-add-on-submissions.md)
 * [パッケージ フライトの管理](manage-flights.md)
 * [パッケージ フライトの申請の管理](manage-flight-submissions.md)
- 
-

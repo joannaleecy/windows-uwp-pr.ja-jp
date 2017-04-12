@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c2d6590d21607cec7718617a0657e28ba56c072e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0358443abbfb753ace9276f1cca8dfa0a4745508
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="binding-markup-extension"></a>{Binding} マークアップ拡張
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
@@ -46,7 +43,7 @@ ms.lasthandoff: 02/07/2017
 | *propertyPath* | バインドのプロパティ パスを指定する文字列。 詳しくは、以下の「[プロパティ パス](#property-path)」をご覧ください。 |
 | *bindingProperties* | *propName*=*value*\[, *propName*=*value*\]*<br/>名前と値のペアの構文を使って指定する、1 つ以上のバインド プロパティ。 |
 | *propName* | [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) オブジェクトで設定するプロパティの文字列名。 たとえば、"Converter" です。 |
-| *value* | プロパティに設定する値。 引数の構文は、下記の「[{Binding} で設定できる Binding クラスのプロパティ](#properties-of-binding)」セクションで示しているプロパティによって異なります。 |
+| *value* | プロパティに設定する値。 引数の構文は、下記の「[{Binding} で設定できる Binding クラスのプロパティ](#properties-of-the-binding-class-that-can-be-set-with-binding)」セクションで示しているプロパティによって異なります。 |
 
 ## <a name="property-path"></a>プロパティ パス
 
@@ -130,4 +127,3 @@ ms.lasthandoff: 02/07/2017
 Microsoft Visual Studio の Microsoft IntelliSense では、XAML マークアップ エディターで **{Binding}** を作成している間、データ コンテキストのプロパティが表示されます。 「{Binding」と入力するとすぐに、[**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) に適したデータ コンテキスト プロパティがドロップダウンに表示されます。 IntelliSense は、[**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) の他のプロパティに関しても役立ちます。 これが機能するためには、マークアップ ページにデータ コンテキストまたは設計時のデータ コンテキストを設定する必要があります。 **[定義へ移動]** (F12) は、**{Binding}** でも機能します。 または、データ バインディングのダイアログを使うこともできます。
 
  
-

@@ -9,17 +9,15 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8b55c837e63792e6da4e684602e79d99ad7cff1e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: badb14e5c915db68fb262002a8ee3321b62e2778
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>試用版での機能の除外または制限
 
 
->**注**&nbsp;&nbsp;この記事では、[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間のメンバーの使用法について説明します。 アプリが Windows 10 バージョン 1607 以降を対象としている場合、**Windows.ApplicationModel.Store** 名前空間ではなく、[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間のメンバーを使用して、試用版を実装することをお勧めします。 詳しくは、「[アプリの試用版の実装](implement-a-trial-version-of-your-app.md)」をご覧ください。
+> [!NOTE]
+> この記事では、[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間のメンバーの使用方法について説明します。 アプリが Windows 10 バージョン 1607 以降を対象としている場合、**Windows.ApplicationModel.Store** 名前空間ではなく、[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間のメンバーを使用して、試用版を実装することをお勧めします。 詳しくは、「[アプリの試用版の実装](implement-a-trial-version-of-your-app.md)」をご覧ください。
 
 ユーザーがアプリを無料で使うことができる試用期間を設け、その期間中は一部の機能を除外または制限することで、アプリを通常版にアップグレードするようユーザーに促すことができます。 どのような機能を制限するかをコーディング開始前に決め、完全なライセンスが購入されたときにだけその機能が正しく動作するようにアプリを設定します。 また、顧客がアプリを購入する前の試用期間中にだけバナーや透かしなどが表示されるようにもできます。
 
@@ -106,7 +104,8 @@ ms.lasthandoff: 02/07/2017
 
 シミュレートされたライセンス サーバーでアプリをテストした後、認定用にストアにアプリを提出する前に、**CurrentAppSimulator** を **CurrentApp** に置き換えます (次のコード例を参照)。
 
->**重要:**&nbsp;&nbsp;アプリはストアへの提出時に **CurrentApp** オブジェクトを使っている必要があり、そうでない場合は認定が不合格になります。
+> [!IMPORTANT]
+> アプリはストアへの提出時に **CurrentApp** オブジェクトを使っている必要があり、そうでない場合は認定が不合格になります。
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseRetailWithEvent)]
@@ -126,4 +125,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

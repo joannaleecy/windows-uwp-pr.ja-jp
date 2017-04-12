@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 広告, 宣伝, AdControl, HTML, プロパティ"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a879944dc14ca161c3e52a49ffe4a8cebfa7d69f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: efc94b723b3bfe97b35484882ae784e9ef4d6807
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adcontrol-html-properties-example"></a>AdControl HTML プロパティの例
 
 次の例は、HTML の [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) プロパティを割り当てる方法を示しています。 **applicationId** と **adUnitId** は必須のプロパティです。 その他のプロパティとイベントは省略できます。 省略可能なプロパティの値を指定しなかった場合、アプリのユーザー エクスペリエンスに一致した広告を作成する既定値がコントロールによって使われます。
@@ -44,4 +41,3 @@ ms.lasthandoff: 02/07/2017
 * [GitHub の広告サンプル](http://aka.ms/githubads)
 
  
-

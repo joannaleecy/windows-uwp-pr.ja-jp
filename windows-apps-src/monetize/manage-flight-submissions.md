@@ -1,22 +1,19 @@
 ---
 author: mcleanbyron
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
-description: "Windows デベロッパー センター アカウントに登録するアプリのパッケージ フライトの申請を管理するには、以下の Windows ストア申請 API のメソッドを使います。"
-title: "Windows ストア申請 API を使用したパッケージ フライトの申請の管理"
+description: "Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトの申請を管理するには、以下の Windows ストア申請 API のメソッドを使います。"
+title: "パッケージ フライトの申請の管理"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア申請 API, フライトの申請"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 71e759773beedef302a78a439b1a2a77a72dc85f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 98240f3a1f40f020474c62537d6b0444fe10bb99
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="manage-package-flight-submissions-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したパッケージ フライトの申請の管理
+# <a name="manage-package-flight-submissions"></a>パッケージ フライトの申請の管理
 
 Windows ストア申請 API には、段階的なパッケージのロールアウトなど、アプリのパッケージ フライトの申請を管理するために使用できるメソッドが用意されています。 Windows ストア申請 API の概要については、「[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。この API を使用するための前提条件などの情報があります。
 
@@ -240,7 +237,7 @@ Windows ストア申請 API には、段階的なパッケージのロールア�
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -352,7 +349,7 @@ Windows ストア申請 API には、段階的なパッケージのロールア�
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -380,7 +377,9 @@ Windows ストア申請 API には、段階的なパッケージのロールア�
 | isPackageRollout   |   boolean      |  申請の段階的なパッケージのロールアウトが有効化されているかどうかを示します。    |  
 | packageRolloutPercentage    | float    |  段階的なロールアウトでパッケージを受信するユーザーの割合。    |  
 | packageRolloutStatus    |  string   |  段階的なパッケージのロールアウトの状態を示す、次の文字列のいずれかです。 <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
-| fallbackSubmissionId    |  string   |  段階的なロールアウトのパッケージを入手しないユーザーが受信する申請のID。   |          
+| fallbackSubmissionId    |  string   |  段階的なロールアウトのパッケージを入手しないユーザーが受信する申請の ID。   |          
+
+>**注**&nbsp;&nbsp;*packageRolloutStatus* と *fallbackSubmissionId* の値はデベロッパー センターで割り当てられます。これらの値は、開発者が設定する値ではありません。 これらの値を要求本文に含めると、これらの値は無視されます。 
 
 <span/>
 
@@ -422,4 +421,3 @@ Windows ストア申請 API には、段階的なパッケージのロールア�
 * [パッケージ フライトの申請のコミット](commit-a-flight-submission.md)
 * [パッケージ フライトの申請の削除](delete-a-flight-submission.md)
 * [パッケージ フライトの申請の状態の取得](get-status-for-a-flight-submission.md)
-

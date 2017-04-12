@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: beaf73f0bf4709bcda2edda4afb97869eaccc27b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9c660e480402c584fad2b0f6444d7051d1cd234b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="tax-details-for-paid-apps"></a>有料アプリの税の詳細
 
 
@@ -247,7 +244,6 @@ ms.lasthandoff: 02/07/2017
 | メキシコ                             |
 | ペルー                               |
 | フィリピン                        |
-| プエルトリコ                        |
 | 南アフリカ                       |
 | ベトナム                            |
 
@@ -283,7 +279,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

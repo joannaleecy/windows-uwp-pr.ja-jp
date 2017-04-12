@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 8844196503c45e9488d3fa2a543d588229d01cdd
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: e3acc609e5db083bda023643ef4dae4c5d9d0248
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #<a name="brokered-windows-runtime-components-for-a-side-loaded-windows-store-app"></a>サイド ローディングされた Windows ストア アプリのための Windows ランタイム コンポーネント ブローカー
 
 この記事では、ビジネスに欠かせない重要な操作を提供する既存のコードを、タッチ対応の .NET アプリで使用できるようにする機能について説明します。これは、Windows 10 でサポートされるエンタープライズ向けの機能です。
@@ -582,6 +579,5 @@ struct PersonStruct
 -   [Windows 10 でアプリをサイドロードする方法](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#GroupPolicy)
 
 -   [企業への Windows ストア アプリの展開](http://go.microsoft.com/fwlink/p/?LinkID=264770)
-
 
 

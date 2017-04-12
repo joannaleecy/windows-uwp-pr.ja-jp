@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、分析、報告、ダッシュ ボード、アプリ"
-translationtype: Human Translation
-ms.sourcegitcommit: b01924366a0bc2afabe2f381e72e45862f0dd682
 ms.openlocfilehash: 13a37a4ae2cea67fdce843ed4e6189797d85b93e
-ms.lasthandoff: 02/08/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="analytics"></a>分析
 
 詳細な分析は、Windows デベロッパー センター ダッシュボードで表示できます。 統計情報とチャートでは、アプリの状況 (獲得したユーザーから、ユーザーによるアプリの使い方、ユーザーによるアプリの評判まで) を知ることができます。 アプリの正常性、広告の使用状況などに関する情報も確認できます。 ダッシュボードでレポートを表示するか、[必要なレポートをダウンロード](download-analytic-reports.md)してデータをオフラインで分析します。 [ダッシュボードを使わずに分析データにアクセスする](#no-dashboard)こともできます。
@@ -84,4 +81,3 @@ Power BI を使って分析データにアクセスするには、まず、次�
 
 ## <a name="related-topics"></a>関連トピック
 - [Windows アプリの公開](index.md)
-

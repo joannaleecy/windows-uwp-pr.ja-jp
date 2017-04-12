@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, UWP, 広告, Advertising, スポット, JavaScript, サンプルコード"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 91a54bdd2e41b3e7df0ee0aad32448ab9ed66ac0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 192ea42e9d55bbafcd6c6dbd463681832ac28c86
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="interstitial-ad-sample-code-in-javascript"></a>JavaScript を使ったスポット広告のサンプル コード
 
 このトピックでは、スポット広告を表示する基本的な JavaScript と HTML のユニバーサル Windows プラットフォーム (UWP) アプリの完全なサンプル コードを示します。 このコードを使うためのプロジェクトの詳しい構成手順については、「[スポット広告](interstitial-ads.md)」をご覧ください。 完全なサンプル プロジェクトについては、[GitHub の広告サンプル](http://aka.ms/githubads) をご覧ください。
@@ -28,7 +25,9 @@ ms.lasthandoff: 02/07/2017
 
 >**Windows 8.x と Windows Phone 8.1 に関する注意**&nbsp;&nbsp;プロジェクトのターゲットが Windows 8.1 または Windows Phone 8.1の場合、プロジェクトの既定の HTML ファイル名は index.html ではなく default.html で、プロジェクトの既定の JavaScript ファイル名は main.js ではなく default.js です。
 
-ストアにアプリを提出する前に、```applicationId``` と ```adUnitId``` 変数の値を Windows デベロッパー センターから取得した実際の値に置き換えてください。詳細については、「[アプリで広告ユニットをセットアップする](set-up-ad-units-in-your-app.md)」をご覧ください。
+アプリをストアに提出する前に、```applicationId``` 変数と ```adUnitId``` 変数の値を Windows デベロッパー センターから取得した実際の値に置き換えてください。詳しくは、「[アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md)」をご覧ください。
+
+>**注**&nbsp;&nbsp;ビデオ スポット広告ではなくバナー スポット広告を表示するようにこの例を変更するには、**InterstitialAdType.video** の代わりに、値 **InterstitialAdType.display** を [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) メソッドの最初のパラメーターに渡します。 詳しくは、「[スポット広告](interstitial-ads.md)」をご覧ください。
 
 ### <a name="indexhtml"></a>index.html
 
@@ -53,4 +52,3 @@ ms.lasthandoff: 02/07/2017
 * [GitHub の広告サンプル](http://aka.ms/githubads)
 
  
-

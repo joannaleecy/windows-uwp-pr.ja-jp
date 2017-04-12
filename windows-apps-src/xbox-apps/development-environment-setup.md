@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 8801c0d9-94a5-41a2-bec3-14f523d230df
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 93319caaa16afe84a897dbc4bd6370a5cef3cdd1
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: dcceab233f19696f11075fdc4e46fe4a3aa7e5b9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="set-up-your-uwp-on-xbox-development-environment"></a>Xbox の開発環境に UWP を設定する
 
 Xbox の開発環境のユニバーサル Windows プラットフォーム (UWP) は、ローカル ネットワークを介して Xbox One コンソールに接続されている開発用 PC で構成されます。
@@ -26,7 +23,7 @@ Xbox の開発環境のユニバーサル Windows プラットフォーム (UWP)
 
 ## <a name="visual-studio-setup"></a>Visual Studio のセットアップ
 
-1. Visual Studio 2015 Update 2 以降をインストールします。 詳しい情報とインストール方法については、「[Windows 10 のダウンロードとツール](https://dev.windows.com/downloads)」をご覧ください。
+1. Visual Studio2015 Update2 以降をインストールします。 詳しい情報とインストール方法については、「[Windows 10 のダウンロードとツール](https://dev.windows.com/downloads)」をご覧ください。
 
 1. Visual Studio 2015 Update 2 をインストールするときは、**[ユニバーサル Windows アプリ開発ツール]** チェック ボックスがオンになっていることを確認します。
 
@@ -119,4 +116,3 @@ Xbox One にアプリを展開する前に、ユーザーがコンソールに�
 - [Xbox One の UWP](index.md)
 
 ----
-

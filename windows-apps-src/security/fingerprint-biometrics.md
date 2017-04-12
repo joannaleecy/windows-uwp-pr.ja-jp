@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 84e191df23f10f81a3588662f9ba1505cee12e21
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f9168184e360661dd2e6e2808b193f1e4026c0f5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="fingerprint-biometrics"></a>指紋生体認証
 
 

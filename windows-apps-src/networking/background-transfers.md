@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 26cf0e8330b9a57d082de7b7255a86ddde3b77d4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8238076131d932900e8edfb53ab963de8c98402c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="background-transfers"></a>バックグラウンド転送
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -320,5 +317,4 @@ C++ では、URI として渡される文字列を試行して解析するメソ
 [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 名前空間の非同期メソッドで発生したエラーは、**HRESULT** 値として返されます。 [**BackgroundTransferError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701093) メソッドは、バックグラウンド転送操作からのネットワーク エラーを [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 列挙値に変換するために使われます。 **WebErrorStatus** 列挙値のほとんどは、ネイティブ HTTP または FTP クライアント操作から返されるエラーに対応しています。 アプリは特定の **WebErrorStatus** 列挙値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
 
 パラメーター検証エラーの場合は、例外の **HRESULT** を使って、その例外の原因となったエラーの詳細情報を確認することもできます。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 パラメーター検証エラーではほとんどの場合、返される **HRESULT** は **E\_INVALIDARG** です。
-
 

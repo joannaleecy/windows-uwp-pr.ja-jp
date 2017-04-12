@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c114b7fa5c0e6a613a2c5485903d856592f0863e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: de99f73022987410ee95973542d9a80e9e130e39
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="about-affiliate-ads"></a>アフィリエイト広告について
 
 アプリで **AdMediatorControl** または **AdControl** を使用してバナー広告を表示する場合は、ストア内の製品の Microsoft アフィリエイト広告をアプリに表示して、広告のフィル レートと収益を増やすことができます。 ユーザーがアフィリエイト広告をクリックして一定の期間内に製品を購入すると、承認された購入について収益を獲得できます。
@@ -54,4 +51,3 @@ Microsoft アフィリエイト広告プログラムにオプトインするに�
 
 * [広告による収益獲得](monetize-with-ads.md)
 * [アフィリエイト パフォーマンス レポート](affiliates-performance-report.md)
-

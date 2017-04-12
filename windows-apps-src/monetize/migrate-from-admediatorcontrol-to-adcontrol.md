@@ -2,23 +2,20 @@
 author: mcleanbyron
 ms.assetid: 9621641A-7462-425D-84CC-101877A738DA
 description: "UWP アプリで AdMediatorControl を AdControl に移行する方法について説明します。"
-title: "UWP アプリ用 AdMediatorControl から AdControl への移行"
+title: "AdMediatorControl から AdControl への移行"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 広告, Advertising, AdMediatorControl, AdControl, 移行"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 83235595a6a7f9e9b0b5d8de154d6e5d8a8db8ef
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 71928b67d3c2799b3d8d3711f6f7e5a3610e9c76
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="migrate-from-admediatorcontrol-to-adcontrol"></a>AdMediatorControl から AdControl への移行
 
-# <a name="migrate-from-admediatorcontrol-to-adcontrol-for-uwp-apps"></a>UWP アプリ用 AdMediatorControl から AdControl への移行
-
-以前の Microsoft の広告 SDK リリースでは、**AdMediatorControl** クラスを使用して、ユニバーサル Windows プラットフォーム (UWP) アプリにバナー広告を表示させることができました。開発者はこのクラスを使用して Microsoft のパートナー ネットワーク (AOL や AppNexus) および AdDuplex からバナーを表示することで、広告の収益を最適化することができました。 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) では、**AdMediatorControl** クラスはサポートされません。 以前の SDK の **AdMediatorControl** クラスを使う既存のアプリがあり、そのアプリを [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) を使用する UWP アプリに移行しようと考えている場合は、この記事の指示に従って、**AdMediatorControl** クラスの代わりに **AdControl** クラスを使用するように、コードを更新してください。 必要に応じて、加重または順位付けしたアプローチを使って、AdDuplex によって広告を仲介するようにアプリを構成できます。
+以前の Microsoft Advertising SDK のリリースでは、**AdMediatorControl** クラスを使用して、ユニバーサル Windows プラットフォーム (UWP) アプリにバナー広告を表示させることができました。開発者はこのクラスを使用して Microsoft のパートナー ネットワーク (AOL や AppNexus) および AdDuplex からバナーを表示することで、広告の収益を最適化することができました。 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) では、**AdMediatorControl** クラスはサポートされません。 以前の SDK の **AdMediatorControl** クラスを使う既存のアプリがあり、そのアプリを [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) を使用する UWP アプリに移行しようと考えている場合は、この記事の指示に従って、**AdMediatorControl** クラスの代わりに **AdControl** クラスを使用するように、コードを更新してください。 必要に応じて、加重または順位付けしたアプローチを使って、AdDuplex によって広告を仲介するようにアプリを構成できます。
 
 >**注**&nbsp;&nbsp;この記事のコード例は説明のみを目的としています。 アプリ内で動作させるには、コード例を調整することが必要になる場合があります。
 
@@ -165,4 +162,3 @@ Microsoft の自社広告または AdDuplex に加えて Microsoft の有料広�
 
   > [!div class="tabbedCodeSnippets"]
   [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/ExamplePage1.xaml.cs#Snippet5)]
-

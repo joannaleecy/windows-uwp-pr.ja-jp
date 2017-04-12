@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 20a05337052392446d733af7da180f9466fef05f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8171301a628e173128689765914faea622fd4837
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="common-questions-about-ad-campaigns"></a>広告キャンペーンに関してよく寄せられる質問
 
 ## <a name="how-much-does-it-cost-to-run-an-ad-for-my-app"></a>アプリの広告を掲載するにはいくらかかりますか。
@@ -24,7 +21,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign"></a>広告キャンペーンの月額予算の上限金額を増やすにはどうすればよいですか。
 
-広告キャンペーンで 1 万ドルを超える月額予算をご希望の場合は、ご連絡ください ([aiacare@microsoft.com](mailto:aiacare@microsoft.com))。 キャンペーン当たり 5 万ドルまでお使いになれるプレミアム アカウントにお客様をアップグレードします。 プレミアム アカウントではその他の追加機能として、設定キャンペーンの開始日と終了日を設定したり、キャンペーンのリンク先 URLを指定したりすることができます。
+広告キャンペーンで 1 万ドルを超える月額予算をご希望の場合は、[aiacare@microsoft.com](mailto:aiacare@microsoft.com) までご連絡ください。 キャンペーン当たり 5 万ドルまでお使いになれるプレミアム アカウントにお客様をアップグレードします。 プレミアム アカウントではその他の追加機能として、設定キャンペーンの開始日と終了日を設定したり、キャンペーンのリンク先 URLを指定したりすることができます。
 
 ## <a name="can-i-run-ads-for-one-of-my-apps-in-my-other-apps"></a>自分のいずれかのアプリの広告を、自分の他のアプリに表示できますか。
 
@@ -71,4 +68,3 @@ ms.lasthandoff: 02/07/2017
 * [自社広告について](about-house-ads.md)
 * [コミュニティ広告について](about-community-ads.md)
 * [アプリのインストールの広告レポート](app-install-ads-reports.md)
-

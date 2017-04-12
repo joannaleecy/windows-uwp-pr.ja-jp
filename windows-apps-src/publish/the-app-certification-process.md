@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c63668b9699e641bb89fa79f5febc3397aac78a1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 87fc6e35a2a9818478aca4119850ae20165d2a64
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="the-app-certification-process"></a>アプリの認定プロセス
 
 
@@ -56,7 +53,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

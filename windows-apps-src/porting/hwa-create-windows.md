@@ -10,13 +10,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "ホストされた Web アプリ、Windows 10 への Web アプリの移植, Web サイトから Windows への変換, Windows ストア用の Web アプリのパッケージ化"
 ms.assetid: a58d2c67-77f8-4d01-bea3-a6ebce2d73b9
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: b6781883a3e48d35a558798f369e91c4a7ea3bec
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: e135b63e2ba5f455dbbf6524e5519a33acd822b0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="convert-your-web-application-to-a-universal-windows-platform-uwp-app"></a>Web アプリケーションをユニバーサル Windows プラットフォーム (UWP) アプリに変換する
 
 Web サイトの URL のみから開始して、Windows 10 用のユニバーサル Windows プラットフォーム アプリをすばやく作成する方法について説明します。 
@@ -104,4 +101,3 @@ function cameraCapture() {
 - [ユニバーサル Windows プラットフォーム (UWP) 機能にアクセスして Web アプリを強化する](hwa-access-features.md)
 - [ユニバーサル Windows プラットフォーム (UWP) アプリのガイド](http://go.microsoft.com/fwlink/p/?LinkID=397871)
 - [Windows ストア アプリ設計のアセットのダウンロード](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
-

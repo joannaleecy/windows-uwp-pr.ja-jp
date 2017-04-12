@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: febafd9a36f021bdbf06692a34c8691d1008018f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5cf5fa2ca6abe8b4bc53867587490bae3ab6d551
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="getting-started-navigation"></a>はじめに: ナビゲーション
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
@@ -90,5 +87,4 @@ public BlankPage()
 ### <a name="next-step"></a>次のステップ
 
 [はじめに: アニメーション](getting-started-animation.md)
-
 

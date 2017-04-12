@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 962b6b7361da8b88d13b37219fab538e1510c961
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e040f0ea1f2106da2d7da76464d4c818f39d6735
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="generate-preinstall-packages-for-oems"></a>OEM 向けのプレインストール パッケージの生成
 
 
@@ -46,12 +43,11 @@ ms.lasthandoff: 02/07/2017
 ## <a name="support"></a>サポート
 
 
-プレインストール パッケージの生成についてさらに不明な点がある場合は、<partnerops@microsoft.com> までメールでお問合せください。
+プレインストール パッケージの生成についてさらに不明な点がある場合は、<partnerops@microsoft.com> までメールでお問い合わせください。
 
  
 
  
-
 
 
 

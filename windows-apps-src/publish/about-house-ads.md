@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8c4f6597ecb262bf93efa02b695221606521a754
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 86ba2afa41c414ea9cb604637a40e34cd02cc7a4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="about-house-ads"></a>自社広告について
 
 
@@ -39,6 +36,5 @@ ms.lasthandoff: 02/07/2017
 * [広告キャンペーンの管理](managing-your-ad-campaign.md)
 * [アプリのインストールの広告レポート](app-install-ads-reports.md)
 * [よく寄せられる質問](common-questions.md)
-
 
 

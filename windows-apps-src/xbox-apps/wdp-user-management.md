@@ -1,14 +1,19 @@
----  
+---
 author: WilliamsJason
 title: "Xbox Live テスト ユーザー管理 API のリファレンス"
 description: "ユーザー管理 API にプログラムでアクセスする方法について説明します。"
-translationtype: Human Translation
-ms.sourcegitcommit: 67f158b1d3d5ece14c36483a2513a2db2f478660
-ms.openlocfilehash: 66fe038fdb54ac5cb9086bf9225d0a5d573b39c8
-
----  
-
-#Xbox Live ユーザー管理#
+ms.author: jaswill
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 70876ab6-8222-4940-b4fb-65b581a77d6a
+ms.openlocfilehash: c1a2517aa8716cff9201351a12a3c391110aafab
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
+---
+#<a name="xbox-live-user-management"></a>Xbox Live ユーザー管理#
 
 **要求**
 
@@ -41,7 +46,7 @@ PUT メソッドの呼び出しには、次の構造の JSON 配列を含める�
   * SponsoredUser (省略可能): スポンサー ユーザーを追加するかどうかを指定するブール値。
   * Delete (省略可能): 本体からこのユーザーを削除することを指定するブール値。
 
-###応答###
+###<a name="response"></a>応答###
 
 **応答本文**
 
@@ -67,11 +72,5 @@ GET メソッドの呼び出しでは、次のプロパティが指定された 
 | 4XX                | 無効な要求データまたは形式を示すさまざまなエラー |
 | 5XX                | 予期しないエラーのエラー コード |
 <br>
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

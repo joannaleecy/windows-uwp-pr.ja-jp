@@ -1,24 +1,21 @@
 ---
 author: mcleanbyron
 ms.assetid: cb7380d0-bc14-4936-aa1c-206304b3dc70
-description: "Microsoft Advertising ライブラリの AdControl クラスで生成されるエラーを処理する方法について説明します。"
-title: "Microsoft Advertising ライブラリによるエラーの処理"
+description: "Microsoft Advertising ライブラリの AdControl クラスによって生成されたエラーを処理する方法について説明します。"
+title: "Advertising ライブラリでのエラーの処理"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 広告, 宣伝, エラー処理, JavaScript, XAML, C#"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f979a250872f19a54c6b638d44624ff2e1840c91
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7c65f424341517072b06aaba30929f17303dcf1f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="error-handling-with-the-advertising-libraries"></a>Advertising ライブラリでのエラーの処理
 
-# <a name="error-handling-with-the-microsoft-advertising-libraries"></a>Microsoft Advertising ライブラリによるエラーの処理
-
-このトピックでは、Microsoft Advertising ライブラリで [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) クラスによって生成されたエラーを処理する方法についての基本的な情報を説明します。
+このトピックでは、Microsoft Advertising ライブラリの [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) クラスによって生成されたエラーを処理する方法についての基本的な情報を説明します。
 
 <span id="bkmk-javascript"/>
 ## <a name="javascripthtml-apps"></a>JavaScript/HTML アプリ
@@ -88,4 +85,3 @@ XAML および C# での **AdControl** エラー処理について説明する�
  
 
  
-

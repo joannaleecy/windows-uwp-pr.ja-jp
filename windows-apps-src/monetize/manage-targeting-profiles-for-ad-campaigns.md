@@ -1,25 +1,22 @@
 ---
 author: mcleanbyron
 ms.assetid: d305746a-d370-4404-8cde-c85765bf3578
-description: "プロモーション用の広告キャンペーンの対象プロファイルを管理するには、Windows ストア プロモーション API 内の以下のメソッドを使用します。"
-title: "広告キャンペーンの対象プロファイルの管理"
+description: "プロモーション用の広告キャンペーンの対象プロファイルを管理するには、Windows ストア プロモーション API に含まれる以下のメソッドを使用します。"
+title: "対象プロファイルの管理"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア プロモーション API, 広告キャンペーン"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: c737e27df4a911d3fcbdcb3128ece865bda2b703
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 30fb160e389edd18fb3782d332b5603fc6207757
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="manage-targeting-profiles"></a>対象プロファイルの管理
 
-# <a name="manage-targeting-profiles-for-ad-campaigns"></a>広告キャンペーンの対象プロファイルの管理
 
-
-プロモーション用の広告キャンペーンの各配信ラインで対象とするユーザー、地域、インベントリの種類を選択するには、Windows ストア プロモーション API 内のこれらのメソッドを使用します。 対象プロファイルは、複数の配信ライン間で作成して再利用できます。
+プロモーション用の広告キャンペーンの各配信ラインで対象とするユーザー、地域、インベントリの種類を選択するには、Windows ストア プロモーション API に含まれる以下のメソッドを使用します。 対象プロファイルは、複数の配信ライン間で作成して再利用できます。
 
 対象プロファイルと広告キャンペーン、配信ライン、クリエイティブ間の関係について詳しくは、「[Windows ストア サービスを使用した広告キャンペーンの実行](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api)」をご覧ください。
 
@@ -28,7 +25,7 @@ ms.lasthandoff: 02/08/2017
 これらのメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Windows ストア プロモーション API に関するすべての[前提条件](run-ad-campaigns-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* これらのメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
+* これらのメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
 
 ## <a name="request"></a>要求
 
@@ -161,7 +158,7 @@ Authorization: Bearer <your access token>
 
 |  *age* フィールドの整数値  |  対応する年齢範囲  |  
 |---------------------------------|---------------------------|
-|     621     |            13 ～ 17             |
+|     651     |            13 ～ 17             |
 |     652     |           18 ～ 24             |
 |     653     |            25 ～ 34             |
 |     654     |            35 ～ 49             |
@@ -620,4 +617,3 @@ Authorization: Bearer <your access token>
 * [広告キャンペーンの配信ラインの管理](manage-delivery-lines-for-ad-campaigns.md)
 * [広告キャンペーンのクリエイティブの管理](manage-creatives-for-ad-campaigns.md)
 * [広告キャンペーンのパフォーマンス データの取得](get-ad-campaign-performance-data.md)
-

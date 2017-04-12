@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 54666642e67581bebbb35049f7779086d23939a0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2b9cc9142655efc8123fdcde0eef464cb86df070
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="reviews-report"></a>レビュー レポート
 
 
@@ -89,4 +86,3 @@ Windows ストア デベロッパー センター ダッシュボードを使っ
  
 
  
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6f928e9d3ad67773f36a0ae8c110df3e17ad88c5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b26ee59be9c309326eeb93546d3702bc161513f3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="custom-dependency-properties"></a>カスタム依存関係プロパティ
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -62,7 +59,7 @@ Windows ランタイムまたは Windows ランタイム アプリの次の機�
 依存関係プロパティの定義は、一連の概念と考えることができます。 いくつかの概念は実装の単一コード行で処理できるため、これらの概念は必ずしも手順ではありません。 このリストでは、概要のみ示します。 各概念については後でこのトピックで詳しく説明し、複数の言語でのコード例を示します。
 
 -   プロパティ名をプロパティ システムに登録して ([**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) を呼び出す)、所有者型とプロパティ値の型を指定します。 
-    -  [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) にはプロパティ メタデータを要求する必須パラメーターがあります。 これに **null** を指定するか、プロパティ変更動作や、[**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) を呼び出すことによって復元できるメタデータ ベースの既定値が必要な場合は、[**PropertyMetadata**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.propertymetadata) のインスタンスを指定します。
+    -  [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) にはプロパティ メタデータを要求する必須パラメーターがあります。 これに **null** を指定するか、プロパティ変更動作や、[**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) を呼び出すことによって復元できるメタデータ ベースの既定値が必要な場合は、[**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.propertymetadata) のインスタンスを指定します。
 -   [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 識別子を所有者型の **public static readonly** プロパティ メンバーとして定義します。
 -   実装する言語で使うプロパティ アクセサー モデルに従ってラッパー プロパティを定義します。 ラッパー プロパティ名は、[**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) で使った *name* 文字列と一致する必要があります。 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) と [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) を呼び出し、独自のプロパティの識別子をパラメーターとして渡すことで、**get** アクセサーと **set** アクセサーを実装して、ラップする依存関係プロパティにラッパーを関連付けます。
 -   (省略可能) ラッパーに [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011) などの属性を配置します。
@@ -380,5 +377,4 @@ C++/CX のプロパティ登録の実装は、C# より込み入っています�
 * [依存関係プロパティの概要](dependency-properties-overview.md)
 * [XAML ユーザーとカスタム コントロールのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238581)
  
-
 

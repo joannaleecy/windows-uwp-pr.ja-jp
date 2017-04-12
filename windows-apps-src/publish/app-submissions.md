@@ -9,13 +9,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: df66981ae8355ea62128a881f02fd6fb891ffb30
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8d6764051a6f3d9d5c6d851f0ba15353da5f9d5e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-submissions"></a>アプリの申請
 
 
@@ -108,4 +105,3 @@ ms.lasthandoff: 02/07/2017
 <span/>
 
 **注**&nbsp;&nbsp;基幹業務 (LOB) アプリを企業に直接公開する方法については、「[LOB アプリの企業への配布](distribute-lob-apps-to-enterprises.md)」をご覧ください。
-

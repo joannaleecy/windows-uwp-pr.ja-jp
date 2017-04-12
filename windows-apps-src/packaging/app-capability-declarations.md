@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 29aa2aefda5eebfade2da6b3e2b1e8b71361889f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 16aa93d85856558122e7217f82b881bcdbaea50e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="app-capability-declarations"></a>アプリ機能の宣言
 
@@ -147,7 +145,7 @@ ms.lasthandoff: 02/07/2017
 | **初回サインイン時の設定** | 制限された機能 **firstSignInSettings** を使うと、アプリは、ユーザーが初めてデバイスにサインインしたときに設定されたユーザー設定にアクセスできます。 <br /><br />この機能は、ストア申請用に誰でもアクセスを要求できます。
 | **Windows チーム エクスペリエンス** | 制限された機能 **teamEditionExperience** を使うと、アプリは、Windows チーム セッションの多くの経験的側面を制御する内部 API にアクセスできます。 Windows チーム セッションは、Microsoft Surface Hub など、チーム デバイスで実行されている可能性があります。 <br /><br />この機能は、ストア申請用のアクセスを要求できません。
 | **リモート ロック解除** | 制限された機能 **remotePassportAuthentication** を使うと、アプリは、リモート PC のロック解除に使用される資格情報にアクセスできます。 <br /><br />この機能は、ストア申請用のアクセスを要求できません。
-| **コンポジションのプレビュー** | 制限された機能 **previewUiComposition** を使うと、アプリはユーザー インターフェイスの [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) 名前空間をプレビューすることで、完成前に API に関するフィードバックを提供できます。 詳しくは、wincomposition@microsoft.com にお問い合わせください。 <br /><br />この機能は、ストア申請用に誰でもアクセスを要求できます。
+| **コンポジションのプレビュー** | 制限された機能 **previewUiComposition** を使うと、アプリはユーザー インターフェイスの [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) 名前空間をプレビューすることで、完成前に API に関するフィードバックを提供できます。 詳細については、wincomposition@microsoft.com にお問い合わせください。 <br /><br />この機能は、ストア申請用に誰でもアクセスを要求できます。
 | **安全な評価のためのロックダウン** | 制限された機能 **secureAssessment** を使うと、アプリは安全な評価のために単一アプリ モードに Windows をロックダウンできます。 <br /><br />この機能は、ストア申請用のアクセスを要求できません。
 | **接続マネージャーのプロビジョニング** | 制限された機能 **networkConnectionManagerProvisioning** を使うと、アプリは、デバイスを WWAN および WLAN インターフェイスに接続するポリシーを定義できます。 この機能を使うアプリは、携帯電話会社が作成し、モバイル ネットワークへのデバイス接続を管理します。 <br /><br />この機能は、ストア申請用に誰でもアクセスを要求できます。
 | **データ通信プランのプロビジョニング** | 制限された機能 **networkDataPlanProvisioning** を使うと、アプリは、デバイスのデータ プランに関する情報を収集し、ネットワーク使用状況を読み取れます。 この機能を使うアプリは、携帯電話会社が作成し、ユーザーの実際のデータ使用量を OS データ使用量の設定に統合します。 <br /><br />この機能は、ストア申請用に誰でもアクセスを要求できます。
@@ -182,4 +180,3 @@ ms.lasthandoff: 02/07/2017
 * [パッケージ マニフェストで機能を指定する方法](https://msdn.microsoft.com/library/windows/apps/BR211477)
 * [パッケージ マニフェストでデバイス機能を指定する方法](https://msdn.microsoft.com/library/windows/apps/Dn263092)
  
-

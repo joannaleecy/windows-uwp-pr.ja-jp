@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: aaeedd655e5ae84dc4ee71683a9831412c8ef5ac
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4a4aac5c5990807f2988be1ba818992b1bccbea3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-platform-specific-store-listings"></a>プラットフォーム固有のストア登録情報の作成
 
 
@@ -50,7 +47,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2c1bf910303f0c26761a3c63c3e1159dd2d0c6bb
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cad84be24836bc6a33a4ab08f1ca4fa2d9e97512
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xfieldmodifier-attribute"></a>x:FieldModifier 属性
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -41,5 +38,4 @@ XAML コンパイルの動作を変更して、名前付きオブジェクトの
 **x:FieldModifier** は、[x:Name 属性](x-name-attribute.md)を含む要素にのみ関係します。なぜなら、この名前はパブリックであるときにのみフィールドを参照するために使われるためです。
 
 **注:** Windows ランタイム XAML では、**x:ClassModifier** または **x:Subclass** はサポートされていません。
-
 

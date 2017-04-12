@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: "アプリ内広告の UI とユーザー エクスペリエンスのガイドラインについて説明します。"
-title: "アプリ内広告の UI とユーザー エクスペリエンスのガイドライン"
+title: "広告の UI とユーザー エクスペリエンスのガイドライン"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 広告, 宣伝, ガイドライン, ベスト プラクティス"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e1c3fef6e8cc7cc483b72b6ba142d323055c960c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 75a68977e5edb996a5e2fc1ae9265d11b7492ad9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="ui-and-user-experience-guidelines-for-ads-in-apps"></a>アプリ内広告の UI とユーザー エクスペリエンスのガイドライン
+# <a name="ui-and-user-experience-guidelines-for-ads"></a>広告の UI とユーザー エクスペリエンスのガイドライン
 
 この記事では、アプリ内のバナー広告とスポット広告を使って優れたエクスペリエンスを提供するためのガイドラインを示します。 アプリの外観を設計する方法については、「[設計および UI](https://developer.microsoft.com/windows/apps/design)」をご覧ください。
 
@@ -62,7 +59,7 @@ ms.lasthandoff: 02/07/2017
 
 * ユーザーがアプリでタスクを実行するにはバナーをクリックする必要がある。またはアプリの設計結果として、ユーザーにバナー広告を強制的にクリックさせる。
 
-* [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) オブジェクトのスワッピング、またはユーザー操作を伴わない強制的なページ更新など、任意の手段でバナー広告の組み込み最短更新タイマーを回避する。
+* [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) オブジェクトのスワップ、またはユーザー操作を伴わない強制的なページ更新など、任意の手段でバナー広告の組み込み最短更新タイマーを回避する。
 
 * 開発およびテスト中、またはエミュレーターでライブ広告ユニット (つまり、Windows デベロッパー センター ダッシュボードから取得した広告ユニット) を使用する。
 
@@ -75,7 +72,7 @@ ms.lasthandoff: 02/07/2017
 
 洗練された方法でスポット広告を使うと、ユーザー満足度を損なうことなく、アプリの収益を飛躍的に向上させることができます。 使い方が不適切だと、スポット広告は逆効果になる可能性があります。
 
-以下のセクションでは、[InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) を使用して、アプリ内でスポット広告を実装する際の推奨事項と Windows ストアのポリシー、[ポリシー 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) に違反する実装の例を紹介します。 ポリシーに関連する問題を除き、アプリについて最もよく理解しているのは開発者の皆様であるため、ベスト プラクティスに関する最終的な判断は開発者の皆様に委ねています。 留意する最も重要な点は、アプリの評価と収益が密接に結びついていることです。
+以下のセクションでは、[InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) を使用してアプリにビデオ スポット広告やバナー スポット広告を実装する際の推奨事項、および Windows ストアのポリシーである、[ポリシー 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) に違反する実装の例を紹介します。 ポリシーに関連する問題を除き、アプリについて最もよく理解しているのは開発者の皆様であるため、ベスト プラクティスに関する最終的な判断は開発者の皆様に委ねています。 留意する最も重要な点は、アプリの評価と収益が密接に結びついていることです。
 
 ### <a name="best-practices"></a>ベスト プラクティス
 
@@ -91,7 +88,7 @@ ms.lasthandoff: 02/07/2017
 
     * タトゥーや帽子などのカスタム アバター機能。
 
-* アプリでビデオ広告を最後まで視聴することを要求する場合は、ユーザーが閉じるボタンを押したときにエラー メッセージに驚かないように、事前にルールを説明しておきます。
+* アプリでビデオ スポット広告を最後まで視聴することを要求する場合は、ユーザーが閉じるボタンを押したときにエラー メッセージに驚かないように、事前にルールを説明しておきます。
 
 * 可能であれば広告の表示が必要になる 30 ～ 60 秒前に ([InterstitialAd.RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) を呼び出して) 広告を事前に取得しておきます。
 
@@ -105,13 +102,13 @@ ms.lasthandoff: 02/07/2017
 
     * [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) に基づいてユーザーの帯域幅を節約することを選択する場合、**ConnectionProfile** クラスに便利な API があります。
 
-* 他の値に設定する妥当な理由がない限り、既定のタイムアウト (30 秒) を使います。他の値に設定する場合、10 秒未満には設定しないでください。 特に高速接続を利用できない市場では、ビデオ広告はバナー広告よりもダウンロードにかかる時間が大幅に長くなります。
+* 他の値に設定する妥当な理由がない限り、既定のタイムアウト (30 秒) を使います。他の値に設定する場合、10 秒未満には設定しないでください。 特に高速接続を利用できない市場では、スポット広告は標準のバナー広告よりもダウンロードにかかる時間が大幅に長くなります。
 
 <span/>
 
-* ユーザーのデータ通信プランに留意してください。 たとえば、データ通信の上限が近い、または上限を超えているモバイル デバイスで、ビデオ広告を表示する前に、何も表示しないか、ユーザーに警告するかを決定します。 [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) クラスには、これに役立つ API があります。
+* ユーザーのデータ通信プランに留意してください。 たとえば、データ通信量上限に近づいているモバイル デバイスや上限を超えているモバイル デバイスで、ビデオ スポット広告を表示する前に、何も表示しないか、ユーザーに警告するかを決定します。 [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) クラスには、これに役立つ API があります。
 
-* 最初の申請後に、アプリを継続的に改善します。 [広告レポート](../publish/advertising-performance-report.md)を確認し、フィル レートとビデオ完了率を向上させるために設計を変更します。
+* 最初の申請後に、アプリを継続的に改善します。 [広告レポート](../publish/advertising-performance-report.md)を確認し、フィル レートとビデオ スポット広告の完了率が向上するように設計を変更します。
 
 <span />
 ### <a name="practices-to-avoid"></a>避けるプラクティス
@@ -120,13 +117,13 @@ ms.lasthandoff: 02/07/2017
 
 * 過剰に表示しないでください。 ユーザーがゲームをプレイするだけでなく、広告についてオプションの具体的なメリットを明確に感じている場合を除き、5 分ごとよりも頻繁に広告を強制的に表示しないでください。
 
-* アプリの起動時にビデオ スポット広告を表示しないでください。ユーザーは、誤ったタイルをクリックしたと考える可能性があります。
+* アプリの起動時にスポット広告を表示しないでください。ユーザーは、誤ったタイルをクリックしたと考える可能性があります。
 
-* 終了時にビデオ スポット広告を表示しないでください。 完了率がほぼゼロになるため、これは不適切なインベントリです。
+* 終了時にスポット広告を表示しないでください。 完了率がほぼゼロになるため、これは不適切なインベントリです。
 
 * 2 つ以上のスポット広告を連続して表示しないでください。 ユーザーは広告の進行状況バーが開始点にリセットされるのを見ると苛立ちを感じます。 多くのユーザーは、これがコーディングまたは広告提供のバグであると考えます。
 
-* [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) を呼び出す 5 分以上前にビデオ広告を取得しないでください。 適切なインベントリでは、事前に取得された広告から請求可能なインプレッションへのコンバージョンが最大化されます。
+* [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) を呼び出す 5 分以上前にビデオ スポット広告を取得しないでください。 適切なインベントリでは、事前に取得された広告から請求可能なインプレッションへのコンバージョンが最大化されます。
 
 * 利用可能な広告がないなど、広告を提供できなかった場合に、ユーザーに不利益をもたらさないようにしてください。 たとえば、[広告を視聴して *xxx* を取得する] という UI オプションを表示する場合、ユーザーが責任を果たしたら、*xxx* を提供する必要があります。 2 つのオプションを検討してください。
 
@@ -160,4 +157,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

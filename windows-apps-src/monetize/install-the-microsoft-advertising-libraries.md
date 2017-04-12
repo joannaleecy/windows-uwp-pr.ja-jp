@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 広告, 宣伝, インストール, SDK, ライブラリ"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 034b597c945f9f12700ac442e4b3014b0bc84c78
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3304efd659a32176a44c33d9df4e8062b3bc7700
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="install-the-microsoft-advertising-libraries"></a>Microsoft Advertising ライブラリのインストール
 
 
@@ -38,9 +35,9 @@ Windows および Windows Phone 8.x 用の Microsoft Store Services SDK と Micr
 
 * Windows および Windows Phone 8.x 用の Microsoft Advertising SDK には、2 つのセットの広告ライブラリが含まれています。1 つは、Microsoft Advertising 用ライブラリです (XAML および JavaScript/HTML アプリ用の [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) クラスと [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) クラスを提供します)。もう 1 つは、広告仲介ライブラリ用のライブラリです (**AdMediatorControl** クラスを提供します)。
 
-このドキュメントでは、Microsoft Advertising ライブラリの **AdControl** クラスと **InterstitialAd** クラスを使ってバナーまたはビデオ スポット広告を表示する方法について説明します。 Windows 8.1 アプリと Windows Phone 8.x アプリ向けの広告の仲介の使用について詳しくは、「[広告の仲介を追加して収益を最大限に高める](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx)」をご覧ください。
+このドキュメントでは、Microsoft Advertising ライブラリの **AdControl** クラスと **InterstitialAd** クラスを使ってバナー広告やスポット広告を表示する方法について説明します。 Windows 8.1 アプリと Windows Phone 8.x アプリ向けの広告仲介の使用方法について詳しくは、「[広告仲介を使って収益を最大限に高める](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx)」をご覧ください。
 
->**注**&nbsp;&nbsp;**AdMediatorControl** クラスを使用した広告の仲介は、Windows 10 用の UWP アプリでは現在サポートされていません。 サーバー側の広告仲介は、UWP アプリ で間もなく利用可能になる予定です。この場合、バナー広告 (**AdControl**) とビデオ スポット広告 (**InterstitialAd**) には同じ API が使用されます。
+>**注**&nbsp;&nbsp;**AdMediatorControl** クラスを使用した広告の仲介は、Windows 10 用の UWP アプリでは現在サポートされていません。 サーバー側の広告仲介は、UWP アプリで間もなく利用可能になる予定です。この場合、バナー広告 (**AdControl**) とスポット広告 (**InterstitialAd**) には同じ API が使用されます。
 
 いずれかの広告コントロールをアプリ コードで使う場合、事前に適切なライブラリをプロジェクトで参照する必要があります。 次の表に、Visual Studio の **[参照マネージャー]** ダイアログ ボックスに表示される各ライブラリの名前を示します。
 
@@ -106,4 +103,3 @@ Windows および Windows Phone 8.x 用の Microsoft Store Services SDK と Micr
  
 
  
-

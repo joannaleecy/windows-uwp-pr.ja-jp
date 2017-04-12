@@ -1,27 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: AC74B4FA-5554-4C03-9683-86EE48546C05
-description: "Windows ストア申請 API でこのメソッドを使用して、新しいアドオンまたは更新されたアドオンの申請を Windows デベロッパー センターにコミットします。"
-title: "Windows ストア申請 API を使用したアドオン申請のコミット"
+description: "新しいアドオンの申請または更新されたアドオンの申請を Windows デベロッパー センターにコミットするには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "アドオンの申請のコミット"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、Windows ストア申請 API、アドオンの申請のコミット、アプリ内製品、IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: bb8fb30a8dace9c9e32cc233bf6b73046263a22d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3ab65675822f9b9c88e5c613c4394b295e7430e1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="commit-an-add-on-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアドオン申請のコミット
-
+# <a name="commit-an-add-on-submission"></a>アドオンの申請のコミット
 
 
 
-Windows ストア申請 API でこのメソッドを使用して、新しいアドオンまたは更新されたアドオン (アプリ内製品 (IAP) とも呼ばれます) の申請を Windows デベロッパー センターにコミットします。 コミット アクションにより、申請データ (関連アイコンを含む) がアップロードされたことがデベロッパー センターに通知されます。 通知を受けたデベロッパー センターは、申請データに対する変更をインジェストと公開のためにコミットします。 適切にコミットされると、申請に対する変更はデベロッパー センター ダッシュボードに表示されます。
+
+新しいアドオンの申請または更新されたアドオン (アプリ内製品または IAP とも呼ばれます) の申請を Windows デベロッパー センターにコミットするには、Windows ストア申請 API に含まれる以下のメソッドを使用します。 コミット アクションにより、申請データ (関連アイコンを含む) がアップロードされたことがデベロッパー センターに通知されます。 通知を受けたデベロッパー センターは、申請データに対する変更をインジェストと公開のためにコミットします。 適切にコミットされると、申請に対する変更はデベロッパー センター ダッシュボードに表示されます。
 
 コミット操作が Windows ストア申請 API を使ったアドオン申請プロセスにどのように適合するかについては、[アドオン申請の管理に関するページ](manage-add-on-submissions.md)をご覧ください。
 
@@ -90,7 +87,7 @@ Authorization: Bearer <your access token>
 
 | 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| status           | string  | 提出の状態。 次のいずれかの値を使用できます。 <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>  |
+| status           | string  | 申請の状態。 次のいずれかの値を使用できます。 <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>  |
 
 <span/>
 
@@ -115,4 +112,3 @@ Authorization: Bearer <your access token>
 * [アドオンの申請の更新](update-an-add-on-submission.md)
 * [アドオンの申請の削除](delete-an-add-on-submission.md)
 * [アドオンの申請の状態の取得](get-status-for-an-add-on-submission.md)
-

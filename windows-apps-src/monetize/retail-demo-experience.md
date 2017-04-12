@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, UWP, 市販デモ アプリ"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 843f98782410559d47bdb8dc0b23b50fa96552d6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2fa839c3a559ff0065c98712f73b9bb3ed81b276
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 #  <a name="create-a-retail-demo-experience-rdx-app"></a>市販デモ エクスペリエンス (RDX) アプリを作成する
 
@@ -264,4 +262,3 @@ namespace MyCompany.MyApp
  
 
  
-

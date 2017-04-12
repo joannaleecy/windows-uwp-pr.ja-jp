@@ -2,23 +2,20 @@
 author: mcleanbyron
 ms.assetid: 4920D262-B810-409E-BA3A-F68AADF1B1BC
 description: "このセクションの Java コード例を使用して、Windows ストア申請 API を使用する方法をご確認ください。"
-title: "Windows ストア申請 API の Java コード例"
+title: "申請 API 用の Java のコード例"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, Windows ストア申請 API, コード例"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9bf6885129176a75265d073c3f92b9f899bc265d
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows 10、UWP、Windows ストア申請 API、コード例"
+ms.openlocfilehash: ff5e857e0f5ce110ab7afc64bd2faa28f7bea517
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="java-code-examples-for-the-submission-api"></a>申請 API 用の Java のコード例
 
-# <a name="java-code-examples-for-the-windows-store-submission-api"></a>Windows ストア申請 API の Java コード例
-
-この記事では、*Windows ストア申請 API* を使用するための Java コード例を紹介します。 この API について詳しくは、｢[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)｣をご覧ください。
+この記事では、*Windows ストア申請 API* を使用するための Java のコード例を紹介します。 この API について詳しくは、｢[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)｣をご覧ください。
 
 ここでは、次のタスクに対応するコード例を示します。
 
@@ -128,4 +125,3 @@ ms.lasthandoff: 02/07/2017
 ## <a name="related-topics"></a>関連トピック
 
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-

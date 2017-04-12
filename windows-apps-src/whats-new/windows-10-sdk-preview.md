@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 835d5393-427f-4155-a737-d509ea1de99f
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 51076aed4ae55956164efaf3a3c01461e4b7338b
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 7e37846e7696213093e84d7409c6900e0aad5ed5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="whats-new-in-windows"></a>Windows の新着情報
 
 Windows 10 バージョン 1607 Preview と Windows 開発者ツールの更新プログラムでは、引き続きユニバーサル Windows プラットフォームによって強化されたツール、機能、エクスペリエンスを提供しています。 Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/fwlink/?LinkId=821431)すると、[新しいユニバーサル Windows アプリを作成](https://msdn.microsoft.com/library/windows/apps/bg124288)したり、[Windows の既存のアプリ コード](https://msdn.microsoft.com/library/windows/apps/mt238321)がどのように使えるかを試したりすることができます。
@@ -34,4 +31,3 @@ Bluetooth API | アプリでリモートの Bluetooth 周辺機器の RFCOMM サ
 Windows IoT | Windows 10 IoT Core を使うと、使い慣れた Windows で IoT アプリケーションを作成できます。現在、Windows 10 IoT Core は最新の Raspberry Pi ボードである Raspberry Pi 3 で使用できます。
 Media API | Windows.Media.Playback 名前空間の新しい MediaBreak API では、MediaSource と MediaPlaybackItem を使ってメディアを再生する場合にメディアの中断を簡単にスケジュールして管理できます。 Windows.Media.Audio 名前空間の新しい AudioGraph API により、3D 配置されたエミッターとリスナーをオーディオ グラフ ノードに割り当てることのできる、空間的なオーディオ処理が追加されています。
 マップ API | [MapControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx#_blank) を改良し、開発者はカメラ周辺の表示領域を取得して、深い傾斜があるビューで遠く離れた地平線近くの領域は除外できるようになりました。 拡張した [MapLocationFinder](https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maplocationfinder.aspx#_blank) クラスにより、必要な精度を指定することで、逆ジオコーディングを実行する場合にネットワーク トラフィックを最適化できます。 また、[LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx#_blank) メソッドを使用して緯度と経度を指定し、オフライン マップのダウンロードを利用できるようになりました。 詳しくは、「[Windows マップ アプリの起動](https://msdn.microsoft.com/windows/uwp/launch-resume/launch-maps-app#_blank)」をご覧ください。
-

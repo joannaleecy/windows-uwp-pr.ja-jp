@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 6e033ffa-502e-4daa-b5b2-6f853f68b66c
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 59090536600e3e45345832c6ca61baa3fe1f5b15
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 5b70e6376dbea0e3858a2a12542ff26dfe61ed20
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #<a name="getting-started-with-uwp-app-development-on-xbox-one"></a>Xbox One の UWP アプリ開発の概要
 
 ユニバーサル Windows プラットフォーム (UWP) 開発のために PC と Xbox One を設定する方法の手順に**注意深く**従います。 この設定の完了後に、Xbox One の開発者モードと UWP アプリの構築について詳しくは、「[Xbox One の UWP](index.md)」ページをご覧ください。 
@@ -23,7 +20,7 @@ ms.lasthandoff: 02/08/2017
 ## <a name="before-you-start"></a>開始前の作業
 開始する前に、次の操作をする必要があります。
 -    Windows 10 で PC を設定します。
--    Microsoft Visual Studio 2015 Update 3 をインストールします。
+-    Microsoft Visual Studio2015 Update3 をインストールします。
 - Xbox One 本体上に少なくとも 5 GB の空き領域が必要です。
 
 ## <a name="setting-up-your-development-pc"></a>開発用 PC のセットアップ
@@ -70,4 +67,3 @@ ms.lasthandoff: 02/08/2017
 - [FAQ](frequently-asked-questions.md)  
 - [既知の問題](known-issues.md)
 - [Xbox One の UWP](index.md) 
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 06409936f37368351f6c8ad47e50a7d980d522f4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d055f576cfa56502da845e849c100f66dd0c7ccf
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="move-from-windows-phone-silverlight-to-uwp"></a>Windows Phone Silverlight から UWP への移行
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -94,5 +91,4 @@ Windows Phone Silverlight は、Silverlight 4.0 に基づく XAML UI フレー�
 **プレゼンテーション**
 * [Nokia Music での Windows Phone から Windows 8 への移行に関するページ](http://go.microsoft.com/fwlink/p/?LinkId=321521)
  
-
 

@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、非同期"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1f157db0dc9124ce839f608e5f1a2325c1ce922f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 06eceae9c7736ce59bc0ab1b842425c3dc56d299
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="asynchronous-programming"></a>非同期プログラミング
 
@@ -84,4 +82,3 @@ promise オブジェクトは、将来取得されたときに値を表します
 * [C# または Visual Basic での非同期 API の呼び出し](call-asynchronous-apis-in-csharp-or-visual-basic.md)
 * [Async と Await を使用した非同期プログラミング (C# と Visual Basic)](http://msdn.microsoft.com/library/hh191443(vs.110).aspx)
 * [リバーシの機能のシナリオ: 非同期コード](https://msdn.microsoft.com/library/windows/apps/xaml/jj712233.aspx#async)
-

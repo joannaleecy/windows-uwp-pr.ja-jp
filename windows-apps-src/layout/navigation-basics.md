@@ -12,13 +12,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 72596a2d902dff72af76c84115bc1eb0be8fa743
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6397949c4c763db9d406790a6ffcb7f8ad94b7aa
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="navigation-design-basics-for-uwp-apps"></a>UWP アプリのナビゲーション デザインの基本
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -254,7 +251,6 @@ UWP アプリにおいて効果的で便利なマルチページ ナビゲーシ
 
 
  
-
 
 
 

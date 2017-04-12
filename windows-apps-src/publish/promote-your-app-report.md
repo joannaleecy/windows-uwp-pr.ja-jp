@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 販売促進, アプリ, キャンペーン, レポート, インストール"
-translationtype: Human Translation
-ms.sourcegitcommit: b01924366a0bc2afabe2f381e72e45862f0dd682
-ms.openlocfilehash: af719bbb4cc9def4e9b202c8815320698c6148d0
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 25127b8f7214a712b10a1beda1e9b277370e6df2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="promote-your-app-report"></a>アプリの販売促進レポート
 
 Windows デベロッパー センター ダッシュボードの **[アプリの宣伝]** レポートでは、アプリ プロモーション広告キャンペーンの実施状況を確認できます。
@@ -70,4 +67,3 @@ Windows デベロッパー センター ダッシュボードの **[アプリの
  
 
  
-

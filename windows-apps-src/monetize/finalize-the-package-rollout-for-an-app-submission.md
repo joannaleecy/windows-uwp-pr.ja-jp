@@ -1,25 +1,22 @@
 ---
 author: mcleanbyron
-description: "Windows ストア申請 API でこのメソッドを使用し、アプリの申請に関するパッケージのロールアウトを完了します。"
-title: "Windows ストア申請 API を使用して、アプリの申請に関するパッケージのロールアウトを完了する"
+description: "アプリの申請に関するパッケージのロールアウトを完了するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "アプリの申請に関するロールアウトを完了する"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, Windowsストア申請 API, パッケージのロールアウト, アプリの申請, 最終処理"
+keywords: "Windows 10, UWP, Windows ストア申請 API, パッケージのロールアウト, アプリの申請, 最終処理"
 ms.assetid: c7dd39e6-5162-455a-b03b-1ed76bffcf6e
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 6c7fa8fc509faf2c662732e7e6b998d355fcbd66
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 1f26b826595b439c20b1582265dbe690d314277e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="finalize-the-rollout-for-an-app-submission"></a>アプリの申請に関するロールアウトを完了する
 
-# <a name="finalize-the-package-rollout-for-an-app-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用して、アプリの申請に関するパッケージのロールアウトを完了する
 
-
-Windows ストア申請 API でこのメソッドを使用し、アプリの申請に関する[パッケージのロールアウトを完了](../publish/gradual-package-rollout.md#completing-the-rollout)します。 Windows ストア申請 API を使ったアプリの申請の作成プロセスについて詳しくは、「[アプリの申請の管理](manage-app-submissions.md)」をご覧ください。
+アプリの申請に関する[パッケージのロールアウトを完了する](../publish/gradual-package-rollout.md#completing-the-rollout)には、Windows ストア申請 API に含まれる以下のメソッドを使用します。 Windows ストア申請 API を使ったアプリの申請の作成プロセスについて詳しくは、「[アプリの申請の管理](manage-app-submissions.md)」をご覧ください。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -80,7 +77,7 @@ Authorization: Bearer <your access token>
 ```json
 {
     "isPackageRollout": true,
-    "packageRolloutPercentage": 100,
+    "packageRolloutPercentage": 100.0,
     "packageRolloutStatus": "PackageRolloutComplete",
     "fallbackSubmissionId": "1212922684621243058"
 }
@@ -104,4 +101,3 @@ Authorization: Bearer <your access token>
 * [段階的なパッケージのロールアウト](../publish/gradual-package-rollout.md)
 * [Windows ストア申請 API を使用したアプリの申請の管理](manage-app-submissions.md)
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-

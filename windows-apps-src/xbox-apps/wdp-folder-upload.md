@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: e1a2c7f0-0040-4ce7-94de-17224736e20b
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 8c2251c5c78fed10959b89de0d81ff563d0fa3e3
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: d071a0ff6d228608d7f6c7acdcfd88df38f2c390
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="upload-a-folder-to-the-development-directory"></a>開発ディレクトリにフォルダーをアップロードする
 
 **要求**
@@ -58,5 +55,4 @@ HTTP 状態コード      | 説明
 **利用可能なデバイス ファミリ**
 
 * Windows Xbox
-
 

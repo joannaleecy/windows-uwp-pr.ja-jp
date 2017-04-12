@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 518631e791746259dc4ee6f23184c8fc01ace427
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e7d327cbe8d99b6b10ae4ccdeb8c7a6f0ee2ac5e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-store-app-marketing-guidelines"></a>Windows ストア アプリのマーケティング ガイドライン
 
 Windows ストアでアプリやコンテンツの販売を促進する方法について説明します。 これらのガイドラインでは、利用可能なアセットの使用方法について説明し、印刷、テレビ、ソーシャル メディア、デジタル広告でアプリの販売を促進するための推奨事項を紹介します。
@@ -55,7 +52,6 @@ Microsoft は、Microsoft マークおよび関連する営業権の唯一の所
  
 
  
-
 
 
 

@@ -1,25 +1,24 @@
 ---
 author: mcleanbyron
 description: "アプリの申請に関するパッケージのロールアウトを停止するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
-title: "Windows ストア申請 API を使用して、アプリの申請に関するパッケージのロールアウトを停止する"
+title: "アプリの申請に関するロールアウトを停止する"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, Windowsストア申請 API, パッケージのロールアウト, アプリの申請, 停止"
+keywords: "Windows 10, UWP, Windows ストア申請 API, パッケージのロールアウト, アプリの申請, 停止"
 ms.assetid: 4ce79fe3-deda-4d31-b938-d672c3869051
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: a0da2fe0b8c859a774588d27d12ce3c9e3f24d9b
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 7bc86db250f27f0785bf505a15975bcf65cb5eff
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="halt-the-package-rollout-for-an-app-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用して、アプリの申請に関するパッケージのロールアウトを停止する
+# <a name="halt-the-rollout-for-an-app-submission"></a>アプリの申請に関するロールアウトを停止する
 
 
 アプリの申請に関する[パッケージのロールアウトを停止する](../publish/gradual-package-rollout.md#completing-the-rollout)には、Windows ストア申請 API に含まれる以下のメソッドを使用します。 Windows ストア申請 API を使ったアプリの申請の作成プロセスについて詳しくは、「[アプリの申請の管理](manage-app-submissions.md)」をご覧ください。
+
+>**注**&nbsp;&nbsp;アプリの申請に関するロールアウトを停止してから、[新しいアプリの申請を作成する](create-an-app-submission.md)場合、新しい申請は停止した申請を複製したものになります。
 
 
 ## <a name="prerequisites"></a>前提条件
@@ -81,7 +80,7 @@ Authorization: Bearer <your access token>
 ```json
 {
     "isPackageRollout": true,
-    "packageRolloutPercentage": 0,
+    "packageRolloutPercentage": 0.0,
     "packageRolloutStatus": "PackageRolloutStopped",
     "fallbackSubmissionId": "1212922684621243058"
 }
@@ -104,4 +103,3 @@ Authorization: Bearer <your access token>
 * [段階的なパッケージのロールアウト](../publish/gradual-package-rollout.md)
 * [Windows ストア申請 API を使用したアプリの申請の管理](manage-app-submissions.md)
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-

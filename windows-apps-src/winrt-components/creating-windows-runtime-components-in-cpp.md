@@ -9,14 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 28d03486f6fb2f7a249af82d2c3be6006c9d80ed
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2adebf94f016baf014788062f82d7fe933b7fb10
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-
 # <a name="creating-windows-runtime-components-in-c"></a>C++ での Windows ランタイム コンポーネントの作成
 
 
@@ -602,4 +598,3 @@ C++ Windows ランタイム コンポーネント プロジェクトをソリュ
 ## <a name="related-topics"></a>関連トピック
 
 * [チュートリアル: C++ での基本的な Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
-

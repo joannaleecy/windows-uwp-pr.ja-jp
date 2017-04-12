@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 2ca600085c14c43d9d9d37e80efbae30bae650ef
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="getting-started-what-next"></a>はじめに: 次の手順
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
@@ -42,4 +39,3 @@ Windows 10 により、新しいアプリの構築機会が開かれます。 �
 * [iOS 開発者のための Windows のコントロール](https://msdn.microsoft.com/library/windows/apps/dn263255)
 * [iOS 開発者のための Windows のクックブック](https://msdn.microsoft.com/library/windows/apps/dn263256)
 * [Windows 用アプリ開発ブログ](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/)
-

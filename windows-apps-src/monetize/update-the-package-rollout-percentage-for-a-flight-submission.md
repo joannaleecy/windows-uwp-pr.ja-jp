@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
-description: "パッケージ フライトの申請についてパッケージ ロールアウト率を更新するには、Windows ストア申請 API のこのメソッドを使用します。"
-title: "Windows ストア申請 API を使用してパッケージ フライト申請のパッケージ ロールアウト率を更新する"
+description: "パッケージ フライトの申請に関するパッケージ ロールアウト率を更新するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "フライトの申請に関するロールアウト率の更新"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,17 +9,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア申請 API, パッケージのロールアウト, フライトの申請, 更新, 割合"
 ms.assetid: ee9aa223-e945-4c11-b430-1f4b1e559743
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: bb09e5ff3c60a56a69c5a52d47e3c791b206a84c
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 55b9a67be032e3c2d3497bba0061afcb8218ce33
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="update-the-rollout-percentage-for-a-flight-submission"></a>フライトの申請に関するロールアウト率の更新
 
-# <a name="update-the-package-rollout-percentage-for-a-package-flight-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用してパッケージ フライト申請のパッケージ ロールアウト率を更新する
 
-
-パッケージ フライトの申請について[パッケージ ロールアウト率を更新する](../publish/gradual-package-rollout.md#setting-the-rollout-percentage)には、Windows ストア申請 API のこのメソッドを使用します。 Windows ストア申請 API を使ったパッケージ フライトの提出の作成プロセスについて詳しくは、[パッケージ フライトの申請の管理](manage-flight-submissions.md)に関するページをご覧ください。
+パッケージ フライトの申請に関する[パッケージ ロールアウト率を更新する](../publish/gradual-package-rollout.md#setting-the-rollout-percentage)には、Windows ストア申請 API に含まれる以下のメソッドを使用します。 Windows ストア申請 API を使ったパッケージ フライトの申請の作成プロセスについて詳しくは、[パッケージ フライトの申請の管理](manage-flight-submissions.md)に関するページをご覧ください。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -82,7 +79,7 @@ Authorization: Bearer <your access token>
 ```json
 {
     "isPackageRollout": true,
-    "packageRolloutPercentage": 25,
+    "packageRolloutPercentage": 25.0,
     "packageRolloutStatus": "PackageRolloutInProgress",
     "fallbackSubmissionId": "1212922684621243058"
 }
@@ -105,4 +102,3 @@ Authorization: Bearer <your access token>
 * [段階的なパッケージのロールアウト](../publish/gradual-package-rollout.md)
 * [Windows ストア申請 API を使用したパッケージ フライトの申請の管理](manage-flight-submissions.md)
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-

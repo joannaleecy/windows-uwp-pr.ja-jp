@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 440fb76aac128490366677278254a5f5b2e095ed
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b20066ffbd32984d20fdbdcc0915ef10332c6f12
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="getting-started-choosing-a-programming-language"></a>はじめに: プログラミング言語の選択
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
@@ -149,4 +146,3 @@ C# は習得が容易な言語であり、.NET を構成する多くのサポー
 ## <a name="next-step"></a>次のステップ
 
 [はじめに: Visual Studio の操作方法](getting-started-getting-around-in-visual-studio.md)
-

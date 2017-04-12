@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1bb0e25e9368a6e2f7568ac51620c7a064a01ce3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 597f78a4048a681dc75b610048a70f7161d0369c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="networking-and-web-services"></a>ネットワークと Web サービス
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -32,4 +29,3 @@ ms.lasthandoff: 02/07/2017
 | [HttpClient](httpclient.md)                                                             | HTTP 2.0 プロトコルと HTTP 1.1 プロトコルを使って情報を送受信するには、[Windows.Web.Http](https://msdn.microsoft.com/library/windows/apps/dn279692) 名前空間 API を使います。             |
 | [RSS/Atom フィード](web-feeds.md)                                                          | [Windows.Web.Syndication](https://msdn.microsoft.com/library/windows/apps/br243632) 名前空間の機能を利用し、RSS や Atom の標準に従って生成される概要フィードを使って、最新の人気の高い Web コンテンツを取得または作成します。                   |
 | [バックグラウンド転送](background-transfers.md)                                         | ネットワーク経由でファイルを確実にコピーするには、バックグラウンド転送 API を使います。           |
-

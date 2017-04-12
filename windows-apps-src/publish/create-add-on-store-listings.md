@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ecf24a0a51734d159a412824d6b43d76d92b3002
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d27afd09d5805604a09aba91f57b20625df4d95b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-add-on-store-listings"></a>アドオンのストア登録情報の作成
 
 
@@ -47,7 +44,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 301f1b55644842225f1b8d040d5b02a035d1940b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 23afad0c6499950d13d9771a5f0286403a5fe886
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="porting-windows-phone-silverlight-to-uwp-for-form-factor-and-ux"></a>Windows Phone Silverlight から UWP へのフォーム ファクターと UX の移植
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -75,5 +72,4 @@ Windows Phone Silverlight インターフェイスは、タッチ操作に特化
 ## <a name="related-topics"></a>関連トピック
 
 * [名前空間とクラス マッピング](wpsl-to-uwp-namespace-and-class-mappings.md)
-
 

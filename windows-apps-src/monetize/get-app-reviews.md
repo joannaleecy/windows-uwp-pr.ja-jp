@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ストア サービス, Windowsストア分析 API, レビュー"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 68ad995341d0d4bedbe566e8a491a80b9b0a8ed2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 79ba971e64958ab83e2674a91be37be754d2d9b6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="get-app-reviews"></a>アプリのレビューの取得
 
 
@@ -44,7 +41,7 @@ ms.lasthandoff: 02/07/2017
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|---------------------|
-| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
 <span/> 
 
@@ -200,4 +197,3 @@ Authorization: Bearer <your access token>
 * [アドオンの入手数の取得](get-in-app-acquisitions.md)
 * [エラー報告データの取得](get-error-reporting-data.md)
 * [アプリの評価の取得](get-app-ratings.md)
-

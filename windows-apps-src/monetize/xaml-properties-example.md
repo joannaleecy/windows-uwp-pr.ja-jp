@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 広告, 宣伝, AdControl, XAML, プロパティ"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dbcc08b1373c7f73d5b9ebf541ec82bb01fd9df3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3c5dae93ab6ee58fac7d4593257d357f268c241a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adcontrol-xaml-properties-example"></a>AdControl XAML プロパティの例
 
 次の XAML の例は、[AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) のプロパティに値を割り当てる方法を示しています。 プロパティが設定されていない場合、**AdControl** は、アプリのユーザー エクスペリエンスと一貫性がある広告を作成する既定値を使います。
@@ -40,4 +37,3 @@ ms.lasthandoff: 02/07/2017
 * [GitHub の広告サンプル](http://aka.ms/githubads)
 
  
-

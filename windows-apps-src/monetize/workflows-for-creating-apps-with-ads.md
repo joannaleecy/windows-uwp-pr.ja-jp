@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 広告, 宣伝, AdControl, InterstitialAd"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f01b69502d41a7128ac5f59589f6d014d92f52a3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 93b56259314c54a56cd8ebbef89694319a95e41c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="workflows-for-creating-apps-with-ads"></a>広告を含むアプリを作成するためのワークフロー
 
 
@@ -54,11 +51,11 @@ Windows デベロッパー センターでアカウントをセットアップ�
 
 **AdControl** または **InterstitialAd** を使ってアプリに広告を表示する場合、コードにアプリケーション ID と広告ユニット ID を指定して、Windows デベロッパー センター アカウントにアプリをリンクして広告を組み込む必要があります。 アプリを開発しているときには、テスト用のアプリケーション ID と広告ユニット ID の値を使って、テスト時にアプリでどのように広告がレンダリングされるかを確認します。 これにより、テスト中に、アプリが広告を受信およびレンダリングする方法を表示することができます。 詳しくは、「[テスト モード値](test-mode-values.md)」をご覧ください。
 
-C# と C++ を使って JavaScript/HTML アプリと XAML アプリに広告バナーやビデオのスポット広告を追加する方法を示す完全なサンプル プロジェクトについては、[GitHub の広告サンプル](http://aka.ms/githubads)をご覧ください。
+C# と C++ を使って JavaScript/HTML アプリと XAML アプリにバナー広告やスポット広告を追加する方法を示す完全なサンプル プロジェクトについては、[GitHub の広告サンプル](http://aka.ms/githubads)をご覧ください。
 
 ## <a name="configure-your-app-to-receive-live-ads"></a>ライブ広告を受信するアプリの設定
 
-アプリのテストが終了し、Windows デベロッパー センターに提出する準備ができたら、[Windows デベロッパー センター ダッシュボード](https://msdn.microsoft.com/library/windows/apps/mt170658.aspx)から取得したアプリケーション ID と広告ユニット ID の値を使うためにアプリのコードを更新する必要があります。 ライブ アプリでテスト用の値を使うと、アプリでライブ広告は表示されません。 詳しくは、「[アプリで広告ユニットをセットアップする](set-up-ad-units-in-your-app.md)」をご覧ください。
+アプリのテストが終了し、Windows デベロッパー センターに提出する準備ができたら、[Windows デベロッパー センター ダッシュボード](https://msdn.microsoft.com/library/windows/apps/mt170658.aspx)から取得したアプリケーション ID と広告ユニット ID の値を使うためにアプリのコードを更新する必要があります。 ライブ アプリでテスト用の値を使うと、アプリでライブ広告は表示されません。 詳しくは、「[アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md)」をご覧ください。
 
 ## <a name="submit-your-app"></a>アプリの提出
 
@@ -69,4 +66,3 @@ C# と C++ を使って JavaScript/HTML アプリと XAML アプリに広告バ�
  
 
  
-

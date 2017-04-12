@@ -1,21 +1,18 @@
 ---
-author: shawjohn
+author: JnHs
 Description: "顧客にアプリの評価またはアドオンの購入などを勧めるために、Windows デベロッパー センターからアプリにターゲット プッシュ通知を送信する方法について説明します。"
 title: "アプリの顧客にターゲット プッシュ通知を送信する"
-ms.author: johnshaw
-ms.date: 02/08/2017
+ms.author: wdg-dev-content
+ms.date: 02/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: a2bd3308863b6343a7616bf86e0b0036f1631bcd
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: ca57ff45d440ebd68f7fb85b7d6a5da0a9f1995c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="send-targeted-push-notifications-to-your-apps-customers"></a>アプリの顧客にターゲット プッシュ通知を送信する
 
 アプリ開発者として成功するには、適切なメッセージを適切なタイミングで送信して顧客を惹きつけることが重要です。 Windows デベロッパー センターは、すべての顧客に、または[顧客セグメント](create-customer-segments.md)で定義した条件を満たす Windows 10 の顧客のサブセットだけにプッシュ通知を送信できる、データドリブンの顧客エンゲージメント プラットフォームを提供します。
@@ -24,7 +21,14 @@ ms.lasthandoff: 02/08/2017
 
 > **重要** ターゲット プッシュ通知は UWP アプリでのみ使用できます。
 
-## <a name="getting-started-with-push-notifications"></a>プッシュ通知の使い方の概要に関するページ
+通知のコンテンツを検討するときは、次の点に注意してください。
+- 通知のコンテンツは、ストア [コンテンツ ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#content_policies)に準拠する必要があります。
+- 通知のコンテンツには、機密情報や機密性が高い可能性のある情報を含めないでください。
+- スケジュールに従って通知を配信するよう努めていますが、配信に影響する待ち時間の問題が発生する可能性があります。
+- 通知を送信する頻度を必要以上に高くしないでください。 30 分に 1 回以上の場合、侵入と見なされる可能性があります (多くのシナリオでは、これよりも頻度を低くすることをお勧めします)。
+- アプリを使用しているユーザーが (セグメント メンバーシップの決定時に自分の Microsoft アカウントでサインインしており)、後でそのデバイスを他のユーザーに使用させた場合、他のユーザーが元のユーザーを対象とした通知を見る可能性があります。 詳しくは、「[アプリのターゲット プッシュ通知を構成する](../monetize/configure-your-app-to-receive-dev-center-notifications.md#notification-customers)」をご覧ください。
+
+## <a name="getting-started-with-push-notifications"></a>プッシュ通知の使い方の概要
 
 プッシュ通知を使用して顧客と関わりあうには、大まかには 3 つの操作を実行する必要があります。
 1. **プッシュ通知を受け取るためにアプリを登録します。** これを実行するには、アプリで Microsoft Store Services SDK への参照を追加し、デベロッパー センターとアプリ間で通知チャネルを登録するコードを数行追加します。 そのチャネルを使用して、プッシュ通知を顧客に配信します。 詳しくは、「[デベロッパー センターのプッシュ通知を受信するようにアプリを設定する](../monetize/configure-your-app-to-receive-dev-center-notifications.md)」をご覧ください。
@@ -33,18 +37,21 @@ ms.lasthandoff: 02/08/2017
 
 ## <a name="to-create-and-send-a-targeted-push-notification"></a>ターゲット プッシュ通知を作成して送信するには
 
-1. まだこれを実行していない場合は、[Microsoft Store Services SDK](http://aka.ms/store-em-sdk) をインストールして、アプリのスタートアップ コードで [RegisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) メソッドを呼び出し、アプリを登録して通知を受け取ります。 このメソッドを呼び出す方法の詳細については、「[デベロッパー センターの通知を受け取るようにアプリを構成する](../monetize/configure-your-app-to-receive-dev-center-notifications.md)」をご覧ください。
-2.    [Windows デベロッパー センター ダッシュボード](https://developer.microsoft.com/dashboard/overview)で、アプリを選びます。
-3.    左側のナビゲーション メニューで、**[サービス]** を展開して、**[プッシュ通知]** を選択します。
-4.    **ターゲット プッシュ通知**ページで、**[新しい通知]** を選択します。
-5.    **[テンプレートの選択]** セクションで、送信する通知の種類を選択します。 詳しくは、「[通知テンプレートの種類](#notification-template-types)」をご覧ください。
+ダッシュボードでプッシュ通知を作成し、特定の顧客セグメントに送信するには、以下の手順に従います。
+
+> **注** アプリでデベロッパー センターからターゲット プッシュ通知を受信するには、最初に、アプリで [RegisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) メソッドを呼び出して、通知を受信するアプリを登録する必要があります。 このメソッドは、[Microsoft Store Services SDK](http://aka.ms/store-em-sdk) に含まれています。 このメソッドを呼び出す方法の詳細 (コード例を含む) については、「[デベロッパー センターの通知を受け取るようにアプリを構成する](../monetize/configure-your-app-to-receive-dev-center-notifications.md)」をご覧ください。
+
+1.    [Windows デベロッパー センター ダッシュボード](https://developer.microsoft.com/dashboard/overview)で、アプリを選びます。
+2.    左側のナビゲーション メニューで、**[サービス]** を展開して、**[プッシュ通知]** を選択します。
+3.    **ターゲット プッシュ通知**ページで、**[新しい通知]** を選択します。
+4.    **[テンプレートの選択]** セクションで、送信する通知の種類を選択します。 詳しくは、「[通知テンプレートの種類](#notification-template-types)」をご覧ください。
   ![通知テンプレート](images/push-notifications-template.png)
-6.    **[通知設定]** セクションで、通知の **[名前]** を選択し、通知を送信する **[顧客グループ]** を選択します。
+5.    **[通知設定]** セクションで、通知の **[名前]** を選択し、通知を送信する **[顧客グループ]** を選択します。
 セグメントをまだ作成していない場合は、**[新しい顧客グループの作成]** を選択します。 新しいセグメントで通知を使用できるようになるまでに、24 時間かかることに注意してください。 詳しくは、「[顧客セグメントの作成](create-customer-segments.md)」をご覧ください。
-7.    通知を送信するタイミングを指定する場合は、**[すぐに通知する]** チェック ボックスをオフにして、特定の日付と時刻を選択します。
-8.    ある時点で通知を期限切れにする場合は、**[通知を無期限にする]** チェック ボックスをオフにして、特定の有効期限の日付と時刻を選択します。
-9.    **[通知のコンテンツ]** セクションの **[言語]** メニューで、通知に表示する言語を選択します。 詳しくは、「[通知の翻訳](#translate-your-notifications)」をご覧ください。
-10.    **[オプション]** セクションで、テキストを入力し、その他の必要なオプションを構成します。 テンプレートを使用して開始した場合は、既定でこの一部が提供されますが、必要な変更を加えることができます。
+6.    通知を送信するタイミングを指定する場合は、**[すぐに通知する]** チェック ボックスをオフにして、特定の日付と時刻を選択します。
+7.    ある時点で通知を期限切れにする場合は、**[通知を無期限にする]** チェック ボックスをオフにして、特定の有効期限の日付と時刻を選択します。
+8.    **[通知のコンテンツ]** セクションの **[言語]** メニューで、通知に表示する言語を選択します。 詳しくは、「[通知の翻訳](#translate-your-notifications)」をご覧ください。
+9.    **[オプション]** セクションで、テキストを入力し、その他の必要なオプションを構成します。 テンプレートを使用して開始した場合は、既定でこの一部が提供されますが、必要な変更を加えることができます。
    使用している通知の種類に応じて、利用可能なオプションが異なります。 オプションの一部を次に示します:
    - **アクティブ化の種類** (対話型トースト型)。 **[フォアグラウンド]**、**[バックグラウンド] **、または **[プロトコル]** を選択できます。
    - **起動** (対話型トースト型)。 通知がアプリを開くか、Web サイトを開くかを選択できます。
@@ -59,9 +66,7 @@ ms.lasthandoff: 02/08/2017
 
    > **ヒント:** 設計、アダプティブ タイル通知と対話型トースト通知を設計してテストするには、[Notifications Visualizer](https://www.microsoft.com/store/apps/9nblggh5xsl1) アプリを試してみてください。
 
-11.    後で通知の作業を続ける場合は **[下書きとして保存]** を、すべて完了している場合は **[送信]** を選択します。
-
-> **注:** 通知のコンテンツは、ストア [コンテンツ ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#content_policies)に準拠する必要があります。
+10.    後で通知の作業を続ける場合は **[下書きとして保存]** を、すべて完了している場合は **[送信]** を選択します。
 
 ## <a name="notification-template-types"></a>通知テンプレートの種類
 
@@ -126,4 +131,3 @@ ms.lasthandoff: 02/08/2017
 - [Notifications Visualizer アプリ](https://www.microsoft.com/store/apps/9nblggh5xsl1)
 - [StoreServicesEngagementManager.RegisterNotificationChannelAsync() | registerNotificationChannelAsync() メソッド](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx)
 - [顧客セグメントとプッシュ通知: Windows デベロッパー センター Insider Program の新機能 (ブログの投稿)](https://blogs.windows.com/buildingapps/2016/08/17/customer-segmentation-and-push-notifications-a-new-windows-dev-center-insider-program-feature/#XTuCqrG8G5IMgWew.97)
-

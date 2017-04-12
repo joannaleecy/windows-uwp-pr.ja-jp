@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: c92c0ea8-f742-4fc1-a3d7-e90aac11953e
 description: "ストアのアプリのレビューにプログラムで返信を送るには、Windows ストア レビュー API を使用します。"
-title: "Windows ストアのサービスを使ってレビューに返信する"
+title: "ストアのサービスを使用してレビューに返信する"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, Windows ストア レビュー API, レビューに返信"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 657149304048a88bf85f0dd6f205e7db0497e591
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 6a345fe3d8d5f8e9df7a01d94a8101d31aa312e5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="respond-to-reviews-using-windows-store-services"></a>Windows ストアのサービスを使ってレビューに返信する
+# <a name="respond-to-reviews-using-store-services"></a>ストアのサービスを使用してレビューに返信する
 
 ストアのアプリのレビューにプログラムで返信するには、*Windows ストア レビュー API* を使用します。 この API は、Windows デベロッパー センター ダッシュボードを使わずに多数のレビューをまとめて返信する開発者には特に便利です。 この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
 
@@ -90,4 +87,3 @@ Windows ストア レビュー API には、特定のレビューに返信でき
 * [アプリのレビューへの返信の提出](submit-responses-to-app-reviews.md)
 
  
-

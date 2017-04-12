@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 04ecb16faf39e5dfc2f8ad8c5049c696615a449a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e9f0a148238b8f91c4643954c7f575e742f69d5e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="passing-arrays-to-a-windows-runtime-component"></a>Windows ランタイム コンポーネントに配列を渡す
 
 
@@ -57,7 +54,7 @@ Windows ユニバーサル プラットフォーム (UWP) では、パラメー�
 ## <a name="using-components-from-managed-and-unmanaged-code"></a>マネージ コードおよびアンマネージ コードからコンポーネントを使用する
 
 
-ReadOnlyArrayAttribute 属性または WriteOnlyArrayAttribute 属性を持つパラメーターは、呼び出し元がネイティブ コードで記述されているか、マネージ コードで記述されているかによって、動作が異なります。 呼び出し元が、ネイティブ コード (JavaScript、または Visual C++ コンポーネント拡張機能) の場合、配列の内容は次のように処理されます。
+ReadOnlyArrayAttribute 属性または WriteOnlyArrayAttribute 属性を持つパラメーターは、呼び出し元がネイティブ コードで記述されているか、マネージ コードで記述されているかによって、動作が異なります。 呼び出し元が、ネイティブ コード (JavaScript、または VisualC++ コンポーネント拡張機能) の場合、配列の内容は次のように処理されます。
 
 -   ReadOnlyArrayAttribute: アプリケーション バイナリ インターフェイス (ABI) の境界を越えた呼び出しの場合、配列はコピーされます。 要素は必要に応じて変換されます。 このため、入力専用の配列に、メソッドで誤って変更が加えられた場合でも、呼び出し元では認識されません。
 -   WriteOnlyArrayAttribute: 呼び出されたメソッドでは、元の配列の内容を推測できません。 たとえば、メソッドが受け取る配列は、初期化されていなかったり既定値を含む可能性があります。 メソッドは、配列内のすべての要素に値を設定することが求められます。
@@ -69,4 +66,3 @@ ReadOnlyArrayAttribute 属性または WriteOnlyArrayAttribute 属性を持つ�
 * [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx)
 * [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx)
 * [C# および Visual Basic での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1ec72aec1e94ff92ef30fcc206456c7614107c98
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 83e63d76e0fc1c1b0e8465ad5b5656779ac43f09
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="porting-windows-phone-silverlight-xaml-and-ui-to-uwp"></a>Windows Phone Silverlight の XAML と UI の UWP への移植
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -313,7 +310,9 @@ URI マッピングとフラグメント ナビゲーションは URI ナビゲ�
 
 テキスト (または文字体裁) は UWP アプリの重要な要素です。移植するときには、ビューの視覚的なデザインが新しいデザイン言語に適合するように、ビューの視覚的なデザインを再検討することが必要になる場合があります。 次の図を使って、利用可能な UWP の **TextBlock** システム スタイルを見つけます。 使った Windows Phone Silverlight スタイルに対応するものを見つけます。 また、独自のユニバーサル スタイルを作成し、Windows Phone Silverlight システム スタイルからプロパティをコピーすることもできます。
 
-![Windows 10 アプリのシステム TextBlock スタイル](images/label-uwp10stylegallery.png) Windows 10 アプリのシステム TextBlock スタイル
+![Windows 10 アプリのシステム TextBlock スタイル](images/label-uwp10stylegallery.png)  
+
+Windows 10 アプリのシステム TextBlock スタイル
 
 Windows Phone Silverlight アプリでは、既定のフォント ファミリは Segoe WP です。 Windows 10 アプリでは、既定のフォント ファミリは Segoe UI です。 この結果、アプリでのフォント メトリックの表示が異なる可能性があります。 Windows Phone Silverlight のテキストの外観を再現する場合は、[**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671) や [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362) などのプロパティを使って、独自のメトリックを設定できます。 詳しくは、「[フォントのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)」と「[UWP アプリの設計](http://dev.windows.com/design)」をご覧ください。
 
@@ -398,5 +397,4 @@ UWP アプリでは、命令型コードを使って最小サイズ (幅と高�
 ## <a name="related-topics"></a>関連トピック
 
 * [名前空間とクラス マッピング](wpsl-to-uwp-namespace-and-class-mappings.md)
-
 

@@ -12,13 +12,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7c992aa651069f6876aa920da88ada659480132e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cd6ba1378aeddb44aa66c53088f32286aff8d29f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="screen-sizes-and-break-points-for-responsive-design"></a>画面のサイズとレスポンシブ デザインのブレークポイント
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -107,4 +104,3 @@ ms.lasthandoff: 02/07/2017
 
 互換性のある Windows 10 Mobile デバイスの新しいエクスペリエンスである[**電話用 Continuum**](http://go.microsoft.com/fwlink/p/?LinkID=699431) を利用すると、ユーザーは電話をモニター、マウス、およびキーボードに接続して、その電話をノート PC のように使うことができます。 特定のブレークポイント向けに設計するときは、この新機能に注意してください。携帯電話が常に小さいサイズのクラスで維持されるわけではありません。
  
-

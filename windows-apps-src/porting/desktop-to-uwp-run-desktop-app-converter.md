@@ -1,39 +1,36 @@
 ---
-author: awkoren
+author: normesta
 Description: "Desktop Converter App を実行して、Windows デスクトップ アプリケーション (Win32、WPF、Windows フォームなど) をユニバーサル Windows プラットフォーム (UWP) アプリに変換します。"
 Search.Product: eADQiWindows 10XVcnh
-title: Desktop App Converter
-ms.author: alkoren
-ms.date: 02/08/2017
+title: "Desktop to UWP Bridge の Desktop App Converter"
+ms.author: normesta
+ms.date: 03/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 046a3b474aa281b1b09002a922dc2acdb7833599
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 4daf45a4637ac846c550430cbc7518238ebd5bd8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="desktop-app-converter"></a>Desktop App Converter
+# <a name="desktop-to-uwp-bridge-desktop-app-converter"></a>Desktop to UWP Bridge: Desktop App Converter
 
 [Desktop App Converter を入手する](https://aka.ms/converter)
 
-Desktop App Converter (DAC) は、.NET 4.6.1 または Win32 向けに記述された既存のデスクトップ アプリをユニバーサル Windows プラットフォーム (UWP) に変換するためのツールです。 このコンバーターを使って、無人 (サイレント) モードでデスクトップのインストーラーを実行し、開発コンピューターで PowerShell の Add-appxpackage コマンドレットを使ってインストールすることができる AppX パッケージを作成できます。
+Desktop App Converter (DAC) は、.NET 4.6.1 または Win32 向けに記述された既存のデスクトップ アプリをユニバーサル Windows プラットフォーム (UWP) に変換するためのツールです。 このコンバーターを使って、無人 (サイレント) モードでデスクトップのインストーラーを実行し、開発コンピューターで PowerShell の Add-AppxPackage コマンドレットを使ってインストールすることができる Windows アプリ パッケージを作成できます。
 
 Desktop App Converterは現在、[Windows ストア](https://aka.ms/converter)で入手できます。
 
-このコンバーターは、コンバーターのダウンロードに含まれるクリーンな状態の基本イメージを使って、分離された Windows 環境でデスクトップのインストーラーを実行します。 デスクトップ インストーラーが作成するすべてのレジストリとファイル システムの I/O をキャプチャし、出力の一部としてパッケージ化します。 パッケージ ID を持ち、多くの WinRT API を呼び出すことができる AppX を出力します。
+このコンバーターは、コンバーターのダウンロードに含まれるクリーンな状態の基本イメージを使って、分離された Windows 環境でデスクトップのインストーラーを実行します。 デスクトップ インストーラーが作成するすべてのレジストリとファイル システムの I/O をキャプチャし、出力の一部としてパッケージ化します。 パッケージ ID を持ち、多くの WinRT API を呼び出すことができる Windows アプリ パッケージを出力します。
 
-## <a name="whats-new"></a>新着情報
+## <a name="whats-new"></a>新機能
 
-DAC の最新バージョンは v1.0.6.0 です。 この更新での新しい内容:
+DAC の最新バージョンは v1.0.9.0 です。 この更新での新しい内容:
 
-* アイコンの抽出: DAC ではデスクトップ アプリのアイコンを使って、変換済みのアプリ パッケージで使うビジュアル アセットを生成します。
-* 展開済みの基本イメージ、一時ファイル、コンテナーのネットワークや機能のクリーンアップが向上しています。
-* いくつかのバグを修正しました。 
+* インストーラーを使用しない変換: アプリが Xcopy を使用してインストールされる場合や、アプリのインストーラーがシステムに加える変更について詳しい知識がある場合は、-Installer パラメーターをアプリ ファイルのルート ディレクトリに設定することによって、インストーラーを使用せずに変換を実行できます。
+* アプリ パッケージの検証: 新しい `-Verify` フラグを使用して、デスクトップ ブリッジとストアの要件に照らして、変換済みのアプリ パッケージを検証します。
+
 
 ## <a name="system-requirements"></a>システム要件
 
@@ -52,6 +49,8 @@ DAC の最新バージョンは v1.0.6.0 です。 この更新での新しい�
 + [Windows 10 用 Windows ソフトウェア開発キット (SDK)](https://go.microsoft.com/fwlink/?linkid=821375)
 
 ## <a name="set-up-the-desktop-app-converter"></a>Desktop App Converter をセットアップする
+
+*(次の手順はインストーラーを使用しない変換では必要がありません)*
 
 Desktop App Converter は、最新の Windows 10 機能に依存しています。 Windows 10 Anniversary Update (14393.0) 以降のビルドをお使いであることを確認してください。
 
@@ -87,31 +86,41 @@ DesktopAppConverter.exe
 [<CommonParameters>]  
 ```
 
-### <a name="example"></a>例
+### <a name="examples"></a>例
 
-次の例では、*MyApp* という名前のデスクトップ アプリを *&lt;publisher_name&gt;* で UWP パッケージ (AppX) に変換する方法を説明します。
+次の例では、*MyApp* という名前のデスクトップ アプリを *MyPublisher* で Windows アプリ パッケージに変換する方法を説明します。
 
-```CMD
-DesktopAppConverter.exe -Installer C:\Installer\MyApp.exe 
--InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" 
--Publisher "CN=<publisher_name>" -Version 0.0.0.1 -MakeAppx -Verbose
+#### <a name="no-installer-conversion"></a>インストーラーを使用しない変換
+
+インストーラーを使用しない変換では、`-Installer` パラメーターでアプリ ファイルのルート ディレクトリを指定し、`-AppExecutable` パラメーターが必要です。
+
+```cmd
+DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose
 ```
 
-## <a name="deploy-your-converted-appx"></a>変換済み AppX を展開する
+#### <a name="installer-based-conversion"></a>インストーラー ベースの変換
 
-PowerShell で [Add-appxpackage](https://technet.microsoft.com/library/hh856048.aspx) コマンドレットを使って、ユーザー アカウントに対して署名済みのアプリ パッケージ (.appx) を展開します。 
+インストーラー ベースの変換では、`-Installer` でアプリのセットアップ インストーラーを指定します。
+
+```cmd
+DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose
+```
+
+## <a name="deploy-your-converted-windows-app-package"></a>変換済みの Windows アプリ パッケージを展開する
+
+PowerShell で [Add-AppxPackage](https://technet.microsoft.com/library/hh856048.aspx) コマンドレットを使って、ユーザー アカウントに対して署名済みのアプリ パッケージ (.appx) を展開します。
 
 Desktop App Converter (v0.1.24) の ```-Sign``` フラグを使って、変換済みアプリの自動署名を行うことができます。 または、「[変換済みのデスクトップ アプリに署名する](desktop-to-uwp-signing.md)」を参照して、AppX パッケージに自己署名する方法を学びます。
 
-また、Add-AppXPackage PowerShell コマンドレットの ```-Register``` パラメーターを使用して、開発プロセス中にパッケージ化を解除したファイルのフォルダーからインストールすることもできます。 
+また、Add-AppXPackage PowerShell コマンドレットの ```-Register``` パラメーターを使用して、開発プロセス中にパッケージ化を解除したファイルのフォルダーからインストールすることもできます。
 
-変換済みのアプリの展開とデバッグの詳細については、「[変換済みの UWP アプリを展開してデバッグする](desktop-to-uwp-deploy-and-debug.md)」をご覧ください。 
+変換済みのアプリの展開とデバッグの詳細については、「[変換済みの UWP アプリを展開してデバッグする](desktop-to-uwp-deploy-and-debug.md)」をご覧ください。
 
-## <a name="sign-your-appx-package"></a>.Appx パッケージに署名する
+## <a name="sign-your-windows-app-package"></a>Windows アプリ パッケージに署名する
 
-Add-AppxPackage コマンドレットを使うには、展開するアプリケーション パッケージ (.appx) が署名されている必要があります。 コンバーター コマンドラインまたは SignTool.exe の中で ```-Sign``` フラグを使います。これは Microsoft Windows 10 SDK に含まれている、.appx パッケージに署名を行うためのツールです。
+Add-AppxPackage コマンドレットを使うには、展開する Windows アプリ パッケージ (.appx) が署名されている必要があります。 コンバーター コマンドラインまたは SignTool.exe の中で ```-Sign``` フラグを使います。これは Microsoft Windows 10 SDK に含まれている、Windows アプリ パッケージに署名を行うためのツールです。
 
-.appx パッケージに署名を行う方法について詳しくは、「[変換済みのデスクトップ アプリに署名する](desktop-to-uwp-signing.md)」をご覧ください。 
+Windows アプリ パッケージに署名を行う方法について詳しくは、「[変換済みのデスクトップ アプリに署名する](desktop-to-uwp-signing.md)」をご覧ください。
 
 注: 自動生成された証明書を使用してパッケージに署名をする場合は、既定のパスワード "123456" を使用する必要があります。
 
@@ -128,7 +137,7 @@ Desktop App Converter は、コンテナー内のファイルとシステム ノ
 
 1. ホスト コンピューターの Windows 10 ビルドは、Desktop App Converter ダウンロードに含まれていた基本イメージと一致する必要があります。  
 2. コンバーターはディレクトのすべての内容を分離されている Windows 環境にコピーするため、デスクトップ インストーラーが独立したディレクトリにあることを確認します。  
-3. 現時点では、Desktop App Converter は 64 ビット オペレーティング システムのみで、変換処理の実行をサポートします。 変換済みの .appx パッケージは、64 ビット (x64) OS のみに展開できます。  
+3. 現時点では、Desktop App Converter は 64 ビット オペレーティング システムのみで、変換処理の実行をサポートします。 変換済みの Windows アプリ パッケージは、64 ビット (x64) OS のみに展開できます。  
 4. Desktop App Converter では、デスクトップ インストーラーを無人モードで実行する必要があります。 *- InstallerArguments* パラメーターを使って、インストーラーのサイレント フラグをコンバーターに渡してください。
 5. パブリック SxS Fusion アセンブリの公開は機能しません。 アプリケーションは、インストール中にパブリック side-by-side Fusion アセンブリを公開して、他のプロセスからアクセスできるようにします。 これらのアセンブリは、プロセスのアクティブ化コンテキストの作成中に、CSRSS.exe という名前のシステム プロセスによって取得されます。 変換プロセスでこれが行われると、アクティブ化コンテキスト作成とこれらのアセンブリのモジュール読み込みは失敗します。 ComCtl などの受信トレイ アセンブリは OS に同梱されているので、これらのアセンブリに依存していても安全です。 SxS Fusion アセンブリは、次の場所に登録されています。
   + レジストリ: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SideBySide\Winners`
@@ -137,15 +146,15 @@ Desktop App Converter は、コンテナー内のファイルとシステム ノ
 ## <a name="known-issues"></a>既知の問題
 
 * 一部の OS ビルドで発生する以下のエラーについては、現在調査中です。
-    
+
     * ```E_CREATTING_ISOLATED_ENV_FAILED```
     * ```E_STARTING_ISOLATED_ENV_FAILED```
-    
-    以下のいずれかのエラーが発生した場合は、[ダウンロード センター](https://aka.ms/converterimages)から取得した有効な基本イメージを使用していることを確認してください。 有効な .wim をお使いの場合は、お手数ですがログを converter@microsoft.com にお送りください。調査へのご協力をお願いいたします。 
 
-* 以前に Desktop App Converter がインストールされていた開発用コンピューターで Windows Insider フライトを受信すると、新しい基本イメージをセットアップするときにエラー (`New-ContainerNetwork: The object already exists`) が表示される場合があります。 この問題を回避するには、管理者特権のコマンド プロンプトからコマンド `Netsh int ipv4 reset` を実行し、コンピューターを再起動します。 
+    以下のいずれかのエラーが発生した場合は、[ダウンロード センター](https://aka.ms/converterimages)から取得した有効な基本イメージを使用していることを確認してください。 有効な .wim をお使いの場合は、お手数ですがログを converter@microsoft.com にお送りください。調査へのご協力をお願いいたします。
 
-* "AnyCPU" ビルド オプションでコンパイルされた .NET アプリは、メインの実行可能ファイルまたはいずれかの依存関係が "Program Files" または "Windows\System32" に置かれていた場合、インストールに失敗します。 回避策として、アーキテクチャ固有デスクトップ インストーラー (32 ビットまたは 64 ビット) を使用して、AppX パッケージを正しく生成してください。
+* 以前に Desktop App Converter がインストールされていた開発用コンピューターで Windows Insider フライトを受信すると、新しい基本イメージをセットアップするときにエラー (`New-ContainerNetwork: The object already exists`) が表示される場合があります。 この問題を回避するには、管理者特権のコマンド プロンプトからコマンド `Netsh int ipv4 reset` を実行し、コンピューターを再起動します。
+
+* "AnyCPU" ビルド オプションでコンパイルされた .NET アプリは、メインの実行可能ファイルまたはいずれかの依存関係が "Program Files" または "Windows\System32" に置かれていた場合、インストールに失敗します。 回避策として、アーキテクチャ固有デスクトップ インストーラー (32 ビットまたは 64 ビット) を使用して、Windows アプリ パッケージを正しく生成してください。
 
 ## <a name="telemetry-from-desktop-app-converter"></a>Desktop App Converter の利用統計情報
 
@@ -181,13 +190,13 @@ Get-Help DesktopAppConverter.exe -detailed
 
 |パラメーター|説明|
 |---------|-----------|
-|```-AppInstallPath <String> [optional]``` | インストール済みのファイルに対応する、アプリケーションのルート フォルダーの完全パス (インストールされている場合)。"C:\Program Files (x86)\MyApp" など。| 
+|```-AppInstallPath <String> [optional]``` | インストール済みのファイルに対応する、アプリケーションのルート フォルダーの完全パス (インストールされている場合)。"C:\Program Files (x86)\MyApp" など。|
 |```-Destination <String>``` | コンバーターの appx を出力する場所。この場所がまだ存在しない場合は、DesktopAppConverter によって作成されます。|
-|```-Installer <String>``` | アプリケーションのインストーラーのパス。無人/サイレント モードで実行できるようにする必要があります。|
+|```-Installer <String>``` | アプリケーションのインストーラーのパス。無人/サイレント モードで実行できるようにする必要があります。 インストーラーを使用しない変換では、アプリ ファイルのルート ディレクトリへのパス。 |
 |```-InstallerArguments <String>``` (省略可能) | インストーラーに無人/サイレント モードでの実行を強制する引数の文字列、またはコンマ区切り一覧。 インストーラーが msi の場合は、このパラメーターは省略可能です。 インストーラーからログを取得するには、ここで、インストーラーのログ記録の引数を指定し、パス ```<log_folder>``` (コンバーターが適切なパスに置換するトークン) を使います。 <br><br>**注: 無人/サイレント フラグとログの引数は、インストーラー テクノロジごとに異なります。** <br><br>このパラメーターの使用例:```-InstallerArguments "/silent /log <log_folder>\install.log"```。ログ ファイルを生成しない別の例: ```-InstallerArguments "/quiet", "/norestart"```。繰り返しになりますが、コンバーターでログをキャプチャし、最終的なログ フォルダーに格納する場合は、文字どおりすべてのログにトークン パス ```<log_folder>``` を指定する必要があります。|
 |```-InstallerValidExitCodes <Int32>``` (省略可能) | インストーラーの正常な実行を示す、コンマで区切った終了コードの一覧 (例: 0, 1234, 5678)。  既定では、非 msi は 0、msi は 0, 1641, 3010 です。|
 
-### <a name="appx-identity-parameters"></a>Appx ID パラメーター  
+### <a name="windows-app-package-identity-parameters"></a>Windows アプリ パッケージ ID パラメーター  
 
 |パラメーター|説明|
 |---------|-----------|
@@ -195,17 +204,17 @@ Get-Help DesktopAppConverter.exe -detailed
 |```-Publisher <String>``` | ユニバーサル Windows アプリ パッケージの発行元
 |```-Version <Version>``` | ユニバーサル Windows アプリ パッケージのバージョン番号
 
-### <a name="optional-appx-manifest-parameters"></a>Appx マニフェストのオプションのパラメーター  
+### <a name="optional-windows-app-package-manifest-parameters"></a>省略可能な Windows アプリ パッケージ マニフェストのパラメーター  
 
 |パラメーター|説明|
 |---------|-----------|
-|```-AppExecutable <String> [optional]``` (省略可能) | アプリケーションのメインの実行可能ファイル (例:"MyApp.exe") の名前。 |
+|```-AppExecutable <String> [optional]``` (省略可能) | アプリケーションのメインの実行可能ファイルの名前 (例:"MyApp.exe")。 インストーラーを使用しない変換では、このパラメーターは必須です。 |
 |```-AppFileTypes <String>``` (省略可能) | アプリケーションに関連付ける、ファイルの種類のコンマ区切りの一覧 (例: ".txt, .doc"。引用符は不要)。|
-|```-AppId <String>``` (省略可能) | appx マニフェストでアプリケーション ID を設定する値を指定します。 指定しないと、*PackageName* で渡した値が設定されます。|
-|```-AppDisplayName <String>``` (省略可能) | appx マニフェストでアプリケーション表示名を設定する値を指定します。 指定しないと、*PackageName* で渡した値が設定されます。 |
-|```-AppDescription <String>``` (省略可能) | appx マニフェストでアプリケーションの説明を設定する値を指定します。 指定しないと、*PackageName* で渡した値が設定されます。|
-|```-PackageDisplayName <String>``` (省略可能) | appx マニフェストでパッケージ表示名を設定する値を指定します。 指定しないと、*PackageName* で渡した値が設定されます。 |
-|```-PackagePublisherDisplayName <String>``` (省略可能) | appx マニフェストでパッケージの発行元表示名を設定する値を指定します。 指定しないと、*Publisher* で渡した値が設定されます。 |
+|```-AppId <String>``` (省略可能) | Windows アプリ パッケージ マニフェストでアプリケーション ID を設定する値を指定します。 指定しないと、*PackageName* で渡した値が設定されます。|
+|```-AppDisplayName <String>``` (省略可能) | Windows アプリ パッケージ マニフェストでアプリケーションの表示名を設定する値を指定します。 指定しないと、*PackageName* で渡した値が設定されます。 |
+|```-AppDescription <String>``` (省略可能) | Windows アプリ パッケージ マニフェストでアプリケーションの説明を設定する値を指定します。 指定しないと、*PackageName* で渡した値が設定されます。|
+|```-PackageDisplayName <String>``` (省略可能) | Windows アプリ パッケージ マニフェストでパッケージの表示名を設定する値を指定します。 指定しないと、*PackageName* で渡した値が設定されます。 |
+|```-PackagePublisherDisplayName <String>``` (省略可能) | Windows アプリ パッケージ マニフェストでパッケージ発行元の表示名を設定する値を指定します。 指定しないと、*Publisher* で渡した値が設定されます。 |
 
 ### <a name="other-conversion-parameters"></a>その他の変換パラメーター  
 
@@ -214,8 +223,9 @@ Get-Help DesktopAppConverter.exe -detailed
 |```-ExpandedBaseImage <String>``` (省略可能) | 既に展開済みの基本イメージの完全パス。|
 |```-MakeAppx [<SwitchParameter>]``` (省略可能) | このスクリプトに出力で MakeAppx を呼び出すように指示するスイッチ (存在する場合)。 |
 |```-LogFile <String>``` (省略可能) | ログ ファイルを指定します。 省略すると、ログ ファイルの一時的な場所が作成されます。 |
-| ```Sign [<SwitchParameter>] [optional]``` | 出力の appx に署名を行うようにこのスクリプトに指示します。 このスイッチは、```-MakeAppx``` スイッチと共に含める必要があります。 
+| ```-Sign [<SwitchParameter>] [optional]``` | 出力する Windows アプリ パッケージに署名するようにこのスクリプトに指示します。 このスイッチは、```-MakeAppx``` スイッチと共に含める必要があります。
 |```<Common parameters>``` | このコマンドレットは、次の共通パラメーターをサポートします。*Verbose*、*Debug*、*ErrorAction*、*ErrorVariable*、*WarningAction*、*WarningVariable*、*OutBuffer*、*PipelineVariable*、および *OutVariable*。 詳細については、「[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)」をご覧ください。 |
+| ```-Verify [<SwitchParameter>] [optional]``` | 指定した場合、デスクトップ ブリッジと Windows ストアの要件に照らして、変換済みのアプリ パッケージを検証するように DAC に指示するスイッチ。 結果は、検証レポート "VerifyReport.xml" で、ブラウザーでの視覚化に最適です。 このスイッチは、`-MakeAppx` スイッチと共に含める必要があります。
 
 ### <a name="cleanup-parameters"></a>クリーンアップ パラメーター
 
@@ -232,11 +242,11 @@ Desktop App Converter では、x86 コンピューターと amd64 コンピュ�
 
 |パラメーター|説明|
 |---------|-----------|
-|```-PackageArch <String>``` | 指定したアーキテクチャのパッケージを生成します。 有効なオプションは、'x86' または 'x64' です。たとえば、-PackageArch x86 のように指定します。 このパラメーターは省略可能です。 指定されていない場合、DesktopAppConverter はパッケージのアーキテクチャの自動検出を試みます。 自動検出に失敗した場合、既定値は x64 パッケージです。 
+|```-PackageArch <String>``` | 指定したアーキテクチャのパッケージを生成します。 有効なオプションは、'x86' または 'x64' です。たとえば、-PackageArch x86 のように指定します。 このパラメーターは省略可能です。 指定されていない場合、DesktopAppConverter はパッケージのアーキテクチャの自動検出を試みます。 自動検出に失敗した場合、既定値は x64 パッケージです。
 
 ### <a name="running-the-peheadercertfixtool"></a>PEHeaderCertFixTool を実行する
 
-DesktopAppConverter は 変換処理中に PEHeaderCertFixTool を自動的に実行し、破損している PEヘッダーを修正します。 ただし、UWP の appx、ルーズ ファイル、または特定のバイナリで、PEHeaderCertFixTool を実行することも可能です。 使用例: 
+DesktopAppConverter は 変換処理中に PEHeaderCertFixTool を自動的に実行し、破損している PEヘッダーを修正します。 ただし、UWP の Windows アプリ パッケージ、ルーズ ファイル、または特定のバイナリで、PEHeaderCertFixTool を実行することも可能です。 使用例:
 
 ```CMD
 PEHeaderCertFixTool.exe <binary file>|<.appx package>|<folder> [/c] [/v]

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 地図, 位置情報, ジオフェンス"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: e21b5b89c95a6b4988e1e95fc924ec3eefd46942
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="guidelines-for-geofencing-apps"></a>ジオフェンス アプリのガイドライン
 
 
@@ -137,4 +134,3 @@ GPS を使うと最も正確な位置情報が得られますが、ジオフェ�
  
 
  
-

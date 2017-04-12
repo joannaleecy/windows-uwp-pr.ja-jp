@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、広告ネットワーク、アプリのメタデータ"
 ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 8ee555d335007a09c61247a929705aa2fff2469d
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: d377fe7e1eb71132ffa21dd1b11dddf9ca9bb084
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-metadata-api-for-advertising-networks"></a>広告ネットワーク用のアプリのメタデータ API
 
 広告ネットワークでは、*アプリのメタデータ API* を使用してプログラムで Windows ストア内のアプリに関するメタデータを取得します。これには、アプリのストア登録情報の説明やカテゴリ、アプリが 13 歳未満の子供を対象とするかどうかなどの詳細が含まれます。 この API へのアクセスは、現在、Microsoft によって API へのアクセス許可が付与されている開発者に制限されています。
@@ -135,4 +132,3 @@ Ocp-Apim-Subscription-Key: <subscription key>
  
 
  
-

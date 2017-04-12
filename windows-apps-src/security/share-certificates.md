@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ca4c7b82fdb7f950d3f68323dec37c2f31e02c87
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8231d8a531098783a6b62383f4a64d61d0a61902
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="share-certificates-between-apps"></a>アプリ間での証明書の共有
 
 

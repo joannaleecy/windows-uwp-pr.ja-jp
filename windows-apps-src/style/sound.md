@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fe56db9f63461ad21173406289c18e6f704aa2a4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6c7745b5702d22bc201dbc173af3765097685514
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="sound"></a>サウンド
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -153,4 +150,3 @@ ElementSoundPlayer.Play(ElementSoundKind.Focus);
 ## <a name="related-articles"></a>関連記事
 
 * [Xbox およびテレビ向け設計](http://go.microsoft.com/fwlink/?LinkId=760736)
-

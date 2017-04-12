@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 26329304df64689ea7938d4fc838bd730696e4a2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6b7f11330c5849d0df4e54c10a71c2a70fc77a08
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="opening-a-developer-account"></a>開発者アカウントを開く
 
@@ -90,6 +88,5 @@ Windows デベロッパー センター ダッシュボードにサインイン�
 -   以前に取得していたユーザーであれば引き続きそのアプリを利用できますが、アプリの一覧はストアから削除されます。 つまり、期限切れになったアカウントの下で開発されたアプリを新しいユーザーが取得することはできなくなります。
 -   また、アプリの名前は、別の開発者が利用できるようになります。
 -   アプリの売上金額で未払いのものがあるときには、通常の支払しきい値に達していなくともその金額の支払いを要求できます。
-
 
 

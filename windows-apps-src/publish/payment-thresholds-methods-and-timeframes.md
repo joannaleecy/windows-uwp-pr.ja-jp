@@ -9,14 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 7da8727d3f901cfbab7c68d0b7f7362438d3fc65
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 2d2f586a1125f12c1034e002e2245e0fe155c1b4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-
 # <a name="payment-thresholds-methods-and-timeframes"></a>支払しきい値、方法、期間
 
 支払の送金にかかる推定時間、支払しきい値、および支払を受けることができる Microsoft マーケットプレースは、お住まいの国/地域および受取りアカウントの種類によって異なる可能性があります。 このトピックでは、国/地域ごとにサポートされている支払しきい値と支払方法について説明します。
@@ -43,6 +39,11 @@ ms.lasthandoff: 02/08/2017
 ## <a name="payment-thresholds-and-methods"></a>支払のしきい値と方法
 
 > **注** 支払しきい値は米ドル (USD) で記載されています。 一部の市場では、相当する現地通貨が使用されます。 
+
+- [Windows ストア](#windows-store)
+- [Microsoft Advertising](#microsoft-advertising)
+- [Azure Marketplace](#azure-marketplace)
+- [Office ストア](#office-store)
 
 ### <a name="windows-store"></a>Windows ストア 
 
@@ -4169,4 +4170,3 @@ ms.lasthandoff: 02/08/2017
     <td>なし</td>
   </tr>
 </table>
-

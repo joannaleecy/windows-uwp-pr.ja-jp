@@ -10,13 +10,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a10d1b164513f9abce48c51bdfe5f6e4c3bdf79d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 92fd3ee66768fcf1c98d9760ecb44811c9b0f9b3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="typography"></a>文字体裁
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -99,7 +96,7 @@ Segoe は、ソフトでわかりやすい外観をした人間的な書体で�
 
 
 >[!NOTE]
->XAML テキスト コントロールでは、[Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) を使ってカーニングを制御し、[FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) を使ってトラッキングを制御します。 既定では、Typography.Kerning は "true" に設定され、FontStretch は推奨値である" Normal" に設定されます。
+>XAML テキスト コントロールでは、[Typogrphy.Kerning](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) を使ってカーニングを制御し、[FontStretch](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_FontStretch) を使ってトラッキングを制御します。 既定では、Typography.Kerning は "true" に設定され、FontStretch は推奨値である" Normal" に設定されます。
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -218,4 +215,3 @@ Green shows where all caps should be used. Red shows where it should not.
 * [テキスト コントロール](../controls-and-patterns/text-controls.md)
 * [フォント](fonts.md)
 * [Segoe MDL2 アイコン](segoe-ui-symbol-font.md)
-

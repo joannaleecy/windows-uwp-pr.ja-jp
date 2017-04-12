@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 539bc6b0a43491c9ef75701bc574c7e31d2c02e7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 234d90382fb62e6f0be9683dfb7b01d9fa80a185
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="staticresource-markup-extension"></a>{StaticResource} マークアップ拡張
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -80,7 +77,7 @@ XAML でもう少し先に進むと、リソースが要求されています。
 
 ## <a name="design-time-tools-support-for-the-staticresource-markup-extension"></a>設計時ツールの **{StaticResource}** マークアップ拡張のサポート
 
-Microsoft Visual Studio 2013 では、XAML ページで **{StaticResource}** マークアップ拡張を使うときに Microsoft IntelliSense のドロップダウンに可能なキー値を含めることができます。 たとえば、"{StaticResource" と入力するとすぐに、現在の検索範囲のリソース キーが IntelliSense のドロップダウンに表示されます。 ページ レベル ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) とアプリ レベル ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)) で持つ一般的なリソースに加えて、[XAML テーマ リソース](https://msdn.microsoft.com/library/windows/apps/mt187274)と、プロジェクトで使っている拡張機能のリソースも表示されます。
+MicrosoftVisualStudio2013 では、XAML ページで **{StaticResource}** マークアップ拡張を使うときに Microsoft IntelliSense のドロップダウンに可能なキー値を含めることができます。 たとえば、"{StaticResource" と入力するとすぐに、現在の検索範囲のリソース キーが IntelliSense のドロップダウンに表示されます。 ページ レベル ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) とアプリ レベル ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)) で持つ一般的なリソースに加えて、[XAML テーマ リソース](https://msdn.microsoft.com/library/windows/apps/mt187274)と、プロジェクトで使っている拡張機能のリソースも表示されます。
 
 **{StaticResource}** の一部としてリソース キーが存在すると、**[定義へ移動]** (F12 キー) 機能でそのリソースを解決して、リソースが定義されているディクショナリを表示できます。 テーマ リソースの場合は、設計時の generic.xaml に移動します。
 
@@ -90,5 +87,4 @@ Microsoft Visual Studio 2013 では、XAML ページで **{StaticResource}** 
 * [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
 * [x:Key 属性](x-key-attribute.md)
 * [{ThemeResource} マークアップ拡張](themeresource-markup-extension.md)
-
 

@@ -1,17 +1,9 @@
 ---
 redirect_url: https://msdn.microsoft.com/windows/uwp/publish/manage-add-ons-in-bulk
-translationtype: Human Translation
-ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
-ms.openlocfilehash: 73589979db2ebac96d9168159089d562ef6398e2
-
+ms.openlocfilehash: e65b288aa1fb8d83f78e937786be3e4c365e1ca1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# IAP の一括管理
+# <a name="manage-iaps-in-bulk"></a>IAP の一括管理
 
 このページは、「アドオンの一括管理」にリダイレクトされました。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

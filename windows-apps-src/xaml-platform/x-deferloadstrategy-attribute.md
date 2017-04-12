@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4ccc18920a98b3c2258b4965e96fa063124d0546
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0fd1e58549ba19397948864fe5fe0b31fcaf01d7
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xdeferloadstrategy-attribute"></a>x:DeferLoadStrategy 属性
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
@@ -36,7 +33,7 @@ ms.lasthandoff: 02/07/2017
 
 -   この要素を後で検索する手段が必要なため、定義済みの [x:Name](x-name-attribute.md) が必要です。
 -   遅延としてマークできるのは、[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) のみです ([**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249) から派生した型は除く)。
--   [**Page**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControls**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.usercontrol)、[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) では、ルート要素を遅延できません。
+-   [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControls**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol)、[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) では、ルート要素を遅延できません。
 -   [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) の要素は遅延できません。
 -   [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) で読み込まれた Loose XAML では機能しません。
 -   親要素を移動すると、実現されていない要素はすべて消去されます。
@@ -93,5 +90,4 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
     this.FindName("DeferredGrid"); // This will realize the deferred grid
 }
 ```
-
 

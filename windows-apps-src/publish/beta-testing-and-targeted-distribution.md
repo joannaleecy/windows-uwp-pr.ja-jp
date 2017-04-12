@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0fd6f16b019326b7deefa110c2f65b30ffd83d10
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 20178a8048cadb733bf1e34996ad46067a8660f3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="beta-testing-and-targeted-distribution"></a>ベータ テストとターゲット配布
 
 
@@ -92,4 +89,3 @@ Windows 10 デバイスでアプリを特定のユーザーのみに限定して
 -   メール アドレスは、セミコロンで区切る必要があります。
 -   後で他のアドレスを追加できますが、そのためには新しい申請を作成する必要があります。
 -   テスターがアプリをダウンロードした後で、アプリへのアクセスを取り消すことはできません。 アプリをダウンロードした後、テスターは継続してアプリを使うことができ、申請されたすべての更新プログラムを入手できます。
-

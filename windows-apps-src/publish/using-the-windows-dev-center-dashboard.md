@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a4dfc6003c681bb0379f25d94bb144940467d15e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b0fedbbc881d3c9febac2a1486ec441e5d4719d1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="using-the-windows-dev-center-dashboard"></a>Windows デベロッパー センター ダッシュボードの使用
 
 
@@ -38,7 +35,6 @@ Windows 8.1、Windows Phone 8.1、またはそれ以前の OS バージョン向
  
 
  
-
 
 
 

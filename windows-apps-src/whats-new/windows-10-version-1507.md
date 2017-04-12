@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 4650eaa22f299910bd7956972bd7099ea6d78943
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 8f7f3f6b3436c987324a1072a1fbab1bd045c5bd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="whats-new-in-windows-10-version-1507"></a>Windows 10 バージョン 1507 の新着情報
 
 
@@ -206,4 +203,3 @@ WebView.ClearTemporaryWebDataAsync メソッド | ユーザーが XAML WebView �
 
 
 ---
-

@@ -9,11 +9,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: c3d1cdab94fc8b4f693ef9294cbb12580a9e199b
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: e5e4f615ae66b3e551456258270f316df8f3c0d1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="web-account-manager"></a>Web アカウント マネージャー
 
@@ -166,7 +164,7 @@ AccountsSettingsPane に Microsoft アカウントのオプションが表示さ
 private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 {
     WebTokenRequest request = new WebTokenRequest(command.WebAccountProvider, "wl.basic");
-    WebTokenRequestResult = await WebAuthenticationCoreManager.RequestTokenAsync(request);
+    WebTokenRequestResult result = await WebAuthenticationCoreManager.RequestTokenAsync(request);
 }
 ```
 
@@ -185,7 +183,7 @@ private async void GetAadTokenAsync(WebAccountProviderCommand command)
     string clientId = "your_guid_here"; // Obtain your clientId from the Azure Portal
     WebTokenRequest request = new WebTokenRequest(provider, "User.Read", clientId);
     request.Properties.Add("resource", "https://graph.microsoft.com");
-    WebTokenRequestResult = await WebAuthenticationCoreManager.RequestTokenAsync(request);
+    WebTokenRequestResult result = await WebAuthenticationCoreManager.RequestTokenAsync(request);
 }
 ```
 
@@ -406,4 +404,3 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 [Web 認証ブローカー](web-authentication-broker.md)
 
 [WebAccountManagement サンプル](http://go.microsoft.com/fwlink/p/?LinkId=620621)
-

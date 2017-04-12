@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: aefe0836257b04d7b9c1ca6841bc9945c17a70d0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: bed8846bf2df3bfce12a4a93a87146ae1adc29f6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="package-flights"></a>パッケージ フライト
 
 パッケージ フライトを使って、限定されたテスト グループ専用のパッケージを配布することができます。 
@@ -129,4 +126,3 @@ ms.lasthandoff: 02/07/2017
 サポートを中止するパッケージ フライトを削除するには、[アプリの概要] ページでその名前をクリックします。 フライトの概要ページで、**[変更]** をクリックし、**[削除]** リンクをクリックしてパッケージ フライトを削除します  (進行中のパッケージ フライトの未公開の申請がある場合、まずその申請を削除する必要があります)。この処理が完了するまで最大 30 分かかる可能性があります。
 
 パッケージ フライトを削除すると、そのパッケージ フライトで配布したパッケージを持つユーザーはだれでも、バージョン番号がより大きいパッケージがある場合 (またはこのようなパッケージが入手可能になるとすぐ) にアプリの更新プログラムを入手できます。 ユーザーがアプリをアンインストールしてもう一度インストールする場合、これは新しい入手として扱われ、現在入手可能な最高バージョンを入手することになります。 
-

@@ -1,27 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: 96C090C1-88F8-42E7-AED1-AFA9031E952B
-description: "既存のアプリの申請を削除するには、Windows ストア申請 API のこのメソッドを使います。"
-title: "Windows ストア申請 API を使用したアプリの申請の削除"
+description: "既存のアプリの申請を削除するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "アプリの申請の削除"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア申請 API, アプリの申請, 削除"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fe85515d9baaaf0d36cdcdce12a0e81561bb6787
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 20ac77960c47e21daddec845abef73887ee93710
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="delete-an-app-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアプリの申請の削除
-
+# <a name="delete-an-app-submission"></a>アプリの申請の削除
 
 
 
-既存のアプリの申請を削除するには、Windows ストア申請 API のこのメソッドを使います。
+
+既存のアプリの申請を削除するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -30,7 +27,7 @@ ms.lasthandoff: 02/07/2017
 * Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
 * このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア提出 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
+>**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
 ## <a name="request"></a>要求
 
@@ -95,9 +92,8 @@ Authorization: Bearer <your access token>
 ## <a name="related-topics"></a>関連トピック
 
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-* [アプリの提出の取得](get-an-app-submission.md)
+* [アプリの申請の取得](get-an-app-submission.md)
 * [アプリの申請の作成](create-an-app-submission.md)
 * [アプリの申請のコミット](commit-an-app-submission.md)
 * [アプリの申請の更新](update-an-app-submission.md)
 * [アプリの申請の状態の取得](get-status-for-an-app-submission.md)
-

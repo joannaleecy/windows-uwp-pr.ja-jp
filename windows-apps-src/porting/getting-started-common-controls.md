@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 91ea875987d5e1659fff337f95f790ef59286d03
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4df9785b0d8ccea0561a780fa2b807201332cda8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="getting-started-common-controls"></a>はじめに: コモン コントロール
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
@@ -66,4 +63,3 @@ UWP コントロールが優れている点は、実行されているデバイ�
 * [Build 2014: XAML UI とコントロールの説明](http://go.microsoft.com/fwlink/p/?LinkID=397897)
 * [Build 2014: 共通の XAML UI フレームワークを使ったアプリの開発](http://go.microsoft.com/fwlink/p/?LinkID=397898)
 * [Build 2014: Visual Studio を使った XAML 集約型アプリの構築に関するページ](http://go.microsoft.com/fwlink/p/?LinkID=397876)
-

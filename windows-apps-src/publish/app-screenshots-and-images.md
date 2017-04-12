@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2fbbaac1b6b0f3133b9d541d6887ceb6c379f520
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9e9eb88e2208e33e74c273347d66169459330c27
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-screenshots-and-images"></a>アプリのスクリーンショットと画像
 
 
@@ -113,4 +110,3 @@ Windows Phone 8.1 以前のストアでは、プロモーション用のレイ�
 ### <a name="for-windows-81-and-earlier-414-x-180"></a>Windows 8.1 以前の場合: 414 x 180
 
 Windows 8.1 以前のストアでは、プロモーション用のレイアウトに 414 x 180 ピクセル サイズの画像が使用される可能性があります。 アプリが Windows 8.1 以前で実行される場合は、プロモーションの対象として検討されるように、このサイズの画像を提供することをお勧めします。
-

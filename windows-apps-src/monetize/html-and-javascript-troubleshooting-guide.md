@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 広告, Advertising, AdControl, トラブルシューティング, HTML, JavaScript"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fe06749583dc42ec84dc4acd876ea96c70c916db
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 068ba245475aa03b0772e8f38017c93783fdb6ce
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="html-and-javascript-troubleshooting-guide"></a>HTML と JavaScript のトラブルシューティング ガイド
 
 このトピックでは、JavaScript/HTML アプリの Microsoft Advertising ライブラリに関する、開発上の一般的な問題に対する解決策について説明します。
@@ -387,4 +384,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

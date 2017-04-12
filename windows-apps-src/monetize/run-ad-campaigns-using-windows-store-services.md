@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 8e6c3d3d-0120-40f4-9f90-0b0518188a1a
 description: "Windows ストア プロモーション API を使って、自分または自分の組織の Windows デベロッパー センター アカウントに登録されたアプリのプロモーション用の広告キャンペーンをプログラムで管理することができます。"
-title: "Windows ストア サービスを使用した広告キャンペーンの実行"
+title: "ストア サービスを使用した広告キャンペーンの実行"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア プロモーション API, 広告キャンペーン"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: ec245f07098a662c80517de49ba5637a69b30f35
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: d1575c686080fb8c4c35c032cdc1beca587aeb37
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="run-ad-campaigns-using-windows-store-services"></a>Windows ストア サービスを使用した広告キャンペーンの実行
+# <a name="run-ad-campaigns-using-store-services"></a>ストア サービスを使用した広告キャンペーンの実行
 
 *Windows ストア プロモーション API* を使って、自分または自分の組織の Windows デベロッパー センター アカウントに登録されたアプリのプロモーション用の広告キャンペーンをプログラムで管理することができます。 この API を使用して、広告キャンペーンや、ターゲット設定、クリエイティブなど、その他の関連アセットを作成、更新、および監視できます。 この API は、大量のキャンペーンを作成する開発者や、Windows デベロッパー センター ダッシュボードを使用せずにキャンペーンを作成する必要がある開発者に特に便利です。 この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
 
@@ -28,12 +25,14 @@ ms.lasthandoff: 02/08/2017
 
 または、Windows デベロッパー センター ダッシュボードを使用して広告キャンペーンを作成し、管理することもできます。Windows ストア プロモーション API を使用してプログラムにより作成したどの広告キャンペーンも、ダッシュボードからアクセスできます。 ダッシュボードでの広告キャンペーンの管理について詳しくは、「[アプリ向けの広告キャンペーンの作成](../publish/create-an-ad-campaign-for-your-app.md)」をご覧ください。
 
->**注**&nbsp;&nbsp;Windows デベロッパー センター アカウントをお持ちの開発者の方はどなたでも、Windows ストア プロモーション API を使用してアプリの広告キャンペーンを管理できます。 メディア エージェンシーもこの API へのアクセスを要求して、広告主の代わりに広告キャンペーンを実行できます。 メディア エージェンシーの方で、この API について詳しい情報を希望される場合、またはこの API へのアクセスを要求される場合は、storepromotionsapi@microsoft.com までリクエストをお送りください。
+>**注**&nbsp;&nbsp;Windows デベロッパー センター アカウントをお持ちの開発者の方はどなたでも、Windows ストア プロモーション API を使用してアプリの広告キャンペーンを管理できます。 メディア エージェンシーもこの API へのアクセスを要求して、広告主の代わりに広告キャンペーンを実行できます。 お客様がメディア エージェンシーで、この API について詳しい情報を希望される場合、またはこの API へのアクセスを要求される場合は、storepromotionsapi@microsoft.com までリクエストをお送りください。
 
 <span id="prerequisites" />
 ## <a name="step-1-complete-prerequisites-for-using-the-windows-store-promotions-api"></a>手順 1. Windows ストア プロモーション API を使うための前提条件を完了する
 
 Windows ストア プロモーション API を呼び出すコードの作成を開始する前に、次の前提条件が完了していることを確認します。
+
+* この API を使用して広告キャンペーンを正しく作成し開始するには、事前に、[デベロッパー センター ダッシュボードの **[アプリの宣伝]** ページを使用して、有料の広告キャンペーンを 1 つ作成する](../publish/create-an-ad-campaign-for-your-app.md)必要があります。また、このページで支払い方法を少なくとも 1 つ追加する必要があります。 これを行うと、この API を使用して、広告キャンペーンの請求可能な配信ラインを正しく作成することができます。 この API を使用して作成した広告キャンペーンの配信ラインでは、ダッシュ ボードの **[アプリの宣伝]** ページで選んだ既定の支払い方法に対して自動的に請求が行われます。
 
 * ユーザー (またはユーザーの組織) は、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](http://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。 それ以外の場合は、追加料金なしで[デベロッパー センター内から新しい Azure AD を作成](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)できます。
 
@@ -112,4 +111,3 @@ Windows ストア プロモーション API では、キャンペーンについ
 
 
  
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 13963ddf9f745c6de2e6d7ef7d948f649b2f6f5e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 708f46dc0be53961d8fd26f41a933e5756720a98
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="about-community-ads"></a>コミュニティ広告について
 
 アプリで **AdMediatorControl** または **AdControl** を使用してバナー広告を表示する場合は、Windows ストア内の自分のアプリと他の開発者のアプリを無料で相互に販売促進 (クロス プロモーション) することができます。 この機能を*コミュニティ広告*と呼びます。  
@@ -44,4 +41,3 @@ ms.lasthandoff: 02/07/2017
 
 * [広告による収益獲得](monetize-with-ads.md)
 * [アプリ向けの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)
-

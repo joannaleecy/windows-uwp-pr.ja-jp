@@ -1,27 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: 8C1E9E36-13AF-4386-9D0F-F9CB320F02F5
-description: "Windows ストア申請 API のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトを作成します。"
-title: "Windows ストア申請 API を使用したパッケージ フライトの作成"
+description: "Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトを作成するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "パッケージ フライトの作成"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、Windows ストア申請 API、フライトの作成"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2b2b8acb1cfa2a1eaa0ce586cace250cedb5cf71
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 64064e8eaa7586f3ea8fbf569aa08f8789aa5c52
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="create-a-package-flight-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したパッケージ フライトの作成
-
+# <a name="create-a-package-flight"></a>パッケージ フライトの作成
 
 
 
-Windows ストア申請 API のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトを作成します。
+
+Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトを作成するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。
 
 >**注:**&nbsp;&nbsp;このメソッドは、申請なしでパッケージ フライトを作成します。 パッケージ フライトの申請を作成するには、「[パッケージ フライト申請の管理](manage-flight-submissions.md)」のメソッドをご覧ください。
 
@@ -32,7 +29,7 @@ Windows ストア申請 API のこのメソッドを使用して、Windows デ�
 * Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
 * このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア提出 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
+>**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
 ## <a name="request"></a>要求
 
@@ -132,4 +129,3 @@ Content-Type: application/json
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [パッケージ フライトの取得](get-a-flight.md)
 * [パッケージ フライトの削除](delete-a-flight.md)
-

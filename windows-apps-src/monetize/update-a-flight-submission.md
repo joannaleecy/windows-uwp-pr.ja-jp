@@ -1,25 +1,22 @@
 ---
 author: mcleanbyron
 ms.assetid: 24C5F796-5FB8-4B5D-B428-C3154B3098BD
-description: "既存のパッケージ フライトの申請を更新するには、Windows ストア申請 API 内の以下のメソッドを使用します。"
-title: "Windows ストア申請 API を使用したパッケージ フライト申請の更新"
+description: "既存のパッケージ フライトの申請を更新するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "パッケージ フライトの申請の更新"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア申請 API, フライトの申請, 更新"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dbd8447808c1446805f179fd1181ae88dd847083
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 89ef86cdf3243322f3d8725e40ef13bf43f31a8e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="update-a-package-flight-submission"></a>パッケージ フライトの申請の更新
 
-# <a name="update-a-package-flight-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したパッケージ フライト申請の更新
 
-
-既存のパッケージ フライトの申請を更新するには、Windows ストア申請 API 内の以下のメソッドを使用します。 このメソッドを使って申請を正常に更新した後は、インジェストと公開のために[申請をコミット](commit-a-flight-submission.md)する必要があります。
+既存のパッケージ フライトの申請を更新するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。 このメソッドを使って申請を正常に更新した後は、インジェストと公開のために[申請をコミット](commit-a-flight-submission.md)する必要があります。
 
 このメソッドが Windows ストア申請 API を使ったパッケージ フライト申請の作成プロセスにどのように適合するかについては、「[パッケージ フライトの申請の管理](manage-flight-submissions.md)」をご覧ください。
 
@@ -96,7 +93,7 @@ Content-Type: application/json
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -138,7 +135,7 @@ Content-Type: application/json
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -173,4 +170,3 @@ Content-Type: application/json
 * [パッケージ フライトの申請のコミット](commit-a-flight-submission.md)
 * [パッケージ フライトの申請の削除](delete-a-flight-submission.md)
 * [パッケージ フライトの申請の状態の取得](get-status-for-a-flight-submission.md)
-

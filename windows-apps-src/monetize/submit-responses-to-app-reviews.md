@@ -1,25 +1,22 @@
 ---
 author: mcleanbyron
 ms.assetid: 038903d6-efab-4da6-96b5-046c7431e6e7
-description: "アプリのレビューに返信を送るには、Windows ストア レビュー API のこのメソッドを使用します。"
-title: "アプリのレビューへの返信の提出"
+description: "アプリのレビューに返信を送るには、Windows ストア レビュー API に含まれる以下のメソッドを使用します。"
+title: "レビューに対する返信の送信"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ストア サービス, Windows ストアレビュー API, アドオンの取得数"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 1531059831b4c20d11661eb87fceda7b8dcb7f02
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: d418e64bf1608591e877da8339d1dda308611285
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="submit-responses-to-reviews"></a>レビューに対する返信の送信
 
-# <a name="submit-responses-to-app-reviews"></a>アプリのレビューへの返信の提出
 
-
-アプリのレビューにプログラムで返信するには、Windows ストア レビュー API のこのメソッドを使用します。 このメソッドを呼び出すときは、返信するレビューの ID を指定する必要があります。 レビュー ID は、Windows ストア分析 API の[アプリ レビューの取得](get-app-reviews.md)メソッドの返信データ、および[レビュー レポート](../publish/reviews-report.md)の[オフライン ダウンロード](../publish/download-analytic-reports.md)で入手できます。
+アプリのレビューにプログラムで返信するには、Windows ストア レビュー API に含まれる以下のメソッドを使用します。 このメソッドを呼び出すときは、返信するレビューの ID を指定する必要があります。 レビュー ID は、Windows ストア分析 API の[アプリ レビューの取得](get-app-reviews.md)メソッドの返信データ、および[レビュー レポート](../publish/reviews-report.md)の[オフライン ダウンロード](../publish/download-analytic-reports.md)で入手できます。
 
 顧客はレビューを送信するときに、レビューへの返信を受け取らないことを選択できます。 顧客が返信を受け取らないように指定しているレビューに返信すると、このメソッドの返信の本文には、返信ができなかったことが示されます。 このメソッドを呼び出す前に、任意で、[アプリのレビューへの返信情報の取得](get-response-info-for-app-reviews.md)メソッドを使用して、特定のレビューへの返信が許可されているかどうかを確認できます。
 
@@ -149,4 +146,3 @@ Content-Type: application/json
 * [Windows ストアのサービスを使ってレビューに返信する](respond-to-reviews-using-windows-store-services.md)
 * [アプリのレビューへの返信情報の取得](get-response-info-for-app-reviews.md)
 * [アプリのレビューの取得](get-app-reviews.md)
-

@@ -4,16 +4,14 @@ ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: "WinAppDeployCmd.exe ツールを使ったアプリのインストール"
 description: "Windows アプリケーションの展開ツール (WinAppDeployCmd.exe) は、Windows 10 PC から Windows 10 デバイスにユニバーサル Windows プラットフォーム (UWP) アプリを展開するために利用できるコマンド ライン ツールです。"
 ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 03/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9148a26b813d99ca04ae2e5a050bbc9b590d5f6e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: eb4ad93f60c2e5062c2f5d99d852538484f965da
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>WinAppDeployCmd.exe ツールを使ったアプリのインストール
 
@@ -29,27 +27,29 @@ Windows 10 SDK がインストールされていれば、WinAppDeployCmd ツー�
 
 ## <a name="winappdeploycmd-syntax-and-options"></a>WinAppDeployCmd の構文とオプション
 
-**WinAppDeployCmd.exe** で使うことができる構文を次に示します。
+**WinAppDeployCmd.exe** で使用される一般的な構文を次に示します。
+```syntax
+WinAppDeployCmd command -option <argument>
+```
 
-``` syntax
-WinAppDeployCmd command -option <argument> ...
-    WinAppDeployCmd devices
-    WinAppDeployCmd devices <x>
-    WinAppDeployCmd install -file <path> -ip <address>
-    WinAppDeployCmd install -file <path> -guid <address> -pin <p>
-    WinAppDeployCmd install -file <path> -ip <address> -dependency <a> <b> ...
-    WinAppDeployCmd install -file <path> -guid <address> -dependency <a> <b> ...
-    WinAppDeployCmd uninstall -file <path>
-    WinAppDeployCmd uninstall -package <name>
-    WinAppDeployCmd update -file <path>
-    WinAppDeployCmd list -ip <address>
-    WinAppDeployCmd list -guid <address>
-    WinAppDeployCmd deployfiles -file <path> -remotedeploydir <remoterelativepath> -ip <address>
-    WinAppDeployCmd registerfiles -remotedeploydir <remoterelativepath> -ip <address>
-    WinAppDeployCmd addcreds -credserver <server> -credusername <username> -credpassword <password> -ip <address>
-    WinAppDeployCmd getcreds -credserver <server> -ip <address>
-    WinAppDeployCmd deletecreds -credserver <server> -ip <address>
-
+さまざまなコマンドを使用する他の構文例を次に示します。
+```syntax
+WinAppDeployCmd devices
+WinAppDeployCmd devices <x>
+WinAppDeployCmd install -file <path> -ip <address>
+WinAppDeployCmd install -file <path> -guid <address> -pin <p>
+WinAppDeployCmd install -file <path> -ip <address> -dependency <a> <b> 
+WinAppDeployCmd install -file <path> -guid <address> -dependency <a> <b>
+WinAppDeployCmd uninstall -file <path>
+WinAppDeployCmd uninstall -package <name>
+WinAppDeployCmd update -file <path>
+WinAppDeployCmd list -ip <address>
+WinAppDeployCmd list -guid <address>
+WinAppDeployCmd deployfiles -file <path> -remotedeploydir <remoterelativepath> -ip <address>
+WinAppDeployCmd registerfiles -remotedeploydir <remoterelativepath> -ip <address>
+WinAppDeployCmd addcreds -credserver <server> -credusername <username> -credpassword <password> -ip <address>
+WinAppDeployCmd getcreds -credserver <server> -ip <address>
+WinAppDeployCmd deletecreds -credserver <server> -ip <address>
 ```
 
 ターゲット デバイスでアプリをインストール/アンインストールしたり、既にインストールされているアプリを更新したりできます。 既にインストールされているアプリによって保存されたデータや設定を保持するには、**install** オプションの代わりに **update** オプションを使います。
@@ -156,4 +156,3 @@ WinAppDeployCmd registerfiles -ip <Xbox One IP> -remotedeploydir <location of ap
 
 ex. WinAppDeployCmd register files -ip 192.168.0.1 -remotedeploydir \\driveA\myAppLocation -username admin -password A1B2C3
 ```
-

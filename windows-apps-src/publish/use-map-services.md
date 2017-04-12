@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1657c092d09761b7e1db82252295356384faf68a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 853816bcb994628a8864a066309c5abd0e31fd2b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="use-map-services"></a>マップ サービスの使用
 
 
@@ -32,7 +29,6 @@ Windows Phone 8.1 以前を対象としたアプリでマップ サービスを�
  
 
  
-
 
 
 

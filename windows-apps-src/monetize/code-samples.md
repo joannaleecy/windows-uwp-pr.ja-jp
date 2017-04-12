@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、広告、宣伝、コード サンプル"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ae6e806f8aead387afe55dec2d70c04b7fc21284
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cb10a81c2fac1a14ae6e3a7eec20953d4267164d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="code-samples"></a>コード サンプル
 
 
@@ -23,7 +20,7 @@ ms.lasthandoff: 02/07/2017
 
 このセクションでは、ターゲット ユーザーの決定、手動での広告の更新、イベントの処理のための、Microsoft Advertising ライブラリの [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) クラスおよび [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) クラスのプロパティ、メソッド、イベントの使用方法を示すサンプルを紹介します。 これらのコントロールをアプリに追加する方法に関する入門用のチュートリアルについては、[開発者向けチュートリアル](developer-walkthroughs.md)をご覧ください。
 
-C# と C++ を使って JavaScript/HTML アプリと XAML アプリに広告バナーやビデオのスポット広告を追加する方法を示す完全なサンプル プロジェクトについては、[GitHub の広告サンプル](http://aka.ms/githubads)をご覧ください。
+C# と C++ を使って JavaScript/HTML アプリと XAML アプリにバナー広告やスポット広告を追加する方法を示す完全なサンプル プロジェクトについては、[GitHub の広告サンプル](http://aka.ms/githubads)をご覧ください。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
@@ -45,4 +42,3 @@ C# と C++ を使って JavaScript/HTML アプリと XAML アプリに広告バ�
  
 
  
-

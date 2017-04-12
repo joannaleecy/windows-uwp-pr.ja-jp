@@ -1,24 +1,21 @@
 ---
 author: mcleanbyron
 ms.assetid: fb6bb856-7a1b-4312-a602-f500646a3119
-description: "Windows ストア レビュー API のこのメソッドを使用して、特定のレビューに返信できるかどうかや、特定のアプリの任意のレビューに返信できるかどうかを特定します。"
-title: "アプリのレビューへの返信情報の取得"
+description: "特定のレビューに返信できるかどうかを判断したり、特定のアプリに関するいずれかのレビューに返信できるかどうかを判断したりするには、Windows ストア レビュー API に含まれる以下のメソッドを使用します。"
+title: "レビューへの返信情報の取得"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, ストア サービス, Windowsストア レビュー API, 返信情報"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 88e6158bfc5df23e5c2056624e353b38b39c7331
-ms.lasthandoff: 02/08/2017
-
+keywords: "Windows 10, UWP, ストア サービス, Windows ストア レビュー API, 返信情報"
+ms.openlocfilehash: 46f5cb04fcea1b06205999743205396a875ebbce
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="get-response-info-for-reviews"></a>レビューへの返信情報の取得
 
-# <a name="get-response-info-for-app-reviews"></a>アプリのレビューへの返信情報の取得
-
-アプリのユーザー レビューにプログラムで返信する場合は、Windows ストア レビュー API のこのメソッドを使用して、まずレビューに返信する権限があるかどうかを確認します。 レビューの返信を受け取らないことを選択している顧客が送信したレビューに返信することはできません。 レビューに返信できることを確認した後、[アプリのレビューに返信を送信する](submit-responses-to-app-reviews.md)メソッドを使って、プログラムでレビューに返信します。
+アプリのユーザー レビューにプログラムで返信する場合は、Windows ストア レビュー API に含まれる以下のメソッドを使用して、まずレビューに返信する権限があるかどうかを確認します。 レビューの返信を受け取らないことを選択している顧客が送信したレビューに返信することはできません。 レビューに返信できることを確認した後、[アプリのレビューに返信を送信する](submit-responses-to-app-reviews.md)メソッドを使って、プログラムでレビューに返信します。
 
 
 ## <a name="prerequisites"></a>前提条件
@@ -44,7 +41,7 @@ ms.lasthandoff: 02/08/2017
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
 <span/> 
 
@@ -95,4 +92,3 @@ Authorization: Bearer <your access token>
 * [デベロッパー センターのダッシュボードを使用して顧客のレビューに返信する](../publish/respond-to-customer-reviews.md)
 * [Windows ストアのサービスを使ってレビューに返信する](respond-to-reviews-using-windows-store-services.md)
 * [アプリのレビューの取得](get-app-reviews.md)
-

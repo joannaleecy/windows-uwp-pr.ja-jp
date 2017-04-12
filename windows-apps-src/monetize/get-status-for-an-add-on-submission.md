@@ -1,27 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: 55315F38-6EC5-4889-A14E-7D8EC282FE98
-description: "Windows ストア提出 API 内のこのメソッドを使用して、アドオンの提出ステータスを取得します。"
-title: "Windows ストア申請 API を使用したアドオンの申請ステータスの取得"
+description: "アドオンの申請の状態を取得するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "アドオンの申請の状態の取得"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, Windows ストア申請 API, アドオンの申請, ステータス"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 41fc9b5597b5331fc6221575e0601f2414f4c778
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows 10, UWP, Windows ストア申請 API, アドオンの申請, 状態"
+ms.openlocfilehash: 691e512c2a072748434d092286f0ab36a90f91f2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-the-status-of-an-add-on-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアドオンの申請ステータスの取得
-
+# <a name="get-the-status-of-an-add-on-submission"></a>アドオンの申請の状態の取得
 
 
 
-アドオン (アプリ内製品 (IAP) とも呼ばれます) 提出のステータスを取得するには、Windows ストア提出 API 内のこのメソッドを使用します。 Windows ストア提出 API を使ったアドオンの提出の作成プロセスについて詳しくは、「[アドオンの提出の管理](manage-add-on-submissions.md)」をご覧ください。
+
+アドオン (アプリ内製品または IAP とも呼ばれます) の申請の状態を取得するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。 Windows ストア申請 API を使ったアドオンの申請の作成プロセスについて詳しくは、「[アドオンの申請の管理](manage-add-on-submissions.md)」をご覧ください。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -56,8 +53,8 @@ ms.lasthandoff: 02/07/2017
 
 | 名前        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | string | 必須。 ステータスを取得する提出が含まれているアドオンのストア ID です。 ストア ID はデベロッパー センター ダッシュボードで確認できます。  |
-| submissionId | string | 必須。 ステータスを取得する提出の ID です。 この ID は、[アドオン提出の作成](create-an-add-on-submission.md)要求の応答データに含まれており、デベロッパー センター ダッシュボードで確認できます。  |
+| inAppProductId | string | 必須。 状態を取得する申請が含まれているアドオンのストア ID です。 ストア ID はデベロッパー センター ダッシュボードで確認できます。  |
+| submissionId | string | 必須。 状態を取得する申請の ID です。 この ID は、[アドオンの申請を作成する](create-an-add-on-submission.md)要求の応答データに含まれており、デベロッパー センター ダッシュボードで確認できます。  |
 
 <span/>
 
@@ -67,7 +64,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="request-example"></a>要求の例
 
-次の例は、アドオン提出のステータスを取得する方法を示しています。
+次の例は、アドオン申請の状態を取得する方法を示しています。
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/submissions/1152921504621243680/status HTTP/1.1
@@ -76,7 +73,7 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>応答
 
-次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文には、指定された提出に関する情報が含まれています。 応答本文の値について詳しくは、次のセクションをご覧ください。
+次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文には、指定された申請に関する情報が含まれています。 応答本文の値について詳しくは、次のセクションをご覧ください。
 
 ```json
 {
@@ -93,8 +90,8 @@ Authorization: Bearer <your access token>
 
 | 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| status           | string  | 提出の状態。 次のいずれかの値を使用できます。 <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
-| statusDetails           | object  |  エラーに関する情報など、提出ステータスに関する追加詳細情報が含まれています。 詳しくは、[ステータスの詳細に関するリソース](manage-add-on-submissions.md#status-details-object)をご覧ください。 |
+| status           | string  | 申請の状態。 次のいずれかの値を使用できます。 <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
+| statusDetails           | object  |  エラーに関する情報など、申請の状態に関する追加詳細情報が含まれています。 詳しくは、[ステータスの詳細に関するリソース](manage-add-on-submissions.md#status-details-object)をご覧ください。 |
 
 <span/>
 
@@ -104,18 +101,17 @@ Authorization: Bearer <your access token>
 
 | エラー コード |  説明   |
 |--------|------------------|
-| 404  | 提出は見つかりませんでした。 |
-| 409  | アドオンは、[Windows ストア提出 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センターのダッシュボード機能を使用します。  |
+| 404  | 申請は見つかりませんでした。 |
+| 409  | アドオンは、[Windows ストア申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センターのダッシュボード機能を使用します。  |
 
 <span/>
 
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Windows ストア サービスを使用した提出の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-* [アドオンの提出の取得](get-an-add-on-submission.md)
-* [アドオンの提出の作成](create-an-add-on-submission.md)
-* [アドオンの提出のコミット](commit-an-add-on-submission.md)
-* [アドオンの提出の更新](update-an-add-on-submission.md)
-* [アドオンの提出の削除](delete-an-add-on-submission.md)
-
+* [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
+* [アドオンの申請の取得](get-an-add-on-submission.md)
+* [アドオンの申請の作成](create-an-add-on-submission.md)
+* [アドオンの申請のコミット](commit-an-add-on-submission.md)
+* [アドオンの申請の更新](update-an-add-on-submission.md)
+* [アドオンの申請の削除](delete-an-add-on-submission.md)

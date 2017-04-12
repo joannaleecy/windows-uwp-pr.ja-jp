@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 23d8c14bfdbfc05a1397fa67cb831d38ec092233
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 2ce4ddc5240281618fefa16587067c4ad9382b2e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="set-custom-permissions-for-account-users"></a>アカウント ユーザーのカスタムのアクセス許可の設定
 
 ユーザーに自分のアカウントを追加する場合、ユーザーに[標準の役割](manage-account-users.md#roles-and-permissions)を付与するか、またはアクセス許可をカスタマイズして、ユーザーに適切なレベルのアクセスを提供することを選択できます。 これらのアクセス許可の一部はアカウント全体に適用したり、すべての製品に付与する、または特定の製品に制限したりすることができます。 
@@ -184,4 +181,3 @@ ms.lasthandoff: 02/08/2017
 </table>
 
 \* アスタリスク (*) でマークされているアクセス許可は、一部のアカウントで利用できない機能にアクセス権を付与します。 これらの機能に対してアカウントが有効になっていない場合は、これらのアクセス許可の選択内容には一切影響はありません。  
-

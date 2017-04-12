@@ -9,14 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9ce20fbfc1289eb02faf8868415feda054d6f691
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 70ef1ab7bc31fde2f0d4744394c1ae69c8caf7fd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-
 # <a name="distributing-a-managed-windows-runtime-component"></a>マネージ Windows ランタイム コンポーネントの配布
 
 
@@ -80,4 +76,3 @@ For example: Microsoft.Cpp.Build.dll
 * [リソース管理システム (Windows)](https://msdn.microsoft.com/library/windows/apps/jj552947.aspx)
 * [Visual Studio 拡張機能の検索と使用](https://msdn.microsoft.com/library/dd293638.aspx)
 * [MakePRI.exe のコマンド オプション](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx)
-

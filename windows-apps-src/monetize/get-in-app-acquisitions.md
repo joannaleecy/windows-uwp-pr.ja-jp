@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ストア サービス, Windows ストア分析 API, アドオンの入手数"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: be69a45586f4b7d66740d141dcc350eafd16bb53
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cdd43c6e5df73ec1983593eb6198eba77c9df6e2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="get-add-on-acquisitions"></a>アドオンの入手数の取得
 
 
@@ -46,7 +43,7 @@ ms.lasthandoff: 02/07/2017
 
 | ヘッダー        | 型   | 説明          |
 |---------------|--------|--------------|
-| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
 <span/> 
 
@@ -184,4 +181,3 @@ Authorization: Bearer <your access token>
  
 
  
-

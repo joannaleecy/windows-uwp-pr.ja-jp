@@ -1,7 +1,7 @@
 ---
 author: payzer
 title: "画面の端に UI を描画する方法"
-description: 
+description: "タイトル セーフ エリアの自動スケーリングを無効にする方法です。"
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 1adb221f-6f70-4255-9329-2046a486ca45
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 9a221672391dfbfb4af664438448307800020c6f
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 30fc3e357eaea0d36a5deba1b0ea85c2d9bc990e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="how-to-draw-ui-to-the-edge-of-the-screen"></a>画面の端に UI を描画する方法   
 既定では、テレビのセーフ エリアを考慮して、アプリケーションのビューポートの端には境界線が表示されます (詳しくは「[Xbox およびテレビ向け設計](../input-and-devices/designing-for-tv.md#tv-safe-area)」をご覧ください)。 
 
@@ -31,4 +28,3 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 ## <a name="see-also"></a>関連項目
 - [Xbox のベスト プラクティス](tailoring-for-xbox.md)
 - [Xbox One の UWP](index.md)
-

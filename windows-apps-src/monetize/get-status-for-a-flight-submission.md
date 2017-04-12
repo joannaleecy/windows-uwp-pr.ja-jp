@@ -1,27 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: C78176D6-47BB-4C63-92F8-426719A70F04
-description: "Windows ストア提出 API 内のこのメソッドを使用して、パッケージ フライトの提出ステータスを取得します。"
-title: "Windows ストア申請 API を使用したパッケージ フライトの申請ステータスの取得"
+description: "パッケージ フライトの申請の状態を取得するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "パッケージ フライトの申請の状態を取得する"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, Windows ストア申請 API, フライトの申請, ステータス"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5bc88cd8c7cdf2e56ac719d33cc2abf228b0803b
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows 10, UWP, Windows ストア申請 API, フライトの申請, 状態"
+ms.openlocfilehash: 06367fd2110b66fc36babf137a12b482df4f7d40
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-the-status-of-a-package-flight-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したパッケージ フライトの申請ステータスの取得
-
+# <a name="get-the-status-of-a-package-flight-submission"></a>パッケージ フライトの申請の状態を取得する
 
 
 
-Windows ストア提出 API 内のこのメソッドを使用して、パッケージ フライトの提出ステータスを取得します。 Windows ストア提出 API を使ったパッケージ フライトの提出の作成プロセスについて詳しくは、「[パッケージ フライト提出の管理](manage-flight-submissions.md)」に関するページをご覧ください。
+
+パッケージ フライトの申請の状態を取得するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。 Windows ストア申請 API を使ったパッケージ フライトの申請の作成プロセスについて詳しくは、「[パッケージ フライトの申請の管理](manage-flight-submissions.md)」をご覧ください。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -56,9 +53,9 @@ Windows ストア提出 API 内のこのメソッドを使用して、パッケ�
 
 | 名前        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | 必須。 ステータスを取得するパッケージ フライト提出が含まれているアプリのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。  |
-| flightId | string | 必須。 ステータスを取得する提出が含まれているパッケージ フライトの ID です。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データに含まれており、デベロッパー センター ダッシュボードで確認できます。  |
-| submissionId | string | 必須。 ステータスを取得する提出の ID です。 この ID は、[パッケージ フライトの提出の作成](create-a-flight-submission.md)要求の応答データに含まれており、デベロッパー センター ダッシュボードで確認できます。  |
+| applicationId | string | 必須。 状態を取得するパッケージ フライトの申請が含まれているアプリのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。  |
+| flightId | string | 必須。 状態を取得する申請が含まれているパッケージ フライトの ID です。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データに含まれており、デベロッパー センター ダッシュボードで確認できます。  |
+| submissionId | string | 必須。 状態を取得する申請の ID です。 この ID は、[パッケージ フライトの申請を作成する](create-a-flight-submission.md)要求の応答データに含まれており、デベロッパー センター ダッシュボードで確認できます。  |
 
 <span/>
 
@@ -68,7 +65,7 @@ Windows ストア提出 API 内のこのメソッドを使用して、パッケ�
 
 ### <a name="request-example"></a>要求の例
 
-次の例は、パッケージ フライト提出のステータスを取得する方法を示しています。
+次の例は、パッケージ フライトの申請の状態を取得する方法を示しています。
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions/1152921504621243649/status HTTP/1.1
@@ -77,7 +74,7 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>応答
 
-次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文には、指定された提出に関する情報が含まれています。 応答本文の値について詳しくは、次のセクションをご覧ください。
+次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文には、指定された申請に関する情報が含まれています。 応答本文の値について詳しくは、次のセクションをご覧ください。
 
 ```json
 {
@@ -94,8 +91,8 @@ Authorization: Bearer <your access token>
 
 | 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| status           | string  | 提出の状態。 次のいずれかの値を使用できます。 <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
-| statusDetails           | object  |  エラーに関する情報など、提出ステータスに関する追加詳細情報が含まれています。 詳しくは、[ステータスの詳細に関するリソース](manage-flight-submissions.md#status-details-object)をご覧ください。 |
+| status           | string  | 申請の状態。 次のいずれかの値を使用できます。 <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
+| statusDetails           | object  |  エラーに関する情報など、申請の状態に関する追加詳細情報が含まれています。 詳しくは、[ステータスの詳細に関するリソース](manage-flight-submissions.md#status-details-object)をご覧ください。 |
 
 
 <span/>
@@ -106,19 +103,18 @@ Authorization: Bearer <your access token>
 
 | エラー コード |  説明   |
 |--------|------------------|
-| 404  | 提出は見つかりませんでした。 |
-| 409  | アプリは、[Windows ストア提出 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センターのダッシュボード機能を使用します。  |
+| 404  | 申請は見つかりませんでした。 |
+| 409  | アプリは、[Windows ストア申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センターのダッシュボード機能を使用します。  |
 
 <span/>
 
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Windows ストア サービスを使用した提出の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-* [パッケージ フライトの提出の管理](manage-flight-submissions.md)
-* [アプリの提出の取得](get-an-app-submission.md)
-* [アプリの提出の作成](create-an-app-submission.md)
-* [アプリの提出のコミット](commit-an-app-submission.md)
-* [アプリの提出の更新](update-an-app-submission.md)
-* [アプリの提出の削除](delete-an-app-submission.md)
-
+* [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
+* [パッケージ フライトの申請の管理](manage-flight-submissions.md)
+* [アプリの申請の取得](get-an-app-submission.md)
+* [アプリの申請の作成](create-an-app-submission.md)
+* [アプリの申請のコミット](commit-an-app-submission.md)
+* [アプリの申請の更新](update-an-app-submission.md)
+* [アプリの申請の削除](delete-an-app-submission.md)

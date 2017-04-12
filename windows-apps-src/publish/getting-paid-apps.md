@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: af5c30aae3927f901bb93fd2c79bfee202754a1e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c27e06491b66fea4f451b70309a9a8c3802aff18
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="getting-paid"></a>支払いの受け取り
 アプリ、アドオン、および Microsoft Advertising による収益の支払いを受け取るために、以下の重要な情報を確認する必要があります。
 
@@ -61,7 +58,6 @@ Windows デベロッパー センター ダッシュ ボードの **[支払の�
  
 
  
-
 
 
 

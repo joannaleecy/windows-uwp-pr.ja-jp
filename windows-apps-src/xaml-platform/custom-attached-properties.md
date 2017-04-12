@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e05c1b2e8c8391901c28c12b57415ec0e599859d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9b9ec40eb3411252c46286e44744a8ab7ef9c431
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="custom-attached-properties"></a>カスタム添付プロパティ
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -250,5 +247,4 @@ XAML の XML 名前空間マッピングは、通常は XAML ページのルー�
 * [添付プロパティの概要](attached-properties-overview.md)
 * [カスタム依存関係プロパティ](custom-dependency-properties.md)
 * [XAML の概要](xaml-overview.md)
-
 

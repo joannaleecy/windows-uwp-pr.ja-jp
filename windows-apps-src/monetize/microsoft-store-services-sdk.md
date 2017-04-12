@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store Services SDK
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7a8dcb282ea3df16ee8a12247a07af27cbf65b3a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7fa775c319e1d84f8b73e42723d9fb36fdd03b73
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
 # <a name="microsoft-store-services-sdk"></a>Microsoft Store Services SDK
 
 Microsoft Store Services SDK が提供する機能を利用すると、ユニバーサル Windows プラットフォーム (UWP) アプリで収益を獲得したり、ユーザーとのエンゲージメントを行ったりできます。たとえば、アプリで広告を表示したり、A/B テストを行ったりできます。 この SDK は、Visual Studio 2015 とそれ以降のバージョンの Visual Studio 用の拡張です。
@@ -38,9 +35,10 @@ Microsoft Store Services SDK が提供する機能を利用すると、ユニバ
 Microsoft Store Services SDK には以下が必要となります。
 
 * Visual Studio 2015 またはそれ以降のバージョン。
-* Visual Studio と共にインストールされている Visual Studio Tools for Universal Windows Apps。
+* Visual Studio と共にインストールされている ユニバーサル Windows アプリ用 Visual Studio Tools
 
->**注**&nbsp;&nbsp;Visual Studio 2015 の Microsoft Store Services SDK をインストールするには、Visual Studio Tools for Universal Windows Apps のバージョン 1.1 以降がインストールされている必要があります。 Visual Studio Tools for Universal Windows Apps のこの更新について詳しくは、[リリース ノート](http://go.microsoft.com/fwlink/?LinkID=624516)をご覧ください。
+> [!NOTE]
+> Visual Studio 2015 と共に SDK をインストールするには、ユニバーサル Windows アプリ用 Visual Studio Tools のバージョン 1.1 以降がインストールされている必要があります。 ユニバーサル Windows アプリ用 Visual Studio Tools のこの更新について詳しくは、[リリース ノート](http://go.microsoft.com/fwlink/?LinkID=624516)をご覧ください。
 
 <span id="install" />
 ## <a name="install-the-sdk"></a>SDK のインストール
@@ -50,9 +48,10 @@ Microsoft Store Services SDK には以下が必要となります。
 * **MSI インストーラー**&nbsp;&nbsp;[ここ](http://aka.ms/store-em-sdk)から利用できる MSI インストーラーを使って SDK をインストールできます。 このオプションを使用すると、開発用コンピュータの共有場所に SDK ライブラリがインストールされ、Visual Studio の任意の UWP プロジェクトで参照できるようになります。
 * **NuGet パッケージ**&nbsp;&nbsp;NuGet を使用して Visual Studio の特定の UWP プロジェクト用に SDK ライブラリをインストールできます。 このオプションでは、SDK ライブラリは NuGet パッケージがインストールされているプロジェクト用にのみインストールされます。
 
-マイクロソフトでは定期的に、向上したパフォーマンスと新しい機能を備えた、新しいバージョンの Microsoft Store Services SDK をリリースしています。 開発用コンピューターに Microsoft Store Services SDK を使っている既存のプロジェクトがあり、そのプロジェクトで最新バージョンを使う場合は、最新バージョンの SDK をダウンロードしてインストールしてください。
+マイクロソフトでは定期的に、向上したパフォーマンスと新しい機能を備えた、新しいバージョンの Microsoft Store Services SDK をリリースしています。 開発用コンピューターに SDK を使っている既存のプロジェクトがあり、そのプロジェクトで最新バージョンを使う場合は、最新バージョンの SDK をダウンロードしてインストールしてください。
 
->**注**&nbsp;&nbsp;Visual Studio 2015 の Microsoft Store Services SDK をインストールするには、Visual Studio Tools for Universal Windows Apps のバージョン 1.1 以降がインストールされている必要があります。 Visual Studio Tools for Universal Windows Apps のこの更新について詳しくは、[リリース ノート](http://go.microsoft.com/fwlink/?LinkID=624516)をご覧ください。
+> [!NOTE]
+> Visual Studio 2015 と共に SDK をインストールするには、ユニバーサル Windows アプリ用 Visual Studio Tools のバージョン 1.1 以降がインストールされている必要があります。 ユニバーサル Windows アプリ用 Visual Studio Tools のこの更新について詳しくは、[リリース ノート](http://go.microsoft.com/fwlink/?LinkID=624516)をご覧ください。
 
 <span id="install-msi" />
 ### <a name="install-via-msi"></a>MSI によるインストール
@@ -91,14 +90,14 @@ NuGet を使って Microsoft Store Services SDK ライブラリを特定のプ�
   ```
 
 3.  Visual Studio を起動し、Microsoft Store Services SDK ライブラリを使用するプロジェクトを開きます。
-
-  >**注:**&nbsp;&nbsp;プロジェクトに SDK の以前の MSI インストールからのライブラリへの参照が既に含まれている場合は、これらの参照をプロジェクトから削除します。 これらの参照は、参照先のライブラリが前の手順で削除されたため、その隣に警告アイコンが表示されます。
+    > [!NOTE]
+    > プロジェクトに SDK の以前の MSI インストールからのライブラリの参照が既に含まれている場合は、これらの参照をプロジェクトから削除します。 これらの参照は、参照先のライブラリが前の手順で削除されたため、その隣に警告アイコンが表示されます。
 
 4. Visual Studio で、**[プロジェクト]** と **[NuGet パッケージの管理]** をクリックします。
 
-5. 検索ボックスに **[Microsoft.Services.Store.SDK]** と入力し、Microsoft.Services.Store.SDK パッケージをインストールします。
-
-  >**注**&nbsp;&nbsp;**[出力]** ウィンドウに、指定されたパスが長すぎることを示す *[インストール パッケージ]* エラーが表示された場合、NuGet を構成して、既定の場所より短いパスの別の場所にパッケージを展開する必要がある場合があります。 これを行うには、```repositoryPath``` 値をコンピューターの nuget.config ファイルに追加し、それを短いフォルダーのパスに割り当て、そこに NuGet パッケージが展開されるようにします。 詳しくは、NuGet ドキュメントの[この記事](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)をご覧ください。 または、Visual Studio プロジェクトを短いパスを持つ別のフォルダーに移動してみることができます。
+5. 検索ボックスに「**Microsoft.Services.Store.SDK**」と入力し、Microsoft.Services.Store.SDK パッケージをインストールします。
+    > [!NOTE]
+    > **[出力]** ウィンドウに、指定されたパスが長すぎることを示す*インストール パッケージ* エラーが表示されたとき、場合によっては、NuGet を構成して、既定の場所よりも短いパスで示される別の場所にパッケージを展開する必要があります。 これを行うには、```repositoryPath``` 値をコンピューターの nuget.config ファイルに追加し、それを短いフォルダーのパスに割り当て、そこに NuGet パッケージが展開されるようにします。 詳しくは、NuGet ドキュメントの[この記事](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)をご覧ください。 または、Visual Studio プロジェクトを短いパスを持つ別のフォルダーに移動してみることができます。
 
 6. プロジェクトを閉じ、次にそれを再度開きます。
 
@@ -107,13 +106,13 @@ NuGet を使って Microsoft Store Services SDK ライブラリを特定のプ�
   または、プロジェクトで初めて SDK を使う場合には、[適切な Microsoft Store Services SDK ライブラリの参照をプロジェクトに追加](#references)します。
 
 <span id="references" />
-## <a name="add-sdk-library-references-to-your-project"></a>SDK ライブラリへの参照をプロジェクトを追加する
+## <a name="add-sdk-library-references-to-your-project"></a>SDK ライブラリの参照をプロジェクトを追加する
 
-MSI インストーラーまたは NuGet により Microsoft Store Services SDK をインストールしたら、次の手順に従って UWP プロジェクトで SDK ライブラリを参照します。
++MSI インストーラーまたは NuGet により Microsoft Store Services SDK をインストールしたら、次の手順に従って UWP プロジェクトで SDK ライブラリを参照します。
 
 1. Visual Studio でプロジェクトを開きます。
-
-  >**注**&nbsp;&nbsp;プロジェクトが JavaScript アプリで、ターゲットが **[Any CPU]** (任意の CPU) になっている場合は、アーキテクチャ固有のビルド出力 (たとえば **[x86]**) を使うようにプロジェクトを更新します。
+    > [!NOTE]
+    > プロジェクトが JavaScript アプリで、ターゲットが **[任意の CPU]** になっている場合は、アーキテクチャ固有のビルド出力 (たとえば **[x86]**) を使うようにプロジェクトを更新します。
 
 2. **ソリューション エクスプローラー**で、**[参照設定]** を右クリックし、**[参照の追加]** を選択します。
 
@@ -123,9 +122,10 @@ MSI インストーラーまたは NuGet により Microsoft Store Services SDK 
 
   * API を使って[アプリでバナー広告やスポット広告を表示する](display-ads-in-your-app.md)場合には、プロジェクトの種類によって、**[Microsoft Advertising SDK for XAML]** または **[Microsoft Advertising SDK for JavaScript]** の横のチェック ボックスをオンにします。
 
-3. **[OK]**をクリックします。
+3. **[OK]** をクリックします。
 
->**注**&nbsp;&nbsp;NuGet により SDK ライブラリをインストールした場合には、プロジェクトには **Microsoft Advertising SDK for XAML** または **Microsoft Advertising SDK for JavaScript** に加え、**Microsoft.Services.Store.SDK** の参照が含まれています。 **Microsoft.Services.Store.SDK** の参照は (その中のライブラリではなく) NuGet パッケージを表し、これは無視することができます。
+> [!NOTE]
+> NuGet を使って SDK ライブラリをインストールした場合、プロジェクトには **Microsoft Advertising SDK for XAML** または **Microsoft Advertising SDK for JavaScript** に加えて、**Microsoft.Services.Store.SDK** の参照が含まれています。 **Microsoft.Services.Store.SDK** の参照は (その中のライブラリではなく) NuGet パッケージを表し、これは無視することができます。
 
 <span id="framework" />
 ## <a name="understanding-framework-packages-in-the-sdk"></a>SDK のフレームワーク パッケージを理解する
@@ -147,4 +147,3 @@ Microsoft Store Services SDK の以下のライブラリは*フレームワー�
 * [デベロッパー センターのプッシュ通知を受信するようにアプリを設定する](configure-your-app-to-receive-dev-center-notifications.md)
 * [デベロッパー センターのカスタム イベントをログに記録する](log-custom-events-for-dev-center.md)
 * [アプリでの広告の表示](display-ads-in-your-app.md)
-

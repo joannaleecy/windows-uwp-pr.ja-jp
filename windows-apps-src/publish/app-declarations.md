@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: feacd96ca2fa0cc4cd3d1087a982f61bc18d4604
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d17fd77759911e11c2efeaf84058526d8819781f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-declarations"></a>アプリの宣言
 
 [申請プロセス](app-submissions.md)中、**[アプリケーションのプロパティ]** ページの **[App declarations]** (アプリの宣言) セクションで、アプリに関する追加情報を入力できます。 これらの宣言は、アプリが適切に表示され、適切なユーザー セットに提供されるようにするのに役立ちます。または、ユーザーにアプリの使い方を示すこともできます。
@@ -67,7 +64,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: cc24ba75-a185-4488-b70c-fd4078bc4206
 description: "AdScheduler クラスを使ってビデオ コンテンツに広告を追加する方法について説明します。"
-title: "HTML 5 および JavaScript によるビデオ コンテンツへの広告の追加"
+title: "ビデオ コンテンツへの広告の追加"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、広告、宣伝、ビデオ、スケジューラ、javascript"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b42b57f385857301bb74037dbb5c0c7200653316
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 88e0bb4ceb9cba12d1eb5857761f5b59afaa15f2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="add-advertisements-to-video-content-in-html-5-and-javascript"></a>HTML 5 および JavaScript によるビデオ コンテンツへの広告の追加
+# <a name="add-advertisements-to-video-content"></a>ビデオ コンテンツへの広告の追加
 
 
 このチュートリアルでは、JavaScript と HTML を使って作成されたユニバーサル Windows プラットフォーム (UWP) アプリのビデオ コンテンツに、[AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) クラスを使って広告を追加する方法について説明します。
@@ -103,4 +100,3 @@ ms.lasthandoff: 02/07/2017
 
   > [!div class="tabbedCodeSnippets"]
   [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet5)]
-

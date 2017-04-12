@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0fb906dc84085d3006be7f5f25d895e1150f9265
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3e942e649ce2c2e486f0326f10378124dd159c4c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="organizational-licensing-options"></a>組織のライセンス オプション
 
 
@@ -92,4 +89,3 @@ ms.lasthandoff: 02/07/2017
 - スイス
 - 英国
 - 米国
-

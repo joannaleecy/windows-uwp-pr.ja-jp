@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9317ea8690d5696d4a9e55b3a88f1a2ff83d8bfd
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ccacfc1257af529fcc2363285c6dd9e4ab2315ac
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>iOS と UWP のアプリ開発方法の選択
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -99,5 +96,4 @@ Windows と iOS はまったく違うものに見えるかもしれませんが�
 -   [PlayCanvas](http://go.microsoft.com/fwlink/p/?LinkID=394061)
 
     HTML ベースのゲーム開発用ツール。
-
 

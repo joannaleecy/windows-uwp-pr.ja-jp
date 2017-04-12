@@ -2,32 +2,31 @@
 author: mcleanbyron
 ms.assetid: c5246681-82c7-44df-87e1-a84a926e6496
 description: "プロモーション用の広告キャンペーンのクリエイティブを管理するには、Windows ストア プロモーション API 内の以下のメソッドを使用します。"
-title: "広告キャンペーンのクリエイティブの管理"
+title: "クリエイティブの管理"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア プロモーション API, 広告キャンペーン"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 1e0755134a47b6acfb48f735ea56c4aa3c46be14
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: d94ff7863de620beab2ef67c4a6e5c4a50cf273d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="manage-creatives"></a>クリエイティブの管理
 
-# <a name="manage-creatives-for-ad-campaigns"></a>広告キャンペーンのクリエイティブの管理
-
-プロモーション用の広告キャンペーンで使う独自のカスタム クリエイティブをアップロードしたり、既存のクリエイティブを取得したりするには、Windows ストア プロモーション API 内のこれらのメソッドを使用します。 クリエイティブは、常に同じアプリを表す場合は、同一の広告キャンペーンでなくても、1 つ以上の配信ラインに関連付けることができます。
+プロモーション用の広告キャンペーンで使う独自のカスタム クリエイティブをアップロードしたり、既存のクリエイティブを取得したりするには、Windows ストア プロモーション API に含まれる以下のメソッドを使用します。 クリエイティブは、常に同じアプリを表す場合は、同一の広告キャンペーンでなくても、1 つ以上の配信ラインに関連付けることができます。
 
 クリエイティブと広告キャンペーン、配信ライン、対象プロファイル間の関係について詳しくは、「[Windows ストア サービスを使用した広告キャンペーンの実行](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api)」をご覧ください。
+
+>**注**&nbsp;&nbsp;この API を使って独自のクリエイティブをアップロードするとき、クリエイティブの最大許容サイズは 40 KB です。 これよりも大きいクリエイティブ ファイルを送信しても、この API からはエラーが返されず、キャンペーンは正しく作成されません。
 
 ## <a name="prerequisites"></a>前提条件
 
 これらのメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Windows ストア プロモーション API に関するすべての[前提条件](run-ad-campaigns-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* これらのメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
+* これらのメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
 
 ## <a name="request"></a>要求
 
@@ -114,10 +113,10 @@ Authorization: Bearer <your access token>
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  整数   |  クリエイティブの ID です。     |   〇    |      |    ×   |       
 |  name   |  文字列   |   クリエイティブの名前です。    |    ×   |      |  〇     |       
-|  content   |  文字列   |  クリエイティブ イメージのコンテンツです (Base64 でエンコードされた形式)。     |  ×     |      |   〇    |       
+|  content   |  文字列   |  クリエイティブ イメージのコンテンツです (Base64 でエンコードされた形式)。<br/><br/>**注**&nbsp;&nbsp;クリエイティブの最大許容サイズは 40 KB です。 これよりも大きいクリエイティブ ファイルを送信しても、この API からはエラーが返されず、キャンペーンは正しく作成されません。     |  ×     |      |   〇    |       
 |  height   |  整数   |   クリエイティブの高さです。    |    ×    |      |   〇    |       
 |  width   |  整数   |  クリエイティブの幅です。     |  ×    |     |    〇   |       
-|  landingUrl   |  文字列   |  クリエイティブのランディング URL (この値は有効な URI でなければなりません)。     |  ×    |     |   〇    |       
+|  landingUrl   |  文字列   |  Kochava、AppsFlyer、Tune などのキャンペーン追跡サービスを使用して、アプリのインストール分析を行う場合、POST メソッドを呼び出すときに、このフィールドの追跡 URL を割り当てます (このフィールドを指定する場合、値は有効な URI であることが必要です)。 キャンペーン追跡サービスを使用していない場合、POST メソッドを呼び出すときには、この値を省略します (その場合、この URL は自動的に作成されます)。   |  ×    |     |   〇    |       
 |  format   |  文字列   |   広告形式です。 現時点では、サポートされている唯一の値は **Banner** です。    |   ×    |  Banner   |  ×     |       
 |  imageAttributes   | [ImageAttributes](#image-attributes)    |   クリエイティブの属性を指定します。     |   ×    |      |   〇    |       
 |  storeProductId   |  文字列   |   この広告キャンペーンが関連付けられているアプリの[ストア ID](in-app-purchases-and-trials.md#store-ids) です。 製品のストア ID の例は、9nblggh42cfd です。    |   ×    |    |  ×     |   |  
@@ -127,7 +126,7 @@ Authorization: Bearer <your access token>
 
 | フィールド        | 型   |  説明      |  読み取り専用かどうか  | 既定値  | POST に必須かどうか |  
 |--------------|--------|---------------|------|-------------|------------|
-|  imageExtension   |   文字列  |   イメージの拡張子 (PNG や JPG など)。    |    ×   |      |   〇    |       |
+|  imageExtension   |   文字列  |   **PNG** または **JPG** のいずれかの値です。    |    ×   |      |   〇    |       |
 
 
 ## <a name="related-topics"></a>関連トピック
@@ -137,4 +136,3 @@ Authorization: Bearer <your access token>
 * [広告キャンペーンの配信ラインの管理](manage-delivery-lines-for-ad-campaigns.md)
 * [広告キャンペーンの対象プロファイルの管理](manage-targeting-profiles-for-ad-campaigns.md)
 * [広告キャンペーンのパフォーマンス データの取得](get-ad-campaign-performance-data.md)
-

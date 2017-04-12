@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、広告、宣伝、AdControl、イベント、javascript"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 17d087b8174b057501795d76c5dc29d5f91b1050
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 62363ebce006f8ad21645d907c3e63360472887d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adcontrol-events-in-javascript"></a>JavaScript の AdControl イベント
 
 次の例は、[AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) イベントである [ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.erroroccurred.aspx)、[AdRefreshed](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.adrefreshed.aspx)、および [IsEngagedChanged](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.isengagedchanged.aspx) 用の基本的なイベント ハンドラーを示しています。 これらの例では、既に HTML マークアップのイベントにイベント ハンドラーが割り当てられていることを前提としています。 この方法について詳しくは、「[HTML プロパティの例](html-properties-example.md)」をご覧ください。
@@ -36,4 +33,3 @@ JavaScript では、**AdControl** イベントを [MarkSupportedForProcessing](h
  
 
  
-

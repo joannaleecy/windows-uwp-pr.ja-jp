@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 0d6c65c5-2ad5-46c7-964e-a3a9833c94ce
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: d1acbde95d3d36cade7242a9f89a2bc01aaf8914
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 90cdd188ba9c2c271badd5467156e16f7ca42df4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="whats-new-in-windows-version-1511"></a>Windows 10 バージョン 1511 の新着情報
 
 Windows 10 バージョン 1511 と Windows 開発者ツールの更新プログラムでは、引き続きユニバーサル Windows プラットフォームによって強化されたツール、機能、エクスペリエンスを提供しています。 Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/fwlink/?LinkId=821431)すると、[新しいユニバーサル Windows アプリを作成](https://msdn.microsoft.com/library/windows/apps/bg124288)したり、[Windows の既存のアプリ コード](https://msdn.microsoft.com/library/windows/apps/mt238321)がどのように使えるかを試したりすることができます。
@@ -36,4 +33,3 @@ Smart Card API | 複数の SmartCardCryptogram API が [Windows.Devices.SmartCar
 Updated Storage API | [Windows.Storage.DownloadsFolder クラス](https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.aspx)では、特定の[ユーザー](https://msdn.microsoft.com/library/windows/apps/windows.system.user.aspx)のダウンロード フォルダーに[ファイルを作成](https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.createfileforuserasync.aspx)したり、[フォルダーを作成](https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.createfolderforuserasync.aspx)したりできるようになりました。 [Windows.Storage.StorageLibrary クラス](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagelibrary.aspx)では、特定の[ユーザー](https://msdn.microsoft.com/library/windows/apps/windows.system.user.aspx)の[特定のライブラリを取得](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagelibrary.getlibraryforuserasync.aspx)できるようになりました。
 Windows アプリ認定キット | Windows アプリ認定キットが更新され、テストも改善されました。 更新のリストについては、[Windows アプリ認定キット](https://developer.microsoft.com/windows/develop/app-certification-kit)のページをご覧ください。
 デザインに関するダウンロード | Adobe Photoshop 用の新しい UWP アプリ デザイン テンプレートをご覧ください。 Microsoft PowerPoint と Adobe Illustrator のテンプレートも更新され、ガイドラインの PDF 版も利用可能になりました。 [デザインに関するダウンロード](https://developer.microsoft.com/windows/design/assets)のページをご覧ください。
-

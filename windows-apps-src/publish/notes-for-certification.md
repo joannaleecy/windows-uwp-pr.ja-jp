@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 92a110879f6ff92b3e1e41964ff6acea6b7cb5ec
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6b2973e2f7303ac39571fd69a0e14fa0dfacef32
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="notes-for-certification"></a>認定の注意書き
 
 
@@ -48,7 +45,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

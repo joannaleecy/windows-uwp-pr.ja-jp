@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ab2c2307376f3fad8cd404f7ddf8056f1ef2e8d3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a69ad9bdff70dc04f9bdf9eb4f5117a22a005969
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
 # <a name="net-framework-mappings-of-windows-runtime-types"></a>.NET Framework での Windows ランタイム型の対応付け
 
 
@@ -27,8 +24,6 @@ ms.lasthandoff: 02/07/2017
 
 
 UWP と .NET Framework の両方で同じ名前空間名と型名を持つ型の大部分は、構造体です (または列挙体など、構造体に関連付けられている型)。 UWP では、構造体にはフィールド以外にメンバーがなく、.NET Framework では非表示になるヘルパー型が必要です。 これらの構造体の .NET Framework バージョンには、非表示のヘルパー型の機能を提供するプロパティとメソッドがあります。
-
-.NET Framework で Windows メタデータを使って Windows ランタイムでのプログラミングを簡略化する方法について詳しくは、Windows デベロッパー センターから、[CLR と Windows ランタイム](http://download.microsoft.com/download/2/3/E/23E1E9BE-41AA-4716-A7B3-82040271394C/CLR%20and%20the%20Windows%20Runtime.docx)に関するホワイト ペーパーをダウンロードしてご確認ください。
 
 表 1: UWP 型と .NET Framework 型の対応 (異なる型名と名前空間名を持つ型)
 
@@ -90,4 +85,3 @@ UWP と .NET Framework の両方で同じ名前空間名と型名を持つ型の
 ## <a name="related-topics"></a>関連トピック
 
 * [C# および Visual Basic での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-

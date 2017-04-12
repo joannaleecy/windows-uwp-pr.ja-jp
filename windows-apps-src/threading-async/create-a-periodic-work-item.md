@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、定期的な作業項目、スレッド、タイマー"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 66e8b283631e6a74aa1dabeb53bfc86c304a642c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 89c633f9ab6da23c4b8417a9a75f87c706a3546f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="create-a-periodic-work-item"></a>定期的な作業項目の作成
 
@@ -209,4 +207,3 @@ ms.lasthandoff: 02/07/2017
 * [スレッド プールを使うためのベスト プラクティス](best-practices-for-using-the-thread-pool.md)
 * [タイマーを使った作業項目の送信](use-a-timer-to-submit-a-work-item.md)
  
-

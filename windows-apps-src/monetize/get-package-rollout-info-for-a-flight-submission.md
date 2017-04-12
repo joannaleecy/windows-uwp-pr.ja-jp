@@ -1,22 +1,19 @@
 ---
 author: mcleanbyron
 description: "パッケージ フライトの申請に関するパッケージのロールアウトの情報を取得するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
-title: "Windows ストア 申請 API を使用して、パッケージ フライトの申請に関するパッケージのロールアウトの情報を取得する"
+title: "パッケージ フライトの申請に関するロールアウトの情報を取得する"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, Windowsストア申請 API, パッケージのロールアウト, フライトの申請"
+keywords: "Windows 10, UWP, Windows ストア申請 API, パッケージのロールアウト, フライトの申請"
 ms.assetid: 397f1b99-2be7-4f65-bcf1-9433a3d496ad
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: d47bd0a5df654ba723c1c7650ea9779ee5962993
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: a1c12c7cb0e9a32502396bfa1da49351f63163e0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-package-rollout-info-for-a-package-flight-submission-using-the-windows-store-submission-api"></a>Windows ストア 申請 API を使用して、パッケージ フライトの申請に関するパッケージのロールアウトの情報を取得する
+# <a name="get-rollout-info-for-a-flight-submission"></a>パッケージ フライトの申請に関するロールアウトの情報を取得する
 
 
 パッケージ フライトの申請に関する[パッケージのロールアウト](../publish/gradual-package-rollout.md)の情報を取得するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。 Windows ストア申請 API を使ったパッケージ フライトの申請の作成プロセスについて詳しくは、「[パッケージ フライトの申請の管理](manage-flight-submissions.md)」をご覧ください。
@@ -80,7 +77,7 @@ Authorization: Bearer <your access token>
 ```json
 {
     "isPackageRollout": true,
-    "packageRolloutPercentage": 25,
+    "packageRolloutPercentage": 25.0,
     "packageRolloutStatus": "PackageRolloutInProgress",
     "fallbackSubmissionId": "1212922684621243058"
 }
@@ -91,7 +88,7 @@ Authorization: Bearer <your access token>
 ```json
 {
     "isPackageRollout": false,
-    "packageRolloutPercentage": 0,
+    "packageRolloutPercentage": 0.0,
     "packageRolloutStatus": "PackageRolloutNotStarted",
     "fallbackSubmissionId": "0"
 }
@@ -103,7 +100,7 @@ Authorization: Bearer <your access token>
 
 | エラー コード |  説明   |
 |--------|------------------|
-| 404  | パッケージ フライトの提出は見つかりませんでした。 |
+| 404  | パッケージ フライトの申請は見つかりませんでした。 |
 | 409  | 指定されたパッケージ フライトにパッケージ フライトの申請が属していないか、[Windows ストア申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能をアプリが使用しています。 |   
 
 <span/>
@@ -114,4 +111,3 @@ Authorization: Bearer <your access token>
 * [段階的なパッケージのロールアウト](../publish/gradual-package-rollout.md)
 * [Windows ストア申請 API を使用したパッケージ フライトの申請の管理](manage-flight-submissions.md)
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-

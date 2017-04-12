@@ -1,22 +1,19 @@
 ---
 author: mcleanbyron
 ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
-description: "Windows デベロッパー センター アカウントに登録するアプリの申請を管理するには、以下の Windows ストア申請 API のメソッドを使います。"
-title: "Windows ストア申請 API を使用したアプリの申請の管理"
+description: "Windows デベロッパー センター アカウントに登録されているアプリの申請を管理するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "アプリの申請の管理"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア申請 API, アプリの申請"
-translationtype: Human Translation
-ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
-ms.openlocfilehash: 21a421b057a55120865c01cc3dffb80318ab38ed
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: f6f0342619f91190bf021842c3ac3b0c61964d25
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="manage-app-submissions-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアプリの申請の管理
+# <a name="manage-app-submissions"></a>アプリの申請の管理
 
 Windows ストア申請 API には、段階的なパッケージのロールアウトなど、アプリの申請を管理するために使用できるメソッドが用意されています。 Windows ストア申請 API の概要については、「[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。この API を使用するための前提条件などの情報があります。
 
@@ -224,7 +221,7 @@ Windows ストア申請 API には、段階的なパッケージのロールア�
     "marketSpecificPricings": {},
     "sales": [],
     "priceId": "Tier2",
-    "isAdvancedPricingModel": "true"
+    "isAdvancedPricingModel": true
   },
   "visibility": "Public",
   "targetPublishMode": "Manual",
@@ -233,26 +230,35 @@ Windows ストア申請 API には、段階的なパッケージのロールア�
     "en-us": {
       "baseListing": {
         "copyrightAndTrademarkInfo": "",
-        "keywords": [],
+        "keywords": [
+          "epub"
+        ],
         "licenseTerms": "",
         "privacyPolicy": "",
         "supportContact": "",
         "websiteUrl": "",
         "description": "Description",
-        "features": [],
+        "features": [
+          "Free ebook reader"
+        ],
         "releaseNotes": "",
         "images": [
           {
             "fileName": "contoso.png",
             "fileStatus": "Uploaded",
             "id": "1152921504672272757",
+            "description": "Main page",
             "imageType": "Screenshot"
           }
         ],
         "recommendedHardware": [],
-        "title": "ApiTestApp For Devbox"
+        "title": "Contoso ebook reader"
       },
-      "platformOverrides": {}
+      "platformOverrides": {
+        "Windows81": {
+          "description": "Ebook reader for Windows 8.1"
+        }
+      }
     }
   },
   "hardwarePreferences": [
@@ -296,7 +302,7 @@ Windows ストア申請 API には、段階的なパッケージのロールア�
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -549,7 +555,9 @@ Windows ストア申請 API には、段階的なパッケージのロールア�
 | isPackageRollout   |   boolean      |  申請の段階的なパッケージのロールアウトが有効化されているかどうかを示します。    |  
 | packageRolloutPercentage    | float    |  段階的なロールアウトでパッケージを受信するユーザーの割合。    |  
 | packageRolloutStatus    |  string   |  段階的なパッケージのロールアウトの状態を示す、次の文字列のいずれかです。 <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
-| fallbackSubmissionId    |  string   |  段階的なロールアウトのパッケージを入手しないユーザーが受信する申請のID。   |          
+| fallbackSubmissionId    |  string   |  段階的なロールアウトのパッケージを入手しないユーザーが受信する申請の ID。   |          
+
+>**注**&nbsp;&nbsp;*packageRolloutStatus* と *fallbackSubmissionId* の値はデベロッパー センターで割り当てられます。これらの値は、開発者が設定する値ではありません。 これらの値を要求本文に含めると、これらの値は無視されます。 
 
 <span/>
 
@@ -611,4 +619,3 @@ Windows ストア申請 API には、段階的なパッケージのロールア�
 * [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [Windows ストア申請 API を使用したアプリ データの取得](get-app-data.md)
 * [デベロッパー センター ダッシュボードからのアプリの申請](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)
-

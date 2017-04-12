@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0e9121dfc590a1a7f67be69b7dbce475e438dd08
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8933fb5c970203746fe1a00c71c0630fa264ebf6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="sockets"></a>ソケット
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
@@ -242,7 +239,7 @@ foreach (IBuffer packet in packetsToSend)
 await Task.WaitAll(pendingTasks);
 ```
 
-次の例は、バッチ送信と互換性がある方法で、多数のバッファーを送信する別の方法を示しています。 ここでは C# 固有の機能は使われていないため、すべての言語に適用できます (ここでは C# を使っています)。 代わりに、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスと [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) クラスの **OutputStream** メンバーの変更された動作を使っています。これは Windows 10 で新しく導入された動作です。
+次の例は、バッチ送信と互換性がある方法で、多数のバッファーを送信する別の方法を示しています。 ここでは C# 固有の機能は使われていないため、すべての言語に適用できます (ここでは C# を使っています)。 代わりに、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスと [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) クラスの **OutputStream** メンバーの変更された動作を使っています。これは Windows10 で新しく導入された動作です。
 
 ```csharp
 // More efficient way to send packets in Windows 10, using the new behavior of OutputStream.FlushAsync().
@@ -268,16 +265,16 @@ await outputStream.FlushAsync();
 
 -   書き込まれる **IBuffer** インスタンスの内容は、非同期書き込みが完了するまで変更できません。
 -   **FlushAsync**パターンは、**StreamSocket.OutputStream** と **DatagramSocket.OutputStream** のみで機能します。
--   **FlushAsync** パターンは、Windows 10 以降でのみ機能します。
+-   **FlushAsync** パターンは、Windows10 以降でのみ機能します。
 -   状況によっては、**FlushAsync** パターンの代わりに **Task.WaitAll** を使います。
 
 ## <a name="port-sharing-for-datagramsocket"></a>DatagramSocket でのポートの共有
 
-Windows 10 では、[**MulticastOnly**](https://msdn.microsoft.com/library/windows/apps/dn895368) という新しい [**DatagramSocketControl**](https://msdn.microsoft.com/library/windows/apps/hh701190) プロパティが導入されています。このプロパティを使って、対象の **DatagramSocket** を、同じアドレス/ポートにバインドされた他の Win32 または WinRT マルチキャスト ソケットと共存させることができます。
+Windows10 では、[**MulticastOnly**](https://msdn.microsoft.com/library/windows/apps/dn895368) という新しい [**DatagramSocketControl**](https://msdn.microsoft.com/library/windows/apps/hh701190) プロパティが導入されています。このプロパティを使って、対象の **DatagramSocket** を、同じアドレス/ポートにバインドされた他の Win32 または WinRT マルチキャスト ソケットと共存させることができます。
 
 ## <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>StreamSocket クラスによるクライアント証明書の提供
 
-[**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスは、SSL/TLS を使ったアプリの接続先サーバーの認証をサポートします。 場合によっては、アプリは、TLS クライアント証明書を使って自身をサーバーに対して認証する必要があります。 Windows 10 では、クライアント証明書を [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) オブジェクトに提供できます (これは TLS ハンドシェイクが開始される前に設定する必要があります)。 サーバーがクライアント証明書を要求した場合、Windows が提供された証明書を使って応答します。
+[**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスは、SSL/TLS を使ったアプリの接続先サーバーの認証をサポートします。 場合によっては、アプリは、TLS クライアント証明書を使って自身をサーバーに対して認証する必要があります。 Windows10 では、クライアント証明書を [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) オブジェクトに提供できます (これは TLS ハンドシェイクが開始される前に設定する必要があります)。 サーバーがクライアント証明書を要求した場合、Windows が提供された証明書を使って応答します。
 
 これを実装する方法を示すコード スニペットを次に示します。
 
@@ -303,6 +300,5 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 ## <a name="the-winsock-api"></a>Winsock API
 
 [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673) は、UWP アプリでも同じように使うことができます。 サポートされる Winsock API は Windows Phone 8.1 Microsoft Silverlight に基づいており、ほとんどの型、プロパティ、メソッドが引き続きサポートされます (互換性のために残されていたいくつかの API は削除されます)。 Winsock プログラミングについて詳しくは、[こちら](https://msdn.microsoft.com/library/windows/desktop/ms740673)をご覧ください。
-
 
 

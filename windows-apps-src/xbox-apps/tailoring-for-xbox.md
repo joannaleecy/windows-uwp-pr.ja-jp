@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 0cfa8e22-7345-47b7-b132-880bbc050d44
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: a66e94ca26a089ffd08b0ba7a4ffb42aa5d8685c
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: c7bf5db6eb7a624766438c60067c311b9e137138
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xbox-best-practices"></a>Xbox ベスト プラクティス
 既定では、すべての UWP アプリは何もしなくても Xbox One で動きます。 ただし、アプリを引き立たせ、ユーザーを楽しませて、Xbox に最適なアプリ エクスペリエンスを備えるには、以下のようにする必要があります。
   > [!NOTE]
@@ -57,5 +54,4 @@ UWP アプリは、コントロールやフォントなどの UI 要素がすべ
 
 ## <a name="see-also"></a>関連項目
 - [Xbox One の UWP](index.md)
-
 

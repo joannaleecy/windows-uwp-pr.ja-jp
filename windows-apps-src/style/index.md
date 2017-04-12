@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: dcd97e72520b4e814c665dc72b36c895cd8fe2b2
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: cce852d20dfce74740163009d72c02cfb58cc523
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="uwp-style-guide"></a>UWP スタイル ガイド
 
@@ -79,5 +77,4 @@ XAML フレームワークを使って、さまざまな方法でアプリの外
   </div>
 </div>
 </div>
-
 

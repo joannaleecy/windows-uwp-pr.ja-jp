@@ -1,27 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: A0DFF26B-FE06-459B-ABDC-3EA4FEB7A21E
-description: "既存のパッケージ フライトの提出のデータを取得するには、Windows ストア提出 API 内の以下のメソッドを使用します。"
-title: "Windows ストア申請 API を使用したパッケージ フライトの申請の取得"
+description: "既存のパッケージ フライトの申請に関するデータを取得するには、Windows ストア申請 API 内に含まれる以下のメソッドを使用します。"
+title: "パッケージ フライトの申請の取得"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア申請 API, フライトの申請"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a989e9d081ec9cb709b59e1ff4ceff2d517ae48f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2571bb25ce407a9c44ed40aae0a865708e6154d5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-a-package-flight-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したパッケージ フライトの申請の取得
-
+# <a name="get-a-package-flight-submission"></a>パッケージ フライトの申請の取得
 
 
 
-既存のパッケージ フライトの提出のデータを取得するには、Windows ストア提出 API 内の以下のメソッドを使用します。 Windows ストア提出 API を使ったパッケージ フライトの提出の作成プロセスについて詳しくは、「[パッケージ フライト提出の管理](manage-flight-submissions.md)」に関するページをご覧ください。
+
+既存のパッケージ フライトの申請に関するデータを取得するには、Windows ストア申請 API 内に含まれる以下のメソッドを使用します。 Windows ストア申請 API を使ったパッケージ フライトの申請の作成プロセスについて詳しくは、「[パッケージ フライトの申請の管理](manage-flight-submissions.md)」をご覧ください。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -56,9 +53,9 @@ ms.lasthandoff: 02/07/2017
 
 | 名前        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | 必須。 取得するパッケージ フライトの提出が含まれるアプリのストア ID。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。  |
-| flightId | string | 必須。 取得する提出が含まれるパッケージ フライトの ID。 この ID はデベロッパー センター ダッシュボードで確認でき、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データに含まれています。  |
-| submissionId | string | 必須。 取得する提出の ID。 この ID は、[パッケージ フライトの提出の作成](create-a-flight-submission.md)要求の応答データに含まれており、デベロッパー センター ダッシュボードで確認できます。  |
+| applicationId | string | 必須。 取得するパッケージ フライトの申請が含まれるアプリのストア ID。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。  |
+| flightId | string | 必須。 取得する申請が含まれるパッケージ フライトの ID。 この ID はデベロッパー センター ダッシュボードで確認でき、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データに含まれています。  |
+| submissionId | string | 必須。 取得する申請の ID。 この ID は、[パッケージ フライトの申請の作成](create-a-flight-submission.md)要求の応答データに含まれており、デベロッパー センター ダッシュボードで確認できます。  |
 
 <span/>
 
@@ -68,7 +65,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="request-example"></a>要求の例
 
-次の例では、9WZDNCRD91MD というストア ID を持つアプリのパッケージ フライトの提出の取得方法を示しています。
+次の例では、9WZDNCRD91MD というストア ID を持つアプリのパッケージ フライトの申請の取得方法を示しています。
 
 ```
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions/1152921504621243649 HTTP/1.1
@@ -77,7 +74,7 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>応答
 
-次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文には、指定された提出に関する情報が含まれています。 応答本文の値について詳しくは、「[パッケージ フライトの提出のリソース](manage-flight-submissions.md#flight-submission-object)」を参照してください。
+次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文には、指定された申請に関する情報が含まれています。 応答本文の値について詳しくは、「[パッケージ フライトの申請のリソース](manage-flight-submissions.md#flight-submission-object)」を参照してください。
 
 ```json
 {
@@ -104,7 +101,7 @@ Authorization: Bearer <your access token>
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -124,18 +121,17 @@ Authorization: Bearer <your access token>
 
 | エラー コード |  説明   |
 |--------|------------------|
-| 404  | パッケージ フライトの提出は見つかりませんでした。 |
-| 409  | 指定されたパッケージ フライトにパッケージ フライトの提出が属していないか、[Windows ストア提出 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能をアプリが使用しています。 |   
+| 404  | パッケージ フライトの申請は見つかりませんでした。 |
+| 409  | 指定されたパッケージ フライトにパッケージ フライトの申請が属していないか、[Windows ストア申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能をアプリが使用しています。 |   
 
 <span/>
 
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Windows ストア サービスを使用した提出の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-* [パッケージ フライトの提出の管理](manage-flight-submissions.md)
-* [パッケージ フライトの提出の作成](create-a-flight-submission.md)
-* [パッケージ フライトの提出のコミット](commit-a-flight-submission.md)
-* [パッケージ フライトの提出の更新](update-a-flight-submission.md)
-* [パッケージ フライトの提出の削除](delete-a-flight-submission.md)
-
+* [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
+* [パッケージ フライトの申請の管理](manage-flight-submissions.md)
+* [パッケージ フライトの申請の作成](create-a-flight-submission.md)
+* [パッケージ フライトの申請のコミット](commit-a-flight-submission.md)
+* [パッケージ フライトの申請の更新](update-a-flight-submission.md)
+* [パッケージ フライトの申請の削除](delete-a-flight-submission.md)

@@ -1,25 +1,22 @@
 ---
 author: mcleanbyron
 ms.assetid: 934F2DBF-2C7E-4B77-997D-17B9B0535D51
-description: "Windows ストア申請 API でこのメソッドを使用して、新しいアプリの申請または更新されたアプリの申請を Windows デベロッパー センターにコミットします。"
-title: "Windows ストア申請 API を使用したアプリの申請のコミット"
+description: "新しいアプリの申請または更新されたアプリの申請を Windows デベロッパー センターにコミットするには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "アプリの申請のコミット"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、Windows ストア申請 API、アプリの申請のコミット"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b22143dc9f64e1f1075b0f9a2851699ca4208673
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: bbfaaa016d4c45e20afec8a98a1c1d87b6dd9bd4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="commit-an-app-submission"></a>アプリの申請のコミット
 
-# <a name="commit-an-app-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアプリの申請のコミット
 
-
-Windows ストア申請 API でこのメソッドを使用して、新しいアプリの申請または更新されたアプリの申請を Windows デベロッパー センターにコミットします。 コミット アクションにより、申請データ (関連パッケージおよび画像を含む) がアップロードされたことがデベロッパー センターに通知されます。 通知を受けたデベロッパー センターは、申請データに対する変更をインジェストと公開のためにコミットします。 適切にコミットされると、申請に対する変更はデベロッパー センター ダッシュボードに表示されます。
+新しいアプリの申請または更新されたアプリの申請を Windows デベロッパー センターにコミットするには、Windows ストア申請 API に含まれる以下のメソッドを使用します。 コミット アクションにより、申請データ (関連パッケージおよび画像を含む) がアップロードされたことがデベロッパー センターに通知されます。 通知を受けたデベロッパー センターは、申請データに対する変更をインジェストと公開のためにコミットします。 適切にコミットされると、申請に対する変更はデベロッパー センター ダッシュボードに表示されます。
 
 コミット操作が Windows ストア申請 API を使ったアプリ申請プロセスにどのように適合するかについては、[アプリの申請の管理に関するページ](manage-app-submissions.md)をご覧ください。
 
@@ -88,7 +85,7 @@ Authorization: Bearer <your access token>
 
 | 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| status           | string  | 提出の状態。 次のいずれかの値を使用できます。 <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>  |
+| status           | string  | 申請の状態。 次のいずれかの値を使用できます。 <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>  |
 
 <span/>
 
@@ -113,4 +110,3 @@ Authorization: Bearer <your access token>
 * [アプリの申請の更新](update-an-app-submission.md)
 * [アプリの申請の削除](delete-an-app-submission.md)
 * [アプリの申請の状態の取得](get-status-for-an-app-submission.md)
-

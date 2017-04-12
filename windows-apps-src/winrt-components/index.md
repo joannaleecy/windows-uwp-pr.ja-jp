@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 853bd782ca9b5495aeb74a4aaf3dc53f23d7c282
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4c95e09b8680cba062a06ef06bbbfc8fbf4e601f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-runtime-components"></a>Windows ランタイム コンポーネント
 
 
@@ -38,7 +35,6 @@ Visual Studio と C#、Visual Basic、または C++ を使って、ユニバー�
  
 
  
-
 
 
 

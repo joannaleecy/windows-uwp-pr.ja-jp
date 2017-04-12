@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3ee88a22fe50fc3d782febafdc82c2a68c386dab
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4cbb423d8fdddfc6cc158c1cbca2398b21dc205c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="which-networking-technology"></a>アプリに適したネットワーク テクノロジ
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -73,7 +70,7 @@ HTTP(S) を使って Web サービスまたは Web サーバーと通信する�
 
 ネットワーク経由でファイルを確実に転送する場合は、[バックグラウンド転送 API](background-transfers.md) を使います。 バックグラウンド転送 API には、アプリの一時停止中はバックグラウンドで実行され、アプリの終了後も実行が続行される高度なアップロード機能とダウンロード機能があります。 この API は、ネットワークの状態を監視し、接続が失われたときに転送の中断と再開を自動的に実行します。転送ではデータ センサーとバッテリー セーバーにも対応し、ダウンロード アクティビティは現在の接続とデバイスのバッテリー状態に基づいて調整されます。 アプリがモバイル デバイスやバッテリー駆動デバイスで実行されている場合、これらの機能は不可欠です。 この API は、アップロード HTTP(S) を使った大きなファイルのアップロードとダウンロードに適しています。 FTP もサポートされますが、その対象はダウンロードのみです。
 
-Windows 10 の新しい機能であるバックグラウンド転送は、ファイル転送の完了時に後処理をトリガーして、ローカル カタログの更新や他のアプリのアクティブ化、ダウンロードの完了をユーザーに通知する機能です。
+Windows10 の新しい機能であるバックグラウンド転送は、ファイル転送の完了時に後処理をトリガーして、ローカル カタログの更新や他のアプリのアクティブ化、ダウンロードの完了をユーザーに通知する機能です。
 
 ### <a name="when-to-use-background-transfers"></a>バックグラウンド転送を使う状況
 
@@ -140,5 +137,4 @@ Windows 10 では、これまではデバイスの製造元と携帯電話会社
 ### <a name="sms"></a>SMS
 
 [**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/br206567) 名前空間は、SMS と関連メッセージを低レベルのエンティティとして処理します。 これは、携帯電話会社がアプリ向けの SMS で使うために提供されるもので、ほとんどのアプリ開発者の使用が許可されることはない機能によって制御されます。 メッセージを処理するアプリを記述する場合は、代わりに [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/dn642321) API を使います。この API は、SMS メッセージだけではなく、リアルタイム チャット アプリなどの他のソースからのメッセージも処理するように設計されているため、よりリッチなチャット/メッセージング エクスペリエンスを提供できます。
-
 

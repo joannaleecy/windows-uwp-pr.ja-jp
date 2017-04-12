@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5ca55f04d919e273017530ab4c14d09c7a2ec20a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0a2d8562774c00544fcdcab8941bfbb04f889a45
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="managing-your-account-settings-and-profile-info"></a>アカウントの設定とプロファイル情報の管理
 
@@ -40,5 +38,4 @@ ms.lasthandoff: 02/07/2017
 このセクションには、[受取りアカウントと税務フォームを準備する](setting-up-your-payout-account-and-tax-forms.md)ためのリンクも表示されます。 これらの準備は、アプリやアドオンの代金を請求する前に行う必要があります。
 
 一部のプログラムでは、アカウントの機能を拡張できるようにするためのコードが用意されている場合があります。これらの機能は、**[アカウント設定]** で入力できます。 このページでは、[テスト用にロック解除した Windows Phone 8 デバイスや Windows Phone 8.1 デバイス](http://go.microsoft.com/fwlink/p/?LinkId=533897)に関する詳細を確認することもできます。また、[デベロッパー センター Insider Program](dev-center-insider-program.md) をオプトインまたはオプトアウトすることもできます。
-
 

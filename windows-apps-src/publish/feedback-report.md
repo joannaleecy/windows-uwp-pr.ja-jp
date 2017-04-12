@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 91ca9a29609cd52db24ddddecf60307e808cc064
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e861ce5d7c34098616fdc57c884402df4e4b0a7f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="feedback-report"></a>フィードバック レポート
 
 Windows デベロッパー センターのダッシュボードの**フィードバック レポート**により、Windows 10 のユーザーがフィードバック Hub から送信した問題、提案、賛成票を参照できます。 このデータは、ダッシュボードで表示することも、データをエクスポートしてオフラインで表示することもできます。
@@ -61,4 +58,3 @@ Windows デベロッパー センターのダッシュボードの**フィード
 ## <a name="launching-feedback-hub-directly-from-your-app"></a>アプリから直フィードバック Hub を起動する
 
 前に説明したように、フィードバック Hub への直接のリンクをアプリ内に組み込んで、ユーザーにフィードバックの提供を促すことをお勧めします。 詳しくは、「[アプリからのフィードバック Hub の起動](../monetize/launch-feedback-hub-from-your-app.md)」をご覧ください。
-

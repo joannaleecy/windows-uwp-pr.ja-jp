@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、Windows ストア コレクション API、Windows ストア購入 API、Windows ストア ID キー、更新"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b740cf431607f1748a8513a02746a70560d09da2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 22db5f1ae693c26ecf727c94a9f6746225325f74
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="renew-a-windows-store-id-key"></a>Windows ストア ID キーの更新
 
 
@@ -120,4 +117,3 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 * [製品の照会](query-for-products.md)
 * [コンシューマブルな製品をフルフィルメント完了として報告する](report-consumable-products-as-fulfilled.md)
 * [無料の製品の付与](grant-free-products.md)
-

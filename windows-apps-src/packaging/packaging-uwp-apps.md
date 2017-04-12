@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ca57f50f4827ba5de7a140f1353ba864c5e2fb6c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6c699b357a2c1271f6765514331eb2ca0a6ff0b3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-# <a name="packaging-uwp-apps"></a>UWP アプリのパッケージ化
+# <a name="package-a-uwp-app-with-visual-studio"></a>Visual Studio で UWP アプリをパッケージ化する
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 ユニバーサル Windows プラットフォーム (UWP) アプリを販売、またはその他のユーザーに配布するには、appxupload パッケージを作成する必要があります。 appxupload を作成すると、別の appx パッケージがテストとサイドローディング用に生成されます。 デバイスに appx パッケージをサイドローディングすることで、アプリを直接配布できます。 この記事では、UWP アプリ パッケージを構成、作成、テストする方法について説明します。 サイドローディングについて詳しくは、「[Windows 10 でのアプリのサイドローディング](https://technet.microsoft.com/library/mt269549.aspx)」をご覧ください。
 
@@ -38,7 +36,7 @@ Windows 10 では、Windows ストアにアップロードできる 1 つのパ�
 
 ## <a name="configure-an-app-package"></a>アプリ パッケージを構成する
 
-アプリ マニフェスト ファイル (package.appxmanifest.xml) には、アプリ パッケージの作成に必要なプロパティと設定があります。 たとえば、マニフェスト ファイル内のプロパティには、アプリのタイルとして使う画像や、ユーザーがデバイスを回転するときにアプリでサポートされる向きを定義します。
+アプリ マニフェスト ファイル (package.appxmanifest) には、アプリ パッケージの作成に必要なプロパティと設定があります。 たとえば、マニフェスト ファイル内のプロパティには、アプリのタイルとして使う画像や、ユーザーがデバイスを回転するときにアプリでサポートされる向きを定義します。
 
 Visual Studio のマニフェスト デザイナーを使えば、生の XML を編集することなくマニフェスト ファイルを簡単に更新できます。
 

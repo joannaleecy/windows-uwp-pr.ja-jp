@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fc0c4f50cc7970fe6ff4cfa5c631a03a9f216470
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9478cb5669d38008d42bbd57ba07fb9b47a81eef
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="motion-for-uwp-apps"></a>UWP アプリのモーション
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -113,4 +110,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

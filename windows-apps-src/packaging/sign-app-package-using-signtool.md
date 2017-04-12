@@ -9,18 +9,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 6fbcf24984fde4b86e94481d6ad1104a827a8c31
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 5cbff0011a4a96c61d7f7bad7e57bd130e09c39b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="sign-an-app-package-using-signtool"></a>SignTool を使ってアプリ パッケージに署名する
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 **SignTool** は、アプリ パッケージへのデジタル署名や証明書のバンドルに使用するコマンド ライン ツールです。 証明書は、(テスト目的で) ユーザーが作成することも、(配布目的で) 企業が作成することもできます。 アプリ パッケージに署名すると、アプリのデータが署名後に変更されていないこと、また、アプリ パッケージに署名したユーザーまたは企業の ID が正しいことをユーザーに保証できます。 **SignTool** では、暗号化されているかどうかを問わずアプリ パッケージとアプリ バンドルに署名できます。
+
+> [!IMPORTANT] 
+> Visual Studio を使用してアプリを開発する場合は、Visual Studio のウィザードを使ってアプリ パッケージを作成し、署名することをお勧めします。 詳しくは、「[Visual Studio での UWP アプリのパッケージ化](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)」をご覧ください。
 
 コード署名と証明書について詳しくは、「[Introduction to Code Signing](https://msdn.microsoft.com/library/windows/desktop/aa380259.aspx#introduction_to_code_signing)」(コード署名の概要) を参照してください。
 

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 07cca18b97a50fe8ced8b76094d358b948d18535
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9dee8e05dbf2384fc87c1974a732ff36459fa229
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="make-your-app-easier-to-promote"></a>アプリの販売促進を容易にする
 
 
@@ -49,7 +46,6 @@ Windows ストアでは、さまざまなアプリをカテゴリ別またはテ
  
 
  
-
 
 
 

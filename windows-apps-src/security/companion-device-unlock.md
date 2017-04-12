@@ -9,11 +9,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 7a6935e61e6f62fce8335651e0cef261ed491507
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 050aa91e8d2a25fa80ec95d2fcdebf886430e37d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>Windows Hello コンパニオン (IoT) デバイスを使った Windows のロック解除
 
@@ -636,7 +634,7 @@ Windows Hello コンパニオン デバイス アプリは、ShowNotificationMes
 
 **ガイダンス**
 
-- "Swipe up or press space bar to sign in with device name." (デバイス名 にサインインするには、上にスワイプするか Space キーを押してください。)
+- "Swipe up or press space bar to sign in with *device name*." (*デバイス名*にサインインするには、上にスワイプするか Space キーを押してください。)
 - "サインインするには、*デバイス名* を NFC リーダーにタップしてください。"
 - "*デバイス名* を探しています..."
 - "サインインするには、*デバイス名* を USB ポートに差し込んでください。"
@@ -653,9 +651,9 @@ Windows Hello コンパニオン デバイス アプリは、ShowNotificationMes
 - "サインインするには、*デバイス名* の上に指を置いてください。"
 - "サインインするには、*デバイス名* を指でスワイプしてください。"
 - "*デバイス名* にサインインできませんでした。 別のサインイン オプションを使用してください。"
-- "Something went wrong.  Use another sign-in option, and then set up device name again." (問題が発生しました。別のサインイン オプションを使用し、デバイス名 をもう一度設定してください。)
+- "Something went wrong.  Use another sign-in option, and then set up *device name* again." (問題が発生しました。別のサインイン オプションを使用し、*デバイス名* をもう一度設定してください。)
 - "やり直してください。"
-- "Say your Spoken Passphrase into device name." (デバイス名 に音声パスフレーズを言ってください。)
+- "Say your Spoken Passphrase into *device name*." (*デバイス名* に音声パスフレーズを言ってください。)
 - "*デバイス名* にサインインする準備ができています。"
 - "最初は別のサインイン オプションを使用してください。その後、*デバイス名*を使用してサインインできます。"
 
@@ -689,4 +687,3 @@ Companion Authentication Service は、次のセキュリティ保護を提供�
 - Windows Hello コンパニオン デバイスの複製に対する防御を提供する
 - 登録時に PC に HMAC キーを送信するときに、傍受に対する防御を提供する
 - ユーザー プレゼンス シグナルを入手できることを確認する
-

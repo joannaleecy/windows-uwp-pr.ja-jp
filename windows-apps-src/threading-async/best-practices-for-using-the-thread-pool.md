@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、スレッド、スレッド プール"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d3b45da6a11bab926812682c209207bbbb436bf1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: db5231c925575bef21b3d412feda367cd89fe7f4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="best-practices-for-using-the-thread-pool"></a>スレッド プールを使うためのベスト プラクティス
 
@@ -60,4 +58,3 @@ ms.lasthandoff: 02/07/2017
 * [定期的な作業項目の作成](create-a-periodic-work-item.md)
 * [スレッド プールへの作業項目の送信](submit-a-work-item-to-the-thread-pool.md)
 * [タイマーを使った作業項目の送信](use-a-timer-to-submit-a-work-item.md)
-

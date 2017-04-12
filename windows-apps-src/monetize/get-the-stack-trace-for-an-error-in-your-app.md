@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ストア サービス, Windows ストア分析 API, スタック トレース, エラー"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 8b10c7f9e2de962aca719055a26d8c3954ea052f
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: fb99c65e91e02e3e60b12258e30083183c213324
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>アプリのエラーに関するスタック トレースの取得
 
 アプリのエラーに関するスタック トレースを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。 このメソッドでダウンロードできるのは、過去 30 日以内に発生したアプリのエラーに関するスタック トレースのみです。 スタック トレースは、Windows デベロッパー センター ダッシュボードの[状態レポート](../publish/health-report.md)の **[エラー]** セクションでも確認できます。
@@ -46,7 +43,7 @@ ms.lasthandoff: 02/08/2017
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
 <span/> 
 
@@ -132,4 +129,3 @@ Authorization: Bearer <your access token>
 * [Windows ストア サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)
 * [エラー報告データの取得](get-error-reporting-data.md)
 * [アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)
-

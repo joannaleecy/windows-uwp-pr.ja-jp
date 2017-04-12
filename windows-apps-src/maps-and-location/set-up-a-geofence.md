@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 地図, 位置情報, ジオフェンス, 通知"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 8a143359948e536d30efb425055969ae8ac0987f
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="set-up-a-geofence"></a>ジオフェンスのセットアップ
 
 
@@ -475,4 +472,3 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 * [UWP の位置情報のサンプル](http://go.microsoft.com/fwlink/p/?linkid=533278)
 * [ジオフェンスの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn631756)
 * [位置認識アプリの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465148)
-

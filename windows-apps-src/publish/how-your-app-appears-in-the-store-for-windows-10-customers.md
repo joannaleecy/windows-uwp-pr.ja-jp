@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4a7c10d93a3145466007bfe4fac63422400a9830
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ef76bf9a26336f89b1b1a93099dec56191823a2e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="how-your-app-appears-in-the-store-for-windows-10-customers"></a>ストアにおける Windows 10 ユーザー向けのアプリの表示形式
 
 
@@ -25,7 +22,7 @@ Windows または Windows Phone 向けのストアに以前にアプリを公開
 
  
 
-## <a name="consideration-for-apps-that-shared-identity-in-the-windows-store-and-windows-phone-store"></a>Windows ストアと Windows Phone ストアで ID を共有したアプリに関する考慮事項
+## <a name="apps-that-shared-identity-in-the-windows-store-and-windows-phone-store"></a>Windows ストアと Windows Phone ストアで ID を共有していたアプリ
 
 
 両方のストアに公開するアプリに同じ予約名を使った場合 ("アプリの ID を共有する" とも言います)、これらのアプリは 2 つのアプリではなく、1 つのアプリと見なされます。 ダッシュボードでは、これらのアプリが、Windows パッケージと Windows Phone パッケージを持つ 1 つのアプリとして表示されます。
@@ -53,7 +50,7 @@ Windows または Windows Phone 向けのストアに以前にアプリを公開
 アプリを以前市場に公開していた場合、そのすべての市場で Windows 10 ユーザーは該当するアプリを利用することができます。 このことは、ストアごとに異なる市場を選んでいる場合でも同じです。
 
 ### <a name="categories"></a>カテゴリ
-2 つのストアでアプリが異なるカテゴリに表示されていた場合は、Windows ストアのカテゴリを使って新しいカテゴリを特定します。 Windows 10 ユーザー向けのストアでは一部のカテゴリが異なっているため、以下の[表](#cat)を確認してください。
+2 つのストアでアプリが異なるカテゴリに表示されていた場合は、Windows ストアのカテゴリを使って新しいカテゴリを特定します。 Windows 10 ユーザー向けのストアでは一部のカテゴリが異なっているため、以下の[表](#category-changes)を確認してください。
 
 ### <a name="age-rating"></a>年齢区分
 異なる年齢区分を指定した場合、より厳格な (より高い年齢の) 区分が使われます。
@@ -126,4 +123,3 @@ Windows 10 ユーザーに表示されるストア登録情報を更新して、
 | ゲーム &gt; 家族向け           | ゲーム &gt; 家族 & 子供             |
 | ゲーム &gt; パズル           | ゲーム &gt; パズル & クイズ           |
 | ゲーム &gt; レーシング           | ゲーム &gt; レーシング & フライト           |
-

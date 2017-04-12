@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 非同期, スレッド, スレッド化"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fb249a1c7a562cb4b1eb7ff8590e8525c00c64f2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8b51cf845f7bd9e5efdc5fa9ae611caf4bf7d71f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="threading-and-async-programming"></a>スレッド化と非同期プログラミング
 
@@ -42,4 +40,3 @@ ms.lasthandoff: 02/07/2017
 | [定期的な作業項目の作成](create-a-periodic-work-item.md)                                                   | 定期的に実行される作業項目の作成方法を説明します。 |
 | [スレッド プールへの作業項目の送信](submit-a-work-item-to-the-thread-pool.md)                               | スレッド プールに作業項目を送信することで独立したスレッドで作業を実行する方法について説明します。 |
 | [タイマーを使った作業項目の送信](use-a-timer-to-submit-a-work-item.md)                                       | タイマーが終了した後に実行される作業項目の作成方法を説明します。 |
-

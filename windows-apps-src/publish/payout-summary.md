@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ad3f2a584f9867e72e2d93df659990424e9ac611
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: be33881f015bfa1f91a545cfb571bb5f3da66c20
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="payout-summary"></a>入金状況
 
 
@@ -114,7 +111,6 @@ Azure Marketplace で製品を販売する場合、2015 年 11 月 1 日以降�
  
 
  
-
 
 
 

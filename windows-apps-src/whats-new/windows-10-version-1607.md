@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: fff2eb225bcadaefa6bead622d953dd8b8ed4a76
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: bac2705bd57c0b6874c58eaac66b4ecb19ebb5af
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="whats-new-in-windows-version-1607"></a>Windows バージョン 1607 の新着情報
 
 Windows 10 バージョン 1607 と Windows 開発者ツールの更新プログラムでは、引き続きユニバーサル Windows プラットフォームによって強化されたツール、機能、エクスペリエンスを提供しています。 Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/fwlink/?LinkId=821431)すると、[新しいユニバーサル Windows アプリを作成](https://msdn.microsoft.com/library/windows/apps/bg124288)したり、[Windows の既存のアプリ コード](https://msdn.microsoft.com/library/windows/apps/mt238321)がどのように使えるかを試したりすることができます。
@@ -65,4 +62,3 @@ Windows Information Protection (WIP) API | [**WIP**](https://msdn.microsoft.com/
 Windows IOT Core | Windows IoT Core は、Raspberry Pi 3 だけでなく、リモート表示エクスペリエンスを完全にサポートするようになったため、ユーザーは IoT Core デバイスで実行されている UWP アプリケーションをリモートで表示および制御することができます。
 コンパニオン (IoT) デバイスを使った Windows のロック解除 | コンパニオン デバイスは、ユーザー認証のエクスペリエンスを強化するために、Windows 10 のデスクトップと組み合わせて使用できるデバイスです。 [コンパニオン デバイス フレームワーク](https://msdn.microsoft.com/windows/uwp/security/companion-device-unlock)を使用すると、コンパニオン デバイスは、Windows Hello を利用できない場合 (たとえば、Windows 10 のデスクトップに顔認証のカメラまたは指紋リーダーのデバイスがない場合など) でも、Microsoft Passport のための優れたエクスペリエンスを提供できます。
 Winsock | TCP ソケットは、[Winsock](https://tools.ietf.org/html/rfc7413) で TCP_FASTOPEN ソケット オプションを設定することにより、[RFC 7413](https://tools.ietf.org/html/rfc7413) TCP Fast Open を使用するように構成できます。
-

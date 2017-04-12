@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 059fac41c0c0557dbc3d4739c1da78f794505839
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: ac4a09180a678e8da197bfb030e27fa001eb74f0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="frequently-asked-questions"></a>よく寄せられる質問
 
 期待どおりに動作しない場合には、 このページのよく寄せられる質問を確認します。 また、「[既知の問題](known-issues.md)」と「[ユニバーサル Windows アプリの開発](https://go.microsoft.com/fwlink/?linkid=839446)」のフォーラムも確認します。 
@@ -72,9 +69,7 @@ Dev Home を開始し、**[Leave developer mode]** ボタンを選択します�
 
 ### <a name="can-i-publish-my-game"></a>自分のゲームを公開できますか
 
-UWP と Xbox One の開発者モードを使って、Xbox One でゲームの構築とテストを行えます。 UWP ゲームを公開するには、[ID@XBOX](http://www.xbox.com/Developers/id) で登録する必要があります。 
-[ID@XBOX](http://www.xbox.com/Developers/id) では開発者は、ゲーム用の Xbox Live API のすべてにアクセスできます。これにはゲームスコア、達成度、デバイス間でのマルチ プレーヤーの活用、クラウドの保存など、Xbox One の Xbox Live のすべての機能が含まれます。 
-さらに [ID@XBOX](http://www.xbox.com/Developers/id) は、ゲーム用の Xbox One 開発キットへのアクセスも提供します。これにより Xbox One のハードウェアの機能を最大限に活用できます。
+UWP と Xbox One の開発者モードを使って、Xbox One でゲームの構築とテストを行えます。 UWP ゲームを公開するには、[ID@XBOX](http://www.xbox.com/Developers/id) に登録するか、[Xbox Live Creators プログラム](https://developer.microsoft.com/games/xbox/xboxlive/creator)に参加する必要があります。 詳しくは、「[開発者プログラムの概要](https://developer.microsoft.com/games/xbox/docs/xboxlive/get-started/developer-program-overview.html)」をご覧ください。
 
 ### <a name="will-the-standard-game-engines-work"></a>標準的なゲーム エンジンは機能しますか
 
@@ -142,4 +137,3 @@ TVHelpers は、JavaScript と XAML/C# のサンプルとライブラリです�
 ## <a name="see-also"></a>関連項目
 - [Xbox One の UWP の既知の問題](known-issues.md)
 - [Xbox One の UWP](index.md)
-

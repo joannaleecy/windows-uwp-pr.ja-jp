@@ -1,31 +1,28 @@
 ---
 author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
-description: "Microsoft Store Services SDK の Microsoft Advertising ライブラリの現在のリリースにおける既知の問題について説明します。"
-title: "Microsoft Advertising ライブラリに関する既知の問題"
+description: "Microsoft Store Services SDK に含まれている Microsoft Advertising ライブラリの現在のリリースに関する既知の問題について説明します。"
+title: "Advertising ライブラリに関する既知の問題"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, UWP, 広告, Advertising, 既知の問題"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 54e3361ce9fdfc67495d41903b8b291931b7ee9f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 33bf3c2db5db7e8ec07df3f4d13cc0ad074e99a3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="known-issues-for-the-microsoft-advertising-libraries"></a>Microsoft Advertising ライブラリに関する既知の問題
-
+# <a name="known-issues-for-the-advertising-libraries"></a>Advertising ライブラリに関する既知の問題
 
 
 
-このトピックでは、Microsoft Store Services SDK (UWP アプリ用) と、Windows および Windows Phone 8.x 用の Microsoft Advertising SDK (Windows 8.1 アプリおよび Windows Phone 8.x アプリ用) の Microsoft Advertising ライブラリの現在のリリースに関する既知の問題を示します。
 
-## <a name="installation-of-microsoft-store-services-sdk-requires-visual-studio-tools-for-universal-windows-apps"></a>Microsoft Store Services SDK のインストールには、Visual Studio Tools for Universal Windows Apps が必要
+このトピックでは、Microsoft Store Services SDK (UWP アプリ用) と、Windows および Windows Phone 8.x 用の Microsoft Advertising SDK (Windows 8.1 アプリおよび Windows Phone 8.x アプリ用) に含まれている Microsoft Advertising ライブラリの現在のリリースに関する既知の問題を示します。
 
-Visual Studio 2015 と共に [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) をインストールするには、Visual Studio Tools for Universal Windows Apps のバージョン 1.1 以降がインストールされている必要があります。 詳しくは、Visual Studio の[リリース ノート](http://go.microsoft.com/fwlink/?LinkID=624516)をご覧ください。
+## <a name="installation-of-microsoft-store-services-sdk-requires-visual-studio-tools-for-universal-windows-apps"></a>Microsoft Store Services SDK のインストールには、ユニバーサル Windows アプリ用 Visual Studio Tools が必要
+
+Visual Studio 2015 と共に [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) をインストールするには、ユニバーサル Windows アプリ用 Visual Studio Tools のバージョン 1.1 以降がインストールされている必要があります。 詳しくは、Visual Studio の[リリース ノート](http://go.microsoft.com/fwlink/?LinkID=624516)をご覧ください。
 
 ## <a name="windows-phone-8x-silverlight-projects"></a>Windows Phone 8.x Silverlight プロジェクト
 
@@ -43,7 +40,7 @@ Windows Phone 8.x Silverlight プロジェクト用の Microsoft Advertising ア
 
 ## <a name="interstitial-ads-and-navigation-buttons-on-phones"></a>スポット広告と電話のナビゲーション ボタン
 
-ハードウェア ボタンの代わりにソフトウェアの **"戻る"**、**"スタート"**、**"検索"** ボタンがある携帯電話 (またはエミュレーター) では、ビデオ スポット広告のカウントダウン タイマー ボタンとクリックスルー ボタンが隠れる場合があります。
+ハードウェア ボタンの代わりにソフトウェア ボタンの **"戻る"**、**"スタート"**、**"検索"** を備えた電話 (またはエミュレーター) では、スポット広告用のカウントダウン タイマー ボタンとクリックスルー ボタンが隠れる場合があります。
 
 ## <a name="recently-created-ads-are-not-being-served-to-your-app"></a>最近作成した広告がアプリに提供されない
 
@@ -123,4 +120,3 @@ Microsoft Advertising ライブラリに関する問題について製品サポ�
  
 
  
-

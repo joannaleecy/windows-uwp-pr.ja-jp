@@ -2,26 +2,23 @@
 author: mcleanbyron
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
 description: "Microsoft Store Services SDK に含まれる Microsoft Advertising ライブラリのリリース ノートを確認します。"
-title: "Microsoft Advertising ライブラリのリリース ノート"
+title: "Advertising ライブラリのリリース ノート"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 広告, 宣伝, リリース ノート"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 666071bccd562f2f95e8ae69f50797fdc464548b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f3d07df6e64c96e9070cb82bd7ac6e96b9cad1ee
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
-# <a name="release-notes-for-the-microsoft-advertising-libraries"></a>Microsoft Advertising ライブラリのリリース ノート
-
+# <a name="release-notes-for-the-advertising-libraries"></a>Advertising ライブラリのリリース ノート
 
 
 
-このセクションでは、Microsoft Store Services SDK (UWP アプリ用) と、Windows および Windows Phone 8.x 用の Microsoft Advertising SDK (Windows 8.1 アプリおよび Windows Phone 8.x アプリ用) の Microsoft Advertising ライブラリの現在のリリースに関するリリース ノートを示します。 これらのライブラリは、Windows 10、Windows 8.1、Windows Phone 8.1、Windows Phone 8 用の XAML アプリと JavaScript/HTML アプリをサポートします。
+
+このセクションでは、Microsoft Store Services SDK (UWP アプリ用) と、Windows および Windows Phone 8.x 用の Microsoft Advertising SDK (Windows 8.1 アプリおよび Windows Phone 8.x アプリ用) に含まれている Microsoft Advertising ライブラリの現在のリリースに関するリリース ノートを示します。 これらのライブラリは、Windows 10、Windows 8.1、Windows Phone 8.1、Windows Phone 8 用の XAML アプリと JavaScript/HTML アプリをサポートします。
 
 ## <a name="installation"></a>インストール
 
@@ -51,11 +48,7 @@ Microsoft Store Services SDK または Windows および Windows Phone 8.x 用�
 
 **AdControl**クラスに、UWP アプリ用の **Latitude** プロパティと **Longitude** プロパティは含まれなくなりました。 代わりに、広告コントロールに組み込まれているコードが、アプリに代わってこれらの値を検出し、広告サーバーに送信します。
 
-## <a name="important-notice"></a>重要な注意事項
-
-必ずソフトウェア ライセンス条項 (EULA) 全体に目を通してください。 詳しくは、「[重要な注意事項 - EULA](important-notice-eula.md)」をご覧ください。
 
  
 
  
-

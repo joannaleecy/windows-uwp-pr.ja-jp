@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7f279590cc1351efee2552e237ab095674768463
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ca551ff53a0a91b5bc60263b6e282b95c32bf976
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="templatebinding-markup-extension"></a>{TemplateBinding} マークアップ拡張
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -67,5 +64,4 @@ XAML の [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/b
 * [XAML の概要](xaml-overview.md)
 * [依存関係プロパティの概要](dependency-properties-overview.md)
  
-
 

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ストア サービス, Windowsストア分析 API, 評価"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 25f057eba5827be34b4fcf9d31a6e0ae71dc9893
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ccd3b8660f476ee6734b987c6652d91cf0cd42f5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="get-app-ratings"></a>アプリの評価の取得
 
 特定の日付範囲などのオプション フィルターを使って JSON 形式の集計評価データを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。 この情報は、Windows デベロッパー センター ダッシュボードの[評価レポート](../publish/ratings-report.md)でも確認することができます。
@@ -44,7 +41,7 @@ ms.lasthandoff: 02/07/2017
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
 <span/> 
 
@@ -163,4 +160,3 @@ Authorization: Bearer <your access token>
 * [アドオンの入手数の取得](get-in-app-acquisitions.md)
 * [エラー報告データの取得](get-error-reporting-data.md)
 * [アプリのレビューの取得](get-app-reviews.md)
-

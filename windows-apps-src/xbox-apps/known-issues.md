@@ -1,7 +1,7 @@
 ---
 author: Mtoepke
-title: "Xbox One 開発者プログラムの UWP の既知の問題"
-description: 
+title: "Xbox 開発者プログラムの UWP の既知の問題"
+description: "Xbox 開発者プログラムの UWP の既知の問題を示します。"
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 4b13b9bbbc75de47ed69112680894d5e3f34d8a1
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 203d1abede2607617e0175103f54bf3068d53ff4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Xbox 開発者プログラムの UWP の既知の問題
 
 このトピックでは、Xbox One 開発者プログラムの UWP の既知の問題について説明します。 このプログラムについて詳しくは、「[Xbox One の UWP](index.md)」をご覧ください。 
@@ -58,7 +55,17 @@ There is currently no workaround for this issue. Apps should govern their memory
 
 この時点では、アプリのアンインストールと再インストールを行っても、ユーザーをサインアウトさせるまで、アクセス許可は_固定_されます。
  
-お子様のアカウントのみで利用できる、不適切なコンテンツの除外方法もあります。 お子様のアカウントでは、保護者がサインインしてアクセス許可を付与する必要がありますが、アクセス許可を付与するときに、保護者は、お子様によるアプリの起動を**常に許可**するように選ぶこともできます。 このような除外の情報はクラウドに保存され、お子様がサインアウトして、もう一度サインインした場合でも、維持されます。   
+お子様のアカウントのみで利用できる、不適切なコンテンツの除外方法もあります。 お子様のアカウントでは、保護者がサインインしてアクセス許可を付与する必要がありますが、アクセス許可を付与するときに、保護者は、お子様によるアプリの起動を**常に許可**するように選ぶこともできます。 このような除外の情報はクラウドに保存され、お子様がサインアウトして、もう一度サインインした場合でも、維持されます。
+
+## <a name="storagefilecopyasync-fails-to-copy-encrypted-files-to-unencrypted-destination"></a>StorageFile.CopyAsync で暗号化されていない宛先に暗号化されたファイルをコピーできない 
+
+StorageFile.CopyAsync を使用して、暗号化されていない宛先に暗号化されたファイルをコピーする場合、次の例外が発生して呼び出しは失敗します。
+
+```
+System.UnauthorizedAccessException: Access is denied. (Excep_FromHResult 0x80070005)
+```
+
+これは、Xbox 開発者が、アプリ パッケージの一部として展開されているファイルを別の場所にコピーする場合に影響を及ぼす可能性があります。 この原因は、パッケージの内容が、Xbox の開発者モードではなく、リテール モードで暗号化されることです。 その結果、アプリは、開発およびテスト中には期待どおりに動作しているように見えますが、公開され、製品版の Xbox にインストールされると動作しない可能性があります。
 
 <!--### x86 vs. x64
 
@@ -233,4 +240,3 @@ namespace TestDNLA {
 ## <a name="see-also"></a>関連項目
 - [よく寄せられる質問](frequently-asked-questions.md)
 - [Xbox One の UWP](index.md)
-

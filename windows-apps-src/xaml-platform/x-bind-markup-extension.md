@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a82cb66c66b593c0241a651e4df34e3998a106c6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ba08e426fea4c494276978d96cf0b36f6956bdb8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xbind-markup-extension"></a>{x:Bind} マークアップ拡張
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -50,7 +47,7 @@ XAML のコンパイル時に、**{x:Bind}** は、データ ソースのプロ�
 | _bindingProperties_ |
 | _propName_=_value_\[, _propName_=_value_\]* | 名前と値のペアの構文を使って指定する、1 つ以上のバインド プロパティ。 |
 | _propName_ | Binding オブジェクトで設定するプロパティの文字列名。 たとえば、"Converter" です。 |
-| _value_ | プロパティに設定する値。 引数の構文は、設定されているプロパティによって異なります。 値がそれ自体マークアップ拡張である _propName_=_value_ の使用例を示します: `Converter={StaticResource myConverterClass}`。 詳しくは、以下の「[{x:Bind} で設定できるプロパティ](#properties-you-can-set)」をご覧ください。 | 
+| _value_ | プロパティに設定する値。 引数の構文は、設定されているプロパティによって異なります。 値がそれ自体マークアップ拡張である _propName_=_value_ の使用例を示します: `Converter={StaticResource myConverterClass}`。 詳しくは、以下の「[{x:Bind} で設定できるプロパティ](#properties-that-you-can-set-with-xbind)」をご覧ください。 | 
 
 ## <a name="property-path"></a>プロパティ パス
 
@@ -228,4 +225,3 @@ Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Orde
     </StackPanel>
   </DataTemplate>
 ```
-

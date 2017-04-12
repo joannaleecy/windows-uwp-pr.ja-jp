@@ -10,14 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 用 Chrome 拡張機能, Windows 向け Chrome アプリ, hwa cli, .crx から AppX への変換"
 ms.assetid: 04f37333-48ba-441b-875e-246fbc3e1a4d
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 84d8875cc7b1c8540f54fec78cd675bd96919fd2
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: b2168242d5464dbf41f12c777aa5672753a4ae6e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="convert-your-existing-chrome-app-to-a-universal-windows-platform-app"></a>既存の Chrome アプリからユニバーサル Windows プラットフォーム アプリへの変換
+# <a name="convert-your-existing-chrome-app-to-a-uwp-app"></a>既存の Chrome アプリから UWP アプリへの変換
 
 既存の Chrome でホストされたアプリからユニバーサル Windows プラットフォーム (UWP) で実行されるアプリへの変換が容易になりました。 Chrome アプリを変換する方法は 2 つあります。
 
@@ -80,7 +77,7 @@ Windows ストア用に Web アプリをパッケージ化した後、PC、タ�
 
 Windows 10 アプリでは、Flash は使用できません。 Flash が使用できない場合でもアプリのエクスペリエンスに影響がないことを確認する必要があります。
 
-広告については、広告主が HTML5 オプションを提供しているかどうかを確認する必要があります。 [Bing Ads](https://bingads.microsoft.com/) と[アプリ内広告](http://adsinapps.microsoft.com/)を調べることができます。
+広告については、広告主が HTML5 オプションを提供しているかどうかを確認する必要があります。 [Bing Ads](https://bingads.microsoft.com/) と [Microsoft Advertising ライブラリ](../monetize/display-ads-in-your-app.md)を確認してください。 
 
 YouTube のビデオは、[既定の設定が HTML5 `<video>`](http://youtube-eng.blogspot.com/2015/01/youtube-now-defaults-to-html5_27.html) になったため、[`<iframe>` による埋め込み](https://developers.google.com/youtube/iframe_api_reference)を使用している限り、そのままで動作します。 アプリでまだ Flash API を使用している場合は、前に示した埋め込みのスタイルに切り替える必要があります。
 
@@ -107,4 +104,3 @@ Chrome では、バックグラウンド スクリプトとして実行できる
 - [ユニバーサル Windows プラットフォーム (UWP) 機能にアクセスして Web アプリを強化する](./hwa-access-features.md)
 - [ユニバーサル Windows プラットフォーム (UWP) アプリのガイド](http://go.microsoft.com/fwlink/p/?LinkID=397871)
 - [Windows ストア アプリ設計のアセットのダウンロード](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
-

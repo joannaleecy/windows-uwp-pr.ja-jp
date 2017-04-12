@@ -2,15 +2,13 @@
 title: "Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリの自動起動"
 description: "開発者はプロトコルのアクティブ化および起動アクティブ化を使って、自動テスト用に UWP アプリや UWP ゲームを自動で起動できます。"
 author: listurm
-translationtype: Human Translation
-ms.sourcegitcommit: c5d0f685f4c733cbe4ba4c07aab565b888ddfe58
 ms.openlocfilehash: 4b31ec06b1ded4882d26cffed029eb8179ff47c3
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="automate-launching-windows-10-uwp-apps"></a>Windows 10 UWP アプリの自動起動
 
-# Windows 10 UWP アプリの自動起動
-
-## はじめに
+## <a name="introduction"></a>はじめに
 
 開発者はいくつかの方法でユニバーサル Windows プラットフォーム (UWP) アプリの自動起動を実現できます。 ここでは、プロトコルのアクティブ化と起動アクティブ化を使ってアプリを起動する方法を説明します。
 
@@ -20,7 +18,7 @@ ms.openlocfilehash: 4b31ec06b1ded4882d26cffed029eb8179ff47c3
 
 これらのアクティブ化はどちらも、コマンド ラインまたはランチャー アプリケーションを使って実行できます。 いずれの方法でアクティブ化を行う場合も、アプリが実行中のときは、アクティブ化によってアプリがフォアグラウンドになり (再アクティブ化され)、新しいアクティブ化引数が提供されます。 そのため、アクティブ化コマンドを使ってアプリに新しいメッセージを柔軟に提供できます。 アクティブ化メソッドで更新後の新しいアプリが実行されるようにするには、プロジェクトをコンパイルして展開する必要があることに注意してください。 
 
-## プロトコルのアクティブ化
+## <a name="protocol-activation"></a>プロトコルのアクティブ化
 
 アプリに対してプロトコルのアクティブ化を設定するには、次の手順に従います。 
 
@@ -37,7 +35,7 @@ ms.openlocfilehash: 4b31ec06b1ded4882d26cffed029eb8179ff47c3
 
 プロトコルのアクティブ化を設定したら、2 つの方法 (コマンド ラインまたはランチャー アプリケーション) のどちらかを使用して、プロトコルを使ってアプリをアクティブ化できます。 
 
-### コマンド ライン
+### <a name="command-line"></a>コマンド ライン
 
 コマンド ラインでプロトコルのアクティブ化を使ってアプリを起動するには、start コマンドを使います。このコマンドで、先ほど設定したプロトコル名を指定し、コロン (“:”) に続けて任意のパラメーターを指定します。 パラメーターには任意の文字列を指定できますが、Uniform Resource Identifier (URI) の機能を利用できるように、URI の標準の形式に従うことをお勧めします。 
 
@@ -57,7 +55,7 @@ ms.openlocfilehash: 4b31ec06b1ded4882d26cffed029eb8179ff47c3
 
 コマンド ラインによるプロトコルのアクティブ化では、生の URI で指定できる Unicode 文字は 2038 文字までに制限されます。 
 
-### ランチャー アプリケーション
+### <a name="launcher-application"></a>ランチャー アプリケーション
 
 WinRT API をサポートするアプリケーションを起動用に別途作成します。 プロトコルのアクティブ化を使ってアプリを起動するランチャー プログラムの C++ コードの例を次に示します。**PackageURI** は、アプリケーションの URI を示す任意の引数です (例: `myapplication:`、`myapplication:protocol activation arguments`)。
 
@@ -100,7 +98,7 @@ Uri(URI));
 ```
 ランチャー アプリケーションでプロトコルのアクティブ化を行う場合も、引数の制限はコマンド ラインの場合と同じです。 どちらを使う場合も、生の URI で指定できる Unicode 文字は 2038 文字までです。 
 
-## 起動アクティブ化
+## <a name="launch-activation"></a>起動アクティブ化
 
 起動アクティブ化を使ってアプリを起動することもできます。 セットアップは必要ありませんが、UWP アプリのアプリケーション ユーザー モデル ID (AUMID) が必要になります。 AUMID は、パッケージ ファミリ名とアプリケーション ID を感嘆符で区切った形式で表されます。 
 
@@ -115,7 +113,7 @@ Uri(URI));
 
 アプリケーション ID は、**Package.appxmanifest** ファイル (XML ビューで開く) の `<Applications>` 要素で確認できます。
 
-### コマンド ライン
+### <a name="command-line"></a>コマンド ライン
 
 UWP アプリの起動アクティブ化を実行するためのツールは Windows 10 SDK に付属しています。 このツールはコマンド ラインから実行することができ、起動するアプリの AUMID を引数として指定できます。
 
@@ -131,7 +129,7 @@ C:\Program Files (x86)\Windows Kits\10\App Certification Kit\microsoft.windows.s
 
 この方法では、コマンド ライン引数はサポートされません。 
 
-### ランチャー アプリケーション
+### <a name="launcher-application"></a>ランチャー アプリケーション
 
 COM の使用をサポートするアプリケーションを起動用に別途作成できます。 起動アクティブ化を使ってアプリを起動するランチャー プログラムの C++ コードの例を次に示します。 このコードでは、**ApplicationActivationManager** を作成して **ActivateApplication** を呼び出し、先ほど確認した AUMID と任意の引数を渡すことができます。 その他のパラメーターについて詳しくは、[MSDN の IApplicationActivationManager::ActivateApplication メソッドのトピック](https://msdn.microsoft.com/library/windows/desktop/hh706903(v=vs.85).aspx)をご覧ください。
 
@@ -177,7 +175,7 @@ Manager. hr = 0x%08lx \n", AUMID, hr);
 
 この方法では、コマンド ラインを使った先ほどの起動方法とは異なり、引数を渡すことができることに注意してください。
 
-## 引数を受け取る
+## <a name="accepting-arguments"></a>引数を受け取る
 
 UWP アプリのアクティブ化で渡される引数を受け取るには、アプリにコードを追加する必要があります。 プロトコルのアクティブ化または起動アクティブ化が実行されたかどうかを判断するのには、**OnActivated** イベントをオーバーライドして引数の型を確認し、生の文字列または Uri オブジェクトの事前解析値を取得します。 
 
@@ -189,7 +187,7 @@ void OnActivated(IActivatedEventArgs^ args)
         // Check for launch activation
         if (args->Kind == ActivationKind::Launch)
         {
-            auto launchArgs = static_cast<LaunchActivatedEventArgs^>(args); 
+            auto launchArgs = static_cast<LaunchActivatedEventArgs^>(args);    
 Platform::String^ argval = launchArgs->Arguments;
             // Manipulate arguments …
         }
@@ -204,15 +202,9 @@ Platform::String^ argval = launchArgs->Arguments;
     }
 ```
 
-## 要約
+## <a name="summary"></a>要約
 以上のように、UWP アプリはさまざまな方法で起動することができます。 要件や用途に応じて、適切な方法を利用してください。 
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 - [Xbox One の UWP](index.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

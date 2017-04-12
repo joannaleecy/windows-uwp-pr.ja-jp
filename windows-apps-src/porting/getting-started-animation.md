@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9dcf81c0c0aee42d6278a3e1eeccc6dd4da61010
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a45de584c4374afefe0fdca198eb7234351ac42d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="getting-started-animation"></a>はじめに: アニメーション
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
@@ -135,4 +132,3 @@ MainPage.xaml ファイルを **XAML** ビューで開くと、デザイナー�
 ### <a name="next-step"></a>次の手順
 
 [はじめに: 次の手順](getting-started-what-next.md)
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 11a99a1a68a37b8c60974193c8cab51247a25711
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5a3a0350a7a28cc31a1207abd4590a0fa3cbbc3e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xaml-namespaces-and-namespace-mapping"></a>XAML 名前空間と名前空間マッピング
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
@@ -118,5 +115,4 @@ XAML で使うコードを定義するときに入れ子になった型を使わ
 * [Windows ランタイム アプリ用の C#、VB、C++ プロジェクト テンプレート](https://msdn.microsoft.com/library/windows/apps/hh768232)
 * [Silverlight または WPF XAML/コードの Windows ランタイム アプリへの移行](https://msdn.microsoft.com/library/windows/apps/br229571)
  
-
 

@@ -1,27 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: B0AD0B8E-867E-4403-9CF6-43C81F3C30CA
-description: "Windows ストア提出 API のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライト情報を取得します。"
-title: "Windows ストア申請 API を使用したアプリのパッケージ フライトの取得"
+description: "Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライト情報を取得するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "アプリのパッケージ フライトの入手"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア申請 API, フライト, パッケージ フライト"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ee49b494f3b0dd88229e3f40fd2c5cedb57ffe7c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c5cbedc868725bf1ad81179f59d7a2ac9a3a0818
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-package-flights-for-an-app-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアプリのパッケージ フライトの取得
-
+# <a name="get-package-flights-for-an-app"></a>アプリのパッケージ フライトの入手
 
 
 
-Windows デベロッパー センター アカウントに登録するアプリのパッケージ フライトを一覧表示するには、Windows ストア提出 API 内の以下のメソッドを使用します。 パッケージ フライトについて詳しくは、「[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)」をご覧ください。
+
+Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトを一覧表示するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。 パッケージ フライトについて詳しくは、「[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)」をご覧ください。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -30,7 +27,7 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 * Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
 * このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア提出 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
+>**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
 ## <a name="request"></a>要求
 
@@ -46,7 +43,7 @@ Windows デベロッパー センター アカウントに登録するアプリ�
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
+| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
 <span/>
 
@@ -112,7 +109,7 @@ Authorization: Bearer <your access token>
 
 | 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| @nextLink  | string | データの追加ページが存在する場合、この文字列には、データの次のページを要求するために基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI に追加できる相対パスが含まれます。 たとえば、最初の要求本文の *top* パラメーターが 2 に設定されていて、アプリには 4 個のパッケージ フライトが存在する場合、応答本文には ```applications/{applicationid}/listflights/?skip=2&top=2``` の @nextLink 値が含まれます。これは、次の 2 個のパッケージ フライトを要求するために ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listflights/?skip=2&top=2``` を呼び出すことができることを示しています。 |
+| @nextLink  | string | データの追加ページが存在する場合、この文字列には、データの次のページを要求するために、ベースとなる ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI に追加できる相対パスが含まれます。 たとえば、最初の要求本文の *top* パラメーターが 2 に設定されていて、アプリには 4 個のパッケージ フライトが存在する場合、応答本文には、```applications/{applicationid}/listflights/?skip=2&top=2``` という @nextLink 値が含まれます。これは、次の 2 個のパッケージ フライトを要求するために、```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listflights/?skip=2&top=2``` を呼び出すことができることを示しています。 |
 | value      | array  | 指定されたアプリのパッケージ フライトに関する情報を提供するオブジェクトの配列。 各オブジェクトのデータについて詳しくは、「[フライト リソース](get-app-data.md#flight-object)」をご覧ください。                                                                                                                           |
 | totalCount | int    | クエリのデータ結果の行の合計数 (つまり、指定されたアプリのパッケージ フライトの合計数)。                                                                                                                                                                                                                             |
 
@@ -125,14 +122,13 @@ Authorization: Bearer <your access token>
 | エラー コード |  説明   |
 |--------|------------------|
 | 404  | パッケージ フライトは見つかりませんでした。 |
-| 409  | アプリは、[Windows ストア提出 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センターのダッシュボード機能を使用します。  |
+| 409  | アプリは、[Windows ストア申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センターのダッシュボード機能を使用します。  |
 
 <span/>
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Windows ストア サービスを使用した提出の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
+* [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
 * [すべてのアプリの入手](get-all-apps.md)
 * [アプリの入手](get-an-app.md)
 * [アプリのアドオンの入手](get-add-ons-for-an-app.md)
-

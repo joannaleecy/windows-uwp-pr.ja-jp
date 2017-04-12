@@ -12,11 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c4c03e48c9957d78cfa8c4287c4e99b73b5609b0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3862b008afece61648357c84a218ba210703727c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="define-page-layouts-with-xaml"></a>XAML を使ったページ レイアウトの定義
 
