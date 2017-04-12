@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c7275475e245d8fd68eb2979c16d0afe6ddc4a4c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d8240af0a610541cea5352ed841a08eb7093db96
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="accessibility"></a>ユーザー補助  
 
 
@@ -43,9 +40,8 @@ ms.lasthandoff: 02/07/2017
 | [アクセシビリティに対応したテキストの要件](accessible-text-requirements.md) | このトピックでは、色と背景のコントラスト比を適切な値にすることで、アプリのテキストをアクセシビリティ対応にするためのベスト プラクティスについて説明します。 また、UWP アプリ内のテキスト要素に設定できる Microsoft UI オートメーションの役割と、グラフィックス内のテキストに関するベスト プラクティスについても説明します。 |
 | [アクセシビリティ対応にするために避ける事項](practices-to-avoid.md) | アクセシビリティ対応の UWP アプリを作成するために避ける事項の一覧を表示します。 |
 | [カスタム オートメーション ピア](custom-automation-peers.md) | UI オートメーションに対するオートメーション ピアの概念について説明します。また、独自のカスタム UI クラスに対してオートメーションのサポートを提供する方法についても説明します。 |
-| [コントロール パターンとインターフェイス](control-patterns-and-interfaces.md) | Microsoft UI オートメーションのコントロール パターン、それらにアクセスするためにクライアントが使うクラス、それらを実装するためにプロバイダーが使うインターフェイスを示します。 |
+| [コントロール パターンとインターフェイス](control-patterns-and-interfaces.md) | Microsoft UI オートメーションのコントロール パターン、それらにアクセスするためにクライアントが使うクラス、それらを実装するためにプロバイダーが使うインターフェイスを紹介します。 |
 
-<span id="related_topics"/>
 ## <a name="related-topics"></a>関連トピック  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179) 
-
+* [ナレーターの概要](https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started)

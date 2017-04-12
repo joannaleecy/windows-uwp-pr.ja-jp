@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 23d5f86377dd88877987a9d149377aaee8a4ac48
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 124c0eb2d8640559c2573c532c8dc6089f75d0e7
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="designing-inclusive-software-for-windows-10"></a>Windows 10 用の包括性を備えたソフトウェアの設計  
 
 Windows 10 用のユニバーサル Windows プラットフォーム (UWP) アプリでの包括性を備えた設計の進化について説明します。  アクセシビリティを考慮して、包括性を備えたソフトウェアを設計、構築します。
@@ -112,4 +109,3 @@ Windows に組み込まれているアクセシビリティ機能の 1 つに、
 * [Microsoft アクセシビリティ開発者ハブ](https://developer.microsoft.com/windows/accessible-apps)
 * [包括性を備えた Windows アプリの開発](developing-inclusive-windows-apps.md) 
 * [アクセシビリティ](accessibility.md)
-

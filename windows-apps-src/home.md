@@ -3,14 +3,11 @@ Description: "電話、タブレット、PC など、Windows 10 ベースのデ�
 title: "Windows 10 アプリに関するハウツー ガイド - Windows アプリの開発"
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
 redirect_url: https://developer.microsoft.com/windows/develop
-translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
 ms.openlocfilehash: 5b07b46627ca19f2a3cc02e72212a9870d778c7c
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-
-# Windows 10 アプリに関するハウツー ガイド
+# <a name="how-to-guides-for-windows-10-apps"></a>Windows 10 アプリに関するハウツー ガイド
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
@@ -45,9 +42,3 @@ ms.openlocfilehash: 5b07b46627ca19f2a3cc02e72212a9870d778c7c
 | [スレッド化と非同期プログラミング](threading-async/index.md) | 非同期プログラミングを使って、時間のかかる可能性がある操作を実行しているときでもアプリが実行を続けて UI に応答できるようにすることで、アプリの応答性を保つことができます。 |
 | [Windows ランタイム コンポーネント](winrt-components/index.md) | 任意の言語 (C#、Visual Basic、JavaScript、C++ など) から初期化および使用できる自己完結型オブジェクトについて説明します。 たとえば、サード パーティのライブラリを使う Windows ランタイム コンポーネントを C++ で作成して計算の負荷が高い操作を実行したり、ユニバーサル Windows アプリで単に Visual Basic または C# コードなどを再利用できます。 
 | [XAML プラットフォーム](xaml-platform/index.md) | XAML プログラミング言語の基本的な概念を説明します。 または、XAML に既に慣れている場合は、XAML で Visual Studio を使って Windows ランタイム機能を実装し、優れたユニバーサル Windows アプリを作成する方法に関する説明に進んでもかまいません。 |
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

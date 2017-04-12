@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: ac1a9b38a9857ae536025e682f98d01135850a19
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: e308280fcecf825061ddf503ce91f8607fcece72
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="take-a-test-javascript-api"></a>テスト JavaScript API
 
 [テスト](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)は、重大な影響をもたらすテストに対応した、厳正なオンライン評価を提供するブラウザー ベースのアプリです。 テスト アプリは、重要な全米共通学力テストに対する SBAC ブラウザー API 標準をサポートするので、Windows をロックダウンする方法ではなくコンテンツの評価に集中することができます。
@@ -320,4 +317,3 @@ Windows 10 Version 1607
 
 **要件**  
 Windows 10 Version 1607
-

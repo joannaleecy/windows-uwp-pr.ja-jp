@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4e8c90996324e7481a7a4dab5a1ff3f30b139276
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8d700c707a3a3cdebe338ac51c8ebb5b37d94da3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-to-app-communication"></a>アプリ間通信
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -41,4 +38,3 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="see-also"></a>関連項目
 - [UWP アプリの開発](https://developer.microsoft.com/windows/develop)
-

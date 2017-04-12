@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: bf56b564b383ee90e276416bf1dda29f55bb771c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a5a0a20ffa8ca27c123d139f25f636587db07aba
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="accessibility-testing"></a>アクセシビリティ テスト  
 
 ユニバーサル Windows プラットフォーム (UWP) アプリをアクセシビリティ対応にするためのテスト手順です。
@@ -149,4 +146,3 @@ Windows 10 バージョン 1607 以降では、ナレーターで新しい開発
 * [避ける事項](practices-to-avoid.md)
 * [UI オートメーション](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
 * [Windows のアクセシビリティ](http://go.microsoft.com/fwlink/p/?LinkId=320802) 
-

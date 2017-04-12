@@ -11,15 +11,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e995023cd8a4216c60d5691f9f87be3aff9d8498
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 493e491bd16b7346046394d66587788caf06db4f
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
-
 # <a name="guidelines-for-app-settings"></a>アプリ設定のガイドライン
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 アプリ設定は、アプリの中でユーザーによるカスタマイズが可能な部分です。この設定は、アプリ設定のページに含まれています。 たとえば、ニュース リーダー アプリのアプリ設定では、表示するニュース ソースや画面に表示する記事の数を指定できる場合があります。また、天気予報アプリのアプリ設定では、温度の既定の計測単位として摂氏または華氏を選ぶことができます。 この記事では、アプリ設定を作成し表示する際のベスト プラクティスについて説明します。
 
@@ -142,7 +140,7 @@ ms.lasthandoff: 02/07/2017
 -   コントロールや Web コンテンツの読み込みに時間がかかる場合は、進行状況不定コントロールを使ってユーザーに読み込み中であることを示します。 詳しくは、「[プログレス コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465469)」をご覧ください。
 -   移動や変更をコミットするためのボタンは使いません。 別のページに移動するにはハイパーリンクを使います。また、ボタンを使って変更をコミットする代わりに、ユーザーが設定ポップアップを閉じたときにアプリ設定の変更を自動的に保存します。
 
-\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows�10 に固有の情報が含まれています。 Windows�8.1 のガイダンスについては、[Windows�8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+
 
 ## <a name="related-articles"></a>関連記事
 
@@ -150,4 +148,3 @@ ms.lasthandoff: 02/07/2017
 * [プログレス コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465469)
 * [アプリ データの保存と取得](https://msdn.microsoft.com/library/windows/apps/mt299098)
 * [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288)
-

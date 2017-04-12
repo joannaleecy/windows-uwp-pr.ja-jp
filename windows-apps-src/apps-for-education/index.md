@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: abeadc4fe27858afcdddfeff08362fff69ce713b
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 1750a75657affc0d7557afe393084f88630a7366
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="develop-universal-windows-apps-for-education"></a>教育用のユニバーサル Windows アプリの開発
 ![テスト アプリのスクリーンショット](images/take-a-test-screen-small.png)
 
@@ -45,4 +42,3 @@ Windows Ink プラットフォームの利用によって、学生が慣れ親�
 
 ## <a name="related-topics"></a>関連トピック
 - Windows IT センターの「[Windows 10 for Education](https://technet.microsoft.com/edu/windows/index)」
-

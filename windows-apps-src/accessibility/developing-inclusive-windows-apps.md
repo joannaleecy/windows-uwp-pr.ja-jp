@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 47c28e0629150ccbdf532afc645fe973c3dc8804
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5e4668a185e003150cf9d72aeb5c55c2e092d549
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="developing-inclusive-windows-apps"></a>包括性を備えた Windows アプリの開発  
 
 この記事では、アクセシビリティに対応したユニバーサル Windows プラットフォーム (UWP) アプリを開発する方法について説明します。 特に、この記事では、アプリの論理的な階層を設計する方法を理解していることが前提となっています。 キーボード ナビゲーション、色とコントラストの設定、サポート支援技術を備えたアクセシビリティ対応 Windows 10 UWP アプリの開発について説明します。
@@ -90,4 +87,3 @@ UWP アプリでは、システム カラーを上書きしない限り、既定
 * [アクセシビリティ ソフトウェアのエンジニアリング](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft アクセシビリティ開発者ハブ](https://msdn.microsoft.com/enable)
 * [アクセシビリティ](accessibility.md)
-

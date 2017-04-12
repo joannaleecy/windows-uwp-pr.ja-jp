@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1d3a2ce095b4250f5bdc1fdac8b1646184bc3e1e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c6b9a1d8cec20b75aeb90775471461e7811fecb4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="accessibility-in-the-store"></a>ストア内のアクセシビリティ  
 
 
@@ -51,4 +48,3 @@ Windows ストアで認定を受けるためにアプリを提出している間
 <span id="related_topics"/>
 ## <a name="related-topics"></a>関連トピック    
 * [アクセシビリティ](accessibility.md) 
-

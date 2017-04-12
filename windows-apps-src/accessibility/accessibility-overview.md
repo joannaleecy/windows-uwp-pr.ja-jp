@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a03953885179cf8e969e3b35a426aa958c528f54
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f0fd2e03c58ac5ffa575cf2381df4c652422efea
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="accessibility-overview"></a>アクセシビリティの概要  
 
 
@@ -179,10 +176,9 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 ## <a name="assistive-technology-support-in-apps-that-support-xaml--microsoft-directx-interop"></a>XAML/Microsoft DirectX の相互運用機能をサポートするアプリでの支援技術のサポート  
 ([**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/Dn252834) または [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/Hh702041) を使って) XAML UI にホストされる Microsoft DirectX コンテンツには、既定ではアクセスできません。 ホストされた DirectX コンテンツの UI オートメーション ピアを作成する方法は、[XAML SwapChainPanel DirectX 相互運用性のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=309155) で確認できます。 この手法を利用すると、ホストされたコンテンツに UI オートメーションを通じてアクセスできるようになります。
 
-<span id="related_topics"/>
 ## <a name="related-topics"></a>関連トピック  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
 * [アクセシビリティのための設計](https://msdn.microsoft.com/library/windows/apps/Hh700407)
 * [XAML アクセシビリティ サンプル](http://go.microsoft.com/fwlink/p/?linkid=238570)
 * [アクセシビリティ](accessibility.md)
-
+* [ナレーターの概要](https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started)

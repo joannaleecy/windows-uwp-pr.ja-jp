@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 123776d100b0308248e6d715d8253b69f700f1d8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: fd873b6d1abd4187f1b8ff1d9040da3242c0ee65
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="expose-basic-accessibility-information"></a>基本的なアクセシビリティ情報の開示  
 
 
@@ -150,4 +147,3 @@ Windows では、*データ バインディング*という機能によって、
 * [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770)
 * [XAML アクセシビリティ サンプル](http://go.microsoft.com/fwlink/p/?linkid=238570)
 * [アクセシビリティ テスト](accessibility-testing.md)
-

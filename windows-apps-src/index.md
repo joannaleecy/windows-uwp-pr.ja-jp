@@ -3,15 +3,12 @@ Description: "電話、タブレット、PC など、Windows 10 ベースのデ�
 title: "Windows 10 アプリに関するハウツー ガイド - Windows アプリの開発"
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
 author: martinekuan
-redirect_url: https://developer.microsoft.com/en-us/windows/develop
-translationtype: Human Translation
-ms.sourcegitcommit: 753a917c0ecbf445560203dbc1406acae52e5265
-ms.openlocfilehash: 2b4bae1606f9b51e2d4901218ebd2d616e4c5edc
-
+redirect_url: https://developer.microsoft.com/en-us/windows/apps
+ms.openlocfilehash: 84a4aebb5c41e713c0038cd203b320ff607fa25a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-
-# Windows 10 の UWP アプリに関するハウツー ガイド
+# <a name="how-to-guides-for-uwp-apps-on-windows-10"></a>Windows 10 の UWP アプリに関するハウツー ガイド
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
@@ -22,10 +19,4 @@ ms.openlocfilehash: 2b4bae1606f9b51e2d4901218ebd2d616e4c5edc
 -   [初めてのユニバーサル Windows プラットフォーム アプリの作成](get-started/create-a-hello-world-app-xaml-universal.md)
 -   [ユニバーサル Windows プラットフォーム (UWP) アプリのガイド](get-started/universal-application-platform-guide.md)
 -   [ユニバーサル Windows プラットフォーム アプリとは](get-started/whats-a-uwp.md)
-
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

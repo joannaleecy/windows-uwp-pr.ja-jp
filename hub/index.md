@@ -1,6 +1,6 @@
 ---
 layout: HubPage
-hide_bc: true
+hide_bc: True
 title: "Windows に関するドキュメント"
 description: "Windows ソリューションの構築とメンテナンスに役立つ、開発者、ハードウェア、および IT 技術者向けのドキュメントを検索します。"
 ms.assetid: 56bbc230-b855-426e-b849-4f65a747b944
@@ -8,11 +8,9 @@ ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: hub-page
 ms.prod: windows
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: cb15f417c4254776af4548a5b962392431c9a75b
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: b04722c101d6647eca8d97ebb33ded7fb3ba8c3a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 <div id="main" class="v2">
   <div class="container">
@@ -108,6 +106,9 @@ ms.lasthandoff: 02/08/2017
                                             <p>
                                                 <a href="https://msdn.microsoft.com/windows/uwp/monetize/index">収益化</a>
                                             </p>
+                                            <p>
+                                                <a href="https://docs.microsoft.com/en-us/uwp/api/">API リファレンス</a>
+                                            <p>
                                         </div>
                                     </div>
                                 </div>
@@ -213,18 +214,18 @@ ms.lasthandoff: 02/08/2017
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>Holographic</h3>
+                                            <h3>複合現実</h3>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/getting_started">開始</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/academy">アカデミー</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/academy">アカデミー</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/development">開発</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/documentation">ドキュメント</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/design">設計</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/community">コミュニティ</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/community">コミュニティとサポート</a>
                                             </p>
                                         </div>
                                     </div>
@@ -515,7 +516,7 @@ ms.lasthandoff: 02/08/2017
                             </a>
                         </li> 
                         <li>
-                            <a href="https://technet.microsoft.com/en-us/library/mt267544.aspx">
+                            <a href="https://technet.microsoft.com/library/mt267544.aspx">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -539,4 +540,3 @@ ms.lasthandoff: 02/08/2017
         </li>
     </ul>
 </div>
-
