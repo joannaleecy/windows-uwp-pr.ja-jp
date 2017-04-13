@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\controls-and-patterns\toggles.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/2c456f6d826709028d63e574ea0c31aa13d6ad3c?path=windows-apps-src%2Fcontrols-and-patterns%2Ftoggles.md&_a=contents) | HandedOffSuccess | [Details](#15522fa25ad863577abc93c7b8080db77104f10f2325)
+ [windows-apps-src\devices-sensors\barcode-scanner.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/1e0de453d23d1f5a2acf0f154a9f6240d976df4b?path=windows-apps-src%2Fdevices-sensors%2Fbarcode-scanner.md&_a=contents) | HandedOffSuccess | [Details](#d52a19c1bd94e9372e2ba5bf88a1f174236910692471)
 
 ## Item Details
-##### <a name='15522fa25ad863577abc93c7b8080db77104f10f2325'></a> Source: [windows-apps-src\controls-and-patterns\toggles.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/2c456f6d826709028d63e574ea0c31aa13d6ad3c?path=windows-apps-src%2Fcontrols-and-patterns%2Ftoggles.md&_a=contents)
+##### <a name='d52a19c1bd94e9372e2ba5bf88a1f174236910692471'></a> Source: [windows-apps-src\devices-sensors\barcode-scanner.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/1e0de453d23d1f5a2acf0f154a9f6240d976df4b?path=windows-apps-src%2Fdevices-sensors%2Fbarcode-scanner.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [toggles.b18f65a6d80dea8ca39438aceceb710c40a6bbe6.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/5a50fc0e7dca1b993547121a48640c391b7f6fa3?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Ftoggles.b18f65a6d80dea8ca39438aceceb710c40a6bbe6.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-04-12 23:05:57
+* Handoff File: [barcode-scanner.455e85e8e1e7205f3b034de314a5b6d4bb94cb62.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/f08ac72227199b092a2b0845c2a6b6bb4eb0579c?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fbarcode-scanner.455e85e8e1e7205f3b034de314a5b6d4bb94cb62.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-04-13 23:04:44
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,11 +21,6 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\controls-and-patterns\toggles.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fcontrols-and-patterns%2Ftoggles.md&_a=contents)
-* Current Handback File: [toggles.b18f65a6d80dea8ca39438aceceb710c40a6bbe6.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Ftoggles.b18f65a6d80dea8ca39438aceceb710c40a6bbe6.ja-jp.xlf&_a=contents)
-* Current Handback Datetime: 2017-03-01 13:53:49
-* Bilingual File: [toggles.b18f65a6d80dea8ca39438aceceb710c40a6bbe6.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Ftoggles.b18f65a6d80dea8ca39438aceceb710c40a6bbe6.ja-jp.xlf&_a=contents)
-* Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 
 
