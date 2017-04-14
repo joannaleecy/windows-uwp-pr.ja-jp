@@ -2012,6 +2012,9 @@
   "ce7d17ccbbddee198a9495a7a187fecdd2d096e8": [
     "windows-apps-src\\files\\access-the-sd-card.md"
   ],
+  "6424e1cf30d08469de0a1381aab2163813751ea9": [
+    "windows-apps-src\\files\\file-access-permissions.md"
+  ],
   "0cd8b5dc8870deb0f98d185519017ece27fc236c": [
     "windows-apps-src\\files\\file-access-permissions.md"
   ],
@@ -2020,6 +2023,9 @@
   ],
   "ddf6468bd44c7f59d6c262afe511c32985a0e977": [
     "windows-apps-src\\files\\file-access-permissions.md"
+  ],
+  "75a8f5d62411d4e94db5bedf537144c702623deb": [
+    "windows-apps-src\\files\\how-to-track-recently-used-files-and-folders.md"
   ],
   "cdef86477570b33e9cd0c7adaaceb8fea12e3d40": [
     "windows-apps-src\\files\\how-to-track-recently-used-files-and-folders.md"
@@ -2045,6 +2051,9 @@
   "2d9b1ec4e39e5c8a100030184ee9287a0d97ea24": [
     "windows-apps-src\\files\\protect-your-enterprise-data-with-edp.md"
   ],
+  "ecf20f6b8cc198ca8d23d6506f0756a74a8f6d55": [
+    "windows-apps-src\\files\\quickstart-accessing-homegroup-content.md"
+  ],
   "e67a373b5e36d6e1a8a5e738f8c0964c5df8489b": [
     "windows-apps-src\\files\\quickstart-accessing-homegroup-content.md"
   ],
@@ -2053,6 +2062,9 @@
   ],
   "42711f1c88520dcc88f697d5b9f1e83b153df904": [
     "windows-apps-src\\files\\quickstart-accessing-homegroup-content.md"
+  ],
+  "142f8567d5102a552f08c9c7f004f9986a7ea150": [
+    "windows-apps-src\\files\\quickstart-determining-availability-of-microsoft-onedrive-files.md"
   ],
   "5c4a4d27e53229524414dd566386251f74577701": [
     "windows-apps-src\\files\\quickstart-determining-availability-of-microsoft-onedrive-files.md"
@@ -2072,6 +2084,9 @@
   "18327fd1677e3a172c709f63ff5867889e3aa142": [
     "windows-apps-src\\files\\quickstart-getting-file-properties.md"
   ],
+  "8c78ba1077d324b507fbb9bfb3b97e9ebc8c2d19": [
+    "windows-apps-src\\files\\quickstart-listing-files-and-folders.md"
+  ],
   "7da7002a95c107e64278e8bc67064542ed183d8b": [
     "windows-apps-src\\files\\quickstart-listing-files-and-folders.md"
   ],
@@ -2080,6 +2095,9 @@
   ],
   "fe0106fb360fcd7feec2077d5eebb8ab12b58f7e": [
     "windows-apps-src\\files\\quickstart-listing-files-and-folders.md"
+  ],
+  "1a5c9e842adf39c68feb4bc7ebb6d671e60b814b": [
+    "windows-apps-src\\files\\quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md"
   ],
   "9c5c63cb7c0f9dda33c66283806bfd2624ca0b3c": [
     "windows-apps-src\\files\\quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md"
@@ -2090,6 +2108,9 @@
   "867b045df23385f5f130727b93ee537c0e2b206d": [
     "windows-apps-src\\files\\quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md"
   ],
+  "c7bcaa50fe9cad132d0f3e32e27473c275f37fc1": [
+    "windows-apps-src\\files\\quickstart-reading-and-writing-files.md"
+  ],
   "6b69a2e69948e1d774abe78ba0958aa48ba4d318": [
     "windows-apps-src\\files\\quickstart-reading-and-writing-files.md"
   ],
@@ -2099,6 +2120,9 @@
   "62dd557f50391efe86854df8546a23d300c0f032": [
     "windows-apps-src\\files\\quickstart-reading-and-writing-files.md"
   ],
+  "445543d84298492dd97f35324c8fc2b403727252": [
+    "windows-apps-src\\files\\quickstart-save-a-file-with-a-picker.md"
+  ],
   "ff685c37d1759d6f15542ed0716f6d4b6feef56f": [
     "windows-apps-src\\files\\quickstart-save-a-file-with-a-picker.md"
   ],
@@ -2107,6 +2131,9 @@
   ],
   "ad89baa86f505d0ba25eeb426dcf1c1dc42ea651": [
     "windows-apps-src\\files\\quickstart-save-a-file-with-a-picker.md"
+  ],
+  "be1785b373d91623a896f61fad502b94ba0a9b3f": [
+    "windows-apps-src\\files\\quickstart-using-file-and-folder-pickers.md"
   ],
   "a0fc2e06dc4444a6c62b0e9a16cf6b970ab5caef": [
     "windows-apps-src\\files\\quickstart-using-file-and-folder-pickers.md"
@@ -3556,6 +3583,9 @@
   "a229b50185179071182e4ba647e05cca956e9967": [
     "windows-apps-src\\launch-resume\\create-and-register-a-background-task.md"
   ],
+  "67175a54e37ec3fae2e2ad469f39c1ebe925f11e": [
+    "windows-apps-src\\launch-resume\\debug-a-background-task.md"
+  ],
   "46b60f180642e509eca76a68d78b1099008746eb": [
     "windows-apps-src\\launch-resume\\debug-a-background-task.md"
   ],
@@ -3777,6 +3807,9 @@
   ],
   "74185ef9b53468dd345c08441d2d00c48aec7a22": [
     "windows-apps-src\\launch-resume\\resume-an-app.md"
+  ],
+  "39900824a9f873ba1af1c0b8d37c7df77d2158e8": [
+    "windows-apps-src\\launch-resume\\run-a-background-task-on-a-timer-.md"
   ],
   "2e28b2b71cc9cfbbf1db67ef1e201ff3328d13ab": [
     "windows-apps-src\\launch-resume\\run-a-background-task-on-a-timer-.md"
@@ -4927,6 +4960,9 @@
   "f8bcda0cd2e31026f90f3a84a15674c00691f01d": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
   ],
+  "996aaa6a0307ae9a6968b3f754047f38374c7d19": [
+    "windows-apps-src\\porting\\desktop-to-uwp-root.md"
+  ],
   "5e25b38110885c6f71d6002a0bb54da25b59156e": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
@@ -4950,6 +4986,9 @@
   ],
   "24682c6468915fc5e66b43a5fda9aa8a12efdba5": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
+  ],
+  "a27da4745255a0517d1a99cbdb65a852be9ef74c": [
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
   "8489cbd78618085999754ffe432cf68fedabcd91": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
@@ -5554,6 +5593,9 @@
   "50a7400861122c20a85d828c7712190493c50256": [
     "windows-apps-src\\publish\\create-your-app-by-reserving-a-name.md"
   ],
+  "7f979503407a72b1a8ac764bdd600049a48547da": [
+    "windows-apps-src\\publish\\define-pricing-and-market-selection.md"
+  ],
   "116747d88880362b05b97fde8b3087d08572e3b1": [
     "windows-apps-src\\publish\\define-pricing-and-market-selection.md"
   ],
@@ -5562,6 +5604,9 @@
   ],
   "acf14f886f36d74941769954041325514a386e86": [
     "windows-apps-src\\publish\\define-pricing-and-market-selection.md"
+  ],
+  "b1ec095e3495ccb8715d59d2cf0546454d41c264": [
+    "windows-apps-src\\publish\\dev-center-insider-program.md"
   ],
   "dd547cd0abe208cfc1b38eb01fa64c5e8f5e0f1b": [
     "windows-apps-src\\publish\\dev-center-insider-program.md"
@@ -5583,6 +5628,9 @@
   ],
   "9076c8ecc81f9dfd691e6b425f7dedca88c5b570": [
     "windows-apps-src\\publish\\dev-center-insider-program.md"
+  ],
+  "62e0be03b1d6a8f0b46ac5424609ee8ccdb8b305": [
+    "windows-apps-src\\publish\\distribute-lob-apps-to-enterprises.md"
   ],
   "e29809f34facafc442b9b26580b91e17ed0a364e": [
     "windows-apps-src\\publish\\distribute-lob-apps-to-enterprises.md"
@@ -5737,6 +5785,9 @@
   "6d2e79c2ac373fd6722856a5c3a2c45d7369b787": [
     "windows-apps-src\\publish\\make-your-app-easier-to-promote.md"
   ],
+  "b0f0c20fdc159bc2f2012ec0a8ec3d732ef89593": [
+    "windows-apps-src\\publish\\manage-account-users.md"
+  ],
   "7eaddcfc2d02805e60043132328ef482872a9000": [
     "windows-apps-src\\publish\\manage-account-users.md"
   ],
@@ -5833,6 +5884,9 @@
   "43c871fc350cc3e639169ba59daaab90ad802e4f": [
     "windows-apps-src\\publish\\opening-a-developer-account.md"
   ],
+  "58b94dc229947eb924db19471e361178d046c0d9": [
+    "windows-apps-src\\publish\\organizational-licensing.md"
+  ],
   "3e942e649ce2c2e486f0326f10378124dd159c4c": [
     "windows-apps-src\\publish\\organizational-licensing.md"
   ],
@@ -5841,6 +5895,9 @@
   ],
   "8092e2b1c99d7eaef70ce5dc56f9e9ada5cac43e": [
     "windows-apps-src\\publish\\organizational-licensing.md"
+  ],
+  "e24d2348767a4e503cc5840ed6503b6f4eae2b42": [
+    "windows-apps-src\\publish\\package-flights.md"
   ],
   "bed8846bf2df3bfce12a4a93a87146ae1adc29f6": [
     "windows-apps-src\\publish\\package-flights.md"
@@ -5859,6 +5916,9 @@
   ],
   "42ab1f0d9e7ca6b15bc78b1316047aef68547d63": [
     "windows-apps-src\\publish\\package-version-numbering.md"
+  ],
+  "8eafcda683242e6edf878829ee3cb8673575d57d": [
+    "windows-apps-src\\publish\\payout-summary.md"
   ],
   "ad2b7fa5f18c2289e409caba83e55d6ffc538c1f": [
     "windows-apps-src\\publish\\payout-summary.md"
@@ -6007,6 +6067,9 @@
   "dfcae306d0589dcedec4f19cb3b1306d900cbea1": [
     "windows-apps-src\\publish\\supported-languages.md"
   ],
+  "7c375f259a7daec461a8c4f10a5d7fabde559585": [
+    "windows-apps-src\\publish\\tax-details-for-paid-apps.md"
+  ],
   "d8a8269eb64151cc8927ded434174e307c46185e": [
     "windows-apps-src\\publish\\tax-details-for-paid-apps.md"
   ],
@@ -6027,6 +6090,9 @@
   ],
   "86e1f19280d113c8419497c5b740f319ded7f50d": [
     "windows-apps-src\\publish\\tax-details-for-paid-apps.md"
+  ],
+  "35b1c9718948805790e1eaf228f96886eadaa6da": [
+    "windows-apps-src\\publish\\the-app-certification-process.md"
   ],
   "bc151b8897a3e16b51b4123926600858f71bd583": [
     "windows-apps-src\\publish\\the-app-certification-process.md"
@@ -7264,6 +7330,9 @@
   "b12124afbb80b62c65696e773690246084a5a6a7": [
     "windows-apps-src\\xbox-apps\\system-resource-allocation.md"
   ],
+  "99e65b93757ac5675c46fa053b1d47b90232c58f": [
+    "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md"
+  ],
   "8782a42a522fbc450fded8e73f8a25ec25124bde": [
     "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md"
   ],
@@ -7753,6 +7822,9 @@
   "b265fb5c6d01f083fac16c36f4d1c12e023a62b6": [
     "windows-apps-src\\publish\\microsoft-advertising-payment-process.md"
   ],
+  "aa5236287e1a2c01e4d4d00ece6a00c7c8a7ecee": [
+    "windows-apps-src\\porting\\desktop-to-uwp-extensions.md"
+  ],
   "4ba1471c6517e2853998b5f9d32060416fbec1bc": [
     "windows-apps-src\\porting\\desktop-to-uwp-extensions.md"
   ],
@@ -8049,6 +8121,9 @@
   ],
   "ee7add261787dbe43b6144a39f9728480b020ec4": [
     "windows-apps-src\\apps-for-education\\index.md"
+  ],
+  "c23b9e48b38a39b7e77622e96396894bef34c85d": [
+    "windows-apps-src\\apps-for-education\\take-a-test-api.md"
   ],
   "34eb550a8558eea8f24a47faf4e62ec2729d574c": [
     "windows-apps-src\\apps-for-education\\take-a-test-api.md"
@@ -9286,6 +9361,9 @@
   "cf81c0e6194db6fa3fc7a3702aab6b6227adf1ff": [
     "windows-apps-src\\publish\\create-platform-specific-store-listings.md"
   ],
+  "5c4c65a3730d4a7e52a2566c3311832072e45194": [
+    "windows-apps-src\\publish\\gradual-package-rollout.md"
+  ],
   "a58d68f868687893340c8077ecc9624c321243d1": [
     "windows-apps-src\\publish\\gradual-package-rollout.md"
   ],
@@ -9309,6 +9387,9 @@
   ],
   "462102cf2bc053f2ec434ec3974ff0bbb525a850": [
     "windows-apps-src\\publish\\respond-to-customer-feedback.md"
+  ],
+  "f5c9164982e72e721b6f8875c8b70880845138ba": [
+    "windows-apps-src\\publish\\payment-thresholds-methods-and-timeframes.md"
   ],
   "2d2f586a1125f12c1034e002e2245e0fe155c1b4": [
     "windows-apps-src\\publish\\payment-thresholds-methods-and-timeframes.md"
@@ -10960,6 +11041,9 @@
   "54dcebb0dc4b1a41acdae655b9caf14f72161f36": [
     "windows-apps-src\\packaging\\auto-build-package-uwp-apps.md"
   ],
+  "c4a8bb87a82475fd3a02781f99083a69a8c1cb53": [
+    "windows-apps-src\\porting\\desktop-to-uwp-behind-the-scenes.md"
+  ],
   "ac9772afb1e7c0dd028a291296e35207f0128733": [
     "windows-apps-src\\porting\\desktop-to-uwp-behind-the-scenes.md"
   ],
@@ -10981,6 +11065,9 @@
   "1fef2d6a6493c31f81dcb61606e7d30efa79dc8b": [
     "windows-apps-src\\porting\\desktop-to-uwp-behind-the-scenes.md"
   ],
+  "3ff0ddc3b72592a8f1193e283628f9b13432abe0": [
+    "windows-apps-src\\porting\\desktop-to-uwp-debug.md"
+  ],
   "0ad37d27796707a16368acf80111c06a92ff03ac": [
     "windows-apps-src\\porting\\desktop-to-uwp-debug.md"
   ],
@@ -11001,6 +11088,9 @@
   ],
   "8b12b6616cd6b940f89aa4ce40be8feb94231f44": [
     "windows-apps-src\\porting\\desktop-to-uwp-debug.md"
+  ],
+  "b209b5c2d47d69b6508a876fd01a2c5cdff9d18c": [
+    "windows-apps-src\\porting\\desktop-to-uwp-distribute.md"
   ],
   "63f2d1565e31933a8556fdbbb5e8b04d8d1dd77e": [
     "windows-apps-src\\porting\\desktop-to-uwp-distribute.md"
@@ -11040,6 +11130,9 @@
   ],
   "bd378fa8c4c159a1d22b899385dc27286de5984e": [
     "windows-apps-src\\porting\\desktop-to-uwp-known-issues.md"
+  ],
+  "018aeab2187ef6e4224a20575e60b1894e43c849": [
+    "windows-apps-src\\porting\\desktop-to-uwp-prepare.md"
   ],
   "30b3816705a3913393bd75fa02d1f3e188b47af4": [
     "windows-apps-src\\porting\\desktop-to-uwp-prepare.md"
@@ -11124,6 +11217,9 @@
   ],
   "4eaf3a3c69e5229423bf9f91ab5575b8ac8fc02c": [
     "windows-apps-src\\publish\\set-custom-permissions-for-account-users.md"
+  ],
+  "48eab7dd121b398077f5981184407b67dba3f2e6": [
+    "windows-apps-src\\debug-test-perf\\optimize-background-activity.md"
   ],
   "045dfeb4696a4854b114d88da2a2cbb75d621a58": [
     "windows-apps-src\\debug-test-perf\\optimize-background-activity.md"
@@ -11331,6 +11427,9 @@
   ],
   "585dfdb3793467defd9325766a85e334589e27f4": [
     "windows-apps-src\\packaging\\sign-app-package-using-signtool.md"
+  ],
+  "1de264b19db3e7434ac57068ee4e75e03700bf09": [
+    "windows-apps-src\\porting\\desktop-to-uwp-packaging-dot-net.md"
   ],
   "cefe9c9aa91f46e4ae9f1a03864372ced2eb61c4": [
     "windows-apps-src\\porting\\desktop-to-uwp-packaging-dot-net.md"
@@ -11674,11 +11773,17 @@
   "51d3b90dd7f202fd86285bb3f95c78ded4a8b6d8": [
     "windows-apps-src\\devices-sensors\\deploy-scanner-profiles-with-mdm.md"
   ],
+  "1c9b2552a4733245bd657cc7ce287a2a47262749": [
+    "windows-apps-src\\monetize\\change-the-billing-state-of-a-subscription-for-a-user.md"
+  ],
   "21cc44e1f8537e5352323e72774dce6559e9de79": [
     "windows-apps-src\\monetize\\change-the-billing-state-of-a-subscription-for-a-user.md"
   ],
   "527b35d6d83dc54f68838c67c33cfc266edf5275": [
     "windows-apps-src\\monetize\\change-the-billing-state-of-a-subscription-for-a-user.md"
+  ],
+  "8970e1f4436ccc45587897845e42e0465d0ccc6c": [
+    "windows-apps-src\\monetize\\get-subscriptions-for-a-user.md"
   ],
   "2bdadfdef25aeba46c1841fd99ba411a7c91b9f2": [
     "windows-apps-src\\monetize\\get-subscriptions-for-a-user.md"
