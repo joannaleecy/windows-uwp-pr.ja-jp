@@ -38739,6 +38739,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\b1ec095e3495ccb8715d59d2cf0546454d41c264.cdb58ffc79ba5fe4fb29822b27ffbb8d763e51a1.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\devices-sensors\\gatt-server.md.3c7ce4c9217f99db885284b5a51f2abab2534054.HT": {
+      "SourceFilename": "windows-apps-src\\devices-sensors\\gatt-server.md",
+      "XliffHash": "3c7ce4c9217f99db885284b5a51f2abab2534054",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\bca8a729acf25e7805852ad55bef73ec39885f50.a48cdba25d6189791a420c46f277e922ca0545f7.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

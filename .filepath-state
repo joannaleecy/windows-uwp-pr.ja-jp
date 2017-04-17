@@ -11902,6 +11902,9 @@
   "68cd1224440d6a3f8a4f93f4aaad84315bc421ff": [
     "windows-apps-src\\devices-sensors\\gatt-client.md"
   ],
+  "bca8a729acf25e7805852ad55bef73ec39885f50": [
+    "windows-apps-src\\devices-sensors\\gatt-server.md"
+  ],
   "b2fdf63b66c21c77bc6012063968fe6517bdfb53": [
     "windows-apps-src\\devices-sensors\\gatt-server.md"
   ],
