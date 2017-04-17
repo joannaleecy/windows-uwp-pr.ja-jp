@@ -38749,6 +38749,66 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\bca8a729acf25e7805852ad55bef73ec39885f50.a48cdba25d6189791a420c46f277e922ca0545f7.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\managing-focus-navigation.md.eba666c7ae8713185324e0033f2f3840462faf2c.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\managing-focus-navigation.md",
+      "XliffHash": "eba666c7ae8713185324e0033f2f3840462faf2c",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\414b9f4f46fadb24eba5e33d527f0250edc4d310.b530ec3a487ac805228a489afeb83cb7aac0e4c8.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\custom-keyboard-interactions.md.8af8bbd53db55c498d309f33193cfd40d54eb2be.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\custom-keyboard-interactions.md",
+      "XliffHash": "8af8bbd53db55c498d309f33193cfd40d54eb2be",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\31949a65fbb99b41f90b62368bc3a586558c38f1.081cdbfb94ef7dfd66a77c263748286957020859.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\TOC.md.b6eea13438355a3333e165434a7921b3001f6161.HT": {
+      "SourceFilename": "windows-apps-src\\TOC.md",
+      "XliffHash": "b6eea13438355a3333e165434a7921b3001f6161",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\66a363f2ef3ecc0896599567f25aaff8565e96ce.ad1ed9ec0388271aa4c030436ad58604d419553b.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\keyboard-events.md.4230cce3b2abe794ace4241f6b15d9c9b97b9d1c.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\keyboard-events.md",
+      "XliffHash": "4230cce3b2abe794ace4241f6b15d9c9b97b9d1c",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f3f23d9efbceb22a6421144588a3efdd049a59a4.9b552bd32c719f82e8105acb5851eb04e6344b2f.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\keyboard-interactions.md.749250e0e0a31d361123edf1d4d547607df9e397.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\keyboard-interactions.md",
+      "XliffHash": "749250e0e0a31d361123edf1d4d547607df9e397",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\c5062c8d634503c3d4685f6025fa05a9746d32ad.b667a799e127e63bc12759a59d57a212fdc3ea68.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\input-and-devices\\designing-for-tv.md.ae80cb207d0d96ba53d183bde6e7a14c1ac415c3.HT": {
+      "SourceFilename": "windows-apps-src\\input-and-devices\\designing-for-tv.md",
+      "XliffHash": "ae80cb207d0d96ba53d183bde6e7a14c1ac415c3",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a2cbd3e491b300612da1cde10b706540466fb9a8.a6d3560eeb0226705874026217789678edc3b1a3.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }

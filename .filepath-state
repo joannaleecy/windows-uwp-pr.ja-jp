@@ -3160,6 +3160,9 @@
   "c75ee725ce4bc9fc33d9ea13e4ab92ed60bfb04d": [
     "windows-apps-src\\input-and-devices\\define-custom-recognition-constraints.md"
   ],
+  "a2cbd3e491b300612da1cde10b706540466fb9a8": [
+    "windows-apps-src\\input-and-devices\\designing-for-tv.md"
+  ],
   "572073c2c577f3f6833b9cbee303875e378d6030": [
     "windows-apps-src\\input-and-devices\\designing-for-tv.md"
   ],
@@ -3312,6 +3315,9 @@
   ],
   "603e7a581504e9f07f69dd9d300251d3dbb44946": [
     "windows-apps-src\\input-and-devices\\interact-with-a-background-app-in-cortana.md"
+  ],
+  "c5062c8d634503c3d4685f6025fa05a9746d32ad": [
+    "windows-apps-src\\input-and-devices\\keyboard-interactions.md"
   ],
   "0446f105a32e15973fe309946dc4ed0ded08f82c": [
     "windows-apps-src\\input-and-devices\\keyboard-interactions.md"
@@ -6627,6 +6633,9 @@
   ],
   "2a7c5930752c759c3875826d0046603a63981341": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "66a363f2ef3ecc0896599567f25aaff8565e96ce": [
+    "windows-apps-src\\TOC.md"
   ],
   "3ce396eeb248a0384fe6a64d70bcfeb53d3c7f72": [
     "windows-apps-src\\TOC.md"
@@ -11988,5 +11997,14 @@
   ],
   "38161fad09ed8f7e11ef30213eab353e59e83db3": [
     "windows-apps-src\\composition\\lighting.md"
+  ],
+  "31949a65fbb99b41f90b62368bc3a586558c38f1": [
+    "windows-apps-src\\input-and-devices\\custom-keyboard-interactions.md"
+  ],
+  "f3f23d9efbceb22a6421144588a3efdd049a59a4": [
+    "windows-apps-src\\input-and-devices\\keyboard-events.md"
+  ],
+  "414b9f4f46fadb24eba5e33d527f0250edc4d310": [
+    "windows-apps-src\\input-and-devices\\managing-focus-navigation.md"
   ]
 }
