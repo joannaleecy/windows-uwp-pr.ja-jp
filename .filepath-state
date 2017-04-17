@@ -11854,6 +11854,9 @@
   "ef6a4e62b2f33c614ddd34872a4af645dac55ba3": [
     "windows-apps-src\\xaml-platform\\x-load-attribute.md"
   ],
+  "df95442fb1fa07948cceab7ec946f6156b2961c3": [
+    "windows-apps-src\\xbox-apps\\uwp-deployinfo-api.md"
+  ],
   "26ba653068548cb950a9e61d6374531905ac401d": [
     "windows-apps-src\\xbox-apps\\uwp-deployinfo-api.md"
   ],

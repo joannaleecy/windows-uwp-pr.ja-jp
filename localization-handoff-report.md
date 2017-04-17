@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\devices-sensors\gatt-server.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/09bdd013046c12d55e027b96b966b3960e7aafc5?path=windows-apps-src%2Fdevices-sensors%2Fgatt-server.md&_a=contents) | HandedOffSuccess | [Details](#bca8a729acf25e7805852ad55bef73ec39885f502514)
+ [windows-apps-src\xbox-apps\uwp-deployinfo-api.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/5cdc8e73fa882b2cb8a080c74ff9170589a61dee?path=windows-apps-src%2Fxbox-apps%2Fuwp-deployinfo-api.md&_a=contents) | HandedOffSuccess | [Details](#df95442fb1fa07948cceab7ec946f6156b2961c38126)
 
 ## Item Details
-##### <a name='bca8a729acf25e7805852ad55bef73ec39885f502514'></a> Source: [windows-apps-src\devices-sensors\gatt-server.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/09bdd013046c12d55e027b96b966b3960e7aafc5?path=windows-apps-src%2Fdevices-sensors%2Fgatt-server.md&_a=contents)
+##### <a name='df95442fb1fa07948cceab7ec946f6156b2961c38126'></a> Source: [windows-apps-src\xbox-apps\uwp-deployinfo-api.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/5cdc8e73fa882b2cb8a080c74ff9170589a61dee?path=windows-apps-src%2Fxbox-apps%2Fuwp-deployinfo-api.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [gatt-server.a4478ff2446194f96886bd54f7849cdc595af7cb.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/f5839b301bae585816950cb368cde29e53ba93d2?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fgatt-server.a4478ff2446194f96886bd54f7849cdc595af7cb.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-04-17 17:10:05
+* Handoff File: [uwp-deployinfo-api.22c3d07f041bc5c9ccae97b5fff9474ac95ff586.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/f05c24617acbc298eb83bc10b85bd82cea05f2c0?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fuwp-deployinfo-api.22c3d07f041bc5c9ccae97b5fff9474ac95ff586.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-04-17 19:08:16
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
