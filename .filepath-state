@@ -1337,6 +1337,9 @@
   "e0521048c880022cafa59802dbf2cceb33b97841": [
     "windows-apps-src\\debug-test-perf\\beta-testing.md"
   ],
+  "3bb60e053294fd54274b9a856ddd6b276e17bcc5": [
+    "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
+  ],
   "6f399136be121288dcff4b482f9e022fc0323181": [
     "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
   ],

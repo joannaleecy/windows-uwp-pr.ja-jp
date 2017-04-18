@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\devices-sensors\barcode-scanner.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/21dbdbf451d777da6724d81babe8c83d218e2568?path=windows-apps-src%2Fdevices-sensors%2Fbarcode-scanner.md&_a=contents) | HandedOffSuccess | [Details](#fd10d764d92da94686bbfe6ca7ecde215a04d0c22473)
+ [windows-apps-src\debug-test-perf\deploying-and-debugging-uwp-apps.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/f2e23ab45849a6bb3b6c483508e1e34468446091?path=windows-apps-src%2Fdebug-test-perf%2Fdeploying-and-debugging-uwp-apps.md&_a=contents) | HandedOffSuccess | [Details](#3bb60e053294fd54274b9a856ddd6b276e17bcc52356)
 
 ## Item Details
-##### <a name='fd10d764d92da94686bbfe6ca7ecde215a04d0c22473'></a> Source: [windows-apps-src\devices-sensors\barcode-scanner.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/21dbdbf451d777da6724d81babe8c83d218e2568?path=windows-apps-src%2Fdevices-sensors%2Fbarcode-scanner.md&_a=contents)
+##### <a name='3bb60e053294fd54274b9a856ddd6b276e17bcc52356'></a> Source: [windows-apps-src\debug-test-perf\deploying-and-debugging-uwp-apps.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/f2e23ab45849a6bb3b6c483508e1e34468446091?path=windows-apps-src%2Fdebug-test-perf%2Fdeploying-and-debugging-uwp-apps.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [barcode-scanner.455e85e8e1e7205f3b034de314a5b6d4bb94cb62.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/c1b23a8fc344934b4aaa11236faa2acf9413b099?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fbarcode-scanner.455e85e8e1e7205f3b034de314a5b6d4bb94cb62.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-04-18 17:06:30
+* Handoff File: [deploying-and-debugging-uwp-apps.1cca675e4c7c6a2c5c293e18816f2f54cf7491b3.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/85cc879f0f7dffb9b008c9de7fe5c2c35b3cb7a2?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fdeploying-and-debugging-uwp-apps.1cca675e4c7c6a2c5c293e18816f2f54cf7491b3.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-04-18 19:10:47
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,6 +21,11 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
+* Current Target File: [windows-apps-src\debug-test-perf\deploying-and-debugging-uwp-apps.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fdebug-test-perf%2Fdeploying-and-debugging-uwp-apps.md&_a=contents)
+* Current Handback File: [deploying-and-debugging-uwp-apps.1cca675e4c7c6a2c5c293e18816f2f54cf7491b3.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fdeploying-and-debugging-uwp-apps.1cca675e4c7c6a2c5c293e18816f2f54cf7491b3.ja-jp.xlf&_a=contents)
+* Current Handback Datetime: 2017-03-01 13:53:49
+* Bilingual File: [deploying-and-debugging-uwp-apps.1cca675e4c7c6a2c5c293e18816f2f54cf7491b3.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fdeploying-and-debugging-uwp-apps.1cca675e4c7c6a2c5c293e18816f2f54cf7491b3.ja-jp.xlf&_a=contents)
+* Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 
 
