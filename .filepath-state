@@ -11695,6 +11695,9 @@
   "565640b1c5a3742c5471cd2282403be0ef592f69": [
     "windows-apps-src\\gaming\\uwp-programming.md"
   ],
+  "fd10d764d92da94686bbfe6ca7ecde215a04d0c2": [
+    "windows-apps-src\\devices-sensors\\barcode-scanner.md"
+  ],
   "d52a19c1bd94e9372e2ba5bf88a1f17423691069": [
     "windows-apps-src\\devices-sensors\\barcode-scanner.md"
   ],

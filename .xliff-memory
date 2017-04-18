@@ -38809,6 +38809,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\a2cbd3e491b300612da1cde10b706540466fb9a8.a6d3560eeb0226705874026217789678edc3b1a3.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\devices-sensors\\barcode-scanner.md.8cc36c7796a4bc001bcf59bca47ab513d429b3c8.HT": {
+      "SourceFilename": "windows-apps-src\\devices-sensors\\barcode-scanner.md",
+      "XliffHash": "8cc36c7796a4bc001bcf59bca47ab513d429b3c8",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\fd10d764d92da94686bbfe6ca7ecde215a04d0c2.75e9c17d605af9c6c3f5655b4f9dc78d2a245f83.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
