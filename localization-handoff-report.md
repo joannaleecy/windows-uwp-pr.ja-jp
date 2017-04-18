@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\dev-center-insider-program.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/0add464bf006050d138ee12061c4ed366228d542?path=windows-apps-src%2Fpublish%2Fdev-center-insider-program.md&_a=contents) | HandedOffSuccess | [Details](#213599cd9fba02e5523db54e31ff5ec2f1198d6d5020)
+ [windows-apps-src\publish\set-app-pricing-and-availability.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/276d00e55bf39559db2cb4477080984ad5aac2f0?path=windows-apps-src%2Fpublish%2Fset-app-pricing-and-availability.md&_a=contents) | HandedOffSuccess | [Details](#9ab02b9a876f8387c8c524e8c7090e0020adb96b5077)
 
 ## Item Details
-##### <a name='213599cd9fba02e5523db54e31ff5ec2f1198d6d5020'></a> Source: [windows-apps-src\publish\dev-center-insider-program.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/0add464bf006050d138ee12061c4ed366228d542?path=windows-apps-src%2Fpublish%2Fdev-center-insider-program.md&_a=contents)
+##### <a name='9ab02b9a876f8387c8c524e8c7090e0020adb96b5077'></a> Source: [windows-apps-src\publish\set-app-pricing-and-availability.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/276d00e55bf39559db2cb4477080984ad5aac2f0?path=windows-apps-src%2Fpublish%2Fset-app-pricing-and-availability.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/3391ab9fb763139a5d8854751e163f64fb2b8d6a?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fdev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-04-18 21:09:00
+* Handoff File: [set-app-pricing-and-availability.3ec1f87db875e425961116b86bf130e63e81412d.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/890769bfeef8a65f8da1cd59dd10f6e60e238171?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fset-app-pricing-and-availability.3ec1f87db875e425961116b86bf130e63e81412d.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-04-18 23:07:44
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,10 +21,10 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\publish\dev-center-insider-program.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fpublish%2Fdev-center-insider-program.md&_a=contents)
-* Current Handback File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fdev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\publish\set-app-pricing-and-availability.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fpublish%2Fset-app-pricing-and-availability.md&_a=contents)
+* Current Handback File: [set-app-pricing-and-availability.3ec1f87db875e425961116b86bf130e63e81412d.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fset-app-pricing-and-availability.3ec1f87db875e425961116b86bf130e63e81412d.ja-jp.xlf&_a=contents)
 * Current Handback Datetime: 2017-03-01 13:53:49
-* Bilingual File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fdev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ja-jp.xlf&_a=contents)
+* Bilingual File: [set-app-pricing-and-availability.3ec1f87db875e425961116b86bf130e63e81412d.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fset-app-pricing-and-availability.3ec1f87db875e425961116b86bf130e63e81412d.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 
