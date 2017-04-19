@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\set-app-pricing-and-availability.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/276d00e55bf39559db2cb4477080984ad5aac2f0?path=windows-apps-src%2Fpublish%2Fset-app-pricing-and-availability.md&_a=contents) | HandedOffSuccess | [Details](#9ab02b9a876f8387c8c524e8c7090e0020adb96b5077)
+ [windows-apps-src\files\quickstart-reading-and-writing-files.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/80c92e0bc56354132fc04c06d95ce076a5a41612?path=windows-apps-src%2Ffiles%2Fquickstart-reading-and-writing-files.md&_a=contents) | HandedOffSuccess | [Details](#cb87d3e3e1b7d9622838179747aae838b9a5c3932611)
 
 ## Item Details
-##### <a name='9ab02b9a876f8387c8c524e8c7090e0020adb96b5077'></a> Source: [windows-apps-src\publish\set-app-pricing-and-availability.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/276d00e55bf39559db2cb4477080984ad5aac2f0?path=windows-apps-src%2Fpublish%2Fset-app-pricing-and-availability.md&_a=contents)
+##### <a name='cb87d3e3e1b7d9622838179747aae838b9a5c3932611'></a> Source: [windows-apps-src\files\quickstart-reading-and-writing-files.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/80c92e0bc56354132fc04c06d95ce076a5a41612?path=windows-apps-src%2Ffiles%2Fquickstart-reading-and-writing-files.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [set-app-pricing-and-availability.3ec1f87db875e425961116b86bf130e63e81412d.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/890769bfeef8a65f8da1cd59dd10f6e60e238171?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fset-app-pricing-and-availability.3ec1f87db875e425961116b86bf130e63e81412d.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-04-18 23:07:44
+* Handoff File: [quickstart-reading-and-writing-files.8226c9ae94f2d3f8af610f97340af97397b7b584.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/95c5b9fad8087aadfde203410ce071954425a47d?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fquickstart-reading-and-writing-files.8226c9ae94f2d3f8af610f97340af97397b7b584.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-04-19 23:08:34
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,10 +21,10 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\publish\set-app-pricing-and-availability.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Fpublish%2Fset-app-pricing-and-availability.md&_a=contents)
-* Current Handback File: [set-app-pricing-and-availability.3ec1f87db875e425961116b86bf130e63e81412d.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fset-app-pricing-and-availability.3ec1f87db875e425961116b86bf130e63e81412d.ja-jp.xlf&_a=contents)
-* Current Handback Datetime: 2017-03-01 13:53:49
-* Bilingual File: [set-app-pricing-and-availability.3ec1f87db875e425961116b86bf130e63e81412d.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fset-app-pricing-and-availability.3ec1f87db875e425961116b86bf130e63e81412d.ja-jp.xlf&_a=contents)
+* Current Target File: [windows-apps-src\files\quickstart-reading-and-writing-files.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Ffiles%2Fquickstart-reading-and-writing-files.md&_a=contents)
+* Current Handback File: [quickstart-reading-and-writing-files.8226c9ae94f2d3f8af610f97340af97397b7b584.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fquickstart-reading-and-writing-files.8226c9ae94f2d3f8af610f97340af97397b7b584.ja-jp.xlf&_a=contents)
+* Current Handback Datetime: 2017-03-01 13:53:50
+* Bilingual File: [quickstart-reading-and-writing-files.8226c9ae94f2d3f8af610f97340af97397b7b584.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fquickstart-reading-and-writing-files.8226c9ae94f2d3f8af610f97340af97397b7b584.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 

@@ -38849,6 +38849,16 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\9ab02b9a876f8387c8c524e8c7090e0020adb96b.d99a16cb2ec8f4a4552fe985042b09a65bb9dff0.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\files\\quickstart-reading-and-writing-files.md.e903b340c1374bda4172f2848461e0fa76d64bb9.HT": {
+      "SourceFilename": "windows-apps-src\\files\\quickstart-reading-and-writing-files.md",
+      "XliffHash": "e903b340c1374bda4172f2848461e0fa76d64bb9",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\cb87d3e3e1b7d9622838179747aae838b9a5c393.6b22270a312f5488acd8b2462b3533dff428f551.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
