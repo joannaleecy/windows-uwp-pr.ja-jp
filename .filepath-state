@@ -2303,6 +2303,9 @@
   "1fe28d17aa8c943de9a2bcf6c2230237e0c931d0": [
     "windows-apps-src\\gaming\\draw-to-the-screen.md"
   ],
+  "628d1e41702456d496193939aaa053e475bea708": [
+    "windows-apps-src\\gaming\\e2e.md"
+  ],
   "f691c1d8cd08b3d508fb674f8d4eccd9fcef677a": [
     "windows-apps-src\\gaming\\e2e.md"
   ],
@@ -2570,6 +2573,9 @@
   "44d5071ee0cd695351c77630d699a1a060f477d6": [
     "windows-apps-src\\gaming\\tutorial--adding-touch-controls-to-your-directx-game.md"
   ],
+  "8bb37d5a6315c65a213a565e9a6c029c8912497a": [
+    "windows-apps-src\\gaming\\tutorial--assembling-the-rendering-pipeline.md"
+  ],
   "7b97a70094c953e9614a84979c9f98fc91a82451": [
     "windows-apps-src\\gaming\\tutorial--assembling-the-rendering-pipeline.md"
   ],
@@ -2602,6 +2608,9 @@
   ],
   "82a44a3499297b3988815ad10091cd351a194cbd": [
     "windows-apps-src\\gaming\\tutorial--building-the-games-metro-style-app-framework.md"
+  ],
+  "8b5da203075ae21ed4bc935f0e7d7a88e561bc05": [
+    "windows-apps-src\\gaming\\tutorial--create-your-first-metro-style-directx-game.md"
   ],
   "8518a350f0c999d6110305c51f46fe12e5b590f0": [
     "windows-apps-src\\gaming\\tutorial--create-your-first-metro-style-directx-game.md"
@@ -2638,6 +2647,9 @@
   ],
   "66e40c150b5eb4f57c9cddfaf472c56601b3fa0b": [
     "windows-apps-src\\gaming\\tutorial--defining-the-main-game-loop.md"
+  ],
+  "1bb2759f9af85026b2ac75cf0fa29175cd5a2711": [
+    "windows-apps-src\\gaming\\tutorial-resources.md"
   ],
   "2d36c8f8f4e3f51928f1c7707e0cb6f69386645d": [
     "windows-apps-src\\gaming\\tutorial-resources.md"
@@ -11697,6 +11709,9 @@
   ],
   "3bd5f6ced66ba52aef4a0aa0580f348e3faa0a09": [
     "windows-apps-src\\gaming\\directx-samples.md"
+  ],
+  "8225f64cabe4a23d32c3ba29d3df38cf57e5cd19": [
+    "windows-apps-src\\gaming\\game-development-videos.md"
   ],
   "c71b0f31cb505b4324dd02f84af0df168b49461d": [
     "windows-apps-src\\gaming\\game-development-videos.md"

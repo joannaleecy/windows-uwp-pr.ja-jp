@@ -38869,6 +38869,56 @@
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\f95258e3429075d9d3f63b59abbcc5483a78f5f8.14413f5b733466938b07a405a95d9e41e03f88e3.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\tutorial--create-your-first-metro-style-directx-game.md.c9f35304d7d48e1c01d230a616891aca610f219b.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\tutorial--create-your-first-metro-style-directx-game.md",
+      "XliffHash": "c9f35304d7d48e1c01d230a616891aca610f219b",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8b5da203075ae21ed4bc935f0e7d7a88e561bc05.f7c48c98328e06c46d3480aa11c8964c56699c9f.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\tutorial-resources.md.6811bebb99401bc6ed4ad68334597174e3a8a636.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\tutorial-resources.md",
+      "XliffHash": "6811bebb99401bc6ed4ad68334597174e3a8a636",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\1bb2759f9af85026b2ac75cf0fa29175cd5a2711.8d81bedb953d56772feb6acce0f8305487f90b89.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\e2e.md.f3b784ed19424ab749ea4742a2225e5d000103b0.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\e2e.md",
+      "XliffHash": "f3b784ed19424ab749ea4742a2225e5d000103b0",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\628d1e41702456d496193939aaa053e475bea708.58a4d5380a4cee331be55c0997f4880a87115976.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\tutorial--assembling-the-rendering-pipeline.md.923751ccad444844881585ec5459ef69d326431e.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\tutorial--assembling-the-rendering-pipeline.md",
+      "XliffHash": "923751ccad444844881585ec5459ef69d326431e",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8bb37d5a6315c65a213a565e9a6c029c8912497a.da366176632013e995abcd438edc485724683e4a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\gaming\\game-development-videos.md.a84f85234c3728c21458f6d2dfd41c39d0309821.HT": {
+      "SourceFilename": "windows-apps-src\\gaming\\game-development-videos.md",
+      "XliffHash": "a84f85234c3728c21458f6d2dfd41c39d0309821",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.ja-jp\\master\\8225f64cabe4a23d32c3ba29d3df38cf57e5cd19.ffe5d1ef3c068b6d65f7052a56fbf779b9667ac4.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
