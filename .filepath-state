@@ -3493,6 +3493,9 @@
   "355246d371debd24cda81309cd9bc5b80deda516": [
     "windows-apps-src\\input-and-devices\\support-natural-language-voice-commands-in-cortana.md"
   ],
+  "f6d9a9e0b1c916cd990f2bca7b30252bcd872bbe": [
+    "windows-apps-src\\input-and-devices\\touch-interactions.md"
+  ],
   "62c98877cabb4910532b0e1071e3d096b72cb936": [
     "windows-apps-src\\input-and-devices\\touch-interactions.md"
   ],
@@ -11707,6 +11710,9 @@
   "565640b1c5a3742c5471cd2282403be0ef592f69": [
     "windows-apps-src\\gaming\\uwp-programming.md"
   ],
+  "f95258e3429075d9d3f63b59abbcc5483a78f5f8": [
+    "windows-apps-src\\devices-sensors\\barcode-scanner.md"
+  ],
   "fd10d764d92da94686bbfe6ca7ecde215a04d0c2": [
     "windows-apps-src\\devices-sensors\\barcode-scanner.md"
   ],
@@ -11856,9 +11862,6 @@
   ],
   "45e66b252f68a90803fddec3b860a7435864ae82": [
     "windows-apps-src\\monetize\\send-requests-to-the-store.md"
-  ],
-  "3a9ce6f3f17dddc60d99cbdd29a870636b9be47b": [
-    "windows-apps-src\\controls-and-patterns\\rating.md"
   ],
   "b76a787d44cf85e592d7c0df4edd26e139c06f57": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-primary-tile-apis.md"

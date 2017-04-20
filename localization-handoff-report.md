@@ -1,19 +1,20 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\files\quickstart-reading-and-writing-files.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/80c92e0bc56354132fc04c06d95ce076a5a41612?path=windows-apps-src%2Ffiles%2Fquickstart-reading-and-writing-files.md&_a=contents) | HandedOffSuccess | [Details](#cb87d3e3e1b7d9622838179747aae838b9a5c3932611)
+ [windows-apps-src\devices-sensors\barcode-scanner.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/98f900293c925df8fe52ae6150af6a3ad8d50685?path=windows-apps-src%2Fdevices-sensors%2Fbarcode-scanner.md&_a=contents) | HandedOffSuccess | [Details](#f95258e3429075d9d3f63b59abbcc5483a78f5f82475)
+ [windows-apps-src\input-and-devices\touch-interactions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/98f900293c925df8fe52ae6150af6a3ad8d50685?path=windows-apps-src%2Finput-and-devices%2Ftouch-interactions.md&_a=contents) | HandedOffSuccess | [Details](#f6d9a9e0b1c916cd990f2bca7b30252bcd872bbe3926)
 
 ## Item Details
-##### <a name='cb87d3e3e1b7d9622838179747aae838b9a5c3932611'></a> Source: [windows-apps-src\files\quickstart-reading-and-writing-files.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/80c92e0bc56354132fc04c06d95ce076a5a41612?path=windows-apps-src%2Ffiles%2Fquickstart-reading-and-writing-files.md&_a=contents)
+##### <a name='f95258e3429075d9d3f63b59abbcc5483a78f5f82475'></a> Source: [windows-apps-src\devices-sensors\barcode-scanner.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/98f900293c925df8fe52ae6150af6a3ad8d50685?path=windows-apps-src%2Fdevices-sensors%2Fbarcode-scanner.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [quickstart-reading-and-writing-files.8226c9ae94f2d3f8af610f97340af97397b7b584.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/95c5b9fad8087aadfde203410ce071954425a47d?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fquickstart-reading-and-writing-files.8226c9ae94f2d3f8af610f97340af97397b7b584.ja-jp.xlf&_a=contents)
-* Handoff Datetime: 2017-04-19 23:08:34
+* Handoff File: [barcode-scanner.455e85e8e1e7205f3b034de314a5b6d4bb94cb62.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/dd9b3adb088e2e25266b638e39fa066f18e3f265?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fbarcode-scanner.455e85e8e1e7205f3b034de314a5b6d4bb94cb62.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-04-20 19:05:53
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,10 +22,24 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\files\quickstart-reading-and-writing-files.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Ffiles%2Fquickstart-reading-and-writing-files.md&_a=contents)
-* Current Handback File: [quickstart-reading-and-writing-files.8226c9ae94f2d3f8af610f97340af97397b7b584.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fquickstart-reading-and-writing-files.8226c9ae94f2d3f8af610f97340af97397b7b584.ja-jp.xlf&_a=contents)
+* [Back to Top](#report-top)
+
+##### <a name='f6d9a9e0b1c916cd990f2bca7b30252bcd872bbe3926'></a> Source: [windows-apps-src\input-and-devices\touch-interactions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/98f900293c925df8fe52ae6150af6a3ad8d50685?path=windows-apps-src%2Finput-and-devices%2Ftouch-interactions.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [touch-interactions.886871c7c5187ba2b99ecb7d630ddbd5af2ac549.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/dd9b3adb088e2e25266b638e39fa066f18e3f265?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Ftouch-interactions.886871c7c5187ba2b99ecb7d630ddbd5af2ac549.ja-jp.xlf&_a=contents)
+* Handoff Datetime: 2017-04-20 19:05:53
+* Handoff Reason: Include
+* Handoff Name: 
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Handback Name: 
+* Current Target File: [windows-apps-src\input-and-devices\touch-interactions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.ja-jp/commit/b732bd72db642001e9bf63e84c777a54f8da9cd8?path=windows-apps-src%2Finput-and-devices%2Ftouch-interactions.md&_a=contents)
+* Current Handback File: [touch-interactions.886871c7c5187ba2b99ecb7d630ddbd5af2ac549.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Ftouch-interactions.886871c7c5187ba2b99ecb7d630ddbd5af2ac549.ja-jp.xlf&_a=contents)
 * Current Handback Datetime: 2017-03-01 13:53:50
-* Bilingual File: [quickstart-reading-and-writing-files.8226c9ae94f2d3f8af610f97340af97397b7b584.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Fquickstart-reading-and-writing-files.8226c9ae94f2d3f8af610f97340af97397b7b584.ja-jp.xlf&_a=contents)
+* Bilingual File: [touch-interactions.886871c7c5187ba2b99ecb7d630ddbd5af2ac549.ja-jp.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/14c84f4f3190a8231e848b2f586d80bc5a0f80c8?path=ol-handback%2Fcpubwin%2Fwindows-uwp.ja-jp%2Fmaster%2Ftouch-interactions.886871c7c5187ba2b99ecb7d630ddbd5af2ac549.ja-jp.xlf&_a=contents)
 * Bilingual Datetime: 2017-03-01 14:04:45
 * [Back to Top](#report-top)
 
