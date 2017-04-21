@@ -9,8 +9,8 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 5d98b5366160ca52c02330a05e8b8d749e2296bd
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.openlocfilehash: 1b286a9fcfd71bb2dc219fb3c03a363a41d24346
+ms.sourcegitcommit: bccf9bcc39f0c4ee8801d90e2d7fcae3ad6e3b3e
 translationtype: HT
 ---
 # <a name="audio-graphs"></a>オーディオ グラフ
@@ -159,9 +159,12 @@ Windows ランタイム オーディオ グラフ API:
 
 [!code-cs[CreateFrameOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFrameOutputNode)]
 
-オーディオ グラフでオーディオ データのクォンタムの処理が完了すると、[**AudioGraph.QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) イベントが発生します。 オーディオ データには、このイベントのハンドラー内からアクセスすることができます。
+オーディオ グラフでオーディオ データのクォンタムの処理が開始すると、[**AudioGraph.QuantumStarted**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Audio.AudioGraph#Windows_Media_Audio_AudioGraph_QuantumStarted) イベントが発生します。 オーディオ データには、このイベントのハンドラー内からアクセスすることができます。 
 
-[!code-cs[QuantumProcessed](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumProcessed)]
+> [!NOTE]  
+> オーディオ フレームを一定間隔で、オーディオ グラフと同期させて取得する場合は、同期 **QuantumStarted** イベント ハンドラー内から [AudioFrameOutputNode.GetFrame](https://docs.microsoft.com/en-us/uwp/api/windows.media.audio.audioframeoutputnode#Windows_Media_Audio_AudioFrameOutputNode_GetFrame) を呼び出します。 **QuantumProcessed** イベントは、オーディオ エンジンがオーディオ処理を完了した後、非同期的に発生するため、一定間隔でない可能性があります。 したがって、オーディオ フレーム データの同期処理に **QuantumProcessed** イベントを使用することはできません。
+
+[!code-cs[SnippetQuantumStartedFrameOutput](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumStartedFrameOutput)]
 
 -   オーディオ データを設定した [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) オブジェクトをグラフから取得するには、[**GetFrame**](https://msdn.microsoft.com/library/windows/apps/dn914171) を呼び出します。
 -   **ProcessFrameOutput** ヘルパー メソッドの実装例を下に示します。
