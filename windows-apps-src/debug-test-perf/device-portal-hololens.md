@@ -5,7 +5,8 @@ title: "HoloLens 用 Device Portal"
 description: "HoloLens 用 Windows Device Portal を使って、リモートから HoloLens デバイスの構成と管理を行う方法について説明します。"
 ms.openlocfilehash: 00dec1110ba8cc27f759f05bc4a6f352a235d18d
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: ja-JP
 ---
 # <a name="device-portal-for-hololens"></a>HoloLens 用 Device Portal
 
@@ -116,9 +117,9 @@ Device Portal セッションは Home (ホーム) ページから始まります
 
 - [Surface reconstruction] (サーフェスの認識): [Update] (更新) をクリックまたはタップすると、デバイスから最新の空間マッピング メッシュを表示します。 全体の処理が完了するまでには、最大で数秒かかる可能性があります。 3D ビューではメッシュは自動的に更新されないため、デバイスから最新のメッシュを取得するには、手動で [Update] (更新) をクリックする必要があります。 [Save] (保存) をクリックすると、現在の空間マッピング メッシュを obj ファイルとして PC に保存します。
 
-### <a name="mixed-reality-capture"></a>Mixed Reality Capture (複合現実キャプチャ) 
+### <a name="mixed-reality-capture"></a>Mixed Reality キャプチャ 
 
-[Mixed Reality Capture] (複合現実キャプチャ) ページを使うと、HoloLens からメディア ストリームを保存できます。
+Mixed Reality キャプチャ ページを使うと、HoloLens からメディア ストリームを保存できます。
 - 設定: 次の設定をオンにして、キャプチャするメディア ストリームを制御します。- [Holograms] (ホログラム): ビデオ ストリームのホログラフィック コンテンツをキャプチャします。 ホログラムは、ステレオではなくモノラルでレンダリングされます。
 - **[PV camera]** (PV カメラ): 写真/ビデオ カメラからビデオ ストリームをキャプチャします。
 - **[Mic Audio]** (マイク オーディオ): マイク配列からオーディオをキャプチャします。
@@ -126,7 +127,7 @@ Device Portal セッションは Home (ホーム) ページから始まります
 - **[Live preview quality]** (ライブ プレビューの品質): ライブ プレビューの画面解像度、フレーム レート、ストリーミング レートを選択します。
 
 - [Live preview] (ライブ プレビュー) ボタンをクリックまたはタップすると、キャプチャ ストリームを表示します。 [Stop live preview] (ライブ プレビューの停止) は、キャプチャ ストリームを停止します。
-- [Record] (記録) をクリックまたはタップすると、指定された設定を使って複合現実ストリームのレコーディングを開始します。 [Stop recording] (記録の終了) は、レコーディングを終了して保存します。
+- [Record] (記録) をクリックまたはタップすると、指定された設定を使って Mixed Reality ストリームのレコーディングを開始します。 [Stop recording] (記録の終了) は、レコーディングを終了して保存します。
 - [Take photo] (写真の撮影) をクリックまたはタップすると、キャプチャ ストリームから静止画像を取得します。
 - **[Videos and photos]** (ビデオと写真): デバイスで取得されたビデオと写真のキャプチャの一覧を表示します。
 

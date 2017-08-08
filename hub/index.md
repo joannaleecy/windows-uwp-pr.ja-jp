@@ -3,18 +3,25 @@ layout: HubPage
 hide_bc: True
 title: "Windows に関するドキュメント"
 description: "Windows ソリューションの構築とメンテナンスに役立つ、開発者、ハードウェア、および IT 技術者向けのドキュメントを検索します。"
-ms.assetid: 56bbc230-b855-426e-b849-4f65a747b944
-ms.author: wdg-dev-content
-ms.date: 02/08/2017
-ms.topic: hub-page
-ms.prod: windows
-ms.openlocfilehash: b04722c101d6647eca8d97ebb33ded7fb3ba8c3a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 72e8242de32be8811cb0cac79f4dac72f0e5bed3
+ms.sourcegitcommit: 931bf8d00effba34c2a0a3d3e7bad692d4fcf150
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/18/2017
 ---
 <div id="main" class="v2">
   <div class="container">
       <ul class="cardsY panelContent featuredContent">
+          <li class="fullSpan">
+              <div class="warning-message" style="margin:0 0 2rem 0;">
+                  <div class="red-box" style="width:64px; height:64px; margin-right:12px; float:left; background-color:#d83b01;">
+                      <div class="warning-icon" style="margin:8px auto; width:48px; height:48px;">
+                          <img src="/media/hubs/windows/warning-msg.svg" />
+                      </div>
+                  </div>
+                  <p class="warning-msg" style="font-family: Segoe, 'Segoe UI','sans-serif';font-size: 1rem;font-weight:600;color: #222222;">被害が拡大しているランサムウェア攻撃では、最新の更新プログラムが適用されていない Windows システムがターゲットになっています。 この脅威の重大度を考慮して、Windows システムをできるだけ早く更新してください。 <a href="https://blogs.technet.microsoft.com/msrc/2017/05/12/customer-guidance-for-wannacrypt-attacks/" style="color:#d83b01 !important;">詳細情報</a>。</p>
+              </div>
+          </li>
           <li>
               <a href="https://developer.microsoft.com/windows/downloads/virtual-machines">
                   <div class="cardSize">
@@ -92,7 +99,7 @@ translationtype: HT
                                         <div class="cardText">
                                             <h3>UWP アプリ</h3>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/apps/getstarted">開始</a>
+                                                <a href="https://developer.microsoft.com/windows/apps/getstarted">はじめに</a>
                                             </p>
                                             <p>
                                                 <a href="https://developer.microsoft.com/windows/apps/design">設計</a>
@@ -107,8 +114,8 @@ translationtype: HT
                                                 <a href="https://msdn.microsoft.com/windows/uwp/monetize/index">収益化</a>
                                             </p>
                                             <p>
-                                                <a href="https://docs.microsoft.com/en-us/uwp/api/">API リファレンス</a>
-                                            <p>
+                                                <a href="/uwp/">API リファレンス</a>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -126,7 +133,7 @@ translationtype: HT
                                         <div class="cardText">
                                             <h3>デスクトップ</h3>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/desktop/getstarted">開始</a>
+                                                <a href="https://developer.microsoft.com/windows/desktop/getstarted">はじめに</a>
                                             </p>
                                             <p>
                                                 <a href="https://developer.microsoft.com/windows/desktop/design">設計</a>
@@ -214,7 +221,7 @@ translationtype: HT
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>複合現実</h3>
+                                            <h3>Mixed Reality</h3>
                                             <p>
                                                 <a href="https://developer.microsoft.com/windows/mixed-reality/academy">アカデミー</a>
                                             </p>
@@ -402,7 +409,7 @@ translationtype: HT
                             </div>
                         </li>
                         <li>
-                            <a href="https://technet.microsoft.com/windows-server-docs/get-started/windows-server-2016 ">
+                            <a href="https://docs.microsoft.com/en-us/windows-server/windows-server-2016">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -421,7 +428,7 @@ translationtype: HT
                             </a>
                         </li>
                         <li>
-                            <a href="https://technet.microsoft.com/itpro/windows/index">
+                            <a href="https://docs.microsoft.com/en-us/windows/windows-10/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -440,7 +447,7 @@ translationtype: HT
                             </a>
                         </li>
                         <li>
-                            <a href="https://technet.microsoft.com/edu/windows/index">
+                            <a href="https://docs.microsoft.com/en-us/education/windows">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -457,28 +464,66 @@ translationtype: HT
                                     </div>
                                 </div>
                             </a>
-                        </li>
-                         <li>
-                            <a href="https://technet.microsoft.com/itpro/hololens/index">
+                        </li>  
+                        <li>
+                            <a href="https://docs.microsoft.com/en-us/microsoft-store/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage bgdAccent1">
-                                                    <img data-scaleimage="/media/hubs/windows/win_it-pro-7.svg" alt="" />
+                                                    <img data-scaleimage="/media/hubs/windows/win_it-pro-store-business.svg" alt="" />
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>HoloLens</h3>
-                                                <p>HoloLens Commercial Suite のセットアップと管理について説明します。</p>
+                                                <h3>ビジネス向け Microsoft ストア</h3>
+                                                <p>ビジネス向け Microsoft ストアでのビジネス向けのアプリの検索、取得、配布、管理について説明します。</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </a>
-                        </li> 
+                        </li>  
+                         <li>
+                            <a href="https://docs.microsoft.com/en-us/microsoft-store/index?toc=/microsoft-store/education/toc.json">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_it-pro-store-education.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>教育向け Microsoft ストア</h3>
+                                                <p>教育向け Microsoft ストアでの教育機関向けのアプリの検索、取得、配布、管理について説明します。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
                         <li>
-                            <a href="https://technet.microsoft.com/itpro/surface/index">
+                            <a href="https://docs.microsoft.com/en-us/microsoft-edge/deploy/">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_it-pro-4.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>Microsoft Edge</h3>
+                                                <p>Microsoft Edge と Internet Explorer 11 の展開と管理について説明します。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://docs.microsoft.com/en-us/surface/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -497,7 +542,7 @@ translationtype: HT
                             </a>
                         </li>
                         <li>
-                            <a href="https://technet.microsoft.com/itpro/surface-hub/index">
+                            <a href="https://docs.microsoft.com/en-us/surface-hub/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -514,20 +559,20 @@ translationtype: HT
                                     </div>
                                 </div>
                             </a>
-                        </li> 
-                        <li>
-                            <a href="https://technet.microsoft.com/library/mt267544.aspx">
+                        </li>
+                         <li>
+                            <a href="https://docs.microsoft.com/en-us/hololens/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage bgdAccent1">
-                                                    <img data-scaleimage="/media/hubs/windows/win_it-pro-4.svg" alt="" />
+                                                    <img data-scaleimage="/media/hubs/windows/win_it-pro-7.svg" alt="" />
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>ブラウザー</h3>
-                                                <p>Microsoft Edge と Internet Explorer 11 の展開と管理について説明します。</p>
+                                                <h3>HoloLens</h3>
+                                                <p>HoloLens Commercial Suite のセットアップと管理について説明します。</p>
                                             </div>
                                         </div>
                                     </div>

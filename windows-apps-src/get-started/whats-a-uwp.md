@@ -10,8 +10,9 @@ pms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: 2afb5cbc74b381e85fa861562e7de57d877b0c7f
-ms.sourcegitcommit: 253ed634522773e15199084a6f74a3a465c2b218
-translationtype: HT
+ms.sourcegitcommit: 4d364592afb8f2066c1adff5fc421a2881426f82
+ms.translationtype: HT
+ms.contentlocale: ja-JP
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>ユニバーサル Windows プラットフォーム (UWP) アプリとは
 
@@ -29,7 +30,7 @@ UWP アプリの一番の特徴は何でしょうか。 以下に、Windows 10 �
 
 -   **すべてのデバイスに共通の API セットが用意されている。**
 
-    ユニバーサル Windows プラットフォーム (UWP) のコア API は、すべてのクラスの Windows デバイスに共通です。 アプリがコア API のみを使う場合は、対象となるのがデスクトップ PC か、Xbox か、または複合現実用ヘッドセットかに関係なく、そのアプリはどの Windows 10 デバイスでも動作します。
+    ユニバーサル Windows プラットフォーム (UWP) のコア API は、すべてのクラスの Windows デバイスに共通です。 アプリがコア API のみを使う場合は、対象となるのがデスクトップ PC か、Xbox か、または Mixed Reality ヘッドセットかに関係なく、そのアプリはどの Windows 10 デバイスでも動作します。
 
 -   **拡張 SDK により、特定のデバイスの種類でアプリが優れた機能を実現できる。**
 

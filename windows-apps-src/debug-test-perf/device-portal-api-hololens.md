@@ -5,7 +5,8 @@ title: "HoloLens 用 Device Portal API リファレンス"
 description: "HoloLens 用の Windows Device Portal REST API について説明します。これらの API を使うと、プログラムからデータにアクセスしてデバイスを制御できます。"
 ms.openlocfilehash: 638ebca167b2ca56f00a83aab13b15c57b2dca2a
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: ja-JP
 ---
 # <a name="device-portal-api-reference-for-hololens"></a>HoloLens 用 Device Portal API リファレンス
 
@@ -958,7 +959,7 @@ POST | /api/holographic/simulation/recording/stop
 ---
 ## Mixed reality capture
 ---
-### <a name="delete-a-mixed-reality-capture-mrc-recording-from-the-device"></a>デバイスから複合現実キャプチャ (MRC) レコーディングを削除する
+### <a name="delete-a-mixed-reality-capture-mrc-recording-from-the-device"></a>デバイスから Mixed Reality キャプチャ (MRC) レコーディングを削除する
 
 **要求**
 
@@ -994,7 +995,7 @@ filename   | (**必須**) 削除するビデオ ファイルの名前。 この�
 - 標準の状態コード。
 
 ---
-### <a name="download-a-mixed-reality-capture-mrc-file"></a>複合現実キャプチャ (MRC) ファイルをダウンロードする
+### <a name="download-a-mixed-reality-capture-mrc-file"></a>Mixed Reality キャプチャ (MRC) ファイルをダウンロードする
 
 **要求**
 
@@ -1031,7 +1032,7 @@ op   | (**省略可能**) ストリームをダウンロードする場合は、
 - 標準の状態コード。
 
 ---
-### <a name="get-the-mixed-reality-capture-mrc-settings"></a>複合現実キャプチャ (MRC) の設定を取得する
+### <a name="get-the-mixed-reality-capture-mrc-settings"></a>Mixed Reality キャプチャ (MRC) の設定を取得する
 
 **要求**
 
@@ -1063,7 +1064,7 @@ GET | /api/holographic/mrc/settings
 - 標準の状態コード。
 
 ---
-### <a name="get-the-status-of-the-mixed-reality-capture-mrc-recording"></a>複合現実キャプチャ (MRC) レコーディングの状態を取得する
+### <a name="get-the-status-of-the-mixed-reality-capture-mrc-recording"></a>Mixed Reality キャプチャ (MRC) レコーディングの状態を取得する
 
 **要求**
 
@@ -1095,7 +1096,7 @@ GET | /api/holographic/mrc/status
 - 標準の状態コード。
 
 ---
-### <a name="get-the-list-of-mixed-reality-capture-mrc-files"></a>複合現実キャプチャ (MRC) ファイルのリストを取得する
+### <a name="get-the-list-of-mixed-reality-capture-mrc-files"></a>Mixed Reality キャプチャ (MRC) ファイルのリストを取得する
 
 **要求**
 
@@ -1127,7 +1128,7 @@ GET | /api/holographic/mrc/files
 - 標準の状態コード。
 
 ---
-### <a name="set-the-mixed-reality-capture-mrc-settings"></a>複合現実キャプチャ (MRC) の設定を行う
+### <a name="set-the-mixed-reality-capture-mrc-settings"></a>Mixed Reality キャプチャ (MRC) の設定を行う
 
 **要求**
 
@@ -1159,7 +1160,7 @@ POST | /api/holographic/mrc/settings
 - 標準の状態コード。
 
 ---
-### <a name="starts-a-mixed-reality-capture-mrc-recording"></a>複合現実キャプチャ (MRC) レコーディングを開始する
+### <a name="starts-a-mixed-reality-capture-mrc-recording"></a>Mixed Reality キャプチャ (MRC) レコーディングを開始する
 
 **要求**
 
@@ -1191,7 +1192,7 @@ POST | /api/holographic/mrc/video/control/start
 - 標準の状態コード。
 
 ---
-### <a name="stop-the-current-mixed-reality-capture-mrc-recording"></a>現在の複合現実キャプチャ (MRC) レコーディングを停止する
+### <a name="stop-the-current-mixed-reality-capture-mrc-recording"></a>現在の Mixed Reality キャプチャ (MRC) レコーディングを停止する
 
 **要求**
 
@@ -1223,7 +1224,7 @@ POST | /api/holographic/mrc/video/control/stop
 - 標準の状態コード。
 
 ---
-### <a name="take-a-mixed-reality-capture-mrc-photo"></a>複合現実キャプチャ (MRC) の写真を撮る
+### <a name="take-a-mixed-reality-capture-mrc-photo"></a>Mixed Reality キャプチャ (MRC) の写真を撮る
 
 **要求**
 
