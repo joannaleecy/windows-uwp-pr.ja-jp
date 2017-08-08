@@ -3,174 +3,168 @@ author: mcleblanc
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: "HoloLens 用 Device Portal"
 description: "HoloLens 用 Windows Device Portal を使って、リモートから HoloLens デバイスの構成と管理を行う方法について説明します。"
-translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 00dec1110ba8cc27f759f05bc4a6f352a235d18d
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.translationtype: HT
+ms.contentlocale: ja-JP
 ---
-# HoloLens 用 Device Portal
+# <a name="device-portal-for-hololens"></a><span data-ttu-id="9b82b-103">HoloLens 用 Device Portal</span><span class="sxs-lookup"><span data-stu-id="9b82b-103">Device Portal for HoloLens</span></span>
 
 
-## HoloLens で Device Portal をセットアップする
+## <a name="set-up-device-portal-on-hololens"></a><span data-ttu-id="9b82b-104">HoloLens で Device Portal をセットアップする</span><span class="sxs-lookup"><span data-stu-id="9b82b-104">Set up device portal on HoloLens</span></span>
 
-### Device Portal を有効にする
+### <a name="enable-device-portal"></a><span data-ttu-id="9b82b-105">Device Portal を有効にする</span><span class="sxs-lookup"><span data-stu-id="9b82b-105">Enable Device Portal</span></span>
 
-**Device Portal を有効にするには**
+**<span data-ttu-id="9b82b-106">Device Portal を有効にするには</span><span class="sxs-lookup"><span data-stu-id="9b82b-106">To enable Device Portal</span></span>**
 
-1. HoloLens の電源を入れ、デバイスを装着します。
-2. [ブルーム](https://dev.windows.com/holographic/Gestures.html#Bloom) ジェスチャを実行して、メイン メニューを開きます。
-3. **[Settings]** (設定) タイルを見つめて、[エア タップ](https://dev.windows.com/holographic/Gestures.html#Press_and_release) ジェスチャを実行します。 2 回目のエア タップを実行して、アプリを環境内に配置します。 配置すると、設定アプリが起動します。
-4. **[Update]** (更新) メニュー項目を選択します。
-5. **[For developers]** (開発者向け) メニュー項目を選択します。
-6. **[Developer Mode]** (開発者モード) を有効にします。
-7. [下へスクロール](https://dev.windows.com/holographic/Gestures.html#Navigation) し、Device Portal を有効にします。
-
-
-### デバイスをペアリングする
-
-### Wi-Fi 経由で接続する 
-
-1. HoloLens を Wi-Fi に接続します。
-2. デバイスの IP アドレスを調べます。デバイスで、[Settings] (設定)、[Network & Internet] (ネットワークとインターネット)、[Wi-Fi]、[Advanced Options] (詳細オプション) の順に移動して IP アドレスを確認します。
-    または、「Hey Cortana, what is my IP address?」 (コルタナさん、IP アドレスを教えて) のようにたずねることもできます。
-
-3. PC 上の Web ブラウザーから、 にアクセスします。 `https://<YOUR_HOLOLENS_IP_ADDRESS>`
-    - ブラウザーから、"この Web サイトのセキュリティ証明書に問題があります" というメッセージが表示されます。 これは、Device Portal に発行された証明書がテスト証明書であるためです。 ここでは、この証明書エラーを無視して続行できます。
-
-### USB 経由で接続する 
-
-1. PC に Visual Studio Update 1 と Windows 10 開発者ツールをインストールします。 これで USB 接続が有効になります。
-2. マイクロ USB ケーブルを使って HoloLens を PC に接続します。
-3. PC 上の Web ブラウザーから、`http://127.0.0.1:10080` にアクセスします。
-
-### エミュレーターに接続する 
-
-Device Portal はエミュレーターで使うこともできます。 Device Portal に接続するには、ツール バーを使います。 次のアイコンをクリックします。
-- [Open Device Portal] (Device Portal を開く): エミュレーターで HoloLens OS の Windows Device Portal を開きます。
-
-### ユーザー名とパスワードを作成する 
-
-HoloLens で初めて Device Portal に接続するときは、ユーザー名とパスワードを作成する必要があります。
-1. PC 上の Web ブラウザーで、HoloLens の IP アドレスを入力します。 [Set up access] (アクセスのセットアップ) ページが開きます。
-2. [Request pin] (PIN の要求) をクリックまたはタップし、生成された PIN を HoloLens のディスプレイで確認します。
-3. [PIN displayed on your device] (デバイスに表示された PIN) テキスト ボックスに PIN を入力します。
-4. Device Portal への接続に使うユーザー名を入力します。 Microsoft アカウント (MSA) 名やドメイン アカウント名を指定する必要はありません。
-5. パスワードを入力し、確認用にもう一度入力します。 パスワードは 7 文字以上にする必要があります。 MSA やドメインのパスワードと同じにする必要はありません。
-6. [Pair] (ペアリング) をクリックして、HoloLens の Windows Device Portal に接続します。
-
-このユーザー名またはパスワードは、デバイスのセキュリティ ページでこの手順を繰り返すことでいつでも変更できます。デバイスのセキュリティ ページを表示するには、右上にある [Security] (セキュリティ) リンクをクリックするか、`https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm` にアクセスします。
-
-### セキュリティ証明書 
-
-ブラウザーで "証明書エラー" が表示される場合は、デバイスとの信頼関係を作成することで修正できます。
-
-ぞれぞれの HoloLens では、SSL 接続用に一意の自己署名証明書が生成されます。 既定では、この証明書が PC の Web ブラウザーによって信頼されていないため、"証明書エラー" が発生することがあります。 この証明書を HoloLens から (USB または信頼している Wi-Fi ネットワーク経由で) ダウンロードし、PC で信頼すると、デバイスに安全に接続できます。
-1. 安全なネットワーク (USB または信頼している Wi-Fi ネットワーク) に接続していることを確認します。
-2. Device Portal の [Security] (セキュリティ) ページから、このデバイスの証明書をダウンロードします。ページを表示するには、右上にあるアイコンの一覧で [Security] (セキュリティ) リンクをクリックするか、 にアクセスします。 `https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm`
-
-3. PC の [信頼されたルート証明機関] ストアに証明書をインストールします。Windows メニューから「コンピューター証明書の管理」と入力し、アプレットを起動します。
-    - [信頼されたルート証明機関] フォルダーを展開します。
-    - [証明書] フォルダーをクリックします。
-    - [操作] メニューの [すべてのタスク] をクリックし、[インポート] をクリックします。
-    - Device Portal からダウンロードした証明書ファイルを使って、証明書のインポート ウィザードを完了します。
-
-4. ブラウザーを再起動します。
+1. <span data-ttu-id="9b82b-107">HoloLens の電源を入れ、デバイスを装着します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-107">Power on your HoloLens and put on the device.</span></span>
+2. <span data-ttu-id="9b82b-108">[ブルーム](https://dev.windows.com/holographic/Gestures.html#Bloom) ジェスチャを実行して、メイン メニューを開きます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-108">Perform the [bloom](https://dev.windows.com/holographic/Gestures.html#Bloom) gesture to launch the main menu.</span></span>
+3. <span data-ttu-id="9b82b-109">**[Settings]** (設定) タイルを見つめて、[エア タップ](https://dev.windows.com/holographic/Gestures.html#Press_and_release) ジェスチャを実行します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-109">Gaze at the **Settings** tile and perform the [air tap](https://dev.windows.com/holographic/Gestures.html#Press_and_release) gesture.</span></span> <span data-ttu-id="9b82b-110">2 回目のエア タップを実行して、アプリを環境内に配置します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-110">Perform a second air tap to place the app in your environment.</span></span> <span data-ttu-id="9b82b-111">配置すると、設定アプリが起動します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-111">The Settings app will launch after you place it.</span></span>
+4. <span data-ttu-id="9b82b-112">**[Update]** (更新) メニュー項目を選択します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-112">Select the **Update** menu item.</span></span>
+5. <span data-ttu-id="9b82b-113">**[For developers]** (開発者向け) メニュー項目を選択します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-113">Select the **For developers** menu item.</span></span>
+6. <span data-ttu-id="9b82b-114">**[Developer Mode]** (開発者モード) を有効にします。</span><span class="sxs-lookup"><span data-stu-id="9b82b-114">Enable **Developer Mode**.</span></span>
+7. <span data-ttu-id="9b82b-115">[下へスクロール](https://dev.windows.com/holographic/Gestures.html#Navigation) し、Device Portal を有効にします。</span><span class="sxs-lookup"><span data-stu-id="9b82b-115">[Scroll down](https://dev.windows.com/holographic/Gestures.html#Navigation) and enable Device Portal.</span></span>
 
 
-## Device Portal のページ 
+### <a name="pair-your-device"></a><span data-ttu-id="9b82b-116">デバイスをペアリングする</span><span class="sxs-lookup"><span data-stu-id="9b82b-116">Pair your device</span></span>
 
-### Home (ホーム) 
+### <a name="connect-over-wi-fi"></a><span data-ttu-id="9b82b-117">Wi-Fi 経由で接続する</span><span class="sxs-lookup"><span data-stu-id="9b82b-117">Connect over Wi-Fi</span></span> 
 
-Device Portal セッションは Home (ホーム) ページから始まります。 他のページにアクセスするには、ホーム ページの左側にあるナビゲーション バーを使います。
+1. <span data-ttu-id="9b82b-118">HoloLens を Wi-Fi に接続します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-118">Connect your HoloLens to Wi-Fi.</span></span>
+2. <span data-ttu-id="9b82b-119">デバイスの IP アドレスを調べます。デバイスで、[Settings] (設定)、[Network & Internet] (ネットワークとインターネット)、[Wi-Fi]、[Advanced Options] (詳細オプション) の順に移動して IP アドレスを確認します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-119">Look up your device's IP address.- Find the IP address on the device under Settings > Network & Internet > Wi-Fi > Advanced Options.</span></span>
+    <span data-ttu-id="9b82b-120">または、「Hey Cortana, what is my IP address?」 (コルタナさん、IP アドレスを教えて) のようにたずねることもできます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-120">You can also ask, "Hey Cortana, what is my IP address?"</span></span>
 
-ページの最上部にあるツール バーでは、よく使われる状態や機能にアクセスできます。
-- **[Online]** (オンライン): デバイスが Wi-Fi に接続しているかどうかを示します。
-- **[Shutdown]** (シャットダウン): デバイスをオフにします。
-- **[Restart]** (再起動): デバイスの電源を入れ直します。
-- **[Security]** (セキュリティ): [Device Security] (デバイスのセキュリティ) ページを開きます。
-- **[Cool]** (低温): デバイスの温度を示します。
-- **[A/C]**: デバイスが電源に接続され、充電されているかどうかを示します。
-- **[Help]** (ヘルプ): REST インターフェイスのドキュメント ページを開きます。
+3. <span data-ttu-id="9b82b-121">PC 上の Web ブラウザーから、 にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="9b82b-121">From a web browser on your PC, go to</span></span> `https://<YOUR_HOLOLENS_IP_ADDRESS>`
+    - <span data-ttu-id="9b82b-122">ブラウザーから、"この Web サイトのセキュリティ証明書に問題があります" というメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-122">The browser will display the following message: "There's a problem with this website's security certificate".</span></span> <span data-ttu-id="9b82b-123">これは、Device Portal に発行された証明書がテスト証明書であるためです。</span><span class="sxs-lookup"><span data-stu-id="9b82b-123">This happens because the certificate which is issued to the Device Portal is a test certificate.</span></span> <span data-ttu-id="9b82b-124">ここでは、この証明書エラーを無視して続行できます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-124">You can ignore this certificate error for now and proceed.</span></span>
 
-ホーム ページには次の情報が表示されます。
-- **[Device** Status] (デバイスの状態): デバイスの正常性を監視し、重大なエラーを報告します。
-- **[Windows information]** (Windows の情報): HoloLens の名前と、現在インストールされている Windows のバージョンを表示します。
-- **[Preferences]** (設定) セクションには次の設定が含まれます。
-    - **[IPD]**: 瞳孔間距離 (IPD) を設定します。これは、ユーザーがまっすぐ前を向いたときの瞳孔の中心間の距離をミリメートル単位で示すものです。 設定はすぐに反映されます。 既定値は、デバイスのセットアップ時に自動的に計算された値です。
-    - **[Device name]** (デバイス名): HoloLens に名前を割り当てます。 この値を変更した場合、変更を有効にするにはデバイスを再起動する必要があります。 [Save] (保存) をクリックすると、デバイスを今すぐ再起動するか、後で再起動するかをたずねるダイアログが表示されます。
-    - **[Sleep settings]** (スリープの設定): デバイスが電源に接続されているときとバッテリで動作しているときの、スリープ状態に移行するまでの待ち時間の長さを設定します。
+### <a name="connect-over-usb"></a><span data-ttu-id="9b82b-125">USB 経由で接続する</span><span class="sxs-lookup"><span data-stu-id="9b82b-125">Connect over USB</span></span> 
 
-### 3D View (3D ビュー) 
+1. <span data-ttu-id="9b82b-126">PC に Visual Studio Update 1 と Windows 10 開発者ツールをインストールします。</span><span class="sxs-lookup"><span data-stu-id="9b82b-126">Install the tools to make sure you have Visual Studio Update 1 with the Windows 10 developer tools installed on your PC.</span></span> <span data-ttu-id="9b82b-127">これで USB 接続が有効になります。</span><span class="sxs-lookup"><span data-stu-id="9b82b-127">This enables USB connectivity.</span></span>
+2. <span data-ttu-id="9b82b-128">マイクロ USB ケーブルを使って HoloLens を PC に接続します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-128">Connect your HoloLens to your PC with a micro-USB cable.</span></span>
+3. <span data-ttu-id="9b82b-129">PC 上の Web ブラウザーから、`http://127.0.0.1:10080` にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="9b82b-129">From a web browser on your PC, go to `http://127.0.0.1:10080`.</span></span>
 
-[3D View] (3D ビュー) ページを使うと、HoloLens がどのように周囲を解釈するかを確認できます。 ビュー内を移動するには、マウスを次のように使います。
-- **回転**: 左クリック + マウス
-- **パン**: 右クリック + マウス
-- **ズーム**: マウス スクロール。
-- **[Tracking options]** (追跡オプション): [Force visual tracking] (視覚追跡を強制) をオンにすると、連続的な視覚追跡が有効になります。 [Pause] (一時停止) は視覚追跡を停止します。
-- **[View options]** (表示オプション): 3D ビューのオプションを設定します。- [Tracking] (追跡): 視覚追跡がアクティブかどうかを示します。
-- **[Show floor]** (フロアを表示): チェック模様のフロア平面を表示します。
-- **[Show frustum]** (視錐台を表示): 視錐台を表示します。
-- **[Show stabilization plane]** (手ブレ補正平面を表示): HoloLens でモーションの手ブレ補正用に使われる平面を表示します。
-- **[Show mesh]** (メッシュを表示): 周囲を表すサーフェス マッピング メッシュを表示します。
-- **[Show details]** (詳細を表示): 手の位置、頭部の回転の四元数、デバイスの原点のベクトルを、動きに合わせてリアルタイムで表示します。
-- **[Full screen]** (全画面表示) ボタン: 3D ビューを全画面表示モードで表示します。 Esc キーを押すと全画面表示を終了します。
+### <a name="connect-to-an-emulator"></a><span data-ttu-id="9b82b-130">エミュレーターに接続する</span><span class="sxs-lookup"><span data-stu-id="9b82b-130">Connect to an emulator</span></span> 
 
-- [Surface reconstruction] (サーフェスの認識): [Update] (更新) をクリックまたはタップすると、デバイスから最新の空間マッピング メッシュを表示します。 全体の処理が完了するまでには、最大で数秒かかる可能性があります。 3D ビューではメッシュは自動的に更新されないため、デバイスから最新のメッシュを取得するには、手動で [Update] (更新) をクリックする必要があります。 [Save] (保存) をクリックすると、現在の空間マッピング メッシュを obj ファイルとして PC に保存します。
+<span data-ttu-id="9b82b-131">Device Portal はエミュレーターで使うこともできます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-131">You can also use the Device Portal with your emulator.</span></span> <span data-ttu-id="9b82b-132">Device Portal に接続するには、ツール バーを使います。</span><span class="sxs-lookup"><span data-stu-id="9b82b-132">To connect to the Device Portal, use the toolbar.</span></span> <span data-ttu-id="9b82b-133">次のアイコンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="9b82b-133">Click on this icon:</span></span>
+- <span data-ttu-id="9b82b-134">[Open Device Portal] (Device Portal を開く): エミュレーターで HoloLens OS の Windows Device Portal を開きます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-134">Open Device Portal: Open the Windows Device Portal for the HoloLens OS in the emulator.</span></span>
 
-### Mixed Reality Capture (複合現実キャプチャ) 
+### <a name="create-a-username-and-password"></a><span data-ttu-id="9b82b-135">ユーザー名とパスワードを作成する</span><span class="sxs-lookup"><span data-stu-id="9b82b-135">Create a Username and Password</span></span> 
 
-[Mixed Reality Capture] (複合現実キャプチャ) ページを使うと、HoloLens からメディア ストリームを保存できます。
-- 設定: 次の設定をオンにして、キャプチャするメディア ストリームを制御します。- [Holograms] (ホログラム): ビデオ ストリームのホログラフィック コンテンツをキャプチャします。 ホログラムは、ステレオではなくモノラルでレンダリングされます。
-- **[PV camera]** (PV カメラ): 写真/ビデオ カメラからビデオ ストリームをキャプチャします。
-- **[Mic Audio]** (マイク オーディオ): マイク配列からオーディオをキャプチャします。
-- **[App Audio]** (アプリ オーディオ): 現在実行中のアプリからオーディオをキャプチャします。
-- **[Live preview quality]** (ライブ プレビューの品質): ライブ プレビューの画面解像度、フレーム レート、ストリーミング レートを選択します。
+<span data-ttu-id="9b82b-136">HoloLens で初めて Device Portal に接続するときは、ユーザー名とパスワードを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9b82b-136">The first time you connect to the Device Portal on your HoloLens, you will need to create a username and password.</span></span>
+1. <span data-ttu-id="9b82b-137">PC 上の Web ブラウザーで、HoloLens の IP アドレスを入力します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-137">In a web browser on your PC, enter the IP address of the HoloLens.</span></span> <span data-ttu-id="9b82b-138">[Set up access] (アクセスのセットアップ) ページが開きます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-138">The Set up access page opens.</span></span>
+2. <span data-ttu-id="9b82b-139">[Request pin] (PIN の要求) をクリックまたはタップし、生成された PIN を HoloLens のディスプレイで確認します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-139">Click or tap Request pin and look at the HoloLens display to get the generated PIN.</span></span>
+3. <span data-ttu-id="9b82b-140">[PIN displayed on your device] (デバイスに表示された PIN) テキスト ボックスに PIN を入力します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-140">Enter the PIN in the PIN displayed on your device textbox.</span></span>
+4. <span data-ttu-id="9b82b-141">Device Portal への接続に使うユーザー名を入力します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-141">Enter the user name you will use to connect to the Device Portal.</span></span> <span data-ttu-id="9b82b-142">Microsoft アカウント (MSA) 名やドメイン アカウント名を指定する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="9b82b-142">It doesn't need to be a Microsoft Account (MSA) name or a domain name.</span></span>
+5. <span data-ttu-id="9b82b-143">パスワードを入力し、確認用にもう一度入力します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-143">Enter a password and confirm it.</span></span> <span data-ttu-id="9b82b-144">パスワードは 7 文字以上にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="9b82b-144">The password must be at least seven characters in length.</span></span> <span data-ttu-id="9b82b-145">MSA やドメインのパスワードと同じにする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="9b82b-145">It doesn't need to be an MSA or domain password.</span></span>
+6. <span data-ttu-id="9b82b-146">[Pair] (ペアリング) をクリックして、HoloLens の Windows Device Portal に接続します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-146">Click Pair to connect to Windows Device Portal on the HoloLens.</span></span>
 
-- [Live preview] (ライブ プレビュー) ボタンをクリックまたはタップすると、キャプチャ ストリームを表示します。 [Stop live preview] (ライブ プレビューの停止) は、キャプチャ ストリームを停止します。
-- [Record] (記録) をクリックまたはタップすると、指定された設定を使って複合現実ストリームのレコーディングを開始します。 [Stop recording] (記録の終了) は、レコーディングを終了して保存します。
-- [Take photo] (写真の撮影) をクリックまたはタップすると、キャプチャ ストリームから静止画像を取得します。
-- **[Videos and photos]** (ビデオと写真): デバイスで取得されたビデオと写真のキャプチャの一覧を表示します。
+<span data-ttu-id="9b82b-147">このユーザー名またはパスワードは、デバイスのセキュリティ ページでこの手順を繰り返すことでいつでも変更できます。デバイスのセキュリティ ページを表示するには、右上にある [Security] (セキュリティ) リンクをクリックするか、`https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm` にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="9b82b-147">If you wish to change this username or password at any time, you can repeat this process by visiting the device security page by either clicking the Security link along the top right, or navigating to: `https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm`.</span></span>
 
-Device Portal からライブ プレビューを記録またはストリーミングしている間、HoloLens アプリでは MRC の写真やビデオをキャプチャできないことに注意してください。
+### <a name="security-certificate"></a><span data-ttu-id="9b82b-148">セキュリティ証明書</span><span class="sxs-lookup"><span data-stu-id="9b82b-148">Security certificate</span></span> 
 
-### System Performance (システム パフォーマンス) 
+<span data-ttu-id="9b82b-149">ブラウザーで "証明書エラー" が表示される場合は、デバイスとの信頼関係を作成することで修正できます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-149">If you are see a "certificate error" in your browser, you can fix it by creating a trust relationship with the device.</span></span>
 
-HoloLens の System Performance (システム パフォーマンス) ツールでは、3 つの追加のメトリックを記録できます。 
+<span data-ttu-id="9b82b-150">ぞれぞれの HoloLens では、SSL 接続用に一意の自己署名証明書が生成されます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-150">Each HoloLens generates a unique self-signed certificate for its SSL connection.</span></span> <span data-ttu-id="9b82b-151">既定では、この証明書が PC の Web ブラウザーによって信頼されていないため、"証明書エラー" が発生することがあります。</span><span class="sxs-lookup"><span data-stu-id="9b82b-151">By default, this certificate is not trusted by your PC's web browser and you may get a "certificate error".</span></span> <span data-ttu-id="9b82b-152">この証明書を HoloLens から (USB または信頼している Wi-Fi ネットワーク経由で) ダウンロードし、PC で信頼すると、デバイスに安全に接続できます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-152">By downloading this certificate from your HoloLens (over USB or a Wi-Fi network you trust) and trusting it on your PC, you can securely connect to your device.</span></span>
+1. <span data-ttu-id="9b82b-153">安全なネットワーク (USB または信頼している Wi-Fi ネットワーク) に接続していることを確認します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-153">Make sure you are on a secure network (USB or a Wi-Fi network you trust).</span></span>
+2. <span data-ttu-id="9b82b-154">Device Portal の [Security] (セキュリティ) ページから、このデバイスの証明書をダウンロードします。ページを表示するには、右上にあるアイコンの一覧で [Security] (セキュリティ) リンクをクリックするか、 にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="9b82b-154">Download this device's certificate from the "Security" page on the Device Portal.- Either click the Security link from the top right list of icons or navigate to:</span></span> `https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm`
 
-利用可能なメトリックを次に示します。
-- **[SoC power]** (SoC 電力): System on a Chip の瞬間的な電力使用量 (1 秒あたりの平均)
-- **[System power]** (システム電力): システムの瞬間的な電力使用量 (1 秒あたりの平均)
-- **[Frame rate]** (フレーム レート): 1 秒あたりのフレーム数、1 秒あたりに失敗した VBlank 数、連続で失敗した VBlank 数
+3. <span data-ttu-id="9b82b-155">PC の [信頼されたルート証明機関] ストアに証明書をインストールします。Windows メニューから「コンピューター証明書の管理」と入力し、アプレットを起動します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-155">Install the certificate in the "Trusted Root Certification Authorities" store on your PC.- From the Windows menu, type: Manage Computer Certificates and start the applet.</span></span>
+    - <span data-ttu-id="9b82b-156">[信頼されたルート証明機関] フォルダーを展開します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-156">Expand the Trusted Root Certification Authority folder.</span></span>
+    - <span data-ttu-id="9b82b-157">[証明書] フォルダーをクリックします。</span><span class="sxs-lookup"><span data-stu-id="9b82b-157">Click on the Certificates folder.</span></span>
+    - <span data-ttu-id="9b82b-158">[操作] メニューの [すべてのタスク] をクリックし、[インポート] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9b82b-158">From the Action menu, select: All Tasks > Import...</span></span>
+    - <span data-ttu-id="9b82b-159">Device Portal からダウンロードした証明書ファイルを使って、証明書のインポート ウィザードを完了します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-159">Complete the Certificate Import Wizard, using the certificate file you downloaded from the Device Portal.</span></span>
 
-### App Crash Dumps (アプリのクラッシュ ダンプ) ページ 
-
-このページでは、サイドローディングしたアプリのクラッシュ ダンプを収集できます。 クラッシュ ダンプを収集する各アプリについて、[Crash Dumps Enabled] (クラッシュ ダンプ有効) チェック ボックスをオンにします。 後でこのページに戻ると、クラッシュ ダンプが収集されています。 ダンプ ファイルは、デバッグ用に Visual Studio で開くことができます。
-
-### Kiosk Mode (キオスク モード) 
-
-キオスク モードを有効にします。キオスク モードではユーザーの操作が制限され、新しいアプリを起動したり、実行中のアプリを変更したりすることができなくなります。 キオスク モードを有効にすると、ブルーム ジェスチャと Cortana は無効になり、配置済みのアプリもユーザーの周囲に表示されなくなります。
-
-[Enable Kiosk Mode] (キオスク モードを有効にする) をオンにすると、HoloLens がキオスク モードになります。 [Startup app] (スタートアップ アプリ) ドロップダウンで、起動時に実行するアプリを選択します。 設定を決定するには、[Save] (保存) をクリックまたはタップします。
-
-選択したアプリは、キオスク モードが有効になっていない場合でも起動時に実行されます。 起動時にアプリが実行されないようにするには、[None] (なし) を選択します。
-
-### Simulation (シミュレーション) 
-
-テスト用に入力データを記録して再生できます。
-- **[Capture room]** (ルームのキャプチャ): シミュレートされたルーム ファイルをダウンロードするために使います。このファイルには、ユーザーの周囲の空間マッピング メッシュが含まれます。 ルームに名前を付けて [Capture] (キャプチャ) をクリックすると、データが .xef ファイルとして PC に保存されます。 このルーム ファイルは、HoloLens エミュレーターに読み込むことができます。
-- **[Recording]** (レコーディング): レコーディングを開始します。記録するストリームをオンにし、レコーディングに名前を付けて、[Record] (記録) をクリックまたはタップします。 HoloLens でアクションを実行した後、[Stop] (停止) をクリックすると、データが .xef ファイルとして PC に保存されます。 このファイルは、HoloLens エミュレーターまたはデバイスで読み込むことができます。
-- **[Playback]** (再生): [Upload recording] (レコーディングのアップロード) をクリックまたはタップし、PC から xef ファイルを選択して、そのデータを HoloLens に送信します。
-- **[Control mode]** (制御モード): HoloLens のモードを選択します。ドロップダウンから [Default] (既定) または [Simulation] (シミュレーション) を選択し、[Set] (設定) ボタンをクリックまたはタップします。 [Simulation] (シミュレーション) を選ぶと、HoloLens の実際のセンサーは無効になり、アップロードされたシミュレーション データが代わりに使われます。 [Simulation] (シミュレーション) に切り替えると、[Default] (既定) に戻すまで、HoloLens は実際のユーザーに応答しなくなります。
+4. <span data-ttu-id="9b82b-160">ブラウザーを再起動します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-160">Restart the browser.</span></span>
 
 
-### Virtual Input (仮想入力) 
+## <a name="device-portal-pages"></a><span data-ttu-id="9b82b-161">Device Portal のページ</span><span class="sxs-lookup"><span data-stu-id="9b82b-161">Device Portal Pages</span></span> 
 
-リモート コンピューターから HoloLens にキーボード入力を送信します。
+### <a name="home"></a><span data-ttu-id="9b82b-162">Home (ホーム)</span><span class="sxs-lookup"><span data-stu-id="9b82b-162">Home</span></span> 
 
-[Virtual keyboard] (仮想キーボード) の下にある領域をクリックまたはタップすると、HoloLens にキー入力を送信できるようになります。 [Input text] (テキストの入力) テキスト ボックスに入力し、[Send] (送信) をクリックまたはタップすると、アクティブなアプリにキー入力が送信されます。
+<span data-ttu-id="9b82b-163">Device Portal セッションは Home (ホーム) ページから始まります。</span><span class="sxs-lookup"><span data-stu-id="9b82b-163">Your Device Portal session starts at the Home page.</span></span> <span data-ttu-id="9b82b-164">他のページにアクセスするには、ホーム ページの左側にあるナビゲーション バーを使います。</span><span class="sxs-lookup"><span data-stu-id="9b82b-164">Access other pages from the navigation bar along the left side of the home page.</span></span>
+
+<span data-ttu-id="9b82b-165">ページの最上部にあるツール バーでは、よく使われる状態や機能にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-165">The toolbar at the top of the page provides access to commonly used status and features.</span></span>
+- <span data-ttu-id="9b82b-166">**[Online]** (オンライン): デバイスが Wi-Fi に接続しているかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-166">**Online**: Indicates whether the device is connected to Wi-Fi.</span></span>
+- <span data-ttu-id="9b82b-167">**[Shutdown]** (シャットダウン): デバイスをオフにします。</span><span class="sxs-lookup"><span data-stu-id="9b82b-167">**Shutdown**: Turns off the device.</span></span>
+- <span data-ttu-id="9b82b-168">**[Restart]** (再起動): デバイスの電源を入れ直します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-168">**Restart**: Cycles power on the device.</span></span>
+- <span data-ttu-id="9b82b-169">**[Security]** (セキュリティ): [Device Security] (デバイスのセキュリティ) ページを開きます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-169">**Security**: Opens the Device Security page.</span></span>
+- <span data-ttu-id="9b82b-170">**[Cool]** (低温): デバイスの温度を示します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-170">**Cool**: Indicates the temperature of the device.</span></span>
+- <span data-ttu-id="9b82b-171">**[A/C]**: デバイスが電源に接続され、充電されているかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-171">**A/C**: Indicates whether the device is plugged in and charging.</span></span>
+- <span data-ttu-id="9b82b-172">**[Help]** (ヘルプ): REST インターフェイスのドキュメント ページを開きます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-172">**Help**: Opens the REST interface documentation page.</span></span>
+
+<span data-ttu-id="9b82b-173">ホーム ページには次の情報が表示されます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-173">The home page shows the following info:</span></span>
+- <span data-ttu-id="9b82b-174">**[Device** Status] (デバイスの状態): デバイスの正常性を監視し、重大なエラーを報告します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-174">**Device** Status: monitors the health of your device and reports critical errors.</span></span>
+- <span data-ttu-id="9b82b-175">**[Windows information]** (Windows の情報): HoloLens の名前と、現在インストールされている Windows のバージョンを表示します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-175">**Windows information**: shows the name of the HoloLens and the currently installed version of Windows.</span></span>
+- <span data-ttu-id="9b82b-176">**[Preferences]** (設定) セクションには次の設定が含まれます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-176">**Preferences** section contains the following settings:</span></span>
+    - <span data-ttu-id="9b82b-177">**[IPD]**: 瞳孔間距離 (IPD) を設定します。これは、ユーザーがまっすぐ前を向いたときの瞳孔の中心間の距離をミリメートル単位で示すものです。</span><span class="sxs-lookup"><span data-stu-id="9b82b-177">**IPD**: Sets the interpupillary distance (IPD), which is the distance, in millimeters, between the center of the user's pupils when looking straight ahead.</span></span> <span data-ttu-id="9b82b-178">設定はすぐに反映されます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-178">The setting takes effect immediately.</span></span> <span data-ttu-id="9b82b-179">既定値は、デバイスのセットアップ時に自動的に計算された値です。</span><span class="sxs-lookup"><span data-stu-id="9b82b-179">The default value was calculated automatically when you set up your device.</span></span>
+    - <span data-ttu-id="9b82b-180">**[Device name]** (デバイス名): HoloLens に名前を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-180">**Device name**: Assign a name to the HoloLens.</span></span> <span data-ttu-id="9b82b-181">この値を変更した場合、変更を有効にするにはデバイスを再起動する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9b82b-181">You must reboot the device after changing this value for it to take effect.</span></span> <span data-ttu-id="9b82b-182">[Save] (保存) をクリックすると、デバイスを今すぐ再起動するか、後で再起動するかをたずねるダイアログが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-182">After clicking Save, a dialog will ask if you want to reboot the device immediately or reboot later.</span></span>
+    - <span data-ttu-id="9b82b-183">**[Sleep settings]** (スリープの設定): デバイスが電源に接続されているときとバッテリで動作しているときの、スリープ状態に移行するまでの待ち時間の長さを設定します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-183">**Sleep settings**: Sets the length of time to wait before the device goes to sleep when it's plugged in and when it's on battery.</span></span>
+
+### <a name="3d-view"></a><span data-ttu-id="9b82b-184">3D View (3D ビュー)</span><span class="sxs-lookup"><span data-stu-id="9b82b-184">3D View</span></span> 
+
+<span data-ttu-id="9b82b-185">[3D View] (3D ビュー) ページを使うと、HoloLens がどのように周囲を解釈するかを確認できます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-185">Use the 3D View page to see how HoloLens interprets your surroundings.</span></span> <span data-ttu-id="9b82b-186">ビュー内を移動するには、マウスを次のように使います。</span><span class="sxs-lookup"><span data-stu-id="9b82b-186">Navigate the view by using the mouse:</span></span>
+- <span data-ttu-id="9b82b-187">**回転**: 左クリック + マウス</span><span class="sxs-lookup"><span data-stu-id="9b82b-187">**Rotate**: left click + mouse;</span></span>
+- <span data-ttu-id="9b82b-188">**パン**: 右クリック + マウス</span><span class="sxs-lookup"><span data-stu-id="9b82b-188">**Pan**: right click + mouse;</span></span>
+- <span data-ttu-id="9b82b-189">**ズーム**: マウス スクロール。</span><span class="sxs-lookup"><span data-stu-id="9b82b-189">**Zoom**: mouse scroll.</span></span>
+- <span data-ttu-id="9b82b-190">**[Tracking options]** (追跡オプション): [Force visual tracking] (視覚追跡を強制) をオンにすると、連続的な視覚追跡が有効になります。</span><span class="sxs-lookup"><span data-stu-id="9b82b-190">**Tracking options**: Turn on continuous visual tracking by checking Force visual tracking.</span></span> <span data-ttu-id="9b82b-191">[Pause] (一時停止) は視覚追跡を停止します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-191">Pause stops visual tracking.</span></span>
+- <span data-ttu-id="9b82b-192">**[View options]** (表示オプション): 3D ビューのオプションを設定します。- [Tracking] (追跡): 視覚追跡がアクティブかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-192">**View options**: Set options on the 3D view:- Tracking: Indicates whether visual tracking is active.</span></span>
+- <span data-ttu-id="9b82b-193">**[Show floor]** (フロアを表示): チェック模様のフロア平面を表示します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-193">**Show floor**: Displays a checkered floor plane.</span></span>
+- <span data-ttu-id="9b82b-194">**[Show frustum]** (視錐台を表示): 視錐台を表示します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-194">**Show frustum**: Displays the view frustum.</span></span>
+- <span data-ttu-id="9b82b-195">**[Show stabilization plane]** (手ブレ補正平面を表示): HoloLens でモーションの手ブレ補正用に使われる平面を表示します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-195">**Show stabilization plane**: Displays the plane that HoloLens uses for stabilizing motion.</span></span>
+- <span data-ttu-id="9b82b-196">**[Show mesh]** (メッシュを表示): 周囲を表すサーフェス マッピング メッシュを表示します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-196">**Show mesh**: Displays the surface mapping mesh that represents your surroundings.</span></span>
+- <span data-ttu-id="9b82b-197">**[Show details]** (詳細を表示): 手の位置、頭部の回転の四元数、デバイスの原点のベクトルを、動きに合わせてリアルタイムで表示します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-197">**Show details**: Displays hand positions, head rotation quaternions, and the device origin vector as they change in real time.</span></span>
+- <span data-ttu-id="9b82b-198">**[Full screen]** (全画面表示) ボタン: 3D ビューを全画面表示モードで表示します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-198">**Full screen button**: Shows the 3D View in full screen mode.</span></span> <span data-ttu-id="9b82b-199">Esc キーを押すと全画面表示を終了します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-199">Press ESC to exit full screen view.</span></span>
+
+- <span data-ttu-id="9b82b-200">[Surface reconstruction] (サーフェスの認識): [Update] (更新) をクリックまたはタップすると、デバイスから最新の空間マッピング メッシュを表示します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-200">Surface reconstruction: Click or tap Update to display the latest spatial mapping mesh from the device.</span></span> <span data-ttu-id="9b82b-201">全体の処理が完了するまでには、最大で数秒かかる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="9b82b-201">A full pass may take some time to complete, up to a few seconds.</span></span> <span data-ttu-id="9b82b-202">3D ビューではメッシュは自動的に更新されないため、デバイスから最新のメッシュを取得するには、手動で [Update] (更新) をクリックする必要があります。</span><span class="sxs-lookup"><span data-stu-id="9b82b-202">The mesh does not update automatically in the 3D view, and you must manually click Update to get the latest mesh from the device.</span></span> <span data-ttu-id="9b82b-203">[Save] (保存) をクリックすると、現在の空間マッピング メッシュを obj ファイルとして PC に保存します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-203">Click Save to save the current spatial mapping mesh as an obj file on your PC.</span></span>
+
+### <a name="mixed-reality-capture"></a><span data-ttu-id="9b82b-204">Mixed Reality キャプチャ</span><span class="sxs-lookup"><span data-stu-id="9b82b-204">Mixed Reality Capture</span></span> 
+
+<span data-ttu-id="9b82b-205">Mixed Reality キャプチャ ページを使うと、HoloLens からメディア ストリームを保存できます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-205">Use the Mixed Reality Capture page to save media streams from the HoloLens.</span></span>
+- <span data-ttu-id="9b82b-206">設定: 次の設定をオンにして、キャプチャするメディア ストリームを制御します。- [Holograms] (ホログラム): ビデオ ストリームのホログラフィック コンテンツをキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="9b82b-206">Settings: Control the media streams that are captured by checking the following settings:- Holograms: Captures the holographic content in the video stream.</span></span> <span data-ttu-id="9b82b-207">ホログラムは、ステレオではなくモノラルでレンダリングされます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-207">Holograms are rendered in mono, not stereo.</span></span>
+- <span data-ttu-id="9b82b-208">**[PV camera]** (PV カメラ): 写真/ビデオ カメラからビデオ ストリームをキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="9b82b-208">**PV camera**: Captures the video stream from the photo/video camera.</span></span>
+- <span data-ttu-id="9b82b-209">**[Mic Audio]** (マイク オーディオ): マイク配列からオーディオをキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="9b82b-209">**Mic Audio**: Captures audio from the microphone array.</span></span>
+- <span data-ttu-id="9b82b-210">**[App Audio]** (アプリ オーディオ): 現在実行中のアプリからオーディオをキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="9b82b-210">**App Audio**: Captures audio from the currently running app.</span></span>
+- <span data-ttu-id="9b82b-211">**[Live preview quality]** (ライブ プレビューの品質): ライブ プレビューの画面解像度、フレーム レート、ストリーミング レートを選択します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-211">**Live preview quality**: Select the screen resolution, frame rate, and streaming rate for the live preview.</span></span>
+
+- <span data-ttu-id="9b82b-212">[Live preview] (ライブ プレビュー) ボタンをクリックまたはタップすると、キャプチャ ストリームを表示します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-212">Click or tap the Live preview button to show the capture stream.</span></span> <span data-ttu-id="9b82b-213">[Stop live preview] (ライブ プレビューの停止) は、キャプチャ ストリームを停止します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-213">Stop live preview stops the capture stream.</span></span>
+- <span data-ttu-id="9b82b-214">[Record] (記録) をクリックまたはタップすると、指定された設定を使って Mixed Reality ストリームのレコーディングを開始します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-214">Click or tap Record to start recording the mixed-reality stream, using the specified settings.</span></span> <span data-ttu-id="9b82b-215">[Stop recording] (記録の終了) は、レコーディングを終了して保存します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-215">Stop recording ends the recording and saves it.</span></span>
+- <span data-ttu-id="9b82b-216">[Take photo] (写真の撮影) をクリックまたはタップすると、キャプチャ ストリームから静止画像を取得します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-216">Click or tap Take photo to take a still image from the capture stream.</span></span>
+- <span data-ttu-id="9b82b-217">**[Videos and photos]** (ビデオと写真): デバイスで取得されたビデオと写真のキャプチャの一覧を表示します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-217">**Videos and photos**: Shows a list of video and photo captures taken on the device.</span></span>
+
+<span data-ttu-id="9b82b-218">Device Portal からライブ プレビューを記録またはストリーミングしている間、HoloLens アプリでは MRC の写真やビデオをキャプチャできないことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="9b82b-218">Note that HoloLens apps will not be able to capture an MRC photo or video while you are recording or streaming a live preview from the Device Portal.</span></span>
+
+### <a name="system-performance"></a><span data-ttu-id="9b82b-219">System Performance (システム パフォーマンス)</span><span class="sxs-lookup"><span data-stu-id="9b82b-219">System Performance</span></span> 
+
+<span data-ttu-id="9b82b-220">HoloLens の System Performance (システム パフォーマンス) ツールでは、3 つの追加のメトリックを記録できます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-220">The System Performance tool on HoloLens has 3 additional metrics that can be recorded.</span></span> 
+
+<span data-ttu-id="9b82b-221">利用可能なメトリックを次に示します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-221">These are the available metrics:</span></span>
+- <span data-ttu-id="9b82b-222">**[SoC power]** (SoC 電力): System on a Chip の瞬間的な電力使用量 (1 秒あたりの平均)</span><span class="sxs-lookup"><span data-stu-id="9b82b-222">**SoC power**: Instantaneous system-on-chip power utilization, averaged over one minute</span></span>
+- <span data-ttu-id="9b82b-223">**[System power]** (システム電力): システムの瞬間的な電力使用量 (1 秒あたりの平均)</span><span class="sxs-lookup"><span data-stu-id="9b82b-223">**System power**: Instantaneous system power utilization, averaged over one minute</span></span>
+- <span data-ttu-id="9b82b-224">**[Frame rate]** (フレーム レート): 1 秒あたりのフレーム数、1 秒あたりに失敗した VBlank 数、連続で失敗した VBlank 数</span><span class="sxs-lookup"><span data-stu-id="9b82b-224">**Frame rate**: Frames per second, missed VBlanks per second, and consecutive missed VBlanks</span></span>
+
+### <a name="app-crash-dumps-page"></a><span data-ttu-id="9b82b-225">App Crash Dumps (アプリのクラッシュ ダンプ) ページ</span><span class="sxs-lookup"><span data-stu-id="9b82b-225">App Crash Dumps Page</span></span> 
+
+<span data-ttu-id="9b82b-226">このページでは、サイドローディングしたアプリのクラッシュ ダンプを収集できます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-226">This page allows you to collect crash dumps for your side-loaded apps.</span></span> <span data-ttu-id="9b82b-227">クラッシュ ダンプを収集する各アプリについて、[Crash Dumps Enabled] (クラッシュ ダンプ有効) チェック ボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="9b82b-227">Check the Crash Dumps Enabled checkbox for each app for which you want to collect crash dumps.</span></span> <span data-ttu-id="9b82b-228">後でこのページに戻ると、クラッシュ ダンプが収集されています。</span><span class="sxs-lookup"><span data-stu-id="9b82b-228">Return to this page to collect crash dumps.</span></span> <span data-ttu-id="9b82b-229">ダンプ ファイルは、デバッグ用に Visual Studio で開くことができます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-229">Dump files can be opened in Visual Studio for debugging.</span></span>
+
+### <a name="kiosk-mode"></a><span data-ttu-id="9b82b-230">Kiosk Mode (キオスク モード)</span><span class="sxs-lookup"><span data-stu-id="9b82b-230">Kiosk Mode</span></span> 
+
+<span data-ttu-id="9b82b-231">キオスク モードを有効にします。キオスク モードではユーザーの操作が制限され、新しいアプリを起動したり、実行中のアプリを変更したりすることができなくなります。</span><span class="sxs-lookup"><span data-stu-id="9b82b-231">Enables kiosk mode, which limits the user's ability to launch new apps or change the running app.</span></span> <span data-ttu-id="9b82b-232">キオスク モードを有効にすると、ブルーム ジェスチャと Cortana は無効になり、配置済みのアプリもユーザーの周囲に表示されなくなります。</span><span class="sxs-lookup"><span data-stu-id="9b82b-232">When kiosk mode is enabled, the Bloom gesture and Cortana are disabled, and placed apps aren't shown in the user's surroundings.</span></span>
+
+<span data-ttu-id="9b82b-233">[Enable Kiosk Mode] (キオスク モードを有効にする) をオンにすると、HoloLens がキオスク モードになります。</span><span class="sxs-lookup"><span data-stu-id="9b82b-233">Check Enable Kiosk Mode to put the HoloLens into kiosk mode.</span></span> <span data-ttu-id="9b82b-234">[Startup app] (スタートアップ アプリ) ドロップダウンで、起動時に実行するアプリを選択します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-234">Select the app to run at startup from the Startup app dropdown.</span></span> <span data-ttu-id="9b82b-235">設定を決定するには、[Save] (保存) をクリックまたはタップします。</span><span class="sxs-lookup"><span data-stu-id="9b82b-235">Click or tap Save to commit the settings.</span></span>
+
+<span data-ttu-id="9b82b-236">選択したアプリは、キオスク モードが有効になっていない場合でも起動時に実行されます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-236">Note that the app will run at startup even if kiosk mode is not enabled.</span></span> <span data-ttu-id="9b82b-237">起動時にアプリが実行されないようにするには、[None] (なし) を選択します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-237">Select None to have no app run at startup.</span></span>
+
+### <a name="simulation"></a><span data-ttu-id="9b82b-238">Simulation (シミュレーション)</span><span class="sxs-lookup"><span data-stu-id="9b82b-238">Simulation</span></span> 
+
+<span data-ttu-id="9b82b-239">テスト用に入力データを記録して再生できます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-239">Allows you to record and play back input data for testing.</span></span>
+- <span data-ttu-id="9b82b-240">**[Capture room]** (ルームのキャプチャ): シミュレートされたルーム ファイルをダウンロードするために使います。このファイルには、ユーザーの周囲の空間マッピング メッシュが含まれます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-240">**Capture room**: Used to download a simulated room file that contains the spatial mapping mesh for the user's surroundings.</span></span> <span data-ttu-id="9b82b-241">ルームに名前を付けて [Capture] (キャプチャ) をクリックすると、データが .xef ファイルとして PC に保存されます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-241">Name the room and then click Capture to save the data as a .xef file on your PC.</span></span> <span data-ttu-id="9b82b-242">このルーム ファイルは、HoloLens エミュレーターに読み込むことができます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-242">This room file can be loaded into the HoloLens emulator.</span></span>
+- <span data-ttu-id="9b82b-243">**[Recording]** (レコーディング): レコーディングを開始します。記録するストリームをオンにし、レコーディングに名前を付けて、[Record] (記録) をクリックまたはタップします。</span><span class="sxs-lookup"><span data-stu-id="9b82b-243">**Recording**: Check the streams to record, name the recording, and click or tap Record to start recoding.</span></span> <span data-ttu-id="9b82b-244">HoloLens でアクションを実行した後、[Stop] (停止) をクリックすると、データが .xef ファイルとして PC に保存されます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-244">Perform actions with your HoloLens and then click Stop to save the data as a .xef file on your PC.</span></span> <span data-ttu-id="9b82b-245">このファイルは、HoloLens エミュレーターまたはデバイスで読み込むことができます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-245">This file can be loaded on the HoloLens emulator or device.</span></span>
+- <span data-ttu-id="9b82b-246">**[Playback]** (再生): [Upload recording] (レコーディングのアップロード) をクリックまたはタップし、PC から xef ファイルを選択して、そのデータを HoloLens に送信します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-246">**Playback**: Click or tap Upload recording to select a xef file from your PC and send the data to the HoloLens.</span></span>
+- <span data-ttu-id="9b82b-247">**[Control mode]** (制御モード): HoloLens のモードを選択します。ドロップダウンから [Default] (既定) または [Simulation] (シミュレーション) を選択し、[Set] (設定) ボタンをクリックまたはタップします。</span><span class="sxs-lookup"><span data-stu-id="9b82b-247">**Control mode**: Select Default or Simulation from the dropdown, and click or tap the Set button to select the mode on the HoloLens.</span></span> <span data-ttu-id="9b82b-248">[Simulation] (シミュレーション) を選ぶと、HoloLens の実際のセンサーは無効になり、アップロードされたシミュレーション データが代わりに使われます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-248">Choosing "Simulation" disables the real sensors on your HoloLens and uses uploaded simulated data instead.</span></span> <span data-ttu-id="9b82b-249">[Simulation] (シミュレーション) に切り替えると、[Default] (既定) に戻すまで、HoloLens は実際のユーザーに応答しなくなります。</span><span class="sxs-lookup"><span data-stu-id="9b82b-249">If you switch to "Simulation", your HoloLens will not respond to the real user until you switch back to "Default".</span></span>
 
 
+### <a name="virtual-input"></a><span data-ttu-id="9b82b-250">Virtual Input (仮想入力)</span><span class="sxs-lookup"><span data-stu-id="9b82b-250">Virtual Input</span></span> 
 
-<!--HONumber=Aug16_HO3-->
+<span data-ttu-id="9b82b-251">リモート コンピューターから HoloLens にキーボード入力を送信します。</span><span class="sxs-lookup"><span data-stu-id="9b82b-251">Sends keyboard input from the remote machine to the HoloLens.</span></span>
 
-
+<span data-ttu-id="9b82b-252">[Virtual keyboard] (仮想キーボード) の下にある領域をクリックまたはタップすると、HoloLens にキー入力を送信できるようになります。</span><span class="sxs-lookup"><span data-stu-id="9b82b-252">Click or tap the region under Virtual keyboard to enable sending keystrokes to the HoloLens.</span></span> <span data-ttu-id="9b82b-253">[Input text] (テキストの入力) テキスト ボックスに入力し、[Send] (送信) をクリックまたはタップすると、アクティブなアプリにキー入力が送信されます。</span><span class="sxs-lookup"><span data-stu-id="9b82b-253">Type in the Input text textbox and click or tap Send to send the keystrokes to the active app.</span></span>
