@@ -37,7 +37,8 @@
   ],
   "branches_to_filter": [
     "master-oldev",
-    "live-oldev"
+    "live-oldev",
+    "live-sxs"
   ],
   "git_repository_url_open_to_public_contributors": "",
   "continue_with_document_error": true,
