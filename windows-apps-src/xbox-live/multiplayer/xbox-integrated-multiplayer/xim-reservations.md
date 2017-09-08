@@ -1,0 +1,148 @@
+---
+title: "XIM 帯域外予約"
+author: KevinAsgari
+description: "帯域外予約を介した専用チャット ソリューションとして Xbox Integrated Multiplayer (XIM) を使用する方法について説明します。"
+ms.assetid: 0ed26d19-defb-414d-a414-c4877bd0ed37
+ms.author: kevinasg
+ms.date: 04-04-2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Xbox Integrated Multiplayer, XIM, チャット"
+ms.openlocfilehash: fa12249d1b2f78057369c5961e41560b1bdaf890
+ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/06/2017
+---
+# <a name="using-xim-as-a-dedicated-chat-solution-via-out-of-band-reservations"></a><span data-ttu-id="bb8f5-104">帯域外予約を介した専用チャット ソリューションとしての XIM の使用</span><span class="sxs-lookup"><span data-stu-id="bb8f5-104">Using XIM as a dedicated chat solution via out-of-band reservations</span></span>
+
+<span data-ttu-id="bb8f5-105">ほとんどのアプリでは、プレイヤーが集まるあらゆる場面の処理に XIM を使います。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-105">Most apps use XIM to handle every aspect of getting players together.</span></span> <span data-ttu-id="bb8f5-106">一般的なマルチプレイヤー シナリオ全体をサポートするために必要なすべての機能を集めていることが、"Xbox 統合マルチプレイヤー" と呼ばれる理由です。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-106">After all, a focus on assembling all the features needed to support common multiplayer scenarios end-to-end is the reason it's called "Xbox Integrated Multiplayer".</span></span> <span data-ttu-id="bb8f5-107">ただし、専用のインターネット サーバーを使用して、独自のマルチプレイヤー ソリューションを実装している一部のアプリでも、信頼性の高い、待機時間の短い、コストの低いピア ツー ピア チャットの通信を利用できます。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-107">However some apps that implement their own multiplayer solutions using dedicated Internet servers would also like the advantages of establishing reliable, low latency, low cost peer-to-peer chat communication.</span></span> <span data-ttu-id="bb8f5-108">XIM ではこのようなニーズを把握し、現在では拡張モードをサポートしています。これを利用すると、XIM API 外で必要になる外部プレーヤー管理機能を補強するピア通信を簡素化できます。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-108">XIM recognizes this need, and currently supports an extension mode to take advantage of its simplified peer communication to augment external player management happening outside the XIM API.</span></span> <span data-ttu-id="bb8f5-109">ソーシャルの手段やマッチメイキングを通じた XIM ネットワークへの移動ではなく、プレイヤーが "予約" して移動します。予約は "帯域外" 通信で外部プレーヤーのランデブー メカニズムにより特定のユーザーに保証されたプレースホルダーです。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-109">Instead of moving into a XIM network through social means or matchmaking, players move using "reservations", guaranteed placeholders for particular users that are exchanged "out-of-band" through the app's external player rendezvous mechanism.</span></span>
+
+<span data-ttu-id="bb8f5-110">移行処理を除くと、帯域外予約を使用して管理される XIM ネットワークは実質的に、他の XIM ネットワークと同じです。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-110">Aside from the move process, XIM networks managed using out-of-band reservations are effectively the same as any other XIM network.</span></span> <span data-ttu-id="bb8f5-111">すべての通信機能は同様に動作します。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-111">All communication functions work identically.</span></span> <span data-ttu-id="bb8f5-112">ただし、マッチメイキングとソーシャル探索 API メソッドは、帯域外予約を使用して管理する XIM ネットワークに対して無効にする必要があります。これは、アプリの外部の実装と競合する可能性があるためです。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-112">However, matchmaking and social discovery API methods are necessarily disabled for XIM networks managed using out-of-band reservations since they would conflict with the app's own external implementation.</span></span> <span data-ttu-id="bb8f5-113">たとえば、このような XIM ネットワークから招待を送信することはできません。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-113">You can't send invites from such a XIM network, for example.</span></span>
+
+<span data-ttu-id="bb8f5-114">単純なエンド ツー エンド ソリューションを提供できるように XIM は最適化されています。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-114">XIM is optimized to provide a simple end-to-end solution.</span></span> <span data-ttu-id="bb8f5-115">そのため、すべての複雑なトポロジまたはシナリオに、帯域外の予約がうまく利用できるとは限りません。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-115">Therefore, not all complex topologies or scenarios may be a perfect fit for out-of-band reservations.</span></span> <span data-ttu-id="bb8f5-116">XIM の通信機能を活用できるか、またはその方法について質問がある場合は、Microsoft の担当者にお問い合わせください。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-116">If you have questions about whether or how to leverage XIM's communication features, contact your Microsoft representative.</span></span>
+
+
+> <span data-ttu-id="bb8f5-117">以降のトピックでは、XIM で帯域外予約を活用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-117">The subsequent topics describe how to leverage out-of-band reservations in XIM.</span></span> <span data-ttu-id="bb8f5-118">"標準的な" XIM の使用方法は前のセクションで説明されているものとほとんど変わりがないため、説明は一部省略されています。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-118">Because of the relatively few differences from "standard" XIM usage described in previous sections, some discussion is abbreviated.</span></span> <span data-ttu-id="bb8f5-119">詳しくは、「[XIM の使用](using-xim.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-119">Familiarity with [Using XIM](using-xim.md) is recommended.</span></span>
+
+<span data-ttu-id="bb8f5-120">トピック:</span><span class="sxs-lookup"><span data-stu-id="bb8f5-120">Topics:</span></span>
+
+1. [<span data-ttu-id="bb8f5-121">新しい帯域外予約による XIM ネットワークへの移行</span><span class="sxs-lookup"><span data-stu-id="bb8f5-121">Moving to a new out-of-band reservation XIM network</span></span>](#moving)
+2. [<span data-ttu-id="bb8f5-122">帯域外予約を使用して管理される XIM ネットワークへのプレーヤーの追加</span><span class="sxs-lookup"><span data-stu-id="bb8f5-122">Adding players to a XIM network managed using out-of-band reservations</span></span>](#adding)
+3. [<span data-ttu-id="bb8f5-123">帯域外予約を使用して管理される XIM ネットワークでのチャット ターゲットの構成</span><span class="sxs-lookup"><span data-stu-id="bb8f5-123">Configuring chat targets in a XIM network managed using out-of-band reservations</span></span>](#targets)
+4. [<span data-ttu-id="bb8f5-124">帯域外予約を使用して管理される XIM ネットワークからのプレイヤーの削除</span><span class="sxs-lookup"><span data-stu-id="bb8f5-124">Removing players from a XIM network managed using out-of-band reservations</span></span>](#remove)
+5. [<span data-ttu-id="bb8f5-125">帯域外予約を使用して管理される XIM ネットワークのクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="bb8f5-125">Cleaning up a XIM network managed using out-of-band reservations</span></span>](#clean)
+
+## <a name="moving-to-a-new-out-of-band-reservation-xim-network-a-namemoving"></a><span data-ttu-id="bb8f5-126">新しい帯域外予約による XIM ネットワークへの移行 <a name="moving"></span><span class="sxs-lookup"><span data-stu-id="bb8f5-126">Moving to a new out-of-band reservation XIM network <a name="moving"></span></span>
+
+
+<span data-ttu-id="bb8f5-127">帯域外予約の使用を開始するには、このモードで作成された新しい XIM ネットワークに、集まった参加者の 1 人を移動する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-127">To begin using out-of-band reservations, one of your gathered participants must move into a new XIM network created in this mode.</span></span> <span data-ttu-id="bb8f5-128">参加しているピア デバイスはどれを選択してもかまいません。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-128">The selection of which participating peer device is up to you.</span></span> <span data-ttu-id="bb8f5-129">このプロセスを開始するための自然な選択として、ゲーム ホストやサーバーの使用が考えられますが、これは必須ではありません。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-129">You may already have a concept of game host or server, which is a natural choice for starting the process, but this is not required.</span></span> <span data-ttu-id="bb8f5-130">接続セットアップの時間を最短にするために、"Open" ネットワーク アクセス タイプであるデバイスを選ぶことをお勧めします (詳しくは、`Windows::Networking::XboxLive` プラットフォームのドキュメントをご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-130">We do recommend choosing a device that reports an "Open" network access type (see the `Windows::Networking::XboxLive` platform documentation for more information) to achieve the fastest connectivity setup time.</span></span>
+
+<span data-ttu-id="bb8f5-131">帯域外予約を通じて管理されているネットワークへの移動は、XIM を初期化し、標準の XIM 使用のチュートリアルで示されているように、特定のローカル Xbox ユーザー ID を宣言することによって行われます。`xim::move_to_new_network(), call ` のようなメソッドを呼び出すのではなく、xim::move_to_network_using_out_of_band_reservation() を予約文字列に null を設定して呼び出します。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-131">Moving to a XIM network managed through out-of-band reservations is done by initializing XIM and declaring the intended local Xbox User IDs as seen in the standard XIM usage walkthrough, but instead of calling a method like `xim::move_to_new_network(), call `xim::move_to_network_using_out_of_band_reservation() with a null reservation string.</span></span> <span data-ttu-id="bb8f5-132">次に、例を示します。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-132">For example:</span></span>
+
+```cpp
+ xim::singleton_instance().initialize(myServiceConfigurationId, myTitleId);
+ xim::singleton_instance().set_intended_local_xbox_user_ids(1, &myXuid);
+ xim::singleton_instance().move_to_network_using_out_of_band_reservation(nullptr);
+```
+
+<span data-ttu-id="bb8f5-133">標準的な `xim_move_to_network_starting_state_change`、`xim_player_joined_state_change`、および `xim_move_to_network_succeeded_state_change` は、通常の `xim::start_processing_state_changes()` と `xim::finish_processing_state_changes()` の間で状態変化を処理中に、時間の経過と共に提供されます。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-133">The standard `xim_move_to_network_starting_state_change`, `xim_player_joined_state_change`, and `xim_move_to_network_succeeded_state_change` will then be provided over time while processing the state changes in the typical `xim::start_processing_state_changes()` and `xim::finish_processing_state_changes()` loop.</span></span> <span data-ttu-id="bb8f5-134">次に、例を示します。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-134">For example:</span></span>
+
+```cpp
+ uint32_t stateChangeCount;
+ xim_state_change_array stateChanges;
+ xim::singleton_instance().start_processing_state_changes(&stateChangeCount, &stateChanges);
+ for (uint32_t stateChangeIndex = 0; stateChangeIndex < stateChangeCount; stateChangeIndex++)
+ {
+     const xim_state_change * stateChange = stateChanges[stateChangeIndex];
+     switch (stateChange->state_change_type)
+     {
+         case xim_state_change_type::player_joined:
+         {
+             MyHandlePlayerJoined(static_cast<const xim_player_joined_state_change *>(stateChange));
+             break;
+         }
+
+         case xim_state_change_type::player_left:
+         {
+             MyHandlePlayerLeft(static_cast<const xim_player_left_state_change *>(stateChange));*
+             break;
+         }
+
+         ...
+     }
+ }
+ xim::singleton_instance().finish_processing_state_changes(stateChanges);
+```
+
+<span data-ttu-id="bb8f5-135">最初のデバイスが状態変更を処理し、プレイヤーを正常に XIM ネットワークに移動したあと、その他のユーザーの予約を作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-135">Once the initial device has processed the state changes and had its player(s) successfully moved into the XIM network, it must create reservations for the additional users.</span></span>
+
+## <a name="adding-players-to-a-xim-network-managed-using-out-of-band-reservations-a-nameadding"></a><span data-ttu-id="bb8f5-136">帯域外予約を使用して管理される XIM ネットワークへのプレーヤーの追加 <a name="adding"></span><span class="sxs-lookup"><span data-stu-id="bb8f5-136">Adding players to a XIM network managed using out-of-band reservations <a name="adding"></span></span>
+
+<span data-ttu-id="bb8f5-137">帯域外予約を使用して管理される XIM ネットワークは、`xim::allowed_player_joins()` メソッドから常に `xim_allowed_player_joins::out_of_band_reservation` の値を、レポートします。`xim::create_out_of_band_reservation()` を呼び出すことによって Xbox ユーザー ID に対してスポットが予約されたプレイヤーを除く、すべてのプレイヤーに対して閉じられています。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-137">XIM networks that are managed using out-of-band reservations always report a value of `xim_allowed_player_joins::out_of_band_reservation` from the `xim::allowed_player_joins()` method; they're closed to all players except those with spots reserved for their Xbox User IDs by calling `xim::create_out_of_band_reservation()`.</span></span> `xim::create_out_of_band_reservation()` <span data-ttu-id="bb8f5-138"> は、ユーザーの配列を取得し、一度にまたは時間の経過と共に、集まった外部プレーヤーに、このような予約を作成できます。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-138">takes an array of users, so you can create such reservations for your externally gathered players all at once or over time.</span></span> <span data-ttu-id="bb8f5-139">また、XIM ネットワークに参加しているプレイヤーが既にあるユーザーは無視されるため、追加の Xbox ユーザー ID の完全な代替セットまたはデルタ変更 (便利な方) を提供することもできます。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-139">Also, users that already have players participating in the XIM network are ignored, so you can also provide additional Xbox User IDs as a complete replacement set or as delta changes, whichever is convenient.</span></span> <span data-ttu-id="bb8f5-140">次の例では、変数 'xboxUserIds' の 'xboxUserIdCount' 要素の配列に Xbox ユーザー ID の文字列ポインターのセットがすべて揃っていることを前提にしています。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-140">The following example assumes you already have your fully gathered set of Xbox User IDs string pointers into an array of 'xboxUserIdCount' elements in the variable 'xboxUserIds':</span></span>
+
+```cpp
+ xim::singleton_instance().create_out_of_band_reservation(xboxUserIdCount, xboxUserIds);
+```
+
+<span data-ttu-id="bb8f5-141">これにより、指定された Xbox ユーザー ID に対して予約を作成するための非同期プロセスが開始されます。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-141">This begins the asynchronous process of creating a reservations for the specified Xbox User IDs.</span></span> <span data-ttu-id="bb8f5-142">処理が完了すると、成功または失敗を示す `xim_create_out_of_band_reservation_completed_state_change` が提供され、成功した場合、アプリでこれら Xbox ユーザー ID から予約文字列が利用できるようにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-142">When the operation completes, you'll be provided a `xim_create_out_of_band_reservation_completed_state_change` that reports success or failure, and if successful, a reservation string that your app must make available to those Xbox User IDs.</span></span> <span data-ttu-id="bb8f5-143">XIM 外部プレーヤーを集めるために使用した外部のメカニズムで、この文字列を "帯域外” で渡す必要があります。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-143">You should pass this string to them "out-of-band" using your external mechanism that you used to gather the players outside of XIM.</span></span> <span data-ttu-id="bb8f5-144">たとえば、マルチプレイヤー セッション ディレクトリ (MPSD) の Xbox Live サービスを使っている場合、この文字列をセッション ドキュメント内のカスタム プロパティとして書き込めます (注: 予約文字列には、エスケープまたは Base64 エンコードなしで、JSON で安全に使えるように、限られた文字セットを使用)。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-144">For example, if you're using the Multiplayer Session Directory (MPSD) Xbox Live service, you can write this string as a custom property in the session document (note: the reservation string will always contain only a limited set of characters that are safe for use in JSON without any need for escaping or Base64 encoding).</span></span>
+
+<span data-ttu-id="bb8f5-145">他のユーザーも、`xim::move_to_network_using_out_of_band_reservation()` に渡すパラメーターとして予約文字列を使用すると、XIM ネットワークへの移行を開始できます。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-145">Once the other users have their reservation strings, they can then begin moving to the XIM network using it as the parameter to `xim::move_to_network_using_out_of_band_reservation()`.</span></span> <span data-ttu-id="bb8f5-146">次の例では、予約文字列を 'reservationString' という変数に抽出したものと想定しています。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-146">The following example assumes the reservation string has been extracted to a variable named 'reservationString'.</span></span>
+
+```cpp
+xim::singleton_instance().move_to_network_using_out_of_band_reservation(reservationString);
+
+```
+
+<span data-ttu-id="bb8f5-147">null ポインターが予約文字列に指定されている最初のデバイスと同様に移動は非同期で進みます。そして同じ状態変化 `xim_move_to_network_starting_state_change`、`xim_player_joined_state_change`、および `xim_move_to_network_succeeded_state_change` が生成されます。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-147">The move proceeds asynchronously just like for the initial device that specified a null pointer for the reservation string, and the same state changes, `xim_move_to_network_starting_state_change`, `xim_player_joined_state_change`, and `xim_move_to_network_succeeded_state_change`, will be generated.</span></span> <span data-ttu-id="bb8f5-148">ローカルとリモートの両方のプレイヤーが追加されます。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-148">Both local and remote players will be added.</span></span> <span data-ttu-id="bb8f5-149">これらの新しいプレイヤーに対する `xim_player_joined_state_change` が既存のデバイスにも提供されます。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-149">The existing device will also be provided a `xim_player_joined_state_change` for these new players.</span></span>
+
+<span data-ttu-id="bb8f5-150">この時点で、この XIM ネットワーク内の異なるデバイスのプレイヤー間で音声およびテキスト チャット通信が自動的に有効になります (プライバシーとポリシーで許容される場合)。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-150">At this point, voice and text chat communication is automatically enabled among the players on these different devices in this XIM network (where privacy and policy permit).</span></span>
+
+## <a name="configuring-chat-targets-in-a-xim-network-managed-using-out-of-band-reservations-a-nametargets"></a><span data-ttu-id="bb8f5-151">帯域外予約を使用して管理される XIM ネットワークでのチャット ターゲットの構成 <a name="targets"></span><span class="sxs-lookup"><span data-stu-id="bb8f5-151">Configuring chat targets in a XIM network managed using out-of-band reservations <a name="targets"></span></span>
+
+<span data-ttu-id="bb8f5-152">帯域外予約を使用して管理されている XIM ネットワークは、チャットのコミュニケーションに関して従来の XIM ネットワークと同様に動作します。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-152">XIM networks that are managed using out-of-band reservations behave identically to traditional XIM networks with respect to chat communication.</span></span> <span data-ttu-id="bb8f5-153">競争力のあるシナリオをサポートするために、新しく作成した XIM ネットワークが、同じチームのメンバーであるプレーヤーとのチャットだけをサポートするように自動的に構成されます。つまり、既定では、`xim::chat_targets()` で報告される構成値は `xim_chat_targets::same_team_index_only` です。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-153">To support competitive scenarios, newly created XIM networks are automatically configured to only support chat with other players that are members of the same team; that is, the configured value reported by `xim::chat_targets()` by default is `xim_chat_targets::same_team_index_only`.</span></span> <span data-ttu-id="bb8f5-154">`xim::set_chat_targets()` を呼び出すことにより、どのユーザーも (プライバシーとポリシーで許容される範囲で) すべてのユーザーに話しかけられるように変更できます。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-154">This can be changed to allow everyone to talk to everyone else (where privacy and policy permit) by calling `xim::set_chat_targets()`.</span></span> <span data-ttu-id="bb8f5-155">次の例の先頭では、XIM ネットワークですべてのユーザーが利用できるように `xim_chat_targets::all_players` 値を使用しています。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-155">The following example begins configuring everyone in the XIM network to use a `xim_chat_targets::all_players` value:</span></span>
+
+```cpp
+xim::singleton_instance().set_chat_targets(xim_chat_targets::all_players);
+```
+
+<span data-ttu-id="bb8f5-156">すべての参加者に新しいターゲット設定が有効であると通知されるのは、`xim_chat_targets_changed_state_change` が提供されたときです。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-156">All participants are informed that a new target setting in effect when they're provided a `xim_chat_targets_changed_state_change`.</span></span>
+
+<span data-ttu-id="bb8f5-157">帯域外予約を使用して管理される XIM ネットワーク内のすべてのプレイヤーが最初は同じチーム インデックス値、ゼロで構成されています。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-157">Every player in XIM networks managed using out-of-band reservations is initially configured with the same team index value, zero.</span></span> <span data-ttu-id="bb8f5-158">つまり、`xim_chat_targets::same_team_index_only` の構成は、既定では `xim_chat_targets::all_players` と区別できません。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-158">This means a configuration of `xim_chat_targets::same_team_index_only` is indistinguishable from `xim_chat_targets::all_players` by default.</span></span> <span data-ttu-id="bb8f5-159">ただし、ローカル プレイヤーのチーム インデックスは、`xim_player::xim_local::set_team_index()` を呼び出していつでも変更できます。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-159">However, you can change a local player's team index at any time by calling `xim_player::xim_local::set_team_index()`.</span></span> <span data-ttu-id="bb8f5-160">以下の例では、新しいチーム インデックス値として 1 が設定されるように、プレイヤーのポインター 'localPlayer' を構成します。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-160">The following example configures a player pointer 'localPlayer' to have a new team index value of one:</span></span>
+
+```cpp
+ localPlayer->local()->set_team_index(1);
+```
+
+<span data-ttu-id="bb8f5-161">プレイヤーに新しいチーム インデックス値が設定された場合、すべてのデバイスは、プレイヤーの xim_player_team_index_changed_state_change を受信することで通知されます。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-161">All devices are informed that the player has a new team index value in effect when they're provided a xim_player_team_index_changed_state_change for that player.</span></span> <span data-ttu-id="bb8f5-162">現在のチャット ターゲットの構成が xim_chat_targets::same_team_index_only の場合は、その同じ新しいチーム インデックスを持つ他のプレーヤーに、(プライバシーとポリシーで許容される範囲で) 変更元プレーヤーからの音声とテキスト チャットが届き始めます (逆方向も同様)。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-162">If the chat target configuration is currently xim_chat_targets::same_team_index_only, then other players with that same new team index will begin hearing voice and being provided text chat (privacy and policy permitting) from the changing player and vice versa.</span></span> <span data-ttu-id="bb8f5-163">古いチーム インデックスを持つプレイヤーについては、このようなチャット コミュニケーションのやり取りが停止になります。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-163">Players with the old team index will stop exchanging such chat communication.</span></span> <span data-ttu-id="bb8f5-164">現在のチャット ターゲットの構成が xim_chat_targets::all_players の場合は、チーム インデックスは誰が誰とチャットできるかに影響しません。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-164">If the chat target configuration is currently xim_chat_targets::all_players, then team index has no impact on who can chat with whom.</span></span>
+
+
+## <a name="removing-players-from-a-xim-network-managed-using-out-of-band-reservations-a-nameremove"></a><span data-ttu-id="bb8f5-165">帯域外予約を使用して管理される XIM ネットワークからのプレイヤーの削除 <a name="remove"></span><span class="sxs-lookup"><span data-stu-id="bb8f5-165">Removing players from a XIM network managed using out-of-band reservations <a name="remove"></span></span>
+
+<span data-ttu-id="bb8f5-166">帯域外予約を使用するときは、プレイヤーの名簿を外部で管理するため、場合によってはプレイヤーを XIM ネットワークから削除する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-166">You're managing the roster of players externally when using out-of-band reservations, so naturally you may need to remove players from the XIM network.</span></span> <span data-ttu-id="bb8f5-167">一般的な方法は、XIM ネットワークと予約を作成するために使用されたゲームのホストをアプリで活用して、プレーヤーの削除も管理することで、`xim::kick_player()` を呼び出して実行します。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-167">The typical way is for apps to leverage the same game host that was used to create the XIM network and subsequent reservations originally to also manage player removal, and do so by calling `xim::kick_player()`.</span></span> <span data-ttu-id="bb8f5-168">これにより、指定されたプレーヤーと同じデバイス上のすべてのプレイヤーが XIM ネットワークから削除されます。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-168">This removes the specified player and all players on that same device from the XIM network.</span></span> <span data-ttu-id="bb8f5-169">次の例は、アプリで、'playerToRemove' 変数で示される `xim_player` オブジェクトを削除することを前提にしています。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-169">The following example assumes the app has determined that it wants to remove the `xim_player` object pointed to by the 'playerToRemove' variable:</span></span>
+
+```cpp
+xim::singleton_instance().kick_player(playerToRemove);
+```
+
+<span data-ttu-id="bb8f5-170">該当する (複数の) プレイヤー全員に必要な `xim_player_left_state_change` とネットワークから除外されていることを示す `xim_network_exited_state_change` が送られます。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-170">The applicable player (or players) will be provided any necessary `xim_player_left_state_change` for every player and a `xim_network_exited_state_change` indicating that they have been kicked from the network.</span></span> <span data-ttu-id="bb8f5-171">代わりに、各プレイヤーが `xim::leave_network()` を呼び出しても、自身で同じようにネットワークから退出できます。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-171">Alternatively, each player can call `xim::leave_network()` to exit on their own for the same effect.</span></span>
+
+<span data-ttu-id="bb8f5-172">XIM のピア ツー ピア通信ではいつでも、環境の問題により XIM ネットワークからプレイヤーが退出したと見なされる可能性があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-172">Be aware that XIM peer-to-peer communication may make its own determination at any time that a player has left the XIM network due to environmental difficulties.</span></span> <span data-ttu-id="bb8f5-173">"要求に基づかない" `xim_player_left_state_change` を処理し、XIM の状態と外部プレーヤー管理スキームとの矛盾を調整できるように、アプリ側で適切に準備する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-173">Your app should be prepared to handle an "unsolicited" `xim_player_left_state_change` and reconcile any discrepancy between XIM's state and your external player management scheme in a way appropriate for your particular app.</span></span>
+
+
+## <a name="cleaning-up-a-xim-network-managed-using-out-of-band-reservations-a-nameclean"></a><span data-ttu-id="bb8f5-174">帯域外予約を使用して管理される XIM ネットワークのクリーンアップ <a name="clean"></span><span class="sxs-lookup"><span data-stu-id="bb8f5-174">Cleaning up a XIM network managed using out-of-band reservations <a name="clean"></span></span>
+
+<span data-ttu-id="bb8f5-175">XIM からまだ除外されていないプレイヤーが、xim::initialize() と `xim::set_intended_local_xbox_user_ids()` だけが呼び出された状態に戻ることを希望する場合は、`xim::leave_network()` メソッドを使って開始できます。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-175">Any players that haven't already been kicked from the XIM network and want to return to the state as if only xim::initialize() and `xim::set_intended_local_xbox_user_ids()` had been called, can begin doing so using the `xim::leave_network()` method:</span></span>
+
+```cpp
+xim::singleton_instance().leave_network();
+```
+
+<span data-ttu-id="bb8f5-176">これにより、非同期的に他の参加者の切断が開始されます。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-176">This begins asynchronously disconnecting from the other participants.</span></span> <span data-ttu-id="bb8f5-177">これにより、リモート デバイスに対してローカル プレーヤーの `xim_player_left_state_change`、ローカルデバイスに対してローカルまたはリモートの各プレーヤーの `xim_player_left_state_change` が送られます。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-177">This will cause the remote devices to be provided a `xim_player_left_state_change` for the local player(s), and the local device will be provided a `xim_player_left_state_change` for each player, local or remote.</span></span> <span data-ttu-id="bb8f5-178">すべての切断処理が正常に完了したら、最終の `xim_network_exited_state_change` が提供されます。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-178">When all graceful disconnection has finished, a final `xim_network_exited_state_change` will be provided.</span></span> <span data-ttu-id="bb8f5-179">その後、アプリで `xim::cleanup()` を呼び出してリソースをすべて解放し、未初期化状態に戻すことができます。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-179">The app can then call `xim::cleanup()` to free all resources and return to the uninitialized state:</span></span>
+
+```cpp
+ xim::singleton_instance().cleanup();
+```
+
+<span data-ttu-id="bb8f5-180">`xim_network_exited_state_change` がまだ送信されていない場合は、`xim::leave_network()` を呼び出し、`xim_network_exited_state_change` を待機して、XIM ネットワークを正常終了することを強くお勧めします。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-180">Invoking `xim::leave_network()` and waiting for the `xim_network_exited_state_change` in order to exit a XIM network gracefully is always highly recommended when a `xim_network_exited_state_change` has not already been provided.</span></span> <span data-ttu-id="bb8f5-181">`xim::cleanup()` を直接呼び出すと、残りの参加者が "消えた" デバイスに送ったメッセージがタイムアウトするのを待機している間、通信パフォーマンスの問題を引き起こす可能性があります。</span><span class="sxs-lookup"><span data-stu-id="bb8f5-181">Calling `xim::cleanup()` directly may cause communication performance problems for the remaining participants while they're forced to time out messages to the device that simply "disappeared".</span></span>

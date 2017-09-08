@@ -1,0 +1,130 @@
+---
+title: "Xbox Live サインインのトラブルシューティング"
+author: KevinAsgari
+description: "Xbox Live のサインインの問題をトラブルシューティングする方法について説明します。"
+ms.assetid: 87b70b4c-c9c1-48ba-bdea-b922b0236da4
+ms.author: kevinasg
+ms.date: 04-04-2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "xbox live, xbox, ゲーム, uwp, windows 10, xbox one, サインイン, トラブルシューティング"
+ms.openlocfilehash: c9093e216465a4cccd87f9d955d1f77acdfa9499
+ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/06/2017
+---
+# <a name="troubleshooting-xbox-live-sign-in"></a><span data-ttu-id="efa7f-104">Xbox Live サインインのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="efa7f-104">Troubleshooting Xbox Live sign-in</span></span>
+
+<span data-ttu-id="efa7f-105">サインインに問題が発生する場合、いくつかの原因が考えられます。</span><span class="sxs-lookup"><span data-stu-id="efa7f-105">There are several issues that can cause difficulty signing-in.</span></span>  <span data-ttu-id="efa7f-106">「[UWP ゲーム用 Visual Studio の概要](../../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)」の手順に従うと、予期しないエラーが発生する可能性を最小限に抑えることができます。</span><span class="sxs-lookup"><span data-stu-id="efa7f-106">If you follow the steps in [Get started with Visual Studio for UWP games](../../get-started-with-partner/get-started-with-visual-studio-and-uwp.md) you can minimize the chance to any unexpected errors.</span></span>
+
+## <a name="common-issues"></a><span data-ttu-id="efa7f-107">一般的な問題</span><span class="sxs-lookup"><span data-stu-id="efa7f-107">Common Issues</span></span>
+
+### <a name="sandbox-problems"></a><span data-ttu-id="efa7f-108">サンドボックスの問題</span><span class="sxs-lookup"><span data-stu-id="efa7f-108">Sandbox Problems</span></span>
+<span data-ttu-id="efa7f-109">一般的に言えば、サンドボックスの概念、およびサンドボックスと Xbox Live の関係をよく理解する必要があります。</span><span class="sxs-lookup"><span data-stu-id="efa7f-109">Generally speaking, you should familiarize yourself with the concept of Sandboxes and how they pertain to Xbox Live.</span></span>  <span data-ttu-id="efa7f-110">詳細は、「[Xbox Live Sandboxes](../../xbox-live-sandboxes.md)」ガイドを参照してください。</span><span class="sxs-lookup"><span data-stu-id="efa7f-110">You can see more information in the [Xbox Live Sandboxes](../../xbox-live-sandboxes.md) guide.</span></span>
+
+<span data-ttu-id="efa7f-111">簡単に言えば、サンドボックスはリテール リリースの前にコンテンツ分離とアクセス制御を行います。</span><span class="sxs-lookup"><span data-stu-id="efa7f-111">Briefly, sandboxes enforce content isolation and access control before retail release.</span></span>  <span data-ttu-id="efa7f-112">開発サンドボックスへのアクセス権を持たないユーザーは、タイトルに関する読み書き操作を実行できません。</span><span class="sxs-lookup"><span data-stu-id="efa7f-112">Users without access to your development sandbox cannot perform any read or write operations that pertain to your title.</span></span>  <span data-ttu-id="efa7f-113">また、テストのために、異なるサンドボックスに異なるサービス構成を発行することもできます。</span><span class="sxs-lookup"><span data-stu-id="efa7f-113">You can also publish variations of service config to different sandboxes for testing.</span></span>
+
+<span data-ttu-id="efa7f-114">以下では、サンドボックスに関して注意する必要のあることについて説明します。</span><span class="sxs-lookup"><span data-stu-id="efa7f-114">Some things to watch out for with regards to sandboxes are discussed below.</span></span>
+
+#### <a name="developer-account-doesnt-have-access-to-the-right-sandbox-for-run-time-access"></a><span data-ttu-id="efa7f-115">開発者アカウントでは実行時アクセス用の正しいサンドボックスにアクセスできない</span><span class="sxs-lookup"><span data-stu-id="efa7f-115">Developer account doesn't have access to the right sandbox for run-time access</span></span>
+* <span data-ttu-id="efa7f-116">開発中のタイトルにはテスト アカウント (開発者アカウントとも呼ばれます) を使用してサインインする必要があります。</span><span class="sxs-lookup"><span data-stu-id="efa7f-116">A test account (also known as development account) must be used for sign-in to a title that is in development.</span></span>  <span data-ttu-id="efa7f-117">テスト アカウントでサインインしていることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="efa7f-117">Make sure you are attempting to sign-in with a test account.</span></span>  <span data-ttu-id="efa7f-118">開発者アカウントは XDP の [https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts) で作成します。</span><span class="sxs-lookup"><span data-stu-id="efa7f-118">These are created on XDP at [https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts)</span></span>
+* <span data-ttu-id="efa7f-119">XDP アカウントでタイトル発行先のサンドボックスにアクセスできることを確認します。</span><span class="sxs-lookup"><span data-stu-id="efa7f-119">Ensure that the XDP account has access to the sandbox your title is published to.</span></span>  <span data-ttu-id="efa7f-120">XDP で作成したテスト アカウントは、それを作成した XDP アカウントのアクセス許可を継承します。</span><span class="sxs-lookup"><span data-stu-id="efa7f-120">The test accounts you create in XDP inherit the permissions of the XDP account that created them</span></span>
+
+#### <a name="your-device-is-not-on-the-correct-sandbox"></a><span data-ttu-id="efa7f-121">デバイスが正しいサンドボックス上にない</span><span class="sxs-lookup"><span data-stu-id="efa7f-121">Your device is not on the correct sandbox</span></span>
+<span data-ttu-id="efa7f-122">開発に使用するデバイスは、開発サンドボックスに設定されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="efa7f-122">The device you are developing on must be set to a development sandbox.</span></span>  <span data-ttu-id="efa7f-123">Xbox One では、*Xbox One Manager* を使用してサンドボックスを設定できます。</span><span class="sxs-lookup"><span data-stu-id="efa7f-123">On Xbox One you can set your sandbox using *Xbox One Manager*.</span></span>  <span data-ttu-id="efa7f-124">Windows 10 Desktop の場合は、Xbox Live SDK インストールの Tools ディレクトリにある SwitchSandbox.cmd スクリプトを使用できます。</span><span class="sxs-lookup"><span data-stu-id="efa7f-124">For Windows 10 Desktop, you can use the SwitchSandbox.cmd script that's located in the Tools directory of the Xbox Live SDK installation.</span></span>
+
+#### <a name="your-titles-service-configuration-is-not-published-to-the-correct-development-sandbox"></a><span data-ttu-id="efa7f-125">タイトルのサービス構成が正しい開発サンドボックスに発行されていない</span><span class="sxs-lookup"><span data-stu-id="efa7f-125">Your title's service configuration is not published to the correct development sandbox</span></span>
+<span data-ttu-id="efa7f-126">タイトルのサービス構成が開発サンドボックスに発行されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="efa7f-126">Ensure your title's service configuration is published in a development sandbox.</span></span>  <span data-ttu-id="efa7f-127">タイトルが同じサンドボックスに発行されていない場合、タイトルの特定の開発サンドボックスの Xbox Live にサインインできません。</span><span class="sxs-lookup"><span data-stu-id="efa7f-127">You cannot sign-in to Xbox Live in a given development sandbox for a title, unless that title is published to the same sandbox.</span></span>  <span data-ttu-id="efa7f-128">詳細な方法については、[XDP のドキュメント](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/setting_up_service_configuration_03_31_16.aspx#PublishServiceConfig)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="efa7f-128">Please see the [XDP documentation](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/setting_up_service_configuration_03_31_16.aspx#PublishServiceConfig) for information on how to do this.</span></span>
+
+### <a name="ids-configured-incorrectly"></a><span data-ttu-id="efa7f-129">ID が正しく構成されていない</span><span class="sxs-lookup"><span data-stu-id="efa7f-129">IDs configured incorrectly</span></span>
+<span data-ttu-id="efa7f-130">ゲームを構成するためには、複数の情報が ID に必要です。</span><span class="sxs-lookup"><span data-stu-id="efa7f-130">There are several pieces of ID required to configure your game.</span></span>  <span data-ttu-id="efa7f-131">詳しくは、作成しているタイトルの種類に応じて、「[UWP ゲーム用 Visual Studio の概要](../../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)」と「[クロスプレイ ゲームの概要](../../get-started-with-partner/get-started-with-cross-play-games.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="efa7f-131">You can see more information in [Get started with Visual Studio for UWP games](../../get-started-with-partner/get-started-with-visual-studio-and-uwp.md) and [Getting started with cross-play games](../../get-started-with-partner/get-started-with-cross-play-games.md) depending on what type of title you are creating.</span></span>
+
+<span data-ttu-id="efa7f-132">いくつか注意すべきことがあります。</span><span class="sxs-lookup"><span data-stu-id="efa7f-132">Some things to watch out for are:</span></span>
+* <span data-ttu-id="efa7f-133">アプリ ID が XDP に正しく入力されていることを確認します</span><span class="sxs-lookup"><span data-stu-id="efa7f-133">Ensure your  App ID is entered into XDP correctly</span></span>
+* <span data-ttu-id="efa7f-134">PFN が XDP に正しく入力されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="efa7f-134">Ensure your PFN is entered into XDP correctly</span></span>
+* <span data-ttu-id="efa7f-135">「[新規または既存の UWP プロジェクトに Xbox Live を追加する](../../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)」ガイドで説明されているように、Visual Studio プロジェクトと同じディレクトリに xboxservices.config を 作成してあることを再確認します。</span><span class="sxs-lookup"><span data-stu-id="efa7f-135">Double-check you have created an xboxservices.config in the same directory as your Visual Studio project as described in the [Adding Xbox Live to a new or existing UWP project](../../get-started-with-partner/get-started-with-visual-studio-and-uwp.md) guide.</span></span>
+* <span data-ttu-id="efa7f-136">appxmanifest で "Package Identity" が正しいことを確認します。</span><span class="sxs-lookup"><span data-stu-id="efa7f-136">Ensure that the "Package Identity" in your appxmanifest is correct.</span></span>  <span data-ttu-id="efa7f-137">これは Windows デベロッパー センターの [App Identity] セクションで "Package/Identity/Name" として示されます。</span><span class="sxs-lookup"><span data-stu-id="efa7f-137">This is shown in Windows Dev Center as "Package/Identity/Name" on Windows Dev Center in the App Identity section.</span></span>
+
+### <a name="title-id-or-scid-not-configured-correctly"></a><span data-ttu-id="efa7f-138">タイトル ID または SCID が正しく構成されていない</span><span class="sxs-lookup"><span data-stu-id="efa7f-138">Title ID or SCID not configured correctly</span></span>
+- <span data-ttu-id="efa7f-139">UWP タイトルの場合、xboxservices.config ファイルでタイトル ID と SCID に正しい値を設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="efa7f-139">For UWP titles, your title ID and SCID must be set to the correct value in your xboxservices.config file.</span></span>  <span data-ttu-id="efa7f-140">また、このファイルが UTF8 で正しくエンコードされていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="efa7f-140">Also ensure that this file is properly formatted as UTF8.</span></span>  <span data-ttu-id="efa7f-141">詳しくは、「[UWP ゲーム用 Visual Studio の概要](../../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="efa7f-141">You can see more information in [Get started with Visual Studio for UWP games](../../get-started-with-partner/get-started-with-visual-studio-and-uwp.md).</span></span>
+- <span data-ttu-id="efa7f-142">XDK タイトルの場合は、これらの値は package.appxmanifest で設定します。</span><span class="sxs-lookup"><span data-stu-id="efa7f-142">For XDK titles, these values are set in your package.appxmanifest.</span></span>
+- <span data-ttu-id="efa7f-143">UWP および XDK タイトルの構成の例は、Xbox Live SDK の Samples ディレクトリにあります。</span><span class="sxs-lookup"><span data-stu-id="efa7f-143">You can see examples for both UWP and XDK title configuration in the Samples directory of the Xbox Live SDK.</span></span>
+
+<a name="test-xbox-app"></a>
+## <a name="test-using-the-xbox-app"></a><span data-ttu-id="efa7f-144">Xbox アプリを使用したテスト</span><span class="sxs-lookup"><span data-stu-id="efa7f-144">Test using the Xbox App</span></span>
+<span data-ttu-id="efa7f-145">UWP アプリケーションを開発している場合、Xbox アプリを使用して一部の問題をデバッグできます。</span><span class="sxs-lookup"><span data-stu-id="efa7f-145">If you are developing a UWP application, you can debug some issues using the Xbox App:</span></span>
+1. <span data-ttu-id="efa7f-146">SwitchSandbox.cmd スクリプトを使用して、デバイスのサンドボックスを開発サンドボックスに設定します。</span><span class="sxs-lookup"><span data-stu-id="efa7f-146">Set your device's sandbox to a development sandbox using the SwitchSandbox.cmd script</span></span>
+2. <span data-ttu-id="efa7f-147">Xbox アプリを開き、同じサンドボックスへのアクセス権があるテスト アカウントを使用してサインインを試みます。</span><span class="sxs-lookup"><span data-stu-id="efa7f-147">Open the Xbox App and attempt to sign-in using a test account with access to the same sandbox.</span></span>
+
+<span data-ttu-id="efa7f-148">正常にサインインできる場合は、デバイスで開発サンドボックスが正しく設定されいて、テスト アカウントにアクセス権があることが検証されたことを示します。</span><span class="sxs-lookup"><span data-stu-id="efa7f-148">If you are able to successfully sign-in, then this verifies that your development sandbox has been set correctly on your device, and your test account has access to it.</span></span>
+
+<span data-ttu-id="efa7f-149">まだサインイン エラーが発生する場合は、サービス構成がサンドボックスに発行されていない、または xboxservices.config が正しくセットアップされていない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="efa7f-149">If you are still getting sign-in errors, it is likely that your service configuration is not published to your sandbox, or your xboxservices.config is not setup properly.</span></span>
+
+## <a name="debug-based-on-error-code"></a><span data-ttu-id="efa7f-150">エラー コードに基づくデバッグ</span><span class="sxs-lookup"><span data-stu-id="efa7f-150">Debug based on error code</span></span>
+<span data-ttu-id="efa7f-151">次の表では、サインイン時に発生する可能性があるエラー コードの一部と、そのデバッグ手順を示します。</span><span class="sxs-lookup"><span data-stu-id="efa7f-151">This table lists some of the error codes you may see upon sign-in and steps you can take to debug these.</span></span>  <span data-ttu-id="efa7f-152">エラー コードは次のスクリーンショットのように表示されます。</span><span class="sxs-lookup"><span data-stu-id="efa7f-152">You see the error code as shown in the below screenshot.</span></span>
+
+![](../../images/troubleshooting/sign_in_error.png)
+
+<table>
+
+  <tr>
+    <th><span data-ttu-id="efa7f-153">エラー コード</span><span class="sxs-lookup"><span data-stu-id="efa7f-153">Error Code</span></span></th><th><span data-ttu-id="efa7f-154">可能な修正方法</span><span class="sxs-lookup"><span data-stu-id="efa7f-154">Possible Fixes</span></span></th>
+  </tr>
+
+<tr>
+  <td>
+    <b><span data-ttu-id="efa7f-155">0x80860003</span><span class="sxs-lookup"><span data-stu-id="efa7f-155">0x80860003</span></span></b>
+    <br><span data-ttu-id="efa7f-156">アプリケーションが無効になっている、または正しく構成されていない</span><span class="sxs-lookup"><span data-stu-id="efa7f-156">The application is either disabled or incorrectly configured</span></span> </td>
+
+  <td>
+  <ol>
+  <li markdown="1">
+<span data-ttu-id="efa7f-157">PFX ファイルを削除してみます。</span><span class="sxs-lookup"><span data-stu-id="efa7f-157">Try deleting your PFX file.</span></span>
+  <p></p>
+  ![](../../images/troubleshooting/pfx_file.png)
+  <p></p>
+<span data-ttu-id="efa7f-158">Windows デベロッパー センターでアプリをプロビジョニングするために使用した Microsoft アカウントで Visual Studio にサインインしなかった場合、Visual Studio はユーザー個人の Microsoft アカウントまたはドメイン アカウントに基づいて署名 pfx ファイルを自動的に生成します。</span><span class="sxs-lookup"><span data-stu-id="efa7f-158">If you didn’t sign-in to Visual Studio with the Microsoft Account used for provisioning the app at Windows Dev Center, Visual Studio will auto generate a signing pfx file based on your personal Microsoft Account or your domain account.</span></span>
+  <p></p>
+<span data-ttu-id="efa7f-159">appx パッケージをビルドするとき、Visual Studio はその自動生成 pfx を使用してパッケージに署名し、package.appxmanifest でパッケージ ID の "publisher" 部分を変更します。</span><span class="sxs-lookup"><span data-stu-id="efa7f-159">When building the appx package, Visual Studio will use that auto generated pfx to sign the package & alter the “publisher” part of the package identity in the package.appxmanifest.</span></span> <span data-ttu-id="efa7f-160">その結果、生成されるビット (具体的には appxmanifest.xml) のパッケージ ID は意図したものと異なります。</span><span class="sxs-lookup"><span data-stu-id="efa7f-160">As a result, the produced bits (specifically, the appxmanifest.xml) will have a different package identity than what you intend to use.</span></span>
+  </li>
+  <p></p>
+  <li markdown="1">
+<span data-ttu-id="efa7f-161">package.appxmanifest がデベロッパー センターのタイトルと同じアプリケーション ID に設定されていることを再確認します。</span><span class="sxs-lookup"><span data-stu-id="efa7f-161">Double-check that your package.appxmanifest is set to the same application identity as your title on Dev Center.</span></span>  <span data-ttu-id="efa7f-162">次のスクリーンショットで示すように、プロジェクトを右クリックして [ストア]、[アプリケーションをストアと関連付ける...] の順に選択します。</span><span class="sxs-lookup"><span data-stu-id="efa7f-162">You can either right click on your project and choose Store -> Associate App With Store... as shown in the below screenshot.</span></span>  <span data-ttu-id="efa7f-163">または、package.appxmanifest を手動で編集します。</span><span class="sxs-lookup"><span data-stu-id="efa7f-163">Or manually edit your package.appxmanifest.</span></span>  <span data-ttu-id="efa7f-164">「[UWP ゲーム用 Visual Studio の概要](../../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="efa7f-164">See [Get started with Visual Studio for UWP games](../../get-started-with-partner/get-started-with-visual-studio-and-uwp.md) for more information.</span></span>
+  ![](../../images/troubleshooting/appxmanifest_binding.png)
+  </li>
+  </ol>
+  </td>
+
+</tr>
+
+<tr>
+  <td>
+    <b><span data-ttu-id="efa7f-165">0x8015DC12</span><span class="sxs-lookup"><span data-stu-id="efa7f-165">0x8015DC12</span></span></b>
+    <br><span data-ttu-id="efa7f-166">コンテンツ分離エラー</span><span class="sxs-lookup"><span data-stu-id="efa7f-166">Content Isolation Error</span></span> </td>
+  <td>
+<span data-ttu-id="efa7f-167">このエラーは、デバイスまたはユーザーに指定されたタイトルへのアクセス権がないことを意味します。</span><span class="sxs-lookup"><span data-stu-id="efa7f-167">In summary, this means that either the device or user doesn't have access to the specified title.</span></span>
+  <p></p>
+  <ol>
+  <li markdown="1"><span data-ttu-id="efa7f-168">テスト アカウントを使用してサインインしていない、またはサインインに使用したサンドボックスへのアクセス権がテスト アカウントにない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="efa7f-168">This could mean you're not using a test account to attempt sign-in, or your test account doesn't have access to the same sandbox you're signed in as.</span></span> <span data-ttu-id="efa7f-169">[XDP のドキュメント](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/creating_development_accounts_03_31_16.aspx)でテスト アカウントの作成方法を再確認し、必要であれば、適切なサンドボックスへのアクセス権を持つ新しいテスト アカウントを作成してください。</span><span class="sxs-lookup"><span data-stu-id="efa7f-169">Please double-check the instructions on creating test accounts at [XDP documentation](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/creating_development_accounts_03_31_16.aspx) and if necessary create a new test account with access to the appropriate sandbox.</span></span>
+  </li>
+  <p></p>
+<span data-ttu-id="efa7f-170">Windows 10 から古いアカウントを削除することが必要な場合があります。[スタート] メニューから [設定]、[アカウント] の順に選択して削除できます。</span><span class="sxs-lookup"><span data-stu-id="efa7f-170">You may need to remove your old account from Windows 10, you can do that by going to Settings from the Start Menu, and then going to Accounts</span></span> <p></p>
+  <li markdown="1"><span data-ttu-id="efa7f-171">使おうとしているサンドボックスに対してタイトルが発行されていることを再確認します。</span><span class="sxs-lookup"><span data-stu-id="efa7f-171">Double-check that your title is published to the sandbox that you are trying to use.</span></span>  <span data-ttu-id="efa7f-172">詳細な方法については、[XDP のドキュメント](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/setting_up_service_configuration_03_31_16.aspx#PublishServiceConfig)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="efa7f-172">Please see the [XDP documentation](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/setting_up_service_configuration_03_31_16.aspx#PublishServiceConfig) for information on how to do this.</span></span>
+  </li>
+  </ol>
+  </td>
+</tr>
+
+</table>
+
+
+| <span data-ttu-id="efa7f-173">エラー コード</span><span class="sxs-lookup"><span data-stu-id="efa7f-173">Error Code</span></span> | <span data-ttu-id="efa7f-174">可能な修正方法</span><span class="sxs-lookup"><span data-stu-id="efa7f-174">Possible Fixes</span></span> |
+|------------|----------------|
+| **<span data-ttu-id="efa7f-175">0x87DD0005</span><span class="sxs-lookup"><span data-stu-id="efa7f-175">0x87DD0005</span></span>**<br><span data-ttu-id="efa7f-176">予期しないタイトルまたは不明なタイトル</span><span class="sxs-lookup"><span data-stu-id="efa7f-176">Unexpected or unknown title</span></span> | <span data-ttu-id="efa7f-177">XDP で *[Application ID Setup]* と *[Dev Center Binding]* を再確認します。</span><span class="sxs-lookup"><span data-stu-id="efa7f-177">Double-check the *Application ID Setup* and *Dev Center Binding* in XDP.</span></span>  <span data-ttu-id="efa7f-178">方法については、「[Visual Studio の新規または既存の UWP プロジェクトに Xbox Live のサポートを追加する方法](../../images/troubleshooting/dev_center_binding.png)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="efa7f-178">You can view the instructions in [Adding Xbox Live Support to a new or existing Visual Studio UWP](../../images/troubleshooting/dev_center_binding.png)</span></span> |
+| **<span data-ttu-id="efa7f-179">0x87DD000E</span><span class="sxs-lookup"><span data-stu-id="efa7f-179">0x87DD000E</span></span>**<br><span data-ttu-id="efa7f-180">タイトルが承認されていない</span><span class="sxs-lookup"><span data-stu-id="efa7f-180">Title not authorized</span></span> | <span data-ttu-id="efa7f-181">デバイスが適切な開発サンドボックスに設定されていること、およびそのサンドボックスに対するアクセス権をユーザーが持っていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="efa7f-181">Double-check that your device is set to the proper development sandbox and that the user has access to the sandbox.</span></span>  <span data-ttu-id="efa7f-182">Xbox アプリでこれらを確認する方法の詳細については、「[Xbox アプリを使用したテスト](#test-xbox-app)」セクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="efa7f-182">See the [Test using the Xbox App](#test-xbox-app) section for more information on how you can verify these with the Xbox App.</span></span><p><br><span data-ttu-id="efa7f-183">それでも問題が解決しない場合は、前に説明したようにデベロッパー センターのバインディングとアプリ ID の設定も確認してください。</span><span class="sxs-lookup"><span data-stu-id="efa7f-183">If that doesn't resolve the issue, then also check the Dev Center Binding and App ID setup as described above.</span></span>
+
+<span data-ttu-id="efa7f-184">ここで説明されていないエラーが発生する場合は、```xbox::services::xbox_live_error_code``` ドキュメントのエラー一覧でエラー コードの詳細を参照してください。</span><span class="sxs-lookup"><span data-stu-id="efa7f-184">If you are getting an error not described here, please refer to the error list in the ```xbox::services::xbox_live_error_code``` documentation to get more information about the error codes.</span></span>  <span data-ttu-id="efa7f-185">XSAPI に含まれる ```errors.h``` も参照してください。</span><span class="sxs-lookup"><span data-stu-id="efa7f-185">You can also refer to ```errors.h``` in the XSAPI includes.</span></span>
+
+<span data-ttu-id="efa7f-186">以上の手順を実行してもタイトルにサインインできない場合は、[フォーラム](http://forums.xboxlive.com)でサポート スレッドを投稿するか、担当の DAM に問い合わせてください。</span><span class="sxs-lookup"><span data-stu-id="efa7f-186">After all these steps, if you still cannot sign-in with your title, please post a support thread on the [forums](http://forums.xboxlive.com) or reach out to your DAM.</span></span>
