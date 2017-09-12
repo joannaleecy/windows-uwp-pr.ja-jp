@@ -4,92 +4,91 @@ ms.assetid: f0c0325e-ad61-4238-a096-c37802db3d3b
 description: "アプリの特定のエラーに関する詳細データを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。"
 title: "アプリのエラーに関する詳細情報の取得"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ストア サービス, Windows ストア分析 API, エラー, 詳細"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 1aaf5b6864c678d26289270be6a9ad96f5b5e004
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: b18a49fd1c035bf83ff7288efef8c71df8faef8f
+ms.sourcegitcommit: 7aabd2e59d45bbc5512dd4ddd9110ae62b79d552
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/19/2017
 ---
+# <a name="get-details-for-an-error-in-your-app"></a><span data-ttu-id="52bad-104">アプリのエラーに関する詳細情報の取得</span><span class="sxs-lookup"><span data-stu-id="52bad-104">Get details for an error in your app</span></span>
 
-# <a name="get-details-for-an-error-in-your-app"></a>アプリのエラーに関する詳細情報の取得
+<span data-ttu-id="52bad-105">アプリの特定のエラーに関する JSON 形式の詳細データを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="52bad-105">Use this method in the Windows Store analytics API to get detailed data for a specific error for your app in JSON format.</span></span> <span data-ttu-id="52bad-106">このメソッドで取得できるのは、過去 30 日以内に発生したエラーの詳細のみです。</span><span class="sxs-lookup"><span data-stu-id="52bad-106">This method can only retrieve details for errors that occurred in the last 30 days.</span></span> <span data-ttu-id="52bad-107">詳細なエラー データは、Windows デベロッパー センター ダッシュボードの[状態レポート](../publish/health-report.md)の **[エラー]** セクションで確認することもできます。</span><span class="sxs-lookup"><span data-stu-id="52bad-107">Detailed error data is also available in the **Failures** section of the [Health report](../publish/health-report.md) in the Windows Dev Center dashboard.</span></span>
 
-アプリの特定のエラーに関する JSON 形式の詳細データを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。 このメソッドで取得できるのは、過去 30 日以内に発生したエラーの詳細のみです。 詳細なエラー データは、Windows デベロッパー センター ダッシュボードの[状態レポート](../publish/health-report.md)の **[エラー]** セクションで確認することもできます。
+<span data-ttu-id="52bad-108">このメソッドを使うには、その前にまず「[エラー報告データの取得](get-error-reporting-data.md)」のメソッドを使って、詳細情報を取得するエラーの ID を取得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="52bad-108">Before you can use this method, you must first use the [get error reporting data](get-error-reporting-data.md) method to retrieve the ID of the error for which you want to get detailed info.</span></span>
 
-このメソッドを使うには、その前にまず「[エラー報告データの取得](get-error-reporting-data.md)」のメソッドを使って、詳細情報を取得するエラーの ID を取得する必要があります。
-
-## <a name="prerequisites"></a>前提条件
-
-
-このメソッドを使うには、最初に次の作業を行う必要があります。
-
-* Windows ストア分析 API に関するすべての[前提条件](access-analytics-data-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
-* 詳細情報を取得するエラーの ID を取得します。 この ID を取得するには、「[エラー報告データの取得](get-error-reporting-data.md)」のメソッドを使い、そのメソッドの応答本文で **failureHash** の値を使います。
-
-## <a name="request"></a>要求
+## <a name="prerequisites"></a><span data-ttu-id="52bad-109">前提条件</span><span class="sxs-lookup"><span data-stu-id="52bad-109">Prerequisites</span></span>
 
 
-### <a name="request-syntax"></a>要求の構文
+<span data-ttu-id="52bad-110">このメソッドを使うには、最初に次の作業を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="52bad-110">To use this method, you need to first do the following:</span></span>
 
-| メソッド | 要求 URI                                                          |
+* <span data-ttu-id="52bad-111">Windows ストア分析 API に関するすべての[前提条件](access-analytics-data-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。</span><span class="sxs-lookup"><span data-stu-id="52bad-111">If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.</span></span>
+* <span data-ttu-id="52bad-112">このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。</span><span class="sxs-lookup"><span data-stu-id="52bad-112">[Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method.</span></span> <span data-ttu-id="52bad-113">アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。</span><span class="sxs-lookup"><span data-stu-id="52bad-113">After you obtain an access token, you have 60 minutes to use it before it expires.</span></span> <span data-ttu-id="52bad-114">トークンの有効期限が切れたら、新しいトークンを取得できます。</span><span class="sxs-lookup"><span data-stu-id="52bad-114">After the token expires, you can obtain a new one.</span></span>
+* <span data-ttu-id="52bad-115">詳細情報を取得するエラーの ID を取得します。</span><span class="sxs-lookup"><span data-stu-id="52bad-115">Get the ID of the error for which you want to get detailed info.</span></span> <span data-ttu-id="52bad-116">この ID を取得するには、「[エラー報告データの取得](get-error-reporting-data.md)」のメソッドを使い、そのメソッドの応答本文で **failureHash** の値を使います。</span><span class="sxs-lookup"><span data-stu-id="52bad-116">To get this ID, use the [get error reporting data](get-error-reporting-data.md) method and use the **failureHash** value in the response body of that method.</span></span>
+
+## <a name="request"></a><span data-ttu-id="52bad-117">要求</span><span class="sxs-lookup"><span data-stu-id="52bad-117">Request</span></span>
+
+
+### <a name="request-syntax"></a><span data-ttu-id="52bad-118">要求の構文</span><span class="sxs-lookup"><span data-stu-id="52bad-118">Request syntax</span></span>
+
+| <span data-ttu-id="52bad-119">メソッド</span><span class="sxs-lookup"><span data-stu-id="52bad-119">Method</span></span> | <span data-ttu-id="52bad-120">要求 URI</span><span class="sxs-lookup"><span data-stu-id="52bad-120">Request URI</span></span>                                                          |
 |--------|----------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/failuredetails``` |
+| <span data-ttu-id="52bad-121">GET</span><span class="sxs-lookup"><span data-stu-id="52bad-121">GET</span></span>    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/failuredetails``` |
 
 <span/> 
 
-### <a name="request-header"></a>要求ヘッダー
+### <a name="request-header"></a><span data-ttu-id="52bad-122">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="52bad-122">Request header</span></span>
 
-| ヘッダー        | 型   | 説明                                                                 |
+| <span data-ttu-id="52bad-123">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="52bad-123">Header</span></span>        | <span data-ttu-id="52bad-124">型</span><span class="sxs-lookup"><span data-stu-id="52bad-124">Type</span></span>   | <span data-ttu-id="52bad-125">説明</span><span class="sxs-lookup"><span data-stu-id="52bad-125">Description</span></span>                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
+| <span data-ttu-id="52bad-126">Authorization</span><span class="sxs-lookup"><span data-stu-id="52bad-126">Authorization</span></span> | <span data-ttu-id="52bad-127">string</span><span class="sxs-lookup"><span data-stu-id="52bad-127">string</span></span> | <span data-ttu-id="52bad-128">必須。</span><span class="sxs-lookup"><span data-stu-id="52bad-128">Required.</span></span> <span data-ttu-id="52bad-129">**Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。</span><span class="sxs-lookup"><span data-stu-id="52bad-129">The Azure AD access token in the form **Bearer** &lt;*token*&gt;.</span></span> |
 
 <span/> 
 
-### <a name="request-parameters"></a>要求パラメーター
+### <a name="request-parameters"></a><span data-ttu-id="52bad-130">要求パラメーター</span><span class="sxs-lookup"><span data-stu-id="52bad-130">Request parameters</span></span>
 
-| パラメーター        | 型   |  説明      |  必須かどうか  
+| <span data-ttu-id="52bad-131">パラメーター</span><span class="sxs-lookup"><span data-stu-id="52bad-131">Parameter</span></span>        | <span data-ttu-id="52bad-132">型</span><span class="sxs-lookup"><span data-stu-id="52bad-132">Type</span></span>   |  <span data-ttu-id="52bad-133">説明</span><span class="sxs-lookup"><span data-stu-id="52bad-133">Description</span></span>      |  <span data-ttu-id="52bad-134">必須かどうか</span><span class="sxs-lookup"><span data-stu-id="52bad-134">Required</span></span>  
 |---------------|--------|---------------|------|
-| applicationId | string | 詳細なエラー データを取得するアプリのストア ID です。 ストア ID は、デベロッパー センター ダッシュボードの[アプリ ID ページ](../publish/view-app-identity-details.md)で確認できます。 ストア ID は、たとえば 9WZDNCRFJ3Q8 のような文字列です。 |  必須  |
-| failureHash | string | 詳細情報を取得するエラーの固有の ID 番号を取得します。 目的のエラーについてこの ID を取得するには、「[エラー報告データの取得](get-error-reporting-data.md)」のメソッドを使い、そのメソッドの応答本文で **failureHash** の値を使います。 |  必須  |
-| startDate | date | 取得する詳細なエラー データの日付範囲の開始日です。 既定値は、現在の日付の 30 日前です。 |  必須ではない  |
-| endDate | date | 取得する詳細なエラー データの日付範囲の終了日です。 既定値は現在の日付です。 |  必須ではない  |
-| top | int | 要求で返すデータの行数です。 指定されない場合の既定値は、最大値でもある 10000 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。 |  必須ではない  |
-| skip | int | クエリでスキップする行数です。 大きなデータ セットを操作するには、このパラメーターを使用します。 たとえば、top=10 と skip=0 を指定すると、データの最初の 10 行が取得され、top=10 と skip=10 を指定すると、データの次の 10 行が取得されます。 |  必須ではない  |
-| filter |string  | 応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 詳しくは、次の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。 | 必須ではない   |
-| orderby | string | 結果データ値の順序を指定するステートメントです。 構文は <em>orderby=field [order],field [order],...</em> です。 <em>field</em> パラメーターには、次のいずれかの文字列を指定できます。<ul><li><strong>date</strong></li><li><strong>market</strong></li><li><strong>cabId</strong></li><li><strong>cabExpirationTime</strong></li><li><strong>deviceType</strong></li><li><strong>deviceModel</strong></li><li><strong>osVersion</strong></li><li><strong>packageVersion</strong></li><li><strong>osBuild</strong></li></ul><p><em>order</em> パラメーターは省略可能であり、<strong>asc</strong> または <strong>desc</strong> を指定して、各フィールドを昇順または降順にすることができます。 既定値は <strong>asc</strong> です。</p><p><em>orderby</em> 文字列の例: <em>orderby=date,market</em></p> |  必須ではない  |
+| <span data-ttu-id="52bad-135">applicationId</span><span class="sxs-lookup"><span data-stu-id="52bad-135">applicationId</span></span> | <span data-ttu-id="52bad-136">string</span><span class="sxs-lookup"><span data-stu-id="52bad-136">string</span></span> | <span data-ttu-id="52bad-137">詳細なエラー データを取得するアプリのストア ID です。</span><span class="sxs-lookup"><span data-stu-id="52bad-137">The Store ID of the app for which you want to retrieve detailed error data.</span></span> <span data-ttu-id="52bad-138">ストア ID は、デベロッパー センター ダッシュボードの[アプリ ID ページ](../publish/view-app-identity-details.md)で確認できます。</span><span class="sxs-lookup"><span data-stu-id="52bad-138">The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard.</span></span> <span data-ttu-id="52bad-139">ストア ID は、たとえば 9WZDNCRFJ3Q8 のような文字列です。</span><span class="sxs-lookup"><span data-stu-id="52bad-139">An example Store ID is 9WZDNCRFJ3Q8.</span></span> |  <span data-ttu-id="52bad-140">必須</span><span class="sxs-lookup"><span data-stu-id="52bad-140">Yes</span></span>  |
+| <span data-ttu-id="52bad-141">failureHash</span><span class="sxs-lookup"><span data-stu-id="52bad-141">failureHash</span></span> | <span data-ttu-id="52bad-142">string</span><span class="sxs-lookup"><span data-stu-id="52bad-142">string</span></span> | <span data-ttu-id="52bad-143">取得する詳細情報の対象となるエラーの一意の ID です。</span><span class="sxs-lookup"><span data-stu-id="52bad-143">The unique ID of the error for which you want to get detailed info.</span></span> <span data-ttu-id="52bad-144">目的のエラーについてこの ID を取得するには、「[エラー報告データの取得](get-error-reporting-data.md)」のメソッドを使い、そのメソッドの応答本文で **failureHash** の値を使います。</span><span class="sxs-lookup"><span data-stu-id="52bad-144">To get this value for the error you are interested in, use the [get error reporting data](get-error-reporting-data.md) method and use the **failureHash** value in the response body of that method.</span></span> |  <span data-ttu-id="52bad-145">必須</span><span class="sxs-lookup"><span data-stu-id="52bad-145">Yes</span></span>  |
+| <span data-ttu-id="52bad-146">startDate</span><span class="sxs-lookup"><span data-stu-id="52bad-146">startDate</span></span> | <span data-ttu-id="52bad-147">date</span><span class="sxs-lookup"><span data-stu-id="52bad-147">date</span></span> | <span data-ttu-id="52bad-148">取得する詳細なエラー データの日付範囲の開始日です。</span><span class="sxs-lookup"><span data-stu-id="52bad-148">The start date in the date range of detailed error data to retrieve.</span></span> <span data-ttu-id="52bad-149">既定値は、現在の日付の 30 日前です。</span><span class="sxs-lookup"><span data-stu-id="52bad-149">The default is 30 days before the current date.</span></span> |  <span data-ttu-id="52bad-150">必須ではない</span><span class="sxs-lookup"><span data-stu-id="52bad-150">No</span></span>  |
+| <span data-ttu-id="52bad-151">endDate</span><span class="sxs-lookup"><span data-stu-id="52bad-151">endDate</span></span> | <span data-ttu-id="52bad-152">date</span><span class="sxs-lookup"><span data-stu-id="52bad-152">date</span></span> | <span data-ttu-id="52bad-153">取得する詳細なエラー データの日付範囲の終了日です。</span><span class="sxs-lookup"><span data-stu-id="52bad-153">The end date in the date range of detailed error data to retrieve.</span></span> <span data-ttu-id="52bad-154">既定値は現在の日付です。</span><span class="sxs-lookup"><span data-stu-id="52bad-154">The default is the current date.</span></span> |  <span data-ttu-id="52bad-155">必須ではない</span><span class="sxs-lookup"><span data-stu-id="52bad-155">No</span></span>  |
+| <span data-ttu-id="52bad-156">top</span><span class="sxs-lookup"><span data-stu-id="52bad-156">top</span></span> | <span data-ttu-id="52bad-157">int</span><span class="sxs-lookup"><span data-stu-id="52bad-157">int</span></span> | <span data-ttu-id="52bad-158">要求で返すデータの行数です。</span><span class="sxs-lookup"><span data-stu-id="52bad-158">The number of rows of data to return in the request.</span></span> <span data-ttu-id="52bad-159">指定されない場合の既定値は、最大値でもある 10000 です。</span><span class="sxs-lookup"><span data-stu-id="52bad-159">The maximum value and the default value if not specified is 10000.</span></span> <span data-ttu-id="52bad-160">クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。</span><span class="sxs-lookup"><span data-stu-id="52bad-160">If there are more rows in the query, the response body includes a next link that you can use to request the next page of data.</span></span> |  <span data-ttu-id="52bad-161">必須ではない</span><span class="sxs-lookup"><span data-stu-id="52bad-161">No</span></span>  |
+| <span data-ttu-id="52bad-162">skip</span><span class="sxs-lookup"><span data-stu-id="52bad-162">skip</span></span> | <span data-ttu-id="52bad-163">int</span><span class="sxs-lookup"><span data-stu-id="52bad-163">int</span></span> | <span data-ttu-id="52bad-164">クエリでスキップする行数です。</span><span class="sxs-lookup"><span data-stu-id="52bad-164">The number of rows to skip in the query.</span></span> <span data-ttu-id="52bad-165">大きなデータ セットを操作するには、このパラメーターを使用します。</span><span class="sxs-lookup"><span data-stu-id="52bad-165">Use this parameter to page through large data sets.</span></span> <span data-ttu-id="52bad-166">たとえば、top=10 と skip=0 を指定すると、データの最初の 10 行が取得され、top=10 と skip=10 を指定すると、データの次の 10 行が取得されます。</span><span class="sxs-lookup"><span data-stu-id="52bad-166">For example, top=10 and skip=0 retrieves the first 10 rows of data, top=10 and skip=10 retrieves the next 10 rows of data, and so on.</span></span> |  <span data-ttu-id="52bad-167">必須ではない</span><span class="sxs-lookup"><span data-stu-id="52bad-167">No</span></span>  |
+| <span data-ttu-id="52bad-168">filter</span><span class="sxs-lookup"><span data-stu-id="52bad-168">filter</span></span> |<span data-ttu-id="52bad-169">string</span><span class="sxs-lookup"><span data-stu-id="52bad-169">string</span></span>  | <span data-ttu-id="52bad-170">応答内の行をフィルター処理する 1 つまたは複数のステートメントです。</span><span class="sxs-lookup"><span data-stu-id="52bad-170">One or more statements that filter the rows in the response.</span></span> <span data-ttu-id="52bad-171">詳しくは、次の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="52bad-171">For more information, see the [filter fields](#filter-fields) section below.</span></span> | <span data-ttu-id="52bad-172">必須ではない</span><span class="sxs-lookup"><span data-stu-id="52bad-172">No</span></span>   |
+| <span data-ttu-id="52bad-173">orderby</span><span class="sxs-lookup"><span data-stu-id="52bad-173">orderby</span></span> | <span data-ttu-id="52bad-174">string</span><span class="sxs-lookup"><span data-stu-id="52bad-174">string</span></span> | <span data-ttu-id="52bad-175">結果データ値の順序を指定するステートメントです。</span><span class="sxs-lookup"><span data-stu-id="52bad-175">A statement that orders the result data values.</span></span> <span data-ttu-id="52bad-176">構文は <em>orderby=field [order],field [order],...</em> です。</span><span class="sxs-lookup"><span data-stu-id="52bad-176">The syntax is <em>orderby=field [order],field [order],...</em>.</span></span> <span data-ttu-id="52bad-177"><em>field</em> パラメーターには、次のいずれかの文字列を指定できます。</span><span class="sxs-lookup"><span data-stu-id="52bad-177">The <em>field</em> parameter can be one of the following strings:</span></span><ul><li><strong><span data-ttu-id="52bad-178">date</span><span class="sxs-lookup"><span data-stu-id="52bad-178">date</span></span></strong></li><li><strong><span data-ttu-id="52bad-179">market</span><span class="sxs-lookup"><span data-stu-id="52bad-179">market</span></span></strong></li><li><strong><span data-ttu-id="52bad-180">cabId</span><span class="sxs-lookup"><span data-stu-id="52bad-180">cabId</span></span></strong></li><li><strong><span data-ttu-id="52bad-181">cabExpirationTime</span><span class="sxs-lookup"><span data-stu-id="52bad-181">cabExpirationTime</span></span></strong></li><li><strong><span data-ttu-id="52bad-182">deviceType</span><span class="sxs-lookup"><span data-stu-id="52bad-182">deviceType</span></span></strong></li><li><strong><span data-ttu-id="52bad-183">deviceModel</span><span class="sxs-lookup"><span data-stu-id="52bad-183">deviceModel</span></span></strong></li><li><strong><span data-ttu-id="52bad-184">osVersion</span><span class="sxs-lookup"><span data-stu-id="52bad-184">osVersion</span></span></strong></li><li><strong><span data-ttu-id="52bad-185">packageVersion</span><span class="sxs-lookup"><span data-stu-id="52bad-185">packageVersion</span></span></strong></li><li><strong><span data-ttu-id="52bad-186">osBuild</span><span class="sxs-lookup"><span data-stu-id="52bad-186">osBuild</span></span></strong></li></ul><p><span data-ttu-id="52bad-187"><em>order</em> パラメーターは省略可能であり、<strong>asc</strong> または <strong>desc</strong> を指定して、各フィールドを昇順または降順にすることができます。</span><span class="sxs-lookup"><span data-stu-id="52bad-187">The <em>order</em> parameter is optional, and can be <strong>asc</strong> or <strong>desc</strong> to specify ascending or descending order for each field.</span></span> <span data-ttu-id="52bad-188">既定値は <strong>asc</strong> です。</span><span class="sxs-lookup"><span data-stu-id="52bad-188">The default is <strong>asc</strong>.</span></span></p><p><span data-ttu-id="52bad-189"><em>orderby</em> 文字列の例: <em>orderby=date,market</em></span><span class="sxs-lookup"><span data-stu-id="52bad-189">Here is an example <em>orderby</em> string: <em>orderby=date,market</em></span></span></p> |  <span data-ttu-id="52bad-190">必須ではない</span><span class="sxs-lookup"><span data-stu-id="52bad-190">No</span></span>  |
 
 <span/>
  
-### <a name="filter-fields"></a>フィルター フィールド
+### <a name="filter-fields"></a><span data-ttu-id="52bad-191">フィルター フィールド</span><span class="sxs-lookup"><span data-stu-id="52bad-191">Filter fields</span></span>
 
-要求の *filter* パラメーターには、応答内の行をフィルター処理する 1 つまたは複数のステートメントが含まれます。 各ステートメントには **eq** 演算子または **ne** 演算子と関連付けられるフィールドと値が含まれ、**and** または **or** を使ってステートメントを組み合わせることができます。 *filter* パラメーターの例を次に示します。
+<span data-ttu-id="52bad-192">要求の *filter* パラメーターには、応答内の行をフィルター処理する 1 つまたは複数のステートメントが含まれます。</span><span class="sxs-lookup"><span data-stu-id="52bad-192">The *filter* parameter of the request contains one or more statements that filter the rows in the response.</span></span> <span data-ttu-id="52bad-193">各ステートメントには **eq** 演算子または **ne** 演算子と関連付けられるフィールドと値が含まれ、**and** または **or** を使ってステートメントを組み合わせることができます。</span><span class="sxs-lookup"><span data-stu-id="52bad-193">Each statement contains a field and value that are associated with the **eq** or **ne** operators, and statements can be combined using **and** or **or**.</span></span> <span data-ttu-id="52bad-194">*filter* パラメーターの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="52bad-194">Here are some example *filter* parameters:</span></span>
 
--   *filter=market eq 'US' and osVersion eq 'Windows 10'*
--   *filter=market ne 'US' and osVersion ne 'Windows 8'*
+-   *<span data-ttu-id="52bad-195">filter=market eq 'US' and osVersion eq 'Windows 10'</span><span class="sxs-lookup"><span data-stu-id="52bad-195">filter=market eq 'US' and osVersion eq 'Windows 10'</span></span>*
+-   *<span data-ttu-id="52bad-196">filter=market ne 'US' and osVersion ne 'Windows 8'</span><span class="sxs-lookup"><span data-stu-id="52bad-196">filter=market ne 'US' and osVersion ne 'Windows 8'</span></span>*
 
-サポートされているフィールドの一覧については、次の表をご覧ください。 *filter* パラメーターでは、文字列値を単一引用符で囲む必要があります。
+<span data-ttu-id="52bad-197">サポートされているフィールドの一覧については、次の表をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="52bad-197">For a list of the supported fields, see the following table.</span></span> <span data-ttu-id="52bad-198">*filter* パラメーターでは、文字列値を単一引用符で囲む必要があります。</span><span class="sxs-lookup"><span data-stu-id="52bad-198">String values must be surrounded by single quotes in the *filter* parameter.</span></span>
 
-| フィールド        |  説明        |
+| <span data-ttu-id="52bad-199">フィールド</span><span class="sxs-lookup"><span data-stu-id="52bad-199">Fields</span></span>        |  <span data-ttu-id="52bad-200">説明</span><span class="sxs-lookup"><span data-stu-id="52bad-200">Description</span></span>        |
 |---------------|-----------------|
-| osVersion | 次のいずれかの文字列です。<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul> |
-| osBuild | エラーが発生したときにアプリを実行していた OS のビルド番号です。 |
-| market | エラーが発生したときにアプリを実行していたデバイスの市場の ISO 3166 国コードが含まれた文字列です。 |
-| deviceType | エラーが発生したときにアプリを実行していたデバイスの種類を指定する、以下のいずれかの文字列です。<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul> |
-| deviceModel | エラーが発生したときにアプリを実行していたデバイスのモデルを指定する文字列です。 |
-| cabId | このエラーに関連付けられている CAB ファイルの一意の ID です。 |
-| cabExpirationTime | CAB ファイルの有効期限が切れ、ダウンロードできなくなる日付と時刻 (ISO 8601形式) です。 |
-| packageVersion | このエラーに関連付けられているアプリ パッケージのバージョンです。 |
+| <span data-ttu-id="52bad-201">osVersion</span><span class="sxs-lookup"><span data-stu-id="52bad-201">osVersion</span></span> | <span data-ttu-id="52bad-202">次のいずれかの文字列です。</span><span class="sxs-lookup"><span data-stu-id="52bad-202">One of the following strings:</span></span><ul><li><strong><span data-ttu-id="52bad-203">Windows Phone 7.5</span><span class="sxs-lookup"><span data-stu-id="52bad-203">Windows Phone 7.5</span></span></strong></li><li><strong><span data-ttu-id="52bad-204">Windows Phone 8</span><span class="sxs-lookup"><span data-stu-id="52bad-204">Windows Phone 8</span></span></strong></li><li><strong><span data-ttu-id="52bad-205">Windows Phone 8.1</span><span class="sxs-lookup"><span data-stu-id="52bad-205">Windows Phone 8.1</span></span></strong></li><li><strong><span data-ttu-id="52bad-206">Windows Phone 10</span><span class="sxs-lookup"><span data-stu-id="52bad-206">Windows Phone 10</span></span></strong></li><li><strong><span data-ttu-id="52bad-207">Windows 8</span><span class="sxs-lookup"><span data-stu-id="52bad-207">Windows 8</span></span></strong></li><li><strong><span data-ttu-id="52bad-208">Windows 8.1</span><span class="sxs-lookup"><span data-stu-id="52bad-208">Windows 8.1</span></span></strong></li><li><strong><span data-ttu-id="52bad-209">Windows 10</span><span class="sxs-lookup"><span data-stu-id="52bad-209">Windows 10</span></span></strong></li><li><strong><span data-ttu-id="52bad-210">Unknown</span><span class="sxs-lookup"><span data-stu-id="52bad-210">Unknown</span></span></strong></li></ul> |
+| <span data-ttu-id="52bad-211">osBuild</span><span class="sxs-lookup"><span data-stu-id="52bad-211">osBuild</span></span> | <span data-ttu-id="52bad-212">エラーが発生したときにアプリを実行していた OS のビルド番号です。</span><span class="sxs-lookup"><span data-stu-id="52bad-212">The build number of the OS on which the app was running when the error occurred.</span></span> |
+| <span data-ttu-id="52bad-213">market</span><span class="sxs-lookup"><span data-stu-id="52bad-213">market</span></span> | <span data-ttu-id="52bad-214">エラーが発生したときにアプリを実行していたデバイスの市場の ISO 3166 国コードが含まれた文字列です。</span><span class="sxs-lookup"><span data-stu-id="52bad-214">A string that contains the ISO 3166 country code of the market of the device on which the app was running when the error occurred.</span></span> |
+| <span data-ttu-id="52bad-215">deviceType</span><span class="sxs-lookup"><span data-stu-id="52bad-215">deviceType</span></span> | <span data-ttu-id="52bad-216">エラーが発生したときにアプリを実行していたデバイスの種類を指定する、以下のいずれかの文字列です。</span><span class="sxs-lookup"><span data-stu-id="52bad-216">One of the following strings that specifies the type of the device on which the app was running when the error occurred:</span></span><ul><li><strong><span data-ttu-id="52bad-217">PC</span><span class="sxs-lookup"><span data-stu-id="52bad-217">PC</span></span></strong></li><li><strong><span data-ttu-id="52bad-218">Phone</span><span class="sxs-lookup"><span data-stu-id="52bad-218">Phone</span></span></strong></li><li><strong><span data-ttu-id="52bad-219">Console</span><span class="sxs-lookup"><span data-stu-id="52bad-219">Console</span></span></strong></li><li><strong><span data-ttu-id="52bad-220">IoT</span><span class="sxs-lookup"><span data-stu-id="52bad-220">IoT</span></span></strong></li><li><strong><span data-ttu-id="52bad-221">Holographic</span><span class="sxs-lookup"><span data-stu-id="52bad-221">Holographic</span></span></strong></li><li><strong><span data-ttu-id="52bad-222">Unknown</span><span class="sxs-lookup"><span data-stu-id="52bad-222">Unknown</span></span></strong></li></ul> |
+| <span data-ttu-id="52bad-223">deviceModel</span><span class="sxs-lookup"><span data-stu-id="52bad-223">deviceModel</span></span> | <span data-ttu-id="52bad-224">エラーが発生したときにアプリを実行していたデバイスのモデルを指定する文字列です。</span><span class="sxs-lookup"><span data-stu-id="52bad-224">A string that specifies the model of the device on which the app was running when the error occurred.</span></span> |
+| <span data-ttu-id="52bad-225">cabId</span><span class="sxs-lookup"><span data-stu-id="52bad-225">cabId</span></span> | <span data-ttu-id="52bad-226">このエラーに関連付けられている CAB ファイルの一意の ID です。</span><span class="sxs-lookup"><span data-stu-id="52bad-226">The unique ID of the CAB file that is associated with this error.</span></span> |
+| <span data-ttu-id="52bad-227">cabExpirationTime</span><span class="sxs-lookup"><span data-stu-id="52bad-227">cabExpirationTime</span></span> | <span data-ttu-id="52bad-228">CAB ファイルの有効期限が切れ、ダウンロードできなくなる日付と時刻 (ISO 8601形式) です。</span><span class="sxs-lookup"><span data-stu-id="52bad-228">The date and time when the CAB file is expired and can no longer be downloaded, in ISO 8601 format.</span></span> |
+| <span data-ttu-id="52bad-229">packageVersion</span><span class="sxs-lookup"><span data-stu-id="52bad-229">packageVersion</span></span> | <span data-ttu-id="52bad-230">このエラーに関連付けられているアプリ パッケージのバージョンです。</span><span class="sxs-lookup"><span data-stu-id="52bad-230">The version of the app package that is associated with this error.</span></span> |
 
 <span/> 
 
-### <a name="request-example"></a>要求の例
+### <a name="request-example"></a><span data-ttu-id="52bad-231">要求の例</span><span class="sxs-lookup"><span data-stu-id="52bad-231">Request example</span></span>
 
-詳細なエラー データを取得するための要求の例を次に示します。 *applicationId* 値を、目的のアプリのストア ID に置き換えてください。
+<span data-ttu-id="52bad-232">詳細なエラー データを取得するための要求の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="52bad-232">The following examples demonstrate several requests for getting detailed error data.</span></span> <span data-ttu-id="52bad-233">*applicationId* 値を、目的のアプリのストア ID に置き換えてください。</span><span class="sxs-lookup"><span data-stu-id="52bad-233">Replace the *applicationId* value with the Store ID for your app.</span></span>
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failuredetails?applicationId=9NBLGGGZ5QDR&failureHash=012e33e3-dbc9-b12f-c124-9d9810f05d8b&startDate=2016-11-05&endDate=2016-11-06&top=10&skip=0 HTTP/1.1
@@ -99,43 +98,43 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failuredetails?appl
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>応答
+## <a name="response"></a><span data-ttu-id="52bad-234">応答</span><span class="sxs-lookup"><span data-stu-id="52bad-234">Response</span></span>
 
 
-### <a name="response-body"></a>応答本文
+### <a name="response-body"></a><span data-ttu-id="52bad-235">応答本文</span><span class="sxs-lookup"><span data-stu-id="52bad-235">Response body</span></span>
 
-| 値      | 型    | 説明    |
+| <span data-ttu-id="52bad-236">値</span><span class="sxs-lookup"><span data-stu-id="52bad-236">Value</span></span>      | <span data-ttu-id="52bad-237">型</span><span class="sxs-lookup"><span data-stu-id="52bad-237">Type</span></span>    | <span data-ttu-id="52bad-238">説明</span><span class="sxs-lookup"><span data-stu-id="52bad-238">Description</span></span>    |
 |------------|---------|------------|
-| Value      | array   | 詳細なエラー データが含まれているオブジェクトの配列です。 各オブジェクトのデータについて詳しくは、次の「[エラーの詳細情報の値](#error-detail-values)」セクションをご覧ください。          |
-| @nextLink  | string  | データの追加ページがある場合、この文字列には、データの次のページを要求するために使用できる URI が含まれます。 たとえば、要求の **top** パラメーターを 10 に設定した場合、クエリに適合するエラーが 10 行を超えると、この値が返されます。 |
-| TotalCount | inumber | クエリの結果データ内の行の総数です。        |
+| <span data-ttu-id="52bad-239">Value</span><span class="sxs-lookup"><span data-stu-id="52bad-239">Value</span></span>      | <span data-ttu-id="52bad-240">array</span><span class="sxs-lookup"><span data-stu-id="52bad-240">array</span></span>   | <span data-ttu-id="52bad-241">詳細なエラー データが含まれているオブジェクトの配列です。</span><span class="sxs-lookup"><span data-stu-id="52bad-241">An array of objects that contain detailed error data.</span></span> <span data-ttu-id="52bad-242">各オブジェクトのデータについて詳しくは、次の「[エラーの詳細情報の値](#error-detail-values)」セクションをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="52bad-242">For more information about the data in each object, see the [error detail values](#error-detail-values) section below.</span></span>          |
+| @nextLink  | <span data-ttu-id="52bad-243">string</span><span class="sxs-lookup"><span data-stu-id="52bad-243">string</span></span>  | <span data-ttu-id="52bad-244">データの追加ページがある場合、この文字列には、データの次のページを要求するために使用できる URI が含まれます。</span><span class="sxs-lookup"><span data-stu-id="52bad-244">If there are additional pages of data, this string contains a URI that you can use to request the next page of data.</span></span> <span data-ttu-id="52bad-245">たとえば、要求の **top** パラメーターを 10 に設定した場合、クエリに適合するエラーが 10 行を超えると、この値が返されます。</span><span class="sxs-lookup"><span data-stu-id="52bad-245">For example, this value is returned if the **top** parameter of the request is set to 10 but there are more than 10 rows of errors for the query.</span></span> |
+| <span data-ttu-id="52bad-246">TotalCount</span><span class="sxs-lookup"><span data-stu-id="52bad-246">TotalCount</span></span> | <span data-ttu-id="52bad-247">inumber</span><span class="sxs-lookup"><span data-stu-id="52bad-247">inumber</span></span> | <span data-ttu-id="52bad-248">クエリの結果データ内の行の総数です。</span><span class="sxs-lookup"><span data-stu-id="52bad-248">The total number of rows in the data result for the query.</span></span>        |
 
 <span id="error-detail-values"/>
-### <a name="error-detail-values"></a>エラーの詳細情報の値
+### <a name="error-detail-values"></a><span data-ttu-id="52bad-249">エラーの詳細情報の値</span><span class="sxs-lookup"><span data-stu-id="52bad-249">Error detail values</span></span>
 
-*Value* 配列の要素には、次の値が含まれます。
+<span data-ttu-id="52bad-250">*Value* 配列の要素には、次の値が含まれます。</span><span class="sxs-lookup"><span data-stu-id="52bad-250">Elements in the *Value* array contain the following values.</span></span>
 
-| 値           | 型    | 説明     |
+| <span data-ttu-id="52bad-251">値</span><span class="sxs-lookup"><span data-stu-id="52bad-251">Value</span></span>           | <span data-ttu-id="52bad-252">型</span><span class="sxs-lookup"><span data-stu-id="52bad-252">Type</span></span>    | <span data-ttu-id="52bad-253">説明</span><span class="sxs-lookup"><span data-stu-id="52bad-253">Description</span></span>     |
 |-----------------|---------|----------------------------|
-| date            | string  | エラー データの日付範囲の最初の日付です。 要求に日付を指定した場合、この値はその日付になります。 要求に週、月、またはその他の日付範囲を指定した場合、この値はその日付範囲の最初の日付になります。 |
-| applicationId   | string  | 詳細なエラー データを取得したアプリのストア ID です。      |
-| failureName     | string  | エラーの名前です。 これと同じ名前が、Windows デベロッパー センター ダッシュボードの[状態レポート](../publish/health-report.md)の **[エラー]** セクションにも表示されます。            |
-| failureHash     | string  | エラーの一意の識別子です。     |
-| osVersion       | string  | エラーが発生した OS のバージョンです。    |
-| market          | string  | デバイスの市場の ISO 3166 国コードです。     |
-| deviceType      | string  | エラーが発生したデバイスの種類です。     |
-| packageVersion  | string  | このエラーに関連付けられているアプリ パッケージのバージョンです。    |
-| osBuild         | string  | エラーが発生した OS のビルド番号です。       |
-| cabId           | string  | このエラーに関連付けられている CAB ファイルの一意の ID です。   |
-| cabExpirationTime  | string  | CAB ファイルの有効期限が切れ、ダウンロードできなくなる日付と時刻 (ISO 8601形式) です。   |
-| deviceModel           | string  | エラーが発生したときにアプリを実行していたデバイスのモデルを指定する文字列です。   |
-| cabDownloadable           | Boolean  | このユーザーが CAB ファイルをダウンロードできるかどうかを示します。   |
+| <span data-ttu-id="52bad-254">date</span><span class="sxs-lookup"><span data-stu-id="52bad-254">date</span></span>            | <span data-ttu-id="52bad-255">string</span><span class="sxs-lookup"><span data-stu-id="52bad-255">string</span></span>  | <span data-ttu-id="52bad-256">エラー データの日付範囲の最初の日付です。</span><span class="sxs-lookup"><span data-stu-id="52bad-256">The first date in the date range for the error data.</span></span> <span data-ttu-id="52bad-257">要求に日付を指定した場合、この値はその日付になります。</span><span class="sxs-lookup"><span data-stu-id="52bad-257">If the request specified a single day, this value is that date.</span></span> <span data-ttu-id="52bad-258">要求に週、月、またはその他の日付範囲を指定した場合、この値はその日付範囲の最初の日付になります。</span><span class="sxs-lookup"><span data-stu-id="52bad-258">If the request specified a week, month, or other date range, this value is the first date in that date range.</span></span> |
+| <span data-ttu-id="52bad-259">applicationId</span><span class="sxs-lookup"><span data-stu-id="52bad-259">applicationId</span></span>   | <span data-ttu-id="52bad-260">string</span><span class="sxs-lookup"><span data-stu-id="52bad-260">string</span></span>  | <span data-ttu-id="52bad-261">詳細なエラー データを取得したアプリのストア ID です。</span><span class="sxs-lookup"><span data-stu-id="52bad-261">The Store ID of the app for which you retrieved detailed error data.</span></span>      |
+| <span data-ttu-id="52bad-262">failureName</span><span class="sxs-lookup"><span data-stu-id="52bad-262">failureName</span></span>     | <span data-ttu-id="52bad-263">string</span><span class="sxs-lookup"><span data-stu-id="52bad-263">string</span></span>  | <span data-ttu-id="52bad-264">エラーの名前です。</span><span class="sxs-lookup"><span data-stu-id="52bad-264">The name of the error.</span></span> <span data-ttu-id="52bad-265">これと同じ名前が、Windows デベロッパー センター ダッシュボードの[状態レポート](../publish/health-report.md)の **[エラー]** セクションにも表示されます。</span><span class="sxs-lookup"><span data-stu-id="52bad-265">This is the same name that appears in the **Failures** section of the [Health report](../publish/health-report.md) in the Windows Dev Center dashboard.</span></span>            |
+| <span data-ttu-id="52bad-266">failureHash</span><span class="sxs-lookup"><span data-stu-id="52bad-266">failureHash</span></span>     | <span data-ttu-id="52bad-267">string</span><span class="sxs-lookup"><span data-stu-id="52bad-267">string</span></span>  | <span data-ttu-id="52bad-268">エラーの一意の識別子です。</span><span class="sxs-lookup"><span data-stu-id="52bad-268">The unique identifier for the error.</span></span>     |
+| <span data-ttu-id="52bad-269">osVersion</span><span class="sxs-lookup"><span data-stu-id="52bad-269">osVersion</span></span>       | <span data-ttu-id="52bad-270">string</span><span class="sxs-lookup"><span data-stu-id="52bad-270">string</span></span>  | <span data-ttu-id="52bad-271">エラーが発生した OS のバージョンです。</span><span class="sxs-lookup"><span data-stu-id="52bad-271">The OS version on which the error occurred.</span></span>    |
+| <span data-ttu-id="52bad-272">market</span><span class="sxs-lookup"><span data-stu-id="52bad-272">market</span></span>          | <span data-ttu-id="52bad-273">string</span><span class="sxs-lookup"><span data-stu-id="52bad-273">string</span></span>  | <span data-ttu-id="52bad-274">デバイスの市場の ISO 3166 国コードです。</span><span class="sxs-lookup"><span data-stu-id="52bad-274">The ISO 3166 country code of the device market.</span></span>     |
+| <span data-ttu-id="52bad-275">deviceType</span><span class="sxs-lookup"><span data-stu-id="52bad-275">deviceType</span></span>      | <span data-ttu-id="52bad-276">string</span><span class="sxs-lookup"><span data-stu-id="52bad-276">string</span></span>  | <span data-ttu-id="52bad-277">エラーが発生したデバイスの種類です。</span><span class="sxs-lookup"><span data-stu-id="52bad-277">The type of device that on which the error occurred.</span></span>     |
+| <span data-ttu-id="52bad-278">packageVersion</span><span class="sxs-lookup"><span data-stu-id="52bad-278">packageVersion</span></span>  | <span data-ttu-id="52bad-279">string</span><span class="sxs-lookup"><span data-stu-id="52bad-279">string</span></span>  | <span data-ttu-id="52bad-280">このエラーに関連付けられているアプリ パッケージのバージョンです。</span><span class="sxs-lookup"><span data-stu-id="52bad-280">The version of the app package that is associated with this error.</span></span>    |
+| <span data-ttu-id="52bad-281">osBuild</span><span class="sxs-lookup"><span data-stu-id="52bad-281">osBuild</span></span>         | <span data-ttu-id="52bad-282">string</span><span class="sxs-lookup"><span data-stu-id="52bad-282">string</span></span>  | <span data-ttu-id="52bad-283">エラーが発生した OS のビルド番号です。</span><span class="sxs-lookup"><span data-stu-id="52bad-283">The build number of the OS on which the error occurred.</span></span>       |
+| <span data-ttu-id="52bad-284">cabId</span><span class="sxs-lookup"><span data-stu-id="52bad-284">cabId</span></span>           | <span data-ttu-id="52bad-285">string</span><span class="sxs-lookup"><span data-stu-id="52bad-285">string</span></span>  | <span data-ttu-id="52bad-286">このエラーに関連付けられている CAB ファイルの一意の ID です。</span><span class="sxs-lookup"><span data-stu-id="52bad-286">The unique ID of the CAB file that is associated with this error.</span></span>   |
+| <span data-ttu-id="52bad-287">cabExpirationTime</span><span class="sxs-lookup"><span data-stu-id="52bad-287">cabExpirationTime</span></span>  | <span data-ttu-id="52bad-288">string</span><span class="sxs-lookup"><span data-stu-id="52bad-288">string</span></span>  | <span data-ttu-id="52bad-289">CAB ファイルの有効期限が切れ、ダウンロードできなくなる日付と時刻 (ISO 8601形式) です。</span><span class="sxs-lookup"><span data-stu-id="52bad-289">The date and time when the CAB file is expired and can no longer be downloaded, in ISO 8601 format.</span></span>   |
+| <span data-ttu-id="52bad-290">deviceModel</span><span class="sxs-lookup"><span data-stu-id="52bad-290">deviceModel</span></span>           | <span data-ttu-id="52bad-291">string</span><span class="sxs-lookup"><span data-stu-id="52bad-291">string</span></span>  | <span data-ttu-id="52bad-292">エラーが発生したときにアプリを実行していたデバイスのモデルを指定する文字列です。</span><span class="sxs-lookup"><span data-stu-id="52bad-292">A string that specifies the model of the device on which the app was running when the error occurred.</span></span>   |
+| <span data-ttu-id="52bad-293">cabDownloadable</span><span class="sxs-lookup"><span data-stu-id="52bad-293">cabDownloadable</span></span>           | <span data-ttu-id="52bad-294">Boolean</span><span class="sxs-lookup"><span data-stu-id="52bad-294">Boolean</span></span>  | <span data-ttu-id="52bad-295">このユーザーが CAB ファイルをダウンロードできるかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="52bad-295">Indicates whether the CAB file is downloadable for this user.</span></span>   |
 
 <span/> 
 
-### <a name="response-example"></a>応答の例
+### <a name="response-example"></a><span data-ttu-id="52bad-296">応答の例</span><span class="sxs-lookup"><span data-stu-id="52bad-296">Response example</span></span>
 
-この要求の JSON 応答の本文の例を次に示します。
+<span data-ttu-id="52bad-297">この要求の JSON 応答の本文の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="52bad-297">The following example demonstrates an example JSON response body for this request.</span></span>
 
 ```json
 {
@@ -161,10 +160,10 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="52bad-298">関連トピック</span><span class="sxs-lookup"><span data-stu-id="52bad-298">Related topics</span></span>
 
-* [状態レポート](../publish/health-report.md)
-* [Windows ストア サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)
-* [エラー報告データの取得](get-error-reporting-data.md)
-* [アプリのエラーに関するスタック トレースの取得](get-the-stack-trace-for-an-error-in-your-app.md)
-
+* [<span data-ttu-id="52bad-299">状態レポート</span><span class="sxs-lookup"><span data-stu-id="52bad-299">Health report</span></span>](../publish/health-report.md)
+* [<span data-ttu-id="52bad-300">Windows ストア サービスを使った分析データへのアクセス</span><span class="sxs-lookup"><span data-stu-id="52bad-300">Access analytics data using Windows Store services</span></span>](access-analytics-data-using-windows-store-services.md)
+* [<span data-ttu-id="52bad-301">エラー報告データの取得</span><span class="sxs-lookup"><span data-stu-id="52bad-301">Get error reporting data</span></span>](get-error-reporting-data.md)
+* [<span data-ttu-id="52bad-302">アプリのエラーに関するスタック トレースの取得</span><span class="sxs-lookup"><span data-stu-id="52bad-302">Get the stack trace for an error in your app</span></span>](get-the-stack-trace-for-an-error-in-your-app.md)
+* [<span data-ttu-id="52bad-303">アプリのエラーの CAB ファイルをダウンロードする</span><span class="sxs-lookup"><span data-stu-id="52bad-303">Download the CAB file for an error in your app</span></span>](download-the-cab-file-for-an-error-in-your-app.md)

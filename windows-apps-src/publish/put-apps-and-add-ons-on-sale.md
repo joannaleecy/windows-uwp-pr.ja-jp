@@ -4,72 +4,86 @@ Description: "期間限定で特売することにより Windows ストアでア
 title: "アプリとアドオンの販売"
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 08/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5823fce5aa5b5d0e98bc43828dc7469a08fdb9d0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d17394808232aeffbe81404427e668fb9c06e677
+ms.sourcegitcommit: cd9b4bdc9c3a0b537a6e910a15df8541b49abf9c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/21/2017
 ---
+# <a name="put-apps-and-add-ons-on-sale"></a><span data-ttu-id="d4423-104">アプリとアドオンの販売</span><span class="sxs-lookup"><span data-stu-id="d4423-104">Put apps and add-ons on sale</span></span>
 
-# <a name="put-apps-and-add-ons-on-sale"></a>アプリとアドオンの販売
+<span data-ttu-id="d4423-105">期間限定で特売することにより Windows ストアでアプリやアドオンの販促活動をすることができます。</span><span class="sxs-lookup"><span data-stu-id="d4423-105">You can promote your app or add-on in the Windows Store by putting it on sale for a limited time.</span></span> <span data-ttu-id="d4423-106">製品を低い価格帯で提供することも、割引率を適用することもできます。</span><span class="sxs-lookup"><span data-stu-id="d4423-106">You can choose to offer the product either at a lower price tier or with a percentage-based discount.</span></span>
 
-期間限定で特売することにより Windows ストアでアプリやアドオンの販促活動をすることができます。
+<span data-ttu-id="d4423-107">申請の **[価格と使用可能状況]** ページの **[セール価格]** セクションを使ってアプリまたはアドオンの価格を一時的に下げると、顧客が見るストア登録情報には取り消し線が引かれた価格が表示され、値下げされていることをアピールできます (一方、[スケジュールされた価格変更](set-and-schedule-app-pricing.md#schedule-price-changes)では、ストアに変更を表示せずに価格を下げたり上げたりできます)。</span><span class="sxs-lookup"><span data-stu-id="d4423-107">When you use the **Sale pricing** section of the **Pricing and availability** page of a submission to temporarily lower the price of your app or add-on, customers viewing your Store listing will see strikethrough pricing indicating that the price has been reduced (as opposed to a [scheduled price change](set-and-schedule-app-pricing.md#schedule-price-changes), which can lower or raise the price without displaying it as a change in the Store).</span></span> 
 
-アプリまたはアドオンの価格を一時的に下げる特売のスケジュールを設定すると、ストアの一覧を表示しているユーザーは価格が下げられていることを確認し、指定した期間の間それを割引価格で購入することができます。 価格を **[無料]** にした場合は、特売期間中、無料でダウンロードできます。
+<span data-ttu-id="d4423-108">開発者が指定した、製品の特売期間中は、ユーザーは割引価格で製品を購入できるようになります。</span><span class="sxs-lookup"><span data-stu-id="d4423-108">During the time period that your product is on sale, customers will be able to purchase it at the lower price during the time period that you have selected.</span></span> <span data-ttu-id="d4423-109">価格を **[無料]** にした場合は、特売期間中、無料でダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="d4423-109">If you lower the price to **Free**, they can download it without paying at all during the sale period.</span></span>
 
-> **注:** セール価格は、Windows 10 のユーザーにのみ表示されます。 他のオペレーティング システムでは、アプリやアドオンの通常価格がユーザーに表示されます。 価格は新しい申請で異なる価格帯を選択することでいつでも変更できますが、その場合、期間限定販売としては表示されません。
-
-## <a name="scheduling-a-sale"></a>特売のスケジュールの設定
-
-特売は、アプリまたはアドオンの申請の一環としてスケジュールされます。 既に公開されているアプリやアドオンの特売のスケジュールを設定する場合、それが唯一の変更点であったとしても、新しい申請を作成する必要があります。
-
-**特売のスケジュールを設定するには**
-
-1.  進行中のアプリまたはアドオン申請の **[価格と使用可能状況]** ページで、**[セール価格]** セクションに移動します。
-2.  **[新しい販売]** をクリックします。
-3.  特売を開始、終了する日時を入力します。 表示される時刻は UTC です。
-
-   > **注:** アドオンの特売の場合、互いに重なる特売をスケジュールすることはできません。
-
-4.  ドロップダウンの一覧から販売価格を選びます。 **[無料]** を含む任意の価格を選択できます。
-5.  この特売のカスタム価格を入力する場合は、**[カスタム市場価格オプションを表示する]** をクリックします。 市場ごとのカスタム販売価格はここで設定できます (特売から特定の市場を除外することもできます)。 詳しくは、「[価格と市場の選択の定義](define-pricing-and-market-selection.md)」をご覧ください。
-
-    > **注:** **[セール価格]** セクションで行った市場の選択は、アプリが提供される市場には影響しません。これらの選択では、セール価格を提供するかどうかとその対象の市場のみを決定します。 アプリを利用できない市場のセール価格を設定しても、これによってその市場でアプリが利用できるようになることはありません。
-
-6.  **[完了]** をクリックして、特売のスケジュールを保存します。
-7.  **[価格と使用可能状況]** ページの下部の **[保存]** をクリックし、申請の概要から **[ストアに提出]** をクリックします。
-
-> **注:** アプリの基準価格より高い価格帯を選択することができます。 ただし、セール価格がユーザーに表示されるのは、価格がその市場でのアプリの通常価格よりも安い場合のみです。 特定の市場でアプリの基準価格より高いカスタム価格を既に設定していて、その市場での価格を一時的に下げる場合 (それでもセール価格はアプリの基準価格より高い)、アプリの基準価格より高い価格を選択することが特売において適切であることがあります。 選択の結果として特定の市場でアプリの価格が上がる場合、その (高い) 価格はその市場のユーザーには表示されず、引き続き以前の (低い) 価格でアプリが表示されます。 異なる価格で別の重複する特売をスケジュールする場合にも、ユーザーには適用される最低価格が表示されます。
-
-## <a name="changing-or-canceling-a-scheduled-sale"></a>スケジュールされた特売の変更または取り消し
+> [!NOTE]
+> <span data-ttu-id="d4423-110">セール価格は、Xbox One を含め、Windows 10 デバイスのユーザーにのみ表示されます。</span><span class="sxs-lookup"><span data-stu-id="d4423-110">Sale pricing is only shown to your customers on Windows 10 devices, including Xbox One.</span></span> <span data-ttu-id="d4423-111">その他の製品のいずれかを所有しているユーザーに提供されるセールは、Windows 10 バージョン 1607 以降のユーザーにのみ表示されます。</span><span class="sxs-lookup"><span data-stu-id="d4423-111">Sales offered to owners of one of your other products are only shown to customers on Windows 10, version 1607 or later.</span></span>
+> 
+> <span data-ttu-id="d4423-112">他のオペレーティング システムでは、アプリやアドオンの通常価格がユーザーに表示され、セール価格で購入することはできません。</span><span class="sxs-lookup"><span data-stu-id="d4423-112">On other operating systems, customers will see the regular price for your app or add-on, and won't be able to purchase it at the sale price.</span></span> <span data-ttu-id="d4423-113">価格は新しい申請で異なる価格帯を選択することでいつでも変更できますが、その場合、期間限定販売としては表示されません。</span><span class="sxs-lookup"><span data-stu-id="d4423-113">You can always change a price by choosing a different price tier in a new submission, but it will not be displayed as a limited-time sale.</span></span>
 
 
-アプリやアドオンに対して以前にスケジュール設定した特売を変更したり取り消したりするには、新しい申請を作成し、ストアに提出する必要があります。
+## <a name="scheduling-a-sale"></a><span data-ttu-id="d4423-114">特売のスケジュールの設定</span><span class="sxs-lookup"><span data-stu-id="d4423-114">Scheduling a sale</span></span>
 
-**スケジュールされた特売を編集するには**
+<span data-ttu-id="d4423-115">特売は、アプリまたはアドオンの申請の一環としてスケジュールされます。</span><span class="sxs-lookup"><span data-stu-id="d4423-115">Sales are scheduled as part of the submission for an app or add-on.</span></span> <span data-ttu-id="d4423-116">既に公開されているアプリやアドオンの特売のスケジュールを設定する場合、それが唯一の変更点であったとしても、新しい申請を作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d4423-116">If you want to schedule a sale for an app or add-on that has already been published, you'll need to create a new submission, even if that is the only change you want to make.</span></span>
 
-1.  進行中のアプリまたはアドオン申請の **[価格と使用可能状況]** ページで、**[セール価格]** セクションに移動します。
-2.  更新する特売を確認し、その価格をクリックして特売を編集します。
-3.  変更を加え、**[完了]** をクリックします。
-4.  **[価格と使用可能状況]** ページの下部の **[保存]** をクリックし、申請の概要から **[ストアに提出]** をクリックします。
+**<span data-ttu-id="d4423-117">特売のスケジュールを設定するには</span><span class="sxs-lookup"><span data-stu-id="d4423-117">To schedule a sale</span></span>**
 
-変更は申請の認定プロセスが完了した後に有効になります (特売が既に開始している場合でも)。
+1. <span data-ttu-id="d4423-118">進行中のアプリまたはアドオン申請の **[価格と使用可能状況]** ページで、**[セール価格]** セクションに移動します。</span><span class="sxs-lookup"><span data-stu-id="d4423-118">On the **Pricing and availability** page of an in-progress app or add-on submission, go to the **Sale pricing** section.</span></span>
+2. <span data-ttu-id="d4423-119">**[オプションの表示]** を選択し、**[新しい販売]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="d4423-119">Select **Show options**, and then select **New sale**.</span></span>
+3. <span data-ttu-id="d4423-120">**[市場の選択]** ポップアップ ウィンドウが表示されます。ここで、特売が提供される市場を指定する "市場グループ"** を作成できます。</span><span class="sxs-lookup"><span data-stu-id="d4423-120">The **Market selection** popup window will appear, allowing you to create a *market group* that will specify the market(s) in which the sale should be offered.</span></span> <span data-ttu-id="d4423-121">**[すべて選択]** をクリックして、アプリを利用できるすべての市場で特売を提供することも、1 つまたは複数の市場を選択することもできます。</span><span class="sxs-lookup"><span data-stu-id="d4423-121">You can click **Select all** to offer the sale to every market in which your app is available, select one individual market, or select multiple markets.</span></span> <span data-ttu-id="d4423-122">必要に応じて、市場グループの名前を入力できます。</span><span class="sxs-lookup"><span data-stu-id="d4423-122">You can optionally enter a name for your market group.</span></span> <span data-ttu-id="d4423-123">選択が完了したら、**[作成]** をクリックします </span><span class="sxs-lookup"><span data-stu-id="d4423-123">When you’ve made your selections, click **Create**.</span></span> <span data-ttu-id="d4423-124">(グループ内の市場を後で編集する場合は、グループ名をクリックします)。</span><span class="sxs-lookup"><span data-stu-id="d4423-124">(To edit the markets in the group later, click its name.)</span></span>
 
-> **ヒント:** 完了した特売は、開始日と終了日を編集して新しい申請で再利用できます。 これは特に、複雑なカスタム市場価格で特売を構成した場合に便利です。
- 
-**スケジュールされた特売を取り消すには**
+   > [!NOTE]
+   > <span data-ttu-id="d4423-125">[セール価格] セクションで行った市場の選択は、アプリが提供される市場には影響しません。これらの選択は、セール価格を提供するかどうかと、その対象となる市場だけを決定するものです。</span><span class="sxs-lookup"><span data-stu-id="d4423-125">Market selections that you make in the Sale pricing section will not affect the markets in which the app is offered; these selections only determine whether a sale price is offered, and in which markets.</span></span> <span data-ttu-id="d4423-126">アプリを利用できない市場向けにセール価格を設定しても、その市場でアプリが利用可能になることはありません。</span><span class="sxs-lookup"><span data-stu-id="d4423-126">If you set sale pricing for a market in which your app is not available, this won't cause the app to become available in that market.</span></span>
+4. <span data-ttu-id="d4423-127">割引の種類を指定するには、次のいずれかのオプションを選択します。</span><span class="sxs-lookup"><span data-stu-id="d4423-127">Choose one of the following options to specify the type of discount:</span></span>
+   - <span data-ttu-id="d4423-128">**[価格]**: アプリが提供される価格帯を下げるには、このオプションを使います。</span><span class="sxs-lookup"><span data-stu-id="d4423-128">**Price**: Use this option to select a lower price tier at which your app will be offered.</span></span> <span data-ttu-id="d4423-129">通貨のドロップダウンを変更して、任意の通貨の価格を選択できます </span><span class="sxs-lookup"><span data-stu-id="d4423-129">You can change the currency drop-down to select the price in whichever currency you prefer.</span></span> <span data-ttu-id="d4423-130">(価格は、それぞれの通貨での同等額に変換されます。</span><span class="sxs-lookup"><span data-stu-id="d4423-130">(The price will be converted to the corresponding tier for each currency.</span></span> <span data-ttu-id="d4423-131">詳しくは、「[価格](set-app-pricing-and-availability.md)」をご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="d4423-131">For more info, see [Pricing](set-app-pricing-and-availability.md).)</span></span>
+   - <span data-ttu-id="d4423-132">**[割合]**: アプリに適用する割引率を選択するには、このオプションを使います。</span><span class="sxs-lookup"><span data-stu-id="d4423-132">**Percentage**: Use this option to select the percentage for a discount that will be applied to your app.</span></span> <span data-ttu-id="d4423-133">すべての通貨で同じ割引率が使われます。</span><span class="sxs-lookup"><span data-stu-id="d4423-133">The same discount percentage is used for all currencies.</span></span>
+5. <span data-ttu-id="d4423-134">**[提供先]** 行で、次の利用可能なオプションの 1 つを選びます。</span><span class="sxs-lookup"><span data-stu-id="d4423-134">In the **Offered to** row, choose from one of the available options, including:</span></span>
+   - <span data-ttu-id="d4423-135">**[全員]**: 特売はすべてのユーザーに適用されます。</span><span class="sxs-lookup"><span data-stu-id="d4423-135">**Everyone**: The sale will be offered to all customers.</span></span>
+   - <span data-ttu-id="d4423-136">**[次の所有者]**: 特売は、いずれかのアプリを既に所有しているユーザーに提供されます。</span><span class="sxs-lookup"><span data-stu-id="d4423-136">**Owners of**: The sale will be offered to customers who already own one of your apps.</span></span> <span data-ttu-id="d4423-137">表示されるドロップダウンから、公開済みのアプリを選べます。</span><span class="sxs-lookup"><span data-stu-id="d4423-137">You can select from your published apps from the drop-down that appears.</span></span> <span data-ttu-id="d4423-138">このオプションは、1 つ以上のアプリが公開されていないと、使用できません。</span><span class="sxs-lookup"><span data-stu-id="d4423-138">You must have one or more published apps in order for this option to be available.</span></span>
 
-1.  進行中のアプリまたはアドオン申請の **[価格と使用可能状況]** ページで、**[セール価格]** セクションに移動します。
-2.  取り消す特売を確認し、**[削除]** をクリックして削除します。
-3.  **[価格と使用可能状況]** ページの下部の **[保存]** をクリックし、申請の概要から **[ストアに提出]** をクリックします。
+  > [!IMPORTANT]
+  > <span data-ttu-id="d4423-139">**[次の所有者]** を選ぶと、Windows 10 バージョン 1607 以降のユーザーにのみ、セールが公開されます。</span><span class="sxs-lookup"><span data-stu-id="d4423-139">If you select **Owners of**, the sale will only be visible to customers on Windows 10, version 1607 or later.</span></span>
 
-申請の認定プロセスが完了するまでに特売が開始されない場合、削除された特売が実行されることはありません。 既に終了した特売を削除した場合は、**[価格と使用可能状況]** ページから特売が削除されるだけです。
+   - <span data-ttu-id="d4423-140">**[既知のユーザー グループ]**: 特売は、選択した[既知のユーザーグループ](create-known-user-groups.md)に含まれる相手に提供されます。</span><span class="sxs-lookup"><span data-stu-id="d4423-140">**Known user group**: The sale will be offered to the people in the [known user group](create-known-user-groups.md) you select.</span></span> <span data-ttu-id="d4423-141">このオプションを使うには、既知のユーザー グループが既に作成されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="d4423-141">You must already have created the known user group in order for this option to be available.</span></span>
+   - <span data-ttu-id="d4423-142">**[セグメント]**: 特売は、選択したユーザー セグメントに含まれるユーザーに提供されます。</span><span class="sxs-lookup"><span data-stu-id="d4423-142">**Segment**: The sale will be offered to the people in the customer segment you select.</span></span> <span data-ttu-id="d4423-143">[既に作成したセグメント](create-customer-segments.md)をここで使用できます。</span><span class="sxs-lookup"><span data-stu-id="d4423-143">You can use a  [segment that you have already created](create-customer-segments.md) here.</span></span> <span data-ttu-id="d4423-144">**[初めて支払いを行う顧客]** を選択して、ストアで何も購入したことがないユーザーにのみ特売を提供することもできます。</span><span class="sxs-lookup"><span data-stu-id="d4423-144">You can also choose **First time payers** to offer the sale only to customers who have never purchased anything in the Store.</span></span> <span data-ttu-id="d4423-145">初めてストアで購入したユーザーは、その後も購入を続ける場合が多いことがわかっています。このようなユーザーのグループはセール価格のアピール先として最適であるため、このセグメントが用意されています。</span><span class="sxs-lookup"><span data-stu-id="d4423-145">We offer this segment here because we've found that after a customer makes their first Store purchase, they often continue to make more purchases, so this can be a great group to entice with sale pricing.</span></span>
+6. <span data-ttu-id="d4423-146">特売期間の開始日時と終了日時を入力します。</span><span class="sxs-lookup"><span data-stu-id="d4423-146">Enter the date and time for the start and end of the sale period.</span></span> <span data-ttu-id="d4423-147">次のいずれかのタイム ゾーン オプションを選択します。</span><span class="sxs-lookup"><span data-stu-id="d4423-147">Choose one of the following time zone options:</span></span>
+   - <span data-ttu-id="d4423-148">**[UTC]**: 選択した時刻は世界標準時 (UTC) です。特売はすべての市場で同時に行われます。</span><span class="sxs-lookup"><span data-stu-id="d4423-148">**UTC**: The time you select will be Universal Coordinated Time (UTC) time, so that the sale occurs at the same time everywhere.</span></span>
+   - <span data-ttu-id="d4423-149">**[ローカル]**: 選択した時刻は、市場に関連付けられている各タイム ゾーンの時刻として扱われます </span><span class="sxs-lookup"><span data-stu-id="d4423-149">**Local**: The time you select will be the used in each time zone associated with a market.</span></span> <span data-ttu-id="d4423-150">(複数のタイム ゾーンがある市場では、その市場のタイム ゾーンの 1 つだけが使われます。</span><span class="sxs-lookup"><span data-stu-id="d4423-150">(Note that for markets that include more than one time zone, only one time zone in that market will be used.</span></span> <span data-ttu-id="d4423-151">米国の場合は東部標準時が使われます)。</span><span class="sxs-lookup"><span data-stu-id="d4423-151">For the United States, the Eastern time zone is used.)</span></span>
+7. <span data-ttu-id="d4423-152">他の特売をスケジュールするには、**[新しい販売]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="d4423-152">To schedule an additional sale, select **New sale**.</span></span> <span data-ttu-id="d4423-153">それ以外の場合は、**[価格と使用可能状況]** ページの下部にある **[保存]** を選択し、申請の概要から **[ストアに提出]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="d4423-153">Otherwise, select **Save** at the bottom of the **Pricing and availability page**, then select **Submit to the Store** from the submission overview.</span></span>
 
-> **重要:** ストアのアプリの内容を表示するとユーザーはスケジュールされた終了日を確認できるため、開始後に特売を削除することはお勧めしません。 既に始まっている特売を削除した場合、特売は認定プロセスが完了した時点で終了するため、潜在的なユーザーに不満を感じさせる可能性があります。
+> [!NOTE]
+> <span data-ttu-id="d4423-154">アプリの基本価格より高い価格帯を選択することもできます。</span><span class="sxs-lookup"><span data-stu-id="d4423-154">It's possible to select a price tier that is higher than your app's base price.</span></span> <span data-ttu-id="d4423-155">ただし、セール価格がユーザーに表示されるのは、価格がその市場でのアプリの通常価格よりも安い場合のみです。</span><span class="sxs-lookup"><span data-stu-id="d4423-155">However, sale pricing will only be shown to customers if the sale price is lower than the regular price of the app in that market.</span></span>
+
+> <span data-ttu-id="d4423-156">特定の市場でアプリの基準価格より高いカスタム価格を既に設定していて、その市場での価格を一時的に下げる場合 (それでもセール価格はアプリの基準価格より高い)、アプリの基準価格より高い価格を選択することが特売において適切であることがあります。</span><span class="sxs-lookup"><span data-stu-id="d4423-156">Selecting a price that is higher than your app's base price might be appropriate for your sale if you've already set custom prices in certain markets that are higher than your app's base price, and you want to temporarily lower the price in those markets (but the sale price is still higher than the app's base price).</span></span> <span data-ttu-id="d4423-157">選択の結果として特定の市場でアプリの価格が上がる場合、その (高い) 価格はその市場のユーザーには表示されず、引き続き以前の (低い) 価格でアプリが表示されます。</span><span class="sxs-lookup"><span data-stu-id="d4423-157">If your selections would result in the price of the app being raised in a certain market, we won't show that (higher) price to customers in that market; they will continue to see the app at its previous (lower) price.</span></span> <span data-ttu-id="d4423-158">異なる価格で別の重複する特売をスケジュールする場合にも、ユーザーには適用される最低価格が表示されます。</span><span class="sxs-lookup"><span data-stu-id="d4423-158">We'll also show customers the lowest price available if you schedule separate overlapping sales with different prices.</span></span>
+
+## <a name="changing-or-canceling-a-scheduled-sale"></a><span data-ttu-id="d4423-159">スケジュールされた特売の変更または取り消し</span><span class="sxs-lookup"><span data-stu-id="d4423-159">Changing or canceling a scheduled sale</span></span>
+
+<span data-ttu-id="d4423-160">アプリやアドオンに対して以前にスケジュール設定した特売を変更したり取り消したりするには、新しい申請を作成し、ストアに提出する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d4423-160">To revise or cancel a sale that you've previously scheduled for an app or add-on, you'll need to create a new submission and submit it to the Store.</span></span>
+
+**<span data-ttu-id="d4423-161">スケジュールされた特売を編集するには</span><span class="sxs-lookup"><span data-stu-id="d4423-161">To edit a scheduled sale</span></span>**
+
+1.  <span data-ttu-id="d4423-162">進行中のアプリまたはアドオン申請の **[価格と使用可能状況]** ページで、**[セール価格]** セクションに移動します。</span><span class="sxs-lookup"><span data-stu-id="d4423-162">On the **Pricing and availability** page of an in-progress app or add-on submission, go to the **Sale Pricing** section.</span></span>
+2.  <span data-ttu-id="d4423-163">更新する特売を見つけて変更します。</span><span class="sxs-lookup"><span data-stu-id="d4423-163">Find the sale that you want to update, then make your changes.</span></span>
+3.  <span data-ttu-id="d4423-164">**[価格と使用可能状況]** ページの下部にある **[保存]** をクリックし、申請の概要から **[ストアに提出]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="d4423-164">Click **Save** at the bottom of the **Pricing and availability** page, then click **Submit to the Store** from the submission overview.</span></span>
+
+<span data-ttu-id="d4423-165">変更は、申請の認定プロセスが完了した後に有効になります。</span><span class="sxs-lookup"><span data-stu-id="d4423-165">After your submission goes through the certification process, the changes will take effect.</span></span>
+
+> [!IMPORTANT]
+> <span data-ttu-id="d4423-166">既に特売が始まっている場合、開始日を編集することはできません。</span><span class="sxs-lookup"><span data-stu-id="d4423-166">If a sale has already started, you won't be able to edit the start date.</span></span> <span data-ttu-id="d4423-167">終了日を編集することはできますが、元の終了日より早く終了するように編集することはお勧めできません。</span><span class="sxs-lookup"><span data-stu-id="d4423-167">While you can edit the end date, we recommend that you don't edit a sale to end sooner than its original end date.</span></span> <span data-ttu-id="d4423-168">アプリのストア登録情報にはスケジュールされた終了日が表示されるため、最初に公開した日付より早く特売を終了すると、潜在的なユーザーに不満を感じさせる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="d4423-168">It can be frustrating to your potential customers if you end a sale before the date that was originally published (since customers see the scheduled end date when viewing your app's Store listing).</span></span>
+
+ **<span data-ttu-id="d4423-169">まだ開始されていない特売を取り消すには</span><span class="sxs-lookup"><span data-stu-id="d4423-169">To cancel a sale that hasn't started yet</span></span>**
+
+1.  <span data-ttu-id="d4423-170">進行中のアプリまたはアドオン申請の **[価格と使用可能状況]** ページで、**[セール価格]** セクションに移動します。</span><span class="sxs-lookup"><span data-stu-id="d4423-170">On the **Pricing and availability** page of an in-progress app or add-on submission, go to the **Sale pricing** section.</span></span>
+2.  <span data-ttu-id="d4423-171">取り消す特売を見つけて **[削除]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="d4423-171">Find the sale that you want to cancel and click **Remove**.</span></span>
+3.  <span data-ttu-id="d4423-172">**[価格と使用可能状況]** ページの下部にある **[保存]** をクリックし、申請の概要から **[ストアに提出]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="d4423-172">Click **Save** at the bottom of the **Pricing and availability** page, then click **Submit to the Store** from the submission overview.</span></span> <span data-ttu-id="d4423-173">新しい申請の認定プロセスが完了するまでに特売が開始されていなければ、削除された特売は実行されません。</span><span class="sxs-lookup"><span data-stu-id="d4423-173">As long as the sale hasn't started by the time the new submission completes the certification process, the removed sale won't run at all.</span></span>
+
+
 
 

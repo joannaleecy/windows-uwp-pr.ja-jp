@@ -1,83 +1,80 @@
 ---
 author: mcleanbyron
 ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
-description: "Windows ストア申請 API 内のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されているアプリの新しいパッケージ フライトの申請を作成します。"
-title: "Windows ストア申請 API を使用したパッケージ フライト申請の作成"
+description: "Windows デベロッパー センター アカウントに登録されているアプリの新しいパッケージ フライトの申請を作成するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "パッケージ フライトの申請の作成"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、Windows ストア申請 API、フライトの申請の作成"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d3e3c74d8afcd3b9055b64a0d06f207b1e02d598
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f9d83f6e43e42fdaaf3f5242b461a989e074a9b5
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/04/2017
 ---
+# <a name="create-a-package-flight-submission"></a><span data-ttu-id="dbce4-104">パッケージ フライトの申請の作成</span><span class="sxs-lookup"><span data-stu-id="dbce4-104">Create a package flight submission</span></span>
 
-# <a name="create-a-package-flight-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したパッケージ フライト申請の作成
+<span data-ttu-id="dbce4-105">アプリのパッケージ フライトの新しい申請を作成するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="dbce4-105">Use this method in the Windows Store submission API to create a new submission for a package flight for an app.</span></span> <span data-ttu-id="dbce4-106">このメソッドを使って新しい申請を正常に作成したら、[申請を更新](update-a-flight-submission.md)して申請データに必要な変更を加え、取り込んで公開するために[申請をコミット](commit-a-flight-submission.md)します。</span><span class="sxs-lookup"><span data-stu-id="dbce4-106">After you successfully create a new submission by using this method, [update the submission](update-a-flight-submission.md) to make any necessary changes to the submission data, and then [commit the submission](commit-a-flight-submission.md) for ingestion and publishing.</span></span>
 
-Windows ストア申請 API 内のこのメソッドを使用して、アプリのパッケージ フライトの新しい申請を作成します。 このメソッドを使って新しい申請を正常に作成したら、[申請を更新](update-a-flight-submission.md)して申請データに必要な変更を加え、取り込んで公開するために[申請をコミット](commit-a-flight-submission.md)します。
+<span data-ttu-id="dbce4-107">このメソッドが Windows ストア申請 API を使ったパッケージ フライト申請の作成プロセスにどのように適合するかについては、[パッケージ フライト申請の管理に関するページ](manage-flight-submissions.md)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="dbce4-107">For more information about how this method fits into the process of creating a package flight submission by using the Windows Store submission API, see [Manage package flight submissions](manage-flight-submissions.md).</span></span>
 
-このメソッドが Windows ストア申請 API を使ったパッケージ フライト申請の作成プロセスにどのように適合するかについては、[パッケージ フライト申請の管理に関するページ](manage-flight-submissions.md)をご覧ください。
+><span data-ttu-id="dbce4-108">**注:**&nbsp;&nbsp;このメソッドは、既存のパッケージ フライトの申請を作成します。</span><span class="sxs-lookup"><span data-stu-id="dbce4-108">**Note**&nbsp;&nbsp;This method creates a submission for an existing package flight.</span></span> <span data-ttu-id="dbce4-109">パッケージ フライトを作成するには、[パッケージ フライトの作成](create-a-flight.md)のメソッドを使用してください。</span><span class="sxs-lookup"><span data-stu-id="dbce4-109">To create a package flight, use the [create a package flight](create-a-flight.md) method.</span></span>
 
->**注:**&nbsp;&nbsp;このメソッドは、既存のパッケージ フライトの申請を作成します。 パッケージ フライトを作成するには、[パッケージ フライトの作成](create-a-flight.md)のメソッドを使用してください。
+## <a name="prerequisites"></a><span data-ttu-id="dbce4-110">前提条件</span><span class="sxs-lookup"><span data-stu-id="dbce4-110">Prerequisites</span></span>
 
-## <a name="prerequisites"></a>前提条件
+<span data-ttu-id="dbce4-111">このメソッドを使うには、最初に次の作業を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="dbce4-111">To use this method, you need to first do the following:</span></span>
 
-このメソッドを使うには、最初に次の作業を行う必要があります。
+* <span data-ttu-id="dbce4-112">Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。</span><span class="sxs-lookup"><span data-stu-id="dbce4-112">If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.</span></span>
+* <span data-ttu-id="dbce4-113">このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。</span><span class="sxs-lookup"><span data-stu-id="dbce4-113">[Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method.</span></span> <span data-ttu-id="dbce4-114">アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。</span><span class="sxs-lookup"><span data-stu-id="dbce4-114">After you obtain an access token, you have 60 minutes to use it before it expires.</span></span> <span data-ttu-id="dbce4-115">トークンの有効期限が切れたら新しいトークンを取得できます。</span><span class="sxs-lookup"><span data-stu-id="dbce4-115">After the token expires, you can obtain a new one.</span></span>
+* <span data-ttu-id="dbce4-116">デベロッパー センター アカウントでアプリのパッケージ フライトを作成します。</span><span class="sxs-lookup"><span data-stu-id="dbce4-116">Create a package flight for an app in your Dev Center account.</span></span> <span data-ttu-id="dbce4-117">これは、デベロッパー センター ダッシュボードで行うことも、[パッケージ フライトの作成](create-a-flight.md)のメソッドを使って行うこともできます。</span><span class="sxs-lookup"><span data-stu-id="dbce4-117">You can do this in the Dev Center dashboard, or you can do this by using the [create a package flight](create-a-flight.md) method.</span></span>
 
-* Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
-* デベロッパー センター アカウントでアプリのパッケージ フライトを作成します。 これは、デベロッパー センター ダッシュボードで行うことも、[パッケージ フライトの作成](create-a-flight.md)のメソッドを使って行うこともできます。
+## <a name="request"></a><span data-ttu-id="dbce4-118">要求</span><span class="sxs-lookup"><span data-stu-id="dbce4-118">Request</span></span>
 
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
+<span data-ttu-id="dbce4-119">このメソッドの構文は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="dbce4-119">This method has the following syntax.</span></span> <span data-ttu-id="dbce4-120">ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="dbce4-120">See the following sections for usage examples and descriptions of the header and request body.</span></span>
 
-## <a name="request"></a>要求
-
-このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
-
-| メソッド | 要求 URI                                                      |
+| <span data-ttu-id="dbce4-121">メソッド</span><span class="sxs-lookup"><span data-stu-id="dbce4-121">Method</span></span> | <span data-ttu-id="dbce4-122">要求 URI</span><span class="sxs-lookup"><span data-stu-id="dbce4-122">Request URI</span></span>                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions``` |
+| <span data-ttu-id="dbce4-123">POST</span><span class="sxs-lookup"><span data-stu-id="dbce4-123">POST</span></span>    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions``` |
 
 <span/>
  
 
-### <a name="request-header"></a>要求ヘッダー
+### <a name="request-header"></a><span data-ttu-id="dbce4-124">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="dbce4-124">Request header</span></span>
 
-| ヘッダー        | 型   | 説明                                                                 |
+| <span data-ttu-id="dbce4-125">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="dbce4-125">Header</span></span>        | <span data-ttu-id="dbce4-126">型</span><span class="sxs-lookup"><span data-stu-id="dbce4-126">Type</span></span>   | <span data-ttu-id="dbce4-127">説明</span><span class="sxs-lookup"><span data-stu-id="dbce4-127">Description</span></span>                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
+| <span data-ttu-id="dbce4-128">Authorization</span><span class="sxs-lookup"><span data-stu-id="dbce4-128">Authorization</span></span> | <span data-ttu-id="dbce4-129">string</span><span class="sxs-lookup"><span data-stu-id="dbce4-129">string</span></span> | <span data-ttu-id="dbce4-130">必須。</span><span class="sxs-lookup"><span data-stu-id="dbce4-130">Required.</span></span> <span data-ttu-id="dbce4-131">**Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。</span><span class="sxs-lookup"><span data-stu-id="dbce4-131">The Azure AD access token in the form **Bearer** &lt;*token*&gt;.</span></span> |
 
 <span/>
 
-### <a name="request-parameters"></a>要求パラメーター
+### <a name="request-parameters"></a><span data-ttu-id="dbce4-132">要求パラメーター</span><span class="sxs-lookup"><span data-stu-id="dbce4-132">Request parameters</span></span>
 
-| 名前        | 型   | 説明                                                                 |
+| <span data-ttu-id="dbce4-133">名前</span><span class="sxs-lookup"><span data-stu-id="dbce4-133">Name</span></span>        | <span data-ttu-id="dbce4-134">種類</span><span class="sxs-lookup"><span data-stu-id="dbce4-134">Type</span></span>   | <span data-ttu-id="dbce4-135">説明</span><span class="sxs-lookup"><span data-stu-id="dbce4-135">Description</span></span>                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | 必須。 パッケージ フライトの申請を作成するアプリのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。  |
-| flightId | string | 必須。 申請を追加するパッケージ フライトの ID です。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データに含まれており、デベロッパー センター ダッシュボードで確認できます。  |
+| <span data-ttu-id="dbce4-136">applicationId</span><span class="sxs-lookup"><span data-stu-id="dbce4-136">applicationId</span></span> | <span data-ttu-id="dbce4-137">string</span><span class="sxs-lookup"><span data-stu-id="dbce4-137">string</span></span> | <span data-ttu-id="dbce4-138">必須。</span><span class="sxs-lookup"><span data-stu-id="dbce4-138">Required.</span></span> <span data-ttu-id="dbce4-139">パッケージ フライトの申請を作成するアプリのストア ID です。</span><span class="sxs-lookup"><span data-stu-id="dbce4-139">The Store ID of the app for which you want to create a package flight submission.</span></span> <span data-ttu-id="dbce4-140">ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="dbce4-140">For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).</span></span>  |
+| <span data-ttu-id="dbce4-141">flightId</span><span class="sxs-lookup"><span data-stu-id="dbce4-141">flightId</span></span> | <span data-ttu-id="dbce4-142">string</span><span class="sxs-lookup"><span data-stu-id="dbce4-142">string</span></span> | <span data-ttu-id="dbce4-143">必須。</span><span class="sxs-lookup"><span data-stu-id="dbce4-143">Required.</span></span> <span data-ttu-id="dbce4-144">申請を追加するパッケージ フライトの ID です。</span><span class="sxs-lookup"><span data-stu-id="dbce4-144">The ID of the package flight for which you want to add the submission.</span></span> <span data-ttu-id="dbce4-145">この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データで確認できます。</span><span class="sxs-lookup"><span data-stu-id="dbce4-145">This ID is available in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md).</span></span>  |
 
 <span/>
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a><span data-ttu-id="dbce4-146">要求本文</span><span class="sxs-lookup"><span data-stu-id="dbce4-146">Request body</span></span>
 
-このメソッドでは要求本文を指定しないでください。
+<span data-ttu-id="dbce4-147">このメソッドでは要求本文を指定しないでください。</span><span class="sxs-lookup"><span data-stu-id="dbce4-147">Do not provide a request body for this method.</span></span>
 
-### <a name="request-example"></a>要求の例
+### <a name="request-example"></a><span data-ttu-id="dbce4-148">要求の例</span><span class="sxs-lookup"><span data-stu-id="dbce4-148">Request example</span></span>
 
-次の例は、ストア ID 9WZDNCRD91MD を持つアプリの新しいパッケージ フライトの申請を作成する方法を示しています。
+<span data-ttu-id="dbce4-149">次の例は、ストア ID 9WZDNCRD91MD を持つアプリの新しいパッケージ フライトの申請を作成する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="dbce4-149">The following example demonstrates how to create a new package flight submission for an app that has the Store ID 9WZDNCRD91MD.</span></span>
 
 ```
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>応答
+## <a name="response"></a><span data-ttu-id="dbce4-150">応答</span><span class="sxs-lookup"><span data-stu-id="dbce4-150">Response</span></span>
 
-次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文には、新しい申請に関する情報が含まれています。 応答本文の値について詳しくは、[パッケージ フライトの申請のリソース](manage-flight-submissions.md#flight-submission-object)を参照してください。
+<span data-ttu-id="dbce4-151">次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。</span><span class="sxs-lookup"><span data-stu-id="dbce4-151">The following example demonstrates the JSON response body for a successful call to this method.</span></span> <span data-ttu-id="dbce4-152">応答本文には、新しい申請に関する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="dbce4-152">The response body contains information about the new submission.</span></span> <span data-ttu-id="dbce4-153">応答本文の値について詳しくは、[パッケージ フライトの申請のリソース](manage-flight-submissions.md#flight-submission-object)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="dbce4-153">For more details about the values in the response body, see [Package flight submission resource](manage-flight-submissions.md#flight-submission-object).</span></span>
 
 ```json
 {
@@ -104,7 +101,7 @@ Authorization: Bearer <your access token>
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -118,24 +115,23 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## <a name="error-codes"></a>エラー コード
+## <a name="error-codes"></a><span data-ttu-id="dbce4-154">エラー コード</span><span class="sxs-lookup"><span data-stu-id="dbce4-154">Error codes</span></span>
 
-要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。
+<span data-ttu-id="dbce4-155">要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。</span><span class="sxs-lookup"><span data-stu-id="dbce4-155">If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.</span></span>
 
-| エラー コード |  説明   |
+| <span data-ttu-id="dbce4-156">エラー コード</span><span class="sxs-lookup"><span data-stu-id="dbce4-156">Error code</span></span> |  <span data-ttu-id="dbce4-157">説明</span><span class="sxs-lookup"><span data-stu-id="dbce4-157">Description</span></span>   |
 |--------|------------------|
-| 400  | 要求が無効なため、パッケージ フライトの申請を作成できませんでした。 |
-| 409  | アプリの現在の状態が原因でパッケージ フライトの申請を作成できませんでした。または、[Windows ストア申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能がアプリで使用されています。 |   
+| <span data-ttu-id="dbce4-158">400</span><span class="sxs-lookup"><span data-stu-id="dbce4-158">400</span></span>  | <span data-ttu-id="dbce4-159">要求が無効なため、パッケージ フライトの申請を作成できませんでした。</span><span class="sxs-lookup"><span data-stu-id="dbce4-159">The package flight submission could not be created because the request is invalid.</span></span> |
+| <span data-ttu-id="dbce4-160">409</span><span class="sxs-lookup"><span data-stu-id="dbce4-160">409</span></span>  | <span data-ttu-id="dbce4-161">アプリの現在の状態が原因でパッケージ フライトの申請を作成できませんでした。または、[Windows ストア申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能がアプリで使用されています。</span><span class="sxs-lookup"><span data-stu-id="dbce4-161">The package flight submission could not be created because of the current state of the app, or the app uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).</span></span> |   
 
 <span/>
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="dbce4-162">関連トピック</span><span class="sxs-lookup"><span data-stu-id="dbce4-162">Related topics</span></span>
 
-* [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-* [パッケージ フライトの申請の管理](manage-flight-submissions.md)
-* [パッケージ フライトの申請の取得](get-a-flight-submission.md)
-* [パッケージ フライトの申請のコミット](commit-a-flight-submission.md)
-* [パッケージ フライトの申請の更新](update-a-flight-submission.md)
-* [パッケージ フライトの申請の削除](delete-a-flight-submission.md)
-* [パッケージ フライトの申請の状態の取得](get-status-for-a-flight-submission.md)
-
+* [<span data-ttu-id="dbce4-163">Windows ストア サービスを使用した申請の作成と管理</span><span class="sxs-lookup"><span data-stu-id="dbce4-163">Create and manage submissions using Windows Store services</span></span>](create-and-manage-submissions-using-windows-store-services.md)
+* [<span data-ttu-id="dbce4-164">パッケージ フライトの申請の管理</span><span class="sxs-lookup"><span data-stu-id="dbce4-164">Manage package flight submissions</span></span>](manage-flight-submissions.md)
+* [<span data-ttu-id="dbce4-165">パッケージ フライトの申請の取得</span><span class="sxs-lookup"><span data-stu-id="dbce4-165">Get a package flight submission</span></span>](get-a-flight-submission.md)
+* [<span data-ttu-id="dbce4-166">パッケージ フライトの申請のコミット</span><span class="sxs-lookup"><span data-stu-id="dbce4-166">Commit a package flight submission</span></span>](commit-a-flight-submission.md)
+* [<span data-ttu-id="dbce4-167">パッケージ フライトの申請の更新</span><span class="sxs-lookup"><span data-stu-id="dbce4-167">Update a package flight submission</span></span>](update-a-flight-submission.md)
+* [<span data-ttu-id="dbce4-168">パッケージ フライトの申請の削除</span><span class="sxs-lookup"><span data-stu-id="dbce4-168">Delete a package flight submission</span></span>](delete-a-flight-submission.md)
+* [<span data-ttu-id="dbce4-169">パッケージ フライトの申請の状態の取得</span><span class="sxs-lookup"><span data-stu-id="dbce4-169">Get the status of a package flight submission</span></span>](get-status-for-a-flight-submission.md)

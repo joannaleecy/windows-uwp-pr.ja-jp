@@ -8,54 +8,59 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.assetid: 0cfa8e22-7345-47b7-b132-880bbc050d44
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: a66e94ca26a089ffd08b0ba7a4ffb42aa5d8685c
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: fb896ed67b79e97b504be0253081a4c29ee5fcc9
+ms.sourcegitcommit: de6bc8acec2cd5ebc36bb21b2ce1a9980c3e78b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/17/2017
 ---
-
-# <a name="xbox-best-practices"></a>Xbox ベスト プラクティス
-既定では、すべての UWP アプリは何もしなくても Xbox One で動きます。 ただし、アプリを引き立たせ、ユーザーを楽しませて、Xbox に最適なアプリ エクスペリエンスを備えるには、以下のようにする必要があります。
+# <a name="xbox-best-practices"></a><span data-ttu-id="94942-104">Xbox ベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="94942-104">Xbox best practices</span></span>
+<span data-ttu-id="94942-105">既定では、すべての UWP アプリは何もしなくても Xbox One で動きます。</span><span class="sxs-lookup"><span data-stu-id="94942-105">By default, all UWP apps will run on Xbox One without any extra effort on your part.</span></span> <span data-ttu-id="94942-106">ただし、アプリを引き立たせ、ユーザーを楽しませて、Xbox に最適なアプリ エクスペリエンスを備えるには、以下のようにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="94942-106">However, if want your app to shine, delight your customers, and compete with the best app experiences on Xbox, you should follow the practices below.</span></span>
   > [!NOTE]
-  > 始める前に、「[Xbox およびテレビ向け設計](../input-and-devices/designing-for-tv.md)」で示されている設計ガイドラインを確認します。   
+  > <span data-ttu-id="94942-107">始める前に、「[Xbox およびテレビ向け設計](../input-and-devices/designing-for-tv.md)」で示されている設計ガイドラインを確認します。</span><span class="sxs-lookup"><span data-stu-id="94942-107">Before you start, take a look at the design guidelines laid out in [Designing for Xbox and TV](../input-and-devices/designing-for-tv.md).</span></span>   
 
-## <a name="to-build-the-best-experiences-for-xbox-one"></a>Xbox One 向けの最適なエクスペリエンスを構築するには
 
-### <a name="do-turn-off-mouse-mode"></a>*行うこと:* マウス モードをオフにします
-Xbox ユーザーはコントローラーを好みます。 コントローラー入力用に最適化するには、[マウス モードを無効](how-to-disable-mouse-mode.md)にし、方向ナビゲーション ([X-Y フォーカス](../input-and-devices/designing-for-tv.md#xy-focus-navigation-and-interaction)とも呼ばれます) を有効にします。 フォーカス トラップとアクセスできない UI に注意してください。
+## <a name="to-build-the-best-experiences-for-xbox-one"></a><span data-ttu-id="94942-108">Xbox One 向けの最適なエクスペリエンスを構築するには</span><span class="sxs-lookup"><span data-stu-id="94942-108">To build the best experiences for Xbox One</span></span>
 
-### <a name="do-draw-a-focus-rectangle-that-is-appropriate-for-a-10-foot-experience"></a>*行うこと:* 10 フィート エクスペリエンス向けの適切なフォーカス用の四角形を描画します
-ほとんどの Xbox ユーザーは室内でテレビに向かって座っているので、標準的なフォーカス用の四角形では 10 フィート離れた場所からでは見えにくいことに留意してください。 入力フォーカスのある UI 要素がユーザーに常にはっきり見えるようにするには、[フォーカス表示](../input-and-devices/designing-for-tv.md#focus-visual)のガイドラインに従ってください。 XAML では、アプリが Xbox で動いているときは何もしなくてもそのように動作しますが、HTML アプリの場合はカスタム CSS スタイルを使用する必要があります。
+### <a name="do-turn-off-mouse-mode"></a><span data-ttu-id="94942-109">*行うこと:* マウス モードをオフにします</span><span class="sxs-lookup"><span data-stu-id="94942-109">*Do:* Turn off mouse mode</span></span>
+<span data-ttu-id="94942-110">Xbox ユーザーはコントローラーを好みます。</span><span class="sxs-lookup"><span data-stu-id="94942-110">Xbox users love their controller.</span></span> <span data-ttu-id="94942-111">コントローラー入力用に最適化するには、[マウス モードを無効](how-to-disable-mouse-mode.md)にし、方向ナビゲーション ([X-Y フォーカス](../input-and-devices/designing-for-tv.md#xy-focus-navigation-and-interaction)とも呼ばれます) を有効にします。</span><span class="sxs-lookup"><span data-stu-id="94942-111">To optimize for controller input, [disable mouse mode](how-to-disable-mouse-mode.md) and enable directional navigation (also known as [X-Y focus](../input-and-devices/designing-for-tv.md#xy-focus-navigation-and-interaction)).</span></span> <span data-ttu-id="94942-112">フォーカス トラップとアクセスできない UI に注意してください。</span><span class="sxs-lookup"><span data-stu-id="94942-112">Watch out for focus traps and for inaccessible UI.</span></span>
 
-###    <a name="do-integrate-with-the-systemmediatransportcontrols-class"></a>*行うこと:* SystemMediaTransportControls クラスと統合します 
-Xbox のユーザーは、Xbox メディア リモコン Cortana (特に、"再生" と "一時停止" の音声コマンド) および Xbox SmartGlass を使用してメディア アプリを操作するのを好みます。 これらの機能を自作しないでアプリに組み込むには、[SystemMediaTransportControls](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.systemmediatransportcontrols.aspx) クラスを使用する必要があります。このクラスは、Xbox メディア コントロールに自動的に含まれます。 アプリでカスタム メディア コントロールを使用する場合は、**SystemMediaTransportControls** クラスと統合してユーザーにこれらの機能を提供します。 バックグラウンド音楽アプリを作成している場合は、**SystemMediaTransportControls** クラスと統合して、バックグラウンド音楽コントロールが Xbox のマルチタスク タブで正しく動作するようにします。
+### <a name="do-draw-a-focus-rectangle-that-is-appropriate-for-a-10-foot-experience"></a><span data-ttu-id="94942-113">*行うこと:* 10 フィート エクスペリエンス向けの適切なフォーカス用の四角形を描画します</span><span class="sxs-lookup"><span data-stu-id="94942-113">*Do:* Draw a focus rectangle that is appropriate for a 10-foot experience</span></span>
+<span data-ttu-id="94942-114">ほとんどの Xbox ユーザーは室内でテレビに向かって座っているので、標準的なフォーカス用の四角形では 10 フィート離れた場所からでは見えにくいことに留意してください。</span><span class="sxs-lookup"><span data-stu-id="94942-114">Most Xbox users are sitting across the living room from their TV, so keep in mind that the standard focus rectangle is hard to see from ten feet away.</span></span> <span data-ttu-id="94942-115">入力フォーカスのある UI 要素がユーザーに常にはっきり見えるようにするには、[フォーカス表示](../input-and-devices/designing-for-tv.md#focus-visual)のガイドラインに従ってください。</span><span class="sxs-lookup"><span data-stu-id="94942-115">To ensure that the UI element with the input focus is clearly visible to the user at all times, follow the [Focus visual](../input-and-devices/designing-for-tv.md#focus-visual) guidelines.</span></span> <span data-ttu-id="94942-116">XAML では、アプリが Xbox で動いているときは何もしなくてもそのように動作しますが、HTML アプリの場合はカスタム CSS スタイルを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="94942-116">In XAML you will get this behavior for free when your app runs on Xbox, but HTML apps will need to use a custom CSS style.</span></span>
 
-### <a name="do-use-adaptive-ui-to-account-for-snapped-apps"></a>*行うこと:* アダプティブ UI を使用してスナップ アプリに対応します
-Xbox One だけにある機能の 1 つは、ユーザーが Cortana などのアプリを他のアプリの横にスナップできる機能です。したがって、*フィル モード*で動作しているアプリはこの操作に正しく対応する必要があります。 そのためには、[アダプティブ UI](../get-started/universal-application-platform-guide.md#design-adaptive-ui-with-adaptive-panels) を実装し、開発中に他のアプリを隣にスナップして動作をテストする必要があります。
+### <a name="do-integrate-with-the-systemmediatransportcontrols-class"></a><span data-ttu-id="94942-117">*行うこと:* SystemMediaTransportControls クラスと統合します</span><span class="sxs-lookup"><span data-stu-id="94942-117">*Do:* Integrate with the SystemMediaTransportControls class</span></span> 
+<span data-ttu-id="94942-118">Xbox のユーザーは、Xbox メディア リモコン Cortana (特に、"再生" と "一時停止" の音声コマンド) および Xbox SmartGlass を使用してメディア アプリを操作するのを好みます。</span><span class="sxs-lookup"><span data-stu-id="94942-118">Xbox users want to control media apps with the Xbox Media Remote, Cortana (especially the "Play" and "Pause" voice commands), and Xbox SmartGlass.</span></span> <span data-ttu-id="94942-119">これらの機能を自作しないでアプリに組み込むには、[SystemMediaTransportControls](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.systemmediatransportcontrols.aspx) クラスを使用する必要があります。このクラスは、Xbox メディア コントロールに自動的に含まれます。</span><span class="sxs-lookup"><span data-stu-id="94942-119">To get these features for free your app should use the [SystemMediaTransportControls](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.systemmediatransportcontrols.aspx) class, which is automatically included in the Xbox media controls.</span></span> <span data-ttu-id="94942-120">アプリでカスタム メディア コントロールを使用する場合は、**SystemMediaTransportControls** クラスと統合してユーザーにこれらの機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="94942-120">If your app has custom media controls, make sure to integrate with the **SystemMediaTransportControls** class to provide these features to your users.</span></span> <span data-ttu-id="94942-121">バックグラウンド音楽アプリを作成している場合は、**SystemMediaTransportControls** クラスと統合して、バックグラウンド音楽コントロールが Xbox のマルチタスク タブで正しく動作するようにします。</span><span class="sxs-lookup"><span data-stu-id="94942-121">If you are creating a background music app, integrate with the **SystemMediaTransportControls** class to ensure that the background music controls work correctly in the Xbox multitasking tab.</span></span>
 
-### <a name="consider-draw-to-the-edge-of-the-screen"></a>*考慮すること:* 画面の端に描画するようにします
-多くのテレビでは画面の端が切れるので、アプリの重要なコンテンツはすべて、[テレビのセーフ エリア](../input-and-devices/designing-for-tv.md#tv-safe-area)の内側に表示する必要があります。 UWP は*オーバースキャン*を使用してコンテンツをテレビのセーフ エリアの内側に維持しますが、この既定の動作ではアプリの周囲に目立つ境界線が描画されることがあります。 最善のエクスペリエンスを提供するには、既定の動作を無効にして、「[画面の端に UI を描画する方法](turn-off-overscan.md)」の指示に従ってください。
+### <a name="do-use-adaptive-ui-to-account-for-snapped-apps"></a><span data-ttu-id="94942-122">*行うこと:* アダプティブ UI を使用してスナップ アプリに対応します</span><span class="sxs-lookup"><span data-stu-id="94942-122">*Do:* Use adaptive UI to account for snapped apps</span></span>
+<span data-ttu-id="94942-123">Xbox One だけにある機能の 1 つは、ユーザーが Cortana などのアプリを他のアプリの横にスナップできる機能です。したがって、*フィル モード*で動作しているアプリはこの操作に正しく対応する必要があります。</span><span class="sxs-lookup"><span data-stu-id="94942-123">One of the unique features of Xbox One is that users can snap apps such as Cortana next to any other app, so your app should respond gracefully when it runs in *fill mode*.</span></span> <span data-ttu-id="94942-124">そのためには、[アダプティブ UI](../get-started/universal-application-platform-guide.md#design-adaptive-ui-with-adaptive-panels) を実装し、開発中に他のアプリを隣にスナップして動作をテストする必要があります。</span><span class="sxs-lookup"><span data-stu-id="94942-124">Implement [adaptive UI](../get-started/universal-application-platform-guide.md#design-adaptive-ui-with-adaptive-panels) and make sure to test your app during development by snapping an app next to it.</span></span>
+
+### <a name="consider-draw-to-the-edge-of-the-screen"></a><span data-ttu-id="94942-125">*考慮すること:* 画面の端に描画するようにします</span><span class="sxs-lookup"><span data-stu-id="94942-125">*Consider:* Draw to the edge of the screen</span></span>
+<span data-ttu-id="94942-126">多くのテレビでは画面の端が切れるので、アプリの重要なコンテンツはすべて、[テレビのセーフ エリア](../input-and-devices/designing-for-tv.md#tv-safe-area)の内側に表示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="94942-126">Many TVs cut off the edges of the display, so all of your app's important content should be displayed within the [TV-safe area](../input-and-devices/designing-for-tv.md#tv-safe-area).</span></span> <span data-ttu-id="94942-127">UWP は*オーバースキャン*を使用してコンテンツをテレビのセーフ エリアの内側に維持しますが、この既定の動作ではアプリの周囲に目立つ境界線が描画されることがあります。</span><span class="sxs-lookup"><span data-stu-id="94942-127">UWP uses *overscan* to keep the content within the TV-safe area, but  this default behavior can draw an obvious border around your app.</span></span> <span data-ttu-id="94942-128">最善のエクスペリエンスを提供するには、既定の動作を無効にして、「[画面の端に UI を描画する方法](turn-off-overscan.md)」の指示に従ってください。</span><span class="sxs-lookup"><span data-stu-id="94942-128">To provide the best experience, turn off the default behavior and follow the instructions at [How to draw UI to the edge of the screen](turn-off-overscan.md).</span></span>
 > [!IMPORTANT]
-  > オーバースキャンを無効にした場合、対話要素とテキストをテレビのセーフ エリア内に収める処理はアプリで行う必要があります。 
+  > <span data-ttu-id="94942-129">オーバースキャンを無効にした場合、対話要素とテキストをテレビのセーフ エリア内に収める処理はアプリで行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="94942-129">If you disable overscan, it's your responsibility to make sure that interactive elements and text remain within the TV-safe area.</span></span> 
 
-###    <a name="consider-use-tv-safe-colors"></a>*考慮すること:* テレビ セーフ カラーを使用します 
-テレビでは、コンピューター モニターほど極端な色の輝度は処理されません。 不自然な縞模様や色あせた画像が表示されないように、アプリでは高輝度の色を使わないようにする必要があります。 また、テレビの間の違いに留意してください。テレビによって色の表現が大きく異なる場合があります。** 「Xbox およびテレビ向け設計」の「[カラー](../input-and-devices/designing-for-tv.md#colors)」を読み、アプリの表示がすべてのユーザーに対して適切になるようにする方法を理解してください。
+### <a name="consider-use-tv-safe-colors"></a><span data-ttu-id="94942-130">*考慮すること:* テレビ セーフ カラーを使用します</span><span class="sxs-lookup"><span data-stu-id="94942-130">*Consider:* Use TV-safe colors</span></span> 
+<span data-ttu-id="94942-131">テレビでは、コンピューター モニターほど極端な色の輝度は処理されません。</span><span class="sxs-lookup"><span data-stu-id="94942-131">TVs don't handle extreme color intensities as well as computer monitors do.</span></span> <span data-ttu-id="94942-132">不自然な縞模様や色あせた画像が表示されないように、アプリでは高輝度の色を使わないようにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="94942-132">Avoid high-intensity colors in your app so that users don't see odd banded effects or a washed-out image.</span></span> <span data-ttu-id="94942-133">また、テレビの間の違いに留意してください。テレビによって色の表現が大きく異なる場合があります。**</span><span class="sxs-lookup"><span data-stu-id="94942-133">Also, be aware that differences between TVs mean that colors that look great on *your* TV might look very different to your users.</span></span> <span data-ttu-id="94942-134">「Xbox およびテレビ向け設計」の「[カラー](../input-and-devices/designing-for-tv.md#colors)」を読み、アプリの表示がすべてのユーザーに対して適切になるようにする方法を理解してください。</span><span class="sxs-lookup"><span data-stu-id="94942-134">Read [TV colors](../input-and-devices/designing-for-tv.md#colors) to understand how to make your app look great to everybody!</span></span>
 
-### <a name="remember-you-can-disable-scaling"></a>*憶えておくこと:* スケーリングを無効にできます
-UWP アプリは、コントロールやフォントなどの UI 要素がすべてのデバイスで読みやすいように自動的にスケーリングされます。 XAML を使用するアプリは 200% に、HTML を使用するアプリは 150% にスケーリングされます。 Xbox でのアプリの表示をさらに細かく制御する場合は、既定の倍率を無効にして、HDTV (1920 x 1080) の実際のピクセル サイズを使用します。 Xbox で適切に表示されるようにアプリを調整する方法については、「[スケーリングを無効にする方法](disable-scaling.md)」および「[有効ピクセルとスケーリング](../layout/design-and-ui-intro.md#effective-pixels-and-scaling)」をご覧ください。
-
-## <a name="channel-9"></a>Channel 9
-[Channel 9](https://channel9.msdn.com/) の以下の講演は、Xbox でのすばらしいアプリの開発に関する優れたソースです。
-
-- [Xbox 向けの優れたユニバーサル Windows プラットフォーム (UWP) アプリの開発](https://channel9.msdn.com/Events/Build/2016/B883)
-- [アプリを Xbox One とテレビに対応させる](https://channel9.msdn.com/Events/Build/2016/T651-R1)
-- [UWP の開発 1: アダプティブ UI の作成](https://channel9.msdn.com/Events/Build/2016/L724-R1)
-- [ブラウザーに留まらない Web アプリ: クロスプラットフォームとクロス デバイスの遭遇](https://channel9.msdn.com/Events/Build/2016/B888)
+### <a name="remember-you-can-disable-scaling"></a><span data-ttu-id="94942-135">*憶えておくこと:* スケーリングを無効にできます</span><span class="sxs-lookup"><span data-stu-id="94942-135">*Remember:* You can disable scaling</span></span>
+<span data-ttu-id="94942-136">UWP アプリは、コントロールやフォントなどの UI 要素がすべてのデバイスで読みやすいように自動的にスケーリングされます。</span><span class="sxs-lookup"><span data-stu-id="94942-136">UWP apps are automatically scaled to ensure that UI elements such as controls and fonts are legible on all devices.</span></span> <span data-ttu-id="94942-137">XAML を使用するアプリは 200% に、HTML を使用するアプリは 150% にスケーリングされます。</span><span class="sxs-lookup"><span data-stu-id="94942-137">Apps that use XAML are scaled by 200%, while apps that use HTML are scaled by 150%.</span></span> <span data-ttu-id="94942-138">Xbox でのアプリの表示をさらに細かく制御する場合は、既定の倍率を無効にして、HDTV (1920 x 1080) の実際のピクセル サイズを使用します。</span><span class="sxs-lookup"><span data-stu-id="94942-138">If you want more control over how your app looks on Xbox, disable the default scale factor to use the actual pixel dimensions of an HDTV (1920x1080).</span></span> <span data-ttu-id="94942-139">Xbox で適切に表示されるようにアプリを調整する方法については、「[スケーリングを無効にする方法](disable-scaling.md)」と「[有効ピクセルとスケーリング](../layout/design-and-ui-intro.md#effective-pixels-and-scaling)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="94942-139">Take a look at [How to turn off scaling](disable-scaling.md) and [Effective pixels and scaling](../layout/design-and-ui-intro.md#effective-pixels-and-scaling) for information about tailoring your app to look great on Xbox.</span></span>
 
 
-## <a name="see-also"></a>関連項目
-- [Xbox One の UWP](index.md)
+<span data-ttu-id="94942-140">これらのプラクティスが適用された UWP アプリを見てみるには、次のビデオをチェックしてください。</span><span class="sxs-lookup"><span data-stu-id="94942-140">If you want to get a glimpse of these practices applied to a UWP app, check out this video!</span></span>
+</br>
+</br>
+<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Tailoring-your-UWP-app-for-Xbox/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
+
+## <a name="channel-9"></a><span data-ttu-id="94942-141">Channel 9</span><span class="sxs-lookup"><span data-stu-id="94942-141">Channel 9</span></span>
+<span data-ttu-id="94942-142">[Channel 9](https://channel9.msdn.com/) の以下の講演は、Xbox でのすばらしいアプリの開発に関する優れたソースです。</span><span class="sxs-lookup"><span data-stu-id="94942-142">The following talks on [Channel 9](https://channel9.msdn.com/) are a great source of information for building amazing apps on Xbox:</span></span>
+
+- [<span data-ttu-id="94942-143">Xbox 向けの優れたユニバーサル Windows プラットフォーム (UWP) アプリの開発</span><span class="sxs-lookup"><span data-stu-id="94942-143">Building Great Universal Windows Platform (UWP) Apps for Xbox</span></span>](https://channel9.msdn.com/Events/Build/2016/B883)
+- [<span data-ttu-id="94942-144">アプリを Xbox One とテレビに対応させる</span><span class="sxs-lookup"><span data-stu-id="94942-144">Adapt Your App for Xbox One and TV</span></span>](https://channel9.msdn.com/Events/Build/2016/T651-R1)
+- [<span data-ttu-id="94942-145">UWP の開発 1: アダプティブ UI の作成</span><span class="sxs-lookup"><span data-stu-id="94942-145">UWP Development 1: Building an Adaptive UI</span></span>](https://channel9.msdn.com/Events/Build/2016/L724-R1)
+- [<span data-ttu-id="94942-146">ブラウザーに留まらない Web アプリ: クロスプラットフォームとクロス デバイスの遭遇</span><span class="sxs-lookup"><span data-stu-id="94942-146">Web Apps Beyond the Browser: Cross-Platform Meets Cross Device</span></span>](https://channel9.msdn.com/Events/Build/2016/B888)
+
+
+## <a name="see-also"></a><span data-ttu-id="94942-147">関連項目</span><span class="sxs-lookup"><span data-stu-id="94942-147">See also</span></span>
+- [<span data-ttu-id="94942-148">Xbox One の UWP</span><span class="sxs-lookup"><span data-stu-id="94942-148">UWP on Xbox One</span></span>](index.md)
 

@@ -1,74 +1,72 @@
 ---
-author: shawjohn
+author: JnHs
 Description: "広告キャンペーンに関してよく寄せられる質問"
 title: "広告キャンペーンに関してよく寄せられる質問"
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
-ms.author: johnshaw
-ms.date: 02/08/2017
+ms.author: wdg-dev-content
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 20a05337052392446d733af7da180f9466fef05f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c4b46dbb30afd9cdfdaa218af460dd9872c960ef
+ms.sourcegitcommit: 5ece992c31870df4c089360ef47501bd4ce14fa9
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/22/2017
 ---
+# <a name="common-questions-about-ad-campaigns"></a><span data-ttu-id="4d408-104">広告キャンペーンに関してよく寄せられる質問</span><span class="sxs-lookup"><span data-stu-id="4d408-104">Common questions about ad campaigns</span></span>
 
-# <a name="common-questions-about-ad-campaigns"></a>広告キャンペーンに関してよく寄せられる質問
+### <a name="how-much-does-it-cost-to-run-an-ad-for-my-app"></a><span data-ttu-id="4d408-105">アプリの広告を掲載するにはいくらかかりますか。</span><span class="sxs-lookup"><span data-stu-id="4d408-105">How much does it cost to run an ad for my app?</span></span>
 
-## <a name="how-much-does-it-cost-to-run-an-ad-for-my-app"></a>アプリの広告を掲載するにはいくらかかりますか。
+<span data-ttu-id="4d408-106">これは実際に開発者しだいですが、より多くの費用をかけるほど、より多くのユーザーに広告が表示されます。</span><span class="sxs-lookup"><span data-stu-id="4d408-106">It’s really up to you, but remember: the more you spend, the more people will see your ad.</span></span> <span data-ttu-id="4d408-107">より多くのユーザーに広告が表示されれば、獲得するクリック数やインストール数が増えます。</span><span class="sxs-lookup"><span data-stu-id="4d408-107">The more people see your ad, the more clicks and installs you should get.</span></span> <span data-ttu-id="4d408-108">アプリの広告キャンペーンの作成について詳しくは、[この記事](create-an-ad-campaign-for-your-app.md)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="4d408-108">Take a look at [this article](create-an-ad-campaign-for-your-app.md) for information about creating an ad campaign for your app.</span></span>
 
-これは実際に開発者しだいですが、より多くの費用をかけるほど、より多くのユーザーに広告が表示されます。 より多くのユーザーに広告が表示されれば、獲得するクリック数やインストール数が増えます。 アプリの広告キャンペーンの作成について詳しくは、[この記事](create-an-ad-campaign-for-your-app.md)をご覧ください。
+### <a name="how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign"></a><span data-ttu-id="4d408-109">広告キャンペーンの月額予算の上限金額を増やすにはどうすればよいですか。</span><span class="sxs-lookup"><span data-stu-id="4d408-109">How can I increase the maximum monthly budget amount allowed for my ad campaign?</span></span>
 
-## <a name="how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign"></a>広告キャンペーンの月額予算の上限金額を増やすにはどうすればよいですか。
+<span data-ttu-id="4d408-110">広告キャンペーンで 1 万ドルを超える月額予算をご希望の場合は、[aiacare@microsoft.com](mailto:aiacare@microsoft.com) までご連絡ください。</span><span class="sxs-lookup"><span data-stu-id="4d408-110">If you plan to spend more than $10,000 in a month on your ad campaigns, please contact [aiacare@microsoft.com](mailto:aiacare@microsoft.com).</span></span> <span data-ttu-id="4d408-111">キャンペーン当たり 5 万ドルまでお使いになれるプレミアム アカウントにお客様をアップグレードします。</span><span class="sxs-lookup"><span data-stu-id="4d408-111">We will upgrade you to a premium account, which lets you spend up to $50,000 per campaign.</span></span> <span data-ttu-id="4d408-112">プレミアム アカウントではその他の追加機能として、設定キャンペーンの開始日と終了日を設定したり、キャンペーンのリンク先 URLを指定したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="4d408-112">A premium account also gives you additional capabilities, such as the ability to set campaign start and end dates and to specify a destination URL for your campaign.</span></span>
 
-広告キャンペーンで 1 万ドルを超える月額予算をご希望の場合は、ご連絡ください ([aiacare@microsoft.com](mailto:aiacare@microsoft.com))。 キャンペーン当たり 5 万ドルまでお使いになれるプレミアム アカウントにお客様をアップグレードします。 プレミアム アカウントではその他の追加機能として、設定キャンペーンの開始日と終了日を設定したり、キャンペーンのリンク先 URLを指定したりすることができます。
+### <a name="can-i-run-ads-for-one-of-my-apps-in-my-other-apps"></a><span data-ttu-id="4d408-113">自分のいずれかのアプリの広告を、自分の他のアプリに表示できますか。</span><span class="sxs-lookup"><span data-stu-id="4d408-113">Can I run ads for one of my apps in my other apps?</span></span>
 
-## <a name="can-i-run-ads-for-one-of-my-apps-in-my-other-apps"></a>自分のいずれかのアプリの広告を、自分の他のアプリに表示できますか。
+<span data-ttu-id="4d408-114">はい。</span><span class="sxs-lookup"><span data-stu-id="4d408-114">Yes.</span></span> <span data-ttu-id="4d408-115">そのような広告を「*自社広告*」と呼んでおり、無料で掲載できます。</span><span class="sxs-lookup"><span data-stu-id="4d408-115">We call these *house ads*, and you can run them free of charge.</span></span> <span data-ttu-id="4d408-116">コミュニティ広告について詳しくは、[この記事](about-house-ads.md)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="4d408-116">Check out [this article](about-house-ads.md) for more information about community ads.</span></span>
 
-はい。 そのような広告を「*自社広告*」と呼んでおり、無料で掲載できます。 コミュニティ広告について詳しくは、[この記事](about-house-ads.md)をご覧ください。
+### <a name="can-i-cross-promote-my-app-with-apps-from-other-developers-in-the-store"></a><span data-ttu-id="4d408-117">ストアで自分のアプリと他の開発者のアプリを相互に販売促進することはできますか。</span><span class="sxs-lookup"><span data-stu-id="4d408-117">Can I cross-promote my app with apps from other developers in the Store?</span></span>
 
-## <a name="can-i-cross-promote-my-app-with-apps-from-other-developers-in-the-store"></a>ストアで自分のアプリと他の開発者のアプリを相互に販売促進することはできますか。
+<span data-ttu-id="4d408-118">はい。</span><span class="sxs-lookup"><span data-stu-id="4d408-118">Yes.</span></span> <span data-ttu-id="4d408-119">そのような広告を「*コミュニティ広告*」と呼んでおり、無料で掲載できます。</span><span class="sxs-lookup"><span data-stu-id="4d408-119">We call these *community ads*, and you can run them free of charge.</span></span> <span data-ttu-id="4d408-120">[コミュニティ広告にオプトイン](about-community-ads.md#opt-in-to-community-ads)すると、[無料のコミュニティ広告キャンペーンを作成](create-an-ad-campaign-for-your-app.md)して、コミュニティ広告にオプトインした他の開発者とプロモーション用の広告スペースを共有できます。</span><span class="sxs-lookup"><span data-stu-id="4d408-120">After you [opt-in to community ads](about-community-ads.md#opt-in-to-community-ads), you can [create a free community ad campaign](create-an-ad-campaign-for-your-app.md) and your app will share promotional ad space with other developers who also opt in to community ads.</span></span> <span data-ttu-id="4d408-121">詳しくは、[この記事](about-community-ads.md)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="4d408-121">Check out [this article](about-community-ads.md) for more information.</span></span>
 
-はい。 そのような広告を「*コミュニティ広告*」と呼んでおり、無料で掲載できます。 [コミュニティ広告にオプトイン](about-community-ads.md#how-to-opt-in-to-community-ads)すると、[無料のコミュニティ広告キャンペーンを作成](create-an-ad-campaign-for-your-app.md)して、コミュニティ広告にオプトインした他の開発者とプロモーション用の広告スペースを共有できます。 詳しくは、[この記事](about-community-ads.md)をご覧ください。
+### <a name="how-can-i-customize-my-ad"></a><span data-ttu-id="4d408-122">広告はどのようにカスタマイズできますか。</span><span class="sxs-lookup"><span data-stu-id="4d408-122">How can I customize my ad?</span></span>
 
-## <a name="how-can-i-customize-my-ad"></a>広告はどのようにカスタマイズできますか。
+<span data-ttu-id="4d408-123">既定の広告テンプレートのいずれかを使う場合、広告のサイズ、画像、背景色を選ぶことができます。</span><span class="sxs-lookup"><span data-stu-id="4d408-123">If you use one of the default ad templates, you can choose the size, imagery, and background color of your ad.</span></span> <span data-ttu-id="4d408-124">必要に応じて、カスタム キャッチ コピーを広告に追加することもできます。</span><span class="sxs-lookup"><span data-stu-id="4d408-124">You can also add a custom tag line to your ad if you want.</span></span> <span data-ttu-id="4d408-125">また、この要件を満たす独自の広告デザインをアップロードできます。</span><span class="sxs-lookup"><span data-stu-id="4d408-125">Alternatively, you can upload your own ad designs that meet our requirements.</span></span> <span data-ttu-id="4d408-126">詳しくは、「[アプリの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="4d408-126">For more information, see [Create an ad campaign for your app.](create-an-ad-campaign-for-your-app.md)</span></span>
 
-既定の広告テンプレートのいずれかを使う場合、広告のサイズ、画像、背景色を選ぶことができます。 必要に応じて、カスタム キャッチ コピーを広告に追加することもできます。 また、この要件を満たす独自の広告デザインをアップロードできます。 詳しくは、「[アプリの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)」をご覧ください。
+### <a name="where-will-my-ad-appear"></a><span data-ttu-id="4d408-127">自分の広告はどこに表示されますか。</span><span class="sxs-lookup"><span data-stu-id="4d408-127">Where will my ad appear?</span></span>
 
-## <a name="where-will-my-ad-appear"></a>自分の広告はどこに表示されますか。
+<span data-ttu-id="4d408-128">広告は、アプリの年齢区分と OS のバージョンを共有するアプリに表示されます。</span><span class="sxs-lookup"><span data-stu-id="4d408-128">Your ad will appear in apps that share your app's age rating and OS version.</span></span> <span data-ttu-id="4d408-129">Windows ストアでアプリを公開するときに、これらのプロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="4d408-129">You set these properties when you publish your app in the Windows Store.</span></span> <span data-ttu-id="4d408-130">「ユニバーサル」キャンペーンでは、広告は MSN.com、Outlook.com、Skype など、Microsoft の豪華なラインナップでも表示されます。</span><span class="sxs-lookup"><span data-stu-id="4d408-130">For “Universal” campaigns, your ads will also appear within MSN.com, Outlook.com, Skype, and other Microsoft premium properties.</span></span>
 
-広告は、アプリの年齢区分と OS のバージョンを共有するアプリに表示されます。 Windows ストアでアプリを公開するときに、これらのプロパティを設定します。 「ユニバーサル」キャンペーンでは、広告は MSN.com、Outlook.com、Skype など、Microsoft の豪華なラインナップでも表示されます。
+<span data-ttu-id="4d408-131">広告キャンペーンは、以下の国または地域で現在サポートされています。</span><span class="sxs-lookup"><span data-stu-id="4d408-131">Ad campaigns are currently supported in these countries and regions:</span></span>
 
-広告キャンペーンは、以下の国または地域で現在サポートされています。
+<span data-ttu-id="4d408-132">アルジェリア、アルゼンチン、オーストラリア、オーストリア、バハマ、バーレーン、バルバドス、ベルギー、ベリーズ、ボリビア、ブラジル、カナダ、チリ、中国、コロンビア、デンマーク、ドミニカ共和国、エクアドル、エジプト、エルサルバドル、フィンランド、フランス、ドイツ、グアテマラ、ハイチ、ホンジュラス、香港特別行政区、インド、インドネシア、イラク、アイルランド、イタリア、ジャマイカ、ヨルダン、クウェート、レバノン、マレーシア、メキシコ、モロッコ、ニュージーランド、オランダ、ニカラグア、ノルウェー、オマーン、パナマ、パラグアイ、ペルー、フィリピン、プエルトリコ、カタール、サウジアラビア、シンガポール、スペイン、南アフリカ、スウェーデン、スイス、台湾、タイ、トリニダード・トバゴ、チュニジア、アラブ首長国連邦、英国、米国、ウルグアイ、ベネズエラ、ベトナム。</span><span class="sxs-lookup"><span data-stu-id="4d408-132">Algeria, Argentina, Australia, Austria, Bahamas, Bahrain, Barbados, Belgium, Belize, Bolivia, Brazil, Canada, Chile, China, Colombia, Denmark, Dominican Republic, Ecuador, Egypt, El Salvador, Finland, France, Germany, Guatemala, Haiti, Honduras, Hong Kong SAR, India, Indonesia, Iraq, Ireland, Italy, Jamaica, Jordan, Kuwait, Lebanon, Malaysia, Mexico, Morocco, New Zealand, Netherlands, Nicaragua, Norway, Oman, Panama, Paraguay, Peru, Philippines, Puerto Rico, Qatar, Saudi Arabia, Singapore, Spain, South Africa, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Tunisia, United Arab Emirates, United Kingdom, United States, Uruguay, Venezuela, Vietnam.</span></span>
 
-アルジェリア、アルゼンチン、オーストラリア、オーストリア、バハマ、バーレーン、バルバドス、ベルギー、ベリーズ、ボリビア、ブラジル、カナダ、チリ、中国、コロンビア、デンマーク、ドミニカ共和国、エクアドル、エジプト、エルサルバドル、フィンランド、フランス、ドイツ、グアテマラ、ハイチ、ホンジュラス、香港特別行政区、インド、インドネシア、イラク、アイルランド、イタリア、ジャマイカ、ヨルダン、クウェート、レバノン、マレーシア、メキシコ、モロッコ、ニュージーランド、オランダ、ニカラグア、ノルウェー、オマーン、パナマ、パラグアイ、ペルー、フィリピン、プエルトリコ、カタール、サウジアラビア、シンガポール、スペイン、南アフリカ、スウェーデン、スイス、台湾、タイ、トリニダード・トバゴ、チュニジア、アラブ首長国連邦、英国、米国、ウルグアイ、ベネズエラ、ベトナム。
+### <a name="what-languages-are-supported-for-ad-campaigns"></a><span data-ttu-id="4d408-133">広告キャンペーンではどの言語がサポートされていますか。</span><span class="sxs-lookup"><span data-stu-id="4d408-133">What languages are supported for ad campaigns?</span></span>
 
-## <a name="what-languages-are-supported-for-ad-campaigns"></a>広告キャンペーンではどの言語がサポートされていますか。
+<span data-ttu-id="4d408-134">次の言語で広告キャンペーンを作成できます。</span><span class="sxs-lookup"><span data-stu-id="4d408-134">You can create ad campaigns in the following languages:</span></span>
 
-次の言語で広告キャンペーンを作成できます。
+<span data-ttu-id="4d408-135">アラビア語、簡体字中国語、繁体字中国語、デンマーク語、オランダ語、英語、フランス語、ドイツ語、イタリア語、ノルウェー語、ポルトガル語 (ブラジル)、ポルトガル語 (ポルトガル)、スペイン語、スウェーデン語。</span><span class="sxs-lookup"><span data-stu-id="4d408-135">Arabic, Chinese (Simplified), Chinese (Traditional), Danish, Dutch, English, Finnish, French, German, Italian, Norwegian, Portuguese (Brazil), Portuguese (Portugal), Spanish, Swedish.</span></span>
 
-アラビア語、簡体字中国語、繁体字中国語、デンマーク語、オランダ語、英語、フランス語、ドイツ語、イタリア語、ノルウェー語、ポルトガル語 (ブラジル)、ポルトガル語 (ポルトガル)、スペイン語、スウェーデン語。
+### <a name="when-will-i-be-billed"></a><span data-ttu-id="4d408-136">料金はいつ請求されますか。</span><span class="sxs-lookup"><span data-stu-id="4d408-136">When will I be billed?</span></span>
 
-## <a name="when-will-i-be-billed"></a>料金はいつ請求されますか。
+<span data-ttu-id="4d408-137">お客様のアカウントのすべての有料キャンペーンで、請求金額の合計が 50 米ドル (またはお客様の市場や地域の現地通貨で相当する金額) に達するたびに請求されます。</span><span class="sxs-lookup"><span data-stu-id="4d408-137">You will be billed each time your account accrues $50 of charges (or the equivalent amount in the local currency of your market or region) for all paid campaigns for your account.</span></span>
 
-お客様のアカウントのすべての有料キャンペーンで、請求金額の合計が 50 米ドル (またはお客様の市場や地域の現地通貨で相当する金額) に達するたびに請求されます。
+<span data-ttu-id="4d408-138">アカウントの最終請求日から 30 日間の請求金額が 50 米ドルに満たない場合は、その請求金額が翌月の初旬に請求されます。</span><span class="sxs-lookup"><span data-stu-id="4d408-138">If your account accrues less than $50 of charges in the 30-day period after your last billing date, you will be billed for those charges early in the following month.</span></span> <span data-ttu-id="4d408-139">これにより、お客様のアカウントの広告キャンペーン料金の請求残高が 1 か月以上残ることはありません。</span><span class="sxs-lookup"><span data-stu-id="4d408-139">This helps to ensure that your account doesn’t maintain a running balance of ad campaign charges for more than a month.</span></span>
 
-アカウントの最終請求日から 30 日間の請求金額が 50 米ドルに満たない場合は、その請求金額が翌月の初旬に請求されます。 これにより、お客様のアカウントの広告キャンペーン料金の請求残高が 1 か月以上残ることはありません。
+<span data-ttu-id="4d408-140">請求書の発行を待たずに、すぐに支払うこともできます。これには、**[課金の概要]** ページ (**[プロモーション]** > **[請求履歴]**) で **[今すぐ課金]** を選びます。</span><span class="sxs-lookup"><span data-stu-id="4d408-140">If you don’t want to wait to be billed, you can pay your bill immediately by selecting **Charge now** on the **Billing summary** page (**Promotions** > **Billing history**).</span></span> <span data-ttu-id="4d408-141">ご指定のお支払い方法に請求される金額が、**[未払い額]** の下に表示されます。</span><span class="sxs-lookup"><span data-stu-id="4d408-141">Your payment method will be charged the amount listed under **Unbilled amount**.</span></span>
 
-請求書の発行を待たずに、すぐに支払うこともできます。これには、**[課金の概要]** ページ (**[プロモーション]** > **[請求履歴]**) で **[今すぐ課金]** を選びます。 ご指定のお支払い方法に請求される金額が、**[未払い額]** の下に表示されます。
+### <a name="how-do-i-delete-a-credit-card-or-edit-the-details-of-a-credit-card"></a><span data-ttu-id="4d408-142">クレジット カードを削除したり、クレジット カードの詳細を編集したりするにはどうすればよいですか。</span><span class="sxs-lookup"><span data-stu-id="4d408-142">How do I delete a credit card or edit the details of a credit card?</span></span>
 
-## <a name="how-do-i-delete-a-credit-card-or-edit-the-details-of-a-credit-card"></a>クレジット カードを削除したり、クレジット カードの詳細を編集したりするにはどうすればよいですか。
+<span data-ttu-id="4d408-143"><http://commerce.microsoft.com> にアクセスし、Microsoft アカウントの資格情報を使ってログオンして、必要な変更を加えます。</span><span class="sxs-lookup"><span data-stu-id="4d408-143">Go to <http://commerce.microsoft.com>, log in with your Microsoft account credentials, and make the necessary changes.</span></span>
 
-<http://commerce.microsoft.com> にアクセスし、Microsoft アカウントの資格情報を使ってログオンして、必要な変更を加えます。
+### <a name="related-topics"></a><span data-ttu-id="4d408-144">関連トピック</span><span class="sxs-lookup"><span data-stu-id="4d408-144">Related topics</span></span>
 
-## <a name="related-topics"></a>関連トピック
-
-* [アプリの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)
-* [広告キャンペーンの管理](managing-your-ad-campaign.md)
-* [自社広告について](about-house-ads.md)
-* [コミュニティ広告について](about-community-ads.md)
-* [アプリのインストールの広告レポート](app-install-ads-reports.md)
-
+* [<span data-ttu-id="4d408-145">アプリの広告キャンペーンの作成</span><span class="sxs-lookup"><span data-stu-id="4d408-145">Create an ad campaign for your app</span></span>](create-an-ad-campaign-for-your-app.md)
+* [<span data-ttu-id="4d408-146">広告キャンペーンの管理</span><span class="sxs-lookup"><span data-stu-id="4d408-146">Managing your ad campaign</span></span>](managing-your-ad-campaign.md)
+* [<span data-ttu-id="4d408-147">自社広告について</span><span class="sxs-lookup"><span data-stu-id="4d408-147">About house ads</span></span>](about-house-ads.md)
+* [<span data-ttu-id="4d408-148">コミュニティ広告について</span><span class="sxs-lookup"><span data-stu-id="4d408-148">About community ads</span></span>](about-community-ads.md)
+* [<span data-ttu-id="4d408-149">[アプリ インストール広告] レポート</span><span class="sxs-lookup"><span data-stu-id="4d408-149">App install ads report</span></span>](app-install-ads-reports.md)

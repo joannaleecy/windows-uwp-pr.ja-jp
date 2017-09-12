@@ -3,38 +3,39 @@ author: jnHs
 Description: "Windows アプリを Windows ストアに公開する方法を紹介します。"
 title: "Windows アプリの公開"
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 43cd6db99001974283175cb611d2e06c5da2221c
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 84d0ef042e6eeb48fd790042f4f4c5469bf30911
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/21/2017
 ---
+# <a name="publish-windows-apps"></a><span data-ttu-id="2a5c0-104">Windows アプリの公開</span><span class="sxs-lookup"><span data-stu-id="2a5c0-104">Publish Windows apps</span></span>
 
-# <a name="publish-windows-apps"></a>Windows アプリの公開
+<span data-ttu-id="2a5c0-105">Windows デベロッパー センター ダッシュ ボードを使用すると、アプリを Windows ストアに公開できます。</span><span class="sxs-lookup"><span data-stu-id="2a5c0-105">You can use the Windows Dev Center dashboard to publish your apps to the Windows Store.</span></span> 
 
-Windows デベロッパー センター ダッシュ ボードを使用すると、アプリを Windows ストアに公開できます。 
+> [!NOTE]
+> <span data-ttu-id="2a5c0-106">Windows デベロッパー センター ダッシュボードにアクセスして、アプリを申請するには、[開発者アカウント](http://go.microsoft.com/fwlink/p/?LinkId=615100)が必要です。</span><span class="sxs-lookup"><span data-stu-id="2a5c0-106">You must have a [developer account](http://go.microsoft.com/fwlink/p/?LinkId=615100) in order to access the Windows Dev Center dashboard and submit apps.</span></span>
 
-> **注** Windows デベロッパー センター ダッシュボードにアクセスして、アプリを申請するには、[開発者アカウント](http://go.microsoft.com/fwlink/p/?LinkId=615100)が必要です。
+<span data-ttu-id="2a5c0-107">このセクションには、アプリの公開と管理に関する情報が記載されています。</span><span class="sxs-lookup"><span data-stu-id="2a5c0-107">This section contains info about publishing and managing your apps.</span></span>
 
-このセクションには、アプリの公開と管理に関する情報が記載されています。
-
-| **トピック** | **説明** |
+| **<span data-ttu-id="2a5c0-108">トピック</span><span class="sxs-lookup"><span data-stu-id="2a5c0-108">Topic</span></span>** | **<span data-ttu-id="2a5c0-109">説明</span><span class="sxs-lookup"><span data-stu-id="2a5c0-109">Description</span></span>** |
 |-----------|-----------------|
-| [Windows デベロッパー センター ダッシュボードの使用](using-the-windows-dev-center-dashboard.md) | [アカウントを登録する方法](opening-a-developer-account.md)と、デベロッパー センター ダッシュボードで実行できることの概要について説明します。 |
-| [名前の予約によるアプリの作成](create-your-app-by-reserving-a-name.md) | ここでは、アプリ名を予約する方法について説明し、優れたアプリ名を選ぶための推奨事項を紹介します。 |
-| [アプリの申請](app-submissions.md) | 「アプリの申請」では、[価格と使用可能状況の詳細](set-app-pricing-and-availability.md)、[プロパティ](enter-app-properties.md)、[年齢区分](age-ratings.md)、[パッケージ](upload-app-packages.md)、[ストア登録情報の詳細](create-app-store-listings.md)について説明します。 アプリがストアで公開される前に、アプリの申請に対して[認定プロセス](the-app-certification-process.md)が実施されます。 利用できるオプションの機能として、[パッケージ フライト](package-flights.md)、[ベータ テスト](beta-testing-and-targeted-distribution.md)、[企業に対する LOB の直接配布](distribute-lob-apps-to-enterprises.md)があります。 |
-| [アドオンの申請](add-on-submissions.md) | Windows デベロッパー センター ダッシュ ボードを使用してアドオン (アプリ内製品) を公開する方法について説明します。 |
-| [広告による収益獲得](monetize-with-ads.md) | カスタム広告仲介の構成やアフィリエイト広告など、広告の利用を管理します。 |
-| [アプリの管理とサービス](app-management-and-services.md) | A/B テスト (実験)、マップなどのサービスを使用し、[アプリ ID の詳細の表示方法](view-app-identity-details.md)や[追加のアプリ名の予約方法](manage-app-names.md)を紹介します。 |
-| [分析](analytics.md) | アプリの詳細な分析データを取得して、アプリの状況 (獲得したユーザー数から、ユーザーによるアプリの使い方、ユーザーによるアプリの評判まで) を知ることができます。 アプリの正常性、広告の使用状況などに関する情報も確認できます。 |
-| [アプリの宣伝と顧客エンゲージメントの獲得](app-promotion-and-customer-engagement.md) | [広告キャンペーン](create-an-ad-campaign-for-your-app.md)、[プロモーション コード](generate-promotional-codes.md)、[セール価格](put-apps-and-add-ons-on-sale.md)などを使用して、アプリを宣伝します。 
-| [支払いの受け取り](getting-paid-apps.md) | アプリ、アドオン、および Microsoft Advertising による売り上げの受け取りについて詳細を確認します。 |
-| [ストアのポリシーと倫理規定](https://msdn.microsoft.com/library/windows/apps/dn764939.aspx) | このセクションでは、Windows アプリとコンテンツに適用される[ストアのポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx)および[アプリの品質](https://msdn.microsoft.com/library/windows/apps/mt652261.aspx)基準と、開発者が従う必要のある[倫理規定](https://msdn.microsoft.com/library/windows/apps/dn764941.aspx)について説明します。 |
+| [<span data-ttu-id="2a5c0-110">Windows デベロッパー センター ダッシュボードの使用</span><span class="sxs-lookup"><span data-stu-id="2a5c0-110">Using the Windows Dev Center dashboard</span></span>](using-the-windows-dev-center-dashboard.md) | <span data-ttu-id="2a5c0-111">[アカウントを登録する方法](opening-a-developer-account.md)と、デベロッパー センター ダッシュボードで実行できることの概要について説明します。</span><span class="sxs-lookup"><span data-stu-id="2a5c0-111">Learn [how to register for an account](opening-a-developer-account.md) and get an overview of what you can do in the Dev Center dashboard.</span></span> |
+| [<span data-ttu-id="2a5c0-112">アカウント ユーザーの管理</span><span class="sxs-lookup"><span data-stu-id="2a5c0-112">Manage account users</span></span>](manage-account-users.md) | <span data-ttu-id="2a5c0-113">ユーザー、グループ、Azure Active Directory アプリケーションをデベロッパー センター アカウントに追加して、アクセス許可を指定します。</span><span class="sxs-lookup"><span data-stu-id="2a5c0-113">Add users, groups, and Azure Active Directory applications to your Dev Center account with designated permissions.</span></span> |
+| [<span data-ttu-id="2a5c0-114">名前の予約によるアプリの作成</span><span class="sxs-lookup"><span data-stu-id="2a5c0-114">Create your app by reserving a name</span></span>](create-your-app-by-reserving-a-name.md) | <span data-ttu-id="2a5c0-115">アプリ名を予約する方法について説明し、優れたアプリ名を選ぶための推奨事項を紹介します。</span><span class="sxs-lookup"><span data-stu-id="2a5c0-115">See how to reserve names and find suggestions for choosing a great app name.</span></span> |
+| [<span data-ttu-id="2a5c0-116">アプリの申請</span><span class="sxs-lookup"><span data-stu-id="2a5c0-116">App submissions</span></span>](app-submissions.md) | <span data-ttu-id="2a5c0-117">「アプリの申請」では、[価格と使用可能状況の詳細](set-app-pricing-and-availability.md)、[プロパティ](enter-app-properties.md)、[年齢区分](age-ratings.md)、[パッケージ](upload-app-packages.md)、[ストア登録情報の詳細](create-app-store-listings.md)について説明します。</span><span class="sxs-lookup"><span data-stu-id="2a5c0-117">An app submission includes [pricing and availability details](set-app-pricing-and-availability.md), [properties](enter-app-properties.md), [age ratings](age-ratings.md), [packages](upload-app-packages.md), and [Store listing details](create-app-store-listings.md).</span></span> <span data-ttu-id="2a5c0-118">アプリがストアで公開される前に、アプリの申請に対して[認定プロセス](the-app-certification-process.md)が実施されます。</span><span class="sxs-lookup"><span data-stu-id="2a5c0-118">Your submission will go through the [certification process](the-app-certification-process.md) before it's published to the Store.</span></span> <span data-ttu-id="2a5c0-119">利用できるオプションの機能として、[パッケージ フライト](package-flights.md)、[ベータ テスト](beta-testing-and-targeted-distribution.md)、[段階的なパッケージのロールアウト](gradual-package-rollout.md)、[企業に対する LOB の直接配布](distribute-lob-apps-to-enterprises.md)があります。</span><span class="sxs-lookup"><span data-stu-id="2a5c0-119">Optional features you can use include [package flighting](package-flights.md), [beta testing](beta-testing-and-targeted-distribution.md), [gradual package rollout](gradual-package-rollout.md) and [LOB distribution directly to enterprises](distribute-lob-apps-to-enterprises.md).</span></span> |
+| [<span data-ttu-id="2a5c0-120">アドオンの申請</span><span class="sxs-lookup"><span data-stu-id="2a5c0-120">Add-on submissions</span></span>](add-on-submissions.md) | <span data-ttu-id="2a5c0-121">Windows デベロッパー センター ダッシュ ボードを使用してアドオン (アプリ内製品) を公開する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="2a5c0-121">Learn how to publish add-ons (in-app products) through the Windows Dev Center dashboard.</span></span> |
+| [<span data-ttu-id="2a5c0-122">広告による収益獲得</span><span class="sxs-lookup"><span data-stu-id="2a5c0-122">Monetize with ads</span></span>](monetize-with-ads.md) | <span data-ttu-id="2a5c0-123">カスタム広告仲介の構成やアフィリエイト広告など、広告の利用を管理します。</span><span class="sxs-lookup"><span data-stu-id="2a5c0-123">Manage your use of ads, including custom ad mediation configurations and affiliate advertising.</span></span> |
+| [<span data-ttu-id="2a5c0-124">アプリの管理とサービス</span><span class="sxs-lookup"><span data-stu-id="2a5c0-124">App management and services</span></span>](app-management-and-services.md) | <span data-ttu-id="2a5c0-125">A/B テスト (実験)、マップなどのサービスを使用し、[アプリ ID の詳細の表示方法](view-app-identity-details.md)や[追加のアプリ名の予約方法](manage-app-names.md)を紹介します。</span><span class="sxs-lookup"><span data-stu-id="2a5c0-125">Use services like A/B testing (experimentation) and maps, and see how to [view app identity details](view-app-identity-details.md) and [reserve additional app names](manage-app-names.md).</span></span> |
+| [<span data-ttu-id="2a5c0-126">ユーザーへのアピールとアプリの宣伝</span><span class="sxs-lookup"><span data-stu-id="2a5c0-126">Attract customers and promote your apps</span></span>](attract-customers-and-promote-your-apps.md) | <span data-ttu-id="2a5c0-127">[広告キャンペーン](create-an-ad-campaign-for-your-app.md)、[プロモーション コード](generate-promotional-codes.md)、[セール価格](put-apps-and-add-ons-on-sale.md)など、製品を宣伝し、顧客ベースの拡大を図るうえで役立つさまざまな機能を提供しています。</span><span class="sxs-lookup"><span data-stu-id="2a5c0-127">Promote your products and grow your customer base, including [ad campaigns](create-an-ad-campaign-for-your-app.md), [promo codes](generate-promotional-codes.md), [sale pricing](put-apps-and-add-ons-on-sale.md), and more.</span></span> |
+| [<span data-ttu-id="2a5c0-128">ユーザーとの関係を深める</span><span class="sxs-lookup"><span data-stu-id="2a5c0-128">Engage with your customers</span></span>](engage-with-your-customers.md) | <span data-ttu-id="2a5c0-129">[通知](send-push-notifications-to-your-apps-customers.md)、[対象のプラン](use-targeted-offers-to-maximize-engagement-and-conversions.md)、[レビュー](respond-to-customer-reviews.md)や[フィードバックへ](respond-to-customer-feedback.md)の応答などの機能を使用して、ユーザーとの関係を深め、顧客満足度を高めることができます。</span><span class="sxs-lookup"><span data-stu-id="2a5c0-129">Drive customer engagement and satisfaction by using features like [notifications](send-push-notifications-to-your-apps-customers.md), [targeted offers](use-targeted-offers-to-maximize-engagement-and-conversions.md), responding to [reviews](respond-to-customer-reviews.md) and [feedback](respond-to-customer-feedback.md), and more.</span></span> 
+| [<span data-ttu-id="2a5c0-130">アプリのパフォーマンスの分析</span><span class="sxs-lookup"><span data-stu-id="2a5c0-130">Analyze app performance</span></span>](analytics.md) | <span data-ttu-id="2a5c0-131">アプリの詳細な分析データを取得して、アプリの状況 (獲得したユーザー数から、ユーザーによるアプリの使い方、ユーザーによるアプリの評判まで) を知ることができます。</span><span class="sxs-lookup"><span data-stu-id="2a5c0-131">Get detailed analytic data for your apps to see how your apps are doing, from how many customers you've reached to how they're using your app and what they have to say about it.</span></span>|
+| [<span data-ttu-id="2a5c0-132">支払いの受け取り</span><span class="sxs-lookup"><span data-stu-id="2a5c0-132">Getting paid</span></span>](getting-paid-apps.md) | <span data-ttu-id="2a5c0-133">アプリ、アドオン、広告による売り上げの受け取りについて詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="2a5c0-133">Get details about receiving earnings from your apps, add-ons, and advertising.</span></span> |
+| [<span data-ttu-id="2a5c0-134">ストアのポリシーと倫理規定</span><span class="sxs-lookup"><span data-stu-id="2a5c0-134">Store Policies and Code of Conduct</span></span>](https://msdn.microsoft.com/library/windows/apps/dn764939.aspx) | <span data-ttu-id="2a5c0-135">このセクションでは、Windows アプリとコンテンツに適用される[ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx)と[アプリの品質](https://msdn.microsoft.com/library/windows/apps/mt652261.aspx)基準、および開発者が従う必要のある[倫理規定](https://msdn.microsoft.com/library/windows/apps/dn764941.aspx)について説明します。</span><span class="sxs-lookup"><span data-stu-id="2a5c0-135">This section includes the [Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx) and [App Quality](https://msdn.microsoft.com/library/windows/apps/mt652261.aspx) criteria that apply to Windows apps and content, and the [Code of Conduct](https://msdn.microsoft.com/library/windows/apps/dn764941.aspx) that developers should follow.</span></span> |
  
-

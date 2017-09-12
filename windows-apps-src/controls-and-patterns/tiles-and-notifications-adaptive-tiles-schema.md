@@ -6,24 +6,24 @@ ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
 label: Adaptive tile schema and templates
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 47f40261b3829400c06c4ff071404e5d06cdbf7d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ae33540e8b088fc68841b95115ae9c6cda20a662
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
-# <a name="adaptive-tile-templates-schema-and-guidance"></a>アダプティブ タイル テンプレート: スキーマとガイダンス
+# <a name="adaptive-tile-templates-schema-and-guidance"></a><span data-ttu-id="fdaec-104">アダプティブ タイル テンプレート: スキーマとガイダンス</span><span class="sxs-lookup"><span data-stu-id="fdaec-104">Adaptive tile templates: schema and guidance</span></span>
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-アダプティブ タイルの作成に使う要素と属性を次に示します。 手順と例については、「[アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)」をご覧ください。
+<span data-ttu-id="fdaec-105">アダプティブ タイルの作成に使う要素と属性を次に示します。</span><span class="sxs-lookup"><span data-stu-id="fdaec-105">Here are the elements and attributes you use to create adaptive tiles.</span></span> <span data-ttu-id="fdaec-106">手順と例については、「[アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="fdaec-106">For instructions and examples, see [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md).</span></span>
 
-## <a name="tile-element"></a>tile 要素
+## <a name="tile-element"></a><span data-ttu-id="fdaec-107">tile 要素</span><span class="sxs-lookup"><span data-stu-id="fdaec-107">tile element</span></span>
 
 
 ``` xml
@@ -35,7 +35,7 @@ ms.lasthandoff: 02/07/2017
 </tile>
 ```
 
-## <a name="visual-element"></a>visual 要素
+## <a name="visual-element"></a><span data-ttu-id="fdaec-108">visual 要素</span><span class="sxs-lookup"><span data-stu-id="fdaec-108">visual element</span></span>
 
 
 ``` xml
@@ -54,7 +54,7 @@ ms.lasthandoff: 02/07/2017
 </visual>
 ```
 
-## <a name="binding-element"></a>binding 要素
+## <a name="binding-element"></a><span data-ttu-id="fdaec-109">binding 要素</span><span class="sxs-lookup"><span data-stu-id="fdaec-109">binding element</span></span>
 
 
 ``` xml
@@ -79,7 +79,7 @@ ms.lasthandoff: 02/07/2017
 </binding>
 ```
 
-## <a name="image-element"></a>image 要素
+## <a name="image-element"></a><span data-ttu-id="fdaec-110">image 要素</span><span class="sxs-lookup"><span data-stu-id="fdaec-110">image element</span></span>
 
 
 ``` xml
@@ -93,7 +93,7 @@ ms.lasthandoff: 02/07/2017
   hint-align? = "stretch" | "left" | "center" | "right" />
 ```
 
-## <a name="text-element"></a>text 要素
+## <a name="text-element"></a><span data-ttu-id="fdaec-111">text 要素</span><span class="sxs-lookup"><span data-stu-id="fdaec-111">text element</span></span>
 
 
 ``` xml
@@ -110,9 +110,9 @@ ms.lasthandoff: 02/07/2017
 </text>
 ```
 
-textStyle の値: caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumeral
+<span data-ttu-id="fdaec-112">textStyle の値: caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumeral</span><span class="sxs-lookup"><span data-stu-id="fdaec-112">textStyle values: caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumeral</span></span>
 
-## <a name="group-element"></a>group 要素
+## <a name="group-element"></a><span data-ttu-id="fdaec-113">group 要素</span><span class="sxs-lookup"><span data-stu-id="fdaec-113">group element</span></span>
 
 
 ``` xml
@@ -124,7 +124,7 @@ textStyle の値: caption captionSubtle body bodySubtle base baseSubtle subtitle
 </group>
 ```
 
-## <a name="subgroup-element"></a>subgroup 要素
+## <a name="subgroup-element"></a><span data-ttu-id="fdaec-114">subgroup 要素</span><span class="sxs-lookup"><span data-stu-id="fdaec-114">subgroup element</span></span>
 
 
 ``` xml
@@ -140,14 +140,13 @@ textStyle の値: caption captionSubtle body bodySubtle base baseSubtle subtitle
 </subgroup>
 ```
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="fdaec-115">関連トピック</span><span class="sxs-lookup"><span data-stu-id="fdaec-115">Related topics</span></span>
 
 
-* [アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)
+* [<span data-ttu-id="fdaec-116">アダプティブ タイルの作成</span><span class="sxs-lookup"><span data-stu-id="fdaec-116">Create adaptive tiles</span></span>](tiles-and-notifications-create-adaptive-tiles.md)
  
 
  
-
 
 
 

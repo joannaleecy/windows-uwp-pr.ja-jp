@@ -1,73 +1,87 @@
 ---
-author: shawjohn
-title: "アプリの宣伝レポート - UWP アプリの開発"
+author: JnHs
+title: "[広告キャンペーン] レポート"
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
-description: "Windows デベロッパー センター ダッシュボードの [アプリの宣伝] レポートでは、アプリ プロモーション広告キャンペーンの実施状況を確認できます。"
-ms.author: johnshaw
-ms.date: 02/08/2017
+description: "Windows デベロッパー センター ダッシュボードの [広告キャンペーン] レポートでは、アプリ プロモーション広告キャンペーンの実施状況を確認できます。"
+ms.author: wdg-dev-content
+ms.date: 08/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 販売促進, アプリ, キャンペーン, レポート, インストール"
-translationtype: Human Translation
-ms.sourcegitcommit: b01924366a0bc2afabe2f381e72e45862f0dd682
-ms.openlocfilehash: af719bbb4cc9def4e9b202c8815320698c6148d0
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 27c05d0c1742ece134ac0380c3f3692d94b5f0f5
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/04/2017
 ---
+# <a name="ad-campaign-report"></a><span data-ttu-id="abd98-104">[広告キャンペーン] レポート</span><span class="sxs-lookup"><span data-stu-id="abd98-104">Ad campaign report</span></span>
 
-# <a name="promote-your-app-report"></a>アプリの販売促進レポート
+<span data-ttu-id="abd98-105">Windows デベロッパー センター ダッシュボードの **[広告キャンペーン]** レポートでは、アプリ プロモーション広告キャンペーンの実施状況を確認できます。</span><span class="sxs-lookup"><span data-stu-id="abd98-105">The **Ad campaign** report in the Windows Dev Center dashboard lets you see how your app promotion ad campaigns are performing.</span></span>
 
-Windows デベロッパー センター ダッシュボードの **[アプリの宣伝]** レポートでは、アプリ プロモーション広告キャンペーンの実施状況を確認できます。
+<span data-ttu-id="abd98-106">このレポートを表示するには、左側のナビゲーション メニューで、**[ユーザーへのアピール]** を展開し、**[広告キャンペーン]** を選ぶか、**[収益化]** を展開して **[アプリの宣伝]** を選びます。</span><span class="sxs-lookup"><span data-stu-id="abd98-106">To see the report, expand **Attract** in the left navigation menu and select **Ad campaigns** (or, from within an app, expand **Monetization** and select **Promote your app**).</span></span> 
 
-レポートを表示するには、上部のナビゲーション メニューで **[プロモーション]** を選択します。 **[アプリの宣伝]** ページの上部に、広告キャンペーンとパフォーマンス メトリックの一覧が表形式で表示されます。
+## <a name="definitions"></a><span data-ttu-id="abd98-107">定義</span><span class="sxs-lookup"><span data-stu-id="abd98-107">Definitions</span></span>
 
-ページの下部には、パフォーマンスのメトリックがグラフにプロットされた線として表示され、選択したメトリックが y 軸に、時間が x 軸に表示されます。 これらのパフォーマンス メトリックのデータを表示するには、タブ ヘッダーを選択します。
+<span data-ttu-id="abd98-108">このレポートは、次の項目のデータを示します。</span><span class="sxs-lookup"><span data-stu-id="abd98-108">This report shows data for the following items:</span></span>
 
--   **[インプレッション数]**: 広告がユーザーに表示された回数です。
--   **[クリック数]**: 広告がユーザーによってクリックされた回数です。
--   **[コンバージョン]**: アプリのインストール数の増加をキャンペーン目標にしている場合、コンバージョンはユーザーが広告を表示してから 24 時間以内にアプリをインストールした回数です。 アプリのエンゲージメント向上をキャンペーン目標にしている場合、コンバージョンはユーザーが広告を表示してから 24 時間以内にアプリを開いた回数です。 インストールの追跡とコンバージョンの測定方法について詳しくは、以下をご覧ください。
--   **[支出]**: 各キャンペーンに費やした費用の合計です。
+-   <span data-ttu-id="abd98-109">**[インプレッション数]**: 広告がユーザーに表示された回数です。</span><span class="sxs-lookup"><span data-stu-id="abd98-109">**Impressions**: The number of times your ad has been shown to customers.</span></span>
+-   <span data-ttu-id="abd98-110">**[クリック数]**: 広告がユーザーによってクリックされた回数です。</span><span class="sxs-lookup"><span data-stu-id="abd98-110">**Clicks**: The number of times a customer has clicked on your ad.</span></span>
+-   <span data-ttu-id="abd98-111">**[コンバージョン]**: アプリのインストール数の増加をキャンペーンの目的にしている場合、コンバージョンはユーザーが広告を表示してから 24 時間以内にアプリをインストールした回数です。</span><span class="sxs-lookup"><span data-stu-id="abd98-111">**Conversions**: If your campaign objective is to increase installs of your app, a conversion is the number of times someone viewed your ad and then installed your app within 24 hours.</span></span> <span data-ttu-id="abd98-112">アプリのエンゲージメント向上をキャンペーンの目的にしている場合、コンバージョンはユーザーが広告を表示してから 24 時間以内にアプリを開いた回数です。</span><span class="sxs-lookup"><span data-stu-id="abd98-112">If your campaign objective is to increase engagement in your app, a conversion is the number of times someone viewed your ad and then opened your app within 24 hours.</span></span> <span data-ttu-id="abd98-113">インストールの追跡とコンバージョンの測定方法について詳しくは、以下をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="abd98-113">See below for more information about install tracking and how conversions are measured.</span></span>
+-   <span data-ttu-id="abd98-114">**[支出]**: 各キャンペーンに費やした費用の合計です。</span><span class="sxs-lookup"><span data-stu-id="abd98-114">**Spend**: The amount of money that you've spent on each campaign.</span></span>
 
-一度に最大 6 つの異なる広告キャンペーンのパフォーマンス データを表示できます。 **[多くのキャンペーン]** を選択して、表示するキャンペーンを選びます。 表示されているキャンペーンの横にあるマイナス記号を選択して、そのキャンペーンを削除することもできます。
+## <a name="apply-filters"></a><span data-ttu-id="abd98-115">フィルターを適用</span><span class="sxs-lookup"><span data-stu-id="abd98-115">Apply filters</span></span>
 
-### <a name="what-is-install-tracking"></a>インストールの追跡とは
+<span data-ttu-id="abd98-116">レポートの上部にある **[セクション フィルター]** を使ってレポートに表示されるデータの範囲を調整できます。</span><span class="sxs-lookup"><span data-stu-id="abd98-116">At the top of the report, you can use the **Section filters** to adjust the scope of the data shown in the report:</span></span>
 
-デベロッパー センターで **[アプリの宣伝]** を通じてインストール広告キャンペーンを実行すると、本当に必要な形でユーザーの目に触れるようにアプリの宣伝が行われます。 広告インプレッションは、アプリに関心を持っている可能性が最も高いと思われるユーザーに表示され、ユーザーは広告をクリックして、ストアからアプリをインストールします。 以前は、広告キャンペーンの結果行われたインストールと、その他のソースに由来するインストールを区別するのは困難でした。
+-   <span data-ttu-id="abd98-117">**[日付]**: 既定では **[過去 30 日間]** が選択されていますが、3、6、12 か月間のデータを表示することもできます。</span><span class="sxs-lookup"><span data-stu-id="abd98-117">**Date**: The default selection is **Last 30 days**, but you can choose to show data for 3, 6, or 12 months.</span></span>
+-   <span data-ttu-id="abd98-118">**[キャンペーンの目的]**: すべてのキャンペーンを表示することも、目的が **[アプリのインストール数]** または **[アプリの利用率]** であるキャンペーンのみを表示するようにデータを絞り込むこともできます。</span><span class="sxs-lookup"><span data-stu-id="abd98-118">**Campaign objective**: You can show all campaigns, or limit the data to show only those whose objective is **App installs** or **App engagement**.</span></span>
+-   <span data-ttu-id="abd98-119">**[アプリ名]**: 既定の選択は **[すべて]** ですが、特定の 1 つのアプリのキャンペーンのみを表示することもできます。</span><span class="sxs-lookup"><span data-stu-id="abd98-119">**App name**: The default selection is **All**, but you can choose to show campaigns for only a specific app.</span></span>
+-   <span data-ttu-id="abd98-120">**[キャンペーンの種類]** : すべてのキャンペーンの種類を表示することも、有料広告、自社広告、またはコミュニティ広告キャンペーンのみを表示するようにデータを絞り込むこともできます。</span><span class="sxs-lookup"><span data-stu-id="abd98-120">**Campaign type**: You can show all campaign types, or limit the data to show only paid, house, or community ad campaigns.</span></span>
+-   <span data-ttu-id="abd98-121">**[状態]**: 既定の選択は **[すべて]** ですが、特定の状態 (**[アクティブ]**、**[ドラフト]**、**[一時停止]**、**[終了]**、**[要注意]**) であるキャンペーンのデータのみを表示することもできます。</span><span class="sxs-lookup"><span data-stu-id="abd98-121">**Status**: The default selection is **All**, but you can choose to show data only for campaigns that fall into a particular status (**Active**, **Draft**, **Paused**, **Ended**, or **Needs attention**).</span></span>
 
-**[アプリの宣伝]** レポートには、広告キャンペーンを実行したことで増加したインストール数が表示されます。 これは、広告キャンペーンの直接的な結果として発生したダウンロード数のみを表しており、他のソースからのダウンロードは含まれません。
 
-広告キャンペーンのインストール数を監視することで、アプリの宣伝に費やした費用について真の投資効果を測定できます。 また、新規ユーザーを獲得するコストと、ユーザーの生涯にわたる価値を比較することもできます。
+## <a name="ad-campaign-metrics"></a><span data-ttu-id="abd98-122">広告キャンペーンのメトリック</span><span class="sxs-lookup"><span data-stu-id="abd98-122">Ad campaign metrics</span></span>
 
-### <a name="how-are-conversions-measured"></a>コンバージョンの測定方法とは
+<span data-ttu-id="abd98-123">ページの上の方に、広告キャンペーンの一覧が表示されます。ここには、各広告キャンペーンのインプレッション数、クリック数、コンバージョン数と合わせて、支出合計と実施できるアクションが表示されます。</span><span class="sxs-lookup"><span data-stu-id="abd98-123">Near the top of the page, you'll see a list of your ad campaigns with the number of impressions, clicks, and conversions for each one, along with the total spend and any available actions.</span></span> <span data-ttu-id="abd98-124">キャンペーンを編集するには、この一覧で名前をクリックします。</span><span class="sxs-lookup"><span data-stu-id="abd98-124">To edit a campaign, you can click its name from this list.</span></span>
 
-**[アプリの宣伝]** 広告キャンペーンにより、他のアプリ内で広告が表示されます。 広告が表示されたユーザーは、広告をクリックするか、表示された広告を見たことにより、アプリをインストールする可能性があります。
+<span data-ttu-id="abd98-125">ページの下の方には、これらのパフォーマンスのメトリックがグラフにプロットされた線として表示されます。</span><span class="sxs-lookup"><span data-stu-id="abd98-125">Toward the bottom of the page, you'll see these performance metrics displayed as lines plotted on a graph.</span></span> <span data-ttu-id="abd98-126">前述のとおり、**[インプレッション数]**、**[クリック数]**、**[コンバージョン]**、**[支出]** のタブ見出しを選んで、各種データを表示します。</span><span class="sxs-lookup"><span data-stu-id="abd98-126">Select the tab headers to view data for **Impressions**, **Clicks**, **Conversions**, or **Spend** as described above.</span></span>
 
-ユーザーに広告が表示され、広告をクリックするかアプリのストア ページに直接移動して 24 時間以内にアプリをインストールした場合、そのインストールは、インプレッションを提供したキャンペーンに基づいて行われたと見なされます。
+<span data-ttu-id="abd98-127">一度に最大 6 つの異なる広告キャンペーンのパフォーマンス データを表示できます。</span><span class="sxs-lookup"><span data-stu-id="abd98-127">You can display performance data for up to six different ad campaigns at a time.</span></span> <span data-ttu-id="abd98-128">**[多くのキャンペーン]** を選択して、表示するキャンペーンを選びます。</span><span class="sxs-lookup"><span data-stu-id="abd98-128">Select **More campaigns** to choose which campaigns to display.</span></span> <span data-ttu-id="abd98-129">表示されているキャンペーンの横にあるマイナス記号を選択して、そのキャンペーンをグラフから削除することもできます。</span><span class="sxs-lookup"><span data-stu-id="abd98-129">You can also select the minus symbol by a displayed campaign to remove it from the chart.</span></span>
 
-インストールは、電話、タブレット、PC、その他の Windows 10 デバイス間で、アプリをインストールしたユーザーに基づいて、ストアで追跡されます。 広告エンジンは広告を表示したユーザーを追跡し、この情報を使って、広告を表示したユーザーを、アプリをインストールしたユーザーに関連付けます。 アプリのインストールをカウントするためには、いくつかの要件を満たす必要があります。
 
-1.  ユーザーは対象から除外されるように設定していない。
-2.  ユーザーは Microsoft アカウントにログインしている。
-3.  ユーザーは [COPPA](http://go.microsoft.com/fwlink?LinkId=536558) 要件を満たしている (COPPA 要件を満たしていないユーザーを追跡することはできません)。
+## <a name="install-tracking"></a><span data-ttu-id="abd98-130">インストールの追跡</span><span class="sxs-lookup"><span data-stu-id="abd98-130">Install tracking</span></span>
 
-この結果、アプリのインストールの追跡で、**[アプリの宣伝]** キャンペーンによって生じた実際のインストール数より*少なく報告される*可能性があります。 アプリのダウンロードの合計数は、デベロッパー センターの **[取得]** レポートで表示されます。
+<span data-ttu-id="abd98-131">デベロッパー センターからインストール広告キャンペーンを実行すると、本当に必要な形でユーザーの目に触れるようにアプリの宣伝が行われます。</span><span class="sxs-lookup"><span data-stu-id="abd98-131">Running an install ad campaign through Dev Center provides much-needed exposure to advertise your apps.</span></span> <span data-ttu-id="abd98-132">広告インプレッションは、アプリに関心を持っている可能性が最も高いと思われるユーザーに表示され、ユーザーは広告をクリックして、ストアからアプリをインストールします。</span><span class="sxs-lookup"><span data-stu-id="abd98-132">Ad impressions are shown to customers who are most likely to be interested in the app, and those customers can click on the ad and install the app from the Store.</span></span> <span data-ttu-id="abd98-133">以前は、広告キャンペーンの結果行われたインストールと、その他のソースに由来するインストールを区別するのは困難でした。</span><span class="sxs-lookup"><span data-stu-id="abd98-133">Previously, it was hard to distinguish between installs that were the result of an ad campaign versus installs that came from other sources.</span></span>
 
-## <a name="account-billing-history"></a>アカウントの支払い履歴
+<span data-ttu-id="abd98-134">このレポートには、広告キャンペーンを実行したことで増加したインストール数が表示されます。</span><span class="sxs-lookup"><span data-stu-id="abd98-134">This report shows you how many installs you've earned by running your ad campaigns.</span></span> <span data-ttu-id="abd98-135">これは、広告キャンペーンの直接的な結果として発生したダウンロード数のみを表しており、他のソースからのダウンロードは含まれません。</span><span class="sxs-lookup"><span data-stu-id="abd98-135">This only represents downloads that are a direct outcome of your ad campaigns, and does not include downloads from other sources.</span></span>
 
-アカウントに関連付けられたすべてのトランザクションを表示するには、左側のナビゲーション メニューで **[請求履歴]** を選択します。
+<span data-ttu-id="abd98-136">広告キャンペーンのインストール数を監視することで、アプリの宣伝に費やした費用について真の投資効果を測定できます。</span><span class="sxs-lookup"><span data-stu-id="abd98-136">By monitoring installs for your ad campaigns, you can measure the true return on investment from the money you spend on promoting your apps.</span></span> <span data-ttu-id="abd98-137">また、新規ユーザーを獲得するコストと、ユーザーの生涯にわたる価値を比較することもできます。</span><span class="sxs-lookup"><span data-stu-id="abd98-137">It also helps you compare the cost of obtaining a new customer with the lifetime value of your customers.</span></span>
 
-トランザクションごとに、**[処理日]**、適切な **[キャンペーン名]**、料金の **[支払い方法]**、**[支払い ID]**、**[請求開始日]**、**[請求終了日]**、料金の **[合計金額]**、および **[入金状況]** が表示されます。
 
-また、**[ダウンロード]** リンクをクリックすることで、アカウントの支払い履歴を Microsoft Word 文書としてダウンロードできます。
+## <a name="measuring-conversions"></a><span data-ttu-id="abd98-138">コンバージョンの測定</span><span class="sxs-lookup"><span data-stu-id="abd98-138">Measuring conversions</span></span>
 
-## <a name="related-topics"></a>関連トピック
+<span data-ttu-id="abd98-139">広告キャンペーンにより、他のアプリ内で広告が表示されます。</span><span class="sxs-lookup"><span data-stu-id="abd98-139">Ad campaigns deliver ad impressions within other apps.</span></span> <span data-ttu-id="abd98-140">広告が表示されたユーザーは、広告をクリックするか、表示された広告を見たことにより、アプリをインストールする可能性があります。</span><span class="sxs-lookup"><span data-stu-id="abd98-140">Customers who are exposed to the ad are likely to install the app in one of two ways: by clicking the ad or based on viewing the ad impression.</span></span>
 
-* [アプリの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)
-* [広告キャンペーンの管理](managing-your-ad-campaign.md)
-* [自社広告について](about-house-ads.md)
-* [よく寄せられる質問](common-questions.md)
+<span data-ttu-id="abd98-141">ユーザーに広告が表示され、広告をクリックするかアプリのストア登録情報ページに移動して 24 時間以内にアプリをインストールした場合、そのインストールは、インプレッションを提供したキャンペーンに基づいて行われたと見なされます。</span><span class="sxs-lookup"><span data-stu-id="abd98-141">If a customer is shown an ad and he or she installs the app within 24 hours, either by clicking the ad or by going to the Store listing page of the app, that install is attributed to the campaign that delivered the impression.</span></span>
+
+<span data-ttu-id="abd98-142">インストールは、電話、タブレット、PC、その他の Windows 10 デバイス間で、アプリをインストールしたユーザーに基づいて、ストアで追跡されます。</span><span class="sxs-lookup"><span data-stu-id="abd98-142">An install is tracked in the Store across phone, tablet, PC, and other Windows 10 devices based on the customer who installed the app.</span></span> <span data-ttu-id="abd98-143">広告エンジンは広告を表示したユーザーを追跡し、この情報を使って、広告を表示したユーザーを、アプリをインストールしたユーザーに関連付けます。</span><span class="sxs-lookup"><span data-stu-id="abd98-143">The advertising engine tracks customers who see the ad and we use this information to correlate the customers who viewed the ad with the customers who installed the app.</span></span> <span data-ttu-id="abd98-144">アプリのインストールをカウントするためには、いくつかの要件を満たす必要があります。</span><span class="sxs-lookup"><span data-stu-id="abd98-144">In order for the app install to be counted, a few requirements must be met:</span></span>
+
+1.  <span data-ttu-id="abd98-145">ユーザーは対象から除外されるように設定していない。</span><span class="sxs-lookup"><span data-stu-id="abd98-145">The customer has not opted out of targeting.</span></span>
+2.  <span data-ttu-id="abd98-146">ユーザーは Microsoft アカウントにログインしている。</span><span class="sxs-lookup"><span data-stu-id="abd98-146">The customer is logged in to a Microsoft account.</span></span>
+3.  <span data-ttu-id="abd98-147">ユーザーは [COPPA](http://go.microsoft.com/fwlink?LinkId=536558) 要件を満たしている (COPPA 要件を満たしていないユーザーを追跡することはできません)。</span><span class="sxs-lookup"><span data-stu-id="abd98-147">The customer meets [COPPA](http://go.microsoft.com/fwlink?LinkId=536558) requirements (customers that don't meet COPPA requirements cannot be tracked).</span></span>
+
+<span data-ttu-id="abd98-148">この結果、アプリのインストールの追跡で、広告キャンペーンによって生じた実際のインストール数より少なく報告される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="abd98-148">As a result, it is possible that app install tracking may underreport the actual number of installs generated by an ad campaign.</span></span> <span data-ttu-id="abd98-149">(キャンペーンまたは別の手段による) アプリのインストールの合計数は、デベロッパー センターの [[取得]](acquisitions-report.md) レポートで表示されます。</span><span class="sxs-lookup"><span data-stu-id="abd98-149">Please note that you can view the total number of installs for an app (through campaigns and otherwise) in the [Acquisitions](acquisitions-report.md) report in Dev Center.</span></span>
+
+
+## <a name="account-billing-history"></a><span data-ttu-id="abd98-150">アカウントの支払い履歴</span><span class="sxs-lookup"><span data-stu-id="abd98-150">Account billing history</span></span>
+
+<span data-ttu-id="abd98-151">アカウントに関連付けられたすべての広告キャンペーンのトランザクションを表示するには、左側のナビゲーション メニューで **[請求履歴]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="abd98-151">To see all of the ad campaign transactions associated with your account, select **Billing history** in the left navigation menu.</span></span>
+
+<span data-ttu-id="abd98-152">トランザクションごとに、**[処理日]**、適切な **[キャンペーン名]**、料金の **[支払い方法]**、**[支払い ID]**、**[請求開始日]**、**[請求終了日]**、料金の **[合計金額]**、および **[入金状況]** が表示されます。</span><span class="sxs-lookup"><span data-stu-id="abd98-152">For each transaction, we show the **Transaction date**, the appropriate **Campaign name**, the **Payment method** charged, **Payment ID**, **Billing start date**, **Billing end date**, **Total amount** of the charge, and **Payment status**.</span></span> 
+
+<span data-ttu-id="abd98-153">**[ダウンロード]** リンクをクリックすると、アカウントの支払い履歴を Microsoft Word 文書としてダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="abd98-153">You can download your account billing history as a Microsoft Word document by clicking the **Download** link.</span></span>
+
  
 
  
-

@@ -4,92 +4,94 @@ Description: "Windows デベロッパー センター ダッシュボードに�
 title: "ベータ テストとターゲット配布"
 ms.assetid: 38E4ED22-D6C1-40D8-9B16-6B3E51BD962E
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 08/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0fd6f16b019326b7deefa110c2f65b30ffd83d10
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7dd0e346e6be147935503eeb0b685568bfce726c
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/09/2017
 ---
+# <a name="beta-testing-and-targeted-distribution"></a><span data-ttu-id="0ff76-104">ベータ テストとターゲット配布</span><span class="sxs-lookup"><span data-stu-id="0ff76-104">Beta testing and targeted distribution</span></span>
 
-# <a name="beta-testing-and-targeted-distribution"></a>ベータ テストとターゲット配布
+<span data-ttu-id="0ff76-105">どれほど慎重にアプリをテストしても、他のユーザーに使用してもらうという現実世界のテストには及びません。</span><span class="sxs-lookup"><span data-stu-id="0ff76-105">No matter how carefully you test your app, there’s nothing like the real-world test of having other people use it.</span></span> <span data-ttu-id="0ff76-106">Windows デベロッパー センター ダッシュボードには、アプリの申請を指定のユーザーに対してのみ利用可能にするオプションがあり、これによって一般ユーザーにアプリを提供する前にテスターがアプリを試すことができます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-106">The Windows Dev Center dashboard gives you options to make an app submission available only to specified people so that you can have testers try it out before you offer it to the public.</span></span> <span data-ttu-id="0ff76-107">テスターは、開発者が見落とした問題を発見する場合があります。スペル ミスや混乱を招くアプリの流れだけでなく、アプリのクラッシュの原因となるエラーも発見します。</span><span class="sxs-lookup"><span data-stu-id="0ff76-107">Your testers may discover issues that you’ve overlooked, such as misspellings, confusing app flow, or errors that could cause the app to crash.</span></span> <span data-ttu-id="0ff76-108">その後、申請を一般にリリースする前にそれらの問題を修正する機会が得られ、最終的な製品の完成度が高まります。</span><span class="sxs-lookup"><span data-stu-id="0ff76-108">You’ll then have a chance to fix those problems before you release the submission to the public, resulting in a more polished final product.</span></span>
+
+<span data-ttu-id="0ff76-109">アプリをテスターのみに限定して配布するための方法をいくつか用意しています。別の名前やパッケージ ID を使って別バージョンのアプリを作る必要はありません。</span><span class="sxs-lookup"><span data-stu-id="0ff76-109">We provide several ways to limit distribution of your apps to only your testers, without needing to create a separate version of your app with a different name and package identity.</span></span> <span data-ttu-id="0ff76-110">(もちろん、必要であれば、テスト用に別のアプリを作ることもできます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-110">(Of course, you can create a separate app for testing only if you prefer.</span></span> <span data-ttu-id="0ff76-111">作る場合、そのアプリには、最終的なパブリック アプリの名前とは違う名前を付ける必要があります。)</span><span class="sxs-lookup"><span data-stu-id="0ff76-111">If you do, make sure to give it a different name from what you intend to use as the final, public app name.)</span></span>
+
+<span data-ttu-id="0ff76-112">アプリをテスターに配布する方法は、アプリの対象オペレーティング システムによって異なります。</span><span class="sxs-lookup"><span data-stu-id="0ff76-112">The method of distributing your app to testers depends on which operating systems your app targets.</span></span> <span data-ttu-id="0ff76-113">ここでは、Windows 10 で機能するオプションと Windows Phone 8.1 以前で機能するオプションについて説明します。</span><span class="sxs-lookup"><span data-stu-id="0ff76-113">Below you'll find options that work for Windows 10 and for Windows Phone 8.1 and earlier.</span></span>
+
+## <a name="making-your-app-available-to-testers-on-windows-10-devices"></a><span data-ttu-id="0ff76-114">Windows 10 デバイスでテスターがアプリを入手できるようにする</span><span class="sxs-lookup"><span data-stu-id="0ff76-114">Making your app available to testers on Windows 10 devices</span></span>
+
+<span data-ttu-id="0ff76-115">Windows 10 デバイスでアプリを特定のユーザーのみに限定して配布するための 2 つのオプションを用意しています。</span><span class="sxs-lookup"><span data-stu-id="0ff76-115">We provide two options that let you limit distribution of your apps to only certain people on Windows 10 devices.</span></span>
+
+### <a name="package-flights"></a><span data-ttu-id="0ff76-116">パッケージ フライト</span><span class="sxs-lookup"><span data-stu-id="0ff76-116">Package flights</span></span>
+
+<span data-ttu-id="0ff76-117">アプリを既に公開している場合は、パッケージ フライトを作成して、異なるパッケージのセットを指定したユーザーに配布できます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-117">If you have published your app already, you can create package flights to distribute a different set of packages to the people that you specify.</span></span> <span data-ttu-id="0ff76-118">同じアプリについて複数のパッケージ フライトを作成し、別のグループのユーザーと共に使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-118">You can even create multiple package flights for the same app to use with different groups of people.</span></span> <span data-ttu-id="0ff76-119">この方法は、さまざまなパッケージを同時に試す場合に適しています。パッケージをすべてのユーザーに配布する準備が整ったら、フライトのパッケージをフライト以外の申請に切り替えることができます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-119">This is a great way to try out different packages simultaneously, and you can pull packages from a flight into your non-flighted submission if you decide the packages are ready to distribute to everyone.</span></span>
+
+<span data-ttu-id="0ff76-120">詳しくは、「[パッケージ フライト](package-flights.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="0ff76-120">For more info, see [Package flights](package-flights.md).</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="0ff76-121">特定のユーザーのグループを指定するのではなく、設定した割合の Windows 10 ユーザーをランダムに選択して特定のパッケージを配布するには、[段階的なパッケージのロールアウト](gradual-package-rollout.md)を使用できます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-121">To distribute specific packages to a random selection of your Windows 10 customers in a set percentage, rather than to a designated group of specific customers, you can use [gradual package rollout](gradual-package-rollout.md).</span></span> <span data-ttu-id="0ff76-122">更新をいずれかのフライト グループに段階的に配布する場合に、ロールアウトとパッケージ フライトを組み合わせることもできます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-122">You can also combine rollout with your package flights if you want to gradually distribute an update to one of your flight groups.</span></span>
+
+<span id="hide" />
+### <a name="hiding-the-app-in-the-store-and-using-promotional-codes"></a><span data-ttu-id="0ff76-123">アプリをストアに表示しないで、プロモーション コードを使用する</span><span class="sxs-lookup"><span data-stu-id="0ff76-123">Hiding the app in the Store and using promotional codes</span></span>
+
+<span data-ttu-id="0ff76-124">最初は申請を**一般公開せずに**、アプリを特定のテスターのグループのみに限定して配布する場合は、申請するその他のアプリと同じ[アプリの申請プロセス](app-submissions.md)を使用できます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-124">If you want to limit distribution of an app to only a certain group of testers, **without** first publishing a submission that's broadly available, you can use the same [app submission process](app-submissions.md) as any app you submit.</span></span> <span data-ttu-id="0ff76-125">特定のユーザーだけがアプリを無料で利用できるようにして、その他のユーザーはアプリを表示したりダウンロードしたりできないようにするには、次の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="0ff76-125">To allow only certain people to get the app free of charge, and prevent other customers from seeing its listing or downloading it, do the following:</span></span>
+
+-   <span data-ttu-id="0ff76-126">申請の **[価格と使用可能状況]** ページで、[[表示]](set-app-pricing-and-availability.md#visibility) セクションの **[この製品をストアで提供しますが、検索はできないようにします]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="0ff76-126">In your submission, in the [Visibility](set-app-pricing-and-availability.md#visibility) section of the the **Pricing and availability** page, select **Make this product available but not discoverable in the Store**.</span></span>  <span data-ttu-id="0ff76-127">**[購入の停止: 直接リンクを知っているユーザーは製品のストア登録情報を表示できます。ただし、製品をダウンロードできるのは、以前にその製品を所有していたか、またはプロモーション コードを持っている場合で、かつ Windows 10 デバイスを使用している場合のみです。]** のオプションを選択します。</span><span class="sxs-lookup"><span data-stu-id="0ff76-127">Choose the option for **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 device**.</span></span> <span data-ttu-id="0ff76-128">これにより、ユーザーは検索や参照によってストア内でアプリを見つけることができなくなります。</span><span class="sxs-lookup"><span data-stu-id="0ff76-128">This prevents anyone from finding your app in the Store via searching or browsing.</span></span>
+-   <span data-ttu-id="0ff76-129">アプリが認定に合格したら、アプリの[プロモーション コードを生成](generate-promotional-codes.md)し、テスターに配布します。</span><span class="sxs-lookup"><span data-stu-id="0ff76-129">After the app passes certification, [generate promotional codes](generate-promotional-codes.md) for the app and distribute them to your testers.</span></span> <span data-ttu-id="0ff76-130">1 つのアプリに対して、6 か月間に最大 1,600 回分の引き換えを行うコードを生成できます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-130">You can generate codes that allow up to 1600 redemptions for a single app in a six month period.</span></span> <span data-ttu-id="0ff76-131">これらのコードは、アプリの登録情報への直接リンクをテスターに提供します。申請の作成時にアプリに価格を設定していた場合でも、テスターは無料でアプリをダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-131">These codes will give your testers a direct link to the app’s listing, and will allow them to download it for free, even if you have set a price for it when you created your submission.</span></span>
+
+<span data-ttu-id="0ff76-132">プロモーション コードのリンクをテスターに配布した後、テスターはアプリを試用して、アプリの改善に役立つフィードバックを提供することができます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-132">After you distribute the promotional code links to your testers, they can try it out and give you feedback to help you improve the app.</span></span> <span data-ttu-id="0ff76-133">一般ユーザーにアプリを提供する準備が整ったら、新しい申請を作成し、**[表示]** オプションを **[この製品をストアで提供し、検索可能にします]** に変更します (他に必要な変更があれば実行します)。</span><span class="sxs-lookup"><span data-stu-id="0ff76-133">Then, when you’re ready to make your app available to the public, create a new submission and change the **Visibility** option to **Make this app available and discoverable in the Store** (along with any other changes you'd like).</span></span>
+
+<span data-ttu-id="0ff76-134">このとき、次の点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="0ff76-134">Here are some things to keep in mind when doing this:</span></span>
+
+-   <span data-ttu-id="0ff76-135">いつでも新しい申請を作成して、アプリの更新バージョンをテスターに提供できます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-135">You can give your testers an updated version of your app at any time by creating a new submission.</span></span> <span data-ttu-id="0ff76-136">**[表示]** オプションが **[この製品をストアで提供しますが、検索はできないようにします]** に設定され、**[購入の停止]** オプションが選択されていることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="0ff76-136">Make sure to keep the **Visibility** option set to **Make this product available but not discoverable in the Store** with the **Stop acquisition** option.</span></span> <span data-ttu-id="0ff76-137">認定プロセスの完了後、テスターは更新プログラムを入手できますが、他のユーザーが入手することはできません。</span><span class="sxs-lookup"><span data-stu-id="0ff76-137">The testers will get the update after it goes through the certification process, but no one else will be able to get it.</span></span>
+-   <span data-ttu-id="0ff76-138">アプリをインストールできる Windows 10 デバイスをテスターが持っている必要があります。</span><span class="sxs-lookup"><span data-stu-id="0ff76-138">Your testers must have a Windows 10 device on which they can install the app.</span></span> <span data-ttu-id="0ff76-139">(ただし、このテスト方法を使用するために Windows 10 パッケージをアプリに含める必要はありません。)</span><span class="sxs-lookup"><span data-stu-id="0ff76-139">(However, your app doesn't have to include Windows 10 packages in order to use this method of testing.)</span></span>
+-   <span data-ttu-id="0ff76-140">[プロモーション コード](generate-promotional-codes.md)はいつでも追加作成して配布できます (1 つのアプリに対して 6 か月ごとに 1,600 回分の引き換えを行うコードを生成できます)。</span><span class="sxs-lookup"><span data-stu-id="0ff76-140">You can create more [promotional codes](generate-promotional-codes.md) to distribute at any time (up to 1600 redemptions per app every six months).</span></span>
+-   <span data-ttu-id="0ff76-141">テスターがアプリをダウンロードした後で、アプリへのアクセスを取り消すことはできません。</span><span class="sxs-lookup"><span data-stu-id="0ff76-141">You can’t revoke access to the app after your testers download it.</span></span> <span data-ttu-id="0ff76-142">アプリをダウンロードした後、テスターは継続してアプリを使うことができ、その後公開したすべての更新プログラムを入手できます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-142">Once they have downloaded the app, they can continue to use it, and they’ll get any updates that you subsequently publish.</span></span>
+-   <span data-ttu-id="0ff76-143">テスターからフィードバックを収集する方法を決定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0ff76-143">You will need to determine how you’d like to collect feedback from your testers.</span></span> <span data-ttu-id="0ff76-144">ベータ アプリには、テスターがメールまたは[フィードバック Hub](../monetize/launch-feedback-hub-from-your-app.md) から簡単にフィードバックを提供できるリンクを用意することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="0ff76-144">Consider providing a link in the beta app that lets your testers easily give feedback via email or via [Feedback Hub](../monetize/launch-feedback-hub-from-your-app.md).</span></span>
+-   <span data-ttu-id="0ff76-145">使用状況レポートや安定性レポート、テスターが残した評価やレビューなど、アプリの[分析レポート](analytics.md)を確認できます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-145">You can review [analytic reports](analytics.md) for your app, including usage and health reports and any ratings or reviews left by your testers.</span></span>
+-   <span data-ttu-id="0ff76-146">テスターにアプリを配布するときには、アドオンを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-146">You can include add-ons when you distribute your app to testers.</span></span> <span data-ttu-id="0ff76-147">通常、テスターには購入を求めないため、テストの実行中はアドオンの価格を **[無料]** に設定することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="0ff76-147">Since you probably don’t want to charge them, make sure to set the price for the add-ons to **Free** while you’re doing your testing.</span></span> <span data-ttu-id="0ff76-148">他のユーザーがアプリを利用できるようにするときに、アドオンごとに新しい申請を作成して価格を変更できます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-148">Then, when you make the app available to other customers, you can create a new submission for each add-on to change its price.</span></span>
 
 
-どれほど慎重にアプリをテストしても、他のユーザーに使用してもらうという現実世界のテストには及びません。 Windows デベロッパー センター ダッシュボードには特定のユーザーだけがアプリを利用できるようにするオプションがあり、これによって一般ユーザーにアプリを提供する前にテスターがアプリを試すことができます。 テスターは、開発者が見落とした問題を発見する場合があります。スペル ミスや混乱を招くアプリの流れだけでなく、アプリのクラッシュの原因となるエラーも発見します。 その後、アプリを一般にリリースする前にそれらの問題を修正する機会が得られ、最終的な製品の完成度が高まります。
+## <a name="other-methods-for-distributing-apps-to-testers"></a><span data-ttu-id="0ff76-149">テスターにアプリを配布するその他の方法</span><span class="sxs-lookup"><span data-stu-id="0ff76-149">Other methods for distributing apps to testers</span></span>
 
-アプリをテスターのみに限定して配布するための方法をいくつか用意しています。別の名前やパッケージ ID を使って別バージョンのアプリを作る必要はありません。 (もちろん、必要であれば、テスト用に別のアプリを作ることもできます。 作る場合、そのアプリには、最終的なパブリック アプリの名前とは違う名前を付ける必要があります。)
+<span data-ttu-id="0ff76-150">アプリを対象のユーザー グループのみに限定して配布する方法もあります。そのためには、アプリの申請時に **[価格と使用可能状況]** ページの [[表示]](set-app-pricing-and-availability.md#visibility) セクションにある追加オプションを使います。</span><span class="sxs-lookup"><span data-stu-id="0ff76-150">You can also limit distribution of your app only to a targeted group of people by using the additional options in the [Visibility](set-app-pricing-and-availability.md#visibility) section of the **Pricing and availability** page of an app submission.</span></span> <span data-ttu-id="0ff76-151">ただし、これらのオプションは、ユーザーが使っている OS バージョンによっては機能しないことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="0ff76-151">Keep in mind that these options don't work for customers on all OS versions.</span></span> <span data-ttu-id="0ff76-152">つまり、これらはいずれも Windows 8 と Windows 8.1 のユーザーに対しては機能しません。</span><span class="sxs-lookup"><span data-stu-id="0ff76-152">Specifically, none of them work for customers on Windows 8 or Windows 8.1.</span></span>
 
-アプリをテスターに配布する方法は、アプリの対象オペレーティング システムによって異なります。 ここでは、Windows 10 で機能するオプションと Windows Phone 8.1 以前で機能するオプションについて説明します。
+### <a name="targeted-distribution-to-customers-with-a-link-to-your-apps-listing"></a><span data-ttu-id="0ff76-153">アプリの登録情報へのリンクを持つユーザーへのターゲット配布</span><span class="sxs-lookup"><span data-stu-id="0ff76-153">Targeted distribution to customers with a link to your app's listing</span></span>
 
-## <a name="making-your-app-available-to-testers-on-windows-10-devices"></a>Windows 10 デバイスでテスターがアプリを入手できるようにする
+<span data-ttu-id="0ff76-154">このオプションでは、アプリ掲載ページへの直接リンクを持つユーザーのみがアプリをダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-154">With this option, only people with a direct link to your app's listing can download it.</span></span> <span data-ttu-id="0ff76-155">この **URL** は、ダッシュボードの[アプリ ID](view-app-identity-details.md)ページで確認できます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-155">You can find this **URL** on the [App identity](view-app-identity-details.md) page in the dashboard.</span></span> <span data-ttu-id="0ff76-156">ストアの検索や参照によってアプリを見つけることはできませんが、リンクを持っているユーザーであれば、Windows Phone 8.1 以前または Windows 10 を実行しているデバイスでアプリをダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-156">No customers will be able to find the app by searching or browsing the Store, but anyone with the link can download it on a device running Windows Phone 8.1 or earlier or on Windows 10.</span></span> 
 
-Windows 10 デバイスでアプリを特定のユーザーのみに限定して配布するための 2 つのオプションを用意しています。
+> [!NOTE]
+> <span data-ttu-id="0ff76-157">テスターが無料でアプリをダウンロードできるようにするためには、アプリの価格を **[無料]** に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0ff76-157">In order for your testers to download the app at no cost, you must set its price to **Free**.</span></span>
 
-### <a name="package-flights"></a>パッケージ フライト
+<span data-ttu-id="0ff76-158">このオプションを使うには、**[価格と使用可能状況]** ページの [[表示]](set-app-pricing-and-availability.md#visibility) セクションで、**[この製品をストアで提供しますが、検索はできないようにします]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="0ff76-158">To use this option, select **Make this product available but not discoverable in the Store** in the [Visibility](set-app-pricing-and-availability.md#visibility) section of the the **Pricing and availability** page.</span></span> <span data-ttu-id="0ff76-159">次に、**[直接リンクのみ: 製品の説明ページへの直接リンクを知っているユーザーのみが、製品をダウンロードできます (ただし、Windows 8.x ではダウンロードできません)。]** というオプションを選択します。</span><span class="sxs-lookup"><span data-stu-id="0ff76-159">Then choose the option for **Direct link only: Any customer with a direct link to the product’s listing can download it, except on Windows 8.x.**.</span></span>  
 
-アプリのバージョンを既に公開している場合は、パッケージ フライトを作成して、異なるパッケージのセットを指定したユーザーに配布できます。 同じアプリについて複数のパッケージ フライトを作成し、別のグループのユーザーと共に使用することができます。 これは、さまざまなパッケージを同時に試す場合に最適な方法であり、パッケージをすべてのユーザーに配布する準備が整った場合にフライトのパッケージをフライト以外の申請に切り替えることができます。
 
-詳しくは、「[パッケージ フライト](package-flights.md)」をご覧ください。
+### <a name="targeted-distribution-to-customers-with-specified-email-addresses"></a><span data-ttu-id="0ff76-160">指定したメール アドレスを持つユーザーへのターゲット配布</span><span class="sxs-lookup"><span data-stu-id="0ff76-160">Targeted distribution to customers with specified email addresses</span></span>
 
-> **注:** 特定のユーザーのグループを指定するのではなく、指定した割合の Windows 10 ユーザーをランダムに選択してパッケージを配布するには、「[段階的なパッケージのロールアウト](gradual-package-rollout.md)」を使用します。 更新をいずれかのフライト グループに段階的に配布する場合に、ロールアウトとパッケージ フライトを組み合わせることもできます。
+<span data-ttu-id="0ff76-161">**Windows Phone 8.1 以前**でテストする場合、このオプションを使ってアプリの配布を限定できます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-161">For testing **on Windows Phone 8.1 and earlier only**, this option provides a way to limit distribution of your app.</span></span> <span data-ttu-id="0ff76-162">ボックスに入力したメール アドレス (Microsoft アカウントに関連付けられているアドレス) を持つユーザーだけが、登録情報への直接リンクを使ってアプリをダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-162">Only the people whose email addresses (associated with their Microsoft accounts) that you enter in the box can download your app by using the direct link to its listing.</span></span>
 
-### <a name="hiding-the-app-in-the-store-and-using-promotional-codes"></a>アプリをストアに表示しないで、プロモーション コードを使用する
-
-最初は申請を**一般公開せずに**、アプリを特定のテスターのグループのみに限定して配布する場合は、申請するその他のアプリと同じ[アプリの申請プロセス](app-submissions.md)を使用できます。 特定のユーザーだけがアプリを無料で利用できるようにして、その他のユーザーはアプリを表示したりダウンロードしたりできないようにするには、次の手順に従います。
-
--   申請では **[価格と使用可能状況]** ページの [[配布と表示]](set-app-pricing-and-availability.md#distribution-and-visibility) セクションで、**[Hide this app and prevent acquisition. Customers with a direct link can see the app's listing, but can only download the app if they have a promotional code and are using a Windows 10 device]** を選びます。 これにより、ユーザーは検索や参照によってストア内でアプリを見つけることができなくなります。
--   アプリが認定に合格した後で、アプリの [プロモーション コードを生成](generate-promotional-codes.md) して、テスターに配布します。 6 か月間に 1 つのアプリに対して最大 250 のプロモーション コードを生成できます。 これらのコードにより、テスターにはアプリの内容への直接リンクが提供されます。また、申請を作成した際にアプリに価格を設定していた場合でも、テスターは無料でアプリをダウンロードできます。
-
-プロモーション コードのリンクをテスターに配布した後で、テスターはアプリを無料でダウンロードして試し、アプリの改善に役立つフィードバックを提供できるようになります。 一般ユーザーにアプリを提供する準備が整ったら、新しい申請を作成して **[配布と表示]** オプションを **[このアプリをストアで提供する]** に変更します (他に必要な変更があれば実行します)。
-
-このとき、次の点に注意してください。
-
--   いつでも新しい申請を作成してアプリの更新バージョンをテスターに提供できます。  **[配布と表示]** オプションが、**[Hide this app and prevent acquisition. Customers with a direct link can see the app's listing, but can only download the app if they have a promotional code and are using a Windows 10 device]** に設定されていることを確認します。 認定プロセスが完了した後にテスターは更新プログラムを入手できますが、他の人は入手できません。
--   アプリをインストールできる Windows 10 デバイスをテスターが持っている必要があります。 (ただし、このテスト方法を使用するために Windows 10 パッケージをアプリに含める必要はありません。)
--   [プロモーション コード](generate-promotional-codes.md)はいつでも追加作成して配布できます (6 か月ごとに 500 のコードまで)。
--   テスターがアプリをダウンロードした後で、アプリへのアクセスを取り消すことはできません。 アプリをダウンロードした後、テスターは継続してアプリを使うことができ、その後公開したすべての更新プログラムを入手できます。
--   テスターからフィードバックを収集する方法を決定する必要があります。 テスターが簡単にコメントを送れるように、ベータ アプリでメールまたは Web サイトのリンクを提供することを検討してください。
--   テスターが残した評価やレビューを含め、アプリの [分析レポート](analytics.md) を確認できます。
--   テスターにアプリを配布するときには、アドオンを含めることができます。 アドオンについて課金しない場合は、テストの間、アドオンの価格を無料に設定します。 他のユーザーがアプリを利用できるようにするときに、アドオンごとに新しい申請を作成して価格を変更できます。
-
-## <a name="other-methods-for-distributing-apps-to-testers"></a>テスターにアプリを配布するその他の方法
-
-アプリの申請の **[価格と使用可能状況]** ページの [[配布と表示]](set-app-pricing-and-availability.md#distribution-and-visibility) セクションにある他のオプションを使うことで、アプリを対象のユーザー グループのみに限定して配布することもできます。 これらのオプションは、ユーザーが使っているオペレーティング システムによっては機能しない場合があります。 Windows 10 デバイスでアプリをテストするときは、上記のオプションを使うことをお勧めします。
-
-上記のどちらの方法を選んだ場合でも、いつでも更新プログラムを申請することができ、テスト期間を終了してアプリを一般公開する準備ができたときには [配布と表示](set-app-pricing-and-availability.md#distribution-and-visibility) オプションを **[このアプリをストアで提供する]** に設定することができます。 アプリの名前を変更して完全に別のアプリを作成する必要はありません (意図的にそのようにする場合は除きます)。
-
-### <a name="targeted-distribution-to-customers-with-a-link-to-your-apps-listing"></a>アプリ掲載ページへのリンクを持つユーザーへのターゲット配布
-
-このオプションでは、アプリ掲載ページへの直接リンクを持つユーザーのみがアプリをダウンロードできます。 この **URL** は、ダッシュボードの[アプリ ID](view-app-identity-details.md)ページで確認できます。 ユーザーはストアの検索や参照によってアプリを見つけることはできませんが、リンクを持つユーザーはダウンロードできます。 (テスターが無料でダウンロードするためには、アプリの価格を**無料**にする必要があることに注意してください。)
-
-このオプションを使用するには、アプリを申請するときに、**[価格と使用可能状況]** ページの [配布と表示](set-app-pricing-and-availability.md#distribution-and-visibility) セクションで **[このアプリをストア内で非表示にします。アプリ掲載ページへの直接リンクを持っているユーザーに限り、引き続きダウンロードが可能です (ただし、Windows 8 および Windows 8.1 ではダウンロードできません)。]** を選びます。
-
-> **重要:** Windows 8 または Windows 8.1 のテスターに対しては、このオプションは機能しません。
-
-### <a name="targeted-distribution-to-customers-with-specified-email-addresses"></a>指定したメール アドレスを持つユーザーへのターゲット配布
-
-**Windows Phone 8.1 以前**でテストする場合、このオプションを使ってアプリの配布を限定できます。 ボックスに入力したメール アドレス (Microsoft アカウントに関連付けられているアドレス) を持つユーザーのみが、アプリ掲載ページへの直接リンクを使ってアプリをダウンロードできます。
-
-> **重要:** Windows Phone 8.1 以前を実行しているデバイスでアプリをダウンロードできるのは、入力したメール アドレスを持つユーザーのみです。
+> [!IMPORTANT]
+> <span data-ttu-id="0ff76-163">入力したメール アドレスを持つユーザーがアプリをダウンロードできるのは、デバイスで Windows Phone 8.1 以前が実行されている場合だけです。</span><span class="sxs-lookup"><span data-stu-id="0ff76-163">People with the email addresses you enter will only be able to download the app on devices running Windows Phone 8.1 or earlier.</span></span>
  
-アプリの直接リンクは、ダッシュボードの[アプリ ID](view-app-identity-details.md) ページで確認できます。 ユーザーはストアの検索や参照によってアプリを見つけることはできません。ユーザーがアプリ掲載ページへのリンクを持っている場合でも、アプリを申請したときに入力したメール アドレスと関連付けられた Microsoft アカウントを使っていない限りアプリをダウンロードできません。
+<span data-ttu-id="0ff76-164">アプリの直接リンクは、ダッシュボードの[アプリ ID](view-app-identity-details.md) ページで確認できます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-164">You can find your app's direct link on the [App identity](view-app-identity-details.md) page in the dashboard.</span></span> <span data-ttu-id="0ff76-165">ユーザーは、ストアの検索や参照によってアプリを見つけることはできません。ユーザーがアプリの登録情報へのリンクを持っている場合でも、アプリの申請時に入力したメール アドレスと関連付けられている Microsoft アカウントを使っていない限り、アプリをダウンロードすることはできません。</span><span class="sxs-lookup"><span data-stu-id="0ff76-165">No customers will be able to find the app by searching or browsing the Store, and even if they have the link to your app's listing, they won't be able to download the app unless they are using a Microsoft account associated with an email address that you provided when submitting this app.</span></span>
 
-> **注:** このオプションを採用する場合、前述のように[プロモーション コードを生成](generate-promotional-codes.md)して、Windows 10 デバイスのテスターがアプリを利用できるようにすることもできます。 メールを入力していない場合でも、アプリのプロモーション コードのいずれかを持っているユーザーは、Windows 10 デバイスでアプリをダウンロードできます。
+> [!NOTE]
+<span data-ttu-id="0ff76-166">このオプションを使う場合でも、既に説明したように[プロモーション コードを生成](generate-promotional-codes.md)して、Windows 10 デバイスのテスターがアプリを利用できるようにすることが可能です。</span><span class="sxs-lookup"><span data-stu-id="0ff76-166">If you use this option, you can still make the app available for testers on Windows 10 devices by [generating promotional codes](generate-promotional-codes.md) as described above.</span></span> <span data-ttu-id="0ff76-167">アプリのプロモーション コードを持っているユーザーは、ここでメール アドレスが入力されていなくても、Windows 10 デバイスでアプリをダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-167">Anyone with one of your app's promotional codes can download it on a Windows 10 device, even if you didn't enter their email here.</span></span>
 
-このオプションを使用するには、アプリを申請するときに、**[価格と使用可能状況]** ページの [分布と認知度](set-app-pricing-and-availability.md#distribution-and-visibility) セクションで **[このアプリを非表示にして、以下に指定したユーザーだけが入手できるようにします。Windows Phone 8.x デバイスでは、そのユーザーがアプリをダウンロードできます。Windows 10 デバイスでこのアプリをダウンロードするには、プロモーション コードを使用できます]** を選びます。
+<span data-ttu-id="0ff76-168">このオプションを使うには、**[価格と使用可能状況]** ページの [[表示]](set-app-pricing-and-availability.md#visibility) セクションで、**[この製品をストアで提供しますが、検索はできないようにします]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="0ff76-168">To use this option, select **Make this product available but not discoverable in the Store** in the [Visibility](set-app-pricing-and-availability.md#visibility) section of the the **Pricing and availability** page.</span></span> <span data-ttu-id="0ff76-169">次に、**[Windows Phone 8.x を使用する個人のみ: 以下に指定したユーザーのみが、Windows Phone 8.x デバイスでこの製品をダウンロードできます。直接リンクを知っているユーザーは製品の説明を表示できます。また、プロモーション コードを使用すると、Windows 10 デバイスで製品をダウンロードできる場合があります。]** というオプションを選択します。</span><span class="sxs-lookup"><span data-stu-id="0ff76-169">Then choose the option for **Individuals on Windows Phone 8.x only: Only people you specify below can download this product on a Windows Phone 8.x device. Anyone with a direct link and a promotional code may download the product on a Windows 10 device.**</span></span> 
 
-このオプションを選ぶ場合は、次の点に注意してください。
+<span data-ttu-id="0ff76-170">このオプションを選ぶ場合は、次の点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="0ff76-170">If you choose this option, keep the following things in mind:</span></span>
 
--   このオプションは、以前 [配布と表示](set-app-pricing-and-availability.md#distribution-and-visibility) オプションを **[このアプリをストアで提供する]** に設定して発行したことがない場合にのみ選ぶことができます。
--   テスターが無料でダウンロードするためには、アプリの価格を**無料**にする必要があります。
--   テスターは、Windows Phone 8.1 以前のデバイスでのみアプリをダウンロードできます。 テスターがアプリを使うには製品版の Windows Phone デバイスが必要ですが、デバイスがロック解除または登録されている必要はありません。
--   テスターは、Windows ストアにアクセスしてアプリをダウンロードするために Microsoft アカウントが必要です。 テスターをリストに追加するには、各テスターの Microsoft アカウントに関連付けられたメール アドレスを知っている必要があります。 テスターが新しい Microsoft アカウントを作成するには、[Microsoft アカウント設定](http://go.microsoft.com/fwlink/p/?LinkId=618945) のためのページにアクセスします。
--   テキスト ボックスには、最大 10,000 のメール アドレスを入力できます。
--   メール アドレスは、セミコロンで区切る必要があります。
--   後で他のアドレスを追加できますが、そのためには新しい申請を作成する必要があります。
--   テスターがアプリをダウンロードした後で、アプリへのアクセスを取り消すことはできません。 アプリをダウンロードした後、テスターは継続してアプリを使うことができ、申請されたすべての更新プログラムを入手できます。
-
+-   <span data-ttu-id="0ff76-171">このオプションは、これまでに [[表示]](set-app-pricing-and-availability.md#visibility) オプションを **[このアプリをストアで提供する]** に設定してアプリを公開したことがない場合にのみ選択できます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-171">This option can only be selected if you have never previously published the app with the [Visibility](set-app-pricing-and-availability.md#visibility) option set to **Make this app available in the Store**.</span></span>
+-   <span data-ttu-id="0ff76-172">テスターが無料でダウンロードするためには、アプリの価格を**無料**にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="0ff76-172">Your app must be priced **Free** in order for your testers to download it at no cost.</span></span>
+-   <span data-ttu-id="0ff76-173">テスターは、Windows Phone 8.1 以前のデバイスでのみアプリをダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-173">Your testers can only download the app on Windows Phone 8.1 and earlier.</span></span> <span data-ttu-id="0ff76-174">テスターがアプリを使うには製品版の Windows Phone デバイスが必要ですが、デバイスがロック解除または登録されている必要はありません。</span><span class="sxs-lookup"><span data-stu-id="0ff76-174">Testers must have a retail Windows Phone device in order to use the app, but the device doesn’t need to be unlocked or registered.</span></span>
+-   <span data-ttu-id="0ff76-175">テスターは、Windows ストアにアクセスしてアプリをダウンロードするために Microsoft アカウントが必要です。</span><span class="sxs-lookup"><span data-stu-id="0ff76-175">Your testers will need to have a Microsoft account in order to access the Windows Store and download your app.</span></span> <span data-ttu-id="0ff76-176">テスターをリストに追加するには、各テスターの Microsoft アカウントに関連付けられたメール アドレスを知っている必要があります。</span><span class="sxs-lookup"><span data-stu-id="0ff76-176">You’ll need to know the email address associated with each tester’s Microsoft account in order to add them to your list.</span></span> <span data-ttu-id="0ff76-177">テスターが新しい Microsoft アカウントを作成するには、[Microsoft アカウント設定](http://go.microsoft.com/fwlink/p/?LinkId=618945) のためのページにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="0ff76-177">To create a new Microsoft account, testers can go to [Microsoft account setup](http://go.microsoft.com/fwlink/p/?LinkId=618945).</span></span>
+-   <span data-ttu-id="0ff76-178">テキスト ボックスには、最大 10,000 のメール アドレスを入力できます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-178">You can provide up to 10,000 email addresses in the text box.</span></span>
+-   <span data-ttu-id="0ff76-179">メール アドレスは、セミコロンで区切る必要があります。</span><span class="sxs-lookup"><span data-stu-id="0ff76-179">Email addresses must be separated with semicolons.</span></span>
+-   <span data-ttu-id="0ff76-180">後で他のアドレスを追加できますが、そのためには新しい申請を作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0ff76-180">You can add additional addresses later, but will need to create a new submission to do so.</span></span>
+-   <span data-ttu-id="0ff76-181">テスターがアプリをダウンロードした後で、アプリへのアクセスを取り消すことはできません。</span><span class="sxs-lookup"><span data-stu-id="0ff76-181">You can’t revoke access to the app after your testers download it.</span></span> <span data-ttu-id="0ff76-182">アプリをダウンロードした後、テスターは継続してアプリを使うことができ、申請されたすべての更新プログラムを入手できます。</span><span class="sxs-lookup"><span data-stu-id="0ff76-182">Once they have downloaded the app, they can continue to use it, and they’ll get any updates you submit.</span></span>

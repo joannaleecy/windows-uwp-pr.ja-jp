@@ -1,150 +1,142 @@
 ---
 author: mcleanbyron
 Description: "Microsoft Store Services SDK が提供するライブラリとツールを利用すると、収益とユーザーの獲得を図る機能をアプリに追加できます。"
-title: Microsoft Store Services SDK
+title: "Microsoft Store Services SDK を使ってユーザーとの関係を深める"
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/05/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store Services SDK
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7a8dcb282ea3df16ee8a12247a07af27cbf65b3a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d573edb5b981c4be8ba28d93e3550fe44608f4f7
+ms.sourcegitcommit: de6bc8acec2cd5ebc36bb21b2ce1a9980c3e78b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/17/2017
 ---
+# <a name="engage-customers-with-the-microsoft-store-services-sdk"></a><span data-ttu-id="0be27-104">Microsoft Store Services SDK を使ってユーザーとの関係を深める</span><span class="sxs-lookup"><span data-stu-id="0be27-104">Engage customers with the Microsoft Store Services SDK</span></span>
 
-# <a name="microsoft-store-services-sdk"></a>Microsoft Store Services SDK
+<span data-ttu-id="0be27-105">Microsoft Store Services SDK が提供する機能を利用すると、ユニバーサル Windows プラットフォーム (UWP) アプリでユーザーとのエンゲージメントを行うことができます。たとえば、ターゲット指定されたデベロッパー センター通知をアプリに送信したり、A/B テストを行ったりできます。</span><span class="sxs-lookup"><span data-stu-id="0be27-105">The Microsoft Store Services SDK provides features that help you engage with customers in your Universal Windows Platform (UWP) apps, such as sending targeted Dev Center notifications to your apps and running A/B experiments in your apps.</span></span> <span data-ttu-id="0be27-106">この SDK は、Visual Studio 2015 とそれ以降のバージョンの Visual Studio 用の拡張です。</span><span class="sxs-lookup"><span data-stu-id="0be27-106">This SDK is an extension for Visual Studio 2015 and later versions of Visual Studio.</span></span>
 
-Microsoft Store Services SDK が提供する機能を利用すると、ユニバーサル Windows プラットフォーム (UWP) アプリで収益を獲得したり、ユーザーとのエンゲージメントを行ったりできます。たとえば、アプリで広告を表示したり、A/B テストを行ったりできます。 この SDK は、Visual Studio 2015 とそれ以降のバージョンの Visual Studio 用の拡張です。
+> [!NOTE]
+> <span data-ttu-id="0be27-107">UWP アプリで広告を表示するには、Microsoft Store Services SDK ではなく [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) を使います。</span><span class="sxs-lookup"><span data-stu-id="0be27-107">To display ads in your UWP apps, use the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) instead of the Microsoft Store Services SDK.</span></span> <span data-ttu-id="0be27-108">詳しくは、「[アプリでの広告の表示](display-ads-in-your-app.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="0be27-108">For more information, see [Display ads in your app](display-ads-in-your-app.md).</span></span>
 
-## <a name="scenarios-supported-by-the-sdk"></a>SDK によりサポートされるシナリオ
+## <a name="scenarios-supported-by-the-microsoft-store-services-sdk"></a><span data-ttu-id="0be27-109">Microsoft Store Services SDK によりサポートされるシナリオ</span><span class="sxs-lookup"><span data-stu-id="0be27-109">Scenarios supported by the Microsoft Store Services SDK</span></span>
 
-この SDK では現在、UWP アプリ用の次のシナリオがサポートされています。 今後、エンゲージメントと収益化に関する新しいシナリオがサポートされる予定です。 この SDK の API に関するリファレンス ドキュメントについては、「[Microsoft Store Services SDK API リファレンス](https://msdn.microsoft.com/library/windows/apps/mt691886.aspx)」をご覧ください。
+<span data-ttu-id="0be27-110">この Microsoft Store Services SDK では現在、UWP アプリ向けに次のシナリオがサポートされています。</span><span class="sxs-lookup"><span data-stu-id="0be27-110">The Microsoft Store Services SDK currently supports the following scenarios for UWP apps.</span></span> <span data-ttu-id="0be27-111">API リファレンス ドキュメントについては、「[Microsoft Store Services SDK API リファレンス](https://msdn.microsoft.com/library/windows/apps/mt691886.aspx)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="0be27-111">For API reference documentation, see [Microsoft Store Services SDK API reference](https://msdn.microsoft.com/library/windows/apps/mt691886.aspx).</span></span>
 
-|  シナリオ  |  説明   |
+|  <span data-ttu-id="0be27-112">シナリオ</span><span class="sxs-lookup"><span data-stu-id="0be27-112">Scenario</span></span>  |  <span data-ttu-id="0be27-113">説明</span><span class="sxs-lookup"><span data-stu-id="0be27-113">Description</span></span>   |
 |------------|----------------|
-|  [UWP アプリの A/B テストの実行](run-app-experiments-with-a-b-testing.md)    |  ユニバーサル Windows プラットフォーム (UWP) アプリで A/B テストを実施して、すべてのユーザー向けに機能を公開する前に、一部のユーザーに対して機能の有効性を測定することができます。 デベロッパー センター ダッシュボードで実験を定義したら、アプリで [StoreServicesExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.aspx) クラスを使用して実験のバリエーションを取得します。次に、そのデータを使用して、テストする機能の動作を変更し、[LogForVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation.aspx) メソッドを使って、デベロッパー センターにビュー イベントとコンバージョン イベントを送信します。 最後に、ダッシュボードで結果を表示し、実験を管理します。  |
-|  [UWP アプリからのフィードバック Hub の起動](launch-feedback-hub-from-your-app.md)    |  UWP アプリで [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) クラスを使用し、Windows 10 ユーザーをフィードバック Hub に誘導して、ユーザーが問題、提案、賛成票を送信できるようにします。 次に、デベロッパー センター ダッシュボードの[フィードバック レポート](../publish/feedback-report.md)でこのフィードバックを管理します。 |
-|  [デベロッパー センターのプッシュ通知を受信するように UWP アプリを設定する](configure-your-app-to-receive-dev-center-notifications.md)    |  Windows デベロッパー センター ダッシュボードを使用してユーザーに送信するターゲット プッシュ通知を受信するアプリを、UWP アプリの [StoreServicesEngagementManager](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.aspx) クラスを使用して登録します。  |
-|   [UWP アプリで、デベロッパー センターの利用状況レポート用のカスタム イベントをログに記録する](log-custom-events-for-dev-center.md)   |  UWP アプリで [StoreServicesCustomEventLogger](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) クラスを使用して、デベロッパー センターでアプリに関連するカスタム イベントをログに記録します。 次にデベロッパー センター ダッシュボードの[利用状況レポート](https://msdn.microsoft.com/windows/uwp/publish/usage-report)の**カスタム イベント**のセクションで、カスタム イベントの合計回数を確認します。  |
-|  [UWP アプリでの広告の表示](display-ads-in-your-app.md)    |  UWP アプリで [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) または [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) コントロールを使用して、バナー広告またはスポット広告を表示し、収益を向上します。<br/><br/>**注**&nbsp;&nbsp; Microsoft Store Services SDK は Windows 10 の UWP アプリのみをサポートします。 Windows 8.1 および Windows Phone 8.x アプリで広告を表示するには、[Windows および Windows Phone 8.x 用の Microsoft Advertising SDK](http://aka.ms/store-8-sdk) を使用します。  |
+|  [<span data-ttu-id="0be27-114">UWP アプリの A/B テストの実行</span><span class="sxs-lookup"><span data-stu-id="0be27-114">Run experiments in your UWP app with A/B testing</span></span>](run-app-experiments-with-a-b-testing.md)    |  <span data-ttu-id="0be27-115">ユニバーサル Windows プラットフォーム (UWP) アプリで A/B テストを実施して、すべてのユーザー向けに機能を公開する前に、一部のユーザーに対して機能の有効性を測定することができます。</span><span class="sxs-lookup"><span data-stu-id="0be27-115">Run A/B tests in your Universal Windows Platform (UWP) app to measure the effectiveness of features on some customers before you release the features to everyone.</span></span> <span data-ttu-id="0be27-116">デベロッパー センター ダッシュボードで実験を定義したら、アプリで [StoreServicesExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.aspx) クラスを使用して実験のバリエーションを取得します。次に、そのデータを使用して、テストする機能の動作を変更し、[LogForVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation.aspx) メソッドを使って、デベロッパー センターにビュー イベントとコンバージョン イベントを送信します。</span><span class="sxs-lookup"><span data-stu-id="0be27-116">After you define an experiment in your Dev Center dashboard, use the [StoreServicesExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.aspx) class to get variations for your experiment in your app, use this data to modify the behavior of the feature you are testing, and then use the [LogForVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation.aspx) method to send view event and conversion events to Dev Center.</span></span> <span data-ttu-id="0be27-117">最後に、ダッシュボードで結果を表示し、実験を管理します。</span><span class="sxs-lookup"><span data-stu-id="0be27-117">Finally, use your dashboard to view the results and manage the experiment.</span></span>  |
+|  [<span data-ttu-id="0be27-118">UWP アプリからのフィードバック Hub の起動</span><span class="sxs-lookup"><span data-stu-id="0be27-118">Launch Feedback Hub from your UWP app</span></span>](launch-feedback-hub-from-your-app.md)    |  <span data-ttu-id="0be27-119">UWP アプリで [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) クラスを使用し、Windows 10 ユーザーをフィードバック Hub に誘導して、ユーザーが問題、提案、賛成票を送信できるようにします。</span><span class="sxs-lookup"><span data-stu-id="0be27-119">Use the [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) class in your UWP app to direct your Windows 10 customers to Feedback Hub, where they can submit problems, suggestions, and upvotes.</span></span> <span data-ttu-id="0be27-120">次に、デベロッパー センター ダッシュボードの[フィードバック レポート](../publish/feedback-report.md)でこのフィードバックを管理します。</span><span class="sxs-lookup"><span data-stu-id="0be27-120">Then, manage this feedback in the [Feedback report](../publish/feedback-report.md) in the Dev Center dashboard.</span></span> |
+|  [<span data-ttu-id="0be27-121">デベロッパー センターのプッシュ通知を受信するように UWP アプリを設定する</span><span class="sxs-lookup"><span data-stu-id="0be27-121">Configure your UWP app to receive Dev Center push notifications</span></span>](configure-your-app-to-receive-dev-center-notifications.md)    |  <span data-ttu-id="0be27-122">Windows デベロッパー センター ダッシュボードを使用してユーザーに送信するターゲット プッシュ通知を受信するアプリを、UWP アプリの [StoreServicesEngagementManager](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.aspx) クラスを使用して登録します。</span><span class="sxs-lookup"><span data-stu-id="0be27-122">Use the [StoreServicesEngagementManager](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.aspx) class in your UWP app to register your app to receive targeted push notifications that you send to your customers using the Windows Dev Center dashboard.</span></span>  |
+|   [<span data-ttu-id="0be27-123">UWP アプリで、デベロッパー センターの利用状況レポート用のカスタム イベントをログに記録する</span><span class="sxs-lookup"><span data-stu-id="0be27-123">Log custom events in your UWP app for the Usage report in Dev Center</span></span>](log-custom-events-for-dev-center.md)   |  <span data-ttu-id="0be27-124">UWP アプリで [StoreServicesCustomEventLogger](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) クラスを使用して、デベロッパー センターでアプリに関連するカスタム イベントをログに記録します。</span><span class="sxs-lookup"><span data-stu-id="0be27-124">Use the [StoreServicesCustomEventLogger](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) class in your UWP app to log custom events that are associated with your app in Dev Center.</span></span> <span data-ttu-id="0be27-125">次にデベロッパー センター ダッシュボードの[利用状況レポート](https://msdn.microsoft.com/windows/uwp/publish/usage-report)の**カスタム イベント**のセクションで、カスタム イベントの合計回数を確認します。</span><span class="sxs-lookup"><span data-stu-id="0be27-125">Then, review the total occurrences for your custom events in the **Custom events** section of the [Usage report](https://msdn.microsoft.com/windows/uwp/publish/usage-report) in the Dev Center dashboard.</span></span>  |
+
+> [!NOTE]
+> <span data-ttu-id="0be27-126">アプリで広告を表示するには、Microsoft Store Services SDK ではなく [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) を使います。</span><span class="sxs-lookup"><span data-stu-id="0be27-126">To display ads in your app, use the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) instead of the Microsoft Store Services SDK.</span></span> <span data-ttu-id="0be27-127">詳しくは、「[アプリでの広告の表示](display-ads-in-your-app.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="0be27-127">For more information, see [Display ads in your app](display-ads-in-your-app.md).</span></span>
 
 <span id="prerequisites" />
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a><span data-ttu-id="0be27-128">前提条件</span><span class="sxs-lookup"><span data-stu-id="0be27-128">Prerequisites</span></span>
 
-Microsoft Store Services SDK には以下が必要となります。
+<span data-ttu-id="0be27-129">Microsoft Store Services SDK には以下が必要となります。</span><span class="sxs-lookup"><span data-stu-id="0be27-129">The Microsoft Store Services SDK requires:</span></span>
 
-* Visual Studio 2015 またはそれ以降のバージョン。
-* Visual Studio と共にインストールされている Visual Studio Tools for Universal Windows Apps。
-
->**注**&nbsp;&nbsp;Visual Studio 2015 の Microsoft Store Services SDK をインストールするには、Visual Studio Tools for Universal Windows Apps のバージョン 1.1 以降がインストールされている必要があります。 Visual Studio Tools for Universal Windows Apps のこの更新について詳しくは、[リリース ノート](http://go.microsoft.com/fwlink/?LinkID=624516)をご覧ください。
+* <span data-ttu-id="0be27-130">Visual Studio 2015 またはそれ以降のバージョン。</span><span class="sxs-lookup"><span data-stu-id="0be27-130">Visual Studio 2015 or a later version.</span></span>
+* <span data-ttu-id="0be27-131">Visual Studio と共にインストールされている ユニバーサル Windows アプリ用 Visual Studio Tools</span><span class="sxs-lookup"><span data-stu-id="0be27-131">Visual Studio Tools for Universal Windows Apps installed with your version of Visual Studio.</span></span>
 
 <span id="install" />
-## <a name="install-the-sdk"></a>SDK のインストール
+## <a name="install-the-sdk"></a><span data-ttu-id="0be27-132">SDK のインストール</span><span class="sxs-lookup"><span data-stu-id="0be27-132">Install the SDK</span></span>
 
-開発用コンピューターで Visual Studio 2015 (またはそれ以降のリリース) を使用するために Microsoft Store Services SDK をインストールするには、2 つのオプションがあります。
+<span data-ttu-id="0be27-133">開発用コンピューターに Microsoft Store Services SDK をインストールするには、次の 2 つのオプションがあります。</span><span class="sxs-lookup"><span data-stu-id="0be27-133">There are two options for installing the Microsoft Store Services SDK on your development computer:</span></span>
 
-* **MSI インストーラー**&nbsp;&nbsp;[ここ](http://aka.ms/store-em-sdk)から利用できる MSI インストーラーを使って SDK をインストールできます。 このオプションを使用すると、開発用コンピュータの共有場所に SDK ライブラリがインストールされ、Visual Studio の任意の UWP プロジェクトで参照できるようになります。
-* **NuGet パッケージ**&nbsp;&nbsp;NuGet を使用して Visual Studio の特定の UWP プロジェクト用に SDK ライブラリをインストールできます。 このオプションでは、SDK ライブラリは NuGet パッケージがインストールされているプロジェクト用にのみインストールされます。
+* <span data-ttu-id="0be27-134">**MSI インストーラー**&nbsp;&nbsp;[ここ](http://aka.ms/store-em-sdk)から利用できる MSI インストーラーを使って SDK をインストールできます。</span><span class="sxs-lookup"><span data-stu-id="0be27-134">**MSI installer**&nbsp;&nbsp;You can install the SDK via the MSI installer available [here](http://aka.ms/store-em-sdk).</span></span> <span data-ttu-id="0be27-135">このオプションを使用すると、開発用コンピュータの共有場所に SDK ライブラリがインストールされ、Visual Studio の任意の UWP プロジェクトで参照できるようになります。</span><span class="sxs-lookup"><span data-stu-id="0be27-135">With this option, the SDK libraries are installed in a shared location on your development computer so that they can be referenced by any UWP project in Visual Studio.</span></span>
+* <span data-ttu-id="0be27-136">**NuGet パッケージ**&nbsp;&nbsp;NuGet を使って Visual Studio の特定の UWP プロジェクト用に SDK ライブラリをインストールできます。</span><span class="sxs-lookup"><span data-stu-id="0be27-136">**NuGet package**&nbsp;&nbsp;You can install the SDK libraries for a specific UWP project by using NuGet.</span></span> <span data-ttu-id="0be27-137">このオプションでは、SDK ライブラリは NuGet パッケージがインストールされているプロジェクト用にのみインストールされます。</span><span class="sxs-lookup"><span data-stu-id="0be27-137">With this option, the SDK libraries are installed only for the project in which you installed the NuGet package.</span></span>
 
-マイクロソフトでは定期的に、向上したパフォーマンスと新しい機能を備えた、新しいバージョンの Microsoft Store Services SDK をリリースしています。 開発用コンピューターに Microsoft Store Services SDK を使っている既存のプロジェクトがあり、そのプロジェクトで最新バージョンを使う場合は、最新バージョンの SDK をダウンロードしてインストールしてください。
-
->**注**&nbsp;&nbsp;Visual Studio 2015 の Microsoft Store Services SDK をインストールするには、Visual Studio Tools for Universal Windows Apps のバージョン 1.1 以降がインストールされている必要があります。 Visual Studio Tools for Universal Windows Apps のこの更新について詳しくは、[リリース ノート](http://go.microsoft.com/fwlink/?LinkID=624516)をご覧ください。
+<span data-ttu-id="0be27-138">マイクロソフトでは定期的に、向上したパフォーマンスと新しい機能を備えた、新しいバージョンの Microsoft Store Services SDK をリリースしています。</span><span class="sxs-lookup"><span data-stu-id="0be27-138">Microsoft periodically releases new versions of the Microsoft Store Services SDK with performance improvements and new features.</span></span> <span data-ttu-id="0be27-139">開発用コンピューターに SDK を使っている既存のプロジェクトがあり、そのプロジェクトで最新バージョンを使う場合は、最新バージョンの SDK をダウンロードしてインストールしてください。</span><span class="sxs-lookup"><span data-stu-id="0be27-139">If you have existing projects that use the SDK and you want to use the latest version, download and install the latest version of the SDK on your development computer.</span></span>
 
 <span id="install-msi" />
-### <a name="install-via-msi"></a>MSI によるインストール
+### <a name="install-via-msi"></a><span data-ttu-id="0be27-140">MSI によるインストール</span><span class="sxs-lookup"><span data-stu-id="0be27-140">Install via MSI</span></span>
 
-MSI インストーラーを使って Microsoft Store Services SDK をインストールするには
+<span data-ttu-id="0be27-141">MSI インストーラーを使って Microsoft Store Services SDK をインストールするには</span><span class="sxs-lookup"><span data-stu-id="0be27-141">To install the Microsoft Store Services SDK via the MSI installer:</span></span>
 
-1.  Visual Studio 2015 (またはそれ以降のリリース) のすべてのインスタンスを閉じます。 Microsoft Advertising SDK、Universal Ad Client SDK、Ad Mediator 拡張、または Microsoft Store Engagement and Monetization SDK の以前のバージョンを以前にインストールしていた場合は、これらの SDK のバージョンをアンインストールします。
+1.  <span data-ttu-id="0be27-142">Visual Studio のすべてのインスタンスを閉じます。</span><span class="sxs-lookup"><span data-stu-id="0be27-142">Close all instances of Visual Studio.</span></span>
 
-2.    **コマンド プロンプト** ウィンドウを開き、次のコマンドを実行して、Visual Studio と共にインストールされている可能性があり、コンピューター上のインストールされているプログラムの一覧には表示されない可能性がある、古い広告 SDK のバージョンをすべて削除します。
+2. <span data-ttu-id="0be27-143">Microsoft Store Engagement and Monetization SDK、Universal Ad Client SDK、または Ad Mediator 拡張機能を以前にインストールしていた場合は、それらの SDK をアンインストールします。</span><span class="sxs-lookup"><span data-stu-id="0be27-143">If you previously installed the Microsoft Store Engagement and Monetization SDK, Universal Ad Client SDK, or Ad Mediator extension, uninstall these SDKs now.</span></span> <span data-ttu-id="0be27-144">必要に応じて、**コマンド プロンプト** ウィンドウを開き、次のコマンドを実行して、Visual Studio と共にインストールされている可能性があり、コンピューター上のインストールされているプログラムの一覧には表示されない可能性がある、古い SDK のバージョンをすべて削除します。</span><span class="sxs-lookup"><span data-stu-id="0be27-144">Optionally, open a **Command Prompt** window and run these commands to clean out any older SDK versions that may have been installed with Visual Studio, but which may not appear in the list of installed programs on your computer:</span></span>
   ```
   MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
   MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
   MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
   ```
 
-3.  [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) をダウンロードしてインストールします。 インストールには数分かかることがあります。 確実に処理が完了するまでお待ちください。
+3.  <span data-ttu-id="0be27-145">[Microsoft Store Services SDK](http://aka.ms/store-em-sdk) をダウンロードしてインストールします。</span><span class="sxs-lookup"><span data-stu-id="0be27-145">Download and install the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk).</span></span> <span data-ttu-id="0be27-146">インストールには数分かかることがあります。</span><span class="sxs-lookup"><span data-stu-id="0be27-146">It may take a few minutes to install.</span></span> <span data-ttu-id="0be27-147">確実に処理が完了するまでお待ちください。</span><span class="sxs-lookup"><span data-stu-id="0be27-147">Be sure and wait until the process has finished.</span></span>
 
-4.  Visual Studio を再起動します。
+4.  <span data-ttu-id="0be27-148">Visual Studio を再起動します。</span><span class="sxs-lookup"><span data-stu-id="0be27-148">Restart Visual Studio.</span></span>
 
-5.  以前のバージョンの Microsoft Store Services SDK、Microsoft Advertising SDK、Universal Ad Client SDK、Microsoft Store Engagement and Monetization SDK のライブラリを参照する既存のプロジェクトがある場合には、Visual Studio でプロジェクトを開き、プロジェクトをクリーンしてリビルドすることをお勧めします (**ソリューション エクスプ ローラー**でプロジェクト ノードを右クリックして、**[クリーン]** を選択し、次にもう一度プロジェクト ノードを右クリックして、**[リビルド]** を選択します)。
+5.  <span data-ttu-id="0be27-149">以前のバージョンの Microsoft Store Services SDK、Microsoft Advertising SDK、Universal Ad Client SDK、Microsoft Store Engagement and Monetization SDK のライブラリを参照する既存のプロジェクトがある場合には、Visual Studio でプロジェクトを開き、プロジェクトをクリーンしてリビルドすることをお勧めします (**ソリューション エクスプ ローラー**でプロジェクト ノードを右クリックして、**[クリーン]** を選択し、次にもう一度プロジェクト ノードを右クリックして、**[リビルド]** を選択します)。</span><span class="sxs-lookup"><span data-stu-id="0be27-149">If you have an existing project that references libraries from any earlier version of the Microsoft Store Services SDK, Microsoft Advertising SDK, Universal Ad Client SDK, or Microsoft Store Engagement and Monetization SDK, we recommend that you open your project in Visual Studio and clean and rebuild your project (in **Solution Explorer**, right-click your project node and choose **Clean**, and then right-click your project node again and choose **Rebuild**).</span></span>
 
-  または、プロジェクトで初めて SDK を使う場合には、[適切な Microsoft Store Services SDK ライブラリの参照をプロジェクトに追加](#references)します。
+  <span data-ttu-id="0be27-150">または、プロジェクトで初めて SDK を使う場合には、[適切な Microsoft Store Services SDK ライブラリの参照をプロジェクトに追加](#references)します。</span><span class="sxs-lookup"><span data-stu-id="0be27-150">Otherwise, if you are using the SDK for the first time in your project, you are now ready to [add the appropriate Microsoft Store Services SDK library references to your project](#references).</span></span>
 
 <span id="install-nuget" />
-### <a name="install-via-nuget"></a>NuGet によるインストール
+### <a name="install-via-nuget"></a><span data-ttu-id="0be27-151">NuGet によるインストール</span><span class="sxs-lookup"><span data-stu-id="0be27-151">Install via NuGet</span></span>
 
-NuGet を使って Microsoft Store Services SDK ライブラリを特定のプロジェクトにインストールするには
+<span data-ttu-id="0be27-152">NuGet を使って Microsoft Store Services SDK ライブラリを特定のプロジェクトにインストールするには</span><span class="sxs-lookup"><span data-stu-id="0be27-152">To install the Microsoft Store Services SDK libraries for a specific project via NuGet:</span></span>
 
-1.  Visual Studio 2015 (またはそれ以降のリリース) のすべてのインスタンスを閉じます。 Microsoft Advertising SDK、Universal Ad Client SDK、Ad Mediator 拡張、または Microsoft Store Engagement and Monetization SDK の以前のバージョンを以前にインストールしていた場合は、これらの SDK のバージョンをアンインストールします。
+1.  <span data-ttu-id="0be27-153">Visual Studio のすべてのインスタンスを閉じます。</span><span class="sxs-lookup"><span data-stu-id="0be27-153">Close all instances of Visual Studio.</span></span>
 
-2.    **コマンド プロンプト** ウィンドウを開き、次のコマンドを実行して、Visual Studio と共にインストールされている可能性があり、コンピューター上のインストールされているプログラムの一覧には表示されない可能性がある、古い広告 SDK のバージョンをすべて削除します。
+2. <span data-ttu-id="0be27-154">Microsoft Store Engagement and Monetization SDK、Universal Ad Client SDK、または Ad Mediator 拡張機能を以前にインストールしていた場合は、それらの SDK をアンインストールします。</span><span class="sxs-lookup"><span data-stu-id="0be27-154">If you previously installed the Microsoft Store Engagement and Monetization SDK, Universal Ad Client SDK, or Ad Mediator extension, uninstall these SDKs now.</span></span> <span data-ttu-id="0be27-155">必要に応じて、**コマンド プロンプト** ウィンドウを開き、次のコマンドを実行して、Visual Studio と共にインストールされている可能性があり、コンピューター上のインストールされているプログラムの一覧には表示されない可能性がある、古い SDK のバージョンをすべて削除します。</span><span class="sxs-lookup"><span data-stu-id="0be27-155">Optionally, open a **Command Prompt** window and run these commands to clean out any older SDK versions that may have been installed with Visual Studio, but which may not appear in the list of installed programs on your computer:</span></span>
   ```
   MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
   MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
   MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
   ```
 
-3.  Visual Studio を起動し、Microsoft Store Services SDK ライブラリを使用するプロジェクトを開きます。
+3.  <span data-ttu-id="0be27-156">Visual Studio を起動し、Microsoft Store Services SDK ライブラリを使用するプロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="0be27-156">Start Visual Studio and open the project in which you want to use the Microsoft Store Services SDK libraries.</span></span>
+    > [!NOTE]
+    > <span data-ttu-id="0be27-157">プロジェクトに SDK の以前の MSI インストールからのライブラリの参照が既に含まれている場合は、これらの参照をプロジェクトから削除します。</span><span class="sxs-lookup"><span data-stu-id="0be27-157">If your project already includes library references from an earlier MSI installation of the SDK, remove these references from your project.</span></span> <span data-ttu-id="0be27-158">これらの参照は、参照先のライブラリが前の手順で削除されたため、その隣に警告アイコンが表示されます。</span><span class="sxs-lookup"><span data-stu-id="0be27-158">These references will have warning icons next to them because the libraries they reference were removed in the previous steps.</span></span>
 
-  >**注:**&nbsp;&nbsp;プロジェクトに SDK の以前の MSI インストールからのライブラリへの参照が既に含まれている場合は、これらの参照をプロジェクトから削除します。 これらの参照は、参照先のライブラリが前の手順で削除されたため、その隣に警告アイコンが表示されます。
+4. <span data-ttu-id="0be27-159">Visual Studio で、**[プロジェクト]** と **[NuGet パッケージの管理]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="0be27-159">In Visual Studio, click **Project** and **Manage NuGet Packages**.</span></span>
 
-4. Visual Studio で、**[プロジェクト]** と **[NuGet パッケージの管理]** をクリックします。
+5. <span data-ttu-id="0be27-160">検索ボックスに「**Microsoft.Services.Store.SDK**」と入力し、Microsoft.Services.Store.SDK パッケージをインストールします。</span><span class="sxs-lookup"><span data-stu-id="0be27-160">In the search box, type **Microsoft.Services.Store.SDK** and install the Microsoft.Services.Store.SDK package.</span></span> <span data-ttu-id="0be27-161">パッケージのインストールが完了したら、ソリューションを保存します。</span><span class="sxs-lookup"><span data-stu-id="0be27-161">When the package is done installing, save your solution.</span></span>
+    > [!NOTE]
+    > <span data-ttu-id="0be27-162">**[出力]** ウィンドウに、指定されたパスが長すぎることを示す*インストール パッケージ* エラーが表示されたとき、場合によっては、NuGet を構成して、既定の場所よりも短いパスで示される別の場所にパッケージを展開する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0be27-162">If the **Output** window reports an *Install-Package* error that indicates the specified path is too long, you may need to configure NuGet to extract packages to an alternate location with a shorter path than the default location.</span></span> <span data-ttu-id="0be27-163">これを行うには、```repositoryPath``` 値をコンピューターの nuget.config ファイルに追加し、それを短いフォルダーのパスに割り当て、そこに NuGet パッケージが展開されるようにします。</span><span class="sxs-lookup"><span data-stu-id="0be27-163">To do this, add the ```repositoryPath``` value to a nuget.config file on your computer and assign it to a short folder path where NuGet packages can be extracted.</span></span> <span data-ttu-id="0be27-164">詳しくは、NuGet ドキュメントの[この記事](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="0be27-164">For more information, see [this article](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) in the NuGet documentation.</span></span> <span data-ttu-id="0be27-165">または、Visual Studio プロジェクトを短いパスを持つ別のフォルダーに移動してみることができます。</span><span class="sxs-lookup"><span data-stu-id="0be27-165">Alternatively, you can try moving your Visual Studio project to an alternate folder with a shorter path.</span></span>
 
-5. 検索ボックスに **[Microsoft.Services.Store.SDK]** と入力し、Microsoft.Services.Store.SDK パッケージをインストールします。
+6. <span data-ttu-id="0be27-166">プロジェクトが含まれている Visual Studio ソリューションを閉じ、そのソリューションを再度開きます。</span><span class="sxs-lookup"><span data-stu-id="0be27-166">Close the Visual Studio solution that contains your project and then reopen the solution.</span></span>
 
-  >**注**&nbsp;&nbsp;**[出力]** ウィンドウに、指定されたパスが長すぎることを示す *[インストール パッケージ]* エラーが表示された場合、NuGet を構成して、既定の場所より短いパスの別の場所にパッケージを展開する必要がある場合があります。 これを行うには、```repositoryPath``` 値をコンピューターの nuget.config ファイルに追加し、それを短いフォルダーのパスに割り当て、そこに NuGet パッケージが展開されるようにします。 詳しくは、NuGet ドキュメントの[この記事](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)をご覧ください。 または、Visual Studio プロジェクトを短いパスを持つ別のフォルダーに移動してみることができます。
+7.  <span data-ttu-id="0be27-167">プロジェクトが NuGet によりインストールされた以前のバージョンの Microsoft Store Services SDK のライブラリを既に参照している場合で、プロジェクトを SDK の新しいリリースに更新する場合には、プロジェクトをクリーンしてリビルドすることをお勧めします (**ソリューション エクスプローラー**でプロジェクト ノードを右クリックして、**[クリーン]**を選択し、次にもう一度プロジェクト ノードを右クリックして、**[リビルド]** を選択します)。</span><span class="sxs-lookup"><span data-stu-id="0be27-167">If your project already references libraries from an earlier version of the Microsoft Store Services SDK that was installed via NuGet and you have updated your project to a newer release of the SDK, we recommend that you clean and rebuild your project (in **Solution Explorer**, right-click your project node and choose **Clean**, and then right-click your project node again and choose **Rebuild**).</span></span>
 
-6. プロジェクトを閉じ、次にそれを再度開きます。
-
-7.  プロジェクトが NuGet によりインストールされた以前のバージョンの Microsoft Store Services SDK のライブラリを既に参照している場合で、プロジェクトを SDK の新しいリリースに更新する場合には、プロジェクトをクリーンしてリビルドすることをお勧めします (**ソリューション エクスプローラー**でプロジェクト ノードを右クリックして、**[クリーン]**を選択し、次にもう一度プロジェクト ノードを右クリックして、**[リビルド]** を選択します)。
-
-  または、プロジェクトで初めて SDK を使う場合には、[適切な Microsoft Store Services SDK ライブラリの参照をプロジェクトに追加](#references)します。
+  <span data-ttu-id="0be27-168">または、プロジェクトで初めて SDK を使う場合には、[適切な Microsoft Store Services SDK ライブラリの参照をプロジェクトに追加](#references)します。</span><span class="sxs-lookup"><span data-stu-id="0be27-168">Otherwise, if you are using the SDK for the first time in your project, you are now ready to [add the appropriate Microsoft Store Services SDK library references to your project](#references).</span></span>
 
 <span id="references" />
-## <a name="add-sdk-library-references-to-your-project"></a>SDK ライブラリへの参照をプロジェクトを追加する
+## <a name="add-the-assembly-reference-to-your-project"></a><span data-ttu-id="0be27-169">アセンブリ参照をプロジェクトを追加する</span><span class="sxs-lookup"><span data-stu-id="0be27-169">Add the assembly reference to your project</span></span>
 
-MSI インストーラーまたは NuGet により Microsoft Store Services SDK をインストールしたら、次の手順に従って UWP プロジェクトで SDK ライブラリを参照します。
+<span data-ttu-id="0be27-170">+MSI インストーラーまたは NuGet により Microsoft Store Services SDK をインストールしたら、次の手順に従って UWP プロジェクトで SDK アセンブリを参照します。</span><span class="sxs-lookup"><span data-stu-id="0be27-170">After you install the Microsoft Store Services SDK via the MSI installer or NuGet, follow these instructions to reference the SDK assembly in your UWP project.</span></span>
 
-1. Visual Studio でプロジェクトを開きます。
+1. <span data-ttu-id="0be27-171">Visual Studio でプロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="0be27-171">Open your project in Visual Studio.</span></span>
+    > [!NOTE]
+    > <span data-ttu-id="0be27-172">プロジェクトが JavaScript アプリで、ターゲットが **[任意の CPU]** になっている場合は、アーキテクチャ固有のビルド出力 (たとえば **[x86]**) を使うようにプロジェクトを更新します。</span><span class="sxs-lookup"><span data-stu-id="0be27-172">If your project is a JavaScript app that targets **Any CPU**, update your project to use an architecture-specific build output (for example, **x86**).</span></span>
 
-  >**注**&nbsp;&nbsp;プロジェクトが JavaScript アプリで、ターゲットが **[Any CPU]** (任意の CPU) になっている場合は、アーキテクチャ固有のビルド出力 (たとえば **[x86]**) を使うようにプロジェクトを更新します。
+2. <span data-ttu-id="0be27-173">**ソリューション エクスプローラー**で、**[参照設定]** を右クリックし、**[参照の追加]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="0be27-173">In **Solution Explorer**, right click **References** and select **Add Reference…**</span></span>
 
-2. **ソリューション エクスプローラー**で、**[参照設定]** を右クリックし、**[参照の追加]** を選択します。
+3. <span data-ttu-id="0be27-174">**[参照マネージャー]** で **[ユニバーサル Windows]** を展開し、**[拡張機能]** をクリックして、**[Microsoft Engagement Framework]** の横のチェック ボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="0be27-174">In **Reference Manager**, expand **Universal Windows**, click **Extensions**, and then select the check box next to **Microsoft Engagement Framework**.</span></span> <span data-ttu-id="0be27-175">これにより、[A/B テストを実行する](run-app-experiments-with-a-b-testing.md)、[フィードバック Hub を起動する](launch-feedback-hub-from-your-app.md)、[デベロッパー センターからターゲット プッシュ通知を受信する](configure-your-app-to-receive-dev-center-notifications.md)、[デベロッパー センターでカスタム イベントをログに記録する](log-custom-events-for-dev-center.md)などのユーザー エンゲージメント シナリオの [Microsoft.Services.Store.Engagement](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.aspx) 名前空間で API を使うことができるようになります。</span><span class="sxs-lookup"><span data-stu-id="0be27-175">This enables you to use the APIs in the [Microsoft.Services.Store.Engagement](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.aspx) namespace for customer engagement scenarios such as [run A/B experiments](run-app-experiments-with-a-b-testing.md), [launch Feedback Hub](launch-feedback-hub-from-your-app.md), [receive targeted push notifications from Dev Center](configure-your-app-to-receive-dev-center-notifications.md), and [log custom events to Dev Center](log-custom-events-for-dev-center.md).</span></span>
 
-3. **[参照マネージャー]** で **[ユニバーサル Windows]** を展開し、**[拡張機能]** をクリックして、次の項目の 1 つの横のチェック ボックスをオンにします。
+3. <span data-ttu-id="0be27-176">**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="0be27-176">Click **OK**.</span></span>
 
-  * [Microsoft.Services.Store.Engagement](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.aspx) 名前空間の API をユーザー エンゲージメント シナリオで使用するには、**[Microsoft Engagement Framework]** の横のチェック ボックスをオンにします。 [A/B テストを実行する](run-app-experiments-with-a-b-testing.md)か、[フィードバック Hub を起動する](launch-feedback-hub-from-your-app.md)か、[デベロッパー センターからターゲット プッシュ通知を受信する](configure-your-app-to-receive-dev-center-notifications.md)か、[デベロッパー センターでカスタム イベントをログに記録する](log-custom-events-for-dev-center.md)場合には、このオプションを選択します。
-
-  * API を使って[アプリでバナー広告やスポット広告を表示する](display-ads-in-your-app.md)場合には、プロジェクトの種類によって、**[Microsoft Advertising SDK for XAML]** または **[Microsoft Advertising SDK for JavaScript]** の横のチェック ボックスをオンにします。
-
-3. **[OK]**をクリックします。
-
->**注**&nbsp;&nbsp;NuGet により SDK ライブラリをインストールした場合には、プロジェクトには **Microsoft Advertising SDK for XAML** または **Microsoft Advertising SDK for JavaScript** に加え、**Microsoft.Services.Store.SDK** の参照が含まれています。 **Microsoft.Services.Store.SDK** の参照は (その中のライブラリではなく) NuGet パッケージを表し、これは無視することができます。
+> [!NOTE]
+> <span data-ttu-id="0be27-177">NuGet から SDK ライブラリをインストールした場合、プロジェクトには **Microsoft.Services.Store.SDK** 参照が含められます。</span><span class="sxs-lookup"><span data-stu-id="0be27-177">If you installed the SDK libraries via NuGet, your project will contain a **Microsoft.Services.Store.SDK** reference.</span></span> <span data-ttu-id="0be27-178">**Microsoft.Services.Store.SDK** の参照は (その中のライブラリではなく) NuGet パッケージを表し、これは無視することができます。</span><span class="sxs-lookup"><span data-stu-id="0be27-178">The **Microsoft.Services.Store.SDK** reference represents the NuGet package (rather than the libraries in it), and you can ignore it.</span></span>
 
 <span id="framework" />
-## <a name="understanding-framework-packages-in-the-sdk"></a>SDK のフレームワーク パッケージを理解する
+## <a name="understanding-framework-packages-in-the-sdk"></a><span data-ttu-id="0be27-179">SDK のフレームワーク パッケージを理解する</span><span class="sxs-lookup"><span data-stu-id="0be27-179">Understanding framework packages in the SDK</span></span>
 
-Microsoft Store Services SDK の以下のライブラリは*フレームワーク パッケージ*として構成されています。
+<span data-ttu-id="0be27-180">Microsoft Store Services SDK の Microsoft.Services.Store.Engagement.dll ライブラリは、*フレームワーク パッケージ*として構成されています。</span><span class="sxs-lookup"><span data-stu-id="0be27-180">The Microsoft.Services.Store.Engagement.dll library in the Microsoft Store Services SDK is configured as a *framework package*.</span></span> <span data-ttu-id="0be27-181">このライブラリには、[Microsoft.Services.Store.Engagement](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.aspx) 名前空間の API が含まれています。</span><span class="sxs-lookup"><span data-stu-id="0be27-181">This library contains the APIs in the [Microsoft.Services.Store.Engagement](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.aspx) namespace.</span></span>
 
-* Microsoft.Advertising.dll。 このライブラリには、[Microsoft.Advertising](https://msdn.microsoft.com/library/windows/apps/mt313187.aspx) のアドバタイズ API と [Microsoft.Advertising.WinRT.UI](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aspx) 名前空間が含まれます。
-* Microsoft.Services.Store.Engagement.dll。 このライブラリには、[Microsoft.Services.Store.Engagement](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.aspx) 名前空間の API が含まれています。
+<span data-ttu-id="0be27-182">このライブラリはフレームワーク パッケージであるため、このライブラリを使用するバージョンのアプリをユーザーがインストールすると、このライブラリは、修正されてパフォーマンスが向上した新しいバージョンのライブラリが公開されるたびに、ユーザーのデバイスで Windows Update によって自動的に更新されます。</span><span class="sxs-lookup"><span data-stu-id="0be27-182">Because this library is a framework package, this means that after a user installs a version of your app that uses this library, this library is automatically updated on their device through Windows Update whenever we publish a new version of the library with fixes and performance improvements.</span></span> <span data-ttu-id="0be27-183">これにより、利用できる最新バージョンのライブラリがユーザーのデバイスに確実にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="0be27-183">This helps to ensure that your customers always have the latest available version of the library installed on their devices.</span></span>
 
-これらのライブラリを使用するバージョンのアプリをユーザーがインストールすると、これらのライブラリは、修正されてパフォーマンスが向上した新しいバージョンのライブラリが公開されるたびに、ユーザーのデバイスで Windows Update によって自動的に更新されます。 これにより、利用できる最新バージョンのライブラリがユーザーのデバイスに確実にインストールされます。
+<span data-ttu-id="0be27-184">このライブラリに新しい API や機能が導入された新しいバージョンの SDK がリリースされた場合は、これらの機能を使用するために最新バージョンの SDK をインストールする必要があります。</span><span class="sxs-lookup"><span data-stu-id="0be27-184">If we release a new version of the SDK that introduces new APIs or features in this library, you will need to install the latest version of the SDK to use those features.</span></span> <span data-ttu-id="0be27-185">このシナリオでは、更新されたアプリをストアに公開する必要もあります。</span><span class="sxs-lookup"><span data-stu-id="0be27-185">In this scenario, you would also need to publish your updated app to the Store.</span></span>
 
-これらのライブラリに新しい API や機能が導入された新しいバージョンの SDK がリリースされた場合は、これらの機能を使用するために最新バージョンの SDK をインストールする必要があります。 このシナリオでは、更新されたアプリをストアに公開する必要もあります。
+## <a name="related-topics"></a><span data-ttu-id="0be27-186">関連トピック</span><span class="sxs-lookup"><span data-stu-id="0be27-186">Related topics</span></span>
 
-## <a name="related-topics"></a>関連トピック
-
-* [Microsoft Store Services SDK API リファレンス](https://msdn.microsoft.com/library/windows/apps/mt691886.aspx)
-* [A/B テストによる実験の実行](run-app-experiments-with-a-b-testing.md)
-* [アプリからのフィードバック Hub の起動](launch-feedback-hub-from-your-app.md)
-* [デベロッパー センターのプッシュ通知を受信するようにアプリを設定する](configure-your-app-to-receive-dev-center-notifications.md)
-* [デベロッパー センターのカスタム イベントをログに記録する](log-custom-events-for-dev-center.md)
-* [アプリでの広告の表示](display-ads-in-your-app.md)
-
+* [<span data-ttu-id="0be27-187">Microsoft Store Services SDK API リファレンス</span><span class="sxs-lookup"><span data-stu-id="0be27-187">Microsoft Store Services SDK API reference</span></span>](https://msdn.microsoft.com/library/windows/apps/mt691886.aspx)
+* [<span data-ttu-id="0be27-188">A/B テストによる実験の実行</span><span class="sxs-lookup"><span data-stu-id="0be27-188">Run experiments with A/B testing</span></span>](run-app-experiments-with-a-b-testing.md)
+* [<span data-ttu-id="0be27-189">アプリからのフィードバック Hub の起動</span><span class="sxs-lookup"><span data-stu-id="0be27-189">Launch Feedback Hub from your app</span></span>](launch-feedback-hub-from-your-app.md)
+* [<span data-ttu-id="0be27-190">デベロッパー センターのプッシュ通知を受信するようにアプリを設定する</span><span class="sxs-lookup"><span data-stu-id="0be27-190">Configure your app to receive Dev Center push notifications</span></span>](configure-your-app-to-receive-dev-center-notifications.md)
+* [<span data-ttu-id="0be27-191">デベロッパー センターのカスタム イベントをログに記録する</span><span class="sxs-lookup"><span data-stu-id="0be27-191">Log custom events for Dev Center</span></span>](log-custom-events-for-dev-center.md)

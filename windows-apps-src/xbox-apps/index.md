@@ -3,49 +3,46 @@ author: Mtoepke
 title: "Xbox One の UWP"
 description: "Xbox One でユニバーサル Windows プラットフォーム (UWP) アプリを構築する方法。"
 ms.author: mtoepke
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 36d19f660bc3c03377f864b1d659a19396917130
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: c34788b8de9ed0b90aa963be453d28258fc51671
+ms.sourcegitcommit: f8e5a6bebbbb266bfe2c6b6a7c41b3d3cc7bf831
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/12/2017
 ---
+# <a name="uwp-on-xbox-one"></a><span data-ttu-id="ac56c-104">Xbox One の UWP</span><span class="sxs-lookup"><span data-stu-id="ac56c-104">UWP on Xbox One</span></span>
 
-# <a name="uwp-on-xbox-one"></a>Xbox One の UWP
+<span data-ttu-id="ac56c-105">Xbox One でユニバーサル Windows プラットフォーム (UWP) 向けのアプリの構築を始めましょう。</span><span class="sxs-lookup"><span data-stu-id="ac56c-105">Get started building apps for the Universal Windows Platform (UWP) on Xbox One.</span></span>
 
-Xbox One でユニバーサル Windows プラットフォーム (UWP) 向けのアプリの構築を始めましょう。
+<span data-ttu-id="ac56c-106">Xbox One の UWP は、アプリ開発とゲーム開発の両方をサポートします。</span><span class="sxs-lookup"><span data-stu-id="ac56c-106">UWP on Xbox One supports developing both apps and games.</span></span> <span data-ttu-id="ac56c-107">Xbox でゲームやアプリを実験、作成、テストするために、開発者プログラムに参加する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="ac56c-107">You don't have to be part of a developer program to experiment, create, and test games or apps on Xbox.</span></span> <span data-ttu-id="ac56c-108">必要となるのは、Windows デベロッパー センターの[開発者アカウント](https://developer.microsoft.com/en-us/store/register)だけです。</span><span class="sxs-lookup"><span data-stu-id="ac56c-108">All you need is a [developer account](https://developer.microsoft.com/en-us/store/register) on Windows Dev Center.</span></span> <span data-ttu-id="ac56c-109">ただし、Xbox One でゲームを公開して販売する場合や、Windows 10 で Xbox Live を利用する場合は、[Xbox Live クリエーターズ プログラム](https://developer.microsoft.com/games/xbox/xboxlive/creator)に参加するか、[ID@Xbox](http://www.xbox.com/Developers/id) の開発者になる必要があります。</span><span class="sxs-lookup"><span data-stu-id="ac56c-109">When you are ready to publish and sell games on Xbox One or take advantage of Xbox Live on Windows 10, you need to join the [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) or be an [ID@Xbox](http://www.xbox.com/Developers/id) developer.</span></span> <span data-ttu-id="ac56c-110">[ID@Xbox](http://www.xbox.com/Developers/id) の開発者になる場合は、開発者アカウントを登録する前に、プログラムへの参加申し込みを行うことをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="ac56c-110">If you plan to be an [ID@Xbox](http://www.xbox.com/Developers/id) developer, we recommend applying to the program first before registering for a developer account.</span></span> <span data-ttu-id="ac56c-111">詳しくは、「[開発者プログラムの概要](../xbox-live/developer-program-overview.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="ac56c-111">For more info, see [Developer Program Overview](../xbox-live/developer-program-overview.md).</span></span>
 
-Xbox One の UWP は、アプリ開発とゲーム開発の両方をサポートします。 Xbox でゲームを実験したり、作成したり、テストするには [ID@Xbox](http://www.xbox.com/Developers/id) 開発者である必要はありませんが、Xbox One のゲームを公開して販売したり、Windows 10 で Xbox Live を活用するには、[ID@Xbox](http://www.xbox.com/Developers/id) に登録する必要があります。 独立系の開発者や熱心なユーザーのコミュニティに参加するには [ID@Xbox](http://www.xbox.com/Developers/id) に登録します。 
+<span data-ttu-id="ac56c-112">このセクションでは、設定方法、承認手順のガイド、必要なバージョンの Visual Studio と Windows 10 ツールのインストールに関する情報と、簡単なアプリケーションを初めて構築、実行、デバッグする手順を説明します。</span><span class="sxs-lookup"><span data-stu-id="ac56c-112">This section includes setup steps, a guide through the authentication process, information about installing the required versions of Visual Studio and Windows 10 tools, and the steps to build, run, and debug your first simple application.</span></span> 
 
-このセクションでは、設定方法、承認手順のガイド、必要なバージョンの Visual Studio と Windows 10 ツールをインストールする方法、
-および簡単なアプリケーションを初めて構築、実行、デバッグする手順を説明します。 
-
-| トピック      | 説明 |
+| <span data-ttu-id="ac56c-113">トピック</span><span class="sxs-lookup"><span data-stu-id="ac56c-113">Topic</span></span>      | <span data-ttu-id="ac56c-114">説明</span><span class="sxs-lookup"><span data-stu-id="ac56c-114">Description</span></span> |
 |------------|-------------|
-|[概要](getting-started.md)| Xbox One での UWP の開発の概要を説明します。 |
-|[新機能](whats-new.md)| Xbox One の UWP の新機能について説明します。 |
-|[Xbox ベスト プラクティス](tailoring-for-xbox.md)| マウス モードを無効にする方法、画面の端に描画する方法、スケーリングを無効にする方法について説明します。 |
-|[既知の問題](known-issues.md)| Xbox One の UWP の既知の問題について説明します。 |
-|[FAQ](frequently-asked-questions.md)| Xbox One の UWP に関してよく寄せられる質問です。 |
-|[Xbox One 開発者モードのアクティブ化](devkit-activation.md)| Xbox One で開発者モードを有効にする方法について説明します。 |
-|[ツール](introduction-to-xbox-tools.md)| Xbox One 固有のツールである _Dev Home_ の概要、Windows Device Portal の使い方、開発用の Visual Studio の設定方法について説明します。 また、このセクションでは、新しい開発者向けに初めての Xbox UWP アプリケーションを使って指針を示すと共に、Fiddler ツールを使用してネットワーク トラフィックを表示する方法について説明します。 |
-|[Xbox の開発環境に UWP を設定する](development-environment-setup.md)| Xbox One の開発環境を設定してテストする手順について説明します。 |
-|[Xbox One 上の UWP アプリとゲームのシステム リソース](system-resource-allocation.md)| アプリケーションが Xbox One で実行されている場合に利用できるリソースについて説明します。 | 
-|[Xbox およびテレビ向け設計](..\input-and-devices\designing-for-tv.md)| テレビに表示して、コントローラーを使って入力するアプリを設計するための、ベスト プラクティスについて説明します。 |  
-|[マルチ ユーザー アプリケーションの概要](multi-user-applications.md)| Xbox One での複数ユーザーのアプリケーション (MUA) について説明します。 |
-|[サンプル](samples.md)| GitHub の場所 (TVHelpers) へのポインターです。TVHelpers には Xbox の開発を始めるのに役立つ、XAML と JavaScript のサンプルが掲載されています。 サンプルには、XAML メディア アプリの完全なテンプレート、自動コントローラー ナビゲーション、リッチ メディアの再生、Web ベース テクノロジの検索などが含まれています。 |
-|[既存のゲームの Xbox への移行](development-lanes-landing.md)|ゲームを構築する際の基礎となるテクノロジに基づいて、UWP を使用した Xbox へのゲームの移行プロセスを迅速に処理するための詳しい手順について説明します。|
-|[Xbox One で開発者モードを無効にする](devkit-deactivation.md)| Xbox One で開発者モードを無効にする方法について説明します。 |
-|[Xbox One でまだサポートされていない UWP 機能](http://go.microsoft.com/fwlink/p/?LinkId=760755)|  Xbox One でまだ完全に機能していない UWP 機能について説明します。|  
+|[<span data-ttu-id="ac56c-115">概要</span><span class="sxs-lookup"><span data-stu-id="ac56c-115">Getting started</span></span>](getting-started.md)| <span data-ttu-id="ac56c-116">Xbox One での UWP の開発の概要を説明します。</span><span class="sxs-lookup"><span data-stu-id="ac56c-116">Getting started guide for UWP on Xbox One development.</span></span> |
+|[<span data-ttu-id="ac56c-117">新機能</span><span class="sxs-lookup"><span data-stu-id="ac56c-117">What's new</span></span>](whats-new.md)| <span data-ttu-id="ac56c-118">Xbox One の UWP の新機能について説明します。</span><span class="sxs-lookup"><span data-stu-id="ac56c-118">Highlights new features in UWP on Xbox One.</span></span> |
+|[<span data-ttu-id="ac56c-119">Xbox ベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="ac56c-119">Xbox best practices</span></span>](tailoring-for-xbox.md)| <span data-ttu-id="ac56c-120">マウス モードを無効にする方法、画面の端に描画する方法、スケーリングを無効にする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ac56c-120">How to turn off mouse mode, draw to the edges of the screen, and disable scaling.</span></span> |
+|[<span data-ttu-id="ac56c-121">既知の問題</span><span class="sxs-lookup"><span data-stu-id="ac56c-121">Known issues</span></span>](known-issues.md)| <span data-ttu-id="ac56c-122">Xbox One の UWP の既知の問題について説明します。</span><span class="sxs-lookup"><span data-stu-id="ac56c-122">Known issues with UWP on Xbox One.</span></span> |
+|[<span data-ttu-id="ac56c-123">FAQ</span><span class="sxs-lookup"><span data-stu-id="ac56c-123">FAQ</span></span>](frequently-asked-questions.md)| <span data-ttu-id="ac56c-124">Xbox One の UWP に関してよく寄せられる質問です。</span><span class="sxs-lookup"><span data-stu-id="ac56c-124">Frequently asked questions related to UWP on Xbox One.</span></span> |
+|[<span data-ttu-id="ac56c-125">Xbox One 開発者モードのアクティブ化</span><span class="sxs-lookup"><span data-stu-id="ac56c-125">Xbox One Developer Mode activation</span></span>](devkit-activation.md)| <span data-ttu-id="ac56c-126">Xbox One で開発者モードを有効にする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ac56c-126">Explains how to enable Developer Mode on Xbox One.</span></span> |
+|[<span data-ttu-id="ac56c-127">ツール</span><span class="sxs-lookup"><span data-stu-id="ac56c-127">Tools</span></span>](introduction-to-xbox-tools.md)| <span data-ttu-id="ac56c-128">Xbox One 固有のツールである _Dev Home_ の概要、Windows Device Portal の使い方、開発用の Visual Studio の設定方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ac56c-128">Describes the Xbox One-specific tool _Dev Home_, how to use the Windows Device Portal, and how to set up Visual Studio for development.</span></span> <span data-ttu-id="ac56c-129">また、このセクションでは、新しい開発者向けに初めての Xbox UWP アプリケーションを使って指針を示すと共に、Fiddler ツールを使用してネットワーク トラフィックを表示する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ac56c-129">This section also guides a new developer through their first Xbox UWP application and explains how to use the Fiddler tool to view network traffic.</span></span> |
+|[<span data-ttu-id="ac56c-130">Xbox の開発環境に UWP を設定する</span><span class="sxs-lookup"><span data-stu-id="ac56c-130">Set up your UWP on Xbox development environment</span></span>](development-environment-setup.md)| <span data-ttu-id="ac56c-131">Xbox One の開発環境を設定してテストする手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="ac56c-131">Describes the steps to set up and test your Xbox One development environment.</span></span> |
+|[<span data-ttu-id="ac56c-132">Xbox One 上の UWP アプリとゲームのシステム リソース</span><span class="sxs-lookup"><span data-stu-id="ac56c-132">System resources for UWP apps and games on Xbox One</span></span>](system-resource-allocation.md)| <span data-ttu-id="ac56c-133">アプリケーションが Xbox One で実行されている場合に利用できるリソースについて説明します。</span><span class="sxs-lookup"><span data-stu-id="ac56c-133">Describes the resources available to your application when it is running on Xbox One.</span></span> | 
+|[<span data-ttu-id="ac56c-134">Xbox およびテレビ向け設計</span><span class="sxs-lookup"><span data-stu-id="ac56c-134">Designing for Xbox and TV</span></span>](..\input-and-devices\designing-for-tv.md)| <span data-ttu-id="ac56c-135">テレビに表示して、コントローラーを使って入力するアプリを設計するための、ベスト プラクティスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="ac56c-135">Describes best practices for designing an app that will be viewed on a TV and will use a controller for input.</span></span> |  
+|[<span data-ttu-id="ac56c-136">マルチ ユーザー アプリケーションの概要</span><span class="sxs-lookup"><span data-stu-id="ac56c-136">Introduction to multi-user applications</span></span>](multi-user-applications.md)| <span data-ttu-id="ac56c-137">Xbox One での複数ユーザーのアプリケーション (MUA) について説明します。</span><span class="sxs-lookup"><span data-stu-id="ac56c-137">Describes multi-user applications (MUAs) on Xbox One.</span></span> |
+|[<span data-ttu-id="ac56c-138">サンプル</span><span class="sxs-lookup"><span data-stu-id="ac56c-138">Samples</span></span>](samples.md)| <span data-ttu-id="ac56c-139">GitHub の場所 (TVHelpers) へのポインターです。TVHelpers には Xbox の開発を始めるのに役立つ、XAML と JavaScript のサンプルが掲載されています。</span><span class="sxs-lookup"><span data-stu-id="ac56c-139">Pointer to the github location – TVHelpers - where you will find useful XAML and JavaScript samples to get you started developing for Xbox.</span></span> <span data-ttu-id="ac56c-140">サンプルには、XAML メディア アプリの完全なテンプレート、自動コントローラー ナビゲーション、リッチ メディアの再生、Web ベース テクノロジの検索などが含まれています。</span><span class="sxs-lookup"><span data-stu-id="ac56c-140">Samples include a full XAML Media App template as well as automatic controller navigation, rich media playback, and search for web-based technologies.</span></span> |
+|[<span data-ttu-id="ac56c-141">既存のゲームの Xbox への移行</span><span class="sxs-lookup"><span data-stu-id="ac56c-141">Bringing existing games to Xbox</span></span>](development-lanes-landing.md)|<span data-ttu-id="ac56c-142">ゲームを構築する際の基礎となるテクノロジに基づいて、UWP を使用した Xbox へのゲームの移行プロセスを迅速に処理するための詳しい手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="ac56c-142">Based on what technology your game is built on top of, we can direct you to step-by-step instructions that can expedite the process of bringing your game to Xbox using the UWP.</span></span>|
+|[<span data-ttu-id="ac56c-143">Xbox One で開発者モードを無効にする</span><span class="sxs-lookup"><span data-stu-id="ac56c-143">Disabling Developer Mode on Xbox One</span></span>](devkit-deactivation.md)| <span data-ttu-id="ac56c-144">Xbox One で開発者モードを無効にする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ac56c-144">Explains how to disable Developer Mode on Xbox One.</span></span> |
+|[<span data-ttu-id="ac56c-145">Xbox One でまだサポートされていない UWP 機能</span><span class="sxs-lookup"><span data-stu-id="ac56c-145">UWP features that aren’t yet supported on Xbox One</span></span>](http://go.microsoft.com/fwlink/p/?LinkId=760755)|  <span data-ttu-id="ac56c-146">Xbox One でまだ完全に機能していない UWP 機能について説明します。</span><span class="sxs-lookup"><span data-stu-id="ac56c-146">Describes UWP feature areas that are not yet fully functional on Xbox One.</span></span>|  
 
-## <a name="see-also"></a>関連項目
-- [Xbox One の UWP アプリの概要](http://go.microsoft.com/fwlink/p/?LinkId=780786) 
-- [Windows 10 UWP アプリの自動起動](automate-launching-uwp-apps.md)
-- [ゲーム開発用の CPUSets](cpusets-games.md)
+## <a name="see-also"></a><span data-ttu-id="ac56c-147">関連項目</span><span class="sxs-lookup"><span data-stu-id="ac56c-147">See also</span></span>
+- [<span data-ttu-id="ac56c-148">Xbox One の UWP アプリの概要</span><span class="sxs-lookup"><span data-stu-id="ac56c-148">Overview of UWP apps on Xbox One</span></span>](http://go.microsoft.com/fwlink/p/?LinkId=780786) 
+- [<span data-ttu-id="ac56c-149">Windows 10 UWP アプリの自動起動</span><span class="sxs-lookup"><span data-stu-id="ac56c-149">Automate launching Windows 10 UWP apps</span></span>](automate-launching-uwp-apps.md)
+- [<span data-ttu-id="ac56c-150">ゲーム開発用の CPUSets</span><span class="sxs-lookup"><span data-stu-id="ac56c-150">CPUSets for game development</span></span>](cpusets-games.md)
   
-

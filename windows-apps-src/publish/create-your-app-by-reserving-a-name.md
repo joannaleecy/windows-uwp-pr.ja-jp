@@ -5,66 +5,67 @@ title: "名前の予約によるアプリの作成"
 keywords: Windows 10, UWP
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c36f8296f65efcc107ade545c20ab7e3db32c824
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 55bd36cf1a84cc8d79d7e7373da22e97e571542e
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/21/2017
 ---
+# <a name="create-your-app-by-reserving-a-name"></a><span data-ttu-id="5a110-105">名前の予約によるアプリの作成</span><span class="sxs-lookup"><span data-stu-id="5a110-105">Create your app by reserving a name</span></span>
 
-# <a name="create-your-app-by-reserving-a-name"></a>名前の予約によるアプリの作成
+
+<span data-ttu-id="5a110-106">Windows デベロッパー センター ダッシュボードで新しいアプリを作るときは、最初にアプリ名を予約します。</span><span class="sxs-lookup"><span data-stu-id="5a110-106">The first step in creating a new app in your Windows Dev Center dashboard is reserving an app name.</span></span> <span data-ttu-id="5a110-107">ここでは、アプリ名を予約する方法について説明し、[優れたアプリ名を選ぶ](#choosing-your-apps-name)ための推奨事項を紹介します。</span><span class="sxs-lookup"><span data-stu-id="5a110-107">See how to reserve app names and find suggestions for [choosing a great name for your app](#choosing-your-apps-name).</span></span> <span data-ttu-id="5a110-108">予約する名前は、ストア全体で一意にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="5a110-108">Each reserved name must be unique throughout the entire Store.</span></span>
+
+<span data-ttu-id="5a110-109">[アプリのパッケージをアップロード](upload-app-packages.md)するには、アプリに予約した名前と [**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-1-displayname) の値が一致している必要があります。</span><span class="sxs-lookup"><span data-stu-id="5a110-109">When you [upload your app's packages](upload-app-packages.md), the [**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-1-displayname) value must match the name that you reserved for your app.</span></span> <span data-ttu-id="5a110-110">アプリのパッケージを作成するために Microsoft Visual Studio を使う場合は、この属性が自動的に入力されます。</span><span class="sxs-lookup"><span data-stu-id="5a110-110">If you use Microsoft Visual Studio to create your app's package, this attribute will be filled in for you.</span></span>
+
+<span data-ttu-id="5a110-111">以前の Windows Phone ダッシュボードを使って作成した Windows Phone アプリがあり、そのアプリ用に名前を予約していなかった場合でも、そのアプリを管理および申請できます。</span><span class="sxs-lookup"><span data-stu-id="5a110-111">If you have a Windows Phone app that you created in the older Windows Phone dashboard, and you never reserved a name for it, you can still manage and submit that app.</span></span> <span data-ttu-id="5a110-112">ただし、アプリの .appx パッケージをアップロードしたり、.appx パッケージに特有の[アプリ ID の詳細情報を表示](view-app-identity-details.md)したりするには、次の手順に従って一意の名前を予約する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5a110-112">However, in order to upload .appx packages for it, or to [view app identity details](view-app-identity-details.md) specific to .appx packages, you'll need to reserve a unique name by following the steps below.</span></span> <span data-ttu-id="5a110-113">これにより、他の開発者がその名前を予約できないようになります。</span><span class="sxs-lookup"><span data-stu-id="5a110-113">This also prevents anyone else from reserving that name for themselves.</span></span>
+
+## <a name="create-your-app-by-reserving-a-new-name"></a><span data-ttu-id="5a110-114">新しい名前の予約によるアプリの作成</span><span class="sxs-lookup"><span data-stu-id="5a110-114">Create your app by reserving a new name</span></span>
+
+<span data-ttu-id="5a110-115">名前の予約は、ダッシュボードでのアプリを作るための最初の手順です。</span><span class="sxs-lookup"><span data-stu-id="5a110-115">Reserving a name is the first step in creating an app in the dashboard.</span></span> <span data-ttu-id="5a110-116">アプリの構築をまだ開始していない場合でも、これを行うことができます。</span><span class="sxs-lookup"><span data-stu-id="5a110-116">You can do this even if you haven't started to build your app yet.</span></span> <span data-ttu-id="5a110-117">アプリの名前は、他の開発者に使われないように、できる限り早く予約することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="5a110-117">We recommend doing it as soon as possible, so that nobody else can use the name.</span></span>
+
+1.  <span data-ttu-id="5a110-118">**[概要]** ページで、**[新しいアプリの作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="5a110-118">From the **Overview** page, click **Create a new app**.</span></span>
+2.  <span data-ttu-id="5a110-119">使う名前をテキスト ボックスに入力して、**[使用可能か確認]** を選びます。</span><span class="sxs-lookup"><span data-stu-id="5a110-119">In the text box, enter the name that you want to use, and then select **Check availability**.</span></span> <span data-ttu-id="5a110-120">名前が利用可能な場合は、緑色のチェック マークが表示されます </span><span class="sxs-lookup"><span data-stu-id="5a110-120">If the name is available, you'll see a green check mark.</span></span> <span data-ttu-id="5a110-121">(入力した名前が他の開発者によって既に予約または使用されている場合は、名前が利用できないことを示すエラー メッセージが表示されます)。</span><span class="sxs-lookup"><span data-stu-id="5a110-121">(If the name you entered is already reserved or in use by another developer, you'll see a message that the name is not available.)</span></span>
+3.  <span data-ttu-id="5a110-122">**[製品名の予約]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="5a110-122">Click **Reserve product name**.</span></span>
+
+<span data-ttu-id="5a110-123">これにより名前が予約され、準備ができたときに[申請](app-submissions.md)を開始することができます。</span><span class="sxs-lookup"><span data-stu-id="5a110-123">The name is now reserved for you and you can start working on your [submission](app-submissions.md) whenever you're ready.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="5a110-124">名前を予約するときに、その名前のアプリがストアの登録情報にない場合でも、予約できないことがあります。</span><span class="sxs-lookup"><span data-stu-id="5a110-124">You might find that you can't reserve a name, even though you don't see any apps listed by that name in the Store.</span></span> <span data-ttu-id="5a110-125">これは多くの場合、他の開発者がアプリのために既にその名前を予約していて、そのアプリをまだ申請していないことが原因です。</span><span class="sxs-lookup"><span data-stu-id="5a110-125">This is usually because another developer has reserved the name for their app but hasn't submitted it yet.</span></span> <span data-ttu-id="5a110-126">自分が商標などの法的権利を持っている名前を予約できない場合や、Windows ストア内でその名前を使っている別のアプリを見つけた場合は、[Microsoft にお知らせください](http://go.microsoft.com/fwlink/p/?LinkId=233777)。</span><span class="sxs-lookup"><span data-stu-id="5a110-126">If you are unable to reserve a name for which you hold the trademark or other legal right, or if you see another app in the Windows Store using that name, [contact Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).</span></span>
+
+<span data-ttu-id="5a110-127">名前を予約した後は、そのアプリを 1 年以内に申請します。</span><span class="sxs-lookup"><span data-stu-id="5a110-127">After you reserve a name, you have one year to submit that app.</span></span> <span data-ttu-id="5a110-128">1 年以内にアプリを申請しない場合、名前の予約は期限切れになり、他の開発者がアプリにその名前を使うことができるようになります。</span><span class="sxs-lookup"><span data-stu-id="5a110-128">If you don't submit it within the year, the name reservation will expire, and another developer may be able to use that name for an app.</span></span> <span data-ttu-id="5a110-129">期限切れの名前でアプリを申請しようとすると、エラーが発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="5a110-129">You may encounter an error if you try to submit an app under a name which you have let expire.</span></span>
 
 
-Windows デベロッパー センター ダッシュボードで新しいアプリを作るときは、最初にアプリ名を予約します。 ここでは、アプリ名を予約する方法について説明し、[優れたアプリ名を選ぶ](#choosing-your-app-s-name)ための推奨事項を紹介します。 予約する名前は、ストア全体で一意にする必要があります。
+## <a name="choosing-your-apps-name"></a><span data-ttu-id="5a110-130">アプリ名の選択</span><span class="sxs-lookup"><span data-stu-id="5a110-130">Choosing your app's name</span></span>
 
-> **注:** 以前に作った Windows Phone アプリがあり、そのアプリ用に名前を予約していなかった場合でも、そのアプリを管理および申請できます。 ただし、アプリの .appx パッケージをアップロードしたり、.appx パッケージの作成に関する[アプリ ID の詳細情報を表示](view-app-identity-details.md)したりするには、次の手順に従って一意の名前を予約する必要があります。 これにより、他の開発者がその名前を予約できないようになります。
+<span data-ttu-id="5a110-131">アプリ用に適切な名前を選ぶことは、重要な作業です。</span><span class="sxs-lookup"><span data-stu-id="5a110-131">Choosing the right name for your app is an important task.</span></span> <span data-ttu-id="5a110-132">ユーザーの興味を引き、アプリについてもっと知りたくなるような名前を選んでください。</span><span class="sxs-lookup"><span data-stu-id="5a110-132">Pick a name that will capture your customers' interest and draw them in to learn more about your app.</span></span> <span data-ttu-id="5a110-133">優れたアプリ名を選ぶためのヒントを次にいくつか紹介します。</span><span class="sxs-lookup"><span data-stu-id="5a110-133">Here are some tips for choosing a great app name.</span></span>
 
-[アプリのパッケージをアップロード](upload-app-packages.md)するには、**ダッシュボード**でアプリに予約した名前と [**Package/Properties/DisplayName**](https://msdn.microsoft.com/library/windows/apps/dn423240) の値が一致している必要があります。 アプリのパッケージを作成するために Microsoft Visual Studio を使う場合は、この属性が自動的に入力されます。
+-   **<span data-ttu-id="5a110-134">短い名前にする。</span><span class="sxs-lookup"><span data-stu-id="5a110-134">Keep it short.</span></span>** <span data-ttu-id="5a110-135">ほとんどの場合、アプリの名前を表示する場所は限られているので、できるだけ短い名前を使うことをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="5a110-135">The space to display your app's name is limited in many places, so we suggest using the shortest name as you can.</span></span> <span data-ttu-id="5a110-136">アプリには最大 256 文字の名前を付けることができますが、長い名前は常にユーザーに対して最後まで表示されません。</span><span class="sxs-lookup"><span data-stu-id="5a110-136">While your app's name can have up to 256 characters, the end of a very long name may not always be visible to customers.</span></span>
 
-## <a name="create-your-app-by-reserving-a-new-name"></a>新しい名前の予約によるアプリの作成
+   > [!NOTE]
+   > <span data-ttu-id="5a110-137">さまざまな場所に実際に表示できる文字の数は、割り当てられている長さと、アプリ名に使われている文字の種類によって異なります。</span><span class="sxs-lookup"><span data-stu-id="5a110-137">The actual number of characters displayed in various locations may vary, depending on the length allotted and on the types of characters used in your app's name.</span></span> <span data-ttu-id="5a110-138">たとえば、Windows で使われている Segoe UI フォントの場合、10 個の "W" が入る幅に約 30 個の "I" が入ります。</span><span class="sxs-lookup"><span data-stu-id="5a110-138">For example, in the Segoe UI font that Windows uses, about 30 "I" characters will fit in the same space as 10 "W" characters.</span></span> <span data-ttu-id="5a110-139">このような差があるため、アプリを申請する前に、アプリ名がタイル (アプリ名のオーバーレイを選択している場合)、検索結果、アプリ自体でどのように表示されるかどうかを確認してください。</span><span class="sxs-lookup"><span data-stu-id="5a110-139">Because of this variation, be sure to test your app and verify how its name appears on its tiles (if you choose to overlay the app name), in search results, and within the app itself before you submit your app.</span></span> <span data-ttu-id="5a110-140">さらに、アプリを提供する各言語についても考慮します。</span><span class="sxs-lookup"><span data-stu-id="5a110-140">Also consider each language in which you offer your app.</span></span> <span data-ttu-id="5a110-141">東アジアの文字はラテン文字よりも幅広である場合が多く、表示文字数も少なくなる点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="5a110-141">Keep in mind that East-Asian characters tend to be wider than Latin characters, so fewer characters will be displayed.</span></span>
 
-名前の予約は、ダッシュボードでのアプリを作るための最初の手順です。 アプリの構築をまだ開始していない場合でも、これを行うことができます。 アプリの名前は、他の開発者に使われないように、できる限り早く予約することをお勧めします。
+-   **<span data-ttu-id="5a110-142">独自の名前にする。</span><span class="sxs-lookup"><span data-stu-id="5a110-142">Be original.</span></span>** <span data-ttu-id="5a110-143">既にある別のアプリと間違えられることのないよう、区別しやすいアプリ名を選ぶようにします。</span><span class="sxs-lookup"><span data-stu-id="5a110-143">Make sure your app name is distinctive enough so that it isn't easily confused with an existing app.</span></span>
+-   **<span data-ttu-id="5a110-144">他者が登録した商標名を使わない。</span><span class="sxs-lookup"><span data-stu-id="5a110-144">Don't use names trademarked by others.</span></span>** <span data-ttu-id="5a110-145">予約した名前が商標などの法的権利を侵害していないことを確認してください。</span><span class="sxs-lookup"><span data-stu-id="5a110-145">Make sure that you have the rights to use the name that you reserve.</span></span> <span data-ttu-id="5a110-146">その名前が他者によって商標登録されている場合は、侵害が通報され、その名前の使用を続行できなくなることがあります。</span><span class="sxs-lookup"><span data-stu-id="5a110-146">If someone else has trademarked the name, they can report an infringement and you won't be able to keep using that name.</span></span> <span data-ttu-id="5a110-147">アプリの公開後にこの問題が発生した場合は、アプリがストアから削除されます。</span><span class="sxs-lookup"><span data-stu-id="5a110-147">If that happens after your app has been published, it will be removed from the Store.</span></span> <span data-ttu-id="5a110-148">また、もう一度認定用に[アプリを提出](app-submissions.md)する前に、アプリ名を変更し、アプリとコンテンツ全体にわたって名前の記載や表示をすべて変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5a110-148">You'll then need to change the name of your app, and all instances of the name throughout your app and its content, before you can [submit your app](app-submissions.md) for certification again.</span></span>
+-   **<span data-ttu-id="5a110-149">区別のための情報を名前の末尾に追加しない。</span><span class="sxs-lookup"><span data-stu-id="5a110-149">Avoid adding differentiating info at the end of the name.</span></span>** <span data-ttu-id="5a110-150">複数のアプリを区別するための情報が名前の末尾に追加されていると、長い名前の場合は特に、その情報をユーザーが見落としかねません。その結果、すべてのアプリが同じ名前に見える可能性があります。</span><span class="sxs-lookup"><span data-stu-id="5a110-150">If the info that differentiates multiple apps is added to the end of a name, customers might miss it, especially if the name is long; all of the apps could appear to have the same name.</span></span> <span data-ttu-id="5a110-151">この問題を避けられない場合には、使用するロゴとアプリの画像を変えることで、アプリの違いを判別しやすくすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="5a110-151">If this is unavoidable, use different logos and app images so it's easier to differentiate one app from another.</span></span>
 
-1.  **[ダッシュボード概要]** ページまたは **[すべてのアプリ]** ページで、**[新しいアプリの作成]** をクリックします。
-2.  使う名前をテキスト ボックスに入力して、**[利用可能か確認]** リンクをクリックします。 名前が利用可能な場合は、緑色のチェック マークが表示されます  (入力した名前が他の開発者によって既に予約または使用されている場合は、名前が利用できないことを示すエラー メッセージが表示されます)。
-3.  **[アプリ名の予約]** をクリックします。
+## <a name="manage-additional-app-names"></a><span data-ttu-id="5a110-152">追加のアプリ名の管理</span><span class="sxs-lookup"><span data-stu-id="5a110-152">Manage additional app names</span></span>
 
-これにより名前が予約され、準備ができたときに[申請](app-submissions.md)を開始することができます。
+<span data-ttu-id="5a110-153">Windows デベロッパー センター ダッシュボードの各アプリの **[アプリ管理]** セクションで、**[アプリ名の管理]** ページから追加の名前を追加および管理できます。</span><span class="sxs-lookup"><span data-stu-id="5a110-153">You can add and manage additional names on the **Manage app names** page in the **App management** section for each of your apps in the Windows Dev Center dashboard.</span></span>
 
-> **注:** アプリ名は 1 年間予約しておくことができるため、ストアで一覧に表示されていない名前であっても、名前として予約できないことがあります。 これは多くの場合、他の開発者がアプリのために既にその名前を予約していて、そのアプリをまだ申請していないことが原因です。 自分が商標などの法的権利を持っている名前を予約できない場合や、Windows ストア内でその名前を使っている別のアプリを見つけた場合は、[Microsoft にお知らせください](http://go.microsoft.com/fwlink/p/?LinkId=233777)。
+<span data-ttu-id="5a110-154">アプリを複数の言語で提供し、言語ごとに異なる名前を使う場合などに、同じアプリに複数の名前を予約しておきたいことがあります。</span><span class="sxs-lookup"><span data-stu-id="5a110-154">In some cases, you may want to reserve multiple names to use for the same app, such as when you want to offer your app in multiple languages and want to use different names for each language.</span></span> <span data-ttu-id="5a110-155">アプリの名前を完全に変更する場合は、追加の名前を予約する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5a110-155">You will need to reserve an additional name if you want to change an app's name completely.</span></span>
 
-名前を予約した後は、そのアプリを 1 年以内に申請します。 1 年以内にアプリを申請しない場合、予約は期限切れになり、他の開発者がアプリにその名前を使うことができるようになります。 期限切れの名前でアプリを申請しようとすると、エラーが発生する可能性があります。
+<span data-ttu-id="5a110-156">このページでは、予約したが使う必要がなくなった名前を削除することもできます。</span><span class="sxs-lookup"><span data-stu-id="5a110-156">On this page, you can also delete any names that you have reserved but no longer want to use.</span></span>
 
-## <a name="choosing-your-apps-name"></a>アプリ名の選択
-
-アプリ用に適切な名前を選ぶことは、重要な作業です。 ユーザーの興味を引き、アプリについてもっと知りたくなるような名前を選んでください。 優れたアプリ名を選ぶためのヒントを次にいくつか紹介します。
-
--   **短い名前にする。** ほとんどの場合、アプリの名前を表示する場所は限られているので、できるだけ短い名前を使うことをお勧めします。 アプリには最大 256 文字の名前を付けることができますが、長い名前は常にユーザーに対して最後まで表示されません。
-
-    > **注:** さまざまな場所に実際に表示できる文字の数は、割り当てられている長さと、アプリ名に使われている文字の種類によって異なります。 たとえば、Windows で使われている Segoe UI フォントの場合、10 個の "W" が入る幅に約 30 個の "I" が入ります。 このような差があるため、アプリを申請する前に、アプリ名がタイル (アプリ名のオーバーレイを選択している場合)、検索結果、アプリ自体でどのように表示されるかどうかを確認してください。 さらに、アプリを提供する各言語についても考慮します。 東アジアの文字はラテン文字よりも幅広である場合が多く、表示文字数も少なくなる点に注意してください。
-
--   **区別のための情報を名前の末尾に追加しない。** 複数のアプリを区別するための情報が名前の末尾に追加されていると、長い名前の場合は特に、その情報をユーザーが見落としかねません。その結果、すべてのアプリが同じ名前に見える可能性があります。 この問題を避けられない場合には、使用するロゴとアプリの画像を変えることで、アプリの違いを判別しやすくすることをお勧めします。
--   **独自の名前にする。** 既にある別のアプリと間違えられることのないよう、区別しやすいアプリ名を選ぶようにします。
--   **他者が登録した商標名を使わない。** 予約した名前が商標などの法的権利を侵害していないことを確認してください。 その名前が他者によって商標登録されている場合は、侵害が通報され、その名前の使用を続行できなくなることがあります。 アプリの公開後にこの問題が発生した場合は、アプリがストアから削除されます。 また、もう一度認定用に[アプリを提出](app-submissions.md)する前に、アプリ名を変更し、アプリとコンテンツ全体にわたって名前の記載や表示をすべて変更する必要があります。
-
-## <a name="manage-additional-app-names"></a>追加のアプリ名の管理
-
-Windows デベロッパー センター ダッシュボードの各アプリの **[アプリ管理]** セクションで、**[アプリ名の管理]** ページからアプリの名前を管理できます。
-
-アプリを複数の言語で提供し、異なる名前を使う場合などに、同じアプリに複数の名前を予約しておきたいことがあります。 アプリの名前を完全に変更する場合は、追加の名前を予約する必要があります。
-
-このページでは、予約したが使う必要がなくなった名前を削除することもできます。
-
-詳しくは、「[アプリ名の管理](manage-app-names.md)」をご覧ください。
+<span data-ttu-id="5a110-157">詳しくは、「[アプリ名の管理](manage-app-names.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5a110-157">For more info, see [Manage app names](manage-app-names.md).</span></span>
 
  
 
  
-
 
 
 

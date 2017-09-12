@@ -1,481 +1,481 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: "Windows アプリ認定キットのテスト"
 description: "Windows アプリ認定キットには、Windows ストアでの公開に向けてアプリが準備できているかどうかを確認するためのテストが多数含まれています。"
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: e1a7b61d8f5dfe6ae3477f349d23674d700d002b
-ms.openlocfilehash: 2dab2719eae86487b93b9030b430b84aea7b2737
-ms.lasthandoff: 02/04/2017
-
+ms.openlocfilehash: 5e3ae74ba4392b5021159f9fcb825009137701d3
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/26/2017
 ---
-## <a name="windows-app-certification-kit-tests"></a>Windows アプリ認定キットのテスト
+# <a name="windows-app-certification-kit-tests"></a><span data-ttu-id="99de7-104">Windows アプリ認定キットのテスト</span><span class="sxs-lookup"><span data-stu-id="99de7-104">Windows App Certification Kit tests</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+<span data-ttu-id="99de7-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="99de7-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="99de7-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]</span><span class="sxs-lookup"><span data-stu-id="99de7-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-Windows アプリ認定キットには、Windows ストアでの公開に向けてアプリが準備できているかどうかを確認するためのテストが多数含まれています。
+<span data-ttu-id="99de7-107">Windows アプリ認定キットには、Windows ストアでの公開に向けてアプリが準備できているかどうかを確認するためのテストが多数含まれています。</span><span class="sxs-lookup"><span data-stu-id="99de7-107">The Windows App Certification Kit contains a number of tests that can help ensure that your app is ready to be published on the Windows Store.</span></span>
 
-## <a name="deployment-and-launch-tests"></a>展開と起動のテスト
+## <a name="deployment-and-launch-tests"></a><span data-ttu-id="99de7-108">展開と起動のテスト</span><span class="sxs-lookup"><span data-stu-id="99de7-108">Deployment and launch tests</span></span>
 
-認証テスト中にアプリを監視して、アプリがクラッシュやハングを起こしたタイミングを記録します。
+<span data-ttu-id="99de7-109">認証テスト中にアプリを監視して、アプリがクラッシュやハングを起こしたタイミングを記録します。</span><span class="sxs-lookup"><span data-stu-id="99de7-109">Monitors the app during certification testing to record when it crashes or hangs.</span></span>
 
-### <a name="background"></a>背景
+### <a name="background"></a><span data-ttu-id="99de7-110">背景</span><span class="sxs-lookup"><span data-stu-id="99de7-110">Background</span></span>
 
-応答しなくなったアプリやクラッシュしたアプリは、データが失われたり操作性が低下したりする原因になることがあります。
+<span data-ttu-id="99de7-111">応答しなくなったアプリやクラッシュしたアプリは、データが失われたり操作性が低下したりする原因になることがあります。</span><span class="sxs-lookup"><span data-stu-id="99de7-111">Apps that stop responding or crash can cause the user to lose data and have a poor experience.</span></span>
 
-アプリは、Windows の互換モードや AppHelp メッセージ、互換性修正プログラムを使わずにフル機能することが求められています。
+<span data-ttu-id="99de7-112">アプリは、Windows の互換モードや AppHelp メッセージ、互換性修正プログラムを使わずにフル機能することが求められています。</span><span class="sxs-lookup"><span data-stu-id="99de7-112">We expect apps to be fully functional without the use of Windows compatibility modes, AppHelp messages, or compatibility fixes.</span></span>
 
-アプリは、HKEY\-LOCAL\-MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\AppInit\-DLLs レジストリ キーに読み込む DLL を一覧する必要はありません。
+<span data-ttu-id="99de7-113">アプリは、HKEY\-LOCAL\-MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\AppInit\-DLLs レジストリ キーに読み込む DLL を一覧する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="99de7-113">Apps must not list DLLs to load in the HKEY\-LOCAL\-MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\AppInit\-DLLs registry key.</span></span>
 
-### <a name="test-details"></a>テストの詳細
+### <a name="test-details"></a><span data-ttu-id="99de7-114">テストの詳細</span><span class="sxs-lookup"><span data-stu-id="99de7-114">Test details</span></span>
 
-認定テストを通じて、アプリの復元性や安定性をテストします。
+<span data-ttu-id="99de7-115">認定テストを通じて、アプリの復元性や安定性をテストします。</span><span class="sxs-lookup"><span data-stu-id="99de7-115">We test the app resilience and stability throughout the certification testing.</span></span>
 
-Windows アプリ認定キットで [**IApplicationActivationManager::ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) を呼び出し、アプリを起動します。 **ActivateApplication** でアプリを起動する場合は、ユーザー アカウント制御 (UAC) を有効にし、画面解像度を 1024 x 768 または 768 x 1024 以上にする必要があります。 どちらの条件も満たされない場合は、アプリはこのテストに合格しません。
+<span data-ttu-id="99de7-116">Windows アプリ認定キットで [**IApplicationActivationManager::ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) を呼び出し、アプリを起動します。</span><span class="sxs-lookup"><span data-stu-id="99de7-116">The Windows App Certification Kit calls [**IApplicationActivationManager::ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) to launch apps.</span></span> <span data-ttu-id="99de7-117">**ActivateApplication** でアプリを起動する場合は、ユーザー アカウント制御 (UAC) を有効にし、画面解像度を 1024 x 768 または 768 x 1024 以上にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-117">For **ActivateApplication** to launch an app, User Account Control (UAC) must be enabled and the screen resolution must be at least 1024 x 768 or 768 x 1024.</span></span> <span data-ttu-id="99de7-118">どちらの条件も満たされない場合は、アプリはこのテストに合格しません。</span><span class="sxs-lookup"><span data-stu-id="99de7-118">If either condition is not met, your app will fail this test.</span></span>
 
-### <a name="corrective-actions"></a>問題への対応
+### <a name="corrective-actions"></a><span data-ttu-id="99de7-119">問題への対応</span><span class="sxs-lookup"><span data-stu-id="99de7-119">Corrective actions</span></span>
 
-テスト コンピューターで UAC が有効になっていることを確認します。
+<span data-ttu-id="99de7-120">テスト コンピューターで UAC が有効になっていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-120">Make sure UAC is enabled on the test computer.</span></span>
 
-十分な大きさの画面を備えたコンピューターでテストを実行していることを確認します。
+<span data-ttu-id="99de7-121">十分な大きさの画面を備えたコンピューターでテストを実行していることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-121">Make sure you are running the test on a computer with large enough screen.</span></span>
 
-テスト プラットフォームが [**ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) の前提条件を満たしているにもかかわらずアプリの起動に失敗する場合は、アクティブ化イベント ログを確認して問題のトラブルシューティングを行うことができます。 イベント ログでこのようなエントリを見つけるには、次の手順を実行します。
+<span data-ttu-id="99de7-122">テスト プラットフォームが [**ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) の前提条件を満たしているにもかかわらずアプリの起動に失敗する場合は、アクティブ化イベント ログを確認して問題のトラブルシューティングを行うことができます。</span><span class="sxs-lookup"><span data-stu-id="99de7-122">If your app fails to launch and your test platform satisfies the prerequisites of [**ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903), you can troubleshoot the problem by reviewing the activation event log.</span></span> <span data-ttu-id="99de7-123">イベント ログでこのようなエントリを見つけるには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="99de7-123">To find these entries in the event log:</span></span>
 
-1.  eventvwr.exe を開き、アプリケーションとサービス ログ\\Microsoft\\Windows\\Immersive-Shell フォルダーに移動します。
-2.  ビューをフィルター処理してイベント ID 5900 ～ 6000 を表示します。
-3.  アプリが起動しなかった理由を説明している可能性のある情報のログ エントリを確認します。
+1.  <span data-ttu-id="99de7-124">eventvwr.exe を開き、アプリケーションとサービス ログ\\Microsoft\\Windows\\Immersive-Shell フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="99de7-124">Open eventvwr.exe and navigate to the Application and Services Log\\Microsoft\\Windows\\Immersive-Shell folder.</span></span>
+2.  <span data-ttu-id="99de7-125">ビューをフィルター処理してイベント ID 5900 ～ 6000 を表示します。</span><span class="sxs-lookup"><span data-stu-id="99de7-125">Filter the view to show Event Ids: 5900-6000.</span></span>
+3.  <span data-ttu-id="99de7-126">アプリが起動しなかった理由を説明している可能性のある情報のログ エントリを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-126">Review the log entries for info that might explain why the app didn't launch.</span></span>
 
-問題のあるファイルをトラブルシューティングして問題を特定し、修正します。 アプリをリビルドして再テストします。 また、ダンプ ファイルが Windows アプリ認定キットのログ フォルダーに生成されたかどうかを確認します。ダンプ ファイルもアプリのデバッグに使用できます。
+<span data-ttu-id="99de7-127">問題のあるファイルをトラブルシューティングして問題を特定し、修正します。</span><span class="sxs-lookup"><span data-stu-id="99de7-127">Troubleshoot the file with the problem, identify and fix the problem.</span></span> <span data-ttu-id="99de7-128">アプリをリビルドして再テストします。</span><span class="sxs-lookup"><span data-stu-id="99de7-128">Rebuild and re-test the app.</span></span> <span data-ttu-id="99de7-129">また、ダンプ ファイルが Windows アプリ認定キットのログ フォルダーに生成されたかどうかを確認します。ダンプ ファイルもアプリのデバッグに使用できます。</span><span class="sxs-lookup"><span data-stu-id="99de7-129">You can also check if a dump file was generated in the Windows App Certification Kit log folder that can be used to debug your app.</span></span>
 
-## <a name="platform-version-launch-test"></a>プラットフォーム バージョン起動テスト
+## <a name="platform-version-launch-test"></a><span data-ttu-id="99de7-130">プラットフォーム バージョン起動テスト</span><span class="sxs-lookup"><span data-stu-id="99de7-130">Platform Version Launch test</span></span>
 
-Windows アプリを将来のバージョンの OS で実行できることを確認します。 これまで、このテストはデスクトップ アプリ ワークフローにのみ適用されてきましたが、ストアおよびユニバーサル Windows プラットフォーム (UWP) のワークフローに有効になりました。
+<span data-ttu-id="99de7-131">Windows アプリを将来のバージョンの OS で実行できることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-131">Checks that the Windows app can run on a future version of the OS.</span></span> <span data-ttu-id="99de7-132">これまで、このテストはデスクトップ アプリ ワークフローにのみ適用されてきましたが、ストアおよびユニバーサル Windows プラットフォーム (UWP) のワークフローに有効になりました。</span><span class="sxs-lookup"><span data-stu-id="99de7-132">This test has historically been only applied to the Desktop app workflow, but this is now enabled for the Store and Universal Windows Platform (UWP) workflows.</span></span>
 
-### <a name="background"></a>背景
+### <a name="background"></a><span data-ttu-id="99de7-133">背景</span><span class="sxs-lookup"><span data-stu-id="99de7-133">Background</span></span>
 
-オペレーティング システムのバージョン情報により、Windows ストアの使用が制限されてきました。 これは、アプリが OS のバージョンに固有の機能をユーザーに提供できるように、アプリによって OS バージョンを確認する目的で誤って使用されることがよくありました。
+<span data-ttu-id="99de7-134">オペレーティング システムのバージョン情報により、Windows ストアの使用が制限されてきました。</span><span class="sxs-lookup"><span data-stu-id="99de7-134">Operating system version info has restricted usage for the Windows Store.</span></span> <span data-ttu-id="99de7-135">これは、アプリが OS のバージョンに固有の機能をユーザーに提供できるように、アプリによって OS バージョンを確認する目的で誤って使用されることがよくありました。</span><span class="sxs-lookup"><span data-stu-id="99de7-135">This has often been incorrectly used by apps to check OS version so that the app can provide users with functionality that is specific to an OS version.</span></span>
 
-### <a name="test-details"></a>テストの詳細
+### <a name="test-details"></a><span data-ttu-id="99de7-136">テストの詳細</span><span class="sxs-lookup"><span data-stu-id="99de7-136">Test details</span></span>
 
-Windows アプリ認定キットは、HighVersionLie を使って、アプリが OS のバージョンを確認する方法を検出します。 アプリがクラッシュした場合は、このテストに合格しません。
+<span data-ttu-id="99de7-137">Windows アプリ認定キットは、HighVersionLie を使って、アプリが OS のバージョンを確認する方法を検出します。</span><span class="sxs-lookup"><span data-stu-id="99de7-137">The Windows App Certification Kit uses the HighVersionLie to detect how the app checks the OS version.</span></span> <span data-ttu-id="99de7-138">アプリがクラッシュした場合は、このテストに合格しません。</span><span class="sxs-lookup"><span data-stu-id="99de7-138">If the app crashes, it will fail this test.</span></span>
 
-### <a name="corrective-action"></a>問題への対応
+### <a name="corrective-action"></a><span data-ttu-id="99de7-139">問題への対応</span><span class="sxs-lookup"><span data-stu-id="99de7-139">Corrective action</span></span>
 
-アプリは、バージョン API ヘルパー関数を使ってこれを確認する必要があります。 詳しくは、「[オペレーティング システムのバージョン](https://msdn.microsoft.com/library/windows/desktop/ms724832)」をご覧ください。
+<span data-ttu-id="99de7-140">アプリは、バージョン API ヘルパー関数を使ってこれを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-140">Apps should use Version API helper functions to check this.</span></span> <span data-ttu-id="99de7-141">詳しくは、「[オペレーティング システムのバージョン](https://msdn.microsoft.com/library/windows/desktop/ms724832)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="99de7-141">See [Operating System Version](https://msdn.microsoft.com/library/windows/desktop/ms724832) for more information.</span></span>
 
-## <a name="background-tasks-cancellation-handler-validation"></a>バックグラウンド タスクの取り消しハンドラーの検証
+## <a name="background-tasks-cancellation-handler-validation"></a><span data-ttu-id="99de7-142">バックグラウンド タスクの取り消しハンドラーの検証</span><span class="sxs-lookup"><span data-stu-id="99de7-142">Background tasks cancellation handler validation</span></span>
 
-宣言されているバックグラウンド タスクの取り消しハンドラーがアプリにあることを確認します。 タスクが取り消されたときに呼び出される専用の関数が必要です。 このテストは、展開済みのアプリにのみ適用されます。
+<span data-ttu-id="99de7-143">宣言されているバックグラウンド タスクの取り消しハンドラーがアプリにあることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-143">This verifies that the app has a cancellation handler for declared background tasks.</span></span> <span data-ttu-id="99de7-144">タスクが取り消されたときに呼び出される専用の関数が必要です。</span><span class="sxs-lookup"><span data-stu-id="99de7-144">There needs to be a dedicated function that will be called when the task is cancelled.</span></span> <span data-ttu-id="99de7-145">このテストは、展開済みのアプリにのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="99de7-145">This test is applied only for deployed apps.</span></span>
 
-### <a name="background"></a>背景
+### <a name="background"></a><span data-ttu-id="99de7-146">背景</span><span class="sxs-lookup"><span data-stu-id="99de7-146">Background</span></span>
 
-ストア アプリは、バック グラウンドで実行されるプロセスを登録できます。 たとえば、メール アプリはときどき ping を実行することがあります。 しかし、OS がこれらのリソースを必要とする場合は、バックグラウンド タスクが取り消され、アプリはこの取り消しを適切に処理する必要があります。 取り消しハンドラーがないアプリはクラッシュする可能性や、ユーザーがアプリを閉じようとしても終了しない可能性があります。
+<span data-ttu-id="99de7-147">ストア アプリは、バック グラウンドで実行されるプロセスを登録できます。</span><span class="sxs-lookup"><span data-stu-id="99de7-147">Store apps can register a process that runs in the background.</span></span> <span data-ttu-id="99de7-148">たとえば、メール アプリはときどき ping を実行することがあります。</span><span class="sxs-lookup"><span data-stu-id="99de7-148">For example, an email app may ping a server from time to time.</span></span> <span data-ttu-id="99de7-149">しかし、OS がこれらのリソースを必要とする場合は、バックグラウンド タスクが取り消され、アプリはこの取り消しを適切に処理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-149">However, if the OS needs these resources, it will cancel the background task, and apps should gracefully handle this cancellation.</span></span> <span data-ttu-id="99de7-150">取り消しハンドラーがないアプリはクラッシュする可能性や、ユーザーがアプリを閉じようとしても終了しない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-150">Apps that don't have a cancellation handler may crash or not close when the user tries to close the app.</span></span>
 
-### <a name="test-details"></a>テストの詳細
+### <a name="test-details"></a><span data-ttu-id="99de7-151">テストの詳細</span><span class="sxs-lookup"><span data-stu-id="99de7-151">Test details</span></span>
 
-アプリが起動して中断され、アプリの非バックグラウンド部分が終了します。 このアプリに関連付けられたバックグラウンド タスクは取り消されます。 アプリの状態が確認され、アプリがまだ実行中の場合はこのテストに合格しません。
+<span data-ttu-id="99de7-152">アプリが起動して中断され、アプリの非バックグラウンド部分が終了します。</span><span class="sxs-lookup"><span data-stu-id="99de7-152">The app is launched, suspended and the non-background portion of the app is terminated.</span></span> <span data-ttu-id="99de7-153">このアプリに関連付けられたバックグラウンド タスクは取り消されます。</span><span class="sxs-lookup"><span data-stu-id="99de7-153">Then the background tasks associated with this app are cancelled.</span></span> <span data-ttu-id="99de7-154">アプリの状態が確認され、アプリがまだ実行中の場合はこのテストに合格しません。</span><span class="sxs-lookup"><span data-stu-id="99de7-154">The state of the app is checked, and if the app is still running then it will fail this test.</span></span>
 
-### <a name="corrective-action"></a>問題への対応
+### <a name="corrective-action"></a><span data-ttu-id="99de7-155">問題への対応</span><span class="sxs-lookup"><span data-stu-id="99de7-155">Corrective action</span></span>
 
-アプリに取り消しハンドラーを追加します。 詳しくは、「[バックグラウンド タスクによるアプリのサポート](https://msdn.microsoft.com/library/windows/apps/Mt299103)」をご覧ください。
+<span data-ttu-id="99de7-156">アプリに取り消しハンドラーを追加します。</span><span class="sxs-lookup"><span data-stu-id="99de7-156">Add the cancellation handler to your app.</span></span> <span data-ttu-id="99de7-157">詳しくは、「[バックグラウンド タスクによるアプリのサポート](https://msdn.microsoft.com/library/windows/apps/Mt299103)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="99de7-157">For more information see [Support your app with background tasks](https://msdn.microsoft.com/library/windows/apps/Mt299103).</span></span>
 
-## <a name="app-count"></a>アプリ カウント
+## <a name="app-count"></a><span data-ttu-id="99de7-158">アプリ カウント</span><span class="sxs-lookup"><span data-stu-id="99de7-158">App count</span></span>
 
-アプリ パッケージ (APPX、アプリ バンドル) に 1 つのアプリケーションが含まれていることを確認します。 これは、キットでスタンドアロン テストに変更されました。
+<span data-ttu-id="99de7-159">アプリ パッケージ (APPX、アプリ バンドル) に 1 つのアプリケーションが含まれていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-159">This verifies that an app package (APPX, app bundle) contains one application.</span></span> <span data-ttu-id="99de7-160">これは、キットでスタンドアロン テストに変更されました。</span><span class="sxs-lookup"><span data-stu-id="99de7-160">This was changed in the kit to be a standalone test.</span></span>
 
-### <a name="background"></a>背景
+### <a name="background"></a><span data-ttu-id="99de7-161">背景</span><span class="sxs-lookup"><span data-stu-id="99de7-161">Background</span></span>
 
-このテストは、ストア ポリシーに従って実装されていました。
+<span data-ttu-id="99de7-162">このテストは、ストア ポリシーに従って実装されていました。</span><span class="sxs-lookup"><span data-stu-id="99de7-162">This test was implemented as per Store policy.</span></span>
 
-### <a name="test-details"></a>テストの詳細
+### <a name="test-details"></a><span data-ttu-id="99de7-163">テストの詳細</span><span class="sxs-lookup"><span data-stu-id="99de7-163">Test details</span></span>
 
-Windows Phone 8.1 アプリの場合は、テストにより、バンドル内の appx パッケージの合計数が 512 個未満であること、バンドル内に含まれるメイン パッケージが 1 個だけであること、そしてバンドル内のメイン パッケージのアーキテクチャが ARM またはニュートラルとしてマークされていることを確認します。
+<span data-ttu-id="99de7-164">Windows Phone 8.1 アプリの場合は、テストにより、バンドル内の appx パッケージの合計数が 512 個未満であること、バンドル内に含まれるメイン パッケージが 1 個だけであること、そしてバンドル内のメイン パッケージのアーキテクチャが ARM またはニュートラルとしてマークされていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-164">For Windows Phone 8.1 apps the test verifies the total number of appx packages in the bundle is &lt; 512, there is only one main package in the bundle, and that the architecture of the main package in the bundle is marked as ARM or neutral.</span></span>
 
-Windows 10 アプリの場合は、テストでは、バンドルのバージョンのリビジョン番号が 0 に設定されていることを確認します。
+<span data-ttu-id="99de7-165">Windows 10 アプリの場合は、テストでは、バンドルのバージョンのリビジョン番号が 0 に設定されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-165">For Windows 10 apps the test verifies that the revision number in the version of the bundle is set to 0.</span></span>
 
-### <a name="corrective-action"></a>問題への対応
+### <a name="corrective-action"></a><span data-ttu-id="99de7-166">問題への対応</span><span class="sxs-lookup"><span data-stu-id="99de7-166">Corrective action</span></span>
 
-アプリ パッケージとバンドルが、テストの詳細で上記の要件を満たしていることを確認します。
+<span data-ttu-id="99de7-167">アプリ パッケージとバンドルが、テストの詳細で上記の要件を満たしていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-167">Ensure the app package and bundle meet requirements above in Test details.</span></span>
 
-## <a name="app-manifest-compliance-test"></a>アプリ マニフェストの適合性のテスト
+## <a name="app-manifest-compliance-test"></a><span data-ttu-id="99de7-168">アプリ マニフェストの適合性のテスト</span><span class="sxs-lookup"><span data-stu-id="99de7-168">App manifest compliance test</span></span>
 
-アプリ マニフェストのコンテンツをテストし、コンテンツが正しいかどうかを確認します。
+<span data-ttu-id="99de7-169">アプリ マニフェストのコンテンツをテストし、コンテンツが正しいかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-169">Test the contents of app manifest to make sure its contents are correct.</span></span>
 
-### <a name="background"></a>背景
+### <a name="background"></a><span data-ttu-id="99de7-170">背景</span><span class="sxs-lookup"><span data-stu-id="99de7-170">Background</span></span>
 
-アプリ マニフェストは正しい形式でなければならない
+<span data-ttu-id="99de7-171">アプリ マニフェストは正しい形式でなければならない</span><span class="sxs-lookup"><span data-stu-id="99de7-171">Apps must have a correctly formatted app manifest.</span></span>
 
-### <a name="test-details"></a>テストの詳細
+### <a name="test-details"></a><span data-ttu-id="99de7-172">テストの詳細</span><span class="sxs-lookup"><span data-stu-id="99de7-172">Test details</span></span>
 
-「[アプリ パッケージの要件](https://msdn.microsoft.com/library/windows/apps/Mt148525)」の説明に従って、アプリ マニフェストを調べてコンテンツが正しいかどうかを確認します。
+<span data-ttu-id="99de7-173">「[アプリ パッケージの要件](https://msdn.microsoft.com/library/windows/apps/Mt148525)」の説明に従って、アプリ マニフェストを調べてコンテンツが正しいかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-173">Examines the app manifest to verify the contents are correct as described in the [App package requirements](https://msdn.microsoft.com/library/windows/apps/Mt148525).</span></span>
 
--   **ファイル拡張子とプロトコル**
+-   **<span data-ttu-id="99de7-174">ファイル拡張子とプロトコル</span><span class="sxs-lookup"><span data-stu-id="99de7-174">File extensions and protocols</span></span>**
 
-    アプリは、関連付ける必要があるファイル拡張子を宣言できます。 ただし不当に使用されると、アプリは大量のファイル拡張子 (しかも大半が使うことのない拡張子) を宣言することがあり、ユーザー エクスペリエンスが低下する可能性があります。 このテストで追加されるチェックにより、アプリに関連付けることができるファイル拡張子の数を制限できます。
+    <span data-ttu-id="99de7-175">アプリは、関連付ける必要があるファイル拡張子を宣言できます。</span><span class="sxs-lookup"><span data-stu-id="99de7-175">Your app can declare the file extensions that it wants to associate with.</span></span> <span data-ttu-id="99de7-176">ただし不当に使用されると、アプリは大量のファイル拡張子 (しかも大半が使うことのない拡張子) を宣言することがあり、ユーザー エクスペリエンスが低下する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-176">Used improperly, an app can declare a large number of file extensions, most of which it may not even use, resulting in a bad user experience.</span></span> <span data-ttu-id="99de7-177">このテストで追加されるチェックにより、アプリに関連付けることができるファイル拡張子の数を制限できます。</span><span class="sxs-lookup"><span data-stu-id="99de7-177">This test will add a check to limit the number of file extensions that an app can associate with.</span></span>
 
--   **フレームワークの依存関係規則**
+-   **<span data-ttu-id="99de7-178">フレームワークの依存関係規則</span><span class="sxs-lookup"><span data-stu-id="99de7-178">Framework Dependency rule</span></span>**
 
-    このテストは、アプリと UWP の依存関係が適切かどうかをチェックします。 不適切な依存関係がある場合は、このテストは失敗します。
+    <span data-ttu-id="99de7-179">このテストは、アプリと UWP の依存関係が適切かどうかをチェックします。</span><span class="sxs-lookup"><span data-stu-id="99de7-179">This test enforces the requirement that apps take appropriate dependencies on the UWP.</span></span> <span data-ttu-id="99de7-180">不適切な依存関係がある場合は、このテストは失敗します。</span><span class="sxs-lookup"><span data-stu-id="99de7-180">If there is an inappropriate dependency, this test will fail.</span></span>
 
-    アプリが動作する OS のバージョンと依存関係のあるフレームワークとの間に不整合がある場合は、テストは失敗します。 アプリがフレーム ワーク DLL の Preview 版を参照している場合にも、テストは失敗します。
+    <span data-ttu-id="99de7-181">アプリが動作する OS のバージョンと依存関係のあるフレームワークとの間に不整合がある場合は、テストは失敗します。</span><span class="sxs-lookup"><span data-stu-id="99de7-181">If there is a mismatch between the OS version the app applies to and the framework dependencies made, the test will fail.</span></span> <span data-ttu-id="99de7-182">アプリがフレーム ワーク DLL の Preview 版を参照している場合にも、テストは失敗します。</span><span class="sxs-lookup"><span data-stu-id="99de7-182">The test would also fail if the app refers to any preview versions of the framework dlls.</span></span>
 
--   **プロセス間通信 (IPC) の確認**
+-   **<span data-ttu-id="99de7-183">プロセス間通信 (IPC) の確認</span><span class="sxs-lookup"><span data-stu-id="99de7-183">Inter-process Communication (IPC) verification</span></span>**
 
-    このテストでは、Windows ストア アプリがデスクトップ コンポーネントとアプリ コンテナーの外側で通信しないかどうかをチェックします。 プロセス間通信は、サイドローディングが行われたアプリのみを対象としています。 DesktopApplicationPath と同じ名前で [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) を指定しているアプリは、このテストに合格しません。
+    <span data-ttu-id="99de7-184">このテストでは、Windows ストア アプリがデスクトップ コンポーネントとアプリ コンテナーの外側で通信しないかどうかをチェックします。</span><span class="sxs-lookup"><span data-stu-id="99de7-184">This test enforces the requirement that Windows Store apps do not communicate outside of the app container to Desktop components.</span></span> <span data-ttu-id="99de7-185">プロセス間通信は、サイドローディングが行われたアプリのみを対象としています。</span><span class="sxs-lookup"><span data-stu-id="99de7-185">Inter-process communication is intended for side-loaded apps only.</span></span> <span data-ttu-id="99de7-186">DesktopApplicationPath と同じ名前で [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) を指定しているアプリは、このテストに合格しません。</span><span class="sxs-lookup"><span data-stu-id="99de7-186">Apps that specify the [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) with name equal to "DesktopApplicationPath" will fail this test.</span></span>
 
-### <a name="corrective-action"></a>問題への対応
+### <a name="corrective-action"></a><span data-ttu-id="99de7-187">問題への対応</span><span class="sxs-lookup"><span data-stu-id="99de7-187">Corrective action</span></span>
 
-「[アプリ パッケージの要件](https://msdn.microsoft.com/library/windows/apps/Mt148525)」で説明されている要件に照らして、アプリのマニフェストを確認します。
+<span data-ttu-id="99de7-188">「[アプリ パッケージの要件](https://msdn.microsoft.com/library/windows/apps/Mt148525)」で説明されている要件に照らして、アプリのマニフェストを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-188">Review the app's manifest against the requirements described in the [App package requirements](https://msdn.microsoft.com/library/windows/apps/Mt148525).</span></span>
 
-## <a name="windows-security-features-test"></a>Windows のセキュリティ機能のテスト
+## <a name="windows-security-features-test"></a><span data-ttu-id="99de7-189">Windows のセキュリティ機能のテスト</span><span class="sxs-lookup"><span data-stu-id="99de7-189">Windows Security features test</span></span>
 
-### <a name="background"></a>背景
+### <a name="background"></a><span data-ttu-id="99de7-190">背景</span><span class="sxs-lookup"><span data-stu-id="99de7-190">Background</span></span>
 
-Windows 既定のセキュリティ保護を変更すると、ユーザーが危険にさらされるリスクが増大します。
+<span data-ttu-id="99de7-191">Windows 既定のセキュリティ保護を変更すると、ユーザーが危険にさらされるリスクが増大します。</span><span class="sxs-lookup"><span data-stu-id="99de7-191">Changing the default Windows security protections can put customers at increased risk.</span></span>
 
-### <a name="test-details"></a>テストの詳細
+### <a name="test-details"></a><span data-ttu-id="99de7-192">テストの詳細</span><span class="sxs-lookup"><span data-stu-id="99de7-192">Test details</span></span>
 
-[BinScope Binary Analyzer](#binscope-binary-analyzer-tests) を起動して、アプリのセキュリティをテストします。
+<span data-ttu-id="99de7-193">[BinScope Binary Analyzer](#binscope-binary-analyzer-tests) を起動して、アプリのセキュリティをテストします。</span><span class="sxs-lookup"><span data-stu-id="99de7-193">Tests the app's security by running the [BinScope Binary Analyzer](#binscope-binary-analyzer-tests).</span></span>
 
-BinScope Binary Analyzer テストでは、アプリのバイナリ ファイルを検査して、攻撃や悪用に対してアプリの強度を上げるコーディングとビルドの手法をチェックします。
+<span data-ttu-id="99de7-194">BinScope Binary Analyzer テストでは、アプリのバイナリ ファイルを検査して、攻撃や悪用に対してアプリの強度を上げるコーディングとビルドの手法をチェックします。</span><span class="sxs-lookup"><span data-stu-id="99de7-194">The BinScope Binary Analyzer tests examine the app's binary files to check for coding and building practices that make the app less vulnerable to attack or to being used as an attack vector.</span></span>
 
-BinScope Binary Analyzer テストは、次のセキュリティ関連の機能が適切に使われているかをチェックします。
+<span data-ttu-id="99de7-195">BinScope Binary Analyzer テストは、次のセキュリティ関連の機能が適切に使われているかをチェックします。</span><span class="sxs-lookup"><span data-stu-id="99de7-195">The BinScope Binary Analyzer tests check for the correct use of the following security-related features.</span></span>
 
--   BinScope Binary Analyzer テスト
--   プライベート コードの署名
+-   <span data-ttu-id="99de7-196">BinScope Binary Analyzer テスト</span><span class="sxs-lookup"><span data-stu-id="99de7-196">BinScope Binary Analyzer tests</span></span>
+-   <span data-ttu-id="99de7-197">プライベート コードの署名</span><span class="sxs-lookup"><span data-stu-id="99de7-197">Private Code Signing</span></span>
 
-### <a name="binscope-binary-analyzer-tests"></a>BinScope Binary Analyzer テスト
+### <a name="binscope-binary-analyzer-tests"></a><span data-ttu-id="99de7-198">BinScope Binary Analyzer テスト</span><span class="sxs-lookup"><span data-stu-id="99de7-198">BinScope Binary Analyzer tests</span></span>
 
+<span data-ttu-id="99de7-199">
+[BinScope Binary Analyzer](https://www.microsoft.com/en-us/download/details.aspx?id=44995) テストは、アプリのバイナリ ファイルを検査して、攻撃や悪用からアプリを守るコーディングとビルドの手法をチェックします。</span><span class="sxs-lookup"><span data-stu-id="99de7-199">The [BinScope Binary Analyzer](https://www.microsoft.com/en-us/download/details.aspx?id=44995) tests examine the app's binary files to check for coding and building practices that make the app less vulnerable to attack or to being used as an attack vector.</span></span>
 
-[BinScope Binary Analyzer](https://www.microsoft.com/en-us/download/details.aspx?id=44995) テストは、アプリのバイナリ ファイルを検査して、攻撃や悪用からアプリを守るコーディングとビルドの手法をチェックします。
+<span data-ttu-id="99de7-200">BinScope Binary Analyzer テストは、次のセキュリティ関連機能が適切に使われているかをチェックします。</span><span class="sxs-lookup"><span data-stu-id="99de7-200">The BinScope Binary Analyzer tests check for the correct use of these security-related features:</span></span>
 
-BinScope Binary Analyzer テストは、次のセキュリティ関連機能が適切に使われているかをチェックします。
+-   [<span data-ttu-id="99de7-201">AllowPartiallyTrustedCallersAttribute</span><span class="sxs-lookup"><span data-stu-id="99de7-201">AllowPartiallyTrustedCallersAttribute</span></span>](#binscope-1)
+-   [<span data-ttu-id="99de7-202">/SafeSEH 例外処理の保護</span><span class="sxs-lookup"><span data-stu-id="99de7-202">/SafeSEH Exception Handling Protection</span></span>](#binscope-2)
+-   [<span data-ttu-id="99de7-203">データ実行防止</span><span class="sxs-lookup"><span data-stu-id="99de7-203">Data Execution Prevention</span></span>](#binscope-3)
+-   [<span data-ttu-id="99de7-204">アドレス空間レイアウトのランダム化</span><span class="sxs-lookup"><span data-stu-id="99de7-204">Address Space Layout Randomization</span></span>](#binscope-4)
+-   [<span data-ttu-id="99de7-205">共有されている PE セクションの読み取り/書き込み</span><span class="sxs-lookup"><span data-stu-id="99de7-205">Read/Write Shared PE Section</span></span>](#binscope-5)
+-   [<span data-ttu-id="99de7-206">AppContainerCheck</span><span class="sxs-lookup"><span data-stu-id="99de7-206">AppContainerCheck</span></span>](#appcontainercheck)
+-   [<span data-ttu-id="99de7-207">ExecutableImportsCheck</span><span class="sxs-lookup"><span data-stu-id="99de7-207">ExecutableImportsCheck</span></span>](#binscope-7)
+-   [<span data-ttu-id="99de7-208">WXCheck</span><span class="sxs-lookup"><span data-stu-id="99de7-208">WXCheck</span></span>](#binscope-8)
 
--   [AllowPartiallyTrustedCallersAttribute](#binscope-1)
--   [/SafeSEH 例外処理の保護](#binscope-2)
--   [データ実行防止](#binscope-3)
--   [アドレス空間レイアウトのランダム化](#binscope-4)
--   [共有されている PE セクションの読み取り/書き込み](#binscope-5)
--   [AppContainerCheck](#appcontainercheck)
--   [ExecutableImportsCheck](#binscope-7)
--   [WXCheck](#binscope-8)
+### <a name="span-idbinscope-1spanallowpartiallytrustedcallersattribute"></a><span data-ttu-id="99de7-209"><span id="binscope-1"></span>AllowPartiallyTrustedCallersAttribute</span><span class="sxs-lookup"><span data-stu-id="99de7-209"><span id="binscope-1"></span>AllowPartiallyTrustedCallersAttribute</span></span>
 
-### <a name="span-idbinscope-1spanallowpartiallytrustedcallersattribute"></a><span id="binscope-1"></span>AllowPartiallyTrustedCallersAttribute
+<span data-ttu-id="99de7-210">**Windows アプリ認定キットのエラー メッセージ:** APTCACheck Test failed</span><span class="sxs-lookup"><span data-stu-id="99de7-210">**Windows App Certification Kit error message:** APTCACheck Test failed</span></span>
 
-**Windows アプリ認定キットのエラー メッセージ:** APTCACheck Test failed
+<span data-ttu-id="99de7-211">AllowPartiallyTrustedCallersAttribute (APTCA) 属性を使うと、署名されたアセンブリで、部分的に信頼されたコードから完全に信頼されたコードにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="99de7-211">The AllowPartiallyTrustedCallersAttribute (APTCA) attribute enables access to fully trusted code from partially trusted code in signed assemblies.</span></span> <span data-ttu-id="99de7-212">アセンブリに APTCA 属性を適用すると、アセンブリが有効な間は、部分的に信頼された呼び出し元からそのアセンブリにアクセスできます。これにより、セキュリティが侵害されるおそれがあります。</span><span class="sxs-lookup"><span data-stu-id="99de7-212">When you apply the APTCA attribute to an assembly, partially trusted callers can access that assembly for the life of the assembly, which can compromise security.</span></span>
 
-AllowPartiallyTrustedCallersAttribute (APTCA) 属性を使うと、署名されたアセンブリで、部分的に信頼されたコードから完全に信頼されたコードにアクセスできます。 アセンブリに APTCA 属性を適用すると、アセンブリが有効な間は、部分的に信頼された呼び出し元からそのアセンブリにアクセスできます。これにより、セキュリティが侵害されるおそれがあります。
+**<span data-ttu-id="99de7-213">アプリがこのテストに合格しなかった場合の対処方法</span><span class="sxs-lookup"><span data-stu-id="99de7-213">What to do if your app fails this test</span></span>**
 
-**アプリがこのテストに合格しなかった場合の対処方法**
+<span data-ttu-id="99de7-214">プロジェクトに必要で、リスクをよく認識している場合を除いて、厳密な名前の付いたアセンブリでは APTCA 属性を使わないでください。</span><span class="sxs-lookup"><span data-stu-id="99de7-214">Don't use the APTCA attribute on strong named assemblies unless your project requires it and the risks are well understood.</span></span> <span data-ttu-id="99de7-215">APTCA 属性を使う必要がある場合は、すべての API が適切なコード アクセス セキュリティ要求によって保護されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-215">In cases where it's required, make sure that all APIs are protected with appropriate code access security demands.</span></span> <span data-ttu-id="99de7-216">アセンブリがユニバーサル Windows プラットフォーム (UWP) アプリの一部となっている場合は、APTCA の影響はありません。</span><span class="sxs-lookup"><span data-stu-id="99de7-216">APTCA has no effect when the assembly is a part of a Universal Windows Platform (UWP) app.</span></span>
 
-プロジェクトに必要で、リスクをよく認識している場合を除いて、厳密な名前の付いたアセンブリでは APTCA 属性を使わないでください。 APTCA 属性を使う必要がある場合は、すべての API が適切なコード アクセス セキュリティ要求によって保護されていることを確認します。 アセンブリがユニバーサル Windows プラットフォーム (UWP) アプリの一部となっている場合は、APTCA の影響はありません。
+**<span data-ttu-id="99de7-217">注釈</span><span class="sxs-lookup"><span data-stu-id="99de7-217">Remarks</span></span>**
 
-**注釈**
+<span data-ttu-id="99de7-218">このテストは、マネージ コード (C#、.NET など) でのみ実行されます。</span><span class="sxs-lookup"><span data-stu-id="99de7-218">This test is performed only on managed code (C#, .NET, etc.).</span></span>
 
-このテストは、マネージ コード (C#、.NET など) でのみ実行されます。
+### <a name="span-idbinscope-2spansafeseh-exception-handling-protection"></a><span data-ttu-id="99de7-219"><span id="binscope-2"></span>/SafeSEH 例外処理の保護</span><span class="sxs-lookup"><span data-stu-id="99de7-219"><span id="binscope-2"></span>/SafeSEH Exception Handling Protection</span></span>
 
-### <a name="span-idbinscope-2spansafeseh-exception-handling-protection"></a><span id="binscope-2"></span>/SafeSEH 例外処理の保護
+<span data-ttu-id="99de7-220">**Windows アプリ認定キットのエラー メッセージ:** SafeSEHCheck Test failed</span><span class="sxs-lookup"><span data-stu-id="99de7-220">**Windows App Certification Kit error message:** SafeSEHCheck Test failed</span></span>
 
-**Windows アプリ認定キットのエラー メッセージ:** SafeSEHCheck Test failed
+<span data-ttu-id="99de7-221">例外ハンドラーは、アプリがゼロ除算エラーなどの例外的な状況に陥った場合に実行されます。</span><span class="sxs-lookup"><span data-stu-id="99de7-221">An exception handler runs when the app encounters an exceptional condition, such as a divide-by-zero error.</span></span> <span data-ttu-id="99de7-222">関数が呼び出されると例外ハンドラーのアドレスがスタックに格納されるため、悪意のあるソフトウェアがスタックを上書きしようとした場合は、バッファー オーバーフローによる攻撃を受けやすくなることがあります。</span><span class="sxs-lookup"><span data-stu-id="99de7-222">Because the address of the exception handler is stored on the stack when a function is called, it could be vulnerable to a buffer overflow attacker if some malicious software were to overwrite the stack.</span></span>
 
-例外ハンドラーは、アプリがゼロ除算エラーなどの例外的な状況に陥った場合に実行されます。 関数が呼び出されると例外ハンドラーのアドレスがスタックに格納されるため、悪意のあるソフトウェアがスタックを上書きしようとした場合は、バッファー オーバーフローによる攻撃を受けやすくなることがあります。
+**<span data-ttu-id="99de7-223">アプリがこのテストに合格しなかった場合の対処方法</span><span class="sxs-lookup"><span data-stu-id="99de7-223">What to do if your app fails this test</span></span>**
 
-**アプリがこのテストに合格しなかった場合の対処方法**
+<span data-ttu-id="99de7-224">アプリをビルドするときに、リンカー コマンドの /SAFESEH オプションを有効にします。</span><span class="sxs-lookup"><span data-stu-id="99de7-224">Enable the /SAFESEH option in the linker command when you build your app.</span></span> <span data-ttu-id="99de7-225">Visual Studio のリリース構成では、既定で、このオプションが有効になっています。</span><span class="sxs-lookup"><span data-stu-id="99de7-225">This option is on by default in the Release configurations of Visual Studio.</span></span> <span data-ttu-id="99de7-226">このオプションが、アプリのすべての実行可能モジュールに対するビルド手順で有効になっていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-226">Verify this option is enabled in the build instructions for all executable modules in your app.</span></span>
 
-アプリをビルドするときに、リンカー コマンドの /SAFESEH オプションを有効にします。 Visual Studio のリリース構成では、既定で、このオプションが有効になっています。 このオプションが、アプリのすべての実行可能モジュールに対するビルド手順で有効になっていることを確認します。
+**<span data-ttu-id="99de7-227">注釈</span><span class="sxs-lookup"><span data-stu-id="99de7-227">Remarks</span></span>**
 
-**注釈**
+<span data-ttu-id="99de7-228">このテストは、64 ビット バイナリまたは ARM チップセット バイナリでは実行されません。例外ハンドラーのアドレスがスタックに格納されないためです。</span><span class="sxs-lookup"><span data-stu-id="99de7-228">The test is not performed on 64-bit binaries or ARM chipset binaries because they don't store exception handler addresses on the stack.</span></span>
 
-このテストは、64 ビット バイナリまたは ARM チップセット バイナリでは実行されません。例外ハンドラーのアドレスがスタックに格納されないためです。
+### <a name="span-idbinscope-3spandata-execution-prevention"></a><span data-ttu-id="99de7-229"><span id="binscope-3"></span>データ実行防止</span><span class="sxs-lookup"><span data-stu-id="99de7-229"><span id="binscope-3"></span>Data Execution Prevention</span></span>
 
-### <a name="span-idbinscope-3spandata-execution-prevention"></a><span id="binscope-3"></span>データ実行防止
+<span data-ttu-id="99de7-230">**Windows アプリ認定キットのエラー メッセージ:** NXCheck Test failed</span><span class="sxs-lookup"><span data-stu-id="99de7-230">**Windows App Certification Kit error message:** NXCheck Test failed</span></span>
 
-**Windows アプリ認定キットのエラー メッセージ:** NXCheck Test failed
+<span data-ttu-id="99de7-231">このテストでは、データ セグメントに格納されたコードが、アプリで実行されないことを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-231">This test verifies that an app doesn't run code that is stored in a data segment.</span></span>
 
-このテストでは、データ セグメントに格納されたコードが、アプリで実行されないことを確認します。
+**<span data-ttu-id="99de7-232">アプリがこのテストに合格しなかった場合の対処方法</span><span class="sxs-lookup"><span data-stu-id="99de7-232">What to do if your app fails this test</span></span>**
 
-**アプリがこのテストに合格しなかった場合の対処方法**
+<span data-ttu-id="99de7-233">アプリをビルドするときに、リンカー コマンドの /NXCOMPAT オプションを有効にします。</span><span class="sxs-lookup"><span data-stu-id="99de7-233">Enable the /NXCOMPAT option in the linker command when you build your app.</span></span> <span data-ttu-id="99de7-234">Data Execution Prevention (DEP) をサポートするリンカー バージョンでは、既定で、このオプションが有効になっています。</span><span class="sxs-lookup"><span data-stu-id="99de7-234">This option is on by default in linker versions that support Data Execution Prevention (DEP).</span></span>
 
-アプリをビルドするときに、リンカー コマンドの /NXCOMPAT オプションを有効にします。 Data Execution Prevention (DEP) をサポートするリンカー バージョンでは、既定で、このオプションが有効になっています。
+**<span data-ttu-id="99de7-235">注釈</span><span class="sxs-lookup"><span data-stu-id="99de7-235">Remarks</span></span>**
 
-**注釈**
+<span data-ttu-id="99de7-236">DEP 対応の CPU でアプリをテストし、DEP の結果として見つかったエラーをすべて修正することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="99de7-236">We recommend that you test your apps on a DEP-capable CPU and fix any failures you find that result from DEP.</span></span>
 
-DEP 対応の CPU でアプリをテストし、DEP の結果として見つかったエラーをすべて修正することをお勧めします。
+### <a name="span-idbinscope-4spanaddress-space-layout-randomization"></a><span data-ttu-id="99de7-237"><span id="binscope-4"></span>アドレス空間レイアウトのランダム化</span><span class="sxs-lookup"><span data-stu-id="99de7-237"><span id="binscope-4"></span>Address Space Layout Randomization</span></span>
 
-### <a name="span-idbinscope-4spanaddress-space-layout-randomization"></a><span id="binscope-4"></span>アドレス空間レイアウトのランダム化
+<span data-ttu-id="99de7-238">**Windows アプリ認定キットのエラー メッセージ:** DBCheck Test failed</span><span class="sxs-lookup"><span data-stu-id="99de7-238">**Windows App Certification Kit error message:** DBCheck Test failed</span></span>
 
-**Windows アプリ認定キットのエラー メッセージ:** DBCheck Test failed
+<span data-ttu-id="99de7-239">アドレス空間レイアウトのランダム化 (ASLR) を使うと、実行可能なイメージがメモリの予測不可能な場所に読み込まれます。これにより、特定の仮想アドレスにプログラムを読み込むことを想定している悪意のあるソフトウェアは、計画どおりに動作しにくくなります。</span><span class="sxs-lookup"><span data-stu-id="99de7-239">Address Space Layout Randomization (ASLR) loads executable images into unpredictable locations in memory, which makes it harder for malicious software that expects a program to be loaded at a certain virtual address to operate predictably.</span></span> <span data-ttu-id="99de7-240">アプリとアプリで使うすべてのコンポーネントは、ASLR をサポートする必要があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-240">Your app and all components that your app uses must support ASLR.</span></span>
 
-アドレス空間レイアウトのランダム化 (ASLR) を使うと、実行可能なイメージがメモリの予測不可能な場所に読み込まれます。これにより、特定の仮想アドレスにプログラムを読み込むことを想定している悪意のあるソフトウェアは、計画どおりに動作しにくくなります。 アプリとアプリで使うすべてのコンポーネントは、ASLR をサポートする必要があります。
+**<span data-ttu-id="99de7-241">アプリがこのテストに合格しなかった場合の対処方法</span><span class="sxs-lookup"><span data-stu-id="99de7-241">What to do if your app fails this test</span></span>**
 
-**アプリがこのテストに合格しなかった場合の対処方法**
+<span data-ttu-id="99de7-242">アプリをビルドするときに、リンカー コマンドの /DYNAMICBASE オプションを有効にします。</span><span class="sxs-lookup"><span data-stu-id="99de7-242">Enable the /DYNAMICBASE option in the linker command when you build your app.</span></span> <span data-ttu-id="99de7-243">アプリで使うすべてのモジュールでも、このリンカー オプションを使っていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-243">Verify that all modules that your app uses also use this linker option.</span></span>
 
-アプリをビルドするときに、リンカー コマンドの /DYNAMICBASE オプションを有効にします。 アプリで使うすべてのモジュールでも、このリンカー オプションを使っていることを確認します。
+**<span data-ttu-id="99de7-244">注釈</span><span class="sxs-lookup"><span data-stu-id="99de7-244">Remarks</span></span>**
 
-**注釈**
+<span data-ttu-id="99de7-245">通常、ASLR がパフォーマンスに影響を与えることはありません。</span><span class="sxs-lookup"><span data-stu-id="99de7-245">Normally, ASLR doesn't affect performance.</span></span> <span data-ttu-id="99de7-246">ただし、場合によっては、32 ビット システムでわずかにパフォーマンスが向上することがあります。</span><span class="sxs-lookup"><span data-stu-id="99de7-246">But in some scenarios there is a slight performance improvement on 32-bit systems.</span></span> <span data-ttu-id="99de7-247">多くの画像がさまざまなメモリに読み込まれた非常に密集したシステムでは、パフォーマンスが低下する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-247">It is possible that performance could degrade in a highly congested system that have many images loaded in many different memory locations.</span></span>
 
-通常、ASLR がパフォーマンスに影響を与えることはありません。 ただし、場合によっては、32 ビット システムでわずかにパフォーマンスが向上することがあります。 多くの画像がさまざまなメモリに読み込まれた非常に密集したシステムでは、パフォーマンスが低下する可能性があります。
+<span data-ttu-id="99de7-248">このテストは、C# や .NET Framework などのマネージ コードで記述されたアプリでのみ実行されます。</span><span class="sxs-lookup"><span data-stu-id="99de7-248">This test is performed on only apps written in managed code, such as by using C# or .NET Framework.</span></span>
 
-このテストは、C# や .NET Framework などのマネージ コードで記述されたアプリでのみ実行されます。
+### <a name="span-idbinscope-5spanreadwrite-shared-pe-section"></a><span data-ttu-id="99de7-249"><span id="binscope-5"></span>共有されている PE セクションの読み取り/書き込み</span><span class="sxs-lookup"><span data-stu-id="99de7-249"><span id="binscope-5"></span>Read/Write Shared PE Section</span></span>
 
-### <a name="span-idbinscope-5spanreadwrite-shared-pe-section"></a><span id="binscope-5"></span>共有されている PE セクションの読み取り/書き込み
+<span data-ttu-id="99de7-250">**Windows アプリ認定キットのエラー メッセージ:** SharedSectionsCheck Test failed.</span><span class="sxs-lookup"><span data-stu-id="99de7-250">**Windows App Certification Kit error message:** SharedSectionsCheck Test failed.</span></span>
 
-**Windows アプリ認定キットのエラー メッセージ:** SharedSectionsCheck Test failed.
+<span data-ttu-id="99de7-251">共有されている書き込み可能なセクションがあるバイナリ ファイルは、セキュリティの脅威です。</span><span class="sxs-lookup"><span data-stu-id="99de7-251">Binary files with writable sections that are marked as shared are a security threat.</span></span> <span data-ttu-id="99de7-252">共有する書き込み可能なセクションを含むアプリは、必須の場合を除き、ビルドしないでください。</span><span class="sxs-lookup"><span data-stu-id="99de7-252">Don't build apps with shared writable sections unless necessary.</span></span> <span data-ttu-id="99de7-253">[**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) または [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) を使って適切に保護された共有メモリ オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="99de7-253">Use [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) or [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) to create a properly secured shared memory object.</span></span>
 
-共有されている書き込み可能なセクションがあるバイナリ ファイルは、セキュリティの脅威です。 共有する書き込み可能なセクションを含むアプリは、必須の場合を除き、ビルドしないでください。 [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) または [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) を使って適切に保護された共有メモリ オブジェクトを作成します。
+**<span data-ttu-id="99de7-254">アプリがこのテストに合格しなかった場合の対処方法</span><span class="sxs-lookup"><span data-stu-id="99de7-254">What to do if your app fails this test</span></span>**
 
-**アプリがこのテストに合格しなかった場合の対処方法**
+<span data-ttu-id="99de7-255">アプリからすべての共有セクションを削除し、適切なセキュリティ属性を指定した [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) または [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) を呼び出して共有メモリ オブジェクトを作成し、アプリをリビルドします。</span><span class="sxs-lookup"><span data-stu-id="99de7-255">Remove any shared sections from the app and create shared memory objects by calling [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) or [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) with the proper security attributes and then rebuild your app.</span></span>
 
-アプリからすべての共有セクションを削除し、適切なセキュリティ属性を指定した [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) または [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) を呼び出して共有メモリ オブジェクトを作成し、アプリをリビルドします。
+**<span data-ttu-id="99de7-256">注釈</span><span class="sxs-lookup"><span data-stu-id="99de7-256">Remarks</span></span>**
 
-**注釈**
+<span data-ttu-id="99de7-257">このテストは、C や C++ などのアンマネージ言語で記述されたアプリでのみ実行されます。</span><span class="sxs-lookup"><span data-stu-id="99de7-257">This test is performed only on apps written in unmanaged languages, such as by using C or C++.</span></span>
 
-このテストは、C や C++ などのアンマネージ言語で記述されたアプリでのみ実行されます。
+### <a name="appcontainercheck"></a><span data-ttu-id="99de7-258">AppContainerCheck</span><span class="sxs-lookup"><span data-stu-id="99de7-258">AppContainerCheck</span></span>
 
-### <a name="appcontainercheck"></a>AppContainerCheck
+<span data-ttu-id="99de7-259">**Windows アプリ認定キットのエラー メッセージ:** AppContainerCheck Test failed.</span><span class="sxs-lookup"><span data-stu-id="99de7-259">**Windows App Certification Kit error message:** AppContainerCheck Test failed.</span></span>
 
-**Windows アプリ認定キットのエラー メッセージ:** AppContainerCheck Test failed.
+<span data-ttu-id="99de7-260">AppContainerCheck は、実行可能なバイナリの PE (Portable Executable) ヘッダーに **appcontainer** ビットが設定されているかを検証します。</span><span class="sxs-lookup"><span data-stu-id="99de7-260">The AppContainerCheck verifies that the **appcontainer** bit in the portable executable (PE) header of an executable binary is set.</span></span> <span data-ttu-id="99de7-261">すべての .exe ファイルとすべてのアンマネージ DLL で **appcontainer** ビットが設定されていないと、アプリは正しく動作しません。</span><span class="sxs-lookup"><span data-stu-id="99de7-261">Apps must have the **appcontainer** bit set on all .exe files and all unmanaged DLLs to execute properly.</span></span>
 
-AppContainerCheck は、実行可能なバイナリの PE (Portable Executable) ヘッダーに **appcontainer** ビットが設定されているかを検証します。 すべての .exe ファイルとすべてのアンマネージ DLL で **appcontainer** ビットが設定されていないと、アプリは正しく動作しません。
+**<span data-ttu-id="99de7-262">アプリがこのテストに合格しなかった場合の対処方法</span><span class="sxs-lookup"><span data-stu-id="99de7-262">What to do if your app fails this test</span></span>**
 
-**アプリがこのテストに合格しなかった場合の対処方法**
+<span data-ttu-id="99de7-263">ネイティブの実行可能ファイルでテストが不合格になった場合は、最新のコンパイラとリンカーを使ってファイルをビルドし、リンカーで */appcontainer* フラグを使います。</span><span class="sxs-lookup"><span data-stu-id="99de7-263">If a native executable file fails the test, make sure that you used the latest compiler and linker to build the file and that you use the */appcontainer* flag on the linker.</span></span>
 
-ネイティブの実行可能ファイルでテストが不合格になった場合は、最新のコンパイラとリンカーを使ってファイルをビルドし、リンカーで */appcontainer* フラグを使います。
+<span data-ttu-id="99de7-264">マネージ実行可能ファイルでテストが不合格になった場合は、最新のコンパイラとリンカー (Microsoft Visual Studio など) を使って、Windows ストア アプリをビルドします。</span><span class="sxs-lookup"><span data-stu-id="99de7-264">If a managed executable fails the test, make sure that you used the latest compiler and linker, such as Microsoft Visual Studio, to build the Windows Store app.</span></span>
 
-マネージ実行可能ファイルでテストが不合格になった場合は、最新のコンパイラとリンカー (Microsoft Visual Studio など) を使って、Windows ストア アプリをビルドします。
+**<span data-ttu-id="99de7-265">注釈</span><span class="sxs-lookup"><span data-stu-id="99de7-265">Remarks</span></span>**
 
-**注釈**
+<span data-ttu-id="99de7-266">このテストは、すべての .exe ファイル、およびアンマネージ DLL で実行されます。</span><span class="sxs-lookup"><span data-stu-id="99de7-266">This test is performed on all .exe files and on unmanaged DLLs.</span></span>
 
-このテストは、すべての .exe ファイル、およびアンマネージ DLL で実行されます。
+### <a name="span-idbinscope-7spanexecutableimportscheck"></a><span data-ttu-id="99de7-267"><span id="binscope-7"></span>ExecutableImportsCheck</span><span class="sxs-lookup"><span data-stu-id="99de7-267"><span id="binscope-7"></span>ExecutableImportsCheck</span></span>
 
-### <a name="span-idbinscope-7spanexecutableimportscheck"></a><span id="binscope-7"></span>ExecutableImportsCheck
+<span data-ttu-id="99de7-268">**Windows アプリ認定キットのエラー メッセージ:** ExecutableImportsCheck Test failed.</span><span class="sxs-lookup"><span data-stu-id="99de7-268">**Windows App Certification Kit error message:** ExecutableImportsCheck Test failed.</span></span>
 
-**Windows アプリ認定キットのエラー メッセージ:** ExecutableImportsCheck Test failed.
+<span data-ttu-id="99de7-269">移植可能な実行可能ファイル (PE) イメージで、実行可能コード セクションにインポート テーブルが置かれていると、このテストが不合格になります。</span><span class="sxs-lookup"><span data-stu-id="99de7-269">A portable executable (PE) image fails this test if its import table has been placed in an executable code section.</span></span> <span data-ttu-id="99de7-270">これは、Visual C++ リンカーの */merge* フラグを "*/merge:.rdata=.text*" に設定して、PE イメージの .rdata マージを有効にすると生じることがあります。</span><span class="sxs-lookup"><span data-stu-id="99de7-270">This can occur if you enabled .rdata merging for the PE image by setting the */merge* flag of the Visual C++ linker as */merge:.rdata=.text*.</span></span>
 
-移植可能な実行可能ファイル (PE) イメージで、実行可能コード セクションにインポート テーブルが置かれていると、このテストが不合格になります。 これは、Visual C++ リンカーの */merge* フラグを "*/merge:.rdata=.text*" に設定して、PE イメージの .rdata マージを有効にすると生じることがあります。
+**<span data-ttu-id="99de7-271">アプリがこのテストに合格しなかった場合の対処方法</span><span class="sxs-lookup"><span data-stu-id="99de7-271">What to do if your app fails this test</span></span>**
 
-**アプリがこのテストに合格しなかった場合の対処方法**
+<span data-ttu-id="99de7-272">インポート テーブルを実行可能コード セクションにマージしないでください。</span><span class="sxs-lookup"><span data-stu-id="99de7-272">Don't merge the import table into an executable code section.</span></span> <span data-ttu-id="99de7-273">Visual C++ リンカーの */merge* フラグをチェックして、.rdata セクションがコード セクションにマージされる設定になっていないことを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-273">Make sure that the */merge* flag of the Visual C++ linker is not set to merge the ".rdata" section into a code section.</span></span>
 
-インポート テーブルを実行可能コード セクションにマージしないでください。 Visual C++ リンカーの */merge* フラグをチェックして、.rdata セクションがコード セクションにマージされる設定になっていないことを確認します。
+**<span data-ttu-id="99de7-274">注釈</span><span class="sxs-lookup"><span data-stu-id="99de7-274">Remarks</span></span>**
 
-**注釈**
+<span data-ttu-id="99de7-275">このテストは、純粋なマネージ アセンブリを除き、すべてのバイナリ コードで実行されます。</span><span class="sxs-lookup"><span data-stu-id="99de7-275">This test is performed on all binary code except purely managed assemblies.</span></span>
 
-このテストは、純粋なマネージ アセンブリを除き、すべてのバイナリ コードで実行されます。
+### <a name="span-idbinscope-8spanwxcheck"></a><span data-ttu-id="99de7-276"><span id="binscope-8"></span>WXCheck</span><span class="sxs-lookup"><span data-stu-id="99de7-276"><span id="binscope-8"></span>WXCheck</span></span>
 
-### <a name="span-idbinscope-8spanwxcheck"></a><span id="binscope-8"></span>WXCheck
+<span data-ttu-id="99de7-277">**Windows アプリ認定キットのエラー メッセージ:** WXCheck Test failed.</span><span class="sxs-lookup"><span data-stu-id="99de7-277">**Windows App Certification Kit error message:** WXCheck Test failed.</span></span>
 
-**Windows アプリ認定キットのエラー メッセージ:** WXCheck Test failed.
+<span data-ttu-id="99de7-278">このチェックでは、書き込み可能または実行可能としてマップされたページがバイナリに含まれていないことを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-278">The check helps to ensure that a binary does not have any pages that are mapped as writable and executable.</span></span> <span data-ttu-id="99de7-279">これが不合格になるのは、書き込み可能または実行可能なセクションがバイナリに含まれている場合と、バイナリの *SectionAlignment* が *PAGE\-SIZE* よりも小さい場合です。</span><span class="sxs-lookup"><span data-stu-id="99de7-279">This can occur if the binary has a writable and executable section or if the binary’s *SectionAlignment* is less than *PAGE\-SIZE*.</span></span>
 
-このチェックでは、書き込み可能または実行可能としてマップされたページがバイナリに含まれていないことを確認します。 これが不合格になるのは、書き込み可能または実行可能なセクションがバイナリに含まれている場合と、バイナリの *SectionAlignment* が *PAGE\-SIZE* よりも小さい場合です。
+**<span data-ttu-id="99de7-280">アプリがこのテストに合格しなかった場合の対処方法</span><span class="sxs-lookup"><span data-stu-id="99de7-280">What to do if your app fails this test</span></span>**
 
-**アプリがこのテストに合格しなかった場合の対処方法**
+<span data-ttu-id="99de7-281">書き込み可能または実行可能なセクションがバイナリに含まれていないこと、バイナリの *SectionAlignment* の値が *PAGE\-SIZE* の値以上であることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-281">Make sure that the binary does not have a writeable or executable section and that the binary's *SectionAlignment* value is at least equal to its *PAGE\-SIZE*.</span></span>
 
-書き込み可能または実行可能なセクションがバイナリに含まれていないこと、バイナリの *SectionAlignment* の値が *PAGE\-SIZE* の値以上であることを確認します。
+**<span data-ttu-id="99de7-282">注釈</span><span class="sxs-lookup"><span data-stu-id="99de7-282">Remarks</span></span>**
 
-**注釈**
+<span data-ttu-id="99de7-283">このテストは、すべての .exe ファイル、およびネイティブのアンマネージ DLL で実行されます。</span><span class="sxs-lookup"><span data-stu-id="99de7-283">This test is performed on all .exe files and on native, unmanaged DLLs.</span></span>
 
-このテストは、すべての .exe ファイル、およびネイティブのアンマネージ DLL で実行されます。
+<span data-ttu-id="99de7-284">書き込み可能または実行可能なセクションは、エディット コンティニュ (/ZI) を有効にしてビルドした実行可能ファイルに含まれることがあります。</span><span class="sxs-lookup"><span data-stu-id="99de7-284">An executable may have a writable and executable section if it has been built with Edit and Continue enabled (/ZI).</span></span> <span data-ttu-id="99de7-285">エディット コンティニュを無効にすると、無効なセクションは含まれなくなります。</span><span class="sxs-lookup"><span data-stu-id="99de7-285">Disabling Edit and Continue will cause the invalid section to not be present.</span></span>
 
-書き込み可能または実行可能なセクションは、エディット コンティニュ (/ZI) を有効にしてビルドした実行可能ファイルに含まれることがあります。 エディット コンティニュを無効にすると、無効なセクションは含まれなくなります。
+<span data-ttu-id="99de7-286">*PAGE\-SIZE* は実行可能ファイルの既定の *SectionAlignment* です。</span><span class="sxs-lookup"><span data-stu-id="99de7-286">*PAGE\-SIZE* is the default *SectionAlignment* for executables.</span></span>
 
-*PAGE\-SIZE* は実行可能ファイルの既定の *SectionAlignment* です。
+### <a name="private-code-signing"></a><span data-ttu-id="99de7-287">プライベート コードの署名</span><span class="sxs-lookup"><span data-stu-id="99de7-287">Private Code Signing</span></span>
 
-### <a name="private-code-signing"></a>プライベート コードの署名
+<span data-ttu-id="99de7-288">アプリ パッケージ内にプライベート コードの署名バイナリが存在するかテストします。</span><span class="sxs-lookup"><span data-stu-id="99de7-288">Tests for the existence of private code signing binaries within the app package.</span></span>
 
-アプリ パッケージ内にプライベート コードの署名バイナリが存在するかテストします。
+### <a name="background"></a><span data-ttu-id="99de7-289">背景</span><span class="sxs-lookup"><span data-stu-id="99de7-289">Background</span></span>
 
-### <a name="background"></a>背景
+<span data-ttu-id="99de7-290">プライベート コードの署名ファイルは、セキュリティが侵害された場合は、悪用される可能性があるため、プライベートにしておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-290">Private code signing files should be kept private as they may be used for malicious purposes in the event they are compromised.</span></span>
 
-プライベート コードの署名ファイルは、セキュリティが侵害された場合は、悪用される可能性があるため、プライベートにしておく必要があります。
+### <a name="test-details"></a><span data-ttu-id="99de7-291">テストの詳細</span><span class="sxs-lookup"><span data-stu-id="99de7-291">Test details</span></span>
 
-### <a name="test-details"></a>テストの詳細
+<span data-ttu-id="99de7-292">アプリ パッケージ内でプライベート署名キーを含むことを示す .pfx または .snk という拡張子を持つファイルについてテストします。</span><span class="sxs-lookup"><span data-stu-id="99de7-292">Tests for files within the app package that have an extension of .pfx or.snk that would indicate that private signing keys were included.</span></span>
 
-アプリ パッケージ内でプライベート署名キーを含むことを示す .pfx または .snk という拡張子を持つファイルについてテストします。
+### <a name="corrective-actions"></a><span data-ttu-id="99de7-293">問題への対応</span><span class="sxs-lookup"><span data-stu-id="99de7-293">Corrective actions</span></span>
 
-### <a name="corrective-actions"></a>問題への対応
+<span data-ttu-id="99de7-294">パッケージからプライベート コードの署名キー (.pfx ファイルや .snk ファイルなど) を削除します。</span><span class="sxs-lookup"><span data-stu-id="99de7-294">Remove any private code signing keys (e.g. .pfx and .snk files) from the package.</span></span>
 
-パッケージからプライベート コードの署名キー (.pfx ファイルや .snk ファイルなど) を削除します。
+## <a name="supported-api-test"></a><span data-ttu-id="99de7-295">サポートされる API のテスト</span><span class="sxs-lookup"><span data-stu-id="99de7-295">Supported API test</span></span>
 
-## <a name="supported-api-test"></a>サポートされる API のテスト
+<span data-ttu-id="99de7-296">アプリで非標準 API が使われていないかどうかをテストします。</span><span class="sxs-lookup"><span data-stu-id="99de7-296">Test the app for the use of any non-compliant APIs.</span></span>
 
-アプリで非標準 API が使われていないかどうかをテストします。
+### <a name="background"></a><span data-ttu-id="99de7-297">背景</span><span class="sxs-lookup"><span data-stu-id="99de7-297">Background</span></span>
 
-### <a name="background"></a>背景
+<span data-ttu-id="99de7-298">Windows ストアで認定されるためには、アプリで Windows ストア アプリ用 API (Windows ランタイムまたはサポートされる Win32 API) だけを使う必要があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-298">Apps must use the APIs for Windows Store apps (Windows Runtime or supported Win32 APIs) to be certified for the Windows Store.</span></span> <span data-ttu-id="99de7-299">このテストでは、管理されたバイナリが承認済みのプロファイル外部の機能に依存している状況も特定されます。</span><span class="sxs-lookup"><span data-stu-id="99de7-299">This test also identifies situations where a managed binary takes a dependency on a function outside of the approved profile.</span></span>
 
-Windows ストアで認定されるためには、アプリで Windows ストア アプリ用 API (Windows ランタイムまたはサポートされる Win32 API) だけを使う必要があります。 このテストでは、管理されたバイナリが承認済みのプロファイル外部の機能に依存している状況も特定されます。
+### <a name="test-details"></a><span data-ttu-id="99de7-300">テストの詳細</span><span class="sxs-lookup"><span data-stu-id="99de7-300">Test details</span></span>
 
-### <a name="test-details"></a>テストの詳細
+-   <span data-ttu-id="99de7-301">バイナリのインポート アドレス テーブルをチェックすることで、アプリ パッケージ内の各バイナリが、Windows ストアのアプリ開発でサポートされていない Win32 API に依存していないことを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-301">Verifies that each binary within the app package doesn't have a dependency on a Win32 API that is not supported for Windows Store app development by checking the import address table of the binary.</span></span>
+-   <span data-ttu-id="99de7-302">アプリ パッケージ内の管理された各バイナリが承認済みのプロファイル外部の機能に依存していないことを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-302">Verifies that each managed binary within the app package doesn't have a dependency on a function outside of the approved profile.</span></span>
 
--   バイナリのインポート アドレス テーブルをチェックすることで、アプリ パッケージ内の各バイナリが、Windows ストアのアプリ開発でサポートされていない Win32 API に依存していないことを確認します。
--   アプリ パッケージ内の管理された各バイナリが承認済みのプロファイル外部の機能に依存していないことを確認します。
+### <a name="corrective-actions"></a><span data-ttu-id="99de7-303">問題への対応</span><span class="sxs-lookup"><span data-stu-id="99de7-303">Corrective actions</span></span>
 
-### <a name="corrective-actions"></a>問題への対応
+<span data-ttu-id="99de7-304">アプリが、デバッグ用のビルドではなくリリース用ビルドとしてコンパイルされていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-304">Make sure that the app was compiled as a release build and not a debug build.</span></span>
 
-アプリが、デバッグ用のビルドではなくリリース用ビルドとしてコンパイルされていることを確認します。
+> <span data-ttu-id="99de7-305">**注:** アプリで [Windows ストア アプリ用 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx) のみを使っている場合でも、デバッグ用ビルドのアプリではこのテストに合格しません。</span><span class="sxs-lookup"><span data-stu-id="99de7-305">**Note**  The debug build of an app will fail this test even if the app uses only [APIs for Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).</span></span>
 
-> **注:** アプリで [Windows ストア アプリ用 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx) のみを使っている場合でも、デバッグ用ビルドのアプリではこのテストに合格しません。
+<span data-ttu-id="99de7-306">エラー メッセージを確認して、アプリで使われている、[Windows ストア アプリ用 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx) ではない API を特定します。</span><span class="sxs-lookup"><span data-stu-id="99de7-306">Review the error messages to identify the API the app uses that is not an [API for Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).</span></span>
 
-エラー メッセージを確認して、アプリで使われている、[Windows ストア アプリ用 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx) ではない API を特定します。
+> <span data-ttu-id="99de7-307">**注:** 構成で Windows ストア アプリ用 Windows SDK だけを使っている場合でも、デバッグ構成でビルドされた C++ アプリではこのテストに合格しません。</span><span class="sxs-lookup"><span data-stu-id="99de7-307">**Note**  C++ apps that are built in a debug configuration will fail this test even if the configuration only uses APIs from the Windows SDK for Windows Store apps.</span></span> <span data-ttu-id="99de7-308">詳しくは、「[Windows ストア アプリでの Windows API の代替](http://go.microsoft.com/fwlink/p/?LinkID=244022)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="99de7-308">See, [Alternatives to Windows APIs in Windows Store apps](http://go.microsoft.com/fwlink/p/?LinkID=244022) for more info.</span></span>
 
-> **注:** 構成で Windows ストア アプリ用 Windows SDK だけを使っている場合でも、デバッグ構成でビルドされた C++ アプリではこのテストに合格しません。 詳しくは、「[Windows ストア アプリでの Windows API の代替](http://go.microsoft.com/fwlink/p/?LinkID=244022)」をご覧ください。
+## <a name="performance-tests"></a><span data-ttu-id="99de7-309">パフォーマンスのテスト</span><span class="sxs-lookup"><span data-stu-id="99de7-309">Performance tests</span></span>
 
-## <a name="performance-tests"></a>パフォーマンスのテスト
+<span data-ttu-id="99de7-310">軽快かつ柔軟なユーザー エクスペリエンスとなるように、アプリはユーザー操作とシステム コマンドに速やかに応答する必要があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-310">The app must respond quickly to user interaction and system commands in order to present a fast and fluid user experience.</span></span>
 
-軽快かつ柔軟なユーザー エクスペリエンスとなるように、アプリはユーザー操作とシステム コマンドに速やかに応答する必要があります。
+<span data-ttu-id="99de7-311">テストを実行するコンピューターの特性がテスト結果に影響することがあります。</span><span class="sxs-lookup"><span data-stu-id="99de7-311">The characteristics of the computer on which the test is performed can influence the test results.</span></span> <span data-ttu-id="99de7-312">アプリ認定のパフォーマンス テストのしきい値は、ユーザーの高速で滑らかなエクスペリエンスへの期待が低電力コンピューターでも満たされるように設定されています。</span><span class="sxs-lookup"><span data-stu-id="99de7-312">The performance test thresholds for app certification are set such that low-power computers meet the customer’s expectation of a fast and fluid experience.</span></span> <span data-ttu-id="99de7-313">アプリのパフォーマンスを確認するには、アプリを低電力コンピューター (たとえば画面の解像度が 1366 x 768 またはそれ以上で、回転式ハード ドライブを搭載した Intel Atom プロセッサ ベースのコンピューター) 上でテストすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="99de7-313">To determine your app’s performance, we recommend that you test on a low-power computer, such as an Intel Atom processor-based computer with a screen resolution of 1366x768 (or higher) and a rotational hard drive (as opposed to a solid-state hard drive).</span></span>
 
-テストを実行するコンピューターの特性がテスト結果に影響することがあります。 アプリ認定のパフォーマンス テストのしきい値は、ユーザーの高速で滑らかなエクスペリエンスへの期待が低電力コンピューターでも満たされるように設定されています。 アプリのパフォーマンスを確認するには、アプリを低電力コンピューター (たとえば画面の解像度が 1366 x 768 またはそれ以上で、回転式ハード ドライブを搭載した Intel Atom プロセッサ ベースのコンピューター) 上でテストすることをお勧めします。
+### <a name="bytecode-generation"></a><span data-ttu-id="99de7-314">バイトコードの作成</span><span class="sxs-lookup"><span data-stu-id="99de7-314">Bytecode generation</span></span>
 
-### <a name="bytecode-generation"></a>バイトコードの作成
+<span data-ttu-id="99de7-315">JavaScript の実行時間を短縮するパフォーマンスの最適化として、アプリの展開時、末尾が .js 拡張子の JavaScript ファイルによりバイトコードが生成されます。</span><span class="sxs-lookup"><span data-stu-id="99de7-315">As a performance optimization to accelerate JavaScript execution time, JavaScript files ending in the .js extension generate bytecode when the app is deployed.</span></span> <span data-ttu-id="99de7-316">そのため、JavaScript 操作の開始時間と実行継続時間が大幅に短縮されます。</span><span class="sxs-lookup"><span data-stu-id="99de7-316">This significantly improves startup and ongoing execution times for JavaScript operations.</span></span>
 
-JavaScript の実行時間を短縮するパフォーマンスの最適化として、アプリの展開時、末尾が .js 拡張子の JavaScript ファイルによりバイトコードが生成されます。 そのため、JavaScript 操作の開始時間と実行継続時間が大幅に短縮されます。
+### <a name="test-details"></a><span data-ttu-id="99de7-317">テストの詳細</span><span class="sxs-lookup"><span data-stu-id="99de7-317">Test Details</span></span>
 
-### <a name="test-details"></a>テストの詳細
+<span data-ttu-id="99de7-318">アプリの展開をチェックして、すべての .js ファイルがバイトコードに変換されたことをチェックします。</span><span class="sxs-lookup"><span data-stu-id="99de7-318">Checks the app deployment to verify that all .js files have been converted to bytecode.</span></span>
 
-アプリの展開をチェックして、すべての .js ファイルがバイトコードに変換されたことをチェックします。
+### <a name="corrective-action"></a><span data-ttu-id="99de7-319">問題への対応</span><span class="sxs-lookup"><span data-stu-id="99de7-319">Corrective Action</span></span>
 
-### <a name="corrective-action"></a>問題への対応
+<span data-ttu-id="99de7-320">このテストに合格しなかった場合は、問題の対処に際して次の点を考慮します。</span><span class="sxs-lookup"><span data-stu-id="99de7-320">If this test fails, consider the following when addressing the issue:</span></span>
 
-このテストに合格しなかった場合は、問題の対処に際して次の点を考慮します。
+-   <span data-ttu-id="99de7-321">イベント ログが有効になっていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-321">Verify that event logging is enabled.</span></span>
+-   <span data-ttu-id="99de7-322">すべての JavaScript ファイルが構文的に正しいことを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-322">Verify that all JavaScript files are syntactically valid.</span></span>
+-   <span data-ttu-id="99de7-323">以前のバージョンのアプリがすべてアンインストールされていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-323">Confirm that all previous versions of the app are uninstalled.</span></span>
+-   <span data-ttu-id="99de7-324">識別されたファイルをアプリ パッケージから除外します。</span><span class="sxs-lookup"><span data-stu-id="99de7-324">Exclude identified files from the app package.</span></span>
 
--   イベント ログが有効になっていることを確認します。
--   すべての JavaScript ファイルが構文的に正しいことを確認します。
--   以前のバージョンのアプリがすべてアンインストールされていることを確認します。
--   識別されたファイルをアプリ パッケージから除外します。
+### <a name="optimized-binding-references"></a><span data-ttu-id="99de7-325">最適化されたバインディング参照</span><span class="sxs-lookup"><span data-stu-id="99de7-325">Optimized binding references</span></span>
 
-### <a name="optimized-binding-references"></a>最適化されたバインディング参照
+<span data-ttu-id="99de7-326">バインディングを使うときは、メモリ使用率を最適化するために WinJS.Binding.optimizeBindingReferences を true に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-326">When using bindings, WinJS.Binding.optimizeBindingReferences should be set to true in order to optimize memory usage.</span></span>
 
-バインディングを使うときは、メモリ使用率を最適化するために WinJS.Binding.optimizeBindingReferences を true に設定する必要があります。
+### <a name="test-details"></a><span data-ttu-id="99de7-327">テストの詳細</span><span class="sxs-lookup"><span data-stu-id="99de7-327">Test Details</span></span>
 
-### <a name="test-details"></a>テストの詳細
+<span data-ttu-id="99de7-328">WinJS.Binding.optimizeBindingReferences の値を確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-328">Verify the value of WinJS.Binding.optimizeBindingReferences.</span></span>
 
-WinJS.Binding.optimizeBindingReferences の値を確認します。
+### <a name="corrective-action"></a><span data-ttu-id="99de7-329">問題への対応</span><span class="sxs-lookup"><span data-stu-id="99de7-329">Corrective Action</span></span>
 
-### <a name="corrective-action"></a>問題への対応
+<span data-ttu-id="99de7-330">アプリの JavaScript で WinJS.Binding.optimizeBindingReferences を "**true**" に設定します。</span><span class="sxs-lookup"><span data-stu-id="99de7-330">Set WinJS.Binding.optimizeBindingReferences to **true** in the app JavaScript.</span></span>
 
-アプリの JavaScript で WinJS.Binding.optimizeBindingReferences を "**true**" に設定します。
+## <a name="app-manifest-resources-test"></a><span data-ttu-id="99de7-331">アプリ マニフェストのリソースのテスト</span><span class="sxs-lookup"><span data-stu-id="99de7-331">App manifest resources test</span></span>
 
-## <a name="app-manifest-resources-test"></a>アプリ マニフェストのリソースのテスト
+### <a name="app-resources-validation"></a><span data-ttu-id="99de7-332">アプリ リソースの検証</span><span class="sxs-lookup"><span data-stu-id="99de7-332">App resources validation</span></span>
 
-### <a name="app-resources-validation"></a>アプリ リソースの検証
+<span data-ttu-id="99de7-333">アプリのマニフェストで宣言されている文字列や画像に誤りがある場合は、そのアプリはインストールされない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-333">The app might not install if the strings or images declared in your app’s manifest are incorrect.</span></span> <span data-ttu-id="99de7-334">これらのエラーがあるアプリをインストールすると、アプリが使用するアプリのロゴなどの画像が適切に表示されません。</span><span class="sxs-lookup"><span data-stu-id="99de7-334">If the app does install with these errors, your app’s logo or other images used by your app might not display correctly.</span></span>
 
-アプリのマニフェストで宣言されている文字列や画像に誤りがある場合は、そのアプリはインストールされない可能性があります。 これらのエラーがあるアプリをインストールすると、アプリが使用するアプリのロゴなどの画像が適切に表示されません。
+### <a name="test-details"></a><span data-ttu-id="99de7-335">テストの詳細</span><span class="sxs-lookup"><span data-stu-id="99de7-335">Test Details</span></span>
 
-### <a name="test-details"></a>テストの詳細
+<span data-ttu-id="99de7-336">アプリ マニフェストで定義されているリソースを調べて、それらのリソースが存在し有効であることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-336">Inspects the resources defined in the app manifest to make sure they are present and valid.</span></span>
 
-アプリ マニフェストで定義されているリソースを調べて、それらのリソースが存在し有効であることを確認します。
+### <a name="corrective-action"></a><span data-ttu-id="99de7-337">問題への対応</span><span class="sxs-lookup"><span data-stu-id="99de7-337">Corrective Action</span></span>
 
-### <a name="corrective-action"></a>問題への対応
-
-次の表をガイダンスとして使います。
+<span data-ttu-id="99de7-338">次の表をガイダンスとして使います。</span><span class="sxs-lookup"><span data-stu-id="99de7-338">Use the following table as guidance.</span></span>
 
 <table>
-<tr><th>エラー メッセージ</th><th>コメント</th></tr>
+<tr><th><span data-ttu-id="99de7-339">エラー メッセージ</span><span class="sxs-lookup"><span data-stu-id="99de7-339">Error message</span></span></th><th><span data-ttu-id="99de7-340">コメント</span><span class="sxs-lookup"><span data-stu-id="99de7-340">Comments</span></span></th></tr>
 <tr><td>
-<p>The image {image name} defines both Scale and TargetSize qualifiers; you can define only one qualifier at a time. (イメージ {image name} には Scale 修飾子と TargetSize 修飾子が定義されていますが、一度に定義可能な修飾子は 1 つだけです。)</p>
+<p><span data-ttu-id="99de7-341">The image {image name} defines both Scale and TargetSize qualifiers; you can define only one qualifier at a time. (イメージ {image name} には Scale 修飾子と TargetSize 修飾子が定義されていますが、一度に定義可能な修飾子は 1 つだけです。)</span><span class="sxs-lookup"><span data-stu-id="99de7-341">The image {image name} defines both Scale and TargetSize qualifiers; you can define only one qualifier at a time.</span></span></p>
 </td><td>
-<p>さまざまな解像度に合わせて画像をカスタマイズできます。</p>
-<p>実際のメッセージでは、{imageName} にエラーの発生した画像の名前が入ります。</p>
-<p> 各画像で Scale と TargetSize のいずれかが修飾子として定義されていることを確認します。</p>
+<p><span data-ttu-id="99de7-342">さまざまな解像度に合わせて画像をカスタマイズできます。</span><span class="sxs-lookup"><span data-stu-id="99de7-342">You can customize images for different resolutions.</span></span></p>
+<p><span data-ttu-id="99de7-343">実際のメッセージでは、{imageName} にエラーの発生した画像の名前が入ります。</span><span class="sxs-lookup"><span data-stu-id="99de7-343">In the actual message, {image name} contains the name of the image with the error.</span></span></p>
+<p> <span data-ttu-id="99de7-344">各画像で Scale と TargetSize のいずれかが修飾子として定義されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-344">Make sure that each image defines either Scale or TargetSize as the qualifier.</span></span></p>
 </td></tr>
 <tr><td>
-<p>The image {image name} failed the size restrictions. (イメージ {image name} がサイズ制限を超えました。)</p>
+<p><span data-ttu-id="99de7-345">The image {image name} failed the size restrictions. (イメージ {image name} がサイズ制限を超えました。)</span><span class="sxs-lookup"><span data-stu-id="99de7-345">The image {image name} failed the size restrictions.</span></span></p>
 </td><td>
-<p>すべてのアプリ画像が適切なサイズ制限に従っていることを確認します。</p>
-<p>実際のメッセージでは、{imageName} にエラーの発生した画像の名前が入ります。</p>
+<p><span data-ttu-id="99de7-346">すべてのアプリ画像が適切なサイズ制限に従っていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-346">Ensure that all the app images adhere to the proper size restrictions.</span></span></p>
+<p><span data-ttu-id="99de7-347">実際のメッセージでは、{imageName} にエラーの発生した画像の名前が入ります。</span><span class="sxs-lookup"><span data-stu-id="99de7-347">In the actual message, {image name} contains the name of the image with the error.</span></span></p>
 </td></tr>
 <tr><td>
-<p>The image {image name} is missing from the package. (イメージ {image name} がパッケージ内に見つかりません。)</p>
+<p><span data-ttu-id="99de7-348">The image {image name} is missing from the package. (イメージ {image name} がパッケージ内に見つかりません。)</span><span class="sxs-lookup"><span data-stu-id="99de7-348">The image {image name} is missing from the package.</span></span></p>
 </td><td>
-<p>必要な画像がありません。</p>
-<p>実際のメッセージでは、{image name} に見つからない画像の名前が入ります。</p>
+<p><span data-ttu-id="99de7-349">必要な画像がありません。</span><span class="sxs-lookup"><span data-stu-id="99de7-349">A required image is missing.</span></span></p>
+<p><span data-ttu-id="99de7-350">実際のメッセージでは、{image name} に見つからない画像の名前が入ります。</span><span class="sxs-lookup"><span data-stu-id="99de7-350">In the actual message, {image name} contains the name of the image that is missing.</span></span></p>
 </td></tr>
 <tr><td>
-<p>The image {image name} is not a valid image file. (イメージ {image name} は有効なイメージ ファイルではありません。)</p>
+<p><span data-ttu-id="99de7-351">The image {image name} is not a valid image file. (イメージ {image name} は有効なイメージ ファイルではありません。)</span><span class="sxs-lookup"><span data-stu-id="99de7-351">The image {image name} is not a valid image file.</span></span></p>
 </td><td>
-<p>すべてのアプリ画像が適切なファイルの種類の制限に従っていることを確認します。</p>
-<p>実際のメッセージでは、{image name} に画像の色として無効な値が入ります。</p>
+<p><span data-ttu-id="99de7-352">すべてのアプリ画像が適切なファイルの種類の制限に従っていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-352">Ensure that all the app images adhere to the proper file format type restrictions.</span></span></p>
+<p><span data-ttu-id="99de7-353">実際のメッセージでは、{image name} に画像の色として無効な値が入ります。</span><span class="sxs-lookup"><span data-stu-id="99de7-353">In the actual message, {image name} contains the name of the image that is not valid.</span></span></p>
 </td></tr>
 <tr><td>
-<p>The image "BadgeLogo" has an ABGR value {value} at position (x, y) that is not valid. (画像 "BadgeLogo" の位置 (x, y) の ABGR 値 {value} が無効です。) The pixel must be white (##FFFFFF) or transparent (00######) (このピクセルは、白 (##FFFFFF) または透明 (00######) である必要があります。)</p>
+<p><span data-ttu-id="99de7-354">The image "BadgeLogo" has an ABGR value {value} at position (x, y) that is not valid. (画像 "BadgeLogo" の位置 (x, y) の ABGR 値 {value} が無効です。)</span><span class="sxs-lookup"><span data-stu-id="99de7-354">The image "BadgeLogo" has an ABGR value {value} at position (x, y) that is not valid.</span></span> <span data-ttu-id="99de7-355">The pixel must be white (##FFFFFF) or transparent (00######) (このピクセルは、白 (##FFFFFF) または透明 (00######) である必要があります。)</span><span class="sxs-lookup"><span data-stu-id="99de7-355">The pixel must be white (##FFFFFF) or transparent (00######)</span></span></p>
 </td><td>
-<p>バッジ ロゴはロック画面でアプリを識別するためにバッジ通知の横に表示される画像です。 この画像はモノクロである必要があります (含めることができるのは白または透明のピクセルだけです)。</p>
-<p>実際のメッセージでは、{value} に画像の色として無効な値が入ります。</p>
+<p><span data-ttu-id="99de7-356">バッジ ロゴはロック画面でアプリを識別するためにバッジ通知の横に表示される画像です。</span><span class="sxs-lookup"><span data-stu-id="99de7-356">The badge logo is an image that appears next to the badge notification to identify the app on the lock screen.</span></span> <span data-ttu-id="99de7-357">この画像はモノクロである必要があります (含めることができるのは白または透明のピクセルだけです)。</span><span class="sxs-lookup"><span data-stu-id="99de7-357">This image must be monochromatic (it can contain only white and transparent pixels).</span></span></p>
+<p><span data-ttu-id="99de7-358">実際のメッセージでは、{value} に画像の色として無効な値が入ります。</span><span class="sxs-lookup"><span data-stu-id="99de7-358">In the actual message, {value} contains the color value in the image that is not valid.</span></span></p>
 </td></tr>
 <tr><td>
-<p>The image “BadgeLogo” has an ABGR value {value} at position (x, y) that is not valid for a high-contrast white image. (画像 "BadgeLogo" の位置 (x, y) にハイコントラストの白い画像には無効な ABGR 値 {value} があります。) The pixel must be (##2A2A2A) or darker, or transparent (00######). (ピクセルは (##2A2A2A) か、それより暗いか、透明 (00######) である必要があります。)</p>
+<p><span data-ttu-id="99de7-359">The image “BadgeLogo” has an ABGR value {value} at position (x, y) that is not valid for a high-contrast white image. (画像 "BadgeLogo" の位置 (x, y) にハイコントラストの白い画像には無効な ABGR 値 {value} があります。)</span><span class="sxs-lookup"><span data-stu-id="99de7-359">The image "BadgeLogo" has an ABGR value {value} at position (x, y) that is not valid for a high-contrast white image.</span></span> <span data-ttu-id="99de7-360">The pixel must be (##2A2A2A) or darker, or transparent (00######). (ピクセルは (##2A2A2A) か、それより暗いか、透明 (00######) である必要があります。)</span><span class="sxs-lookup"><span data-stu-id="99de7-360">The pixel must be (##2A2A2A) or darker, or transparent (00######).</span></span></p>
 </td><td>
-<p>バッジ ロゴはロック画面でアプリを識別するためにバッジ通知の横に表示される画像です。   "ハイコントラスト 白" ではバッジ ロゴが白い背景に表示されるため、通常のバッジ ロゴの濃いバージョンを使う必要があります。 "ハイコントラスト 白" でバッジ ロゴに含めることができるピクセルは、(##2A2A2A) より濃い色か透明のピクセルだけです。</p>
-<p>実際のメッセージでは、{value} に画像の色として無効な値が入ります。</p>
+<p><span data-ttu-id="99de7-361">バッジ ロゴはロック画面でアプリを識別するためにバッジ通知の横に表示される画像です。</span><span class="sxs-lookup"><span data-stu-id="99de7-361">The badge logo is an image that appears next to the badge notification to identify the app on the lock screen.</span></span>   <span data-ttu-id="99de7-362">"ハイコントラスト 白" ではバッジ ロゴが白い背景に表示されるため、通常のバッジ ロゴの濃いバージョンを使う必要があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-362">Because the badge logo  appears on a white background when in high-contrast white, it must be a dark version of the normal badge logo.</span></span> <span data-ttu-id="99de7-363">"ハイコントラスト 白" でバッジ ロゴに含めることができるピクセルは、(##2A2A2A) より濃い色か透明のピクセルだけです。</span><span class="sxs-lookup"><span data-stu-id="99de7-363">In high-contrast white, the badge logo can only contain pixels that are darker than (##2A2A2A) or transparent.</span></span></p>
+<p><span data-ttu-id="99de7-364">実際のメッセージでは、{value} に画像の色として無効な値が入ります。</span><span class="sxs-lookup"><span data-stu-id="99de7-364">In the actual message, {value} contains the color value in the image that is not valid.</span></span></p>
 </td></tr>
 <tr><td>
-<p>The image must define at least one variant without a TargetSize qualifier. (画像では、TargetSize 修飾子がないバージョンが少なくとも 1 つ定義されている必要があります。) It must define a Scale qualifier or leave Scale and TargetSize unspecified, which defaults to Scale-100. (Scale 修飾子が定義されているか、または Scale と TargetSize が指定されていないままである必要があり、既定では Scale-100 です。)</p>
+<p><span data-ttu-id="99de7-365">The image must define at least one variant without a TargetSize qualifier. (画像では、TargetSize 修飾子がないバージョンが少なくとも 1 つ定義されている必要があります。)</span><span class="sxs-lookup"><span data-stu-id="99de7-365">The image must define at least one variant without a TargetSize qualifier.</span></span> <span data-ttu-id="99de7-366">It must define a Scale qualifier or leave Scale and TargetSize unspecified, which defaults to Scale-100. (Scale 修飾子が定義されているか、または Scale と TargetSize が指定されていないままである必要があり、既定では Scale-100 です。)</span><span class="sxs-lookup"><span data-stu-id="99de7-366">It must define a Scale qualifier or leave Scale and TargetSize unspecified, which defaults to Scale-100.</span></span></p>
 </td><td>
-<p>詳しくは、「<a href="https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx">UWP アプリ用レスポンシブ デザイン 101</a>」と「<a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">アプリ リソースのガイドライン</a>」をご覧ください。</p>
+<p><span data-ttu-id="99de7-367">詳しくは、「<a href="https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx">UWP アプリ用レスポンシブ デザイン 101</a>」と「<a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">アプリ リソースのガイドライン</a>」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="99de7-367">For more info, see <a href="https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx">Responsive design 101 for UWP apps</a> and <a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">Guidelines for app resources</a>.</span></span></p>
 </td></tr>
 <tr><td>
-<p>The package is missing a "resources.pri" file. (パッケージに "resources.pri" ファイルがありません。)</p>
+<p><span data-ttu-id="99de7-368">The package is missing a "resources.pri" file. (パッケージに "resources.pri" ファイルがありません。)</span><span class="sxs-lookup"><span data-stu-id="99de7-368">The package is missing a "resources.pri" file.</span></span></p>
 </td><td>
-<p>アプリ マニフェストにローカライズ可能なコンテンツがある場合は、アプリのパッケージに有効な resources.pri ファイルが含まれていることを確認します。</p>
+<p><span data-ttu-id="99de7-369">アプリ マニフェストにローカライズ可能なコンテンツがある場合は、アプリのパッケージに有効な resources.pri ファイルが含まれていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-369">If you have localizable content in your app manifest, make sure that your app's package includes a valid resources.pri file.</span></span></p>
 </td></tr>
 <tr><td>
-<p>The "resources.pri" file must contain a resource map with a name that matches the package name {package full name} ("resources.pri" ファイルには、パッケージ名 {package full name} と名前が一致するリソース マップが含まれている必要があります。)</p>
+<p><span data-ttu-id="99de7-370">The "resources.pri" file must contain a resource map with a name that matches the package name {package full name} ("resources.pri" ファイルには、パッケージ名 {package full name} と名前が一致するリソース マップが含まれている必要があります。)</span><span class="sxs-lookup"><span data-stu-id="99de7-370">The "resources.pri" file must contain a resource map with a name that matches the package name  {package full name}</span></span></p>
 </td><td>
-<p>このエラーが表示される場合は、マニフェストが変更され、resources.pri 内のリソース マップの名前がマニフェストのパッケージ名と一致しなくなった可能性があります。</p>
-<p>実際のメッセージでは、{package full name} には resources.pri に含まれている必要があるパッケージ名が入ります。</p>
-<p>この問題を解決するには、resources.pri をリビルドする必要があります。その場合は、アプリのパッケージをリビルドするのが最も簡単です。</p>
+<p><span data-ttu-id="99de7-371">このエラーが表示される場合は、マニフェストが変更され、resources.pri 内のリソース マップの名前がマニフェストのパッケージ名と一致しなくなった可能性があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-371">You can get this error if the manifest changed and  the name of the resource map in resources.pri no longer matches the package name in the manifest.</span></span></p>
+<p><span data-ttu-id="99de7-372">実際のメッセージでは、{package full name} には resources.pri に含まれている必要があるパッケージ名が入ります。</span><span class="sxs-lookup"><span data-stu-id="99de7-372">In the actual message, {package full name} contains the package name that resources.pri must contain.</span></span></p>
+<p><span data-ttu-id="99de7-373">この問題を解決するには、resources.pri をリビルドする必要があります。その場合は、アプリのパッケージをリビルドするのが最も簡単です。</span><span class="sxs-lookup"><span data-stu-id="99de7-373">To fix this, you need to rebuild resources.pri and the easiest way to do that is  by rebuilding the app's package.</span></span></p>
 </td></tr>
 <tr><td>
-<p>The "resources.pri" file must not have AutoMerge enabled. ("resources.pri" ファイルは AutoMerge を有効にしないでください。)</p>
+<p><span data-ttu-id="99de7-374">The "resources.pri" file must not have AutoMerge enabled. ("resources.pri" ファイルは AutoMerge を有効にしないでください。)</span><span class="sxs-lookup"><span data-stu-id="99de7-374">The "resources.pri" file must not have AutoMerge enabled.</span></span></p>
 </td><td>
-<p>MakePRI.exe では、<strong>AutoMerge</strong> というオプションがサポートされています。 <strong>AutoMerge</strong> の規定値は "<strong>off</strong>" です。 オンにすると、<strong>AutoMerge</strong> が実行時にアプリの言語パックを単一の resources.pri にマージします。 これは、Windows ストアで配布するアプリには推奨されません。 Windows ストアで配布するアプリでは、resources.pri をアプリのパッケージのルートに置いて、アプリがサポートする言語のリファレンスをすべて含める必要があります。</p>
+<p><span data-ttu-id="99de7-375">MakePRI.exe では、<strong>AutoMerge</strong> というオプションがサポートされています。</span><span class="sxs-lookup"><span data-stu-id="99de7-375">MakePRI.exe supports an option called <strong>AutoMerge</strong>.</span></span> <span data-ttu-id="99de7-376"><strong>AutoMerge</strong> の規定値は "<strong>off</strong>" です。</span><span class="sxs-lookup"><span data-stu-id="99de7-376">The default value of <strong>AutoMerge</strong> is <strong>off</strong>.</span></span> <span data-ttu-id="99de7-377">オンにすると、<strong>AutoMerge</strong> が実行時にアプリの言語パックを単一の resources.pri にマージします。</span><span class="sxs-lookup"><span data-stu-id="99de7-377">When enabled, <strong>AutoMerge</strong> merges an app's  language pack resources into a single resources.pri at runtime.</span></span> <span data-ttu-id="99de7-378">これは、Windows ストアで配布するアプリには推奨されません。</span><span class="sxs-lookup"><span data-stu-id="99de7-378">We don't recommend this for apps that you intend to distribute through  the Windows Store.</span></span> <span data-ttu-id="99de7-379">Windows ストアで配布するアプリでは、resources.pri をアプリのパッケージのルートに置いて、アプリがサポートする言語のリファレンスをすべて含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-379">The resources.pri of an app that is distributed through the  Windows Store must be in  the root of the app's package and contain all the language references that the app supports.</span></span></p>
 </td></tr>
 <tr><td>
-<p>The string {string} failed the max length restriction of {number} characters. (文字列 {string} が {number} 文字の最大文字数の制限を満たしていません。)</p>
+<p><span data-ttu-id="99de7-380">The string {string} failed the max length restriction of {number} characters. (文字列 {string} が {number} 文字の最大文字数の制限を満たしていません。)</span><span class="sxs-lookup"><span data-stu-id="99de7-380">The string {string} failed the max length restriction of {number} characters.</span></span></p>
 </td><td>
-<p>「<a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">アプリ パッケージの要件</a>」をご覧ください。</p>
-<p>実際のメッセージでは、{string} が問題の文字列に置き換わり、{number} に最大文字数が入ります。</p>
+<p><span data-ttu-id="99de7-381">「<a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">アプリ パッケージの要件</a>」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="99de7-381">Refer to the <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">App package requirements</a>.</span></span></p>
+<p><span data-ttu-id="99de7-382">実際のメッセージでは、{string} が問題の文字列に置き換わり、{number} に最大文字数が入ります。</span><span class="sxs-lookup"><span data-stu-id="99de7-382">In the actual message, {string} is replaced by the string with the error and {number} contains the maximum length.</span></span></p>
 </td></tr>
 <tr><td>
-<p>The string {string} must not have leading/trailing whitespace. (文字列 {string} の先頭または末尾を空白にすることはできません。)</p>
+<p><span data-ttu-id="99de7-383">The string {string} must not have leading/trailing whitespace. (文字列 {string} の先頭または末尾を空白にすることはできません。)</span><span class="sxs-lookup"><span data-stu-id="99de7-383">The string {string} must not have leading/trailing whitespace.</span></span></p>
 </td><td>
-<p>アプリ マニフェストの要素のスキーマでは、先頭および末尾の空白は許可されていません。</p>
-<p>実際のメッセージでは、{string} が問題の文字列に置き換わります。</p>
-<p>resources.pri のマニフェスト フィールドのローカライズされた値において、先頭または末尾にスペースが挿入されていないことを確認します。</p>
+<p><span data-ttu-id="99de7-384">アプリ マニフェストの要素のスキーマでは、先頭および末尾の空白は許可されていません。</span><span class="sxs-lookup"><span data-stu-id="99de7-384">The schema for the elements in the app manifest don't allow leading or trailing white space characters.</span></span></p>
+<p><span data-ttu-id="99de7-385">実際のメッセージでは、{string} が問題の文字列に置き換わります。</span><span class="sxs-lookup"><span data-stu-id="99de7-385">In the actual message, {string} is replaced by the string with the error.</span></span></p>
+<p><span data-ttu-id="99de7-386">resources.pri のマニフェスト フィールドのローカライズされた値において、先頭または末尾にスペースが挿入されていないことを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-386">Make sure that none of the localized values of the manifest fields in resources.pri have leading or trailing white space characters.</span></span></p>
 </td></tr>
 <tr><td>
-<p>The string must be non-empty (greater than zero in length) (文字列を空にすることはできません (文字数が 0 より大きい必要があります)。)</p>
+<p><span data-ttu-id="99de7-387">The string must be non-empty (greater than zero in length) (文字列を空にすることはできません (文字数が 0 より大きい必要があります)。)</span><span class="sxs-lookup"><span data-stu-id="99de7-387">The string must be non-empty (greater than zero in length)</span></span></p>
 </td><td>
-<p>詳しくは、「<a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">アプリ パッケージの要件</a>」をご覧ください。</p>
+<p><span data-ttu-id="99de7-388">詳しくは、「<a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">アプリ パッケージの要件</a>」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="99de7-388">For more info, see <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">App package requirements</a>.</span></span></p>
 </td></tr>
 <tr><td>
-<p>There is no default resource specified in the "resources.pri" file. ("resources.pri" ファイルで指定された既定のリソースがありません。)</p>
+<p><span data-ttu-id="99de7-389">There is no default resource specified in the "resources.pri" file. ("resources.pri" ファイルで指定された既定のリソースがありません。)</span><span class="sxs-lookup"><span data-stu-id="99de7-389">There is no default resource specified in the "resources.pri" file.</span></span></p>
 </td><td>
-<p>詳しくは、「<a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">アプリ リソースのガイドライン</a>」をご覧ください。</p>
-<p>既定のビルド構成では、Visual Studio はバンドル生成時に 200% スケールの画像リソースのみをアプリ パッケージ内に組み込み、その他のリソースはリソース パッケージ内に配置します。 200% スケールの画像リソースを組み込むか、または持っているリソースを組み込むようにプロジェクトを構成してください。</p>
+<p><span data-ttu-id="99de7-390">詳しくは、「<a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">アプリ リソースのガイドライン</a>」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="99de7-390">For more info, see <a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">Guidelines for app resources</a>.</span></span></p>
+<p><span data-ttu-id="99de7-391">既定のビルド構成では、Visual Studio はバンドル生成時に 200% スケールの画像リソースのみをアプリ パッケージ内に組み込み、その他のリソースはリソース パッケージ内に配置します。</span><span class="sxs-lookup"><span data-stu-id="99de7-391">In the default build configuration,  Visual Studio only includes scale-200 image resources in the app package when generating bundles, putting other resources in the resource package.</span></span> <span data-ttu-id="99de7-392">200% スケールの画像リソースを組み込むか、または持っているリソースを組み込むようにプロジェクトを構成してください。</span><span class="sxs-lookup"><span data-stu-id="99de7-392">Make sure  you either include scale-200 image resources or configure your project to include the resources you have.</span></span></p>
 </td></tr>
 <tr><td>
-<p>There is no resource value specified in the "resources.pri" file. ("resources.pri" ファイルに指定されたリソース値がありません。)</p>
+<p><span data-ttu-id="99de7-393">There is no resource value specified in the "resources.pri" file. ("resources.pri" ファイルに指定されたリソース値がありません。)</span><span class="sxs-lookup"><span data-stu-id="99de7-393">There is no resource value specified in the "resources.pri" file.</span></span></p>
 </td><td>
-<p>resources.pri でアプリ マニフェストの有効なリソースが定義されていることを確認します。</p>
+<p><span data-ttu-id="99de7-394">resources.pri でアプリ マニフェストの有効なリソースが定義されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-394">Make sure that the app manifest has valid resources defined in resources.pri.</span></span></p>
 </td></tr>
 <tr><td>
-<p>The image file {filename} must be smaller than 204800 bytes.\*\* (イメージ ファイル {filename} は、204,800 バイト未満である必要があります。)</p>
+<p><span data-ttu-id="99de7-395">The image file {filename} must be smaller than 204800 bytes.\*\* (イメージ ファイル {filename} は、204,800 バイト未満である必要があります。)</span><span class="sxs-lookup"><span data-stu-id="99de7-395">The image file {filename} must be smaller than 204800 bytes.\*\*</span></span></p>
 </td><td>
-<p>指定の画像のサイズを小さくします。</p>
+<p><span data-ttu-id="99de7-396">指定の画像のサイズを小さくします。</span><span class="sxs-lookup"><span data-stu-id="99de7-396">Reduce the size of the indicated images.</span></span></p>
 </td></tr>
 <tr><td>
-<p>The {filename} file must not contain a reverse map section.\*\* ({filename} ファイルには、リバース マップ セクションを含めることはできません。)</p>
+<p><span data-ttu-id="99de7-397">The {filename} file must not contain a reverse map section.\*\* ({filename} ファイルには、リバース マップ セクションを含めることはできません。)</span><span class="sxs-lookup"><span data-stu-id="99de7-397">The {filename} file must not contain a reverse map section.\*\*</span></span></p>
 </td><td>
-<p>逆マップは Visual Studio の F5 デバッグ時に makepri.exe を呼び出すと生成されますが、pri ファイルの生成時に /m パラメーターなしで makepri.exe を実行すると削除することができます。</p>
+<p><span data-ttu-id="99de7-398">逆マップは Visual Studio の F5 デバッグ時に makepri.exe を呼び出すと生成されますが、pri ファイルの生成時に /m パラメーターなしで makepri.exe を実行すると削除することができます。</span><span class="sxs-lookup"><span data-stu-id="99de7-398">While the reverse map is generated during Visual Studio 'F5 debugging' when calling into makepri.exe, it can be removed by running makepri.exe without the /m parameter when generating a pri file.</span></span></p>
 </td></tr>
 <tr><td colspan="2">
-<p>\*\* Windows 8.1 用の Windows アプリ認定キット 3.3 に追加されたテストであり、そのバージョン以降のキットを使う場合にのみ適用されます。</p>
+<p><span data-ttu-id="99de7-399">\*\* Windows 8.1 用の Windows アプリ認定キット 3.3 に追加されたテストであり、そのバージョン以降のキットを使う場合にのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="99de7-399">\*\* Indicates that a test was added in the Windows App Certification Kit 3.3 for Windows 8.1 and is only applicable when using the that version of the kit or later.</span></span></p>
 </td></tr>
 </table>
 
@@ -483,197 +483,196 @@ WinJS.Binding.optimizeBindingReferences の値を確認します。
 
  
 
-### <a name="branding-validation"></a>ブランドの検証
+### <a name="branding-validation"></a><span data-ttu-id="99de7-400">ブランドの検証</span><span class="sxs-lookup"><span data-stu-id="99de7-400">Branding validation</span></span>
 
-Windows ストア アプリは、完成していて完全に機能することが期待されます。 既定の画像 (テンプレートまたは SDK サンプルの画像) を使ったアプリは、ユーザー エクスペリエンスが貧弱であることを示しているため、ストア カタログであまり識別されない可能性があります。
+<span data-ttu-id="99de7-401">Windows ストア アプリは、完成していて完全に機能することが期待されます。</span><span class="sxs-lookup"><span data-stu-id="99de7-401">Windows Store apps are expected to be complete and fully functional.</span></span> <span data-ttu-id="99de7-402">既定の画像 (テンプレートまたは SDK サンプルの画像) を使ったアプリは、ユーザー エクスペリエンスが貧弱であることを示しているため、ストア カタログであまり識別されない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-402">Apps using the default images (from templates or SDK samples) present a poor user experience and cannot be easily identified in the store catalog.</span></span>
 
-### <a name="test-details"></a>テストの詳細
+### <a name="test-details"></a><span data-ttu-id="99de7-403">テストの詳細</span><span class="sxs-lookup"><span data-stu-id="99de7-403">Test Details</span></span>
 
-このテストは、アプリで使われている画像が SDK サンプルまたは Visual Studio の既定の画像でないことを検証します。
+<span data-ttu-id="99de7-404">このテストは、アプリで使われている画像が SDK サンプルまたは Visual Studio の既定の画像でないことを検証します。</span><span class="sxs-lookup"><span data-stu-id="99de7-404">The test will validate if the images used by the app are not default images either from SDK samples or from Visual Studio.</span></span>
 
-### <a name="corrective-actions"></a>問題への対応
+### <a name="corrective-actions"></a><span data-ttu-id="99de7-405">問題への対応</span><span class="sxs-lookup"><span data-stu-id="99de7-405">Corrective actions</span></span>
 
-既定の画像を、もっとアプリを明確に表すものに置き換えます。
+<span data-ttu-id="99de7-406">既定の画像を、もっとアプリを明確に表すものに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="99de7-406">Replace default images with something more distinct and representative of your app.</span></span>
 
-## <a name="debug-configuration-test"></a>デバッグ構成のテスト
+## <a name="debug-configuration-test"></a><span data-ttu-id="99de7-407">デバッグ構成のテスト</span><span class="sxs-lookup"><span data-stu-id="99de7-407">Debug configuration test</span></span>
 
-アプリをテストして、デバッグ用のビルドでないことを確認します。
+<span data-ttu-id="99de7-408">アプリをテストして、デバッグ用のビルドでないことを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-408">Test the app to make sure it is not a debug build.</span></span>
 
-### <a name="background"></a>背景
+### <a name="background"></a><span data-ttu-id="99de7-409">背景</span><span class="sxs-lookup"><span data-stu-id="99de7-409">Background</span></span>
 
-Windows ストアで認定されるためには、アプリをデバッグ用にコンパイルせず、デバッグ版の実行可能ファイルを参照しないようにする必要があります。 また、アプリがこのテストに合格するよう最適化されたコードをビルドする必要もあります。
+<span data-ttu-id="99de7-410">Windows ストアで認定されるためには、アプリをデバッグ用にコンパイルせず、デバッグ版の実行可能ファイルを参照しないようにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-410">To be certified for the Windows Store, apps must not be compiled for debug and they must not reference debug versions of an executable file.</span></span> <span data-ttu-id="99de7-411">また、アプリがこのテストに合格するよう最適化されたコードをビルドする必要もあります。</span><span class="sxs-lookup"><span data-stu-id="99de7-411">In addition, you must build your code as optimized for your app to pass this test.</span></span>
 
-### <a name="test-details"></a>テストの詳細
+### <a name="test-details"></a><span data-ttu-id="99de7-412">テストの詳細</span><span class="sxs-lookup"><span data-stu-id="99de7-412">Test details</span></span>
 
-アプリをテストして、デバッグ用のビルドでないことと、どのデバッグ用のフレームワークにもリンクされていないことを確認します。
+<span data-ttu-id="99de7-413">アプリをテストして、デバッグ用のビルドでないことと、どのデバッグ用のフレームワークにもリンクされていないことを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-413">Test the app to make sure it is not a debug build and is not linked to any debug frameworks.</span></span>
 
-### <a name="corrective-actions"></a>問題への対応
+### <a name="corrective-actions"></a><span data-ttu-id="99de7-414">問題への対応</span><span class="sxs-lookup"><span data-stu-id="99de7-414">Corrective actions</span></span>
 
--   アプリを Windows ストアに提出する前に、リリース用ビルドとしてビルドします。
--   適切なバージョンの .NET フレームワークがインストールされていることを確認します。
--   アプリがフレームワークのデバッグ バージョンにリンクされていないことと、リリース バージョンで構築されたことを確認します。 このアプリに .NET コンポーネントが含まれている場合は、適切なバージョンの .NET Framework がインストールされていることを確認します。
+-   <span data-ttu-id="99de7-415">アプリを Windows ストアに提出する前に、リリース用ビルドとしてビルドします。</span><span class="sxs-lookup"><span data-stu-id="99de7-415">Build the app as a release build before you submit it to the Windows Store.</span></span>
+-   <span data-ttu-id="99de7-416">適切なバージョンの .NET フレームワークがインストールされていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-416">Make sure that you have the correct version of .NET framework installed.</span></span>
+-   <span data-ttu-id="99de7-417">アプリがフレームワークのデバッグ バージョンにリンクされていないことと、リリース バージョンで構築されたことを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-417">Make sure the app isn't linking to debug versions of a framework and that it is building with a release version.</span></span> <span data-ttu-id="99de7-418">このアプリに .NET コンポーネントが含まれている場合は、適切なバージョンの .NET Framework がインストールされていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-418">If this app contains .NET components, make sure that you have installed the correct version of the .NET framework.</span></span>
 
-## <a name="file-encoding-test"></a>ファイル エンコードのテスト
+## <a name="file-encoding-test"></a><span data-ttu-id="99de7-419">ファイル エンコードのテスト</span><span class="sxs-lookup"><span data-stu-id="99de7-419">File encoding test</span></span>
 
-### <a name="utf-8-file-encoding"></a>UTF-8 ファイル エンコード
+### <a name="utf-8-file-encoding"></a><span data-ttu-id="99de7-420">UTF-8 ファイル エンコード</span><span class="sxs-lookup"><span data-stu-id="99de7-420">UTF-8 file encoding</span></span>
 
-### <a name="background"></a>背景
+### <a name="background"></a><span data-ttu-id="99de7-421">背景</span><span class="sxs-lookup"><span data-stu-id="99de7-421">Background</span></span>
 
-バイトコード キャッシュを活用して特定の実行時エラー状態を避けるには、HTML、CSS、JavaScript の各ファイルが、対応するバイト オーダー マーク (BOM) を持つ UTF-8 形式でエンコードされている必要があります。
+<span data-ttu-id="99de7-422">バイトコード キャッシュを活用して特定の実行時エラー状態を避けるには、HTML、CSS、JavaScript の各ファイルが、対応するバイト オーダー マーク (BOM) を持つ UTF-8 形式でエンコードされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-422">HTML, CSS, and JavaScript files must be encoded in UTF-8 form with a corresponding byte-order mark (BOM) to benefit from bytecode caching and avoid certain runtime error conditions.</span></span>
 
-### <a name="test-details"></a>テストの詳細
+### <a name="test-details"></a><span data-ttu-id="99de7-423">テストの詳細</span><span class="sxs-lookup"><span data-stu-id="99de7-423">Test details</span></span>
 
-アプリ パッケージのコンテンツをテストし、正しいファイル エンコードが使われていることを確認します。
+<span data-ttu-id="99de7-424">アプリ パッケージのコンテンツをテストし、正しいファイル エンコードが使われていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-424">Test the contents of app packages to make sure that they use the correct file encoding.</span></span>
 
-### <a name="corrective-action"></a>問題への対応
+### <a name="corrective-action"></a><span data-ttu-id="99de7-425">問題への対応</span><span class="sxs-lookup"><span data-stu-id="99de7-425">Corrective Action</span></span>
 
-Visual Studio で、影響を受けるファイルを開き、**[ファイル]** メニューの **[名前を付けて保存]** を選択します。 **[保存]** ボタンの横のドロップダウン コントロールを選び、**[エンコード付きで保存]** をクリックします。 **[保存オプションの詳細設定]** ダイアログ ボックスで、Unicode (シグネチャを含む UTF-8) オプションを選び、**[OK]** をクリックします。
+<span data-ttu-id="99de7-426">Visual Studio で、影響を受けるファイルを開き、**[ファイル]** メニューの **[名前を付けて保存]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="99de7-426">Open the affected file and select **Save As** from the **File** menu in Visual Studio.</span></span> <span data-ttu-id="99de7-427">**[保存]** ボタンの横のドロップダウン コントロールを選び、**[エンコード付きで保存]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="99de7-427">Select the drop-down control next to the **Save** button and select **Save with Encoding**.</span></span> <span data-ttu-id="99de7-428">**[保存オプションの詳細設定]** ダイアログ ボックスで、Unicode (シグネチャを含む UTF-8) オプションを選び、**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="99de7-428">From the **Advanced** save options dialog, choose the Unicode (UTF-8 with signature) option and click **OK**.</span></span>
 
-## <a name="direct3d-feature-level-test"></a>Direct3D の機能レベルのテスト
+## <a name="direct3d-feature-level-test"></a><span data-ttu-id="99de7-429">Direct3D の機能レベルのテスト</span><span class="sxs-lookup"><span data-stu-id="99de7-429">Direct3D feature level test</span></span>
 
-### <a name="direct3d-feature-level-support"></a>Direct3D の機能レベルのサポート
+### <a name="direct3d-feature-level-support"></a><span data-ttu-id="99de7-430">Direct3D の機能レベルのサポート</span><span class="sxs-lookup"><span data-stu-id="99de7-430">Direct3D feature level support</span></span>
 
-Microsoft Direct3D アプリをテストして、以前のグラフィックス ハードウェアを搭載したデバイスでクラッシュしないことを確認します。
+<span data-ttu-id="99de7-431">Microsoft Direct3D アプリをテストして、以前のグラフィックス ハードウェアを搭載したデバイスでクラッシュしないことを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-431">Tests Microsoft Direct3D apps to ensure that they won't crash on devices with older graphics hardware.</span></span>
 
-### <a name="background"></a>背景
+### <a name="background"></a><span data-ttu-id="99de7-432">背景</span><span class="sxs-lookup"><span data-stu-id="99de7-432">Background</span></span>
 
-Windows ストアでは、すべてのアプリケーションが、Direct3D を使って機能レベル 9\-1 グラフィックス カードで正しくレンダリングされるか、適切な手順でエラーとなることが要求されます。
+<span data-ttu-id="99de7-433">Windows ストアでは、すべてのアプリケーションが、Direct3D を使って機能レベル 9\-1 グラフィックス カードで正しくレンダリングされるか、適切な手順でエラーとなることが要求されます。</span><span class="sxs-lookup"><span data-stu-id="99de7-433">Windows Store requires all applications using Direct3D to render properly or fail gracefully on feature level 9\-1 graphics cards.</span></span>
 
-アプリのインストール後にユーザーのデバイスのグラフィックス ハードウェアがユーザーによって変更されることもあるため、最小機能レベルを 9\-1 よりも高くする場合は、現在のハードウェアが最小要件を満たしているかどうかをアプリの起動時に検出するようにしなければなりません。 最小要件が満たされていない場合は、アプリでは Direct3D の要件に関する詳しいメッセージをユーザーに表示する必要があります。 また、アプリが互換性のないデバイスでダウンロードされた場合は、起動時にそれを検出し、要件について説明するメッセージをユーザーに表示する必要もあります。
+<span data-ttu-id="99de7-434">アプリのインストール後にユーザーのデバイスのグラフィックス ハードウェアがユーザーによって変更されることもあるため、最小機能レベルを 9\-1 よりも高くする場合は、現在のハードウェアが最小要件を満たしているかどうかをアプリの起動時に検出するようにしなければなりません。</span><span class="sxs-lookup"><span data-stu-id="99de7-434">Because users can change the graphics hardware in their device after the app is installed, if you choose a minimum feature level higher than 9\-1, your app must detect at launch whether or not the current hardware meets the minimum requirements.</span></span> <span data-ttu-id="99de7-435">最小要件が満たされていない場合は、アプリでは Direct3D の要件に関する詳しいメッセージをユーザーに表示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-435">If the minimum requirements are not met, the app must display a message to the user detailing the Direct3D requirements.</span></span> <span data-ttu-id="99de7-436">また、アプリが互換性のないデバイスでダウンロードされた場合は、起動時にそれを検出し、要件について説明するメッセージをユーザーに表示する必要もあります。</span><span class="sxs-lookup"><span data-stu-id="99de7-436">Also, if an app is downloaded on a device with which it is not compatible, it should detect that at launch and display a message to the customer detailing the requirements.</span></span>
 
-### <a name="test-details"></a>テストの詳細
+### <a name="test-details"></a><span data-ttu-id="99de7-437">テストの詳細</span><span class="sxs-lookup"><span data-stu-id="99de7-437">Test Details</span></span>
 
-このテストは、アプリが機能レベル 9\-1 で正確にレンダリングされるかどうかを検証します。
+<span data-ttu-id="99de7-438">このテストは、アプリが機能レベル 9\-1 で正確にレンダリングされるかどうかを検証します。</span><span class="sxs-lookup"><span data-stu-id="99de7-438">The test will validate if the apps render accurately on feature level 9\-1.</span></span>
 
-### <a name="corrective-action"></a>問題への対応
+### <a name="corrective-action"></a><span data-ttu-id="99de7-439">問題への対応</span><span class="sxs-lookup"><span data-stu-id="99de7-439">Corrective Action</span></span>
 
-高い機能レベルで実行されると予想される場合でも、アプリが Direct3D 機能レベル 9\-1 で正しくレンダリングされることを確認します。 詳しくは、「[機能レベルが異なる Direct3D の開発](http://go.microsoft.com/fwlink/p/?LinkID=253575)」をご覧ください。
+<span data-ttu-id="99de7-440">高い機能レベルで実行されると予想される場合でも、アプリが Direct3D 機能レベル 9\-1 で正しくレンダリングされることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-440">Ensure that your app renders correctly on Direct3D feature level 9\-1, even if you expect it to run at a higher feature level.</span></span> <span data-ttu-id="99de7-441">詳しくは、「[機能レベルが異なる Direct3D の開発](http://go.microsoft.com/fwlink/p/?LinkID=253575)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="99de7-441">See [Developing for different Direct3D feature levels](http://go.microsoft.com/fwlink/p/?LinkID=253575) for more info.</span></span>
 
-### <a name="direct3d-trim-after-suspend"></a>中断後の Direct3D トリミング
+### <a name="direct3d-trim-after-suspend"></a><span data-ttu-id="99de7-442">中断後の Direct3D トリミング</span><span class="sxs-lookup"><span data-stu-id="99de7-442">Direct3D Trim after suspend</span></span>
 
-> **注:** このテストは、Windows 8.1 以降を対象に開発された Windows ストア アプリにのみ適用されます。
+> <span data-ttu-id="99de7-443">**注:** このテストは、Windows 8.1 以降を対象に開発された Windows ストア アプリにのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="99de7-443">**Note**  This test only applies to Windows Store apps developed for Windows 8.1 and later.</span></span>
 
-### <a name="background"></a>背景
+### <a name="background"></a><span data-ttu-id="99de7-444">背景</span><span class="sxs-lookup"><span data-stu-id="99de7-444">Background</span></span>
 
-アプリが Direct3D デバイスで [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) を呼び出さない場合は、アプリは前の 3D 作業に割り当てられたメモリを解放しません。 この結果、システムのメモリ不足のためにアプリが終了するリスクが増加します。
+<span data-ttu-id="99de7-445">アプリが Direct3D デバイスで [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) を呼び出さない場合は、アプリは前の 3D 作業に割り当てられたメモリを解放しません。</span><span class="sxs-lookup"><span data-stu-id="99de7-445">If the app does not call [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) on its Direct3D device, the app will not release memory allocated for its earlier 3D work.</span></span> <span data-ttu-id="99de7-446">この結果、システムのメモリ不足のためにアプリが終了するリスクが増加します。</span><span class="sxs-lookup"><span data-stu-id="99de7-446">This increases the risk of apps being terminated due to system memory pressure.</span></span>
 
-### <a name="test-details"></a>テストの詳細
+### <a name="test-details"></a><span data-ttu-id="99de7-447">テストの詳細</span><span class="sxs-lookup"><span data-stu-id="99de7-447">Test Details</span></span>
 
-アプリが d3d 要件を満たしているかどうか、そして中断コールバック時に新しい [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API を呼び出すかどうかを確認します。
+<span data-ttu-id="99de7-448">アプリが d3d 要件を満たしているかどうか、そして中断コールバック時に新しい [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API を呼び出すかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-448">Checks apps for compliance with d3d requirements and ensures that apps are calling a new [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API upon their Suspend callback.</span></span>
 
-### <a name="corrective-action"></a>問題への対応
+### <a name="corrective-action"></a><span data-ttu-id="99de7-449">問題への対応</span><span class="sxs-lookup"><span data-stu-id="99de7-449">Corrective Action</span></span>
 
-アプリは中断されそうになった時は常に [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280345) インターフェイスで [**IDXGIDevice3**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API を呼び出す必要があります。
+<span data-ttu-id="99de7-450">アプリは中断されそうになった時は常に [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280345) インターフェイスで [**IDXGIDevice3**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API を呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-450">The app should call the [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API on its [**IDXGIDevice3**](https://msdn.microsoft.com/library/windows/desktop/Dn280345) interface anytime it is about to be suspended.</span></span>
 
-## <a name="app-capabilities-test"></a>アプリ機能のテスト
+## <a name="app-capabilities-test"></a><span data-ttu-id="99de7-451">アプリ機能のテスト</span><span class="sxs-lookup"><span data-stu-id="99de7-451">App Capabilities test</span></span>
 
-### <a name="special-use-capabilities"></a>特殊な用途の機能
+### <a name="special-use-capabilities"></a><span data-ttu-id="99de7-452">特殊な用途の機能</span><span class="sxs-lookup"><span data-stu-id="99de7-452">Special use capabilities</span></span>
 
-### <a name="background"></a>背景
+### <a name="background"></a><span data-ttu-id="99de7-453">背景</span><span class="sxs-lookup"><span data-stu-id="99de7-453">Background</span></span>
 
-特殊な用途の機能は、特殊なシナリオ向けの機能です。 会社アカウントだけがこれらの機能を使うことができます。
+<span data-ttu-id="99de7-454">特殊な用途の機能は、特殊なシナリオ向けの機能です。</span><span class="sxs-lookup"><span data-stu-id="99de7-454">Special use capabilities are intended for very specific scenarios.</span></span> <span data-ttu-id="99de7-455">会社アカウントだけがこれらの機能を使うことができます。</span><span class="sxs-lookup"><span data-stu-id="99de7-455">Only company accounts are allowed to use these capabilities.</span></span>
 
-### <a name="test-details"></a>テストの詳細
+### <a name="test-details"></a><span data-ttu-id="99de7-456">テストの詳細</span><span class="sxs-lookup"><span data-stu-id="99de7-456">Test Details</span></span>
 
-アプリが次のいずれかの機能を宣言することを検証します。
+<span data-ttu-id="99de7-457">アプリが次のいずれかの機能を宣言することを検証します。</span><span class="sxs-lookup"><span data-stu-id="99de7-457">Validate if the app is declaring any of the below capabilities:</span></span>
 
--   EnterpriseAuthentication
--   SharedUserCertificates
--   DocumentsLibrary
+-   <span data-ttu-id="99de7-458">EnterpriseAuthentication</span><span class="sxs-lookup"><span data-stu-id="99de7-458">EnterpriseAuthentication</span></span>
+-   <span data-ttu-id="99de7-459">SharedUserCertificates</span><span class="sxs-lookup"><span data-stu-id="99de7-459">SharedUserCertificates</span></span>
+-   <span data-ttu-id="99de7-460">DocumentsLibrary</span><span class="sxs-lookup"><span data-stu-id="99de7-460">DocumentsLibrary</span></span>
 
-これらの機能のいずれかが宣言される場合は、テストにより警告がユーザーに表示されます。
+<span data-ttu-id="99de7-461">これらの機能のいずれかが宣言される場合は、テストにより警告がユーザーに表示されます。</span><span class="sxs-lookup"><span data-stu-id="99de7-461">If any of these capabilities are declared, the test will display a warning to the user.</span></span>
 
-### <a name="corrective-actions"></a>問題への対応
+### <a name="corrective-actions"></a><span data-ttu-id="99de7-462">問題への対応</span><span class="sxs-lookup"><span data-stu-id="99de7-462">Corrective Actions</span></span>
 
-アプリが必要としない場合は、特殊な用途の機能を削除することを検討してください。 さらに、これらの機能は、追加の登録ポリシー レビューの対象となります。
+<span data-ttu-id="99de7-463">アプリが必要としない場合は、特殊な用途の機能を削除することを検討してください。</span><span class="sxs-lookup"><span data-stu-id="99de7-463">Consider removing the special use capability if your app doesn't require it.</span></span> <span data-ttu-id="99de7-464">さらに、これらの機能は、追加の登録ポリシー レビューの対象となります。</span><span class="sxs-lookup"><span data-stu-id="99de7-464">Additionally, use of these capabilities are subject to additional on-boarding policy review.</span></span>
 <!--TODO: after migrating dev-packaging, link to [if your app doesn't require it](dev-packaging.app-capability-declarations#special-and-restricted-capabilities)-->
 
-## <a name="windows-runtime-metadata-validation"></a>Windows ランタイム メタデータ検証
+## <a name="windows-runtime-metadata-validation"></a><span data-ttu-id="99de7-465">Windows ランタイム メタデータ検証</span><span class="sxs-lookup"><span data-stu-id="99de7-465">Windows Runtime metadata validation</span></span>
 
-### <a name="background"></a>背景
+### <a name="background"></a><span data-ttu-id="99de7-466">背景</span><span class="sxs-lookup"><span data-stu-id="99de7-466">Background</span></span>
 
-アプリに付属するコンポーネントが、UWP 型システムに準拠していることを確認します。
+<span data-ttu-id="99de7-467">アプリに付属するコンポーネントが、UWP 型システムに準拠していることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-467">Ensures that the components that ship in an app conform to the UWP type system.</span></span>
 
-### <a name="test-details"></a>テストの詳細
+### <a name="test-details"></a><span data-ttu-id="99de7-468">テストの詳細</span><span class="sxs-lookup"><span data-stu-id="99de7-468">Test Details</span></span>
 
-パッケージの **.winmd** ファイルが UWP 規則に準拠していることを確認します。
+<span data-ttu-id="99de7-469">パッケージの **.winmd** ファイルが UWP 規則に準拠していることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-469">Verifies that the **.winmd** files in the package conform to UWP rules.</span></span>
 
-### <a name="corrective-actions"></a>問題への対応
+### <a name="corrective-actions"></a><span data-ttu-id="99de7-470">問題への対応</span><span class="sxs-lookup"><span data-stu-id="99de7-470">Corrective Actions</span></span>
 
--   **ExclusiveTo 属性のテスト:** UWP クラスに別の ExclusiveTo クラスとしてマークされたインターフェイスが実装されていないことを確認します。
--   **型の場所のテスト:** UWP のすべての型のメタデータが、アプリ パッケージで最も長い名前空間対応の名前を持つ winmd ファイルにあることを確認します。
--   **型名の大文字小文字の区別のテスト:** すべての UWP 型のアプリ パッケージ内に大文字と小文字が区別されない一意の名前が存在することを確認します。 また、UWP 型名が、アプリ パッケージ内で名前空間名として使われていないことも確認します。
--   **型名の正確性のテスト:** グローバル名前空間または Windows の最上位名前空間に UWP 型がないことを確認します。
--   **一般的なメタデータの正確性のテスト:** 型の生成に使っているコンパイラが UWP の仕様に従って最新の状態になっていることを確認します。
--   **プロパティのテスト:** UWP クラスのすべてのプロパティに get メソッドがあることを確認します (set メソッドは省略可能です)。 UWP 型のすべてのプロパティについて、get メソッドの戻り値の型が set メソッドの入力パラメーターの型に一致することを確認します。
+-   <span data-ttu-id="99de7-471">**ExclusiveTo 属性のテスト:** UWP クラスに別の ExclusiveTo クラスとしてマークされたインターフェイスが実装されていないことを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-471">**ExclusiveTo attribute test:** Ensure that UWP classes don't implement interfaces that are marked as ExclusiveTo another class.</span></span>
+-   <span data-ttu-id="99de7-472">**型の場所のテスト:** UWP のすべての型のメタデータが、アプリ パッケージで最も長い名前空間対応の名前を持つ winmd ファイルにあることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-472">**Type location test:** Ensure that the metadata for all UWP types is located in the winmd file that has the longest namespace-matching name in the app package.</span></span>
+-   <span data-ttu-id="99de7-473">**型名の大文字小文字の区別のテスト:** すべての UWP 型のアプリ パッケージ内に大文字と小文字が区別されない一意の名前が存在することを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-473">**Type name case-sensitivity test:** Ensure that all UWP types have unique, case-insensitive names within your app package.</span></span> <span data-ttu-id="99de7-474">また、UWP 型名が、アプリ パッケージ内で名前空間名として使われていないことも確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-474">Also ensure that no UWP type name is also used as a namespace name within your app package.</span></span>
+-   <span data-ttu-id="99de7-475">**型名の正確性のテスト:** グローバル名前空間または Windows の最上位名前空間に UWP 型がないことを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-475">**Type name correctness test:** Ensure there are no UWP types in the global namespace or in the Windows top-level namespace.</span></span>
+-   <span data-ttu-id="99de7-476">**一般的なメタデータの正確性のテスト:** 型の生成に使っているコンパイラが UWP の仕様に従って最新の状態になっていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-476">**General metadata correctness test:** Ensure that the compiler you are using to generate your types is up to date with the UWP specifications.</span></span>
+-   <span data-ttu-id="99de7-477">**プロパティのテスト:** UWP クラスのすべてのプロパティに get メソッドがあることを確認します (set メソッドは省略可能です)。</span><span class="sxs-lookup"><span data-stu-id="99de7-477">**Properties test:** ensure that all properties on a UWP class have a get method (set methods are optional).</span></span> <span data-ttu-id="99de7-478">UWP 型のすべてのプロパティについて、get メソッドの戻り値の型が set メソッドの入力パラメーターの型に一致することを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-478">Ensure that the type of the get method return value matches the type of the set method input parameter, for all properties on UWP types.</span></span>
 
-## <a name="package-sanity-tests"></a>パッケージ サニティ テスト
+## <a name="package-sanity-tests"></a><span data-ttu-id="99de7-479">パッケージ サニティ テスト</span><span class="sxs-lookup"><span data-stu-id="99de7-479">Package Sanity tests</span></span>
 
-### <a name="platform-appropriate-files-test"></a>プラットフォーム対応ファイル テスト
+### <a name="platform-appropriate-files-test"></a><span data-ttu-id="99de7-480">プラットフォーム対応ファイル テスト</span><span class="sxs-lookup"><span data-stu-id="99de7-480">Platform appropriate files test</span></span>
 
-混在するバイナリをインストールするアプリは、ユーザーのプロセッサ アーキテクチャによってはクラッシュしたり、正しく動作しない場合があります。
+<span data-ttu-id="99de7-481">混在するバイナリをインストールするアプリは、ユーザーのプロセッサ アーキテクチャによってはクラッシュしたり、正しく動作しない場合があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-481">Apps that install mixed binaries may crash or not run correctly depending upon the user’s processor architecture.</span></span>
 
-### <a name="background"></a>背景
+### <a name="background"></a><span data-ttu-id="99de7-482">背景</span><span class="sxs-lookup"><span data-stu-id="99de7-482">Background</span></span>
 
-このテストでは、アーキテクチャが競合していないか、アプリ パッケージのバイナリを検証します。 アプリ パッケージには、マニフェストに指定されたプロセッサ アーキテクチャで使用できないバイナリを含めることができません。 サポートされていないバイナリが含まれると、アプリがクラッシュしたり、アプリのパッケージ サイズが不必要に大きくなったりする可能性があります。
+<span data-ttu-id="99de7-483">このテストでは、アーキテクチャが競合していないか、アプリ パッケージのバイナリを検証します。</span><span class="sxs-lookup"><span data-stu-id="99de7-483">This test validates the binaries in an app package for architecture conflicts.</span></span> <span data-ttu-id="99de7-484">アプリ パッケージには、マニフェストに指定されたプロセッサ アーキテクチャで使用できないバイナリを含めることができません。</span><span class="sxs-lookup"><span data-stu-id="99de7-484">An app package should not include binaries that can't be used on the processor architecture specified in the manifest.</span></span> <span data-ttu-id="99de7-485">サポートされていないバイナリが含まれると、アプリがクラッシュしたり、アプリのパッケージ サイズが不必要に大きくなったりする可能性があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-485">Including unsupported binaries can lead to your app crashing or an unnecessary increase in the app package size.</span></span>
 
-### <a name="test-details"></a>テストの詳細
+### <a name="test-details"></a><span data-ttu-id="99de7-486">テストの詳細</span><span class="sxs-lookup"><span data-stu-id="99de7-486">Test Details</span></span>
 
-アプリ パッケージのプロセッサ アーキテクチャ宣言と相互参照される場合に、各ファイルの PE ヘッダー内のビット "bitness" が適切かどうかを検証します。
+<span data-ttu-id="99de7-487">アプリ パッケージのプロセッサ アーキテクチャ宣言と相互参照される場合に、各ファイルの PE ヘッダー内のビット "bitness" が適切かどうかを検証します。</span><span class="sxs-lookup"><span data-stu-id="99de7-487">Validates that each file's "bitness" in the PE header is appropriate when cross-referenced with the app package processor architecture declaration</span></span>
 
-### <a name="corrective-action"></a>問題への対応
+### <a name="corrective-action"></a><span data-ttu-id="99de7-488">問題への対応</span><span class="sxs-lookup"><span data-stu-id="99de7-488">Corrective Action</span></span>
 
-アプリ マニフェストで指定されたアーキテクチャでサポートされるファイルのみをアプリ パッケージが含むことを確認するために、次のガイドラインに従ってください。
+<span data-ttu-id="99de7-489">アプリ マニフェストで指定されたアーキテクチャでサポートされるファイルのみをアプリ パッケージが含むことを確認するために、次のガイドラインに従ってください。</span><span class="sxs-lookup"><span data-stu-id="99de7-489">Follow these guidelines to ensure that your app package only contains files supported by the architecture specified in the app manifest:</span></span>
 
--   アプリのターゲット プロセッサ アーキテクチャがニュートラル プロセッサ タイプの場合、アプリ パッケージは、x86、x64、または ARM のバイナリ タイプまたはイメージ タイプのファイルを含むことはできません。
+-   <span data-ttu-id="99de7-490">アプリのターゲット プロセッサ アーキテクチャがニュートラル プロセッサ タイプの場合、アプリ パッケージは、x86、x64、または ARM のバイナリ タイプまたはイメージ タイプのファイルを含むことはできません。</span><span class="sxs-lookup"><span data-stu-id="99de7-490">If the Target Processor Architecture for your app is Neutral processor Type, the app package cannot contain x86, x64, or ARM binary or image type files.</span></span>
 
--   アプリのターゲット プロセッサ アーキテクチャが x86 プロセッサ タイプの場合、アプリ パッケージは、x86 バイナリ タイプまたはイメージ タイプのファイルのみを含む必要があります。 パッケージが x64 ないし ARM バイナリ形式またはイメージ形式を含む場合は、アプリはテストに合格しません。
+-   <span data-ttu-id="99de7-491">アプリのターゲット プロセッサ アーキテクチャが x86 プロセッサ タイプの場合、アプリ パッケージは、x86 バイナリ タイプまたはイメージ タイプのファイルのみを含む必要があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-491">If the Target Processor Architecture for your app is x86 processor type, the app package must only contain x86 binary or image type files.</span></span> <span data-ttu-id="99de7-492">パッケージが x64 ないし ARM バイナリ形式またはイメージ形式を含む場合は、アプリはテストに合格しません。</span><span class="sxs-lookup"><span data-stu-id="99de7-492">If the package contains x64 or ARM binary or image types, it will fail the test.</span></span>
 
--   アプリのターゲット プロセッサ アーキテクチャが x64 プロセッサ タイプの場合、アプリ パッケージは、x64 バイナリ タイプまたはイメージ タイプのファイルを含む必要があります。 この場合は、パッケージに x86 ファイルを含めることもできますが、主なアプリ エクスペリエンスでは x64 バイナリを使ってください。
+-   <span data-ttu-id="99de7-493">アプリのターゲット プロセッサ アーキテクチャが x64 プロセッサ タイプの場合、アプリ パッケージは、x64 バイナリ タイプまたはイメージ タイプのファイルを含む必要があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-493">If the Target Processor Architecture for your app is x64 processor type, the app package must contain x64 binary or image type files.</span></span> <span data-ttu-id="99de7-494">この場合は、パッケージに x86 ファイルを含めることもできますが、主なアプリ エクスペリエンスでは x64 バイナリを使ってください。</span><span class="sxs-lookup"><span data-stu-id="99de7-494">Note that in this case the package can also include x86 files, but the primary app experience should utilize the x64 binary.</span></span>
 
-    ただし、パッケージが ARM バイナリ タイプまたはイメージ タイプのファイルを含む場合、または x86 バイナリ タイプまたはイメージ タイプのファイルのみを含む場合、パッケージはテストに合格しません。
+    <span data-ttu-id="99de7-495">ただし、パッケージが ARM バイナリ タイプまたはイメージ タイプのファイルを含む場合、または x86 バイナリ タイプまたはイメージ タイプのファイルのみを含む場合、パッケージはテストに合格しません。</span><span class="sxs-lookup"><span data-stu-id="99de7-495">However, if the package contains ARM binary or image type files, or only contains x86 binaries or image type files, it will fail the test.</span></span>
 
--   アプリのターゲット プロセッサ アーキテクチャが ARM プロセッサ タイプの場合、アプリ パッケージは、ARM バイナリ タイプまたはイメージ タイプのファイルのみを含む必要があります。 パッケージが x64 または x86 バイナリ形式またはイメージ形式のファイルを含む場合は、パッケージはテストに合格しません。
+-   <span data-ttu-id="99de7-496">アプリのターゲット プロセッサ アーキテクチャが ARM プロセッサ タイプの場合、アプリ パッケージは、ARM バイナリ タイプまたはイメージ タイプのファイルのみを含む必要があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-496">If the Target Processor Architecture for your app is ARM processor type, the app package must only contain ARM binary or image type files.</span></span> <span data-ttu-id="99de7-497">パッケージが x64 または x86 バイナリ形式またはイメージ形式のファイルを含む場合は、パッケージはテストに合格しません。</span><span class="sxs-lookup"><span data-stu-id="99de7-497">If the package contains x64 or x86 binary or image type files, it will fail the test.</span></span>
 
-### <a name="supported-directory-structure-test"></a>サポートされるディレクトリ構造のテスト
+### <a name="supported-directory-structure-test"></a><span data-ttu-id="99de7-498">サポートされるディレクトリ構造のテスト</span><span class="sxs-lookup"><span data-stu-id="99de7-498">Supported Directory Structure test</span></span>
 
-アプリケーションがインストールの一部として MAX\-PATH より長いサブディレクトリを作成しないことを検証します。
+<span data-ttu-id="99de7-499">アプリケーションがインストールの一部として MAX\-PATH より長いサブディレクトリを作成しないことを検証します。</span><span class="sxs-lookup"><span data-stu-id="99de7-499">Validates that applications are not creating subdirectories as part of installation that are longer than MAX\-PATH.</span></span>
 
-### <a name="background"></a>背景
+### <a name="background"></a><span data-ttu-id="99de7-500">背景</span><span class="sxs-lookup"><span data-stu-id="99de7-500">Background</span></span>
 
-OS コンポーネント (Trident、WWAHost など) は、ファイル システム パスの MAX\-PATH に内部的に制限され、長いパスでは正しく機能しません。
+<span data-ttu-id="99de7-501">OS コンポーネント (Trident、WWAHost など) は、ファイル システム パスの MAX\-PATH に内部的に制限され、長いパスでは正しく機能しません。</span><span class="sxs-lookup"><span data-stu-id="99de7-501">OS components (including Trident, WWAHost, etc.) are internally limited to MAX\-PATH for file system paths and will not work correctly for longer paths.</span></span>
 
-### <a name="test-details"></a>テストの詳細
+### <a name="test-details"></a><span data-ttu-id="99de7-502">テストの詳細</span><span class="sxs-lookup"><span data-stu-id="99de7-502">Test Details</span></span>
 
-アプリのインストール ディレクトリ内のどのパスも MAX\-PATH を超えていないことを確認します。
+<span data-ttu-id="99de7-503">アプリのインストール ディレクトリ内のどのパスも MAX\-PATH を超えていないことを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-503">Verifies that no path within the app install directory exceeds MAX\-PATH.</span></span>
 
-### <a name="corrective-action"></a>問題への対応
+### <a name="corrective-action"></a><span data-ttu-id="99de7-504">問題への対応</span><span class="sxs-lookup"><span data-stu-id="99de7-504">Corrective Action</span></span>
 
-短いディレクトリ構造やファイル名にします。
+<span data-ttu-id="99de7-505">短いディレクトリ構造やファイル名にします。</span><span class="sxs-lookup"><span data-stu-id="99de7-505">Use a shorter directory structure, and or file name.</span></span>
 
-## <a name="resource-usage-test"></a>リソース使用率テスト
+## <a name="resource-usage-test"></a><span data-ttu-id="99de7-506">リソース使用率テスト</span><span class="sxs-lookup"><span data-stu-id="99de7-506">Resource Usage test</span></span>
 
-### <a name="winjs-background-task-test"></a>WinJS バックグラウンド タスクのテスト
+### <a name="winjs-background-task-test"></a><span data-ttu-id="99de7-507">WinJS バックグラウンド タスクのテスト</span><span class="sxs-lookup"><span data-stu-id="99de7-507">WinJS Background Task test</span></span>
 
-WinJS バックグラウンド タスクのテストは、JavaScript アプリに適切な close ステートメントがあるため、アプリがバッテリを消費しないことを確認します。
+<span data-ttu-id="99de7-508">WinJS バックグラウンド タスクのテストは、JavaScript アプリに適切な close ステートメントがあるため、アプリがバッテリを消費しないことを確認します。</span><span class="sxs-lookup"><span data-stu-id="99de7-508">WinJS background task test ensures that JavaScript apps have the proper close statements so apps don’t consume battery.</span></span>
 
-### <a name="background"></a>背景
+### <a name="background"></a><span data-ttu-id="99de7-509">背景</span><span class="sxs-lookup"><span data-stu-id="99de7-509">Background</span></span>
 
-JavaScript のバックグラウンド タスクがあるアプリは、バックグラウンド タスクの最後のステートメントとして Close() を呼び出す必要があります。 これがないアプリの場合は、システムがコネクト スタンバイ モードに戻らないため、バッテリを消耗する可能性があります。
+<span data-ttu-id="99de7-510">JavaScript のバックグラウンド タスクがあるアプリは、バックグラウンド タスクの最後のステートメントとして Close() を呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-510">Apps that have JavaScript background tasks need to call Close() as the last statement in their background task.</span></span> <span data-ttu-id="99de7-511">これがないアプリの場合は、システムがコネクト スタンバイ モードに戻らないため、バッテリを消耗する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="99de7-511">Apps that do not do this could keep the system from returning to connected standby mode and result in draining the battery.</span></span>
 
-### <a name="test-details"></a>テストの詳細
+### <a name="test-details"></a><span data-ttu-id="99de7-512">テストの詳細</span><span class="sxs-lookup"><span data-stu-id="99de7-512">Test Details</span></span>
 
-マニフェストで指定されたバックグラウンド タスク ファイルがアプリにない場合、テストに合格します。 それ以外の場合は、テストはアプリ パッケージで指定された JavaScript バックグラウンド タスク ファイルを解析し、Close() ステートメントを探します。 見つかった場合はテストに合格します。見つからない場合はテストに合格しません。
+<span data-ttu-id="99de7-513">マニフェストで指定されたバックグラウンド タスク ファイルがアプリにない場合、テストに合格します。</span><span class="sxs-lookup"><span data-stu-id="99de7-513">If the app does not have a background task file specified in the manifest, the test will pass.</span></span> <span data-ttu-id="99de7-514">それ以外の場合は、テストはアプリ パッケージで指定された JavaScript バックグラウンド タスク ファイルを解析し、Close() ステートメントを探します。</span><span class="sxs-lookup"><span data-stu-id="99de7-514">Otherwise the test will parse the JavaScript background task file that is specified in the app package, and look for a Close() statement.</span></span> <span data-ttu-id="99de7-515">見つかった場合はテストに合格します。見つからない場合はテストに合格しません。</span><span class="sxs-lookup"><span data-stu-id="99de7-515">If found, the test will pass; otherwise the test will fail.</span></span>
 
-### <a name="corrective-action"></a>問題への対応
+### <a name="corrective-action"></a><span data-ttu-id="99de7-516">問題への対応</span><span class="sxs-lookup"><span data-stu-id="99de7-516">Corrective Action</span></span>
 
-バックグラウンドの JavaScript コードを更新して、Close() を正しく呼び出します。
+<span data-ttu-id="99de7-517">バックグラウンドの JavaScript コードを更新して、Close() を正しく呼び出します。</span><span class="sxs-lookup"><span data-stu-id="99de7-517">Update the background JavaScript code to call Close() correctly.</span></span>
 
-> **注:** この記事は、UWP アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください。
+> <span data-ttu-id="99de7-518">**注:** この記事は、UWP アプリを作成する Windows 10 開発者を対象としています。</span><span class="sxs-lookup"><span data-stu-id="99de7-518">**Note**  This article is for Windows 10 developers writing UWP apps.</span></span> <span data-ttu-id="99de7-519">Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="99de7-519">If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).</span></span>
 
+## <a name="related-topics"></a><span data-ttu-id="99de7-520">関連トピック</span><span class="sxs-lookup"><span data-stu-id="99de7-520">Related topics</span></span>
+
+* [<span data-ttu-id="99de7-521">Windows デスクトップ ブリッジ アプリのテスト</span><span class="sxs-lookup"><span data-stu-id="99de7-521">Windows Desktop Bridge app tests</span></span>](windows-desktop-bridge-app-tests.md)
+* [<span data-ttu-id="99de7-522">Windows ストア ポリシー</span><span class="sxs-lookup"><span data-stu-id="99de7-522">Windows Store Policies</span></span>](https://msdn.microsoft.com/library/windows/apps/Dn764944)
  
-
- 
-
- 
-

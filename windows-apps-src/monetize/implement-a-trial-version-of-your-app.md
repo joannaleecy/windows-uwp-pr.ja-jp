@@ -3,92 +3,92 @@ author: mcleanbyron
 ms.assetid: 571697B7-6064-4C50-9A68-1374F2C3F931
 description: "Windows.Services.Store 名前空間を使って、アプリの試用版の実装する方法について説明します。"
 title: "アプリの試用版の実装"
-keywords: "Windows 10, UWP, 試用版, アプリ内購入, IAP, Windows.Services.Store"
+keywords: "Windows 10, UWP, 試用版, アプリ内購入, Windows.Services.Store"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dc5e67823521db455e12fa4b16d8204c20bff621
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2419c78e74a69d986ae23e70ced86683a7543cb4
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/09/2017
 ---
+# <a name="implement-a-trial-version-of-your-app"></a><span data-ttu-id="b30cd-104">アプリの試用版の実装</span><span class="sxs-lookup"><span data-stu-id="b30cd-104">Implement a trial version of your app</span></span>
 
-# <a name="implement-a-trial-version-of-your-app"></a>アプリの試用版の実装
+<span data-ttu-id="b30cd-105">試用期間中はアプリを無料で使用できるように、アプリを [Windows デベロッパー センター ダッシュボードで無料試用版](../publish/set-app-pricing-and-availability.md#free-trial)として構成した場合、試用期間中は一部の機能を除外または制限することで、アプリを通常版にアップグレードするようユーザーに促すことができます。</span><span class="sxs-lookup"><span data-stu-id="b30cd-105">If you configure your app as a [free trial in the Windows Dev Center dashboard](../publish/set-app-pricing-and-availability.md#free-trial) so that customers can use your app for free during a trial period, you can entice your customers to upgrade to the full version of your app by excluding or limiting some features during the trial period.</span></span> <span data-ttu-id="b30cd-106">どのような機能を制限するかをコーディング開始前に決め、完全なライセンスが購入されたときにだけその機能が正しく動作するようにアプリを設定します。</span><span class="sxs-lookup"><span data-stu-id="b30cd-106">Determine which features should be limited before you begin coding, then make sure that your app only allows them to work when a full license has been purchased.</span></span> <span data-ttu-id="b30cd-107">また、ユーザーがアプリを購入する前の試用期間中にだけバナーや透かしなどを表示する機能を有効にすることもできます。</span><span class="sxs-lookup"><span data-stu-id="b30cd-107">You can also enable features, such as banners or watermarks, that are shown only during the trial, before a customer buys your app.</span></span>
 
-試用期間中はアプリを無料で使用できるように、アプリを [Windows デベロッパー センター ダッシュボードで無料試用版](../publish/set-app-pricing-and-availability.md#free-trial)として構成した場合、試用期間中は一部の機能を除外または制限することで、アプリを通常版にアップグレードするようユーザーに促すことができます。 どのような機能を制限するかをコーディング開始前に決め、完全なライセンスが購入されたときにだけその機能が正しく動作するようにアプリを設定します。 また、ユーザーがアプリを購入する前の試用期間中にだけバナーや透かしなどを表示する機能を有効にすることもできます。
+<span data-ttu-id="b30cd-108">この記事では、[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間の [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) クラスのメンバーを使用して、アプリの試用ライセンスがユーザーにあるかどうかを判定したり、アプリの実行中にライセンスが変更されたときに通知を受け取る方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="b30cd-108">This article shows how to use members of the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to determine if the user has a trial license for your app and be notified if the state of the license changes while your app is running.</span></span> <span data-ttu-id="b30cd-109">この名前空間は、Windows 10 バージョン 1607 以降をターゲットとするアプリにのみ使うことができます。</span><span class="sxs-lookup"><span data-stu-id="b30cd-109">This namespace is available to apps that target Windows 10, version 1607, or later.</span></span> 
 
-Windows 10 バージョン 1607以降をターゲットとするアプリは、[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間の　[StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) クラスのメンバーを使用して、アプリの試用ライセンスがユーザーにあるかどうかを判定したり、アプリの実行中にライセンスが変更されたときに通知を受け取ったりできます。
+> [!NOTE]
+> <span data-ttu-id="b30cd-110">この記事は、Windows 10 バージョン 1607 以降をターゲットとするアプリに適用されます。</span><span class="sxs-lookup"><span data-stu-id="b30cd-110">This article is applicable to apps that target Windows 10, version 1607, or later.</span></span> <span data-ttu-id="b30cd-111">アプリが Windows 10 の以前のバージョンをターゲットとする場合、**Windows.Services.Store** 名前空間の代わりに [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間を使う必要があります。</span><span class="sxs-lookup"><span data-stu-id="b30cd-111">If your app targets an earlier version of Windows 10, you must use the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace instead of the **Windows.Services.Store** namespace.</span></span> <span data-ttu-id="b30cd-112">詳しくは、[この記事](exclude-or-limit-features-in-a-trial-version-of-your-app.md)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b30cd-112">For more information, see [this article](exclude-or-limit-features-in-a-trial-version-of-your-app.md).</span></span>
 
->**注**&nbsp;&nbsp;この記事は、Windows 10 バージョン 1607 以降をターゲットとするアプリに適用されます。 アプリが Windows 10 の以前のバージョンをターゲットする場合、**Windows.Services.Store** 名前空間の代わりに [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間を使う必要があります。 詳しくは、「[Windows.ApplicationModel.Store 名前空間を使用するアプリ内購入と試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)」をご覧ください。
+## <a name="guidelines-for-implementing-a-trial-version"></a><span data-ttu-id="b30cd-113">試用版を実装するためのガイドライン</span><span class="sxs-lookup"><span data-stu-id="b30cd-113">Guidelines for implementing a trial version</span></span>
 
-## <a name="guidelines-for-implementing-a-trial-version"></a>試用版を実装するためのガイドライン
+<span data-ttu-id="b30cd-114">アプリの現時点でのライセンスの状態は、[StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx) クラスのプロパティとして保存されています。</span><span class="sxs-lookup"><span data-stu-id="b30cd-114">The current license state of your app is stored as properties of the [StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx) class.</span></span> <span data-ttu-id="b30cd-115">通常は、次の手順で説明するように、ライセンスの状態に依存する関数を条件ブロック内に記述します。</span><span class="sxs-lookup"><span data-stu-id="b30cd-115">Typically, you put the functions that depend on the license state in a conditional block, as we describe in the next step.</span></span> <span data-ttu-id="b30cd-116">このような機能について検討するときには、ライセンスがどの状態であっても動作するように実装できることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="b30cd-116">When considering these features, make sure you can implement them in a way that will work in all license states.</span></span>
 
-アプリの現時点でのライセンスの状態は、[StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx) クラスのプロパティとして保存されています。 通常は、次の手順で説明するように、ライセンスの状態に依存する関数を条件ブロック内に記述します。 このような機能について検討するときには、ライセンスがどの状態であっても動作するように実装できることを確認してください。
+<span data-ttu-id="b30cd-117">また、アプリの実行中にライセンスが変更された場合の処理方法を決めておきます。</span><span class="sxs-lookup"><span data-stu-id="b30cd-117">Also, decide how you want to handle changes to the app's license while the app is running.</span></span> <span data-ttu-id="b30cd-118">試用版のアプリでもすべての機能を使うことができるようにしながら、購入版では表示されない広告バナーを表示することができます。</span><span class="sxs-lookup"><span data-stu-id="b30cd-118">Your trial app can be full-featured, but have in-app ad banners where the paid-for version doesn't.</span></span> <span data-ttu-id="b30cd-119">また、試用版アプリでは一部の機能を無効にしたり、ユーザーに購入を勧めるメッセージを表示したりすることもできます。</span><span class="sxs-lookup"><span data-stu-id="b30cd-119">Or, your trial app can disable certain features, or display regular messages asking the user to buy it.</span></span>
 
-また、アプリの実行中にライセンスが変更された場合の処理方法を決めておきます。 試用版のアプリでもすべての機能を使うことができるようにしながら、購入版では表示されない広告バナーを表示することができます。 また、試用版アプリでは一部の機能を無効にしたり、ユーザーに購入を勧めるメッセージを表示したりすることもできます。
+<span data-ttu-id="b30cd-120">アプリの性質を考慮して、それに適した試用や有効期限の戦略を立ててください。</span><span class="sxs-lookup"><span data-stu-id="b30cd-120">Think about the type of app you're making and what a good trial or expiration strategy is for it.</span></span> <span data-ttu-id="b30cd-121">ゲームの試用版の場合は、ユーザーが遊べるゲーム コンテンツの量を制限するのが良い戦略でしょう。</span><span class="sxs-lookup"><span data-stu-id="b30cd-121">For a trial version of a game, a good strategy is to limit the amount of game content that a user can play.</span></span> <span data-ttu-id="b30cd-122">ユーティリティの試用版の場合は、有効期限日の設定や、ユーザーが使いたがるような機能の制限を検討するとよいでしょう。</span><span class="sxs-lookup"><span data-stu-id="b30cd-122">For a trial version of a utility, you might consider setting an expiration date, or limiting the features that a potential buyer can use.</span></span>
 
-アプリの性質を考慮して、それに適した試用や有効期限の戦略を立ててください。 ゲームの試用版の場合は、ユーザーが遊べるゲーム コンテンツの量を制限するのが良い戦略でしょう。 ユーティリティの試用版の場合は、有効期限日の設定や、ユーザーが使いたがるような機能の制限を検討するとよいでしょう。
+<span data-ttu-id="b30cd-123">ゲーム以外の多くのアプリでは、ユーザーにアプリ全体を理解してもらうために、有効期限日を設定するのが適しています。</span><span class="sxs-lookup"><span data-stu-id="b30cd-123">For most non-gaming apps, setting an expiration date works well, because users can develop a good understanding of the complete app.</span></span> <span data-ttu-id="b30cd-124">ここでは、有効期限に関するいくつかの一般的なシナリオと、その処理方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b30cd-124">Here are a few common expiration scenarios and your options for handling them.</span></span>
 
-ゲーム以外の多くのアプリでは、ユーザーにアプリ全体を理解してもらうために、有効期限日を設定するのが適しています。 ここでは、有効期限に関するいくつかの一般的なシナリオと、その処理方法について説明します。
+-   **<span data-ttu-id="b30cd-125">アプリの実行中に試用ライセンスが期限切れになった</span><span class="sxs-lookup"><span data-stu-id="b30cd-125">Trial license expires while the app is running</span></span>**
 
--   **アプリの実行中に試用ライセンスが期限切れになった**
+    <span data-ttu-id="b30cd-126">アプリの実行中に試用ライセンスが期限切れになった場合は、次の対処方法があります。</span><span class="sxs-lookup"><span data-stu-id="b30cd-126">If the trial expires while your app is running, your app can:</span></span>
 
-    アプリの実行中に試用ライセンスが期限切れになった場合は、次の対処方法があります。
+    -   <span data-ttu-id="b30cd-127">何もしない。</span><span class="sxs-lookup"><span data-stu-id="b30cd-127">Do nothing.</span></span>
+    -   <span data-ttu-id="b30cd-128">ユーザーにメッセージを表示する。</span><span class="sxs-lookup"><span data-stu-id="b30cd-128">Display a message to your customer.</span></span>
+    -   <span data-ttu-id="b30cd-129">閉じる。</span><span class="sxs-lookup"><span data-stu-id="b30cd-129">Close.</span></span>
+    -   <span data-ttu-id="b30cd-130">ユーザーにアプリの購入を促す。</span><span class="sxs-lookup"><span data-stu-id="b30cd-130">Prompt your customer to buy the app.</span></span>
 
-    -   何もしない。
-    -   ユーザーにメッセージを表示する。
-    -   閉じる。
-    -   ユーザーにアプリの購入を促す。
+    <span data-ttu-id="b30cd-131">お勧めするのは、アプリの購入を促すメッセージを表示することです。ユーザーがアプリを購入したら、すべての機能を有効にして、そのまま使うことができるようにします。</span><span class="sxs-lookup"><span data-stu-id="b30cd-131">The best practice is to display a message with a prompt for buying the app, and if the customer buys it, continue with all features enabled.</span></span> <span data-ttu-id="b30cd-132">購入しなかった場合は、アプリを閉じるか、アプリの購入が必要なことを一定の間隔で通知します。</span><span class="sxs-lookup"><span data-stu-id="b30cd-132">If the user decides not to buy the app, close it or remind them to buy the app at regular intervals.</span></span>
 
-    お勧めするのは、アプリの購入を促すメッセージを表示することです。ユーザーがアプリを購入したら、すべての機能を有効にして、そのまま使うことができるようにします。 購入しなかった場合は、アプリを閉じるか、アプリの購入が必要なことを一定の間隔で通知します。
+-   **<span data-ttu-id="b30cd-133">アプリの起動前に試用ライセンスが期限切れになった</span><span class="sxs-lookup"><span data-stu-id="b30cd-133">Trial license expires before the app is launched</span></span>**
 
--   **アプリの起動前に試用ライセンスが期限切れになった**
+    <span data-ttu-id="b30cd-134">ユーザーがアプリを起動する前に試用ライセンスが期限切れになった場合、アプリは起動しません。</span><span class="sxs-lookup"><span data-stu-id="b30cd-134">If the trial expires before the user launches the app, your app won't launch.</span></span> <span data-ttu-id="b30cd-135">ユーザーには、ストアからそのアプリを購入できることを伝えるダイアログ ボックスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="b30cd-135">Instead, users see a dialog box that gives them the option to purchase your app from the Store.</span></span>
 
-    ユーザーがアプリを起動する前に試用ライセンスが期限切れになった場合、アプリは起動しません。 ユーザーには、ストアからそのアプリを購入できることを伝えるダイアログ ボックスが表示されます。
+-   **<span data-ttu-id="b30cd-136">アプリの実行中にユーザーがアプリを購入した</span><span class="sxs-lookup"><span data-stu-id="b30cd-136">Customer buys the app while it is running</span></span>**
 
--   **アプリの実行中にユーザーがアプリを購入した**
+    <span data-ttu-id="b30cd-137">アプリの実行中にユーザーがアプリを購入した場合は、次の対処方法があります。</span><span class="sxs-lookup"><span data-stu-id="b30cd-137">If the customer buys your app while it is running, here are some actions your app can take.</span></span>
 
-    アプリの実行中にユーザーがアプリを購入した場合は、次の対処方法があります。
+    -   <span data-ttu-id="b30cd-138">何もせず、アプリが再起動されるまでは試用モードを続ける。</span><span class="sxs-lookup"><span data-stu-id="b30cd-138">Do nothing and let them continue in trial mode until they restart the app.</span></span>
+    -   <span data-ttu-id="b30cd-139">購入に対するお礼をする、またはメッセージを表示する。</span><span class="sxs-lookup"><span data-stu-id="b30cd-139">Thank them for buying or display a message.</span></span>
+    -   <span data-ttu-id="b30cd-140">完全なライセンスがある場合に使うことができる機能を、通知なしで有効にする (または、試用版であることを示す表示を消す)。</span><span class="sxs-lookup"><span data-stu-id="b30cd-140">Silently enable the features that are available with a full-license (or disable the trial-only notices).</span></span>
 
-    -   何もせず、アプリが再起動されるまでは試用モードを続ける。
-    -   購入に対するお礼をする、またはメッセージを表示する。
-    -   完全なライセンスがある場合に使うことができる機能を、通知なしで有効にする (または、試用版であることを示す表示を消す)。
+<span data-ttu-id="b30cd-141">アプリの動作でユーザーが驚くことがないように、無料試用版のアプリが試用期間中にどのように機能し、期間が過ぎるとどのようになるかを必ず説明してください。</span><span class="sxs-lookup"><span data-stu-id="b30cd-141">Be sure to explain how your app will behave during and after the free trial period so your customers won't be surprised by your app's behavior.</span></span> <span data-ttu-id="b30cd-142">アプリの説明について詳しくは、「[アプリの説明の作成](https://msdn.microsoft.com/library/windows/apps/mt148529)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b30cd-142">For more info about describing your app, see [Create app descriptions](https://msdn.microsoft.com/library/windows/apps/mt148529).</span></span>
 
-アプリの動作でユーザーが驚くことがないように、無料試用版のアプリが試用期間中にどのように機能し、期間が過ぎるとどのようになるかを必ず説明してください。 アプリの説明について詳しくは、「[アプリの説明の作成](https://msdn.microsoft.com/library/windows/apps/mt148529)」をご覧ください。
+## <a name="prerequisites"></a><span data-ttu-id="b30cd-143">前提条件</span><span class="sxs-lookup"><span data-stu-id="b30cd-143">Prerequisites</span></span>
 
-## <a name="prerequisites"></a>前提条件
+<span data-ttu-id="b30cd-144">この例には、次の前提条件があります。</span><span class="sxs-lookup"><span data-stu-id="b30cd-144">This example has the following prerequisites:</span></span>
+* <span data-ttu-id="b30cd-145">Windows 10 バージョン 1607 以降をターゲットとするユニバーサル Windows プラットフォーム (UWP) アプリの Visual Studio プロジェクト。</span><span class="sxs-lookup"><span data-stu-id="b30cd-145">A Visual Studio project for a Universal Windows Platform (UWP) app that targets Windows 10, version 1607, or later.</span></span>
+* <span data-ttu-id="b30cd-146">Windows デベロッパー センター ダッシュ ボードで、期限なしの[無料試用版](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)として構成したアプリを作成し、そのアプリがストアで公開されている。</span><span class="sxs-lookup"><span data-stu-id="b30cd-146">You have created an app in the Windows Dev Center dashboard that is configured as a [free trial](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability) with no time limit and this app is published in the Store.</span></span> <span data-ttu-id="b30cd-147">必要に応じで、テスト中にストアでアプリを検索できないようにアプリを構成することも可能です。</span><span class="sxs-lookup"><span data-stu-id="b30cd-147">You can optionally configure the app so it is not discoverable in the Store while you test it.</span></span> <span data-ttu-id="b30cd-148">詳しくは、[テスト ガイダンス](in-app-purchases-and-trials.md#testing)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b30cd-148">For more information, see the [testing guidance](in-app-purchases-and-trials.md#testing).</span></span>
 
-この例には、次の前提条件があります。
-* Windows 10 バージョン 1607 以降をターゲットとするユニバーサル Windows プラットフォーム (UWP) アプリの Visual Studio プロジェクト。
-* Windows デベロッパー センター ダッシュ ボードで、期限なしの[無料試用版](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)として構成したアプリを作成し、そのアプリがストアで公開されて入手可能になっている。 これは、ユーザーにリリースするアプリでも、[Windows アプリ認定キット](https://developer.microsoft.com/windows/develop/app-certification-kit)の最小要件を満たす、テスト目的でのみ使う基本的なアプリでもかまいません。 詳しくは、[テスト ガイダンス](in-app-purchases-and-trials.md#testing)をご覧ください。
+<span data-ttu-id="b30cd-149">この例のコードは、次の点を前提としています。</span><span class="sxs-lookup"><span data-stu-id="b30cd-149">The code in this example assumes:</span></span>
+* <span data-ttu-id="b30cd-150">コードは、```workingProgressRing``` という名前の [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) と ```textBlock``` という名前の [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) を含む [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) のコンテキストで実行されます。</span><span class="sxs-lookup"><span data-stu-id="b30cd-150">The code runs in the context of a [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) that contains a [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) named ```workingProgressRing``` and a [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) named ```textBlock```.</span></span> <span data-ttu-id="b30cd-151">これらのオブジェクトは、それぞれ非同期操作が発生していることを示するためと、出力メッセージを表示するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="b30cd-151">These objects are used to indicate that an asynchronous operation is occurring and to display output messages, respectively.</span></span>
+* <span data-ttu-id="b30cd-152">コード ファイルには、**Windows.Services.Store** 名前空間の **using** ステートメントがあります。</span><span class="sxs-lookup"><span data-stu-id="b30cd-152">The code file has a **using** statement for the **Windows.Services.Store** namespace.</span></span>
+* <span data-ttu-id="b30cd-153">アプリは、アプリを起動したユーザーのコンテキストでのみ動作するシングル ユーザー アプリです。</span><span class="sxs-lookup"><span data-stu-id="b30cd-153">The app is a single-user app that runs only in the context of the user that launched the app.</span></span> <span data-ttu-id="b30cd-154">詳しくは、「[アプリ内購入と試用版](in-app-purchases-and-trials.md#api_intro)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b30cd-154">For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md#api_intro).</span></span>
 
-この例のコードは、次の点を前提としています。
-* コードは、```workingProgressRing``` という名前の [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) と ```textBlock``` という名前の [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) を含む [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) のコンテキストで実行されます。 これらのオブジェクトは、それぞれ非同期操作が発生していることを示するためと、出力メッセージを表示するために使用されます。
-* コード ファイルには、**Windows.Services.Store** 名前空間の **using** ステートメントがあります。
-* アプリは、アプリを起動したユーザーのコンテキストでのみ動作するシングル ユーザー アプリです。 詳しくは、「[アプリ内購入と試用版](in-app-purchases-and-trials.md#api_intro)」をご覧ください。
+> [!NOTE]
+> <span data-ttu-id="b30cd-155">[デスクトップ ブリッジ](https://developer.microsoft.com/windows/bridges/desktop)を使用するデスクトップ アプリケーションがある場合、この例には示されていないコードを追加して [StoreContext ](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) オブジェクトを構成することが必要になることがあります。</span><span class="sxs-lookup"><span data-stu-id="b30cd-155">If you have a desktop application that uses the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop), you may need to add additional code not shown in this example to configure the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) object.</span></span> <span data-ttu-id="b30cd-156">詳しくは、「[デスクトップ ブリッジを使用するデスクトップ アプリケーションでの StoreContext クラスの使用](in-app-purchases-and-trials.md#desktop)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b30cd-156">For more information, see [Using the StoreContext class in a desktop application that uses the Desktop Bridge](in-app-purchases-and-trials.md#desktop).</span></span>
 
->**注:**&nbsp;&nbsp;[Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop) を使うデスクトップ アプリケーションがある場合、この例には示されていないコードを追加して [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) オブジェクトを構成することが必要になることがあります。 詳しくは、「[Desktop Bridge を使用するデスクトップ アプリケーションでの StoreContext クラスの使用](in-app-purchases-and-trials.md#desktop)」をご覧ください。
+## <a name="code-example"></a><span data-ttu-id="b30cd-157">コードの例</span><span class="sxs-lookup"><span data-stu-id="b30cd-157">Code example</span></span>
 
-## <a name="code-example"></a>コードの例
+<span data-ttu-id="b30cd-158">アプリを初期化するときに、アプリの [StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx) オブジェクトを取得し、アプリの実行中にライセンスが変更されたときに通知を受け取る [OfflineLicensesChanged](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.offlinelicenseschanged.aspx) イベントを処理します。</span><span class="sxs-lookup"><span data-stu-id="b30cd-158">When your app is initializing, get the [StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx) object for your app and handle the [OfflineLicensesChanged](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.offlinelicenseschanged.aspx) event to receive notifications when the license changes while the app is running.</span></span> <span data-ttu-id="b30cd-159">アプリのライセンスが変更されるのは、たとえば、試用期間が終了したときや、ユーザーがストアを通じてアプリを購入したときです。</span><span class="sxs-lookup"><span data-stu-id="b30cd-159">For example, the app's license could change if the trial period expires or the customer buys the app through a Store.</span></span> <span data-ttu-id="b30cd-160">ライセンスが変更されるときに、新しいライセンスを入手し、必要に応じてアプリの機能を有効または無効にします。</span><span class="sxs-lookup"><span data-stu-id="b30cd-160">When the license changes, get the new license and enable or disable a feature of your app accordingly.</span></span>
 
-アプリを初期化するときに、アプリの [StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx) オブジェクトを取得し、アプリの実行中にライセンスが変更されたときに通知を受け取る [OfflineLicensesChanged](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.offlinelicenseschanged.aspx) イベントを処理します。 アプリのライセンスが変更されるのは、たとえば、試用期間が終了したときや、ユーザーがストアを通じてアプリを購入したときです。 ライセンスが変更されるときに、新しいライセンスを入手し、必要に応じてアプリの機能を有効または無効にします。
-
-この時点で、ユーザーがアプリを購入したら、ライセンスの状態が変わったことをユーザーに知らせることをお勧めします。 コーディングの方法上、必要であれば、ユーザーにアプリを再起動してもらわなければならないこともあります。 ただし、この移行は可能な限りスムーズで違和感のないようにする必要があります。
+<span data-ttu-id="b30cd-161">この時点で、ユーザーがアプリを購入したら、ライセンスの状態が変わったことをユーザーに知らせることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="b30cd-161">At this point, if a user bought the app, it is a good practice to provide feedback to the user that the licensing status has changed.</span></span> <span data-ttu-id="b30cd-162">コーディングの方法上、必要であれば、ユーザーにアプリを再起動してもらわなければならないこともあります。</span><span class="sxs-lookup"><span data-stu-id="b30cd-162">You might need to ask the user to restart the app if that's how you've coded it.</span></span> <span data-ttu-id="b30cd-163">ただし、この移行は可能な限りスムーズで違和感のないようにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="b30cd-163">But make this transition as seamless and painless as possible.</span></span>
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[ImplementTrial](./code/InAppPurchasesAndLicenses_RS1/cs/ImplementTrialPage.xaml.cs#ImplementTrial)]
+[!code-cs[<span data-ttu-id="b30cd-164">ImplementTrial</span><span class="sxs-lookup"><span data-stu-id="b30cd-164">ImplementTrial</span></span>](./code/InAppPurchasesAndLicenses_RS1/cs/ImplementTrialPage.xaml.cs#ImplementTrial)]
 
-完全なサンプル アプリケーションについては、[ストア サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)をご覧ください。
+<span data-ttu-id="b30cd-165">完全なサンプル アプリケーションについては、[ストア サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b30cd-165">For a complete sample application, see the [Store sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).</span></span>
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="b30cd-166">関連トピック</span><span class="sxs-lookup"><span data-stu-id="b30cd-166">Related topics</span></span>
 
-* [アプリ内購入と試用版](in-app-purchases-and-trials.md)
-* [アプリとアドオンの製品情報の取得](get-product-info-for-apps-and-add-ons.md)
-* [アプリとアドオンのライセンス情報の取得](get-license-info-for-apps-and-add-ons.md)
-* [アプリとアドオンのアプリ内購入の有効化](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [コンシューマブルなアドオン購入の有効化](enable-consumable-add-on-purchases.md)
-* [ストア サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
-
+* [<span data-ttu-id="b30cd-167">アプリ内購入と試用版</span><span class="sxs-lookup"><span data-stu-id="b30cd-167">In-app purchases and trials</span></span>](in-app-purchases-and-trials.md)
+* [<span data-ttu-id="b30cd-168">アプリとアドオンの製品情報の取得</span><span class="sxs-lookup"><span data-stu-id="b30cd-168">Get product info for apps and add-ons</span></span>](get-product-info-for-apps-and-add-ons.md)
+* [<span data-ttu-id="b30cd-169">アプリとアドオンのライセンス情報の取得</span><span class="sxs-lookup"><span data-stu-id="b30cd-169">Get license info for apps and add-ons</span></span>](get-license-info-for-apps-and-add-ons.md)
+* [<span data-ttu-id="b30cd-170">アプリとアドオンのアプリ内購入の有効化</span><span class="sxs-lookup"><span data-stu-id="b30cd-170">Enable in-app purchases of apps and add-ons</span></span>](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [<span data-ttu-id="b30cd-171">コンシューマブルなアドオン購入の有効化</span><span class="sxs-lookup"><span data-stu-id="b30cd-171">Enable consumable add-on purchases</span></span>](enable-consumable-add-on-purchases.md)
+* [<span data-ttu-id="b30cd-172">ストア サンプル</span><span class="sxs-lookup"><span data-stu-id="b30cd-172">Store sample</span></span>](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)

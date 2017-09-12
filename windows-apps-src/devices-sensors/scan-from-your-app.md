@@ -1,50 +1,50 @@
 ---
-author: DBirtolo
+author: PatrickFarley
 ms.assetid: 374D1983-60E0-4E18-ABBB-04775BAA0F0D
 title: "アプリからスキャンする"
 description: "フラットベッド、フィーダー、自動構成の各スキャン ソースを使ってアプリからコンテンツをスキャンする方法について説明します。"
-ms.author: dbirtolo
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2dc8ef975c58ba5eb1d8b59bee773c7b6219a03c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c1db020b242c43808d356076641e375cb1581ed3
+ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/28/2017
 ---
-# <a name="scan-from-your-app"></a>アプリからスキャンする
+# <a name="scan-from-your-app"></a><span data-ttu-id="7c075-104">アプリからスキャンする</span><span class="sxs-lookup"><span data-stu-id="7c075-104">Scan from your app</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
+<span data-ttu-id="7c075-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="7c075-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="7c075-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]</span><span class="sxs-lookup"><span data-stu-id="7c075-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-**重要な API**
+**<span data-ttu-id="7c075-107">重要な API</span><span class="sxs-lookup"><span data-stu-id="7c075-107">Important APIs</span></span>**
 
--   [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250)
--   [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393)
--   [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381)
+-   [**<span data-ttu-id="7c075-108">Windows.Devices.Scanners</span><span class="sxs-lookup"><span data-stu-id="7c075-108">Windows.Devices.Scanners</span></span>**](https://msdn.microsoft.com/library/windows/apps/Dn264250)
+-   [**<span data-ttu-id="7c075-109">DeviceInformation</span><span class="sxs-lookup"><span data-stu-id="7c075-109">DeviceInformation</span></span>**](https://msdn.microsoft.com/library/windows/apps/BR225393)
+-   [**<span data-ttu-id="7c075-110">DeviceClass</span><span class="sxs-lookup"><span data-stu-id="7c075-110">DeviceClass</span></span>**](https://msdn.microsoft.com/library/windows/apps/BR225381)
 
-フラットベッド、フィーダー、自動構成の各スキャン ソースを使ってアプリからコンテンツをスキャンする方法について説明します。
+<span data-ttu-id="7c075-111">フラットベッド、フィーダー、自動構成の各スキャン ソースを使ってアプリからコンテンツをスキャンする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="7c075-111">Learn here how to scan content from your app by using a flatbed, feeder, or auto-configured scan source.</span></span>
 
-**重要**  [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) API はデスクトップ [デバイス ファミリ](https://msdn.microsoft.com/library/windows/apps/Dn894631) の一部です。 アプリでは、デスクトップ版の Windows 10 でのみこれらの API を使用できます。
+<span data-ttu-id="7c075-112">**重要**  [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) API はデスクトップ [デバイス ファミリ](https://msdn.microsoft.com/library/windows/apps/Dn894631) の一部です。</span><span class="sxs-lookup"><span data-stu-id="7c075-112">**Important**  The [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) APIs are part of the desktop [device family](https://msdn.microsoft.com/library/windows/apps/Dn894631).</span></span> <span data-ttu-id="7c075-113">アプリでは、デスクトップ版の Windows 10 でのみこれらの API を使用できます。</span><span class="sxs-lookup"><span data-stu-id="7c075-113">Apps can use these APIs only on the desktop version of Windows 10.</span></span>
 
-アプリからスキャンを実行するにはまず、新しい [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトを宣言し、[**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) 型を取得することによって、利用できるスキャナーをリストする必要があります。 WIA ドライバーと共にインストールされているローカルのスキャナーのみがリストされ、アプリから利用することができます。
+<span data-ttu-id="7c075-114">アプリからスキャンを実行するにはまず、新しい [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトを宣言し、[**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) 型を取得することによって、利用できるスキャナーをリストする必要があります。</span><span class="sxs-lookup"><span data-stu-id="7c075-114">To scan from your app, you must first list the available scanners by declaring a new [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object and getting the [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) type.</span></span> <span data-ttu-id="7c075-115">WIA ドライバーと共にインストールされているローカルのスキャナーのみがリストされ、アプリから利用することができます。</span><span class="sxs-lookup"><span data-stu-id="7c075-115">Only scanners that are installed locally with WIA drivers are listed and available to your app.</span></span>
 
-利用できるスキャナーをリストしたら、スキャナーの種類に基づく自動構成のスキャン設定を使うか、フラットベッドとフィーダーのいずれかのスキャン ソースを使ってスキャンのみを実行することができます。 自動構成設定を使うには、スキャナーが自動構成に対応し、なおかつ、フラットベッドとフィーダーのどちらか一方のみを備えたスキャナーであることが必要です。 詳細については、[自動構成スキャン](https://msdn.microsoft.com/library/windows/hardware/Ff539393)に関するページを参照してください。
+<span data-ttu-id="7c075-116">利用できるスキャナーをリストしたら、スキャナーの種類に基づく自動構成のスキャン設定を使うか、フラットベッドとフィーダーのいずれかのスキャン ソースを使ってスキャンのみを実行することができます。</span><span class="sxs-lookup"><span data-stu-id="7c075-116">After your app has listed available scanners, it can use the auto-configured scan settings based on the scanner type, or just scan using the available flatbed or feeder scan source.</span></span> <span data-ttu-id="7c075-117">自動構成設定を使うには、スキャナーが自動構成に対応し、なおかつ、フラットベッドとフィーダーのどちらか一方のみを備えたスキャナーであることが必要です。</span><span class="sxs-lookup"><span data-stu-id="7c075-117">To use auto-configured settings, the scanner must be enabled for auto-configuration must not be equipped with both a flatbed and a feeder scanner.</span></span> <span data-ttu-id="7c075-118">詳細については、[自動構成スキャン](https://msdn.microsoft.com/library/windows/hardware/Ff539393)に関するページを参照してください。</span><span class="sxs-lookup"><span data-stu-id="7c075-118">For more info, see [Auto-Configured Scanning](https://msdn.microsoft.com/library/windows/hardware/Ff539393).</span></span>
 
-## <a name="enumerate-available-scanners"></a>利用できるスキャナーを列挙する
+## <a name="enumerate-available-scanners"></a><span data-ttu-id="7c075-119">利用できるスキャナーを列挙する</span><span class="sxs-lookup"><span data-stu-id="7c075-119">Enumerate available scanners</span></span>
 
-Windows はスキャナーを自動的には検出しません。 アプリがスキャナーと通信するためには、次の手順を実行する必要があります。 この例では、[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 名前空間を使ってスキャナー デバイスの列挙処理を実行しています。
+<span data-ttu-id="7c075-120">Windows はスキャナーを自動的には検出しません。</span><span class="sxs-lookup"><span data-stu-id="7c075-120">Windows does not detect scanners automatically.</span></span> <span data-ttu-id="7c075-121">アプリがスキャナーと通信するためには、次の手順を実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7c075-121">You must perform this step in order for your app to communicate with the scanner.</span></span> <span data-ttu-id="7c075-122">この例では、[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 名前空間を使ってスキャナー デバイスの列挙処理を実行しています。</span><span class="sxs-lookup"><span data-stu-id="7c075-122">In this example, the scanner device enumeration is done using the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) namespace.</span></span>
 
-1.  まず、クラス定義ファイルに次の using ステートメントを追加します。
+1.  <span data-ttu-id="7c075-123">まず、クラス定義ファイルに次の using ステートメントを追加します。</span><span class="sxs-lookup"><span data-stu-id="7c075-123">First, add these using statements to your class definition file.</span></span>
 
 ``` csharp
     using Windows.Devices.Enumeration;
     using Windows.Devices.Scanners;
 ```
 
-2.  次に、スキャナーの列挙処理を開始するためのデバイス ウォッチャーを実装します。 詳しくは、「[デバイスの列挙](enumerate-devices.md)」をご覧ください。
+2.  <span data-ttu-id="7c075-124">次に、スキャナーの列挙処理を開始するためのデバイス ウォッチャーを実装します。</span><span class="sxs-lookup"><span data-stu-id="7c075-124">Next, implement a device watcher to start enumerating scanners.</span></span> <span data-ttu-id="7c075-125">詳しくは、「[デバイスの列挙](enumerate-devices.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="7c075-125">For more info, see [Enumerate devices](enumerate-devices.md).</span></span>
 
 ```csharp
     void InitDeviceWatcher()
@@ -58,7 +58,7 @@ Windows はスキャナーを自動的には検出しません。 アプリが�
     }
 ```
 
-3.  スキャナーが追加されたタイミングで実行されるイベント ハンドラーを作成します。
+3.  <span data-ttu-id="7c075-126">スキャナーが追加されたタイミングで実行されるイベント ハンドラーを作成します。</span><span class="sxs-lookup"><span data-stu-id="7c075-126">Create an event handler for when a scanner is added.</span></span>
 
 ```csharp
     private async void OnScannerAdded(DeviceWatcher sender,  DeviceInformation deviceInfo)
@@ -87,34 +87,34 @@ Windows はスキャナーを自動的には検出しません。 アプリが�
     }
 ```
 
-## <a name="scan"></a>スキャン
+## <a name="scan"></a><span data-ttu-id="7c075-127">スキャン</span><span class="sxs-lookup"><span data-stu-id="7c075-127">Scan</span></span>
 
-1.  **ImageScanner オブジェクトを取得する**
+1.  **<span data-ttu-id="7c075-128">ImageScanner オブジェクトを取得する</span><span class="sxs-lookup"><span data-stu-id="7c075-128">Get an ImageScanner object</span></span>**
 
-[**ImageScannerScanSource**](https://msdn.microsoft.com/library/windows/apps/Dn264238) 列挙型の各メンバーに対しては、**Default**、**AutoConfigured**、**Flatbed**、**Feeder** のいずれであれ、最初に [**ImageScanner.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.scanners.imagescanner.fromidasync) メソッドを呼び出して [**ImageScanner**](https://msdn.microsoft.com/library/windows/apps/Dn263806) オブジェクトを作成する必要があります。その例を次に示します。
+<span data-ttu-id="7c075-129">[**ImageScannerScanSource**](https://msdn.microsoft.com/library/windows/apps/Dn264238) 列挙型の各メンバーに対しては、**Default**、**AutoConfigured**、**Flatbed**、**Feeder** のいずれであれ、最初に [**ImageScanner.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.scanners.imagescanner.fromidasync) メソッドを呼び出して [**ImageScanner**](https://msdn.microsoft.com/library/windows/apps/Dn263806) オブジェクトを作成する必要があります。その例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="7c075-129">For each [**ImageScannerScanSource**](https://msdn.microsoft.com/library/windows/apps/Dn264238) enumeration type, whether it's **Default**, **AutoConfigured**, **Flatbed**, or **Feeder**, you must first create an [**ImageScanner**](https://msdn.microsoft.com/library/windows/apps/Dn263806) object by calling the [**ImageScanner.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.scanners.imagescanner.fromidasync) method, like this.</span></span>
 
  ```csharp
     ImageScanner myScanner = await ImageScanner.FromIdAsync(deviceId);
  ```
 
-2.  **スキャンのみ**
+2.  **<span data-ttu-id="7c075-130">スキャンのみ</span><span class="sxs-lookup"><span data-stu-id="7c075-130">Just scan</span></span>**
 
-既定の設定でスキャンを行う場合、アプリは、[**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) 名前空間を使ってスキャナーを選び、そのソースからスキャンを実行します。 スキャンの設定は変更されません。 この場合、自動構成、フラットベッド、フィーダーのいずれかのスキャナーが選ばれます。 このタイプのスキャンは、意図しないソースからスキャンが実行されたとしても (意図したフィーダーではなくフラットベッドからスキャンされるなど) スキャン操作が正常に実行される可能性は最も高くなります。
+<span data-ttu-id="7c075-131">既定の設定でスキャンを行う場合、アプリは、[**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) 名前空間を使ってスキャナーを選び、そのソースからスキャンを実行します。</span><span class="sxs-lookup"><span data-stu-id="7c075-131">To scan with the default settings, your app relies on the [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) namespace to select a scanner and scans from that source.</span></span> <span data-ttu-id="7c075-132">スキャンの設定は変更されません。</span><span class="sxs-lookup"><span data-stu-id="7c075-132">No scan settings are changed.</span></span> <span data-ttu-id="7c075-133">この場合、自動構成、フラットベッド、フィーダーのいずれかのスキャナーが選ばれます。</span><span class="sxs-lookup"><span data-stu-id="7c075-133">The possible scanners are auto-configure, flatbed, or feeder.</span></span> <span data-ttu-id="7c075-134">このタイプのスキャンは、意図しないソースからスキャンが実行されたとしても (意図したフィーダーではなくフラットベッドからスキャンされるなど) スキャン操作が正常に実行される可能性は最も高くなります。</span><span class="sxs-lookup"><span data-stu-id="7c075-134">This type of scan will most likely produce a successful scan operation, even if it scans from the wrong source, like flatbed instead of feeder.</span></span>
 
-**注**  スキャンする文書をユーザーがフィーダーに置いた場合、フィーダーからではなくフラットベッドからスキャンが実行されます。 空のフィーダーからスキャンを実行した場合、スキャン ジョブからは一切、スキャンしたファイルが生成されません。
+<span data-ttu-id="7c075-135">**注**  スキャンする文書をユーザーがフィーダーに置いた場合、フィーダーからではなくフラットベッドからスキャンが実行されます。</span><span class="sxs-lookup"><span data-stu-id="7c075-135">**Note**  If the user places the document to scan in the feeder, the scanner will scan from the flatbed instead.</span></span> <span data-ttu-id="7c075-136">空のフィーダーからスキャンを実行した場合、スキャン ジョブからは一切、スキャンしたファイルが生成されません。</span><span class="sxs-lookup"><span data-stu-id="7c075-136">If the user tries to scan from an empty feeder, the scan job won't produce any scanned files.</span></span>
  
 ```csharp
     var result = await myScanner.ScanFilesToFolderAsync(ImageScannerScanSource.Default,
         folder).AsTask(cancellationToken.Token, progress);
 ```
 
-3.  **自動構成、フラットベッド、フィーダーのいずれかのソースからスキャンする**
+3.  **<span data-ttu-id="7c075-137">自動構成、フラットベッド、フィーダーのいずれかのソースからスキャンする</span><span class="sxs-lookup"><span data-stu-id="7c075-137">Scan from Auto-configured, Flatbed, or Feeder source</span></span>**
 
-デバイスの[自動構成スキャン](https://msdn.microsoft.com/library/windows/hardware/Ff539393)を使うと、最適なスキャン設定でスキャンを実行することができます。 このオプションでは、スキャン対象のコンテンツに応じた最適なスキャン設定 (カラー モード、スキャン解像度など) をデバイスが自動的に判断します。 スキャン設定は、新しいスキャン ジョブの実行時にその都度選択されます。
+<span data-ttu-id="7c075-138">デバイスの[自動構成スキャン](https://msdn.microsoft.com/library/windows/hardware/Ff539393)を使うと、最適なスキャン設定でスキャンを実行することができます。</span><span class="sxs-lookup"><span data-stu-id="7c075-138">Your app can use the device's [Auto-Configured Scanning](https://msdn.microsoft.com/library/windows/hardware/Ff539393) to scan with the most optimal scan settings.</span></span> <span data-ttu-id="7c075-139">このオプションでは、スキャン対象のコンテンツに応じた最適なスキャン設定 (カラー モード、スキャン解像度など) をデバイスが自動的に判断します。</span><span class="sxs-lookup"><span data-stu-id="7c075-139">With this option, the device itself can determine the best scan settings, like color mode and scan resolution, based on the content being scanned.</span></span> <span data-ttu-id="7c075-140">スキャン設定は、新しいスキャン ジョブの実行時にその都度選択されます。</span><span class="sxs-lookup"><span data-stu-id="7c075-140">The device selects the scan settings at run time for each new scan job.</span></span>
 
-**注**  スキャナーによっては、この機能がサポートされない場合もあります。この機能を使う場合は、スキャナーがこの機能をサポートしているかどうかを先にチェックする必要があります。
+<span data-ttu-id="7c075-141">**注**  スキャナーによっては、この機能がサポートされない場合もあります。この機能を使う場合は、スキャナーがこの機能をサポートしているかどうかを先にチェックする必要があります。</span><span class="sxs-lookup"><span data-stu-id="7c075-141">**Note**  Not all scanners support this feature, so the app must check if the scanner supports this feature before using this setting.</span></span>
 
-この例では、スキャナーが自動構成に対応しているかどうかをアプリがまずチェックしたうえで、スキャンを実行しています。 フラットベッド スキャナーまたはフィーダー スキャナーを指定する場合は、単に **AutoConfigured** を **Flatbed** または **Feeder** に置き換えます。
+<span data-ttu-id="7c075-142">この例では、スキャナーが自動構成に対応しているかどうかをアプリがまずチェックしたうえで、スキャンを実行しています。</span><span class="sxs-lookup"><span data-stu-id="7c075-142">In this example, the app first checks if the scanner is capable of auto-configuration and then scans.</span></span> <span data-ttu-id="7c075-143">フラットベッド スキャナーまたはフィーダー スキャナーを指定する場合は、単に **AutoConfigured** を **Flatbed** または **Feeder** に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="7c075-143">To specify either flatbed or feeder scanner, simply replace **AutoConfigured** with **Flatbed** or **Feeder**.</span></span>
 
 ```csharp
     if (myScanner.IsScanSourceSupported(ImageScannerScanSource.AutoConfigured))
@@ -127,9 +127,9 @@ Windows はスキャナーを自動的には検出しません。 アプリが�
     }
 ```
 
-## <a name="preview-the-scan"></a>スキャンをプレビューする
+## <a name="preview-the-scan"></a><span data-ttu-id="7c075-144">スキャンをプレビューする</span><span class="sxs-lookup"><span data-stu-id="7c075-144">Preview the scan</span></span>
 
-フォルダーに格納する前にスキャン結果をプレビューするコードを追加できます。 以下の例では、**Flatbed** スキャナーがプレビューをサポートしているかどうかをアプリでチェックした後、スキャン結果をプレビューしています。
+<span data-ttu-id="7c075-145">フォルダーに格納する前にスキャン結果をプレビューするコードを追加できます。</span><span class="sxs-lookup"><span data-stu-id="7c075-145">You can add code to preview the scan before scanning to a folder.</span></span> <span data-ttu-id="7c075-146">以下の例では、**Flatbed** スキャナーがプレビューをサポートしているかどうかをアプリでチェックした後、スキャン結果をプレビューしています。</span><span class="sxs-lookup"><span data-stu-id="7c075-146">In the example below, the app checks if the **Flatbed** scanner supports preview, then previews the scan.</span></span>
 
 ```csharp
 if (myScanner.IsPreviewSupported(ImageScannerScanSource.Flatbed))
@@ -140,9 +140,9 @@ if (myScanner.IsPreviewSupported(ImageScannerScanSource.Flatbed))
                     ImageScannerScanSource.Flatbed, stream);
 ```
 
-## <a name="cancel-the-scan"></a>スキャンを取り消す
+## <a name="cancel-the-scan"></a><span data-ttu-id="7c075-147">スキャンを取り消す</span><span class="sxs-lookup"><span data-stu-id="7c075-147">Cancel the scan</span></span>
 
-スキャンの途中でユーザーがスキャン ジョブを取り消すことができるようにする例を次に示します。
+<span data-ttu-id="7c075-148">スキャンの途中でユーザーがスキャン ジョブを取り消すことができるようにする例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="7c075-148">You can let users cancel the scan job midway through a scan, like this.</span></span>
 
 ```csharp
 void CancelScanning()
@@ -160,22 +160,21 @@ void CancelScanning()
 }
 ```
 
-## <a name="scan-with-progress"></a>スキャンの進行状況を表示する
+## <a name="scan-with-progress"></a><span data-ttu-id="7c075-149">スキャンの進行状況を表示する</span><span class="sxs-lookup"><span data-stu-id="7c075-149">Scan with progress</span></span>
 
-1.  **System.Threading.CancellationTokenSource** オブジェクトを作成します。
+1.  <span data-ttu-id="7c075-150">**System.Threading.CancellationTokenSource** オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="7c075-150">Create a **System.Threading.CancellationTokenSource** object.</span></span>
 
 ```csharp
 cancellationToken = new CancellationTokenSource();
 ```
 
-2.  進行状況のイベント ハンドラーを設定してスキャンの進行状況を取得します。
+2.  <span data-ttu-id="7c075-151">進行状況のイベント ハンドラーを設定してスキャンの進行状況を取得します。</span><span class="sxs-lookup"><span data-stu-id="7c075-151">Set up the progress event handler and get the progress of the scan.</span></span>
 
 ```csharp
     rootPage.NotifyUser("Scanning", NotifyType.StatusMessage);
     var progress = new Progress<UInt32>(ScanProgress);
 ```
 
-## <a name="scanning-to-the-pictures-library"></a>画像ライブラリにスキャンする
+## <a name="scanning-to-the-pictures-library"></a><span data-ttu-id="7c075-152">画像ライブラリにスキャンする</span><span class="sxs-lookup"><span data-stu-id="7c075-152">Scanning to the pictures library</span></span>
 
-[**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/BR207881) クラスを使うことで、ユーザーは任意のフォルダーにスキャン結果を動的に格納することができます。ただし、画像ライブラリ フォルダーにスキャン結果を格納できるようにするには、*画像ライブラリ*の機能をマニフェストで宣言する必要があります。 アプリの機能の詳細については、「[アプリ機能の宣言](https://msdn.microsoft.com/library/windows/apps/Mt270968)」を参照してください。
-
+<span data-ttu-id="7c075-153">[**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/BR207881) クラスを使うことで、ユーザーは任意のフォルダーにスキャン結果を動的に格納することができます。ただし、画像ライブラリ フォルダーにスキャン結果を格納できるようにするには、*画像ライブラリ*の機能をマニフェストで宣言する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7c075-153">Users can scan to any folder dynamically using the [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/BR207881) class, but you must declare the *Pictures Library* capability in the manifest to allow users to scan to that folder.</span></span> <span data-ttu-id="7c075-154">アプリの機能の詳細については、「[アプリ機能の宣言](https://msdn.microsoft.com/library/windows/apps/Mt270968)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7c075-154">For more info on app capabilities, see [App capability declarations](https://msdn.microsoft.com/library/windows/apps/Mt270968).</span></span>

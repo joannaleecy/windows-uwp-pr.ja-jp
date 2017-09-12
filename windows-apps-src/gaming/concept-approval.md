@@ -4,28 +4,31 @@ title: "概念の承認"
 description: "概念の承認を受けるために製品を提出する方法について説明します。概念の承認は、製品が Xbox で実行されるか、Xbox Live を使用する場合に必要になります。"
 ms.assetid: 850ec988-761b-49d8-9508-da8a83108de3
 ms.author: elcowle
-ms.date: 02/08/2017
+ms.date: 06/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、概念の承認"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 43c4448e7a581dae69f44c64fd2068e79cb6c7ed
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: f49e27ad5753a8f4074ca3b55bd7cde47a7e6600
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/26/2017
 ---
+# <a name="concept-approval"></a><span data-ttu-id="f0bcb-104">概念の承認</span><span class="sxs-lookup"><span data-stu-id="f0bcb-104">Concept approval</span></span>
 
-# <a name="concept-approval"></a>概念の承認
+<span data-ttu-id="f0bcb-105">概念の承認は、マイクロソフトにゲームの提案を提出するプロセスです。</span><span class="sxs-lookup"><span data-stu-id="f0bcb-105">Concept approval is the process of submitting a proposal for a game to Microsoft.</span></span> <span data-ttu-id="f0bcb-106">このような概要を事前に提出することで、ゲームの計画全体で起こりうる問題点や課題をプロセスの初期段階で特定できるため、マイクロソフト側とゲーム開発者側の双方にメリットをもたらします。</span><span class="sxs-lookup"><span data-stu-id="f0bcb-106">This up-front, high-level submission benefits both Microsoft and you by identifying at the very beginning of the process any likely difficulties or drawbacks in the overall plan for the game.</span></span> <span data-ttu-id="f0bcb-107">コンテンツが過度に通俗的、攻撃的、不快ではないことと、ターゲット プラットフォームで快適に動作することを確認してください。</span><span class="sxs-lookup"><span data-stu-id="f0bcb-107">Try to make sure that your content isn't overly vulgar, offensive, or objectionable, and that it feels at home on the target platform.</span></span> <span data-ttu-id="f0bcb-108">提出された提案はマイクロソフト側で審査し、結果をお知らせします。</span><span class="sxs-lookup"><span data-stu-id="f0bcb-108">Once you submit your proposal, Microsoft will review it and then notify you of the result.</span></span>
 
-Xbox で動作するゲームの開発を始める場合は、そのゲームに関する提案をマイクロソフトに提出し、ゲームの公開前に*概念の承認*を受ける必要があります。 このような概要を事前に提出することで、ゲームの計画全体で起こりうる問題点や課題をプロセスの初期段階で特定できるため、マイクロソフト側とゲーム開発者側の双方にメリットをもたらします。 コンテンツが過度に通俗的、攻撃的、不快ではないことと、ターゲット プラットフォームで快適に動作することを確認してください。 提出された提案はマイクロソフト側で審査し、結果をお知らせします。
+## <a name="who-needs-concept-approval"></a><span data-ttu-id="f0bcb-109">開発者はどのような場合に概念の承認が必要となりますか。</span><span class="sxs-lookup"><span data-stu-id="f0bcb-109">Who needs concept approval?</span></span>
 
-ユニバーサル Windows プラットフォーム (UWP) ゲームを開発している場合は、ユーザーが Xbox デバイスでゲームをダウンロードできるようにするときや、Xbox Live を有効にするときにのみ、概念の承認が必要です。 UWP ゲームを Windows デスクトップまたはモバイル デバイスのみで使用できるようにする場合 (または、任意のデバイスをターゲットとした、ゲーム*以外*の UWP アプリを公開する場合) や、Xbox Live を使用しない場合に必要なのは[開発者アカウント](https://go.microsoft.com/fwlink/?LinkId=817223)だけで、アプリを自由に構成し、ダッシュボードを使ってストアに送信できます。
+<span data-ttu-id="f0bcb-110">このプロセスは、開発者が Xbox のゲームを [ID@Xbox](http://www.xbox.com/Developers/id) を通じて、または対象パートナーとして、公開する場合のみ必要となります。</span><span class="sxs-lookup"><span data-stu-id="f0bcb-110">This process is only required if you are publishing a game to Xbox through [ID@Xbox](http://www.xbox.com/Developers/id) or as a managed partner.</span></span> <span data-ttu-id="f0bcb-111">[Xbox Live クリエーターズ プログラム](https://developer.microsoft.com/games/xbox/xboxlive/creator)に参加している場合で、ユニバーサル Windows プラットフォーム (UWP) ゲームを作成する場合には、Xbox に自分で公開することができ、このプロセスは必要ありません。</span><span class="sxs-lookup"><span data-stu-id="f0bcb-111">You don't need to go through this process if you join the [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) and make a Universal Windows Platform (UWP) game, which you can then self-publish to Xbox.</span></span> <span data-ttu-id="f0bcb-112">ただし、このプログラムで作成されたゲームは、ストアの別のセクションで取り上げられます。</span><span class="sxs-lookup"><span data-stu-id="f0bcb-112">However, games made through this program will be featured in a separate section of the Store.</span></span> <span data-ttu-id="f0bcb-113">作成したゲームが著名なゲームと共に取り上げられることを希望する場合、または Xbox 開発キット (XDK) を使ってより高度なゲームを作成する場合には、概念の承認のプロセスが必要となります。</span><span class="sxs-lookup"><span data-stu-id="f0bcb-113">If you want your game to be featured alongside big AAA games, or if you want to create a more intensive game using the Xbox Development Kit (XDK), you'll need to go through concept approval.</span></span>
 
-## <a name="submit-your-concept-for-approval"></a>承認を受けるために概念を提出する
+<span data-ttu-id="f0bcb-114">Windows デスクトップまたはモバイル デバイス向けの UWP ゲームを開発する場合 (または、任意のデバイスをターゲットとした、ゲーム*以外の* UWP アプリを公開する場合) にも、概念の承認のプロセスは不要です。</span><span class="sxs-lookup"><span data-stu-id="f0bcb-114">You also don't need concept approval if you are developing a UWP game for Windows desktop or mobile devices (or if you're publishing a UWP app that's *not* a game, targeting any device).</span></span> <span data-ttu-id="f0bcb-115">[開発者アカウント](https://go.microsoft.com/fwlink/?LinkId=817223)のみが必要であり、ダッシュボードからアプリの構成とストアへ提出を自由に行うことができます。</span><span class="sxs-lookup"><span data-stu-id="f0bcb-115">All you need is a [developer account](https://go.microsoft.com/fwlink/?LinkId=817223), and you can freely configure and submit your app to the Store through the dashboard.</span></span>
 
-独立したゲーム開発者または発行元の場合、ID@Xbox プログラムを通じて、概念を承認を受けるために提出することができます。 ID@Xbox について確認し、[こちら](http://www.xbox.com/Developers/id)からお申し込みください。
+## <a name="submit-your-concept-for-approval"></a><span data-ttu-id="f0bcb-116">承認を受けるために概念を提出する</span><span class="sxs-lookup"><span data-stu-id="f0bcb-116">Submit your concept for approval</span></span>
 
-ID@Xbox 開発者の方には、既にゲーム情報フォーム (GIF) へのリンクをお送りしました。このフォームを使ってゲームの概念を提出してください。 ご質問がある場合は、[id@xbox.com](mailto:id@xbox.com) までメールをお送りください。
+<span data-ttu-id="f0bcb-117">独立したゲーム開発者または発行元の場合、ID@Xbox プログラムを通じて、承認を受けるために概念を提出することができます。</span><span class="sxs-lookup"><span data-stu-id="f0bcb-117">If you are an independent game developer or publisher, you can submit your concept for approval through the ID@Xbox program.</span></span> <span data-ttu-id="f0bcb-118">ID@Xbox について確認し、[こちらから](http://www.xbox.com/Developers/id)お申し込みください。</span><span class="sxs-lookup"><span data-stu-id="f0bcb-118">Learn more about ID@Xbox and apply [here](http://www.xbox.com/Developers/id).</span></span>
 
-マイクロソフトと既にライセンス契約を締結している場合、概念の提出については、Microsoft アカウント チームにお問い合わせください。
+<span data-ttu-id="f0bcb-119">ID@Xbox 開発者の方には、既にゲーム情報フォーム (GIF) へのリンクをお送りしました。このフォームを使ってゲームの概念を提出してください。</span><span class="sxs-lookup"><span data-stu-id="f0bcb-119">If you are already an ID@Xbox developer, you should have been sent a link to the Game Information Form (GIF) where you can submit your game concept.</span></span> <span data-ttu-id="f0bcb-120">ご不明の点については、[id@xbox.com](mailto:id@xbox.com) までお問い合わせください。</span><span class="sxs-lookup"><span data-stu-id="f0bcb-120">If you have questions, contact [id@xbox.com](mailto:id@xbox.com).</span></span>
+
+<span data-ttu-id="f0bcb-121">Microsoft と既にライセンス契約を締結している場合、概念の提出については、Microsoft アカウント チームにお問い合わせください。</span><span class="sxs-lookup"><span data-stu-id="f0bcb-121">If you have an existing license agreement with Microsoft, contact your Microsoft account team for information on submitting your concept.</span></span>

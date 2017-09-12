@@ -1,7 +1,7 @@
 ---
 author: jwmsft
 ms.assetid: b632a6cc-3503-4ab8-bfd1-dde731bd89ab
-description: "このセクションのトピックでは、作成するアプリ全般に当てはまるプログラミングの概念について説明します。"
+description: "このセクションのトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリ用の XAML フレームワークについて説明します。"
 title: "XAML プラットフォーム"
 ms.author: jimwalk
 ms.date: 02/08/2017
@@ -9,27 +9,25 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1930f3a215b7bc0980b1fb4a8c83b6cfadd1e373
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 82ef0c06fa706837f5cbd35d3975c464e14315fa
+ms.sourcegitcommit: a9e4be98688b3a6125fd5dd126190fcfcd764f95
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/21/2017
 ---
+# <a name="xaml-platform"></a><span data-ttu-id="2009d-104">XAML プラットフォーム</span><span class="sxs-lookup"><span data-stu-id="2009d-104">XAML platform</span></span>
 
-# <a name="xaml-platform"></a>XAML プラットフォーム
+<span data-ttu-id="2009d-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="2009d-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="2009d-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]</span><span class="sxs-lookup"><span data-stu-id="2009d-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
-
-このセクションのトピックでは、プログラミング言語として C#、Microsoft Visual Basic、または Visual C++ コンポーネント拡張機能 (C++/CX) を使い、UI 定義として XAML を使う場合に、作成するアプリ全般に当てはまるプログラミングの概念について説明します。 ここでは、プロパティとイベントの使い方や、ユニバーサル Windows プラットフォーム (UWP) アプリ プログラミングへのその適用法など、基本的なプログラミングの概念について説明します。 ユニバーサル Windows プラットフォーム (UWP) は、依存関係プロパティ システムを追加することで、C#、Visual Basic、C++/CX のプロパティとその値の概念を拡張します。 このセクションのトピックでは、UWP で使われる XAML 言語についても説明し、XAML を使って UWP アプリの UI を定義する方法に関する基本的なシナリオと高度なトピックも取り上げています。
+<span data-ttu-id="2009d-107">このセクションのトピックでは、プログラミング言語として C#、Microsoft Visual Basic、または Visual C++ コンポーネント拡張機能 (C++/CX) を使い、UI 定義として XAML を使う場合に、作成するアプリ全般に当てはまるプログラミングの概念について説明します。</span><span class="sxs-lookup"><span data-stu-id="2009d-107">This section includes topics that explain programming concepts that are generally applicable to any app that you write, if you are using C#, Microsoft Visual Basic, or Visual C++ component extensions (C++/CX) as your programming language and XAML for your UI definition.</span></span> <span data-ttu-id="2009d-108">ここでは、プロパティとイベントの使い方や、ユニバーサル Windows プラットフォーム (UWP) アプリ プログラミングへのその適用法など、基本的なプログラミングの概念について説明します。</span><span class="sxs-lookup"><span data-stu-id="2009d-108">This includes basic programming concepts such as using properties and events, and how these apply to Universal Windows Platform (UWP) app programming.</span></span> <span data-ttu-id="2009d-109">ユニバーサル Windows プラットフォーム (UWP) は、依存関係プロパティ システムを追加することで、C#、Visual Basic、C++/CX のプロパティとその値の概念を拡張します。</span><span class="sxs-lookup"><span data-stu-id="2009d-109">The Universal Windows Platform (UWP) extends C#, Visual Basic, or C++/CX concepts of properties and their values by adding the dependency property system.</span></span> <span data-ttu-id="2009d-110">このセクションのトピックでは、UWP で使われる XAML 言語についても説明し、XAML を使って UWP アプリの UI を定義する方法に関する基本的なシナリオと高度なトピックも取り上げています。</span><span class="sxs-lookup"><span data-stu-id="2009d-110">Topics in this section also document the XAML language as it is used by the UWP, and cover basic scenarios and advanced topics explaining how to use XAML to define the UI for your UWP app.</span></span>
  
-| トピック | 説明 |
+| <span data-ttu-id="2009d-111">トピック</span><span class="sxs-lookup"><span data-stu-id="2009d-111">Topic</span></span> | <span data-ttu-id="2009d-112">説明</span><span class="sxs-lookup"><span data-stu-id="2009d-112">Description</span></span> |
 |-------|-------------|
-| [XAML の概要](xaml-overview.md) | ここでは、Windows ランタイム アプリの開発者を対象に、XAML 言語と XAML の概念を紹介し、Windows ランタイム アプリを作成する際に XAML でオブジェクトを宣言したり属性を設定したりするためのさまざまな方法について説明します。 |
-| [依存関係プロパティの概要](dependency-properties-overview.md) | このトピックでは、C++、C#、または Visual Basic と UI の XAML 定義を使って Windows ランタイム アプリを作成するときに使うことができる依存関係プロパティについて説明します。 |
-| [カスタム依存関係プロパティ](custom-dependency-properties.md) | C++、C#、または Visual Basic を使った Windows ランタイム アプリでカスタム依存関係プロパティを定義および実装する方法を説明します。 |
-| [添付プロパティの概要](attached-properties-overview.md) | XAML での添付プロパティの概念を説明し、例をいくつか紹介します。 |
-| [カスタム添付プロパティ](custom-attached-properties.md) | XAML 添付プロパティを依存関係プロパティとして実装する方法と、添付プロパティを XAML で使うために必要なアクセサー変換を定義する方法を説明します。 |
-| [イベントとルーティング イベントの概要](events-and-routed-events-overview.md) | このトピックでは、Windows ランタイム アプリで、プログラミング言語に C#、Visual Basic、または C++/CX、UI 定義に XAML を使う場合のイベントのプログラミングの概念について説明します。 イベントのハンドラーは、UI 要素の宣言の一部として XAML で割り当てることも、コードで追加することもできます。 Windows ランタイムは**ルーティング イベント**をサポートしており、特定の入力イベントとデータ イベントを、その発生元オブジェクト以外のオブジェクトで処理できます。 ルーティング イベントは、コントロール テンプレートを定義する際や、ページまたはレイアウト コンテナーを使う際に役立ちます。 |
+| [<span data-ttu-id="2009d-113">XAML の概要</span><span class="sxs-lookup"><span data-stu-id="2009d-113">XAML overview</span></span>](xaml-overview.md) | <span data-ttu-id="2009d-114">ここでは、Windows ランタイム アプリの開発者を対象に、XAML 言語と XAML の概念を紹介し、Windows ランタイム アプリを作成する際に XAML でオブジェクトを宣言したり属性を設定したりするためのさまざまな方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="2009d-114">We introduce the XAML language and XAML concepts to the Windows Runtime app developer audience, and describe the different ways to declare objects and set attributes in XAML as it is used for creating a Windows Runtime app.</span></span> |
+| [<span data-ttu-id="2009d-115">依存関係プロパティの概要</span><span class="sxs-lookup"><span data-stu-id="2009d-115">Dependency properties overview</span></span>](dependency-properties-overview.md) | <span data-ttu-id="2009d-116">このトピックでは、C++、C#、または Visual Basic と UI の XAML 定義を使って Windows ランタイム アプリを作成するときに使うことができる依存関係プロパティについて説明します。</span><span class="sxs-lookup"><span data-stu-id="2009d-116">This topic explains the dependency property system that is available when you write a Windows Runtime app using C++, C#, or Visual Basic along with XAML definitions for UI.</span></span> |
+| [<span data-ttu-id="2009d-117">カスタム依存関係プロパティ</span><span class="sxs-lookup"><span data-stu-id="2009d-117">Custom dependency properties</span></span>](custom-dependency-properties.md) | <span data-ttu-id="2009d-118">C++、C#、または Visual Basic を使った Windows ランタイム アプリでカスタム依存関係プロパティを定義および実装する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="2009d-118">Explains how to define and implement custom dependency properties for a Windows Runtime app using C++, C#, or Visual Basic.</span></span> |
+| [<span data-ttu-id="2009d-119">添付プロパティの概要</span><span class="sxs-lookup"><span data-stu-id="2009d-119">Attached properties overview</span></span>](attached-properties-overview.md) | <span data-ttu-id="2009d-120">XAML での添付プロパティの概念を説明し、例をいくつか紹介します。</span><span class="sxs-lookup"><span data-stu-id="2009d-120">Explains the concept of an attached property in XAML, and provides some examples.</span></span> |
+| [<span data-ttu-id="2009d-121">カスタム添付プロパティ</span><span class="sxs-lookup"><span data-stu-id="2009d-121">Custom attached properties</span></span>](custom-attached-properties.md) | <span data-ttu-id="2009d-122">XAML 添付プロパティを依存関係プロパティとして実装する方法と、添付プロパティを XAML で使うために必要なアクセサー変換を定義する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="2009d-122">Explains how to implement a XAML attached property as a dependency property and how to define the accessor convention that is necessary for your attached property to be usable in XAML.</span></span> |
+| [<span data-ttu-id="2009d-123">イベントとルーティング イベントの概要</span><span class="sxs-lookup"><span data-stu-id="2009d-123">Events and routed events overview</span></span>](events-and-routed-events-overview.md) | <span data-ttu-id="2009d-124">このトピックでは、Windows ランタイム アプリで、プログラミング言語に C#、Visual Basic、または C++/CX、UI 定義に XAML を使う場合のイベントのプログラミングの概念について説明します。</span><span class="sxs-lookup"><span data-stu-id="2009d-124">We describe the programming concept of events in a Windows Runtime app, when using C#, Visual Basic or C++/CX as your programming language, and XAML for your UI definition.</span></span> <span data-ttu-id="2009d-125">イベントのハンドラーは、UI 要素の宣言の一部として XAML で割り当てることも、コードで追加することもできます。</span><span class="sxs-lookup"><span data-stu-id="2009d-125">You can assign handlers for events as part of the declarations for UI elements in XAML, or you can add the handlers in code.</span></span> <span data-ttu-id="2009d-126">Windows ランタイムは**ルーティング イベント**をサポートしており、特定の入力イベントとデータ イベントを、その発生元オブジェクト以外のオブジェクトで処理できます。</span><span class="sxs-lookup"><span data-stu-id="2009d-126">Windows Runtime supports **routed events**: certain input events and data events can be handled by objects beyond the object that fired the event.</span></span> <span data-ttu-id="2009d-127">ルーティング イベントは、コントロール テンプレートを定義する際や、ページまたはレイアウト コンテナーを使う際に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="2009d-127">Routed events are useful when you define control templates, or use pages or layout containers.</span></span> |
 
  
-

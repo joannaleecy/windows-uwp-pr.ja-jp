@@ -2,162 +2,161 @@
 author: mcleanbyron
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: "アプリ内広告の UI とユーザー エクスペリエンスのガイドラインについて説明します。"
-title: "アプリ内広告の UI とユーザー エクスペリエンスのガイドライン"
+title: "広告の UI とユーザー エクスペリエンスのガイドライン"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 広告, 宣伝, ガイドライン, ベスト プラクティス"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e1c3fef6e8cc7cc483b72b6ba142d323055c960c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8dc9c00bdeb47b5f07af0b9b27ef843e2afd4456
+ms.sourcegitcommit: 9d1ca16a7edcbbcae03fad50a4a10183a319c63a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/09/2017
 ---
+# <a name="ui-and-user-experience-guidelines-for-ads"></a><span data-ttu-id="cc2fc-104">広告の UI とユーザー エクスペリエンスのガイドライン</span><span class="sxs-lookup"><span data-stu-id="cc2fc-104">UI and user experience guidelines for ads</span></span>
 
-# <a name="ui-and-user-experience-guidelines-for-ads-in-apps"></a>アプリ内広告の UI とユーザー エクスペリエンスのガイドライン
+<span data-ttu-id="cc2fc-105">この記事では、アプリ内のバナー広告とスポット広告を使って優れたエクスペリエンスを提供するためのガイドラインを示します。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-105">This article provides guidelines for providing great experiences with banner ads and interstitial ads in your apps.</span></span> <span data-ttu-id="cc2fc-106">アプリの外観を設計する方法については、「[設計および UI](https://developer.microsoft.com/windows/apps/design)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-106">For general guidance about how to design the look and feel for apps, see [Design & UI](https://developer.microsoft.com/windows/apps/design).</span></span>
 
-この記事では、アプリ内のバナー広告とスポット広告を使って優れたエクスペリエンスを提供するためのガイドラインを示します。 アプリの外観を設計する方法については、「[設計および UI](https://developer.microsoft.com/windows/apps/design)」をご覧ください。
+> [!IMPORTANT]
+> <span data-ttu-id="cc2fc-107">アプリ内での広告の使用は、Windows ストアのポリシーに準拠している必要があります。準拠するポリシーには、[ポリシー 10.10](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) (広告行為と広告コンテンツ) などがありますが、これに限定されるわけではありません。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-107">Any use of advertising in your app must comply with the Windows Store Policies – including, without limitation, [policy 10.10](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) (Advertising Conduct and Content).</span></span> <span data-ttu-id="cc2fc-108">特に、アプリ内のバナー広告またはスポット広告の実装は、Windows ストアのポリシー、[ポリシー 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) の要件を満たしている必要があります。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-108">In particular, your app's implementation of banner ads or interstitial ads must meet the requirements in Windows Store policy [policy 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10).</span></span> <span data-ttu-id="cc2fc-109">この記事では、このポリシーに違反する実装の例を示します。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-109">This article includes examples of implementations that would violate this policy.</span></span> <span data-ttu-id="cc2fc-110">これらの例は、このポリシーの適切な理解を助ける手段として、情報提供のみを目的として提供されています。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-110">These examples are provided for informational purposes only, as a way to help you better understand the policy.</span></span> <span data-ttu-id="cc2fc-111">これらの例は、すべてを網羅しているわけではありません。ここに記載されていなくても、Windows ストアのポリシーに違反する例は多数存在する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-111">These examples are not comprehensive, and there may be many other ways to violate the Windows Store Policies that are not listed in this article.</span></span>
 
->**重要**&nbsp;&nbsp;アプリ内での広告の使用は、Windows ストアのポリシーに準拠している必要があります。準拠するポリシーには、[ポリシー 10.10](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) (広告行為と広告コンテンツ) などがありますが、これに限定されるわけではありません。 特に、アプリ内のバナー広告またはスポット広告の実装は、Windows ストアのポリシー、[ポリシー 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) の要件を満たしている必要があります。 この記事では、このポリシーに違反する実装の例を示します。 これらの例は、このポリシーの適切な理解を助ける手段として、情報提供のみを目的として提供されています。 これらの例は、すべてを網羅しているわけではありません。ここに記載されていなくても、Windows ストアのポリシーに違反する例は多数存在する可能性があります。
+## <a name="guidelines-for-banner-ads"></a><span data-ttu-id="cc2fc-112">バナー広告のガイドライン</span><span class="sxs-lookup"><span data-stu-id="cc2fc-112">Guidelines for banner ads</span></span>
 
-## <a name="guidelines-for-banner-ads"></a>バナー広告のガイドライン
+<span data-ttu-id="cc2fc-113">以下のセクションでは、[AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) を使用して、アプリ内でバナー広告を実装する際の推奨事項と Windows ストアのポリシー、[ポリシー 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) に違反する実装の例を紹介します。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-113">The following sections provide recommendations for how to implement banner ads in your app using [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx), and examples of implementations that violate [policy 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) of the Windows Store Policies.</span></span>
 
-以下のセクションでは、[AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) を使用して、アプリ内でバナー広告を実装する際の推奨事項と Windows ストアのポリシー、[ポリシー 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) に違反する実装の例を紹介します。
+### <a name="best-practices"></a><span data-ttu-id="cc2fc-114">ベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="cc2fc-114">Best practices</span></span>
 
-### <a name="best-practices"></a>ベスト プラクティス
+<span data-ttu-id="cc2fc-115">アプリにバナー広告を実装するときは、以下のベスト プラクティスに従うことをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-115">We recommend that you follow these best practices when you implement banner ads in your app:</span></span>
 
-アプリにバナー広告を実装するときは、以下のベスト プラクティスに従うことをお勧めします。
+* <span data-ttu-id="cc2fc-116">アプリの UI のほとんどを機能するコントロールとコンテンツに充てます。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-116">Devote most of your app's UI to functional controls and content.</span></span>
 
-* アプリの UI のほとんどを機能するコントロールとコンテンツに充てます。
+* <span data-ttu-id="cc2fc-117">広告をエクスペリエンスに組み込んで設計します。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-117">Design advertising into your experience.</span></span> <span data-ttu-id="cc2fc-118">広告がどのように表示されるかを計画するための広告のサンプルをデザイナーに提供します。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-118">Give your designers a sample ad to plan how the advertising is going to look.</span></span> <span data-ttu-id="cc2fc-119">適切に計画されたアプリ内広告の 2 つの例は、コンテンツとしての広告のレイアウトと分割レイアウトです。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-119">Two examples of well-planned ads in apps are the ads-as-content layout and the split layout.</span></span>
 
-* 広告をエクスペリエンスに組み込んで設計します。 広告がどのように表示されるかを計画するための広告のサンプルをデザイナーに提供します。 適切に計画されたアプリ内広告の 2 つの例は、コンテンツとしての広告のレイアウトと分割レイアウトです。
+  <span data-ttu-id="cc2fc-120">さまざまなサイズの広告が、開発およびテスト段階でアプリ内でどのように表示され、どのように機能するかを確認するには、[テスト モードの広告ユニット](test-mode-values.md) を利用できます。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-120">To see how different ad sizes will look and function within your app during the development and testing phase, you can utilize our [test mode ad units](test-mode-values.md).</span></span> <span data-ttu-id="cc2fc-121">テストが完了したら、認定を受けるためにアプリを提出する前に、[実際の広告ユニット ID でアプリを更新する](set-up-ad-units-in-your-app.md)ことを忘れないでください。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-121">When you’re done with testing, remember to [update your app with real ad unit IDs](set-up-ad-units-in-your-app.md) before submitting the app for certification.</span></span>
 
-  さまざまなサイズの広告が、開発およびテスト段階でアプリ内でどのように表示され、どのように機能するかを確認するには、[テスト モードの広告ユニット](test-mode-values.md) を利用できます。 テストが完了したら、認定を受けるためにアプリを提出する前に、[実際の広告ユニット ID でアプリを更新する](set-up-ad-units-in-your-app.md)ことを忘れないでください。
+* <span data-ttu-id="cc2fc-122">実行しているデバイスのレイアウトに適合する[広告のサイズ](supported-ad-sizes-for-banner-ads.md)を使用します。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-122">Use [ad sizes](supported-ad-sizes-for-banner-ads.md) that fit well with the layout for the running device.</span></span>
 
-* 実行しているデバイスのレイアウトに適合する[広告のサイズ](supported-ad-sizes-for-banner-ads.md)を使用します。
+* <span data-ttu-id="cc2fc-123">広告を利用できない場合の対応を計画します。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-123">Plan for times when no ads are available.</span></span> <span data-ttu-id="cc2fc-124">広告がアプリに送信されないタイミングがあります。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-124">There may be times when ads aren't being sent to your app.</span></span> <span data-ttu-id="cc2fc-125">ページに広告が表示される場合も、表示されない場合も、適切に表示されるようにページをレイアウトします。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-125">Lay out your pages in such a way that they look great whether they showcase an ad or not.</span></span> <span data-ttu-id="cc2fc-126">詳しくは、[エラー処理](error-handling-with-advertising-libraries.md)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-126">For more information, see [Error handling](error-handling-with-advertising-libraries.md).</span></span>
 
-* 広告を利用できない場合の対応を計画します。 広告がアプリに送信されないタイミングがあります。 ページに広告が表示される場合も、表示されない場合も、適切に表示されるようにページをレイアウトします。 詳しくは、[エラー処理](error-handling-with-advertising-libraries.md)をご覧ください。
-
-* オーバーレイを使って最も効果的に対応できるユーザーへの通知シナリオがある場合、オーバーレイを表示しながら [AdControl.Suspend](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.suspend.aspx) を呼び出し、通知シナリオが完了したら [AdControl.Resume](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.resume.aspx) を呼び出します。
-
-<span />
-### <a name="practices-to-avoid"></a>避けるプラクティス
-
-アプリ内にバナー広告を実装する際は、以下のプラクティスを避けることをお勧めします。
-
-* 空いている領域に広告を固定しないでください。 広告スペースは、画面上で最初に見つかる空き領域に配置しないでください。 広告スペースはアプリの全体的な設計に組み込む必要があります。
-
-* 多くの広告を表示してアプリを飽和状態にしないでください。 アプリに表示する広告が多すぎると、アプリの外観と操作性を損ねます。 広告を使って収入を得ることは望んでも、アプリ自体を犠牲にしないでください。
-
-* ユーザーが中心的なタスクに集中するのを妨げないでください。 主要項目は常にアプリに表示されている必要があります。 広告スペースは 2 次的な項目として組み込まれている必要があります。
+* <span data-ttu-id="cc2fc-127">オーバーレイを使って最も効果的に対応できるユーザーへの通知シナリオがある場合、オーバーレイを表示しながら [AdControl.Suspend](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.suspend.aspx) を呼び出し、通知シナリオが完了したら [AdControl.Resume](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.resume.aspx) を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-127">If you have a scenario for alerting the user that is best handled with an overlay, call [AdControl.Suspend](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.suspend.aspx) while displaying the overlay and then call [AdControl.Resume](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.resume.aspx) when the alert scenario is finished.</span></span>
 
 <span />
-### <a name="examples-of-policy-violations"></a>ポリシー違反の例
+### <a name="practices-to-avoid"></a><span data-ttu-id="cc2fc-128">避けるプラクティス</span><span class="sxs-lookup"><span data-stu-id="cc2fc-128">Practices to avoid</span></span>
 
-このセクションでは、Windows ストアのポリシー、[ポリシー10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) に違反するバナー広告シナリオの例を示します。 これらの例は、このポリシーの適切な理解を助ける手段として、説明目的にのみ提供されています。 これらの例は、すべてを網羅しているわけではありません。ここに記載されていなくても、ポリシー 10.10.1 に違反する例は多数存在する可能性があります。
+<span data-ttu-id="cc2fc-129">アプリ内にバナー広告を実装する際は、以下のプラクティスを避けることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-129">We recommend that you avoid these practices when you implement banner ads in your app:</span></span>
 
-* [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) の不透明度を変更したり、(最初に [AdControl.Suspend](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.suspend.aspx) を呼び出さずに) **AdControl**の上に他のコントロールを配置するなど、バナー広告をユーザーが表示する能力を妨げる操作を行う。
+* <span data-ttu-id="cc2fc-130">空いている領域に広告を固定しないでください。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-130">Don’t bolt advertising into open real estate.</span></span> <span data-ttu-id="cc2fc-131">広告スペースは、画面上で最初に見つかる空き領域に配置しないでください。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-131">Ad space shouldn't be placed into the first open piece of real estate you can find.</span></span> <span data-ttu-id="cc2fc-132">広告スペースはアプリの全体的な設計に組み込む必要があります。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-132">Instead, it should be incorporated into your app's overall design.</span></span>
 
-* ユーザーがアプリでタスクを実行するにはバナーをクリックする必要がある。またはアプリの設計結果として、ユーザーにバナー広告を強制的にクリックさせる。
+* <span data-ttu-id="cc2fc-133">多くの広告を表示してアプリを飽和状態にしないでください。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-133">Don’t over-advertise and saturate your app.</span></span> <span data-ttu-id="cc2fc-134">アプリに表示する広告が多すぎると、アプリの外観と操作性を損ねます。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-134">Too many ads in your app detract from its appearance and usability.</span></span> <span data-ttu-id="cc2fc-135">広告を使って収入を得ることは望んでも、アプリ自体を犠牲にしないでください。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-135">You want to make money with advertising, but not at the expense of the app itself.</span></span>
 
-* [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) オブジェクトのスワッピング、またはユーザー操作を伴わない強制的なページ更新など、任意の手段でバナー広告の組み込み最短更新タイマーを回避する。
+* <span data-ttu-id="cc2fc-136">ユーザーが中心的なタスクに集中するのを妨げないでください。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-136">Don’t distract user from their core tasks.</span></span> <span data-ttu-id="cc2fc-137">主要項目は常にアプリに表示されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-137">The primary focus should always be on the app.</span></span> <span data-ttu-id="cc2fc-138">広告スペースは 2 次的な項目として組み込まれている必要があります。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-138">The ad space should be incorporated so it remains a secondary focus.</span></span>
 
-* 開発およびテスト中、またはエミュレーターでライブ広告ユニット (つまり、Windows デベロッパー センター ダッシュボードから取得した広告ユニット) を使用する。
+<span />
+### <a name="examples-of-policy-violations"></a><span data-ttu-id="cc2fc-139">ポリシー違反の例</span><span class="sxs-lookup"><span data-stu-id="cc2fc-139">Examples of policy violations</span></span>
 
-* アプリのコンテキストで実行している Microsoft Advertising ライブラリ以外の手段で広告サービスを呼び出すコードを記述または配布する。
+<span data-ttu-id="cc2fc-140">このセクションでは、Windows ストアのポリシー、[ポリシー10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) に違反するバナー広告シナリオの例を示します。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-140">This section provides examples of banner ad scenarios that violate [policy 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) of the Windows Store Policies.</span></span> <span data-ttu-id="cc2fc-141">これらの例は、このポリシーの適切な理解を助ける手段として、説明目的にのみ提供されています。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-141">These examples are provided for instructional purposes only, as a way to help you better understand the policy.</span></span> <span data-ttu-id="cc2fc-142">これらの例は、すべてを網羅しているわけではありません。ここに記載されていなくても、ポリシー 10.10.1 に違反する例は多数存在する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-142">These examples are not comprehensive, and there may be many other ways to violate policy 10.10.1 that are not listed here.</span></span>
 
-* ドキュメントに記載されていないインターフェイスや、Microsoft Advertising ライブラリで作成された、**WebView** や **MediaElement** などの子オブジェクトを操作する。
+* <span data-ttu-id="cc2fc-143">[AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) の不透明度を変更したり、(最初に [AdControl.Suspend](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.suspend.aspx) を呼び出さずに) **AdControl**の上に他のコントロールを配置するなど、バナー広告をユーザーが表示する能力を妨げる操作を行う。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-143">Doing anything to interfere with the user’s ability to view the banner ad, such as changing the opacity of the [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) or placing another control on top of the **AdControl** (without first calling [AdControl.Suspend](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.suspend.aspx)).</span></span>
+
+* <span data-ttu-id="cc2fc-144">ユーザーがアプリでタスクを実行するにはバナーをクリックする必要がある。またはアプリの設計結果として、ユーザーにバナー広告を強制的にクリックさせる。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-144">Requiring users to click on a banner ad to accomplish a task in your app, or forcing users to click on banner ads as a result of the design of your app.</span></span>
+
+* <span data-ttu-id="cc2fc-145">[AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) オブジェクトのスワップ、またはユーザー操作を伴わない強制的なページ更新など、任意の手段でバナー広告の組み込み最短更新タイマーを回避する。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-145">Bypassing the built-in minimum refresh timer for banner ads by any means, including (but not limited to) swapping [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) objects or forcing a page refresh without user interaction.</span></span>
+
+* <span data-ttu-id="cc2fc-146">開発およびテスト中、またはエミュレーターでライブ広告ユニット (つまり、Windows デベロッパー センター ダッシュボードから取得した広告ユニット) を使用する。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-146">Using live ad units (that is, ad units that you obtain from the Windows Dev Center dashboard) during development and testing, or in an emulator.</span></span>
+
+* <span data-ttu-id="cc2fc-147">アプリのコンテキストで実行している Microsoft Advertising ライブラリ以外の手段で広告サービスを呼び出すコードを記述または配布する。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-147">Writing or distributing code that calls ad services through means other than the Microsoft advertising libraries running in the context of your app.</span></span>
+
+* <span data-ttu-id="cc2fc-148">ドキュメントに記載されていないインターフェイスや、Microsoft Advertising ライブラリで作成された、**WebView** や **MediaElement** などの子オブジェクトを操作する。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-148">Interacting with undocumented interfaces or child objects created by the Microsoft advertising libraries, such as **WebView** or **MediaElement**.</span></span>
 
 <span id="interstitialbestpractices10">
-## <a name="guidelines-for-interstitial-ads"></a>スポット広告のガイドライン
+## <a name="guidelines-for-interstitial-ads"></a><span data-ttu-id="cc2fc-149">スポット広告のガイドライン</span><span class="sxs-lookup"><span data-stu-id="cc2fc-149">Guidelines for interstitial ads</span></span>
 
-洗練された方法でスポット広告を使うと、ユーザー満足度を損なうことなく、アプリの収益を飛躍的に向上させることができます。 使い方が不適切だと、スポット広告は逆効果になる可能性があります。
+<span data-ttu-id="cc2fc-150">洗練された方法でスポット広告を使うと、ユーザー満足度を損なうことなく、アプリの収益を飛躍的に向上させることができます。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-150">When used elegantly, interstitial ads can vastly increase your app revenue, without negatively impacting user satisfaction.</span></span> <span data-ttu-id="cc2fc-151">使い方が不適切だと、スポット広告は逆効果になる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-151">When used improperly, such ads can have the exact opposite effect.</span></span>
 
-以下のセクションでは、[InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) を使用して、アプリ内でスポット広告を実装する際の推奨事項と Windows ストアのポリシー、[ポリシー 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) に違反する実装の例を紹介します。 ポリシーに関連する問題を除き、アプリについて最もよく理解しているのは開発者の皆様であるため、ベスト プラクティスに関する最終的な判断は開発者の皆様に委ねています。 留意する最も重要な点は、アプリの評価と収益が密接に結びついていることです。
+<span data-ttu-id="cc2fc-152">以下のセクションでは、[InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) を使用してアプリにビデオ スポット広告やバナー スポット広告を実装する際の推奨事項、および Windows ストアのポリシーである、[ポリシー 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) に違反する実装の例を紹介します。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-152">The following sections provide recommendations for how to implement interstitial video ads and interstitial banner ads in your app using [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), and examples of implementations that violate [policy 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) of the Windows Store Policies.</span></span> <span data-ttu-id="cc2fc-153">ポリシーに関連する問題を除き、アプリについて最もよく理解しているのは開発者の皆様であるため、ベスト プラクティスに関する最終的な判断は開発者の皆様に委ねています。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-153">Since you know your app better than anyone, except where policy is concerned, we leave it up to you to make the best final decision.</span></span> <span data-ttu-id="cc2fc-154">留意する最も重要な点は、アプリの評価と収益が密接に結びついていることです。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-154">What’s most important to keep in mind is that your app ratings and revenue are tightly coupled.</span></span>
 
-### <a name="best-practices"></a>ベスト プラクティス
+### <a name="best-practices"></a><span data-ttu-id="cc2fc-155">ベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="cc2fc-155">Best practices</span></span>
 
-アプリにスポット広告を実装するときは、以下のベスト プラクティスに従うことをお勧めします。
+<span data-ttu-id="cc2fc-156">アプリにスポット広告を実装するときは、以下のベスト プラクティスに従うことをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-156">We recommend that you follow these best practices when you implement interstitial ads in your app:</span></span>
 
-* ゲームのレベルの合間など、アプリの自然な流れの中にスポット広告を配置します。
+* <span data-ttu-id="cc2fc-157">ゲームのレベルの合間など、アプリの自然な流れの中にスポット広告を配置します。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-157">Fit interstitial ads within the natural flow of the app, such as between game levels.</span></span>
 
-* 次のように、広告を具体的なメリットに関連付けます。
+* <span data-ttu-id="cc2fc-158">次のように、広告を具体的なメリットに関連付けます。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-158">Associate ads with tangible upsides, such as:</span></span>
 
-    * レベル完了のためのヒント。
+    * <span data-ttu-id="cc2fc-159">レベル完了のためのヒント。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-159">Hints towards level completion.</span></span>
 
-    * レベルを再試行するための追加の時間。
+    * <span data-ttu-id="cc2fc-160">レベルを再試行するための追加の時間。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-160">Extra time to retry a level.</span></span>
 
-    * タトゥーや帽子などのカスタム アバター機能。
+    * <span data-ttu-id="cc2fc-161">タトゥーや帽子などのカスタム アバター機能。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-161">Custom avatar features, like a tattoo or hat.</span></span>
 
-* アプリでビデオ広告を最後まで視聴することを要求する場合は、ユーザーが閉じるボタンを押したときにエラー メッセージに驚かないように、事前にルールを説明しておきます。
+* <span data-ttu-id="cc2fc-162">アプリでビデオ スポット広告を最後まで視聴することを要求する場合は、ユーザーが閉じるボタンを押したときにエラー メッセージに驚かないように、事前にルールを説明しておきます。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-162">If your app requires that an interstitial video ad be watched to completion, mention that rule upfront so they aren’t surprised with an error message upon hitting the close button.</span></span>
 
-* 可能であれば広告の表示が必要になる 30 ～ 60 秒前に ([InterstitialAd.RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) を呼び出して) 広告を事前に取得しておきます。
+* <span data-ttu-id="cc2fc-163">可能であれば広告の表示が必要になる 30 ～ 60 秒前に ([InterstitialAd.RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) を呼び出して) 広告を事前に取得しておきます。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-163">Pre-fetch the ad (by calling [InterstitialAd.RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx)) ideally 30-60 seconds before you need to show it.</span></span>
 
-* [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) クラスで公開されている 4 つのイベント (**Canceled**、**Completed**、**AdReady**、**ErrorOccurred**) をすべてサブスクライブし、それらを使用して、アプリに適切な意思決定を行います。
+* <span data-ttu-id="cc2fc-164">[InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) クラスで公開されている 4 つのイベント (**Canceled**、**Completed**、**AdReady**、**ErrorOccurred**) をすべてサブスクライブし、それらを使用して、アプリに適切な意思決定を行います。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-164">Subscribe to all four events exposed in the [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) class (**Canceled**, **Completed**, **AdReady**, and **ErrorOccurred**) and use them to make the right decisions for your app.</span></span>
 
-* サーバーが提供する広告の代わりに使用する機能をあらかじめ用意しておきます。 これは次のようなシナリオで役に立ちます。
+* <span data-ttu-id="cc2fc-165">サーバーが提供する広告の代わりに使用する機能をあらかじめ用意しておきます。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-165">Have some built-in experience to use in lieu of a server-matched ad.</span></span> <span data-ttu-id="cc2fc-166">これは次のようなシナリオで役に立ちます。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-166">You’ll find this useful in a few scenarios:</span></span>
 
-    * オフライン モード。広告サーバーにアクセスできない場合。
+    * <span data-ttu-id="cc2fc-167">オフライン モード。広告サーバーにアクセスできない場合。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-167">Offline mode, when ad servers can’t be reached.</span></span>
 
-    * **ErrorOccurred** イベントが発生した場合。
+    * <span data-ttu-id="cc2fc-168">**ErrorOccurred** イベントが発生した場合。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-168">When the **ErrorOccurred** event fires.</span></span>
 
-    * [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) に基づいてユーザーの帯域幅を節約することを選択する場合、**ConnectionProfile** クラスに便利な API があります。
+    * <span data-ttu-id="cc2fc-169">[ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) に基づいてユーザーの帯域幅を節約することを選択する場合、**ConnectionProfile** クラスに便利な API があります。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-169">If you opt to save user bandwidth based on [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx), there are APIs in the **ConnectionProfile** class which can help.</span></span>
 
-* 他の値に設定する妥当な理由がない限り、既定のタイムアウト (30 秒) を使います。他の値に設定する場合、10 秒未満には設定しないでください。 特に高速接続を利用できない市場では、ビデオ広告はバナー広告よりもダウンロードにかかる時間が大幅に長くなります。
+* <span data-ttu-id="cc2fc-170">他の値に設定する妥当な理由がない限り、既定のタイムアウト (30 秒) を使います。他の値に設定する場合、10 秒未満には設定しないでください。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-170">Use the default (30 second) timeout unless you have a valid reason to do otherwise, in which case don’t go below 10 seconds.</span></span> <span data-ttu-id="cc2fc-171">特に高速接続を利用できない市場では、スポット広告は標準のバナー広告よりもダウンロードにかかる時間が大幅に長くなります。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-171">Interstitial ads take substantially longer to download than standard banner ads, especially in markets that don’t have high speed connections.</span></span>
 
 <span/>
 
-* ユーザーのデータ通信プランに留意してください。 たとえば、データ通信の上限が近い、または上限を超えているモバイル デバイスで、ビデオ広告を表示する前に、何も表示しないか、ユーザーに警告するかを決定します。 [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) クラスには、これに役立つ API があります。
+* <span data-ttu-id="cc2fc-172">ユーザーのデータ通信プランに留意してください。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-172">Be mindful of the user’s data plan.</span></span> <span data-ttu-id="cc2fc-173">たとえば、データ通信量上限に近づいているモバイル デバイスや上限を超えているモバイル デバイスで、ビデオ スポット広告を表示する前に、何も表示しないか、ユーザーに警告するかを決定します。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-173">For example, either don’t show, or warn user, before serving an interstitial video ad on a mobile device that is near/over its data limit.</span></span> <span data-ttu-id="cc2fc-174">[ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) クラスには、これに役立つ API があります。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-174">There are APIs in the [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) class which can help.</span></span>
 
-* 最初の申請後に、アプリを継続的に改善します。 [広告レポート](../publish/advertising-performance-report.md)を確認し、フィル レートとビデオ完了率を向上させるために設計を変更します。
-
-<span />
-### <a name="practices-to-avoid"></a>避けるプラクティス
-
-アプリ内にスポット広告を実装する際は、以下のプラクティスを避けることをお勧めします。
-
-* 過剰に表示しないでください。 ユーザーがゲームをプレイするだけでなく、広告についてオプションの具体的なメリットを明確に感じている場合を除き、5 分ごとよりも頻繁に広告を強制的に表示しないでください。
-
-* アプリの起動時にビデオ スポット広告を表示しないでください。ユーザーは、誤ったタイルをクリックしたと考える可能性があります。
-
-* 終了時にビデオ スポット広告を表示しないでください。 完了率がほぼゼロになるため、これは不適切なインベントリです。
-
-* 2 つ以上のスポット広告を連続して表示しないでください。 ユーザーは広告の進行状況バーが開始点にリセットされるのを見ると苛立ちを感じます。 多くのユーザーは、これがコーディングまたは広告提供のバグであると考えます。
-
-* [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) を呼び出す 5 分以上前にビデオ広告を取得しないでください。 適切なインベントリでは、事前に取得された広告から請求可能なインプレッションへのコンバージョンが最大化されます。
-
-* 利用可能な広告がないなど、広告を提供できなかった場合に、ユーザーに不利益をもたらさないようにしてください。 たとえば、[広告を視聴して *xxx* を取得する] という UI オプションを表示する場合、ユーザーが責任を果たしたら、*xxx* を提供する必要があります。 2 つのオプションを検討してください。
-
-    * [InterstitialAd.AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) イベントが発生するまでこのオプションを表示しない。
-
-    * 実際の広告と同じ利点が得られるように、あらかじめ用意された機能をアプリに含める。
-
-* マルチプレーヤー ゲームでユーザーが優位性を確保できるようなスポット広告を使用しないでください。 たとえば、スポット広告が表示されると、ファーストパーソン シューティング ゲームで高性能な銃が手に入るような方法でユーザーを惹きつけてはいけません。 プレーヤーのアバターのシャツをカスタマイズ可能にすることは、カモフラージュ機能がなければ問題ありません。
+* <span data-ttu-id="cc2fc-175">最初の申請後に、アプリを継続的に改善します。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-175">Continuously improve your app after the initial submission.</span></span> <span data-ttu-id="cc2fc-176">[広告レポート](../publish/advertising-performance-report.md)を確認し、フィル レートとビデオ スポット広告の完了率が向上するように設計を変更します。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-176">Look at the [ad reports](../publish/advertising-performance-report.md) and make design changes to improve fill and interstitial video completion rates.</span></span>
 
 <span />
-### <a name="examples-of-policy-violations"></a>ポリシー違反の例
+### <a name="practices-to-avoid"></a><span data-ttu-id="cc2fc-177">避けるプラクティス</span><span class="sxs-lookup"><span data-stu-id="cc2fc-177">Practices to avoid</span></span>
 
-このセクションでは、Windows ストアのポリシー、[ポリシー10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) に違反するスポット広告シナリオの例を示します。 これらの例は、このポリシーの適切な理解を助ける手段として、説明目的にのみ提供されています。 これらの例は、すべてを網羅しているわけではありません。ここに記載されていなくても、ポリシー 10.10.1 に違反する例は多数存在する可能性があります。
+<span data-ttu-id="cc2fc-178">アプリ内にスポット広告を実装する際は、以下のプラクティスを避けることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-178">We recommend that you avoid these practices when you implement interstitial ads in your app:</span></span>
 
-* スポット広告コンテナー上に UI 要素を配置する。
+* <span data-ttu-id="cc2fc-179">過剰に表示しないでください。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-179">Don’t overdo it.</span></span> <span data-ttu-id="cc2fc-180">ユーザーがゲームをプレイするだけでなく、広告についてオプションの具体的なメリットを明確に感じている場合を除き、5 分ごとよりも頻繁に広告を強制的に表示しないでください。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-180">Don’t force ads more than every 5 minutes or so, unless the user explicitly engages with an optional tangible benefit, beyond just playing the game.</span></span>
 
-* ユーザーがアプリを使用している間に [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) を呼び出す。
+* <span data-ttu-id="cc2fc-181">アプリの起動時にスポット広告を表示しないでください。ユーザーは、誤ったタイルをクリックしたと考える可能性があります。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-181">Don’t show interstitials at app launch, since users may believe they clicked the wrong tile.</span></span>
 
-* スポット広告を使って、通貨として消費できるものや、他のユーザーと取引できるものを取得できるようにする。
+* <span data-ttu-id="cc2fc-182">終了時にスポット広告を表示しないでください。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-182">Don’t show interstitials at exit.</span></span> <span data-ttu-id="cc2fc-183">完了率がほぼゼロになるため、これは不適切なインベントリです。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-183">This is bad inventory, since completion rates will be near zero.</span></span>
 
-* [InterstitialAd.ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.erroroccurred.aspx) イベントのイベント ハンドラーのコンテキストで新しいスポット広告を要求する。 これにより、無限ループが発生して、広告サービスの操作上の問題の原因となります。
+* <span data-ttu-id="cc2fc-184">2 つ以上のスポット広告を連続して表示しないでください。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-184">Don't show two or more interstitial ads back to back.</span></span> <span data-ttu-id="cc2fc-185">ユーザーは広告の進行状況バーが開始点にリセットされるのを見ると苛立ちを感じます。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-185">Users will be frustrated to see the ad progress bar reset to the starting point.</span></span> <span data-ttu-id="cc2fc-186">多くのユーザーは、これがコーディングまたは広告提供のバグであると考えます。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-186">Many will think it’s just a coding or ad serving bug.</span></span>
 
-* 連鎖的な広告の単なるバックアップとして、スポット広告を要求する。 スポット広告を要求し、[InterstitialAd.AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) イベントを受信した場合、アプリに表示できる次のスポット広告は、[InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) メソッド経由で表示できる必要があります。
+* <span data-ttu-id="cc2fc-187">[InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) を呼び出す 5 分以上前にビデオ スポット広告を取得しないでください。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-187">Don’t fetch an interstitial video ad more than 5 minutes before calling [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx).</span></span> <span data-ttu-id="cc2fc-188">適切なインベントリでは、事前に取得された広告から請求可能なインプレッションへのコンバージョンが最大化されます。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-188">Good inventory will maximize the conversion of pre-fetched ads to billable impressions.</span></span>
 
-* 開発およびテスト中、またはエミュレーターでライブ広告ユニット (つまり、Windows デベロッパー センター ダッシュボードから取得した広告ユニット) を使用する。
+* <span data-ttu-id="cc2fc-189">利用可能な広告がないなど、広告を提供できなかった場合に、ユーザーに不利益をもたらさないようにしてください。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-189">Don’t penalize a user for failures in ad serving, such as no ad available.</span></span> <span data-ttu-id="cc2fc-190">たとえば、[広告を視聴して *xxx* を取得する] という UI オプションを表示する場合、ユーザーが責任を果たしたら、*xxx* を提供する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-190">For example, if you show a UI option to “Watch an ad to get *xxx*”, you should provide *xxx* if the user did her part.</span></span> <span data-ttu-id="cc2fc-191">2 つのオプションを検討してください。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-191">Two options to consider:</span></span>
 
-* アプリのコンテキストで実行している Microsoft Advertising ライブラリ以外の手段で広告サービスを呼び出すコードを記述または配布する。
+    * <span data-ttu-id="cc2fc-192">[InterstitialAd.AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) イベントが発生するまでこのオプションを表示しない。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-192">Don’t include the option unless the [InterstitialAd.AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) event has fired.</span></span>
 
-* ドキュメントに記載されていないインターフェイスや、Microsoft Advertising ライブラリで作成された、**WebView** や **MediaElement** などの子オブジェクトを操作する。
+    * <span data-ttu-id="cc2fc-193">実際の広告と同じ利点が得られるように、あらかじめ用意された機能をアプリに含める。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-193">Have the app include a built-in experience that yields the same benefit as a real ad.</span></span>
+
+* <span data-ttu-id="cc2fc-194">マルチプレーヤー ゲームでユーザーが優位性を確保できるようなスポット広告を使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-194">Don’t use interstitial ads to let a user gain a competitive advantage in a multi-player game.</span></span> <span data-ttu-id="cc2fc-195">たとえば、スポット広告が表示されると、ファーストパーソン シューティング ゲームで高性能な銃が手に入るような方法でユーザーを惹きつけてはいけません。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-195">For example, don't entice the user with a better gun in a first-person shooter game if they view an interstitial ad.</span></span> <span data-ttu-id="cc2fc-196">プレーヤーのアバターのシャツをカスタマイズ可能にすることは、カモフラージュ機能がなければ問題ありません。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-196">A custom shirt on the player’s avatar is fine, so long as it doesn’t provide camouflage!</span></span>
+
+<span />
+### <a name="examples-of-policy-violations"></a><span data-ttu-id="cc2fc-197">ポリシー違反の例</span><span class="sxs-lookup"><span data-stu-id="cc2fc-197">Examples of policy violations</span></span>
+
+<span data-ttu-id="cc2fc-198">このセクションでは、Windows ストアのポリシー、[ポリシー10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) に違反するスポット広告シナリオの例を示します。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-198">This section provides examples of interstitial ad scenarios that violate [policy 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) of the Windows Store Policies.</span></span> <span data-ttu-id="cc2fc-199">これらの例は、このポリシーの適切な理解を助ける手段として、説明目的にのみ提供されています。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-199">These examples are provided for instructional purposes only, as a way to help you better understand the policy.</span></span> <span data-ttu-id="cc2fc-200">これらの例は、すべてを網羅しているわけではありません。ここに記載されていなくても、ポリシー 10.10.1 に違反する例は多数存在する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-200">These examples are not comprehensive, and there may be many other ways to violate policy 10.10.1 that are not listed here.</span></span>
+
+* <span data-ttu-id="cc2fc-201">スポット広告コンテナー上に UI 要素を配置する。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-201">Placing a UI element over the interstitial ad container.</span></span>
+
+* <span data-ttu-id="cc2fc-202">ユーザーがアプリを使用している間に [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) を呼び出す。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-202">Calling [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) while the user is engaged with the app.</span></span>
+
+* <span data-ttu-id="cc2fc-203">スポット広告を使って、通貨として消費できるものや、他のユーザーと取引できるものを取得できるようにする。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-203">Using interstitial ads to obtain anything that may be consumed as a currency or traded with other users.</span></span>
+
+* <span data-ttu-id="cc2fc-204">[InterstitialAd.ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.erroroccurred.aspx) イベントのイベント ハンドラーのコンテキストで新しいスポット広告を要求する。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-204">Requesting a new interstitial ad in the context of the event handler for the [InterstitialAd.ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.erroroccurred.aspx) event.</span></span> <span data-ttu-id="cc2fc-205">これにより、無限ループが発生して、広告サービスの操作上の問題の原因となります。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-205">This can result in an infinite loop and can cause operational issues for the advertising service.</span></span>
+
+* <span data-ttu-id="cc2fc-206">連鎖的な広告の単なるバックアップとして、スポット広告を要求する。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-206">Requesting an interstitial ad merely to have a backup ad for a waterfall sequence of ads.</span></span> <span data-ttu-id="cc2fc-207">スポット広告を要求し、[InterstitialAd.AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) イベントを受信した場合、アプリに表示できる次のスポット広告は、[InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) メソッド経由で表示できる必要があります。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-207">If you request an interstitial ad and then receive the [InterstitialAd.AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) event, the next interstitial ad shown in your app must be the ad that is ready to be shown via the [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) method.</span></span>
+
+* <span data-ttu-id="cc2fc-208">開発およびテスト中、またはエミュレーターでライブ広告ユニット (つまり、Windows デベロッパー センター ダッシュボードから取得した広告ユニット) を使用する。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-208">Using live ad units (that is, ad units that you obtain from the Windows Dev Center dashboard) during development and testing, or in an emulator.</span></span>
+
+* <span data-ttu-id="cc2fc-209">アプリのコンテキストで実行している Microsoft Advertising ライブラリ以外の手段で広告サービスを呼び出すコードを記述または配布する。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-209">Writing or distributing code that calls ad services through means other than the Microsoft advertising libraries running in the context of your app.</span></span>
+
+* <span data-ttu-id="cc2fc-210">ドキュメントに記載されていないインターフェイスや、Microsoft Advertising ライブラリで作成された、**WebView** や **MediaElement** などの子オブジェクトを操作する。</span><span class="sxs-lookup"><span data-stu-id="cc2fc-210">Interacting with undocumented interfaces or child objects created by the Microsoft advertising libraries, such as **WebView** or **MediaElement**.</span></span>
 
  
 
  
-

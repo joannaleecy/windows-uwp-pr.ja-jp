@@ -9,39 +9,38 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 364edc93c52d3c7c8cbe5f1a85c8ca751eb44b35
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 65ee6cd32e1fdb6900c859725b8deb6b5031d297
+ms.sourcegitcommit: ba0d20f6fad75ce98c25ceead78aab6661250571
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/24/2017
 ---
-
-# <a name="declare-background-tasks-in-the-application-manifest"></a>アプリケーション マニフェストでのバックグラウンド タスクの宣言
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+# <a name="declare-background-tasks-in-the-application-manifest"></a><span data-ttu-id="86e1a-104">アプリケーション マニフェストでのバックグラウンド タスクの宣言</span><span class="sxs-lookup"><span data-stu-id="86e1a-104">Declare background tasks in the application manifest</span></span>
 
 
-**重要な API**
+<span data-ttu-id="86e1a-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="86e1a-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="86e1a-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]</span><span class="sxs-lookup"><span data-stu-id="86e1a-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
--   [**BackgroundTasks スキーマ**](https://msdn.microsoft.com/library/windows/apps/br224794)
--   [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
 
-アプリ マニフェストでバックグラウンド タスクを拡張機能として宣言し、バックグラウンド タスクを使うことができるようにします。
+**<span data-ttu-id="86e1a-107">重要な API</span><span class="sxs-lookup"><span data-stu-id="86e1a-107">Important APIs</span></span>**
+
+-   [**<span data-ttu-id="86e1a-108">BackgroundTasks スキーマ</span><span class="sxs-lookup"><span data-stu-id="86e1a-108">BackgroundTasks Schema</span></span>**](https://msdn.microsoft.com/library/windows/apps/br224794)
+-   [**<span data-ttu-id="86e1a-109">Windows.ApplicationModel.Background</span><span class="sxs-lookup"><span data-stu-id="86e1a-109">Windows.ApplicationModel.Background</span></span>**](https://msdn.microsoft.com/library/windows/apps/br224847)
+
+<span data-ttu-id="86e1a-110">アプリ マニフェストでバックグラウンド タスクを拡張機能として宣言し、バックグラウンド タスクを使うことができるようにします。</span><span class="sxs-lookup"><span data-stu-id="86e1a-110">Enable the use of background tasks by declaring them as extensions in the app manifest.</span></span>
 
 > [!Important]
->  この記事は、アウトプロセスのバック グラウンド タスクに固有です。 インプロセスのバックグラウンド タスクは、マニフェストで宣言されていません。
+>  <span data-ttu-id="86e1a-111">この記事は、アウトプロセスのバック グラウンド タスクに固有です。</span><span class="sxs-lookup"><span data-stu-id="86e1a-111">This article is specific to out-of-process background tasks.</span></span> <span data-ttu-id="86e1a-112">インプロセスのバックグラウンド タスクは、マニフェストで宣言されていません。</span><span class="sxs-lookup"><span data-stu-id="86e1a-112">In-process background tasks are not declared in the manifest.</span></span>
 
-アウトプロセスのバックグラウンド タスクはアプリ マニフェストで宣言されている必要があります。このようにしないと、アプリはバックグラウンド タスクを登録できません (例外がスローされます)。 また、認定に合格するには、アプリケーション マニフェストでアウトプロセスのバックグラウンド タスクを宣言する必要があります。
+<span data-ttu-id="86e1a-113">アウトプロセスのバックグラウンド タスクはアプリ マニフェストで宣言されている必要があります。このようにしないと、アプリはバックグラウンド タスクを登録できません (例外がスローされます)。</span><span class="sxs-lookup"><span data-stu-id="86e1a-113">Out-of-process background tasks must be declared in the app manifest or else your app will not be able to register them (an exception will be thrown).</span></span> <span data-ttu-id="86e1a-114">また、認定に合格するには、アプリケーション マニフェストでアウトプロセスのバックグラウンド タスクを宣言する必要があります。</span><span class="sxs-lookup"><span data-stu-id="86e1a-114">Additionally, out-of-process background tasks must be declared in the application manifest to pass certification.</span></span>
 
-このトピックでは、1 つ以上のバックグラウンド タスク クラスが作られていて、少なくとも 1 つのトリガーに応答して実行されるようにアプリで各バックグラウンド タスクを登録するものとします。
+<span data-ttu-id="86e1a-115">このトピックでは、1 つ以上のバックグラウンド タスク クラスが作られていて、少なくとも 1 つのトリガーに応答して実行されるようにアプリで各バックグラウンド タスクを登録するものとします。</span><span class="sxs-lookup"><span data-stu-id="86e1a-115">This topic assumes you have a created one or more background task classes, and that your app registers each background task to run in response to at least one trigger.</span></span>
 
-## <a name="add-extensions-manually"></a>手動での拡張機能の追加
+## <a name="add-extensions-manually"></a><span data-ttu-id="86e1a-116">手動での拡張機能の追加</span><span class="sxs-lookup"><span data-stu-id="86e1a-116">Add Extensions Manually</span></span>
 
 
-アプリケーション マニフェスト (Package.appxmanifest) を開き、Application 要素に移動します。 Extensions 要素を作ります (まだ存在していない場合)。
+<span data-ttu-id="86e1a-117">アプリケーション マニフェスト (Package.appxmanifest) を開き、Application 要素に移動します。</span><span class="sxs-lookup"><span data-stu-id="86e1a-117">Open the application manifest (Package.appxmanifest) and go to the Application element.</span></span> <span data-ttu-id="86e1a-118">Extensions 要素を作ります (まだ存在していない場合)。</span><span class="sxs-lookup"><span data-stu-id="86e1a-118">Create an Extensions element (if one doesn't already exist).</span></span>
 
-次に示す例は、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)から抜粋したものです。
+<span data-ttu-id="86e1a-119">次に示す例は、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)から抜粋したものです。</span><span class="sxs-lookup"><span data-stu-id="86e1a-119">The following snippet is taken from the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666):</span></span>
 
 ```xml
 <Application Id="App"
@@ -62,12 +61,11 @@ ms.lasthandoff: 02/07/2017
  </Application>
 ```
 
-## <a name="add-a-background-task-extension"></a>バックグラウンド タスク拡張機能の追加
+## <a name="add-a-background-task-extension"></a><span data-ttu-id="86e1a-120">バックグラウンド タスク拡張機能の追加</span><span class="sxs-lookup"><span data-stu-id="86e1a-120">Add a Background Task Extension</span></span>  
 
+<span data-ttu-id="86e1a-121">最初のバックグラウンド タスクを宣言します。</span><span class="sxs-lookup"><span data-stu-id="86e1a-121">Declare your first background task.</span></span>
 
-最初のバックグラウンド タスクを宣言します。
-
-このコードを Extensions 要素にコピーします (次の手順で属性を追加します)。
+<span data-ttu-id="86e1a-122">このコードを Extensions 要素にコピーします (次の手順で属性を追加します)。</span><span class="sxs-lookup"><span data-stu-id="86e1a-122">Copy this code into the Extensions element (you will add attributes in the following steps).</span></span>
 
 ```xml
 <Extensions>
@@ -79,9 +77,9 @@ ms.lasthandoff: 02/07/2017
 </Extensions>
 ```
 
-1.  EntryPoint 属性を、バックグラウンド タスクの登録時にエントリ ポイントとしてコードで使ったものと同じ文字列に変更します (**namespace.classname**)。
+1.  <span data-ttu-id="86e1a-123">EntryPoint 属性を、バックグラウンド タスクの登録時にエントリ ポイントとしてコードで使ったものと同じ文字列に変更します (**namespace.classname**)。</span><span class="sxs-lookup"><span data-stu-id="86e1a-123">Change the EntryPoint attribute to have the same string used by your code as the entry point when registering your background task (**namespace.classname**).</span></span>
 
-    この例のエントリ ポイントは、ExampleBackgroundTaskNameSpace.ExampleBackgroundTaskClassName です。
+    <span data-ttu-id="86e1a-124">この例のエントリ ポイントは、ExampleBackgroundTaskNameSpace.ExampleBackgroundTaskClassName です。</span><span class="sxs-lookup"><span data-stu-id="86e1a-124">In this example, the entry point is ExampleBackgroundTaskNameSpace.ExampleBackgroundTaskClassName:</span></span>
 
 ```xml
 <Extensions>
@@ -93,11 +91,11 @@ ms.lasthandoff: 02/07/2017
 </Extensions>
 ```
 
-2.  Task Type 属性のリストを、このバックグラウンド タスクで使われるタスク登録の種類を示すように変更します。 バックグラウンド タスクを複数の種類のトリガーで登録する場合は、必要な Task 要素と Type 属性を個々に追加します。
+2.  <span data-ttu-id="86e1a-125">Task Type 属性のリストを、このバックグラウンド タスクで使われるタスク登録の種類を示すように変更します。</span><span class="sxs-lookup"><span data-stu-id="86e1a-125">Change the list of Task Type attribute to indicate the type of task registration used with this background task.</span></span> <span data-ttu-id="86e1a-126">バックグラウンド タスクを複数の種類のトリガーで登録する場合は、必要な Task 要素と Type 属性を個々に追加します。</span><span class="sxs-lookup"><span data-stu-id="86e1a-126">If the background task is registered with multiple trigger types, add additional Task elements and Type attributes for each one.</span></span>
 
-    **注:** 使っているトリガーの各種類を確実に列記してください。そうしないと、バックグラウンド タスクは宣言されていない種類のトリガーには登録されません ([**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) メソッドが失敗し、例外がスローされます)。
+    <span data-ttu-id="86e1a-127">**注:** 使っているトリガーの各種類を確実に列記してください。そうしないと、バックグラウンド タスクは宣言されていない種類のトリガーには登録されません ([**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) メソッドが失敗し、例外がスローされます)。</span><span class="sxs-lookup"><span data-stu-id="86e1a-127">**Note**  Make sure to list each of the trigger types you're using, or the background task will not register with the undeclared trigger types (the [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) method will fail and throw an exception).</span></span>
 
-    次の抜粋例は、システム イベント トリガーとプッシュ通知の使用法を示します。
+    <span data-ttu-id="86e1a-128">次の抜粋例は、システム イベント トリガーとプッシュ通知の使用法を示します。</span><span class="sxs-lookup"><span data-stu-id="86e1a-128">This snippet example indicates the use of system event triggers and push notifications:</span></span>
 
 ```xml
 <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.BackgroundTaskClass">
@@ -108,12 +106,11 @@ ms.lasthandoff: 02/07/2017
 </Extension>
 ```
 
+### <a name="add-multiple-background-task-extensions"></a><span data-ttu-id="86e1a-129">複数のバックグラウンド タスク拡張機能の追加</span><span class="sxs-lookup"><span data-stu-id="86e1a-129">Add multiple background task extensions</span></span>
 
-## <a name="add-additional-background-task-extensions"></a>バックグラウンド タスク拡張機能の追加
+<span data-ttu-id="86e1a-130">アプリで登録する追加のバックグラウンド タスク クラスごとに、手順 2. を繰り返します。</span><span class="sxs-lookup"><span data-stu-id="86e1a-130">Repeat step 2 for each additional background task class registered by your app.</span></span>
 
-アプリで登録する追加のバックグラウンド タスク クラスごとに、手順 2. を繰り返します。
-
-次に、[バックグラウンド タスク サンプル]( http://go.microsoft.com/fwlink/p/?linkid=227509)の完全な Application 要素の例を示します。 これは、計 3 種類のトリガーで 2 つのバックグラウンド タスク クラスを使う例を示します。 この例の Extensions セクションをコピーし、必要に応じて変更して、アプリケーション マニフェストでバックグラウンド タスクを宣言します。
+<span data-ttu-id="86e1a-131">次に、[バックグラウンド タスク サンプル]( http://go.microsoft.com/fwlink/p/?linkid=227509)の完全な Application 要素の例を示します。</span><span class="sxs-lookup"><span data-stu-id="86e1a-131">The following example is the complete Application element from the [background task sample]( http://go.microsoft.com/fwlink/p/?linkid=227509).</span></span> <span data-ttu-id="86e1a-132">これは、計 3 種類のトリガーで 2 つのバックグラウンド タスク クラスを使う例を示します。</span><span class="sxs-lookup"><span data-stu-id="86e1a-132">This shows the use of 2 background task classes with a total of 3 trigger types.</span></span> <span data-ttu-id="86e1a-133">この例の Extensions セクションをコピーし、必要に応じて変更して、アプリケーション マニフェストでバックグラウンド タスクを宣言します。</span><span class="sxs-lookup"><span data-stu-id="86e1a-133">Copy the Extensions section of this example, and modify it as needed, to declare background tasks in your application manifest.</span></span>
 
 ```xml
 <Applications>
@@ -154,17 +151,22 @@ ms.lasthandoff: 02/07/2017
 </Applications>
 ```
 
-## <a name="declare-your-background-task-to-run-in-a-different-process"></a>別のプロセスで実行されるバックグラウンド タスクを宣言する
+## <a name="declare-where-your-background-task-will-run"></a><span data-ttu-id="86e1a-134">バック グラウンド タスクの実行先の宣言</span><span class="sxs-lookup"><span data-stu-id="86e1a-134">Declare where your background task will run</span></span>
 
-Windows 10 バージョン 1507 での新機能により、バックグラウンド タスクを BackgroundTaskHost.exe (既定でバックグラウンド タスクが実行されるプロセス) とは別のプロセスで実行できるようになりました。  2 つのオプションがあります。フォアグラウンド アプリケーションと同じプロセスで実行する。BackgroundTaskHost.exe の 1 つのインスタンスで実行する。これは同じアプリケーションのバックグラウンド タスクの他のインスタンスとは別のインスタンスです。  
+<span data-ttu-id="86e1a-135">バックグラウンド タスクの実行先を指定することができます。</span><span class="sxs-lookup"><span data-stu-id="86e1a-135">You can specify where your background tasks run:</span></span>
 
-### <a name="run-in-the-foreground-application"></a>フォアグラウンド アプリケーションで実行する
+* <span data-ttu-id="86e1a-136">既定では、BackgroundTaskHost.exe プロセスで実行されます。</span><span class="sxs-lookup"><span data-stu-id="86e1a-136">By default, they run in the BackgroundTaskHost.exe process.</span></span>
+* <span data-ttu-id="86e1a-137">フォアグラウンド アプリケーションと同じプロセスで実行できます。</span><span class="sxs-lookup"><span data-stu-id="86e1a-137">In the same process as your foreground application.</span></span>
+* <span data-ttu-id="86e1a-138">`ResourceGroup` を使用すると、複数のバックグラウンド タスクを同じホスティング プロセスに配置したり、異なるプロセスに分離したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="86e1a-138">Use `ResourceGroup` to place multiple background tasks into the same hosting process, or to separate them into different processes.</span></span>
+* <span data-ttu-id="86e1a-139">`SupportsMultipleInstances` を使用すると、新しいトリガーが発生するたびに、独自のリソース制限 (メモリ、CPU) を持つ新しいプロセスでバックグラウンド プロセスが実行されます。</span><span class="sxs-lookup"><span data-stu-id="86e1a-139">Use `SupportsMultipleInstances` to run the background process in a new process that gets its own resource limits (memory, cpu) each time a new trigger is fired.</span></span>
 
-フォアグラウンド アプリケーションと同じプロセスで実行されるバック グラウンド タスクを宣言する XML の例を次に示します。 `Executable` 属性に注意してください。
+### <a name="run-in-the-same-process-as-your-foreground-application"></a><span data-ttu-id="86e1a-140">フォアグラウンド アプリケーションと同じプロセスでの実行</span><span class="sxs-lookup"><span data-stu-id="86e1a-140">Run in the same process as your foreground application</span></span>
+
+<span data-ttu-id="86e1a-141">フォアグラウンド アプリケーションと同じプロセスで実行されるバック グラウンド タスクを宣言する XML の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="86e1a-141">Here is example XML that declares a background task that runs in the same process as the foreground application.</span></span>
 
 ```xml
 <Extensions>
-    <Extension Category="windows.backgroundTasks" EntryPoint="ExecModelTestBackgroundTasks.ApplicationTriggerTask" Executable="$targetnametoken$.exe">
+    <Extension Category="windows.backgroundTasks" EntryPoint="ExecModelTestBackgroundTasks.ApplicationTriggerTask">
         <BackgroundTasks>
             <Task Type="systemEvent" />
         </BackgroundTasks>
@@ -172,12 +174,11 @@ Windows 10 バージョン 1507 での新機能により、バックグラウン
 </Extensions>
 ```
 
-> [!Note]
-> Executable 要素は、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) など、Executable 要素を必要とするバックグラウンド タスクと共に使ってください。  
+<span data-ttu-id="86e1a-142">**EntryPoint** を指定すると、アプリケーションは指定されたメソッドへのコールバックをトリガーの発生時に受け取ります。</span><span class="sxs-lookup"><span data-stu-id="86e1a-142">When you specify **EntryPoint**, your application receives a callback to the specified method when the trigger fires.</span></span> <span data-ttu-id="86e1a-143">**EntryPoint** を指定していない場合、アプリケーションは [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) を介してコールバックを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="86e1a-143">If you do not specify an **EntryPoint**, your application receives the callback via  [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx).</span></span>  <span data-ttu-id="86e1a-144">詳しくは、「[インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)」をご覧ください</span><span class="sxs-lookup"><span data-stu-id="86e1a-144">See [Create and register an in-process background task](create-and-register-an-inproc-background-task.md) for details.</span></span>
 
-### <a name="run-in-a-different-background-host-process"></a>別のバックグラウンド ホスト プロセスで実行する
+### <a name="specify-where-your-background-task-runs-with-the-resourcegroup-attribute"></a><span data-ttu-id="86e1a-145">ResourceGroup 属性を使用して、バックグラウンド タスクの実行先を指定</span><span class="sxs-lookup"><span data-stu-id="86e1a-145">Specify where your background task runs with the ResourceGroup attribute.</span></span>
 
-BackgroundTaskHost.exe プロセスで実行されるが、同じアプリのバックグラウンド タスクの他のインスタンスとは別に実行される、バックグラウンド タスクを宣言する XML の例を示します。 共に実行されるバックグラウンド タスクを指定する、`ResourceGroup`属性に注意してください。
+<span data-ttu-id="86e1a-146">BackgroundTaskHost.exe プロセスで実行されるが、同じアプリのバックグラウンド タスクの他のインスタンスとは別に実行される、バックグラウンド タスクを宣言する XML の例を示します。</span><span class="sxs-lookup"><span data-stu-id="86e1a-146">Here is example XML that declares a background task that runs in a BackgroundTaskHost.exe process, but in a separate one than other instances of background tasks from the same app.</span></span> <span data-ttu-id="86e1a-147">共に実行されるバックグラウンド タスクを指定する、`ResourceGroup` 属性に注意してください。</span><span class="sxs-lookup"><span data-stu-id="86e1a-147">Note the `ResourceGroup` attribute, which identifies which background tasks will run together.</span></span>
 
 ```xml
 <Extensions>
@@ -209,11 +210,33 @@ BackgroundTaskHost.exe プロセスで実行されるが、同じアプリのバ
 </Extensions>
 ```
 
+### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a><span data-ttu-id="86e1a-148">SupportsMultipleInstances 属性を使用して、トリガーが発生するたびに新しいプロセスで実行</span><span class="sxs-lookup"><span data-stu-id="86e1a-148">Run in a new process each time a trigger fires with the SupportsMultipleInstances attribute</span></span>
 
-## <a name="related-topics"></a>関連トピック
+<span data-ttu-id="86e1a-149">この例では、新しいトリガーが発生するたびに独自のリソース制限 (メモリと CPU) を持つ新しいプロセスで実行される、バックグラウンド タスクを宣言します。</span><span class="sxs-lookup"><span data-stu-id="86e1a-149">This example declares a background task that runs in a new process that gets its own resource limits (memory and CPU) every time a new trigger is fired.</span></span> <span data-ttu-id="86e1a-150">`SupportsMultipleInstances` を使っていることに注目してください。この属性がこの動作を実現します。</span><span class="sxs-lookup"><span data-stu-id="86e1a-150">Note the use of `SupportsMultipleInstances` which enables this behavior.</span></span> <span data-ttu-id="86e1a-151">この属性を使用するためには、SDK バージョン '10.0.15063' (Windows 10 Creator's Update) 以降をターゲットにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="86e1a-151">In order to use this attribute you must target SDK version '10.0.15063' (Windows 10 Creator's Update) or higher.</span></span>
 
+```xml
+<Package
+    xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
+    ...
+    <Applications>
+        <Application ...>
+            ...
+            <Extensions>
+                <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.TimerTriggerTask">
+                    <BackgroundTasks uap4:SupportsMultipleInstances=“True”>
+                        <Task Type="timer" />
+                    </BackgroundTasks>
+                </Extension>
+            </Extensions>
+        </Application>
+    </Applications>
+```
 
-* [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
-* [バックグラウンド タスクの登録](register-a-background-task.md)
-* [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
+> [!NOTE]
+> <span data-ttu-id="86e1a-152">`SupportsMultipleInstances` と共に `ResourceGroup` または `ServerName` を指定することはできません。</span><span class="sxs-lookup"><span data-stu-id="86e1a-152">You cannot specify `ResourceGroup` or `ServerName` in conjunction with `SupportsMultipleInstances`.</span></span>
 
+## <a name="related-topics"></a><span data-ttu-id="86e1a-153">関連トピック</span><span class="sxs-lookup"><span data-stu-id="86e1a-153">Related topics</span></span>
+
+* [<span data-ttu-id="86e1a-154">バックグラウンド タスクのデバッグ</span><span class="sxs-lookup"><span data-stu-id="86e1a-154">Debug a background task</span></span>](debug-a-background-task.md)
+* [<span data-ttu-id="86e1a-155">バックグラウンド タスクの登録</span><span class="sxs-lookup"><span data-stu-id="86e1a-155">Register a background task</span></span>](register-a-background-task.md)
+* [<span data-ttu-id="86e1a-156">バックグラウンド タスクのガイドライン</span><span class="sxs-lookup"><span data-stu-id="86e1a-156">Guidelines for background tasks</span></span>](guidelines-for-background-tasks.md)

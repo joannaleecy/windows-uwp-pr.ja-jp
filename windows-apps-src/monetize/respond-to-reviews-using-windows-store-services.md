@@ -2,59 +2,59 @@
 author: mcleanbyron
 ms.assetid: c92c0ea8-f742-4fc1-a3d7-e90aac11953e
 description: "ストアのアプリのレビューにプログラムで返信を送るには、Windows ストア レビュー API を使用します。"
-title: "Windows ストアのサービスを使ってレビューに返信する"
+title: "ストアのサービスを使用してレビューに返信する"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, Windows ストア レビュー API, レビューに返信"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 657149304048a88bf85f0dd6f205e7db0497e591
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 58847f970ed4ab2f6d12028bf51d026623b56583
+ms.sourcegitcommit: eaacc472317eef343b764d17e57ef24389dd1cc3
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/17/2017
 ---
+# <a name="respond-to-reviews-using-store-services"></a><span data-ttu-id="ed065-104">ストアのサービスを使用してレビューに返信する</span><span class="sxs-lookup"><span data-stu-id="ed065-104">Respond to reviews using Store services</span></span>
 
-# <a name="respond-to-reviews-using-windows-store-services"></a>Windows ストアのサービスを使ってレビューに返信する
+<span data-ttu-id="ed065-105">ストアのアプリのレビューにプログラムで返信するには、*Windows ストア レビュー API* を使用します。</span><span class="sxs-lookup"><span data-stu-id="ed065-105">Use the *Windows Store reviews API* to programmatically respond to reviews of your app in the Store.</span></span> <span data-ttu-id="ed065-106">この API は、Windows デベロッパー センター ダッシュボードを使わずに多数のレビューをまとめて返信する開発者には特に便利です。</span><span class="sxs-lookup"><span data-stu-id="ed065-106">This API is especially useful for developers who want to bulk respond to many reviews without using the Windows Dev Center dashboard.</span></span> <span data-ttu-id="ed065-107">この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。</span><span class="sxs-lookup"><span data-stu-id="ed065-107">This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.</span></span>
 
-ストアのアプリのレビューにプログラムで返信するには、*Windows ストア レビュー API* を使用します。 この API は、Windows デベロッパー センター ダッシュボードを使わずに多数のレビューをまとめて返信する開発者には特に便利です。 この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
+<span data-ttu-id="ed065-108">次の手順で、このプロセスについて詳しく説明しています。</span><span class="sxs-lookup"><span data-stu-id="ed065-108">The following steps describe the end-to-end process:</span></span>
 
-次の手順で、このプロセスについて詳しく説明しています。
+1.  <span data-ttu-id="ed065-109">すべての[前提条件](#prerequisites)を完了したことを確認します。</span><span class="sxs-lookup"><span data-stu-id="ed065-109">Make sure that you have completed all the [prerequisites](#prerequisites).</span></span>
+2.  <span data-ttu-id="ed065-110">Windows ストア レビュー API のメソッドを呼び出す前に、[Azure AD アクセス トークンを取得](#obtain-an-azure-ad-access-token)する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ed065-110">Before you call a method in the Windows Store reviews API, [obtain an Azure AD access token](#obtain-an-azure-ad-access-token).</span></span> <span data-ttu-id="ed065-111">トークンを取得した後、Windows ストア レビュー API への呼び出しでこのトークンを使用できるのは、その有効期限が切れるまでの 60 分間です。</span><span class="sxs-lookup"><span data-stu-id="ed065-111">After you obtain a token, you have 60 minutes to use this token in calls to the Windows Store reviews API before the token expires.</span></span> <span data-ttu-id="ed065-112">トークンの有効期限が切れた後は、新しいトークンを生成できます。</span><span class="sxs-lookup"><span data-stu-id="ed065-112">After the token expires, you can generate a new token.</span></span>
+3.  <span data-ttu-id="ed065-113">[Windows ストア レビュー API を呼び出します](#call-the-windows-store-reviews-api)。</span><span class="sxs-lookup"><span data-stu-id="ed065-113">[Call the Windows Store reviews API](#call-the-windows-store-reviews-api).</span></span>
 
-1.  すべての[前提条件](#prerequisites)を完了したことを確認します。
-2.  Windows ストア レビュー API のメソッドを呼び出す前に、[Azure AD アクセス トークンを取得](#obtain-an-azure-ad-access-token)する必要があります。 トークンを取得した後、Windows ストア レビュー API への呼び出しでこのトークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れた後は、新しいトークンを生成できます。
-3.  [Windows ストア レビュー API を呼び出します](#call-the-windows-store-reviews-api)。
-
->**注**&nbsp;&nbsp;Windows ストア レビュー API を使用してプログラムでレビューに返信することに加えて、[Windows デベロッパー センター ダッシュボードを使って](../publish/respond-to-customer-reviews.md)レビューに返信することもできます。
+> [!NOTE]
+> <span data-ttu-id="ed065-114">Windows ストア レビュー API を使用してプログラムでレビューに返信することに加えて、[Windows デベロッパー センター ダッシュボード](../publish/respond-to-customer-reviews.md)を使ってレビューに返信することもできます。</span><span class="sxs-lookup"><span data-stu-id="ed065-114">In addition to using the Windows Store reviews API to programmatically respond to reviews, you can alternatively respond to reviews [using the Windows Dev Center dashboard](../publish/respond-to-customer-reviews.md).</span></span>
 
 <span id="prerequisites" />
-## <a name="step-1-complete-prerequisites-for-using-the-windows-store-reviews-api"></a>手順 1: Windows ストア レビュー API を使うための前提条件を完了する
+## <a name="step-1-complete-prerequisites-for-using-the-windows-store-reviews-api"></a><span data-ttu-id="ed065-115">手順 1: Windows ストア レビュー API を使うための前提条件を完了する</span><span class="sxs-lookup"><span data-stu-id="ed065-115">Step 1: Complete prerequisites for using the Windows Store reviews API</span></span>
 
-Windows ストア レビュー API を呼び出すコードの作成を開始する前に、次の前提条件が完了していることを確認します。
+<span data-ttu-id="ed065-116">Windows ストア レビュー API を呼び出すコードの作成を開始する前に、次の前提条件が完了していることを確認します。</span><span class="sxs-lookup"><span data-stu-id="ed065-116">Before you start writing code to call the Windows Store reviews API, make sure that you have completed the following prerequisites.</span></span>
 
-* ユーザー (またはユーザーの組織) は、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](http://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。 それ以外の場合は、追加料金なしで[デベロッパー センター内から新しい Azure AD を作成](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)できます。
+* <span data-ttu-id="ed065-117">ユーザー (またはユーザーの組織) は、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](http://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。</span><span class="sxs-lookup"><span data-stu-id="ed065-117">You (or your organization) must have an Azure AD directory and you must have [Global administrator](http://go.microsoft.com/fwlink/?LinkId=746654) permission for the directory.</span></span> <span data-ttu-id="ed065-118">Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。</span><span class="sxs-lookup"><span data-stu-id="ed065-118">If you already use Office 365 or other business services from Microsoft, you already have Azure AD directory.</span></span> <span data-ttu-id="ed065-119">それ以外の場合は、追加料金なしで[デベロッパー センター内から新しい Azure AD を作成](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-dev-center-account)できます。</span><span class="sxs-lookup"><span data-stu-id="ed065-119">Otherwise, you can [create a new Azure AD in Dev Center](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-dev-center-account) for no additional charge.</span></span>
 
-* Azure AD アプリケーションをデベロッパー センター アカウントに関連付け、アプリケーションのテナント ID とクライアント ID を取得してキーを生成する必要があります。 Azure AD アプリケーションは、Windows ストア レビュー API の呼び出し元のアプリまたはサービスを表します。 テナント ID、クライアント ID、およびキーは、API に渡す Azure AD アクセス トークンを取得するために必要です。
+* <span data-ttu-id="ed065-120">Azure AD アプリケーションをデベロッパー センター アカウントに関連付け、アプリケーションのテナント ID とクライアント ID を取得してキーを生成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ed065-120">You must associate an Azure AD application with your Dev Center account, retrieve the tenant ID and client ID for the application and generate a key.</span></span> <span data-ttu-id="ed065-121">Azure AD アプリケーションは、Windows ストア レビュー API の呼び出し元のアプリまたはサービスを表します。</span><span class="sxs-lookup"><span data-stu-id="ed065-121">The Azure AD application represents the app or service from which you want to call the Windows Store reviews API.</span></span> <span data-ttu-id="ed065-122">テナント ID、クライアント ID、およびキーは、API に渡す Azure AD アクセス トークンを取得するために必要です。</span><span class="sxs-lookup"><span data-stu-id="ed065-122">You need the tenant ID, client ID and key to obtain an Azure AD access token that you pass to the API.</span></span>
+    > [!NOTE]
+    > <span data-ttu-id="ed065-123">この作業を行うのは一度だけです。</span><span class="sxs-lookup"><span data-stu-id="ed065-123">You only need to perform this task one time.</span></span> <span data-ttu-id="ed065-124">テナント ID、クライアント ID、キーがあれば、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらを再利用できます。</span><span class="sxs-lookup"><span data-stu-id="ed065-124">After you have the tenant ID, client ID and key, you can reuse them any time you need to create a new Azure AD access token.</span></span>
 
-  >**注:**&nbsp;&nbsp;この作業を行うのは一度だけです。 テナント ID、クライアント ID、キーがあれば、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらを再利用できます。
+<span data-ttu-id="ed065-125">Azure AD アプリケーションをデベロッパー センター アカウントに関連付け、必要な値を取得するには:</span><span class="sxs-lookup"><span data-stu-id="ed065-125">To associate an Azure AD application with your Dev Center account and retrieve the required values:</span></span>
 
-Azure AD アプリケーションをデベロッパー センター アカウントに関連付け、必要な値を取得するには:
+1.  <span data-ttu-id="ed065-126">デベロッパー センターで、**[アカウント設定]** に移動して **[ユーザーの管理]** をクリックし、[組織のデベロッパー センター アカウントを組織の Azure AD ディレクトリに関連付けます](../publish/associate-azure-ad-with-dev-center.md)。</span><span class="sxs-lookup"><span data-stu-id="ed065-126">In Dev Center, go to your **Account settings**, click **Manage users**, and [associate your organization's Dev Center account with your organization's Azure AD directory](../publish/associate-azure-ad-with-dev-center.md).</span></span>
 
-1.  デベロッパー センターで、**[アカウント設定]** に移動して **[ユーザーの管理]** をクリックし、組織のデベロッパー センター アカウントを組織の Azure AD ディレクトリに関連付けます。 詳しい手順については、「[アカウント ユーザーの管理](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)」をご覧ください。
+2.  <span data-ttu-id="ed065-127">**[ユーザーの管理]** ページで、**[Azure AD アプリケーションの追加]** をクリックして、デベロッパー センター アカウントのプロモーション キャンペーンの管理に使うアプリやサービスを表す Azure AD アプリケーションを追加し、**マネージャー** ロールを割り当てます。</span><span class="sxs-lookup"><span data-stu-id="ed065-127">In the **Manage users** page, click **Add Azure AD applications**, add the Azure AD application that represents the app or service that you will use to manage promotion campaigns for your Dev Center account, and assign it the **Manager** role.</span></span> <span data-ttu-id="ed065-128">このアプリケーションが既に Azure AD ディレクトリに存在する場合、**[Azure AD アプリケーションの追加]** ページで選んでデベロッパー センター アカウントに追加できます。</span><span class="sxs-lookup"><span data-stu-id="ed065-128">If this application already exists in your Azure AD directory, you can select it on the **Add Azure AD applications** page to add it to your Dev Center account.</span></span> <span data-ttu-id="ed065-129">それ以外の場合、**[Azure AD アプリケーションの追加]** ページで新しい Azure AD アプリケーションを作成できます。</span><span class="sxs-lookup"><span data-stu-id="ed065-129">Otherwise, you can create a new Azure AD application on the **Add Azure AD applications** page.</span></span> <span data-ttu-id="ed065-130">詳しくは、「[Azure AD アプリケーションをデベロッパー センター アカウントに追加する方法](../publish/add-users-groups-and-azure-ad-applications.md#azure-ad-applications)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="ed065-130">For more information, see [Add Azure AD applications to your Dev Center account](../publish/add-users-groups-and-azure-ad-applications.md#azure-ad-applications).</span></span>
 
-2.  **[ユーザーの管理]** ページで、**[Azure AD アプリケーションの追加]** をクリックして、デベロッパー センター アカウントのプロモーション キャンペーンの管理に使うアプリやサービスを表す Azure AD アプリケーションを追加し、**マネージャー** ロールを割り当てます。 このアプリケーションが既に Azure AD ディレクトリに存在する場合、**[Azure AD アプリケーションの追加]** ページで選んでデベロッパー センター アカウントに追加できます。 それ以外の場合、**[Azure AD アプリケーションの追加]** ページで新しい Azure AD アプリケーションを作成できます。 詳しくは、「[Azure AD アプリケーションを追加して管理する](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)」をご覧ください。
+3.  <span data-ttu-id="ed065-131">**[ユーザーの管理]** ページに戻り、Azure AD アプリケーションの名前をクリックしてアプリケーション設定に移動し、**[テナント ID]** と **[クライアント ID]** の値を書き留めます。</span><span class="sxs-lookup"><span data-stu-id="ed065-131">Return to the **Manage users** page, click the name of your Azure AD application to go to the application settings, and copy down the **Tenant ID** and **Client ID** values.</span></span>
 
-3.  **[ユーザーの管理]** ページに戻り、Azure AD アプリケーションの名前をクリックしてアプリケーション設定に移動し、**[テナント ID]** と **[クライアント ID]** の値を書き留めます。
-
-4. **[新しいキーの追加]** をクリックします。 次の画面で、**[キー]** の値を書き留めます。 このページから離れると、この情報に再度アクセスすることはできません。 詳しくは、「[Azure AD アプリケーションを追加して管理する](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)」でキーの管理に関する情報をご覧ください。
+4. <span data-ttu-id="ed065-132">**[新しいキーの追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="ed065-132">Click **Add new key**.</span></span> <span data-ttu-id="ed065-133">次の画面で、**[キー]** の値を書き留めます。</span><span class="sxs-lookup"><span data-stu-id="ed065-133">On the following screen, copy down the **Key** value.</span></span> <span data-ttu-id="ed065-134">このページから離れると、この情報に再度アクセスすることはできません。</span><span class="sxs-lookup"><span data-stu-id="ed065-134">You won't be able to access this info again after you leave this page.</span></span> <span data-ttu-id="ed065-135">詳しくは、「[Azure AD アプリケーションのキーを管理する方法](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="ed065-135">For more information, see [Manage keys for an Azure AD application](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys).</span></span>
 
 <span id="obtain-an-azure-ad-access-token" />
-## <a name="step-2-obtain-an-azure-ad-access-token"></a>手順 2: Azure AD のアクセス トークンを取得する
+## <a name="step-2-obtain-an-azure-ad-access-token"></a><span data-ttu-id="ed065-136">手順 2: Azure AD のアクセス トークンを取得する</span><span class="sxs-lookup"><span data-stu-id="ed065-136">Step 2: Obtain an Azure AD access token</span></span>
 
-Windows ストア レビュー API の任意のメソッドを呼び出す前に、API 内の各メソッドの **Authorization** ヘッダーに渡す Azure AD アクセス トークンをまず取得する必要があります アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れた後は、トークンを更新してそれ以降の API 呼び出しで引き続き使用できます。
+<span data-ttu-id="ed065-137">Windows ストア レビュー API の任意のメソッドを呼び出す前に、API 内の各メソッドの **Authorization** ヘッダーに渡す Azure AD アクセス トークンをまず取得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ed065-137">Before you call any of the methods in the Windows Store reviews API, you must first obtain an Azure AD access token that you pass to the **Authorization** header of each method in the API.</span></span> <span data-ttu-id="ed065-138">アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。</span><span class="sxs-lookup"><span data-stu-id="ed065-138">After you obtain an access token, you have 60 minutes to use it before it expires.</span></span> <span data-ttu-id="ed065-139">トークンの有効期限が切れた後は、トークンを更新してそれ以降の API 呼び出しで引き続き使用できます。</span><span class="sxs-lookup"><span data-stu-id="ed065-139">After the token expires, you can refresh the token so you can continue to use it in further calls to the API.</span></span>
 
-アクセス トークンを取得するには、「[クライアント資格情報を使用したサービス間の呼び出し](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/)」の手順に従って、HTTP POST を ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` エンドポイントに送信します。 要求の例を次に示します。
+<span data-ttu-id="ed065-140">アクセス トークンを取得するには、「[クライアント資格情報を使用したサービス間の呼び出し](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/)」の手順に従って、HTTP POST を ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` エンドポイントに送信します。</span><span class="sxs-lookup"><span data-stu-id="ed065-140">To obtain the access token, follow the instructions in [Service to Service Calls Using Client Credentials](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) to send an HTTP POST to the ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` endpoint.</span></span> <span data-ttu-id="ed065-141">要求の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="ed065-141">Here is a sample request.</span></span>
 
 ```syntax
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
@@ -67,27 +67,26 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-POST URI の *tenant\_id* の値と *client \_id* および *client \_secret* のパラメーターには、前のセクションでデベロッパー センターから取得したテナント ID、クライアント ID、キーを指定します。 *resource* パラメーターには、```https://manage.devcenter.microsoft.com``` を指定します。
+<span data-ttu-id="ed065-142">POST URI の *tenant\_id* の値と *client \_id* および *client \_secret* のパラメーターには、前のセクションでデベロッパー センターから取得したテナント ID、クライアント ID、キーを指定します。</span><span class="sxs-lookup"><span data-stu-id="ed065-142">For the *tenant\_id* value in the POST URI and the *client\_id* and *client\_secret* parameters, specify the tenant ID, client ID and the key for your application that you retrieved from Dev Center in the previous section.</span></span> <span data-ttu-id="ed065-143">*resource* パラメーターには、```https://manage.devcenter.microsoft.com``` を指定します。</span><span class="sxs-lookup"><span data-stu-id="ed065-143">For the *resource* parameter, you must specify ```https://manage.devcenter.microsoft.com```.</span></span>
 
-アクセス トークンの有効期限が切れた後は、[この](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)手順に従って更新できます。
+<span data-ttu-id="ed065-144">アクセス トークンの有効期限が切れた後は、[この](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)手順に従って更新できます。</span><span class="sxs-lookup"><span data-stu-id="ed065-144">After your access token expires, you can refresh it by following the instructions [here](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens).</span></span>
 
 <span id="call-the-windows-store-reviews-api" />
-## <a name="step-3-call-the-windows-store-reviews-api"></a>手順 3: Windows ストア レビュー API を呼び出す
+## <a name="step-3-call-the-windows-store-reviews-api"></a><span data-ttu-id="ed065-145">手順 3: Windows ストア レビュー API を呼び出す</span><span class="sxs-lookup"><span data-stu-id="ed065-145">Step 3: Call the Windows Store reviews API</span></span>
 
-Azure AD アクセス トークンを取得したら、Windows ストア レビュー API を呼び出すことができます。 各メソッドの **Authorization** ヘッダーにアクセス トークンを渡す必要があります。
+<span data-ttu-id="ed065-146">Azure AD アクセス トークンを取得したら、Windows ストア レビュー API を呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="ed065-146">After you have an Azure AD access token, you are ready to call the Windows Store reviews API.</span></span> <span data-ttu-id="ed065-147">各メソッドの **Authorization** ヘッダーにアクセス トークンを渡す必要があります。</span><span class="sxs-lookup"><span data-stu-id="ed065-147">You must pass the access token to the **Authorization** header of each method.</span></span>
 
-Windows ストア レビュー API には、特定のレビューに返信できるかどうか、および 1 つまたは複数のレビューに返信を提出することができるかどうかの判断に使えるメソッドがいくつか含まれています。 この API を使用するには次のプロセスに従います。
+<span data-ttu-id="ed065-148">Windows ストア レビュー API には、特定のレビューに返信できるかどうか、および 1 つまたは複数のレビューに返信を提出することができるかどうかの判断に使えるメソッドがいくつか含まれています。</span><span class="sxs-lookup"><span data-stu-id="ed065-148">The Windows Store reviews API contains several methods you can use to determine whether you are allowed to respond to a given review and to submit responses to one or more reviews.</span></span> <span data-ttu-id="ed065-149">この API を使用するには次のプロセスに従います。</span><span class="sxs-lookup"><span data-stu-id="ed065-149">Follow this process to use this API:</span></span>
 
-1. 返信するレビューの ID を取得します。 レビュー ID は、Windows ストア分析 API の[アプリ レビューの取得](get-app-reviews.md)メソッドの応答データ、および[レビュー レポート](../publish/reviews-report.md)の[オフライン ダウンロード](../publish/download-analytic-reports.md)で入手できます。
-2. レビューに返信できるかどうかを判断するには、[アプリのレビューへの返信情報の取得](get-response-info-for-app-reviews.md)メソッドを呼び出します。 顧客はレビューを送信するときに、レビューへの返信を受け取らないことを選択できます。 レビューの返信を受け取らないことを選択している顧客が送信したレビューに返信することはできません。
-3. プラグラムでレビューに返信するには、[アプリ レビューへの返信の提出](submit-responses-to-app-reviews.md)メソッドを呼び出します。
+1. <span data-ttu-id="ed065-150">返信するレビューの ID を取得します。</span><span class="sxs-lookup"><span data-stu-id="ed065-150">Get the IDs of the reviews you want to respond to.</span></span> <span data-ttu-id="ed065-151">レビュー ID は、Windows ストア分析 API の[アプリ レビューの取得](get-app-reviews.md)メソッドの応答データ、および[レビュー レポート](../publish/reviews-report.md)の[オフライン ダウンロード](../publish/download-analytic-reports.md)で入手できます。</span><span class="sxs-lookup"><span data-stu-id="ed065-151">Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Windows Store analytics API and in the [offline download](../publish/download-analytic-reports.md) of the [Reviews report](../publish/reviews-report.md).</span></span>
+2. <span data-ttu-id="ed065-152">レビューに返信できるかどうかを判断するには、[アプリのレビューへの返信情報の取得](get-response-info-for-app-reviews.md)メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="ed065-152">Call the [get response info for app reviews](get-response-info-for-app-reviews.md) method to determine whether you are allowed to respond to the reviews.</span></span> <span data-ttu-id="ed065-153">顧客はレビューを送信するときに、レビューへの返信を受け取らないことを選択できます。</span><span class="sxs-lookup"><span data-stu-id="ed065-153">When a customer submits a review, they can choose not to receive responses to their review.</span></span> <span data-ttu-id="ed065-154">レビューの返信を受け取らないことを選択している顧客が送信したレビューに返信することはできません。</span><span class="sxs-lookup"><span data-stu-id="ed065-154">You cannot respond to reviews submitted by customers who have chosen not to receive review responses.</span></span>
+3. <span data-ttu-id="ed065-155">プラグラムでレビューに返信するには、[アプリ レビューへの返信の提出](submit-responses-to-app-reviews.md)メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="ed065-155">Call the [submit responses to app reviews](submit-responses-to-app-reviews.md) method to programmatically respond to the reviews.</span></span>
 
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="ed065-156">関連トピック</span><span class="sxs-lookup"><span data-stu-id="ed065-156">Related topics</span></span>
 
-* [アプリのレビューの取得](get-app-reviews.md)
-* [アプリのレビューへの返信情報の取得](get-response-info-for-app-reviews.md)
-* [アプリのレビューへの返信の提出](submit-responses-to-app-reviews.md)
+* [<span data-ttu-id="ed065-157">アプリのレビューの取得</span><span class="sxs-lookup"><span data-stu-id="ed065-157">Get app reviews</span></span>](get-app-reviews.md)
+* [<span data-ttu-id="ed065-158">アプリのレビューへの返信情報の取得</span><span class="sxs-lookup"><span data-stu-id="ed065-158">Get response info for app reviews</span></span>](get-response-info-for-app-reviews.md)
+* [<span data-ttu-id="ed065-159">アプリのレビューへの返信の提出</span><span class="sxs-lookup"><span data-stu-id="ed065-159">Submit responses to app reviews</span></span>](submit-responses-to-app-reviews.md)
 
  
-

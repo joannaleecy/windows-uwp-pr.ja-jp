@@ -1,31 +1,30 @@
 ---
-author: Xansky
+author: normesta
 description: "Windows.ApplicationModel.Appointments 名前空間を使うと、ユーザーのカレンダー アプリで予定の作成と管理を行うことができます。"
 title: "予定の管理"
 ms.assetid: 292E9249-07C3-4791-B32C-6EC153C2B538
-ms.author: mhopkins
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 予定, カレンダー"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8fe8c0172d50cfe65bc8e695ffeb6899a228bdd2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d4bc4832dd489508eabbddd486f782ac8b0191a3
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
+# <a name="manage-appointments"></a><span data-ttu-id="c59df-104">予定の管理</span><span class="sxs-lookup"><span data-stu-id="c59df-104">Manage appointments</span></span>
 
-# <a name="manage-appointments"></a>予定の管理
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
+<span data-ttu-id="c59df-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="c59df-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="c59df-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]</span><span class="sxs-lookup"><span data-stu-id="c59df-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
 
-[**Windows.ApplicationModel.Appointments**](https://msdn.microsoft.com/library/windows/apps/Dn263359) 名前空間を使うと、ユーザーのカレンダー アプリで予定の作成と管理を行うことができます。 ここでは、予定を作成してカレンダー アプリに追加し、カレンダー アプリで置換して、カレンダー アプリから削除する方法を示します。 さらに、カレンダー アプリの一定の期間を表示し、予定の繰り返しオブジェクトを作る方法も示します。
+<span data-ttu-id="c59df-107">[**Windows.ApplicationModel.Appointments**](https://msdn.microsoft.com/library/windows/apps/Dn263359) 名前空間を使うと、ユーザーのカレンダー アプリで予定の作成と管理を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="c59df-107">Through the [**Windows.ApplicationModel.Appointments**](https://msdn.microsoft.com/library/windows/apps/Dn263359) namespace, you can create and manage appointments in a user's calendar app.</span></span> <span data-ttu-id="c59df-108">ここでは、予定を作成してカレンダー アプリに追加し、カレンダー アプリで置換して、カレンダー アプリから削除する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="c59df-108">Here, we'll show you how to create an appointment, add it to a calendar app, replace it in the calendar app, and remove it from the calendar app.</span></span> <span data-ttu-id="c59df-109">さらに、カレンダー アプリの一定の期間を表示し、予定の繰り返しオブジェクトを作る方法も示します。</span><span class="sxs-lookup"><span data-stu-id="c59df-109">We'll also show how to display a time span for a calendar app and create an appointment-recurrence object.</span></span>
 
-## <a name="create-an-appointment-and-apply-data-to-it"></a>予定を作成してデータを適用する
+## <a name="create-an-appointment-and-apply-data-to-it"></a><span data-ttu-id="c59df-110">予定を作成してデータを適用する</span><span class="sxs-lookup"><span data-stu-id="c59df-110">Create an appointment and apply data to it</span></span>
 
-[**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) オブジェクトを作成し、変数に割り当てます。 次に、ユーザーが UI を通じて提供した予定のプロパティを **Appointment** に適用します。
+<span data-ttu-id="c59df-111">[**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) オブジェクトを作成し、変数に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="c59df-111">Create a [**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) object and assign it to a variable.</span></span> <span data-ttu-id="c59df-112">次に、ユーザーが UI を通じて提供した予定のプロパティを **Appointment** に適用します。</span><span class="sxs-lookup"><span data-stu-id="c59df-112">Then, apply to the **Appointment** the appointment properties that were supplied through the UI by a user.</span></span>
 
 ```cs
 private void Create-Click(object sender, RoutedEventArgs e)
@@ -257,9 +256,9 @@ private void Create-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <a name="add-an-appointment-to-the-users-calendar"></a>予定をユーザーのカレンダーに追加する
+## <a name="add-an-appointment-to-the-users-calendar"></a><span data-ttu-id="c59df-113">予定をユーザーのカレンダーに追加する</span><span class="sxs-lookup"><span data-stu-id="c59df-113">Add an appointment to the user's calendar</span></span>
 
-[**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) オブジェクトを作成し、変数に割り当てます。 次に、[**AppointmentManager.ShowAddAppointmentAsync(Appointment, Rect, Placement)**](https://msdn.microsoft.com/library/windows/apps/dn297261) メソッドを呼び出して、既定の予定プロバイダーの予定追加 UI を表示し、ユーザーが予定を追加できるようにします。 ユーザーが **[追加]** をクリックした場合、このサンプルは **ShowAddAppointmentAsync** によって返された予定識別子を出力します。
+<span data-ttu-id="c59df-114">[**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) オブジェクトを作成し、変数に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="c59df-114">Create a [**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) object and assign it to a variable.</span></span> <span data-ttu-id="c59df-115">次に、[**AppointmentManager.ShowAddAppointmentAsync(Appointment, Rect, Placement)**](https://msdn.microsoft.com/library/windows/apps/dn297261) メソッドを呼び出して、既定の予定プロバイダーの予定追加 UI を表示し、ユーザーが予定を追加できるようにします。</span><span class="sxs-lookup"><span data-stu-id="c59df-115">Then, call the [**AppointmentManager.ShowAddAppointmentAsync(Appointment, Rect, Placement)**](https://msdn.microsoft.com/library/windows/apps/dn297261) method to show the default appointments provider add-appointment UI, to enable the user to add an appointment.</span></span> <span data-ttu-id="c59df-116">ユーザーが **[追加]** をクリックした場合、このサンプルは **ShowAddAppointmentAsync** によって返された予定識別子を出力します。</span><span class="sxs-lookup"><span data-stu-id="c59df-116">If the user clicked **Add**, the sample prints the appointment identifier that **ShowAddAppointmentAsync** returned.</span></span>
 
 ```cs
 private async void Add-Click(object sender, RoutedEventArgs e)
@@ -286,11 +285,11 @@ private async void Add-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**注**  Windows Phone ストア アプリでは、[**ShowAddAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) は [**ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) と同じように機能し、予定を追加するための編集可能なダイアログが表示されます。
+<span data-ttu-id="c59df-117">**注**  Windows Phone ストア アプリでは、[**ShowAddAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) は [**ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) と同じように機能し、予定を追加するための編集可能なダイアログが表示されます。</span><span class="sxs-lookup"><span data-stu-id="c59df-117">**Note**  For Windows Phone Store apps, [**ShowAddAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) functions just like [**ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) in that the dialog displayed for adding the appointment is editable.</span></span>
 
-## <a name="replace-an-appointment-in-the-users-calendar"></a>ユーザーのカレンダーで予定を置換する
+## <a name="replace-an-appointment-in-the-users-calendar"></a><span data-ttu-id="c59df-118">ユーザーのカレンダーで予定を置換する</span><span class="sxs-lookup"><span data-stu-id="c59df-118">Replace an appointment in the user's calendar</span></span>
 
-[**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) オブジェクトを作成し、変数に割り当てます。 次に、該当する [**AppointmentManager.ShowReplaceAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showreplaceappointmentasync) メソッドを呼び出して、既定の予定プロバイダーの予定置換 UI を表示し、ユーザーが予定を置換できるようにします。 ユーザーは、置換する予定識別子も指定します。 この識別子は、[**AppointmentManager.ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) から返されたものです。 ユーザーが **[置換]** をクリックした場合、このサンプルは更新されたその予定識別子を出力します。
+<span data-ttu-id="c59df-119">[**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) オブジェクトを作成し、変数に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="c59df-119">Create a [**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) object and assign it to a variable.</span></span> <span data-ttu-id="c59df-120">次に、該当する [**AppointmentManager.ShowReplaceAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showreplaceappointmentasync) メソッドを呼び出して、既定の予定プロバイダーの予定置換 UI を表示し、ユーザーが予定を置換できるようにします。</span><span class="sxs-lookup"><span data-stu-id="c59df-120">Then, call the appropriate [**AppointmentManager.ShowReplaceAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showreplaceappointmentasync) method to show the default appointments provider replace-appointment UI to enable the user to replace an appointment.</span></span> <span data-ttu-id="c59df-121">ユーザーは、置換する予定識別子も指定します。</span><span class="sxs-lookup"><span data-stu-id="c59df-121">The user also provides the appointment identifier that they want to replace.</span></span> <span data-ttu-id="c59df-122">この識別子は、[**AppointmentManager.ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) から返されたものです。</span><span class="sxs-lookup"><span data-stu-id="c59df-122">This identifier was returned from [**AppointmentManager.ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync).</span></span> <span data-ttu-id="c59df-123">ユーザーが **[置換]** をクリックした場合、このサンプルは更新されたその予定識別子を出力します。</span><span class="sxs-lookup"><span data-stu-id="c59df-123">If the user clicked **Replace**, the sample prints that it updated that appointment identifier.</span></span>
 
 ```cs
 private async void Replace-Click(object sender, RoutedEventArgs e)
@@ -342,9 +341,9 @@ private async void Replace-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <a name="remove-an-appointment-from-the-users-calendar"></a>ユーザーのカレンダーから予定を削除する
+## <a name="remove-an-appointment-from-the-users-calendar"></a><span data-ttu-id="c59df-124">ユーザーのカレンダーから予定を削除する</span><span class="sxs-lookup"><span data-stu-id="c59df-124">Remove an appointment from the user's calendar</span></span>
 
-該当する [**AppointmentManager.ShowRemoveAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showremoveappointmentasync) メソッドを呼び出して、既定の予定プロバイダーの予定削除 UI を表示し、ユーザーが予定を削除できるようにします。 ユーザーは、削除する予定識別子も指定します。 この識別子は、[**AppointmentManager.ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) から返されたものです。 ユーザーが **[削除]** をクリックした場合、このサンプルは、その予定識別子により指定された予定が削除されたことを出力します。
+<span data-ttu-id="c59df-125">該当する [**AppointmentManager.ShowRemoveAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showremoveappointmentasync) メソッドを呼び出して、既定の予定プロバイダーの予定削除 UI を表示し、ユーザーが予定を削除できるようにします。</span><span class="sxs-lookup"><span data-stu-id="c59df-125">Call the appropriate [**AppointmentManager.ShowRemoveAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showremoveappointmentasync) method to show the default appointments provider remove-appointment UI, to enable the user to remove an appointment.</span></span> <span data-ttu-id="c59df-126">ユーザーは、削除する予定識別子も指定します。</span><span class="sxs-lookup"><span data-stu-id="c59df-126">The user also provides the appointment identifier that they want to remove.</span></span> <span data-ttu-id="c59df-127">この識別子は、[**AppointmentManager.ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) から返されたものです。</span><span class="sxs-lookup"><span data-stu-id="c59df-127">This identifier was returned from [**AppointmentManager.ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync).</span></span> <span data-ttu-id="c59df-128">ユーザーが **[削除]** をクリックした場合、このサンプルは、その予定識別子により指定された予定が削除されたことを出力します。</span><span class="sxs-lookup"><span data-stu-id="c59df-128">If the user clicked **Delete**, the sample prints that it removed the appointment specified by that appointment identifier.</span></span>
 
 ```cs
 private async void Remove-Click(object sender, RoutedEventArgs e)
@@ -392,9 +391,9 @@ private async void Remove-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <a name="show-a-time-span-for-the-appointments-provider"></a>予定プロバイダーの一定の期間を表示する
+## <a name="show-a-time-span-for-the-appointments-provider"></a><span data-ttu-id="c59df-129">予定プロバイダーの一定の期間を表示する</span><span class="sxs-lookup"><span data-stu-id="c59df-129">Show a time span for the appointments provider</span></span>
 
-ユーザーが **[表示]** をクリックした場合、[**AppointmentManager.ShowTimeFrameAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showtimeframeasync) メソッドを呼び出して、既定の予定プロバイダーのプライマリ UI の一定期間を表示します。 このサンプルは、既定の予定プロバイダーが画面に表示されたことを出力します。
+<span data-ttu-id="c59df-130">ユーザーが **[表示]** をクリックした場合、[**AppointmentManager.ShowTimeFrameAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showtimeframeasync) メソッドを呼び出して、既定の予定プロバイダーのプライマリ UI の一定期間を表示します。</span><span class="sxs-lookup"><span data-stu-id="c59df-130">Call the [**AppointmentManager.ShowTimeFrameAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showtimeframeasync) method to show a specific time span for the default appointments provider's primary UI if the user clicked **Show**.</span></span> <span data-ttu-id="c59df-131">このサンプルは、既定の予定プロバイダーが画面に表示されたことを出力します。</span><span class="sxs-lookup"><span data-stu-id="c59df-131">The sample prints that the default appointments provider appeared on screen.</span></span>
 
 ```cs
 private async void Show-Click(object sender, RoutedEventArgs e)
@@ -406,9 +405,9 @@ private async void Show-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <a name="create-an-appointment-recurrence-object-and-apply-data-to-it"></a>予定の繰り返しオブジェクトを作成してデータを適用する
+## <a name="create-an-appointment-recurrence-object-and-apply-data-to-it"></a><span data-ttu-id="c59df-132">予定の繰り返しオブジェクトを作成してデータを適用する</span><span class="sxs-lookup"><span data-stu-id="c59df-132">Create an appointment-recurrence object and apply data to it</span></span>
 
-[**Windows.ApplicationModel.Appointments.AppointmentRecurrence**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentrecurrence) オブジェクトを作成し、変数に割り当てます。 次に、ユーザーが UI を通じて提供した繰り返しのプロパティを **AppointmentRecurrence** に適用します。
+<span data-ttu-id="c59df-133">[**Windows.ApplicationModel.Appointments.AppointmentRecurrence**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentrecurrence) オブジェクトを作成し、変数に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="c59df-133">Create an [**Windows.ApplicationModel.Appointments.AppointmentRecurrence**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentrecurrence) object and assign it to a variable.</span></span> <span data-ttu-id="c59df-134">次に、ユーザーが UI を通じて提供した繰り返しのプロパティを **AppointmentRecurrence** に適用します。</span><span class="sxs-lookup"><span data-stu-id="c59df-134">Then, apply to the **AppointmentRecurrence** the recurrence properties that were supplied through the UI by a user.</span></span>
 
 ```cs
 private void Create-Click(object sender, RoutedEventArgs e)
@@ -509,9 +508,9 @@ private void Create-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <a name="add-a-new-editable-appointment"></a>新しい編集可能な予定を追加する
+## <a name="add-a-new-editable-appointment"></a><span data-ttu-id="c59df-135">新しい編集可能な予定を追加する</span><span class="sxs-lookup"><span data-stu-id="c59df-135">Add a new editable appointment</span></span>
 
-[**ShowEditNewAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) の動作は、基本的には [**ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) と同じです。異なるのは、予定を追加するためのダイアログが編集可能である点です。ユーザーは、予定のデータを変更したうえで保存することができます。
+<span data-ttu-id="c59df-136">[**ShowEditNewAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) の動作は、基本的には [**ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) と同じです。異なるのは、予定を追加するためのダイアログが編集可能である点です。ユーザーは、予定のデータを変更したうえで保存することができます。</span><span class="sxs-lookup"><span data-stu-id="c59df-136">[**ShowEditNewAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) works just like [**ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) except that the dialog for adding the appointment is editable so that the user can modify the appointment data before saving it.</span></span>
 
 ``` cs
 private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
@@ -544,9 +543,9 @@ private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <a name="show-appointment-details"></a>予定の詳しい情報を表示する
+## <a name="show-appointment-details"></a><span data-ttu-id="c59df-137">予定の詳しい情報を表示する</span><span class="sxs-lookup"><span data-stu-id="c59df-137">Show appointment details</span></span>
 
-[**ShowAppointmentDetailsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) は、指定された予定の詳しい情報を表示するようにシステムに働きかけます。 カレンダーを実装するアプリでは、所有下にあるカレンダー内の予定について詳しい情報を表示するときに、そのアプリをアクティブにするかどうかを選ぶことができます。 それ以外の場合、予定の詳しい情報がシステムによって表示されます。 開始日を引数として受け取るメソッドのオーバーロードが用意されており、定期的に発生する予定について、詳しい情報をいつから表示するかを指定することができます。
+<span data-ttu-id="c59df-138">[**ShowAppointmentDetailsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) は、指定された予定の詳しい情報を表示するようにシステムに働きかけます。</span><span class="sxs-lookup"><span data-stu-id="c59df-138">[**ShowAppointmentDetailsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) causes the system to show details for the specified appointment.</span></span> <span data-ttu-id="c59df-139">カレンダーを実装するアプリでは、所有下にあるカレンダー内の予定について詳しい情報を表示するときに、そのアプリをアクティブにするかどうかを選ぶことができます。</span><span class="sxs-lookup"><span data-stu-id="c59df-139">An app that implements app calendars may choose to be activated to show details for appointments in calendars it owns.</span></span> <span data-ttu-id="c59df-140">それ以外の場合、予定の詳しい情報がシステムによって表示されます。</span><span class="sxs-lookup"><span data-stu-id="c59df-140">Otherwise, the system will show the appointment details.</span></span> <span data-ttu-id="c59df-141">開始日を引数として受け取るメソッドのオーバーロードが用意されており、定期的に発生する予定について、詳しい情報をいつから表示するかを指定することができます。</span><span class="sxs-lookup"><span data-stu-id="c59df-141">An overload of the method that accepts a start date argument is provided to show details for an instance of a recurring appointment.</span></span>
 
 ```cs
 private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e)
@@ -567,14 +566,13 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 }
 ```
 
-## <a name="summary-and-next-steps"></a>要約と次のステップ
+## <a name="summary-and-next-steps"></a><span data-ttu-id="c59df-142">要約と次のステップ</span><span class="sxs-lookup"><span data-stu-id="c59df-142">Summary and next steps</span></span>
 
-これで、予定を管理する方法の基本について理解できました。 予定を管理する方法のその他の例については、GitHub から[ユニバーサル Windows アプリのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619979)をダウンロードしてください。
+<span data-ttu-id="c59df-143">これで、予定を管理する方法の基本について理解できました。</span><span class="sxs-lookup"><span data-stu-id="c59df-143">Now you have a basic understanding of how to manage appointments.</span></span> <span data-ttu-id="c59df-144">予定を管理する方法のその他の例については、GitHub から[ユニバーサル Windows アプリのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619979)をダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="c59df-144">Download the [Universal Windows app samples](http://go.microsoft.com/fwlink/p/?linkid=619979) from GitHub to see more examples of how to manage appointments.</span></span>
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="c59df-145">関連トピック</span><span class="sxs-lookup"><span data-stu-id="c59df-145">Related topics</span></span>
 
-* [予定 API のサンプル](http://go.microsoft.com/fwlink/p/?linkid=309836)
+* [<span data-ttu-id="c59df-146">予定 API のサンプル</span><span class="sxs-lookup"><span data-stu-id="c59df-146">Appointments API sample</span></span>](http://go.microsoft.com/fwlink/p/?linkid=309836)
  
 
  
-

@@ -4,72 +4,70 @@ Description: "別のアプリが知的財産権を侵害していると考えら
 title: "商標と著作権の保護"
 ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9a56c00384d494bbd38d394c464b68c0ff080fb8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 86935ae0a2fb69f22ebd48ad5e433902c41a77bb
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/21/2017
 ---
-
-# <a name="trademark-and-copyright-protection"></a>商標と著作権の保護
-
-
-別のアプリが知的財産権を侵害していると考えられる場合の対処方法について説明します。
-
-## <a name="1-how-may-i-report-an-infringement-of-my-intellectual-property-rights-within-a-windows-app"></a>1. Windows アプリ内の知的財産権が侵害されていることを報告するにはどうすればよいですか。
+# <a name="trademark-and-copyright-protection"></a><span data-ttu-id="0329f-104">商標と著作権の保護</span><span class="sxs-lookup"><span data-stu-id="0329f-104">Trademark and copyright protection</span></span>
 
 
-次の[フォーム](http://go.microsoft.com/fwlink/p/?LinkId=273879)を使用して、Windows アプリに関する著作権、商標、パブリシティー権の侵害申し立てを送信してください。 複数のアプリに関する著作権、商標権、または肖像権の侵害については、mktlegal@microsoft.com に申し立てを送信してください。 Microsoft の DMCA ポリシーについて詳しくは、[https://www.microsoft.com/info/cpyrtInfrg.aspx](http://go.microsoft.com/fwlink/p/?LinkId=626976) をご覧ください。
+<span data-ttu-id="0329f-105">別のアプリが知的財産権を侵害していると考えられる場合の対処方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="0329f-105">Learn what you can do if you think another app is infringing on your intellectual property rights.</span></span>
 
-## <a name="2-i-created-my-app-to-work-with-a-microsoft-productservice-may-i-use-the-microsoft-productservice-name-in-the-name-of-my-app"></a>2. Microsoft 製品/サービスと連携するアプリを作成しました。 アプリの名前に Microsoft 製品/サービスの名前を使用できますか。
-
-
-Microsoft では、使用しないように強くお願いします。 ただし、明らかなビジネス上の必要性があり、以下のガイドラインに従う場合は使用できます。
-
--   アプリの名前の先頭に、当該の Microsoft 製品またはサービスの名前を付けないでください。 たとえば、"Xbox Points Calculator" はアプリ名として使用できません。 "Bob's Points Calculator for Xbox" の方が望ましい名前です。 これにより、アプリが Microsoft によって配布されていないことが明らかになります。
--   アプリが Microsoft 製品またはサービスと連携して動作するように設計されたことを説明する言葉を使います。 たとえば、「連携する (works with)」、「～用の (for)」、「～用に設計された (designed for)」、および「～用に最適化された (optimized for)」はすべて、製品が Microsoft 製品またはサービスと連携して動作するように設計されていることを説明するために使用できる言葉です。 「認定 (certified)」、「公式 (official)」、「認証 (authentic)」、および「ライセンス許可 (licensed)」などの用語の使用は、法的な提携や明らかな推奨を示しているため、Microsoft との正式な商標ライセンス契約がなければ使用できません。 この状況では一般にそのような契約は利用できません。
--   Microsoft 製品/サービス名は、プレーン テキストでのみ使用してください。 装飾的なフォントやグラフィック付きで使用しないでください。
-
-詳しくは、「[Microsoft 一般商標ガイドライン](http://go.microsoft.com/fwlink/p/?LinkId=225434)」をご覧ください。
-
-## <a name="3-is-it-ok-if-i-use-the-trademarked-name-or-logo-of-another-company-in-the-title-of-my-app-or-as-part-of-the-content-of-my-app"></a>3. アプリのタイトルや、アプリのコンテンツの一部として、商標権が設定された他社の名称やロゴを使用してもよいでしょうか。
+### <a name="1-how-may-i-report-an-infringement-of-my-intellectual-property-rights-within-a-windows-app"></a><span data-ttu-id="0329f-106">1. Windows アプリ内の知的財産権が侵害されていることを報告するにはどうすればよいですか。</span><span class="sxs-lookup"><span data-stu-id="0329f-106">1. How may I report an infringement of my intellectual property rights within a Windows app?</span></span>
 
 
-他社の商標名やロゴの使用については、ご自身の商標の弁護士に相談する必要があります。 ただし、Microsoft は商標の所有者から、商標の不適切な使用に関する妥当な通知があった場合、ストアからアプリを除去します。 したがって、十分な注意を払うことを強くお勧めします。
+<span data-ttu-id="0329f-107">次の[フォーム](http://go.microsoft.com/fwlink/p/?LinkId=273879)を使用して、Windows アプリに関する著作権、商標、パブリシティー権の侵害申し立てを送信してください。</span><span class="sxs-lookup"><span data-stu-id="0329f-107">Please use the following [form](http://go.microsoft.com/fwlink/p/?LinkId=273879) to submit a copyright, trademark or publicity rights infringement complaint on a Windows app.</span></span> <span data-ttu-id="0329f-108">複数のアプリに関する著作権、商標権、または肖像権の侵害については、mktlegal@microsoft.com に申し立てを送信してください。</span><span class="sxs-lookup"><span data-stu-id="0329f-108">For copyright, trademark or publicity rights infringements complaints across multiple apps, please submit your request to mktlegal@microsoft.com.</span></span> <span data-ttu-id="0329f-109">Microsoft の DMCA ポリシーについて詳しくは、[https://www.microsoft.com/info/cpyrtInfrg.aspx](http://go.microsoft.com/fwlink/p/?LinkId=626976) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="0329f-109">If you need additional info about Microsoft’s DMCA policy, please visit: [https://www.microsoft.com/info/cpyrtInfrg.aspx](http://go.microsoft.com/fwlink/p/?LinkId=626976).</span></span>
 
-詳しくは、[米国特許商標局の商標の基本についてのページ](http://go.microsoft.com/fwlink/p/?LinkId=225271)をご覧ください。
-
-## <a name="4-may-i-use-microsofts-graphical-trademarks-logos-such-as-the-windows-flag-logo-in-my-app"></a>4. WINDOWS FLAG ロゴなどの Microsoft の図形商標 (ロゴ) をアプリに使用できますか。
+### <a name="2-i-created-my-app-to-work-with-a-microsoft-productservice-may-i-use-the-microsoft-productservice-name-in-the-name-of-my-app"></a><span data-ttu-id="0329f-110">2. Microsoft 製品/サービスと連携するアプリを作成しました。</span><span class="sxs-lookup"><span data-stu-id="0329f-110">2. I created my app to work with a Microsoft product/service.</span></span> <span data-ttu-id="0329f-111">アプリの名前に Microsoft 製品/サービスの名前を使用できますか。</span><span class="sxs-lookup"><span data-stu-id="0329f-111">May I use the Microsoft product/service name in the name of my app?</span></span>
 
 
-いいえ。 Microsoft では、サードパーティに対し、正式なライセンスによってのみ商標のロゴの使用を許可しています。 そのようなライセンスは一般にこの状況では利用できません。
+<span data-ttu-id="0329f-112">Microsoft では、使用しないように強くお願いします。</span><span class="sxs-lookup"><span data-stu-id="0329f-112">Microsoft strongly prefers that you do not.</span></span> <span data-ttu-id="0329f-113">ただし、明らかなビジネス上の必要性があり、以下のガイドラインに従う場合は使用できます。</span><span class="sxs-lookup"><span data-stu-id="0329f-113">But if there is a clear business necessity, you may do so if you follow these guidelines:</span></span>
 
-詳細については、[米国特許商標局の商標の基本についてのページ](http://go.microsoft.com/fwlink/p/?LinkId=225271)を参照するか、または[米国著作権局の著作権の基本についてのページ](http://go.microsoft.com/fwlink/p/?LinkID=225273)をダウンロードしてください。
+-   <span data-ttu-id="0329f-114">アプリの名前の先頭に、当該の Microsoft 製品またはサービスの名前を付けないでください。</span><span class="sxs-lookup"><span data-stu-id="0329f-114">The name of your app should not begin with the Microsoft product or service name at issue.</span></span> <span data-ttu-id="0329f-115">たとえば、"Xbox Points Calculator" はアプリ名として使用できません。</span><span class="sxs-lookup"><span data-stu-id="0329f-115">For example, "Xbox Points Calculator" should not be used as an app name.</span></span> <span data-ttu-id="0329f-116">"Bob's Points Calculator for Xbox" の方が望ましい名前です。</span><span class="sxs-lookup"><span data-stu-id="0329f-116">"Bob’s Points Calculator for Xbox" is a better name.</span></span> <span data-ttu-id="0329f-117">これにより、アプリが Microsoft によって配布されていないことが明らかになります。</span><span class="sxs-lookup"><span data-stu-id="0329f-117">This makes it clear that the app is not distributed by Microsoft.</span></span>
+-   <span data-ttu-id="0329f-118">アプリが Microsoft 製品またはサービスと連携して動作するように設計されたことを説明する言葉を使います。</span><span class="sxs-lookup"><span data-stu-id="0329f-118">Use language that explains that your app was designed to work in conjunction with a Microsoft product or service.</span></span> <span data-ttu-id="0329f-119">たとえば、「連携する (works with)」、「～用の (for)」、「～用に設計された (designed for)」、および「～用に最適化された (optimized for)」はすべて、製品が Microsoft 製品またはサービスと連携して動作するように設計されていることを説明するために使用できる言葉です。</span><span class="sxs-lookup"><span data-stu-id="0329f-119">For example, "works with," "for," "designed for," and "optimized for" are all acceptable terms to explain that your product is designed to work in conjunction with a Microsoft product or service.</span></span> <span data-ttu-id="0329f-120">「認定 (certified)」、「公式 (official)」、「認証 (authentic)」、および「ライセンス許可 (licensed)」などの用語の使用は、法的な提携や明らかな推奨を示しているため、Microsoft との正式な商標ライセンス契約がなければ使用できません。</span><span class="sxs-lookup"><span data-stu-id="0329f-120">Use of terms such as "certified," "official," "authentic," and "licensed" imply legal affiliation or overt endorsement and thus must not be used absent a formal trademark license agreement with Microsoft.</span></span> <span data-ttu-id="0329f-121">この状況では一般にそのような契約は利用できません。</span><span class="sxs-lookup"><span data-stu-id="0329f-121">Such agreements are typically not available in this context.</span></span>
+-   <span data-ttu-id="0329f-122">Microsoft 製品/サービス名は、プレーン テキストでのみ使用してください。</span><span class="sxs-lookup"><span data-stu-id="0329f-122">Use the Microsoft product/service name only in plain text.</span></span> <span data-ttu-id="0329f-123">装飾的なフォントやグラフィック付きで使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="0329f-123">Do not use any fancy fonts or accompanying graphics.</span></span>
 
-## <a name="5-do-i-need-to-use-registered--or-trademark--symbols-when-i-refer-to-a-microsoft-trademark-in-my-app-and-must-i-when-using-a-microsoft-trademark-place-a-trademark-attribution-notice-in-my-app-for-example-microsoft-is-a-registered-trademark-of-the-microsoft-corporation"></a>5. アプリで Microsoft の商標を表記する場合、登録商標記号 ® または商標記号 ™ を使用する必要がありますか。 さらに、Microsoft の商標を使用する場合、アプリに、「Microsoft は米国 Microsoft Corporation の登録商標です」などの商標の帰属に関する通知を入れる必要がありますか。
+<span data-ttu-id="0329f-124">詳しくは、「[Microsoft 一般商標ガイドライン](http://go.microsoft.com/fwlink/p/?LinkId=225434)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="0329f-124">For more information, see [General Microsoft Trademark Guidelines](http://go.microsoft.com/fwlink/p/?LinkId=225434).</span></span>
 
-
-これらの記号や帰属に関する通知を含める法的要件はありませんが、そうしていただければさいわいです。
-
-## <a name="6-is-it-ok-if-i-make-a-game-that-is-identical-to-someone-elses-game-as-long-as-i-change-the-name"></a>6. 名前を変えれば、他人のゲームとまったく同じゲームを作成しても問題ないでしょうか。
-
-
-いいえ、許可がなければできません。 著作権ではゲームのアイデアを保護していませんが、オリジナルの視聴覚要素、グラフィック、サウンド、キャラクターなどのゲーム内でのオリジナルの表現、これらの要素のオリジナルの選択や配置を保護しています。 だれかのゲームに著しく似ているゲームは、著作権違反の申し立ての対象となる可能性があります。 Microsoft ではこの問題に関する助言ができないため、ゲームが酷似しているかどうか確かでない場合は、ご自身の弁護士に相談していただく必要がある可能性があります。 詳しくは、[米国著作権局の著作権の基本についてのページ](http://go.microsoft.com/fwlink/p/?LinkID=225273)をご覧ください。
-
-## <a name="7-what-should-i-do-if-i-get-a-notice-from-microsoft-telling-me-it-has-received-a-complaint-that-my-app-infringes-a-trademark-or-copyright"></a>7. Microsoft から、アプリが商標権や著作権を侵害しているという申し立てがあったことを伝える通知を受け取った場合、どうすればよいですか。
+### <a name="3-is-it-ok-if-i-use-the-trademarked-name-or-logo-of-another-company-in-the-title-of-my-app-or-as-part-of-the-content-of-my-app"></a><span data-ttu-id="0329f-125">3. アプリのタイトルや、アプリのコンテンツの一部として、商標権が設定された他社の名称やロゴを使用してもよいでしょうか。</span><span class="sxs-lookup"><span data-stu-id="0329f-125">3. Is it OK if I use the trademarked name or logo of another company in the title of my app or as part of the content of my app?</span></span>
 
 
-Microsoft からの通知を注意深く読み、指示に従ってください。 Microsoft からの通知には、問題を修正するために行った処置、申立人への不合意、ストアへのアプリの再申請の要求を通知するために従う具体的な手順が記載されていることがあります。
+<span data-ttu-id="0329f-126">他社の商標名やロゴの使用については、ご自身の商標の弁護士に相談する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0329f-126">You need to consult your own trademark counsel about the use of a trademarked name or logo of another company.</span></span> <span data-ttu-id="0329f-127">ただし、Microsoft は商標の所有者から、商標の不適切な使用に関する妥当な通知があった場合、ストアからアプリを除去します。</span><span class="sxs-lookup"><span data-stu-id="0329f-127">However, Microsoft will take apps off the Store upon proper notice from trademark owners regarding misuse of their trademarks.</span></span> <span data-ttu-id="0329f-128">したがって、十分な注意を払うことを強くお勧めします。</span><span class="sxs-lookup"><span data-stu-id="0329f-128">Accordingly, we strongly urge you to exercise adequate due diligence.</span></span>
 
- 
+<span data-ttu-id="0329f-129">詳しくは、[米国特許商標局の商標の基本についてのページ](http://go.microsoft.com/fwlink/p/?LinkId=225271)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="0329f-129">For more information, see [U.S. Patent and Trademark Office: Trademark Basics](http://go.microsoft.com/fwlink/p/?LinkId=225271).</span></span>
+
+### <a name="4-may-i-use-microsofts-graphical-trademarks-logos-such-as-the-windows-flag-logo-in-my-app"></a><span data-ttu-id="0329f-130">4. WINDOWS FLAG ロゴなどの Microsoft の図形商標 (ロゴ) をアプリに使用できますか。</span><span class="sxs-lookup"><span data-stu-id="0329f-130">4. May I use Microsoft’s graphical trademarks (logos), such as the WINDOWS FLAG logo, in my app?</span></span>
+
+
+<span data-ttu-id="0329f-131">いいえ。</span><span class="sxs-lookup"><span data-stu-id="0329f-131">No.</span></span> <span data-ttu-id="0329f-132">Microsoft では、サードパーティに対し、正式なライセンスによってのみ商標のロゴの使用を許可しています。</span><span class="sxs-lookup"><span data-stu-id="0329f-132">Microsoft allows third parties to use its trademarked logos only via formal license.</span></span> <span data-ttu-id="0329f-133">そのようなライセンスは一般にこの状況では利用できません。</span><span class="sxs-lookup"><span data-stu-id="0329f-133">Such a license is typically not available in this context.</span></span>
+
+<span data-ttu-id="0329f-134">詳細については、[米国特許商標局の商標の基本についてのページ](http://go.microsoft.com/fwlink/p/?LinkId=225271)を参照するか、または[米国著作権局の著作権の基本についてのページ](http://go.microsoft.com/fwlink/p/?LinkID=225273)をダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="0329f-134">For more information, see [U.S. Patent and Trademark Office: Trademark Basics](http://go.microsoft.com/fwlink/p/?LinkId=225271) or download [U.S. Copyright Office: Copyright Basics](http://go.microsoft.com/fwlink/p/?LinkID=225273).</span></span>
+
+### <a name="5-do-i-need-to-use-registered--or-trademark--symbols-when-i-refer-to-a-microsoft-trademark-in-my-app-and-must-i-when-using-a-microsoft-trademark-place-a-trademark-attribution-notice-in-my-app-for-example-microsoft-is-a-registered-trademark-of-the-microsoft-corporation"></a><span data-ttu-id="0329f-135">5. アプリで Microsoft の商標を表記する場合、登録商標記号 ® または商標記号 ™ を使用する必要がありますか。</span><span class="sxs-lookup"><span data-stu-id="0329f-135">5. Do I need to use registered ® or trademark ™ symbols when I refer to a Microsoft trademark in my app?</span></span> <span data-ttu-id="0329f-136">さらに、Microsoft の商標を使用する場合、アプリに、「Microsoft は米国 Microsoft Corporation の登録商標です」などの商標の帰属に関する通知を入れる必要がありますか。</span><span class="sxs-lookup"><span data-stu-id="0329f-136">And must I, when using a Microsoft trademark, place a trademark attribution notice in my app, for example, "Microsoft is a registered trademark of the Microsoft Corporation"?</span></span>
+
+
+<span data-ttu-id="0329f-137">これらの記号や帰属に関する通知を含める法的要件はありませんが、そうしていただければさいわいです。</span><span class="sxs-lookup"><span data-stu-id="0329f-137">There is no legal requirement that you include these symbols or the attribution notice, but Microsoft would greatly appreciate it if you do.</span></span>
+
+### <a name="6-is-it-ok-if-i-make-a-game-that-is-identical-to-someone-elses-game-as-long-as-i-change-the-name"></a><span data-ttu-id="0329f-138">6. 名前を変えれば、他人のゲームとまったく同じゲームを作成しても問題ないでしょうか。</span><span class="sxs-lookup"><span data-stu-id="0329f-138">6. Is it OK if I make a game that is identical to someone else’s game as long as I change the name?</span></span>
+
+
+<span data-ttu-id="0329f-139">いいえ、許可がなければできません。</span><span class="sxs-lookup"><span data-stu-id="0329f-139">No, not without permission.</span></span> <span data-ttu-id="0329f-140">著作権ではゲームのアイデアを保護していませんが、オリジナルの視聴覚要素、グラフィック、サウンド、キャラクターなどのゲーム内でのオリジナルの表現、これらの要素のオリジナルの選択や配置を保護しています。</span><span class="sxs-lookup"><span data-stu-id="0329f-140">While copyright does not protect the idea of a game, it does protect original expression in a game, such as original audiovisual elements, graphics, sounds, characters, and so on, and the original selection and arrangement of these elements.</span></span> <span data-ttu-id="0329f-141">だれかのゲームに著しく似ているゲームは、著作権違反の申し立ての対象となる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="0329f-141">A game that is too similar to someone else’s game could subject you to a claim of copyright infringement.</span></span> <span data-ttu-id="0329f-142">Microsoft ではこの問題に関する助言ができないため、ゲームが酷似しているかどうか確かでない場合は、ご自身の弁護士に相談していただく必要がある可能性があります。</span><span class="sxs-lookup"><span data-stu-id="0329f-142">Microsoft cannot give advice on this issue, and you may need to consult your own lawyer if you are unsure about whether your game is too similar.</span></span> <span data-ttu-id="0329f-143">詳しくは、[米国著作権局の著作権の基本についてのページ](http://go.microsoft.com/fwlink/p/?LinkID=225273)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="0329f-143">For more information, download [U.S. Copyright Office: Copyright Basics](http://go.microsoft.com/fwlink/p/?LinkID=225273).</span></span>
+
+### <a name="7-what-should-i-do-if-i-get-a-notice-from-microsoft-telling-me-it-has-received-a-complaint-that-my-app-infringes-a-trademark-or-copyright"></a><span data-ttu-id="0329f-144">7. Microsoft から、アプリが商標権や著作権を侵害しているという申し立てがあったことを伝える通知を受け取った場合、どうすればよいですか。</span><span class="sxs-lookup"><span data-stu-id="0329f-144">7. What should I do if I get a notice from Microsoft telling me it has received a complaint that my app infringes a trademark or copyright?</span></span>
+
+
+<span data-ttu-id="0329f-145">Microsoft からの通知を注意深く読み、指示に従ってください。</span><span class="sxs-lookup"><span data-stu-id="0329f-145">Read the notice from Microsoft carefully, and follow the instructions.</span></span> <span data-ttu-id="0329f-146">Microsoft からの通知には、問題を修正するために行った処置、申立人への不合意、ストアへのアプリの再申請の要求を通知するために従う具体的な手順が記載されていることがあります。</span><span class="sxs-lookup"><span data-stu-id="0329f-146">The notice from Microsoft may include specific steps you may follow to inform us what you have done to correct the problem, that you disagree with the claimant, and/or that you want to resubmit your app to the Store.</span></span>
 
  
 
+ 
 
 
 

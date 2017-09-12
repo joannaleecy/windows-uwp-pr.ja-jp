@@ -1,28 +1,25 @@
 ---
 author: mcleanbyron
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
-description: "Windows デベロッパー センター アカウントに登録されているアプリのデータを取得するには、Windows ストア申請 API 内のこれらのメソッドを使用します。"
-title: "Windows ストア申請 API を使用したアプリ データの取得"
+description: "Windows デベロッパー センター アカウントに登録されているアプリのデータを取得するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "アプリ データの取得"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア申請 API, アプリ データ"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 756f11cdc440a891658c2311cc61199dec3d6d1f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0bb01250756c464113570ece433afe11506a5399
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/04/2017
 ---
+# <a name="get-app-data"></a><span data-ttu-id="b9296-104">アプリ データの取得</span><span class="sxs-lookup"><span data-stu-id="b9296-104">Get app data</span></span>
 
-# <a name="get-app-data-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアプリ データの取得
+<span data-ttu-id="b9296-105">Windows デベロッパー センター アカウント内の既存のアプリのデータを取得するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="b9296-105">Use the following methods in the Windows Store submission API to get data for existing apps in your Dev Center account.</span></span> <span data-ttu-id="b9296-106">Windows ストア申請 API の概要については、「[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。この API を使用するための前提条件などの情報があります。</span><span class="sxs-lookup"><span data-stu-id="b9296-106">For an introduction to the Windows Store submission API, including prerequisites for using the API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).</span></span>
 
-Windows デベロッパー センター アカウント内の既存のアプリのデータを取得するには、Windows ストア申請 API 内の次のメソッドを使用します。 Windows ストア申請 API の概要については、「[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。この API を使用するための前提条件などの情報があります。
-
->**注:**&nbsp;&nbsp;これらのメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 このアクセス許可は、開発者アカウントに対して段階的に有効になります。現時点では、すべてのアカウントでこのアクセス許可が有効になっているわけではありません。 以前のアクセス権を要求するには、デベロッパー センター ダッシュボードにログオンし、ダッシュ ボードの下部にある **[フィードバック]** をクリックします。その後、フィードバック領域で **[申請 API]** を選択し、要求を提出します。 自分のアカウントでこのアクセス許可が有効になると、メールが届きます。
-
-これらのメソッドを使う前に、アプリが既にデベロッパー センター アカウントに存在している必要があります。 アプリの申請を作成または管理する方法については、「[アプリ申請の管理](manage-app-submissions.md)」のメソッドを参照してください。
+<span data-ttu-id="b9296-107">これらのメソッドを使う前に、アプリが既にデベロッパー センター アカウントに存在している必要があります。</span><span class="sxs-lookup"><span data-stu-id="b9296-107">Before you can use these methods, the app must already exist in your Dev Center account.</span></span> <span data-ttu-id="b9296-108">アプリの申請を作成または管理する方法については、「[アプリ申請の管理](manage-app-submissions.md)」のメソッドを参照してください。</span><span class="sxs-lookup"><span data-stu-id="b9296-108">To create or manage submissions for apps, see the methods in [Manage app submissions](manage-app-submissions.md).</span></span>
 
 <table>
 <colgroup>
@@ -32,49 +29,49 @@ Windows デベロッパー センター アカウント内の既存のアプリ�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">メソッド</th>
-<th align="left">URI</th>
-<th align="left">説明</th>
+<th align="left"><span data-ttu-id="b9296-109">メソッド</span><span class="sxs-lookup"><span data-stu-id="b9296-109">Method</span></span></th>
+<th align="left"><span data-ttu-id="b9296-110">URI</span><span class="sxs-lookup"><span data-stu-id="b9296-110">URI</span></span></th>
+<th align="left"><span data-ttu-id="b9296-111">説明</span><span class="sxs-lookup"><span data-stu-id="b9296-111">Description</span></span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">GET</td>
+<td align="left"><span data-ttu-id="b9296-112">GET</span><span class="sxs-lookup"><span data-stu-id="b9296-112">GET</span></span></td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications```</td>
-<td align="left">[全アプリのデータの取得](get-all-apps.md)</td>
+<td align="left">[<span data-ttu-id="b9296-113">全アプリのデータの取得</span><span class="sxs-lookup"><span data-stu-id="b9296-113">Get data for all your apps</span></span>](get-all-apps.md)</td>
 </tr>
 <tr>
-<td align="left">GET</td>
+<td align="left"><span data-ttu-id="b9296-114">GET</span><span class="sxs-lookup"><span data-stu-id="b9296-114">GET</span></span></td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}```</td>
-<td align="left">[特定アプリのデータの取得](get-an-app.md)</td>
+<td align="left">[<span data-ttu-id="b9296-115">特定アプリのデータの取得</span><span class="sxs-lookup"><span data-stu-id="b9296-115">Get data for a specific app</span></span>](get-an-app.md)</td>
 </tr>
 <tr>
-<td align="left">GET</td>
+<td align="left"><span data-ttu-id="b9296-116">GET</span><span class="sxs-lookup"><span data-stu-id="b9296-116">GET</span></span></td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts```</td>
-<td align="left">[アプリのアドオンの入手](get-add-ons-for-an-app.md)</td>
+<td align="left">[<span data-ttu-id="b9296-117">アプリのアドオンの入手</span><span class="sxs-lookup"><span data-stu-id="b9296-117">Get add-ons for an app</span></span>](get-add-ons-for-an-app.md)</td>
 </tr>
 <tr>
-<td align="left">GET</td>
+<td align="left"><span data-ttu-id="b9296-118">GET</span><span class="sxs-lookup"><span data-stu-id="b9296-118">GET</span></span></td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights```</td>
-<td align="left">[アプリのパッケージ フライトの入手](get-flights-for-an-app.md)</td>
+<td align="left">[<span data-ttu-id="b9296-119">アプリのパッケージ フライトの入手</span><span class="sxs-lookup"><span data-stu-id="b9296-119">Get package flights for an app</span></span>](get-flights-for-an-app.md)</td>
 </tr>
 </tbody>
 </table>
 
 <span/>
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a><span data-ttu-id="b9296-120">前提条件</span><span class="sxs-lookup"><span data-stu-id="b9296-120">Prerequisites</span></span>
 
-Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)がまだ満たされていない場合は、ここに記載されているメソッドを使用する前に前提条件を整えてください。
+<span data-ttu-id="b9296-121">Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)がまだ満たされていない場合は、ここに記載されているメソッドを使用する前に前提条件を整えてください。</span><span class="sxs-lookup"><span data-stu-id="b9296-121">If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API before trying to use any of these methods.</span></span>
 
-## <a name="data-resources"></a>データ リソース
+## <a name="data-resources"></a><span data-ttu-id="b9296-122">データ リソース</span><span class="sxs-lookup"><span data-stu-id="b9296-122">Data resources</span></span>
 
-アプリ データを取得するための Windows ストア申請 API のメソッドでは、次の JSON データ リソースを使用します。
+<span data-ttu-id="b9296-123">アプリ データを取得するための Windows ストア申請 API のメソッドでは、次の JSON データ リソースを使用します。</span><span class="sxs-lookup"><span data-stu-id="b9296-123">The Windows Store submission API methods for getting app data use the following JSON data resources.</span></span>
 
 <span id="application_object" />
-### <a name="application-resource"></a>アプリケーション リソース
+### <a name="application-resource"></a><span data-ttu-id="b9296-124">アプリケーション リソース</span><span class="sxs-lookup"><span data-stu-id="b9296-124">Application resource</span></span>
 
-このリソースは、アカウントに登録されているアプリを表します。
+<span data-ttu-id="b9296-125">このリソースは、アカウントに登録されているアプリを表します。</span><span class="sxs-lookup"><span data-stu-id="b9296-125">This resource represents an app that is registered to your account.</span></span>
 
 ```json
 {
@@ -91,28 +88,30 @@ Windows ストア申請 API に関するすべての[前提条件](create-and-ma
   "pendingApplicationSubmission": {
     "id": "1152921504621243487",
     "resourceLocation": "applications/9NBLGGH4R315/submissions/1152921504621243487"
-  }
+  },
+  "hasAdvancedListingPermission": false
 }
 ```
 
-このリソースには、次の値があります。
+<span data-ttu-id="b9296-126">このリソースには、次の値があります。</span><span class="sxs-lookup"><span data-stu-id="b9296-126">This resource has the following values.</span></span>
 
-| 値           | 型    | 説明       |
+| <span data-ttu-id="b9296-127">値</span><span class="sxs-lookup"><span data-stu-id="b9296-127">Value</span></span>           | <span data-ttu-id="b9296-128">型</span><span class="sxs-lookup"><span data-stu-id="b9296-128">Type</span></span>    | <span data-ttu-id="b9296-129">説明</span><span class="sxs-lookup"><span data-stu-id="b9296-129">Description</span></span>       |
 |-----------------|---------|---------------------|
-| id            | string  | アプリのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。   |
-| primaryName   | string  | アプリのプライマリ名です。      |
-| packageFamilyName | string  | アプリのパッケージ ファミリ名です。      |
-| packageIdentityName          | string  | アプリのパッケージ ID 名です。                       |
-| publisherName       | string  | アプリに関連付けられている Windows 発行元 ID です。 これは、Windows デベロッパー センター ダッシュボードのアプリの「[アプリ ID](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」ページに表示される「**パッケージ/ID/発行者**」値と同じです。       |
-| firstPublishedDate      | string  | アプリが最初に発行された日付 (ISO 8601 形式)。   |
-| lastPublishedApplicationSubmission       | object | アプリの最後に公開された申請に関する情報を提供する[申請のリソース](#submission_object)。    |
-| pendingApplicationSubmission        | object  |  アプリの現在保留中の申請に関する情報を提供する[申請のリソース](#submission_object)。   |   |
+| <span data-ttu-id="b9296-130">id</span><span class="sxs-lookup"><span data-stu-id="b9296-130">id</span></span>            | <span data-ttu-id="b9296-131">string</span><span class="sxs-lookup"><span data-stu-id="b9296-131">string</span></span>  | <span data-ttu-id="b9296-132">アプリのストア ID です。</span><span class="sxs-lookup"><span data-stu-id="b9296-132">The Store ID of the app.</span></span> <span data-ttu-id="b9296-133">ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b9296-133">For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).</span></span>   |
+| <span data-ttu-id="b9296-134">primaryName</span><span class="sxs-lookup"><span data-stu-id="b9296-134">primaryName</span></span>   | <span data-ttu-id="b9296-135">string</span><span class="sxs-lookup"><span data-stu-id="b9296-135">string</span></span>  | <span data-ttu-id="b9296-136">アプリのプライマリ名です。</span><span class="sxs-lookup"><span data-stu-id="b9296-136">The primary name of the app.</span></span>      |
+| <span data-ttu-id="b9296-137">packageFamilyName</span><span class="sxs-lookup"><span data-stu-id="b9296-137">packageFamilyName</span></span> | <span data-ttu-id="b9296-138">string</span><span class="sxs-lookup"><span data-stu-id="b9296-138">string</span></span>  | <span data-ttu-id="b9296-139">アプリのパッケージ ファミリ名です。</span><span class="sxs-lookup"><span data-stu-id="b9296-139">The package family name of the app.</span></span>      |
+| <span data-ttu-id="b9296-140">packageIdentityName</span><span class="sxs-lookup"><span data-stu-id="b9296-140">packageIdentityName</span></span>          | <span data-ttu-id="b9296-141">string</span><span class="sxs-lookup"><span data-stu-id="b9296-141">string</span></span>  | <span data-ttu-id="b9296-142">アプリのパッケージ ID 名です。</span><span class="sxs-lookup"><span data-stu-id="b9296-142">The package identity name of the app.</span></span>                       |
+| <span data-ttu-id="b9296-143">publisherName</span><span class="sxs-lookup"><span data-stu-id="b9296-143">publisherName</span></span>       | <span data-ttu-id="b9296-144">string</span><span class="sxs-lookup"><span data-stu-id="b9296-144">string</span></span>  | <span data-ttu-id="b9296-145">アプリに関連付けられている Windows 発行元 ID です。</span><span class="sxs-lookup"><span data-stu-id="b9296-145">The Windows publisher ID that is associated with the app.</span></span> <span data-ttu-id="b9296-146">これは、Windows デベロッパー センター ダッシュボードのアプリの「[アプリ ID](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」ページに表示される「**パッケージ/ID/発行者**」値と同じです。</span><span class="sxs-lookup"><span data-stu-id="b9296-146">This corresponds to the **Package/Identity/Publisher** value that appears on the [App identity](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) page for the app in the Windows Dev Center dashboard.</span></span>       |
+| <span data-ttu-id="b9296-147">firstPublishedDate</span><span class="sxs-lookup"><span data-stu-id="b9296-147">firstPublishedDate</span></span>      | <span data-ttu-id="b9296-148">string</span><span class="sxs-lookup"><span data-stu-id="b9296-148">string</span></span>  | <span data-ttu-id="b9296-149">アプリが最初に発行された日付 (ISO 8601 形式)。</span><span class="sxs-lookup"><span data-stu-id="b9296-149">The date the app was first published, in ISO 8601 format.</span></span>   |
+| <span data-ttu-id="b9296-150">lastPublishedApplicationSubmission</span><span class="sxs-lookup"><span data-stu-id="b9296-150">lastPublishedApplicationSubmission</span></span>       | <span data-ttu-id="b9296-151">object</span><span class="sxs-lookup"><span data-stu-id="b9296-151">object</span></span> | <span data-ttu-id="b9296-152">アプリの最後に公開された申請に関する情報を提供する[申請のリソース](#submission_object)。</span><span class="sxs-lookup"><span data-stu-id="b9296-152">A [submission resource](#submission_object) that provides information about the last published submission for the app.</span></span>    |
+| <span data-ttu-id="b9296-153">pendingApplicationSubmission</span><span class="sxs-lookup"><span data-stu-id="b9296-153">pendingApplicationSubmission</span></span>        | <span data-ttu-id="b9296-154">object</span><span class="sxs-lookup"><span data-stu-id="b9296-154">object</span></span>  |  <span data-ttu-id="b9296-155">アプリの現在保留中の申請に関する情報を提供する[申請のリソース](#submission_object)。</span><span class="sxs-lookup"><span data-stu-id="b9296-155">A [submission resource](#submission_object) that provides information about the current pending submission for the app.</span></span>   |   
+| <span data-ttu-id="b9296-156">hasAdvancedListingPermission</span><span class="sxs-lookup"><span data-stu-id="b9296-156">hasAdvancedListingPermission</span></span>        | <span data-ttu-id="b9296-157">object</span><span class="sxs-lookup"><span data-stu-id="b9296-157">object</span></span>  |  <span data-ttu-id="b9296-158">アプリの申請用に [gamingOptions](manage-app-submissions.md#gaming-options-object) または[トレーラー](manage-app-submissions.md#trailer-object)を構成できるかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="b9296-158">Indicates whether you can configure the [gamingOptions](manage-app-submissions.md#gaming-options-object) or [trailers](manage-app-submissions.md#trailer-object) for submissions for the app.</span></span> <span data-ttu-id="b9296-159">詳しくは、[このセクション](manage-app-submissions.md#advanced-listings)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b9296-159">For more information, see [this section](manage-app-submissions.md#advanced-listings).</span></span> |  |
 
 
 <span id="add-on-object" />
-### <a name="add-on-resouce"></a>アドオン リソース
+### <a name="add-on-resouce"></a><span data-ttu-id="b9296-160">アドオン リソース</span><span class="sxs-lookup"><span data-stu-id="b9296-160">Add-on resouce</span></span>
 
-このリソースは、アドオンに関する情報を提供します。
+<span data-ttu-id="b9296-161">このリソースは、アドオンに関する情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="b9296-161">This resource provides information about an add-on.</span></span>
 
 ```json
 {
@@ -120,17 +119,17 @@ Windows ストア申請 API に関するすべての[前提条件](create-and-ma
 }
 ```
 
-このリソースには、次の値があります。
+<span data-ttu-id="b9296-162">このリソースには、次の値があります。</span><span class="sxs-lookup"><span data-stu-id="b9296-162">This resource has the following values.</span></span>
 
-| 値           | 型    | 説明         |
+| <span data-ttu-id="b9296-163">値</span><span class="sxs-lookup"><span data-stu-id="b9296-163">Value</span></span>           | <span data-ttu-id="b9296-164">型</span><span class="sxs-lookup"><span data-stu-id="b9296-164">Type</span></span>    | <span data-ttu-id="b9296-165">説明</span><span class="sxs-lookup"><span data-stu-id="b9296-165">Description</span></span>         |
 |-----------------|---------|----------------------|
-| inAppProductId            | string  | アドオンのストア ID です。 この値は、ストアによって提供されます。 ストア ID の例は 9NBLGGH4TNMP です。   |
+| <span data-ttu-id="b9296-166">inAppProductId</span><span class="sxs-lookup"><span data-stu-id="b9296-166">inAppProductId</span></span>            | <span data-ttu-id="b9296-167">string</span><span class="sxs-lookup"><span data-stu-id="b9296-167">string</span></span>  | <span data-ttu-id="b9296-168">アドオンのストア ID です。</span><span class="sxs-lookup"><span data-stu-id="b9296-168">The Store ID of the add-on.</span></span> <span data-ttu-id="b9296-169">この値は、ストアによって提供されます。</span><span class="sxs-lookup"><span data-stu-id="b9296-169">This value is supplied by the Store.</span></span> <span data-ttu-id="b9296-170">ストア ID の例は 9NBLGGH4TNMP です。</span><span class="sxs-lookup"><span data-stu-id="b9296-170">An example Store ID is 9NBLGGH4TNMP.</span></span>   |
 
 
 <span id="flight-object" />
-### <a name="flight-resource"></a>フライト リソース
+### <a name="flight-resource"></a><span data-ttu-id="b9296-171">フライト リソース</span><span class="sxs-lookup"><span data-stu-id="b9296-171">Flight resource</span></span>
 
-このリソースは、アプリのパッケージ フライトに関する情報を提供します。
+<span data-ttu-id="b9296-172">このリソースは、アプリのパッケージ フライトに関する情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="b9296-172">This resource provides information about a package flight for an app.</span></span>
 
 ```json
 {
@@ -151,22 +150,22 @@ Windows ストア申請 API に関するすべての[前提条件](create-and-ma
 }
 ```
 
-このリソースには、次の値があります。
+<span data-ttu-id="b9296-173">このリソースには、次の値があります。</span><span class="sxs-lookup"><span data-stu-id="b9296-173">This resource has the following values.</span></span>
 
-| 値           | 型    | 説明           |
+| <span data-ttu-id="b9296-174">値</span><span class="sxs-lookup"><span data-stu-id="b9296-174">Value</span></span>           | <span data-ttu-id="b9296-175">型</span><span class="sxs-lookup"><span data-stu-id="b9296-175">Type</span></span>    | <span data-ttu-id="b9296-176">説明</span><span class="sxs-lookup"><span data-stu-id="b9296-176">Description</span></span>           |
 |-----------------|---------|------------------------|
-| flightId            | string  | パッケージ フライトの ID。 この値は、デベロッパー センターによって提供されます。  |
-| friendlyName           | string  | 開発者によって指定されているパッケージ フライトの名前。   |
-| lastPublishedFlightSubmission       | object | パッケージ フライトの最後に公開された申請に関する情報を提供する[申請のリソース](#submission_object)。   |
-| pendingFlightSubmission        | object  |  パッケージ フライトの現在保留中の申請に関する情報を提供する[申請のリソース](#submission_object)。  |    
-| groupIds           | array  | パッケージ フライトに関連付けられているフライト グループの ID を含む文字列の配列。 フライト グループについて詳しくは、「[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)」をご覧ください。   |
-| rankHigherThan           | string  | 現在のパッケージ フライトの次に低位のパッケージ フライトのフレンドリ名。 フライト グループのランク付けについて詳しくは、「[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)」をご覧ください。  |
+| <span data-ttu-id="b9296-177">flightId</span><span class="sxs-lookup"><span data-stu-id="b9296-177">flightId</span></span>            | <span data-ttu-id="b9296-178">string</span><span class="sxs-lookup"><span data-stu-id="b9296-178">string</span></span>  | <span data-ttu-id="b9296-179">パッケージ フライトの ID。</span><span class="sxs-lookup"><span data-stu-id="b9296-179">The ID for the package flight.</span></span> <span data-ttu-id="b9296-180">この値は、デベロッパー センターによって提供されます。</span><span class="sxs-lookup"><span data-stu-id="b9296-180">This value is supplied by Dev Center.</span></span>  |
+| <span data-ttu-id="b9296-181">friendlyName</span><span class="sxs-lookup"><span data-stu-id="b9296-181">friendlyName</span></span>           | <span data-ttu-id="b9296-182">string</span><span class="sxs-lookup"><span data-stu-id="b9296-182">string</span></span>  | <span data-ttu-id="b9296-183">開発者によって指定されているパッケージ フライトの名前。</span><span class="sxs-lookup"><span data-stu-id="b9296-183">The name of the package flight, as specified by the developer.</span></span>   |
+| <span data-ttu-id="b9296-184">lastPublishedFlightSubmission</span><span class="sxs-lookup"><span data-stu-id="b9296-184">lastPublishedFlightSubmission</span></span>       | <span data-ttu-id="b9296-185">object</span><span class="sxs-lookup"><span data-stu-id="b9296-185">object</span></span> | <span data-ttu-id="b9296-186">パッケージ フライトの最後に公開された申請に関する情報を提供する[申請のリソース](#submission_object)。</span><span class="sxs-lookup"><span data-stu-id="b9296-186">A [submission resource](#submission_object) that provides information about the last published submission for the package flight.</span></span>   |
+| <span data-ttu-id="b9296-187">pendingFlightSubmission</span><span class="sxs-lookup"><span data-stu-id="b9296-187">pendingFlightSubmission</span></span>        | <span data-ttu-id="b9296-188">object</span><span class="sxs-lookup"><span data-stu-id="b9296-188">object</span></span>  |  <span data-ttu-id="b9296-189">パッケージ フライトの現在保留中の申請に関する情報を提供する[申請のリソース](#submission_object)。</span><span class="sxs-lookup"><span data-stu-id="b9296-189">A [submission resource](#submission_object) that provides information about the current pending submission for the package flight.</span></span>  |    
+| <span data-ttu-id="b9296-190">groupIds</span><span class="sxs-lookup"><span data-stu-id="b9296-190">groupIds</span></span>           | <span data-ttu-id="b9296-191">array</span><span class="sxs-lookup"><span data-stu-id="b9296-191">array</span></span>  | <span data-ttu-id="b9296-192">パッケージ フライトに関連付けられているフライト グループの ID を含む文字列の配列。</span><span class="sxs-lookup"><span data-stu-id="b9296-192">An array of strings that contain the IDs of the flight groups that are associated with the package flight.</span></span> <span data-ttu-id="b9296-193">フライト グループについて詳しくは、「[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b9296-193">For more information about flight groups, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).</span></span>   |
+| <span data-ttu-id="b9296-194">rankHigherThan</span><span class="sxs-lookup"><span data-stu-id="b9296-194">rankHigherThan</span></span>           | <span data-ttu-id="b9296-195">string</span><span class="sxs-lookup"><span data-stu-id="b9296-195">string</span></span>  | <span data-ttu-id="b9296-196">現在のパッケージ フライトの次に低位のパッケージ フライトのフレンドリ名。</span><span class="sxs-lookup"><span data-stu-id="b9296-196">The friendly name of the package flight that is ranked immediately lower than the current package flight.</span></span> <span data-ttu-id="b9296-197">フライト グループのランク付けについて詳しくは、「[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b9296-197">For more information about ranking flight groups, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).</span></span>  |
 
 
 <span id="submission_object" />
-### <a name="submission-resource"></a>申請のリソース
+### <a name="submission-resource"></a><span data-ttu-id="b9296-198">申請のリソース</span><span class="sxs-lookup"><span data-stu-id="b9296-198">Submission resource</span></span>
 
-このリソースは、申請に関する情報を提供します。 次の例は、このリソースの書式設定を示しています。
+<span data-ttu-id="b9296-199">このリソースは、申請に関する情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="b9296-199">This resource provides information about a submission.</span></span> <span data-ttu-id="b9296-200">次の例は、このリソースの書式設定を示しています。</span><span class="sxs-lookup"><span data-stu-id="b9296-200">The following example demonstrates the format of this resource.</span></span>
 
 ```json
 {
@@ -177,21 +176,20 @@ Windows ストア申請 API に関するすべての[前提条件](create-and-ma
 }
 ```
 
-このリソースには、次の値があります。
+<span data-ttu-id="b9296-201">このリソースには、次の値があります。</span><span class="sxs-lookup"><span data-stu-id="b9296-201">This resource has the following values.</span></span>
 
-| 値           | 型    | 説明                 |
+| <span data-ttu-id="b9296-202">値</span><span class="sxs-lookup"><span data-stu-id="b9296-202">Value</span></span>           | <span data-ttu-id="b9296-203">型</span><span class="sxs-lookup"><span data-stu-id="b9296-203">Type</span></span>    | <span data-ttu-id="b9296-204">説明</span><span class="sxs-lookup"><span data-stu-id="b9296-204">Description</span></span>                 |
 |-----------------|---------|------------------------------|
-| id            | string  | 申請 ID。    |
-| resourceLocation   | string  | 申請の完全なデータを取得するために基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI に付加できる相対パス。            |
+| <span data-ttu-id="b9296-205">id</span><span class="sxs-lookup"><span data-stu-id="b9296-205">id</span></span>            | <span data-ttu-id="b9296-206">string</span><span class="sxs-lookup"><span data-stu-id="b9296-206">string</span></span>  | <span data-ttu-id="b9296-207">申請 ID。</span><span class="sxs-lookup"><span data-stu-id="b9296-207">The ID of the submission.</span></span>    |
+| <span data-ttu-id="b9296-208">resourceLocation</span><span class="sxs-lookup"><span data-stu-id="b9296-208">resourceLocation</span></span>   | <span data-ttu-id="b9296-209">string</span><span class="sxs-lookup"><span data-stu-id="b9296-209">string</span></span>  | <span data-ttu-id="b9296-210">申請の完全なデータを取得するために基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI に付加できる相対パス。</span><span class="sxs-lookup"><span data-stu-id="b9296-210">A relative path that you can append to the base ```https://manage.devcenter.microsoft.com/v1.0/my/``` request URI to retrieve the complete data for the submission.</span></span>            |
  
 <span/>
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="b9296-211">関連トピック</span><span class="sxs-lookup"><span data-stu-id="b9296-211">Related topics</span></span>
 
-* [Windows ストア サービスを使用した提出の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-* [Windows ストア提出 API を使用したアプリの提出の管理](manage-app-submissions.md)
-* [すべてのアプリの入手](get-all-apps.md)
-* [アプリの入手](get-an-app.md)
-* [アプリのアドオンの入手](get-add-ons-for-an-app.md)
-* [アプリのパッケージ フライトの入手](get-flights-for-an-app.md)
-
+* [<span data-ttu-id="b9296-212">Windows ストア サービスを使用した申請の作成と管理</span><span class="sxs-lookup"><span data-stu-id="b9296-212">Create and manage submissions using Windows Store services</span></span>](create-and-manage-submissions-using-windows-store-services.md)
+* [<span data-ttu-id="b9296-213">Windows ストア提出 API を使用したアプリの提出の管理</span><span class="sxs-lookup"><span data-stu-id="b9296-213">Manage app submissions using the Windows Store submission API</span></span>](manage-app-submissions.md)
+* [<span data-ttu-id="b9296-214">すべてのアプリの入手</span><span class="sxs-lookup"><span data-stu-id="b9296-214">Get all apps</span></span>](get-all-apps.md)
+* [<span data-ttu-id="b9296-215">アプリの入手</span><span class="sxs-lookup"><span data-stu-id="b9296-215">Get an app</span></span>](get-an-app.md)
+* [<span data-ttu-id="b9296-216">アプリのアドオンの入手</span><span class="sxs-lookup"><span data-stu-id="b9296-216">Get add-ons for an app</span></span>](get-add-ons-for-an-app.md)
+* [<span data-ttu-id="b9296-217">アプリのパッケージ フライトの入手</span><span class="sxs-lookup"><span data-stu-id="b9296-217">Get package flights for an app</span></span>](get-flights-for-an-app.md)

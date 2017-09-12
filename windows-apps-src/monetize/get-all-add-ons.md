@@ -1,90 +1,87 @@
 ---
 author: mcleanbyron
 ms.assetid: 7B6A99C6-AC86-41A1-85D0-3EB39A7211B6
-description: "Windows デベロッパー センター アカウントに登録されているすべてのアプリのすべてのアドオン データを取得するには、Windows ストア申請 API 内のこのメソッドを使用します。"
-title: "Windows ストア申請 API を使用したすべてのアドオンの取得"
+description: "Windows デベロッパー センター アカウントに登録されているすべてのアプリのすべてのアドオンに関するデータを取得するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "すべてのアドオンの入手"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア申請 API, アドオン, アプリ内製品, IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 568dfb5dd47414a6ca4bb0c52ab36437bd119b73
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 82d05e49f087dda903a0bc5c1010df98ae64c016
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/09/2017
 ---
-
-# <a name="get-all-add-ons-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したすべてのアドオンの取得
-
+# <a name="get-all-add-ons"></a><span data-ttu-id="a299b-104">すべてのアドオンの入手</span><span class="sxs-lookup"><span data-stu-id="a299b-104">Get all add-ons</span></span>
 
 
 
-Windows デベロッパー センター アカウントに登録されているすべてのアプリのすべてのアドオン データ (アプリ内製品または IAP とも呼ばれます) を取得するには、Windows ストア申請 API 内のこのメソッドを使用します。
 
-## <a name="prerequisites"></a>前提条件
+<span data-ttu-id="a299b-105">Windows デベロッパー センター アカウントに登録されているすべてのアプリのすべてのアドオンに関するデータを取得するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="a299b-105">Use this method in the Windows Store submission API to retrieve data for all add-ons for all the apps that are registered to your Windows Dev Center account.</span></span>
 
-このメソッドを使うには、最初に次の作業を行う必要があります。
+## <a name="prerequisites"></a><span data-ttu-id="a299b-106">前提条件</span><span class="sxs-lookup"><span data-stu-id="a299b-106">Prerequisites</span></span>
 
-* Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
+<span data-ttu-id="a299b-107">このメソッドを使うには、最初に次の作業を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="a299b-107">To use this method, you need to first do the following:</span></span>
 
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア提出 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
+* <span data-ttu-id="a299b-108">Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。</span><span class="sxs-lookup"><span data-stu-id="a299b-108">If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.</span></span>
+* <span data-ttu-id="a299b-109">このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。</span><span class="sxs-lookup"><span data-stu-id="a299b-109">[Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method.</span></span> <span data-ttu-id="a299b-110">アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。</span><span class="sxs-lookup"><span data-stu-id="a299b-110">After you obtain an access token, you have 60 minutes to use it before it expires.</span></span> <span data-ttu-id="a299b-111">トークンの有効期限が切れたら、新しいトークンを取得できます。</span><span class="sxs-lookup"><span data-stu-id="a299b-111">After the token expires, you can obtain a new one.</span></span>
 
-## <a name="request"></a>要求
+## <a name="request"></a><span data-ttu-id="a299b-112">要求</span><span class="sxs-lookup"><span data-stu-id="a299b-112">Request</span></span>
 
-このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
+<span data-ttu-id="a299b-113">このメソッドの構文は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="a299b-113">This method has the following syntax.</span></span> <span data-ttu-id="a299b-114">ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a299b-114">See the following sections for usage examples and descriptions of the header and request body.</span></span>
 
-| メソッド | 要求 URI                                                      |
+| <span data-ttu-id="a299b-115">メソッド</span><span class="sxs-lookup"><span data-stu-id="a299b-115">Method</span></span> | <span data-ttu-id="a299b-116">要求 URI</span><span class="sxs-lookup"><span data-stu-id="a299b-116">Request URI</span></span>                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` |
+| <span data-ttu-id="a299b-117">GET</span><span class="sxs-lookup"><span data-stu-id="a299b-117">GET</span></span>    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` |
 
 <span/>
  
 
-### <a name="request-header"></a>要求ヘッダー
+### <a name="request-header"></a><span data-ttu-id="a299b-118">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="a299b-118">Request header</span></span>
 
-| ヘッダー        | 型   | 説明                                                                 |
+| <span data-ttu-id="a299b-119">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="a299b-119">Header</span></span>        | <span data-ttu-id="a299b-120">型</span><span class="sxs-lookup"><span data-stu-id="a299b-120">Type</span></span>   | <span data-ttu-id="a299b-121">説明</span><span class="sxs-lookup"><span data-stu-id="a299b-121">Description</span></span>                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
+| <span data-ttu-id="a299b-122">Authorization</span><span class="sxs-lookup"><span data-stu-id="a299b-122">Authorization</span></span> | <span data-ttu-id="a299b-123">string</span><span class="sxs-lookup"><span data-stu-id="a299b-123">string</span></span> | <span data-ttu-id="a299b-124">必須。</span><span class="sxs-lookup"><span data-stu-id="a299b-124">Required.</span></span> <span data-ttu-id="a299b-125">**Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。</span><span class="sxs-lookup"><span data-stu-id="a299b-125">The Azure AD access token in the form **Bearer** &lt;*token*&gt;.</span></span> |
 
 <span/>
 
-### <a name="request-parameters"></a>要求パラメーター
+### <a name="request-parameters"></a><span data-ttu-id="a299b-126">要求パラメーター</span><span class="sxs-lookup"><span data-stu-id="a299b-126">Request parameters</span></span>
 
-このメソッドでは、要求パラメーターはすべてオプションです。 パラメーターを指定せずにこのメソッドを呼び出す場合、応答には、アカウントに登録するすべてのアプリのすべてのアドオンのデータが含まれます。
+<span data-ttu-id="a299b-127">このメソッドでは、要求パラメーターはすべてオプションです。</span><span class="sxs-lookup"><span data-stu-id="a299b-127">All request parameters are optional for this method.</span></span> <span data-ttu-id="a299b-128">パラメーターを指定せずにこのメソッドを呼び出す場合、応答には、アカウントに登録するすべてのアプリのすべてのアドオンのデータが含まれます。</span><span class="sxs-lookup"><span data-stu-id="a299b-128">If you call this method without parameters, the response contains data for all add-ons for all apps that are registered to your account.</span></span>
  
-|  パラメーター  |  型  |  説明  |  必須かどうか  |
+|  <span data-ttu-id="a299b-129">パラメーター</span><span class="sxs-lookup"><span data-stu-id="a299b-129">Parameter</span></span>  |  <span data-ttu-id="a299b-130">型</span><span class="sxs-lookup"><span data-stu-id="a299b-130">Type</span></span>  |  <span data-ttu-id="a299b-131">説明</span><span class="sxs-lookup"><span data-stu-id="a299b-131">Description</span></span>  |  <span data-ttu-id="a299b-132">必須かどうか</span><span class="sxs-lookup"><span data-stu-id="a299b-132">Required</span></span>  |
 |------|------|------|------|
-|  top  |  int  |  要求で返される項目の数 (つまり、返されるアドオンの数)。 クエリで指定した値よりアカウントのアドオンの数が多い場合、応答本文には、データの次のページを要求するためにメソッド URI に追加できる相対 URI パスが含まれます。  |  必須ではない  |
-|  skip  |  int  |  残りの項目を返す前にクエリでバイパスする項目の数。 データ セットを操作するには、このパラメーターを使用します。 たとえば、top = 10 と skip = 0 は、1 から 10 の項目を取得し、top=10 と skip=10 は 11 から 20 の項目を取得するという具合です。  |  必須ではない  |
+|  <span data-ttu-id="a299b-133">top</span><span class="sxs-lookup"><span data-stu-id="a299b-133">top</span></span>  |  <span data-ttu-id="a299b-134">int</span><span class="sxs-lookup"><span data-stu-id="a299b-134">int</span></span>  |  <span data-ttu-id="a299b-135">要求で返される項目の数 (つまり、返されるアドオンの数)。</span><span class="sxs-lookup"><span data-stu-id="a299b-135">The number of items to return in the request (that is, the number of add-ons to return).</span></span> <span data-ttu-id="a299b-136">クエリで指定した値よりアカウントのアドオンの数が多い場合、応答本文には、データの次のページを要求するためにメソッド URI に追加できる相対 URI パスが含まれます。</span><span class="sxs-lookup"><span data-stu-id="a299b-136">If your account has more add-ons than the value you specify in the query, the response body includes a relative URI path that you can append to the method URI to request the next page of data.</span></span>  |  <span data-ttu-id="a299b-137">必須ではない</span><span class="sxs-lookup"><span data-stu-id="a299b-137">No</span></span>  |
+|  <span data-ttu-id="a299b-138">skip</span><span class="sxs-lookup"><span data-stu-id="a299b-138">skip</span></span>  |  <span data-ttu-id="a299b-139">int</span><span class="sxs-lookup"><span data-stu-id="a299b-139">int</span></span>  |  <span data-ttu-id="a299b-140">残りの項目を返す前にクエリでバイパスする項目の数。</span><span class="sxs-lookup"><span data-stu-id="a299b-140">The number of items to bypass in the query before returning the remaining items.</span></span> <span data-ttu-id="a299b-141">データ セットを操作するには、このパラメーターを使用します。</span><span class="sxs-lookup"><span data-stu-id="a299b-141">Use this parameter to page through data sets.</span></span> <span data-ttu-id="a299b-142">たとえば、top = 10 と skip = 0 は、1 から 10 の項目を取得し、top=10 と skip=10 は 11 から 20 の項目を取得するという具合です。</span><span class="sxs-lookup"><span data-stu-id="a299b-142">For example, top=10 and skip=0 retrieves items 1 through 10, top=10 and skip=10 retrieves items 11 through 20, and so on.</span></span>  |  <span data-ttu-id="a299b-143">必須ではない</span><span class="sxs-lookup"><span data-stu-id="a299b-143">No</span></span>  |
 
 <span/>
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a><span data-ttu-id="a299b-144">要求本文</span><span class="sxs-lookup"><span data-stu-id="a299b-144">Request body</span></span>
 
-このメソッドでは要求本文を指定しないでください。
+<span data-ttu-id="a299b-145">このメソッドでは要求本文を指定しないでください。</span><span class="sxs-lookup"><span data-stu-id="a299b-145">Do not provide a request body for this method.</span></span>
 
-### <a name="request-examples"></a>要求の例
+### <a name="request-examples"></a><span data-ttu-id="a299b-146">要求の例</span><span class="sxs-lookup"><span data-stu-id="a299b-146">Request examples</span></span>
 
-次の例は、アカウントに登録するすべてのアプリのすべてのアドオン データを取得する方法を示しています。
+<span data-ttu-id="a299b-147">次の例は、アカウントに登録するすべてのアプリのすべてのアドオン データを取得する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="a299b-147">The following example demonstrates how to retrieve all add-on data for all the apps that are registered to your account.</span></span>
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-次の例は、最初の 10 個のアドオンのみを取得する方法を示しています。
+<span data-ttu-id="a299b-148">次の例は、最初の 10 個のアドオンのみを取得する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="a299b-148">The following example demonstrates how to retrieve the first 10 add-ons only.</span></span>
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?top=10 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>応答
+## <a name="response"></a><span data-ttu-id="a299b-149">応答</span><span class="sxs-lookup"><span data-stu-id="a299b-149">Response</span></span>
 
-次の例は、合計 1072 個のアドオンがある開発者アカウントに登録されている、最初の 5 個のアドオンに対する要求が成功した場合に返される JSON 応答本文を示しています。 簡潔にするために、この例では、要求によって返される最初の 2 つのアドオンのデータのみが示されています。 応答本文の値について詳しくは、次のセクションをご覧ください。
+<span data-ttu-id="a299b-150">次の例は、合計 1072 個のアドオンがある開発者アカウントに登録されている、最初の 5 個のアドオンに対する要求が成功した場合に返される JSON 応答本文を示しています。</span><span class="sxs-lookup"><span data-stu-id="a299b-150">The following example demonstrates the JSON response body returned by a successful request for the first 5 add-ons that are registered to a developer account with 1072 total add-ons.</span></span> <span data-ttu-id="a299b-151">簡潔にするために、この例では、要求によって返される最初の 2 つのアドオンのデータのみが示されています。</span><span class="sxs-lookup"><span data-stu-id="a299b-151">For brevity, this example only shows the data for the first two add-ons returned by the request.</span></span> <span data-ttu-id="a299b-152">応答本文の値について詳しくは、次のセクションをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a299b-152">For more details about the values in the response body, see the following section.</span></span>
 
 ```json
 {
@@ -141,32 +138,31 @@ Authorization: Bearer <your access token>
 }
 ```
 
-### <a name="response-body"></a>応答本文
+### <a name="response-body"></a><span data-ttu-id="a299b-153">応答本文</span><span class="sxs-lookup"><span data-stu-id="a299b-153">Response body</span></span>
 
-| 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
+| <span data-ttu-id="a299b-154">値</span><span class="sxs-lookup"><span data-stu-id="a299b-154">Value</span></span>      | <span data-ttu-id="a299b-155">型</span><span class="sxs-lookup"><span data-stu-id="a299b-155">Type</span></span>   | <span data-ttu-id="a299b-156">説明</span><span class="sxs-lookup"><span data-stu-id="a299b-156">Description</span></span>                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| @nextLink  | string | データの追加ページが存在する場合、この文字列には、データの次のページを要求するために基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI に追加できる相対パスが含まれます。 たとえば、最初の要求本文の *top* パラメーターが 10 に設定されていて、アカウントには 100 個のアドオンが登録されている場合、応答本文には ```inappproducts?skip=10&top=10``` の @nextLink 値が含まれます。これは、次の 10 個のアドオンを要求するために ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?skip=10&top=10``` を呼び出すことができることを示しています。 |
-| value            | array  |  各アドオンに関する情報を提供するオブジェクトを格納する配列。 詳しくは、「[アドオン リソース](manage-add-ons.md#add-on-object)」をご覧ください。   |
-| totalCount   | int  | 応答本文の *value* 配列のアプリ オブジェクトの数。                                                                                                                                                 |
+| @nextLink  | <span data-ttu-id="a299b-157">string</span><span class="sxs-lookup"><span data-stu-id="a299b-157">string</span></span> | <span data-ttu-id="a299b-158">データの追加ページが存在する場合、この文字列には、データの次のページを要求するために、ベースとなる ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI に追加できる相対パスが含まれます。</span><span class="sxs-lookup"><span data-stu-id="a299b-158">If there are additional pages of data, this string contains a relative path that you can append to the base ```https://manage.devcenter.microsoft.com/v1.0/my/``` request URI to request the next page of data.</span></span> <span data-ttu-id="a299b-159">たとえば、最初の要求本文の *top* パラメーターが 10 に設定されていて、アカウントには 100 個のアドオンが登録されている場合、応答本文には、```inappproducts?skip=10&top=10``` という @nextLink 値が含まれます。これは、次の 10 個のアドオンを要求するために、```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?skip=10&top=10``` を呼び出すことができることを示しています。</span><span class="sxs-lookup"><span data-stu-id="a299b-159">For example, if the *top* parameter of the initial request body is set to 10 but there are 100 add-ons registered to your account, the response body will include a @nextLink value of ```inappproducts?skip=10&top=10```, which indicates that you can call ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?skip=10&top=10``` to request the next 10 add-ons.</span></span> |
+| <span data-ttu-id="a299b-160">value</span><span class="sxs-lookup"><span data-stu-id="a299b-160">value</span></span>            | <span data-ttu-id="a299b-161">array</span><span class="sxs-lookup"><span data-stu-id="a299b-161">array</span></span>  |  <span data-ttu-id="a299b-162">各アドオンに関する情報を提供するオブジェクトを格納する配列。</span><span class="sxs-lookup"><span data-stu-id="a299b-162">An array that contains objects that provide information about each add-on.</span></span> <span data-ttu-id="a299b-163">詳しくは、「[アドオン リソース](manage-add-ons.md#add-on-object)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a299b-163">For more information, see [add-on resource](manage-add-ons.md#add-on-object).</span></span>   |
+| <span data-ttu-id="a299b-164">totalCount</span><span class="sxs-lookup"><span data-stu-id="a299b-164">totalCount</span></span>   | <span data-ttu-id="a299b-165">int</span><span class="sxs-lookup"><span data-stu-id="a299b-165">int</span></span>  | <span data-ttu-id="a299b-166">応答本文の *value* 配列のアプリ オブジェクトの数。</span><span class="sxs-lookup"><span data-stu-id="a299b-166">The number of app objects in the *value* array of the response body.</span></span>                                                                                                                                                 |
 
 
 
-## <a name="error-codes"></a>エラー コード
+## <a name="error-codes"></a><span data-ttu-id="a299b-167">エラー コード</span><span class="sxs-lookup"><span data-stu-id="a299b-167">Error codes</span></span>
 
-要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。
+<span data-ttu-id="a299b-168">要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。</span><span class="sxs-lookup"><span data-stu-id="a299b-168">If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.</span></span>
 
-| エラー コード |  説明   |
+| <span data-ttu-id="a299b-169">エラー コード</span><span class="sxs-lookup"><span data-stu-id="a299b-169">Error code</span></span> |  <span data-ttu-id="a299b-170">説明</span><span class="sxs-lookup"><span data-stu-id="a299b-170">Description</span></span>   |
 |--------|------------------|
-| 404  | アドオンは見つかりませんでした。 |
-| 409  | アプリまたはアドオンは、[Windows ストア提出 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センターのダッシュボード機能を使用します。  |
+| <span data-ttu-id="a299b-171">404</span><span class="sxs-lookup"><span data-stu-id="a299b-171">404</span></span>  | <span data-ttu-id="a299b-172">アドオンは見つかりませんでした。</span><span class="sxs-lookup"><span data-stu-id="a299b-172">No add-ons were found.</span></span> |
+| <span data-ttu-id="a299b-173">409</span><span class="sxs-lookup"><span data-stu-id="a299b-173">409</span></span>  | <span data-ttu-id="a299b-174">アプリまたはアドオンは、[Windows ストア申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センターのダッシュボード機能を使用します。</span><span class="sxs-lookup"><span data-stu-id="a299b-174">The apps or add-ons use Dev Center dashboard features that are [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).</span></span>  |
 
 <span/>
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="a299b-175">関連トピック</span><span class="sxs-lookup"><span data-stu-id="a299b-175">Related topics</span></span>
 
-* [Windows ストア サービスを使用した提出の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-* [アドオンの提出の管理](manage-add-on-submissions.md)
-* [アドオンの入手](get-an-add-on.md)
-* [アドオンの作成](create-an-add-on.md)
-* [アドオンの削除](delete-an-add-on.md)
-
+* [<span data-ttu-id="a299b-176">Windows ストア サービスを使用した申請の作成と管理</span><span class="sxs-lookup"><span data-stu-id="a299b-176">Create and manage submissions using Windows Store services</span></span>](create-and-manage-submissions-using-windows-store-services.md)
+* [<span data-ttu-id="a299b-177">アドオンの申請の管理</span><span class="sxs-lookup"><span data-stu-id="a299b-177">Manage add-on submissions</span></span>](manage-add-on-submissions.md)
+* [<span data-ttu-id="a299b-178">アドオンの入手</span><span class="sxs-lookup"><span data-stu-id="a299b-178">Get an add-on</span></span>](get-an-add-on.md)
+* [<span data-ttu-id="a299b-179">アドオンの作成</span><span class="sxs-lookup"><span data-stu-id="a299b-179">Create an add-on</span></span>](create-an-add-on.md)
+* [<span data-ttu-id="a299b-180">アドオンの削除</span><span class="sxs-lookup"><span data-stu-id="a299b-180">Delete an add-on</span></span>](delete-an-add-on.md)

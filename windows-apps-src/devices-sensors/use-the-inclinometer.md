@@ -1,48 +1,52 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
 title: "傾斜計の使用"
 description: "傾斜計を使ってピッチ、ロール、ヨーを検出する方法を説明します。"
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b8ebfaf4c294fccf61534203bce0326f9dbec977
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b0fcc9e45d1a9e1921e77ce8b59817a5ca1c0dd2
+ms.sourcegitcommit: ca060f051e696da2c1e26e9dd4d2da3fa030103d
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/03/2017
 ---
-# <a name="use-the-inclinometer"></a>傾斜計の使用
+# <a name="use-the-inclinometer"></a><span data-ttu-id="5940a-104">傾斜計の使用</span><span class="sxs-lookup"><span data-stu-id="5940a-104">Use the inclinometer</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
+<span data-ttu-id="5940a-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="5940a-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="5940a-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]</span><span class="sxs-lookup"><span data-stu-id="5940a-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-**重要な API**
+**<span data-ttu-id="5940a-107">重要な API</span><span class="sxs-lookup"><span data-stu-id="5940a-107">Important APIs</span></span>**
 
--   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766)
+-   [**<span data-ttu-id="5940a-108">Windows.Devices.Sensors</span><span class="sxs-lookup"><span data-stu-id="5940a-108">Windows.Devices.Sensors</span></span>**](https://msdn.microsoft.com/library/windows/apps/BR206408)
+-   [**<span data-ttu-id="5940a-109">Inclinometer</span><span class="sxs-lookup"><span data-stu-id="5940a-109">Inclinometer</span></span>**](https://msdn.microsoft.com/library/windows/apps/BR225766)
 
-傾斜計を使ってピッチ、ロール、ヨーを検出する方法を説明します。
+**<span data-ttu-id="5940a-110">サンプル</span><span class="sxs-lookup"><span data-stu-id="5940a-110">Sample</span></span>**
 
-一部の 3D ゲームでは、入力デバイスとして傾斜計が必要です。 よくある例としては、フライト シミュレーターがあります。傾斜計の 3 軸 (X、Y、Z) を、航空機のエレベーター、エルロン、ラダーの入力として割り当てます。
+-   <span data-ttu-id="5940a-111">より完全な実装については、[傾斜計のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5940a-111">For a more complete implementation, see the [inclinometer sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer).</span></span>
 
- ## <a name="prerequisites"></a>前提条件
+<span data-ttu-id="5940a-112">傾斜計を使ってピッチ、ロール、ヨーを検出する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="5940a-112">Learn how to use the inclinometer to determine pitch, roll, and yaw.</span></span>
 
-Extensible Application Markup Language (XAML)、Microsoft Visual C#、イベントについて理解している必要があります。
+<span data-ttu-id="5940a-113">一部の 3D ゲームでは、入力デバイスとして傾斜計が必要です。</span><span class="sxs-lookup"><span data-stu-id="5940a-113">Some 3-D games require an inclinometer as an input device.</span></span> <span data-ttu-id="5940a-114">よくある例としては、フライト シミュレーターがあります。傾斜計の 3 軸 (X、Y、Z) を、航空機のエレベーター、エルロン、ラダーの入力として割り当てます。</span><span class="sxs-lookup"><span data-stu-id="5940a-114">One common example is the flight simulator, which maps the three axes of the inclinometer (X, Y, and Z) to the elevator, aileron, and rudder inputs of the aircraft.</span></span>
 
-使うデバイスやエミュレーターが傾斜計をサポートしている必要があります。
+ ## <a name="prerequisites"></a><span data-ttu-id="5940a-115">前提条件</span><span class="sxs-lookup"><span data-stu-id="5940a-115">Prerequisites</span></span>
 
- ## <a name="create-a-simple-inclinometer-app"></a>シンプルな傾斜計アプリを作成する
+<span data-ttu-id="5940a-116">Extensible Application Markup Language (XAML)、Microsoft Visual C#、イベントについて理解している必要があります。</span><span class="sxs-lookup"><span data-stu-id="5940a-116">You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.</span></span>
 
-このセクションは、次の 2 つのサブセクションに分かれています。 最初のサブセクションでは、シンプルな傾斜計アプリケーションを最初から作成するために必要な手順を示します。 次のサブセクションでは、作成したアプリについて説明します。
+<span data-ttu-id="5940a-117">使うデバイスやエミュレーターが傾斜計をサポートしている必要があります。</span><span class="sxs-lookup"><span data-stu-id="5940a-117">The device or emulator that you're using must support a inclinometer.</span></span>
 
-###  <a name="instructions"></a>手順
+ ## <a name="create-a-simple-inclinometer-app"></a><span data-ttu-id="5940a-118">シンプルな傾斜計アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="5940a-118">Create a simple inclinometer app</span></span>
 
--   **[Visual C#]** プロジェクト テンプレートから **[空白のアプリ (ユニバーサル Windows]** を選んで、新しいプロジェクトを作成します。
+<span data-ttu-id="5940a-119">このセクションは、次の 2 つのサブセクションに分かれています。</span><span class="sxs-lookup"><span data-stu-id="5940a-119">This section is divided into two subsections.</span></span> <span data-ttu-id="5940a-120">最初のサブセクションでは、シンプルな傾斜計アプリケーションを最初から作成するために必要な手順を示します。</span><span class="sxs-lookup"><span data-stu-id="5940a-120">The first subsection will take you through the steps necessary to create a simple inclinometer application from scratch.</span></span> <span data-ttu-id="5940a-121">次のサブセクションでは、作成したアプリについて説明します。</span><span class="sxs-lookup"><span data-stu-id="5940a-121">The following subsection explains the app you have just created.</span></span>
 
--   プロジェクトの MainPage.xaml.cs ファイルを開き、記載されているコードを次のコードで置き換えます。
+###  <a name="instructions"></a><span data-ttu-id="5940a-122">手順</span><span class="sxs-lookup"><span data-stu-id="5940a-122">Instructions</span></span>
+
+-   <span data-ttu-id="5940a-123">**[Visual C#]** プロジェクト テンプレートから **[空白のアプリ (ユニバーサル Windows]** を選んで、新しいプロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="5940a-123">Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.</span></span>
+
+-   <span data-ttu-id="5940a-124">プロジェクトの MainPage.xaml.cs ファイルを開き、記載されているコードを次のコードで置き換えます。</span><span class="sxs-lookup"><span data-stu-id="5940a-124">Open your project's MainPage.xaml.cs file and replace the existing code with the following.</span></span>
 
 ```csharp
     using System;
@@ -107,9 +111,9 @@ Extensible Application Markup Language (XAML)、Microsoft Visual C#、イベン�
     }
 ```
 
-元のスニペットの名前空間の名前を、自分のプロジェクトに指定した名前に変更する必要があります。 たとえば、作成したプロジェクトの名前が **InclinometerCS** だとすると、`namespace App1` を `namespace InclinometerCS` に置き換えます。
+<span data-ttu-id="5940a-125">元のスニペットの名前空間の名前を、自分のプロジェクトに指定した名前に変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5940a-125">You'll need to rename the namespace in the previous snippet with the name you gave your project.</span></span> <span data-ttu-id="5940a-126">たとえば、作成したプロジェクトの名前が **InclinometerCS** だとすると、`namespace App1` を `namespace InclinometerCS` に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="5940a-126">For example, if you created a project named **InclinometerCS**, you'd replace `namespace App1` with `namespace InclinometerCS`.</span></span>
 
--   MainPage.xaml ファイルを開き、元の内容を次の XML に置き換えます。
+-   <span data-ttu-id="5940a-127">MainPage.xaml ファイルを開き、元の内容を次の XML に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="5940a-127">Open the file MainPage.xaml and replace the original contents with the following XML.</span></span>
 
 ```xml
         <Page
@@ -133,25 +137,25 @@ Extensible Application Markup Language (XAML)、Microsoft Visual C#、イベン�
     </Page>
 ```
 
-元のスニペットのクラス名の最初の部分を、自分のアプリの名前空間に置き換える必要があります。 たとえば、作成したプロジェクトの名前が **InclinometerCS** だとすると、`x:Class="App1.MainPage"` を `x:Class="InclinometerCS.MainPage"` に置き換えます。 また、`xmlns:local="using:App1"` を `xmlns:local="using:InclinometerCS"` に置き換える必要があります。
+<span data-ttu-id="5940a-128">元のスニペットのクラス名の最初の部分を、自分のアプリの名前空間に置き換える必要があります。</span><span class="sxs-lookup"><span data-stu-id="5940a-128">You'll need to replace the first part of the class name in the previous snippet with the namespace of your app.</span></span> <span data-ttu-id="5940a-129">たとえば、作成したプロジェクトの名前が **InclinometerCS** だとすると、`x:Class="App1.MainPage"` を `x:Class="InclinometerCS.MainPage"` に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="5940a-129">For example, if you created a project named **InclinometerCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="InclinometerCS.MainPage"`.</span></span> <span data-ttu-id="5940a-130">また、`xmlns:local="using:App1"` を `xmlns:local="using:InclinometerCS"` に置き換える必要があります。</span><span class="sxs-lookup"><span data-stu-id="5940a-130">You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:InclinometerCS"`.</span></span>
 
--   アプリをビルド、展開、実行するには、F5 キーを押すか、**[デバッグ]**、**[デバッグの開始]** の順にクリックします。
+-   <span data-ttu-id="5940a-131">アプリをビルド、展開、実行するには、F5 キーを押すか、**[デバッグ]**、**[デバッグの開始]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="5940a-131">Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.</span></span>
 
-アプリを実行した後、デバイスを移動するか、エミュレーター ツールを使うことによって、傾斜計の値を変更できます。
+<span data-ttu-id="5940a-132">アプリを実行した後、デバイスを移動するか、エミュレーター ツールを使うことによって、傾斜計の値を変更できます。</span><span class="sxs-lookup"><span data-stu-id="5940a-132">Once the app is running, you can change the inclinometer values by moving the device or using the emulator tools.</span></span>
 
--   アプリを停止するには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押すか、**[デバッグ]**、**[デバッグの停止]** の順にクリックします。
+-   <span data-ttu-id="5940a-133">アプリを停止するには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押すか、**[デバッグ]**、**[デバッグの停止]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="5940a-133">Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.</span></span>
 
-###  <a name="explanation"></a>説明
+###  <a name="explanation"></a><span data-ttu-id="5940a-134">説明</span><span class="sxs-lookup"><span data-stu-id="5940a-134">Explanation</span></span>
 
-上に示した例では、ごく短いコードを作成するだけで、傾斜計入力をアプリに組み込むことができることがわかります。
+<span data-ttu-id="5940a-135">上に示した例では、ごく短いコードを作成するだけで、傾斜計入力をアプリに組み込むことができることがわかります。</span><span class="sxs-lookup"><span data-stu-id="5940a-135">The previous example demonstrates how little code you'll need to write in order to integrate inclinometer input in your app.</span></span>
 
-このアプリでは、**MainPage** メソッドで、既定の傾斜計との接続を確立しています。
+<span data-ttu-id="5940a-136">このアプリでは、**MainPage** メソッドで、既定の傾斜計との接続を確立しています。</span><span class="sxs-lookup"><span data-stu-id="5940a-136">The app establishes a connection with the default inclinometer in the **MainPage** method.</span></span>
 
 ```csharp
 _inclinometer = Inclinometer.GetDefault();
 ```
 
-このアプリでは、**MainPage** メソッドで、レポート間隔を設定しています。 次のコードは、デバイスでサポートされる最小の間隔を取得し、要求される 16 ミリ秒の間隔 (約 60 Hz のリフレッシュ レート) と比較します。 サポートされる最小の間隔が要求される間隔よりも大きい場合は、値を最小値に設定します。 それ以外の場合は、値を要求される間隔に設定します。
+<span data-ttu-id="5940a-137">このアプリでは、**MainPage** メソッドで、レポート間隔を設定しています。</span><span class="sxs-lookup"><span data-stu-id="5940a-137">The app establishes the report interval within the **MainPage** method.</span></span> <span data-ttu-id="5940a-138">次のコードは、デバイスでサポートされる最小の間隔を取得し、要求される 16 ミリ秒の間隔 (約 60 Hz のリフレッシュ レート) と比較します。</span><span class="sxs-lookup"><span data-stu-id="5940a-138">This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate).</span></span> <span data-ttu-id="5940a-139">サポートされる最小の間隔が要求される間隔よりも大きい場合は、値を最小値に設定します。</span><span class="sxs-lookup"><span data-stu-id="5940a-139">If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum.</span></span> <span data-ttu-id="5940a-140">それ以外の場合は、値を要求される間隔に設定します。</span><span class="sxs-lookup"><span data-stu-id="5940a-140">Otherwise, it sets the value to the requested interval.</span></span>
 
 ```csharp
 uint minReportInterval = _inclinometer.MinimumReportInterval;
@@ -159,14 +163,14 @@ uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
 _inclinometer.ReportInterval = reportInterval;
 ```
 
-**ReadingChanged** メソッドで、新しい傾斜計のデータをキャプチャしています。 センサーのドライバーは、センサーから新しいデータを受け取るたびに、このイベント ハンドラーを使ってアプリに値を渡します。 このアプリの場合、このイベント ハンドラーが次の行で登録されています。
+<span data-ttu-id="5940a-141">**ReadingChanged** メソッドで、新しい傾斜計のデータをキャプチャしています。</span><span class="sxs-lookup"><span data-stu-id="5940a-141">The new inclinometer data is captured in the **ReadingChanged** method.</span></span> <span data-ttu-id="5940a-142">センサーのドライバーは、センサーから新しいデータを受け取るたびに、このイベント ハンドラーを使ってアプリに値を渡します。</span><span class="sxs-lookup"><span data-stu-id="5940a-142">Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler.</span></span> <span data-ttu-id="5940a-143">このアプリの場合、このイベント ハンドラーが次の行で登録されています。</span><span class="sxs-lookup"><span data-stu-id="5940a-143">The app registers this event handler on the following line.</span></span>
 
 ```csharp
 _inclinometer.ReadingChanged += new TypedEventHandler<Inclinometer,
 InclinometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
-プロジェクトの XAML 内にある TextBlock に、以下の新しい値が書き込まれます。
+<span data-ttu-id="5940a-144">プロジェクトの XAML 内にある TextBlock に、これらの新しい値が書き込まれます。</span><span class="sxs-lookup"><span data-stu-id="5940a-144">These new values are written to the TextBlocks found in the project's XAML.</span></span>
 
 ```xml
 <TextBlock HorizontalAlignment="Left" Height="21" Margin="0,8,0,0" TextWrapping="Wrap" Text="Pitch: " VerticalAlignment="Top" Width="45" Foreground="#FFF9F4F4"/>
@@ -176,8 +180,4 @@ InclinometerReadingChangedEventArgs>(ReadingChanged);
  <TextBlock HorizontalAlignment="Left" Height="19" Margin="0,56,0,0" TextWrapping="Wrap" Text="Yaw:" VerticalAlignment="Top" Width="55" Foreground="#FFF7F3F3"/>
  <TextBlock x:Name="txtYaw" HorizontalAlignment="Left" Height="19" Margin="55,56,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54" Foreground="#FFF6F2F2"/>
 ```
-
- ## <a name="related-topics"></a>関連トピック
-
-* [傾斜計センサーのサンプル](http://go.microsoft.com/fwlink/p/?linkid=241380)
 

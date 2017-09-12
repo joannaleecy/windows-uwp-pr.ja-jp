@@ -1,84 +1,78 @@
 ---
 author: mcleanbyron
 ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
-description: "Windows ストア申請 API 内のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されているアプリの新しい申請を作成します。"
-title: "Windows ストア申請 API を使用したアプリの申請の作成"
+description: "Windows デベロッパー センター アカウントに登録されているアプリの新しい申請を作成するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
+title: "アプリの申請の作成"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、Windows ストア申請 API、アプリの申請の作成"
-translationtype: Human Translation
-ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
-ms.openlocfilehash: ecc701016ff37e7cc7de0723793efdfe89118c48
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 6ed90a764701e40ed513b623a9ddb5aa6a2be466
+ms.sourcegitcommit: a7a1b41c7dce6d56250ce3113137391d65d9e401
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/11/2017
 ---
+# <a name="create-an-app-submission"></a><span data-ttu-id="5921b-104">アプリの申請の作成</span><span class="sxs-lookup"><span data-stu-id="5921b-104">Create an app submission</span></span>
 
-# <a name="create-an-app-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアプリの申請の作成
+<span data-ttu-id="5921b-105">Windows デベロッパー センター アカウントに登録されているアプリの新しい申請を作成するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="5921b-105">Use this method in the Windows Store submission API to create a new submission for an app that is registered to your Windows Dev Center account.</span></span> <span data-ttu-id="5921b-106">このメソッドを使って新しい申請を正常に作成したら、[申請を更新](update-an-app-submission.md)して申請データに必要な変更を加え、取り込んで公開するために[申請をコミット](commit-an-app-submission.md)します。</span><span class="sxs-lookup"><span data-stu-id="5921b-106">After you successfully create a new submission by using this method, [update the submission](update-an-app-submission.md) to make any necessary changes to the submission data, and then [commit the submission](commit-an-app-submission.md) for ingestion and publishing.</span></span>
 
-
-
-
-Windows ストア申請 API 内のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されているアプリの新しい申請を作成します。 このメソッドを使って新しい申請を正常に作成したら、[申請を更新](update-an-app-submission.md)して申請データに必要な変更を加え、取り込んで公開するために[申請をコミット](commit-an-app-submission.md)します。
-
-このメソッドが Windows ストア申請 API を使ったアプリの申請の作成プロセスにどのように適合するかについては、「[アプリの申請の管理](manage-app-submissions.md)」をご覧ください。
+<span data-ttu-id="5921b-107">このメソッドが Windows ストア申請 API を使ったアプリの申請の作成プロセスにどのように適合するかについては、「[アプリの申請の管理](manage-app-submissions.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5921b-107">For more information about how this method fits into the process of creating an app submission by using the Windows Store submission API, see [Manage app submissions](manage-app-submissions.md).</span></span>
 
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a><span data-ttu-id="5921b-108">前提条件</span><span class="sxs-lookup"><span data-stu-id="5921b-108">Prerequisites</span></span>
 
-このメソッドを使うには、最初に次の作業を行う必要があります。
+<span data-ttu-id="5921b-109">このメソッドを使うには、最初に次の作業を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="5921b-109">To use this method, you need to first do the following:</span></span>
 
-* Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
-* [年齢区分](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)の情報を含む 1 つ以上の申請がアプリで既に完了していることを確認します。
+* <span data-ttu-id="5921b-110">Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。</span><span class="sxs-lookup"><span data-stu-id="5921b-110">If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.</span></span>
+* <span data-ttu-id="5921b-111">このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。</span><span class="sxs-lookup"><span data-stu-id="5921b-111">[Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method.</span></span> <span data-ttu-id="5921b-112">アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。</span><span class="sxs-lookup"><span data-stu-id="5921b-112">After you obtain an access token, you have 60 minutes to use it before it expires.</span></span> <span data-ttu-id="5921b-113">トークンの有効期限が切れたら新しいトークンを取得できます。</span><span class="sxs-lookup"><span data-stu-id="5921b-113">After the token expires, you can obtain a new one.</span></span>
+* <span data-ttu-id="5921b-114">[年齢区分](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)の情報を含む 1 つ以上の申請がアプリで既に完了していることを確認します。</span><span class="sxs-lookup"><span data-stu-id="5921b-114">Make sure the app already has at least one submission with the [age ratings](https://msdn.microsoft.com/windows/uwp/publish/age-ratings) information completed.</span></span>
 
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
+## <a name="request"></a><span data-ttu-id="5921b-115">要求</span><span class="sxs-lookup"><span data-stu-id="5921b-115">Request</span></span>
 
-## <a name="request"></a>要求
+<span data-ttu-id="5921b-116">このメソッドの構文は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="5921b-116">This method has the following syntax.</span></span> <span data-ttu-id="5921b-117">ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5921b-117">See the following sections for usage examples and descriptions of the header and request body.</span></span>
 
-このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
-
-| メソッド | 要求 URI                                                      |
+| <span data-ttu-id="5921b-118">メソッド</span><span class="sxs-lookup"><span data-stu-id="5921b-118">Method</span></span> | <span data-ttu-id="5921b-119">要求 URI</span><span class="sxs-lookup"><span data-stu-id="5921b-119">Request URI</span></span>                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions``` |
+| <span data-ttu-id="5921b-120">POST</span><span class="sxs-lookup"><span data-stu-id="5921b-120">POST</span></span>    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions``` |
 
 <span/>
  
 
-### <a name="request-header"></a>要求ヘッダー
+### <a name="request-header"></a><span data-ttu-id="5921b-121">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="5921b-121">Request header</span></span>
 
-| ヘッダー        | 型   | 説明                                                                 |
+| <span data-ttu-id="5921b-122">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="5921b-122">Header</span></span>        | <span data-ttu-id="5921b-123">型</span><span class="sxs-lookup"><span data-stu-id="5921b-123">Type</span></span>   | <span data-ttu-id="5921b-124">説明</span><span class="sxs-lookup"><span data-stu-id="5921b-124">Description</span></span>                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
+| <span data-ttu-id="5921b-125">Authorization</span><span class="sxs-lookup"><span data-stu-id="5921b-125">Authorization</span></span> | <span data-ttu-id="5921b-126">string</span><span class="sxs-lookup"><span data-stu-id="5921b-126">string</span></span> | <span data-ttu-id="5921b-127">必須。</span><span class="sxs-lookup"><span data-stu-id="5921b-127">Required.</span></span> <span data-ttu-id="5921b-128">**Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。</span><span class="sxs-lookup"><span data-stu-id="5921b-128">The Azure AD access token in the form **Bearer** &lt;*token*&gt;.</span></span> |
 
 <span/>
 
-### <a name="request-parameters"></a>要求パラメーター
+### <a name="request-parameters"></a><span data-ttu-id="5921b-129">要求パラメーター</span><span class="sxs-lookup"><span data-stu-id="5921b-129">Request parameters</span></span>
 
-| 名前        | 型   | 説明                                                                 |
+| <span data-ttu-id="5921b-130">名前</span><span class="sxs-lookup"><span data-stu-id="5921b-130">Name</span></span>        | <span data-ttu-id="5921b-131">種類</span><span class="sxs-lookup"><span data-stu-id="5921b-131">Type</span></span>   | <span data-ttu-id="5921b-132">説明</span><span class="sxs-lookup"><span data-stu-id="5921b-132">Description</span></span>                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | 必須。 申請を作成するアプリのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。  |
+| <span data-ttu-id="5921b-133">applicationId</span><span class="sxs-lookup"><span data-stu-id="5921b-133">applicationId</span></span> | <span data-ttu-id="5921b-134">string</span><span class="sxs-lookup"><span data-stu-id="5921b-134">string</span></span> | <span data-ttu-id="5921b-135">必須。</span><span class="sxs-lookup"><span data-stu-id="5921b-135">Required.</span></span> <span data-ttu-id="5921b-136">申請を作成するアプリのストア ID です。</span><span class="sxs-lookup"><span data-stu-id="5921b-136">The Store ID of the app for which you want to create a submission.</span></span> <span data-ttu-id="5921b-137">ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5921b-137">For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).</span></span>  |
 
 <span/>
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a><span data-ttu-id="5921b-138">要求本文</span><span class="sxs-lookup"><span data-stu-id="5921b-138">Request body</span></span>
 
-このメソッドでは要求本文を指定しないでください。
+<span data-ttu-id="5921b-139">このメソッドでは要求本文を指定しないでください。</span><span class="sxs-lookup"><span data-stu-id="5921b-139">Do not provide a request body for this method.</span></span>
 
-### <a name="request-example"></a>要求の例
+### <a name="request-example"></a><span data-ttu-id="5921b-140">要求の例</span><span class="sxs-lookup"><span data-stu-id="5921b-140">Request example</span></span>
 
-次の例は、アプリの新しい申請を作成する方法を示しています。
+<span data-ttu-id="5921b-141">次の例は、アプリの新しい申請を作成する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="5921b-141">The following example demonstrates how to create a new submission for an app.</span></span>
 
 ```
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/submissions HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>応答
+## <a name="response"></a><span data-ttu-id="5921b-142">応答</span><span class="sxs-lookup"><span data-stu-id="5921b-142">Response</span></span>
 
-次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文には、新しい申請に関する情報が含まれています。 応答本文内の値について詳しくは、[アプリの申請のリソース](manage-app-submissions.md#app-submission-object)をご覧ください。
+<span data-ttu-id="5921b-143">次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。</span><span class="sxs-lookup"><span data-stu-id="5921b-143">The following example demonstrates the JSON response body for a successful call to this method.</span></span> <span data-ttu-id="5921b-144">応答本文には、新しい申請に関する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="5921b-144">The response body contains information about the new submission.</span></span> <span data-ttu-id="5921b-145">応答本文内の値について詳しくは、[アプリの申請のリソース](manage-app-submissions.md#app-submission-object)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5921b-145">For more details about the values in the response body, see [App submission resource](manage-app-submissions.md#app-submission-object).</span></span>
 
 ```json
 {
@@ -89,7 +83,7 @@ Authorization: Bearer <your access token>
     "marketSpecificPricings": {},
     "sales": [],
     "priceId": "Tier2",
-    "isAdvancedPricingModel": "true"
+    "isAdvancedPricingModel": true
   },
   "visibility": "Public",
   "targetPublishMode": "Manual",
@@ -98,13 +92,17 @@ Authorization: Bearer <your access token>
     "en-us": {
       "baseListing": {
         "copyrightAndTrademarkInfo": "",
-        "keywords": [],
+        "keywords": [
+           "epub"
+        ],
         "licenseTerms": "",
         "privacyPolicy": "",
         "supportContact": "",
         "websiteUrl": "",
         "description": "Description",
-        "features": [],
+        "features": [
+          "Free ebook reader"
+        ],
         "releaseNotes": "",
         "images": [
           {
@@ -115,9 +113,13 @@ Authorization: Bearer <your access token>
           }
         ],
         "recommendedHardware": [],
-        "title": "ApiTestApp For Devbox"
+        "title": "Contoso ebook reader"
       },
-      "platformOverrides": {}
+      "platformOverrides": {
+        "Windows81": {
+          "description": "Ebook reader for Windows 8.1"
+        }
+      }
     }
   },
   "hardwarePreferences": [
@@ -126,6 +128,7 @@ Authorization: Bearer <your access token>
   "automaticBackupEnabled": false,
   "canInstallOnRemovableMedia": true,
   "isGameDvrEnabled": false,
+  "gamingOptions": [],
   "hasExternalInAppProducts": false,
   "meetAccessibilityGuidelines": true,
   "notesForCertification": "",
@@ -161,7 +164,7 @@ Authorization: Bearer <your access token>
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -177,28 +180,28 @@ Authorization: Bearer <your access token>
     "Xbox": false,
     "Team": true
   },
-  "friendlyName": "Submission 2"
+  "friendlyName": "Submission 2",
+  "trailers": []
 }
 ```
 
-## <a name="error-codes"></a>エラー コード
+## <a name="error-codes"></a><span data-ttu-id="5921b-146">エラー コード</span><span class="sxs-lookup"><span data-stu-id="5921b-146">Error codes</span></span>
 
-要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。
+<span data-ttu-id="5921b-147">要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。</span><span class="sxs-lookup"><span data-stu-id="5921b-147">If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.</span></span>
 
-| エラー コード |  説明   |
+| <span data-ttu-id="5921b-148">エラー コード</span><span class="sxs-lookup"><span data-stu-id="5921b-148">Error code</span></span> |  <span data-ttu-id="5921b-149">説明</span><span class="sxs-lookup"><span data-stu-id="5921b-149">Description</span></span>   |
 |--------|------------------|
-| 400  | 要求が無効なため、申請を作成できませんでした。 |
-| 409  | アプリの現在の状態が原因で申請を作成できませんでした。または、[Windows ストア申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能がアプリで使用されています。 |   
+| <span data-ttu-id="5921b-150">400</span><span class="sxs-lookup"><span data-stu-id="5921b-150">400</span></span>  | <span data-ttu-id="5921b-151">要求が無効なため、申請を作成できませんでした。</span><span class="sxs-lookup"><span data-stu-id="5921b-151">The submission could not be created because the request is invalid.</span></span> |
+| <span data-ttu-id="5921b-152">409</span><span class="sxs-lookup"><span data-stu-id="5921b-152">409</span></span>  | <span data-ttu-id="5921b-153">アプリの現在の状態が原因で申請を作成できませんでした。または、[Windows ストア申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能がアプリで使用されています。</span><span class="sxs-lookup"><span data-stu-id="5921b-153">The submission could not be created because of the current state of the app, or the app uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).</span></span> |   
 
 <span/>
 
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="5921b-154">関連トピック</span><span class="sxs-lookup"><span data-stu-id="5921b-154">Related topics</span></span>
 
-* [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-* [アプリの申請の取得](get-an-app-submission.md)
-* [アプリの申請のコミット](commit-an-app-submission.md)
-* [アプリの申請の更新](update-an-app-submission.md)
-* [アプリの申請の削除](delete-an-app-submission.md)
-* [アプリの申請の状態の取得](get-status-for-an-app-submission.md)
-
+* [<span data-ttu-id="5921b-155">Windows ストア サービスを使用した申請の作成と管理</span><span class="sxs-lookup"><span data-stu-id="5921b-155">Create and manage submissions using Windows Store services</span></span>](create-and-manage-submissions-using-windows-store-services.md)
+* [<span data-ttu-id="5921b-156">アプリの申請の取得</span><span class="sxs-lookup"><span data-stu-id="5921b-156">Get an app submission</span></span>](get-an-app-submission.md)
+* [<span data-ttu-id="5921b-157">アプリの申請のコミット</span><span class="sxs-lookup"><span data-stu-id="5921b-157">Commit an app submission</span></span>](commit-an-app-submission.md)
+* [<span data-ttu-id="5921b-158">アプリの申請の更新</span><span class="sxs-lookup"><span data-stu-id="5921b-158">Update an app submission</span></span>](update-an-app-submission.md)
+* [<span data-ttu-id="5921b-159">アプリの申請の削除</span><span class="sxs-lookup"><span data-stu-id="5921b-159">Delete an app submission</span></span>](delete-an-app-submission.md)
+* [<span data-ttu-id="5921b-160">アプリの申請の状態の取得</span><span class="sxs-lookup"><span data-stu-id="5921b-160">Get the status of an app submission</span></span>](get-status-for-an-app-submission.md)

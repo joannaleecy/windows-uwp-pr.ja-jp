@@ -1,741 +1,589 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "アプリでハードウェア キーボードやソフトウェア キーボードからのキーボード操作に応答するには、キーボード イベント ハンドラーとクラス イベント ハンドラーの両方を使います。"
+Description: "キーボードを使い慣れているパワー ユーザーと、障碍やその他のアクセシビリティ要件を持っているユーザーの両方に考えられる最適なエクスペリエンスを提供できるように、UWP アプリを最適化する方法について説明します。"
 title: "キーボード操作"
 ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
-keywords: "キーボード, アクセシビリティ, ナビゲーション, フォーカス, テキスト, 入力, ユーザーの操作"
+keywords: "キーボード, アクセシビリティ, ナビゲーション, フォーカス, テキスト, 入力, ユーザーの操作, ゲームパッド, リモート"
 ms.author: kbridge
-ms.date: 02/08/2017
+ms.date: 03/29/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 53ee08b33bcbbd895d0c6ea6cd621eeec2af40f5
-ms.lasthandoff: 02/07/2017
-
+pm-contact: chigy
+design-contact: kimsea
+dev-contact: niallm
+doc-status: Published
+ms.openlocfilehash: 22a95cfb77740d7521c62f0b7153130ccdc1b552
+ms.sourcegitcommit: ba0d20f6fad75ce98c25ceead78aab6661250571
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/24/2017
 ---
-
-# <a name="keyboard-interactions"></a>キーボード操作
+# <a name="keyboard-interactions"></a><span data-ttu-id="c575f-104">キーボード操作</span><span class="sxs-lookup"><span data-stu-id="c575f-104">Keyboard interactions</span></span>
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-キーボード入力は、アプリのユーザー操作エクスペリエンスの中でも重要な部分です。 キーボードは、特定の障碍のあるユーザーや、キーボードを使った方がアプリを効率よく操作できると考えるユーザーにとって欠かせません。 たとえば、Tab キーと方向キーを使ってアプリ内を移動し、Space キーと Enter キーを使って UI 要素をアクティブ化し、キーボード ショートカットを使ってコマンドにアクセスできるようにする必要があります。  
+![キーボードのヒーロー画像](images/keyboard/keyboard-hero.jpg)
 
-![キーボードのヒーロー画像](images/input-patterns/input-keyboard-small.jpg)
+<span data-ttu-id="c575f-106">キーボードを使い慣れているパワー ユーザーと、障碍やその他のアクセシビリティ要件を持っているユーザーの両方に考えられる最適なエクスペリエンスを提供できるように、UWP アプリを最適化する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="c575f-106">Learn how to design and optimize your UWP apps so they provide the best experience possible for both keyboard power users and those with disabilities and other accessibility requirements.</span></span>
 
-<div class="important-apis" >
-<b>重要な API</b><br/>
-<ul>
-<li>[**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941)</li>
-<li>[**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942)</li>
-<li>[**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072)</li>
-</ul>
-</div>
- 
+<span data-ttu-id="c575f-107">さまざまなデバイスを使う場合、キーボード入力はユニバーサル Windows プラットフォーム (UWP) の全体的な対話式操作エクスペリエンスの重要な部分を占めます。</span><span class="sxs-lookup"><span data-stu-id="c575f-107">Across devices, keyboard input is an important part of the overall Universal Windows Platform (UWP) interaction experience.</span></span> <span data-ttu-id="c575f-108">適切に設計されたキーボード エクスペリエンスがあれば、ユーザーが効率的にアプリの UI を移動し、手を持ち上げなくてもそのすべての機能にキーボードからアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="c575f-108">A well-designed keyboard experience lets users efficiently navigate the UI of your app and access its full functionality without ever lifting their hands from the keyboard.</span></span>
+
+![キーボードとゲームパッドのイメージ](images/keyboard/keyboard-gamepad.jpg)
+
+***<span data-ttu-id="c575f-110">一般的な対話式操作パターンは、キーボードとゲームパッドの間で共有されます。</span><span class="sxs-lookup"><span data-stu-id="c575f-110">Common interaction patterns are shared between keyboard and gamepad</span></span>***
+
+<span data-ttu-id="c575f-111">このトピックでは、PC におけるキーボード入力の UWP アプリの設計について重点的に説明します。</span><span class="sxs-lookup"><span data-stu-id="c575f-111">In this topic, we focus specifically on UWP app design for keyboard input on PCs.</span></span> <span data-ttu-id="c575f-112">ただし、適切に設計されたキーボード エクスペリエンスは、Windows ナレーターなどのアクセシビリティ ツールをサポートするため、[タッチ キーボード](#touch-keyboard)や[スクリーン キーボード (OSK)](#osk) などのソフトウェア キーボードを使うため、Xbox ゲームパッドやリモコンなどの他の入力デバイスの種類を処理するために重要です。</span><span class="sxs-lookup"><span data-stu-id="c575f-112">However, a well-designed keyboard experience is important for supporting accessibility tools such as Windows Narrator, using software keyboards such as the [touch keyboard](#touch-keyboard) and the [On-Screen Keyboard (OSK)](#osk), and for handling other input device types, such as the Xbox gamepad and remote control.</span></span>
+
+<span data-ttu-id="c575f-113">[フォーカスの視覚効果](#focus-visual)、[アクセス キー](#access-keys)、[UI ナビゲーション](#navigation) など、ここで説明するガイドラインと推奨事項の多くは、これらの他のシナリオにも当てはまります。</span><span class="sxs-lookup"><span data-stu-id="c575f-113">Many of the guidelines and recommendations discussed here, including [focus visuals](#focus-visual), [access keys](#access-keys), and [UI navigation](#navigation), are also applicable to these other scenarios.</span></span>
+
+<span data-ttu-id="c575f-114">**注:**  テキスト入力はハードウェア キーボードとソフトウェア キーボードの両方に使用されますが、このトピックではナビゲーションと対話式操作に焦点を当てます。</span><span class="sxs-lookup"><span data-stu-id="c575f-114">**NOTE**  While both hardware and software keyboards are used for text input, the focus of this topic is navigation and interaction.</span></span>
+
+## <a name="built-in-support"></a><span data-ttu-id="c575f-115">組み込みサポート</span><span class="sxs-lookup"><span data-stu-id="c575f-115">Built-in support</span></span>
+
+<span data-ttu-id="c575f-116">マウスと共に、キーボードは PC で最もよく使われている周辺機器であるため、PC のエクスペリエンスの基本となる部分です。</span><span class="sxs-lookup"><span data-stu-id="c575f-116">Along with the mouse, the keyboard is the most widely used peripheral on PCs and, as such, is a fundamental part of the PC experience.</span></span> <span data-ttu-id="c575f-117">PC ユーザーは、キーボード入力への応答として、システムと個々のアプリの両方から総合的で一貫性のあるエクスペリエンスがあることを期待します。</span><span class="sxs-lookup"><span data-stu-id="c575f-117">PC users expect a comprehensive and consistent experience from both the system and individual apps in response to keyboard input.</span></span>
+
+<span data-ttu-id="c575f-118">すべての UWP コントロールには、キーボードの豊富なエクスペリエンスとユーザー操作の組み込みサポートが含まれていますが、プラットフォーム自体にはカスタム コントロールとアプリの両方で最適と感じるキーボード エクスペリエンスを生み出すための広範な基盤が用意されています。</span><span class="sxs-lookup"><span data-stu-id="c575f-118">All UWP controls include built-in support for rich keyboard experiences and user interactions, while the platform itself provides an extensive foundation for creating keyboard experiences that you feel are best suited to both your custom controls and apps.</span></span>
+
+![キーボードと携帯電話の画像](images/keyboard/keyboard-phone.jpg)
+
+***<span data-ttu-id="c575f-120">UWP は、あらゆるデバイスのキーボードをサポートします</span><span class="sxs-lookup"><span data-stu-id="c575f-120">UWP supports keyboard with any device</span></span>***
+
+## <a name="basic-experiences"></a><span data-ttu-id="c575f-121">基本的なエクスペリエンス</span><span class="sxs-lookup"><span data-stu-id="c575f-121">Basic experiences</span></span>
+![フォーカス ベースのデバイス](images/keyboard/focus-based-devices.jpg)
+
+<span data-ttu-id="c575f-123">前述のように、Xbox ゲームパッドやリモコンなどの入力デバイスと、ナレーターなどのアクセシビリティ ツールは、ナビゲーションとコマンド実行においてキーボードの入力エクスペリエンスの大半を共有します。</span><span class="sxs-lookup"><span data-stu-id="c575f-123">As mentioned previously, input devices such as the Xbox gamepad and remote control, and accessibility tools such as Narrator, share much of the keyboard input experience for navigation and commanding.</span></span> <span data-ttu-id="c575f-124">入力の種類とツールが異なってもエクスペリエンスが共通であれば、ユーザーの追加作業は最小限に抑えられ、ユニバーサル Windows プラットフォームの "1 回のビルドで、どこでも実行可能" という目標に貢献します。</span><span class="sxs-lookup"><span data-stu-id="c575f-124">This common experience across input types and tools minimizes additional work from you and contributes to the "build once, run anywhere" goal of the Universal Windows Platform.</span></span>
+
+<span data-ttu-id="c575f-125">必要に応じて、注意すべき主な違いを取り上げ、考慮する必要がある軽減策について説明します。</span><span class="sxs-lookup"><span data-stu-id="c575f-125">Where necessary, we’ll identify key differences you should be aware of and describe any mitigations you should consider.</span></span>
+
+<span data-ttu-id="c575f-126">このトピックで説明するデバイスとツールを次に示します。</span><span class="sxs-lookup"><span data-stu-id="c575f-126">Here are the devices and tools discussed in this topic:</span></span>
+
+| <span data-ttu-id="c575f-127">デバイス/ツール</span><span class="sxs-lookup"><span data-stu-id="c575f-127">Device/tool</span></span>                       | <span data-ttu-id="c575f-128">説明</span><span class="sxs-lookup"><span data-stu-id="c575f-128">Description</span></span>     |
+|-----------------------------------|-----------------|
+|<span data-ttu-id="c575f-129">キーボード (ハードウェアおよびソフトウェア)</span><span class="sxs-lookup"><span data-stu-id="c575f-129">Keyboard (hardware and software)</span></span>   |<span data-ttu-id="c575f-130">UWP アプリは、標準的なハードウェア キーボードに加えて、[タッチ (つまりソフトウェア キーボード)](#touch-keyboard) と[スクリーン キーボード](#osk)の 2 つのソフトウェア キーボードをサポートします。</span><span class="sxs-lookup"><span data-stu-id="c575f-130">In addition to the standard hardware keyboard, UWP apps support two software keyboards: the [touch (or software keyboard)](#touch-keyboard) and the [On-Screen Keyboard](#osk).</span></span>|
+|<span data-ttu-id="c575f-131">ゲームパッドとリモコン</span><span class="sxs-lookup"><span data-stu-id="c575f-131">Gamepad and remote control</span></span>         |<span data-ttu-id="c575f-132">Xbox のゲームパッドとリモコンは、[10 フィート エクスペリエンス](designing-for-tv.md)における基本的な入力デバイスです。</span><span class="sxs-lookup"><span data-stu-id="c575f-132">The Xbox gamepad and remote control are fundamental input devices in the [10-foot experience](designing-for-tv.md).</span></span>
+<span data-ttu-id="c575f-133">UWP におけるゲームパッドとリモコンのサポートについて詳しくは、「[ゲームパッドとリモコンの操作](gamepad-and-remote-interactions.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c575f-133">For specific details on UWP support for gamepad and remote control, see [Gamepad and remote control interactions](gamepad-and-remote-interactions.md).</span></span>|
+|<span data-ttu-id="c575f-134">スクリーン リーダー (ナレーター)</span><span class="sxs-lookup"><span data-stu-id="c575f-134">Screen readers (Narrator)</span></span>          |<span data-ttu-id="c575f-135">ナレーターは、独自の操作エクスペリエンスと機能を提供する Windows の組み込みスクリーン リーダーですが、依然として基本的なキーボード ナビゲーションと入力に依存しています。</span><span class="sxs-lookup"><span data-stu-id="c575f-135">Narrator is a built-in screen reader for Windows that provides unique interaction experiences and functionality, but still relies on basic keyboard navigation and input.</span></span>
+<span data-ttu-id="c575f-136">ナレーターについて詳しくは、「[ナレーターの概要](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c575f-136">For Narrator details, see [Getting started with Narrator](https://support.microsoft.com/help/22798/windows-10-narrator-get-started).</span></span>|
+
+## <a name="custom-experiences-and-efficient-keyboarding"></a><span data-ttu-id="c575f-137">カスタム エクスペリエンスと効率的なキーボード操作</span><span class="sxs-lookup"><span data-stu-id="c575f-137">Custom experiences and efficient keyboarding</span></span>
+<span data-ttu-id="c575f-138">前述のとおり、さまざまなスキル、能力、期待を持ったユーザーにとってアプリケーションが十分に機能するために、キーボードのサポートは重要です。</span><span class="sxs-lookup"><span data-stu-id="c575f-138">As mentioned, keyboard support is integral to ensuring your applications work great for users with different skills, abilities, and expectations.</span></span> <span data-ttu-id="c575f-139">次の点を重視することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="c575f-139">We recommend that you prioritize the following.</span></span>
+- <span data-ttu-id="c575f-140">キーボードを使った操作のサポート</span><span class="sxs-lookup"><span data-stu-id="c575f-140">Support keyboard navigation and interaction</span></span>
+    - <span data-ttu-id="c575f-141">操作可能な項目をタブ位置として定義します (操作可能でない項目は、そうしないようにします)。ナビゲーションの順序が論理的かつ予測可能であるようにします ([タブ位置](#tab-stops)をご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="c575f-141">Ensure actionable items are identified as tab stops (and non-actionable items are not), and navigation order is logical and predictable (see [Tab stops](#tab-stops))</span></span>
+    - <span data-ttu-id="c575f-142">初期フォーカスは、最も論理的な要素に設定します ([初期フォーカス](#initial-focus) をご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="c575f-142">Set initial focus on the most logical element (see [Initial focus](#initial-focus))</span></span>
+    - <span data-ttu-id="c575f-143">"内部ナビゲーション" には矢印キーのナビゲーションを提供します ([ナビゲーション](#navigation)をご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="c575f-143">Provide arrow key navigation for "inner navigations" (see [Navigation](#navigation))</span></span>
+- <span data-ttu-id="c575f-144">キーボード ショートカットのサポート</span><span class="sxs-lookup"><span data-stu-id="c575f-144">Support keyboard shortcuts</span></span>
+    - <span data-ttu-id="c575f-145">クイック アクションのためのアクセラレータ キーを提供します ([アクセラレータ](#accelerators)をご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="c575f-145">Provide accelerator keys for quick actions (see [Accelerators](#accelerators))</span></span>
+    - <span data-ttu-id="c575f-146">アプリの UI のナビゲーションのためのアクセス キーを提供します ([アクセス キー](access-keys.md)をご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="c575f-146">Provide access keys to navigate your app's UI (see [Access keys](access-keys.md))</span></span>
+
+### <a name="focus-visuals-a-namefocus-visual"></a><span data-ttu-id="c575f-147">フォーカスの視覚効果 <a name="focus-visual"></span><span class="sxs-lookup"><span data-stu-id="c575f-147">Focus visuals <a name="focus-visual"></span></span>
+
+<span data-ttu-id="c575f-148">UWP は、あらゆる入力の種類とエクスペリエンスで適切に動作する 1 つのフォーカスの視覚効果デザインをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="c575f-148">The UWP supports a single focus visual design that works well for all input types and experiences.</span></span>
+![フォーカスの視覚効果](images/keyboard/focus-visual.png)
+
+<span data-ttu-id="c575f-150">フォーカスの視覚効果には次のような特徴があります。</span><span class="sxs-lookup"><span data-stu-id="c575f-150">A focus visual:</span></span>
+-   <span data-ttu-id="c575f-151">UI 要素がキーボードやゲームパッド/リモコンからフォーカスを受け取ったときに表示されます。</span><span class="sxs-lookup"><span data-stu-id="c575f-151">Is shown when a UI element receives focus from a keyboard and/or gamepad/remote control</span></span>
+-   <span data-ttu-id="c575f-152">実行すべき操作を示すため、強調表示された境界線および UI 要素としてレンダリングされます。</span><span class="sxs-lookup"><span data-stu-id="c575f-152">Is rendered as a highlighted border around the UI element to indicate an action can be taken</span></span>
+-   <span data-ttu-id="c575f-153">ユーザーが迷わすにアプリの UI を移動するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="c575f-153">Helps a user navigate an app UI without getting lost</span></span>
+-   <span data-ttu-id="c575f-154">アプリ用にカスタマイズできます (「[視認性の高いフォーカスの視覚効果](guidelines-for-visualfeedback.md#high-visibility-focus-visuals)」をご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="c575f-154">Can be customized for your app (See [High visibility focus  visuals](guidelines-for-visualfeedback.md#high-visibility-focus-visuals))</span></span>
+
+<span data-ttu-id="c575f-155">**注:** UWP のフォーカスの視覚効果は、ナレーターのフォーカスの四角形と同じではありません。</span><span class="sxs-lookup"><span data-stu-id="c575f-155">**NOTE** The UWP focus visual is not the same as the Narrator focus rectangle.</span></span>
+
+### <a name="tab-stops-a-nametab-stops"></a><span data-ttu-id="c575f-156">タブ位置 <a name="tab-stops"></span><span class="sxs-lookup"><span data-stu-id="c575f-156">Tab stops <a name="tab-stops"></span></span>
+
+<span data-ttu-id="c575f-157">キーボードでコントロール (ナビゲーション要素を含む) を操作するには、そのコントロールがフォーカスを取得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c575f-157">To use a control (including navigation elements) with the keyboard, the control must have focus.</span></span> <span data-ttu-id="c575f-158">キーボード フォーカスを受け取るコントロールの 1 つの方法は、アプリのタブ オーダーでタブ位置として識別することによりタブ ナビゲーションを通じてアクセスできるようにする方法です。</span><span class="sxs-lookup"><span data-stu-id="c575f-158">One way for a control to receive keyboard focus is to make it accessible through tab navigation by identifying it as a tab stop in your app’s tab order.</span></span>
+
+<span data-ttu-id="c575f-159">タブ オーダーに含まれるコントロールの場合、[**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) プロパティを **true** に設定し、[**IsTabStop**](https://msdn.microsoft.com/library/windows/apps/br209422) プロパティを **true** に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c575f-159">For a control to be included in the tab order, the [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) property must be set to **true** and the [**IsTabStop**](https://msdn.microsoft.com/library/windows/apps/br209422) property must be set to **true.**</span></span>
+
+<span data-ttu-id="c575f-160">タブ オーダーからコントロールを明示的に除外するには、[**IsTabStop**](https://msdn.microsoft.com/library/windows/apps/br209422) プロパティを **false** に設定します。</span><span class="sxs-lookup"><span data-stu-id="c575f-160">To specifically exclude a control from the tab order, set the [**IsTabStop**](https://msdn.microsoft.com/library/windows/apps/br209422) property to **false.**</span></span>
+
+<span data-ttu-id="c575f-161">既定では、タブ オーダーには UI 要素が作成される順序が反映されます。</span><span class="sxs-lookup"><span data-stu-id="c575f-161">By default, tab order reflects the order in which UI elements are created.</span></span> <span data-ttu-id="c575f-162">たとえば、`StackPanel` には `Button`、`Checkbox`、`TextBox` が含まれ、タブ オーダーは `Button`、`Checkbox`、`TextBox` です。</span><span class="sxs-lookup"><span data-stu-id="c575f-162">For example, if a `StackPanel` contains a `Button`, a `Checkbox`, and a `TextBox`, tab order is `Button`, `Checkbox`, and `TextBox`.</span></span>
+
+<span data-ttu-id="c575f-163">[**TabIndex**](https://msdn.microsoft.com/library/windows/apps/br209461) プロパティを設定することで、既定のタブ オーダーを上書きできます。</span><span class="sxs-lookup"><span data-stu-id="c575f-163">You can override the default tab order by setting the [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/br209461) property.</span></span>
+
+#### <a name="tab-order-should-be-logical-and-predictable"></a><span data-ttu-id="c575f-164">タブ オーダーは、論理的かつ予測可能でなければなりません。</span><span class="sxs-lookup"><span data-stu-id="c575f-164">Tab order should be logical and predictable</span></span>
+
+<span data-ttu-id="c575f-165">論理的で予測可能なタブ オーダーを使った、適切に設計されたキーボード ナビゲーション モデルがあれば、アプリはより直感的になり、ユーザーは機能をより効率的かつ効果的に探して見つけ、アクセスできるようになります。</span><span class="sxs-lookup"><span data-stu-id="c575f-165">A well-designed keyboard navigation model, using a logical and predictable tab order, makes your app more intuitive and helps users explore, discover, and access functionality more efficiently and effectively.</span></span>
+
+<span data-ttu-id="c575f-166">すべての対話的なコントロールには ([グループ](#control-group)内のコントロールでなければ) タブ位置があり、`labels`など非対話型のコントロールにはありません。</span><span class="sxs-lookup"><span data-stu-id="c575f-166">All interactive controls should have tab stops (unless they are in a [group](#control-group)), while non-interactive controls, such as `labels`, should not.</span></span>
+
+<span data-ttu-id="c575f-167">フォーカスがアプリケーション内をジャンプするようなタブ オーダーは避けてください。</span><span class="sxs-lookup"><span data-stu-id="c575f-167">Avoid tab order that make the focus jump around in your application.</span></span> <span data-ttu-id="c575f-168">たとえば、フォームのような UI のコントロールの一覧には、上から下および左から右へと移動するタブ オーダーが必要です。</span><span class="sxs-lookup"><span data-stu-id="c575f-168">For example, a list of controls in a form-like UI should have a tab order that flows top to bottom and left to right.</span></span>
+
+<span data-ttu-id="c575f-169">タブ位置のカスタマイズについて詳しくは、「[キーボードのアクセシビリティ](../accessibility/keyboard-accessibility.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c575f-169">See [Keyboard accessibility](../accessibility/keyboard-accessibility.md) page for more details about customizing tab stops.</span></span>
+
+#### <a name="try-to-coordinate-tab-order-and-visual-order"></a><span data-ttu-id="c575f-170">タブ オーダーと表示順序を調整してみる</span><span class="sxs-lookup"><span data-stu-id="c575f-170">Try to coordinate tab order and visual order</span></span>
+
+<span data-ttu-id="c575f-171">タブ オーダーと表示順序 (読み取り順序とも呼ばれます) を調整すると、ユーザーがアプリの UI を使って移動する際の混乱を減らすことができます。</span><span class="sxs-lookup"><span data-stu-id="c575f-171">Coordinating tab order and visual order (also referred to as reading order or display order) helps reduce confusion for users as they navigate through your app’s UI.</span></span>
+
+<span data-ttu-id="c575f-172">コマンド、コントロール、コンテンツを順序付けし、最も重要なものをタブ オーダーと表示順序の両方で最初に提示するようにしてください。</span><span class="sxs-lookup"><span data-stu-id="c575f-172">Try to rank and present the most important commands, controls, and content first in both the tab order and the visual order.</span></span> <span data-ttu-id="c575f-173">ただし実際の表示位置は、親レイアウト コンテナーと、レイアウトに影響する子要素の特定のプロパティに左右されることがあります。</span><span class="sxs-lookup"><span data-stu-id="c575f-173">However, the actual display position can depend on the parent layout container and certain properties of the child elements that influence the layout.</span></span> <span data-ttu-id="c575f-174">特に、グリッド形式または表形式を使用しているレイアウトでは、表示順序がタブ オーダーとまったく異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="c575f-174">Specifically, layouts that use a grid metaphor or a table metaphor can have a visual order quite different from the tab order.</span></span>
+
+<span data-ttu-id="c575f-175">**注:** 表示順序はロケールと言語にも依存します。</span><span class="sxs-lookup"><span data-stu-id="c575f-175">**NOTE** Visual order is also dependent on locale and language.</span></span>
+
+### <a name="initial-focus-a-nameinitial-focus"></a><span data-ttu-id="c575f-176">初期フォーカス<a name="initial-focus"></span><span class="sxs-lookup"><span data-stu-id="c575f-176">Initial focus <a name="initial-focus"></span></span>
+
+<span data-ttu-id="c575f-177">初期フォーカスは、アプリケーションやページが最初に起動またはアクティブ化されたときにフォーカスを受け取る UI 要素を指定します。</span><span class="sxs-lookup"><span data-stu-id="c575f-177">Initial focus specifies the UI element that receives focus when an application or a page is first launched or activated.</span></span> <span data-ttu-id="c575f-178">キーボードを使っている場合、ユーザーはアプリの UI の操作をこの要素から開始します。</span><span class="sxs-lookup"><span data-stu-id="c575f-178">When using a keyboard, it is from this element that a user starts interacting with your app’s UI.</span></span>
+
+<span data-ttu-id="c575f-179">UWP アプリの場合、初期フォーカスはフォーカスを受け取ることができる最上位の [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/br209461) を持つ要素に設定されます。</span><span class="sxs-lookup"><span data-stu-id="c575f-179">For UWP apps, initial focus is set to the element with the highest [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/br209461) that can receive focus.</span></span> <span data-ttu-id="c575f-180">コンテナー コントロールの子要素は無視されます。</span><span class="sxs-lookup"><span data-stu-id="c575f-180">Child elements of container controls are ignored.</span></span> <span data-ttu-id="c575f-181">TIE の場合、表示ツリー内の最初の要素がフォーカスを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="c575f-181">In a tie, the first element in the visual tree receives focus.</span></span>
+
+#### <a name="set-initial-focus-on-the-most-logical-element"></a><span data-ttu-id="c575f-182">初期フォーカスは、最も論理的な要素に設定します。</span><span class="sxs-lookup"><span data-stu-id="c575f-182">Set initial focus on the most logical element</span></span>
+
+<span data-ttu-id="c575f-183">初期フォーカスは、ユーザーがアプリを起動したり、ページを移動したりするときに最初に実行する可能性が最も高い操作 (つまり、プライマリ操作) の UI 要素に設定します。</span><span class="sxs-lookup"><span data-stu-id="c575f-183">Set initial focus on the UI element for the first, or primary, action that users are most likely to take when launching your app or navigating to a page.</span></span> <span data-ttu-id="c575f-184">次のような例があります。</span><span class="sxs-lookup"><span data-stu-id="c575f-184">Some examples include:</span></span>
+-   <span data-ttu-id="c575f-185">フォーカスがギャラリー内の最初の項目に設定されているフォト アプリ</span><span class="sxs-lookup"><span data-stu-id="c575f-185">A photo app where focus is set to the first item in a gallery</span></span>
+-   <span data-ttu-id="c575f-186">フォーカスが再生ボタンに設定されているミュージック アプリ</span><span class="sxs-lookup"><span data-stu-id="c575f-186">A music app where focus is set to the play button</span></span>
+
+#### <a name="dont-set-initial-focus-on-an-element-that-exposes-a-potentially-negative-or-even-disastrous-outcome"></a><span data-ttu-id="c575f-187">初期フォーカスは、ネガティブ (または破滅的) な結果を招く可能性のある要素に設定しないでください。</span><span class="sxs-lookup"><span data-stu-id="c575f-187">Don’t set initial focus on an element that exposes a potentially negative, or even disastrous, outcome</span></span>
+
+<span data-ttu-id="c575f-188">このレベルの機能はユーザーが選択できるようにします。</span><span class="sxs-lookup"><span data-stu-id="c575f-188">This level of functionality should be a user’s choice.</span></span> <span data-ttu-id="c575f-189">重要な結果を生み出す要素に初期フォーカスを設定すると、意図しないデータ消失またはシステム アクセスが生じる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="c575f-189">Setting initial focus to an element with a significant outcome might result in unintended data loss or system access.</span></span> <span data-ttu-id="c575f-190">たとえば、メールに移動するときにフォーカスを削除ボタンに設定しないでください。</span><span class="sxs-lookup"><span data-stu-id="c575f-190">For example, don’t set focus to the delete button when navigating to an e-mail.</span></span>
+
+<span data-ttu-id="c575f-191">タブ オーダーの上書きについて詳しくは、「[キーボードのアクセシビリティ](../accessibility/keyboard-accessibility.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c575f-191">See [Keyboard accessibility](../accessibility/keyboard-accessibility.md) page for more details about overriding tab order.</span></span>
+
+### <a name="navigation-a-namenavigation"></a><span data-ttu-id="c575f-192">ナビゲーション <a name="navigation"></span><span class="sxs-lookup"><span data-stu-id="c575f-192">Navigation <a name="navigation"></span></span>
+
+<span data-ttu-id="c575f-193">キーボード ナビゲーションは通常、Tab キーと方向キーによってサポートされます。</span><span class="sxs-lookup"><span data-stu-id="c575f-193">Keyboard navigation is typically supported through the Tab keys and the Arrow keys.</span></span>
+
+![Tab + 方向キー](images/keyboard/tab-and-arrow.png)
+
+<span data-ttu-id="c575f-195">既定では、UWP コントロールは以下の基本的なキーボード動作に従います。</span><span class="sxs-lookup"><span data-stu-id="c575f-195">By default, UWP controls follow these basic keyboard behaviors:</span></span>
+-   <span data-ttu-id="c575f-196">**Tab キー**を使うと、実行可能な/アクティブなコントロール間をタブ オーダーで移動します。</span><span class="sxs-lookup"><span data-stu-id="c575f-196">**Tab keys** navigate between actionable/active controls in tab order.</span></span>
+-   <span data-ttu-id="c575f-197">**Shift + Tab** キーを使うと、コントロールを逆タブ オーダーで移動します。</span><span class="sxs-lookup"><span data-stu-id="c575f-197">**Shift + Tab** navigate controls in reverse tab order.</span></span> <span data-ttu-id="c575f-198">ユーザーが方向キーを使ってコントロール内を移動した場合、フォーカスはコントロール内の最後の既知の値に設定されます。</span><span class="sxs-lookup"><span data-stu-id="c575f-198">If user has navigated inside the control using arrow key, focus is set to the last known value inside the control.</span></span>
+-   <span data-ttu-id="c575f-199">**方向キー**を使うと、コントロール固有の "内部ナビゲーション" が表示されます。ユーザーが "内部ナビゲーション" に入ると、方向キーを使ってもコントロール外に移動しません。</span><span class="sxs-lookup"><span data-stu-id="c575f-199">**Arrow keys** expose control-specific "inner navigation" When user enters "inner navigation,"" arrow keys do not navigate out of a control.</span></span> <span data-ttu-id="c575f-200">次のような例があります。</span><span class="sxs-lookup"><span data-stu-id="c575f-200">Some examples include:</span></span>
+    -   <span data-ttu-id="c575f-201">上/下方向キーを使うと、`ListView` 内でフォーカスが移動します。</span><span class="sxs-lookup"><span data-stu-id="c575f-201">Up/Down arrow key moves focus inside `ListView` and</span></span> `MenuFlyout`
+    -   <span data-ttu-id="c575f-202">`Slider` の現在選択されている値が変更されます。</span><span class="sxs-lookup"><span data-stu-id="c575f-202">Modify currently selected values for `Slider` and</span></span> `RatingsControl`
+    -   <span data-ttu-id="c575f-203">内部でカーソルが移動します。</span><span class="sxs-lookup"><span data-stu-id="c575f-203">Move caret inside</span></span> `TextBox`
+    -   <span data-ttu-id="c575f-204">内部で項目が展開/折りたたまれます。</span><span class="sxs-lookup"><span data-stu-id="c575f-204">Expand/collapse items inside</span></span> `TreeView`
+
+<span data-ttu-id="c575f-205">アプリのキーボード ナビゲーションを最適化するには、これらの既定の動作を使用します。</span><span class="sxs-lookup"><span data-stu-id="c575f-205">Use these default behaviors to optimize your app’s keyboard navigation.</span></span>
+
+#### <a name="use-inner-navigation-with-sets-of-related-controls"></a><span data-ttu-id="c575f-206">関連するコントロールのセットで ”内部ナビゲーション" を使う</span><span class="sxs-lookup"><span data-stu-id="c575f-206">Use "inner navigation" with sets of related controls</span></span>
+
+<span data-ttu-id="c575f-207">一連の関連するコントロールに方向キー ナビゲーションを提供すると、アプリの UI の全体的な組織内の関係が強化されます。</span><span class="sxs-lookup"><span data-stu-id="c575f-207">Providing arrow key navigation into a set of related controls reinforces their relationship within the overall organization of your app’s UI.</span></span>
+
+<span data-ttu-id="c575f-208">たとえば、ここに示す `ContentDialog` コントロールは、横 1 列のボタンに既定で内部ナビゲーションを提供します (カスタム コントロールについては、「[コントロール グループ](#control-group)」をご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="c575f-208">For example, the `ContentDialog` control shown here provides inner navigation by default for a horizontal row of buttons (for custom controls, see the [Control Group](#control-group) section).</span></span>
+
+![ダイアログの例](images/keyboard/dialog.png)
+
+***<span data-ttu-id="c575f-210">方向キー ナビゲーションを使うと、関連するボタンのコレクションの操作が簡単になる</span><span class="sxs-lookup"><span data-stu-id="c575f-210">Interaction with a collection of related buttons is made easier with arrow key navigation</span></span>***
+
+<span data-ttu-id="c575f-211">項目が 1 列に表示されている場合、上/下方向キーによって項目を移動します。</span><span class="sxs-lookup"><span data-stu-id="c575f-211">If items are displayed in a single column, Up/Down arrow key navigates items.</span></span> <span data-ttu-id="c575f-212">項目が 1 行に表示されている場合、右/左方向キーによって項目を移動します。</span><span class="sxs-lookup"><span data-stu-id="c575f-212">If items are displayed in a single row, Right/Left arrow key navigates items.</span></span> <span data-ttu-id="c575f-213">項目が複数の列にある場合、4 つの方向キーすべてを使って移動します。</span><span class="sxs-lookup"><span data-stu-id="c575f-213">If items are multiple columns, all 4 arrow keys navigate.</span></span>
+
+#### <a name="make-a-set-of-related-controls-a-single-tab-stop"></a><span data-ttu-id="c575f-214">一連の関連するコントロールを 1 つのタブ位置にする</span><span class="sxs-lookup"><span data-stu-id="c575f-214">Make a set of related controls a single tab stop</span></span>
+
+<span data-ttu-id="c575f-215">一連の関連する (または補完的な) コントロールを 1つのタブ位置にすることにより、アプリ内の全体的なタブ位置の数を最小限に抑えることができます。</span><span class="sxs-lookup"><span data-stu-id="c575f-215">By making a set of related, or complementary, controls a single tab stop, you can minimize the number of overall tab stops in your app.</span></span>
+
+<span data-ttu-id="c575f-216">たとえば、次の図は縦に並んだ 2 つの `ListView` コントロールを示しています。</span><span class="sxs-lookup"><span data-stu-id="c575f-216">For example, the following images show two stacked `ListView` controls.</span></span> <span data-ttu-id="c575f-217">左の図は、`ListView` コントロール間を移動するタブ位置で使われる方向キー ナビゲーション を示しているのに対し、右の図は、Tab キーによって親コントロールを移動する必要をなくすことで、子要素間のナビゲーションがどのように簡単かつ効率的になるかを示しています。</span><span class="sxs-lookup"><span data-stu-id="c575f-217">The image on the left shows arrow key navigation used with a tab stop to navigate between `ListView` controls, while the image on the right shows how navigation between child elements could be made easier and more efficient by eliminating the need for to traverse parent controls with a tab key.</span></span>
 
 
-適切に設計されたキーボード UI はソフトウェアのアクセシビリティの重要な要素であり、 視覚に障碍のあるユーザーや特定の運動障碍のあるユーザーによるアプリ内の移動や、その機能の操作を実現します。 このようなユーザーはマウスを操作できない場合があるため、代わりにさまざまな支援技術 (キーボード強化ツール、スクリーン キーボード、スクリーン拡大機能、スクリーン リーダー、音声入力ユーティリティなど) が不可欠になる可能性があります。
-
-ユーザーはハードウェア キーボードと 2 つのソフトウェア キーボード (スクリーン キーボード (OSK) およびタッチ キーボード) を通じて、ユニバーサル アプリを操作できます。
-
-スクリーン キーボード  
-スクリーン キーボードは、物理的なキーボードの代わりに使うことができる視覚的なソフトウェア キーボードです。タッチ、マウス、ペン/スタイラス、またはその他のポインティング デバイスを通じてデータを入力します (タッチ スクリーンは必須ではありません)。 スクリーン キーボードは、物理的なキーボードが存在しないシステムや、運動障碍により一般的な物理入力デバイスを使うことができないユーザーのために用意されています。 スクリーン キーボードは、ハードウェア キーボードの機能のすべて、または少なくともほとんどをエミュレートします。
-
-スクリーン キーボードは、[設定] &gt; [簡単操作] の [キーボード] ページから有効にすることができます。
-
-**注**  スクリーン キーボードはタッチ キーボードよりも優先され、スクリーン キーボードが表示されている場合はタッチ キーボードは表示されません。
-
- 
-
-![スクリーン キーボード](images/input-patterns/osk.png)
-
-<sup>スクリーン キーボード</sup>
-
-タッチ キーボード  
-タッチ キーボードは、タッチ入力でのテキスト入力に使われる、視覚的なソフトウェア キーボードです。 タッチ キーボードはテキスト入力専用であり (ハードウェア キーボードをエミュレートしません)、スクリーン キーボードに代わるものではありません。
-
-デバイスに応じて、タッチ キーボードは、テキスト フィールドやその他の編集可能なテキスト コントロールがフォーカスを取得したとき、またはユーザーが**通知センター**で手動でタッチ キーボードを有効にしたときに表示されます。
-
-![通知センターでのタッチ キーボードのアイコン](images/input-patterns/touch-keyboard-notificationcenter.png)
-
-**注**  ユーザーは [設定] &gt; [システム] の **[タブレット モード]** 画面に移動して、[デバイスをタブレットとして使用すると、Windows のタッチ機能がより使いやすくなります] をオンにして、タッチ キーボードの自動表示を有効にすることができます。
-
- 
-
-テキスト入力コントロールへのフォーカスをプログラムで設定するアプリの場合、タッチ キーボードは呼び出されません。 これにより、ユーザーの直接的な操作による予期しない動作を回避できます。 ただし、プログラムによってキーボードがテキスト入力コントロール以外に移動されると、キーボードが自動的に非表示になります。
-
-通常、ユーザーがフォームでコントロール間を移動している間は、タッチ キーボードは表示されたままです。 この動作は、フォーム内の他のコントロールの種類に基づいて異なります。
-
-タッチ キーボードを使用するテキスト入力セッション中に、キーボードを閉じずにフォーカスを受け取ることができる非編集コントロールの一覧を次に示します。 ユーザーがこれらのコントロールとタッチ キーボードによるテキスト入力との間で何度も行き来することが考えられるため、UI の表示を不必要に切り替えてユーザーを混乱させることのないよう、タッチ キーボードは表示されたままになります。
-
--   チェック ボックス
--   コンボ ボックス
--   ラジオ ボタン
--   スクロール バー
--   ツリー
--   ツリー項目
--   メニュー
--   メニュー バー
--   メニュー項目
--   ツール バー
--   一覧
--   一覧項目
-
-次に、タッチ キーボードのさまざまなモードの例を示します。 最初の画像は既定のレイアウトであり、2 つ目の画像は親指レイアウトです (一部の言語では利用できません)。
-
-次に、タッチ キーボードのさまざまなモードの例を示します。 最初の画像は既定のレイアウトであり、2 つ目の画像は親指レイアウトです (一部の言語では利用できません)。
 <table>
-<tr>
-    <td>**既定のレイアウト モードのタッチ キーボード:  **</td>
-    <td>![既定のレイアウト モードのタッチ キーボード](images/touchkeyboard-standard.png)</td>
-</tr>
-<tr>
-    <td>**拡張レイアウト モードのタッチ キーボード:  **</td>
-    <td>![拡張レイアウト モードのタッチ キーボード](images/touchkeyboard-expanded.png)</td>
-</tr>
-<tr>
-    <td>**既定の親指レイアウト モードのタッチ キーボード:  **</td>
-    <td>![親指レイアウト モードのタッチ キーボード](images/touchkeyboard-thumb.png)</td>
-</tr>
-<tr>
-    <td>**数字親指レイアウト モードのタッチ キーボード:  **</td>
-    <td>![数字親指レイアウト モードのタッチ キーボード](images/touchkeyboard-numeric-thumb.png)</td>
-</tr>
+  <td>![方向キーと Tab キー](images/keyboard/arrow-and-tab.png)</td>
+  <td>![方向キーのみ](images/keyboard/arrow-only.png)</td>
 </table>
 
+***<span data-ttu-id="c575f-220">縦に並んだ 2 つの ListView コントロールの操作は、タブ位置をなくして方向キーだけで移動することにより、簡単かつ効率的になります。</span><span class="sxs-lookup"><span data-stu-id="c575f-220">Interaction with two stacked ListView controls can be made easier and more efficient by eliminating the tab stop and navigating with just arrow keys.</span></span>***
 
-キーボード操作に成功すると、ユーザーはキーボードのみを使って基本のアプリ シナリオを実行できます。つまり、ユーザーはすべての対話型要素にアクセスし、既定の機能をアクティブにすることができます。 成功の度合いには、キーボード ナビゲーション、アクセシビリティ対応のアクセス キー、上級ユーザー用のアクセラレータ (ショートカット) キーなど、さまざまな要因が影響します。
+<span data-ttu-id="c575f-221">アプリケーション UI に最適化の例を適用する方法については、「[コントロール グループ](#control-group)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c575f-221">Visit [Control Group](#control-group) section to learn how to apply the optimization examples to your application UI.</span></span>
 
-**注**  タッチ キーボードでは、トグルや、ほとんどのシステム コマンドがサポートされません (「[パターン](#keyboard_command_patterns)」をご覧ください)。
+### <a name="interaction-and-commanding"></a><span data-ttu-id="c575f-222">対話式操作とコマンド実行</span><span class="sxs-lookup"><span data-stu-id="c575f-222">Interaction and commanding</span></span>
 
-## <a name="navigation"></a>ナビゲーション
+<span data-ttu-id="c575f-223">コントロールにフォーカスが置かれると、ユーザーはそのコントロールを操作し、特定のキーボード入力を使って関連付けられている機能を呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="c575f-223">Once a control has focus, a user can interact with it and invoke any associated functionality using specific keyboard input.</span></span>
 
+#### <a name="text-entry"></a><span data-ttu-id="c575f-224">テキスト入力</span><span class="sxs-lookup"><span data-stu-id="c575f-224">Text entry</span></span>
 
-キーボードでコントロール (ナビゲーション要素を含む) を操作するには、そのコントロールがフォーカスを取得する必要があります。 コントロールにキーボード フォーカスを受け取る方法の 1 つは、そのコントロールにタブ ナビゲーションでアクセスできるようにすることです。 適切にデザインされたキーボード ナビゲーション モデルでは、ユーザーが迅速かつ効率的にアプリを移動して使用するための予測可能な論理タブ オーダーを提供します。
+<span data-ttu-id="c575f-225">`TextBox` や `RichEditBox` など、特にテキスト入力向けに設計されたコントロールの場合、テキストの入力や移動のためにすべてのキーボード入力が使用され、他のキーボード コマンドより優先されます。</span><span class="sxs-lookup"><span data-stu-id="c575f-225">For those controls specifically designed for text input such as `TextBox` and `RichEditBox`, all keyboard input is used for entering or navigating text, which takes priority over other keyboard commands.</span></span> <span data-ttu-id="c575f-226">たとえば、`AutoSuggestBox` コントロールのドロップ ダウン メニューは **Space** キーを選択コマンドとして認識しません。</span><span class="sxs-lookup"><span data-stu-id="c575f-226">For example, the drop down menu for an `AutoSuggestBox` control does not recognize the **Space** key as a selection command.</span></span>
 
-すべての対話的なコントロールには (グループ内のコントロールでなければ) タブ ストップがあり、ラベルなど非対話型のコントロールにはありません。
+![テキスト入力](images/keyboard/text-entry.png)
 
-一連の関連するコントロールをコントロール グループとしてまとめ、1 つのタブ ストップを割り当てることもできます。 コントロール グループは、ラジオ ボタンなどのように、1 つのコントロールとして動作するコントロールのセットに使用されます。 コントロール数が多すぎて、Tab キーだけでは効率的に移動できない場合にも使用できます。 方向キー、Home、End、PageUp、PageDown を使うと、グループ内のコントロール間で入力フォーカスを移動できます (これらのキーを使用してコントロール グループの外に移動することはできません)。
+#### <a name="space-key"></a><span data-ttu-id="c575f-228">Space キー</span><span class="sxs-lookup"><span data-stu-id="c575f-228">Space key</span></span>
 
-最初のキーボード フォーカスは、アプリの起動時にユーザーが最初に直感的に操作する (または、その可能性が最も高い) 要素に設定する必要があります。 多くの場合、これはアプリのメイン コンテンツ ビューです。ユーザーはすぐに方向キーを使ってアプリ コンテンツのスクロールを開始できます。
+<span data-ttu-id="c575f-229">テキスト入力モードではない場合、**Space** キーはフォーカスがあるコントロールに関連付けられた操作やコマンドを呼び出します (タッチによるタップやマウスによるクリックと同様)。</span><span class="sxs-lookup"><span data-stu-id="c575f-229">When not in text entry mode, the **Space** key invokes the action or command associated with the focused control (just like a tap with touch or a click with a mouse).</span></span>
 
-最初のキーボード フォーカスは、ネガティブ (または破滅的) な結果を招く可能性のある要素に設定しないでください。 これにより、データの消失またはシステム アクセスの喪失を回避します。
+![Space キー](images/keyboard/space-key.png)
 
-コマンド、コントロール、コンテンツを順序付けし、最も重要なものをタブ オーダーと表示順序 (または視覚的な階層) の両方で最初に提示するようにしてください。 ただし実際の表示位置は、親レイアウト コンテナーと、レイアウトに影響する子要素の特定のプロパティに左右されることがあります。 特に、グリッド形式または表形式を使用しているレイアウトでは、読み取り順序がタブ オーダーとまったく異なる場合があります。 このことは必ずしも問題ではありませんが、タッチ可能な UI とキーボードからアクセス可能な UI の両方についてアプリの機能をテストする必要があります。
+#### <a name="enter-key"></a><span data-ttu-id="c575f-231">Enter キー</span><span class="sxs-lookup"><span data-stu-id="c575f-231">Enter key</span></span>
 
-タブ オーダーは、可能な限り読み取り順序に従う必要があります。 これにより混乱を軽減できる可能性があります (ロケールと言語に依存します)。
+<span data-ttu-id="c575f-232">**Enter** キーは、フォーカスのあるコントロールに応じて、さまざまな共通ユーザー操作を実行できます。</span><span class="sxs-lookup"><span data-stu-id="c575f-232">The **Enter** key can perform a variety of common user interactions, depending on the control with focus:</span></span>
+-   <span data-ttu-id="c575f-233">`Button` や `Hyperlink` などのコマンド コントロールをアクティブ化します。</span><span class="sxs-lookup"><span data-stu-id="c575f-233">Activates command controls such as a `Button` or `Hyperlink`.</span></span> <span data-ttu-id="c575f-234">エンド ユーザーの混乱を避けるため、**Enter** キーは `ToggleButton` や `AppBarToggleButton` など、コマンド コントロールに似たコントロールもアクティブ化します。</span><span class="sxs-lookup"><span data-stu-id="c575f-234">To avoid end user confusion, the **Enter** key also activates controls that look like command controls such as `ToggleButton` or `AppBarToggleButton`.</span></span>
+-   <span data-ttu-id="c575f-235">`ComboBox` や `DatePicker` などのコントロールのピッカー UI を表示します。</span><span class="sxs-lookup"><span data-stu-id="c575f-235">Displays the picker UI for controls such as `ComboBox` and `DatePicker`.</span></span> <span data-ttu-id="c575f-236">**Enter** キーは、ピッカー UI もコミットして閉じます。</span><span class="sxs-lookup"><span data-stu-id="c575f-236">The **Enter** key also commits and closes the picker UI.</span></span>
+-   <span data-ttu-id="c575f-237">`ListView`、`GridView`、`ComboBox` などのリスト コントロールをアクティブ化します。</span><span class="sxs-lookup"><span data-stu-id="c575f-237">Activates list controls such as `ListView`, `GridView`, and `ComboBox`.</span></span>
+    -   <span data-ttu-id="c575f-238">**Enter** キーは、選択操作をリストおよびグリッド項目の **Space** キーとして実行します。ただし、それらの項目に追加の操作が関連付けられている場合を除きます (新しいウィンドウを開くなど)。</span><span class="sxs-lookup"><span data-stu-id="c575f-238">The **Enter** key performs the selection action as the **Space** key for list and grid items, unless there is an additional action associated with these items (opening a new window).</span></span>
+    -   <span data-ttu-id="c575f-239">コントロールに追加の操作が関連付けられている場合、**Enter** キーは追加の操作を実行し、**Space** キーは選択操作を実行します。</span><span class="sxs-lookup"><span data-stu-id="c575f-239">If an additional action is associated with the control, the **Enter** key performs the additional action and the **Space** key performs the selection action.</span></span>
 
-キーボード ボタンを、アプリの適切な UI ("戻る" ボタンと "進む" ボタン) に関連付けてください。
+<span data-ttu-id="c575f-240">**注:** **Enter** キーと **Space** キーは、常に同じ操作を実行するわけではありませんが、多くの場合は同じ操作を実行します。</span><span class="sxs-lookup"><span data-stu-id="c575f-240">**NOTE** The **Enter** key and **Space** key do not always perform the same action, but often do.</span></span>
 
-アプリのスタート画面に戻る場合と重要なコンテンツ間を移動する場合に、できるだけ単純かつ容易に移動できるようにします。
+![Enter キー](images/keyboard/enter-key.png)
 
-コンポジット要素の子要素間で正しい内部ナビゲーションを実行するために、キーボード ショートカットとして方向キーを使います。 ツリー ビュー ノードに、展開折りたたみとノードのアクティブ化を処理するための別の子要素がある場合は、左右の方向キーを使って、キーボードの展開折りたたみ機能を提供します。 この動作は、プラットフォーム コントロールと一致します。
+<span data-ttu-id="c575f-242">Esc キーを使うと、ユーザーが一時的な UI (および、その UI における継続的な操作すべて) を取り消すことができます。</span><span class="sxs-lookup"><span data-stu-id="c575f-242">The Esc key lets a user cancel transient UI (along with any ongoing actions in that UI).</span></span>
 
-タッチ キーボードによって画面の大部分が見えなくなるため、ユニバーサル Windows プラットフォーム (UWP) では、ユーザーがフォームのコントロール間を移動するときに、フォーカスのある入力フィールドが見えるようにスクロールします。これには、現在ビューに表示されていないコントロールも含まれます。 カスタム コントロールでも、この動作をエミュレートする必要があります。
+<span data-ttu-id="c575f-243">このエクスペリエンスの例は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="c575f-243">Examples of this experience include:</span></span>
+-   <span data-ttu-id="c575f-244">ユーザーが、選択した値を使って `ComboBox` を開き、方向キーを使ってフォーカスの選択を新しい値に移動します。</span><span class="sxs-lookup"><span data-stu-id="c575f-244">User opens a `ComboBox` with a selected value and uses the arrow keys to move the focus selection to a new value.</span></span> <span data-ttu-id="c575f-245">Esc キーを押すと `ComboBox` が閉じ、選択した値が元の値にリセットされます。</span><span class="sxs-lookup"><span data-stu-id="c575f-245">Pressing the Esc key closes the `ComboBox` and resets the selected value back to the original value.</span></span>
+-   <span data-ttu-id="c575f-246">ユーザーがメールの永続的な削除アクションを呼び出すと、操作の確認を求める `ContentDialog` が表示されます。</span><span class="sxs-lookup"><span data-stu-id="c575f-246">User invokes a permanent delete action for an email and is prompted with a `ContentDialog` to confirm the action.</span></span> <span data-ttu-id="c575f-247">ユーザーは、これが意図した操作でないと判断し、**Esc** キーを押してダイアログを閉じます。</span><span class="sxs-lookup"><span data-stu-id="c575f-247">The user decides this is not the intended action and presses the **Esc** key to close the dialog.</span></span> <span data-ttu-id="c575f-248">**Esc** キーは **[キャンセル]** ボタンに関連付けられているため、ダイアログが閉じ、操作は取り消されます。</span><span class="sxs-lookup"><span data-stu-id="c575f-248">As the **Esc** key is associated with the **Cancel** button, the dialog is closed and the action is canceled.</span></span> <span data-ttu-id="c575f-249">**Esc** キーは一時的な UI にのみ影響を与えます。アプリの UI を閉じたり、戻ったりすることはありません。</span><span class="sxs-lookup"><span data-stu-id="c575f-249">The **Esc** key only affects transient UI, it does not close, or back navigate through, app UI.</span></span>
 
-![タッチ キーボードが表示または非表示になっているフォーム](images/input-patterns/touch-keyboard-pan1.png)
+![Esc キー](images/keyboard/esc-key.png)
 
-場合によっては、画面にずっと表示されたままであることが必要な UI 要素もあります。 フォーム コントロールがパン領域に含まれ、重要な UI 要素が静的であるように UI を設計します。 次に例を示します。
+#### <a name="home-and-end-keys"></a><span data-ttu-id="c575f-251">Home キーと End キー</span><span class="sxs-lookup"><span data-stu-id="c575f-251">Home and End keys</span></span>
 
-![常に表示されている必要がある領域を含むフォーム](images/input-patterns/touch-keyboard-pan2.png)
-## <a name="activation"></a>アクティブ化
+<span data-ttu-id="c575f-252">**Home** キーと **End** キーを使うと、ユーザーは UI 領域の先頭または末尾までスクロールできます。</span><span class="sxs-lookup"><span data-stu-id="c575f-252">The **Home** and **End** keys let a user scroll to the beginning or end of a UI region.</span></span>
 
+<span data-ttu-id="c575f-253">このエクスペリエンスの例は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="c575f-253">Examples of this experience include:</span></span>
+-   <span data-ttu-id="c575f-254">`ListView` コントロールと `GridView` コントロールの場合、**Home** キーはフォーカスを最初の要素に移動してビューまでスクロールしますが、**End** キーはフォーカスを最後の要素に移動し、ビューまでスクロールします。</span><span class="sxs-lookup"><span data-stu-id="c575f-254">For `ListView` and `GridView` controls, the **Home** key moves focus to the first element and scrolls it into view, whereas the **End** key moves focus to the last element and scrolls it into view.</span></span>
+-   <span data-ttu-id="c575f-255">`ScrollView` コントロールの場合、**Home** キーは領域の上までスクロールしますが、**End** キーは領域の下までスクロールします (フォーカスが変更されません)。</span><span class="sxs-lookup"><span data-stu-id="c575f-255">For a `ScrollView` control, the **Home** key scrolls to the top of the region, whereas the **End** key scrolls to the bottom of the region (focus is not changed).</span></span>
 
-コントロールは、現在フォーカスがあるかどうかにかかわらず、さまざまな方法でアクティブ化できます。
+![Home キーと End キー](images/keyboard/home-and-end.png)
 
-Space キー、Enter キー、Esc キー  
-Space キーは、入力フォーカスのあるコントロールをアクティブ化します。 Enter キーは、既定のコントロールや入力フォーカスのあるコントロールをアクティブ化します。 既定のコントロールとは、初期フォーカスのあるコントロールまたは Enter キーにのみ応答するコントロール (通常は、入力フォーカスと共に変化します) を指します。 Esc キーは、メニューやダイアログなどの一時的な UI を終了します。
+#### <a name="page-up-and-page-down-keys"></a><span data-ttu-id="c575f-257">PageUp キーと PageDown キー</span><span class="sxs-lookup"><span data-stu-id="c575f-257">Page up and Page down keys</span></span>
 
-次に示す電卓アプリでは、Space キーを使用してフォーカスのあるボタンをアクティブ化し、Enter キーを "=" ボタンにロックして、Esc キーを "C" ボタンにロックします。
+<span data-ttu-id="c575f-258">**Page** キーを使うと、ユーザーは一定の単位で UI 領域をスクロールできます。</span><span class="sxs-lookup"><span data-stu-id="c575f-258">The **Page** keys let a user scroll a UI region in discrete increments.</span></span>
 
-![電卓アプリ](images/input-patterns/calculator.png)
+<span data-ttu-id="c575f-259">たとえば、`ListView` コントロールと `GridView` コントロールの場合、**PageUp** キーは領域を 1 "ページ" 分 (通常はビューポートの高さ) 上にスクロールし、領域の上にフォーカスを移動します。</span><span class="sxs-lookup"><span data-stu-id="c575f-259">For example, for `ListView` and `GridView` controls, the **Page up** key scrolls the region up by a "page" (typically the viewport height) and moves focus to the top of the region.</span></span> <span data-ttu-id="c575f-260">一方、**PageDown** キーは領域を 1 ページ分下に移動し、領域の下にフォーカスを移動します。</span><span class="sxs-lookup"><span data-stu-id="c575f-260">Alternately, the **Page down** key scrolls the region down by a page and moves focus to the bottom of the region.</span></span>
 
-キーボード修飾子  
-キーボード修飾子は、次のカテゴリに分類されます。
+![PageUp キーと PageDown キー](images/keyboard/page-up-and-down.png)
 
+### <a name="keyboard-shortcuts"></a><span data-ttu-id="c575f-262">キーボード ショートカット</span><span class="sxs-lookup"><span data-stu-id="c575f-262">Keyboard shortcuts</span></span>
 
-| カテゴリ | 説明 |
-|----------|-------------|
-| ショートカット キー | UI を使わずに、一般的な操作を実行します (**[保存]** に対応する "Ctrl + S" など)。 アプリの主な機能にキーボード ショートカットを実装します。 すべてのコマンドにショートカットがあるわけではありません。また、すべてのコマンドでショートカットが必要になるわけではありません。 |   
-| アクセス キー/ホット キー | 表示される最上位のコントロールすべてに割り当てられます (**[ファイル]** メニューに対応する "Alt + F" など)。 アクセス キーでは、コマンドの呼び出しやコマンドのアクティブ化は行われません。 |
-| アクセラレータ キー | 既定のシステム コマンドやアプリで定義されたコマンドを実行します (画面の取り込みに対応した "Alt + PrtScrn"、アプリの切り替えに対応した "Alt + Tab"、ヘルプに対応した "F1" など)。 アクセラレータ キーに関連付けるコマンドには、メニュー項目でなくてもかまいません。 |
-| アプリケーション キー/メニュー キー | コンテキスト メニューを表示します。 |
-| Windows キー/コマンド キー | **システム メニュー**、**ロック画面**、**デスクトップの表示** などのシステム コマンドをアクティブ化します。 |
+<span data-ttu-id="c575f-263">キーボード ショートカットを使うと、アプリを簡単かつ効率的に使うことができます。</span><span class="sxs-lookup"><span data-stu-id="c575f-263">Keyboard shortcuts can make your app easier and more efficient to use.</span></span>
 
-アクセス キーとアクセラレータ キーは、Tab キーによるナビゲーションの代わりに、コントロールの直接操作をサポートします。
-> コントロールには、固有ラベルがあるもの (コマンド ボタン、チェック ボックス、ラジオ ボタンなど) と、外部ラベルのあるもの (リスト ビューなど) があります。 外部ラベルのあるコントロールの場合、アクセス キーはラベルに割り当てられ、呼び出されると、対応コントロール内の要素または値にフォーカスを設定します。
+<span data-ttu-id="c575f-264">キーボードのナビゲーションのアクティブ化をアプリに実装するだけでなく、ショートカットをアプリの機能に実装することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="c575f-264">In addition to implementing keyboard navigation and activation for your app, it is a good practice to implement shortcuts for your app's functionality.</span></span> <span data-ttu-id="c575f-265">基本的なキーボードのサポートとしてはタブ ナビゲーションで十分ですが、複雑なフォームではショートカット キーのサポートも追加すると効果的です。</span><span class="sxs-lookup"><span data-stu-id="c575f-265">Tab navigation provides a good, basic level of keyboard support, but with complex forms you may want to add support for shortcut keys as well.</span></span> <span data-ttu-id="c575f-266">これにより、キーボードとポインティング デバイスの両方を使うユーザーにも使いやすいアプリになります。</span><span class="sxs-lookup"><span data-stu-id="c575f-266">This can make your application more efficient to use, even for people who use both a keyboard and pointing devices.</span></span>
 
+<span data-ttu-id="c575f-267">ショートカットは、ユーザーが効率的にアプリの機能にアクセスできるようにして、生産性を向上させるためのキーの組み合わせです。</span><span class="sxs-lookup"><span data-stu-id="c575f-267">A shortcut is a keyboard combination that enhances productivity by providing an efficient way for the user to access app functionality.</span></span> <span data-ttu-id="c575f-268">ショートカットには次の 2 つの種類があります。</span><span class="sxs-lookup"><span data-stu-id="c575f-268">There are two kinds of shortcut:</span></span>
+-   <span data-ttu-id="c575f-269">[ショートカット キー](#accelerators)は、アプリ コマンドへのショートカットです。</span><span class="sxs-lookup"><span data-stu-id="c575f-269">An [accelerator key](#accelerators) is a shortcut to an app command.</span></span> <span data-ttu-id="c575f-270">アプリにはコマンドに正確に対応する UI がある場合とない場合があります。</span><span class="sxs-lookup"><span data-stu-id="c575f-270">Your app may or may not have UI that corresponds exactly to the command.</span></span> <span data-ttu-id="c575f-271">ショートカット キーは、Ctrl キーと文字キーの組み合わせで構成されます。</span><span class="sxs-lookup"><span data-stu-id="c575f-271">Accelerator keys consist of the Ctrl key plus a letter key.</span></span>
+-   <span data-ttu-id="c575f-272">[アクセス キー](#access-keys)は、アプリ内の個別の UI 要素へのショートカットです。</span><span class="sxs-lookup"><span data-stu-id="c575f-272">An [access key](#access-keys) is a shortcut to a piece of UI in your app.</span></span> <span data-ttu-id="c575f-273">アクセス キーは、Alt キーと文字キーの組み合わせで構成されます。</span><span class="sxs-lookup"><span data-stu-id="c575f-273">Access keys consist of the Alt key plus a letter key.</span></span>
 
-次の例では、**Word** の **[ページ レイアウト]** タブのアクセス キーを示しています。
+<span data-ttu-id="c575f-274">[Windows のキーボード ショートカット](https://support.microsoft.com/help/12445/windows-keyboard-shortcuts)と、Microsoft により開発されたアプリケーションで使用される [アプリケーション固有のキーボード ショートカット](https://support.microsoft.com/help/13805/windows-keyboard-shortcuts-in-apps)をすべて網羅した一覧については、このページをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c575f-274">Visit this page for exhaustive listing of [keyboard shortcuts for Windows](https://support.microsoft.com/help/12445/windows-keyboard-shortcuts) as well as [application specific keyboard shortcuts](https://support.microsoft.com/help/13805/windows-keyboard-shortcuts-in-apps) used by applications developed by Microsoft.</span></span>
 
-![Word の [ページ レイアウト] タブのアクセス キー](images/input-patterns/accesskeys-show.png)
+#### <a name="accelerators-a-nameaccelerators"></a><span data-ttu-id="c575f-275">アクセラレータ <a name="accelerators"></span><span class="sxs-lookup"><span data-stu-id="c575f-275">Accelerators <a name="accelerators"></span></span>
 
-ここで、[インデント] の [左] ボックスに対応するラベルに示されたアクセス キーを入力すると、このテキスト ボックスの値が強調表示されます。
+<span data-ttu-id="c575f-276">アクセラレータを使うと、ユーザーはアプリケーションに存在する一般的な操作をすばやく実行できます。</span><span class="sxs-lookup"><span data-stu-id="c575f-276">Accelerators help users perform common actions that exists on application quickly.</span></span> <span data-ttu-id="c575f-277">ユーザーが簡単に記憶でき、同じようなタスクを実行するアプリケーションで使うことができる一貫性したアクセラレータ キーを提供することは、アクセラレータを便利で強力なものとするために非常に重要です。</span><span class="sxs-lookup"><span data-stu-id="c575f-277">Providing a consistent accelerator keys that users can easily remember and use across applications that offer similar tasks is very important for making accelerator useful as well as powerful.</span></span>
 
-![[インデント] の [左] ボックスに対応するラベルに示されたアクセス キーを入力すると、このテキスト フィールドの値が強調表示される](images/input-patterns/accesskeys-entered.png)
+<span data-ttu-id="c575f-278">アクセラレータの例:</span><span class="sxs-lookup"><span data-stu-id="c575f-278">Examples of Accelerators:</span></span>
+-   <span data-ttu-id="c575f-279">メール アプリの任意の場所で Ctrl + N キーを押すと、新しいメール アイテムが起動します。</span><span class="sxs-lookup"><span data-stu-id="c575f-279">Pressing Ctrl + N key anywhere in Mail app launches a new mail item.</span></span>
+-   <span data-ttu-id="c575f-280">Edge やストア アプリの任意の場所で Ctrl + E キーを押すと、ユーザーが検索ボックスにすばやくテキストを入力できます。</span><span class="sxs-lookup"><span data-stu-id="c575f-280">Pressing Ctrl + E key anywhere in Edge and Store app lets user quickly enter text in search box.</span></span>
 
-## <a name="usability-and-accessibility"></a>ユーザビリティとアクセシビリティ
+<span data-ttu-id="c575f-281">アクセラレータには、次の特徴があります。</span><span class="sxs-lookup"><span data-stu-id="c575f-281">Accelerators have the following characteristics:</span></span>
+-   <span data-ttu-id="c575f-282">主に Ctrl キーとファンクション キーのシーケンスを使用します (Windows のシステム ショートカット キーには、Alt キーと英数字以外のキーの組み合わせと Windows ロゴ キーが使用されています)。</span><span class="sxs-lookup"><span data-stu-id="c575f-282">They primarily use Ctrl and Function key sequences (Windows system shortcut keys also use Alt+non-alphanumeric keys and the Windows logo key).</span></span>
+-   <span data-ttu-id="c575f-283">ショートカット キーの主な目的は、上級ユーザーによる使用の効率です。</span><span class="sxs-lookup"><span data-stu-id="c575f-283">They are primarily for efficiency for advanced users.</span></span>
+-   <span data-ttu-id="c575f-284">特に使用頻度の高いコマンドにのみ割り当てます。</span><span class="sxs-lookup"><span data-stu-id="c575f-284">They are assigned only to the most commonly used commands.</span></span>
+-   <span data-ttu-id="c575f-285">覚えて使うことを意図しており、メニュー、ツールヒント、ヘルプ内にのみ示されています。</span><span class="sxs-lookup"><span data-stu-id="c575f-285">They are intended to be memorized, and are documented only in menus, tooltips, and Help.</span></span>
+-   <span data-ttu-id="c575f-286">効力はプログラム全体に及びますが、該当しない場合には効力がありません。</span><span class="sxs-lookup"><span data-stu-id="c575f-286">They have effect throughout the entire program, but have no effect if they don't apply.</span></span>
+-   <span data-ttu-id="c575f-287">覚えて使うことを意図しており、直接示されないため、割り当てに一貫性が必要です。</span><span class="sxs-lookup"><span data-stu-id="c575f-287">They must be assigned consistently because they are memorized and not directly documented.</span></span>
 
+#### <a name="access-keys-a-nameaccess-keys"></a><span data-ttu-id="c575f-288">アクセス キー <a name="access-keys"></span><span class="sxs-lookup"><span data-stu-id="c575f-288">Access keys <a name="access-keys"></span></span>
 
-適切に設計されたキーボードの操作エクスペリエンスは、ソフトウェア アクセシビリティの重要な要素であり、 視覚に障碍のあるユーザーや特定の運動障碍のあるユーザーによるアプリ内の移動や、その機能の操作を実現します。 このようなユーザーにはマウス操作が困難な場合があり、キーボード強化ツールやスクリーン キーボードなどさまざまな支援技術をスクリーン拡大機能、スクリーン リーダー、音声入力ユーティリティなどと組み合わせて使用することが必要になります。 このようなユーザーにとっては、一貫性より包括性の方が重要です。
+<span data-ttu-id="c575f-289">アクセス キーは、アクセシビリティ要件を持つユーザーとキーボードを使いこなす上級ユーザーの両方が、アプリの UI を効率的かつ効果的に移動できるようにします。</span><span class="sxs-lookup"><span data-stu-id="c575f-289">Access keys provide both users with accessibility requirements and advanced keyboard users with an efficient and effective way to navigate your app’s UI.</span></span>
 
-多くの経験豊富なユーザーには、キーボードの使用の方がはるかに好まれます。キーボード ベースのコマンドであれば、すばやく入力することができ、キーボードから手を離す必要がないためです。 このようなユーザーにとっては、効率性と一貫性が重要です。包括性が重要になるのは、特に頻繁に使用するコマンドに対してのみです。
+<span data-ttu-id="c575f-290">UWP でアクセス キーをサポートする方法について詳しくは、「[アクセス キー](access-keys.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c575f-290">See [Access keys](access-keys.md) page for more in-depth information for supporting access keys with UWP.</span></span>
 
-ユーザビリティとアクセシビリティの設計には、わずかな相違があります。キーボード アクセスにおいて 2 つの異なるメカニズムがサポートされているのはこのためです。
+<span data-ttu-id="c575f-291">アクセス キーを使うと、運動機能に障碍を持つユーザーが、一度に 1 つのキーを押して UI の特定の項目に対してアクションを実行することができます。</span><span class="sxs-lookup"><span data-stu-id="c575f-291">Access keys help users with motor function disabilities an ability to press one key at a time to action on a specific item in the UI.</span></span> <span data-ttu-id="c575f-292">さらに、アクセス キーは上級ユーザーが操作をすばやく実行できるように、追加のショートカット キーを伝えるためにも使用できます。</span><span class="sxs-lookup"><span data-stu-id="c575f-292">Moreover, access keys can be used to communicate additional shortcut keys to help advanced users perform actions quickly.</span></span>
 
-アクセス キーには、次の特徴があります。
+<span data-ttu-id="c575f-293">アクセス キーには、次の特徴があります。</span><span class="sxs-lookup"><span data-stu-id="c575f-293">Access keys have the following characteristics:</span></span>
+-   <span data-ttu-id="c575f-294">Alt キーを押しながら英数字キーを押します。</span><span class="sxs-lookup"><span data-stu-id="c575f-294">They use the Alt key plus an alphanumeric key.</span></span>
+-   <span data-ttu-id="c575f-295">主な目的はアクセシビリティです。</span><span class="sxs-lookup"><span data-stu-id="c575f-295">They are primarily for accessibility.</span></span>
+-   <span data-ttu-id="c575f-296">[キーのヒント](access-keys.md)のヒントを使うことで、コントロールの横にある UI に直接内容が表示されます。</span><span class="sxs-lookup"><span data-stu-id="c575f-296">They are documented directly in the UI adjacent to the control by use of [Key Tips](access-keys.md).</span></span>
+-   <span data-ttu-id="c575f-297">アクセス キーは、対応するメニュー項目やコントロールへの移動に使用します。効力は現在のウィンドウ内に限られます。</span><span class="sxs-lookup"><span data-stu-id="c575f-297">They have effect only in the current window, and navigate to the corresponding menu item or control.</span></span>
+-   <span data-ttu-id="c575f-298">常に一貫して割り当てることはできないため、割り当てに一貫性はありません。</span><span class="sxs-lookup"><span data-stu-id="c575f-298">They aren't assigned consistently because they can't always be.</span></span> <span data-ttu-id="c575f-299">ただし、使用頻度の高いコマンド (特にコミット ボタン) については、アクセス キーの割り当てに一貫性が必要です。</span><span class="sxs-lookup"><span data-stu-id="c575f-299">However, access keys should be assigned consistently for commonly used commands, especially commit buttons.</span></span>
+-   <span data-ttu-id="c575f-300">アクセス キーはローカライズされます。</span><span class="sxs-lookup"><span data-stu-id="c575f-300">They are localized.</span></span>
 
--   アクセス キーは、アプリ内の UI 要素へのショートカットです。
--   Alt キーを押しながら英数字キーを押します。
--   主な目的はアクセシビリティです。
--   すべてのメニューと大部分のダイアログ ボックス コントロールに割り当てます。
--   アクセス キーは覚えて使うことを意図していないため、UI に直接示されています (コントロールのラベルに含まれる対応する文字に下線)。
--   アクセス キーは、対応するメニュー項目やコントロールへの移動に使用します。効力は現在のウィンドウ内に限られます。
--   常に一貫して割り当てることはできないため、割り当てに一貫性はありません。 ただし、使用頻度の高いコマンド (特にコミット ボタン) については、アクセス キーの割り当てに一貫性が必要です。
--   アクセス キーはローカライズされます。
+#### <a name="common-keyboard-shortcuts"></a><span data-ttu-id="c575f-301">一般的なキーボード ショートカット</span><span class="sxs-lookup"><span data-stu-id="c575f-301">Common keyboard shortcuts</span></span>
 
-アクセス キーは覚えて使うことを意図していないため、キーワードがラベルの後半にある場合も、見つけやすいようにラベルの最初の方に出現する文字に割り当てます。
+<span data-ttu-id="c575f-302">次の表は、よく使われるキーボード コマンドの簡単なサンプルです。</span><span class="sxs-lookup"><span data-stu-id="c575f-302">The following table is a small sample of frequently used keyboard commands.</span></span> <span data-ttu-id="c575f-303">キーボード コマンドの一覧については、[Windows のキーボード ショートカット キーに関するページ](https://support.microsoft.com/kb/126449)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c575f-303">For a complete list of keyboard commands, see [Windows Keyboard Shortcut Keys](https://support.microsoft.com/kb/126449).</span></span>
 
-これに対し、ショートカット キーには次の特徴があります。
-
--   ショートカット キーは、アプリ コマンドへのショートカットです。
--   主に Ctrl キーとファンクション キーのシーケンスを使用します (Windows のシステム ショートカット キーには、Alt キーと英数字以外のキーの組み合わせと Windows ロゴ キーが使用されています)。
--   ショートカット キーの主な目的は、上級ユーザーによる使用の効率です。
--   特に使用頻度の高いコマンドにのみ割り当てます。
--   覚えて使うことを意図しており、メニュー、ツールヒント、ヘルプ内にのみ示されています。
--   効力はプログラム全体に及びますが、該当しない場合には効力がありません。
--   覚えて使うことを意図しており、直接示されないため、割り当てに一貫性が必要です。
--   ローカライズされません。
-
-ショートカット キーは覚えて使うことを意図しているため、特に使用頻度の高いショートカット キーには、コマンド キーワードに含まれる先頭の文字または最も記憶しやすい文字を使用するのが理想的です。たとえば、コピー (Copy) に Ctrl + C を、要求 (Request) に Ctrl + Q を割り当てます。
-
-ユーザーが、アプリでサポートされているすべてのタスクをハードウェア キーボードまたはスクリーン キーボードだけで実行できるようにしてください。
-
-スクリーン リーダーやその他の支援技術を使うユーザーがアプリのショートカット キーを簡単に見つけられるようにする必要があります。 ヒント、アクセシビリティ対応の名前、アクセシビリティ対応の説明、またはその他の画面上の伝達形式を使ってショートカット キーが確認できるようにします。 少なくとも、アプリのヘルプ コンテンツにはアクセス キーとショートカット キーについて十分な説明を用意しておく必要があります。
-
-よく知られているショートカット キーや標準のショートカット キーを他の機能に割り当てないでください。 たとえば、Ctrl + F は通常、検索に使用されます。
-
-密度の高い UI に含まれるすべての対話型コントロールにアクセス キーを割り当てる必要はありません。 ただし、特に重要なコントロールと特に使用頻度の高いコントロールにアクセス キーを必ず割り当てるか、コントロール グループを作成して、そのコントロール グループのラベルにアクセス キーを割り当ててください。
-
-キーボードの修飾キーを使うコマンドは変更しないでください。 変更すると、検出できなくなり、混乱を招きます。
-
-入力フォーカスがあるコントロールを無効にしないでください。 キーボード入力の妨げになる可能性があります。
-
-キーボード操作のエクスペリエンスを確実なものにするには、キーボードのみを使ってアプリを徹底的にテストすることが重要です。
-
-## <a name="text-input"></a>テキスト入力
-
-
-キーボード入力に依存している場合は、常にデバイスの機能を確認するようにします。 一部のデバイス (電話など) では、ハードウェア キーボードにあるようなアクセラレータやコマンド キー (Alt キー、ファンクション キー、Windows ロゴ キーなど) の多くがタッチ キーボードに備わっていないため、タッチ キーボードの用途がテキスト入力に限定されます。
-
-ユーザーがタッチ キーボードを使ってアプリ内を移動しないようにしてください。 フォーカスを取得するコントロールによっては、タッチ キーボードが閉じられることがあります。
-
-フォームに対する操作が行われている間は終始キーボードを表示しておくようにしてください。 これにより、フォームまたはテキスト入力フローの途中で UI 表示が切り替わることでユーザーを混乱させるような状況を回避します。
-
-入力しているフィールドをユーザーが常に見られるようにします。 タッチ キーボードによって画面の半分が見えなくなるため、ユーザーがフォーム内を移動するときに、フォーカスのある入力フィールドが見えるようにスクロールします。
-
-標準的なハードウェア キーボードや OSK は、7 種類のキーで構成されており、各キーは異なる機能をサポートしています。
-
--   文字キー: 表示どおりの文字を入力フォーカスのあるウィンドウに送ります。
--   修飾キー: Ctrl キー、Alt キー、Shift キー、Windows ロゴ キーなど。プライマリ キーと組み合わせて使用し、そのキーの意味を変えます。
--   ナビゲーション キー: Tab キー、Home キー、End キー、PageUp キー、PageDown キー、方向キーなど。入力フォーカス (テキスト入力の場所) を移動します。
--   編集キー: Shift キー、Tab キー、Enter キー、Ins キー、BackSpace キー、Del キーなど。テキストを操作します。
--   ファンクション キー: F1 から F12 までのキー。特殊な機能の実行に使います。
--   切り替えキー: CapsLock キー、ScrollLock キー、NumLock キーなど。システムを特定のモードに切り替えます。
--   コマンド キー: Space キー、Enter キー、Esc キー、Pause/Break キー、PrintScreen キーなど。システム タスクまたはコマンドのアクティブ化を実行します。
-
-これらのカテゴリに加え、セカンダリ クラスのキー (およびキーの組み合わせ) が存在します。これらは、アプリ機能のショートカットとして使用できます。
-
--   アクセス キー: Alt キーと文字キーを押すことでコントロールまたはメニュー項目を操作します。アクセス キーに使用する文字キーは、メニュー内では下線のある文字として示されます。オーバーレイに表示することもできます。
--   ショートカット キー: ファンクション キーを押すか、Ctrl キーと文字キーを押すことでアプリ コマンドを操作します。 アプリにはコマンドに対応する UI がある場合とない場合があります。
-
-Secure Attention Sequence (SAS) と呼ばれる別のキーの組み合わせのクラスは、アプリでインターセプトできません。 これは、ログイン時にユーザーのシステムを保護するためのセキュリティ機能であり、Ctrl + Alt + Del や Win + L が含まれます。
-
-次の図では、メモ帳アプリで展開された [ファイル] メニューに、アクセス キーとショートカット キーの両方が含まれています。
-
-![メモ帳アプリで展開された [ファイル] メニューに、アクセス キーとショートカット キーの両方が含まれている。](images/input-patterns/notepad.png)
-
-## <a name="keyboard-commands"></a>キーボード コマンド
-
-
-キーボード入力をサポートするさまざまなデバイスで提供されるキーボード操作の一覧を次に示します。 一部のデバイスやプラットフォームではキー入力や操作が異なる場合がありますが、これらも記載されています。
-
-カスタムのコントロールや操作を設計する場合は、このキーボード言語を統一して使用してください。これにより、アプリの信頼性と学びやすさが向上し、なじみのある使用感が実現します。
-
-既定のキーボード ショートカット定義を変更しないでください。
-
-次の表に、よく使われるキーボード コマンドを示します。 キーボード コマンドの一覧については、[Windows のキーボード ショートカット キーに関するページ](http://go.microsoft.com/fwlink/p/?linkid=325424)をご覧ください。
-
-**ナビゲーション コマンド**
-
-| 操作                               | キー コマンド                                      |
+| <span data-ttu-id="c575f-304">操作</span><span class="sxs-lookup"><span data-stu-id="c575f-304">Action</span></span>                               | <span data-ttu-id="c575f-305">キー コマンド</span><span class="sxs-lookup"><span data-stu-id="c575f-305">Key command</span></span>                                      |
 |--------------------------------------|--------------------------------------------------|
-| 戻る                                 | Alt + ←、または特殊キーボードの戻るボタン |
-| 進む                              | Alt + →                                        |
-| 上へ                                   | Alt + ↑                                           |
-| キャンセルまたは現在のモードの終了   | Esc                                              |
-| 一覧の項目間の移動         | 方向キー (←、→、↑、↓)                |
-| 次の項目一覧にジャンプ           | Ctrl + ←                                        |
-| セマンティック ズーム                        | Ctrl + 正符号 (+) または Ctrl + マイナス記号 (-)                                 |
-| コレクション内の名前付き項目にジャンプ | 項目の名前を入力します                           |
-| 次のページ                            | PageUp、PageDown、または Space                   |
-| 次のタブ                             | Ctrl + Tab                                         |
-| 前のタブ                         | Ctrl + Shift + Tab                                   |
-| アプリ バーを開く                         | Windows+Z                                        |
-| アクティブ化、または項目を開く    | Enter                                            |
-| 選択                               | Space                                         |
-| 連続して選択                  | Shift + 方向キー                                  |
-| すべて選択                           | Ctrl + A                                           |
+| <span data-ttu-id="c575f-306">すべて選択</span><span class="sxs-lookup"><span data-stu-id="c575f-306">Select all</span></span>                           | <span data-ttu-id="c575f-307">Ctrl + A</span><span class="sxs-lookup"><span data-stu-id="c575f-307">Ctrl+A</span></span>                                           |
+| <span data-ttu-id="c575f-308">連続して選択</span><span class="sxs-lookup"><span data-stu-id="c575f-308">Continuously select</span></span>                  | <span data-ttu-id="c575f-309">Shift + 方向キー</span><span class="sxs-lookup"><span data-stu-id="c575f-309">Shift+Arrow key</span></span>                                  |
+| <span data-ttu-id="c575f-310">上書き保存</span><span class="sxs-lookup"><span data-stu-id="c575f-310">Save</span></span>                                 | <span data-ttu-id="c575f-311">Ctrl + S</span><span class="sxs-lookup"><span data-stu-id="c575f-311">Ctrl+S</span></span>                                           |
+| <span data-ttu-id="c575f-312">検索</span><span class="sxs-lookup"><span data-stu-id="c575f-312">Find</span></span>                                 | <span data-ttu-id="c575f-313">Ctrl + F</span><span class="sxs-lookup"><span data-stu-id="c575f-313">Ctrl+F</span></span>                                           |
+| <span data-ttu-id="c575f-314">印刷</span><span class="sxs-lookup"><span data-stu-id="c575f-314">Print</span></span>                                | <span data-ttu-id="c575f-315">Ctrl + P</span><span class="sxs-lookup"><span data-stu-id="c575f-315">Ctrl+P</span></span>                                           |
+| <span data-ttu-id="c575f-316">コピー</span><span class="sxs-lookup"><span data-stu-id="c575f-316">Copy</span></span>                                 | <span data-ttu-id="c575f-317">Ctrl + C</span><span class="sxs-lookup"><span data-stu-id="c575f-317">Ctrl+C</span></span>                                           |
+| <span data-ttu-id="c575f-318">切り取り</span><span class="sxs-lookup"><span data-stu-id="c575f-318">Cut</span></span>                                  | <span data-ttu-id="c575f-319">Ctrl + X</span><span class="sxs-lookup"><span data-stu-id="c575f-319">Ctrl+X</span></span>                                           |
+| <span data-ttu-id="c575f-320">貼り付け</span><span class="sxs-lookup"><span data-stu-id="c575f-320">Paste</span></span>                                | <span data-ttu-id="c575f-321">Ctrl + V</span><span class="sxs-lookup"><span data-stu-id="c575f-321">Ctrl+V</span></span>                                           |
+| <span data-ttu-id="c575f-322">元に戻す</span><span class="sxs-lookup"><span data-stu-id="c575f-322">Undo</span></span>                                 | <span data-ttu-id="c575f-323">Ctrl + Z</span><span class="sxs-lookup"><span data-stu-id="c575f-323">Ctrl+Z</span></span>                                           |
+| <span data-ttu-id="c575f-324">次のタブ</span><span class="sxs-lookup"><span data-stu-id="c575f-324">Next tab</span></span>                             | <span data-ttu-id="c575f-325">Ctrl + Tab</span><span class="sxs-lookup"><span data-stu-id="c575f-325">Ctrl+Tab</span></span>                                         |
+| <span data-ttu-id="c575f-326">タブを閉じる</span><span class="sxs-lookup"><span data-stu-id="c575f-326">Close tab</span></span>                            | <span data-ttu-id="c575f-327">Ctrl + 4 または Ctrl + W</span><span class="sxs-lookup"><span data-stu-id="c575f-327">Ctrl+F4 or Ctrl+W</span></span>                                |
+| <span data-ttu-id="c575f-328">セマンティック ズーム</span><span class="sxs-lookup"><span data-stu-id="c575f-328">Semantic zoom</span></span>                        | <span data-ttu-id="c575f-329">Ctrl + 正符号 (+) または Ctrl + マイナス記号 (-)</span><span class="sxs-lookup"><span data-stu-id="c575f-329">Ctrl++ or Ctrl+-</span></span>                                 |
 
- 
+## <a name="advanced-experiences"></a><span data-ttu-id="c575f-330">高度なエクスペリエンス</span><span class="sxs-lookup"><span data-stu-id="c575f-330">Advanced experiences</span></span>
 
-**一般的なコマンド**
+<span data-ttu-id="c575f-331">このセクションでは、UWP アプリによりサポートされているより複雑なキーボード操作エクスペリエンスと、アプリをさまざまなデバイスやツールで使う場合に認識すべき動作についていくつか説明します。</span><span class="sxs-lookup"><span data-stu-id="c575f-331">In this section, we discuss some of the more complex keyboard interaction experiences supported by UWP apps, along with some of the behaviors you should be aware of when your app is used on different devices and with different tools.</span></span>
 
-| 操作                                                 | キー コマンド     |
-|--------------------------------------------------------|-----------------|
-| 項目をピン留めする                                            | Ctrl + Shift + 数字 1    |
-| 保存                                                   | Ctrl + S          |
-| 検索                                                   | Ctrl + F          |
-| 印刷                                                  | Ctrl + P          |
-| コピー                                                   | Ctrl + C          |
-| 切り取り                                                    | Ctrl + X          |
-| 新規項目                                               | Ctrl + N          |
-| 貼り付け                                                  | Ctrl + V          |
-| 開く                                                   | Ctrl + O          |
-| アドレスを開く (たとえば、Internet Explorer で URL を開く) | Ctrl + L または Alt + D |
+### <a name="control-group-a-namecontrol-group"></a><span data-ttu-id="c575f-332">コントロール グループ <a name="control-group"></span><span class="sxs-lookup"><span data-stu-id="c575f-332">Control group <a name="control-group"></span></span>
 
- 
+<span data-ttu-id="c575f-333">一連の関連する (または補完的な) コントロールを "コントロール グループ" (または方向領域) にまとめることで、方向キーを使った "内部ナビゲーション" が可能になります。</span><span class="sxs-lookup"><span data-stu-id="c575f-333">You can group a set of related, or complementary, controls in a "control group" (or directional area), which enables "inner navigation" using the arrow keys.</span></span> <span data-ttu-id="c575f-334">コントロール グループは、1 つのタブ位置にすることも、コントロール グループ内の複数のタブ位置を指定することもできます。</span><span class="sxs-lookup"><span data-stu-id="c575f-334">The control group can be a single tab stop, or you can specify multiple tab stops within the control group.</span></span>
 
-**メディア ナビゲーション コマンド**
+#### <a name="arrow-key-navigation"></a><span data-ttu-id="c575f-335">方向キー ナビゲーション</span><span class="sxs-lookup"><span data-stu-id="c575f-335">Arrow key navigation</span></span>
 
-| 操作       | キー コマンド |
-|--------------|-------------|
-| 再生/一時停止   | Ctrl + P      |
-| 次の項目    | Ctrl + F      |
-| 前の項目 | Ctrl + B      |
+<span data-ttu-id="c575f-336">ユーザーは、UI 領域に似たような関連するコントロールのグループがあるとき、方向キー ナビゲーションがサポートされることを期待します。</span><span class="sxs-lookup"><span data-stu-id="c575f-336">Users expect support for arrow key navigation when there is a group of similar, related controls in a UI region:</span></span>
+-   `AppBarButtons` <span data-ttu-id="c575f-337">-</span><span class="sxs-lookup"><span data-stu-id="c575f-337">in a</span></span> `CommandBar`
+-   `ListItems` <span data-ttu-id="c575f-338">または `GridItems` - `ListView` または</span><span class="sxs-lookup"><span data-stu-id="c575f-338">or `GridItems` inside `ListView` or</span></span> `GridView`
+-   `Buttons` <span data-ttu-id="c575f-339">-</span><span class="sxs-lookup"><span data-stu-id="c575f-339">inside</span></span> `ContentDialog`
 
- 
+<span data-ttu-id="c575f-340">UWP コントロールは、方向キー ナビゲーションを既定でサポートします。</span><span class="sxs-lookup"><span data-stu-id="c575f-340">UWP controls support arrow key navigation by default.</span></span> <span data-ttu-id="c575f-341">カスタム レイアウトおよびコントロール グループでは、`XYFocusKeyboardNavigation="Enabled"` を使って同様の動作を提供します。</span><span class="sxs-lookup"><span data-stu-id="c575f-341">For custom layouts and control groups, use `XYFocusKeyboardNavigation="Enabled"` to provide similar behavior.</span></span>
 
-注: メディア ナビゲーションの "再生または一時停止" のキー コマンドは "印刷" のキー コマンドと同じであり、"次の項目" のキー コマンドは "検索" のキー コマンドと同じです。 メディア ナビゲーションのコマンドよりも、一般的なコマンドの方が優先されます。 たとえば、再生メディアと印刷の両方をサポートするアプリの場合、Ctrl + P キーを押すと印刷が実行されます。
-## <a name="visual-feedback"></a>視覚的なフィードバック
-
-
-キーボード操作でのみフォーカス用の四角形を使います。 ユーザーがタッチ操作を始めたら、キーボードの UI を徐々にフェード アウトします。 これにより、UI の簡潔さが保たれます。
-
-静的テキストなど、要素で対話式操作がサポートされていない場合は、視覚的なフィードバックを返さないでください。 これにより、UI の簡潔さが保たれます。
-
-同じ入力対象を表すすべての要素に対して視覚的なフィードバックを同時に表示するようにしてください。
-
-パン、回転、ズームなど、タッチ ベースの操作をエミュレートするためのヒントとして画面ボタン (+、- など) を提供するようにしてください。
-
-視覚的なフィードバックに関する一般的なガイダンスについては、「[視覚的なフィードバックのガイドライン](guidelines-for-visualfeedback.md)」をご覧ください。
-
-
-## <a name="keyboard-events-and-focus"></a>キーボード イベントとフォーカス
-
-
-次のキーボード イベントは、ハードウェア キーボードとタッチ キーボードの両方で発生します。
-
-| イベント                                      | 説明                    |
-|--------------------------------------------|--------------------------------|
-| [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) | キーが押されると発生します。  |
-| [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942)     | キーが離されると発生します。 |
-
-
-**重要**  
-一部の Windows ランタイム コントロールでは、入力イベントが内部で処理されます。 このような場合は、イベント リスナーに関連付けられているハンドラーが呼び出されないため、入力イベントが発生しないように見えることがあります。 通常、これらのキーのサブセットはクラス ハンドラーで処理され、基本的なキーボード アクセシビリティのビルトイン サポートが提供されます。 たとえば、[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) クラスでは、Space キーと Enter キーの [**OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982) イベント (および [**OnPointerPressed**](https://msdn.microsoft.com/library/windows/apps/hh967989)) がオーバーライドされ、コントロールの [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) イベントにルーティングされます。 キーの押下がコントロール クラスで処理された場合、[**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) イベントと [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベントは発生しません。
-
-これで、ボタンの実行に対応するキーボード操作が組み込まれ、ボタンを指でタップした場合やマウスでクリックした場合と同様の動作がサポートされます。 Space キーと Enter キー以外のキーについては、通常どおり [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) と [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベントが発生します。 クラス ベースのイベント処理の動作について詳しくは、「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」(特に「コントロールの入力イベント ハンドラー」セクション) をご覧ください。
-
-
-UI のコントロールに入力フォーカスがあるときにだけ、キーボード イベントが生成されます。 個々のコントロールは、ユーザーがレイアウト上でコントロールを直接クリックまたはタップするか、Tab キーを使ってコンテンツ領域内のタブ順に入ると、フォーカスを取得します。
-
-コントロールの [**Focus**](https://msdn.microsoft.com/library/windows/apps/hh702161) メソッドを呼び出して、フォーカスを適用することもできます。 これは、UI が読み込まれたときに既定ではキーボード フォーカスが設定されないため、ショートカット キーを実装する場合に必要です。 詳しくは、このトピックの「[ショートカット キーの例](#shortcut_keys_example)」をご覧ください。
-
-コントロールが入力フォーカスを受け取るには、コントロールが有効にされ、表示されている必要があります。また、[**IsTabStop**](https://msdn.microsoft.com/library/windows/apps/br209422) プロパティ値と [**HitTestVisible**](https://msdn.microsoft.com/library/windows/apps/br208933) プロパティ値が **true** に設定されている必要もあります。 これは、ほとんどのコントロールの既定の状態です。 コントロールに入力フォーカスがあると、このトピックで後ほど説明するように、キーボード入力イベントを発生させ、応答することもできます。 また、[**GotFocus**](https://msdn.microsoft.com/library/windows/apps/br208927) イベントと [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/br208943) イベントを処理して、フォーカスを受け取るコントロールやフォーカスを失うコントロールに応答することもできます。
-
-既定では、コントロールのタブ順は、Extensible Application Markup Language (XAML) 内の出現順になっています。 ただし、[**TabIndex**](https://msdn.microsoft.com/library/windows/apps/br209461) プロパティを使って、この順序を変更できます。 詳しくは、「[キーボード アクセシビリティの実装](https://msdn.microsoft.com/library/windows/apps/hh868161)」をご覧ください。
-
-## <a name="keyboard-event-handlers"></a>キーボード イベント ハンドラー
-
-
-入力イベント ハンドラーは、次の情報を提供するデリゲートを実装します。
-
--   イベントのセンダー。 センダーは、イベント ハンドラーがアタッチされているオブジェクトを報告します。
--   イベント データ。 キーボード イベントの場合、イベント データは [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072) のインスタンスです。 ハンドラーのデリゲートは [**KeyEventHandler**](https://msdn.microsoft.com/library/windows/apps/br227904) です。 ハンドラーに関するほとんどのシナリオで、最もよく使われる **KeyRoutedEventArgs** のプロパティは、[**Key**](https://msdn.microsoft.com/library/windows/apps/hh943074) です。場合によっては、[**KeyStatus**](https://msdn.microsoft.com/library/windows/apps/hh943075) も使われます。
--   [**OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810)。 キーボード イベントはルーティング イベントであるため、イベント データには **OriginalSource** があります。 イベントがオブジェクト ツリーをバブルアップするように意図的に設定した場合、**OriginalSource** がセンダーではなく対象のオブジェクトとなる場合があります。 ただし、この動作は設計によって異なります。 センダーではなく **OriginalSource** を使う方法について詳しくは、このトピックの「キーボード ルーティング イベント」または「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」をご覧ください。
-
-### <a name="attaching-a-keyboard-event-handler"></a>キーボード イベント ハンドラーのアタッチ
-
-イベントがメンバーとして含まれているオブジェクトに対して、キーボード イベント ハンドラー関数をアタッチできます。 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 派生クラスにもアタッチできます。 XAML で [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベントのハンドラーをアタッチする方法を次の例に示します。
-
-```xaml
-<Grid KeyUp="Grid_KeyUp">
-  ...
-</Grid>
-```
-
-コードを使ってイベント ハンドラーをアタッチすることもできます。 詳しくは、「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」をご覧ください。
-
-### <a name="defining-a-keyboard-event-handler"></a>キーボード イベント ハンドラーの定義
-
-次の例は、前の例でアタッチした [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベント ハンドラーの定義の一部です。
-
-```csharp
-void Grid_KeyUp(object sender, KeyRoutedEventArgs e)
-{
-    //handling code here
-}
-```
-
-```vb
-Private Sub Grid_KeyUp(ByVal sender As Object, ByVal e As KeyRoutedEventArgs)
-    ' handling code here
-End Sub
-```
-
-```c++
-void MyProject::MainPage::Grid_KeyUp(
-  Platform::Object^ sender,
-  Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e)
-  {
-      //handling code here
-  }
-```
-
-### <a name="using-keyroutedeventargs"></a>KeyRoutedEventArgs の使用
-
-キーボード イベントはいずれもイベント データに [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072) を使います。**KeyRoutedEventArgs** には次のプロパティがあります。
-
--   [**Key**](https://msdn.microsoft.com/library/windows/apps/hh943074)
--   [**KeyStatus**](https://msdn.microsoft.com/library/windows/apps/hh943075)
--   [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073)
--   [**OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810) ([**RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809) から継承)
-
-### <a name="key"></a>キー
-
-キーが押されると、[**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) イベントが発生します。 同様に、キーが離されると、[**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベントが発生します。 通常、特定のキー値を処理するにはイベントをリッスンします。 押されたキーまたは離されたキーを特定するには、イベント データの [**Key**](https://msdn.microsoft.com/library/windows/apps/hh943074) 値を調べます。 **Key** は [**VirtualKey**](https://msdn.microsoft.com/library/windows/apps/br241812) 値を返します。 **VirtualKey** 列挙体には、サポートされているすべてのキーが含まれています。
-
-### <a name="modifier-keys"></a>修飾キー
-
-修飾キーは、Ctrl、Shift など、一般的に他のキーと組み合わせて押されるキーです。 アプリでは、これらのキーの組み合わせをキーボード ショートカットとして使って、アプリ コマンドを呼び出すことができます。
-
-ショートカット キーの組み合わせを検出するには、[**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) イベント ハンドラーや [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベント ハンドラーでコードを使います。 目的とする修飾キーが押された状態を追跡することができます。 修飾キー以外のキーのキーボード イベントが発生した場合は、同時に修飾キーが押された状態になっていないかどうかを調べることができます。
-
-> [!NOTE]
-> Alt キーは **VirtualKey.Menu** 値で表されます。
-
- 
-
-### <a name="shortcut-keys-example"></a>ショートカット キーの例
-
-
-ショートカット キーを実装する方法を次の例で示します。 この例では、ユーザーは [Play]、[Pause]、[Stop] の各ボタンまたは Ctrl + P、Ctrl + A、Ctrl + S の各キーボード ショートカットを使って、メディアの再生を制御できます。 ボタンの XAML では、ボタン ラベルのヒントや [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/br209081) プロパティを使って、ショートカット キーを示します。 このアプリ内の説明は、アプリの操作性とアクセシビリティを向上させるために重要です。 詳しくは、「[キーボードのアクセシビリティ](https://msdn.microsoft.com/library/windows/apps/mt244347)」をご覧ください。
-
-ページが読み込まれるときに、入力フォーカスをページそのものに設定していることにも注目してください。 この手順を実行しなければ、最初の入力フォーカスがどのコントロールにも設定されず、ユーザーが手動で入力フォーカスを設定する (Tab キーを使ってコントロールを選ぶ、コントロールをクリックするなど) までアプリで入力イベントが発生しません。
-
-```xaml
-<Grid KeyDown="Grid_KeyDown">
-
-  <Grid.RowDefinitions>
-    <RowDefinition Height="Auto" />
-    <RowDefinition Height="Auto" />
-  </Grid.RowDefinitions>
-
-  <MediaElement x:Name="DemoMovie" Source="xbox.wmv"
-    Width="500" Height="500" Margin="20" HorizontalAlignment="Center" />
-
-  <StackPanel Grid.Row="1" Margin="10"
-    Orientation="Horizontal" HorizontalAlignment="Center">
-
-    <Button x:Name="PlayButton" Click="MediaButton_Click"
-      ToolTipService.ToolTip="Shortcut key: Ctrl+P"
-      AutomationProperties.AcceleratorKey="Control P">
-      <TextBlock>Play</TextBlock>
-    </Button>
-
-    <Button x:Name="PauseButton" Click="MediaButton_Click"
-      ToolTipService.ToolTip="Shortcut key: Ctrl+A"
-      AutomationProperties.AcceleratorKey="Control A">
-      <TextBlock>Pause</TextBlock>
-    </Button>
-
-    <Button x:Name="StopButton" Click="MediaButton_Click"
-      ToolTipService.ToolTip="Shortcut key: Ctrl+S"
-      AutomationProperties.AcceleratorKey="Control S">
-      <TextBlock>Stop</TextBlock>
-    </Button>
-
-  </StackPanel>
-
-</Grid>
-```
-
-```c++
-//showing implementations but not header definitions
-void MainPage::OnNavigatedTo(NavigationEventArgs^ e)
-{
-    (void) e;    // Unused parameter
-    this->Loaded+=ref new RoutedEventHandler(this,&amp;MainPage::ProgrammaticFocus);
-}
-void MainPage::ProgrammaticFocus(Object^ sender, RoutedEventArgs^ e) {
-    this->Focus(Windows::UI::Xaml::FocusState::Programmatic);
-}
-
-void KeyboardSupport::MainPage::MediaButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
-{
-    FrameworkElement^ fe = safe_cast<FrameworkElement^>(sender);
-    if (fe->Name == "PlayButton") {DemoMovie->Play();}
-    if (fe->Name == "PauseButton") {DemoMovie->Pause();}
-    if (fe->Name == "StopButton") {DemoMovie->Stop();}
-}
-
-
-void KeyboardSupport::MainPage::Grid_KeyDown(Platform::Object^ sender, Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e)
-{
-    if (e->Key == VirtualKey::Control) isCtrlKeyPressed = true;
-}
-
-
-void KeyboardSupport::MainPage::Grid_KeyUp(Platform::Object^ sender, Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e)
-{
-    if (e->Key == VirtualKey::Control) isCtrlKeyPressed = false;
-    else if (isCtrlKeyPressed) {
-        if (e->Key==VirtualKey::P) {
-            DemoMovie->Play();
-        }
-        if (e->Key==VirtualKey::A) {DemoMovie->Pause();}
-        if (e->Key==VirtualKey::S) {DemoMovie->Stop();}
-    }
-}
-```
-
-```csharp
-protected override void OnNavigatedTo(NavigationEventArgs e)
-{
-    // Set the input focus to ensure that keyboard events are raised.
-    this.Loaded += delegate { this.Focus(FocusState.Programmatic); };
-}
-
-private void MediaButton_Click(object sender, RoutedEventArgs e)
-{
-    switch ((sender as Button).Name)
-    {
-        case "PlayButton": DemoMovie.Play(); break;
-        case "PauseButton": DemoMovie.Pause(); break;
-        case "StopButton": DemoMovie.Stop(); break;
-    }
-}
-
-private void Grid_KeyUp(object sender, KeyRoutedEventArgs e)
-{
-    if (e.Key == VirtualKey.Control) isCtrlKeyPressed = false;
-}
-
-private void Grid_KeyDown(object sender, KeyRoutedEventArgs e)
-{
-    if (e.Key == VirtualKey.Control) isCtrlKeyPressed = true;
-    else if (isCtrlKeyPressed)
-    {
-        switch (e.Key)
-        {
-            case VirtualKey.P: DemoMovie.Play(); break;
-            case VirtualKey.A: DemoMovie.Pause(); break;
-            case VirtualKey.S: DemoMovie.Stop(); break;
-        }
-    }
-}
-```
-
-```VisualBasic
-Private isCtrlKeyPressed As Boolean
-Protected Overrides Sub OnNavigatedTo(e As Navigation.NavigationEventArgs)
-
-End Sub
-
-Private Sub Grid_KeyUp(sender As Object, e As KeyRoutedEventArgs)
-    If e.Key = Windows.System.VirtualKey.Control Then
-        isCtrlKeyPressed = False
-    End If
-End Sub
-
-Private Sub Grid_KeyDown(sender As Object, e As KeyRoutedEventArgs)
-    If e.Key = Windows.System.VirtualKey.Control Then isCtrlKeyPressed = True
-    If isCtrlKeyPressed Then
-        Select Case e.Key
-            Case Windows.System.VirtualKey.P
-                DemoMovie.Play()
-            Case Windows.System.VirtualKey.A
-                DemoMovie.Pause()
-            Case Windows.System.VirtualKey.S
-                DemoMovie.Stop()
-        End Select
-    End If
-End Sub
-
-Private Sub MediaButton_Click(sender As Object, e As RoutedEventArgs)
-    Dim fe As FrameworkElement = CType(sender, FrameworkElement)
-    Select Case fe.Name
-        Case "PlayButton"
-            DemoMovie.Play()
-        Case "PauseButton"
-            DemoMovie.Pause()
-        Case "StopButton"
-            DemoMovie.Stop()
-    End Select
-End Sub
-```
-
-> [!NOTE]
-> XAML で [**AutomationProperties.AcceleratorKey**](https://msdn.microsoft.com/library/windows/apps/hh759762) または [**AutomationProperties.AccessKey**](https://msdn.microsoft.com/library/windows/apps/hh759763) を設定すると、(その特定の操作を呼び出すためのショートカット キーを説明する) 文字列情報が提供されます。 この情報は、ナレーターなどの Microsoft UI オートメーション クライアントによってキャプチャされ、通常は、直接ユーザーに提供されます。
->
-> **AutomationProperties.AcceleratorKey** または **AutomationProperties.AccessKey** を設定しても、それだけでは操作は実行されません。 実際にアプリにキーボード ショートカットの動作を実装するには、[**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) イベントまたは [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベントのハンドラーをアタッチする必要があります。 また、アクセス キーの下線も自動的には追加されません。 UI で下線付きのテキストを表示する場合は、インラインの [**Underline**](https://msdn.microsoft.com/library/windows/apps/br209982) 書式設定として、ニーモニックの特定のキーのテキストに明示的に下線を表示する必要があります。
-
- 
-
-## <a name="keyboard-routed-events"></a>キーボード ルーティング イベント
-
-
-[**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) や、[**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) などの特定のイベントがルーティング イベントです。 ルーティング イベントでは、バブル ルーティング方式が採用されています。 バブル ルーティング方式では、子オブジェクトで発生したイベントが、オブジェクト ツリー内で上位にある親オブジェクトに順にルーティング (バブルアップ) されます。 つまり、同じイベントを処理し、同じイベント データを操作する機会が増えることを意味します。
-
-次の XAML の例では、1 つの [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) と 2 つの [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) オブジェクトについて、[**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベントを処理します。 この場合、どちらかの **Button** オブジェクトにフォーカスがある間にキーを離すと、**KeyUp** イベントが発生します。 イベントはその後、親 **Canvas** までバブルアップされます。
-
-```xaml
-<StackPanel KeyUp="StackPanel_KeyUp">
-  <Button Name="ButtonA" Content="Button A"/>
-  <Button Name="ButtonB" Content="Button B"/>
-  <TextBlock Name="statusTextBlock"/>
-</StackPanel>
-```
-
-次の例は、前に示した XAML コンテンツに対応する [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベント ハンドラーの実装方法を示しています。
-
-```csharp
-void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
-{
-    statusTextBlock.Text = String.Format(
-        "The key {0} was pressed while focus was on {1}",
-        e.Key.ToString(), (e.OriginalSource as FrameworkElement).Name);
-}
-```
-
-このハンドラーで [**OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810) プロパティが使われていることに注意してください。 この例では、**OriginalSource** がイベントの発生元のオブジェクトを報告します。 **StackPanel** はコントロールではなく、フォーカスを受け取ることもできないため、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) がこのオブジェクトになることはありません。 **StackPanel** 内の 2 つのボタンのどちらか 1 つのみがイベントの発生元である可能性がありますが、発生元を調べるにはどうすればよいでしょうか。 親オブジェクトのイベントを処理する場合は、**OriginalSource** を使って、実際のイベント ソース オブジェクトを判別します。
-
-### <a name="the-handled-property-in-event-data"></a>イベント データ内の Handled プロパティ
-
-イベント処理の方針によっては、1 つのイベント ハンドラーだけがバブル イベントに応答するようにした方がよい場合もあります。 たとえば、[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) コントロールの 1 つに、特定の [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) ハンドラーをアタッチすると、最初にそのイベントを処理するのは、このハンドラーがアタッチされたコントロールになります。 このとき、親パネルではイベントが処理されないようにします。 このようなシナリオでは、イベント データ内の [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073) プロパティを使います。
-
-ルーティング イベント データ クラスの [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073) プロパティは、イベント ルート上で先に登録された別のハンドラーが既に処理を実行したことを示すためのプロパティで、 ルーティング イベント システムの動作に影響します。 イベント ハンドラー内で **Handled** を **true** に設定すると、そのイベントのルーティングはそこで終了し、上位の親要素にイベントは送信されません。
-
-### <a name="addhandler-and-already-handled-keyboard-events"></a>AddHandler イベントと処理済みキーボード イベント
-
-特殊な方法を利用して、既に処理済みとしてマークされているイベントに対して処理を実行できるハンドラーをアタッチすることができます。 この方法では、XAML 属性や、ハンドラーを追加するための言語固有の構文 (C# の場合は +=) を使わずに、[**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399) メソッドを使ってハンドラーを登録します。 
-
-一般的に、この方法には、**AddHandler** API が [**RoutedEvent**](https://msdn.microsoft.com/library/windows/apps/br208808) 型のパラメーターを受け取るという制限があります。このパラメーターで対象のルーティング イベントを識別します。 一部のルーティング イベントには **RoutedEvent** 識別子がないため、[**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073) の状態でも処理できるルーティング イベントを識別する場合に考慮する必要があります。 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) の [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) イベントと [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベントには、ルーティング イベント識別子 ([**KeyDownEvent**](https://msdn.microsoft.com/library/windows/apps/hh702416) と [**KeyUpEvent**](https://msdn.microsoft.com/library/windows/apps/hh702418)) があります。 これに対し、[**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/br209706) などのイベントにはルーティング イベント識別子がないため、**AddHandler** を使う手法には利用できません。
-
-### <a name="overriding-keyboard-events-and-behavior"></a>キーボード イベントと動作のオーバーライド
-
-特定のコントロールのキー イベント (たとえば [**GridView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.GridView) など) をオーバーライドして、キーボードとゲームパッドを含むさまざまな入力デバイスに一貫したフォーカス ナビゲーションを提供できます。
-
-次の例では、コントロールをサブクラス化して KeyDown 動作をオーバーライドし、矢印キーが押されたときにフォーカスを GridView のコンテンツに移動します。
-
-```csharp
-public class CustomGridView : GridView
-  {
-    protected override void OnKeyDown(KeyRoutedEventArgs e)
-    {
-      // Override arrow key behaviors.
-      if (e.Key != Windows.System.VirtualKey.Left && e.Key !=
-        Windows.System.VirtualKey.Right && e.Key != 
-          Windows.System.VirtualKey.Down && e.Key != 
-            Windows.System.VirtualKey.Up)
-              base.OnKeyDown(e);
-      else
-        FocusManager.TryMoveFocus(FocusNavigationDirection.Down);
-    }
-  }
-```
-
-> [!NOTE]
-> GridView がレイアウトのみに使用されている場合には、[**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ItemsControl) と [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ItemsWrapGrid) などの、他のコントロールの使用を検討します。
-
-## <a name="commanding"></a>コマンド実行
-
-ごく一部の UI 要素では、コマンド実行が組み込みでサポートされています。 コマンド実行の基になる実装では、入力に関連するルーティング イベントを使います。 この方法では、1 つのコマンド ハンドラーを呼び出して、特定のポインター操作、特定のショートカット キーなどの関連する UI 入力を処理できます。
-
-UI 要素でコマンド実行を使うことができる場合は、個々の入力イベントではなく、コマンド実行 API を使うことを検討してください。 詳しくは、「[**ButtonBase.Command**](https://msdn.microsoft.com/library/windows/apps/br227740)」をご覧ください。
-
-[**ICommand**](https://msdn.microsoft.com/library/windows/apps/br227885) を実装して、通常のイベント ハンドラーから呼び出すコマンド機能をカプセル化することもできます。 この方法では、**Command** プロパティを利用できない場合でも、コマンド実行を使うことができます。
-
-## <a name="text-input-and-controls"></a>テキスト入力とコントロール
-
-キーボード イベントに固有の処理で対応するコントロールもあります。 たとえば、[**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) は、キーボードを使って入力されたテキストをキャプチャし、表示するためのコントロールです。 このコントロールでは、キーボード操作をキャプチャするために、固有のロジックで [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) と [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) が使われます。また、テキストが実際に変化した場合には、固有の [**TextChanged**](https://msdn.microsoft.com/library/windows/apps/br209706) イベントを発生させます。
-
-また、[**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) などのテキスト入力の処理を目的としたコントロールに、[**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) や [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) のハンドラーを追加することも通常どおりできます。 ただし、コントロールは、その設計上、キー イベントを通じて伝達されたすべてのキー値に応答するわけではありません。 動作はコントロールによって異なります。
-
-たとえば、[**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736) ([**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) の基底クラス) では、Space キーや Enter キーの操作を確認するために [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) が処理されます。 **ButtonBase** では **KeyUp** を、[**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) イベントを発生させるマウスの左ボタンを押す操作と同等と見なします。 このイベント処理は、**ButtonBase** が仮想メソッド [**OnKeyUp**](https://msdn.microsoft.com/library/windows/apps/hh967983) をオーバーライドする際に実現されます。 この実装では、[**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073) が **true** に設定されます。 このため、あるボタンの親がキー イベント (たとえば Space バー) をリッスンしていても、既に処理されたイベントをハンドラーで受け取ることはありません。
-
-別の例としては、[**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) があります。 方向キーなどの一部のキーは **TextBox** ではテキストと見なされず、コントロール UI 動作に固有のキーと見なされます。 **TextBox** は、これらのイベント ケースを処理済みとしてマークします。
-
-カスタム コントロールで [**OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982) / [**OnKeyUp**](https://msdn.microsoft.com/library/windows/apps/hh967983) をオーバーライドすると、キー イベントに対する同様のオーバーライド動作を独自に実装できます。 カスタム コントロールで特定のショートカット キーを処理する場合、または [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) の説明で示したシナリオのようなコントロールの動作またはフォーカスの動作を使う場合、**OnKeyDown** / **OnKeyUp** のオーバーライドにこのロジックを組み込む必要があります。
-
-## <a name="the-touch-keyboard"></a>タッチ キーボード
-
-テキスト入力コントロールでは、タッチ キーボードが自動的にサポートされます。 ユーザーがタッチ入力を使って、テキスト コントロールに入力フォーカスを設定すると、タッチ キーボードが自動的に表示されます。 入力フォーカスがテキスト コントロールにないときには、タッチ キーボードが表示されません。
-
-タッチ キーボードが表示されると、フォーカスがある要素をユーザーが見ることができるように、UI が自動的に再配置されます。 この場合、他の重要な UI 領域が画面の表示領域外に移動することがあります。 ただし、タッチ キーボードが表示されたときの既定の動作を無効にして、独自に UI を調整することができます。 詳しくは、[スクリーン キーボードを表示したときの対応のサンプルのページ](http://go.microsoft.com/fwlink/p/?linkid=231633)をご覧ください。
-
-テキスト入力を必要とするカスタム コントロールを、標準のテキスト入力コントロールからの派生コントロールとして作成しない場合は、適切な UI オートメーション コントロール パターンを実装してタッチ キーボードを追加し、サポートできます。 詳しくは、「[タッチ キーボードの表示への応答](respond-to-the-presence-of-the-touch-keyboard.md)」と[タッチ キーボードのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=246019)をご覧ください。
-
-タッチ キーボードのキーが押されると、ハードウェア キーボードのキーが押されたとき同様に、[**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) イベントと [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベントが発生します。 ただし、タッチ キーボードでは、Ctrl + A、Ctrl + Z、Ctrl + X、Ctrl + C、Ctrl + V に対応する入力イベントは発生しません。これらは、入力コントロールでテキストを操作するために予約されています。
-
-ユーザーが入力すると予想されるデータの種類と一致するようにテキスト コントロールの入力値の種類を設定することで、ユーザーがより速く簡単にアプリにデータを入力できるようになります。 入力値の種類は、コントロールが予期しているテキスト入力の種類のヒントとなるため、システムが、その入力の種類用の特殊なタッチ キーボード レイアウトを提供できます。 たとえば、テキスト ボックスが 4 桁の PIN の入力専用の場合は、[**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) プロパティを [**Number**](https://msdn.microsoft.com/library/windows/apps/hh702028) に設定します。 これにより、システムに数字キーパッド レイアウトの表示が指示されるため、ユーザーは簡単に PIN を入力できます。 詳しくは、「[入力値の種類を使ったタッチ キーボードの変更](https://msdn.microsoft.com/library/windows/apps/mt280229)」をご覧ください。
-
-
-## <a name="additional-articles-in-this-section"></a>このセクションの他の記事
+<span data-ttu-id="c575f-342">次のコントロールがある場合、方向キー ナビゲーションのサポートを追加することを検討してください。</span><span class="sxs-lookup"><span data-stu-id="c575f-342">Consider adding support for arrow key navigation when you have for following controls:</span></span>
 
 <table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">トピック</th>
-<th align="left">説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>[タッチ キーボードの表示への応答](respond-to-the-presence-of-the-touch-keyboard.md)</p></td>
-<td align="left"><p>タッチ キーボードを表示または非表示にするときにアプリの UI を調整する方法について説明します。</p></td>
-</tr>
-</tbody>
+  <tr>
+    <td>
+      <p>![dialog](images/keyboard/dialog.png)</p>
+      <p>**<span data-ttu-id="c575f-344">Buttons</span><span class="sxs-lookup"><span data-stu-id="c575f-344">Buttons</span></span>**</p>
+      <p>![radiobutton](images/keyboard/radiobutton.png)</p>
+      <p>**<span data-ttu-id="c575f-346">RadioButtons</span><span class="sxs-lookup"><span data-stu-id="c575f-346">RadioButtons</span></span>**</p>     
+    </td>
+    <td>
+      <p>![appbar](images/keyboard/appbar.png)</p>
+      <p>**<span data-ttu-id="c575f-348">AppBarButtons</span><span class="sxs-lookup"><span data-stu-id="c575f-348">AppBarButtons</span></span>**</p>
+      <p>![リスト項目とグリッド項目](images/keyboard/list-and-grid-items.png)</p>
+      <p>**<span data-ttu-id="c575f-350">ListItems および GridItems</span><span class="sxs-lookup"><span data-stu-id="c575f-350">ListItems and GridItems</span></span>**</p>
+    </td>    
+  </tr>
 </table>
 
-## <a name="related-articles"></a>関連記事
+#### <a name="tab-stops"></a><span data-ttu-id="c575f-351">タブ位置</span><span class="sxs-lookup"><span data-stu-id="c575f-351">Tab stops</span></span>
 
-**開発者向け**
-* [入力デバイスの識別](identify-input-devices.md)
-* [タッチ キーボードの表示への応答](respond-to-the-presence-of-the-touch-keyboard.md)
+<span data-ttu-id="c575f-352">アプリの機能とレイアウトによっては、子要素、複数のタブ位置、またはいくつかの組み合わせに対する方向キー ナビゲーションによる 1 つのタブ位置がコントロール グループのナビゲーション オプションとして最適な場合があります。</span><span class="sxs-lookup"><span data-stu-id="c575f-352">Depending on your app’s functionality and layout, the best navigation option for a control group might be a single tab stop with arrow navigation to child elements, multiple tab stops, or some combination.</span></span>
 
-**デザイナー向け**
-* [キーボードの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/hh972345)
+##### <a name="use-multiple-tab-stops-and-arrow-keys-for-buttons"></a><span data-ttu-id="c575f-353">ボタンに複数のタブ位置と方向キーを使う</span><span class="sxs-lookup"><span data-stu-id="c575f-353">Use multiple tab stops and arrow keys for buttons</span></span>
 
-**サンプル**
-* [基本的な入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [待機時間が短い入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+<span data-ttu-id="c575f-354">アクセシビリティ ユーザーは、通常はボタンのコレクションの移動に方向キーを使わない、実績のあるキーボード ナビゲーション ルールに依存しています。</span><span class="sxs-lookup"><span data-stu-id="c575f-354">Accessibility users rely on well-established keyboard navigation rules, which do not typically use arrow keys to navigate a collection of buttons.</span></span> <span data-ttu-id="c575f-355">ただし、視覚に障碍のないユーザーは、動作が自然であると感じる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="c575f-355">However, users without visual impairments might feel that the behavior is natural.</span></span>
 
-**サンプルのアーカイブ**
-* [入力サンプル](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [入力: デバイス機能のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [入力: タッチ キーボードのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=246019)
-* [スクリーン キーボードを表示したときの対応のサンプルのページ](http://go.microsoft.com/fwlink/p/?linkid=231633)
-* [XAML テキスト編集のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkID=251417)
- 
+<span data-ttu-id="c575f-356">この場合、既定の UWP の動作の例は `ContentDialog` です。</span><span class="sxs-lookup"><span data-stu-id="c575f-356">An example of default UWP behavior in this case is the `ContentDialog`.</span></span> <span data-ttu-id="c575f-357">方向キーはボタン間の移動に使うことができますが、各ボタンはタブ位置でもあります。</span><span class="sxs-lookup"><span data-stu-id="c575f-357">While arrow keys can be used to navigate between buttons, each button is also a tab stop.</span></span>
 
- 
+##### <a name="assign-single-tab-stop-to-familiar-ui-patterns"></a><span data-ttu-id="c575f-358">使い慣れた UI パターンに 1 つのタブ位置を割り当てる</span><span class="sxs-lookup"><span data-stu-id="c575f-358">Assign single tab stop to familiar UI patterns</span></span>
 
+<span data-ttu-id="c575f-359">レイアウトがコントロール グループのよく知られている UI パターンに従っている場合、グループに 1 つのタブ位置を割り当てるとユーザーのナビゲーション効率を向上することがあります。</span><span class="sxs-lookup"><span data-stu-id="c575f-359">In cases where your layout follows a well-known UI pattern for control groups, assigning a single tab stop to the group can improve navigation efficiency for users.</span></span>
+
+<span data-ttu-id="c575f-360">たとえば、次のものがあります。</span><span class="sxs-lookup"><span data-stu-id="c575f-360">Examples include:</span></span>
+-   `RadioButtons`
+-   <span data-ttu-id="c575f-361">複数の `ListViews` は似ており、次と同様に動作: </span><span class="sxs-lookup"><span data-stu-id="c575f-361">Multiple `ListViews` that look like and behave like a single</span></span> `ListView`
+-   <span data-ttu-id="c575f-362">タイルのグリッドと外観や動作が似ている UI (スタート メニューのタイルなど)</span><span class="sxs-lookup"><span data-stu-id="c575f-362">Any UI made to look and behave like grid of tiles (such as the Start menu tiles)</span></span>
+
+#### <a name="specifying-control-group-behavior"></a><span data-ttu-id="c575f-363">コントロール グループの動作を指定する</span><span class="sxs-lookup"><span data-stu-id="c575f-363">Specifying control group behavior</span></span>
+
+<span data-ttu-id="c575f-364">カスタム コントロール グループの動作は、以下の API を使ってサポートします (すべてこのトピックの後半で詳しく説明します)。</span><span class="sxs-lookup"><span data-stu-id="c575f-364">Use the following APIs to support custom control group behavior (all are discussed in more detail later in this topic):</span></span>
+
+-   <span data-ttu-id="c575f-365">[XYFocusKeyboardNavigation](custom-keyboard-interactions.md#xyfocuskeyboardnavigation) は、コントロール間での方向キー ナビゲーションを可能にします。</span><span class="sxs-lookup"><span data-stu-id="c575f-365">[XYFocusKeyboardNavigation](custom-keyboard-interactions.md#xyfocuskeyboardnavigation) enables arrow key navigation between controls</span></span>
+-   <span data-ttu-id="c575f-366">[TabFocusNavigation](custom-keyboard-interactions.md#tab-navigation) は、タブ位置が複数か 1 つかを示します。</span><span class="sxs-lookup"><span data-stu-id="c575f-366">[TabFocusNavigation](custom-keyboard-interactions.md#tab-navigation) indicates whether there are multiple tab stops or single tab stop</span></span>
+-   <span data-ttu-id="c575f-367">[FindFirstFocusableElement and FindLastFocusableElement](managing-focus-navigation.md#findfirstfocusableelement) は、フォーカスを **Home** キーによって最初の項目に、**End** キーによって最後の項目に設定します。</span><span class="sxs-lookup"><span data-stu-id="c575f-367">[FindFirstFocusableElement and FindLastFocusableElement](managing-focus-navigation.md#findfirstfocusableelement) sets focus on the first item with **Home** key and the last item with **End** key</span></span>
+
+<span data-ttu-id="c575f-368">次の図は、関連付けれらたラジオ ボタンのコントロール グループにおける直感的なキーボード ナビゲーションの動作を示しています。</span><span class="sxs-lookup"><span data-stu-id="c575f-368">The following image shows an intuitive keyboard navigation behavior for a control group of associated radio buttons.</span></span> <span data-ttu-id="c575f-369">この場合、コントロール グループの 1 つのタブ位置、方向キーを使ったラジオ ボタン間の内部ナビゲーション、最初のラジオ ボタンにバインドされた **Home** キー、最後のラジオ ボタンにバインドされた **End** キーをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="c575f-369">In this case, we recommend a single tab stop for the control group, inner navigation between the radio buttons using the arrow keys, **Home** key bound to the first radio button, and **End** key bound to the last radio button.</span></span>
+
+![組み立てる](images/keyboard/putting-it-all-together.png)
+
+### <a name="keyboard-and-narrator"></a><span data-ttu-id="c575f-371">キーボードとナレーター</span><span class="sxs-lookup"><span data-stu-id="c575f-371">Keyboard and Narrator</span></span>
+
+<span data-ttu-id="c575f-372">ナレーターは、キーボード ユーザーを対象に用意された UI アクセシビリティ ツールです (他の入力の種類もサポートされます)。</span><span class="sxs-lookup"><span data-stu-id="c575f-372">Narrator is a UI accessibility tool geared towards keyboard users (other input types are also supported).</span></span> <span data-ttu-id="c575f-373">ただし、ナレーター機能は UWP アプリによりサポートされているキーボード操作を上回るため、ナレーター用に UWP アプリを設計するときは特別な注意が必要です </span><span class="sxs-lookup"><span data-stu-id="c575f-373">However, Narrator functionality goes beyond the keyboard interactions supported by UWP apps and extra care is required when designing your UWP app for Narrator.</span></span> <span data-ttu-id="c575f-374">(ナレーターのユーザー エクスペリエンスについては、「[ナレーターの基本について](https://support.microsoft.com/help/22808/windows-10-narrator-learning-basics)」をご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="c575f-374">(The [Narrator basics page](https://support.microsoft.com/help/22808/windows-10-narrator-learning-basics) guides you through the Narrator user experience.)</span></span>
+
+<span data-ttu-id="c575f-375">UWP のキーボードの動作とナレーターによりサポートされている動作の違いには、以下のようなものがあります。</span><span class="sxs-lookup"><span data-stu-id="c575f-375">Some of the differences between UWP keyboard behaviors and those supported by Narrator include:</span></span>
+-   <span data-ttu-id="c575f-376">標準的なキーボード ナビゲーションでは表示されない UI 要素にナビゲーションするための追加のキーの組み合わせ (CapsLock + 方向キーを使ってコントロール ラベルを読み上げるなど)。</span><span class="sxs-lookup"><span data-stu-id="c575f-376">Extra key combinations for navigation to UI elements that are not exposed through standard keyboard navigation, such as Caps lock + arrow keys to read control labels.</span></span>
+-   <span data-ttu-id="c575f-377">無効な項目へのナビゲーション。</span><span class="sxs-lookup"><span data-stu-id="c575f-377">Navigation to disabled items.</span></span> <span data-ttu-id="c575f-378">既定では、無効な項目は標準的なキーボード ナビゲーションによって表示されません。</span><span class="sxs-lookup"><span data-stu-id="c575f-378">By default, disabled items are not exposed through standard keyboard navigation.</span></span>
+    -   <span data-ttu-id="c575f-379">UI の細かさに基づいてすばやくナビゲーションするための コントロール "ビュー"。</span><span class="sxs-lookup"><span data-stu-id="c575f-379">Control "views" for quicker navigation based on UI granularity.</span></span> <span data-ttu-id="c575f-380">ユーザーは、項目、文字、単語、行、段落、リンク、見出し、表、ランドマーク、および候補に移動できます。</span><span class="sxs-lookup"><span data-stu-id="c575f-380">Users can navigate to items, characters, word, lines, paragraphs, links, headings, tables, landmarks, and suggestions.</span></span> <span data-ttu-id="c575f-381">標準的なキーボード ナビゲーションでは、これらのオブジェクトが階層のないリストとして表示されるため、ショートカット キーがないとナビゲーションしにくくなる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="c575f-381">Standard keyboard navigation exposes these objects as a flat list, which might make navigation cumbersome unless you provide shortcut keys.</span></span>
+
+#### <a name="case-study--autosuggestbox-control"></a><span data-ttu-id="c575f-382">ケース スタディ – AutoSuggestBox コントロール</span><span class="sxs-lookup"><span data-stu-id="c575f-382">Case Study – AutoSuggestBox control</span></span>
+
+<span data-ttu-id="c575f-383">`AutoSuggestBox` の検索ボタンでは、ユーザーが **Enter** キーを押して検索クエリを送信できるため、Tab および方向キーを使って標準的なキーボード ナビゲーションにアクセスすることができません。</span><span class="sxs-lookup"><span data-stu-id="c575f-383">The search button for the `AutoSuggestBox` is not accessible to standard keyboard navigation using tab and arrow keys because the user can press the **Enter** key to submit the search query.</span></span> <span data-ttu-id="c575f-384">ただし、ユーザーが CapsLock + 方向キーを押すとナレーターを通じてアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="c575f-384">However, it is accessible through Narrator when the user presses Caps Lock + an arrow key.</span></span>
+
+![自動提案のキーボード フォーカス](images/keyboard/auto-suggest-keyboard.png)
+
+<span data-ttu-id="c575f-386">***キーボードでは***、*ユーザーは * ***Enter*** *キーを使って検索クエリを送信する*</span><span class="sxs-lookup"><span data-stu-id="c575f-386">***With keyboard***, *users use* ***Enter*** *key to submit search query*</span></span>
+
+<table>
+  <tr>
+    <td>
+      <p>![自動提案のナレーター フォーカス](images/keyboard/auto-suggest-narrator-1.png)</p>
+      <p><span data-ttu-id="c575f-388">**ナレーターでは、***ユーザーは Enter キーを使って検索クエリを送信する*</span><span class="sxs-lookup"><span data-stu-id="c575f-388">**With Narrator,** *users can use Enter key to submit search query*</span></span></P>
+    </td>
+    <td>
+      <p>![検索における自動提案のナレーター フォーカス](images/keyboard/auto-suggest-narrator-2.png)</p>
+      <p>*<span data-ttu-id="c575f-390">ユーザーは、CapsLock + 右方向キーを使って検索ボタンにアクセスし、Space キーを押すこともできる</span><span class="sxs-lookup"><span data-stu-id="c575f-390">User is also able to access the search button by Caps Lock + Right arrow key, then press Space key</span></span>*</p>
+    </td>
+  </tr>
+</table>
+
+### <a name="keyboard-and-the-xbox-gamepad-and-remote-control"></a><span data-ttu-id="c575f-391">キーボードと Xbox ゲームパッドおよびリモコン</span><span class="sxs-lookup"><span data-stu-id="c575f-391">Keyboard and the Xbox gamepad and remote control</span></span>
+
+<span data-ttu-id="c575f-392">Xbox のゲームパッドとリモコンは、UWP の多くのキーボード動作とエクスペリエンスをサポートします。</span><span class="sxs-lookup"><span data-stu-id="c575f-392">Xbox gamepads and remote controls support many UWP keyboard behaviors and experiences.</span></span> <span data-ttu-id="c575f-393">ただし、キーボードで使用可能なさまざまなキー オプションが不足しているため、ゲームパッドとリモコンに多くのキーボード最適化がありません (リモコンはゲームパッドよりもさらに制限されます)。</span><span class="sxs-lookup"><span data-stu-id="c575f-393">However, due to the lack of various key options available on a keyboard, gamepad and remote control lack many keyboard optimizations (remote control is even more limited than gamepad).</span></span>
+
+<span data-ttu-id="c575f-394">ゲームパッドおよびリモコン入力の UWP によるサポートについて詳しくは、「[Xbox およびテレビ向け設計](designing-for-tv.md#gamepad-and-remote-control)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c575f-394">See [designing for Xbox and TV](designing-for-tv.md#gamepad-and-remote-control) for more detail on UWP support for gamepad and remote control input.</span></span>
+
+<span data-ttu-id="c575f-395">キーボード、ゲームパッド、リモコンにおける対応するキーの例を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="c575f-395">The following shows some key mappings between keyboard, gamepad, and remote control.</span></span>
+
+| **<span data-ttu-id="c575f-396">キーボード</span><span class="sxs-lookup"><span data-stu-id="c575f-396">Keyboard</span></span>**  | **<span data-ttu-id="c575f-397">ゲームパッド</span><span class="sxs-lookup"><span data-stu-id="c575f-397">Gamepad</span></span>**                         | **<span data-ttu-id="c575f-398">リモコン</span><span class="sxs-lookup"><span data-stu-id="c575f-398">Remote control</span></span>**  |
+|---------------|-------------------------------------|---------------------|
+| <span data-ttu-id="c575f-399">Space</span><span class="sxs-lookup"><span data-stu-id="c575f-399">Space</span></span>         | <span data-ttu-id="c575f-400">A ボタン</span><span class="sxs-lookup"><span data-stu-id="c575f-400">A button</span></span>                            | <span data-ttu-id="c575f-401">[選択] ボタン</span><span class="sxs-lookup"><span data-stu-id="c575f-401">Select button</span></span>       |
+| <span data-ttu-id="c575f-402">Enter</span><span class="sxs-lookup"><span data-stu-id="c575f-402">Enter</span></span>         | <span data-ttu-id="c575f-403">A ボタン</span><span class="sxs-lookup"><span data-stu-id="c575f-403">A button</span></span>                            | <span data-ttu-id="c575f-404">[選択] ボタン</span><span class="sxs-lookup"><span data-stu-id="c575f-404">Select button</span></span>       |
+| <span data-ttu-id="c575f-405">Esc</span><span class="sxs-lookup"><span data-stu-id="c575f-405">Escape</span></span>        | <span data-ttu-id="c575f-406">B ボタン</span><span class="sxs-lookup"><span data-stu-id="c575f-406">B button</span></span>                            | <span data-ttu-id="c575f-407">[戻る] ボタン</span><span class="sxs-lookup"><span data-stu-id="c575f-407">Back button</span></span>         |
+| <span data-ttu-id="c575f-408">Home/End</span><span class="sxs-lookup"><span data-stu-id="c575f-408">Home/End</span></span>      | <span data-ttu-id="c575f-409">該当なし</span><span class="sxs-lookup"><span data-stu-id="c575f-409">N/A</span></span>                                 | <span data-ttu-id="c575f-410">該当なし</span><span class="sxs-lookup"><span data-stu-id="c575f-410">N/A</span></span>                 |
+| <span data-ttu-id="c575f-411">PageUp/PageDown</span><span class="sxs-lookup"><span data-stu-id="c575f-411">Page Up/Down</span></span>  | <span data-ttu-id="c575f-412">縦スクロールはトリガー ボタン、横スクロールはバンパー ボタン</span><span class="sxs-lookup"><span data-stu-id="c575f-412">Trigger button for vertical scroll, Bumper button for horizontal scroll</span></span>   | <span data-ttu-id="c575f-413">該当なし</span><span class="sxs-lookup"><span data-stu-id="c575f-413">N/A</span></span>                 |
+
+<span data-ttu-id="c575f-414">ゲームパッドとリモコンを使う UWP アプリを設計する際に注意すべきいくつかキーの相違点は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="c575f-414">Some key differences you should be aware of when designing your UWP app for use with gamepad and remote control usage include:</span></span>
+-   <span data-ttu-id="c575f-415">テキストを入力するには、ユーザーは A を押してテキスト コントロールをアクティブ化する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c575f-415">Text entry requires the user to press A to activate a text control.</span></span>
+-   <span data-ttu-id="c575f-416">フォーカス ナビゲーションは、コントロール グループに限定されるわけではありません。ユーザーは、アプリ内のフォーカス可能な任意の UI 要素に自由に移動できます。</span><span class="sxs-lookup"><span data-stu-id="c575f-416">Focus navigation is not limited to control groups, users can navigate freely to any focusable UI element in the app.</span></span>
+
+    <span data-ttu-id="c575f-417">**NOTE** フォーカスは、キーを押した方向にあるフォーカス可能な任意の UI 要素に移動できます。ただし、その要素がオーバーレイ UI にある場合や、[フォーカス エンゲージメント](designing-for-tv.md#focus-engagement)が指定されている場合 (A ボタンによってエンゲージ/エンゲージ解除されるまでフォーカスが領域に入ったり出たりすることができないため) を除きます。</span><span class="sxs-lookup"><span data-stu-id="c575f-417">**NOTE** Focus can move to any focusable UI element in the key press direction unless it is in an overlay UI or [focus engagement](designing-for-tv.md#focus-engagement) is specified, which prevents focus from entering/exiting a region until engaged/disengaged with the A button.</span></span> <span data-ttu-id="c575f-418">詳しくは、「[方向ナビゲーション](#directional-navigation)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c575f-418">For more info, see the [directional navigation](#directional-navigation) section.</span></span>
+-   <span data-ttu-id="c575f-419">コントロール間、および内部ナビゲーション用にフォーカスを移動するには、方向パッドと左スティックのボタンが使用されます。</span><span class="sxs-lookup"><span data-stu-id="c575f-419">D-pad and left stick buttons are used to move focus between controls and for inner navigation.</span></span>
+
+    <span data-ttu-id="c575f-420">**注** ゲームパッドとリモコンは、方向キーが押されたとき、同じ表示順序内にある項目のみ移動します。</span><span class="sxs-lookup"><span data-stu-id="c575f-420">**NOTE** Gamepad and remote control only navigate to items that are in the same visual order as the directional key pressed.</span></span> <span data-ttu-id="c575f-421">フォーカスを受け取ることができる後続の要素がない場合、その方向のナビゲーションは無効になります。</span><span class="sxs-lookup"><span data-stu-id="c575f-421">Navigation is disabled in that direction when there is no subsequent element that can receive focus.</span></span> <span data-ttu-id="c575f-422">状況によっては、キーボード ユーザーは必ずしもそのような制約を持っているわけではありません。</span><span class="sxs-lookup"><span data-stu-id="c575f-422">Depending on the situation, keyboard users do not always have that constraint.</span></span> <span data-ttu-id="c575f-423">詳しくは、「[組み込みキーボードの最適化](#built-in-keyboard-optimization)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c575f-423">See the [Built in keyboard optimization](#built-in-keyboard-optimization) section for more info.</span></span>
+
+#### <a name="directional-navigation-a-namedirectional-navigation"></a><span data-ttu-id="c575f-424">方向ナビゲーション <a name="directional-navigation"></span><span class="sxs-lookup"><span data-stu-id="c575f-424">Directional navigation <a name="directional-navigation"></span></span>
+
+<span data-ttu-id="c575f-425">方向ナビゲーションは、UWP [Focus Manager](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.FocusManager) ヘルパー クラスにより管理されます。このヘルパー クラスは、方向キーが押されたことを認識し (方向キー、方向パッド)、対応する視覚的な向きにフォーカスを移動しようとします。</span><span class="sxs-lookup"><span data-stu-id="c575f-425">Directional navigation is managed by a UWP [Focus Manager](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.FocusManager) helper class, which takes the directional key pressed (arrow key, D-pad) and attempts to move focus in the corresponding visual direction.</span></span>
+
+<span data-ttu-id="c575f-426">キーボードとは異なり、アプリが[マウス モード](designing-for-tv.md#mouse-mode)をオプトアウトした場合、ゲームパッドとリモコンを使うアプリケーション全体にわたって方向ナビゲーションが適用されます。</span><span class="sxs-lookup"><span data-stu-id="c575f-426">Unlike the keyboard, when an app opts out of [Mouse Mode](designing-for-tv.md#mouse-mode), directional navigation is applied across the entire application for gamepad and remote control .</span></span> <span data-ttu-id="c575f-427">ゲームパッドとリモコン用の方向ナビゲーションの最適化について詳しくは、[XY フォーカス ナビゲーションと対話式操作に関する記事](designing-for-tv.md#xy-focus-navigation-and-interaction)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c575f-427">Visit [XY focus navigation and interaction article](designing-for-tv.md#xy-focus-navigation-and-interaction) for more detail on directional navigation optimizations for gamepad and remote control.</span></span>
+
+<span data-ttu-id="c575f-428">**注**キーボードの Tab キーを使ったナビゲーションは、方向ナビゲーションとは見なされません。</span><span class="sxs-lookup"><span data-stu-id="c575f-428">**NOTE** Navigation using the keyboard Tab key is not considered directional navigation.</span></span> <span data-ttu-id="c575f-429">詳しくは、「[タブ位置](#tab-stops)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c575f-429">For more info, see the [Tab stops](#tab-stops) section.</span></span>
+
+<table>
+  <tr>
+    <td>
+      <p>![方向ナビゲーション](images/keyboard/directional-navigation.png)</p>
+      <p>***<span data-ttu-id="c575f-431">サポートされている方向ナビゲーション</span><span class="sxs-lookup"><span data-stu-id="c575f-431">Directional navigation supported</span></span>*** </br>*<span data-ttu-id="c575f-432">方向キー (キーボードの方向キー、ゲームパッドとリモコンの方向パッド) を使って、ユーザーはコントロール間を移動できます。</span><span class="sxs-lookup"><span data-stu-id="c575f-432">Using directional keys (keyboard arrows, gamepad and remote control D-pad), user can navigate between different controls.</span></span>*</p>
+    </td>
+    <td>
+      <p>![方向ナビゲーションなし](images/keyboard/no-directional-navigation.png)</p>
+      <p>***<span data-ttu-id="c575f-434">サポートされていない方向ナビゲーション</span><span class="sxs-lookup"><span data-stu-id="c575f-434">Directional navigation not supported</span></span>*** </br>*<span data-ttu-id="c575f-435">ユーザーは、方向キーを使ってコントロール間を移動することはできません。</span><span class="sxs-lookup"><span data-stu-id="c575f-435">User cannot navigate between different controls using directional keys.</span></span> <span data-ttu-id="c575f-436">コントロール間を移動する他の方法 (Tab キー) は影響を受けません。</span><span class="sxs-lookup"><span data-stu-id="c575f-436">Other methods of navigating between controls (tab key) are not impacted.</span></span>*</p>
+    </td>
+  </tr>
+</table>
+
+### <a name="built-in-keyboard-optimization-a-namebuilt-in-keyboard-optimization"></a><span data-ttu-id="c575f-437">組み込みキーボードの最適化 <a name="built-in-keyboard-optimization"></span><span class="sxs-lookup"><span data-stu-id="c575f-437">Built in keyboard optimization <a name="built-in-keyboard-optimization"></span></span>
+
+<span data-ttu-id="c575f-438">使用されているレイアウトとコントロールによっては、特にキーボード入力に合わせて UWP アプリを最適化できます。</span><span class="sxs-lookup"><span data-stu-id="c575f-438">Depending on the layout and controls used, UWP apps can be optimized specifically for keyboard input.</span></span>
+
+<span data-ttu-id="c575f-439">次の例は、1 つのタブ位置に割り当てられているリスト項目、グリッド項目、メニュー項目のグループを示しています (「[タブ位置](#tab-stops)」をご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="c575f-439">The following example shows a group of list items, grid items, and menu items that have been assigned to a single tab stop (see the [Tab stops](#tab-stops) section).</span></span> <span data-ttu-id="c575f-440">グループにフォーカスがある場合、方向キーによって、対応する表示順序で内部ナビゲーションが実行されます (「[ナビゲーション」](#navigation)」をご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="c575f-440">When the group has focus, inner navigation is performed with the directional arrow keys in the corresponding visual order (see [Navigation](#navigation) section).</span></span>
+
+![単一列の方向キー ナビゲーション](images/keyboard/single-column-arrow.png)
+
+***<span data-ttu-id="c575f-442">単一列の方向キー ナビゲーション</span><span class="sxs-lookup"><span data-stu-id="c575f-442">Single Column Arrow Key Navigation</span></span>***
+
+![単一行の方向キー ナビゲーション](images/keyboard/single-row-arrow.png)
+
+***<span data-ttu-id="c575f-444">単一行の方向キー ナビゲーション</span><span class="sxs-lookup"><span data-stu-id="c575f-444">Single Row Arrow Key Navigation</span></span>***
+
+![複数列および行の方向キー ナビゲーション](images/keyboard/multiple-column-and-row-navigation.png)
+
+***<span data-ttu-id="c575f-446">複数列および行の方向キー ナビゲーション</span><span class="sxs-lookup"><span data-stu-id="c575f-446">Multiple Column/Row Arrow Key Navigation</span></span>***
+
+#### <a name="wrapping-homogeneous-list-and-grid-view-items"></a><span data-ttu-id="c575f-447">同種のリスト項目およびグリッド ビュー項目の折り返し</span><span class="sxs-lookup"><span data-stu-id="c575f-447">Wrapping homogeneous List and Grid View Items</span></span>
+
+<span data-ttu-id="c575f-448">List 項目と GridView 項目の複数の行と列を移動する場合、必ずしも方向ナビゲーションが最も効率的な方法とは限りません。</span><span class="sxs-lookup"><span data-stu-id="c575f-448">Directional navigation is not always the most efficient way to navigate multiple rows and columns of List and GridView items.</span></span>
+
+<span data-ttu-id="c575f-449">**注** メニュー項目は通常単一列のリストですが、場合によっては特別なフォーカス ルールが適用されることがあります (「[ポップアップ UI](#popup-ui)」をご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="c575f-449">**NOTE** Menu items are typically single column lists, but special focus rules might apply in some cases (see [Popup UI](#popup-ui)).</span></span>
+
+<span data-ttu-id="c575f-450">リスト オブジェクトとグリッド オブジェクトは複数の行と列を使って作成されることがあります。</span><span class="sxs-lookup"><span data-stu-id="c575f-450">List and Grid objects can be created with multiple rows and columns.</span></span> <span data-ttu-id="c575f-451">このようなオブジェクトには通常、行優先順序 (まず項目が行全体に入力されてから、次の行に入力される) または列優先順序 (まず項目が列全体に入力されてから次の列に入力される) が適用されます。</span><span class="sxs-lookup"><span data-stu-id="c575f-451">These are typically in row-major (where items fill entire row first before filling in the next row) or column-major (where items fill entire column first before filling in the next column) order.</span></span> <span data-ttu-id="c575f-452">行または列優先順序は、スクロールの方向によって決まり、項目の順序がこの方向と競合しないようにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="c575f-452">Row or column major order depends on scroll direction and you should ensure that item order does not conflict with this direction.</span></span>
+
+<span data-ttu-id="c575f-453">行優先順序 (項目が左から右、上から下に入力される) では、フォーカスが行内の最後の項目に置かれて右方向キーが押されると、フォーカスは次の行の最初の項目に移動します。</span><span class="sxs-lookup"><span data-stu-id="c575f-453">In row-major order (where items fill in left to right, top to bottom), when the focus is on the last item in a row and the Right arrow key is pressed, focus is moved to the first item in the next row.</span></span> <span data-ttu-id="c575f-454">これと同じ動作が逆の順序で発生します。フォーカスが行内の最初の項目に置かれて左方向キーが押されると、フォーカスは前の行の最後の項目に移動します。</span><span class="sxs-lookup"><span data-stu-id="c575f-454">This same behavior occurs in reverse: When focus is set to the first item in a row and the Left arrow key is pressed, focus is moved to the last item in the previous row.</span></span>
+
+<span data-ttu-id="c575f-455">列優先順序 (項目が上から下、左から右に入力される) では、フォーカスが列内の最後に項目に置かれて、ユーザーが下方向キーを押すと、フフォーカスが次の列の最初の項目に移動します。</span><span class="sxs-lookup"><span data-stu-id="c575f-455">In column-major order (where items fill in top to bottom, left to right), when the focus is on the last item in a column and user presses the Down arrow key, focus is moved to the first item in the next column.</span></span> <span data-ttu-id="c575f-456">これと同じ動作が逆の順序で発生します。フォーカスが列内の最初の項目に置かれて上方向キーが押されると、フォーカスは前の列の最後の項目に移動します。</span><span class="sxs-lookup"><span data-stu-id="c575f-456">This same behavior occurs in reverse: When focus is set to the first item in a column and the Up arrow key is pressed, focus is moved to the last item in the previous column.</span></span>
+
+<table>
+  <tr>
+    <td>
+      <p>![行優先キーボード ナビゲーション](images/keyboard/row-major-keyboard.png)</p>
+      <p>***<span data-ttu-id="c575f-458">行優先キーボード ナビゲーション</span><span class="sxs-lookup"><span data-stu-id="c575f-458">Row major keyboard navigation</span></span>***</p>
+    </td>
+    <td>
+      <p>![列優先キーボード ナビゲーション](images/keyboard/column-major-keyboard.png)</p>
+      <p>***<span data-ttu-id="c575f-460">列優先キーボード ナビゲーション</span><span class="sxs-lookup"><span data-stu-id="c575f-460">Column major keyboard navigation</span></span>***</p>
+    </td>
+  </tr>
+</table>
+
+#### <a name="popup-ui-a-namepopup-ui"></a><span data-ttu-id="c575f-461">ポップアップ UI <a name="popup-ui"></span><span class="sxs-lookup"><span data-stu-id="c575f-461">Popup UI <a name="popup-ui"></span></span>
+
+<span data-ttu-id="c575f-462">前述のように、方向ナビゲーションがアプリの UI におけるコントロールの表示順序に対応するようにしてください。</span><span class="sxs-lookup"><span data-stu-id="c575f-462">As mentioned, you should try to ensure directional navigation corresponds to the visual order of the controls in your app’s UI.</span></span>
+
+<span data-ttu-id="c575f-463">`ContextMenu`、`AppBarOverflowMenu`、`AutoSuggest` など、一部のコントロールには、プライマリ コントロールを基準とする場所と方向で表示される (使用可能な画面領域に基づく) メニュー ポップアップが含まれています。</span><span class="sxs-lookup"><span data-stu-id="c575f-463">Some controls, such as `ContextMenu`, `AppBarOverflowMenu`, and `AutoSuggest`, include a menu popup that is displayed in a location and direction relative to the primary control (based on available screen space).</span></span> <span data-ttu-id="c575f-464">たとえば、メニューが下方向 (既定の方向) に開くのに十分な領域がない場合は、上方向に開きます。</span><span class="sxs-lookup"><span data-stu-id="c575f-464">For example, when there is insufficient space for the menu to open downwards (the default direction), it opens upwards.</span></span> <span data-ttu-id="c575f-465">メニューが毎回同じ方向に表示されるという保証はありません。</span><span class="sxs-lookup"><span data-stu-id="c575f-465">There is no guarantee that the menu opens in the same direction every time.</span></span>
+
+<table>
+  <td>![下方向キーによってコマンド バーが下方向に開く](images/keyboard/command-bar-open-down.png)</td>
+  <td>![下方向キーによってコマンド バーが上方向に開く](images/keyboard/command-bar-open-up.png)</td>
+</table>
+
+<span data-ttu-id="c575f-468">これらのコントロールでは、メニューが最初に開かれたとき (ユーザーによって項目が選択されていない状態)、下方向キーは常に最初の項目にフォーカスを設定し、上方向キーは常にフォーカスをメニューの最後の項目に設定します。</span><span class="sxs-lookup"><span data-stu-id="c575f-468">For these controls, when the menu is first opened (and no item has been selected by the user), the Down arrow key always sets focus to the first item and the Up arrow key always sets focus to the last item on the menu.</span></span> <span data-ttu-id="c575f-469">同様に、最後の項目が選択されて下方向キーが押されると、フォーカスはメニューの最初の項目に移動し、最初の項目が選択されて上方向キーが押されると、フォーカスはメニューの最後の項目に移動します。</span><span class="sxs-lookup"><span data-stu-id="c575f-469">Similarly, when the last item is selected and the Down arrow key is pressed, focus moves to the first item on the menu and when the first item is selected and the Up arrow key is pressed, focus moves to the last item on the menu.</span></span>
+
+<span data-ttu-id="c575f-470">これと同じ動作をカスタム コントロールでエミュレートしてみてください。</span><span class="sxs-lookup"><span data-stu-id="c575f-470">You should try to emulate these same behaviors in your custom controls.</span></span> <span data-ttu-id="c575f-471">この動作を実装する方法を示すコード サンプルは、「[フォーカス ナビゲーションの管理](managing-focus-navigation.md#popup-ui-code-sample)」にあります。</span><span class="sxs-lookup"><span data-stu-id="c575f-471">Code sample on how to implement this behavior can be found in [Managing focus navigation](managing-focus-navigation.md#popup-ui-code-sample) documentation.</span></span>
+
+## <a name="test-your-app"></a><span data-ttu-id="c575f-472">アプリのテスト</span><span class="sxs-lookup"><span data-stu-id="c575f-472">Test your app</span></span>
+
+<span data-ttu-id="c575f-473">サポートされているすべての入力デバイスを使ってアプリをテストし、UI 要素が一貫した直感的な方法で移動できることと、要素と目的のタブ位置の予期しない干渉がないことを確認してください。</span><span class="sxs-lookup"><span data-stu-id="c575f-473">Test your app with all supported input devices to ensure UI elements can be navigated to in a coherent and intuitive way and that no unexpected elements interfere with the desired tab order.</span></span>
+
+## <a name="related-articles"></a><span data-ttu-id="c575f-474">関連記事</span><span class="sxs-lookup"><span data-stu-id="c575f-474">Related articles</span></span>
+* [<span data-ttu-id="c575f-475">キーボード イベント</span><span class="sxs-lookup"><span data-stu-id="c575f-475">Keyboard events</span></span>](keyboard-events.md)
+* [<span data-ttu-id="c575f-476">入力デバイスの識別</span><span class="sxs-lookup"><span data-stu-id="c575f-476">Identify input devices</span></span>](identify-input-devices.md)
+* [<span data-ttu-id="c575f-477">タッチ キーボードの表示への応答</span><span class="sxs-lookup"><span data-stu-id="c575f-477">Respond to the presence of the touch keyboard</span></span>](respond-to-the-presence-of-the-touch-keyboard.md)
+* [<span data-ttu-id="c575f-478">フォーカスの視覚効果のサンプル</span><span class="sxs-lookup"><span data-stu-id="c575f-478">Focus visuals sample</span></span>](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
+## <a name="appendix"></a><span data-ttu-id="c575f-479">付録</span><span class="sxs-lookup"><span data-stu-id="c575f-479">Appendix</span></span>
+
+### <a name="software-keyboard-a-nametouch-keyboard"></a><span data-ttu-id="c575f-480">ソフトウェア キーボード <a name="touch-keyboard"></span><span class="sxs-lookup"><span data-stu-id="c575f-480">Software keyboard <a name="touch-keyboard"></span></span>
+
+<span data-ttu-id="c575f-481">ソフトウェア キーボードは、物理的なキーボードの代わりにユーザーが使うことができる画面上のキーボードです。タッチ、マウス、ペン/スタイラス、またはその他のポインティング デバイスを通じてデータを入力します (タッチ スクリーンは必須ではありません)。</span><span class="sxs-lookup"><span data-stu-id="c575f-481">Software keyboard is a keyboard that is displayed on screen that user can use instead of the physical keyboard to type and enter data using touch, mouse, pen/stylus or other pointing device (a touch screen is not required).</span></span> <span data-ttu-id="c575f-482">タッチ画面では、これらのキーボードを直接タッチしてテキストを入力することもできます。</span><span class="sxs-lookup"><span data-stu-id="c575f-482">On touch screen, these keyboards can be touched directly to enter text as well.</span></span> <span data-ttu-id="c575f-483">Xbox One デバイスでは、ゲームパッドやリモコンを使ってフォーカス表示を移動したりショートカット キーを使ったりすることで、個々のキーを選択する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c575f-483">On Xbox One devices, individual keys need to be selected by moving focus visual or using shortcut keys using gamepad or remote control.</span></span>
+
+![Windows 10 のタッチ キーボード](images/keyboard/kbdpcdefault.png)
+
+***<span data-ttu-id="c575f-485">Windows 10 のタッチ キーボード</span><span class="sxs-lookup"><span data-stu-id="c575f-485">Windows 10 Touch Keyboard</span></span>***
+
+![Windows 10 スマートフォンのタッチ キーボード](images/keyboard/kbdwpdefault.png)
+
+***<span data-ttu-id="c575f-487">Windows Phone 10 のタッチ キーボード</span><span class="sxs-lookup"><span data-stu-id="c575f-487">Windows Phone 10 Touch Keyboard</span></span>***
+
+![Xbox One のスクリーン キーボード](images/keyboard/xbox-onscreen-keyboard.png)
+
+***<span data-ttu-id="c575f-489">Xbox One のスクリーン キーボード</span><span class="sxs-lookup"><span data-stu-id="c575f-489">Xbox One Onscreen Keyboard</span></span>***
+
+<span data-ttu-id="c575f-490">デバイスに応じて、ソフトウェア キーボードは、テキスト フィールドやその他の編集可能なテキスト コントロールがフォーカスを取得したとき、またはユーザーが**通知センター**で手動でタッチ キーボードを有効にしたときに表示されます。</span><span class="sxs-lookup"><span data-stu-id="c575f-490">Depending on the device, the software keyboard appears when a text field or other editable text control gets focus, or when the user manually enables it through the **Notification Center**:</span></span>
+
+![通知センターでのタッチ キーボードのアイコン](images/keyboard/touch-keyboard-notificationcenter.png)
+
+<span data-ttu-id="c575f-492">テキスト入力コントロールへのフォーカスをプログラムで設定するアプリの場合、タッチ キーボードは呼び出されません。</span><span class="sxs-lookup"><span data-stu-id="c575f-492">If your app sets focus programmatically to a text input control, the touch keyboard is not invoked.</span></span> <span data-ttu-id="c575f-493">これにより、ユーザーの直接的な操作による予期しない動作を回避できます。</span><span class="sxs-lookup"><span data-stu-id="c575f-493">This eliminates unexpected behaviors not instigated directly by the user.</span></span> <span data-ttu-id="c575f-494">ただし、プログラムによってキーボードがテキスト入力コントロール以外に移動されると、キーボードが自動的に非表示になります。</span><span class="sxs-lookup"><span data-stu-id="c575f-494">However, the keyboard does automatically hide when focus is moved programmatically to a non-text input control.</span></span>
+
+<span data-ttu-id="c575f-495">通常、ユーザーがフォームでコントロール間を移動している間は、タッチ キーボードは表示されたままです。</span><span class="sxs-lookup"><span data-stu-id="c575f-495">The touch keyboard typically remains visible while the user navigates between controls in a form.</span></span> <span data-ttu-id="c575f-496">この動作は、フォーム内の他のコントロールの種類に基づいて異なります。</span><span class="sxs-lookup"><span data-stu-id="c575f-496">This behavior can vary based on the other control types within the form.</span></span>
+
+<span data-ttu-id="c575f-497">タッチ キーボードを使用するテキスト入力セッション中に、キーボードを閉じずにフォーカスを受け取ることができる非編集コントロールの一覧を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c575f-497">The following is a list of non-edit controls that can receive focus during a text entry session using the touch keyboard without dismissing the keyboard.</span></span> <span data-ttu-id="c575f-498">ユーザーがこれらのコントロールとタッチ キーボードによるテキスト入力との間で何度も行き来することが考えられるため、UI の表示を不必要に切り替えてユーザーを混乱させることのないよう、タッチ キーボードは表示されたままになります。</span><span class="sxs-lookup"><span data-stu-id="c575f-498">Rather than needlessly churn the UI and potentially disorient the user, the touch keyboard remains in view because the user is likely to go back and forth between these controls and text entry with the touch keyboard.</span></span>
+
+-   <span data-ttu-id="c575f-499">チェック ボックス</span><span class="sxs-lookup"><span data-stu-id="c575f-499">Check box</span></span>
+-   <span data-ttu-id="c575f-500">コンボ ボックス</span><span class="sxs-lookup"><span data-stu-id="c575f-500">Combo box</span></span>
+-   <span data-ttu-id="c575f-501">ラジオ ボタン</span><span class="sxs-lookup"><span data-stu-id="c575f-501">Radio button</span></span>
+-   <span data-ttu-id="c575f-502">スクロール バー</span><span class="sxs-lookup"><span data-stu-id="c575f-502">Scroll bar</span></span>
+-   <span data-ttu-id="c575f-503">ツリー</span><span class="sxs-lookup"><span data-stu-id="c575f-503">Tree</span></span>
+-   <span data-ttu-id="c575f-504">ツリー項目</span><span class="sxs-lookup"><span data-stu-id="c575f-504">Tree item</span></span>
+-   <span data-ttu-id="c575f-505">メニュー</span><span class="sxs-lookup"><span data-stu-id="c575f-505">Menu</span></span>
+-   <span data-ttu-id="c575f-506">メニュー バー</span><span class="sxs-lookup"><span data-stu-id="c575f-506">Menu bar</span></span>
+-   <span data-ttu-id="c575f-507">メニュー項目</span><span class="sxs-lookup"><span data-stu-id="c575f-507">Menu item</span></span>
+-   <span data-ttu-id="c575f-508">ツール バー</span><span class="sxs-lookup"><span data-stu-id="c575f-508">Toolbar</span></span>
+-   <span data-ttu-id="c575f-509">一覧</span><span class="sxs-lookup"><span data-stu-id="c575f-509">List</span></span>
+-   <span data-ttu-id="c575f-510">一覧項目</span><span class="sxs-lookup"><span data-stu-id="c575f-510">List item</span></span>
+
+<span data-ttu-id="c575f-511">次に、タッチ キーボードのさまざまなモードの例を示します。</span><span class="sxs-lookup"><span data-stu-id="c575f-511">Here are examples of different modes for the touch keyboard.</span></span> <span data-ttu-id="c575f-512">最初の画像は既定のレイアウトであり、2 つ目の画像は親指レイアウトです (一部の言語では利用できません)。</span><span class="sxs-lookup"><span data-stu-id="c575f-512">The first image is the default layout, the second is the thumb layout (which might not be available in all languages).</span></span>
+
+![既定のレイアウト モードのタッチ キーボード](images/keyboard/touchkeyboard-standard.png)
+
+***<span data-ttu-id="c575f-514">既定のレイアウト モードのタッチ キーボード</span><span class="sxs-lookup"><span data-stu-id="c575f-514">The touch keyboard in default layout mode</span></span>***
+
+![拡張レイアウト モードのタッチ キーボード](images/keyboard/touchkeyboard-expanded.png)
+
+***<span data-ttu-id="c575f-516">拡張レイアウト モードのタッチ キーボード</span><span class="sxs-lookup"><span data-stu-id="c575f-516">The touch keyboard in expanded layout mode</span></span>***
+
+![親指レイアウト モードのタッチ キーボード](images/keyboard/touchkeyboard-thumb.png)
+
+***<span data-ttu-id="c575f-518">既定の親指レイアウト モードのタッチ キーボード</span><span class="sxs-lookup"><span data-stu-id="c575f-518">The touch keyboard in default thumb layout mode</span></span>***
+
+![数字親指レイアウト モードのタッチ キーボード](images/keyboard/touchkeyboard-numeric-thumb.png)
+
+***<span data-ttu-id="c575f-520">数字親指レイアウト モードのタッチ キーボード</span><span class="sxs-lookup"><span data-stu-id="c575f-520">The touch keyboard in numeric thumb layout mode</span></span>***
+
+<span data-ttu-id="c575f-521">キーボード操作に成功すると、ユーザーはキーボードのみを使って基本のアプリ シナリオを実行できます。つまり、ユーザーはすべての対話型要素にアクセスし、既定の機能をアクティブにすることができます。</span><span class="sxs-lookup"><span data-stu-id="c575f-521">Successful keyboard interactions enable users to accomplish basic app scenarios using only the keyboard; that is, users can reach all interactive elements and activate default functionality.</span></span> <span data-ttu-id="c575f-522">成功の度合いには、キーボード ナビゲーション、アクセシビリティ対応のアクセス キー、上級ユーザー用のアクセラレータ (ショートカット) キーなど、さまざまな要因が影響します。</span><span class="sxs-lookup"><span data-stu-id="c575f-522">A number of factors can affect the degree of success, including keyboard navigation, access keys for accessibility, and accelerator (or shortcut) keys for advanced users.</span></span>
+
+<span data-ttu-id="c575f-523">**注**  タッチ キーボードでは、トグルや、ほとんどのシステム コマンドがサポートされません。</span><span class="sxs-lookup"><span data-stu-id="c575f-523">**NOTE**  The touch keyboard does not support toggle and most system commands.</span></span>
+
+#### <a name="on-screen-keyboard-a-nameosk"></a><span data-ttu-id="c575f-524">スクリーン キーボード <a name="osk"></span><span class="sxs-lookup"><span data-stu-id="c575f-524">On-Screen Keyboard <a name="osk"></span></span>
+<span data-ttu-id="c575f-525">ソフトウェア キーボードと同様、スクリーン キーボードは、物理的なキーボードの代わりに使うことができる視覚的なソフトウェア キーボードです。タッチ、マウス、ペン/スタイラス、またはその他のポインティング デバイスを通じてデータを入力します (タッチ スクリーンは必須ではありません)。</span><span class="sxs-lookup"><span data-stu-id="c575f-525">Like software keyboard, the On-Screen Keyboard is a visual, software keyboard that you can use instead of the physical keyboard to type and enter data using touch, mouse, pen/stylus or other pointing device (a touch screen is not required).</span></span> <span data-ttu-id="c575f-526">スクリーン キーボードは、物理的なキーボードが存在しないシステムや、運動障碍により一般的な物理入力デバイスを使うことができないユーザーのために用意されています。</span><span class="sxs-lookup"><span data-stu-id="c575f-526">The On-Screen Keyboard is provided for systems that don't have a physical keyboard, or for users whose mobility impairments prevent them from using traditional physical input devices.</span></span> <span data-ttu-id="c575f-527">スクリーン キーボードは、ハードウェア キーボードの機能のすべて、または少なくともほとんどをエミュレートします。</span><span class="sxs-lookup"><span data-stu-id="c575f-527">The On-Screen Keyboard emulates most, if not all, the functionality of a hardware keyboard.</span></span>
+
+<span data-ttu-id="c575f-528">スクリーン キーボードは、[設定] &gt; [簡単操作] の [キーボード] ページから有効にすることができます。</span><span class="sxs-lookup"><span data-stu-id="c575f-528">The On-Screen Keyboard can be turned on from the Keyboard page in Settings &gt; Ease of access.</span></span>
+
+<span data-ttu-id="c575f-529">**注** スクリーン キーボードの方がタッチ キーボードより優先され、スクリーン キーボードが表示されている場合はタッチ キーボードは表示されません。</span><span class="sxs-lookup"><span data-stu-id="c575f-529">**NOTE** The On-Screen Keyboard has priority over the touch keyboard, which won't be shown if the On-Screen Keyboard is present.</span></span>
+
+![スクリーン キーボード](images/keyboard/osk.png)
+
+***<span data-ttu-id="c575f-531">スクリーン キーボード</span><span class="sxs-lookup"><span data-stu-id="c575f-531">On-Screen Keyboard</span></span>***
+
+<span data-ttu-id="c575f-532">スクリーン キーボードについて詳しくは、[スクリーン キーボードに関するページ](https://support.microsoft.com/help/10762/windows-use-on-screen-keyboard)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c575f-532">Visit [On-Screen keyboard page](https://support.microsoft.com/help/10762/windows-use-on-screen-keyboard) for more details about On-Screen Keyboard.</span></span>

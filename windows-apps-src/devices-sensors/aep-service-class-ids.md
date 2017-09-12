@@ -1,127 +1,127 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 23001DA5-C099-4C02-ACE9-3597F06ECBF4
 title: "AEP サービス クラス ID"
 description: "アソシエーション エンドポイント (AEP) サービスは、デバイスが特定のプロトコル経由でサポートするサービスのプログラミング コントラクトを提供します。 これらのサービスのいくつかでは、サービスの参照時に使う必要がある識別子が設定されています。"
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d2259c82acf700d21f4c3f51a367180bb976f636
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 055bc11143c6d93e5019021abfc72988f34ddf90
+ms.sourcegitcommit: a2908889b3566882c7494dc81fa9ece7d1d19580
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/31/2017
 ---
-# <a name="aep-service-class-ids"></a>AEP サービス クラス ID
+# <a name="aep-service-class-ids"></a><span data-ttu-id="903b1-105">AEP サービス クラス ID</span><span class="sxs-lookup"><span data-stu-id="903b1-105">AEP service class IDs</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
+<span data-ttu-id="903b1-106">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="903b1-106">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="903b1-107">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]</span><span class="sxs-lookup"><span data-stu-id="903b1-107">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
 
-**重要な API**
+**<span data-ttu-id="903b1-108">重要な API</span><span class="sxs-lookup"><span data-stu-id="903b1-108">Important APIs</span></span>**
 
-- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
+- [**<span data-ttu-id="903b1-109">Windows.Devices.Enumeration</span><span class="sxs-lookup"><span data-stu-id="903b1-109">Windows.Devices.Enumeration</span></span>**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
-アソシエーション エンドポイント (AEP) サービスは、デバイスが特定のプロトコル経由でサポートするサービスのプログラミング コントラクトを提供します。 これらのサービスのいくつかでは、サービスの参照時に使う必要がある識別子が設定されています。 これらのコントラクトは、**System.Devices.AepService.ServiceClassId** プロパティで識別されます。 このトピックでは、既知の AEP サービス クラス ID のいくつかを一覧表示します。 AEP サービス クラス ID は、カスタム クラス ID によってプロトコルに適用することもできます。
+<span data-ttu-id="903b1-110">アソシエーション エンドポイント (AEP) サービスは、デバイスが特定のプロトコル経由でサポートするサービスのプログラミング コントラクトを提供します。</span><span class="sxs-lookup"><span data-stu-id="903b1-110">Association Endpoint (AEP) services provide a programming contract for services that a device supports over a given protocol.</span></span> <span data-ttu-id="903b1-111">これらのサービスのいくつかでは、サービスの参照時に使う必要がある識別子が設定されています。</span><span class="sxs-lookup"><span data-stu-id="903b1-111">Several of these services have established identifiers that should be used when referencing them.</span></span> <span data-ttu-id="903b1-112">これらのコントラクトは、**System.Devices.AepService.ServiceClassId** プロパティで識別されます。</span><span class="sxs-lookup"><span data-stu-id="903b1-112">These contracts are identified with the **System.Devices.AepService.ServiceClassId** property.</span></span> <span data-ttu-id="903b1-113">このトピックでは、既知の AEP サービス クラス ID のいくつかを一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="903b1-113">This topic lists several well-known AEP service class IDs.</span></span> <span data-ttu-id="903b1-114">AEP サービス クラス ID は、カスタム クラス ID によってプロトコルに適用することもできます。</span><span class="sxs-lookup"><span data-stu-id="903b1-114">The AEP service class ID is also applicable to protocols with custom class IDs.</span></span>
 
-アプリの開発者は、使用予定の AEP サービスに対するクエリを制限するために、クラス ID に基づいて高度なクエリ構文 (AQS) フィルターを使う必要があります。 これによって、関連サービスへのクエリ結果が制限され、デバイスのパフォーマンス、バッテリ寿命、およびサービス品質が大幅に向上します。 たとえば、アプリケーションでこれらのサービス クラス ID を使って、デバイスを Miracast の同期または DLNA デジタル メディア レンダラー (DMR) として使うことができます。 デバイスとサービスが互いにどのようにやり取りするかについて詳しくは、「[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991)」をご覧ください。
+<span data-ttu-id="903b1-115">アプリの開発者は、使用予定の AEP サービスに対するクエリを制限するために、クラス ID に基づいて高度なクエリ構文 (AQS) フィルターを使う必要があります。</span><span class="sxs-lookup"><span data-stu-id="903b1-115">An app developer should use advanced query syntax (AQS) filters based on the class IDs to limit their queries to the AEP services they plan to use.</span></span> <span data-ttu-id="903b1-116">これによって、関連サービスへのクエリ結果が制限され、デバイスのパフォーマンス、バッテリ寿命、およびサービス品質が大幅に向上します。</span><span class="sxs-lookup"><span data-stu-id="903b1-116">This will both limit the query results to the relevant services and will significantly increase the performance, battery life, and quality of service for the device.</span></span> <span data-ttu-id="903b1-117">たとえば、アプリケーションでこれらのサービス クラス ID を使って、デバイスを Miracast の同期または DLNA デジタル メディア レンダラー (DMR) として使うことができます。</span><span class="sxs-lookup"><span data-stu-id="903b1-117">For example, an application can use these service class IDs to use a device as a Miracast sync or DLNA digital media renderer (DMR).</span></span> <span data-ttu-id="903b1-118">デバイスとサービスが互いにどのようにやり取りするかについて詳しくは、「[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="903b1-118">For more information about how devices and services interact with each other, see [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991).</span></span>
 
-## <a name="bluetooth-and-bluetooth-le-services"></a>Bluetooth および Bluetooth LE サービス
+## <a name="bluetooth-and-bluetooth-le-services"></a><span data-ttu-id="903b1-119">Bluetooth および Bluetooth LE サービス</span><span class="sxs-lookup"><span data-stu-id="903b1-119">Bluetooth and Bluetooth LE services</span></span>
 
-Bluetooth サービスは、Bluetooth プロトコルまたは Bluetooth LE プロトコルの 2 つのプロトコルのいずれかに分類されます。 これらのプロトコルの識別子は次のとおりです。
+<span data-ttu-id="903b1-120">Bluetooth サービスは、Bluetooth プロトコルまたは Bluetooth LE プロトコルの 2 つのプロトコルのいずれかに分類されます。</span><span class="sxs-lookup"><span data-stu-id="903b1-120">Bluetooth services fall under one of two protocols, either the Bluetooth protocol or the Bluetooth LE protocol.</span></span> <span data-ttu-id="903b1-121">これらのプロトコルの識別子は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="903b1-121">The identifiers for these protocols are:</span></span>
 
--   Bluetooth プロトコル ID: {e0cbf06c-cd8b-4647-bb8a263b43f0f974}
--   Bluetooth LE プロトコル ID: {bb7bb05e-5972-42b5-94fc76eaa7084d49}
+-   <span data-ttu-id="903b1-122">Bluetooth プロトコル ID: {e0cbf06c-cd8b-4647-bb8a263b43f0f974}</span><span class="sxs-lookup"><span data-stu-id="903b1-122">Bluetooth protocol ID: {e0cbf06c-cd8b-4647-bb8a263b43f0f974}</span></span>
+-   <span data-ttu-id="903b1-123">Bluetooth LE プロトコル ID: {bb7bb05e-5972-42b5-94fc76eaa7084d49}</span><span class="sxs-lookup"><span data-stu-id="903b1-123">Bluetooth LE protocol ID: {bb7bb05e-5972-42b5-94fc76eaa7084d49}</span></span>
 
-Bluetooth プロトコルは複数のサービスをサポートしており、すべてのサービスで同じ基本的なフォーマットを採用しています。 GUID の最初の 4 桁はサービスによって異なりますが、すべての Bluetooth Guid は **0000-0000-1000-8000-00805F9B34FB** で終わります。 たとえば、RFCOMM サービスでは前に 0x0003 が付くため、完全な ID は **00030000-0000-1000-8000-00805F9B34FB** になります。 次の表に、一般的な Bluetooth サービスをいくつか示します。
+<span data-ttu-id="903b1-124">Bluetooth プロトコルは複数のサービスをサポートしており、すべてのサービスで同じ基本的なフォーマットを採用しています。</span><span class="sxs-lookup"><span data-stu-id="903b1-124">The Bluetooth protocol supports several services, all following the same basic format.</span></span> <span data-ttu-id="903b1-125">GUID の最初の 4 桁はサービスによって異なりますが、すべての Bluetooth Guid は **0000-0000-1000-8000-00805F9B34FB** で終わります。</span><span class="sxs-lookup"><span data-stu-id="903b1-125">The first four digits of the GUID vary based upon the service, but all Bluetooth GUIDs end with **0000-0000-1000-8000-00805F9B34FB**.</span></span> <span data-ttu-id="903b1-126">たとえば、RFCOMM サービスでは前に 0x0003 が付くため、完全な ID は **00030000-0000-1000-8000-00805F9B34FB** になります。</span><span class="sxs-lookup"><span data-stu-id="903b1-126">For example, the RFCOMM service has the precursor of 0x0003, so the full ID would be **00030000-0000-1000-8000-00805F9B34FB**.</span></span> <span data-ttu-id="903b1-127">次の表に、一般的な Bluetooth サービスをいくつか示します。</span><span class="sxs-lookup"><span data-stu-id="903b1-127">The following table lists some common Bluetooth services.</span></span>
 
-| サービス名                         | GUID                                     |
+| <span data-ttu-id="903b1-128">サービス名</span><span class="sxs-lookup"><span data-stu-id="903b1-128">Service name</span></span>                         | <span data-ttu-id="903b1-129">GUID</span><span class="sxs-lookup"><span data-stu-id="903b1-129">GUID</span></span>                                     |
 |--------------------------------------|------------------------------------------|
-| RFCOMM                               | **00030000-0000-1000-8000-00805F9B34FB** |
-| GATT - アラート通知サービス    | **18110000-0000-1000-8000-00805F9B34FB** |
-| GATT - オートメーション IO                 | **18150000-0000-1000-8000-00805F9B34FB** |
-| GATT - バッテリ サービス               | **180F0000-0000-1000-8000-00805F9B34FB** |
-| GATT - 血圧                | **18100000-0000-1000-8000-00805F9B34FB** |
-| GATT - 身体構成              | **181B0000-0000-1000-8000-00805F9B34FB** |
-| GATT - 接着状態管理               | **181E0000-0000-1000-8000-00805F9B34FB** |
-| GATT - 連続的な血糖値測定 | **181F0000-0000-1000-8000-00805F9B34FB** |
-| GATT - 現在のタイム サービス          | **18050000-0000-1000-8000-00805F9B34FB** |
-| GATT - サイクリング パワー                 | **18180000-0000-1000-8000-00805F9B34FB** |
-| GATT - サイクリングの速度とリズム     | **18160000-0000-1000-8000-00805F9B34FB** |
-| GATT - デバイス情報            | **180A0000-0000-1000-8000-00805F9B34FB** |
-| GATT - 環境検知         | **181A0000-0000-1000-8000-00805F9B34FB** |
-| GATT - 一般アクセス                | **18000000-0000-1000-8000-00805F9B34FB** |
-| GATT - 一般属性             | **18010000-0000-1000-8000-00805F9B34FB** |
-| GATT - 血糖値                       | **18080000-0000-1000-8000-00805F9B34FB** |
-| GATT - 体温計            | **18090000-0000-1000-8000-00805F9B34FB** |
-| GATT - 心拍数                    | **180D0000-0000-1000-8000-00805F9B34FB** |
-| GATT - ヒューマン インターフェイス デバイス        | **18120000-0000-1000-8000-00805F9B34FB** |
-| GATT - 即時アラート               | **18020000-0000-1000-8000-00805F9B34FB** |
-| GATT - 屋内位置            | **18210000-0000-1000-8000-00805F9B34FB** |
-| GATT - インターネット プロトコル サポート     | **18200000-0000-1000-8000-00805F9B34FB** |
-| GATT - リンク消失                     | **18030000-0000-1000-8000-00805F9B34FB** |
-| GATT - 場所とナビゲーション       | **18190000-0000-1000-8000-00805F9B34FB** |
-| GATT - 次回夏時間変更サービス       | **18070000-0000-1000-8000-00805F9B34FB** |
-| GATT - 電話アラート ステータス サービス    | **180E0000-0000-1000-8000-00805F9B34FB** |
-| GATT - パルス オキシメーター                | **18220000-0000-1000-8000-00805F9B34FB** |
-| GATT - 参照時間更新サービス | **18060000-0000-1000-8000-00805F9B34FB** |
-| GATT - ランニングの速度とリズム     | **18140000-0000-1000-8000-00805F9B34FB** |
-| GATT - スキャン パラメーター               | **18130000-0000-1000-8000-00805F9B34FB** |
-| GATT - 送信電力                      | **18040000-0000-1000-8000-00805F9B34FB** |
-| GATT - ユーザー データ                     | **181C0000-0000-1000-8000-00805F9B34FB** |
-| GATT - 体重計                  | **181D0000-0000-1000-8000-00805F9B34FB** |
+| <span data-ttu-id="903b1-130">RFCOMM</span><span class="sxs-lookup"><span data-stu-id="903b1-130">RFCOMM</span></span>                               | **<span data-ttu-id="903b1-131">00030000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-131">00030000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-132">GATT - アラート通知サービス</span><span class="sxs-lookup"><span data-stu-id="903b1-132">GATT - Alert notification service</span></span>    | **<span data-ttu-id="903b1-133">18110000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-133">18110000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-134">GATT - オートメーション IO</span><span class="sxs-lookup"><span data-stu-id="903b1-134">GATT - Automation IO</span></span>                 | **<span data-ttu-id="903b1-135">18150000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-135">18150000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-136">GATT - バッテリ サービス</span><span class="sxs-lookup"><span data-stu-id="903b1-136">GATT - Battery service</span></span>               | **<span data-ttu-id="903b1-137">180F0000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-137">180F0000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-138">GATT - 血圧</span><span class="sxs-lookup"><span data-stu-id="903b1-138">GATT - Blood pressure</span></span>                | **<span data-ttu-id="903b1-139">18100000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-139">18100000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-140">GATT - 身体構成</span><span class="sxs-lookup"><span data-stu-id="903b1-140">GATT - Body composition</span></span>              | **<span data-ttu-id="903b1-141">181B0000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-141">181B0000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-142">GATT - 接着状態管理</span><span class="sxs-lookup"><span data-stu-id="903b1-142">GATT - Bond management</span></span>               | **<span data-ttu-id="903b1-143">181E0000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-143">181E0000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-144">GATT - 連続的な血糖値測定</span><span class="sxs-lookup"><span data-stu-id="903b1-144">GATT - Continuous glucose monitoring</span></span> | **<span data-ttu-id="903b1-145">181F0000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-145">181F0000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-146">GATT - 現在のタイム サービス</span><span class="sxs-lookup"><span data-stu-id="903b1-146">GATT - Current time service</span></span>          | **<span data-ttu-id="903b1-147">18050000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-147">18050000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-148">GATT - サイクリング パワー</span><span class="sxs-lookup"><span data-stu-id="903b1-148">GATT - Cycling power</span></span>                 | **<span data-ttu-id="903b1-149">18180000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-149">18180000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-150">GATT - サイクリングの速度とリズム</span><span class="sxs-lookup"><span data-stu-id="903b1-150">GATT - Cycling speed and cadence</span></span>     | **<span data-ttu-id="903b1-151">18160000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-151">18160000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-152">GATT - デバイス情報</span><span class="sxs-lookup"><span data-stu-id="903b1-152">GATT - Device information</span></span>            | **<span data-ttu-id="903b1-153">180A0000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-153">180A0000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-154">GATT - 環境検知</span><span class="sxs-lookup"><span data-stu-id="903b1-154">GATT - Environmental sensing</span></span>         | **<span data-ttu-id="903b1-155">181A0000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-155">181A0000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-156">GATT - 一般アクセス</span><span class="sxs-lookup"><span data-stu-id="903b1-156">GATT - Generic access</span></span>                | **<span data-ttu-id="903b1-157">18000000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-157">18000000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-158">GATT - 一般属性</span><span class="sxs-lookup"><span data-stu-id="903b1-158">GATT - Generic attribute</span></span>             | **<span data-ttu-id="903b1-159">18010000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-159">18010000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-160">GATT - 血糖値</span><span class="sxs-lookup"><span data-stu-id="903b1-160">GATT - Glucose</span></span>                       | **<span data-ttu-id="903b1-161">18080000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-161">18080000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-162">GATT - 体温計</span><span class="sxs-lookup"><span data-stu-id="903b1-162">GATT - Health thermometer</span></span>            | **<span data-ttu-id="903b1-163">18090000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-163">18090000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-164">GATT - 心拍数</span><span class="sxs-lookup"><span data-stu-id="903b1-164">GATT - Heart rate</span></span>                    | **<span data-ttu-id="903b1-165">180D0000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-165">180D0000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-166">GATT - ヒューマン インターフェイス デバイス</span><span class="sxs-lookup"><span data-stu-id="903b1-166">GATT - Human interface device</span></span>        | **<span data-ttu-id="903b1-167">18120000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-167">18120000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-168">GATT - 即時アラート</span><span class="sxs-lookup"><span data-stu-id="903b1-168">GATT - Immediate alert</span></span>               | **<span data-ttu-id="903b1-169">18020000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-169">18020000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-170">GATT - 屋内位置</span><span class="sxs-lookup"><span data-stu-id="903b1-170">GATT - Indoor positioning</span></span>            | **<span data-ttu-id="903b1-171">18210000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-171">18210000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-172">GATT - インターネット プロトコル サポート</span><span class="sxs-lookup"><span data-stu-id="903b1-172">GATT - Internet protocol support</span></span>     | **<span data-ttu-id="903b1-173">18200000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-173">18200000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-174">GATT - リンク消失</span><span class="sxs-lookup"><span data-stu-id="903b1-174">GATT - Link loss</span></span>                     | **<span data-ttu-id="903b1-175">18030000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-175">18030000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-176">GATT - 場所とナビゲーション</span><span class="sxs-lookup"><span data-stu-id="903b1-176">GATT - Location and navigation</span></span>       | **<span data-ttu-id="903b1-177">18190000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-177">18190000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-178">GATT - 次回夏時間変更サービス</span><span class="sxs-lookup"><span data-stu-id="903b1-178">GATT - Next DST change service</span></span>       | **<span data-ttu-id="903b1-179">18070000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-179">18070000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-180">GATT - 電話アラート ステータス サービス</span><span class="sxs-lookup"><span data-stu-id="903b1-180">GATT - Phone alert status service</span></span>    | **<span data-ttu-id="903b1-181">180E0000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-181">180E0000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-182">GATT - パルス オキシメーター</span><span class="sxs-lookup"><span data-stu-id="903b1-182">GATT - Pulse oximeter</span></span>                | **<span data-ttu-id="903b1-183">18220000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-183">18220000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-184">GATT - 参照時間更新サービス</span><span class="sxs-lookup"><span data-stu-id="903b1-184">GATT - Reference time update service</span></span> | **<span data-ttu-id="903b1-185">18060000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-185">18060000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-186">GATT - ランニングの速度とリズム</span><span class="sxs-lookup"><span data-stu-id="903b1-186">GATT - Running speed and cadence</span></span>     | **<span data-ttu-id="903b1-187">18140000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-187">18140000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-188">GATT - スキャン パラメーター</span><span class="sxs-lookup"><span data-stu-id="903b1-188">GATT - Scan parameters</span></span>               | **<span data-ttu-id="903b1-189">18130000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-189">18130000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-190">GATT - 送信電力</span><span class="sxs-lookup"><span data-stu-id="903b1-190">GATT - Tx power</span></span>                      | **<span data-ttu-id="903b1-191">18040000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-191">18040000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-192">GATT - ユーザー データ</span><span class="sxs-lookup"><span data-stu-id="903b1-192">GATT - User data</span></span>                     | **<span data-ttu-id="903b1-193">181C0000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-193">181C0000-0000-1000-8000-00805F9B34FB</span></span>** |
+| <span data-ttu-id="903b1-194">GATT - 体重計</span><span class="sxs-lookup"><span data-stu-id="903b1-194">GATT - Weight scale</span></span>                  | **<span data-ttu-id="903b1-195">181D0000-0000-1000-8000-00805F9B34FB</span><span class="sxs-lookup"><span data-stu-id="903b1-195">181D0000-0000-1000-8000-00805F9B34FB</span></span>** |
 
  
 
-利用可能な Bluetooth サービスの完全なリストについては、Bluetooth のプロトコルとサービスのページ ([ここ](http://go.microsoft.com/fwlink/p/?LinkID=619586) と [ここ](http://go.microsoft.com/fwlink/p/?LinkID=619587)) をご覧ください。 また、[**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571) API を使って一般的な GATT サービスをいくつか取得することもできます。
+<span data-ttu-id="903b1-196">利用可能な Bluetooth サービスの完全なリストについては、Bluetooth のプロトコルとサービスのページ ([ここ](http://go.microsoft.com/fwlink/p/?LinkID=619586) と [ここ](http://go.microsoft.com/fwlink/p/?LinkID=619587)) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="903b1-196">For a more complete listing of available Bluetooth services, see Bluetooth's protocol and service pages [here](http://go.microsoft.com/fwlink/p/?LinkID=619586) and [here](http://go.microsoft.com/fwlink/p/?LinkID=619587).</span></span> <span data-ttu-id="903b1-197">また、[**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571) API を使って一般的な GATT サービスをいくつか取得することもできます。</span><span class="sxs-lookup"><span data-stu-id="903b1-197">You can also use the [**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571) API to get some common GATT services.</span></span>
 
-## <a name="custom-bluetooth-le-services"></a>Bluetooth LE のカスタム サービス
+## <a name="custom-bluetooth-le-services"></a><span data-ttu-id="903b1-198">Bluetooth LE のカスタム サービス</span><span class="sxs-lookup"><span data-stu-id="903b1-198">Custom Bluetooth LE services</span></span>
 
-Bluetooth LE のカスタム サービスは、次のプロトコル識別子を使います。{bb7bb05e-5972-42b5-94fc76eaa7084d49}
+<span data-ttu-id="903b1-199">Bluetooth LE のカスタム サービスは、次のプロトコル識別子を使います。{bb7bb05e-5972-42b5-94fc76eaa7084d49}</span><span class="sxs-lookup"><span data-stu-id="903b1-199">Custom Bluetooth LE services use the following protocol identifier: {bb7bb05e-5972-42b5-94fc76eaa7084d49}</span></span>
 
-カスタム プロファイルは、独自に定義された GUID を使って定義します。 このカスタム GUID は、**System.Devices.AepService.ServiceClassId** に対して使う必要があります。
+<span data-ttu-id="903b1-200">カスタム プロファイルは、独自に定義された GUID を使って定義します。</span><span class="sxs-lookup"><span data-stu-id="903b1-200">Custom profiles are defined with their own defined GUIDs.</span></span> <span data-ttu-id="903b1-201">このカスタム GUID は、**System.Devices.AepService.ServiceClassId** に対して使う必要があります。</span><span class="sxs-lookup"><span data-stu-id="903b1-201">This custom GUID should be used for **System.Devices.AepService.ServiceClassId**.</span></span>
 
-## <a name="upnp-services"></a>UPnP サービス
+## <a name="upnp-services"></a><span data-ttu-id="903b1-202">UPnP サービス</span><span class="sxs-lookup"><span data-stu-id="903b1-202">UPnP services</span></span>
 
-UPnP サービスは、次のプロトコル識別子を使います。{0e261de4-12f0-46e6-91ba428607ccef64}
+<span data-ttu-id="903b1-203">UPnP サービスは、次のプロトコル識別子を使います。{0e261de4-12f0-46e6-91ba428607ccef64}</span><span class="sxs-lookup"><span data-stu-id="903b1-203">UPnP services use the following protocol identifier: {0e261de4-12f0-46e6-91ba428607ccef64}</span></span>
 
-一般的に、すべての UPnP サービスでは、RFC 4122 で定義されたアルゴリズムを使い、サービスの名前が GUID にハッシュされています。 次の表では、Windows で定義されている一般的な UPnP サービスのいくつかを紹介します。
+<span data-ttu-id="903b1-204">一般的に、すべての UPnP サービスでは、RFC 4122 で定義されたアルゴリズムを使い、サービスの名前が GUID にハッシュされています。</span><span class="sxs-lookup"><span data-stu-id="903b1-204">In general, all UPnP services have their name hashed into a GUID using the algorithm defined in RFC 4122.</span></span> <span data-ttu-id="903b1-205">次の表では、Windows で定義されている一般的な UPnP サービスのいくつかを紹介します。</span><span class="sxs-lookup"><span data-stu-id="903b1-205">The following table lists some common UPnP services defined in Windows.</span></span>
 
-| サービス名                       | GUID                                     |
+| <span data-ttu-id="903b1-206">サービス名</span><span class="sxs-lookup"><span data-stu-id="903b1-206">Service name</span></span>                       | <span data-ttu-id="903b1-207">GUID</span><span class="sxs-lookup"><span data-stu-id="903b1-207">GUID</span></span>                                     |
 |------------------------------------|------------------------------------------|
-| 接続マネージャー                 | **ba36014c-b51f-51cc-bf711ad779ced3c6**  |
-| AV トランスポート                       | **deeacb78-707a-52df-b1c66f945e7e25bf**  |
-| レンダリング制御                  | **cc7fe721-a3c7-5a14-8c494419dc895513**  |
-| レイヤー 3 転送                 | **97d477fa-f403-577b-a714b29a9007797f**  |
-| WAN 共通インターフェイス構成 | **e4c1c624-c3c4-5104-b72eac425d9d157c**  |
-| WAP IP 接続                  | **e4ac1c23-b5ac-5c27-88146bd837d8832c**  |
-| WFA WLAN の構成             | **23d5f7db-747f-5099-8f213ddfd0c3c688**  |
-| プリンターの拡張                   | **fb9074da-3d9f-5384-922e9978ae51ef0c**  |
-| プリンターの基本                      | **5d2a7252-d45c-5158-87-a405212da327e1** |
-| メディア受信機レジスタ           | **0b4a2add-d725-5198-b2ba852b8bf8d183**  |
-| コンテンツ ディレクトリ                  | **89e701dd-0597-5279-a31c235991d0db1c**  |
-| DIAL                               | **085dfa4a-3948-53c7-a0d716d8ec26b29b**  |
+| <span data-ttu-id="903b1-208">接続マネージャー</span><span class="sxs-lookup"><span data-stu-id="903b1-208">Connection manager</span></span>                 | **<span data-ttu-id="903b1-209">ba36014c-b51f-51cc-bf711ad779ced3c6</span><span class="sxs-lookup"><span data-stu-id="903b1-209">ba36014c-b51f-51cc-bf711ad779ced3c6</span></span>**  |
+| <span data-ttu-id="903b1-210">AV トランスポート</span><span class="sxs-lookup"><span data-stu-id="903b1-210">AV transport</span></span>                       | **<span data-ttu-id="903b1-211">deeacb78-707a-52df-b1c66f945e7e25bf</span><span class="sxs-lookup"><span data-stu-id="903b1-211">deeacb78-707a-52df-b1c66f945e7e25bf</span></span>**  |
+| <span data-ttu-id="903b1-212">レンダリング制御</span><span class="sxs-lookup"><span data-stu-id="903b1-212">Rendering control</span></span>                  | **<span data-ttu-id="903b1-213">cc7fe721-a3c7-5a14-8c494419dc895513</span><span class="sxs-lookup"><span data-stu-id="903b1-213">cc7fe721-a3c7-5a14-8c494419dc895513</span></span>**  |
+| <span data-ttu-id="903b1-214">レイヤー 3 転送</span><span class="sxs-lookup"><span data-stu-id="903b1-214">Layer 3 forwarding</span></span>                 | **<span data-ttu-id="903b1-215">97d477fa-f403-577b-a714b29a9007797f</span><span class="sxs-lookup"><span data-stu-id="903b1-215">97d477fa-f403-577b-a714b29a9007797f</span></span>**  |
+| <span data-ttu-id="903b1-216">WAN 共通インターフェイス構成</span><span class="sxs-lookup"><span data-stu-id="903b1-216">WAN common interface configuration</span></span> | **<span data-ttu-id="903b1-217">e4c1c624-c3c4-5104-b72eac425d9d157c</span><span class="sxs-lookup"><span data-stu-id="903b1-217">e4c1c624-c3c4-5104-b72eac425d9d157c</span></span>**  |
+| <span data-ttu-id="903b1-218">WAP IP 接続</span><span class="sxs-lookup"><span data-stu-id="903b1-218">WAP IP connection</span></span>                  | **<span data-ttu-id="903b1-219">e4ac1c23-b5ac-5c27-88146bd837d8832c</span><span class="sxs-lookup"><span data-stu-id="903b1-219">e4ac1c23-b5ac-5c27-88146bd837d8832c</span></span>**  |
+| <span data-ttu-id="903b1-220">WFA WLAN の構成</span><span class="sxs-lookup"><span data-stu-id="903b1-220">WFA WLAN configuration</span></span>             | **<span data-ttu-id="903b1-221">23d5f7db-747f-5099-8f213ddfd0c3c688</span><span class="sxs-lookup"><span data-stu-id="903b1-221">23d5f7db-747f-5099-8f213ddfd0c3c688</span></span>**  |
+| <span data-ttu-id="903b1-222">プリンターの拡張</span><span class="sxs-lookup"><span data-stu-id="903b1-222">Printer enhanced</span></span>                   | **<span data-ttu-id="903b1-223">fb9074da-3d9f-5384-922e9978ae51ef0c</span><span class="sxs-lookup"><span data-stu-id="903b1-223">fb9074da-3d9f-5384-922e9978ae51ef0c</span></span>**  |
+| <span data-ttu-id="903b1-224">プリンターの基本</span><span class="sxs-lookup"><span data-stu-id="903b1-224">Printer basic</span></span>                      | **<span data-ttu-id="903b1-225">5d2a7252-d45c-5158-87-a405212da327e1</span><span class="sxs-lookup"><span data-stu-id="903b1-225">5d2a7252-d45c-5158-87-a405212da327e1</span></span>** |
+| <span data-ttu-id="903b1-226">メディア受信機レジスタ</span><span class="sxs-lookup"><span data-stu-id="903b1-226">Media receiver registrar</span></span>           | **<span data-ttu-id="903b1-227">0b4a2add-d725-5198-b2ba852b8bf8d183</span><span class="sxs-lookup"><span data-stu-id="903b1-227">0b4a2add-d725-5198-b2ba852b8bf8d183</span></span>**  |
+| <span data-ttu-id="903b1-228">コンテンツ ディレクトリ</span><span class="sxs-lookup"><span data-stu-id="903b1-228">Content directory</span></span>                  | **<span data-ttu-id="903b1-229">89e701dd-0597-5279-a31c235991d0db1c</span><span class="sxs-lookup"><span data-stu-id="903b1-229">89e701dd-0597-5279-a31c235991d0db1c</span></span>**  |
+| <span data-ttu-id="903b1-230">DIAL</span><span class="sxs-lookup"><span data-stu-id="903b1-230">DIAL</span></span>                               | **<span data-ttu-id="903b1-231">085dfa4a-3948-53c7-a0d716d8ec26b29b</span><span class="sxs-lookup"><span data-stu-id="903b1-231">085dfa4a-3948-53c7-a0d716d8ec26b29b</span></span>**  |
 
  
 
-## <a name="wsd-services"></a>WSD サービス
+## <a name="wsd-services"></a><span data-ttu-id="903b1-232">WSD サービス</span><span class="sxs-lookup"><span data-stu-id="903b1-232">WSD services</span></span>
 
-WSD サービスは、次のプロトコル識別子を使います。{782232aa-a2f9-4993-971baedc551346b0}
+<span data-ttu-id="903b1-233">WSD サービスは、次のプロトコル識別子を使います。{782232aa-a2f9-4993-971baedc551346b0}</span><span class="sxs-lookup"><span data-stu-id="903b1-233">WSD services use the following protocol identifier: {782232aa-a2f9-4993-971baedc551346b0}</span></span>
 
-一般的に、すべての WSD サービスでは、RFC 4122 で定義されたアルゴリズムを使い、サービスの名前が GUID にハッシュされています。 次の表では、Windows で定義されている一般的な WSD サービスのいくつかを紹介します。
+<span data-ttu-id="903b1-234">一般的に、すべての WSD サービスでは、RFC 4122 で定義されたアルゴリズムを使い、サービスの名前が GUID にハッシュされています。</span><span class="sxs-lookup"><span data-stu-id="903b1-234">In general, all WSD services have their name hashed into a GUID using the algorithm defined in RFC 4122.</span></span> <span data-ttu-id="903b1-235">次の表では、Windows で定義されている一般的な WSD サービスのいくつかを紹介します。</span><span class="sxs-lookup"><span data-stu-id="903b1-235">The following table lists some common WSD services defined in Windows.</span></span>
 
-| サービス名 | GUID                                    |
+| <span data-ttu-id="903b1-236">サービス名</span><span class="sxs-lookup"><span data-stu-id="903b1-236">Service name</span></span> | <span data-ttu-id="903b1-237">GUID</span><span class="sxs-lookup"><span data-stu-id="903b1-237">GUID</span></span>                                    |
 |--------------|-----------------------------------------|
-| プリンター      | **65dca7bd-2611-583e-9a12ad90f47749cf** |
-| スキャナー      | **56ec8b9e-0237-5cae-aa3fd322dd2e6c1e** |
+| <span data-ttu-id="903b1-238">プリンター</span><span class="sxs-lookup"><span data-stu-id="903b1-238">Printer</span></span>      | **<span data-ttu-id="903b1-239">65dca7bd-2611-583e-9a12ad90f47749cf</span><span class="sxs-lookup"><span data-stu-id="903b1-239">65dca7bd-2611-583e-9a12ad90f47749cf</span></span>** |
+| <span data-ttu-id="903b1-240">スキャナー</span><span class="sxs-lookup"><span data-stu-id="903b1-240">Scanner</span></span>      | **<span data-ttu-id="903b1-241">56ec8b9e-0237-5cae-aa3fd322dd2e6c1e</span><span class="sxs-lookup"><span data-stu-id="903b1-241">56ec8b9e-0237-5cae-aa3fd322dd2e6c1e</span></span>** |
 
  
 
-## <a name="aqs-sample"></a>AQS サンプル
+## <a name="aqs-sample"></a><span data-ttu-id="903b1-242">AQS サンプル</span><span class="sxs-lookup"><span data-stu-id="903b1-242">AQS sample</span></span>
 
-この AQS は、DIAL をサポートするすべての UPnP **AssociationEndpointService** オブジェクトに対してフィルターを実行します。 この場合、[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) は **AsssociationEndpointService** に設定されています。
+<span data-ttu-id="903b1-243">この AQS は、DIAL をサポートするすべての UPnP **AssociationEndpointService** オブジェクトに対してフィルターを実行します。</span><span class="sxs-lookup"><span data-stu-id="903b1-243">This AQS will filter for all UPnP **AssociationEndpointService** objects that support DIAL.</span></span> <span data-ttu-id="903b1-244">この場合、[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) は **AsssociationEndpointService** に設定されています。</span><span class="sxs-lookup"><span data-stu-id="903b1-244">In this case, [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) is set to **AsssociationEndpointService**.</span></span>
 
 ``` syntax
 System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" AND
@@ -131,4 +131,3 @@ System.Devices.AepService.ServiceClassId:="{085DFA4A-3948-53C7-A0D716D8EC26B29B}
  
 
  
-

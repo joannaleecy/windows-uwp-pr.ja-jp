@@ -4,84 +4,87 @@ ms.assetid: 89178FD9-850B-462F-9016-1AD86D1F6F7F
 description: "Windows.Services.Store 名前空間を使って、現在のアプリまたはそのアドオンのストアに関連する製品情報を取得する方法について説明します。"
 title: "アプリとアドオンの製品情報の取得"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, アプリ内購入, IAP, アドオン, Windows.Services.Store"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7e486c451174cd24429dc35cda07d22fe2b28745
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e603d13c4ac535f2d44d364af0f66fde522aef67
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/09/2017
 ---
+# <a name="get-product-info-for-apps-and-add-ons"></a><span data-ttu-id="07eb8-104">アプリとアドオンの製品情報の取得</span><span class="sxs-lookup"><span data-stu-id="07eb8-104">Get product info for apps and add-ons</span></span>
 
-# <a name="get-product-info-for-apps-and-add-ons"></a>アプリとアドオンの製品情報の取得
+<span data-ttu-id="07eb8-105">Windows 10 バージョン 1607以降をターゲットとするアプリは、[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間で [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) クラスのメソッドを使って、現在のアプリとそのアドオンのストアに関連する情報にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="07eb8-105">Apps that target Windows 10, version 1607, or later can use methods of the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to access Store-related info for the current app or one of its add-ons.</span></span> <span data-ttu-id="07eb8-106">この記事の例では、さまざまなシナリオでこれを行う方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="07eb8-106">The following examples in this article demonstrate how to do this for different scenarios.</span></span>
 
-Windows 10 バージョン 1607以降をターゲットとするアプリは、[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間で [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) クラスのメソッドを使って、現在のアプリとそのアドオン (アプリ内製品または IAP とも呼ばれます) のストアに関連する情報にアクセスできます。 この記事の例では、さまざまなシナリオでこれを行う方法を説明します。 完全なアプリケーションについては、[ストア サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)をご覧ください。
+<span data-ttu-id="07eb8-107">完全なサンプル アプリケーションについては、[ストア サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="07eb8-107">For a complete sample application, see the [Store sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).</span></span>
 
->**注**&nbsp;&nbsp;この記事は、Windows 10 バージョン 1607 以降をターゲットとするアプリに適用されます。 アプリが Windows 10 の以前のバージョンをターゲットする場合、**Windows.Services.Store** 名前空間の代わりに [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間を使う必要があります。 詳しくは、「[Windows.ApplicationModel.Store 名前空間を使用するアプリ内購入と試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)」をご覧ください。
+> [!NOTE]
+> <span data-ttu-id="07eb8-108">この記事は、Windows 10 バージョン 1607 以降をターゲットとするアプリに適用されます。</span><span class="sxs-lookup"><span data-stu-id="07eb8-108">This article is applicable to apps that target Windows 10, version 1607, or later.</span></span> <span data-ttu-id="07eb8-109">アプリが Windows 10 の以前のバージョンをターゲットする場合、**Windows.Services.Store** 名前空間の代わりに [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間を使う必要があります。</span><span class="sxs-lookup"><span data-stu-id="07eb8-109">If your app targets an earlier version of Windows 10, you must use the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace instead of the **Windows.Services.Store** namespace.</span></span> <span data-ttu-id="07eb8-110">詳しくは、「[Windows.ApplicationModel.Store 名前空間を使用するアプリ内購入と試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="07eb8-110">For more information, see [In-app purchases and trials using the Windows.ApplicationModel.Store namespace](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).</span></span>
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a><span data-ttu-id="07eb8-111">前提条件</span><span class="sxs-lookup"><span data-stu-id="07eb8-111">Prerequisites</span></span>
 
-これらの例には、次の前提条件があります。
-* Windows 10 バージョン 1607 以降をターゲットとするユニバーサル Windows プラットフォーム (UWP) アプリの Visual Studio プロジェクト。
-* Windows デベロッパー センター ダッシュ ボードでアプリを作成し、このアプリが公開されてストアで入手可能になっている。 これは、ユーザーにリリースするアプリでも、[Windows アプリ認定キット](https://developer.microsoft.com/windows/develop/app-certification-kit)の最小要件を満たす、テスト目的でのみ使う基本的なアプリでもかまいません。 詳しくは、[テスト ガイダンス](in-app-purchases-and-trials.md#testing)をご覧ください。
+<span data-ttu-id="07eb8-112">これらの例には、次の前提条件があります。</span><span class="sxs-lookup"><span data-stu-id="07eb8-112">These examples have the following prerequisites:</span></span>
+* <span data-ttu-id="07eb8-113">Windows 10 バージョン 1607 以降をターゲットとするユニバーサル Windows プラットフォーム (UWP) アプリの Visual Studio プロジェクト。</span><span class="sxs-lookup"><span data-stu-id="07eb8-113">A Visual Studio project for a Universal Windows Platform (UWP) app that targets Windows 10, version 1607, or later.</span></span>
+* <span data-ttu-id="07eb8-114">Windows デベロッパー センター ダッシュボードで[アプリの申請を作成](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)し、このアプリがストアで公開されている。</span><span class="sxs-lookup"><span data-stu-id="07eb8-114">You have [created an app submission](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) in the Windows Dev Center dashboard and this app is published in the Store.</span></span> <span data-ttu-id="07eb8-115">必要に応じで、テスト中にストアでアプリを検索できないようにアプリを構成することも可能です。</span><span class="sxs-lookup"><span data-stu-id="07eb8-115">You can optionally configure the app so it is not discoverable in the Store while you test it.</span></span> <span data-ttu-id="07eb8-116">詳しくは、[テスト ガイダンス](in-app-purchases-and-trials.md#testing)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="07eb8-116">For more information, see the [testing guidance](in-app-purchases-and-trials.md#testing).</span></span>
+* <span data-ttu-id="07eb8-117">アプリのアドオンの製品情報を取得する場合、[デベロッパー センター ダッシュボードでアドオンを作成](../publish/add-on-submissions.md)する必要もあります。</span><span class="sxs-lookup"><span data-stu-id="07eb8-117">If you want to get product info for an add-on for the app, you must also [create the add-on in the Dev Center dashboard](../publish/add-on-submissions.md).</span></span>
 
-これらの例のコードは、次の点を前提としています。
-* コードは、```workingProgressRing``` という名前の [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) と ```textBlock``` という名前の [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) を含む [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) のコンテキストで実行されます。 これらのオブジェクトは、それぞれ非同期操作が発生していることを示するためと、出力メッセージを表示するために使用されます。
-* コード ファイルには、**Windows.Services.Store** 名前空間の **using** ステートメントがあります。
-* アプリは、アプリを起動したユーザーのコンテキストでのみ動作するシングル ユーザー アプリです。 詳しくは、「[アプリ内購入と試用版](in-app-purchases-and-trials.md#api_intro)」をご覧ください。
+<span data-ttu-id="07eb8-118">これらの例のコードは、次の点を前提としています。</span><span class="sxs-lookup"><span data-stu-id="07eb8-118">The code in these examples assume:</span></span>
+* <span data-ttu-id="07eb8-119">コードは、```workingProgressRing``` という名前の [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) と ```textBlock``` という名前の [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) を含む [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) のコンテキストで実行されます。</span><span class="sxs-lookup"><span data-stu-id="07eb8-119">The code runs in the context of a [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) that contains a [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) named ```workingProgressRing``` and a [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) named ```textBlock```.</span></span> <span data-ttu-id="07eb8-120">これらのオブジェクトは、それぞれ非同期操作が発生していることを示するためと、出力メッセージを表示するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="07eb8-120">These objects are used to indicate that an asynchronous operation is occurring and to display output messages, respectively.</span></span>
+* <span data-ttu-id="07eb8-121">コード ファイルには、**Windows.Services.Store** 名前空間の **using** ステートメントがあります。</span><span class="sxs-lookup"><span data-stu-id="07eb8-121">The code file has a **using** statement for the **Windows.Services.Store** namespace.</span></span>
+* <span data-ttu-id="07eb8-122">アプリは、アプリを起動したユーザーのコンテキストでのみ動作するシングル ユーザー アプリです。</span><span class="sxs-lookup"><span data-stu-id="07eb8-122">The app is a single-user app that runs only in the context of the user that launched the app.</span></span> <span data-ttu-id="07eb8-123">詳しくは、「[アプリ内購入と試用版](in-app-purchases-and-trials.md#api_intro)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="07eb8-123">For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md#api_intro).</span></span>
 
-完全なサンプル アプリケーションについては、[ストア サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)をご覧ください。
+> [!NOTE]
+> <span data-ttu-id="07eb8-124">[デスクトップ ブリッジ](https://developer.microsoft.com/windows/bridges/desktop)を使用するデスクトップ アプリケーションがある場合、これらの例には示されていないコードを追加して [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) オブジェクトを構成することが必要になることがあります。</span><span class="sxs-lookup"><span data-stu-id="07eb8-124">If you have a desktop application that uses the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop), you may need to add additional code not shown in these examples to configure the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) object.</span></span> <span data-ttu-id="07eb8-125">詳しくは、「[デスクトップ ブリッジを使用するデスクトップ アプリケーションでの StoreContext クラスの使用](in-app-purchases-and-trials.md#desktop)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="07eb8-125">For more information, see [Using the StoreContext class in a desktop application that uses the Desktop Bridge](in-app-purchases-and-trials.md#desktop).</span></span>
 
->**注:**&nbsp;&nbsp;[Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop) を使うデスクトップ アプリケーションがある場合、これらの例には示されていないコードを追加して [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) オブジェクトを構成することが必要になることがあります。 詳しくは、「[Desktop Bridge を使用するデスクトップ アプリケーションでの StoreContext クラスの使用](in-app-purchases-and-trials.md#desktop)」をご覧ください。
+## <a name="get-info-for-the-current-app"></a><span data-ttu-id="07eb8-126">現在のアプリの情報の取得</span><span class="sxs-lookup"><span data-stu-id="07eb8-126">Get info for the current app</span></span>
 
-## <a name="get-info-for-the-current-app"></a>現在のアプリの情報の取得
-
-現在のアプリに関するストア製品情報を取得するには、[GetStoreProductForCurrentAppAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getstoreproductforcurrentappasync.aspx) メソッドを使います。 これは、価格などの情報の取得に使うことができる [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) オブジェクトを返す非同期メソッドです。
-
-> [!div class="tabbedCodeSnippets"]
-[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAppInfoPage.xaml.cs#GetAppInfo)]
-
-## <a name="get-info-for-products-with-known-store-ids"></a>既知のストア ID による製品の情報の取得
-
-既に[ストア ID](in-app-purchases-and-trials.md#store_ids) を知っているアプリまたはアドオンのストア製品情報を取得するには、[GetStoreProductsAsync](https://msdn.microsoft.com/library/windows/apps/mt706579.aspx) メソッドを使います。 これは、各アプリまたはアドオンを表す [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) オブジェクトのコレクションを返す非同期メソッドです。 ストア ID に加えて、アドオンの種類を識別する文字列の一覧をこのメソッドに渡す必要があります。 サポートされている文字列値の一覧については[ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) プロパティをご覧ください。
-
-次の例では、指定されたストア ID を持つ永続的なアドオンの情報を取得します。
+<span data-ttu-id="07eb8-127">現在のアプリに関するストア製品情報を取得するには、[GetStoreProductForCurrentAppAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getstoreproductforcurrentappasync.aspx) メソッドを使います。</span><span class="sxs-lookup"><span data-stu-id="07eb8-127">To get Store product info about the current app, use the [GetStoreProductForCurrentAppAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getstoreproductforcurrentappasync.aspx) method.</span></span> <span data-ttu-id="07eb8-128">これは、価格などの情報の取得に使うことができる [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) オブジェクトを返す非同期メソッドです。</span><span class="sxs-lookup"><span data-stu-id="07eb8-128">This is an asynchronous method that returns a [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) object that you can use to get info such as the price.</span></span>
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetProductInfoPage.xaml.cs#GetProductInfo)]
+[!code-cs[<span data-ttu-id="07eb8-129">GetProductInfo</span><span class="sxs-lookup"><span data-stu-id="07eb8-129">GetProductInfo</span></span>](./code/InAppPurchasesAndLicenses_RS1/cs/GetAppInfoPage.xaml.cs#GetAppInfo)]
 
-## <a name="get-info-for-add-ons-that-are-available-for-the-current-app"></a>現在のアプリで利用可能なアドオンの情報の取得
+## <a name="get-info-for-products-with-known-store-ids"></a><span data-ttu-id="07eb8-130">既知のストア ID による製品の情報の取得</span><span class="sxs-lookup"><span data-stu-id="07eb8-130">Get info for products with known Store IDs</span></span>
 
-現在のアプリで利用可能なアドオンのストア製品情報を取得するには、[GetAssociatedStoreProductsAsync](https://msdn.microsoft.com/library/windows/apps/mt706571.aspx) メソッドを使います。 これは、利用可能な各アドオンを表す [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) オブジェクトのコレクションを返す非同期メソッドです。 取得するアドオンの種類を識別する文字列の一覧をこのメソッドに渡す必要があります。 サポートされている文字列値の一覧については [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) プロパティをご覧ください。
+<span data-ttu-id="07eb8-131">既に[ストア ID](in-app-purchases-and-trials.md#store_ids) を知っているアプリまたはアドオンのストア製品情報を取得するには、[GetStoreProductsAsync](https://msdn.microsoft.com/library/windows/apps/mt706579.aspx) メソッドを使います。</span><span class="sxs-lookup"><span data-stu-id="07eb8-131">To get Store product info for apps or add-ons for which you already know the [Store IDs](in-app-purchases-and-trials.md#store_ids), use the [GetStoreProductsAsync](https://msdn.microsoft.com/library/windows/apps/mt706579.aspx) method.</span></span> <span data-ttu-id="07eb8-132">これは、各アプリまたはアドオンを表す [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) オブジェクトのコレクションを返す非同期メソッドです。</span><span class="sxs-lookup"><span data-stu-id="07eb8-132">This is an asynchronous method that returns a collection of  [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) objects that represent each of the apps or add-ons.</span></span> <span data-ttu-id="07eb8-133">ストア ID に加えて、アドオンの種類を識別する文字列の一覧をこのメソッドに渡す必要があります。</span><span class="sxs-lookup"><span data-stu-id="07eb8-133">In addition to the Store IDs, you must pass a list of strings to this method that identify the types of the add-ons.</span></span> <span data-ttu-id="07eb8-134">サポートされている文字列値の一覧については[ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) プロパティをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="07eb8-134">For a list of the supported string values, see the [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) property.</span></span>
 
->**注**&nbsp;&nbsp;アプリのアドオンが多くある場合、代わりに [GetAssociatedStoreProductsWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706572.aspx) メソッドを使ってページングを使い、アドオン結果を返すこともできます。
-
-次の例では、すべての永続的なアドオン、ストアで管理されるコンシューマブルなアドオン、開発者により管理されるコンシューマブルなアドオンの情報を取得します。
+<span data-ttu-id="07eb8-135">次の例では、指定されたストア ID を持つ永続的なアドオンの情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="07eb8-135">The following example retrieves info for durable add-ons with the specified Store IDs.</span></span>
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAddOnInfoPage.xaml.cs#GetAddOnInfo)]
+[!code-cs[<span data-ttu-id="07eb8-136">GetProductInfo</span><span class="sxs-lookup"><span data-stu-id="07eb8-136">GetProductInfo</span></span>](./code/InAppPurchasesAndLicenses_RS1/cs/GetProductInfoPage.xaml.cs#GetProductInfo)]
 
+## <a name="get-info-for-add-ons-that-are-available-for-the-current-app"></a><span data-ttu-id="07eb8-137">現在のアプリで利用可能なアドオンの情報の取得</span><span class="sxs-lookup"><span data-stu-id="07eb8-137">Get info for add-ons that are available for the current app</span></span>
 
-## <a name="get-info-for-add-ons-for-the-current-app-that-the-current-user-is-entitled-to-use"></a>現在のユーザーが使う権利を持つ現在のアプリのアドオンの情報を取得します。
+<span data-ttu-id="07eb8-138">現在のアプリで利用可能なアドオンのストア製品情報を取得するには、[GetAssociatedStoreProductsAsync](https://msdn.microsoft.com/library/windows/apps/mt706571.aspx) メソッドを使います。</span><span class="sxs-lookup"><span data-stu-id="07eb8-138">To get Store product info for the add-ons that are available for the current app, use the [GetAssociatedStoreProductsAsync](https://msdn.microsoft.com/library/windows/apps/mt706571.aspx) method.</span></span> <span data-ttu-id="07eb8-139">これは、利用可能な各アドオンを表す [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) オブジェクトのコレクションを返す非同期メソッドです。</span><span class="sxs-lookup"><span data-stu-id="07eb8-139">This is an asynchronous method that returns a collection of  [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) objects that represent each of the available add-ons.</span></span> <span data-ttu-id="07eb8-140">取得するアドオンの種類を識別する文字列の一覧をこのメソッドに渡す必要があります。</span><span class="sxs-lookup"><span data-stu-id="07eb8-140">You must pass a list of strings to this method that identify the types of add-ons you want to retrieve.</span></span> <span data-ttu-id="07eb8-141">サポートされている文字列値の一覧については [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) プロパティをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="07eb8-141">For a list of the supported string values, see the [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) property.</span></span>
 
-現在のユーザーが使う権利を持つアドオンのストア製品情報を取得するには、[GetUserCollectionAsync](https://msdn.microsoft.com/library/windows/apps/mt706580.aspx) メソッドを使います。 これは、各アドオンを表す [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) オブジェクトのコレクションを返す非同期メソッドです。 取得するアドオンの種類を識別する文字列の一覧をこのメソッドに渡す必要があります。 サポートされている文字列値の一覧については [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) プロパティをご覧ください。
+> [!NOTE]
+> <span data-ttu-id="07eb8-142">アプリのアドオンが多くある場合、代わりに [GetAssociatedStoreProductsWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706572.aspx) メソッドを使ってページングを利用し、アドオンの結果を返すこともできます。</span><span class="sxs-lookup"><span data-stu-id="07eb8-142">If the app has many add-ons, you can alternatively use the [GetAssociatedStoreProductsWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706572.aspx) method to use paging to return the add-on results.</span></span>
 
->**注**&nbsp;&nbsp;アプリのアドオンが多くある場合、代わりに [GetUserCollectionWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706581.aspx) メソッドを使ってページングを使い、アドオン結果を返すこともできます。
-
-次の例では、指定されたストア ID を持つ永続的なアドオンの情報を取得します。
+<span data-ttu-id="07eb8-143">次の例では、すべての永続的なアドオン、ストアで管理されるコンシューマブルなアドオン、開発者により管理されるコンシューマブルなアドオンの情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="07eb8-143">The following example retrieves info for all durable add-ons, Store-managed consumable add-ons, and developer-managed consumable add-ons.</span></span>
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetUserCollectionPage.xaml.cs#GetUserCollection)]
+[!code-cs[<span data-ttu-id="07eb8-144">GetProductInfo</span><span class="sxs-lookup"><span data-stu-id="07eb8-144">GetProductInfo</span></span>](./code/InAppPurchasesAndLicenses_RS1/cs/GetAddOnInfoPage.xaml.cs#GetAddOnInfo)]
 
-## <a name="related-topics"></a>関連トピック
 
-* [アプリ内購入と試用版](in-app-purchases-and-trials.md)
-* [アプリとアドオンのライセンス情報の取得](get-license-info-for-apps-and-add-ons.md)
-* [アプリとアドオンのアプリ内購入の有効化](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [コンシューマブルなアドオン購入の有効化](enable-consumable-add-on-purchases.md)
-* [アプリの試用版の実装](implement-a-trial-version-of-your-app.md)
-* [ストア サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
+## <a name="get-info-for-add-ons-for-the-current-app-that-the-current-user-is-entitled-to-use"></a><span data-ttu-id="07eb8-145">現在のユーザーが使う権利を持つ現在のアプリのアドオンの情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="07eb8-145">Get info for add-ons for the current app that the current user is entitled to use</span></span>
 
+<span data-ttu-id="07eb8-146">現在のユーザーが使う権利を持つアドオンのストア製品情報を取得するには、[GetUserCollectionAsync](https://msdn.microsoft.com/library/windows/apps/mt706580.aspx) メソッドを使います。</span><span class="sxs-lookup"><span data-stu-id="07eb8-146">To get Store product info for add-ons that the current user is entitled to use, use the [GetUserCollectionAsync](https://msdn.microsoft.com/library/windows/apps/mt706580.aspx) method.</span></span> <span data-ttu-id="07eb8-147">これは、各アドオンを表す [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) オブジェクトのコレクションを返す非同期メソッドです。</span><span class="sxs-lookup"><span data-stu-id="07eb8-147">This is an asynchronous method that returns a collection of  [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) objects that represent each of the add-ons.</span></span> <span data-ttu-id="07eb8-148">取得するアドオンの種類を識別する文字列の一覧をこのメソッドに渡す必要があります。</span><span class="sxs-lookup"><span data-stu-id="07eb8-148">You must pass a list of strings to this method that identify the types of add-ons you want to retrieve.</span></span> <span data-ttu-id="07eb8-149">サポートされている文字列値の一覧については [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) プロパティをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="07eb8-149">For a list of the supported string values, see the [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) property.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="07eb8-150">アプリのアドオンが多くある場合、代わりに [GetUserCollectionWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706581.aspx) メソッドを使ってページングを利用し、アドオンの結果を返すこともできます。</span><span class="sxs-lookup"><span data-stu-id="07eb8-150">If the app has many add-ons, you can alternatively use the [GetUserCollectionWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706581.aspx) method to use paging to return the add-on results.</span></span>
+
+<span data-ttu-id="07eb8-151">次の例では、指定されたストア ID を持つ永続的なアドオンの情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="07eb8-151">The following example retrieves info for durable add-ons with the specified Store IDs.</span></span>
+
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[<span data-ttu-id="07eb8-152">GetProductInfo</span><span class="sxs-lookup"><span data-stu-id="07eb8-152">GetProductInfo</span></span>](./code/InAppPurchasesAndLicenses_RS1/cs/GetUserCollectionPage.xaml.cs#GetUserCollection)]
+
+## <a name="related-topics"></a><span data-ttu-id="07eb8-153">関連トピック</span><span class="sxs-lookup"><span data-stu-id="07eb8-153">Related topics</span></span>
+
+* [<span data-ttu-id="07eb8-154">アプリ内購入と試用版</span><span class="sxs-lookup"><span data-stu-id="07eb8-154">In-app purchases and trials</span></span>](in-app-purchases-and-trials.md)
+* [<span data-ttu-id="07eb8-155">アプリとアドオンのライセンス情報の取得</span><span class="sxs-lookup"><span data-stu-id="07eb8-155">Get license info for apps and add-ons</span></span>](get-license-info-for-apps-and-add-ons.md)
+* [<span data-ttu-id="07eb8-156">アプリとアドオンのアプリ内購入の有効化</span><span class="sxs-lookup"><span data-stu-id="07eb8-156">Enable in-app purchases of apps and add-ons</span></span>](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [<span data-ttu-id="07eb8-157">コンシューマブルなアドオン購入の有効化</span><span class="sxs-lookup"><span data-stu-id="07eb8-157">Enable consumable add-on purchases</span></span>](enable-consumable-add-on-purchases.md)
+* [<span data-ttu-id="07eb8-158">アプリの試用版の実装</span><span class="sxs-lookup"><span data-stu-id="07eb8-158">Implement a trial version of your app</span></span>](implement-a-trial-version-of-your-app.md)
+* [<span data-ttu-id="07eb8-159">ストア サンプル</span><span class="sxs-lookup"><span data-stu-id="07eb8-159">Store sample</span></span>](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)

@@ -1,41 +1,15 @@
 ---
-author: mcleanbyron
-ms.assetid: 15d8cc6c-80f9-49b7-8036-0abf80ffebba
-description: "広告付きのアプリの開発に関するその他のリソースを紹介します。"
-title: "追加のヘルプ"
-ms.author: mcleans
-ms.date: 02/08/2017
-ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: "Windows 10、UWP、広告、ヘルプ"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4cb0b288b37117178a722c3437ac12aa392e3e34
-ms.lasthandoff: 02/07/2017
-
+redirect_url: display-ads-in-your-app#additional-help
+ms.openlocfilehash: 3266bf280e4c0677c66ab9f66f2831db450268a1
+ms.sourcegitcommit: a9e4be98688b3a6125fd5dd126190fcfcd764f95
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/21/2017
 ---
+# <a name="additional-help"></a><span data-ttu-id="fb503-101">追加のヘルプ</span><span class="sxs-lookup"><span data-stu-id="fb503-101">Additional help</span></span>
 
-# <a name="additional-help"></a>追加のヘルプ
-
-
-
-
-広告付きのアプリの開発について詳しくは、次のリソースをご覧ください。
-
-|  タスク    | トピック |               
-|----------|-------|
-| バナーやスポット広告をアプリに追加する方法を説明するサンプル プロジェクトをダウンロードする     |「[GitHub の広告サンプル](http://aka.ms/githubads)」をご覧ください。       |
-| Windows アプリの最新の収益機会について学ぶ     | 「[アプリの収益の獲得](https://developer.microsoft.com/store/monetize)」をご覧ください。        |
-| 広告のバグを報告したり個別のサポートを受けたりする     | [サポート ページ](https://go.microsoft.com/fwlink/p/?LinkId=331508)にアクセスし、**[In-App 広告]** を選択します。        |
-| コミュニティ サポートを受ける     | [フォーラム](http://go.microsoft.com/fwlink/p/?LinkId=401266)をご覧ください。       |
-| Windows アプリ開発について学ぶ     | [Windows デベロッパー センター](https://developer.microsoft.com/windows)をご覧ください。        |
-
-
+<span data-ttu-id="fb503-102">このページは「アプリでの広告の表示」にリダイレクトされています。</span><span class="sxs-lookup"><span data-stu-id="fb503-102">This page has been redirected to: Display ads in your app</span></span>
 
  
 
  
-
- 
-

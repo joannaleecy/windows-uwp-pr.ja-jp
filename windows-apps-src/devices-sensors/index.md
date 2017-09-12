@@ -1,42 +1,41 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 0b891f63-02fa-4c30-b307-9fbcccac5caa
 title: "デバイス、センサーの使用"
 description: "優れたユーザー エクスペリエンスを実現するために、外部デバイスまたはセンサーをアプリに統合する必要があります。"
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 87e52894a0746ecd716487a0e91d7d5974199ab8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a15ed83ccb7571b772ce77669646e58894e71842
+ms.sourcegitcommit: a2908889b3566882c7494dc81fa9ece7d1d19580
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/31/2017
 ---
-# <a name="devices-sensors-and-power"></a>デバイス、センサー、および電源
+# <a name="devices-sensors-and-power"></a><span data-ttu-id="2f778-104">デバイス、センサー、および電源</span><span class="sxs-lookup"><span data-stu-id="2f778-104">Devices, sensors, and power</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+<span data-ttu-id="2f778-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="2f778-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="2f778-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]</span><span class="sxs-lookup"><span data-stu-id="2f778-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-優れたユーザー エクスペリエンスを実現するために、外部デバイスまたはセンサーをアプリに統合する必要があります。 ここでは、このセクションで説明するテクノロジを使って、アプリに追加できる機能例をいくつか紹介します。
+<span data-ttu-id="2f778-107">優れたユーザー エクスペリエンスを実現するために、外部デバイスまたはセンサーをアプリに統合する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2f778-107">In order to provide a rich experience for your users, you may find it necessary to integrate external devices or sensors into your app.</span></span> <span data-ttu-id="2f778-108">ここでは、このセクションで説明するテクノロジを使って、アプリに追加できる機能例をいくつか紹介します。</span><span class="sxs-lookup"><span data-stu-id="2f778-108">Here are some examples of features that you can add to your app using the technology described in this section.</span></span>
 
--   充実した印刷エクスペリエンスの実現
--   ゲームへのモーション センサーと方位センサーの統合
--   デバイスの直接接続またはネットワーク プロトコルを経由した接続
+-   <span data-ttu-id="2f778-109">充実した印刷エクスペリエンスの実現</span><span class="sxs-lookup"><span data-stu-id="2f778-109">Providing an enhanced print experience</span></span>
+-   <span data-ttu-id="2f778-110">ゲームへのモーション センサーと方位センサーの統合</span><span class="sxs-lookup"><span data-stu-id="2f778-110">Integrating motion and orientation sensors into your game</span></span>
+-   <span data-ttu-id="2f778-111">デバイスの直接接続またはネットワーク プロトコルを経由した接続</span><span class="sxs-lookup"><span data-stu-id="2f778-111">Connecting to a device directly or through a network protocol</span></span>
 
-| トピック | 説明 |
+| <span data-ttu-id="2f778-112">トピック</span><span class="sxs-lookup"><span data-stu-id="2f778-112">Topic</span></span> | <span data-ttu-id="2f778-113">説明</span><span class="sxs-lookup"><span data-stu-id="2f778-113">Description</span></span> |
 |-------|-------------|
-| [デバイス機能を有効にする](enable-device-capabilities.md) | このチュートリアルでは、Microsoft Visual Studio でデバイス機能を宣言する方法について説明します。 カメラ、マイク、位置センサー、その他のデバイスをアプリで使うことができるようにします。 | 
-| [Windows IoT のユーザー モードのアクセスを有効にします。](enable-usermode-access.md) | このチュートリアルでは、Windows 10 IoT Core で GPIO、I2C、SPI、および UART へのユーザー モード アクセスを有効にする方法について説明します。 |
-| [デバイスの列挙](enumerate-devices.md) | 列挙用の名前空間によって、システムに内部接続されているデバイス、外部接続されているデバイス、ワイヤレス プロトコルまたはネットワーク プロトコル経由で検出できるデバイスを検索できます。 |
-| [デバイスのペアリング](pair-devices.md) | 一部のデバイスは、使う前にペアリングする必要があります。 [<strong>Windows.Devices.Enumeration</strong>](https://msdn.microsoft.com/library/windows/apps/BR225459) 名前空間では、デバイスをペアリングするための 3 つの異なる方法がサポートされています。 |
-| [帯域外ペアリング](out-of-band-pairing.md) | このセクションでは、帯域外ペアリングを使って、検出を必要とせずに、アプリが特定のデバイスに接続する方法について説明します。 | 
-| [センサー](sensors.md) | センサーは、デバイスとその周囲の実際の世界の関係をアプリに通知します。 つまり、デバイスの方角や向き、動きをアプリに伝えることができます。 |
-| [Bluetooth](bluetooth.md) | このセクションでは、RFCOMM、GATT、低エネルギー (LE) の広告を使う方法を含め、ユニバーサル Windows プラットフォーム (UWP) アプリに Bluetooth を統合する方法に関する記事を取り上げています。 | 
-| [印刷とスキャン](printing-and-scanning.md) | このセクションでは、ユニバーサル Windows アプリから印刷およびスキャンする方法について説明します。 | 
-| [3D 印刷](3d-printing.md) | このセクションでは、ユニバーサル Windows アプリで 3D 印刷機能を使用する方法について説明します。 |
-| [NFC スマート カード アプリの作成](host-card-emulation.md) | Windows Phone 8.1 では、SIM ベースのセキュア エレメントを使用する NFC カード エミュレーション アプリがサポートされていましたが、このモデルでは、安全な支払いアプリと移動体通信事業者 (MNO) 様との密接な連携が必要でした。 このことにより、MNO 様と連携していないために、他の事業者様や開発者様によるさまざまな支払いソリューションの可能性が制限されていました。 Windows 10 Mobile では、ホスト カード エミュレーション (HCE) と呼ばれる新しいカード エミュレーション テクノロジが導入されています。 HCE テクノロジを使用すると、アプリが NFC カード リーダーと直接通信することができます。 このトピックでは、Windows 10 Mobile デバイスでのホスト カード エミュレーション (HCE) のしくみと、物理的なカードではなく電話からユーザーがサービスにアクセスできるような HCE アプリを MNO 様と連携せずに開発する方法について説明します。 |
-| [バッテリー情報の取得](get-battery-info.md) | [<strong>Windows.Devices.Power</strong>](https://msdn.microsoft.com/library/windows/apps/Dn895017) 名前空間で、API を使って詳細なバッテリー情報を取得する方法について説明します。 |
-
+| [<span data-ttu-id="2f778-114">デバイス機能を有効にする</span><span class="sxs-lookup"><span data-stu-id="2f778-114">Enable device capabilities</span></span>](enable-device-capabilities.md) | <span data-ttu-id="2f778-115">このチュートリアルでは、Microsoft Visual Studio でデバイス機能を宣言する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="2f778-115">This tutorial describes how to declare device capabilities in Microsoft Visual Studio.</span></span> <span data-ttu-id="2f778-116">カメラ、マイク、位置センサー、その他のデバイスをアプリで使うことができるようにします。</span><span class="sxs-lookup"><span data-stu-id="2f778-116">This enables your app to use cameras, microphones, location sensors, and other devices.</span></span> | 
+| [<span data-ttu-id="2f778-117">Windows IoT のユーザー モードのアクセスを有効にします。</span><span class="sxs-lookup"><span data-stu-id="2f778-117">Enable usermode access for Windows IoT</span></span>](enable-usermode-access.md) | <span data-ttu-id="2f778-118">このチュートリアルでは、Windows 10 IoT Core で GPIO、I2C、SPI、および UART へのユーザー モード アクセスを有効にする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="2f778-118">This tutorial describes how to enable usermode access to GPIO, I2C, SPI, and UART on Windows 10 IoT Core.</span></span> |
+| [<span data-ttu-id="2f778-119">デバイスの列挙</span><span class="sxs-lookup"><span data-stu-id="2f778-119">Enumerate devices</span></span>](enumerate-devices.md) | <span data-ttu-id="2f778-120">列挙用の名前空間によって、システムに内部接続されているデバイス、外部接続されているデバイス、ワイヤレス プロトコルまたはネットワーク プロトコル経由で検出できるデバイスを検索できます。</span><span class="sxs-lookup"><span data-stu-id="2f778-120">The enumeration namespace enables you to find devices that are internally connected to the system, externally connected, or detectable over wireless or networking protocols.</span></span> |
+| [<span data-ttu-id="2f778-121">デバイスのペアリング</span><span class="sxs-lookup"><span data-stu-id="2f778-121">Pair devices</span></span>](pair-devices.md) | <span data-ttu-id="2f778-122">一部のデバイスは、使う前にペアリングする必要があります。</span><span class="sxs-lookup"><span data-stu-id="2f778-122">Some devices need to be paired before they can be used.</span></span> <span data-ttu-id="2f778-123">[<strong>Windows.Devices.Enumeration</strong>](https://msdn.microsoft.com/library/windows/apps/BR225459) 名前空間では、デバイスをペアリングするための 3 つの異なる方法がサポートされています。</span><span class="sxs-lookup"><span data-stu-id="2f778-123">The [<strong>Windows.Devices.Enumeration</strong>](https://msdn.microsoft.com/library/windows/apps/BR225459) namespace supports three different ways to pair devices.</span></span> |
+| [<span data-ttu-id="2f778-124">帯域外ペアリング</span><span class="sxs-lookup"><span data-stu-id="2f778-124">Out-of-band pairing</span></span>](out-of-band-pairing.md) | <span data-ttu-id="2f778-125">このセクションでは、帯域外ペアリングを使って、検出を必要とせずに、アプリが特定のデバイスに接続する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="2f778-125">This section describes how out-of-band pairing allows apps to connect to certain devices without requiring discovery.</span></span> | 
+| [<span data-ttu-id="2f778-126">センサー</span><span class="sxs-lookup"><span data-stu-id="2f778-126">Sensors</span></span>](sensors.md) | <span data-ttu-id="2f778-127">センサーは、デバイスとその周囲の実際の世界の関係をアプリに通知します。</span><span class="sxs-lookup"><span data-stu-id="2f778-127">Sensors let your app know the relationship between a device and the physical world around it.</span></span> <span data-ttu-id="2f778-128">つまり、デバイスの方角や向き、動きをアプリに伝えることができます。</span><span class="sxs-lookup"><span data-stu-id="2f778-128">Sensors can tell your app the direction, orientation, and movement of the device.</span></span> |
+| [<span data-ttu-id="2f778-129">Bluetooth</span><span class="sxs-lookup"><span data-stu-id="2f778-129">Bluetooth</span></span>](bluetooth.md) | <span data-ttu-id="2f778-130">このセクションでは、RFCOMM、GATT、低エネルギー (LE) の広告を使う方法を含め、ユニバーサル Windows プラットフォーム (UWP) アプリに Bluetooth を統合する方法に関する記事を取り上げています。</span><span class="sxs-lookup"><span data-stu-id="2f778-130">This section contains articles on how to integrate Bluetooth into Universal Windows Platform (UWP) apps, including how to use RFCOMM, GATT, and Low Energy (LE) Advertisements.</span></span> | 
+| [<span data-ttu-id="2f778-131">印刷とスキャン</span><span class="sxs-lookup"><span data-stu-id="2f778-131">Printing and scanning</span></span>](printing-and-scanning.md) | <span data-ttu-id="2f778-132">このセクションでは、ユニバーサル Windows アプリから印刷およびスキャンする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="2f778-132">This section describes how to print and scan from your Universal Windows app.</span></span> | 
+| [<span data-ttu-id="2f778-133">3D 印刷</span><span class="sxs-lookup"><span data-stu-id="2f778-133">3D printing</span></span>](3d-printing.md) | <span data-ttu-id="2f778-134">このセクションでは、ユニバーサル Windows アプリで 3D 印刷機能を使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="2f778-134">This section describes how to utilize 3D printing functionality in your Universal Windows app.</span></span> |
+| [<span data-ttu-id="2f778-135">NFC スマート カード アプリの作成</span><span class="sxs-lookup"><span data-stu-id="2f778-135">Create an NFC Smart Card app</span></span>](host-card-emulation.md) | <span data-ttu-id="2f778-136">Windows Phone 8.1 では、SIM ベースのセキュア エレメントを使用する NFC カード エミュレーション アプリがサポートされていましたが、このモデルでは、安全な支払いアプリと移動体通信事業者 (MNO) 様との密接な連携が必要でした。</span><span class="sxs-lookup"><span data-stu-id="2f778-136">Windows Phone 8.1 supported NFC card emulation apps using a SIM-based secure element, but that model required secure payment apps to be tightly coupled with mobile-network operators (MNO).</span></span> <span data-ttu-id="2f778-137">このことにより、MNO 様と連携していないために、他の事業者様や開発者様によるさまざまな支払いソリューションの可能性が制限されていました。</span><span class="sxs-lookup"><span data-stu-id="2f778-137">This limited the variety of possible payment solutions by other merchants or developers that are not coupled with MNOs.</span></span> <span data-ttu-id="2f778-138">Windows 10 Mobile では、ホスト カード エミュレーション (HCE) と呼ばれる新しいカード エミュレーション テクノロジが導入されています。</span><span class="sxs-lookup"><span data-stu-id="2f778-138">In Windows 10 Mobile, we have introduced a new card emulation technology called, Host Card Emulation (HCE).</span></span> <span data-ttu-id="2f778-139">HCE テクノロジを使用すると、アプリが NFC カード リーダーと直接通信することができます。</span><span class="sxs-lookup"><span data-stu-id="2f778-139">HCE technology allows your app to directly communicate with an NFC card reader.</span></span> <span data-ttu-id="2f778-140">このトピックでは、Windows 10 Mobile デバイスでのホスト カード エミュレーション (HCE) のしくみと、物理的なカードではなく電話からユーザーがサービスにアクセスできるような HCE アプリを MNO 様と連携せずに開発する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="2f778-140">This topic illustrates how Host Card Emulation (HCE) works on Windows 10 Mobile devices and how you can develop an HCE app so that your customers can access your services through their phone instead of a physical card without collaborating with an MNO.</span></span> |
+| [<span data-ttu-id="2f778-141">バッテリー情報の取得</span><span class="sxs-lookup"><span data-stu-id="2f778-141">Get battery information</span></span>](get-battery-info.md) | <span data-ttu-id="2f778-142">[<strong>Windows.Devices.Power</strong>](https://msdn.microsoft.com/library/windows/apps/Dn895017) 名前空間で、API を使って詳細なバッテリー情報を取得する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="2f778-142">Learn how to get detailed battery information using APIs in the [<strong>Windows.Devices.Power</strong>](https://msdn.microsoft.com/library/windows/apps/Dn895017) namespace.</span></span> |
 

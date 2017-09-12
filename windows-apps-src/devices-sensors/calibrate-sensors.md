@@ -1,38 +1,37 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: ECE848C2-33DE-46B0-BAE7-647DB62779BB
 title: "センサーの調整"
 description: "デバイスの磁力計 (コンパス、傾斜計、方位センサー) に基づくセンサーは、環境の要因に応じて調整が必要になることがあります。"
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8c02d9ed6e0612e0b89236b3fdb387e8ac3a5488
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 066332395dde8d52d970bc79e2597ccaacaddb18
+ms.sourcegitcommit: a2908889b3566882c7494dc81fa9ece7d1d19580
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/31/2017
 ---
-# <a name="calibrate-sensors"></a>センサーの調整
+# <a name="calibrate-sensors"></a><span data-ttu-id="c8509-104">センサーの調整</span><span class="sxs-lookup"><span data-stu-id="c8509-104">Calibrate sensors</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
+<span data-ttu-id="c8509-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="c8509-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="c8509-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]</span><span class="sxs-lookup"><span data-stu-id="c8509-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-**重要な API**
+**<span data-ttu-id="c8509-107">重要な API</span><span class="sxs-lookup"><span data-stu-id="c8509-107">Important APIs</span></span>**
 
--   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Windows.Devices.Sensors.Custom**](https://msdn.microsoft.com/library/windows/apps/Dn895032)
+-   [**<span data-ttu-id="c8509-108">Windows.Devices.Sensors</span><span class="sxs-lookup"><span data-stu-id="c8509-108">Windows.Devices.Sensors</span></span>**](https://msdn.microsoft.com/library/windows/apps/BR206408)
+-   [**<span data-ttu-id="c8509-109">Windows.Devices.Sensors.Custom</span><span class="sxs-lookup"><span data-stu-id="c8509-109">Windows.Devices.Sensors.Custom</span></span>**](https://msdn.microsoft.com/library/windows/apps/Dn895032)
 
-デバイスの磁力計 (コンパス、傾斜計、方位センサー) に基づくセンサーは、環境の要因に応じて調整が必要になることがあります。 [**MagnetometerAccuracy**](https://msdn.microsoft.com/library/windows/apps/Dn297552) 列挙値は、デバイスの調整が必要になる場合の対応策を決めるのに役立ちます。
+<span data-ttu-id="c8509-110">デバイスの磁力計 (コンパス、傾斜計、方位センサー) に基づくセンサーは、環境の要因に応じて調整が必要になることがあります。</span><span class="sxs-lookup"><span data-stu-id="c8509-110">Sensors in a device based on the magnetometer – the compass, inclinometer and orientation sensor - can become in need of calibration due to environmental factors.</span></span> <span data-ttu-id="c8509-111">[**MagnetometerAccuracy**](https://msdn.microsoft.com/library/windows/apps/Dn297552) 列挙値は、デバイスの調整が必要になる場合の対応策を決めるのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="c8509-111">The [**MagnetometerAccuracy**](https://msdn.microsoft.com/library/windows/apps/Dn297552) enumeration can help determine a course of action when your device is in need of calibration.</span></span>
 
-## <a name="when-to-calibrate-the-magnetometer"></a>磁力計を調整するタイミング
+## <a name="when-to-calibrate-the-magnetometer"></a><span data-ttu-id="c8509-112">磁力計を調整するタイミング</span><span class="sxs-lookup"><span data-stu-id="c8509-112">When to calibrate the magnetometer</span></span>
 
-[**MagnetometerAccuracy**](https://msdn.microsoft.com/library/windows/apps/Dn297552) 列挙値には、アプリが実行されているデバイスを調整する必要があるかどうかを判断するのに役立つ 4 つの値があります。 デバイスを調整する必要がある場合は、その旨をユーザーに知らせる必要があります。 ただし、あまりに頻繁に調整を行うようユーザーに促さないでください。 10 分に 1 回を超えないようにします。
+<span data-ttu-id="c8509-113">[**MagnetometerAccuracy**](https://msdn.microsoft.com/library/windows/apps/Dn297552) 列挙値には、アプリが実行されているデバイスを調整する必要があるかどうかを判断するのに役立つ 4 つの値があります。</span><span class="sxs-lookup"><span data-stu-id="c8509-113">The [**MagnetometerAccuracy**](https://msdn.microsoft.com/library/windows/apps/Dn297552) enumeration has four values that help you determine if the device your app is running on needs to be calibrated.</span></span> <span data-ttu-id="c8509-114">デバイスを調整する必要がある場合は、その旨をユーザーに知らせる必要があります。</span><span class="sxs-lookup"><span data-stu-id="c8509-114">If a device needs to be calibrated, you should let the user know that calibration is needed.</span></span> <span data-ttu-id="c8509-115">ただし、あまりに頻繁に調整を行うようユーザーに促さないでください。</span><span class="sxs-lookup"><span data-stu-id="c8509-115">However, you should not prompt the user to calibrate too frequently.</span></span> <span data-ttu-id="c8509-116">10 分に 1 回を超えないようにします。</span><span class="sxs-lookup"><span data-stu-id="c8509-116">We recommend no more than once every 10 minutes.</span></span>
 
-| 値           | 説明                                                                                                                                                      |-----------------|-------------------|                                                                                                                                              | **Unknown**     | センサー ドライバーは現在の精度を報告できませんでした。 これは、必ずしもデバイスが調整されていないことを意味するわけではありません。 **Unknown** が返された場合の最適な対応策は、開発しているアプリによって決まります。 アプリがセンサーの正確な読み取り値を利用しているのであれば、ユーザーにデバイスの調整を促します。 | | **Unreliable** | 現在、磁力計の精度が著しく低下しています。 この値が最初に返された時点で、アプリからユーザーに必ず調整を求めます。 | | **Approximate** | 一部のアプリにはデータの精度が不十分です。 ユーザーがデバイスを上下または左右に動かしたかどうかがわかればよいだけの仮想現実アプリでは、調整なしで続行できます。 指示を出すためにどの方向に進んでいるか知る必要があるナビゲーション アプリのように、絶対的な進路を必要とするアプリでは、調整を促す必要があります。 | | **High**        | データは正確です。 拡張現実アプリ、ナビゲーション アプリなどの絶対的な進路を知る必要があるアプリでも、調整は必要ありません。 |
+<span data-ttu-id="c8509-117">| 値           | 説明                                                                                                                                                      |-----------------|-------------------|                                                                                                                                              | **Unknown**     | センサー ドライバーは現在の精度を報告できませんでした。</span><span class="sxs-lookup"><span data-stu-id="c8509-117">| Value           | Description                                                                                                                                                      |-----------------|-------------------|                                                                                                                                              | **Unknown**     | The sensor driver could not report the current accuracy.</span></span> <span data-ttu-id="c8509-118">これは、必ずしもデバイスが調整されていないことを意味するわけではありません。</span><span class="sxs-lookup"><span data-stu-id="c8509-118">This does not necessarily mean the device is out of calibration.</span></span> <span data-ttu-id="c8509-119">**Unknown** が返された場合の最適な対応策は、開発しているアプリによって決まります。</span><span class="sxs-lookup"><span data-stu-id="c8509-119">It is up to your app to decide the best course of action if **Unknown** is returned.</span></span> <span data-ttu-id="c8509-120">アプリがセンサーの正確な読み取り値を利用しているのであれば、ユーザーにデバイスの調整を促します。</span><span class="sxs-lookup"><span data-stu-id="c8509-120">If your app is dependant on an accurate sensor reading, you may want to prompt the user to calibrate the device.</span></span> <span data-ttu-id="c8509-121">| | **Unreliable** | 現在、磁力計の精度が著しく低下しています。</span><span class="sxs-lookup"><span data-stu-id="c8509-121">| | **Unreliable**  | There is currently a high degree of inaccuracy in the magnetometer.</span></span> <span data-ttu-id="c8509-122">この値が最初に返された時点で、アプリからユーザーに必ず調整を求めます。</span><span class="sxs-lookup"><span data-stu-id="c8509-122">Apps should always ask for a calibration from the user when this value is first returned.</span></span> <span data-ttu-id="c8509-123">| | **Approximate** | 特定のアプリに対してデータは十分に正確です。</span><span class="sxs-lookup"><span data-stu-id="c8509-123">| | **Approximate** | The data is accurate enough for some applications.</span></span> <span data-ttu-id="c8509-124">ユーザーがデバイスを上下または左右に動かしたかどうかがわかればよいだけの仮想現実アプリでは、調整なしで続行できます。</span><span class="sxs-lookup"><span data-stu-id="c8509-124">A virtual reality app, that only needs to know if the user has moved the device up/down or left/right, can continue without calibration.</span></span> <span data-ttu-id="c8509-125">指示を出すためにどの方向に進んでいるか知る必要があるナビゲーション アプリのように、絶対的な進路を必要とするアプリでは、調整を促す必要があります。</span><span class="sxs-lookup"><span data-stu-id="c8509-125">Apps that need an absolute heading, like a navigation app that needs to know what direction you are driving in order to give you directions, need to ask for calibration.</span></span> <span data-ttu-id="c8509-126">| | **High**        | データは正確です。</span><span class="sxs-lookup"><span data-stu-id="c8509-126">| | **High**        | The data is precise.</span></span> <span data-ttu-id="c8509-127">拡張現実アプリ、ナビゲーション アプリなどの絶対的な進路を知る必要があるアプリでも、調整は必要ありません。</span><span class="sxs-lookup"><span data-stu-id="c8509-127">No calibration is needed, even for apps that need to know an absolute heading such as augmented reality or navigation apps.</span></span> |
 
-## <a name="how-to-calibrate-the-magnetometer"></a>磁力計を調整する方法
+## <a name="how-to-calibrate-the-magnetometer"></a><span data-ttu-id="c8509-128">磁力計を調整する方法</span><span class="sxs-lookup"><span data-stu-id="c8509-128">How to calibrate the magnetometer</span></span>
 
-この短いビデオでは、磁力計を調整する方法を概説しています。<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/727bd0e3-9116-49c3-8af6-0b4339324b71/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">One Dev Minute - センサーの調整</iframe>
-
+<span data-ttu-id="c8509-129">この短いビデオでは、磁力計を調整する方法を概説しています。</span><span class="sxs-lookup"><span data-stu-id="c8509-129">This short video gives an overview of how to calibrate the magnetometer.</span></span><iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/727bd0e3-9116-49c3-8af6-0b4339324b71/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no"><span data-ttu-id="c8509-130">One Dev Minute - センサーの調整</span><span class="sxs-lookup"><span data-stu-id="c8509-130">One dev minute - Sensor Calibration</span></span></iframe>

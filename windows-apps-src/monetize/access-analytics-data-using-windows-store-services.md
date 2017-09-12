@@ -2,57 +2,56 @@
 author: mcleanbyron
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: "Windows ストア分析 API を使って、自分または自分の組織の Windows デベロッパー センター アカウントに登録されたアプリの分析データをプログラムで取得することができます。"
-title: "Windows ストア サービスを使った分析データへのアクセス"
+title: "ストア サービスを使った分析データへのアクセス"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10、UWP、ストア サービス、Windows ストア分析 API"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1538f06b09bd4143750c10a2774137f87359ebce
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows 10, UWP, ストア サービス, Windows ストア分析 API"
+ms.openlocfilehash: f739676d02ae5af4c3960fdde6461779c1533885
+ms.sourcegitcommit: 2b436dc5e5681b8884e0531ee303f851a3e3ccf2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/18/2017
 ---
+# <a name="access-analytics-data-using-store-services"></a><span data-ttu-id="54434-104">ストア サービスを使った分析データへのアクセス</span><span class="sxs-lookup"><span data-stu-id="54434-104">Access analytics data using Store services</span></span>
 
-# <a name="access-analytics-data-using-windows-store-services"></a>Windows ストア サービスを使った分析データへのアクセス
+<span data-ttu-id="54434-105">*Windows ストア分析 API* を使って、自分または自分の組織の Windows デベロッパー センター アカウントに登録されたアプリの分析データをプログラムで取得することができます。</span><span class="sxs-lookup"><span data-stu-id="54434-105">Use the *Windows Store analytics API* to programmatically retrieve analytics data for apps that are registered to your or your organization's Windows Dev Center account.</span></span> <span data-ttu-id="54434-106">この API では、アプリおよびアドオン (アプリ内製品または IAP とも呼ばれます) の入手数、エラー、アプリの評価とレビューに関するデータを取得できます。</span><span class="sxs-lookup"><span data-stu-id="54434-106">This API enables you to retrieve data for app and add-on (also known as in-app product or IAP) acquisitions, errors, app ratings and reviews.</span></span> <span data-ttu-id="54434-107">この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。</span><span class="sxs-lookup"><span data-stu-id="54434-107">This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.</span></span>
 
-*Windows ストア分析 API* を使って、自分または自分の組織の Windows デベロッパー センター アカウントに登録されたアプリの分析データをプログラムで取得することができます。 この API では、アプリおよびアドオン (アプリ内製品または IAP とも呼ばれます) の入手数、エラー、アプリの評価とレビューに関するデータを取得できます。 この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
+<span data-ttu-id="54434-108">次の手順で、このプロセスについて詳しく説明しています。</span><span class="sxs-lookup"><span data-stu-id="54434-108">The following steps describe the end-to-end process:</span></span>
 
-次の手順で、このプロセスについて詳しく説明しています。
-
-1.  すべての[前提条件](#prerequisites)を完了したことを確認します。
-2.  Windows ストア分析 API でメソッドを呼び出す前に、[Azure AD アクセス トークンを取得](#obtain-an-azure-ad-access-token)する必要があります。 トークンを取得した後、Windows ストア分析 API への呼び出しでこのトークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れた後は、新しいトークンを生成できます。
-3.  [Windows ストア分析 API を呼び出します](#call-the-windows-store-analytics-api)。
+1.  <span data-ttu-id="54434-109">すべての[前提条件](#prerequisites)を完了したことを確認します。</span><span class="sxs-lookup"><span data-stu-id="54434-109">Make sure that you have completed all the [prerequisites](#prerequisites).</span></span>
+2.  <span data-ttu-id="54434-110">Windows ストア分析 API でメソッドを呼び出す前に、[Azure AD アクセス トークンを取得](#obtain-an-azure-ad-access-token)する必要があります。</span><span class="sxs-lookup"><span data-stu-id="54434-110">Before you call a method in the Windows Store analytics API, [obtain an Azure AD access token](#obtain-an-azure-ad-access-token).</span></span> <span data-ttu-id="54434-111">トークンを取得した後、Windows ストア分析 API への呼び出しでこのトークンを使用できるのは、その有効期限が切れるまでの 60 分間です。</span><span class="sxs-lookup"><span data-stu-id="54434-111">After you obtain a token, you have 60 minutes to use this token in calls to the Windows Store analytics API before the token expires.</span></span> <span data-ttu-id="54434-112">トークンの有効期限が切れた後は、新しいトークンを生成できます。</span><span class="sxs-lookup"><span data-stu-id="54434-112">After the token expires, you can generate a new token.</span></span>
+3.  <span data-ttu-id="54434-113">[Windows ストア分析 API を呼び出します](#call-the-windows-store-analytics-api)。</span><span class="sxs-lookup"><span data-stu-id="54434-113">[Call the Windows Store analytics API](#call-the-windows-store-analytics-api).</span></span>
 
 <span id="prerequisites" />
-## <a name="step-1-complete-prerequisites-for-using-the-windows-store-analytics-api"></a>手順 1: Windows ストア分析 API を使うための前提条件を完了する
+## <a name="step-1-complete-prerequisites-for-using-the-windows-store-analytics-api"></a><span data-ttu-id="54434-114">手順 1: Windows ストア分析 API を使うための前提条件を完了する</span><span class="sxs-lookup"><span data-stu-id="54434-114">Step 1: Complete prerequisites for using the Windows Store analytics API</span></span>
 
-Windows ストア分析 API を呼び出すコードの作成を開始する前に、次の前提条件が完了していることを確認します。
+<span data-ttu-id="54434-115">Windows ストア分析 API を呼び出すコードの作成を開始する前に、次の前提条件が完了していることを確認します。</span><span class="sxs-lookup"><span data-stu-id="54434-115">Before you start writing code to call the Windows Store analytics API, make sure that you have completed the following prerequisites.</span></span>
 
-* ユーザー (またはユーザーの組織) は、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](http://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。 それ以外の場合は、追加料金なしで[デベロッパー センター内から新しい Azure AD を作成](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)できます。
+* <span data-ttu-id="54434-116">ユーザー (またはユーザーの組織) は、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](http://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。</span><span class="sxs-lookup"><span data-stu-id="54434-116">You (or your organization) must have an Azure AD directory and you must have [Global administrator](http://go.microsoft.com/fwlink/?LinkId=746654) permission for the directory.</span></span> <span data-ttu-id="54434-117">Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。</span><span class="sxs-lookup"><span data-stu-id="54434-117">If you already use Office 365 or other business services from Microsoft, you already have Azure AD directory.</span></span> <span data-ttu-id="54434-118">それ以外の場合は、追加料金なしで[デベロッパー センター内から新しい Azure AD を作成](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-dev-center-account)できます。</span><span class="sxs-lookup"><span data-stu-id="54434-118">Otherwise, you can [create a new Azure AD in Dev Center](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-dev-center-account) for no additional charge.</span></span>
 
-* Azure AD アプリケーションをデベロッパー センター アカウントに関連付け、アプリケーションのテナント ID とクライアント ID を取得してキーを生成する必要があります。 Azure AD アプリケーションは、Windows ストア分析 API の呼び出し元のアプリまたはサービスを表します。 テナント ID、クライアント ID、およびキーは、API に渡す Azure AD アクセス トークンを取得するために必要です。
+* <span data-ttu-id="54434-119">Azure AD アプリケーションをデベロッパー センター アカウントに関連付け、アプリケーションのテナント ID とクライアント ID を取得してキーを生成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="54434-119">You must associate an Azure AD application with your Dev Center account, retrieve the tenant ID and client ID for the application and generate a key.</span></span> <span data-ttu-id="54434-120">Azure AD アプリケーションは、Windows ストア分析 API の呼び出し元のアプリまたはサービスを表します。</span><span class="sxs-lookup"><span data-stu-id="54434-120">The Azure AD application represents the app or service from which you want to call the Windows Store analytics API.</span></span> <span data-ttu-id="54434-121">テナント ID、クライアント ID、およびキーは、API に渡す Azure AD アクセス トークンを取得するために必要です。</span><span class="sxs-lookup"><span data-stu-id="54434-121">You need the tenant ID, client ID and key to obtain an Azure AD access token that you pass to the API.</span></span>
+    > [!NOTE]
+    > <span data-ttu-id="54434-122">この作業を行うのは一度だけです。</span><span class="sxs-lookup"><span data-stu-id="54434-122">You only need to perform this task one time.</span></span> <span data-ttu-id="54434-123">テナント ID、クライアント ID、キーがあれば、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらを再利用できます。</span><span class="sxs-lookup"><span data-stu-id="54434-123">After you have the tenant ID, client ID and key, you can reuse them any time you need to create a new Azure AD access token.</span></span>
 
-  >**注:**&nbsp;&nbsp;この作業を行うのは一度だけです。 テナント ID、クライアント ID、キーがあれば、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらを再利用できます。
+<span data-ttu-id="54434-124">Azure AD アプリケーションをデベロッパー センター アカウントに関連付け、必要な値を取得するには:</span><span class="sxs-lookup"><span data-stu-id="54434-124">To associate an Azure AD application with your Dev Center account and retrieve the required values:</span></span>
 
-Azure AD アプリケーションをデベロッパー センター アカウントに関連付け、必要な値を取得するには:
+1.  <span data-ttu-id="54434-125">デベロッパー センターで、**[アカウント設定]** に移動して **[ユーザーの管理]** をクリックし、[組織のデベロッパー センター アカウントを組織の Azure AD ディレクトリに関連付けます](../publish/associate-azure-ad-with-dev-center.md)。</span><span class="sxs-lookup"><span data-stu-id="54434-125">In Dev Center, go to your **Account settings**, click **Manage users**, and [associate your organization's Dev Center account with your organization's Azure AD directory](../publish/associate-azure-ad-with-dev-center.md).</span></span>
 
-1.  デベロッパー センターで、**[アカウント設定]** に移動して **[ユーザーの管理]** をクリックし、組織のデベロッパー センター アカウントを組織の Azure AD ディレクトリに関連付けます。 詳しい手順については、「[アカウント ユーザーの管理](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)」をご覧ください。
+2.  <span data-ttu-id="54434-126">**[ユーザーの管理]** ページで、**[Azure AD アプリケーションの追加]** をクリックして、デベロッパー センター アカウントの分析データへのアクセスに使うアプリやサービスを表す Azure AD アプリケーションを追加し、**マネージャー** ロールを割り当てます。</span><span class="sxs-lookup"><span data-stu-id="54434-126">In the **Manage users** page, click **Add Azure AD applications**, add the Azure AD application that represents the app or service that you will use to access analytics data for your Dev Center account, and assign it the **Manager** role.</span></span> <span data-ttu-id="54434-127">このアプリケーションが既に Azure AD ディレクトリに存在する場合、**[Azure AD アプリケーションの追加]** ページで選んでデベロッパー センター アカウントに追加できます。</span><span class="sxs-lookup"><span data-stu-id="54434-127">If this application already exists in your Azure AD directory, you can select it on the **Add Azure AD applications** page to add it to your Dev Center account.</span></span> <span data-ttu-id="54434-128">それ以外の場合、**[Azure AD アプリケーションの追加]** ページで新しい Azure AD アプリケーションを作成できます。</span><span class="sxs-lookup"><span data-stu-id="54434-128">Otherwise, you can create a new Azure AD application on the **Add Azure AD applications** page.</span></span> <span data-ttu-id="54434-129">詳しくは、[Azure AD アプリケーションをデベロッパー センター アカウントに追加する方法](../publish/add-users-groups-and-azure-ad-applications.md#azure-ad-applications)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="54434-129">For more information, see [Add Azure AD applications to your Dev Center account](../publish/add-users-groups-and-azure-ad-applications.md#azure-ad-applications).</span></span>
 
-2.  **[ユーザーの管理]** ページで、**[Azure AD アプリケーションの追加]** をクリックして、デベロッパー センター アカウントの分析データへのアクセスに使うアプリやサービスを表す Azure AD アプリケーションを追加し、**マネージャー** ロールを割り当てます。 このアプリケーションが既に Azure AD ディレクトリに存在する場合、**[Azure AD アプリケーションの追加]** ページで選んでデベロッパー センター アカウントに追加できます。 それ以外の場合、**[Azure AD アプリケーションの追加]** ページで新しい Azure AD アプリケーションを作成できます。 詳しくは、「[Azure AD アプリケーションを追加して管理する](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)」をご覧ください。
+3.  <span data-ttu-id="54434-130">**[ユーザーの管理]** ページに戻り、Azure AD アプリケーションの名前をクリックしてアプリケーション設定に移動し、**[テナント ID]** と **[クライアント ID]** の値を書き留めます。</span><span class="sxs-lookup"><span data-stu-id="54434-130">Return to the **Manage users** page, click the name of your Azure AD application to go to the application settings, and copy down the **Tenant ID** and **Client ID** values.</span></span>
 
-3.  **[ユーザーの管理]** ページに戻り、Azure AD アプリケーションの名前をクリックしてアプリケーション設定に移動し、**[テナント ID]** と **[クライアント ID]** の値を書き留めます。
-
-4. **[新しいキーの追加]** をクリックします。 次の画面で、**[キー]** の値を書き留めます。 このページから離れると、この情報に再度アクセスすることはできません。 詳しくは、「[Azure AD アプリケーションを追加して管理する](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)」でキーの管理に関する情報をご覧ください。
+4. <span data-ttu-id="54434-131">**[新しいキーの追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="54434-131">Click **Add new key**.</span></span> <span data-ttu-id="54434-132">次の画面で、**[キー]** の値を書き留めます。</span><span class="sxs-lookup"><span data-stu-id="54434-132">On the following screen, copy down the **Key** value.</span></span> <span data-ttu-id="54434-133">このページから離れると、この情報に再度アクセスすることはできません。</span><span class="sxs-lookup"><span data-stu-id="54434-133">You won't be able to access this info again after you leave this page.</span></span> <span data-ttu-id="54434-134">詳しくは、[Azure AD アプリケーションのキーを管理する方法](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="54434-134">For more information, see [Manage keys for an Azure AD application](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys).</span></span>
 
 <span id="obtain-an-azure-ad-access-token" />
-## <a name="step-2-obtain-an-azure-ad-access-token"></a>手順 2: Azure AD のアクセス トークンを取得する
+## <a name="step-2-obtain-an-azure-ad-access-token"></a><span data-ttu-id="54434-135">手順 2: Azure AD のアクセス トークンを取得する</span><span class="sxs-lookup"><span data-stu-id="54434-135">Step 2: Obtain an Azure AD access token</span></span>
 
-Windows ストア分析 API で任意のメソッドを呼び出す前に、API 内の各メソッドの **Authorization** ヘッダーに渡す Azure AD アクセス トークンをまず取得する必要があります アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れた後は、トークンを更新してそれ以降の API 呼び出しで引き続き使用できます。
+<span data-ttu-id="54434-136">Windows ストア分析 API で任意のメソッドを呼び出す前に、API 内の各メソッドの **Authorization** ヘッダーに渡す Azure AD アクセス トークンをまず取得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="54434-136">Before you call any of the methods in the Windows Store analytics API, you must first obtain an Azure AD access token that you pass to the **Authorization** header of each method in the API.</span></span> <span data-ttu-id="54434-137">アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。</span><span class="sxs-lookup"><span data-stu-id="54434-137">After you obtain an access token, you have 60 minutes to use it before it expires.</span></span> <span data-ttu-id="54434-138">トークンの有効期限が切れた後は、トークンを更新してそれ以降の API 呼び出しで引き続き使用できます。</span><span class="sxs-lookup"><span data-stu-id="54434-138">After the token expires, you can refresh the token so you can continue to use it in further calls to the API.</span></span>
 
-アクセス トークンを取得するには、「[クライアント資格情報を使用したサービス間の呼び出し](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/)」の手順に従って、HTTP POST を ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` エンドポイントに送信します。 要求の例を次に示します。
+<span data-ttu-id="54434-139">アクセス トークンを取得するには、「[クライアント資格情報を使用したサービス間の呼び出し](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/)」の手順に従って、HTTP POST を ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` エンドポイントに送信します。</span><span class="sxs-lookup"><span data-stu-id="54434-139">To obtain the access token, follow the instructions in [Service to Service Calls Using Client Credentials](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) to send an HTTP POST to the ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` endpoint.</span></span> <span data-ttu-id="54434-140">要求の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="54434-140">Here is a sample request.</span></span>
 
 ```
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
@@ -65,32 +64,40 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-POST URI の *tenant\_id* の値と *client \_id* および *client \_secret* のパラメーターには、前のセクションでデベロッパー センターから取得したテナント ID、クライアント ID、キーを指定します。 *resource* パラメーターには、```https://manage.devcenter.microsoft.com``` を指定します。
+<span data-ttu-id="54434-141">POST URI の *tenant\_id* の値と *client \_id* および *client \_secret* のパラメーターには、前のセクションでデベロッパー センターから取得したテナント ID、クライアント ID、キーを指定します。</span><span class="sxs-lookup"><span data-stu-id="54434-141">For the *tenant\_id* value in the POST URI and the *client\_id* and *client\_secret* parameters, specify the tenant ID, client ID and the key for your application that you retrieved from Dev Center in the previous section.</span></span> <span data-ttu-id="54434-142">*resource* パラメーターには、```https://manage.devcenter.microsoft.com``` を指定します。</span><span class="sxs-lookup"><span data-stu-id="54434-142">For the *resource* parameter, you must specify ```https://manage.devcenter.microsoft.com```.</span></span>
 
-アクセス トークンの有効期限が切れた後は、[この](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)手順に従って更新できます。
+<span data-ttu-id="54434-143">アクセス トークンの有効期限が切れた後は、[この](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)手順に従って更新できます。</span><span class="sxs-lookup"><span data-stu-id="54434-143">After your access token expires, you can refresh it by following the instructions [here](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens).</span></span>
 
 <span id="call-the-windows-store-analytics-api" />
-## <a name="step-3-call-the-windows-store-analytics-api"></a>手順 3: Windows ストア分析 API を呼び出す
+## <a name="step-3-call-the-windows-store-analytics-api"></a><span data-ttu-id="54434-144">手順 3: Windows ストア分析 API を呼び出す</span><span class="sxs-lookup"><span data-stu-id="54434-144">Step 3: Call the Windows Store analytics API</span></span>
 
-Azure AD アクセス トークンを取得したら、Windows ストア分析 API を呼び出すことができます。 各メソッドの構文については、次の記事をご覧ください。 各メソッドの **Authorization** ヘッダーにアクセス トークンを渡す必要があります。
+<span data-ttu-id="54434-145">Azure AD アクセス トークンを取得したら、Windows ストア分析 API を呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="54434-145">After you have an Azure AD access token, you are ready to call the Windows Store analytics API.</span></span> <span data-ttu-id="54434-146">各メソッドの構文については、次の記事をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="54434-146">For information about the syntax of each method, see the following articles.</span></span> <span data-ttu-id="54434-147">各メソッドの **Authorization** ヘッダーにアクセス トークンを渡す必要があります。</span><span class="sxs-lookup"><span data-stu-id="54434-147">You must pass the access token to the **Authorization** header of each method.</span></span>
 
-| シナリオ       | 説明      |
+| <span data-ttu-id="54434-148">シナリオ</span><span class="sxs-lookup"><span data-stu-id="54434-148">Scenario</span></span>       | <span data-ttu-id="54434-149">メソッド</span><span class="sxs-lookup"><span data-stu-id="54434-149">Methods</span></span>      |
 |---------------|--------------------|
-| 取得 |  アプリとアドオンの取得データを取得します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[アプリの取得数の取得](get-app-acquisitions.md)</li><li>[アドオンの取得数の取得](get-in-app-acquisitions.md)</li></ul> |
-| エラー | アプリのエラーに関するデータを取得します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[エラー報告データの取得](get-error-reporting-data.md)</li><li>[アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)</li><li>[アプリのエラーに関するスタック トレースの取得](get-the-stack-trace-for-an-error-in-your-app.md)</li></ul> |
-| 評価とレビュー | アプリの評価とレビュー情報を取得します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[アプリの評価の取得](get-app-ratings.md)</li><li>[アプリのレビューの取得](get-app-reviews.md)</li></ul> |
-| アプリ内広告と広告キャンペーン | アプリ内広告とプロモーションの広告キャンペーンのパフォーマンス データを取得します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[広告のパフォーマンス データの取得](get-ad-performance-data.md)</li><li>[広告キャンペーンのパフォーマンス データの取得](get-ad-campaign-performance-data.md)</li></ul> |
+| <span data-ttu-id="54434-150">入手、コンバージョン、およびインストール</span><span class="sxs-lookup"><span data-stu-id="54434-150">Acquisitions, conversions, and installs</span></span> |  <ul><li>[<span data-ttu-id="54434-151">アプリの入手数の取得</span><span class="sxs-lookup"><span data-stu-id="54434-151">Get app acquisitions</span></span>](get-app-acquisitions.md)</li><li>[<span data-ttu-id="54434-152">アプリの入手に関するファネル データの取得</span><span class="sxs-lookup"><span data-stu-id="54434-152">Get app acquisition funnel data</span></span>](get-acquisition-funnel-data.md)</li><li>[<span data-ttu-id="54434-153">チャネルごとのアプリのコンバージョンの取得</span><span class="sxs-lookup"><span data-stu-id="54434-153">Get app conversions by channel</span></span>](get-app-conversions-by-channel.md)</li><li>[<span data-ttu-id="54434-154">アドオンの入手数の取得</span><span class="sxs-lookup"><span data-stu-id="54434-154">Get add-on acquisitions</span></span>](get-in-app-acquisitions.md)</li><li>[<span data-ttu-id="54434-155">チャネルごとのアドオンのコンバージョンの取得</span><span class="sxs-lookup"><span data-stu-id="54434-155">Get add-on conversions by channel</span></span>](get-add-on-conversions-by-channel.md)</li><li>[<span data-ttu-id="54434-156">アプリのインストール数の取得</span><span class="sxs-lookup"><span data-stu-id="54434-156">Get app installs</span></span>](get-app-installs.md)</li></ul> |
+| <span data-ttu-id="54434-157">アプリのエラー</span><span class="sxs-lookup"><span data-stu-id="54434-157">App errors</span></span> | <ul><li>[<span data-ttu-id="54434-158">エラー報告データの取得</span><span class="sxs-lookup"><span data-stu-id="54434-158">Get error reporting data</span></span>](get-error-reporting-data.md)</li><li>[<span data-ttu-id="54434-159">アプリのエラーに関する詳細情報の取得</span><span class="sxs-lookup"><span data-stu-id="54434-159">Get details for an error in your app</span></span>](get-details-for-an-error-in-your-app.md)</li><li>[<span data-ttu-id="54434-160">アプリのエラーに関するスタック トレースの取得</span><span class="sxs-lookup"><span data-stu-id="54434-160">Get the stack trace for an error in your app</span></span>](get-the-stack-trace-for-an-error-in-your-app.md)</li></ul> |
+| <span data-ttu-id="54434-161">評価とレビュー</span><span class="sxs-lookup"><span data-stu-id="54434-161">Ratings and reviews</span></span> | <ul><li>[<span data-ttu-id="54434-162">アプリの評価の取得</span><span class="sxs-lookup"><span data-stu-id="54434-162">Get app ratings</span></span>](get-app-ratings.md)</li><li>[<span data-ttu-id="54434-163">アプリのレビューの取得</span><span class="sxs-lookup"><span data-stu-id="54434-163">Get app reviews</span></span>](get-app-reviews.md)</li></ul> |
+| <span data-ttu-id="54434-164">アプリ内広告と広告キャンペーン</span><span class="sxs-lookup"><span data-stu-id="54434-164">In-app ads and ad campaigns</span></span> | <ul><li>[<span data-ttu-id="54434-165">広告のパフォーマンス データの取得</span><span class="sxs-lookup"><span data-stu-id="54434-165">Get ad performance data</span></span>](get-ad-performance-data.md)</li><li>[<span data-ttu-id="54434-166">広告キャンペーンのパフォーマンス データの取得</span><span class="sxs-lookup"><span data-stu-id="54434-166">Get ad campaign performance data</span></span>](get-ad-campaign-performance-data.md)</li></ul> |
 
-## <a name="code-example"></a>コードの例
+<span data-ttu-id="54434-167">次の追加のメソッドは、[Windows ハードウェア デベロッパー センター プログラム](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)に参加している開発者アカウントで利用できます。</span><span class="sxs-lookup"><span data-stu-id="54434-167">The following additional methods are available for use by developer accounts that belong to the [Windows Hardware Dev Center program](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard).</span></span>
 
-次のコード例は、Azure AD アクセス トークンを取得し、C# コンソール アプリから Windows ストア分析 API を呼び出す方法を示しています。 このコード例を使う場合は、変数 *tenantId*、*clientId*、*clientSecret*、および *appID* を自分のシナリオに合った適切な値に割り当ててください。 この例では、Windows ストア分析 API から返される JSON データを逆シリアル化するときに、Newtonsoft から提供されている [Json.NET パッケージ](http://www.newtonsoft.com/json) が必要になります。
+| <span data-ttu-id="54434-168">シナリオ</span><span class="sxs-lookup"><span data-stu-id="54434-168">Scenario</span></span>       | <span data-ttu-id="54434-169">メソッド</span><span class="sxs-lookup"><span data-stu-id="54434-169">Methods</span></span>      |
+|---------------|--------------------|
+| <span data-ttu-id="54434-170">Windows 10 ドライバーのエラー (IHV 向け)</span><span class="sxs-lookup"><span data-stu-id="54434-170">Errors in Windows 10 drivers (for IHVs)</span></span> |  <ul><li>[<span data-ttu-id="54434-171">Windows 10 のドライバーに関するエラー報告データを取得する</span><span class="sxs-lookup"><span data-stu-id="54434-171">Get error reporting data for Windows 10 drivers</span></span>](get-error-reporting-data-for-windows-10-drivers.md)</li><li>[<span data-ttu-id="54434-172">Windows 10 のドライバー エラーに関する詳細を取得する</span><span class="sxs-lookup"><span data-stu-id="54434-172">Get details for a Windows 10 driver error</span></span>](get-details-for-a-windows-10-driver-error.md)</li><li>[<span data-ttu-id="54434-173">Windows 10 のドライバー エラーに関する CAB ファイルをダウンロードする</span><span class="sxs-lookup"><span data-stu-id="54434-173">Download the CAB file for a Windows 10 driver error</span></span>](download-the-cab-file-for-a-windows-10-driver-error.md)</li></ul> |
+| <span data-ttu-id="54434-174">Windows 7/Windows 8.x ドライバーのエラー (IHV 向け)</span><span class="sxs-lookup"><span data-stu-id="54434-174">Errors in Windows 7/Windows 8.x drivers (for IHVs)</span></span> |  <ul><li>[<span data-ttu-id="54434-175">Windows 7 や Windows 8.x のドライバーに関するエラー報告データを取得する</span><span class="sxs-lookup"><span data-stu-id="54434-175">Get error reporting data for Windows 7 and Windows 8.x drivers</span></span>](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)</li><li>[<span data-ttu-id="54434-176">Windows 7 や Windows 8.x のドライバー エラーに関する詳細を取得する</span><span class="sxs-lookup"><span data-stu-id="54434-176">Get details for a Windows 7 or Windows 8.x driver error</span></span>](get-details-for-a-windows-7-or-windows-8.x-driver-error.md)</li><li>[<span data-ttu-id="54434-177">Windows 7 や Windows 8.x のドライバー エラーに関する CAB ファイルをダウンロードする</span><span class="sxs-lookup"><span data-stu-id="54434-177">Download the CAB file for a Windows 7 or Windows 8.x driver error</span></span>](download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md)</li></ul> |
+| <span data-ttu-id="54434-178">ハードウェア エラー (OEM 向け)</span><span class="sxs-lookup"><span data-stu-id="54434-178">Hardware errors (for OEMs)</span></span> |  <ul><li>[<span data-ttu-id="54434-179">OEM ハードウェア エラー報告データを取得する</span><span class="sxs-lookup"><span data-stu-id="54434-179">Get OEM hardware error reporting data</span></span>](get-oem-hardware-error-reporting-data.md)</li><li>[<span data-ttu-id="54434-180">OEM ハードウェア エラーの詳細を取得する</span><span class="sxs-lookup"><span data-stu-id="54434-180">Get details for an OEM hardware error</span></span>](get-details-for-an-oem-hardware-error.md)</li><li>[<span data-ttu-id="54434-181">OEM ハードウェア エラーの CAB ファイルをダウンロードする</span><span class="sxs-lookup"><span data-stu-id="54434-181">Download the CAB file for an OEM hardware error</span></span>](download-the-cab-file-for-an-oem-hardware-error.md)</li></ul> |
+
+## <a name="code-example"></a><span data-ttu-id="54434-182">コードの例</span><span class="sxs-lookup"><span data-stu-id="54434-182">Code example</span></span>
+
+<span data-ttu-id="54434-183">次のコード例は、Azure AD アクセス トークンを取得し、C# コンソール アプリから Windows ストア分析 API を呼び出す方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="54434-183">The following code example demonstrates how to obtain an Azure AD access token and call the Windows Store analytics API from a C# console app.</span></span> <span data-ttu-id="54434-184">このコード例を使う場合は、変数 *tenantId*、*clientId*、*clientSecret*、および *appID* を自分のシナリオに合った適切な値に割り当ててください。</span><span class="sxs-lookup"><span data-stu-id="54434-184">To use this code example, assign the *tenantId*, *clientId*, *clientSecret*, and *appID* variables to the appropriate values for your scenario.</span></span> <span data-ttu-id="54434-185">この例では、Windows ストア分析 API から返される JSON データを逆シリアル化するときに、Newtonsoft から提供されている [Json.NET パッケージ](http://www.newtonsoft.com/json) が必要になります。</span><span class="sxs-lookup"><span data-stu-id="54434-185">This example requires the [Json.NET package](http://www.newtonsoft.com/json) from Newtonsoft to deserialize the JSON data returned by the Windows Store analytics API.</span></span>
 
 > [!div class="tabbedCodeSnippets"]
-[!code-cs[AnalyticsApi](./code/StoreServicesExamples_Analytics/cs/Program.cs#AnalyticsApiExample)]
+[!code-cs[<span data-ttu-id="54434-186">AnalyticsApi</span><span class="sxs-lookup"><span data-stu-id="54434-186">AnalyticsApi</span></span>](./code/StoreServicesExamples_Analytics/cs/Program.cs#AnalyticsApiExample)]
 
-## <a name="error-responses"></a>エラー応答
+## <a name="error-responses"></a><span data-ttu-id="54434-187">エラー応答</span><span class="sxs-lookup"><span data-stu-id="54434-187">Error responses</span></span>
 
-Windows ストア分析 API は、エラー コードとメッセージが含まれた JSON オブジェクトにエラー応答を返します。 次の例は、無効なパラメーターに対するエラー応答を示しています。
+<span data-ttu-id="54434-188">Windows ストア分析 API は、エラー コードとメッセージが含まれた JSON オブジェクトにエラー応答を返します。</span><span class="sxs-lookup"><span data-stu-id="54434-188">The Windows Store analytics API returns error responses in a JSON object that contains error codes and messages.</span></span> <span data-ttu-id="54434-189">次の例は、無効なパラメーターに対するエラー応答を示しています。</span><span class="sxs-lookup"><span data-stu-id="54434-189">The following example demonstrates an error response caused by an invalid parameter.</span></span>
 
 ```json
 {
@@ -110,16 +117,3 @@ Windows ストア分析 API は、エラー コードとメッセージが含ま
     "source":"AnalyticsAPI"
 }
 ```
-
-## <a name="related-topics"></a>関連トピック
-
-* [アプリの入手数の取得](get-app-acquisitions.md)
-* [アドオンの入手数の取得](get-in-app-acquisitions.md)
-* [エラー報告データの取得](get-error-reporting-data.md)
-* [アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)
-* [アプリのエラーに関するスタック トレースの取得](get-the-stack-trace-for-an-error-in-your-app.md)
-* [アプリの評価の取得](get-app-ratings.md)
-* [アプリのレビューの取得](get-app-reviews.md)
-* [広告のパフォーマンス データの取得](get-ad-performance-data.md)
-* [プロモーション キャンペーンのパフォーマンス データの取得](get-ad-campaign-performance-data.md)
-

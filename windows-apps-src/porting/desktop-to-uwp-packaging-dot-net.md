@@ -1,327 +1,176 @@
 ---
-author: awkoren
-Description: "このガイドでは、変換されたデスクトップ ブリッジ アプリを編集、デバッグ、パッケージ化するために Visual Studio ソリューションを構成する方法について説明します。"
+author: normesta
+Description: "このガイドでは、デスクトップ ブリッジに関して、デスクトップ アプリを編集、デバッグ、パッケージ化するために Visual Studio ソリューションを構成する方法について説明します。"
 Search.Product: eADQiWindows 10XVcnh
-title: "Visual Studio による .NET デスクトップ アプリ用デスクトップ ブリッジ パッケージ ガイド"
-ms.author: alkoren
-ms.date: 02/08/2017
+title: "Visual Studio を使ったアプリのパッケージ化 (デスクトップ ブリッジ)"
+ms.author: normesta
+ms.date: 07/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 8aa68312d6ce81c809c79ddcafe7732944a628be
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: d8919448b965f18ff7f8fdaeda325889e495ef85
+ms.sourcegitcommit: f6dd9568eafa10ee5cb2b849c0d82d84a1c5fb93
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/02/2017
 ---
+# <a name="package-an-app-by-using-visual-studio-desktop-bridge"></a><span data-ttu-id="7b9ab-104">Visual Studio を使ったアプリのパッケージ化 (デスクトップ ブリッジ)</span><span class="sxs-lookup"><span data-stu-id="7b9ab-104">Package an app by using Visual Studio (Desktop Bridge)</span></span>
 
-# <a name="desktop-bridge-packaging-guide-for-net-desktop-apps-with-visual-studio"></a>Visual Studio による .NET デスクトップ アプリ用デスクトップ ブリッジ パッケージ ガイド
+<span data-ttu-id="7b9ab-105">Visual Studio を使用して、デスクトップ アプリのパッケージを生成できます。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-105">You can use Visual Studio to generate a package for your desktop app.</span></span> <span data-ttu-id="7b9ab-106">その後、そのパッケージを Windows ストアに公開したり、1 台以上の PC にサイドローディングしたりすることができます。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-106">Then, you can publish that package to the Windows store or sideload it onto one or more PCs.</span></span>
 
-Windows 10 Anniversary Update により、開発者は、デスクトップ ブリッジを使用して、既存の Win32 アプリを新しいパッケージ モデル (.appx) でパッケージ化することができ、ストアでの公開やサイドローディングが容易になりました。 このガイドでは、アプリを編集、デバッグ、パッケージ化できるように Visual Studio ソリューションを構成する方法について説明します。 
+<span data-ttu-id="7b9ab-107">このガイドでは、ソリューションをセットアップして、デスクトップ アプリケーションのパッケージを生成する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-107">This guide shows you how to set up your solution and then generate a package for your desktop application.</span></span>
 
-始めるには、まず「[デスクトップ ブリッジを活用して、既存のアプリやゲームを Windows ストアに移行しましょう](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge)」のフォームに記入してください。 Microsoft から、オンボード プロセスを開始するためのご連絡があります。 アカウントでデスクトップ ブリッジ アプリを提出することが承認されたら、このドキュメントの手順に従って、appxupload パッケージをアップロードする準備をしてください。 
+## <a name="first-consider-how-youll-distribute-your-app"></a><span data-ttu-id="7b9ab-108">まず、アプリの配布方法を検討する</span><span class="sxs-lookup"><span data-stu-id="7b9ab-108">First, consider how you'll distribute your app</span></span>
 
-> デスクトップ ブリッジの使用時に発生した問題のフィードバックをお寄せいただく場合は、以下を参考にしてください。 機能のご提案については、[Windows 開発者向け UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial) までお寄せください。 ご質問やバグ レポートについては、[ユニバーサル Windows アプリ開発者向けフォーラム](https://social.msdn.microsoft.com/Forums/home?forum=wpdevelop)をご利用ください。
+<span data-ttu-id="7b9ab-109">アプリを [Windows ストア](https://www.microsoft.com/store/apps)に公開する予定であれば、[このフォーム](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge)への記入から開始します。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-109">If you plan to publish your app to the [Windows Store](https://www.microsoft.com/store/apps), start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge).</span></span> <span data-ttu-id="7b9ab-110">Microsoft から、オンボード プロセスを開始するための連絡があります。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-110">Microsoft will contact you to start the onboarding process.</span></span> <span data-ttu-id="7b9ab-111">このプロセスでは、ストア内の名前を予約し、アプリをパッケージ化するための情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-111">As part of this process, you'll reserve a name in the store, and obtain information that you'll need to package your app.</span></span>
 
-## <a name="default-universal-windows-platform-packages"></a>既定のユニバーサル Windows プラットフォーム パッケージ
+## <a name="add-a-packaging-project-to-your-solution"></a><span data-ttu-id="7b9ab-112">パッケージ プロジェクトをソリューションに追加する</span><span class="sxs-lookup"><span data-stu-id="7b9ab-112">Add a packaging project to your solution</span></span>
 
-Visual Studio では、Windows ストアやアプリのサイドローディングを使って配布できるパッケージを生成、デバッグ、リリースすることができます。 パッケージを容易に作成できるように、Visual Studio は以下の作成機能を備えています。 ストアへの提出に対応した appxupload ファイル。 詳しくは、「[UWP アプリのパッケージ化](..\packaging\packaging-uwp-apps.md)」をご覧ください。
+1. <span data-ttu-id="7b9ab-113">Visual Studio で、デスクトップ アプリケーション プロジェクトが含まれたソリューションを開きます。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-113">In Visual Studio, open the solution that contains your desktop application project.</span></span>
 
-## <a name="desktop-bridge-packages"></a>デスクトップ ブリッジ パッケージ
+2. <span data-ttu-id="7b9ab-114">ソリューションに JavaScript の **[空白のアプリ (ユニバーサル Windows)]** プロジェクトを追加します。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-114">Add a JavaScript **Blank App (Universal Windows)** project to your solution.</span></span>
 
-[デスクトップ ブリッジ](desktop-to-uwp-root.md)によって、さまざまな構成で、Win32 バイナリをアプリケーション パッケージ (appx) に統合することができます。 デスクトップ ブリッジの処理は、4 つの重要なステップを経て進んでいくと考えることができます。 
+   <span data-ttu-id="7b9ab-115">コードを追加する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-115">You won't have to add any code to it.</span></span> <span data-ttu-id="7b9ab-116">プロジェクトを追加したのは単にパッケージを生成するためです。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-116">It's just there to generate a package for you.</span></span> <span data-ttu-id="7b9ab-117">このプロジェクトを "パッケージ プロジェクト" と呼びます。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-117">We'll refer to this project as the "packaging project".</span></span>
 
-- **ステップ 1 - 変換**: コード変更をせずに、または最小限のコード変更で、既存の Win32 バイナリをパッケージ化します。
-- **ステップ 2 - 強化**: 既存の Win32 コードから Windows.winmd を参照することによって、既存のアプリにいくつかの基本的な UWP 機能 (ライブ タイルなど) を含めます。
-- **ステップ 3 - 拡張**: 既存のアプリと共に高度な UWP 機能 (バックグラウンド タスクなど) を含めます。 UWP コンポーネントと Win32 コンポーネントがマネージ言語 (C# や VB.Net など) を使って構築されている場合、結果のパッケージには、適切な .NET Native の処理を保証するために慎重に処理する必要があるバイナリが混在します。 
-- **ステップ 4 - 移行**: UI を最新の XAML と C#/VB.NET に移行しましたが、従来の Win32 コードも残っています。 この時点でのエントリ ポイントは UWP .NET 実行可能ファイルですが、まだ一部の Win32 API を使用するバイナリがパッケージ内に存在します。
+   ![JavaScript の UWP プロジェクト](images/desktop-to-uwp/javascript-uwp-project.png)
 
-次の表に、4 つのステップでのアプリの相違点の概要を示します。 
+   >[!IMPORTANT]
+   ><span data-ttu-id="7b9ab-119">通常、このプロジェクトには JavaScript バージョンを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-119">In general, you should use the JavaScript version of this project.</span></span>  <span data-ttu-id="7b9ab-120">C#、VB.NET、および C++ バージョンにはいくつかの問題があります。これらを使用する場合は、作業を行う前に[既知の問題](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-known-issues#known-issues-anchor)のガイドをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-120">The C#, VB.NET, and C++ versions have a few issues but if you want to use of those, see the [Known Issues](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-known-issues#known-issues-anchor) guide before you do.</span></span>
 
-| ステップ | バイナリ | エントリ ポイント | .NET Native | F5 デバッグ |
-|---|---|---|---|---|
-| 1 (変換) | Win32 | Win32 | 該当なし | VS 拡張機能 |
-| 2 (強化) | WinMD を参照 | Win32 | 該当なし | VS 拡張機能 |
-| 3 (拡張) | Win32 + CoreCLR (*) | Win32 | ユーザーが処理 (**) | VS 拡張機能 |
-| 4 (移行)    | CoreCLR (*) + Win32 | UWP | ユーザーが処理 (**) | VS |
-| 5 (UWP) | CoreCLR | UWP |ストアが処理 | VS |
+## <a name="add-the-desktop-application-binaries-to-the-packaging-project"></a><span data-ttu-id="7b9ab-121">デスクトップ アプリケーション バイナリをパッケージ プロジェクトに追加する</span><span class="sxs-lookup"><span data-stu-id="7b9ab-121">Add the desktop application binaries to the packaging project</span></span>
 
-(*) [CoreCLR](https://github.com/dotnet/coreclr) は、マネージ言語 (C#/VB.NET) で記述された UWP コンポーネントが依存する .NET Core ランタイムを参照します。 これらのコンポーネントでは .NET Native 処理も必要です。
+<span data-ttu-id="7b9ab-122">パッケージ プロジェクトにバイナリを直接追加します。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-122">Add the binaries directly to the packaging project.</span></span>
 
-(**) ステップ 3 および 4 では、ストアに公開する前に、ユーザーが CoreCLR アセンブリを処理して、.NET ネイティブ バイナリと、対応するシンボルを生成する必要があります。
+1. <span data-ttu-id="7b9ab-123">**ソリューション エクスプローラー**で、パッケージ プロジェクト フォルダーを展開し、サブフォルダーを作成して、任意の名前 (**win32** など) を付けます。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-123">In **Solution Explorer**, expand the packaging project folder, create a subfolder, and name it whatever you want (For example: **win32**).</span></span>
 
-## <a name="configure-your-visual-studio-solution"></a>Visual Studio ソリューションの構成
+2. <span data-ttu-id="7b9ab-124">サブフォルダーを右クリックし、**[既存項目の追加]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-124">Right-click the subfolder, and then choose **Add Existing Item**.</span></span>
 
-Visual Studio には、マニフェスト エディターやパッケージの作成ウィザードなど、アプリケーション パッケージの構成に必要なツールが含まれています。 これらのツールを使用するには、アプリの appx コンテナーとして機能する UWP プロジェクトを作成する必要があります。 任意の UWP プロジェクト (C#、VB.NET、C++、JavaScript など) を使用できますが、C#、VB.NET、C++ のプロジェクトには既知の問題 (このドキュメントの「[既知の問題](#known-issues-anchor)」を参照) があるため、この例では JavaScript を使います。 
+3. <span data-ttu-id="7b9ab-125">**[既存項目の追加]** ダイアログ ボックスで、デスクトップ アプリケーションの出力フォルダーのファイルを見つけて、追加します。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-125">In the **Add Existing Item** dialog box, locate and then add the files from your desktop application's output folder.</span></span> <span data-ttu-id="7b9ab-126">これには、実行可能ファイルだけでなく、そのフォルダー内にある dll ファイルや .config ファイルも含まれます。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-126">This includes not just the executable files, but any dlls or .config files that are located in that folder.</span></span>
 
-appx アプリケーション モデルのコンテキストでアプリをデバッグする場合、F5 キーでの appx のデバッグを可能にする別のプロジェクトを追加する必要があります。 詳しくは、「[デスクトップ ブリッジ アプリのデバッグ](#debugging-anchor)」をご覧ください。
+   ![実行可能ファイルの参照](images/desktop-to-uwp/cpp-exe-reference.png)
 
-それでは、ステップ 1 から説明します。
+   <span data-ttu-id="7b9ab-128">デスクトップ アプリケーション プロジェクトに変更を加えるたびに、これらのファイルの新しいバージョンをパッケージ プロジェクトにコピーする必要があります。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-128">Every time you make a change to your desktop application project, you'll have to copy a new version of those files to the packaging project.</span></span> <span data-ttu-id="7b9ab-129">この作業を自動化するには、パッケージ プロジェクトのプロジェクト ファイルにビルド後のイベントを追加します。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-129">You can automate this by adding a post-build event to the project file of the packaging project.</span></span> <span data-ttu-id="7b9ab-130">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-130">Here's an example.</span></span>
 
-### <a name="step-1-convert"></a>ステップ 1: 変換
+   ```XML
+   <Target Name="PostBuildEvent">
+     <Copy SourceFiles="..\MyWindowsFormsApplication\bin\Debug\MyWindowsFormsApplication.exe"
+       DestinationFolder="win32" />
+     <Copy SourceFiles="..\MyWindowsFormsApplication\bin\Debug\MyWindowsFormsApplication.exe.config"
+       DestinationFolder="win32" />
+     <Copy SourceFiles="..\MyWindowsFormsApplication\bin\Debug\MyWindowsFormsApplication.pdb"
+       DestinationFolder="win32" />
+     <Copy SourceFiles="..\MyWindowsFormsApplication\bin\Debug\MyBusinessLogicLibrary.dll"
+       DestinationFolder="win32" />
+     <Copy SourceFiles="..\MyWindowsFormsApplication\bin\Debug\MyBusinessLogicLibrary.pdb"
+       DestinationFolder="win32" />
+   </Target>
+   ```
 
-このステップでは、既存の Win32 プロジェクトからデスクトップ ブリッジ アプリを作成する方法を示しています。 この例では、レジストリに対して読み取りと書き込みの操作を実行する、基本的な WinForms プロジェクトを使用します。
+## <a name="modify-the-package-manifest"></a><span data-ttu-id="7b9ab-131">パッケージ マニフェストの変更</span><span class="sxs-lookup"><span data-stu-id="7b9ab-131">Modify the package manifest</span></span>
 
-![](images/desktop-to-uwp/net-1.png)
+<span data-ttu-id="7b9ab-132">パッケージ プロジェクトには、パッケージの設定を記述したファイルが含まれます。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-132">The packaging project contains a file that describes the settings of your package.</span></span> <span data-ttu-id="7b9ab-133">既定では、このファイルには UWP アプリが記述されています。そのため、完全信頼で実行されるデスクトップ アプリケーションがパッケージに含まれていることをシステムで認識するように、このファイルを変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-133">By default, this file describes a UWP app, so you'll have to modify it so that the system understands that your package includes a desktop application that runs in full trust.</span></span>  
 
-#### <a name="add-the-uwp-project"></a>UWP プロジェクトを追加する 
+1. <span data-ttu-id="7b9ab-134">**ソリューション エクスプ ローラー**で、パッケージ プロジェクトを展開し、**package.appxmanifest** ファイルを右クリックして、**[コードの表示]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-134">In **Solution Explorer**, expand the packaging project, right-click the **package.appxmanifest** file, and then choose **View Code**.</span></span>
 
-デスクトップ ブリッジ パッケージを作成するには、同じソリューションに JavaScript UWP プロジェクトを追加します。
+   ![.NET プロジェクトの参照](images/desktop-to-uwp/reference-dotnet-project.png)
 
-> 注: JavaScript UWP テンプレートを使用していますが、JavaScript コードは何も記述しません。 ツールとしてプロジェクトを使用しているだけです。
+2. <span data-ttu-id="7b9ab-136">次の名前空間をファイルの先頭に追加してから、``IgnorableNamespaces`` のリストに名前空間のプレフィックスを追加します。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-136">Add this namespace to the top of the file, and add the namespace prefix to the list of ``IgnorableNamespaces``.</span></span>
 
-![](images/desktop-to-uwp/net-2.png)
+   ```XML
+   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+   ```
+   <span data-ttu-id="7b9ab-137">作業が完了すると、名前空間の宣言は次のようになります。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-137">When you're done, your namespace declarations will look something like this:</span></span>
 
-#### <a name="add-the-win32-binaries-to-the-win32-folder"></a>win32 フォルダーに Win32 バイナリを追加する
+   ```XML
+   <Package
+     xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+     xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+     xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+     xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+     IgnorableNamespaces="uap mp rescap">
+   ```
 
-すべての Win32 バイナリは、UWP プロジェクトでは、win32 という名前のフォルダーに格納されます (ただし、正確にこの名前にする必要はありません。任意の名前を使用できます)。
+3. <span data-ttu-id="7b9ab-138">``TargetDeviceFamily`` 要素を見つけて、``Name`` 属性を **Windows.Desktop** に、``MinVersion`` 属性をパッケージ プロジェクトの最小バージョンに、``MaxVersionTested`` をパッケージ プロジェクトのターゲット バージョンにそれぞれ設定します。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-138">Find the ``TargetDeviceFamily`` element, and set the ``Name`` attribute to **Windows.Desktop**, the ``MinVersion`` attribute to the minimum version of the packaging project, and the ``MaxVersionTested`` to the target version of the packaging project.</span></span>
 
-Visual Studio を使用している場合、プロジェクトを自動化して各ビルドの後でファイルをコピーし、開発ワークフローを向上させることができます。 プロジェクト ファイル (この例では .csproj) を編集して、次のように、すべての Win32 出力ファイル を UWP プロジェクトの win32 フォルダーにコピーする AfterBuild ターゲットを含めます。 
+   ```XML
+   <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.10586.0" MaxVersionTested="10.0.15063.0" />
+   ```
 
-```xml
-  <Target Name="AfterBuild">
-    <PropertyGroup>
-      <TargetUWP>..\MyDesktopApp.Package\win32\</TargetUWP>
-    </PropertyGroup>
-     <ItemGroup>
-       <Win32Binaries Include="$(TargetDir)\*" />
-     </ItemGroup>
-    <Copy SourceFiles="@(Win32Binaries)" DestinationFolder="$(TargetUWP)" />
-  </Target>
-```
+   <span data-ttu-id="7b9ab-139">最小バージョンとターゲット バージョンは、パッケージ プロジェクトのプロパティ ページで確認できます。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-139">You can find the minimum version and target version in the property pages of the packaging project.</span></span>
 
-別のツールを使って Win32 バイナリを生成している場合は、実行時に必要なすべてのファイルを win32 フォルダーにコピーします。 
+   ![最小バージョンとターゲット バージョンの設定](images/desktop-to-uwp/min-target-version-settings.png)
 
-#### <a name="edit-the-app-manifest-to-enable-the-desktop-bridge-extensions"></a>アプリ マニフェストを編集してデスクトップ ブリッジ拡張機能を有効にする
 
-このテンプレートには、デスクトップ ブリッジ拡張機能を追加するために使用できる package.appxmanifest が含まれています。 このファイルを編集するには、右クリックして [コードの表示] を選択し、次の項目を追加または変更します。 
+4. <span data-ttu-id="7b9ab-141">``Application`` 要素から ``StartPage`` 属性を削除します。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-141">Remove the ``StartPage`` attribute from the ``Application`` element.</span></span> <span data-ttu-id="7b9ab-142">次に、``Executable`` 属性と ``EntryPoint`` 属性を追加します。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-142">Then, add the``Executable`` and ``EntryPoint`` attributes.</span></span>
 
-- `<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" IgnorableNamespaces="uap rescap">`
+   <span data-ttu-id="7b9ab-143">``Application`` 要素は次のようになります。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-143">The ``Application`` element will look like this.</span></span>
 
-- `<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.0" MaxVersionTested="10.0.14393.0" />`
+   ```XML
+   <Application Id="App"  Executable=" " EntryPoint=" ">
+   ```
 
-- `<rescap:Capability Name="runFullTrust" />`
+5. <span data-ttu-id="7b9ab-144">``Executable`` 属性を、デスクトップ アプリケーションの実行可能ファイルの名前に設定します。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-144">Set the ``Executable`` attribute to the name of your desktop application's executable file.</span></span> <span data-ttu-id="7b9ab-145">次に、``EntryPoint`` 属性を **Windows.FullTrustApplication** に設定します。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-145">Then, set the ``EntryPoint`` attribute to **Windows.FullTrustApplication**.</span></span>
 
-- `<Application Id="MyDesktopAppStep1" Executable="win32\MyDesktopApp.exe" EntryPoint="Windows.FullTrustApplication">`
+   <span data-ttu-id="7b9ab-146">``Application`` 要素は、次のようになります。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-146">The ``Application`` element will look similar to this.</span></span>
 
-マニフェスト ファイルの完全な例を次に示します。 
+   ```XML
+   <Application Id="App"  Executable="win32\MyWindowsFormsApplication.exe" EntryPoint="Windows.FullTrustApplication">
+   ```
+6. <span data-ttu-id="7b9ab-147">``runFullTrust`` 機能を ``Capabilities`` 要素に追加します。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-147">Add the ``runFullTrust`` capability to the ``Capabilities`` element.</span></span>
 
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
-        xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+   ```XML
+     <rescap:Capability Name="runFullTrust"/>
+   ```
+   <span data-ttu-id="7b9ab-148">この宣言の下に青い波線マークが表示される可能性がありますが、これは無視して問題ありません。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-148">Blue squiggly marks might appear beneath this declaration, but you can safely ignore them.</span></span>
 
-        xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
-        xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-        IgnorableNamespaces="uap rescap mp">
-  <Identity Name="MyDesktopAppStep1"
-            ProcessorArchitecture="x64"
-            Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
-            Version="1.0.0.5" />
-  <mp:PhoneIdentity PhoneProductId="6f6600a4-6da1-4d91-b493-35808d01f8de" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
-  <Properties>
-    <DisplayName>MyDesktopAppStep1</DisplayName>
-    <PublisherDisplayName>CN=Test</PublisherDisplayName>
-    <Logo>Assets\SampleAppx.150x150.png</Logo>
-  </Properties>
-  <Resources>
-    <Resource Language="en-us" />
-  </Resources>
-  <Dependencies>
-    <TargetDeviceFamily Name="Windows.Desktop" 
-                        MinVersion="10.0.14393.0" 
-                        MaxVersionTested="10.0.14393.0" />
-  </Dependencies>
-  <Capabilities>
-    <rescap:Capability Name="runFullTrust" />
-  </Capabilities>
-  <Applications>
-    <Application Id="MyDesktopAppStep1" 
-                 Executable="win32\MyDesktopApp.exe" 
-                 EntryPoint="Windows.FullTrustApplication">
-      <uap:VisualElements DisplayName="MyDesktopAppStep1" 
-                          Description="MyDesktopAppStep1" 
-                          BackgroundColor="#777777" 
-                          Square150x150Logo="Assets\SampleAppx.150x150.png" 
-                          Square44x44Logo="Assets\SampleAppx.44x44.png">
-      </uap:VisualElements>
-    </Application>
-  </Applications>
-</Package>
-```
+   >[!IMPORTANT]
+   <span data-ttu-id="7b9ab-149">C++ デスクトップ アプリケーションのパッケージを作成する場合は、アプリと共に Visual C++ ランタイムを展開できるように、マニフェスト ファイルにいくつか追加の変更を加えることが必要になります。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-149">If your creating a package for a C++ desktop application, you'll have to make a few extra changes to your manifest file so that you can deploy the Visual C++ runtimes along with your app.</span></span> <span data-ttu-id="7b9ab-150">[デスクトップ ブリッジ プロジェクトでの Visual C++ ランタイムの使用に関するページ](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project/)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-150">See [Using Visual C++ runtimes in a desktop bridge project](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project/).</span></span>
 
-#### <a name="configure-the-win32-binaries"></a>Win32 バイナリを構成する
+7. <span data-ttu-id="7b9ab-151">パッケージ プロジェクトをビルドし、エラーが表示されないことを確認します。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-151">Build the packaging project to ensure that no errors appear.</span></span>
 
-アプリが必要とするバイナリを出力パッケージに含めるには、Visual Studio で各ファイルを選択します。 プロパティを "コンテンツ" に、ビルドの動作を "新しい場合はコピーする" に設定します。 
+8. <span data-ttu-id="7b9ab-152">パッケージをテストする場合は、「[パッケージ デスクトップ アプリの実行、デバッグ、テスト (デスクトップ ブリッジ)](desktop-to-uwp-debug.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-152">If you want to test your package, see [Run, debug, and test a packaged desktop app (Desktop Bridge)](desktop-to-uwp-debug.md).</span></span>
 
-![](images/desktop-to-uwp/net-3.png)
+   <span data-ttu-id="7b9ab-153">その後、このガイドに戻ったら、次のセクションを確認してパッケージを生成します。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-153">Then, return to this guide, and see the next section to generate your package.</span></span>
 
-バイナリ ファイルをソース コードのリポジトリにコミットしない場合は、.gitignore ファイルを使用して win32 フォルダー内のすべてのファイルを除外することができます。 
+## <a name="generate-a-package"></a><span data-ttu-id="7b9ab-154">パッケージの生成</span><span class="sxs-lookup"><span data-stu-id="7b9ab-154">Generate a package</span></span>
 
-#### <a name="optional-use-wildcards-to-specify-the-files-in-your-win32-folder"></a>省略可能: ワイルドカードを使用して win32 フォルダー内のファイルを指定する
+<span data-ttu-id="7b9ab-155">アプリのパッケージを生成する方法については、「[UWP アプリのパッケージ化](..\packaging\packaging-uwp-apps.md)」のトピックのガイダンスに従ってください。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-155">To generate a package your app, follow the guidance described in this topic: [Packaging UWP Apps](..\packaging\packaging-uwp-apps.md).</span></span>
 
-Win32 アプリでいくつかのファイルを必要とする場合は、プロジェクト ファイルを編集してワイルドカードを使用し、ワイルドカード表現に基づいて "コンテンツ" としてマークする必要があるファイルを指定できます。 テキスト エディターで . jsproj ファイルを開き、次のように、必要なファイルを含める必要があります。
+<span data-ttu-id="7b9ab-156">**[パッケージの選択と構成]** 画面が表示されたら、いずれかのチェック ボックスを選択する前に、パッケージに含まれているバイナリの種類について少し考える必要があります。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-156">When you reach the **Select and Configure Packages** screen, Take a moment to consider what sorts of binaries you're including in your package before you select any of the checkboxes.</span></span>
 
-```xml
-<Content Include="win32\*.dll">
-  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-</Content>
-<Content Include="win32\*.exe">
-  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-</Content>
-<Content Include="win32\*.config">
-  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-</Content>
-<Content Include="win32\*.pdb">
-  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-</Content>
-```
+* <span data-ttu-id="7b9ab-157">C#、C++、または VB.NET ベースのユニバーサル Windows プラットフォーム プロジェクトをソリューションに追加してデスクトップ アプリケーションを[拡張](desktop-to-uwp-extend.md)している場合は、**[x86]** および **[x64]** のチェック ボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-157">If you've [extended](desktop-to-uwp-extend.md) your desktop application by adding a adding a C#, C++, or VB.NET-based Universal Windows Platform project to your solution, select the **x86** and **x64** checkboxes.</span></span>  
 
-### <a name="step-2-enhance"></a>ステップ 2: 強化
+* <span data-ttu-id="7b9ab-158">それ以外の場合は、**[ニュートラル]** チェック ボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-158">Otherwise, choose the **Neutral** checkbox.</span></span>
 
-Win32 コードから利用可能な UWP API を呼び出す場合は、`\Program Files (x86)\Windows Kits\10\UnionMetadata\Windows.winmd` への参照を追加する必要があります。 アプリで利用できるすべての UWP API の一覧については、「[デスクトップ ブリッジで変換されたアプリでサポートされている UWP API](desktop-to-uwp-supported-api.md)」をご覧ください。  
+>[!NOTE]
+<span data-ttu-id="7b9ab-159">サポート対象の各プラットフォームを明示的に選択することが必要になるのは、拡張したソリューションに、UWP プロジェクト用とデスクトップ プロジェクト用という、2 種類のバイナリが含まれているためです。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-159">The reason that you'd have to explicitly choose each supported platform is because an solution that you've extended contains two types of binaries; one for the UWP project and one for the desktop project.</span></span> <span data-ttu-id="7b9ab-160">これらはバイナリの種類が異なるため、.NET Native ではプラットフォームごとにネイティブ バイナリを明示的に生成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-160">Because these are different types of binaries, .NET Native needs to explicitly produce native binaries for each platform.</span></span>
 
-Windows 10では、このファイルは不要であるため配布する必要はありません。 参照のプロパティで、"ローカルにコピー" プロパティを False に設定します。
+<span data-ttu-id="7b9ab-161">パッケージを生成しようとするとエラーが表示される場合は、[既知の問題](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-known-issues#known-issues-anchor)のガイドをご覧ください。発生している問題がリスト内に見つからない場合は、その問題について[こちら](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)でお知らせください。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-161">If you receive errors when you attempt to generate your package, see the [Known Issues](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-known-issues#known-issues-anchor) guide and if your issue does not appear in that list, please share the issue with us [here](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).</span></span>
 
-![](images/desktop-to-uwp/net-4.png)
+## <a name="next-steps"></a><span data-ttu-id="7b9ab-162">次のステップ</span><span class="sxs-lookup"><span data-stu-id="7b9ab-162">Next steps</span></span>
 
-Win32 バイナリを追加するには、ステップ 1 と同じ手順を使用します。 
+**<span data-ttu-id="7b9ab-163">アプリを実行する/問題を検出して修正する</span><span class="sxs-lookup"><span data-stu-id="7b9ab-163">Run your app / find and fix issues</span></span>**
 
-### <a name="step-3-extend"></a>ステップ 3: 拡張 
+<span data-ttu-id="7b9ab-164">「[パッケージ デスクトップ アプリの実行、デバッグ、テスト (デスクトップ ブリッジ)](desktop-to-uwp-debug.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-164">See [Run, debug, and test a packaged desktop app (Desktop Bridge)](desktop-to-uwp-debug.md)</span></span>
 
-この例では、バックグラウンド タスクを使って Win32 アプリを拡張します。 そのためには、UWP アプリの package.appxmanifest にバックグラウンド タスクを登録し、以下に示すように、バックグラウンド タスクを実装するプロジェクトへの参照を追加する必要があります。
+**<span data-ttu-id="7b9ab-165">UWP API を追加してデスクトップ アプリを強化する</span><span class="sxs-lookup"><span data-stu-id="7b9ab-165">Enhance your desktop app by adding UWP APIs</span></span>**
 
-```xml
-<Extensions>
-  <Extension Category="windows.backgroundTasks" 
-              EntryPoint="BackgroundTasks.MyBackgroundTask">
-    <BackgroundTasks>
-      <Task Type="timer" />
-    </BackgroundTasks>
-  </Extension>
-</Extensions>
-```
+<span data-ttu-id="7b9ab-166">「[Windows 10 向けのデスクトップ アプリを強化する](desktop-to-uwp-enhance.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-166">See [Enhance your desktop application for Windows 10](desktop-to-uwp-enhance.md)</span></span>
 
-C# または VB.NET を使ってバックグラウンド タスクを実装する場合、ステップ 3 と 4 で説明するように、結果の出力には、ストアに提出する前に .NET Native ツール チェーンで処理する必要がある CoreCLR バイナリが含まれます。 混在するバイナリを使って appxupload を作成します。
+**<span data-ttu-id="7b9ab-167">UWP コンポーネントを追加してデスクトップ アプリを拡張する</span><span class="sxs-lookup"><span data-stu-id="7b9ab-167">Extend your desktop app by adding UWP components</span></span>**
 
-### <a name="step-4-migrate"></a>ステップ 4: 移行
+<span data-ttu-id="7b9ab-168">「[最新の UWP コンポーネントによるデスクトップ アプリケーションの拡張](desktop-to-uwp-extend.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-168">See [Extend your desktop application with modern UWP components](desktop-to-uwp-extend.md).</span></span>
 
-このシナリオでは、既に C# UWP エントリ ポイントがあるため、新しい UWP プロジェクトを追加する必要はありません。 ただし、ステップ 1 で説明した手順に従って、Win32 バイナリを追加し、構成する必要があります。
+**<span data-ttu-id="7b9ab-169">アプリを配布する</span><span class="sxs-lookup"><span data-stu-id="7b9ab-169">Distribute your app</span></span>**
 
-Win32 プロセスを実行するには、[**FullTrustProcessLauncher**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.FullTrustProcessLauncher) API を使用します。 この API を使用するには、次のように、デスクトップの拡張機能と *fullTrustProcess* 機能をアプリのマニフェストに追加する必要があります。 
+<span data-ttu-id="7b9ab-170">「[パッケージ デスクトップ アプリの配布 (デスクトップ ブリッジ)](desktop-to-uwp-distribute.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-170">See [Distribute a packaged desktop app (Desktop Bridge)](desktop-to-uwp-distribute.md)</span></span>
 
-```xml
-..
-xmlns:desktop=http://schemas.microsoft.com/appx/manifest/desktop/windows10
-..
-<desktop:Extension Category="windows.fullTrustProcess" 
-                    Executable="win32\MyDesktopApp.exe" />
-```
+**<span data-ttu-id="7b9ab-171">特定の質問に対する回答を見つける</span><span class="sxs-lookup"><span data-stu-id="7b9ab-171">Find answers to specific questions</span></span>**
 
-## <a name="generate-packages-for-your-desktop-bridge-app"></a>デスクトップ ブリッジ アプリ用のパッケージの生成
+<span data-ttu-id="7b9ab-172">マイクロソフトのチームでは、[StackOverflow タグ](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)をチェックしています。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-172">Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).</span></span>
 
-上記の手順を実行している場合、「[UWP アプリのパッケージ化](..\packaging\packaging-uwp-apps.md)」で説明しているように、Visual Studio を使ってパッケージを生成する準備が整っている必要があります。 
+**<span data-ttu-id="7b9ab-173">この記事に関するフィードバックを送信する</span><span class="sxs-lookup"><span data-stu-id="7b9ab-173">Give feedback about this article</span></span>**
 
-### <a name="steps-1-and-2-create-appxupload-with-win32-binaries"></a>ステップ 1 と 2: Win32 バイナリを使って appxupload を作成する
-
-*fullTrust* 機能を含むパッケージを提出するには、appxsym ファイル内の各プラットフォームのシンボルを含む appxupload ファイルと、appx プラットフォーム パッケージを含むバンドルを生成する必要があります。
-
-ステップ 1 と 2 では、パッケージに CoreCLR バイナリは含まれていないため、どのプラットフォームを選択するかについて心配する必要はありません。 次の図のように、[ニュートラル] および [Release (任意のCPU)] を選択します。
-
-![](images/desktop-to-uwp/net-5.png)
-
-[ストア パッケージの生成] オプションを選択すると、ウィザードによって、ストアへの提出に対応した appxupload ファイルが生成されます。
-
-### <a name="step-3-and-4-create-appxupload-with-mixed-binaries"></a>ステップ 3 と 4: 混在するバイナリを使って appxupload を作成する
-
-また、リリース用にビルドすることも必要です。この場合、ターゲットにするプラットフォームを指定することが必要です。.NET Native で各プラットフォーム用のネイティブ バイナリを生成することが必要であるためです。
-
-![](images/desktop-to-uwp/net-6.png)
-
-新しい appxupload ファイルを作成するために、新しい zip アーカイブを作成して、生成された appxsym と appxbundle を _Testフォルダーから含めます。
-
-appxsym ファイルと appxbundle ファイルを含む新しい zip ファイルを作成し、拡張子を appxupload に変更します。
-
-![](images/desktop-to-uwp/net-7.png)
-
-<span id="debugging-anchor" />
-## <a name="debugging-your-desktop-bridge-app"></a>デスクトップ ブリッジ アプリのデバッグ
-
-デバッグ (Ctrl + F5) を使用せずに Visual Studio からプロジェクトを開始することはできますが、Visual Studio は実行中のプロセスに自動的にアタッチできないという既知の問題があります。 ただし、後で、次のいずれかの方法でアタッチできます。
-
-### <a name="attach-to-the-running-app"></a>実行中のアプリにアタッチする
-
-#### <a name="attach-to-an-existing-process"></a>既存のプロセスにアタッチする
-
-Ctrl キーを押しながら F5 キーを押してアプリを正常に起動した後、Win32 プロセスにアタッチすることができます。ただし、.NET Native モジュールをデバッグすることはできません。 
-
-![](images/desktop-to-uwp/net-8.png)
-
-#### <a name="attach-to-an-installed-app"></a>インストール済みのアプリにアタッチする
-
-既存の Appx パッケージにアタッチすることもできます。これには、[デバッグ]、[その他のデバッグ ターゲット]、[インストールされているアプリケーション パッケージのデバッグ] の順にオプションを選びます。
-
-![](images/desktop-to-uwp/net-9.png)
-
-ここで、ローカル コンピューターを選択するか、リモート コンピューターに接続することができます。
-
-![](images/desktop-to-uwp/net-10.png)
-
-このオプションを使用すると、.NET Native コードをデバッグできます。
-
-### <a name="use-visual-studio-extension-to-debug-your-desktop-bridge-app"></a>Visual Studio 拡張機能を使用してデスクトップ ブリッジ アプリをデバッグする 
-
-F5 キーを使用してアプリのデバッグを実行する場合は、Visual Studio ギャラリーから、Visual Studio 2017 の拡張機能 [Desktop Bridge Debugging Project](https://marketplace.visualstudio.com/items?itemName=VisualStudioProductTeam.DesktoptoUWPPackagingProject) をインストールする必要があります。
-
-このプロジェクトを使用すると、(このドキュメントで説明しているように) Visual Studio を使って、または Desktop App Converter を使って、UWP に移行しているすべての Win32 アプリをデバッグすることができます。
-
-#### <a name="add-the-debugging-project-to-your-solution"></a>デバッグ プロジェクトをソリューションに追加する
-
-まず、新しい Desktop Bridge Debugging Project をソリューションのプロジェクトに追加します。
-
-![](images/desktop-to-uwp/net-11.png)
-
-このプロジェクトを構成するには、デバッグに使用する各構成/プラットフォームのプロパティ ウィンドウで、PackageLayout プロパティを定義する必要があります。
-Debug/x86 用に構成するために、相対パス `..\MyDesktopApp.Package\bin\x86\Debug` を使用して、パッケージ レイアウト プロパティを、UWP プロジェクトの bin\x86\debug フォルダーに設定します。 
-
-![](images/desktop-to-uwp/net-12.png)
-
-さらに、AppXFileLayout.xml ファイルを編集してエントリ ポイントを指定します。
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" 
-         xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <MyProjectOutputPath>$(PackageLayout)</MyProjectOutputPath>
-  </PropertyGroup>
-  <ItemGroup>
-    <LayoutFile Include="$(MyProjectOutputPath)\win32\MyDesktopApp.exe">
-      <PackagePath>$(PackageLayout)\win32\MyDesktopApp.exe</PackagePath>
-    </LayoutFile>
-  </ItemGroup>
-</Project>
-```
-
-最後に、プロジェクトが適切な順序でビルドされるように、ソリューションの依存関係を構成する必要があります。 
-
-例として、ステップ 3 用に作成されたソリューションを確認してみましょう。
-
-![](images/desktop-to-uwp/net-13.png)
-
-ビルドの順序を構成するには、プロジェクトの依存関係の構成を使用できます。 ソリューションを右クリックし、[プロジェクトの依存関係] オプションを選択します。 適切な依存関係を設定したら、以下に示すように、ビルドの順序を検証することができます (ステップ 3 の場合)。
-
-![](images/desktop-to-uwp/net-14.png)
-
-<span id="known-issues-anchor" />
-## <a name="known-issues-with-cvbnet-and-c-uwp-projects"></a>C#/VB.NET と C++ UWP プロジェクトの既知の問題
-
-C# プロジェクトを使用してアプリをパッケージ化する場合は、以下の既知の問題について理解しておく必要があります。 
-
-- **Debug でアプリをビルドすると、次のようなエラーが出力されます。Microsoft.Net.CoreRuntime.targets(235,5): エラー: カスタム エントリ ポイントを持つアプリケーションの実行可能ファイルはサポートされていません。 パッケージ マニフェストでの Application 要素の Executable 属性を確認してください。** この問題を回避するには、代わりに Release モードを使用します。
-
-- **UWP プロジェクトのルート フォルダーに格納されている Win32 バイナリは、Release では削除されます**。 Win32 バイナリを格納するフォルダーを使用しない場合、.NET Native コンパイラは最終的なパッケージからそれらのバイナリを削除します。これにより、実行可能ファイルのエントリ ポイントが見つからないため、マニフェストの検証エラーが出力されます。
-
-
+<span data-ttu-id="7b9ab-174">下のコメント セクションをご利用ください。</span><span class="sxs-lookup"><span data-stu-id="7b9ab-174">Use the comments section below.</span></span>

@@ -1,106 +1,96 @@
 ---
 author: jnHs
-Description: "アプリ内の広告ユニットのパフォーマンス データを表示するには、Windows デベロッパー センター ダッシュボードにあるアプリ レベルとアカウント レベルの広告パフォーマンス レポートを使います。"
-title: "広告パフォーマンス レポート"
+Description: "アプリ内の広告ユニットのパフォーマンス データを表示するには、Windows デベロッパー センター ダッシュボードにあるアプリ レベルとアカウント レベルの [広告パフォーマンス] レポートを使います。"
+title: "[広告パフォーマンス] レポート"
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 07/05/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d53fe17f2d2452e66a6b4f9c1609112c621ede64
-ms.lasthandoff: 02/07/2017
-
+keywords: windows 10, uwp
+ms.openlocfilehash: c46533c6762ddd2f47a4dbd40c253bc3d8f346d7
+ms.sourcegitcommit: 10f8dcf69d37cdb61562fc9f4d268ccb499c368f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/07/2017
 ---
+# <a name="advertising-performance-report"></a><span data-ttu-id="936fc-104">[広告パフォーマンス] レポート</span><span class="sxs-lookup"><span data-stu-id="936fc-104">Advertising performance report</span></span>
 
-# <a name="advertising-performance-report"></a>広告パフォーマンス レポート
+
+<span data-ttu-id="936fc-105">**[広告パフォーマンス] レポート**は、コミュニティ広告やアフィリエイト広告など、[広告ユニット](monetize-with-ads.md#available-ad-units)のパフォーマンスを示します。</span><span class="sxs-lookup"><span data-stu-id="936fc-105">The **Advertising performance report** shows how your [ad units](monetize-with-ads.md#available-ad-units) are performing, including community ads and affiliate ads.</span></span> <span data-ttu-id="936fc-106">このレポートには、[広告仲介](monetize-with-ads.md#mediation)を使う UWP アプリの複数のプロバイダーからのデータが含まれます。</span><span class="sxs-lookup"><span data-stu-id="936fc-106">This report includes data from multiple ad providers in UWP apps that use [ad mediation](monetize-with-ads.md#mediation).</span></span> 
+
+<span data-ttu-id="936fc-107">このレポートを表示するには、左側のナビゲーション メニューで **[分析]** を展開し、**[広告パフォーマンス]** を選びます。</span><span class="sxs-lookup"><span data-stu-id="936fc-107">To view this report, expand **Analyze** in the left navigation menu and then select **Ad performance**.</span></span> 
+
+<span data-ttu-id="936fc-108">データに対してさらに詳しい分析を実行できるように、**[レポートのダウンロード]** リンクが表示されます。このリンクを使うと、CSV (コンマ区切り値) ファイルをダウンロードして Microsoft Excel などのプログラムで開くことができます。</span><span class="sxs-lookup"><span data-stu-id="936fc-108">To perform a deeper analysis of your data, we provide a **Download report** link you can use to download CSV (comma-separated values) files that you can open in Microsoft Excel or another program.</span></span> <span data-ttu-id="936fc-109">このデータは、[Windows ストア分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) の[広告のパフォーマンス データの取得](../monetize/get-ad-performance-data.md)メソッドを使ってプログラムで取得することもできます。</span><span class="sxs-lookup"><span data-stu-id="936fc-109">Alternatively, you can programmatically retrieve this data by using the [get ad performance data](../monetize/get-ad-performance-data.md) method in the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).</span></span>
+
+<span data-ttu-id="936fc-110">[広告パフォーマンス] レポートのデータを見るときは、さまざまなソースから新しいデータを受け取って処理するため、過去 3 日間のレポートのデータは変化する可能性があることにご注意ください。</span><span class="sxs-lookup"><span data-stu-id="936fc-110">When viewing the advertising performance reports, be aware that reporting data for the last three days might change as we receive and process new data from various sources.</span></span> <span data-ttu-id="936fc-111">また、最大で過去 90 日間のデータが再構成される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="936fc-111">Additionally, data restatements can happen up to 90 days in the past.</span></span>
 
 
-アプリ内の広告ユニットのパフォーマンス データを表示するには、Windows デベロッパー センター ダッシュボードにある次のレポートを使うことができます。
+## <a name="overall-performance"></a><span data-ttu-id="936fc-112">全体的なパフォーマンス</span><span class="sxs-lookup"><span data-stu-id="936fc-112">Overall performance</span></span>
 
--   [アプリ レベルの広告パフォーマンス レポート](advertising-performance-report.md#app-level-advertising-performance-report)。 このレポートは、ダッシュボードで現在選択されているアプリ内の Microsoft 広告ユニットのパフォーマンス データを提供します。
--   [アカウント レベルの広告パフォーマンス レポート](advertising-performance-report.md#account-level-advertising-performance-report)。 このレポートは、開発者アカウントに登録されているすべてのアプリ内の Microsoft 広告ユニットとコミュニティ広告の詳細なパフォーマンス データを提供します。
+<span data-ttu-id="936fc-113">レポートの上部では、次のフィルターを使ってレポートに表示されるデータの範囲を調整できます。</span><span class="sxs-lookup"><span data-stu-id="936fc-113">At the top of the report, you can use the following filters to adjust the scope of the data shown in the report:</span></span>
 
-既定では、レポートはすべてのデバイスにおける過去 30 日間のパフォーマンスでフィルター処理されます。 これらのフィルターを変更するには、**[フィルターの適用]** を選択し、異なる期間 (事前に設定されている期間のいずれかまたはカスタム日付範囲) を選択するか、個々のデバイスの種類を選択します。 
+* <span data-ttu-id="936fc-114">**[日付]**: あらかじめ設定された期間またはカスタムの日付範囲でレポートにフィルターをかけます。</span><span class="sxs-lookup"><span data-stu-id="936fc-114">**Date**: Filter the report to a preset time period or a custom date range.</span></span> <span data-ttu-id="936fc-115">既定では、過去 30 日間のデータが表示されます。</span><span class="sxs-lookup"><span data-stu-id="936fc-115">By default, the report shows data for the last 30 days.</span></span>
+* <span data-ttu-id="936fc-116">**[集計]**: データの集計方法と、そのデータに必要に応じてさらにフィルターを適用する方法を選ぶことができます。</span><span class="sxs-lookup"><span data-stu-id="936fc-116">**Aggregation**: Here you can select how this data is aggregated and how it may be filtered further.</span></span> <span data-ttu-id="936fc-117">既定では、すべての広告ユニットのデータが表示されますが、このセクションの下部にある **[広告ユニットの選択]** リンクを使うと、最大 6 つの広告ユニットを選んで比較できます。</span><span class="sxs-lookup"><span data-stu-id="936fc-117">By default, the report shows data from all ad units, and you'll see a **Choose ad units** link lower in the section, allowing you to select up to six ad units to compare.</span></span> <span data-ttu-id="936fc-118">**[集計]** を **[すべてのアプリ]** または **[すべての広告プロバイダー]** に変更することもできます。</span><span class="sxs-lookup"><span data-stu-id="936fc-118">You can optionally change the **Aggregation** to **All apps** or **All ad providers**.</span></span> <span data-ttu-id="936fc-119">その場合は、このセクションのリンクが **[アプリを選択]** または **[広告プロバイダーの選択]** に変わり、アプリまたは広告プロバイダーを最大 6 つまで選んで比較できます。</span><span class="sxs-lookup"><span data-stu-id="936fc-119">If you do so, the link in this section will change to either **Choose apps** or **Choose ad providers**, allowing you to choose up to six of each to compare.</span></span> <span data-ttu-id="936fc-120">また、広告を使う特定のアプリを基に集計するように指定することもできます。</span><span class="sxs-lookup"><span data-stu-id="936fc-120">You can also choose to aggregate by a specific app in which you use ads.</span></span>
+* <span data-ttu-id="936fc-121">**[広告プロバイダー]**: 特定の広告プロバイダーのパフォーマンス データを表示するようにレポートにフィルターをかけます。</span><span class="sxs-lookup"><span data-stu-id="936fc-121">**Ad providers**: Filter the report to performance data for certain ad providers.</span></span> <span data-ttu-id="936fc-122">利用可能な広告プロバイダーについて詳しくは、「[広告による収益獲得](monetize-with-ads.md)」の「[広告仲介](monetize-with-ads.md#mediation)」セクションをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="936fc-122">For more information about the available ad providers, see the [Ad mediation](monetize-with-ads.md#mediation) section in [Monetize with ads](monetize-with-ads.md).</span></span> <span data-ttu-id="936fc-123">既定では、すべての広告プロバイダーのデータが表示されます。</span><span class="sxs-lookup"><span data-stu-id="936fc-123">By default, the report shows data from all ad providers.</span></span> <span data-ttu-id="936fc-124">このオプションは **[集計]** のドロップダウンで **[すべての広告プロバイダー]** を選んでいる場合は、無効になります。</span><span class="sxs-lookup"><span data-stu-id="936fc-124">This option will be disabled if you chose **All ad providers** in the **Aggregation** drop-down.</span></span>
+* <span data-ttu-id="936fc-125">**[デバイス]**: 特定の種類のデバイスのパフォーマンス データを表示するようにレポートにフィルターをかけます。</span><span class="sxs-lookup"><span data-stu-id="936fc-125">**Device**: Filter the report to performance data for certain device types.</span></span> <span data-ttu-id="936fc-126">既定では、すべての種類のデバイスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="936fc-126">By default, the report shows data for all device types.</span></span>
 
-> [!TIP]
-> データをさらに詳しく分析するには、**[レポートをダウンロード]** を選択し、Microsoft Excel または同様のプログラムで CSV (コンマ区切り値) ファイルを開きます。
 
-以降のセクションでは、これらのレポートについてさらに詳しく説明します。
+## <a name="report-views"></a><span data-ttu-id="936fc-127">レポートのビュー</span><span class="sxs-lookup"><span data-stu-id="936fc-127">Report views</span></span>
 
-## <a name="app-level-advertising-performance-report"></a>アプリ レベルの広告パフォーマンス レポート
+<span data-ttu-id="936fc-128">フィルターの下には、現在のアプリで使われている広告ユニットについて、さまざまな広告パフォーマンス メトリックのデータが、グラフ、世界地図、表形式で表示されます。</span><span class="sxs-lookup"><span data-stu-id="936fc-128">Below the filters, the report displays data from a variety of ad performance metrics in graph, world map, and table form for the ad units that are used in the current app.</span></span>
 
-このページは、ダッシュボードで現在選択されているアプリ内の Microsoft 広告ユニットのパフォーマンス データを、グラフ、世界地図、表の形式で提供します。 このレポートを表示するには、ダッシュボードでいずれかのアプリを選択し、ナビゲーション ウィンドウで **[分析]** &gt; **[広告パフォーマンス]** の順にクリックします。
+<span data-ttu-id="936fc-129">グラフ ビューや世界地図ビューでこれらのメトリックのいずれかを分析するには、**[グラフ]** または **[マップ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="936fc-129">To analyze the data for one of these metrics in a graph or world map view, click **Graph** or **Map**.</span></span> <span data-ttu-id="936fc-130">既定では、グラフやマップ ビューには (**[集計]** のドロップダウンでの選択内容に応じて) すべての広告ユニット、アプリ、または広告プロバイダーのパフォーマンス データが表示されますが、最大 6 つの広告ユニット、アプリ、または広告プロバイダーを選んで比較できます。</span><span class="sxs-lookup"><span data-stu-id="936fc-130">By default, the graph and map views show performance data for all of the ad units, apps, or ad providers (depending on your selections in the **Aggregation** drop-down, but you have the option to select up to six individual ad units, apps, or ad providers to compare.</span></span>
 
-データは、アプリの広告について追跡される次のパフォーマンス メトリックから取得されます。
+<span data-ttu-id="936fc-131">マップ ビューで、濃い網掛けは高い値を示し、淡い網掛けは低い値を示します。</span><span class="sxs-lookup"><span data-stu-id="936fc-131">In the map view, darker shades represent higher values and lighter shades represent lower values.</span></span> <span data-ttu-id="936fc-132">地図上の特定の国や地域をポイントすることによって、選択したメトリックの値を分析できます。</span><span class="sxs-lookup"><span data-stu-id="936fc-132">You can hover over a specific country or region on the map to analyze the value of the selected metric.</span></span> <span data-ttu-id="936fc-133">地図の任意の領域を拡大して、小さい国々のデータを表示することもできます。</span><span class="sxs-lookup"><span data-stu-id="936fc-133">You can also zoom in on any area of the map to view data for smaller countries.</span></span>
 
--   **[売上見込み]**: アプリで実行されている広告から受け取った見込み金額。
--   **[eCPM]**: 1000 回の広告表示あたりの有効な料金。
--   **[要求]**: アプリから広告要求が送信された回数。
--   **[インプレッション数]**: 広告がアプリに表示された回数。
--   **[フィル レート]**: アプリから送られた広告要求で広告が表示された割合。
--   **[クリック数]**: アプリで広告がユーザーによってクリックされた回数。
--   **[CTR]**: クリック スルー レート、つまり広告がクリックされた回数をインプレッション数で割った値。
+<span data-ttu-id="936fc-134">アプリ内の広告ユニットのパフォーマンス メトリックをすべて確認するには、グラフとマップ ビューの下にある表を参照します。</span><span class="sxs-lookup"><span data-stu-id="936fc-134">To review all the performance metrics for the ad units in your app, refer to the table below the graph and map views.</span></span>
 
-アプリ内の広告ユニットについてこれらのパフォーマンス メトリックをすべて確認するには、グラフと地図ビューの下にある表を参照します。
+> [!NOTE]
+> <span data-ttu-id="936fc-135">Microsoft pubCenter を使ってアプリの広告ユニットを作成している場合、すべての広告ユニットがデベロッパー センターのアプリに正常にマップされているとは限りません。</span><span class="sxs-lookup"><span data-stu-id="936fc-135">If you had created ad units for an app using Microsoft pubCenter, it’s possible that not all of them were mapped successfully to your apps in Dev Center.</span></span> <span data-ttu-id="936fc-136">このレポートでは、これらの広告ユニットは pubCenter で指定したアプリ名に関連付けられ、**(pubCenter)** という文字列がアプリ名に追加されます。</span><span class="sxs-lookup"><span data-stu-id="936fc-136">In this report, these ad units are associated with app names that you specified in pubCenter, with the string **(pubCenter)** appended to the app name.</span></span>
 
-グラフ ビューや世界地図ビューでこれらのメトリックのいずれかを分析するには、**[グラフ]** または **[マップ]** をクリックします。 別のメトリックに切り替えるには、グラフや地図の上のヘッダーをクリックします。 既定では、グラフや地図ビューにはアプリ内のすべての広告ユニットのパフォーマンス データが表示されますが、**[広告ユニットの選択]** をクリックすると、最大 6 つの広告ユニットを選択して比較できます。
 
-地図ビューで、濃い網掛けは高い値を示し、淡い網掛けは低い値を示します。 地図上の特定の国や地域をポイントすることによって、選択したメトリックの値を分析できます。 地図の任意の領域を拡大して、小さい国々のデータを表示することもできます。
+## <a name="performance-metrics"></a><span data-ttu-id="936fc-137">パフォーマンス メトリック</span><span class="sxs-lookup"><span data-stu-id="936fc-137">Performance metrics</span></span>
 
-データをさらに詳しく分析するには、**[レポートをダウンロード]** を選択し、Microsoft Excel または同様のプログラムで CSV (コンマ区切り値) ファイルを開きます。
+<span data-ttu-id="936fc-138">このレポートには、次のパフォーマンス メトリックのデータが含まれます。</span><span class="sxs-lookup"><span data-stu-id="936fc-138">This report may include data for the following performance metrics.</span></span> <span data-ttu-id="936fc-139">レポートに表示されるメトリックは、広告プロバイダーによって異なります。</span><span class="sxs-lookup"><span data-stu-id="936fc-139">The metrics that are shown in the report vary by ad provider.</span></span>
 
-## <a name="account-level-advertising-performance-report"></a>アカウント レベルの広告パフォーマンス レポート
+|  <span data-ttu-id="936fc-140">メトリック</span><span class="sxs-lookup"><span data-stu-id="936fc-140">Metric</span></span>  |  <span data-ttu-id="936fc-141">説明</span><span class="sxs-lookup"><span data-stu-id="936fc-141">Description</span></span>  |
+|----------|---------------|
+| <span data-ttu-id="936fc-142">売上見込み</span><span class="sxs-lookup"><span data-stu-id="936fc-142">Estimated revenue</span></span>  |  <span data-ttu-id="936fc-143">アプリで実行されている広告から受け取った見込み金額。</span><span class="sxs-lookup"><span data-stu-id="936fc-143">The estimated amount of money you received from the ads running on your app.</span></span> |
+| <span data-ttu-id="936fc-144">eCPM</span><span class="sxs-lookup"><span data-stu-id="936fc-144">eCPM</span></span>  |  <span data-ttu-id="936fc-145">1,000 回の広告表示あたりの実効コスト。</span><span class="sxs-lookup"><span data-stu-id="936fc-145">Effective cost per thousand impressions.</span></span> |
+| <span data-ttu-id="936fc-146">要求</span><span class="sxs-lookup"><span data-stu-id="936fc-146">Requests</span></span>  | <span data-ttu-id="936fc-147">アプリから広告要求が送信された回数。</span><span class="sxs-lookup"><span data-stu-id="936fc-147">The number of times an ad request was sent from your app.</span></span>  |
+| <span data-ttu-id="936fc-148">インプレッション数</span><span class="sxs-lookup"><span data-stu-id="936fc-148">Impressions</span></span>  | <span data-ttu-id="936fc-149">広告がアプリに表示された回数。</span><span class="sxs-lookup"><span data-stu-id="936fc-149">The number of times an ad was shown in your app.</span></span>  |
+| <span data-ttu-id="936fc-150">フィル レート</span><span class="sxs-lookup"><span data-stu-id="936fc-150">Fill rate</span></span>  | <span data-ttu-id="936fc-151">アプリから送信された広告要求に対して広告が表示された割合。</span><span class="sxs-lookup"><span data-stu-id="936fc-151">The percentage of ad requests sent from your app in which an ad was shown.</span></span>  |
+| <span data-ttu-id="936fc-152">クリック数</span><span class="sxs-lookup"><span data-stu-id="936fc-152">Clicks</span></span>  |  <span data-ttu-id="936fc-153">アプリ内の広告がクリックされた回数。</span><span class="sxs-lookup"><span data-stu-id="936fc-153">The number of times someone clicked on an ad in your app.</span></span> |
+| <span data-ttu-id="936fc-154">CTR</span><span class="sxs-lookup"><span data-stu-id="936fc-154">CTR</span></span>  |  <span data-ttu-id="936fc-155">クリック スルー レート、つまり広告がクリックされた回数をインプレッション数で割った値。</span><span class="sxs-lookup"><span data-stu-id="936fc-155">Click-through rate, meaning the number of times an ad was clicked, divided by the number of impressions.</span></span> |
+| <span data-ttu-id="936fc-156">取得したクレジット</span><span class="sxs-lookup"><span data-stu-id="936fc-156">Credits earned</span></span>  | <span data-ttu-id="936fc-157">[コミュニティ広告](https://docs.microsoft.com/windows/uwp/publish/about-community-ads)において、このアプリ内にコミュニティ広告を表示することで獲得したプロモーション用広告スペースのクレジット数。</span><span class="sxs-lookup"><span data-stu-id="936fc-157">For [community ads](https://docs.microsoft.com/windows/uwp/publish/about-community-ads), this indicates the number of credits you have earned for promotional ad space by showing community ads in your app.</span></span>  |
+| <span data-ttu-id="936fc-158">使用したクレジット</span><span class="sxs-lookup"><span data-stu-id="936fc-158">Credits spent</span></span>  | <span data-ttu-id="936fc-159">[コミュニティ広告](https://docs.microsoft.com/windows/uwp/publish/about-community-ads)において、このアプリの広告のために消費したクレジット数。</span><span class="sxs-lookup"><span data-stu-id="936fc-159">For [community ads](https://docs.microsoft.com/windows/uwp/publish/about-community-ads), this indicates the number of credits you have spent on ads for your app.</span></span>  |
 
-このページは、開発者アカウントに登録されているアプリ内で使用されている Microsoft 広告ユニットとコミュニティ広告のパフォーマンス データを提供します。 このレポートを表示するには、[ダッシュボード概要] ページに移動し、ナビゲーション ウィンドウの **[広告パフォーマンス]** をクリックします。
 
-このページは次のセクションで構成されます。
+## <a name="affiliates-performance"></a><span data-ttu-id="936fc-160">アフィリエイト パフォーマンス</span><span class="sxs-lookup"><span data-stu-id="936fc-160">Affiliates performance</span></span>
 
-### <a name="microsoft-advertising"></a>Microsoft Advertising
+<span data-ttu-id="936fc-161">[Microsoft アフィリエイト広告プログラムにオプトイン](about-affiliate-ads.md)している場合、アプリに表示されるアフィリエイト広告のパフォーマンス データがここに表示されます。</span><span class="sxs-lookup"><span data-stu-id="936fc-161">If you have [opted in to the Microsoft affiliate ads program](about-affiliate-ads.md), you can view performance data for the affiliate ads that appear in your app here.</span></span> <span data-ttu-id="936fc-162">この情報は毎日更新されます。</span><span class="sxs-lookup"><span data-stu-id="936fc-162">This info is updated daily.</span></span> 
 
-このレポートは、アプリで使用されているすべての Microsoft 広告ユニットのパフォーマンスを提供します。 このレポートには、デベロッパー センターのアプリに正常にマップされていない pubCenter 広告ユニットのパフォーマンス データも含まれます。
 
-このレポートには、前に説明したアプリ レベルの広告パフォーマンス レポートと同じ 7 つのパフォーマンス メトリックとビュー (グラフ、世界地図、表) が表示されます。 このレポートには、次のフィルターを適用できます。
+<span data-ttu-id="936fc-163">レポートの上部では、次のフィルターを使ってレポートに表示されるデータの範囲を調整できます。</span><span class="sxs-lookup"><span data-stu-id="936fc-163">At the top of the report, you can use the following filters to adjust the scope of the data shown in the report:</span></span>
+- <span data-ttu-id="936fc-164">**[日付]**: あらかじめ設定された期間またはカスタムの日付範囲でレポートにフィルターをかけます。</span><span class="sxs-lookup"><span data-stu-id="936fc-164">**Date**: Filter the report to a preset time period or a custom date range.</span></span> <span data-ttu-id="936fc-165">既定では、過去 30 日間のデータが表示されます。</span><span class="sxs-lookup"><span data-stu-id="936fc-165">By default, the report showsdata for the last 30 days.</span></span>
+- <span data-ttu-id="936fc-166">**[デバイス]**: 特定の種類のデバイスのパフォーマンス データを表示するようにレポートにフィルターをかけます。</span><span class="sxs-lookup"><span data-stu-id="936fc-166">**Device**: Filter the report to performance data for certain device types.</span></span> <span data-ttu-id="936fc-167">既定では、すべての種類のデバイスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="936fc-167">By default, the report shows data for all device types.</span></span>
 
--   **すべての広告ユニット**。 このフィルターを選択すると、すべての広告ユニットまたは最大 6 つの特定の広告ユニットのデータを表示できます。
--   **すべてのアプリ**。 このフィルターを選択すると、すべてのアプリまたは最大 6 つの特定のアプリのデータを表示できます。
--   **特定のアプリ**。 アプリを選択したときに、アプリで使用されるすべての広告ユニットまたはアプリで使用される最大 6 つの特定の広告ユニットのデータを表示できます。
+<span data-ttu-id="936fc-168">既定では、このレポートでは、Microsoft アフィリエイト広告プログラムにオプトインしたすべてのアプリ内のアフィリエイト広告について、パフォーマンス データの要約をグラフおよび表形式で示します。</span><span class="sxs-lookup"><span data-stu-id="936fc-168">By default, this report provides a summary of performance data for affiliate ads in all apps that you have opted in to the Microsoft affiliate ads program, in graph and table form.</span></span> <span data-ttu-id="936fc-169">**[アプリを選択]** を選ぶと、最大 6 つまでアプリを選んで比較できます。</span><span class="sxs-lookup"><span data-stu-id="936fc-169">You can select **Choose apps** to select up to six apps to compare.</span></span>
 
-Microsoft pubCenter を使ってアプリの広告ユニットを作成した場合、すべての広告ユニットがデベロッパー センターのアプリに正常にマップされているとは限りません。 このレポートでは、これらの広告ユニットが pubCenter で指定したアプリ名に関連付けられ、**(pubCenter)** という文字列がアプリ名に追加されます。
+<span data-ttu-id="936fc-170">アフィリエイト パフォーマンス データは、アプリのアフィリエイト広告について追跡される次の 7 つのパフォーマンス メトリックから取得されます。</span><span class="sxs-lookup"><span data-stu-id="936fc-170">Affiliates performance data is obtained from the following seven performance metrics we track for the affiliate ads in your app:</span></span>
 
-pubCenter を使ってアプリの広告ユニットを作成しているが、どちらのレポート ページにもデータが表示されない場合、**[pubCenter アカウントのリンク]** をクリックしてそのアカウントをデベロッパー センター アカウントにリンクします。 この pubCenter アカウントに関連付けられているメール アドレスとアカウント リンク コードを入力します。 アカウント リンク コードは、この pubCenter アカウントにサインインし、**[本人情報]** ページに移動すると確認できます。
+-   <span data-ttu-id="936fc-171">**[予測収益 (承認済み)]**: アプリ内のアフィリエイト広告をクリックしたユーザーによって行われた、承認された購入の手数料として受け取った見込み金額。</span><span class="sxs-lookup"><span data-stu-id="936fc-171">**Estimated earnings (approved)**: The estimated amount of money you received as a commission for approved purchases made by users clicking affiliate ads in your app.</span></span>
+-   <span data-ttu-id="936fc-172">**[予測収益 (承認待ち)]**: 承認待ちの購入が承認された場合に手数料として受け取ることができる見込み金額。</span><span class="sxs-lookup"><span data-stu-id="936fc-172">**Estimated earnings (pending approval)**: The estimated amount of money you could receive as a commission for the purchases that are pending approval.</span></span>
+-   <span data-ttu-id="936fc-173">**[インプレッション数]**: アフィリエイト広告がアプリに表示された回数。</span><span class="sxs-lookup"><span data-stu-id="936fc-173">**Impressions**: The number of times an affiliate ad was shown in your app.</span></span>
+-   <span data-ttu-id="936fc-174">**[クリック数]**: アプリでアフィリエイト広告がユーザーによってクリックされた回数。</span><span class="sxs-lookup"><span data-stu-id="936fc-174">**Clicks**: The number of times someone clicked on an affiliate ad in your app.</span></span>
+-   <span data-ttu-id="936fc-175">**[CTR]**: クリック スルー レート、つまりアフィリエイト広告がクリックされた回数をアフィリエイト広告のインプレッション数で割った値。</span><span class="sxs-lookup"><span data-stu-id="936fc-175">**CTR**: Click-through rate, meaning the number of times an affiliate ad was clicked, divided by the number of affiliate ad impressions.</span></span>
+-   <span data-ttu-id="936fc-176">**[購入 (承認済み)]**: アプリ内のアフィリエイト広告をクリックしたユーザーによって行われた、承認された購入の数。</span><span class="sxs-lookup"><span data-stu-id="936fc-176">**Purchases (approved)**: The number of approved purchases made by users clicking affiliate ads in your app.</span></span>
+-   <span data-ttu-id="936fc-177">**[購入 (承認待ち)]**: アプリ内のアフィリエイト広告をクリックしたユーザーによって行われた、承認待ちの購入の数。</span><span class="sxs-lookup"><span data-stu-id="936fc-177">**Purchases (pending approval)**: The number of purchases pending approval that were made by users clicking affiliate ads in your app.</span></span>
 
-デベロッパー センターへの pubCenter アカウントの移行について詳しくは、「[pubCenter-デベロッパー センターの統合](pubcenter-dev-center-integration.md)」をご覧ください。
+> [!NOTE]
+> <span data-ttu-id="936fc-178">ユーザーがストアで製品を購入してからアフィリエイト広告プログラムで承認されるまでには 45 日かかります。</span><span class="sxs-lookup"><span data-stu-id="936fc-178">After a user buys a product in the Store, there is a 45 day waiting period before the purchase can be approved for the affiliate ads program.</span></span> <span data-ttu-id="936fc-179">そのため、指定した日の **[予測収益 (承認済み)]**、**[予測収益 (承認待ち)]**、**[購入 (承認済み)]**、**[購入 (承認待ち)]** のデータは、購入が承認または拒否された後に変わる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="936fc-179">Because of this waiting period, the **Estimated earnings (approved)**, **Estimated earnings (pending approval)**, **Purchases (approved)** and **Purchases (pending approval)** data for a given day can change after purchases are approved or rejected.</span></span>
 
-データをさらに詳しく分析するには、**[レポートをダウンロード]** を選択し、Microsoft Excel または同様のプログラムで CSV (コンマ区切り値) ファイルを開きます。
-
-### <a name="microsoft-community-ads"></a>Microsoft コミュニティ広告
-
-このセクションは、ダッシュボードで現在選択されているアプリ内のコミュニティ広告のパフォーマンス データを、グラフと世界地図の形式で提供します。 コミュニティ広告について詳しくは、「[コミュニティ広告について](about-community-ads.md)」をご覧ください。
-
-データは、アプリの広告について追跡される次のパフォーマンス メトリックから取得されます。
-
--   **[要求]**: アプリからコミュニティ広告要求が送信された回数。
--   **[フィル レート]**: アプリから送られたコミュニティ広告要求で広告が表示された割合。
--   **[クリック数]**: アプリでコミュニティ広告がユーザーによってクリックされた回数。
--   **[CTR]**: クリック スルー レート、つまりコミュニティ広告がクリックされた回数をインプレッション数で割った値。
--   **[Credits earned]**: このアプリから獲得したコミュニティ広告のクレジット数。 クレジットの獲得方法の詳細については、「[コミュニティ広告について](about-community-ads.md)」を参照してください。
--   **[Credits spent]**: このアプリで消費したコミュニティ広告のクレジット数。 クレジットの消費方法の詳細については、「[コミュニティ広告について](about-community-ads.md)」を参照してください。
-
-グラフ ビューや世界地図ビューでこれらのメトリックのいずれかを分析するには、**[グラフ]** または **[マップ]** をクリックします。 別のメトリックに切り替えるには、グラフや地図の上のヘッダーをクリックします。 地図ビューで、濃い網掛けは高い値を示し、淡い網掛けは低い値を示します。 地図上の特定の国や地域をポイントすることによって、選択したメトリックの値を分析できます。 地図の任意の領域を拡大して、小さい国々のデータを表示することもできます。
-
-## <a name="notes-about-the-reports"></a>レポートに関する注意事項
-
-ここでは、広告パフォーマンス レポートを使用するときの注意事項を示します。
-
-- デベロッパー センターと pubCenter で広告パフォーマンス レポートに違いがある可能性があります。 デベロッパー センターの広告パフォーマンス データは UTC (特定のタイム ゾーンではなく) に基づいて集計されますが、pubCenter のレポートは特定のタイム ゾーンに基づいて集計されます。
-- さまざまなソースから新しいデータを受信して処理するため、過去 3 日間のデータのレポートが変化する可能性があります。
-- 最大で過去 90 日間のデータが更新される可能性があります。
 
  
-
- 
-

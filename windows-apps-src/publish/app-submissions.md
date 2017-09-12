@@ -5,107 +5,109 @@ title: "アプリの申請"
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: "チェック リスト"
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: df66981ae8355ea62128a881f02fd6fb891ffb30
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: fdef30d07386a1c5ab7dc6bd62b9507ff5852194
+ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/03/2017
 ---
-
-# <a name="app-submissions"></a>アプリの申請
-
-
-[名前を予約してアプリを作成](create-your-app-by-reserving-a-name.md)したら、そのアプリを公開するための作業を開始できます。 まず、**申請**を作成します。
-
-申請は、アプリが完成して公開する準備ができたときに開始できます。または、1 行のコードを記述する前でも情報を入力し始めることができます。 申請はダッシュボードに保存されるため、準備できたらいつでも作業できます。
-
-アプリが公開された後は、ダッシュボードで別の申請を作成して更新バージョンを公開できます。 新しい申請を作成すると、新しいパッケージをアップロードするときでも、価格やカテゴリなどの情報を変更するだけのときでも、必要な変更を加えて公開することができます。 アプリの新しい申請を作成するには、[アプリの概要] ページに表示されている前回の申請の横にある **[更新]** をクリックします。
-
-> **注**&nbsp;&nbsp;ドキュメントのこのセクションでは、デベロッパー センターでアプリの申請を作成する方法について説明します。 ここで説明する方法以外に、[Windows ストア申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使用してアプリの申請を自動化することもできます。
-
-## <a name="app-submission-checklist"></a>アプリの申請用チェック リスト
+# <a name="app-submissions"></a><span data-ttu-id="be003-105">アプリの申請</span><span class="sxs-lookup"><span data-stu-id="be003-105">App submissions</span></span>
 
 
-ここで示しているのは、アプリの申請を作成するときに提供できる詳細情報と、詳細情報のリンクです。
+<span data-ttu-id="be003-106">[名前を予約してアプリを作成](create-your-app-by-reserving-a-name.md)したら、そのアプリを公開するための作業を開始できます。</span><span class="sxs-lookup"><span data-stu-id="be003-106">Once you've [created your app by reserving a name](create-your-app-by-reserving-a-name.md), you can start working on getting it published.</span></span> <span data-ttu-id="be003-107">まず、**申請**を作成します。</span><span class="sxs-lookup"><span data-stu-id="be003-107">The first step is to create a **submission**.</span></span>
 
-提供または指定する情報は必須のものと、 省略可能なものがあります。提供されている既定値は必要に応じて変更できます。
+<span data-ttu-id="be003-108">申請は、アプリが完成して公開する準備ができたときに開始できます。または、1 行のコードを記述する前でも情報を入力し始めることができます。</span><span class="sxs-lookup"><span data-stu-id="be003-108">You can start your submission when your app is complete and ready to publish, or you can start entering info even before you have written a single line of code.</span></span> <span data-ttu-id="be003-109">申請はダッシュボードに保存されるため、準備できたらいつでも作業できます。</span><span class="sxs-lookup"><span data-stu-id="be003-109">The submission will be saved in your dashboard, so you can work on it whenever you're ready.</span></span>
 
-### <a name="pricing-and-availability-page"></a>[価格と使用可能状況] ページ
-| フィールド名                    | コメント                                       | 詳しい情報                                                             |
+<span data-ttu-id="be003-110">アプリが公開された後は、ダッシュボードで別の申請を作成して更新バージョンを公開できます。</span><span class="sxs-lookup"><span data-stu-id="be003-110">After your app is published, you can publish an updated version by creating another submission in your dashboard.</span></span> <span data-ttu-id="be003-111">新しい申請を作成すると、新しいパッケージをアップロードするときでも、価格やカテゴリなどの情報を変更するだけのときでも、必要な変更を加えて公開することができます。</span><span class="sxs-lookup"><span data-stu-id="be003-111">Creating a new submission lets you make and publish whatever changes are needed, whether you're uploading new packages or just changing details such as price or category.</span></span> <span data-ttu-id="be003-112">公開されているアプリに対して新しい申請を作成するには、[アプリの概要] ページに表示されている前回の申請の横にある **[更新]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="be003-112">To create a new submission for a published app, click **Update** next to the most recent submission shown on the App overview page.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="be003-113">このセクションでは、デベロッパー センターでアプリの申請を作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="be003-113">This section of the documentation describes how to create an app submission on the Dev Center dashboard.</span></span> <span data-ttu-id="be003-114">ここで説明する方法以外に、[Windows ストア申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使用してアプリの申請を自動化することもできます。</span><span class="sxs-lookup"><span data-stu-id="be003-114">Alternatively, you can use the [Windows Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) to automate app submissions.</span></span>
+
+## <a name="app-submission-checklist"></a><span data-ttu-id="be003-115">アプリの申請用チェック リスト</span><span class="sxs-lookup"><span data-stu-id="be003-115">App submission checklist</span></span>
+
+<span data-ttu-id="be003-116">ここで示しているのは、アプリの申請を作成するときに提供できる詳細情報と、詳細情報のリンクです。</span><span class="sxs-lookup"><span data-stu-id="be003-116">Here are the details that you can provide when creating your app submission, with links to more info.</span></span>
+
+<span data-ttu-id="be003-117">提供または指定する情報は必須のものと、</span><span class="sxs-lookup"><span data-stu-id="be003-117">Items that you are required to provide or specify are noted below.</span></span> <span data-ttu-id="be003-118">省略可能なものがあります。提供されている既定値は必要に応じて変更できます。</span><span class="sxs-lookup"><span data-stu-id="be003-118">Some areas are optional, or have default values provided that you can change as desired.</span></span>
+
+### <a name="pricing-and-availability-page"></a><span data-ttu-id="be003-119">[価格と使用可能状況] ページ</span><span class="sxs-lookup"><span data-stu-id="be003-119">Pricing and availability page</span></span>
+| <span data-ttu-id="be003-120">フィールド名</span><span class="sxs-lookup"><span data-stu-id="be003-120">Field name</span></span>                    | <span data-ttu-id="be003-121">コメント</span><span class="sxs-lookup"><span data-stu-id="be003-121">Notes</span></span>                                       | <span data-ttu-id="be003-122">詳しい情報</span><span class="sxs-lookup"><span data-stu-id="be003-122">For more info</span></span>                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
-| **基本価格**                | 必須                                    | [基本価格](set-app-pricing-and-availability.md#base-price)              |
-| **無料試用版**                | 既定値: 無料の試用版なし                      | [お試し版とアプリ内購入の追加](https://msdn.microsoft.com/library/windows/apps/jj193599)  |
-| **市場と特別価格** | 既定値: 対象となるすべての市場、カスタム価格なし | [価格と市場の選択の定義](define-pricing-and-market-selection.md)              |
-| **セール価格**              | 省略可能                                    | [アプリとアドオンの販売](put-apps-and-add-ons-on-sale.md)                                       |
-| **配布と表示** | 既定値: このアプリをストアで提供する | [配布と表示](set-app-pricing-and-availability.md#distribution-and-visibility) |
-| **組織のライセンス**    | 既定値: このアプリの組織単位でのボリューム購入を許可する | [組織のライセンス オプション](organizational-licensing.md)                        |
-| **公開日**                | 既定値: できるだけ早く公開      | [公開日](set-app-pricing-and-availability.md#publish-date)          |
+| **<span data-ttu-id="be003-123">市場</span><span class="sxs-lookup"><span data-stu-id="be003-123">Markets</span></span>**                   | <span data-ttu-id="be003-124">既定値: 対象となるすべての市場</span><span class="sxs-lookup"><span data-stu-id="be003-124">Default: All possible markets,</span></span>  | [<span data-ttu-id="be003-125">[価格設定と市場設定] セクション</span><span class="sxs-lookup"><span data-stu-id="be003-125">Define pricing and market selection</span></span>](define-pricing-and-market-selection.md)         |
+| **<span data-ttu-id="be003-126">表示</span><span class="sxs-lookup"><span data-stu-id="be003-126">Visibility</span></span>**                | <span data-ttu-id="be003-127">既定値: この製品をストアで提供し、検索可能にします</span><span class="sxs-lookup"><span data-stu-id="be003-127">Default: Make this app available and discoverable in the Store</span></span> | [<span data-ttu-id="be003-128">表示</span><span class="sxs-lookup"><span data-stu-id="be003-128">Visibility</span></span>](set-app-pricing-and-availability.md#visibility) |
+| **<span data-ttu-id="be003-129">スケジュール</span><span class="sxs-lookup"><span data-stu-id="be003-129">Schedule</span></span>**                  | <span data-ttu-id="be003-130">既定値: 最短でリリース</span><span class="sxs-lookup"><span data-stu-id="be003-130">Default: Release as soon as possible</span></span>        | [<span data-ttu-id="be003-131">正確なリリース スケジュールの構成</span><span class="sxs-lookup"><span data-stu-id="be003-131">Configure precise release scheduling</span></span>](configure-precise-release-scheduling.md) |
+| **<span data-ttu-id="be003-132">基本価格</span><span class="sxs-lookup"><span data-stu-id="be003-132">Base price</span></span>**                | <span data-ttu-id="be003-133">必須</span><span class="sxs-lookup"><span data-stu-id="be003-133">Required</span></span>                                    | [<span data-ttu-id="be003-134">アプリの価格の設定とスケジュール</span><span class="sxs-lookup"><span data-stu-id="be003-134">Set and schedule app pricing</span></span>](set-and-schedule-app-pricing.md)              |
+| **<span data-ttu-id="be003-135">無料試用版</span><span class="sxs-lookup"><span data-stu-id="be003-135">Free trial</span></span>**                | <span data-ttu-id="be003-136">既定値: 無料の試用版なし</span><span class="sxs-lookup"><span data-stu-id="be003-136">Default: No free trial</span></span>                      | [<span data-ttu-id="be003-137">無料試用版</span><span class="sxs-lookup"><span data-stu-id="be003-137">Free trial</span></span>](set-app-pricing-and-availability.md#free-trial)              |
+| **<span data-ttu-id="be003-138">セール価格</span><span class="sxs-lookup"><span data-stu-id="be003-138">Sale pricing</span></span>**              | <span data-ttu-id="be003-139">省略可能</span><span class="sxs-lookup"><span data-stu-id="be003-139">Optional</span></span>                                    | [<span data-ttu-id="be003-140">アプリとアドオンの販売</span><span class="sxs-lookup"><span data-stu-id="be003-140">Put apps and add-ons on sale</span></span>](put-apps-and-add-ons-on-sale.md)           |
+| **<span data-ttu-id="be003-141">組織のライセンス</span><span class="sxs-lookup"><span data-stu-id="be003-141">Organizational licensing</span></span>**    | <span data-ttu-id="be003-142">既定値: 組織単位でのボリューム購入を許可する</span><span class="sxs-lookup"><span data-stu-id="be003-142">Default: Allow volume acquisition by organizations</span></span> | [<span data-ttu-id="be003-143">組織のライセンス オプション</span><span class="sxs-lookup"><span data-stu-id="be003-143">Organizational licensing options</span></span>](organizational-licensing.md)        |
+| **<span data-ttu-id="be003-144">公開日</span><span class="sxs-lookup"><span data-stu-id="be003-144">Publish date</span></span>**                | <span data-ttu-id="be003-145">既定値: できるだけ早く公開する</span><span class="sxs-lookup"><span data-stu-id="be003-145">Default: Publish as soon as possible</span></span>      | [<span data-ttu-id="be003-146">公開日</span><span class="sxs-lookup"><span data-stu-id="be003-146">Publish date</span></span>](set-app-pricing-and-availability.md#publish-date)          |
 
 <span/>
 
-### <a name="app-properties-page"></a>[アプリケーションのプロパティ] ページ
+### <a name="properties-page"></a><span data-ttu-id="be003-147">[プロパティ] ページ</span><span class="sxs-lookup"><span data-stu-id="be003-147">Properties page</span></span>
 
-| フィールド名                    | コメント                                       | 詳しい情報                                                             |
+| <span data-ttu-id="be003-148">フィールド名</span><span class="sxs-lookup"><span data-stu-id="be003-148">Field name</span></span>                    | <span data-ttu-id="be003-149">コメント</span><span class="sxs-lookup"><span data-stu-id="be003-149">Notes</span></span>                                       | <span data-ttu-id="be003-150">詳しい情報</span><span class="sxs-lookup"><span data-stu-id="be003-150">For more info</span></span>                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
-| **カテゴリとサブカテゴリ**  | 必須                                    | [カテゴリとサブカテゴリの一覧](category-and-subcategory-table.md)       |
-| **システム要件**      | 省略可能                                    | [システム要件](enter-app-properties.md#system-requirements)      |
-| **アプリの宣言**          | 既定値: ユーザーは、代替ドライブやリムーバブル ストレージにこのアプリをインストールできます。Windows はこのアプリのデータを OneDrive に自動的にバックアップできます | [アプリの宣言](app-declarations.md) |
+| **<span data-ttu-id="be003-151">カテゴリとサブカテゴリ</span><span class="sxs-lookup"><span data-stu-id="be003-151">Category and subcategory</span></span>**  | <span data-ttu-id="be003-152">必須</span><span class="sxs-lookup"><span data-stu-id="be003-152">Required</span></span>                                    | [<span data-ttu-id="be003-153">カテゴリとサブカテゴリの一覧</span><span class="sxs-lookup"><span data-stu-id="be003-153">Category and subcategory table</span></span>](category-and-subcategory-table.md)       |
+| **<span data-ttu-id="be003-154">システム要件</span><span class="sxs-lookup"><span data-stu-id="be003-154">System requirements</span></span>**      | <span data-ttu-id="be003-155">省略可能</span><span class="sxs-lookup"><span data-stu-id="be003-155">Optional</span></span>                                    | [<span data-ttu-id="be003-156">システム要件</span><span class="sxs-lookup"><span data-stu-id="be003-156">System requirements</span></span>](enter-app-properties.md#system-requirements)      |
+| **<span data-ttu-id="be003-157">製品の宣言</span><span class="sxs-lookup"><span data-stu-id="be003-157">Product declarations</span></span>**          | <span data-ttu-id="be003-158">既定値: ユーザーは、代替ドライブやリムーバブル ストレージにこのアプリをインストールできます。Windows はこのアプリのデータを OneDrive に自動的にバックアップできます</span><span class="sxs-lookup"><span data-stu-id="be003-158">Default: Customers can install this app to alternate drives or removable storage; Windows can include this app's data in automatic backups to OneDrive</span></span> | [<span data-ttu-id="be003-159">製品の宣言</span><span class="sxs-lookup"><span data-stu-id="be003-159">Product declarations</span></span>](app-declarations.md) |
 
 <span/>
 
-### <a name="age-ratings-page"></a>[年齢区分] ページ
+### <a name="age-ratings-page"></a><span data-ttu-id="be003-160">[年齢区分] ページ</span><span class="sxs-lookup"><span data-stu-id="be003-160">Age ratings page</span></span>
 
-| フィールド名                    | コメント                                       | 詳しい情報                          |
+| <span data-ttu-id="be003-161">フィールド名</span><span class="sxs-lookup"><span data-stu-id="be003-161">Field name</span></span>                    | <span data-ttu-id="be003-162">コメント</span><span class="sxs-lookup"><span data-stu-id="be003-162">Notes</span></span>                                       | <span data-ttu-id="be003-163">詳しい情報</span><span class="sxs-lookup"><span data-stu-id="be003-163">For more info</span></span>                          |
 |-------------------------------|---------------------------------------------|----------------------------------------|
-| **年齢区分**               | 必須                                    | [年齢区分](age-ratings.md)          |
+| **<span data-ttu-id="be003-164">年齢区分</span><span class="sxs-lookup"><span data-stu-id="be003-164">Age ratings</span></span>**               | <span data-ttu-id="be003-165">必須</span><span class="sxs-lookup"><span data-stu-id="be003-165">Required</span></span>                                    | [<span data-ttu-id="be003-166">年齢区分</span><span class="sxs-lookup"><span data-stu-id="be003-166">Age ratings</span></span>](age-ratings.md)          |
 
 <span/>
 
-### <a name="packages-page"></a>[パッケージ] ページ
+### <a name="packages-page"></a><span data-ttu-id="be003-167">[パッケージ] ページ</span><span class="sxs-lookup"><span data-stu-id="be003-167">Packages page</span></span>
 
-| フィールド名                    | コメント                                  | 詳しい情報                          |
+| <span data-ttu-id="be003-168">フィールド名</span><span class="sxs-lookup"><span data-stu-id="be003-168">Field name</span></span>                    | <span data-ttu-id="be003-169">コメント</span><span class="sxs-lookup"><span data-stu-id="be003-169">Notes</span></span>                                  | <span data-ttu-id="be003-170">詳しい情報</span><span class="sxs-lookup"><span data-stu-id="be003-170">For more info</span></span>                          |
 |-------------------------------|----------------------------------------|----------------------------------------|
-| **パッケージのアップロード制御**    | 必須 (パッケージが 1 つ以上)        | [アプリ パッケージのアップロード](upload-app-packages.md) |
-| **デバイス ファミリの利用可否** | 既定値: パッケージに基づく       | [デバイス ファミリの利用可否](upload-app-packages.md#device-family-availability) |
-| **段階的なパッケージのロールアウト**   | 省略可能 (更新プログラムのみ)            | [段階的なパッケージのロールアウト](gradual-package-rollout.md) |
-| **必須の更新プログラム**          | 省略可能 (更新プログラムのみ)            | [必須の更新プログラム](upload-app-packages.md#mandatory-update)
+| **<span data-ttu-id="be003-171">パッケージのアップロード制御</span><span class="sxs-lookup"><span data-stu-id="be003-171">Package upload control</span></span>**    | <span data-ttu-id="be003-172">必須 (パッケージが 1 つ以上)</span><span class="sxs-lookup"><span data-stu-id="be003-172">Required (at least one package)</span></span>        | [<span data-ttu-id="be003-173">アプリ パッケージのアップロード</span><span class="sxs-lookup"><span data-stu-id="be003-173">Upload app packages</span></span>](upload-app-packages.md) |
+| **<span data-ttu-id="be003-174">デバイス ファミリの利用可否</span><span class="sxs-lookup"><span data-stu-id="be003-174">Device family availability</span></span>** | <span data-ttu-id="be003-175">既定値: パッケージに基づく</span><span class="sxs-lookup"><span data-stu-id="be003-175">Default: based on your packages</span></span>       | [<span data-ttu-id="be003-176">デバイス ファミリの利用可否</span><span class="sxs-lookup"><span data-stu-id="be003-176">Device family availability</span></span>](upload-app-packages.md#device-family-availability) |
+| **<span data-ttu-id="be003-177">段階的なパッケージのロールアウト</span><span class="sxs-lookup"><span data-stu-id="be003-177">Gradual package rollout</span></span>**   | <span data-ttu-id="be003-178">省略可能 (更新プログラムのみ)</span><span class="sxs-lookup"><span data-stu-id="be003-178">Optional (for updates only)</span></span>            | [<span data-ttu-id="be003-179">段階的なパッケージのロールアウト</span><span class="sxs-lookup"><span data-stu-id="be003-179">Gradual package rollout</span></span>](gradual-package-rollout.md) |
+| **<span data-ttu-id="be003-180">必須の更新プログラム</span><span class="sxs-lookup"><span data-stu-id="be003-180">Mandatory update</span></span>**          | <span data-ttu-id="be003-181">省略可能 (更新プログラムのみ)</span><span class="sxs-lookup"><span data-stu-id="be003-181">Optional (for updates only)</span></span>            | [<span data-ttu-id="be003-182">必須の更新プログラム</span><span class="sxs-lookup"><span data-stu-id="be003-182">Mandatory update</span></span>](upload-app-packages.md#mandatory-update)
 
 <span/>
 
-### <a name="store-listings"></a>ストア登録情報
+### <a name="store-listings"></a><span data-ttu-id="be003-183">ストア登録情報</span><span class="sxs-lookup"><span data-stu-id="be003-183">Store listings</span></span>
 
-必須情報のすべてを、アプリでサポートする言語のうち、少なくとも 1 つの言語で用意する必要があります。 [ストア登録情報](create-app-store-listings.md)は、アプリでサポートするすべての言語で用意することをお勧めします。また[追加の言語でストア登録情報を用意](create-app-store-listings.md#store-listing-languages)することもできます。
+<span data-ttu-id="be003-184">必須情報のすべてを、アプリでサポートする言語のうち、少なくとも 1 つの言語で用意する必要があります。</span><span class="sxs-lookup"><span data-stu-id="be003-184">You'll need all the required info for at least one of the languages that your app supports.</span></span> <span data-ttu-id="be003-185">[ストア登録情報](create-app-store-listings.md)は、アプリでサポートするすべての言語で用意することをお勧めします。また[追加の言語でストア登録情報を用意](create-app-store-listings.md#store-listing-languages)することもできます。</span><span class="sxs-lookup"><span data-stu-id="be003-185">We recommend providing [Store listings](create-app-store-listings.md) in all of the languages your app supports, and you can also [provide Store listings in additional languages](create-app-store-listings.md#store-listing-languages).</span></span>
 
-| フィールド名                    | コメント                                       | 詳しい情報                                                     |
+| <span data-ttu-id="be003-186">フィールド名</span><span class="sxs-lookup"><span data-stu-id="be003-186">Field name</span></span>                    | <span data-ttu-id="be003-187">コメント</span><span class="sxs-lookup"><span data-stu-id="be003-187">Notes</span></span>                                       | <span data-ttu-id="be003-188">詳しい情報</span><span class="sxs-lookup"><span data-stu-id="be003-188">For more info</span></span>                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
-| **説明**               | 必須                                    | [人の心をつかむアプリの説明を書く](write-a-great-app-description.md) |
-| **リリース ノート**             | 省略可能                                    | [リリース ノート](create-app-store-listings.md#release-notes)         |
-| **スクリーンショット**               | 必須 (スクリーンショットが 1 つ以上)          | [アプリのスクリーンショットと画像](app-screenshots-and-images.md)       |
-| **アプリのタイル アイコン**             | 省略可能、ただし Windows Phone 8.1 では強く推奨 | [アプリのタイル アイコン](create-app-store-listings.md#app-tile-icon) |
-| **Promotional artwork (プロモーション用のアートワーク)**       | 省略可能                                    | [アプリのスクリーンショットと画像](app-screenshots-and-images.md)       |
-| **アプリの機能**              | 省略可能                                    | [機能](create-app-store-listings.md#app-features)               |
-| **Additional system requirements**      | 省略可能                                    | [追加のシステム要件](create-app-store-listings.md#additional-system-requirements) |
-| **キーワード**                  | 省略可能                                    | [キーワード](create-app-store-listings.md#keywords)                   |
-| **著作権と商標の情報** | 省略可能                                 | [著作権と商標の情報](create-app-store-listings.md#copyright-and-trademark-info) |
-| **追加のライセンス条項**  | 省略可能                                    | [追加のライセンス条項](create-app-store-listings.md#additional-license-terms) |
-| **Web サイト**                   | 省略可能                                    | [Web サイト](create-app-store-listings.md#website)                     |
-| **サポートの問い合わせ先情報**      | 省略可能                                    | [サポートの問い合わせ先情報](create-app-store-listings.md)                |
-| **プライバシー ポリシー**            | 一部のアプリでは必須。 「[アプリ開発者契約書](https://msdn.microsoft.com/library/windows/apps/hh694058)」と「[Windows ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1)」をご覧ください | [プライバシー ポリシー](create-app-store-listings.md#privacy-policy) |
-| **Platform-specific Store listings** | 省略可能                               | [プラットフォーム固有のストア登録情報の作成](create-platform-specific-store-listings.md) |
+| **<span data-ttu-id="be003-189">説明</span><span class="sxs-lookup"><span data-stu-id="be003-189">Description</span></span>**               | <span data-ttu-id="be003-190">必須</span><span class="sxs-lookup"><span data-stu-id="be003-190">Required</span></span>                                    | [<span data-ttu-id="be003-191">人の心をつかむアプリの説明を書く</span><span class="sxs-lookup"><span data-stu-id="be003-191">Write a great app description</span></span>](write-a-great-app-description.md) |
+| **<span data-ttu-id="be003-192">リリース ノート</span><span class="sxs-lookup"><span data-stu-id="be003-192">Release notes</span></span>**             | <span data-ttu-id="be003-193">省略可能</span><span class="sxs-lookup"><span data-stu-id="be003-193">Optional</span></span>                                    | [<span data-ttu-id="be003-194">リリース ノート</span><span class="sxs-lookup"><span data-stu-id="be003-194">Release notes</span></span>](create-app-store-listings.md#release-notes)       |
+| **<span data-ttu-id="be003-195">スクリーンショット</span><span class="sxs-lookup"><span data-stu-id="be003-195">Screenshots</span></span>**               | <span data-ttu-id="be003-196">必須 (少なくとも 1 つのスクリーンショット)</span><span class="sxs-lookup"><span data-stu-id="be003-196">Required (at least one screenshot)</span></span>          | [<span data-ttu-id="be003-197">スクリーンショット</span><span class="sxs-lookup"><span data-stu-id="be003-197">Screenshots</span></span>](app-screenshots-and-images.md#screenshots)          |
+| **<span data-ttu-id="be003-198">ストア ロゴ</span><span class="sxs-lookup"><span data-stu-id="be003-198">Store logos</span></span>**               | <span data-ttu-id="be003-199">省略可能、ただし Windows Phone 8.1 以前では強く推奨</span><span class="sxs-lookup"><span data-stu-id="be003-199">Optional, but highly recommended for Windows Phone 8.1 and earlier</span></span> | [<span data-ttu-id="be003-200">ストア ロゴ</span><span class="sxs-lookup"><span data-stu-id="be003-200">Store logos</span></span>](app-screenshots-and-images.md#store-logos)             |
+| **<span data-ttu-id="be003-201">プロモーション用の画像</span><span class="sxs-lookup"><span data-stu-id="be003-201">Promotional images</span></span>**        | <span data-ttu-id="be003-202">省略可能</span><span class="sxs-lookup"><span data-stu-id="be003-202">Optional</span></span>                                    | [<span data-ttu-id="be003-203">プロモーション用の画像</span><span class="sxs-lookup"><span data-stu-id="be003-203">Promotional images</span></span>](app-screenshots-and-images.md#promotional-images) |
+| **<span data-ttu-id="be003-204">Xbox 画像</span><span class="sxs-lookup"><span data-stu-id="be003-204">Xbox images</span></span>**               | <span data-ttu-id="be003-205">省略可能</span><span class="sxs-lookup"><span data-stu-id="be003-205">Optional</span></span>                                    | [<span data-ttu-id="be003-206">Xbox 画像</span><span class="sxs-lookup"><span data-stu-id="be003-206">Xbox images</span></span>](app-screenshots-and-images.md#xbox-images)              |
+| **<span data-ttu-id="be003-207">オプションのプロモーション用の画像</span><span class="sxs-lookup"><span data-stu-id="be003-207">Optional promotional images</span></span>**       | <span data-ttu-id="be003-208">省略可能</span><span class="sxs-lookup"><span data-stu-id="be003-208">Optional</span></span>                            | [<span data-ttu-id="be003-209">オプションのプロモーション用の画像</span><span class="sxs-lookup"><span data-stu-id="be003-209">Optional promotional images</span></span>](app-screenshots-and-images.md#optional-promotional-images)       |
+| **<span data-ttu-id="be003-210">トレーラー</span><span class="sxs-lookup"><span data-stu-id="be003-210">Trailers</span></span>**                  | <span data-ttu-id="be003-211">省略可能</span><span class="sxs-lookup"><span data-stu-id="be003-211">Optional</span></span>                                    | [<span data-ttu-id="be003-212">トレーラー</span><span class="sxs-lookup"><span data-stu-id="be003-212">Trailers</span></span>](app-screenshots-and-images.md#trailers)                | 
+| **<span data-ttu-id="be003-213">アプリの機能</span><span class="sxs-lookup"><span data-stu-id="be003-213">App features</span></span>**              | <span data-ttu-id="be003-214">省略可能</span><span class="sxs-lookup"><span data-stu-id="be003-214">Optional</span></span>                                    | [<span data-ttu-id="be003-215">機能</span><span class="sxs-lookup"><span data-stu-id="be003-215">Features</span></span>](create-app-store-listings.md#app-features)             |
+| **<span data-ttu-id="be003-216">追加のシステム要件</span><span class="sxs-lookup"><span data-stu-id="be003-216">Additional system requirements</span></span>**      | <span data-ttu-id="be003-217">省略可能</span><span class="sxs-lookup"><span data-stu-id="be003-217">Optional</span></span>                                    | [<span data-ttu-id="be003-218">追加のシステム要件</span><span class="sxs-lookup"><span data-stu-id="be003-218">Additional system requirements</span></span>](create-app-store-listings.md#additional-system-requirements) 
+| **<span data-ttu-id="be003-219">検索語句</span><span class="sxs-lookup"><span data-stu-id="be003-219">Search terms</span></span>**              | <span data-ttu-id="be003-220">省略可能</span><span class="sxs-lookup"><span data-stu-id="be003-220">Optional</span></span>                                    | [<span data-ttu-id="be003-221">検索語句</span><span class="sxs-lookup"><span data-stu-id="be003-221">Search terms</span></span>](create-app-store-listings.md#search-terms)         |
+| **<span data-ttu-id="be003-222">プライバシー ポリシー</span><span class="sxs-lookup"><span data-stu-id="be003-222">Privacy policy</span></span>**            | <span data-ttu-id="be003-223">一部のアプリでは必須。</span><span class="sxs-lookup"><span data-stu-id="be003-223">Required for some apps.</span></span> <span data-ttu-id="be003-224">「[アプリ開発者契約](https://msdn.microsoft.com/library/windows/apps/hh694058)」と「[Windows ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1)」をご覧ください</span><span class="sxs-lookup"><span data-stu-id="be003-224">See the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058) and the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1)</span></span> | [<span data-ttu-id="be003-225">プライバシー ポリシー</span><span class="sxs-lookup"><span data-stu-id="be003-225">Privacy policy</span></span>](create-app-store-listings.md#privacy-policy)        |
+| **<span data-ttu-id="be003-226">著作権と商標の情報</span><span class="sxs-lookup"><span data-stu-id="be003-226">Copyright and trademark info</span></span>** | <span data-ttu-id="be003-227">省略可能</span><span class="sxs-lookup"><span data-stu-id="be003-227">Optional</span></span>                                 | [<span data-ttu-id="be003-228">著作権と商標の情報</span><span class="sxs-lookup"><span data-stu-id="be003-228">Copyright and trademark info</span></span>](create-app-store-listings.md#copyright-and-trademark-info) |
+| **<span data-ttu-id="be003-229">追加のライセンス条項</span><span class="sxs-lookup"><span data-stu-id="be003-229">Additional license terms</span></span>**  | <span data-ttu-id="be003-230">省略可能</span><span class="sxs-lookup"><span data-stu-id="be003-230">Optional</span></span>                                    | [<span data-ttu-id="be003-231">追加のライセンス条項</span><span class="sxs-lookup"><span data-stu-id="be003-231">Additional license terms</span></span>](create-app-store-listings.md#additional-license-terms) |
+| **<span data-ttu-id="be003-232">Web サイト</span><span class="sxs-lookup"><span data-stu-id="be003-232">Website</span></span>**                   | <span data-ttu-id="be003-233">省略可能</span><span class="sxs-lookup"><span data-stu-id="be003-233">Optional</span></span>                                    | [<span data-ttu-id="be003-234">Web サイト</span><span class="sxs-lookup"><span data-stu-id="be003-234">Website</span></span>](create-app-store-listings.md#website)                   |
+| **<span data-ttu-id="be003-235">サポートの問い合わせ先情報</span><span class="sxs-lookup"><span data-stu-id="be003-235">Support contact info</span></span>**      | <span data-ttu-id="be003-236">省略可能</span><span class="sxs-lookup"><span data-stu-id="be003-236">Optional</span></span>                                    | [<span data-ttu-id="be003-237">サポートの問い合わせ先情報</span><span class="sxs-lookup"><span data-stu-id="be003-237">Support contact info</span></span>](create-app-store-listings.md)              |
+| **<span data-ttu-id="be003-238">プラットフォーム固有のストア登録情報</span><span class="sxs-lookup"><span data-stu-id="be003-238">Platform-specific Store listings</span></span>** | <span data-ttu-id="be003-239">省略可能</span><span class="sxs-lookup"><span data-stu-id="be003-239">Optional</span></span>                               | [<span data-ttu-id="be003-240">プラットフォーム固有のストア登録情報の作成</span><span class="sxs-lookup"><span data-stu-id="be003-240">Create platform-specific Store listings</span></span>](create-platform-specific-store-listings.md)  |
 
 <span/>
 
-### <a name="notes-for-certification-page"></a>[認定を求めるにあたってのコメント] ページ
+### <a name="notes-for-certification-page"></a><span data-ttu-id="be003-241">[認定を求めるにあたってのコメント] ページ</span><span class="sxs-lookup"><span data-stu-id="be003-241">Notes for certification page</span></span>
 
-| フィールド名                    | コメント                                       | 詳しい情報                                                     |
+| <span data-ttu-id="be003-242">フィールド名</span><span class="sxs-lookup"><span data-stu-id="be003-242">Field name</span></span>                    | <span data-ttu-id="be003-243">コメント</span><span class="sxs-lookup"><span data-stu-id="be003-243">Notes</span></span>                                       | <span data-ttu-id="be003-244">詳しい情報</span><span class="sxs-lookup"><span data-stu-id="be003-244">For more info</span></span>                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
-| **コメント**                     | 省略可能                                    | [認定を求めるにあたってのコメント](notes-for-certification.md)             |
+| **<span data-ttu-id="be003-245">コメント</span><span class="sxs-lookup"><span data-stu-id="be003-245">Notes</span></span>**                     | <span data-ttu-id="be003-246">省略可能</span><span class="sxs-lookup"><span data-stu-id="be003-246">Optional</span></span>                                    | [<span data-ttu-id="be003-247">認定を求めるにあたってのコメント</span><span class="sxs-lookup"><span data-stu-id="be003-247">Notes for certification</span></span>](notes-for-certification.md)             |
 
 <span/>
 
-**注**&nbsp;&nbsp;基幹業務 (LOB) アプリを企業に直接公開する方法については、「[LOB アプリの企業への配布](distribute-lob-apps-to-enterprises.md)」をご覧ください。
-
+<span data-ttu-id="be003-248">**注**&nbsp;&nbsp;基幹業務 (LOB) アプリを企業に直接公開する方法については、「[LOB アプリの企業への配布](distribute-lob-apps-to-enterprises.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="be003-248">**Note**&nbsp;&nbsp;For info about publishing line-of-business (LOB) apps directly to enterprises, see [Distribute LOB apps to enterprises](distribute-lob-apps-to-enterprises.md).</span></span>

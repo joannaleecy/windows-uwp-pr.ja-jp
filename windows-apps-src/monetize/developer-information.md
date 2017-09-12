@@ -1,44 +1,37 @@
 ---
 author: mcleanbyron
 ms.assetid: 278114aa-2a44-4d63-a1d2-d512d8aababc
-description: "Microsoft Store Services SDK の Microsoft Advertising ライブラリについての一般的な開発者向けの情報をお知らせします。"
-title: "Microsoft Advertising ライブラリの開発者向け情報"
+description: "Microsoft Advertising ライブラリの一般的な開発者向け情報についてお知らせします。"
+title: "開発者向け情報"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 広告, Advertising"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 44b5266a104b2f706537cea2167b395487f275d2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9e4fe88d7fe66e594685f756cb173396c0d0968a
+ms.sourcegitcommit: a9e4be98688b3a6125fd5dd126190fcfcd764f95
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/21/2017
 ---
+# <a name="developer-information"></a><span data-ttu-id="d8b86-104">開発者向け情報</span><span class="sxs-lookup"><span data-stu-id="d8b86-104">Developer information</span></span>
 
-# <a name="developer-information-about-the-microsoft-advertising-libraries"></a>Microsoft Advertising ライブラリの開発者向け情報
-
-
-
-
-このセクションのトピックでは、Microsoft Store Services SDK (UWP アプリ用) および Microsoft Advertising SDK (Windows 8.1 アプリと Windows Phone 8.x アプリ用) に含まれる Microsoft Advertising ライブラリに関する、開発者に役立つ情報を提供します。
+<span data-ttu-id="d8b86-105">このセクションのトピックでは、[Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (UWP アプリ用) および [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) に含まれる Microsoft Advertising ライブラリに関する、開発者に役立つ情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="d8b86-105">The topics in this section provide useful information to developers about the Microsoft advertising libraries in the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (for UWP apps) and the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) (for Windows 8.1 and Windows Phone 8.x apps).</span></span>
 
 
-## <a name="in-this-section"></a>このセクションの内容
+## <a name="in-this-section"></a><span data-ttu-id="d8b86-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="d8b86-106">In this section</span></span>
 
-| トピック                                                                                                       | 説明                 |
+| <span data-ttu-id="d8b86-107">トピック</span><span class="sxs-lookup"><span data-stu-id="d8b86-107">Topic</span></span>                                                                                                       | <span data-ttu-id="d8b86-108">説明</span><span class="sxs-lookup"><span data-stu-id="d8b86-108">Description</span></span>                 |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------|
-| [UI とユーザー エクスペリエンス ガイドライン](ui-and-user-experience-guidelines.md) |  アプリで広告を表示するための UI とユーザー エクスペリエンス ガイドラインを提供します。  |
-| [テスト モードの値](test-mode-values.md)        |  アプリをテストするときに使用する、テスト アプリケーション ID と広告ユニット ID について説明します。   |
-| [アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md)      | アプリのテストが完了して、Windows デベロッパー センターに提出する準備が整ったときに、Windows デベロッパー センター ダッシュボードを使って、アプリのテスト用のアプリケーション ID と広告ユニット ID の値を実稼働値に置き換える方法について説明します。   |
-| [エラー処理](error-handling-with-advertising-libraries.md)                                    |  Microsoft Advertising ライブラリの **AdControl** クラスで生成されるエラーを処理する方法について説明します。   |
-| [広告を含むアプリを Windows ストアに提出する](submit-an-app-with-ads-to-the-windows-store.md)                                    |  広告付きのアプリを公開する前に満たす必要がある、アプリ開発者契約の要件について説明します。   |
-| [バナー広告でサポートされる広告サイズ](supported-ad-sizes-for-banner-ads.md)                                    |  バナー広告でサポートされているサイズを示します。   |
-| [Microsoft Advertising でサポートされる市場](supported-markets-for-microsoft-advertising.md)                                    |  広告でサポートされている市場の一覧を示します。   |
+| [<span data-ttu-id="d8b86-109">UI とユーザー エクスペリエンス ガイドライン</span><span class="sxs-lookup"><span data-stu-id="d8b86-109">UI and user experience guidelines</span></span>](ui-and-user-experience-guidelines.md) |  <span data-ttu-id="d8b86-110">アプリで広告を表示するための UI とユーザー エクスペリエンス ガイドラインを提供します。</span><span class="sxs-lookup"><span data-stu-id="d8b86-110">Provides UI and user experience guidelines for displaying ads in apps.</span></span>  |
+| [<span data-ttu-id="d8b86-111">テスト モードの値</span><span class="sxs-lookup"><span data-stu-id="d8b86-111">Test mode values</span></span>](test-mode-values.md)        |  <span data-ttu-id="d8b86-112">アプリをテストするときに使用する、テスト アプリケーション ID と広告ユニット ID について説明します。</span><span class="sxs-lookup"><span data-stu-id="d8b86-112">Provides information about test application ID and ad unit ID to use while you are testing your app.</span></span>   |
+| [<span data-ttu-id="d8b86-113">アプリの広告ユニットをセットアップする</span><span class="sxs-lookup"><span data-stu-id="d8b86-113">Set up ad units in your app</span></span>](set-up-ad-units-in-your-app.md)      | <span data-ttu-id="d8b86-114">アプリのテストが完了して、Windows デベロッパー センターに提出する準備が整ったときに、Windows デベロッパー センター ダッシュボードを使って、アプリのテスト用のアプリケーション ID と広告ユニット ID の値を実稼働値に置き換える方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d8b86-114">Describes how to replace test application ID and ad unit ID values in your app with production values from the Windows Dev Center dashboard when you finish testing your app and are ready to submit it to Windows Dev Center.</span></span>   |
+| [<span data-ttu-id="d8b86-115">エラー処理</span><span class="sxs-lookup"><span data-stu-id="d8b86-115">Error handling</span></span>](error-handling-with-advertising-libraries.md)                                    |  <span data-ttu-id="d8b86-116">Microsoft Advertising ライブラリの **AdControl** クラスで生成されるエラーを処理する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d8b86-116">Describes how to handle errors that are generated by the **AdControl** class in the Microsoft advertising libraries.</span></span>   |
+| [<span data-ttu-id="d8b86-117">バナー広告でサポートされる広告サイズ</span><span class="sxs-lookup"><span data-stu-id="d8b86-117">Supported ad sizes for banner ads</span></span>](supported-ad-sizes-for-banner-ads.md)                                    |  <span data-ttu-id="d8b86-118">バナー広告でサポートされているサイズを示します。</span><span class="sxs-lookup"><span data-stu-id="d8b86-118">Provides the supported sizes for banner ads.</span></span>   |
 
 
 
  
 
  
-

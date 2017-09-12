@@ -9,38 +9,38 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d9e7fbb560b7dc3e608c22494a44fce70621173b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2376a21efc0e2167afb64274cee4037f43ed1674
+ms.sourcegitcommit: 7540962003b38811e6336451bb03d46538b35671
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/26/2017
 ---
-
-# <a name="web-authentication-broker"></a>Web 認証ブローカー
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+# <a name="web-authentication-broker"></a><span data-ttu-id="6a17f-104">Web 認証ブローカー</span><span class="sxs-lookup"><span data-stu-id="6a17f-104">Web authentication broker</span></span>
 
 
-この記事では、OpenID や OAuth などの認証プロトコルを使うオンライン ID プロバイダー (Facebook、Twitter、Flickr、Instagram など) にユニバーサル Windows プラットフォーム (UWP) アプリを接続する方法について説明します。 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) メソッドは、要求をオンライン ID プロバイダーに送信し、アプリがアクセスできるプロバイダー リソースを示すアクセス トークンを返します。
+<span data-ttu-id="6a17f-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="6a17f-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="6a17f-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]</span><span class="sxs-lookup"><span data-stu-id="6a17f-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-**注:** 動作する完全なコード サンプルが必要な場合は、[GitHub の WebAuthenticationBroker レポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=620622)をコピーしてください。
+
+<span data-ttu-id="6a17f-107">この記事では、OpenID や OAuth などの認証プロトコルを使うオンライン ID プロバイダー (Facebook、Twitter、Flickr、Instagram など) にユニバーサル Windows プラットフォーム (UWP) アプリを接続する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="6a17f-107">This article explains how to connect your Universal Windows Platform (UWP) app to an online identity provider that uses authentication protocols like OpenID or OAuth, such as Facebook, Twitter, Flickr, Instagram, and so on.</span></span> <span data-ttu-id="6a17f-108">[**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) メソッドは、要求をオンライン ID プロバイダーに送信し、アプリがアクセスできるプロバイダー リソースを示すアクセス トークンを返します。</span><span class="sxs-lookup"><span data-stu-id="6a17f-108">The [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) method sends a request to the online identity provider and gets back an access token that describes the provider resources to which the app has access.</span></span>
+
+>[!NOTE]
+><span data-ttu-id="6a17f-109">動作する完全なコード例が必要な場合は、[GitHub の WebAuthenticationBroker リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=620622)をコピーしてください。</span><span class="sxs-lookup"><span data-stu-id="6a17f-109">For a complete, working code sample, clone the [WebAuthenticationBroker repo on GitHub](http://go.microsoft.com/fwlink/p/?LinkId=620622).</span></span>
 
  
 
-## <a name="register-your-app-with-your-online-provider"></a>アプリのオンライン プロバイダーへの登録
+## <a name="register-your-app-with-your-online-provider"></a><span data-ttu-id="6a17f-110">アプリのオンライン プロバイダーへの登録</span><span class="sxs-lookup"><span data-stu-id="6a17f-110">Register your app with your online provider</span></span>
 
 
-アプリを接続先のオンライン ID プロバイダーに登録する必要があります。 アプリを登録する方法については、ID プロバイダーに確認してください。 通常、登録すると、オンライン プロバイダーからアプリの ID や秘密鍵が提供されます。
+<span data-ttu-id="6a17f-111">アプリを接続先のオンライン ID プロバイダーに登録する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6a17f-111">You must register your app with the online identity provider to which you want to connect.</span></span> <span data-ttu-id="6a17f-112">アプリを登録する方法については、ID プロバイダーに確認してください。</span><span class="sxs-lookup"><span data-stu-id="6a17f-112">You can find out how to register your app from the identity provider.</span></span> <span data-ttu-id="6a17f-113">通常、登録すると、オンライン プロバイダーからアプリの ID や秘密鍵が提供されます。</span><span class="sxs-lookup"><span data-stu-id="6a17f-113">After registering, the online provider typically gives you an Id or secret key for your app.</span></span>
 
-## <a name="build-the-authentication-request-uri"></a>認証要求の URI の作成
+## <a name="build-the-authentication-request-uri"></a><span data-ttu-id="6a17f-114">認証要求の URI の作成</span><span class="sxs-lookup"><span data-stu-id="6a17f-114">Build the authentication request URI</span></span>
 
 
-要求の URI は、オンライン プロバイダーに対する認証要求の送信先のアドレスと、必要なその他の情報 (アプリ ID またはシークレット、認証後にユーザーが転送されるリダイレクト URI、必要な応答の型など) で構成されます。 必要なパラメーターについては、プロバイダーに確認してください。
+<span data-ttu-id="6a17f-115">要求の URI は、オンライン プロバイダーに対する認証要求の送信先のアドレスと、必要なその他の情報 (アプリ ID またはシークレット、認証後にユーザーが転送されるリダイレクト URI、必要な応答の型など) で構成されます。</span><span class="sxs-lookup"><span data-stu-id="6a17f-115">The request URI consists of the address where you send the authentication request to your online provider appended with other required information, such as an app ID or secret, a redirect URI where the user is sent after completing authentication, and the expected response type.</span></span> <span data-ttu-id="6a17f-116">必要なパラメーターについては、プロバイダーに確認してください。</span><span class="sxs-lookup"><span data-stu-id="6a17f-116">You can find out from your provider what parameters are required.</span></span>
 
-要求の URI は、[**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) メソッドの *requestUri* パラメーターとして送信されます。 また、セキュリティで保護されたアドレスである (https:// で始まる) 必要があります。
+<span data-ttu-id="6a17f-117">要求の URI は、[**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) メソッドの *requestUri* パラメーターとして送信されます。</span><span class="sxs-lookup"><span data-stu-id="6a17f-117">The request URI is sent as the *requestUri* parameter of the [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) method.</span></span> <span data-ttu-id="6a17f-118">また、セキュリティで保護されたアドレスである (`https://` で始まる) 必要があります。</span><span class="sxs-lookup"><span data-stu-id="6a17f-118">It must be a secure address (it must start with `https://`)</span></span>
 
-次の例は、要求の URI を作成する方法を示しています。
+<span data-ttu-id="6a17f-119">次の例は、要求の URI を作成する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="6a17f-119">The following example shows how to build the request URI.</span></span>
 
 ```cs
 string startURL = "https://<providerendpoint>?client_id=<clientid>&scope=<scopes>&response_type=token";
@@ -50,10 +50,10 @@ System.Uri startURI = new System.Uri(startURL);
 System.Uri endURI = new System.Uri(endURL);
 ```
 
-## <a name="connect-to-the-online-provider"></a>オンライン プロバイダーへの接続
+## <a name="connect-to-the-online-provider"></a><span data-ttu-id="6a17f-120">オンライン プロバイダーへの接続</span><span class="sxs-lookup"><span data-stu-id="6a17f-120">Connect to the online provider</span></span>
 
 
-[**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) メソッドを呼び出してオンライン ID プロバイダーに接続し、アクセス トークンを取得します。 このメソッドは、前の手順で作った URI を *requestUri* パラメーターとして受け取り、ユーザーのリダイレクト先の URI を *callbackUri* パラメーターとして受け取ります。
+<span data-ttu-id="6a17f-121">[**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) メソッドを呼び出してオンライン ID プロバイダーに接続し、アクセス トークンを取得します。</span><span class="sxs-lookup"><span data-stu-id="6a17f-121">You call the [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) method to connect to the online identity provider and get an access token.</span></span> <span data-ttu-id="6a17f-122">このメソッドは、前の手順で作った URI を *requestUri* パラメーターとして受け取り、ユーザーのリダイレクト先の URI を *callbackUri* パラメーターとして受け取ります。</span><span class="sxs-lookup"><span data-stu-id="6a17f-122">The method takes the URI constructed in the previous step as the *requestUri* parameter, and a URI to which you want the user to be redirected as the *callbackUri* parameter.</span></span>
 
 ```cs
 string result;
@@ -89,14 +89,15 @@ catch (Exception ex)
 }
 ```
 
-[**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) に加え、[**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) 名前空間には [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425) メソッドが含まれています。 このメソッドは呼び出さないでください。 これは Windows Phone 8.1 のみを対象とするアプリ用に設計されたもので、Windows 10 以降では推奨されません。
+>[!WARNING]
+><span data-ttu-id="6a17f-123">[**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) に加え、[**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) 名前空間には [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425) メソッドが含まれています。</span><span class="sxs-lookup"><span data-stu-id="6a17f-123">In addition to [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066), the [**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) namespace contains an [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425) method.</span></span> <span data-ttu-id="6a17f-124">このメソッドは呼び出さないでください。</span><span class="sxs-lookup"><span data-stu-id="6a17f-124">Do not call this method.</span></span> <span data-ttu-id="6a17f-125">これは Windows Phone 8.1 のみを対象とするアプリ用に設計されたもので、Windows 10 以降では推奨されません。</span><span class="sxs-lookup"><span data-stu-id="6a17f-125">It is designed for apps targeting Windows Phone 8.1 only and is deprecated starting with Windows 10.</span></span>
 
-## <a name="connecting-with-single-sign-on-sso"></a>シングル サインオン (SSO) を使った接続
+## <a name="connecting-with-single-sign-on-sso"></a><span data-ttu-id="6a17f-126">シングル サインオン (SSO) を使った接続</span><span class="sxs-lookup"><span data-stu-id="6a17f-126">Connecting with single sign-on (SSO).</span></span>
 
 
-既定では、Web 認証ブローカーは Cookie の保存を許可していません。 そのため、アプリ ユーザーは (たとえば、プロバイダーのログイン ダイアログのチェック ボックスをオンにして) ログオン状態を維持することを示した場合でも、そのプロバイダーのリソースにアクセスするたびにログインする必要があります。 SSO を使ってログインするには、オンライン ID プロバイダーが Web 認証ブローカーに対して SSO を有効にしており、*callbackUri * パラメーターを受け取らない [**AuthenticateAsync **](https://msdn.microsoft.com/library/windows/apps/br212068) のオーバーロードをアプリで呼び出す必要があります。
+<span data-ttu-id="6a17f-127">既定では、Web 認証ブローカーは Cookie の保存を許可していません。</span><span class="sxs-lookup"><span data-stu-id="6a17f-127">By default, Web authentication broker does not allow cookies to persist.</span></span> <span data-ttu-id="6a17f-128">そのため、アプリ ユーザーは (たとえば、プロバイダーのログイン ダイアログのチェック ボックスをオンにして) ログオン状態を維持することを示した場合でも、そのプロバイダーのリソースにアクセスするたびにログインする必要があります。</span><span class="sxs-lookup"><span data-stu-id="6a17f-128">Because of this, even if the app user indicates that they want to stay logged in (for example, by selecting a check box in the provider's login dialog), they will have to login each time they want to access resources for that provider.</span></span> <span data-ttu-id="6a17f-129">SSO を使ってログインするには、オンライン ID プロバイダーが Web 認証ブローカーに対して SSO を有効にしており、*callbackUri * パラメーターを受け取らない [**AuthenticateAsync **](https://msdn.microsoft.com/library/windows/apps/br212068) のオーバーロードをアプリで呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="6a17f-129">To login with SSO, your online identity provider must have enabled SSO for Web authentication broker, and your app must call the overload of [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212068) that does not take a *callbackUri* parameter.</span></span> <span data-ttu-id="6a17f-130">これで Web 認証ブローカーが永続 cookie を保存でき、これ以降に同じアプリから認証を求められたときに、ユーザーは再びサインインを行う必要がありません (アクセス トークンの期限が切れるまで、ユーザーは実質的に "ログイン" した状態になります)。</span><span class="sxs-lookup"><span data-stu-id="6a17f-130">This will allow persisted cookies to be stored by the web authentication broker, so that future authentication calls by the same app will not require repeated sign-in by the user (the user is effectively "logged in" until the access token expires).</span></span>
 
-SSO をサポートするには、オンライン プロバイダーが `ms-app://`*appSID* 形式のリダイレクト URI の登録を許可している必要があります。*appSID* は、アプリの SID です。 アプリの SID は、アプリ開発者のページか、[**GetCurrentApplicationCallbackUri**](https://msdn.microsoft.com/library/windows/apps/br212069) メソッドを呼び出すことで確認できます。
+<span data-ttu-id="6a17f-131">SSO をサポートするには、オンライン プロバイダーが `ms-app://<appSID>` という形式のリダイレクト URI の登録を許可している必要があります。`<appSID>` は、アプリの SID です。</span><span class="sxs-lookup"><span data-stu-id="6a17f-131">To support SSO, the online provider must allow you to register a redirect URI in the form `ms-app://<appSID>`, where `<appSID>` is the SID for your app.</span></span> <span data-ttu-id="6a17f-132">アプリの SID は、アプリ開発者のページか、[**GetCurrentApplicationCallbackUri**](https://msdn.microsoft.com/library/windows/apps/br212069) メソッドを呼び出すことで確認できます。</span><span class="sxs-lookup"><span data-stu-id="6a17f-132">You can find your app's SID from the app developer page for your app, or by calling the [**GetCurrentApplicationCallbackUri**](https://msdn.microsoft.com/library/windows/apps/br212069) method.</span></span>
 
 ```cs
 string result;
@@ -131,40 +132,40 @@ catch (Exception ex)
 }
 ```
 
-## <a name="debugging"></a>デバッグ
+## <a name="debugging"></a><span data-ttu-id="6a17f-133">デバッグ</span><span class="sxs-lookup"><span data-stu-id="6a17f-133">Debugging</span></span>
 
 
-Web 認証ブローカー API のトラブルシューティングには、操作ログの確認や Fiddler を使った Web 要求と応答の確認など、いくつかの方法があります。
+<span data-ttu-id="6a17f-134">Web 認証ブローカー API のトラブルシューティングには、操作ログの確認や Fiddler を使った Web 要求と応答の確認など、いくつかの方法があります。</span><span class="sxs-lookup"><span data-stu-id="6a17f-134">There are several ways to troubleshoot the web authentication broker APIs, including reviewing operational logs and reviewing web requests and responses using Fiddler.</span></span>
 
-### <a name="operational-logs"></a>操作ログ
+### <a name="operational-logs"></a><span data-ttu-id="6a17f-135">操作ログ</span><span class="sxs-lookup"><span data-stu-id="6a17f-135">Operational logs</span></span>
 
-問題の原因の多くは、操作ログを使って特定できます。 Web サイト開発者向けの専用のイベント ログ チャネルである Microsoft-Windows-WebAuth\\Operational を使うと、Web 認証ブローカーで Web ページが処理される過程を把握できます。 これを有効にするには、eventvwr.exe を起動し、アプリケーションとサービス ログvices\\Microsoft\\Windows\\WebAuth で操作ログを有効にします。 また、Web 認証ブローカーは Web サーバー上で自身を識別するために、ユーザー エージェント文字列に一意の文字列を追加します。 その文字列は、"MSAuthHost/1.0" です。 バージョン番号は今後変更される可能性があるため、コード内のそれに依存しないようにしてください。 ユーザー エージェント文字列全体の例とデバッグの全ステップは次のとおりです。
+<span data-ttu-id="6a17f-136">問題の原因の多くは、操作ログを使って特定できます。</span><span class="sxs-lookup"><span data-stu-id="6a17f-136">Often you can determine what is not working by using the operational logs.</span></span> <span data-ttu-id="6a17f-137">Web サイト開発者向けの専用のイベント ログ チャネルである Microsoft-Windows-WebAuth\\Operational を使うと、Web 認証ブローカーで Web ページが処理される過程を把握できます。</span><span class="sxs-lookup"><span data-stu-id="6a17f-137">There is a dedicated event log channel Microsoft-Windows-WebAuth\\Operational that allows website developers to understand how their web pages are being processed by the Web authentication broker.</span></span> <span data-ttu-id="6a17f-138">これを有効にするには、eventvwr.exe を起動し、アプリケーションとサービス ログvices\\Microsoft\\Windows\\WebAuth で操作ログを有効にします。</span><span class="sxs-lookup"><span data-stu-id="6a17f-138">To enable it, launch eventvwr.exe and enable Operational log under the Application and Services\\Microsoft\\Windows\\WebAuth.</span></span> <span data-ttu-id="6a17f-139">また、Web 認証ブローカーは Web サーバー上で自身を識別するために、ユーザー エージェント文字列に一意の文字列を追加します。</span><span class="sxs-lookup"><span data-stu-id="6a17f-139">Also, the Web authentication broker appends a unique string to the user agent string to identify itself on the web server.</span></span> <span data-ttu-id="6a17f-140">その文字列は、"MSAuthHost/1.0" です。</span><span class="sxs-lookup"><span data-stu-id="6a17f-140">The string is "MSAuthHost/1.0".</span></span> <span data-ttu-id="6a17f-141">バージョン番号は今後変更される可能性があるため、コード内のそれに依存しないようにしてください。</span><span class="sxs-lookup"><span data-stu-id="6a17f-141">Note that the version number may change in the future, so you should not to depend on that version number in your code.</span></span> <span data-ttu-id="6a17f-142">ユーザー エージェント文字列全体の例とデバッグの全ステップは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="6a17f-142">An example of the full user agent string, followed by full debugging steps, is as follows.</span></span>
 
 `User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Win64; x64; Trident/6.0; MSAuthHost/1.0)`
 
-1.  操作ログを有効にします。
-2.  Contoso ソーシャル アプリを実行します。 ![WebAuth 操作ログが表示されたイベント ビューアー](images/wab-event-viewer-1.png)
-3.  生成されたログ エントリで、Web 認証ブローカーの動作を把握することができます。 この例では、次の情報を知ることができます。
-    -   ナビゲーションの開始: AuthHost が開始された時点のログ。開始 URL と終了 URL に関する情報が含まれています。
+1.  <span data-ttu-id="6a17f-143">操作ログを有効にします。</span><span class="sxs-lookup"><span data-stu-id="6a17f-143">Enable operational logs.</span></span>
+2.  <span data-ttu-id="6a17f-144">Contoso ソーシャル アプリを実行します。</span><span class="sxs-lookup"><span data-stu-id="6a17f-144">Run Contoso social application.</span></span> ![WebAuth 操作ログが表示されたイベント ビューアー](images/wab-event-viewer-1.png)
+3.  <span data-ttu-id="6a17f-146">生成されたログ エントリで、Web 認証ブローカーの動作を把握することができます。</span><span class="sxs-lookup"><span data-stu-id="6a17f-146">The generated logs entries can be used to understand the behavior of Web authentication broker in greater detail.</span></span> <span data-ttu-id="6a17f-147">この例では、次の情報を知ることができます。</span><span class="sxs-lookup"><span data-stu-id="6a17f-147">In this case, these can include:</span></span>
+    -   <span data-ttu-id="6a17f-148">ナビゲーションの開始: AuthHost が開始された時点のログ。開始 URL と終了 URL に関する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="6a17f-148">Navigation Start: Logs when the AuthHost is started and contains information about the start and termination URLs.</span></span>
     -   ![ナビゲーションの開始の例](images/wab-event-viewer-2.png)
-    -   ナビゲーションの完了: Web ページの読み込み完了時のログ。
-    -   メタ タグ: メタ タグが検出されたときのログ。詳しい情報を含みます。
-    -   ナビゲーションの停止: ユーザーによって停止されたナビゲーション。
-    -   ナビゲーション エラー: AuthHost が HttpStatusCode を含む URL でナビゲーション エラーを検出。
-    -   ナビゲーションの終了: 終了 URL を検出。
+    -   <span data-ttu-id="6a17f-150">ナビゲーションの完了: Web ページの読み込み完了時のログ。</span><span class="sxs-lookup"><span data-stu-id="6a17f-150">Navigation Complete: Logs the completion of loading a web page.</span></span>
+    -   <span data-ttu-id="6a17f-151">メタ タグ: メタ タグが検出されたときのログ。詳しい情報を含みます。</span><span class="sxs-lookup"><span data-stu-id="6a17f-151">Meta Tag: Logs when a meta-tag is encountered including the details.</span></span>
+    -   <span data-ttu-id="6a17f-152">ナビゲーションの停止: ユーザーによって停止されたナビゲーション。</span><span class="sxs-lookup"><span data-stu-id="6a17f-152">Navigation Terminate: Navigation terminated by the user.</span></span>
+    -   <span data-ttu-id="6a17f-153">ナビゲーション エラー: AuthHost が HttpStatusCode を含む URL でナビゲーション エラーを検出。</span><span class="sxs-lookup"><span data-stu-id="6a17f-153">Navigation Error: AuthHost encounters a navigation error at a URL including HttpStatusCode.</span></span>
+    -   <span data-ttu-id="6a17f-154">ナビゲーションの終了: 終了 URL を検出。</span><span class="sxs-lookup"><span data-stu-id="6a17f-154">Navigation End: Terminating URL is encountered.</span></span>
 
-### <a name="fiddler"></a>Fiddler
+### <a name="fiddler"></a><span data-ttu-id="6a17f-155">Fiddler</span><span class="sxs-lookup"><span data-stu-id="6a17f-155">Fiddler</span></span>
 
-Fiddler Web デバッガーはアプリに対して使うことができます。
+<span data-ttu-id="6a17f-156">Fiddler Web デバッガーはアプリに対して使うことができます。</span><span class="sxs-lookup"><span data-stu-id="6a17f-156">The Fiddler web debugger can be used with apps.</span></span>
 
-1.  AuthHost はプライベート ネットワーク機能を実現するために専用のアプリ コンテナー内で実行されるため、Windows Registry Editor Version 5.00 というレジストリ キーを設定する必要があります。
+1.  <span data-ttu-id="6a17f-157">AuthHost はプライベート ネットワーク機能を実現するために専用のアプリ コンテナー内で実行されるため、Windows Registry Editor Version 5.00 というレジストリ キーを設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6a17f-157">Since the AuthHost runs in its own app container to give it the private network capability, you must set a registry key: Windows Registry Editor Version 5.00</span></span>
 
-    **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
+    <span data-ttu-id="6a17f-158">**HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001</span><span class="sxs-lookup"><span data-stu-id="6a17f-158">**HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001</span></span>
 
                          Data type  
                          DWORD
 
-2.  送信トラフィックを生成するのは AuthHost であるため、AuthHost 用の規則を追加します。
+2.  <span data-ttu-id="6a17f-159">送信トラフィックを生成するのは AuthHost であるため、AuthHost 用の規則を追加します。</span><span class="sxs-lookup"><span data-stu-id="6a17f-159">Add a rule for the AuthHost as this is what is generating the outbound traffic.</span></span>
     ```syntax
     CheckNetIsolation.exe LoopbackExempt -a -n=microsoft.windows.authhost.a.p_8wekyb3d8bbwe
     CheckNetIsolation.exe LoopbackExempt -a -n=microsoft.windows.authhost.sso.p_8wekyb3d8bbwe
@@ -182,4 +183,4 @@ Fiddler Web デバッガーはアプリに対して使うことができます�
         SID:  S-1-15-2-3506084497-1208594716-3384433646-2514033508-1838198150-1980605558-3480344935
     ```
 
-3.  Fiddler への受信トラフィック用のファイアウォール規則を追加します。
+3.  <span data-ttu-id="6a17f-160">Fiddler への受信トラフィック用のファイアウォール規則を追加します。</span><span class="sxs-lookup"><span data-stu-id="6a17f-160">Add a firewall rule for incoming traffic to Fiddler.</span></span>

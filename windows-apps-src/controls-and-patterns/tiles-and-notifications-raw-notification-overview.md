@@ -6,130 +6,129 @@ ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
 label: TBD
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b8d695dbf3aa662a760f162b6fcb818d90f45c38
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1c5ea35d7f074dedebc434b1c7566e966ddb45db
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-# <a name="raw-notification-overview"></a>直接通知の概要
+# <a name="raw-notification-overview"></a><span data-ttu-id="45f9a-104">直接通知の概要</span><span class="sxs-lookup"><span data-stu-id="45f9a-104">Raw notification overview</span></span>
 
 
-直接通知は、短い汎用のプッシュ通知です。 説明のみを目的としており、UI コンポーネントは含まれません。 他のプッシュ通知と同様に、Windows プッシュ通知サービス (WNS) 機能は、クラウド サービスからアプリに直接通知を配信します。
+<span data-ttu-id="45f9a-105">直接通知は、短い汎用のプッシュ通知です。</span><span class="sxs-lookup"><span data-stu-id="45f9a-105">Raw notifications are short, general purpose push notifications.</span></span> <span data-ttu-id="45f9a-106">説明のみを目的としており、UI コンポーネントは含まれません。</span><span class="sxs-lookup"><span data-stu-id="45f9a-106">They are strictly instructional and do not include a UI component.</span></span> <span data-ttu-id="45f9a-107">他のプッシュ通知と同様に、Windows プッシュ通知サービス (WNS) 機能は、クラウド サービスからアプリに直接通知を配信します。</span><span class="sxs-lookup"><span data-stu-id="45f9a-107">As with other push notifications, the Windows Push Notification Services (WNS) feature delivers raw notifications from your cloud service to your app.</span></span>
 
-直接通知は、ユーザーがアプリに権限を与えている場合にアプリによるバックグラウンド タスクの実行をトリガーするなど、さまざまな目的で使うことができます。 アプリとの通信に WNS を使うことで、固定ソケット接続の作成、HTTP GET メッセージの送信、サービスとアプリ間でのその他の接続などに伴う処理のオーバーヘッドを回避できます。
-
-> [!IMPORTANT]
-> 直接通知について理解するには、「[Windows プッシュ通知サービス (WNS) の概要](tiles-and-notifications-windows-push-notification-services--wns--overview.md)」で説明されている概念を理解していれば理想的です。
-
- 
-
-トースト、タイル、バッジのプッシュ通知の場合と同様に、直接通知は割り当てられたチャネルの URI (Uniform Resource Identifier) を介してアプリのクラウド サービスから WNS にプッシュされます。 その後、WNS はそのチャネルに関連付けられているデバイスとユーザー アカウントに通知を配信します。 他のプッシュ通知とは異なり、直接通知にはフォーマットの規定はありません。 ペイロードのコンテンツは、すべてアプリで定義されます。
-
-直接通知を使うことによってメリットを得ることができるアプリの例として、理論上のドキュメント共同作業アプリについて考えてみましょう。 1 つのドキュメントを同時に編集している 2 人のユーザーがいるとします。 この共有ドキュメントをホストするクラウド サービスでは、一方のユーザーが変更を加えたときに、直接通知を使ってもう一方のユーザーに通知できます。 この直接通知には、ドキュメントに対する変更が含まれるとは限りません。この通知は、各ユーザーのアプリ コピーに対して、一元化された場所にアクセスして変更を同期するように伝えます。 直接通知を使うことによって、アプリとそのクラウド サービスは、ドキュメントが開かれている間、固定接続の保持に伴うオーバーヘッドを削減することができます。
-
-## <a name="how-raw-notifications-work"></a>直接通知のしくみ
-
-
-すべての直接通知はプッシュ通知です。 このため、プッシュ通知の送受信に必要な設定が直接通知にも適用されます。
-
--   直接通知を送るためには有効な WNS チャネルが必要です。 プッシュ通知チャネルの取得について詳しくは、「[通知チャネルを要求、作成、保存する方法](https://msdn.microsoft.com/library/windows/apps/hh465412)」をご覧ください。
--   アプリ マニフェストに **インターネット** 機能を含める必要があります。 Microsoft Visual Studio マニフェスト エディターでは、**[機能]** タブの **[インターネット (クライアント)]** としてこのオプションが用意されています。 詳しくは、「[**Capabilities**](https://msdn.microsoft.com/library/windows/apps/br211422)」をご覧ください。
-
-通知の本文は、アプリで定義された形式に従います。 クライアントは、アプリだけが認識すればよい、NULL で終了する文字列 (**HSTRING**) としてデータを受け取ります。
-
-クライアントがオフラインの場合は、[X-WNS-Cache-Policy](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_cache) ヘッダーが通知に含まれるときにのみ、直接通知が WNS によってキャッシュされます。 ただし、デバイスがオンラインに戻った時点でキャッシュされて配信されるのは 1 つの直接通知だけです。
-
-直接通知がクライアントで使うパスは 3 つしかありません。直接通知は、実行中のアプリに通知配信イベントをとおして配信されるか、バックグラウンド タスクに送られるか、またはドロップされます。 したがって、クライアントがオフラインの状態で WNS が直接通知の配信を試みた場合、その通知はドロップされます。
-
-## <a name="creating-a-raw-notification"></a>直接通知の作成
-
-
-直接通知の送信はタイル、トースト、またはバッジのプッシュ通知の送信に似ていますが、次の違いがあります。
-
--   HTTP の Content-Type ヘッダーは、"application/octet-stream" に設定する必要があります。
--   HTTP の [X-WNS-Type](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_type) ヘッダーは "wns/raw" に設定する必要があります。
--   通知の本文には、ペイロードが 5 KB 未満の任意の文字列を含めることができます。
-
-直接通知は、アプリでのアクション (サービスに直接アクセスして大量のデータを同期する、通知コンテンツに基づいて局部的な状態変更を行うなど) の実行をトリガーする短いメッセージとして使うことを意図しています。 WNS プッシュ通知は配信されるとは限らないため、アプリとクラウド サービスで、クライアントがオフラインの場合などには直接通知がクライアントに届かない可能性があることを示しておく必要があります。
-
-プッシュ通知の送信について詳しくは、「[クイック スタート: プッシュ通知の送信](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)」をご覧ください。
-
-## <a name="receiving-a-raw-notification"></a>直接通知の受信
-
-
-アプリで直接通知を受け取る方法は 2 とおりあります。
-
--   アプリケーションの実行中に[通知配信イベント](#notification_delivery_events)で受け取る。
--   アプリでバックグラウンド タスクを実行できる場合、[直接通知によってトリガーされるバックグラウンド タスク](#bg_tasks)で受け取る。
-
-アプリでは、両方のメカニズムを使って直接通知を受け取ることができます。 通知配信イベント ハンドラーと、直接通知によってトリガーされるバックグラウンド タスクの両方をアプリが実装している場合、アプリの実行時には通知配信イベントが優先されます。
-
--   アプリが実行中の場合、バックグラウンド タスクよりも通知配信イベントが優先され、最初に通知を処理するのはそのアプリになります。
--   通知配信イベント ハンドラーは、イベントの [**PushNotificationReceivedEventArgs.Cancel**](https://msdn.microsoft.com/library/windows/apps/br241297) プロパティを **true** に設定することで、そのハンドラーの終了後に直接通知がそのバックグラウンド タスクに渡されないよう指定できます。 **Cancel** プロパティを **false** に設定するか、またはこのプロパティを設定しない (デフォルト値は **false**) 場合、通知配信イベント ハンドラーによる処理の完了後、直接通知によってバックグラウンド タスクがトリガーされます。
-
-### <a name="notification-delivery-events"></a>通知配信イベント
-
-アプリで通知配信イベント ([**PushNotificationReceived**](https://msdn.microsoft.com/library/windows/apps/br241292)) を使うと、アプリの実行中に直接通知を受信できます。 クラウド サービスが直接通知を送る場合、実行中のアプリはチャネル URI 上の通知配信イベントを処理することによって直接通知を受け取ることができます。
-
-アプリが実行されておらず、[バックグラウンド タスク](#bg_tasks)を使わない場合、そのアプリに送られる直接通知はすべて受信時に WNS によってドロップされます。 クラウド サービスのリソースの消費を削減するには、アプリがアクティブであるかどうかを追跡するロジックをサービスに実装することを検討する必要があります。 このロジックの情報源は 2 種類あります。アプリが通知を受け取る準備ができたことをサービスに明示的に伝えることも、WNS が停止するタイミングをサービスに伝えることもできます。
-
--   **アプリがクラウド サービスに通知する**: アプリは、サービスにアクセスし、アプリがフォアグラウンドで実行されていると知らせることができます。 この方法の欠点は、アプリがサービスに頻繁にアクセスするようになる可能性があるということです。 ただし、到着した直接通知をアプリが受け取ることができるタイミングをサービスが常に把握しているという利点もあります。 この他、アプリがそのサービスにアクセスする際に、サービスがブロードキャストではなく直接通知をそのアプリの特定のインスタンスに送る必要があるとわかるという利点もあります。
--   **クラウド サービスが WNS 応答メッセージに応答する**: アプリ サービスは、WNS によって返された [X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) の情報と [X-WNS-DeviceConnectionStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_dcs) の情報を使って、アプリへの直接通知の送信を停止するタイミングを判断できます。 サービスが通知を HTTP POST としてチャネルに送る場合、サービスは応答で以下のメッセージの 1 つを受け取ることがあります。
-
-    -   **X-WNS-NotificationStatus: dropped**: クライアントが通知を受け取らなかったことを示します。 **dropped** 応答は、ユーザー デバイスのフォアグラウンドに存在しなくなったアプリによって引き起こされたと考えることができます。
-    -   **X-WNS-DeviceConnectionStatus: disconnected** または **X-WNS-DeviceConnectionStatus: tempconnected**: Windows クライアントがもう WNS に接続されていないことを示します。 このメッセージを WNS から受け取るには、通知の HTTP POST に [X-WNS-RequestForStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_request) ヘッダーを設定して受け取りを要求する必要があります。
-
-    アプリのクラウド サービスは、これらのステータス メッセージ内の情報を使って、直接通知による通信要求を停止できます。 アプリがフォアグラウンドに戻り、サービスにアクセスした時点で、サービスは直接通知の送信を再開できます。
-
-    通知がクライアントに正常に配信されたかどうかは、[X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) を基準にして判断しないでください。
-
-    詳しくは、「[プッシュ通知サービスの要求ヘッダーと応答ヘッダー](https://msdn.microsoft.com/library/windows/apps/hh465435)」を参照してください。
-
-### <a name="background-tasks-triggered-by-raw-notifications"></a>直接通知によってトリガーされるバックグラウンド タスク
+<span data-ttu-id="45f9a-108">直接通知は、ユーザーがアプリに権限を与えている場合にアプリによるバックグラウンド タスクの実行をトリガーするなど、さまざまな目的で使うことができます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-108">You can use raw notifications for a variety of purposes, including to trigger your app to run a background task if the user has given the app permission to do so.</span></span> <span data-ttu-id="45f9a-109">アプリとの通信に WNS を使うことで、固定ソケット接続の作成、HTTP GET メッセージの送信、サービスとアプリ間でのその他の接続などに伴う処理のオーバーヘッドを回避できます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-109">By using WNS to communicate with your app, you can avoid the processing overhead of creating persistent socket connections, sending HTTP GET messages, and other service-to-app connections.</span></span>
 
 > [!IMPORTANT]
-> 直接通知のバックグラウンド タスクを使用する前に、[**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) を使用してアプリにバックグラウンド アクセスを許可する必要があります。
+> <span data-ttu-id="45f9a-110">直接通知について理解するには、「[Windows プッシュ通知サービス (WNS) の概要](tiles-and-notifications-windows-push-notification-services--wns--overview.md)」で説明されている概念を理解していれば理想的です。</span><span class="sxs-lookup"><span data-stu-id="45f9a-110">To understand raw notifications, it's best to be familiar with the concepts discussed in the [Windows Push Notification Services (WNS) overview](tiles-and-notifications-windows-push-notification-services--wns--overview.md).</span></span>
 
  
 
-バックグラウンド タスクは [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) に登録する必要があります。 登録されていないと、直接通知を受け取ったときにそのタスクが実行されません。
+<span data-ttu-id="45f9a-111">トースト、タイル、バッジのプッシュ通知の場合と同様に、直接通知は割り当てられたチャネルの URI (Uniform Resource Identifier) を介してアプリのクラウド サービスから WNS にプッシュされます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-111">As with toast, tile, and badge push notifications, a raw notification is pushed from your app's cloud service over an assigned channel Uniform Resource Identifier (URI) to WNS.</span></span> <span data-ttu-id="45f9a-112">その後、WNS はそのチャネルに関連付けられているデバイスとユーザー アカウントに通知を配信します。</span><span class="sxs-lookup"><span data-stu-id="45f9a-112">WNS, in turn, delivers the notification to the device and user account associated with that channel.</span></span> <span data-ttu-id="45f9a-113">他のプッシュ通知とは異なり、直接通知にはフォーマットの規定はありません。</span><span class="sxs-lookup"><span data-stu-id="45f9a-113">Unlike other push notifications, raw notifications don't have a specified format.</span></span> <span data-ttu-id="45f9a-114">ペイロードのコンテンツは、すべてアプリで定義されます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-114">The content of the payload is entirely app-defined.</span></span>
 
-直接通知によってトリガーされたバックグラウンド タスクを使うと、アプリが実行されていないときでも (実行をトリガーする場合もありますが)、アプリのクラウド サービスでアプリにアクセスできます。 そのためにアプリが継続的な接続を維持する必要はありません。 直接通知は、バックグラウンド タスクをトリガーできる唯一の通知の種類です。 トースト、タイル、バッジのプッシュ通知ではバックグラウンド タスクをトリガーできませんが、直接通知によってトリガーされたバックグラウンド タスクによって、ローカル API 呼び出しを介してタイルを更新し、トースト通知を呼び出すことはできます。
+<span data-ttu-id="45f9a-115">直接通知を使うことによってメリットを得ることができるアプリの例として、理論上のドキュメント共同作業アプリについて考えてみましょう。</span><span class="sxs-lookup"><span data-stu-id="45f9a-115">As an illustration of an app that could benefit from raw notifications, let's look at a theoretical document collaboration app.</span></span> <span data-ttu-id="45f9a-116">1 つのドキュメントを同時に編集している 2 人のユーザーがいるとします。</span><span class="sxs-lookup"><span data-stu-id="45f9a-116">Consider two users who are editing the same document at the same time.</span></span> <span data-ttu-id="45f9a-117">この共有ドキュメントをホストするクラウド サービスでは、一方のユーザーが変更を加えたときに、直接通知を使ってもう一方のユーザーに通知できます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-117">The cloud service, which hosts the shared document, could use raw notifications to notify each user when changes are made by the other user.</span></span> <span data-ttu-id="45f9a-118">この直接通知には、ドキュメントに対する変更が含まれるとは限りません。この通知は、各ユーザーのアプリ コピーに対して、一元化された場所にアクセスして変更を同期するように伝えます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-118">The raw notifications would not necessarily contain the changes to the document, but instead would signal each user's copy of the app to contact the central location and sync the available changes.</span></span> <span data-ttu-id="45f9a-119">直接通知を使うことによって、アプリとそのクラウド サービスは、ドキュメントが開かれている間、固定接続の保持に伴うオーバーヘッドを削減することができます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-119">By using raw notifications, the app and the its cloud service can save the overhead of maintaining persistent connections the entire time the document is open.</span></span>
 
-直接通知によってトリガーされたバックグラウンド タスクがどのように機能するかを知るため、電子書籍の読み取りに使うアプリを考えてみましょう。 まず、ユーザーが (他のデバイスを使って) ネット上で電子書籍を購入したとします。 応答として、アプリのクラウド サービスは、電子書籍が購入されたこと、アプリでこの電子書籍がダウンロードされることを示すペイロードを付けて、ユーザーの個々のデバイスに直接通知を送ることができます。 この後、アプリがそのクラウド サービスに直接アクセスし、この新しい書籍のダウンロードをバックグラウンドで開始します。これにより、ユーザーがアプリを起動するときには、この書籍が既に存在し、読むことができる状態になっています。
-
-直接通知を使ってバックグラウンド タスクをトリガーするには、アプリで以下を行う必要があります。
-
-1.  [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) を使用して、バックグラウンドでタスクを実行するための許可 (ユーザーはいつでも取り消すことが可能) を要求する。
-2.  バックグラウンド タスクを実装する。 詳しくは、「[バックグラウンド タスクによるアプリのサポート](https://msdn.microsoft.com/library/windows/apps/hh977046)」をご覧ください。
-
-これで、アプリで直接通知を受け取るたびに、[**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) への応答としてバックグラウンド タスクが呼び出されるようになります。 バックグラウンド タスクは、直接通知のアプリ固有ペイロードを解釈し、ペイロードに対する処理を行います。
-
-各アプリで同時に実行できるバックグラウンド タスクは 1 つだけです。 バックグラウンド タスクが既に実行されているアプリでバックグラウンド タスクがトリガーされた場合、最初のバックグラウンド タスクが完了するまで新しいバックグラウンド タスクは実行されません。
-
-## <a name="other-resources"></a>その他のリソース
+## <a name="how-raw-notifications-work"></a><span data-ttu-id="45f9a-120">直接通知のしくみ</span><span class="sxs-lookup"><span data-stu-id="45f9a-120">How raw notifications work</span></span>
 
 
-詳しくは、Windows 8.1 の[直接通知のサンプル](http://go.microsoft.com/fwlink/p/?linkid=241553)や Windows 8.1 の[プッシュ通知と定期的な通知のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=231476)をダウンロードし、Windows 10 アプリでそれらのソース コードを再利用してください。
+<span data-ttu-id="45f9a-121">すべての直接通知はプッシュ通知です。</span><span class="sxs-lookup"><span data-stu-id="45f9a-121">All raw notifications are push notifications.</span></span> <span data-ttu-id="45f9a-122">このため、プッシュ通知の送受信に必要な設定が直接通知にも適用されます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-122">Therefore, the setup required to send and receive push notifications applies to raw notifications as well:</span></span>
 
-## <a name="related-topics"></a>関連トピック
+-   <span data-ttu-id="45f9a-123">直接通知を送るためには有効な WNS チャネルが必要です。</span><span class="sxs-lookup"><span data-stu-id="45f9a-123">You must have a valid WNS channel to send raw notifications.</span></span> <span data-ttu-id="45f9a-124">プッシュ通知チャネルの取得について詳しくは、「[通知チャネルを要求、作成、保存する方法](https://msdn.microsoft.com/library/windows/apps/hh465412)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="45f9a-124">For more information about acquiring a push notification channel, see [How to request, create, and save a notification channel](https://msdn.microsoft.com/library/windows/apps/hh465412).</span></span>
+-   <span data-ttu-id="45f9a-125">アプリ マニフェストに **インターネット** 機能を含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="45f9a-125">You must include the **Internet** capability in your app's manifest.</span></span> <span data-ttu-id="45f9a-126">Microsoft Visual Studio マニフェスト エディターでは、**[機能]** タブの **[インターネット (クライアント)]** としてこのオプションが用意されています。</span><span class="sxs-lookup"><span data-stu-id="45f9a-126">In the Microsoft Visual Studio manifest editor, you will find this option under the **Capabilities** tab as **Internet (Client)**.</span></span> <span data-ttu-id="45f9a-127">詳しくは、「[**Capabilities**](https://msdn.microsoft.com/library/windows/apps/br211422)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="45f9a-127">For more information, see [**Capabilities**](https://msdn.microsoft.com/library/windows/apps/br211422).</span></span>
 
-* [直接通知のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh761463)
-* [クイック スタート: 直接通知のバックグラウンド タスクの作成と登録](https://msdn.microsoft.com/library/windows/apps/jj676800)
-* [クイック スタート: 実行中のアプリのプッシュ通知の中断](https://msdn.microsoft.com/library/windows/apps/jj709908)
-* [**RawNotification**](https://msdn.microsoft.com/library/windows/apps/br241304)
-* [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)
+<span data-ttu-id="45f9a-128">通知の本文は、アプリで定義された形式に従います。</span><span class="sxs-lookup"><span data-stu-id="45f9a-128">The body of the notification is in an app-defined format.</span></span> <span data-ttu-id="45f9a-129">クライアントは、アプリだけが認識すればよい、NULL で終了する文字列 (**HSTRING**) としてデータを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="45f9a-129">The client receives the data as a null-terminated string (**HSTRING**) that only needs to be understood by the app.</span></span>
+
+<span data-ttu-id="45f9a-130">クライアントがオフラインの場合は、[X-WNS-Cache-Policy](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_cache) ヘッダーが通知に含まれるときにのみ、直接通知が WNS によってキャッシュされます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-130">If the client is offline, raw notifications will be cached by WNS only if the [X-WNS-Cache-Policy](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_cache) header is included in the notification.</span></span> <span data-ttu-id="45f9a-131">ただし、デバイスがオンラインに戻った時点でキャッシュされて配信されるのは 1 つの直接通知だけです。</span><span class="sxs-lookup"><span data-stu-id="45f9a-131">However, only one raw notification will be cached and delivered once the device comes back online.</span></span>
+
+<span data-ttu-id="45f9a-132">直接通知がクライアントで使うパスは 3 つしかありません。直接通知は、実行中のアプリに通知配信イベントをとおして配信されるか、バックグラウンド タスクに送られるか、またはドロップされます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-132">There are only three possible paths for a raw notification to take on the client: they will be delivered to your running app through a notification delivery event, sent to a background task, or dropped.</span></span> <span data-ttu-id="45f9a-133">したがって、クライアントがオフラインの状態で WNS が直接通知の配信を試みた場合、その通知はドロップされます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-133">Therefore, if the client is offline and WNS attempts to deliver a raw notification, the notification is dropped.</span></span>
+
+## <a name="creating-a-raw-notification"></a><span data-ttu-id="45f9a-134">直接通知の作成</span><span class="sxs-lookup"><span data-stu-id="45f9a-134">Creating a raw notification</span></span>
+
+
+<span data-ttu-id="45f9a-135">直接通知の送信はタイル、トースト、またはバッジのプッシュ通知の送信に似ていますが、次の違いがあります。</span><span class="sxs-lookup"><span data-stu-id="45f9a-135">Sending a raw notification is similar to sending a tile, toast, or badge push notification, with these differences:</span></span>
+
+-   <span data-ttu-id="45f9a-136">HTTP の Content-Type ヘッダーは、"application/octet-stream" に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="45f9a-136">The HTTP Content-Type header must be set to "application/octet-stream".</span></span>
+-   <span data-ttu-id="45f9a-137">HTTP の [X-WNS-Type](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_type) ヘッダーは "wns/raw" に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="45f9a-137">The HTTP [X-WNS-Type](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_type) header must be set to "wns/raw".</span></span>
+-   <span data-ttu-id="45f9a-138">通知の本文には、ペイロードが 5 KB 未満の任意の文字列を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-138">The notification body can contain any string payload smaller than 5 KB in size.</span></span>
+
+<span data-ttu-id="45f9a-139">直接通知は、アプリでのアクション (サービスに直接アクセスして大量のデータを同期する、通知コンテンツに基づいて局部的な状態変更を行うなど) の実行をトリガーする短いメッセージとして使うことを意図しています。</span><span class="sxs-lookup"><span data-stu-id="45f9a-139">Raw notifications are intended to be used as short messages that trigger your app to take an action, such as to directly contact the service to sync a larger amount of data or to make a local state modification based on the notification content.</span></span> <span data-ttu-id="45f9a-140">WNS プッシュ通知は配信されるとは限らないため、アプリとクラウド サービスで、クライアントがオフラインの場合などには直接通知がクライアントに届かない可能性があることを示しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="45f9a-140">Note that WNS push notifications cannot be guaranteed to be delivered, so your app and cloud service must account for the possibility that the raw notification might not reach the client, such as when the client is offline.</span></span>
+
+<span data-ttu-id="45f9a-141">プッシュ通知の送信について詳しくは、「[クイック スタート: プッシュ通知の送信](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="45f9a-141">For more information on sending push notifications, see [Quickstart: Sending a push notification](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252).</span></span>
+
+## <a name="receiving-a-raw-notification"></a><span data-ttu-id="45f9a-142">直接通知の受信</span><span class="sxs-lookup"><span data-stu-id="45f9a-142">Receiving a raw notification</span></span>
+
+
+<span data-ttu-id="45f9a-143">アプリで直接通知を受け取る方法は 2 とおりあります。</span><span class="sxs-lookup"><span data-stu-id="45f9a-143">There are two avenues through which your app can be receive raw notifications:</span></span>
+
+-   <span data-ttu-id="45f9a-144">アプリケーションの実行中に[通知配信イベント](#notification_delivery_events)で受け取る。</span><span class="sxs-lookup"><span data-stu-id="45f9a-144">Through [notification delivery events](#notification_delivery_events) while your application is running.</span></span>
+-   <span data-ttu-id="45f9a-145">アプリでバックグラウンド タスクを実行できる場合、[直接通知によってトリガーされるバックグラウンド タスク](#bg_tasks)で受け取る。</span><span class="sxs-lookup"><span data-stu-id="45f9a-145">Through [background tasks triggered by the raw notification](#bg_tasks) if your app is enabled to run background tasks.</span></span>
+
+<span data-ttu-id="45f9a-146">アプリでは、両方のメカニズムを使って直接通知を受け取ることができます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-146">An app can use both mechanisms to receive raw notifications.</span></span> <span data-ttu-id="45f9a-147">通知配信イベント ハンドラーと、直接通知によってトリガーされるバックグラウンド タスクの両方をアプリが実装している場合、アプリの実行時には通知配信イベントが優先されます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-147">If an app implements both the notification delivery event handler and background tasks that are triggered by raw notifications, the notification delivery event will take priority when the app is running.</span></span>
+
+-   <span data-ttu-id="45f9a-148">アプリが実行中の場合、バックグラウンド タスクよりも通知配信イベントが優先され、最初に通知を処理するのはそのアプリになります。</span><span class="sxs-lookup"><span data-stu-id="45f9a-148">If the app is running, the notification delivery event will take priority over the background task and the app will have the first opportunity to process the notification.</span></span>
+-   <span data-ttu-id="45f9a-149">通知配信イベント ハンドラーは、イベントの [**PushNotificationReceivedEventArgs.Cancel**](https://msdn.microsoft.com/library/windows/apps/br241297) プロパティを **true** に設定することで、そのハンドラーの終了後に直接通知がそのバックグラウンド タスクに渡されないよう指定できます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-149">The notification delivery event handler can specify, by setting the event's [**PushNotificationReceivedEventArgs.Cancel**](https://msdn.microsoft.com/library/windows/apps/br241297) property to **true**, that the raw notification should not be passed to its background task once the handler exits.</span></span> <span data-ttu-id="45f9a-150">**Cancel** プロパティを **false** に設定するか、またはこのプロパティを設定しない (デフォルト値は **false**) 場合、通知配信イベント ハンドラーによる処理の完了後、直接通知によってバックグラウンド タスクがトリガーされます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-150">If the **Cancel** property is set to **false** or is not set (the default value is **false**), the raw notification will trigger the background task after the notification delivery event handler has done its work.</span></span>
+
+### <a name="notification-delivery-events"></a><span data-ttu-id="45f9a-151">通知配信イベント</span><span class="sxs-lookup"><span data-stu-id="45f9a-151">Notification delivery events</span></span>
+
+<span data-ttu-id="45f9a-152">アプリで通知配信イベント ([**PushNotificationReceived**](https://msdn.microsoft.com/library/windows/apps/br241292)) を使うと、アプリの実行中に直接通知を受信できます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-152">Your app can use a notification delivery event ([**PushNotificationReceived**](https://msdn.microsoft.com/library/windows/apps/br241292)) to receive raw notifications while the app is in use.</span></span> <span data-ttu-id="45f9a-153">クラウド サービスが直接通知を送る場合、実行中のアプリはチャネル URI 上の通知配信イベントを処理することによって直接通知を受け取ることができます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-153">When the cloud service sends a raw notification, the running app can receive it by handling the notification delivery event on the channel URI.</span></span>
+
+<span data-ttu-id="45f9a-154">アプリが実行されておらず、[バックグラウンド タスク](#bg_tasks)を使わない場合、そのアプリに送られる直接通知はすべて受信時に WNS によってドロップされます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-154">If your app is not running and does not use [background tasks](#bg_tasks), any raw notification sent to that app is dropped by WNS on receipt.</span></span> <span data-ttu-id="45f9a-155">クラウド サービスのリソースの消費を削減するには、アプリがアクティブであるかどうかを追跡するロジックをサービスに実装することを検討する必要があります。</span><span class="sxs-lookup"><span data-stu-id="45f9a-155">To avoid wasting your cloud service's resources, you should consider implementing logic on the service to track whether the app is active.</span></span> <span data-ttu-id="45f9a-156">このロジックの情報源は 2 種類あります。アプリが通知を受け取る準備ができたことをサービスに明示的に伝えることも、WNS が停止するタイミングをサービスに伝えることもできます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-156">There are two sources of this information: an app can explicitly tell the service that it's ready to start receiving notifications, and WNS can tell the service when to stop.</span></span>
+
+-   <span data-ttu-id="45f9a-157">**アプリがクラウド サービスに通知する**: アプリは、サービスにアクセスし、アプリがフォアグラウンドで実行されていると知らせることができます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-157">**The app notifies the cloud service**: The app can contact its service to let it know that the app is running in the foreground.</span></span> <span data-ttu-id="45f9a-158">この方法の欠点は、アプリがサービスに頻繁にアクセスするようになる可能性があるということです。</span><span class="sxs-lookup"><span data-stu-id="45f9a-158">The disadvantage of this approach is that the app can end up contacting your service very frequently.</span></span> <span data-ttu-id="45f9a-159">ただし、到着した直接通知をアプリが受け取ることができるタイミングをサービスが常に把握しているという利点もあります。</span><span class="sxs-lookup"><span data-stu-id="45f9a-159">However, it has the advantage that the service will always know when the app is ready to receive incoming raw notifications.</span></span> <span data-ttu-id="45f9a-160">この他、アプリがそのサービスにアクセスする際に、サービスがブロードキャストではなく直接通知をそのアプリの特定のインスタンスに送る必要があるとわかるという利点もあります。</span><span class="sxs-lookup"><span data-stu-id="45f9a-160">Another advantage is that when the app contacts its service, the service then knows to send raw notifications to the specific instance of that app rather than broadcast.</span></span>
+-   <span data-ttu-id="45f9a-161">**クラウド サービスが WNS 応答メッセージに応答する**: アプリ サービスは、WNS によって返された [X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) の情報と [X-WNS-DeviceConnectionStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_dcs) の情報を使って、アプリへの直接通知の送信を停止するタイミングを判断できます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-161">**The cloud service responds to WNS response messages** : Your app service can use the [X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) and [X-WNS-DeviceConnectionStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_dcs) information returned by WNS to determine when to stop sending raw notifications to the app.</span></span> <span data-ttu-id="45f9a-162">サービスが通知を HTTP POST としてチャネルに送る場合、サービスは応答で以下のメッセージの 1 つを受け取ることがあります。</span><span class="sxs-lookup"><span data-stu-id="45f9a-162">When your service sends a notification to a channel as an HTTP POST, it can receive one of these messages in the response:</span></span>
+
+    -   <span data-ttu-id="45f9a-163">**X-WNS-NotificationStatus: dropped**: クライアントが通知を受け取らなかったことを示します。</span><span class="sxs-lookup"><span data-stu-id="45f9a-163">**X-WNS-NotificationStatus: dropped**: This indicates that the notification was not received by the client.</span></span> <span data-ttu-id="45f9a-164">**dropped** 応答は、ユーザー デバイスのフォアグラウンドに存在しなくなったアプリによって引き起こされたと考えることができます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-164">It's a safe assumption that the **dropped** response is caused by your app no longer being in the foreground on the user's device.</span></span>
+    -   <span data-ttu-id="45f9a-165">**X-WNS-DeviceConnectionStatus: disconnected** または **X-WNS-DeviceConnectionStatus: tempconnected**: Windows クライアントがもう WNS に接続されていないことを示します。</span><span class="sxs-lookup"><span data-stu-id="45f9a-165">**X-WNS-DeviceConnectionStatus: disconnected** or **X-WNS-DeviceConnectionStatus: tempconnected**: This indicates that the Windows client no longer has a connection to WNS.</span></span> <span data-ttu-id="45f9a-166">このメッセージを WNS から受け取るには、通知の HTTP POST に [X-WNS-RequestForStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_request) ヘッダーを設定して受け取りを要求する必要があります。</span><span class="sxs-lookup"><span data-stu-id="45f9a-166">Note that to receive this message from WNS, you have to ask for it by setting the [X-WNS-RequestForStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_request) header in the notification's HTTP POST.</span></span>
+
+    <span data-ttu-id="45f9a-167">アプリのクラウド サービスは、これらのステータス メッセージ内の情報を使って、直接通知による通信要求を停止できます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-167">Your app's cloud service can use the information in these status messages to cease communication attempts through raw notifications.</span></span> <span data-ttu-id="45f9a-168">アプリがフォアグラウンドに戻り、サービスにアクセスした時点で、サービスは直接通知の送信を再開できます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-168">The service can resume sending raw notifications once it is contacted by the app, when the app switches back into the foreground.</span></span>
+
+    <span data-ttu-id="45f9a-169">通知がクライアントに正常に配信されたかどうかは、[X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) を基準にして判断しないでください。</span><span class="sxs-lookup"><span data-stu-id="45f9a-169">Note that you should not rely on [X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) to determine whether the notification was successfully delivered to the client.</span></span>
+
+    <span data-ttu-id="45f9a-170">詳しくは、「[プッシュ通知サービスの要求ヘッダーと応答ヘッダー](https://msdn.microsoft.com/library/windows/apps/hh465435)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="45f9a-170">For more information, see [Push notification service request and response headers](https://msdn.microsoft.com/library/windows/apps/hh465435)</span></span>
+
+### <a name="background-tasks-triggered-by-raw-notifications"></a><span data-ttu-id="45f9a-171">直接通知によってトリガーされるバックグラウンド タスク</span><span class="sxs-lookup"><span data-stu-id="45f9a-171">Background tasks triggered by raw notifications</span></span>
+
+> [!IMPORTANT]
+> <span data-ttu-id="45f9a-172">直接通知のバックグラウンド タスクを使用する前に、[**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) を使用してアプリにバックグラウンド アクセスを許可する必要があります。</span><span class="sxs-lookup"><span data-stu-id="45f9a-172">Before using raw notification background tasks, an app must be granted background access via [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485).</span></span>
+
+ 
+
+<span data-ttu-id="45f9a-173">バックグラウンド タスクは [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) に登録する必要があります。</span><span class="sxs-lookup"><span data-stu-id="45f9a-173">Your background task must be registered with a [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543).</span></span> <span data-ttu-id="45f9a-174">登録されていないと、直接通知を受け取ったときにそのタスクが実行されません。</span><span class="sxs-lookup"><span data-stu-id="45f9a-174">If it is not registered, the task will not run when a raw notification is received.</span></span>
+
+<span data-ttu-id="45f9a-175">直接通知によってトリガーされたバックグラウンド タスクを使うと、アプリが実行されていないときでも (実行をトリガーする場合もありますが)、アプリのクラウド サービスでアプリにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-175">A background task that is triggered by a raw notification enables your app's cloud service to contact your app, even when the app is not running (though it might trigger it to run).</span></span> <span data-ttu-id="45f9a-176">そのためにアプリが継続的な接続を維持する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="45f9a-176">This happens without the app having to maintain a continuous connection.</span></span> <span data-ttu-id="45f9a-177">直接通知は、バックグラウンド タスクをトリガーできる唯一の通知の種類です。</span><span class="sxs-lookup"><span data-stu-id="45f9a-177">Raw notifications are the only notification type that can trigger background tasks.</span></span> <span data-ttu-id="45f9a-178">トースト、タイル、バッジのプッシュ通知ではバックグラウンド タスクをトリガーできませんが、直接通知によってトリガーされたバックグラウンド タスクによって、ローカル API 呼び出しを介してタイルを更新し、トースト通知を呼び出すことはできます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-178">However, while toast, tile, and badge push notifications cannot trigger background tasks, background tasks triggered by raw notifications can update tiles and invoke toast notifications through local API calls.</span></span>
+
+<span data-ttu-id="45f9a-179">直接通知によってトリガーされたバックグラウンド タスクがどのように機能するかを知るため、電子書籍の読み取りに使うアプリを考えてみましょう。</span><span class="sxs-lookup"><span data-stu-id="45f9a-179">As an illustration of how background tasks that are triggered by raw notifications work, let's consider an app used to read e-books.</span></span> <span data-ttu-id="45f9a-180">まず、ユーザーが (他のデバイスを使って) ネット上で電子書籍を購入したとします。</span><span class="sxs-lookup"><span data-stu-id="45f9a-180">First, a user purchases a book online, possibly on another device.</span></span> <span data-ttu-id="45f9a-181">応答として、アプリのクラウド サービスは、電子書籍が購入されたこと、アプリでこの電子書籍がダウンロードされることを示すペイロードを付けて、ユーザーの個々のデバイスに直接通知を送ることができます。</span><span class="sxs-lookup"><span data-stu-id="45f9a-181">In response, the app's cloud service can send a raw notification to each of the user's devices, with a payload that states that the book was purchased and the app should download it.</span></span> <span data-ttu-id="45f9a-182">この後、アプリがそのクラウド サービスに直接アクセスし、この新しい書籍のダウンロードをバックグラウンドで開始します。これにより、ユーザーがアプリを起動するときには、この書籍が既に存在し、読むことができる状態になっています。</span><span class="sxs-lookup"><span data-stu-id="45f9a-182">The app then directly contacts the app's cloud service to begin a background download of the new book so that later, when the user launches the app, the book is already there and ready for reading.</span></span>
+
+<span data-ttu-id="45f9a-183">直接通知を使ってバックグラウンド タスクをトリガーするには、アプリで以下を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="45f9a-183">To use a raw notification to trigger a background task, your app must:</span></span>
+
+1.  <span data-ttu-id="45f9a-184">[**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) を使用して、バックグラウンドでタスクを実行するための許可 (ユーザーはいつでも取り消すことが可能) を要求する。</span><span class="sxs-lookup"><span data-stu-id="45f9a-184">Request permission to run tasks in the background (which the user can revoke at any time) by using [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485).</span></span>
+2.  <span data-ttu-id="45f9a-185">バックグラウンド タスクを実装する。</span><span class="sxs-lookup"><span data-stu-id="45f9a-185">Implement the background task.</span></span> <span data-ttu-id="45f9a-186">詳しくは、「[バックグラウンド タスクによるアプリのサポート](https://msdn.microsoft.com/library/windows/apps/hh977046)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="45f9a-186">For more information, see [Supporting your app with background tasks](https://msdn.microsoft.com/library/windows/apps/hh977046)</span></span>
+
+<span data-ttu-id="45f9a-187">これで、アプリで直接通知を受け取るたびに、[**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) への応答としてバックグラウンド タスクが呼び出されるようになります。</span><span class="sxs-lookup"><span data-stu-id="45f9a-187">Your background task is then invoked in response to the [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543), each time a raw notification is received for your app.</span></span> <span data-ttu-id="45f9a-188">バックグラウンド タスクは、直接通知のアプリ固有ペイロードを解釈し、ペイロードに対する処理を行います。</span><span class="sxs-lookup"><span data-stu-id="45f9a-188">Your background task interprets the raw notification's app-specific payload and acts on it.</span></span>
+
+<span data-ttu-id="45f9a-189">各アプリで同時に実行できるバックグラウンド タスクは 1 つだけです。</span><span class="sxs-lookup"><span data-stu-id="45f9a-189">For each app, only one background task can run at a time.</span></span> <span data-ttu-id="45f9a-190">バックグラウンド タスクが既に実行されているアプリでバックグラウンド タスクがトリガーされた場合、最初のバックグラウンド タスクが完了するまで新しいバックグラウンド タスクは実行されません。</span><span class="sxs-lookup"><span data-stu-id="45f9a-190">If a background task is triggered for an app for which a background task is already running, the first background task must complete before the new one is run.</span></span>
+
+## <a name="other-resources"></a><span data-ttu-id="45f9a-191">その他のリソース</span><span class="sxs-lookup"><span data-stu-id="45f9a-191">Other resources</span></span>
+
+
+<span data-ttu-id="45f9a-192">詳しくは、Windows 8.1 の[直接通知のサンプル](http://go.microsoft.com/fwlink/p/?linkid=241553)や Windows 8.1 の[プッシュ通知と定期的な通知のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=231476)をダウンロードし、Windows 10 アプリでそれらのソース コードを再利用してください。</span><span class="sxs-lookup"><span data-stu-id="45f9a-192">You can learn more by downloading the [Raw notifications sample](http://go.microsoft.com/fwlink/p/?linkid=241553) for Windows 8.1, and the [Push and periodic notifications sample](http://go.microsoft.com/fwlink/p/?LinkId=231476) for Windows 8.1, and re-using their source code in your Windows 10 app.</span></span>
+
+## <a name="related-topics"></a><span data-ttu-id="45f9a-193">関連トピック</span><span class="sxs-lookup"><span data-stu-id="45f9a-193">Related topics</span></span>
+
+* [<span data-ttu-id="45f9a-194">直接通知のガイドライン</span><span class="sxs-lookup"><span data-stu-id="45f9a-194">Guidelines for raw notifications</span></span>](https://msdn.microsoft.com/library/windows/apps/hh761463)
+* [<span data-ttu-id="45f9a-195">クイック スタート: 直接通知のバックグラウンド タスクの作成と登録</span><span class="sxs-lookup"><span data-stu-id="45f9a-195">Quickstart: Creating and registering a raw notification background task</span></span>](https://msdn.microsoft.com/library/windows/apps/jj676800)
+* [<span data-ttu-id="45f9a-196">クイック スタート: 実行中のアプリのプッシュ通知の中断</span><span class="sxs-lookup"><span data-stu-id="45f9a-196">Quickstart: Intercepting push notifications for running apps</span></span>](https://msdn.microsoft.com/library/windows/apps/jj709908)
+* [**<span data-ttu-id="45f9a-197">RawNotification</span><span class="sxs-lookup"><span data-stu-id="45f9a-197">RawNotification</span></span>**](https://msdn.microsoft.com/library/windows/apps/br241304)
+* [**<span data-ttu-id="45f9a-198">BackgroundExecutionManager.RequestAccessAsync</span><span class="sxs-lookup"><span data-stu-id="45f9a-198">BackgroundExecutionManager.RequestAccessAsync</span></span>**](https://msdn.microsoft.com/library/windows/apps/hh700485)
  
 
  
-
 
 
 

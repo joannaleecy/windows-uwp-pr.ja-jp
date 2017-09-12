@@ -9,50 +9,51 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア コレクション API, Windows ストア購入 API, 製品の表示, 製品の付与"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7f4f74c887509e772fd01dbdcfe28d86c583fbc1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6ecc9d6014692cac52f5554f78a0773dfee3fb81
+ms.sourcegitcommit: e7e8de39e963b73ba95cb34d8049e35e8d5eca61
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/16/2017
 ---
+# <a name="manage-product-entitlements-from-a-service"></a><span data-ttu-id="f8d2d-104">サービスから製品の権利を管理する</span><span class="sxs-lookup"><span data-stu-id="f8d2d-104">Manage product entitlements from a service</span></span>
 
-# <a name="manage-product-entitlements-from-a-service"></a>サービスから製品の権利を管理する
+<span data-ttu-id="f8d2d-105">アプリとアドオンのカタログがある場合は、*Windows ストア コレクション API* と *Windows ストア購入 API* を使って、サービスからこれらの製品の権利の情報にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-105">If you have a catalog of apps and add-ons, you can use the *Windows Store collection API* and *Windows Store purchase API* to access entitlement information for these products from your services.</span></span> <span data-ttu-id="f8d2d-106">"権利"** とは、Windows ストアを通じて公開されたアプリまたはアドオンを顧客が使用する権利を表します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-106">An *entitlement* represents a customer's right to use an app or add-on that is published through the Windows Store.</span></span>
 
-アプリとアドオン (アプリ内製品 (IAP) とも呼ばれます) のカタログがある場合は、*Windows ストア コレクション API* および *Windows ストア購入 API* を使って、サービスからこれらの製品の権利情報にアクセスできます。 "権利"** とは、Windows ストアを通じて公開されたアプリまたはアドオンを顧客が使用する権利を表します。
+<span data-ttu-id="f8d2d-107">これらの API は、クロスプラットフォーム サービスでサポートされるアドオン カタログを持つ開発者向けに設計された REST メソッドで構成されています。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-107">These APIs consist of REST methods that are designed to be used by developers with add-on catalogs that are supported by cross-platform services.</span></span> <span data-ttu-id="f8d2d-108">これらの API を使用すると、次の操作を実行できます。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-108">These APIs enable you to do the following:</span></span>
 
-これらの API は、クロスプラットフォーム サービスでサポートされるアドオン カタログを持つ開発者向けに設計された REST メソッドで構成されています。 これらの API を使用すると、次の操作を実行できます。
+-   <span data-ttu-id="f8d2d-109">Windows ストア コレクション API: [ユーザーが所有するアプリを照会](query-for-products.md)し、[コンシューマブルな製品をフルフィルメント完了として報告](report-consumable-products-as-fulfilled.md)する。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-109">Windows Store collection API: [Query for products owned by a user](query-for-products.md) and [report a consumable product as fulfilled](report-consumable-products-as-fulfilled.md).</span></span>
+-   <span data-ttu-id="f8d2d-110">Windows ストア購入 API: [無料のアプリをユーザーに付与する](grant-free-products.md)、[ユーザーのサブスクリプションを取得する](get-subscriptions-for-a-user.md)、[ユーザーのサブスクリプションに関する請求の状態を変更する](change-the-billing-state-of-a-subscription-for-a-user.md)。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-110">Windows Store purchase API: [Grant a free product to a user](grant-free-products.md), [get subscriptions for a user](get-subscriptions-for-a-user.md), and [change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md).</span></span>
 
--   Windows ストア コレクション API: [ユーザーが所有するアプリを照会](query-for-products.md)し、[コンシューマブルな製品をフルフィルメント完了として報告](report-consumable-products-as-fulfilled.md)する。
--   Windows ストア購入 API: [無料のアプリをユーザーに付与](grant-free-products.md)する。
+> [!NOTE]
+> <span data-ttu-id="f8d2d-111">Windows ストア コレクション API と Windows ストア購入 API では、Azure Active Directory (Azure AD) 認証を使って顧客の所有権情報にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-111">The Windows Store collection API and purchase API use Azure Active Directory (Azure AD) authentication to access customer ownership information.</span></span> <span data-ttu-id="f8d2d-112">これらの API を使用するには、ユーザー (またはユーザーの組織) が、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](http://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-112">To use these APIs, you (or your organization) must have an Azure AD directory and you must have [Global administrator](http://go.microsoft.com/fwlink/?LinkId=746654) permission for the directory.</span></span> <span data-ttu-id="f8d2d-113">Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-113">If you already use Office 365 or other business services from Microsoft, you already have Azure AD directory.</span></span>
 
->**注**&nbsp;&nbsp;Windows ストア コレクション API と Windows ストア購入 API では、Azure Active Directory (Azure AD) 認証を使って顧客の所有権情報にアクセスします。 これらの API を使用するには、ユーザー (またはユーザーの組織) が、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](http://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。
+## <a name="overview"></a><span data-ttu-id="f8d2d-114">概要</span><span class="sxs-lookup"><span data-stu-id="f8d2d-114">Overview</span></span>
 
-## <a name="overview"></a>概要
+<span data-ttu-id="f8d2d-115">次の手順は、Windows ストア コレクション API および購入 API を使用するプロセス全体を表したものです。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-115">The following steps describe the end-to-end process for using the Windows Store collection API and purchase API:</span></span>
 
-次の手順は、Windows ストア コレクション API および購入 API を使用するプロセス全体を表したものです。
+1.  <span data-ttu-id="f8d2d-116">[Azure AD で Web アプリケーションを構成します](#step-1)。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-116">[Configure a Web application in Azure AD](#step-1).</span></span>
+2.  <span data-ttu-id="f8d2d-117">[Windows デベロッパー センター ダッシュボードで、Azure AD クライアント ID をアプリケーションに関連付けます](#step-2)。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-117">[Associate your Azure AD client ID with your application in the Windows Dev Center dashboard](#step-2).</span></span>
+3.  <span data-ttu-id="f8d2d-118">サービスで、発行元 ID を表す [Azure AD アクセス トークンを作成します](#step-3)。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-118">In your service, [create Azure AD access tokens](#step-3) that represent your publisher identity.</span></span>
+4.  <span data-ttu-id="f8d2d-119">Windows アプリのクライアント側コードで、現在のユーザーの ID を表す [Windows ストア ID キーを作成](#step-4)し、その Windows ストア ID キーをサービスに渡します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-119">In client-side code in your Windows app, [create a Windows Store ID key](#step-4) that represents the identity of the current user, and pass the Windows Store ID key back to your service.</span></span>
+5.  <span data-ttu-id="f8d2d-120">必要な Azure AD のアクセス トークンと Windows ストア ID キーを取得した後、[サービスから Windows ストア コレクション API または Windows ストア購入 API を呼び出します](#step-5)。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-120">After you have the required Azure AD access token and Windows Store ID key, [call the Windows Store collection API or purchase API from your service](#step-5).</span></span>
 
-1.  [Azure AD で Web アプリケーションを構成します](#step-1)。
-2.  [Windows デベロッパー センター ダッシュボードで、Azure AD クライアント ID をアプリケーションに関連付けます](#step-2)。
-3.  サービスで、発行元 ID を表す [Azure AD アクセス トークンを作成します](#step-3)。
-4.  Windows アプリのクライアント側コードで、現在のユーザーの ID を表す [Windows ストア ID キーを作成](#step-4)し、その Windows ストア ID キーをサービスに渡します。
-5.  必要な Azure AD のアクセス トークンと Windows ストア ID キーを取得した後、[サービスから Windows ストア コレクション API または Windows ストア購入 API を呼び出します](#step-5)。
-
-以降のセクションでは、これらの各手順についてさらに詳しく説明します。
+<span data-ttu-id="f8d2d-121">以降のセクションでは、これらの各手順についてさらに詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-121">The following sections provide more details about each of these steps.</span></span>
 
 <span id="step-1"/>
-### <a name="step-1-configure-a-web-application-in-azure-ad"></a>手順 1: Azure AD で Web アプリケーションを構成する
+## <a name="step-1-configure-a-web-application-in-azure-ad"></a><span data-ttu-id="f8d2d-122">手順 1: Azure AD で Web アプリケーションを構成する</span><span class="sxs-lookup"><span data-stu-id="f8d2d-122">Step 1: Configure a Web application in Azure AD</span></span>
 
-Windows ストア コレクション API または購入 API を使うには、事前に Azure AD Web アプリケーションを作成し、そのアプリケーションのテナント ID とクライアント ID を取得して、キーを生成する必要があります。 Azure AD アプリケーションは、Windows ストア コレクション API または購入 API の呼び出し元となるアプリまたはサービスを表します。 テナント ID、クライアント ID、およびキーは、API に渡す Azure AD アクセス トークンを取得するために必要です。
+<span data-ttu-id="f8d2d-123">Windows ストア コレクション API または購入 API を使うには、事前に Azure AD Web アプリケーションを作成し、そのアプリケーションのテナント ID とクライアント ID を取得して、キーを生成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-123">Before you can use the Windows Store collection API or purchase API, you must create an Azure AD Web application, retrieve the tenant ID and client ID for the application, and generate a key.</span></span> <span data-ttu-id="f8d2d-124">Azure AD アプリケーションは、Windows ストア コレクション API または購入 API の呼び出し元となるアプリまたはサービスを表します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-124">The Azure AD application represents the app or service from which you want to call the Windows Store collection API or purchase API.</span></span> <span data-ttu-id="f8d2d-125">テナント ID、クライアント ID、およびキーは、API に渡す Azure AD アクセス トークンを取得するために必要です。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-125">You need the tenant ID, client ID and key to obtain an Azure AD access token that you pass to the API.</span></span>
 
->**注:**&nbsp;&nbsp;このセクションの作業は 1 回実行する必要があるだけです。 Azure AD アプリケーションのマニフェストを更新し、テナント ID、クライアント ID、クライアント シークレットを取得したら、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらの値を再利用できます。
+> [!NOTE]
+> <span data-ttu-id="f8d2d-126">このセクションの作業は 1 回実行する必要があるだけです。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-126">You only need to perform the tasks in this section one time.</span></span> <span data-ttu-id="f8d2d-127">Azure AD アプリケーションのマニフェストを更新し、テナント ID、クライアント ID、クライアント シークレットを取得したら、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらの値を再利用できます。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-127">After you update your Azure AD application manifest and you have your tenant ID, client ID and client secret, you can reuse these values any time you need to create a new Azure AD access token.</span></span>
 
-1.  「[Azure Active Directory とアプリケーションの統合](http://go.microsoft.com/fwlink/?LinkId=722502)」の指示に従って、Azure AD に Web アプリケーションを追加します。
+1.  <span data-ttu-id="f8d2d-128">「[Azure Active Directory とアプリケーションの統合](http://go.microsoft.com/fwlink/?LinkId=722502)」の指示に従って、Azure AD に Web アプリケーションを追加します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-128">Follow the instructions in [Integrating Applications with Azure Active Directory](http://go.microsoft.com/fwlink/?LinkId=722502) to add a Web application to Azure AD.</span></span>
+    > [!NOTE]
+    > <span data-ttu-id="f8d2d-129">**[アプリケーション情報の指定]** ページで、**[Web アプリケーションや Web API]** を選択していることを確認します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-129">On the **Tell us about your application page**, make sure that you choose **Web application and/or web API**.</span></span> <span data-ttu-id="f8d2d-130">これは、アプリケーションのキー ("クライアント シークレット"** とも呼ばれます) を取得するために必要です。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-130">This is required so that you can retrieve a key (also called a *client secret*) for your application.</span></span> <span data-ttu-id="f8d2d-131">Windows ストア コレクション API または購入 API を呼び出すには、後の手順で Azure AD からアクセス トークンを要求するときにクライアント シークレットを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-131">In order to call the Windows Store collection API or purchase API, you must provide a client secret when you request an access token from Azure AD in a later step.</span></span>
 
-    > **注**&nbsp;&nbsp;**[アプリケーション情報の指定]** ページで、**[Web アプリケーションや Web API]** を選んでいることを確認してください。 これは、アプリケーションのキー ("クライアント シークレット"** とも呼ばれます) を取得するために必要です。 Windows ストア コレクション API または購入 API を呼び出すには、後の手順で Azure AD からアクセス トークンを要求するときにクライアント シークレットを指定する必要があります。
-
-2.  [Azure 管理ポータル](http://manage.windowsazure.com/)で、**Active Directory** に移動します。 ディレクトリを選択し、上部にある **[アプリケーション]** タブをクリックして、アプリケーションを選択します。
-3.  **[構成]** タブをクリックします。 このタブで、アプリケーションのクライアント ID を取得し、キー (後の手順ではこれを*クライアント シークレット*と呼びます) を要求します。
-4.  画面の下部の **[マニフェストの管理]** をクリックします。 Azure AD アプリケーション マニフェストをダウンロードし、`"identifierUris"` セクションを次のテキストに置き換えます。
+2.  <span data-ttu-id="f8d2d-132">[Azure 管理ポータル](http://manage.windowsazure.com/)で、**Active Directory** に移動します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-132">In the [Azure Management Portal](http://manage.windowsazure.com/), navigate to **Active Directory**.</span></span> <span data-ttu-id="f8d2d-133">ディレクトリを選択し、上部にある **[アプリケーション]** タブをクリックして、アプリケーションを選択します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-133">Select your directory, click the **Applications** tab at the top, and then select your application.</span></span>
+3.  <span data-ttu-id="f8d2d-134">**[構成]** タブをクリックします。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-134">Click the **Configure** tab.</span></span> <span data-ttu-id="f8d2d-135">このタブで、アプリケーションのクライアント ID を取得し、キー (後の手順ではこれを*クライアント シークレット*と呼びます) を要求します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-135">On this tab, obtain the client ID for your application and request a key (this is called a *client secret* in later steps).</span></span>
+4.  <span data-ttu-id="f8d2d-136">画面の下部の **[マニフェストの管理]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-136">At the bottom of the screen, click **Manage manifest**.</span></span> <span data-ttu-id="f8d2d-137">Azure AD アプリケーション マニフェストをダウンロードし、`"identifierUris"` セクションを次のテキストに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-137">Download your Azure AD application manifest and replace the `"identifierUris"` section with the following text.</span></span>
 
     ```json
     "identifierUris" : [                                
@@ -62,42 +63,46 @@ Windows ストア コレクション API または購入 API を使うには、�
         ],
     ```
 
-    これらの文字列は、アプリケーションでサポートされる対象ユーザーを表します。 後の手順で、各対象ユーザー値に関連付けられた Azure AD アクセス トークンを作成します。 アプリケーション マニフェストをダウンロードする方法について詳しくは、[Azure Active Directory アプリケーション マニフェストの概要に関するページ](http://go.microsoft.com/fwlink/?LinkId=722500)をご覧ください。
+    <span data-ttu-id="f8d2d-138">これらの文字列は、アプリケーションでサポートされる対象ユーザーを表します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-138">These strings represent the audiences supported by your application.</span></span> <span data-ttu-id="f8d2d-139">後の手順で、各対象ユーザー値に関連付けられた Azure AD アクセス トークンを作成します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-139">In a later step, you will create Azure AD access tokens that are associated with each of these audience values.</span></span> <span data-ttu-id="f8d2d-140">アプリケーション マニフェストをダウンロードする方法について詳しくは、[Azure Active Directory アプリケーション マニフェストの概要に関するページ](http://go.microsoft.com/fwlink/?LinkId=722500)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-140">For more information about how to download your application manifest, see [Understanding the Azure Active Directory application manifest](http://go.microsoft.com/fwlink/?LinkId=722500).</span></span>
 
-5.  アプリケーション マニフェストを保存し、[Azure 管理ポータル](http://manage.windowsazure.com/)でアプリケーションにアップロードします。
+5.  <span data-ttu-id="f8d2d-141">アプリケーション マニフェストを保存し、[Azure 管理ポータル](http://manage.windowsazure.com/)でアプリケーションにアップロードします。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-141">Save your application manifest and upload it to your application in the [Azure Management Portal](http://manage.windowsazure.com/).</span></span>
 
 <span id="step-2"/>
-### <a name="step-2-associate-your-azure-ad-client-id-with-your-app-in-windows-dev-center"></a>手順 2: Windows デベロッパー センターで Azure AD クライアント ID をアプリに関連付ける
+## <a name="step-2-associate-your-azure-ad-client-id-with-your-app-in-windows-dev-center"></a><span data-ttu-id="f8d2d-142">手順 2: Windows デベロッパー センターで Azure AD クライアント ID をアプリに関連付ける</span><span class="sxs-lookup"><span data-stu-id="f8d2d-142">Step 2: Associate your Azure AD client ID with your app in Windows Dev Center</span></span>
 
-Windows ストア コレクション API または購入 API を使ってアプリやアドオンで操作を行うには、事前に Windows デベロッパー センター ダッシュボードで Azure AD クライアント ID をアプリに関連付ける必要があります。
+<span data-ttu-id="f8d2d-143">Windows ストア コレクション API または Windows ストア購入 API を使ってアプリやアドオンで処理を実行するには、事前にデベロッパー センター ダッシュボードで Azure AD クライアント ID をアプリ (またはアドオンを含むアプリ) に関連付ける必要があります。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-143">Before you can use the Windows Store collection API or purchase API to operate on an app or add-on, you must associate your Azure AD client ID with the app (or the app that contains the add-on) in the Dev Center dashboard.</span></span>
 
->**Note**&nbsp;&nbsp;この作業は 1 回実行する必要があるだけです。
+> [!NOTE]
+> <span data-ttu-id="f8d2d-144">この作業を行うのは一度だけです。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-144">You only need to perform this task one time.</span></span>
 
-1.  [Windows デベロッパー センター ダッシュボード](https://dev.windows.com/overview)にサインインし、アプリを選択します。
-2.  **[サービス]** &gt; **[製品のコレクションと購入]** ページに移動して、利用可能なフィールドの 1 つに Azure AD のクライアント ID を入力します。
+1.  <span data-ttu-id="f8d2d-145">[デベロッパー センター ダッシュボード](https://dev.windows.com/overview)にサインインし、アプリを選択します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-145">Sign in to the [Dev Center dashboard](https://dev.windows.com/overview) and select your app.</span></span>
+2.  <span data-ttu-id="f8d2d-146">**[サービス]** &gt; **[製品のコレクションと購入]** ページに移動して、利用可能なフィールドの 1 つに Azure AD のクライアント ID を入力します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-146">Go to the **Services** &gt; **Product collections and purchases** page and enter your Azure AD client ID into one of the available fields.</span></span>
 
 <span id="step-3"/>
-### <a name="step-3-create-azure-ad-access-tokens"></a>手順 3: Azure AD アクセス トークンを作成する
+## <a name="step-3-create-azure-ad-access-tokens"></a><span data-ttu-id="f8d2d-147">手順 3: Azure AD アクセス トークンを作成する</span><span class="sxs-lookup"><span data-stu-id="f8d2d-147">Step 3: Create Azure AD access tokens</span></span>
 
-Windows ストア ID キーを取得したり、Windows ストア コレクション API または Windows ストア購入 API を呼び出したりする前に、発行元 ID を表すいくつかの Azure AD アクセス トークンをサービスで作成する必要があります。 各トークンは別々の API で使われます。 各トークンの有効期間は 60 分であり、有効期限が切れた場合は更新できます。
+<span data-ttu-id="f8d2d-148">Windows ストア ID キーを取得したり、Windows ストア コレクション API または Windows ストア購入 API を呼び出したりする前に、発行元 ID を表すいくつかの Azure AD アクセス トークンをサービスで作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-148">Before you can retrieve a Windows Store ID key or call the Windows Store collection API or purchase API, your service must create several different Azure AD access tokens that represent your publisher identity.</span></span> <span data-ttu-id="f8d2d-149">各トークンは別々の API で使われます。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-149">Each token will be used with a different API.</span></span> <span data-ttu-id="f8d2d-150">各トークンの有効期間は 60 分であり、有効期限が切れた場合は更新できます。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-150">The lifetime of each token is 60 minutes, and you can refresh them after they expire.</span></span>
+
+> [!IMPORTANT]
+> <span data-ttu-id="f8d2d-151">Azure AD アクセス トークンは、アプリ内ではなく、サービスのコンテキスト内でのみ作成してください。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-151">Create Azure AD access tokens only in the context of your service, not in your app.</span></span> <span data-ttu-id="f8d2d-152">このアクセス トークンがアプリに送信されると、クライアント シークレットが侵害される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-152">Your client secret could be compromised if it is sent to your app.</span></span>
 
 <span id="access-tokens" />
-#### <a name="understanding-the-different-tokens-and-audience-uris"></a>さまざまなトークンとオーディエンス URI を理解する
+### <a name="understanding-the-different-tokens-and-audience-uris"></a><span data-ttu-id="f8d2d-153">さまざまなトークンとオーディエンス URI を理解する</span><span class="sxs-lookup"><span data-stu-id="f8d2d-153">Understanding the different tokens and audience URIs</span></span>
 
-Windows ストア コレクション API または購入 API で呼び出そうとしているメソッドに応じて、2 つまたは 3 つの異なるトークンを作成する必要があります。 各アクセス トークンは、別々のオーディエンス URI に関連付けられます (これらは、以前に Azure AD アプリケーション マニフェストの `"identifierUris"` セクションに追加した URI と同じです)。
+<span data-ttu-id="f8d2d-154">Windows ストア コレクション API または購入 API で呼び出そうとしているメソッドに応じて、2 つまたは 3 つの異なるトークンを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-154">Depending on which methods you want to call in the Windows Store collection API or purchase API, you must create either two or three different tokens.</span></span> <span data-ttu-id="f8d2d-155">各アクセス トークンは、別々のオーディエンス URI に関連付けられます (これらは、以前に Azure AD アプリケーション マニフェストの `"identifierUris"` セクションに追加した URI と同じです)。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-155">Each access token is associated with a different audience URI (these are the same URIs that you previously added to the `"identifierUris"` section of the Azure AD application manifest).</span></span>
 
-  * いずれの場合も、`https://onestore.microsoft.com` オーディエンス URI のトークンを 1 つ作成する必要があります。 このトークンは、後の手順で Windows ストア コレクション API または購入 API のメソッドの **Authorization** ヘッダーに渡します。
+  * <span data-ttu-id="f8d2d-156">いずれの場合も、`https://onestore.microsoft.com` オーディエンス URI のトークンを 1 つ作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-156">In all cases, you must create a token with the `https://onestore.microsoft.com` audience URI.</span></span> <span data-ttu-id="f8d2d-157">このトークンは、後の手順で Windows ストア コレクション API または購入 API のメソッドの **Authorization** ヘッダーに渡します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-157">In a later step, you will pass this token to the **Authorization** header of methods in the Windows Store collection API or purchase API.</span></span>
+      > [!IMPORTANT]
+      > <span data-ttu-id="f8d2d-158">`https://onestore.microsoft.com` 対象ユーザーには、サービス内に安全に格納されたアクセス トークンのみを使用してください。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-158">Use the `https://onestore.microsoft.com` audience only with access tokens that are stored securely within your service.</span></span> <span data-ttu-id="f8d2d-159">このオーディエンスのアクセス トークンがサービス外に公開されると、サービスがリプレイ攻撃に対して脆弱になる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-159">Exposing access tokens with this audience outside your service could make your service vulnerable to replay attacks.</span></span>
 
-  > **重要**&nbsp;&nbsp;`https://onestore.microsoft.com` オーディエンスは、サービス内に安全に格納されたアクセス トークンでのみ使用してください。 このオーディエンスのアクセス トークンがサービス外に公開されると、サービスがリプレイ攻撃に対して脆弱になる可能性があります。
+  * <span data-ttu-id="f8d2d-160">Windows ストア コレクション API のメソッドを呼び出して、[特定のユーザーが所有する製品を照会](query-for-products.md)したり、[コンシューマブルな製品をフルフィルメント完了として報告](report-consumable-products-as-fulfilled.md)したりする場合は、`https://onestore.microsoft.com/b2b/keys/create/collections` オーディエンス URI のトークンも作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-160">If you want to call a method in the Windows Store collection API to [query for products owned by a user](query-for-products.md) or [report a consumable product as fulfilled](report-consumable-products-as-fulfilled.md), you must also create a token with the `https://onestore.microsoft.com/b2b/keys/create/collections` audience URI.</span></span> <span data-ttu-id="f8d2d-161">後の手順で、このトークンを Windows SDK のクライアント メソッドに渡し、Windows ストア コレクション API で使用できる Windows ストア ID キーを要求します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-161">In a later step, you will pass this token to a client method in the Windows SDK to request a Windows Store ID key that you can use with the Windows Store collection API.</span></span>
 
-  * Windows ストア コレクション API のメソッドを呼び出して、[特定のユーザーが所有する製品を照会](query-for-products.md)したり、[コンシューマブルな製品をフルフィルメント完了として報告](report-consumable-products-as-fulfilled.md)したりする場合は、`https://onestore.microsoft.com/b2b/keys/create/collections` オーディエンス URI のトークンも作成する必要があります。 後の手順で、このトークンを Windows SDK のクライアント メソッドに渡し、Windows ストア コレクション API で使用できる Windows ストア ID キーを要求します。
-
-  * Windows ストア購入 API のメソッドを呼び出して[無料の製品をユーザーに付与](grant-free-products.md)する場合は、`https://onestore.microsoft.com/b2b/keys/create/purchase` オーディエンス URI のトークンも作成する必要があります。 後の手順で、このトークンを Windows SDK のクライアント メソッドに渡し、Windows ストア購入 API で使用できる Windows ストア ID キーを要求します。
+  * <span data-ttu-id="f8d2d-162">Windows ストア購入 API でメソッドを呼び出して[無料の製品をユーザーに付与する](grant-free-products.md)、[ユーザーのサブスクリプションを取得する](get-subscriptions-for-a-user.md)、または[ユーザーのサブスクリプションに関する請求の状態を変更する](change-the-billing-state-of-a-subscription-for-a-user.md)場合、`https://onestore.microsoft.com/b2b/keys/create/purchase` 対象ユーザー URI を使ってトークンも作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-162">If you want to call a method in the Windows Store purchase API to [grant a free product to a user](grant-free-products.md), [get subscriptions for a user](get-subscriptions-for-a-user.md), or [change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md), you must also create a token with the `https://onestore.microsoft.com/b2b/keys/create/purchase` audience URI.</span></span> <span data-ttu-id="f8d2d-163">後の手順で、このトークンを Windows SDK のクライアント メソッドに渡し、Windows ストア購入 API で使用できる Windows ストア ID キーを要求します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-163">In a later step, you will pass this token to a client method in the Windows SDK to request a Windows Store ID key that you can use with the Windows Store purchase API.</span></span>
 
 <span />
-#### <a name="how-to-create-the-tokens"></a>トークンの作成方法
+### <a name="create-the-tokens"></a><span data-ttu-id="f8d2d-164">トークンの作成</span><span class="sxs-lookup"><span data-stu-id="f8d2d-164">Create the tokens</span></span>
 
-アクセス トークンを作成するには、[クライアント資格情報を使ったサービス間の呼び出しに関するトピック](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service)の手順に従って OAuth 2.0 API をサービスで使用し、HTTP POST を ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` エンドポイントに送信します。 要求の例を次に示します。
+<span data-ttu-id="f8d2d-165">アクセス トークンを作成するには、「[クライアント資格情報を使用したサービス間の呼び出し](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service)」の手順に従って OAuth 2.0 API をサービスで使用し、HTTP POST を ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` エンドポイントに送信します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-165">To create the access tokens, use the OAuth 2.0 API in your service by following the instructions in [Service to Service Calls Using Client Credentials](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service) to send an HTTP POST to the ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` endpoint.</span></span> <span data-ttu-id="f8d2d-166">要求の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-166">Here is a sample request.</span></span>
 
 ``` syntax
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
@@ -110,89 +115,90 @@ grant_type=client_credentials
 &resource=https://onestore.microsoft.com
 ```
 
-各トークンについて、次のパラメーター データを指定します。
+<span data-ttu-id="f8d2d-167">各トークンについて、次のパラメーター データを指定します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-167">For each token, specify the following parameter data:</span></span>
 
-* *client\_id* パラメーターと *client\_secret* パラメーターには、[Azure 管理ポータル](http://manage.windowsazure.com)から取得したクライアント ID とアプリケーションのクライアント シークレットを指定します。 これらのパラメーターはいずれも、Windows ストア コレクション API または購入 API で必要とされる認証のレベルに基づいてアクセス トークンを生成するために必要です。
+* <span data-ttu-id="f8d2d-168">*client\_id* パラメーターと *client\_secret* パラメーターには、[Azure 管理ポータル](http://manage.windowsazure.com)から取得したクライアント ID とアプリケーションのクライアント シークレットを指定します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-168">For the *client\_id* and *client\_secret* parameters, specify the client ID and the client secret for your application that you retrieved from the [Azure Management Portal](http://manage.windowsazure.com).</span></span> <span data-ttu-id="f8d2d-169">これらのパラメーターはいずれも、Windows ストア コレクション API または購入 API で必要とされる認証のレベルに基づいてアクセス トークンを生成するために必要です。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-169">Both of these parameters are required in order to create an access token with the level of authentication required by the Windows Store collection API or purchase API.</span></span>
 
-* *resource* パラメーターには、作成するアクセス トークンの種類に応じて、[前のセクション](#access-tokens)に記載したいずれかのオーディエンス URI を指定します。
+* <span data-ttu-id="f8d2d-170">*resource* パラメーターには、作成するアクセス トークンの種類に応じて、[前のセクション](#access-tokens)に記載したいずれかのオーディエンス URI を指定します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-170">For the *resource* parameter, specify one of the audience URIs listed in the [previous section](#access-tokens), depending on the type of access token you are creating.</span></span>
 
-アクセス トークンの有効期限が切れた後は、[こちらのトピック](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)の手順に従って更新できます。 アクセス トークンの構造について詳しくは、「[サポートされているトークンと要求の種類](http://go.microsoft.com/fwlink/?LinkId=722501)」をご覧ください。
-
-> **重要**&nbsp;&nbsp;Azure AD アクセス トークンは、アプリ内ではなく、サービスのコンテキスト内でのみ作成してください。 このアクセス トークンがアプリに送信されると、クライアント シークレットが侵害される可能性があります。
+<span data-ttu-id="f8d2d-171">アクセス トークンの有効期限が切れた後は、[こちらのトピック](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)の手順に従って更新できます。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-171">After your access token expires, you can refresh it by following the instructions [here](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens).</span></span> <span data-ttu-id="f8d2d-172">アクセス トークンの構造について詳しくは、「[サポートされているトークンと要求の種類](http://go.microsoft.com/fwlink/?LinkId=722501)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-172">For more details about the structure of an access token, see [Supported Token and Claim Types](http://go.microsoft.com/fwlink/?LinkId=722501).</span></span>
 
 <span id="step-4"/>
-### <a name="step-4-create-a-windows-store-id-key"></a>手順 4: Windows ストア ID キーを生成する
+## <a name="step-4-create-a-windows-store-id-key"></a><span data-ttu-id="f8d2d-173">手順 4: Windows ストア ID キーを生成する</span><span class="sxs-lookup"><span data-stu-id="f8d2d-173">Step 4: Create a Windows Store ID key</span></span>
 
-Windows ストア コレクション API または購入 API のいずれかのメソッドを呼び出すには、事前にサービスで Windows ストア ID キーを作成する必要があります。 これは、ユーザーの製品所有権情報にアクセスする場合にそのユーザーの ID を表す JSON Web トークン (JWT) です。 このキーの要求について詳しくは、「[Windows ストア ID キー内の要求](#claims)」をご覧ください。
+<span data-ttu-id="f8d2d-174">Windows ストア コレクション API または Windows ストア購入 API のメソッドを呼び出すには、事前にアプリで Windows ストア ID キーを作成し、サービスに送信する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-174">Before you can call any method in the Windows Store collection API or purchase API, your app must create a Windows Store ID key and send it to your service.</span></span> <span data-ttu-id="f8d2d-175">このキーは、アクセス対象の製品所有権情報を保持するユーザーの ID を表す JSON Web トークン (JWT) です。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-175">This key is a JSON Web Token (JWT) that represents the identity of the user whose product ownership information you want to access.</span></span> <span data-ttu-id="f8d2d-176">このキーの要求について詳しくは、「[Windows ストア ID キー内の要求](#claims)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-176">For more information about the claims in this key, see [Claims in a Windows Store ID key](#claims).</span></span>
 
-現時点では、Windows ストア ID キーを作成する唯一の方法は、アプリ内のコードからユニバーサル Windows プラットフォーム (UWP) API を呼び出すことです。 生成されたキーは、デバイスで現在 Windows ストアにサインインしているユーザーの ID を表します。
+<span data-ttu-id="f8d2d-177">現時点では、Windows ストア ID キーを作成する唯一の方法は、アプリ内のコードからユニバーサル Windows プラットフォーム (UWP) API を呼び出すことです。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-177">Currently, the only way to create a Windows Store ID key is by calling a Universal Windows Platform (UWP) API from client code in your app.</span></span> <span data-ttu-id="f8d2d-178">生成されたキーは、デバイスで現在 Windows ストアにサインインしているユーザーの ID を表します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-178">The generated key represents the identity of the user who is currently signed in to the Windows Store on the device.</span></span>
 
-> **注**&nbsp;&nbsp;各 Windows ストア ID キーは 90 日間有効です。 キーの有効期限が切れた場合は、[キーを更新](renew-a-windows-store-id-key.md)できます。 新しい Windows ストア ID キーを作成するのではなく、更新することをお勧めします。
-
-<span />
-#### <a name="to-create-a-windows-store-id-key-for-the-windows-store-collection-api"></a>Windows ストア コレクション API 用の Windows ストア ID キーを作成するには
-
-[特定のユーザーが所有する製品を照会](query-for-products.md)したり、[てコンシューマブルな製品をフルフィルメント完了として報告](report-consumable-products-as-fulfilled.md)したりするために、Windows ストア コレクション API で使用できる Windows ストア ID キーを作成するには、次の手順に従います。
-
-1.  `https://onestore.microsoft.com/b2b/keys/create/collections` オーディエンス URI を使って作成した Azure AD アクセス トークンを、サービスからクライアント アプリに渡します。
-
-2.  アプリ コードで次のいずれかのメソッドを呼び出して、Windows ストア ID キーを取得します。
-
-  * アプリで [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間の [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) クラスを使ってアプリ内購入を管理する場合は、[StoreContext.GetCustomerCollectionsIdAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getcustomercollectionsidasync.aspx) メソッドを使用します。
-
-  * アプリで [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間の  [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) クラスを使ってアプリ内購入を管理する場合は、[CurrentApp.GetCustomerCollectionsIdAsync](https://msdn.microsoft.com/library/windows/apps/mt608674) メソッドを使用します。
-
-  メソッドの *serviceTicket* パラメーターに、Azure AD アクセス トークンを渡します。 必要に応じて、*publisherUserId* パラメーターに、サービスのコンテキストで現在のユーザーを識別する ID を渡すことができます。 サービス用のユーザー ID を保持している場合は、このパラメーターを使用して、それらのユーザー ID を Windows ストア コレクション API の呼び出しに関連付けることができます。
-
-3.  アプリで正しく Windows ストア ID キーを取得したら、そのキーをサービスに渡します。
+> [!NOTE]
+> <span data-ttu-id="f8d2d-179">各 Windows ストア ID キーは 90 日間有効です。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-179">Each Windows Store ID key is valid for 90 days.</span></span> <span data-ttu-id="f8d2d-180">キーの有効期限が切れた場合は、[キーを更新](renew-a-windows-store-id-key.md)できます。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-180">After a key expires, you can [renew the key](renew-a-windows-store-id-key.md).</span></span> <span data-ttu-id="f8d2d-181">新しい Windows ストア ID キーを作成するのではなく、更新することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-181">We recommend that you renew your Windows Store ID keys rather than creating new ones.</span></span>
 
 <span />
-#### <a name="to-create-a-windows-store-id-key-for-the-windows-store-purchase-api"></a>Windows ストア購入 API 用の Windows ストア ID キーを作成するには
+### <a name="to-create-a-windows-store-id-key-for-the-windows-store-collection-api"></a><span data-ttu-id="f8d2d-182">Windows ストア コレクション API 用の Windows ストア ID キーを作成するには</span><span class="sxs-lookup"><span data-stu-id="f8d2d-182">To create a Windows Store ID key for the Windows Store collection API</span></span>
 
-[無料の製品をユーザーに付与](grant-free-products.md)するために、Windows ストア購入 API で使用できる Windows ストア ID キーを作成するには、次の手順に従います。
+<span data-ttu-id="f8d2d-183">[特定のユーザーが所有する製品を照会](query-for-products.md)したり、[てコンシューマブルな製品をフルフィルメント完了として報告](report-consumable-products-as-fulfilled.md)したりするために、Windows ストア コレクション API で使用できる Windows ストア ID キーを作成するには、次の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-183">Follow these steps to create a Windows Store ID key that you can use with the Windows Store collection API to [query for products owned by a user](query-for-products.md) or [report a consumable product as fulfilled](report-consumable-products-as-fulfilled.md).</span></span>
 
-1.  `https://onestore.microsoft.com/b2b/keys/create/purchase` オーディエンス URI を使って作成した Azure AD アクセス トークンを、サービスからクライアント アプリに渡します。
+1.  <span data-ttu-id="f8d2d-184">`https://onestore.microsoft.com/b2b/keys/create/collections` オーディエンス URI を使って作成した Azure AD アクセス トークンを、サービスからクライアント アプリに渡します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-184">Pass the Azure AD access token that you created with the `https://onestore.microsoft.com/b2b/keys/create/collections` audience URI from your service to your client app.</span></span>
 
-2.  アプリ コードで次のいずれかのメソッドを呼び出して、Windows ストア ID キーを取得します。
+2.  <span data-ttu-id="f8d2d-185">アプリ コードで次のいずれかのメソッドを呼び出して、Windows ストア ID キーを取得します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-185">In your app code, call one of these methods to retrieve a Windows Store ID key:</span></span>
 
-  * アプリで [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間の [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) クラスを使ってアプリ内購入を管理する場合は、[StoreContext.GetCustomerPurchaseIdAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getcustomerpurchaseidasync.aspx) メソッドを使用します。
+  * <span data-ttu-id="f8d2d-186">アプリで [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間の [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) クラスを使ってアプリ内購入を管理する場合は、[StoreContext.GetCustomerCollectionsIdAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getcustomercollectionsidasync.aspx) メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-186">If your app uses the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to manage in-app purchases, use the [StoreContext.GetCustomerCollectionsIdAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getcustomercollectionsidasync.aspx) method.</span></span>
 
-  * アプリで [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間の [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) クラスを使ってアプリ内購入を管理する場合は、[CurrentApp.GetCustomerPurchaseIdAsync](https://msdn.microsoft.com/library/windows/apps/mt608675) メソッドを使用します。
+  * <span data-ttu-id="f8d2d-187">アプリで [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間の  [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) クラスを使ってアプリ内購入を管理する場合は、[CurrentApp.GetCustomerCollectionsIdAsync](https://msdn.microsoft.com/library/windows/apps/mt608674) メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-187">If your app uses the [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) class in the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace to manage in-app purchases, use the [CurrentApp.GetCustomerCollectionsIdAsync](https://msdn.microsoft.com/library/windows/apps/mt608674) method.</span></span>
 
-  メソッドの *serviceTicket* パラメーターに、Azure AD アクセス トークンを渡します。 必要に応じて、*publisherUserId* パラメーターに、サービスのコンテキストで現在のユーザーを識別する ID を渡すことができます。 サービス用のユーザー ID を保持している場合は、このパラメーターを使用して、それらのユーザー ID を Windows ストア購入 API の呼び出しに関連付けることができます。
+    <span data-ttu-id="f8d2d-188">メソッドの *serviceTicket* パラメーターに、Azure AD アクセス トークンを渡します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-188">Pass your Azure AD access token to the *serviceTicket* parameter of the method.</span></span> <span data-ttu-id="f8d2d-189">必要に応じて、*publisherUserId* パラメーターに、サービスのコンテキストで現在のユーザーを識別する ID を渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-189">You can optionally pass an ID to the *publisherUserId* parameter that identifies the current user in the context of your services.</span></span> <span data-ttu-id="f8d2d-190">サービス用のユーザー ID を保持している場合は、このパラメーターを使用して、それらのユーザー ID を Windows ストア コレクション API の呼び出しに関連付けることができます。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-190">If you maintain user IDs for your services, you can use this parameter to correlate these user IDs with the calls you make to the Windows Store collection API.</span></span>
 
-3.  アプリで正しく Windows ストア ID キーを取得したら、そのキーをサービスに渡します。
+3.  <span data-ttu-id="f8d2d-191">アプリで正しく Windows ストア ID キーを作成したら、そのキーをサービスに渡します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-191">After your app successfully creates a Windows Store ID key, pass the key back to your service.</span></span>
+
+<span />
+### <a name="to-create-a-windows-store-id-key-for-the-windows-store-purchase-api"></a><span data-ttu-id="f8d2d-192">Windows ストア購入 API 用の Windows ストア ID キーを作成するには</span><span class="sxs-lookup"><span data-stu-id="f8d2d-192">To create a Windows Store ID key for the Windows Store purchase API</span></span>
+
+<span data-ttu-id="f8d2d-193">[無料の製品をユーザーに付与する](grant-free-products.md)、[ユーザーのサブスクリプションを取得する](get-subscriptions-for-a-user.md)、または[ユーザーのサブスクリプションの請求状態を変更する](change-the-billing-state-of-a-subscription-for-a-user.md)ために、Windows ストア購入 API と共に使うことができる Windows ストア ID キーを作成するには、以下の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-193">Follow these steps to create a Windows Store ID key that you can use with the Windows Store purchase API to [grant a free product to a user](grant-free-products.md), [get subscriptions for a user](get-subscriptions-for-a-user.md), or [change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md).</span></span>
+
+1.  <span data-ttu-id="f8d2d-194">`https://onestore.microsoft.com/b2b/keys/create/purchase` オーディエンス URI を使って作成した Azure AD アクセス トークンを、サービスからクライアント アプリに渡します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-194">Pass the Azure AD access token that you created with the `https://onestore.microsoft.com/b2b/keys/create/purchase` audience URI from your service to your client app.</span></span>
+
+2.  <span data-ttu-id="f8d2d-195">アプリ コードで次のいずれかのメソッドを呼び出して、Windows ストア ID キーを取得します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-195">In your app code, call one of these methods to retrieve a Windows Store ID key:</span></span>
+
+  * <span data-ttu-id="f8d2d-196">アプリで [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間の [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) クラスを使ってアプリ内購入を管理する場合は、[StoreContext.GetCustomerPurchaseIdAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getcustomerpurchaseidasync.aspx) メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-196">If your app uses the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to manage in-app purchases, use the [StoreContext.GetCustomerPurchaseIdAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getcustomerpurchaseidasync.aspx) method.</span></span>
+
+  * <span data-ttu-id="f8d2d-197">アプリで [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間の [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) クラスを使ってアプリ内購入を管理する場合は、[CurrentApp.GetCustomerPurchaseIdAsync](https://msdn.microsoft.com/library/windows/apps/mt608675) メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-197">If your app uses the [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) class in the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace to manage in-app purchases, use the [CurrentApp.GetCustomerPurchaseIdAsync](https://msdn.microsoft.com/library/windows/apps/mt608675) method.</span></span>
+
+    <span data-ttu-id="f8d2d-198">メソッドの *serviceTicket* パラメーターに、Azure AD アクセス トークンを渡します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-198">Pass your Azure AD access token to the *serviceTicket* parameter of the method.</span></span> <span data-ttu-id="f8d2d-199">必要に応じて、*publisherUserId* パラメーターに、サービスのコンテキストで現在のユーザーを識別する ID を渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-199">You can optionally pass an ID to the *publisherUserId* parameter that identifies the current user in the context of your services.</span></span> <span data-ttu-id="f8d2d-200">サービス用のユーザー ID を保持している場合は、このパラメーターを使用して、それらのユーザー ID を Windows ストア購入 API の呼び出しに関連付けることができます。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-200">If you maintain user IDs for your services, you can use this parameter to correlate these user IDs with the calls you make to the Windows Store purchase API.</span></span>
+
+3.  <span data-ttu-id="f8d2d-201">アプリで正しく Windows ストア ID キーを作成したら、そのキーをサービスに渡します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-201">After your app successfully creates a Windows Store ID key, pass the key back to your service.</span></span>
 
 <span id="step-5"/>
-### <a name="step-5-call-the-windows-store-collection-api-or-purchase-api-from-your-service"></a>手順 5: サービスから Windows ストア コレクション API または購入 API を呼び出す
+## <a name="step-5-call-the-windows-store-collection-api-or-purchase-api-from-your-service"></a><span data-ttu-id="f8d2d-202">手順 5: サービスから Windows ストア コレクション API または Windows ストア購入 API を呼び出す</span><span class="sxs-lookup"><span data-stu-id="f8d2d-202">Step 5: Call the Windows Store collection API or purchase API from your service</span></span>
 
-特定のユーザーの製品所有権情報にアクセスするための Windows ストア ID キーをサービスで取得したら、次の手順に従って、サービスから Windows ストア コレクション API または購入 API を呼び出すことができます。
+<span data-ttu-id="f8d2d-203">特定のユーザーの製品所有権情報にアクセスするための Windows ストア ID キーをサービスで取得したら、次の手順に従って、サービスから Windows ストア コレクション API または購入 API を呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-203">After your service has a Windows Store ID key that enables it to access a specific user's product ownership information, your service can call the Windows Store collection API or purchase API by following these instructions:</span></span>
 
-* [製品の照会](query-for-products.md)
-* [コンシューマブルな製品をフルフィルメント完了として報告する](report-consumable-products-as-fulfilled.md)
-* [無料の製品の付与](grant-free-products.md)
+* [<span data-ttu-id="f8d2d-204">製品の照会</span><span class="sxs-lookup"><span data-stu-id="f8d2d-204">Query for products</span></span>](query-for-products.md)
+* [<span data-ttu-id="f8d2d-205">コンシューマブルな製品をフルフィルメント完了として報告する</span><span class="sxs-lookup"><span data-stu-id="f8d2d-205">Report consumable products as fulfilled</span></span>](report-consumable-products-as-fulfilled.md)
+* [<span data-ttu-id="f8d2d-206">無料の製品の付与</span><span class="sxs-lookup"><span data-stu-id="f8d2d-206">Grant free products</span></span>](grant-free-products.md)
+* [<span data-ttu-id="f8d2d-207">ユーザーのサブスクリプションを取得する</span><span class="sxs-lookup"><span data-stu-id="f8d2d-207">Get subscriptions for a user</span></span>](get-subscriptions-for-a-user.md)
+* [<span data-ttu-id="f8d2d-208">ユーザーのサブスクリプションに関する請求の状態を変更する</span><span class="sxs-lookup"><span data-stu-id="f8d2d-208">Change the billing state of a subscription for a user</span></span>](change-the-billing-state-of-a-subscription-for-a-user.md)
 
-各シナリオについて、次の情報を API に渡します。
+<span data-ttu-id="f8d2d-209">各シナリオについて、次の情報を API に渡します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-209">For each scenario, pass the following information to the API:</span></span>
 
--   前に `https://onestore.microsoft.com` 対象ユーザー URI を使って作成した Azure AD アクセス トークン。 このトークンは発行元 ID を表します。 このトークンを要求ヘッダーで渡します。
--   アプリのクライアント側コードから取得した Windows ストア ID キー。 このキーは、ユーザーの製品所有権情報にアクセスする場合にそのユーザーの ID を表します。
+-   <span data-ttu-id="f8d2d-210">前に `https://onestore.microsoft.com` 対象ユーザー URI を使って作成した Azure AD アクセス トークン。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-210">The Azure AD access token that you created earlier with the `https://onestore.microsoft.com` audience URI.</span></span> <span data-ttu-id="f8d2d-211">このトークンは発行元 ID を表します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-211">This token represents your publisher identity.</span></span> <span data-ttu-id="f8d2d-212">このトークンを要求ヘッダーで渡します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-212">Pass this token in the request header.</span></span>
+-   <span data-ttu-id="f8d2d-213">アプリのクライアント側コードから取得した Windows ストア ID キー。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-213">The Windows Store ID key you retrieved from client-side code in your app.</span></span> <span data-ttu-id="f8d2d-214">このキーは、ユーザーの製品所有権情報にアクセスする場合にそのユーザーの ID を表します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-214">This key represents the identity of the user whose product ownership information you want to access.</span></span>
 
 <span id="claims"/>
-## <a name="claims-in-a-windows-store-id-key"></a>Windows ストア ID キー内の要求
+## <a name="claims-in-a-windows-store-id-key"></a><span data-ttu-id="f8d2d-215">Windows ストア ID キー内の要求</span><span class="sxs-lookup"><span data-stu-id="f8d2d-215">Claims in a Windows Store ID key</span></span>
 
-Windows ストア ID キーは、ユーザーの製品所有権情報にアクセスする場合にそのユーザーの ID を表す JSON Web トークン (JWT) です。 Base64 を使用してデコードされた Windows ストア ID キーには、次の要求が含まれています。
+<span data-ttu-id="f8d2d-216">Windows ストア ID キーは、ユーザーの製品所有権情報にアクセスする場合にそのユーザーの ID を表す JSON Web トークン (JWT) です。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-216">A Windows Store ID key is a JSON Web Token (JWT) that represents the identity of the user whose product ownership information you want to access.</span></span> <span data-ttu-id="f8d2d-217">Base64 を使用してデコードされた Windows ストア ID キーには、次の要求が含まれています。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-217">When decoded using Base64, a Windows Store ID key contains the following claims.</span></span>
 
-* `iat`:&nbsp;&nbsp;&nbsp;キーが発行された時刻を識別します。 この要求は、トークンの経過期間を判別するために使用できます。 この値はエポック時間で表されます。
-* `iss`:&nbsp;&nbsp;&nbsp;発行者を識別します。 これは `aud` 要求と同じ値を持ちます。
-* `aud`:&nbsp;&nbsp;&nbsp;オーディエンスを識別します。 `https://collections.mp.microsoft.com/v6.0/keys` または `https://purchase.mp.microsoft.com/v6.0/keys` のいずれかの値である必要があります。
-* `exp`:&nbsp;&nbsp;&nbsp;キーがキーの更新以外のどの処理も受け入れられなくなる有効期限を識別します。 この要求の値はエポック時間で表されます。
-* `nbf`:&nbsp;&nbsp;&nbsp;トークンの処理が受け入れられる時刻を識別します。 この要求の値はエポック時間で表されます。
-* `http://schemas.microsoft.com/marketplace/2015/08/claims/key/clientId`:&nbsp;&nbsp;&nbsp;開発者を識別するクライアント ID。
-* `http://schemas.microsoft.com/marketplace/2015/08/claims/key/payload`:&nbsp;&nbsp;&nbsp;Windows ストア サービスでのみ使用する情報が含まれている不透明なペイロード (暗号化され、Base64 でエンコード)。
-* `http://schemas.microsoft.com/marketplace/2015/08/claims/key/userId`:&nbsp;&nbsp;&nbsp;サービスのコンテキストで現在のユーザーを識別するユーザー ID。 これは、[キーの作成に使うメソッド](#step-4)の省略可能な *publisherUserId* パラメーターに渡す値と同じです。
-* `http://schemas.microsoft.com/marketplace/2015/08/claims/key/refreshUri`:&nbsp;&nbsp;&nbsp;キーの更新に使用できる URI。
+* `iat`<span data-ttu-id="f8d2d-218">:&nbsp;&nbsp;&nbsp;キーが発行された時刻を識別します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-218">:&nbsp;&nbsp;&nbsp;Identifies the time at which the key was issued.</span></span> <span data-ttu-id="f8d2d-219">この要求は、トークンの経過期間を判別するために使用できます。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-219">This claim can be used to determine the age of the token.</span></span> <span data-ttu-id="f8d2d-220">この値はエポック時間で表されます。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-220">This value is expressed as epoch time.</span></span>
+* `iss`<span data-ttu-id="f8d2d-221">:&nbsp;&nbsp;&nbsp;発行者を識別します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-221">:&nbsp;&nbsp;&nbsp;Identifies the issuer.</span></span> <span data-ttu-id="f8d2d-222">これは `aud` 要求と同じ値を持ちます。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-222">This has the same value as the `aud` claim.</span></span>
+* `aud`<span data-ttu-id="f8d2d-223">:&nbsp;&nbsp;&nbsp;オーディエンスを識別します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-223">:&nbsp;&nbsp;&nbsp;Identifies the audience.</span></span> <span data-ttu-id="f8d2d-224">`https://collections.mp.microsoft.com/v6.0/keys` または `https://purchase.mp.microsoft.com/v6.0/keys` のいずれかの値である必要があります。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-224">Must be one of the following values: `https://collections.mp.microsoft.com/v6.0/keys` or `https://purchase.mp.microsoft.com/v6.0/keys`.</span></span>
+* `exp`<span data-ttu-id="f8d2d-225">:&nbsp;&nbsp;&nbsp;キーがキーの更新以外のどの処理も受け入れられなくなる有効期限を識別します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-225">:&nbsp;&nbsp;&nbsp;Identifies the expiration time on or after which the key will no longer be accepted for processing anything except for renewing keys.</span></span> <span data-ttu-id="f8d2d-226">この要求の値はエポック時間で表されます。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-226">The value of this claim is expressed as epoch time.</span></span>
+* `nbf`<span data-ttu-id="f8d2d-227">:&nbsp;&nbsp;&nbsp;トークンの処理が受け入れられる時刻を識別します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-227">:&nbsp;&nbsp;&nbsp;Identifies the time at which the token will be accepted for processing.</span></span> <span data-ttu-id="f8d2d-228">この要求の値はエポック時間で表されます。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-228">The value of this claim is expressed as epoch time.</span></span>
+* `http://schemas.microsoft.com/marketplace/2015/08/claims/key/clientId`<span data-ttu-id="f8d2d-229">:&nbsp;&nbsp;&nbsp;開発者を識別するクライアント ID。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-229">:&nbsp;&nbsp;&nbsp;The client ID that identifies the developer.</span></span>
+* `http://schemas.microsoft.com/marketplace/2015/08/claims/key/payload`<span data-ttu-id="f8d2d-230">:&nbsp;&nbsp;&nbsp;Windows ストア サービスでのみ使用する情報が含まれている不透明なペイロード (暗号化され、Base64 でエンコード)。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-230">:&nbsp;&nbsp;&nbsp;An opaque payload (encrypted and Base64 encoded) that contains information that is intended only for use by Windows Store services.</span></span>
+* `http://schemas.microsoft.com/marketplace/2015/08/claims/key/userId`<span data-ttu-id="f8d2d-231">:&nbsp;&nbsp;&nbsp;サービスのコンテキストで現在のユーザーを識別するユーザー ID。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-231">:&nbsp;&nbsp;&nbsp;A user ID that identifies the current user in the context of your services.</span></span> <span data-ttu-id="f8d2d-232">これは、[キーの作成に使うメソッド](#step-4)の省略可能な *publisherUserId* パラメーターに渡す値と同じです。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-232">This is the same value you pass into the optional *publisherUserId* parameter of the [method you use to create the key](#step-4).</span></span>
+* `http://schemas.microsoft.com/marketplace/2015/08/claims/key/refreshUri`<span data-ttu-id="f8d2d-233">:&nbsp;&nbsp;&nbsp;キーの更新に使用できる URI。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-233">:&nbsp;&nbsp;&nbsp;The URI that you can use to renew the key.</span></span>
 
-デコードされた Windows ストア ID キー ヘッダーの例を次に示します。
+<span data-ttu-id="f8d2d-234">デコードされた Windows ストア ID キー ヘッダーの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-234">Here is an example of a decoded Windows Store ID key header.</span></span>
 
 ```json
 {
@@ -202,7 +208,7 @@ Windows ストア ID キーは、ユーザーの製品所有権情報にアク�
 }
 ```
 
-デコードされた Windows ストア ID キー要求セットの例を次に示します。
+<span data-ttu-id="f8d2d-235">デコードされた Windows ストア ID キー要求セットの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="f8d2d-235">Here is an example of a decoded Windows Store ID key claim set.</span></span>
 
 ```json
 {
@@ -218,13 +224,14 @@ Windows ストア ID キーは、ユーザーの製品所有権情報にアク�
 }
 ```
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="f8d2d-236">関連トピック</span><span class="sxs-lookup"><span data-stu-id="f8d2d-236">Related topics</span></span>
 
-* [製品の照会](query-for-products.md)
-* [コンシューマブルな製品をフルフィルメント完了として報告する](report-consumable-products-as-fulfilled.md)
-* [無料の製品の付与](grant-free-products.md)
-* [Windows ストア ID キーの更新](renew-a-windows-store-id-key.md)
-* [Azure Active Directory とアプリケーションの統合](http://go.microsoft.com/fwlink/?LinkId=722502)
-* [Azure Active Directory アプリケーション マニフェストの概要]( http://go.microsoft.com/fwlink/?LinkId=722500)
-* [サポートされているトークンと要求の種類](http://go.microsoft.com/fwlink/?LinkId=722501)
-
+* [<span data-ttu-id="f8d2d-237">製品の照会</span><span class="sxs-lookup"><span data-stu-id="f8d2d-237">Query for products</span></span>](query-for-products.md)
+* [<span data-ttu-id="f8d2d-238">コンシューマブルな製品をフルフィルメント完了として報告する</span><span class="sxs-lookup"><span data-stu-id="f8d2d-238">Report consumable products as fulfilled</span></span>](report-consumable-products-as-fulfilled.md)
+* [<span data-ttu-id="f8d2d-239">無料の製品の付与</span><span class="sxs-lookup"><span data-stu-id="f8d2d-239">Grant free products</span></span>](grant-free-products.md)
+* [<span data-ttu-id="f8d2d-240">ユーザーのサブスクリプションを取得する</span><span class="sxs-lookup"><span data-stu-id="f8d2d-240">Get subscriptions for a user</span></span>](get-subscriptions-for-a-user.md)
+* [<span data-ttu-id="f8d2d-241">ユーザーのサブスクリプションに関する請求の状態を変更する</span><span class="sxs-lookup"><span data-stu-id="f8d2d-241">Change the billing state of a subscription for a user</span></span>](change-the-billing-state-of-a-subscription-for-a-user.md)
+* [<span data-ttu-id="f8d2d-242">Windows ストア ID キーの更新</span><span class="sxs-lookup"><span data-stu-id="f8d2d-242">Renew a Windows Store ID key</span></span>](renew-a-windows-store-id-key.md)
+* [<span data-ttu-id="f8d2d-243">Azure Active Directory とアプリケーションの統合</span><span class="sxs-lookup"><span data-stu-id="f8d2d-243">Integrating Applications with Azure Active Directory</span></span>](http://go.microsoft.com/fwlink/?LinkId=722502)
+* [<span data-ttu-id="f8d2d-244">Azure Active Directory アプリケーション マニフェストの概要</span><span class="sxs-lookup"><span data-stu-id="f8d2d-244">Understanding the Azure Active Directory application manifest</span></span>]( http://go.microsoft.com/fwlink/?LinkId=722500)
+* [<span data-ttu-id="f8d2d-245">サポートされているトークンと要求の種類</span><span class="sxs-lookup"><span data-stu-id="f8d2d-245">Supported Token and Claim Types</span></span>](http://go.microsoft.com/fwlink/?LinkId=722501)

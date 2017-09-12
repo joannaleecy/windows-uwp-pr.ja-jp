@@ -6,107 +6,107 @@ ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
 label: TBD
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f77bdb61fdb596720a857960094c959b344db9af
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cf3acff756896e5fccbe0cf2d16e07bff51e6527
+ms.sourcegitcommit: 5ece992c31870df4c089360ef47501bd4ce14fa9
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/22/2017
 ---
-# <a name="periodic-notification-overview"></a>定期的な通知の概要
+# <a name="periodic-notification-overview"></a><span data-ttu-id="4e11c-104">定期的な通知の概要</span><span class="sxs-lookup"><span data-stu-id="4e11c-104">Periodic notification overview</span></span>
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
-定期的な通知 (ポーリング通知とも呼ばれます) では、クラウド サービスから直接コンテンツをダウンロードして、一定の間隔でタイルやバッジを更新します。 定期的な通知を使うには、クライアント アプリのコードで 2 つの情報を指定する必要があります。
+<span data-ttu-id="4e11c-105">定期的な通知 (ポーリング通知とも呼ばれます) では、クラウド サービスから直接コンテンツをダウンロードして、一定の間隔でタイルやバッジを更新します。</span><span class="sxs-lookup"><span data-stu-id="4e11c-105">Periodic notifications, which are also called polled notifications, update tiles and badges at a fixed interval by downloading content from a cloud service.</span></span> <span data-ttu-id="4e11c-106">定期的な通知を使うには、クライアント アプリのコードで 2 つの情報を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4e11c-106">To use periodic notifications, your client app code needs to provide two pieces of information:</span></span>
 
--   アプリのタイルやバッジの更新がないかどうかを調べるために Windows でポーリングする Web 上の場所の Uniform Resource Identifier (URI)
--   URI をポーリングする頻度
+-   <span data-ttu-id="4e11c-107">アプリのタイルやバッジの更新がないかどうかを調べるために Windows でポーリングする Web 上の場所の Uniform Resource Identifier (URI)</span><span class="sxs-lookup"><span data-stu-id="4e11c-107">The Uniform Resource Identifier (URI) of a web location for Windows to poll for tile or badge updates for your app</span></span>
+-   <span data-ttu-id="4e11c-108">URI をポーリングする頻度</span><span class="sxs-lookup"><span data-stu-id="4e11c-108">How often that URI should be polled</span></span>
 
-定期的な通知では、最小限のクラウド サービスとクライアントの投資で、ライブ タイルを更新することができます。 定期的な通知は、同じコンテンツを多数のユーザーに配信する優れた方法です。
+<span data-ttu-id="4e11c-109">定期的な通知では、最小限のクラウド サービスとクライアントの投資で、ライブ タイルを更新することができます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-109">Periodic notifications enable your app to get live tile updates with minimal cloud service and client investment.</span></span> <span data-ttu-id="4e11c-110">定期的な通知は、同じコンテンツを多数のユーザーに配信する優れた方法です。</span><span class="sxs-lookup"><span data-stu-id="4e11c-110">Periodic notifications are a good delivery method for distributing the same content to a wide audience.</span></span>
 
-**注**   詳しくは、Windows 8.1 の[プッシュ通知と定期的な通知のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231476)をダウンロードしてご覧ください。また、Windows 10 アプリでソース コードを再利用することもできます。
+<span data-ttu-id="4e11c-111">**注**   詳しくは、Windows 8.1 の[プッシュ通知と定期的な通知のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231476)をダウンロードしてご覧ください。また、Windows 10 アプリでソース コードを再利用することもできます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-111">**Note**   You can learn more by downloading the [Push and periodic notifications sample](http://go.microsoft.com/fwlink/p/?linkid=231476) for Windows 8.1 and re-using its source code in your Windows 10 app.</span></span>
 
  
 
-## <a name="how-it-works"></a>しくみ
+## <a name="how-it-works"></a><span data-ttu-id="4e11c-112">しくみ</span><span class="sxs-lookup"><span data-stu-id="4e11c-112">How it works</span></span>
 
 
-定期的な通知では、アプリでクラウド サービスをホストする必要があります。 このサービスは、アプリをインストールしているすべてのユーザーによって定期的にポーリングされます。 Windows では、ポーリング間隔 (1 時間に 1 回など) に従って URI に HTTP GET 要求を送り、この要求に対する応答として提供される要求したタイルまたはバッジのコンテンツ (XML 形式) をダウンロードして、アプリのタイルにそのコンテンツを表示します。
+<span data-ttu-id="4e11c-113">定期的な通知では、アプリでクラウド サービスをホストする必要があります。</span><span class="sxs-lookup"><span data-stu-id="4e11c-113">Periodic notifications require that your app hosts a cloud service.</span></span> <span data-ttu-id="4e11c-114">このサービスは、アプリをインストールしているすべてのユーザーによって定期的にポーリングされます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-114">The service will be polled periodically by all users who have the app installed.</span></span> <span data-ttu-id="4e11c-115">Windows では、ポーリング間隔 (1 時間に 1 回など) に従って URI に HTTP GET 要求を送り、この要求に対する応答として提供される要求したタイルまたはバッジのコンテンツ (XML 形式) をダウンロードして、アプリのタイルにそのコンテンツを表示します。</span><span class="sxs-lookup"><span data-stu-id="4e11c-115">At each polling interval, such as once an hour, Windows sends an HTTP GET request to the URI, downloads the requested tile or badge content (as XML) that is supplied in response to the request, and displays the content on the app's tile.</span></span>
 
-定期的な更新をトースト通知で使うことはできません。 トーストの配信には、[スケジュールされた通知](https://msdn.microsoft.com/library/windows/apps/hh465417)または[プッシュ通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)が適しています。
+<span data-ttu-id="4e11c-116">定期的な更新をトースト通知で使うことはできません。</span><span class="sxs-lookup"><span data-stu-id="4e11c-116">Note that periodic updates cannot be used with toast notifications.</span></span> <span data-ttu-id="4e11c-117">トーストの配信には、[スケジュールされた通知](https://msdn.microsoft.com/library/windows/apps/hh465417)または[プッシュ通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)が適しています。</span><span class="sxs-lookup"><span data-stu-id="4e11c-117">Toast is best delivered through [scheduled](https://msdn.microsoft.com/library/windows/apps/hh465417) or [push](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252) notifications.</span></span>
 
-## <a name="uri-location-and-xml-content"></a>URI の場所と XML コンテンツ
-
-
-ポーリングする URI には、HTTP や HTTPS の有効な Web アドレスを使うことができます。
-
-クラウド サーバーからの応答には、ダウンロードされたコンテンツが含まれます。 URI から返されるコンテンツは、[タイル](tiles-and-notifications-adaptive-tiles-schema.md)または[バッジ](https://msdn.microsoft.com/library/windows/apps/br212851)の XML スキーマの仕様に準拠し、UTF-8 の形式でエンコードされている必要があります。 仕様で規定されている HTTP ヘッダーを使うと、通知の[有効期限](#expiry)や[タグ](#taggo)を指定することができます。
-
-## <a name="polling-behavior"></a>ポーリングの動作
+## <a name="uri-location-and-xml-content"></a><span data-ttu-id="4e11c-118">URI の場所と XML コンテンツ</span><span class="sxs-lookup"><span data-stu-id="4e11c-118">URI location and XML content</span></span>
 
 
-ポーリングを開始するには次のメソッドのいずれかを呼び出します。
+<span data-ttu-id="4e11c-119">ポーリングする URI には、HTTP や HTTPS の有効な Web アドレスを使うことができます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-119">Any valid HTTP or HTTPS web address can be used as the URI to be polled.</span></span>
 
--   [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684) (タイル)
--   [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701611) (バッジ)
--   [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945) (タイル)
+<span data-ttu-id="4e11c-120">クラウド サーバーからの応答には、ダウンロードされたコンテンツが含まれます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-120">The cloud server's response includes the downloaded content.</span></span> <span data-ttu-id="4e11c-121">URI から返されるコンテンツは、[タイル](tiles-and-notifications-adaptive-tiles-schema.md)または[バッジ](https://msdn.microsoft.com/library/windows/apps/br212851)の XML スキーマの仕様に準拠し、UTF-8 の形式でエンコードされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="4e11c-121">The content returned from the URI must conform to the [Tile](tiles-and-notifications-adaptive-tiles-schema.md) or [Badge](https://msdn.microsoft.com/library/windows/apps/br212851) XML schema specification, and must be UTF-8 encoded.</span></span> <span data-ttu-id="4e11c-122">仕様で規定されている HTTP ヘッダーを使うと、通知の[有効期限](#expiry)や[タグ](#taggo)を指定することができます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-122">You can use defined HTTP headers to specify the [expiration time](#expiry) or [tag](#taggo) for the notification.</span></span>
 
-これらのいずれかのメソッドを呼び出すと、URI がすぐにポーリングされて、受け取ったコンテンツでタイルやバッジが更新されます。 この最初のポーリングの後は、要求した間隔で更新が提供されます。 ポーリングは、明示的に停止するか ([**TileUpdater.StopPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701697) を使用)、アプリをアンインストールするか、(セカンダリ タイルの場合は) タイルを削除するまで続けられます。 それまでの間は、アプリが起動されなくても、タイルやバッジの更新がないかどうかを調べるために継続的にポーリングが行われます。
-
-### <a name="the-recurrence-interval"></a>繰り返し間隔
-
-繰り返し間隔は、上記のメソッドのパラメーターとして指定します。 Windows は要求された間隔でポーリングを適切に実行しますが、多少の誤差が生じる場合もあります。 Windows の判断により、要求したポーリング間隔よりも最大で 15 分ほど遅れる可能性があります。
-
-### <a name="the-start-time"></a>開始時刻
-
-必要に応じて、ポーリングを開始する時刻を指定できます。 タイルのコンテンツが 1 日に 1 回しか変更されないようなアプリでは、 ポーリングの開始時刻をクラウド サービスの更新時刻の直後に設定することをお勧めします。 たとえば、毎朝 8 時にその日のサービス品が公開されるショッピング サイトであれば、午前 8 時すぎにポーリングを行ってタイルの新しいコンテンツがないかどうかを調べます。
-
-開始時刻を指定した場合、メソッドを最初に呼び出したときに、すぐにポーリングが行われコンテンツが確認されます。 それ以降の定期的なポーリングは、指定した開始時刻の 15 分以内に開始されます。
-
-### <a name="automatic-retry-behavior"></a>自動再試行の動作
-
-URI がポーリングされるのは、デバイスがオンラインになっている場合だけです。 ネットワークが利用可能でも、任意の理由で URI にアクセスできない場合は、ポーリング間隔の反復が 1 回スキップされ、次の間隔で再び URI がポーリングされます。 ポーリング間隔に達したときにデバイスがオフ、スリープ、または休止状態になっていた場合、URI は、デバイスがオフ状態やスリープ状態から回復したときにポーリングされます。
-
-### <a name="handling-app-updates"></a>アプリの更新プログラムの処理
-
-ポーリング URI を変更するアプリの更新プログラムをリリースする場合は、タイルが必ず新しい URI を使用するように、新しい URI と共に StartPeriodicUpdate を呼び出す、毎日の[時刻のトリガーによるバックグラウンド タスク](../launch-resume/run-a-background-task-on-a-timer-.md)を追加する必要があります。 そうしないと、ユーザーがアプリの更新プログラムを受け取ってもアプリを起動しない場合、ユーザーのタイルは古い URI を使い続けるため、URI が無効になった場合や返されたペイロードが存在しないローカル画像を参照している場合に、表示に失敗することがあります。
-
-## <a name="expiration-of-tile-and-badge-notifications"></a>タイル通知とバッジ通知の有効期限
+## <a name="polling-behavior"></a><span data-ttu-id="4e11c-123">ポーリングの動作</span><span class="sxs-lookup"><span data-stu-id="4e11c-123">Polling Behavior</span></span>
 
 
-既定では、定期的なタイル通知とバッジ通知は、ダウンロードされたときから 3 日後に有効期限切れになります。 通知の有効期限が切れると、バッジ、タイル、キューからコンテンツが削除され、ユーザーに表示されなくなります。 すべての定期的なタイル通知とバッジ通知には、アプリや通知に適した時間を使って有効期限を明示的に設定し、コンテンツの意味がなくなっても保持されないようにすることをお勧めします。 明示的な有効期限は、コンテンツの存続期間が決まっている場合に重要です。 また、クラウド サービスにアクセスできなくなった場合や、ユーザーがネットワークに長時間接続していない場合に、古いコンテンツが確実に削除されます。
+<span data-ttu-id="4e11c-124">ポーリングを開始するには次のメソッドのいずれかを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="4e11c-124">Call one of these methods to begin polling:</span></span>
 
-クラウド サービスでは、応答のペイロードに X-WNS-Expires HTTP ヘッダーを含めることによって、通知の有効期限の日時が明示的に設定されます。 X-WNS-Expires HTTP ヘッダーは、[HTTP-date 形式](http://go.microsoft.com/fwlink/p/?linkid=253706)に準拠します。 詳しくは、「[**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684)」または「[**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945)」をご覧ください。
+-   <span data-ttu-id="4e11c-125">[**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684) (タイル)</span><span class="sxs-lookup"><span data-stu-id="4e11c-125">[**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684) (Tile)</span></span>
+-   <span data-ttu-id="4e11c-126">[**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701611) (バッジ)</span><span class="sxs-lookup"><span data-stu-id="4e11c-126">[**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701611) (Badge)</span></span>
+-   <span data-ttu-id="4e11c-127">[**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945) (タイル)</span><span class="sxs-lookup"><span data-stu-id="4e11c-127">[**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945) (Tile)</span></span>
 
-たとえば、株式市場の取引が活発な日は、株価の更新の有効期限をポーリング間隔の有効期限の 2 倍に設定することをお勧めします (ポーリング間隔が 30 分の場合は有効期限を受け取り後 1 時間にするなど)。 また、ニュース アプリの場合、毎日のニュースを表示するタイルの更新の有効期限は 1 日が適しています。
+<span data-ttu-id="4e11c-128">これらのいずれかのメソッドを呼び出すと、URI がすぐにポーリングされて、受け取ったコンテンツでタイルやバッジが更新されます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-128">When you call one of these methods, the URI is immediately polled and the tile or badge is updated with the received contents.</span></span> <span data-ttu-id="4e11c-129">この最初のポーリングの後は、要求した間隔で更新が提供されます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-129">After this initial poll, Windows continues to provide updates at the requested interval.</span></span> <span data-ttu-id="4e11c-130">ポーリングは、明示的に停止するか ([**TileUpdater.StopPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701697) を使用)、アプリをアンインストールするか、(セカンダリ タイルの場合は) タイルを削除するまで続けられます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-130">Polling continues until you explicitly stop it (with [**TileUpdater.StopPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701697)), your app is uninstalled, or, in the case of a secondary tile, the tile is removed.</span></span> <span data-ttu-id="4e11c-131">それまでの間は、アプリが起動されなくても、タイルやバッジの更新がないかどうかを調べるために継続的にポーリングが行われます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-131">Otherwise, Windows continues to poll for updates to your tile or badge even if your app is never launched again.</span></span>
 
-## <a name="periodic-notifications-in-the-notification-queue"></a>通知キューでの定期的な通知
+### <a name="the-recurrence-interval"></a><span data-ttu-id="4e11c-132">繰り返し間隔</span><span class="sxs-lookup"><span data-stu-id="4e11c-132">The recurrence interval</span></span>
+
+<span data-ttu-id="4e11c-133">繰り返し間隔は、上記のメソッドのパラメーターとして指定します。</span><span class="sxs-lookup"><span data-stu-id="4e11c-133">You specify the recurrence interval as a parameter of the methods listed above.</span></span> <span data-ttu-id="4e11c-134">Windows は要求された間隔でポーリングを適切に実行しますが、多少の誤差が生じる場合もあります。</span><span class="sxs-lookup"><span data-stu-id="4e11c-134">Note that while Windows makes a best effort to poll as requested, the interval is not precise.</span></span> <span data-ttu-id="4e11c-135">Windows の判断により、要求したポーリング間隔よりも最大で 15 分ほど遅れる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="4e11c-135">The requested poll interval can be delayed by up to 15 minutes at the discretion of Windows.</span></span>
+
+### <a name="the-start-time"></a><span data-ttu-id="4e11c-136">開始時刻</span><span class="sxs-lookup"><span data-stu-id="4e11c-136">The start time</span></span>
+
+<span data-ttu-id="4e11c-137">必要に応じて、ポーリングを開始する時刻を指定できます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-137">You optionally can specify a particular time of day to begin polling.</span></span> <span data-ttu-id="4e11c-138">タイルのコンテンツが 1 日に 1 回しか変更されないようなアプリでは、</span><span class="sxs-lookup"><span data-stu-id="4e11c-138">Consider an app that changes its tile content just once a day.</span></span> <span data-ttu-id="4e11c-139">ポーリングの開始時刻をクラウド サービスの更新時刻の直後に設定することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="4e11c-139">In such a case, we recommend that you poll close to the time that you update your cloud service.</span></span> <span data-ttu-id="4e11c-140">たとえば、毎朝 8 時にその日のサービス品が公開されるショッピング サイトであれば、午前 8 時すぎにポーリングを行ってタイルの新しいコンテンツがないかどうかを調べます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-140">For example, if a daily shopping site publishes the day's offers at 8 AM, poll for new tile content shortly after 8 AM.</span></span>
+
+<span data-ttu-id="4e11c-141">開始時刻を指定した場合、メソッドを最初に呼び出したときに、すぐにポーリングが行われコンテンツが確認されます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-141">If you provide a start time, the first call to the method polls for content immediately.</span></span> <span data-ttu-id="4e11c-142">それ以降の定期的なポーリングは、指定した開始時刻の 15 分以内に開始されます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-142">Then, regular polling starts within 15 minutes of the provided start time.</span></span>
+
+### <a name="automatic-retry-behavior"></a><span data-ttu-id="4e11c-143">自動再試行の動作</span><span class="sxs-lookup"><span data-stu-id="4e11c-143">Automatic retry behavior</span></span>
+
+<span data-ttu-id="4e11c-144">URI がポーリングされるのは、デバイスがオンラインになっている場合だけです。</span><span class="sxs-lookup"><span data-stu-id="4e11c-144">The URI is polled only if the device is online.</span></span> <span data-ttu-id="4e11c-145">ネットワークが利用可能でも、任意の理由で URI にアクセスできない場合は、ポーリング間隔の反復が 1 回スキップされ、次の間隔で再び URI がポーリングされます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-145">If the network is available but the URI cannot be contacted for any reason, this iteration of the polling interval is skipped, and the URI will be polled again at the next interval.</span></span> <span data-ttu-id="4e11c-146">ポーリング間隔に達したときにデバイスがオフ、スリープ、または休止状態になっていた場合、URI は、デバイスがオフ状態やスリープ状態から回復したときにポーリングされます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-146">If the device is in an off, sleep, or hibernated state when a polling interval is reached, the URI is polled when the device returns from its off or sleep state.</span></span>
+
+### <a name="handling-app-updates"></a><span data-ttu-id="4e11c-147">アプリの更新プログラムの処理</span><span class="sxs-lookup"><span data-stu-id="4e11c-147">Handling app updates</span></span>
+
+<span data-ttu-id="4e11c-148">ポーリング URI を変更するアプリの更新プログラムをリリースする場合は、タイルが必ず新しい URI を使用するように、新しい URI と共に StartPeriodicUpdate を呼び出す、毎日の[時刻のトリガーによるバックグラウンド タスク](../launch-resume/run-a-background-task-on-a-timer-.md)を追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4e11c-148">If you release an app update that changes your polling URI, you should add a daily [time trigger background task](../launch-resume/run-a-background-task-on-a-timer-.md) which calls StartPeriodicUpdate with the new URI to ensure your tiles are using the new URI.</span></span> <span data-ttu-id="4e11c-149">そうしないと、ユーザーがアプリの更新プログラムを受け取ってもアプリを起動しない場合、ユーザーのタイルは古い URI を使い続けるため、URI が無効になった場合や返されたペイロードが存在しないローカル画像を参照している場合に、表示に失敗することがあります。</span><span class="sxs-lookup"><span data-stu-id="4e11c-149">Otherwise, if users receive your app update but don't launch your app, their tiles will still be using the old URI, which may fail to display if the URI is now invalid or if the returned payload references local images that no longer exist.</span></span>
+
+## <a name="expiration-of-tile-and-badge-notifications"></a><span data-ttu-id="4e11c-150">タイル通知とバッジ通知の有効期限</span><span class="sxs-lookup"><span data-stu-id="4e11c-150">Expiration of tile and badge notifications</span></span>
 
 
-定期的なタイルの更新は[通知の循環](https://msdn.microsoft.com/library/windows/apps/hh781199)と併用できます。 既定では、スタート画面のタイルには、新しい通知によって置き換えられるまで、1 つの通知のコンテンツが表示されます。 循環を有効にすると、最大で 5 つの通知がキューに入れられ、タイルに循環して表示されます。
+<span data-ttu-id="4e11c-151">既定では、定期的なタイル通知とバッジ通知は、ダウンロードされたときから 3 日後に有効期限切れになります。</span><span class="sxs-lookup"><span data-stu-id="4e11c-151">By default, periodic tile and badge notifications expire three days from the time they are downloaded.</span></span> <span data-ttu-id="4e11c-152">通知の有効期限が切れると、バッジ、タイル、キューからコンテンツが削除され、ユーザーに表示されなくなります。</span><span class="sxs-lookup"><span data-stu-id="4e11c-152">When a notification expires, the content is removed from the badge, tile, or queue and is no longer shown to the user.</span></span> <span data-ttu-id="4e11c-153">すべての定期的なタイル通知とバッジ通知には、アプリや通知に適した時間を使って有効期限を明示的に設定し、コンテンツの意味がなくなっても保持されないようにすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="4e11c-153">It is a best practice to set an explicit expiration time on all periodic tile and badge notifications, using a time that makes sense for your app or notification, to ensure that the content does not persist longer than it is relevant.</span></span> <span data-ttu-id="4e11c-154">明示的な有効期限は、コンテンツの存続期間が決まっている場合に重要です。</span><span class="sxs-lookup"><span data-stu-id="4e11c-154">An explicit expiration time is essential for content with a defined life span.</span></span> <span data-ttu-id="4e11c-155">また、クラウド サービスにアクセスできなくなった場合や、ユーザーがネットワークに長時間接続していない場合に、古いコンテンツが確実に削除されます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-155">It also assures the removal of stale content if your cloud service becomes unreachable, or if the user disconnects from the network for an extended period of time.</span></span>
 
-キューの通知の数が限度の 5 個になると、次の新しい通知によってキューの最も古い通知が置き換えられます。 ただし、通知にタグを設定することで、キューの置き換えポリシーを操作できます。 タグは大文字と小文字が区別されないアプリ固有の文字列 (最大 16 文字の英数字) で、応答のペイロードの [X-WNS-Tag](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_tag) HTTP ヘッダーで指定されます。 着信した通知のタグは、既にキューにあるすべての通知のタグと比較され、 一致するものが見つかると、キューにある同じタグを持つ通知が新しい通知に置き換えられます。 一致するものが見つからない場合は、既定の置き換え規則が適用され、キューの最も古い通知が新しい通知に置き換えられます。
+<span data-ttu-id="4e11c-156">クラウド サービスでは、応答のペイロードに X-WNS-Expires HTTP ヘッダーを含めることによって、通知の有効期限の日時が明示的に設定されます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-156">Your cloud service sets an expiration date and time for a notification by including the X-WNS-Expires HTTP header in the response payload.</span></span> <span data-ttu-id="4e11c-157">X-WNS-Expires HTTP ヘッダーは、[HTTP-date 形式](http://go.microsoft.com/fwlink/p/?linkid=253706)に準拠します。</span><span class="sxs-lookup"><span data-stu-id="4e11c-157">The X-WNS-Expires HTTP header conforms to the [HTTP-date format](http://go.microsoft.com/fwlink/p/?linkid=253706).</span></span> <span data-ttu-id="4e11c-158">詳しくは、「[**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684)」または「[**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="4e11c-158">For more information, see [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684) or [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945).</span></span>
 
-通知のキューとタグを使うと、充実した通知シナリオを実装できます。 たとえば、株価アプリでは、それぞれの銘柄名をタグに使って異なる 5 銘柄の通知を送ることができます。 このようにすると、同じ銘柄の複数の通知がキューに入れられて、有効期限が切れた古い通知が表示されるようなことがなくなります。
+<span data-ttu-id="4e11c-159">たとえば、株式市場の取引が活発な日は、株価の更新の有効期限をポーリング間隔の有効期限の 2 倍に設定することをお勧めします (ポーリング間隔が 30 分の場合は有効期限を受け取り後 1 時間にするなど)。</span><span class="sxs-lookup"><span data-stu-id="4e11c-159">For example, during a stock market's active trading day, you can set the expiration for a stock price update to twice that of your polling interval (such as one hour after receipt if you are polling every half-hour).</span></span> <span data-ttu-id="4e11c-160">また、ニュース アプリの場合、毎日のニュースを表示するタイルの更新の有効期限は 1 日が適しています。</span><span class="sxs-lookup"><span data-stu-id="4e11c-160">As another example, a news app might determine that one day is an appropriate expiration time for a daily news tile update.</span></span>
 
-詳しくは、「[通知キューの使用](https://msdn.microsoft.com/library/windows/apps/hh781199)」をご覧ください。
-
-### <a name="enabling-the-notification-queue"></a>通知キューを有効にする
-
-通知キューを実装するには、最初に、タイルに対してキューを有効にする必要があります (「[ローカル通知で通知キューを使用する方法](https://msdn.microsoft.com/library/windows/apps/hh465429)」を参照)。 キューを有効にする呼び出しはアプリの存続期間で 1 回だけ実行する必要がありますが、アプリが起動されるたびに呼び出しても問題はありません。
-
-### <a name="polling-for-more-than-one-notification-at-a-time"></a>一度に複数の通知をポーリングする
-
-Windows でダウンロードを行うタイルの通知ごとに、一意の URI を指定する必要があります。 [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945) メソッドを使うと、通知キューで使う URI を一度に 5 つまで指定できます。 各 URI がポーリングされ、ほぼ同じ時間にそれぞれ 1 つの通知ペイロードが返されます。 ポーリングされる各 URI からは、それぞれ固有の有効期限とタグ値を返すこともできます。
-
-## <a name="related-topics"></a>関連トピック
+## <a name="periodic-notifications-in-the-notification-queue"></a><span data-ttu-id="4e11c-161">通知キューでの定期的な通知</span><span class="sxs-lookup"><span data-stu-id="4e11c-161">Periodic notifications in the notification queue</span></span>
 
 
-* [定期的な通知のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh761461)
-* [バッジの定期的な通知を設定する方法](https://msdn.microsoft.com/library/windows/apps/hh761476)
-* [タイルの定期的な通知を設定する方法](https://msdn.microsoft.com/library/windows/apps/hh761476)
+<span data-ttu-id="4e11c-162">定期的なタイルの更新は[通知の循環](https://msdn.microsoft.com/library/windows/apps/hh781199)と併用できます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-162">You can use periodic tile updates with [notification cycling](https://msdn.microsoft.com/library/windows/apps/hh781199).</span></span> <span data-ttu-id="4e11c-163">既定では、スタート画面のタイルには、新しい通知によって置き換えられるまで、1 つの通知のコンテンツが表示されます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-163">By default, a tile on the Start screen shows the content of a single notification until it is replaced by a new notification.</span></span> <span data-ttu-id="4e11c-164">循環を有効にすると、最大で 5 つの通知がキューに入れられ、タイルに循環して表示されます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-164">When you enable cycling, up to five notifications are maintained in a queue and the tile cycles through them.</span></span>
+
+<span data-ttu-id="4e11c-165">キューの通知の数が限度の 5 個になると、次の新しい通知によってキューの最も古い通知が置き換えられます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-165">If the queue has reached its capacity of five notifications, the next new notification replaces the oldest notification in the queue.</span></span> <span data-ttu-id="4e11c-166">ただし、通知にタグを設定することで、キューの置き換えポリシーを操作できます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-166">However, by setting tags on your notifications, you can affect the queue's replacement policy.</span></span> <span data-ttu-id="4e11c-167">タグは大文字と小文字が区別されないアプリ固有の文字列 (最大 16 文字の英数字) で、応答のペイロードの [X-WNS-Tag](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_tag) HTTP ヘッダーで指定されます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-167">A tag is an app-specific, case-insensitive string of up to 16 alphanumeric characters, specified in the [X-WNS-Tag](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_tag) HTTP header in the response payload.</span></span> <span data-ttu-id="4e11c-168">着信した通知のタグは、既にキューにあるすべての通知のタグと比較され、</span><span class="sxs-lookup"><span data-stu-id="4e11c-168">Windows compares the tag of an incoming notification with the tags of all notifications already in the queue.</span></span> <span data-ttu-id="4e11c-169">一致するものが見つかると、キューにある同じタグを持つ通知が新しい通知に置き換えられます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-169">If a match is found, the new notification replaces the queued notification with the same tag.</span></span> <span data-ttu-id="4e11c-170">一致するものが見つからない場合は、既定の置き換え規則が適用され、キューの最も古い通知が新しい通知に置き換えられます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-170">If no match is found, the default replacement rule is applied and the new notification replaces the oldest notification in the queue.</span></span>
+
+<span data-ttu-id="4e11c-171">通知のキューとタグを使うと、充実した通知シナリオを実装できます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-171">You can use notification queuing and tagging to implement a variety of rich notification scenarios.</span></span> <span data-ttu-id="4e11c-172">たとえば、株価アプリでは、それぞれの銘柄名をタグに使って異なる 5 銘柄の通知を送ることができます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-172">For example, a stock app could send five notifications, each about a different stock and each tagged with a stock name.</span></span> <span data-ttu-id="4e11c-173">このようにすると、同じ銘柄の複数の通知がキューに入れられて、有効期限が切れた古い通知が表示されるようなことがなくなります。</span><span class="sxs-lookup"><span data-stu-id="4e11c-173">This prevents the queue from ever containing two notifications for the same stock, the older of which is out of date.</span></span>
+
+<span data-ttu-id="4e11c-174">詳しくは、「[通知キューの使用](https://msdn.microsoft.com/library/windows/apps/hh781199)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="4e11c-174">For more information, see [Using the notification queue](https://msdn.microsoft.com/library/windows/apps/hh781199).</span></span>
+
+### <a name="enabling-the-notification-queue"></a><span data-ttu-id="4e11c-175">通知キューを有効にする</span><span class="sxs-lookup"><span data-stu-id="4e11c-175">Enabling the notification queue</span></span>
+
+<span data-ttu-id="4e11c-176">通知キューを実装するには、最初に、タイルに対してキューを有効にする必要があります (「[ローカル通知で通知キューを使用する方法](https://msdn.microsoft.com/library/windows/apps/hh465429)」を参照)。</span><span class="sxs-lookup"><span data-stu-id="4e11c-176">To implement a notification queue, first enable the queue for your tile (see [How to use the notification queue with local notifications](https://msdn.microsoft.com/library/windows/apps/hh465429)).</span></span> <span data-ttu-id="4e11c-177">キューを有効にする呼び出しはアプリの存続期間で 1 回だけ実行する必要がありますが、アプリが起動されるたびに呼び出しても問題はありません。</span><span class="sxs-lookup"><span data-stu-id="4e11c-177">The call to enable the queue needs to be done only once in your app's lifetime, but there is no harm in calling it each time your app is launched.</span></span>
+
+### <a name="polling-for-more-than-one-notification-at-a-time"></a><span data-ttu-id="4e11c-178">一度に複数の通知をポーリングする</span><span class="sxs-lookup"><span data-stu-id="4e11c-178">Polling for more than one notification at a time</span></span>
+
+<span data-ttu-id="4e11c-179">Windows でダウンロードを行うタイルの通知ごとに、一意の URI を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4e11c-179">You must provide a unique URI for each notification that you'd like Windows to download for your tile.</span></span> <span data-ttu-id="4e11c-180">[**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945) メソッドを使うと、通知キューで使う URI を一度に 5 つまで指定できます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-180">By using the [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945) method, you can provide up to five URIs at once for use with the notification queue.</span></span> <span data-ttu-id="4e11c-181">各 URI がポーリングされ、ほぼ同じ時間にそれぞれ 1 つの通知ペイロードが返されます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-181">Each URI is polled for a single notification payload, at or near the same time.</span></span> <span data-ttu-id="4e11c-182">ポーリングされる各 URI からは、それぞれ固有の有効期限とタグ値を返すこともできます。</span><span class="sxs-lookup"><span data-stu-id="4e11c-182">Each polled URI can return its own expiration and tag value.</span></span>
+
+## <a name="related-topics"></a><span data-ttu-id="4e11c-183">関連トピック</span><span class="sxs-lookup"><span data-stu-id="4e11c-183">Related topics</span></span>
+
+
+* [<span data-ttu-id="4e11c-184">定期的な通知のガイドライン</span><span class="sxs-lookup"><span data-stu-id="4e11c-184">Guidelines for periodic notifications</span></span>](https://msdn.microsoft.com/library/windows/apps/hh761461)
+* [<span data-ttu-id="4e11c-185">バッジの定期的な通知を設定する方法</span><span class="sxs-lookup"><span data-stu-id="4e11c-185">How to set up periodic notifications for badges</span></span>](https://msdn.microsoft.com/library/windows/apps/hh761476)
+* [<span data-ttu-id="4e11c-186">タイルの定期的な通知を設定する方法</span><span class="sxs-lookup"><span data-stu-id="4e11c-186">How to set up periodic notifications for tiles</span></span>](https://msdn.microsoft.com/library/windows/apps/hh761476)
  

@@ -6,90 +6,78 @@ ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: aeac6f2326fa7a80f8d90f1c10333933fa562a00
-ms.lasthandoff: 02/07/2017
-
+pm-contact: kisai
+design-contact: kimsea
+dev-contact: mitra
+doc-status: Published
+ms.openlocfilehash: 13ca87313835541abffe6190d8a3bc07e67b40f8
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
-# <a name="check-boxes"></a>チェック ボックス
+# <a name="check-boxes"></a><span data-ttu-id="2e2a3-105">チェック ボックス</span><span class="sxs-lookup"><span data-stu-id="2e2a3-105">Check boxes</span></span>
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-チェック ボックスは、アクション項目の選択や選択解除を行うときに使います。 また、チェック ボックスはユーザーが選択する単一の項目や複数の項目の一覧に対して使うことができます。 コントロールには 3 つの選択状態 (選択されていない、選択されている、不確定) があります。 不確定状態は、選択されていない状態と選択されている状態の両方がサブ選択肢のコレクションに含まれている場合に使います。
+<span data-ttu-id="2e2a3-106">チェック ボックスは、アクション項目の選択や選択解除を行うときに使います。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-106">A check box is used to select or deselect action items.</span></span> <span data-ttu-id="2e2a3-107">また、チェック ボックスはユーザーが選択する単一の項目や複数の項目の一覧に対して使うことができます。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-107">It can be used for a single item or for a list of multiple items that a user can choose from.</span></span> <span data-ttu-id="2e2a3-108">コントロールには 3 つの選択状態 (選択されていない、選択されている、不確定) があります。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-108">The control has three selection states: unselected, selected, and indeterminate.</span></span> <span data-ttu-id="2e2a3-109">不確定状態は、選択されていない状態と選択されている状態の両方がサブ選択肢のコレクションに含まれている場合に使います。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-109">Use the indeterminate state when a collection of sub-choices have both unselected and selected states.</span></span>
+
+> <span data-ttu-id="2e2a3-110">**重要な API**: [CheckBox クラス](https://msdn.microsoft.com/library/windows/apps/br209316)、[Checked イベント](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)、[IsChecked プロパティ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)</span><span class="sxs-lookup"><span data-stu-id="2e2a3-110">**Important APIs**: [CheckBox class](https://msdn.microsoft.com/library/windows/apps/br209316), [Checked event](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx), [IsChecked property](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)</span></span>
 
 ![チェック ボックスの状態の例](images/templates-checkbox-states-default.png)
 
-<div class="important-apis" >
-<b>重要な API</b><br/>
-<ul>
-<li>[**CheckBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209316)</li>
-<li>[**Checked イベント**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)</li>
-<li>[**IsChecked プロパティ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) </li>
-</ul>
-</div>
 
+## <a name="is-this-the-right-control"></a><span data-ttu-id="2e2a3-112">適切なコントロールの選択</span><span class="sxs-lookup"><span data-stu-id="2e2a3-112">Is this the right control?</span></span>
 
-## <a name="is-this-the-right-control"></a>適切なコントロールの選択
-
-**1 つのチェック ボックス**を使うのは、"このアカウントを記憶する" ログイン シナリオや、 サービス契約の条項など、はい/いいえの二者択一の選択肢の場合です。
+<span data-ttu-id="2e2a3-113">**1 つのチェック ボックス**を使うのは、"このアカウントを記憶する" ログイン シナリオや、</span><span class="sxs-lookup"><span data-stu-id="2e2a3-113">Use a **single check box** for a binary yes/no choice, such as with a "Remember me?"</span></span> <span data-ttu-id="2e2a3-114">サービス契約の条項など、はい/いいえの二者択一の選択肢の場合です。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-114">login scenario or with a terms of service agreement.</span></span>
 
 ![個人的な選択のための 1 つのチェック ボックス](images/checkbox1.png)
 
-二者択一の場合、**チェック ボックス**と[**トグル スイッチ**](toggles.md)との主な違いは、チェック ボックスが状態を管理し、トグル スイッチが動作を管理する点です。 チェック ボックスによる操作はコミットを遅らせることができますが (たとえばフォームの送信の一部として)、トグル スイッチによる操作は直ちにコミットしなければなりません。 また、複数の選択ができるのは、チェック ボックスだけです。
+<span data-ttu-id="2e2a3-116">二者択一の場合、**チェック ボックス**と[トグル スイッチ](toggles.md)との主な違いは、チェック ボックスが状態を管理し、トグル スイッチが動作を管理する点です。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-116">For a binary choice, the main difference between a **check box** and a [toggle switch](toggles.md) is that the check box is for status and the toggle switch is for action.</span></span> <span data-ttu-id="2e2a3-117">チェック ボックスによる操作はコミットを遅らせることができますが (たとえばフォームの送信の一部として)、トグル スイッチによる操作は直ちにコミットしなければなりません。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-117">You can delay committing a check box interaction (as part of a form submit, for example), while you should immediately commit a toggle switch interaction.</span></span> <span data-ttu-id="2e2a3-118">また、複数の選択ができるのは、チェック ボックスだけです。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-118">Also, only check boxes allow for multi-selection.</span></span>
 
-**複数のチェック ボックス**を使うのは、複数選択シナリオの場合 (ユーザーが相互排他的でない選択肢のグループから 1 つ以上の項目を選ぶ場合) です。
+<span data-ttu-id="2e2a3-119">**複数のチェック ボックス**を使うのは、複数選択シナリオの場合 (ユーザーが相互排他的でない選択肢のグループから 1 つ以上の項目を選ぶ場合) です。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-119">Use **multiple check boxes** for multi-select scenarios in which a user chooses one or more items from a group of choices that are not mutually exclusive.</span></span>
 
-ユーザーがオプションの任意の組み合わせを選べる場合は、チェック ボックスのグループを作成します。
+<span data-ttu-id="2e2a3-120">ユーザーがオプションの任意の組み合わせを選べる場合は、チェック ボックスのグループを作成します。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-120">Create a group of check boxes when users can select any combination of options.</span></span>
 
 ![チェック ボックスでの複数のオプションの選択](images/checkbox2.png)
 
-オプションをグループ化できる場合は、不確定状態のチェック ボックスを使ってグループ全体を表すことができます。 グループ内のすべてでなく一部のサブ項目をユーザーが選択する場合は、チェック ボックスの不確定の状態を使います。
+<span data-ttu-id="2e2a3-122">オプションをグループ化できる場合は、不確定状態のチェック ボックスを使ってグループ全体を表すことができます。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-122">When options can be grouped, you can use an indeterminate check box to represent the whole group.</span></span> <span data-ttu-id="2e2a3-123">グループ内のすべてでなく一部のサブ項目をユーザーが選択する場合は、チェック ボックスの不確定の状態を使います。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-123">Use the check box's indeterminate state when a user selects some, but not all, sub-items in the group.</span></span>
 
 ![混在する選択を示すために使用されるチェック ボックス](images/checkbox3.png)
 
-**チェック ボックス** コントロールと**ラジオ ボタン** コントロールの両方を使うと、ユーザーはオプションの一覧から選択できます。 チェック ボックスを使うと、ユーザーはオプションの組み合わせを選択できます。 これに対し、ラジオ ボタンを使うと、ユーザーは相互排他的なオプションの中から 1 つのオプションを選択できます。 1 つ以上のオプションがあっても、選択できるのが 1 つだけの場合は、代わりにラジオ ボタンを使います。
+<span data-ttu-id="2e2a3-125">**チェック ボックス** コントロールと**ラジオ ボタン** コントロールの両方を使うと、ユーザーはオプションの一覧から選択できます。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-125">Both **check box** and **radio button** controls let the user select from a list of options.</span></span> <span data-ttu-id="2e2a3-126">チェック ボックスを使うと、ユーザーはオプションの組み合わせを選択できます。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-126">Check boxes let the user select a combination of options.</span></span> <span data-ttu-id="2e2a3-127">これに対し、ラジオ ボタンを使うと、ユーザーは相互排他的なオプションの中から 1 つのオプションを選択できます。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-127">In contrast, radio buttons let the user make a single choice from mutually exclusive options.</span></span> <span data-ttu-id="2e2a3-128">1 つ以上のオプションがあっても、選択できるのが 1 つだけの場合は、代わりにラジオ ボタンを使います。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-128">When there is more than one option but only one can be selected, use a radio button instead.</span></span>
 
-## <a name="examples"></a>例
 
-Microsoft Edge ブラウザーのダイアログ内のチェック ボックス。
+## <a name="create-a-checkbox"></a><span data-ttu-id="2e2a3-129">チェック ボックスを作成する</span><span class="sxs-lookup"><span data-stu-id="2e2a3-129">Create a checkbox</span></span>
 
-![Microsoft Edge ブラウザーのダイアログ内のチェック ボックス](images/control-examples/check-box-edge.png)
+<span data-ttu-id="2e2a3-130">チェック ボックスにラベルを割り当てるには、[Content](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-130">To assign a label to the checkbox, set the [Content](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) property.</span></span> <span data-ttu-id="2e2a3-131">ラベルはチェック ボックスの横に表示されます。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-131">The label displays next to the checkbox.</span></span>
 
-Windows のアラーム & クロック アプリ内のチェック ボックス。
-
-![Windows のアラーム & クロック アプリ内のチェック ボックス](images/control-examples/check-box-alarm.png)
-
-## <a name="create-a-checkbox"></a>チェック ボックスを作成する
-
-チェック ボックスにラベルを割り当てるには、[**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) プロパティを設定します。 ラベルはチェック ボックスの横に表示されます。
-
-次の XAML は、フォームの送信前にサービス条件に同意するために使う単一のチェック ボックスを作成します。 
+<span data-ttu-id="2e2a3-132">次の XAML は、フォームの送信前にサービス条件に同意するために使う単一のチェック ボックスを作成します。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-132">This XAML creates a single check box that is used to agree to terms of service before a form can be submitted.</span></span> 
 
 ```xaml
 <CheckBox x:Name="termsOfServiceCheckBox" 
           Content="I agree to the terms of service."/>
 ```
 
-同じチェック ボックスをコードで作成すると、次のようになります。
+<span data-ttu-id="2e2a3-133">同じチェック ボックスをコードで作成すると、次のようになります。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-133">Here's the same check box created in code.</span></span>
 
 ```csharp
 CheckBox checkBox1 = new CheckBox();
 checkBox1.Content = "I agree to the terms of service.";
 ```
 
-### <a name="bind-to-ischecked"></a>IsChecked にバインドする
+### <a name="bind-to-ischecked"></a><span data-ttu-id="2e2a3-134">IsChecked にバインドする</span><span class="sxs-lookup"><span data-stu-id="2e2a3-134">Bind to IsChecked</span></span>
 
-チェック ボックスがオンになっているかオフになっているかを判断するには、[**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) プロパティを使います。 IsChecked プロパティの値を他のバイナリ値にバインドできます。 ただし、IsChecked は [null 許容](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx)のブール値であるため、値コンバーターを使ってブール値にバインドする必要があります。
+<span data-ttu-id="2e2a3-135">チェック ボックスがオンになっているかオフになっているかを判断するには、[IsChecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) プロパティを使います。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-135">Use the [IsChecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) property to determine whether the check box is checked or cleared.</span></span> <span data-ttu-id="2e2a3-136">IsChecked プロパティの値を他のバイナリ値にバインドできます。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-136">You can bind the value of the IsChecked property to another binary value.</span></span> <span data-ttu-id="2e2a3-137">ただし、IsChecked は [null 許容](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx)のブール値であるため、値コンバーターを使ってブール値にバインドする必要があります。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-137">However, because IsChecked is a [nullable](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx) boolean value, you must use a value converter to bind it to a boolean value.</span></span>
 
-次の例では、サービス条件に同意するためのチェック ボックスの **IsChecked** プロパティが送信ボタンの [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) プロパティにバインドされます。 送信ボタンは、サービス条件に同意した場合にのみ有効です。
+<span data-ttu-id="2e2a3-138">次の例では、サービス条件に同意するためのチェック ボックスの **IsChecked** プロパティが送信ボタンの [IsEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) プロパティにバインドされます。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-138">In this example, the **IsChecked** property of the check box to agree to terms of service is bound to the [IsEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) property of a Submit button.</span></span> <span data-ttu-id="2e2a3-139">送信ボタンは、サービス条件に同意した場合にのみ有効です。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-139">The Submit button is enabled only if the terms of service are agreed to.</span></span>
 
-> 注&nbsp;&nbsp;ここには関連するコードのみ掲載しています。 データ バインディングと値コンバーターについて詳しくは、「[データ バインディングの概要](../data-binding/data-binding-quickstart.md)」をご覧ください。
+> <span data-ttu-id="2e2a3-140">注&nbsp;&nbsp;ここには関連するコードのみ掲載しています。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-140">Note&nbsp;&nbsp;We only show the relevant code here.</span></span> <span data-ttu-id="2e2a3-141">データ バインディングと値コンバーターについて詳しくは、「[データ バインディングの概要](../data-binding/data-binding-quickstart.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-141">For more info about data binding and value converters, see [Data binding overview](../data-binding/data-binding-quickstart.md).</span></span>
 
 ```xaml
 ...
@@ -128,17 +116,17 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 }
 ```
 
-### <a name="handle-click-and-checked-events"></a>Click イベントと Checked イベントを処理する
+### <a name="handle-click-and-checked-events"></a><span data-ttu-id="2e2a3-142">Click イベントと Checked イベントを処理する</span><span class="sxs-lookup"><span data-stu-id="2e2a3-142">Handle Click and Checked events</span></span>
 
-チェック ボックスの状態が変化したときにアクションを実行するには、[**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) イベント、または [**Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx) イベントと [**Unchecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.unchecked.aspx) イベントを処理できます。 
+<span data-ttu-id="2e2a3-143">チェック ボックスの状態が変化したときにアクションを実行するには、[Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) イベント、または [Checked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx) イベントと [Unchecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.unchecked.aspx) イベントを処理できます。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-143">To perform an action when the check box state changes, you can handle either the [Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) event, or the [Checked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx) and [Unchecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.unchecked.aspx) events.</span></span> 
 
-**Click** イベントはオンの状態が変化するたびに発生します。 Click イベントを処理する場合は、**IsChecked** プロパティを使ってチェック ボックスの状態を確認します。
+<span data-ttu-id="2e2a3-144">**Click** イベントはオンの状態が変化するたびに発生します。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-144">The **Click** event occurs whenever the checked state changes.</span></span> <span data-ttu-id="2e2a3-145">Click イベントを処理する場合は、**IsChecked** プロパティを使ってチェック ボックスの状態を確認します。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-145">If you handle the Click event, use the **IsChecked** property to determine the state of the check box.</span></span>
 
-**Checked** イベントと **Unchecked** イベントは別々に発生します。 これらのイベントを処理する場合は、チェック ボックスの状態の変化に応じて両方のイベントを処理する必要があります。
+<span data-ttu-id="2e2a3-146">**Checked** イベントと **Unchecked** イベントは別々に発生します。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-146">The **Checked** and **Unchecked** events occur independently.</span></span> <span data-ttu-id="2e2a3-147">これらのイベントを処理する場合は、チェック ボックスの状態の変化に応じて両方のイベントを処理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-147">If you handle these events, you should handle both of them to repsond to state changes in the check box.</span></span>
 
-次の例では、Click イベントの処理、および Checked イベントと Unchecked イベントの処理を示します。 
+<span data-ttu-id="2e2a3-148">次の例では、Click イベントの処理、および Checked イベントと Unchecked イベントの処理を示します。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-148">In the following examples, we show handling the Click event, and the Checked and Unchecked events.</span></span> 
 
-同じイベント ハンドラーを複数のチェック ボックスで共有できます。 この例では、ピザのトッピングを選ぶための 4 つのチェック ボックスを作成します。 4 つのチェック ボックスで同じ **Click** イベント ハンドラーを共有して、選んだトッピングの一覧を更新します。
+<span data-ttu-id="2e2a3-149">同じイベント ハンドラーを複数のチェック ボックスで共有できます。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-149">Multiple checkboxes can share the same event handler.</span></span> <span data-ttu-id="2e2a3-150">この例では、ピザのトッピングを選ぶための 4 つのチェック ボックスを作成します。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-150">This example creates four checkboxes for selecting pizza toppings.</span></span> <span data-ttu-id="2e2a3-151">4 つのチェック ボックスで同じ **Click** イベント ハンドラーを共有して、選んだトッピングの一覧を更新します。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-151">The four checkboxes share the same **Click** event handler to update the list of selected toppings.</span></span>
 
 ```XAML
 <StackPanel Margin="40">
@@ -158,7 +146,7 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 </StackPanel>
 ```
 
-Click イベントのイベント ハンドラーを次に示します。 チェック ボックスがクリックされるたびにチェック ボックスを調べ、どれがオンになっているかを確認し、選んだトッピングの一覧を更新します。
+<span data-ttu-id="2e2a3-152">Click イベントのイベント ハンドラーを次に示します。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-152">Here's the event handler for the Click event.</span></span> <span data-ttu-id="2e2a3-153">チェック ボックスがクリックされるたびにチェック ボックスを調べ、どれがオンになっているかを確認し、選んだトッピングの一覧を更新します。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-153">Every time a checkbox is clicked, it examines the checkboxes to see which ones are checked and update list of selected toppings.</span></span>
 
 ```csharp
 private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
@@ -181,21 +169,21 @@ private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### <a name="use-the-indeterminate-state"></a>不確定の状態を使用する
+### <a name="use-the-indeterminate-state"></a><span data-ttu-id="2e2a3-154">不確定の状態を使用する</span><span class="sxs-lookup"><span data-stu-id="2e2a3-154">Use the indeterminate state</span></span>
 
-CheckBox コントロールは [ToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.aspx) を継承します。また、このコントロールには 3 つの状態を指定できます。 
+<span data-ttu-id="2e2a3-155">CheckBox コントロールは [ToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.aspx) を継承します。また、このコントロールには 3 つの状態を指定できます。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-155">The CheckBox control inherits from [ToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.aspx) and can have three states:</span></span> 
 
-状態 | プロパティ | 値
+<span data-ttu-id="2e2a3-156">状態</span><span class="sxs-lookup"><span data-stu-id="2e2a3-156">State</span></span> | <span data-ttu-id="2e2a3-157">プロパティ</span><span class="sxs-lookup"><span data-stu-id="2e2a3-157">Property</span></span> | <span data-ttu-id="2e2a3-158">値</span><span class="sxs-lookup"><span data-stu-id="2e2a3-158">Value</span></span>
 ------|----------|------
-オン | IsChecked | **true** 
-オフ | IsChecked | **false** 
-不確定 | IsChecked | **null** 
+<span data-ttu-id="2e2a3-159">オン</span><span class="sxs-lookup"><span data-stu-id="2e2a3-159">checked</span></span> | <span data-ttu-id="2e2a3-160">IsChecked</span><span class="sxs-lookup"><span data-stu-id="2e2a3-160">IsChecked</span></span> | **<span data-ttu-id="2e2a3-161">true</span><span class="sxs-lookup"><span data-stu-id="2e2a3-161">true</span></span>** 
+<span data-ttu-id="2e2a3-162">オフ</span><span class="sxs-lookup"><span data-stu-id="2e2a3-162">unchecked</span></span> | <span data-ttu-id="2e2a3-163">IsChecked</span><span class="sxs-lookup"><span data-stu-id="2e2a3-163">IsChecked</span></span> | **<span data-ttu-id="2e2a3-164">false</span><span class="sxs-lookup"><span data-stu-id="2e2a3-164">false</span></span>** 
+<span data-ttu-id="2e2a3-165">不確定</span><span class="sxs-lookup"><span data-stu-id="2e2a3-165">indeterminate</span></span> | <span data-ttu-id="2e2a3-166">IsChecked</span><span class="sxs-lookup"><span data-stu-id="2e2a3-166">IsChecked</span></span> | **<span data-ttu-id="2e2a3-167">null</span><span class="sxs-lookup"><span data-stu-id="2e2a3-167">null</span></span>** 
 
-不確定の状態を報告するチェック ボックスの場合、[**IsThreeState**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.isthreestate.aspx) プロパティを **true** に設定する必要があります。 
+<span data-ttu-id="2e2a3-168">不確定の状態を報告するチェック ボックスの場合、[IsThreeState](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.isthreestate.aspx) プロパティを **true** に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-168">For the check box to report the indeterminate state, you must set the [IsThreeState](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.isthreestate.aspx) property to **true**.</span></span> 
 
-オプションをグループ化できる場合は、不確定状態のチェック ボックスを使ってグループ全体を表すことができます。 グループ内のすべてでなく一部のサブ項目をユーザーが選択する場合は、チェック ボックスの不確定の状態を使います。
+<span data-ttu-id="2e2a3-169">オプションをグループ化できる場合は、不確定状態のチェック ボックスを使ってグループ全体を表すことができます。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-169">When options can be grouped, you can use an indeterminate check box to represent the whole group.</span></span> <span data-ttu-id="2e2a3-170">グループ内のすべてでなく一部のサブ項目をユーザーが選択する場合は、チェック ボックスの不確定の状態を使います。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-170">Use the check box's indeterminate state when a user selects some, but not all, sub-items in the group.</span></span>
 
-次の例では、[すべて選択] チェック ボックスの IsThreeState プロパティを **true** に設定します。 [すべて選択] チェック ボックスは、すべての子要素がオンになっている場合はオンになり、すべての子要素がオフになっている場合はオフになり、それ以外の場合は不確定の状態になります。
+<span data-ttu-id="2e2a3-171">次の例では、[すべて選択] チェック ボックスの IsThreeState プロパティを **true** に設定します。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-171">In the following example, the "Select all" checkbox has its IsThreeState property set to **true**.</span></span> <span data-ttu-id="2e2a3-172">[すべて選択] チェック ボックスは、すべての子要素がオンになっている場合はオンになり、すべての子要素がオフになっている場合はオフになり、それ以外の場合は不確定の状態になります。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-172">The "Select all" checkbox is checked if all child elements are checked, unchecked if all child elements are unchecked, and indeterminate otherwise.</span></span>
 
 ```xaml
 <StackPanel>
@@ -277,33 +265,32 @@ private void SetCheckedState()
 }
 ```
 
-## <a name="dos-and-donts"></a>推奨と非推奨
+## <a name="dos-and-donts"></a><span data-ttu-id="2e2a3-173">推奨と非推奨</span><span class="sxs-lookup"><span data-stu-id="2e2a3-173">Do's and don'ts</span></span>
 
--   チェック ボックスの用途と現在の状態が明確であることを確認します。
--   チェック ボックスのテキスト コンテンツは 2 行以内にします。
--   チェック マークをオンにすると true、チェック マークをオフにすると false に設定されるようにチェック ボックスのラベルを記述します。
--   ブランドのガイドラインで別のフォントが指示されていない限り、既定のフォントを使います。
--   テキスト コンテンツが動的な場合、コントロールのサイズがどのように変わり、周囲の視覚効果にどのような影響が生じるかを検討してください。
--   相互排他的な複数のオプションから選ぶ場合は、[オプション ボタン](radio-button.md) を使うことを検討してください。
--   2 つのチェック ボックスのグループを並べて配置しないようにします。 グループを分けるには、グループ ラベルを使います。
--   オン/オフの制御やコマンドの実行にはチェック ボックスを使わず、代わりにトグル スイッチを使います。
--   ダイアログ ボックスなどの他のコントロールを表示するためにチェック ボックスを使わないでください。
--   すべてではなく一部のサブ選択のためにオプションが設定されていることを示すには、不確定の状態を使います。
--   不確定の状態を使う場合は、下位のチェック ボックスを使って、どのオプションが選択され、どのオプションが選択されていないかがわかるようにします。 ユーザーにサブ選択肢がわかりやすいように UI を設計します。
--   不確定の状態を、第 3 の状態を示すために使わないでください。 不確定の状態は、すべてではなく一部のサブ選択のためにオプションが設定されていることを示すために使います。 そのため、ユーザーが不確定の状態を直接設定できないようにします。 良くない例を示すために、次のチェック ボックスでは不確定の状態を使って "中辛" を示しています。
+-   <span data-ttu-id="2e2a3-174">チェック ボックスの用途と現在の状態が明確であることを確認します。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-174">Verify that the purpose and current state of the check box is clear.</span></span>
+-   <span data-ttu-id="2e2a3-175">チェック ボックスのテキスト コンテンツは 2 行以内にします。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-175">Limit check box text content to no more than two lines.</span></span>
+-   <span data-ttu-id="2e2a3-176">チェック マークをオンにすると true、チェック マークをオフにすると false に設定されるようにチェック ボックスのラベルを記述します。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-176">Word the checkbox label as a statement that the check mark makes true and the absence of a check mark makes false.</span></span>
+-   <span data-ttu-id="2e2a3-177">ブランドのガイドラインで別のフォントが指示されていない限り、既定のフォントを使います。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-177">Use the default font unless your brand guidelines tell you to use another.</span></span>
+-   <span data-ttu-id="2e2a3-178">テキスト コンテンツが動的な場合、コントロールのサイズがどのように変わり、周囲の視覚効果にどのような影響が生じるかを検討してください。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-178">If the text content is dynamic, consider how the control will resize and what will happen to visuals around it.</span></span>
+-   <span data-ttu-id="2e2a3-179">相互排他的な複数のオプションから選ぶ場合は、[オプション ボタン](radio-button.md) を使うことを検討してください。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-179">If there are two or more mutually exclusive options from which to choose, consider using [radio buttons](radio-button.md).</span></span>
+-   <span data-ttu-id="2e2a3-180">2 つのチェック ボックスのグループを並べて配置しないようにします。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-180">Don't put two check box groups next to each other.</span></span> <span data-ttu-id="2e2a3-181">グループを分けるには、グループ ラベルを使います。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-181">Use group labels to separate the groups.</span></span>
+-   <span data-ttu-id="2e2a3-182">オン/オフの制御やコマンドの実行にはチェック ボックスを使わず、代わりにトグル スイッチを使います。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-182">Don't use a check box as an on/off control or to perform a command; instead, use a toggle switch.</span></span>
+-   <span data-ttu-id="2e2a3-183">ダイアログ ボックスなどの他のコントロールを表示するためにチェック ボックスを使わないでください。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-183">Don't use a check box to display other controls, such as a dialog box.</span></span>
+-   <span data-ttu-id="2e2a3-184">すべてではなく一部のサブ選択のためにオプションが設定されていることを示すには、不確定の状態を使います。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-184">Use the indeterminate state to indicate that an option is set for some, but not all, sub-choices.</span></span>
+-   <span data-ttu-id="2e2a3-185">不確定の状態を使う場合は、下位のチェック ボックスを使って、どのオプションが選択され、どのオプションが選択されていないかがわかるようにします。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-185">When using indeterminate state, use subordinate check boxes to show which options are selected and which are not.</span></span> <span data-ttu-id="2e2a3-186">ユーザーにサブ選択肢がわかりやすいように UI を設計します。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-186">Design the UI so that the user can get see the sub-choices.</span></span>
+-   <span data-ttu-id="2e2a3-187">不確定の状態を、第 3 の状態を示すために使わないでください。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-187">Don't use the indeterminate state to represent a third state.</span></span> <span data-ttu-id="2e2a3-188">不確定の状態は、すべてではなく一部のサブ選択のためにオプションが設定されていることを示すために使います。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-188">The indeterminate state is used to indicate that an option is set for some, but not all, sub-choices.</span></span> <span data-ttu-id="2e2a3-189">そのため、ユーザーが不確定の状態を直接設定できないようにします。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-189">So, don't allow users to set an indeterminate state directly.</span></span> <span data-ttu-id="2e2a3-190">良くない例を示すために、次のチェック ボックスでは不確定の状態を使って "中辛" を示しています。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-190">For an example of what not to do, this check box uses the indeterminate state to indicate medium spiciness:</span></span>
 
     ![不確定状態のチェック ボックス](images/checkbox4_spicy.png)
 
-    このような場合は、[Not spicy]、[Spicy]、[Extra spicy] という 3 つのオプションがあるラジオ ボタン グループを使います。
+    <span data-ttu-id="2e2a3-192">このような場合は、[Not spicy]、[Spicy]、[Extra spicy] という 3 つのオプションがあるラジオ ボタン グループを使います。</span><span class="sxs-lookup"><span data-stu-id="2e2a3-192">Instead, use a radio button group that has three options: Not spicy, Spicy, and Extra spicy.</span></span>
 
     ![[Not spicy]、[Spicy]、[Extra spicy] という 3 つのオプションがあるラジオ ボタン グループ](images/spicyoptions.png)
 
 
-## <a name="related-articles"></a>関連記事
+## <a name="related-articles"></a><span data-ttu-id="2e2a3-194">関連記事</span><span class="sxs-lookup"><span data-stu-id="2e2a3-194">Related articles</span></span>
 
--   [**CheckBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209316) 
--   [ラジオ ボタン](radio-button.md)
--   [トグル スイッチ](toggles.md)
-
+-   [<span data-ttu-id="2e2a3-195">CheckBox クラス</span><span class="sxs-lookup"><span data-stu-id="2e2a3-195">CheckBox class</span></span>](https://msdn.microsoft.com/library/windows/apps/br209316) 
+-   [<span data-ttu-id="2e2a3-196">ラジオ ボタン</span><span class="sxs-lookup"><span data-stu-id="2e2a3-196">Radio buttons</span></span>](radio-button.md)
+-   [<span data-ttu-id="2e2a3-197">トグル スイッチ</span><span class="sxs-lookup"><span data-stu-id="2e2a3-197">Toggle switch</span></span>](toggles.md)
 
 

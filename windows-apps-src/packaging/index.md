@@ -4,34 +4,33 @@ ms.assetid: 1abcbb13-80f0-4bf1-a812-649ee8bd1915
 title: "アプリのパッケージ化"
 description: "このセクションには、ユニバーサル Windows プラットフォーム (UWP) アプリのパッケージ化に関する記事または記事へのリンクが記載されています。"
 ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 08/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0a9689738fac363012fb9af197f52ac8813b47c9
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows 10, UWP, パッケージ化"
+ms.openlocfilehash: 0b4f8cf2e90a125539c3dade51f6b3db78219e3f
+ms.sourcegitcommit: 63c815f8c6665872987b5410cabf324f2b7e3c7c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/10/2017
 ---
-# <a name="packaging-apps"></a>アプリのパッケージ化
+# <a name="packaging-apps"></a><span data-ttu-id="01238-104">アプリのパッケージ化</span><span class="sxs-lookup"><span data-stu-id="01238-104">Packaging apps</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
+<span data-ttu-id="01238-105">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="01238-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="01238-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]</span><span class="sxs-lookup"><span data-stu-id="01238-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-## <a name="purpose"></a>目的
+## <a name="purpose"></a><span data-ttu-id="01238-107">目的</span><span class="sxs-lookup"><span data-stu-id="01238-107">Purpose</span></span>
 
-このセクションには、ユニバーサル Windows プラットフォーム (UWP) アプリのパッケージ化に関する記事または記事へのリンクが記載されています。
+<span data-ttu-id="01238-108">このセクションには、ユニバーサル Windows プラットフォーム (UWP) アプリのパッケージ化に関する記事または記事へのリンクが記載されています。</span><span class="sxs-lookup"><span data-stu-id="01238-108">This section contains or links to articles about packaging for Universal Windows Platform (UWP) apps.</span></span>
 
-| トピック | 説明 |
+| <span data-ttu-id="01238-109">トピック</span><span class="sxs-lookup"><span data-stu-id="01238-109">Topic</span></span> | <span data-ttu-id="01238-110">説明</span><span class="sxs-lookup"><span data-stu-id="01238-110">Description</span></span> |
 |-------|-------------|
-| [UWP アプリのパッケージ化](packaging-uwp-apps.md) | UWP アプリを販売、または他のユーザーに配布するには、そのアプリの appxupload パッケージを作成する必要があります。 appxupload を作成すると、別の appx パッケージがテストとサイドローディング用に生成されます。 デバイスに appx パッケージをサイドローディングすることで、アプリを直接配布できます。 この記事では、UWP アプリ パッケージを構成、作成、テストする方法について説明します。 サイドローディングについて詳しくは、「[DISM を使ったアプリのサイドローディング](http://go.microsoft.com/fwlink/?LinkID=231020)」をご覧ください。 |
-| [MakeAppx.exe ツールを使ったアプリ パッケージの作成](create-app-package-with-makeappx-tool.md) | MakeAppx.exe は、アプリ パッケージとバンドルからのファイルの作成、暗号化、暗号化解除、抽出を行います。 |
-| [パッケージ署名用証明書を作成する](create-certificate-package-signing.md) | PowerShell ツールを使ってアプリ パッケージ署名用を作成し、エクスポートします。 |
-| [SignTool を使ってアプリ パッケージに署名する](sign-app-package-using-signtool.md) | SignTool を使って手動でアプリ パッケージに証明書による署名を行います。 |
-| [WinAppDeployCmd.exe ツールを使ったアプリのインストール](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | Windows アプリケーションの展開ツール (WinAppDeployCmd.exe) は、Windows 10 コンピューターから Windows 10 Mobile デバイスに UWP アプリを展開するために使うことができるコマンド ライン ツールです。 このツールを使うと、Windows 10 Mobile デバイスが USB で接続されているか同じサブネットにあれば、.appx パッケージを展開できます。Microsoft Visual Studio やそのアプリ用のソリューションは不要です。 この記事では、このツールを使って UWP アプリをインストールする方法について説明します。 |
-| [UWP アプリの自動ビルドを設定する](auto-build-package-uwp-apps.md) | このトピックでは、自動ビルド プロセスの一環としてアプリをパッケージ化する場合に、Visual Studio Team Services (VSTS) を使用して実行する方法を説明します。 |
-| [アプリ機能の宣言](app-capability-declarations.md) | 特定の API、画像や音楽などのリソース、カメラやマイクなどデバイスにアクセスするには、機能を UWP アプリの[パッケージ マニフェスト](https://msdn.microsoft.com/library/windows/apps/BR211474)で宣言する必要があります。 |
-| [アプリのパッケージの更新をダウンロードしてインストールする](self-install-package-updates.md) | UWP アプリでは、プログラムによてパッケージの更新を確認して、インストールできます。 またｈ、Windows デベロッパー センター ダッシュボードで必須としてマークされているパッケージを照会し、必須の更新がインストールされるまで機能を無効にすることもできます。 この記事では、これらのタスクを実行する方法について説明します。 |
- 
-
+| [<span data-ttu-id="01238-111">Visual Studio で UWP アプリをパッケージ化する</span><span class="sxs-lookup"><span data-stu-id="01238-111">Package a UWP app with Visual Studio</span></span>](packaging-uwp-apps.md) | <span data-ttu-id="01238-112">ユニバーサル Windows プラットフォーム (UWP) アプリを配布または販売するには、そのアプリのアプリ パッケージを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="01238-112">To distribute or sell your Universal Windows Platform (UWP) app, you need to create an app package for it.</span></span> |
+| [<span data-ttu-id="01238-113">手動でのアプリのパッケージ化</span><span class="sxs-lookup"><span data-stu-id="01238-113">Manual app packaging</span></span>](manual-packaging-root.md) | <span data-ttu-id="01238-114">アプリ パッケージを作成して署名するときに、Visual Studio を使ってアプリを開発していない場合は、手動でのアプリのパッケージ化ツールを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="01238-114">If you want to create and sign an app package, but you didn't use Visual Studio to develop your app, you'll need to use the manual app packaging tools.</span></span> |
+| [<span data-ttu-id="01238-115">アプリ パッケージのアーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="01238-115">App package architectures</span></span>](device-architecture.md) | <span data-ttu-id="01238-116">UWP アプリ パッケージを構築するときにどのプロセッサ アーキテクチャを使用するべきかについて説明します。</span><span class="sxs-lookup"><span data-stu-id="01238-116">Learn more about which processor architecture(s) you should use when building your UWP app package.</span></span> | 
+| [<span data-ttu-id="01238-117">UWP アプリ ストリーミング インストール</span><span class="sxs-lookup"><span data-stu-id="01238-117">UWP App Streaming Install</span></span>](streaming-install.md) | <span data-ttu-id="01238-118">ユニバーサル Windows プラットフォーム (UWP) アプリ ストリーミング インストールでは、Windows ストアからアプリのどの部分を最初にダウンロードするかを指定できます。</span><span class="sxs-lookup"><span data-stu-id="01238-118">Universal Windows Platform (UWP) App Streaming Install enables you to specify which parts of your app you would like the Windows Store to download first.</span></span> <span data-ttu-id="01238-119">アプリの基本的なファイルを先にダウンロードすると、残りの部分のダウンロードをバックグラウンドで完了している間に、ユーザーはアプリを起動して操作できます。</span><span class="sxs-lookup"><span data-stu-id="01238-119">When the essential files of the app are downloaded first, the user can launch and interact with the app while the rest of it finishes downloading in the background.</span></span> |
+| [<span data-ttu-id="01238-120">オプション パッケージと関連セットの作成</span><span class="sxs-lookup"><span data-stu-id="01238-120">Optional packages and related set authoring</span></span>](optional-packages.md) | <span data-ttu-id="01238-121">オプション パッケージには、メイン パッケージに統合できるコンテンツが格納されます。</span><span class="sxs-lookup"><span data-stu-id="01238-121">Optional packages contain content that can be integrated with a main package.</span></span> <span data-ttu-id="01238-122">オプション パッケージは、ダウンロード可能なコンテンツ (DLC) 用や、サイズ制約に対応して大規模アプリを分割する場合、元のアプリから分離して追加コンテンツを出荷する場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="01238-122">These are useful for downloadable content (DLC), dividing a large app for size restraints, or for shipping any additional content for separate from your original app.</span></span> | 
+| [<span data-ttu-id="01238-123">WinAppDeployCmd.exe ツールを使ったアプリのインストール</span><span class="sxs-lookup"><span data-stu-id="01238-123">Install apps with the WinAppDeployCmd.exe tool</span></span>](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | <span data-ttu-id="01238-124">Windows アプリケーションの展開ツール (WinAppDeployCmd.exe) は、Windows 10 コンピューターから Windows 10 Mobile デバイスに UWP アプリを展開するために使うことができるコマンド ライン ツールです。</span><span class="sxs-lookup"><span data-stu-id="01238-124">Windows Application Deployment (WinAppDeployCmd.exe) is a command line tool that can use to deploy a UWP app from a Windows 10 machine to any Windows 10 Mobile device.</span></span> <span data-ttu-id="01238-125">このツールを使うと、Windows 10 Mobile デバイスが USB で接続されているか同じサブネットにあれば、.appx パッケージを展開できます。Microsoft Visual Studio やそのアプリ用のソリューションは不要です。</span><span class="sxs-lookup"><span data-stu-id="01238-125">You can use this tool to deploy an .appx package when the Windows 10 Mobile device is connected by USB or available on the same subnet without needing Microsoft Visual Studio or the solution for that app.</span></span> <span data-ttu-id="01238-126">この記事では、このツールを使って UWP アプリをインストールする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="01238-126">This article describes how to install UWP apps using this tool.</span></span> |
+| [<span data-ttu-id="01238-127">UWP アプリの自動ビルドを設定する</span><span class="sxs-lookup"><span data-stu-id="01238-127">Set up automated builds for your UWP app</span></span>](auto-build-package-uwp-apps.md) | <span data-ttu-id="01238-128">このトピックでは、自動ビルド プロセスの一環としてアプリをパッケージ化する場合に、Visual Studio Team Services (VSTS) を使用して実行する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="01238-128">If you want to package your app as part of an automated build process, this topic shows you how to use Visual Studio Team Services (VSTS) to do it.</span></span> |
+| [<span data-ttu-id="01238-129">アプリ機能の宣言</span><span class="sxs-lookup"><span data-stu-id="01238-129">App capability declarations</span></span>](app-capability-declarations.md) | <span data-ttu-id="01238-130">特定の API、画像や音楽などのリソース、カメラやマイクなどデバイスにアクセスするには、機能を UWP アプリの[パッケージ マニフェスト](https://msdn.microsoft.com/library/windows/apps/BR211474)で宣言する必要があります。</span><span class="sxs-lookup"><span data-stu-id="01238-130">Capabilities must be declared in your UWP app's [package manifest](https://msdn.microsoft.com/library/windows/apps/BR211474) to access certain API or resources like pictures, music, or devices like the camera or the microphone.</span></span> |
+| [<span data-ttu-id="01238-131">アプリのパッケージの更新をダウンロードしてインストールする</span><span class="sxs-lookup"><span data-stu-id="01238-131">Download and install package updates for your app</span></span>](self-install-package-updates.md) | <span data-ttu-id="01238-132">UWP アプリでは、プログラムによてパッケージの更新を確認して、インストールできます。</span><span class="sxs-lookup"><span data-stu-id="01238-132">Your UWP app can programmatically check for package updates and install the updates.</span></span> <span data-ttu-id="01238-133">またｈ、Windows デベロッパー センター ダッシュボードで必須としてマークされているパッケージを照会し、必須の更新がインストールされるまで機能を無効にすることもできます。</span><span class="sxs-lookup"><span data-stu-id="01238-133">Your app can also query for packages that have been marked as mandatory on the Windows Dev Center dashboard and disable functionality until the mandatory update is installed.</span></span> <span data-ttu-id="01238-134">この記事では、これらのタスクを実行する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="01238-134">This article describes how to perform these tasks.</span></span> |

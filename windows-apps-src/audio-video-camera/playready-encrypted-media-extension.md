@@ -1,111 +1,110 @@
 ---
-author: eliotcowley
+author: drewbatgit
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
 description: "このセクションでは、以前の Windows 8.1 から、Windows 10 バージョンに加えられた変更をサポートするために、PlayReady Web アプリを変更する方法について説明します。"
 title: "PlayReady の Encrypted Media Extension"
-ms.author: elcowle
+ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0698a01b1f846581422c5ecf4d47a45dd22762c4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a8cc35115b2805b2191424edca671c53c252c549
+ms.sourcegitcommit: cd9b4bdc9c3a0b537a6e910a15df8541b49abf9c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/21/2017
 ---
+# <a name="playready-encrypted-media-extension"></a><span data-ttu-id="0cb52-104">PlayReady の Encrypted Media Extension</span><span class="sxs-lookup"><span data-stu-id="0cb52-104">PlayReady Encrypted Media Extension</span></span>
 
-# <a name="playready-encrypted-media-extension"></a>PlayReady の Encrypted Media Extension
-
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+<span data-ttu-id="0cb52-105">\[ Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="0cb52-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="0cb52-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]</span><span class="sxs-lookup"><span data-stu-id="0cb52-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
 
-このセクションでは、以前の Windows 8.1 から、Windows 10 バージョンに加えられた変更をサポートするために、PlayReady Web アプリを変更する方法について説明します。
+<span data-ttu-id="0cb52-107">このセクションでは、以前の Windows 8.1 から、Windows 10 バージョンに加えられた変更をサポートするために、PlayReady Web アプリを変更する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="0cb52-107">This section describes how to modify your PlayReady web app to support the changes made from the previous Windows 8.1 version to the Windows 10 version.</span></span>
 
-Internet Explorer で PlayReady メディア要素を使うと、開発者はコンテンツ プロバイダーが定義したアクセス ルールを適用しながら、ユーザーに PlayReady コンテンツを提供することのできる Web アプリを作成することができます。 ここでは、HTML5 と JavaScript のみを使って、既存の Web アプリに PlayReady メディア要素を追加する方法について説明します。
+<span data-ttu-id="0cb52-108">Internet Explorer で PlayReady メディア要素を使うと、開発者はコンテンツ プロバイダーが定義したアクセス ルールを適用しながら、ユーザーに PlayReady コンテンツを提供することのできる Web アプリを作成することができます。</span><span class="sxs-lookup"><span data-stu-id="0cb52-108">Using PlayReady media elements in Internet Explorer enables developers to create web apps capable of providing PlayReady content to the user while enforcing the access rules defined by the content provider.</span></span> <span data-ttu-id="0cb52-109">ここでは、HTML5 と JavaScript のみを使って、既存の Web アプリに PlayReady メディア要素を追加する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="0cb52-109">This section describes how to add PlayReady media elements to your existing web apps by using only HTML5 and JavaScript.</span></span>
 
-## <a name="whats-new-in-playready-encrypted-media-extension"></a>PlayReady の Encrypted Media Extension の新機能
+## <a name="whats-new-in-playready-encrypted-media-extension"></a><span data-ttu-id="0cb52-110">PlayReady の Encrypted Media Extension の新機能</span><span class="sxs-lookup"><span data-stu-id="0cb52-110">What's new in PlayReady Encrypted Media Extension</span></span>
 
-このセクションでは、Windows 10 で PlayReady コンテンツ保護を有効にするために PlayReady Encrypted Media Extension (EME) に加えられた変更を示します。
+<span data-ttu-id="0cb52-111">このセクションでは、Windows 10 で PlayReady コンテンツ保護を有効にするために PlayReady Encrypted Media Extension (EME) に加えられた変更を示します。</span><span class="sxs-lookup"><span data-stu-id="0cb52-111">This section provides a list of changes made to the PlayReady Encrypted Media Extension (EME) to enable PlayReady content protection on Windows 10.</span></span>
 
-次に、Windows 10 の PlayReady Encrypted Media Extension に関する新機能や変更点について説明します。
+<span data-ttu-id="0cb52-112">次に、Windows 10 の PlayReady Encrypted Media Extension に関する新機能や変更点について説明します。</span><span class="sxs-lookup"><span data-stu-id="0cb52-112">The following list describes the new features and changes made to PlayReady Encrypted Media Extension for Windows 10:</span></span>
 
--   追加されたハードウェア デジタル著作権管理 (DRM)。
+-   <span data-ttu-id="0cb52-113">追加されたハードウェア デジタル著作権管理 (DRM)。</span><span class="sxs-lookup"><span data-stu-id="0cb52-113">Added hardware digital rights management (DRM).</span></span>
 
-    ハードウェア ベースのコンテンツ保護により、複数のデバイス プラットフォーム上で、高解像度 (HD) と超高解像度 (UHD) のコンテンツを安全に再生できます。 キー マテリアル (秘密キー、コンテンツ キー、これらのキーを派生またはロック解除するために使われるその他のキー マテリアルを含みます)、および暗号化解除された圧縮および非圧縮ビデオ サンプルは、ハードウェア セキュリティを利用して保護されます。
+    <span data-ttu-id="0cb52-114">ハードウェア ベースのコンテンツ保護により、複数のデバイス プラットフォーム上で、高解像度 (HD) と超高解像度 (UHD) のコンテンツを安全に再生できます。</span><span class="sxs-lookup"><span data-stu-id="0cb52-114">Hardware-based content protection support enables secure playback of high definition (HD) and ultra-high definition (UHD) content on multiple device platforms.</span></span> <span data-ttu-id="0cb52-115">キー マテリアル (秘密キー、コンテンツ キー、これらのキーを派生またはロック解除するために使われるその他のキー マテリアルを含みます)、および暗号化解除された圧縮および非圧縮ビデオ サンプルは、ハードウェア セキュリティを利用して保護されます。</span><span class="sxs-lookup"><span data-stu-id="0cb52-115">Key material (including private keys, content keys, and any other key material used to derive or unlock said keys), and decrypted compressed and uncompressed video samples are protected by leveraging hardware security.</span></span>
 
--   永続的でないライセンスの事前の取得を提供します。
--   1 つのメッセージで複数のライセンスを取得できるようにします。
+-   <span data-ttu-id="0cb52-116">永続的でないライセンスの事前の取得を提供します。</span><span class="sxs-lookup"><span data-stu-id="0cb52-116">Provides proactive acquisition of non-persistent licenses.</span></span>
+-   <span data-ttu-id="0cb52-117">1 つのメッセージで複数のライセンスを取得できるようにします。</span><span class="sxs-lookup"><span data-stu-id="0cb52-117">Provides acquisition of multiple licenses in one message.</span></span>
 
-    Windows 8.1 のように PlayReady オブジェクトと複数のキー識別子 (KeyID) を使うか、[Content Decryption Model データ (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) と複数の KeyID を使うことができます。
+    <span data-ttu-id="0cb52-118">Windows 8.1 のように PlayReady オブジェクトと複数のキー識別子 (KeyID) を使うか、[Content Decryption Model データ (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) と複数の KeyID を使うことができます。</span><span class="sxs-lookup"><span data-stu-id="0cb52-118">You can either use a PlayReady object with multiple key identifiers (KeyIDs) as in Windows 8.1, or use [content decryption model data (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) with multiple KeyIDs.</span></span>
 
     > [!NOTE]
-    > Windows 10 では、複数のキー識別子が CDMData の &lt;KeyID&gt; でサポートされます。
+    > <span data-ttu-id="0cb52-119">Windows10 では、複数のキー識別子が CDMData の &lt;KeyID&gt; でサポートされます。</span><span class="sxs-lookup"><span data-stu-id="0cb52-119">In Windows 10, multiple key identifiers are supported under &lt;KeyID&gt; in CDMData.</span></span>
 
--   リアルタイムの有効期限のサポートや期間限定ライセンス (LDL) が追加されました。
+-   <span data-ttu-id="0cb52-120">リアルタイムの有効期限のサポートや期間限定ライセンス (LDL) が追加されました。</span><span class="sxs-lookup"><span data-stu-id="0cb52-120">Added real time expiration support, or limited duration license (LDL).</span></span>
 
-    ライセンスに対してリアルタイムの有効期限を設定することができます。
+    <span data-ttu-id="0cb52-121">ライセンスに対してリアルタイムの有効期限を設定することができます。</span><span class="sxs-lookup"><span data-stu-id="0cb52-121">Provides the ability to set real-time expiration on licenses.</span></span>
 
--   HDCP Type 1 (バージョン 2.2) ポリシーのサポートを追加しました。
--   Miracast が暗黙的な出力となりました。
--   セキュア ストップが追加されました。
+-   <span data-ttu-id="0cb52-122">HDCP Type 1 (バージョン 2.2) ポリシーのサポートを追加しました。</span><span class="sxs-lookup"><span data-stu-id="0cb52-122">Added HDCP Type 1 (version 2.2) policy support.</span></span>
+-   <span data-ttu-id="0cb52-123">Miracast が暗黙的な出力となりました。</span><span class="sxs-lookup"><span data-stu-id="0cb52-123">Miracast is now implicit as an output.</span></span>
+-   <span data-ttu-id="0cb52-124">セキュア ストップが追加されました。</span><span class="sxs-lookup"><span data-stu-id="0cb52-124">Added secure stop.</span></span>
 
-    セキュア ストップによって、特定のコンテンツについてのメディア再生が停止したメディア ストリーミング サービスに対して、PlayReady デバイスが確実にアサートするための手段が提供されます。
+    <span data-ttu-id="0cb52-125">セキュア ストップによって、特定のコンテンツについてのメディア再生が停止したメディア ストリーミング サービスに対して、PlayReady デバイスが確実にアサートするための手段が提供されます。</span><span class="sxs-lookup"><span data-stu-id="0cb52-125">Secure stop provides the means for a PlayReady device to confidently assert to a media streaming service that media playback has stopped for any given piece of content.</span></span>
 
--   オーディオとビデオに関するライセンスの分離が追加されました。
+-   <span data-ttu-id="0cb52-126">オーディオとビデオに関するライセンスの分離が追加されました。</span><span class="sxs-lookup"><span data-stu-id="0cb52-126">Added audio and video license separation.</span></span>
 
-    トラックを分離することによって、ビデオがオーディオにデコードされるのを防ぐことができます。これにより、さらに強力なコンテンツ保護が可能になります。 最新の標準では、オーディオ トラックと映像トラックに対して別々のキーが必要になります。
+    <span data-ttu-id="0cb52-127">トラックを分離することによって、ビデオがオーディオにデコードされるのを防ぐことができます。これにより、さらに強力なコンテンツ保護が可能になります。</span><span class="sxs-lookup"><span data-stu-id="0cb52-127">Separate tracks prevent video from being decoded as audio; enabling more robust content protection.</span></span> <span data-ttu-id="0cb52-128">最新の標準では、オーディオ トラックと映像トラックに対して別々のキーが必要になります。</span><span class="sxs-lookup"><span data-stu-id="0cb52-128">Emerging standards are requiring separate keys for audio and visual tracks.</span></span>
 
--   MaxResDecode が追加されました。
+-   <span data-ttu-id="0cb52-129">MaxResDecode が追加されました。</span><span class="sxs-lookup"><span data-stu-id="0cb52-129">Added MaxResDecode.</span></span>
 
-    この機能は、コンテンツの再生を最大解像度に制限するために追加されました (ライセンスではなく、より強力なキーを所有している場合にも制限を受けます)。 これは、複数のストリーム サイズが 1 つのキーでエンコードされる状況をサポートします。
+    <span data-ttu-id="0cb52-130">この機能は、コンテンツの再生を最大解像度に制限するために追加されました (ライセンスではなく、より強力なキーを所有している場合にも制限を受けます)。</span><span class="sxs-lookup"><span data-stu-id="0cb52-130">This feature was added to limit playback of content to a maximum resolution even when in possession of a more capable key (but not a license).</span></span> <span data-ttu-id="0cb52-131">これは、複数のストリーム サイズが 1 つのキーでエンコードされる状況をサポートします。</span><span class="sxs-lookup"><span data-stu-id="0cb52-131">It supports cases where multiple stream sizes are encoded with a single key.</span></span>
 
-## <a name="encrypted-media-extension-support-in-playready"></a>PlayReady の Encrypted Media Extension のサポート
+## <a name="encrypted-media-extension-support-in-playready"></a><span data-ttu-id="0cb52-132">PlayReady の Encrypted Media Extension のサポート</span><span class="sxs-lookup"><span data-stu-id="0cb52-132">Encrypted Media Extension support in PlayReady</span></span>
 
-このセクションでは、PlayReady でサポートされている W3C 暗号化メディア拡張機能のバージョンについて説明します。
+<span data-ttu-id="0cb52-133">このセクションでは、PlayReady でサポートされている W3C 暗号化メディア拡張機能のバージョンについて説明します。</span><span class="sxs-lookup"><span data-stu-id="0cb52-133">This section describes the version of the W3C Encrypted Media Extension supported by PlayReady.</span></span>
 
-Web アプリ用の PlayReady は、現在 [2013 年 5 月 10 日付けの W3C Encrypted Media Extension (EME) 草案](http://www.w3.org/TR/2013/WD-encrypted-media-20130510/)に準拠しています。 このサポートは、将来のバージョンの Windows では更新された EME 仕様に合わせて変更されます。
+<span data-ttu-id="0cb52-134">Web アプリ用の PlayReady は、現在 [2013 年 5 月 10 日付けの W3C Encrypted Media Extension (EME) 草案](http://www.w3.org/TR/2013/WD-encrypted-media-20130510/)に準拠しています。</span><span class="sxs-lookup"><span data-stu-id="0cb52-134">PlayReady for Web Apps is currently bound to the [W3C Encrypted Media Extension (EME) draft of May 10, 2013](http://www.w3.org/TR/2013/WD-encrypted-media-20130510/).</span></span> <span data-ttu-id="0cb52-135">このサポートは、将来のバージョンの Windows では更新された EME 仕様に合わせて変更されます。</span><span class="sxs-lookup"><span data-stu-id="0cb52-135">This support will be changed to the updated EME specification in future versions of Windows.</span></span>
 
-## <a name="use-hardware-drm"></a>ハードウェア DRM の使用
+## <a name="use-hardware-drm"></a><span data-ttu-id="0cb52-136">ハードウェア DRM の使用</span><span class="sxs-lookup"><span data-stu-id="0cb52-136">Use hardware DRM</span></span>
 
-このセクションでは、Web アプリで PlayReady ハードウェア DRM を使う方法と、保護されたコンテンツがハードウェア DRM をサポートしていない場合にそれを無効にする方法について説明します。
+<span data-ttu-id="0cb52-137">このセクションでは、Web アプリで PlayReady ハードウェア DRM を使う方法と、保護されたコンテンツがハードウェア DRM をサポートしていない場合にそれを無効にする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="0cb52-137">This section describes how your web app can use PlayReady hardware DRM, and how to disable hardware DRM if the protected content does not support it.</span></span>
 
-PlayReady ハードウェア DRM を使うには、JavaScript Web アプリは、キー システム識別子 `com.microsoft.playready.hardware` と共に **isTypeSupported** EME メソッドを使って、ブラウザーから PlayReady ハードウェア DRM のサポートを照会する必要があります。
+<span data-ttu-id="0cb52-138">PlayReady ハードウェア DRM を使うには、JavaScript Web アプリは、キー システム識別子 `com.microsoft.playready.hardware` と共に **isTypeSupported** EME メソッドを使って、ブラウザーから PlayReady ハードウェア DRM のサポートを照会する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0cb52-138">To use PlayReady hardware DRM, your JavaScript web app should use the **isTypeSupported** EME method with a key system identifier of `com.microsoft.playready.hardware` to query for PlayReady hardware DRM support from the browser.</span></span>
 
-一部のコンテンツは、ハードウェア DRM ではサポートされない場合があります。 Cocktail コンテンツがハードウェア DRM でサポートされることはありません。Cocktail コンテンツを再生する場合は、ハードウェア DRM を除外する必要があります。 一部のハードウェア DRM は HEVC をサポートしますが、サポートしないものもあります。HEVC コンテンツを再生したいが、ハードウェア DRM がサポートしていない場合も、これを除外してください。
+<span data-ttu-id="0cb52-139">一部のコンテンツは、ハードウェア DRM ではサポートされない場合があります。</span><span class="sxs-lookup"><span data-stu-id="0cb52-139">Occasionally, some content is not supported in hardware DRM.</span></span> <span data-ttu-id="0cb52-140">Cocktail コンテンツがハードウェア DRM でサポートされることはありません。Cocktail コンテンツを再生する場合は、ハードウェア DRM を除外する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0cb52-140">Cocktail content is never supported in hardware DRM; if you want to play cocktail content, you must opt out of hardware DRM.</span></span> <span data-ttu-id="0cb52-141">一部のハードウェア DRM は HEVC をサポートしますが、サポートしないものもあります。HEVC コンテンツを再生したいが、ハードウェア DRM がサポートしていない場合も、これを除外してください。</span><span class="sxs-lookup"><span data-stu-id="0cb52-141">Some hardware DRM will support HEVC and some will not; if you want to play HEVC content and hardware DRM doesn’t support it, you will want to opt out as well.</span></span>
 
 > [!NOTE]
-> HEVC コンテンツがサポートされているかどうかを判断するには、`com.microsoft.playready` をインスタンス化した後で、[**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) メソッドを使います。
+> <span data-ttu-id="0cb52-142">HEVC コンテンツがサポートされているかどうかを判断するには、`com.microsoft.playready` をインスタンス化した後で、[**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) メソッドを使います。</span><span class="sxs-lookup"><span data-stu-id="0cb52-142">To determine whether HEVC content is supported, after instantiating `com.microsoft.playready`, use the [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) method.</span></span>
 
-## <a name="add-secure-stop-to-your-web-app"></a>Web アプリにセキュア ストップを追加する
+## <a name="add-secure-stop-to-your-web-app"></a><span data-ttu-id="0cb52-143">Web アプリにセキュア ストップを追加する</span><span class="sxs-lookup"><span data-stu-id="0cb52-143">Add secure stop to your web app</span></span>
 
-このセクションでは、Web アプリにセキュア ストップを追加する方法を説明します。
+<span data-ttu-id="0cb52-144">このセクションでは、Web アプリにセキュア ストップを追加する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="0cb52-144">This section describes how to add secure stop to your web app.</span></span>
 
-セキュア ストップによって、特定のコンテンツについてのメディア再生が停止したメディア ストリーミング サービスに対して、PlayReady デバイスが確実にアサートするための手段が提供されます。 この機能により、メディア ストリーミング サービスは、特定のアカウントのさまざまなデバイスに対する使用制限を正しく適用し報告することができるようになります。
+<span data-ttu-id="0cb52-145">セキュア ストップによって、特定のコンテンツについてのメディア再生が停止したメディア ストリーミング サービスに対して、PlayReady デバイスが確実にアサートするための手段が提供されます。</span><span class="sxs-lookup"><span data-stu-id="0cb52-145">Secure stop provides the means for a PlayReady device to confidently assert to a media streaming service that media playback has stopped for any given piece of content.</span></span> <span data-ttu-id="0cb52-146">この機能により、メディア ストリーミング サービスは、特定のアカウントのさまざまなデバイスに対する使用制限を正しく適用し報告することができるようになります。</span><span class="sxs-lookup"><span data-stu-id="0cb52-146">This capability ensures your media streaming services provide accurate enforcement and reporting of usage limitations on different devices for a given account.</span></span>
 
-セキュア ストップのチャレンジを送信する主なシナリオが 2 つあります。
+<span data-ttu-id="0cb52-147">セキュア ストップのチャレンジを送信する主なシナリオが 2 つあります。</span><span class="sxs-lookup"><span data-stu-id="0cb52-147">There are two primary scenarios for sending a secure stop challenge:</span></span>
 
--   コンテンツの最後に達したか、ユーザーがメディア プレゼンテーションを途中で停止したため、メディア プレゼンテーションが停止した場合。
--   (システムまたはアプリのクラッシュなどにより) 前回のセッションが予期せずに終了した場合。 アプリは、起動時またはシャットダウン時に、未処理のセキュア ストップ セッションについて照会し、その他のメディア再生とは別にチャレンジを送信する必要があります。
+-   <span data-ttu-id="0cb52-148">コンテンツの最後に達したか、ユーザーがメディア プレゼンテーションを途中で停止したため、メディア プレゼンテーションが停止した場合。</span><span class="sxs-lookup"><span data-stu-id="0cb52-148">When the media presentation stops because end of content was reached or when the user stopped the media presentation somewhere in the middle.</span></span>
+-   <span data-ttu-id="0cb52-149">(システムまたはアプリのクラッシュなどにより) 前回のセッションが予期せずに終了した場合。</span><span class="sxs-lookup"><span data-stu-id="0cb52-149">When the previous session ends unexpectedly (for example, due to a system or app crash).</span></span> <span data-ttu-id="0cb52-150">アプリは、起動時またはシャットダウン時に、未処理のセキュア ストップ セッションについて照会し、その他のメディア再生とは別にチャレンジを送信する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0cb52-150">The app will need to query, either at startup or shutdown, for any outstanding secure stop sessions and send challenge(s) separate from any other media playback.</span></span>
 
-次の手順は、さまざまなシナリオでセキュア ストップを設定する方法について説明します。
+<span data-ttu-id="0cb52-151">次の手順は、さまざまなシナリオでセキュア ストップを設定する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="0cb52-151">The following procedures describe how to set up secure stop for various scenarios.</span></span>
 
-プレゼンテーションの通常の終了時にセキュア ストップを設定するには
+<span data-ttu-id="0cb52-152">プレゼンテーションの通常の終了時にセキュア ストップを設定するには</span><span class="sxs-lookup"><span data-stu-id="0cb52-152">To set up secure stop for a normal end of a presentation:</span></span>
 
-1.  再生が開始する前に **onEnded** イベントを登録します。
-2.  **onEnded** イベント ハンドラーは、ビデオ/オーディオ要素のオブジェクトから `removeAttribute(“src”)` を呼び出し、ソースを **NULL** に設定する必要があります。これにより、メディア ファンデーションをトリガーしてトポロジを終了し、暗号化解除機能を破棄して、停止状態を設定します。
-3.  ハンドラー内の CDM セッションのセキュア ストップを開始し、セキュア ストップ チャレンジをサーバーに送信して、現在は再生が停止したが、後でも実行できることを通知できます。
+1.  <span data-ttu-id="0cb52-153">再生が開始する前に **onEnded** イベントを登録します。</span><span class="sxs-lookup"><span data-stu-id="0cb52-153">Register the **onEnded** event before playback starts.</span></span>
+2.  <span data-ttu-id="0cb52-154">**onEnded** イベント ハンドラーは、ビデオ/オーディオ要素のオブジェクトから `removeAttribute(“src”)` を呼び出し、ソースを **NULL** に設定する必要があります。これにより、メディア ファンデーションをトリガーしてトポロジを終了し、暗号化解除機能を破棄して、停止状態を設定します。</span><span class="sxs-lookup"><span data-stu-id="0cb52-154">The **onEnded** event handler needs to call `removeAttribute(“src”)` from the video/audio element object to set the source to **NULL** which will trigger the media foundation to tear down the topology, destroy the decryptor(s), and set the stop state.</span></span>
+3.  <span data-ttu-id="0cb52-155">ハンドラー内の CDM セッションのセキュア ストップを開始し、セキュア ストップ チャレンジをサーバーに送信して、現在は再生が停止したが、後でも実行できることを通知できます。</span><span class="sxs-lookup"><span data-stu-id="0cb52-155">You can start the secure stop CDM session inside the handler to send the secure stop challenge to the server to notify the playback has stopped at this time, but it can be done later as well.</span></span>
 
-ユーザーがページから移動したか、タブまたはブラウザーを閉じた場合にセキュア ストップを設定するには
+<span data-ttu-id="0cb52-156">ユーザーがページから移動したか、タブまたはブラウザーを閉じた場合にセキュア ストップを設定するには</span><span class="sxs-lookup"><span data-stu-id="0cb52-156">To set up secure stop if the user navigates away from the page or closes down the tab or browser:</span></span>
 
--   停止状態を記録するためにアプリの操作は必要ありません。自動的に記録されます。
+-   <span data-ttu-id="0cb52-157">停止状態を記録するためにアプリの操作は必要ありません。自動的に記録されます。</span><span class="sxs-lookup"><span data-stu-id="0cb52-157">No app action is required to record the stop state; it will be recorded for you.</span></span>
 
-カスタム ページ コントロールまたはユーザーの操作 (カスタム ナビゲーション ボタンや、現在のプレゼンテーションを完了する前に新しいプレゼンテーションを開始するなど) のセキュア ストップを設定するには
+<span data-ttu-id="0cb52-158">カスタム ページ コントロールまたはユーザーの操作 (カスタム ナビゲーション ボタンや、現在のプレゼンテーションを完了する前に新しいプレゼンテーションを開始するなど) のセキュア ストップを設定するには</span><span class="sxs-lookup"><span data-stu-id="0cb52-158">To set up secure stop for custom page controls or user actions (such as custom navigation buttons or starting a new presentation before the current presentation completed):</span></span>
 
--   カスタム ユーザー アクションが発生すると、アプリは、ソースを **NULL** に設定する必要があります。これにより、メディア ファンデーションをトリガーして、トポロジを終了し、暗号化解除機能を破棄して、停止状態を設定します。
+-   <span data-ttu-id="0cb52-159">カスタム ユーザー アクションが発生すると、アプリは、ソースを **NULL** に設定する必要があります。これにより、メディア ファンデーションをトリガーして、トポロジを終了し、暗号化解除機能を破棄して、停止状態を設定します。</span><span class="sxs-lookup"><span data-stu-id="0cb52-159">When custom user action occurs, the app needs to set the source to **NULL** which will trigger the media foundation to tear down the topology, destroy the decryptor(s), and set the stop state.</span></span>
 
-次の例は、Web アプリでのセキュア ストップの使い方を示しています。
+<span data-ttu-id="0cb52-160">次の例は、Web アプリでのセキュア ストップの使い方を示しています。</span><span class="sxs-lookup"><span data-stu-id="0cb52-160">The following example demonstrates how to use secure stop in your web app:</span></span>
 
 ```JavaScript
 // JavaScript source code
@@ -266,13 +265,13 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 ```
 
 > [!NOTE]
-> 前のセキュア ストップのデータの `<SessionID>B64 encoded session ID</SessionID>` は、アスタリスク (\*) にすることができます。これは、記録されたすべてのセキュア ストップ セッション用のワイルドカードです。 つまり、**SessionID** タグは特定のセッションにするか、すべてのセキュア ストップ セッションを選択するワイルドカード (\*) にすることができます。
+> <span data-ttu-id="0cb52-161">前のセキュア ストップのデータの `<SessionID>B64 encoded session ID</SessionID>` は、アスタリスク (\*) にすることができます。これは、記録されたすべてのセキュア ストップ セッション用のワイルドカードです。</span><span class="sxs-lookup"><span data-stu-id="0cb52-161">The secure stop data’s `<SessionID>B64 encoded session ID</SessionID>` in the sample above can be an asterisk (\*), which is a wild card for all the secure stop sessions recorded.</span></span> <span data-ttu-id="0cb52-162">つまり、**SessionID** タグは特定のセッションにするか、すべてのセキュア ストップ セッションを選択するワイルドカード (\*) にすることができます。</span><span class="sxs-lookup"><span data-stu-id="0cb52-162">That is, the **SessionID** tag can be a specific session, or a wild card (\*) to select all the secure stop sessions.</span></span>
 
-## <a name="programming-considerations-for-encrypted-media-extension"></a>Encrypted Media Extension のプログラミングについての考慮事項
+## <a name="programming-considerations-for-encrypted-media-extension"></a><span data-ttu-id="0cb52-163">Encrypted Media Extension のプログラミングについての考慮事項</span><span class="sxs-lookup"><span data-stu-id="0cb52-163">Programming considerations for Encrypted Media Extension</span></span>
 
-このセクションでは、PlayReady 対応の Windows 10 用の Web アプリを作成するときに検討する必要があるプログラミングの考慮事項を示します。
+<span data-ttu-id="0cb52-164">このセクションでは、PlayReady 対応の Windows 10 用の Web アプリを作成するときに検討する必要があるプログラミングの考慮事項を示します。</span><span class="sxs-lookup"><span data-stu-id="0cb52-164">This section lists the programming considerations that you should take into account when creating your PlayReady-enabled web app for Windows 10.</span></span>
 
-アプリで作成した **MSMediaKeys** オブジェクトと **MSMediaKeySession** オブジェクトは、アプリが終了するまで有効なままである必要があります。 これらのオブジェクトが必ず有効な状態にとどまるようにする方法の 1 つは、それらをグローバル変数として割り当てることです (関数内でローカル変数宣言された場合、変数はスコープ外になり、ガベージ コレクションの対象になります)。 次の例では、変数 *g\_msMediaKeys* と *g\_mediaKeySession* をグローバル変数として割り当てています。これらの変数は、関数内で **MSMediaKeys** オブジェクトと **MSMediaKeySession** オブジェクトに割り当てられます。
+<span data-ttu-id="0cb52-165">アプリで作成した **MSMediaKeys** オブジェクトと **MSMediaKeySession** オブジェクトは、アプリが終了するまで有効なままである必要があります。</span><span class="sxs-lookup"><span data-stu-id="0cb52-165">The **MSMediaKeys** and **MSMediaKeySession** objects created by your app must be kept alive until your app closes.</span></span> <span data-ttu-id="0cb52-166">これらのオブジェクトが必ず有効な状態にとどまるようにする方法の 1 つは、それらをグローバル変数として割り当てることです (関数内でローカル変数宣言された場合、変数はスコープ外になり、ガベージ コレクションの対象になります)。</span><span class="sxs-lookup"><span data-stu-id="0cb52-166">One way of ensuring these objects stay alive is to assign them as global variables (the variables would become out of scope and subject to garbage collection if declared as a local variable inside of a function).</span></span> <span data-ttu-id="0cb52-167">次の例では、変数 *g\_msMediaKeys* と *g\_mediaKeySession* をグローバル変数として割り当てています。これらの変数は、関数内で **MSMediaKeys** オブジェクトと **MSMediaKeySession** オブジェクトに割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="0cb52-167">For example, the following sample assigns the variables *g\_msMediaKeys* and *g\_mediaKeySession* as global variables, which are then assigned to the **MSMediaKeys** and **MSMediaKeySession** objects in the function.</span></span>
 
 ``` syntax
 var g_msMediaKeys;
@@ -300,11 +299,10 @@ function foo() {
 }
 ```
 
-詳しくは、[サンプル アプリケーション](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738)をご覧ください。
+<span data-ttu-id="0cb52-168">詳しくは、[サンプル アプリケーション](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="0cb52-168">For more information, see the [sample applications](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738).</span></span>
 
-## <a name="see-also"></a>参照
-- [PlayReady DRM](playready-client-sdk.md)
-
+## <a name="see-also"></a><span data-ttu-id="0cb52-169">参照</span><span class="sxs-lookup"><span data-stu-id="0cb52-169">See also</span></span>
+- [<span data-ttu-id="0cb52-170">PlayReady DRM</span><span class="sxs-lookup"><span data-stu-id="0cb52-170">PlayReady DRM</span></span>](playready-client-sdk.md)
 
 
 

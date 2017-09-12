@@ -1,64 +1,73 @@
 ---
 author: jnHs
-Description: "Windows デベロッパー センターのダッシュボードのフィードバック レポートにより、Windows 10 のユーザーがフィードバック Hub から送信した問題、提案、賛成票を参照できます。"
-title: "フィードバック レポート"
+Description: "Windows デベロッパー センターのダッシュボードの [フィードバック] レポートにより、Windows 10 のユーザーがフィードバック Hub から送信した問題、提案、賛成票を参照できます。"
+title: "[フィードバック] レポート"
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 91ca9a29609cd52db24ddddecf60307e808cc064
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e78ab0ac31bd41c3fb7b05039b14f422e4c9071b
+ms.sourcegitcommit: 5ece992c31870df4c089360ef47501bd4ce14fa9
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/22/2017
 ---
+# <a name="feedback-report"></a><span data-ttu-id="081f2-104">[フィードバック] レポート</span><span class="sxs-lookup"><span data-stu-id="081f2-104">Feedback report</span></span>
 
-# <a name="feedback-report"></a>フィードバック レポート
+<span data-ttu-id="081f2-105">Windows デベロッパー センターのダッシュボードの **[フィードバック] レポート**により、Windows 10 のユーザーがフィードバック Hub から送信した問題、提案、賛成票を参照できます。</span><span class="sxs-lookup"><span data-stu-id="081f2-105">The **Feedback report** in the Windows Dev Center dashboard lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub.</span></span> <span data-ttu-id="081f2-106">このデータは、ダッシュボードで表示することも、データをエクスポートしてオフラインで表示することもできます。</span><span class="sxs-lookup"><span data-stu-id="081f2-106">You can view this data in your dashboard, or export the data to view offline.</span></span>
 
-Windows デベロッパー センターのダッシュボードの**フィードバック レポート**により、Windows 10 のユーザーがフィードバック Hub から送信した問題、提案、賛成票を参照できます。 このデータは、ダッシュボードで表示することも、データをエクスポートしてオフラインで表示することもできます。
+> [!NOTE]
+> <span data-ttu-id="081f2-107">またフィードバックを確認していることを顧客に伝えるため、このレポートから直接[フィードバックに返信](respond-to-customer-feedback.md)できます。</span><span class="sxs-lookup"><span data-stu-id="081f2-107">You can also [respond to feedback](respond-to-customer-feedback.md) directly from this report to let your customers know you're listening.</span></span>
 
-アプリについてのフィードバックをユーザーに送信してもらうように促すのは、ユーザーにとって重要な問題や機能について知ることができる、よい方法です。 ユーザーは、アプリの作成者に直接フィードバックを送ることができるとわかると、否定的なレビューをフィードバックとして残す可能性がより低くなります。
+<span data-ttu-id="081f2-108">アプリについてのフィードバックをユーザーに送信してもらうように促すのは、ユーザーにとって重要な問題や機能について知ることができる、よい方法です。</span><span class="sxs-lookup"><span data-stu-id="081f2-108">Encouraging your customers to give you feedback about your app is a great way to learn about the problems and features that are most important to them.</span></span> <span data-ttu-id="081f2-109">ユーザーは、アプリの作成者に直接フィードバックを送ることができるとわかると、否定的なレビューをフィードバックとしてストアに残す可能性が低くなることが考えられます。</span><span class="sxs-lookup"><span data-stu-id="081f2-109">When your customers know they can send you feedback directly, they may be less likely to leave that feedback as a negative review in the Store.</span></span>
 
-> **注** またフィードバックを確認していることを顧客に伝えるため、このレポートから直接[フィードバックに返信](respond-to-customer-feedback.md)できます。
+<span data-ttu-id="081f2-110">[Microsoft Store Services SDK](http://aka.ms/store-em-sdk) のフィードバック API を使って、ユーザーが直接[アプリからフィードバック Hub を起動](../monetize/launch-feedback-hub-from-your-app.md)するようにできます。</span><span class="sxs-lookup"><span data-stu-id="081f2-110">You can use the Feedback API in the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) to let customers [directly launch Feedback Hub from your app](../monetize/launch-feedback-hub-from-your-app.md).</span></span> <span data-ttu-id="081f2-111">フィードバック Hub をサポートする Windows 10 デバイスにアプリをダウンロードしたユーザーはだれでも、フィードバック Hub アプリを使ってフィードバックを残すことができます。</span><span class="sxs-lookup"><span data-stu-id="081f2-111">Keep in mind that any customer who has downloaded your app on a Windows 10 device that supports Feedback Hub has the ability to leave feedback for it by using the Feedback Hub app.</span></span> <span data-ttu-id="081f2-112">このため、アプリ内でフィードバックを特に促していない場合でも、このレポートでユーザーからのフィードバックが表示される場合があります。</span><span class="sxs-lookup"><span data-stu-id="081f2-112">Because of this, you may see customer feedback in this report, even if you have not specifically asked for feedback from within your app.</span></span>
 
-[Microsoft Store Services SDK](http://aka.ms/store-em-sdk) のフィードバック API を使って、ユーザーが直接[アプリからフィードバック Hub を起動](../monetize/launch-feedback-hub-from-your-app.md)するようにできます。 フィードバック Hub をサポートする Windows 10 デバイスにアプリをダウンロードしたユーザーはだれでも、フィードバック Hub アプリを使ってフィードバックを残すことができます。 このため、アプリ内でフィードバックを特に促していない場合でも、このレポートでユーザーからのフィードバックが表示される場合があります。
+<span data-ttu-id="081f2-113">また、[パッケージ フライト](package-flights.md)を使っている場合にもフィードバックは有効です。各ユーザーがデバイスにインストールした特定のパッケージが [フィードバック] レポートに表示されるためです。</span><span class="sxs-lookup"><span data-stu-id="081f2-113">Feedback can also be helpful when using [package flighting](package-flights.md), since the Feedback report shows you the specific package that each customer had installed on their device when they left the feedback.</span></span>
 
-> **ヒント** [パッケージ フライト](package-flights.md)を使用している場合には特にフィードバックは有益です。各ユーザーがデバイスにインストールした特定のパッケージがフィードバック レポートに表示されるためです。
-
-## <a name="viewing-feedback-details"></a>フィードバックの詳細の表示
-
-このレポートの **[詳細]** セクションには、ユーザーからの個々のフィードバックが表示されます。 フィードバックのテキストの左には、フィードバック Hub で他のユーザーがそのフィードバックに投じた賛成票の回数が表示されます。 3 つの方法で、フィードバックを並べ替えることができます。
-
-- **賛成票** (既定): 他のユーザーから最も多くの賛成票を受けたフィードバックを先頭に、賛成票を受けたフィードバックを表示します。
-- **人気上昇中**: 最も直近に受けたフィードバックを先頭に、最近 7 日間に他のユーザーから賛成票を受けたフィードバックを表示します。
-- **最近のフィードバック**: 最も直近のフィードバックを先頭に、すべてのフィードバックを表示します。
-
-各コメントの横には、フィードバックを受けた日付と、フィードバックの種類が表示されます。 またユーザーの市場、アプリのフィードバックを行ったときに使っていたデバイスにインストールされている特定のパッケージ、デバイスの種類、**Windows Insider** (フィードバックを送信したユーザーが Windows Insider Program のメンバーである場合) も表示されます。
+> [!TIP]
+> <span data-ttu-id="081f2-114">左側のナビゲーション メニューで **[Engage] (関心を引く)** を展開して **[レビューとフィードバック]** を選ぶと、自分のすべてのアプリの過去 30 日間のレビュー、評価、ユーザー フィードバックの概要を確認できます。</span><span class="sxs-lookup"><span data-stu-id="081f2-114">For a quick look at the reviews, ratings, and user feedback for all of your apps in the last 30 days, expand **Engage** in the left navigation menu and select **Reviews and feedback.**</span></span> 
 
 
-## <a name="apply-filters"></a>フィルターの適用
+## <a name="apply-filters"></a><span data-ttu-id="081f2-115">フィルターを適用</span><span class="sxs-lookup"><span data-stu-id="081f2-115">Apply filters</span></span>
 
-ページの上部にある **[フィルターの適用]** を展開して、このページのすべてのデータをフィルター処理できます。
+<span data-ttu-id="081f2-116">ページの上部で、データを表示する期間を選択できます。</span><span class="sxs-lookup"><span data-stu-id="081f2-116">Near the top of the page, you can select the time period for which you want to show data.</span></span> <span data-ttu-id="081f2-117">既定では **[有効期間]** が選択されていますが、30 日間、3 か月間、6 か月間、12 か月間のデータを表示することもできます。</span><span class="sxs-lookup"><span data-stu-id="081f2-117">The default selection is **Lifetime**, but you can choose to show data for 30 days, 3 months, 6 months, or 12 months.</span></span>
 
-> **ヒント** このページにフィードバックが表示されない場合は、フィルターですべてのフィードバックを除外していないかどうかを確認してください。 たとえば、アプリがサポートされていない**デバイスの種類**でフィルター処理する場合、フィードバックは表示されません。
+<span data-ttu-id="081f2-118">また、**[フィルター]** を展開して、このページのすべてのデータを次のオプションを使ってフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="081f2-118">You can also expand **Filters** to filter all of the data on this page by the following options.</span></span>
 
-- **[日付]**: 既定のフィルターは **[すべての日付]** です。 **[過去 30 日]** から **[過去 12 か月]** までの範囲を選択できます。
-- **[フィードバックの種類]**: 既定の設定は **[すべて]** です。 **[問題]** または **[提案]** を選択して、表示するフィードバックの種類を選択できます。
-- **[デバイスの種類]**: 既定の設定は **[すべてのデバイス]** です。 **[携帯電話]**、**[PC]**、**[タブレット]** を選択して、フィードバックを行ったデバイスの種類を選択できます。
-- **[パッケージ バージョン]**: 既定の設定は **[すべてのパッケージ]** です。 パッケージの 1 つを選択して、ユーザーがフィードバックを行ったときに使っていた特定のパッケージのみのフィードバックを表示できます。
-- **[市場]**: 既定の設定は **[すべての市場]** です。 特定の市場でのユーザーからフィードバックのみを表示することができます。
-- **[グループ]**: 既定の設定は **[すべて]** です。 [Windows Insider](http://insider.windows.com) から送信されたフィードバックのみを表示することもできます。
+- <span data-ttu-id="081f2-119">**[フィードバックの種類]**: 既定の設定は **[すべて]** です。</span><span class="sxs-lookup"><span data-stu-id="081f2-119">**Feedback type**: The default setting is **All**.</span></span> <span data-ttu-id="081f2-120">**[問題]** または **[提案]** を選択して、表示するフィードバックの種類を選択できます。</span><span class="sxs-lookup"><span data-stu-id="081f2-120">You can select **Problem** or **Suggestion** to show only that type of feedback.</span></span>
+- <span data-ttu-id="081f2-121">**[デバイスの種類]**: 既定の設定は **[すべてのデバイス]** です。</span><span class="sxs-lookup"><span data-stu-id="081f2-121">**Device type**: The default setting is **All devices**.</span></span> <span data-ttu-id="081f2-122">このページにその種類のデバイスを使っているユーザーによるフィードバックのみを表示する場合は、特定のデバイスの種類を選ぶことができます。</span><span class="sxs-lookup"><span data-stu-id="081f2-122">You can choose a specific device type if you want this page to only show feedback left by customers using that type of device.</span></span>
+- <span data-ttu-id="081f2-123">**[パッケージ バージョン]**: 既定の設定は **[すべてのパッケージ]** です。</span><span class="sxs-lookup"><span data-stu-id="081f2-123">**Package version**: The default setting is **All packages**.</span></span> <span data-ttu-id="081f2-124">パッケージの 1 つを選択して、ユーザーがフィードバックを行ったときに使っていた特定のパッケージのみのフィードバックを表示できます。</span><span class="sxs-lookup"><span data-stu-id="081f2-124">You can select one of your packages to show only feedback left from customers who were using that particular package when they left feedback.</span></span>
+- <span data-ttu-id="081f2-125">**[市場]**: 既定の設定は **[すべての市場]** です。</span><span class="sxs-lookup"><span data-stu-id="081f2-125">**Market**: The default setting is **All markets**.</span></span> <span data-ttu-id="081f2-126">特定の市場でのユーザーからフィードバックのみを表示することができます。</span><span class="sxs-lookup"><span data-stu-id="081f2-126">You can choose a specific to show only feedback from customers in that market.</span></span>
+- <span data-ttu-id="081f2-127">**[グループ]**: 既定の設定は **[すべて]** です。</span><span class="sxs-lookup"><span data-stu-id="081f2-127">**Group**: The default setting is **All**.</span></span> <span data-ttu-id="081f2-128">[Windows Insider](http://insider.windows.com) から送信されたフィードバックのみを表示することもできます。</span><span class="sxs-lookup"><span data-stu-id="081f2-128">You can choose to view only feedback submitted by [Windows Insiders](http://insider.windows.com).</span></span>
 
-## <a name="translating-feedback"></a>フィードバックの翻訳
+> [!TIP]
+> <span data-ttu-id="081f2-129">このページにフィードバックが表示されない場合は、フィルターですべてのフィードバックを除外していないかどうかを確認してください。</span><span class="sxs-lookup"><span data-stu-id="081f2-129">If you don't see any feedback on the page, check to make sure your filters haven't excluded all of your feedback.</span></span> <span data-ttu-id="081f2-130">たとえば、アプリがサポートされていない**デバイスの種類**でフィルター処理する場合、フィードバックは表示されません。</span><span class="sxs-lookup"><span data-stu-id="081f2-130">For example, if you filter by a **Device type** that your app doesn't support, you won't see any feedback.</span></span>
 
-既定では、優先する言語で記述されていないレビューは翻訳されます。 必要に応じて、フィードバックの一覧の右上にある **[レビューを翻訳する]** チェック ボックスをオフにして、フィードバックの翻訳を無効にすることができます。
 
-フィードバックは自動翻訳システムによって翻訳されるため、翻訳の結果が正確でない場合があることに注意してください。 元のテキストと翻訳を比較する場合や、元のテキストを他の方法で翻訳する場合は、元のテキストが提供されます。
+## <a name="viewing-feedback-details"></a><span data-ttu-id="081f2-131">フィードバックの詳細の表示</span><span class="sxs-lookup"><span data-stu-id="081f2-131">Viewing feedback details</span></span>
 
-## <a name="launching-feedback-hub-directly-from-your-app"></a>アプリから直フィードバック Hub を起動する
+<span data-ttu-id="081f2-132">このレポートには、ユーザーからの個々のフィードバックが表示されます。</span><span class="sxs-lookup"><span data-stu-id="081f2-132">In this report, you’ll see the individual feedback left by your customers.</span></span> <span data-ttu-id="081f2-133">各項目のフィードバックのテキストの左には、フィードバック Hub で他のユーザーがそのフィードバックに投じた賛成票の回数が表示されます。</span><span class="sxs-lookup"><span data-stu-id="081f2-133">To the left of the feedback text for each item, you’ll see the number of times the feedback was upvoted by other customers in the Feedback Hub.</span></span> <span data-ttu-id="081f2-134">3 つの方法で、フィードバックを並べ替えることができます。</span><span class="sxs-lookup"><span data-stu-id="081f2-134">You can sort the feedback in three ways:</span></span>
 
-前に説明したように、フィードバック Hub への直接のリンクをアプリ内に組み込んで、ユーザーにフィードバックの提供を促すことをお勧めします。 詳しくは、「[アプリからのフィードバック Hub の起動](../monetize/launch-feedback-hub-from-your-app.md)」をご覧ください。
+- <span data-ttu-id="081f2-135">**賛成票** (既定): 他のユーザーから最も多くの賛成票を受けたフィードバックを先頭に、賛成票を受けたフィードバックを表示します。</span><span class="sxs-lookup"><span data-stu-id="081f2-135">**Upvoted** (default): Shows feedback that has been upvoted by other customers, starting with the feedback which received the most upvotes.</span></span>
+- <span data-ttu-id="081f2-136">**人気上昇中**: 最も直近に受けたフィードバックを先頭に、最近 7 日間に他のユーザーから賛成票を受けたフィードバックを表示します。</span><span class="sxs-lookup"><span data-stu-id="081f2-136">**Trending**: Shows feedback that has been upvoted by other customers in the last seven days, starting with the feedback which has been getting the most recent activity.</span></span>
+- <span data-ttu-id="081f2-137">**最近のフィードバック**: 最も直近のフィードバックを先頭に、すべてのフィードバックを表示します。</span><span class="sxs-lookup"><span data-stu-id="081f2-137">**Most recent**: Shows all feedback, starting with the feedback most recently left.</span></span>
 
+<span data-ttu-id="081f2-138">各コメントの横には、フィードバックを受けた日付と、フィードバックの種類が表示されます。</span><span class="sxs-lookup"><span data-stu-id="081f2-138">Next to each comment you’ll see the date on which the feedback was left, and the type of feedback.</span></span> <span data-ttu-id="081f2-139">またユーザーの市場、アプリのフィードバックを行ったときに使っていたデバイスにインストールされている特定のパッケージ、デバイスの種類、**Windows Insider** (フィードバックを送信したユーザーが Windows Insider Program のメンバーである場合) も表示されます。</span><span class="sxs-lookup"><span data-stu-id="081f2-139">You’ll also see the customer’s market, the specific package of your app that was installed on the device they were using when they left the feedback, the type of that device, and **Windows Insider** if the customer submitting the feedback is a member of the Windows Insider program.</span></span>
+
+<span data-ttu-id="081f2-140">ここには、[フィードバックに返信](respond-to-customer-feedback.md)するためのオプションも表示されます。</span><span class="sxs-lookup"><span data-stu-id="081f2-140">You'll also see an option here to [respond to the feedback](respond-to-customer-feedback.md).</span></span>
+
+
+## <a name="translating-feedback"></a><span data-ttu-id="081f2-141">フィードバックの翻訳</span><span class="sxs-lookup"><span data-stu-id="081f2-141">Translating feedback</span></span>
+
+<span data-ttu-id="081f2-142">既定では、優先する言語で記述されていないフィードバックは翻訳されます。</span><span class="sxs-lookup"><span data-stu-id="081f2-142">By default, feedback that was not written in your preferred is are translated for you.</span></span> <span data-ttu-id="081f2-143">必要に応じて、右上の、ページ フィルターの近くにある **[フィードバックを翻訳する]** チェック ボックスをオフにして、フィードバックの翻訳を無効にすることができます。</span><span class="sxs-lookup"><span data-stu-id="081f2-143">If you prefer, feedback translation can be disabled by unchecking the **Translate feedback** checkbox at the upper right, near the page filters.</span></span>
+
+<span data-ttu-id="081f2-144">フィードバックは自動翻訳システムによって翻訳されるため、翻訳の結果が正確でない場合があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="081f2-144">Please note that feedback is translated by an automatic translation system, and the resulting translation may not always be accurate.</span></span> <span data-ttu-id="081f2-145">元のテキストと翻訳を比較する場合や、元のテキストを他の方法で翻訳する場合は、元のテキストが提供されます。</span><span class="sxs-lookup"><span data-stu-id="081f2-145">The original text is provided if you wish to compare it to the translation, or translate it through some other means.</span></span>
+
+
+## <a name="launching-feedback-hub-directly-from-your-app"></a><span data-ttu-id="081f2-146">アプリから直フィードバック Hub を起動する</span><span class="sxs-lookup"><span data-stu-id="081f2-146">Launching Feedback Hub directly from your app</span></span>
+
+<span data-ttu-id="081f2-147">前に説明したように、フィードバック Hub への直接のリンクをアプリ内に組み込んで、ユーザーにフィードバックの提供を促すことをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="081f2-147">As noted above, we recommend incorporating a link to Feedback Hub directly in your app to encourage customers to provide feedback.</span></span> <span data-ttu-id="081f2-148">詳しくは、「[アプリからのフィードバック Hub の起動](../monetize/launch-feedback-hub-from-your-app.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="081f2-148">For more info, see [Launch Feedback Hub from your app](../monetize/launch-feedback-hub-from-your-app.md).</span></span>

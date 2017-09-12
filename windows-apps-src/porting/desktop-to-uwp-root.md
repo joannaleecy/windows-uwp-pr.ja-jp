@@ -1,104 +1,246 @@
 ---
-author: awkoren
-Description: "Desktop to UWP Bridge について理解し、Windows デスクトップ アプリケーション (Win32、WPF、Windows フォームなど) をユニバーサル Windows プラットフォーム (UWP) アプリに変換しましょう。"
+author: normesta
+Description: "既存の Windows フォーム、WPF、または Win32 アプリやゲームに対して、最新の Windows アプリ パッケージを作成します。 Windows 10 ユーザー向けに最新のエクスペリエンスを追加し、展開と収益化を簡略化します。"
 Search.Product: eADQiWindows 10XVcnh
-title: "デスクトップ ブリッジでデスクトップ アプリをユニバーサル Windows プラットフォーム (UWP) 用に変換する"
-ms.author: alkoren
-ms.date: 02/08/2017
+title: "デスクトップ ブリッジ"
+ms.author: normesta
+ms.date: 05/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: dd9f45b0ddcc201053ed8e35908da66443e47d72
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 1830c1661325afe68e8e7cd32528ec075e098b1d
+ms.sourcegitcommit: 77bbd060f9253f2b03f0b9d74954c187bceb4a30
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/11/2017
 ---
+# <a name="desktop-bridge"></a><span data-ttu-id="5effe-105">デスクトップ ブリッジ</span><span class="sxs-lookup"><span data-stu-id="5effe-105">Desktop Bridge</span></span>
 
-# <a name="bring-your-desktop-app-to-the-universal-windows-platform-uwp-with-the-desktop-bridge"></a>デスクトップ ブリッジでデスクトップ アプリをユニバーサル Windows プラットフォーム (UWP) 用に変換する
+<span data-ttu-id="5effe-106">既存のデスクトップ アプリを利用して、Windows 10 ユーザー向けの最新のエクスペリエンスを追加します。</span><span class="sxs-lookup"><span data-stu-id="5effe-106">Take your existing desktop app and add modern experiences for Windows 10 users.</span></span> <span data-ttu-id="5effe-107">Windows ストアを通じてアプリを配布し、国際市場でのリーチを拡大します。</span><span class="sxs-lookup"><span data-stu-id="5effe-107">Then, achieve greater reach across international markets by distributing it through the Windows Store.</span></span> <span data-ttu-id="5effe-108">ストアに直接組み込まれている機能を活用することで、より簡単に、アプリの収益化ができます。</span><span class="sxs-lookup"><span data-stu-id="5effe-108">You can monetize your app in much simpler ways by leveraging features built right into the store.</span></span> <span data-ttu-id="5effe-109">もちろん、ストアを使用する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="5effe-109">Of course, you don't have to use the store.</span></span> <span data-ttu-id="5effe-110">既存のチャンネルを自由に使用してください。</span><span class="sxs-lookup"><span data-stu-id="5effe-110">Feel free to use your existing channels.</span></span>
+<div style="float: left; padding: 10px">
+    ![Desktop to UWP Bridge のイメージ](images/desktop-to-uwp/desktop-bridge-4.png)
+</div>
+<span data-ttu-id="5effe-112">Desktop to UWP Bridge は、最新の Windows アプリ パッケージを使用して開発者が Windows フォーム、WPF、または Win32 アプリやゲームを効率的に配布できるようにするため、プラットフォームに組み込まれているインフラストラクチャです。</span><span class="sxs-lookup"><span data-stu-id="5effe-112">The Desktop to UWP bridge is the infrastructure that we’ve built into the platform that lets you distribute your Windows Forms, WPF, or Win32 desktop app or game efficiently by using a modern Windows App package.</span></span>
 
-Desktop to UWP Bridge について理解し、Windows デスクトップ アプリケーションをユニバーサル Windows プラットフォーム (UWP) アプリに変換しましょう。
+<span data-ttu-id="5effe-113">このパッケージは、アプリに ID を提供します。デスクトップ アプリは、その ID を使用してユニバーサル Windows プラットフォーム (UWP) API にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="5effe-113">This package gives your app an identity and with that identity, your desktop app has access to Windows Universal Platform (UWP) APIs.</span></span> <span data-ttu-id="5effe-114">これを利用して、ライブ タイルや通知など、現代的で魅力的なエクスペリエンスを実現できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-114">You can use them to light up modern and engaging experiences such as live tiles and notifications.</span></span>  <span data-ttu-id="5effe-115">アプリが Windows 10 で実行される場合にのみ、単純な条件付きコンパイルとランタイム チェックを使用して、UWP コードを実行します。</span><span class="sxs-lookup"><span data-stu-id="5effe-115">Use simple conditional compilation and runtime checks to run UWP code only when your app runs on Windows 10.</span></span>
 
-Desktop Bridge は、Windows デスクトップ アプリケーション (Win32、Windows フォーム、WPF など) やゲームを UWP のアプリやゲームに変換するための一連のテクノロジです。 Windows デスクトップ アプリケーションは、変換後、Windows 10 デスクトップをターゲットとする UWP アプリ パッケージ (.appx または .appxbundle) の形式でパッケージ化され、処理と展開が行われます。
+<span data-ttu-id="5effe-116">Windows 10 エクスペリエンスを実現するために使用するコード以外は、アプリは元のままです。引き続き、そのアプリを既存の Windows 7、Windows Vista、または Windows XP のユーザーに配布できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-116">Aside from the code that you use to light up Windows 10 experiences, your app remains unchanged and you can continue to distribute it to your existing Windows 7, Windows Vista, or Windows XP user base.</span></span> <span data-ttu-id="5effe-117">Windows 10 では、このアプリを現在のアプリと同じように、完全な信頼ユーザー モードで引き続き実行できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-117">On Windows 10, your app continues to run in full-trust user mode just like it’s doing today.</span></span>
 
-デスクトップ アプリの UWP パッケージへの変換を可能にするテクノロジは、2 つあります。 1 つ目は、変換プロセスです。既存のバイナリを取り込んで、UWP パッケージとして再パッケージ化します。 コードは、同じままで、パッケージ化の方法だけが異なります。 2 つ目は、Windows Anniversary Update の各種ランタイムテクノロジーで、UWP パッケージを、アプリ コンテナーではなく完全な信頼として実行される実行可能ファイルにします。 このテクノロジにより、変換済みのアプリにパッケージ ID が与えられます。パッケージ ID は一部の UWP API を使用するときに必要です。
+> [!NOTE]
+> <span data-ttu-id="5effe-118">Microsoft Virtual Academy から公開されている、<a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">このシリーズ</a>の短いビデオをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5effe-118">Checkout <a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">this series</a> of short videos published by the Microsoft Virtual Academy.</span></span> <span data-ttu-id="5effe-119">これらのビデオでは、デスクトップ アプリをユニバーサル Windows プラットフォーム (UWP) に移行するプロセスをすべて説明しています。</span><span class="sxs-lookup"><span data-stu-id="5effe-119">These videos walk you through the entire process of bringing your desktop app to the Universal Windows Platform (UWP).</span></span>
 
-## <a name="benefits"></a>利点
+## <a name="benefits"></a><span data-ttu-id="5effe-120">利点</span><span class="sxs-lookup"><span data-stu-id="5effe-120">Benefits</span></span>
 
-Windows デスクトップ アプリケーションを変換する利点を以下に示します。 
+<span data-ttu-id="5effe-121">以下に、デスクトップ アプリケーションの Windows アプリ パッケージを作成する理由を示します。</span><span class="sxs-lookup"><span data-stu-id="5effe-121">Here are some reasons to create a Windows App package for your desktop application:</span></span>
 
-**スムーズな展開プロセス**。 ブリッジを使用すると、ユーザーが安心してアプリやゲームをインストールまたは更新できる優れた展開エクスペリエンスを提供できます。 ユーザーがアプリをアンインストールすると、跡形なく完全に削除されます。 このため、セットアップ エクスペリエンスの設計や、更新プログラムの配信にかかる時間を削減できます。
+<span data-ttu-id="5effe-122">**スムーズな展開プロセス**。</span><span class="sxs-lookup"><span data-stu-id="5effe-122">**Streamlined deployment**.</span></span> <span data-ttu-id="5effe-123">ブリッジを使用しているアプリやゲームでは、優れた展開エクスペリエンスが提供されます。</span><span class="sxs-lookup"><span data-stu-id="5effe-123">Apps and games that use the bridge have a great deployment experience.</span></span> <span data-ttu-id="5effe-124">このエクスペリエンスにより、ユーザーが安心してアプリのインストールおよび更新を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="5effe-124">This experience ensures that users can confidently install an app and update it.</span></span> <span data-ttu-id="5effe-125">ユーザーがアプリをアンインストールすると、跡形なく完全に削除されます。</span><span class="sxs-lookup"><span data-stu-id="5effe-125">If a user chooses to uninstall the app, it's removed completely with no trace left behind.</span></span> <span data-ttu-id="5effe-126">このため、セットアップ エクスペリエンスの設計や、更新プログラムの配信にかかる時間を削減できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-126">This reduces time authoring setup experiences and keeping users up-to-date.</span></span>
 
-**自動更新とライセンス**。 アプリは、Windows ストアの組み込みライセンスと自動更新機能に参加できます。 自動更新機能は、ファイルの変更された部分だけがダウンロードされるため、非常に信頼性が高く効率的なメカニズムです。
+<span data-ttu-id="5effe-127">**自動更新とライセンス**。</span><span class="sxs-lookup"><span data-stu-id="5effe-127">**Automatic updates and licensing**.</span></span> <span data-ttu-id="5effe-128">アプリは、Windows ストアの組み込みライセンスと自動更新機能に参加できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-128">Your app can participate in the Windows Store's built-in licensing and automatic update facilities.</span></span> <span data-ttu-id="5effe-129">自動更新機能は、ファイルの変更された部分だけがダウンロードされるため、非常に信頼性が高く効率的なメカニズムです。</span><span class="sxs-lookup"><span data-stu-id="5effe-129">Automatic update is a highly reliable and efficient mechanism, because only the changed parts of files are downloaded.</span></span>
 
-**リーチの拡大とシンプルな決済**。 Windows ストアからの配布なら、数百万人の Windows 10 ユーザーにリーチできます。ユーザーは、アプリとゲームの購入や、アプリ内での購入に各地域の支払い方法を使用できます。
+<span data-ttu-id="5effe-130">**リーチの拡大とシンプルな決済**。</span><span class="sxs-lookup"><span data-stu-id="5effe-130">**Increased reach and simplified monetization**.</span></span> <span data-ttu-id="5effe-131">Windows ストアからの配布なら、数百万人の Windows 10 ユーザーにリーチを拡大できます。ユーザーは、アプリとゲームの購入や、アプリ内での購入に各地域の支払い方法を使用できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-131">Choosing to distribute through the Windows Store expands your reach to millions of Windows 10 users, who can acquire apps, games and in-app purchases with local payment options.</span></span>
 
-**UWP 機能の追加**。  自分のペースで、XAML ユーザー インターフェイス、ライブ タイルの更新、UWP バックグラウンド タスク、アプリ サービスなどの多くの UWP 機能をアプリのパッケージに追加できます。
+<span data-ttu-id="5effe-132">**UWP 機能の追加**。</span><span class="sxs-lookup"><span data-stu-id="5effe-132">**Add UWP features**.</span></span>  <span data-ttu-id="5effe-133">自分のペースで、XAML ユーザー インターフェイス、ライブ タイルの更新、UWP バックグラウンド タスク、アプリ サービスなどの多くの UWP 機能をアプリのパッケージに追加できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-133">At your own pace, you can add UWP features to your app's package, like a XAML user-interface, live tile updates, UWP background tasks, app services, and many more.</span></span>
 
-**対応デバイスの拡大**。 ブリッジを使用すると、徐々にコードをユニバーサル Windows プラットフォームに移行して、電話、Xbox One、HoloLens など、すべての Windows 10 デバイスを対象にできます。
+<span data-ttu-id="5effe-134">**対応デバイスの拡大**。</span><span class="sxs-lookup"><span data-stu-id="5effe-134">**Broadened use-cases across device**.</span></span> <span data-ttu-id="5effe-135">ブリッジを使用すると、徐々にコードをユニバーサル Windows プラットフォームに移行して、電話、Xbox One、HoloLens など、すべての Windows 10 デバイスを対象にできます。</span><span class="sxs-lookup"><span data-stu-id="5effe-135">Using the bridge, you can gradually migrate your code to the Universal Windows Platform to reach every Windows 10 device, including phones, Xbox One and HoloLens.</span></span>
 
-## <a name="prepare"></a>準備
+<span data-ttu-id="5effe-136">利点の完全な一覧については、「[デスクトップ ブリッジ](https://developer.microsoft.com/windows/bridges/desktop)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5effe-136">To view a more complete list of benefits, see [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop).</span></span>
 
-Desktop to UWP Bridge は使いやすく設計されており、変換プロセス用にアプリを準備する作業はそれほど必要ありません。 ただし、変換を行う前に注意する点がいくつかあります。 先へ進む前に「[Desktop to UWP Bridge 用にアプリを準備する](desktop-to-uwp-prepare.md)」を読み、アプリに該当する点があれば対処してください。
+## <a name="prepare"></a><span data-ttu-id="5effe-137">準備</span><span class="sxs-lookup"><span data-stu-id="5effe-137">Prepare</span></span>
 
-## <a name="convert"></a>変換
+<span data-ttu-id="5effe-138">アプリを [Windows アプリ ストア](https://www.microsoft.com/store/apps)に公開する予定はありますか? </span><span class="sxs-lookup"><span data-stu-id="5effe-138">Do you plan to publish your app to the [Windows app store](https://www.microsoft.com/store/apps).</span></span> <span data-ttu-id="5effe-139">その場合は、まず[このフォーム](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge)に必要事項を入力してください。</span><span class="sxs-lookup"><span data-stu-id="5effe-139">If so, start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge).</span></span> <span data-ttu-id="5effe-140">Microsoft から、オンボード プロセスを開始するための連絡があります。</span><span class="sxs-lookup"><span data-stu-id="5effe-140">Microsoft will contact you to start the onboarding process.</span></span> <span data-ttu-id="5effe-141">このプロセスでは、ストア内の名前を予約し、Windows アプリ パッケージを作成するための情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="5effe-141">As part of this process, you'll reserve a name in the store, and obtain information that you'll need to create Windows app package.</span></span>
 
-アプリを変換するには、いくつかの方法があります。
+<span data-ttu-id="5effe-142">次に、「[アプリのパッケージ化の準備](desktop-to-uwp-prepare.md)」を読み、アプリに該当する点があれば、Windows アプリ パッケージを作成する前に対処してください。</span><span class="sxs-lookup"><span data-stu-id="5effe-142">Next, review the article [Prepare to package your desktop app](desktop-to-uwp-prepare.md) and address any of the issues that apply to your app before you create a Windows app package for it.</span></span> <span data-ttu-id="5effe-143">パッケージを作成する前に、多くの変更を加える必要はないかもしれません。</span><span class="sxs-lookup"><span data-stu-id="5effe-143">You might not have to make many changes to your app before you create the package.</span></span> <span data-ttu-id="5effe-144">ただし、状況によっては、パッケージを作成する前にアプリへの調整が必要になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="5effe-144">However, there are a some situations that might require you to tweak your app before you create a package for it.</span></span>
 
-**Desktop App Converter (DAC)**。 DAC は、アプリを自動的に変換し、署名を行うツールです。 DAC の使用は便利で自動的です。アプリが多くのシステム変更を行う場合や、インストーラーについて不明確な点がある場合に役立ちます。 まず、「[Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md)」をご覧ください。 
+<span id="convert" />
+## <a name="package"></a><span data-ttu-id="5effe-145">パッケージ化</span><span class="sxs-lookup"><span data-stu-id="5effe-145">Package</span></span>
 
-**手動変換**。 xcopy を使用してアプリをインストールする場合や、インストーラーによるシステムへの変更点が明確である場合は、手動変換の選択が適していることがあります。 これには、マニフェスト ファイルの作成、MakeAppx.exe ツールの実行、アプリ パッケージへの署名が含まれます。 手動で変換する方法について詳しくは、「[Desktop Bridge を使って手動でアプリを UWP アプリに変換する](desktop-to-uwp-manual-conversion.md)」をご覧ください。 
+<span data-ttu-id="5effe-146">アプリの Windows アプリ パッケージを作成するには、以下のようなツールを使用できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-146">Here are some tools that you can use to create a Windows app package for your app.</span></span>
 
-**サードパーティ インストーラー**。 いくつかのよく使われるサードパーティの製品とインストーラーで、Desktop Bridge がサポートされるようになりました。数クリックで MSI インストーラーまたは変換済みのアプリ パッケージを生成できます。 該当する製品の例を以下に示します。 
+### <a name="desktop-app-converter"></a><span data-ttu-id="5effe-147">Desktop App Converter</span><span class="sxs-lookup"><span data-stu-id="5effe-147">Desktop App Converter</span></span>
 
-* [InstallShield (提供元: Flexera)](http://www.flexerasoftware.com/producer/products/software-installation/installshield-software-installer)
-* [WiX (提供元: FireGiant)](https://www.firegiant.com/r/appx) 
-* [Advanced Installer (提供元: Caphyon)](http://www.advancedinstaller.com/uwp-app-package)
-* [RAD Studio (提供元; Embarcadero)](https://www.embarcadero.com/products/rad-studio/windows-10-store-desktop-bridge) 
-* [InstallAware](https://www.installaware.com/appx.htm)
+<span data-ttu-id="5effe-148">このツールの名前には "Converter" という用語が含まれますが、実は、アプリの変換は行いません。</span><span class="sxs-lookup"><span data-stu-id="5effe-148">While the term "Converter" appears in the name of this tool, it doesn't actually convert your app.</span></span> <span data-ttu-id="5effe-149">アプリは変更されません。</span><span class="sxs-lookup"><span data-stu-id="5effe-149">Your app remains unchanged.</span></span> <span data-ttu-id="5effe-150">しかし、Windows アプリ パッケージが生成されます。</span><span class="sxs-lookup"><span data-stu-id="5effe-150">However, this tool generates a Windows app package for you.</span></span> <span data-ttu-id="5effe-151">アプリによって多くのシステム変更が行われる場合や、インストーラーの処理について不明確な点がある場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="5effe-151">It can be very convenient in cases where your app makes lots of system modifications, or if you have any uncertainty about what your installer does.</span></span>
 
-詳しくは、各インストーラーの Web サイトをご覧ください。 
+<span data-ttu-id="5effe-152">また、Desktop App Converter には、変換以外にも役に立つ機能があります。</span><span class="sxs-lookup"><span data-stu-id="5effe-152">The Desktop App Converter also does a few extra things for you.</span></span> <span data-ttu-id="5effe-153">その一部を次に示します。</span><span class="sxs-lookup"><span data-stu-id="5effe-153">Here's a few of them.</span></span>
 
-## <a name="enhance"></a>強化 
+* <span data-ttu-id="5effe-154">プレビュー ハンドラー、サムネイル ハンドラー、プロパティ ハンドラー、ファイアウォール規則、URL フラグを自動的に登録する。</span><span class="sxs-lookup"><span data-stu-id="5effe-154">Automatically register your preview handlers, thumbnail handlers, property handlers, firewall rules, URL flags.</span></span>
 
-変換されたデスクトップ アプリは、広範な UWP API で強化できます。ライブ タイルやプッシュ通知など、さまざまな機能を追加することができます。 完全なコード サンプルについては、GitHub のリポジトリで[デスクトップ アプリから UWP へのブリッジのコード サンプル](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)および[ユニバーサル Windows プラットフォーム (UWP) のアプリ サンプル](https://github.com/Microsoft/Windows-universal-samples)をご覧ください。 サポートされている API の一覧については、「[Desktop Bridge で変換されたアプリでサポートされている UWP API](desktop-to-uwp-supported-api.md)」をご覧ください。 
+* <span data-ttu-id="5effe-155">ファイルの種類のマッピングを自動的に登録する。これによりユーザーは、エクスプローラーの **[種類]** 列を使ってファイルをグループ化できるようになります。</span><span class="sxs-lookup"><span data-stu-id="5effe-155">Automatically register file type mappings that enable users to group files by using the **Kind** column in File Explorer.</span></span>
 
-UWP API の呼び出しのほか、変換されたアプリだけがアクセスできる機能でアプリを拡張することもできます。 ユーザーのログオン時のプロセスの起動やエクスプローラーの統合などに対応した機能があり、元のデスクトップ アプリと UWP アプリのフル パッケージの間でのスムーズな移行を目的として設計されています。 詳しくは、「[Desktop Bridge アプリの拡張機能](desktop-to-uwp-extensions.md)」をご覧ください。 
+* <span data-ttu-id="5effe-156">公開 COM サーバーを登録する。</span><span class="sxs-lookup"><span data-stu-id="5effe-156">Register your public COM servers.</span></span>
 
-## <a name="migrate"></a>移行
+* <span data-ttu-id="5effe-157">アプリの実行に使用できる証明書を生成する。</span><span class="sxs-lookup"><span data-stu-id="5effe-157">Generate a certificate to that you can use to run your app.</span></span>
 
-ブリッジを使用すると、Windows デスクトップでアプリを実行および公開する機能を維持しつつ、コードを徐々に UWP に移行できます。 UWP に完全に移行 (アプリに WPF/Win32 コンポーネントが含まれていない状態に) すると、スマートフォン、Xbox One、HoloLens などすべての Windows デバイスでの使用が可能になります。
+* <span data-ttu-id="5effe-158">デスクトップ ブリッジと Windows ストアの要件に照らしてアプリを検証する。</span><span class="sxs-lookup"><span data-stu-id="5effe-158">Validate your app against Desktop Bridge and Windows Store requirements.</span></span>
 
-## <a name="debug"></a>デバッグ
+<span data-ttu-id="5effe-159">「[Desktop App Converter を使用してアプリをパッケージ化する (Desktop to UWP Bridge)](desktop-to-uwp-run-desktop-app-converter.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5effe-159">See [Package an app using the Desktop App Converter (Desktop to UWP Bridge)](desktop-to-uwp-run-desktop-app-converter.md)</span></span>
 
-アプリは、Visual Studio を使ってデバッグできます。 詳しくは、「[Desktop Bridge で変換されたアプリのデバッグ](desktop-to-uwp-debug.md)」をご覧ください。 
+### <a name="manual-packaging"></a><span data-ttu-id="5effe-160">手動でのパッケージ化</span><span class="sxs-lookup"><span data-stu-id="5effe-160">Manual packaging</span></span>
 
-Desktop Bridge の内部的なしくみについては、「[Desktop Bridge の内側](desktop-to-uwp-behind-the-scenes.md)」をご覧ください。 
+<span data-ttu-id="5effe-161">変換をきめ細かく制御する場合は、マニフェスト ファイルを作成し、**MakeAppx.exe** ツールを実行して Windows アプリ パッケージを作成します。</span><span class="sxs-lookup"><span data-stu-id="5effe-161">If you like granular control over your conversion, you can create a manifest file, and then run the **MakeAppx.exe** tool to create your Windows app package.</span></span>
 
-## <a name="distribute"></a>配布
+<span data-ttu-id="5effe-162">この方法は、インストーラーによるシステムへの変更点が明確である場合や、インストーラーがなく、フォルダー場所へのファイルの物理コピーや **xcopy** などのコマンドの使用をアプリのインストール方法としている場合に適している可能性があります。</span><span class="sxs-lookup"><span data-stu-id="5effe-162">This approach might make sense if you're familiar with the changes that your installer makes to the system, or if you don't have an installer and the way that you install your app is by physically copying files to a folder location or by using commands like **xcopy**.</span></span> <span data-ttu-id="5effe-163">ただし、インストーラーがないことを理由にアプリを手動でパッケージ化することは、適切であるとは限りません。</span><span class="sxs-lookup"><span data-stu-id="5effe-163">Although don't let the absence of an installer move you to manually package your app.</span></span> <span data-ttu-id="5effe-164">Desktop App Converter を使用すると、インストーラーがなくてもアプリをパッケージ化できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-164">You can use the Desktop App Converter to package your app even if you don't have an installer.</span></span>
 
-アプリは、Windows ストアまたはサイドローディングを使用して配布できます。 詳しくは、「[Desktop Bridge で変換されたアプリの配布](desktop-to-uwp-distribute.md)」をご覧ください。 アプリは、ユーザー用に展開する前に、署名する必要があります。 手順については、「[Desktop Bridge を使用して変換したアプリに署名する](desktop-to-uwp-signing.md)」をご覧ください。 
+<span data-ttu-id="5effe-165">「[アプリを手動でパッケージ化する (Desktop to UWP Bridge)](desktop-to-uwp-manual-conversion.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5effe-165">See [Package an app manually (Desktop to UWP Bridge)](desktop-to-uwp-manual-conversion.md).</span></span>
 
-## <a name="support-and-feedback"></a>サポートとフィードバック
+### <a name="visual-studio"></a><span data-ttu-id="5effe-166">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="5effe-166">Visual Studio</span></span>
 
-アプリの変換で問題が発生した場合、ヘルプのために[フォーラム](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop)を利用できます。 
+<span data-ttu-id="5effe-167">このオプションは上に示した手動変換に似ていますが、Visual Studio では、アプリ パッケージやアプリのビジュアル資産を生成するなどの処理も自動的に行われます。</span><span class="sxs-lookup"><span data-stu-id="5effe-167">This option is similar to the manual option described above except Visual Studio does a few things for you such as generate an app package and the visual assets for your app.</span></span> <span data-ttu-id="5effe-168">Visual Studio は、アプリを手動でパッケージ化するために使用できる、便利な機能付きのツールであると考えることができます。</span><span class="sxs-lookup"><span data-stu-id="5effe-168">Think of Visual Studio as a tool that you can use to manually package your app along with a few extra conveniences.</span></span>
 
-フィードバックを提供したり、機能の提案を行うには、[UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial) で項目を提出するか賛成票を投じてください。 
+<span data-ttu-id="5effe-169">「[Visual Studio を使った .NET アプリのパッケージ化 (Desktop to UWP Bridge)](desktop-to-uwp-packaging-dot-net.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5effe-169">See [Package a .NET app by using Visual Studio (Desktop to UWP Bridge)](desktop-to-uwp-packaging-dot-net.md)</span></span>
 
-## <a name="in-this-section"></a>このセクションの内容
+### <a name="third-party-installer"></a><span data-ttu-id="5effe-170">サードパーティ インストーラー</span><span class="sxs-lookup"><span data-stu-id="5effe-170">Third-party installer</span></span>
 
-| トピック | 説明 |
+ <span data-ttu-id="5effe-171">いくつかのポピュラーなサード パーティ製品やインストーラーでは、Desktop to UWP Bridge がサポートされるようになりました。</span><span class="sxs-lookup"><span data-stu-id="5effe-171">Several popular third-party products and installers now support the Desktop to UWP Bridge.</span></span> <span data-ttu-id="5effe-172">これらを使用すると、わずか数クリックで MSI インストーラーやアプリ パッケージを生成することができます。</span><span class="sxs-lookup"><span data-stu-id="5effe-172">You can use them to generate MSI installers or app packages with only a few clicks.</span></span> <span data-ttu-id="5effe-173">これらのツールの使用方法について詳しくは、それぞれの製品の Web サイトをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5effe-173">While we don't produce documentation on how to use these tools, visit their websites to learn more.</span></span>
+
+ <span data-ttu-id="5effe-174">いくつかのオプションを次に示します。</span><span class="sxs-lookup"><span data-stu-id="5effe-174">Here's a few options:</span></span>
+
+#### <a name="advanced-installer"></a><span data-ttu-id="5effe-175">Advanced Installer</span><span class="sxs-lookup"><span data-stu-id="5effe-175">Advanced Installer</span></span>
+
+<span data-ttu-id="5effe-176">Caphyon は、わずか数回のクリックでアプリケーションの Windows アプリ パッケージを生成できる、GUI ベースのデスクトップ アプリ パッケージ作成ツールを無料で提供しています。</span><span class="sxs-lookup"><span data-stu-id="5effe-176">Caphyon provides a free, GUI-based, desktop app packaging tool that helps you to generate a Windows app package for your application with only a few clicks.</span></span> <span data-ttu-id="5effe-177">このツールでは、サイレント モードで実行されるものも含めて、どのようなインストーラーでもパッケージ化できます。また、アプリがパッケージ化に適しているかどうかを判断するための妥当性チェックも実行できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-177">It can use any installer; even ones that run in silent mode, and performs a validation check to determine whether the app is suitable for packaging.</span></span>
+<div style="float: left; padding: 10px; width: 20%">
+     ![Advanced Installer ロゴ](images/desktop-to-uwp/Advanced_Installer_Vertical.png)
+</div>
+<span data-ttu-id="5effe-179">Desktop App Converter は、Hyper-V および [VMware](http://www.vmware.com/) にも統合できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-179">The Desktop App Converter also integrates with Hyper-V and [VMware](http://www.vmware.com/).</span></span> <span data-ttu-id="5effe-180">つまり、独自の仮想マシンを使用することができるため、サイズが 3 GB を超える可能性がある [Docker](https://docs.docker.com/) イメージをダウンロードする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="5effe-180">This means that you can use your own virtual machines, without having to download a matching [Docker](https://docs.docker.com/) image that can be over 3GB in size.</span></span>
+
+<span data-ttu-id="5effe-181">[Advanced Installer](http://www.advancedinstaller.com/) を使用すると、既存のプロジェクトから MSI と [Windows アプリ パッケージ](http://www.advancedinstaller.com/uwp-app-package.html)を生成できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-181">You can use [Advanced Installer](http://www.advancedinstaller.com/) to generate MSI and [Windows app packages](http://www.advancedinstaller.com/uwp-app-package.html) from existing projects.</span></span> <span data-ttu-id="5effe-182">また、Advanced installer では、Microsoft Desktop App Converter を使用して生成した Windows アプリ パッケージをインポートすることもできます。</span><span class="sxs-lookup"><span data-stu-id="5effe-182">You can also use Advanced installer to import Windows app packages that you generate by using the Microsoft Desktop App Converter.</span></span> <span data-ttu-id="5effe-183">インポートしたアプリ パッケージは、UWP アプリ用に設計されたビジュアル ツールを使用して管理できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-183">Once imported, you can maintain them by using visual tools that are specifically designed for UWP apps.</span></span>
+
+<span data-ttu-id="5effe-184">Advanced Installer では、Visual Studio 2017 および 2015 用の拡張機能も提供されており、これらは[デスクトップ ブリッジ アプリのビルドとデバッグ](http://www.advancedinstaller.com/debug-desktop-bridge-apps.html)に使用できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-184">Advanced Installer also provides an extension for Visual Studio 2017 and 2015 that can use to [build and debug Desktop Bridge apps](http://www.advancedinstaller.com/debug-desktop-bridge-apps.html).</span></span>
+
+<span data-ttu-id="5effe-185">簡単な紹介については、こちらの[ビデオ](https://www.youtube.com/watch?v=cmLKgn04Vfg&feature=youtu.be)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5effe-185">See this [video](https://www.youtube.com/watch?v=cmLKgn04Vfg&feature=youtu.be) for a quick overview.</span></span>
+
+#### <a name="cloudhouse-compatibility-containers"></a><span data-ttu-id="5effe-186">Cloudhouse 互換性コンテナー</span><span class="sxs-lookup"><span data-stu-id="5effe-186">Cloudhouse Compatibility Containers</span></span>
+
+<span data-ttu-id="5effe-187">Windows 10 および Windows 10 S と互換性のない基幹業務アプリケーションを利用している企業ユーザーの場合、Cloudhouse の互換性コンテナーを使用すると、ソース コードを変更することなく Windows XP アプリケーションと Windows 7 アプリケーションを UWP に変換して、ビジネス向け Windows ストアや Microsoft Intune を通じて配布できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-187">For Enterprise customers who have line of business applications that are incompatible with Windows 10 and Windows 10 S, Cloudhouse’s Compatibility Containers enable Windows XP and Windows 7 apps to be converted to UWP and then delivered through the Windows Store for Business, or Microsoft Intune, without changing the source code.</span></span>
+<div style="float: left; padding: 10px; width: 20%">
+     ![Cloudhouse 互換性コンテナー](images/desktop-to-uwp/container.png)
+</div>
+<span data-ttu-id="5effe-189">Cloudhouse は、Auto Packager を提供しています。このツールは、任意のアプリケーションを受け取り、現在実行しているプラットフォーム (Windows XP など) でアプリをパッケージ化して、互換性コンテナーを作成します。</span><span class="sxs-lookup"><span data-stu-id="5effe-189">Cloudhouse provides an Auto Packager that takes any application, and creates a Compatibility Container by packaging the app where it runs today e.g. Windows XP.</span></span> <span data-ttu-id="5effe-190">コンテナーはその後、Desktop Bridge Converter ツールと統合して Windows アプリ パッケージを作成することで、新しい UWP 形式に変換できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-190">The Container can then be converted to the new UWP format by integrating with the Desktop Bridge Converter tool to create the Windows app package.</span></span>
+
+<span data-ttu-id="5effe-191">Auto Packager では、インストール/キャプチャおよび実行時分析を使用して、アプリケーション ファイルとレジストリおよび互換性とリダイレクト エンジンを含むアプリケーションのコンテナーを作成して、アプリケーションを Windows 10 で実行できるようにします。</span><span class="sxs-lookup"><span data-stu-id="5effe-191">The Auto Packager uses install / capture and runtime analysis to create a Container for the application which includes the application files and registry, and the compatibility and redirection engine that enables the application to run on Windows 10.</span></span> <span data-ttu-id="5effe-192">さらに、インストール済みの他のアプリケーションやランタイムへの影響や競合が発生しないように、アプリケーションの実行に必要な任意のランタイムや前提条件を含めたり、分離したりできます。</span><span class="sxs-lookup"><span data-stu-id="5effe-192">Plus you can include, and isolate, any runtimes or prerequisites required to run the application so that it does not affect or conflict with other applications or runtimes that may already be installed.</span></span>
+
+
+<span data-ttu-id="5effe-193">ユニバーサル Windows アプリとビジネス向け Windows ストアのサポートについて発表した同社の[ブログ](http://www.cloudhouse.com/resources/release-solution-to-get-any-line-of-business-app-to-uwp)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5effe-193">Check out their [blog](http://www.cloudhouse.com/resources/release-solution-to-get-any-line-of-business-app-to-uwp) announcing support for Universal Windows Apps and the Windows Store for Business.</span></span>
+
+#### <a name="firegiant"></a><span data-ttu-id="5effe-194">FireGiant</span><span class="sxs-lookup"><span data-stu-id="5effe-194">FireGiant</span></span>
+
+<span data-ttu-id="5effe-195">[FireGiant Appx 拡張機能](https://www.firegiant.com/products/wix-expansion-pack/appx)を使用すると、同一の WiX ソース コードから Windows アプリ パッケージと MSI パッケージを同時に作成できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-195">The [FireGiant Appx extension](https://www.firegiant.com/products/wix-expansion-pack/appx) lets you create Windows app packages and MSI packages simultaneously from the same WiX source code.</span></span> <span data-ttu-id="5effe-196">ビルドするたびに、Windows アプリ パッケージで Windows 10 のデスクトップ ブリッジをターゲットに、MSI で以前のバージョンの Windows ターゲットにすることができます。</span><span class="sxs-lookup"><span data-stu-id="5effe-196">Every time you build, you can target Desktop Bridge in Windows 10 with a Windows app package and earlier versions of Windows with MSI.</span></span>
+<div style="float: left; padding: 10px; width: 20%">
+     ![Advanced Installer ロゴ](images/desktop-to-uwp/FG3rdPartyLogo.png)
+</div>
+<span data-ttu-id="5effe-198">FireGiant Appx 拡張機能では、WiX プロジェクトの静的分析とインテリジェント エミュレーションを使用して、コンテナーや仮想マシンによるディスク領域や実行時のオーバーヘッドが生じることなく、Windows アプリ パッケージを作成します。</span><span class="sxs-lookup"><span data-stu-id="5effe-198">The FireGiant Appx extension uses static analysis and intelligent emulation of your WiX projects to create Windows app packages without the disk space and runtime overhead of containers or virtual machines.</span></span>
+
+<span data-ttu-id="5effe-199">FireGiant Appx 拡張機能は、実行することでインストーラーを変換するわけではありません。そのため、インストーラーを繰り返し Windows アプリ パッケージに変換する必要はなく、WiX インストーラーをそのまま維持できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-199">Because the FireGiant Appx extension doesn't convert your installer by running it, you can maintain your WiX installer without having to repeatedly convert it to Windows app packages.</span></span> <span data-ttu-id="5effe-200">さまざまな Windows バージョンのユーザーはすべて、最新の機能強化を入手できます。MSI と Windows アプリ パッケージが同期していないことを開発者が心配する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="5effe-200">All your users on different versions of Windows get your latest improvements and you don't have to worry about MSI and Windows app packages getting out of sync.</span></span>
+
+<span data-ttu-id="5effe-201">こちらの[ビデオ](https://www.youtube.com/watch?v=AFBpdBiAYQE)で、FireGiant CEO の Rob Mensching が数行のコードで人気のオープンソース 7-Zip 圧縮ツールの Appx (Windows アプリ パッケージ) バージョンを作成した方法や、同じ WiX ソース コードに変更を加えて Windows アプリ パッケージと MSI パッケージの両方を強化した方法を確認してください。</span><span class="sxs-lookup"><span data-stu-id="5effe-201">Check out this [video](https://www.youtube.com/watch?v=AFBpdBiAYQE) and see how in a couple lines of code FireGiant CEO Rob Mensching creates an Appx (Windows app package) version of the popular open-source 7-Zip compression tool and then how he improves both Windows app and MSI packages with changes in the same WiX source code.</span></span>
+
+#### <a name="installaware"></a><span data-ttu-id="5effe-202">InstallAware</span><span class="sxs-lookup"><span data-stu-id="5effe-202">InstallAware</span></span>
+
+<span data-ttu-id="5effe-203">Install**Aware** は、Visual Studio バージョン 2012 ～ 2017 に無料の Install**Aware** 拡張機能を提供しています。</span><span class="sxs-lookup"><span data-stu-id="5effe-203">Install**Aware** provides free Install**Aware** extensions for Visual Studio versions 2012-2017.</span></span> <span data-ttu-id="5effe-204">これを使用すると、[Visual Studio ツールバー](https://www.installaware.com/visual-studio-installer-2015.htm)から直接 1 回クリックするだけで、Windows アプリ パッケージを作成できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-204">You can use them to create Windows app packages with a single click directly from the [Visual Studio toolbar](https://www.installaware.com/visual-studio-installer-2015.htm).</span></span>
+<div style="float: left; padding: 10px; width: 20%">
+    ![FireGiant ロゴ](images/desktop-to-uwp/installaware.png)
+</div>
+<span data-ttu-id="5effe-206">また、そのセットアップのソース コードがない場合でも、Package**Aware** (スナップショットなしのセットアップ キャプチャ) または Database Import Wizard (すべての MSI インストーラーと MSM マージ モジュール用) を使用して、任意のセットアップをインポートできます。</span><span class="sxs-lookup"><span data-stu-id="5effe-206">You can also import any setup, even if you don't have the source code for that setup, by using Package**Aware** (snapshot-free setup captures), or the Database Import Wizard (for all MSI installers and MSM merge modules).</span></span> <span data-ttu-id="5effe-207">[GUI ツール](https://www.installaware.com/scripting-two-way-integrated-ide.htm)を使用して、視覚的な方法またはスクリプトによって、インポートの保守と強化ができます。</span><span class="sxs-lookup"><span data-stu-id="5effe-207">You can use [GUI tools](https://www.installaware.com/scripting-two-way-integrated-ide.htm) to maintain and enhance your imports, visually or by scripting.</span></span>
+
+<span data-ttu-id="5effe-208">[高度な APPX 作成オプション](https://www.installaware.com/mhtml5/desktop/appx.htm)を利用すると、Windows ストア申請のターゲットや、エンドユーザーに配布するサイドロード用の署名付き Windows アプリ パッケージ バイナリの生成が容易になります。</span><span class="sxs-lookup"><span data-stu-id="5effe-208">[Advanced APPX creation options](https://www.installaware.com/mhtml5/desktop/appx.htm) help you target Windows Store submissions, or produce signed Windows app package binaries for sideload distribution to end-users.</span></span> <span data-ttu-id="5effe-209">**Nano Server** に展開することを目的とした **WSA** (Windows Server アプリケーション) インストーラー パッケージをすべて 1 つのソースからビルドすることもできます。また、GUI に加えて、[コマンド ライン自動化](https://www.installaware.com/scripting-automation-interface.htm)の完全なサポートが提供されます。</span><span class="sxs-lookup"><span data-stu-id="5effe-209">You can even build **WSA**(Windows Server Applications) Installer packages that target deployments to **Nano Server** all from a single source, and with full support for [command line automation](https://www.installaware.com/scripting-automation-interface.htm), in addition to a GUI.</span></span>
+
+<span data-ttu-id="5effe-210">Install**Aware** では、GNU Affero GPL ライセンスの下で **APPX Builder Library** を[オープン ソース](https://www.installaware.com/gnu.asp)にしており、コマンド ライン アプレットの例と一緒に公開しています。</span><span class="sxs-lookup"><span data-stu-id="5effe-210">Install**Aware** also [open sourced](https://www.installaware.com/gnu.asp) an **APPX builder library**, together with an example command line applet, under the GNU Affero GPL license.</span></span> <span data-ttu-id="5effe-211">これらは、WiX などのオープン ソース プラットフォームで使用することを目的としています。</span><span class="sxs-lookup"><span data-stu-id="5effe-211">These are designed for use with open source platforms such as WiX.</span></span>
+
+#### <a name="installshield"></a><span data-ttu-id="5effe-212">InstallShield</span><span class="sxs-lookup"><span data-stu-id="5effe-212">InstallShield</span></span>
+
+<span data-ttu-id="5effe-213">InstallShield は、MSI インストーラーと EXE インストーラーの開発、ユニバーサル Windows プラットフォーム (UWP) パッケージと Windows Server App (WSA) パッケージの作成、およびアプリケーションの仮想化を最小限のスクリプト作成、コーデイング、および作業のやり直しで実現する単一のソリューションを提供します。</span><span class="sxs-lookup"><span data-stu-id="5effe-213">InstallShield provides a single solution to develop MSI and EXE installers, create Universal Windows Platform (UWP) and Windows Server App (WSA) packages, and virtualize applications with minimal scripting, coding and rework.</span></span>
+<div style="float: left; padding: 10px; width: 20%">
+    ![InstallShield ロゴ](images/desktop-to-uwp/InstallShield-logo.jpg)
+</div>
+<span data-ttu-id="5effe-215">InstallShield プロジェクトを数秒でスキャンし、アプリケーションと UWP/WSA パッケージの間の潜在的な互換性の問題を自動的に特定することで、調査にかかる時間を短縮できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-215">Scan your InstallShield project in seconds to save hours of investigative work by automatically identifying potential compatibility issues between your application and UWP and WSA packages.</span></span>
+
+<span data-ttu-id="5effe-216">既存の InstallShield プロジェクトから UWP アプリ パッケージをビルドすることで、Windows ストアに公開する準備をし、Windows 10 におけるソフトウェアのインストール エクスペリエンスを簡略化します。</span><span class="sxs-lookup"><span data-stu-id="5effe-216">Prepare for the Windows Store and simplify your software’s installation experience on Windows 10 by building UWP app packages from your existing InstallShield projects.</span></span> <span data-ttu-id="5effe-217">Windows インストーラーと UWP アプリ パッケージの両方をビルドし、顧客の希望する展開シナリオをすべてサポートします。</span><span class="sxs-lookup"><span data-stu-id="5effe-217">Build both Windows Installer and UWP App Packages to support all of your customers’ desired deployment scenarios.</span></span> <span data-ttu-id="5effe-218">既存の InstallShield プロジェクトから WSA パッケージをビルドし、Nano Server と Windows Server 2016 の展開をサポートします。</span><span class="sxs-lookup"><span data-stu-id="5effe-218">Support Nano Server and Windows Server 2016 deployments by building WSA packages from your existing InstallShield projects.</span></span>
+
+<span data-ttu-id="5effe-219">展開と保守が容易になるように、インストールをモジュール単位で開発します。その後、コンポーネントと依存関係をビルド時にマージして、Windows ストア向けの 1 つの UWP アプリ パッケージにします。</span><span class="sxs-lookup"><span data-stu-id="5effe-219">Develop your installation in modules for easier deployment and maintenance, and then merge the components and dependencies at build time into a single UWP app package for the Windows Store.</span></span> <span data-ttu-id="5effe-220">ストア外部で直接配布できるようにするには、UWP アプリ パッケージとその他の依存関係を Suite/Advanced UI インストーラーにバンドルします。</span><span class="sxs-lookup"><span data-stu-id="5effe-220">For direct distribution outside the store, bundle your UWP App Packages and other dependencies together with a Suite/Advanced UI installer.</span></span>
+
+<span data-ttu-id="5effe-221">詳細はこちらの [eBook](https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fresources.flexerasoftware.com%2Fweb%2Fpdf%2FeBook-IS-Your-Fast-Track-to-Profit.pdf&data=02%7C01%7Cnormesta%40microsoft.com%7C86b9a00bc8e345c2ac6208d4ba464802%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C1%7C636338258409706554&sdata=IAYNp9nFc8B5ayxwrs%2FQTWowUmOda6p%2Fn%2BjdHea257M%3D&reserved=0) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5effe-221">Learn more in this [eBook](https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fresources.flexerasoftware.com%2Fweb%2Fpdf%2FeBook-IS-Your-Fast-Track-to-Profit.pdf&data=02%7C01%7Cnormesta%40microsoft.com%7C86b9a00bc8e345c2ac6208d4ba464802%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C1%7C636338258409706554&sdata=IAYNp9nFc8B5ayxwrs%2FQTWowUmOda6p%2Fn%2BjdHea257M%3D&reserved=0).</span></span>
+
+
+#### <a name="rad-studio"></a><span data-ttu-id="5effe-222">RAD Studio</span><span class="sxs-lookup"><span data-stu-id="5effe-222">RAD Studio</span></span>
+
+<span data-ttu-id="5effe-223">[RAD Studio (提供元: Embarcadero)](https://www.embarcadero.com/products/rad-studio/windows-10-store-desktop-bridge) のページをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5effe-223">See [RAD Studio by Embarcadero](https://www.embarcadero.com/products/rad-studio/windows-10-store-desktop-bridge)</span></span>
+
+## <a name="integrate"></a><span data-ttu-id="5effe-224">統合</span><span class="sxs-lookup"><span data-stu-id="5effe-224">Integrate</span></span>
+
+<span data-ttu-id="5effe-225">アプリをシステムと統合する必要がある場合 (ファイアウォール規則を確立する場合など)、アプリのパッケージ マニフェストにそのことを記述すると、システムによって残りの処理が行われます。</span><span class="sxs-lookup"><span data-stu-id="5effe-225">If your app needs to integrate with the system (For example: establish firewall rules), describe those things in the package manifest of your app and the system will do the rest.</span></span> <span data-ttu-id="5effe-226">これらのタスクのほとんどは、まったくコードを記述する必要がありません。</span><span class="sxs-lookup"><span data-stu-id="5effe-226">For most of these tasks, you won't have to write any code at all.</span></span> <span data-ttu-id="5effe-227">マニフェストに少し XML を追加するだけで、ユーザーがログオンしたときにプロセスを開始する、アプリをエクスプローラーに統合する、他のアプリに表示される印刷先の一覧に対象アプリを追加する、などの処理を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="5effe-227">With a bit of XML in the manifest, you can do things like start a process when the user logs on, integrate your app into File Explorer, and add your app a list of print targets that appear in other apps.</span></span>
+
+<span data-ttu-id="5effe-228">「[Windows 10 にアプリを統合する (Windows デスクトップ ブリッジ)](desktop-to-uwp-extensions.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5effe-228">See [Integrate your app with Windows 10 (Windows Desktop Bridge)](desktop-to-uwp-extensions.md).</span></span>
+
+## <a name="enhance"></a><span data-ttu-id="5effe-229">強化</span><span class="sxs-lookup"><span data-stu-id="5effe-229">Enhance</span></span>
+
+<span data-ttu-id="5effe-230">アプリをパッケージ化すると、ライブ タイルやプッシュ通知などの機能を追加できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-230">Once you've packaged your app, you can light it up with features such as live tiles, and push notifications.</span></span> <span data-ttu-id="5effe-231">このような機能の中には、ほとんど時間をかけずに追加して、アプリのエンゲージメント レベルを大幅に向上できるものもあります。</span><span class="sxs-lookup"><span data-stu-id="5effe-231">Some of these capabilities can significantly improve the engagement level of your app and they cost you very little time to add.</span></span> <span data-ttu-id="5effe-232">もう少しコードの追加が必要になるものもあります。</span><span class="sxs-lookup"><span data-stu-id="5effe-232">Some enhancements require a bit more code.</span></span>
+
+<span data-ttu-id="5effe-233">「[Windows 10 向けのデスクトップ アプリを強化する](desktop-to-uwp-enhance.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5effe-233">See [Enhance your desktop application for Windows 10](desktop-to-uwp-enhance.md).</span></span>
+
+## <a name="extend"></a><span data-ttu-id="5effe-234">拡張</span><span class="sxs-lookup"><span data-stu-id="5effe-234">Extend</span></span>
+
+<span data-ttu-id="5effe-235">一部の Windows 10 エクスペリエンス (タッチ対応 UI ページなど) は、最新のアプリ コンテナー内で実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5effe-235">Some Windows 10 experiences (For example: a touch-enabled UI page) must run inside of a modern app container.</span></span> <span data-ttu-id="5effe-236">一般的に、UWP API を使用して既存のデスクトップ アプリケーションを[強化](desktop-to-uwp-enhance.md)することでエクスペリエンスを追加できるかどうかを最初に判断する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5effe-236">In general, you should first determine whether you can add your experience by [Enhancing](desktop-to-uwp-enhance.md) your existing desktop application with UWP APIs.</span></span> <span data-ttu-id="5effe-237">エクスペリエンスを実現するために UWP コンポーネントを使用する必要がある場合、ソリューションに UWP コンポーネントを追加すると、アプリ サービスを使用してデスクトップ アプリと UWP コンポーネントの間で通信を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="5effe-237">If you have to use a UWP component, to achieve the experience, then you can add a UWP project to your solution and use app services to communicate between your desktop app and the UWP component.</span></span>
+
+<span data-ttu-id="5effe-238">「[最新の UWP コンポーネントによるデスクトップ アプリケーションの拡張](desktop-to-uwp-extend.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5effe-238">See [Extend your desktop application with modern UWP components](desktop-to-uwp-extend.md).</span></span>
+
+## <a name="migrate"></a><span data-ttu-id="5effe-239">移行</span><span class="sxs-lookup"><span data-stu-id="5effe-239">Migrate</span></span>
+
+<span data-ttu-id="5effe-240">Windows デスクトップでアプリを実行および公開する機能を維持しつつ、コードを徐々に UWP に移行できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-240">You can gradually migrate your older code to UWP while still retaining the ability to run and publish your app on Windows Desktop.</span></span> <span data-ttu-id="5effe-241">UWP に完全に移行 (アプリに WPF/Win32 コンポーネントが含まれていない状態に) すると、スマートフォン、Xbox One、HoloLens などすべての Windows デバイスでの使用が可能になります。</span><span class="sxs-lookup"><span data-stu-id="5effe-241">Once you’re fully migrated to UWP (and your app no longer contains any WPF/Win32 components), you can reach all Windows devices including phones, Xbox One and HoloLens.</span></span>
+
+## <a name="test"></a><span data-ttu-id="5effe-242">テスト</span><span class="sxs-lookup"><span data-stu-id="5effe-242">Test</span></span>
+
+<span data-ttu-id="5effe-243">配布用の準備の一環として現実的な設定でアプリをテストするには、アプリに署名し、インストールすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="5effe-243">To test your app in a realistic setting as you prepare for distribution, it's best to sign your app and then install it.</span></span> <span data-ttu-id="5effe-244">「[アプリのテスト](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-debug#test-your-app)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5effe-244">See [Test your app](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-debug#test-your-app).</span></span>
+
+>[!IMPORTANT]
+> <span data-ttu-id="5effe-245">Windows ストアにアプリを公開する場合は、Windows 10 S を実行するデバイスでアプリが正しく動作することを確認してください。これは、ストア要件です。</span><span class="sxs-lookup"><span data-stu-id="5effe-245">If you plan to publish your app to the Windows Store, make sure that your app operates correctly on devices that run Windows 10 S. This is a store requirement.</span></span> <span data-ttu-id="5effe-246">「[Windows アプリの Windows 10 S 対応をテストする](desktop-to-uwp-test-windows-s.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5effe-246">See [Test your Windows app for Windows 10  S](desktop-to-uwp-test-windows-s.md).</span></span>
+
+## <a name="validate"></a><span data-ttu-id="5effe-247">検証</span><span class="sxs-lookup"><span data-stu-id="5effe-247">Validate</span></span>
+
+<span data-ttu-id="5effe-248">作成したアプリを Windows ストアに公開する、または、[Windows 認定](http://go.microsoft.com/fwlink/p/?LinkID=309666)を受ける一番の方法は、認定のためアプリを提出する前に、ローカルでアプリの検証とテストを行うことです。</span><span class="sxs-lookup"><span data-stu-id="5effe-248">To give your app the best chance of being published on the Windows Store or becoming [Windows Certified](http://go.microsoft.com/fwlink/p/?LinkID=309666), validate and test it locally before you submit it for certification.</span></span>
+
+<span data-ttu-id="5effe-249">DAC を使ってアプリをパッケージ化する場合は、新しい ``-Verify`` フラグを使用することで、デスクトップ ブリッジとストアの要件に照らしてパッケージを検証できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-249">If you're using the DAC to package your app, you can use the new ``-Verify`` flag to validate your package against the Desktop Bridge and Store requirements.</span></span> <span data-ttu-id="5effe-250">「[アプリをパッケージ化し、アプリに署名して、ストアへの提出に備える](desktop-to-uwp-run-desktop-app-converter.md#optional-parameters)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5effe-250">See [Package an app, sign the app, and prepare it for store submission](desktop-to-uwp-run-desktop-app-converter.md#optional-parameters).</span></span>
+
+<span data-ttu-id="5effe-251">Visual Studio を使用している場合は、**アプリ パッケージの作成**ウィザードでアプリを検証できます。</span><span class="sxs-lookup"><span data-stu-id="5effe-251">If you're using Visual Studio, you can validate your app from the **Create App Packages** wizard.</span></span> <span data-ttu-id="5effe-252">「[アプリ パッケージを作成する](../packaging/packaging-uwp-apps.md#create-an-app-package)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5effe-252">See [Create an app package](../packaging/packaging-uwp-apps.md#create-an-app-package).</span></span>
+
+<span data-ttu-id="5effe-253">ツールを手動で実行する方法については、「[Windows アプリ認定キット](../debug-test-perf/windows-app-certification-kit.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5effe-253">To run the tool manually, see [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md).</span></span>
+
+<span data-ttu-id="5effe-254">Windows アプリ認定でアプリの検証に使用されるテストの一覧を確認するには、「[Windows デスクトップ ブリッジ アプリのテスト](../debug-test-perf/windows-desktop-bridge-app-tests.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5effe-254">To review the list of tests that the Windows App Certification uses to validate your app, see [Windows Desktop Bridge app tests](../debug-test-perf/windows-desktop-bridge-app-tests.md).</span></span>
+
+## <a name="distribute"></a><span data-ttu-id="5effe-255">配布</span><span class="sxs-lookup"><span data-stu-id="5effe-255">Distribute</span></span>
+
+<span data-ttu-id="5effe-256">他のシステムにサイドローディングするか、Windows ストアに公開することで、アプリを配布することができます。</span><span class="sxs-lookup"><span data-stu-id="5effe-256">You can distribute your app by publishing it the Windows Store or by sideloading it onto other systems.</span></span>
+
+<span data-ttu-id="5effe-257">「[パッケージ デスクトップ アプリの配布 (デスクトップ ブリッジ)](desktop-to-uwp-distribute.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5effe-257">See [Distribute a packaged desktop app (Desktop Bridge)](desktop-to-uwp-distribute.md).</span></span>
+
+## <a name="support-and-feedback"></a><span data-ttu-id="5effe-258">サポートとフィードバック</span><span class="sxs-lookup"><span data-stu-id="5effe-258">Support and feedback</span></span>
+
+**<span data-ttu-id="5effe-259">特定の質問に対する回答を見つける</span><span class="sxs-lookup"><span data-stu-id="5effe-259">Find answers to specific questions</span></span>**
+
+<span data-ttu-id="5effe-260">マイクロソフトのチームでは、[StackOverflow タグ](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)をチェックしています。</span><span class="sxs-lookup"><span data-stu-id="5effe-260">Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).</span></span>
+
+**<span data-ttu-id="5effe-261">フィードバックの提供または機能の提案を行う</span><span class="sxs-lookup"><span data-stu-id="5effe-261">Give feedback or make feature suggestions</span></span>**
+
+<span data-ttu-id="5effe-262">[UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial) のページをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5effe-262">See [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)</span></span>
+
+**<span data-ttu-id="5effe-263">この記事に関するフィードバックを送信する</span><span class="sxs-lookup"><span data-stu-id="5effe-263">Give feedback about this article</span></span>**
+
+<span data-ttu-id="5effe-264">下のコメント セクションをご利用ください。</span><span class="sxs-lookup"><span data-stu-id="5effe-264">Use the comments section below.</span></span>
+
+## <a name="in-this-section"></a><span data-ttu-id="5effe-265">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="5effe-265">In this section</span></span>
+
+| <span data-ttu-id="5effe-266">トピック</span><span class="sxs-lookup"><span data-stu-id="5effe-266">Topic</span></span> | <span data-ttu-id="5effe-267">説明</span><span class="sxs-lookup"><span data-stu-id="5effe-267">Description</span></span> |
 |-------|-------------|
-| [Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md) | Desktop App Converter を実行する方法が説明されています。 |
-| [Desktop Bridge を使って手動でアプリを UWP アプリに変換する](desktop-to-uwp-manual-conversion.md) | 手動でアプリ パッケージとマニフェストを作成する方法について説明します。 |
-| [Desktop Bridge アプリの拡張機能](desktop-to-uwp-extensions.md) | 拡張機能を使って、スタートアップ タスクやエクスプローラー統合などの機能を有効にして、変換済みのアプリを強化します。 |
-| [Desktop Bridge で変換されたアプリでサポートされている UWP API](desktop-to-uwp-supported-api.md) | 変換されたデスクトップ アプリで利用可能な UWP API を確認します。 |
-| [Visual Studio による .NET デスクトップ アプリ用デスクトップ ブリッジ パッケージ ガイド](desktop-to-uwp-packaging-dot-net.md) | .NET アプリを編集、デバッグ、パッケージ化できるように Visual Studio ソリューションを構成します。 | 
-| [デスクトップ ブリッジで変換されたアプリのデバッグ](desktop-to-uwp-debug.md) | 変換済みのアプリをデバッグするためのオプションについて説明します。 | 
-| [Desktop Bridge を使用して変換したアプリに署名する](desktop-to-uwp-signing.md) | 証明書を使って変換済みのアプリ パッケージに署名する方法について説明します。 |
-| [Desktop Bridge で変換されたアプリの配布](desktop-to-uwp-distribute.md) | 変換済みのアプリをユーザーに配布する方法を確認します。  |
-| [Desktop Bridge の内側](desktop-to-uwp-behind-the-scenes.md) | Desktop to UWP Bridge の内部的な処理について詳しく説明します。 | 
-| [Desktop Bridge に関する既知の問題](desktop-to-uwp-known-issues.md) | Desktop to UWP Bridge に関する既知の問題について説明します。 | 
-| [デスクトップ アプリから UWP へのブリッジのコード サンプル](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | 変換されたアプリの機能を示す GitHub のコード サンプルです。 |
+| [<span data-ttu-id="5effe-268">アプリのパッケージ化の準備</span><span class="sxs-lookup"><span data-stu-id="5effe-268">Prepare to package an app</span></span>](desktop-to-uwp-prepare.md) | <span data-ttu-id="5effe-269">デスクトップ アプリをパッケージ化する前に確認する項目の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="5effe-269">Provides a list of items to review before you package your desktop app.</span></span> |
+| [<span data-ttu-id="5effe-270">Desktop App Converter を使用してアプリをパッケージ化する (デスクトップ ブリッジ)</span><span class="sxs-lookup"><span data-stu-id="5effe-270">Package an app using the Desktop App Converter (Desktop Bridge)</span></span>](desktop-to-uwp-run-desktop-app-converter.md) | <span data-ttu-id="5effe-271">Desktop App Converter を実行する方法が説明されています。</span><span class="sxs-lookup"><span data-stu-id="5effe-271">Shows how to run Desktop App Converter.</span></span> |
+| [<span data-ttu-id="5effe-272">アプリを手動でパッケージ化する (デスクトップ ブリッジ)</span><span class="sxs-lookup"><span data-stu-id="5effe-272">Package an app manually (Desktop Bridge)</span></span>](desktop-to-uwp-manual-conversion.md) | <span data-ttu-id="5effe-273">手動でアプリ パッケージとマニフェストを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="5effe-273">Learn how to create an app package and manifest to by hand.</span></span> |
+| [<span data-ttu-id="5effe-274">Visual Studio を使った .NET アプリのパッケージ化 (デスクトップ ブリッジ)</span><span class="sxs-lookup"><span data-stu-id="5effe-274">Package a .NET app using Visual Studio (Desktop Bridge)</span></span>](desktop-to-uwp-packaging-dot-net.md)| <span data-ttu-id="5effe-275">Visual Studio を使ってデスクトップ アプリをパッケージ化する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="5effe-275">Shows you how to package your desktop app by using Visual Studio.</span></span> |
+| [<span data-ttu-id="5effe-276">Windows 10 にアプリを統合する (デスクトップ ブリッジ)</span><span class="sxs-lookup"><span data-stu-id="5effe-276">Integrate your app with Windows 10 (Desktop Bridge)</span></span>](desktop-to-uwp-extensions.md) | <span data-ttu-id="5effe-277">パッケージ プロジェクトのパッケージ マニフェスト ファイルにタスクを記述することで、アプリを Windows 10 と統合します。</span><span class="sxs-lookup"><span data-stu-id="5effe-277">Integrate your app with Windows 10 by using by describing tasks in the package manifest file of your packaging project.</span></span> |
+| [<span data-ttu-id="5effe-278">Windows 10 向けのデスクトップ アプリを強化する</span><span class="sxs-lookup"><span data-stu-id="5effe-278">Enhance your desktop application for Windows 10</span></span>](desktop-to-uwp-enhance.md)| <span data-ttu-id="5effe-279">UWP API を使用して、Windows 10 ユーザーの利便性を高める最新のエクスペリエンスを追加します。</span><span class="sxs-lookup"><span data-stu-id="5effe-279">Use UWP APIs to add modern experiences that light up for Windows 10 users.</span></span> |
+| [<span data-ttu-id="5effe-280">パッケージ デスクトップ アプリで利用可能な UWP API (デスクトップ ブリッジ)</span><span class="sxs-lookup"><span data-stu-id="5effe-280">UWP APIs available to a packaged desktop app (Desktop Bridge)</span></span>](desktop-to-uwp-supported-api.md) | <span data-ttu-id="5effe-281">パッケージ化されたデスクトップ アプリで利用可能な UWP API を確認します。</span><span class="sxs-lookup"><span data-stu-id="5effe-281">See what UWP APIs are available for your packaged desktop app to use.</span></span> |
+| [<span data-ttu-id="5effe-282">最新の UWP コンポーネントによるデスクトップ アプリケーションの拡張</span><span class="sxs-lookup"><span data-stu-id="5effe-282">Extend your desktop application with modern UWP components</span></span>](desktop-to-uwp-extend.md)| <span data-ttu-id="5effe-283">UWP アプリ コンテナー内で実行する必要がある高度なエクスペリエンスを追加します。</span><span class="sxs-lookup"><span data-stu-id="5effe-283">Add advanced experiences that must run within a UWP app container.</span></span> <span data-ttu-id="5effe-284">アプリ サービスを使用してデスクトップ アプリと UWP プロセスを接続します。</span><span class="sxs-lookup"><span data-stu-id="5effe-284">Connect your desktop app with the UWP process by using app services.</span></span>|
+| [<span data-ttu-id="5effe-285">パッケージ デスクトップ アプリの実行、デバッグ、テスト (デスクトップ ブリッジ)</span><span class="sxs-lookup"><span data-stu-id="5effe-285">Run, debug, and test a packaged desktop app (Desktop Bridge)</span></span>](desktop-to-uwp-debug.md) | <span data-ttu-id="5effe-286">パッケージ化されたアプリをデバッグするためのオプションについて説明します。</span><span class="sxs-lookup"><span data-stu-id="5effe-286">Explains options for debugging your packaged app.</span></span> |
+| [<span data-ttu-id="5effe-287">パッケージ デスクトップ アプリの配布 (デスクトップ ブリッジ)</span><span class="sxs-lookup"><span data-stu-id="5effe-287">Distribute a packaged desktop app (Desktop Bridge)</span></span>](desktop-to-uwp-distribute.md) | <span data-ttu-id="5effe-288">変換済みのアプリをユーザーに配布する方法を確認します。</span><span class="sxs-lookup"><span data-stu-id="5effe-288">See how you can distribute your converted app to users.</span></span>  |
+| [<span data-ttu-id="5effe-289">デスクトップ ブリッジの内側 (デスクトップ ブリッジ)</span><span class="sxs-lookup"><span data-stu-id="5effe-289">Behind the scenes of the Desktop Bridge (Desktop Bridge)</span></span>](desktop-to-uwp-behind-the-scenes.md) | <span data-ttu-id="5effe-290">Desktop to UWP Bridge の内部的な処理について詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="5effe-290">Take a deeper dive on how the Desktop to UWP Bridge works under the covers.</span></span> |
+| [<span data-ttu-id="5effe-291">既知の問題 (デスクトップ ブリッジ)</span><span class="sxs-lookup"><span data-stu-id="5effe-291">Known Issues (Desktop Bridge)</span></span>](desktop-to-uwp-known-issues.md) | <span data-ttu-id="5effe-292">Desktop to UWP Bridge に関する既知の問題について説明します。</span><span class="sxs-lookup"><span data-stu-id="5effe-292">Lists known issues with the Desktop to UWP Bridge.</span></span> |
+| [<span data-ttu-id="5effe-293">デスクトップ ブリッジのコード サンプル</span><span class="sxs-lookup"><span data-stu-id="5effe-293">Desktop Bridge code samples</span></span>](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | <span data-ttu-id="5effe-294">変換されたアプリの機能を示す GitHub のコード サンプルです。</span><span class="sxs-lookup"><span data-stu-id="5effe-294">Code samples on GitHub demonstrating features of converted apps.</span></span> |

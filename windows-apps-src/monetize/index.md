@@ -1,45 +1,43 @@
 ---
 author: mcleanbyron
 ms.assetid: 4e8cc0c0-b14c-472c-9e1c-4601d10289d2
-description: "Windows SDK、Microsoft Store Services SDK、および Windows ストアは、アプリによる収益の向上と顧客エンゲージメントによるユーザー獲得のための、多くの機能を提供します。"
-title: "収益化、顧客エンゲージメント、ストア サービス"
+description: "Windows SDK、 Microsoft Advertising SDK、Microsoft Store Services SDK、および Windows ストアは、アプリによる収益の向上と顧客エンゲージメントによるユーザー獲得のための、多くの機能を提供します。"
+title: "収益化、エンゲージメント、ストア サービス"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/05/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 収益化, エンゲージメント, プロモーション, ストア サービス"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5a3497d5aa1c8a4415b7b4fb9f7888448ae74f9f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e2bb53135234e1f9f44e27693e03d0ce95329448
+ms.sourcegitcommit: 10f8dcf69d37cdb61562fc9f4d268ccb499c368f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/07/2017
 ---
+# <a name="monetization-engagement-and-store-services"></a><span data-ttu-id="89c54-104">収益化、エンゲージメント、ストア サービス</span><span class="sxs-lookup"><span data-stu-id="89c54-104">Monetization, engagement, and Store services</span></span>
 
-# <a name="monetization-customer-engagement-and-store-services"></a>収益化、顧客エンゲージメント、ストア サービス
+<span data-ttu-id="89c54-105">Windows SDK、 Microsoft Advertising SDK、Microsoft Store Services SDK、および Windows ストアは、アプリによる収益の向上と顧客エンゲージメントによるユーザー獲得のための機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="89c54-105">The Windows SDK, Microsoft Advertising SDK, Microsoft Store Services SDK, and the Windows Store provide features that enable you to make more money from your apps and gain customers by engaging with your users.</span></span> <span data-ttu-id="89c54-106">このセクションのトピックでは、これらの機能をアプリに組み込む方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="89c54-106">The topics in this section show you how to build these features into your app.</span></span>
 
-Windows SDK、Microsoft Store Services SDK、および Windows ストアは、アプリによる収益の向上と顧客エンゲージメントによるユーザー獲得のための、多くの機能を提供します。 このセクションのトピックでは、これらの機能をアプリに組み込む方法について説明します。
+<span data-ttu-id="89c54-107">Windows ストアの手数料に関する説明とアプリの収益を受け取る方法について詳しくは、「[支払いの受け取り](https://msdn.microsoft.com/library/windows/apps/mt148536)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="89c54-107">For details about the fees charged by the Windows Store and how you get paid for the money your app makes, see [Getting paid](https://msdn.microsoft.com/library/windows/apps/mt148536).</span></span>
 
-Windows ストアの手数料に関する説明とアプリの収益を受け取る方法について詳しくは、「[支払いの受け取り](https://msdn.microsoft.com/library/windows/apps/mt148536)」をご覧ください。
+## <a name="in-this-section"></a><span data-ttu-id="89c54-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="89c54-108">In this section</span></span>
 
-## <a name="in-this-section"></a>このセクションの内容
-
-| トピック                | 説明                 |
+| <span data-ttu-id="89c54-109">トピック</span><span class="sxs-lookup"><span data-stu-id="89c54-109">Topic</span></span>                | <span data-ttu-id="89c54-110">説明</span><span class="sxs-lookup"><span data-stu-id="89c54-110">Description</span></span>                 |
 |--------------------|-----------------------------|
-| [アプリ内購入と試用版](in-app-purchases-and-trials.md)      | Windows SDK の API を使用して、アプリ内製品の購入と試用版機能をアプリに追加する方法を説明します。  |
-| [Microsoft Store Services SDK](microsoft-store-services-sdk.md)      | Microsoft Store Services SDK が提供するライブラリとツールを利用すると、収益と顧客エンゲージメントの獲得を図る機能をアプリに追加できます。 これらの機能には、アプリ内広告、A/B テスト、アプリからのフィードバック Hub の起動が含まれます。 |
-| [A/B テストによる実験の実行](run-app-experiments-with-a-b-testing.md)      |   ユニバーサル Windows プラットフォーム (UWP) アプリで A/B テストを実施して、すべてのユーザー向けに機能を公開する前に、一部のユーザーに対して機能の有効性を測定することができます。 この機能を使うには、Microsoft Store Services SDK が必要です。  |
-| [アプリからのフィードバック Hub の起動](launch-feedback-hub-from-your-app.md)      |   UWP アプリにコードを追加して、Windows 10 ユーザーをフィードバック Hub に誘導して、ユーザーが問題、提案、賛成票を送信できるようにします。 次に、デベロッパー センター ダッシュボードの[フィードバック レポート](../publish/feedback-report.md)でこのフィードバックを管理します。 この機能を使うには、Microsoft Store Services SDK が必要です。   |
-| [デベロッパー センターのプッシュ通知を受信するようにアプリを設定する](configure-your-app-to-receive-dev-center-notifications.md)  |  UWP アプリの通知チャンネルを登録して、[デベロッパー センターのプッシュ通知](../publish/send-push-notifications-to-your-apps-customers.md)を受信し、プッシュ通知の結果としてのアプリの起動率を追跡できるようにします。 この機能を使うには、Microsoft Store Services SDK が必要です。  |
-| [デベロッパー センターのカスタム イベントをログに記録する](log-custom-events-for-dev-center.md)  | UWP アプリからのカスタム イベントをログに記録し、デベロッパー センター ダッシュボードの[利用状況レポート](../publish/usage-report.md)のイベントを確認します。 この機能を使うには、Microsoft Store Services SDK が必要です。 |
-| [アプリでの広告の表示](display-ads-in-your-app.md)      |   アプリにバナー広告やビデオのスポット広告を表示して収益を増やします。 この機能を使うには、Microsoft Store Services SDK が必要です。   |
-| [Windows ストア サービス](using-windows-store-services.md)    |  RESTful API を使用して、ストアへの申請の自動化、アプリの分析データへのアクセス、ストアに関連するその他のタスクの自動化を行う方法を説明します。    |
-| [市販デモ エクスペリエンス (RDX) アプリを作成する](retail-demo-experience.md)        |  小売店で PC やモバイルのデモ デバイスにインストールできる、市販デモ エクスペリエンス アプリを作成する方法を説明します。  |
+| [<span data-ttu-id="89c54-111">アプリ内購入と試用版</span><span class="sxs-lookup"><span data-stu-id="89c54-111">In-app purchases and trials</span></span>](in-app-purchases-and-trials.md)      | <span data-ttu-id="89c54-112">Windows SDK の API を使用して、アプリ内製品の購入と試用版機能をアプリに追加する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="89c54-112">Learn how to use APIs in the Windows SDK to add in-app product purchases and trial functionality to your apps.</span></span>  |
+| [<span data-ttu-id="89c54-113">Microsoft Advertising SDK を使用したアプリでの広告の表示</span><span class="sxs-lookup"><span data-stu-id="89c54-113">Display ads in your app with the Microsoft Advertising SDK</span></span>](display-ads-in-your-app.md)      |   <span data-ttu-id="89c54-114">アプリにバナー広告やスポット広告を表示して収益を増やします。</span><span class="sxs-lookup"><span data-stu-id="89c54-114">Increase your revenue by displaying banner ads or interstitial ads in your app.</span></span> <span data-ttu-id="89c54-115">この機能には、Microsoft Advertising SDK が必要です。</span><span class="sxs-lookup"><span data-stu-id="89c54-115">This feature requires the Microsoft Advertising SDK.</span></span> |
+| [<span data-ttu-id="89c54-116">Microsoft Store Services SDK を使ってユーザーとの関係を深める</span><span class="sxs-lookup"><span data-stu-id="89c54-116">Engage customers with the Microsoft Store Services SDK</span></span>](microsoft-store-services-sdk.md)      | <span data-ttu-id="89c54-117">Microsoft Store Services SDK が提供するライブラリとツールを利用すると、顧客エンゲージメントの獲得を図る機能をアプリに追加できます。</span><span class="sxs-lookup"><span data-stu-id="89c54-117">The Microsoft Store Services SDK provides libraries and tools that you can use to add features to your apps that help you engage with your customers.</span></span> <span data-ttu-id="89c54-118">これらの機能には、ターゲット指定されたデベロッパー センター通知、A/B テスト、アプリからのフィードバック Hub の起動が含まれます。</span><span class="sxs-lookup"><span data-stu-id="89c54-118">These features include targeted Dev Center notifications, A/B tests, and launching Feedback Hub from your app.</span></span> |
+| [<span data-ttu-id="89c54-119">A/B テストによる実験の実行</span><span class="sxs-lookup"><span data-stu-id="89c54-119">Run experiments with A/B testing</span></span>](run-app-experiments-with-a-b-testing.md)      |   <span data-ttu-id="89c54-120">ユニバーサル Windows プラットフォーム (UWP) アプリで A/B テストを実施して、すべてのユーザー向けに機能を公開する前に、一部のユーザーに対して機能の有効性を測定することができます。</span><span class="sxs-lookup"><span data-stu-id="89c54-120">Run A/B tests in your Universal Windows Platform (UWP) apps to measure the effectiveness of features on some customers before you release the features to everyone.</span></span> <span data-ttu-id="89c54-121">この機能を使うには、Microsoft Store Services SDK が必要です。</span><span class="sxs-lookup"><span data-stu-id="89c54-121">This feature requires the Microsoft Store Services SDK.</span></span>  |
+| [<span data-ttu-id="89c54-122">アプリからのフィードバック Hub の起動</span><span class="sxs-lookup"><span data-stu-id="89c54-122">Launch Feedback Hub from your app</span></span>](launch-feedback-hub-from-your-app.md)      |   <span data-ttu-id="89c54-123">UWP アプリにコードを追加して、Windows 10 ユーザーをフィードバック Hub に誘導して、ユーザーが問題、提案、賛成票を送信できるようにします。</span><span class="sxs-lookup"><span data-stu-id="89c54-123">Add code to your UWP apps to direct your Windows 10 customers to Feedback Hub, where they can submit problems, suggestions, and upvotes.</span></span> <span data-ttu-id="89c54-124">次に、デベロッパー センター ダッシュボードの[フィードバック レポート](../publish/feedback-report.md)でこのフィードバックを管理します。</span><span class="sxs-lookup"><span data-stu-id="89c54-124">Then, manage this feedback in the [Feedback report](../publish/feedback-report.md) in the Dev Center dashboard.</span></span> <span data-ttu-id="89c54-125">この機能を使うには、Microsoft Store Services SDK が必要です。</span><span class="sxs-lookup"><span data-stu-id="89c54-125">This feature requires the Microsoft Store Services SDK.</span></span>   |
+| [<span data-ttu-id="89c54-126">デベロッパー センターのプッシュ通知を受信するようにアプリを設定する</span><span class="sxs-lookup"><span data-stu-id="89c54-126">Configure your app to receive Dev Center push notifications</span></span>](configure-your-app-to-receive-dev-center-notifications.md)  |  <span data-ttu-id="89c54-127">UWP アプリの通知チャンネルを登録して、[デベロッパー センターのプッシュ通知](../publish/send-push-notifications-to-your-apps-customers.md)を受信し、プッシュ通知の結果としてのアプリの起動率を追跡できるようにします。</span><span class="sxs-lookup"><span data-stu-id="89c54-127">Register a notification channel for your UWP app so it can receive [Dev Center push notifications](../publish/send-push-notifications-to-your-apps-customers.md), and track the rate of app launches that resulted from the push notifications.</span></span> <span data-ttu-id="89c54-128">この機能を使うには、Microsoft Store Services SDK が必要です。</span><span class="sxs-lookup"><span data-stu-id="89c54-128">This feature requires the Microsoft Store Services SDK.</span></span>  |
+| [<span data-ttu-id="89c54-129">デベロッパー センターのカスタム イベントをログに記録する</span><span class="sxs-lookup"><span data-stu-id="89c54-129">Log custom events for Dev Center</span></span>](log-custom-events-for-dev-center.md)  | <span data-ttu-id="89c54-130">UWP アプリからのカスタム イベントをログに記録し、デベロッパー センター ダッシュボードの[利用状況レポート](../publish/usage-report.md)のイベントを確認します。</span><span class="sxs-lookup"><span data-stu-id="89c54-130">Log custom events from your UWP app and review the events in the [Usage report](../publish/usage-report.md) in the Dev Center dashboard.</span></span> <span data-ttu-id="89c54-131">この機能を使うには、Microsoft Store Services SDK が必要です。</span><span class="sxs-lookup"><span data-stu-id="89c54-131">This feature requires the Microsoft Store Services SDK.</span></span> |
+| [<span data-ttu-id="89c54-132">Windows ストア サービス</span><span class="sxs-lookup"><span data-stu-id="89c54-132">Windows Store services</span></span>](using-windows-store-services.md)    |  <span data-ttu-id="89c54-133">RESTful API を使用して、ストアへの申請の自動化、アプリの分析データへのアクセス、ストアに関連するその他のタスクの自動化を行う方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="89c54-133">Learn how to use RESTful APIs to automate submissions to the Store, access analytics data for your apps, and automate other tasks related to the Store.</span></span>    |
+| [<span data-ttu-id="89c54-134">市販デモ エクスペリエンス (RDX) アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="89c54-134">Create a Retail Demo Experience (RDX) app</span></span>](retail-demo-experience.md)        |  <span data-ttu-id="89c54-135">小売店で PC やモバイルのデモ デバイスにインストールできる、市販デモ エクスペリエンス アプリを作成する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="89c54-135">Learn how to create a retail demo experience app that can be installed on PCs and mobile demo devices at a retail store.</span></span>  |
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="89c54-136">関連トピック</span><span class="sxs-lookup"><span data-stu-id="89c54-136">Related topics</span></span>
 
-* [アプリのユーザーにプッシュ通知を送信する](../publish/send-push-notifications-to-your-apps-customers.md)
-* [ユーザー セグメントを作成する](../publish/create-customer-segments.md)
-* [フィードバック レポート](../publish/feedback-report.md)
-* [利用状況レポート](../publish/usage-report.md)
-
+* [<span data-ttu-id="89c54-137">アプリのユーザーにプッシュ通知を送信する</span><span class="sxs-lookup"><span data-stu-id="89c54-137">Send push notifications to your app's customers</span></span>](../publish/send-push-notifications-to-your-apps-customers.md)
+* [<span data-ttu-id="89c54-138">ユーザー セグメントを作成する</span><span class="sxs-lookup"><span data-stu-id="89c54-138">Create customer segments</span></span>](../publish/create-customer-segments.md)
+* [<span data-ttu-id="89c54-139">フィードバック レポート</span><span class="sxs-lookup"><span data-stu-id="89c54-139">Feedback report</span></span>](../publish/feedback-report.md)
+* [<span data-ttu-id="89c54-140">利用状況レポート</span><span class="sxs-lookup"><span data-stu-id="89c54-140">Usage report</span></span>](../publish/usage-report.md)

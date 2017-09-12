@@ -4,46 +4,70 @@ ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
 description: "アプリをストアに提出する前に、Windows デベロッパー センター ダッシュ ボードからアプリケーション ID と広告ユニット ID の値をアプリに追加する方法について説明します。"
 title: "アプリの広告ユニットをセットアップする"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 広告, Advertising, 広告ユニット"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 32a934f1d113d561c72ab3ac48a8ef3d0820c176
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f96e81079764682a9f603fe93a9c123a69690507
+ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/27/2017
 ---
+# <a name="set-up-ad-units-in-your-app"></a><span data-ttu-id="94d92-104">アプリの広告ユニットをセットアップする</span><span class="sxs-lookup"><span data-stu-id="94d92-104">Set up ad units in your app</span></span>
 
-# <a name="set-up-ad-units-in-your-app"></a>アプリの広告ユニットをセットアップする
+<span data-ttu-id="94d92-105">アプリ内の各バナー広告コントロール、スポット広告コントロール、ネイティブ広告コントロールに、対応する*広告ユニット*があります。広告ユニットは、コントロールに広告を提供するためにサービスで使用されます。</span><span class="sxs-lookup"><span data-stu-id="94d92-105">Every banner ad, interstitial ad, or native ad control in your app has a corresponding *ad unit* that is used by our services to serve ads to the control.</span></span> <span data-ttu-id="94d92-106">各広告ユニットは、*広告ユニット ID* と*アプリケーション ID* で構成されます。</span><span class="sxs-lookup"><span data-stu-id="94d92-106">Each ad unit consists of an *ad unit ID* and *application ID*.</span></span> <span data-ttu-id="94d92-107">アプリを開発しているときには、[アプリケーション ID と広告ユニット ID のテスト値](test-mode-values.md)をコントロールに割り当てて、アプリでテスト広告が表示されることを確認します。</span><span class="sxs-lookup"><span data-stu-id="94d92-107">While you are developing your app, assign [test application ID and ad unit ID values](test-mode-values.md) to your control to confirm that your app shows test ads.</span></span> <span data-ttu-id="94d92-108">これらのテスト値は、テスト バージョンのアプリでのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="94d92-108">These test values can only be used in a test version of your app.</span></span>
 
+<span data-ttu-id="94d92-109">アプリのテストが終了し、Windows デベロッパー センターに提出する準備ができたら、Windows デベロッパー センター ダッシュボードの [[広告で収入を増やす]](../publish/monetize-with-ads.md) ページから取得したアプリケーション ID と広告ユニット ID の値を使うためにアプリのコードを更新する必要があります。</span><span class="sxs-lookup"><span data-stu-id="94d92-109">After you finish testing your app and you are ready to submit it to Windows Dev Center, you must update your app code to use application ID and ad unit ID values from the [Monetize with ads](../publish/monetize-with-ads.md) page in the Windows Dev Center dashboard.</span></span> <span data-ttu-id="94d92-110">ライブ アプリでテスト用の値を使うと、アプリでライブ広告は表示されません。</span><span class="sxs-lookup"><span data-stu-id="94d92-110">If you try to use test values in your live app, your app will not receive live ads.</span></span>
 
+<span data-ttu-id="94d92-111">ライブ アプリの広告ユニットをセットアップするには</span><span class="sxs-lookup"><span data-stu-id="94d92-111">To set up the ad units for your live app:</span></span>
 
+1.  <span data-ttu-id="94d92-112">Windows デベロッパー センター ダッシュボードで、アプリを選択し、**[収益化]、[広告で収入を増やす]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="94d92-112">On the Windows Dev Center dashboard, select your app and then click **Monetization > Monetize with ads**.</span></span>
 
-[AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) または [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) を使ってアプリで広告を表示する場合、アプリケーション ID と広告ユニット ID を指定する必要があります。 アプリを開発しているときには、適切な[テスト用のアプリケーション ID と広告ユニット ID の値](test-mode-values.md)を使って、テスト時にアプリでどのように広告がレンダリングされるかを確認します。
+2.  <span data-ttu-id="94d92-113">**[広告ユニットを作成]** セクションで、**[広告ユニット名]** フィールドに広告ユニットの名前を入力します。</span><span class="sxs-lookup"><span data-stu-id="94d92-113">In the **Create ad units** section, enter a name for the ad unit in the **Ad unit name** field.</span></span>
 
-アプリのテストが終了し、Windows デベロッパー センターに提出する準備ができたら、[Windows デベロッパー センター ダッシュ ボード](https://msdn.microsoft.com/library/windows/apps/mt170658.aspx)から取得したアプリケーション ID と広告ユニット ID の値を使用するように、アプリのコードを更新する必要があります。 ライブ アプリでテスト用の値を使うと、アプリでライブ広告は表示されません。
+3. <span data-ttu-id="94d92-114">**[広告ユニットの種類]** ドロップダウンで、コントロールに表示する広告に対応する広告ユニットの種類を選択します。</span><span class="sxs-lookup"><span data-stu-id="94d92-114">In the **Ad unit type** drop-down, select the type of ad unit that corresponds to the ads you are showing in your control:</span></span>
 
-ライブ アプリのアプリケーション ID と広告ユニットをセットアップするには
+    -   <span data-ttu-id="94d92-115">アプリで [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) を使ってバナー広告を表示している場合は、**[バナー]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="94d92-115">If you are using an [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) in your app to show banner ads, select **Banner**.</span></span>
 
-1.  Windows デベロッパー センター ダッシュボードで、アプリを選択し、**[収益化]、[広告で収入を増やす]** の順にクリックします。
-2.  このページの **[Microsoft Advertising 広告ユニット]** セクションで広告ユニットを作成します。 広告ユニットの種類として、**AdControl** を使っている場合は **[バナー]** を、**InterstitialAd** を使っている場合は **[ビデオ (スポット)]** を選びます。 このページについて詳しくは、「[広告で収入を増やす](../publish/monetize-with-ads.md)」をご覧ください。
+    -   <span data-ttu-id="94d92-116">アプリで [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) を使ってビデオ スポット広告やバナー スポット広告を表示している場合は、**[ビデオ (スポット)]** または **[バナー (スポット)]** を選択します (表示するスポット広告の種類に対応した適切なオプションを必ず選択してください)。</span><span class="sxs-lookup"><span data-stu-id="94d92-116">If you are using an [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) in your app to show interstitial video or interstitial banner ads, select **Video interstitial** or **Banner interstitial** (be sure to select the appropriate option for the type of interstitial ad you want to show).</span></span>
 
-3.  生成された広告ユニットごとに、**アプリケーション ID** と**広告ユニット ID** がこのページに表示されます。 アプリに広告を表示するには、アプリのコードでこれらの値を使う必要があります。
+    -   <span data-ttu-id="94d92-117">アプリで [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) を使ってネイティブ広告を表示している場合は、**[ネイティブ]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="94d92-117">If you are using a [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) in your app to show native ads, select **Native**.</span></span>
+      > [!NOTE]
+      > <span data-ttu-id="94d92-118">**ネイティブ**広告ユニットを作成する機能は、現在はパイロット プログラムに参加している開発者だけが利用できますが、まもなくすべての開発者がこの機能を利用できるようにする予定です。</span><span class="sxs-lookup"><span data-stu-id="94d92-118">The ability to create **Native** ad units is currently available only to select developers who are participating in a pilot program, but we intend to make this feature available to all developers soon.</span></span> <span data-ttu-id="94d92-119">パイロット プログラムへの参加に関心がある方は、aiacare@microsoft.com までお問い合わせください。</span><span class="sxs-lookup"><span data-stu-id="94d92-119">If you are interested in joining our pilot program, reach out to us at aiacare@microsoft.com.</span></span>
 
-    * アプリにバナー広告を表示する場合は、これらの値を **AdControl** オブジェクトの **ApplicationId** プロパティと **AdUnitId** プロパティに割り当てる必要があります。
+4.  <span data-ttu-id="94d92-120">**[デバイス ファミリ]** ドロップダウンで、広告ユニットを使うアプリがターゲットとしているデバイス ファミリを選択します。</span><span class="sxs-lookup"><span data-stu-id="94d92-120">In the **Device family** drop-down, select the device family targeted by the app in which your ad unit will be used.</span></span> <span data-ttu-id="94d92-121">選択できるオプションには、**[UWP (Windows 10)]**、**[PC/タブレット (Windows 8.1)]**、**[モバイル (Windows Phone 8.x)]** があります。</span><span class="sxs-lookup"><span data-stu-id="94d92-121">The available options are: **UWP (Windows 10)**, **PC/Tablet (Windows 8.1)**, or **Mobile (Windows Phone 8.x)**.</span></span>
 
-    * アプリでスポット広告ビデオを表示する場合は、**InterstitialAd** オブジェクトの **RequestAd** メソッドにこれらの値を渡します。
+5.  <span data-ttu-id="94d92-122">**[広告ユニットを作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="94d92-122">Click **Create ad unit**.</span></span> <span data-ttu-id="94d92-123">このページの **[利用可能な広告ユニット]** セクションの上部にある一覧に、新しい広告ユニットが表示されます。</span><span class="sxs-lookup"><span data-stu-id="94d92-123">The new ad unit appears at the top of the list in the **Available ad units** section on this page.</span></span>
+
+6.  <span data-ttu-id="94d92-124">生成された広告ユニットごとに**アプリケーション ID** と**広告ユニット ID** が表示されます。</span><span class="sxs-lookup"><span data-stu-id="94d92-124">For each generated ad unit, you will see an **Application ID** and an **Ad unit ID**.</span></span> <span data-ttu-id="94d92-125">アプリに広告を表示するには、アプリのコードでこれらの値を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="94d92-125">To show ads in your app, you'll need to use these values in your app's code:</span></span>
+
+    -   <span data-ttu-id="94d92-126">アプリにバナー広告を表示する場合は、これらの値を **AdControl** オブジェクトの [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) プロパティと [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) プロパティに割り当てる必要があります。</span><span class="sxs-lookup"><span data-stu-id="94d92-126">If your app shows banner ads, assign these values to the [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) and [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) properties of your **AdControl** object.</span></span> <span data-ttu-id="94d92-127">詳しくは、「[XAML および .NET の AdControl](adcontrol-in-xaml-and--net.md)」、または「[HTML 5 および Javascript の AdControl](adcontrol-in-html-5-and-javascript.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="94d92-127">For more information, see [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md) and [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md).</span></span>
+
+    -   <span data-ttu-id="94d92-128">アプリでスポット広告を表示する場合は、**InterstitialAd** オブジェクトの [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) メソッドにこれらの値を渡します。</span><span class="sxs-lookup"><span data-stu-id="94d92-128">If your app shows interstitial ads, pass these values to the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method of your **InterstitialAd** object.</span></span> <span data-ttu-id="94d92-129">詳しくは、「[スポット広告](interstitial-ads.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="94d92-129">For more information, see [Interstitial ads](interstitial-ads.md).</span></span>
+
+    -   <span data-ttu-id="94d92-130">アプリにネイティブ広告が表示される場合、それらの値を [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.nativeadsmanager.aspx) コンストラクターの *applicationId* パラメーターと *adUnitId* パラメーターに渡します。</span><span class="sxs-lookup"><span data-stu-id="94d92-130">If your app shows native ads, pass these values to the *applicationId* and *adUnitId* parameters of the [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.nativeadsmanager.aspx) constructor.</span></span> <span data-ttu-id="94d92-131">詳しくは、「[ネイティブ広告](../monetize/native-ads.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="94d92-131">For more information, see [Native ads](../monetize/native-ads.md).</span></span>
+
+7. <span data-ttu-id="94d92-132">アプリが Windows 10 用 UWP アプリである場合、[[広告仲介]](../publish/monetize-with-ads.md#mediation) セクションで設定を構成することにより、必要に応じて **AdControl** の広告仲介を有効にできます。</span><span class="sxs-lookup"><span data-stu-id="94d92-132">If your app is a UWP app for Windows 10, you can optionally enable ad mediation for the **AdControl** by configuring the settings in the [Ad mediation](../publish/monetize-with-ads.md#mediation) section.</span></span> <span data-ttu-id="94d92-133">広告仲介を使うと、複数の広告ネットワークから広告を表示して、広告収益とアプリ プロモーションの機能を最大限に引き出すことができます。表示される広告には、Taboola や Smaato などの他の有料広告ネットワークからの広告や、Microsoft のアプリ プロモーション キャンペーン用の広告などが含まれます。</span><span class="sxs-lookup"><span data-stu-id="94d92-133">Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks, including ads from other paid ad networks such as Taboola and Smaato and ads for Microsoft app promotion campaigns.</span></span> <span data-ttu-id="94d92-134">既定では、アプリがサポートする市場全体で広告の収益を最大化できるように、機械学習アルゴリズムを使った仲介設定が自動的に構成されますが、必要に応じて仲介設定を手動で構成することができます。</span><span class="sxs-lookup"><span data-stu-id="94d92-134">By default, we automatically choose the ad mediation settings for your app using machine-learning algorithms to help you maximize your ad revenue across the markets your app supports, but you can optionally manually configure your mediation settings.</span></span>
+
+<span id="manage" />
+## <a name="manage-ad-units-for-multiple-ad-controls-in-your-app"></a><span data-ttu-id="94d92-135">アプリで複数の広告コントロールの広告ユニットを管理する</span><span class="sxs-lookup"><span data-stu-id="94d92-135">Manage ad units for multiple ad controls in your app</span></span>
+
+<span data-ttu-id="94d92-136">1 つのアプリに複数のバナー広告コントロール、スポット広告コントロール、ネイティブ広告コントロールを使用できます。</span><span class="sxs-lookup"><span data-stu-id="94d92-136">You can use multiple banner, interstitial, and native ad controls in a single app.</span></span> <span data-ttu-id="94d92-137">このシナリオでは、各コントロールに異なる広告ユニットを割り当てることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="94d92-137">In this scenario, we recommend that you assign a different ad unit to each control.</span></span> <span data-ttu-id="94d92-138">各コントロールに異なる広告ユニットを使用することで、別々に[仲介の設定を構成](../publish/monetize-with-ads.md#mediation)して、個別の[報告データ](../publish/advertising-performance-report.md)を取得することが可能です。</span><span class="sxs-lookup"><span data-stu-id="94d92-138">Using different ad units for each control enables you to separately [configure the mediation settings](../publish/monetize-with-ads.md#mediation) and get discrete [reporting data](../publish/advertising-performance-report.md) for each control.</span></span> <span data-ttu-id="94d92-139">また、これにより、Microsoft のサービスはアプリに提供する広告を最適化できます。</span><span class="sxs-lookup"><span data-stu-id="94d92-139">This also enables our services to better optimize the ads we serve to your app.</span></span>
+
+> [!IMPORTANT]
+> <span data-ttu-id="94d92-140">各広告ユニットは 1 つのアプリのみで使用できます。</span><span class="sxs-lookup"><span data-stu-id="94d92-140">You can use each ad unit in only one app.</span></span> <span data-ttu-id="94d92-141">複数のアプリで広告ユニットを使うと、広告ユニットに広告が提供されません。</span><span class="sxs-lookup"><span data-stu-id="94d92-141">If you use an ad unit in more than one app, ads will not be served for that ad unit.</span></span>
+
+## <a name="related-topics"></a><span data-ttu-id="94d92-142">関連トピック</span><span class="sxs-lookup"><span data-stu-id="94d92-142">Related topics</span></span>
+
+* [<span data-ttu-id="94d92-143">テスト モードの値</span><span class="sxs-lookup"><span data-stu-id="94d92-143">Test mode values</span></span>](test-mode-values.md)
+* [<span data-ttu-id="94d92-144">XAML および .NET の AdControl</span><span class="sxs-lookup"><span data-stu-id="94d92-144">AdControl in XAML and .NET</span></span>](adcontrol-in-xaml-and--net.md)
+* [<span data-ttu-id="94d92-145">HTML 5 および Javascript の AdControl</span><span class="sxs-lookup"><span data-stu-id="94d92-145">AdControl in HTML 5 and Javascript</span></span>](adcontrol-in-html-5-and-javascript.md)
+* [<span data-ttu-id="94d92-146">スポット広告</span><span class="sxs-lookup"><span data-stu-id="94d92-146">Interstitial ads</span></span>](interstitial-ads.md)
+* [<span data-ttu-id="94d92-147">ネイティブ広告</span><span class="sxs-lookup"><span data-stu-id="94d92-147">Native ads</span></span>](../monetize/native-ads.md)
+
 
  
 
-## <a name="related-topics"></a>関連トピック
-
-[テスト モードの値](test-mode-values.md)
-
-
  
-
- 
-

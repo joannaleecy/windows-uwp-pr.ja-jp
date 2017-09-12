@@ -4,49 +4,50 @@ ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
 title: "ファイルの作成、書き込み、および読み取り"
 description: "StorageFile オブジェクトを使ってファイルの読み取りと書き込みを行います。"
 ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 07/05/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ae2754f543a3bc799b3d5af4c5c3c46f654c1ed7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d566bac72b9e3a7e00adb9225342017168ca5f43
+ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/06/2017
 ---
-
-# <a name="create-write-and-read-a-file"></a>ファイルの作成、書き込み、および読み取り
-
-
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+# <a name="create-write-and-read-a-file"></a><span data-ttu-id="04e53-104">ファイルの作成、書き込み、および読み取り</span><span class="sxs-lookup"><span data-stu-id="04e53-104">Create, write, and read a file</span></span>
 
 
-**重要な API**
+<span data-ttu-id="04e53-105">\[ Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="04e53-105">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="04e53-106">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]</span><span class="sxs-lookup"><span data-stu-id="04e53-106">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
--   [**StorageFolder クラス**](https://msdn.microsoft.com/library/windows/apps/br227230)
--   [**StorageFile クラス**](https://msdn.microsoft.com/library/windows/apps/br227171)
--   [**FileIO クラス**](https://msdn.microsoft.com/library/windows/apps/hh701440)
 
-[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを使ってファイルの読み取りと書き込みを行います。
+**<span data-ttu-id="04e53-107">重要な API</span><span class="sxs-lookup"><span data-stu-id="04e53-107">Important APIs</span></span>**
 
-> **注** [ファイル アクセスのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619995) に関するページもご覧ください。
+-   [**<span data-ttu-id="04e53-108">StorageFolder クラス</span><span class="sxs-lookup"><span data-stu-id="04e53-108">StorageFolder class</span></span>**](https://msdn.microsoft.com/library/windows/apps/br227230)
+-   [**<span data-ttu-id="04e53-109">StorageFile クラス</span><span class="sxs-lookup"><span data-stu-id="04e53-109">StorageFile class</span></span>**](https://msdn.microsoft.com/library/windows/apps/br227171)
+-   [**<span data-ttu-id="04e53-110">FileIO クラス</span><span class="sxs-lookup"><span data-stu-id="04e53-110">FileIO class</span></span>**](https://msdn.microsoft.com/library/windows/apps/hh701440)
 
-## <a name="prerequisites"></a>前提条件
+<span data-ttu-id="04e53-111">[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを使ってファイルの読み取りと書き込みを行います。</span><span class="sxs-lookup"><span data-stu-id="04e53-111">Read and write a file using a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object.</span></span>
 
--   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
+> [!NOTE] 
+> <span data-ttu-id="04e53-112">[ファイル アクセスのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619995)に関するページも参照してください。</span><span class="sxs-lookup"><span data-stu-id="04e53-112">Also see the [File access sample](http://go.microsoft.com/fwlink/p/?linkid=619995).</span></span>
 
-    C# や Visual Basic での非同期アプリの作成方法については、「[C# または Visual Basic での非同期 API の呼び出し](https://msdn.microsoft.com/library/windows/apps/mt187337)」をご覧ください。 C++ での非同期アプリの作成方法については、「[C++ での非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187334)」をご覧ください。
+## <a name="prerequisites"></a><span data-ttu-id="04e53-113">前提条件</span><span class="sxs-lookup"><span data-stu-id="04e53-113">Prerequisites</span></span>
 
--   **読み取り、書き込み、またはその両方の対象となるファイルを取得する方法についての知識**
+-   **<span data-ttu-id="04e53-114">ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解</span><span class="sxs-lookup"><span data-stu-id="04e53-114">Understand async programming for Universal Windows Platform (UWP) apps</span></span>**
 
-    ファイル ピッカーを使ってファイルを取得する方法については、「[ピッカーでファイルやフォルダーを開く](quickstart-using-file-and-folder-pickers.md)」をご覧ください。
+    <span data-ttu-id="04e53-115">C# や Visual Basic での非同期アプリの作成方法については、「[C# または Visual Basic での非同期 API の呼び出し](https://msdn.microsoft.com/library/windows/apps/mt187337)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="04e53-115">You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337).</span></span> <span data-ttu-id="04e53-116">C++ での非同期アプリの作成方法については、「[C++ での非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187334)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="04e53-116">To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).</span></span>
 
-## <a name="creating-a-file"></a>ファイルの作成
+-   **<span data-ttu-id="04e53-117">読み取り、書き込み、またはその両方の対象となるファイルを取得する方法についての知識</span><span class="sxs-lookup"><span data-stu-id="04e53-117">Know how to get the file that you want to read from, write to, or both</span></span>**
 
-アプリのローカル フォルダーにファイルを作成する方法について説明します。 既に存在する場合は置き換えます。
+    <span data-ttu-id="04e53-118">ファイル ピッカーを使ってファイルを取得する方法については、「[ピッカーでファイルやフォルダーを開く](quickstart-using-file-and-folder-pickers.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="04e53-118">You can learn how to get a file by using a file picker in [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md).</span></span>
+
+## <a name="creating-a-file"></a><span data-ttu-id="04e53-119">ファイルの作成</span><span class="sxs-lookup"><span data-stu-id="04e53-119">Creating a file</span></span>
+
+<span data-ttu-id="04e53-120">アプリのローカル フォルダーにファイルを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="04e53-120">Here's how to create a file in the app's local folder.</span></span> <span data-ttu-id="04e53-121">既に存在する場合は置き換えます。</span><span class="sxs-lookup"><span data-stu-id="04e53-121">If it already exists, we replace it.</span></span>
+
 > [!div class="tabbedCodeSnippets"]
-```cs
+```cs  
 // Create sample file; replace if exists.
 Windows.Storage.StorageFolder storageFolder =
     Windows.Storage.ApplicationData.Current.LocalFolder;
@@ -54,213 +55,348 @@ Windows.Storage.StorageFile sampleFile =
     await storageFolder.CreateFileAsync("sample.txt",
         Windows.Storage.CreationCollisionOption.ReplaceExisting);
 ```
-```vb
+```cpp  
+// Create a sample file; replace if exists.
+StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+concurrency::create_task(storageFolder->CreateFileAsync("sample.txt", CreationCollisionOption::ReplaceExisting));
+```
+```vb  
 ' Create sample file; replace if exists.
 Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.LocalFolder
 Dim sampleFile As StorageFile = Await storageFolder.CreateFileAsync("sample.txt", CreationCollisionOption.ReplaceExisting)
 ```
 
-## <a name="writing-to-a-file"></a>ファイルへの書き込み
+## <a name="writing-to-a-file"></a><span data-ttu-id="04e53-122">ファイルへの書き込み</span><span class="sxs-lookup"><span data-stu-id="04e53-122">Writing to a file</span></span>
 
+<span data-ttu-id="04e53-123">[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) クラスを使ってディスク上の書き込み可能ファイルに書き込む方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="04e53-123">Here's how to write to a writable file on disk using the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) class.</span></span> <span data-ttu-id="04e53-124">いずれの方法でファイルに書き込む場合でも (ファイルの作成直後に書き込むのでない限り)、まずは [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) でファイルを取得します。</span><span class="sxs-lookup"><span data-stu-id="04e53-124">The common first step for each of the ways of writing to a file (unless you're writing to the file immediately after creating it) is to get the file with [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272).</span></span>
 
-[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) クラスを使ってディスク上の書き込み可能ファイルに書き込む方法について説明します。 いずれの方法でファイルに書き込む場合でも (ファイルの作成直後に書き込むのでない限り)、まずは [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) でファイルを取得します。
 > [!div class="tabbedCodeSnippets"]
-```cs
+```cs  
 Windows.Storage.StorageFolder storageFolder =
     Windows.Storage.ApplicationData.Current.LocalFolder;
 Windows.Storage.StorageFile sampleFile =
     await storageFolder.GetFileAsync("sample.txt");
 ```
-```vb
+```cpp  
+StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile) 
+{
+    // Process file
+});
+```
+```vb  
 Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.LocalFolder
 Dim sampleFile As StorageFile = Await storageFolder.GetFileAsync("sample.txt")
 ```
 
-**ファイルへのテキストの書き込み**
+**<span data-ttu-id="04e53-125">ファイルへのテキストの書き込み</span><span class="sxs-lookup"><span data-stu-id="04e53-125">Writing text to a file</span></span>**
 
-[**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) クラスの [**WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505) メソッドを呼び出してファイルにテキストを書き込みます。
+<span data-ttu-id="04e53-126">[**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) クラスの [**WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505) メソッドを呼び出してファイルにテキストを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="04e53-126">Write text to your file by calling the [**WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505) method of the [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) class.</span></span>
+
 > [!div class="tabbedCodeSnippets"]
-```cs
+```cs  
 await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow");
 ```
-```vb
+```cpp 
+StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile) 
+{
+    //Write text to a file
+    create_task(FileIO::WriteTextAsync(sampleFile, "Swift as a shadow"));
+});
+```
+```vb  
 Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
 ```
 
-**バッファーを使ったファイルへのバイトの書き込み (2 ステップ)**
+**<span data-ttu-id="04e53-127">バッファーを使ったファイルへのバイトの書き込み (2 ステップ)</span><span class="sxs-lookup"><span data-stu-id="04e53-127">Writing bytes to a file by using a buffer (2 steps)</span></span>**
 
-1.  まず、[**ConvertStringToBinary**](https://msdn.microsoft.com/library/windows/apps/br241385) を呼び出してファイルに書き込む任意の文字列に基づくバイトのバッファーを取得します。
-> [!div class="tabbedCodeSnippets"]
-```cs
-var buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(
-        "What fools these mortals be", Windows.Security.Cryptography.BinaryStringEncoding.Utf8);
-```
-```vb
-Dim buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(
-                    "What fools these mortals be",
-                    Windows.Security.Cryptography.BinaryStringEncoding.Utf8)
-```
+1.  <span data-ttu-id="04e53-128">まず、[**ConvertStringToBinary**](https://msdn.microsoft.com/library/windows/apps/br241385) を呼び出してファイルに書き込む任意の文字列に基づくバイトのバッファーを取得します。</span><span class="sxs-lookup"><span data-stu-id="04e53-128">First, call [**ConvertStringToBinary**](https://msdn.microsoft.com/library/windows/apps/br241385) to get a buffer of the bytes (based on an arbitrary string) that you want to write to your file.</span></span>
 
-2.  次に、[**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) クラスの [**WriteBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701490) メソッドを呼び出してファイルにバッファーからのバイトを書き込みます。
-> [!div class="tabbedCodeSnippets"]
-```cs
-await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer);
-```
-```vb
-Await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer)
-```
+    > [!div class="tabbedCodeSnippets"]
+    ```cs  
+    var buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(
+            "What fools these mortals be", Windows.Security.Cryptography.BinaryStringEncoding.Utf8);
+    ```
+    ```cpp  
+    StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+    create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile)
+    {
+        // Create the buffer
+        IBuffer^ buffer = CryptographicBuffer::ConvertStringToBinary
+        ("What fools these mortals be", BinaryStringEncoding::Utf8);
+    });
+    ```
+    ```vb  
+    Dim buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(
+                        "What fools these mortals be",
+                        Windows.Security.Cryptography.BinaryStringEncoding.Utf8)
+    ```
 
-**ストリームを使ったファイルへのテキストの書き込み (4 ステップ)**
+2.  <span data-ttu-id="04e53-129">次に、[**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) クラスの [**WriteBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701490) メソッドを呼び出してファイルにバッファーからのバイトを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="04e53-129">Then write the bytes from your buffer to your file by calling the [**WriteBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701490) method of the [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) class.</span></span>
 
-1.  まず、[**StorageFile.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn889851) メソッドを呼び出してファイルを開きます。 このメソッドは、オープン操作が完了したときにファイルのコンテンツのストリームを返します。
-> [!div class="tabbedCodeSnippets"]
-```cs
-var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
-```
-```vb
-Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
-```
+    > [!div class="tabbedCodeSnippets"]
+    ```cs  
+    await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer);
+    ```
+    ```cpp  
+    StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+    create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile)
+    {
+        // Create the buffer
+        IBuffer^ buffer = CryptographicBuffer::ConvertStringToBinary
+        ("What fools these mortals be", BinaryStringEncoding::Utf8);      
+        // Write bytes to a file using a buffer
+        create_task(FileIO::WriteBufferAsync(sampleFile, buffer));
+    });
+    ```
+    ```vb  
+    Await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer)
+    ```
 
-2.  次に、`stream` の [**GetOutputStreamAt**](https://msdn.microsoft.com/library/windows/apps/br241738) メソッドを呼び出して出力ストリームを取得します。 これを **using** ステートメントに入れて、出力ストリームの有効期間を管理します。
-> [!div class="tabbedCodeSnippets"]
-```cs
-using (var outputStream = stream.GetOutputStreamAt(0))
+**<span data-ttu-id="04e53-130">ストリームを使ったファイルへのテキストの書き込み (4 ステップ)</span><span class="sxs-lookup"><span data-stu-id="04e53-130">Writing text to a file by using a stream (4 steps)</span></span>**
+
+1.  <span data-ttu-id="04e53-131">まず、[**StorageFile.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn889851) メソッドを呼び出してファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="04e53-131">First, open the file by calling the [**StorageFile.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn889851) method.</span></span> <span data-ttu-id="04e53-132">このメソッドは、オープン操作が完了したときにファイルのコンテンツのストリームを返します。</span><span class="sxs-lookup"><span data-stu-id="04e53-132">It returns a stream of the file's content when the open operation completes.</span></span>
+
+    > [!div class="tabbedCodeSnippets"]
+    ```cs  
+    var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
+    ```
+    ```cpp  
+    StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+    create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile)
+    {
+        create_task(sampleFile->OpenAsync(FileAccessMode::ReadWrite)).then([sampleFile](IRandomAccessStream^ stream)
+        {
+            // Process stream
+        });
+    });
+    ```
+    ```vb  
+    Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
+    ```
+
+2.  <span data-ttu-id="04e53-133">次に、`stream` の [**GetOutputStreamAt**](https://msdn.microsoft.com/library/windows/apps/br241738) メソッドを呼び出して出力ストリームを取得します。</span><span class="sxs-lookup"><span data-stu-id="04e53-133">Next, get an output stream by calling the [**GetOutputStreamAt**](https://msdn.microsoft.com/library/windows/apps/br241738) method from the `stream`.</span></span> <span data-ttu-id="04e53-134">これを **using** ステートメントに入れて、出力ストリームの有効期間を管理します。</span><span class="sxs-lookup"><span data-stu-id="04e53-134">Put this in a **using** statement to manage the output stream's lifetime.</span></span>
+
+    > [!div class="tabbedCodeSnippets"]
+    ```cs  
+    using (var outputStream = stream.GetOutputStreamAt(0))
     {
         // We'll add more code here in the next step.
     }
     stream.Dispose(); // Or use the stream variable (see previous code snippet) with a using statement as well.
-```
-```vb
-Using outputStream = stream.GetOutputStreamAt(0)
-  ' We'll add more code here in the next step.
-End Using
-```
+    ```
+    ```cpp 
+    // Add to "Process stream" in part 1
+    IOutputStream^ outputStream = stream->GetOutputStreamAt(0);
+    ```
+    ```vb 
+    Using outputStream = stream.GetOutputStreamAt(0)
+    ' We'll add more code here in the next step.
+    End Using
+    ```
 
-3.  さらに、新しい [**DataWriter**](https://msdn.microsoft.com/library/windows/apps/br208154) オブジェクトを作って [**DataWriter.WriteString**](https://msdn.microsoft.com/library/windows/apps/br241642) メソッドを呼び出し、既存の **using** ステートメントにこのコードを追加して出力ストリームに書き込みます。
-> [!div class="tabbedCodeSnippets"]
-```cs
-using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
+3.  <span data-ttu-id="04e53-135">さらに、新しい [**DataWriter**](https://msdn.microsoft.com/library/windows/apps/br208154) オブジェクトを作って [**DataWriter.WriteString**](https://msdn.microsoft.com/library/windows/apps/br241642) メソッドを呼び出し、既存の **using** ステートメントにこのコードを追加して出力ストリームに書き込みます。</span><span class="sxs-lookup"><span data-stu-id="04e53-135">Now add this code within the existing **using** statement to write to the output stream by creating a new [**DataWriter**](https://msdn.microsoft.com/library/windows/apps/br208154) object and calling the [**DataWriter.WriteString**](https://msdn.microsoft.com/library/windows/apps/br241642) method.</span></span>
+
+    > [!div class="tabbedCodeSnippets"]
+    ```cs  
+    using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
     {
         dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.");
     }
-```
-```vb
+    ```
+    ```cpp  
+    // Added after code from part 2
+    DataWriter^ dataWriter = ref new DataWriter(outputStream);
+    dataWriter->WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.");
+    ```
+    ```vb  
     Dim dataWriter As New DataWriter(outputStream)
     dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.")
-```
+    ```
 
-4.  最後に、(内部 **using** ステートメント内の) このコードを追加し、[**StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) でファイルにテキストを保存して、[**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br241729) でストリームを閉じます。
-> [!div class="tabbedCodeSnippets"]
-```cs
+4.  <span data-ttu-id="04e53-136">最後に、(内部 **using** ステートメント内の) このコードを追加し、[**StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) でファイルにテキストを保存して、[**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br241729) でストリームを閉じます。</span><span class="sxs-lookup"><span data-stu-id="04e53-136">Lastly, add this code (within the inner **using** statement) to save the text to your file with [**StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) and close the stream with [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br241729).</span></span>
+
+    > [!div class="tabbedCodeSnippets"]
+    ```cs  
     await dataWriter.StoreAsync();
         await outputStream.FlushAsync();
-```
-```vb
+    ```
+    ```cpp   
+    // Added after code from part 3
+    dataWriter->StoreAsync();
+    outputStream->FlushAsync();
+    ```
+    ```vb  
     Await dataWriter.StoreAsync()
         Await outputStream.FlushAsync()
-```
+    ```
 
-## <a name="reading-from-a-file"></a>ファイルからの読み取り
+## <a name="reading-from-a-file"></a><span data-ttu-id="04e53-137">ファイルからの読み取り</span><span class="sxs-lookup"><span data-stu-id="04e53-137">Reading from a file</span></span>
 
+<span data-ttu-id="04e53-138">[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) クラスを使ってディスク上のファイルから読み取る方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="04e53-138">Here's how to read from a file on disk using the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) class.</span></span> <span data-ttu-id="04e53-139">いずれの方法でファイルから読み取る場合でも、まずは [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) を使ってファイルを取得します。</span><span class="sxs-lookup"><span data-stu-id="04e53-139">The common first step for each of the ways of reading from a file is to get the file with [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272).</span></span>
 
-[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) クラスを使ってディスク上のファイルから読み取る方法について説明します。 いずれの方法でファイルから読み取る場合でも、まずは [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) を使ってファイルを取得します。
 > [!div class="tabbedCodeSnippets"]
-```cs
+```cs  
 Windows.Storage.StorageFolder storageFolder =
     Windows.Storage.ApplicationData.Current.LocalFolder;
 Windows.Storage.StorageFile sampleFile =
     await storageFolder.GetFileAsync("sample.txt");
 ```
-```vb
+```cpp  
+StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile)
+{
+    // Process file
+});
+```
+```vb  
 Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.LocalFolder
 Dim sampleFile As StorageFile = Await storageFolder.GetFileAsync("sample.txt")
 ```
 
-**ファイルからのテキストの読み取り**
+**<span data-ttu-id="04e53-140">ファイルからのテキストの読み取り</span><span class="sxs-lookup"><span data-stu-id="04e53-140">Reading text from a file</span></span>**
 
-[**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) クラスの [**ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482) メソッドを呼び出してファイルのテキストを読み取ります。
+<span data-ttu-id="04e53-141">[**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) クラスの [**ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482) メソッドを呼び出してファイルのテキストを読み取ります。</span><span class="sxs-lookup"><span data-stu-id="04e53-141">Read text from your file by calling the [**ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482) method of the [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) class.</span></span>
+
 > [!div class="tabbedCodeSnippets"]
-```cs
+```cs  
 string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
 ```
-```vb
+```cpp  
+StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile)
+{
+    return FileIO::ReadTextAsync(sampleFile);
+});
+```
+```vb  
 Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
 ```
 
-**バッファーを使ったファイルからのテキストの読み取り (2 ステップ)**
+**<span data-ttu-id="04e53-142">バッファーを使ったファイルからのテキストの読み取り (2 ステップ)</span><span class="sxs-lookup"><span data-stu-id="04e53-142">Reading text from a file by using a buffer (2 steps)</span></span>**
 
-1.  まず[**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) クラスの [**ReadBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701468) メソッドを呼び出します。
-> [!div class="tabbedCodeSnippets"]
-```cs
-var buffer = await Windows.Storage.FileIO.ReadBufferAsync(sampleFile);
-```
-```vb
-Dim buffer = Await Windows.Storage.FileIO.ReadBufferAsync(sampleFile)
-```
+1.  <span data-ttu-id="04e53-143">まず[**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) クラスの [**ReadBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701468) メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="04e53-143">First, call the [**ReadBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701468) method of the [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) class.</span></span>
 
-2.  次に、[**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) オブジェクトを使ってバッファーの長さを読み取り、次にバッファーのコンテンツを読み取ります。
-> [!div class="tabbedCodeSnippets"]
-```cs
-using (var dataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer))
+    > [!div class="tabbedCodeSnippets"]
+    ```cs  
+    var buffer = await Windows.Storage.FileIO.ReadBufferAsync(sampleFile);
+    ```
+
+    ```cpp  
+    StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+    create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile)
+    {
+        return FileIO::ReadBufferAsync(sampleFile);
+
+    }).then([](Streams::IBuffer^ buffer)
+    {
+        // Process buffer
+    });
+    ```
+
+    ```vb  
+    Dim buffer = Await Windows.Storage.FileIO.ReadBufferAsync(sampleFile)
+    ```
+
+2.  <span data-ttu-id="04e53-144">次に、[**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) オブジェクトを使ってバッファーの長さを読み取り、次にバッファーのコンテンツを読み取ります。</span><span class="sxs-lookup"><span data-stu-id="04e53-144">Then use a [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) object to read first the length of the buffer and then its contents.</span></span>
+
+    > [!div class="tabbedCodeSnippets"]
+    ```cs  
+    using (var dataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer))
     {
         string text = dataReader.ReadString(buffer.Length);
     }
-```
-```vb
-Dim dataReader As DataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer)
+    ```
+    ```cpp  
+    // Add to "Process buffer" section from part 1
+    auto dataReader = DataReader::FromBuffer(buffer);
+    String^ bufferText = dataReader->ReadString(buffer->Length);
+    ```
+    ```vb  
+    Dim dataReader As DataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer)
     Dim text As String = dataReader.ReadString(buffer.Length)
-```
+    ```
 
-**ストリームを使ったファイルからのテキストの読み取り (4 ステップ)**
+**<span data-ttu-id="04e53-145">ストリームを使ったファイルからのテキストの読み取り (4 ステップ)</span><span class="sxs-lookup"><span data-stu-id="04e53-145">Reading text from a file by using a stream (4 steps)</span></span>**
 
-1.  [**StorageFile.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn889851) メソッドを呼び出してファイルに対するストリームを開きます。 このメソッドは、操作が完了したときにファイルのコンテンツのストリームを返します。
-> [!div class="tabbedCodeSnippets"]
-```cs
-var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
-```
-```vb
-Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
-```
+1.  <span data-ttu-id="04e53-146">[**StorageFile.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn889851) メソッドを呼び出してファイルに対するストリームを開きます。</span><span class="sxs-lookup"><span data-stu-id="04e53-146">Open a stream for your file by calling the [**StorageFile.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn889851) method.</span></span> <span data-ttu-id="04e53-147">このメソッドは、操作が完了したときにファイルのコンテンツのストリームを返します。</span><span class="sxs-lookup"><span data-stu-id="04e53-147">It returns a stream of the file's content when the operation completes.</span></span>
 
-2.  後で使うためにストリームのサイズを取得します。
-> [!div class="tabbedCodeSnippets"]
-```cs
-ulong size = stream.Size;
-```
-```vb
-Dim size = stream.Size
-```
+    > [!div class="tabbedCodeSnippets"]
+    ```cs  
+    var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.Read);
+    ```
+    ```cpp  
+    StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+    create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile)
+    {
+        create_task(sampleFile->OpenAsync(FileAccessMode::Read)).then([sampleFile](IRandomAccessStream^ stream)
+        {
+            // Process stream
+        });
+    });
+    ```
+    ```vb  
+    Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.Read)
+    ```
 
-3.  [**GetInputStreamAt**](https://msdn.microsoft.com/library/windows/apps/br241737) メソッドを呼び出して入力ストリームを取得します。 これを **using** ステートメントに入れて、ストリームの有効期間を管理します。 **GetInputStreamAt** を呼び出すときに 0 を指定して、位置をストリームの先頭に設定します。
-> [!div class="tabbedCodeSnippets"]
-```cs
-using (var inputStream = stream.GetInputStreamAt(0))
+2.  <span data-ttu-id="04e53-148">後で使うためにストリームのサイズを取得します。</span><span class="sxs-lookup"><span data-stu-id="04e53-148">Get the size of the stream to use later.</span></span>
+
+    > [!div class="tabbedCodeSnippets"]
+    ```cs  
+    ulong size = stream.Size;
+    ```
+    ```cpp  
+    // Add to "Process stream" from part 1
+    UINT64 size = stream->Size;
+    ```
+    ```vb  
+    Dim size = stream.Size
+    ```
+
+3.  <span data-ttu-id="04e53-149">[**GetInputStreamAt**](https://msdn.microsoft.com/library/windows/apps/br241737) メソッドを呼び出して入力ストリームを取得します。</span><span class="sxs-lookup"><span data-stu-id="04e53-149">Get an input stream by calling the [**GetInputStreamAt**](https://msdn.microsoft.com/library/windows/apps/br241737) method.</span></span> <span data-ttu-id="04e53-150">これを **using** ステートメントに入れて、ストリームの有効期間を管理します。</span><span class="sxs-lookup"><span data-stu-id="04e53-150">Put this in a **using** statement to manage the stream's lifetime.</span></span> <span data-ttu-id="04e53-151">**GetInputStreamAt** を呼び出すときに 0 を指定して、位置をストリームの先頭に設定します。</span><span class="sxs-lookup"><span data-stu-id="04e53-151">Specify 0 when you call **GetInputStreamAt** to set the position to the beginning of the stream.</span></span>
+
+    > [!div class="tabbedCodeSnippets"]
+    ```cs  
+    using (var inputStream = stream.GetInputStreamAt(0))
     {
         // We'll add more code here in the next step.
     }
-```
-```vb
-Using inputStream = stream.GetInputStreamAt(0)
-    ' We'll add more code here in the next step.
-End Using
-```
+    ```
+    ```cpp  
+    // Add after code from part 2
+    IInputStream^ inputStream = stream->GetInputStreamAt(0);
+    auto dataReader = ref new DataReader(inputStream);
+    ```
+    ```vb  
+    Using inputStream = stream.GetInputStreamAt(0)
+        ' We'll add more code here in the next step.
+    End Using
+    ```
 
-4.  最後に、このコードを既存の **using** ステートメントに追加してストリーム上の [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) オブジェクトを取得し、[**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/br208135) と [**DataReader.ReadString**](https://msdn.microsoft.com/library/windows/apps/br208147) を呼び出してテキストを読み取ります。
-> [!div class="tabbedCodeSnippets"]
-```cs
-using (var dataReader = new Windows.Storage.Streams.DataReader(inputStream))
+4.  <span data-ttu-id="04e53-152">最後に、このコードを既存の **using** ステートメントに追加してストリーム上の [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) オブジェクトを取得し、[**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/br208135) と [**DataReader.ReadString**](https://msdn.microsoft.com/library/windows/apps/br208147) を呼び出してテキストを読み取ります。</span><span class="sxs-lookup"><span data-stu-id="04e53-152">Lastly, add this code within the existing **using** statement to get a [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) object on the stream then read the text by calling [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/br208135) and [**DataReader.ReadString**](https://msdn.microsoft.com/library/windows/apps/br208147).</span></span>
+
+    > [!div class="tabbedCodeSnippets"]
+    ```cs  
+    using (var dataReader = new Windows.Storage.Streams.DataReader(inputStream))
     {
         uint numBytesLoaded = await dataReader.LoadAsync((uint)size);
         string text = dataReader.ReadString(numBytesLoaded);
     }
-```
-```vb
-Dim dataReader As New DataReader(inputStream)
+    ```
+    ```cpp 
+    // Add after code from part 3
+    create_task(dataReader->LoadAsync(size)).then([sampleFile, dataReader](unsigned int numBytesLoaded)
+    {
+        String^ streamText = dataReader->ReadString(numBytesLoaded);
+    });
+    ```
+    ```vb  
+    Dim dataReader As New DataReader(inputStream)
     Dim numBytesLoaded As UInteger = Await dataReader.LoadAsync(CUInt(size))
     Dim text As String = dataReader.ReadString(numBytesLoaded)
-```
+    ```
 
  
 
  
-

@@ -1,57 +1,12 @@
 ---
-author: jnHs
-Description: "アプリ内のアフィリエイト広告のパフォーマンス データを表示するには、Windows デベロッパー センター ダッシュボードにあるアプリ レベルとアカウント レベルのアフィリエイト パフォーマンス レポートを使います。"
-title: "アフィリエイト パフォーマンス レポート"
-ms.assetid: 38AD494C-0F85-4FED-8732-9064D1FC503D
-ms.author: wdg-dev-content
-ms.date: 02/08/2017
-ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3b85abb11049a1e52e9d6a9cc61aebab407207a4
-ms.lasthandoff: 02/07/2017
-
+redirect_url: https://msdn.microsoft.com/windows/uwp/publish/advertising-performance-report
+ms.openlocfilehash: 647bbb3cf211ecaa7872a11f5cb654112abfcbe9
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/21/2017
 ---
+# <a name="affiliates-performance-report"></a><span data-ttu-id="ebbd6-101">アフィリエイト パフォーマンス レポート</span><span class="sxs-lookup"><span data-stu-id="ebbd6-101">Affiliates performance report</span></span>
 
-# <a name="affiliates-performance-report"></a>アフィリエイト パフォーマンス レポート
-
-[Microsoft アフィリエイト広告プログラムにオプトインした](about-affiliate-ads.md)場合は、アプリに表示されるアフィリエイト広告のパフォーマンス データを、Windows デベロッパー センター ダッシュボードの次のレポートで確認できます。
-
--   [アプリ レベルのアフィリエイト パフォーマンス レポート](#app-level-affiliate-ads-performance-report)。 このレポートは、ダッシュボードで現在選択されているアプリ内のアフィリエイト広告についてパフォーマンス データを提供します。
--   [ダッシュボード レベルのアフィリエイト パフォーマンス レポート](#dashboard-level-affiliate-ads-performance-report)。 このレポートは、Microsoft アフィリエイト広告プログラムにオプトインしたすべてのアプリ内のアフィリエイト広告について、パフォーマンス データの要約を提供します。
-
-これらのレポートは毎日更新されます。 既定では、レポートはすべてのデバイスにおける過去 30 日間のパフォーマンスでフィルター処理されます。 これらのフィルターを変更するには、**[ページ フィルター]** をクリックし、異なる期間や個々のデバイスの種類を選択します。 すべてのデータは、特定のタイム ゾーンではなく、UTC に基づいて集計されることに注意してください。
-
-以降のセクションでは、これらのレポートについてさらに詳しく説明します。
-
-## <a name="app-level-affiliate-ads-performance-report"></a>アプリ レベルのアフィリエイト広告パフォーマンス レポート
-
-このレポートは、ダッシュボードで現在選択されているアプリ内のアフィリエイト広告のパフォーマンス データを、グラフと表の形式で提供します。 このレポートを表示するには、ダッシュボードでいずれかのアプリを選択し、ナビゲーション ウィンドウで **[分析]** &gt; **[Affiliates performance]** の順にクリックします。
-
-データは、アプリの広告について追跡される次の 7 つのパフォーマンス メトリックから取得されます。
-
--   **[Estimated earnings (approved)]**: アプリ内のアフィリエイト広告をクリックしたユーザーによって行われた、承認された購入の手数料として受け取った見込み金額。
--   **[Estimated earnings (pending approval)]**: 承認待ちの購入が承認された場合に手数料として受け取ることができる見込み金額。
--   **[インプレッション数]**: アフィリエイト広告がアプリに表示された回数。
--   **[クリック数]**: アプリでアフィリエイト広告がユーザーによってクリックされた回数。
--   **[CTR]**: クリック スルー レート、つまりアフィリエイト広告がクリックされた回数をアフィリエイト広告のインプレッション数で割った値。
--   **[Purchases (approved)]**: アプリ内のアフィリエイト広告をクリックしたユーザーによって行われた、承認された購入の数。
--   **[Purchases (pending approval)]**: アプリ内のアフィリエイト広告をクリックしたユーザーによって行われた、承認保留中の購入の数。
-
-> **注**  ユーザーがストアで製品を購入してからアフィリエイト広告プログラムで承認されるまでに 45 日かかります。 そのため、指定した日の **[Estimated earnings (approved)] (売上見込み (承認済み))**、**[Estimated earnings (pending approval)] (売上見込み (承認保留中))**、**[Purchases (approved)] (購入数 (承認済み))**、**[Purchases (pending approval)] (購入数 (承認保留中))** のデータは、購入が承認または拒否された後に変わる可能性があります。
-
-## <a name="dashboard-level-affiliate-ads-performance-report"></a>ダッシュボード レベルのアフィリエイト広告のパフォーマンス レポート
-
-**[ダッシュボード概要]** ページの **[Affiliates performance] (アフィリエイトのパフォーマンス)** セクションには、Microsoft アフィリエイト広告プログラムにオプトインしたすべてのアプリ内のアフィリエイト広告について、パフォーマンス データの要約が提供されます。 このレポートは、上記で説明したアプリ レベルのアフィリエイト パフォーマンス レポートと同じパフォーマンスのメトリックおよびフィルターを示します。
-
-## <a name="related-topics"></a>関連トピック
-
-* [アフィリエイト広告について](about-affiliate-ads.md)
-* [広告による収益獲得](monetize-with-ads.md)
+<span data-ttu-id="ebbd6-102">このトピックは、「[広告パフォーマンス] レポート」にリダイレクトされました。</span><span class="sxs-lookup"><span data-stu-id="ebbd6-102">This topic has been redirected to: Advertising performance report</span></span>
  
-
- 
-

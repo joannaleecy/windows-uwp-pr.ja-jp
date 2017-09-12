@@ -6,231 +6,217 @@ ms.assetid: C328FAA3-F6AE-4970-8372-B413F1290C39
 label: Search
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0a92a3962a6e46f6086b07e548ea39887a780c21
-ms.lasthandoff: 02/07/2017
-
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: 9a12e7490cc1cf7bd1aa65b694a3aeb345ba1128
+ms.sourcegitcommit: 45490bd85e6f8d247a041841d547ecac2ff48250
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/23/2017
 ---
-# <a name="search-and-find-in-page"></a>検索とページ内検索
+# <a name="search-and-find-in-page"></a><span data-ttu-id="b865a-105">検索とページ内検索</span><span class="sxs-lookup"><span data-stu-id="b865a-105">Search and find-in-page</span></span>
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-検索は、ユーザーがアプリでコンテンツを見つけることができる 2 つの方法のうちの 1 つです。 この記事のガイダンスでは、検索エクスペリエンスの構成要素、検索スコープ、実装、コンテキストでの検索の例について説明します。
+<span data-ttu-id="b865a-106">検索は、ユーザーがアプリでコンテンツを見つけることができる 2 つの方法のうちの 1 つです。</span><span class="sxs-lookup"><span data-stu-id="b865a-106">Search is one of the top ways users can find content in your app.</span></span> <span data-ttu-id="b865a-107">この記事のガイダンスでは、検索エクスペリエンスの構成要素、検索スコープ、実装、コンテキストでの検索の例について説明します。</span><span class="sxs-lookup"><span data-stu-id="b865a-107">The guidance in this article covers elements of the search experience, search scopes, implementation, and examples of search in context.</span></span>
 
-<div class="important-apis" >
-<b>重要な API</b><br/>
-<ul>
-<li>[**AutoSuggestBox クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn633874)</li>
-</ul>
-</div>
+> <span data-ttu-id="b865a-108">**重要な API**: [AutoSuggestBox クラス](https://msdn.microsoft.com/library/windows/apps/dn633874)</span><span class="sxs-lookup"><span data-stu-id="b865a-108">**Important APIs**: [AutoSuggestBox class](https://msdn.microsoft.com/library/windows/apps/dn633874)</span></span>
 
-## <a name="elements-of-the-search-experience"></a>検索エクスペリエンスの構成要素
+## <a name="elements-of-the-search-experience"></a><span data-ttu-id="b865a-109">検索エクスペリエンスの構成要素</span><span class="sxs-lookup"><span data-stu-id="b865a-109">Elements of the search experience</span></span>
 
 
-**入力。**  テキストは検索入力の最も一般的なモードであり、このガイドで重点的に説明します。 その他の一般的な入力モードには音声やカメラがありますが、通常、それらにはデバイス ハードウェアを操作する機能が必要であり、追加のコントロールやカスタム UI がアプリ内で必要になる場合があります。
+**<span data-ttu-id="b865a-110">入力。</span><span class="sxs-lookup"><span data-stu-id="b865a-110">Input.</span></span>**  <span data-ttu-id="b865a-111">テキストは検索入力の最も一般的なモードであり、このガイドで重点的に説明します。</span><span class="sxs-lookup"><span data-stu-id="b865a-111">Text is the most common mode of search input and is the focus of this guidance.</span></span> <span data-ttu-id="b865a-112">その他の一般的な入力モードには音声やカメラがありますが、通常、それらにはデバイス ハードウェアを操作する機能が必要であり、追加のコントロールやカスタム UI がアプリ内で必要になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="b865a-112">Other common input modes include voice and camera, but these typically require the ability to interface with device hardware and may require additional controls or custom UI within the app.</span></span>
 
-**ゼロ入力。**  ユーザーが入力フィールドをアクティブにしてからテキストを入力するまでに、"ゼロ入力キャンバス" と呼ばれるものを表示できます。 通常、ゼロ入力キャンバスは、アプリのキャンバスに表示され、ユーザーがクエリの入力を開始したときに、このコンテンツが[自動提案](auto-suggest-box.md)で置き換えられます。 最近の検索履歴、トレンド検索、状況依存の検索候補、ヒントが、すべてゼロ入力状態の候補となります。
+**<span data-ttu-id="b865a-113">ゼロ入力。</span><span class="sxs-lookup"><span data-stu-id="b865a-113">Zero input.</span></span>**  <span data-ttu-id="b865a-114">ユーザーが入力フィールドをアクティブにしてからテキストを入力するまでに、"ゼロ入力キャンバス" と呼ばれるものを表示できます。</span><span class="sxs-lookup"><span data-stu-id="b865a-114">Once the user has activated the input field, but before the user has entered text, you can display what's called a "zero input canvas."</span></span> <span data-ttu-id="b865a-115">通常、ゼロ入力キャンバスは、アプリのキャンバスに表示され、ユーザーがクエリの入力を開始したときに、このコンテンツが[自動提案](auto-suggest-box.md)で置き換えられます。</span><span class="sxs-lookup"><span data-stu-id="b865a-115">The zero input canvas will commonly appear in the app canvas, so that [auto-suggest](auto-suggest-box.md) replaces this content when the user begins to input their query.</span></span> <span data-ttu-id="b865a-116">最近の検索履歴、トレンド検索、状況依存の検索候補、ヒントが、すべてゼロ入力状態の候補となります。</span><span class="sxs-lookup"><span data-stu-id="b865a-116">Recent search history, trending searches, contextual search suggestions, hints and tips are all good candidates for the zero input state.</span></span>
 
 ![ゼロ入力キャンバスでの Cortana の例](images/search-cortana-example.png)
 
  
 
-**クエリの生成/自動提案。**  クエリの生成により、ユーザーが入力を開始するとすぐにゼロ入力のコンテンツが置き換えられます。 ユーザーがクエリ文字列を入力すると、入力プロセスを高速化し、有効なクエリを生成できるように、継続的に更新される一連のクエリ候補、または不明瞭解消オプションが表示されます。 このクエリ候補の表示動作は、[自動提案コントロール](auto-suggest-box.md)に組み込まれ、検索内部にアイコンを表示する方法にもなります (マイク アイコンやコミット アイコンなど)。 これ以外のすべての動作は、アプリに基づきます。
+**<span data-ttu-id="b865a-118">クエリの生成/自動提案。</span><span class="sxs-lookup"><span data-stu-id="b865a-118">Query formulation/auto-suggest.</span></span>**  <span data-ttu-id="b865a-119">クエリの生成により、ユーザーが入力を開始するとすぐにゼロ入力のコンテンツが置き換えられます。</span><span class="sxs-lookup"><span data-stu-id="b865a-119">Query formulation replaces zero input content as soon as the user begins to enter input.</span></span> <span data-ttu-id="b865a-120">ユーザーがクエリ文字列を入力すると、入力プロセスを高速化し、有効なクエリを生成できるように、継続的に更新される一連のクエリ候補、または不明瞭解消オプションが表示されます。</span><span class="sxs-lookup"><span data-stu-id="b865a-120">As the user enters a query string, they are provided with a continuously updated set of query suggestions or disambiguation options to help them expedite the input process and formulate an effective query.</span></span> <span data-ttu-id="b865a-121">このクエリ候補の表示動作は、[自動提案コントロール](auto-suggest-box.md)に組み込まれ、検索内部にアイコンを表示する方法にもなります (マイク アイコンやコミット アイコンなど)。</span><span class="sxs-lookup"><span data-stu-id="b865a-121">This behavior of query suggestions is built into the [auto-suggest control](auto-suggest-box.md), and is also a way to show the icon inside the search (like a microphone or a commit icon).</span></span> <span data-ttu-id="b865a-122">これ以外のすべての動作は、アプリに基づきます。</span><span class="sxs-lookup"><span data-stu-id="b865a-122">Any behavior outside of this falls to the app.</span></span>
 
 ![クエリの生成/自動提案の例](images/search-autosuggest-example.png)
 
  
 
-**結果のセット。**  検索結果は、通常は検索入力フィールドのすぐ下に表示されます。 これは必須ではありませんが、入力と結果の並置によりコンテキストが維持され、ユーザーは前のクエリの編集や新しいクエリの入力をすぐに開始できます。 このつながりは、ヒント テキストを、結果セットを作成したクエリで置き換えることで、さらに強化できます。
+**<span data-ttu-id="b865a-124">結果のセット。</span><span class="sxs-lookup"><span data-stu-id="b865a-124">Results set.</span></span>**  <span data-ttu-id="b865a-125">検索結果は、通常は検索入力フィールドのすぐ下に表示されます。</span><span class="sxs-lookup"><span data-stu-id="b865a-125">Search results commonly appear directly under the search input field.</span></span> <span data-ttu-id="b865a-126">これは必須ではありませんが、入力と結果の並置によりコンテキストが維持され、ユーザーは前のクエリの編集や新しいクエリの入力をすぐに開始できます。</span><span class="sxs-lookup"><span data-stu-id="b865a-126">While this isn't a requirement, the juxtaposition of input and results maintains context and provides the user with immediate access to edit the previous query or enter a new query.</span></span> <span data-ttu-id="b865a-127">このつながりは、ヒント テキストを、結果セットを作成したクエリで置き換えることで、さらに強化できます。</span><span class="sxs-lookup"><span data-stu-id="b865a-127">This connection can be further communicated by replacing the hint text with the query that created the results set.</span></span>
 
-前のクエリの編集と新しいクエリの入力の両方を効率的に開始できるようにする 1 つの方法として、フィールドが再アクティブ化されたときに、前のクエリを強調表示します。 これにより、任意のキー入力によって前の文字列が置き換えられますが、文字列が保持されるため、ユーザーはカーソルを移動して、前の文字列を編集または追加することができます。
+<span data-ttu-id="b865a-128">前のクエリの編集と新しいクエリの入力の両方を効率的に開始できるようにする 1 つの方法として、フィールドが再アクティブ化されたときに、前のクエリを強調表示します。</span><span class="sxs-lookup"><span data-stu-id="b865a-128">One method to enable efficient access to both edit the previous query and enter a new query is to highlight the previous query when the field is reactivated.</span></span> <span data-ttu-id="b865a-129">これにより、任意のキー入力によって前の文字列が置き換えられますが、文字列が保持されるため、ユーザーはカーソルを移動して、前の文字列を編集または追加することができます。</span><span class="sxs-lookup"><span data-stu-id="b865a-129">This way, any keystroke will replace the previous string, but the string is maintained so that the user can position a cursor to edit or append the previous string.</span></span>
 
-結果のセットは、コンテンツを最適に伝える任意の形式で表示できます。 [リスト ビュー](lists.md)は十分な柔軟性を備えており、ほとんどの検索に最適です。 グリッド ビューはイメージまたはその他のメディアに適しており、地図を使って空間的な配布を伝えることができます。
+<span data-ttu-id="b865a-130">結果のセットは、コンテンツを最適に伝える任意の形式で表示できます。</span><span class="sxs-lookup"><span data-stu-id="b865a-130">The results set can appear in any form that best communicates the content.</span></span> <span data-ttu-id="b865a-131">[リスト ビュー](lists.md)は十分な柔軟性を備えており、ほとんどの検索に最適です。</span><span class="sxs-lookup"><span data-stu-id="b865a-131">A [list view](lists.md) provides a good deal of flexibility and is well-suited to most searches.</span></span> <span data-ttu-id="b865a-132">グリッド ビューはイメージまたはその他のメディアに適しており、地図を使って空間的な配布を伝えることができます。</span><span class="sxs-lookup"><span data-stu-id="b865a-132">A grid view works well for images or other media, and a map can be used to communicate spatial distribution.</span></span>
 
-## <a name="search-scopes"></a>検索スコープ
+## <a name="search-scopes"></a><span data-ttu-id="b865a-133">検索スコープ</span><span class="sxs-lookup"><span data-stu-id="b865a-133">Search scopes</span></span>
 
 
-検索は共通の機能であり、シェルおよび多くのアプリ内で検索 UI がユーザーに表示されます。 検索のエントリ ポイントは同じように視覚化される傾向がありますが、広い範囲 (Web またはデバイスの検索) から狭い範囲 (ユーザーの連絡先一覧) までの結果を提供できます。 検索エントリ ポイントは、検索対象のコンテンツに対して並置する必要があります。
+<span data-ttu-id="b865a-134">検索は共通の機能であり、シェルおよび多くのアプリ内で検索 UI がユーザーに表示されます。</span><span class="sxs-lookup"><span data-stu-id="b865a-134">Search is a common feature, and users will encounter search UI in the shell and within many apps.</span></span> <span data-ttu-id="b865a-135">検索のエントリ ポイントは同じように視覚化される傾向がありますが、広い範囲 (Web またはデバイスの検索) から狭い範囲 (ユーザーの連絡先一覧) までの結果を提供できます。</span><span class="sxs-lookup"><span data-stu-id="b865a-135">Although search entry points tend to be similarly visualized, they can provide access to results that range from broad (web or device searches) to narrow (a user's contact list).</span></span> <span data-ttu-id="b865a-136">検索エントリ ポイントは、検索対象のコンテンツに対して並置する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b865a-136">The search entry point should be juxtaposed against the content being searched.</span></span>
 
-一般的な検索スコープは次のとおりです。
+<span data-ttu-id="b865a-137">一般的な検索スコープは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="b865a-137">Some common search scopes include:</span></span>
 
-**グローバル** と **コンテキスト/絞り込み。**  クラウドとローカル コンテンツの複数のソースを対象に検索を実行します。 結果には、URL、ドキュメント、メディア、操作、アプリなどが含まれます。
+<span data-ttu-id="b865a-138">**グローバル** と **コンテキスト/絞り込み。**</span><span class="sxs-lookup"><span data-stu-id="b865a-138">**Global** and **contextual/refine.**</span></span>  <span data-ttu-id="b865a-139">クラウドとローカル コンテンツの複数のソースを対象に検索を実行します。</span><span class="sxs-lookup"><span data-stu-id="b865a-139">Search across multiple sources of cloud and local content.</span></span> <span data-ttu-id="b865a-140">結果には、URL、ドキュメント、メディア、操作、アプリなどが含まれます。</span><span class="sxs-lookup"><span data-stu-id="b865a-140">Varied results include URLs, documents, media, actions, apps, and more.</span></span>
 
-**Web。**  Web インデックスを検索します。 結果には、ページ、エンティティ、回答が含まれます。
+**<span data-ttu-id="b865a-141">Web。</span><span class="sxs-lookup"><span data-stu-id="b865a-141">Web.</span></span>**  <span data-ttu-id="b865a-142">Web インデックスを検索します。</span><span class="sxs-lookup"><span data-stu-id="b865a-142">Search a web index.</span></span> <span data-ttu-id="b865a-143">結果には、ページ、エンティティ、回答が含まれます。</span><span class="sxs-lookup"><span data-stu-id="b865a-143">Results include pages, entities, and answers.</span></span>
 
-**自分のコンテンツ。**  デバイス、クラウド、ソーシャル グラフなどを対象に検索を実行します。 結果はさまざまですが、ユーザー アカウントへの接続によって制限されます。
+**<span data-ttu-id="b865a-144">自分のコンテンツ。</span><span class="sxs-lookup"><span data-stu-id="b865a-144">My stuff.</span></span>**  <span data-ttu-id="b865a-145">デバイス、クラウド、ソーシャル グラフなどを対象に検索を実行します。</span><span class="sxs-lookup"><span data-stu-id="b865a-145">Search across device(s), cloud, social graphs, and more.</span></span> <span data-ttu-id="b865a-146">結果はさまざまですが、ユーザー アカウントへの接続によって制限されます。</span><span class="sxs-lookup"><span data-stu-id="b865a-146">Results are varied, but are constrained by the connection to user account(s).</span></span>
 
-ヒントのテキストを使って検索スコープを伝えます。 次のようなシナリオが考えられます。
+<span data-ttu-id="b865a-147">ヒントのテキストを使って検索スコープを伝えます。</span><span class="sxs-lookup"><span data-stu-id="b865a-147">Use hint text to communicate search scope.</span></span> <span data-ttu-id="b865a-148">次のようなシナリオが考えられます。</span><span class="sxs-lookup"><span data-stu-id="b865a-148">Examples include:</span></span>
 
-"Windows と Web を検索する"
+<span data-ttu-id="b865a-149">"Windows と Web を検索する"</span><span class="sxs-lookup"><span data-stu-id="b865a-149">"Search Windows and the Web"</span></span>
 
-"連絡先の一覧を検索する"
+<span data-ttu-id="b865a-150">"連絡先の一覧を検索する"</span><span class="sxs-lookup"><span data-stu-id="b865a-150">"Search contacts list"</span></span>
 
-"メールボックスを検索する"
+<span data-ttu-id="b865a-151">"メールボックスを検索する"</span><span class="sxs-lookup"><span data-stu-id="b865a-151">"Search mailbox"</span></span>
 
-"検索の設定"
+<span data-ttu-id="b865a-152">"検索の設定"</span><span class="sxs-lookup"><span data-stu-id="b865a-152">"Search settings"</span></span>
 
-"場所を探す"
+<span data-ttu-id="b865a-153">"場所を探す"</span><span class="sxs-lookup"><span data-stu-id="b865a-153">"Search for a place"</span></span>
 
 ![検索のヒントのテキストの例](images/search-windowsandweb.png)
 
  
 
-検索入力ポイントの範囲を効果的に伝えることにより、実行中の検索の機能がユーザーの期待事項を満たし、不満が発生する可能性を減らすことができます。
+<span data-ttu-id="b865a-155">検索入力ポイントの範囲を効果的に伝えることにより、実行中の検索の機能がユーザーの期待事項を満たし、不満が発生する可能性を減らすことができます。</span><span class="sxs-lookup"><span data-stu-id="b865a-155">By effectively communicating the scope of a search input point, you can help to ensure that the user expectation will be met by the capabilities of the search you are performing and reduce the possibility of frustration.</span></span>
 
-## <a name="implementation"></a>実装
+## <a name="implementation"></a><span data-ttu-id="b865a-156">実装</span><span class="sxs-lookup"><span data-stu-id="b865a-156">Implementation</span></span>
 
 
-ほとんどのアプリでは、検索のエントリ ポイントとしてテキスト入力フィールドを用意することをお勧めします。これにより、目立つ視覚的なフットプリントが提供されます。 さらに、ヒントのテキストは検索機能を支援し、検索スコープを伝えることができます。 検索がよりセカンダリ操作であるか、またはスペースに制約がある場合、検索アイコンは、関連する入力フィールドのないエントリ ポイントとなります。 アイコンとして視覚化するときは、次の例のように、必ずモーダルな検索ボックスの余地があることを確認します。
+<span data-ttu-id="b865a-157">ほとんどのアプリでは、検索のエントリ ポイントとしてテキスト入力フィールドを用意することをお勧めします。これにより、目立つ視覚的なフットプリントが提供されます。</span><span class="sxs-lookup"><span data-stu-id="b865a-157">For most apps, it's best to have a text input field as the search entry point, which provides a prominent visual footprint.</span></span> <span data-ttu-id="b865a-158">さらに、ヒントのテキストは検索機能を支援し、検索スコープを伝えることができます。</span><span class="sxs-lookup"><span data-stu-id="b865a-158">In addition, hint text helps with discoverability and communicating the search scope.</span></span> <span data-ttu-id="b865a-159">検索がよりセカンダリ操作であるか、またはスペースに制約がある場合、検索アイコンは、関連する入力フィールドのないエントリ ポイントとなります。</span><span class="sxs-lookup"><span data-stu-id="b865a-159">When search is a more secondary action, or when space is constrained, the search icon can serve as an entry point without the accompanying input field.</span></span> <span data-ttu-id="b865a-160">アイコンとして視覚化するときは、次の例のように、必ずモーダルな検索ボックスの余地があることを確認します。</span><span class="sxs-lookup"><span data-stu-id="b865a-160">When visualized as an icon, be sure that there's room for a modal search box, as seen in the below examples.</span></span>
 
-検索アイコンをクリックする前:
+<span data-ttu-id="b865a-161">検索アイコンをクリックする前:</span><span class="sxs-lookup"><span data-stu-id="b865a-161">Before clicking search icon:</span></span>
 
 ![検索アイコンと折りたたまれている検索ボックスの例](images/search-icon-collapsed.png)
 
  
 
-検索アイコンをクリックした後:
+<span data-ttu-id="b865a-163">検索アイコンをクリックした後:</span><span class="sxs-lookup"><span data-stu-id="b865a-163">After clicking search icon:</span></span>
 
 ![検索アイコンと展開された検索ボックスの例](images/search-icon-expanded.png)
 
  
 
-検索では、常にエントリ ポイントに右向きの虫眼鏡グリフを使います。 使用するグリフは Segoe UI Symbol、16 進数の文字のコード 0xE0094 で、通常は 15 epx のフォント サイズです。
+<span data-ttu-id="b865a-165">検索では、常にエントリ ポイントに右向きの虫眼鏡グリフを使います。</span><span class="sxs-lookup"><span data-stu-id="b865a-165">Search always uses a right-pointing magnifying glass glyph for the entry point.</span></span> <span data-ttu-id="b865a-166">使用するグリフは Segoe UI Symbol、16 進数の文字のコード 0xE0094 で、通常は 15 epx のフォント サイズです。</span><span class="sxs-lookup"><span data-stu-id="b865a-166">The glyph to use is Segoe UI Symbol, hex character code 0xE0094, and usually at 15 epx font size.</span></span>
 
-検索のエントリ ポイントは、多数のさまざまな領域に配置でき、それによって検索スコープとコンテキストの両方が伝わります。 さまざまなエクスペリエンスや外部からの結果をアプリに収集する検索は、通常、グローバル コマンド バーやナビゲーションなど、最上位にあるアプリのクロム内に配置されます。
+<span data-ttu-id="b865a-167">検索のエントリ ポイントは、多数のさまざまな領域に配置でき、それによって検索スコープとコンテキストの両方が伝わります。</span><span class="sxs-lookup"><span data-stu-id="b865a-167">The search entry point can be placed in a number of different areas, and its placement communicates both search scope and context.</span></span> <span data-ttu-id="b865a-168">さまざまなエクスペリエンスや外部からの結果をアプリに収集する検索は、通常、グローバル コマンド バーやナビゲーションなど、最上位にあるアプリのクロム内に配置されます。</span><span class="sxs-lookup"><span data-stu-id="b865a-168">Searches that gather results from across an experience or external to the app are typically located within top-level app chrome, such as global command bars or navigation.</span></span>
 
-検索スコープが狭くなるかにコンテキストに依存するにつれて、通常、配置は検索するコンテンツとより直接的に関連付けられます (キャンバス上、リスト ヘッダーとして、状況依存のコマンド バー内など)。 いずれの場合も、検索入力と結果のつながり、または絞り込まれたコンテンツが視覚的に明確になります。
+<span data-ttu-id="b865a-169">検索スコープが狭くなるかにコンテキストに依存するにつれて、通常、配置は検索するコンテンツとより直接的に関連付けられます (キャンバス上、リスト ヘッダーとして、状況依存のコマンド バー内など)。</span><span class="sxs-lookup"><span data-stu-id="b865a-169">As the search scope becomes more narrow or contextual, the placement will typically be more directly associated with the content to be searched, such as on a canvas, as a list header, or within contextual command bars.</span></span> <span data-ttu-id="b865a-170">いずれの場合も、検索入力と結果のつながり、または絞り込まれたコンテンツが視覚的に明確になります。</span><span class="sxs-lookup"><span data-stu-id="b865a-170">In all cases, the connection between search input and results or filtered content should be visually clear.</span></span>
 
-スクロール可能なリストの場合、常に検索入力を表示すると便利です。 検索入力は固定し、コンテンツが背後をスクロールするようにすることをお勧めします。
+<span data-ttu-id="b865a-171">スクロール可能なリストの場合、常に検索入力を表示すると便利です。</span><span class="sxs-lookup"><span data-stu-id="b865a-171">In the case of scrollable lists, it's helpful to always have search input be visible.</span></span> <span data-ttu-id="b865a-172">検索入力は固定し、コンテンツが背後をスクロールするようにすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="b865a-172">We recommend making the search input sticky and have content scroll behind it.</span></span>
 
-ゼロ入力とクエリの生成機能は、コンテキスト/絞り込み検索ではオプションであり、リストはユーザーの入力によってリアルタイムで絞り込まれます。 例外には、受信トレイのフィルター オプション (宛先:&lt;入力文字列&gt;、差出人: &lt;入力文字列&gt;、件名: &lt;入力文字列&gt;) など、クエリの書式設定の候補が表示される場合などがあります。
+<span data-ttu-id="b865a-173">ゼロ入力とクエリの生成機能は、コンテキスト/絞り込み検索ではオプションであり、リストはユーザーの入力によってリアルタイムで絞り込まれます。</span><span class="sxs-lookup"><span data-stu-id="b865a-173">Zero input and query formulation functionality is optional for contextual/refine searches in which the list will be filtered in real-time by user input.</span></span> <span data-ttu-id="b865a-174">例外には、受信トレイのフィルター オプション (宛先:&lt;入力文字列&gt;、差出人: &lt;入力文字列&gt;、件名: &lt;入力文字列&gt;) など、クエリの書式設定の候補が表示される場合などがあります。</span><span class="sxs-lookup"><span data-stu-id="b865a-174">Exceptions include cases where query formatting suggestions may be available, such as inbox filtering options (to:&lt;input string&gt;, from: &lt;input string&gt;, subject: &lt;input string&gt;, and so on).</span></span>
 
-## <a name="example"></a>例
+## <a name="example"></a><span data-ttu-id="b865a-175">例</span><span class="sxs-lookup"><span data-stu-id="b865a-175">Example</span></span>
 
 
-このセクションの例では、コンテキストに検索を配置します。
+<span data-ttu-id="b865a-176">このセクションの例では、コンテキストに検索を配置します。</span><span class="sxs-lookup"><span data-stu-id="b865a-176">The examples in this section show search placed in context.</span></span>
 
-Windows ツール バーの操作としての検索:
+<span data-ttu-id="b865a-177">Windows ツール バーの操作としての検索:</span><span class="sxs-lookup"><span data-stu-id="b865a-177">Search as an action in the Windows tool bar:</span></span>
 
 ![Windows ツール バーの操作としての検索の例](images/search-toolbar-action.png)
 
  
 
-アプリ キャンバスでの入力としての検索:
+<span data-ttu-id="b865a-179">アプリ キャンバスでの入力としての検索:</span><span class="sxs-lookup"><span data-stu-id="b865a-179">Search as an input on the app canvas:</span></span>
 
 ![アプリ キャンバスでの検索の例](images/search-canvas-contacts.png)
 
  
 
-ナビゲーション ウィンドウでの検索:
+<span data-ttu-id="b865a-181">ナビゲーション ウィンドウでの検索:</span><span class="sxs-lookup"><span data-stu-id="b865a-181">Search in a navigation pane:</span></span>
 
 ![ナビゲーション メニューの検索の例](images/search-navmenu.png)
 
  
 
-検索が頻繁にアクセスされないか、コンテキスト依存が高い場合に予約されるのが最適なインライン検索:
+<span data-ttu-id="b865a-183">検索が頻繁にアクセスされないか、コンテキスト依存が高い場合に予約されるのが最適なインライン検索:</span><span class="sxs-lookup"><span data-stu-id="b865a-183">Inline search is best reserved for cases where search is infrequently accessed or is highly contextual:</span></span>
 
 ![インライン検索の例](images/patterns-search-results-desktop.png)
 
 
-## <a name="guidelines-for-find-in-page"></a>ページ内検索のガイドライン
+## <a name="guidelines-for-find-in-page"></a><span data-ttu-id="b865a-185">ページ内検索のガイドライン</span><span class="sxs-lookup"><span data-stu-id="b865a-185">Guidelines for find-in-page</span></span>
 
 
-ページ内検索により、ユーザーは現在のテキスト本文からテキストの一致を検索できるようになります。 ページ内検索が提供される最も一般的なアプリは、ドキュメント ビューアー、リーダー、ブラウザーです。
+<span data-ttu-id="b865a-186">ページ内検索により、ユーザーは現在のテキスト本文からテキストの一致を検索できるようになります。</span><span class="sxs-lookup"><span data-stu-id="b865a-186">Find-in-page enables users to find text matches in the current body of text.</span></span> <span data-ttu-id="b865a-187">ページ内検索が提供される最も一般的なアプリは、ドキュメント ビューアー、リーダー、ブラウザーです。</span><span class="sxs-lookup"><span data-stu-id="b865a-187">Document viewers, readers, and browsers are the most typical apps that provide find-in-page.</span></span>
 
-## <a name="dos-and-donts"></a>推奨と非推奨
-
-
--   ユーザーがページ内のテキストを検索できるように、ページ内検索機能を備えたコマンド バーをアプリ内に配置します。 配置について詳しくは、「例」をご覧ください。
-
-    -   ページ内検索を提供するアプリでは、必要なすべてのコントロールがコマンド バーに含まれている必要があります。
-    -   ページ検索以外に多くの機能をアプリに含める場合は、ページ内検索のすべてのコントロールが含まれる別のコマンド バーへのエントリ ポイントとしてトップ レベルのコマンド バーに **[検索]** ボタンを追加できます。
-    -   ユーザーがタッチ キーボードを操作しているときもページ内検索のコマンド バーが表示されるようにします。 タッチ キーボードは、ユーザーが入力ボックスをタップすると表示されます。 ページ内検索のコマンド バーは、タッチ キーボードに隠れないように上へ移動する必要があります。
-
-    -   ユーザーが表示を操作しているときもページ内検索を利用できるようにする。 ユーザーは、ページ内検索を使いながら表示内のテキストを操作する必要があります。 たとえば、ユーザーはテキストを読むために、ドキュメントを拡大表示または縮小表示したり、表示をパンしたりすることがあります。 ユーザーがページ内検索を使い始めたら、コマンド バーはページ内検索を終了するための **[閉じる]** ボタンと共に表示されたままにする必要があります。
-
-    -   キーボード ショートカット (Ctrl + F) を有効にする。 キーボード ショートカット Ctrl + F を実装し、ページ内検索のコマンド バーをユーザーがすぐに呼び出すことができるようにします。
-
-    -   ページ内検索機能の基本要素を含める。 ページ内検索を実装するために必要な UI 要素を次に示します。
-
-        -   入力ボックス
-        -   [前へ] ボタンと [次へ] ボタン
-        -   一致数
-        -   [閉じる] (デスクトップのみ)
-    -   表示で一致した結果が強調表示され、スクロールして次の一致が画面に表示されるようにする。 ユーザーは、**[前へ]** ボタンと **[次へ]** ボタンの使用、スクロール バーの使用、またはタッチによる直接操作によってドキュメントをすばやく移動できます。
-
-    -   検索と置換の機能が基本的なページ内検索機能と共に機能するようにする。 検索と置換の機能があるアプリでは、ページ内検索が検索と置換の機能の妨げにならないようにします。
-
--   ページ上にあるテキスト一致数をユーザーに示すために、一致カウンターを追加します。
--   キーボード ショートカット (Ctrl + F) を有効にする。
-
-## <a name="examples"></a>例
+## <a name="dos-and-donts"></a><span data-ttu-id="b865a-188">推奨と非推奨</span><span class="sxs-lookup"><span data-stu-id="b865a-188">Do's and don'ts</span></span>
 
 
-ページ内検索機能にアクセスする簡単な方法を提供します。 ここに示すモバイル UI の例では、展開可能なメニューで、2 つの追加コマンドの後に [ページ内を検索] が表示されています。
+-   <span data-ttu-id="b865a-189">ユーザーがページ内のテキストを検索できるように、ページ内検索機能を備えたコマンド バーをアプリ内に配置します。</span><span class="sxs-lookup"><span data-stu-id="b865a-189">Place a command bar in your app with find-in-page functionality to let the user search for on-page text.</span></span> <span data-ttu-id="b865a-190">配置について詳しくは、「例」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b865a-190">For placement details, see the Examples section.</span></span>
+
+    -   <span data-ttu-id="b865a-191">ページ内検索を提供するアプリでは、必要なすべてのコントロールがコマンド バーに含まれている必要があります。</span><span class="sxs-lookup"><span data-stu-id="b865a-191">Apps that provide find-in-page should have all necessary controls in a command bar.</span></span>
+    -   <span data-ttu-id="b865a-192">ページ検索以外に多くの機能をアプリに含める場合は、ページ内検索のすべてのコントロールが含まれる別のコマンド バーへのエントリ ポイントとしてトップ レベルのコマンド バーに **[検索]** ボタンを追加できます。</span><span class="sxs-lookup"><span data-stu-id="b865a-192">If your app includes a lot of functionality beyond find-in-page, you can provide a **Find** button in the top-level command bar as an entry point to another command bar that contains all of your find-in-page controls.</span></span>
+    -   <span data-ttu-id="b865a-193">ユーザーがタッチ キーボードを操作しているときもページ内検索のコマンド バーが表示されるようにします。</span><span class="sxs-lookup"><span data-stu-id="b865a-193">The find-in-page command bar should remain visible when the user is interacting with the touch keyboard.</span></span> <span data-ttu-id="b865a-194">タッチ キーボードは、ユーザーが入力ボックスをタップすると表示されます。</span><span class="sxs-lookup"><span data-stu-id="b865a-194">The touch keyboard appears when a user taps the input box.</span></span> <span data-ttu-id="b865a-195">ページ内検索のコマンド バーは、タッチ キーボードに隠れないように上へ移動する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b865a-195">The find-in-page command bar should move up, so it's not obscured by the touch keyboard.</span></span>
+
+    -   <span data-ttu-id="b865a-196">ユーザーが表示を操作しているときもページ内検索を利用できるようにする。</span><span class="sxs-lookup"><span data-stu-id="b865a-196">Find-in-page should remain available while the user interacts with the view.</span></span> <span data-ttu-id="b865a-197">ユーザーは、ページ内検索を使いながら表示内のテキストを操作する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b865a-197">Users need to interact with the in-view text while using find-in-page.</span></span> <span data-ttu-id="b865a-198">たとえば、ユーザーはテキストを読むために、ドキュメントを拡大表示または縮小表示したり、表示をパンしたりすることがあります。</span><span class="sxs-lookup"><span data-stu-id="b865a-198">For example, users may want to zoom in or out of a document or pan the view to read the text.</span></span> <span data-ttu-id="b865a-199">ユーザーがページ内検索を使い始めたら、コマンド バーはページ内検索を終了するための **[閉じる]** ボタンと共に表示されたままにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="b865a-199">Once the user starts using find-in-page, the command bar should remain available with a **Close** button to exit find-in-page.</span></span>
+
+    -   <span data-ttu-id="b865a-200">キーボード ショートカット (Ctrl + F) を有効にする。</span><span class="sxs-lookup"><span data-stu-id="b865a-200">Enable the keyboard shortcut (CTRL+F).</span></span> <span data-ttu-id="b865a-201">キーボード ショートカット Ctrl + F を実装し、ページ内検索のコマンド バーをユーザーがすぐに呼び出すことができるようにします。</span><span class="sxs-lookup"><span data-stu-id="b865a-201">Implement the keyboard shortcut CTRL+F to enable the user to invoke the find-in-page command bar quickly.</span></span>
+
+    -   <span data-ttu-id="b865a-202">ページ内検索機能の基本要素を含める。</span><span class="sxs-lookup"><span data-stu-id="b865a-202">Include the basics of find-in-page functionality.</span></span> <span data-ttu-id="b865a-203">ページ内検索を実装するために必要な UI 要素を次に示します。</span><span class="sxs-lookup"><span data-stu-id="b865a-203">These are the UI elements that you need in order to implement find-in-page:</span></span>
+
+        -   <span data-ttu-id="b865a-204">入力ボックス</span><span class="sxs-lookup"><span data-stu-id="b865a-204">Input box</span></span>
+        -   <span data-ttu-id="b865a-205">[前へ] ボタンと [次へ] ボタン</span><span class="sxs-lookup"><span data-stu-id="b865a-205">Previous and Next buttons</span></span>
+        -   <span data-ttu-id="b865a-206">一致数</span><span class="sxs-lookup"><span data-stu-id="b865a-206">A match count</span></span>
+        -   <span data-ttu-id="b865a-207">[閉じる] (デスクトップのみ)</span><span class="sxs-lookup"><span data-stu-id="b865a-207">Close (desktop-only)</span></span>
+    -   <span data-ttu-id="b865a-208">表示で一致した結果が強調表示され、スクロールして次の一致が画面に表示されるようにする。</span><span class="sxs-lookup"><span data-stu-id="b865a-208">The view should highlight matches and scroll to show the next match on screen.</span></span> <span data-ttu-id="b865a-209">ユーザーは、**[前へ]** ボタンと **[次へ]** ボタンの使用、スクロール バーの使用、またはタッチによる直接操作によってドキュメントをすばやく移動できます。</span><span class="sxs-lookup"><span data-stu-id="b865a-209">Users can move quickly through the document by using the **Previous** and **Next** buttons and by using scroll bars or direct manipulation with touch.</span></span>
+
+    -   <span data-ttu-id="b865a-210">検索と置換の機能が基本的なページ内検索機能と共に機能するようにする。</span><span class="sxs-lookup"><span data-stu-id="b865a-210">Find-and-replace functionality should work alongside the basic find-in-page functionality.</span></span> <span data-ttu-id="b865a-211">検索と置換の機能があるアプリでは、ページ内検索が検索と置換の機能の妨げにならないようにします。</span><span class="sxs-lookup"><span data-stu-id="b865a-211">For apps that have find-and-replace, ensure that find-in-page doesn't interfere with find-and-replace functionality.</span></span>
+
+-   <span data-ttu-id="b865a-212">ページ上にあるテキスト一致数をユーザーに示すために、一致カウンターを追加します。</span><span class="sxs-lookup"><span data-stu-id="b865a-212">Include a match counter to indicate to the user the number of text matches there are on the page.</span></span>
+-   <span data-ttu-id="b865a-213">キーボード ショートカット (Ctrl + F) を有効にする。</span><span class="sxs-lookup"><span data-stu-id="b865a-213">Enable the keyboard shortcut (CTRL+F).</span></span>
+
+## <a name="examples"></a><span data-ttu-id="b865a-214">例</span><span class="sxs-lookup"><span data-stu-id="b865a-214">Examples</span></span>
+
+
+<span data-ttu-id="b865a-215">ページ内検索機能にアクセスする簡単な方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="b865a-215">Provide an easy way to access the find-in-page feature.</span></span> <span data-ttu-id="b865a-216">ここに示すモバイル UI の例では、展開可能なメニューで、2 つの追加コマンドの後に [ページ内を検索] が表示されています。</span><span class="sxs-lookup"><span data-stu-id="b865a-216">In this example on a mobile UI, "Find on page" appears after two "Add to..." commands in an expandable menu:</span></span>
 
 ![ページ内検索の例 1](images/findinpage-01.png)
 
  
 
-ユーザーは、[ページ内を検索] を選択してから検索語句を入力します。 検索語句の入力中に、テキスト入力候補を表示できます。
+<span data-ttu-id="b865a-218">ユーザーは、[ページ内を検索] を選択してから検索語句を入力します。</span><span class="sxs-lookup"><span data-stu-id="b865a-218">After selecting find-in-page, the user enters a search term.</span></span> <span data-ttu-id="b865a-219">検索語句の入力中に、テキスト入力候補を表示できます。</span><span class="sxs-lookup"><span data-stu-id="b865a-219">Text suggestions can appear when a search term is being entered:</span></span>
 
 ![ページ内検索の例 2](images/findinpage-02.png)
 
  
 
-検索で一致するテキストがなかった場合は、結果ボックスに "検索結果が見つかりませんでした" というテキストを表示します。
+<span data-ttu-id="b865a-221">検索で一致するテキストがなかった場合は、結果ボックスに "検索結果が見つかりませんでした" というテキストを表示します。</span><span class="sxs-lookup"><span data-stu-id="b865a-221">If there isn't a text match in the search, a "No results" text string should appear in the results box:</span></span>
 
 ![ページ内検索の例 3](images/findinpage-03.png)
 
  
 
-検索で一致するテキストがあった場合は、最初の語句を区別できる色で強調表示します。以降の一致は、例に示されているように、同じカラー パレットのもう少し淡いトーンで強調表示します。
+<span data-ttu-id="b865a-223">検索で一致するテキストがあった場合は、最初の語句を区別できる色で強調表示します。以降の一致は、例に示されているように、同じカラー パレットのもう少し淡いトーンで強調表示します。</span><span class="sxs-lookup"><span data-stu-id="b865a-223">If there is a text match in the search, the first term should be highlighted in a distinct color, with succeeding matches in a more subtle tone of that same color palette, as seen in this example:</span></span>
 
 ![ページ内検索の例 4](images/findinpage-04.png)
 
  
 
-ページ内検索には、一致カウンターがあります。
+<span data-ttu-id="b865a-225">ページ内検索には、一致カウンターがあります。</span><span class="sxs-lookup"><span data-stu-id="b865a-225">Find-in-page has a match counter:</span></span>
 
 ![ページ内検索の一致カウンターの例](images/findinpage-counter.png)
 
 
 
 
-## **<a name="implementing-find-in-page"></a>ページ内検索の実装**
+## **<a name="implementing-find-in-page"></a><span data-ttu-id="b865a-227">ページ内検索の実装</span><span class="sxs-lookup"><span data-stu-id="b865a-227">Implementing find-in-page</span></span>**
 
--   ドキュメント ビューアー、リーダー、ブラウザーは、ページ内検索が提供される最も一般的なアプリの種類であり、全画面での表示/読み取りエクスペリエンスをユーザーに提供します。
--   ページ内検索機能は補助的な機能であり、コマンド バーに配置する必要があります。
+-   <span data-ttu-id="b865a-228">ドキュメント ビューアー、リーダー、ブラウザーは、ページ内検索が提供される最も一般的なアプリの種類であり、全画面での表示/読み取りエクスペリエンスをユーザーに提供します。</span><span class="sxs-lookup"><span data-stu-id="b865a-228">Document viewers, readers, and browsers are the likeliest app types to provide find-in-page, and enable the user to have a full screen viewing/reading experience.</span></span>
+-   <span data-ttu-id="b865a-229">ページ内検索機能は補助的な機能であり、コマンド バーに配置する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b865a-229">Find-in-page functionality is secondary and should be located in a command bar.</span></span>
 
-コマンドをコマンド バーに追加する方法について詳しくは、「[コマンド バー](app-bars.md)」をご覧ください。
+<span data-ttu-id="b865a-230">コマンドをコマンド バーに追加する方法について詳しくは、「[コマンド バー](app-bars.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b865a-230">For more info about adding commands to your command bar, see [Command bar](app-bars.md).</span></span>
 
-<div class="microsoft-internal-note">
-## グローバリゼーションとローカライズのチェックリスト
-
-<table>
-<tr>
-<th>垂直方向の間隔</th><td>非ラテン文字を使って垂直方法の間隔を調整し、非ラテン文字が数字を含めて適切に表示されるようにします。</td>
-</tr>
-<tr>
-<th>双方向対応に関する考慮事項</th><td>拡大鏡アイコンは、双方向で左右反転した形で表示されないようにします。</td>
-</tr>
-</table>
-</div>
+ 
 
 
-## <a name="related-articles"></a>関連記事
+## <a name="related-articles"></a><span data-ttu-id="b865a-231">関連記事</span><span class="sxs-lookup"><span data-stu-id="b865a-231">Related articles</span></span>
 
-* [**自動提案ボックス**](auto-suggest-box.md)
+* [<span data-ttu-id="b865a-232">自動提案ボックス</span><span class="sxs-lookup"><span data-stu-id="b865a-232">Auto-suggest box</span></span>](auto-suggest-box.md)
 
 
  
 
  
-
