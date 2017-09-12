@@ -3,15 +3,17 @@ author: jnHs
 Description: "支払の送金にかかる推定時間、支払しきい値、および支払を受けることができる Microsoft マーケットプレースは、お住まいの国/地域および受取りアカウントの種類によって異なる可能性があります。"
 title: "支払しきい値、方法、期間"
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
-ms.openlocfilehash: 2d2f586a1125f12c1034e002e2245e0fe155c1b4
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0d0e421108de5daecb552c606b3f2c00b722fb89
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/21/2017
 ---
 # <a name="payment-thresholds-methods-and-timeframes"></a>支払しきい値、方法、期間
 
@@ -23,14 +25,15 @@ translationtype: HT
 
 通常、支払は、該当する月の 15 日に行われますが、支払が受取りアカウントに到着するまでさらに時間がかかります。 日数は、以下に示すように、アカウントで使用する支払方法によって異なります。 
 
-> **注** 以下に示す日数は概算値です。いずれの支払も、より長い日数または短い日数になる可能性があります。
+> [!NOTE]
+> 以下に示す日数は概算値です。いずれの支払も、より長い日数または短い日数になる可能性があります。
 
 
-| 支払方法 | 受取りアカウントに到着するまでの日数 |
+| 支払方法     | 受取りアカウントに到着するまでの日数     |
 |--------------------|--------------------------------------------|
-| PayPal | 1 営業日 |    
-| ACH/SEPA |2 ～ 3 営業日 |
-| 電信送金 | 7 ～ 10 営業日 |
+| PayPal             | 1 営業日                             | 
+| ACH/SEPA           | 2 ～ 3 営業日                          |
+| 電信送金      | 7 ～ 10 営業日                         |
 
 &nbsp;
 
@@ -38,7 +41,8 @@ translationtype: HT
 
 ## <a name="payment-thresholds-and-methods"></a>支払のしきい値と方法
 
-> **注** 支払しきい値は米ドル (USD) で記載されています。 一部の市場では、相当する現地通貨が使用されます。 
+> [!NOTE]
+> この支払しきい値は米ドル (USD) で記載されています。 一部の市場では、相当する現地通貨が使用されます。 
 
 - [Windows ストア](#windows-store)
 - [Microsoft Advertising](#microsoft-advertising)
@@ -628,7 +632,7 @@ translationtype: HT
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>マケドニア (FYROM)</td>
+    <td>マケドニア (旧ユーゴスラビア共和国)</td>
     <td>200 USD</td>
     <td>電信送金</td>
     <td>なし</td>
@@ -1690,7 +1694,7 @@ translationtype: HT
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>マケドニア (FYROM)</td>
+    <td>マケドニア (旧ユーゴスラビア共和国)</td>
     <td>50 USD</td>
     <td>電信送金</td>
     <td>なし</td>
@@ -2745,7 +2749,7 @@ translationtype: HT
     <td>PayPal</td>
   </tr>
  <tr>
-    <td>マケドニア (FYROM)</td>
+    <td>マケドニア (旧ユーゴスラビア共和国)</td>
     <td>200 USD</td>
     <td>電信送金</td>
     <td>なし</td>
@@ -3750,7 +3754,7 @@ translationtype: HT
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>マケドニア (FYROM)</td>
+    <td>マケドニア (旧ユーゴスラビア共和国)</td>
     <td>200 USD</td>
     <td>電信送金</td>
     <td>なし</td>

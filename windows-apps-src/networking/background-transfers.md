@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 8238076131d932900e8edfb53ab963de8c98402c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 8b55968a93f09dae396353e73d72566feb188a89
+ms.sourcegitcommit: 77bbd060f9253f2b03f0b9d74954c187bceb4a30
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/11/2017
 ---
 # <a name="background-transfers"></a>バックグラウンド転送
 
@@ -36,6 +38,10 @@ translationtype: HT
 ### <a name="how-does-the-background-transfer-feature-work"></a>バックグラウンド転送機能はどのように動作するか
 
 アプリがバックグラウンド転送を使って転送を開始するときは、[**BackgroundDownloader**](https://msdn.microsoft.com/library/windows/apps/br207126) または [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) クラス オブジェクトを使って要求が構成され初期化されます。 それぞれの転送操作は、呼び出し元アプリとは別にシステムによって個別に処理されます。 進行情報はアプリの UI でユーザーに状況を示す場合に利用することができ、アプリで一時停止、再開、キャンセルしたり、転送中にデータを読み取ったりすることができます。 システムによって転送が処理される方法により、スマートな電力消費が実現し、アプリの中断や終了、突然のネットワーク ステータス変化などのイベントが接続アプリで発生したときに起こる可能性のある問題を回避できます。
+
+さらに、バック グラウンド転送ではシステム イベント ブローカー イベントを使用します。 そのため、システムで利用可能なイベントの数によって、ダウンロード数が制限されます。 既定では利用可能なイベントの数は 500 ですが、これらのイベントはすべてのプロセス間で共有されます。 そのため、1 つのアプリケーションで、一度に 100 個を超えるバックグラウンド転送を作成しないようにする必要があります。
+
+アプリケーションでバック グラウンド転送を開始すると、既存のすべての [**DownloadOperation**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation) オブジェクトで[**AttachAsync**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation#methods_) を呼び出す必要があります。 そうしなければ、これらのイベントのリークが発生する可能性があります。そのため、バック グラウンド転送機能は使用できなくなります。
 
 ### <a name="performing-authenticated-file-requests-with-background-transfer"></a>バックグラウンド転送での認証されたファイル要求の実行
 
@@ -182,6 +188,8 @@ contentParts 配列には、アップロード用の各 [**IStorageFile**](https
 
 すぐに完了する可能性がある小さいリソースをダウンロードする場合は、バックグラウンド転送ではなく [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) API を使ってください。
 
+アプリごとのリソースの制約により、常にアプリに 200 を超える転送 (DownloadOperations および UploadOperations) を含めてはなりません。 この制限を超過すると、アプリの転送キューが回復不能な状態になる可能性があります。
+
 以下に、基本的なダウンロードを作成および初期化する例と、前のアプリ セッションから続いている操作を列挙および再び取り込む例を示します。
 
 ### <a name="configure-and-start-a-background-transfer-file-download"></a>バックグラウンド転送によるファイルのダウンロードを構成して開始する
@@ -228,7 +236,7 @@ Windows 10 の新機能は、アプリが実行されていない場合でも、
 
 後処理があるバックグラウンド転送は、次のように開始します。
 
-1.  [**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209) オブジェクトを作成します。 続けて、[**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) オブジェクトを作成します。 ビルダー オブジェクトの **Trigger** プロパティを完了グループ オブジェクトに設定し、ビルダーの **TaskEngtyPoint** プロパティを、転送完了時に実行する必要があるバックグラウンド タスクのエントリ ポイントに設定します。 最後に、[**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) メソッドを呼び出してバックグラウンド タスクを登録します。 複数の完了グループで 1 つのバックグラウンド タスクのエントリ ポイントを共有できますが、バックグラウンド タスクの登録では 1 つの完了グループのみ指定できることに注意してください。
+1.  [**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209) オブジェクトを作成します。 続けて、[**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) オブジェクトを作成します。 ビルダー オブジェクトの **Trigger** プロパティを完了グループ オブジェクトに設定し、ビルダーの **TaskEntryPoint** プロパティを、転送完了時に実行する必要があるバックグラウンド タスクのエントリ ポイントに設定します。 最後に、[**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) メソッドを呼び出してバックグラウンド タスクを登録します。 複数の完了グループで 1 つのバックグラウンド タスクのエントリ ポイントを共有できますが、バックグラウンド タスクの登録では 1 つの完了グループのみ指定できることに注意してください。
 
    ```csharp
     var completionGroup = new BackgroundTransferCompletionGroup();
@@ -306,7 +314,7 @@ Visual Studio を使う 4 つのシナリオで、この問題が発生する可
 
 Uniform Resource Identifier (URI) として無効な文字列が、[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) オブジェクトのコンストラクターに渡されると、例外がスローされます。
 
-**.NET: **[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 型は、C# や VB では [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) と表示されます。
+**.NET:  **[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 型は、C# や VB では [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) と表示されます。
 
 C# と Visual Basic では、.NET 4.5 の [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) クラスと、いずれかの [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) メソッドを使って、URI が作成される前にアプリのユーザーから受け取った文字列をテストすることによって、このエラーを回避できます。
 

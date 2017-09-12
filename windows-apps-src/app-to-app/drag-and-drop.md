@@ -2,16 +2,18 @@
 description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリにドラッグ アンド ドロップを追加する方法について説明します。"
 title: "ドラッグ アンド ドロップ"
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
-author: awkoren
-ms.author: alkoren
+author: msatranjr
+ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 84f78d43a0d9a34b8ba992a2357f08ad374b32d1
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b3efc0a30c3407fbc05d0fa800df8596af548931
+ms.sourcegitcommit: 23cda44f10059bcaef38ae73fd1d7c8b8330c95e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/19/2017
 ---
 # <a name="drag-and-drop"></a>ドラッグ アンド ドロップ
 

@@ -5,21 +5,29 @@ title: "引っ張って更新"
 label: Pull-to-refresh
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: aaeb1e74-b795-4015-bf41-02cb1d6f467e
-ms.openlocfilehash: 0d10a0c7f269cc6c7d0b2e9476a926226fe94f82
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: predavid
+design-contact: kimsea
+dev-contact: stpete
+doc-status: Published
+ms.openlocfilehash: 51a8c9a2e4618e054374308918a74cf2095119ef
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="pull-to-refresh"></a>引っ張って更新
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 引っ張って更新パターンを使うと、より多くのデータを取得するためにタッチ操作でデータのリストを引き下げることができます。 引っ張って更新はモバイル アプリで広く使われていますが、タッチ スクリーンを備えたすべてのデバイスで役に立ちます。 [操作イベント](../input-and-devices/touch-interactions.md#manipulation-events)を処理して、アプリに引っ張って更新を実装できます。
+
+> **重要な API**: [ListView クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、[GridView クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
 
 「[引っ張って更新のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620635)」に、[ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) コントロールを拡張してこのパターンをサポートする方法を示しています。 この記事では、このサンプルを使って引っ張って更新を実装する際の重要ポイントを説明します。
 
@@ -39,7 +47,7 @@ RefreshableListView は、更新が必要な時期と更新インジケーター
 - オフ: `PullThreshold` を超えている間にリストがリリースされる場合にのみ更新が要求されます。 ユーザーがスクロール領域から離れると、インジケーターがアニメーション化されて非表示になります。 利用可能な場合、ステータス バー インジケーターが表示されます (電話)。
 - 点灯: `PullThreshold` を超えると、リリースされるかどうかにかかわらずすぐに更新が要求されます。 インジケーターは新しいデータが取得されるまで表示されたままで、その後、アニメーション化されて非表示になります。 データの取得が完了すると、**Deferral** を使ってアプリに通知されます。
 
-> **注意**&nbsp;&nbsp;サンプルのコードは、[**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) にも適用されます。 GridView を変更するには、ListView ではなく GridView からカスタム クラスを派生し、GridView の既定のテンプレートを変更します。
+> **注**&nbsp;&nbsp;サンプルのコードは、[GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) にも適用されます。 GridView を変更するには、ListView ではなく GridView からカスタム クラスを派生し、GridView の既定のテンプレートを変更します。
 
 ## <a name="add-a-refresh-indicator"></a>更新インジケーターを追加する
 
@@ -51,7 +59,7 @@ RefreshableListView は、更新が必要な時期と更新インジケーター
 
 **リスト ビューのテンプレートを変更する**
 
-引っ張って更新のサンプルでは、更新インジケーターを追加することで、`RefreshableListView` コントロールのテンプレートが標準の **ListView** テンプレートを変更しています。 更新インジケーターは、[**ItemsPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx) の上の [**Grid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx) に配置されます。これはリスト項目が表示される部分です。
+引っ張って更新のサンプルでは、更新インジケーターを追加することで、`RefreshableListView` コントロールのテンプレートが標準の **ListView** テンプレートを変更しています。 更新インジケーターは、[ItemsPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx) の上の [Grid](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx) に配置されます。これはリスト項目が表示される部分です。
 
 > **注意**&nbsp;&nbsp;`DefaultRefreshIndicatorContent` テキスト ボックスは、`RefreshIndicatorContent` プロパティが設定されていない場合にのみ表示されるテキストのフォールバック インジケーターを提供します。
 
@@ -123,7 +131,7 @@ RefreshableListView は、更新が必要な時期と更新インジケーター
 
 **スピンをアニメーション化する**
 
-リストが引き下げられると、RefreshableListView の `PullProgressChanged` イベントが発生します。 アプリでこのイベントを処理して、更新インジケーターを制御します。 サンプルでは、このストーリー ボードはインジケーターの [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.aspx) をアニメーション化し、更新インジケーターを回転させます。 
+リストが引き下げられると、RefreshableListView の `PullProgressChanged` イベントが発生します。 アプリでこのイベントを処理して、更新インジケーターを制御します。 サンプルでは、このストーリー ボードはインジケーターの [RotateTransform](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.aspx) をアニメーション化し、更新インジケーターを回転させます。 
 
 **XAML**
 ```xaml
@@ -142,13 +150,13 @@ RefreshableListView は、更新が必要な時期と更新インジケーター
 
 ## <a name="handle-scroll-viewer-manipulation-events"></a>スクロール ビューアー操作イベントを処理する
 
-リスト ビュー コントロールのテンプレートには、ユーザーがリスト項目をスクロールできるようにする組み込みの [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) が含まれています。 引っ張って更新を実装するには、いくつかの関連するイベントのほか、組み込みのスクロール ビューアーでの操作イベントを処理する必要があります。 操作イベントについて詳しくは、「[タッチ操作](../input-and-devices/touch-interactions.md)」をご覧ください。
+リスト ビュー コントロールのテンプレートには、ユーザーがリスト項目をスクロールできるようにする組み込みの [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) が含まれています。 引っ張って更新を実装するには、いくつかの関連するイベントのほか、組み込みのスクロール ビューアーでの操作イベントを処理する必要があります。 操作イベントについて詳しくは、「[タッチ操作](../input-and-devices/touch-interactions.md)」をご覧ください。
 
 ** OnApplyTemplate**
 
-スクロール ビューアーおよびその他のテンプレート パーツにアクセスして、イベント ハンドラーを追加してそれらを後でコードで呼び出せるようにするには、[**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.onapplytemplate.aspx) メソッドをオーバーライドする必要があります。 OnApplyTemplate で、[**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.gettemplatechild.aspx) を呼び出してコントロール テンプレートの名前付きパーツへの参照を取得します。これはコードの後半で使用できるように保存できます。
+スクロール ビューアーおよびその他のテンプレート パーツにアクセスして、イベント ハンドラーを追加してそれらを後でコードで呼び出せるようにするには、[OnApplyTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.onapplytemplate.aspx) メソッドをオーバーライドする必要があります。 OnApplyTemplate で、[GetTemplateChild](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.gettemplatechild.aspx) を呼び出してコントロール テンプレートの名前付きパーツへの参照を取得します。これはコードの後半で使用できるように保存できます。
 
-サンプルでは、テンプレート パーツを格納するために使う変数はプライベート変数領域で宣言されています。 OnApplyTemplate メソッドでそれらを取得した後、[**DirectManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationstarted.aspx)、[**DirectManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationcompleted.aspx)、[**ViewChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.viewchanged.aspx)、および [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) イベントのイベント ハンドラーを追加します。
+サンプルでは、テンプレート パーツを格納するために使う変数はプライベート変数領域で宣言されています。 OnApplyTemplate メソッドでそれらを取得した後、[DirectManipulationStarted](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationstarted.aspx)、[DirectManipulationCompleted](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationcompleted.aspx)、[ViewChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.viewchanged.aspx)、および [PointerPressed](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) イベントのイベント ハンドラーを追加します。
 
 **DirectManipulationStarted**
 
@@ -162,7 +170,7 @@ RefreshableListView は、更新が必要な時期と更新インジケーター
 
 アニメーションのイベント ハンドラーも削除されます。
 
-`AutoRefresh` プロパティの値に基づいて、リストはすぐにアニメーション化に戻るか、更新が完了するのを待ってからアニメーション化に戻ります。 [**Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) オブジェクトを使って、更新の完了をマークします。 その時点で、更新インジケーター UI は非表示です。
+`AutoRefresh` プロパティの値に基づいて、リストはすぐにアニメーション化に戻るか、更新が完了するのを待ってからアニメーション化に戻ります。 [Deferral](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) オブジェクトを使って、更新の完了をマークします。 その時点で、更新インジケーター UI は非表示です。
 
 DirectManipulationCompleted イベント ハンドラーのこの部分で `RefreshRequested`イベントを発生させ、必要な場合は Deferral を取得します。
 
@@ -232,7 +240,7 @@ private async void listView_RefreshRequested(object sender, RefreshableListView.
 
 ## <a name="composition-animations"></a>コンポジションのアニメーション
 
-既定では、スクロール バーが一番上に達するとスクロール ビューアーのコンテンツは停止します。 ユーザーがリストを引き下げ続けられるようにするには、ビジュアル レイヤーにアクセスし、リストのコンテンツをアニメーション化する必要があります。 サンプルでは、このために[コンポジション アニメーション](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation)、具体的には[数式アニメーション](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations)を使います。
+既定では、スクロール バーが一番上に達するとスクロール ビューアーのコンテンツは停止します。 ユーザーがリストを引き下げ続けられるようにするには、ビジュアル レイヤーにアクセスし、リストのコンテンツをアニメーション化する必要があります。 サンプルでは、このために[コンポジション アニメーション](https://msdn.microsoft.com/windows/uwp/composition/composition-animation)、具体的には[数式アニメーション](https://msdn.microsoft.com/windows/uwp/composition/composition-animation#expression-animations)を使います。
 
 サンプルでは、主に `CompositionTarget_Rendering` イベント ハンドラーと `UpdateCompositionAnimations` メソッドがこの処理を行います。
 
@@ -242,4 +250,4 @@ private async void listView_RefreshRequested(object sender, RefreshableListView.
 - [タッチ操作](../input-and-devices/touch-interactions.md)
 - [リスト ビューとグリッド ビュー](listview-and-gridview.md)
 - [リスト ビュー項目テンプレート](listview-item-templates.md)
-- [数式アニメーション](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations)
+- [数式アニメーション](https://msdn.microsoft.com/windows/uwp/composition/composition-animation#expression-animations)

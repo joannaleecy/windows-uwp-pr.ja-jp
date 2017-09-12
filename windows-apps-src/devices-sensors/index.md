@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 0b891f63-02fa-4c30-b307-9fbcccac5caa
 title: "デバイス、センサーの使用"
 description: "優れたユーザー エクスペリエンスを実現するために、外部デバイスまたはセンサーをアプリに統合する必要があります。"
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 7915f626d5e86aed0c47f4d2f1efc61348385ba8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: a15ed83ccb7571b772ce77669646e58894e71842
+ms.sourcegitcommit: a2908889b3566882c7494dc81fa9ece7d1d19580
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/31/2017
 ---
 # <a name="devices-sensors-and-power"></a>デバイス、センサー、および電源
 

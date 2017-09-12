@@ -3,23 +3,25 @@ author: Mtoepke
 title: "Xbox One の UWP"
 description: "Xbox One でユニバーサル Windows プラットフォーム (UWP) アプリを構築する方法。"
 ms.author: mtoepke
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
-ms.openlocfilehash: 82c8fd0945ed49f8accf5e101acfbea151caa3a1
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: c34788b8de9ed0b90aa963be453d28258fc51671
+ms.sourcegitcommit: f8e5a6bebbbb266bfe2c6b6a7c41b3d3cc7bf831
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/12/2017
 ---
 # <a name="uwp-on-xbox-one"></a>Xbox One の UWP
 
 Xbox One でユニバーサル Windows プラットフォーム (UWP) 向けのアプリの構築を始めましょう。
 
-Xbox One の UWP は、アプリ開発とゲーム開発の両方をサポートします。 Xbox でゲームやアプリを実験、作成、テストするために、開発者プログラムに参加する必要はありません。 Xbox One でゲームを公開し、販売する場合や、Windows 10 で Xbox Live を活用する場合は、参加する必要があります、[Xbox Live Creators プログラム](https://developer.microsoft.com/games/xbox/xboxlive/creator)に参加するか、[ID@Xbox](http://www.xbox.com/Developers/id) 開発者として登録する必要があります。 詳しくは、「[開発者プログラムの概要](https://developer.microsoft.com/games/xbox/docs/xboxlive/get-started/developer-program-overview.html)」をご覧ください。
+Xbox One の UWP は、アプリ開発とゲーム開発の両方をサポートします。 Xbox でゲームやアプリを実験、作成、テストするために、開発者プログラムに参加する必要はありません。 必要となるのは、Windows デベロッパー センターの[開発者アカウント](https://developer.microsoft.com/en-us/store/register)だけです。 ただし、Xbox One でゲームを公開して販売する場合や、Windows 10 で Xbox Live を利用する場合は、[Xbox Live クリエーターズ プログラム](https://developer.microsoft.com/games/xbox/xboxlive/creator)に参加するか、[ID@Xbox](http://www.xbox.com/Developers/id) の開発者になる必要があります。 [ID@Xbox](http://www.xbox.com/Developers/id) の開発者になる場合は、開発者アカウントを登録する前に、プログラムへの参加申し込みを行うことをお勧めします。 詳しくは、「[開発者プログラムの概要](../xbox-live/developer-program-overview.md)」をご覧ください。
 
-このセクションでは、設定方法、承認手順のガイド、必要なバージョンの Visual Studio と Windows 10 ツールをインストールする方法、および簡単なアプリケーションを初めて構築、実行、デバッグする手順を説明します。 
+このセクションでは、設定方法、承認手順のガイド、必要なバージョンの Visual Studio と Windows 10 ツールのインストールに関する情報と、簡単なアプリケーションを初めて構築、実行、デバッグする手順を説明します。 
 
 | トピック      | 説明 |
 |------------|-------------|

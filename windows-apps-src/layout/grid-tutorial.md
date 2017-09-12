@@ -2,20 +2,25 @@
 author: mukin
 Description: "このチュートリアル形式の記事では、基本的なアプリケーション ユーザー インターフェイスを作成する手順について説明します。 最も一般的な 2 つの XAML 要素 Grid と StackPanel の使用方法を紹介します。"
 title: "Grid と StackPanel を使った単純な天気予報アプリの作成"
-ms.author: wdg-dev-content
-ms.date: 02/08/2017
+template: detail.hbs
+ms.author: mukin
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
-ms.openlocfilehash: 094cabc642884f57af2dbeb5125a2a8b81365824
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 12a48ec9e907a65abbbd9ec1e9f9c60c3519fa20
+ms.sourcegitcommit: 2de58584a42e580dbc0d19bdecee12bfee7fd7e7
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/23/2017
 ---
 # <a name="create-a-simple-weather-app-by-using-grid-and-stackpanel"></a>Grid と StackPanel を使った単純な天気予報アプリの作成
 
 ここでは、XAML の **Grid** 要素と **StackPanel** 要素を使って単純な天気予報アプリのレイアウトを作成します。 これらのツールを使用すると、Windows 10 が実行されたすべてのデバイスで動作する魅力ある外観のアプリを作成できます。 このチュートリアルの所要時間は 10 ～ 20 分です。
+
+> **重要な API**:[ Grid クラス](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid)、[StackPanel クラス](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## <a name="prerequisites"></a>前提条件
 - Windows 10 と Microsoft Visual Studio 2015。 [Visual Studio を備えた環境をセットアップする方法については、ここをクリックしてください](../get-started/get-set-up.md)。
@@ -46,7 +51,7 @@ XAML において、**Grid** は一連の行と列で構成されます。 **Gri
 </Grid>
 ```
 
-この新しい **Grid** によって 2 行 x 2 列のセットが作成され、このアプリ インターフェイスのレイアウトが定義されます。 2 つの列は、1 列目の **Width** が "3\*" で、2 列目が "5\*" です。したがって、水平方向の領域は、これら 2 つの列の間で 3:5 の比率で分割されます。 同様に、2 つの行はそれぞれの **Height** が "3\*" と "\*" です。したがって、この **Grid** では、1 行目に対し、2 行目の 3 倍の領域が割り当てられます ("\*" は "1\*" と同じです)。 これらの比率は、ウィンドウのサイズを変更したり、異なるデバイスを使ったりしても変わりません。
+この新しい **Grid** によって 2 行 x 2 列のセットが作成され、このアプリ インターフェイスのレイアウトが定義されます。 2 つの列は、1 列目の **Width** が "3\*" で、2 列目が "5\*" です。したがって、水平方向の領域は、これら 2 つの列の間で 3:5 の比率で分割されます。 同様に、2 つの行はそれぞれの **Height** が "2\*" と "\*" です。したがって、この **Grid** では、1 行目に対し、2 行目の 2 倍の領域が割り当てられます ("\*" は "1\*" と同じです)。 これらの比率は、ウィンドウのサイズを変更したり、異なるデバイスを使ったりしても変わりません。
 
 行や列のサイズを指定するその他の方法については、「[XAML を使ったページ レイアウトの定義](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml#layout-properties)」をご覧ください。
 

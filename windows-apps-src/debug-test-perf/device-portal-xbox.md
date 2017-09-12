@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: "Xbox 用 Device Portal"
 description: "Xbox One 向けの Device Portal を有効にする方法について説明します。"
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 00b9f0ca9cb0f62bf7bcc972604c697213242c21
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 67416e2b190d3a52eac2a395c0e5bc1b3e7fdf24
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/26/2017
 ---
 # <a name="device-portal-for-xbox"></a>Xbox 用 Device Portal
 

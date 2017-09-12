@@ -9,15 +9,18 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 広告, 宣伝, ガイドライン, ベスト プラクティス"
-ms.openlocfilehash: 75a68977e5edb996a5e2fc1ae9265d11b7492ad9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 8dc9c00bdeb47b5f07af0b9b27ef843e2afd4456
+ms.sourcegitcommit: 9d1ca16a7edcbbcae03fad50a4a10183a319c63a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/09/2017
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>広告の UI とユーザー エクスペリエンスのガイドライン
 
 この記事では、アプリ内のバナー広告とスポット広告を使って優れたエクスペリエンスを提供するためのガイドラインを示します。 アプリの外観を設計する方法については、「[設計および UI](https://developer.microsoft.com/windows/apps/design)」をご覧ください。
 
->**重要**&nbsp;&nbsp;アプリ内での広告の使用は、Windows ストアのポリシーに準拠している必要があります。準拠するポリシーには、[ポリシー 10.10](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) (広告行為と広告コンテンツ) などがありますが、これに限定されるわけではありません。 特に、アプリ内のバナー広告またはスポット広告の実装は、Windows ストアのポリシー、[ポリシー 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) の要件を満たしている必要があります。 この記事では、このポリシーに違反する実装の例を示します。 これらの例は、このポリシーの適切な理解を助ける手段として、情報提供のみを目的として提供されています。 これらの例は、すべてを網羅しているわけではありません。ここに記載されていなくても、Windows ストアのポリシーに違反する例は多数存在する可能性があります。
+> [!IMPORTANT]
+> アプリ内での広告の使用は、Windows ストアのポリシーに準拠している必要があります。準拠するポリシーには、[ポリシー 10.10](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) (広告行為と広告コンテンツ) などがありますが、これに限定されるわけではありません。 特に、アプリ内のバナー広告またはスポット広告の実装は、Windows ストアのポリシー、[ポリシー 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) の要件を満たしている必要があります。 この記事では、このポリシーに違反する実装の例を示します。 これらの例は、このポリシーの適切な理解を助ける手段として、情報提供のみを目的として提供されています。 これらの例は、すべてを網羅しているわけではありません。ここに記載されていなくても、Windows ストアのポリシーに違反する例は多数存在する可能性があります。
 
 ## <a name="guidelines-for-banner-ads"></a>バナー広告のガイドライン
 

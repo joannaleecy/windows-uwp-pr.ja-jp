@@ -1,17 +1,19 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 95CF7F3D-9E3A-40AC-A083-D8A375272181
 title: "スレッド プールを使うためのベスト プラクティス"
 description: "このトピックでは、スレッド プールを使った操作のベスト プラクティスについて説明します。"
-ms.author: twhitney
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、スレッド、スレッド プール"
-ms.openlocfilehash: db5231c925575bef21b3d412feda367cd89fe7f4
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e4203a613fdc1af64a8234ac6fef6b248c01e15c
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="best-practices-for-using-the-thread-pool"></a>スレッド プールを使うためのベスト プラクティス
 

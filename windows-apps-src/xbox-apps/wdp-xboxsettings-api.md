@@ -1,5 +1,5 @@
 ---
-author: payzer
+author: m-stahl
 title: "Device Portal の Xbox 開発者向け設定 API のリファレンス"
 description: "Xbox 開発者向け設定にアクセスする方法について説明します。"
 ms.author: wdg-dev-content
@@ -9,9 +9,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
-ms.openlocfilehash: 43e4bb289d12439bbc0f6de347d187b067288d51
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: dfde4c45a4aa5a520e0aa98cd7f31f7d84854e08
+ms.sourcegitcommit: 0e44f197e7e649d542ec3f67cd790a61dbe1226f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/07/2017
 ---
 # <a name="developer-settings-api-reference"></a>開発者向け設定 API のリファレンス   
 この API を使用して、開発に役立つ Xbox One 設定にアクセスできます。
@@ -39,12 +41,20 @@ GET | /ext/settings
 - なし
 
 **応答**   
-応答は、すべての設定を含む設定の JSON 配列です。 設定オブジェクトには、それぞれ次のフィールドが含まれています。   
+応答は、すべての設定を含む設定の JSON 配列です。 設定オブジェクトには、それぞれ次のフィールドが含まれています。
 
-Name: (文字列) 設定の名前。   
-Value: (文字列) 設定の値。   
-RequiresReboot: ("Yes" または "No") このフィールドは、設定を有効にするために再起動する必要があるかどうかを示します。
+Name: (文字列) 設定の名前。
+Value: (文字列) 設定の値。
+RequiresReboot: ("Yes" | "No") このフィールドは、設定を有効にするために再起動する必要があるかどうかを示します。
+Disabled - ("Yes" | "No") このフィールドは、設定が無効であるかどうかと編集不可であるかを示します。
 Category: (文字列) 設定のカテゴリ。
+Type - ("Text" | "Number" | "Bool" | "Select") このフィールドは、設定の型を示します。テキスト入力、ブール値 ("true" または "false")、最小値と最大値を持つ数値、値の特定のリストを持つ選択のいずれかです。
+
+設定が数値の場合: Min - (数値) このフィールドは、設定の最小数値を示します。
+Max - (数値) このフィールドは、設定の最大数値を示します。
+
+設定が選択の場合: OptionsVariable - ("Yes" | "No") このフィールドは、設定オプションが可変であるかどうか、再起動しなくても有効なオプションが変化する可能性があるかどうかを示します。
+Options - 有効な選択オプションを文字列として含む JSON 配列。
 
 **状態コード**
 
@@ -80,12 +90,20 @@ GET | /ext/settings/\<設定名\>
 - なし
 
 **応答**   
-応答は、次のフィールドを含む JSON オブジェクトです。   
+応答は、次のフィールドを含む JSON オブジェクトです。
 
-Name: (文字列) 設定の名前。   
-Value: (文字列) 設定の値。   
-RequiresReboot: ("Yes" または "No") このフィールドは、設定を有効にするために再起動する必要があるかどうかを示します。
+Name: (文字列) 設定の名前。
+Value: (文字列) 設定の値。
+RequiresReboot: ("Yes" | "No") このフィールドは、設定を有効にするために再起動する必要があるかどうかを示します。
+Disabled - ("Yes" | "No") このフィールドは、設定が無効であるかどうかと編集不可であるかを示します。
 Category: (文字列) 設定のカテゴリ。
+Type - ("Text" | "Number" | "Bool" | "Select") このフィールドは、設定の型を示します。テキスト入力、ブール値 ("true" または "false")、最小値と最大値を持つ数値、値の特定のリストを持つ選択のいずれかです。
+
+設定が数値の場合: Min - (数値) このフィールドは、設定の最小数値を示します。
+Max - (数値) このフィールドは、設定の最大数値を示します。
+
+設定が選択の場合: OptionsVariable - ("Yes" | "No") このフィールドは、設定オプションが可変であるかどうか、再起動しなくても有効なオプションが変化する可能性があるかどうかを示します。
+Options - 有効な選択オプションを文字列として含む JSON 配列。
 
 **状態コード**
 
@@ -138,4 +156,3 @@ HTTP 状態コード      | 説明
 **利用可能なデバイス ファミリ**
 
 * Windows Xbox
-

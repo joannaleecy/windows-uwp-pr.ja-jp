@@ -5,39 +5,38 @@ title: "リスト ビュー項目テンプレート"
 label: List view item templates
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: d8eb818d-b62e-4314-a612-f29142dbd93f
-ms.openlocfilehash: b63b3a67db3b07cbfef6a89bdffb436605ab91ed
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: predavid
+design-contact: kimsea
+dev-contact: ranjeshj
+doc-status: Published
+ms.openlocfilehash: 50ee45afe29070400c6955436e295d2d75ded984
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="item-containers-and-templates"></a>項目コンテナーやテンプレート
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-**ListView** コントロールと **GridView** コントロールでは、項目の配置方法 (水平、垂直、折り返しなど) や、ユーザーが項目を操作する方法を管理しますが、画面に個別の項目を表示する方法については管理しません。 項目の視覚エフェクトは、項目コンテナーによって管理されます。 リスト ビューに項目を追加すると、追加した項目はコンテナーに自動的に設定されます。 ListView の既定の項目コンテナーは [**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listviewitem.aspx) であり、GridView の既定の項目コンテナーは [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridviewitem.aspx) です。
+**ListView** コントロールと **GridView** コントロールでは、項目の配置方法 (水平、垂直、折り返しなど) や、ユーザーが項目を操作する方法を管理しますが、画面に個別の項目を表示する方法については管理しません。 項目の視覚エフェクトは、項目コンテナーによって管理されます。 リスト ビューに項目を追加すると、追加した項目はコンテナーに自動的に設定されます。 ListView の既定の項目コンテナーは [ListViewItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listviewitem.aspx) であり、GridView の既定の項目コンテナーは [GridViewItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridviewitem.aspx) です。
 
-<div class="important-apis" >
-<b>重要な API</b><br/>
-<ul>
-<li>[**ListView クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)</li>
-<li>[**GridView クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)</li>
-<li>[**ItemTemplate プロパティ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)</li>
-<li>[**ItemContainerStyle プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx)</li>
-</ul>
-</div>
+> **重要な API**: [ListView クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、[GridView クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)、[ItemTemplate プロパティ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)、[ItemContainerStyle プロパティ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx)
 
 
-> ListView と GridView はどちらも [**ListViewBase**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx) クラスから派生しているため、同じ機能を持ちますが、データの表示方法が異なります。 この記事では、特に指定がない限り、リスト ビューについての説明は ListView コントロールにも GridView コントロールにも適用されます。 ListView や ListViewItem などのクラスの説明については、プレフィックスの "List"** を "Grid"** に置き換えることで、対応するグリッド クラス (GridView または GridViewItem) に適用できます。 
+> [!NOTE]
+> ListView と GridView はどちらも [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx) クラスから派生しているため、同じ機能を持ちますが、データの表示方法が異なります。 この記事では、特に指定がない限り、リスト ビューについての説明は ListView コントロールにも GridView コントロールにも適用されます。 ListView や ListViewItem などのクラスの説明については、プレフィックスの "List"** を "Grid"** に置き換えることで、対応するグリッド クラス (GridView または GridViewItem) に適用できます。 
 
 これらのコンテナー コントロールは、"データ テンプレート"** と "コントロール テンプレート"** という 2 つの重要な部分から構成されており、これらを組み合わせることによって 1 つの項目で表示する最終的な外観が形成されます。
 
-- **データ テンプレート** - [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx) をリスト ビューの [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) プロパティに割り当てて、個別のデータ項目の表示方法を指定します。
-- **コントロール テンプレート** - コントロール テンプレートは、表示状態など、フレームワークが担当する項目の視覚エフェクトの一部を提供します。 [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx) プロパティを使って、コントロール テンプレートを変更できます。 通常では、ブランドに合うようにリスト ビューの色を変更したり、選択した項目の表示方法を変更する目的で、コントロール テンプレートを変更します。
+- **データ テンプレート** - [DataTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx) をリスト ビューの [ItemTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) プロパティに割り当てて、個別のデータ項目の表示方法を指定します。
+- **コントロール テンプレート** - コントロール テンプレートは、表示状態など、フレームワークが担当する項目の視覚エフェクトの一部を提供します。 [ItemContainerStyle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx) プロパティを使って、コントロール テンプレートを変更できます。 通常では、ブランドに合うようにリスト ビューの色を変更したり、選択した項目の表示方法を変更する目的で、コントロール テンプレートを変更します。
 
 次の画像は、コントロール テンプレートとデータ テンプレートを合わせて 1 つの項目で表示する最終的な外観を形成する方法を示しています。
 
@@ -54,16 +53,18 @@ translationtype: HT
                     <ColumnDefinition Width="54"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Image Source="Assets/placeholder.png" Width="44" Height="44" 
+                <Image Source="Assets/placeholder.png" Width="44" Height="44"
                        HorizontalAlignment="Left"/>
-                <TextBlock Text="{x:Bind}" Foreground="Blue" 
-                           FontSize="36" Grid.Column="1"/>
+                <TextBlock Text="{x:Bind}" Foreground="Black"
+                           FontSize="15" Grid.Column="1"
+                           VerticalAlignment="Center"
+                           Padding="0,0,54,0"/>
             </Grid>
         </DataTemplate>
     </ListView.ItemTemplate>
     <ListView.ItemContainerStyle>
         <Style TargetType="ListViewItem">
-            <Setter Property="Background" Value="Green"/>
+            <Setter Property="Background" Value="LightGreen"/>
         </Style>
     </ListView.ItemContainerStyle>
     <x:String>Item 1</x:String>
@@ -83,7 +84,7 @@ translationtype: HT
 
 リスト ビューでデータ項目を表示する方法について詳しく説明する前に、表示するデータについて理解する必要があります。 この例では、`NamedColor` と呼ばれるデータ型を作成します。 `NamedColor` では、`Name`、`Color`、`Brush` という 3 つのプロパティとして公開されている、色の名前、色の値、色の **SolidColorBrush** を組み合わせます。
  
-次に、[**Colors**](https://msdn.microsoft.com/library/windows/apps/windows.ui.colors.aspx) クラスの各名前付きの色の `NamedColor` オブジェクトを使って、**List** を設定します。 このリストは、リスト ビューの [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) として設定します。
+次に、[Colors](https://msdn.microsoft.com/library/windows/apps/windows.ui.colors.aspx) クラスの各名前付きの色の `NamedColor` オブジェクトを使って、**List** を設定します。 このリストは、リスト ビューの [ItemsSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) として設定します。
 
 クラスを定義したり、`NamedColors` リストを設定するためのコードを次に示します。
 
@@ -156,7 +157,7 @@ namespace ColorsListApp
 
 ![項目の文字列表現を示すリスト ビュー](images/listview-no-template.png)
 
-データ項目の特定のプロパティに [**DisplayMemberPath**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.displaymemberpath.aspx) を設定すると、そのプロパティの文字列表現を表示できます。 ここでは、`NamedColor` 項目の `Name` プロパティに DisplayMemberPath を設定します。
+データ項目の特定のプロパティに [DisplayMemberPath](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.displaymemberpath.aspx) を設定すると、そのプロパティの文字列表現を表示できます。 ここでは、`NamedColor` 項目の `Name` プロパティに DisplayMemberPath を設定します。
 
 **XAML**
 ```xaml
@@ -167,12 +168,12 @@ namespace ColorsListApp
 
 ![項目プロパティの文字列表現を示すリスト ビュー](images/listview-display-member-path.png)
 
-通常は、リッチな表現でデータを表示する必要があります。 リスト ビューでの項目の表示方法を正確に指定するには、[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx) を作成します。 DataTemplate の XAML では、個々の項目を表示するために使うコントロールのレイアウトと外観を定義します。 レイアウト内のコントロールでは、データ オブジェクトのプロパティにバインドすることも、静的コンテンツをインラインで定義することもできます。 DataTemplate は、リスト コントロールの [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) プロパティに割り当てます。
+通常は、リッチな表現でデータを表示する必要があります。 リスト ビューでの項目の表示方法を正確に指定するには、[DataTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx) を作成します。 DataTemplate の XAML では、個々の項目を表示するために使うコントロールのレイアウトと外観を定義します。 レイアウト内のコントロールでは、データ オブジェクトのプロパティにバインドすることも、静的コンテンツをインラインで定義することもできます。 DataTemplate は、リスト コントロールの [ItemTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) プロパティに割り当てます。
 
 > [!IMPORTANT]
 > **ItemTemplate** と **DisplayMemberPath** を同時に使うことはできません。 両方のプロパティが設定されていると、例外が発生します。
 
-ここでは、色の名前や RGB 値が設定された項目の色で[**四角形**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.aspx)を表示する DataTemplate を定義します。 
+ここでは、色の名前や RGB 値が設定された項目の色で[四角形](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.aspx)を表示する DataTemplate を定義します。 
 
 > [!NOTE]
 > DataTemplate で [x:Bind markup extension](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) を使う場合、DataTemplate に DataType (`x:DataType`) を指定する必要があります。
@@ -300,12 +301,12 @@ GridView でデータを表示することが必要になる場合もありま�
 
 データ テンプレートについて上で説明したとおり、各項目で作成する XAML 要素の数は、リスト ビューのパフォーマンスに大きな影響を与えます。 データ テンプレートとコントロール テンプレートを組み合わせて各項目を表示するため、項目を表示するために必要な実際の要素数には、両方のテンプレートの要素数が含まれます。
 
-ListView コントロールと GridView コントロールを最適化して、項目ごとに作成する XAML 要素の数を減らします。 **ListViewItem** の視覚効果は [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.aspx) によって作成されます。ListViewItemPresenter は、多数の UIElement によるオーバーヘッドなしで、フォーカス、選択などの表示状態で複雑な視覚効果を表示する特別な XAML 要素です。
+ListView コントロールと GridView コントロールを最適化して、項目ごとに作成する XAML 要素の数を減らします。 **ListViewItem** の視覚効果は [ListViewItemPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.aspx) によって作成されます。ListViewItemPresenter は、多数の UIElement によるオーバーヘッドなしで、フォーカス、選択などの表示状態で複雑な視覚効果を表示する特別な XAML 要素です。
  
 > [!NOTE]
 > Windows 10 の UWP アプリでは、**ListViewItem** と **GridViewItem** の両方で **ListViewItemPresenter** を使います。GridViewItemPresenter は非推奨であるため、使わないでください。 ListViewItem と GridViewItem は、ListViewItemPresenter に異なるプロパティ値を設定して、異なる既定の外観を作成します)。
 
-項目コンテナーの外観を変更するには、[**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx) プロパティを使い、[**TargetType**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.targettype.aspx) に **ListViewItem** または **GridViewItem** を設定した [**Style**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.aspx) を提供します。
+項目コンテナーの外観を変更するには、[ItemContainerStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx) プロパティを使い、[TargetType](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.targettype.aspx) に **ListViewItem** または **GridViewItem** を設定した [Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.aspx) を提供します。
 
 この例では、ListViewItem にパディングを追加して、リストの項目の間に余白を入れます。
 
@@ -327,7 +328,7 @@ ListView コントロールと GridView コントロールを最適化して、�
 
 ![パディングを適用したリスト ビューの項目](images/listview-data-template-1.png)
 
-ListViewItem の既定のスタイルの場合、ListViewItemPresenter の **ContentMargin** プロパティには、ListViewItem の **Padding** プロパティにバインドする [**TemplateBinding**](https://msdn.microsoft.com/windows/uwp/xaml-platform/templatebinding-markup-extension) があります (`<ListViewItemPresenter ContentMargin="{TemplateBinding Padding}"/>`)。 Padding プロパティを設定すると、この値は実際に ListViewItemPresenter の ContentMargin プロパティに渡されます。
+ListViewItem の既定のスタイルの場合、ListViewItemPresenter の **ContentMargin** プロパティには、ListViewItem の **Padding** プロパティにバインドする[TemplateBinding](https://msdn.microsoft.com/windows/uwp/xaml-platform/templatebinding-markup-extension) があります (`<ListViewItemPresenter ContentMargin="{TemplateBinding Padding}"/>`)。 Padding プロパティを設定すると、この値は実際に ListViewItemPresenter の ContentMargin プロパティに渡されます。
 
 ListViewItems プロパティにテンプレート バインドされていないその他の ListViewItemPresenter プロパティを変更するには、プロパティを変更できる新しい ListViewItemPresenter を使って ListViewItem を再テンプレート化する必要があります。 
 
@@ -399,11 +400,11 @@ ListViewItems プロパティにテンプレート バインドされていな�
 
 #### <a name="inline-and-overlay-selection-visuals"></a>インラインとオーバーレイの選択ビジュアル
 
-ListView と GridView では、コントロールや [ **SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) に応じて、選択されている項目をさまざまな方法で示します。 リスト ビューについて詳しくは、「[ListView と GridView](listview-and-gridview.md)」をご覧ください。 
+ListView と GridView では、コントロールや [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) に応じて、選択されている項目をさまざまな方法で示します。 リスト ビューについて詳しくは、「[ListView と GridView](listview-and-gridview.md)」をご覧ください。 
 
-**SelectionMode** を **Multiple** に設定すると、選択チェック ボックスは項目のコントロール テンプレートの一部として表示されます。 [**SelectionCheckMarkVisualEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled.aspx) プロパティを使って、Multiple 選択モードの選択チェック ボックスをオフにできます。 ただし、このプロパティは他の選択モードでは無視されるため、Extended または Single 選択モードのチェック ボックスをオンにすることはできません。
+**SelectionMode** を **Multiple** に設定すると、選択チェック ボックスは項目のコントロール テンプレートの一部として表示されます。 [SelectionCheckMarkVisualEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled.aspx) プロパティを使って、Multiple 選択モードの選択チェック ボックスをオフにできます。 ただし、このプロパティは他の選択モードでは無視されるため、Extended または Single 選択モードのチェック ボックスをオンにすることはできません。
 
-[**CheckMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.checkmode.aspx) プロパティを設定して、インライン スタイルまたはオーバーレイ スタイルのどちらを使ってチェック ボックスを表示するかを指定できます。
+[CheckMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.checkmode.aspx) プロパティを設定して、インライン スタイルまたはオーバーレイ スタイルのどちらを使ってチェック ボックスを表示するかを指定できます。
 
 - **Inline**: このスタイルは、コンテンツの左側にチェック ボックスを表示し、項目コンテナーの背景を色付けすることで、選択された状態を示します。 これは、ListView の既定のスタイルです。
 - **Overlay**: このスタイルは、コンテンツの上部にチェック ボックスを表示し、項目コンテナーの境界線のみを色付けすることで、選択された状態を示します。 これは、GridView の既定のスタイルです。
@@ -448,7 +449,7 @@ ListViewItemPresenter には、データのプレース ホルダーやドラッ
 既に説明したように、項目テンプレート内の UIElement の数は、リスト ビューのパフォーマンスに大きな影響を与えます。 ListViewItemPresenter を展開時の XAML テンプレートに置き換えると、要素の数が大幅に増大するため、リスト ビューで多数の項目を表示する場合や、パフォーマンスを懸念する場合は推奨しません。
 
 > [!NOTE]
-> **ListViewItemPresenter** は、リスト ビューの [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) が [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemswrapgrid.aspx) または [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx) である場合にのみサポートされます。 [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.variablesizedwrapgrid.aspx)、[**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.wrapgrid.aspx)、または [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx) を使うように ItemsPanel を変更すると、項目テンプレートは展開時の XAML テンプレートに自動的に切り替わります。 詳しくは、「[ListView と GridView の UI の最適化](https://msdn.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview)」をご覧ください。
+> **ListViewItemPresenter** は、リスト ビューの [ItemsPanel](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) が [ItemsWrapGrid](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemswrapgrid.aspx) または [ItemsStackPanel](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx) である場合にのみサポートされます。 [VariableSizedWrapGrid](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.variablesizedwrapgrid.aspx)、[WrapGrid](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.wrapgrid.aspx)、または [StackPanel](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx) を使うように ItemsPanel を変更すると、項目テンプレートは展開時の XAML テンプレートに自動的に切り替わります。 詳しくは、「[ListView と GridView の UI の最適化](https://msdn.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview)」をご覧ください。
 
 展開時の XAML テンプレートをカスタマイズするには、アプリでコピーを作成し、コピーに **ItemContainerStyle** プロパティを設定します。
 

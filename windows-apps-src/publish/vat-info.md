@@ -4,14 +4,16 @@ Description: "デベロッパー センターの登録プロセス中に VAT ID 
 title: "VAT 情報"
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: c931b4d8d2241efb80a3a87ba4550a045ea3b675
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: fa4099c1b1253a45acd29d918cb5c63627fe6798
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/21/2017
 ---
 # <a name="vat-info"></a>VAT 情報
 

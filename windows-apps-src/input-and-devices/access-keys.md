@@ -1,387 +1,328 @@
 ---
-author: Karl-Bridge-Microsoft
-Description: "ユーザーがキーボードで UI 要素間を移動できるように、タブ ナビゲーションとアクセス キーを使用してキーボードのアクセスを有効にします。"
-title: "アクセス キー"
-ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
-label: Access keys
+author: kbridge
+Description: "ポインター デバイス (タッチやマウスなど) の代わりにキーボードを使ってアプリの表示される UI をすばやく移動して操作する直感的な方法をユーザーに用意することにより、UWP アプリの使いやすさとアクセシビリティの両方を高める方法について説明します。"
+title: "アクセス キーの設計ガイドライン"
+label: Access keys design guidelines
+keywords: "キーボード, アクセス キー, キーのヒント, アクセシビリティ, ナビゲーション, フォーカス, テキスト, 入力, ユーザーの操作"
 template: detail.hbs
-keywords: "アクセス キー, キーボード, アクセシビリティ, ユーザーの操作, 入力"
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 8d62135680e13f866654c168364bb3393651bd2d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: kimsea
+dev-contact: niallm
+doc-status: Published
+ms.openlocfilehash: ae8bd60311bc7ead44ee3c9a137a233888be55f3
+ms.sourcegitcommit: 0fa9ae00117e8e6b04ed38956e605bb74c1261c6
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="access-keys"></a>アクセス キー
 
-運動障碍を持つユーザーなど、マウスの使用が難しいユーザーは、通常、アプリ内の移動やアプリの操作にキーボードを使用します。  XAML フレームワークでは、タブ ナビゲーションとアクセス キーによって UI 要素へのキーボード アクセスを提供できます。
-
-- タブ ナビゲーションは基本的なキーボード アクセシビリティのアフォーダンス (既定で有効) であり、ユーザーはキーボードの Tab キーと方向キーを使って UI 要素間でフォーカスを移動できます。
-- アクセス キーは、キーボードの修飾キー (Alt キー) と 1 つ以上の英数字キー (通常はコマンドに関連付けられている文字) の組み合わせを使って、アプリのコマンドにすばやくアクセスするための補助的なアクセシビリティのアフォーダンス (開発者がアプリに実装する) です。 よく使うアクセス キーとして、_Alt、F_ で [ファイル] メニューを開く、_Alt、AL_ で左揃えなどがあります。  
-
-キーボード ナビゲーションとアクセシビリティについて詳しくは、「[キーボード操作](https://msdn.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)」と「[キーボードのアクセシビリティ](https://msdn.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)」をご覧ください。 この記事では、これらの記事で説明されている概念を理解していることを前提としています。
-
-## <a name="access-key-overview"></a>アクセス キーの概要
-
-アクセス キーによって、ユーザーはボタンを直接呼び出したり、Tab キーや方向キーを繰り返し押さなくてもキーボードでフォーカスを設定したりすることができます。 アクセス キーは簡単に見つけることができるようにすることを目的としているため、UI に直接表示する必要があります。たとえば、コントロール上にアクセス キーのフローティング バッジを表示します。
-
-![Microsoft Word でのアクセス キーと関連付けられたキーのヒントの例](images/keyboard/accesskeys-keytips.png)
-
-_図 1: Microsoft Word でのアクセス キーと関連付けられたキーのヒントの例。_
-
-アクセス キーは、UI 要素に関連付けられている 1 つまたは複数の英数字です。 たとえば、Microsoft Word では、[ホーム] タブには _H_、[元に戻す] ボタンには _2_、[描画] タブには _JI_ を使用します。
-
-**アクセス キーのスコープ**
-
-アクセス キーは特定のスコープに属しています。 たとえば、図 1 では、_F_、_H_、_N_、_JI_ はページのスコープに属しています。  ユーザーが _H_ キーを押すと、スコープは [ホーム] タブのスコープに変更され、図 2 に示すようにアクセス キーが表示されます。 アクセス キー _V_、_FP_、_FF_、_FS_ は、[ホーム] タブのスコープに属しています。
-
-![Microsoft Word の [ホーム] タブのスコープのアクセス キーと関連付けられたキーのヒントの例](images/keyboard/accesskeys-keytips-hometab.png)
-
-_図 2: Microsoft Word の [ホーム] タブのスコープのアクセス キーと関連付けられたキーのヒントの例。_
-
-2 つの要素が異なるスコープに属している場合、2 つの要素のアクセス キーが同じである場合があります。 たとえば、_2_は、ページのスコープ (図 1) では [元に戻す] のアクセス キーですが、[ホーム] タブのスコープ (図 2) では [斜体] のアクセス キーです。 すべてのアクセス キーは、別のスコープを指定しない限り、既定のスコープに属します。
-
-**アクセス キー シーケンス**
-
-アクセス キーの組み合わせでは、通常、複数のキーを同時に押すことではなく、一度に 1 つのキーを押すことで操作を実現します  (これには次のセクションで説明する例外があります)。操作を実現するために必要なキーボード操作のシーケンスが、_アクセス キー シーケンス_です。 ユーザーは、Alt キーを押してアクセス キー シーケンスを開始します。 アクセス キーは、ユーザーが、アクセス キー シーケンスの最後のキーを押したときに呼び出されます。 たとえば、Word で [表示] タブを開くには、_Alt、W_ アクセス キー シーケンスを押します。
-
-ユーザーは、アクセス キー シーケンスでいくつかのアクセス キーを呼び出すことができます。 たとえば、Word 文書内で [書式のコピー/貼り付け] を開くには、Alt キーを押してシーケンスを初期化します。次に、_H_ キーを押して [ホーム] タブに移動し、アクセス キーのスコープを変更して、_F_ キー、最後に _P_ キーを押します。_H_ と _FP_ は、それぞれ、[ホーム] タブと [書式のコピー/貼り付け] ボタンのアクセス キーです。
-
-呼び出された後に終了する要素 ([書式のコピー/貼り付け] ボタンなど) もあれば、終了しない要素 ([ホーム] タブなど) もあります。 アクセス キーを呼び出すと、コマンドの実行、フォーカスの移動、アクセス キーのスコープの変更、アクセス キーに関連付けられたその他の操作が実行されます。
-
-## <a name="access-key-user-interaction"></a>アクセス キーのユーザー操作
-
-アクセス キー API を理解するには、ユーザー操作モデルを理解しておく必要があります。 以下に、アクセス キーのユーザー操作モデルの概要を示します。
-
-- ユーザーが Alt キーを押すと、フォーカスが入力コントロールにある場合でも、アクセス キー シーケンスが開始されます。 次に、ユーザーはアクセス キーを押して関連付けられた操作を呼び出すことができます。 このユーザー操作のために、Alt キーが押されたときに表示される視覚的アフォーダンス (フローティング バッジなど) を使って、UI 内に利用可能なアクセス キーを示すことが必要です。
-- ユーザーが Alt キーとアクセス キーを同時に押すと、アクセス キーはすぐに呼び出されます。 これは、Alt + _アクセス キー_によってキーボード ショートカットを定義することと似ています。 この場合、アクセス キーの視覚的アフォーダンスは表示されません。 ただし、アクセス キーを呼び出すことで、アクセス キーのスコープが変更される可能性があります。 この場合、アクセス キーのシーケンスが開始され、新しいスコープの視覚的アフォーダンスが表示されます。
-    > [!NOTE]
-    > このユーザー操作のメリットが得られるのは、1 文字のアクセス キーのみです。 Alt + _アクセス キー_ の組み合わせは、複数の文字のアクセス キーについてはサポートされていません。    
-- 複数の文字のアクセス キーのいくつかで同じ文字が使用されている場合、ユーザーが共通する文字を押すと、アクセス キーはフィルター処理されます。 たとえば、_A1_、_A2_、_C_ という 3 つのアクセス キーがあるとします。ユーザーが _A_ キーを押すと、_A1_ と _A2_ のアクセス キーのみが表示され、C の視覚的アフォー ダンスは表示されません。
-- Esc キーは、1 つのレベルをフィルター処理を解除します。 たとえば、_B_、_ABC_、_ACD_、_ABD_ というアクセス キーがある場合、ユーザーが _A_ キーを押すと、_ABC_、_ACD_、_ABD_ が表示されます。 次に、ユーザーが _B_ キーを押すと、_ABC_ と _ABD_ が表示されます。 ユーザーが Esc キーを押すと、フィルター処理が 1 レベル解除され、_ABC_、_ACD_、_ABD_ のアクセス キーが表示されます。 ユーザーがもう一度 Esc キーを押すと、フィルター処理がさらに 1 レベル解除され、すべてのアクセス キー (_B_、_ABC_、_ACD_、_ABD_) が有効になり、視覚的アフォーダンスが表示されます。
-- Esc キーによって、前のスコープに戻ることができます。 アクセス キーは、多くのコマンドを持つアプリ間での移動を容易にするために、複数のスコープに属することができます。 アクセス キー シーケンスは、常にメイン スコープで始まります。 すべてのアクセス キーは、スコープ所有者として特定の UI 要素を指定するものを除き、メイン スコープに属します。 ユーザーがスコープ所有者である要素のアクセス キーを呼び出すと、XAML フレームワークは自動的にスコープをその要素に移動して、内部のアクセス キー ナビゲーション スタックに追加します。 Esc キーは、アクセス キーのナビゲーション スタックに従って前に戻ります。
-- アクセス キー シーケンスを閉じるには、いくつかの方法があります。
-    - ユーザーは、Alt キーを押すことによって、進行中のアクセス キー シーケンスを閉じることができます。 Alt キーを押すとアクセス キー シーケンスが開始されることも覚えておいてください。
-    - メイン スコープで、フィルター処理されていない場合、Esc キーを押すとアクセス キー シーケンスが閉じられます。
-        > [!NOTE]
-        > Esc キーの操作は UI レイヤーに渡され、UI レイヤーでも処理されます。
-    - Tab キーを押すと、アクセス キー シーケンスが閉じられ、タブ ナビゲーションに戻ります。
-    - Enter キーを押すと、アクセス キー シーケンスが閉じられ、フォーカスのある要素にキーボード操作が送信されます。
-    - 方向キーを押すと、アクセス キー シーケンスが閉じられ、フォーカスのある要素にキーボード操作が送信されます。
-    - マウスのクリックやタッチなどのポインター ダウン イベントによって、アクセス キー シーケンスが閉じられます。
-    - 既定では、アクセス キーが呼び出されると、アクセス キー シーケンスは閉じられます。  ただし、この動作は、[ExitDisplayModeOnAccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) プロパティを **false** に設定することによってオーバーライドすることができます。
-- 決定性有限オートマトンが不可能な場合、アクセス キーの競合が発生します。 アクセス キーの競合は望ましくありませんが、大量のコマンド、ローカライズの問題、アクセス キーのランタイム生成によって発生する場合があります。
-
- 競合が発生するのは、次の 2 つの場合です。
- - 2 つの UI 要素が同じアクセス キー値を持ち、同じアクセス キーのスコープに属している場合。 たとえば、`button1` のアクセス キー _A1_ と `button2` のアクセス キー _A1_ が、既定のスコープに属している場合です。 この場合、システムは、ビジュアル ツリーに最初に追加された要素のアクセス キーを処理することによって、競合を解決します。 残りの部分は無視されます。
- - 同じアクセス キーのスコープに複数の処理の選択肢がある場合。 たとえば、_A_ と _A1_ があるとします。 ユーザーが _A_ キーを押したとき、システムには 2 つの選択肢があります。_A_ アクセス キーを呼び出すか、処理を続行して、_A1_ アクセス キーの文字 A が押されたものとして処理するかです。 この例では、システムは、オートマトンによって最初のアクセス キーの呼び出しのみを処理します。 たとえば、_A_ と _A1_ がある場合、システムは _A_ アクセス キーのみを呼び出します。
--     ユーザーが、アクセス キー シーケンスで無効なアクセス キーの値を押した場合は、何も起こりません。 アクセス キー シーケンスで有効なアクセス キーと見なされるキーには、2 つのカテゴリがあります。
- - アクセス キー シーケンスを終了する特別なキー。これには、Esc キー、Alt キー、方向キー、Enter キー、Tab キーがあります。
- - アクセス キーに割り当てられている英数字。
-
-## <a name="access-key-apis"></a>アクセス キー API
-
-アクセス キーのユーザーの操作をサポートするために、XAML フレームワークは、ここで説明する API を提供します。
-
-**AccessKeyManager**
-
-[AccessKeyManager](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.aspx) は、アクセス キーを表示または非表示にするときに、UI の管理に使用できるヘルパー クラスです。 [IsDisplayModeEnabledChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabledchanged.aspx) イベントは、アプリがアクセス キー シーケンスを開始および終了するたびに発生します。 [IsDisplayModeEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabled.aspx) プロパティを照会することによって、視覚的アフォーダンスが表示されているか、非表示であるかを特定できます。  [ExitDisplayMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.exitdisplaymode.aspx) を呼び出して、アクセス キー シーケンスを強制的に終了することもできます。
+アクセス キーを使うと、ポインター デバイス (タッチやマウスなど) の代わりにキーボードを使ってアプリの表示される UI をすばやく移動して操作する直感的な方法をユーザーに用意することにより、Windows アプリの使いやすさとアクセシビリティの両方を高めることができます。
 
 > [!NOTE]
-> アクセス キーのビジュアルについて、組み込みの実装はありません。開発者が提供する必要があります。  
+> キーボードは、特定の障碍を持つユーザーにとっては不可欠であり ([キーボードのアクセシビリティ](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)をご覧ください)、アプリをより効率的に操作することを望むユーザーにとって重要なツールでもあります。
 
-**AccessKey**
+ユニバーサル Windows プラットフォーム (UWP) には、キーボード ベースのアクセス キーと、キーのヒントと呼ばれる視覚的な合図を通じた関連する UI フィードバックの両方に対して、プラットフォーム コントロール間の組み込みサポートが用意されています。
 
-[AccessKey](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskey.aspx) プロパティによって、UIElement または [TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.accesskey.aspx) のアクセス キーを指定できます。 2 つの要素のアクセス キーとスコープが同じである場合、ビジュアル ツリーに最初に追加された要素のみが処理されます。
+## <a name="overview"></a>概要
 
-XAML フレームワークで確実にアクセス キーを処理するには、ビジュアル ツリーで UI 要素を実現する必要があります。 ビジュアル ツリー内にアクセス キーを持つ要素がない場合、アクセス キー イベントは発生しません。
+アクセス キーは、Alt キーと 1 つ以上の英数字キー (*ニーモニック*と呼ばれることがあります) の組み合わせであり、通常は同時に押すのではなく順番に押します。
 
-アクセス キー API では、2 つのキーボード操作を必要とする文字はサポートされません。 個々の文字は、特定の言語のネイティブ キーボード レイアウトのキーに対応している必要があります。  
-
-**AccessKeyDisplayRequested/Dismissed**
-
-[AccessKeyDisplayRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeydisplayrequested.aspx) イベントと [AccessKeyDisplayDismissed](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeydisplaydismissed.aspx) イベントは、アクセス キーの視覚的アフォーダンスを表示または非表示にする必要があるときに発生します。 これらのイベントは、[Visibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility.aspx) プロパティが **Collapsed** に設定されている要素については発生しません。 アクセス キー シーケンス中に、ユーザーがアクセス キーによって使用されている文字を押すたびに、AccessKeyDisplayRequested イベントが発生します。 たとえば、アクセス キーが _AB_ に設定されている場合、ユーザーが Alt キーを押したときにこのイベントが発生し、ユーザーが _A_ キーを押したときにもう一度発生します。ユーザーが _B_ キーを押すと、AccessKeyDisplayDismissed イベントが発生します。
-
-**AccessKeyInvoked**
-
-[AccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyinvoked.aspx) イベントは、ユーザーがアクセス キーの最後の文字を押したときに発生します。 アクセス キーは、1 文字の場合と複数の文字の場合があります。 たとえば、アクセス キー _A_ と _BC_ の場合、ユーザーが _Alt、A_ または _Alt、B、C_ を押したときに、このイベントが発生します。しかし、ユーザーが_Alt、B_ のみを押したときには発生しません。このイベントは、キーを離したときではなく、キーが押されたときに発生します。
-
-**IsAccessKeyScope**
-
-[IsAccessKeyScope](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.isaccesskeyscope.aspx) プロパティによって、UIElement がアクセス キーのスコープのルートであることを指定できます。 AccessKeyDisplayRequested イベントは、この要素について発生し、その子については発生しません。 ユーザーがこの要素を呼び出したときに、XAML フレームワークはスコープを自動的に変更し、その子について AccessKeyDisplayRequested イベントを発生させ、他の UI 要素 (親を含む) については AccessKeyDisplayDismissed イベントを発生させます。  スコープが変更されたときに、アクセス キー シーケンスは終了しません。
-
-**AccessKeyScopeOwner**
-
-要素を、ビジュアル ツリー内の親ではない別の要素 (ソース) のスコープに参加させるには、[AccessKeyScopeOwner](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyscopeowner.aspx) プロパティを設定します。 AccessKeyScopeOwner プロパティにバインドされている要素では、IsAccessKeyScope が **true** に設定されている必要があります。 このようにしないと、例外がスローされます。
-
-**ExitDisplayModeOnAccessKeyInvoked**
-
-既定では、アクセス キーが呼び出され、要素がスコープの所有者ではない場合、アクセス キー シーケンスは終了し、[AccessKeyManager.IsDisplayModeEnabledChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabledchanged.aspx) イベントが発生します。 [ExitDisplayModeOnAccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) プロパティを **false** に設定することによってこの動作をオーバーライドし、呼び出された後で、アクセス キー シーケンスが終了することを防止できます  (このプロパティは、[UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) と [TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.exitdisplaymodeonaccesskeyinvoked.aspx) の両方にあります)。
+キーのヒントは、ユーザーが Alt キーを押したときにアクセス キーをサポートするコントロールの横に表示されるバッジです。 キーのヒントにはそれぞれ、関連するコントロールをアクティブ化する英数字キーが表示されます。
 
 > [!NOTE]
-> 要素がスコープ所有者である場合 (`IsAccessKeyScope="True"`)、アプリは、新しいアクセス キーのスコープに入り、IsDisplayModeEnabledChanged イベントは発生しません。
+> 1 文字の英数字を使ったアクセス キーでは、キーボード ショートカットが自動的にサポートされます。 たとえば、Word で Alt キーを押しながら F キーを同時に押すと、キーのヒントが表示されずに [ファイル] メニューが開きます。
 
-**ローカライズ**
+Alt キーを押すとアクセス キー機能が初期化され、現在利用可能なキーの組み合わせがすべてキーのヒントに表示されます。 後続のキー入力は、アクセス キー フレームワークによって処理されます。このフレームワークは、有効なアクセス キーが押されるか、、Enter、Esc、Tab、または方向キーを押してアクセス キーを非アクティブ化することでキー入力の処理がアプリに返されるまでは、無効なキーを拒否します。
 
-アクセス キーを複数の言語にローカライズし、[ResourceLoader](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.resources.resourceloader.aspx) API を使って、実行時に読み込むことができます。
+Microsoft Office アプリでは、アクセス キーが広範にサポートされています。 次の図は、アクセス キーがアクティブになった状態の Word の [ホーム] タブを示しています (数字と複数のキー入力の両方のサポートに注目してください)。
 
-## <a name="control-patterns-used-when-an-access-key-is-invoked"></a>アクセス キーが呼び出されたときに使用されるコントロール パターン
+![Microsoft Word におけるアクセス キーの KeyTip バッジ](images/accesskeys/keytip-badges-word.png)
 
-コントロール パターンは、共通するコントロール機能を公開するインターフェイスの実装です。たとえば、ボタンは **Invoke** コントロール パターンを実装し、これによって **Click** イベントを発生させます。 アクセス キーが呼び出されると、XAML フレームワークは、呼び出された要素がコントロール パターンを実装するかどうかを検索し、実装する場合はそれを実行します。 要素が複数のコントロール パターンを持つ場合、1 つのみが呼び出され、残りは無視されます。 コントロール パターンは、次の順序で検索されます。
+_Microsoft Word におけるアクセス キーの KeyTip バッジ_
 
-1.    Invoke。 たとえば、Button です。
-2.    Toggle。 たとえば、Checkbox です。
-3.    Selection。 たとえば、RadioButton です。
-4.    Expand/Collapse。 たとえば、ComboBox です。
+コントロールにアクセス キーを追加するには、**AccessKey プロパティ**を使います。 このプロパティの値は、アクセス キーの順序、ショートカット (単一の英数字の場合)、キーのヒントを指定します。
 
-コントロール パターンが見つからない場合、アクセス キーの呼び出しは no-op として表示され、このような状況のデバッグに役立つ、次のようなデバッグ メッセージが記録されます。「このコンポーネントのオートメーション パターンが見つかりません。 AccessKeyInvoked のイベント ハンドラーで目的の動作を実装してください。 イベント ハンドラーで Handled を true に設定すると、このメッセージは表示されません」
+``` xaml
+<Button Content="Accept" AccessKey="A" Click="AcceptButtonClick" />
+```
 
-> [!NOTE]
-> このメッセージを表示するには、Visual Studio のデバッグの設定でデバッガーのアプリケーション プロセスの種類が _[混合 (マネージとネイティブ)]_ または _[ネイティブ]_ になっている必要があります。
+## <a name="when-to-use-access-keys"></a>アクセス キーを使う場合
 
-アクセス キーでその既定のコントロール パターンを実行しない場合や、その要素がコントロール パターンを持たない場合は、[AccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyinvoked.aspx) イベントを処理して、目的の動作を実装する必要があります。
-```csharp
-private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args)
+UI に適切な場合は必ずアクセス キーを指定し、すべてのカスタム コントロールでアクセス キーをサポートすることをお勧めします。
+
+1.  一度に 1 つのキーのみ押すことができるユーザーや、マウスを使うのが困難なユーザーなど、運動障碍を持つユーザーにとっては、**アクセス キーによりアプリのアクセシビリティが高まります**。
+
+    適切に設計されたキーボード UI はソフトウェアのアクセシビリティの重要な要素であり、 視覚に障碍のあるユーザーや特定の運動障碍のあるユーザーによるアプリ内の移動や、その機能の操作を実現します。 このようなユーザーはマウスを操作できない場合があるため、代わりにさまざまな支援技術 (キーボード強化ツール、スクリーン キーボード、スクリーン拡大機能、スクリーン リーダー、音声入力ユーティリティなど) が不可欠になる可能性があります。 このようなユーザーにとっては、コマンドを包括的にカバーすることが重要です。
+
+2.  キーボードを使った操作を好むパワー ユーザーにとっては、**アクセス キーによりアプリが使いやすくなります**。
+
+    多くの経験豊富なユーザーには、キーボードの使用の方がはるかに好まれます。キーボード ベースのコマンドであれば、すばやく入力することができ、キーボードから手を離す必要がないためです。 このようなユーザーにとっては、効率性と一貫性が重要です。包括性が重要になるのは、特に頻繁に使用するコマンドに対してのみです。
+
+## <a name="set-access-key-scope"></a>アクセス キーのスコープを設定する
+
+アクセス キーをサポートする要素が画面上に多くある場合、**認知的負荷**を軽減するためにアクセス キーのスコープを設定することをお勧めします。 これにより、画面上のアクセス キーの数が最小限に抑えられるため、見つけやすくなり、効率性と生産性が向上します。
+
+たとえば、Microsoft Word には 2 つのアクセス キー スコープが用意されています。リボン タブ用のプライマリ スコープと、選択されたタブ上のコマンドのセカンダリ スコープです。
+
+次の図は、Word における 2 つのアクセス キー スコープを示しています。 最初の図は、ユーザーがタブとその他の最上位レベルのコマンドを選択できるようにするプライマリ アクセス キーを示しています。2 つ目の図は、[ホーム] タブのセカンダリ アクセス キーを示しています。
+
+![Microsoft Word におけるプライマリ アクセス キー](images/accesskeys/primary-access-keys-word.png)
+
+_Microsoft Word におけるプライマリ アクセス キー_
+
+![Microsoft Word におけるセカンダリ アクセス キー](images/accesskeys/secondary-access-keys-word.png)
+
+Microsoft Word におけるセカンダリ アクセス キー
+
+アクセス キーは、異なるスコープの要素用に複製することができます。 前の例では、"2" はプライマリ スコープにおける [元に戻す] のアクセス キーであり、セカンダリ スコープにおける "斜体" のアクセス キーでもあります。
+
+CommandBar などの一部のコントロールでは、組み込みのアクセス キー スコープがまだサポートされていないため、手動で実装する必要があります。 次の例は、親コマンド (Word のリボンに似ています) が呼び出されると使用できるアクセス キー持つ CommandBar の SecondaryCommands をサポートする方法を示しています。
+
+``` C#
+public class CommandBarHack : CommandBar
 {
-    args.Handled = true;
-    //Do something
+    CommandBarOverflowPresenter secondaryItemsControl;
+    Popup overflowPopup;
+
+    public CommandBarHack()
+    {
+        this.ExitDisplayModeOnAccessKeyInvoked = false;
+        AccessKeyInvoked += OnAccessKeyInvoked;
+    }
+
+    protected override void OnApplyTemplate()
+    {
+        base.OnApplyTemplate();
+
+        Button moreButton = GetTemplateChild("MoreButton") as Button;
+        moreButton.SetValue(Control.IsTemplateKeyTipTargetProperty, true);
+        moreButton.IsAccessKeyScope = true;
+
+        // SecondaryItemsControl changes
+        secondaryItemsControl = GetTemplateChild("SecondaryItemsControl") as CommandBarOverflowPresenter;
+        secondaryItemsControl.AccessKeyScopeOwner = moreButton;
+
+        overflowPopup = GetTemplateChild("OverflowPopup") as Popup;
+
+    }
+    private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args)
+    {
+
+        if (overflowPopup != null)
+        {
+            overflowPopup.Opened += SecondaryMenuOpened;
+        }
+    }
+
+    private void SecondaryMenuOpened(object sender, object e)
+    {
+        //This is not neccesay given we are automatically pushing the scope.
+        var item = secondaryItemsControl.Items.First();
+        if (item != null && item is Control)
+        {
+            (item as Control).Focus(FocusState.Keyboard);
+        }
+        overflowPopup.Opened -= SecondaryMenuOpened;
+    }
 }
 ```
 
-コントロール パターンについて詳しくは、「[UI オートメーション コントロール パターンの概要](https://msdn.microsoft.com/library/windows/desktop/ee671194.aspx)」をご覧ください。
+
+``` xaml
+<local:CommandBarHack x:Name="MainCommandBar" AccessKey="M" >
+    <AppBarButton AccessKey="G" Icon="Globe" Label="Go"/>
+    <AppBarButton AccessKey="S" Icon="Stop" Label="Stop"/>
+    <AppBarSeparator/>
+    <AppBarButton AccessKey="R" Icon="Refresh" Label="Refresh" IsAccessKeyScope="True">
+        <AppBarButton.Flyout>
+            <MenuFlyout>
+                <MenuFlyoutItem AccessKey="A" Icon="Globe" Text="Refresh A" />
+                <MenuFlyoutItem AccessKey="B" Icon="Globe" Text="Refresh B" />
+                <MenuFlyoutItem AccessKey="C" Icon="Globe" Text="Refresh C" />
+                <MenuFlyoutItem AccessKey="D" Icon="Globe" Text="Refresh D" />
+            </MenuFlyout>
+        </AppBarButton.Flyout>
+    </AppBarButton>
+    <AppBarButton AccessKey="B" Icon="Back" Label="Back"/>
+    <AppBarButton AccessKey="F" Icon="Forward" Label="Forward"/>
+    <AppBarSeparator/>
+    <AppBarToggleButton AccessKey="V" Icon="Favorite" Label="Favorite"/>
+    <CommandBar.SecondaryCommands>
+        <AppBarToggleButton Icon="Like" AccessKey="L" Label="Like"/>
+        <AppBarButton Icon="Setting" AccessKey="T" Label="Settings" />
+    </CommandBar.SecondaryCommands>
+</local:CommandBarHack>
+```
+
+![CommandBar のプライマリ アクセス キー](images/accesskeys/primary-access-keys-commandbar.png)
+
+_CommandBar のプライマリ スコープとサポートされているアクセス キー_
+
+![CommandBar のセカンダリ アクセス キー](images/accesskeys/secondary-access-keys-commandbar.png)
+
+_CommandBar のセカンダリ スコープとサポートされているアクセス キー_
+
+## <a name="avoid-access-key-collisions"></a>アクセス キーの競合を避ける
+
+アクセス キーの競合は、同じスコープ内の複数の要素が重複するアクセス キーを持っている場合や、同じ英数字で始まる場合に生じます。
+
+システムは、ビジュアル ツリーに追加された最初の要素のアクセス キーを処理し、他のアクセス キーをすべて無視することで、重複するアクセス キーを解決します。
+
+複数のアクセス キーが同じ文字で始まる場合 (たとえば、"A"、"A1"、"AB")、システムは 1 文字のアクセス キーを処理し、他のすべてのアクセス キーを無視します。
+
+競合を避けるには、一意のアクセス キーを使ったり、コマンドのスコープを設定したりします。
+
+## <a name="choose-access-keys"></a>アクセス キーを選ぶ
+
+アクセス キーを選ぶときは、以下の点を考慮してください。
+
+-   単一の文字を使ってキー入力を最小限に抑え、ショートカット キーを既定でサポートする (Alt + アクセス キー)
+-   複数文字を使わない
+-   アクセス キーの競合を避ける
+-   アルファベットの "I" と数字の "1"、アルファベットの "O" と数字の "0" など、他の文字との判別が難しい文字を避ける
+-   Word など、有名な他のアプリでよく使われているケースに倣う ("File" の "F"、"Home" の "H" など)
+-   コマンド名の先頭の文字を使ったり、思い出しやすいようにコマンドとの関連性が高い文字を使ったりする
+    -   先頭の文字が既に割り当てられている場合、コマンド名の先頭の文字にできるだけ近い文字を使う ("Insert" の "N" など)
+    -   コマンド名の特徴的な死因を使う ("View" の "W")
+    -   コマンド名の母音を使う
+
+## <a name="localize-access-keys"></a>アクセス キーをローカライズする
+
+アプリが複数の言語にローカライズされる場合、**アクセス キーのローカライズも検討**してください。 たとえば、英語 (en-US) における "Home" の "H" とスペイン語 (es-ES) における "Incio" の "I" などです。
+
+以下に示すように、マークアップで x:Uid 拡張を使って、ローカライズされたリソースを適用します。
+
+``` xaml
+<Button Content="Home" AccessKey="H" x:Uid="HomeButton" />
+```
+各言語のリソースは、プロジェクト内の対応する文字列フォルダーに追加されます。
+
+![英語およびスペイン語のリソース文字列フォルダー](images/accesskeys/resource-string-folders.png)
+
+_英語およびスペイン語のリソース文字列フォルダー_
+
+ローカライズされたアクセス キーは、プロジェクトの resources.resw ファイルで指定されます。
+
+![resources.resw ファイルで指定された AccessKey プロパティを指定する](images/accesskeys/resource-resw-file.png)
+
+_resources.resw ファイルで指定された AccessKey プロパティを指定する_
+
+詳しくは、「[UI リソースの翻訳](https://msdn.microsoft.com/library/windows/apps/xaml/Hh965329(v=win.10).aspx)」をご覧ください。
+
+## <a name="position-key-tips"></a>キーのヒントを配置する
+
+キーのヒントは、他の UI 要素、他のキーのヒント、画面の端の存在を考慮に入れて、対応する UI 要素を基準にフローティング バッジとして表示されます。
+
+通常、キーのヒントは既定の場所で十分であり、アダプティブ UI の組み込みサポートが提供されます。
+
+![キーのヒントの自動配置の例](images/accesskeys/auto-keytip-position.png)
+
+_キーのヒントの自動配置の例_
+
+ただし、キーのヒントの配置より細かく制御する必要がある場合、次のことをお勧めします。
+
+1.  **明白な関連付けの原則**: ユーザーは、キーのヒントにコントロールを簡単に関連付けることができます。
+
+    a.   KeyTip は、アクセス キーを持つ要素 (オーナー) の**近く**に配置する必要があります。  
+    b.   KeyTip は、アクセス キーを持つ**有効な要素を覆わないようにする**必要があります。   
+    c.   KeyTip をそのオーナーの近くに配置できない場合、オーナーと重ねる必要があります。 
+
+2.  **見つけやすさ**: ユーザーは、キーのヒントによってコントロールをすばやく見つけることができます。
+
+    a.   KeyTip が他のキーのヒントと**重なって**はなりません。  
+
+3.  **目を通しやすい:** ユーザーがキーのヒントを簡単に読み取ることができます。
+
+    a.   KeyTips は互いに、かつ UI 要素と**揃っている**必要があります。
+    b.   KeyTips はできる限り**グループ分け**する必要があります。 
+
+### <a name="relative-position"></a>相対的な配置
+
+要素またはグループごとにキーのヒントの配置をカスタマイズするには、**KeyTipPlacementMode** プロパティを使います。
+
+配置モードは、Top、Bottom、Right、Left、Hidden、Center、Auto です。
+
+![キーのヒントの配置モード](images/accesskeys/keytip-postion-modes.png)
+
+_キーのヒントの配置モード_
+
+コントロールの中心線は、KeyTip の垂直方向および水平方向の配置の計算に使われます。
+
+次の例は、StackPanel コンテナーの KeyTipPlacementMode プロパティを使ってコントロールのグループのキーのヒントの配置を設定する方法を示しています。
+
+``` xaml
+<StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" KeyTipPlacementMode="Top">
+  <Button Content="File" AccessKey="F" />
+  <Button Content="Home" AccessKey="H" />
+  <Button Content="Insert" AccessKey="N" />
+</StackPanel>
+```
+
+### <a name="offsets"></a>オフセット
+
+キーのヒントの場所をさらに細かく制御するには、KeyTipHorizontalOffset プロパティと KeyTipVerticalOffset プロパティを使います。
+
+> [!NOTE]
+> KeyTipPlacementMode が Auto に設定されているときは、オフセットを設定することができません。
+
+KeyTipHorizontalOffset プロパティは、キーのヒントを左または右に移動する距離を指定します。 次の例は、ボタンのキーのヒントのオフセットを設定する方法を示しています。
+
+![キーのヒントの配置モード](images/accesskeys/keytip-offsets.png)
+
+_キーのヒントの垂直オフセットと水平オフセットを設定する_
+
+``` xaml
+<Button
+  Content="File"
+  AccessKey="F"
+  KeyTipPlacementMode="Bottom"
+  KeyTipHorizontalOffset="20"
+  KeyTipVerticalOffset="-8" />
+```
+
+### <a name="screen-edge-alignment-screen-edge-alignment-listparagraph"></a>画面の端の配置 {#screen-edge-alignment .ListParagraph}
+
+キーのヒントの場所は、キーのヒントが完全に表示されるように画面の端を基準にして自動的に調整されます。 この場合、コントロールとキーのヒントの配置ポイントの間の距離が、水平オフセットと垂直オフセットに指定した値と異なることがあります。
+
+![キーのヒントの配置モード](images/accesskeys/keytips-screen-edge.png)
+
+_画面の端によりキーのヒントの位置が自動的に変更される_
+
+## <a name="style-key-tips"></a>キーのヒントのスタイルを設定する
+
+ハイ コントラストなど、プラットフォームのテーマに用意された組み込みのキーのヒントのサポートを使うことをお勧めします。
+
+独自のキーのヒントのスタイルを指定する必要がある場合、KeyTipFontSize (フォント サイズ)、KeyTipFontFamily (フォント ファミリ)、KeyTipBackground (背景)、KeyTipForeground (前景)、KeyTipPadding (パディング)、KeyTipBorderBrush (境界線の色)、KeyTipBorderThemeThickness (境界線の太さ) などのアプリケーション リソースを使います。
+
+![キーのヒントの配置モード](images/accesskeys/keytip-customization.png)
+
+_キーのヒントのカスタマイズ オプション_
+
+この例は、これらのアプリケーション リソースを変更する方法を示しています。
+
+ ```xaml  
+<Application.Resources>
+  <SolidColorBrush Color="DarkGray" x:Key="MyBackgroundColor" />
+  <SolidColorBrush Color="White" x:Key="MyForegroundColor" />
+  <SolidColorBrush Color="Black" x:Key="MyBorderColor" />
+  <StaticResource x:Key="KeyTipBackground" ResourceKey="MyBackgroundColor" />
+  <StaticResource x:Key="KeyTipForeground" ResourceKey="MyForegroundColor" />
+  <StaticResource x:Key="KeyTipBorderBrush" ResourceKey="MyBorderColor"/>
+  <FontFamily x:Key="KeyTipFontFamily">Consolas</FontFamily>
+  <x:Double x:Key="KeyTipContentThemeFontSize">18</x:Double>
+  <Thickness x:Key="KeyTipBorderThemeThickness">2</Thickness>
+  <Thickness x:Key="KeyTipThemePadding">4,4,4,4</Thickness>
+</Application.Resources>
+```
 
 ## <a name="access-keys-and-narrator"></a>アクセス キーとナレーター
 
-Windows ランタイムには、Microsoft UI オートメーション要素のプロパティを公開する UI オートメーション プロバイダーがあります。 これらのプロパティによって、UI オートメーション クライアント アプリケーションで、ユーザー インターフェイスの要素に関する情報を検出できます。 [AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763) プロパティによって、ナレーターなどのクライアントで、要素に関連付けられているアクセス キーを検出できます。 要素がフォーカスを取得するたびに、ナレーターはこのプロパティを読み取ります。 AutomationProperties.AccessKey に値がない場合、XAML フレームワークは UIElement や TextElement から [AccessKey](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskey.aspx) プロパティの値を返します。 AccessKey プロパティに既に値がある場合は、AutomationProperties.AccessKey を設定する必要はありません。
+XAML フレームワークには、UI オートメーション クライアントがユーザー インターフェイス内の要素に関する情報を検出できるようにするオートメーション プロパティが表示されます。
 
-## <a name="example-access-key-for-button"></a>例: ボタンのアクセス キー
-
-この例では、ボタンのアクセス キーを作成する方法を示します。 アクセス キーを含むフローティング バッジを実装する視覚的アフォーダンスとして、ヒントを使用しています。
-
-> [!NOTE]
-> 説明をわかりやすくするためにヒントを使用していますが、[Popup](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.popup.aspx) などを使用して独自のコントロールを作成することをお勧めします。
-
-XAML フレームワークは Click イベントのハンドラーを自動的に呼び出すため、AccessKeyInvoked イベントを処理する必要はありません。 この例では、[AccessKeyDisplayRequestedEventArgs.PressedKeys](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeydisplayrequestedeventargs.pressedkeys.aspx) プロパティを使用して、アクセス キーを呼び出すために必要な残りの文字のみの視覚的アフォーダンスを提供します。 たとえば、_A1_、_A2_、_C_ の 3 つのアクセス キーがある場合、ユーザーが _A_ キーを押すと、_A1_ と _A2_ アクセス キーのみが残りますが、_A1_ と _A2_ の代わりに、_1_ と _2_ のように表示されます。
-
-```xaml
-<StackPanel
-        VerticalAlignment="Center"
-        HorizontalAlignment="Center"
-        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button Content="Press"
-                AccessKey="PB"
-                AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"
-                Click="DoSomething" />
-        <TextBlock Text="" x:Name="textBlock" />
-    </StackPanel>
-```
-
-```csharp
- public sealed partial class ButtonSample : Page
-    {
-        public ButtonSample()
-        {
-            this.InitializeComponent();
-        }
-
-        private void DoSomething(object sender, RoutedEventArgs args)
-        {
-            textBlock.Text = "Access Key is working!";
-        }
-
-        private void OnAccessKeyDisplayRequested(UIElement sender, AccessKeyDisplayRequestedEventArgs args)
-        {
-            var tooltip = ToolTipService.GetToolTip(sender) as ToolTip;
-
-            if (tooltip == null)
-            {
-                tooltip = new ToolTip();
-                tooltip.Background = new SolidColorBrush(Windows.UI.Colors.Black);
-                tooltip.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
-                tooltip.Padding = new Thickness(4, 4, 4, 4);
-                tooltip.VerticalOffset = -20;
-                tooltip.Placement = PlacementMode.Bottom;
-                ToolTipService.SetToolTip(sender, tooltip);
-            }
-
-            if (string.IsNullOrEmpty(args.PressedKeys))
-            {
-                tooltip.Content = sender.AccessKey;
-            }
-            else
-            {
-                tooltip.Content = sender.AccessKey.Remove(0, args.PressedKeys.Length);
-            }
-
-            tooltip.IsOpen = true;
-        }
-        private void OnAccessKeyDisplayDismissed(UIElement sender, AccessKeyDisplayDismissedEventArgs args)
-        {
-            var tooltip = ToolTipService.GetToolTip(sender) as ToolTip;
-            if (tooltip != null)
-            {
-                tooltip.IsOpen = false;
-                //Fix to avoid show tooltip with mouse
-                ToolTipService.SetToolTip(sender, null);
-            }
-        }
-    }
-```
-
-## <a name="example-scoped-access-keys"></a>例: スコープ指定されたアクセス キー
-
-この例では、スコープ指定されたアクセス キーを作成する方法を示します。 PivotItem の IsAccessKeyScope プロパティによって、ユーザーが Alt キーを押したときに、PivotItem の子要素のアクセス キーが表示されるのを防止します。 これらのアクセス キーは、ユーザーが PivotItem を呼び出したときにのみ表示されます。XAML フレームワークによって、スコープが自動的に切り替えられるためです。 フレームワークによって、他のスコープのアクセス キーも非表示になります。
-
-この例では、AccessKeyInvoked イベントを処理する方法についても説明します。 PivotItem はどのコントロール パターンを実装していないため、XAML フレームワークは既定ではどの操作も呼び出しません。 この実装では、アクセス キーを使って呼び出された PivotItem を選択する方法を示しています。
-
-最後に、この例では、表示モードが変更されたときに特定の処理を実行するために使用できる IsDisplayModeChanged イベントを示します。 この例では、ユーザーが Alt キーを押すまで、Pivot コントロールは折りたたまれています。 ユーザーが Pivot の操作を終了すると、再び折りたたまれます。 IsDisplayModeEnabled を使って、アクセス キーの表示モードが有効であるか無効であるかを確認できます。
-
-```xaml   
-<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Pivot x:Name="MyPivot" VerticalAlignment="Center" HorizontalAlignment="Center" >
-            <Pivot.Items>
-                <PivotItem
-                    x:Name="PivotItem1"
-                    AccessKey="A"
-                    AccessKeyInvoked="OnAccessKeyInvoked"
-                    AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                    AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"
-                    IsAccessKeyScope="True">
-                    <PivotItem.Header>
-                        <TextBlock Text="A Options"/>
-                    </PivotItem.Header>
-                    <StackPanel Orientation="Horizontal" >
-                        <Button Content="ButtonAA" AccessKey="A"
-                                AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                                AccessKeyDisplayRequested="OnAccessKeyDisplayRequested" />
-                        <Button Content="ButtonAD1" AccessKey="D1"
-                                AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                                AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"  />
-                        <Button Content="ButtonAD2" AccessKey="D2"
-                                AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                                AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"/>
-                    </StackPanel>
-                </PivotItem>
-                <PivotItem
-                    x:Name="PivotItem2"
-                    AccessKeyInvoked="OnAccessKeyInvoked"
-                    AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                    AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"
-                    AccessKey="B"
-                    IsAccessKeyScope="true">
-                    <PivotItem.Header>
-                        <TextBlock Text="B Options"/>
-                    </PivotItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <Button AccessKey="B" Content="ButtonBB"
-                                AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                                AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"  />
-                        <Button AccessKey="F1" Content="ButtonBF1"
-                                AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                                AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"  />
-                        <Button AccessKey="F2" Content="ButtonBF2"  
-                                AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                                AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"/>
-                    </StackPanel>
-                </PivotItem>
-            </Pivot.Items>
-        </Pivot>
-    </Grid>
-```
-
-```csharp
-public sealed partial class ScopedAccessKeys : Page
-    {
-        public ScopedAccessKeys()
-        {
-            this.InitializeComponent();
-            AccessKeyManager.IsDisplayModeEnabledChanged += OnDisplayModeEnabledChanged;
-            this.Loaded += OnLoaded;
-        }
-
-        void OnLoaded(object sender, object e)
-        {
-            //To let the framework discover the access keys, the elements should be realized
-            //on the visual tree. If there are no elements in the visual
-            //tree with access key, the framework won't raise the events.
-            //In this sample, if you define the Pivot as collapsed on the constructor, the Pivot
-            //will have a lazy loading and the access keys won't be enabled.
-            //For this reason, we make it visible when creating the object
-            //and we collapse it when we load the page.
-            MyPivot.Visibility = Visibility.Collapsed;
-        }
-
-        void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args)
-        {
-            args.Handled = true;
-            MyPivot.SelectedItem = sender as PivotItem;
-        }
-        void OnDisplayModeEnabledChanged(object sender, object e)
-        {
-            if (AccessKeyManager.IsDisplayModeEnabled)
-            {
-                MyPivot.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                MyPivot.Visibility = Visibility.Collapsed;
-
-            }
-        }
-
-        DependencyObject AdjustTarget(UIElement sender)
-        {
-            DependencyObject target = sender;
-            if (sender is PivotItem)
-            {
-                PivotItem pivotItem = target as PivotItem;
-                target = (sender as PivotItem).Header as TextBlock;
-            }
-            return target;
-        }
-
-        void OnAccessKeyDisplayRequested(UIElement sender, AccessKeyDisplayRequestedEventArgs args)
-        {
-            DependencyObject target = AdjustTarget(sender);
-            var tooltip = ToolTipService.GetToolTip(target) as ToolTip;
-
-            if (tooltip == null)
-            {
-                tooltip = new ToolTip();
-                tooltip.Background = new SolidColorBrush(Windows.UI.Colors.Black);
-                tooltip.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
-                tooltip.Padding = new Thickness(4, 4, 4, 4);
-                tooltip.VerticalOffset = -20;
-                tooltip.Placement = PlacementMode.Bottom;
-                ToolTipService.SetToolTip(target, tooltip);
-            }
-
-            if (string.IsNullOrEmpty(args.PressedKeys))
-            {
-                tooltip.Content = sender.AccessKey;
-            }
-            else
-            {
-                tooltip.Content = sender.AccessKey.Remove(0, args.PressedKeys.Length);
-            }
-
-            tooltip.IsOpen = true;
-        }
-        void OnAccessKeyDisplayDismissed(UIElement sender, AccessKeyDisplayDismissedEventArgs args)
-        {
-            DependencyObject target = AdjustTarget(sender);
-
-            var tooltip = ToolTipService.GetToolTip(target) as ToolTip;
-            if (tooltip != null)
-            {
-                tooltip.IsOpen = false;
-                //Fix to avoid show tooltip with mouse
-                ToolTipService.SetToolTip(target, null);
-            }
-        }
-    }
-```
+UIElement または TextElement コントロールで AccessKey プロパティを指定する場合、[AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763) プロパティを使ってこの値を取得できます。 ナレーターなどのアクセシビリティ クライアントは、要素がフォーカスを取得するたびにこのプロパティの値を読み取ります。

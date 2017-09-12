@@ -2,22 +2,22 @@
 author: mcleanbyron
 ms.assetid: 8AC56AAF-8D8C-4193-A6B3-BB5D0669D994
 description: "このセクションの Python コード例を使用して、Windows ストア申請 API を使用する方法をご確認ください。"
-title: "申請 API 用の Python のコード例"
+title: "Python のコード例: アプリ、アドオン、およびフライトの申請"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10、UWP、Windows ストア申請 API、コード例"
-ms.openlocfilehash: a46907ecfea1de60b8a32cdaea7076f056a41ff5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: "Windows 10, UWP, Windows ストア申請 API, コード例, Python"
+ms.openlocfilehash: 01d40aa31531aa4d5b75f02627bc7e6234963c7e
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/09/2017
 ---
-# <a name="python-code-examples-for-the-submission-api"></a>申請 API 用の Python のコード例
+# <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Python のコード例: アプリ、アドオン、およびフライトの申請
 
-この記事では、*Windows ストア申請 API* を使用するための Python のコード例を紹介します。 この API について詳しくは、[Windows ストア サービスを使用した申請の作成と管理に関するページ](create-and-manage-submissions-using-windows-store-services.md)をご覧ください。
-
-ここでは、次のタスクに対応するコード例を示します。
+この記事では、次のタスクの [Windows ストア申請 API](create-and-manage-submissions-using-windows-store-services.md) の使用方法を示す Python コード例を提供します。
 
 * [Azure AD アクセス トークンの取得](#token)
 * [アドオンの作成](#create-add-on)
@@ -36,7 +36,7 @@ translationtype: HT
 <span id="create-add-on" />
 ## <a name="create-an-add-on"></a>アドオンの作成
 
-次の例は、アドオンを[作成](create-an-add-on.md)してから[削除](delete-an-add-on.md)する方法を示しています (アドオンは "アプリ内製品"、略して "IAP" とも呼ばれます)。
+次の例は、アドオンを[作成](create-an-add-on.md)してから[削除](delete-an-add-on.md)する方法を示しています。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L26-L52)]
 

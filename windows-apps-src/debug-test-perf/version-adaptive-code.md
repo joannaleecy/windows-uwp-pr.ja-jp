@@ -1,7 +1,7 @@
 ---
 author: jwmsft
 title: "バージョン アダプティブ コード"
-description: "以前のバージョンとの互換性を維持しつつ、新しい API を利用する方法について説明します"
+description: "ApiInformation を使って、以前のバージョンとの互換性を保ちながら新しい API を利用します"
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,55 +9,23 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
-ms.openlocfilehash: 4076bd9edf26108e896e3a7734c2108a00577cd0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: d5b9a3b02c5acbb2ad7bcd00b9af4f7d6edd91de
+ms.sourcegitcommit: 73ea31d42a9b352af38b5eb5d3c06504b50f6754
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/27/2017
 ---
-# <a name="version-adaptive-code-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>バージョン アダプティブ コード: 以前のバージョンとの互換性を維持しつつ新しい API を使う
+# <a name="version-adaptive-code"></a>バージョン アダプティブ コード
 
-Windows 10 SDK の各リリースには、ユーザーが利用したくなるような魅力的な新機能が追加されています。 ただし、すべてのユーザーがデバイスを最新バージョンの Windows 10 に同時に更新するわけではないため、できるだけ幅広いデバイスでアプリが動作するようにする必要があります。 ここでは、アプリが以前のバージョンの Windows 10 で動作するだけでなく、最新の更新プログラムがインストールされたデバイスでアプリを実行したときに新機能を利用できるように、アプリを設計する方法について説明します。
+アダプティブ コードの記述については、[アダプティブ UI の作成](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml)と同じように考えることができます。 最小画面で実行するように基本 UI を設計し、より大きな画面でアプリが実行されていることを検出したときに要素を移動または追加できます。 アダプティブ コードでは、最小の OS バージョンで実行するように基本コードを記述し、新機能が搭載されたより高いバージョンでアプリが実行されていることを検出したときに、手動で選んだ機能を追加できます。
 
-アプリができるだけ幅広い Windows 10 デバイスをサポートするようにするには、2 つの手順を実行します。 まず、最新の API を対象とするように Visual Studio プロジェクトを構成します。 これは、アプリをコンパイルするときの処理に影響します。 次に、ランタイム チェックを実行して、アプリが実行されているデバイスに存在する API のみを呼び出すことを確認します。
-
-## <a name="configure-your-visual-studio-project"></a>Visual Studio プロジェクトを構成する
-
-複数の Windows 10 バージョンをサポートするための最初の手順は、Visual Studio プロジェクトで、サポートされる*ターゲット*と*最小*の OS/SDK バージョンを指定することです。
-- *ターゲット*: Visual Studio がアプリ コードをコンパイルし、すべてのツールを実行する際に対象となる SDK バージョン。 この SDK バージョンに含まれているすべての API とリソースは、コンパイル時にアプリ コードで使うことができます。
-- *最小*: アプリを実行できる (ストアからの展開先となる) 以前の OS バージョンと、Visual Studio がアプリ マークアップ コードをコンパイルする際に対象となるバージョンをサポートする SDK バージョン。 
-
-実行時には展開先の OS バージョンに対してアプリが実行されるため、そのバージョンで利用できないリソースを使ったり、そのような API を呼び出したりすると、アプリによって例外がスローされます。 ランタイム チェックを使って適切な API を呼び出す方法については、この記事の後半で説明します。
-
-ターゲットと最小の設定では、OS/SDK バージョンの範囲の両端を指定します。 ただし、最小バージョンでアプリをテストした場合、最小とターゲット間のすべてのバージョンでアプリが実行されるようになります。
-
-> [!TIP]
-> Visual Studio では API の互換性についての警告は表示されません。 ご自身の責任で最小とターゲットの間にあるすべての OS バージョン (最小とターゲットのバージョンを含む) でアプリが期待どおりに実行されることをテストし、確認してください。
-
-Visual Studio 2015 Update 2 以降で新しいプロジェクトを作成すると、アプリがサポートしているターゲット バージョンと最小バージョンを設定するように求められます。 既定では、ターゲット バージョンはインストール済みの SDK の中で最も高いバージョンで、最小バージョンはインストール済みの SDK バージョンの中で最も低いバージョンです。 コンピューターにインストールされている SDK バージョンからのみ、ターゲットと最小を選ぶことができます。 
-
-![Visual Studio でターゲット SDK を設定する](images/vs-target-sdk-1.png)
-
-通常、既定値のままにすることをお勧めします。 ただし、SDK のプレビュー版をインストールしていて、運用コードを記述している場合、ターゲット バージョンを Preview SDK から最新の公式の SDK バージョンに変更する必要があります。 
-
-Visual Studio で既に作成済みのプロジェクトの最小バージョンとターゲット バージョンを変更するには、[プロジェクト]、[プロパティ]、[アプリケーション] タブ、[ターゲット] の順に移動します。
-
-![Visual Studio でターゲット SDK を変更する](images/vs-target-sdk-2.png) 
-
-参考までに、各 SDK には次のようにビルド番号があります:
-- Windows 10 バージョン 1506: SDK バージョン 10240
-- Windows 10 バージョン 1511 (11 月の更新プログラム): SDK バージョン 10586
-- Windows 10 バージョン 1607 (Anniversary Update): SDK バージョン 14393。
-
-SDK のすべてのリリース版は、「[Windows SDK とエミュレーターのアーカイブ](https://developer.microsoft.com/downloads/sdk-archive)」からダウンロードできます。 最新の Windows Insider Preview SDK は、[Windows Insider](https://insider.windows.com/) サイトの「開発者向け」セクションからダウンロードできます。
-
-## <a name="write-adaptive-code"></a>アダプティブ コードを記述する
-
-アダプティブ コードの記述については、[アダプティブ UI の作成](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml)についての考え方と同じように考えることができます。 最小画面で実行するように基本 UI を設計し、より大きな画面でアプリが実行されていることを検出したときに要素を移動または追加できます。 アダプティブ コードの場合、最小の OS バージョンで実行するように基本コードを記述し、新機能が提供されているより高いバージョンでアプリが実行されていることを検出したときに、機能を手動で選んで追加できます。
+ApiInformation に関する重要な背景情報、API コントラクト、Visual Studio の構成については、「[バージョン アダプティブ アプリ](version-adaptive-apps.md)」をご覧ください。
 
 ### <a name="runtime-api-checks"></a>ランタイム API チェック
 
-呼び出す API が存在するかどうかをテストするために、コードの条件で [Windows.Foundation.Metadata.ApiInformation](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx) クラスを使います。 このテストの条件は、アプリの実行時に必ず評価されますが、API が存在するデバイスに対してのみ **true** と評価され、呼び出しが可能になります。 そのため、特定の OS バージョンでのみ利用できる API を使うアプリを作成するには、バージョン アダプティブ コードを記述できます。
+呼び出す API が存在するかどうかをテストするには、コード内の条件で [Windows.Foundation.Metadata.ApiInformation](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx) クラスを使います。 この条件は、アプリがどこで実行された場合でも評価されますが、API が存在して呼び出すことができるデバイスでのみ **true** と評価されます。 これにより、特定の OS バージョンでのみ利用できる API を使うアプリを作成するためのバージョン アダプティブ コードを記述できます。
 
-ここでは、Windows Insider Preview の新機能を対象にするための具体的な例を示します。 **ApiInformation** を使う場合の一般的な概要については、[UWP アプリのガイド](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)と [API コントラクトを使った機能の動的な検出に関するブログの投稿](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)をご覧ください。
+ここでは、Windows Insider Preview の新機能をターゲットにするための具体的な例を示します。 **ApiInformation** を使う場合の一般的な概要については、[UWP アプリのガイド](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)と [API コントラクトを使った機能の動的な検出に関するブログの投稿](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)をご覧ください。
 
 > [!TIP]
 > さまざまなランタイム API チェックが、アプリのパフォーマンスに影響する可能性があります。 それらの例では、チェックをインラインで示します。 運用コードでは、チェックを一度実行してから結果をキャッシュし、キャッシュされた結果をアプリ全体で使う必要があります。 
@@ -329,7 +297,7 @@ public MainPage()
 ```
 
 > [!IMPORTANT]
-> このチェックでは `mediaControl` オブジェクトを `MediaPlayerUserControl` または `MediaElementUserControl` に設定するだけです。 コード内の MediaPlayerElement API と MediaElement API のどちらを使うのかを判断する必要がある他の場所でこれらの条件付きチェックを実行する必要があります。 チェックを一度実行してから結果をキャッシュし、キャッシュされた結果をアプリ全体で使う必要があります。
+> このチェックでは `mediaControl` オブジェクトを `MediaPlayerUserControl` または `MediaElementUserControl` に設定するだけです。 これらの条件チェックは、MediaPlayerElement API と MediaElement API のどちらを使うかを判断する必要があるコード内の任意の場所で実行する必要があります。 チェックを一度実行してから結果をキャッシュし、キャッシュされた結果をアプリ全体で使う必要があります。
 
 ## <a name="state-trigger-examples"></a>状態トリガーの例
 
@@ -476,6 +444,7 @@ class IsEnumPresentTrigger : StateTriggerBase
     </VisualStateManager.VisualStateGroups>
 </Grid>
 ```
+
 ## <a name="related-articles"></a>関連記事
 
 - [UWP アプリ ガイド](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)

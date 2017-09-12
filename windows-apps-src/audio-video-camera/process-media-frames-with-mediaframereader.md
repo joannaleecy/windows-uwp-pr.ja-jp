@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 8c41f85c7d49d9019a2dc3a94242271a6fa9eb9a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: bc0cfc468613429d7989c9c0d93bd98246c0195b
+ms.sourcegitcommit: 7540962003b38811e6336451bb03d46538b35671
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/26/2017
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>MediaFrameReader を使ったメディア フレームの処理
 
@@ -155,6 +157,47 @@ XAML でフレームを表示するときの最初の手順は、イメージ �
 > **SoftwareBitmap** イメージ上でピクセル操作を行うには、ネイティブ メモリ バッファーにアクセスする必要があります。 これを行うには、以下のコードに含まれている IMemoryBufferByteAccess COM インターフェイスを使う必要があり、アンセーフ コードのコンパイルを許可するようにプロジェクトのプロパティを更新する必要があります。 詳しくは、「[ビットマップ画像の作成、編集、保存](imaging.md)」をご覧ください。
 
 [!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/FrameRenderer.cs#SnippetFrameRenderer)]
+
+## <a name="use-multisourcemediaframereader-to-get-time-corellated-frames-from-multiple-sources"></a>MultiSourceMediaFrameReader を使って複数のソースから時間相関フレームを取得する
+Windows 10 Version 1607 以降では、[**MultiSourceMediaFrameReader**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.frames.multisourcemediaframereader) を使って複数のソースから時間相関フレームを取得できます。 この API により、[**DepthCorrelatedCoordinateMapper**](https://docs.microsoft.com/en-us/uwp/api/windows.media.devices.core.depthcorrelatedcoordinatemapper) クラスを使う場合など、複数のソースから時間的に近接するフレームを必要とする処理が簡単になります。 ただし、この新しいメソッドを使う場合の制限の 1 つとして、フレーム到着イベントは、最も低速なキャプチャ ソースに合わせて生成されるようになります。 高速なソースからの追加のフレームは取りこぼされます。 また、システムでは、さまざまなソースからさまざまな速度でフレームが到着するものと想定するため、ソースがフレームの生成を完全に停止したかどうかを自動的に認識することはできません。 このセクションのコード例では、イベントを使って独自のタイムアウト ロジックを作成する方法を示します。アプリで定義した制限時間内に相関フレームが到着しなかった場合、タイムアウトが発生します。
+
+[**MultiSourceMediaFrameReader**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.frames.multisourcemediaframereader) を使う手順は、この記事で既に説明した [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) を使う手順と同様です。 この例では、カラー ソースと深度ソースを使います。 メディア フレーム ソース ID を格納する文字列変数をいくつか宣言します。これらの ID は、各ソースからのフレームを選択するために使われます。 次に、サンプルのタイムアウト ロジックを実装するために使う [**ManualResetEventSlim**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim?view=netframework-4.7)、[**CancellationTokenSource**](https://msdn.microsoft.com/library/system.threading.cancellationtokensource.aspx)、[**EventHandler**](https://msdn.microsoft.com/library/system.eventhandler.aspx) を宣言します。 
+
+[!code-cs[MultiFrameDeclarations](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameDeclarations)]
+
+この記事で既に説明した手法を使って、このサンプル シナリオに必要なカラー ソースと深度ソースを含む [**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) を照会します。 目的のフレーム ソース グループを選択したら、各フレーム ソースの [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) を取得します。
+
+[!code-cs[SelectColorAndDepth](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetSelectColorAndDepth)]
+
+**MediaCapture** オブジェクトを作成し、選択したフレーム ソース グループを初期化設定に渡して初期化します。
+
+[!code-cs[MultiFrameInitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameInitMediaCapture)]
+
+**MediaCapture** オブジェクトを初期化したら、カラー カメラと深度カメラの [**MediaFrameSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSource) オブジェクトを取得します。 各ソースの ID を格納して、対応するソースから到着したフレームを選択できるようにします。
+
+[!code-cs[GetColorAndDepthSource](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetColorAndDepthSource)]
+
+**MultiSourceMediaFrameReader** を作成して初期化します。そのためには、[**CreateMultiSourceFrameReaderAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture#Windows_Media_Capture_MediaCapture_CreateMultiSourceFrameReaderAsync_Windows_Foundation_Collections_IIterable_Windows_Media_Capture_Frames_MediaFrameSource__) を呼び出して、リーダーで使用するフレーム ソースの配列を渡します。 [**FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader#Windows_Media_Capture_Frames_MultiSourceMediaFrameReader_FrameArrived) イベントに対するイベント ハンドラーを登録します。 この例では、フレームを **Image** コントロールにレンダリングするために、この記事で既に説明した **FrameRenderer** ヘルパー クラスのインスタンスを作成します。 [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader#Windows_Media_Capture_Frames_MultiSourceMediaFrameReader_StartAsync) を呼び出して、フレーム リーダーを開始します。
+
+この例で既に宣言した **CorellationFailed** イベントに対するイベント ハンドラーを登録します。 使用中のメディア フレーム ソースのいずれかがフレームの生成を停止すると、このイベントが通知されます。 最後に、[**Task.Run**](https://msdn.microsoft.com/en-us/library/hh195051.aspx) を呼び出して、タイムアウト ヘルパー メソッドである **NotifyAboutCorrelationFailure** を別のスレッドで実行します。 このメソッドの実装は後で示します。
+
+[!code-cs[InitMultiFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetInitMultiFrameReader)]
+
+**FrameArrived** イベントは、**MultiSourceMediaFrameReader** で管理されているすべてのメディア フレーム ソースで新しいフレームが利用可能になったときに発生します。 つまりこのイベントは、最も低速なメディア ソースに合わせて発生することになります。 低速なソースでフレームが 1 つ生成される間に別のソースで複数のフレームが生成された場合、高速なフレームからの追加のフレームは取りこぼされます。 
+
+[**TryAcquireLatestFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader#Windows_Media_Capture_Frames_MultiSourceMediaFrameReader_TryAcquireLatestFrame) を呼び出して、イベントに関連付けられている [**MultiSourceMediaFrameReference**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference) を取得します。 [**TryGetFrameReferenceBySourceId**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference#Windows_Media_Capture_Frames_MultiSourceMediaFrameReference_TryGetFrameReferenceBySourceId_System_String_) を呼び出して、各メディア フレーム ソースに関連付けられている **MediaFrameReference** を取得します。引数には、フレーム リーダーの初期化時に格納した ID 文字列を渡します。
+
+**ManualResetEventSlim** オブジェクトの [**Set**](https://msdn.microsoft.com/library/system.threading.manualreseteventslim.set.aspx) メソッドを呼び出して、フレームが到着したことを通知します。 このイベントは、別のスレッドで実行中の **NotifyCorrelationFailure** メソッドでチェックされます。 
+
+最後に、時間相関メディア フレームに対して任意の処理を実行します。 この例では、深度ソースからのフレームを描画するだけです。
+
+[!code-cs[MultiFrameArrived](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameArrived)]
+
+**NotifyCorrelationFailure** ヘルパー メソッドは、フレーム リーダーの開始後に別のスレッドで実行ました。 このメソッドでは、フレーム受信イベントが通知されたかどうかをチェックします。 既に説明したとおり、このイベントは、相関フレームのセットが到着するたびに **FrameArrived** ハンドラーで設定されます。 アプリで定義した時間内 (適切な値は 5 秒程度) にイベントが通知されなかった場合、**CancellationToken** を使ってタスクが取り消されたのでなければ、いずれかのメディア フレーム ソースでフレームの読み取りが停止した可能性があります。 この場合、通常はフレーム リーダーをシャットダウンすることになります。そこで、アプリ定義の **CorrelationFailed** イベントを発生させます。 このイベントのハンドラーでフレーム リーダーを停止し、この記事で既に説明したように、関連付けられているリソースをクリーンアップします。
+
+[!code-cs[NotifyCorrelationFailure](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetNotifyCorrelationFailure)]
+
+[!code-cs[CorrelationFailure](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCorrelationFailure)]
 
 ## <a name="related-topics"></a>関連トピック
 

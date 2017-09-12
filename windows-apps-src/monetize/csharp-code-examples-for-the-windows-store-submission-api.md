@@ -2,27 +2,27 @@
 author: mcleanbyron
 ms.assetid: FABA802F-9CB2-4894-9848-9BB040F9851F
 description: "このセクションの C# コード例を使用して、Windows ストア申請 API を使用する方法をご確認ください。"
-title: "申請 API 用の C# のコード例"
+title: "C# のコード例 - アプリ、アドオン、およびフライトの申請"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, Windows ストア申請 API, コード例"
-ms.openlocfilehash: 59b9c0b2cc503a56e0a1c9a75ce5ef471983c699
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: "Windows 10、UWP、Windows ストア申請 API、コード例、C#"
+ms.openlocfilehash: 77c0f2ddbe0e76ede2580129d7d0a0ae118b3554
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/09/2017
 ---
-# <a name="c-code-examples-for-the-submission-api"></a>申請 API 用の C\# のコード例
+# <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>C# のコード例 : アプリ、アドオン、およびフライトの申請
 
-この記事では、*Windows ストア申請 API* を使用するための C# コード例を紹介します。 この API について詳しくは、「[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。
+この記事では、これらのタスクの [Windows ストア申請 API](create-and-manage-submissions-using-windows-store-services.md) の使用方法を示す C# コード例を提供します。
 
-ここでは、次のタスクに対応するコード例を示します。
-
-* [アプリの申請の更新](#update-app-submission)
-* [新しいアドオンの申請を作成します](#create-add-on-submission)
+* [アプリの申請の作成](#create-app-submission)
+* [アドオンの申請の作成](#create-add-on-submission)
 * [アドオンの申請の更新](#update-add-on-submission)
-* [パッケージ フライトの申請の更新](#update-flight-submission)
+* [パッケージ フライトの申請の作成](#create-flight-submission)
 
 各例を確認して、それぞれが対応するタスクについて詳しく知ることができます。また、この記事のすべてのコード例を使って、コンソール アプリケーションをビルドすることもできます。 サンプルをビルドするには、Visual Studio で**DeveloperApiCSharpSample** という名前の C# コンソール アプリケーションを作成し、各サンプルをプロジェクトの別のコード ファイルにコピーして、プロジェクトをビルドします。
 
@@ -30,14 +30,14 @@ translationtype: HT
 
 以下の例では、次のライブラリを使用します。
 
-* Microsoft.WindowsAzure.Storage.dll。 このライブラリは、[Azure SDK for .NET](https://azure.microsoft.com/downloads/) に含まれています。または [WindowsAzure.Storage NuGetパッケージ](https://www.nuget.org/packages/WindowsAzure.Storage)をインストールすると入手できます。
-* Newtonsoft による [Json.NET](http://www.newtonsoft.com/json)。
+* Microsoft.WindowsAzure.Storage.dll。 このライブラリは、[Azure SDK for .NET](https://azure.microsoft.com/downloads/) に含まれています。または [WindowsAzure.Storage NuGet パッケージ](https://www.nuget.org/packages/WindowsAzure.Storage)をインストールすると入手できます。
+* Newtonsoft の [Newtonsoft.Json](http://www.newtonsoft.com/json) NuGet パッケージ。
 
 ## <a name="main-program"></a>メイン プログラム
 
 次の例では、コマンド ライン プログラムを実装し、この記事の他の例のメソッドを呼び出して、Windows ストア申請 API を使用する別の方法を示します。 このプログラムを採用するには、次の手順を実行してください。
 
-* ```ApplicationId```、```InAppProductId```、および ```FlightId``` プロパティを、管理するアプリ、アドオン (アドオンは "アプリ内製品"、略して "IAP" とも呼ばれます)、およびパッケージ フライトの ID に割り当てます。 これらの ID はデベロッパー センター ダッシュボードで確認できます。
+* ```ApplicationId```、```InAppProductId```、および ```FlightId``` プロパティを、管理するアプリ、アドオン、およびパッケージ フライトの ID に割り当てます。
 * ```ClientId``` および ```ClientSecret``` プロパティをアプリのクライアント ID とキーに割り当て、```TokenEndpoint``` URL 内の文字列 *tenantid* をアプリのテナント ID に置き換えます。 詳しくは、[Azure AD アプリケーションを Windows デベロッパー センター アカウントに関連付ける方法](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-windows-dev-center-account)をご覧ください。
 
 > [!div class="tabbedCodeSnippets"]
@@ -51,8 +51,8 @@ translationtype: HT
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/ClientConfiguration.cs#ClientConfiguration)]
 
-<span id="update-app-submission" />
-## <a name="update-an-app-submission"></a>アプリの申請の更新
+<span id="create-app-submission" />
+## <a name="create-an-app-submission"></a>アプリの申請の作成
 
 次の例は、Windows ストア申請 API のいくつかのメソッドを使用するクラスを実装して、アプリの申請を更新する方法を示しています。 クラスの ```RunAppSubmissionUpdateSample``` メソッドは、新しい申請を最後に公開された申請の複製として作成し、複製された申請を更新して Windows デベロッパー センターにコミットします。 具体的には、```RunAppSubmissionUpdateSample``` メソッドは次のタスクを実行します。
 
@@ -67,7 +67,7 @@ translationtype: HT
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/AppSubmissionUpdateSample.cs#AppSubmissionUpdateSample)]
 
 <span id="create-add-on-submission" />
-## <a name="create-a-new-add-on-submission"></a>新しいアドオンの申請を作成します
+## <a name="create-an-add-on-submission"></a>アドオンの申請の作成
 
 次の例は、Windows ストア申請 API のいくつかのメソッドを使用するクラスを実装して、新しいアドオンの申請を作成する方法を示しています。 クラスの ```RunInAppProductSubmissionCreateSample``` メソッドは、次のタスクを実行します。
 
@@ -94,8 +94,8 @@ translationtype: HT
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionUpdateSample.cs#InAppProductSubmissionUpdateSample)]
 
-<span id="update-flight-submission" />
-## <a name="update-a-package-flight-submission"></a>パッケージ フライトの申請の更新
+<span id="create-flight-submission" />
+## <a name="create-a-package-flight-submission"></a>パッケージ フライトの申請の作成
 
 次の例は、Windows ストア申請 API のいくつかのメソッドを使用するクラスを実装して、パッケージ フライトの申請を更新する方法を示しています。 クラスの ```RunFlightSubmissionUpdateSample``` メソッドは、新しい申請を最後に公開された申請の複製として作成し、複製された申請を更新して Windows デベロッパー センターにコミットします。 具体的には、```RunFlightSubmissionUpdateSample``` メソッドは次のタスクを実行します。
 

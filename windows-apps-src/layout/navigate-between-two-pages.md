@@ -7,35 +7,30 @@ label: Peer-to-peer navigation between two pages
 template: detail.hbs
 op-migration-status: ready
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 7e1529d641920c93ce7914c39d38001c2cbdfd78
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: "Windows 10、UWP"
+ms.openlocfilehash: e5d0b0303218415d529b60e2dcaf28a21a28e430
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
-# <a name="peer-to-peer-navigation-between-two-pages"></a>2 ページ間でのピア ツー ピアのナビゲーション
+# <a name="implement-navigation-between-two-pages"></a>2 ページ間でのナビゲーションを実装する
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-基本的な 2 ページのピア ツー ピア ユニバーサル Windows プラットフォーム (UWP) アプリでのナビゲーションの方法について説明します。
+フレームおよびページを使用した、アプリでの基本的なナビゲーションについて説明します。 
+<p></p>
+<table>
+    <tr>
+        <td>重要な API:</td><td>[**Windows.UI.Xaml.Controls.Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) クラス、[**Windows.UI.Xaml.Controls.Page**](https://msdn.microsoft.com/library/windows/apps/br227503) クラス、[**Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300) 名前空間</td>
+    </tr>
+</table>
 
-![2 ページのピア ツー ピアのナビゲーションの例](images/nav-peertopeer-2page.png)
-
-<div class="important-apis" >
-<b>重要な API</b><br/>
-<ul>
-<li>[**Windows.UI.Xaml.Controls.Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)</li>
-<li>[**Windows.UI.Xaml.Controls.Page**](https://msdn.microsoft.com/library/windows/apps/br227503)</li>
-<li>[**Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300)</li>
-</ul>
-</div>
-
-
-
-## <a name="create-the-blank-app"></a>空のアプリの作成
+## <a name="1-create-a-blank-app"></a>1. 空のアプリを作成する
 
 
 1.  Microsoft Visual Studio の **[ファイル] メニューで、[新しいプロジェクト]** をクリックします。
@@ -51,7 +46,7 @@ translationtype: HT
 
 6.  デバッグを終了して Visual Studio に戻るには、Shift キーを押しながら F5 キーを押します。
 
-## <a name="add-basic-pages"></a>基本ページの追加
+## <a name="2-add-basic-pages"></a>2. 基本ページの追加
 
 次に、プロジェクトにコンテンツ ページを 2 つ追加します。
 
@@ -195,7 +190,7 @@ app.xaml 分離コードファイルを開き、`OnLaunched` ハンドラーを�
 > 
 >     if (rootFrame.Content == null)
 >     {
->         // When the navigation stack isn&#39;t restored navigate to the first page,
+>         // When the navigation stack isn't restored navigate to the first page,
 >         // configuring the new page by passing required information as a navigation
 >         // parameter
 >         rootFrame.Navigate(typeof(Page1), e.Arguments);
@@ -219,7 +214,7 @@ app.xaml 分離コードファイルを開き、`OnLaunched` ハンドラーを�
 > 
 >         rootFrame->NavigationFailed += 
 >             ref new Windows::UI::Xaml::Navigation::NavigationFailedEventHandler(
->                 this, &amp;App::OnNavigationFailed);
+>                 this, &App::OnNavigationFailed);
 > 
 >         if (e->PreviousExecutionState == ApplicationExecutionState::Terminated)
 >         {
@@ -232,7 +227,7 @@ app.xaml 分離コードファイルを開き、`OnLaunched` ハンドラーを�
 > 
 >     if (rootFrame->Content == nullptr)
 >     {
->         // When the navigation stack isn&#39;t restored navigate to the first page,
+>         // When the navigation stack isn't restored navigate to the first page,
 >         // configuring the new page by passing required information as a navigation
 >         // parameter
 >         rootFrame->Navigate(Windows::UI::Xaml::Interop::TypeName(Page1::typeid), e->Arguments);
@@ -247,7 +242,7 @@ app.xaml 分離コードファイルを開き、`OnLaunched` ハンドラーを�
 
 次に、アプリをビルドして実行します。 "Click to go to page 2" と書かれているリンクをクリックします。 上部に "Page 2" と書かれた 2 番目のページが読み込まれ、フレームに表示される必要があります。
 
-## <a name="frame-and-page-classes"></a>Frame クラスと Page クラス
+## <a name="about-the-frame-and-page-classes"></a>Frame クラスと Page クラスについて
 
 アプリにさらに機能を加える前に、追加したページに用意されているアプリのナビゲーション サポートについて見てみましょう。
 
@@ -263,7 +258,7 @@ app.xaml 分離コードファイルを開き、`OnLaunched` ハンドラーを�
 
 フレームにページが読み込まれるたびに、そのページが [**PageStackEntry**](https://msdn.microsoft.com/library/windows/apps/dn298572) として、[**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504) の [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543) または [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547) に追加されます。
 
-## <a name="pass-information-between-pages"></a>ページ間での情報の受け渡し
+## <a name="3-pass-information-between-pages"></a>3. ページ間での情報の受け渡し
 
 このアプリでは、ページ間の移動は行いますが、実際に何かの処理を行うわけではありません。 多くの場合、アプリに複数のページがあれば、ページ間で情報を共有する必要があります。 最初のページから 2 番目のページへ情報を渡してみましょう。
 
@@ -297,15 +292,28 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 }
 ```
 
-Page2.xaml 分離コード ファイルで、`OnNavigatedTo` メソッドを次のようにオーバーライドします。
+Page2.xaml で、前に追加した [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) を次の [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) に置き換えます。
+
+次に、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) を追加して、Page1 から渡された文字列を表示します。
+
+```xaml
+<StackPanel>
+    <TextBlock HorizontalAlignment="Center" Name="greeting"/>
+    <HyperlinkButton Content="Click to go to page 1" 
+                     Click="HyperlinkButton_Click"
+                     HorizontalAlignment="Center"/>
+</StackPanel>
+```
+
+Page2.xaml 分離コード ファイルで、`OnNavigatedTo` メソッドを次のように上書きします。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
 {
-    if (e.Parameter is string)
+    if (e.Parameter is string && !string.IsNullOrWhiteSpace((string)e.Parameter))
     {
-        greeting.Text = "Hi, " + e.Parameter.ToString();
+        greeting.Text = $"Hi, {e.Parameter.ToString()}";
     }
     else
     {
@@ -329,9 +337,9 @@ void Page2::OnNavigatedTo(NavigationEventArgs^ e)
 }
 ```
 
-アプリを実行し、テキスト ボックスに自分の名前を入力し、**[Click to go to page 2]** と書かれているリンクをクリックします。 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) の [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) イベントで `this.Frame.Navigate(typeof(Page2), tb1.Text)` を呼び出したときに、`name.Text` プロパティが `Page2` に渡され、イベント データの値がページに表示されるメッセージに使用されます。
+アプリを実行し、テキスト ボックスに自分の名前を入力し、**[Click to go to page 2]** と書かれているリンクをクリックします。 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) の [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) イベントで `this.Frame.Navigate(typeof(Page2), name.Text)` を呼び出したときに、`name.Text` プロパティが `Page2` に渡され、イベント データの値がページに表示されるメッセージに使用されます。
 
-## <a name="cache-a-page"></a>ページのキャッシュ
+## <a name="4-cache-a-page"></a>4. ページのキャッシュ
 
 ページのコンテンツと状態は既定ではキャッシュされないため、アプリの各ページで有効にする必要があります。
 

@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 21e08e22e6c6ebada4445a05f32d2bd37244758f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f9e14be4ef0e92378d4b6f1e4f5c1066c56fbdd8
+ms.sourcegitcommit: ae20971c4c8276034cd22fd7e10b0e3ddfddf480
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/11/2017
 ---
 #  <a name="plan-your-universal-windows-platform-uwp-app"></a>ユニバーサル Windows プラットフォーム (UWP) アプリの計画
 
@@ -220,7 +222,7 @@ Microsoft のデザイン チームのアプリ作成プロセスは、5 つの�
 
 ![PC とモバイルにおけるアプリのデザイン](images/ux-budgettracker1-md-notablet.png)
 
-さまざまな画面サイズ用のデザインについて詳しくは、「<!--[Responsive design 101](designing-in-effective-pixels.md)-->」をご覧ください
+さまざまな画面サイズのための設計について詳しくは、「[画面のサイズとレスポンシブ デザインのブレークポイント](https://docs.microsoft.com/en-us/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)」をご覧ください。
 
 ## <a name="make-a-good-first-impression"></a>第一印象を良くする
 

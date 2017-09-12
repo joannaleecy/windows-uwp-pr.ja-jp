@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: D06AA3F5-CED6-446E-94E8-713D98B13CAA
 title: "デバイス セレクターのビルド"
 description: "デバイス セレクターを作成すると、デバイスを列挙するときに、検索するデバイスを絞り込むことができるようになります。"
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 88474544e0cc6ee91a1c50f65b327c339b9be170
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e8f22c6e3ab813bd97a060931c056404181611c1
+ms.sourcegitcommit: a2908889b3566882c7494dc81fa9ece7d1d19580
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/31/2017
 ---
 # <a name="build-a-device-selector"></a>デバイス セレクターのビルド
 

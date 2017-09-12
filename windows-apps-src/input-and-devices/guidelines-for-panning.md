@@ -11,9 +11,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: bf0abd41262704ccf634350ae53e8f428d412bf5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 288cca64cc93438c8f8c0000cfeba1fdda918733
+ms.sourcegitcommit: a7a1b41c7dce6d56250ce3113137391d65d9e401
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/11/2017
 ---
 # <a name="guidelines-for-panning"></a>パンのガイドライン
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -82,8 +84,13 @@ translationtype: HT
 
 ## <a name="additional-usage-guidance"></a>その他の使い方のガイダンス
 
-
 タッチでのパン (1 本または複数の指でのスワイプまたはスライド ジェスチャ) は、マウスでのスクロールと似ています。 パンはスクロール バーのクリックよりも、マウス ホイールの回転やスクロール ボックスのスライドに最も近い操作です。 API で区別されているか、一部のデバイス固有の Windows UI によって区別が必要とされていない限り、両方の操作を単にパンと呼びます。
+
+> <div id="main">
+> <strong><span class="uwpd-prelease">プレリリース。</span> Fall Creators Update (Windows 10 Insider Preview ビルド 16215 以降) - 動作の変更</strong>
+> </div>
+> 既定では、UWP アプリでは、アクティブ ペンは、テキストの選択ではなく、スクロール/パン (タッチ、タッチパッド、パッシブ ペンなどと同様に) をするようになりました。  
+> アプリが以前の動作に依存している場合は、ペン スクロールを上書きして、以前の動作に戻すことができます。 詳しくは、[ScrollViewer クラス] (https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) の API リファレンスのトピックをご覧ください。
 
 入力デバイスに応じて、ユーザーは次のいずれかを使って、パン対応領域内でパンを実行します。
 

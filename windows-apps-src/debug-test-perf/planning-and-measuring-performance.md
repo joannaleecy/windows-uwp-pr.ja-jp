@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: A37ADD4A-2187-4767-9C7D-EDE8A90AA215
 title: "パフォーマンスの計画"
 description: "ユーザーは、高い応答性と自然な使用感、そしてバッテリーが消耗しないことをアプリに期待しています。"
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: d80ff77c380d8c4f03cb2ef415126cba46d77062
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: d25620c0fc86f76b8c0d4de6e606250186b9ce37
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="planning-for-performance"></a>パフォーマンスの計画
 
@@ -85,7 +87,7 @@ translationtype: HT
 -   [XAML マークアップを最適化](optimize-xaml-loading.md)することで、アプリの UI の各ページ (特に最初のページ) の解析と読み込みの時間とメモリの効率を最大化します。 簡単に言うと、必要になるまで UI とコードの読み込みを遅らせます。
 -   [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) では、すべての項目を同じサイズにし、できるだけ多くの [ListView と GridView の最適化手法](optimize-gridview-and-listview.md)を使います。
 -   UI は、コード内で命令を使って構築するのではなく、フレームワークが読み込んでチャンクで再利用できるマークアップ形式で宣言します。
--   ユーザーが必要とするまでコンテンツを展開しません。 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) プロパティをご覧ください。
+-   ユーザーが必要とするまで UI 要素の作成を遅らせます。 [**x:Load**](../xaml-platform/x-load-attribute.md) 属性をご覧ください。
 -   ストーリーボードに設定されたアニメーションよりテーマ切り替えやテーマ アニメーションを優先的に使います。 詳しくは、「[アニメーションの概要](https://msdn.microsoft.com/library/windows/apps/Mt187350)」をご覧ください。 ストーリーボードに設定されたアニメーションでは、画面を定期的に更新して CPU とグラフィックス パイプラインを常にアクティブにしておく必要があることを忘れないようにします。 バッテリーを節約するために、ユーザーがアプリを操作していない場合はアニメーションを実行しないようにします。
 -   読み込む画像は、[**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) メソッドを使って、そのときのビューに適したサイズで読み込む必要があります。
 
@@ -195,4 +197,3 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 ## <a name="optimizing"></a>最適化
 
 アプリのパフォーマンスが重要なコード パスのみ最適化します。この場所に最も多くの時間を費やします。 プロファイリングによって、どの場所がこれに該当するかがわかります。 多くの場合、優れた設計のソフトウェアを作成することと、最高レベルの最適化を実現したコードを記述することは、両立しません。 一般的に、パフォーマンスがそれほど重視されない領域では、開発者の生産性や優れたソフトウェア設計を優先することが適切です。
-

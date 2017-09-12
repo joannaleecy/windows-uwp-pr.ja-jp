@@ -1,24 +1,27 @@
 ---
 author: mcleanbyron
 ms.assetid: cc24ba75-a185-4488-b70c-fd4078bc4206
-description: "AdScheduler クラスを使ってビデオ コンテンツに広告を追加する方法について説明します。"
-title: "ビデオ コンテンツへの広告の追加"
+description: "AdScheduler クラスを使ってビデオ コンテンツに広告を表示する方法について説明します。"
+title: "ビデオ コンテンツに広告を表示する"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10、UWP、広告、宣伝、ビデオ、スケジューラ、javascript"
-ms.openlocfilehash: 88e0bb4ceb9cba12d1eb5857761f5b59afaa15f2
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: "Windows 10, UWP, 広告, 宣伝, ビデオ, スケジューラ, Javascript"
+ms.openlocfilehash: 834547db2d58291e3bbf75a738d9775e25fbb8e5
+ms.sourcegitcommit: 9d1ca16a7edcbbcae03fad50a4a10183a319c63a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/09/2017
 ---
-# <a name="add-advertisements-to-video-content"></a>ビデオ コンテンツへの広告の追加
+# <a name="show-ads-in-video-content"></a>ビデオ コンテンツに広告を表示する
 
 
-このチュートリアルでは、JavaScript と HTML を使って作成されたユニバーサル Windows プラットフォーム (UWP) アプリのビデオ コンテンツに、[AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) クラスを使って広告を追加する方法について説明します。
+このチュートリアルでは、JavaScript と HTML を使って作成されたユニバーサル Windows プラットフォーム (UWP) アプリのビデオ コンテンツに、[AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) クラスを使って広告を表示する方法について説明します。
 
->**注**&nbsp;&nbsp;この機能は現在、JavaScript と HTML を使って作成された UWP アプリでのみサポートされています。
+> [!NOTE]
+> この機能は現在、JavaScript と HTML を使って作成された UWP アプリでのみサポートされています。
 
 [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) は、プログレッシブ メディアとストリーミング メディアの両方で機能し、IAB 標準の Video Ad Serving Template (VAST) 2.0/3.0 と VMAP ペイロード形式を使用します。 標準規格を使用しているため、[AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx)は、通信相手の広告サービスに依存しません。
 
@@ -26,13 +29,12 @@ translationtype: HT
 
 ## <a name="prerequisites"></a>前提条件
 
-* Visual Studio 2015 で [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) をインストールします。
+* Visual Studio 2015 以降のリリースと共に [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) をインストールします。
 
 * 広告がスケジュールされるビデオ コンテンツを提供するためには、プロジェクトで [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview) コントロールを使う必要があります。 このコントロールは、Microsoft の GitHub から入手できる [TVHelpers](https://github.com/Microsoft/TVHelpers) コレクションのライブラリにあります。
 
   次の例では、HTML マークアップで [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview) を宣言する方法を示します。 通常、このマークアップは index.html ファイル (またはプロジェクトに対応するその他の html ファイル) の `<body>` セクションに含まれます。
 
-  > [!div class="tabbedCodeSnippets"]
   ``` html
   <div id="MediaPlayerDiv" data-win-control="TVJS.MediaPlayer">
     <video src="URL to your content">
@@ -42,7 +44,6 @@ translationtype: HT
 
   次の例では、JavaScript コードで [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview) を確立する方法を示します。
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet1)]
 
 ## <a name="how-to-use-the-adscheduler-class-in-your-code"></a>コードで AdScheduler クラスを使用する方法
@@ -67,7 +68,6 @@ translationtype: HT
 
 5.  index.html ファイル (またはプロジェクトに対応するその他の html ファイル) を開きます。 `<head>` セクションで、プロジェクトの default.css と main.js の JavaScript 参照の後に、ad.js と adscheduler.js への参照を追加します。
 
-  > [!div class="tabbedCodeSnippets"]
   ``` html
   <script src="//Microsoft.Advertising.JavaScript/ad.js"></script>
   <script src="/js/adscheduler.js"></script>
@@ -78,19 +78,16 @@ translationtype: HT
 
 6.  プロジェクトの main.js ファイルで、新しい [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) オブジェクトを作成するコードを追加します。 ビデオ コンテンツをホストする **MediaPlayer** を渡します。 このコードは、[WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/hh440975.aspx) の後に実行されるように配置する必要があります。
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet2)]
 
 7.  [requestSchedule](https://msdn.microsoft.com/library/windows/apps/mt732208.aspx) メソッドまたは [requestScheduleByUrl](https://msdn.microsoft.com/library/windows/apps/mt732210.aspx) メソッドを使用してサーバーに広告スケジュールを要求し、それを **MediaPlayer** タイムラインに挿入してからビデオ メディアを再生します。
 
   * Microsoft 広告サーバーに対して広告スケジュールを要求することを許可されている Microsoft パートナーは、[requestSchedule](https://msdn.microsoft.com/library/windows/apps/mt732208.aspx) を使用して、Microsoft の担当者が提供するアプリケーション ID と広告ユニット ID を指定します。 このメソッドは、非同期コンストラクトである **Promise** の形式を取り、成功と失敗のそれぞれの場合を処理する 2 つの関数ポインターを渡します。 詳しくは、「[JavaScript を使った UWP での非同期パターン](https://msdn.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps#asynchronous-patterns-in-uwp-using-javascript)」をご覧ください。
 
-      > [!div class="tabbedCodeSnippets"]
       [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet3)]
 
   * Microsoft 以外の広告サーバーに広告スケジュールを要求するには、[requestScheduleByUrl](https://msdn.microsoft.com/library/windows/apps/mt732210.aspx) を使用し、サーバー URL を指定します。 このメソッドも **Promise** の形式を取ります。
 
-      > [!div class="tabbedCodeSnippets"]
       [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet4)]
 
     <span/>
@@ -98,5 +95,4 @@ translationtype: HT
 
 8.  再生中に、アプリが進行状況や、最初の広告マッチング プロセス後に発生したエラーを追跡するための追加のイベントを処理できます。 次のコードでは、これらのイベントのいくつか ([onPodStart](https://msdn.microsoft.com/library/windows/apps/mt732206.aspx)、[onPodEnd](https://msdn.microsoft.com/library/windows/apps/mt732205.aspx)、[onPodCountdown](https://msdn.microsoft.com/library/windows/apps/mt732204.aspx)、[onAdProgress](https://msdn.microsoft.com/library/windows/apps/mt732201.aspx)、[onAllComplete](https://msdn.microsoft.com/library/windows/apps/mt732202.aspx)、および [onErrorOccurred](https://msdn.microsoft.com/library/windows/apps/mt732203.aspx)) を示します。
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet5)]

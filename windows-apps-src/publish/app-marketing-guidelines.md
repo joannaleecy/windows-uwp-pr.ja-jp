@@ -4,14 +4,16 @@ Description: "Windows ストアでアプリやコンテンツの販売を促進�
 title: "Windows ストア アプリのマーケティング ガイドライン"
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 08/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: e7d327cbe8d99b6b10ae4ccdeb8c7a6f0ee2ac5e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e953bf1b7392a93ddb8323167ca1bf191e162076
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/04/2017
 ---
 # <a name="windows-store-app-marketing-guidelines"></a>Windows ストア アプリのマーケティング ガイドライン
 
@@ -19,21 +21,25 @@ Windows ストアでアプリやコンテンツの販売を促進する方法に
 
 ## <a name="store-badges"></a>ストア バッジ
 
-Windows ストア内でアプリの内容により多くのユーザーを集客するのに役立つ、特殊なプロモーション用のバッジを作成しました。 これらのバッジは 44 の言語で利用できます。 これらのイメージを使う場合、特定の要件に従う必要があることに注意してください。これらの要件は、使用例やガイドラインと共に、PDF ファイルでご確認いただけます。
+さらに多くのお客様に、Windows ストアのアプリの登録情報を見ていただけるように、特別なプロモーション用のバッジをご用意しました。 これらのバッジは 44 の言語で利用できます。 これらのイメージを使う場合、特定の要件に従う必要があることに注意してください。これらの要件は、使用例やガイドラインと共に、PDF ファイルでご確認いただけます。
 
-[![ダウンロード ボタン](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769) Windows ストアのマーケティング ガイドライン (PDF、英語)
+[![ ダウンロード ボタン](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769) **Windows ストアのマーケティング ガイドライン (PDF、英語)**
+
 
 ## <a name="badge-generator-and-images"></a>バッジ ジェネレーターと画像
 
-[バッジ ジェネレーター](http://go.microsoft.com/fwlink/p/?LinkID=534236) を使って、(好みの言語で) ストア バッジを表示しストアのアプリの内容ページに直接リンクする HTML を生成できます。 バッジ画像のセット一式を (PNG および PDF 形式で) 以下のリンクからダウンロードすることもできます。
+[バッジ ジェネレーター](http://go.microsoft.com/fwlink/p/?LinkID=534236) を使って、(好みの言語で) ストア バッジを表示しアプリのストア登録情報ページに直接リンクする HTML を生成できます。
 
-[![ダウンロード ボタン](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529771) すべてのバッジ画像
+バッジ画像のセット一式を (PNG および PDF 形式で) 以下のリンクからダウンロードすることもできます。
+
+[![ダウンロード ボタン](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529771) **すべてのバッジ画像**
+
 
 ## <a name="device-images"></a>デバイスの画像
 
-アプリの販売を促進するために、Windows デバイスで実行しているときにどのように表示されるかを示すことが必要になる場合があります。 Microsoft では、電話、タブレット、ノート PC、PC など、さまざまなデバイス シャーシの画像を用意しており、その中から選んで使うことができます。 これらの画像の使用方法に関するベスト プラクティスと技術仕様については、[Windows ストアのマーケティング ガイドライン](http://go.microsoft.com/fwlink/p/?LinkId=529769) をご覧ください。
+アプリの販売を促進するために、Windows デバイスで実行中のアプリの画面を見せたい場合があります。 Microsoft では、電話、タブレット、ノート PC、PC など、さまざまなデバイス シャーシの画像を用意しており、その中から選んで使うことができます。 これらの画像の使用方法に関するベスト プラクティスと技術仕様については、[Windows ストアのマーケティング ガイドライン](http://go.microsoft.com/fwlink/p/?LinkId=529769) をご覧ください。
 
-[![ダウンロード ボタン](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) Windows デバイスの図
+[![ダウンロード ボタン](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) **Windows デバイスの図**
 
 ## <a name="license-to-microsoft-marks"></a>Microsoft マークのライセンス
 

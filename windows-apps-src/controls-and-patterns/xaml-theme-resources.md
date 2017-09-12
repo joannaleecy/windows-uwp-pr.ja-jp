@@ -9,14 +9,16 @@ ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
 label: XAML theme resources
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: a591600ac31b1582d4ce133a6539884d4616639f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 74b16b95e1ca4e8583efa2b4967e2287c4cf5ffb
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="xaml-theme-resources"></a>XAML テーマ リソース
 
@@ -49,16 +51,16 @@ XAML のテーマ リソースは、アクティブなシステム テーマに�
 
 推奨:
 
--   "HighContrast" ディクショナリに加えて、"Light" と "Dark" の両方のテーマ ディクショナリを指定します。 "Default" をキーとする [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) を作成することもできますが、明示的に "Light"、"Dark"、"HighContrast" を使うことをお勧めします。
+-   "HighContrast" ディクショナリに加えて、"Light" と "Dark" の両方のテーマ ディクショナリを指定します。 "Default" をキーとする [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) を作成することもできますが、明示的に "Light"、"Dark"、"HighContrast" を使うことをお勧めします。
 -   スタイル、セッター、コントロール テンプレート、プロパティ セッター、アニメーションでは、[{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)を使います。
 
 非推奨:
 
--   [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) 内のリソース定義では、[{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)を使わないでください。 代わりに、[{StaticResource} マークアップ拡張](../xaml-platform/staticresource-markup-extension.md)を使います。
+-   [ThemeDictionaries](https://msdn.microsoft.com/library/windows/apps/br208807) 内のリソース定義では、[{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md) を使わないでください。 代わりに、[{StaticResource} マークアップ拡張](../xaml-platform/staticresource-markup-extension.md)を使います。
 
-    例外: [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) 内のアプリ テーマに依存しないリソースを参照するために [{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)を使うことは問題ありません。 このようなリソースの例として、`SystemAccentColor` などのアクセント カラー リソースや、通常は "SystemColor" というプレフィックスの付いた `SystemColorButtonFaceColor` などのシステム カラー リソースがあります。
+    例外: [ThemeDictionaries](https://msdn.microsoft.com/library/windows/apps/br208807) 内のアプリ テーマに依存しないリソースを参照するために [{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)を使うことは問題ありません。 このようなリソースの例として、`SystemAccentColor` などのアクセント カラー リソースや、通常は "SystemColor" というプレフィックスの付いた `SystemColorButtonFaceColor` などのシステム カラー リソースがあります。
 
-**注意:** これらのガイドラインに従わないと、テーマに関連する予期しない動作がアプリで発生することがあります。 詳しくは、「[テーマ リソースのトラブルシューティング](#troubleshooting_theme_resources)」セクションをご覧ください。
+**注意:** これらのガイドラインに従わないと、テーマに関連する予期しない動作がアプリで発生することがあります。 詳しくは、「[テーマ リソースのトラブルシューティング](#troubleshooting-theme-resources)」セクションをご覧ください。
  
 
 ## <a name="the-xaml-color-ramp-and-theme-dependent-brushes"></a>XAML 色見本とテーマ依存のブラシ
@@ -67,7 +69,7 @@ XAML における *Windows 色見本*は、"Light"、"Dark"、"HighContrast" の
 
 ### <a name="light-and-dark-theme-colors"></a>Light テーマと Dark テーマの色
 
-XAML フレームワークには、"Light" と "Dark" のテーマに合わせてカスタマイズされた名前付きの [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) リソースのセットが用意されています。 これらを参照するために使うキーは、`System[Simple Light/Dark Name]Color` という名前付け形式に従います。
+XAML フレームワークには、"Light" と "Dark" のテーマに合わせてカスタマイズされた名前付きの [Color](https://msdn.microsoft.com/library/windows/apps/hh673723) リソースのセットが用意されています。 これらを参照するために使うキーは、`System[Simple Light/Dark Name]Color` という名前付け形式に従います。
 
 次の表は、XAML フレームワークで提供される "Light" と "Dark" のリソースについて、それぞれのキー、簡易名、色の文字列表現 (\#aarrggbb 形式) の一覧を示しています。 キーは、アプリでリソースを参照するときに使われます。 "Light/Dark 簡易名" は、後で説明するブラシの名前付け規則の一部として使われます。
 
@@ -101,7 +103,7 @@ XAML フレームワークには、"Light" と "Dark" のテーマに合わせ�
 
 ### <a name="windows-system-high-contrast-colors"></a>Windows システムのハイ コントラストの色
 
-XAML フレームワークによって提供されるリソースのセットのほかに、Windows のシステム パレットから派生するカラー値のセットがあります。 これらの色は、Windows ランタイムやユニバーサル Windows プラットフォーム (UWP) アプリに固有のものではありません。 しかし、"HighContrast" テーマでシステムが動作しているとき (およびアプリが実行されているとき) には、XAML [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) リソースの多くでこれらの色が使われます。 XAML フレームワークには、このようなシステム全体の色がキーを持つリソースとして用意されています。 これらのキーは、`SystemColor[name]Color` という名前付け形式に従います。
+XAML フレームワークによって提供されるリソースのセットのほかに、Windows のシステム パレットから派生するカラー値のセットがあります。 これらの色は、Windows ランタイムやユニバーサル Windows プラットフォーム (UWP) アプリに固有のものではありません。 しかし、"HighContrast" テーマでシステムが動作しているとき (およびアプリが実行されているとき) には、XAML [Brush](https://msdn.microsoft.com/library/windows/apps/br228076) リソースの多くでこれらの色が使われます。 XAML フレームワークには、このようなシステム全体の色がキーを持つリソースとして用意されています。 これらのキーは、`SystemColor[name]Color` という名前付け形式に従います。
 
 次の表は、Windows システム パレットから派生したリソース オブジェクトとして XAML に用意されているシステム全体の色を示します。 "簡単操作での名前" 列は、その色が Windows の設定の UI でどのように表現されるかを示しています。 "HighContrast 簡易名" 列は、その色が XAML コモン コントロールにどのように適用されるかをひとことで表す単語になっています。 これは、後で説明するブラシの名前付け規則の一部として使われます。 "初期既定値" 列は、システムがハイ コントラストで動作していない場合に使われる値を示します。
 
@@ -131,7 +133,7 @@ Windows には複数のハイ コントラスト テーマが用意されてい�
 
 ### <a name="theme-dependent-brushes"></a>テーマ依存のブラシ
 
-システム テーマ リソース ディクショナリの [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) リソースの [**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) プロパティは、前のセクションに示したカラー リソースを使って設定されます。 XAML 要素に色を適用するには、ブラシ リソースが使われます。 ブラシ リソースのキーは、`SystemControl[Simple HighContrast name][Simple light/dark name]Brush` という名前付け形式に従います。 たとえば、`SystemControlBackroundAltHighBrush` と記述します。
+システム テーマ リソース ディクショナリの [SolidColorBrush](https://msdn.microsoft.com/library/windows/apps/br242962) リソースの [Color](https://msdn.microsoft.com/library/windows/apps/br242963) プロパティは、前のセクションに示したカラー リソースを使って設定されます。 XAML 要素に色を適用するには、ブラシ リソースが使われます。 ブラシ リソースのキーは、`SystemControl[Simple HighContrast name][Simple light/dark name]Brush` という名前付け形式に従います。 たとえば、`SystemControlBackroundAltHighBrush` と記述します。
 
 このブラシの色の値が実行時にどのように決定されるかを見てみましょう。 "Light" と "Dark" の各リソース ディクショナリでは、このブラシは次のように定義されています。
 
@@ -159,19 +161,19 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ## <a name="the-xaml-type-ramp"></a>XAML の書体見本
 
-themeresources.xaml ファイルには、UI 上のテキスト コンテナー (具体的には [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) または [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565)) に適用できる [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) を定義するリソースがいくつか定義されています。 これらは、既定の暗黙的なスタイルとは異なります。 これらのスタイルを使うと、「[フォントのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700394)」で説明されている *Windows の書体見本*に一致する XAML UI 定義を簡単に作成できるようになります。
+themeresources.xaml ファイルには、UI 上のテキスト コンテナー (具体的には [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) または [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565)) に適用できる [Style](https://msdn.microsoft.com/library/windows/apps/br208849) を定義するリソースがいくつか定義されています。 これらは、既定の暗黙的なスタイルとは異なります。 これらのスタイルを使うと、「[フォントのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700394)」で説明されている *Windows の書体見本*に一致する XAML UI 定義を簡単に作成できるようになります。
 
-これらのスタイルは、テキスト コンテナー全体に適用されるテキスト属性を設定するものです。 テキストの一部にのみスタイルを適用する場合は、コンテナー内のテキスト要素に属性を設定します。たとえば、[**TextBlock.Inlines**](https://msdn.microsoft.com/library/windows/apps/br209668) の [**Run**](https://msdn.microsoft.com/library/windows/apps/br209959) や [**RichTextBlock.Blocks**](https://msdn.microsoft.com/library/windows/apps/br244347) の [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503) を使うことができます。
+これらのスタイルは、テキスト コンテナー全体に適用されるテキスト属性を設定するものです。 テキストの一部にのみスタイルを適用する場合は、コンテナー内のテキスト要素に属性を設定します。たとえば、[TextBlock.Inlines](https://msdn.microsoft.com/library/windows/apps/br209668) の [Run](https://msdn.microsoft.com/library/windows/apps/br209959) や [RichTextBlock.Blocks](https://msdn.microsoft.com/library/windows/apps/br244347) の [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503) を使うことができます。
 
-スタイルを [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) に適用すると、次のようになります。
+スタイルを [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) に適用すると、次のようになります。
 
 ![テキスト ブロック スタイル](images/text-block-type-ramp.png)
 
 ### <a name="basetextblockstyle"></a>BaseTextBlockStyle
 
-**TargetType**: [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)
+**TargetType**: [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)
 
-他のすべての [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) コンテナー スタイルに対する一般的なプロパティを提供します。
+他のすべての [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) コンテナー スタイルに対する一般的なプロパティを提供します。
 
 ```XAML
 <!-- Usage -->
@@ -279,9 +281,9 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 
 ### <a name="baserichtextblockstyle"></a>BaseRichTextBlockStyle
 
-**TargetType**: [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565)
+**TargetType**: [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565)
 
-他のすべての [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) コンテナー スタイルに対する一般的なプロパティを提供します。
+他のすべての [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565) コンテナー スタイルに対する一般的なプロパティを提供します。
 
 ```XAML
 <!-- Usage -->
@@ -316,21 +318,21 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 </Style>
 ```
 
-> **注:**&nbsp;&nbsp; [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) スタイルには、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) に含まれているテキスト見本スタイルのすべては含まれていません。これは主に、**RichTextBlock** のブロック ベースのドキュメント オブジェクト モデルでは、個々のテキスト要素への属性の設定がより簡単になっているためです。 また、XAML コンテンツ プロパティを使って [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) を設定する方式では、スタイルを設定できるテキスト要素が存在しない状況になるため、コンテナーにスタイルを設定する必要があります。 これに対して **RichTextBlock** では、テキスト コンテンツは常に [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503) などの固有のテキスト要素になり、そこにページ ヘッダーやページ サブヘッダー、類似のテキスト見本定義の XAML スタイルを適用できるため、この問題はありません。
+> **注:**&nbsp;&nbsp;[RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565) スタイルには、[TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) に含まれているテキスト見本スタイルのすべては含まれていません。これは主に、**RichTextBlock** のブロック ベースのドキュメント オブジェクト モデルでは、個々のテキスト要素への属性の設定がより簡単になっているためです。 また、XAML コンテンツ プロパティを使って [TextBlock.Text](https://msdn.microsoft.com/library/windows/apps/br209676) を設定する方式では、スタイルを設定できるテキスト要素が存在しない状況になるため、コンテナーにスタイルを設定する必要があります。 これに対して **RichTextBlock** では、テキスト コンテンツは常に [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503) などの固有のテキスト要素になり、そこにページ ヘッダーやページ サブヘッダー、類似のテキスト見本定義の XAML スタイルを適用できるため、この問題はありません。
 
 ## <a name="miscellaneous-named-styles"></a>その他の名前付きスタイル
 
-[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) には、キーを持つ [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 定義の追加のセットを適用することもできます。これにより、既定の暗黙的なスタイルとは異なるスタイルを設定できます。
+[Button](https://msdn.microsoft.com/library/windows/apps/br209265) には、キーを持つ [Style](https://msdn.microsoft.com/library/windows/apps/br208849) 定義の追加のセットを適用することもできます。これにより、既定の暗黙的なスタイルとは異なるスタイルを設定できます。
 
 ### <a name="textblockbuttonstyle"></a>TextBlockButtonStyle
 
-**TargetType**: [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736)
+**TargetType**: [ButtonBase](https://msdn.microsoft.com/library/windows/apps/br227736)
 
-ユーザーがクリックしてアクションを実行できるテキストを表示する必要がある場合は、このスタイルを [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) に適用します。 このテキストには、対話型であることがわかるように現在のアクセント カラーを使ったスタイルが設定され、テキストに適したフォーカス四角形が表示されます。 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) の暗黙的なスタイルとは異なり、**TextBlockButtonStyle** のテキストには下線は付きません。
+ユーザーがクリックしてアクションを実行できるテキストを表示する必要がある場合は、このスタイルを [Button](https://msdn.microsoft.com/library/windows/apps/br209265) に適用します。 このテキストには、対話型であることがわかるように現在のアクセント カラーを使ったスタイルが設定され、テキストに適したフォーカス四角形が表示されます。 [HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/br242739) の暗黙的なスタイルとは異なり、**TextBlockButtonStyle** のテキストには下線は付きません。
 
 このテンプレートは、表示テキストにもスタイルを設定して、**SystemControlHyperlinkBaseMediumBrush** ("PointerOver" 状態の場合)、**SystemControlHighlightBaseMediumLowBrush** ("Pressed" 状態の場合)、**SystemControlDisabledBaseLowBrush** ("Disabled" 状態の場合) が使われるようにします。
 
-**TextBlockButtonStyle** リソースを適用した [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) の例を以下に示します。
+**TextBlockButtonStyle** リソースを適用した [Button](https://msdn.microsoft.com/library/windows/apps/br209265) の例を以下に示します。
 
 ```XAML
 <Button Content="Clickable text" Style="{StaticResource TextBlockButtonStyle}" 
@@ -343,11 +345,11 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 
 ### <a name="navigationbackbuttonnormalstyle"></a>NavigationBackButtonNormalStyle
 
-**TargetType**: [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
+**TargetType**: [Button](https://msdn.microsoft.com/library/windows/apps/br209265)
 
-この [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) は、ナビゲーション アプリの "戻る" ボタンとして使うことができる [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 用の完全なテンプレートを提供します。 スタイルに含まれているいくつかのテーマ リソース参照により、このボタンでは Segoe MDL2 Assets 記号フォントが使われるようになります。このため、コンテンツでは、テキストではなく [**Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842) 値を使う必要があります。 既定の寸法は 40 x 40 ピクセルです。 スタイルを調整するには、**Button** の [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718)、[**Width**](https://msdn.microsoft.com/library/windows/apps/br208751)、[**FontSize**](https://msdn.microsoft.com/library/windows/apps/br209406)、その他のプロパティを明示的に設定するか、[**BasedOn**](https://msdn.microsoft.com/library/windows/apps/br208852) を使って派生スタイルを作成します。
+この [Style](https://msdn.microsoft.com/library/windows/apps/br208849) は、ナビゲーション アプリの戻るボタンとして使うことができる [Button](https://msdn.microsoft.com/library/windows/apps/br209265) 用の完全なテンプレートを提供します。 スタイルに含まれているいくつかのテーマ リソース参照により、このボタンでは Segoe MDL2 Assets 記号フォントが使われるようになります。このため、コンテンツでは、テキストではなく [Symbol](https://msdn.microsoft.com/library/windows/apps/dn252842) 値を使う必要があります。 既定の寸法は 40 x 40 ピクセルです。 スタイルを調整するには、**Button** の [Height](https://msdn.microsoft.com/library/windows/apps/br208718)、[Width](https://msdn.microsoft.com/library/windows/apps/br208751)、[FontSize](https://msdn.microsoft.com/library/windows/apps/br209406)、その他のプロパティを明示的に設定するか、[BasedOn](https://msdn.microsoft.com/library/windows/apps/br208852) を使って派生スタイルを作成します。
 
-**NavigationBackButtonNormalStyle** リソースを適用した [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) の例を以下に示します。
+**NavigationBackButtonNormalStyle** リソースを適用した [Button](https://msdn.microsoft.com/library/windows/apps/br209265) の例を以下に示します。
 
 ```XAML
 <Button Content="&amp;#xE830;" Style="{StaticResource NavigationBackButtonNormalStyle}" 
@@ -360,11 +362,11 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 
 ### <a name="navigationbackbuttonsmallstyle"></a>NavigationBackButtonSmallStyle
 
-**TargetType**: [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
+**TargetType**: [Button](https://msdn.microsoft.com/library/windows/apps/br209265)
 
-この [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) は、ナビゲーション アプリの "戻る" ボタンとして使うことができる [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 用の完全なテンプレートを提供します。 **NavigationBackButtonNormalStyle** と同様ですが、寸法は 30 x 30 ピクセルになります。
+この [Style](https://msdn.microsoft.com/library/windows/apps/br208849) は、ナビゲーション アプリの戻るボタンとして使うことができる [Button](https://msdn.microsoft.com/library/windows/apps/br209265) 用の完全なテンプレートを提供します。 **NavigationBackButtonNormalStyle** と同様ですが、寸法は 30 x 30 ピクセルになります。
 
-**NavigationBackButtonSmallStyle** リソースを適用した [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) の例を以下に示します。
+**NavigationBackButtonSmallStyle** リソースを適用した [Button](https://msdn.microsoft.com/library/windows/apps/br209265) の例を以下に示します。
 
 ```XAML
 <Button Content="&amp;#xE830;" Style="{StaticResource NavigationBackButtonSmallStyle}" 
@@ -374,7 +376,7 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 ## <a name="troubleshooting-theme-resources"></a>テーマ リソースのトラブルシューティング
 
 
-[テーマ リソースの使用に関するガイドライン](#guidelines_for_using_theme_resources)に従わないと、テーマに関連する予期しない動作がアプリで発生することがあります。
+[テーマ リソースの使用に関するガイドライン](#guidelines-for-using-theme-resources)に従わないと、テーマに関連する予期しない動作がアプリで発生することがあります。
 
 たとえば、淡色テーマのポップアップを開いたときに、濃色テーマのアプリの部分まで淡色テーマのように変更される場合があります。 または、淡色テーマのページに移動してから戻ってくると、元の濃色テーマのページ (またはその部分) が淡色テーマのように表示される場合もあります。
 
@@ -396,7 +398,7 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 </ResourceDictionary>
 ```
 
-直感的には、これは正しく見えます。 ハイ コントラストのときは `myBrush` が指す色を変更しますが、ハイ コントラストでない場合は、[{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)を利用することで `myBrush` がテーマに適した色を指すようにしています。 これは通常、アプリのビジュアル ツリー内に [**FrameworkElement.RequestedTheme**](https://msdn.microsoft.com/library/windows/apps/dn298515) が設定された要素がなければ期待どおりに動作します。 しかし、ビジュアル ツリーの各部分にテーマを再設定し始めたとたんに、アプリで問題が発生することになります。
+直感的には、これは正しく見えます。 ハイ コントラストのときは `myBrush` が指す色を変更しますが、ハイ コントラストでない場合は、[{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)を利用することで `myBrush` がテーマに適した色を指すようにしています。 これは通常、アプリのビジュアル ツリー内に [FrameworkElement.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/dn298515) が設定された要素がなければ期待どおりに動作します。 しかし、ビジュアル ツリーの各部分にテーマを再設定し始めたとたんに、アプリで問題が発生することになります。
 
 問題が発生する原因は、他のほとんどの XAML 型とは異なり、ブラシが共有リソースであるためです。 XAML サブツリーに 2 つの要素があり、同じブラシ リソースを参照する別々のテーマが設定されている場合、フレームワークが各サブツリーを走査してそれぞれの [{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)表現を更新していくと、それにつれて共有ブラシ リソースに対する変更が他のサブツリーに反映されます。これは意図した結果とは異なります。
 
@@ -419,7 +421,7 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 </ResourceDictionary>
 ```
 
-ただし、これらのリソースのいずれかが [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) などの継承されたプロパティで参照されていると、引き続き問題が発生します。 カスタム コントロール テンプレートでは、[{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)を使って要素の前景色を指定している場合がありますが、継承された値がフレームワークによって子要素に伝達されるときは、{ThemeResource} マークアップ拡張表現で解決されたリソースへの直接参照が提供されます。 フレームワークがコントロールのビジュアル ツリーを走査する過程でテーマの変更が処理されると、問題が発生します。 フレームワークは {ThemeResource} マークアップ拡張表現を再評価して新しいブラシ リソースを取得しますが、この参照はまだコントロールの子に伝達されません。子への伝達は、次回の測定パスの間など、後で行われます。
+ただし、これらのリソースのいずれかが [Foreground](https://msdn.microsoft.com/library/windows/apps/br209414) などの継承されたプロパティで参照されていると、引き続き問題が発生します。 カスタム コントロール テンプレートでは、[{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)を使って要素の前景色を指定している場合がありますが、継承された値がフレームワークによって子要素に伝達されるときは、{ThemeResource} マークアップ拡張表現で解決されたリソースへの直接参照が提供されます。 フレームワークがコントロールのビジュアル ツリーを走査する過程でテーマの変更が処理されると、問題が発生します。 フレームワークは {ThemeResource} マークアップ拡張表現を再評価して新しいブラシ リソースを取得しますが、この参照はまだコントロールの子に伝達されません。子への伝達は、次回の測定パスの間など、後で行われます。
 
 結果として、テーマの変更に応答してコントロールのビジュアル ツリーを走査した後、フレームワークは子を走査し、それぞれに設定されている [{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)表現、または子のプロパティに設定されているオブジェクト上の表現をすべて更新します。 ここで問題が発生します。フレームワークがブラシ リソースを走査すると、その色は {ThemeResource} マークアップ拡張を使って指定されているため、ブラシ リソースが再評価されます。
 

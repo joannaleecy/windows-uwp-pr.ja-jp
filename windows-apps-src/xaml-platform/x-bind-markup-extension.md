@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: ba08e426fea4c494276978d96cf0b36f6956bdb8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0adc0789c4e52e8b9943f774d786aea6efb60c91
+ms.sourcegitcommit: a9e4be98688b3a6125fd5dd126190fcfcd764f95
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/21/2017
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} マークアップ拡張
 
@@ -181,7 +183,8 @@ Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Orde
 | **FallbackValue** | ソースまたはパスを解決できない場合に表示する値を指定します。 |
 | **Mode** | "OneTime"、"OneWay"、"TwoWay" のいずれかの文字列として、バインド モードを指定します。 既定は "OneTime" です。 これは、**{Binding}** の既定値 (ほとんどの場合は "OneWay") とは異なる点に注意してください。 |
 | **TargetNullValue** | ソース値が解決されるが、明示的に **null** である場合に表示する値を設定します。 |
-| **BindBack** | 双方向バインディングの逆方向に使う関数を指定します。 | 
+| **BindBack** | 双方向バインディングの逆方向に使う関数を指定します。 |
+| **UpdateSourceTrigger** | コントロールから双方向バインディングのモデルに変更を戻すタイミングを指定します。 TextBox.Text を除くすべてのプロパティの既定値は PropertyChanged です。TextBox.Text の既定値は LostFocus です。| 
 
 **注:** マークアップを **{Binding}** から **{x:Bind}** に変換する場合は、**Mode** プロパティの既定値の違いに注意してください。
  

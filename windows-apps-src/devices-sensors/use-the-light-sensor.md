@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 15BAB25C-DA8C-4F13-9B8F-EA9E4270BCE9
 title: "光センサーの使用"
 description: "環境光センサーを使って環境光の変化を検出する方法を説明します。"
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 4bfe0e3904695edd848ef4c9a7b960d8cc01d4c9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 4060e63490201997b24a324d03366faec5042ed5
+ms.sourcegitcommit: ca060f051e696da2c1e26e9dd4d2da3fa030103d
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/03/2017
 ---
 # <a name="use-the-light-sensor"></a>光センサーの使用
 
@@ -21,6 +23,10 @@ translationtype: HT
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**LightSensor**](https://msdn.microsoft.com/library/windows/apps/BR225790)
+
+**サンプル**
+
+-   より完全な実装については、[光センサーのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LightSensor)をご覧ください。
 
 環境光センサーを使って環境光の変化を検出する方法を説明します。
 
@@ -168,8 +174,3 @@ LightSensorReadingChangedEventArgs>(ReadingChanged);
 <TextBlock HorizontalAlignment="Left" Height="44" Margin="52,38,0,0" TextWrapping="Wrap" Text="LUX Reading" VerticalAlignment="Top" Width="150"/>
  <TextBlock x:Name="txtLuxValue" HorizontalAlignment="Left" Height="44" Margin="224,38,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="217"/>
 ```
-
-## <a name="related-topics"></a>関連トピック
-
-* [LightSensor サンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=241381)
- 

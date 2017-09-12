@@ -11,9 +11,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: a5a0a20ffa8ca27c123d139f25f636587db07aba
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 73fe48744346b2fd784b36d1fa29bd419c0fea02
+ms.sourcegitcommit: f6dd9568eafa10ee5cb2b849c0d82d84a1c5fb93
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/02/2017
 ---
 # <a name="accessibility-testing"></a>アクセシビリティ テスト  
 
@@ -82,15 +84,18 @@ Windows ソフトウェア開発キット (Windows SDK) には、[**AccScope**](
 <span id="verify_your_app_with_make_everything_on_your_screen_bigger"/>
 <span id="VERIFY_YOUR_APP_WITH_MAKE_EVERYTHING_ON_YOUR_SCREEN_BIGGER"/>
 ## <a name="verify-your-app-with-display-settings"></a>アプリの表示設定を確認する  
+
 ディスプレイの 1 インチあたりのドット数 (dpi) の値を調整するシステム ディスプレイ オプションを使い、DPI の値の変更に合わせてアプリの UI が正常に拡大縮小されることを確認します  (一部のユーザーはアクセシビリティ対応オプションとして DPI の値を変更します。これは、**[コンピューターの簡単操作]** からだけでなく各種の表示プロパティでも設定できます)。問題が見つかった場合は、[レイアウトとスケーリングのガイドライン](https://msdn.microsoft.com/library/windows/apps/Dn611863) に従い、さまざまなスケール ファクター用のリソースを追加します。
 
 <span id="verify_main_app_scenarios_by_using_narrator"/>
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
 ## <a name="verify-main-app-scenarios-by-using-narrator"></a>ナレーターでアプリの主要なシナリオを確認する  
-ナレーターを使ってアプリの画面の読み上げをテストするには、以下の手順を実行します。
+ナレーターを使ってアプリの画面の読み上げをテストします。
+
+<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
 **次の手順に従って、マウスとキーボードでナレーターを使ってアプリをテストします。**
-1.  _Windows ロゴ キーと Enter キー_を同時に押して、ナレーターを起動します。
+1.  _Windows ロゴ キー、Ctrl キー、Enter キー_を同時に押して、ナレーターを起動します。 Windows 10 Version 1607 より前のバージョンでは、_Windows ロゴ キーと Enter キー_を同時に押して、ナレーターを起動します。
 2.  キーボードを使ってアプリ内を移動するには、_Tab_ キーと方向キーを使うか、_CapsLock キーを押しながら方向キー_を使います。
 3.  アプリ内を移動しながら、ナレーターが UI 要素を読み上げるのを聞き取り、次の点を確かめます。
     * コントロールごとに、すべての表示コンテンツがナレーターによって読み上げられるのを確かめます。 また、各コントロールの名前、該当する状態 (オン、選択済みなど)、種類 (ボタン、チェック ボックス、一覧項目など) がナレーターによって読み上げられるのを確かめます。
@@ -143,6 +148,7 @@ Windows 10 バージョン 1607 以降では、ナレーターで新しい開発
 <span id="related_topics"/>
 ## <a name="related-topics"></a>関連トピック  
 * [アクセシビリティ](accessibility.md)
-* [避ける事項](practices-to-avoid.md)
+* [避けるプラクティス](practices-to-avoid.md)
 * [UI オートメーション](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
-* [Windows のアクセシビリティ](http://go.microsoft.com/fwlink/p/?LinkId=320802) 
+* [Windows のアクセシビリティ](http://go.microsoft.com/fwlink/p/?LinkId=320802)
+* [ナレーターの概要](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

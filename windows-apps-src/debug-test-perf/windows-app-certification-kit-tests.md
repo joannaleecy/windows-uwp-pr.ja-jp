@@ -1,19 +1,21 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: "Windows アプリ認定キットのテスト"
 description: "Windows アプリ認定キットには、Windows ストアでの公開に向けてアプリが準備できているかどうかを確認するためのテストが多数含まれています。"
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 2dab2719eae86487b93b9030b430b84aea7b2737
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 5e3ae74ba4392b5021159f9fcb825009137701d3
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/26/2017
 ---
-## <a name="windows-app-certification-kit-tests"></a>Windows アプリ認定キットのテスト
+# <a name="windows-app-certification-kit-tests"></a>Windows アプリ認定キットのテスト
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -667,10 +669,10 @@ JavaScript のバックグラウンド タスクがあるアプリは、バッ�
 
 バックグラウンドの JavaScript コードを更新して、Close() を正しく呼び出します。
 
-> **注:** この記事は、UWP アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください。
+> **注:** この記事は、UWP アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
- 
+## <a name="related-topics"></a>関連トピック
 
- 
-
+* [Windows デスクトップ ブリッジ アプリのテスト](windows-desktop-bridge-app-tests.md)
+* [Windows ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/Dn764944)
  

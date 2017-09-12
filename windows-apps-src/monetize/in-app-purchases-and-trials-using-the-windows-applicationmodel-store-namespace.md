@@ -9,13 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "UWP, アプリ内購入, IAP, アドオン, 試用版, Windows.ApplicationModel.Store"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 787007b870675749d96afa59a6e9cb5f3be68991
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 06ee6eba5e4dc2f13b1ca8f8555b0e29770d1ec8
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/09/2017
 ---
-
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>Windows.ApplicationModel.Store 名前空間を使用するアプリ内購入と試用版
 
 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間のメンバーを使って、ユニバーサル Windows プラットフォーム (UWP) アプリにアプリ内購入機能や試用版機能を追加し、アプリの収益化に役立てることができます。 このような API では、アプリのライセンス情報にもアクセスできます。
@@ -24,15 +23,15 @@ ms.lasthandoff: 02/07/2017
 
 **Windows.ApplicationModel.Store** 名前空間を使用した試用版とアプリ内購入の実装方法を示す完全なサンプルについては、[ストア サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)をご覧ください。
 
->**注**&nbsp;&nbsp;
->
-> * アプリが Windows 10 バージョン 1607 以降をターゲットとする場合は、**Windows.ApplicationModel.Store** 名前空間ではなく、[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間のメンバーを使用することをお勧めします。 **Windows.Services.Store** 名前空間は、ストアで管理されるコンシューマブルなアドオンなど、最新の種類のアドオンをサポートしており、Windows デベロッパー センターとストアで今後サポートされる製品および機能の種類と互換性を持つように設計されています。 **Windows.Services.Store** 名前空間は、パフォーマンスの向上も考えた作りになっています。 詳しくは、「[アプリ内購入と試用版](in-app-purchases-and-trials.md)」をご覧ください。
-<br/><br/>
-> * **Windows.ApplicationModel.Store** 名前空間は、[Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop) を使用する Windows デスクトップ アプリケーションではサポートされていません。 このようなアプリケーションでは、**Windows.Services.Store** 名前空間を使用して、アプリ内購入と試用版を実装する必要があります。
+> [!NOTE]
+> アプリが Windows 10 バージョン 1607 以降をターゲットとする場合は、**Windows.ApplicationModel.Store** 名前空間ではなく、[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間のメンバーを使用することをお勧めします。 **Windows.Services.Store** 名前空間は、ストアで管理されるコンシューマブルなアドオンなど、最新の種類のアドオンをサポートしており、Windows デベロッパー センターとストアで今後サポートされる製品および機能の種類と互換性を持つように設計されています。 **Windows.Services.Store** 名前空間は、パフォーマンスの向上も考えた作りになっています。 詳しくは、「[アプリ内購入と試用版](in-app-purchases-and-trials.md)」をご覧ください。
+
+> [!NOTE]
+> **Windows.ApplicationModel.Store** 名前空間は、[デスクトップ ブリッジ](https://developer.microsoft.com/windows/bridges/desktop)を使用する Windows デスクトップ アプリケーションではサポートされていません。 このようなアプリケーションでは、**Windows.Services.Store** 名前空間を使用して、アプリ内購入と試用版を実装する必要があります。
 
 ## <a name="get-started-with-the-currentapp-and-currentappsimulator-classes"></a>CurrentApp クラスと CurrentAppSimulator クラスの概要
 
-**Windows.ApplicationModel.Store** 名前空間へのメイン エントリ ポイントは、[CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) クラスです。 このクラスには、現在のアプリとその利用可能なアドオン (アプリ内製品または IAP とも呼ばれます) に関する情報の取得、現在のアプリまたはそのアドオンに関するライセンス情報の取得、現在のユーザーのアプリまたはアドオンの購入、およびその他のタスクを行うために使用できる静的プロパティとメソッドが用意されています。
+**Windows.ApplicationModel.Store** 名前空間へのメイン エントリ ポイントは、[CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) クラスです。 このクラスには、現在のアプリとその利用可能なアドオンに関する情報の取得、現在のアプリまたはそのアドオンに関するライセンス情報の取得、現在のユーザー向けのアプリまたはアドオンの購入、およびその他のタスクを行う際に使用できる静的プロパティおよびメソッドが用意されています。
 
 [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) クラスは Windows ストアからデータを取得するため、アプリ内でこのクラスを使うには、開発者が開発者アカウントを持ち、アプリがストアで公開されている必要があります。 アプリをまだストアに提出していない場合は、このクラスのシミュレートされたバージョンである [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx) を使ってコードをテストすることができます。 アプリのテストを完了した後は、Windows ストアに提出する前に **CurrentAppSimulator** のインスタンスを **CurrentApp** に置き換える必要があります。 アプリで **CurrentAppSimulator** が使用されている場合は、認定が不合格になります。
 
@@ -46,7 +45,7 @@ ms.lasthandoff: 02/07/2017
 | [アプリ内製品購入の有効化](enable-in-app-product-purchases.md)      |  アプリが無料であるかどうかにかかわらず、コンテンツ、その他のアプリ、アプリの新機能 (ゲームの次のレベルのロック解除など) をアプリ内から直接販売できます。 ここでは、アプリ内で製品を販売できるようにする方法について説明します。  |
 | [コンシューマブルなアプリ内製品購入の有効化](enable-consumable-in-app-product-purchases.md)      | ストアの商取引プラットフォームを使ってコンシューマブルなアプリ内製品 (購入、使用、再購入が可能なアイテム) をサポートすると、堅牢かつ信頼性の高いアプリ内購入エクスペリエンスを顧客に提供できます。 これは、購入して、特定のパワーアップを購入するために使うことができるゲーム内通貨 (ゴールド、コインなど) 用に特に便利です。 |
 | [アプリ内製品の大規模なカタログの管理](manage-a-large-catalog-of-in-app-products.md)      |   アプリ内製品のカタログが大きくなる場合、カタログを管理するためにこのトピックで説明するプロセスを採用できます。    |
-| [通知を使った製品購入の確認](use-receipts-to-verify-product-purchases.md)      |   製品購入が成功した各 Windows ストアのトランザクションでは、必要に応じてトランザクションの通知を返し、掲載製品と料金についての情報をユーザーに提供できます。 この情報は、ユーザーがアプリを購入したことや、Windows ストアからアプリ内製品の購入が行われたことをアプリで確認する必要がある場合などに役立ちます。 |
+| [受領通知を使った製品購入の確認](use-receipts-to-verify-product-purchases.md)      |   製品購入が成功した各 Windows ストアのトランザクションでは、必要に応じてトランザクションの通知を返し、掲載製品と料金についての情報をユーザーに提供できます。 この情報は、ユーザーがアプリを購入したことや、Windows ストアからアプリ内製品の購入が行われたことをアプリで確認する必要がある場合などに役立ちます。 |
 
 <span id="proxy" />
 ## <a name="using-the-windowsstoreproxyxml-file-with-currentappsimulator"></a>CurrentAppSimulator での WindowsStoreProxy.xml ファイルの使用
@@ -57,7 +56,8 @@ WindowsStoreProxy.xml ファイルは、既定で %UserProfile%\AppData\Local\Pa
 
 このファイルの値を変更することは可能ですが、直接変更するのではなく、独自の WindowsStoreProxy.xml ファイルを (Visual Studio プロジェクトのデータ フォルダーに) 作成し、**CurrentAppSimulator** で使うことをお勧めします。 トランザクションをシミュレートするには、[ReloadSimulatorAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.reloadsimulatorasync.aspx) を呼び出して、作成したファイルを読み込みます。 **ReloadSimulatorAsync** を呼び出して独自の WindowsStoreProxy.xml ファイルを読み込まない場合、**CurrentAppSimulator** は既定の WindowsStoreProxy.xml ファイルを作成して読み込みます (上書きはしません)。
 
->**注:**&nbsp;&nbsp;**CurrentAppSimulator** は、**ReloadSimulatorAsync** が完了するまで完全に初期化されません。 **ReloadSimulatorAsync** は非同期メソッドであるため、1 つのスレッドで **CurrentAppSimulator** が照会されているときに、別のスレッドでそれが初期化されているといった競合状態が起こらないように注意する必要があります。 これにはフラグを使って初期化の完了を示すのも 1 つの方法です。 Windows ストアからインストールされるアプリは、**CurrentAppSimulator** ではなく **CurrentApp** を使う必要があります。これにより、**ReloadSimulatorAsync** を呼び出すことがなくなり、そのような競合状態が発生しなくなります。 このため、コードは同期と非同期の両方で動作するように設計する必要があります。
+> [!NOTE]
+> **CurrentAppSimulator** は、**ReloadSimulatorAsync** が完了するまで完全には初期化されません。 **ReloadSimulatorAsync** は非同期メソッドであるため、1 つのスレッドで **CurrentAppSimulator** が照会されているときに、別のスレッドでそれが初期化されているといった競合状態が起こらないように注意する必要があります。 これにはフラグを使って初期化の完了を示すのも 1 つの方法です。 Windows ストアからインストールされるアプリは、**CurrentAppSimulator** ではなく **CurrentApp** を使う必要があります。これにより、**ReloadSimulatorAsync** を呼び出すことがなくなり、そのような競合状態が発生しなくなります。 このため、コードは同期と非同期の両方で動作するように設計する必要があります。
 
 
 <span id="proxy-examples" />
@@ -544,4 +544,3 @@ WindowsStoreProxy.xml ファイルは、既定で %UserProfile%\AppData\Local\Pa
 |  **TransactionId**  |     必須       |   アプリが、フルフィルメントのプロセス全体を通じ、コンシューマブルの購入トランザクションを追跡するために使用する GUID (文字列) が含まれています。 詳しくは、「[コンシューマブルなアプリ内製品購入の有効化](enable-consumable-in-app-product-purchases.md)」をご覧ください。            |
 |  **Status**  |      必須      |  アプリが、コンシューマブルのフルフィルメントの状態を示すために使う文字列が含まれています。 値は、**Active**、**PurchaseReverted**、**PurchasePending**、または **ServerError** です。             |
 |  **OfferId**  |     必須ではない       |    アプリが、このコンシューマブルが属するカテゴリを特定するために使う文字列が含まれています。 これを使うことで、「[アプリ内製品の大規模なカタログの管理](manage-a-large-catalog-of-in-app-products.md)」で説明されている大規模なアイテムのカタログに対応できます。           |
-

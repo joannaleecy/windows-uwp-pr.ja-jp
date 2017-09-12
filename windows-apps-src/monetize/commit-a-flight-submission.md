@@ -4,14 +4,16 @@ ms.assetid: F94AF8F6-0742-4A3F-938E-177472F96C00
 description: "新しいパッケージ フライトの申請または更新されたパッケージ フライトの申請を Windows デベロッパー センターにコミットするには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
 title: "パッケージ フライトの申請のコミット"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、Windows ストア申請 API、フライトの申請のコミット"
-ms.openlocfilehash: 5171fb89b9485ed314a8c7f0322db89019e9d512
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e0fd115dc5e394abe6c0353ba41ebc35fde086c4
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/04/2017
 ---
 # <a name="commit-a-package-flight-submission"></a>パッケージ フライトの申請のコミット
 
@@ -29,8 +31,6 @@ translationtype: HT
 * Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
 * このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 * [パッケージ フライトの申請を作成](create-a-flight-submission.md)し、申請データを必要に応じて変更して[申請を更新](update-a-flight-submission.md)します。
-
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
 ## <a name="request"></a>要求
 
@@ -53,10 +53,10 @@ translationtype: HT
 
 ### <a name="request-parameters"></a>要求パラメーター
 
-| 名前        | 型   | 説明                                                                 |
+| 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | string | 必須。 コミットするパッケージ フライトの申請が含まれるアプリのストア ID です。 アプリのストア ID は、デベロッパー センター ダッシュボードで確認できます。  |
-| flightId | string | 必須。 コミットする申請が含まれるパッケージ フライトの ID です。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データに含まれており、デベロッパー センター ダッシュボードで確認できます。  |
+| flightId | string | 必須。 コミットする申請が含まれるパッケージ フライトの ID です。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データで確認できます。  |
 | submissionId | string | 必須。 コミットする申請の ID です。 この ID は、[パッケージ フライト申請の作成](create-a-flight-submission.md)要求の応答データに含まれており、デベロッパー センター ダッシュボードで確認できます。  |
 
 <span/>

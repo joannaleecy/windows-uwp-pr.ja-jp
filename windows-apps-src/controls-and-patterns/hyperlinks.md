@@ -6,14 +6,20 @@ ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: e2c04ea39eee88c225bfef277037363c084e8eff
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: kimsea
+dev-contact: stpete
+doc-status: Published
+ms.openlocfilehash: 5079d1782188b6d2e49fc14741a23a5651995c67
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="hyperlinks"></a>ハイパーリンク
 
@@ -21,15 +27,9 @@ translationtype: HT
 
 ハイパーリンクはユーザーを、アプリの別の部分、別のアプリ、または別のブラウザー アプリを使って呼び出した URI (Uniform Resource Identifier) に誘導します。 XAML アプリにハイパーリンクを追加するには 2 つの方法、**ハイパーリンク** テキスト要素と **HyperlinkButton** コントロールがあります。
 
-![ハイパーリンク ボタン](images/controls/hyperlink-button.png)
+> **重要な API**: [ハイパーリンク テキスト要素](https://msdn.microsoft.com/library/windows/apps/dn279356)、[HyperlinkButton コントロール](https://msdn.microsoft.com/library/windows/apps/br242739)
 
-<div class="important-apis" >
-<b>重要な API</b><br/>
-<ul>
-<li>[**ハイパーリンク テキスト要素**](https://msdn.microsoft.com/library/windows/apps/dn279356)</li>
-<li>[**HyperlinkButton コントロール**](https://msdn.microsoft.com/library/windows/apps/br242739)</li>
-</ul>
-</div>
+![ハイパーリンク ボタン](images/controls/hyperlink-button.png)
 
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
@@ -41,12 +41,6 @@ translationtype: HT
 -   テキスト コントロール内でインライン **ハイパーリンク** テキスト要素を使用します。 ハイパーリンク要素は他のテキスト要素とともに表示され、すべて InlineCollection で使うことができます。 自動テキスト折り返しを必要とするが、大きいサイズのヒット ターゲットを必要としない場合は、テキスト ハイパーリンクを使います。 ハイパーリンク テキストのサイズは小さく、ターゲットとして使うのが難しくなることがあります (特にタッチ操作の場合)。
 -   スタンドアロンのハイパーリンクには **HyperlinkButton** を使用します。 HyperlinkButton は、ボタンを使用する任意の場所で使用できる特殊なボタン コントロールです。
 -   クリック可能なイメージを作成するには[イメージ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.image.aspx) と一緒にそのコンテンツとして **HyperlinkButton** を使用します。
-
-## <a name="examples"></a>例
-
-電卓アプリでのハイパーリンク。
-
-![電卓アプリでのハイパーリンクの例](images/control-examples/hyperlinks-calculator.png)
 
 ## <a name="create-a-hyperlink-text-element"></a>ハイパーリンク テキスト要素を作成する
 
@@ -150,7 +144,7 @@ translationtype: HT
 ## <a name="recommendations"></a>推奨事項
 
 -   ハイパーリンクを使う場合は、移動のみを目的としてください。他の操作のためにハイパーリンクは使わないでください。
--   テキスト ベースのハイパーリンクには、書体見本の本文スタイルを使います。 [**fonts and the Windows 10 type ramp**](fonts.md) に関するページをご覧ください。
+-   テキスト ベースのハイパーリンクには、書体見本の本文スタイルを使います。 [フォントと Windows 10 の書体見本](fonts.md)に関するページをご覧ください。
 -   個々のハイパーリンクの間には十分な間隔を空けます。これにより、それぞれのハイパーリンクを区別することができ、ハイパーリンクを間違えずに選ぶことができます。
 -   ユーザーの移動先を示すヒントをハイパーリンクに追加します。 ユーザーが外部サイトに移動する場合は、ヒント内にトップレベルのドメイン名を入れ、補助的なフォント色を使ってそのテキストのスタイルを指定します。
 
@@ -160,5 +154,5 @@ translationtype: HT
 - [ヒントのガイドライン](tooltips.md)
 
 **開発者向け (XAML)**
-- [**Windows.UI.Xaml.Documents.Hyperlink クラス**](https://msdn.microsoft.com/library/windows/apps/dn279356)
-- [**Windows.UI.Xaml.Controls.HyperlinkButton クラス**](https://msdn.microsoft.com/library/windows/apps/br242739)
+- [Windows.UI.Xaml.Documents.Hyperlink クラス](https://msdn.microsoft.com/library/windows/apps/dn279356)
+- [Windows.UI.Xaml.Controls.HyperlinkButton クラス](https://msdn.microsoft.com/library/windows/apps/br242739)

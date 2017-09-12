@@ -1,28 +1,34 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
 title: "加速度計の使用"
 description: "加速度計を使ってユーザーの動きに応答する方法を説明します。"
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: f0665bf071b4c75ee6a3ea8bcc11cefb357c6825
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f0a09faebf554fd0d669ecb4fc3c37dd61a742e4
+ms.sourcegitcommit: ca060f051e696da2c1e26e9dd4d2da3fa030103d
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/03/2017
 ---
 # <a name="use-the-accelerometer"></a>加速度計の使用
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 **重要な API**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687)
 
-\[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。\]
+**サンプル**
+
+-   より完全な実装については、[加速度計のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Accelerometer)をご覧ください。
+
+\[一部の情報はリリース前の製品に関する事項であり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。\]
 
 加速度計を使ってユーザーの動きに応答する方法を説明します。
 
@@ -166,13 +172,10 @@ _accelerometer.ReadingChanged += new TypedEventHandler<Accelerometer,
 AccelerometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
-プロジェクトの XAML 内にある TextBlock に、以下の新しい値が書き込まれます。
+プロジェクトの XAML 内にある TextBlock に、これらの新しい値が書き込まれます。
 
 ```xml
 <TextBlock x:Name="txtXAxis" HorizontalAlignment="Left" Height="15" Margin="70,16,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="61" Foreground="#FFF2F2F2"/>
  <TextBlock x:Name="txtYAxis" HorizontalAlignment="Left" Height="15" Margin="70,49,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="53" Foreground="#FFF2EEEE"/>
  <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="15" Margin="70,80,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="53" Foreground="#FFFFF8F8"/>
 ```
-## <a name="related-topics"></a>関連トピック
-
-* [加速度計センサーのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=241377)

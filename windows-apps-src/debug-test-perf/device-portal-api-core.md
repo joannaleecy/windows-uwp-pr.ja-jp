@@ -1,17 +1,19 @@
 ---
-author: dbirtolo
+author: mukin
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: "デバイス ポータル コア API リファレンス"
 description: "Windows Device Portal コア REST API について説明します。これによって、データにアクセスし、プログラムを使ってデバイスを制御することが可能になります。"
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 347d658f346ab14c60a4468c4a9935e555c2e016
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b6df8f361df82ef65098877027cf1857fa575b0b
+ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/28/2017
 ---
 # <a name="device-portal-core-api-reference"></a>デバイス ポータル コア API リファレンス
 
@@ -1272,6 +1274,69 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
+## User information
+---
+### <a name="get-the-active-user"></a>アクティブ ユーザーを取得する
+
+**要求**
+
+次の要求形式を使用して、デバイスのアクティブ ユーザーの名前を取得できます。
+ 
+メソッド      | 要求 URI
+:------     | :-----
+GET | /api/users/activeuser
+<br />
+
+**URI パラメーター**
+
+- なし
+
+**要求ヘッダー**
+
+- なし
+
+**要求本文**
+
+- なし
+
+**応答**
+
+応答には、ユーザー情報が次の形式で含まれます。 
+
+成功した場合: 
+```
+{
+    "UserDisplayName" : string, 
+    "UserSID" : string
+}
+```
+失敗した場合:
+```
+{
+    "Code" : int, 
+    "CodeText" : string, 
+    "Reason" : string, 
+    "Success" : bool
+}
+```
+
+**状態コード**
+
+この API では次の状態コードが返される可能性があります。
+
+HTTP 状態コード      | 説明
+:------     | :-----
+200 | OK
+4XX | エラー コード
+5XX | エラー コード
+<br />
+**利用可能なデバイス ファミリ**
+
+* Windows デスクトップ
+* HoloLens
+* IoT
+
+---
 ## Performance data
 ---
 ### <a name="get-the-list-of-running-processes"></a>実行中のプロセスの一覧を取得する
@@ -2023,6 +2088,52 @@ HTTP 状態コード      | 説明
 * IoT
 
 ---
+### <a name="kill-process-by-pid"></a>PID でプロセスを強制終了する
+
+**要求**
+
+次の要求形式を使用して、プロセスを強制終了できます。
+ 
+メソッド      | 要求 URI
+:------     | :-----
+DELETE | /api/taskmanager/process
+<br />
+
+**URI パラメーター**
+
+次の追加パラメーターを要求 URI に指定できます。
+
+URI パラメーター | 説明
+:---          | :---
+pid   | (**必須**) 終了するプロセスの一意のプロセス ID。
+<br />
+**要求ヘッダー**
+
+- なし
+
+**要求本文**
+
+- なし
+
+**応答**
+
+**状態コード**
+
+この API では次の状態コードが返される可能性があります。
+
+HTTP 状態コード      | 説明
+:------     | :-----
+200 | OK
+4XX | エラー コード
+5XX | エラー コード
+<br />
+**利用可能なデバイス ファミリ**
+
+* Windows デスクトップ
+* HoloLens
+* IoT
+
+---
 ## Networking
 ---
 ### <a name="get-the-current-ip-configuration"></a>現在の IP 構成を取得する
@@ -2262,8 +2373,8 @@ URI パラメーター | 説明
 :---          | :---
 interface   | (**必須**) ネットワークへの接続に使用するネットワーク インターフェイスの GUID。
 op   | (**必須**) 実行するアクションを示します。 設定可能な値は、connect または disconnect です。
-ssid   | (**op* == connect の場合は必須*) 接続先 SSID。
-key   | (**op* == connect and network requires authentication の場合は必須*) 共有キー。
+ssid   | (***op* == connect の場合は必須**) 接続先 SSID。
+key   | (***op* == connect で、ネットワークで認証が必要な場合は必須**) 共有キー。
 createprofile | (**必要**) デバイスでネットワークのプロファイルを作成します。  これにより、今後、デバイスはネットワークに自動接続されます。 **yes** または **no** を指定できます。 
 
 **要求ヘッダー**
@@ -3230,7 +3341,7 @@ GET | /api/filesystem/apps/files
 URI パラメーター | 説明
 :------     | :-----
 knownfolderid | (**必須**) 必要なファイルの一覧の対象となるトップレベル ディレクトリ。 サイドロードされたアプリにアクセスするには、**LocalAppData** を使用します。 
-packagefullname | (*knownfolderid* == *LocalAppData の場合は必須*) 対象となるアプリのパッケージのフルネーム。 
+packagefullname | (***knownfolderid* == LocalAppData の場合は必須**) 対象となるアプリのパッケージのフルネーム。 
 path | (**オプション**) 上で指定したフォルダーまたはパッケージ内のサブディレクトリ。 
 
 **要求ヘッダー**
@@ -3290,7 +3401,7 @@ URI パラメーター | 説明
 :------     | :-----
 knownfolderid | (**必須**) ファイルをダウンロードするトップレベル ディレクトリ。 サイドロードされたアプリにアクセスするには、**LocalAppData** を使用します。 
 filename | (**必須**) ダウンロードするファイルの名前。 
-packagefullname | (*knownfolderid* == *LocalAppData の場合は必須*) 対象となるパッケージのフルネーム。 
+packagefullname | (***knownfolderid* == LocalAppData の場合は必須**) 対象となるパッケージのフルネーム。 
 path | (**オプション**) 上で指定したフォルダーまたはパッケージ内のサブディレクトリ。
 
 **要求ヘッダー**
@@ -3340,7 +3451,7 @@ URI パラメーター | 説明
 knownfolderid | (**必須**) ファイルが存在するトップレベル ディレクトリ。 サイドロードされたアプリにアクセスするには、**LocalAppData** を使用します。 
 filename | (**必須**) 名前を変更するファイルの元の名前。 
 newfilename | (**必須**) ファイルの新しい名前。
-packagefullname | (*knownfolderid* == *LocalAppData の場合は必須*) 対象となるアプリのパッケージのフルネーム。 
+packagefullname | (***knownfolderid* == LocalAppData の場合は必須**) 対象となるアプリのパッケージのフルネーム。 
 path | (**オプション**) 上で指定したフォルダーまたはパッケージ内のサブディレクトリ。 
 
 **要求ヘッダー**
@@ -3390,7 +3501,7 @@ URI パラメーター | 説明
 :------     | :-----
 knownfolderid | (**必須**) ファイルを削除するトップレベル ディレクトリ。 サイドロードされたアプリにアクセスするには、**LocalAppData** を使用します。 
 filename | (**必須**) 削除するファイルの名前。 
-packagefullname | (*knownfolderid* == *LocalAppData の場合は必須*) 対象となるアプリのパッケージのフルネーム。 
+packagefullname | (***knownfolderid* == LocalAppData の場合は必須**) 対象となるアプリのパッケージのフルネーム。 
 path | (**オプション**) 上で指定したフォルダーまたはパッケージ内のサブディレクトリ。
 
 **要求ヘッダー**
@@ -3439,7 +3550,7 @@ POST | /api/filesystem/apps/file
 URI パラメーター | 説明
 :------     | :-----
 knownfolderid | (**必須**) ファイルをアップロードするトップレベル ディレクトリ。 サイドロードされたアプリにアクセスするには、**LocalAppData** を使用します。
-packagefullname | (*knownfolderid* == *LocalAppData の場合は必須*) 対象となるアプリのパッケージのフルネーム。 
+packagefullname | (***knownfolderid* == LocalAppData の場合は必須**) 対象となるアプリのパッケージのフルネーム。 
 path | (**オプション**) 上で指定したフォルダーまたはパッケージ内のサブディレクトリ。
 
 **要求ヘッダー**

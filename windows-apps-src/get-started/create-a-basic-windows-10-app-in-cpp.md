@@ -2,42 +2,39 @@
 author: GrantMeStrength
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
 title: "C++ を使った Hello World アプリの作成 (Windows 10)"
-description: "Microsoft Visual Studio 2015 では、C++ を使って、Windows 10 (Windows 10 を実行する電話も含む) で実行されるアプリを開発できます。 これらのアプリでは、Extensible Application Markup Language (XAML) で定義された UI が使われます。"
+description: "Microsoft Visual Studio 2015 では、C++ を使って、Windows 10 (Windows 10 を実行する電話も含む) で実行されるアプリを開発できます。 これらのアプリでは、Extensible Application Markup Language (XAML) で定義された UI を使います。"
 ms.author: jken
-ms.date: 02/08/2017
+ms.date: 03/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 34a1d665bc98a5224ef7707994138ba40d70763b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c6c351227eacf924314cfaa2157135a8a893704d
+ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/03/2017
 ---
+# <a name="create-a-hello-world-app-in-c"></a>"Hello world" アプリを C++ で作成する
 
-# <a name="create-a-hello-world-app-in-c-windows-10"></a>C++ を使った "hello world" アプリの作成 (Windows 10)
+Microsoft Visual Studio 2017 では、Extensible Application Markup Language (XAML) で定義されている UI を使い、Windows 10 で動作するアプリを C++ で開発できます。
 
-Microsoft Visual Studio 2015 では、C++ を使って、Windows 10 (Windows 10 を実行する電話も含む) で実行されるアプリを開発できます。 これらのアプリでは、Extensible Application Markup Language (XAML) で定義された UI が使われます。
+> [!NOTE]
+> このチュートリアルでは、Visual Studio Community 2017 を使います。 異なるバージョンの Visual Studio を使っている場合には、見た目が多少異なることがあります。
 
-他のプログラミング言語のチュートリアルについては、次のトピックをご覧ください。
-
--   [JavaScript を使った初めての Windows ストア アプリの作成](https://msdn.microsoft.com/library/windows/apps/BR211385)
-
--   [C を使った初めての Windows ストア アプリの作成#](https://msdn.microsoft.com/library/windows/apps/Hh974581)
 
 ## <a name="before-you-start"></a>はじめに...
 
--   このチュートリアルでは、Windows 10 または Windows 8.1 が実行されているコンピューターで、Visual Studio 2015 Community 以降、または Community バージョン以外のいずれかの Visual Studio 2015 を使います。 ツールをダウンロードするには、[ツールの入手に関するページ](http://go.microsoft.com/fwlink/p/?LinkId=532666)をご覧ください。
+-   このチュートリアルでは、Windows 10 が実行されているコンピューターで、Visual Studio Community 2017 か、Community バージョン以外のいずれかの Visual Studio 2017 を使います。 ツールをダウンロードするには、[ツールの入手に関するページ](http://go.microsoft.com/fwlink/p/?LinkId=532666)をご覧ください。
 -   このトピックは、標準 C++、XAML、「[XAML の概要](https://msdn.microsoft.com/library/windows/apps/Mt185595)」で説明されている概念のいずれについても基本的な知識があることを前提としています。
 -   Visual Studio の既定のウィンドウ レイアウトを使用することを前提としています。 既定のレイアウトに戻すには、メニュー バーで **[ウィンドウ]**、**[ウィンドウ レイアウトのリセット]** の順にクリックします。
 
 
 ## <a name="comparing-c-desktop-apps-to-windows-apps"></a>C++ デスクトップ アプリと Windows アプリの比較
 
-C++ を使った Windows デスクトップのプログラミングに関する経験がある方は、Windows ストア アプリと Windows Phone アプリのプログラミングにもよく似た点があることや、新しい知識が必要な点があることに気が付くと思います。
+C++ を使った Windows デスクトップのプログラミングに関する経験がある場合、UWP 用アプリのプログラミングには、通常の C++ プログラミングと同じ部分もありますが、新しい知識が必要になる部分もあります。
 
-### <a name="whats-the-same"></a>これまでと同じ点
+### <a name="whats-the-same"></a>同じ部分
 
 -   Windows ランタイム環境からアクセスできない Windows 関数をコードから呼び出さない限り、STL と CRT (一部例外あり)、さらに他のあらゆる C++ ライブラリを使うことができます。
 
@@ -49,13 +46,13 @@ C++ を使った Windows デスクトップのプログラミングに関する�
 
 -   Visual C++ コンパイラでネイティブ マシン コードにコンパイルされるアプリを引き続き作成します。 C++ で作成された Windows ストア アプリは、マネージ ランタイム環境では実行されません。
 
-### <a name="whats-new"></a>これまでと異なる点
+### <a name="whats-new"></a>異なる部分
 
 -   Windows ストア アプリとユニバーサル Windows アプリの設計原則は、デスクトップ アプリの設計原則とは大きく異なります。 ウィンドウの境界線、ラベル、ダイアログ ボックスなどの強調は解除され、 コンテンツが最も目立つように表示されます。 優れたユニバーサル Windows アプリには、こうした原則が計画段階の初期から活かされています。
 
 -   XAML を使って UI 全体を定義します。 Windows ユニバーサル アプリでは、MFC アプリや Win32 アプリよりもはるかに明確に UI と基本的なプログラム ロジックが分離されます。 XAML を使った UI の見た目の調整と、コード ファイルでの動作のプログラミングを、異なる担当者が並行して行うことができます。
 
--   プログラミングの対象は主に Windows ランタイム (操作しやすい、オブジェクト指向の新しい API) ですが、Windows デバイス上で一部の機能にこれまでどおり Win32 を使うこともできます。
+-   プログラミングの対象は主に Windows ランタイム (操作しやすい、オブジェクト指向の新しい API) ですが、Windowsデバイス上で一部の機能にこれまでどおり Win32 を使うこともできます。
 
 -   Windows ランタイムのオブジェクトを利用したり作成したりするには C++/CX を使います。 C++/CX は、C++ の例外処理、デリゲート、イベントのほか、動的に作成されるオブジェクトの自動参照カウントに対応しています。 C++/CX を使うとき、ベースの COM と Windows アーキテクチャの詳細は、アプリ コードからは見えません。 詳しくは、「[C++/CX 言語のリファレンス](https://msdn.microsoft.com/library/windows/apps/hh699871.aspx)」をご覧ください。
 
@@ -65,11 +62,11 @@ C++ を使った Windows デスクトップのプログラミングに関する�
 
 ## <a name="hello-world-store-app-in-c"></a>C++ を使った Hello World ストア アプリ
 
-初めてのアプリは "Hello World" という名前です。このアプリでは、インタラクティビティ、レイアウト、スタイルに関する基本的な機能の使い方を学びます。 アプリは、Windows ユニバーサル アプリ プロジェクト テンプレートを使って作成します。 Windows 8.1 や Windows Phone 8.1 用のアプリを開発したことがあれば、Visual Studio で 3 つのプロジェクト (Windows アプリ用、Windows Phone アプリ用、共有コード用) を使った経験があるでしょう。 Windows 10 ユニバーサル Windows プラットフォーム (UWP) を使うと、1 つのプロジェクトだけで開発できます。このプロジェクトは、すべてのデバイス (Windows 10 が実行されているデスクトップ コンピューターやノート PC、タブレットや携帯電話などのデバイス) で動作します。
+初めてのアプリは "Hello World" という名前です。このアプリでは、インタラクティビティ、レイアウト、スタイルに関する基本的な機能の使い方を学びます。 アプリは、Windows ユニバーサル アプリ プロジェクト テンプレートを使って作成します。 Windows 8.1 や Windows Phone 8.1 用のアプリを開発したことがあれば、Visual Studio で 3 つのプロジェクト (Windows アプリ用、Windows Phone アプリ用、共有コード用) を使った経験があるでしょう。 Windows 10 ユニバーサル Windows プラットフォーム (UWP) を使うと、プロジェクトを 1 つ開発すれば、すべてのデバイス (Windows 10 が実行されているデスクトップ コンピューターやノート PC、タブレット、携帯電話、VR デバイスなどのデバイス) で動作させることができます。
 
-最初に、次の基本操作について説明します。
+それでは、次に示す基礎から始めましょう。
 
--   Visual Studio 2015 RC 以降でユニバーサル Windows プロジェクトを作成する方法。
+-   Visual Studio 2017 でユニバーサル Windows プロジェクトを作成する方法。
 
 -   作成されるプロジェクトとファイルを把握する方法。
 
@@ -79,7 +76,10 @@ C++ を使った Windows デスクトップのプログラミングに関する�
 
 1.  Visual Studio のメニュー バーから **[ファイル]**、**[新規作成]**、**[プロジェクト]** の順にクリックします。
 
-2.  **[新しいプロジェクト]** ダイアログ ボックスの左側のウィンドウで、**[インストール済み]**、**[Visual C++]**、**[Windows]**、**[ユニバーサル]** の順に展開します。
+2.  **[新しいプロジェクト]** ダイアログ ボックスの左側のウィンドウで、**[インストール済み]** > **[Visual C++]** > **[Windows ユニバーサル]** の順に展開します。
+
+> [!NOTE]
+> C++ での開発用に Windowsユニバーサル ツールをインストールするように求められることもあります。
 
 3.  中央のウィンドウで、**[空のアプリ (Windows ユニバーサル)]** テンプレートを選びます。
 
@@ -87,17 +87,18 @@ C++ を使った Windows デスクトップのプログラミングに関する�
 
 4.  プロジェクトの名前を入力します。 ここでは、名前を "HelloWorld" とします。
 
- ![[新しいプロジェクト] ダイアログ ボックスの C++ プロジェクト テンプレート ](images/vs2015-newuniversalproject-cpp.png)
+ ![[新しいプロジェクト] ダイアログ ボックスの C++ プロジェクト テンプレート ](images/vs2017-uwp-01.png)
 
-5.  **[OK]** をクリックします。
+5.  **[OK]** を選択します。
 
-   これが初めて作成した UWP プロジェクトであり、コンピューターで開発者モードを有効にしていない場合は、[開発者モードを有効にする] ダイアログ ボックスが表示されます。 リンクをクリックすると、開発者モードを設定できる [設定] ページが開きます。 開発者モードでは、アプリをローカルで展開して実行できます。
+> [!NOTE]
+> Visual Studio を初めて使う場合は、[設定] ダイアログ ボックスが表示され、**開発者モード**を有効にするよう求められることがあります。 開発者モードは、アプリをストアからだけではなく、直接実行するためのアクセス許可など、特定の機能を有効にする特別な設定です。 詳しくは、「[デバイスを開発用に有効にする](enable-your-device-for-development.md)」をご覧ください。 先に進むには、**[開発者モード]** を選択し、**[はい]** をクリックしてダイアログ ボックスを閉じます。
 
    プロジェクト ファイルが作られます。
 
 先に進む前に、ソリューションの構成内容を調べてみましょう。
 
-![ユニバーサル アプリ ソリューション (ノードを折りたたんだところ)](images/vs2015-solutionexploreruniversal-0-cpp.png)
+![ユニバーサル アプリ ソリューション (ノードを折りたたんだところ)](images/vs2017-uwp-02.png)
 
 ### <a name="about-the-project-files"></a>プロジェクト ファイルについて
 
@@ -220,7 +221,7 @@ MainPage::MainPage()
         <TextBlock Text="What's your name?"/>
         <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
             <TextBox x:Name="nameInput" Width="300" HorizontalAlignment="Left"/>
-            <Button x:Name="inputButton" Content="Say \"Hello\""/>
+            <Button x:Name="inputButton" Content="Say &quot;Hello&quot;"/>
         </StackPanel>
         <TextBlock x:Name="greetingOutput"/>
     </StackPanel>
@@ -242,42 +243,6 @@ MainPage::MainPage()
 
 アプリの [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) に文字を入力することはできますが、この時点では [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) をクリックしても何も起こりません。 この後の手順で、ユーザーに合わせたあいさつを表示する、ボタンの [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) イベント用のイベント ハンドラーを作成します。
 
-## <a name="start-the-app-on-a-mobile-device-emulator"></a>モバイル デバイス エミュレーターでアプリを起動する
-
-アプリは、すべての Windows 10 デバイスで実行できます。Windows Phone ではどのようになるかを見てみましょう。 このセクションでは、Windows 10 を実行している Windows Phone か、Windows Phone エミュレーターへのアクセスが必要です。また、Visual Studio が仮想マシンではなく物理コンピューターで実行されていて、HyperV のサポートが有効になっている必要もあります。
-
-Visual Studio では、デスクトップ デバイスでデバッグするオプションに加えて、コンピューターに接続された物理的なモバイル デバイスにアプリをデプロイしてデバッグするか、モバイル デバイス エミュレーターでアプリをデプロイしてデバッグするオプションが用意されています。 メモリとディスプレイの構成がさまざまなデバイスのエミュレーターの中から選ぶことができます。
-
--   **デバイス**
--   **Emulator 10.0.0.0 WVGA 4 inch 512MB**
--   他の構成のさまざまなエミュレーター
-
-エミュレーターが見つからない場合は、ユニバーサル Windows アプリ開発ツールがインストールされていることを確認します。 詳しくは、「[準備](get-set-up.md)」をご覧ください。
-
-画面が小さくメモリが限られているデバイスでアプリをテストすることをお勧めします。そのためには、**[Emulator 10.0.0.0 WVGA 4 inch 512MB]** オプションを使用します。
-**ヒント:** 電話エミュレーターの使用方法について詳しくは、「[エミュレーターにおける Windows Phone アプリの実行](http://go.microsoft.com/fwlink/p/?LinkId=394233)」をご覧ください。
-
-物理デバイスでアプリをデバッグするには、開発用に登録されているデバイスが必要です。 詳しくは、「[Windows Phone の登録](https://msdn.microsoft.com/library/windows/apps/Dn614128)」をご覧ください。
-
-**モバイル デバイス エミュレーターでデバッグを開始するには**
-
-1.  **[標準]** ツール バーの [ターゲット デバイス] メニュー (![[デバッグの開始] メニュー](images/startdebug-full.png)) で、**[Emulator 10.0.0.0 WVGA 4 inch 512MB]** を選びます。
-2.  ツール バーの **[デバッグの開始]** ボタン (![[デバッグの開始] ボタン](images/startdebug-sm.png)) をクリックします。
-
-   または
-
-   **[デバッグ]** メニューの **[デバッグの開始]** をクリックします。
-
-   または
-
-   F5 キーを押します。
-
-モバイル デバイス エミュレーターでは、アプリは次のように表示されます。
-
-![モバイル デバイスでのアプリの初期画面](images/hw10-screen1-mob.png)
-
-Visual Studio で、選択したエミュレーターが起動し、アプリが展開されて起動されます。 最初に気付くことは、ローカル コンピューターでは適切に見える 120 ピクセルの左余白によって、モバイル デバイスの小さい画面からコンテンツがはみ出していることです。 このチュートリアルの後半では、アプリを常に適切に表示するために、UI をさまざまな画面サイズに合わせて調整する方法を説明します。
-
 ## <a name="step-2-create-an-event-handler"></a>手順 2: イベント ハンドラーの作成
 
 1.  MainPage.xaml (XAML ビューまたはデザイン ビュー) で、先に追加した [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) の "Say Hello" [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) を選びます。
@@ -291,7 +256,7 @@ Visual Studio で、選択したエミュレーターが起動し、アプリが
    同時に、MainPage.xaml で、[**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) の XAML が更新されて、次のように [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) イベント ハンドラーが宣言されます。
 
     ```xaml
-    <Button Content="Say \"Hello\" Click="Button_Click"/>
+    <Button Content="Say &quot;Hello&quot;" Click="Button_Click"/>
     ```
 
     これを XAML コードに手動で入力することもできます。これは、デザイナーが読み込みに失敗する場合に役立つことがあります。 手動で入力する場合は、「Click」と入力すると、IntelliSense によって新しいイベント ハンドラーを追加するオプションがポップアップされます。 このように、Visual Studio によって必要なメソッド宣言とスタブが作成されます。
@@ -323,7 +288,7 @@ Visual Studio で、選択したエミュレーターが起動し、アプリが
 2.  開始 [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) タグで、[**RequestedTheme**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.requestedtheme) プロパティを編集し、その値を **Dark** に設定します。
 
     ```xaml
-    RequestedTheme="Light"
+    RequestedTheme="Dark"
     ```
 
     濃色テーマを追加した [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) タグ全体を次に示します。
@@ -365,7 +330,7 @@ Visual Studio で、選択したエミュレーターが起動し、アプリが
      XAML デザイン サーフェイスで、テキストの外観が変化します。 XAML エディターで、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) の XAML が更新されます。
 
     ```xaml
-    <TextBlock Text="What's your name?" Style="{StaticResource BasicTextStyle}"/><
+    <TextBlock Text="What's your name?" Style="{StaticResource BaseTextStyle}"/>
     ```
 
 7.  このプロセスを繰り返してフォント サイズを設定し、**BaseTextBlockStyle** を `greetingOutput` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 要素に割り当てます。
@@ -376,12 +341,12 @@ Visual Studio で、選択したエミュレーターが起動し、アプリが
 
     ```xaml
     <StackPanel x:Name="contentPanel" Margin="120,30,0,0">
-        <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="16" Text="What's your name?"/>
+        <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="18" Text="What's your name?"/>
         <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
             <TextBox x:Name="nameInput" Width="300" HorizontalAlignment="Left"/>
-            <Button x:Name="inputButton" Content="Say \"Hello\"" Click="Button_Click"/>
+            <Button x:Name="inputButton" Content="Say &quot;Hello&quot;" Click="Button_Click"/>
         </StackPanel>
-        <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="16" x:Name="greetingOutput"/>
+        <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="18" x:Name="greetingOutput"/>
     </StackPanel>
     ```
 
@@ -434,7 +399,7 @@ Visual Studio で、選択したエミュレーターが起動し、アプリが
 -   `inputPanel` 要素の [**Orientation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.orientation) を **Horizontal** から **Vertical** に変更します。
 -   4 DIP の上余白を `inputButton` 要素に追加します。
 
-### <a name="summary"></a>要約
+### <a name="summary"></a>まとめ
 
 これで、最初のチュートリアルは終わりです。 このチュートリアルでは、Windows ユニバーサル アプリにコンテンツを追加する方法、そのコンテンツで対話式操作を実現する方法、見た目を変更する方法の 3 点について説明しました。
 
@@ -443,5 +408,4 @@ Visual Studio で、選択したエミュレーターが起動し、アプリが
 Windows 8.1 や Windows Phone 8.1 を対象とする Windows ユニバーサル アプリ プロジェクトがある場合は、そのプロジェクトを Windows 10 に移植できます。 この移植を自動的に行うプロセスはありませんが、手動で実行することができます。 新しい Windows ユニバーサル プロジェクトを使って開発を始めることで、最新のプロジェクト システム構造を入手し、お使いのコード ファイルをプロジェクトのディレクトリ構造にコピーしたり、項目をプロジェクトに追加したりすることができます。また、このトピックのガイダンスに従い、[**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) を使って XAML を書き換えることもできます。 詳しくは、「[Windows ランタイム 8 プロジェクトのユニバーサル Windows プラットフォーム (UWP) プロジェクトへの移植](https://msdn.microsoft.com/library/windows/apps/Mt188203)」と「[ユニバーサル Windows プラットフォームへの移植 (C++)](http://go.microsoft.com/fwlink/p/?LinkId=619525)」をご覧ください。
 
 UWP アプリと統合する既存の C++ コードがある場合、たとえば、既存のアプリケーションに新しい UWP UI を作成する場合は、「[方法: ユニバーサル Windows プロジェクトで既存の C++ コードを使う](http://go.microsoft.com/fwlink/p/?LinkId=619623)」をご覧ください。
-
 

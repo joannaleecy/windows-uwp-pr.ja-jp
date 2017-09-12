@@ -6,14 +6,19 @@ ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 8be1dac30047a647d7f80464b53fe2fc3527d2c3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: 16b019678e94e131ba1105bb92d7ea3ab301828c
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="text-controls"></a>テキスト コントロール
 
@@ -24,17 +29,8 @@ translationtype: HT
 - 読み取り専用テキストを表示するためのコントロールは、[TextBlock](text-block.md) および [RichTextBlock](rich-text-block.md) です。
 - テキストの入力と編集用のコントロールは、[TextBox](text-box.md)、[AutoSuggestBox](auto-suggest-box.md)、[PasswordBox](password-box.md)、[RichEditBox](rich-edit-box.md) です。
 
-<div class="important-apis" >
-<b>重要な API</b><br/>
-<ul>
-<li>[**AutoSuggestBox クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)</li>
-<li>[**PasswordBox クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)</li>
-<li>[**RichEditBox クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)</li>
-<li>[**RichTextBlock クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)</li>
-<li> [**TextBlock クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)</li>
-<li>[**TextBox クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)</li>
-</ul>
-</div>
+> **重要な API**: [AutoSuggestBox クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)、[PasswordBox クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)、[RichEditBox クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)、[RichTextBlock クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)、[TextBlock クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)、[TextBox クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)
+
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
@@ -73,7 +69,7 @@ TextBox を読み取り専用にすることはできますが、これは一時
 -   **有効なすべての値を効率的に列挙することが現実的か。** そうである場合は、いずれかの選択コントロールを使うことを検討します。考えられる選択コントロールは、[チェック ボックス](checkbox.md)、[ドロップダウン リスト](lists.md)、リスト ボックス、[ラジオ ボタン](radio-button.md)、[スライダー](slider.md)、[トグル スイッチ](toggles.md)、[日付の選択コントロール](date-and-time.md)、または時刻の選択コントロールです。
 -   **有効な値は比較的少数か。** 少数の場合は、[ドロップダウン リスト](lists.md)またはリスト ボックス (値の文字数が多い場合) をお勧めします。
 -   **有効なデータに、何も制約がないか。 または、形式の制約 (長さや文字の種類による制約) だけがあるか。** これに該当する場合は、テキスト入力コントロールを使います。 入力できる文字数を制限したり、アプリ コードで形式を検証したりすることができます。
--   **値は専用のコモン コントロールがあるデータ型か。** そうである場合は、テキスト入力コントロールではなく、適切なコントロールを使います。 たとえば、日付の入力を受け付けるには、テキスト入力コントロールの代わりに [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681) を使います。
+-   **値は専用のコモン コントロールがあるデータ型か。** そうである場合は、テキスト入力コントロールではなく、適切なコントロールを使います。 たとえば、データ入力を受け付けるには、テキスト入力コントロールの代わりに [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) を使います。
 -   数値データのみに制限されている場合:
     -   **入力される値は、近似値や同じページの別の数量に対する相対値か。** そうである場合は、[スライダー](slider.md)を使います。
     -   **設定の変更による影響をすぐに確認できることがユーザーにとって便利か。** そうである場合は、 [スライダー](slider.md)を使い、必要であれば付随するコントロールも使います。
@@ -97,18 +93,18 @@ TextBox を読み取り専用にすることはできますが、これは一時
 
 各テキスト コントロールの詳細と例については、次の記事を参照してください。
 
--   [**AutoSuggestBox**](auto-suggest-box.md)
--   [**PasswordBox**](password-box.md)
--   [**RichEditBox**](rich-edit-box.md)
--   [**RichTextBlock**](rich-text-block.md)
--   [**TextBlock**](text-block.md)
--   [**TextBox**](text-box.md)
+-   [AutoSuggestBox](auto-suggest-box.md)
+-   [PasswordBox](password-box.md)
+-   [RichEditBox](rich-edit-box.md)
+-   [RichTextBlock](rich-text-block.md)
+-   [TextBlock](text-block.md)
+-   [TextBox](text-box.md)
 
 ## <a name="font-and-style-guidelines"></a>フォントとスタイルのガイドライン
 フォントのガイドラインについては、次の記事を参照してください。
 
-- [**フォントのガイドライン**](fonts.md)
-- [**Segoe MDL2 アイコンの一覧とガイドライン**](segoe-ui-symbol-font.md)
+- [フォントのガイドライン](fonts.md)
+- [Segoe MDL2 アイコンの一覧とガイドライン](segoe-ui-symbol-font.md)
 
 
 ## <a name="choose-the-right-keyboard-for-your-text-control"></a>テキスト コントロールに適切なキーボードの選択
@@ -144,7 +140,7 @@ Windows には、フォントに各グリフの複数の色付きレイヤーを
 
 ![カラー フォントを使用したテキスト ブロック](images/text-block-color-fonts.png)
 
-詳しくは、[**IsColorFontEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.iscolorfontenabled.aspx) プロパティに関するトピックをご覧ください。
+詳しくは、[IsColorFontEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.iscolorfontenabled.aspx) プロパティに関するトピックをご覧ください。
 
 ## <a name="guidelines-for-line-and-paragraph-separators"></a>行と段落の区切り記号のガイドライン
 
@@ -187,11 +183,11 @@ TextBox コントロールおよび RichEditBox コントロールでは、ス�
 ## <a name="related-articles"></a>関連記事
 
 **デザイナー向け**
-- [**フォントのガイドライン**](fonts.md)
-- [**Segoe MDL2 アイコンの一覧とガイドライン**](segoe-ui-symbol-font.md)
+- [フォントのガイドライン](fonts.md)
+- [Segoe MDL2 アイコンの一覧とガイドライン](segoe-ui-symbol-font.md)
 - [検索の追加](https://msdn.microsoft.com/library/windows/apps/hh465231)
 
 **開発者向け (XAML)**
-- [**TextBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Windows.UI.Xaml.Controls PasswordBox クラス**](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [TextBox クラス](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [Windows.UI.Xaml.Controls PasswordBox クラス](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [String.Length プロパティ](https://msdn.microsoft.com/library/system.string.length.aspx)

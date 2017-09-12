@@ -7,14 +7,16 @@ label: Content design basics
 template: detail.hbs
 op-migration-status: ready
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 0086078b2ca25f3c69c7a6e3034d99479f6d5602
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 988fa8c4b0a9b0731fbe6976b5a71da06e77b559
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
 #  <a name="content-design-basics-for-uwp-apps"></a>UWP アプリのコンテンツ デザインの基本
 

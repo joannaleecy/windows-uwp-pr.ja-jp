@@ -9,9 +9,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
-ms.openlocfilehash: 050aa91e8d2a25fa80ec95d2fcdebf886430e37d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: bf1928d7e2d96ecafa092ab6dc1ca1bc8c1f8073
+ms.sourcegitcommit: bfa61aae632cca0c68dbfb0168424d38fd607f84
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/31/2017
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>Windows Hello コンパニオン (IoT) デバイスを使った Windows のロック解除
 
@@ -227,10 +229,10 @@ Windows Hello コンパニオン デバイス アプリには、デバイスの�
 ```C#
 {
     Failed = 0,         // Something went wrong in the underlying components
-    Started,             // First call succeeded
-    CanceledByUser,      // User cancelled PIN prompt
-    PinSetupRequired,    // PIN is not set up
-    DisabledByPolicy,    // Companion device framework or this app is disabled
+    Started,            // First call succeeded
+    CanceledByUser,     // User cancelled PIN prompt
+    PinSetupRequired,   // PIN is not set up
+    DisabledByPolicy,   // Companion device framework or this app is disabled
 }
 ```
 
@@ -356,9 +358,9 @@ namespace SecondaryAuthFactorSample
 {
     Failed = 0,                     // Something went wrong in the underlying components
     Started,
-    UnknownDevice,                    // Companion device app is not registered with framework
-    DisabledByPolicy,                 // Policy disabled this device after registration
-    InvalidAuthenticationStage,        // Companion device framework is not currently accepting
+    UnknownDevice,                  // Companion device app is not registered with framework
+    DisabledByPolicy,               // Policy disabled this device after registration
+    InvalidAuthenticationStage,     // Companion device framework is not currently accepting
                                     // incoming authentication requests
 }
 ```
@@ -368,7 +370,7 @@ namespace SecondaryAuthFactorSample
 ```C#
 {
     Failed = 0,     // Something went wrong in the underlying components
-    Completed,       // Success
+    Completed,      // Success
     NonceExpired,   // Nonce is expired
 }
 ```
@@ -381,13 +383,13 @@ Windows Hello コンパニオン デバイス フレームワークは、ユー�
 
 これらの状態の詳細を次に示します。
 
-| 状態                          | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-|----------------------------    |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    |
-| WaitingForUserConfirmation     | この状態変化通知イベントは、ロック画面から移動した場合に発生します (例: ユーザーが Windows + L キーを押下)。 この状態のときは、デバイスが見つからないことに関連するすべてのエラー メッセージを要求しないことをお勧めします。 一般に、メッセージの表示は、インテント シグナルが入手されるときにのみ実行することをお勧めします。 コンパニオン デバイスがインテント シグナル (NFC リーダーのタップ、コンパニオン デバイスのボタンの押下、拍手などの特定のジェスチャなど) を収集する場合、Windows Hello コンパニオン デバイス アプリは、認証するための最初の API 呼び出しを、この状態のときに実行する必要があり、Windows Hello コンパニオン デバイス アプリのバックグラウンド タスクは、インテント シグナルが検出されたことをコンパニオン デバイスから受信します。 Windows Hello コンパニオン デバイス アプリが PC に依存して認証フローを開始する場合 (ユーザーによるロック画面のスワイプや Space キーの押下)、その Windows Hello コンパニオン デバイス アプリは、次の状態 (CollectingCredential) になるまで待機する必要があります。     |
-| CollectingCredential           | この状態変化通知イベントは、ユーザーがノート PC のカバーを開いた、キーボードのいずれかのキーを押した、またはスワイプしてロック解除画面に移ったときに発生します。 Windows Hello コンパニオン デバイスが上記のアクションに依存してインテント シグナルの収集を開始する場合、Windows Hello コンパニオン デバイス アプリは (ユーザーが PC のロック解除を望んでいるかどうかを確認するコンパニオン デバイス上のポップアップなどで) その収集を開始する必要があります。 Windows Hello コンパニオン デバイス アプリがコンパニオン デバイスにユーザー プレゼンス シグナルを提供すること (Windows Hello コンパニオン デバイスで PIN を入力するなど) をユーザーに要求する場合は、ここでエラー事例を提供することをお勧めします。                                                                                                                                                                                                                                                                                                                                               |
-| SuspendingAuthentication       | Windows Hello コンパニオン デバイス アプリがこの状態を受信した場合は、Companion Authentication Service が認証要求の受け入れを停止したことを意味します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| CredentialCollected            | これは、別の Windows Hello コンパニオン デバイス アプリから 2 番目の API の呼び出しがあり、何が送信されたかを Companion Authentication Service が検証していることを意味します。 この時点で、Companion Authentication Service は、現在送信されたものが検証に合格しない限り、他の認証要求を受け入れません。 Windows Hello コンパニオン デバイス アプリは、次の状態になるまで現在の状態を維持する必要があります。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| CredentialAuthenticated        | これは、送信された資格情報が機能したことを意味します。 credentialAuthenticated には、成功した Windows Hello コンパニオン デバイスのデバイス ID が含まれます。 Windows Hello コンパニオン デバイス アプリは、それに関連付けられているデバイスが勝者であるかどうかを確認する必要があります。 そうでない場合、Windows Hello コンパニオン デバイス アプリは、認証後フローの表示 (コンパニオン デバイス上の成功メッセージなど。デバイスのバイブレーションも考えられます) を回避する必要があります。 送信された資格情報が機能しなかった場合、状態は CollectingCredential に変化します。                                                                                                                                                                                                                                                                                                                                                                                        |
+| 状態                         | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|----------------------------   |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    |
+| WaitingForUserConfirmation    | この状態変化通知イベントは、ロック画面から移動した場合に発生します (例: ユーザーが Windows + L キーを押下)。 この状態のときは、デバイスが見つからないことに関連するすべてのエラー メッセージを要求しないことをお勧めします。 一般に、メッセージの表示は、インテント シグナルが入手されるときにのみ実行することをお勧めします。 コンパニオン デバイスがインテント シグナル (NFC リーダーのタップ、コンパニオン デバイスのボタンの押下、拍手などの特定のジェスチャなど) を収集する場合、Windows Hello コンパニオン デバイス アプリは、認証するための最初の API 呼び出しを、この状態のときに実行する必要があり、Windows Hello コンパニオン デバイス アプリのバックグラウンド タスクは、インテント シグナルが検出されたことをコンパニオン デバイスから受信します。 Windows Hello コンパニオン デバイス アプリが PC に依存して認証フローを開始する場合 (ユーザーによるロック画面のスワイプや Space キーの押下)、その Windows Hello コンパニオン デバイス アプリは、次の状態 (CollectingCredential) になるまで待機する必要があります。     |
+| CollectingCredential          | この状態変化通知イベントは、ユーザーがノート PC のカバーを開いた、キーボードのいずれかのキーを押した、またはスワイプしてロック解除画面に移ったときに発生します。 Windows Hello コンパニオン デバイスが上記のアクションに依存してインテント シグナルの収集を開始する場合、Windows Hello コンパニオン デバイス アプリは (ユーザーが PC のロック解除を望んでいるかどうかを確認するコンパニオン デバイス上のポップアップなどで) その収集を開始する必要があります。 Windows Hello コンパニオン デバイス アプリがコンパニオン デバイスにユーザー プレゼンス シグナルを提供すること (Windows Hello コンパニオン デバイスで PIN を入力するなど) をユーザーに要求する場合は、ここでエラー事例を提供することをお勧めします。                                                                                                                                                                                                                                                                                                                                            |
+| SuspendingAuthentication      | Windows Hello コンパニオン デバイス アプリがこの状態を受信した場合は、Companion Authentication Service が認証要求の受け入れを停止したことを意味します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| CredentialCollected           | これは、別の Windows Hello コンパニオン デバイス アプリから 2 番目の API の呼び出しがあり、何が送信されたかを Companion Authentication Service が検証していることを意味します。 この時点で、Companion Authentication Service は、現在送信されたものが検証に合格しない限り、他の認証要求を受け入れません。 Windows Hello コンパニオン デバイス アプリは、次の状態になるまで現在の状態を維持する必要があります。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| CredentialAuthenticated       | これは、送信された資格情報が機能したことを意味します。 credentialAuthenticated には、成功した Windows Hello コンパニオン デバイスのデバイス ID が含まれます。 Windows Hello コンパニオン デバイス アプリは、それに関連付けられているデバイスが勝者であるかどうかを確認する必要があります。 そうでない場合、Windows Hello コンパニオン デバイス アプリは、認証後フローの表示 (コンパニオン デバイス上の成功メッセージなど。デバイスのバイブレーションも考えられます) を回避する必要があります。 送信された資格情報が機能しなかった場合、状態は CollectingCredential に変化します。                                                                                                                                                                                                                                                                                                                                                                                       |
 | StoppingAuthentication        | 認証が成功し、ユーザーにデスクトップが表示されます。 この時点で、バックグラウンド タスクを終了します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 
@@ -396,8 +398,8 @@ Windows Hello コンパニオン デバイス アプリは、最初の 2 つの�
 
 ```C#
 {
-    SignIn = 0,          // Running under lock screen mode
-    CredentialPrompt,     // Running post unlock
+    SignIn = 0,         // Running under lock screen mode
+    CredentialPrompt,   // Running post unlock
 }
 ```
 
@@ -626,15 +628,16 @@ Windows Hello コンパニオン デバイス アプリは、ShowNotificationMes
 
 メッセージには、ガイダンスとエラーの 2 種類があります。
 
-ガイダンス メッセージは、ロック解除プロセスの開始方法をユーザーに表示することを目的としています。 これらのメッセージは、初回のデバイス登録時にユーザーに 1 回のみ表示され、その後表示されることはありません。
+ガイダンス メッセージは、ロック解除プロセスの開始方法をユーザーに表示することを目的としています。 これらのメッセージは、初回のデバイス登録時にユーザーに対して 1 回のみ表示され、その後ロック画面に表示されることはありません。 ロック画面の下には引き続き表示されています。
 
-エラー メッセージはいつでも表示されます。 エラー メッセージは、ユーザーに 5 秒間表示された後、消えます。 ユーザーにメッセージを表示する前にインテント シグナルを収集する必要があるときに、ユーザーがいずれかの Windows Hello コンパニオン デバイスのみを使用して意図を表明するのであれば、複数の Windows Hello コンパニオン デバイスがエラー メッセージを表示するために競争するような状況は発生しません。 このため、Windows Hello コンパニオン デバイス フレームワークでは、キューの管理は行われません。 呼び出し元がエラー メッセージを要求すると、エラー メッセージは 5 秒間表示され、その 5 秒間はエラー メッセージに対するその他のすべての要求は破棄されます。 5 秒経過した後、別の呼び出し元がエラー メッセージを表示する機会が発生します。 これにより、任意の呼び出し元がエラー チャネルを停滞させることが禁止されます。
+エラー メッセージは常に表示されます。また、インテント シグナルが提供された後に表示されます。 ユーザーにメッセージを表示する前にインテント シグナルを収集する必要があるときに、ユーザーがいずれかの Windows Hello コンパニオン デバイスのみを使用して意図を表明するのであれば、複数の Windows Hello コンパニオン デバイスがエラー メッセージを表示するために競争するような状況は発生しません。 このため、Windows Hello コンパニオン デバイス フレームワークでは、キューの管理は行われません。 呼び出し元がエラー メッセージを要求すると、エラー メッセージは 5 秒間表示され、その 5 秒間はエラー メッセージに対するその他のすべての要求は破棄されます。 5 秒経過した後、別の呼び出し元がエラー メッセージを表示する機会が発生します。 これにより、任意の呼び出し元がエラー チャネルを停滞させることが禁止されます。
 
 ガイダンス メッセージとエラー メッセージを次に示します。 デバイス名は、コンパニオン デバイス アプリによって、ShowNotificationMessageAsync の一部として渡されるパラメーターです。
 
 **ガイダンス**
 
-- "Swipe up or press space bar to sign in with *device name*." (*デバイス名*にサインインするには、上にスワイプするか Space キーを押してください。)
+- "Swipe up or press space bar to sign in with *device name*." (デバイス名にサインインするには、上にスワイプするか Space キーを押してください。)
+- "Setting up your companion device.  Please wait or use another sign-in option." (コンパニオン デバイスをセットアップしています。しばらく待機するか、別のサインイン オプションを使用してください。)
 - "サインインするには、*デバイス名* を NFC リーダーにタップしてください。"
 - "*デバイス名* を探しています..."
 - "サインインするには、*デバイス名* を USB ポートに差し込んでください。"
@@ -651,9 +654,9 @@ Windows Hello コンパニオン デバイス アプリは、ShowNotificationMes
 - "サインインするには、*デバイス名* の上に指を置いてください。"
 - "サインインするには、*デバイス名* を指でスワイプしてください。"
 - "*デバイス名* にサインインできませんでした。 別のサインイン オプションを使用してください。"
-- "Something went wrong.  Use another sign-in option, and then set up *device name* again." (問題が発生しました。別のサインイン オプションを使用し、*デバイス名* をもう一度設定してください。)
+- "問題が発生しました。 別のサインイン オプションを使用し、その後に*デバイス名*をもう一度セットアップしてください。"
 - "やり直してください。"
-- "Say your Spoken Passphrase into *device name*." (*デバイス名* に音声パスフレーズを言ってください。)
+- "*デバイス名*に向かって音声パスフレーズを言ってください。"
 - "*デバイス名* にサインインする準備ができています。"
 - "最初は別のサインイン オプションを使用してください。その後、*デバイス名*を使用してサインインできます。"
 

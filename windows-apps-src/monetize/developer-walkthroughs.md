@@ -9,14 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 広告, Advertising, チュートリアル"
-ms.openlocfilehash: 17391bda754195d2cf66ddc2e5e22ed445a37ef0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 73f2c9b36d0b083a74f6b226a2eed95fe49b6f63
+ms.sourcegitcommit: 9d1ca16a7edcbbcae03fad50a4a10183a319c63a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/09/2017
 ---
 # <a name="developer-walkthroughs"></a>開発者向けチュートリアル
-
-
-
 
 このセクションのチュートリアルでは、Microsoft Advertising ライブラリを使ってアプリにバナー広告やスポット広告を追加する方法について説明します。
 
@@ -26,11 +25,12 @@ C# と C++ を使って JavaScript/HTML アプリと XAML アプリにバナー�
 
 |  トピック    | 説明 |               
 |----------|-------|
-| [スポット広告](interstitial-ads.md)    | アプリにスポット広告を表示します。        |
+| [スポット広告](interstitial-ads.md)    | アプリにスポット広告を追加します。       |
+| [ネイティブ広告](native-ads.md)       | UWP アプリにネイティブ広告を追加します。  |
 | [XAML および .NET の AdControl](adcontrol-in-xaml-and--net.md)     | XAML/.NET アプリにバナー広告を追加します。        |
 | [HTML 5 および Javascript の AdControl](adcontrol-in-html-5-and-javascript.md)     | HTML5/JavaScript アプリにバナー広告を追加します。        |
 | [Windows Phone Silverlight の AdControl](adcontrol-in-windows-phone-silverlight.md)       | Windows Phone 8.x Silverlight アプリにバナー広告を追加します。 |
-| [HTML 5 および JavaScript によるビデオ コンテンツへの広告の追加](add-advertisements-to-video-content.md)     |  JavaScript と HTML を使って記述されたユニバーサル Windows プラットフォーム (UWP) アプリで、ビデオ コンテンツに広告を追加します。 |
+| [ビデオ コンテンツに広告を表示する](add-advertisements-to-video-content.md)     |  JavaScript と HTML を使って記述されたユニバーサル Windows プラットフォーム (UWP) アプリで、ビデオ コンテンツに広告を表示します。 |
 
 
 

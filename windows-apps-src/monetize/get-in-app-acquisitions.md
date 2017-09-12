@@ -9,16 +9,18 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ストア サービス, Windows ストア分析 API, アドオンの入手数"
-ms.openlocfilehash: cdd43c6e5df73ec1983593eb6198eba77c9df6e2
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 2c641d9fb7e4835df2cf1da05467efcb01cd3681
+ms.sourcegitcommit: 2b436dc5e5681b8884e0531ee303f851a3e3ccf2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/18/2017
 ---
 # <a name="get-add-on-acquisitions"></a>アドオンの入手数の取得
 
 
 
 
-特定の日付範囲などのオプション フィルターを使って、アプリのアドオン (アプリ内製品または IAP とも呼ばれます) に関する JSON 形式の集計入手データを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。 この情報は、Windows デベロッパー センター ダッシュボードの[アドオン取得レポート](../publish/add-on-acquisitions-report.md)でも確認することができます。
+特定の日付範囲などのオプション フィルターを使って、アプリのアドオンに関する JSON 形式の集計入手データを取得するには、Windows ストア分析 API に含まれる以下のメソッドを使用します。 この情報は、Windows デベロッパー センター ダッシュボードの[アドオン取得レポート](../publish/add-on-acquisitions-report.md)でも確認することができます。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -61,7 +63,7 @@ translationtype: HT
 | skip | int | クエリでスキップする行数です。 大きなデータ セットを操作するには、このパラメーターを使用します。 たとえば、top=10000 と skip=0 を指定すると、データの最初の 10,000 行が取得され、top=10000 と skip=10000 を指定すると、データの次の 10,000 行が取得されます。 |  必須ではない  |
 | filter |string  | 応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 詳しくは、次の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。 | 必須ではない   |
 | aggregationLevel | string | 集計データを取得する時間範囲を指定します。 次のいずれかの文字列を指定できます。<strong>day</strong>、<strong>week</strong>、または <strong>month</strong>。 指定されていない場合、既定値は <strong>day</strong> です。 | 必須ではない |
-| orderby | string | それぞれのアドオン入手数について結果データ値の順序を指定するステートメントです。 構文は <em>orderby=field [order],field [order],...</em> です。 <em>field</em> パラメーターには、次のいずれかの文字列を指定できます。<ul><li><strong>date</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p><em>order</em> パラメーターは省略可能であり、<strong>asc</strong> または <strong>desc</strong> を指定して、各フィールドを昇順または降順にすることができます。 既定値は <strong>asc</strong> です。</p><p><em>orderby</em> 文字列の例: <em>orderby=date,market</em></p> |  必須ではない  |
+| orderby | string | それぞれのアドオン入手数について結果データ値の順序を指定するステートメントです。 構文は <em>orderby=field [order],field [order],...</em> です。<em>field</em> パラメーターは次のいずれかの文字列になります。<ul><li><strong>date</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p><em>order</em> パラメーターは省略可能であり、<strong>asc</strong> または <strong>desc</strong> を指定して、各フィールドを昇順または降順にすることができます。 既定値は <strong>asc</strong> です。</p><p><em>orderby</em> 文字列の例: <em>orderby=date,market</em></p> |  必須ではない  |
 | groupby | string | 指定したフィールドのみにデータ集計を適用するステートメントです。 次のフィールドを指定できます。<ul><li><strong>date</strong></li><li><strong>applicationName</strong></li><li><strong>inAppProductName</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p>返されるデータ行には、<em>groupby</em> パラメーターに指定したフィールドと次の値が含まれます。</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>inAppProductId</strong></li><li><strong>acquisitionQuantity</strong></li></ul><p><em>groupby</em> パラメーターは、<em>aggregationLevel</em> パラメーターと同時に使用できます。 例: <em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p> |  必須ではない  |
 
 <span/>
@@ -173,10 +175,10 @@ Authorization: Bearer <your access token>
 
 * [アドオン取得レポート](../publish/add-on-acquisitions-report.md)
 * [Windows ストア サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)
+* [チャネルごとのアドオンのコンバージョンの取得](get-add-on-conversions-by-channel.md)
 * [アプリの入手数の取得](get-app-acquisitions.md)
-* [エラー報告データの取得](get-error-reporting-data.md)
-* [アプリの評価の取得](get-app-ratings.md)
-* [アプリのレビューの取得](get-app-reviews.md)
+* [アプリの入手に関するファネル データの取得](get-acquisition-funnel-data.md)
+* [チャネルごとのアプリのコンバージョンの取得](get-app-conversions-by-channel.md)
 
  
 

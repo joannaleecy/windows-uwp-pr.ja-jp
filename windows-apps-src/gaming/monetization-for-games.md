@@ -9,35 +9,38 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, 収益化"
-ms.openlocfilehash: eccff6f037890fdd375eb150520db99a67aa718d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: c2dde3a4f9796b02c969017533b0092b0deaa860
+ms.sourcegitcommit: 0ebc8dca2fd9149ea163b7db9daa14520fc41db4
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/08/2017
 ---
 #  <a name="monetization-for-games"></a>ゲームの収益化
 
 ゲーム開発者にとって収益化のオプションを把握することは、ビジネスを維持し、優れたゲームの開発という素晴らしい仕事を続けるために不可欠です。 この記事では、ユニバーサル Windows プラットフォーム (UWP) ゲームの収益化とその実装方法の概要を示します。
 
-以前は、ゲームから収益を得るには、価格を設定し、それがストアで購入されるのを待つ以外に方法はありませんでした。 しかし今は、さまざまなオプションがあります。 実店舗での販売や、オンラインでの販売 (物理メディアまたはソフト コピー) のほか、ゲームを無料で公開する代わりに広告を表示したり、無料のゲーム内で有料のアイテムを販売したりする方法もあります。 ゲーム自体も、もはや単体の製品ではありません。 メインのゲームに関連して追加のコンテンツを販売する方法が主流となっています。 
+以前は、ゲームから収益を得るには、価格を設定し、それがストアで購入されるのを待つ以外に方法はありませんでした。 しかし今は、さまざまなオプションがあります。 実店舗での販売や、オンラインでの販売 (物理メディアまたはソフト コピー) のほか、ゲームを無料で公開する代わりに広告を表示したり、無料のゲーム内で有料のアイテムを販売したりする方法もあります。 ゲーム自体も、もはや単体の製品ではありません。 メインのゲームに関連して追加のコンテンツを販売する方法が主流となっています。
 
 UWP ゲームの販売促進や収益化には、次の方法があります。
 * Windows ストアで販売する。Windows ストアは、[世界規模の販売チャネル](#worldwide-distribution-channel)を介して製品を提供するセキュリティで保護されたオンライン ストアです。 世界中のゲーマーが、[販売者の設定する価格](#set-a-price-for-your-game)でゲームをオンラインで購入できます。
 * Windows SDK の API を使って[ゲーム内購入](#in-game-purchases)を作成する。 ゲーマーはゲーム内からアイテムを購入したり、特別な機器、スキン、地図、ゲーム レベルなどの追加のコンテンツを購入したりすることができます。
-* [Microsoft Store Services SDK](https://visualstudiogallery.msdn.microsoft.com/229b7858-2c6a-4073-886e-cbb79e851211) の API を使って、広告ネットワークから供給される広告を表示する。 [ゲーム内で広告を表示](#display-ads-in-your-game)し、ゲーマーがビデオ広告を見るとゲーム内のリワードがもらえるオプションを提供できます。
+* [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) の API を使って、広告ネットワークから供給される広告を表示する。 [ゲーム内で広告を表示](#display-ads-in-your-game)し、ゲーマーがビデオ広告を見るとゲーム内のリワードがもらえるオプションを提供できます。
 * [広告キャンペーンによってゲームの可能性を最大限に広げる](#maximize-your-games-potential-through-ad-campaigns)。 有料広告、コミュニティ広告 (無料)、または自社広告 (無料) キャンペーンを使ってゲームを宣伝し、ユーザー ベースを拡大します。
- 
+
 ## <a name="worldwide-distribution-channel"></a>世界規模の販売チャネル
 
 Windows ストアでは、世界中の 200 以上の国や地域のユーザーにダウンロード配信でゲームを提供し、Visa、MasterCard、PayPal などのさまざまな請求方法を通じて料金を受け取ることができます。 すべての国と地域の一覧については、「[価格設定と市場設定](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)」をご覧ください。
 
-## <a name="set-a-price-for-your-game"></a>ゲームの価格設定 
+## <a name="set-a-price-for-your-game"></a>ゲームの価格設定
 
 ストアに公開する UWP ゲームは、_有料_または_無料_に設定できます。 有料ゲームでは、ゲームを開始する前に、販売側が設定したゲームの価格がユーザーに請求されます。無料ゲームでは、料金を支払うことなくゲームをダウンロードしてプレイできます。
 
 以下に、ストアでのゲームの価格設定に関するいくつかの重要な概念を説明します。
 
-### <a name="base-price"></a>基本価格 
+### <a name="base-price"></a>基本価格
 
-ゲームの基本価格は、提供するゲームが_有料_か_無料_かを決定する要素です。 [デベロッパー センター ダッシュ ボード](https://developer.microsoft.com/windows)を使って、国や地域ごとに基本価格を構成できます。 場合によっては、価格を決定する際に、[他国向けに販売する場合の納税義務](https://msdn.microsoft.com/windows/uwp/publish/tax-details-for-paid-apps)と[特定の市場向けに販売する場合のコストに関する考慮事項](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#price-considerations-for-specific-markets)を考慮する必要があります。 また[特定の市場向けにカスタム価格を設定](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)することもできます。 詳細については、「[価格設定と市場設定](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)」をご覧ください。
+ゲームの基本価格は、提供するゲームが_有料_か_無料_かを決定する要素です。 [デベロッパー センター ダッシュ ボード](https://developer.microsoft.com/windows)を使って、国や地域ごとに基本価格を構成できます。
+場合によっては、価格を決定する際に、[他国向けに販売する場合の納税義務](https://msdn.microsoft.com/windows/uwp/publish/tax-details-for-paid-apps)と[特定の市場向けに販売する場合のコストに関する考慮事項](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#price-considerations-for-specific-markets)を考慮する必要があります。 また[特定の市場向けにカスタム価格を設定](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)することもできます。 詳細については、「[価格設定と市場設定](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)」をご覧ください。
 
 ### <a name="sale-price"></a>セール価格
 
@@ -75,7 +78,7 @@ Windows ストアでは、世界中の 200 以上の国や地域のユーザー�
 アドオンはゲームと関連して作成する必要があるため、ゲームをストアで公開して提供する必要があります。 このセクションでは、まだ開発段階にあるゲームに対してアドオンを作成する手順を示します 
 (完成したゲームを既にストアに公開している場合は、最初の 3 つのステップをスキップして、「[ストアでのアドオンの作成](#create-an-add-on-in-the-store)」に進むことができます)。
 
-開発中のゲームに対してアドオンを作成するには、次の手順を実行します。 
+開発中のゲームに対してアドオンを作成するには、次の手順を実行します。
 1. [パッケージを作成する](#create-a-package)
 2. [非表示としてゲームを公開する](#publish-the-game-as-hidden)
 3. [Visual Studio で、ゲーム ソリューションをストアに関連付ける](#associate-your-game-solution-with-the-store)
@@ -100,7 +103,7 @@ Windows ストアでは、世界中の 200 以上の国や地域のユーザー�
 1. [デベロッパー センター](https://developer.microsoft.com/store)にアクセスしてサインインします。
 2. __[ダッシュボード概要]__ ページまたは __[すべてのアプリ]__ ページで、目的のアプリをクリックします。 アプリの申請をまだ作成していない場合は、__[新しいアプリの作成]__ をクリックして名前を予約します。
 3. __[アプリの概要]__ ページで、__[提出を開始する]__ をクリックします。
-4. この新しい申請を構成します。 [申請] ページで、次の手順を実行します。 
+4. この新しい申請を構成します。 [申請] ページで、次の手順を実行します。
     * __[価格と使用可能状況]__ をクリックします。 __[表示]__ セクションで __[このアプリを非表示にして取得できないようにします]__'を選び、 開発チームのみがゲームにアクセスできるように設定します。 詳しくは、「[分布と認知度](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility)」をご覧ください。
     * __[プロパティ]__ をクリックします。 __[カテゴリとサブカテゴリ]__ セクションで __[ゲーム]__ を選択し、ゲームに適したサブカテゴリを選びます。
     * __[年齢区分]__ をクリックします。 質問表に正確に入力します。
@@ -141,60 +144,56 @@ Windows ストアでは、世界中の 200 以上の国や地域のユーザー�
 
 ## <a name="display-ads-in-your-game"></a>ゲーム内での広告の表示
 
-Microsoft Store Services SDK に含まれているライブラリやツールを使って、広告ネットワークから広告を受信するサービスをゲーム内に設定できます。 ゲーマーに対してライブ広告が表示され、ゲーマーが表示された広告を見たり操作したりしたときに、広告主から開発者に報酬が支払われます。 詳しくは、「[広告を含むアプリを作成するためのワークフロー](https://msdn.microsoft.com/windows/uwp/monetize/workflows-for-creating-apps-with-ads)」をご覧ください。
+Microsoft Advertising SDK に含まれているライブラリやツールを使って、広告ネットワークから広告を受信するサービスをゲーム内に設定できます。 ゲーマーに対してライブ広告が表示され、ゲーマーが表示された広告を見たり操作したりしたときに、広告主から開発者に報酬が支払われます。
+詳しくは、「[アプリでの広告の表示](../monetize/display-ads-in-your-app.md)」をご覧ください。
 
 ### <a name="ad-formats"></a>広告の形式
 
-Microsoft Store Services SDK を使って表示できる広告には、次の 2 種類があります。
+Microsoft Advertising SDK を使って表示できる広告には、いくつかの種類があります。
 
 * バナー広告 &mdash; ゲーム画面の一部に表示される広告であり、通常、ゲーム内に表示されます。
 * ビデオ スポット広告 &mdash; 全画面表示の広告であり、ゲームのレベル間で使うと非常に効果的です。 正しく実装すれば、バナー広告よりもゲームのプレイを阻害しない可能性があります。
+* ネイティブ広告は、コンポーネント ベースの広告形式で、各広告クリエイティブ (タイトル、画像、説明、行動喚起テキストなど) が個々の要素としてアプリに配信され、それをアプリに統合できます。
 
 ### <a name="which-ads-are-displayed"></a>表示される広告
 
-Microsoft Store Services SDK を使う場合、弊社のパートナー ネットワークを通じて広告が供給されます。 現在提供されている広告ネットワークについて詳しくは、「[広告を使用したアプリの収益化](https://developer.microsoft.com/store/monetize/ads-in-apps)」をご覧ください。
-AdControl を使って広告を表示する場合は、ゲーム内に表示される製品広告を拡張して、[アフィリエイト広告](https://msdn.microsoft.com/windows/uwp/publish/about-affiliate-ads)を表示するようにオプトインすることができます。
+既定では、アプリはマイクロソフトの有料広告ネットワークの広告を表示します。 広告の収益を最大化するには、広告ユニットの広告仲介を有効化することで、その他の有料広告ネットワークの広告を表示できます。 現在提供されている広告ネットワークについて詳しくは、[広告仲介](../publish/monetize-with-ads.md#ad-mediation)のガイダンスをご覧ください。
 
 ### <a name="which-markets-allow-ads-to-be-displayed"></a>広告を表示できる市場
 
-バナー広告やビデオ スポット広告は、対象の国を選択してユーザーに表示できます。 広告がサポートされるすべての国と地域の一覧については、「[Microsoft Advertising でサポートされる市場](https://msdn.microsoft.com/windows/uwp/monetize/supported-markets-for-microsoft-advertising)」をご覧ください。
+広告がサポートされるすべての国と地域の一覧については、「[広告ネットワークでサポートされる市場](../publish/monetize-with-ads.md#network-markets)」をご覧ください。
 
 ### <a name="apis-for-displaying-ads"></a>広告を表示するための API
 
-ゲーム内に広告を表示するには、Microsoft Store Services SDK の [Microsoft.Advertising.WinRT.UI](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aspx) 名前空間に含まれる [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) クラスと [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) クラスを使います。
+ゲームで広告を表示するには、Microsoft Advertising SDK の [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) クラス、[InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) クラス、[NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) クラスを使用します。
 
-これにはまず、[Microsoft Store Services SDK](http://aka.ms/store-em-sdk) をダウンロードし、Visual Studio 2015 と共にインストールします。 詳しくは、「[SDK で利用可能な機能](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk#features-available-in-the-sdk)」をご覧ください。
+これにはまず、[Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) をダウンロードし、Visual Studio 2015 以降のバージョンと共にインストールします。 詳しくは、「[Microsoft Advertising SDK のインストール](../monetize/install-the-microsoft-advertising-libraries.md)」をご覧ください。
 
 #### <a name="implementation-guides"></a>実装ガイド
 
-次のウォークスルーでは、__AdControl__ と __InterstitialAd__ を使って広告を実装する方法を説明しています。
+次のウォークスルーでは、__AdControl__、__InterstitialAd__、__NativeAd__ を使って広告を実装する方法を説明しています。
 
-* [XAML および .NET で AdControl クラスを使ったバナー広告の作成](https://msdn.microsoft.com/windows/uwp/monetize/adcontrol-in-xaml-and--net)
-* [HTML5 および JavaScript で AdControl クラスを使ったバナー広告の作成](https://msdn.microsoft.com/windows/uwp/monetize/adcontrol-in-html-5-and-javascript)
-* [InterstitialAd クラスを使ったビデオ スポット広告の作成](https://msdn.microsoft.com/windows/uwp/monetize/interstitial-ads)
+* [XAML および .NET でバナー広告を作成する](https://msdn.microsoft.com/windows/uwp/monetize/adcontrol-in-xaml-and--net)
+* [HTML5 および JavaScript でバナー広告を作成する](https://msdn.microsoft.com/windows/uwp/monetize/adcontrol-in-html-5-and-javascript)
+* [スポット広告を作成する](https://msdn.microsoft.com/windows/uwp/monetize/interstitial-ads)
+* [ネイティブ広告を作成する](https://msdn.microsoft.com/windows/uwp/monetize/native-ads)
 
-開発時には、次のテスト値を使って広告がどのようにレンダリングされるかを確認できます。 上のウォークスルーでも、これらと同じ値が使われています。
-
-|AdType             | AdUnitId  | AppId                              |
-|-------------------|-----------|------------------------------------|
-|バナー広告         |10865270   |3f83fe91-d6be-434d-a0ae-7351c5a997f1|
-|スポット広告    |11389925   |d25517cb-12d4-4699-8bdc-52040c712cab|
+開発時には、[広告ユニットのテスト値](../monetize/test-mode-values.md)を使って広告がどのようにレンダリングされるかを確認できます。 上のウォークスルーでも、これらの広告ユニットのテスト値が使われています。
 
 設計と実装のプロセスに役立つベスト プラクティスを次に示します。
 
-* [AdControl クラスを使ったバナー広告に関するベスト プラクティス](https://msdn.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines)
-* [InterstitialAd クラスを使ったスポット広告に関するベスト プラクティス](https://msdn.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines#interstitialbestpractices10)
+* [バナー広告のベスト プラクティス](https://msdn.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines)
+* [スポット広告のためのベスト プラクティス](https://msdn.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines#interstitialbestpractices10)
 
 広告が表示されない、ブラック ボックスが点滅し、表示されなくなる、広告が更新されないなど、開発上の一般的な問題に対する解決策については、[トラブルシューティング ガイド](https://msdn.microsoft.com/windows/uwp/monetize/troubleshooting-guides)」をご覧ください。
 
 ### <a name="prepare-for-release-by-replacing-ad-unit-test-values"></a>広告ユニットのテスト値を置き換えてリリースの準備をする
 
-ライブ テストに移行する準備または公開したゲームで広告を受信する準備ができたら、テスト用の広告ユニット値を、ゲーム用に提供された実際の値に更新する必要があります。
-ゲーム用の広告ユニットを作成する方法については、「[アプリの広告ユニットをセットアップする](https://msdn.microsoft.com/windows/uwp/monetize/set-up-ad-units-in-your-app)」をご覧ください。
+ライブ テストに移行する準備または公開したゲームで広告を受信する準備ができたら、テスト用の広告ユニット値を、ゲーム用に提供された実際の値に更新する必要があります。 ゲーム用の広告ユニットを作成する方法については、「[アプリの広告ユニットをセットアップする](https://msdn.microsoft.com/windows/uwp/monetize/set-up-ad-units-in-your-app)」をご覧ください。
 
 ### <a name="other-ad-networks"></a>他の広告ネットワーク
 
-UWP アプリおよび UWP ゲームへの広告提供をサポートするその他の広告ネットワークを次に示します。
+UWP アプリおよび UWP ゲームへの広告提供のための SDK を提供するその他の広告ネットワークを次に示します。
 
 #### <a name="vungle"></a>Vungle
 
@@ -209,22 +208,22 @@ Smaato では、UWP アプリと UWP ゲームにバナー広告を組み込む�
 AdDuplex を使うと、ゲームにバナー広告やスポット広告を実装できます。
 
 Windows 10 XAML プロジェクトに直接 AdDuplex を統合する方法について詳しくは、次の AdDuplex の Web サイトにアクセスしてください。
-* バナー広告: [Windows 10 SDK for XAML](https://adduplex.zendesk.com/hc/en-us/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage) 
+* バナー広告: [Windows 10 SDK for XAML](https://adduplex.zendesk.com/hc/en-us/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage)
 * スポット広告: [Windows 10 XAML AdDuplex Interstitial Ad Installation and Usage (Windows 10 XAML AdDuplex のスポット広告のインストールと使用)](https://adduplex.zendesk.com/hc/en-us/articles/204849091-Windows-10-XAML-AdDuplex-Interstitial-Ad-Installation-and-Usage)
 
 Unity を使って作成された Windows 10 UWP ゲームに AdDuplex SDK を統合する方法については、「[Windows 10 SDK for Unity apps installation and usage (Windows 10 SDK for Unity アプリのインストールと使用)](https://adduplex.zendesk.com/hc/en-us/articles/207279435-Windows-10-SDK-for-Unity-apps-installation-and-usage)」をご覧ください。
 
 ## <a name="maximize-your-games-potential-through-ad-campaigns"></a>広告キャンペーンによってゲームの可能性を最大限に広げる
 
-広告を利用して、ゲームの販売促進を強化しましょう。 ゲームの[広告キャンペーンを作成](https://msdn.microsoft.com/windows/uwp/publish/create-an-ad-campaign-for-your-app)すると、ゲームの販売を促進するための広告が、他の開発者のアプリやゲームに表示されます。 
+広告を利用して、ゲームの販売促進を強化しましょう。 ゲームの[広告キャンペーンを作成](https://msdn.microsoft.com/windows/uwp/publish/create-an-ad-campaign-for-your-app)すると、ゲームの販売を促進するための広告が、他の開発者のアプリやゲームに表示されます。
 
 ゲーマー ベースの増加に役立つキャンペーンを複数の種類から選択できます。
 
 |キャンペーンの種類             | ゲームの広告が表示されるアプリ                                                                                                                                                                   |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |有料                      |ゲームのデバイスまたはカテゴリに一致するアプリ。                                                                                                                                                   |
-|コミュニティ (無料)               |コミュニティ広告キャンペーンにオプト インしている他の開発者が公開するアプリ。 詳しくは、「[コミュニティ広告について](https://msdn.microsoft.com/windows/uwp/publish/about-community-ads)」をご覧ください。|
-|自社 (無料)                   |自社が公開したアプリのみ。 詳しくは、「[自社広告について](https://msdn.microsoft.com/windows/uwp/publish/about-house-ads)」をご覧ください。                                                            |
+|コミュニティ (無料)            |コミュニティ広告キャンペーンにオプト インしている他の開発者が公開するアプリ。 詳しくは、「[コミュニティ広告について](https://msdn.microsoft.com/windows/uwp/publish/about-community-ads)」をご覧ください。|
+|自社 (無料)                |自社が公開したアプリのみ。 詳しくは、「[自社広告について](https://msdn.microsoft.com/windows/uwp/publish/about-house-ads)」をご覧ください。                                                            |
 
 ## <a name="related-links"></a>関連リンク
 

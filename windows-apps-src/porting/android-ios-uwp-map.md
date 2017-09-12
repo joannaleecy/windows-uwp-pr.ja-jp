@@ -2,7 +2,7 @@
 author: GrantMeStrength
 Description: "iOS、Android、Windows 10 のプラットフォーム機能を比較します。"
 Search.Product: eADQiWindows 10XVcnh
-title: "Android と iOS 開発者向けの Windows の概念"
+title: "Android と iOS 開発者向けの Windows アプリ概念マッピング"
 ms.author: jken
 ms.date: 02/08/2017
 ms.topic: article
@@ -10,11 +10,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
-ms.openlocfilehash: ce32bd7ebaca20827a637c456b2dbe82811817cb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 72bb41939b0676dab7c212770cc9eddaef538c3f
+ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/28/2017
 ---
-#<a name="windows-concepts-for-android-and-ios-developers"></a>Android と iOS 開発者向けの Windows の概念
+#<a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>Android と iOS 開発者向けの Windows アプリ概念マッピング
 
 このリソースには、Android や iOS のスキルとコードを持つ開発者が Windows 10 とユニバーサル Windows プラットフォーム (UWP) に移行する場合に、それら 3 つのプラットフォーム間でプラットフォームの機能と知識を関連付けるために必要なすべての情報が含まれています。
 
@@ -128,13 +130,13 @@ translationtype: HT
 <td align="left"><strong>ピアのナビゲーション。</strong> <br><br>階層の重要度が同じページ間を移動する方法をユーザーに提供します。</td>
 <td align="left"><strong>タブ</strong>、<strong>スワイプ ビュー</strong>、<strong>ナビゲーション ドロワー</strong>で<strong>水平方向ナビゲーション</strong>ができます。</td>
 <td align="left"><strong>タブ バー コントローラー</strong>、<strong>分割ビュー コントローラー</strong>、<strong>ページ ビュー コントローラー</strong>で同じ階層のビューの間を移動できます。</td>
-<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">タブ/ピボット</a></strong>を使って、コンテンツの上にリンクやタブの永続的な一覧を表示できます。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">ナビゲーション ウィンドウと分割ビュー</a></strong>で、コンテンツの横にリンクの一覧を表示することができます。<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">ナビゲーション</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">2 つのページ間の移動</a></td>
+<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">タブ/ピボット</a></strong>を使って、コンテンツの上にリンクやタブの永続的な一覧を表示できます。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">ナビゲーション ウィンドウと分割ビュー</a></strong>で、コンテンツの横にリンクの一覧を表示することができます。<br/><br/><a href="https://msdn.microsoft.com/windows/uwp/layout/navigation-basics">ナビゲーション</a><br/><br/><a href="https://msdn.microsoft.com/windows/uwp/layout/navigate-between-two-pages">2 つのページ間の移動</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>階層型ナビゲーション。</strong> <br><br>階層の親と子のページ間を移動します。</td>
 <td align="left">他の<strong>アクティビティ</strong>を読み込む<strong>インテント</strong>と一緒に<strong>リスト</strong>、<strong>グリッド リスト</strong>、<strong>ボタン</strong>などのコントロールを使うと、<strong>子孫のナビゲーション</strong>ができます。</td>
 <td align="left"><strong>ナビゲーション コントローラー</strong>を使うと、ユーザーが階層のレベルの間を移動できます。</td>
-<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">ハブ</a></strong>を使うと、子ページに移動する場合に選ぶことができるコンテンツのプレビューをユーザーに表示できます。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">マスター/詳細</a></strong>を使うと、ユーザーは対応する [詳細] セクションの横に表示される項目の概要の一覧から項目を選ぶことができます。<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">ナビゲーション</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">2 つのページ間の移動</a></td>
+<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">ハブ</a></strong>を使うと、子ページに移動する場合に選ぶことができるコンテンツのプレビューをユーザーに表示できます。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">マスター/詳細</a></strong>を使うと、ユーザーは対応する [詳細] セクションの横に表示される項目の概要の一覧から項目を選ぶことができます。<br/><br/><a href="https://msdn.microsoft.com/windows/uwp/layout/navigation-basics">ナビゲーション</a><br/><br/><a href="https://msdn.microsoft.com/windows/uwp/layout/navigate-between-two-pages">2 つのページ間の移動</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>[戻る] ボタンによるナビゲーション。</strong> <br><br>アプリケーション内で元の画面に戻ります。</td>
@@ -170,7 +172,7 @@ translationtype: HT
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>音声。</strong> <br><br>音声入力に対する音声認識と、その他の音声機能。</td>
 <td align="left"><strong>Google 音声検索</strong>などの <strong>RecognizerIntent</strong> を実装するアプリで音声入力を提供できます。 <strong>SpeechRecognizer</strong> クラスを使うと、アプリで Google の音声認識 API を使うことができます。</td>
-<td align="left">組み込みの音声認識または音声入力 API はありません。</td>
+<td align="left">アプリでは、<strong>SFSpeechRecognizer</strong> クラスを使用して音声入力と音声認識を実装することができます。</td>
 <td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185615.aspx">音声認識</a></strong> API を使ってフォアグラウンドでアプリを操作できます。 音声認識に基づく <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185598.aspx">Cortana の操作</a></strong>で、フォアグラウンドまたはバックグラウンドでアプリを起動したり、バックグラウンドのアプリを操作したりできます。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185614.aspx">音声認識による対話式操作</a></td>
 </tr>
 <tr class="even">

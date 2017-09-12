@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 4A4C2802-E674-4C04-8A6D-D7C1BBF1BD20
 title: "デバイス情報プロパティ"
 description: "デバイスにはそれぞれ DeviceInformation プロパティが関連付けられており、特定の情報が必要な場合やデバイス セレクターを作成する場合に使うことができます。"
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 68e427a4d94b7c599e1fec375f0f66b5ff2704e0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 37b88b501c3bdb0f38b04f2f7b6d936cb0d201b4
+ms.sourcegitcommit: a2908889b3566882c7494dc81fa9ece7d1d19580
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/31/2017
 ---
 # <a name="device-information-properties"></a>デバイス情報プロパティ
 
@@ -40,7 +42,7 @@ translationtype: HT
 
 **DeviceInterface** は既定で最も一般的な [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind) オブジェクトで、アプリのシナリオに使われます。 これは、デバイス API が別の特定の **DeviceInformationKind** を示さない限り使用すべきオブジェクトの種類です。
 
-| 名前                                  | タイプ    | 説明                                                                                                                                                                                                                                                                                                                                                                                               |
+| 名前                                  | 種類    | 説明                                                                                                                                                                                                                                                                                                                                                                                               |
 |---------------------------------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **System.Devices.ContainerId**        | GUID    | この **DeviceInterface** を含む **Device** が含まれている **DeviceInformationKind.DeviceContainer** の ID。 この値を **DeviceInformationKind.DeviceContainer** と共に [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.createfromidasync) に渡すと、適切なコンテナーを見つけることができます。                                                                                    |
 | **System.Devices.InterfaceClassGuid** | GUID    | このインターフェイスが表すインターフェイス クラス GUID。                                                                                                                                                                                                                                                                                                                                                       |
@@ -55,7 +57,7 @@ translationtype: HT
 
 ## <a name="device-properties"></a>デバイスのプロパティ
 
-| 名前                                  | タイプ       | 説明                                                                                                                                                                                                                                                                              |
+| 名前                                  | 種類       | 説明                                                                                                                                                                                                                                                                              |
 |---------------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **System.Devices.ClassGuid**          | GUID       | デバイスのインストール時に使われるデバイス クラス。 詳しくは、「[デバイス セットアップ クラス](https://msdn.microsoft.com/library/windows/hardware/Ff541509)」をご覧ください。                                                                                                                                                            |
 | **System.Devices.CompatibleIds**      | String\[\] | デバイスの互換性 ID。 Windows がデバイスにインストールする最適なドライバーを決める場合に、これらが使われます。 詳しくは、「[互換性 ID](https://msdn.microsoft.com/library/windows/hardware/Ff539950)」をご覧ください。                                                                                                |
@@ -73,11 +75,11 @@ translationtype: HT
 
 ## <a name="devicecontainer-properties"></a>DeviceContainer プロパティ
 
-| 名前                              | タイプ       | 説明                                                                                                                                                        |
+| 名前                              | 種類       | 説明                                                                                                                                                        |
 |-----------------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **System.Devices.Category**       | String\[\] | デバイスが属しているカテゴリの説明の一覧。 この一覧で提供されるカテゴリは単数形です。 たとえば、「Display」、「Phone」、または「Audio device」です。  |
 | **System.Devices.CategoryIds**    | String\[\] | このデバイスが属しているカテゴリの一覧が含まれています。 たとえば、**Audio.Headphone**、**Display.Monitor**、または **Input.Gaming** です。                                  |
-| **System.Devices.CateogryPlural** | String\[\] | デバイスが属しているカテゴリの説明の一覧。 この一覧で提供されるカテゴリは複数形です。 たとえば、「Displays」、「Phones」、または「Audio devices」です。 |
+| **System.Devices.CategoryPlural** | String\[\] | デバイスが属しているカテゴリの説明の一覧。 この一覧で提供されるカテゴリは複数形です。 たとえば、「Displays」、「Phones」、または「Audio devices」です。 |
 | **System.Devices.CompatibleIds**  | String\[\] | すべての **DeviceInformationKind.Device** 子オブジェクトの互換性 ID のコレクション。                                                                       |
 | **System.Devices.Connected**      | Boolean    | デバイスが現在システムに接続されているかどうかを示します。                                                                                          |
 | **System.Devices.GlyphIcon**      | String     | グリフのアイコン パス。                                                                                                                                           |
@@ -93,7 +95,7 @@ translationtype: HT
 
 ## <a name="deviceinterfaceclass-properties"></a>DeviceInterfaceClass プロパティ
 
-| 名前                       | タイプ   | 説明                            |
+| 名前                       | 種類   | 説明                            |
 |----------------------------|--------|----------------------------------------|
 | **System.ItemNameDisplay** | String | このデバイスに最適な表示名。 |
 
@@ -101,7 +103,7 @@ translationtype: HT
 
 ## <a name="associationendpoint-properties"></a>AssociationEndpoint プロパティ
 
-| 名前                                  | タイプ       | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| 名前                                  | 種類       | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |---------------------------------------|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **System.Devices.Aep.AepId**          | String     | このデバイスの ID。 これは [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) の値でもあります。                                                                                                                                                                                                                                                                                                                                                                        |
 | **System.Devices.Aep.CanPair**        | Boolean    | デバイスがシステムとペアリングされているかどうかを示します。 [**DeviceInformationPairing.CanPair**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.canpair.aspx) はこのプロパティから派生します。                                                                                                                                                                                                                                                                                                       |
@@ -122,7 +124,7 @@ translationtype: HT
 
 ## <a name="associationendpointcontainer-properties"></a>AssociationEndpointContainer プロパティ
 
-| 名前                                                | タイプ       | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| 名前                                                | 種類       | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |-----------------------------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **System.Devices.AepContainer.Categories**          | String\[\] | デバイスが含まれるカテゴリ。 たとえば、プリンターやカメラです。                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | **System.Devices.AepContainer.Children**            | String\[\] | このコンテナーに格納される **AssocationEndpoint** オブジェクトの ID のコレクション。                                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -144,7 +146,7 @@ translationtype: HT
 
 ## <a name="associationendpointservice-properties"></a>AssociationEndpointService プロパティ
 
-| 名前                                            | タイプ    | 説明                                                                                                      |
+| 名前                                            | 種類    | 説明                                                                                                      |
 |-------------------------------------------------|---------|------------------------------------------------------------------------------------------------------------------|
 | **System.Devices.AepService.AepId**             | String  | **AssociationEndpoint** 親オブジェクトの ID。                                                     |
 | **System.Devices.AepService.ContainerId**       | GUID    | **AssociationEndpointContainer** 親オブジェクトの ID。                                            |

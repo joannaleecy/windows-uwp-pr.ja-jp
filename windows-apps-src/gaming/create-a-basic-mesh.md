@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、ゲーム、メッシュ、DirectX"
-ms.openlocfilehash: f7dc55c0a7653616a86f1cca41521c7b25c070f9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 264563d2db7d48ab6a18bb15c53b00e75fbd5943
+ms.sourcegitcommit: de6bc8acec2cd5ebc36bb21b2ce1a9980c3e78b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/17/2017
 ---
 # <a name="create-and-display-a-basic-mesh"></a>基本的なメッシュの作成と表示
 
@@ -37,6 +39,15 @@ translationtype: HT
 -   Visual Studio 2015 Direct3D テンプレート
 
 ## <a name="instructions"></a>手順
+
+次の手順では、基本的なメッシュ立方体を作成する方法を説明します。 
+
+
+これらの概念の説明を聞くことを希望する場合には、このビデオをご覧ください。
+</br>
+</br>
+<iframe src="https://channel9.msdn.com/Series/Introduction-to-C-and-DirectX-Game-Development/03/player#time=7m39s:paused" width="600" height="338" allowFullScreen frameBorder="0"></iframe>
+
 
 ### <a name="step-1-construct-the-mesh-for-the-model"></a>手順 1: モデルのメッシュを構成する
 

@@ -4,14 +4,16 @@ ms.assetid: AD80F9B3-CED0-40BD-A199-AB81CDAE466C
 description: "Windows デベロッパー センター アカウントに登録されているアプリのパッケージ フライトを削除するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
 title: "パッケージ フライトの削除"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア申請 API, フライトの削除"
-ms.openlocfilehash: e20661cef4ac7cad17ea5a62d37e9b217061809c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 4a05e69f3dd1c530fee630cc3af13809fc1ac0b6
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/04/2017
 ---
 # <a name="delete-a-package-flight"></a>パッケージ フライトの削除
 
@@ -26,9 +28,7 @@ Windows デベロッパー センター アカウントに登録されている�
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
-
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
 
 ## <a name="request"></a>要求
 
@@ -51,10 +51,10 @@ Windows デベロッパー センター アカウントに登録されている�
 
 ### <a name="request-parameters"></a>要求パラメーター
 
-| 名前        | 型   | 説明                                                                 |
+| 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | string | 必須。 削除するパッケージ フライトが含まれるアプリのストア ID。 アプリのストア ID は、デベロッパー センター ダッシュボードで確認できます。  |
-| flightId | string | 必須。 削除するパッケージ フライトの ID。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データに含まれており、デベロッパー センター ダッシュボードで確認できます。  |
+| flightId | string | 必須。 削除するパッケージ フライトの ID。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データで確認できます。  |
 
 <span/>
 

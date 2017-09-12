@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: b35b8a9dcd6ea23b734de1041d829f620103fa6e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e05cc939d4a836e2f385a20f63d6ffb2242696db
+ms.sourcegitcommit: 7f03e200ef34f7f24b6f8b6489ecb44aa2b870bc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/01/2017
 ---
 # <a name="handle-file-activation"></a>ファイルのアクティブ化の処理
 
@@ -80,8 +82,7 @@ translationtype: HT
 -   ファイル ピッカー
 -   スタート画面での検索結果
 
-アプリのタイルのロゴの外観を調和させ、アイコンを透明にするのではなく、アプリの背景色を使います。 パディングせずにロゴを端まで拡張します。 アイコンは、白い背景でテストします。 サンプルのアイコンについては、[関連付けによる起動のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620490)をご覧ください。
-![ソリューション エクスプローラーで images フォルダー内にあるファイルを表示した様子。 Icon.targetsize と smallTile-sdk の両方に 16、32、48、256 の各ピクセルのバージョンがあります。](images/seviewofimages.png)
+ロゴがこれらの場所に表示されるように、プロジェクトに 44 x 44 のアイコンを含めます。 アプリのタイルのロゴの外観を調和させ、アイコンを透明にするのではなく、アプリの背景色を使います。 パディングせずにロゴを端まで拡張します。 アイコンは、白い背景でテストします。 アイコンについて詳しくは、「[タイルとアイコン アセットのガイドライン](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets)」をご覧ください。
 
 ## <a name="step-3-handle-the-activated-event"></a>ステップ 3: アクティブ化イベントを処理する
 

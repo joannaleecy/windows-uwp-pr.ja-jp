@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 415F4107-0612-4235-9722-0F5E4E26F957
 title: "センサー"
 description: "センサーは、デバイスとその周囲の実際の世界の関係をアプリに通知します。 つまり、デバイスの方角や向き、動きをアプリに伝えることができます。"
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: af862471fcac7ee7f0ab8ad61f57c485d995bae2
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: eee6bb0c70c39a6676639f5b6da0f5465811dbad
+ms.sourcegitcommit: ca060f051e696da2c1e26e9dd4d2da3fa030103d
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/03/2017
 ---
 # <a name="sensors"></a>センサー
 
@@ -65,17 +67,25 @@ translationtype: HT
 
 加速度計センサーを使うアプリとしては、デバイスを傾けた方向 (重力ベクター) に画面のビー玉が転がるゲームなどが考えられます。 このタイプの機能は、[**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) の機能を厳密に反映したもので、ピッチとロールの組み合わせによりセンサーを扱うこともできます。 この処理は、加速度計の重力ベクターを使い、デバイスの傾きに対して簡単に数学的に操作されたベクターを提供することにより、ある程度簡素化されます。 もう 1 つの例としては、ユーザーが空中でデバイスをすばやく動かしたときに (直線加速度ベクター)、むちを打つ音を出すアプリが挙げられます。
 
+実装例については、[加速度計センサーのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Accelerometer)をご覧ください。
+
 ## <a name="activity-sensor"></a>アクティビティ センサー
 
 [**Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) センサーは、センサーに取り付けられたデバイスの現在の状態を特定します。 このセンサーはフィットネス アプリによく使用されます。デバイスを携帯するユーザーがランニングやウォーキングを行う場合に追跡します。 このセンサー API で検出できるアクティビティの一覧については、[**ActivityType**](https://msdn.microsoft.com/library/windows/apps/Dn785128) をご覧ください。
+
+実装例については、[アクティビティ センサーのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ActivitySensor)をご覧ください。
 
 ## <a name="altimeter"></a>高度計
 
 [**Altimeter**](https://msdn.microsoft.com/library/windows/apps/Dn858893) センサーは、センサーの高度を示す値を返します。 これにより、海面からの高さの変化をメートルで追跡できます。 これを使う可能性のあるアプリの 1 例としてランニング用アプリがあります。消費カロリーの計算時に高さの変化を追跡します。 この場合、このセンサー データを [**Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) センサーと組み合わせて、より正確な追跡情報を提供できます。
 
+実装例については、[高度計のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Altimeter)をご覧ください。
+
 ## <a name="barometer"></a>気圧計
 
 [**Barometer**](https://msdn.microsoft.com/library/windows/apps/Dn872405) センサーを使用すると、アプリで気圧の値を取得できます。 天気予報のアプリはこの情報を使用して、現在の気圧を提供できます。 これを利用して、詳細な情報を提供し、天気変化の可能性を予想できます。
+
+実装例については、[気圧計のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Barometer)をご覧ください。
 
 ## <a name="compass"></a>コンパス
 
@@ -85,6 +95,8 @@ translationtype: HT
 
 羅針図の表示、地図のナビゲートを行うアプリは通常、コンパス センサーを使います。
 
+実装例については、[コンパスのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Compass)をご覧ください。
+
 ## <a name="gyrometer"></a>ジャイロメーター
 
 [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718) センサーは、X 軸、Y 軸、Z 軸に沿った角速度を測定します。 これは、デバイスの向きにかかわらず、さまざまな速度でのデバイスの回転を検出する簡単なモーション ベースのアプリで非常に便利です。 ジャイロメーターでは、データのノイズ、または 1 つ以上の軸に沿った一定のバイアスの影響を受ける場合があります。 ジャイロメーターがバイアスの影響を受けているかどうかを判断するために、加速度計を照会してデバイスが移動しているかどうかを確認する必要があります。その結果に応じてアプリで補正が必要になります。
@@ -92,6 +104,8 @@ translationtype: HT
 ![ピッチ、ロール、ヨーに対応するジャイロメーター](images/gyrometer.png)
 
 ジャイロメーター センサーを使うアプリの例としては、デバイスの急な回転の動きに基づいてルーレットのホイールを回転させるゲームなどが考えられます。
+
+実装例については、[ジャイロメーターのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Gyrometer)をご覧ください。
 
 ## <a name="inclinometer"></a>傾斜計
 
@@ -101,9 +115,13 @@ translationtype: HT
 
 デバイスの方向に合わせてビューを変更するアプリでは、傾斜計センサーを使うことができます。 また、デバイスのヨー、ピッチ、ロールに合わせて飛行機を表示するアプリでも、傾斜計の読み取り値を使います。
 
+実装例については、傾斜計のサンプル ([https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer)) をご覧ください。
+
 ## <a name="light-sensor"></a>光センサー
 
 [**Light**](https://msdn.microsoft.com/library/windows/apps/BR225790) センサーは、センサー周囲の環境光を測定することができます。 これにより、アプリはデバイス周囲の光源設定が変化すると測定を行います。 たとえば、スレート デバイスを持つユーザーが屋内から晴れた屋外に出たとします。 優れたアプリはこの値を使用し、レンダリングされるフォントと背景のコントラストを強めることができます。 それにより、明るい屋外設定で文字が変わらず読みやすくなります。
+
+実装例については、[光センサーのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LightSensor)をご覧ください。
 
 ## <a name="orientation-sensor"></a>方位センサー
 
@@ -113,21 +131,24 @@ translationtype: HT
 
 方位センサーは、デバイスの背面の方向に基づいて、周囲にオーバーレイして描画する高度な拡張現実アプリでよく使われます。
 
+実装例については、[方位センサーのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/OrientationSensor)をご覧ください。
+
 ## <a name="pedometer"></a>万歩計
 
 [**Pedometer**](https://msdn.microsoft.com/library/windows/apps/Dn878203) は、接続したデバイスを持ち運ぶユーザーが歩いた歩数を記録します。 このセンサーを構成すると、任意の時間の歩数を記録できます。 いくつかのフィットネス アプリでは、ユーザーがさまざまなゴールを設定してそれを達成できるように、歩いた歩数を記録します。 この情報を収集して保存すると、時間の経過と共に進み具合を表示することができます。
 
+実装例については、[万歩計のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Pedometer)をご覧ください。
+
 ## <a name="proximity-sensor"></a>近接センサー
 
-[**Proximity**](https://msdn.microsoft.com/library/windows/apps/Dn872427) センサーを使用すると、このセンサーで物体を検出できるかどうかを示すことができます。 デバイスの範囲内に物体があるかどうかを特定するだけでなく、近接センサーは、検出物体までの距離を特定することもできます。 これを使用する可能性のある 1 例として、ユーザーが指定範囲内に入ったら、スリープ状態から復帰するアプリケーションがあります。 このデバイスは、近接センサーが物体を検出するまで低電力のスリープ状態で、その後、よりアクティブな状態に移行します。
+[**Proximity**](https://msdn.microsoft.com/library/windows/apps/Dn872427) センサーを使用すると、このセンサーで物体を検出できるかどうかを示すことができます。 デバイスの範囲内に物体があるかどうかを特定するだけでなく、近接センサーは、検出物体までの距離を特定することもできます。 これを使用する可能性のある 1 例として、ユーザーが指定範囲内に入ったら、スリープ状態から復帰するアプリケーションがあります。 このデバイスは、近接センサーが物体を検出するまで低電力のスリープ状態になっていても、検出後はアクティブな状態に移行します。
+
+実装例については、[近接センサーのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ProximitySensor)をご覧ください。
 
 ## <a name="simple-orientation"></a>簡易方位
 
 [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.simpleorientationsensor.aspx) は、指定のデバイスの現在の象限方位 (表向きまたは裏向き) を検出します。 6 つの可能な [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) の状態があります (**NotRotated**、**Rotated90**、**Rotated180**、**Rotated270**、**FaceUp**、**FaceDown**)。
 
-デバイスが水平または垂直のいずれで保持されているかに基づいて表示を変更するリーダー アプリでは、デバイスがどのように保持されているかを決定するために SimpleOrientationSensor からの値を使います。
+デバイスが水平または垂直のどちらで保持されているかに基づいて表示を変更するリーダー アプリでは、デバイスがどのように保持されているかを決定するために SimpleOrientationSensor からの値を使います。
 
-## <a name="samples"></a>サンプル
-
-複数の異なるセンサーを使用するサンプルについては、[Windows センサーのサンプルに関するページ](http://go.microsoft.com/fwlink/?LinkID=616041)をご覧ください。
-
+実装例については、[簡易方位センサーのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleOrientationSensor)をご覧ください。

@@ -6,14 +6,20 @@ description: "分割ビュー コントロールには、展開/折りたたみ�
 label: Split view
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: b7488f19109925faa2c9e6b3be528cb2d19846e8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: yulikl
+design-contact: kimsea
+dev-contact: tpaine
+doc-status: Published
+ms.openlocfilehash: 126fab3db9a0728626289788757f576648a43856
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="split-view-control"></a>分割ビュー コントロール
 
@@ -21,12 +27,7 @@ translationtype: HT
 
 分割ビュー コントロールには、展開/折りたたみ可能なウィンドウとコンテンツ領域があります。
 
-<div class="important-apis" >
-<b>重要な API</b><br/>
-<ul>
-<li>[**SplitView クラス**](https://msdn.microsoft.com/library/windows/apps/dn864360)</li>
-</ul>
-</div>
+> **重要な API**: [SplitView クラス](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
 SplitView を使ってハブを表示する Microsoft Edge アプリの例を次に示します。
 
@@ -53,7 +54,7 @@ SplitView を使ってハブを表示する Microsoft Edge アプリの例を次
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
-分割ビュー コントロールは、[ナビゲーション ウィンドウ](nav-pane.md)の作成に使うことができます。 このパターンを構築するには、展開/折りたたみボタン ("ハンバーガー" ボタン) とナビゲーション項目を表すリスト ビューを追加する必要があります。
+分割ビュー コントロールは、[ナビゲーション ウィンドウ](navigationview.md)の作成に使うことができます。 このパターンを構築するには、展開/折りたたみボタン ("ハンバーガー" ボタン) とナビゲーション項目を表すリスト ビューを追加する必要があります。
 
 分割ビュー コントロールを使って、ユーザーが補足的なウィンドウを開いたり閉じたりできる "引き出し" エクスペリエンスを作成することもできます。
 
@@ -83,7 +84,7 @@ SplitView を使ってハブを表示する Microsoft Edge アプリの例を次
 
 
 ## <a name="related-topics"></a>関連トピック
-* [ナビゲーション ウィンドウ パターン](nav-pane.md)
+* [ナビゲーション ウィンドウ パターン](navigationview.md)
 * [リスト ビュー](lists.md)
  
 

@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
 title: "アプリ起動時のパフォーマンスのベスト プラクティス"
 description: "起動とアクティブ化を処理する方法を向上させることによって、最適な起動時間のユニバーサル Windows プラットフォーム (UWP) アプリを作成します。"
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 9ab3eeeffbab26f5d26d28160a750c50d53b7e96
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e36103953ad3fb04ee5beef7e263fc326f817c0b
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>アプリ起動時のパフォーマンスのベスト プラクティス
 
@@ -51,7 +53,7 @@ UWP アプリがユーザーのコンピューターに届くまで、アプリ�
 
 Ngen.exe は、使用されたことがありネイティブ イメージを持たない、コンピューター上のすべてのアプリをプリコンパイルします。 プリコンパイルが必要なアプリが多い場合には時間がかかりますが、その後の実行時間が大幅に高速化されます。
 
-アプリが再コンパイルされると、ネイティブ イメージは使われなくなります。 一方、アプリをジャスト イン タイムでコンパイルする場合は、アプリは実行時にコンパイルされます。 新しいネイティブ イメージを取得するためには Ngen.exe をもう一度実行する必要があります。
+アプリが再コンパイルされると、ネイティブ イメージは使われなくなります。 一方、アプリをジャスト イン タイムでコンパイルする場合は、アプリは実行時にコンパイルされます。 新しいネイティブ イメージを取得するには、Ngen.exe をもう一度実行する必要があります。
 
 ### <a name="defer-work-as-long-as-possible"></a>可能な限りの処理の遅延
 
@@ -108,7 +110,7 @@ XAML アプリの起動時のパフォーマンスは、起動時に作成する
 
 ![ライブ ビジュアル ツリー。](images/live-visual-tree.png)
 
-**x:DeferLoadStrategy を使用します**。 要素を折りたたむか、不透明度を 0 に設定すると、要素は作成されなくなります。 x:DeferLoadStrategy を使って、UI の要素の読み込みを遅らせて、必要に応じて読み込むことができます。 これは、起動画面に表示されない UI の処理を遅延させ、必要に応じて読み込んだり、遅延させた一連のロジックの一部として読み込む場合に適した方法です。 読み込みをトリガーするために必要なことは、要素の FindName を呼び出すことだけです。 詳しい説明と例については、「[x:DeferLoadStrategy 属性](https://msdn.microsoft.com/library/windows/apps/Mt204785)」をご覧ください。
+**延期を使用します**。 要素を折りたたむか、不透明度を 0 に設定すると、要素は作成されなくなります。 x:Load または x:DeferLoadStrategy を使って、UI の要素の読み込みを遅らせて、必要に応じて読み込むことができます。 これは、起動画面に表示されない UI の処理を遅延させ、必要に応じて読み込んだり、遅延させた一連のロジックの一部として読み込む場合に適した方法です。 読み込みをトリガーするために必要なことは、要素の FindName を呼び出すことだけです。 詳しい説明と例については、「[x:Load 属性](../xaml-platform/x-load-attribute.md)」と「[x:DeferLoadStrategy 属性](https://msdn.microsoft.com/library/windows/apps/Mt204785)」をご覧ください。
 
 **仮想化**。 UI に一覧またはリピーター コンテンツがある場合、UI の仮想化を使うことを強くお勧めします。 一覧の UI が仮想化されていない場合、すべての要素を作成するコストを前払いすることになり、起動が遅くなる可能性があります。 「[ListView と GridView の UI の最適化](optimize-gridview-and-listview.md)」をご覧ください。
 
@@ -365,4 +367,3 @@ PageStackEntry には、Frame.Navigate() メソッドに渡されたパラメー
 ページをキャッシュすると、インスタンス化が回避され、ナビゲーションのパフォーマンスが向上することにより、パフォーマンス面のメリットとなる可能性があります。 ページのキャッシュが過剰になると、ワーキング セットに影響を及ぼすため、パフォーマンスが低下する可能性があります。
 
 したがって、アプリケーションで適切なページのキャッシュを使用することをお勧めします。 たとえば、アプリがフレームに項目の一覧を表示する場合、項目をタップすると、アプリはフレームをその項目の詳細ページに移動します。 この一覧ページは、キャッシュするように設定することをお勧めします。 詳細ページがすべての項目で同じである場合、このページもキャッシュすることをお勧めします。 ただし、詳細ページの種類が異なる場合は、キャッシュを無効のままにしておくことをお勧めします。
-

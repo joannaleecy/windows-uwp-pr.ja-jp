@@ -11,9 +11,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 493e491bd16b7346046394d66587788caf06db4f
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
-translationtype: HT
+ms.openlocfilehash: 67714d0b7a95e1034486d39853c91c9a7590bfa5
+ms.sourcegitcommit: 45490bd85e6f8d247a041841d547ecac2ff48250
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/23/2017
 ---
 # <a name="guidelines-for-app-settings"></a>アプリ設定のガイドライン
 
@@ -95,11 +97,13 @@ translationtype: HT
 
 また、Windows 設定アプリの [色] ページへのハイパーリンクを追加して、ユーザーが Windowsの既定のテーマを確認できるようにすることもお勧めします。 ハイパーリンク テキストには、"Windows の色の設定" という文字列を使用します。
 
-![[モードを選ぶ] セクション](images/appsettings_mode.png)
+!["モードを選ぶ" セクション](images/appsettings_mode.png)
 
-<div class=”microsoft-internal-note”>
-[モードを選ぶ] セクションの優先テキスト文字列を示す詳細な赤線は、[UNI](http://uni/DesignDepot.FrontEnd/#/ProductNav/2543/0/dv/?t=Windows%7CControls%7CColorMode&f=RS2)で利用できます。
+<!--
+<div class="microsoft-internal-note">
+Detailed redlines showing preferred text strings for the "Choose a mode" section are available on [UNI](http://uni/DesignDepot.FrontEnd/#/ProductNav/2543/0/dv/?t=Windows%7CControls%7CColorMode&f=RS2).
 </div>
+-->
 
 ## <a name="about-section-and-give-feedback-button"></a>"バージョン情報" のセクションと "フィードバックを送信する" ためのボタン
 

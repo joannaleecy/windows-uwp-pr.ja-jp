@@ -1,17 +1,19 @@
 ---
-author: Xansky
+author: normesta
 description: "このトピックでは、SMS の作成ダイアログを起動して、ユーザーが SMS メッセージを送信できるようにする方法について説明します。 ダイアログを表示する前に、SMS の各フィールドにデータを設定することができます。 メッセージは、ユーザーが送信ボタンをタップするまで送信されません。"
 title: "SMS メッセージの送信"
 ms.assetid: 4D7B509B-1CF0-4852-9691-E96D8352A4D6
 keywords: "連絡先, SMS, 送信"
-ms.author: mhopkins
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 3d2edd2e26633abacce07a2a6fe9f8c9d14b0afe
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e5c3678e6c12a65b6821d2fc2a54e0710f7dcef3
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="send-an-sms-message"></a>SMS メッセージの送信
 

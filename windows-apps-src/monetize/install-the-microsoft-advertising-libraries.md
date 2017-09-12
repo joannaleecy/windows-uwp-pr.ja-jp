@@ -1,105 +1,115 @@
 ---
 author: mcleanbyron
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
-description: "Microsoft Advertising ライブラリをインストールする方法について説明します。"
-title: "Microsoft Advertising ライブラリのインストール"
+description: "Microsoft Advertising SDK をインストールする方法について説明します。"
+title: "Microsoft Advertising SDK のインストール"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, 広告, 宣伝, インストール, SDK, ライブラリ"
-ms.openlocfilehash: 3304efd659a32176a44c33d9df4e8062b3bc7700
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: "Windows 10, UWP, 広告, 宣伝, インストール, SDK, Advertising ライブラリ"
+ms.openlocfilehash: e953b327a32bc8385cc45190e5fd11dd5acee4b8
+ms.sourcegitcommit: c5c96ec4b6ccef57f69eb341b06e6280994c9767
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/27/2017
 ---
-# <a name="install-the-microsoft-advertising-libraries"></a>Microsoft Advertising ライブラリのインストール
+# <a name="install-the-microsoft-advertising-sdk"></a>Microsoft Advertising SDK のインストール
 
+Windows アプリで広告を表示するには、次の SDK のいずれかをインストールします。
 
+* Windows 10 用の UWP アプリの場合は、[Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) をインストールします。 この SDK は、Visual Studio 2015 およびそれ以降のバージョンの拡張機能です。
+* Windows 8.1 および Windows Phone 8.x 用のアプリの場合は、[Windows および Windows Phone 8.x 用の Microsoft Advertising SDK](http://aka.ms/store-8-sdk) を使用します。 この SDK は、Visual Studio 2015 と Visual Studio 2013 の拡張機能です。
 
+> [!NOTE]
+> JavaScript/HTML UWP アプリを開発していて、Windows 10 SDK (14393) 以降をインストールしている場合、WinJS ライブラリもインストールする必要があります。 このライブラリは以前のバージョンの Windows 10 SDK に含まれていましたが、Windows 10 SDK (14393) 以降ではこのライブラリを別個にインストールする必要があります。 WinJS をインストールする場合は、「[Get WinJS (WinJS を入手する)](http://try.buildwinjs.com/download/GetWinJS/)」をご覧ください。
 
-Windows 10 用のユニバーサル Windows プラットフォーム (UWP) アプリ向けに、[Microsoft Store Services SDK](http://aka.ms/store-em-sdk) には Microsoft Advertising ライブラリが含まれています。 この SDK は、Visual Studio 2015 およびそれ以降のバージョンの拡張機能です。 この SDK のインストールについて詳しくは、[この記事](microsoft-store-services-sdk.md)をご覧ください。
+<span id="install-msi" />
+## <a name="install-via-msi"></a>MSI によるインストール
 
-> **注**&nbsp;&nbsp;Windows 10 SDK (14393) 以降をインストールしている場合、JavaScript/HTML UWP アプリに広告を追加するには WinJS ライブラリもインストールする必要があります。 このライブラリは以前のバージョンの Windows 10 SDK に含まれていましたが、Windows 10 SDK (14393) 以降ではこのライブラリを別個にインストールする必要があります。 WinJS をインストールする場合は、「[Get WinJS (WinJS を入手する)](http://try.buildwinjs.com/download/GetWinJS/)」をご覧ください。
+MSI インストーラーを使って Microsoft Advertising SDK をインストールするには
 
-Windows 8.1 および Windows Phone 8.x 用の XAML アプリと JavaScript/HTML アプリ向けには、[Windows および Windows Phone 8.x 用の Microsoft Advertising SDK](http://aka.ms/store-8-sdk) にMicrosoft Advertising ライブラリが含まれています。 この SDK は、Visual Studio 2015 と Visual Studio 2013 の拡張機能です。
+1.  Visual Studio のすべてのインスタンスを閉じます。
 
-Windows Phone Silverlight 8.x アプリ向けには、Microsoft Advertising ライブラリは NuGet パッケージとして提供されています。このパッケージは、ダウンロードしてプロジェクトにインストールできます。 詳しくは、「[Windows Phone Silverlight の AdControl](adcontrol-in-windows-phone-silverlight.md)」をご覧ください。
+2. Microsoft Advertising SDK、Universal Ad Client SDK、Ad Mediator 拡張、または Microsoft Store Engagement and Monetization SDK の以前のバージョンを以前にインストールしていた場合は、これらの SDK のバージョンをアンインストールします。 必要に応じて、**コマンド プロンプト** ウィンドウを開き、次のコマンドを実行して、Visual Studio と共にインストールされている可能性があり、コンピューター上のインストールされているプログラムの一覧には表示されない可能性がある、古い広告 SDK のバージョンをすべて削除します。
+  ```
+  MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
+  MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
+  MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
+  ```
 
-## <a name="library-names-for-advertising"></a>広告用のライブラリの名前
+3.  [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (Windows 10 用 UWP アプリ向け) または [Windows および Windows Phone 8.x 用 Microsoft Advertising SDK](http://aka.ms/store-8-sdk) (Windows 8.1 および Windows Phone 8.x 用 XAML および JavaScript/HTML アプリ向け) をダウンロードしてインストールします。 インストールには数分かかることがあります。 確実に処理が完了するまでお待ちください。
 
+4.  Visual Studio を再起動します。
 
-Windows および Windows Phone 8.x 用の Microsoft Store Services SDK と Microsoft Advertising SDK には、いくつか次のような広告ライブラリが用意されています。
+5.  以前のバージョンの Microsoft Advertising SDK、Universal Ad Client SDK、Microsoft Store Engagement and Monetization SDK の Advertising ライブラリを参照する既存のプロジェクトがある場合には、Visual Studio でプロジェクトを開き、プロジェクトをクリーンしてリビルドすることをお勧めします (**ソリューション エクスプ ローラー**でプロジェクト ノードを右クリックして、**[クリーン]** を選択し、次にもう一度プロジェクト ノードを右クリックして、**[リビルド]** を選択します)。
 
-* Microsoft Store Services SDK には、Microsoft Advertising ライブラリが含まれています (XAML アプリと JavaScript/HTML アプリ用の [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) クラスと [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) クラスを提供します)。
+  または、プロジェクトで初めて Microsoft Advertising SDK を使う場合には、[Microsoft Advertising SDK への参照を追加](#reference)することができます。
 
-* Windows および Windows Phone 8.x 用の Microsoft Advertising SDK には、2 つのセットの広告ライブラリが含まれています。1 つは、Microsoft Advertising 用ライブラリです (XAML および JavaScript/HTML アプリ用の [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) クラスと [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) クラスを提供します)。もう 1 つは、広告仲介ライブラリ用のライブラリです (**AdMediatorControl** クラスを提供します)。
+<span id="install-nuget" />
+## <a name="install-via-nuget-uwp-only"></a>NuGet によるインストール (UWP のみ)
 
-このドキュメントでは、Microsoft Advertising ライブラリの **AdControl** クラスと **InterstitialAd** クラスを使ってバナー広告やスポット広告を表示する方法について説明します。 Windows 8.1 アプリと Windows Phone 8.x アプリ向けの広告仲介の使用方法について詳しくは、「[広告仲介を使って収益を最大限に高める](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx)」をご覧ください。
+NuGet を使って特定の UWP プロジェクトに Microsoft Advertising SDK をインストールするには
 
->**注**&nbsp;&nbsp;**AdMediatorControl** クラスを使用した広告の仲介は、Windows 10 用の UWP アプリでは現在サポートされていません。 サーバー側の広告仲介は、UWP アプリで間もなく利用可能になる予定です。この場合、バナー広告 (**AdControl**) とスポット広告 (**InterstitialAd**) には同じ API が使用されます。
+1.  Visual Studio のすべてのインスタンスを閉じます。
 
-いずれかの広告コントロールをアプリ コードで使う場合、事前に適切なライブラリをプロジェクトで参照する必要があります。 次の表に、Visual Studio の **[参照マネージャー]** ダイアログ ボックスに表示される各ライブラリの名前を示します。
+2.  Microsoft Advertising SDK、Universal Ad Client SDK、Ad Mediator 拡張、または Microsoft Store Engagement and Monetization SDK の以前のバージョンを以前にインストールしていた場合は、これらの SDK のバージョンをアンインストールします。 必要に応じて、**コマンド プロンプト** ウィンドウを開き、次のコマンドを実行して、Visual Studio と共にインストールされている可能性があり、コンピューター上のインストールされているプログラムの一覧には表示されない可能性がある、古い広告 SDK のバージョンをすべて削除します。
+  ```
+  MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
+  MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
+  MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
+  ```
 
+3.  Visual Studio を起動し、Microsoft Advertising SDK を使用するプロジェクトを開きます。
+    > [!NOTE]
+    > プロジェクトに SDK の以前の MSI インストールからのライブラリの参照が既に含まれている場合は、これらの参照をプロジェクトから削除します。 これらの参照は、参照先のライブラリが前の手順で削除されたため、その隣に警告アイコンが表示されます。
 
-<table>
-    <thead>
-        <tr><th>コントロール名</th><th>プロジェクトの種類</th><th>参照マネージャーでのライブラリの名前</th><th>バージョン番号</th></tr>
-    </thead>
-    <tbody>
-    <tr>
-            <td rowspan="3">**AdControl**、**InterstitialAd** (XAML)</td>
-            <td>UWP</td>
-            <td>Microsoft Advertising SDK for XAML</td>
-            <td>10.0</td>
-        </tr>
-        <tr>
-            <td>Windows 8.1</td>
-            <td>Ad Mediator SDK for Windows 8.1 XAML</td>
-            <td>1.0</td>
-        </tr>
-        <tr>
-            <td>Windows Phone 8.1</td>
-            <td>Ad Mediator SDK for Windows Phone 8.1 XAML</td>
-            <td>1.0</td>
-        </tr>
-    <tr>
-            <td rowspan="3">**AdControl**、**InterstitialAd** (JavaScript/HTML)</td>
-            <td>UWP</td>
-            <td>Microsoft Advertising SDK for JavaScript</td>
-            <td>10.0</td>
-        </tr>
-        <tr>
-            <td>Windows 8.1</td>
-            <td>Microsoft Advertising SDK for Windows 8.1 Native (JS)</td>
-            <td>8.5</td>
-        </tr>
-        <tr>
-            <td>Windows Phone 8.1</td>
-            <td>Microsoft Advertising SDK for Windows Phone 8.1 Native (JS)</td>
-            <td>8.5</td>
-        </tr>
-    <tr>
-            <td rowspan="3">**AdMediatorControl** (XAML のみ)</td>
-            <td>UWP</td>
-            <td>Microsoft Advertising Universal SDK</td>
-            <td>1.0</td>
-        </tr>
-        <tr>
-            <td>Windows 8.1</td>
-            <td>Ad Mediator SDK for Windows 8.1 XAML</td>
-            <td>1.0</td>
-        </tr>
-        <tr>
-            <td>Windows Phone 8.1</td>
-            <td>Ad Mediator SDK for Windows Phone 8.1 XAML</td>
-            <td>1.0</td>
-        </tr>
-    </tbody>
-</table>
+4. Visual Studio で、**[プロジェクト]** と **[NuGet パッケージの管理]** をクリックします。
 
- 
+5. 検索ボックスに、「**Microsoft.Advertising.XAML**」(XAML プロジェクト用) または「**Microsoft.Advertising.JS**」(JavaScript/HTML プロジェクト用) と入力し、対応するパッケージをインストールします。 パッケージのインストールが完了したら、ソリューションを保存します。
+    > [!NOTE]
+    > **[出力]** ウィンドウに、指定されたパスが長すぎることを示す*インストール パッケージ* エラーが表示されたとき、場合によっては、NuGet を構成して、既定の場所よりも短いパスで示される別の場所にパッケージを展開する必要があります。 これを行うには、```repositoryPath``` 値をコンピューターの nuget.config ファイルに追加し、それを短いフォルダーのパスに割り当て、そこに NuGet パッケージが展開されるようにします。 詳しくは、NuGet ドキュメントの[この記事](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)をご覧ください。 または、Visual Studio プロジェクトを短いパスを持つ別のフォルダーに移動してみることができます。
 
- 
+6. ソリューションを閉じ、再度開きます。
 
- 
+7.  プロジェクトが NuGet によりインストールされた以前のバージョンの Microsoft Advertising SDK のライブラリを既に参照している場合で、プロジェクトを SDK の新しいリリースに更新する場合には、プロジェクトをクリーンしてリビルドすることをお勧めします (**ソリューション エクスプローラー**でプロジェクト ノードを右クリックして、**[クリーン]**を選択し、次にもう一度プロジェクト ノードを右クリックして、**[リビルド]** を選択します)。
+
+  または、プロジェクトで初めて Microsoft Advertising SDK を使う場合には、[Microsoft Advertising SDK への参照を追加](#reference)することができます。
+
+<span id="reference" />
+## <a name="add-a-reference-to-the-microsoft-advertising-sdk"></a>Microsoft Advertising SDK への参照を追加する
+
+Microsoft Advertising SDK をインストールした後、次の手順に従ってプロジェクト内の SDK を参照すると、アドバタイズ API を使用できます。
+
+1. Visual Studio でプロジェクトを開きます。
+    > [!NOTE]
+    > プロジェクトのターゲットが **[Any CPU]** (任意の CPU) になっている場合は、アーキテクチャ固有のビルド出力 (たとえば、**[x86]**) を使うようにプロジェクトを更新します。 プロジェクトのターゲットが **[Any CPU]** (任意の CPU) になっていると、次の手順で Microsoft Advertising SDK への参照を正常に追加できません。 詳しくは、「[プロジェクトのターゲットを "Any CPU" に設定すると参照エラーが発生する](known-issues-for-the-advertising-libraries.md#reference_errors)」をご覧ください。
+
+2. **ソリューション エクスプローラー**で、**[参照設定]** を右クリックし、**[参照の追加]** を選択します。
+
+3. **参照マネージャー**で、プロジェクトの種類に応じて次のいずれかの参照を選択します。
+
+    -   ユニバーサル Windows プラットフォーム (UWP) プロジェクトの場合: **[ユニバーサル Windows]** を展開して **[拡張機能]** をクリックし、**[Microsoft Advertising SDK for XAML]** (XAML アプリの場合) または **[Microsoft Advertising SDK for JavaScript]** (JavaScript と HTML を使って構築されたアプリの場合) の横にあるチェック ボックスをオンにします。
+
+    -   Windows 8.1 プロジェクトの場合: **[Windows 8.1]** を展開して **[拡張機能]** をクリックし、**[Ad Mediator SDK for Windows 8.1 XAML]** (XAML アプリの場合) または **[Microsoft Advertising SDK for Windows 8.1 Native (JS)]** (JavaScript と HTML を使って構築されたアプリの場合) の横にあるチェック ボックスをオンにします。
+
+    -   Windows Phone 8.1 プロジェクトの場合: **[Windows Phone 8.1]** を展開して **[拡張機能]** をクリックし、**[Ad Mediator SDK for Windows Phone 8.1 XAML]** (XAML アプリの場合) または **[Microsoft Advertising SDK for Windows Phone 8.1 Native (JS)]** (JavaScript と HTML を使って構築されたアプリの場合) の横にあるチェック ボックスをオンにします。
+
+4.  **[参照マネージャー]** で、[OK] をクリックします。
+
+アドバタイズ API を使い始める方法を示すチュートリアルでは、次の記事をご覧ください。
+
+* [スポット広告](interstitial-ads.md)
+* [ネイティブ広告](native-ads.md)
+* [XAML および .NET の AdControl](adcontrol-in-xaml-and--net.md)
+* [HTML 5 および Javascript の AdControl](adcontrol-in-html-5-and-javascript.md)
+
+<span id="framework" />
+## <a name="understanding-framework-packages-in-the-microsoft-advertising-sdk-uwp-only"></a>Microsoft Advertising SDK (UWP only) のフレームワーク パッケージについて
+
+(UWP アプリ用) [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) の Microsoft.Advertising.dll ライブラリは、*フレームワーク パッケージ*として構成されています。 このライブラリには、[Microsoft.Advertising](https://msdn.microsoft.com/library/windows/apps/mt313187.aspx) のアドバタイズ API と [Microsoft.Advertising.WinRT.UI](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aspx) 名前空間が含まれます。
+
+このライブラリはフレームワーク パッケージであるため、このライブラリを使用するバージョンのアプリをユーザーがインストールすると、このライブラリは、修正されてパフォーマンスが向上した新しいバージョンのライブラリが公開されるたびに、ユーザーのデバイスで Windows Update によって自動的に更新されます。 これにより、利用できる最新バージョンのライブラリがユーザーのデバイスに確実にインストールされます。
+
+このライブラリに新しい API や機能が導入された新しいバージョンの SDK がリリースされた場合は、これらの機能を使用するために最新バージョンの SDK をインストールする必要があります。 このシナリオでは、更新されたアプリをストアに公開する必要もあります。

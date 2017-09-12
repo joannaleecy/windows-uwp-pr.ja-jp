@@ -6,14 +6,16 @@ ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: e0fccee6ede019b6bb8d8792956d2dca791bf63b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 8907b57bce9c39c1c508b97536485a08e8e1bf83
+ms.sourcegitcommit: 9a1310468970c8d1ade0fb200126dff56ea8c9e1
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/14/2017
 ---
 # <a name="tiles-for-uwp-apps"></a>UWP アプリのタイル
 
@@ -26,6 +28,8 @@ translationtype: HT
 
 Visual Studio で新しいプロジェクトを作成すると、アプリの名前とロゴを表示する単純な既定のタイルが作成されます。
 
+タイルを編集するには、メインの UWP プロジェクトの **Package.appxmanifest** ファイルをダブル クリックし、デザイナーを開きます (またはファイルを右クリックして、[コードの表示] を選びます)。
+
 ```XML
   <Applications>
     <Application Id="App"
@@ -33,8 +37,8 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
       EntryPoint="ExampleApp.App">
       <uap:VisualElements
         DisplayName="ExampleApp"
-        Square150x150Logo="Assets\Logo.png"
-        Square44x44Logo="Assets\SmallLogo.png"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png"
         Description="ExampleApp"
         BackgroundColor="#464646">
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
@@ -49,15 +53,15 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
 -   ShortName: タイル上の表示名を収めるスペースには限りがあるため、アプリの名前が切り詰められないような名前を指定することをお勧めします。
 -   ロゴ イメージ:
 
-    ここに挙げた画像を、自分で用意したものに置き換えます。 さまざまな倍率に応じて複数の画像を指定することができますが、必ずしもすべて指定する必要はありません。 多種多様なデバイスでアプリを適切に表示するために、各画像の複数のスケール バージョン (100%、200%、400%) を用意することをお勧めします。
+    ここに挙げた画像を、自分で用意したものに置き換えます。 さまざまな倍率に応じて複数の画像を指定することができますが、必ずしもすべて指定する必要はありません。 多種多様なデバイスでアプリを適切に表示するために、各画像の複数のスケール バージョン (100%、200%、400%) を用意することをお勧めします。 これらのアセットの生成について詳しくは、「[タイルとアイコン アセット](tiles-and-notifications-app-assets.md)」をご覧ください。
 
-    拡大/縮小された画像の名前付け規則は次のとおりです: テスト
+    拡大/縮小された画像の名前付け規則は次のとおりです。
     
     *&lt;画像名&gt;*.scale-*&lt;倍率&gt;*.*&lt;画像ファイルの拡張子&gt;* 
 
-    例: SmallLogo.scale-100.png
+    例: SplashScreen.scale-100.png
 
-    画像を参照するときには、*&lt;画像名&gt;*.*&lt;画像ファイルの拡張子&gt;* という形式で参照します (この例では "SmallLogo.png")。 指定した画像からデバイスに合わせて拡大/縮小された画像が自動的に選択されます。
+    画像を参照するときには、*&lt;画像名&gt;*.*&lt;画像ファイルの拡張子&gt;* という形式で参照します (この例では "SplashScreen.png")。 指定した画像からデバイスに合わせて拡大/縮小された画像が自動的に選択されます。
 
 -   強制ではありませんが、幅広で大きいタイル サイズに合ったロゴを用意して、ユーザーの側でアプリのタイルをそのサイズに変更できるようにすることを強くお勧めします。 追加の画像を指定するには、`DefaultTile` 要素を作成し、`Wide310x150Logo` および `Square310x310Logo` 属性を使って、その画像を指定します。
 ```    XML
@@ -67,13 +71,13 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
           EntryPoint="ExampleApp.App">
           <uap:VisualElements
             DisplayName="ExampleApp"
-            Square150x150Logo="Assets\Logo.png"
-            Square44x44Logo="Assets\SmallLogo.png"
+            Square150x150Logo="Assets\Square150x150Logo.png"
+            Square44x44Logo="Assets\Square44x44Logo.png"
             Description="ExampleApp"
             BackgroundColor="#464646">
             <uap:DefaultTile
-              Wide310x150Logo="Assets\WideLogo.png"
-              Square310x310Logo="Assets\LargeLogo.png">
+              Wide310x150Logo="Assets\Wide310x150Logo.png"
+              Square310x310Logo="Assets\Square310x310Logo.png">
             </uap:DefaultTile>
             <uap:SplashScreen Image="Assets\SplashScreen.png" />
           </uap:VisualElements>
@@ -86,23 +90,4 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
 
 アプリをインストールした後は、通知を使ってタイルをカスタマイズできます。 これは、アプリを初めてを起動したときや、プッシュ通知など、イベントへの応答として実行できます。
 
-1.  タイルについて説明する XML ペイロード ([**Windows.Data.Xml.Dom.XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br206173) の形式) を作成します。
-
-    -   Windows 10 で新たにアダプティブ タイルのスキーマを使用できるようになりました。 手順については、「[アダプティブ タイル](tiles-and-notifications-create-adaptive-tiles.md)」をご覧ください。 スキーマについて詳しくは、「[アダプティブ タイルのスキーマ](tiles-and-notifications-adaptive-tiles-schema.md)」をご覧ください。 
-
-    -   タイルの定義には、Windows 8.1 タイル テンプレートを使用できます。 詳しくは、「[タイルとバッジの作成 (Windows 8.1)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868260)」をご覧ください。
-
-2.  タイル通知オブジェクトを作成し、作成した [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br206173) に渡します。 通知オブジェクトには、次のようなものがあります。
-    -   タイルをすぐに更新するための [**Windows.UI.NotificationsTileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616) オブジェクト。
-    -   タイルを後の任意の時点で更新するための [**Windows.UI.Notifications.ScheduledTileNotification**](https://msdn.microsoft.com/library/windows/apps/hh701637) オブジェクト。
-
-3.  [**Windows.UI.Notifications.TileUpdateManager.CreateTileUpdaterForApplication**](https://msdn.microsoft.com/library/windows/apps/br208623) を使って [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) オブジェクトを作成します。
-4.  [**TileUpdater.Update**](https://msdn.microsoft.com/library/windows/apps/br208632) メソッドを呼び出して、手順 2. で作成したタイル通知オブジェクトに渡します。
-
- 
-
- 
-
-
-
-
+タイル通知を送信する方法については、「[ローカル タイル通知の送信](tiles-and-notifications-sending-a-local-tile-notification.md)」をご覧ください。

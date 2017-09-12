@@ -9,25 +9,25 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, サンプル, DirectX, 基礎"
-ms.openlocfilehash: cc155d7a454cabe5c0d820f5d74313dfeaf01830
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e0769690fa3ac49057fb34d36d2b9d6ff6f25e28
+ms.sourcegitcommit: ae20971c4c8276034cd22fd7e10b0e3ddfddf480
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/11/2017
 ---
 # <a name="marble-maze-sample-fundamentals"></a>Marble Maze サンプルの基礎
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
-このドキュメントでは、Marble Maze プロジェクトの基本的な特性について説明します。たとえば、Windows ランタイム環境で Visual C++ をどのように使うか、どのように作られ、構成され、ビルドされるかなどです。 また、コードで使われるいくつかの規則についても説明します。
+このトピックでは、Marble Maze プロジェクトの基本的な特性について説明します。たとえば、Windows ランタイム環境で Visual C++ をどのように使うか、どのように作られ、構成され、ビルドされるかなどです。 また、コードで使われるいくつかの規則についても説明します。
 
 > **注**   このドキュメントに対応するサンプル コードは、[DirectX Marble Maze ゲームのサンプルに関するページ](http://go.microsoft.com/fwlink/?LinkId=624011)にあります。
 
- 
-## 
 このドキュメントでは、ユニバーサル Windows プラットフォーム (UWP) ゲームの計画と開発の際に重要となるいくつかの事柄について説明します。取り上げる内容は次のとおりです。
 
--   DirectX UWP ゲームを作るために、C++ アプリケーションで **DirectX 11 アプリ (ユニバーサル Windows)** テンプレートを使います。 一般的なプロジェクトをビルドするときのように、UWP アプリ プロジェクトをビルドするために Visual Studio を使います。
+-   DirectX UWP ゲームを作るために、Visual Studio で **DirectX 11 アプリ (ユニバーサル Windows) **Visual C++ テンプレートを使います。
 -   より新しい、オブジェクト指向に沿った方法で UWP アプリを開発できるようなクラスとインターフェイスが、Windows ランタイムには用意されています。
 -   Windows ランタイム変数の有効期間を管理するにはハット (^) 記号を付けたオブジェクト参照、COM オブジェクトの有効期間を管理するには [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)、その他のすべてのヒープ割り当て C++ オブジェクトの有効期間を管理するには [**std::shared\_ptr**](https://msdn.microsoft.com/library/windows/apps/bb982026.aspx) または [**std::unique\_ptr**](https://msdn.microsoft.com/library/windows/apps/ee410601.aspx) を使います。
 -   ほとんどの場合、予期しないエラーを処理するには、結果コードではなく例外処理を使います。
@@ -36,26 +36,28 @@ translationtype: HT
 ## <a name="creating-the-visual-studio-project"></a>Visual Studio プロジェクトの作成
 
 
-サンプルをダウンロードおよび展開してある場合は、Visual Studio で MarbleMaze.sln ソリューション ファイルを開くと、コードが表示されます。 また、MSDN サンプル ギャラリーの [DirectX Marble Maze ゲームのサンプルに関するページ](http://go.microsoft.com/fwlink/?LinkId=624011)で、**[コードの参照]** タブを選択してソースを表示することもできます。
+サンプルをダウンロードおよび展開してある場合は、Visual Studio で **MarbleMaze.sln** ソリューション ファイルを開くと、コードが表示されます。 また、MSDN サンプル ギャラリーの [DirectX Marble Maze ゲームのサンプルに関するページ](http://go.microsoft.com/fwlink/?LinkId=624011)で、**[コードの参照]** タブを選択してソースを表示することもできます。
 
-Marble Maze の Visual Studio プロジェクトを作ったときには、既にあるプロジェクトを利用しました。 しかし、DirectX UWP ゲームで必要となる基本的な機能を持つプロジェクトがまだない場合は、Visual Studio **DirectX 11 アプリ (ユニバーサル Windows)** テンプレートに基づくプロジェクトを作ることをお勧めします。このテンプレートには、基本的な機能を備えた 3-D アプリケーションが用意されているためです。
+Marble Maze の Visual Studio プロジェクトを作ったときには、既にあるプロジェクトを利用しました。 しかし、DirectX UWP ゲームで必要となる基本的な機能を持つプロジェクトがまだない場合は、Visual Studio **DirectX 11 アプリ (ユニバーサル Windows)** テンプレートに基づくプロジェクトを作ることをお勧めします。このテンプレートには、基本的な機能を備えた 3D アプリケーションが用意されているためです。
 
-**DirectX 11 アプリ (ユニバーサル Windows)** テンプレートで重要なプロジェクト設定の 1 つは、プログラムが Windows ランタイム言語拡張機能を使えるようにする **/ZW** オプションです。 Visual Studio テンプレートを使う場合、このオプションは既定で有効になっています。
+**DirectX 11 アプリ (ユニバーサル Windows)** テンプレートで重要なプロジェクト設定の 1 つは、プログラムが Windows ランタイム言語拡張機能を使えるようにする **/ZW** オプションです。 Visual Studio テンプレートを使う場合、このオプションは既定で有効になっています。 Visual Studio でコンパイラ オプションを設定する方法について詳しくは、「[コンパイラ オプションの設定](https://docs.microsoft.com/cpp/build/reference/setting-compiler-options)」をご覧ください。
 
-> **注意**   **/ZW** オプションは、**/clr** などのオプションとの互換性がありません。**/clr** の場合は、同じ Visual C++ プロジェクトで .NET Framework と Windows ランタイムの両方をターゲットにすることはできないことを意味します。
+> **注意** **/ZW** オプションは、**/clr** などのオプションとの互換性がありません。 **/clr** の場合は、同じ Visual C++ プロジェクトで .NET Framework と Windows ランタイムの両方をターゲットにすることはできないことを意味します。
 
  
 
-Windows ストアで入手するすべての UWP アプリは、アプリ パッケージの形式で提供されます。 アプリ パッケージには、アプリについての情報が記載されたパッケージ マニフェストが含まれています。 たとえば、アプリの機能 (つまり、保護されたシステム リソースやユーザー データへの必要なアクセス) を指定できます。 アプリで特定の機能が必須であると決めた場合は、パッケージ マニフェストを使って、必要な機能を宣言します。 マニフェストでは、サポートされているデバイスの回転、タイル画像、スプラッシュ画面など、プロジェクト プロパティを指定することもできます。 アプリ パッケージについて詳しくは、「[アプリのパッケージ化](https://msdn.microsoft.com/library/windows/apps/mt270969)」をご覧ください。
+Windows ストアで入手するすべての UWP アプリは、アプリ パッケージの形式で提供されます。 アプリ パッケージには、アプリについての情報が記載されたパッケージ マニフェストが含まれています。 たとえば、アプリの機能 (つまり、保護されたシステム リソースやユーザー データへの必要なアクセス) を指定できます。 アプリで特定の機能が必須であると決めた場合は、パッケージ マニフェストを使って、必要な機能を宣言します。 マニフェストでは、サポートされているデバイスの回転、タイル画像、スプラッシュ画面など、プロジェクト プロパティを指定することもできます。 プロジェクトで **Package.appxmanifest** を開いて、マニフェストを編集することができます。 アプリ パッケージについて詳しくは、「[アプリのパッケージ化](https://msdn.microsoft.com/library/windows/apps/mt270969)」をご覧ください。
 
 ##  <a name="building-deploying-and-running-the-game"></a>ゲームのビルド、展開、実行
 
 
-UWP アプリ プロジェクトのビルド方法は、一般的なプロジェクトのビルド方法と同じです。 メニュー バーで、**[ビルド]、[ソリューションのビルド]** の順にクリックします。ビルド手順によってコードがコンパイルされ、UWP アプリとして使えるようにパッケージ化されます。
+<!--To build the project, on the menu bar, choose **Build > Build Solution**. The build step compiles the code and also packages it for use as a UWP app.
 
-プロジェクトをビルドしたら、それを展開する必要があります。メニュー バーで、**[ビルド]、[ソリューションの配置]** の順にクリックします。デバッガーからゲームを実行すると、Visual Studio でもプロジェクトを展開できます。
+After you build the project, you must deploy it. In the dropdown menus at the top, select your deployment configuration, and then on the menu bar, choose **Build > Deploy Solution**.
 
-プロジェクトを展開したら、Marble Maze タイルを選んでゲームを実行します。 または、Visual Studio のメニュー バーで、**[デバッグ]**、[デバッグの開始] の順にクリックします。
+After you deploy the project, pick the Marble Maze tile to run the game. Alternatively, from Visual Studio, on the menu bar, choose **Debug, Start Debugging**.-->
+
+Visual Studio の上部の、緑色の再生ボタンの左のドロップダウン リストで、展開構成を選択します。 デバイスのアーキテクチャ (32 ビットでは **x86**、64 ビットでは **x64**) による **ローカル コンピューター** をターゲットとする**デバッグ**として設定することをお勧めします。 **リモート コンピューター**でテストすることも、または USB で接続された**デバイス**を対象とすることも、可能です。 次に、緑色の再生ボタンをクリックして、デバイスへビルドと展開を行います。
 
 ###  <a name="controlling-the-game"></a>ゲームの制御
 

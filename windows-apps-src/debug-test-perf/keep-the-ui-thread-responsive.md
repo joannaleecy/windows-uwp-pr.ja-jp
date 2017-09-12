@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
 title: "UI スレッドの応答性の確保"
 description: "ユーザーは、コンピューターの種類に関係なく、アプリが計算を実行しているときも引き続き応答性を保つことを期待します。"
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 921af1b7f408bed5f846af631592755d48a37dd4
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: d5be2a8ea14f35d048b4402f2cfb1018d5998c3d
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="keep-the-ui-thread-responsive"></a>UI スレッドの応答性の確保
 
@@ -29,7 +31,7 @@ UI スレッドを使って、UI スレッドへのほぼすべての変更を�
 
 アプリでの最も低速なステージとして、起動や、ビューの切り替えなどがあります。 ユーザーに最初に表示される UI を起動するために必要なもの以上の作業を実行しないでください。 たとえば、段階的に公開される UI の UI や、ポップアップのコンテンツなどは作成しないでください。
 
--   [x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785) を使って要素のインスタンス化を遅らせます。
+-   [x:Load attribute](../xaml-platform/x-load-attribute.md) または [x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785) を使って要素のインスタンス化を遅らせます。
 -   プログラムを使って、要素をツリーにオンデマンドで挿入します。
 
 [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) キューにより、UI スレッドはビジーになっていない状態を処理できます。
@@ -107,4 +109,3 @@ public class AsyncExample
 ## <a name="related-topics"></a>関連トピック
 
 * [カスタム ユーザー操作](https://msdn.microsoft.com/library/windows/apps/Mt185599)
-

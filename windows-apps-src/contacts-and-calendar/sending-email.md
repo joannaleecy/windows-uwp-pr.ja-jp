@@ -1,17 +1,19 @@
 ---
-author: Xansky
+author: normesta
 description: "メールの作成ダイアログを起動して、ユーザーがメール メッセージを送信できるようにする方法について説明します。 ダイアログを表示する前に、メールの各フィールドにデータを設定することができます。 メッセージは、ユーザーが送信ボタンをタップするまで送信されません。"
 title: "メールの送信"
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
 keywords: "連絡先, メール, 送信"
-ms.author: mhopkins
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 67c2f808050547f5a56cbeb4e1087cdf3555727d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: bfeec341b0b4e63b4fe37118c1f7daac67929018
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="send-email"></a>メールの送信
 
@@ -31,8 +33,8 @@ translationtype: HT
 新しい [**EmailMessage**](https://msdn.microsoft.com/library/windows/apps/Dn631270) オブジェクトを作成し、メールの作成ダイアログに事前に入力するデータを設定します。 ダイアログを表示するには、[**ShowComposeNewEmailAsync**](https://msdn.microsoft.com/library/windows/apps/Dn631269) を呼び出します。
 
 ``` cs
-private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipient, 
-    string messageBody, 
+private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipient,
+    string messageBody,
     StorageFile attachmentFile)
 {
     var emailMessage = new Windows.ApplicationModel.Email.EmailMessage();
@@ -57,7 +59,7 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
     }
 
     await Windows.ApplicationModel.Email.EmailManager.ShowComposeNewEmailAsync(emailMessage);
-        
+
 }
 ```
 
@@ -72,7 +74,3 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
  
 
  
-
-
-
-

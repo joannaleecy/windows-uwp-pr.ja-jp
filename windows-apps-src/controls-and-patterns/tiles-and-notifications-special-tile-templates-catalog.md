@@ -6,14 +6,16 @@ ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 label: TBD
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 11c8fbdfd8653fe93ab712c865dc1d23e7a76581
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: ebeac8bb4d2787514c788ecfa0ab1381ff40820b
+ms.sourcegitcommit: 9a1310468970c8d1ade0fb200126dff56ea8c9e1
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/14/2017
 ---
 # <a name="special-tile-templates"></a>特別なタイル テンプレート
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -35,13 +37,25 @@ translationtype: HT
 
 **手順 1: 画像アセットを PNG 形式で作成する**
 
-タイルのアイコン アセットを作成し、他のアセットと共にプロジェクト リソースに配置します。 200 x 200 ピクセル以上のアイコンを作成してください。これは最小サイズで、電話やデスクトップ上の小サイズと普通サイズのタイルのどちらにも使うことができます。 最適なユーザー エクスペリエンスを実現するには、各サイズのアイコンを作成します。 サイズについて詳しくは、次の画像をご覧ください。
+タイルのアイコン アセットを作成し、他のアセットと共にプロジェクト リソースに配置します。 200 x 200 ピクセル以上のアイコンを作成してください。これは最小サイズで、電話やデスクトップ上の小サイズと普通サイズのタイルのどちらにも使うことができます。 最適なユーザー エクスペリエンスを実現するには、各サイズのアイコンを作成します。 これらのアセットにはパディングは必要ありません。 サイズについて詳しくは、次の画像をご覧ください。
 
 透明度を設定し、PNG 形式でアイコン アセットを保存します。 Windows Phone では、透明でないピクセルは白色 (RGB 255, 255, 255) で表示されます。 一貫性と簡素化を保つには、デスクトップのアイコンにも白色を使ってください。
 
 タブレット、ノート PC、デスクトップの Windows 10 では、正方形のアイコン アセットのみがサポートされます。 Windows Phone では、正方形のアセットと、電話アイコンなどの画像に便利な、高さが幅よりも大きいアセット (幅と高さの比率は最大 2:3) の両方がサポートされます。
 
 ![小サイズと普通サイズのタイルでのアイコンのサイズ (電話とデスクトップ)](images/iconic-template-sizing-info.png)
+
+![バッジがあるアセットとバッジがないアセットのサイズ調整](images/assetguidance24.png)
+
+正方形のアセットの場合、コンテナー内で自動的に中央に配置されます。
+
+![正方形のアセットのサイズ調整、バッジがある場合とバッジがない場合](images/assetguidance25.png)
+
+正方形以外のアセットの場合、自動的に水平方向/垂直方向の中央に配置され、コンテナーの幅/高さに合わせてスナップされます。
+
+![正方形以外のアセットのサイズ調整、バッジがある場合とバッジがない場合](images/assetguidance26a.png)
+
+![正方形以外のアセットのサイズ調整、バッジがある場合とバッジがない場合](images/assetguidance26b.png)
 
 **手順 2: ベース タイルを作成する**
 

@@ -1,23 +1,23 @@
 ---
-author: scottmill
+author: jwmsft
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
 title: "コンポジション効果"
 description: "効果 API を使用すると、開発者は UI のレンダリング方法をカスタマイズできます。"
-ms.author: scotmi
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 769727c8e128046cac44767dcd05b1b952af51ee
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: windows 10, uwp
+ms.openlocfilehash: 3ee0d4c66dedfb0309a8426c779af3d71c8d1afc
+ms.sourcegitcommit: b42d14c775efbf449a544ddb881abd1c65c1ee86
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/20/2017
 ---
 # <a name="composition-effects"></a>コンポジション効果
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
-
-[**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) WinRT API により、アニメーション化可能な効果プロパティを持つ画像と UI にリアルタイムの効果を適用できます。 この概要では、コンポジションのビジュアルに効果を適用するために使用できる機能に目を通します。
+[**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) API により、アニメーション化可能な効果プロパティを持つ画像と UI にリアルタイムの効果を適用できます。 この概要では、コンポジションのビジュアルに効果を適用するために使用できる機能に目を通します。
 
 アプリケーションの効果を記述する開発者に対して [ユニバーサル Windows プラットフォーム (UWP)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) との整合性をサポートするには、コンポジション効果で Win2D の IGraphicsEffect インターフェイスを活用し、[Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 名前空間を介して効果記述子を使用します。
 
@@ -25,13 +25,15 @@ translationtype: HT
 
 効果ブラシは、コンテンツが効果グラフの出力に基づくコンポジション ツリー ビジュアルで使用されます。 効果は既存のサーフェスとテクスチャを参照できますが、他のコンポジション ツリーの出力は参照できません。
 
+[**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) で効果ブラシを使って、XAML UIElement に効果を適用することもできます。
+
 ## <a name="effect-features"></a>効果機能
 
--   [効果ライブラリ](./composition-effects.md#effect-library)
--   [チェーン効果](./composition-effects.md#chaining-effects)
--   [アニメーションのサポート](./composition-effects.md#animation-support)
--   [効果プロパティ: 固定とアニメーション化](./composition-effects.md#constant-vs-animated-effect-properties)
--   [独立したプロパティを持つ複数の効果インスタンス](./composition-effects.md#multiple-effect-instances-with-independent-properties)
+- [効果ライブラリ](./composition-effects.md#effect-library)
+- [チェーン効果](./composition-effects.md#chaining-effects)
+- [アニメーションのサポート](./composition-effects.md#animation-support)
+- [効果プロパティ: 固定とアニメーション化](./composition-effects.md#constant-vs-animated-effect-properties)
+- [独立したプロパティを持つ複数の効果インスタンス](./composition-effects.md#multiple-effect-instances-with-independent-properties)
 
 ### <a name="effect-library"></a>効果ライブラリ
 
@@ -54,8 +56,6 @@ translationtype: HT
 | セピア                | 画像をセピア調に変換します。                                                                                                                                                                                          |
 | 色温度と濃淡 | 画像の色温度および濃淡を調整します。                                                                                                                                                                           |
 
- 
-
 詳しくは、Win2D の [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 名前空間をご覧ください。 コンポジションでサポートされていない効果は \[NoComposition\] として示されています。
 
 ### <a name="chaining-effects"></a>チェーン効果
@@ -75,9 +75,8 @@ new Microsoft.Graphics.Canvas.Effects.ArithmeticCompositeEffect
   MultiplyAmount = 0,
   Source1Amount = 0.5f,
   Source2Amount = 0.5f,
-  Offset = 0    
+  Offset = 0
 }
-  
 ```
 
 先ほどの例では、2 つの入力を受け取る算術コンポジット効果について説明しています。 2 番目の入力の彩度効果では、彩度プロパティを 0.5 に設定しています。
@@ -86,7 +85,7 @@ new Microsoft.Graphics.Canvas.Effects.ArithmeticCompositeEffect
 
 効果プロパティはアニメーション化をサポートしています。効果のコンパイル時に、効果プロパティをアニメーション化するか、定数として固定するかを指定できます。 アニメーション化可能なプロパティは、「効果名.プロパティ名」という形式の文字列で指定されます。 これらのプロパティは、効果の複数のインスタンスで個別にアニメーション化できます。
 
-### <a name="constant-vs-animated-effect-properties"></a>効果プロパティ: 固定とアニメーション化 
+### <a name="constant-vs-animated-effect-properties"></a>効果プロパティ: 固定とアニメーション化
 
 効果のコンパイル時に、効果プロパティを動的に設定されるようにするか、定数として固定されるようにするかを指定できます。 動的プロパティは「<effect name>.<property name>」という形式の文字列で指定します。 動的プロパティを特定の値に設定するか、コンポジションのアニメーション システムを使ってアニメーション化できます。
 
@@ -95,13 +94,13 @@ new Microsoft.Graphics.Canvas.Effects.ArithmeticCompositeEffect
 固定の彩度で効果をコンパイル:
 
 ```cs
-var effectFactory = _compositor.CreateEffectFactory(graphicsEffect);              
+var effectFactory = _compositor.CreateEffectFactory(graphicsEffect);
 ```
 
 動的な彩度で効果をコンパイル:
 
 ```cs
-var effectFactory = _compositor.CreateEffectFactory(graphicsEffect, new[]{SaturationEffect.Saturation});
+var effectFactory = _compositor.CreateEffectFactory(graphicsEffect, new[]{"SaturationEffect.Saturation"});
 _catEffect = effectFactory.CreateBrush();
 _catEffect.SetSourceParameter("mySource", surfaceBrush);
 _catEffect.Properties.InsertScalar("saturationEffect.Saturation", 0f);
@@ -136,24 +135,24 @@ catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimati
 
 このクイック スタート チュートリアルでは、効果のいくつかの基本機能の使用方法を示します。
 
--   [Visual Studio のインストール](./composition-effects.md#installing-visual-studio)
--   [新しいプロジェクトの作成](./composition-effects.md#creating-a-new-project)
--   [Win2D のインストール](./composition-effects.md#installing-win2d)
--   [コンポジション設定の基本](./composition-effects.md#setting-your-composition-basics)
--   [CompositionSurface ブラシの作成](./composition-effects.md#creating-a-compositionsurface-brush)
--   [効果の作成、コンパイル、および適用](./composition-effects.md#creating-compiling-and-applying-effects)
+- [Visual Studio のインストール](./composition-effects.md#installing-visual-studio)
+- [新しいプロジェクトの作成](./composition-effects.md#creating-a-new-project)
+- [Win2D のインストール](./composition-effects.md#installing-win2d)
+- [コンポジション設定の基本](./composition-effects.md#setting-your-composition-basics)
+- [CompositionSurface ブラシの作成](./composition-effects.md#creating-a-compositionsurface-brush)
+- [効果の作成、コンパイル、および適用](./composition-effects.md#creating-compiling-and-applying-effects)
 
 ### <a name="installing-visual-studio"></a>Visual Studio のインストール
 
--   サポートされている Visual Studio バージョンがインストールされていない場合は、「[Visual Studio ダウンロード](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)」ページをご覧ください。
+- サポートされている Visual Studio バージョンがインストールされていない場合は、「[Visual Studio ダウンロード](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)」ページをご覧ください。
 
 ### <a name="creating-a-new-project"></a>新しいプロジェクトの作成
 
--   [ファイル]、[新規]、[プロジェクト] の順にクリックします。
--   [Visual C#] を選択します。
--   「空のアプリ (Windows ユニバーサル)」を作成します (Visual Studio 2015)。
--   選択したプロジェクト名を入力します。
--   [OK] をクリックします。
+- [ファイル]、[新規]、[プロジェクト] の順にクリックします。
+- [Visual C#] を選択します。
+- 「空のアプリ (Windows ユニバーサル)」を作成します (Visual Studio 2015)。
+- 選択したプロジェクト名を入力します。
+- [OK] をクリックします。
 
 ### <a name="installing-win2d"></a>Win2D のインストール
 
@@ -161,10 +160,10 @@ Win2D は Nuget.org パッケージとしてリリースされており、効果
 
 Windows 10 用と Windows 8.1 用の 2 つのパッケージ バージョンがあります。 コンポジション効果の場合、Windows 10 バージョンを使います。
 
--   [ツール]、[NuGet パッケージ マネージャー]、[ソリューションの NuGet パッケージの管理] の順にクリックして、NuGet パッケージ マネージャーを起動します。
--   「Win2D」を検索し、Windows のターゲット バージョンに適したパッケージを選択します。 Windows.UI.Composition は Windows 10 (8.1 ではない) をサポートするため、Win2D.uwp を選択します。
--   使用許諾契約書に同意します。
--   [閉じる] をクリックします。
+- [ツール]、[NuGet パッケージ マネージャー]、[ソリューションの NuGet パッケージの管理] の順にクリックして、NuGet パッケージ マネージャーを起動します。
+- 「Win2D」を検索し、Windows のターゲット バージョンに適したパッケージを選択します。 Windows.UI.Composition は Windows 10 (8.1 ではない) をサポートするため、Win2D.uwp を選択します。
+- 使用許諾契約書に同意します。
+- [閉じる] をクリックします。
 
 次のいくつかの手順では、コンポジション API を使って、すべての彩度を除去する彩度効果をこの猫の画像に適用します。 このモデルでは効果が作成され、画像に適用されます。
 
@@ -186,67 +185,66 @@ Desaturate();
 
 ```cs
 CompositionSurfaceBrush surfaceBrush = _compositor.CreateSurfaceBrush();
-LoadImage(surfaceBrush); 
+LoadImage(surfaceBrush);
 ```
 
 ### <a name="creating-compiling-and-applying-effects"></a>効果の作成、コンパイル、および適用
 
-1.) グラフィックス効果を作成する
-```cs
-var graphicsEffect = new SaturationEffect
-{
-  Saturation = 0.0f,
-  Source = new CompositionEffectSourceParameter("mySource")
-};
-```
+1. グラフィックス効果を作成する
 
-2.) 効果をコンパイルし、効果ブラシを作成する
-```cs
-var effectFactory = _compositor.CreateEffectFactory(graphicsEffect);
+    ```cs
+    var graphicsEffect = new SaturationEffect
+    {
+      Saturation = 0.0f,
+      Source = new CompositionEffectSourceParameter("mySource")
+    };
+    ```
 
-var catEffect = effectFactory.CreateBrush();
-catEffect.SetSourceParameter("mySource", surfaceBrush);
-```
+1. 効果をコンパイルし、効果ブラシを作成する
 
-3.) コンポジション ツリーに SpriteVIsual を作成し、効果を適用する
-```cs
-var catVisual = _compositor.CreateSpriteVisual();
-  catVisual.Brush = catEffect;
-  catVisual.Size = new Vector2(219, 300);
-  _root.Children.InsertAtBottom(catVisual);
-}
-```
+    ```cs
+    var effectFactory = _compositor.CreateEffectFactory(graphicsEffect);
 
-4.) 読み込む画像ソースを作成する。
-```cs
-CompositionImage imageSource = _imageFactory.CreateImageFromUri(new Uri("ms-appx:///Assets/cat.png"));
-CompositionImageLoadResult result = await imageSource.CompleteLoadAsync();
-if (result.Status == CompositionImageLoadStatus.Success)
-```
+    var catEffect = effectFactory.CreateBrush();
+    catEffect.SetSourceParameter("mySource", surfaceBrush);
+    ```
 
-5.) SpriteVisual のサーフェスのサイズとブラシ
-```cs
-brush.Surface = imageSource.Surface;
-```
+1. コンポジション ツリーに SpriteVisual を作成し、効果を適用する
 
-6.) アプリを実行する - 結果は彩度を下げた猫になるはずです。
+    ```cs
+    var catVisual = _compositor.CreateSpriteVisual();
+      catVisual.Brush = catEffect;
+      catVisual.Size = new Vector2(219, 300);
+      _root.Children.InsertAtBottom(catVisual);
+    }
+    ```
+
+1. 読み込む画像ソースを作成する。
+
+    ```cs
+    CompositionImage imageSource = _imageFactory.CreateImageFromUri(new Uri("ms-appx:///Assets/cat.png"));
+    CompositionImageLoadResult result = await imageSource.CompleteLoadAsync();
+    if (result.Status == CompositionImageLoadStatus.Success)
+    ```
+
+1. SpriteVisual のサーフェスのサイズとブラシ
+
+    ```cs
+    brush.Surface = imageSource.Surface;
+    ```
+
+1. アプリを実行する – 結果は彩度を下げた猫になるはずです。
 
 ![彩度を下げた画像](images/composition-cat-desaturated.png)
+
 ## <a name="more-information"></a>詳細情報
 
--   [Microsoft - コンポジション GitHub](https://github.com/Microsoft/composition)
--   [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
--   [Twitter の Windows Composition チーム](https://twitter.com/wincomposition)
--   [コンポジションの概要](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
--   [ビジュアル ツリーの基本](composition-visual-tree.md)
--   [コンポジションのブラシ](composition-brushes.md)
--   [アニメーションの概要](composition-animation.md)
--   [BeginDraw と EndDraw によるコンポジションでの DirectX と Direct2D のネイティブ相互運用](composition-native-interop.md)
-
- 
-
- 
-
-
-
-
+- [Microsoft - コンポジション GitHub](https://github.com/Microsoft/composition)
+- [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
+- [Twitter の Windows Composition チーム](https://twitter.com/wincomposition)
+- [コンポジションの概要](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
+- [ビジュアル ツリーの基本](composition-visual-tree.md)
+- [コンポジションのブラシ](composition-brushes.md)
+- [XamlCompositionBrushBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)
+- [アニメーションの概要](composition-animation.md)
+- [BeginDraw と EndDraw によるコンポジションでの DirectX と Direct2D のネイティブ相互運用](composition-native-interop.md)

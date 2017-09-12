@@ -5,78 +5,101 @@ title: "メニューとコンテキスト メニュー"
 label: Menus and context menus
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 0327d8c1-8329-4be2-84e3-66e1e9a0aa60
-ms.openlocfilehash: 3e194902b9fb166600ee58ec601993dc808a6853
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: yulikl
+design-contact: kimsea
+dev-contact: llongley
+doc-status: Published
+ms.openlocfilehash: a53c71e999b94e2ad25ad21b9eec09b81681c0a4
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="menus-and-context-menus"></a>メニューとコンテキスト メニュー
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 メニューとコンテキスト メニューは、ユーザーが要求するときにコマンドやオプションの一覧を表示します。
 
-![一般的なコンテキスト メニューの例](images/controls_contextmenu_singlepane.png)
+> **重要な API**: [MenuFlyout クラス](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout)、[ContextFlyout プロパティ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx)、[FlyoutBase.AttachedFlyout プロパティ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx)
 
-<div class="important-apis" >
-<b>重要な API</b><br/>
-<ul>
-<li>[MenuFlyout クラス](https://msdn.microsoft.com/library/windows/apps/dn299030)</li>
-<li>[ContextFlyout プロパティ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx)</li>
-<li>[FlyoutBase.AttachedFlyout プロパティ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx)</li>
-</ul>
-</div>
+![一般的なコンテキスト メニューの例](images/contextmenu_rs2_icons.png)
 
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
-メニューとコンテキスト メニューは、コマンドを整理してユーザーに要求されるまで非表示にすることによって、スペースを節約します。 特定のコマンドを頻繁に使っていて、利用可能なスペースがある場合は、メニューを使って移動しなくてもよいように、メニュー内ではなく、独自の要素に直接配置することを検討してください。 
+メニューとコンテキスト メニューは、コマンドを整理してユーザーに要求されるまで非表示にすることによって、スペースを節約します。 特定のコマンドを頻繁に使っていて、利用可能なスペースがある場合は、メニューを使って移動しなくてもよいように、メニュー内ではなく、独自の要素に直接配置することを検討してください。
 
 メニューとコンテキスト メニューは、コマンドを整理する目的で使います。通知などの任意のコンテンツを表示する場合や、確認を要求する場合は、[ダイアログまたはポップアップ](dialogs.md)を使います。  
 
 
 ## <a name="menus-vs-context-menus"></a>メニューとコンテキスト メニュー
 
-メニューとコンテキスト メニューは、外観や、何を含めることができるかという点で同一です。 実際、これらは [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030) という同じコントロールを使って作成します。 唯一の違いは、ユーザーのアクセス方法です。 
+メニューとコンテキスト メニューは、外観や、何を含めることができるかという点で同一です。 実際、これらは [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030) という同じコントロールを使って作成します。 唯一の違いは、ユーザーのアクセス方法です。
 
 メニューまたはコンテキスト メニューは、どのような場合に使えばよいでしょうか。
 * ホスト要素がボタンである場合や、追加のコマンドを表示することを主な役割とする他のコマンド要素である場合は、メニューを使います。
-* ホスト要素が、別の主な役割 (テキストまたは画像を表示するなど) を持つ他の種類の要素である場合は、コンテキスト メニューを使います。 
+* ホスト要素が、別の主な役割 (テキストまたは画像を表示するなど) を持つ他の種類の要素である場合は、コンテキスト メニューを使います。
 
-たとえば、ナビゲーション ウィンドウのボタンでメニューを使って、追加のナビゲーション オプションを提供します。 このシナリオでは、ボタン コントロールの主な役割は、メニューへのアクセスを提供することです。 
+たとえば、ナビゲーション ウィンドウのボタンでメニューを使って、追加のナビゲーション オプションを提供します。 このシナリオでは、ボタン コントロールの主な役割は、メニューへのアクセスを提供することです。
 
-テキスト要素にコマンド (切り取り、コピー、貼り付けなど) を追加する場合は、メニューの代わりにコンテキスト メニューを使います。 このシナリオでは、テキスト要素の主な役割はテキストを表示して編集することであり、追加のコマンド (切り取り、コピー、貼り付けなど) は補助的な役割であるため、コンテキスト メニューに属します。 
+テキスト要素にコマンド (切り取り、コピー、貼り付けなど) を追加する場合は、メニューの代わりにコンテキスト メニューを使います。 このシナリオでは、テキスト要素の主な役割はテキストを表示して編集することであり、追加のコマンド (切り取り、コピー、貼り付けなど) は補助的な役割であるため、コンテキスト メニューに属します。
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
    <p><b>メニュー</b></p>
-<p>
 <ul>
 <li>常に表示される 1 つのエントリ ポイント (たとえば、画面上部の [ファイル] メニュー) があります。</li>
 <li>通常、ボタンまたは親のメニュー項目にアタッチされます。</li>
-<li>左クリック (または、指でタップするなどの同等の操作) によって呼び出されます。</li>  
-<li>[Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) プロパティまたは [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) プロパティを介して要素に関連付けられます。</li> 
+<li>左クリック (または、指でタップするなどの同等の操作) によって呼び出されます。</li><li>[Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) プロパティまたは [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) プロパティを介して要素に関連付けられます。</li>
 </ul>
-</p><br/>
-
-  </div>
+</div>
   <div class="side-by-side-content-right">
    <p><b>コンテキスト メニュー</b></p>
-   
-<ul>
-<li>1 つの要素にアタッチされますが、コンテキストが意味をなす場合にのみアクセスできます。</li>
-<li>右クリック (または、指で長押しするなどの同等の操作) によって呼び出されます。</li>
-<li>[ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) プロパティを介して要素に関連付けられます。  
-</ul><br/>
 
+<ul>
+<li>1 つの要素にアタッチされ、セカンダリ コマンドを表示します。</li>
+<li>右クリック (または、指で長押しするなどの同等の操作) によって呼び出されます。</li><li>[ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) プロパティを介して要素に関連付けられます。</li>
+</ul>
   </div>
 </div>
 </div>
+
+## <a name="icons"></a>アイコン
+
+次のようなメニュー項目のアイコンを用意することを検討します。
+
+<ul>
+<li> 最もよく使われる項目 </li>
+<li> アイコンが一般的またはよく知られているメニュー項目 </li>
+<li> アイコンがコマンドの役割を適切に示すメニュー項目 </li>
+</ul>
+
+メニューが長い場合や、コマンドに標準的な視覚表現がない場合は特にそうですが、すべてのメニュー項目にアイコンを用意しなければならないと考える必要はありません。 わかりづらいアイコンは役に立たず、視覚的な混乱をもたらし、ユーザーが重要なメニュー項目に集中できなくなります。
+
+![アイコンのあるコンテキスト メニューの例](images/contextmenu_rs2_icons.png)
+
+````xaml
+<MenuFlyout>
+  <MenuFlyoutItem Text="Share" >
+    <MenuFlyoutItem.Icon>
+      <FontIcon Glyph="&#xE72D;" />
+    </MenuFlyoutItem.Icon>
+  </MenuFlyoutItem>
+  <MenuFlyoutItem Text="Copy" Icon="Copy" />
+  <MenuFlyoutItem Text="Delete" Icon="Delete" />
+  <MenuFlyoutSeparator />
+  <MenuFlyoutItem Text="Rename" />
+  <MenuFlyoutItem Text="Select" />
+</MenuFlyout>
+````
+> MenuFlyoutItems のアイコンのサイズは 16 x 16 ピクセルです。 SymbolIcon、FontIcon、または PathIcon を使用した場合、忠実さを失うことなく、アイコンが適切なサイズに自動的に拡大縮小されます。 BitmapIcon を使用すると、アセットは必ず 16 x 16 ピクセルになります。  
 
 ## <a name="create-a-menu-or-a-context-menu"></a>メニューまたはコンテキスト メニューの作成
 
@@ -89,8 +112,8 @@ translationtype: HT
 この例では、[MenuFlyout クラス](https://msdn.microsoft.com/library/windows/apps/dn299030)を作成し、ほとんどのコントロールで利用できる [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) プロパティを使って、コンテキスト メニューとして [MenuFlyout クラス](https://msdn.microsoft.com/library/windows/apps/dn299030)を表示します。
 
 ````xaml
-<Rectangle 
-  Height="100" Width="100" 
+<Rectangle
+  Height="100" Width="100"
   Tapped="Rectangle_Tapped">
   <Rectangle.ContextFlyout>
     <MenuFlyout>
@@ -106,7 +129,7 @@ translationtype: HT
 ````csharp
 private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 {
-    // Change the color from red to blue or blue to red. 
+    // Change the color from red to blue or blue to red.
     if (rectangleFill.Color == Windows.UI.Colors.Red)
     {
         rectangleFill.Color = Windows.UI.Colors.Blue;
@@ -118,11 +141,11 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 }
 ````
 
-次の例はほとんど同じですが、[ContextFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) プロパティを使って、コンテキスト メニューとして [MenuFlyout クラス](https://msdn.microsoft.com/library/windows/apps/dn299030)を表示する代わりに、[FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) プロパティを使って、メニューとして MenuFlyout クラスを表示します。 
+次の例はほとんど同じですが、[ContextFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) プロパティを使って、コンテキスト メニューとして [MenuFlyout クラス](https://msdn.microsoft.com/library/windows/apps/dn299030)を表示する代わりに、[FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) プロパティを使って、メニューとして MenuFlyout クラスを表示します。
 
 ````xaml
-<Rectangle 
-  Height="100" Width="100" 
+<Rectangle
+  Height="100" Width="100"
   Tapped="Rectangle_Tapped">
   <FlyoutBase.AttachedFlyout>
     <MenuFlyout>
@@ -143,7 +166,7 @@ private void Rectangle_Tapped(object sender, TappedRoutedEventArgs e)
 
 private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 {
-    // Change the color from red to blue or blue to red. 
+    // Change the color from red to blue or blue to red.
     if (rectangleFill.Color == Windows.UI.Colors.Red)
     {
         rectangleFill.Color = Windows.UI.Colors.Blue;
@@ -156,10 +179,10 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 ````
 
 
-> 簡易非表示コントロール (メニュー、コンテキスト メニュー、その他のポップアップ) は、閉じられるまで一時的な UI にキーボードのフォーカスやゲームパッドのフォーカスを捕捉します。 この動作に視覚的な合図を提供するために、Xbox の簡易非表示コントロールは、スコープ外の UI を暗く表示するオーバーレイを描画します。 この動作は、新しい [LightDismissOverlayMode](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx) プロパティを使って変更できます。 既定では、一時的な UI は Xbox で簡易非表示オーバーレイを描画し、他のデバイス ファミリでは描画しませんが、アプリで強制的にオーバーレイを常に**オン**にするか、常に**オフ**にするかを選択できます。
+> 簡易非表示コントロール (メニュー、コンテキスト メニュー、その他のポップアップ) は、閉じられるまで一時的な UI にキーボードのフォーカスやゲームパッドのフォーカスを捕捉します。 この動作に視覚的な合図を提供するために、Xbox の簡易非表示コントロールは、スコープ外の UI を暗く表示するオーバーレイを描画します。 この動作は、[LightDismissOverlayMode](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx) プロパティを使って変更できます。 既定では、一時的な UI は Xbox で簡易非表示オーバーレイを描画し (**Auto**)、他のデバイス ファミリでは描画しませんが、アプリで強制的にオーバーレイを常にオン (**On**) にするか、常にオフ (**Off**) にするかを選択できます。
 
 > ```xaml
-> <MenuFlyout LightDismissOverlayMode=\"Off\">
+> <MenuFlyout LightDismissOverlayMode="Off" />
 > ```
 
 ## <a name="get-the-sample-code"></a>サンプル コードを入手する
@@ -168,4 +191,4 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 
 ## <a name="related-articles"></a>関連記事
 
-- [**MenuFlyout クラス**](https://msdn.microsoft.com/library/windows/apps/dn299030)
+- [MenuFlyout クラス](https://msdn.microsoft.com/library/windows/apps/dn299030)

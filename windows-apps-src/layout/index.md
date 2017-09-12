@@ -6,20 +6,21 @@ keywords: "UWP アプリのレイアウト, ユニバーサル Windows プラッ
 label: Layout
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 08/9/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
-ms.openlocfilehash: 1034588565032301cb0746d79a122e8388dad8f9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 4c1b4617b3b58cb613bcca8d5df456621af730fa
+ms.sourcegitcommit: 0d5b3daddb3ae74f91178c58e35cbab33854cb7f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="layout-for-uwp-apps"></a>UWP アプリのレイアウト
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-
-アプリの構造、ページ レイアウト、ナビゲーションは、アプリのユーザー エクスペリエンスの基盤となるものです。 このセクションの記事は、さまざまなデバイスや画面サイズで簡単に操作でき、適切に表示されるアプリを作成する際に役立ちます。
+アプリの構造、ページ レイアウト、ナビゲーションは、アプリのユーザー エクスペリエンスの基盤となるものです。 このセクションの記事は、Fluent Design System を使って、さまざまなデバイスや画面サイズで簡単に操作でき、適切に表示されるアプリを作成する際に役立ちます。
 
 ## <a name="intro"></a>はじめに
 
@@ -27,7 +28,7 @@ translationtype: HT
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
   <p><b>[アプリの UI 設計の概要](design-and-ui-intro.md)</b><br />
-UWP アプリを設計する場合、さまざまなディスプレイ サイズを持つさまざまなデバイスに合ったユーザー インターフェイスを作成する必要があります。 この記事では、UWP アプリの UI に関連する機能や利点の概要と、応答性の高い UI を設計するためのヒントやコツを示します。 </p>
+UWP アプリを設計する場合、さまざまなディスプレイ サイズを持つさまざまなデバイスに合ったユーザー インターフェイスを作成する必要があります。 この記事では、Fluent Design System の概要、UWP アプリの UI に関連する機能や利点の概要と、応答性の高い UI を設計するためのヒントやコツを示します。 </p>
   </div>
   <div class="side-by-side-content-right">
     ![複数のデバイスで実行されるアプリ](images/rspd-reposition-type1-sm.png)
@@ -60,30 +61,31 @@ UWP アプリのナビゲーションは、ナビゲーション構造、ナビ�
 ## <a name="page-layout"></a>ページのレイアウト 
 次の記事は、さまざまな画面サイズ、ウィンドウ サイズ、解像度、向きで適切に表示される柔軟な UI を作成する際に役立ちます。 
 
+<div style="column-count: 2; column-gap: 40px; margin-top: 40px;">
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-   <p><b>[画面のサイズとブレークポイント](screen-sizes-and-breakpoints-for-responsive-design.md)</b><br/>
+<div style="-webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
+<p style="margin-top: 0px; padding-top: 0px;"><b>[画面のサイズとブレークポイント](screen-sizes-and-breakpoints-for-responsive-design.md)</b><br/>
 対象デバイスと、Windows 10 エコシステム全体での画面サイズの数はあまりに多いため、そのそれぞれのために UI を最適化しても意味がありません。 その代わり、360、640、1024、および 1366 epx という 4 種類の主要なキー幅 ("ブレークポイント" とも呼ばれます) を設計することをお勧めします。</p>
-  </div>
-  <div class="side-by-side-content-right">
- <p><b>[XAML を使ったレイアウトの定義](layouts-with-xaml.md)</b> <br/>
+</div>
+
+<div style="-webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
+  <p><b>[XAML を使ったレイアウトの定義](layouts-with-xaml.md)</b> <br/>
 XAML プロパティとレイアウト パネルを使って、アプリの応答性と適応性を高める方法を説明します。</p>
-  </div>
 </div>
-</div>
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
+<div style="-webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
    <p><b>[レイアウト パネル](layout-panels.md)</b> <br />
-各レイアウト パネルの種類を説明し、パネルを使って XAML UI 要素をレイアウトする方法について説明します。</p>
-  </div>
-  <div class="side-by-side-content-right">
+各レイアウト パネルの種類を説明し、パネルを使って XAML UI 要素をレイアウトする方法について説明します。</p> 
+</div>
+<div style="-webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
  <p><b>[配置、余白、パディング](alignment-margin-padding.md)</b> <br />
 サイズのプロパティ (幅、高さ、および制約) に加え、要素は、配置、余白、パディングのプロパティも含むことができ、これらは、要素がレイアウト パスに移動し、UI に表示されるときにレイアウト動作に影響を与えます。</p> 
-  </div>
 </div>
+<div style="-webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
+ <p><b>[Grid と StackPanel を使ったレイアウトを作成する](grid-tutorial.md)</b> <br />
+ここでは、XAML の Grid 要素と StackPanel 要素を使って単純な天気予報アプリのレイアウトを作成します。 </p> 
 </div>
+
+</div>
+
 
 

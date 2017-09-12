@@ -5,9 +5,17 @@ title: "UWP アプリでのドラッグ アニメーション"
 ms.assetid: 6064755F-6E24-4901-A4FF-263F05F0DFD6
 label: Motion--Drag and drop
 template: detail.hbs
-ms.openlocfilehash: e71b936be1649f8ede394b019369176c7e3ca631
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.author: mijacobs
+ms.date: 05/19/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.openlocfilehash: 78e50f411534997cfb06e574fc52e62e1a7bba39
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="drag-animations"></a>ドラッグ アニメーション
 

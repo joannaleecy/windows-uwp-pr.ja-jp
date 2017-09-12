@@ -7,14 +7,16 @@ label: Command design basics
 template: detail.hbs
 op-migration-status: ready
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: a9e7cda7794b3463ffa567bcf36ebec2d2d02687
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 868221cce04688ea2f7ab50e3062579932fbbd80
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
 #  <a name="command-design-basics-for-uwp-apps"></a>UWP アプリのコマンド設計の基本
 
@@ -22,8 +24,9 @@ translationtype: HT
 
 ユニバーサル Windows プラットフォーム (UWP) アプリでは、*コマンド要素*は、ユーザーがメール送信、項目の削除、フォームの送信などのアクションを実行できる対話型の UI 要素です。 この記事では、ボタンやチェック ボックスなどのコマンド要素、それらの要素でサポートされる操作、それらの要素をホストするコマンド サーフェス (コマンド バーやショートカット メニューなど) について説明します。
 
-## <a name="provide-the-right-type-of-interactions"></a>適切な種類の操作の提供
+> **重要な API**: [ICommand インターフェイス](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Input.ICommand)、[Button クラス](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Button)、[CommandBar クラス](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.commandbar)、[MenuFlyout クラス](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout)
 
+## <a name="provide-the-right-type-of-interactions"></a>適切な種類の操作の提供
 
 コマンド インターフェイスを設計する際、最も重要な決定はユーザーが何を実行できる必要があるかという点です。 たとえば、フォト アプリを作成している場合、ユーザーには写真を編集するツールが必要です。 ただし、写真を表示できるソーシャル メディア アプリを作成している場合は、イメージ編集の優先度は高く可能性があるので、スペース節約のために編集ツールを省略できます。 ユーザーが達成する目的を決定して、それに役立つツールを提供します。
 

@@ -4,16 +4,14 @@ Description: "ツリー ビューのコード例を使用して、展開可能�
 title: "ツリー ビュー"
 label: Tree view
 template: detail.hbs
-ms.openlocfilehash: 88e3e79b7ebdf06c200f3525095d7685f7e3e6dc
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: c7ad99d20fe30ea4b94ad62de45b3832aae3805e
+ms.sourcegitcommit: b42d14c775efbf449a544ddb881abd1c65c1ee86
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/20/2017
 ---
 # <a name="hierarchical-layout-with-treeview"></a>ツリー ビューでの階層的なレイアウト
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-<div class="microsoft-internal-note">
-ツリー ビューの赤線を Design Depot で確認: http://designdepotweb1/DesignDepot.FrontEnd/#/Dashboard/856
-</div>
 
 ツリー ビューは、階層型のリスト パターンになっており、入れ子になった項目を含むノードを展開したり、折りたたんだりすることができます。 入れ子になった項目は、追加のノードや標準的な一覧項目として使うことができます。 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) を使用して、フォルダー構造や入れ子になった関係を UI で視覚的に示すツリー ビューを作成できます。
 

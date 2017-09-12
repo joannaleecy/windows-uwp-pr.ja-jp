@@ -6,14 +6,20 @@ ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 7e00ac2aa08033292ba8d3ce1cebe836fdc3808c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: kimsea
+dev-contact: mitra
+doc-status: Published
+ms.openlocfilehash: 13ca87313835541abffe6190d8a3bc07e67b40f8
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="check-boxes"></a>チェック ボックス
 
@@ -21,16 +27,9 @@ translationtype: HT
 
 チェック ボックスは、アクション項目の選択や選択解除を行うときに使います。 また、チェック ボックスはユーザーが選択する単一の項目や複数の項目の一覧に対して使うことができます。 コントロールには 3 つの選択状態 (選択されていない、選択されている、不確定) があります。 不確定状態は、選択されていない状態と選択されている状態の両方がサブ選択肢のコレクションに含まれている場合に使います。
 
-![チェック ボックスの状態の例](images/templates-checkbox-states-default.png)
+> **重要な API**: [CheckBox クラス](https://msdn.microsoft.com/library/windows/apps/br209316)、[Checked イベント](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)、[IsChecked プロパティ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
 
-<div class="important-apis" >
-<b>重要な API</b><br/>
-<ul>
-<li>[**CheckBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209316)</li>
-<li>[**Checked イベント**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)</li>
-<li>[**IsChecked プロパティ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) </li>
-</ul>
-</div>
+![チェック ボックスの状態の例](images/templates-checkbox-states-default.png)
 
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
@@ -39,7 +38,7 @@ translationtype: HT
 
 ![個人的な選択のための 1 つのチェック ボックス](images/checkbox1.png)
 
-二者択一の場合、**チェック ボックス**と[**トグル スイッチ**](toggles.md)との主な違いは、チェック ボックスが状態を管理し、トグル スイッチが動作を管理する点です。 チェック ボックスによる操作はコミットを遅らせることができますが (たとえばフォームの送信の一部として)、トグル スイッチによる操作は直ちにコミットしなければなりません。 また、複数の選択ができるのは、チェック ボックスだけです。
+二者択一の場合、**チェック ボックス**と[トグル スイッチ](toggles.md)との主な違いは、チェック ボックスが状態を管理し、トグル スイッチが動作を管理する点です。 チェック ボックスによる操作はコミットを遅らせることができますが (たとえばフォームの送信の一部として)、トグル スイッチによる操作は直ちにコミットしなければなりません。 また、複数の選択ができるのは、チェック ボックスだけです。
 
 **複数のチェック ボックス**を使うのは、複数選択シナリオの場合 (ユーザーが相互排他的でない選択肢のグループから 1 つ以上の項目を選ぶ場合) です。
 
@@ -53,19 +52,10 @@ translationtype: HT
 
 **チェック ボックス** コントロールと**ラジオ ボタン** コントロールの両方を使うと、ユーザーはオプションの一覧から選択できます。 チェック ボックスを使うと、ユーザーはオプションの組み合わせを選択できます。 これに対し、ラジオ ボタンを使うと、ユーザーは相互排他的なオプションの中から 1 つのオプションを選択できます。 1 つ以上のオプションがあっても、選択できるのが 1 つだけの場合は、代わりにラジオ ボタンを使います。
 
-## <a name="examples"></a>例
-
-Microsoft Edge ブラウザーのダイアログ内のチェック ボックス。
-
-![Microsoft Edge ブラウザーのダイアログ内のチェック ボックス](images/control-examples/check-box-edge.png)
-
-Windows のアラーム & クロック アプリ内のチェック ボックス。
-
-![Windows のアラーム & クロック アプリ内のチェック ボックス](images/control-examples/check-box-alarm.png)
 
 ## <a name="create-a-checkbox"></a>チェック ボックスを作成する
 
-チェック ボックスにラベルを割り当てるには、[**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) プロパティを設定します。 ラベルはチェック ボックスの横に表示されます。
+チェック ボックスにラベルを割り当てるには、[Content](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) プロパティを設定します。 ラベルはチェック ボックスの横に表示されます。
 
 次の XAML は、フォームの送信前にサービス条件に同意するために使う単一のチェック ボックスを作成します。 
 
@@ -83,9 +73,9 @@ checkBox1.Content = "I agree to the terms of service.";
 
 ### <a name="bind-to-ischecked"></a>IsChecked にバインドする
 
-チェック ボックスがオンになっているかオフになっているかを判断するには、[**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) プロパティを使います。 IsChecked プロパティの値を他のバイナリ値にバインドできます。 ただし、IsChecked は [null 許容](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx)のブール値であるため、値コンバーターを使ってブール値にバインドする必要があります。
+チェック ボックスがオンになっているかオフになっているかを判断するには、[IsChecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) プロパティを使います。 IsChecked プロパティの値を他のバイナリ値にバインドできます。 ただし、IsChecked は [null 許容](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx)のブール値であるため、値コンバーターを使ってブール値にバインドする必要があります。
 
-次の例では、サービス条件に同意するためのチェック ボックスの **IsChecked** プロパティが送信ボタンの [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) プロパティにバインドされます。 送信ボタンは、サービス条件に同意した場合にのみ有効です。
+次の例では、サービス条件に同意するためのチェック ボックスの **IsChecked** プロパティが送信ボタンの [IsEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) プロパティにバインドされます。 送信ボタンは、サービス条件に同意した場合にのみ有効です。
 
 > 注&nbsp;&nbsp;ここには関連するコードのみ掲載しています。 データ バインディングと値コンバーターについて詳しくは、「[データ バインディングの概要](../data-binding/data-binding-quickstart.md)」をご覧ください。
 
@@ -128,7 +118,7 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 
 ### <a name="handle-click-and-checked-events"></a>Click イベントと Checked イベントを処理する
 
-チェック ボックスの状態が変化したときにアクションを実行するには、[**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) イベント、または [**Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx) イベントと [**Unchecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.unchecked.aspx) イベントを処理できます。 
+チェック ボックスの状態が変化したときにアクションを実行するには、[Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) イベント、または [Checked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx) イベントと [Unchecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.unchecked.aspx) イベントを処理できます。 
 
 **Click** イベントはオンの状態が変化するたびに発生します。 Click イベントを処理する場合は、**IsChecked** プロパティを使ってチェック ボックスの状態を確認します。
 
@@ -189,7 +179,7 @@ CheckBox コントロールは [ToggleButton](https://msdn.microsoft.com/library
 オフ | IsChecked | **false** 
 不確定 | IsChecked | **null** 
 
-不確定の状態を報告するチェック ボックスの場合、[**IsThreeState**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.isthreestate.aspx) プロパティを **true** に設定する必要があります。 
+不確定の状態を報告するチェック ボックスの場合、[IsThreeState](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.isthreestate.aspx) プロパティを **true** に設定する必要があります。 
 
 オプションをグループ化できる場合は、不確定状態のチェック ボックスを使ってグループ全体を表すことができます。 グループ内のすべてでなく一部のサブ項目をユーザーが選択する場合は、チェック ボックスの不確定の状態を使います。
 
@@ -299,7 +289,7 @@ private void SetCheckedState()
 
 ## <a name="related-articles"></a>関連記事
 
--   [**CheckBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209316) 
+-   [CheckBox クラス](https://msdn.microsoft.com/library/windows/apps/br209316) 
 -   [ラジオ ボタン](radio-button.md)
 -   [トグル スイッチ](toggles.md)
 

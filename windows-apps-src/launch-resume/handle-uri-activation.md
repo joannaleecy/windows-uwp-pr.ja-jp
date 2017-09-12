@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: b655bea614f1c395959a12e9c3b8a5b1af61d694
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 40c70770028853d5912ef63f84259245252ce881
+ms.sourcegitcommit: 7f03e200ef34f7f24b6f8b6489ecb44aa2b870bc
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/01/2017
 ---
 # <a name="handle-uri-activation"></a>URI のアクティブ化の処理
 
@@ -73,12 +75,7 @@ URI スキーム名に登録するのは、その種類の URI スキームの�
 
 ## <a name="step-2-add-the-proper-icons"></a>ステップ 2: 適切なアイコンを追加する
 
-
-URI スキーム名の既定となるアプリは、そのアイコンがシステムのさまざまな場所に表示されます。アイコンは、たとえば [既定のプログラム] コントロール パネルに表示されます。
-
-これらのすべての場所でロゴが適切に表示されるように、適切なアイコンをプロジェクトと共に含めることをお勧めします。 アプリのタイルのロゴの外観を調和させ、アイコンを透明にするのではなく、アプリの背景色を使います。 パディングせずにロゴを端まで拡張します。 アイコンは、白い背景でテストします。 サンプルのアイコンについては、[関連付けによる起動のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620490)をご覧ください。
-
-![ソリューション エクスプローラーで images フォルダー内にあるファイルを表示した様子。 Icon.targetsize と smallTile-sdk の両方に 16、32、48、256 の各ピクセルのバージョンがあります。](images/seviewofimages.png)
+URI スキーム名の既定となるアプリは、そのアイコンがシステムのさまざまな場所に表示されます。アイコンは、[既定のプログラム] コントロール パネルなどに表示されます。 このため、プロジェクトに 44 x 44 アイコンを含めます。 アプリのタイルのロゴの外観を調和させ、アイコンを透明にするのではなく、アプリの背景色を使います。 パディングせずにロゴを端まで拡張します。 アイコンは、白い背景でテストします。 アイコンについて詳しくは、「[タイルとアイコン アセットのガイドライン](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets)」をご覧ください。
 
 ## <a name="step-3-handle-the-activated-event"></a>ステップ 3: アクティブ化イベントを処理する
 

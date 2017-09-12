@@ -5,12 +5,18 @@ title: "UWP アプリでのポップアップ UI のアニメーション"
 ms.assetid: 4E9025CE-FC90-4d4c-9DE6-EC6B6F2AD9DF
 label: Motion--Pop-up animations
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: cb5d70784e758b4e18092b75df9e0d77243af7fc
-
+ms.author: mijacobs
+ms.date: 05/19/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.openlocfilehash: c91e5cd3d4bad1b29d070f4750beb3dd95b3c5dc
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
-
 # <a name="pop-up-ui-animations"></a>ポップアップ UI のアニメーション
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -47,11 +53,5 @@ ms.openlocfilehash: cb5d70784e758b4e18092b75df9e0d77243af7fc
  
 
 
-
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

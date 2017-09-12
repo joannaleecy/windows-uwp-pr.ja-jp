@@ -4,14 +4,16 @@ ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
 description: "Windows デベロッパー センター アカウントに登録されているアプリの新しいパッケージ フライトの申請を作成するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
 title: "パッケージ フライトの申請の作成"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、Windows ストア申請 API、フライトの申請の作成"
-ms.openlocfilehash: ff296cbdd5114641a469daab14b940042e9673d0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f9d83f6e43e42fdaaf3f5242b461a989e074a9b5
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/04/2017
 ---
 # <a name="create-a-package-flight-submission"></a>パッケージ フライトの申請の作成
 
@@ -28,8 +30,6 @@ translationtype: HT
 * Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
 * このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 * デベロッパー センター アカウントでアプリのパッケージ フライトを作成します。 これは、デベロッパー センター ダッシュボードで行うことも、[パッケージ フライトの作成](create-a-flight.md)のメソッドを使って行うこともできます。
-
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
 ## <a name="request"></a>要求
 
@@ -52,10 +52,10 @@ translationtype: HT
 
 ### <a name="request-parameters"></a>要求パラメーター
 
-| 名前        | 型   | 説明                                                                 |
+| 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | string | 必須。 パッケージ フライトの申請を作成するアプリのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。  |
-| flightId | string | 必須。 申請を追加するパッケージ フライトの ID です。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データに含まれており、デベロッパー センター ダッシュボードで確認できます。  |
+| flightId | string | 必須。 申請を追加するパッケージ フライトの ID です。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データで確認できます。  |
 
 <span/>
 

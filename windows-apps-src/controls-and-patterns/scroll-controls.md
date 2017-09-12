@@ -1,50 +1,58 @@
 ---
 author: Jwmsft
 Description: "パンとスクロールを行うと、画面の境界外のコンテンツを拡張表示することができます。"
-title: "スクロール バーのガイドライン"
+title: "スクロール ビューアー コントロール"
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
-label: Scroll bars
+label: Scrollbars
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 8e167fd07d589b8ad159fe3cb535dd884eeab0ef
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: "Windows 10、UWP"
+pm-contact: Abarlow, pagildea
+design-contact: ksulliv
+dev-contact: regisb
+doc-status: Published
+ms.openlocfilehash: b60842d25c54c15c7c478e1e5183ecd3317bb82c
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
-# <a name="scroll-bars"></a>スクロール バー
+# <a name="scroll-viewer-controls"></a>スクロール ビューアー コントロール
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-パンとスクロールを行うと、画面の境界外のコンテンツを拡張表示することができます。
+1 つの領域には収まらない UI コンテンツがある場合は、スクロール ビューアー コントロールを使用します。
 
-スクロール ビューアー コントロールは、ビューポート内に適合する量のコンテンツと、一方または両方のスクロール バーからなります。 パンとズームのためにタッチ ジェスチャを使うことができ (操作中にのみスクロール バーはフェードインします)、またスクロールのためにポインターを使うことができます。 フリック ジェスチャでは、慣性を伴ってパンします。
+> **重要な API**: [ScrollViewer クラス](https://msdn.microsoft.com/library/windows/apps/br209527)、[ScrollBar クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx)
 
-**注**  Windows には、ユーザーの入力モードに基づく 2 つのスクロール視覚エフェクトがあります。タッチまたはゲームパッドを使うときのスクロール インジケーターと、その他の入力デバイス (マウス、キーボード、ペンを含む) を使うときの対話型スクロール バーです。
+スクロール ビューアーにより、ビューポート (表示可能な領域) の境界外のコンテンツを拡張表示できるようになります。 ユーザーはこのコンテンツを表示するために、タッチ、マウス ホイール、キーボード、ゲームパッドでスクロール ビューアーのサーフェスを操作します。またはマウスやペン カーソルでスクロール ビューアーのスクロールバーを操作します。 以下の画像に、スクロール ビューアー コントロールの例をいくつか示します。
 
-![標準的なスクロール バーとパン インジケーター コントロールの外観のサンプル](images/SCROLLBAR.png)
+![標準的なスクロールバー コントロールを示すスクリーンショット](images/ScrollBar_Standard.jpg)
 
+状況によって、スクロール ビューアーのスクロールバーは 2 つの視覚化を使用します (以下の画像参照)。左がパン インジケーター、右が従来のスクロールバーです。
+
+![標準的なスクロールバーとパン インジケーター コントロールの外観のサンプル](images/SCROLLBAR.png)
+
+スクロール ビューアーはユーザーの入力方式を理解して、どの視覚化を表示すればよいか判断します。
+
+* たとえば、スクロールバーが直接操作されずに領域がスクロールされると、パン インジケーターが表示されて現在のスクロール位置が示されます。
+* マウスかペン カーソルがパン インジケーターの上に移動すると、パン インジケーターが従来のスクロール バーに変形します。  スクロールバーのつまみをドラッグすると、スクロール領域が操作されます。
+
+<!--
 <div class="microsoft-internal-note">
-完全な赤線を [Design Depot](http://designdepot/DesignDepot.FrontEnd/#/ML/Dashboard/1805) で確認
+See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/0/dv/?t=Windows|Controls|ScrollControls&f=RS2
 </div>
+-->
 
-<div class="important-apis" >
-<b>重要な API</b><br/>
-<ul>
-<li>[**ScrollViewer クラス**](https://msdn.microsoft.com/library/windows/apps/br209527)</li>
-<li>[**ScrollBar クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx)</li>
-</ul>
-</div>
+![スクロールバーの動作](images/conscious-scroll.gif)
 
+> [!NOTE]
+> スクロールバーは、表示されると ScrollViewer 内のコンテンツの上部に 16 ピクセルでオーバーレイされます。 UX を適切に設計するには、このオーバーレイによってインタラクティブなコンテンツが隠れないようにする必要があります。 また、UX を重複させないようにするには、スクロールバーを考慮してビューポートの端のパディングを 16 ピクセル残すようにしてください。
 
-## <a name="examples"></a>例
-
-[**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) を使って、実際のサイズよりも小さな領域にコンテンツを表示できるようにします。 スクロール ビューアーのコンテンツがまったく表示されないと、スクロール ビューアーは、表示されるコンテンツ領域を移動するためにユーザーが使用できるスクロール バーを表示します。 範囲は、スクロール ビューアーのすべてのコンテンツを指します。** ビューポートは、コンテンツの表示領域を指します。**
-
-![標準的なスクロール バー コントロールを示すスクリーンショット](images/ScrollBar_Standard.jpg)
 
 ## <a name="create-a-scroll-viewer"></a>スクロール ビューアーを作成する
 ページに垂直スクロールを追加するには、スクロール ビューアーでページのコンテンツをラップします。
@@ -64,6 +72,7 @@ translationtype: HT
     </ScrollViewer>
 </Page>
 ```
+
 次の XAML は、スクロール ビューアーに画像を配置し、ズームを有効にする方法を示しています。
 
 ```xaml
@@ -76,16 +85,16 @@ translationtype: HT
 
 ## <a name="scrollviewer-in-a-control-template"></a>コントロール テンプレートにおける ScrollViewer
 
-ScrollViewer コントロールが他のコントロールの複合パートとして存在するのは一般的です。 ScrollViewer パーツは、サポートのための [**ScrollContentPresenter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollcontentpresenter.aspx) クラスと共に、ホスト コントロールのレイアウト スペースが展開されたコンテンツのサイズより小さく制限されている場合にのみ、スクロール バーと、ビューポートを表示します。 多くの場合、リストがこれに該当するため、[**ListView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) テンプレートは常に ScrollViewer を含めます。 [**TextBox**
-            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) と [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) もまたテンプレートに ScrollViewer を含みます。
+ScrollViewer コントロールが他のコントロールの複合パートとして存在するのは一般的です。 ScrollViewer パーツは、サポートのための [ScrollContentPresenter](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollcontentpresenter.aspx) クラスと共に、ホスト コントロールのレイアウト スペースが展開されたコンテンツのサイズより小さく制限されている場合にのみ、スクロールバーと、ビューポートを表示します。 多くの場合、リストがこれに該当するため、[ListView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) と [GridView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) テンプレートは常に ScrollViewer を含めます。 [TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) と [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) もまたテンプレートに ScrollViewer を含みます。
 
-**ScrollViewer** パーツがコントロール内に存在するとき、ホスト コントロールには通常、特定の入力イベントとコンテンツをスクロールできるようになる操作に対するイベント処理が組み込まれています。 たとえば、GridView がスワイプ ジェスチャを解釈すると、これにより、コンテンツは水平方向にスクロールします。 ホスト コントロールが受け取る入力イベントと直接操作は、コントロールで処理されると見なされ、[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx) などのより低レベルのイベントは発生せず、どの親コンテナーにもバブル ルーティングされません。 コントロール クラスとイベントの **On*** 仮想メソッドをオーバーライドするか、コントロールを再テンプレート化することで、組み込みのコントロール処理の一部を変更することができます。 ただし、いずれの場合も、元の既定の動作を再現するのは簡単ではありません。この動作では、通常、コントロールはイベントやユーザーの入力動作と入力ジェスチャに予期したとおりに対応します。 そのため、入力イベントの発生が本当に必要かどうかを検討することをお勧めします。 コントロールで処理されない他の入力イベントや入力ジェスチャがあるかどうかを調査して、アプリやコントロール操作の設計では、それらを使う場合があります。
+**ScrollViewer** パーツがコントロール内に存在するとき、ホスト コントロールには通常、特定の入力イベントとコンテンツをスクロールできるようになる操作に対するイベント処理が組み込まれています。 たとえば、GridView がスワイプ ジェスチャを解釈すると、これにより、コンテンツは水平方向にスクロールします。 ホスト コントロールが受け取る入力イベントと直接操作は、コントロールで処理されると見なされ、[PointerPressed](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx) などのより低レベルのイベントは発生せず、どの親コンテナーにもバブル ルーティングされません。 コントロール クラスとイベントの **On*** 仮想メソッドをオーバーライドするか、コントロールを再テンプレート化することで、組み込みのコントロール処理の一部を変更することができます。 ただし、いずれの場合も、元の既定の動作を再現するのは簡単ではありません。この動作では、通常、コントロールはイベントやユーザーの入力動作と入力ジェスチャに予期したとおりに対応します。 そのため、入力イベントの発生が本当に必要かどうかを検討することをお勧めします。 コントロールで処理されない他の入力イベントや入力ジェスチャがあるかどうかを調査して、アプリやコントロール操作の設計では、それらを使う場合があります。
 
 ScrollViewer を含むコントロールが ScrollViewer パーツ内の動作やプロパティの一部に影響を与えることができるように、ScrollViewer ではスタイルで設定でき、テンプレートのバインドで使用できる多数の XAML 添付プロパティを定義します。 添付プロパティについて詳しくは、「[添付プロパティの概要](../xaml-platform/attached-properties-overview.md)」をご覧ください。
 
 **ScrollViewer の XAML 添付プロパティ**
 
 ScrollViewer では、次の XAML 添付プロパティを定義します。
+
 - [ScrollViewer.BringIntoViewOnFocusChange](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.bringintoviewonfocuschange.aspx)
 - [ScrollViewer.HorizontalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollbarvisibility.aspx)
 - [ScrollViewer.HorizontalScrollMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollmode.aspx)
@@ -103,7 +112,8 @@ ScrollViewer では、次の XAML 添付プロパティを定義します。
 
 これらの XAML 添付プロパティは、ListView または GridView で既定のテンプレートに ScrollViewer が存在しており、テンプレート パーツにアクセスすることなく、コントロールのスクロール動作に影響を与えられるようにするときなど、ScrollViewer が暗黙的である場合を想定したものです。
 
-たとえば、ListView の組み込みのスクロール ビューアーで垂直スクロール バーが常に表示されるようにする方法を次に示します。
+たとえば、ListView の組み込みのスクロール ビューアーで垂直スクロールバーが常に表示されるようにする方法を次に示します。
+
 ```xaml
 <ListView ScrollViewer.VerticalScrollBarVisibility="Visible"/>
 ```
@@ -124,4 +134,5 @@ ScrollViewer が XAML で明示的である場合、コード例に示すよう�
 ## <a name="related-topics"></a>関連トピック
 
 **開発者向け (XAML)**
-* [**ScrollViewer クラス**](https://msdn.microsoft.com/library/windows/apps/br209527)
+
+* [ScrollViewer クラス](https://msdn.microsoft.com/library/windows/apps/br209527)

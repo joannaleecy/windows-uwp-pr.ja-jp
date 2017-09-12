@@ -9,9 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 50b00d25-f67f-4f09-a4d0-779d02755c63
-ms.openlocfilehash: aa9d4f0e3724e8490777d3e1893297d3c89bc2be
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+redirect_url: windows-10-latest-preview-api-diff
+ms.openlocfilehash: 089814931e528385fe2da6c66b0bfbc78543639f
+ms.sourcegitcommit: 11664964e548a2af30d6e176c515cdbf330934ac
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/28/2017
 ---
 # <a name="new-apis-in-the-windows-10-sdk-preview-build-15021"></a>Windows 10 SDK 15021 プレビュー ビルド 15021 の新しい API
 

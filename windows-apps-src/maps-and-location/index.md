@@ -1,17 +1,19 @@
 ---
-author: msatranjr
+author: normesta
 title: "地図と位置情報の概要"
 description: "このセクションでは、アプリで地図の表示、マップ サービスの使用、位置情報の検索、ジオフェンスのセットアップを行う方法について説明します。 また、Windows マップ アプリを起動し、特定の地図やルート、ターン バイ ターン方式のルート案内を表示する方法についても説明します。"
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
-ms.author: misatran
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 地図, 位置情報, マップ サービス"
-ms.openlocfilehash: 33cf0a7a69ff40434ecb46977e4a6f67ca2a07e4
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 9f2c15c8d4bab5a764b8973c4eecb220ed6d8f38
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="maps-and-location-overview"></a>地図と位置情報の概要
 
@@ -35,7 +37,6 @@ translationtype: HT
 | トピック | 説明 |
 |-------|-------------|
 | [マップ認証キーの要求](authentication-key.md) | [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) や [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間のマップ サービスをアプリで使うには、アプリを認証する必要があります。 アプリを認証するには、マップ認証キーを指定する必要があります。 この記事では、[Bing Maps Developer Center](https://www.bingmapsportal.com/) にマップ認証キーを要求し、アプリに追加する方法について説明します。 |
-| [マップ コントロール](controls-map.md) | マップ コントロールでは、地図および上空からの写真、方向、検索結果、トラフィックを表示できます。 |
 | [2D、3D、Streetside ビューでの地図の表示](display-maps.md) | [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) クラスを使って、アプリにカスタマイズできる地図を表示します。 このトピックでは、航空写真 3D ビューと Streetside ビューについても紹介します。 |
 | [関心のあるポイント (POI) の地図への表示](display-poi.md) | プッシュピン、画像、図形、XAML UI 要素を使って、関心のあるポイント (POI) を地図に追加します。 |
 | [地図へのタイル画像のオーバーレイ](overlay-tiled-images.md) | タイル ソースを使って、地図上にサード パーティ製タイルまたはカスタム タイル画像をオーバーレイします。 タイル ソースを使って、気象データ、人口データ、地質データなどの特殊な情報をオーバーレイすることや、既定の地図を完全に置き換えることができます。 |

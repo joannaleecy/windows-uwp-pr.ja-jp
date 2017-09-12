@@ -4,19 +4,21 @@ ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 description: "Windows ストア申請 API を使用して、Windows デベロッパー センター アカウントに登録されているアプリの申請をプログラムで作成および管理します。"
 title: "申請の作成と管理"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、Windows ストア申請 API"
-ms.openlocfilehash: ca8bb623d06da0001b1b0751a5ac1ccc310bbd84
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
-translationtype: HT
+ms.openlocfilehash: cea6f7c1f542fa91506063331e8c68345c4cca54
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="create-and-manage-submissions"></a>申請の作成と管理
 
 
-*Windows ストア申請 API* を使用し、自分または自分の組織の Windows デベロッパー センター アカウントに対して、アプリ、アドオン (アプリ内製品または IAP とも呼ばれます)、パッケージ フライトの申請をプログラムによって照会して、作成します。 この API は、アカウントで多数のアプリやアドオンを管理しており、こうしたアセットの申請プロセスを自動化および最適化する場合に便利です。 この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
+*Windows ストア申請 API* を使うと、自分または自分の組織の Windows デベロッパー センター アカウントに対して、アプリ、アドオン、パッケージ フライトの申請をプログラムで照会したり作成したりできます。 この API は、アカウントで多数のアプリやアドオンを管理しており、こうしたアセットの申請プロセスを自動化および最適化する場合に便利です。 この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
 
 この手順では、Windows ストア申請 API を使用した場合のプロセスについて詳しく説明します。
 
@@ -26,13 +28,11 @@ translationtype: HT
 
 
 <span id="not_supported" />
->**重要な注意**
+> [!Important]
+> この API を使用してアプリ、パッケージ フライト、アドオンの申請を作成する場合は、申請をさらに変更するには、デベロッパー センターのダッシュボードではなく、API のみを使用して行ってください。 最初に API を使って作成した申請を、ダッシュボードを使って変更した場合、API を使ってその申請を変更またはコミットすることができなくなります。 場合によっては、申請がエラー状態のままになり、申請プロセスを進めることができなくなります。 この問題が発生した場合は、申請を削除して、新しい申請を作成する必要があります。
 
-> * この API は、API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 このアクセス許可は、開発者アカウントに対して段階的に有効になります。現時点では、すべてのアカウントでこのアクセス許可が有効になっているわけではありません。 以前のアクセス権を要求するには、デベロッパー センター ダッシュボードにログオンし、ダッシュ ボードの下部にある **[フィードバック]** をクリックします。その後、フィードバック領域で **[申請 API]** を選択し、要求を提出します。 自分のアカウントでこのアクセス許可が有効になると、メールが届きます。
-<br/><br/>
->* この API を使用してアプリ、パッケージ フライト、アドオンの申請を作成する場合は、申請をさらに変更するには、デベロッパー センターのダッシュボードではなく、API のみを使用して行ってください。 最初に API を使って作成した申請を、ダッシュボードを使って変更した場合、API を使ってその申請を変更またはコミットすることができなくなります。 場合によっては、申請がエラー状態のままになり、申請プロセスを進めることができなくなります。 この問題が発生した場合は、申請を削除して、新しい申請を作成する必要があります。
-<br/><br/>
-> * この API は、2016 年 8 月にデベロッパー センター ダッシュボードに導入された特定の機能を使用するアプリまたはアドオンで使用できません。これには、必須のアプリの更新プログラムとストアで管理されるコンシューマブルなアドオンが含まれますが、これらに限定されません。 このような機能のいずれかを使用するアプリまたはアドオンで Windows ストア申請 API を使うと、API から 409 エラー コードが返されます。 この場合は、ダッシュボードを使ってアドオンまたはアプリの申請を管理する必要があります。
+> [!NOTE]
+この API は、2016 年 8 月にデベロッパー センター ダッシュボードに導入された特定の機能を使用するアプリまたはアドオンで使用できません。これには、必須のアプリの更新プログラムとストアで管理されるコンシューマブルなアドオンが含まれますが、これらに限定されません。 このような機能のいずれかを使用するアプリまたはアドオンで Windows ストア申請 API を使うと、API から 409 エラー コードが返されます。 この場合は、ダッシュボードを使ってアドオンまたはアプリの申請を管理する必要があります。
 
 
 <span id="prerequisites" />
@@ -40,7 +40,7 @@ translationtype: HT
 
 Windows ストア申請 API を呼び出すコードの作成を開始する前に、次の前提条件が完了していることを確認します。
 
-* ユーザー (またはユーザーの組織) は、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](http://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。 それ以外の場合は、追加料金なしで[デベロッパー センター内から新しい Azure AD を作成](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)できます。
+* ユーザー (またはユーザーの組織) は、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](http://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。 それ以外の場合は、追加料金なしで[デベロッパー センター内から新しい Azure AD を作成](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-dev-center-account)できます。
 
 * [Azure AD アプリケーションを Windows デベロッパー センター アカウントに関連付け](#associate-an-azure-ad-application-with-your-windows-dev-center-account)、テナント ID、クライアント ID、キーを取得する必要があります。 これらの値は、Windows ストア申請 API の呼び出しで使用する Azure AD アクセス トークンを取得するために必要です。
 
@@ -61,20 +61,21 @@ Windows ストア申請 API を呼び出すコードの作成を開始する前�
 
 Windows ストア申請 API を使うには、事前に Azure AD アプリケーションをデベロッパー センター アカウントに関連付け、アプリケーションのテナント ID とクライアント ID を取得して、キーを生成しておく必要があります。 Azure AD アプリケーションは、Windows ストア申請 API の呼び出し元のアプリまたはサービスを表します。 テナント ID、クライアント ID、およびキーは、API に渡す Azure AD アクセス トークンを取得するために必要です。
 
->**注:**&nbsp;&nbsp;この作業を行うのは一度だけです。 テナント ID、クライアント ID、キーがあれば、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらを再利用できます。
+> [!NOTE]
+> この作業を行うのは一度だけです。 テナント ID、クライアント ID、キーがあれば、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらを再利用できます。
 
-1.  デベロッパー センターで、**[アカウント設定]** に移動して **[ユーザーの管理]** をクリックし、組織のデベロッパー センター アカウントを組織の Azure AD ディレクトリに関連付けます。 詳しい手順については、「[アカウント ユーザーの管理](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)」をご覧ください。
+1.  デベロッパー センターで、**[アカウント設定]** に移動して **[ユーザーの管理]** をクリックし、[組織のデベロッパー センター アカウントを組織の Azure AD ディレクトリに関連付けます](../publish/associate-azure-ad-with-dev-center.md)。
 
-2.  **[ユーザーの管理]** ページで、**[Azure AD アプリケーションの追加]** をクリックして、デベロッパー センター アカウントの申請へのアクセスに使うアプリやサービスを表す Azure AD アプリケーションを追加し、**マネージャー** ロールを割り当てます。 このアプリケーションが既に Azure AD ディレクトリに存在する場合、**[Azure AD アプリケーションの追加]** ページで選んでデベロッパー センター アカウントに追加できます。 それ以外の場合、**[Azure AD アプリケーションの追加]** ページで新しい Azure AD アプリケーションを作成できます。 詳しくは、「[Azure AD アプリケーションを追加して管理する](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)」をご覧ください。
+2.  **[ユーザーの管理]** ページで、**[Azure AD アプリケーションの追加]** をクリックして、デベロッパー センター アカウントの申請へのアクセスに使うアプリやサービスを表す Azure AD アプリケーションを追加し、**マネージャー** ロールを割り当てます。 このアプリケーションが既に Azure AD ディレクトリに存在する場合、**[Azure AD アプリケーションの追加]** ページで選んでデベロッパー センター アカウントに追加できます。 それ以外の場合、**[Azure AD アプリケーションの追加]** ページで新しい Azure AD アプリケーションを作成できます。 詳しくは、[Azure AD アプリケーションをデベロッパー センター アカウントに追加する方法](../publish/add-users-groups-and-azure-ad-applications.md#azure-ad-applications)をご覧ください。
 
 3.  **[ユーザーの管理]** ページに戻り、Azure AD アプリケーションの名前をクリックしてアプリケーション設定に移動し、**[テナント ID]** と **[クライアント ID]** の値を書き留めます。
 
-4. **[新しいキーの追加]** をクリックします。 次の画面で、**[キー]** の値を書き留めます。 このページから離れると、この情報に再度アクセスすることはできません。 詳しくは、「[Azure AD アプリケーションを追加して管理する](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)」でキーの管理に関する情報をご覧ください。
+4. **[新しいキーの追加]** をクリックします。 次の画面で、**[キー]** の値を書き留めます。 このページから離れると、この情報に再度アクセスすることはできません。 詳しくは、[Azure AD アプリケーションのキーを管理する方法](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys)をご覧ください。
 
 <span id="obtain-an-azure-ad-access-token" />
-## <a name="step-2-obtain-an-azure-ad-access-token"></a>手順 2. Azure AD のアクセス トークンを取得する
+## <a name="step-2-obtain-an-azure-ad-access-token"></a>手順 2: Azure AD のアクセス トークンを取得する
 
-Windows ストア申請 API で任意のメソッドを呼び出す前に、API 内の各メソッドの **Authorization** ヘッダーに渡す Azure AD アクセス トークンをまず取得する必要があります アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れた後は、トークンを更新してそれ以降の API 呼び出しで引き続き使用できます。
+Windows ストア申請 API で任意のメソッドを呼び出す前に、API 内の各メソッドの **Authorization** ヘッダーに渡す Azure AD アクセス トークンを最初に取得する必要があります。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れた後は、トークンを更新してそれ以降の API 呼び出しで引き続き使用できます。
 
 アクセス トークンを取得するには、「[クライアント資格情報を使用したサービス間の呼び出し](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/)」の手順に従って、HTTP POST を ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` エンドポイントに送信します。 要求の例を次に示します。
 
@@ -100,7 +101,8 @@ C#、Java、または Python コードを使用してアクセス トークン�
 
 Azure AD アクセス トークンを取得したら、Windows ストア申請 API のメソッドを呼び出すことができます。 この API には、アプリ、アドオン、パッケージ フライトのシナリオにグループ化される多くのメソッドが含まれています。 申請を作成または更新するには、通常、Windows ストア申請 API 内の複数のメソッドを特定の順序で呼び出します。 各シナリオと各メソッドの構文について詳しくは、次の表の記事をご覧ください。
 
->**注:**&nbsp;&nbsp;アクセス トークンを取得した後、Windows ストア申請 API 内のメソッドを呼び出すことができるのは、その有効期限が切れるまでの 60 分間です。
+> [!NOTE]
+> アクセス トークンを取得した後、Windows ストア申請 API 内のメソッドを呼び出すことができるのは、その有効期限が切れるまでの 60 分間です。
 
 | シナリオ       | 説明                                                                 |
 |---------------|----------------------------------------------------------------------|
@@ -113,11 +115,15 @@ Azure AD アクセス トークンを取得したら、Windows ストア申請 A
 
 次の記事では、さまざまなプログラミング言語で Windows ストア申請 API を使用する方法を説明する詳しいコード例を紹介します。
 
-* [C# のコード例](csharp-code-examples-for-the-windows-store-submission-api.md)
-* [Java のコード例](java-code-examples-for-the-windows-store-submission-api.md)
-* [Python のコード例](python-code-examples-for-the-windows-store-submission-api.md)
+* [C# のコード例: アプリ、アドオン、およびフライトの申請](csharp-code-examples-for-the-windows-store-submission-api.md)
+* [C# のコード例: ゲーム オプションおよびトレーラーを含むアプリの申請](csharp-code-examples-for-submissions-game-options-and-trailers.md)
+* [Java のコード例: アプリ、アドオン、およびフライトの申請](java-code-examples-for-the-windows-store-submission-api.md)
+* [Java のコード例: ゲーム オプションおよびトレーラーを含むアプリの申請](java-code-examples-for-submissions-game-options-and-trailers.md)
+* [Python のコード例: アプリ、アドオン、およびフライトの申請](python-code-examples-for-the-windows-store-submission-api.md)
+* [Python のコード例: ゲーム オプションおよびトレーラーを含むアプリの申請](python-code-examples-for-submissions-game-options-and-trailers.md)
 
->**注**&nbsp;&nbsp;上に示したコード例に加えて、Windows ストア申請 API の上にコマンド ライン インターフェイスを実装するオープンソースの PowerShell モジュールも用意しています。 このモジュールは、[StoreBroker](https://aka.ms/storebroker) と呼ばれています。 このモジュールを使うと、Windows ストア申請 API を直接呼び出さずにコマンド ラインからアプリ、フライト、アドオンの申請を管理できます。または、ソースをそのまま参照して、この API を呼び出す方法の他の例を確認できます。 StoreBroker モジュールは、Microsoft 社内でも、多くのファースト パーティ アプリケーションをストアに申請する主要な方法として積極的に使用されています。 詳しくは、[GitHub の StoreBroker のページ](https://aka.ms/storebroker)をご覧ください。
+> [!NOTE]
+> 上に示したコード例に加えて、Windows ストア申請 API の上にコマンド ライン インターフェイスを実装するオープンソースの PowerShell モジュールも用意しています。 このモジュールは、[StoreBroker](https://aka.ms/storebroker) と呼ばれています。 このモジュールを使うと、Windows ストア申請 API を直接呼び出さずにコマンド ラインからアプリ、フライト、アドオンの申請を管理できます。または、ソースをそのまま参照して、この API を呼び出す方法の他の例を確認できます。 StoreBroker モジュールは、Microsoft 社内でも、多くのファースト パーティ アプリケーションをストアに申請する主要な方法として積極的に使用されています。 詳しくは、[GitHub の StoreBroker のページ](https://aka.ms/storebroker)をご覧ください。
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 

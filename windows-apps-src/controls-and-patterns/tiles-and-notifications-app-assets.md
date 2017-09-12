@@ -6,14 +6,16 @@ ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
 label: Tile and icon assets
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 0d3b58b8ea03c3ba836078e507495beeebe74fb8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 54ad78d5799a96ddcec7b060704ee198e0bf8db5
+ms.sourcegitcommit: 9a1310468970c8d1ade0fb200126dff56ea8c9e1
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/14/2017
 ---
 # <a name="guidelines-for-tile-and-icon-assets"></a>タイルとアイコン アセットのガイドライン
 
@@ -123,7 +125,7 @@ Windows 10 オペレーティング システム全体でさまざまな形式�
 
 ![ワイド タイルのサイズの比率](images/assetguidance11.png)
 
-大きいタイルでは、アイコンの幅と高さをタイル サイズの 50% に制限します。
+大きいタイルでは、アイコンの幅をタイル サイズの 66% に、高さをタイル サイズの 50% に制限します。
 
 ![大きいタイルのサイズの比率](images/assetguidance12.png)
 
@@ -181,24 +183,6 @@ Windows 10 オペレーティング システム全体でさまざまな形式�
 
 ![100% の倍率でのターゲット ベースのアセットのサイズ調整](images/assetguidance23.png)
 
-**アイコン テンプレート アプリのアセット**
-
-アイコン テンプレート ("IconWithBadge" テンプレートとも呼ばれます) を使用すると、タイルの中央に小さい画像を表示できます。 Windows 10 では、電話とタブレット/デスクトップの両方でテンプレートがサポートされています  (アイコン タイルの作成について詳しくは、[特別なタイル テンプレートに関する記事](tiles-and-notifications-special-tile-templates-catalog.md)をご覧ください)。
-
-メッセージング、電話、ストアなど、アイコン テンプレートを使ったアプリでは、ターゲット ベースのアセットでバッジ (ライブ カウンターを含む) を表示できます。 他のターゲット ベースのアセットと同様にパディングは必要ありません。 アイコン アセットは、アプリ マニフェストの一部ではなく、ライブ タイルのペイロードの一部です。 アセットは 3:2 の比率のコンテナーに収まるように拡大縮小され、中央に配置されます。
-
-![バッジがあるアセットとバッジがないアセットのサイズ調整](images/assetguidance24.png)
-
-正方形のアセットの場合、コンテナー内で自動的に中央に配置されます。
-
-![正方形のアセットのサイズ調整、バッジがある場合とバッジがない場合](images/assetguidance25.png)
-
-正方形以外のアセットの場合、自動的に水平方向/垂直方向の中央に配置され、コンテナーの幅/高さに合わせてスナップされます。
-
-![正方形以外のアセットのサイズ調整、バッジがある場合とバッジがない場合](images/assetguidance26a.png)
-
-![正方形以外のアセットのサイズ調整、バッジがある場合とバッジがない場合](images/assetguidance26b.png)
-
 ## <a name="splash-screen-assets"></a>スプラッシュ画面のアセット
 
 
@@ -233,38 +217,217 @@ Windows 10 オペレーティング システム全体でさまざまな形式�
 
 少なくとも、100、200、400 の倍率のアセットを提供することを強くお勧めします。 すべての倍率のアセットを提供することによって、最適なユーザー エクスペリエンスを提供できます。
 
-**倍率ベースのアセット**
+<br/>
 
-| カテゴリ             | 要素名      | 倍率 100% | 倍率 125% | 倍率 150% | 倍率 200% | 倍率 400% |
-|----------------------|-------------------|---------------|---------------|---------------|---------------|---------------|
-| 小                | Square71x71Logo   | 71 x 71         | 89 x 89         | 107 x 107       | 142 x 142       | 284 x 284       |
-| 普通               | Square150x150Logo | 150 x 150       | 188 x 188       | 225 x 225       | 300 x 300       | 600 x 600       |
-| ワイド                 | Square310x150Logo | 310 x 150       | 388 x 188       | 465 x 225       | 620 x 300       | 1240 x 600      |
-| 大 (デスクトップのみ) | Square310x310Logo | 310 x 310       | 388 x 388       | 465 x 465       | 620 x 620       | 1240 x 1240     |
-| アプリの一覧 (アイコン)      | Square44x44Logo   | 44 x 44         | 55 x 55         | 66 x 66         | 88 x 88         | 176 x 176       |
+<table>
+<thead>
+<tr><th colspan="3">小さいタイル (Square71x71Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">倍率 100%</td>
+    <td width="20%">71 x 71</td>
+    <td>Square71x71Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>倍率 125%</td>
+    <td>89 x 89</td>
+    <td>Square71x71Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>倍率 150%</td>
+    <td>107 x 107</td>
+    <td>Square71x71Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>倍率 200%</td>
+    <td>142 x 142</td>
+    <td>Square71x71Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>倍率 400%</td>
+    <td>284 x 284</td>
+    <td>Square71x71Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
 
- 
+<br/>
 
-**倍率ベースのアセットのファイル名の例**
+<table>
+<thead>
+<tr><th colspan="3">普通サイズのタイル (Square150x150Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">倍率 100%</td>
+    <td width="20%">150 x 150</td>
+    <td>Square150x150Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>倍率 125%</td>
+    <td>188 x 188</td>
+    <td>Square150x150Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>倍率 150%</td>
+    <td>225 x 225</td>
+    <td>Square150x150Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>倍率 200%</td>
+    <td>300 x 300</td>
+    <td>Square150x150Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>倍率 400%</td>
+    <td>600 x 600</td>
+    <td>Square150x150Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
 
-| カテゴリ             | 要素名      | 倍率 100%                  | 倍率 125%                  | 倍率 150%                  |
-|----------------------|-------------------|--------------------------------|--------------------------------|--------------------------------|
-| 小                | Square71x71Logo   | AppNameSmallTile.scale-100.png | AppNameSmallTile.scale-125.png | AppNameSmallTile.scale-150.png |
-| 普通               | Square150x150Logo | AppNameMedTile.scale-100.png   | AppNameMedTile.scale-125.png   | AppNameMedTile.scale-150.png   |
-| ワイド                 | Square310x150Logo | AppNameWideTile.scale-100.png  | AppNameWideTile.scale-125.png  | AppNameWideTile.scale-150.png  |
-| 大 (デスクトップのみ) | Square310x310Logo | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
-| アプリの一覧 (アイコン)      | Square44x44Logo   | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
+<br/>
 
- 
+<table>
+<thead>
+<tr><th colspan="3">ワイド タイル (Wide310x150Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">倍率 100%</td>
+    <td width="20%">310 x 150</td>
+    <td>Wide310x150Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>倍率 125%</td>
+    <td>388 x 188</td>
+    <td>Wide310x150Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>倍率 150%</td>
+    <td>465 x 225</td>
+    <td>Wide310x150Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>倍率 200%</td>
+    <td>620 x 300</td>
+    <td>Wide310x150Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>倍率 400%</td>
+    <td>1240 x 600</td>
+    <td>Wide310x150Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
 
-| カテゴリ             | 要素名      | 倍率 200%                  | 倍率 400%                  |
-|----------------------|-------------------|--------------------------------|--------------------------------|
-| 小                | Square71x71Logo   | AppNameSmallTile.scale-200.png | AppNameSmallTile.scale-400.png |
-| 普通               | Square150x150Logo | AppNameMedTile.scale-200.png   | AppNameMedTile.scale-400.png   |
-| ワイド                 | Square310x150Logo | AppNameWideTile.scale-200.png  | AppNameWideTile.scale-400.png  |
-| 大 (デスクトップのみ) | Square310x310Logo | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
-| アプリの一覧 (アイコン)      | Square44x44Logo   | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
+<br/>
 
+<table>
+<thead>
+<tr><th colspan="3">大きいタイル (Square310x310Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">倍率 100%</td>
+    <td width="20%">310 x 310</td>
+    <td>Square310x310Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>倍率 125%</td>
+    <td>388 x 388</td>
+    <td>Square310x310Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>倍率 150%</td>
+    <td>465 x 465</td>
+    <td>Square310x310Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>倍率 200%</td>
+    <td>620 x 620</td>
+    <td>Square310x310Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>倍率 400%</td>
+    <td>1240 x 1240</td>
+    <td>Square310x310Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
+
+<br/>
+
+<table>
+<thead>
+<tr><th colspan="3">アプリの一覧のアイコン (Square44x44Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">倍率 100%</td>
+    <td width="20%">44 x 44</td>
+    <td>Square44x44Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>倍率 125%</td>
+    <td>55 x 55</td>
+    <td>Square44x44Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>倍率 150%</td>
+    <td>66 x 66</td>
+    <td>Square44x44Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>倍率 200%</td>
+    <td>88 x 88</td>
+    <td>Square44x44Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>倍率 400%</td>
+    <td>176 x 176</td>
+    <td>Square44x44Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
+
+<br/>
+
+<table>
+<thead>
+<tr><th colspan="3">スプラッシュ画面 (SplashScreen)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">倍率 100%</td>
+    <td width="20%">620 x 300</td>
+    <td>SplashScreen.scale-100.png</td>
+</tr>
+<tr>
+    <td>倍率 125%</td>
+    <td>775 x 375</td>
+    <td>SplashScreen.scale-125.png</td>
+</tr>
+<tr>
+    <td>倍率 150%</td>
+    <td>930 x 450</td>
+    <td>SplashScreen.scale-150.png</td>
+</tr>
+<tr>
+    <td>倍率 200%</td>
+    <td>1240 x 600</td>
+    <td>SplashScreen.scale-200.png</td>
+</tr>
+<tr>
+    <td>倍率 400%</td>
+    <td>2480 x 1200</td>
+    <td>SplashScreen.scale-400.png</td>
+</tr>
+</tbody>
+</table>
+
+<br/>
  
 
 **ターゲット ベースのアセット**
@@ -275,22 +438,22 @@ Windows 10 オペレーティング システム全体でさまざまな形式�
 
 次の表は、すべてのターゲット ベースのアセットのサイズと対応するファイル名の例を示します。
 
-| アセットのサイズ | ファイル名の例                 |
-|------------|-----------------------------------|
-| 16 x 16\*    | AppNameAppList.targetsize-16.png  |
-| 24 x 24\*    | AppNameAppList.targetsize-24.png  |
-| 32 x 32\*    | AppNameAppList.targetsize-32.png  |
-| 48 x 48\*    | AppNameAppList.targetsize-48.png  |
-| 256 x 256\*  | AppNameAppList.targetsize-256.png |
-| 20 x 20      | AppNameAppList.targetsize-20.png  |
-| 30 x 30      | AppNameAppList.targetsize-30.png  |
-| 36 x 36      | AppNameAppList.targetsize-36.png  |
-| 40 x 40      | AppNameAppList.targetsize-40.png  |
-| 60 x 60      | AppNameAppList.targetsize-60.png  |
-| 64 x 64      | AppNameAppList.targetsize-64.png  |
-| 72 x 72      | AppNameAppList.targetsize-72.png  |
-| 80 x 80      | AppNameAppList.targetsize-80.png  |
-| 96 x 96      | AppNameAppList.targetsize-96.png  |
+| アセットのサイズ | ファイル名の例                  |
+|------------|------------------------------------|
+| 16 x 16\*    | Square44x44Logo.targetsize-16.png  |
+| 24 x 24\*    | Square44x44Logo.targetsize-24.png  |
+| 32 x 32\*    | Square44x44Logo.targetsize-32.png  |
+| 48 x 48\*    | Square44x44Logo.targetsize-48.png  |
+| 256 x 256\*  | Square44x44Logo.targetsize-256.png |
+| 20 x 20      | Square44x44Logo.targetsize-20.png  |
+| 30 x 30      | Square44x44Logo.targetsize-30.png  |
+| 36 x 36      | Square44x44Logo.targetsize-36.png  |
+| 40 x 40      | Square44x44Logo.targetsize-40.png  |
+| 60 x 60      | Square44x44Logo.targetsize-60.png  |
+| 64 x 64      | Square44x44Logo.targetsize-64.png  |
+| 72 x 72      | Square44x44Logo.targetsize-72.png  |
+| 80 x 80      | Square44x44Logo.targetsize-80.png  |
+| 96 x 96      | Square44x44Logo.targetsize-96.png  |
 
  
 
@@ -304,7 +467,7 @@ Windows 10 オペレーティング システム全体でさまざまな形式�
 **タイル アセット**
 
 -   中央に配置されるアセットは、通常、スタート画面にアプリを表示するために使用されます。
--   ファイル名の形式: \*Tile.scale-\*.PNG
+-   ファイル名の形式: [Square\Wide]\*x\*Logo.scale-\*.png
 -   影響を受けるアプリ: すべての UWP アプリ
 -   用途:
     -   既定のスタート画面のタイル (デスクトップとモバイル)
@@ -317,7 +480,7 @@ Windows 10 オペレーティング システム全体でさまざまな形式�
 **プレート付きのスケーラブルな一覧のアセット**
 
 -   これらのアセットは拡大縮小が必要なサーフェスで使われます。 アセットのバック プレートはシステムによって提供されるか、アプリに含まれている場合は独自の背景色のプレートが使用されます。
--   ファイル名の形式: \*AppList.scale-\*.PNG
+-   ファイル名の形式: Square44x44Logo.scale-\*.png
 -   影響を受けるアプリ: すべての UWP アプリ
 -   用途:
     -   スタート画面のすべてのアプリの一覧 (デスクトップ)
@@ -330,7 +493,7 @@ Windows 10 オペレーティング システム全体でさまざまな形式�
 **プレート付きのターゲット サイズの一覧のアセット**
 
 -   これらはプレート付きで、拡大縮小されない固定サイズのアセットです。 ほとんどの場合、従来のエクスペリエンスに使用されます。 アセットはシステムによって確認されます。
--   ファイル名の形式: \*AppList.targetsize-\*.PNG
+-   ファイル名の形式: Square44x44Logo.targetsize-\*.png
 -   影響を受けるアプリ: すべての UWP アプリ
 -   用途:
     -   スタート画面のジャンプ リスト (デスクトップ)
@@ -341,7 +504,7 @@ Windows 10 オペレーティング システム全体でさまざまな形式�
 **プレートなしのターゲット サイズの一覧のアセット**
 
 -   これらは、システムによってプレートの追加や拡大縮小が行われないアセットです。
--   ファイル名の形式: \*AppList.targetsize-\*\_altform-unplated.PNG
+-   ファイル名の形式: Square44x44Logo.targetsize-\*\_altform-unplated.png
 -   影響を受けるアプリ: すべての UWP アプリ
 -   用途:
     -   タスク バーとタスク バー サムネイル (デスクトップ)
@@ -352,7 +515,7 @@ Windows 10 オペレーティング システム全体でさまざまな形式�
 **ファイル拡張子アセット**
 
 -   これらはファイル拡張子に固有のアセットです。 エクスプ ローラーで Win32 スタイルのファイルの関連付けアイコンの横に表示され、テーマに依存しません。 サイズ調整は、デスクトップ プラットフォームとモバイル プラットフォームで異なります。
--   ファイル名の形式: \*LogoExtensions.targetsize-\*.PNG
+-   ファイル名の形式: \*LogoExtensions.targetsize-\*.png
 -   影響を受けるアプリ: ミュージック、ビデオ、フォト、Microsoft Edge、Microsoft Office
 -   用途:
     -   エクスプローラー
@@ -362,30 +525,7 @@ Windows 10 オペレーティング システム全体でさまざまな形式�
 **スプラッシュ画面**
 
 -   アプリのスプラッシュ画面に表示されるアセット。 デスクトップとモバイルの両方のプラットフォームで自動的に拡大縮小されます。
--   ファイル名の形式: \*SplashScreen.screen-100.PNG
+-   ファイル名の形式: SplashScreen.scale-*.png
 -   影響を受けるアプリ: すべての UWP アプリ
 -   用途:
     -   アプリのスプラッシュ画面
-
-**アイコン タイル アセット**
-
--   これらは、アイコン テンプレートを使用するアプリ用のアセットです。
--   ファイル名の形式: 該当なし
--   影響を受けるアプリ: メッセージング、電話、ストアなど
--   用途:
-    -   アイコン タイル
-
-
-
-## <a name="related-topics"></a>関連トピック
-
-
-
-* [特別なタイル テンプレート](tiles-and-notifications-special-tile-templates-catalog.md)
- 
-
- 
-
-
-
-

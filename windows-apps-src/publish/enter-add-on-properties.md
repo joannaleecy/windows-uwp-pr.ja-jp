@@ -4,14 +4,16 @@ Description: "アドオンを提出するとき、[プロパティ] ページの
 title: "アドオン プロパティの入力"
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 186088f249c2e6fe116c970bd1969fcb59863ba6
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 253e008d3622094dcfe765531d71e5f37b7777b0
+ms.sourcegitcommit: de6bc8acec2cd5ebc36bb21b2ce1a9980c3e78b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/17/2017
 ---
 # <a name="enter-add-on-properties"></a>アドオン プロパティの入力
 
@@ -22,19 +24,38 @@ translationtype: HT
 
 最初に[アドオンを作成する](set-your-add-on-product-id.md)ときに、製品の種類を選びます。 ここには、選んだ製品の種類が表示されますが、変更することはできません。
 
-> **注** アドオンを公開していない場合、 別の製品の種類を選ぶ必要があるなら、提出を削除して、もう一度開始できます。 
+> [!TIP]
+> アドオンを公開しておらず、別の製品の種類を選ぶ必要がある場合は、申請を削除して、もう一度選ぶことができます。
 
-選択した製品の種類に応じて、次のいずれかのフィールドが表示されます。
+このページに表示されるフィールドは、アドオンの製品の種類に応じて変化します。
 
-### <a name="product-lifetime"></a>製品の有効期限
-製品の種類として **[永続的]** を選んだ場合、**[製品の有効期限]** がここに表示されます。 永続的なアドオンの **[製品の有効期限]** の既定値は、**[無期限]** です。つまり、アドオンの期限は切れません。 必要に応じて、設定した期間の後でアドオンの期限が切れるように **[製品の有効期限]** を設定できます (1 から 365 日間のオプションがあります)。 
+## <a name="product-lifetime"></a>製品の有効期限
 
-### <a name="quantity"></a>数量
+
+製品の種類として **[永続的]** を選んだ場合、**[製品の有効期限]** がここに表示されます。 永続的なアドオンの **[製品の有効期限]** の既定値は、**[無期限]** です。つまり、アドオンの期限は切れません。 必要に応じて、設定した期間の後でアドオンの期限が切れるように **[製品の有効期限]** を設定できます (1 から 365 日間のオプションがあります)。
+
+## <a name="quantity"></a>数量
+
+
 製品の種類に **[ストアで管理されるコンシューマブル]** を選択した場合、**[数量]** がここに表示されます。 1 ~ 1000000 の範囲の数値を入力する必要があります。 顧客が対象アドオンを入手するときにこの数量が付与されます。顧客によるアドオンの消費がアプリによって報告されるたびに、ストアが残量を追跡します。
 
-## <a name="content-type"></a>コンテンツ タイプ
 
-アドオンの製品の種類に関係なく、提供するコンテンツの種類を指定する必要があります。 ほとんどのアドオンでは、コンテンツの種類は **[ソフトウェアのダウンロード]** になります。 一覧の別のオプションがアドオンの説明として適している場合 (たとえば、音楽のダウンロードや電子書籍を提供している場合) は、代わりにそのオプションを選びます。 
+## <a name="subscription-period"></a>サブスクリプション期間
+
+製品の種類として **[サブスクリプション]** を選んだ場合、**[サブスクリプション期間]** がここに表示されます。 表示されるオプション (**[毎月]**、**[3 か月]**、**[6 か月]**、**[毎年]**、**[24 か月]**) の 1 つを選び、サブスクリプション料を課金する頻度を指定する必要があります。 アドオンが公開されると、**[サブスクリプション期間]** の指定は変更できません。
+
+> [!NOTE]
+> 現在、サブスクリプション アドオンを作成できるのは、早期導入プログラムに参加している開発者アカウントに限られます。 いずれは、すべての開発者アカウントでサブスクリプション アドオンをご利用いただけます。現時点でこの正式リリース前のドキュメントを公開しているのは、この機能がどのようなものかを開発者の皆様に簡単に紹介することが目的です。 詳しくは、「[アプリのサブスクリプション アドオンの有効化](../monetize/enable-subscription-add-ons-for-your-app.md)」をご覧ください。
+
+
+## <a name="free-trial"></a>無料試用版
+
+サブスクリプション型のアドオンの場合、**[無料のお試し版]** もここに表示されます。 一定の期間 (**[1 週間]** または **[1 か月]**) アドオンを無料でユーザーが使えるようにするか、**[無料評価版はありません]** を選ぶ必要があります。 アドオンが公開されると、**[無料のお試し版]** の指定は変更できません。
+
+
+## <a name="content-type"></a>コンテンツの種類
+
+アドオンの製品の種類に関係なく、提供するコンテンツの種類を指定する必要があります。 ほとんどのアドオンでは、コンテンツの種類は **[ソフトウェアのダウンロード]** になります。 一覧の別のオプションがアドオンの説明としてより適している場合 (たとえば、音楽のダウンロードや電子書籍を提供している場合) は、代わりにそのオプションを選びます。
 
 アドオンのコンテンツの種類として利用可能なオプションを次に示します。
 
@@ -45,32 +66,39 @@ translationtype: HT
 -   ミュージックのダウンロード
 -   ミュージックのストリーミング
 -   オンライン データ ストレージ/サービス
+-   SaaS
 -   ビデオのダウンロード
 -   ビデオのストリーミング
--   SaaS
 
-## <a name="keywords"></a>キーワード
+
+## <a name="additional-properties"></a>追加のプロパティ
+
+これらのフィールドは、どのアドオンの種類でも省略可能です。
+
+<span id="keywords" />
+### <a name="keywords"></a>キーワード
 
 提出するアドオンごとに、それぞれ 30 文字以内のキーワードを最大 10 個指定するオプションがあります。 そうすると、アプリはキーワードと一致するアドオンを照会できます。 この機能を利用すると、アプリのコードで製品 ID を直接指定しなくても、アドオンを読み込むことができる画面をアプリで構築できるようになります。 その場合、アプリでコードを変更したり、アプリをもう一度提出したりしなくても、いつでもアドオンのキーワードを変更することができます。
 
-> **注** キーワードは、Windows 8 と Windows 8.1 を対象とするパッケージでは使うことができません。
+このフィールドを照会するには、[Windows.Services.Store 名前空間](https://msdn.microsoft.com/en-us/library/windows/apps/windows.services.store.aspx)の [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct#Windows_Services_Store_StoreProduct_Keywords) プロパティを使用します  (または、[Windows.ApplicationModel.Store 名前空間](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.store.aspx)を使用している場合は、[ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting#Windows_ApplicationModel_Store_ProductListing_Keywords) プロパティを使用します)。
 
-## <a name="custom-developer-data"></a>カスタムの開発者データ
+> [!NOTE]
+> キーワードは、Windows 8 と Windows 8.1 を対象とするパッケージでは使うことができません。
 
-**[カスタムの開発者データ]** フィールド (以前は**タグ**と呼ばれていました) に最大 3,000 文字を入力して、アプリ内製品について追加のコンテキストを指定できます。 通常、これは XML 文字列の形式ですが、このフィールドには任意の内容を入力できます。
+<span id="custom-developer-data" />
+### <a name="custom-developer-data"></a>カスタムの開発者データ
+
+**[カスタムの開発者データ]** フィールド (以前は**タグ**と呼ばれていました) に最大 3,000 文字を入力して、アプリ内製品について追加のコンテキストを指定できます。 通常、これは XML 文字列の形式ですが、このフィールドには任意の内容を入力できます。 これで、アプリはこのフィールドを照会して内容を読み取ることができます (ただし、アプリからデータを編集したり、変更を書き戻したりすることはできません)。
+
+たとえば、ゲームのアドオンとして、ユーザーが上のレベルにアクセスできるようになる金貨入りの袋を販売するとします。 **[カスタムの開発者データ]** フィールドを使うと、このアドオンをユーザーが所有している場合、どのレベルを利用できるかをアプリから照会できます。 値 (ここでは、設定されているレベル) は、アプリのコードを変更したり、アプリをもう一度提出したりしなくても、アドオンの **[カスタムの開発者データ]** フィールドで情報を更新し、アドオンの更新された申請を公開することでいつでも調整できます。
 
 このフィールドを照会するには、[Windows.Services.Store 名前空間](https://msdn.microsoft.com/en-us/library/windows/apps/windows.services.store.aspx)の [StoreSku.CustomDeveloperData](https://msdn.microsoft.com/en-us/library/windows/apps/windows.services.store.storesku.customdeveloperdata.aspx) プロパティを使用します  (または、[Windows.ApplicationModel.Store 名前空間](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.store.aspx)を使用している場合は、[ProductListing.Tag](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.store.productlisting.tag.aspx) プロパティを使用します)。
 
-たとえば、ゲームのアドオンとして金貨入りの袋を販売するとします。 **[カスタムの開発者データ]** フィールドを使うと、アプリはこの金貨入りの袋を照会できます。 値 (ここでは、袋に入っている金貨の数) は、アプリのコードを変更したり、アプリをもう一度提出したりしなくても、アドオンの **[カスタムの開発者データ]** フィールドで情報を更新していつでも調整できます。
-
-> **注:** **[カスタムの開発者データ]** フィールドは、Windows 8 と Windows 8.1 を対象とするパッケージでは使うことができません。
-
- 
+> [!NOTE]
+> **[カスタムの開発者データ]** フィールドは、Windows 8 と Windows 8.1 を対象とするパッケージでは使うことができません。
 
  
 
  
 
-
-
-
+ 

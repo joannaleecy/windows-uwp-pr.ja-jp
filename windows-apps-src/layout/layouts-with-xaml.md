@@ -7,14 +7,16 @@ label: Page layouts with XAML
 template: detail.hbs
 op-migration-status: ready
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 3862b008afece61648357c84a218ba210703727c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: a491a13264a19c50affdbacded69c7ff73e99afa
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="define-page-layouts-with-xaml"></a>XAML を使ったページ レイアウトの定義
 
@@ -25,7 +27,7 @@ XAML では、自動サイズ変更、レイアウト パネル、表示状態�
 ここでは、XAML プロパティとレイアウト パネルを使って、アプリの応答性と適応性を高める方法を説明します。 「[UWP アプリ設計の概要](../layout/design-and-ui-intro.md)」に示されている、応答性の高い UI のデザインと手法に関する重要な情報に基づいて解説しています。 有効ピクセルの意味を理解し、レスポンシブ デザインの各手法 (位置変更、サイズ変更、再配置、表示、置換、再構築) について理解しておく必要があります。
 
 > [!NOTE]
-> アプリのレイアウトは、ナビゲーション モデルを選ぶことから始まります。["タブとピボット"](../controls-and-patterns/tabs-pivot.md) モデルの [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) と、["ナビゲーション ウィンドウ"](../controls-and-patterns/nav-pane.md) モデルの [**SplitView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) のどちらを使うかなどです。 詳しくは、「[UWP アプリのナビゲーション デザインの基本](../layout/navigation-basics.md)」をご覧ください。 ここでは、1 つのページまたは要素のグループのレイアウトの応答性を高める手法について説明します。 この情報は、アプリについて選択したナビゲーション モデルにかかわらず適用されます。
+> アプリのレイアウトは、ナビゲーション モデルを選ぶことから始まります。["タブとピボット"](../controls-and-patterns/tabs-pivot.md) モデルの [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) と、["ナビゲーション ウィンドウ"](../controls-and-patterns/navigationview.md) モデルの [**SplitView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) のどちらを使うかなどです。 詳しくは、「[UWP アプリのナビゲーション デザインの基本](../layout/navigation-basics.md)」をご覧ください。 ここでは、1 つのページまたは要素のグループのレイアウトの応答性を高める手法について説明します。 この情報は、アプリについて選択したナビゲーション モデルにかかわらず適用されます。
 
 XAML フレームワークには、応答性に優れた UI の作成に使うことができる複数レベルの最適化が用意されています。
 - **柔軟なレイアウト**

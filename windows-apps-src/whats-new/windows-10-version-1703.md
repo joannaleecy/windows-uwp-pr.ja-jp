@@ -9,10 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: ea855480-874d-431f-94bf-13d81eacc010
-ms.openlocfilehash: e934f26b2f1a479195e76fb732724c2b9989b0c3
-ms.sourcegitcommit: ac0aaef6c34f8658de76c372589bc35ca1da2aef
+redirect_url: windows-10-version-latest
+ms.openlocfilehash: f0281d601253fb23bfb6940494e14b9720c4832d
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="whats-new-in-windows-10-for-developers"></a>Windows 10 の開発者向け新着情報
 

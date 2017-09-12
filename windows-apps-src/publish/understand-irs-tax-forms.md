@@ -3,15 +3,17 @@ author: jnHs
 Description: "マイクロソフトが発行する税関連の書類について、どのような開発者がその書類を受け取るのか、いつ書類が利用できるようになるのかなどを説明します。"
 title: "マイクロソフトが発行する IRS の税関連の書類について"
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
-ms.openlocfilehash: 068a940a54048b10e8f66bd3267b3a22c42beb50
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: bffb666184f52e6e6491d8651414ecbc269352b8
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/21/2017
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>マイクロソフトが発行する IRS の税関連の書類について
 
@@ -26,7 +28,8 @@ translationtype: HT
 |1099-MISC、1099-K | マイクロソフトのマーケットプレースへの参加に関する販売アクティビティや開発者への支払いに関連します。 | 書類には **1 月 31 日**までの消印が押されます。また、同時に .pdf コピーがデベロッパー センターで利用可能になります (**[ダッシュボード]、[アカウント設定]、[税プロファイル]** の順に移動します)。 |
 |1042-S | 米国の源泉徴収税の対象になる開発者への支払いに関連します。 | 書類には **3 月 15 日**までの消印が押されます。また、同時に .pdf コピーがデベロッパー センターで利用可能になります (**[ダッシュボード]、[アカウント設定]、[税プロファイル]** の順に移動します)。 |
 
-> **注:** IRS の税関連書類に記載される住所には、[税プロファイル](setting-up-your-payout-account-and-tax-forms.md#tax-forms)内の住所が利用されます。 住所を変更した場合は、**[税プロファイル]** の住所も変更するようにしてください。
+> [!NOTE]
+> 注: IRS の税関連書類に記載される住所には、[税プロファイル](setting-up-your-payout-account-and-tax-forms.md#tax-forms)内の住所が利用されます。 住所を変更した場合は、**[税プロファイル]** の住所も変更するようにしてください。
 
 ## <a name="for-developers-located-in-the-united-states"></a>米国在住の開発者の場合
 
@@ -68,7 +71,7 @@ EIN: \*\*\*\*\*4442<br>
      <th> 以下の書類を受け取る</th>
   </tr>
   <tr> 
-     <td valign="top">適用される税年度に、アプリ内広告 (Microsoft Advertising) によって **600 ドル以上の支払い**を受け取りました。</td>
+     <td valign="top">適用される税年度に、アプリ内広告によって **600 ドル以上の支払い**を受け取りました。</td>
     <td valign="top">**1099-MISC** :<br>
 支払い人: Microsoft Online Inc<br>
 EIN: \*\*\*\*\*0505<br>
@@ -76,7 +79,7 @@ EIN: \*\*\*\*\*0505<br>
 **重要:** 一部のビジネス エンティティは、マイクロソフトから支払い金額を受け取っているかどうかに関係なく、1099-MISC フォームを受け取りません。  詳細については、税務の専門家にお問い合わせください。  </td>
   </tr>
   <tr> 
-     <td valign="top">適用される税年度に、アプリ内広告 (Microsoft Advertising) によって **600 ドル未満の支払い**を受け取りました。</td>
+     <td valign="top">適用される税年度に、アプリ内広告によって **600 ドル未満の支払い**を受け取りました。</td>
      <td valign="top">なし</td>
   </tr>
 </table>
@@ -123,4 +126,5 @@ EIN: \*\*\*\*\*0505<br>
 </table>
 
 
-> **注:** **IRS の税関連の書類**に関する質問や懸案事項が他にもある場合は、[サポート チケット](http://aka.ms/storesupport)を作成してください。 マイクロソフトは特定の税金の事情に関する質問にはお答えできません。これらの質問については、税務の専門家にお問い合わせください。
+> [!NOTE]
+> **IRS の税関連の書類**に関する質問や懸案事項が他にもある場合は、[サポート チケット](http://aka.ms/storesupport)を作成してください。 マイクロソフトは特定の税金の事情に関する質問にはお答えできません。これらの質問については、税務の専門家にお問い合わせください。

@@ -1,17 +1,19 @@
 ---
-author: Xansky
+author: normesta
 description: "UWP アプリで連絡先とカレンダーの情報を使う方法。"
 title: "連絡先とカレンダー"
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
-ms.author: mhopkins
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 連絡先, カレンダー, 予定, メール メッセージ"
-ms.openlocfilehash: 395b9fabd1481715e21ba65151d63f4b7f74a3bc
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 2d90823c60f9a86bcff2228763911aaf7f5049a1
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="contacts-and-calendar"></a>連絡先とカレンダー
 

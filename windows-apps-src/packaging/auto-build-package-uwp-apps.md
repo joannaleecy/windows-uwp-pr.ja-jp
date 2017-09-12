@@ -1,17 +1,19 @@
 ---
-author: rmpablos
+author: laurenhughes
 title: "UWP アプリの自動ビルドを設定する"
 description: "サイドロード パッケージやストア パッケージを生成する自動ビルドを構成する方法について説明します。"
-ms.author: wdg-dev-content
-ms.date: 02/15/2017
+ms.author: lahugh
+ms.date: 08/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
-ms.openlocfilehash: f4c68af97e5d5b11a0c5320c9fa6040b9ab94e5a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: c8c1765e2983484ddc57e47a995867aa3b401ad4
+ms.sourcegitcommit: 63c815f8c6665872987b5410cabf324f2b7e3c7c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/10/2017
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>UWP アプリの自動ビルドを設定する
 
@@ -104,11 +106,11 @@ $() 構文で定義されたパラメーターは、ビルド定義で定義さ�
 すべての定義済みの変数を表示するには、[ビルド変数の使用に関するページ](https://www.visualstudio.com/docs/build/define/variables)をご覧ください。
 
 #### <a name="configure-the-publish-artifact-build-task"></a>成果物の公開のビルド タスクを構成する 
-このタスクは、VSTS で生成される成果物を格納します。 成果物は、ビルド結果ページの [成果物] タブで確認できます。 VSTS は、以前に定義した `$Build.ArtifactStagingDirectory)\AppxPackages` フォルダーを使用します。
+このタスクは、VSTS で生成される成果物を格納します。 成果物は、ビルド結果ページの [成果物] タブで確認できます。 VSTS は、以前に定義した `$(Build.ArtifactStagingDirectory)\AppxPackages` フォルダーを使用します。
 
 ![成果物](images/building-screen6.png)
 
-ここでは、`UapAppxPackageBuildMode` プロパティを `StoreUpload` に設定しているため、成果物フォルダーには、サイドロードを有効にするパッケージ (appxbundle) と共に、ストアにアップロードするパッケージ (appxupload) が含まれています。
+ここでは、`UapAppxPackageBuildMode` プロパティを `StoreUpload` に設定しているため、成果物フォルダーには、ストアへの提出に推奨されるパッケージ (.appxupload) が含まれます。 また、通常のアプリ パッケージ (.appx) や アプリ バンドル (.appxbundle) もストアに提出できることに注意してください。 この資料の目的上、.appxupload ファイルを使います。
 
 
 >注: 既定では、VSTS エージェントによって、生成された最新の appx が維持されます。 現在のビルドの成果物のみを格納する場合は、バイナリ ディレクトリをクリーンアップするようにビルドを構成します。 そのためには、`Build.Clean` という名前の変数を追加し、その変数の値を `all` に設定します。 詳しくは、[リポジトリの指定に関するページ](https://www.visualstudio.com/docs/build/define/repository#how-can-i-clean-the-repository-in-a-different-way)をご覧ください。
@@ -154,7 +156,7 @@ CI ビルドはユーザーに対して展開されないため、CD ビルド�
 
 ![単体テストを追加する](images/building-screen8.png)
 
-UWP 単体テストは特定の appx ファイルのコンテキストで実行されるため、生成されたバンドルを使うことはできません。 また、具体的なプラットフォームの appx ファイルへのパスを指定する必要があります。 以下に例を示します。
+UWP 単体テストは特定の appx ファイルのコンテキストで実行されるため、生成されたバンドルを使うことはできません。 また、具体的なプラットフォームの appx ファイルへのパスを指定する必要があります。 次に例を示します。
 
 ```
 $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp.UnitTest\x86\MyUWPApp.UnitTest_$(AppxVersion)_x86.appx
@@ -172,10 +174,10 @@ VSTS では、ビルドの概要ページに、単体テストを実行する各
 チェックインの品質を監視する目的にのみ CI ビルドを使用する場合は、ビルド時間を短縮できます。
 
 #### <a name="to-improve-the-speed-of-a-ci-build"></a>CI ビルドの速度を向上させるには
-1.    1 つのプラットフォーム向けにのみビルドします。
-2.    BuildPlatform 変数を編集して、x86 のみを使用します。 ![CI を構成する](images/building-screen10.png) 
-3.    ビルド ステップで、[MSBuild 引数] プロパティに「/p:AppxBundle=Never」を追加し、[プラットフォーム] プロパティを設定します。 ![プラットフォームを構成する](images/building-screen11.png)
-4.    単体テスト プロジェクトで、.NET Native を無効にします。 
+1.  1 つのプラットフォーム向けにのみビルドします。
+2.  BuildPlatform 変数を編集して、x86 のみを使用します。 ![CI を構成する](images/building-screen10.png) 
+3.  ビルド ステップで、[MSBuild 引数] プロパティに「/p:AppxBundle=Never」を追加し、[プラットフォーム] プロパティを設定します。 ![プラットフォームを構成する](images/building-screen11.png)
+4.  単体テスト プロジェクトで、.NET Native を無効にします。 
 
 そのためには、プロジェクト ファイルを開き、プロジェクトのプロパティで、`UseDotNetNativeToolchain` プロパティを `false` に設定します。
 
@@ -274,16 +276,16 @@ $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUW
 /p:UapAppxPackageBuildMode=StoreUpload 
 ```
 
-これにより、ストアに提出できる appxupload ファイルが生成されます。
+これにより、ストアに提出できる .appxupload ファイルが生成されます。
 
 
 #### <a name="configure-automatic-store-submission"></a>ストアへの自動提出を構成する
 
-Visual Studio Team Services の Windows ストア用の拡張機能を使用してストア API と統合し、appxupload パッケージをストアに送信します。
+Visual Studio Team Services の Windows ストア用の拡張機能を使用してストア API と統合し、アプリ パッケージをストアに送信します。
 
 Azure Active Directory (AD) を使用してデベロッパー センター アカウントを接続し、AD で要求を認証するアプリを作成する必要があります。 これを実行するには、拡張機能のページのガイダンスに従います。 
 
-拡張機能を構成した後、ビルド タスクを追加し、アプリの ID と appxupload ファイルの場所を使ってビルド タスクを構成できます。
+拡張機能を構成した後、ビルド タスクを追加し、アプリの ID と .appxupload ファイルの場所を使ってビルド タスクを構成できます。
 
 ![デベロッパー センターを構成する](images/building-screen17.png) 
 
@@ -317,7 +319,7 @@ VSTS や HockeyApp などの Web サイトから appx パッケージを配布�
 
 <span id="certificates-best-practices"/>
 ### <a name="best-practices-for-signing-certificates"></a>署名証明書のベスト プラクティス 
-Visual Studio では、各プロジェクト用の証明書が生成されます。 これにより、有効な証明書の整理された一覧を維持することは困難です。 複数のアプリを作成することを計画している場合は、すべてのアプリに署名するための単一の証明書を作成できます。 その後、その証明書を信頼している各デバイスでは、別の証明書をインストールしなくても、アプリをサイドロードすることができます。 詳しくは、[アプリ パッケージの署名証明書を作成する方法に関するページ](https://msdn.microsoft.com/library/windows/desktop/jj835832(v=vs.85).aspx)をご覧ください。
+Visual Studio では、各プロジェクト用の証明書が生成されます。 これにより、有効な証明書の整理された一覧を維持することは困難です。 複数のアプリを作成することを計画している場合は、すべてのアプリに署名するための単一の証明書を作成できます。 その後、その証明書を信頼している各デバイスでは、別の証明書をインストールしなくても、アプリをサイドロードすることができます。 詳しくは、「[パッケージ署名用の証明書を作成する](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)」をご覧ください。
 
 
 #### <a name="create-a-signing-certificate"></a>署名証明書を作成する
@@ -357,7 +359,7 @@ Visual Studio と MSBuild は、アプリの署名に使う証明書を管理す
 証明書を登録する最も簡単な方法は、.cer ファイルをダブルクリックし、ウィザードの手順に従って、ローカル コンピューターの信頼されたユーザー ストアに証明書を保存することです。
 
 ## <a name="related-topics"></a>関連トピック
-* [Windows 用の .NETアプリを構築する](https://www.visualstudio.com/docs/build/get-started/dot-net) 
+* [Windows 用の .NET アプリを構築する](https://www.visualstudio.com/docs/build/get-started/dot-net) 
 * [UWP アプリのパッケージ化](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
 * [Windows 10 での LOB アプリのサイドローディング](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
-* [アプリ パッケージの署名証明書を作成する方法](https://msdn.microsoft.com/library/windows/desktop/jj835832(v=vs.85).aspx)
+* [パッケージ署名用の証明書を作成する](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)

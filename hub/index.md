@@ -3,25 +3,15 @@ layout: HubPage
 hide_bc: True
 title: "Windows に関するドキュメント"
 description: "Windows ソリューションの構築とメンテナンスに役立つ、開発者、ハードウェア、および IT 技術者向けのドキュメントを検索します。"
-ms.openlocfilehash: 72e8242de32be8811cb0cac79f4dac72f0e5bed3
-ms.sourcegitcommit: 931bf8d00effba34c2a0a3d3e7bad692d4fcf150
+ms.openlocfilehash: 3837a3649acd5b9656c3d1b76973fca9f26ba740
+ms.sourcegitcommit: d6cf700ed2771c7a88f32972abdd0e192ae71b73
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2017
+ms.lasthandoff: 07/14/2017
 ---
 <div id="main" class="v2">
   <div class="container">
       <ul class="cardsY panelContent featuredContent">
-          <li class="fullSpan">
-              <div class="warning-message" style="margin:0 0 2rem 0;">
-                  <div class="red-box" style="width:64px; height:64px; margin-right:12px; float:left; background-color:#d83b01;">
-                      <div class="warning-icon" style="margin:8px auto; width:48px; height:48px;">
-                          <img src="/media/hubs/windows/warning-msg.svg" />
-                      </div>
-                  </div>
-                  <p class="warning-msg" style="font-family: Segoe, 'Segoe UI','sans-serif';font-size: 1rem;font-weight:600;color: #222222;">被害が拡大しているランサムウェア攻撃では、最新の更新プログラムが適用されていない Windows システムがターゲットになっています。 この脅威の重大度を考慮して、Windows システムをできるだけ早く更新してください。 <a href="https://blogs.technet.microsoft.com/msrc/2017/05/12/customer-guidance-for-wannacrypt-attacks/" style="color:#d83b01 !important;">詳細情報</a>。</p>
-              </div>
-          </li>
           <li>
               <a href="https://developer.microsoft.com/windows/downloads/virtual-machines">
                   <div class="cardSize">
@@ -164,16 +154,13 @@ ms.lasthandoff: 05/18/2017
                                         <div class="cardText">
                                             <h3>ゲーム</h3>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/games/getstarted">開始</a>
+                                                <a href="https://developer.microsoft.com/games/uwp">UWP</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/games/design">UI 設計</a>
+                                                <a href="https://developer.microsoft.com/games/xbox/xboxlive">Xbox Live</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/games/develop">開発</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/games/publish">公開</a>
+                                                <a href="https://developer.microsoft.com/games/support">Support</a>
                                             </p>
                                         </div>
                                     </div>
@@ -280,7 +267,26 @@ ms.lasthandoff: 05/18/2017
                             </div>
                         </li>
                         <li>
-                            <a href="https://msdn.microsoft.com/windows/hardware/commercialize/design/index">
+                            <a href="https://docs.microsoft.com/windows-hardware/get-started/index">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_hardware-dev-get-started.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>作業</h3>
+                                                <p>初めての Windows 10 によるデバイスの構築</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://docs.microsoft.com/windows-hardware/design/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -290,7 +296,7 @@ ms.lasthandoff: 05/18/2017
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>設計</h3>
+                                                <h3>デザイン</h3>
                                                 <p>すべてのフォーム ファクターで魅力的なユーザー エクスペリエンスを作成します。</p>
                                             </div>
                                         </div>
@@ -299,7 +305,7 @@ ms.lasthandoff: 05/18/2017
                             </a>
                         </li>
                         <li>
-                            <a href="https://msdn.microsoft.com/library/windows/hardware/mt269767(v=vs.85).aspx">
+                            <a href="https://docs.microsoft.com/windows-hardware/drivers/develop/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -318,7 +324,7 @@ ms.lasthandoff: 05/18/2017
                             </a>
                         </li>
                         <li>
-                            <a href="https://msdn.microsoft.com/windows/hardware/commercialize/customize/index">
+                            <a href="https://docs.microsoft.com/windows-hardware/customize/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -337,7 +343,7 @@ ms.lasthandoff: 05/18/2017
                             </a>
                         </li>
                         <li>
-                            <a href="https://msdn.microsoft.com/windows/hardware/commercialize/test/index">
+                            <a href="https://docs.microsoft.com/windows-hardware/test/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -356,7 +362,7 @@ ms.lasthandoff: 05/18/2017
                             </a>
                         </li>
                         <li>
-                            <a href="https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/index">
+                            <a href="https://docs.microsoft.com/windows-hardware/manufacture/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -375,7 +381,7 @@ ms.lasthandoff: 05/18/2017
                             </a>
                         </li>
                         <li>
-                            <a href="https://msdn.microsoft.com/windows/hardware/commercialize/service/index">
+                            <a href="https://docs.microsoft.com/windows-hardware/service/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">

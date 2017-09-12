@@ -9,17 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, テクノロジ, DirectX"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7f6ad043299efa2aae7abdb1f1e0a7e898d40836
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: afbab8d6e38bad7c72d4863f97d90b7eb8ff4cac
+ms.sourcegitcommit: ae20971c4c8276034cd22fd7e10b0e3ddfddf480
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/11/2017
 ---
+# <a name="game-technologies-for-uwp-apps"></a>UWP アプリのゲーム テクノロジ
 
-# <a name="game-technologies-for-universal-windows-platform-uwp-apps"></a>ユニバーサル Windows プラットフォーム (UWP) アプリのゲーム テクノロジ
 
-
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 このガイドでは、ユニバーサル Windows プラットフォーム UWP ゲームの開発に利用できるテクノロジについて説明します。
 
@@ -36,17 +35,17 @@ Windows 10 で UWP が導入されたことにより、作成した Windows 10 �
 ## <a name="uwp-games-with-c-and-directx"></a>C++ と DirectX を使った UWP ゲーム
 
 
-高パフォーマンスを必要とするリアルタイム ゲームでは、DirectX API を使用する必要があります。 DirectX は、3D ゲームなど、高パフォーマンスを必要とするゲームやマルチメディア アプリケーションを作成するための、ネイティブ API のコレクションです。 DirectX API はネイティブであるため、DirectX と共に使用できる言語は C++ のみです。
+高パフォーマンスを必要とするリアルタイム ゲームでは、DirectX API を使用する必要があります。 DirectX は、3D ゲームなど、高パフォーマンスを必要とするゲームやマルチメディア アプリケーションを作成するための、ネイティブ API のコレクションです。
 
 ## <a name="development-environment"></a>開発環境
 
 
-UWP 用のゲームを作成するには、Visual Studio 2015 をインストールして開発環境をセットアップする必要があります。 Visual Studio 2015 を使うことによって、UWP アプリを作成でき、ゲーム開発用のツールが提供されます。
+UWP 用のゲームを作成するには、Visual Studio 2015 以降をインストールして開発環境をセットアップする必要があります。 Visual Studio 2015 を使うことによって、UWP アプリを作成でき、ゲーム開発用のツールが提供されます。
 
 -   Visual Studio の DX ゲームのプログラミング用ツール: Visual Studio には、画像、モデル、シェーダー リソースを作成、編集、プレビュー、エクスポートするためのツールが用意されています。 また、ビルド時のリソースの変換や、DirectX グラフィックス コードのデバッグに使うことができるツールもあります。 詳しくは、「[ゲーム プログラミング用の Visual Studio ツールの使用](set-up-visual-studio-for-game-development.md)」をご覧ください。
 -   Visual Studio グラフィックス診断機能: オプション機能として、グラフィックス診断ツールを Windows 内から利用できるようになりました。 診断ツールを使って、グラフィックス デバッグやグラフィックス フレーム分析を実行し、リアルタイムで GPU 使用率を監視できます。 詳しくは、「[DirectX ランタイムと Visual Studio グラフィックス診断機能の使用](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md)」をご覧ください。
 
-詳しくは、「ユニバーサル Windows プラットフォームと DirectX ゲーム プログラミング環境の準備」をご覧ください。
+詳しくは、「ユニバーサル Windows プラットフォームと [DirectX プログラミング](directx-programming.md)環境の準備」をご覧ください。
 
 ## <a name="getting-started-with-directx-game-project-templates"></a>DirectX ゲーム プロジェクト テンプレートの概要
 
@@ -211,7 +210,7 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
     <p><strong>使う状況</strong></p>
     <p>ゲームでゲームパッド入力をサポートする必要があるが、XInput の既存のコードを使っていない場合や、上に示したメリットのいずれかが必要である場合は、Windows.Gaming.Input を使う必要があります。</p>
     <p><strong>詳細情報</strong></p>
-    <p>[<strong>Windows.Gaming.Input</strong>](https://msdn.microsoft.com/library/windows/apps/dn707817) に関連するドキュメントをご覧ください。</p></td>
+    <p>「<strong>Windows.Gaming.Input</strong> (https://msdn.microsoft.com/library/windows/apps/dn707817)」のドキュメントをご覧ください。</p></td>
     </tr>
     <tr class="odd">
     <td align="left">Windows.UI.Core.CoreWindow</td>
@@ -325,8 +324,11 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
 
 ## <a name="xbox-live-services"></a>Xbox Live サービス
 
+[Xbox Live クリエーターズ プログラム](https://developer.microsoft.com/games/xbox/xboxlive/creator) では、開発者はだれでも Xbox Live を自分の UWP ゲームに統合して、Xbox One や Windows 10 に公開することができます。 最小限の開発時間で、サインイン、プレゼンス、ランキングなどの Xbox Live ソーシャル エクスペリエンスをタイトルに統合できます。 Xbox Live のソーシャル機能では、5,500 万人以上のアクティブ ゲーマーに情報を発信して、オーディエンスを自然に増やすことができます。
 
-Xbox Live 機能セット (Xbox とのクロス プレイ、達成度、ゲーマースコアなど) が Windows 10 でも利用できます。 近日中に、ID@Xbox を使って作業することによって、UWP ゲームに Live を含めることができるようになる予定です。 また、将来的には、お客様のユニバーサル アプリ プラットフォームのゲームを、Xbox One 向けにも出荷できるようにサポートする予定です。 詳しくは、[ID@Xbox](http://www.xbox.com/developers/id) に関するページをご覧ください。
+Xbox Live の他の機能にアクセスしたり、マーケティングと開発に関する専用のサポートを受けたり、Xbox One ストアのメイン ページで取り上げられたりすることを希望する場合は、[ID@Xbox](http://www.xbox.com/developers/id) プログラムへの登録を申し込んでください。 Xbox Live クリエーターズ プログラム、および ID@Xbox プログラムで利用できる機能については、[機能表](../xbox-live/developer-program-overview.md#feature-table)をご覧ください。
+
+詳しくは、「[ゲームへの Xbox Live の追加](e2e.md#adding-xbox-live-to-your-game)」をご覧ください。
 
 ##  <a name="alternatives-to-writing-games-with-directx-and-uwp"></a>DirectX と UWP を使ったゲーム作成の代替手段
 
@@ -351,12 +353,11 @@ Windows ゲーム開発 API を使って独自のゲーム エンジンを作成
 
 ゲームを公開する準備ができたら、開発者アカウントを作成して、ゲームを Windows ストアに提出する必要があります。
 
-Windows ストアへのゲームの提出については、<https://dev.windows.com/publish> をご覧ください。
+Windows ストアへのゲームの提出については、「[ゲームの申請と公開](e2e.md#submitting-and-publishing-your-game)」をご覧ください。
 
  
 
  
-
 
 
 

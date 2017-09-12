@@ -1,57 +1,45 @@
 ---
-author: shawjohn
-Description: "詳細な分析は、Windows デベロッパー センター ダッシュボードで表示できます。"
-title: "分析"
+author: JnHs
+Description: "Windows アプリについての詳しい分析をダッシュボードやその他の手段で確認しましょう。"
+title: "アプリのパフォーマンスの分析"
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
-ms.author: johnshaw
-ms.date: 02/08/2017
+ms.author: wdg-dev-content
+ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10、UWP、分析、報告、ダッシュ ボード、アプリ"
-ms.openlocfilehash: 13a37a4ae2cea67fdce843ed4e6189797d85b93e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: "Windows 10, UWP, 分析, 報告, ダッシュ ボード, アプリ"
+ms.openlocfilehash: 57e4a30258fa25411bb461cac56aa18d2f74981d
+ms.sourcegitcommit: a93b1da07b386a682435de58a8129d7b4ee90c14
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/29/2017
 ---
-# <a name="analytics"></a>分析
+# <a name="analyze-app-performance"></a>アプリのパフォーマンスの分析
 
-詳細な分析は、Windows デベロッパー センター ダッシュボードで表示できます。 統計情報とチャートでは、アプリの状況 (獲得したユーザーから、ユーザーによるアプリの使い方、ユーザーによるアプリの評判まで) を知ることができます。 アプリの正常性、広告の使用状況などに関する情報も確認できます。 ダッシュボードでレポートを表示するか、[必要なレポートをダウンロード](download-analytic-reports.md)してデータをオフラインで分析します。 [ダッシュボードを使わずに分析データにアクセスする](#no-dashboard)こともできます。
+アプリについての詳しい分析を Windows デベロッパー センター ダッシュボードで確認できます。 統計情報とチャートでは、アプリの状況 (獲得したユーザーから、ユーザーによるアプリの使い方、ユーザーによるアプリの評判まで) を知ることができます。 アプリの正常性、広告の使用状況などに関するメトリックも確認できます。
 
-> [!NOTE]
-> ダッシュボードのレポートに加えて、[Windows ストア分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) を使ってプログラムでいくつかの分析データにアクセスできます。
+ダッシュボードで分析レポートを表示するか、[必要なレポートをダウンロード](download-analytic-reports.md)してデータをオフラインで分析できます。 [ダッシュボードを使わずに分析データにアクセスする](#no-dashboard)こともできます。
 
-## <a name="analytics-for-all-your-apps"></a>すべてのアプリの分析
+## <a name="view-key-analytics-for-all-your-apps"></a>すべてのアプリについての主要な分析を表示する
 
-上部のナビゲーション メニューで、最もダウンロードされたアプリについての主要な分析を表示するには、**[分析]** > **[概要]** の順に選択します。 既定では、**[分析の概要]** ページには、全期間の取得数が最も多い 5 つのアプリに関する情報が表示されます。 別のアプリを選択して表示するには、**[フィルターを変更します]** を選択します。
+最もダウンロードされたアプリについての主要な分析を表示するには、**[分析]** を展開し、**[概要]** を選びます。 既定では、**[分析の概要]** ページには、有効期間内の取得数が最も多い 5 つのアプリに関する情報が表示されます。 別の発行済みのアプリを選んで表示するには、**[フィルター]** を選びます。
 
-## <a name="available-reports-for-each-app"></a>各アプリで利用可能なレポート
+## <a name="view-individual-reports-for-each-app"></a>アプリごとに個別レポートを表示する
 
 ここでは、次の各レポートに表示される情報の詳細情報を示します。
 
--   [取得レポート](acquisitions-report.md)
--   [アドオン取得レポート](add-on-acquisitions-report.md)
--   [インストール レポート](installs-report.md)
--   [利用状況レポート](usage-report.md)
--   [状態レポート](health-report.md)
--   [評価レポート](ratings-report.md)
--   [レビュー レポート](reviews-report.md)
--   [フィードバック レポート](feedback-report.md)
--   [チャネルとコンバージョン レポート](channels-and-conversions-report.md)
--   [広告メディエーション レポート](ad-mediation-report.md)
--   [広告パフォーマンス レポート](advertising-performance-report.md)
--   [アフィリエイト パフォーマンス レポート](affiliates-performance-report.md)
--   [アプリの販売促進レポート](promote-your-app-report.md)
+-   [[取得] レポート](acquisitions-report.md)
+-   [[アドオン取得] レポート](add-on-acquisitions-report.md)
+-   [[使用状況] レポート](usage-report.md)
+-   [[安定性] レポート](health-report.md)
+-   [[レビュー] レポート](reviews-report.md)
+-   [[フィードバック] レポート](feedback-report.md)
+-   [[広告パフォーマンス] レポート](advertising-performance-report.md)
+-   [[広告キャンペーン] レポート](promote-your-app-report.md)
 
 > [!NOTE]
 > アプリの実際の機能や実装によっては、これらのレポートの一部にデータが含まれていないことがあります。
-
-## <a name="page-and-section-filters"></a>ページ フィルターとセクション フィルター
-
-各レポートには、データのドリルダウンに使うことができるフィルターが含まれています。 ページの上部付近には、**[フィルターの適用]** が表示されます。 これらフィルターを使うと、ページ上のすべてのチャートと情報の範囲を縮小または拡大することができます。
-
-各チャート内には、個別のセクション フィルターも表示されることがあります。 このフィルターは、その特定のチャートについて表示されるデータを縮小できます。
-
-実際のフィルターはレポートごとに異なります。 このセクションのトピックでは、利用可能なフィルターと、各レポートのページにあるその他のデータについて説明します。
 
 <span id="no-dashboard"/>
 ## <a name="access-analytics-data-without-using-the-dev-center-dashboard"></a>デベロッパー センター ダッシュボードを使わずに分析データにアクセスする
@@ -79,5 +67,3 @@ Power BI を使って分析データにアクセスするには、まず、次�
 
 [Dev Center](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) アプリをインストールすると、すべての Windows 10 デバイスでアプリの正常性とパフォーマンスに関する詳細情報をすばやく確認できます。
 
-## <a name="related-topics"></a>関連トピック
-- [Windows アプリの公開](index.md)

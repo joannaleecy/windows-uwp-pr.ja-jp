@@ -11,9 +11,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: f0fd2e03c58ac5ffa575cf2381df4c652422efea
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 230480343a3f63ece4935e34101b1d3ec5408b84
+ms.sourcegitcommit: 63c815f8c6665872987b5410cabf324f2b7e3c7c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/10/2017
 ---
 # <a name="accessibility-overview"></a>アクセシビリティの概要  
 
@@ -22,11 +24,12 @@ translationtype: HT
 
 この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリのアクセシビリティ シナリオに関連する概念とテクノロジの概要を示します。
 
+<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
+
 <span id="Accessibility_and_your_app"/>
 <span id="accessibility_and_your_app"/>
 <span id="ACCESSIBILITY_AND_YOUR_APP"/>
-## <a name="accessibility-and-your-app"></a>アクセシビリティとアプリ  
-障碍には、運動障碍、視覚障碍、色覚障碍、聴覚障碍、言語障碍、認知障碍、学習障碍など、さまざまな種類がありますが、 ここで紹介するガイドラインに従うことで、そのほとんどの要件に対処できます。 具体的には、次のものを提供します。
+## アクセシビリティとアプリ: 障碍には、運動障碍、視覚障碍、色覚障碍、聴覚障碍、言語障碍、認知障碍、学習障碍など、さまざまな種類がありますが、 ここで紹介するガイドラインに従うことで、そのほとんどの要件に対処できます。 具体的には、次のものを提供します。
 
 * キーボード操作とスクリーン リーダーのサポート
 * フォント、ズーム設定 (拡大)、色、ハイ コントラスト設定など、ユーザーによるカスタマイズのサポート
@@ -110,7 +113,7 @@ UI コントロールでは、テーマの XAML リソース ディクショナ�
 
 多くの場合、幅広いユーザーが利用できるようにするために、重要な情報を複数の方法で伝えることができます。 たとえば、アイコンと色の両方を使って情報を目立つようにすると、色覚に障碍があるユーザーが確認しやすくなります。また、効果音と一緒に視覚的な警告も表示すると、聴覚障碍があるユーザーに便利です。
 
-必要に応じて、不要な要素やアニメーションがまったくないアクセシビリティ対応のユーザー インターフェイス要素を代わりに使えるようにしたり、ユーザー操作が効率的になるように簡略化したりできます。 次のコード例は、1 つの [**UserControl**](https://msdn.microsoft.com/library/windows/apps/BR227647) インスタンスを表示して、ユーザー設定に応じて UserControl の別のインスタンスを表示する方法を示しています。
+必要に応じて、不要な要素やアニメーションがまったくないアクセシビリティ対応のユーザー インターフェイス要素を代わりに使えるようにしたり、ユーザー操作が効率的になるように簡略化したりできます。 次のコード例は、ユーザー設定に応じて、ある [**UserControl**](https://msdn.microsoft.com/library/windows/apps/BR227647) インスタンスの代わりに別のインスタンスを表示する方法を示しています。
 
 XAML
 ```xml
@@ -181,4 +184,4 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 * [アクセシビリティのための設計](https://msdn.microsoft.com/library/windows/apps/Hh700407)
 * [XAML アクセシビリティ サンプル](http://go.microsoft.com/fwlink/p/?linkid=238570)
 * [アクセシビリティ](accessibility.md)
-* [ナレーターの概要](https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started)
+* [ナレーターの概要](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

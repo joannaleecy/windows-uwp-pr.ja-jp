@@ -2,22 +2,22 @@
 author: mcleanbyron
 ms.assetid: 4920D262-B810-409E-BA3A-F68AADF1B1BC
 description: "このセクションの Java コード例を使用して、Windows ストア申請 API を使用する方法をご確認ください。"
-title: "申請 API 用の Java のコード例"
+title: "Java のコード例 - アプリ、アドオン、およびフライトの申請"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10、UWP、Windows ストア申請 API、コード例"
-ms.openlocfilehash: ff5e857e0f5ce110ab7afc64bd2faa28f7bea517
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: "Windows 10, uwp, Windows ストア申請 API, コード例, java"
+ms.openlocfilehash: daa91b5354abc070b1ba538f7d818125e4bc94a9
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/09/2017
 ---
-# <a name="java-code-examples-for-the-submission-api"></a>申請 API 用の Java のコード例
+# <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Java のコード例: アプリ、アドオン、およびフライトの申請
 
-この記事では、*Windows ストア申請 API* を使用するための Java のコード例を紹介します。 この API について詳しくは、｢[Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)｣をご覧ください。
-
-ここでは、次のタスクに対応するコード例を示します。
+この記事では、次のタスクの [Windows ストア申請 API](create-and-manage-submissions-using-windows-store-services.md) の使用方法を示す Java コード例を提供します。
 
 * [Azure AD アクセス トークンの取得](#token)
 * [アドオンの作成](#create-add-on)
@@ -52,7 +52,7 @@ translationtype: HT
 <span id="create-add-on" />
 ## <a name="create-an-add-on"></a>アドオンの作成
 
-次の例は、アドオンを[作成](create-an-add-on.md)してから[削除](delete-an-add-on.md)する方法を示しています (アドオンは "アプリ内製品"、略して "IAP" とも呼ばれます)。
+次の例は、アドオンを[作成](create-an-add-on.md)してから[削除](delete-an-add-on.md)する方法を示しています。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L310-L345)]
 

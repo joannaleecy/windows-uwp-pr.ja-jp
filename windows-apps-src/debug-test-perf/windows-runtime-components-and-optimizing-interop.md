@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: 9899F6A0-7EDD-4988-A76E-79D7C0C58126
 title: "ユニバーサル Windows プラットフォーム コンポーネントと相互運用性の最適化"
 description: "相互運用性のパフォーマンス上の問題を回避しながら、ネイティブ型とマネージ型の間で UWP コンポーネントと相互運用機能を使うユニバーサル Windows プラットフォーム (UWP) アプリを作成します。"
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: a4296c7ba149abce2173e816aa99406a44f75618
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 8562454b976362ebc65884203775b3891216d8b7
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="uwp-components-and-optimizing-interop"></a>UWPコンポーネントと相互運用性の最適化
 

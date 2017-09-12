@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: a05cc1d0da255eddb5c6659e7c9d44f3faf4101d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b8c8b69ad869b9294d5cfbd767ffa543009ebfab
+ms.sourcegitcommit: 6396a69aab081f5c7a9a59739c83538616d3b1c7
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/30/2017
 ---
 # <a name="bluetooth-rfcomm"></a>Bluetooth RFCOMM
 
@@ -49,7 +51,7 @@ Windows.Networking.Sockets.StreamSocket _socket;
 async void Initialize()
 {
     // Enumerate devices with the object push service
-    auto services =
+    var services =
         await Windows.Devices.Enumeration.DeviceInformation.FindAllAsync(
             RfcommDeviceService.GetDeviceSelector(
                 RfcommServiceId.ObexObjectPush));
@@ -57,7 +59,7 @@ async void Initialize()
     if (services.Count > 0)
     {
         // Initialize the target Bluetooth BR device
-        auto service = await RfcommDeviceService.FromIdAsync(services[0].Id);
+        var service = await RfcommDeviceService.FromIdAsync(services[0].Id);
 
         // Check that the service meets this App's minimum requirement
         if (SupportsProtection(service) && IsCompatibleVersion(service))
@@ -119,10 +121,10 @@ const byte SERVICE_VERSION_ATTRIBUTE_TYPE = 0x0A;   // UINT32
 const uint MINIMUM_SERVICE_VERSION = 200;
 bool IsCompatibleVersion(RfcommDeviceService service)
 {
-    auto attributes = await service.GetSdpRawAttributesAsync(
+    var attributes = await service.GetSdpRawAttributesAsync(
         BluetothCacheMode.Uncached);
-    auto attribute = attributes[SERVICE_VERSION_ATTRIBUTE_ID];
-    auto reader = DataReader.FromBuffer(attribute);
+    var attribute = attributes[SERVICE_VERSION_ATTRIBUTE_ID];
+    var reader = DataReader.FromBuffer(attribute);
 
     // The first byte contains the attribute' s type
     byte attributeType = reader.ReadByte();

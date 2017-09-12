@@ -2,16 +2,18 @@
 description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで、共有コントラクトをサポートする方法について説明します。"
 title: "データの共有"
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
-author: awkoren
-ms.author: alkoren
+author: msatranjr
+ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 00c59ef7d62fb5518bf6e935b7913d4ca8180f7b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: fe6da350fbfe006b55e90aee8c12da90967f5711
+ms.sourcegitcommit: 23cda44f10059bcaef38ae73fd1d7c8b8330c95e
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/19/2017
 ---
 # <a name="share-data"></a>データの共有
 

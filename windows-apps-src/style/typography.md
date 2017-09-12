@@ -5,14 +5,16 @@ title: "文字体裁"
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 92fd3ee66768fcf1c98d9760ecb44811c9b0f9b3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0609622053d0ae25b5039766137db1b195c0d69d
+ms.sourcegitcommit: 5ece992c31870df4c089360ef47501bd4ce14fa9
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/22/2017
 ---
 # <a name="typography"></a>文字体裁
 
@@ -40,7 +42,7 @@ Microsoft では、シンプルさと効率性を考慮に入れて文字体裁�
 
 小さい書体の上に大きい書体を重ねる場合、大きい書体の最後のベースラインから小さい書体の最初のベースラインまでの距離が、大きい書体の行の高さと等しくなるようにしてください。
 
-![大きい書体を小さい書体に重ねる方法を示します。](images/line-height-stacking.png)
+![小さい書体に対する大きい書体の重なり方を示す図](images/line-height-stacking.png)
 
 XAML では、これは 2 つの [TextBlocks](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) を重ね、適切な余白を設定することで実現できます。
 
@@ -50,7 +52,7 @@ XAML では、これは 2 つの [TextBlocks](https://msdn.microsoft.com/en-us/l
          puts the baseline of the body text exactly 24px
          below the baseline of the header. 24px is the
          recommended line height for a 20px font size,
-         which is what's set in SubtitleTextBlockStyle.
+         which is what’s set in SubtitleTextBlockStyle.
          The bottom margin will be different for
          different font size pairings. -->
     <TextBlock
@@ -145,12 +147,12 @@ Segoe UI には多くの文字が用意されており、サイズが小さく�
 
 横方向に配置されたテキスト付きアイコンは、アイコンのサイズとテキストの量に応じてさまざまな方法で処理することができます。 1 行であっても複数行であってもテキストがアイコンの高さに収まる場合、テキストを上下に中央揃えにしてください。
 
-テキストの高さがアイコンの高さより高い場合、テキストの先頭行を縦方向に揃え、残りのテキストが自然に下に流れるようにしてください。 より大きい大文字、高さが上昇または下降する文字を使うときは、同じ配置ガイダンスが守られるように注意してください。
+テキストの高さがアイコンの高さより高い場合、テキストの先頭行を縦方向に揃え、残りのテキストが自然に下に流れるようにしてください。 大文字、アセンダー、ディセンダーの高さが通常よりも大きい文字を使うときは、同じ配置ガイダンスが守られるように注意してください。
 
-![いくつかのアイコンとテキストの組み合わせを示します](images/hanging-text-alignment.png)
+![アイコンとテキストの組み合わせの例](images/hanging-text-alignment.png)
 
 >[!NOTE]
->XAML の [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) プロパティを使うと、大文字の高さやベースライン フォントのメトリックにアクセスできます。 このプロパティは、書体を視覚的に上下中央に配置したり、上揃えに配置する場合に利用できます。
+>XAML の [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) プロパティを使うと、大文字の高さやベースライン フォント メトリックにアクセスできます。 このプロパティは、書体を視覚的に上下中央に配置したり、上揃えに配置する場合に利用できます。
 
 ## <a name="clipping-and-ellipses"></a>クリッピングと省略記号
 
@@ -169,17 +171,19 @@ Segoe UI には多くの文字が用意されており、サイズが小さく�
 </div>
 
 >[!NOTE]
->書体見本のほとんどのレベルは XAML の[静的リソース](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp)として利用できます。このリソースは `*TextBlockStyle` 名前付け規則に従っている必要があります (例: `HeaderTextBlockStyle`)。
+>書体見本のほとんどのレベルは、XAML の[静的リソース](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp)として利用できます。これらのリソースは、`*TextBlockStyle` 名前付け規則に従っています (例: `HeaderTextBlockStyle`)。
 
 
+<!--
 <div class="microsoft-internal-note">
-SubtitleAlt、BaseAlt、および CaptionAlt は現在含まれていません。 上記のリンクのコード スニペットに従うと、自分のアプリのスタイルを作成できます。 また、現在 XAML では行の高さが正確には一致しないことに注意してください。
+SubtitleAlt, BaseAlt, and CaptionAlt are not currently included. You can create the styles in your own app following the code snippets in the above link. Also note that XAML does not currently match the line height exactly.
 </div>
+-->
 
 
 ## <a name="primary-and-secondary-text"></a>プライマリ テキストとセカンダリ テキスト
 
-書体見本以外の追加の階層を作成するには、セカンダリ テキストの不透明度を 60% に設定します。 [テーマ カラー パレット](color.md#color-theming) で、BaseMedium を使います。 プライマリ テキストは、常に不透明度を 100% にするか、BaseHigh にしてください。
+書体見本を超えて追加の階層を作成するには、セカンダリ テキストの不透明度を 60% に設定します。 [テーマ カラー パレット](color.md#color-theming) で、BaseMedium を使います。 プライマリ テキストは、常に不透明度を 100% にするか、BaseHigh にしてください。
 
 <!-- Need new images
 ![Two phone apps using SubtitleAlt](images/type-ramp-example-2.png)
@@ -193,7 +197,7 @@ Recommended use of CaptionAlt.
 
 特定のページ タイトルでは、階層に新たな次元を加えるため、すべて大文字にしてください。 これらのタイトルでは、BaseAlt を使い、文字間隔を em の 1,000 分の 75 にしてください。 この処理は、アプリのナビゲーションに使っても役立つことがあります。
 
-ただし、言語によっては大文字にすると固有名詞の意味が変わるため、名前やユーザー入力に基づくページ タイトルはすべて大文字に変換*しない*でください。
+ただし、言語によっては固有名詞を大文字にすると意味が変わるため、名前やユーザー入力に基づくページ タイトルはすべて大文字に変換*しない*でください。
 
 
 <!-- Need new images
@@ -204,7 +208,7 @@ Green shows where all caps should be used. Red shows where it should not.
 ## <a name="dos-and-donts"></a>推奨と非推奨
 * ほとんどのテキストには Body を使う
 * スペースに制約がある場合はタイトルに Base を使う
-* 最上位レベルのコンテンツを強調することで、SubtitleAlt を組み込んでコントラストと階層を作る
+* SubtitleAlt を組み込んで、最上位のコンテンツを強調することでコントラストと階層を作る
 * 長い文字列やプライマリ操作には Caption を使わない
 * テキストを折り返す必要がある場合は Header や Subheader を使わない
 * 同じページで Subtitle と SubtitleAlt を組み合わせない

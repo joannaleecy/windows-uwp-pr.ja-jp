@@ -5,9 +5,17 @@ title: "UWP アプリでの追加と削除のアニメーション"
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
 template: detail.hbs
-ms.openlocfilehash: e1fc86e5110da8926194e20947552337216d4a72
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.author: mijacobs
+ms.date: 05/19/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.openlocfilehash: 40e4ca48132914140fcd4780876615a5864c3157
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="add-and-delete-animations"></a>追加と削除のアニメーション
 

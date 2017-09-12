@@ -1,55 +1,49 @@
 ---
 author: jnHs
-Description: "ストアのアプリの内容ページにリンクすることで、ユーザーがアプリを見つけやすくすることができます。"
+Description: "アプリのストア登録情報ページにリンクすることで、ユーザーがアプリを見つけやすくすることができます。"
 title: "アプリへのリンク"
 ms.assetid: 5420B65C-7ECE-4364-8959-D1683684E146
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 145716d88cd6c940535cafe9c72fce3831151460
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: "windows 10, uwp, リンク, windows store プロトコル, アプリにリンクする, アプリへのリンク"
+ms.openlocfilehash: 2d0750493926937a6326c5f72f568d4294b137c5
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/21/2017
 ---
 # <a name="link-to-your-app"></a>アプリへのリンク
 
 
-ストアのアプリの内容ページにリンクすることで、ユーザーがアプリを見つけやすくすることができます。
+アプリのストア登録情報ページにリンクすることで、ユーザーがアプリを見つけやすくすることができます。
 
-## <a name="getting-the-link-to-your-apps-store-listing"></a>ストアのアプリの内容へのリンク
+## <a name="getting-the-link-to-your-apps-store-listing"></a>アプリのストア登録情報へのリンク
 
+アプリのストア登録情報の URL を取得するには、アプリの **[アプリ管理]** セクションの [[アプリ ID]](view-app-identity-details.md) ページに移動します。 URL の形式は **`https://www.microsoft.com/store/apps/<your app's Store ID>`** です。
 
-ストアのアプリの内容へのリンクは、ダッシュボードにある各アプリの **[アプリ管理]** セクションの [[アプリ ID]](view-app-identity-details.md) ページで確認できます。
-
-このリンクは、**`https://www.microsoft.com/store/apps/<your app's Store ID>`** の形式で示されます。
-
-ユーザーがこのリンクをクリックすると、アプリの Web ベースの内容ページが開きます。 アプリがユーザーのデバイスで利用できる場合、ストア アプリも起動して、アプリの内容を表示します。
-
-> **注**  対象としている OS のバージョンによって、複数のリンクが表示されることがあります。 すべてのアプリで Windows 10 向けの URL が表示されます。この URL は任意の OS で機能します。 Windows 8.1 以前や Windows Phone 8.1 以前向けの追加のリンクが表示されることもあります。それらは指定された OS バージョンでのみ機能します。
-
- 
-
-## <a name="linking-to-your-apps-store-listing-with-the-windows-store-badge"></a>Windows ストア バッジを使ったストアのアプリの内容へのリンク
+ユーザーがこのリンクをクリックすると、アプリの Web ベースの登録情報ページが開きます。 Windows デバイスでは、ストア アプリも起動して、アプリの登録情報を表示します。
 
 
-カスタム バッジを使ってアプリの内容に直接リンクし、ユーザーにアプリが Windows ストアにあることを知らせることができます。
+## <a name="linking-to-your-apps-store-listing-with-the-windows-store-badge"></a>Windows ストア バッジを使ったアプリのストア登録情報へのリンク
 
-バッジを作成するには、[Windows ストア バッジ](http://go.microsoft.com/fwlink/p/?LinkID=534236)に関するページをご覧ください。 この形式を使ってバッジとリンクを生成するには、アプリのストア ID が必要です。 この ID は、**[アプリ管理]** セクションの [[アプリ ID]](view-app-identity-details.md) ページに表示される **[Windows 10 の URL]** の末尾の 12 文字です。
+カスタム バッジを使ってアプリの登録情報に直接リンクし、ユーザーにアプリが Windows ストアにあることを知らせることができます。
 
-> **注**  Windows ストア バッジの使用について詳しくは、[アプリのマーケティング ガイドライン](app-marketing-guidelines.md)をご覧ください。
+バッジを作成するには、[Windows ストア バッジ](http://go.microsoft.com/fwlink/p/?LinkID=534236)に関するページをご覧ください。 バッジとリンクを生成するには、アプリの 12 文字の**ストア ID** が必要です。 アプリの**ストア ID** は、**[アプリ管理]** セクションの [[アプリ ID]](view-app-identity-details.md) ページで確認できます。
 
- 
+> [!NOTE]
+> Windows ストア バッジの使用に関する情報と要件については、[アプリのマーケティング ガイドライン](app-marketing-guidelines.md)をご覧ください。
+
 
 ## <a name="linking-directly-to-your-app-in-the-windows-store"></a>Windows ストアのアプリへの直接リンク
 
+ブラウザーを開いて **ms-windows-store:** URI スキームを使わなくても、Windows ストアを起動して、直接アプリの登録情報ページに移動するリンクを作成できます。
 
-ブラウザーを開いて **ms-windows-store:** URI スキームを使わなくても、Windows ストアを起動して、直接アプリの内容ページに移動するリンクを作成できます。
+ユーザーが Windows デバイスを使っていることがわかっていて、ストアの登録情報ページにユーザーが直接アクセスできるようにする場合は、このリンクが便利です。 たとえば、ブラウザーのユーザー エージェント文字列を調べてユーザーのオペレーティング システムがストアをサポートしていることを確認した後や、既に UWP アプリを使って通信している場合に、このリンクを利用できます。
 
-これらのリンクは、ユーザーが Windows デバイスを使用しており、ユーザーが直接ストア内の内容ページにアクセスできるようにする必要がある場合に便利です。たとえば、ブラウザーでユーザー エージェント文字列を調べてユーザーのオペレーティング システムを確認した後や、既に UWP アプリを使って通信しているときに、このプロトコルを適用できます。
-
-Windows ストア プロトコルを使って、ストアのアプリの内容に直接リンクするには、このリンクにアプリのストア ID を追加します。
+Windows ストア プロトコルを使って、アプリのストア登録情報に直接リンクするには、このリンクにアプリのストア ID を追加します。
 
 `ms-windows-store://pdp/?ProductId=`
 

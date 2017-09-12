@@ -1,22 +1,24 @@
 ---
 author: jnHs
-Description: "アプリの広告キャンペーンを管理するには、Windows デベロッパー センター ダッシュボードでアプリのページから、[収益化]、[アプリの宣伝] の順にクリックします。"
+Description: "Windows デベロッパー センター ダッシュボードでアプリの広告キャンペーンを管理します。"
 title: "広告キャンペーンの管理"
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 642049a5356ec276b5cf629a7ca1c431e5c00476
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: windows 10, uwp
+ms.openlocfilehash: 40d82d9b3ed1b450972d69e04df511496de31f67
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/21/2017
 ---
-# <a name="managing-your-ad-campaign"></a>広告キャンペーンの管理
+# <a name="manage-your-ad-campaign"></a>広告キャンペーンの管理
 
 
-アプリの広告キャンペーンを管理するには、Windows デベロッパー センター ダッシュボードでアプリのページから、**[収益化]**、**[アプリの宣伝]** の順にクリックします。 **[アプリの宣伝]** ページには、アプリに関連付けられたすべての広告キャンペーンが一覧表示され、各広告キャンペーンのインプレッション数、クリック数、インストール数が表示されます。 インプレッション数、クリック数、インストール数について詳しくは、「[アプリのインストールの広告レポート](app-install-ads-reports.md)」でこれらの用語の定義をご覧ください。
+アプリのキャンペーンを管理するには、ダッシュボードの左側のナビゲーション メニューで **[ユーザーへのアピール]** を展開して、**[広告キャンペーン]** を選びます。 アプリに関連付けられたすべての広告キャンペーンが、各広告キャンペーンのインプレッション数、クリック数、インストール数と合わせて表示されます。 インプレッション数、クリック数、インストール数について詳しくは、「[[広告キャンペーン] レポート](promote-your-app-report.md)」でこれらの用語の定義をご覧ください。
 
 広告キャンペーンの一覧をフィルター処理するには、**[セクション フィルター]** ドロップダウンをクリックし、次のフィルターから選びます。
 
@@ -28,22 +30,23 @@ translationtype: HT
     -   **[ご注意ください]** は、広告キャンペーンに注意が必要な問題があることを示します (課金エラーや、検証に失敗したカスタム広告デザインなど)。 問題を修正するには、広告キャンペーン テーブルの **[アクション]** 列のテキストをクリックします。
 -   **キャンペーンの種類**: 広告キャンペーンを有料と[自社](about-house-ads.md)のどちらにするかを指定します。
 
-## <a name="report"></a>レポート
+## <a name="reporting"></a>レポート
 
 
-広告キャンペーンのパフォーマンスを確認するには、ダッシュボードのナビゲーション ウィンドウで **[分析]**、**[アプリ インストール広告]** の順にクリックします。 このレポートについて詳しくは、「[アプリのインストールの広告レポート](app-install-ads-reports.md)」をご覧ください。
+このページには、レポートの詳細が表示されます。 詳しくは、「[[広告キャンペーン] レポート](promote-your-app-report.md)」をご覧ください。
+
 
 ## <a name="edit-an-ad-campaign"></a>広告キャンペーンの編集
 
-
 広告キャンペーンに変更を加えるには、その名前をクリックし、その広告キャンペーンの詳細ページに移動します。 変更を加えたら、**[レビュー]** をクリックして詳細を確認し、**[確認]** をクリックします。
+
 
 ## <a name="related-topics"></a>関連トピック
 
 
 * [アプリの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)
 * [自社広告について](about-house-ads.md)
-* [アプリのインストールの広告レポート](app-install-ads-reports.md)
+* [[アプリ インストール広告] レポート](app-install-ads-reports.md)
 * [よく寄せられる質問](common-questions.md)
  
 

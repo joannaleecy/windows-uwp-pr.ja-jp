@@ -1,57 +1,59 @@
 ---
 author: normesta
-Description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) に変換したデスクトップ アプリに署名する方法について説明します。"
+Description: "パッケージ デスクトップ アプリは、UWP アプリに完全に移行されていない場合でも、さまざまなユニバーサル Windows プラットフォーム (UWP) API を使うことができます。 この記事では、パッケージ アプリが使うことができるクラスについて説明します。"
 Search.Product: eADQiWindows 10XVcnh
-title: "Desktop to UWP Bridge でサポートされる UWP API"
+title: "パッケージ デスクトップ アプリで利用可能な UWP API (デスクトップ ブリッジ)"
 ms.author: normesta
-ms.date: 03/09/2017
+ms.date: 05/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
-ms.openlocfilehash: 34b29f8e68c77acdb19a1b0005f039097c8d2cbb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 796e47167c8462357764c78223dca34a11888aaf
+ms.sourcegitcommit: 7540962003b38811e6336451bb03d46538b35671
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/26/2017
 ---
-# <a name="desktop-to-uwp-bridge-supported-uwp-apis"></a>Desktop to UWP Bridge: サポートされる UWP API
+# <a name="uwp-apis-available-to-a-packaged-desktop-app-desktop-bridge"></a>パッケージ デスクトップ アプリで利用可能な UWP API (デスクトップ ブリッジ)
 
-変換されたデスクトップ アプリは、UWP アプリに完全に移行されていない場合でも、さまざまなユニバーサル Windows プラットフォーム (UWP) API を使うことができます。 この記事では、変換されたアプリが使うことができるクラスについて説明します。
+パッケージ デスクトップ アプリは、UWP アプリに完全に移行されていない場合でも、さまざまなユニバーサル Windows プラットフォーム (UWP) API を使うことができます。 この記事では、パッケージ アプリが使うことができるクラスについて説明します。
 
-ほとんどの UWP API は、変換されたデスクトップ アプリで適切に動作します。 ただし、一部の機能領域はまだ十分にテストされていないか、現在のところは意図したとおりに機能しません。
+ほとんどの UWP API は、パッケージ デスクトップ アプリで適切に動作します。 ただし、一部の機能領域はまだ十分にテストされていないか、現在のところは意図したとおりに機能しません。
 
 <table><tr><th>Feature area (機能領域)</th><th>詳細</th><tr>
-<tr><td>予定、連絡先、メール</td><td>現在のところ、すべての API が変換されたアプリでサポートされているわけではありません。</td></tr>
-<tr><td>認証とユーザー ID</td><td>現在のところ、すべての API が変換されたアプリでサポートされているわけではありません。</td></tr>
-<tr><td>バックグラウンド タスク</td><td>変換されたアプリはバックグラウンド タスクを登録できますが、完全な UWP アプリのみバックグラウンド タスク*として*実行できます。 詳しくは、[GitHub のバックグラウンド タスク サンプル](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample)をご覧ください。</td></tr>
-<tr><td>Bluetooth</td><td>現在のところ、すべての API が変換されたアプリでサポートされているわけではありません。</td></tr>
-<tr><td>チャットと電話</td><td>変換されたアプリは、UWP に完全に移植するまでモバイルで実行できません。</td></tr>
+<tr><td>予定、連絡先、メール</td><td>現在のところ、すべての API がパッケージ アプリでサポートされているわけではありません。</td></tr>
+<tr><td>認証とユーザー ID</td><td>現在のところ、すべての API がパッケージ アプリでサポートされているわけではありません。</td></tr>
+<tr><td>バックグラウンド タスク</td><td>パッケージ アプリはバックグラウンド タスクを登録できますが、完全な UWP アプリのみバックグラウンド タスク*として*実行できます。 詳しくは、[GitHub のバックグラウンド タスク サンプル](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample)をご覧ください。</td></tr>
+<tr><td>Bluetooth</td><td>現在のところ、すべての API がパッケージ アプリでサポートされているわけではありません。</td></tr>
+<tr><td>チャットと電話</td><td>パッケージ アプリは、UWP に完全に移植するまでモバイルで実行できません。</td></tr>
 <tr><td>コントラクトによるアクティブ化</td><td>フル UWP アプリのみコントラクトによってアクティブ化できます。</td></tr>
-<tr><td>暗号化</td><td>現在のところ、すべての API が変換されたアプリでサポートされているわけではありません。</td></tr>
-<tr><td>位置情報</td><td>現在のところ、すべての API が変換されたアプリでサポートされているわけではありません。</td></tr>
-<tr><td>ファイルおよびフォルダー ピッカー</td><td>変換されたアプリは、ファイル システムにフル アクセスでき、UWP ピッカーは必要ありません。</td></tr>
-<tr><td>メディア</td><td>現在のところ、すべての API が変換されたアプリでサポートされているわけではありません。</td></tr>
-<tr><td>Point of Service</td><td>現在のところ、すべての API が変換されたアプリでサポートされているわけではありません。</td></tr>
-<tr><td>スマート カード</td><td>現在のところ、すべての API が変換されたアプリでサポートされているわけではありません。</td></tr>
-<tr><td>PlayReady</td><td>現在のところ、すべての API が変換されたアプリでサポートされているわけではありません。</td></tr>
-<tr><td>VPN</td><td>現在のところ、すべての API が変換されたアプリでサポートされているわけではありません。</td></tr>
-<tr><td>ウォレット</td><td>変換されたアプリは、UWP に完全に移植するまでモバイルで実行できません。</td></tr>
+<tr><td>暗号化</td><td>現在のところ、すべての API がパッケージ アプリでサポートされているわけではありません。</td></tr>
+<tr><td>位置情報</td><td>現在のところ、すべての API がパッケージ アプリでサポートされているわけではありません。</td></tr>
+<tr><td>ファイルおよびフォルダー ピッカー</td><td>パッケージ アプリは、ファイル システムにフル アクセスでき、UWP ピッカーは必要ありません。</td></tr>
+<tr><td>メディア</td><td>現在のところ、すべての API がパッケージ アプリでサポートされているわけではありません。</td></tr>
+<tr><td>店舗販売時点管理</td><td>現在のところ、すべての API がパッケージ アプリでサポートされているわけではありません。</td></tr>
+<tr><td>スマート カード</td><td>現在のところ、すべての API がパッケージ アプリでサポートされているわけではありません。</td></tr>
+<tr><td>PlayReady</td><td>現在のところ、すべての API がパッケージ アプリでサポートされているわけではありません。</td></tr>
+<tr><td>VPN</td><td>現在のところ、すべての API がパッケージ アプリでサポートされているわけではありません。</td></tr>
+<tr><td>ウォレット</td><td>パッケージ アプリは、UWP に完全に移植するまでモバイルで実行できません。</td></tr>
 <tr><td>XAML UI</td><td>XAML UI を Win32 アプリ プロセスに追加することはできません。</td></tr>
 </table>
 
 
 場合によっては、これらの領域の API が正常に機能しているように見えることがあります。 ただし、API がサポート対象と明示されていない場合、予想外の副作用や動作が生じる可能性があるため使わないでください。 これらの API は、今後のリリースでサポートされる可能性があります。 それまでの間、代わりに関連する Win32 または .NET API をアプリに使ってください。
 
-フル デスクトップ アプリケーションに利用できる一部の UWP API は、変換されたアプリではサポートされていません。 変換前にデスクトップ アプリケーションで UWP API を使っていた場合、それらの API が引き続きサポートされていることを確認してください。 詳しくは、[デスクトップ アプリ用の Windows ランタイム API に関する記事](https://msdn.microsoft.com/library/windows/desktop/dn554295(v=vs.85).aspx)をご覧ください。
+フル デスクトップ アプリケーションに利用できる一部の UWP API は、パッケージ アプリではサポートされていません。 変換前にデスクトップ アプリケーションで UWP API を使っていた場合、それらの API が引き続きサポートされていることを確認してください。 詳しくは、[デスクトップ アプリ用の Windows ランタイム API に関する記事](https://msdn.microsoft.com/library/windows/desktop/dn554295(v=vs.85).aspx)をご覧ください。
 
 ## <a name="list-of-apis"></a>API の一覧
 
-変換されたアプリでサポートされる UWP API の詳しい一覧を次に示します。 [変換されたアプリで新たにサポートされる API](#new) または [変換されたアプリとデスクトップ アプリケーションの両方でサポートされる API](#both) を表示することができます。
+パッケージ アプリでサポートされる UWP API の詳しい一覧を次に示します。 [パッケージ アプリで新たにサポートされる API](#new) または [パッケージ アプリとデスクトップ アプリケーションの両方でサポートされる API](#both) を表示することができます。
 
-WinRT API の使用方法を示した例については、GitHub で[デスクトップ アプリから UWP へのブリッジのコード サンプル](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)および[ユニバーサル Windows プラットフォーム (UWP) のアプリ サンプル](https://github.com/Microsoft/Windows-universal-samples)をご覧ください。 Windows 用アプリの構築に関するブログの[デスクトップ アプリケーションからの Windows 10 API の呼び出しに関する投稿](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application)もご覧ください。
+WinRT API の使用方法を示した例については、GitHub で[デスクトップ ブリッジのコード サンプル](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)および[ユニバーサル Windows プラットフォーム (UWP) のアプリ サンプル](https://github.com/Microsoft/Windows-universal-samples)をご覧ください。 Windows 用アプリの構築に関するブログの[デスクトップ アプリケーションからの Windows 10 API の呼び出しに関する投稿](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application)もご覧ください。
 
 <span id="new" />
-### <a name="apis-supported-in-newly-converted-apps"></a>新たに変換されたアプリでサポートされる API
+### <a name="apis-supported-in-newly-packaged-apps"></a>新たなパッケージ アプリでサポートされる API
 
 * [Windows.ApplicationModel.DataTransfer.DataProviderHandler](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataProviderHandler)
 * [Windows.ApplicationModel.DataTransfer.DataRequest](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest)
@@ -134,7 +136,7 @@ WinRT API の使用方法を示した例については、GitHub で[デスク�
 * [Windows.Foundation.AsyncActionProgressHandler<TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncActionProgressHandler<TProgress>)
 * [Windows.Foundation.AsyncActionWithProgressCompletedHandler<TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncActionWithProgressCompletedHandler<TProgress>)
 * [Windows.Foundation.AsyncOperationCompletedHandler<TResult>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationCompletedHandler<TResult>)
-* [Windows.Foundation.Collections.VectorChangedEventHandler<T>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.VectorChangedEventHandler<T>)
+* [Windows.Foundation.Collections.VectorChangedEventHandler<T>](https://msdn.microsoft.com/library/windows/apps/br206656.aspx)
 * [Windows.Foundation.DeferralCompletedHandler](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.DeferralCompletedHandler)
 * [Windows.Foundation.Diagnostics.FileLoggingSession](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Diagnostics.FileLoggingSession)
 * [Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs)
@@ -302,7 +304,6 @@ WinRT API の使用方法を示した例については、GitHub で[デスク�
 * [Windows.Services.Store.StoreRequestHelper](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreRequestHelper)
 * [Windows.Services.Store.StoreSendRequestResult](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreSendRequestResult)
 * [Windows.Services.Store.StoreSku](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreSku)
-* [Windows.Services.Store.StoreSubscriptionData](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreSubscriptionData)
 * [Windows.Services.Store.StoreVideo](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreVideo)
 * [Windows.Storage.ApplicationDataSetVersionHandler](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.ApplicationDataSetVersionHandler)
 * [Windows.Storage.CachedFileManager](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.CachedFileManager)
@@ -377,7 +378,7 @@ WinRT API の使用方法を示した例については、GitHub で[デスク�
 * [Windows.UI.StartScreen.JumpListItem](https://msdn.microsoft.com/library/windows/apps/Windows.UI.StartScreen.JumpListItem)
 
 <span id="both" />
-### <a name="apis-supported-in-both-converted-apps-and-desktop-applications"></a>変換されたアプリとデスクトップ アプリケーションの両方でサポートされている API
+### <a name="apis-supported-in-both-packaged-apps-and-desktop-applications"></a>パッケージ アプリとデスクトップ アプリケーションの両方でサポートされている API
 
 * [Windows.ApplicationModel.Core.AppListEntry](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.AppListEntry)
 * [Windows.ApplicationModel.DataTransfer.DataPackage](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage)
@@ -632,15 +633,15 @@ WinRT API の使用方法を示した例については、GitHub で[デスク�
 * [Windows.Devices.WiFiDirect.WiFiDirectDevice](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectDevice)
 * [Windows.Devices.WiFiDirect.WiFiDirectInformationElement](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectInformationElement)
 * [Windows.Devices.WiFiDirect.WiFiDirectLegacySettings](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectLegacySettings)
-* [Windows.Foundation.AsyncOperationProgressHandler<Tresult,.TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationProgressHandler<Tresult,.TProgress>)
+* [Windows.Foundation.AsyncOperationProgressHandler<Tresult,.TProgress>](https://msdn.microsoft.com/library/windows/apps/br206573.aspx(d=robot))
 * [Windows.Foundation.AsyncOperationWithProgressCompletedHandler<Tresult,.TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationWithProgressCompletedHandler<Tresult,.TProgress>)
-* [Windows.Foundation.Collections.MapChangedEventHandler<K,.V>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.MapChangedEventHandler<K,.V>)
+* [Windows.Foundation.Collections.MapChangedEventHandler<K,.V>](https://msdn.microsoft.com/library/windows/apps/br206644.aspx)
 * [Windows.Foundation.Collections.PropertySet](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.PropertySet)
 * [Windows.Foundation.Collections.StringMap](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.StringMap)
 * [Windows.Foundation.Collections.ValueSet](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.ValueSet)
 * [Windows.Foundation.Deferral](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Deferral)
 * [Windows.Foundation.PropertyValue](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.PropertyValue)
-* [Windows.Foundation.TypedEventHandler<Tsender,.TResult>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.TypedEventHandler<Tsender,.TResult>)
+* [Windows.Foundation.TypedEventHandler<Tsender,.TResult>](https://msdn.microsoft.com/library/windows/apps/br225997.aspx(d=robot))
 * [Windows.Foundation.Uri](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Uri)
 * [Windows.Foundation.WwwFormUrlDecoder](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.WwwFormUrlDecoder)
 * [Windows.Foundation.WwwFormUrlDecoderEntry](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.WwwFormUrlDecoderEntry)
@@ -947,7 +948,7 @@ WinRT API の使用方法を示した例については、GitHub で[デスク�
 * [Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties)
 * [Windows.UI.Input.Inking.InkInputProcessingConfiguration](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkInputProcessingConfiguration)
 * [Windows.UI.Input.Inking.InkManager](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkManager)
-* [Windows.UI.Input.Inking.InkPoint](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkPoint)
+* [Windows.UI.Input.Inking.InkPoint](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPoint)
 * [Windows.UI.Input.Inking.InkPresenter](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkPresenter)
 * [Windows.UI.Input.Inking.InkPresenterRuler](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkPresenterRuler)
 * [Windows.UI.Input.Inking.InkRecognitionResult](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkRecognitionResult)

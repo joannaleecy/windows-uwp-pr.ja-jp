@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 4997895e73e7c8bf0f20a2bc504b7b8c17c45339
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 00a6bbf06f918c0b86bcaed7ae7891b474baefe8
+ms.sourcegitcommit: 73ea31d42a9b352af38b5eb5d3c06504b50f6754
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/27/2017
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>デザイン サーフェイス上のサンプル データとプロトタイプを作るためのサンプル データ
 =============================================================================================
@@ -23,10 +25,15 @@ translationtype: HT
 
 アプリで Microsoft Visual Studio や Blend for Visual Studio のデザイン サーフェイスにライブ データを表示できない場合や、プライバシーやパフォーマンスなどの理由で表示するのが望ましくない場合に、 アプリのレイアウト、テンプレート、その他の視覚的なプロパティを操作するためにコントロールにデータを設定するには、さまざまな方法で設計時のサンプル データを使うことができます。 サンプル データは、スケッチ (プロトタイプ) アプリを開発する場合にも便利で、時間の節約になります。 スケッチやプロトタイプで実行時にサンプル データを使うと、実際のライブ データに接続しなくてもアイデアを実証できます。
 
+**{Binding} の使い方を示すサンプル アプリ**
+
+-   [Bookstore1](http://go.microsoft.com/fwlink/?linkid=532950) アプリのダウンロード。
+-   [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) アプリのダウンロード。
+
 <a name="setting-datacontext-in-markup"></a>マークアップでの DataContext の設定
 -----------------------------
 
-命令型コードを (分離コードで) 使ってページやユーザー コントロールの [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) をビュー モデル インスタンスに設定するのはごく一般的な開発手法です。
+命令型コードを (分離コードで) 使ってページやユーザー コントロールの [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) をビュー モデル インスタンスに設定することは、ごく一般的な開発手法です。
 
 ``` csharp
 public MainPage()

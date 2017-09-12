@@ -6,20 +6,24 @@ ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: d5933eec7b2f34b2c5939bb083113dfd3a1f965d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 49a586aac0c846cdad02f8448532238bd3eb8551
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="masterdetails-pattern"></a>マスター/詳細パターン
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 マスター/詳細パターンには、コンテンツのマスター ウィンドウ (通常は[リスト ビュー](lists.md)も表示されます) と詳細ウィンドウがあります。 マスター リストの項目を選ぶと、詳細ウィンドウが更新されます。 このパターンは、メールやアドレス帳によく使われます。
+
+> **重要な API**: [ListView クラス](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)、[SplitView クラス](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![マスター/詳細パターンの例](images/HIGSecOne_MasterDetail.png)
 
@@ -73,17 +77,11 @@ translationtype: HT
 
 詳細ウィンドウの場合、最も意味のあるコンテンツ要素を使います。 多くの個別フィールドがある場合は、グリッド レイアウトを使って要素をフォームに配置することを検討します。
 
-## <a name="examples"></a>例
+## <a name="get-the-code-samples"></a>コード サンプルを入手する
 
-株式市場を追跡するアプリの設計では、マスター/詳細パターンを使います。 次のアプリの例は、携帯電話に表示されているため、左側にマスター ウィンドウ/リストが、右側に詳細ウィンドウが表示されています。
+マスター/詳細パターンを示すサンプル コードについては、次のサンプルをご覧ください。 
 
-![マスター/詳細パターンを使ったアプリの例 (携帯電話)](images/uap-finance-phone-masterdetails-600.png)
-
-株式市場を追跡するアプリの設計では、マスター/詳細パターンを使います。 次のアプリの例は、デスクトップ PC に表示されているため、マスター ウィンドウ/リストと詳細ウィンドウがどちらも全画面に表示されています。 マスター ウィンドウの上部には検索ボックスがあり、下部にはコマンド バーがあります。
-
-![マスター/詳細パターンを使ったアプリの例 (デスクトップ PC)](images/uap-finance-desktop700.png)
-
-マスター/詳細パターンを示すサンプル コードについては、以下をご覧ください。
+- [顧客注文データベースのサンプル](https://github.com/Microsoft/Windows-appsample-customers-orders-database) 
 - [ListView と GridView のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619900)
 - [RSS リーダーのサンプル](https://github.com/Microsoft/Windows-appsample-rssreader)
 
@@ -92,4 +90,4 @@ translationtype: HT
 - [リスト](lists.md)
 - [検索](search.md)
 - [アプリ バーとコマンド バー](app-bars.md)
-- [**ListView クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
+- [ListView クラス](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)

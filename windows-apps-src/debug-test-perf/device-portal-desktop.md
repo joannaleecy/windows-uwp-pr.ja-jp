@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: "デスクトップ用 Device Portal"
 description: "Windows デスクトップで Windows Device Portal の診断と自動化を利用する方法について説明します。"
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 7b8b396078d59cc2ab3180e9af8b6017fd5edbda
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 32155bfbb676a5f79dd4b1629f0a88368da36828
+ms.sourcegitcommit: 0fa9ae00117e8e6b04ed38956e605bb74c1261c6
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="device-portal-for-desktop"></a>デスクトップ用 Device Portal
 
@@ -76,37 +78,11 @@ Device Portal に接続するには、ローカル ホスト接続と、ロー�
 
 - HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service の下
     - UseDynamicPorts: 必要な DWORD。 選択したポート番号を保持するには、これを 0 に設定します。
-    - HttpPort: 必要な DWORD。 Device Portal が HTTP 接続をリッスンするポート番号を指定します。    
+    - HttpPort: 必要な DWORD。 Device Portal が HTTP 接続をリッスンするポート番号を指定します。  
     - HttpsPort: 必要な DWORD。 Device Portal が HTTPS 接続をリッスンするポート番号を指定します。
 
-## <a name="failure-to-install-developer-mode-package-or-launch-device-portal"></a>開発者モード パッケージのインストールまたは Device Portal の起動のエラー
-ネットワークや互換性の問題により、開発者モードが正しくインストールされないことがあります。 開発者モード パッケージは、**リモート**展開 (Device Portal および SSH) で必要ですが、ローカル開発には必要ありません。  これらの問題が発生した場合でも、Visual Studio を使用してローカルでアプリを展開できます。 
+## <a name="failure-to-install-developer-mode-package"></a>開発者モード パッケージのインストール エラー
+ネットワークや互換性の問題により、開発者モードが正しくインストールされないことがあります。 開発者モード パッケージは、PC への**リモート**展開 (ブラウザーから Device Portal を使うか、デバイスの検出を使って SSH を有効にする場合) に必要ですが、ローカル展開には必要ありません。  これらの問題が発生した場合でも、Visual Studio を使用してローカルでアプリを展開できます。 
 
-これらの問題に対する回避策を検索するには、[既知の問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)フォーラムをご覧ください。 
+これらの問題に対する回避策については、[既知の問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)フォーラムと[開発者モードに関するページ](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package)をご覧ください。 
 
-### <a name="failed-to-locate-the-package"></a>パッケージ検索エラー
-
-"Developer Mode package couldn’t be located in Windows Update. Error Code 0x001234 Learn more"   
-
-このエラーは、ネットワーク接続に問題がある場合、エンタープライズ設定になっている場合、またはパッケージが見つからない場合に発生することがあります。 
-
-この問題を解決するには:
-
-1. お使いのコンピューターがインターネットに接続されていることを確認します。 
-2. ドメインに参加しているコンピューターの場合は、ネットワーク管理者に問い合わせます。 
-3. [設定] > [更新プログラムとセキュリティ] > [Windows の更新プログラム] で Windows の更新プログラムをチェックします。
-4. [設定] > [システム] > [アプリと機能] > [オプション機能を管理する] に、Windows 開発者モード パッケージが存在することを確認します。 ない場合は、Windows はコンピューターの適切なパッケージを検出できません。 
-
-上記の手順のいずれかを実行後、修正を確認するために、開発者モードを無効にし、もう一度有効にします。 
-
-
-### <a name="failed-to-install-the-package"></a>パッケージ インストール エラー
-
-"Developer Mode package failed to install. Error code 0x001234  Learn more"
-
-このエラーは、Windows のビルドと開発者モード パッケージの間に互換性の問題がある場合に発生します。 
-
-この問題を解決するには:
-
-1. [設定] > [更新プログラムとセキュリティ] > [Windows の更新プログラム] で Windows の更新プログラムをチェックします。
-2. すべての更新プログラムを確実に適用するために、コンピューターを再起動します。

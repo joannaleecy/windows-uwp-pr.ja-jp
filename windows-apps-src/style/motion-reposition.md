@@ -5,9 +5,17 @@ title: "UWP アプリでの位置変更アニメーション"
 ms.assetid: 25D1EE31-5C25-4F21-B34C-FBD8FB1C8FFF
 label: Motion--Reposition
 template: detail.hbs
-ms.openlocfilehash: 912c96bb11f1ad5ba743c74ba6a4ca7f029bcbbb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.author: mijacobs
+ms.date: 05/19/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.openlocfilehash: de0a635d35ef38a1a070f2d6bb194e99d42820e3
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="reposition-animations"></a>位置変更アニメーション
 

@@ -6,14 +6,18 @@ ms.assetid: 3ba7176f-ac47-498c-80ed-4448edade8ad
 template: detail.hbs
 extraBodyClass: style-color
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 0d4266d1335198cffb74900b0d1eb2bb48cd1879
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+design-contact: rybick
+doc-status: Published
+ms.openlocfilehash: fd37d69c2e9b20b46c34e6071f302bd55bbbba26
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="color"></a>色
 
@@ -132,13 +136,47 @@ Windows では、色もカスタマイズが可能です。 各ユーザーが�
       </tr>
   </table>
 
+アクセント カラーは背景に使用しないでください (特にテキストやアイコンの場合)。 アクセント カラーは変更可能であるため、アクセント カラーを背景として使用する必要がある場合は、前景のテキストを読みやすくするために、追加の作業が必要になります。 たとえばテキストが白で、アクセント カラーが薄い灰色の場合、テキストが判別しにくくなります。これは、白と薄い灰色の間のコントラスト比が小さいためです。 アクセント カラーをテストし、濃色かどうかを判断することで、このような問題を回避することができます。  
 
-<div class="microsoft-internal-note">
-慣例として、アクセント カラーを背景として使用する場合は、必ず白色のテキストをその上に配置します。 Windows に付属の既定のアクセント カラーは、白色のテキストとのコントラスト比が優れています。 ユーザーの好みにより、白色とのコントラストがよくないアクセント カラーが選ばれることもありますが、それは問題ありません。 読みにくいと感じた場合は、いつでも、より色の濃いアクセント カラーを選択できます。
-</div>
+次のアルゴリズムを使用して、背景色が淡色か濃色かを判断してください。
+
+```C#
+void accentColorUpdated(FrameworkElement elementWithText)
+{
+    var uiSettings = new Windows.UI.ViewManagement.UISettings();
+    Windows.UI.Color c = uiSettings.GetColorValue(UIColorType.Accent);
+
+    bool colorIsDark = (5 * c.G + 2 * c.R + c.B) <= 8 * 128;
+    if (colorIsDark)
+    {
+        elementWithText.RequestedTheme = ElementTheme.Light;
+    }
+    else
+    {
+        elementWithText.RequestedTheme = ElementTheme.Dark;
+    }
+}
+```
 
 
-ユーザーがアクセント カラーを選ぶと、その色がシステムのテーマの一部として表示されます。 アクセント カラーが適用される領域は、スタート画面、タスク バー、ウィンドウ クロム、選択した操作の状態、および[共通コントロール](../controls-and-patterns/index.md)内のハイパーリンクです。 また、各アプリの文字体裁、背景、および操作にアクセント カラーを組み込んだり、アクセント カラーを無視してアプリ固有のブランドを維持したりできます。
+```JS
+function accentColorUpdated(elementWithText)
+{
+    var uiSettings = new Windows.UI.ViewManagement.UISettings();
+    Windows.UI.Color c = uiSettings.GetColorValue(UIColorType.Accent);
+    var colorIsDark (5 * c.g + 2 * c.r + c.b) <= 8 * 128;
+    if (colorIsDark)
+    {
+        elementWithText.RequestedTheme = ElementTheme.Light;
+    }
+    else
+    {
+        elementWithText.RequestedTheme = ElementTheme.Dark;
+    }     
+}
+```
+
+アクセント カラーが淡色か濃色を判断したら、適切な前景色を選択します。 濃色の背景では淡色テーマの SystemControlForegroundBaseHighBrush を使用し、淡色の背景では濃色テーマのバージョンを使用することをお勧めします。
 
 ## <a name="color-palette-building-blocks"></a>カラー パレットの構成要素
 
@@ -228,7 +266,7 @@ Windows では、色もカスタマイズが可能です。 各ユーザーが�
 </Application>
 ```
 
-**RequestedTheme** を削除すると、アプリケーションではユーザーのアプリ モードの設定が使用され、濃色テーマまたは淡色テーマのいずれかを選択してアプリを表示できます。 
+**RequestedTheme** を削除すると、アプリケーションではユーザーのアプリ モードの設定が使用され、濃色テーマまたは淡色テーマのいずれかを選択してアプリを表示できます。
 
 テーマはアプリの外観に大きく影響するため、アプリを作成するときは必ずテーマを考慮に入れてください。
 

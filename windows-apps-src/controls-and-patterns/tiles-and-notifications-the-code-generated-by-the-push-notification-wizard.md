@@ -6,14 +6,16 @@ ms.assetid: 340F55C1-0DDF-4233-A8E4-C15EF9030785
 label: TBD
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 3aadc2c4d7e40b2d5df6bc32c5c040c5f5cc1e56
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 5cd3b285b435f8ca43c67cc7c6360e557de7dc14
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>プッシュ通知ウィザードにより生成されるコード
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -123,11 +125,11 @@ void mymobileservice1234Push::UploadChannel()
     create_task(PushNotificationChannelManager::CreatePushNotificationChannelForApplicationAsync()).
     then([] (PushNotificationChannel^ newChannel) 
     {
-        return mymobileservice1234MobileService::GetClient().get_push().register_native(newChannel-&amp;gt;Uri-&amp;gt;Data());
+        return mymobileservice1234MobileService::GetClient().get_push().register_native(newChannel->Uri->Data());
     }).then([]()
     {
         return mymobileservice1234MobileService::GetClient().invoke_api(L"notifyAllUsers");
-    }).then([](task&amp;lt;json::value&amp;gt; result)
+    }).then([](task<json::value> result)
     {
         try
         {
@@ -183,7 +185,7 @@ JavaScript バックエンドを使うモバイル サービスの場合、サ�
 
 ```JavaScript
 exports.post = function(request, response) {
-    response.send(statusCodes.OK,{ message : &#39;Hello World!&#39; })
+    response.send(statusCodes.OK,{ message : 'Hello World!' })
     
     // The following call is for illustration purpose only
     // The call and function body should be moved to a script in your app
@@ -193,12 +195,12 @@ exports.post = function(request, response) {
 
 // The following code should be moved to appropriate script in your app where notification is sent
 function sendNotifications(request) {
-    var payload = &#39;<?xml version="1.0" encoding="utf-8"?><toast><visual><binding template="ToastText01">&#39; +
-        &#39;<text id="1">Sample Toast</text></binding></visual></toast>&#39;;
+    var payload = '<?xml version="1.0" encoding="utf-8"?><toast><visual><binding template="ToastText01">' +
+        '<text id="1">Sample Toast</text></binding></visual></toast>';
     var push = request.service.push; 
     push.wns.send(null,
         payload,
-        &#39;wns/toast&#39;, {
+        'wns/toast', {
             success: function (pushResponse) {
                 console.log("Sent push:", pushResponse);
             }

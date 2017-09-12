@@ -3,15 +3,17 @@ author: mcleanbyron
 description: "パッケージ フライトの申請に関するパッケージのロールアウトを完了するには、Windows ストア申請 API に含まれる以下のメソッドを使用します。"
 title: "フライトの申請に関するロールアウトを完了する"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア申請 API, パッケージのロールアウト, フライトの申請, 最終処理"
 ms.assetid: e4a645f6-1f00-4af5-80d6-d2ee179acc8a
-ms.openlocfilehash: f6000337efe2ded818a7dac44a61d202e96c1faa
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 949c7fbcc7cdab891b1d1fd50a63fb0e8ed8490b
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/04/2017
 ---
 # <a name="finalize-the-rollout-for-a-flight-submission"></a>フライトの申請に関するロールアウトを完了する
 
@@ -27,8 +29,6 @@ translationtype: HT
 * このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
 * デベロッパー センターのアカウントでアプリの申請を作成します。 この操作は、デベロッパー センター ダッシュボードまたは[アプリ申請の作成](create-an-app-submission.md)メソッドを使って実行できます。
 * 申請に関する段階的なパッケージのロールアウトを有効にします。 これは、[デベロッパー センター ダッシュボード](../publish/gradual-package-rollout.md)で行うことも、[Windows ストア申請 API](manage-flight-submissions.md#manage-gradual-package-rollout) を使用して行うこともできます。
-
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するためのアクセス許可が付与された Windows デベロッパー センター アカウントでのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
 
 ## <a name="request"></a>要求
 
@@ -51,10 +51,10 @@ translationtype: HT
 
 ### <a name="request-parameters"></a>要求パラメーター
 
-| 名前        | 型   | 説明                                                                 |
+| 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | string | 必須。 完了するパッケージのロールアウトの対象となるパッケージ フライトの申請が含まれているアプリのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。  |
-| flightId | string | 必須。 完了するパッケージのロールアウトの対象となる申請が含まれているパッケージ フライトの ID です。 この ID はデベロッパー センター ダッシュボードで確認でき、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データに含まれています。  |
+| flightId | string | 必須。 完了するパッケージのロールアウトの対象となる申請が含まれているパッケージ フライトの ID です。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データで確認できます。  |
 | submissionId | string | 必須。 完了するパッケージのロールアウトの対象となる申請の ID です。 この ID は、[パッケージ フライトの申請の作成](create-a-flight-submission.md)要求の応答データに含まれており、デベロッパー センター ダッシュボードで確認できます。  |
 
 <span/>

@@ -11,9 +11,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 9f4ebe843b30d5bc408a705cfc9dda5d6731d4d1
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: a3e224fc51245a5f91c29da2d745a3740029cda9
+ms.sourcegitcommit: 11664964e548a2af30d6e176c515cdbf330934ac
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/28/2017
 ---
 # <a name="put-ui-strings-into-resources"></a>UI 文字列をリソースに格納する
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -65,10 +67,10 @@ UI の文字列リソースをリソース ファイルに格納します。 そ
 
 リソース名には、**Uid** 属性値に加え、翻訳された言語を取得するプロパティ (この場合は Text プロパティ) を指定します。 Greeting.Width など、異なる言語の他のプロパティ/値を指定できますが、このようなレイアウト関連のプロパティを指定する際には注意が必要です。 デバイスの画面に基づいてコントロールを動的にレイアウトする必要があります。
 
-AutomationPeer.Name などのアタッチされたプロパティは、resw ファイルでは異なる方法で処理されます。 次のように名前空間を明示的に書き出す必要があります。
+AutomationProperties.Name などのアタッチされたプロパティは、resw ファイルでは異なる方法で処理されます。 次のように名前空間を明示的に書き出す必要があります。
 
 ```XML
-MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name</code></pre></td>
+MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
 ```
 
 ## <a name="add-string-resource-identifiers-to-code-and-markup"></a>コードとマークアップに文字列リソース識別子を追加します。
@@ -101,7 +103,9 @@ auto str = loader->GetString("Farewell");
 
 3.  フォルダーをもう 1 つ作り、français (France) を表す "fr-FR" という名前を付けます。 新規のリソース ファイルを作り、次のように追加します。
 
-    strings/fr-FR/Resources.resw ![リソースを追加する (フランス語)](images/addresource-fr-fr.png)
+    strings/fr-FR/Resources.resw
+    
+    ![リソースを追加する (フランス語)](images/addresource-fr-fr.png)
 
 ## <a name="build-and-run-the-app"></a>アプリをビルドして実行します。
 

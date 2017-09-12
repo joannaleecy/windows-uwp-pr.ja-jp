@@ -1,6 +1,6 @@
 ---
 author: TylerMSFT
-title: "接続されるアプリやデバイス (&quot;Rome&quot; プロジェクト)"
+title: "接続されるアプリやデバイス (\"Rome\" プロジェクト)"
 description: "このセクションでは、Remote Systems プラットフォームを使って、リモート デバイスの検出、リモート デバイスでのアプリの起動、リモート デバイス上のアプリ サービスとの通信を行う方法について説明します。"
 ms.author: twhitney
 ms.date: 02/08/2017
@@ -9,13 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 357cf459fffc46e5d77f316af881e1a6e8bd8867
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 29b7db48f2dbd699f9c4f674a8870fe8f8ca446d
+ms.sourcegitcommit: 73c61e8e409b071365a2f6ebd89bd8a769b2a7c1
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/25/2017
 ---
-
 # <a name="connected-apps-and-devices-project-rome"></a>接続されるアプリやデバイス ("Rome" プロジェクト)
 
 このセクションでは、"Rome" プロジェクトを使ってデバイスとプラットフォーム間でアプリを接続する方法について説明します。 リモート デバイスの検出、リモート デバイス上でのアプリの起動、リモート デバイス上のアプリ サービスとの通信を行う方法について説明します。
@@ -35,4 +34,3 @@ Windows 10 バージョン 1607 に導入された[リモート システム API
 | [リモート デバイスの検出](discover-remote-devices.md)  | 接続できるデバイスを検出する方法について説明します。 |
 | [リモート デバイスでのアプリの起動](launch-a-remote-app.md) | リモート デバイスでアプリを起動する方法について説明します。  |
 | [リモート アプリ サービスとの通信](communicate-with-a-remote-app-service.md) | リモート デバイスのアプリを操作する方法について説明します。 |
-

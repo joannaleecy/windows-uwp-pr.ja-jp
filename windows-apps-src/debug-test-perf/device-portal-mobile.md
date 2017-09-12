@@ -1,19 +1,19 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: "モバイル用 Device Portal"
 description: "Windows Device Portal で、モバイル デバイスの構成と管理をリモートから行う方法について説明します。"
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 54660777706fbfdc54b08da025c2f280f194c010
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d0a85a780bf71bd43a0482494a1de939582a4b56
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/26/2017
 ---
 # <a name="device-portal-for-mobile"></a>モバイル用 Device Portal
 
@@ -27,7 +27,7 @@ Windows 10 Version 1511 以降では、モバイル デバイス ファミリで
 
 ### <a name="turn-on-device-discovery-and-pairing"></a>デバイスの検出とペアリングを有効にする
 
-Device Portal に接続するには、デバイスの検出と Device Portal を有効にする必要があります。 これにより、使用している電話と、PC または他の Windows 10 デバイスをペアリングできます。 デバイスは両方ともワイヤード (有線) またはワイヤレスでネットワークの同じサブネットに接続されているか、または 2 台のデバイスが USB で接続されている必要があります。
+Device Portal に接続するには、電話の設定でデバイスの検出と Device Portal を有効にする必要があります。 これにより、使用している電話と、PC または他の Windows 10 デバイスをペアリングできます。 デバイスは両方ともワイヤード (有線) またはワイヤレスでネットワークの同じサブネットに接続されているか、または 2 台のデバイスが USB で接続されている必要があります。
 
 初めて Device Portal に接続すると、大文字と小文字が区別される 6 文字のセキュリティ コードを入力するように求められます。 これにより電話に確実にアクセスでき、攻撃を受ける心配もなくなります。 電話の [ペアリング] ボタンを押してコードを生成および表示し、その 6 文字をブラウザー内のテキスト ボックスに入力します。
 

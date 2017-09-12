@@ -1,21 +1,23 @@
 ---
 author: jnHs
-Description: "Windows デベロッパー センター ダッシュボードで各アプリに関連する詳細を管理および表示し、プッシュ通知、A/B テスト、マップなどのサービスを構成します。"
+Description: "Windows デベロッパー センター ダッシュボードで各アプリに関連する詳細を管理および表示し、通知、A/B テスト、マップなどのサービスを構成します。"
 title: "アプリの管理とサービス"
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 48e48d1a350b01777c1d7e5ed4ab1f82b1d66d26
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 2ff75a5e85a37f4f47b6b32f3e8338524752bb2f
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/21/2017
 ---
 # <a name="app-management-and-services"></a>アプリの管理とサービス
 
-Windows デベロッパー センター ダッシュボードで各アプリに関連する詳細を管理および表示し、プッシュ通知、A/B テスト、マップなどのサービスを構成できます。
+Windows デベロッパー センター ダッシュボードで各アプリに関連する詳細を管理および表示し、通知、A/B テスト、マップなどのサービスを構成できます。
 
 ダッシュボードでアプリを操作するとき、左側のナビゲーション メニューに **[サービス]** と **[アプリ管理]** のセクションが表示されます。 これらのセクションを展開すると、次の機能にアクセスできます。
 
@@ -23,59 +25,61 @@ Windows デベロッパー センター ダッシュボードで各アプリに�
 
 **[サービス]** セクションでは、アプリのいくつかの異なるサービスを管理できます。
 
-### <a name="push-notifications"></a>プッシュ通知
+## <a name="push-notifications"></a>プッシュ通知
 
-**[プッシュ通知]** セクションでは、アプリのユーザーを対象としたプッシュ通知を作成して送信できます。 すべてのアプリのユーザーにプッシュ通知を送信することも、[顧客セグメント](create-customer-segments.md)で定義した基準を満たす、Windows 10 ユーザーのサブセットに送信することもできます。 詳しくは、「[アプリの顧客にターゲット プッシュ通知を送信する](send-push-notifications-to-your-apps-customers.md)」をご覧ください。
+**[プッシュ通知]** セクションでは、通知を作成してアプリのユーザーに送信できます。 すべてのアプリのユーザーにプッシュ通知を送信することも、[顧客セグメント](create-customer-segments.md)で定義した基準を満たす、Windows 10 ユーザーのサブセットを対象にすることもできます。 詳しくは、「[アプリのユーザーに通知を送信する](send-push-notifications-to-your-apps-customers.md)」をご覧ください。
 
-アプリのパッケージの種類とその具体的な要件に応じて、左側のナビゲーション メニューの **[WNS/MPNS]** ページをクリックすることによって、プッシュ通知の次のいずれかのオプションを使うこともできます。 
+アプリのパッケージの種類とその具体的な要件に応じて、左側のナビゲーション メニューの **[WNS/MPNS]** をクリックし、プッシュ通知の次のいずれかのオプションを使うこともできます。 
 
--   **Windows プッシュ通知サービス (WNS)** を使うと、独自のクラウド サービスからトースト更新、タイル更新、バッジ更新、直接更新を送ることができます。 詳しくは、「[Windows プッシュ通知サービス (WNS) の概要](https://msdn.microsoft.com/library/windows/apps/mt187203)」をご覧ください。
+-   **Windows プッシュ通知サービス** を使うと、独自のクラウド サービスからトースト更新、タイル更新、バッジ更新、直接更新を送ることができます。 詳しくは、「[Windows プッシュ通知サービスの概要](https://msdn.microsoft.com/library/windows/apps/mt187203)」をご覧ください。
 
 -   **Microsoft Azure Mobile Apps** を使うと、プッシュ通知の送信や、アプリ ユーザーの認証や管理、クラウドでのアプリ データの保存をすることができます。 詳しくは、[モバイル アプリに関するドキュメント](http://go.microsoft.com/fwlink/p/?LinkId=221116)をご覧ください。
 
 -   **Microsoft プッシュ通知サービス (MPNS)** は、Windows Phone の .xap パッケージと一緒に使うことができます。 ここで構成を行わなくても、認証されていない通知を限られた数送信することができますが、制限が減らないように認証済みの通知を使うことをお勧めします。 MPNS を使っている場合、**[プッシュ通知]** のフィールドに証明書をアップロードする必要があります。 詳しくは、「[Windows Phone 8 のプッシュ通知を送信するように認証済み Web サービスを設定する](http://go.microsoft.com/fwlink/p/?LinkId=528736)」をご覧ください。
 
-### <a name="experimentation"></a>Experimentation
+## <a name="experimentation"></a>Experimentation
 
 **[Experimentation]** ページを使うと、ユニバーサル Windows プラットフォーム (UWP) アプリの試験的機能を作成し、A/B テストを実行できます。 アプリの機能の変更をすべてのユーザー向けに有効にする前に、一部のユーザーに対して変更 (またはバリエーション) の有効性を A/B テストで測定します。
 
 詳しくは、「[A/B テストを使用してアプリの試験的機能を実行する](../monetize/run-app-experiments-with-a-b-testing.md)」をご覧ください。
 
-### <a name="maps"></a>マップ
+## <a name="maps"></a>マップ
 
 Windows Phone 8.1 以前を対象としたアプリでマップ サービスを使うには、アプリのコードに含めるマップ サービス アプリケーション ID とトークンが必要です。 **[マップ]** ページの **[サービス]** セクションでこのトークンを取得できます。
 
-> **注**  Windows 10 または Windows 8.x を対象としたアプリでマップ サービスを使うには、[Bing Maps デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=614880)にアクセスしてください。 詳しくは、「[マップ認証キーの要求](https://msdn.microsoft.com/library/windows/apps/mt219694)」をご覧ください。
+> [!NOTE]
+> Windows 10 または Windows 8.x を対象としたアプリでマップ サービスを使うには、[Bing 地図デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=614880)にアクセスしてください。 詳しくは、「[マップ認証キーの要求](https://msdn.microsoft.com/library/windows/apps/mt219694)」をご覧ください。
 
 詳しくは、「[マップ サービスの使用](use-map-services.md)」をご覧ください。
 
-### <a name="product-collections-and-purchases"></a>製品のコレクションと購入
+## <a name="product-collections-and-purchases"></a>製品のコレクションと購入
 
 Windows ストア コレクション API と Windows ストア購入 API を使用してアプリとアドオンの所有者情報にアクセスするには、関連する Azure AD クライアント ID をここに入力する必要があります。 これらの変更が有効になるまで最大で 16 時間かかることに注意してください。
 
-詳しくは、「[サービスからの製品の表示と許可](https://msdn.microsoft.com/library/windows/apps/mt609002)」をご覧ください。
+詳しくは、「[サービスから製品の権利を管理する](../monetize/view-and-grant-products-from-a-service.md)」をご覧ください。
 
 ## <a name="app-management"></a>アプリ管理
 
-**[アプリ管理]** セクションでは、ID とパッケージの詳細を表示し、アプリの名前を管理できます。
+**[アプリ管理]** セクションでは、ID とパッケージの詳細を確認したり、アプリの名前を管理したりできます。
 
-### <a name="app-identity"></a>アプリ ID
+## <a name="app-identity"></a>アプリ ID
 
-このページには、アプリの内容へのリンクの URL など、ストア内のアプリの一意の ID に関連する詳細情報が表示されます。
+このページには、アプリの登録情報へのリンクの URL など、ストア内のアプリの一意の ID に関連する詳細情報が表示されます。
 
 詳しくは、「[アプリ ID の詳細の表示](view-app-identity-details.md)」をご覧ください。
 
-### <a name="manage-app-names"></a>アプリ名の管理
+## <a name="manage-app-names"></a>アプリ名の管理
 
 ここでは、アプリのために予約したすべての名前を確認できます。 追加の名前の予約や、使わなくなったの名前の削除は、ここで行うことができます。
 
 詳しくは、「[アプリ名の管理](manage-app-names.md)」をご覧ください。
 
-### <a name="current-packages"></a>現在のパッケージ
+## <a name="current-packages"></a>現在のパッケージ
 
 このページでは、公開されたすべてのパッケージに関連する詳しい情報を確認することができます。
 
-> **注**  ここには、アプリが公開されるまで、情報は表示されません。
+> [!NOTE]
+> ここには、アプリが公開されるまで、情報は表示されません。
 
 各パッケージの名前、バージョン、およびアーキテクチャが表示されます。 **[詳細]** をクリックすると、サポートされる言語、アプリの機能、ファイル サイズなどの詳しい情報が表示されます。 パッケージごとに表示される情報は、対象となるオペレーティング システムとその他の要因によって異なることがあります。 
 

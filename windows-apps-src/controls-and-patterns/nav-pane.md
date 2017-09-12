@@ -1,21 +1,26 @@
 ---
 author: Jwmsft
+redirect_url: https://msdn.microsoft.com/windows/uwp/controls-and-patterns/navigationview
 Description: "トップ レベルのナビゲーションを提供して、画面領域を節約します。"
 title: "ナビゲーション ウィンドウのガイドライン"
 ms.assetid: 8FB52F5E-8E72-4604-9222-0B0EC6A97541
 label: Nav pane
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 2d48a92d5af75f8543f7b69ac59865e51bd334ee
-ms.sourcegitcommit: d1d53f5100edffe3f3ee57b853dc8cd1568fe7a2
-translationtype: HT
+keywords: "Windows 10、UWP"
+ms.openlocfilehash: d5c838675eb8cb568f0dabd1c6b776a8a53d3bf4
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="nav-panes"></a>ナビゲーション ウィンドウ
+
+この記事は、「[ナビゲーション ビュー](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/navigationview)」に移動されました。
 
 ナビゲーション ウィンドウは、さまざまなトップ レベルのナビゲーション項目を使うことができるパターンです。これにより、画面領域を節約することができます。 ナビゲーション ウィンドウはモバイル アプリに広く使われていますが、大きい画面でも適切に機能します。 オーバーレイとして使うと、ユーザーがボタンを押すまでウィンドウは折りたたまれたままで邪魔にならないため、小さい画面で便利です。 固定モードで使うと、ウィンドウは開いたままであるため、十分な画面領域がある場合に便利です。
 
@@ -24,7 +29,7 @@ translationtype: HT
 
 **重要な API**
 
-* [**SplitView クラス**](https://msdn.microsoft.com/library/windows/apps/dn864360)
+* [SplitView クラス](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
 ## <a name="is-this-the-right-pattern"></a>適切なパターンの選択
 
@@ -114,6 +119,3 @@ translationtype: HT
 * [分割ビュー コントロール](split-view.md)
 * [マスター/詳細](master-details.md)
 * [ナビゲーションの基本](https://msdn.microsoft.com/library/windows/apps/dn958438)
- 
-
- 

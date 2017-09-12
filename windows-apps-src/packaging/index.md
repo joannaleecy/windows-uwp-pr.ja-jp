@@ -4,16 +4,16 @@ ms.assetid: 1abcbb13-80f0-4bf1-a812-649ee8bd1915
 title: "アプリのパッケージ化"
 description: "このセクションには、ユニバーサル Windows プラットフォーム (UWP) アプリのパッケージ化に関する記事または記事へのリンクが記載されています。"
 ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 08/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0a9689738fac363012fb9af197f52ac8813b47c9
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows 10, UWP, パッケージ化"
+ms.openlocfilehash: 0b4f8cf2e90a125539c3dade51f6b3db78219e3f
+ms.sourcegitcommit: 63c815f8c6665872987b5410cabf324f2b7e3c7c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/10/2017
 ---
 # <a name="packaging-apps"></a>アプリのパッケージ化
 
@@ -25,13 +25,12 @@ ms.lasthandoff: 02/07/2017
 
 | トピック | 説明 |
 |-------|-------------|
-| [UWP アプリのパッケージ化](packaging-uwp-apps.md) | UWP アプリを販売、または他のユーザーに配布するには、そのアプリの appxupload パッケージを作成する必要があります。 appxupload を作成すると、別の appx パッケージがテストとサイドローディング用に生成されます。 デバイスに appx パッケージをサイドローディングすることで、アプリを直接配布できます。 この記事では、UWP アプリ パッケージを構成、作成、テストする方法について説明します。 サイドローディングについて詳しくは、「[DISM を使ったアプリのサイドローディング](http://go.microsoft.com/fwlink/?LinkID=231020)」をご覧ください。 |
-| [MakeAppx.exe ツールを使ったアプリ パッケージの作成](create-app-package-with-makeappx-tool.md) | MakeAppx.exe は、アプリ パッケージとバンドルからのファイルの作成、暗号化、暗号化解除、抽出を行います。 |
-| [パッケージ署名用証明書を作成する](create-certificate-package-signing.md) | PowerShell ツールを使ってアプリ パッケージ署名用を作成し、エクスポートします。 |
-| [SignTool を使ってアプリ パッケージに署名する](sign-app-package-using-signtool.md) | SignTool を使って手動でアプリ パッケージに証明書による署名を行います。 |
+| [Visual Studio で UWP アプリをパッケージ化する](packaging-uwp-apps.md) | ユニバーサル Windows プラットフォーム (UWP) アプリを配布または販売するには、そのアプリのアプリ パッケージを作成する必要があります。 |
+| [手動でのアプリのパッケージ化](manual-packaging-root.md) | アプリ パッケージを作成して署名するときに、Visual Studio を使ってアプリを開発していない場合は、手動でのアプリのパッケージ化ツールを使用する必要があります。 |
+| [アプリ パッケージのアーキテクチャ](device-architecture.md) | UWP アプリ パッケージを構築するときにどのプロセッサ アーキテクチャを使用するべきかについて説明します。 | 
+| [UWP アプリ ストリーミング インストール](streaming-install.md) | ユニバーサル Windows プラットフォーム (UWP) アプリ ストリーミング インストールでは、Windows ストアからアプリのどの部分を最初にダウンロードするかを指定できます。 アプリの基本的なファイルを先にダウンロードすると、残りの部分のダウンロードをバックグラウンドで完了している間に、ユーザーはアプリを起動して操作できます。 |
+| [オプション パッケージと関連セットの作成](optional-packages.md) | オプション パッケージには、メイン パッケージに統合できるコンテンツが格納されます。 オプション パッケージは、ダウンロード可能なコンテンツ (DLC) 用や、サイズ制約に対応して大規模アプリを分割する場合、元のアプリから分離して追加コンテンツを出荷する場合に便利です。 | 
 | [WinAppDeployCmd.exe ツールを使ったアプリのインストール](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | Windows アプリケーションの展開ツール (WinAppDeployCmd.exe) は、Windows 10 コンピューターから Windows 10 Mobile デバイスに UWP アプリを展開するために使うことができるコマンド ライン ツールです。 このツールを使うと、Windows 10 Mobile デバイスが USB で接続されているか同じサブネットにあれば、.appx パッケージを展開できます。Microsoft Visual Studio やそのアプリ用のソリューションは不要です。 この記事では、このツールを使って UWP アプリをインストールする方法について説明します。 |
 | [UWP アプリの自動ビルドを設定する](auto-build-package-uwp-apps.md) | このトピックでは、自動ビルド プロセスの一環としてアプリをパッケージ化する場合に、Visual Studio Team Services (VSTS) を使用して実行する方法を説明します。 |
 | [アプリ機能の宣言](app-capability-declarations.md) | 特定の API、画像や音楽などのリソース、カメラやマイクなどデバイスにアクセスするには、機能を UWP アプリの[パッケージ マニフェスト](https://msdn.microsoft.com/library/windows/apps/BR211474)で宣言する必要があります。 |
 | [アプリのパッケージの更新をダウンロードしてインストールする](self-install-package-updates.md) | UWP アプリでは、プログラムによてパッケージの更新を確認して、インストールできます。 またｈ、Windows デベロッパー センター ダッシュボードで必須としてマークされているパッケージを照会し、必須の更新がインストールされるまで機能を無効にすることもできます。 この記事では、これらのタスクを実行する方法について説明します。 |
- 
-

@@ -5,9 +5,17 @@ title: "UWP アプリでのエッジに基づく UI アニメーション"
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
 template: detail.hbs
-ms.openlocfilehash: 925826f2702474a0003f2ca2dee6ff10992f5f25
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.author: mijacobs
+ms.date: 05/19/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.openlocfilehash: a1551396ccc0699dfea9da44fac0390ee567d4f3
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="edge-based-ui-animations"></a>エッジに基づく UI アニメーション
 

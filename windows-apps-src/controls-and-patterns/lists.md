@@ -6,18 +6,25 @@ ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 4c17bab575be207106abfac44104bb32bcffd6ac
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: predavid
+design-contact: kimsea
+dev-contact: ranjeshj
+doc-status: Published
+ms.openlocfilehash: 0249132942cbb15a009c85c929185bffcba23cd9
+ms.sourcegitcommit: 690320e6cbfc16ed9e935a136fecc44d68e95719
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/31/2017
 ---
 # <a name="lists"></a>リスト
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 リストでは、コレクション ベースのコンテンツを表示して対話式で操作できます。 この記事では、次に示す 4 種類のリスト パターンについて説明します。
 
@@ -26,16 +33,15 @@ translationtype: HT
 -   ドロップダウン リスト: 拡張可能なリストから、ユーザーが 1 つの項目を選択できます。
 -   リスト ボックス: スクロール可能なボックスから、ユーザーが 1 つまたは複数の項目を選択できます。
 
-ここでは、各リスト パターンについて、設計のガイドライン、特徴、例を示します。 記事の最後には、関連するトピックと API へのリンクがあります。
+ここでは、各リスト パターンについて、設計のガイドライン、特徴、例を示します。
 
-<div class="important-apis" >
-<b>重要な API</b><br/>
-<ul>
-<li>[**ListView クラス**](https://msdn.microsoft.com/library/windows/apps/br242878)</li>
-<li>[**GridView クラス**](https://msdn.microsoft.com/library/windows/apps/br242705)</li>
-<li>[**ComboBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209348)</li>
-</ul>
-</div>
+> **重要な API**: [ListView クラス](https://msdn.microsoft.com/library/windows/apps/br242878)、[GridView クラス](https://msdn.microsoft.com/library/windows/apps/br242705)、[ComboBox クラス](https://msdn.microsoft.com/library/windows/apps/br209348)
+
+> <div id="main">
+> <strong><span class="uwpd-prelease">プレリリース。</span> Fall Creators Update (Windows 10 Insider Preview ビルド 16215 以降) - 動作の変更</strong>
+> </div>
+> 既定では、UWP アプリでは、アクティブ ペンは、選択の実行ではなく、リストのスクロール/パン (タッチ、タッチパッド、パッシブ ペンなどと同様に) をするようになりました。
+> アプリが以前の動作に依存している場合は、ペン スクロールを上書きして、以前の動作に戻すことができます。 詳しくは、[ScrollViewer クラス] (https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) の API リファレンスのトピックをご覧ください。
 
 ## <a name="list-views"></a>リスト ビュー
 
@@ -180,10 +186,12 @@ translationtype: HT
 
 -   コンボ ボックス項目のテキストのコンテンツは、単一行に制限します。
 -   コンボ ボックス内の項目は、最も論理的な順序に並べ替えます。 関連するオプションをグループ化し、最も一般的なオプションを先頭に配置します。 名前はアルファベット順、数値は数値順、日付は時系列順に並べ替えます。
+-   ユーザーが方向キーを押している間にライブ更新するコンボ ボックスを作成するには (フォント選択ドロップダウン リストなど)、SelectionChangedTrigger を Always に設定します。  
 
 ### <a name="text-search"></a>テキスト検索
 
-コンボ ボックスでは、コレクション内を自動的に検索できます。 開かれた状態または閉じた状態のコンボ ボックスにフォーカスがあるときに、物理的なキーボードで文字を入力すると、ユーザーが入力した文字列に一致する候補がビューに表示されます。 この機能は、長いリストを操作するときに特に役立ちます。 たとえば、州のリストが含まれているドロップダウンを操作するとき、“w” キーを押すと、“Washington” (ワシントン) がビューに表示され、すばやく選ぶことができます。 
+コンボ ボックスでは、コレクション内を自動的に検索できます。 開かれた状態または閉じた状態のコンボ ボックスにフォーカスがあるときに、物理的なキーボードで文字を入力すると、ユーザーが入力した文字列に一致する候補がビューに表示されます。 この機能は、長いリストを操作するときに特に役立ちます。 たとえば、州のリストが含まれているドロップダウンを操作するとき、“w” キーを押すと、“Washington” (ワシントン) がビューに表示され、すばやく選ぶことができます。
+
 
 ## <a name="list-boxes"></a>リスト ボックス
 
@@ -252,12 +260,12 @@ translationtype: HT
 
 - [ハブ](hub.md)
 - [マスター/詳細](master-details.md)
-- [ナビゲーション ウィンドウ](nav-pane.md)
+- [ナビゲーション ウィンドウ](navigationview.md)
 - [セマンティック ズーム](semantic-zoom.md)
 - [ドラッグ アンド ドロップ](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 
 **開発者向け**
-- [**ListView クラス**](https://msdn.microsoft.com/library/windows/apps/br242878)
-- [**GridView クラス**](https://msdn.microsoft.com/library/windows/apps/br242705)
-- [**ComboBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209348)
-- [**ListBox クラス**](https://msdn.microsoft.com/library/windows/apps/br242868)
+- [ListView クラス](https://msdn.microsoft.com/library/windows/apps/br242878)
+- [GridView クラス](https://msdn.microsoft.com/library/windows/apps/br242705)
+- [ComboBox クラス](https://msdn.microsoft.com/library/windows/apps/br209348)
+- [ListBox クラス](https://msdn.microsoft.com/library/windows/apps/br242868)

@@ -1,8 +1,8 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "既定の InkToolbar をユニバーサル Windows プラットフォーム (UWP) 手書き入力アプリに追加し、カスタム ペン ボタンを InkToolbar に追加して、カスタム ペン ボタンをカスタム ペン定義にバインドします。"
-title: "InkToolbar をユニバーサル Windows プラットフォーム (UWP) 手書き入力アプリに追加する"
-label: Add an InkToolbar to a Universal Windows Platform (UWP) inking app
+Description: "既定の InkToolbar をユニバーサル Windows プラットフォーム (UWP) 手描き入力アプリに追加し、カスタム ペン ボタンを InkToolbar に追加して、カスタム ペン ボタンをカスタム ペン定義にバインドします。"
+title: "InkToolbar をユニバーサル Windows プラットフォーム (UWP) アプリに追加する"
+label: Add an InkToolbar to a Universal Windows Platform (UWP) app
 template: detail.hbs
 keywords: "Windows Ink, Windows の手書き入力, DirectInk, InkPresenter, InkCanvas, InkToolbar, ユニバーサル Windows プラットフォーム, UWP, ユーザー操作, 入力"
 ms.author: kbridge
@@ -11,11 +11,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
-ms.openlocfilehash: dd307bd6d7551c1e95de29360a8601484b37e742
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: a4bff46c2ab0f0f1f9a689f2744c9a77ac90630d
+ms.sourcegitcommit: c519e3d34bef37f87bb44f02b295187849bb5eea
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/25/2017
 ---
-# <a name="add-an-inktoolbar-to-a-universal-windows-platform-uwp-inking-app"></a>InkToolbar をユニバーサル Windows プラットフォーム (UWP) 手書き入力アプリに追加する
+# <a name="add-an-inktoolbar-to-a-universal-windows-platform-uwp-app"></a>InkToolbar をユニバーサル Windows プラットフォーム (UWP) アプリに追加する
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 
@@ -31,7 +33,7 @@ InkCanvas は、完全に透明なオーバーレイであるため、インク 
 
   InkPresenter API では、手書き入力エクスペリエンスのさまざまなカスタマイズをサポートしています。 詳しくは、「[UWP アプリのペン操作とスタイラス操作](pen-and-stylus-interactions.md)」をご覧ください。
 
-- [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) を InkCanvas にバインドします。 既定では、InkToolbar には、インク機能をアクティブ化し、ストロークのサイズ、インクの色、ペン先の形状などのインクのプロパティを設定できる基本的な UI が用意されています。
+- [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) を InkCanvas にバインドします。 既定では、InkToolbar には、インク機能をアクティブ化し、ストロークのサイズ、インクの色、ペン先の形状などのインク関連のプロパティを設定できる、カスタマイズ可能で拡張可能なボタンのコレクションが用意されています。
 
   ここでは、InkToolbar について説明します。
 
@@ -47,16 +49,18 @@ InkCanvas は、完全に透明なオーバーレイであるため、インク 
 
 ## <a name="default-inktoolbar"></a>既定の InkToolbar
 
-既定では、InkToolbar には、描画、消去、強調表示、ルーラー表示のボタンが含まれています。 機能に応じて、インクの色、ストロークの太さ、すべてのインクの消去など、他の設定やコマンドがポップアップに表示されます。
+既定では、[**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) には、描画、消去、強調表示、ステンシルの表示 (ルーラーまたは分度器) のボタンが含まれています。 機能に応じて、インクの色、ストロークの太さ、すべてのインクの消去など、他の設定やコマンドがポップアップに表示されます。
 
 ![InkToolbar](.\images\ink\ink-tools-invoked-toolbar-small.png)  
 *既定の Windows Ink ツール バー*
 
-基本的な既定の InkToolbar を追加する方法は次のとおりです。
+既定の [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) を手描き入力のアプリに追加するには、[**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) と同じページに配置して、2 つのコントロールを関連付けます。
+
 1. MainPage.xaml で、手書き入力面のコンテナー オブジェクト (ここでは Grid コントロールを使用します) を宣言します。
 2. コンテナーの子として InkCanvas オブジェクトを宣言します  (InkCanvas サイズはコンテナーから継承されます)。
 3. InkToolbar を宣言し、TargetInkCanvas 属性を使用して InkCanvas にバインドします。
-  InkToolbar が InkCanvas の後で宣言されるようにします。 そうでなければ、InkCanvas オーバーレイで InkToolbar にアクセスできなくなります。
+    > [!NOTE]  
+    > InkToolbar が InkCanvas の後で宣言されるようにします。 そうでなければ、InkCanvas オーバーレイで InkToolbar にアクセスできなくなります。
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -808,6 +812,10 @@ namespace Ink_Basic_InkToolbar
 * [ペン操作とスタイラス操作](pen-and-stylus-interactions.md)
 
 **サンプル**
-* [インクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [単純なインクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [複雑なインクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [単純なインクのサンプル (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [複雑なインクのサンプル (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [インクのサンプル (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [入門チュートリアル: UWP アプリでのインクのサポート](https://aka.ms/appsample-ink)
+* [塗り絵帳のサンプル](https://aka.ms/cpubsample-coloringbook)
+* [Family Notes のサンプル](https://aka.ms/cpubsample-familynotessample)
+

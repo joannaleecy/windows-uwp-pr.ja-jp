@@ -1,147 +1,162 @@
 ---
 author: normesta
-Description: "Desktop to UWP Bridge を使用して Windows デスクトップ アプリケーション (Win32、WPF、および Windows フォーム) から変換したユニバーサル Windows プラットフォーム (UWP) アプリを展開してデバッグします。"
+Description: "署名せずにパッケージ アプリを実行し、その外観を確認してみましょう。 その後、ブレークポイントを設定し、コード全体をステップ実行します。 運用環境でアプリをテストする準備ができたら、アプリに署名してインストールします。"
 Search.Product: eADQiWindows 10XVcnh
-title: "Desktop to UWP Bridge のデバッグ"
+title: "パッケージ デスクトップ アプリの実行、デバッグ、テスト (デスクトップ ブリッジ)"
 ms.author: normesta
-ms.date: 03/09/2017
+ms.date: 06/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
-ms.openlocfilehash: d1ce3054df19b0b51c8203e7fa7296efde848c41
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: c160fecc530a6366de48f4f2ecc24df2463c0469
+ms.sourcegitcommit: 77bbd060f9253f2b03f0b9d74954c187bceb4a30
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/11/2017
 ---
-# <a name="desktop-to-uwp-bridge-debug"></a>Desktop to UWP Bridge: デバッグ
+# <a name="run-debug-and-test-a-packaged-desktop-app-desktop-bridge"></a>パッケージ デスクトップ アプリの実行、デバッグ、テスト (デスクトップ ブリッジ)
 
-このトピックには、Desktop to UWP Bridge による変換後のアプリの正常なデバッグに役立つ情報が含まれています。 変換済みのアプリをデバッグするには、いくつかのオプションがあります。
+署名せずにパッケージ アプリを実行し、その外観を確認してみましょう。 その後、ブレークポイントを設定し、コード全体をステップ実行します。 運用環境でアプリをテストする準備ができたら、アプリに署名してインストールします。 このトピックでは、これらの作業を行う方法について説明します。
 
-## <a name="attach-to-process"></a>プロセスにアタッチ
+<span id="run-app" />
+## <a name="run-your-app"></a>アプリを実行する
 
-Microsoft Visual Studio を "管理者として" 実行しているときは、変換済みアプリのプロジェクトで *[デバッグの開始]* コマンドと *[デバッグなしで開始]* コマンドを使えますが、起動したアプリは[中程度の整合性レベル](https://msdn.microsoft.com/library/bb625963)で実行されます (つまり、管理者特権はありません)。 起動したアプリに管理者特権を与えるには、まずショートカットまたはタイルを使って "管理者として" 起動する必要があります。 "管理者として" 実行している Microsoft Visual Studio のインスタンスからアプリを起動したら、__[プロセスにアタッチ]__ を実行して、ダイアログ ボックスからアプリのプロセスを選択します。
+証明書を取得して署名する作業を行わなくても、アプリをローカルで実行およびテストできます。
 
-## <a name="f5-debug"></a>F5 デバッグ
+Visual Studio の UWP プロジェクトを使用してパッケージを作成した場合、パッケージ プロジェクトをスタートアップ プロジェクトに設定するだけで、Ctrl キーを押しながら F5 キーを押すことでアプリが起動するようになります。
 
-Visual Studio では、新しいパッケージ プロジェクトがサポートされるようになりました。 新しいプロジェクトでは、アプリケーションをビルドしたときに行ったすべての更新を、アプリケーションのインストーラーでコンバーターを実行したときに作成される Windows アプリ パッケージに自動的にコピーすることができます。 パッケージ プロジェクトを構成したら、F5 キーを使って Windows アプリ パッケージを直接デバッグできます。
+Desktop App Converter を使用した場合やアプリを手動でパッケージ化した場合は、Windows PowerShell コマンド プロンプトを開き、出力フォルダーの **PacakgeFiles** サブフォルダーから次のコマンドレットを実行します。
 
->注: オプションを使って既存の Windows アプリ パッケージをデバッグすることもできます。これには、[デバッグ]、[その他のデバッグ ターゲット]、[インストールされているアプリケーション パッケージのデバッグ] の順にオプションを選びます。
+```
+Add-AppxPackage –Register AppxManifest.xml
+```
+アプリを起動するには、そのアプリを Windows スタート メニューで見つけます。
 
-手順は次のとおりです。
+![スタート メニューに表示されたパッケージ アプリ](images/desktop-to-uwp/converted-app-installed.png)
 
-1. まず、Desktop App Converter を使用するように設定していることを確認します。 詳しくは、「[Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md)」をご覧ください。
+> [!NOTE]
+> パッケージ アプリは、常に対話ユーザーとして実行されます。パッケージ アプリをインストールするドライブは、NTFS 形式にフォーマットされている必要があります。
 
-2. コンバーター、Win32 アプリケーションのインストーラーの順に実行します。 コンバーターは、レイアウトと、レジストリに加えられたすべての変更をキャプチャし、レジストリを仮想化する registery.dat とマニフェストを含む Windows アプリ パッケージを出力します。
+## <a name="debug-your-app"></a>アプリのデバッグ
 
-![alt](images/desktop-to-uwp/debug-1.png)
+アプリをデバッグするたびにダイアログ ボックスでパッケージを選択するか、拡張機能をインストールして、セッションを開始するたびにパッケージを選ぶことなくアプリをデバッグできます。
 
-3. [Visual Studio 2017 RC](https://www.visualstudio.com/downloads/#visual-studio-community-2017-rc) をインストールして起動します。
+### <a name="debug-your-app-by-selecting-the-package"></a>パッケージを選択してアプリをデバッグする
 
-4. [Visual Studio ギャラリー](http://go.microsoft.com/fwlink/?LinkId=797871)から Desktop to UWP Packaging VSIX Project をデスクトップにインストールします。
+このオプションでは、セットアップの時間は最短ですが、デバッグ セッションを開始するたびに余分な手順が必要になります。
 
-5. Visual Studio で変換した、対応する Win32 ソリューションを開きます。
 
-6. ソリューションを右クリックし、[新しいプロジェクトの追加] を選択して、新しいパッケージ プロジェクトをソリューションに追加します。 次に、[セットアップと配置] の下にある [Desktop to UWP Packaging Project] を選択します。
+1. パッケージ アプリがローカル コンピューターにインストールされるように、必ず、パッケージ アプリを 1 回以上起動します。
+
+   上の「[アプリを実行する](#run-app)」セクションをご覧ください。
+
+2. Visual Studio を起動します。
+
+   管理者特権でアプリをデバッグする場合は、**[管理者として実行]** オプションを使用して Visual Studio を起動します。
+
+3. Visual Studio で、**[デバッグ]**->**[その他のデバッグ ターゲット]**->**[インストールされているアプリケーション パッケージのデバッグ]** の順に選択します。
+
+4. **[インストールされているアプリケーション パッケージのデバッグ]** リストで、目的のアプリ パッケージを選び、**[アタッチ]** ボタンを選択します。
+
+
+### <a name="debug-your-app-without-having-to-select-the-package"></a>パッケージを選択せずにアプリをデバッグする
+
+このオプションでは、セットアップの時間が最長になりますが、アプリを起動するたびにインストールされているパッケージを選択する必要がありません。 このアプローチを使用するには、[Visual Studio 2017](https://www.visualstudio.com/vs/whatsnew/) をインストールする必要があります。
+
+1. まず、[Desktop Bridge Debugging Project](http://go.microsoft.com/fwlink/?LinkId=797871)をインストールします。
+
+2. Visual Studio を起動し、デスクトップ アプリケーション プロジェクトを開きます。
+
+6. **Desktop Bridge Debugging Project** をソリューションに追加します。
+
+   プロジェクトのテンプレートは、インストール済みテンプレートの **[その他のプロジェクトの種類]** グループにあります。
 
     ![alt](images/desktop-to-uwp/debug-2.png)
 
-    作成されたプロジェクトは、ソリューションに追加されます。
+    **Desktop Bridge Debugging Project** がソリューションに表示されます。
 
     ![alt](images/desktop-to-uwp/debug-3.png)
 
-    パッケージ プロジェクトでは、AppXFileList によって Windows アプリ パッケージ レイアウトにファイルがマッピングされます。 参照は空で開始されていますが、手動で .exe プロジェクトにビルド順に設定する必要があります。
+7. **Desktop Bridge Debugging Project** のプロパティ ページを開きます。
 
-7. DesktopToUWPPackaging プロジェクトのプロパティ ページで、Windows アプリ パッケージのルートと実行するタイルを構成できます。
+8. **[パッケージ レイアウト]** フィールドをパッケージ マニフェスト ファイル (AppxManifest.xml) の場所に設定し、**[スタート画面のタイル]** ドロップダウン リストからアプリの実行可能ファイルを選択します。
 
-    ![alt](images/desktop-to-uwp/debug-4.png)
+     ![alt](images/desktop-to-uwp/debug-4.png)
 
-    PackageLayout に、上で説明した、コンバーターによって作られた Windows アプリ パッケージのルートの場所を設定します。 次に、実行するタイルを選択します。
+8. コード エディターで、AppXPackageFileList.xml ファイルを開きます。
 
-8.    AppXFileList.xml を開いて編集します。 このファイルでは、Win32 のデバッグ用ビルドの出力を、コンバーターでビルドされる Windows アプリ パッケージ レイアウトにコピーする方法を定義します。 既定では、このファイルに、サンプルのタグとコメントが設定されたプレース ホルダーが含まれています。
+9. 以下の要素について、XML ブロックのコメントを解除し、値を追加します。
 
-    ```XML
-    <?xml version="1.0" encoding="utf-8"?>
-    <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-      <ItemGroup>
-    <!— Use the following syntax to copy debug output to the AppX layout
-       <AppxPackagedFile Include="$(outdir)\App.exe">
-          <PackagePath>App.exe</PackagePath>
-        </AppxPackagedFile>
-        See http://etc...
-    -->
-      </ItemGroup>
-    </Project>
-    ```
+   **MyProjectOutputPath**: デスクトップ アプリケーションのデバッグ フォルダーの相対パス。
 
-    マッピングを作成する例を次に示します。 ここでは、.exe と .dll を Win32 のビルドの場所からパッケージのレイアウトの場所にコピーします。
+   **LayoutFile**: デスクトップ アプリケーションのデバッグ フォルダーにある実行可能ファイル。
+
+   **PackagePath**: 変換プロセス中に Windows アプリ パッケージ フォルダーにコピーされた、デスクトップ アプリケーションの実行可能ファイルの完全修飾ファイル名。
+
+    次に例を示します。
 
     ```XML
-    <?xml version="1.0" encoding=utf-8"?>
-    <Project ToolsVersion=14.0" xmlns="http://scehmas.microsoft.com/developer/msbuild/2003">
-        <PropertyGroup>
-            <MyProjectOutputPath>{relativepath}</MyProjectOutputPath>
-        </PropertyGroup>
-        <ItemGroup>
-            <LayoutFile Include="$(MyProjectOutputPath)\ProjectTracker.exe">
-                <PackagePath>$(PackageLayout)\VFS\Program Files (x86)\Contoso Software\Project Tracker\ProjectTracker.exe</PackagePath>
-            </LayoutFile>
-            <LayoutFile Include="$(MyProjectOutputPath)\ProjectTracker.Models.dll">
-                <PackagePath>$(PackageLayout)\VFS\Program Files (x86)\Contoso Software\Project Tracker\ProjectTracker.Models.dll</PackagePath>
-            </LayoutFile>
-        </ItemGroup>
-    </Project>
+  <?xml version="1.0" encoding="utf-8"?>
+  <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+     <MyProjectOutputPath>..\MyDesktopApp\bin\Debug</MyProjectOutputPath>
+    </PropertyGroup>
+    <ItemGroup>
+      <LayoutFile Include="$(MyProjectOutputPath)\MyDesktopApp.exe">
+        <PackagePath>$(PackageLayout)\MyDesktopApp.exe</PackagePath>
+      </LayoutFile>
+    </ItemGroup>
+  </Project>
     ```
 
-    このファイルは、次のように定義されています。
+  ソリューション内の他のプロジェクトから生成された dll ファイルをアプリで使用する場合に、これらの DLL に含まれるコードにステップ インするには、各 dll ファイル用の **LayoutFile** 要素を含めます。
 
-    まず、Win32 プロジェクトがビルドされる場所をポイントするように、*MyProjectOutputPath* を定義します。
+  ```XML
+  ...
+      <LayoutFile Include="$(MyProjectOutputPath)\MyDesktopApp.Models.dll">
+      <PackagePath>$(PackageLayout)\MyDesktopApp.Models.dll</PackagePath>
+      </LayoutFile>
+  ...
+  ```
 
-    ```XML
-    <?xml version="1.0" encoding="utf-8"?>
-    <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-        <PropertyGroup>
-            <MyProjectOutputPath>..\ProjectTracker\bin\DesktopUWP</MyProjectOutputPath>
-        </PropertyGroup>
-    ```
-
-    次に、各 *LayoutFile* で、Win32 のビルドの場所から Windows アプリ パッケージのレイアウトにコピーするファイルを指定します。 ここでは、最初に .exe、次に .dll をコピーしています。
-
-    ```XML
-        <ItemGroup>
-            <LayoutFile Include="$(MyProjectOutputPath)\ProjectTracker.exe">
-                <PackagePath>$(PackageLayout)\VFS\Program Files (x86)\Contoso Software\Project Tracker\ProjectTracker.exe</PackagePath>
-            </LayoutFile>
-            <LayoutFile Include="$(MyProjectOutputPath)\ProjectTracker.Models.dll">
-                <PackagePath>$(PackageLayout)\VFS\Program Files (x86)\Contoso Software\Project Tracker\ProjectTracker.Models.dll</PackagePath>
-            </LayoutFile>
-        </ItemGroup>
-    </Project>
-    ```
-
-9. パッケージ プロジェクトをスタートアップ プロジェクトに設定します。 以上の設定で、Win32 ファイルが Windows アプリ パッケージにコピーされ、プロジェクトをビルドして実行したときにデバッガーが起動されます。  
+10. パッケージ プロジェクトをスタートアップ プロジェクトに設定します。  
 
     ![alt](images/desktop-to-uwp/debug-5.png)
 
-10.    それでは最後に、Win32 コードにブレークポイントを設定して、F5 キーを押してデバッガーを起動しましょう。 Win32 アプリケーションで行った更新が Windows アプリ パッケージにコピーされ、Visual Studio 内から直接デバッグできるようになります。
+11. デスクトップ アプリケーション コードにブレークポイントを設定し、デバッガーを起動します。
 
-11.    アプリケーションを更新する場合は、MakeAppX を使ってアプリをもう一度パッケージ化する必要があります。 詳細については、「[アプリ パッケージ ツール (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)」をご覧ください。
+  ![デバッグ ボタン](images/desktop-to-uwp/debugger-button.png)
 
-複数のビルド構成がある場合 (たとえばリリース用とデバッグ用)、次を AppXFileList.xml ファイルに追加して、Win32 ビルドをさまざまな場所からコピーできます。
+  Visual Studio は、XML ファイルで指定した実行可能ファイルと dll ファイルを Windows アプリ パッケージにコピーして、デバッガーを起動します。
+
+#### <a name="handle-multiple-build-configurations"></a>複数のビルド構成を処理する
+
+複数のビルド構成 (Release と Debug など) を定義した場合は、デバッガーの起動時に Visual Studio で選択されたビルド構成に一致するファイルのみがコピーされるように、AppXPackageFileList.xml ファイルを修正することができます。
+
+次に例を示します。
 
 ```XML
 <PropertyGroup>
-    <MyProjectOutputPath Condition="$(Configuration) == 'DesktopUWP'">C:\Users\peterfar\Desktop\ProjectTracker\ProjectTracker\bin\DesktopUWP>
-    </MyProjectOutputPath>
-    <MyProjectOutputPath Condition="$(Configuration) == 'ReleaseDesktopUWP'"> C:\Users\peterfar\Desktop\ProjectTracker\ProjectTracker\bin\ReleaseDesktopUWP</MyProjectOutputPath>
+    <MyProjectOutputPath Condition="$(Configuration) == 'Debug'">..\MyDesktopApp\bin\Debug</MyProjectOutputPath>
+    <MyProjectOutputPath Condition="$(Configuration) == 'Release'"> ..\MyDesktopApp\bin\Release</MyProjectOutputPath>
 </PropertyGroup>
 ```
 
-また、UWP 用アプリケーションは更新するが Win32 用にはそのままビルドする場合は、特定のコード パスを有効にする条件付きコンパイルを使うこともできます。
+#### <a name="debug-uwp-enhancements-to-your-app"></a>アプリに対する UWP 機能強化についてデバッグする
 
-1.    次の例では、コードは DesktopUWP 用のときにのみコンパイルされ、WinRT API を使ってタイルに表示されます。
+ライブ タイルなどの最新のエクスペリエンスでアプリの機能を強化することもできます。 その場合は、条件付きコンパイルを使用して、指定されたビルド構成でコード パスを有効にします。
 
-    ```C#
+1. まず、Visual Studio でビルド構成を定義し、「DesktopUWP」などの名前を付けます。
+
+2. プロジェクトのプロジェクト プロパティの **[ビルド]** タブで、その名前を **[条件付きコンパイル シンボル]** フィールドに追加します。
+
+     ![alt](images/desktop-to-uwp/debug-8.png)
+
+3. 条件付きコード ブロックを追加します。 このコードは、**DesktopUWP** ビルド構成に対してのみコンパイルできます。
+
+    ```csharp
     [Conditional("DesktopUWP")]
     private void showtile()
     {
@@ -153,29 +168,64 @@ Visual Studio では、新しいパッケージ プロジェクトがサポー�
     }
     ```
 
-2.    Configuration Manager を使用して、新しいビルド構成を追加できます。
+### <a name="debug-the-entire-app-lifecycle"></a>アプリ全体のライフ サイクルについてデバッグする
 
-    ![alt](images/desktop-to-uwp/debug-6.png)
+場合によっては、アプリを開始する前にデバッグを行うなど、デバッグ プロセスを細かく制御する必要があります。
 
-    ![alt](images/desktop-to-uwp/debug-7.png)
+[PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx) を使用すると、中断、再開、終了などを含むアプリのライフ サイクルについて、完全に制御できます。
 
-3.    次に、プロジェクト プロパティに、条件付きコンパイル シンボルのサポートを追加します。
+[PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx) は Windows SDK に含まれています。
 
-    ![alt](images/desktop-to-uwp/debug-8.png)
 
-4.    追加した UWP API をターゲットとしてビルドする場合には、ビルド ターゲットを DesktopUWP に切り替えられるようになりました。
+### <a name="modify-your-app-in-between-debug-sessions"></a>デバッグ セッションと次のデバッグ セッションの間にアプリを変更する
 
-## <a name="plmdebug"></a>PLMDebug
+バグを修正するための変更をアプリに加えた場合は、MakeAppx ツールを使ってアプリを再パッケージ化します。 「[MakeAppx ツールを実行する](desktop-to-uwp-manual-conversion.md#make-appx)」をご覧ください。
 
-Visual Studio の F5 キーおよびプロセスにアタッチの機能は、実行中にアプリをデバッグするために役立ちます。 しかし場合によっては、アプリを開始する前にデバッグを行うなど、デバッグ プロセスを細かく制御する必要があります。 これらのより高度なシナリオでは、[ **PLMDebug**](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx) を使用します。 このツールは、Windows デバッガーを使って、変換済みのアプリをデバッグすることができ、中断、再開、および終了など、アプリのライフ サイクルの完全な制御を提供します。
+## <a name="test-your-app"></a>アプリのテスト
 
-PLMDebug は Windows SDK に含まれています。 詳しくは、「[**PLMDebug**](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx)」をご覧ください。
+配布用の準備の一環として現実的な設定でアプリをテストするには、アプリに署名し、インストールすることをお勧めします。
 
-## <a name="run-another-process-inside-the-full-trust-container"></a>完全な信頼コンテナー内で別のプロセスを実行する
+Visual Studio を使ってアプリをパッケージ化した場合は、アプリに署名してインストールするスクリプトを実行できます。 「[アプリ パッケージをサイドローディングする](../packaging/packaging-uwp-apps.md#sideload-your-app-package)」をご覧ください。
 
-指定されたアプリ パッケージのコンテナー内でカスタムのプロセスを起動することができます。 これは、シナリオをテストするために役立つ場合があります (たとえば、カスタムのテスト ハーネスがあり、アプリの出力をテストする必要がある場合など)。 これを行うには、```Invoke-CommandInDesktopPackage``` PowerShell コマンドレット を使用します。
+Desktop App Converter を使用してアプリをパッケージ化する場合は、``sign`` パラメーターを使用し、生成された証明書を使って、アプリに自動的に署名します。 その証明書をインストールしてから、アプリをインストールする必要があります。 「[パッケージ アプリを実行する](desktop-to-uwp-run-desktop-app-converter.md#run-app)」をご覧ください。   
+
+アプリには、手動で署名することもできます。 その方法は、次のとおりです。
+
+1. 証明書を作成します。 「[証明書を作成する](../packaging/create-certificate-package-signing.md)」をご覧ください。
+
+2. その証明書をシステム上の証明書ストア ("**信頼されたルート**" または "**信頼されたユーザー**") にインストールします。
+
+3. その証明書を使ってアプリに署名します。「[SignTool を使ってアプリ パッケージに署名する](../packaging/sign-app-package-using-signtool.md)」をご覧ください。
+
+  > [!IMPORTANT]
+  > 証明書の発行元名がアプリの発行者名と一致することを確認してください。
+
+### <a name="related-sample"></a>関連するサンプル
+
+[SigningCerts](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SigningCerts)
+
+
+### <a name="test-your-app-for-windows-10-s"></a>アプリの Windows 10 S 対応をテストする
+
+アプリを公開する前に、Windows 10 S を実行するデバイスでそのアプリが正しく動作することを確認してください。実際、Windows ストアにアプリを公開する予定がある場合はこの作業を行わなければなりません。それがストア要件になっているためです。 Windows 10 S を実行するデバイスで正しく動作しないアプリは認定されません。 
+
+「[Windows アプリの Windows 10 S 対応をテストする](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-test-windows-s)」をご覧ください。
+
+### <a name="run-another-process-inside-the-full-trust-container"></a>完全な信頼コンテナー内で別のプロセスを実行する
+
+指定されたアプリ パッケージのコンテナー内でカスタムのプロセスを起動することができます。 これは、シナリオをテストするために役立つ場合があります (たとえば、カスタムのテスト ハーネスがあり、アプリの出力をテストする必要がある場合など)。 これを行うには、```Invoke-CommandInDesktopPackage``` PowerShell コマンドレットを使用します。
 
 ```CMD
 Invoke-CommandInDesktopPackage [-PackageFamilyName] <string> [-AppId] <string> [-Command] <string> [[-Args]
     <string>]  [<CommonParameters>]
 ```
+
+## <a name="next-steps"></a>次のステップ
+
+**特定の質問に対する回答を見つける**
+
+マイクロソフトのチームでは、[StackOverflow タグ](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)をチェックしています。
+
+**この記事に関するフィードバックを送信する**
+
+下のコメント セクションをご利用ください。

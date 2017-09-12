@@ -7,34 +7,46 @@ label: Intro to UWP app design
 template: detail.hbs
 op-migration-status: ready
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 08/9/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 4ca7e133f930ff4663de0cc1769ac26caa9f44ad
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 8db6dbe00c20b6371ae7007f07e628d16467ea9d
+ms.sourcegitcommit: 0d5b3daddb3ae74f91178c58e35cbab33854cb7f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/09/2017
 ---
-#  <a name="introduction-to-uwp-app-design"></a>UWP アプリ設計の概要 
+#  <a name="introduction-to-uwp-app-design"></a>UWP アプリ設計の概要
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-ユニバーサル Windows プラットフォーム (UWP) アプリは、電話からタブレット、PC まで、任意の Windows ベース デバイスで実行できます。
+ユニバーサル Windows プラットフォーム (UWP) アプリは、電話からタブレット、PC まで、任意の Windows ベース デバイスで実行できます。 
 
-![Windows デバイス](images/1894834-hig-device-primer-01-500.png)
+さまざまなデバイスでアプリが適切に表示されるようにデザインすることが重要な課題となります。 ユニバーサル Windows プラットフォーム (UWP) には、一連の組み込み機能とユニバーサルな構成要素が用意されており、さまざまなデバイス、画面、入力方式で十分に機能する UX を作成できます。 この記事では、UWP アプリの UI の機能と利点について説明し、UWP アプリを初めて作成する場合のいくつかの大まかな設計ガイダンスを紹介します。 
 
-さまざまなデバイスでアプリが適切に表示されるようにデザインすることが重要な課題となります。 画面サイズや入力方法が大きく異なるデバイスで、優れたユーザー エクスペリエンスを実現するアプリを設計するためにはどのように取り組めばよいでしょうか。 幸いなことに、ユニバーサル Windows プラットフォーム (UWP) には、この課題に取り組むのに役立つ、一連の組み込み機能とユニバーサルな構成要素が用意されています。 
+## <a name="video-summary"></a>ビデオの概要
 
-![Windows Phone、タブレット、PC で実行されるアプリのデザイン](images/food-truck-finder/uap-foodtruck--md-detail.png)
+> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Designing-Universal-Windows-Platform-apps/player]
 
-この記事では、UWP アプリの UI の機能と利点について説明し、UWP アプリを初めて作成する場合のいくつかの大まかな設計ガイダンスを紹介します。 最初に、UWP アプリの作成時に利用できる一部の機能を見てみましょう。 
 
-## <a name="uwp-app-features"></a>UWP アプリの機能
+<!--
+![windows-powered devices](images/1894834-hig-device-primer-01-500.png)
+-->
+
+<!--
+![A design for an app that runs on windows phone, tablets, and pcs](images/food-truck-finder/uap-foodtruck--md-detail.png)
+-->
+
+
+## <a name="uwp-features"></a>UWP の機能
+
+最初に、UWP アプリの作成時に利用できる一部の機能を見てみましょう。
 
 ### <a name="effective-pixels-and-scaling"></a>有効ピクセルとスケーリング
 
-UWP アプリは、すべてのデバイスで読みやすいように、コントロール、フォント、およびその他の UI 要素のサイズを自動的に調整します。
+UWP アプリは、すべてのデバイスで読みやすく、操作しやすいように、コントロール、フォント、およびその他の UI 要素のサイズを自動的に調整します。
 
 デバイスでアプリを実行するとき、システムでは、UI 要素を画面に表示する方法を正規化するアルゴリズムを使います。 このスケーリング アルゴリズムでは、視聴距離と画面の密度 (ピクセル/インチ) を考慮して、体感的なサイズを最適化します (物理的なサイズではありません)。 スケーリング アルゴリズムによって、10 フィート離れた Surface Hub における 24 ピクセルのフォントが、数インチ離れた 5 インチ サイズの電話における 24 ピクセルのフォントと同じようにユーザーに読みやすい状態で表示されます。
 
@@ -44,18 +56,14 @@ UWP アプリは、すべてのデバイスで読みやすいように、コン�
 
 -   設計時には、ピクセル密度と実際の画面解像度を無視できます。 その代わり、サイズ クラスの有効な解像度 (有効ピクセル単位の解像度) が向上するように設計します (詳しくは、「[画面のサイズとブレークポイント](screen-sizes-and-breakpoints-for-responsive-design.md)」をご覧ください)。
 
--   システムによる UI のスケーリングは、4 の倍数単位で行われます。 外観が鮮明になるように、4x4 のピクセル グリッドにデザインをスナップします。余白、UI 要素のサイズと位置、およびテキストの位置 (サイズは除きます。テキストのサイズに制限はありません) を、4 有効ピクセルの倍数にします。
+-   システムによる UI のスケーリングは、4 の倍数単位で行われます。 外観が鮮明になるように、4x4 のピクセル グリッドにデザインをスナップします。余白、UI 要素のサイズと位置を、4 有効ピクセルの倍数にします。 この要件は、テキストには必要ありません。テキストのサイズと位置に制限はありません。 
 
 次の図は、4x4 のピクセル グリッドにマップされるデザイン要素を示しています。 デザイン要素には常に、はっきりした鮮明な縁があります。
 
 ![4x4 のピクセル グリッドへのスナップ](images/rsp-design/epx-4pixelgood.png)
 
-次の図は、4x4 のピクセル グリッドにマップされないデザイン要素を示しています。 これらの設計要素の縁は、デバイスによっては、ぼやけて不鮮明に表示されます。
-
-![4x4 のピクセル グリッドに合わせて配置されないデザイン要素](images/rsp-design/offthegridillustration.png)
-
 > [!TIP]
-> イメージ編集プログラムで画面のモックアップを作成するときは、DPI を 72 に設定し、画像サイズを、対象のサイズ クラスで有効な解像度に設定します (サイズ クラスと有効な解像度の一覧については、後述の「[特定のサイズ クラスの推奨事項](#sizeclasses)」をご覧ください)。
+> イメージ編集プログラムで画面のモックアップを作成するときは、DPI を 72 に設定し、画像サイズを、対象のサイズ クラスで有効な解像度に設定します サイズ クラスと有効な解像度の一覧については、「[画面のサイズとブレークポイント](screen-sizes-and-breakpoints-for-responsive-design.md)」をご覧ください。
 
 
 ### <a name="universal-input-and-smart-interactions"></a>ユニバーサル入力とスマート操作
@@ -91,10 +99,22 @@ UWP には、複数のデバイス ファミリに対応したアプリを簡単
 
     ![独自の視覚スタイルを使った天気予報アプリ](images/weather/uwp-weather-tab-phone-700.png)
 
-ここまで、UWP アプリの構成要素について説明しました。次に、それらを組み合わせて UI を作成する方法を見てみましょう。 
-    
+## <a name="uwp-and-the-fluent-design-system"></a>UWP と Fluent Design System
+
+ Fluent Design System では、ライト、深度、モーション、マテリアル、およびスケールが組み込まれた、モダンでクリーンな UI を作成できます。 Fluent Design は、さまざまな Windows 10 デバイスとアプリにわたって適用され、美しく、魅力的で直感的なエクスペリエンスを提供します。 
+ 
+ アプリに Fluent Design を組み込む方法 組み込みを簡単にするための、新しいコントロールと機能が、継続的に追加されています。 UWP 向けの現在の Fluent Design の機能の一覧を次に示します。  
+
+* [アクリル](../style/acrylic.md)は、半透明サーフェスを作成できる、ブラシの種類です。
+* [視差効果](../style/parallax.md)を使用すると、3 次元の視点、深度、および動きを追加できます。たとえばリストなどのスクロールするコンテンツに適用できます。
+* [表示](../style/reveal.md)は光を使用して、対話型の UI 要素を照らすホバー効果を作成します。 
+* [接続型アニメーション](../style/connected-animation.md)はシーンをスムーズに切り替えます。コンテキストを維持し、継続性を実現することで、使いやすさを向上させます。 
+
+さらに[設計ガイドライン](https://developer.microsoft.com/windows/apps/design) (現在お読みの、このドキュメントです) が Fluent Design の原則に基づくように更新されました。
+
 ## <a name="the-anatomy-of-a-typical-uwp-app"></a>一般的な UWP アプリの構造
 
+ここまで、UWP アプリの構成要素について説明しました。次に、それらを組み合わせて UI を作成する方法を見てみましょう。
 
 最新のユーザー インターフェイスは複雑であり、テキスト、形状、色、アニメーションで構成されますが、それらは最終的には使っているデバイスの画面の個々のピクセルで構成されます。 ユーザー インターフェイスの設計を開始すると、選択肢が多すぎて圧倒されることがあります。
 
@@ -112,7 +132,7 @@ UWP には、複数のデバイス ファミリに対応したアプリを簡単
 <td align="left"><p><img src="images/1895065-hig-anatomyofanapp-02.png" alt="Navigation, command, and content areas of an address book app" /></p>
 <p></p></td>
 <td align="left"><strong>ナビゲーション要素</strong>
-<p>ナビゲーション要素は、表示するコンテンツをユーザーが選択できるようにします。 ナビゲーション要素の例には、[タブとピボット](../controls-and-patterns/tabs-pivot.md)、[ハイパーリンク](../controls-and-patterns/hyperlinks.md)、[ナビゲーション ウィンドウ](../controls-and-patterns/nav-pane.md)などがあります。</p>
+<p>ナビゲーション要素は、表示するコンテンツをユーザーが選択できるようにします。 ナビゲーション要素の例には、[タブとピボット](../controls-and-patterns/tabs-pivot.md)、[ハイパーリンク](../controls-and-patterns/hyperlinks.md)、[ナビゲーション ウィンドウ](../controls-and-patterns/navigationview.md)などがあります。</p>
 <p>ナビゲーション要素の詳細については、「[ナビゲーション デザインの基本](navigation-basics.md)」をご覧ください。</p>
 <strong>コマンド要素</strong>
 <p>コマンド要素は、操作、保存、コンテンツの共有などの操作を開始します。 コマンド要素の例には、[ボタン](../controls-and-patterns/buttons.md)や[コマンド バー](../controls-and-patterns/app-bars.md)があります。 コマンド要素には、実際には画面に表示されないキーボード ショートカットも含めることができます。</p>
@@ -131,7 +151,6 @@ UWP には、複数のデバイス ファミリに対応したアプリを簡単
 アプリに適切な UI 要素を決めるときには、アプリが実行されるデバイスや画面サイズも考慮に入れるかもしれません。
 
 ## <a name="tailoring-your-app-for-specific-devices-and-screen-sizes"></a>特定のデバイスと画面サイズに合わせたアプリの調整
-
 
 UWP アプリでは、すべての Windows デバイスで、デザイン要素が見やすく操作しやすい効果的なピクセルが使用されます。 このため、特定のデバイス ファミリー向けにアプリの UI をカスタマイズする理由がありません。
 
@@ -183,9 +202,9 @@ UWP アプリでは、すべての Windows デバイスで、デザイン要素�
 
 ![デザイン要素の再配置](images/rsp-design/rspd-reflow.png)
 
-###  <a name="reveal"></a>表示
+### <a name="showhide"></a>［表示］/［非表示］
 
-UI は、画面領域に基づいて表示したり、デバイスが追加機能、特定の状況、または推奨される画面の向きをサポートする場合に表示できます。
+UI 要素は、画面領域に基づいて表示したり、非表示にしたり、デバイスが追加機能、特定の状況、または推奨される画面の向きをサポートする場合にあわせて、表示したり、非表示にしたりできます。
 
 タブを示す次の例では、カメラ アイコンがある中央のタブが携帯電話またはファブレットのアプリに固有であり、大型のデバイスには適用されません。そのため、右側のデバイスでは表示されています。 UI の表示/非表示のもう 1 つの一般的な例は、メディア プレーヤーのコントロールです。この場合、ボタン セットは、小型のデバイスでは縮小され、使用できる画面領域が大きい大型デバイスでは展開されます。 たとえば、PC では、メディア プレーヤーが処理できる画面上の機能は、携帯電話での機能よりもはるかに多くなっています。
 
@@ -215,13 +234,15 @@ UI は、画面領域に基づいて表示したり、デバイスが追加機�
 
 ![レスポンシブ デザインの再構築手法を使用する設計の例](images/rsp-design/rspd-rearchitect-type1.png)
 
+## <a name="tools-and-design-toolkits"></a>ツールと設計ツールキット
+
+UWP アプリを設計するのに役立つさまざまなツールが提供されています。 [設計ツールキットのページ](../design-downloads/index.md)をご覧ください。XD、Illustrator、Photoshop、Framer、Sketch の各ツールキット、および追加の設計ツールやフォントのダウンロードが提供されています。 
+
+コンピューターを設定して実際に UWP アプリのコードを記述できるようにするには、[作業の開始と準備](../get-started/get-set-up.md)の記事をご覧ください。 
 
 ## <a name="related-articles"></a>関連記事
 
 - [UWP アプリとは](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx)
+- [設計ツールキット](../design-downloads/index.md)
 
  
-
-
-
-

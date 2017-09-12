@@ -6,14 +6,16 @@ ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 39418d553eceb6b38d9b0cecc633c984f38465b9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: ddbc04afd6571ac5692c2202fa292185d11e05b0
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="choose-a-notification-delivery-method"></a>通知配信方法の選択
 
@@ -111,7 +113,7 @@ API 呼び出しはローカルですが、通知では Web 画像を参照で�
 詳しくは、次のトピックをご覧ください。
 
 -   [ローカル タイル通知の送信](tiles-and-notifications-sending-a-local-tile-notification.md)
--   [ローカル トースト通知の送信](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10/)
+-   [ローカル トースト通知の送信](tiles-and-notifications-send-local-toast.md)
 -   [ユニバーサル Windows プラットフォーム (UWP) の通知コード サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="scheduled-notifications"></a>スケジュールされた通知
@@ -161,7 +163,7 @@ API 呼び出しはローカルですが、通知では Web 画像を参照で�
 
 
 * [ローカル タイル通知の送信](tiles-and-notifications-sending-a-local-tile-notification.md)
-* [ローカル トースト通知の送信](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10/)
+* [ローカル トースト通知の送信](tiles-and-notifications-send-local-toast.md)
 * [プッシュ通知のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh761462)
 * [トースト通知のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465391)
 * [定期的な通知の概要](tiles-and-notifications-periodic-notification-overview.md)

@@ -9,14 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、広告、AdControl、javascript"
-ms.openlocfilehash: b669925c3b630ddbfe82086231c46c951072244b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 5a64f58c7f66dd1177549562364a483641b1fd32
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="create-an-adcontrol-in-javascript"></a>JavaScript での AdControl の作成
-
-
-
 
 この記事の例では、JavaScript を使ってプログラムで [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) を作成する方法について説明します。 この記事では、**AdControl** を使用するために必要なプロジェクトへの参照が既に追加していることを前提としています。 JavaScript ではなく HTML マークアップで **AdControl** を作成し初期化する方法の詳しいチュートリアルも含め、詳しくは「[HTML 5 および Javascript の AdControl](adcontrol-in-html-5-and-javascript.md)」をご覧ください。
 
@@ -42,7 +41,8 @@ translationtype: HT
 
 この例では、**myAdError**、**myAdRefreshed**、および **myAdEngagedChanged** という名前のイベント ハンドラー メソッドを既に宣言していることを前提としています。
 
->**注**&nbsp;&nbsp;この例の *applicationId* の値と *adUnitId* の値は、[テスト モードの値](test-mode-values.md)です。 申請のためにアプリを提出する前に、Windows デベロッパー センターから[実際の値にこれらの値を置き換える](set-up-ad-units-in-your-app.md)必要があります。
+> [!NOTE]
+> この例の *applicationId* の値と *adUnitId* の値は、[テスト モードの値](test-mode-values.md)です。 申請のためにアプリを提出する前に、Windows デベロッパー センターから[実際の値にこれらの値を置き換える](set-up-ad-units-in-your-app.md)必要があります。
 
 このコードで広告が表示されない場合は、**AdControl** を含む **div** に **position:relative** の属性を挿入してみてください。 これにより、**IFrame** の既定の設定が上書きされます。 この属性の値が原因でなければ、広告が正しく表示されるようになります。 新しい広告ユニットが利用可能になるまでに最大で 30 分かかる場合があることに注意してください。
 

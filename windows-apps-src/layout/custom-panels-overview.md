@@ -10,14 +10,16 @@ label: XAML custom panels overview (Windows apps)
 template: detail.hbs
 op-migration-status: ready
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: aeea966a40b551bf4fc54901e622f57745720c43
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: cd9d9e2129fe08ba0b2ef4dd08240adfbceda625
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="xaml-custom-panels-overview"></a>XAML カスタム パネルの概要
 
@@ -64,7 +66,7 @@ translationtype: HT
 </local:CustomPanel>
 ```
 
-XAML パーサーがこのマークアップを読み取るときに、Children は、すべての Panel 派生型の XAML コンテンツ プロパティであると認識されるため、パーサーは、Children プロパティの UIElementCollection 値に 2 つの Button 要素を追加します。 XAML コンテンツ プロパティにより、UI 定義の XAML マークアップで親子関係を効率化しやすくなります。 XAML コンテンツ プロパティの詳細と、XAML の解析時のコレクション プロパティの設定方法については、「[基本的な XAML 構文のガイド](https://msdn.microsoft.com/library/windows/apps/mt185596)」を参照してください。
+XAML パーサーがこのマークアップを読み取るときに、[**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) は、すべての [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 派生型の XAML コンテンツ プロパティであると認識されるため、パーサーは、[**Children** プロパティの [**UIElementCollection**](https://msdn.microsoft.com/library/windows/apps/br227633) 値に 2 つの **Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 要素を追加します。 XAML コンテンツ プロパティにより、UI 定義の XAML マークアップで親子関係を効率化しやすくなります。 XAML コンテンツ プロパティの詳細と、XAML の解析時のコレクション プロパティの設定方法については、「[基本的な XAML 構文のガイド](https://msdn.microsoft.com/library/windows/apps/mt185596)」を参照してください。
 
 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) プロパティの値を維持しているコレクション型は [**UIElementCollection**](https://msdn.microsoft.com/library/windows/apps/br227633) クラスです。 **UIElementCollection** は、適用された項目の型として [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) を使う、厳密に型指定されたコレクションです。 **UIElement** は、多くの実用的な UI 要素型によって継承されている基本型であるため、ここでは、型が意図的に緩やかに適用されています。 ただし、[**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) が [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) の直接の子になることができない点は適用されます。これは一般に、UI に表示され、レイアウトに含まれると予想されている要素のみが、**Panel** の子要素となることを意味します。
 

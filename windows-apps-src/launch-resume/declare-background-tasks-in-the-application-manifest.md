@@ -9,13 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 364edc93c52d3c7c8cbe5f1a85c8ca751eb44b35
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 65ee6cd32e1fdb6900c859725b8deb6b5031d297
+ms.sourcegitcommit: ba0d20f6fad75ce98c25ceead78aab6661250571
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/24/2017
 ---
-
 # <a name="declare-background-tasks-in-the-application-manifest"></a>アプリケーション マニフェストでのバックグラウンド タスクの宣言
 
 
@@ -62,8 +61,7 @@ ms.lasthandoff: 02/07/2017
  </Application>
 ```
 
-## <a name="add-a-background-task-extension"></a>バックグラウンド タスク拡張機能の追加
-
+## <a name="add-a-background-task-extension"></a>バックグラウンド タスク拡張機能の追加  
 
 最初のバックグラウンド タスクを宣言します。
 
@@ -108,8 +106,7 @@ ms.lasthandoff: 02/07/2017
 </Extension>
 ```
 
-
-## <a name="add-additional-background-task-extensions"></a>バックグラウンド タスク拡張機能の追加
+### <a name="add-multiple-background-task-extensions"></a>複数のバックグラウンド タスク拡張機能の追加
 
 アプリで登録する追加のバックグラウンド タスク クラスごとに、手順 2. を繰り返します。
 
@@ -154,17 +151,22 @@ ms.lasthandoff: 02/07/2017
 </Applications>
 ```
 
-## <a name="declare-your-background-task-to-run-in-a-different-process"></a>別のプロセスで実行されるバックグラウンド タスクを宣言する
+## <a name="declare-where-your-background-task-will-run"></a>バック グラウンド タスクの実行先の宣言
 
-Windows 10 バージョン 1507 での新機能により、バックグラウンド タスクを BackgroundTaskHost.exe (既定でバックグラウンド タスクが実行されるプロセス) とは別のプロセスで実行できるようになりました。  2 つのオプションがあります。フォアグラウンド アプリケーションと同じプロセスで実行する。BackgroundTaskHost.exe の 1 つのインスタンスで実行する。これは同じアプリケーションのバックグラウンド タスクの他のインスタンスとは別のインスタンスです。  
+バックグラウンド タスクの実行先を指定することができます。
 
-### <a name="run-in-the-foreground-application"></a>フォアグラウンド アプリケーションで実行する
+* 既定では、BackgroundTaskHost.exe プロセスで実行されます。
+* フォアグラウンド アプリケーションと同じプロセスで実行できます。
+* `ResourceGroup` を使用すると、複数のバックグラウンド タスクを同じホスティング プロセスに配置したり、異なるプロセスに分離したりすることができます。
+* `SupportsMultipleInstances` を使用すると、新しいトリガーが発生するたびに、独自のリソース制限 (メモリ、CPU) を持つ新しいプロセスでバックグラウンド プロセスが実行されます。
 
-フォアグラウンド アプリケーションと同じプロセスで実行されるバック グラウンド タスクを宣言する XML の例を次に示します。 `Executable` 属性に注意してください。
+### <a name="run-in-the-same-process-as-your-foreground-application"></a>フォアグラウンド アプリケーションと同じプロセスでの実行
+
+フォアグラウンド アプリケーションと同じプロセスで実行されるバック グラウンド タスクを宣言する XML の例を次に示します。
 
 ```xml
 <Extensions>
-    <Extension Category="windows.backgroundTasks" EntryPoint="ExecModelTestBackgroundTasks.ApplicationTriggerTask" Executable="$targetnametoken$.exe">
+    <Extension Category="windows.backgroundTasks" EntryPoint="ExecModelTestBackgroundTasks.ApplicationTriggerTask">
         <BackgroundTasks>
             <Task Type="systemEvent" />
         </BackgroundTasks>
@@ -172,12 +174,11 @@ Windows 10 バージョン 1507 での新機能により、バックグラウン
 </Extensions>
 ```
 
-> [!Note]
-> Executable 要素は、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) など、Executable 要素を必要とするバックグラウンド タスクと共に使ってください。  
+**EntryPoint** を指定すると、アプリケーションは指定されたメソッドへのコールバックをトリガーの発生時に受け取ります。 **EntryPoint** を指定していない場合、アプリケーションは [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) を介してコールバックを受け取ります。  詳しくは、「[インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)」をご覧ください
 
-### <a name="run-in-a-different-background-host-process"></a>別のバックグラウンド ホスト プロセスで実行する
+### <a name="specify-where-your-background-task-runs-with-the-resourcegroup-attribute"></a>ResourceGroup 属性を使用して、バックグラウンド タスクの実行先を指定
 
-BackgroundTaskHost.exe プロセスで実行されるが、同じアプリのバックグラウンド タスクの他のインスタンスとは別に実行される、バックグラウンド タスクを宣言する XML の例を示します。 共に実行されるバックグラウンド タスクを指定する、`ResourceGroup`属性に注意してください。
+BackgroundTaskHost.exe プロセスで実行されるが、同じアプリのバックグラウンド タスクの他のインスタンスとは別に実行される、バックグラウンド タスクを宣言する XML の例を示します。 共に実行されるバックグラウンド タスクを指定する、`ResourceGroup` 属性に注意してください。
 
 ```xml
 <Extensions>
@@ -209,11 +210,33 @@ BackgroundTaskHost.exe プロセスで実行されるが、同じアプリのバ
 </Extensions>
 ```
 
+### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>SupportsMultipleInstances 属性を使用して、トリガーが発生するたびに新しいプロセスで実行
+
+この例では、新しいトリガーが発生するたびに独自のリソース制限 (メモリと CPU) を持つ新しいプロセスで実行される、バックグラウンド タスクを宣言します。 `SupportsMultipleInstances` を使っていることに注目してください。この属性がこの動作を実現します。 この属性を使用するためには、SDK バージョン '10.0.15063' (Windows 10 Creator's Update) 以降をターゲットにする必要があります。
+
+```xml
+<Package
+    xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
+    ...
+    <Applications>
+        <Application ...>
+            ...
+            <Extensions>
+                <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.TimerTriggerTask">
+                    <BackgroundTasks uap4:SupportsMultipleInstances=“True”>
+                        <Task Type="timer" />
+                    </BackgroundTasks>
+                </Extension>
+            </Extensions>
+        </Application>
+    </Applications>
+```
+
+> [!NOTE]
+> `SupportsMultipleInstances` と共に `ResourceGroup` または `ServerName` を指定することはできません。
 
 ## <a name="related-topics"></a>関連トピック
-
 
 * [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
 * [バックグラウンド タスクの登録](register-a-background-task.md)
 * [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
-

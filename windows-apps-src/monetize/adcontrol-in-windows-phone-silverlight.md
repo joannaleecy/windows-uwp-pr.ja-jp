@@ -4,20 +4,30 @@ ms.assetid: c0450f7b-5c81-4d8c-92ef-2b1190d18af7
 description: "Windows Phone 8.1 用または Windows Phone 8.0 用の Silverlight アプリで AdControl クラスを使ってバナー広告を表示する方法について説明します。"
 title: "Windows Phone Silverlight の AdControl"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10、UWP、広告、宣伝、AdControl、Silverlight、Windows Phone"
-ms.openlocfilehash: 743b9faccaa120f1904b592fc09a965dc7878e03
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f1582639757abfb6de156bf88ce8af71ba3eaacd
+ms.sourcegitcommit: a9e4be98688b3a6125fd5dd126190fcfcd764f95
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/21/2017
 ---
 # <a name="adcontrol-in-windows-phone-silverlight"></a>Windows Phone Silverlight の AdControl
 
 このチュートリアルでは、Windows Phone 8.1 用または Windows Phone 8.0 用の Silverlight アプリで [AdControl](https://msdn.microsoft.com/library/windows/apps/hh524191.aspx) クラスを使ってバナー広告を表示する方法について説明します。
 
-> **Windows Phone Silverlight 8.0 に関する注**&nbsp;&nbsp;以前のリリースの Universal Ad Client SDK または Microsoft Advertising SDK の **AdControl** を使用し、すでにストアで提供されている既存の Windows Phone 8.0 Silverlight アプリでは、バナー広告が引き続きサポートされます。 ただし、新しい Windows Phone 8.0 Silverlight プロジェクトではバナー広告がサポートされません。 さらに、Windows Phone 8.x Silverlight プロジェクトでは、一部のデバッグとテストのシナリオが制限されます。 詳しくは、「[アプリでの広告の表示](display-ads-in-your-app.md#silverlight_support)」をご覧ください。
+<span id="silverlight_support"/>
+## <a name="advertising-support-for-windows-phone-8x-silverlight-projects"></a>Windows Phone 8.x Silverlight プロジェクト用の広告のサポート
+
+Windows Phone 8.x Silverlight プロジェクトでのいくつかの開発者シナリオは、サポートされません。 詳しくは、次の表をご覧ください。
+
+|  プラットフォームのバージョン  |  既存のプロジェクト    |   新しいプロジェクト  |
+|-----------------|----------------|--------------|
+| Windows Phone 8.0 Silverlight     |  Microsoft ユニバーサル広告クライアント SDK または Microsoft Advertising SDK の以前のリリースの **AdControl** または **AdMediatorControl** を使用している既存の Windows Phone 8.0 Silverlight プロジェクトがあり、アプリが既に Windows ストアで公開されている場合、プロジェクトの変更とリビルドを行い、デバイスで変更のデバッグまたはテストを行うことができます。 エミュレーターでのプロジェクトのデバッグまたはテストはサポートされません。  |  サポートされません。  |
+| Windows Phone 8.1 Silverlight    |  以前の SDK の **AdControl** または **AdMediatorControl** を使用している既存の Windows Phone 8.1 Silverlight プロジェクトがある場合、プロジェクトの変更とリビルドを行うことができます。 ただし、アプリをテストまたはデバッグするには、エミュレーターでアプリを実行し、アプリケーション ID と広告ユニット ID に[テスト モードの値](test-mode-values.md)を使用する必要があります。 デバイス上でのアプリのデバッグやテストはサポートされません。  |   新しい Windows Phone 8.1 Silverlight プロジェクトに **AdControl** または **AdMediatorControl** を追加することができます。 ただし、アプリをテストまたはデバッグするには、エミュレーターでアプリを実行し、アプリケーション ID と広告ユニット ID に[テスト モードの値](test-mode-values.md)を使用する必要があります。 デバイス上でのアプリのデバッグやテストはサポートされません。 |
 
 ## <a name="add-the-advertising-assemblies-to-your-project"></a>Advertising アセンブリをプロジェクトに追加する
 
@@ -31,14 +41,12 @@ translationtype: HT
 
   * プロジェクトが Windows Phone 8.0 をターゲットとする場合は、以下のコマンドを入力します。
 
-      > [!div class="tabbedCodeSnippets"]
       ```syntax
       Install-Package Microsoft.Advertising.WindowsPhone.SL80 -Version 6.2.40501.1
       ```
 
   * プロジェクトが Windows Phone 8.1 をターゲットとする場合は、以下のコマンドを入力します。
 
-      > [!div class="tabbedCodeSnippets"]
       ```syntax
       Install-Package Microsoft.Advertising.WindowsPhone.SL81 -Version 8.1.50112
       ```
@@ -50,7 +58,6 @@ translationtype: HT
 
 1.  WMAppManifest.xml ファイルの **Capabilities** ノードに次の機能を追加します。
 
-  > [!div class="tabbedCodeSnippets"]
   ``` syntax
   <Capability Name="ID_CAP_IDENTITY_USER"/>
   <Capability Name="ID_CAP_MEDIALIB_PHOTO"/>
@@ -59,7 +66,6 @@ translationtype: HT
 
   この例では、**Capabilities** ノードが次のようになります。
 
-  > [!div class="tabbedCodeSnippets"]
   ``` syntax
   <Capabilities>
       <Capability Name="ID_CAP_NETWORKING"/>
@@ -85,14 +91,12 @@ translationtype: HT
 
 5.  MainPage.xaml ファイルの Silverlight マークアップを変更して、**Microsoft.Advertising.Mobile.UI** 名前空間を追加します。
 
-  > [!div class="tabbedCodeSnippets"]
   ``` xml
   xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
   ```
 
   ページのヘッダーのコードが次のようになります。
 
-  > [!div class="tabbedCodeSnippets"]
   ``` xml
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
@@ -103,7 +107,6 @@ translationtype: HT
 
   >               **注**&nbsp;&nbsp;**ApplicationId** と **AdUnitId** のテスト値は、アプリを申請のために提出する前に実際の値に置き換えます。
 
-  > [!div class="tabbedCodeSnippets"]
   ``` xml
   <Grid x:Name="ContentPanel" Grid.Row="1">
       <UI:AdControl
@@ -122,7 +125,7 @@ translationtype: HT
 
 ## <a name="release-your-app-with-live-ads-using-dev-center"></a>デベロッパー センターを使用して、ライブ広告を表示するアプリをリリースする
 
-1.  デベロッパー センターのダッシュボードで、アプリの **[収益化]** &gt; **[広告で収入を増やす]** ページに移動し、[スタンドアロン Microsoft Advertising ユニットを作成](../publish/monetize-with-ads.md)します。 広告ユニットの種類として、**[バナー]** を指定します。 広告ユニット ID とアプリケーション ID の両方をメモしておきます。
+1.  デベロッパー センターのダッシュボードで、アプリの **[収益化]** &gt; **[広告で収入を増やす]** ページに移動し、[スタンドアロン広告ユニットを作成](../publish/monetize-with-ads.md)します。 広告ユニットの種類として、**[バナー]** を指定します。 広告ユニット ID とアプリケーション ID の両方をメモしておきます。
 
 2.  コードで、広告ユニットのテスト値 (**applicationId** と **adUnitId**) を、デベロッパー センターで生成した実際の値に置き換えます。
 

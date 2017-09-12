@@ -1,6 +1,22 @@
-# <a name="app-analysis-overview"></a>App Analysis の概要
+---
+author: jwmsft
+title: "アプリの分析"
+description: "アプリを分析してパフォーマンスの問題を調べます。"
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.openlocfilehash: bedd4ce683622935488f9cc210d71f568a167f51
+ms.sourcegitcommit: 63c815f8c6665872987b5410cabf324f2b7e3c7c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/10/2017
+---
+# <a name="app-analysis-overview"></a>アプリの分析の概要
 
-App Analysis は、パフォーマンスの問題を開発者に通知するツールです。 このツールでは、アプリのコードが実行され、一連のパフォーマンス ガイドラインとベスト プラクティスへの準拠が確認されます。
+アプリの分析は、パフォーマンスの問題を開発者に通知するツールです。 このツールでは、アプリのコードが実行され、一連のパフォーマンス ガイドラインとベスト プラクティスへの準拠が確認されます。
 
 App Analysis は、アプリで発生する一般的なパフォーマンスの問題から成る規則セットに基づいて問題を特定します。 また必要に応じて、調査の助けとなる Visual Studio のタイムライン ツール、ソース情報、ドキュメントを示します。
 
@@ -105,7 +121,7 @@ DecodePixelWidth/Height が画面に表示される画像よりも大きいサ�
 
 ## <a name="collapsed-elements-at-load-time"></a>要素が読み込み時に折りたたまれている
 
-アプリは、最初 UI 要素を非表示にし、後でそれらを表示するのが一般的なパターンです。 ほとんどの場合、読み込み時に要素を作成するコストを回避するために、x:DeferLoadStrategy を使用してこれらの要素の読み込みを延期する必要があります。
+アプリは、最初 UI 要素を非表示にし、後でそれらを表示するのが一般的なパターンです。 ほとんどの場合、読み込み時に要素を作成するコストを回避するために、x:Load または x:DeferLoadStrategy を使用してこれらの要素の読み込みを延期する必要があります。
 
 これにはブール値と Visibility 値のコンバーターを使って、後で表示するときまで項目を非表示にする場合が含まれます。
 
@@ -119,9 +135,9 @@ DecodePixelWidth/Height が画面に表示される画像よりも大きいサ�
 
 ### <a name="solution"></a>解決策
 
-x:DeferLoadStrategy を使って、UI の要素の読み込みを遅らせて、必要に応じて読み込むことができます。 最初のフレームで表示しない UI について処理を延期する場合は、この方法をお勧めします。 要素は必要に応じてその都度読み込むか、後で実行する一連のロジックの一部として読み込むことができます。 読み込みをトリガーするには、読み込む要素に対して findName を呼び出します。
+[x:Load 属性](../xaml-platform/x-load-attribute.md)または [x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785) を使って、UI の要素の読み込みを遅らせて、必要に応じて読み込むことができます。 最初のフレームで表示しない UI について処理を延期する場合は、この方法をお勧めします。 要素は必要に応じてその都度読み込むか、後で実行する一連のロジックの一部として読み込むことができます。 読み込みをトリガーするには、読み込む要素に対して findName を呼び出します。 x:Load は x:DeferLoadStrategy の機能を拡張して、要素をアンロードできるようにしたり、読み込み状態を x:Bind によって制御できるようにしたりします。
 
-場合によっては、findName を使って UI 要素を表示する方法では問題を解決できないことがあります。 たとえば、クリックによって多くの UI をきわめて短い遅延時間で表示する場合などです。 このような場合は、x:DeferLoadStrategy を使用して表示する要素の Visibility を Collapsed に設定します。 これにより、ページが読み込まれ、UI スレッドが解放された後、必要に応じて findName を呼び出して要素を読み込むことができます。 要素は、その要素の Visibility を Visible に設定するまでユーザーには表示されません。
+場合によっては、findName を使って UI 要素を表示する方法では問題を解決できないことがあります。 たとえば、クリックによって多くの UI をきわめて短い遅延時間で表示する場合などです。 この場合、追加メモリのコストのために高速な UI 待機時間を妥協することもできます。そうするには、x:DeferLoadStrategy を使用し、実現する要素の Visibility を Collapsed に設定する必要があります。 これにより、ページが読み込まれ、UI スレッドが解放された後、必要に応じて findName を呼び出して要素を読み込むことができます。 要素は、その要素の Visibility を Visible に設定するまでユーザーには表示されません。
 
 ## <a name="listview-is-not-virtualized"></a>ListView が仮想化されていない
 

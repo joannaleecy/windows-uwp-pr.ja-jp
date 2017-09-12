@@ -4,23 +4,26 @@ Description: "Windows ストアでは、支払方法として携帯電話会社�
 title: "通信事業者の請求"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.author: wdg-dev-content
-ms.date: 03/03/2017
+ms.date: 07/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 5d3dbe205fd3f4260f761d9372a573fe568b3638
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 431d61b087bd59aea8f9a6bc1a7197b603022504
+ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/06/2017
 ---
 # <a name="mobile-operator-billing"></a>通信事業者の請求
 
 
-Windows ストアでは、支払方法として携帯電話会社による課金を、この機能をサポートしている携帯電話会社に提供しています。 ユーザーの携帯電話会社がこの機能をサポートしている場合、ユーザーはモバイル アカウントを使って、ストアで購入することができます。
+Windows ストアでは、支払方法として携帯電話会社による課金を提供しています。 ユーザーの携帯電話会社がこの機能をサポートしている場合、ユーザーはモバイル アカウントを使って、ストアで購入することができます。
 
-> **注**  ユーザーの携帯電話会社が携帯電話会社による課金を提供していても、ユーザーのデバイスにこのオプションがない場合は、[こちらの手順](http://go.microsoft.com/fwlink/p/?LinkId=523993)をご覧ください。
+> [!TIP]
+>  ユーザーの携帯電話会社が携帯電話会社による課金を提供していても、ユーザーのデバイスにこのオプションがない場合は、こちらの[手順](http://go.microsoft.com/fwlink/p/?LinkId=523993)をご覧ください。
 
-弊社は、定期的に携帯電話会社と協力して、この支払方法の機能を拡張しています。 次のリストにない携帯電話会社をサポートするように提案する場合は、携帯電話会社にお問い合わせください。
+弊社は、定期的に携帯電話会社と協力して、この支払方法の機能を拡張しています。 以下のリストにない携帯電話会社を案内したい場合は、その携帯電話会社に連絡し、この支払い方法を追加するよう要請してください。
 
 ## <a name="mobile-operator-billing-for-windows-10-and-xbox-one-devices"></a>Windows 10 および Xbox One デバイスでの携帯電話会社による課金
 
@@ -30,18 +33,24 @@ Windows 10 での携帯電話会社による課金の実装は、現在、次の
 
 | 国/地域  | 携帯電話会社     |
 |-----------------|----------------------|
-| オーストリア         | Hutchison 3G Austria |
+| オーストリア         | Hutchison 3G Austria、A1 Telekom |
+| ベルギー         | Base、Proximus       |
+| カナダ          | Telus                |
+| デンマーク         | 3                    |
 | フィンランド         | DNA、Elisa           |
 | フランス          | Orange               |
 | ドイツ         | O2                   |
 | ハンガリー         | Telenor              |
-| イタリア           | Wind                 |
+| イタリア           | Wind、Tre            |
 | ノルウェー          | Telenor              |
 | ポーランド          | Orange               |
+| ルーマニア         | Orange               |
 | ロシア          | Beeline              |
-| スウェーデン          | Telenor              |
+| スペイン           | Orange               |
+| スウェーデン          | Telenor、3           |
 | スイス     | Swisscom             |
-| 米国   | Sprint               |
+| トルコ          | Turkcell             |
+| 米国   | Sprint、Verizon      |
 | 英国  | O2、3 UK             |
 
  
@@ -56,17 +65,13 @@ Windows 10 での携帯電話会社による課金の実装は、現在、次の
 | 国/地域       | 携帯電話会社                                                   |
 |----------------------|--------------------------------------------------------------------|
 | オーストラリア            | Telstra                                                            |
-| オーストリア              | A1 Telekom、T-Mobile                                               |
-| ベルギー              | BASE、Mobistar、Proximus                                           |
-| カナダ               | Fido、Rogers                                                       |
+| オーストリア              | T-Mobile                                                           |
+| ベルギー              | Mobistar                                                           |
 | チェコ共和国       | T-Mobile、Vodafone                                                 |
-| フィンランド              | TeliaSonera                                                        |
-| フランス               | Orange、SFR、Bouygues                                              |
+| フランス               | Orange、Bouygues                                              |
 | ドイツ              | Telefonica、Telekom Deutschland、Vodafone                          |
 | ギリシャ               | Vodafone                                                           |
-| ハンガリー              | Telenor、T-Mobile                                                  |
-| インド                | Idea                                                               |
-| インドネシア            | Telkomsel、Hutchinson CP Telecommunications (HCPT)                 |
+| ハンガリー              | T-Mobile                                                           |
 | アイルランド              | O2、Vodafone、Three                                                |
 | イタリア                | Telecom Italia、Vodafone、Wind、3 Italia                           |
 | オランダ          | T-Mobile、Vodafone                                                 |
@@ -76,9 +81,9 @@ Windows 10 での携帯電話会社による課金の実装は、現在、次の
 | スロバキア             | T-Mobile                                                           |
 | 南アフリカ         | Vodacom                                                            |
 | スペイン                | Movistar、Vodafone、Orange                                         |
-| 英国       | Everything Everywhere (T-Mobile)、Telefonica (O2)、Three、Vodafone |
+| 英国       | Telefonica (O2)、Vodafone        |
 | 米国        | AT&T、T-Mobile                                                     |
-| ベトナム              | Viettel、Vinaphone、Mobifone                                       |
+
 
  
 

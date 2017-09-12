@@ -7,14 +7,16 @@ ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
 label: Segoe MDL2 icons
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 669a59227e06a976ee567eeea7717787727a51ff
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 554667a8db5870ec9d9ba781b20cca41000049c5
+ms.sourcegitcommit: 5ece992c31870df4c089360ef47501bd4ce14fa9
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/22/2017
 ---
 # <a name="segoe-mdl2-icons"></a>Segoe MDL2 アイコン
 
@@ -1429,7 +1431,7 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
  </tr>
  <tr><td>![GlobalNavButton](images/segoe-mdl/e700.png)</td>
   <td>E700</td>
-  <td>GlobalNavButton</td>
+  <td>GlobalNavigationButton</td>
  </tr>
  <tr><td>![Wifi](images/segoe-mdl/e701.png)</td>
   <td>E701</td>

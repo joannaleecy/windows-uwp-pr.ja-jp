@@ -9,20 +9,23 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows ストア コレクション API, Windows ストア購入 API, 製品の表示, 製品の付与"
-ms.openlocfilehash: 1f5930a9917933937a1a0103fe118a2ccdf2d47f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 6ecc9d6014692cac52f5554f78a0773dfee3fb81
+ms.sourcegitcommit: e7e8de39e963b73ba95cb34d8049e35e8d5eca61
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/16/2017
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>サービスから製品の権利を管理する
 
-アプリとアドオン (アプリ内製品 (IAP) とも呼ばれます) のカタログがある場合は、*Windows ストア コレクション API* および *Windows ストア購入 API* を使って、サービスからこれらの製品の権利情報にアクセスできます。 "権利"** とは、Windows ストアを通じて公開されたアプリまたはアドオンを顧客が使用する権利を表します。
+アプリとアドオンのカタログがある場合は、*Windows ストア コレクション API* と *Windows ストア購入 API* を使って、サービスからこれらの製品の権利の情報にアクセスできます。 "権利"** とは、Windows ストアを通じて公開されたアプリまたはアドオンを顧客が使用する権利を表します。
 
 これらの API は、クロスプラットフォーム サービスでサポートされるアドオン カタログを持つ開発者向けに設計された REST メソッドで構成されています。 これらの API を使用すると、次の操作を実行できます。
 
 -   Windows ストア コレクション API: [ユーザーが所有するアプリを照会](query-for-products.md)し、[コンシューマブルな製品をフルフィルメント完了として報告](report-consumable-products-as-fulfilled.md)する。
--   Windows ストア購入 API: [無料のアプリをユーザーに付与](grant-free-products.md)する。
+-   Windows ストア購入 API: [無料のアプリをユーザーに付与する](grant-free-products.md)、[ユーザーのサブスクリプションを取得する](get-subscriptions-for-a-user.md)、[ユーザーのサブスクリプションに関する請求の状態を変更する](change-the-billing-state-of-a-subscription-for-a-user.md)。
 
->**注**&nbsp;&nbsp;Windows ストア コレクション API と Windows ストア購入 API では、Azure Active Directory (Azure AD) 認証を使って顧客の所有権情報にアクセスします。 これらの API を使用するには、ユーザー (またはユーザーの組織) が、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](http://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。
+> [!NOTE]
+> Windows ストア コレクション API と Windows ストア購入 API では、Azure Active Directory (Azure AD) 認証を使って顧客の所有権情報にアクセスします。 これらの API を使用するには、ユーザー (またはユーザーの組織) が、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](http://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。
 
 ## <a name="overview"></a>概要
 
@@ -41,11 +44,12 @@ translationtype: HT
 
 Windows ストア コレクション API または購入 API を使うには、事前に Azure AD Web アプリケーションを作成し、そのアプリケーションのテナント ID とクライアント ID を取得して、キーを生成する必要があります。 Azure AD アプリケーションは、Windows ストア コレクション API または購入 API の呼び出し元となるアプリまたはサービスを表します。 テナント ID、クライアント ID、およびキーは、API に渡す Azure AD アクセス トークンを取得するために必要です。
 
->**注:**&nbsp;&nbsp;このセクションの作業は 1 回実行する必要があるだけです。 Azure AD アプリケーションのマニフェストを更新し、テナント ID、クライアント ID、クライアント シークレットを取得したら、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらの値を再利用できます。
+> [!NOTE]
+> このセクションの作業は 1 回実行する必要があるだけです。 Azure AD アプリケーションのマニフェストを更新し、テナント ID、クライアント ID、クライアント シークレットを取得したら、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらの値を再利用できます。
 
 1.  「[Azure Active Directory とアプリケーションの統合](http://go.microsoft.com/fwlink/?LinkId=722502)」の指示に従って、Azure AD に Web アプリケーションを追加します。
-
-    > **注**&nbsp;&nbsp;**[アプリケーション情報の指定]** ページで、**[Web アプリケーションや Web API]** を選んでいることを確認してください。 これは、アプリケーションのキー ("クライアント シークレット"** とも呼ばれます) を取得するために必要です。 Windows ストア コレクション API または購入 API を呼び出すには、後の手順で Azure AD からアクセス トークンを要求するときにクライアント シークレットを指定する必要があります。
+    > [!NOTE]
+    > **[アプリケーション情報の指定]** ページで、**[Web アプリケーションや Web API]** を選択していることを確認します。 これは、アプリケーションのキー ("クライアント シークレット"** とも呼ばれます) を取得するために必要です。 Windows ストア コレクション API または購入 API を呼び出すには、後の手順で Azure AD からアクセス トークンを要求するときにクライアント シークレットを指定する必要があります。
 
 2.  [Azure 管理ポータル](http://manage.windowsazure.com/)で、**Active Directory** に移動します。 ディレクトリを選択し、上部にある **[アプリケーション]** タブをクリックして、アプリケーションを選択します。
 3.  **[構成]** タブをクリックします。 このタブで、アプリケーションのクライアント ID を取得し、キー (後の手順ではこれを*クライアント シークレット*と呼びます) を要求します。
@@ -68,7 +72,8 @@ Windows ストア コレクション API または購入 API を使うには、�
 
 Windows ストア コレクション API または Windows ストア購入 API を使ってアプリやアドオンで処理を実行するには、事前にデベロッパー センター ダッシュボードで Azure AD クライアント ID をアプリ (またはアドオンを含むアプリ) に関連付ける必要があります。
 
->**注**&nbsp;&nbsp;この作業を行うのは一度だけです。
+> [!NOTE]
+> この作業を行うのは一度だけです。
 
 1.  [デベロッパー センター ダッシュボード](https://dev.windows.com/overview)にサインインし、アプリを選択します。
 2.  **[サービス]** &gt; **[製品のコレクションと購入]** ページに移動して、利用可能なフィールドの 1 つに Azure AD のクライアント ID を入力します。
@@ -78,18 +83,21 @@ Windows ストア コレクション API または Windows ストア購入 API �
 
 Windows ストア ID キーを取得したり、Windows ストア コレクション API または Windows ストア購入 API を呼び出したりする前に、発行元 ID を表すいくつかの Azure AD アクセス トークンをサービスで作成する必要があります。 各トークンは別々の API で使われます。 各トークンの有効期間は 60 分であり、有効期限が切れた場合は更新できます。
 
+> [!IMPORTANT]
+> Azure AD アクセス トークンは、アプリ内ではなく、サービスのコンテキスト内でのみ作成してください。 このアクセス トークンがアプリに送信されると、クライアント シークレットが侵害される可能性があります。
+
 <span id="access-tokens" />
 ### <a name="understanding-the-different-tokens-and-audience-uris"></a>さまざまなトークンとオーディエンス URI を理解する
 
 Windows ストア コレクション API または購入 API で呼び出そうとしているメソッドに応じて、2 つまたは 3 つの異なるトークンを作成する必要があります。 各アクセス トークンは、別々のオーディエンス URI に関連付けられます (これらは、以前に Azure AD アプリケーション マニフェストの `"identifierUris"` セクションに追加した URI と同じです)。
 
   * いずれの場合も、`https://onestore.microsoft.com` オーディエンス URI のトークンを 1 つ作成する必要があります。 このトークンは、後の手順で Windows ストア コレクション API または購入 API のメソッドの **Authorization** ヘッダーに渡します。
-
-  > **重要**&nbsp;&nbsp;`https://onestore.microsoft.com` オーディエンスは、サービス内に安全に格納されたアクセス トークンでのみ使用してください。 このオーディエンスのアクセス トークンがサービス外に公開されると、サービスがリプレイ攻撃に対して脆弱になる可能性があります。
+      > [!IMPORTANT]
+      > `https://onestore.microsoft.com` 対象ユーザーには、サービス内に安全に格納されたアクセス トークンのみを使用してください。 このオーディエンスのアクセス トークンがサービス外に公開されると、サービスがリプレイ攻撃に対して脆弱になる可能性があります。
 
   * Windows ストア コレクション API のメソッドを呼び出して、[特定のユーザーが所有する製品を照会](query-for-products.md)したり、[コンシューマブルな製品をフルフィルメント完了として報告](report-consumable-products-as-fulfilled.md)したりする場合は、`https://onestore.microsoft.com/b2b/keys/create/collections` オーディエンス URI のトークンも作成する必要があります。 後の手順で、このトークンを Windows SDK のクライアント メソッドに渡し、Windows ストア コレクション API で使用できる Windows ストア ID キーを要求します。
 
-  * Windows ストア購入 API のメソッドを呼び出して[無料の製品をユーザーに付与](grant-free-products.md)する場合は、`https://onestore.microsoft.com/b2b/keys/create/purchase` オーディエンス URI のトークンも作成する必要があります。 後の手順で、このトークンを Windows SDK のクライアント メソッドに渡し、Windows ストア購入 API で使用できる Windows ストア ID キーを要求します。
+  * Windows ストア購入 API でメソッドを呼び出して[無料の製品をユーザーに付与する](grant-free-products.md)、[ユーザーのサブスクリプションを取得する](get-subscriptions-for-a-user.md)、または[ユーザーのサブスクリプションに関する請求の状態を変更する](change-the-billing-state-of-a-subscription-for-a-user.md)場合、`https://onestore.microsoft.com/b2b/keys/create/purchase` 対象ユーザー URI を使ってトークンも作成する必要があります。 後の手順で、このトークンを Windows SDK のクライアント メソッドに渡し、Windows ストア購入 API で使用できる Windows ストア ID キーを要求します。
 
 <span />
 ### <a name="create-the-tokens"></a>トークンの作成
@@ -115,8 +123,6 @@ grant_type=client_credentials
 
 アクセス トークンの有効期限が切れた後は、[こちらのトピック](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)の手順に従って更新できます。 アクセス トークンの構造について詳しくは、「[サポートされているトークンと要求の種類](http://go.microsoft.com/fwlink/?LinkId=722501)」をご覧ください。
 
-> **重要**&nbsp;&nbsp;Azure AD アクセス トークンは、アプリ内ではなく、サービスのコンテキスト内でのみ作成してください。 このアクセス トークンがアプリに送信されると、クライアント シークレットが侵害される可能性があります。
-
 <span id="step-4"/>
 ## <a name="step-4-create-a-windows-store-id-key"></a>手順 4: Windows ストア ID キーを生成する
 
@@ -124,7 +130,8 @@ Windows ストア コレクション API または Windows ストア購入 API �
 
 現時点では、Windows ストア ID キーを作成する唯一の方法は、アプリ内のコードからユニバーサル Windows プラットフォーム (UWP) API を呼び出すことです。 生成されたキーは、デバイスで現在 Windows ストアにサインインしているユーザーの ID を表します。
 
-> **注**&nbsp;&nbsp;各 Windows ストア ID キーは 90 日間有効です。 キーの有効期限が切れた場合は、[キーを更新](renew-a-windows-store-id-key.md)できます。 新しい Windows ストア ID キーを作成するのではなく、更新することをお勧めします。
+> [!NOTE]
+> 各 Windows ストア ID キーは 90 日間有効です。 キーの有効期限が切れた場合は、[キーを更新](renew-a-windows-store-id-key.md)できます。 新しい Windows ストア ID キーを作成するのではなく、更新することをお勧めします。
 
 <span />
 ### <a name="to-create-a-windows-store-id-key-for-the-windows-store-collection-api"></a>Windows ストア コレクション API 用の Windows ストア ID キーを作成するには
@@ -139,14 +146,14 @@ Windows ストア コレクション API または Windows ストア購入 API �
 
   * アプリで [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間の  [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) クラスを使ってアプリ内購入を管理する場合は、[CurrentApp.GetCustomerCollectionsIdAsync](https://msdn.microsoft.com/library/windows/apps/mt608674) メソッドを使用します。
 
-  メソッドの *serviceTicket* パラメーターに、Azure AD アクセス トークンを渡します。 必要に応じて、*publisherUserId* パラメーターに、サービスのコンテキストで現在のユーザーを識別する ID を渡すことができます。 サービス用のユーザー ID を保持している場合は、このパラメーターを使用して、それらのユーザー ID を Windows ストア コレクション API の呼び出しに関連付けることができます。
+    メソッドの *serviceTicket* パラメーターに、Azure AD アクセス トークンを渡します。 必要に応じて、*publisherUserId* パラメーターに、サービスのコンテキストで現在のユーザーを識別する ID を渡すことができます。 サービス用のユーザー ID を保持している場合は、このパラメーターを使用して、それらのユーザー ID を Windows ストア コレクション API の呼び出しに関連付けることができます。
 
 3.  アプリで正しく Windows ストア ID キーを作成したら、そのキーをサービスに渡します。
 
 <span />
 ### <a name="to-create-a-windows-store-id-key-for-the-windows-store-purchase-api"></a>Windows ストア購入 API 用の Windows ストア ID キーを作成するには
 
-[無料の製品をユーザーに付与](grant-free-products.md)するために、Windows ストア購入 API で使用できる Windows ストア ID キーを作成するには、次の手順に従います。
+[無料の製品をユーザーに付与する](grant-free-products.md)、[ユーザーのサブスクリプションを取得する](get-subscriptions-for-a-user.md)、または[ユーザーのサブスクリプションの請求状態を変更する](change-the-billing-state-of-a-subscription-for-a-user.md)ために、Windows ストア購入 API と共に使うことができる Windows ストア ID キーを作成するには、以下の手順に従います。
 
 1.  `https://onestore.microsoft.com/b2b/keys/create/purchase` オーディエンス URI を使って作成した Azure AD アクセス トークンを、サービスからクライアント アプリに渡します。
 
@@ -156,7 +163,7 @@ Windows ストア コレクション API または Windows ストア購入 API �
 
   * アプリで [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間の [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) クラスを使ってアプリ内購入を管理する場合は、[CurrentApp.GetCustomerPurchaseIdAsync](https://msdn.microsoft.com/library/windows/apps/mt608675) メソッドを使用します。
 
-  メソッドの *serviceTicket* パラメーターに、Azure AD アクセス トークンを渡します。 必要に応じて、*publisherUserId* パラメーターに、サービスのコンテキストで現在のユーザーを識別する ID を渡すことができます。 サービス用のユーザー ID を保持している場合は、このパラメーターを使用して、それらのユーザー ID を Windows ストア購入 API の呼び出しに関連付けることができます。
+    メソッドの *serviceTicket* パラメーターに、Azure AD アクセス トークンを渡します。 必要に応じて、*publisherUserId* パラメーターに、サービスのコンテキストで現在のユーザーを識別する ID を渡すことができます。 サービス用のユーザー ID を保持している場合は、このパラメーターを使用して、それらのユーザー ID を Windows ストア購入 API の呼び出しに関連付けることができます。
 
 3.  アプリで正しく Windows ストア ID キーを作成したら、そのキーをサービスに渡します。
 
@@ -168,6 +175,8 @@ Windows ストア コレクション API または Windows ストア購入 API �
 * [製品の照会](query-for-products.md)
 * [コンシューマブルな製品をフルフィルメント完了として報告する](report-consumable-products-as-fulfilled.md)
 * [無料の製品の付与](grant-free-products.md)
+* [ユーザーのサブスクリプションを取得する](get-subscriptions-for-a-user.md)
+* [ユーザーのサブスクリプションに関する請求の状態を変更する](change-the-billing-state-of-a-subscription-for-a-user.md)
 
 各シナリオについて、次の情報を API に渡します。
 
@@ -220,6 +229,8 @@ Windows ストア ID キーは、ユーザーの製品所有権情報にアク�
 * [製品の照会](query-for-products.md)
 * [コンシューマブルな製品をフルフィルメント完了として報告する](report-consumable-products-as-fulfilled.md)
 * [無料の製品の付与](grant-free-products.md)
+* [ユーザーのサブスクリプションを取得する](get-subscriptions-for-a-user.md)
+* [ユーザーのサブスクリプションに関する請求の状態を変更する](change-the-billing-state-of-a-subscription-for-a-user.md)
 * [Windows ストア ID キーの更新](renew-a-windows-store-id-key.md)
 * [Azure Active Directory とアプリケーションの統合](http://go.microsoft.com/fwlink/?LinkId=722502)
 * [Azure Active Directory アプリケーション マニフェストの概要]( http://go.microsoft.com/fwlink/?LinkId=722500)

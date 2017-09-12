@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 412876d0b05b2e703482f8cc79a1f07268ac200f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 6eed2ecb5766edea8678ea2af10c02332d5a5928
+ms.sourcegitcommit: a61e9fc06f74dc54c36abf7acb85eeb606e475b8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/15/2017
 ---
 # <a name="launching-resuming-and-background-tasks"></a>起動、再開、バックグラウンド タスク
 
@@ -24,6 +26,7 @@ translationtype: HT
 - ユニバーサル Windows プラットフォーム (UWP) アプリが、他のアプリとデータや機能を共有できるアプリ サービスの使用方法。
 - バックグラウンド タスクを使って UWP アプリがフォアグラウンドにない場合でも処理を実行できるようにする方法。
 - 接続されているデバイスを検出したり、別のデバイス上でアプリを起動したり、リモート デバイスのアプリ サービスと通信して、デバイスに依存しないユーザー エクスペリエンスを実現できるようにする方法。
+- アプリの拡張とコンポーネント化に適切なテクノロジを選択する方法。
 - アプリにスプラッシュ画面を追加して構成する方法。
 
 ## <a name="the-app-lifecycle"></a>アプリのライフサイクル
@@ -78,6 +81,7 @@ translationtype: HT
 |-------|-------------|
 | [アプリ サービスの作成と利用](how-to-create-and-consume-an-app-service.md) | 他のユニバーサル Windows プラットフォーム (UWP) アプリにサービスを提供できる UWP アプリを作成する方法と、それらのサービスを利用する方法について説明します。 |
 | [ホスト アプリと同じプロセスで実行するようにアプリ サービスを変換する](convert-app-service-in-process.md) | 別のバックグラウンド プロセスで実行されたアプリ サービスのコードを、アプリ サービスのプロバイダーと同じプロセス内で実行されるコードに変換します。 |
+| [アプリ サービス、拡張機能、パッケージでアプリを拡張する](extend-your-app-with-services-extensions-packages.md) | Windows 10 には、アプリの拡張とコンポーネント化に役立つさまざまなテクノロジがあります。 このトピックは、適切なテクノロジを特定する方法と、各テクノロジについての概要を説明します。 |
 
 ## <a name="background-tasks"></a>バックグラウンド タスク
 
@@ -85,22 +89,26 @@ translationtype: HT
 
 | トピック | 説明 |
 |-------|-------------|
-| [バックグラウンド タスクからのセンサーやデバイスへのアクセス](access-sensors-and-devices-from-a-background-task.md)       | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) を使うと、フォアグラウンド アプリが中断しているときにも、バックグラウンドでユニバーサル Windows アプリからセンサーや周辺機器にアクセスできます。 |
-| [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)                                           | アプリがバックグラウンド タスクを実行するための要件を満たしていることを確認します。                                                                                                                          |
-| [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)                               | アプリとは別のプロセスで実行されるバックグラウンド タスクを作成して登録し、アプリがフォアグラウンドにないときに実行するように登録します。                                                                                                 |
-| [インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)                               | フォアグラウンド アプリと同じプロセスで実行されるバックグラウンド タスクを作成して登録します。                                                                                                 |
-| [アウトプロセスのバックグラウンド タスクをインプロセスのバックグラウンド タスクへ変換](convert-out-of-process-background-task.md)                               | アウトプロセスのバックグラウンド タスクを、フォアグラウンド アプリと同じプロセスで実行されるインプロセスのバックグラウンド タスクに変換する方法を説明します。
-| [バックグラウンド タスクのデバッグ](debug-a-background-task.md)                                                           | バックグラウンド タスクをデバッグする方法について説明します。バックグラウンド タスクのアクティブ化のほか、Windows イベント ログでのデバッグ トレースなどについて取り上げます。                                                                        |
-| [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md) | アプリ マニフェストでバックグラウンド タスクを拡張機能として宣言し、バックグラウンド タスクを使うことができるようにします。                                                                                                       |
-| [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)                                     | 取り消し要求を認識し、作業を停止して、固定ストレージを使っているアプリの取り消しを報告するバックグラウンド タスクの作成方法について説明します。                                     |
-| [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)           | バックグラウンド タスクの進行状況と完了をアプリから認識する方法について説明します。                                                                                                                     |
-| [バックグラウンド タスクの登録](register-a-background-task.md)                                                     | ほとんどのバックグラウンド タスクを安全に登録できる再利用可能な関数の作成方法について説明します。                                                                                                  |
-| [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)             | [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) イベントに応答するバックグラウンド タスクを作成する方法について説明します。                                                                         |
-| [タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)                                        | 1 回限りのバックグラウンド タスクをスケジュールする方法、または定期的なバックグラウンド タスクを実行する方法について説明します。                                                                                                          |
-| [バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)                 | バックグラウンド タスクをいつ実行するかを制御する条件の設定方法について説明します。                                                                                                                  |
-| [バックグラウンドでのデータの転送](https://msdn.microsoft.com/library/windows/apps/mt280377)                                           | バックグラウンド転送 API を使って、バックグラウンドでファイルをコピーします。                                                                                                                              |
-| [バックグラウンド タスクのライブ タイルの更新](update-a-live-tile-from-a-background-task.md)                       | アプリのライブ タイルを新しいコンテンツで更新するためにバックグラウンド タスクを使います。                                                                                                                      |
-| [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)                                                       | デバイスが接続されているときに、[**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) クラスを使って軽量のコードをバックグラウンドで実行する方法について説明します。                             |
+| [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)                                       | アプリがバックグラウンド タスクを実行するための要件を満たしていることを確認します。 |
+| [インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)       | フォアグラウンド アプリと同じプロセスで実行されるバックグラウンド タスクを作成して登録します。 |
+| [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)           | アプリとは別のプロセスで実行されるバックグラウンド タスクを作成して登録し、アプリがフォアグラウンドにないときに実行するように登録します。 |
+| [アウトプロセスのバックグラウンド タスクをインプロセスのバックグラウンド タスクへ変換](convert-out-of-process-background-task.md) | アウトプロセスのバックグラウンド タスクを、フォアグラウンド アプリと同じプロセスで実行されるインプロセスのバックグラウンド タスクに変換する方法を説明します。|
+| [バックグラウンド タスクのデバッグ](debug-a-background-task.md)                                                       | バックグラウンド タスクをデバッグする方法について説明します。バックグラウンド タスクのアクティブ化のほか、Windows イベント ログでのデバッグ トレースなどについて取り上げます。 |
+| [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md) | アプリ マニフェストでバックグラウンド タスクを拡張機能として宣言し、バックグラウンド タスクを使うことができるようにします。 |
+| [バックグラウンド タスクの登録のグループ化](group-background-tasks.md)                                             | グループによってバックグラウンド タスクの登録を分離します。 |
+| [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)                                 | 取り消し要求を認識し、作業を停止して、固定ストレージを使っているアプリの取り消しを報告するバックグラウンド タスクの作成方法について説明します。 |
+| [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)       | バックグラウンド タスクの進行状況と完了をアプリから認識する方法について説明します。 |
+| [バックグラウンド タスクの登録](register-a-background-task.md)                                                 | ほとんどのバックグラウンド タスクを安全に登録できる再利用可能な関数の作成方法について説明します。 |
+| [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)         | [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) イベントに応答するバックグラウンド タスクを作成する方法について説明します。 |
+| [タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)                                    | 1 回限りのバックグラウンド タスクをスケジュールする方法、または定期的なバックグラウンド タスクを実行する方法について説明します。 |
+| [アプリ内からのバックグラウンド タスクのトリガー](trigger-background-task-from-app.md) | [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger) を使ってアプリ内からバックグラウンド タスクをアクティブ化する方法について説明します。|
+| [バックグラウンド タスクからのセンサーやデバイスへのアクセス](access-sensors-and-devices-from-a-background-task.md)   | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) を使うと、フォアグラウンド アプリが中断しているときにも、バックグラウンドでユニバーサル Windows アプリからセンサーや周辺機器にアクセスできます。 |
+| [バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)             | バックグラウンド タスクをいつ実行するかを制御する条件の設定方法について説明します。 |
+| [バックグラウンドでのデータの転送](https://msdn.microsoft.com/library/windows/apps/mt280377)                 | バックグラウンド転送 API を使って、バックグラウンドでファイルをコピーします。 |
+| [バックグラウンド タスクのライブ タイルの更新](update-a-live-tile-from-a-background-task.md)                   | アプリのライブ タイルを新しいコンテンツで更新するためにバックグラウンド タスクを使います。 |
+| [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)                                                   | デバイスが接続されているときに、[**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) クラスを使って軽量のコードをバックグラウンドで実行する方法について説明します。 |
+### <a name="see-also"></a>関連項目
+* [バックグラウンド アクティビティの最適化](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) - バックグラウンドで消費されるエネルギーを低減する方法や、バックグラウンド アクティビティの設定を操作する方法を説明します。
 
 ## <a name="remote-systems"></a>リモート システム
 

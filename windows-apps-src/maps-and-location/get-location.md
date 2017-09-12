@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 地図, 位置情報, 位置情報機能"
-ms.openlocfilehash: 05fa3330f5346f69061cb60cf8b54de451845e06
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f5af2815783568cb234f1196e065f18b145c7e68
+ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/27/2017
 ---
 # <a name="get-the-users-location"></a>ユーザーの位置情報の取得
 
@@ -29,7 +31,7 @@ translationtype: HT
 
 
 1.  **ソリューション エクスプローラー**で、**package.appxmanifest** をダブルクリックし、**[機能]** タブを選びます。
-2.  **[機能]** ボックスの一覧で、**[機能]** タブを選びます。 これにより、`Location` デバイス機能がパッケージ マニフェスト ファイルに追加されます。
+2.  **[機能]** ボックスの一覧で、**[位置情報]** チェックボックスをオンにします。 これにより、`location` デバイス機能がパッケージ マニフェスト ファイルに追加されます。
 
 ```XML
   <Capabilities>

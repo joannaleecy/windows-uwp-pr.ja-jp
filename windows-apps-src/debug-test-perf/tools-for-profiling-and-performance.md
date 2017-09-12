@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: EAC34672-5C12-402D-920B-6F2835EA5ACE
 title: "プロファイリングとパフォーマンスに関するツール"
 description: "Microsoft には、ユニバーサル Windows プラットフォーム (UWP) アプリのパフォーマンスを改善する際に役立つツールがいくつか用意されています。"
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 0a1a955d464fe875afdeef74d3ffa23a43e1406b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: fa1e8ebefc8db877099f3cc5b775f70250733c2a
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="tools-for-profiling-and-performance"></a>プロファイリングとパフォーマンスに関するツール
 

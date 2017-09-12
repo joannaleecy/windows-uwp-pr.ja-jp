@@ -6,14 +6,16 @@ ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 27d3de280201d92ee98f6e8a17afd85f76acd7d5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b80772109f0349f23feb6ff7f7440ab2e9242288
+ms.sourcegitcommit: 9a1310468970c8d1ade0fb200126dff56ea8c9e1
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/14/2017
 ---
 # <a name="create-adaptive-tiles"></a>アダプティブ タイルの作成
 
@@ -34,7 +36,7 @@ translationtype: HT
 
 ## <a name="how-to-send-a-tile-notification"></a>タイル通知を送信する方法
 
-詳しくは、「[Quickstart on sending local tile notifications (ローカル タイル通知の送信に関するクイックスタート)](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/10/05/quickstart-sending-a-local-tile-notification-in-windows-10/)」をご覧ください。 このページでは、アダプティブ タイルを使って作成できるあらゆる視覚的 UI について説明します。
+詳しくは、「[Quickstart on sending local tile notifications (ローカル タイル通知の送信に関するクイックスタート)](tiles-and-notifications-sending-a-local-tile-notification.md)」をご覧ください。 このページでは、アダプティブ タイルを使って作成できるあらゆる視覚的 UI について説明します。
 
 
 ## <a name="usage-guidance"></a>使い方のガイダンス
@@ -1395,7 +1397,7 @@ TileWide = new TileBinding()
 
 
 * [アダプティブ タイルのスキーマ](tiles-and-notifications-adaptive-tiles-schema.md)
-* [Quickstart: Send a local tile notification (クイックスタート: ローカル タイル通知の送信)](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/10/05/quickstart-sending-a-local-tile-notification-in-windows-10/)
+* [Quickstart: Send a local tile notification (クイックスタート: ローカル タイル通知の送信)](tiles-and-notifications-sending-a-local-tile-notification.md)
 * [GitHub の Notifications ライブラリ](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)
 * [特別なタイル テンプレート カタログ](tiles-and-notifications-special-tile-templates-catalog.md)
  

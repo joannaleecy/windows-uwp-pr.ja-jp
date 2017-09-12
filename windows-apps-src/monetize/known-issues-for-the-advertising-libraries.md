@@ -1,34 +1,32 @@
 ---
 author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
-description: "Microsoft Store Services SDK に含まれている Microsoft Advertising ライブラリの現在のリリースに関する既知の問題について説明します。"
+description: "Microsoft Advertising ライブラリの現在のリリースにおける既知の問題について説明します。"
 title: "Advertising ライブラリに関する既知の問題"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, UWP, 広告, Advertising, 既知の問題"
-ms.openlocfilehash: 33bf3c2db5db7e8ec07df3f4d13cc0ad074e99a3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b18c4568770afb70bcca991c79d59a9912981705
+ms.sourcegitcommit: a9e4be98688b3a6125fd5dd126190fcfcd764f95
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/21/2017
 ---
 # <a name="known-issues-for-the-advertising-libraries"></a>Advertising ライブラリに関する既知の問題
 
 
 
 
-このトピックでは、Microsoft Store Services SDK (UWP アプリ用) と、Windows および Windows Phone 8.x 用の Microsoft Advertising SDK (Windows 8.1 アプリおよび Windows Phone 8.x アプリ用) に含まれている Microsoft Advertising ライブラリの現在のリリースに関する既知の問題を示します。
-
-## <a name="installation-of-microsoft-store-services-sdk-requires-visual-studio-tools-for-universal-windows-apps"></a>Microsoft Store Services SDK のインストールには、ユニバーサル Windows アプリ用 Visual Studio Tools が必要
-
-Visual Studio 2015 と共に [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) をインストールするには、ユニバーサル Windows アプリ用 Visual Studio Tools のバージョン 1.1 以降がインストールされている必要があります。 詳しくは、Visual Studio の[リリース ノート](http://go.microsoft.com/fwlink/?LinkID=624516)をご覧ください。
+このトピックでは、Microsoft Advertising SDK (UWP アプリ用) と、Windows および Windows Phone 8.x 用の Microsoft Advertising SDK (Windows 8.1 アプリおよび Windows Phone 8.x アプリ用) に含まれている Microsoft Advertising ライブラリの現在のリリースに関する既知の問題を示します。
 
 ## <a name="windows-phone-8x-silverlight-projects"></a>Windows Phone 8.x Silverlight プロジェクト
 
-Windows および Windows Phone 8.x 用の Microsoft Advertising SDK では、Windows Phone 8.x Silverlight プロジェクトのサポートが制限されています。 詳しくは、「[アプリでの広告の表示](display-ads-in-your-app.md#silverlight_support)」をご覧ください。
+Windows および Windows Phone 8.x 用の Microsoft Advertising SDK では、Windows Phone 8.x Silverlight プロジェクトのサポートが制限されています。 詳細については、[Windows Phone 8.x Silverlight プロジェクト用の広告のサポート](adcontrol-in-windows-phone-silverlight.md#silverlight_support)をご覧ください。
 
-Windows Phone 8.x Silverlight プロジェクト用の Microsoft Advertising アセンブリを入手するには、[Windows および Windows Phone 8.x 用の Microsoft Advertising SDK](http://aka.ms/store-8-sdk) をインストールします。次に、プロジェクトを Visual Studio で開き、**[プロジェクト]** > **[接続済みサービスを追加します]** > **[Ad Mediator]** の順に移動して、アセンブリを自動的にダウンロードします。 その後、広告仲介を使用しない場合は、広告メディエーターの参照をプロジェクトから削除できます。 詳しくは、「[Windows Phone Silverlight の AdControl](adcontrol-in-windows-phone-silverlight.md)」をご覧ください。
+Windows Phone 8.x Silverlight プロジェクト用の Microsoft Advertising アセンブリを入手するには、[Windows および Windows Phone 8.x 用の Microsoft Advertising SDK](http://aka.ms/store-8-sdk) をインストールします。次に、プロジェクトを Visual Studio で開き、**[プロジェクト]** > **[接続済みサービスを追加します]** > **[広告メディエーター]** の順に移動して、アセンブリを自動的にダウンロードします。 その後、広告仲介を使用しない場合は、広告メディエーターの参照をプロジェクトから削除できます。 詳しくは、「[Windows Phone Silverlight の AdControl](adcontrol-in-windows-phone-silverlight.md)」をご覧ください。
 
 ## <a name="adcontrol-interface-unknown-in-xaml"></a>XAML での不明な AdControl インターフェイス
 
@@ -64,7 +62,7 @@ Windows Phone 8.x Silverlight プロジェクト用の Microsoft Advertising ア
 
 ライブ広告が想定されているときでもテスト広告が表示される場合があります。 これは、次の状況で発生することがあります。
 
-* アプリ ストアで使用されているライブ アプリケーション ID を Microsoft Advertising が確認または検出できない。 この場合、広告ユニットがユーザーによって作成されたとき、その状態は "ライブ" (非テスト) として開始されますが、最初の広告要求が行われてから 6 時間以内にテスト状態に移行します。 その状態は、10 日間テスト アプリからの要求がない場合に "ライブ" に戻ります。
+* ストアで使用されているライブ アプリケーション ID を広告プラットフォームが確認または検出できない。 この場合、広告ユニットがユーザーによって作成されたとき、その状態は "ライブ" (非テスト) として開始されますが、最初の広告要求が行われてから 6 時間以内にテスト状態に移行します。 その状態は、10 日間テスト アプリからの要求がない場合に "ライブ" に戻ります。
 
 * サイドローディングされたアプリやエミュレーターで実行されているアプリには、ライブ広告は表示されません。
 

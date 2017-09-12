@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: "Windows Device Portal の概要"
 description: "Windows Device Portal で、ネットワーク経由でリモートから、または USB 接続によって、デバイスの構成と管理を行うための方法を説明します。"
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: e729236ae7d506eb59af1a38506931865eff4f14
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f22600f2bbd5dc43996550c853c6defd04565ad4
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/26/2017
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal の概要
 
@@ -41,7 +43,7 @@ Phone | 開発者モードで有効化する | 80| 443 | http://127.0.0.1:10080
 \* デスクトップ上の Device Portal が、デバイス上の既存のポート要求との競合を避ける目的で ephemeral ポートの範囲 (>50,000) にあるポートを要求するため、この表が当てはまらない場合があります。  詳しくは、デスクトップに関する「[ポート番号を設定する](device-portal-desktop.md#setting-port-numbers)」のセクションをご覧ください。  
 
 デバイス固有のセットアップ手順については、以下をご覧ください。
-- [HoloLens 用 Device Portal](https://dev.windows.com/holographic/using_the_windows_device_portal)
+- [HoloLens 用 Device Portal](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-hololens)
 - [IoT 用 Device Portal](https://go.microsoft.com/fwlink/?LinkID=616499)
 - [モバイル用 Device Portal](device-portal-mobile.md)
 - [Xbox 用 Device Portal](device-portal-xbox.md)
@@ -71,28 +73,28 @@ Phone | 開発者モードで有効化する | 80| 443 | http://127.0.0.1:10080
 ![モバイル用 Device Portal](images/device-portal/mob-device-portal-apps.png)
 
 - **[Installed apps]** (インストール済みのアプリ): アプリを削除および起動します。
-- **[Running apps]** (実行中のアプリ): 現在実行されているアプリを一覧表示します。
+- **[Running apps]** (実行中のアプリ): 現在実行されているアプリを一覧表示し、アプリを閉じるためのオプションを提供します。
 - **[Install app]** (アプリのインストール): コンピューターまたはネットワーク上のフォルダーからインストールするアプリ パッケージを選択します。
 - **[Dependency]** (依存関係): インストールするアプリの依存関係を追加します。
 - **[Deploy]** (展開): 選択したアプリと依存関係をデバイスに展開します。
 
 **アプリをインストールするには**
 
-1.    [アプリ パッケージを作成](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx)したら、デバイス上にリモートでインストールできます。 Visual Studio でビルドすると、出力フォルダーが生成されます。
+1.  [アプリ パッケージを作成](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx)したら、デバイス上にリモートでインストールできます。 Visual Studio でビルドすると、出力フォルダーが生成されます。
 
     ![アプリのインストール](images/device-portal/iot-installapp0.png)
-2.    [参照] をクリックして、アプリ パッケージ (.appx) を検索します。
-3.    [参照] をクリックして、証明書ファイル (.cer) を検索します。 (デバイスによっては不要です。)
-4.    依存関係を追加します。 1 つ以上ある場合は、それぞれを個別に追加します。     
-5.    **[Deploy]** (展開) の下の **[Go]** (進む) をクリックします。 
-6.    別のアプリをインストールするには、**[Reset]** (リセット) ボタンをクリックしてフィールドをクリアします。
+2.  [参照] をクリックして、アプリ パッケージ (.appx) を検索します。
+3.  [参照] をクリックして、証明書ファイル (.cer) を検索します。 (デバイスによっては不要です。)
+4.  依存関係を追加します。 1 つ以上ある場合は、それぞれを個別に追加します。     
+5.  **[Deploy]** (展開) の下の **[Go]** (進む) をクリックします。 
+6.  別のアプリをインストールするには、**[Reset]** (リセット) ボタンをクリックしてフィールドをクリアします。
 
 
 **アプリをアンインストールするには**
 
-1.    アプリが実行中でないことを確認します。 
-2.    実行中の場合、[Running apps] に移動してそのアプリを閉じます。 アプリの実行中にアンインストールすると、そのアプリを再インストールしようとするときに問題が発生することがあります。 
-3.    準備ができたら、**[Uninstall]** (アンインストール) をクリックします。
+1.  アプリが実行中でないことを確認します。 
+2.  実行中の場合、[Running apps] に移動してそのアプリを閉じます。 アプリの実行中にアンインストールすると、そのアプリを再インストールしようとするときに問題が発生することがあります。 
+3.  準備ができたら、**[Uninstall]** (アンインストール) をクリックします。
 
 ### <a name="processes"></a>プロセス
 

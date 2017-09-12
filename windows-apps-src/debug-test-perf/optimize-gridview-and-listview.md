@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: 26DF15E8-2C05-4174-A714-7DF2E8273D32
 title: "ListView と GridView の UI の最適化"
 description: "ListView と GridView のパフォーマンスと起動時間を、UI の仮想化や要素の削減、項目の段階的な更新を通して向上させます。"
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 3cd3695f6a7ec9c2d29fdd1826635973aab809a9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 6b0b1d3672d236c535cb3abdf57c6b599368892b
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="listview-and-gridview-ui-optimization"></a>ListView と GridView の UI の最適化
 
@@ -164,7 +166,7 @@ namespace LotsOfItems
         mc:Ignorable="d">
 
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <GridView ItemsSource="{x:Bind ViewModel.ExampleItems}" ContainerContentChanging="GridView-ContainerContentChanging">
+            <GridView ItemsSource="{x:Bind ViewModel.ExampleItems}" ContainerContentChanging="GridView_ContainerContentChanging">
                 <GridView.ItemTemplate>
                     <DataTemplate x:DataType="lotsOfItems:ExampleItem">
                         <StackPanel Height="100" Width="100" Background="OrangeRed">
@@ -196,7 +198,7 @@ namespace LotsOfItems
             public ExampleItemViewModel ViewModel { get; set; }
 
             // Display each item incrementally to improve performance.
-            private void GridView-ContainerContentChanging(ListViewBase sender, ContainerContentChangingEventArgs args)
+            private void GridView_ContainerContentChanging(ListViewBase sender, ContainerContentChangingEventArgs args)
             {
                 if (args.Phase != 0)
                 {
@@ -258,7 +260,7 @@ namespace LotsOfItems
 // DataTemplate when one is available. This example shows how to return different 
 // data templates based on the type of FileItem. Available ListViewItems are kept
 // in two separate lists based on the type of DataTemplate needed.
-private void lst-ChoosingItemContainer
+private void ListView_ChoosingItemContainer
     (ListViewBase sender, ChoosingItemContainerEventArgs args)
 {
     // Determines type of FileItem from the item passed in.

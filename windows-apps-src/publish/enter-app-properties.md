@@ -4,20 +4,20 @@ Description: "アプリの申請プロセスの [アプリケーションのプ�
 title: "アプリのプロパティの入力"
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 31385fe3edb9d9f38a4f444c84ef189faed49985
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e4d391d551cf4e41853a1aac0e4b5be8bf0b0c3f
+ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="enter-app-properties"></a>アプリのプロパティの入力
 
-[アプリの申請プロセス](app-submissions.md)の **[アプリケーションのプロパティ]** ページでは、アプリのカテゴリを定義し、ハードウェアの基本設定や他の宣言を指定できます。 ここでは、このページのオプションと、この情報を入力するときに考慮する必要がある事項を順に説明します。
-
-> **注:** 年齢区分は、提出プロセスの別のページになりました。 詳しくは、「[年齢区分](age-ratings.md)」をご覧ください。
+[アプリの申請プロセス](app-submissions.md)の **[プロパティ]** ページでは、アプリのカテゴリを定義し、ハードウェアの基本設定や他の宣言を指定できます。 ここでは、このページのオプションと、この情報を入力するときに考慮する必要がある事項を順に説明します。
 
 ## <a name="category-and-subcategory"></a>カテゴリとサブカテゴリ
 
@@ -25,11 +25,20 @@ translationtype: HT
 
 詳しくは、「[カテゴリとサブカテゴリの一覧](category-and-subcategory-table.md)」をご覧ください。
 
+## <a name="game-settings"></a>ゲーム設定
+
+このセクションは、製品のカテゴリとして **[ゲーム]** を選択した場合にのみ表示されます。 ここでは、ゲームがサポートしている機能を指定できます。 このセクションで指定した情報はすべて、製品のストア登録情報に表示されます。
+
+ゲームでマルチプレイヤー オプションのいずれかをサポートしている場合は、セッションあたりの最小プレイヤー数と最大プレイヤー数を指定してください。 最小または最大のプレイヤー数として 1,000 人より大きい値を入力することはできません。
+
+**[クロスプラットフォーム マルチプレイヤー]** は、ゲームが Windows 10 PC と Xbox のプレイヤー間のマルチプレイヤー セッションをサポートしていることを示します。
+
+
 ## <a name="product-declarations"></a>製品の宣言
 
-アプリにいずれかの宣言を適用するかどうかを指定するには、このセクションのチェック ボックスを使います。 これは、アプリがどのように表示されるか、特定のユーザーに提供されるかどうか、またはユーザーがアプリをどのように使うことができるかに影響を与える可能性があります。
+いずれかの宣言がアプリに適用されるかどうかを指定するには、このセクションのチェック ボックスをオンにします。 これは、アプリがどのように表示されるか、特定のユーザーに提供されるかどうか、またはユーザーがアプリをどのように使うことができるかに影響を与える可能性があります。
 
-詳しくは、「[アプリの宣言](app-declarations.md)」をご覧ください。
+詳しくは、「[製品の宣言](app-declarations.md)」をご覧ください。
 
 ## <a name="system-requirements"></a>システム要件
 
@@ -52,6 +61,7 @@ translationtype: HT
 
 また指定したハードウェアについての実行時のチェックをアプリにも追加することをお勧めします。これは、選択した機能がユーザーのデバイスにないことをストアが常に検出できるとは限らず、また、警告が表示されていてもユーザーはアプリをダウンロードできるためです。
 
-> **ヒント** メモリや DirectX レベルの最小要件を満たしていないデバイスに UWP アプリをまったくダウンロードできないようにするには、StoreManifest XML ファイルで最小要件を指定します。 詳しくは、「[StoreManifest のスキーマ (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335)」をご覧ください。
+> [!TIP]
+> メモリや DirectX レベルの最小要件を満たしていないデバイスに UWP アプリをまったくダウンロードできないようにするには、StoreManifest XML ファイルで最小要件を指定します。 詳しくは、「[StoreManifest のスキーマ (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335)」をご覧ください。
 
 

@@ -1,21 +1,23 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 90BB59FC-90FE-453E-A8DE-9315E29EB98C
 title: "バッテリー情報の取得"
 description: "Windows.Devices.Power 名前空間で、API を使って詳細なバッテリー情報を取得する方法について説明します。"
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: b136c53cd39028c15ff55be803ae314c773a9be6
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 11fb22fda7ca69f08b91fc2ad77b5f65fdc20b3b
+ms.sourcegitcommit: a2908889b3566882c7494dc81fa9ece7d1d19580
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/31/2017
 ---
 # <a name="get-battery-information"></a>バッテリー情報の取得
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 ** 重要な API **
 

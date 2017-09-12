@@ -1,27 +1,29 @@
 ---
 author: TylerMSFT
 description: "延長実行を使用して、アプリが最小化されているときにアプリの実行を保持する方法について説明します。"
-title: "延長実行を使った最小化状態での実行"
+title: "延長実行を使ってアプリの中断を延期する"
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: "windows 10, UWP, 延長実行, 最小化, ExtendedExecutionSession, バックグラウンド タスク, アプリケーション ライフサイクル, ロック画面"
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
-ms.openlocfilehash: bd9ccaa4cb87a24906c531996d4fc3f88875b060
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f82fa37ade38d6a92fa1fec427079f75057a1a4a
+ms.sourcegitcommit: e7e8de39e963b73ba95cb34d8049e35e8d5eca61
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/16/2017
 ---
-# <a name="run-while-minimized-with-extended-execution"></a>延長実行を使った最小化状態での実行
+# <a name="postpone-app-suspension-with-extended-execution"></a>延長実行を使ってアプリの中断を延期する
 
-この記事では、アプリが最小化されている状態で実行できるように、延長実行を使用してアプリが中断されるタイミングを延期する方法について説明します。
+この記事では、アプリが最小化されている状態またはロック画面で実行できるように、延長実行を使用してアプリが中断されるタイミングを延期する方法について説明します。
 
 ユーザーがアプリを最小化するか別のアプリなどに切り替えると、アプリは中断状態になります。  アプリのメモリは維持されますが、コードは実行されません。 これは、視覚的なユーザー インターフェイスを備えたすべての OS エディションに当てはまります。 アプリの中断状態について詳しくは、「[アプリケーションのライフサイクル](app-lifecycle.md)」をご覧ください。
 
-アプリが最小化されているときに、中断するのではなく、実行を維持する必要がある場合があります。 アプリが実行し続ける必要がある場合、OS によって実行を維持することも、アプリから実行の継続を要求することもできます。 たとえば、バックグラウンドでオーディオを再生している場合、「[バックグラウンドでのメディアの再生](../audio-video-camera/background-audio.md)」の手順に従うと、OS によってアプリの実行を延長できます。 この手順に従わない場合は、手動で実行延長を要求する必要があります。
+アプリが最小化されているときに、中断するのではなく、実行を維持する必要がある場合があります。 アプリが実行し続ける必要がある場合、OS によって実行を維持することも、アプリから実行の継続を要求することもできます。 たとえば、バックグラウンドでオーディオを再生している場合、「[バックグラウンドでのメディアの再生](../audio-video-camera/background-audio.md)」の手順に従うと、OS によってアプリの実行を延長できます。 この手順に従わない場合は、手動で実行延長を要求する必要があります。 バックグラウンド実行にかかる時間は数分である可能性がありますが、いつでも失効されたセッションを処理できるようにしておく必要があります。
 
-バックグラウンドで操作を完了するまで実行の延長を要求するには、[ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) を作成します。 作成する **ExtendedExecutionSession** の種類は、作成時に提供する [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) によって決まります。 **ExtendedExecutionReason** 列挙値には、**Unspecified、LocationTracking**、および **SavingData** の 3 種類があります。
+バックグラウンドで操作を完了するまで実行の延長を要求するには、[ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) を作成します。 作成する **ExtendedExecutionSession** の種類は、作成時に提供する [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) によって決まります。 **ExtendedExecutionReason** 列挙値には、**Unspecified、LocationTracking**、および **SavingData** の 3 種類があります。 常に 1 つの **ExtendedExecutionSession** のみを要求できます。1 つがアクティブのときに別のセッションを作成しようとすると、**ExtendedExecutionSession** コンストラクターから例外がスローされます。 [ExtendedExecutionForegroundSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession.aspx) と [ExtendedExecutionForegroundReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason.aspx) は、制限された機能が必要で、ストア アプリケーションで利用できないため、使用しないでください。
 
 ## <a name="run-while-minimized"></a>最小化状態での実行
 
@@ -35,7 +37,7 @@ translationtype: HT
 
 アプリが定期的に [GeoLocator](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx) による位置情報を記録する必要がある場合は、**ExtendedExecutionSession** を作成するときに、**ExtendedExecutionReason.LocationTracking** を指定します。 ユーザーの位置情報を定期的に監視する必要があるフィットネス対応アプリやナビ アプリでは、この ExtendedExecutionReason 設定を使用します。
 
-位置情報追跡のための延長実行セッションは、必要なだけの時間で実行できます。 ただし、このようなセッションは 1 台のデバイスにつき、1 セッションしか保持できません。 位置情報追跡のための延長実行セッションは、フォアグラウンドでしか要求できず、アプリは **Running** 状態である必要があります。 これにより、アプリが位置情報追跡の延長セッションを開始したことをユーザーに認識されるようにしています。 ただし、位置情報追跡のための延長実行セッションを要求せずに、バックグラウンド タスクかアプリ サービスを使用することで、アプリがバックグラウンドにある場合も、GeoLocator を使用できます。
+位置情報追跡のための延長実行セッションは、モバイル デバイスの画面がロックされている間も含め、必要なだけの時間で実行できます。 ただし、このようなセッションは 1 台のデバイスにつき、1 セッションしか保持できません。 位置情報追跡のための延長実行セッションは、フォアグラウンドでしか要求できず、アプリは **Running** 状態である必要があります。 これにより、アプリが位置情報追跡の延長セッションを開始したことをユーザーに認識されるようにしています。 ただし、位置情報追跡のための延長実行セッションを要求せずに、バックグラウンド タスクかアプリ サービスを使用することで、アプリがバックグラウンドにある場合も、GeoLocator を使用できます。
 
 ## <a name="save-critical-data-locally"></a>重要なデータのローカルでの保存
 
@@ -43,7 +45,7 @@ translationtype: HT
 
 データのアップロードまたはダウンロードのために、このようなセッションを使用して、アプリの実行時間を延長しないでください。 データのアップロードが必要な場合は、[バックグラウンド転送](https://msdn.microsoft.com/windows/uwp/networking/background-transfers)を要求するか、**MaintenanceTrigger** を登録して、AC 電源を利用できるときに、転送を処理してください。 **ExtendedExecutionReason.SavingData** 延長セッションを要求できるのは、アプリがフォアグラウンドで **Running**状態であるか、バックグラウンドで**Suspending** 状態である場合です。
 
-**Suspending** 状態は、アプリのライフサイクル中で、アプリが終了する前にアプリが作業を実行できる最後のチャンスです。 アプリが **Suspending** 状態のときに **ExtendedExecutionReason.SavingData** 延長実行セッションを要求すると、注意が必要な問題が発生する可能性があります。 **Suspending** 状態のときに延長実行セッションが要求され、ユーザーがアプリの再起動を要求した場合、起動に時間がかかるように感じられる可能性があります。 これは、延長実行セッションの時間が経過しないと、アプリの以前のインスタンスを終了して、アプリの新しいインスタンスを起動することができないためです。 ユーザー状態が失われることを確実に防ぐため、起動にかかる時間が犠牲になります。
+**Suspending** 状態は、アプリのライフサイクル中で、アプリが終了する前にアプリが作業を実行できる最後のチャンスです。 **ExtendedExecutionReason.SavingData** は、**Suspending** 状態で要求できる、**ExtendedExecutionSession** の唯一の種類です。 アプリが **Suspending** 状態のときに **ExtendedExecutionReason.SavingData** 延長実行セッションを要求すると、注意が必要な問題が発生する可能性があります。 **Suspending** 状態のときに延長実行セッションが要求され、ユーザーがアプリの再起動を要求した場合、起動に時間がかかるように感じられる可能性があります。 これは、延長実行セッションの時間が経過しないと、アプリの以前のインスタンスを終了して、アプリの新しいインスタンスを起動することができないためです。 ユーザー状態が失われることを確実に防ぐため、起動にかかる時間が犠牲になります。
 
 ## <a name="request-disposal-and-revocation"></a>要求、破棄、および失効
 
@@ -54,7 +56,6 @@ translationtype: HT
 ```csharp
 var newSession = new ExtendedExecutionSession();
 newSession.Reason = ExtendedExecutionReason.Unspecified;
-newSession.Description = "Raising periodic toasts";
 newSession.Revoked += SessionRevoked;
 ExtendedExecutionResult result = await newSession.RequestExtensionAsync();
 
@@ -163,7 +164,6 @@ static class ExtendedExecutionHelper
 
         var newSession = new ExtendedExecutionSession();
         newSession.Reason = ExtendedExecutionReason.Unspecified;
-        newSession.Description = "Running multiple tasks";
         newSession.Revoked += SessionRevoked;
 
         if(revoked != null)

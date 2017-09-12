@@ -1,155 +1,130 @@
 ---
 author: mijacobs
 Description: "ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーションは、ナビゲーション構造、ナビゲーション要素、システム レベルの機能から成る柔軟なモデルに基づいています。"
-title: "UWP アプリのナビゲーション デザインの基本 (Windows アプリ)"
+title: "UWP アプリのナビゲーションの基本"
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
 op-migration-status: ready
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 6397949c4c763db9d406790a6ffcb7f8ad94b7aa
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: "Windows 10、UWP"
+ms.openlocfilehash: a944e02ea116c0e054918397d9d46d366d43622a
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
-#  <a name="navigation-design-basics-for-uwp-apps"></a>UWP アプリのナビゲーション デザインの基本
+# <a name="navigation-design-basics-for-uwp-apps"></a>UWP アプリのナビゲーション デザインの基本
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーションは、ナビゲーション構造、ナビゲーション要素、システム レベルの機能から成る柔軟なモデルに基づいています。 これら全体で、アプリ、ページ、コンテンツ間での移動の際にさまざまな直感的なユーザー エクスペリエンスを実現します。
+アプリをページの集まりと考えると、*ナビゲーション*という言葉は、ページ間およびページ内を移動する動作を表します。 これはユーザー エクスペリエンスの出発点です。 これによってユーザーは、利用するコンテンツと機能を見つけます。 これは非常に重要ですが、適切な設計が難しい場合もあります。 
 
-場合によっては、アプリのコンテンツと機能のすべてを単一ページに配置して、ユーザーがパンするだけでそのコンテンツ内を移動できるようにすることができます。 ただし、ほとんどのアプリは通常、複数ページのコンテンツと、それをユーザーが利用するための機能を備えています。 アプリに複数のページがある場合は、適切なナビゲーション エクスペリエンスを提供する必要があります。
+> **重要な API**: [Frame クラス](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Frame)、[Pivot クラス](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Pivot)、[NavigationView クラス](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
 
-UWP アプリにおいて効果的で便利なマルチページ ナビゲーション エクスペリエンスを実現するには、以下の要素が必要です (詳細は後述)。
+適切な設計が難しい理由の 1 つは、アプリの設計者には膨大な数の選択肢があることです。 たとえば書籍を設計する場合であれば、選択肢はシンプルで、各章の順序を設計すれば済みます。 アプリの場合は、書籍に例えるなら、ユーザーが順に移動するように、一連のページのナビゲーションを作成することも可能です。 または、ユーザーが必要なページに直接移動できるメニューを提供することも可能ですが、多数のページがある場合には、ユーザーを混乱させることになります。 または、すべてのコンテンツを 1 つのページに配置し、フィルタリングして表示するメカニズムを提供することも可能です。 
 
--   **適切なナビゲーション構造**
+1 つのナビゲーション デザインですべてのアプリに対応することはできませんが、アプリの適切な設計を行うための、いくつかの原則やガイドラインがあります。 
 
-    直感的なナビゲーション エクスペリエンスを作成するためには、ユーザーにとってわかりやすいナビゲーション構造を構築することが重要です。
+## <a name="principles-of-good-design"></a>優れた設計の原則 
+優れたナビゲーション デザインの基盤を作成するための、基本的な原則から始めましょう。調査によると、次のような原則が重要です。 
 
--   **互換性のあるナビゲーション要素** (選択した構造をサポートする要素)
+* 一貫性を保ちます。ユーザーの期待に応えます。
+* シンプルにします。必要以上のことをしないようにします。
+* クリーンにします。ナビゲーション機能がユーザーを妨げないようにします。
 
-    ナビゲーション要素を使うと、ユーザーは必要なコンテンツにアクセスすることができ、アプリ内のどの位置にいるかを把握することもできます。 ただし、ナビゲーション要素は、コンテンツやコマンド実行要素用に使うことができる領域を占有します。そのため、アプリの構造に最適なナビゲーション要素を使うことが重要になります。
+### <a name="be-consistent"></a>一貫性を保つ 
+ナビゲーションは、ユーザーの期待に沿ったものであり、アイコン、位置、スタイルなどの標準規則に沿ったものである必要があります。 
 
--   **システム レベルのナビゲーション機能 ("戻る" など) に対する適切な応答**
+たとえば、次の図では、ユーザーが通常、ナビゲーション ウィンドウやコマンド バーなどの機能があると期待する場所を示しています。 デバイス ファミリによって、ナビゲーション要素には独自の規則があります。 たとえば、ナビゲーション ウィンドウは、タブレットでは通常、画面の左側に表示されますが、モバイル デバイスでは画面の上部に表示されます。
 
-    直感的な操作性を感じさせる一貫したエクスペリエンスを実現するには、予測可能な方法で、システム レベルのナビゲーション機能に応答します。
+<figure class="wdg-figure">
+  ![推奨されるナビゲーション要素の位置](images/nav/nav-component-layout.png)
+  <figcaption>ユーザーは特定の UI 要素が標準の位置にあることを期待します。</figcaption>
+</figure> 
 
-## <a name="build-the-right-navigation-structure"></a>適切なナビゲーション構造を構築する
+### <a name="keep-it-simple"></a>シンプルにする
+ナビゲーション デザインでもう 1 つの重要な要素は、Hick-Hyman の法則です。これは多くの場合、ナビゲーションの選択肢に関して当てはまります。 この法則によると、メニューにはなるべく少ない選択肢を含むことが推奨されます。 選択肢が多いほど、ユーザーの操作に時間がかかります。ユーザーが新しいアプリを使う場合には、特に当てはまります。 
 
+<figure class="wdg-figure">
+  ![シンプルなメニューと複雑なメニュー](images/nav/nav-simple-menus.png)
+  <figcaption> 左側の例では、ユーザーが選ぶ選択肢が少なく、右側の例では、多数の選択肢があります。 Hick-Hyman の法則によると、左側のメニューはユーザーにとって、より理解しやすく、利用しやすいメニューです。
+</figcaption>
+</figure> 
 
-ページのグループから構成されるコレクションとしてアプリを見てみましょう。各ページには、コンテンツや機能の固有のセットが含まれます。 たとえば、写真アプリには、写真を撮影するためのページ、画像を編集するためのページ、画像ライブラリを管理するためのページが含まれている場合があります。 これらのページをグループに配置する方法によって、アプリのナビゲーション構造が定義されます。 ページのグループを配置する一般的な方法には、次の 2 つがあります。
+### <a name="keep-it-clean"></a>クリーンにする
+ナビゲーションに必要な最後の特徴は、さまざまな場合のナビゲーションの物理的な操作における、クリーンな操作です。 これについては、ユーザーの立場に立って、自分のデザインを見直してみる必要があります。 ユーザーとその動作を理解する必要があります。 たとえば、料理アプリを設計している場合、買い物リストやタイマーへの簡単なアクセスの提供を検討することができます。 
 
-<table class="uwpd-noborder uwpd-top-aligned-table">
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">階層に配置する</th>
-<th align="left">ピアとして配置する</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><p><img src="images/nav/nav-pages-hiearchy.png" alt="Pages arranged in a hierarchy" /></p></td>
-<td style="text-align: center;"><p><img src="images/nav/nav-pages-peer.png" alt="Pages arranged as peers" /></p></td>
-</tr>
-<tr class="even">
-<td style="vertical-align: top">ページは、ツリー状の構造に配置されます。 それぞれの子ページの親は 1 つだけですが、親ページは 1 つ以上の子ページを持つことができます。 子ページにアクセスするには、親ページを経由します。 </td>
-<td style="vertical-align: top"> ページは、並列の関係で配置されます。 どのような順序でもページ間を移動できます。 </td>
-</tr>
-</tbody>
-</table>
+## <a name="three-general-rules"></a>一般的な 3 つの規則
+一貫性、シンプル、クリーンという設計原則を念頭に置いて、一般的な規則を作成します。 これらを出発点として利用し、必要に応じて調整することを推奨します。 
 
- 
+1. ナビゲーションの深い階層を避けます。 ユーザーに最適なナビゲーションのレベルの数はどれだけでしょうか。 トップレベルのナビゲーションと、その下に 1 つのレベルのナビゲーションがあれば、通常は十分です。 3 レベルよりも多いナビゲーションでは、シンプルな操作の原則に反します。 ユーザーは迷ってしまい、深い階層から抜け出せなくなる可能性があります。
 
-一般的なアプリでは両方の配置方法を使います。たとえば、一部のページはピアとして配置され、他のページは階層に配置されます。
+2. ナビゲーションの選択肢が多すぎないようにします。 各レベルで 3 ～ 6 個のナビゲーション要素とすることが最も一般的です。 (特に階層のトップ レベルで) それより多いナビゲーションが必要な場合、1 つアプリであまりに多くのことをしようとしています。アプリを複数に分割することを検討する必要があります。 アプリのナビゲーション要素が多すぎるのは、多くの場合、一貫性がなく関係のない目的によるものです。
 
-![ハイブリッド構造のアプリ](images/nav/nav-hybridstructure.png.png)
-
-では、どのような場合にページを階層に配置し、どのような場合にページをピアとして配置すればよいでしょうか。 この質問に答えるには、グループ内のページ数、特定の順序でページ間を移動する必要があるかどうか、およびページ間の関係を考慮する必要があります。 一般に、構造がフラットであれば、構造を理解しやすくなり、すばやい移動が可能になります。ただし、深い階層が適している場合もあります。
-
+3. 「ホッピング」を避けます。 ホッピングとは、関連するコンテンツに移動するために、ユーザーが上のレベルに移動して、それから下のレベルに移動する必要があるナビゲーションを意味します。 ホッピングは、目的を達するために、不要なクリックや不要な操作を必要とするため、クリーンな操作の原則に反します。次の例では、一連の関連するコンテンツを見るという目的です。 (検索と参照を行うとき、必要な幅と深さを提供するためにホッピングが唯一の方法である場合は、このルールの例外となります。)
+<figure class="wdg-figure">
+  ![ホッピングの例](images/nav/nav-pogo-sticking-1.png)
+  <figcaption> アプリのナビゲーションでのホッピング —  ユーザーは緑の [戻る] 矢印を使って、メイン ページに戻ってから、[プロジェクト] タブにナビゲーションする必要があります。
+</figcaption>
+</figure> 
+<figure class="wdg-figure">
+  ![スワイプによる水平方向ナビゲーションにより、ホッピングを解決する](images/nav/nav-pogo-sticking-2.png)
+  <figcaption>アイコンを使ってホッピングの問題を解決できます (緑のスワイプ ジェスチャに注目してください)
+</figcaption>
+</figure> 
 
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">次の場合は、階層関係を使うことをお勧めします。
+## <a name="use-the-right-structure"></a>適切な構造を使う 
+ナビゲーションの一般的な原則と規則について説明しました。次に、ナビゲーションに関して最も重要な決定を行います。それはアプリの構造です。 2 種類の一般的な構造があります。フラット構造と階層構造です。 
+
+### <a name="flatlateral"></a>フラット構造/水平構造
+フラット構造/水平構造では、ページは横方向に存在します。 どのような順序でもページ間を移動できます。 
+<figure class="wdg-figure">
+  <img src="images/nav/nav-pages-peer.png" alt="Pages arranged in a flat structure" />
+<figcaption>フラット構造で配置されたページ</figcaption>
+</figure> 
+
+フラット構造には多くのメリットがあります。シンプルで、理解が容易です。ユーザーは、中間ページを経由する必要なく、特定のページに直接移動できます。  一般に、フラット構造は優れていますが、すべてのアプリに対応できるわけではありません。 アプリに多数のページがある場合には、フラット構造では圧倒されてしまいます。 ページを特定の順序で表示する必要がある場合には、フラット構造は適しません。 
+
+次のような場合に、フラット構造の使用を推奨します。 
+<ul>
+<li>ページをどのような順序でも表示できる場合。</li>
+<li>各ページはそれぞれ異なるページであり、明確な親/子関係がない場合。</li>
+<li>グループ内のページ数が 8 ページよりも少ない場合。<br/>
+グループ内のページ数が 7 ページを超える場合、ページが一意であるかどうかを判断したり、グループ内の現在の位置を把握したりするのが難しくなる場合があります。 このことがアプリでは問題にはならないと考えられる場合は、ページをピアとして作成します。 このことが問題となる可能性がある場合は、階層構造を使って、ページを 2 つ以上の小さなグループに分割することを検討してください  (ハブ コントロールを使うと、ページをカテゴリにグループ化できます)。</li>
+</ul>
+
+
+### <a name="hierarchical"></a>階層構造
+
+階層構造では、ページはツリー状の構造に配置されています。 それぞれの子ページの親は 1 つだけですが、親ページは 1 つ以上の子ページを持つことができます。 子ページにアクセスするには、親ページを経由します。
+
+<figure class="wdg-figure">
+  <img src="images/nav/nav-pages-hiearchy.png" alt="Pages arranged in a hierarchy" />
+<figcaption>階層構造で配置されたページ</figcaption>
+</figure>
+
+階層構造は、多数のページにわたる複雑なコンテンツを配置する場合、またページを特定の順序で表示する場合に適してします。 欠点は、階層構造のページでは、ナビゲーションのオーバーヘッドが発生することです。階層が深くなると、ユーザーがページからページへの移動するために、多くのクリックが必要となります。 
+
+次のような場合に、階層構造の使用を推奨します。 
 <ul>
 <li>ユーザーが特定の順序でページ間を移動する必要がある場合。 その順序を強制的に適用するように階層を配置します。</li>
 <li>グループ内の各ページ間には明確な親子関係がある場合。</li>
-<li>グループ内のページ数が 7 ページを超える場合。
-<p>グループ内のページ数が 7 ページを超える場合、ページが一意であるかどうかを判断したり、グループ内の現在の位置を把握したりするのが難しくなる場合があります。 このことがアプリでは問題にはならないと考えられる場合は、ページをピアとして作成します。 このことが問題となる可能性がある場合は、階層構造を使って、ページを 2 つ以上の小さなグループに分割することを検討してください  (ハブ コントロールを使うと、ページをカテゴリにグループ化できます)。</p></li>
+<li>グループ内のページ数が 7 ページを超える場合。<br/>
+グループ内のページ数が 7 ページを超える場合、ページが一意であるかどうかを判断したり、グループ内の現在の位置を把握したりするのが難しくなる場合があります。 このことがアプリでは問題にはならないと考えられる場合は、ページをピアとして作成します。 このことが問題となる可能性がある場合は、階層構造を使って、ページを 2 つ以上の小さなグループに分割することを検討してください  (ハブ コントロールを使うと、ページをカテゴリにグループ化できます)。</li>
 </ul>
-  </div>
-  <div class="side-by-side-content-right">次の場合は、ピアの関係を使うことをお勧めします。
-<ul>
-<li>ページをどのような順序でも表示できる場合。</li>
-<li>各ページはそれぞれ異なるページであり、明確な親/子関係はありません。</li>
-<li><p>グループ内のページ数が 8 ページよりも少ない場合。</p>
-<p>グループ内のページ数が 7 ページを超える場合、ページが一意であるかどうかを判断したり、グループ内の現在の位置を把握したりするのが難しくなる場合があります。 このことがアプリでは問題にはならないと考えられる場合は、ページをピアとして作成します。 このことが問題となる可能性がある場合は、階層構造を使って、ページを 2 つ以上の小さなグループに分割することを検討してください  (ハブ コントロールを使うと、ページをカテゴリにグループ化できます)。</p></li>
-</ul>
-  </div>
-</div>
-</div>
- 
 
-## <a name="use-the-right-navigation-elements"></a>適切なナビゲーション要素の使用
+### <a name="combining-structures"></a>構造を組み合わせる
+1 つの構造のみを選択する必要はありません。優れた設計のアプリの多くは、フラット構造と階層構造の両方を使用しています。
 
+![ハイブリッド構造のアプリ](images/nav/nav-hybridstructure.png.png)
 
-ナビゲーション要素は 2 つのサービスを提供できます。つまり、これらの要素を使うと、ユーザーは必要なコンテンツにアクセスすることができ、要素によっては、アプリ内のどの位置にいるかを把握することができます。 ただし、ナビゲーション要素は、コンテンツやコマンド実行要素用にアプリで使うことができる領域を占有します。そのため、アプリの構造に最適なナビゲーション要素を使うことが重要になります。
-
-### <a name="peer-to-peer-navigation-elements"></a>ピア ツー ピアのナビゲーション要素
-
-ピア ツー ピアのナビゲーション要素によって、同じサブツリーの同じレベルにあるページ間のナビゲーションが有効になります。
-
-![ピア ツー ピアのナビゲーション](images/nav/nav-lateralmovement.png)
-
-ピア ツー ピアのナビゲーションでは、タブまたはナビゲーション ウィンドウを使うことをお勧めします。
-
-<table>
-<thead>
-<tr class="header">
-<th align="left">ナビゲーション要素</th>
-<th align="left">説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="vertical-align:top;">[タブとピボット](../controls-and-patterns/tabs-pivot.md)
-<p><img src="images/nav/nav-tabs-sm-300.png" alt="Tab-based navigation" /></p></td>
-<td style="vertical-align:top;">同じレベルにあるページへのリンクの永続的な一覧を表示します。
-<p>タブ/ピボットを使う場合</p>
-<ul>
-<li><p>ページ数が 2 ～ 5 ページの場合</p>
-<p>5 ページを超える場合でもタブ/ピボットを使うことはできますが、すべてのタブ/ピボットを画面に収めることが難しくなることがあります。</p></li>
-<li>ユーザーが頻繁にページ間を切り替えることを前提としている場合。</li>
-</ul>
-<p>このレストラン検索アプリの設計では、タブ/ピボットを使っています。</p>
-<p><img src="images/food-truck-finder/uap-foodtruck-tabletphone-sbs-sm-400.png" alt="Example of an app using tabs/pivots pattern" /></p></td>
-</tr>
-<tr class="even">
-<td style="vertical-align:top;">[ナビゲーション ウィンドウ](../controls-and-patterns/nav-pane.md)
-<p><img src="images/nav/nav-navpane-4page-thumb.png" alt="A navigation pane" /></p></td>
-<td style="vertical-align:top;">トップレベルのページへのリンクの一覧を表示します。
-<p>ナビゲーション ウィンドウを使う場合</p>
-<ul>
-<li>ユーザーが頻繁にページ間を切り替えることを前提としていない場合。</li>
-<li>ナビゲーション操作の速度を低下させて、領域を節約する必要がある場合。</li>
-<li>ページがトップレベルに存在する場合。</li>
-</ul>
-<p>このスマート ホーム アプリ機能の設計では、ナビゲーション ウィンドウを使っています。</p>
-<p><img src="images/smart-home/uap-smarthome-tabletphone-sbs-sm-400.png" alt="Example of an app that uses a nav pane pattern" /></p>
-<p></p></td>
-</tr>
-</tbody>
-</table>
-
- 
+これらのアプリでは、トップレベルのページにはフラット構造を使って、任意の順序で参照できるようにし、複雑な関係のあるページには階層構造を使っています。 
 
 ナビゲーション構造に複数のレベルがある場合は、現在のサブツリー内のピアにのみリンクするピア ツー ピアのナビゲーション要素を使うことをお勧めします。 3 つのレベルを持つナビゲーション構造を示す、次の図について考えてみましょう。
 
@@ -158,99 +133,75 @@ UWP アプリにおいて効果的で便利なマルチページ ナビゲーシ
 -   レベル 2 では、A2 ページのピア ツー ピアのナビゲーション要素は、他の A2 ページにのみリンクしています。 これらのナビゲーション要素は、C サブツリー内にあるレベル 2 のページにはリンクしていません。
 
 ![2 つのサブツリーを含むアプリ](images/nav/nav-subtrees2.png)
+ 
 
-### <a name="hierarchical-navigation-elements"></a>階層型ナビゲーション要素
+## <a name="use-the-right-controls"></a>適切なコントロールを使用する
 
-階層型ナビゲーション要素は、親ページとその子ページ間のナビゲーションを実現します。
+ページの構造を決定したら、ユーザーがページ間をどのように移動するかを決定する必要があります。 UWP では、さまざまなナビゲーション コントロールを提供しています。 これらのコントロールは、すべての UWP アプリで利用できるため、それらを使用すると、一貫性と信頼性を備えたナビゲーション エクスペリエンスを実現できます。 
 
-![階層型ナビゲーション](images/nav/nav-verticalmovement.png)
 
 <table>
-<thead>
-<tr class="header">
-<th align="left">ナビゲーション要素</th>
-<th align="left">説明</th>
+<tr>
+    <th>コントロール</th>
+    <th>説明</th>
 </tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="vertical-align:top;">[ハブ](../controls-and-patterns/hub.md)
-<p><img src="images/higsecone-hub-thumb.png" alt="Hub" /></p></td>
-<td align="left">ハブは、子ページのプレビュー/概要を提供する特殊な種類のナビゲーション コントロールです。 ナビゲーション ウィンドウやタブとは異なり、ページ自体に埋め込まれているリンクやセクション ヘッダーを使って、子ページへのナビゲーションを実現します。
-<p>ハブを使う場合</p>
+<tr>
+    <td>[フレーム](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Frame)</td>
+    <td>少数の例外を除き、複数のページを持つアプリでは、フレームを使用しています。 通常のセットアップでは、アプリには、フレームとナビゲーション ビュー コントロールなどの主要なナビゲーション要素を含むメイン メージがあります。 ユーザーがページを選択すると、フレームがページを読み込んで表示します。</td>
+</tr>
+<tr>
+    <td>[タブとピボット](../controls-and-patterns/tabs-pivot.md)<br/><br/>
+    <img src="images/nav/nav-tabs-sm-300.png" alt="Tab-based navigation" /></td>
+    <td>同じレベルにあるページへのリンクの一覧を表示します。
+<p>次のような場合に、タブ/ピボットを使います。</p>
 <ul>
-<li>ユーザーが、各子ページへ移動せずに、子ページのコンテンツの一部を表示することを前提としている場合。</li>
-</ul>
-<p>ハブでは検出や調査がサポートされるため、メディア、ニュース リーダー、ショッピング アプリに適しています。</p>
-<p></p></td>
+<li><p>ページ数が 2 ～ 5 ページの場合。</p>
+<p>5 ページを超える場合でもタブ/ピボットを使うことはできますが、すべてのタブ/ピボットを画面に収めることが難しくなることがあります。</p></li>
+<li>ユーザーが頻繁にページ間を切り替えることを前提としている場合。</li>
+</ul></td>
 </tr>
-
-<tr class="even">
-<td style="vertical-align:top;">[マスター/詳細](../controls-and-patterns/master-details.md)
-<p><img src="images/higsecone-masterdetail-thumb.png" alt="Master/details" /></p></td>
-<td align="left">項目の概要の一覧 (マスター ビュー) が表示されます。 項目を選ぶと、対応する項目ページが詳細セクションに表示されます。
+<tr>
+    <td>[ナビゲーション ビュー](../controls-and-patterns/navigationview.md)<br/><br/>
+    <img src="images/nav/nav-navpane-4page-thumb.png" alt="A navigation pane" /></td>
+    <td>トップレベルのページへのリンクの一覧を表示します。
+<p>次のような場合に、ナビゲーション ウィンドウを使います。</p>
+<ul>
+<li>ユーザーが頻繁にページ間を切り替えることを前提としていない場合。</li>
+<li>ナビゲーション操作の速度を低下させて、領域を節約する必要がある場合。</li>
+<li>ページがトップレベルに存在する場合。</li>
+</ul></td>
+</tr>
+<tr>
+<td>[マスター/詳細](../controls-and-patterns/master-details.md)<br/><br/>
+<img src="images/higsecone-masterdetail-thumb.png" alt="Master/details" /></td>
+<td>項目の概要の一覧 (マスター ビュー) が表示されます。 項目を選ぶと、対応する項目ページが詳細セクションに表示されます。
 <p>マスター/詳細要素を使う場合</p>
 <ul>
 <li>ユーザーが頻繁に子項目間を切り替えることを前提としている場合。</li>
 <li>ユーザーが個々の項目や項目のグループに対して高いレベルの操作 (削除や並べ替えなど) を実行できるようにする場合、およびユーザーが各項目の詳細情報の表示や更新を実行できるようにする場合。</li>
 </ul>
 <p>マスター/詳細要素は、メールの受信トレイ、連絡先リスト、データ入力に適しています。</p>
-<p>この株式を追跡するアプリの設計では、マスター/詳細パターンを使っています。</p>
-<p><img src="images/stock-tracker/uap-finance-tabletphone-sbs-sm.png" alt="Example of a stock trading app that has a master/details pattern" /></p></td>
+</td>
 </tr>
-</tbody>
-</table>
-
- 
-
-### <a name="historical-navigation-elements"></a>履歴ナビゲーション要素
-
-<table>
-<thead>
-<tr class="header">
-<th align="left">ナビゲーション要素</th>
-<th align="left">説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="vertical-align:top;">[戻る](navigation-history-and-backwards-navigation.md)</td>
+<tr>
+<td s>[戻る](navigation-history-and-backwards-navigation.md)</td>
 <td style="vertical-align:top;">ユーザーは、アプリ内のナビゲーション履歴や、デバイスによってはアプリ間を移動できます。 詳しくは、「[ナビゲーション履歴と前に戻る移動](navigation-history-and-backwards-navigation.md)」をご覧ください。</td>
 </tr>
-</tbody>
-</table>
-
- 
-
-### <a name="content-level-navigation-elements"></a>コンテンツ レベルのナビゲーション要素
-
-<table>
-<thead>
-<tr class="header">
-<th align="left">ナビゲーション要素</th>
-<th align="left">説明</th>
-</tr>
-</thead>
-<tbody>
 <tr class="odd">
-<td style="vertical-align:top;">ハイパーリンクとボタン</td>
-<td style="vertical-align:top;">コンテンツに埋め込まれたナビゲーション要素は、ページのコンテンツに表示されます。 他のナビゲーション要素はページのグループやサブツリー全体で一貫性がありますが、それとは異なり、コンテンツに埋め込まれたナビゲーション要素はそれぞれのページに固有のナビゲーション要素です。</td>
+<td>ハイパーリンクとボタン</td>
+<td>コンテンツに埋め込まれたナビゲーション要素は、ページのコンテンツに表示されます。 他のナビゲーション要素はページのグループやサブツリー全体で一貫性がありますが、それとは異なり、コンテンツに埋め込まれたナビゲーション要素はそれぞれのページに固有のナビゲーション要素です。</td>
 </tr>
-</tbody>
 </table>
 
- 
-
-### <a name="combining-navigation-elements"></a>ナビゲーション要素の連結
-
-ナビゲーション要素を連結してアプリに最適なナビゲーション エクスペリエンスを作成することができます。 たとえば、アプリでトップ レベルのページへのアクセスにはナビゲーション ウィンドウを、第 2 レベルのページへのアクセスにはタブを使用することができます。
+## <a name="next-add-navigation-code-to-your-app"></a>次の手順: アプリにナビゲーションのコードを追加する
+次の記事「[基本的なナビゲーションを実装する](navigate-between-two-pages.md)」では、アプリで基本的なナビゲーションを行うための、XAML と Frame コントロールを使用するために必要なコードを説明します。 
 
 
+<!--
+## History and the back button
+UWP provides a back button and a system for traversing the user's navigation hsitory within an app. This system does most of the work for you, but there are a few APIs you need to call so that it works properly. For more info and instructions, see [History and backwards navigation](navigation-history-and-backwards-navigation.md). 
+-->
 
-
-
-
- 
 
 
 

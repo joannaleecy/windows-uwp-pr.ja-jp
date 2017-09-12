@@ -6,14 +6,19 @@ title: "テキスト ボックス"
 label: Text box
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 29ab04588088907a851700fcbd04a64bcea77d63
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: e3b39208db6cd0cb8954d773b704b68888cc5ff0
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="text-box"></a>テキスト ボックス
 
@@ -23,26 +28,20 @@ TextBox コントロールによって、ユーザーはアプリにテキスト
 
 TextBox には、テキスト入力を簡略化するための多くの機能があります。 テキストのコピーと貼り付けをサポートする、使い慣れた組み込みのコンテキスト メニューが付属しています。 [すべてクリア] ボタンによって、ユーザーは入力されているすべてのテキストを簡単に削除できます。 スペル チェック機能も組み込まれており、既定で有効になっています。
 
-<div class="important-apis" >
-<b>重要な API</b><br/>
-<ul>
-<li>[**TextBox クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)</li>
-<li>[**Text プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)</li>
-</ul>
-</div>
+> **重要な API**: [TextBox クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)、[Text プロパティ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)
 
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 ユーザーが書式設定されていないテキストを入力、編集できるようにするには、**TextBox** コントロールを使います。 TextBox 内のテキストの取得と設定には、[Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) プロパティを使います。
 
-TextBox を読み取り専用にすることはできますが、これは一時的な条件付きの状態である必要があります。 テキストを編集可能にしない場合は、代わりに [**TextBlock**](text-block.md) を使用することを検討してください。
+TextBox を読み取り専用にすることはできますが、これは一時的な条件付きの状態である必要があります。 テキストを編集可能にしない場合は、代わりに [TextBlock](text-block.md) を使用することを検討してください。
 
-[**PasswordBox**](password-box.md) コントロールを使用して、パスワードや、社会保障番号などの機密データを収集できます。 パスワード ボックスは、入力されたテキストの代わりに記号が表示される点を除けば、テキスト入力ボックスに似ています。
+[PasswordBox](password-box.md) コントロールを使用して、パスワードや、社会保障番号などの機密データを収集できます。 パスワード ボックスは、入力されたテキストの代わりに記号が表示される点を除けば、テキスト入力ボックスに似ています。
 
-ユーザーが検索語句を入力できるようにしたり、入力時に選べる候補リストを表示したりするには、[**AutoSuggestBox**](auto-suggest-box.md) コントロールを使います。
+ユーザーが検索語句を入力できるようにしたり、入力時に選べる候補リストを表示したりするには、[AutoSuggestBox](auto-suggest-box.md) コントロールを使います。
 
-[**RichEditBox**](rich-edit-box.md) を使用して、リッチ テキスト ファイルを表示および編集します。
+[RichEditBox](rich-edit-box.md) を使用して、リッチ テキスト ファイルを表示および編集します。
 
 適切なテキスト コントロールの選択について詳しくは、「[テキスト コントロール](text-controls.md)」をご覧ください。
 
@@ -104,8 +103,8 @@ IsEnabled
 ### <a name="enable-multi-line-input"></a>複数行入力の有効化
 
 テキスト ボックスで複数行にテキストを表示するかどうかを制御するために使用できるプロパティが 2 つあります。 通常、両方のプロパティを設定して複数行テキスト ボックスを作成します。
-- テキスト ボックスで改行文字の入力を受け付けて表示するには、[**AcceptsReturn**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) プロパティを **true** に設定します。
-- テキストの折り返しを有効にするには、[**TextWrapping**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) プロパティを **Wrap** に設定します。 これにより、テキストはテキスト ボックスの端に達すると、行の区切り文字とは無関係に折り返されます。
+- テキスト ボックスで改行文字の入力を受け付けて表示するには、[AcceptsReturn](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) プロパティを **true** に設定します。
+- テキストの折り返しを有効にするには、[TextWrapping](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) プロパティを **Wrap** に設定します。 これにより、テキストはテキスト ボックスの端に達すると、行の区切り文字とは無関係に折り返されます。
 
 > **注**&nbsp;&nbsp;TextBox および RichEditBox は、TextWrapping プロパティの **WrapWholeWords** 値をサポートしていません。 TextBox.TextWrapping または RichEditBox.TextWrapping の値として WrapWholeWords を使用しようとすると、無効な引数の例外がスローされます。
 
@@ -282,6 +281,6 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 - [スペル チェックのガイドライン](spell-checking-and-prediction.md)
 - [検索の追加](https://msdn.microsoft.com/library/windows/apps/hh465231)
 - [テキスト入力のガイドライン](text-controls.md)
-- [**TextBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Windows.UI.Xaml.Controls PasswordBox クラス**](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [TextBox クラス](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [Windows.UI.Xaml.Controls PasswordBox クラス](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [String.Length プロパティ](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

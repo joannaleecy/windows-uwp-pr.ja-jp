@@ -6,19 +6,23 @@ keywords: "UWP コントロール, ユーザー インターフェイス, アプ
 label: Controls & patterns
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 09/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
-ms.openlocfilehash: 7b525267c8f4d24af95f6d41d46d33a3adf10f8f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0946a32df990f08f00f07ad0094125709b45dcaf
+ms.sourcegitcommit: 0d5b3daddb3ae74f91178c58e35cbab33854cb7f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>UWP アプリのコントロールとパターン
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-UWP アプリ開発では、<i>コントロール</i>は、コンテンツを表示したり、操作を有効にしたりする UI 要素です。 コントロールとは、ユーザー インターフェイスの構成要素です。 単純なボタンから、グリッド ビューのような強力なデータ コントロールまで、ユーザーが使用できる 45 種類以上のコントロールが用意されています。 <i>パターン</i>とは、いくつかのコントロールを組み合わせて、新しいものを作成するためのレシピです。
+UWP アプリ開発では、<i>コントロール</i>は、コンテンツを表示したり、操作を有効にしたりする UI 要素です。 コントロールとは、ユーザー インターフェイスの構成要素です。 <i>パターン</i>とは、いくつかのコントロールを組み合わせて、新しいものを作成するためのレシピです。
+
+単純なボタンから、グリッド ビューのような強力なデータ コントロールまで、ユーザーが使用できる 45 種類以上のコントロールが用意されています。  これらのコントロールは Fluent Design System の一部です。すべでのデバイスやあらゆる画面サイズで見栄えがよく、力強い、スケーラブルな UI を作成できます。 
 
 このセクションの記事では、UWP アプリにコントロールとパターンを追加するための設計ガイダンスとコーディングの手順を説明します。 
 
@@ -43,141 +47,83 @@ XAML フレームワークを使って、さまざまな方法でアプリの外
 
 ## <a name="alphabetical-index"></a>アルファベット順インデックス 
 
-特定のコントロールとパターンに関する詳細情報を説明します。
+特定のコントロールとパターンに関する詳細情報を説明します。 (機能別に並べ替えた一覧については、「[機能別コントロールのインデックス](controls-by-function.md)」をご覧ください。)
 
-(機能別に並べ替えた一覧については、「[機能別コントロールのインデックス](controls-by-function.md)」をご覧ください。)
+<div style="column-count: 2; column-gap: 40px; margin-top: 40px;" >
+<ul style="margin-top: 0px; padding-top: 0px; list-style-type: none;">
+<li style="list-style-type: none;">[自動提案ボックス](auto-suggest-box.md)</li>
 
-<div class="uwpd-list-of-links">
-<ul>
+<li style="list-style-type: none;">[バー](app-bars.md)</li>
 
-<li>[自動提案ボックス](auto-suggest-box.md)</li>
+<li style="list-style-type: none;">[ボタン](buttons.md)</li>
 
-<li>[バー](app-bars.md)</li>
+<li style="list-style-type: none;">[チェックボックス ](checkbox.md)</li>
 
-<li>[ボタン](buttons.md)</li>
+<li style="list-style-type: none;">[カラー ピッカー](color-picker.md)</li>
 
-<li>[チェック ボックス ](checkbox.md)</li>
-
-<li>[日付と時刻コントロール](date-and-time.md)
-<ul>
-
-<li>[カレンダーの日付の選択コントロール](calendar-date-picker.md)</li>
-
-<li>[カレンダー ビュー](calendar-view.md)</li>
-
-<li>[日付の選択コントロール](date-picker.md)</li>
-
-<li>[時刻の選択コントロール](time-picker.md)</li>
-</ul>
-</li>
+<li style="list-style-type: none;">[日付と時刻コントロール](date-and-time.md)</li>
 
 
-<li>[ダイアログとポップアップ](dialogs.md)</li>
+<li style="list-style-type: none;">[ダイアログとポップアップ](dialogs.md)</li>
 
-<li>[フリップ ビュー](flipview.md)</li>
+<li style="list-style-type: none;">[フリップ ビュー](flipview.md)</li>
 
-<li>[ハブ](hub.md)</li>
+<li style="list-style-type: none;">[ハブ](hub.md)</li>
 
-<li>[ハイパーリンク](hyperlinks.md)</li>
+<li style="list-style-type: none;">[ハイパーリンク](hyperlinks.md)</li>
 
-<li>[画像とイメージ ブラシ](images-imagebrushes.md)</li>
+<li style="list-style-type: none;">[画像とイメージ ブラシ](images-imagebrushes.md)</li>
 
-<li>[リスト](lists.md)</li>
+<li style="list-style-type: none;">[インク コントロール](inking-controls.md)</li>
 
-<li>[マップ コントロール](../maps-and-location/controls-map.md)</li>
+<li style="list-style-type: none;">[リスト](lists.md)</li>
 
-<li>[マスター/詳細](master-details.md)</li>
+<li style="list-style-type: none;">[マップ コントロール](../maps-and-location/controls-map.md)</li>
 
-<li>[メディア再生](media-playback.md)
-<ul>
-<li>[カスタム トランスポート コントロール](custom-transport-controls.md)</li>
-</ul>
-</li>
+<li style="list-style-type: none;">[マスター/詳細](master-details.md)</li>
 
-<li>[メニューとコンテキスト メニュー](menus.md)</li>
+<li style="list-style-type: none;">[メディア再生](media-playback.md)</li>
 
-<li>[ナビゲーション ウィンドウ](nav-pane.md)</li>
+<li style="list-style-type: none;">[メニューとコンテキスト メニュー](menus.md)</li>
 
-<li>[プログレス コントロール](progress-controls.md)</li>
+<li style="list-style-type: none;">[ナビゲーション ビュー](navigationview.md)</li>
 
-<li>[ラジオ ボタン](radio-button.md)</li>
+<li style="list-style-type: none;">[ユーザー画像](person-picture.md)</li>
 
-<li>[スクロール コントロールとパン コントロール](scroll-controls.md)</li>
+<li style="list-style-type: none;">[プログレス コントロール](progress-controls.md)</li>
 
-<li>[検索](search.md)</li>
+<li style="list-style-type: none;">[ラジオ ボタン](radio-button.md)</li>
 
-<li>[セマンティック ズーム](semantic-zoom.md)</li>
+<li style="list-style-type: none;">[評価コントロール](rating.md)</li>
 
-<li>[スライダー](slider.md)</li>
+<li style="list-style-type: none;">[スクロール コントロールとパン コントロール](scroll-controls.md)</li>
 
-<li>[分割ビュー](split-view.md)</li>
+<li style="list-style-type: none;">[検索](search.md)</li>
 
-<li>[タブとピボット](tabs-pivot.md)</li>
+<li style="list-style-type: none;">[セマンティック ズーム](semantic-zoom.md)</li>
 
-<li>[テキスト コントロール](text-controls.md)
-<ul>
+<li style="list-style-type: none;">[スライダー](slider.md)</li>
 
-<li>[ラベル](labels.md)</li>
+<li style="list-style-type: none;">[分割ビュー](split-view.md)</li>
 
-<li>[パスワード ボックス](password-box.md)</li>
+<li style="list-style-type: none;">[タブとピボット](tabs-pivot.md)</li>
 
-<li>[リッチ エディット ボックス](rich-edit-box.md)</li>
+<li style="list-style-type: none;">[テキスト コントロール](text-controls.md)</li>
 
-<li>[リッチ テキスト ブロック](rich-text-block.md)</li>
-
-<li>[スペル チェックと予測](spell-checking-and-prediction.md)</li>
-
-<li>[テキスト ブロック](text-block.md)</li>
-
-<li>[テキスト ボックス](text-box.md)</li>
-</ul>
-</li>
+<li style="list-style-type: none;">[タイル、バッジ、および通知](tiles-badges-notifications.md)</li>
 
 
+<li style="list-style-type: none;">[トグル](toggles.md)</li>
+<li style="list-style-type: none;">[ヒント](tooltips.md)</li>
 
-<li>[タイル、バッジ、通知](tiles-badges-notifications.md)
-<ul>
+<li style="list-style-type: none;">[ツリー ビュー](tree-view.md)</li>
 
-<li>[タイル](tiles-and-notifications-creating-tiles.md)</li>
-
-<li>[アダプティブ タイル](tiles-and-notifications-create-adaptive-tiles.md)</li>
-
-<li>[アダプティブ タイルのスキーマ](tiles-and-notifications-adaptive-tiles-schema.md)</li>
-
-<li>[アセットのガイドライン](tiles-and-notifications-app-assets.md)</li>
-
-<li>[特別なタイル テンプレート](tiles-and-notifications-special-tile-templates-catalog.md)</li>
-
-<li>[アダプティブ トースト通知と対話型トースト通知](tiles-and-notifications-adaptive-interactive-toasts.md)</li>
-
-<li>[バッジ通知](tiles-and-notifications-badges.md)</li>
-
-<li>[Notifications Visualizer](tiles-and-notifications-notifications-visualizer.md)</li>
-
-<li>[通知の配信方法](tiles-and-notifications-choosing-a-notification-delivery-method.md)</li>
-
-<li>[ローカル タイル通知](tiles-and-notifications-sending-a-local-tile-notification.md)</li>
-
-<li>[定期的な通知](tiles-and-notifications-periodic-notification-overview.md)</li>
-
-<li>[WNS](tiles-and-notifications-windows-push-notification-services--wns--overview.md)</li>
-
-<li>[直接通知](tiles-and-notifications-raw-notification-overview.md)</li>
-</ul>
-</li>
-
-
-<li>[トグル](toggles.md)</li>
-<li>[ヒント](tooltips.md)</li>
-
-<li>[Web ビュー](web-view.md)</li>
+<li style="list-style-type: none;">[Web ビュー](web-view.md)</li>
 </ul>
 </div>
 
-## <a name="additional-controls-options"></a>その他のコントロール オプション
+## <a name="additional-controls"></a>その他のコントロール
 
 UWP 開発用の追加のコントロールは、[Telerik](http://www.telerik.com/)、[SyncFusion](https://www.syncfusion.com/products/uwp)、[DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/)、[Infragistics](http://www.infragistics.com/products/universal-windows-platform)、[ComponentOne](https://www.componentone.com/Studio/Platform/UWP)、[ActiPro](http://www.actiprosoftware.com/products/controls/universal) などの企業から入手できます。 これらのコントロールは、カスタム コントロールおよびサービスによって標準システム コントロールを補うことにより、エンタープライズおよび .NET 開発者に追加のサポートを提供します。  
 
-これらのコントロールの詳しい情報については、GitHub の[顧客注文データベース](https://github.com/Microsoft/Windows-appsample-customers-orders-database) サンプルをご覧ください。 このサンプルでは、Telerik によるデータ グリッド コントロールおよびデータ入力検証を使っています。これは、UWP スイート用の UI の一部となっています。 UWP スイート用の UI は、.NET の基盤を通じたオープン ソース プロジェクトとして使用可能な 20 を超えるコントロールのコレクションです。
-
-![顧客注文データベースのイメージ](images/customerOrdersDataGrid.png)
+これらのコントロールの詳しい情報については、GitHub の[顧客注文データベース](https://github.com/Microsoft/Windows-appsample-customers-orders-database) サンプルをご覧ください。 このサンプルでは、Telerik によるデータ グリッド コントロールおよびデータ入力検証を使っています。これは、UWP スイート用の UI の一部となっています。 UI for UWP スイートは、.NET Foundation を通じてオープン ソース プロジェクトとして利用できる、20 を超えるコントロールのコレクションです。

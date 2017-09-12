@@ -4,25 +4,27 @@ ms.assetid: 4e7c2388-b94e-4828-a104-14fa33f6eb2d
 description: "Windows 10 (UWP) 用、Windows 8.1 用、Windows Phone 8.1 用の XAML アプリで AdControl クラスを使ってバナー広告を表示する方法について説明します。"
 title: "XAML および .NET の AdControl"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10、UWP、広告、宣伝、AdControl、XAML、.net、チュートリアル"
-ms.openlocfilehash: 9db232709d3aa4ca1b7a6c6672cb2d1c1dea5049
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: "Windows 10, UWP, 広告, 宣伝, AdControl, 広告コントロール, XAML, .NET, チュートリアル"
+ms.openlocfilehash: be273ca4c17edb4affa5e0abb4b3317b03893280
+ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/27/2017
 ---
 # <a name="adcontrol-in-xaml-and-net"></a>XAML および .NET の AdControl
 
 
-このチュートリアルでは、Windows 10 (UWP) 用、Windows 8.1 用、Windows Phone 8.1 用の XAML アプリで [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) クラスを使ってバナー広告を表示する方法について説明します。 このチュートリアルでは **AdMediatorControl** (広告仲介) は使いません。
+このチュートリアルでは、Windows 10 (UWP) 用、Windows 8.1 用、Windows Phone 8.1 用の XAML アプリで [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) クラスを使ってバナー広告を表示する方法について説明します。
 
 C# と C++ を使って XAML アプリにバナー広告を追加する方法を示す完全なサンプル プロジェクトについては、「[GitHub の広告サンプル](http://aka.ms/githubads)」をご覧ください。
 
 ## <a name="prerequisites"></a>前提条件
 
-* UWP アプリ: Visual Studio 2015 と共に [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) をインストールします。
+* UWP アプリの場合: Visual Studio 2015 以降のリリースと共に [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) をインストールします。
 * Windows 8.1 アプリまたは Windows Phone 8.1 アプリ: Visual Studio 2015 または Visual Studio 2013 と共に [Windows および Windows Phone 8.x 用の Microsoft Advertising SDK](http://aka.ms/store-8-sdk) をインストールします。
 
 ## <a name="code-development"></a>コード開発
@@ -41,18 +43,16 @@ C# と C++ を使って XAML アプリにバナー広告を追加する方法を
 
     -   Windows Phone 8.1 プロジェクトの場合: **[Windows Phone 8.1]** を展開し、**[拡張機能]** をクリックします。次に、**[Ad Mediator SDK for Windows Phone 8.1 XAML]** の横のチェック ボックスをオンにします。 この場合、Microsoft Advertising ライブラリと広告メディエーター ライブラリの両方がプロジェクトに追加されますが、広告メディエーター ライブラリは無視してかまいません。
 
-  ![addreferences](images/13-a84c026e-b283-44f2-8816-f950a1ef89aa.png)
-
-    > **注**&nbsp;&nbsp;この画像は、Windows 10 用 UWP プロジェクトを構築している Visual Studio 2015 の画像です。 Windows 8.1 または Windows Phone 8.1 のアプリを構築している場合や、Visual Studio 2013 を使っている場合は、画面が異なります。
+    ![addreferences](images/13-a84c026e-b283-44f2-8816-f950a1ef89aa.png)
 
 3.  **[参照マネージャー]** で、[OK] をクリックします。
+
 4.  広告を埋め込むページの XAML を変更して、**Microsoft.Advertising.WinRT.UI** 名前空間を追加します。 たとえば、Visual Studio によって生成される既定のサンプル アプリ (この例では MyAdFundedWindows10AppXAML という名前) では、**MainPage.XAML** という XAML ページに追加します。
 
-  Visual Studio によって生成される MainPage.xaml ファイルの **Page** セクションには、次のようなコードが含まれています。
+    Visual Studio によって生成される MainPage.xaml ファイルの **Page** セクションには、次のようなコードが含まれています。
 
-  > [!div class="tabbedCodeSnippets"]
-  ``` xml
-  <Page
+    ``` xml
+    <Page
       x:Class="MyAdFundedWindows10AppXAML.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -62,14 +62,13 @@ C# と C++ を使って XAML アプリにバナー広告を追加する方法を
       mc:Ignorable="d">
       <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
       </Grid>
-  </Page>
-  ```
+    </Page>
+    ```
 
-  **Microsoft.Advertising.WinRT.UI** 名前空間の参照を追加すると、MainPage.xaml ファイルの **Page** セクションのコードが次のようになります。
+    **Microsoft.Advertising.WinRT.UI** 名前空間の参照を追加すると、MainPage.xaml ファイルの **Page** セクションのコードが次のようになります。
 
-  > [!div class="tabbedCodeSnippets"]
-  ``` xml
-  <Page
+    ``` xml
+    <Page
       x:Class="MyAdFundedWindows10AppXAML.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -80,32 +79,31 @@ C# と C++ を使って XAML アプリにバナー広告を追加する方法を
       mc:Ignorable="d">
       <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
       </Grid>
-  </Page>
-  ```
+    </Page>
+    ```
 
-5. **Grid** タグに、**AdControl** のコードを追加します。 **Page** の [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) プロパティと [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) プロパティに、「[Test mode values (テスト モードの値)](test-mode-values.md)」に示されているテスト値を割り当てます。 また、コントロールの高さと幅を、[バナー広告でサポートされている広告サイズ](supported-ad-sizes-for-banner-ads.md)のいずれかに合わせて調整します。
+5. **Grid** タグに、**AdControl** のコードを追加します。 **Page** の [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) プロパティと [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) プロパティに、「[Test mode values (テスト モードの値)](test-mode-values.md)」に示されているテスト値を割り当てます。 また、コントロールの高さと幅を、[バナー広告でサポートされている広告サイズ](supported-ad-sizes-for-banner-ads.md)のいずれかに合わせて調整します。
 
-  > **注**&nbsp;&nbsp;アプリケーション ID と広告ユニット ID のテスト値は、アプリを申請のために提出する前に実際の値に置き換えます。
+    > [!NOTE]
+    > 各 **AdControl** に、対応する*広告ユニット*があります。広告ユニットは、コントロールに広告を提供するためにサービスで使用されます。すべての広告ユニットは、*広告ユニット ID* と*アプリケーション ID* で構成されます。 ここでは、広告ユニット ID とアプリケーション ID のテスト値をコントロールに割り当てます。 これらのテスト値は、テスト バージョンのアプリでのみ使用できます。 ストアにアプリを公開する前に、[これらのテスト値を Windows デベロッパー センターから取得した実際の値に置き換える](#release) 必要があります。
 
-  完成した **Grid** タグのコードは、次のようになります。
+    完成した **Grid** タグのコードは、次のようになります。
 
-  > [!div class="tabbedCodeSnippets"]
-  ``` xml
-  <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-      <UI:AdControl ApplicationId="3f83fe91-d6be-434d-a0ae-7351c5a997f1"
-            AdUnitId="10865270"
+    ``` xml
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <UI:AdControl ApplicationId="3f83fe91-d6be-434d-a0ae-7351c5a997f1"
+            AdUnitId="test"
             HorizontalAlignment="Left"
             Height="250"
             VerticalAlignment="Top"
             Width="300"/>
-  </Grid>
-  ```
+    </Grid>
+    ```
 
-  MainPage.xaml ファイルの完全なコードは、次のようになります。
+    MainPage.xaml ファイルの完全なコードは、次のようになります。
 
-  > [!div class="tabbedCodeSnippets"]
-  ``` xml
-  <Page
+    ``` xml
+    <Page
       x:Class="MyAdFundedWindows10AppXAML.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -116,28 +114,39 @@ C# と C++ を使って XAML アプリにバナー広告を追加する方法を
       mc:Ignorable="d">
       <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
             <UI:AdControl ApplicationId="3f83fe91-d6be-434d-a0ae-7351c5a997f1"
-                  AdUnitId="10865270"
+                  AdUnitId="test"
                   HorizontalAlignment="Left"
                   Height="250"
                   VerticalAlignment="Top"
                   Width="300"/>
-        </Grid>
+      </Grid>
     </Page>
     ```
 
 6.  アプリをコンパイルして実行し、広告が表示されることを確認します。
 
+<span id="release" />
 ## <a name="release-your-app-with-live-ads-using-windows-dev-center"></a>Windows デベロッパー センターを使用して、ライブ広告を表示するアプリをリリースする
 
-1.  デベロッパー センターのダッシュボードで、アプリの **[収益化]** &gt; **[広告で収入を増やす]** ページに移動し、[スタンドアロン Microsoft Advertising ユニットを作成](../publish/monetize-with-ads.md)します。 広告ユニットの種類として、**[バナー]** を指定します。 広告ユニット ID とアプリケーション ID の両方をメモしておきます。
+1.  デベロッパー センターのダッシュボードで、アプリの [[広告で収入を増やす]](../publish/monetize-with-ads.md) ページに移動し、[広告ユニットを作成](../monetize/set-up-ad-units-in-your-app.md)します。 広告ユニットの種類として、**[バナー]** を指定します。 広告ユニット ID とアプリケーション ID の両方をメモしておきます。
 
-2.  コードで、広告ユニットのテスト値 (**ApplicationId** と **AdUnitId**) を、デベロッパー センターで生成した実際の値に置き換えます。
+2. アプリが Windows 10 用 UWP アプリである場合、[[広告で収入を増やす]](../publish/monetize-with-ads.md) ページの [[広告仲介]](../publish/monetize-with-ads.md#mediation) セクションで設定を構成することにより、必要に応じて **AdControl** の広告仲介を有効にできます。 広告仲介を使うと、複数の広告ネットワークから広告を表示して、広告収益とアプリ プロモーションの機能を最大限に引き出すことができます。表示される広告には、Taboola や Smaato などの他の有料広告ネットワークからの広告や、Microsoft のアプリ プロモーション キャンペーン用の広告などが含まれます。
 
-3.  デベロッパー センター ダッシュボードを使用して、ストアに[アプリを申請](../publish/app-submissions.md)します。
+3.  コードで、広告ユニットのテスト値 (**ApplicationId** と **AdUnitId**) を、デベロッパー センターで生成した実際の値に置き換えます。
 
-4.  デベロッパー センター ダッシュボードで[広告パフォーマンス レポート](../publish/advertising-performance-report.md)を確認します。
+4.  デベロッパー センター ダッシュボードを使用して、ストアに[アプリを申請](../publish/app-submissions.md)します。
 
-## <a name="notes"></a>コメント
+5.  デベロッパー センター ダッシュボードで[広告パフォーマンス レポート](../publish/advertising-performance-report.md)を確認します。
+
+<span id="manage" />
+## <a name="manage-ad-units-for-multiple-ad-controls-in-your-app"></a>アプリで複数の広告コントロールの広告ユニットを管理する
+
+1 つのアプリで複数の **AdControl** オブジェクトを使うことができます (たとえば、アプリの各ページに異なる **AdControl** オブジェクトをホストできます)。 このシナリオでは、各コントロールに異なる広告ユニットを割り当てることをお勧めします。 各コントロールに異なる広告ユニットを使用することで、別々に[仲介の設定を構成](../publish/monetize-with-ads.md#mediation)して、個別の[報告データ](../publish/advertising-performance-report.md)を取得することが可能です。 また、これにより、Microsoft のサービスはアプリに提供する広告を最適化できます。
+
+> [!IMPORTANT]
+> 各広告ユニットは 1 つのアプリのみで使用できます。 複数のアプリで広告ユニットを使用すると、広告ユニットに広告が提供されません。
+
+## <a name="notes"></a>注:
 
 * C#: **AdControl** イベントにイベント ハンドラーを割り当てる例については、「[XAML プロパティの例](xaml-properties-example.md)」をご覧ください。 C# で書かれたイベント ハンドラーのサンプル コードについては、「[C# の AdControl イベント](adcontrol-events-in-c.md)」をご覧ください。
 
@@ -150,5 +159,4 @@ C# と C++ を使って XAML アプリにバナー広告を追加する方法を
 ## <a name="related-topics"></a>関連トピック
 
 * [GitHub の広告サンプル](http://aka.ms/githubads)
-
- 
+* [アプリの広告ユニットをセットアップする](../monetize/set-up-ad-units-in-your-app.md)

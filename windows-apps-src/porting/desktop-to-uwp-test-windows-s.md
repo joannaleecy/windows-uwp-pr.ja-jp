@@ -1,0 +1,95 @@
+---
+author: normesta
+Description: "Windows 10 S をインストールせずにアプリの Windows 10 S 対応をテストできます。"
+Search.Product: eADQiWindows 10XVcnh
+title: "Windows アプリの Windows 10 S 対応をテストする"
+ms.author: normesta
+ms.date: 05/11/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10 S, UWP
+ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
+ms.openlocfilehash: 52cd0a7cadbedc3a843d6ce21ba5b985cfef4db8
+ms.sourcegitcommit: 77bbd060f9253f2b03f0b9d74954c187bceb4a30
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/11/2017
+---
+# <a name="test-your-windows-app-for-windows-10-s"></a>Windows アプリの Windows 10 S 対応をテストする
+
+Windows アプリをテストして、Windows 10 S を実行するデバイスでそのアプリが正しく動作することを確認できます。実際、Windows ストアにアプリを公開する予定がある場合はこの作業を行わなければなりません。それがストア要件になっているためです。 アプリをテストするために、Windows 10 Pro を実行しているデバイスでは Device Guard コードの整合性ポリシーを適用できます。 このポリシーは、Windows 10 S で実行するために従う必要のある規則がアプリに適用されます。
+
+> [!IMPORTANT]
+>これらのポリシーを仮想マシンに適用することをお勧めします。ただし、ローカル コンピューターに適用する場合は、ポリシーを適用する前に、このトピックの「次に、ポリシーをインストールしてシステムを再起動する」セクションに記載されているベスト プラクティスのガイダンスを確認してください。
+
+<span id="choose-policy" />
+## <a name="first-download-the-policies-and-then-choose-one"></a>まず、ポリシーをダウンロードして 1 つを選択する
+
+Device Guard コード整合性ポリシーは、[こちら](https://go.microsoft.com/fwlink/?linkid=849018)からダウンロードできます。
+
+次に、最も希望に合うものを 1 つ選びます。 各ポリシーの概要を以下に示します。
+
+|ポリシー |適用 |署名用の証明書 |ファイル名 |
+|--|--|--|--|
+|監査モード ポリシー |問題をログに記録/ブロックしない |ストア |SiPolicy_Audit.p7b |
+|実稼働モード ポリシー |〇 |ストア |SiPolicy_Enforced.p7b |
+|自己署名アプリを使用する実稼働モード ポリシー |〇 |AppX テスト証明書  |SiPolicy_DevModeEx_Enforced.p7b |
+
+監査モード ポリシーから開始することをお勧めします。 コードの整合性イベント ログを確認し、その情報を使用してアプリを調整することができます。 最終的なテストの準備ができたら、実稼働モード ポリシーを適用します。
+
+各ポリシーについて、もう少し詳しい情報を次に示します。
+
+### <a name="audit-mode-policy"></a>監査モード ポリシー
+このモードでは、Windows 10 S でサポートされていないタスクがアプリで実行される場合も、そのアプリを実行できます。実稼働でブロックされる実行可能ファイルは、Windows によってコード整合性イベント ログに記録されます。
+
+これらのログを見つけるには、**[イベント ビューアー]** を開き、[アプリケーションとサービス ログ]、[Microsoft]、[Windows]、[CodeIntegrity]、[Operational] の順に移動します。
+
+![コードの整合性イベント ログ](images/desktop-to-uwp/code-integrity-logs.png)
+
+
+#### <a name="optional-find-specific-failure-points-in-the-call-stack"></a>(省略可能) 呼び出し履歴で特定の障害箇所を見つける
+呼び出し履歴でブロックに関する問題が発生している特定のポイントを見つけるには、次のレジストリ キーを追加してから、[カーネル モード デバッグ環境をセットアップ](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg--kernel-mode-#span-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanset-up-a-kernel-mode-debugging)します。
+
+|キー|名前|種類|値|
+|--|---|--|--|
+|HKEY_LOCAL_MACHINE\SYSTEM\CurentControlSet\Control\CI| DebugFlags |REG_DWORD | 1 |
+
+
+![レジストリ設定](images/desktop-to-uwp/ci-debug-setting.png)
+
+### <a name="production-mode-policy"></a>実稼働モード ポリシー
+このポリシーでは、Windows 10 S に合致するコード整合性規則が適用され、Windows 10 S での実行をシミュレートできます。これは最も厳しいポリシーであり、最終的な実稼働テストに適しています。 このモードでは、アプリへの制限が、ユーザーのデバイスでの制限と同じである必要があります。 このモードを使用するには、Windows ストアによるアプリへの署名が必要です。
+
+### <a name="production-mode-policy-with-self-signed-apps"></a>自己署名アプリを使用する実稼働モード ポリシー
+このモードは、実稼働モード ポリシーに似ていますが、zip ファイルに含まれているテスト証明書で署名されているアプリを実行できる点が異なります。 この zip ファイル内にある **AppxTestRootAgency** フォルダーに含まれる PFX ファイルをインストールします。 次に、それを使用してアプリに署名します。 この方法では、ストアによる署名を必要としないため、迅速に反復できます。
+
+証明書の発行元名がアプリの発行者名と一致する必要があるため、**Identity** 要素の **Publisher** 属性の値を "CN=Appx Test Root Agency Ex" に一時的に変更する必要があります。 テストの完了後に、この属性を元の値に戻すことができます。
+
+## <a name="next-install-the-policy-and-restart-your-system"></a>次に、ポリシーをインストールしてシステムを再起動する
+
+これらのポリシーは起動エラーを招く可能性があるため、仮想マシンに適用することをお勧めします。 エラーが発生するのは、ドライバーを含めて Windows ストアによって署名されていないコードの実行がポリシーによってブロックされるためです。
+
+ローカル コンピューターにこれらのポリシーを適用する場合は、監査モード ポリシーから始めることをお勧めします。 このポリシーでは、適用されたポリシーで重要なコードがブロックされないことをコード整合性イベント ログで確認できます。
+
+ポリシーを適用する準備ができたら、選択したポリシーに対応する .P7B ファイルを見つけて、**SIPolicy.P7B** という名前に変更したうえで、このファイルをシステム上の **C:\Windows\System32\CodeIntegrity\** に保存します。
+
+システムを再起動します。
+
+## <a name="next-steps"></a>次のステップ
+
+**App Consult Team が投稿した詳細なブログ記事を確認する**
+
+[Windows 10 S でのデスクトップ ブリッジを使用した従来のデスクトップ アプリケーションの移植とテストに関する記事](https://blogs.msdn.microsoft.com/appconsult/2017/06/15/porting-and-testing-your-classic-desktop-applications-on-windows-10-s-with-the-desktop-bridge/)をご覧ください。
+
+**Windows S でのテストを容易にするツールについて理解する**
+
+[APPX のアンパッケージ、変更、再パッケージ、署名に関する記事](https://blogs.msdn.microsoft.com/appconsult/2017/08/07/unpack-modify-repack-sign-appx/)をご覧ください。
+
+**特定の質問に対する回答を見つける**
+
+マイクロソフトのチームでは、[StackOverflow タグ](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)をチェックしています。
+
+**この記事に関するフィードバックを送信する**
+
+下のコメント セクションをご利用ください。

@@ -1,121 +1,213 @@
 ---
 author: normesta
-Description: "手動で Windows デスクトップ アプリケーション (Win32、WPF、Windows フォームなど) をユニバーサル Windows プラットフォーム (UWP) アプリに変換する方法を示します。"
+Description: "Windows 10 用の Windows デスクトップ アプリケーション (Win32、WPF、Windows フォームなど) を手動でパッケージ化する方法を示します。"
 Search.Product: eADQiWindows 10XVcnh
-title: "Desktop to UWP Bridge と手動での変換"
+title: "アプリを手動でパッケージ化する (デスクトップ ブリッジ)"
 ms.author: normesta
-ms.date: 03/09/2017
+ms.date: 05/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
-ms.openlocfilehash: 8d09a0349620e071f5c4d680df18f716e3b10a8e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e8a09b6e362662b9bb207117d8a3fcc905da6ef4
+ms.sourcegitcommit: ae93435e1f9c010a054f55ed7d6bd2f268223957
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/10/2017
 ---
-# <a name="desktop-to-uwp-bridge-manual-conversion"></a>Desktop to UWP Bridge: 手動での変換
+# <a name="package-an-app-manually-desktop-bridge"></a>アプリを手動でパッケージ化する (デスクトップ ブリッジ)
 
-[Desktop App Converter (DAC)](desktop-to-uwp-run-desktop-app-converter.md) を使用すると簡単な操作で自動的に変換されるため、インストーラーの処理について不明確な点がある場合に便利です。 ただし、アプリが Xcopy を使用してインストールされる場合や、アプリのインストーラーがシステムに加える変更について詳しい知識がある場合は、アプリ パッケージとマニフェストを手動で作成することもできます。 ここでは、パッケージを手動で作成する手順を紹介します。 また、DAC ではプレートなしのアセットをアプリに追加することはできませんが、これを手動で実行する方法についても説明します。
+このトピックでは、Visual Studio、Desktop App Converter (DAC) などのツールを使用せずにアプリをパッケージ化する方法を示します。
 
-ここでは、手動で変換する方法について説明します。 .NET アプリがあり、Visual Studio を使用している場合は、代わりに、「[Visual Studio による .NET デスクトップ アプリ用のデスクトップ ブリッジ パッケージ ガイド](desktop-to-uwp-packaging-dot-net.md)」をご覧ください。  
+<div style="float: left; padding: 10px">
+    ![手動のフロー](images/desktop-to-uwp/manual-flow.png)
+</div>
 
-## <a name="create-a-manifest-by-hand"></a>マニフェストを手動で作成する
+アプリを手動でパッケージ化するには、パッケージ マニフェスト ファイルを作成してから、Windows アプリ パッケージを生成するコマンド ライン ツールを実行します。
 
-_appxmanifest.xml_ ファイルには、(少なくとも) 次のような内容が必要です。 \*\*\*THIS\*\*\* のような形式のプレースホルダーは、アプリケーションの実際の値に変更してください。
+xcopy コマンドを使用してアプリをインストールする場合や、アプリのインストーラーがシステムに加える変更を熟知したうえで、プロセスをきめ細かく制御する必要がある場合は、手動によるパッケージ化を検討してください。
+
+インストーラーによってどのような変更がシステムに加えられるのかわからない場合や、自動化ツールを使用してパッケージ マニフェストを生成する場合は、[こちら](desktop-to-uwp-root.md#convert)のオプションのいずれかを検討してください。
+
+## <a name="first-consider-how-youll-distribute-your-app"></a>まず、アプリの配布方法を検討する
+アプリを [Windows ストア](https://www.microsoft.com/store/apps)に公開する予定であれば、[このフォーム](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge)への記入から開始します。 Microsoft から、オンボード プロセスを開始するための連絡があります。 このプロセスでは、ストア内の名前を予約し、アプリをパッケージ化するための情報を取得します。
+
+## <a name="create-a-package-manifest"></a>パッケージ マニフェストを作成する
+
+ファイルを作成し、**appxmanifest.xml** という名前を付けて、以下の XML を追加します。
+
+これは、パッケージに必要な要素や属性が含まれた基本テンプレートです。 次のセクションで、これらに値を追加します。
 
 ```XML
-    <?xml version="1.0" encoding="utf-8"?>
-    <Package
-       xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
-       xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-       xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
-      <Identity Name="***YOUR_PACKAGE_NAME_HERE***"
-        ProcessorArchitecture="x64"
-        Publisher="CN=***COMPANY_NAME***, O=***ORGANIZATION_NAME***, L=***CITY***, S=***STATE***, C=***COUNTRY***"
-        Version="***YOUR_PACKAGE_VERSION_HERE***" />
-      <Properties>
-        <DisplayName>***YOUR_PACKAGE_DISPLAY_NAME_HERE***</DisplayName>
-        <PublisherDisplayName>Reserved</PublisherDisplayName>
-        <Description>No description entered</Description>
-        <Logo>***YOUR_PACKAGE_RELATIVE_DISPLAY_LOGO_PATH_HERE***</Logo>
-      </Properties>
-      <Resources>
-        <Resource Language="en-us" />
-      </Resources>
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+    xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
+  <Identity Name="" Version="" Publisher="" ProcessorArchitecture="" />
+    <Properties>
+       <DisplayName></DisplayName>
+       <PublisherDisplayName></PublisherDisplayName>
+             <Description></Description>
+      <Logo></Logo>
+    </Properties>
+    <Resources>
+      <Resource Language="" />
+    </Resources>
       <Dependencies>
-        <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14316.0" MaxVersionTested="10.0.14316.0" />
+      <TargetDeviceFamily Name="Windows.Desktop" MinVersion="" MaxVersionTested="" />
       </Dependencies>
       <Capabilities>
         <rescap:Capability Name="runFullTrust"/>
       </Capabilities>
-      <Applications>
-        <Application Id="***YOUR_PRAID_HERE***" Executable="***YOUR_PACKAGE_RELATIVE_EXE_PATH_HERE***" EntryPoint="Windows.FullTrustApplication">
-          <uap:VisualElements
-           BackgroundColor="#464646"
-           DisplayName="***YOUR_APP_DISPLAY_NAME_HERE***"
-           Square150x150Logo="***YOUR_PACKAGE_RELATIVE_PNG_PATH_HERE***"
-           Square44x44Logo="***YOUR_PACKAGE_RELATIVE_PNG_PATH_HERE***"
-           Description="***YOUR_APP_DESCRIPTION_HERE***" />
-        </Application>
-      </Applications>
-    </Package>
+    <Applications>
+      <Application Id="" Executable="" EntryPoint="Windows.FullTrustApplication">
+        <uap:VisualElements DisplayName="" Description=""   Square150x150Logo=""
+                   Square44x44Logo=""   BackgroundColor="" />
+      </Application>
+     </Applications>
+  </Package>
 ```
 
-追加したいプレートなしのアセットがありますか。 その手順については、この記事の「[プレートなしのアセット](#unplated-assets)」のセクションをご覧ください。
+## <a name="fill-in-the-package-level-elements-of-your-file"></a>ファイルのパッケージ レベル要素に値を設定する
 
-## <a name="run-the-makeappx-tool"></a>MakeAppX ツールを実行する
+このテンプレートに、パッケージを説明する情報を設定します。
 
-[アプリ パッケージ ツール (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx) を使用して、プロジェクトの Windows アプリ パッケージを生成します。 MakeAppx.exe は Windows 10 SDK に同梱されています。
+### <a name="identity-information"></a>Identity 情報
 
-MakeAppx を実行するには、まず前の手順で説明したマニフェスト ファイルを作成していることを確認します。
+**Identity** 要素の例を以下に示します。各属性にはプレースホルダー テキストが指定されています。 ``ProcessorArchitecture`` 属性は、``x64`` または ``x86`` に設定できます。
 
-次に、マッピング ファイルを作成します。 このファイルは、**[Files]** から始まり、ディスク上の各ソース フィルのリスト、パッケージ内のターゲット パスが続きます。 次に例を示します。
-
+```XML
+<Identity Name="MyCompany.MySuite.MyApp"
+          Version="1.0.0.0"
+          Publisher="CN=MyCompany, O=MyCompany, L=MyCity, S=MyState, C=MyCountry"
+                ProcessorArchitecture="x64">
 ```
-[Files]
-"C:\MyApp\StartPage.htm"     "default.html"
-"C:\MyApp\readme.txt"        "doc\readme.txt"
-"\\MyServer\path\icon.png"   "icon.png"
-"MyCustomManifest.xml"       "AppxManifest.xml"
+> [!NOTE]
+> Windows ストアでアプリ名を予約済みの場合は、Windows デベロッパー センターのダッシュ ボードを使用して、名前と発行元を取得できます。 アプリを他のシステムにサイドローディング展開する場合は、独自の名前を指定できます。ただし、選択する発行元名は、アプリへの署名に使用する証明書の名前と一致する必要があります。
+
+### <a name="properties"></a>Properties
+
+[Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 要素には、必須の子要素が 3 つあります。 次に示すのは、**Properties** ノードの例です。要素はプレースホルダー テキストが指定されています。 **DisplayName** は、ストアにアップロードするアプリに対して、ストアで予約するアプリの名前です。
+
+```XML
+<Properties>
+  <DisplayName>MyApp</DisplayName>
+  <PublisherDisplayName>MyCompany</PublisherDisplayName>
+  <Logo>images\icon.png</Logo>
+</Properties>
 ```
 
-最後に、以下のコマンドを実行します。
+### <a name="resources"></a>Resources
 
-```cmd
-MakeAppx.exe pack /f mapping_filepath /p filepath.appx
+次に [Resources](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-resources) ノードの例を示します。
+
+```XML
+<Resources>
+  <Resource Language="en-us" />
+</Resources>
+```
+### <a name="dependencies"></a>Dependencies
+
+デスクトップ ブリッジ アプリでは、``Name`` 属性は常に ``Windows.Desktop`` に設定します。
+
+```XML
+<Dependencies>
+<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14316.0" MaxVersionTested="10.0.15063.0" />
+</Dependencies>
 ```
 
-## <a name="sign-your-appx-package"></a>AppX パッケージに署名する
+### <a name="capabilities"></a>Capabilities
+デスクトップ ブリッジ アプリには、``runFullTrust`` 機能を追加する必要があります。
 
-Add-AppxPackage コマンドレットを使うには、展開するアプリケーション パッケージ (.appx) が署名されている必要があります。 Windows アプリ パッケージに署名するには、Microsoft Windows 10 SDK に付属している [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx) を使います。
-
-使用例:
-
-```cmd
-C:\> MakeCert.exe -r -h 0 -n "CN=<publisher_name>" -eku 1.3.6.1.5.5.7.3.3 -pe -sv <my.pvk> <my.cer>
-C:\> pvk2pfx.exe -pvk <my.pvk> -spc <my.cer> -pfx <my.pfx>
-C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
+```XML
+<Capabilities>
+  <rescap:Capability Name="runFullTrust"/>
+</Capabilities>
 ```
-MakeCert.exe を実行したときにパスワードの入力を求められたら、**[なし]** を選択します。 証明書と署名について詳しくは、以下をご覧ください。
+## <a name="fill-in-the-application-level-elements"></a>アプリケーション レベル要素に値を設定する
 
-- [方法: 開発中に使う一時的な証明書を作成する](https://msdn.microsoft.com/library/ms733813.aspx)
-- [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)
-- [SignTool.exe (署名ツール)](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
+このテンプレートに、アプリを説明する情報を指定します。
 
-<span id="unplated-assets" />
-## <a name="add-unplated-assets"></a>プレートなしのアセットを追加する
+### <a name="application-element"></a>Application 要素
 
-タスク バーに表示されるアプリの 44 x 44 アセットを任意で構成する方法を次に示します。
+デスクトップ ブリッジ アプリの場合、Application 要素の ``EntryPoint`` 属性は常に ``Windows.FullTrustApplication`` です。
 
-1. 正しい 44 x 44 画像を取得し、画像保存用のフォルダー (つまり、Assets) にコピーします。
+```XML
+<Applications>
+  <Application Id="MyApp"     
+        Executable="MyApp.exe" EntryPoint="Windows.FullTrustApplication">
+   </Application>
+</Applications>
+```
 
-2. 各 44 x 44 画像のコピーを同じフォルダーに作成し、ファイル名の末尾に *.targetsize-44_altform-unplated* を追加します。 これにより、同じ画像で異なる名前のアイコンが、2 つずつフォルダーに保存されます。 たとえばプロセスを完了すると、assets フォルダーに *MYAPP_44x44.png* と *MYAPP_44x44.targetsize-44_altform-unplated.png* ができます (注: 前者は、VisualElements 属性 *Square44x44Logo* の下の appxmanifest で参照されるアイコン)。
+### <a name="visual-elements"></a>VisualElements
 
-3.    AppXManifest で、作業対象のすべてのアイコンの BackgroundColor を透明に設定します。 この属性は、各アプリケーションの VisualElements の下にあります。
+次に [VisualElements](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements) ノードの例を示します。
 
-4.    CMD を開き、パッケージのルート フォルダーにディレクトリを変更した後、コマンド ```makepri createconfig /cf priconfig.xml /dq en-US``` を実行して priconfig.xml ファイルを作成します。
+```XML
+<uap:VisualElements
+    BackgroundColor="#464646"
+    DisplayName="My App"
+    Square150x150Logo="images\icon.png"
+    Square44x44Logo="images\small_icon.png"
+    Description="A useful description" />
+```
 
-5.    CMD を使い、ディレクトリはパッケージのルート フォルダーのまま、コマンド ```makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``` を使って resources.pri ファイルを作成します。 たとえば、アプリのコマンドは、```makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``` のようになります。
+## <a name="optional-add-target-based-unplated-assets"></a>(省略可能) ターゲット ベースのプレートなしのアセットを追加する
 
-6.    次の手順の説明に従って Windows アプリ パッケージをパッケージ化し、結果を確認します。
+ターゲット ベースのアセットは、Windows タスク バー、タスク ビュー、スナップ アシスト、Alt + Tab キーを押したとき、およびスタート画面のタイルの右下に表示されるアイコンおよびタイルで使用されます。 これらについて詳しくは、[こちら](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets#target-based-assets)をご覧ください。
+
+1. 正しい 44 x 44 画像を取得して、画像保存用のフォルダー (Assets) にコピーします。
+
+2. 各 44 x 44 画像のコピーを同じフォルダーに作成し、ファイル名の末尾に **.targetsize-44_altform-unplated** を追加します。 これにより、同じ画像で異なる名前のアイコンが、2 つずつフォルダーに保存されます。 たとえば、プロセスの完了後には、assets フォルダーに **MYAPP_44x44.png** と **MYAPP_44x44.targetsize-44_altform-unplated.png** のようなファイルが含まれています。
+
+   > [!NOTE]
+   > この例では、**MYAPP_44x44.png** という名前のアイコンは、Windows アプリ パッケージの ``Square44x44Logo`` ロゴ属性で参照するアイコンです。
+
+3.  Windows アプリ パッケージで、透明にするすべてのアイコンについて ``BackgroundColor`` を設定します。
+
+4.  CMD を開き、パッケージのルート フォルダーにディレクトリを変更した後、コマンド ``makepri createconfig /cf priconfig.xml /dq en-US`` を実行して priconfig.xml ファイルを作成します。
+
+5.  コマンド ``makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml`` を使用して、resources.pri ファイルを作成します。
+
+    たとえば、アプリのコマンドは、``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml`` のようになります。
+
+6.  次の手順の説明に従って Windows アプリ パッケージをパッケージ化し、結果を確認します。
+
+<span id="make-appx" />
+## <a name="generate-a-windows-app-package"></a>Windows アプリ パッケージを生成する
+
+**MakeAppx.exe** を使用して、プロジェクトの Windows アプリ パッケージを生成します。 このツールは Windows 10 SDK に含まれています。Visual Studio をインストールしている場合は、お使いの Visual Studio バージョンの開発者コマンド プロンプトから簡単にアクセスできます。
+
+「[MakeAppx.exe ツールを使ったアプリ パッケージの作成](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)」をご覧ください。
+
+## <a name="run-the-packaged-app"></a>パッケージ アプリを実行する
+
+証明書を取得して署名する作業を行わなくても、アプリをローカルで実行およびテストできます。 次の PowerShell コマンドレットを実行するだけで済みます。
+
+```Add-AppxPackage –Register AppxManifest.xml```
+
+アプリの .exe または .dll ファイルを更新するには、パッケージ内の既存のファイルを新しいファイルに置き換え、AppxManifest.xml のバージョン番号を繰り上げて、上記のコマンドをもう一度実行します。
+
+> [!NOTE]
+> パッケージ アプリは、常に対話ユーザーとして実行されます。パッケージ アプリをインストールするドライブは、NTFS 形式にフォーマットされている必要があります。
+
+## <a name="next-steps"></a>次のステップ
+
+**コードをステップ実行する/問題を見つけて修正する**
+
+[パッケージ デスクトップ アプリの実行、デバッグ、テスト (デスクトップ ブリッジ)](desktop-to-uwp-debug.md) をご覧ください。
+
+**アプリに署名して配布する**
+
+[パッケージ デスクトップ アプリの配布 (デスクトップ ブリッジ)](desktop-to-uwp-distribute.md) をご覧ください。
+
+**特定の質問に対する回答を見つける**
+
+マイクロソフトのチームでは、[StackOverflow タグ](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)をチェックしています。
+
+**この記事に関するフィードバックを送信する**
+
+下のコメント セクションをご利用ください。

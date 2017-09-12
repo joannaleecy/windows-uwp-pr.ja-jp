@@ -9,17 +9,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "ホストされた Web アプリ, JavaScript 用 WinRT API, Win10 Web アプリ, Windows JavaScript アプリ, ApplicationContentUriRules, ACUR, msapplication-cortanavcd, Web アプリ用 Cortana"
-ms.assetid: 86ca4590-2675-4de2-b825-c586d9669b8e
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: ccb59581227db82b8566da11d6db731b362ec258
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 86661353916e64cb2ed4d7f0ca7b8830bfe95685
+ms.sourcegitcommit: a704e3c259400fc6fbfa5c756c54c12c30692a31
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
+# <a name="accessing-uwp-features"></a>UWP 機能へのアクセス
 
-# <a name="accessing-universal-windows-platform-uwp-features"></a>ユニバーサル Windows プラットフォーム (UWP) の機能へのアクセス
-
-Web アプリケーションは、ユニバーサル Windows プラットフォーム (UWP) へのフル アクセスが可能で、Windows デバイスのネイティブ機能のアクティブ化、[Windows セキュリティのメリットの活用](#keep-your-app-secure--setting-application-content-uri-rules-acurs)、サーバーでホストされるスクリプトからの直接的な [Windows ランタイム API の呼び出し](#call-windows-runtime-apis)、[Cortana の統合](#integrate-cortana-voice-commands)の活用、[オンライン認証プロバイダー](#web-authentication-broker)の使用を実現できます。 [ハイブリッド アプリ](#create-hybrid-apps--packaged-web-apps-vs-hosted-web-apps)もサポートされているため、ホストされているスクリプトから呼び出されるローカル コードを使って、リモートとローカルのページ間でのアプリのナビゲーションを管理することができます。
+Web アプリケーションは、ユニバーサル Windows プラットフォーム (UWP) へのフル アクセスが可能で、Windows デバイスのネイティブ機能のアクティブ化、[Windows セキュリティのメリットの活用](#keep-your-app-secure--setting-application-content-uri-rules-acurs)、サーバーでホストされるスクリプトからの直接的な [Windows ランタイム API の呼び出し](#call-windows-runtime-apis)、[Cortana の統合](#integrate-cortana-voice-commands)の活用、[オンライン認証プロバイダー](#web-authentication-broker)の使用を実現できます。 [ハイブリッド アプリ](##create-hybrid-apps--packaged-web-apps-vs-hosted-web-apps)もサポートされているため、ホストされているスクリプトから呼び出されるローカル コードを使って、リモートとローカルのページ間でのアプリのナビゲーションを管理することができます。
 
 ## <a name="keep-your-app-secure--setting-application-content-uri-rules-acurs"></a>アプリのセキュリティの保護: アプリケーション コンテンツ URI 規則 (ACUR) の設定
 
@@ -41,7 +39,7 @@ ACUR (URL 許可リストとも呼ばれる) によって、リモートの HTML
 ```HTML
 <Application
 Id="App"
-StartPage="http://contoso.com/home">
+StartPage="https://contoso.com/home">
 <uap:ApplicationContentUriRules>
     <uap:Rule Type="include" Match="https://contoso.com/" WindowsRuntimeAccess="all" />
     <uap:Rule Type="include" Match="https://*.contoso.com/" WindowsRuntimeAccess="all" />
@@ -67,7 +65,7 @@ URL がアプリの境界内 (ACUR) で定義されている場合、JavaScript 
 </uap:ApplicationContentUriRules>
 ```
 
-これにより、http://contoso.com/ で動作しているスクリプトに、Windows ランタイム名前空間と、パッケージに含まれるカスタム コンポーネントへのアクセスが許可されます。 トースト通知用の GitHub のサンプル [Windows.UI.Notifications.js](https://gist.github.com/Gr8Gatsby/3d471150e5b317eb1813#file-windows-ui-notifications-js) をご覧ください。
+これにより、https://contoso.com/ で動作しているスクリプトに、Windows ランタイム名前空間と、パッケージに含まれるカスタム コンポーネントへのアクセスが許可されます。 トースト通知用の GitHub のサンプル [Windows.UI.Notifications.js](https://gist.github.com/Gr8Gatsby/3d471150e5b317eb1813#file-windows-ui-notifications-js) をご覧ください。
 
 ライブ タイルを実装し、リモート JavaScript からそれを更新する例を以下に示します。
 
@@ -77,12 +75,12 @@ function updateTile(message, imgUrl, imgAlt) {
 
     if (typeof Windows !== 'undefined'&&
             typeof Windows.UI !== 'undefined' &&
-            typeof Windows.UI.Notifications !== 'undefined') {    
+            typeof Windows.UI.Notifications !== 'undefined') {  
         var notifications = Windows.UI.Notifications,
         tile = notifications.TileTemplateType.tileSquare150x150PeekImageAndText01,
         tileContent = notifications.TileUpdateManager.getTemplateContent(tile),
         tileText = tileContent.getElementsByTagName('text'),
-        tileImage = tileContent.getElementsByTagName('image');    
+        tileImage = tileContent.getElementsByTagName('image');  
         tileText[0].appendChild(tileContent.createTextNode(message || 'Demo Message'));
         tileImage[0].setAttribute('src', imgUrl || 'https://unsplash.it/150/150/?random');
         tileImage[0].setAttribute('alt', imgAlt || 'Random demo image');    
@@ -112,7 +110,7 @@ VCD ファイルの場所の一覧を含む `<meta>` 要素タグを追加する
 ホストされた Web アプリの html ページでの meta タグの使用例を次に示します。
 
 ```HTML
-<meta name="msapplication-cortanavcd" content="http:// contoso.com/vcd.xml"/>
+<meta name="msapplication-cortanavcd" content="https:// contoso.com/vcd.xml"/>
 ```
 
 Cortana の統合と VCD について詳しくは、「Cortana の操作」と「音声コマンド定義 (VCD) の要素および属性 v1.2」をご覧ください。
@@ -129,22 +127,22 @@ UWP アプリを作成するためのオプションがあります。 アプリ
 <meta name="ms-webauth-uris" content="https://<providerstartpoint>?client_id=<clientid>&response_type=token, https://<appendpoint>"/>
 ```
 
-詳しいガイダンスが必要な場合は、「[Web 認証ブローカーに関する考慮事項 (オンライン プロバイダー向け)](https://msdn.microsoft.com/library/windows/apps/dn448956.aspx)」をご覧ください。
+詳しいガイダンスが必要な場合は、「[Web 認証ブローカーに関する考慮事項 (オンライン プロバイダー向け)](../security/web-authentication-broker.md)」をご覧ください。
 
 ## <a name="app-capability-declarations"></a>アプリ機能の宣言
 
 アプリでユーザー リソース (ピクチャや音楽など) やデバイス (カメラやマイクなど) に対してプログラムによるアクセスが必要な場合は、適切な機能を宣言する必要があります。 アプリ機能の宣言には次の 3 つのカテゴリがあります。 
 
-- ストア アプリのほとんどのシナリオに適用される[一般的な用途の機能](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#General-use_capabilities)。 
-- アプリが周辺機器と内部デバイスにアクセスできるようにする[デバイス機能](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#Device_capabilities)。 
-- ストアに提出して使用可能にするために特別な会社のアカウントが必要になる[特殊な用途の機能](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#Special_and_restricted_capabilities)。 
+- ストア アプリのほとんどのシナリオに適用される[一般的な用途の機能](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#general-use-capabilities)。 
+- アプリが周辺機器と内部デバイスにアクセスできるようにする[デバイス機能](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#device-capabilities)。 
+- ストアに提出して使用可能にするために特別な会社のアカウントが必要になる[特殊な用途の機能](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities)。 
 
-会社のアカウントについて詳しくは、「[アカウントの種類、場所、料金](https://msdn.microsoft.com/library/windows/apps/jj863494.aspx)」をご覧ください。
+会社のアカウントについて詳しくは、「[アカウントの種類、場所、料金](https://docs.microsoft.com/en-us/windows/uwp/publish/account-types-locations-and-fees)」をご覧ください。
 
 > [!NOTE]
 > ユーザーが Windows ストアからアプリを入手するときに、アプリで宣言されているすべての機能が通知されることを知っておくのは重要です。 そのため、アプリに不要な機能は使わないでください。
 
-アクセスを要求するには、アプリの[パッケージ マニフェスト](https://msdn.microsoft.com/library/windows/apps/br211474.aspx)で機能を宣言します。 一般的な機能は Microsoft Visual Studio の[マニフェスト デザイナー](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx#Configure)で宣言できるほか、「[パッケージ マニフェストで機能を指定する方法](https://msdn.microsoft.com/library/windows/apps/br211477.aspx)」で説明しているように、パッケージ マニフェストに手動で追加することもできます。
+アクセスを要求するには、アプリの[パッケージ マニフェスト](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest)で機能を宣言します。 詳しくは、[ユニバーサル Windows プラットフォーム (UWP) アプリのパッケージ化](https://docs.microsoft.com/en-us/windows/uwp/packaging/index)に関する記事をご覧ください。
 
 一部の機能では、アプリが機密性の高いリソースにアクセスできます。 ユーザーの個人データにアクセスしたり、ユーザーに課金したりできるため、これらのリソースは機密性の高いリソースと見なされます。 設定アプリで管理されるプライバシー設定で、機密性の高いリソースへのアクセスを動的に制御することができます。 したがって、機密性の高いリソースが常に利用できるとアプリで認識されないことが重要です。 機密性の高いリソースへのアクセスについて詳しくは、「[個人データにアクセスするアプリのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh768223.aspx)」をご覧ください。
 
@@ -153,9 +151,9 @@ UWP アプリを作成するためのオプションがあります。 アプリ
 Web サイトを UWP アプリに変換する簡単な方法は、**アプリ マニフェスト**と **manifoldjs** を使うことです。 アプリ マニフェストは、アプリに関するメタデータを格納する xml ファイルです。 アプリ マニフェストでは、アプリの名前、リソースへのリンク、表示モード、URL など、アプリを展開し、実行する方法を説明するデータを指定します。 manifoldjs は、このプロセスを簡単にします。Web アプリをサポートしないシステムでも同様です。 詳しくは、「[manifoldjs.com](http://www.manifoldjs.com/)」をご覧ください。 この [Windows 10 Web Apps プレゼンテーション](http://channel9.msdn.com/Events/WebPlatformSummit/2015/Hosted-web-apps-and-web-platform-innovations?wt.mc_id=relatedsession)の一部として、manifoldjs のデモを見ることもできます。
 
 ## <a name="related-topics"></a>関連トピック
-- [Windows ランタイム API: JavaScript コード サンプル](http://rjs.azurewebsites.net/)
+- [Windows ランタイム API: JavaScript コード サンプル](https://microsoft.github.io/WindowsRuntimeAPIs_Javascript_snippets/)
 - [Codepen: Windows ランタイム API の呼び出しに使用するサンドボックス](http://codepen.io/seksenov/pen/wBbVyb/)
-- [Cortana の操作](https://msdn.microsoft.com/library/windows/apps/dn974231.aspx)
+- [Cortana の操作](https://developer.microsoft.com/en-us/cortana)
 - [音声コマンド定義 (VCD) の要素および属性 v1.2](https://msdn.microsoft.com/library/windows/apps/dn954977.aspx)
-- [Web 認証ブローカーに関する考慮事項 (オンライン プロバイダー向け)](https://msdn.microsoft.com/library/windows/apps/dn448956.aspx)
-- [アプリ機能の宣言 (Windows ストア アプリ)](https://msdn.microsoft.com/ibrary/windows/apps/hh464936.aspx)
+- [Web 認証ブローカーに関する考慮事項 (オンライン プロバイダー向け)](https://docs.microsoft.com/en-us/windows/uwp/security/web-authentication-broker)
+- [アプリ機能の宣言 (Windows ストア アプリ)](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations)

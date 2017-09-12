@@ -5,13 +5,15 @@ title: "アプリの申請"
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: "チェック リスト"
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 8d6764051a6f3d9d5c6d851f0ba15353da5f9d5e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: fdef30d07386a1c5ab7dc6bd62b9507ff5852194
+ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="app-submissions"></a>アプリの申請
 
@@ -20,12 +22,12 @@ translationtype: HT
 
 申請は、アプリが完成して公開する準備ができたときに開始できます。または、1 行のコードを記述する前でも情報を入力し始めることができます。 申請はダッシュボードに保存されるため、準備できたらいつでも作業できます。
 
-アプリが公開された後は、ダッシュボードで別の申請を作成して更新バージョンを公開できます。 新しい申請を作成すると、新しいパッケージをアップロードするときでも、価格やカテゴリなどの情報を変更するだけのときでも、必要な変更を加えて公開することができます。 アプリの新しい申請を作成するには、[アプリの概要] ページに表示されている前回の申請の横にある **[更新]** をクリックします。
+アプリが公開された後は、ダッシュボードで別の申請を作成して更新バージョンを公開できます。 新しい申請を作成すると、新しいパッケージをアップロードするときでも、価格やカテゴリなどの情報を変更するだけのときでも、必要な変更を加えて公開することができます。 公開されているアプリに対して新しい申請を作成するには、[アプリの概要] ページに表示されている前回の申請の横にある **[更新]** をクリックします。
 
-> **注**&nbsp;&nbsp;ドキュメントのこのセクションでは、デベロッパー センターでアプリの申請を作成する方法について説明します。 ここで説明する方法以外に、[Windows ストア申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使用してアプリの申請を自動化することもできます。
+> [!NOTE]
+> このセクションでは、デベロッパー センターでアプリの申請を作成する方法について説明します。 ここで説明する方法以外に、[Windows ストア申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使用してアプリの申請を自動化することもできます。
 
 ## <a name="app-submission-checklist"></a>アプリの申請用チェック リスト
-
 
 ここで示しているのは、アプリの申請を作成するときに提供できる詳細情報と、詳細情報のリンクです。
 
@@ -34,23 +36,24 @@ translationtype: HT
 ### <a name="pricing-and-availability-page"></a>[価格と使用可能状況] ページ
 | フィールド名                    | コメント                                       | 詳しい情報                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
-| **基本価格**                | 必須                                    | [基本価格](set-app-pricing-and-availability.md#base-price)              |
-| **無料試用版**                | 既定値: 無料の試用版なし                      | [お試し版とアプリ内購入の追加](https://msdn.microsoft.com/library/windows/apps/jj193599)  |
-| **市場と特別価格** | 既定値: 対象となるすべての市場、カスタム価格なし | [価格と市場の選択の定義](define-pricing-and-market-selection.md)              |
-| **セール価格**              | 省略可能                                    | [アプリとアドオンの販売](put-apps-and-add-ons-on-sale.md)                                       |
-| **配布と表示** | 既定値: このアプリをストアで提供する | [配布と表示](set-app-pricing-and-availability.md#distribution-and-visibility) |
-| **組織のライセンス**    | 既定値: このアプリの組織単位でのボリューム購入を許可する | [組織のライセンス オプション](organizational-licensing.md)                        |
-| **公開日**                | 既定値: できるだけ早く公開      | [公開日](set-app-pricing-and-availability.md#publish-date)          |
+| **市場**                   | 既定値: 対象となるすべての市場  | [[価格設定と市場設定] セクション](define-pricing-and-market-selection.md)         |
+| **表示**                | 既定値: この製品をストアで提供し、検索可能にします | [表示](set-app-pricing-and-availability.md#visibility) |
+| **スケジュール**                  | 既定値: 最短でリリース        | [正確なリリース スケジュールの構成](configure-precise-release-scheduling.md) |
+| **基本価格**                | 必須                                    | [アプリの価格の設定とスケジュール](set-and-schedule-app-pricing.md)              |
+| **無料試用版**                | 既定値: 無料の試用版なし                      | [無料試用版](set-app-pricing-and-availability.md#free-trial)              |
+| **セール価格**              | 省略可能                                    | [アプリとアドオンの販売](put-apps-and-add-ons-on-sale.md)           |
+| **組織のライセンス**    | 既定値: 組織単位でのボリューム購入を許可する | [組織のライセンス オプション](organizational-licensing.md)        |
+| **公開日**                | 既定値: できるだけ早く公開する      | [公開日](set-app-pricing-and-availability.md#publish-date)          |
 
 <span/>
 
-### <a name="app-properties-page"></a>[アプリケーションのプロパティ] ページ
+### <a name="properties-page"></a>[プロパティ] ページ
 
 | フィールド名                    | コメント                                       | 詳しい情報                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **カテゴリとサブカテゴリ**  | 必須                                    | [カテゴリとサブカテゴリの一覧](category-and-subcategory-table.md)       |
 | **システム要件**      | 省略可能                                    | [システム要件](enter-app-properties.md#system-requirements)      |
-| **アプリの宣言**          | 既定値: ユーザーは、代替ドライブやリムーバブル ストレージにこのアプリをインストールできます。Windows はこのアプリのデータを OneDrive に自動的にバックアップできます | [アプリの宣言](app-declarations.md) |
+| **製品の宣言**          | 既定値: ユーザーは、代替ドライブやリムーバブル ストレージにこのアプリをインストールできます。Windows はこのアプリのデータを OneDrive に自動的にバックアップできます | [製品の宣言](app-declarations.md) |
 
 <span/>
 
@@ -80,19 +83,22 @@ translationtype: HT
 | フィールド名                    | コメント                                       | 詳しい情報                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **説明**               | 必須                                    | [人の心をつかむアプリの説明を書く](write-a-great-app-description.md) |
-| **リリース ノート**             | 省略可能                                    | [リリース ノート](create-app-store-listings.md#release-notes)         |
-| **スクリーンショット**               | 必須 (スクリーンショットが 1 つ以上)          | [アプリのスクリーンショットと画像](app-screenshots-and-images.md)       |
-| **アプリのタイル アイコン**             | 省略可能、ただし Windows Phone 8.1 では強く推奨 | [アプリのタイル アイコン](create-app-store-listings.md#app-tile-icon) |
-| **Promotional artwork (プロモーション用のアートワーク)**       | 省略可能                                    | [アプリのスクリーンショットと画像](app-screenshots-and-images.md)       |
-| **アプリの機能**              | 省略可能                                    | [機能](create-app-store-listings.md#app-features)               |
-| **Additional system requirements**      | 省略可能                                    | [追加のシステム要件](create-app-store-listings.md#additional-system-requirements) |
-| **キーワード**                  | 省略可能                                    | [キーワード](create-app-store-listings.md#keywords)                   |
+| **リリース ノート**             | 省略可能                                    | [リリース ノート](create-app-store-listings.md#release-notes)       |
+| **スクリーンショット**               | 必須 (少なくとも 1 つのスクリーンショット)          | [スクリーンショット](app-screenshots-and-images.md#screenshots)          |
+| **ストア ロゴ**               | 省略可能、ただし Windows Phone 8.1 以前では強く推奨 | [ストア ロゴ](app-screenshots-and-images.md#store-logos)             |
+| **プロモーション用の画像**        | 省略可能                                    | [プロモーション用の画像](app-screenshots-and-images.md#promotional-images) |
+| **Xbox 画像**               | 省略可能                                    | [Xbox 画像](app-screenshots-and-images.md#xbox-images)              |
+| **オプションのプロモーション用の画像**       | 省略可能                            | [オプションのプロモーション用の画像](app-screenshots-and-images.md#optional-promotional-images)       |
+| **トレーラー**                  | 省略可能                                    | [トレーラー](app-screenshots-and-images.md#trailers)                | 
+| **アプリの機能**              | 省略可能                                    | [機能](create-app-store-listings.md#app-features)             |
+| **追加のシステム要件**      | 省略可能                                    | [追加のシステム要件](create-app-store-listings.md#additional-system-requirements) 
+| **検索語句**              | 省略可能                                    | [検索語句](create-app-store-listings.md#search-terms)         |
+| **プライバシー ポリシー**            | 一部のアプリでは必須。 「[アプリ開発者契約](https://msdn.microsoft.com/library/windows/apps/hh694058)」と「[Windows ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1)」をご覧ください | [プライバシー ポリシー](create-app-store-listings.md#privacy-policy)        |
 | **著作権と商標の情報** | 省略可能                                 | [著作権と商標の情報](create-app-store-listings.md#copyright-and-trademark-info) |
 | **追加のライセンス条項**  | 省略可能                                    | [追加のライセンス条項](create-app-store-listings.md#additional-license-terms) |
-| **Web サイト**                   | 省略可能                                    | [Web サイト](create-app-store-listings.md#website)                     |
-| **サポートの問い合わせ先情報**      | 省略可能                                    | [サポートの問い合わせ先情報](create-app-store-listings.md)                |
-| **プライバシー ポリシー**            | 一部のアプリでは必須。 「[アプリ開発者契約書](https://msdn.microsoft.com/library/windows/apps/hh694058)」と「[Windows ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1)」をご覧ください | [プライバシー ポリシー](create-app-store-listings.md#privacy-policy) |
-| **Platform-specific Store listings** | 省略可能                               | [プラットフォーム固有のストア登録情報の作成](create-platform-specific-store-listings.md) |
+| **Web サイト**                   | 省略可能                                    | [Web サイト](create-app-store-listings.md#website)                   |
+| **サポートの問い合わせ先情報**      | 省略可能                                    | [サポートの問い合わせ先情報](create-app-store-listings.md)              |
+| **プラットフォーム固有のストア登録情報** | 省略可能                               | [プラットフォーム固有のストア登録情報の作成](create-platform-specific-store-listings.md)  |
 
 <span/>
 

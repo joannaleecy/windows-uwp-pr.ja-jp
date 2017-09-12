@@ -6,14 +6,19 @@ ms.assetid: C328FAA3-F6AE-4970-8372-B413F1290C39
 label: Search
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: b85d14b037fc65f10a6a24ed6c1a04b4be3ff6d5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: 9a12e7490cc1cf7bd1aa65b694a3aeb345ba1128
+ms.sourcegitcommit: 45490bd85e6f8d247a041841d547ecac2ff48250
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/23/2017
 ---
 # <a name="search-and-find-in-page"></a>検索とページ内検索
 
@@ -21,12 +26,7 @@ translationtype: HT
 
 検索は、ユーザーがアプリでコンテンツを見つけることができる 2 つの方法のうちの 1 つです。 この記事のガイダンスでは、検索エクスペリエンスの構成要素、検索スコープ、実装、コンテキストでの検索の例について説明します。
 
-<div class="important-apis" >
-<b>重要な API</b><br/>
-<ul>
-<li>[**AutoSuggestBox クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn633874)</li>
-</ul>
-</div>
+> **重要な API**: [AutoSuggestBox クラス](https://msdn.microsoft.com/library/windows/apps/dn633874)
 
 ## <a name="elements-of-the-search-experience"></a>検索エクスペリエンスの構成要素
 
@@ -209,23 +209,12 @@ Windows ツール バーの操作としての検索:
 
 コマンドをコマンド バーに追加する方法について詳しくは、「[コマンド バー](app-bars.md)」をご覧ください。
 
-<div class="microsoft-internal-note">
-## グローバリゼーションとローカライズのチェックリスト
-
-<table>
-<tr>
-<th>垂直方向の間隔</th><td>非ラテン文字を使って垂直方法の間隔を調整し、非ラテン文字が数字を含めて適切に表示されるようにします。</td>
-</tr>
-<tr>
-<th>双方向対応に関する考慮事項</th><td>拡大鏡アイコンは、双方向で左右反転した形で表示されないようにします。</td>
-</tr>
-</table>
-</div>
+ 
 
 
 ## <a name="related-articles"></a>関連記事
 
-* [**自動提案ボックス**](auto-suggest-box.md)
+* [自動提案ボックス](auto-suggest-box.md)
 
 
  

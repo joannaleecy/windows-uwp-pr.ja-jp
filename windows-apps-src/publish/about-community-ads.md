@@ -4,18 +4,20 @@ Description: "自分のアプリと他の開発者が公開したアプリを相
 title: "コミュニティ広告について"
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 07/05/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 708f46dc0be53961d8fd26f41a933e5756720a98
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: windows 10, uwp
+ms.openlocfilehash: c16f474fe8242e2994350f5261c26c7148aea5e4
+ms.sourcegitcommit: 10f8dcf69d37cdb61562fc9f4d268ccb499c368f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/07/2017
 ---
 # <a name="about-community-ads"></a>コミュニティ広告について
 
-アプリで **AdMediatorControl** または **AdControl** を使用してバナー広告を表示する場合は、Windows ストア内の自分のアプリと他の開発者のアプリを無料で相互に販売促進 (クロス プロモーション) することができます。 この機能を*コミュニティ広告*と呼びます。  
+アプリで[バナー広告やバナースポット広告](../monetize/display-ads-in-your-app.md)を表示すると、Windows ストア内の自分のアプリと他の開発者のアプリを無料で相互に販売促進 (クロス プロモーション) できます。 この機能を*コミュニティ広告*と呼びます。  
 
 このプログラムの内容を次に示します。
 
@@ -24,20 +26,19 @@ translationtype: HT
   * コミュニティ広告を提供するアプリが利用可能な国や地域ごとに、現在の市場レートの eCPM (1000 回の広告表示あたりの有効な料金) 値に、その国や地域でアプリが作成するコミュニティ広告に対するリクエスト数が掛けられます。 この値は、対象の国や地域でアプリが獲得したクレジットです。
   * 特定の期間に獲得したクレジットの合計は、それぞれの国や地域でコミュニティ広告を提供する各アプリによって獲得したすべてのクレジットの合計と同じになります。
 * クレジットは、すべてのアクティブなコミュニティ広告キャンペーンで均等に分割され、コミュニティ広告キャンペーンの対象となる国の現在の市場レートの eCPM 値に基づいてアプリの広告インプレッション数に変換されます。
-* アプリ内のコミュニティ広告のパフォーマンスを追跡するには、[アカウント レベルの広告パフォーマンス レポート](advertising-performance-report.md#account-level-advertising-performance-report)をご覧ください。
+* アプリ内のコミュニティ広告のパフォーマンスを追跡するには、「[[広告パフォーマンス] レポート](advertising-performance-report.md)」をご覧ください。
 
-## <a name="how-to-opt-in-to-community-ads"></a>コミュニティ広告にオプトインする方法
+### <a name="opt-in-to-community-ads"></a>コミュニティ広告へのオプトイン
 
-コミュニティ広告にオプトインするには、次の手順を実行します。
+アプリの 1 つにコミュニティ広告キャンペーンを作成するには、Windows デベロッパー センター ダッシュボードでアプリの **[収益化]** &gt; **[広告で収入を増やす]** ページからオプトインする必要があります。
 
-1. Windows デベロッパー センター ダッシュボードで、 **[収益化]** &gt; **[広告で収入を増やす]** ページにアクセスします。
-2. **[Community ads]** (コミュニティ広告) セクションの **[Show community ads in my app]** (アプリにコミュニティ広告を表示する) チェック ボックスをオンにします。
-   > **注**  このチェック ボックスをオンまたはオフにした後は、アプリを再公開して変更を有効にする必要はありません。
+オプトインするには、次のいずれかを実行します。
+  * Windows 10 をターゲットとする UWP アプリでは、ページの **[広告仲介]** セクションに移動し、**[他の広告ネットワーク]** の一覧の **[Microsoft コミュニティ広告]** ボックスをオンにします。
+  * Windows 8.x または Windows Phone 8.x をターゲットとするアプリでは、**[コミュニティ広告]** セクションに移動し、**[アプリにコミュニティ広告を表示する]** ボックスをオンにします。
 
-3. アプリの[広告キャンペーンを作成](create-an-ad-campaign-for-your-app.md)します。 キャンペーンの種類として **[Free community ads]** (無料のコミュニティ広告) を選択します。
+この設定をした後にアプリを再公開する必要はありません。 オプトインすると、[広告キャンペーンを作成](create-an-ad-campaign-for-your-app.md)するときに、キャンペーンの種類に **[コミュニティ広告 (無料)]** を選べるようになります。
 
-
-## <a name="related-topics"></a>関連トピック
+### <a name="related-topics"></a>関連トピック
 
 * [広告による収益獲得](monetize-with-ads.md)
-* [アプリ向けの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)
+* [アプリの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)
