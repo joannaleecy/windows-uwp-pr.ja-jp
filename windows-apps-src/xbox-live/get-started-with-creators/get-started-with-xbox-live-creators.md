@@ -1,42 +1,60 @@
 ---
-title: "Xbox Live クリエーターズ プログラムの概要"
+title: Get started with Xbox Live Creators Program
 author: KevinAsgari
-description: "Xbox Live クリエーターズ プログラムの利用を始める際に役立つリンクを紹介します。"
+description: Provides links to help you get started with the Xbox Live Creators Program.
 ms.assetid: 2a744405-7ee4-42b4-8f36-9916e8c3a530
 ms.author: kevinasg
 ms.date: 04-04-2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One"
-ms.openlocfilehash: d53e7baf6ebcf47c8689e32a9b391d47899edcb4
-ms.sourcegitcommit: 63c815f8c6665872987b5410cabf324f2b7e3c7c
+keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+ms.openlocfilehash: 84e23fa904412fd1cc9900943b67b8df849b57be
+ms.sourcegitcommit: 5bd030abc783aa78575190fae93056ad1f560bb7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2017
+ms.lasthandoff: 09/08/2017
 ---
-# <a name="get-started-with-the-xbox-live-creators-program"></a><span data-ttu-id="9bf2e-104">Xbox Live クリエーターズ プログラムの概要</span><span class="sxs-lookup"><span data-stu-id="9bf2e-104">Get started with the Xbox Live Creators Program</span></span>
+# <a name="get-started-with-the-xbox-live-creators-program"></a><span data-ttu-id="f7a0e-104">Get started with the Xbox Live Creators Program</span><span class="sxs-lookup"><span data-stu-id="f7a0e-104">Get started with the Xbox Live Creators Program</span></span>
+ 
+<span data-ttu-id="f7a0e-105">Xbox Live クリエーターズ プログラムを利用すると、概念の承認を経ることなく、簡便な認定プロセスで Xbox One や Windows 10 にゲームをすばやく直接公開できます。</span><span class="sxs-lookup"><span data-stu-id="f7a0e-105">The Xbox Live Creators Program allows you to quickly and directly publish your games to Xbox One and Windows 10, with a simplified certification process and no concept approval required.</span></span> <span data-ttu-id="f7a0e-106">ゲームが Xbox Live を統合していて、[標準のストア ポリシー](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx)に準拠していれば、公開する準備は完了です。</span><span class="sxs-lookup"><span data-stu-id="f7a0e-106">If your game integrates Xbox Live and follows our [standard Store policies](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx), you are ready to publish.</span></span> <span data-ttu-id="f7a0e-107">この記事では、ゲームに Xbox Live を統合するために必要な手順の概要を示します。</span><span class="sxs-lookup"><span data-stu-id="f7a0e-107">This article will outline the steps needed to get your game up and running with Xbox Live integration.</span></span> 
 
-<span data-ttu-id="9bf2e-105">ここでは、Xbox Live クリエーターズ プログラムの概要について説明します。</span><span class="sxs-lookup"><span data-stu-id="9bf2e-105">This section covers getting started with Xbox Live Creators Program.</span></span>
+<span data-ttu-id="f7a0e-108">Xbox Live クリエーターズ プログラムのゲームは、ユニバーサル Windows プラットフォーム (UWP) アプリケーションでなければなりません。</span><span class="sxs-lookup"><span data-stu-id="f7a0e-108">Xbox Live Creators Program games must be a Universal Windows Platform (UWP) application.</span></span> <span data-ttu-id="f7a0e-109">Xbox One については、「[Xbox One の UWP](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/index)」と、特に「[Xbox One 上の UWP アプリとゲームのシステム リソース](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/system-resource-allocation)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="f7a0e-109">For Xbox One, see [UWP on Xbox One](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/index) and specifically [System resources for UWP apps and games on Xbox One](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/system-resource-allocation).</span></span> <span data-ttu-id="f7a0e-110">Xbox Live クリエーターズ プログラムを通じて公開したゲームは、実績サービスやオンライン マルチプレイヤー サービスにアクセスできません。</span><span class="sxs-lookup"><span data-stu-id="f7a0e-110">Games published through the Xbox Live Creators Program do not have access to the achievements or online multiplayer services.</span></span> <span data-ttu-id="f7a0e-111">サポートされるサービスの一覧については、「開発者プログラムの概要」の「[機能表](https://docs.microsoft.com/en-us/windows/uwp/xbox-live/developer-program-overview#feature-table)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="f7a0e-111">For a full list of supported services, see the [Developer program overview feature table](https://docs.microsoft.com/en-us/windows/uwp/xbox-live/developer-program-overview#feature-table).</span></span>
 
-## <a name="why-should-you-use-the-xbox-live-creators-program"></a><span data-ttu-id="9bf2e-106">Xbox Live クリエーターズ プログラムを利用する理由</span><span class="sxs-lookup"><span data-stu-id="9bf2e-106">Why should you use the Xbox Live Creators Program?</span></span>
+## <a name="1-ensure-you-have-a-title-created-on-dev-center"></a><span data-ttu-id="f7a0e-112">1. デベロッパー センターでタイトルが作成されていることを確認する</span><span class="sxs-lookup"><span data-stu-id="f7a0e-112">1. Ensure you have a title created on Dev Center</span></span>
+<span data-ttu-id="f7a0e-113">Every Xbox Live title must be defined on Dev Center before you will be able to sign-in and make Xbox Live Service calls.</span><span class="sxs-lookup"><span data-stu-id="f7a0e-113">Every Xbox Live title must be defined on Dev Center before you will be able to sign-in and make Xbox Live Service calls.</span></span>  <span data-ttu-id="f7a0e-114">これを行う方法は、「[新しいクリエーターズ タイトルの作成](create-and-test-a-new-creators-title.md)」で説明します。</span><span class="sxs-lookup"><span data-stu-id="f7a0e-114">[Creating a new Creators title](create-and-test-a-new-creators-title.md) will show you how to do this.</span></span>
 
-<span data-ttu-id="9bf2e-107">Xbox Live クリエーターズ プログラムには、ゲームの販売を促進し、ゲーマーの関心を引き付けておくために設計された一連の機能が用意されています。</span><span class="sxs-lookup"><span data-stu-id="9bf2e-107">Xbox Live Creators Program offers an array of features designed to help promote your game and keep gamers engaged:</span></span>
+## <a name="2-follow-the-appropriate-guide-to-setup-your-ide-or-game-engine"></a><span data-ttu-id="f7a0e-115">2. 適切なガイドに従って IDE やゲーム エンジンをセットアップする</span><span class="sxs-lookup"><span data-stu-id="f7a0e-115">2. Follow the appropriate guide to setup your IDE or game engine</span></span>
+<span data-ttu-id="f7a0e-116">プラットフォームやエンジンに応じた適切な "ファースト ステップ ガイド" に従い、それに沿って学習することで、Xbox Live の基本を習得することができます。</span><span class="sxs-lookup"><span data-stu-id="f7a0e-116">You can follow the appropriate "getting started guide" for your platform and engine and learn the basics of Xbox Live as you go along:</span></span>
 
-- <span data-ttu-id="9bf2e-108">Xbox Live ソーシャル プラットフォームを使用すると、ゲーマーはフレンドと接続してゲームについて会話することができます。</span><span class="sxs-lookup"><span data-stu-id="9bf2e-108">Xbox Live social platform lets gamers connect with friends and talk about your game.</span></span>
-- <span data-ttu-id="9bf2e-109">Xbox Live のランキングを利用すると、ゲーマーがフレンドに勝ってランクを上げることが可能になり、ゲームに対するユーザーの関心を高めることができます。</span><span class="sxs-lookup"><span data-stu-id="9bf2e-109">Xbox Live leaderboards helps drive engagement of your game by letting gamers compete to beat their friends and move up the ranks.</span></span>
-- <span data-ttu-id="9bf2e-110">Xbox Live の接続ストレージでは、デバイス間でゲームのセーブ データを無料でローミングでき、ゲーマーは Xbox One と Windows PC の間で簡単にゲームの進行を継続することができます。</span><span class="sxs-lookup"><span data-stu-id="9bf2e-110">Xbox Live connected storage offers free save game roaming between devices so gamers can easily continue game progress between Xbox One and Windows PC.</span></span>
+* <span data-ttu-id="f7a0e-117">[Develop a Creators title with Visual Studio](develop-creators-title-with-visual-studio.md) will show you how to link your Visual Studio project with your Xbox Live configuration on Dev Center.</span><span class="sxs-lookup"><span data-stu-id="f7a0e-117">[Develop a Creators title with Visual Studio](develop-creators-title-with-visual-studio.md) will show you how to link your Visual Studio project with your Xbox Live configuration on Dev Center.</span></span>
+* <span data-ttu-id="f7a0e-118">「[Unity を使用してクリエーターズ タイトルを開発する](develop-creators-title-with-unity.md)」では、Xbox Live 対応の新しい Unity ゲームを作成する方法、単一ユーザーとマルチユーザーのサインインを処理する方法、ランキングや統計などの機能を追加する方法、ネイティブの Visual Studio プロジェクトを生成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="f7a0e-118">[Develop a Creators title with Unity](develop-creators-title-with-unity.md) will show you how to create a new Xbox Live enabled Unity game, handle single user and multi-user sign in, add features such as leaderboards and stats, and generate a native Visual Studio project.</span></span>
 
-## <a name="in-this-section"></a><span data-ttu-id="9bf2e-111">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="9bf2e-111">In this section</span></span>
+## <a name="3-xbox-live-concepts--testing"></a><span data-ttu-id="f7a0e-119">3. Xbox Live の概念とテスト</span><span class="sxs-lookup"><span data-stu-id="f7a0e-119">3. Xbox Live concepts & testing</span></span>
+<span data-ttu-id="f7a0e-120">タイトルを作成したら、タイトルの開発エクスペリエンスに影響を与える Xbox Live の概念について理解する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f7a0e-120">Once you have a title created, you should learn about the Xbox Live concepts that will affect your experience developing titles.</span></span> <span data-ttu-id="f7a0e-121">サポートするすべてのプラットフォームでゲームをテストして、期待どおりに動作することを確認することも重要です。</span><span class="sxs-lookup"><span data-stu-id="f7a0e-121">It's also important to test your game on all of the platforms that it will support to ensure that it behaves as expected.</span></span>
 
-[<span data-ttu-id="9bf2e-112">Xbox Live を統合するためのステップ バイ ステップ ガイド</span><span class="sxs-lookup"><span data-stu-id="9bf2e-112">Step by step guide to integrate Xbox Live</span></span>](creators-step-by-step-guide.md)
+- [<span data-ttu-id="f7a0e-122">クリエーターズ プログラムの Xbox Live サービス構成</span><span class="sxs-lookup"><span data-stu-id="f7a0e-122">Xbox Live service configuration for the Creators Program</span></span>](xbox-live-service-configuration-creators.md)
+- [<span data-ttu-id="f7a0e-123">Xbox Live のテスト環境</span><span class="sxs-lookup"><span data-stu-id="f7a0e-123">Xbox Live test environment</span></span>](../xbox-live-sandboxes.md)
+- [<span data-ttu-id="f7a0e-124">Xbox Live アカウントを承認する</span><span class="sxs-lookup"><span data-stu-id="f7a0e-124">Authorize Xbox Live accounts</span></span>](authorize-xbox-live-accounts.md)
 
-[<span data-ttu-id="9bf2e-113">新しいタイトルを作成してテスト環境に公開する</span><span class="sxs-lookup"><span data-stu-id="9bf2e-113">Create a new title and publish to the test environment</span></span>](create-and-test-a-new-creators-title.md)
+## <a name="4-enable-xbox-live-sign-in"></a><span data-ttu-id="f7a0e-125">4. Xbox Live サインインを有効にする</span><span class="sxs-lookup"><span data-stu-id="f7a0e-125">4. Enable Xbox Live sign-in</span></span>
+<span data-ttu-id="f7a0e-126">Xbox Live クリエーターズ プログラムのゲームはすべて、Xbox Live サインインを統合し、ユーザー ID (ゲーマータグ、ゲーマー アイコンなど) を表示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f7a0e-126">All Xbox Live Creators Program games must integrate Xbox Live sign-in and display the user identity (Gamertag, Gamerpic, etc.).</span></span> <span data-ttu-id="f7a0e-127">ユーザーを自動的にサインインさせるか、ユーザーがボタンを押してからサインインを開始するかを選択できます。</span><span class="sxs-lookup"><span data-stu-id="f7a0e-127">You can choose to automatically sign in the user or have them push a button to initiate it.</span></span> <span data-ttu-id="f7a0e-128">いったんサインインしたら、正しいプロフィールを使っていることをプレイヤーが確認できるように、ゲーマータグを表示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f7a0e-128">The Gamertag must be displayed once signed in so that the player can validate that they are using the right profile.</span></span>
 
-[<span data-ttu-id="9bf2e-114">Visual Studio を使用してクリエーターズ タイトルを開発する</span><span class="sxs-lookup"><span data-stu-id="9bf2e-114">Devlop a Creators title with Visual Studio</span></span>](develop-creators-title-with-visual-studio.md)
+- [<span data-ttu-id="f7a0e-129">Xbox Live ソーシャル プラットフォーム - プロフィール、フレンド、プレゼンス</span><span class="sxs-lookup"><span data-stu-id="f7a0e-129">Xbox Live Social Platform - Profile, Friends, Presence</span></span>](../social-platform/social-platform.md)
 
-[<span data-ttu-id="9bf2e-115">Unity を使用してクリエーターズ タイトルを開発する</span><span class="sxs-lookup"><span data-stu-id="9bf2e-115">Develop a Creators title with Unity</span></span>](develop-creators-title-with-unity.md)
+## <a name="5-add-optional-xbox-live-features"></a><span data-ttu-id="f7a0e-130">5. オプションの Xbox Live の機能を追加する</span><span class="sxs-lookup"><span data-stu-id="f7a0e-130">5. Add optional Xbox Live features</span></span>
 
-[<span data-ttu-id="9bf2e-116">Xbox Live サービス構成</span><span class="sxs-lookup"><span data-stu-id="9bf2e-116">Xbox Live service configuration</span></span>](xbox-live-service-configuration-creators.md)
+<span data-ttu-id="f7a0e-131">Xbox Live クリエーターズ プログラムには、ゲームの販売を促進し、ゲーマーの関心を引き付けておくために設計された一連の機能が用意されています。</span><span class="sxs-lookup"><span data-stu-id="f7a0e-131">Xbox Live Creators Program offers an array of features designed to help promote your game and keep gamers engaged:</span></span>
 
-[<span data-ttu-id="9bf2e-117">環境内でテスト用の Xbox Live アカウントを承認する</span><span class="sxs-lookup"><span data-stu-id="9bf2e-117">Authorize Xbox Live Accounts for Testing in your environment</span></span>](authorize-xbox-live-accounts.md)
+- <span data-ttu-id="f7a0e-132">[Xbox Live データ プラットフォーム - 統計、ランキング](../data-platform/data-platform.md)を利用すると、ゲーマーがフレンドに勝ってランクを上げることが可能になり、ゲームに対するユーザーの関心を高めることができます。</span><span class="sxs-lookup"><span data-stu-id="f7a0e-132">[Xbox Live Data Platform - Stats, Leaderboards](../data-platform/data-platform.md) help drive engagement of your game by letting gamers compete to beat their friends and move up the ranks.</span></span>
+- <span data-ttu-id="f7a0e-133">[Xbox Live ストレージ プラットフォーム - 接続ストレージ、タイトル ストレージ](../storage-platform/storage-platform.md)では、デバイス間でゲームのセーブ データを無料でローミングでき、ゲーマーは Xbox One と Windows PC の間で簡単にゲームの進行を継続できます。</span><span class="sxs-lookup"><span data-stu-id="f7a0e-133">[Xbox Live Storage Platform - Connected Storage, Title Storage](../storage-platform/storage-platform.md) offers free save game roaming between devices so gamers can easily continue game progress between Xbox One and Windows PC.</span></span>
+- <span data-ttu-id="f7a0e-134">[Xbox Live ソーシャル プラットフォーム - プロフィール、フレンド、プレゼンス](../social-platform/social-platform.md)を使用すると、ゲーマーはフレンドと接続してゲームについて会話することができます。</span><span class="sxs-lookup"><span data-stu-id="f7a0e-134">[Xbox Live Social Platform - Profile, Friends, Presence](../social-platform/social-platform.md) lets gamers connect with friends and talk about your game.</span></span>
+
+<span data-ttu-id="f7a0e-135">ただし、Xbox Live クリエーターズ プログラムでは、オンライン マルチプレイヤー、実績、ゲーマースコアがサポートされない点に注意が必要です。</span><span class="sxs-lookup"><span data-stu-id="f7a0e-135">It is important to note that the Xbox Live Creators Program does not support online multiplayer, achievements, or gamerscore.</span></span>
+
+## <a name="6-release-your-game"></a><span data-ttu-id="f7a0e-136">6. ゲームをリリースする</span><span class="sxs-lookup"><span data-stu-id="f7a0e-136">6. Release your game</span></span>
+
+<span data-ttu-id="f7a0e-137">Xbox Live クリエーターズ プログラムを使っている場合、このプロセスは他の UWP アプリケーションをリリースするプロセスとまったく同じです。</span><span class="sxs-lookup"><span data-stu-id="f7a0e-137">If you are using the Xbox Live Creators Program, then the process is no different than releasing any other UWP application:</span></span>
+
+- <span data-ttu-id="f7a0e-138">[Windows ストア ポリシー](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx) ([ゲームと Xbox のポリシー](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_13)を含む)</span><span class="sxs-lookup"><span data-stu-id="f7a0e-138">[Windows Store Policies](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx) including [Gaming and Xbox Policies](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_13)</span></span>
+- [<span data-ttu-id="f7a0e-139">Windows アプリを公開する</span><span class="sxs-lookup"><span data-stu-id="f7a0e-139">Publish Windows apps</span></span>](https://developer.microsoft.com/en-us/store/publish-apps)
