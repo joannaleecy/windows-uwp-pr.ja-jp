@@ -1,136 +1,137 @@
 ---
-title: "Xbox Live マルチプレイヤーの概念"
+title: Xbox Live multiplayer concepts
 author: KevinAsgari
-description: "Xbox Live マルチプレイヤー システムで使用される一般的なマルチプレイヤーの概念について説明します。"
+description: Learn about common multiplayer concepts used by Xbox Live multiplayer systems.
 ms.assetid: 1e765f19-1530-4464-b5cf-b00259807fd3
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 08-25-2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー"
-ms.openlocfilehash: 6c79140100cdfb174f5467f1f82fb116eb2dc221
-ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer
+ms.openlocfilehash: 3ed77e9fb9e4120fd73622541cc2d48d9f6b5af5
+ms.sourcegitcommit: b185729f0bb73569740d03be67dff9f59a4c4968
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2017
+ms.lasthandoff: 09/01/2017
 ---
-# <a name="xbox-live-multiplayer-concepts"></a>Xbox Live マルチプレイヤーの概念
+# <a name="xbox-live-multiplayer-concepts"></a>Xbox Live multiplayer concepts
 
-このトピックでは、Xbox Live のドキュメントでよく使用される、マルチプレイヤー関連の重要な用語および概念を説明します。 これらの概念をよく把握しておくと、Xbox Live マルチプレイヤーのしくみを理解しやすくなります。
+This topic discusses a number of important multiplayer terms and concepts that are used frequently in the Xbox Live documentation. Having a good grasp of these concepts will help you understand how Xbox Live multiplayer works.
 
-## <a name="multiplayer-session"></a>マルチプレイヤー セッション
-マルチプレイヤー セッションは、Xbox Live ユーザーのグループと、それらのユーザーに関連付けられたプロパティを表します。 セッションはタイトルによって作成および管理され、Xbox Live クラウドに置かれたセキュアな JSON ドキュメントとして表されます。 セッション ドキュメント自体には、セッションに接続している Xbox Live ユーザーについての情報、利用可能なスポットの数、(セッションおよび各セッション メンバーの) カスタム メタデータ、および、ゲーム セッションに関連するその他の情報が含まれます。
+## <a name="multiplayer-session"></a>Multiplayer session
+A multiplayer session represents a group of Xbox Live users and properties associated with them. The session is created and maintained by titles, and is represented as a secure JSON document that resides in the Xbox Live cloud. The session document itself contains information about the Xbox Live users that are connected to the session, how many spots are available, custom metadata (for the session as well as for each session member), and other information related to the game session.
 
-ゲーム デベロッパーによって定義され、タイトル インスタンスの Xbox Live サービス構成で構成されるセッション テンプレートが、個々のセッションのベースになります。
+Each session is based on a session template, which are defined by the game developer, and are configured in the Xbox Live service configuration for a title instance.
+
+タイトルではセッションを作成して更新できますが、セッションを直接削除することはできません。  代わりに、セッションからすべてのプレーヤーが削除されると、指定されたタイムアウトの経過後に、自動的に Xbox Live マルチプレイヤー サービスによってセッションが削除されます。 セッションについて詳しくは、「[MPSD セッションの詳細](multiplayer-appendix/mpsd-session-details.md)」をご覧ください。
 
 タイトルでは複数のセッションを使用することもできますが、典型的なマルチプレイヤーの実装では 2 つのセッションを使用します。
-* ロビー セッション - ゲームの複数のラウンド、レベル、マップなどにまたがって行動を共にしたいフレンドのグループを表すセッションです。
-* ゲーム セッション - ゲームの特定のセッション インスタンス (ラウンド、マッチ、レベルなど) でプレイしているユーザーを表すセッションです。このセッションには、(通常はマッチメイキング サービスを通じて) セッション インスタンスに共に参加することになった、複数のロビー セッションからのメンバーを含めることができます。
+* Lobby session - this is a session that represents a group of friends that want to remain together across multiple rounds, levels, maps, etc., of the game.
+* Game session - this is a session that represents the people that are playing in a specific session instance of a game, such as a round, match, level, etc. This session can include members from multiple lobby sessions that have joined the session instance together, typically through a matchmaking service.
 
-シナリオの例を次に示します。  
-Sally はフレンドの John および Lisa とマルチプレイヤーをプレイしたがっています。 Sally はゲームを起動し、John と Lisa を自分のゲームに招待します。 John と Lisa が参加すると、Sally を含めた 3 人がロビー セッションにいることになります。 このセッションで、3 人は他のプレイヤーとオンライン マッチでプレイすることにします。 ゲームはゲーム セッションを作成し、Xbox Live マッチメイキング サービスを使用して、プレイヤーの残りのスロットを他の Xbox Live プレイヤーで埋めます。
+Here is an example scenario:  
+Sally wants to play some multiplayer with her friends, John and Lisa. Sally starts up a game, and invites John and Lisa into her game. After they join, Sally, John, and Lisa are all in a lobby session. In this session, they decide to play in an online match with other people. The game creates a game session, and uses the Xbox Live matchmaking service to fill the remaining player slots with other Xbox Live players.
 
-Bob と Joe が最初の 3 人とマッチングされ、この 5 人が一緒にラウンドをプレイするとします。 ラウンド終了後、Sally、John、Lisa はゲーム セッションから退出しますが、ロビー セッションにはまだ一緒に残っており (Bob と Joe はいません)、新しいラウンドをプレイするか、それとも別のゲーム モードに切り替えるかを選択できます。
+Let's say that Bob and Joe are matched up with them, and the five of them play the round together. After the round ends, Sally, John, and Lisa leave the game session, but are still together in the lobby session (without Bob and Joe), and can choose to play another round, or switch to different game mode.
 
-### <a name="session-member"></a>セッション メンバー
-セッション メンバーは、セッションに参加している Xbox Live ユーザーです。
+### <a name="session-member"></a>Session member
+A session member is an Xbox Live user that is part of a session.
 
-### <a name="arbiter"></a>アービター
-アービターは、ゲームのセッションの状態を管理する本体またはデバイスです。 たとえば、アービターは、プレイヤーをさらに見つけるために、ゲーム セッションをマッチメイキングに公開します。
+### <a name="arbiter"></a>Arbiter
+An arbiter is a console or device that manages the state of the session for a game. For example, the arbiter would be responsible for advertising a game session to matchmaking in order to find more players.
 
-アービターは、タイトルが設定します。 ゲームのホストと同じでもかまいませんが、同じである必要はありません。
+The arbiter is set by the title. It may be the same as the host of the game, but does not have to be the same.
 
-### <a name="session-host"></a>セッション ホスト
-セッション ホストは、ホスト ベースのピアツーピア ネットワーク アーキテクチャ上に構築されるタイトルのために、ゲーム プレイ シミュレーションを実行する本体またはデバイスです。 この本体またはデバイスは通常、アービターと同じですが、同じである必要はありません。
+### <a name="session-host"></a>Session host
+The session host is the console or device that runs the game play simulation for titles built on a host-based peer-to-peer network architecture. This console or device is typically the same as the arbiter, but it does not have to be the same.
 
-## <a name="multiplayer-service-session-directory"></a>マルチプレイヤー サービス セッション ディレクトリ
-Xbox Live マルチプレイヤー サービスは Xbox Live クラウドで動作し、ゲームのマルチプレイヤー システム メタデータを複数のクライアントにまたがって一元管理します。 このメタデータを追跡するシステムは、マルチプレイヤー セッション ディレクトリ (MPSD) と呼ばれます。 MPSD はアクティブなゲーム セッションのライブラリと考えることができます。 ゲームでは、タイトルに関連するアクティブ セッションを追加、検索、変更、または削除できます。 MPSD はさらに、セッション状態を管理し、必要なときはセッションを更新します。
+## <a name="multiplayer-service-session-directory"></a>Multiplayer service session directory
+The Xbox Live Multiplayer service operates in the Xbox Live cloud, and centralizes a game's multiplayer system metadata across multiple clients. The system that tracks this metadata is known as the Multiplayer Session Directory, or MPSD for short. You can think of MPSD as a library of active game sessions. Your game can add, search, modify, or remove active sessions relating to your title. The MPSD also manages session state and updates sessions when necessary.
 
-MPSD により、タイトルは、ユーザーのグループを接続するために必要な基本情報を共有できます。 セッション機能が同期され、一貫性が保たれます。 招待の送信/受け入れおよびゲーマー カード経由での参加において、シェルおよび Xbox One 本体のオペレーティング システムと調整します。
+MPSD allows titles to share the basic information needed to connect a group of users. It ensures that session functionality is synchronized and consistent. It coordinates with the shell and Xbox One console operating system in sending/accepting invites and in being joined via the gamer card.
 
-### <a name="session-handles"></a>セッション ハンドル
+### <a name="session-handles"></a>Session handles
 
-セッションは、データの組み合わせによって MPSD で一意に識別されます。
+A session is uniquely identified in MPSD by a combination of pieces of data:
 
-* タイトルのサービス構成 ID (SCID)
-* セッションの作成に使われたセッション テンプレートの名前
-* セッションの名前
+* The service configuration ID (SCID) of the title
+* The name of the session template that was used to create the session
+* The name of the session
 
-セッション ハンドルは、MPSD に存在する特定のセッションへの参照を含む JSON オブジェクトです。 セッション ハンドルにより、Xbox Live メンバーは既存のセッションに参加できます。
+A session handle is a JSON object that contains a reference to a specific session that exists in MPSD. Session handles enable Xbox Live members to join existing sessions.
 
-各セッション ハンドルにはハンドルを一意に識別する GUID が含まれ、タイトルは単一の GUID を使ってセッションを参照できます。
+Each session handle includes a guid that uniquely identifies the handle, which allows titles to reference the session by using a single guid.
 
-セッション ハンドルには複数の種類があります。
+There are several types of session handles:
 
-* 招待ハンドル
-* 検索ハンドル
-* アクティビティ ハンドル
-* 相関ハンドル
-* 転送ハンドル
+* invite handle
+* search handle
+* activity handle
+* correlation handle
+* transfer handle
 
-#### <a name="invite-handle"></a>招待ハンドル
-招待ハンドルは、ゲームへの参加を招待するときにメンバーに渡されます。 招待ハンドルには、招待されたメンバーのゲームが正しいセッションに参加できるようにする情報が含まれています。
+#### <a name="invite-handle"></a>Invite handle
+An invite handle is passed to a member when they are invited to join a game. The invite handle contains information that lets the invited member's game join the correct session.
 
-#### <a name="search-handle"></a>検索ハンドル
-検索ハンドルは、セッションに関する追加のメタデータを含み、タイトルが選択した条件を満たすセッションを検索できるようにします。
+#### <a name="search-handle"></a>Search handle
+A search handle includes additional metadata about the session, and allows titles to search for sessions that meet the selected criteria.
 
-#### <a name="activity-handle"></a>アクティビティ ハンドル
-アクティビティ ハンドルを使用することで、メンバーは、ソーシャル ネットワーク上の他のメンバーが何をプレイしているかを知り、フレンドのゲームに参加できます。
+#### <a name="activity-handle"></a>Activity handle
+An activity handle lets members see what other members on their social network are playing, and can be used join a friend's game.
 
-#### <a name="correlation-handle"></a>相関ハンドル
-相関ハンドルは実質的にセッションのエイリアスとして機能し、ゲームが相関ハンドルの ID を使用するだけでセッションを参照できるようにします。
+#### <a name="correlation-handle"></a>Correlation handle
+A correlation handle effectively works as an alias for a session, allowing a game to refer to a session by only using the id of the correlation handle.
 
-### <a name="transfer-handle"></a>転送ハンドル
-転送ハンドルは、セッション間でプレイヤーを移動するために使用されます。
+### <a name="transfer-handle"></a>Transfer handle
+A transfer handle is used to move players from one session to another session.
 
 
-### <a name="invites"></a>招待
-Xbox Live は、マルチプレイヤー サービスによってサポートされる招待システムを提供します。 このシステムにより、プレイヤーは他のプレイヤーを自分のゲーム セッションに招待できます。 招待されたプレイヤーはゲームへの招待を受け取り、タイトルはこの情報を使用して既存のセッションとマルチプレイヤー エクスペリエンスを結合します。 タイトルは招待のフローと、招待を送信できるタイミングを制御します。
+### <a name="invites"></a>Invites
+Xbox Live provides an invite system that is supported by the Multiplayer service. It enables players to invite other players to their game sessions. Invited players receive a game invite and a title uses this information to join an existing session and multiplayer experience. Titles control invite flow and when invites can be sent.
 
-招待はユーザーによってシェル経由で、またはタイトルから直接送信できます。 招待の通知テキストをタイトルによって動的に設定し、招待されるプレイヤーに詳しい情報を提供することができます。 招待には、タイトルに関する追加データ (プレイヤーからは見えず、追加情報の伝達に使用できる) を含めることもできます。
+Invites can be sent through the shell by the user or directly from the title. The notification text for an invite can be dynamically set by a title to provide more information to the invited player. Invites can also include additional data for the title that is not visible to the player and can be used to carry additional information.
 
-### <a name="join-in-progress"></a>途中参加
-招待に加えて、Xbox Live には、フレンドまたは他の既知のプレイヤーのアクティブなゲームプレイ セッションにプレイヤーが参加するためのシェル オプションがあります。 これはアクティブなゲーム セッションへの別の参加手段で、この手段も MPSD によって提供されます。 タイトルはセッションが参加可能になるタイミングと、途中参加を許可するセッションを制御します。
+### <a name="join-in-progress"></a>Join-in-progress
+In addition to invites, Xbox Live also provides a shell option for players to join an active gameplay session of friends or other known players. This enables another path into an active game session and is also driven by the MPSD. Titles control when sessions are joinable and which session to expose for join-in-progress.
 
-### <a name="protocol-activation"></a>プロトコルのアクティブ化
-Sally が Lisa にゲームへの参加の招待を送る場合、Lisa はデバイスで通知を受け取り承諾または辞退できます。
+### <a name="protocol-activation"></a>Protocol activation
+If Sally sends an invite to Lisa to join her game, Lisa receives a notification on her device that she can choose to accept or decline.
 
-招待を承諾すると、OS は、ゲームがまだ実行していない場合はゲームの開始を試み、ゲームがアクティブ化された理由についての情報および他の詳細情報 (たとえば、招待の場合は、招待したプレイヤーの ID や、メンバーが招待されたセッションなど) を含むアクティブ化 イベントをトリガーします。
+If she accepts the invitation, the OS attempts to launch the game, if the game is not already running, and triggers an activation event that contains information about why the game was activated, and any additional details (in the case of an invite, for example, the details include the ID of the player that invited, as well as the session that the member has been invited to.)
 
-このイベント処理のプロセスはプロトコルのアクティブ化と呼ばれ、ゲームが特定の状態 (アクティブ化イベント引数で詳しく記述されています) に自動的になる必要があることを示します。 メンバーがマルチプレイヤー ゲームに参加している場合、セッション ハンドル ID が引数の 1 つとして指定されます。
+The process of handling this event is known as protocol activation, and indicates that the game should automatically go into a specific state, which is detailed in the activation event arguments. If the member is joining a multiplayer game, the session handle id is specified as one of the arguments.
 
-Lisa のケースでは、招待が受け入れられたら、ゲームを自動的に開始し (必要な場合)、Lisa が何もしなくても Sally と同じゲーム セッションに Lisa を参加させる必要があります。
+In Lisa's case, accepting the invite should automatically start the game (if needed), and join her to the same game session as Sally, without Lisa needing to take any further actions.
 
-プロトコルのアクティブ化は、招待の受け入れ、プロフィール カードによる別のメンバーのゲームへの参加、またはディープ リンクされた実績のクリックによってトリガーされます。
+Protocol activation can be triggered by accepting an invite, joining another member's gamer via their profile card, or clicking a deep linked achievement.
 
 <div id="SmartMatch"/>
-## SmartMatch マッチメイキング
-SmartMatch は、匿名マッチメイキング用の Xbox Live サービスの名前です。 このサービスは、構成可能なマッチ ルール セットに基づいて、同じゲームのプレイヤーをマッチングします。
+## SmartMatch matchmaking SmartMatch is the name of the Xbox Live service for anonymous matchmaking. This service matches up players of the same game based on configurable a match rule set.
 
-マッチメイキング サービスは MPSD と密接に連携し、マッチメイキングの入力と出力にセッションを使用します。 マッチメイキングはサービス上で実行されるので、タイトルはマッチメイキング フローの間、タイトル内でのシングル プレイヤーのような他のエクスペリエンスを容易に提供できます。
+The matchmaking service works closely with the MPSD and uses sessions for matchmaking input and output. Matchmaking is performed on the service, which allows titles to easily do provide other experiences during the matchmaking flow, for example single-player within the title.
 
-マッチメイキングに参加したい個人またはグループは、マッチ チケット セッションを作成し、マッチメイキング サービスを要求してマッチを設定する他のプレイヤーを検索します。 これにより、(マッチ ホッパー上で) マッチメイキング サービス内に一定期間常駐する一時的な "マッチ チケット" が作成されます。
+Individuals or groups that want to enter matchmaking create a match ticket session, then request the matchmaking service to find other players with whom to set up a match. This results in the creation of a temporary "match ticket" residing within the matchmaking service (on a match hopper) for a period of time.
 
-マッチメイキング サービスは、ルール構成、プレイヤーごとに格納される統計情報、マッチ要求時に指定される追加の情報に基づいて、一緒にプレイするセッションを選択します。 次に、サービスは、マッチしたすべてのプレイヤーを含むマッチ ターゲット セッションを作成し、ユーザーのタイトルにマッチを通知します。
+The matchmaking service chooses sessions to play together based on rule configuration, statistics stored for each player, and any additional information given at the time of the match request. The service then creates a match target session that contains all players who have been matched, and notifies the users' titles of the match.
 
-ターゲット セッションの準備ができたら、タイトルはサービス品質 (QoS) チェックを実行してグループが一緒にプレイできることを確認するか、ゲームプレイを開始するためにプレイヤーをセッションに参加させるか、またはその両方を実行することができます。 QoS プロセスおよびマッチメイキングされたゲーム プレイ中、タイトルは、MPSD 内でセッション状態を最新の状態に保ち、セッションの変更に関する通知を MPSD から受信します。 このような変更には、ユーザーの参加または退出、セッション アービターの変更が含まれます。
+When the target session is ready, titles may perform quality of service (QoS) checks to confirm that the group can play together, and/or join players to the session to begin gameplay. During the QoS process and matchmade game play, titles keep the session state up to date within MPSD, and they receive notifications from MPSD about changes to the session. Such changes include users joining or leaving, and changes to the session arbiter.
 
-### <a name="match-ticket-session"></a>マッチ チケット セッション
-マッチ チケット セッションは、マッチを行うプレイヤーのクライアントを表します。 通常は、同じロビーにいるプレイヤーのグループに基づいて、または、それとは異なるタイトル固有のプレイヤーのグループに基づいて作成されます。 チケット セッションは、追加のプレイヤーを探している既に進行中のゲーム セッションの場合もあります。
+### <a name="match-ticket-session"></a>Match ticket session
+A match ticket session represents the clients for the players who want to make a match. It is typically created based on a group of players who are in a lobby together, or on other title-specific groupings of players. In some cases, the ticket session might be a game session already in progress that is looking for more players.
 
-### <a name="match-ticket"></a>マッチ チケット
+### <a name="match-ticket"></a>Match ticket
 
-マッチメイキングにチケット セッションを送信するとマッチ チケットが作成され、マッチ チケットはマッチメイキングの試行を追跡します。 ゲーム マップやプレイヤー レベルなどの属性をチケットに追加できます。 これらは、チケット セッション内のプレイヤーの属性と併せて、マッチを決定するために使用されます。
+Submitting a ticket session to matchmaking results in the creation of a match ticket that tracks the matchmaking attempt. Attributes can be added to the ticket, for example, game map or player level. These, along with attributes of the players in the ticket session, are used to determine the match.
 
-### <a name="hoppers"></a>ホッパー
-ホッパーは、マッチメイキングの開始時にマッチ チケットが集められて指定される、論理的な場所です。 同じホッパーの内部にあるチケットのみがマッチング可能です。 タイトルは、複数のホッパーを持つことができますが、一度に 1 つのホッパーでしかマッチメイキングを開始できません。 たとえば、タイトルでは、プレイヤーのスキルがマッチングに最も重要な項目であるホッパーを作成できます。 同じダウンロード可能なコンテンツを購入している場合のみプレイヤーがマッチされる、別のホッパーを使用できます。
+### <a name="hoppers"></a>Hoppers
+Hoppers are logical places where match tickets are collected and specified at the start of matchmaking. Only tickets within the same hopper can be matched. A title can have multiple hoppers but can only start matchmaking on one at a time. For example, a title might create one hopper for which player skill is the most important item for matching. It might use another hopper in which players are only matched if they have purchased the same downloadable content.
 
-マッチメイキング用のホッパーはサービス構成で構成します。 TBD。
+You configure hoppers for matchmaking in the service configuration. TBD.
 
-## <a name="quality-of-service-qos"></a>サービスの品質 (QoS)
-ゲーマーがマルチプレイヤー ゲームをオンラインでプレイするとき、ゲームの品質は、ゲームをホストしているデバイス間のネットワーク通信品質に影響されます。 ネットワークが低品質だと、帯域幅不足や遅延によってラグや切断が発生し、ゲーム エクスペリエンスに支障をきたす可能性があります。
+## <a name="quality-of-service-qos"></a>Quality of service (QoS)
+When gamers play a multiplayer game online, the quality of the game is affected by the quality of the network communication between the devices which are hosting the games. A poor network can result in undesirable game experiences like lag or connection drops due to insufficient bandwidth or latency.
 
-QoS は、プレイヤー間のオンライン接続の強度 (帯域幅と遅延) を測定し、すべてのプレイヤーのネットワーク接続品質が十分であることを保証することを指します。 マッチメイキング中にマッチングされるプレイヤーにとっては、ネットワーク品質の面で快適なエクスペリエンスを保証するために、これは特に重要です。 招待の場合、一緒にプレイするのはフレンドであり、接続が低品質であっても許容されやすい傾向があるため、QoS の優先度は下がります。
+QoS refers to measuring the strength of an online connection (bandwidth and latency) between players to ensure that all players have a sufficient network connection quality. This is specifically important for players that are matched during matchmaking to guarantee a good experience due to net. It is less applicable for invites where friends play together and are usually willing to accept the consequences of a poor connection.
 
-特定の基準に基づいて QoS を自動的に処理するようにセッションを構成したり、プレイヤーがセッションに参加するたびにゲームで QoS の測定を処理したりすることができます。
+You can configure the session to handle QoS automatically based on specific criteria, or your game can handle measuring the QoS whenever anyone joins the session.

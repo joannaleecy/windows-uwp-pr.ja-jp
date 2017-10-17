@@ -1,44 +1,38 @@
 ---
-title: "実績"
+title: Achievements
 author: KevinAsgari
-description: "実績"
+description: Achievements
 ms.assetid: 35e055c2-3c84-4d73-bb86-fc776327d901
 ms.author: kevinasg
 ms.date: 04-04-2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One"
-ms.openlocfilehash: b8ebae9c12723f9fedc054f6f1d8be7f18aeadf1
-ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+ms.openlocfilehash: 3e1e91bd6bdb4740af71b403a4db9fe931cab319
+ms.sourcegitcommit: b73a57142b9847b09ebb00e81396f2655bbc26ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2017
+ms.lasthandoff: 09/12/2017
 ---
-# <a name="achievements"></a>実績
+# <a name="achievements"></a>Achievements
 
-2005 年に、Xbox LIVE はゲーム業界に実績の概念を導入しました。これは、すべてのゲームにわたって、一貫性のある方法で、ユーザーのゲーム内アクションを管理してリワードを与えるためのシステム規模のメカニズムです。
+In 2005, Xbox LIVE introduced the gaming industry to the notion of an achievement, a system-wide mechanism for directing and rewarding users' in-game actions in a consistent manner across all games.
 
-Xbox One では、実績システムは、より広範なアクティビティ、デバイス、およびシナリオにユーザーを引き込むように拡張されています。 実績は、これまでよりもはるかに包括的、ソーシャル、かつ魅力的なものになりました。 デベロッパーおよびパブリッシャーは、ゲーマースコアに勝る新しい実績の種類およびリワードと共に、Xbox LIVE のあらゆる種類のアクティビティ (ゲーム、ビデオ、音楽、ソーシャル) に対する実績を作成できます。 ゲーマースコアは依然として重要なリワードですが、デベロッパーは、新しいコンテンツ リリースがなくても、タイトルの有効期間にわたって実績やゲーマースコアを追加できるようになりました。 Xbox One の実績は、ゲームをサービスとしてサポートするタイトルに柔軟なサービスを提供できるように全面的に見直されました。
+With Xbox One, the achievement system expands to engage users across a broader range of activities, devices, and scenarios. Achievements are now more inclusive, more social, and more engaging than ever before! 開発者と発行者は、ゲーマースコアに勝る、新しい実績の種類とリワードを持つ実績を作成できます。 Gamerscore is still a key reward, however, so developers can now add more achievements and gamerscore over the lifetime of the title, even without a new content release. Xbox One の実績は、サービスのような柔軟性をタイトルに提供できるように全面的に見直されました。
 
-## <a name="feature-summary"></a>機能の概要 ##
-Xbox One の実績システムに関連する主な機能およびコンポーネントの概要を次の一覧にまとめました。
+## <a name="feature-summary"></a>Feature Summary ##
+This list provides a summary of the key features and components that contribute to the achievement system on Xbox One.
 
-機能 | 説明
+Feature | Description
 --- | ---
-持続的な実績 (実績) | この種類の実績は、アプリの有効期間中ずっと存在します。 ユーザーはこの実績をいつでもロック解除できます。 持続的な実績に必要なアクティビティをユーザーが常に完了できる必要があり、そのリワードを常に獲得できる必要があります。
-チャレンジ実績 (チャレンジ) | この種類の実績は一定期間のみ利用できます。 チャレンジ実績をロック解除できる期日はパブリッシャーが決定し、ユーザーが認識されてそのリワードを受け取るには、そのあらかじめ定義された期間内にロック解除する必要があります。
-クラウドの利用 | タイトルでは、実績のロック解除が直接呼び出されなくなります。代わりに、実績サービスによって、XDP を介して構成されるあらかじめ定義されたルールと、データ プラットフォームを通じて送信される統計に基づいてロック解除がトリガーされます。 ゲームプレイやビジネス インテリジェンス用に追跡するものと同じデータが、実績をロック解除するタイミングの決定に使用されるようになります。
-公開後の実績 | タイトル公開後に実績を追加します。この際、追加のコードは不要です。
-実績の進行状況 | ユーザーが、ダッシュボードからも実績のロック解除に対する進行状況を確認できるようになりました。このため、ユーザーがタイトルを起動する理由が増えます。
-具体的なリワードのロック解除 | 引き続き Xbox ゲーム体験の重要な要素となるゲーマースコアに加えて、Xbox One ユーザーは、Xbox LIVE の実績を介して、デジタル アートワーク、新しいマップ、ロック解除可能なキャラクター、一時的なステータスブーストなどの、ゲーム関連の特別なリワードをロック解除できるようになりました。 そして、これはゲームだけに限りません。 ビデオ アプリや音楽アプリなどのその他の Xbox One アプリケーションで、実績を使用して優れたプレビュー コンテンツ、先行アクセス、またはメンバーシップの延長を提供できるようになりました。 ゲーマースコアが得られるのはゲームのみであることに注意してください。
-実績アクティビティ フィード | ユーザーは、フレンドの間で最近人気の高い実績や獲得されているリワードを容易に把握することができます。
-すべてのアプリにおける実績 | すべてのエクスペリエンスにおけるインタラクティビティおよび楽しさをさらに高めるために、すべての Xbox LIVE ゲーム、アプリケーション、およびハブに実績が用意されるようになります。
+Persistent Achievements (achievements) | この種類の実績は、タイトルの有効期間中ずっと存在します。 Users may unlock them at any time. A persistent achievement’s required activity must always be available for users to complete and its reward must always be earnable.
+Challenge Achievements (challenges) | This type of achievement is only available for a limited time. The publisher determines the dates during which a challenge achievement is available to unlock, and users must unlock it within that predefined timeframe to receive the recognition and its reward.
+公開後の実績 | Add achievements after title launch with no additional code required.
+Achievement Progression | Now users can see how far along they are toward unlocking the achievement, even from the dashboard, giving them more reasons to fire up your title.
+具体的なリワードのロック解除 | Xbox ゲーム体験の重要な要素であるゲーマースコアに加えて、Xbox One ユーザーは、Xbox Live の実績を通じて、デジタル アートワーク、新しいマップ、ロック解除可能なキャラクター、一時的なステータス ブーストなどのゲーム関連の特別なリワードをロック解除できます。
+実績アクティビティ フィード | ユーザーは、フレンドの間で最近人気の高い実績や獲得されているリワードを簡単に把握することができます。
 単一のゲーマースコア | 従来のプラットフォームまたは最新プラットフォームでユーザーが獲得するゲーマースコアは、単一のゲーマースコアに加算されます。
-複数のタイトルにまたがるチャレンジ | パブリッシャーは、一連のタイトルにまたがるチャレンジを作成することができます。 たとえば、タイトル デベロッパーは、"タイトル 1 またはタイトル 2 で 100 キル取得" というチャレンジを設定することも可能です。
 
-## <a name="making-achievements-work-well-with-the-achievements-snap"></a>実績を実績スナップと適切に連動させる ##
-タイトルの実績および Xbox One の実績スナップ (実績アプリのスナップされたビュー) を連動させようとする場合に注意する必要がある 2 つの主なガイドラインがあります。
-
-1. 「バイナリ」実績 (たとえば、ロック/ロック解除) ではなく進行状況が徐々に増加するものである限り、実績は適切に表示され、進行状況によって並べ替えられます。
-2. 実績の基になる統計のリアルタイムでの更新は、通常、マッチの終了後などに個々の統計更新を 1 つの大きな更新にまとめるよりも、プレイヤーにとってより興味深いものとなります。 これは、タイトルの実績が進行状況に基づく場合でも当てはまります。
+## <a name="making-achievements-work-well-with-the-guide-ui"></a>実績をガイド UI と適切に連動させる ##
+Xbox One 本体のガイド UI では、ユーザーの実績アクティビティがリアルタイムで強調表示されます。 この組み込み機能を最大限に活用するには、実績のロック解除に向けたユーザーの進行状況に関する更新情報をタイトルから送信する必要があります。 実績の進行状況の追跡をサポートしているタイトルでは、そのタイトルの各実績のロック解除に向けたユーザーの現在の進行状況を、より詳しく便利に表示するビューが提供されます。 また、ガイド UI では、タイトルの実績が自動的に進行状況の割合順に並べ替えられます。このため、ユーザーは、次回のプレイ セッションですぐにでも達成できる可能性のある実績はどれかを簡単に知ることができます。

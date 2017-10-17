@@ -1,131 +1,137 @@
 ---
-title: "マルチプレイヤー セッション参照"
+title: Multiplayer session browse
 author: KevinAsgari
-description: "Xbox Live マルチプレイヤーを使用してマルチプレイヤー セッション参照を実装する方法について説明します。"
+description: Learn how to implement multiplayer session browse by using Xbox Live multiplayer.
 ms.assetid: b4b3ed67-9e2c-4c14-9b27-083b8bccb3ce
 ms.author: kevinasg
 ms.date: 04-04-2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One"
-ms.openlocfilehash: 1710680dbc756eaae7d9e474bc206e3a1ccf921d
-ms.sourcegitcommit: eaacc472317eef343b764d17e57ef24389dd1cc3
+keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+ms.openlocfilehash: 8b68663624c62800c1ab08d7714f6aafe301003c
+ms.sourcegitcommit: fc695def93ba79064af709253ded5e0bfd634a9c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2017
+ms.lasthandoff: 08/25/2017
 ---
-# <a name="multiplayer-session-browse"></a>マルチプレイヤー セッション参照
+# <a name="multiplayer-session-browse"></a>Multiplayer session browse
 
-マルチプレイヤー セッション参照とは、2016 年 11 月に導入された新機能です。これを使用すると、指定した条件に合う、開いているマルチプレイヤー ゲーム セッションのリストをタイトルで照会できます。
+Multiplayer session browse is a new feature introduced in November 2016 that enables a title to query for a list of open multiplayer game sessions that meet the specified criteria.
 
-## <a name="what-is-session-browse"></a>セッション参照とは
+## <a name="what-is-session-browse"></a>What is session browse?
 
-セッション参照のシナリオでは、ゲームのプレイヤーは参加可能なゲーム セッションのリストを取得できます。 このリストの各セッション エントリにはゲームに関するいくつかの追加メタデータが含まれています。プレイヤーはその情報を使用して、参加するセッションを選択できます。  また、メタデータに基づいてセッションのリストをフィルター処理することもできます。 プレイヤーは興味のあるゲーム セッションを見つけて、セッションに参加できます。
+In a session browse scenario, a player in a game is able to retrieve a list of joinable game sessions. Each session entry in this list contains some additional metadata about the game, which a player can use to help them select which session to join.  They can also filter the list of sessions based on the metadata. Once the player sees a game session that appeals to them, they can join the session.
 
-プレイヤーは、新しいゲーム セッションを作成し、マッチメイキングを行う代わりに、セッション参照を使用して他のプレイヤーを集めることもできます。
+A player can also create a new game session, and use session browse to recruit additional players instead of relying on matchmaking.
 
-セッション参照が従来のマッチメイキング シナリオと異なる点として、マッチメイキングでは通常、プレイヤーは "ゲームの検索" ボタンをクリックすることにより、該当したゲーム セッションに自動的に配置されますが、セッション参照では参加するゲーム セッションをプレイヤーが自分で選択できます。
+セッション参照が従来のマッチメイキング シナリオと異なる点として、マッチメイキングでは通常、プレイヤーは "ゲームの検索" ボタンをクリックすることにより、該当したゲーム セッションに自動的に配置されますが、セッション参照では参加するゲーム セッションをプレイヤーが自分で選択できます。 セッション参照は低速な手動のプロセスであり、客観的に見て常に最適なゲームが選ばれるとは限りませんが、プレイヤーに選択権が与えられるため、ゲームの選択結果は主観的により満足度の高いものになると考えられます。
 
-セッション参照とマッチメイキングの両方のシナリオをゲームに組み込むのが一般的です。 通常、マッチメイキングは一般的にプレイされるゲーム モードに使用され、セッション参照はカスタム ゲームに使用されます。
+セッション参照とマッチメイキングの両方のシナリオをゲームに組み込むのが一般的です。 Typically matchmaking is used for commonly played game modes, while session browse is used for custom games.
 
-**例:** John はヒーロー バトル アリーナ スタイルのマルチプレイヤー ゲームに関心がありますが、すべてのプレイヤーがヒーローをランダムに選択するゲームをプレイしたいと思っています。 彼は、オープン ゲーム セッションのリストを取得し、"ランダム ヒーロー" が説明に含まれるゲームを探すか、ゲーム UI で可能であれば、"ランダム ヒーロー" ゲーム モードを選択して、"RandomHero" ゲームを示すタグ付きのセッションだけを取得することができます。
+**Example:** John may be interested in playing a hero battle arena style multiplayer game, but wants to play a game where all players select their hero randomly. He can retrieve a list of open game sessions and find the ones that include "random heroes" in their description, or if the game UI allows it, he can select the "random hero" game mode and retrieve only the sessions that are tagged to indicate that they are "RandomHero" games.
 
-気に入ったゲームが見つかれば、ゲームに参加します。 十分なメンバーがセッションに参加すると、ゲーム セッションのホストはゲームを開始できます。
+When he finds a game that he likes, he joins the game. When enough people have joined the session, the host of the game session can start the game.
 
-### <a name="roles"></a>ロール
+### <a name="roles"></a>Roles
 
-セッション参照のゲームは、特定のロールのプレイヤーを募集できます。 たとえば、プレイヤーは、5 人以下の突撃クラス、2 人以上のヒーラー ロール、1 人以上のタンク ロールを含むセッションを指定するゲーム セッションを作成できます。
+A game in session browse may want to recruit players for specific roles. For example, a player may want to create a game session that specifies that the session contains no more than 5 assault classes, but must contain at least 2 healer roles, and at least 1 tank role.
 
-別のプレイヤーがセッションに参加するときは、ロールを事前に選択でき、選択したロールに空きスロットがない場合はセッションへの参加が許可されません。
+When another player applies for the session, they can pre-select their role, and the service will not allow them to join the session if there are no open slots for the role they have selected.
 
-別の例として、プレイヤーがフレンドの参加のために 2 スロットを予約する場合、ゲームは "フレンド" の役割を指定でき、セッション ホストとフレンドであるプレイヤーだけが "フレンド" の役割に専用の 2 スロットを埋めることができます。
+Another example would be if a player wants to reserve 2 slots for their friends to join, the game can specify a "friends" role, and only players that are friends with the session host can fill the 2 slots dedicated to the "friends" role.
 
-ロールについて詳しくは、「[マルチプレイヤーのロール](multiplayer-roles.md)」をご覧ください。
-
-
-
-## <a name="how-does-session-browse-work"></a>セッション参照の動作
-
-セッション参照は、主に検索ハンドルの使用時に動作します。 検索ハンドルは、セッションの参照と、検索属性と呼ばれるセッションに関する追加メタデータを含む、データのパケットです。
-
-タイトルは、セッション参照対応の新しいゲーム セッションを作成するとき、セッションの検索ハンドルを作成します。 検索ハンドルは、タイトルの検索ハンドルを管理するマルチプレイヤー サービス ディレクトリ (MPSD) に格納されます。
-
-タイトルは、セッションのリストを取得する必要があるときは、検索クエリを MPSD に送信できます。MPSD は検索条件に一致する検索ハンドルのリストを返します。 その後、タイトルはセッションのリストを使用して、プレイヤーに参加可能なゲームの一覧を表示できます。
-
-セッションに空きがない場合、またはそれ以外の理由で参加できない場合は、タイトルは MPSD からの検索ハンドルを削除して、セッション参照クエリにセッションが表示されないようにできます。
+For more information about roles, see [multiplayer roles](multiplayer-roles.md).
 
 
-## <a name="set-up-a-session-for-session-browse"></a>セッション参照用にセッションを設定する
+
+## <a name="how-does-session-browse-work"></a>How does session browse work?
+
+Session browse works primarily on the use of search handles. A search handle is a packet of data that contains a reference to the session, as well as additional metadata about the session, namely search attributes.
+
+When a title creates a new game session that is eligible for session browse, it creates a search handle for the session. The search handle is stored in the Multiplayer Service Directory (MPSD), which maintains the search handles for the title.
+
+When a title needs to retrieve a list of sessions, the title can send a search query to MPSD, which will return a list of search handles that meet the search criteria. The title can then use the list of sessions to display a list of joinable games to the player.
+
+When a session is full, or otherwise cannot be joined, a title can remove the search handle from MPSD so that the session will no longer show up in session browse queries.
+
+
+## <a name="set-up-a-session-for-session-browse"></a>Set up a session for session browse
 
 セッションで検索ハンドルを使用するには、セッションで次の機能が true に設定されている必要があります。
 
-* `userAuthorizationStyle`
 * `searchable`
+* `userAuthorizationStyle`
 * `hasOwners`
+
+>[!NOTE]
+> `userAuthorizationStyle` 機能と `hasOwners` 機能は UWP ゲームでのみ必須となりますが、XDK ゲームを含むすべての Xbox Live ゲームに実装することをお勧めします。これにより、将来の移植性が保証されます。
+
+>[!NOTE]
+> `userAuthorizationStyle` 機能を設定すると、既定でセッションの `readRestriction` と `joinRestriction` が `none` ではなく `local` になります。 つまり、ゲーム セッションに参加するには、タイトルで検索ハンドルまたは転送ハンドルを使う必要があります。
 
 さらに、検索可能なセッションには所有者が必要であるため、`owernshipPolicy.migration` が "oldest" または "endsession" に設定されている必要があります。
 
-これらの機能は、Xbox Live サービスを構成するときにセッション テンプレートで設定できます。
+You can set these capabilities in the session template when you configure your Xbox Live services.
 
-セッション参照の場合、ロビー セッションではなく、実際のゲームプレイに使用されるセッションでのみ検索ハンドルを作成する必要があります。
+For session browse, you should only create search handles on sessions that will be used for actual gameplay, not for lobby sessions.
 
-## <a name="what-does-it-mean-to-be-an-owner-of-a-session"></a>セッションの所有者とは
+## <a name="what-does-it-mean-to-be-an-owner-of-a-session"></a>What does it mean to be an owner of a session?
 
-SmartMatch やフレンドのみのゲームなど、多くのゲーム セッションの種類では所有者は必要ありませんが、すべてのセッション参照セッションには少なくとも 1 人の所有者が必要です。 セッションの所有者としてマークされているメンバーだけが、そのセッションの検索ハンドルを作成できます。
+While many game session types, such as SmartMatch or a friends only game, do not require an owner, every session browse session must have at least one owner. Only a member that is marked as an owner of a session can create a search handle for that session.
 
-さらに、所有者だけが、セッションから他のメンバーを削除したり、他のメンバーの所有権の状態を変更できます。
+In addition, only owners can remove other members from the session, or change the ownership status of other members.
 
-セッションの所有者が Xbox Live メンバーをブロックすると、そのメンバーはセッションに参加できません。
+If an owner of a session has an Xbox Live member blocked, that member cannot join the session.
 
-すべての所有者がセッションから退出した場合、サービスはセッションに対して定義されている `ownershipPolicy.migration` ポリシーに基づいてセッションを処理します。 ポリシーが "oldest" の場合は、セッションに最も長くいるプレイヤーが新しい所有者として設定されます。 ポリシーが "endsession" の場合は、サービスはセッションを終了し、残っているすべてのプレイヤーをセッションから削除します。
-
-
-## <a name="search-handles"></a>検索ハンドル
-
-検索ハンドルは、JSON 構造として MSPD に格納されます。 検索ハンドルには、セッションへの参照だけでなく、検索属性と呼ばれる検索のための追加メタデータも含まれます。
-
-セッションが任意の時点で作成できる検索ハンドルは 1 つだけです。
-
-Xbox Live API を使用してセッションの検索ハンドルを作成するには、最初に `multiplayer::multiplayer_search_handle_request` オブジェクトを作成した後、そのオブジェクトを `multiplayer::multiplayer_service::set_search_handle()` メソッドに渡します。
-
-### <a name="search-attributes"></a>検索属性
-
-検索属性は、次のコンポーネントで構成されます。
-
-`tags` - タグは、ユーザーがゲーム セッションの分類に使用できる、ハッシュタグのような文字列記述子です。 タグは、文字で始まる必要があり、スペースを含むことはできず、100 文字未満にする必要があります。
-タグの例: "ProRankOnly"、"norocketlaunchers"、"cityMaps"。
-
-`strings` - 文字列は、テキスト変数であり、文字列名は文字で始まる必要があり、スペースを含むことはできず、100 文字未満にする必要があります。
-
-文字列メタデータの例: "Weapons"="knives+pistols+rifles"、"MapName"="UrbanCityAssault"、"description"="Fun casual game, new people welcome"。
-
-`numbers` - 数値は、数値変数であり、数値名は文字で始まる必要があり、スペースを含むことはできず、100 文字未満にする必要があります。 Xbox Live API は、float 型として数値を取得します。
-
-数値メタデータの例: "MinLevel" = 25、"MaxRank" = 10。
-
->**注意:** サービスではタグと文字列値の大文字小文字の区別が維持されますが、タグを照会するときは tolower() 関数を使用する必要があります。 つまり、タグと文字列の値は、現在、大文字が含まれる場合でも、すべて小文字として扱われます。
-
-Xbox Live API では、`multiplayer_search_handle_request` オブジェクトの `set_tags()` メソッド、`set_stringsmetadata()` メソッド、および `set_numbers_metadata()` メソッドを使用して検索属性を設定できます。
+If all owners leave a session, then the service takes action on the session based the `ownershipPolicy.migration` policy that is defined for the session. If the policy is "oldest", then the player that has been in the session the longest is set to be the new owner. If the policy is "endsession", then the service ends the session and removes all remaining players from the session.
 
 
-### <a name="additional-details"></a>追加情報
+## <a name="search-handles"></a>Search handles
 
-検索ハンドルを取得した結果には、セッションに関する他の有用なデータも含まれます (セッションが閉じられているかどうか、セッションに何らかの参加制限があるか、など)。
+A search handle is stored in MSPD as a JSON structure. In addition to containing a reference to the session, search handles also contain additional metadata for searches, known as search attributes.
 
-Xbox Live API では、これらの詳細と検索属性は、検索クエリの後で返される `multiplayer_search_handle_details` に含まれます。
+A session can only have one search handle created for it at any time.
 
-### <a name="remove-a-search-handle"></a>検索ハンドルを削除する
+To create a search handle for a session in by using the Xbox Live APIs, you first create a `multiplayer::multiplayer_search_handle_request` object, and then pass that object to the `multiplayer::multiplayer_service::set_search_handle()` method.
 
-セッションに空きがない場合や、セッションが閉じられた場合など、セッション参照からセッションを削除するときは、検索ハンドルを削除できます。
+### <a name="search-attributes"></a>Search attributes
 
-Xbox Live API では、`multiplayer_service::clear_search_handle()` メソッドを使用して検索ハンドルを削除できます。
+Search attributes consists of the following components:
 
-### <a name="example-create-a-search-handle-with-metadata"></a>例: メタデータで検索ハンドルを作成する
+`tags` - Tags are string descriptors that people can use to categorize a game session, similar to a hashtag. Tags must start with a letter, cannot contain spaces, and must be less than 100 characters.
+Example tags: "ProRankOnly", "norocketlaunchers", "cityMaps".
 
-次のコードでは、C++ Xbox Live マルチプレイヤー API を使用してセッションの検索ハンドルを作成する方法を示します。
+`strings` - Strings are text variables, and the string names must start with a letter, cannot contain spaces, and must be less than 100 characters.
 
-```C++
+Example string metadata: "Weapons"="knives+pistols+rifles", "MapName"="UrbanCityAssault", "description"="Fun casual game, new people welcome."
+
+`numbers` - Numbers are numeric variables, and the number names must start with a letter, cannot contain spaces, and must be less than 100 characters. The Xbox Live APIs retrieve number values as type float.
+
+Example number metadata: "MinLevel" = 25, "MaxRank" = 10.
+
+>**Note:** The letter casing of tags and string values is preserved in the service, but you must use the tolower() function when you query for tags. This means that tags and string values are currently all treated as lower case, even if they contain upper case characters.
+
+In the Xbox Live APIs, you can set the search attributes by using the `set_tags()`, `set_stringsmetadata()`, and `set_numbers_metadata()` methods of a `multiplayer_search_handle_request` object.
+
+
+### <a name="additional-details"></a>Additional details
+
+When you retrieve a search handle, the results also include additional useful data about the session, such as if the session is closed, are there any join restrictions on the session, etc.
+
+In the Xbox Live APIs, these details, along with the search attributes, are included in the `multiplayer_search_handle_details` that are returned after a search query.
+
+### <a name="remove-a-search-handle"></a>Remove a search handle
+
+When you want to remove a session from session browse, such as when the session is full, or if the session is closed, you can delete the search handle.
+
+In the Xbox Live APIs, you can use the `multiplayer_service::clear_search_handle()` method to remove a search handle.
+
+### <a name="example-create-a-search-handle-with-metadata"></a>Example: Create a search handle with metadata
+
+The following code shows how to create a search handle for a session by using the C++ Xbox Live multiplayer APIs.
+
+```cpp
 auto searchHandleReq = multiplayer_search_handle_request(sessionBrowseRef);
 
 searchHandleReq.set_tags(std::vector<string_t> val);
@@ -143,76 +149,84 @@ auto result = xboxLiveContext->multiplayer_service().set_search_handle(searchHan
 ```
 
 
-## <a name="create-a-search-query-for-sessions"></a>セッションの検索クエリを作成する
+## <a name="create-a-search-query-for-sessions"></a>Create a search query for sessions
 
-検索ハンドルのリストを取得するときは、検索クエリを使用して、特定の条件に一致するセッションに結果を限定できます。
+When retrieving a list of search handles, you can use a search query to restrict the results to the sessions that meet specific criteria.
 
-検索クエリの構文は [OData](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part2-url-conventions/odata-v4.0-errata02-os-part2-url-conventions-complete.html#_Toc406398092) スタイルであり、次の演算子だけがサポートされます。
+The search query syntax is an  [OData](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part2-url-conventions/odata-v4.0-errata02-os-part2-url-conventions-complete.html#_Toc406398092) style syntax, with only the following operators supported:
 
- 演算子 | 説明
+ Operator | Description
  --- | ---
  eq | equals (次の値と等しい)
- gt | greater than (次の値より大きい)
- ge | greater than or equal (次の値以上)
- lt | less than (次の値より小さい)
- le | less than or equal (次の値以下)
- and | 論理積
+ ne | not equal to (次の値と等しくない)
+ gt | greater than
+ ge | greater than or equal
+ lt | less than
+ le | less than or equal
+ and | 論理 AND
+ or | 論理 OR (下の「注」を参照)
 
-また、ラムダ式と `tolower` 正規関数も使用できます。 現在、他の OData 関数はサポートされていません。
+また、ラムダ式と `tolower` 正規関数も使用できます。 No other OData functions are supported currently.
 
-タグまたは文字列値を検索するときは、検索クエリで "tolower" 関数を使用する必要があります。現在、サービスは小文字の文字列の検索のみをサポートします。
+When searching for tags or string values, you must use the 'tolower' function in the search query, as the service only currently supports searching for lower-case strings.
 
-Xbox Live サービスは、検索クエリに一致する最初の 100 個の結果のみを返します。 ゲームでは、結果が多すぎる場合にプレイヤーが検索クエリを絞り込むことができるようにする必要があります。
+The Xbox Live service only returns the first 100 results that match the search query. ゲームでは、結果が多すぎる場合にプレイヤーが検索クエリを絞り込むことができるようにする必要があります。
+
+>[!NOTE]
+>  フィルター文字列のクエリでは論理 OR がサポートされますが、使用できる OR は 1 つだけで、クエリのルートに指定する必要があります。 クエリに複数の OR を含めることはできません。また、OR がクエリ構造の最上位でない位置に出現するクエリを作成することもできません。
 
 ### <a name="search-handle-query-examples"></a>検索ハンドルのクエリの例
 
-RESTful 呼び出しの "Filter" では、すべての検索ハンドルに対するクエリで使用する OData Filter 言語文字列を指定します。  
-Multiplayer 2015 API では、`multiplayer_service.get_search_handles()` メソッドの *searchFilter* パラメーターにフィルター文字列を指定できます。  
+In a restful call, "Filter" is where you would specify an OData Filter language string that will be run in your query against all search handles.  
+In the multiplayer 2015 APIs, you can specify the search filter string in the *searchFilter* parameter of the `multiplayer_service.get_search_handles()` method.  
 
-現在サポートされているフィルター シナリオは次のとおりです。
+Currently, the following filter scenarios are supported:
 
- フィルター | フィルターを適用した検索文字列
+ Filter by | Search filter string
  --- | ---
- xuid が '1234566' である 1 人のメンバー | "session/memberXuids/any(d:d eq '1234566')"
- xuid が '1234566' である 1 人の所有者 | "session/ownerXuids/any(d:d eq '1234566')"
- 文字列 'forzacarclass' が 'classb' に等しい | "tolower(strings/forzacarclass) eq 'classb'"
- 数値 'forzaskill' が 6 に等しい | "numbers/forzaskill eq 6"
- 数値 'halokdratio' が 1.5 より大きい | "numbers/halokdratio gt 1.5"
- タグ 'coolpeopleonly' である | "tags/any(d:tolower(d) eq 'coolpeopleonly')"
+ A single member xuid '1234566’ | "session/memberXuids/any(d:d eq '1234566')"
+ A single owner xuid '1234566’ | "session/ownerXuids/any(d:d eq '1234566')"
+ A string 'forzacarclass' equal to 'classb‘ | "tolower(strings/forzacarclass) eq 'classb'"
+ A number 'forzaskill' equal to 6 | "numbers/forzaskill eq 6"
+ A number 'halokdratio' greater than 1.5 | "numbers/halokdratio gt 1.5"
+ A tag 'coolpeopleonly' | "tags/any(d:tolower(d) eq 'coolpeopleonly')"
+ タグ 'cursingallowed' を含まないセッション | "tags/any(d:tolower(d) ne 'cursingallowed')"
+ 数値が 0 に等しい 'rank' を含まないセッション | "numbers/rank ne 0"
+ 文字列が 'classa' に等しい 'forzacarclass' を含まないセッション | "tolower(strings/forzacarclass) ne 'classa'"
  タグが 'coolpeopleonly' であり、数値 'halokdratio' が 7.5 に等しい | "tags/any(d:tolower(d) eq 'coolpeopleonly') eq true and numbers/halokdratio eq 7.5"
- 数値 'halodkratio' が 1.5 以上であり、数値 'rank' が 60 より小さく、数値 'customnumbervalue' が 5 以下である | "numbers/halokdratio ge 1.5 and numbers/rank lt 60 and numbers/customnumbervalue le 5"
- 実績 ID が '123456' | "achievementIds/any(d:d eq '123456')"
- 言語コード 'en' | "language eq 'en'"
- 指定された時刻以下のスケジュールされた時刻をすべて返す | "session/scheduledTime le '2009-06-15T13:45:30.0900000Z'"
- 指定された時刻より小さい投稿時刻をすべて返す | "session/postedTime lt '2009-06-15T13:45:30.0900000Z'"
- セッション登録状態 | "session/registrationState eq 'registered'"
- セッション メンバーの数が 5 に等しい | "session/membersCount eq 5"
- セッション メンバーの目標数が 1 より大きい | "session/targetMembersCount gt 1"
- セッション メンバーの最大数が 3 より小さい | "session/maxMembersCount lt 3"
- セッション メンバーの目標数とセッション メンバー数の差異が 5 以下 | "session/targetMembersCountRemaining le 5"
- セッション メンバーの最大数とセッション メンバー数の差異が 2 より大きい | "session/maxMembersCountRemaining gt 2"
- セッション メンバーの目標数とセッション メンバー数の差異が 15 以下。</br> ロールに目標数が指定されていない場合、このクエリでは、セッション メンバーの最大数とセッション メンバー数の差異を使用してフィルター処理が行われます。 | "session/needs le 15"
- ロールの種類 "lfg" のロール "confirmed" で、このロールのメンバー数が 5 に等しい | "session/roles/lfg/confirmed/count eq 5"
- ロールの種類 "lfg" のロール "confirmed" で、このロールの目標数が 1 より大きい。</br> ロールに目標数が指定されていない場合、ロールの最大数が代わりに使用されます。 | "session/roles/lfg/confirmed/target gt 1"
- ロールの種類 "lfg" のロール "confirmed" で、ロールの目標数とロールのメンバー数の差異が 15 以下。</br> ロールに目標数が指定されていない場合、このクエリでは、ロールの最大数とロールのメンバー数の差異を使用してフィルター処理が行われます。 | "session/roles/lfg/confirmed/needs le 15"
- 特定のキーワードを含むセッションを指すすべての検索ハンドル | "session/keywords/any(d:tolower(d) eq 'level2')"
- 特定の scid に属するセッションを指すすべての検索ハンドル | "session/scid eq '151512315'"
- 特定のテンプレート名が使用されているセッションを指すすべての検索ハンドル | "session/templateName eq 'mytemplate1'"
- 'elite' というタグを持っているか、'guns' の数が 15 より大きく、文字列 'clan' が 'purple' に等しいすべての検索ハンドル | "tags/any(a:tolower(a) eq 'elite') or number/guns gt 15 and string/clan eq 'purple'"
+ A number 'halodkratio' greater than or equal to 1.5, a number 'rank' less than 60, and a number 'customnumbervalue' less than or equal to 5 | "numbers/halokdratio ge 1.5 and numbers/rank lt 60 and numbers/customnumbervalue le 5"
+ An achievement id '123456' | "achievementIds/any(d:d eq '123456')"
+ The language code 'en' | "language eq 'en'"
+ Scheduled time, returns all scheduled times less than or equal to the specified time | "session/scheduledTime le '2009-06-15T13:45:30.0900000Z'"
+ Posted time, returns all posted times less than the specified time | "session/postedTime lt '2009-06-15T13:45:30.0900000Z'"
+ Session registration state | "session/registrationState eq 'registered'"
+ Where the number of session members is equal to 5 | "session/membersCount eq 5"
+ Where the session member target count is greater than 1 | "session/targetMembersCount gt 1"
+ Where the max count of session members is less than 3 | "session/maxMembersCount lt 3"
+ Where the difference between the session member target count and the number of session members is less than or equal to 5 | "session/targetMembersCountRemaining le 5"
+ Where the difference between the max count of session members and the number of session members is greater than 2 | "session/maxMembersCountRemaining gt 2"
+ Where the difference between the session member target count and the number of session members is less than or equal to 15.</br> If the role does not have a target specified, then this query filters against the difference between the max count of session members and the number of session members. | "session/needs le 15"
+ Role "confirmed" of the role type "lfg" where the number of members with that role is equal to 5 | "session/roles/lfg/confirmed/count eq 5"
+ Role "confirmed" of the role type "lfg" where the target of that role is greater than 1.</br> If the role does not have a target specified, then the max of the role is used instead. | "session/roles/lfg/confirmed/target gt 1"
+ Role "confirmed" of the role type "lfg" where the difference between the target of the role and the number of members with that role is less than or equal to 15.</br> If the role does not have a target specified, then this query filters against the difference between the max of the role and the number of members with that role. | "session/roles/lfg/confirmed/needs le 15"
+ All search handles that point to a session containing a particular keyword | "session/keywords/any(d:tolower(d) eq 'level2')"
+ All search handles that point to a session belonging to a particular scid | "session/scid eq '151512315'"
+ All search handles that point to a session that uses a particular template name | "session/templateName eq 'mytemplate1'"
+ All search handles that have the tag 'elite' or have a number 'guns' greater than 15 and string 'clan' equal to 'purple' | "tags/any(a:tolower(a) eq 'elite') or number/guns gt 15 and string/clan eq 'purple'"
 
-### <a name="refreshing-search-results"></a>検索結果を更新する
+### <a name="refreshing-search-results"></a>Refreshing search results
 
- ゲームでは、セッションの一覧を自動的に更新せず、代わりにプレイヤーが一覧を手動で更新できる UI を提供する必要があります (たとえば、より望ましいフィルター結果が得られるように検索条件を調整した後)。
+ Your game should avoid automatically refreshing a list of sessions, but instead provide UI that allows a player to manually refresh the list (possibly after refining the search criteria to better filter the results).
 
- プレイヤーがセッションに参加しようとしてもセッションに空きがないか閉じている場合も、ゲームは検索結果を更新する必要があります。
+ If a player attempts to join a session, but that session is full or closed, then your game should refresh the search results as well.
 
- 検索の更新が多すぎるとサービスのスロットリングにつながるため、タイトルではクエリの更新頻度を制限する必要があります。
+ Too many search refreshes can lead to service throttling, so your title should limit the rate at which the query can be refreshed.
 
-### <a name="example-query-for-search-handles"></a>例: 検索ハンドルの照会
+### <a name="example-query-for-search-handles"></a>Example: query for search handles
 
- 次のコードでは、検索ハンドルを照会する方法を示します。 API は、クエリに一致するすべての検索ハンドルを表す `multiplayer_search_handle_details` オブジェクトのコレクションを返します。
+ The following code shows how to query for search handles. API は、クエリに一致するすべての検索ハンドルを表す `multiplayer_search_handle_details` オブジェクトのコレクションを返します。
 
-```C++
+```cpp
  auto result = multiplayer_service().get_search_handles(scid, template, orderBy, orderAscending, searchFilter)
  .then([](xbox_live_result<std::vector<multiplayer_search_handle_details>> result)
  {
@@ -239,4 +253,49 @@ Multiplayer 2015 API では、`multiplayer_service.get_search_handles()` メソ�
    std::unordered_map<string_t, multiplayer_role_type>& role_types();
  }
  */
+```
+
+## <a name="join-a-session-by-using-a-search-handle"></a>検索ハンドルを使ってセッションに参加する
+
+参加するセッションの検索ハンドルを取得したら、タイトルで `MultiplayerService::WriteSessionByHandleAsync()` または `multiplayer_service::write_session_by_handle()` を使って、自身をセッションに追加します。
+
+> [!NOTE]
+> `WriteSessionAsync()` メソッドと `write_session()` メソッドは、セッション参照セッションに参加するためには使用できません。
+
+次のコードは、検索ハンドルの取得後にセッションに参加する方法を示します。
+
+```cpp
+void Sample::BrowseSearchHandles()
+{
+    auto context = m_liveResources->GetLiveContext();
+    context->multiplayer_service().get_search_handles(...)
+    .then([this](xbox_live_result<std::vector<multiplayer_search_handle_details>> searchHandles)
+    {
+        if (searchHandles.err())
+        {
+            LogErrorFormat( L"BrowseSearchHandles failed: %S\n", searchHandles.err_message().c_str() );
+        }
+        else
+        {
+            m_searchHandles = searchHandles.payload();
+
+            // Join the game session
+
+            auto handleId = m_searchHandles.at(0).handle_id();
+            auto sessionRef = multiplayer_session_reference(m_searchHandles.at(0).session_reference());
+            auto gameSession = std::make_shared<multiplayer_session>(m_liveResources->GetLiveContext()->xbox_live_user_id(), sessionRef);
+            gameSession->join(web::json::value::null(), false, false, false);
+
+            context->multiplayer_service().write_session_by_handle(gameSession, multiplayer_session_write_mode::update_existing, handleId)
+            .then([this, sessionRef](xbox_live_result<std::shared_ptr<multiplayer_session>> writeResult)
+            {
+                if (!writeResult.err())
+                {
+                    // Join the game session via MPM
+                    m_multiplayerManager->join_game(sessionRef.session_name(), sessionRef.session_template_name());
+                }
+            });
+        }
+    });
+}
 ```

@@ -1,274 +1,274 @@
 ---
-title: "開発者プログラムの概要"
+title: Developer program overview
 author: KevinAsgari
-description: "Xbox Live を使うために利用できる、さまざまな開発者プログラムについて説明します。"
+description: Learn about the different developer programs available to use Xbox Live.
 ms.assetid: 1166308a-4079-41b4-8550-ce04b82b4f72
 ms.author: kevinasg
 ms.date: 04-04-2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 開発者プログラム, クリエーター"
-ms.openlocfilehash: e0b24a75e2c7e5850e146dc4797f91906540d5aa
-ms.sourcegitcommit: 63c815f8c6665872987b5410cabf324f2b7e3c7c
+keywords: xbox live, xbox, games, uwp, windows 10, xbox one, developer program, creators
+ms.openlocfilehash: ea88b7db1a00837d750bbf12093c3af3603ac839
+ms.sourcegitcommit: b73a57142b9847b09ebb00e81396f2655bbc26ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2017
+ms.lasthandoff: 09/12/2017
 ---
-# <a name="developer-program-overview"></a>開発者プログラムの概要
+# <a name="developer-program-overview"></a>Developer program overview
 
-Xbox Live 対応のタイトルを開発する場合、いくつかのオプションを利用可能です。 それぞれで、開発者に対する異なるレベルの時間投資、利用可能な機能、およびサポート オプションが提供されます。
+If you would like to develop Xbox Live enabled titles, there are several options available to you. Each offers varying levels of time investment on your part, features available to you, and support options.
 
-## <a name="xbox-live-creators-program"></a>Xbox Live クリエーターズ プログラム
+## <a name="xbox-live-creators-program"></a>Xbox Live Creators Program
 
-Xbox Live 開発を理解するには、Xbox Live クリエーターズ プログラムが Xbox Live の良い出発点になります。 このプログラムへの参加には、マイクロソフトによる承認プロセスは必要ありませんが、最小限の認定要件と公開要件があります。 
+The Xbox Live Creators Program is a good starting point for Xbox Live if you are looking to familiarize yourself with Xbox Live development. No approval process from Microsoft is required to join this program, and there are minimal certification and publishing requirements. 
 
-Xbox Live クリエーターズ プログラムは、[ユニバーサル Windows プラットフォーム](https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide) (UWP) 向けのタイトルの作成のみをサポートしています。  UWP ゲームとして作成されたタイトルは Windows 10 PC と Xbox One 本体で動作します。  Xbox One での UWP ゲームの実行の詳細については、「[Xbox One の UWP](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/index)」を参照してください。  
+The Xbox Live Creators Program only supports the creation of titles for the [Universal Windows Platform](https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide) (UWP).  These titles created as UWP games run on Windows 10 PCs and on Xbox One consoles.  For more details about running UWP games on Xbox One, see [UWP on Xbox One](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/index).  
 
-Xbox One では、ゲーマーに選りすぐりのストア エクスペリエンスが提供されます。Xbox Live クリエーターズ プログラムを通じて公開されたゲームは、ストアの新しい [作成者のコレクション] セクションで販売されます。 これにより、だれでもゲームを開発し出荷できるオープンなプラットフォームの確保と、コンソール ゲーマーが知っていて期待する選りすぐりのストア エクスペリエンスとが両立します。 Windows 10 では、タイトルは Windows ストアで他のすべての Xbox Live ゲームと一緒に公開されます。
+On Xbox One, which offers gamers a curated store experience, games published through the Xbox Live Creators Program will be sold in the new Creators Collection section of the Store. This offers a balance between ensuring an open platform where anyone can develop and ship a game, and a curated store experience consoles gamers have come to know and expect. On Windows 10, your title will be published among all of the other Xbox Live games in the Windows Store.
 
-### <a name="publishing-and-certification"></a>公開と認定
-Xbox Live クリエーターズ プログラムの一部としてゲームをリリースするには、[デベロッパー センターの開発者プログラム](https://developer.microsoft.com/store/register)に登録されている必要があります。 ゲームが従う必要がある要件が 2 つあります。
+### <a name="publishing-and-certification"></a>Publishing and Certification
+You must be enrolled in the [Dev Center developer program](https://developer.microsoft.com/store/register) to release a game as part of the Xbox Live Creators Program. There are two sets of requirements that your game must follow:
 
-1. Xbox Live のサインインを統合し、ユーザー ID (ゲーマータグ、ゲーマー アイコンなど) を表示します。 他のすべての Xbox Live サービスはオプションです。
-2. 標準の [Windows ストア ポリシー](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx)に従います。
+1. Integrate Xbox Live Sign-In and display the user identity (Gamertag, Gamerpic, etc.). All other Xbox Live services are optional.
+2. Follow to the standard [Windows Store Policies](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx).
 
-### <a name="supported-xbox-live-services"></a>サポートされる Xbox Live サービス
-Xbox Live クリエーターズ プログラム対応のタイトルでは、ランキング、注目の統計、タイトル ストレージ、接続ストレージ、および制限されたソーシャル機能を使用できます。 実績、オンライン マルチプレイヤー、および多くのソーシャル機能は、Xbox Live クリエーターズ プログラムのタイトルではサポートされ**ません**。 
+### <a name="supported-xbox-live-services"></a>Supported Xbox Live Services
+Titles enabled under the Xbox Live Creators Program can use Leaderboards, Featured Stats, Title Storage, Connected Storage, and a restricted set of social features. Achievements, online multiplayer, and many social features are **not** supported for titles in the Xbox Live Creators Program. 
 
-サポートされるサービスの一覧については、[機能テーブル](#feature-table)をご覧ください。
+For a full list of supported services, see the [Feature Table](#feature-table).
 
-### <a name="support-and-feedback"></a>サポートとフィードバック
-[MSDN フォーラム](https://social.msdn.microsoft.com/Forums/en-US/home?forum=xboxlivedev)では、あらゆる質問を行うことができます。  プログラミング関連の質問は、"xbox live" タグを付けて [Stack Overflow](http://stackoverflow.com/questions/tagged/xbox-live) でたずねることもできます。  Xbox Live チームは、コミュニティと連携し、コミュニティに寄せられたフィードバックに基づいて API、ツール、ドキュメントを継続的に改善しています。
+### <a name="support-and-feedback"></a>Support and Feedback
+Any questions you might have can be answered on the [MSDN Forums](https://social.msdn.microsoft.com/Forums/en-US/home?forum=xboxlivedev).  You can also ask programming related questions to [Stack Overflow](http://stackoverflow.com/questions/tagged/xbox-live) using the "xbox-live" tag.  The Xbox Live team will be engaged with the community and be continually improving our APIs, tools, and documentation based on the feedback received there.
 
-Xbox Live クリエーターズ プログラムの開発者は、「[Xbox Live クリエーターズ プログラムのユーザーの声](https://aka.ms/xblcpuv)」で、新しいアイデアを提出したり、既存のアイデアに投票したりすることができます。
+For developers in the Xbox Live Creators Program, you can submit a new idea or vote on existing idea at our [Xbox Live Creators Program User Voice](https://aka.ms/xblcpuv)
 
 ## <a name="idxbox"></a>ID@Xbox
 
-Xbox Live クリエーターズ プログラムは、多くのゲームや開発者に適しています。 ただし、オンライン マルチプレイヤー、実績、およびゲーマースコアを含む、フル Xbox Live スタックを利用したい場合、またはハードウェア開発キットを使用して Xbox One ファミリのデバイスのすべての機能を利用したい場合は、[ID@Xbox](http://www.xbox.com/en-US/developers/id) プログラムをお勧めします。
+The Xbox Live Creators Program is great for lots of games and developers. But if you’d like to access the full Xbox Live stack, including online multiplayer, achievements and Gamerscore, or you want to access the full power of the Xbox One family of devices using hardware dev kits, the [ID@Xbox](http://www.xbox.com/en-US/developers/id) program is for you.
 
-ID@Xbox プログラムでは、ゲームはコンセプトの承認を得て、Xbox One と Windows 10 の完全な認定を受ける必要があり、開発者はこれに多くの時間を費やします。
-ID@Xbox タイトルは、ストアの [作成者のコレクション] セクションではなく、主要セクションに配置されるため、ユーザーへの露出が大きくなる可能性があります。
+Games in the ID@Xbox program must be concept approved and go through full certification on Xbox One and Windows 10, which is a greater time commitment on your part.
+ID@Xbox titles get placement in the primary section of the Store, versus the Creators Collection, which may allow for greater exposure to customers.
 
-ID@Xbox プログラムの開発者は、マイクロソフトからの開発者サポートとプロモーションの支援を得られるうえ、非公開のホワイト ペーパーと開発者向け技術フォーラムもすべて利用できます。 必要に応じて、引き続き [MSDN フォーラム](https://social.msdn.microsoft.com/Forums/en-US/home?forum=xboxlivedev)を使用することや、[Stack Overflow](http://stackoverflow.com/questions/tagged/xbox-live) で "xbox-live" タグを使用してプログラミング関連の質問をすることができます。
+Developers in the ID@Xbox program also gain access to developer support and promotional assistance from Microsoft, as well as the full complement of private whitepapers and developer technical forums. You can continue to use [MSDN Forums](https://social.msdn.microsoft.com/Forums/en-US/home?forum=xboxlivedev) or ask programming related questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/xbox-live) using the "xbox-live" tag if you like.
 
-## <a name="microsoft-partners"></a>Microsoft パートナー
+## <a name="microsoft-partners"></a>Microsoft Partners
 
-Microsoft パートナーであるゲーム パブリッシャーと連携する開発者は、Xbox Live の機能の完全なセットを利用したり、マイクロソフトの専任担当者に問い合わせて、開発、認定、およびリリース プロセスの支援を受けたりすることができます。
+Developers working with a game publisher that is a Microsoft Partner have access to the full set of Xbox Live features and dedicated Microsoft representatives to assist in your development, certification, and release process.
 
-## <a name="feature-table"></a>機能テーブル
+## <a name="feature-table"></a>Feature Table
 
-下の表に、Xbox Live クリエーターズ プログラムで利用できる機能と、[ID@Xbox](http://www.xbox.com/en-US/developers/id) プログラムで利用できる機能を示します。  
+The below table illustrates the features available to the Xbox Live Creators Program, and [ID@Xbox](http://www.xbox.com/en-US/developers/id) programs.  
 
 <table>
 
 <tr>
-<th>機能領域</th>
-<th>機能</th>
-<th>説明</th>
+<th>Feature Area</th>
+<th>Feature</th>
+<th>Description</th>
 <th> ID@Xbox </th>
-<th>Xbox Live クリエーターズ プログラム</th>
+<th>Xbox Live Creators Program</th>
 </tr>
 
 <tr>
-<td rowspan="2" class="dev-program-feature-name">ID</td>
-<td>サインイン/サインアップ</td>
-<td>プレイヤーがタイトル内で Xbox Live にサインインすること、および必要に応じて新しい Xbox Live アカウントを作成することを許可します。</td>
-<td class="xbl-features-required">必須</td>
-<td class="xbl-features-required">必須</td>
+<td rowspan="2" class="dev-program-feature-name">Identity</td>
+<td>Sign-in / Sign-up</td>
+<td>Allow players to sign-in to Xbox Live within your title, or create a new Xbox Live account if necessary</td>
+<td class="xbl-features-required">Required</td>
+<td class="xbl-features-required">Required</td>
 </tr>
 
 <tr>
-<td>ユーザー ID</td>
-<td>ゲーマータグ、ゲーマーアイコンなどを表示して Xbox Live ID を利用します。</td>
-<td class="xbl-features-required">必須</td>
-<td class="xbl-features-required">必須</td>
+<td>User Identity</td>
+<td>Utilize Xbox Live identity by displaying the Gamertag, Gamerpic, etc</td>
+<td class="xbl-features-required">Required</td>
+<td class="xbl-features-required">Required</td>
 </tr>
 
 <tr class="dev-program-feature-start">
-<td rowspan="13" class="dev-program-feature-name">ソーシャル</td>
+<td rowspan="13" class="dev-program-feature-name">Social</td>
 
-<td>基本的なプレゼンス</td>
-<td>タイトル内のユーザーのアクティビティを示す基本的なプレゼンス文字列を表示します。  例: "Steve が Minecraft をプレイ中"</td>
-<td class="xbl-features-automatic">自動</td>
-<td class="xbl-features-automatic">自動</td>
+<td>Basic Presence</td>
+<td>Display basic presence strings showing user activity within a title.  Eg: "Steve is playing Minecraft"</td>
+<td class="xbl-features-automatic">Automatic</td>
+<td class="xbl-features-automatic">Automatic</td>
 </tr>
 
 <tr>
-<td>最近プレイしたゲーム</td>
-<td>Xbox アプリや Xbox One で最近プレイしたタイトルが表示されます。</td>
-<td class="xbl-features-automatic">自動</td>
-<td class="xbl-features-automatic">自動</td>
+<td>Recently Played</td>
+<td>Appear in recently played titles in the Xbox App or Xbox One</td>
+<td class="xbl-features-automatic">Automatic</td>
+<td class="xbl-features-automatic">Automatic</td>
 </tr>
 
 <tr>
-<td>アクティビティ フィード</td>
-<td>Xbox アプリや Xbox One でのアクティビティ フィードが表示されます。</td>
-<td class="xbl-features-automatic">自動</td>
-<td class="xbl-features-automatic">自動</td>
+<td>Activity Feed</td>
+<td>Appear in the activity feed in the Xbox App or Xbox One</td>
+<td class="xbl-features-automatic">Automatic</td>
+<td class="xbl-features-automatic">Automatic</td>
 </tr>
 
 <tr>
-<td>ゲーム ハブ</td>
-<td>ゲーム ハブにタイトルを関連付け、タイトルに固有の統計情報、ビデオ、および他のコンテンツをフィードに表示します。</td>
-<td class="xbl-features-automatic">自動</td>
-<td class="xbl-features-automatic">自動</td>
+<td>Games Hub</td>
+<td>Have a Game Hub associated with your title displaying stats, videos, and other content in a feed specific to your title</td>
+<td class="xbl-features-automatic">Automatic</td>
+<td class="xbl-features-automatic">Automatic</td>
 </tr>
 
 <tr>
-<td>クラブ</td>
-<td>プレイヤーは、Xbox アプリまたは Xbox One を使用して、必要に応じてタイトルと関連付けることができるクラブを作成できます。</td>
-<td class="xbl-features-automatic">自動</td>
-<td class="xbl-features-automatic">自動</td>
+<td>Clubs</td>
+<td>Players can use the Xbox App or Xbox One to create clubs that can be optionally associated with your title.</td>
+<td class="xbl-features-automatic">Automatic</td>
+<td class="xbl-features-automatic">Automatic</td>
 </tr>
 
 <tr>
-<td>グループを検索 (LFG)</td>
-<td>LFG を利用して、プレイヤーはゲーム外の他のプレイヤーを検索してマルチプレイヤー ゲームのスケジュールを設定できます。</td>
-<td class="xbl-features-automatic">自動</td>
-<td class="xbl-features-automatic">自動</td>
+<td>Looking For Group (LFG)</td>
+<td>LFG allows players to find others out-of-game to schedule a multiplayer game.</td>
+<td class="xbl-features-automatic">Automatic</td>
+<td class="xbl-features-automatic">Automatic</td>
 </tr>
 
 <tr>
 <td>GameDVR</td>
-<td>プレイヤーは、ゲームプレイ セッションのビデオをキャプチャして、プレイ状況フィードでそのビデオを共有できます。</td>
-<td class="xbl-features-automatic">自動</td>
-<td class="xbl-features-automatic">自動</td>
+<td>Players can capture video of their gameplay sessions and share these on the activity feed.</td>
+<td class="xbl-features-automatic">Automatic</td>
+<td class="xbl-features-automatic">Automatic</td>
 </tr>
 
 <tr>
-<td>配信</td>
-<td>プレイヤーは Mixer や Twitch などのストリーミング サービスを介してゲームプレイをライブ配信できます。</td>
-<td class="xbl-features-automatic">自動</td>
-<td class="xbl-features-automatic">自動</td>
+<td>Broadcast</td>
+<td>Players can live broadcast their gameplay via streaming services like Mixer and Twitch</td>
+<td class="xbl-features-automatic">Automatic</td>
+<td class="xbl-features-automatic">Automatic</td>
 </tr>
 
 <tr>
-<td>リッチ プレゼンス</td>
-<td>タイトルでプレイヤーに関する詳しい情報を表示します。  基本的なプレゼンスの表示は "ユーザーがカー レーシング ゲームをプレイ中" のようなものですが、リッチ プレゼンスでは "ユーザーが RainyForest で SuperCar を運転中" などのより詳細な文字列を指定できます。</td>
-<td class="xbl-features-required">必須</td>
-<td class="xbl-features-notavailable">サポートされない</td>
+<td>Rich Presence</td>
+<td>Shows more detailed information about players in your title.  Whereas Basic Presence might show "User is in Car Racing Game", Rich Presence lets you specify a more detailed string like "User is driving SuperCar in RainyForest"</td>
+<td class="xbl-features-required">Required</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 <tr>
-<td>フレンド</td>
-<td>サインインしているユーザーのフレンド リストを取得して、タイトルでソーシャル ゲームプレイ シナリオを有効にします。</td>
-<td class="xbl-features-required">必須</td>
-<td class="xbl-features-limited">オプション/制限あり (タイトルをプレイしたことのあるフレンドのみが表示されます)</td>
+<td>Friends</td>
+<td>Retrieve the sign-in user's friends list to enable social gameplay scenarios in your title.</td>
+<td class="xbl-features-required">Required</td>
+<td class="xbl-features-limited">Optional / Limited (only friends who have played your title are exposed)</td>
 </tr>
 
 <tr>
-<td>プライバシー</td>
-<td>プレイヤーが他のプレイヤーをミュートしたり、ブロックしたりできるようにします。</td>
-<td class="xbl-features-optional">オプション</td>
-<td class="xbl-features-optional">オプション</td>
+<td>Privacy</td>
+<td>Allow players to mute or block or other players</td>
+<td class="xbl-features-optional">Optional</td>
+<td class="xbl-features-optional">Optional</td>
 </tr>
 
 <tr>
-<td>評判</td>
-<td>プレイヤーの評判は態度を通じて上がったり、下がったりします。 態度は、マッチメイキングで使用されます。タイトルでは、態度を独自の方法で使用できます。</td>
-<td class="xbl-features-optional">オプション</td>
-<td class="xbl-features-notavailable">サポートされない</td>
+<td>Reputation</td>
+<td>Players gain or lose reputation through their behavior. Behavior is used in Matchmaking and can be used by your title in custom ways.</td>
+<td class="xbl-features-optional">Optional</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 <tr>
 <td>Social Manager</td>
-<td>プレイヤーのソーシャル グラフに関する情報を効率的に取得します。</td>
-<td class="xbl-features-optional">オプション</td>
-<td class="xbl-features-limited">オプション/制限あり (タイトルをプレイしたことのあるフレンドのみが表示されます)</td>
+<td>Efficiently retrieve information about a player's social graph</td>
+<td class="xbl-features-optional">Optional</td>
+<td class="xbl-features-limited">Optional / Limited (only friends who have played your title are exposed)</td>
 </tr>
 
 <tr class="dev-program-feature-start">
-<td rowspan="4" class="dev-program-feature-name">データ プラットフォーム</td>
+<td rowspan="4" class="dev-program-feature-name">Data Platform</td>
 
-<td>プレイヤーの統計情報</td>
-<td>ランキングで使用できるプレイヤーの統計情報をアップロードします。</td>
-<td class="xbl-features-optional">オプション</td>
-<td class="xbl-features-optional">オプション (データ プラットフォーム 2017 のみ)</td>
+<td>Player Stats</td>
+<td>Upload statistics about players which can be used in Leaderboards.</td>
+<td class="xbl-features-optional">Optional</td>
+<td class="xbl-features-optional">Optional (Data Platform 2017 only)</td>
 </tr>
 
 <tr>
-<td>注目の統計</td>
-<td>ゲーム ハブに表示する特定の統計情報を "注目の統計" として指定します。</td>
-<td class="xbl-features-required">必須</td>
-<td class="xbl-features-optional">オプション (データ プラットフォーム 2017 のみ)</td>
+<td>Featured Stats</td>
+<td>Designate certain stats as "Featured Stats" that will show up in the Game Hub.</td>
+<td class="xbl-features-required">Required</td>
+<td class="xbl-features-optional">Optional (Data Platform 2017 only)</td>
 </tr>
 
 <tr>
-<td>ランキング</td>
-<td>プレイヤーの統計情報を取得し並べ替えて表示し、競争を促します。</td>
-<td class="xbl-features-optional">オプション</td>
-<td class="xbl-features-optional">オプション (データ プラットフォーム 2017 のみ)</td>
+<td>Leaderboards</td>
+<td>プレイヤーの統計情報を取得し、並べ替えて表示して、競争を促します。</td>
+<td class="xbl-features-optional">Optional</td>
+<td class="xbl-features-optional">Optional (Data Platform 2017 only)</td>
 </tr>
 
 <tr>
-<td>ゲーマースコアと実績</td>
-<td>ゲーム ハブに表示する特定の統計情報を "注目の統計" として指定します。</td>
-<td class="xbl-features-required">必須</td>
-<td class="xbl-features-notavailable">サポートされない</td>
+<td>Achievements with Gamerscore</td>
+<td>Designate certain stats as "Featured Stats" that will show up in the Game Hub.</td>
+<td class="xbl-features-required">Required</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 <tr class="dev-program-feature-start">
-<td rowspan="1" class="dev-program-feature-name">メディア</td>
+<td rowspan="1" class="dev-program-feature-name">Media</td>
 
-<td>コンテキスト検索</td>
-<td>ゲーム録画クリップにキーワードで注釈を付け、プレイヤーが視聴したい内容に該当するクリップを検索しやすくします。</td>
-<td class="xbl-features-optional">オプション</td>
-<td class="xbl-features-notavailable">サポートされない</td>
+<td>Contextual Search</td>
+<td>Annotate GameDVR clips with keywords to make it easier for players to find clips corresponding to what they want to watch.</td>
+<td class="xbl-features-optional">Optional</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 
 <tr class="dev-program-feature-start">
-<td rowspan="2" class="dev-program-feature-name">ストレージ</td>
+<td rowspan="2" class="dev-program-feature-name">Storage</td>
 
-<td>接続ストレージ</td>
-<td>Xbox One 本体と PC でローミング ゲームを保存します。</td>
-<td class="xbl-features-required">必須</td>
-<td class="xbl-features-optional">オプション</td>
+<td>Connected Storage</td>
+<td>Roaming game saves across Xbox One Consoles and PCs</td>
+<td class="xbl-features-required">Required</td>
+<td class="xbl-features-optional">Optional</td>
 </tr>
 
 <tr>
-<td>タイトル ストレージ</td>
-<td>ユーザーごとまたはタイトルごとの大量のデータ用のクラウド ストレージ。</td>
-<td class="xbl-features-optional">オプション</td>
-<td class="xbl-features-optional">オプション</td>
+<td>Title Storage</td>
+<td>Cloud storage for large amounts of per-user or per-title data.</td>
+<td class="xbl-features-optional">Optional</td>
+<td class="xbl-features-optional">Optional</td>
 </tr>
 
 <tr class="dev-program-feature-start">
-<td rowspan="6" class="dev-program-feature-name">オンライン マルチプレーヤー</td>
+<td rowspan="6" class="dev-program-feature-name">Online Multiplayer</td>
 
-<td>マルチプレイヤー セッション ディレクトリ (MPSD)</td>
-<td>プレイヤーの一覧、状態など、マルチプレイヤー セッションに関する情報を保存します。</td>
-<td class="xbl-features-optional">必須</td>
-<td class="xbl-features-notavailable">サポートされない</td>
+<td>Multiplayer Session Directory (MPSD)</td>
+<td>Stores information about a multiplayer session, such as list of players, state, etc.</td>
+<td class="xbl-features-optional">Required</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 <tr>
-<td>マッチメイキング</td>
-<td>Xbox Live ではマルチプレイヤー セッションでさまざまなプレイヤーをまとめてマッチングできます。</td>
-<td class="xbl-features-optional">オプション</td>
-<td class="xbl-features-notavailable">サポートされない</td>
+<td>Matchmaking</td>
+<td>Xbox Live can match different players together for a multiplayer session.</td>
+<td class="xbl-features-optional">Optional</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 <tr>
-<td>アリーナ</td>
-<td>プレイヤーはトーナメント スタイルで対戦できます。</td>
-<td class="xbl-features-optional">オプション</td>
-<td class="xbl-features-notavailable">サポートされない</td>
+<td>Arena</td>
+<td>Players can compete against each other tournament style.</td>
+<td class="xbl-features-optional">Optional</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 <tr>
-<td>ゲーム チャット</td>
-<td>マルチプレイヤー ゲームのプレーヤー ボイス チャット</td>
-<td class="xbl-features-optional">オプション</td>
-<td class="xbl-features-notavailable">サポートされない</td>
+<td>Game Chat</td>
+<td>Voice chat for players in a multiplayer game</td>
+<td class="xbl-features-optional">Optional</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 <tr>
-<td>Xbox Live エンジン</td>
-<td>タイトルが通信できる実行可能ファイルとアセットを配置して、クライアントの計算を軽減します。</td>
-<td class="xbl-features-optional">オプション</td>
-<td class="xbl-features-notavailable">サポートされない</td>
+<td>Xbox Live Compute</td>
+<td>Deploy executables and assets which your title can communicate with, to offload computation from the client.</td>
+<td class="xbl-features-optional">Optional</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 </table>

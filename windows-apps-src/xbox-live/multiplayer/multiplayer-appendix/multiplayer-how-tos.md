@@ -1,54 +1,56 @@
 ---
-title: "マルチプレイヤーの実行方法"
+title: Multiplayer how-tos
 author: KevinAsgari
-description: "Xbox Live マルチプレイヤー 2015 で一般的なタスクを実装する方法について説明します。"
+description: Describes how to implement common tasks in Xbox Live Multiplayer 2015.
 ms.assetid: 99c5b7c4-018c-4f7a-b2c9-0deed0e34097
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 08-29-2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー 2015"
-ms.openlocfilehash: 88502ba729ba5c11f70bcad41e89da77cfceb54d
-ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer 2015
+ms.openlocfilehash: 932a61bbdf3dc6e1bd3584f1487fd8341b98df20
+ms.sourcegitcommit: bf5cbc3c1fda6ba2dab2a198ede7b9b1b54583e9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2017
+ms.lasthandoff: 09/11/2017
 ---
-# <a name="multiplayer-how-tos"></a>マルチプレイヤーの実行方法
+# <a name="multiplayer-how-tos"></a>Multiplayer how-to's
 
-この記事は、次のセクションで構成されています。
+このトピックには、マルチプレイヤー 2015 の使用に関連する特定のタスクの実装方法についての情報が含まれています。
+
 * MPSD セッション変更通知のサブスクライブ
 * MPSD セッションの作成
 * MPSD セッションのアービターの設定
-* タイトルのアクティベーションの管理
+* Manage Title Activation
 * ユーザーを参加可能にする
-* ゲームへの招待を送信する
+* ゲームへの招待の送信
+* ロビー セッションからゲーム セッションへの参加
 * タイトルのアクティベーションからの MPSD セッションへの参加
 * ユーザーの現在のアクティビティの設定
 * MPSD セッションの更新
 * MPSD セッションからの退出
 * マッチメイキング中に空きセッション スロットを埋める
-* マッチ チケットを作成する
+* マッチ チケットの作成
 * マッチ チケットのステータスの取得
 
 ## <a name="subscribe-for-mpsd-session-change-notifications"></a>MPSD セッション変更通知のサブスクライブ
 
 | 注意                                                                                                                                                                                                                                                                                                                                    |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| セッションの変更をサブスクライブするには、関連付けられているプレイヤーがセッションでアクティブであることが必要です。 また、connectionRequiredForActiveMembers フィールドが、セッションの /constants/system/capabilities オブジェクトで true に設定されている必要があります。 このフィールドは、通常、セッション テンプレートで設定します。 「[MPSD セッション テンプレート](multiplayer-session-directory.md)」を参照してください。 |
+| Subscribing for changes to a session requires the associated player to be active in the session. The connectionRequiredForActiveMembers field must also be set to true in the /constants/system/capabilities object for the session. This field is usually set in the session template. See [MPSD Session Templates](multiplayer-session-directory.md). |
 
 
 
-MPSD セッション変更通知を受信するには、タイトルは次の手順を実行することができます。
+To receive MPSD session change notifications, the title can follow the procedure below.
 
-1.  同じユーザーによる呼び出しには必ず同じ **XboxLiveContext クラス** オブジェクトを使用します。 サブスクリプションは、このオブジェクトの有効期間に関連付けられます。 複数のローカル ユーザーが存在する場合は、ユーザーごとに個別の **XboxLiveContext** オブジェクトを使用します。
-2.  **RealTimeActivityService.MultiplayerSessionChanged イベント**および **RealTimeActivityService.MultiplayerSubscriptionsLost イベント**のイベント ハンドラーを実装します。
-3.  複数のユーザーの変更をサブスクライブする場合は、不要な作業を避けるためのコードを **MultiplayerSessionChanged** イベント ハンドラーに追加します。 **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch プロパティ**と **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber プロパティ**を使用します。 これらのプロパティを使用することで、最後に確認された変更を追跡し、より古い変更を無視できます。
-4.  **RealTimeActivityService.EnableMultiplayerSubscriptions メソッド**を呼び出してサブスクリプションを許可します。
-5.  ローカル セッション オブジェクトを作成し、そのセッションをアクティブとして参加させます。
-6.  各ユーザーに対して **MultiplayerSession.SetSessionChangeSubscription メソッド**の呼び出しを行い、通知の対象となるセッション変更の種類を渡します。
-7.  「**方法: マルチプレイヤー セッションの更新**」に説明されているように、セッションを MPSD に書き込みます。
+1.  Use the same **XboxLiveContext Class** object for all calls by the same user. Subscriptions are tied to the lifetime of this object. If there are multiple local users, use a separate **XboxLiveContext** object for each user.
+2.  Implement event handlers for the **RealTimeActivityService.MultiplayerSessionChanged Event** and the **RealTimeActivityService.MultiplayerSubscriptionsLost Event**.
+3.  If subscribing to changes for more than one user, add code to your **MultiplayerSessionChanged** event handler to avoid unnecessary work. Use the **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch Property** and the **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber Property**. Use of these properties allows tracking of the last change seen and ignoring of older changes.
+4.  Call the **RealTimeActivityService.EnableMultiplayerSubscriptions Method** to allow subscriptions.
+5.  Create a local session object and join that session as active.
+6.  Make calls for each user to the **MultiplayerSession.SetSessionChangeSubscription Method**, passing the session change type for which to be notified.
+7.  Now write the session to MPSD as described in **How to: Update a Multiplayer Session**.
 
 次のフロー チャートは、この手順で説明するイベントにサブスクライブしてマルチプレイヤーを開始する方法を示しています。
 
@@ -57,35 +59,35 @@ MPSD セッション変更通知を受信するには、タイトルは次の手
 
 ### <a name="parsing-duplicate-session-change-notifications"></a>重複するセッション変更通知の解析
 
-同じセッションの通知をサブスクライブする複数のユーザーがいる場合、そのセッションへの変更はすべて、各ユーザーに対してショルダー タップをトリガーします。 これらは 1 つを除いてすべて重複になります。 タイトルが通知に対してセッション内のすべてのユーザーをサブスクライブすることをお勧めするものの、既に通知された変更は無視してください。これは、Branch および ChangeNumber プロパティを使用して行うことができます。
+When there are multiple users subscribed to notifications for the same session, every change to that session will trigger a shoulder tap for each user. All but one of these will be duplicates. While it's still recommended that a title subscribe every user in a session to notifications, a title should ignore any changes that it's already been notified of; you can do this using the Branch and ChangeNumber properties.
 
-複数のショルダー タップを検出するには、タイトルで以下を行う必要があります。
+To detect multiple shoulder taps, a title should:
 
--   確認される **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch プロパティ**値ごとに、最新の **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber プロパティ**を保存します。
--   ショルダー タップの **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber プロパティ**がその **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch プロパティ**で最後に確認されたものよりも高い場合は、それを処理し、最新の **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber プロパティ**を更新します。
--   ショルダー タップの **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber プロパティ**がその **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch プロパティ**より高くない場合は、スキップします。 その変更は、既に処理されています。
+-   For each **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch Property** value seen, store the latest **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber Property**.
+-   If a shoulder tap has a higher **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber Property** than the last seen for that **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch Property**, process it and update the latest **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber Property**.
+-   If a shoulder tap does not have a higher **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber Property** for that **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch Property**, skip it. That change has already been handled.
 
-| 注意                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Note                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber プロパティ**値は、セッションによってではなく、**RealTimeActivityMultiplayerSessionChangeEventArgs.Branch プロパティ**によって追跡する必要があります。 **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch プロパティ**値はセッションの有効期間内に変更される (および **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber プロパティ**がリセットされる) 可能性があります。 |
+| **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber Property** values need to be tracked by **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch Property**, not by session. It's possible for the **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch Property** value to change (and the **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber Property** to reset) within the lifetime of a session. |
 
 ## <a name="create-an-mpsd-session"></a>MPSD セッションの作成
 
 
 | 注意                                                                                                                                                                                                                           |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 既定では、最初のメンバーが参加したときに MPSD セッションが作成されます。 タイトル ロジックが参加時にタイトルが存在するか存在しないかを予期している場合は、セッション更新時に適切な書き込みモードの値を書き込みメソッドに渡すことができます。 |
+| By default, an MPSD session is created when the first member joins it. If your title logic expects the title to exist or not exist at join time, it can pass an appropriate write mode value to the write method during the session update. |
 
 
 
-タイトルは以下の処理を実行し、新しいセッションを作成する必要があります。
+The title must do the following to create a new session:
 
-1.  新しい **XboxLiveContext クラス**オブジェクトを作成します。 タイトルはこのオブジェクトを 1 回作成して格納し、ソース コード全体で必要に応じて再利用します。 特にセッションのサブスクリプションを使用する場合は、まったく同じコンテキストを使用する必要があります。
-2.  新しい **MultiplayerSession クラス** オブジェクトを作成し、MPSD による新しいセッションの作成に必要なすべてのセッション データを準備します。
-3.  セッションを MPSD に書き込む前に必要な変更を行います。 たとえば、**MultiplayerSession.Join メソッド**を呼び出してメンバーをセッションに参加させる場合は、クライアントは、セッション更新の呼び出し時に参加させるように MPSD に指示する非表示ローカル要求データを追加します。
-4.  ローカルの変更が完了したら、「**方法: マルチプレイヤー セッションの更新**」で説明されているように MPSD に書き込みます。
-5.  MPSD から、多くのフィールドが入力された新しい **MultiplayerSession** オブジェクトを受け取ります。
-6.  今後は、この新しいセッション オブジェクトを使用し、新しいセッションを作成するための非表示要求が含まれている古いコピーは破棄します。
+1.  Create a new **XboxLiveContext Class** object. Your title creates this object once, stores it, and reuses it as required throughout the source code. Especially when working with session subscriptions, it is necessary to use exactly the same context.
+2.  Create a new **MultiplayerSession Class** object to prepare all the session data that the MPSD needs to create a new session.
+3.  Make required changes before writing the session to MPSD. For example, when joining a member to the session with a call to **MultiplayerSession.Join Method**, the client adds hidden local request data that tells MPSD to join upon the call to update the session.
+4.  When finished making local changes, write them to MPSD as described in **How to: Update a Multiplayer Session**.
+5.  Receive the new **MultiplayerSession** object from MPSD, with many fields filled in.
+6.  Use the new session object going forward, and discard the old copy, which contains a hidden request to create a new session.
 
 ### <a name="example"></a>例
 
@@ -125,45 +127,45 @@ MPSD セッション変更通知を受信するには、タイトルは次の手
 
 タイトルは、次の手順を使用して、作成済みのセッションのアービターを設定します。
 
-| 注意                                                                                                                                       |
+| Note                                                                                                                                       |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| メンバーのデバイス トークン (潜在的なホスト) は、メンバーがセッションに参加して、セキュア デバイス アドレスが含まれるまでは利用できません。 |
+| Device tokens for the members (potential hosts) are not available until the members have joined the session and included their secure device addresses. |
 
-1.  **MultiplayerSession.Members プロパティ**を使用して、MPSD からホスト候補のデバイス トークンを取得します。
+1.  Retrieve the device tokens for host candidates from the MPSD by using the **MultiplayerSession.Members Property**.
 
-| 注意                                                                                                                                                                                                                     |
+| Note                                                                                                                                                                                                                     |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | SmartMatch マッチメイキングによってセッションが作成された場合、クライアントは、**MultiplayerSession.HostCandidates プロパティ**を通じて MPSD から利用できるホスト候補を使用できます。 |
+    | If the session was created by SmartMatch matchmaking, your clients can use the host candidates available from MPSD through the **MultiplayerSession.HostCandidates Property**. |
 
-2.  ホスト候補の一覧から、必要なホストを選択します。
-3.  **MultiplayerSession.SetHostDeviceToken メソッド**を呼び出して、MPSD のローカル キャッシュでデバイス トークンを設定します。 ホスト デバイス トークンを設定する呼び出しが成功した場合、ローカル デバイス トークンがホストのトークンに取って代わります。
-4.  ホスト デバイス トークンを設定しようとしたときに HTTP/412 ステータス コードを受け取った場合は、セッション データを照会して、ホスト デバイス トークンがローカル本体用かどうか確認してください。 ローカル本体用でない場合は、別の本体がアービターとして指定されています。
+2.  Select the required host from the list of host candidates.
+3.  Call the **MultiplayerSession.SetHostDeviceToken Method** to set the device token in the local cache of the MPSD. If the call to set the host device token succeeds, the local device token replaces the host's token.
+4.  If an HTTP/412 status code is received when trying to set the host device token, query the session data and see if the host device token is for the local console. If it is not for the local console, another console has been designated as the arbiter.
 
-| 注意                                                                                                                                                                                                                              |
+| Note                                                                                                                                                                                                                              |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| HTTP/412 は標準的なエラーを示していないので、クライアントはその他の HTTP コードとは切り離して HTTP/412 ステータス コードを処理する必要があります。 ステータス コードの詳細については、「[マルチプレイヤー セッション ステータス コード](multiplayer-session-status-codes.md)」を参照してください。 |
+| Your client should handle the HTTP/412 status code separately from other HTTP codes, since HTTP/412 does not indicate a standard failure. For more about the status code, see [Multiplayer Session Status Codes](multiplayer-session-status-codes.md). |
 
-5.  「**方法: マルチプレイヤー セッションの更新**」で説明されているように、MPSD でセッションを更新します。
+5.  Update the session in MPSD, as described in **How to: Update a Multiplayer Session**.
 
-| 注意                                                                                                                                                                                                                                           |
+| Note                                                                                                                                                                                                                                           |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| より良いアルゴリズムがない場合、クライアントでは、他にホストが設定されていない場合に、各ホストが自分自身をホストとして設定しようとする greedy algorithm (貪欲法) を実装できます。 詳細については、「[セッション アービター](mpsd-session-details.md)」を参照してください。 |
+| If you have no better algorithm, the client can implement a greedy algorithm in which each host candidate attempts to set itself as the host if nobody else has done it yet. 詳しくは、「[セッション アービター](mpsd-session-details.md)」をご覧ください。 |
 
 ## <a name="manage-title-activation"></a>タイトルのアクティベーションの管理
 
-Xbox One はプロトコル アクティベーション時に **CoreApplicationView.Activated イベント**を発生させます。 マルチプレイヤー API に関しては、ユーザーが招待を受け入れるか、別のユーザーに加わるときにこのイベントが発生します。 これらのアクションは、参加するユーザーをターゲット ユーザーとのゲーム プレイに加えることにより、タイトルが対応する必要があるアクティベーションをトリガーします。
+Xbox One は、プロトコル アクティベーション時に **CoreApplicationView.Activated イベント**を発生させます。 In the context of the multiplayer API, this event is fired when a user accepts an invite or joins another user. These actions trigger an activation that the title must react to by bringing the joining user into game play with the target user.
 
-| 注意                                                                                       |
+| Note                                                                                       |
 |---------------------------------------------------------------------------------------------------------|
-| タイトルでは常に新しいアクティベーション引数を予期する必要があり、長さに関するコーディングを行わないようにする必要があります。 |
+| Your title should expect new activation arguments at any time and should never be coded against length. |
 
-タイトルがアクティベーションを処理するためには、次の主な手順を実行する必要があります。
+The title must perform the following main steps to handle title activation.
 
-1.  **CoreApplicationView.Activated イベント**のイベント ハンドラーを設定します。 このハンドラーは、タイトルが既に実行されている場合でも、プロトコルのアクティベーションが発生するたびにトリガーされます。
-2.  タイトルのアクティベーション時にセッションを開始し、セッションの変更通知をサブスクライブします。 「**方法: MPSD セッション変更通知のサブスクライブ**」を参照してください。
-3.  ユーザーをアクティブとしてセッションに参加させます。 「**方法: タイトルのアクティベーションからの MPSD セッションへの参加**」を参照してください。
-4.  ロビー セッションを、プロフィール UI を通じて公開されるアクティビティ セッションとして設定します。 「**方法: ユーザーの現在のアクティビティの設定**」を参照してください。
-5.  ユーザーをアクティブとしてゲーム セッションに参加させます。 ユーザーはピアに接続し、ゲーム プレイまたはロビーに入ることができるようになります。
+1.  Set up an event handler for the **CoreApplicationView.Activated Event**. This handler triggers every time protocol activation occurs, even if the title is already running.
+2.  At title activation, begin a session and subscribe for session change notifications. See **How to: Subscribe for MPSD Session Change Notifications**.
+3.  Join the user to the session as active. See **How to: Join an MPSD Session from a Title Activation**.
+4.  Set the lobby session as the activity session, exposed through the profile UI. See **How to: Set the User's Current Activity**.
+5.  Join the user to the game session as active. Now the user can connect to peers and enter game play or the lobby.
 
 次のフロー チャートは、タイトルのアクティベーションを処理する方法を示しています。
 
@@ -173,108 +175,122 @@ Xbox One はプロトコル アクティベーション時に **CoreApplicationV
 
 ユーザーを参加可能にするには、タイトルで次の手順を行う必要があります。
 
-1.  セッション オブジェクトを作成し、必要に応じて属性を変更します。
-2.  ユーザーをアクティブとしてセッションに参加させます。 「**方法: タイトルのアクティベーションからの MPSD セッションへの参加**」を参照してください。
-3.  ユーザーがセッション アービターとして指定されているかどうかを確認します。
-4.  ユーザーがアービターでない場合は、手順 7 に進みます。
-5.  ユーザーがアービターである場合は、「**MultiplayerSession.SetHostDeviceToken メソッド**を呼び出します。
-6.  **MultiplayerService.TryWriteSessionAsync メソッド**の呼び出しを使用して、セッションの書き込みを試みます。
-7.  セッションをアクティブなセッションとして設定します。 「**方法: ユーザーの現在のアクティビティの設定**」を参照してください。
+1.  Create a session object, and modify the attributes as required.
+2.  Join the user to the session as active. See **How to: Join an MPSD Session from a Title Activation**.
+3.  Determine if the user has been designated as the session arbiter.
+4.  If the user is not the arbiter, go to step 7.
+5.  If the user is the arbiter, call the **MultiplayerSession.SetHostDeviceToken Method**.
+6.  Attempt to write the session using a call to the **MultiplayerService.TryWriteSessionAsync Method**.
+7.  Set the session as the active session. See **How to: Set the User's Current Activity**.
 
-次のフロー チャートは、ゲーム中に他のプレイヤーによってプレイヤーが参加できるようにするための手順を示します。
+次のフロー チャートは、ゲーム中に他のプレイヤーによってユーザーが参加できるようにするための手順を示します。
 
 ![](../../images/multiplayer/Multiplayer_2015_Become_Joinable.png)
 
-## <a name="send-game-invites"></a>ゲームへの招待を送信する
+## <a name="send-game-invites"></a>ゲームへの招待の送信
 
-タイトルは、次の方法でプレイヤーがゲームへの招待を送信できるようにします。
+タイトルでは、次の方法でプレイヤーがゲームへの招待を送信することを可能にできます。
 
--   ロビー セッションの招待を送信する。
--   一般的な Xbox プラットフォームの招待 UI を使用して、ゲーム セッションの参照と共に招待を送信する。
+-   Send the invites for the lobby session.
+-   Send the invites using the generic Xbox platform invite UI with the game session reference.
 
-プレイヤーにゲームへの招待を送信するには、タイトルで次の手順を行う必要があります。
+To send game invites for a player, the title must do the following:
 
-1.  招待側プレイヤーを参加可能にします。 「**方法: ユーザーを参加可能にする**」を参照してください。
-2.  招待をロビー セッション経由で送信するか、招待 UI を使用して送信するかを決定します。
-3.  ロビー セッションを使用する場合は、**MultiplayerService.SendInvitesAsync メソッド**の呼び出しを使用して招待を送信します。 このメソッドには、**SystemUI.ShowPeoplePickerAsync メソッド**または **PartyChat.GetPartyChatViewAsync メソッド**を使用するゲーム内 UI ロースターの構築が必要な場合があります。
-4.  招待 UI を使用する場合は、**SystemUI.ShowSendGameInvitesAsync メソッド**を呼び出して招待 UI を表示します。
-5.  リモート プレイヤーが参加した後に、ローカル プレイヤーの **RealTimeActivityService.MultiplayerSessionChanged イベント**を処理します。
-6.  リモート プレイヤーのために、タイトルのアクティベーション コードを実装します。 「**方法: タイトルのアクティベーションの管理**」を参照してください。
+1.  Make the inviting game player joinable. See **How to: Make the User Joinable**.
+2.  Determine if the invites are to be sent via the lobby session or using the invite UI.
+3.  If using the lobby session, send the invites using a call to **MultiplayerService.SendInvitesAsync Method**. This method might require the building of an in-game UI roster using the **SystemUI.ShowPeoplePickerAsync Method** or the **PartyChat.GetPartyChatViewAsync Method**.
+4.  If using the invite UI, call the **SystemUI.ShowSendGameInvitesAsync Method** to show the invite UI.
+5.  Handle the **RealTimeActivityService.MultiplayerSessionChanged Event** for the local player after the remote player joins.
+6.  For the remote player, implement title activation code. See **How to: Manage Title Activation**.
 
 次のフロー チャートは、招待を送信する方法を示しています。
 
 ![](../../images/multiplayer/Multiplayer_2015_Send_Invites.png)
 
+## <a name="join-a-game-session-from-a-lobby-session"></a>ロビー セッションからゲーム セッションへの参加
+
+Windows 10 デバイスのゲームプレイ セッションでは、大規模なセッションでない場合、`userAuthorizationStyle` 機能を **true** に設定する必要があります。 つまり、`joinRestriction` プロパティを "none" にすることはできません。これは、セッションへの一般からの直接参加はできないことを意味します。
+
+一般的なシナリオでは、ロビー セッションを作成してプレイヤーを集め、それらのプレイヤーをゲームプレイ セッションまたはマッチメイキング セッションに移動します。 ただし、ゲームプレイ セッションが一般から参加不可能な場合、ゲーム クライアントは `joinRestriction` 設定を満たしていない限りゲームプレイ セッションに参加できません。この制限は、このようなシナリオには厳しすぎる場合がほとんどです。
+
+これを解決するには、転送ハンドルを使ってロビー セッションとゲーム セッションをリンクします。  タイトルでは、次の操作でこれを実行できます。
+
+1. ゲーム セッションの作成時に、`multiplayer_service::set_transfer_handle(gameSessionRef, lobbySessionRef)` API を使って、ロビー セッションとゲーム セッションをリンクする転送ハンドルを作成します。
+2. ゲーム セッションのセッション参照の代わりに、転送ハンドルの GUID をロビー セッションに格納します。
+3. タイトルでロビー セッションからゲーム セッションにメンバーを移動するとき、各クライアントでは、ロビー セッションから転送ハンドルを使い、`multiplayer_service::write_session_by_handle(multiplayerSession, multiplayerSessionWriteMode, handleId)` API を呼び出してゲーム セッションに参加します。
+4. MPSD は、ロビー セッションを検索し、転送ハンドルを使ってゲーム セッションに参加しようとしているユーザーがロビー セッションにも存在することを確認します。
+5. ロビー セッションに存在するメンバーであれば、ゲーム セッションにアクセスできるようになります。
+
 ## <a name="join-an-mpsd-session-from-a-title-activation"></a>タイトルのアクティベーションからの MPSD セッションへの参加
 
-ユーザーが Xbox シェル UI を使用してフレンドのアクティビティに参加する、または招待を受け入れることを選択すると、タイトルは、ユーザーが参加を希望するセッションを示すパラメーターを使ってアクティブ化されます。 タイトルは、このアクティベーションを処理し、対応するセッションにユーザーを追加する必要があります。
+When a user chooses to join a friend's activity or accept an invite using Xbox shell UI, the title is activated with parameters that indicate what session the user would like to join. The title must handle this activation and add the user to the corresponding session.
 
-タイトルで実行する手順を次に示します。
+Here are the steps the title should follow:
 
-1.  **CoreApplicationView.Activated イベント**のイベント ハンドラーを実装します。 このイベントは、タイトルのアクティベーションを通知します。
-2.  ハンドラーが発生したら、**IActivatedEventArgs.Kind プロパティ**を調べます。 Protocol に設定されている場合は、イベント引数を **ProtocolActivatedEventArgs クラス**にキャストします。
-3.  **ProtocolActivatedEventArgs** オブジェクトを調べます。 **ProtocolActivatedEventArgs.Uri プロパティ**に指定されている URI が inviteHandleAccept (受け入れた招待に対応) または activityHandleJoin (シェル UI 経由での参加に対応) のいずれかに一致する場合は、キーと値のペアを含む通常の URI クエリ文字列としてフォーマットされた、URI のクエリ文字列を解析し、以下のフィールドを抽出します。
-    -   受け入れた招待の場合:
-        1.  ハンドル
+1.  Implement an event handler for the **CoreApplicationView.Activated Event**. This event notifies of activations for the title.
+2.  When the handler fires, examine the **IActivatedEventArgs.Kind Property**. If it is set to Protocol, cast the event arguments to **ProtocolActivatedEventArgs Class**.
+3.  Examine the **ProtocolActivatedEventArgs** object. If the URI indicated in the **ProtocolActivatedEventArgs.Uri Property** matches either inviteHandleAccept (corresponding to an accepted invite) or activityHandleJoin (corresponding to a join via shell UI), parse the query string of the URI, which is formatted as a normal URI query string with key/value pairs, extracting the following fields:
+    -   For an accepted invite:
+        1.  handle
         2.  invitedXuid
         3.  senderXuid
-    -   参加の場合:
-        1.  ハンドル
+    -   For a join:
+        1.  handle
         2.  joinerXuid
         3.  joineeXuid
 
-4.  タイトルのマルチプレイヤー コードを開始します。このコードには、**RealTimeActivityService.EnableMultiplayerSubscriptions メソッド**の呼び出しが含まれている必要があります。
-5.  ローカルの **MultiplayerSession クラス** オブジェクトを、**MultiplayerSession コンストラクター (XboxLiveContext)** を使用して作成します。
-6.  **MultiplayerSession.Join メソッド (String, Boolean, Boolean)** を呼び出してセッションに参加します。 以下のパラメーターを設定して、参加がアクティブとして設定されるようにします。
+4.  Start the title's multiplayer code, which should include calling the **RealTimeActivityService.EnableMultiplayerSubscriptions Method**.
+5.  Create a local **MultiplayerSession Class** object, using the **MultiplayerSession Constructor (XboxLiveContext)**.
+6.  Call the **MultiplayerSession.Join Method (String, Boolean, Boolean)** to join the session. Use the following parameter settings so that the join is set as active:
     -   *memberCustomConstantsJson* = null
     -   *initializeRequested* = false
     -   *joinWithActiveStatus* = true
 
-7.  **MultiplayerSession.SetSessionChangeSubscription メソッド**を呼び出して、参加後にセッションが変更したときにショルダー タップを受けられるようにします。
-8.  手順 3 の説明に従って取得したハンドルを使用して、**MultiplayerService.WriteSessionByHandleAsync メソッド**を呼び出します。 ユーザーはセッションのメンバーになっているので、セッション内のデータを使用してゲームに接続できます。
+7.  Call the **MultiplayerSession.SetSessionChangeSubscription Method** to be shoulder-tapped when the session changes after joining.
+8.  Call the **MultiplayerService.WriteSessionByHandleAsync Method**, using the handle acquired as described in step 3. ユーザーはセッションのメンバーになっているので、セッション内のデータを使用してゲームに接続できます。
 
 ## <a name="set-the-users-current-activity"></a>ユーザーの現在のアクティビティの設定
 
-ユーザーの現在のアクティビティは、タイトルの Xbox ダッシュボードのユーザー エクスペリエンスに表示されます。 ユーザーのアクティビティは、セッションまたはタイトルのアクティベーションを通じて設定できます。 後者の場合、ユーザーはマッチメイキングを通じて、またはゲームを起動してセッションを開始します。
+ユーザーの現在のアクティビティは、タイトルの Xbox ダッシュボードのユーザー エクスペリエンスに表示されます。 Activity for a user can be set through a session or through title activation. In the latter case, the user enters a session through matchmaking or by starting a game.
 
-| 注意                                                                                                                                                  |
+| Note                                                                                                                                                  |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| セッションを通じて設定されたアクティビティは、**MultiplayerService.ClearActivityAsync メソッド**の呼び出しで削除できます。 |
+| Activity set through a session can be deleted with a call to the **MultiplayerService.ClearActivityAsync Method**. |
 
-セッションをユーザーの現在のアクティビティとして設定するには、タイトルは **MultiplayerService.SetActivityAsync メソッド**を呼び出し、セッションの参照を渡します。
+To set a session as the user's current activity, the title calls the **MultiplayerService.SetActivityAsync Method**, passing the session reference for the session.
 
-タイトルのアクティベーションによってユーザーの現在のアクティビティを設定する場合は、「**方法: タイトルのアクティベーションからの MPSD セッションへの参加**」を参照してください。
+タイトルのアクティベーションを通じてユーザーの現在のアクティビティを設定するには、「**方法: タイトルのアクティベーションからの MPSD セッションへの参加**」をご覧ください。
 
 ## <a name="update-an-mpsd-session"></a>MPSD セッションの更新
 
 | 注意                                                                                                                                                 |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| タイトルがマルチプレイヤー API を使用して既存のセッションを更新する場合は、セッションの書き込みを呼び出すまで、ローカル コピーを扱うことになるので注意してください。 |
+| When your title updates an existing session using the multiplayer API, remember that it is working with a local copy, until it makes a call to write the session. |
 
-既存のセッションを更新するには、タイトルは以下の操作を実行する必要があります。
+To update an existing session, the title must:
 
-1.  現在のセッションを必要に応じて変更します (たとえば **MultiplayerSession.Leave メソッド**を呼び出すことで)。
-2.  すべての変更を加えたら、以下のメソッドのいずれかを使用して、MPSD へローカルの変更内容を書き込みます。
+1.  Make changes to the current session as required, for example, by calling the **MultiplayerSession.Leave Method**.
+2.  When all changes are made, write the local changes to MPSD, using any of these methods:
 
-    -   **MultiplayerService.WriteSessionAsync メソッド**
-    -   **MultiplayerService.WriteSessionByHandleAsync メソッド**
-    -   **MultiplayerService.TryWriteSessionAsync メソッド**
-    -   **MultiplayerService.TryWriteSessionByHandleAsync メソッド**
+    -   **MultiplayerService.WriteSessionAsync Method**
+    -   **MultiplayerService.WriteSessionByHandleAsync Method**.
+    -   **MultiplayerService.TryWriteSessionAsync Method**
+    -   **MultiplayerService.TryWriteSessionByHandleAsync Method**
 
-    他のタイトルも変更できる共有部分に書き込む場合は、書き込みモードを **SynchronizedUpdate** に設定します。 詳細については、「[セッション更新の同期](multiplayer-session-directory.md)」を参照してください。
+    Set the write mode to **SynchronizedUpdate** if writing to a shared portion that other titles can also modify. See [Synchronization of Session Updates](multiplayer-session-directory.md) for more information.
 
-    書き込みメソッドは参加をサーバーに書き込み、最新のセッションを取得して、そのセッションから他のセッション メンバーと本体のセキュア デバイス アドレス (SDA) を検出します。 これらの本体間でネットワーク接続を確立する方法の詳細については、「**Xbox One の Winsock の概要**」を参照してください。
+    The write method writes the join to the server and gets the latest session, from which to discover other session members and the secure device addresses (SDAs) of their consoles. For more information about establishing a network connection among these consoles, see **Introduction to Winsock on Xbox One**.
 
-3.  最新の既知のセッション状態に基づいて今後の処理を実行できるように、古いローカルのセッション オブジェクトを破棄し、新たに取得したセッション オブジェクトを使用します。
+3.  Discard the old local session object, and use the newly retrieved session object so that future actions are based on the latest known session state.
 
 ## <a name="leave-an-mpsd-session"></a>MPSD セッションからの退出
 
 ユーザーがセッションから退出できるようにするには、タイトルで次の手順を行う必要があります。
 
-1.  ゲーム セッションの **MultiplayerSession.Leave メソッド**を呼び出します。
-2.  「**方法: マルチプレイヤー セッションの更新**」で説明されているように、MPSD でゲーム セッションを更新します。
-3.  必要に応じて、ロビー セッションの **Leave** メソッドを呼び出し、そのセッションを更新します。
-4.  ロビー セッションに必要な場合、**RealTimeActivityService.MultiplayerSubscriptionsLost イベント**と **RealTimeActivityService.MultiplayerSessionChanged イベント**の登録を解除して、マルチプレイヤー API をシャット ダウンします。
+1.  Call the **MultiplayerSession.Leave Method** for the game session.
+2.  Update the game session in MPSD, as described in **How to: Update a Multiplayer Session**.
+3.  If necessary, call **Leave** method for the lobby session, and update that session.
+4.  If necessary for the lobby session, shut down the multiplayer API by unregistering the **RealTimeActivityService.MultiplayerSubscriptionsLost Event** and the **RealTimeActivityService.MultiplayerSessionChanged Event**.
 
 次のフロー チャートは、セッションから退出して、シャットダウンする方法を示します。
 
@@ -282,33 +298,33 @@ Xbox One はプロトコル アクティベーション時に **CoreApplicationV
 
 ## <a name="fill-open-session-slots-during-matchmaking"></a>マッチメイキング中に空きセッション スロットを埋める
 
-マッチメイキング中にチケット セッションの空きスロットを埋めるには、タイトルは以下のような手順に従う必要があります。
+マッチメイキング中にチケット セッションの空きスロットを埋めるには、タイトルで次のような手順に従う必要があります。
 
-1.  マッチメイキング中に作成されたチケット セッションの最新のセッション状態にアクセスします。
-2.  ロビー セッションからゲーム プレイに参加可能なプレイヤーを追加します。
-3.  チケット セッションがいっぱいになっているかどうかを確認します。
-4.  セッションがいっぱいの場合、ゲーム プレイを続行します。
-5.  セッションがまだいっぱいでない場合は、「**方法: マッチ チケットの作成**」で説明されているようにマッチ チケットを作成します。 チケットを作成するには必ず *preserveSession* パラメーターを Always に設定します。
-6.  マッチメイキングを続行します。 「[SmartMatch マッチメイキングの使用](using-smartmatch-matchmaking.md)」を参照してください。
+1.  Access the latest session state for the ticket session created during matchmaking.
+2.  Add available players for game play from the lobby session.
+3.  Determine if the ticket session is full.
+4.  If the session is full, continue game play.
+5.  If the session is not yet full, create the match ticket as described in **How to: Create a Match Ticket**. Be sure to create the ticket with the *preserveSession* parameter set to Always.
+6.  Continue with matchmaking. See [Using SmartMatch Matchmaking](using-smartmatch-matchmaking.md).
 
-次のフロー チャートは、マッチメイキング中に空きセッション スロットを埋める方法を示します。
+次のフロー チャートは、マッチメイキング中に空きセッション スロットを埋める方法を示しています。
 
 ![](../../images/multiplayer/Multiplayer_2015_Fill_Open_Slots.png)
 
-## <a name="create-a-match-ticket"></a>マッチ チケットを作成する
+## <a name="create-a-match-ticket"></a>マッチ チケットの作成
 
-マッチ チケットを作成するには、マッチメイキング スカウトは以下の処理を実行する必要があります。
+マッチ チケットを作成するには、マッチメイキング スカウトは次の処理を実行する必要があります。
 
-1.  **MatchmakingService.CreateMatchTicketAsync メソッド**を呼び出し、チケット セッションへの参照を渡します。 このメソッドは、MPSD からチケット セッションを読み取り、セッション内のユーザーのマッチメイキングを開始します。 メソッドは内部的に **POST (/serviceconfigs/{scid}/hoppers/{hoppername})** を呼び出します。
-2.  マッチメイキング サービスがセッションのメンバーを新しいセッションまたは別の既存のセッションにマッチングする場合は、*preserveSession* パラメーターを Never に設定します。 タイトルがゲーム プレイを続行するためのチケット セッションとして既存のゲーム セッションを再利用できるようにするには、*preserveSession* パラメーターを Always に設定します。 この場合、マッチメイキング サービスは、送信されたセッションを保持し、適合したプレイヤーをそのセッションに追加できるようになります。
+1.  Call the **MatchmakingService.CreateMatchTicketAsync Method**, passing in a reference to the ticket session. The method reads the ticket session from MPSD, and starts matchmaking for the users in the session. Internally the method calls the **POST (/serviceconfigs/{scid}/hoppers/{hoppername})**.
+2.  Set the *preserveSession* parameter to Never if the matchmaking service is to match the members of the session into a new session or another existing session. Set the *preserveSession* parameter to Always to allow the title to reuse an existing game session as a ticket session to continue game play. The matchmaking service can then ensure that the submitted session is preserved and any matched players are added to that session.
 
-3.  **CreateMatchTicketResponse クラス** オブジェクトで返される **CreateMatchTicketResponse.EstimatedWaitTime プロパティ**を使用して、マッチメイキング時間のユーザーの期待を設定します。
-4.  必要な場合は、応答オブジェクトで返される **CreateMatchTicketResponse.MatchTicketId プロパティ**を使用して、チケットを削除することによって、セッションのマッチメイキングをキャンセルします。 チケットの削除には **MatchmakingService.DeleteMatchTicketAsync メソッド**を使用します。
+3.  Use the **CreateMatchTicketResponse.EstimatedWaitTime Property** returned in the **CreateMatchTicketResponse Class** object to set user expectations of matchmaking time.
+4.  Use the **CreateMatchTicketResponse.MatchTicketId Property** returned in the response object to cancel matchmaking for the session if needed, by deleting the ticket. チケットの削除には **MatchmakingService.DeleteMatchTicketAsync メソッド**を使用します。
 
 ## <a name="get-match-ticket-status"></a>マッチ チケットのステータスの取得
 
 タイトルがマッチ チケットのステータスを取得するには、次の手順を実行します。
 
-1.  チケット セッションの **MultiplayerSession クラス** オブジェクトを取得します。
-2.  **MultiplayerSession.MatchmakingServer プロパティ**を使用して、マッチメイキングに使用される **MatchmakingServer クラス** オブジェクトにアクセスします。
-3.  一致するものが見つかった場合、**MatchmakingServer** オブジェクトをチェックして、マッチメイキング プロセスのステータス、セッションの標準的な待機時間、およびターゲット セッションの参照を特定します。
+1.  Obtain the **MultiplayerSession Class** object for the ticket session.
+2.  Use the **MultiplayerSession.MatchmakingServer Property** to access the **MatchmakingServer Class** object used in matchmaking.
+3.  Check the **MatchmakingServer** object to determine the status of the matchmaking process, the typical wait time for the session, and the target session reference, if a match has been found.

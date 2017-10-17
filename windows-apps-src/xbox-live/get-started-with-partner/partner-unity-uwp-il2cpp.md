@@ -1,62 +1,62 @@
 ---
-title: "UWP 用 Unity と IL2CPP バックエンド"
+title: Unity for UWP with IL2CPP backend
 author: KevinAsgari
-description: "ID@Xbox および対象パートナー向けに、IL2CPP スクリプト バックエンドを使用して、Xbox Live サポートを UWP 用 Unity に追加する"
+description: Add Xbox Live support to Unity for UWP with IL2CPP scripting backend for ID@Xbox and managed partners
 ms.assetid: 790a49ad-eff4-4916-8578-968ca8483211
 ms.author: kevinasg
 ms.date: 04-04-2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Unity"
-ms.openlocfilehash: 7d237f0ff45fc17416d5ee14e81761d237d9faab
-ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+keywords: xbox live, xbox, games, uwp, windows 10, xbox one, Unity
+ms.openlocfilehash: 8caa379683c7ca3961cde28ca11b3c60226fb120
+ms.sourcegitcommit: fc695def93ba79064af709253ded5e0bfd634a9c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2017
+ms.lasthandoff: 08/25/2017
 ---
-# <a name="add-xbox-live-support-to-unity-for-uwp-with-il2cpp-scripting-backend-for-idxbox-and-managed-partners"></a>ID@Xbox および対象パートナー向けに、IL2CPP スクリプト バックエンドを使用して、Xbox Live サポートを UWP 用 Unity に追加する
+# <a name="add-xbox-live-support-to-unity-for-uwp-with-il2cpp-scripting-backend-for-idxbox-and-managed-partners"></a>Add Xbox Live support to Unity for UWP with IL2CPP scripting backend for ID@Xbox and managed partners
 
-## <a name="overview"></a>概要
+## <a name="overview"></a>Overview
 
-Unity での IL2CPP 用の Windows ランタイム サポート
+Windows Runtime Support for IL2CPP in Unity
 
-Unity 5.6f3 のリリースでは、エンジンに新しい機能が組み込まれました。この新機能によって、開発者は Windows ランタイム (WinRT) コンポーネントをスクリプト内で直接使用することができます。そのためには、コンポーネントをゲーム プロジェクトに直接取り込みます。 Until 5.6 を利用していた開発者は、UWP でゲーム スクリプトによってプラットフォーム機能 (Xbox Live SDK など) をサポートするために、プラグインや dll を必要としていました。 この新しいプロジェクション レイヤーによって、プラグインを使用する必要がなくなり、IL2CPP スクリプト バックエンドを選んだゲームでのみサポートされる、新しい簡略化されたワークフローが導入されました。
+With the release of Unity 5.6f3 the engine has included a new feature that enables developers to use Windows Runtime (WinRT) components directly in script by including them in the game project directly. Until 5.6 developers have needed a plugin, or dll to support any platform feature (including Xbox Live SDK) from game script in UWP. This new projection layer removes the plugin requirement, and introduces a new and simplified workflow supported only with games that choose the IL2CPP scripting backend.
 
-作業の開始方法について詳しくは、Unity に関するドキュメント (https://docs.unity3d.com/Manual/IL2CPP-WindowsRuntimeSupport.html) をご覧ください。
+For more information on how to get started, see the Unity documentation: https://docs.unity3d.com/Manual/IL2CPP-WindowsRuntimeSupport.html
 
-## <a name="steps"></a>手順
+## <a name="steps"></a>Steps
 
-**1) Unity をインストールします。**
+**1) Install Unity**
 
-Unity 5.6 以上をインストールし、インストール時には [Windows Store Il2CPP scripting backend] を必ず選択してください。
+Install Unity 5.6 or higher, and ensure you have the "Windows Store Il2CPP scripting backend" selected during installation
 
-**2) WinMDs を使用するときに IntelliSense をサポートするために、Visual Studio Tools for Unity バージョン 3.1 以上をインストールします。**Visual Studio 2015 の場合、このツールは https://marketplace.visualstudio.com/items?itemName=SebastienLebreton.VisualStudio2015ToolsforUnity で入手できます。  Visual Studio 2017 の場合、Visual Studio 2017 インストーラー内でこのコンポーネントを追加することができます。
+**2) Install Visual Studio Tools for Unity version 3.1 and above for IntelliSense support when using WinMDs** For Visual Studio 2015, this can be found at https://marketplace.visualstudio.com/items?itemName=SebastienLebreton.VisualStudio2015ToolsforUnity.  For Visual Studio 2017, the component can be added inside the Visual Studio 2017 installer.
 
-**3) 新規または既存の Unity プロジェクトを開きます。**
+**3) Open a new or existing Unity project**
 
-**4) Unity の [Build Settings] メニューで、プラットフォームを Windows ストアに切り替えます。**
+**4) Switch the platform to Windows Store in the Unity Build Settings menu**
 
-**5) Unity のプレイヤーの設定で IL2CPP スクリプト バックエンドを有効にして、API の互換性を .NET 4.6 に設定します。**
+**5) Enable IL2CPP scripting backend in the Unity player settings, and set API compatibility to .NET 4.6**
 
 ![](../images/unity/unity-il2cpp-1.png)
 
-**6) 最新バージョンの Xbox Live WinMD Unity アセット パッケージをインポートします。**このパッケージは https://github.com/Microsoft/xbox-live-api/releases で入手できます。
+**6) 最新バージョンの Xbox Live WinRT Unity アセット パッケージをインポートします。**このパッケージは https://github.com/Microsoft/xbox-live-api/releases で入手できます。
 
-**7) 新しい C\# スクリプトを Unity オブジェクトに追加およびアタッチします。**
+**7) Add and attach a new C\# script to a Unity object.**
 
-たとえば、"Main Camera" などの Unity オブジェクトをクリックし、[Add Component]、[New Script]、[C\# Script] の順にクリックして、"XboxLiveScript" という名前を付けます。 ゲーム オブジェクトの種類は問いません。
+For example, click on a Unity object such as the "Main Camera", and click "Add Component" \| "New Script" \| C\# Script \| and name it "XboxLiveScript". Any game object will do.
 
-**8) Visual Studio (VSTU 3.1+ がインストールされていること) でスクリプトを開きます。**
+**8) Open the script in Visual Studio (with VSTU 3.1+ installed)**
 
-2 つのプロジェクトを確認し、VSTU によって生成された "Player" プロジェクト内のゲーム スクリプト XboxLiveTest.cs を開きます。
+You will notice two projects, open your game script XboxLiveTest.cs in the "Player" project generated by VSTU
 
 ![](../images/unity/unity-il2cpp-2.png)
 
-このプロジェクトは UWP 用に生成された特別なプロジェクトであり、アセットに配置した winmd ファイルへの参照が含まれています。
-また、"#if ENABLE_WINMD_SUPPORT" 定義が自動的に設定されるため、IntelliSense と構文の強調表示が適切に機能します。
+This is a special project generated for UWP, and includes references for the winmd files you have placed in your assets.
+It will also define the "#if ENABLE_WINMD_SUPPORT" define for you so IntelliSense and syntax highlighting will work properly.
 
-**9) 次の Xbox Live コードを XboxLiveTest.cs ソース ファイルに追加します。**
+**9) Add the following Xbox Live code to the XboxLiveTest.cs source file**
 
 ```cpp
 
@@ -107,53 +107,53 @@ public class XboxLiveTest : MonoBehaviour
 
 ```
 
-**10) プレイヤーの設定内にある公開の設定で、"InternetClient" 機能が選択されていることを確認します。**
+**10)   Make sure you have 'InternetClient' capability selected in the publishing settings found in player settings**
 
 ![](../images/unity/unity-il2cpp-3.png)
 
-**11) Unity でプロジェクトを ビルドします。**
+**11) Build the project in Unity.**
 
-1.  [File]、[Build Settings] の順に移動し、[Windows Store] をクリックして、[Switch Platform] をクリックします。
+1.  Go to File \| Build Settings, click Windows Store and make sure you click “Switch Platform”
 
-2.  [Add Open Scenes] をクリックして、現在のシーンをビルドに追加します。
+2.  Click "Add Open Scenes" to add the current scene to the build
 
-3.  [SDK] コンボ ボックスで、[Universal 10] を選択します。
+3.  In the SDK combo box, choose "Universal 10"
 
-4.  UWP ビルド タイプのコンボ ボックスで [D3D] を選択しますが、必要に応じて [XAML] も選択できます。
+4.  In the UWP build type combo box, choose "D3D", but "XAML" will also work if you prefer.
 
-5.  [Unity C\# Projects] チェック ボックスをオンにして、Assembly-Csharp.dll プロジェクトを生成します。
+5.  Click the "Unity C\# Projects" checkbox to generate the Assembly-Csharp.dll projects
 
-6.  Unity の [Build] をクリックして、UWP アプリケーション内に Unity ゲームをラップする UWP Visual Studio プロジェクトを生成します。 新しいファイルが多数作成されるため、場所を指定するときは、混乱を避けるために新しいフォルダーを作成します。 フォルダーの名前を "Build" にすることをお勧めします。フォルダーに名前を付けたら、そのフォルダーを選択します。
+6.  Click "Build" for Unity to generate the UWP Visual Studio project that wraps your Unity game in a UWP application. When you get prompted for a location, create a new folder to avoid confusion since a lot of new files will be created. It’s recommended you call the folder "Build", and then select that folder
 
-**12) Xbox Live 構成をプロジェクトに追加します。**
+**12) Add Xbox Live configuration to your project**
 
-xboxservices.config ファイルを追加します。
+Add the xboxservices.config file
 ![](../images/unity/unity-il2cpp-4.png)
 
-「[新規または既存の UWP プロジェクトに Xbox Live を追加する](get-started-with-visual-studio-and-uwp.md)」というドキュメント ページの手順に従います。
+Follow the doc page called [Adding Xbox Live to a new or existing UWP project](get-started-with-visual-studio-and-uwp.md)
 
-**13) Visual Studio から UWP アプリをコンパイルして実行します。**
+**13) Compile and run the UWP app from Visual Studio**
 
-これにより、通常の UWP アプリのようにアプリが起動し、動作のために UWP アプリ コンテナーが必要なときに Xbox Live 呼び出しが可能になります。
+This will launch the app like a normal UWP app and allow Xbox Live calls to operate as they require a UWP app container to function.
 
-**14) Unity で変更を加えた場合はリビルドします。**
+**14) Rebuild if you make changes to anything in Unity**
   
-Unity で変更を加えた場合、UWP プロジェクトをリビルドする必要があります。
+If you change anything in Unity, then you must rebuild the UWP project.
 
-再コンパイル時に Unity が pfx ファイルを置き換えることによって Xbox Live へのサインインが失敗することに注意してください。この問題を避けるために Unity プロジェクト内でファイルを更新する必要があります。
+Note that Unity will replace your pfx file when you recompile which will cause Xbox Live sign-in to fail, so you must update it inside the Unity project to avoid this issue.
 
-これを行うには、[File]、[Build Settings] の順に移動し、Windows Store プレイヤー上で [Build Settings] をクリックしてから、[PFX] ボタンをクリックして、PFX ファイルを前の手順で取得したファイルに置き換えます。 別の方法として、Unity 内でプロジェクトをリビルドするたびに PFX ファイルを削除することもできます。
+To do this, go to File \| Build Settings, click on "Build Settings" on the Windows Store player and click the PFX button to replace the PFX file with the one you got from above. You can alternatively delete the PFX file each time you rebuild the project from within Unity.
 
-## <a name="troubleshooting-common-issues"></a>一般的な問題のトラブルシューティング
+## <a name="troubleshooting-common-issues"></a>Troubleshooting common issues
 
-**1)** Unity において、関連付けられたスクリプトを読み込めない場合、手順 3 を実行して WinMD を Unity のプロジェクト アセット パネルにドラッグしたことを確認してください。
+**1)** If Unity has that an associated script can not be loaded, then ensure that you did step 3 to drag the WinMD to the Unity project assets panel
 
-**2)** 起動後すぐ、または次のコード行を実行しようとしたときにアプリがクラッシュする場合:
+**2)** If the app crashes immediately at startup or when trying to run this line of code:
 
     Microsoft.Xbox.Services.System.XboxLiveUser m_user = new Microsoft.Xbox.Services.System.XboxLiveUser();
 
-xboxservices.config テキスト ファイルをプロジェクトに追加して、そのプロパティで "Build Action" を "Content" に、"Copy to Output Directory" を "Copy Always" に設定したことを確認します。
-また、次のような正しい JSON フォーマット (10 進形式の TitleId) がテキスト ファイルに含まれていることを確認します。
+Ensure you have added a xboxservices.config text file to the project and in its properties, set the "Build Action" to "Content", and "Copy to Output Directory" set to "Copy Always".
+Also ensure it contains proper JSON formatting with the TitleId in decimal form, such as:
 
 ```json
 {
@@ -162,12 +162,12 @@ xboxservices.config テキスト ファイルをプロジェクトに追加し�
 }
 ```
 
-**3)** アプリが起動するがサインインに失敗する場合は、以下を確認してください。
+**3)** If the app launches, but fails to signin then check the following:
 
-a) コンピューターがデベロッパー サンドボックスに設定されていること。  これを行うには、Xbox Live SDK の \Tools フォルダーにある SwitchSandbox.cmd スクリプトを使用します。
+a) Your machine is set to the your developer sandbox.  Use the SwitchSandbox.cmd script in the \Tools folder of the Xbox Live SDK to do this.
 
-b) デベロッパー サンドボックスにアクセスできる Xbox Live アカウントでサインインしていること。  通常のリテール Xbox Live アカウントにはそのようなアクセス権がありません。  XDP またはデベロッパー センターを使用してテスト アカウントを作成できます。
+b) You are signing in with an Xbox Live account that has access to the developer sandbox.  Normal retail Xbox Live accounts don't have access.  You can use XDP or Dev Center to create an test accounts.
 
-c) UWP アプリの package.appxmanfiest で正しい Identity が設定されていること。  これは手動で編集できますが、Visual Studio でプロジェクトを右クリックし、[ストア] の [アプリケーションをストアと関連付ける] を選択するのが最も簡単な修正方法です。
+c) Your package.appxmanfiest in your UWP app is set to the correct Identity.  You can edit this manually, but the easiest way to fix this is to right click on the Project in Visual Studio and choose "Store" \| "Associate App with the Store".
 
-d) Unity によって提供されるストック .pfx ファイルは Identity が正しくないため、そのファイルをディスクから削除し、そのファイルを参照する行を .csproj から削除します。または、Visual Studio でプロジェクトを右クリックし、[ストア] の [アプリケーションをストアと関連付ける] を選択すれば、適切な .pfx ファイルが配置されます。  その後、Unity に戻って Windows Store プレイヤー上で [Build Settings] をクリックし、[PFX] ボタンをクリックして、.pfx ファイルを Visual Studio での [アプリケーションをストアと関連付ける] 操作により取得したファイルに置き換えます。
+d) The stock .pfx file provided by Unity won't have the correct identity so either delete it from the disk and remove the line in the .csproj that references it, or right click on the Project in Visual Studio and choose "Store" \| "Associate App with the Store" which will place down a proper .pfx file.  Be sure then to go back to Unity, click on "Build Settings" on the Windows Store player and click the PFX button to replace the .pfx file with the one you got from Visual Studio's "Associate App with the Store" action.

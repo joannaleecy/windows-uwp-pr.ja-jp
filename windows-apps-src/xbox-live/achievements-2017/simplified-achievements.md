@@ -8,68 +8,67 @@ ms.date: 04-04-2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One"
-ms.openlocfilehash: c9a309ff6341711bfdd62fa6641bc239eeefd651
-ms.sourcegitcommit: a9e4be98688b3a6125fd5dd126190fcfcd764f95
+keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+ms.openlocfilehash: dca2603dacd827127cb4bba7f485d277ea682560
+ms.sourcegitcommit: b73a57142b9847b09ebb00e81396f2655bbc26ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/21/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="achievements-2017"></a>Achievements 2017
 
-Achievements 2017 システムでは、ゲーム デベロッパーは直接呼び出しモデルを使用して、Xbox One、Windows 10、Windows 10 Phone、Android、iOS 上の新しい Xbox Live ゲームの実績をロックを解除できます。
+The Achievements 2017 system enables game developers to use a direct calling model to unlock achievements for new Xbox Live games on Xbox One, Windows 10, Windows 10 Phone, Android, and iOS.
 
-## <a name="introduction"></a>概要
+## <a name="introduction"></a>Introduction
 
-Xbox One では、ゲーム内テレメトリー イベントを送信するだけで、ユーザー統計、実績、リッチ プレゼンス、マルチプレイヤーなどの Xbox Live 機能のデータを活用できる、新しいクラウド版実績システムが導入されました。 これにより、1 つのイベントで複数の Xbox Live 機能のデータを更新できたり、Xbox Live の構成がクライアントではなくサーバーに保持されるといった、多くの新しい利点があります。
+With Xbox One, we introduced a new Cloud-Powered Achievements system that empowers game developers to drive the data for their Xbox Live capabilities, such as user stats, achievements, rich presence, and multiplayer, by simply sending in-game telemetry events. This has opened up a multitude of new benefits – a single event can update data for multiple Xbox Live features; Xbox Live configuration lives on the server instead of in the client; and much more.
 
-Xbox One の発売から数年、ゲーム デベロッパーからのフィードバックを聞いてきましたが、デベロッパーは一貫して次のような共通認識を持っています。
+In the years following the Xbox One launch, we have listened closely to game developer feedback, and developers have consistently shared the following:
 
-1.  **直接呼び出しパターンを使用して実績のロックを解除したい。** 多くのデベロッパーはさまざまなプラットフォーム向けのゲームを開発しており、その中には以前のバージョンの Xbox も含まれます。また、これらのプラットフォームでの実績類似システムでは直接呼び出し方式が使用されています。 Xbox One および他の最新世代の Xbox プラットフォームで直接ロック解除呼び出しがサポートされると、クロスプラットフォーム ゲーム開発のニーズが緩和され、開発時のコストを削減できます。
+1.  **Desire to unlock achievements via a direct calling pattern.** Many developers build games for various platforms, including previous versions of Xbox, and the achievement-like systems on those platforms use a direct calling method. Supporting direct unlock calls on Xbox One and other current-gen Xbox platforms would ease their cross-platform game development needs and development time costs.
 
-2.  **構成の複雑さを最小限に抑える。** クラウド版実績システムでは、タイトルの統計データを解釈する方法およびユーザーの実績をロック解除するタイミングをサービスが認識できるように、実績のロック解除ロジックを Xbox Live で構成する必要があります。 この機能は、それ以前は存在しなかった実績の構成の新しい実績ルール セクションを使用して実現されました。 クラウドにロック解除ロジックを置くことは非常に強力ですが、この追加構成要件によってタイトルの実績の設計と作成の複雑さが増します。
+2.  **Minimize configuration complexity.** With the Cloud-Powered Achievements system, an achievement’s unlock logic must be configured in Xbox Live so that the services know how to interpret the title’s stats data and when to unlock the achievement for a user. This was done via a new Achievement Rules section of an achievement’s configuration that did not previously exist. While having unlock logic in the cloud can be quite powerful, this additional configuration requirement adds complexity into the design & creation of a title’s achievements.
 
-3.  **トラブルシューティングが困難です。** クラウド版実績システムではさまざまな便利な機能が導入されましたが、実績のロック解除が、ゲーム自体によって直接制御されるのではなく、サービス上に存在するルールによって間接的にトリガーされるため、ゲーム デベロッパーによる実績の検証とトラブルシューティングの困難さも増します。
+3.  **Difficult to troubleshoot.** While the Cloud-Powered Achievements system introduces a variety of helpful capabilities, it can also be more difficult for game developers to validate and troubleshoot issues with their achievements since achievement unlocks are triggered indirectly by rules that live on the service rather than directly controlled by the game itself.
 
-フィードバックではクラウド版実績システムと共に導入された特定の機能がたびたび高く評価されていることにも注目する必要があります。
+It is worth noting that game developers have also repeatedly shared feedback that they appreciate and value certain features that were introduced along with the Cloud-Powered Achievements system:
 
-1.  実績の進行状況、リアルタイム更新、コンセプト アート リワード、アクティビティ フィードへのロック解除の送信などの新しいユーザー エクスペリエンス機能。
+1.  New user experience features such as achievement progression, real-time updates, concept art rewards, and posting unlocks into activity feed.
 
-2.  ゲーム パッケージに含める必要があるローカル構成の代わりのサービス構成 (つまり、gameconfig、XLAST、SPA など) や、ゲーム出荷後に実績の文字列とイメージを簡単に編集する機能などの、構成機能の改善。
+2.  Configuration improvements such as a service config instead of a local config that must be included in the game package (i.e. gameconfig, XLAST, SPA, etc.) and the ability to easily edit achievement strings & images after the game has shipped.
 
-既存のクラウド版実績システムに代わるものとして将来のタイトルのために作成されている Achievements 2017 では、実績の構成、ゲーム コードへの実績のロック解除と更新の統合、実績が期待どおりに動作していることの検証が、容易になっています。
+With Achievements 2017, we are building a replacement of the existing Cloud-Powered Achievements system for future titles to use that makes it even easier for Xbox game developers to configure achievements, integrate achievement unlocks & updates into the game code, and validate that the achievements are working as expected.
 
-## <a name="whats-different-with-achievements-2017"></a>Achievements 2017 の特長
+## <a name="whats-different-with-achievements-2017"></a>What’s Different with Achievements 2017
 
-|                          | Achievements 2017 システム        | クラウド版実績システム      |
+|                          | Achievements 2017 system        | Cloud-Powered Achievements system      |
 |--------------------------|---------------------------------------|----------------------------------------|
-| ロック解除トリガー           | API 呼び出しによって直接的                 | テレメトリー イベントによって間接的        |
-| ロック解除の所有者             | タイトル                                 | Xbox Live                              |
-| 構成            | 文字列、イメージ、リワード              | 文字列、イメージ、リワード、ロック解除ルール \[+ 統計情報、+ イベント\]                    |
-| 進行状況              | サポートされる <br>*API 呼び出しによって直接的*                | サポートされる <br> *テレメトリー イベントによって間接的*       |
-| リアルタイム アクティビティ (RTA) | サポートされる                             | サポートされる                              |
-| チャレンジ               | サポートされない   | サポートされる                      |
-| API のテスト             | サポートされる                             | サポートされない                          |
+| Unlock Trigger           | Directly via API call                 | Indirectly via telemetry events        |
+| Unlock Owner             | Title                                 | Xbox Live                              |
+| Configuration            | Strings, images, rewards              | Strings, images, rewards, unlock rules  \[+ stats, +events\]                    |
+| Progression              | Supported <br>*directly via API call*                | Supported <br> *indirectly via telemetry events*       |
+| Real-Time Activity (RTA) | Supported                             | Supported                              |
+| Challenges               | Not Supported   | Supported                      |
 
 ## <a name="title-requirements"></a>タイトルの要件
 
-Achievements 2017 システムを使用するタイトルの要件を次に示します。
+The following are the requirements of any title that will use the Achievements 2017 system.
 
-1.  **新しい (未リリースの) タイトルでなければなりません。** 既にリリースされていてクラウド版実績システムを使用しているタイトルは対象外です。 詳しくは、「[既存のタイトルを新しい Achievements 2017 システムに "移行" できないのはなぜですか?](#_Why_can’t_existing)」を参照してください。
+1.  **Must be a new (unreleased) title.** Titles that have already been released and are using the Cloud-Powered Achievements system are ineligible. For more, see [Why can’t existing titles “migrate” onto the new Achievements 2017 system?](#_Why_can’t_existing)
 
-2.  **August 2016 XDK 以降を使用する必要があります。** 簡易版実績 API は、August 2016 XDK でリリースされました。
+2.  **August 2016 XDK 以降を使用する必要があります。** Update_Achievement API は、August 2016 XDK でリリースされました。
 
 3.  **XDK または UWP タイトルでなければなりません。** Achievements 2017 システムは、Xbox 360、Windows 8.x 以前、Windows Phone 8 以前などの従来のプラットフォームでは使用できません。
 
-## <a name="updateachievement-api"></a>UpdateAchievement API
+## <a name="updateachievement-api"></a>Update_Achievement API
 
-[XDP](achievements-in-xdp.md) または [UDC](achievements-in-udc.md) を介して実績を構成し、開発サンドボックスに公開した後は、タイトルで UpdateAchievement API を呼び出すことにより実績のロックを解除できます。
+[XDP](achievements-in-xdp.md) または [UDC](achievements-in-udc.md) を介して実績を構成し、開発サンドボックスに公開したら、タイトルで Update_Achievement API を呼び出して実績のロックを解除できます。
 
 この API は XDK と Xbox Live SDK の両方で使用できます。
 
-### <a name="api-signature"></a>API のシグネチャ
+### <a name="api-signature"></a>API Signature
 
-API のシグネチャは次のとおりです。
+The API signature is as follows:
 
 ```c++
 /// <summary>
@@ -97,89 +96,67 @@ API のシグネチャは次のとおりです。
         );
 ```
 
-`xbox::services::xbox_live_result<T>` は、すべての C++ Xbox Live Services API 呼び出しに対する戻りの呼び出しです。
+`xbox::services::xbox_live_result<T>` is the return call for all C++ Xbox Live Services API calls.
 
-詳細については、Xfest 2015 の講演「XSAPI: C++, No Exceptions!」をご覧ください。<br>
+For more information, check out the Xfest 2015 talk, “XSAPI: C++, No Exceptions!”<br>
 [ビデオ](http://go.microsoft.com/?linkid=9888207) |  [スライド](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Documents/Xfest_2015/Xbox_Live_Track/XSAPI_Cpp_No_Exceptions.pptx)
 
-### <a name="unlocking-via-updateachievement-api"></a>UpdateAchievement API によるロック解除
+### <a name="unlocking-via-updateachievement-api"></a>Update_Achievement API によるロック解除
 
 実績のロックを解除するには、*percentComplete* を 100 に設定します。
 
-ユーザーがオンラインの場合、要求は Xbox Live 実績サービスに直ちに送信されて、次のユーザー エクスペリエンスをトリガーします。
+If the user is online, the request will be immediately sent to the Xbox Live Achievements service and will trigger the following user experiences:
 
--   ユーザーは実績ロック解除通知を受け取ります。
+-   The user will receive an Achievement Unlocked notification;
 
--   指定された実績が、ユーザーのタイトルの実績リストに Unlocked として表示されます。
+-   The specified achievement will appear as Unlocked in the user’s achievement list for the title;
 
--   ロック解除された実績が、ユーザーのアクティビティ フィードに追加されます。
+-   The unlocked achievement will be added to the user’s activity feed.
 
-> *注意: タイトルが Achievements 2017 システムまたはクラウド版実績システムのどちらを使用していても、実績のユーザー エクスペリエンスの表示に違いはありません。*
+> *Note: There will be no visible difference in user experiences for achievements that use the Achievements 2017 system and the Cloud-Powered Achievements.*
 
-ユーザーがオフラインの場合は、ロック解除要求はユーザーのデバイスのローカルなキューに入れられます。 ユーザーのデバイスがネットワークに再び接続すると、要求は実績サービスに自動的に送信され (注: このトリガーにゲームのアクションは必要ありません)、上記のエクスペリエンスが説明したとおりに行われます。
+If the user is offline, the unlock request will be queued locally on the user’s device. When the user’s device has reestablished network connectivity, the request will automatically be sent to the Achievements service – note: no action is required from the game to trigger this – and the above user experiences will occur as described.
 
-### <a name="updating-completion-progress-via-updateachievement-api"></a>UpdateAchievement API による進行状況の更新
+### <a name="updating-completion-progress-via-updateachievement-api"></a>Update_Achievement API による進行状況の更新
 
 実績のロック解除に向けたユーザーの進行状況を更新するには、*percentComplete* を 1 ～ 100 の範囲の適切な整数に設定します。
 
-実績の進行状況は増やすことだけが可能です。 *percentComplete* を実績の最後の *percentComplete* 値より小さい値に設定すると、更新は無視されます。 たとえば、実績の *percentComplete* の前回の値が 75 の場合、値 25 を指定して更新を送信すると無視されて、実績の進行状況の表示は 75% のままになります。
+An achievement’s progress can only increase. If *percentComplete* is set to a number less than the achievement’s last *percentComplete* value, the update will be ignored. For example, if the achievement’s *percentComplete* had previously been set to 75, sending an update with a value of 25 will be ignored and the achievement will still be displayed as 75% complete.
 
-*percentComplete* を 100 に設定すると、実績のロックが解除されます。
+If *percentComplete* is set to 100, the achievement will unlock.
 
 *percentComplete* を 100 より大きい値に設定すると、API は 100 ちょうどに設定した場合と同じように動作します。
 
-## <a name="testing-achievements"></a>実績のテスト
-
-開発中の実績の検証において、デベロッパーからのよくある要望は次の 2 つです。
-
-1.  テスト ユーザーの実績をリセットしたい。
-
-2.  テスト ユーザーにロック解除された実績 (およびゲーマースコア) を追加したい。
-
-Achievements 2017 システムでは、これら 2 つのシナリオをサポートする API が作成されており、デベロッパーはより簡単に開発サンドボックスでタイトルの実績をテストできます。
-
-*詳細情報は準備中です。*
-
 ## <a name="frequently-asked-questions"></a>よく寄せられる質問
 
-### <a name="span-idwhyarechallenges-classanchorspancan-i-ship-my-title-using-the-achievements-2017-system-before-the-mandatory-date"></a><span id="_Why_are_Challenges" class="anchor"></span>必須日より前に、Achievements 2017 システムを使用するタイトルを出荷できますか?
+### <a name="span-idwhyarechallenges-classanchorspancan-i-ship-my-title-using-the-achievements-2017-system-yet"></a><span id="_Why_are_Challenges" class="anchor"></span>Achievements 2017 システムを使用するタイトルはもう出荷できますか?
 
-もちろんです。 初回承認日以降であれば、すべての新規タイトルは、クラウド版実績システムの代わりに Achievements 2017 システムを使用することが歓迎され、奨励されます。
+もちろんです。 すべての新規タイトルでは、クラウド版実績システムの代わりに Achievements 2017 システムを使用することが歓迎され、奨励されます。
 
 ### <a name="why-are-challenges-not-supported-in-the-achievements-2017-system"></a>Achievements 2017 システムでチャレンジがサポートされていないのはなぜですか?
 
-Xbox ゲーム全体の使用データを調べたところ、チャレンジの現在の実装と提供はほとんどのゲーム デベロッパーのニーズを満たしていないことがわかりました。 引き続きこの部分に関するデベロッパーの意見とフィードバックを収集し、デベロッパーのニーズにいっそう沿った機能を提供する予定です。 新しくリリースされる Xbox Arena は、新しくはあっても大きくは異ならない方向で Xbox ゲームに新しい対戦型環境を導入する機能の例です。
+Usage data across Xbox games has shown that the current implementation and presentation of challenges does not fulfill a need for most game developers. We will continue gathering developer input and feedback in this space and endeavor to deliver future features that are more on point with developer needs. The newly released Xbox Arena is an example of a feature that introduces new competitive capabilities for Xbox games a new, but similar, direction.
 
-### <a name="can-i-still-add-new-achievements-every-calendar-quarter-if-my-title-is-using-the-achievements-2017-system"></a>タイトルが Achievements 2017 システムを使用している場合でも、3 か月ごとに新しい実績を追加できますか?
+### <a name="can-i-still-add-new-achievements-every-calendar-quarter-if-my-title-is-using-the-achievements-2017-system"></a>Can I still add new achievements every calendar quarter if my title is using the Achievements 2017 system?
 
-できます。 実績ポリシーの変更はありません。
+Yes. The Achievements policy is unchanged.
 
-### <a name="span-idwhycantexisting-classanchorspanwhy-cant-existing-titles-migrate-onto-the-new-achievements-2017-system"></a><span id="_Why_can’t_existing" class="anchor"></span>既存のタイトルを新しい Achievements 2017 システムに "移行" できないのはなぜですか?
+### <a name="span-idwhycantexisting-classanchorspanwhy-cant-existing-titles-migrate-onto-the-new-achievements-2017-system"></a><span id="_Why_can’t_existing" class="anchor"></span>Why can’t existing titles “migrate” onto the new Achievements 2017 system?
 
-既存タイトルの大部分については、Achievements 2017 システムへの "移行" は、サービス構成の更新と、実績ロック解除呼び出しのイベント書き込みの変更だけでは済みません。しかも、これらの変更だけでも、非常にコストがかかり、実績が修復不可能なほど破損するようなエラーと意図しない動作が発生する大きなリスクがあります。 さらに、ほとんどの既存タイトルには、既存のデータを持っているユーザーがいます。 クラウド版実績システムを既に使用しているライブ ゲームの変換は、デベロッパーと Xbox の双方にとって、それほどコストのかかる作業ではありませんが、既存のユーザーのプロフィールとゲーム エクスペリエンスは大きな危険にさらされます。
+For the vast majority of existing titles, a ‘migration’ to the Achievements 2017 system would not be limited to simply updating their service configurations and swapping out event writes for achievement unlock calls – although these changes alone would be very costly and would carry significant risk of error and unintended behavior that could result in the achievements being irreparably broken. Rather, most existing titles also have users with existing data. Attempting to convert a live game that is already using the Cloud-Powered Achievements system would not only be a very costly effort, for both the developer and Xbox, but would significantly jeopardize existing users’ profiles and/or game experiences.
 
-### <a name="if-my-title-was-released-using-the-cloud-powered-achievements-system-can-any-future-dlc-for-the-title-switch-to-achievements-2017"></a>クラウド版実績システムを使用しているリリース済みタイトルは、タイトルの将来の DLC で Achievements 2017 に切り替えることができますか?
+### <a name="if-my-title-was-released-using-the-cloud-powered-achievements-system-can-any-future-dlc-for-the-title-switch-to-achievements-2017"></a>If my title was released using the Cloud-Powered Achievements system, can any future DLC for the title switch to Achievements 2017?
 
-タイトルのすべての実績は、同じ実績システムを使用する必要があります。 ベース ゲームの実績で使用されている実績システムを、タイトルの将来のすべての実績に使用する必要があります。
+All achievements for a title must use the same Achievements system. Whichever Achievements system is used by the base game’s achievements is the system that must be used for all future achievements for the title.
 
-### <a name="while-testing-achievements-in-my-dev-sandbox-can-i-mix-and-match-between-using-the-achievements-2017-system-and-the-cloud-powered-achievements-system"></a>開発サンドボックスで実績をテストするときに、Achievements 2017 システムとクラウド版実績システムを組み合わせて使用することはできますか?
+### <a name="while-testing-achievements-in-my-dev-sandbox-can-i-mix-and-match-between-using-the-achievements-2017-system-and-the-cloud-powered-achievements-system"></a>While testing achievements in my dev sandbox, can I mix-and-match between using the Achievements 2017 system and the Cloud-Powered Achievements system?
 
-できません。 タイトルのすべての実績は、同じ実績システムを使用する必要があります。
+No. タイトルのすべての実績は、同じ実績システムを使用する必要があります。
 
-### <a name="if-i-want-to-try-out-each-achievements-system-after-the-first-approved-date-can-i-use-different-achievements-systems-between-different-dev-sandboxes"></a>初回承認日後に各実績システムを試してみたい場合、異なる開発サンドボックスであれば異なる実績システムを使用できますか?
+### <a name="does-achievements-2017-also-include-offline-unlocks"></a>Achievements 2017 にはオフライン ロック解除も含まれていますか?
 
-タイトルによって使用される実績システムは、製品レベルで設定されます。 タイトルのサービス構成が RETAIL に公開されていない場合は、開発サンドボックスで各実績システムを試すことができます。 詳しくは、[Achievements 2017 (XDP) を有効にする方法に関する記事](#_Enable_Simplified_Achievements)をご覧ください。 実績システムを変更すると、すべてのサンドボックスで、タイトルによって構成および公開されたすべての実績が削除されることに注意してください。
+デバイスがオフラインの間にタイトルで実績をロック解除すると、Update_Achievement API はオフライン ロック解除要求を自動的にキューに入れ、デバイスが再びネットワークに接続すると、Xbox Live と自動的に同期します。これは、現在のクラウド版実績システムのオフライン エクスペリエンスと同様です。 ユーザーがオフラインの間は、実績のロック解除は行われません。
 
-### <a name="does-achievements-2017-also-include-offline-unlocks"></a>Achievements 2017 にもオフライン ロック解除は含まれますか?
+### <a name="i-see-a-new-achievementupdate-event-in-xdp-if-my-title-uses-that-event-does-that-mean-it-has-achievements-2017"></a>I see a new “AchievementUpdate” event in XDP. If my title uses that event, does that mean it has Achievements 2017?
 
-デバイスがオフラインの間にタイトルで実績をロック解除すると、UpdateAchievement API はオフライン ロック解除要求を自動的にキューに入れ、デバイスが再びネットワークに接続すると、Xbox Live と自動的に同期します。これは、現在のクラウド版実績システムのオフライン エクスペリエンスと同様です。 ユーザーがオフラインの間は、実績のロック解除は行われません。
-
-### <a name="i-see-a-new-achievementupdate-event-in-xdp-if-my-title-uses-that-event-does-that-mean-it-has-achievements-2017"></a>XDP には新しい "AchievementUpdate" イベントがあります。 タイトルでそのイベントを使用すると、タイトルは Achievements 2017 を使用していることになりますか?
-
-*AchievementUpdate* ベース イベントは、バックエンド用に Xbox Live で必要です。 このイベントは無視しても安全です。 このベース イベント タイプを使用するイベントをタイトルで構成した場合、Xbox Live はそのイベントによる書き込みを無視します。 クラウド版実績システムを使用するタイトルでは、引き続き他のベース イベント タイプを使用してイベントを構成する必要があります。 Achievements 2017 システムを使用するタイトルでは、実績のために*いかなる*イベントも構成する必要はありません。
-
-### <a name="how-do-i-disable-achievements-2017-for-my-title"></a>タイトルの Achievements 2017 を無効にするにはどうすればよいですか?
-
-タイトルが Achievements 2017 システムを使用するように設定されていて、クラウド版実績システムを代わりに使用したい場合は、「[簡易版実績の有効化 (XDP)](#_Enable_Simplified_Achievements)」の手順に従い、*ただし*、**[Achievements configuration system]** トグルを [*Achievements 2013*] に設定します。
-
-必須日以降に作成されたタイトルの場合は、Achievements 2017 システムを無効にすることはできません。
+The *AchievementUpdate* base event is required by Xbox Live for backend purposes. You can safely ignore it. If your title configures an event using this base event type, those event writes will be ignored by Xbox Live. Titles that are built on the Cloud-Powered Achievements system should continue to configure their events by using the other base event types. Achievements 2017 システムを使用するタイトルでは、実績のためにイベントを構成する必要は一切ありません**。

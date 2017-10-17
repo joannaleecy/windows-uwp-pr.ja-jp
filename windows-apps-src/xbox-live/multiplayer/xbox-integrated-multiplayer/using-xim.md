@@ -1,81 +1,81 @@
 ---
-title: "XIM の使用"
+title: Using XIM
 author: KevinAsgari
-description: "ゲームに Xbox Integrated Multiplayer (XIM) を実装する方法について説明します。"
+description: Learn how to implement Xbox Integrated Multiplayer (XIM) into your game.
 ms.assetid: f5a2c68b-b1f9-4533-9282-41c31eab2487
 ms.author: kevinasg
 ms.date: 04-04-2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Xbox Live, Xbox, ゲーム, Xbox One, Xbox Integrated Multiplayer"
-ms.openlocfilehash: 09c33d8b7c92ee8c17631de340ab0c2cb4e1c9da
-ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+keywords: xbox live, xbox, games, xbox one, xbox integrated multiplayer
+ms.openlocfilehash: 9c1f5dff04024fb82a02df78d1964b3ca86c9eff
+ms.sourcegitcommit: b73a57142b9847b09ebb00e81396f2655bbc26ec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2017
+ms.lasthandoff: 09/12/2017
 ---
-# <a name="using-xim"></a>XIM の使用
+# <a name="using-xim"></a>Using XIM
 
-XIM の使用に関する概要を紹介します。トピックの内容は次のとおりです。
+This is a brief walkthrough on using XIM, containing the following topics:
 
-1. [前提条件](#prereq)
-2. [初期化および起動](#init)
-3. [非同期操作および状態変更の処理](#async)
-4. [xim_player の基本的な処理](#player)
-5. [フレンド参加の有効化とフレンドの招待](#invites)
-6. [メッセージの送信と受信](#send)
-7. [マッチメイキングの概要および別の XIM ネットワークへの移動](#basicmatch)
-8. [XIM ネットワークの退出およびクリーンアップ](#leave)
-9. [チャットの操作](#chat)
-10. [カスタム プレイヤーおよびネットワーク プロパティの設定](#properties)
-11. [プレーヤーごとのスキルまたはロールによるマッチメイキング](#roles)
-12. [プレーヤーのチームおよびチャット ターゲットの設定](#teams)
-13. [プレイヤー スロットの自動バックグラウンド設定 ("バックフィル" マッチメイキング)](#backfill)
-14. [サーバーのロール、"ホスト移行"、XIM 権限](#authority)
+1. [Prerequisites](#prereq)
+2. [Initialization and startup](#init)
+3. [Asynchronous operations and processing state changes](#async)
+4. [Basic xim_player handling](#player)
+5. [Enabling friends to join and inviting them](#invites)
+6. [Sending and receiving messages](#send)
+7. [Basic matchmaking and moving to another XIM network with others](#basicmatch)
+8. [Leaving a XIM network and cleaning up](#leave)
+9. [Working with chat](#chat)
+10. [Configuring custom player and network properties](#properties)
+11. [Matchmaking using per-player skill or role](#roles)
+12. [Player teams and configuring chat targets](#teams)
+13. [Automatic background filling of player slots ("backfill" matchmaking)](#backfill)
+14. [The role of servers, "host migration", and XIM authorities](#authority)
 
-## <a name="prerequisites-a-nameprereq"></a>前提条件<a name="prereq">
+## <a name="prerequisites-a-nameprereq"></a>Prerequisites <a name="prereq">
 
-XIM のコーディングを始めるには、2 つの前提条件があります。 まず、標準のマルチプレイヤー ネットワーキング機能を使用してアプリの AppXManifest を設定し、その "ネットワーク マニフェスト" を構成して、XIM で使用するのに必要なトラフィック パターン テンプレートを宣言する必要があります。
+Before you get started coding with XIM, there are two prerequisites. First, you must have configured your app's AppXManifest with standard multiplayer networking capabilities and you must have configured its "network manifest" to declare the necessary traffic pattern templates used by XIM.
 
-> AppXManifest 機能およびネットワーク マニフェストについては、プラットフォームのドキュメントの各セクションで詳しく説明されています。また、貼り付ける XIM 固有の XML は、「[XIM プロジェクト構成](xim-manifest.md)」で確認できます。
+> AppXManifest capabilities and network manifests are described in more detail in their respective sections of the platform documentation; the typical XIM-specific XML to paste is provided at [XIM Project Configuration](xim-manifest.md).
 
-次に、割り当て済みの Xbox Live タイトル ID と、サービス構成 ID の 2 つのアプリケーション ID 情報を使用できるようにする必要があります。これらは、Xbox Live サービスにアクセスするためにアプリケーションのプロビジョニングの一部として提供されます。 これらの取得に関する詳細については、マイクロソフトの担当者にお問い合わせください。 これらの情報は、初期化時に使用されます。
+Second, you'll need to have two pieces of application identity information available: the assigned Xbox Live title ID and service configuration ID provided as part of provisioning your application for access to the Xbox Live service. See your Microsoft representative for more information on acquiring these. These pieces of information will be used during initialization.
 
-XIM をコンパイルするには、プライマリ ヘッダー XboxIntegratedMultiplayer.h を含める必要があります。 適切にリンクするには、プロジェクト内の 1 つ以上のコンパイル ユニットにも XboxIntegratedMultiplayerImpl.h を含める必要があります (スタブ関数実装は小さく、コンパイラーで "インライン" として生成しやすいため、一般的なプリコンパイル済みヘッダーをお勧めします)。
+Compiling XIM requires including the primary XboxIntegratedMultiplayer.h header. In order to link properly, your project must also include XboxIntegratedMultiplayerImpl.h in at least one compilation unit (a common precompiled header is recommended since these stub function implementations are small and easy for the compiler to generate as "inline").
 
-XIM インターフェイスでは、プロジェクトのコンパイルにおいて、C++/CX と従来の C++ のいずれかを選択する必要がなく、どちらも使用できます。 また、この実装では、致命的ではないエラーの報告手段として例外をスローしないため、必要な場合には、例外が発生しないプロジェクトから簡単に使用できます。
+The XIM interface does not require a project to choose between compiling with C++/CX versus traditional C++; it can be used with either. The implementation also doesn't throw exceptions as a means of non-fatal error reporting so you can consume it easily from exception-free projects if preferred.
 
-## <a name="initialization-and-startup-a-nameinit"></a>初期化および起動 <a name="init">
+## <a name="initialization-and-startup-a-nameinit"></a>Initialization and startup <a name="init">
 
-ライブラリーの操作を開始するには、Xbox Live サービス構成 ID の文字列とタイトル ID 番号を使用して XIM オブジェクト シングルトンを初期化します。 Xbox Services API も使用している場合は、これらを `xbox::services::xbox_live_app_config` から取得すると便利な場合があります。 次の例では、これらの値はそれぞれ "myServiceConfigurationId" および "myTitleId" 変数に既に存在するものと想定しています。
+You begin interacting with the library by initializing the XIM object singleton with your Xbox Live service configuration ID string and title ID number. If you're also using the Xbox Services API, you may find it convenient to retrieve these from `xbox::services::xbox_live_app_config`). The following example assumes the values already reside in 'myServiceConfigurationId' and 'myTitleId' variables respectively:
 
 ```cpp
 xim::singleton_instance().initialize(myServiceConfigurationId, myTitleId);
 ```
 
-初期化した後は、参加するローカル デバイスに現在存在しているすべてのユーザーの Xbox ユーザー ID 文字列をアプリで取得し、`xim::set_intended_local_xbox_user_ids()` の呼び出しに渡す必要があります。 次のサンプル コードでは、1 人のユーザーがコントローラーのボタンを押してプレイする意図を示し、そのユーザーに関連付けられた Xbox ユーザー ID 文字列は "myXuid" 変数に既に取得されているものとします。
+Once initialized, the app should retrieve the Xbox User ID strings for all users currently on the local device that will participate, and pass them to a `xim::set_intended_local_xbox_user_ids()` call. The following sample code assumes a single user has pressed a controller button expressing intent to play and the Xbox User ID string associated with the user has already been retrieved into a 'myXuid' variable:
 
 ```cpp
 xim::singleton_instance().set_intended_local_xbox_user_ids(1, &myXuid);
 ```
 
-`xim::set_intended_local_xbox_user_ids()` を呼び出すとすぐに、XIM ネットワークに追加する必要のあるローカル ユーザーに関連付けられている Xbox ユーザー ID が設定されます。 この Xbox ユーザー ID のリストは、`xim::set_intended_local_xbox_user_ids()` の別の呼び出しによってリストが変更されるまで、以降のすべてのネットワーク操作で使用されます。
+A call to `xim::set_intended_local_xbox_user_ids()` immediately sets the Xbox User IDs associated with the local users that should be added to the XIM network. This list of Xbox User IDs will be used in all future network operations until the list changes through another call to `xim::set_intended_local_xbox_user_ids()`.
 
-この例では、XIM ネットワークはまだ存在していないため、XIM ネットワークへの移動を開始してプロセスを開始する必要があります。 ユーザーが特定の XIM ネットワークをまだ想定していない場合のベスト プラクティスは、単に、新しい空のネットワークに移動することです。そのネットワークは、ユーザーのフレンドの参加を許可することで、次のマルチプレイヤー アクティビティ (一緒にマッチメイキングに入る、など) を共同で選択できる一種の "ロビー" になります。 次に、以前に追加したローカル ユーザーのみが最大で 8 プレイヤーが参加できる空の XIM ネットワークに移動を開始する例を示します。
+In this case there is no XIM network at all yet, so you must begin moving to a XIM network to get that process started. The best practice if the user doesn't already have a specific XIM network in mind is to simply move to a new, empty one that you allow the user's friends to join, as a sort of "lobby" from which they can collaborate to select their next multiplayer activity (such as entering matchmaking together). An example starting to move just the local users previously added to such an empty XIM network with room for up to 8 total players would be:
 
 ```cpp
 xim::singleton_instance().move_to_new_network(8, xim_players_to_move::bring_only_local_players);
 ```
-非同期の移動操作が開始し、最終的な結果は状態変化を定期的に処理することで確認できます。
+Now the asynchronous move operation will begin, and you can learn of its eventual results by regularly processing state changes.
 
-## <a name="asynchronous-operations-and-processing-state-changes-a-nameasync"></a>非同期操作および状態変更の処理 <a name="async">
+## <a name="asynchronous-operations-and-processing-state-changes-a-nameasync"></a>Asynchronous operations and processing state changes <a name="async">
 
-XIM の中核的な動作は、アプリによる `xim::start_processing_state_changes()` メソッドと `xim::finish_processing_state_changes()` メソッドの定期的かつ頻繁な呼び出しです。 これらのメソッドを使用して、XIM はアプリがマルチプレイヤーの状態の更新を処理する準備ができた通知を受け取り、更新を提供します。 これらのメソッドは、UI レンダリング ループのすべてのグラフィックス フレームで呼び出すことができるよう、素早く動作するように設計されています。 これを利用することで、ネットワークのタイミングの予測不可能性やマルチスレッド コールバックの複雑さを気にすることなく、キュー内のすべての変更を取得できます。 XIM API は、このシングル スレッド パターン用に実際に最適化されています。 これら 2 つの関数の外部では状態が変化しないことが保証されているため、直接的かつ効率的に使用できます。
+The heart of XIM is the app's regular, frequent calls to the `xim::start_processing_state_changes()` and `xim::finish_processing_state_changes()` pair of methods. These methods are how XIM is informed that the app is ready to handle updates to multiplayer state, and how XIM provides those updates. They're designed to operate quickly such that they can be called every graphics frame in your UI rendering loop. This provides a convenient place to retrieve all queued changes without worrying about the unpredictability of network timing or multi-threaded callback complexity. The XIM API is actually optimized for this single-threaded pattern. It guarantees its state will remain unchanged outside of these two functions, so you can use it directly and efficiently.
 
-同じ理由から、XIM API によって返されるオブジェクトがすべてスレッドセーフであるとは見なさないでください**。 ライブラリには内部的なマルチスレッド保護機能がありますが、別のスレッドが `xim::start_processing_state_changes()` または `xim::finish_processing_state_changes()` を呼び出してそのプレイヤー リストに関連付けられているメモリーを変更している可能性がある間に、あるスレッドで任意の値にアクセスする必要がある場合は (たとえば、`xim::players()` リストの処理)、独自のロック処理を実装する必要があります。
+For the same reason, all objects returned by the XIM API should *not* be considered thread-safe. The library has internal multithreading protection, but you will still need to implement your own locking if you require one thread to access any values-- for example, walking the `xim::players()` list-- while another thread might be invoking either `xim::start_processing_state_changes()` or `xim::finish_processing_state_changes()` and altering the memory associated with that player list.
 
-`xim::start_processing_state_changes()` を呼び出すと、キューに入っているすべての更新が `xim_state_change` 構造体ポインターの配列で報告されます。 アプリでは、配列を反復処理し、より具体的な型の基本構造を検査して、基本的な構造体の型を対応する詳細な型にキャストしてから、その更新を適切に処理する必要があります。 現在使用可能なすべての `xim_state_change` 構造体が終了した後は、`xim::finish_processing_state_changes()` を呼び出すことによってその配列を XIM に戻してリソースを解放する必要があります。 次に、例を示します。
+When `xim::start_processing_state_changes()` is called, all queued updates are reported in an array of `xim_state_change` structure pointers. Apps should iterate over the array, inspect the base structure for its more specific type, cast the base structure type to the corresponding more detailed type, and then handle that update as appropriate. Once finished with all the `xim_state_change` structures currently available, that array should be passed back to XIM to release the resources by calling `xim::finish_processing_state_changes()`. For example:
 
 ```cpp
 uint32_t stateChangeCount;
@@ -104,47 +104,47 @@ for (uint32_t stateChangeIndex = 0; stateChangeIndex < stateChangeCount; stateCh
  xim::singleton_instance().finish_processing_state_changes(stateChanges);
 ```
 
-これで基本的な処理ループができたので、`xim::move_to_new_network()` の初期操作に関連する状態変化を処理できます。 すべての XIM ネットワーク移動操作は、`xim_move_to_network_starting_state_change` で開始します。 何らかの理由で移動が失敗した場合、アプリは `xim_network_exited_state_change` を受け取ります。これは、タイトルが XIM ネットワークに移動しないようにする、または現在の XIM ネットワークからタイトルを切断する、非同期重大エラーに対する共通のエラー処理メカニズムです。 移動が成功した場合は、すべての状態が終了され、すべてのプレイヤーが XIM ネットワークに正常に追加された後、移動は `xim_move_to_network_succeeded_state_change` で完了します。
+Now that you have your basic processing loop, you can handle the state changes associated with the initial `xim::move_to_new_network()` operation. Every XIM network move operation will begin with a `xim_move_to_network_starting_state_change`. If the move fails for any reason, then your app will be provided a `xim_network_exited_state_change`, which is the common failure handling mechanism for any asynchronous fatal error that prevents you from moving to a XIM network or disconnects you from the current XIM network. Otherwise, the move will complete with a `xim_move_to_network_succeeded_state_change` after all the state has been finalized and all the players have been successfully added to the XIM network.
 
-## <a name="basic-ximplayer-handling-a-nameplayer"></a>xim_player の基本的な処理 <a name="player">
+## <a name="basic-ximplayer-handling-a-nameplayer"></a>Basic xim_player handling <a name="player">
 
-1 人のローカル ユーザーを新しい XIM ネットワークに移動する例が成功したとすると、アプリはローカル `xim_player` オブジェクトの `xim_player_joined_state_change` も提供されています。 プレイヤー インスタンス自体が有効である限り、このオブジェクト ポインターは有効であり、対応する `xim_player_left_state_change` が提供され `xim::finish_processing_state_changes()` を介して返されるまで、有効な状態が維持されます。 アプリはすべての `xim_player_left_state_change` に対して常に `xim_player_joined_state_change` を提供されます。 `xim::get_players()` を使用することで、いつでも XIM ネットワークのすべての `xim_player` オブジェクトの配列を取得することもできます。
+Assuming the example of moving a single local user to a new XIM network succeeded, your app has also been provided a `xim_player_joined_state_change` for a local `xim_player` object. This object pointer will remain valid for as long as the player instance itself is valid, which is up until the corresponding `xim_player_left_state_change` for it has been provided and returned via `xim::finish_processing_state_changes()`. Your app will always be provided a `xim_player_left_state_change` for every `xim_player_joined_state_change`. You can also retrieve an array of all `xim_player` objects in the XIM network at any time by using `xim::get_players()`.
 
-`xim_player` オブジェクトには、多くの役に立つメソッドがあります。たとえば、`xim_player::gamertag()` は、プレイヤーに関連付けられている現在の Xbox Live ゲーマータグ文字列を表示用に取得します。 `xim_player` がデバイスに対してローカルである場合は、ローカル プレイヤーだけが使用できるメソッドである `xim_player::local()` から null ではない `xim_player::xim_local` オブジェクトのポインターも報告します。
+The `xim_player` object has many helpful methods, such as `xim_player::gamertag()` for retrieving the current Xbox Live Gamertag string associated with the player for display purposes. If the `xim_player` is local to the device, then it will also report a non-null `xim_player::xim_local` object pointer from `xim_player::local()`, which has additional methods only available to local players.
 
-もちろん、プレイヤーにとって最も重要な状態は XIM が知っている共通の情報ではなく、特定のアプリで追跡する必要のある情報であり、それに対しては独自のオブジェクトがある可能性があるため、`xim_player` オブジェクトをそれにリンクして、XIM が `xim_player` を報告するときはいつでも、カスタム プレイヤー コンテキスト ポインターを設定して検索を実行することなく状態をすばやく取得できます。 次の例では、プライベート状態に対するポインターは変数 "myPlayerStateObject" 内にあり、新しく追加される `xim_player` オブジェクトは変数 "newXimPlayer" 内にあるものとします。
+Of course, the most important state for players is not the common information that XIM knows, but what your specific app wants to track, and since you likely have your own object for that, you'll want to link the `xim_player` object to yours so that any time XIM reports a `xim_player` you can quickly get to your state without having to perform a lookup by setting a custom player context pointer. The following example assumes a pointer to your private state is in the variable 'myPlayerStateObject' and the newly added `xim_player` object is in the variable 'newXimPlayer':
 
 ```cpp
 newXimPlayer->set_custom_player_context(myPlayerStateObject);
 ```
 
-これは、指定されたポインター値をプレイヤー オブジェクトでローカルに保存します (メモリーが有効でないときにリモート デバイスにネットワーク経由で転送されることはありません)。 その後は、カスタム コンテキストを取得して、次の例のようにオブジェクトにキャストすることによって、いつでもオブジェクトに戻ることができます。
+This saves the specified pointer value with the player object locally (it is never transferred over the network to remote devices where the memory would not be valid). You'll then be able to always get back to your object by retrieving the custom context and casting it back to your object like the following example:
 
 ```cpp
 myPlayerStateObject = reinterpret_cast<MyPlayerState *>(newXimPlayer->custom_player_context());
 ```
 
-このカスタム プレイヤー コンテキスト ポインターはいつでも変更できます。
+You can change this custom player context pointer at any time.
 
-この基本プレイヤー処理により、ローカル ユーザーとの既存のソーシャル関係を通してリモート ユーザーがこの XIM ネットワークに参加できるようにすることができます。
+With this basic player handling, you're now ready to enable remote users to join this XIM network through existing social relationships with the local users.
 
-## <a name="enabling-friends-to-join-and-inviting-thema-nameinvites"></a>フレンド参加の有効化とフレンドの招待<a name="invites">
+## <a name="enabling-friends-to-join-and-inviting-thema-nameinvites"></a>Enabling friends to join and inviting them<a name="invites">
 
-プライバシーとセキュリティのため、すべての新しい XIM ネットワークは既定では追加プレイヤーが参加できないように自動的に構成されるので、アプリ側で明示的に許可する必要があります。 次の例では、xim::set_allowed_player_joins() を使用して、プレイヤーとして参加する新しいローカル ユーザー、および招待されている、または "フォロー" されている (Xbox Live ソーシャル関係) ユーザーの許可を開始する方法を示します。
+For privacy and security, all new XIM networks are automatically configured by default to not be joinable by any additional players, and it's up to the app to explicitly allow them once it is ready. The following example shows how to use xim::set_allowed_player_joins() to begin allowing new local users to join as players, as well other users that have been invited or that are being "followed" (an Xbox Live social relationship):
 
 ```cpp
 xim::singleton_instance().set_allowed_player_joins(xim_allowed_player_joins::local_invited_or_followed);
 ```
 
-これは非同期的に発生します。 完了すると、`xim_allowed_player_joins_changed_state_change` が提供され、値が既定値の `xim_allowed_player_joins::none` から変化したことが通知されます。 新しい値は、`xim::allowed_player_joins()` を使用して照会できます。
+This happens asynchronously. Once complete, a `xim_allowed_player_joins_changed_state_change` is provided to notify you that its value has changed from its default of `xim_allowed_player_joins::none`. You can query the new value then or at any by using `xim::allowed_player_joins()`.
 
-ローカル プレイヤーはこの XIM ネットワークに参加するようリモート ユーザーに招待を送信できるようになります。 これは、`xim_player::xim_local::show_invite_ui()` を呼び出してシステム招待 UI を起動してローカル ユーザーにユーザーを選択して招待を送信できるようにすることによって実現されます。 このことは、次の例で示されています。変数 'ximPlayer' は有効なローカル `xim_player` を指しているものとします。
+Now the local player may want to send out invitations to remote users to join this XIM network. This is trivially accomplished by calling `xim_player::xim_local::show_invite_ui()` to launch the system invitation UI where the local user can select people and send invitations. The following example demonstrates this, assuming the variable 'ximPlayer' points to a valid local `xim_player`:
 
 ```cpp
 ximPlayer->local()->show_invite_ui();
 ```
 
-システム招待 UI が表示され、ユーザーが招待を送信すると (またはそれ以外で UI を閉じると)、`xim_show_invite_ui_completed_state_change` が提供されます。 または、アプリは `xim_player::xim_local::invite_users()` を使って招待を直接送信できます。 どちらの方法でも、リモート ユーザーはサインインしている場所で Xbox Live 招待メッセージを受け取り、受け入れることができます。 これにより、まだ実行していない場合はデバイスでアプリが起動され、同じ XIM ネットワークに移動するために使用できるイベント引数で "プロトコルのアクティブ化" を行います。 アクティブ化自体について詳しくは、プラットフォームのドキュメントをご覧ください。 次の例では、イベント引数を取得し、`xim::extract_protocol_activation_information()` を呼び出して XIM に適用可能かどうかを確認する方法を示します。未処理の URI 文字列を `Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs` から変数 "uriString" に既に取得してあるものとします。
+The system invitation UI will now display, and once the user has sent the invitations (or otherwise dismissed the UI), a `xim_show_invite_ui_completed_state_change` will be provided. Alternatively, your app can send the invitations directly using `xim_player::xim_local::invite_users()`. Either way, the remote users will receive an Xbox Live invitation message wherever they are signed in, and can choose to accept. This will launch your app on those devices if it isn't already running, and "protocol activate" it with the event arguments that can be used to move to this same XIM network. See the platform documentation for more information on activation itself. The following example shows how to take the event arguments and call `xim::extract_protocol_activation_information()` to determine if they're applicable to XIM, assuming you've already retrieved the raw URI string from `Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs` to a variable 'uriString':
 
 ```cpp
 xim_protocol_activation_information activationInfo;
@@ -153,44 +153,51 @@ isXimActivation = xim::singleton_instance().extract_protocol_activation_informat
 
 ```
 
-XIM のアクティブ化の場合、設定された `xim_protocol_activation_information` 構造体の "local_xbox_user_id" フィールドで示されているローカル ユーザーがサインインしていて、`xim::set_intended_local_xbox_user_ids()` に指定されているユーザーに含まれることを確認する必要があります。 その後、同じ URI 文字列を使用して `xim::move_to_network_using_protocol_activated_event_args()` を呼び出すことで、指定された XIM ネットワークへの移動を開始できます。 次に、例を示します。
+If it is a XIM activation, then you will want to ensure the local user identified in the 'local_xbox_user_id' field of the filled-in `xim_protocol_activation_information` structure is signed in and is among the users specified to `xim::set_intended_local_xbox_user_ids()`. Then you can initiate moving to the specified XIM network with a call to `xim::move_to_network_using_protocol_activated_event_args()` using the same URI string. For example:
 
 ```cpp
 xim::singleton_instance().move_to_network_using_protocol_activated_event_args(uriString);
 ```
 
-"フォローされている" リモート ユーザーはシステム UI でローカル ユーザーのプレイヤー カードに移動し、招待なしに自分だけで参加の試みを開始できることにも注意してください (前に示したように、そのようなプレイヤーの参加を許可してあるものとします)。 アプリでは招待の場合と同じようにプロトコルのアクティブ化が行され、異なる処理は必要ありません。
+Also note that "followed" remote users can navigate to the local user's player card in the system UI and initiate a join attempt themselves without an invitation (assuming you've allowed such player joins as shown above). These will protocol activate your app just like invites and don't need to be handled any differently.
 
-プロトコルのアクティブ化を使用した XIM ネットワークへの移動は、前述の手順で行った新しい XIM ネットワークへの移動と同じです。 唯一の違いは、移動が成功すると、移動中のデバイスによって、適用可能なプレイヤーを表すローカルとリモート両方のプレイヤーに `xim_player_joined_state_change` 構造体が送信されることです。 また当然、既に XIM ネットワークに存在していたデバイスが移動することはありませんが、`xim_player_joined_state_change` 構造体がさらに送信されると、新しいデバイスのユーザーがプレイヤーとして追加されます。
+Moving to a XIM network using protocol activation is identical to moving to a new XIM network like was done earlier. The only difference is that when the move succeeds, the moving device will have been provided both local and remote player `xim_player_joined_state_change` structures representing the applicable players. And naturally, the device that was already in the XIM network won't be moving, but will see the new device's users be added as players with additional `xim_player_joined_state_change` structures.
 
 
-この時点で、音声通信およびテキスト チャット通信は、この XIM ネットワーク内の各デバイスのプレイヤー間で自動的に有効になっています。 これで、マルチプレイヤーおよび送信するアプリ固有メッセージの準備が整います。
+At this point, voice and text chat communication is automatically enabled among the players on these different devices in this XIM network. You're now fully ready for multiplayer and any app-specific messages you want to send.
 
-## <a name="sending-and-receiving-messages-a-namesend"></a>メッセージの送信と受信 <a name="send">
+## <a name="sending-and-receiving-messages-a-namesend"></a>Sending and receiving messages <a name="send">
 
-XIM とその基になっているコンポーネントによって、インターネット経由で手間をかけずに安全な通信チャネルを確立することができるため、接続の問題や、一部のプレイヤーが受信できない可能性があることを心配する必要はありません。 ピア ツー ピア接続の基盤に問題がある場合、XIM ネットワークへの移動は成功しません。 問題がなければ、すべての `xim_player` が、すべてのデバイスのアプリのすべてのインスタンスに通知され、どのデバイスにもメッセージを送信できるようになります。 次の例では、"sendingPlayer" 変数は有効なローカル プレイヤー オブジェクトへのポインターであり、(特定のプレイヤーの配列を渡さないことで) XIM ネットワークのすべてのプレイヤー (ローカルまたはリモート) に、保証されたシーケンシャル配信でメッセージ構造体 "msgData" を送信するものとします。
+XIM and its underlying components do all the tedious work of establishing secure communication channels over the Internet so you don't have to worry about connectivity problems or being able to reach some but not all players. If there are any fundamental peer-to-peer connectivity issues, moving to a XIM network will not succeed. Otherwise you can be sure that all instances of your app any all the devices will be informed of every `xim_player`, and can send messages to any of them. The following example assumes a 'sendingPlayer' variable is a pointer to a valid local player object, and sends a message structure 'msgData' to all players (local or remote) in the XIM network (by not passing an array of specific players), with guaranteed, sequential delivery:
 
 ```cpp
 sendingPlayer->local()->send_data_to_other_players(sizeof(msgData), &msgData, 0, nullptr, xim_send_type::guaranteed_and_sequential);
 ```
 
-メッセージのすべての受信者には、データのコピーへのポインターおよびメッセージを送信してローカルに受信する対応する xim_player オブジェクトへのポインターを含む xim_player_to_player_data_received_state_change が提供されます。
+All recipients of the message will be provided a xim_player_to_player_data_received_state_change that includes a pointer to a copy of the data, as well as pointers to the corresponding xim_player object that sent it and are locally receiving it.
 
-もちろん保証されたシーケンシャル配信は便利ですが、インターネットでパケットがドロップされたりパケットの順序が正しくない場合は XIM は再送信または遅延する必要があるため、効率的ではない送信タイプでもあります。 アプリがパケットのドロップや順序の間違いを許容できるメッセージに対しては他の送信タイプの使用を検討してください。
+Of course, guaranteed, sequential delivery is convenient, but it can also be an inefficient send type, since XIM needs to retransmit or delay it if packets are dropped/misordered by the Internet. Be sure to consider using the other send types for messages that your app can tolerate losing or having arrive out of order.
 
-メッセージ データはリモート コンピューターから送られてくるので、データ形式を明確に定義し (特定のバイト オーダー ("エンディアン") でマルチバイト値をパッキングするなど)、処理する前にデータを検証するのがベスト プラクティスです。 XIM はネットワーク レベルのセキュリティを提供しているため、暗号化や署名スキームを追加実装することはできませんが、アプリケーションのバグから保護したり、異なるバージョンのアプリケーション プロトコルに共存できるように、堅牢な "多重防御" を行うことは常に有益です (開発時や、コンテンツ更新時など)。
+Since message data comes from a remote machine, the best practice is to clearly defined the data formats, such as packing multi-byte values in a particular byte order ("endianness"), and to validate the data before acting on it. XIM provides network-level security so you should not implement any additional encryption or signature scheme, but it is always wise to be robust for "defense-in-depth", to protect against accidental application bugs, or to handle different versions of your application protocol coexisting gracefully (during development, content updates, etc.).
 
-ユーザーのインターネット接続も、常に変わり続ける限られたリソースです。 必ず、有益なメッセージ データ形式を使用し、すべての UI フレームを送信するような設計にしないでください。 2 人のプレイヤー間における現在のパスの品質の詳細は、`xim_player::network_path_information()` メソッドを呼び出して確認できます。 以下の例では、`xim_network_path_information` 構造体のポインターを取得し、'remotePlayer' 変数に含まれる `xim_player` ポインターを操作します。
+The user's Internet connection is also a limited, ever-changing resource. Be sure to use efficient message data formats and avoid designs that send every UI frame. You can learn more about the current quality of the path between two players by calling the `xim_player::network_path_information()` method. The following example retrieves a pointer to the `xim_network_path_information` structure for a `xim_player` pointer contained in the 'remotePlayer' variable:
 
 ```cpp
  const xim_network_path_information * networkPathInfo = remotePlayer->network_path_information();
 ```
 
-返される構造体には、予想される往復遅延時間に加え、接続上の理由から現時点で追加データを送信できないためにローカルのキューに入ったままのメッセージ数が含まれます。 キューがバックアップ中であると表示される場合は、データの送信速度を抑える必要があります。
+The returned structure includes the estimated round trip latency and how many messages are still queued locally because the connection can't support transmitting more data at the moment.
+
+`xim_network_path_information::round_trip_latency_in_milliseconds` フィールドは、基盤のネットワークの待機時間と、キューを経由しない場合の XIM の推定待機時間を表します。 実際の遅延時間は、`xim_network_path_information::send_queue_size_in_messages` が大きくなり、XIM がキュー経由で動作するようになるにつれて増加します。
+
+ゲームの使用状況と要件に基づいて、`send_data_to_other_players` の呼び出しの調整を開始する適切なポイントを選択してください。 送信キューにメッセージがあるということは、実際のネットワーク待機時間が増えることを意味します。
+
+XIM の上限 (現在は 3,500 件のメッセージ) に近い値は、ほとんどのゲームにとっては大きすぎ、`send_data_to_other_players` の呼び出し頻度と各データ ペイロードの大きさに応じて、データが送信されるまでに数秒の待機時間が生じる可能性があります。 代わりに、ゲームの待機時間の要件と、ゲームでの `send_data_to_other_players` の呼び出しパターンの頻度を合わせて考慮して、適切な数値を選択してください。
+
 
 ## <a name="basic-matchmaking-and-moving-to-another-xim-network-with-others-a-namebasicmatch"></a>マッチメイキングの概要および別の XIM ネットワークへの移動 <a name="basicmatch">
 
-フレンドのグループのゲーム体験を拡張するには、Xbox Live マッチメイキング サービスを使用して、共通の関心に基づき、世界中の対戦相手がいる XIM ネットワークにプレイヤーを移動します。 最も基本的な方法は、データの設定された `xim_matchmaking_configuration` 構造体を使用して、いずれかのデバイスで `xim::move_to_network_using_matchmaking()` を呼び出し、現在の XIM ネットワークからプレイヤーを移動することです。 以下の例では、no-teams free-for-all 用に合計 8 人のプレイヤーを探すように構成されたマッチメイキング (8 人見つからない場合は、2 ～ 7 人でも許容可能) を使用して移動を開始します。このとき、MYGAMEMODE_DEATHMATCH の値 (この値は、同一値を指定した他のプレイヤーのみと一致します) で定義されるアプリ固有のゲームモード定数 uint64_t を使用し、ソーシャルな方法で参加したすべてのプレイヤーを現在の XIM ネットワークから移動します。
+You can further expand the experience for a group of friends by moving the players to a XIM network that also has strangers-- opponents from around the world who are brought together using the Xbox Live matchmaking service based on similar interests. The most basic form is calling `xim::move_to_network_using_matchmaking()` on one of the devices with a populated `xim_matchmaking_configuration` structure, taking players from the current XIM network along with it. The following example initiates a move using matchmaking configured to find a total of 8 players for a no-teams free-for- all (although if 8 aren't found, 2-7 players are also acceptable), using an app-specific game mode constant uint64_t defined by the value MYGAMEMODE_DEATHMATCH that will only match with other players specifying that same value, and bringing all socially-joined players from the current XIM network:
 
 ```cpp
 xim_matchmaking_configuration matchmakingConfiguration = { 0 };
@@ -200,21 +207,21 @@ matchmakingConfiguration.custom_game_mode = MYGAMEMODE_DEATHMATCH;
 xim::singleton_instance().move_to_network_using_matchmaking(matchmakingConfiguration, xim_players_to_move::bring_existing_social_players);
 ```
 
-前述の移動のように、これにより、すべてのデバイスに最初の `xim_move_to_network_starting_state_change` が送信され、成功すると、`xim_move_to_network_succeeded_state_change` が送信されます。 この場合は XIM ネットワーク間で移動するため、ローカルユーザーおよびリモートユーザー向けに追加された既存の `xim_player` オブジェクトが存在している点が異なり、このオブジェクトはすべてのプレイヤーを新しい XIM ネットワークにまとめて移動するために保持されます。 マッチメイキングの進行中 (`xim::move_to_network_using_matchmaking()` とも呼ばれるマッチメイキング プールのプレイヤー数によって時間がかかる場合がある)、このネットワーク間のチャットおよびデータ通信は、中断されることなく引き続き使用できます。 ユーザーに現在のステータスを通知し続けるために、`xim_matchmaking_progress_updated_state_change` は、この操作が終わるまで定期的に送信されます。 一致すると、一般的な `xim_player_joined_state_change` を使用してユーザーが XIM ネットワークに追加され、移動は完了します。
+Like earlier moves, this will provide an initial `xim_move_to_network_starting_state_change` on all devices, and a `xim_move_to_network_succeeded_state_change` once the move completes successfully. Since this is a move from one XIM network to another, one difference is that there are already existing `xim_player` objects added for local and remote users, and these will remain for all players that are moving together to the new XIM network. Chat and data communication among them will continue to work uninterrupted while matchmaking is in progress (which can be a lengthy process, depending on the number of potential players in the matchmaking pool that have called `xim::move_to_network_using_matchmaking()` as well). A `xim_matchmaking_progress_updated_state_change` will be provided periodically throughout the operation to keep you and your users informed of the current status. When the match has been found, the additional players are added to the XIM network with the typical `xim_player_joined_state_change` and the move completes.
 
-この "マッチメイキング型" プレイヤーのセットを使用したマルチプレイヤー体験が完了すると、他のマッチメイキングのラウンドを使用して他の XIM ネットワークに移動することができるこのプロセスを繰り返せるようになります。 `xim::move_to_network_using_matchmaking()` 操作を介して参加した各プレイヤーによって、同 XIM ネットワーク内に `xim_player` オブジェクトが存在しないことを表す `xim_player_left_state_change` が送信されます。また、新しいマッチメイキングが行われている間、ソーシャル機能 `xim::move_to_network_using_protocol_activated_event_args()` または `xim::move_to_network_using_joinable_xbox_user_id()` を介して参加したプレイヤーのみ残ります  (再度 `xim_players_to_move::bring_existing_social_players` を指定した場合。`xim_players_to_move::bring_only_local_players` を指定した場合はリモート プレイヤーからも切断され、ローカル プレイヤーのみが残ります)。 2 回目の移動操作が完了すると、別の見知らぬユーザーの集合が追加されます。
+Once you've finished the multiplayer experience with this set of "matchmade" players, you can repeat the process to move to a different XIM network with another round of matchmaking. You'll see each player that joined via the prior `xim::move_to_network_using_matchmaking()` operation provide a `xim_player_left_state_change` to indicate that their `xim_player` objects are no longer in the same XIM network, and only the players that had joined via social means, `xim::move_to_network_using_protocol_activated_event_args()` or `xim::move_to_network_using_joinable_xbox_user_id()`, will remain while the new matchmaking takes place (assuming you specify `xim_players_to_move::bring_existing_social_players` again; specifying `xim_players_to_move::bring_only_local_players` will disconnect from even those remote players, and just the local players will remain). A different set of strangers will be added when the second move operation completes.
 
-または、マッチメイキング型でないプレイヤー (またはローカル プレイヤー) のみ新しい XIM ネットワークに完全に移動してから、次のマッチメイキング構成/マルチプレイヤー アクティビティを決めることができます。 次の例では、XIM ネットワークに最大 8 人のプレイヤーを集めるために、再度デバイスの呼び出し `xim::move_to_new_network()` を行います。ただし、今回はソーシャル機能を使用して参加した既存プレイヤーも移動します。
+Alternatively, you can move to a completely new XIM network with just the non-matchmade players (or just local players) before deciding the next matchmaking configuration/multiplayer activity. The following example demonstrates having a device call `xim::move_to_new_network()` for a XIM network with a maximum of 8 players again, but this time taking the existing socially-joined players as well:
 
 ```cpp
 xim::singleton_instance().move_to_new_network(8, xim_players_to_move::bring_existing_social_players);
 ```
 
-参加中のすべてのデバイスに、`xim_move_to_network_starting_state_change` および `xim_move_to_network_succeeded_state_change` が送信され、加えてマッチメイキング型の残ったプレイヤーには `xim_player_left_state_change` が送信されます (同様に、移動中の各プレイヤーのデバイスにも、`xim_player_left_state_change` が送信されます)。
+A `xim_move_to_network_starting_state_change` and `xim_move_to_network_succeeded_state_change` will be provided to all participating devices, along with a `xim_player_left_state_change` for the matchmade players staying behind (those devices similarly see a `xim_player_left_state_change` for each player that is moving).
 
-この方法で、必要な回数だけマッチメイキングを使用して (または使用せずに)、引き続き XIM ネットワーク間で移動できます。
+You can continue moving from XIM network to XIM network using matchmaking (or not) in this manner as many times as desired.
 
-パフォーマンス上、Xbox Live サービスは、直接ピア ツー ピア接続を確立できないデバイス上でプレイヤーのグループのマッチングを試行することはありません。 標準の Xbox Live マルチプレイヤーをサポートするように適切に構成されていないネットワーク環境で開発している場合は、マッチメイキング条件に適合するプレイヤーが十分に存在しており、全員が同じローカル環境にあるデバイスを使用してこの環境内で移動することが確かでも、マッチングに成功することなく `xim::move_to_network_using_matchmaking()` 操作がいつまでも続くことがあります。 必ずネットワーク設定領域/Xbox アプリケーションでマルチプレイヤーの接続テストを実行し、特に "Strict NAT" についての問題を報告する場合の推奨事項に従ってください。 ただし、ネットワーク管理者が環境に必要な変更を行うことができない場合は、Xbox One 開発キットでテストのブロックを解除できます。そのためには、"Open NAT" デバイスを 一切指定せずに "ストリクト NAT" デバイスをマッチングできるように XIM を構成します。 これを行うには、すべての Xbox One 本体上の "title scratch" ドライブのルートに "xim_disable_matchmaking_nat_rule" と呼ばれるファイル (内容は問いません) を配置します。 配置する方法のひとつとして、アプリを起動する前に XDK コマンド プロンプトから以下を実行し、プレースホルダー "{console_name_or_ip_address}" を適宜各コンソールに置き換える方法があります。
+For performance, the Xbox Live service will not try to match groups of players on devices that are unlikely to be able to establish any direct peer-to-peer connections. If you're developing in a network environment that's not properly configured to support standard Xbox Live multiplayer, the `xim::move_to_network_using_matchmaking()` operation might continue indefinitely without matching even when you're certain you have sufficient players meeting the matchmaking criteria who are all moving and all using devices in the same local environment. Be sure to run the multiplayer connectivity test in the network settings area/Xbox application and follow its recommendations if it reports trouble, particularly regarding a "Strict NAT". However, if your network administrator is unable to make the necessary environment changes, you can unblock your matchmaking testing on Xbox One development kits by configuring XIM to allow matching "Strict NAT" devices without at least one "Open NAT" device. This is done by placing a file called "xim_disable_matchmaking_nat_rule" (contents don't matter) at the root of the "title scratch" drive on all Xbox One consoles. One example way to do that is by executing the following from an XDK command prompt before launching your app, replacing the placeholder "{console_name_or_ip_address}" for each console as appropriate:
 
 ```bat
 
@@ -224,40 +231,40 @@ del %TEMP%\emptyfile.txt
 
 ```
 
-この開発上の回避策は、現在 Xbox One 排他リソース アプリケーションでのみ使用することができ、ユニバーサル Windows アプリで使用することはできません。 また、コンソールでこの設定を使用している場合は、ネットワーク環境にかかわらず、ファイルが存在しないデバイスにマッチングすることはないため、ファイルは、あらゆる場所で追加または削除することができます。
+This development workaround is currently only available for Xbox One exclusive resource applications and not for universal Windows applications. Also note that consoles that are using this setting will never match with devices that don't have the file present, regardless of network environment, so be sure to add or remove the file everywhere.
 
-## <a name="leaving-a-xim-network-and-cleaning-up-a-nameleave"></a>XIM ネットワークの退出およびクリーンアップ <a name="leave">
+## <a name="leaving-a-xim-network-and-cleaning-up-a-nameleave"></a>Leaving a XIM network and cleaning up <a name="leave">
 
-ローカル ユーザーが XIM ネットワークに参加している場合、新しい XIM ネットワークに戻るだけで、ローカル ユーザー、招待ユーザー、"フォローされている" ユーザーはその XIM ネットワークに参加できるため、引き続きフレンドと協力して次のアクティビティーに進むことができます。 しかし、ユーザーがマルチプレイヤー経験の大半を終えている場合、アプリは、XIM ネットワークの退出を開始し、`xim::initialize()` および `xim::set_intended_local_xbox_user_ids()` が呼び出されたかのように、その状態に戻る場合があります。 この処理を実行するには、`xim::leave_network()` メソッドを使います。
+When the local users are done participating in a XIM network, often they will simply move back to a new XIM network that allows local users, invites, and "followed" users to join it so they can continue coordinating with their friends to find the next activity. But if the user is completely done with all multiplayer experiences, then your app may want to begin leaving the XIM network altogether and return to the state as if only `xim::initialize()` and `xim::set_intended_local_xbox_user_ids()` had been called. This is done using the `xim::leave_network()` method:
 
 ```cpp
 xim::singleton_instance().leave_network();
 ```
 
-このメソッドでは、他の参加者から非同期的に切断するプロセスを正常に開始します。 これにより、リモート デバイスに対してローカル プレーヤーの `xim_player_left_state_change`、ローカルデバイスに対してローカルまたはリモートの各プレーヤーの `xim_player_left_state_change` が送られます。 すべての接続操作が完了すると、最後に `xim_network_exited_state_change` が送信されます。 その後、アプリで `xim::cleanup()` を呼び出してリソースをすべて解放し、未初期化状態に戻すことができます。
+This method begins the process of asynchronously disconnecting from the other participants gracefully. This will cause the remote devices to be provided a `xim_player_left_state_change` for the local player(s), and the local device will be provided a `xim_player_left_state_change` for each player, local or remote. When all disconnect operations have finished, a final `xim_network_exited_state_change` will be provided. The app can then call `xim::cleanup()`` to free all resources and return to the uninitialized state:
 
 ```cpp
 xim::singleton_instance().cleanup();
 ```
 
-`xim_network_exited_state_change` がまだ送信されていない場合は、`xim::leave_network()` を呼び出し、`xim_network_exited_state_change` を待機して、XIM ネットワークを正常終了することを強くお勧めします。 `xim::cleanup()` を直接呼び出すと、残りの参加者が "消えた" デバイスに送ったメッセージがタイムアウトするのを待機している間、通信パフォーマンスの問題を引き起こす可能性があります。
+Invoking `xim::leave_network()` and waiting for the `xim_network_exited_state_change` in order to exit a XIM network gracefully is always highly recommended when a `xim_network_exited_state_change` has not already been provided. Calling `xim::cleanup()` directly may cause communication performance problems for the remaining participants while they're forced to time out messages to the device that simply "disappeared".
 
-## <a name="working-with-chat-a-namechat"></a>チャットの操作 <a name="chat">
+## <a name="working-with-chat-a-namechat"></a>Working with chat <a name="chat">
 
-XIM ネットワーク内のプレイヤー間の音声およびテキスト チャット通信は、自動的に有効になります。 XIM は、すべての音声ヘッドセットとマイクのハードウェアとの通信を操作します。 チャットを使用するために必要な設定はアプリにありませんが、テキスト チャットに関する要件が 1 つあります。入力および表示をサポートしていることです。 テキスト入力が必須なのは、従来、物理キーボードを広範的に使用していないプラットフォームやゲーム ジャンルでも、プレイヤーはこのシステムで、音声合成の支援技術を使用する場合があるためです。 同様に、プレイヤーは音声からテキストの変換を使用できるようにこのシステムを設定する場合があるため、テキスト表示にも対応している必要があります。 ローカル プレーヤーがこれらの設定を検出できるようにするには、`xim_player::xim_local::chat_text_to_speech_conversion_preference_enabled()` および `xim_player::xim_local::chat_speech_to_text_conversion_preference_enabled()` メソッドをそれぞれ呼び出します。必要に応じて、テキストのメカニズムを有効にすることもできます。 ただし、テキスト入力および表示オプションを常に有効にすることを検討してください。
+Voice and text chat communication are automatically enabled among players in a XIM network. XIM handles interacting with all voice headset and microphone hardware for you. Your app doesn't need to do much for chat, but it does have one requirement regarding text chat: supporting input and display. Text input is required because, even on platforms or game genres that historically haven't had widespread physical keyboard use, players may configure the system to use text-to-speech assistive technologies. Similarly, text display is required because players may configure the system to use speech-to-text. These preferences can be detected on local players by calling the `xim_player::xim_local::chat_text_to_speech_conversion_preference_enabled()` and `xim_player::xim_local::chat_speech_to_text_conversion_preference_enabled()` methods respectively, and you may wish to conditionally enable text mechanisms. But consider making text input and display options that are always available.
 
 
-> `Windows::Xbox::UI::Accessability` は、テキストから音声の変換支援技術を搭載したゲーム内のテキストチャットを単純にレンダリングできるように特別に設計された Xbox One のクラスです。
+> `Windows::Xbox::UI::Accessability` is an Xbox One class specifically designed to provide simple rendering of in-game text chat with a focus on speech-to-text assistive technologies.
 
-現実のキーボードまたは仮想キーボードで入力されたテキストを取得したら、その文字列を `xim_player::xim_local::send_chat_text()` メソッドに渡します。 以下のコードは、'localPlayer' 変数によって指定されたローカルの `xim_player` オブジェクトからハード コードされたサンプル文字列の送信を示します。
+Once you have text input provided by a real or virtual keyboard, pass the string to the `xim_player::xim_local::send_chat_text()` method. The following code shows sending an example hard-coded string from a local `xim_player` object pointed to by the variable 'localPlayer':
 
 ```cpp
 localPlayer->local()->send_chat_text(L"Example chat text");
 ```
 
-このチャット テキストは、発信元のローカル プレイヤーからチャット通信を受信できる、XIM ネットワーク内のすべてのプレイヤーに送信されます。 また、音声に合成され、`xim_chat_text_received_state_change` として送信されることもあります。 アプリは、受け取ったテキスト文字列のコピーを作成し、発信元プレイヤーの ID の一部と共に、適切な長さの時間 (またはスクロール可能なウインドウで) 表示する必要があります。
+This chat text is delivered to all players in the XIM network that can receive chat communication from the originating local player. It might be synthesized to speech audio and it might be provided as a `xim_chat_text_received_state_change`. Your app should make a copy of any text string received and display it along with some identification of the originating player for an appropriate amount of time (or in a scrollable window).
 
-チャットに関するベスト プラクティスは他にもいくつかあります。 特にスコアボードなどのゲーマータグのリストにプレイヤーの位置を表示するだけでなく、ユーザーへのフィードバックとして、ミュート済み/発声中のアイコンを併せて表示することをお勧めします。 これを行うには、`xim_player::chat_indicator()` を呼び出し、プレイヤーのチャットの現在の瞬間的なステータスを表す `xim_player_chat_indicator` を取得します。 次の例では、特定のアイコンの定数値を決めて 'iconToShow' 変数に割り当てるために、'ximPlayer' 変数で指定した `xim_player` オブジェクトのインジケーター値の取得を示します。
+There are also some best practices regarding chat. It's recommended that anywhere players are shown, particularly in a list of gamertags such as a scoreboard, that you also display muted/speaking icons as feedback for the user. This is done by calling `xim_player::chat_indicator()` to retrieve a `xim_player_chat_indicator` representing the current, instantaneous status of chat for that player. The following example demonstrates retrieving the indicator value for a `xim_player` object pointed to by the variable 'ximPlayer' to determine a particular icon constant value to assign to an 'iconToShow' variable:
 
 ```cpp
 switch (ximPlayer->chat_indicator())
@@ -283,63 +290,63 @@ switch (ximPlayer->chat_indicator())
 }
 ```
 
-`xim_player::chat_indicator()` によって報告される値は、プレイヤーの発声開始から終了までを頻繁に変更することを想定しています。 そのため、すべての UI フレームをポーリングできるように設計されています。
+The value reported by `xim_player::chat_indicator()` is expected to change frequently as players start and stop talking, for example. It is designed to support apps polling it every UI frame as a result.
 
-もう 1 つのベスト プラクティスは、プレイヤーをミュートできるようにすることです。 XIM では、ユーザーはプレイヤー カードを使用してシステムを自動的にミュートできますが、`xim_player::set_chat_muted()` メソッドを経由してゲーム UI 内で実行されるゲーム固有の一時的なミュートをアプリでもサポートしている必要があります。 以下の例では、'remotePlayer 変数でリモートの `xim_player` オブジェクトを指定し、ミュートを開始します。これにより、ボイス チャットが聞こえず、テキスト チャットを受け取らない状態になります。
+Another best practice is to support muting players. XIM automatically handles system muting initiated by users through player cards, but apps should support game-specific transient muting that can be performed within the game UI via the `xim_player::set_chat_muted()` method. The following example begins muting a remote `xim_player` object pointed to by the variable 'remotePlayer' so that no voice chat is heard and no text chat is received from it:
 
 ```cpp
 remotePlayer->set_chat_muted(true);
 ```
 
-ミュートは、すぐに適用され、`xim_state_change` とは関連付けられません。 取り消すには、false 値を指定して `xim_player::set_chat_muted()` を再度呼び出します。 以下の例では、'remotePlayer' 変数によって指定されているリモートの `xim_player` オブジェクトのミュートを解除します。
+The muting takes effect immediately and there is no `xim_state_change` associated with it. It can be undone by calling `xim_player::set_chat_muted()` again with the false value. The following example unmutes a remote `xim_player` object pointed to by the variable 'remotePlayer':
 
 ```cpp
 remotePlayer->set_chat_muted(false);
 ```
 
-そのプレイヤーで新しい XIM ネットワークに移動する場合など、`xim_player` が存在している限り、ミュート設定は引き続き有効です。 プレーヤーが退出し、同じユーザーが (新しい `xim_player` インスタンスとして) 再参加する場合は、保持されません。
+Mutes remain in effect for as long as the `xim_player` exists, including when moving to a new XIM network with the player. It is not persisted if the player leaves and the same user rejoins (as a new `xim_player` instance).
 
-プレイヤーは、通常、ミュートを解除した状態で開始します。 ゲームプレイ上の理由から、ミュートした状態でプレイヤーを開始する場合は、該当する `xim_player_joined_state_change` の処理を終了する前に、`xim_player` オブジェクトの `xim_player::set_chat_muted()` を呼び出します。これにより、XIM では、無期限にプレイヤーから音声オーディオが聞こえなくなります。
+Players typically start in the unmuted state. If your app wants to start a player in the muted state for gameplay reasons, it can call `xim_player::set_chat_muted()` on the `xim_player` object before finishing processing the associated `xim_player_joined_state_change`, and XIM will guarantee there will be no period of time where voice audio from the player can be heard.
 
-リモート プレーヤーが XIM ネットワークに参加すると、プレイヤーの評判に基づいて、自動ミュート チェックが行われます。 プレイヤーに不適切な評判のフラグがある場合、プレイヤーは自動的にミュートされます。 ミュートは、ローカル状態にのみ影響を及ぼすため、プレイヤーがネットワーク間を移動する場合は変更されません。 評判ベースの自動ミュート チェックは 1 度のみ行われ、`xim_player` が有効である限り、再評価されることはありません。
+An automatic mute check based on player reputation occurs when a remote player joins the XIM network. If the player has a bad reputation flag, the player is automatically muted. Muting only affects local state and therefore persists if a player moves across networks. The automatic reputation-based mute check is performed once and not re-evaluated again for as long as the `xim_player` remains valid.
 
 
-## <a name="configuring-custom-player-and-network-properties-a-nameproperties"></a>カスタム プレイヤーおよびネットワーク プロパティの設定 <a name="properties">
+## <a name="configuring-custom-player-and-network-properties-a-nameproperties"></a>Configuring custom player and network properties <a name="properties">
 
-メソッドの受信者や、そのメソッドでパケットの損失などを処理する日時や方法を大部分コントロールできるため、ほとんどのアプリにおいて、データ交換には `xim_player::xim_local::send_data_to_other_players()` メソッドが使用されます。 ただし、プレイヤーにとっては、基本的でまれな変更ステータスを最小限の手間で他者と共有した方が好都合である場合があります。 たとえば、すべてのプレイヤーがゲーム内の表現をレンダリングするために使用するマルチプレイヤーを入力する前に選択したキャラクター モデルを表す文字列は、各プレイヤーによって変更される場合があります。 XIM では、便利な "カスタム プレイヤー プロパティ" 機能が提供されています。この機能では、アプリ定義の名前と値による NULL 終了の文字列ペアをローカル プレイヤーに適用し、これらが変更されると自動的にすべてのデバイスに伝達できます。 XIM ネットワークに参加し、追加したプレイヤーが表示されると、現在の値も自動的に、新しく追加したデバイスに適用されます。 これらを設定するには、'localPlayer' 変数によって指定されるローカルの `xim_player` オブジェクトに値 "brute" を含めるように "model" という名前のプロパティを設定し、名前と値の文字列を使用して、`xim_player::xim_local::set_player_custom_property()` を呼び出します。
+Most app data exchanges happen with the `xim_player::xim_local::send_data_to_other_players()` method since it allows the most control over who receives it and when, how it should deal with packet loss, and so on. However there are times where it would be nice for players to share basic, rarely changing state about themselves with others with minimal fuss. For example, each player might have a fixed string representing the character model selected before entering multiplayer that all players use to render their in-game representation. XIM provides a "custom player properties" convenience feature for app-defined name and value null terminated string pairs that can be applied to the local player and automatically propagated to all devices whenever they are changed. Their current values are also automatically provided to new participating devices when they join a XIM network and see the player added. These can be configured by calling `xim_player::xim_local::set_player_custom_property()` with the name and value strings, like in the following example that sets a property named "model" to have the value "brute" on a local `xim_player` object pointed to by the variable 'localPlayer':
 
 ```cpp
 localPlayer->local()->set_player_custom_property(L"model", L"brute");
 ```
 
-プレイヤーのプロパティを変更すると、`xim_player_custom_properties_changed_state_change` がすべてのデバイスに送信され、変更されているプロパティの名前に警告が通知されます。 指定された名前の値は、`xim_player::get_player_custom_property()` を使用して、ローカルまたはリモートで、どのプレイヤーも取得することができます。 以下の例は、'ximPlayer' 変数で指定された `xim_player` から、"model" という名前のプロパティの値を取得しています。
+Changes to player properties will cause a `xim_player_custom_properties_changed_state_change` to be provided to all devices, alerting them to the names of properties that have changed. The value for a given name can be retrieved on any player, local or remote, with `xim_player::get_player_custom_property()`. The following example retrieves the value for a property named "model" from a `xim_player` pointed to by the variable 'ximPlayer':
 
 ```cpp
 PCWSTR modelName = ximPlayer->get_player_custom_property(L"model");
 ```
 
-指定のプロパティ名に新しい値を設定すると、既存の値は置き換えられ、null 値の文字列ポインターは、空の値文字列と同様に処理されます。つまり、まだ指定されていないプロパティと同様です。 それ以外の場合、名前および値は、XIM で解釈されません。必要に応じて文字列の内容を検証するアプリによって異なります。
+Setting a new value for a given property name will replace any existing value, and a null value string pointer is treated the same as an empty value string, which is the same as the property not having been specified yet. Otherwise the names and values aren't interpreted by XIM; it's up to the app to validate the string contents as needed.
 
-この便利な機能は、"カスタム ネットワーク プロパティ" を使用して、XIM ネットワーク全体で使用することもできます。 `xim::set_network_custom_property()` を使用して XIM シングルトン オブジェクトで設定されている場合を除き、カスタム ネットワーク プロパティと同様に使用できます。 以下の例では、値が "stronghold" になるように "map" プロパティを設定しています。
+This convenience feature is also available for the XIM network as a whole via "custom network properties". These work identically to custom player properties, except they're set on the XIM singleton object with `xim::set_network_custom_property()`. The following example sets a "map" property to have the value "stronghold":
 
 ```cpp
 xim::singleton_instance().set_network_custom_property(L"map", L"stronghold");
 ```
 
-ネットワークのプロパティを変更すると、`xim_network_custom_properties_changed_state_change` がすべてのデバイスに送信され、変更されているプロパティの名前に警告が通知されます。 指定した名前の値は、以下の例で "map" というプロパティの値を取得しているように、`xim::get_network_custom_property()` を使用して取得できます。
+Changes to network properties will cause a `xim_network_custom_properties_changed_state_change` to be provided to all devices, alerting them to the names of properties that have changed. The value for a given name can be retrieved with `xim::get_network_custom_property()`, like in the following example that retrieves the value for a property named "map":
 
 ```cpp
 PCWSTR mapName = xim::singleton_instance().get_network_custom_property(L"map");
 ```
-カスタム プレーヤーのプロパティと同じように、指定されたカスタム ネットワーク プロパティ名の値を設定すると、既存の値に置き換えられ、null 値、未設定値、またはクリアされた値は、常に非 null の空の文字列として処理されます。
+Just like custom player properties, setting a value for a given custom network property name will replace the existing value, and null, unset, or cleared values are always treated the same: as non-null empty strings.
 
-ある XIM ネットワークから別の XIM ネットワークに移動すると、カスタム プレイヤー プロパティはリセットされ、新しく作成された XIM ネットワークは、常にプロパティが設定されていない状態で開始されます。 ただし、既存の XIM ネットワークに参加する新しいプレイヤーには、既存のプレイヤーおよび XIM ネットワーク自体に設定されているカスタム プロパティが表示されます。
+Custom player properties are always reset when moving from one XIM network to another, and newly created XIM networks always start with no properties set. However, new players joining an existing XIM network will see the custom properties set on existing players and on the XIM network itself.
 
-プレイヤーおよびネットワークのカスタム プロパティは、頻繁に変化しない状態を補助するために使用します。 これらの内部的な同期オーバーヘッドは `xim_player::xim_local::send_data_to_other_players()` メソッドより大きくなるため、プレーヤーの位置が高速で入れ替わるような状態では、直接送信を使用する必要があります。
+Custom player and network properties are intended as a convenience for state that doesn't change frequently. They have more internal synchronization overhead than the `xim_player::xim_local::send_data_to_other_players()` method, so you should still use direct sends instead for state like player positions that are rapidly replaced.
 
-## <a name="matchmaking-using-per-player-skill-or-role-a-nameroles"></a>プレーヤーごとのスキルまたはロールによるマッチメイキング <a name="roles">
+## <a name="matchmaking-using-per-player-skill-or-role-a-nameroles"></a>Matchmaking using per-player skill or role <a name="roles">
 
-固有のアプリ指定のゲーム モードの共通の関心を使用したプレイヤーのマッチングは、優れた基本戦略です。 利用可能なプレイヤーのプールが大きくなるにつれて、ベテラン プレイヤーが、他のベテランと正当な対戦を楽しめるように、ゲームの個人スキル、または体験に基づいて、マッチプレイヤーを考慮する必要がありますが、新しいプレイヤーは、同様の能力の他者と対戦することで、レベルを上げることができます。 これを行うにはまず、マッチメイキングを使用して XIM ネットワークに移動する前に、`xim_player::xim_local::set_matchmaking_configuration()` の呼び出しで指定されるプレイヤーごとのマッチメイキング設定構造体で、すべてのローカル プレイヤーにスキル レベルを提供します。 スキル レベルはアプリ固有の概念であり、数が XIM で解釈されることはありません。例外として、マッチメイキングでまず同一のスキル値を持つプレイヤーを探してから、定期的に +/- 10 単位で検索対象の増減を行い、そのスキル範囲内でスキル値を宣言する他のプレイヤーを探すことができます。 以下の例では、ローカルの `xim_player` オブジェクトを想定しています。このオブジェクトのポインターは 'localPlayer' であり、ローカルまたは Xbox Live のストレージから 'playerSkillValue' と呼ばれる変数に対して取得されたアプリ固有のスキル値 uint32_t が格納されます。
+Matching players by common interest in a particular app-specified game mode is a good base strategy. As the pool of available players grows, you should consider also matching players based on their personal skill or experience with your game so that veteran players can enjoy the challenge of healthy competition with other veterans, while newer players can grow by competing against others with similar abilities. To do this, start by providing the skill level for all local players in their per-player matchmaking configuration structure specified in calls to `xim_player::xim_local::set_matchmaking_configuration()` prior to starting to move to a XIM network using matchmaking. Skill level is an app-specific concept and the number is not interpreted by XIM, except that matchmaking will first try to find players with the same skill value, and then periodically widen its search in increments of +/- 10 to try to find other players declaring skill values within a range around that skill. The following example assumes that the local `xim_player` object, whose pointer is 'localPlayer', has an associated app-specific uint32_t skill value retrieved from local or Xbox Live storage into a variable called 'playerSkillValue':
 
 ```cpp
 
@@ -349,9 +356,9 @@ PCWSTR mapName = xim::singleton_instance().get_network_custom_property(L"map");
  localPlayer->local()->set_matchmaking_configuration(&playerMatchmakingConfiguration);
 ```
 
-これが完了すると、この `xim_player` によってプレイヤーごとのマッチメイキング設定が変更されたことを示す `xim_player_matchmaking_configuration_changed_state_change` が、すべての参加者に送信されます。 新しい値を取得するには、`xim_player::matchmaking_configuration()` を呼び出します。
+When this completes, all participants will be provided a `xim_player_matchmaking_configuration_changed_state_change` indicating this `xim_player` has changed its per-player matchmaking configuration. The new value can be retrieved by calling `xim_player::matchmaking_configuration()`.
 
-すべてのプレイヤーに null 以外のマッチメイキング設定が適用されたら、`xim::move_to_network_using_matchmaking()` に指定された `xim_matchmaking_configuration` 構造体の require_player_matchmaking_configuration フィールドに true 値を指定してマッチメイキングを使用することで XIM に移動できます。 以下の例では、no-teams free-for-all 用に 合計 2 ～ 8 人のプレイヤーを探すマッチメイキング構成を追加します。このとき、MYGAMEMODE_DEATHMATCH の値で定義されるアプリ固有のゲーム モード定数である uint64_t を使用します。この値は、同一値を指定した他のプレイヤーのみと一致し、使用するにはプレイヤーごとのマッチメイキング構成が必要になります。
+When all players have non-null matchmaking configuration applied, you can move to a XIM network using matchmaking with a value of true for the require_player_matchmaking_configuration field of the `xim_matchmaking_configuration` structure specified to `xim::move_to_network_using_matchmaking()`. The following example populates a matchmaking configuration that will find a total of 2-8 players for a no-teams free-for-all, using an app-specific game mode constant uint64_t defined by the value MYGAMEMODE_DEATHMATCH that will only match with other players specifying that same value, and that requires per-player matchmaking configuration:
 
 ```cpp
 xim_matchmaking_configuration matchmakingConfiguration = { 0 };
@@ -360,9 +367,9 @@ matchmakingConfiguration.custom_game_mode = MYGAMEMODE_DEATHMATCH;
 matchmakingConfiguration.require_player_matchmaking_configuration = true;
 ```
 
-この構造体が `xim::move_to_network_using_matchmaking()` に送信されると、移動するプレイヤーによって、null 以外の `xim_player_matchmaking_configuration` ポインターを使用して `xim_player::xim_local::set_matchmaking_configuration()` が呼び出されている限り、この移動操作は正常に開始されます。 これが行われていないプレイヤーがいる場合、マッチメイキング処理は一時停止され、`xim_matchmaking_status::waiting_for_player_matchmaking_configuration` 値が指定された `xim_matchmaking_progress_updated_state_change` がすべての参加者に送信されます。 これには、マッチメイキングが完了する前に、事前に送信された招待または他のソーシャルな手段 (`xim::move_to_network_using_joinable_xbox_user_id` の呼び出しなど) で、XIM ネットワークに途中参加したプレイヤーも含まれます。 すべてのプレイヤーが `xim_player_matchmaking_configuration` 構造体を送信した時点で、マッチメイキングが再開されます。
+When this structure is provided to `xim::move_to_network_using_matchmaking()`, the move operation will start normally as long as players moving have called `xim_player::xim_local::set_matchmaking_configuration()` with a non-null `xim_player_matchmaking_configuration` pointer. If any player hasn't, then the matchmaking process will be paused and all participants will be provided a `xim_matchmaking_progress_updated_state_change` with a `xim_matchmaking_status::waiting_for_player_matchmaking_configuration` value. This includes players that subsequently join the XIM network through a previously sent invitation or through other social means (e.g., a call to `xim::move_to_network_using_joinable_xbox_user_id`) before matchmaking has completed. Once all players have supplied their `xim_player_matchmaking_configuration` structures, matchmaking will resume.
 
-プレイヤーごとのマッチメイキング設定を使用してユーザーのマッチメイキング体験を高める方法には、必要なプレイヤー ロールを使用する方法があります。 これは、さまざまな協力型プレイ スタイルを提案するキャラクター タイプを選択できるゲームに最も適しています。つまり、ゲーム内のグラフィカル表現をただ変更するのではなく、防御型 "ヒーラー" に対して近距離型の "メレー" 攻撃や遠距離型の "レンジ" 攻撃のサポートなど、補完的で影響の強い属性を制御するようなものを指します。 ユーザーのパーソナリティは、専門分野としてプレイする場合があるということを意味します。 しかし、各ロールを満たす者が存在せずに、機能的に目的を完了させることができないようにゲームが設計されている場合は、任意のプレイヤーをまとめてマッチングさせるよりもそのようなプレイヤーをまとめてマッチングさせ、集まった時点でプレイヤー間でプレイ スタイルを検討する方が望ましい場合があります。 これを行うには、指定のプレイヤーの `xim_player_matchmaking_configuration` 構造体で指定される各ロールを表す一意のビット フラグを最初に定義します。 以下の例では、ローカルの `xim_player` オブジェクトに対して、アプリ固有のロール値である MYROLEBITFLAG_HEALER uint8_t を設定します。このポインターは、'localPlayer' になります。
+Another method of using per-player matchmaking configuration to improve users' matchmaking experience is through the use of required player roles. This is best suited to games that provide selectable character types that encourage different cooperative play styles; that is, types that don't simply alter in-game graphical representation, but control complementary, impactful attributes such as defensive "healers" vs. close-in "melee" offense vs. distant "range" attack support. Users' personalities mean they may prefer to play as a particular specialization. But if your game is designed such that it's functionally not possible to complete objectives without at least one person fulfilling each role, sometimes it's better to match such players together first than to match any players together then require them to negotiate play styles among themselves once gathered. You can do this by first defining a unique bit flag representing each role to be specified in a given player's `xim_player_matchmaking_configuration` structure. The following example sets an app-specific MYROLEBITFLAG_HEALER uint8_t role value for the local `xim_player` object, whose pointer is 'localPlayer':
 
 ```cpp
 
@@ -373,7 +380,7 @@ localPlayer->local()->set_matchmaking_configuration(&playerMatchmakingConfigurat
 
 ```
 
-上記のスキルで示されたとおり、このプレイヤーに対する `xim_player_matchmaking_configuration_changed_state_change` がすべての参加者に送信されます。 `xim::move_to_network_using_matchmaking()` に指定されたグローバル構造体 `xim_matchmaking_configuration` には、ビットごとの OR を使用して結合されたすべての必要なロール フラグや、require_player_matchmaking_configuration フィールドに対する true 値が含まれます。 以下の例では、no-teams free-for-all 用に合計 3 人のプレイヤーを探すマッチメイキング構成を追加します。このとき、MYGAMEMODE_COOPERATIVE の値で定義されるアプリ固有のゲーム モード定数 uint64_t を使用します。この値は、同一値を指定した他のプレイヤーのみと一致します。プレイヤーごとにマッチメイキング構成が設定され、アプリ固有の uint8_t の 3 つのロール ビット フラグ MYROLEBITFLAG_HEALER、MYROLEBITFLAG_MELEE、MYROLEBITFLAG_RANGE がそれぞれ 1 人以上のプレイヤーに割り当てられている必要があります。
+All participants will be provided a `xim_player_matchmaking_configuration_changed_state_change` for this player as described for skill above. The global `xim_matchmaking_configuration` structure specified to `xim::move_to_network_using_matchmaking()` should then have all the required roles flags combined using bitwise-OR, and a value of true for the require_player_matchmaking_configuration field. The following example populates a matchmaking configuration that will find a total of 3 players for a no-teams free-for-all, using an app-specific game mode constant uint64_t defined by the value MYGAMEMODE_COOPERATIVE that will only match with other players specifying that same value, and that requires per-player matchmaking configuration where at least one player that fulfills each of three app-specific uint8_t role bit flags-- MYROLEBITFLAG_HEALER, MYROLEBITFLAG_MELEE, and MYROLEBITFLAG_RANGE-- are required:
 
 ```cpp
 xim_matchmaking_configuration matchmakingConfiguration = { 0 };
@@ -383,16 +390,16 @@ matchmakingConfiguration.required_roles = MYROLEBITFLAG_HEALER | MYROLEBITFLAG_M
 matchmakingConfiguration.require_player_matchmaking_configuration = true;
 ```
 
-この構造体が `xim::move_to_network_using_matchmaking()` に送信されると、上記のように移動操作が開始されます。
+When this structure is provided to `xim::move_to_network_using_matchmaking()`, the move operation will start as described above.
 
-スキルとロールは、同時に使用することができます。 いずれかのみ指定する場合は、他の構造体に値 0 を指定します。 これは、`xim_player_matchmaking_configuration` スキル値が 0 であると宣言しているすべてのプレイヤーが常に互いに一致するためであり、`xim_matchmaking_configuration` の required_roles フィールドにゼロ以外のビットが存在しない場合は、一致させるためのロール ビットは必要ありません。
+Skill and role can be used together. If only one is desired, specify a value of 0 for the other. This is because all players declaring they have a `xim_player_matchmaking_configuration` skill value of 0 will always match each other, and if no bits are non-zero in the `xim_matchmaking_configuration` required_roles field, then no role bits are needed in order to match.
 
-`xim::move_to_network_using_matchmaking()` や、その他すべての XIM ネットワークの移動操作が完了すると、すべてのプレイヤーの `xim_player_matchmaking_configuration` 構造体は、自動的に null ポインターにクリアされます (付随して `xim_player_matchmaking_configuration_changed_state_change` 通知が送信されます)。 プレイヤーごとの設定が必要なマッチメイキングを使用して、別の XIM ネットワークに移動する場合、常に最新の情報を含む新しい構造体のポインターで、再度 `xim_player::xim_local::set_matchmaking_configuration()` を呼び出します。
+Once the `xim::move_to_network_using_matchmaking()` or any other XIM network move operation has completed, all players' `xim_player_matchmaking_configuration` structures will automatically be cleared to a null pointer (with an accompanying `xim_player_matchmaking_configuration_changed_state_change` notification). If you plan to move to another XIM network using matchmaking that requires per-player configuration, you'll need to call `xim_player::xim_local::set_matchmaking_configuration()` again with a new structure pointer containing the most up-to-date information.
 
 
-## <a name="player-teams-and-configuring-chat-targets-a-nameteams"></a>プレーヤーのチームおよびチャット ターゲットの設定 <a name="teams">
+## <a name="player-teams-and-configuring-chat-targets-a-nameteams"></a>Player teams and configuring chat targets <a name="teams">
 
-マルチプレイヤーのゲームでは、プレイヤーを相手チームに組み込むことも必要になります。 XIM では、指定の設定で 2 つ以上のチームを要求する `xim_team_matchmaking_mode` 値を使用してマッチメイキングを行う際にチームを割り当てやすくなります。 以下の例では、2 チーム 4 人ずつ (4 人見つからない場合は 1 ～ 3 人でも許容可能) の合計 8 人のプレイヤーを探すように構成されたマッチメイキングを使用して移動を開始します。このとき、MYGAMEMODE_CAPTURETHEFLAG の値 (この値は、同一値を指定した他のプレイヤーのみと一致します) によって定義されるアプリ固有のゲーム モード定数 uint64_t を使用し、ソーシャルな方法で参加したすべてのプレイヤーを現在の XIM ネットワークから移動します。
+Multiplayer gaming often involves players organized onto opposing teams. XIM makes it easy to assign teams when matchmaking by using a `xim_team_matchmaking_mode` value requesting two or more teams in the specified configuration. The following example initiates a move using matchmaking configured to find a total of 8 players to place on two teams of 4 (although if 4 aren't found, 1-3 players are also acceptable), using an app-specific game mode constant uint64_t defined by the value MYGAMEMODE_CAPTURETHEFLAG that will only match with other players specifying that same value, and bringing all socially-joined players from the current XIM network:
 
 ```cpp
 xim_matchmaking_configuration matchmakingConfiguration = { 0 };
@@ -402,41 +409,41 @@ matchmakingConfiguration.custom_game_mode = MYGAMEMODE_CAPTURETHEFLAG;
 xim::singleton_instance().move_to_network_using_matchmaking(matchmakingConfiguration, xim_players_to_move::bring_existing_social_players);
 ```
 
-このような XIM ネットワークの移動操作が完了すると、リクエストされたチーム数に対応して、プレイヤーに 1 から {n} のチーム インデックス値が割り当てられます。 プレイヤーのチーム インデックスの値は、`xim_player::team_index()` を使用して取得されます。 以下の例では、ポインターが 'ximPlayer' 変数にある xim_player オブジェクトのチーム インデックスを取得します。
+When such a XIM network move operation completes, the players will be assigned a team index value 1 through {n} corresponding to the {n} teams requested. A player's team index value is retrieved via `xim_player::team_index()`. The following example retrieves the team index for a xim_player object whose pointer is in the 'ximPlayer' variable:
 
 ```cpp
 uint8_t playerTeamIndex = ximPlayer->team_index();
 ```
 
-Xbox Live のマッチメイキング サービスでは、(プレイヤーによる否定的な行動の機会を制限するだけではなく) 望ましいユーザー エクスペリエンスを実現するために、一緒に XIM ネットワークに移動する複数のプレイヤーが別々のチームに分割されることはありません。
+For the preferred user experience (not to mention reduced opportunity for negative player behavior), the Xbox Live matchmaking service will never split players who are moving to a XIM network together onto different teams.
 
-マッチメイキングによって最初に割り当てられているチームのインデックス値は単なる推奨値であり、アプリではいつでも `xim_player::xim_local::set_team_index()` を使用してローカル プレイヤーの値を変更できます。 これは、マッチメイキングを一切使用していない XIM ネットワークで呼び出すこともできます。 以下の例では、新しいチーム インデックス値として 1 が設定されるように、プレイヤーのポインター 'localPlayer' を構成します。
+The team index value assigned initially by matchmaking is only a recommendation and the app can change it for local players at any time using `xim_player::xim_local::set_team_index()`. This can also be called in XIM networks that don't use matchmaking at all. The following example configures a player pointer 'localPlayer' to have a new team index value of one:
 
 ```cpp
 localPlayer->local()->set_team_index(1);
 ```
 
-プレイヤーに新しいチーム インデックス値が設定された場合、すべてのデバイスは、プレイヤーの `xim_player_team_index_changed_state_change` を受信することで通知されます。
+All devices are informed that the player has a new team index value in effect when they're provided a `xim_player_team_index_changed_state_change` for that player.
 
-2 つ以上のチームで `xim_team_matchmaking_mode` を使用している場合、`xim::move_to_network_using_matchmaking()` の呼び出しで、プレイヤーにチームインデックス値 0 が割り当てられることはありません。 これは、他の構成や種類の移動操作 (招待の承認によるプロトコルのアクティブ化など) で XIM ネットワークに追加されるプレイヤーと対照的です。これらのプレイヤーには、常にチーム インデックス値 0 が割り当てられます。 インデックス 0 のチームを特別な "未割り当て" チームとして扱うと便利な場合があります。
+When using a `xim_team_matchmaking_mode` with two or more teams, players will never be assigned a team index value of zero by the call to `xim::move_to_network_using_matchmaking()`. This is in contrast to players that are added to the XIM network with any other configuration or type of move operation (such as through a protocol activation resulting from accepting an invitation), who will always have a zero team index. It may be helpful to treat team index 0 as a special "unassigned" team.
 
-特定のチーム インデックス値の本当の意味は、アプリごとに設定できます。 チャット ターゲット構成の同等比較に使用する場合を除き、XIM によるチーム インデックス値の解釈は行われません。 `xim::chat_targets()` で報告されたチャット ターゲット構成が現在 `xim_chat_targets::same_team_index_only` であれば、プレイヤーが相手とチャット通信を行うのは、`xim_player::team_index()` で報告された同一値が両者に設定されている (加えて、プライバシー/ポリシーで許可される) 場合のみです。
+The true meaning of any particular team index value is up to the app. XIM doesn't interpret them except for equality comparisons with respect to chat target configuration. If the chat target configuration reported by `xim::chat_targets()` is currently `xim_chat_targets::same_team_index_only`, then any given player will only exchange chat communication with another if the two have the same value reported by `xim_player::team_index()` (and privacy/ policy also permit it).
 
-競争力のあるシナリオを堅実にサポートするために、新しく作成された XIM ネットワークは既定値が `xim_chat_targets::same_team_index_only` になるように自動的に構成されます。 ただし、対戦後の "ロビー" などで、負けた相手チームとのチャットが望まれることもあります。 プライバシーやポリシーで許可されていれば、すべてのユーザーがほかのすべてのユーザーと対話できるように XIM を設定するには、`xim::set_chat_targets()` を呼び出します。 以下のサンプルでは、`xim_chat_targets::all_players` 値が使用されるように、XIM ネットワーク内のすべての参加者を設定します。
+To be conservative and support competitive scenarios, newly created XIM networks are automatically configured to default to `xim_chat_targets::same_team_index_only`. However, chatting with vanquished opponents on the other team may be desirable, for example, in a post-game "lobby". You can instruct XIM to allow everyone to talk to everyone else where privacy and policy permit) by calling `xim::set_chat_targets()`. The following sample begins configuring all participants in the XIM network to use a `xim_chat_targets::all_players` value:
 
 ```cpp
 xim::singleton_instance().set_chat_targets(xim_chat_targets::all_players);
 ```
 
-新しいターゲット設定が有効になった場合、すべての参加者は、`xim_chat_targets_changed_state_change` を受信することで通知されます。
+All participants are informed that a new target setting is in effect when they're provided a `xim_chat_targets_changed_state_change`.
 
-前述のように、XIM ネットワークのほとんどの移動タイプで、最初はインデックス値 0 がすべてのプレイヤーに割り当てられます。 これは、既定では `xim_chat_targets::same_team_index_only` の設定を `xim_chat_targets::all_players` と区別できない可能性が高いことを意味します。 ただし、マッチメイキング構成の `xim_team_matchmaking_mode` 値で 2 つ以上のチームが宣言されている場合、マッチメイキングを使用して XIM ネットワークに移動するプレイヤーには異なるチーム インデックス値が設定されます。 また、`xim_player::xim_local::set_team_index()` は、上記のようにいつでも呼び出すことができます。 アプリでこれらのメソッドのいずれかを使用して、0 以外のチーム インデックス値を使用している場合は、必ずチャットのターゲット設定を適切に管理してください。
+As noted earlier, most XIM network move types will initially assign all players the team index value of zero. This means a configuration of `xim_chat_targets::same_team_index_only` is likely indistinguishable from `xim_chat_targets::all_players` by default. However, players that move to a XIM network using matchmaking will have differing team index values if the matchmaking configuration's `xim_team_matchmaking_mode` value declared two or more teams. You can also call `xim_player::xim_local::set_team_index()` at any time as shown above. If your app is using non-zero team index values through either of these methods, don't forget to manage the current chat targets setting appropriately.
 
-マッチメイキングでは、チームとは別に各プレイヤーに必要なロールが評価されます。 チームはプレイヤーに割り当てられたロールではなくプレイヤーの数で調整されるため、マッチメイキング構成条件として、チームと必要なロールの両方を同時に使用することはお勧めできません。
+Matchmaking evaluates required per-player roles independently from teams. Therefore it's not recommended to use both teams and required roles as simultaneous matchmaking configuration criteria because the teams will be balanced by player count, not by fulfilled player roles.
 
-## <a name="automatic-background-filling-of-player-slots-backfill-matchmaking-a-namebackfill"></a>プレイヤー スロットの自動バックグラウンド設定 ("バックフィル" マッチメイキング) <a name="backfill">
+## <a name="automatic-background-filling-of-player-slots-backfill-matchmaking-a-namebackfill"></a>Automatic background filling of player slots ("backfill" matchmaking) <a name="backfill">
 
-異なるプレイヤー グループが同時に `xim::move_to_network_using_matchmaking()` を呼び出すことで、Xbox Live マッチメイキング サービスで新しく最適な XIM ネットワークをすばやく構成するための柔軟性が最大になります。 ただし、ゲームプレイ シナリオによっては、特定の XIM ネットワークが変更されない状態で維持する必要があり、追加プレイヤーのマッチメイキングが行われるのは空いているプレイヤー スロットを満たす場合のみというケースもあります。 XIM では、`xim::set_backfill_matchmaking_configuration()` メソッドを使用して自動バックグラウンド設定モードで動作するマッチメイキングの構成 ("バックフィリング") もサポートされます。 以下の例では、バックフィル マッチメイキングを構成して、no-teams free-for-all 用に合計 8 人のプレイヤーを探します (8 人見つからない場合は、2 ～ 7 人でも許容可能)。このとき、MYGAMEMODE_DEATHMATCH の値 (この値は、同一値を指定した他のプレイヤーのみと一致します) で定義されるアプリ固有のゲーム モード定数 uint64_t を使用します。
+Disparate groups of players calling `xim::move_to_network_using_matchmaking()` at the same time gives the Xbox Live matchmaking service the greatest flexibility to organize them into new, optimal XIM networks quickly. However, some gameplay scenarios would like to keep a particular XIM network intact, and only matchmake additional players just to fill vacant player slots. XIM supports configuring matchmaking to operate in an automatic background filling mode, or "backfilling", by using the `xim::set_backfill_matchmaking_configuration()` method. The following example configures backfill matchmaking to try to find a total of 8 players for a no-teams free-for-all (although if 8 aren't found, 2-7 players are also acceptable), using an app-specific game mode constant uint64_t defined by the value MYGAMEMODE_DEATHMATCH that will only match with other players specifying that same value:
 
 ```cpp
  xim_matchmaking_configuration matchmakingConfiguration = { 0 };
@@ -446,32 +453,32 @@ xim::singleton_instance().set_chat_targets(xim_chat_targets::all_players);
  xim::singleton_instance().set_backfill_matchmaking_configuration(&matchmakingConfiguration);
 ```
 
-これにより、通常の方法で `xim::move_to_network_using_matchmaking()` を呼び出すデバイスが既存の XIM ネットワークを利用できるようになります。 これらのデバイスでは、動作の変更がありません。 バックフィリング中の XIM ネットワークにいる参加者は移動できませんが、これらの参加者には、バックフィルが有効になったことを表す <`xim_backfill_matchmaking_configuration_changed_state_change` や複数の `xim_matchmaking_progress_updated_state_change` 通知 (該当する場合) が送信されます。 マッチメイキングで見つかったプレイヤーは、通常の `xim_player_joined_state_change` を使用して XIM ネットワークに追加されます。
+This makes the existing XIM network available to devices calling `xim::move_to_network_using_matchmaking()` in the normal manner. Those devices see no behavior change. The participants in the backfilling XIM network will not move, but will be provided a `xim_backfill_matchmaking_configuration_changed_state_change` signifying backfill turning on, as well as multiple `xim_matchmaking_progress_updated_state_change` notifications when applicable. Any matchmade player will be added to the XIM network using the normal `xim_player_joined_state_change`.
 
-バックフィル マッチメイキングは無期限に進行状態になります (XIM ネットワークで既に最大プレイヤー数が `xim_team_matchmaking_mode` 値で指定されている場合はプレイヤーが追加されることはありません)。 バックフィルは、null ポインターで `xim::set_backfill_matchmaking_configuration()` を再度呼び出して無効にすることができます。
+Backfill matchmaking remains in progress indefinitely, although it won't try to add players if the XIM network already has the maximum number of players specified by the `xim_team_matchmaking_mode` value. Backfilling can be disabled by calling `xim::set_backfill_matchmaking_configuration()` again with a null pointer:
 
 ```cpp
  xim::singleton_instance().set_backfill_matchmaking_configuration(nullptr);
 ```
 
-対応する `xim_backfill_matchmaking_configuration_changed_state_change` がすべてのデバイスに送信され、この非同期処理が完了すると、マッチメイキングされたプレイヤーがこれ以上 XIM ネットワークに追加されないことを表す `xim_matchmaking_status::none` で最終的な `xim_matchmaking_progress_updated_state_change` が送信されます。
+A corresponding `xim_backfill_matchmaking_configuration_changed_state_change` will be provided to all devices, and once this asynchronous process has completed, a final `xim_matchmaking_progress_updated_state_change` will be provided with `xim_matchmaking_status::none` to signify that no further matchmade players will be added to the XIM network.
 
-2 つ以上のチームを宣言する `xim_team_matchmaking_mode` を使用してバックフィル マッチメイキングを有効にする場合、既存のすべてのプレイヤーに有効なチームインデックス値 (1 ～チーム数) が必要になります。 これには、`xim_player::xim_local::set_team_index()` を呼び出してカスタム値を指定したプレイヤーや、招待または他のソーシャルな手段 (例: `xim::move_to_network_using_joinable_xbox_user_id` の呼び出し) によって参加して既定のインデックス値 0 が追加されたプレイヤーも含まれます。 有効なチームインデックス値を持つプレイヤーがいない場合、マッチメイキング処理は保留され、`xim_matchmaking_status::waiting_for_player_team_index` 値が指定された `xim_matchmaking_progress_updated_state_change` がすべての参加者に送信されます。 すべてのプレイヤーについて、`xim_player::xim_local::set_team_index()` でチーム インデックス値が指定または修正されると、バックフィル マッチメイキングが再開されます。
+When enabling backfill matchmaking with a `xim_team_matchmaking_mode` value that declares two or more teams, all existing players must have a valid team index that is between 1 and the number of teams. This includes players who have called `xim_player::xim_local::set_team_index()` to specify a custom value or who have joined using an invitation or through other social means (e.g., a call to `xim::move_to_network_using_joinable_xbox_user_id`) and have been added with a default team index value of 0. If any player doesn't have a valid team index, then the matchmaking process will be paused and all participants will be provided a `xim_matchmaking_progress_updated_state_change` with a `xim_matchmaking_status::waiting_for_player_team_index` value. Once all players have supplied or corrected their team index values with `xim_player::xim_local::set_team_index()`, backfill matchmaking will resume.
 
-同様に、require_player_matchmaking_configuration フィールドでロールまたはスキルが true に設定されている `xim_matchmaking_configuration` 構造体を使用してバックフィル マッチメイキングを有効にする場合、すべてのプレイヤーについて、プレイヤーごとのマッチメイキング構成が null 以外に指定されている必要があります。 これが行われていないプレイヤーがいる場合、マッチメイキング処理は一時停止され、`xim_matchmaking_status::waiting_for_player_matchmaking_configuration` 値が指定された `xim_matchmaking_progress_updated_state_change` がすべての参加者に送信されます。 すべてのプレイヤーが `xim_player_matchmaking_configuration` 構造体を送信した時点で、バックフィル マッチメイキングが再開されます。
+Similarly, when enabling backfill matchmaking with a `xim_matchmaking_configuration` structure with the require_player_matchmaking_configuration field set to true for roles or skill, then all players must have specified a non-null per-player matchmaking configuration. If any player hasn't, then the matchmaking process will be paused and all participants will be provided a `xim_matchmaking_progress_updated_state_change` with a `xim_matchmaking_status::waiting_for_player_matchmaking_configuration` value. Once all players have supplied their `xim_player_matchmaking_configuration` structures, backfill matchmaking will resume.
 
-## <a name="the-role-of-servers-host-migration-and-xim-authorities-a-nameauthority"></a>サーバーのロール、"ホスト移行"、XIM 権限<a name="authority">
+## <a name="the-role-of-servers-host-migration-and-xim-authorities-a-nameauthority"></a>The role of servers, "host migration", and XIM authorities <a name="authority">
 
-XIM ネットワークは、クライアント/サーバー モデルなどではなく、完全に接続されたピア メッシュのデバイスです。 プレイヤーは、API を通じて他のプレイヤーに直接送信することができます。xim::set_network_custom_property()、xim::set_allowed_player_joins()、xim::set_chat_targets() など、XIM ネットワーク全体の状態に影響を及ぼすメソッドはすべて、参加中のデバイスから呼び出すことができます。 複数の参加者によって同一の XIM ネットワーク状態を同時に変更できないようにアプリ側で設定されていない場合、XIM は、last-write-wins のシンプルな競合解決を使用します。 つまり、XIM では、"サーバー" または "ホスト" というロールの概念が強制されません。 また、独自の概念 (および XIM ネットワーク退出時に他の参加者にロールを移行する関連プロセス ("ホスト移行" とも呼ばれる)) を定義するアプリが制限されることもありません。
+A XIM network is logically a fully-connected mesh of peer devices-- as opposed to a client/server model, for example. Any player can send directly to any other through the API, and all methods that affect the state of the XIM network as a whole, such as xim::set_network_custom_property(), xim::set_allowed_player_joins(), and xim::set_chat_targets(), can be invoked by any participating device. XIM uses simple last-write-wins conflict resolution if the app doesn't otherwise prevent more than one participant modifying the same XIM network state at effectively the same time. This means that XIM doesn't impose any "server" or "host" role concept. It also doesn't constrain apps that still wish to define their own concepts (and accompanying process for migrating that role to another participant when leaving the XIM network, also known as "host migration").
 
-一部のアプリにとって、ゲームのホストは、全く単純なソーシャル構造です。 フレンドが参加できるようにユーザーがマルチプレイヤー体験を開始すると、そのユーザーは、グループ全体の代わりに、現在のゲームプレイ ルール、マップなどの設定を管理します。 他のアプリにとっては、基本的な通信ルールという表現が適しています。 これによって、別々のプレイヤーによって生成されたゲームの状態が競合しても簡単に解決できます (たとえば、リアルタイム入力を優先することで、どちらのプレイヤーの状態が有効になるかが決まるなど)。 プレイヤーが自由なタイミングで参加および退出する状況で (ネットワーク エラーによる場合も含めて)、単一デバイスで途切れることのないユーザー エクスペリエンスを維持して安定性を確保し、信頼性の高いゲーム状態を管理することは難しい場合があります。このため XIM は、アプリを支援するオプションの `xim_authority` オブジェクトを使用して設計されています。
+For some apps, a game host is purely a simple, social construct. A user decides to initiate a multiplayer experience for friends to join, and that user will manage the current gameplay rules, map, and other settings on behalf of the group as a whole. For other apps, it's a more fundamental communication role. It can simplify arbitrating conflicts in game state generated by separate players, such as whose real-time input takes precedent and therefore who defeated whom. It can be a challenge to maintain an uninterrupted user experience and reliably agree on a single device to manage such authoritative game state in spite of players joining and leaving (perhaps ungracefully) at arbitrary  times, so XIM is designed with an optional `xim_authority` object to assist apps.
 
-XIM オーソリティは、ネットワークの最高品質、安定性、プレイヤーの評判などの動的な要素に基づいて自動的に選択された XIM ネットワーク内の単一デバイスを表します。 XIM ネットワーク内の参加者はすべて、以下の例のように `xim_authority::is_local()` を照会することで、この役割が現在ローカル デバイスに割り当てられているかどうかを判断することができます。
+A XIM authority represents a single device in the XIM network that has been automatically selected based on best network quality, stability, player reputation and other dynamic factors. All participants in the XIM network can determine if their local device is currently assigned this responsibility by querying `xim_authority::is_local()`, as in the following example:
 
 ```cpp
  bool authorityIsLocal = xim::singleton_instance().authority()->is_local();
 ```
 
-どのプレイヤー グループが照会しても、xim_authority がローカルであると報告するのは、XIM ネットワーク内の単一デバイスのみです。 アプリにおけるオーソリティ固有の動作 (例: 短い待機時間、または他からのパケット移動が悪意をもってブロックされている場合は常にローカル シミュレーションに従う) が悪用される可能性を抑えるために、どのデバイスがオーソリティになるかを憶測したり、そのようなデバイスをユーザーに示したりしないでください。
+Only one device in the XIM network will report that the xim_authority is local for any given set of players. Apps shouldn't make assumptions about which device that will be and are encouraged not to visibly identify such devices to users to reduce the potential for taking unfair advantage of authority-specific behavior in the app (e.g., lower latency, or always deferring to local simulation when movement packets from others are maliciously blocked).
 
-今後のソフトウェア リリースでは、アプリは `xim_player::xim_local::send_data_to_authority()` メソッドを使用して `xim_authority` を対象とするメッセージを直接送信し、そこからのメッセージを直接受け取ることができるようになります。 XIM では、移行プロセス中にも `xim_state_change` 通知とデータ バッファー交換が提供されるようになります。 ただし、このソフトウェア リリースでは、これらの機能は用意されていません。 `xim_authority::is_local()` 以外のすべての `xim_authority` メソッドと `xim_player::xim_local::send_data_to_authority()` メソッドは実装されていないため、呼び出すと例外がスローされます。 xim_authority に関するご質問は、マイクロソフトの担当者にお問い合わせください。
+In a future software release, apps will be able to send messages directly targeting the `xim_authority` using the `xim_player::xim_local::send_data_to_authority()` method and receive messages directly originating from it. XIM will also provide `xim_state_change` notifications and data buffer exchanges during the migration process. However, these are not available in this software release. All `xim_authority` methods other than `xim_authority::is_local()`, and the `xim_player::xim_local::send_data_to_authority()` method are not implemented and will throw an exception if called. Contact your Microsoft representative if you have questions about xim_authority.`

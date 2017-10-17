@@ -1,75 +1,78 @@
 ---
-title: "ゲーム チャットの概要"
+title: Game Chat overview
 author: KevinAsgari
-description: "Xbox Live ゲーム チャットを使用して、ゲームに音声通信を追加する方法について説明します。"
+description: Learn how to add voice communication to your game by using Xbox Live Game Chat.
 ms.assetid: 8ef6a578-e911-4006-ac4e-94d3f2fedb98
 ms.author: kevinasg
 ms.date: 04-04-2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One"
-ms.openlocfilehash: 0459343ea7629b5f4d161fecfb8e9f85d7d01c54
-ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+ms.openlocfilehash: 482cba7c08877488d8ef00cad38698039e2cac8d
+ms.sourcegitcommit: 698650216533c20cb7b9773bb51ece9b5ef7d761
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2017
+ms.lasthandoff: 08/25/2017
 ---
-# <a name="game-chat-overview"></a>ゲーム チャットの概要
+# <a name="game-chat-overview"></a>Game Chat overview
 
- ゲーム チャットとは、リモート本体上の 1 つのタイトルのユーザー間でのボイス チャットを可能にするために使用できるテクノロジです。 これには、本体ユーザー間のより広範な独立したコミュニケーションは含まれません。
+ Game chat is a technology that you can use to enable voice communications between users of a single title on remote consoles. It does not include wider independent communication among console users.
 
- Xbox One には、専用の、ハードウェアで高速化されたボイス チャット コーデックが用意されています。このコーデックは、エンコードとデコードに使用され、`Microsoft.Xbox.GameChat` 名前空間を通じて公開されます。 このコーデックは、タイトルのネットワーク帯域幅の柔軟性に関する複数の品質設定をサポートし、本体が送信するすべてのボイス チャット通信でこのコーデックを使用する必要があります。 他のコーデックはサポートされません。
+ > [!Note]
+ > 新しいタイトルでは、ゲーム チャットの代わりに[ゲーム チャット 2](game-chat-2-overview.md) を使う必要があります。 元のゲーム チャットは、2017 年末までに廃止される予定です。
 
-> **注:** `Windows.Xbox.Chat` と呼ばれる低レベル名前空間がコーデックを呼び出します。
+ Xbox One には、ハードウェア アクセラレーションに対応した専用のボイス チャット コーデックが用意されています。このコーデックはエンコードとデコードに使用され、`Microsoft.Xbox.GameChat` 名前空間を通じて公開されます。 This codec supports several quality settings for title networking bandwidth flexibility, and its use is required for all voice chat communications transmitted by the console. No other codecs are supported.
 
-  * [ゲーム チャット チャンネル](#ID4EFB)
-  * [ゲーム チャット クラス](#ID4EKC)
-  * [既定の USB エンドポイント](#ID4E3D)
-  * [ボリュームとピッチ](#ID4EDE)
-  * [ゲーム チャット中にユーザーを聞こえなくする](#ID4EWE)
-  * [GameChat DLL のコンパイル](#ID4E5H)
+> **Note:** A lower-level namespace called `Windows.Xbox.Chat` calls the codec.
+
+  * [Game Chat Channels](#ID4EFB)
+  * [Game Chat Classes](#ID4EKC)
+  * [Default USB Endpoint](#ID4E3D)
+  * [Volume and Pitch](#ID4EDE)
+  * [Making Users Inaudible During Game Chat](#ID4EWE)
+  * [Compiling the GameChat DLL](#ID4E5H)
 
 <a id="ID4EFB"></a>
 
-## <a name="game-chat-channels"></a>ゲーム チャット チャンネル
+## <a name="game-chat-channels"></a>Game Chat Channels
 
 
- チャット システムは、デバイスではなくユーザーからのローカル入力を関連付けます。 OS が入力デバイスとプレイヤー ID を関連付けます。 重要な機能の 1 つが、複数のチャンネルのサポートです。 ゲームでロビーを提供したり、ユーザーがチームに参加したり、チーム内で命令系統を確立したりできます。 ユーザーは、ゲームで許される限り、同時に複数のチャンネルでアクティブになることができます。 たとえば、ゲームで次のようなチャンネルを提供できます。
+ The chat system relates local input from users rather than devices. The OS associates input devices with player IDs. One of the key features is support for multiple channels. A game might have a lobby, a user might join a team, and there might be a command structure within the team. Users can be active in multiple channels at the same time as the game permits. For example, a game might have the following channels:
 
-  * 赤チーム分隊 1 チャンネル &ndash; 分隊 1 の赤チームのすべてのプレイヤー間でのコミュニケーション。
-  * 赤チーム分隊 2 チャンネル &ndash; 分隊 2 の赤チームのすべてのプレイヤー間でのコミュニケーション。
+  * Red team squad 1 channel &ndash; open communication among all red team players on squad 1.
+  * Red team squad 2 channel &ndash; open communication among all red team players on squad 2.
 
-**図 1.**&nbsp;&nbsp;**標準のチャット チャンネル**
+**Figure 1.**&nbsp;&nbsp;**Standard chat channel.**
 
 ![](../../images/chat/gamechat_standard.png)
 
-  *  赤チームの命令チャンネル &ndash; 赤チームの指揮権を持たないすべてのプレイヤー向けの受信専用チャンネル。 このチャンネルでは、他のすべての「赤チーム」のチャンネルをダッキングすることができます。 押して話すことができる赤チームの指揮官向けの発信専用チャンネル。
+  *  Red team command channel &ndash; listen-only channel for all red team non-command players. This channel can duck all other "red team" channels. Speak-only channel for red team commanders that is enabled with push-to-talk.
 
-**図 2.**&nbsp;&nbsp;**命令チャット チャンネル**
+**Figure 2.**&nbsp;&nbsp;**Command chat channel.**
 
 ![](../../images/chat/gamechat_command.png)
 
-  * 上記と同様の、青チームのチャンネル。
+  * Blue team channels as above.
 
 
 
-> **注:** *ダッキング*とは、別の信号がある場合に、あるオーディオ信号のレベルを下げることを意味するチャット用語です。 たとえば、ラジオでは、司会者がアナウンスをする間、音楽トラックのボリュームが下げられます (ダッキングされます)。
+> **Note:** *Ducking* is a chat term meaning the reduction in level of one audio signal in the presence of another signal. For example, in radio, a music track's volume is lowered (ducked) while a presenter makes an announcement.
 
 
 
- ユーザー間の標準チャットでは、チャンネルは双方向であるため、ユーザーはそれぞれの関連付けられたチャンネルで着信と発信の両方を行うことができます。 命令チャンネルでは、コミュニケーションを (標準のチャンネルとして) 双方向にすることも、ユーザーがチャンネルでの発信または着信のどちらかを行うことができる一方向にすることもできます。 たとえば、通常は、指揮官は発信できるようにし、部下は着信のみとします。 命令チャンネルは、他のチャンネルよりも優先度が高いものとして扱われるため、他のチャンネルの音声はダッキングされます。
+ In standard chat between users, the channels are bidirectional so that the users can both listen and talk on their associated channels. With the command channel, the communication can either be bidirectional (as the standard channel) or can be set to unidirectional, where a user can either speak or listen on the channel, but not both. Typically, for example, a commander might want to speak, with the subordinates only listening. The command channel is treated as having a higher priority than other channels, and will cause other channels' voices to be ducked.
 
- ゲーム タイトルで、リモート ユーザーが話している間、チャット以外のオーディオをダッキングできます。 また、ボリューム、一部のユーザーの着信専用属性、他のユーザーの発信専用属性などのプロパティを各チャンネルで設定することもできます。
+ Game titles can duck non-chat audio while a remote user is speaking. Also properties can be set on each channel, such as volume, listen-only attributes for some users, and speak-only attributes for other users.
 
 
 <a id="ID4EKC"></a>
 
 
-## <a name="game-chat-classes"></a>ゲーム チャット クラス
+## <a name="game-chat-classes"></a>Game Chat Classes
 
 
- ゲーム チャットの名前空間は `Microsoft.Xbox.GameChat` です。 このセクションでは、この名前空間のクラス階層について説明します。 それぞれのクラス、インターフェイス、列挙型の詳細については、`Microsoft.Xbox.GameChat`名前空間のドキュメントを参照してください。
+ The namespace for game chat is `Microsoft.Xbox.GameChat`. This section describes the class hierarchy of the namespace. Refer to the `Microsoft.Xbox.GameChat` namespace documentation for a full description of each class, interface and enumeration.
 
   * [ChatManager](#ID4EYC)
   * [ChatManagerSettings](#ID4EDD)
@@ -81,7 +84,7 @@ ms.lasthandoff: 07/06/2017
 ### <a name="chatmanager"></a>ChatManager
 
 
-`ChatManager` クラスはトップレベルのゲーム チャット クラスです。
+The `ChatManager` class is the top-level game chat class.
 
 
 <a id="ID4EDD"></a>
@@ -90,7 +93,7 @@ ms.lasthandoff: 07/06/2017
 ### <a name="chatmanagersettings"></a>ChatManagerSettings
 
 
- `ChatManagerSettings` クラスは `ChatManager` クラスの設定を表します。
+ The `ChatManagerSettings` class class represents the settings for the `ChatManager` class.
 
 
 <a id="ID4EQD"></a>
@@ -99,103 +102,103 @@ ms.lasthandoff: 07/06/2017
 ### <a name="chatuser"></a>ChatUser
 
 
-`ChatUser` クラスは、チャンネル上のユーザーを表します。そのユーザーと、同じチャンネル上の他のユーザーの対話に固有の一連のプロパティを持ちます。
+The `ChatUser` class represents a user on a channel, with a set of properties specific to the interaction of that user with other users on the same channel.
 
 
 
 <a id="ID4E3D"></a>
 
 
-## <a name="default-usb-endpoint"></a>既定の USB エンドポイント
+## <a name="default-usb-endpoint"></a>Default USB Endpoint
 
 
- 既定の USB キャプチャー エンドポイントは、シングル チャンネル モノラルです。 これにより、エコー除去をオーディオ ストリームに適用できます。これはチャット アプリケーションにとっては便利な機能です。
+ The default USB capture endpoint is single channel mono. This enables echo-cancellation to be applied to the audio stream, which is a useful feature for chat applications.
 
 
 <a id="ID4EDE"></a>
 
 
-## <a name="volume-and-pitch"></a>ボリュームとピッチ
+## <a name="volume-and-pitch"></a>Volume and Pitch
 
 
-チャット システムのボリューム コントロールは、Chat API の基盤となる XAudio2 で使用されているものと同じです。 ピッチ コントロールはチャット システムではサポートされていません。
+Volume controls in the chat system are the same as those used for XAudio2, on which the Chat API is based. Pitch control is not supported by the chat system.
 
- XAudio2 のボリューム設定の詳細については、`SetVolume` を参照してください。
+ For details on XAudio2 volume settings, refer to `SetVolume`.
 
- XAudio2 は、ボリューム レベルをユーザーのスピーカーの設定に基づいて自動的に調整して、構成全体を通して一貫性のあるボリューム レベルを維持します。 ユーザーの設定が物理的な構成と一致しない場合、正確な設定のシステムと比較してボリュームが大きすぎるか小さすぎるかのいずれかになります。 たとえば、5.1 サラウンド サウンド スピーカー用に構成されたシステムが 2 つのスピーカーにしか接続されていなければ、サウンドは小さすぎる結果となります。 XAudio2 は、ユーザーのスピーカー設定が物理的なセットアップに適合しているかどうかを判定できません。
+ XAudio2 automatically adjusts volume levels based on the user's speaker settings to maintain a consistent volume level across configurations. If the user's settings don't match their physical configuration the volume will either be too loud or too soft compared to a system with accurate settings. For example, a system configured for 5.1 surround sound speakers that only has two speakers connected will sound too soft. XAudio2 is unable to detect whether the user speaker settings correctly match their physical setup.
 
 
 <a id="ID4EWE"></a>
 
 
-## <a name="making-users-inaudible-during-game-chat"></a>ゲーム チャット中にユーザーを聞こえなくする
+## <a name="making-users-inaudible-during-game-chat"></a>Making Users Inaudible During Game Chat
 
 
-Xbox One は、ゲーム チャット中にユーザーを聞こえなくするための 2 つのメカニズムをサポートしています。
-  * ミュート
-  * ブロック
+Xbox One supports two mechanisms to render users inaudible during game chat:
+  * Muting
+  * Blocking
 
 
 <a id="ID4EFF"></a>
 
 
-### <a name="muting"></a>ミュート
+### <a name="muting"></a>Muting
 
 
-ミュートは多くの場合、一方向です。 つまり、プレイヤー A がプレイヤー B をミュートしますが、プレイヤー B はプレイヤー A を引き続き聞くことができます。ミュートの例:
-  * タイトルに「近接」チャットが含まれています。 この場合、プレイヤーは近くにいる他のプレイヤーを聞くことができますが、遠すぎるプレイヤーはミュートされます。
-  * タイトルは、ユーザーに他の任意のプレイヤー、もしくはすべてのプレイヤーをミュートする機能を提供します。
+Muting is frequently unidirectional. That is, Player A mutes Player B, but Player B can still hear Player A. Examples of muting:
+  * A title has "proximity" chat. In this case, a player can hear other players who are located nearby, but players who are too far away are muted.
+  * A title offers users a player the ability to mute any/all other players.
 
 
-ミュートは、主にタイトルの判断で実装されます。 ただし、プレイヤーは、ゲーマーカードまたはシステム UI を使用して、Xbox システム レベルで他のプレイヤーをミュートすることもできます。
+Muting is primarily implemented at the discretion of the title. However, a player can also mute other players at the Xbox system level, using the gamercard or system UI.
 
 
 <a id="ID4EVF"></a>
 
 
-### <a name="blocking"></a>ブロック
+### <a name="blocking"></a>Blocking
 
 
-> **注:** タイトルは、プレイヤーをブロックしません。 ブロックは、Xbox システム レベルでのみ実行されます。
+> **Note:** Titles do not block players. Blocking is carried out at the Xbox system level only.
 
 
 
-ゲーム プレイヤーは、ブロックの使用によってチャットの可聴性に直接影響を及ぼすことができます。 プレイヤーは、ゲーマーカードを通じて他のプレイヤーを直接ブロックすることができます。または、音声通信およびテキスト制限を「ブロック」または「フレンドのみ」に設定することができます。 通常、ブロックは双方向です。 つまり、プレイヤー A がプレイヤー B をブロックする場合、プレイヤー A にプレイヤー B が聞こえないだけでなく、プレイヤー B にもプレイヤー A が聞こえません。ブロックの例:
-  * プレイヤーには子アカウントがあり、その他のすべてのプレイヤーがそのアカウントにアクセスするのをブロックします。
-  * プレイヤーは、フレンドとのみチャットするようにアカウント構成を設定し、フレンド以外をブロックします。
-  * プレイヤー A は、People アプリの評判/フィードバックまたはシステム UI を通じてプレイヤー B に不適切な行動というフラグを付けてプレイヤー B をブロックします。
+A game player can influence the audibility of chat directly by the use of blocking. The player can block other players directly through the gamercard, or can set the voice communication and text restriction to "Block" or "Friends only". Typically blocking is bidirectional. That is, if Player A blocks Player B, not only does Player A not hear Player B, but Player B does not hear Player A. Examples of blocking include:
+  * Player has a child account and blocks all other players from access to that account.
+  * Player sets the account configuration to chat only with friends, and blocks non-friends.
+  * Player A blocks Player B by flagging Player B for inappropriate behavior through reputation/feedback in the People app or through system UI.
 
 
-プレイヤーは、物理的にヘッドセットを取り外したり、Kinect センサーを無効にしたりすることで他のプレイヤーをブロックすることもできます。
+A player can also block other players by physically removing the headset and/or disabling the Kinect sensor.
 
 
 <a id="ID4EJG"></a>
 
 
-### <a name="what-titles-should-do-to-provide-for-mutingblocking"></a>ミュート/ブロックを提供するためにタイトルは何を実行する必要があるか
+### <a name="what-titles-should-do-to-provide-for-mutingblocking"></a>What Titles Should Do to Provide for Muting/Blocking
 
 
-タイトルは、InGameChat サンプルに示されている、GameChat DLL を使用して実装されるゲーム内オプションを通じてミュートを提供します。 ライブラリはミュート/ブロックのすべての要件を満たします。システム ポリシーに従うためにタイトルからの特定のアクションは必要ありません。 タイトルが行う必要があるのは、プレイヤーがチャット セッション中に他のプレイヤーをミュート/ブロックすることができるゲーマーカード UI を確実に公開することだけです。
+A title provides muting through an in-game option implemented using the GameChat DLL, illustrated in the InGameChat sample. The library meets all requirements for muting/blocking and no specific action is required from the title to abide by system policies. The title must only ensure that it exposes gamercard UI that allows players to mute/block other players during chat sessions.
 
- ミュートを実装するために、タイトルは `ChatManager.MuteUserFromAllChannels` を呼び出します。 すべてのユーザーをミュートする必要がある場合は、`MuteAllUsersFromAllChannels` を呼び出します。 タイトルは、必要に応じて `ChatManager.UnmuteUserFromAllChannels` または `UnmuteAllUsersFromAllChannels` の呼び出しを使用して、ミュートされたプレイヤーの可聴性を復元できます。 タイトルが `Chat` 名前空間を直接使用することは推奨されません。 このライブラリの機能のほとんどは `GameChat` を通じて公開されます。
+ To implement muting, the title calls `ChatManager.MuteUserFromAllChannels`. If it must mute for all users, it calls `MuteAllUsersFromAllChannels`. The title can restore audibility for muted players using calls to `ChatManager.UnmuteUserFromAllChannels` or `UnmuteAllUsersFromAllChannels`, as required. Titles are discouraged from using the `Chat` namespace directly. Most of the functionality of this library is exposed through `GameChat`.
 
-プレイヤーがチャット チャンネルをクリアし、新しいチャット セッションを作成するとき、セッションはミュートされていた以前のプレイヤーに関する情報を保持しません。 タイトルは、この動作を追跡し、`ChatManager` を呼び出して、ゲームプレイ中のプレイヤーのミュート エクスペリエンスの一貫性を維持する必要があります。
+When a player clears a chat channel and creates a new chat session, the session does not retain information about the previous players who were muted. The title must track this behavior and call `ChatManager` to keep the muting experience consistent for players during gameplay.
 
-多くのタイトルは、ブロック/ミュート状況で音声トラフィックを制限して、ネットワークを介して送信するデータを少なくすることでネットワーク運用を最適化します。 たとえば、プレイヤー A がプレイヤー B をブロック/ミュートして、音声トラフィックを制限しますが、タイトルはプレイヤー B からプレイヤー A への音声データの送信を停止しません。この動作の実装は完全にタイトルに委ねられます。 `GameChat` はこのケースを処理し、`ChatManager` に渡される場合にプレイヤー B からの音声データをブロックします。
+Many titles restrict voice traffic in blocking/muting situations to optimize network operation by sending less data over the network. For example, Player A blocks/mutes Player B, restricting voice traffic, but the title does not stop the transmission of voice data from Player B to Player A. This behavior is totally up to the title to implement. `GameChat` handles the case where it blocks voice data from Player B if passed into `ChatManager`.
 
 
 <a id="ID4ERH"></a>
 
 
-### <a name="debugging-when-players-cannot-hear-each-other"></a>プレイヤーが互いに聞こえない場合のデバッグ
+### <a name="debugging-when-players-cannot-hear-each-other"></a>Debugging When Players Cannot Hear Each Other
 
-`ChatManager`  には、`ChatManagerSettings.DiagnosticsTraceLevel` プロパティおよび `ChatManager.OnDebugMessage` イベントを使用してタイトルが有効にできるデバッグ トレースが含まれています。 トレースは、問題の絞り込みに役立つ多くのコンテンツを提供します。 このコンテンツは、オーディオ デバイスの追加/変更、ローカルおよびリモート ユーザーの追加、各リモート ユーザーからの音声データの取得などから得られます。
+`ChatManager` includes debug traces that the title can enable, using the `ChatManagerSettings.DiagnosticsTraceLevel` property, and the `ChatManager.OnDebugMessage` event. The traces offer much content that can help in narrowing down issues. This content comes from adding/changing audio devices, adding local and remote users, getting voice data from each remote user, and the like.
 
 
 <a id="ID4E5H"></a>
 
 
-## <a name="compiling-the-gamechat-dll"></a>GameChat DLL のコンパイル
+## <a name="compiling-the-gamechat-dll"></a>Compiling the GameChat DLL
 
 
- Microsoft.Xbox.GameChat.dll をビルドするためのソースは Xbox デベロッパー ポータルにあります。 デベロッパーは、このソースをコンパイルして `GameChat` のカスタマイズ バージョンを作成できます。 一般的なカスタマイズでは、オーディオ データを転送するためのカスタム ネットワーク チャンネルを作成します。
+ The source for building the Microsoft.Xbox.GameChat.dll is available on Xbox Developer Portal. Developers can compile this source to create a customized version of `GameChat`. A typical customization is to create a custom network channel for transmitting the audio data.

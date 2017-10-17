@@ -1,70 +1,70 @@
 ---
-title: "Xbox Live マルチプレイヤー プラットフォーム"
+title: Xbox Live Multiplayer Platform
 author: KevinAsgari
-description: "Xbox Live でサポートされているマルチプレイヤー プラットフォームについて説明します。"
+description: Learn about the multiplayer platforms that are support by Xbox Live.
 ms.assetid: 958b94b3-dccd-479a-bf52-54f7ff1656fa
 ms.author: kevinasg
 ms.date: 04-04-2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー"
-ms.openlocfilehash: 90d41e67e852237de1b850e02a00783a65bfb5a3
-ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer
+ms.openlocfilehash: fd6e9935153dd6531bc2a639d366f5027708d398
+ms.sourcegitcommit: 698650216533c20cb7b9773bb51ece9b5ef7d761
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2017
+ms.lasthandoff: 08/25/2017
 ---
-# <a name="xbox-live-multiplayer-platform"></a>Xbox Live マルチプレイヤー プラットフォーム
+# <a name="xbox-live-multiplayer-platform"></a>Xbox Live Multiplayer Platform
 
-Xbox Live マルチプレイヤー プラットフォームにより、ゲームは Xbox Live プレイヤー同士をインターネット経由で結び付けて、タイトルの寿命と使用量を一般的なソロ プレイより大幅に拡張することができます。
+The Xbox Live Multiplayer Platform empowers your game to bring Xbox Live players together over the Internet and can dramatically extend the life and usage of a title beyond typical solo play.
 
-ユーザーのために優れたマルチプレイヤー エクスペリエンスを作成することで、Xbox Live ゲーマーの大規模なソーシャル ネットワークを利用して、ゲームのユーザー ベースを拡大し、一緒にプレイするファンのコミュニティを形成および持続させることができます。
+By building a great multiplayer experience for your audience, you can leverage the large social network of Xbox Live gamers to increase the user base for your game and promote a sustained community of dedicated fans playing together.
 
 
-## <a name="what-is-the-xbox-live-multiplayer-platform"></a>Xbox Live マルチプレイヤー プラットフォームとは
+## <a name="what-is-the-xbox-live-multiplayer-platform"></a>What is the Xbox Live Multiplayer Platform?
 
-Xbox Live マルチプレイヤー プラットフォームは、リアルタイム マルチプレイヤー ゲームプレイを実装するために使用できるクライアント API のセットです。 API スイートの主要なサブシステムは次のとおりです。
+The Xbox Live Multiplayer Platform is a set of client APIs that you can use to implement real-time multiplayer gameplay. The major sub-systems in the API suite are:
 
--   **Xbox Live マルチプレイヤー セッション ディレクトリ (MPSD)** サービス。 MPSD サービスは統合された UI エクスペリエンスと連携して、ユーザーによるプレイのための相互の検索と招待を容易にします。 Xbox Live のサービスとの統合により、ユーザーは集合に Xbox Live パーティー チャットを使用することもできます。
--   **シンプルかつ高度なマッチメイキング機能。** Xbox Live は従来のクイック マッチ機能を提供しますが、高度にカスタマイズされたマッチメイキング シナリオのためのセッション参照とサポートも提供します。 Xbox Live グループを検索 (Looking for Group: LFG) により、プレイヤーは相互を検索し、パーティー チャットでやり取りして、ゲームをプレイすることもできます。
--   **ピア ツー ピアおよびクライアント サーバー ネットワーク API** は、最新のインターネット規格を利用し、Xbox Live によってアクティブに監視される、安全なリアルタイムの通信を提供します。 標準化および Xbox Live ネットワーク トラブルシューティング エクスペリエンスとの統合により、ユーザーは接続の問題を短時間で解決できます。  
--   **統合された音声およびテキスト チャット ソリューション**は、Xbox Live のソーシャル グラフ、メディア サービス、Xbox One デバイス上の専用エンコード ハードウェアを利用して、安全なゲーム内通信を促進します。
+-   The **Xbox Live Multiplayer Session Directory (MPSD)** service. The MPSD service works with integrated UI experiences to facilitate users finding and inviting each other for play. Integration with Xbox Live's services also allows customers to use Xbox Live Party Chat to assemble.
+-   **Simple and advanced matchmaking facilities.** Xbox Live provides traditional quickmatch capabilities, but also session browse and support for highly customized matchmaking scenarios. Xbox Live Looking for Group (LFG) also allows players to find each other, rally in Party Chat, and then play your game.
+-   **Peer to peer and client-server networking APIs** provide secure real-time communication leveraging modern Internet standards and actively monitored by Xbox Live. Standardization and integration with the Xbox Live network troubleshooting experiences allow users to quickly remediate connectivity issues.  
+-   **Integrated voice and text chat solutions** that facilitate safe in-game communication leveraging the Xbox Live social graph, media services, and specialized encoding hardware on Xbox One devices.
 
-最も一般的なマルチプレイヤー シナリオの概要およびそれらのシナリオの実装に役立つ Xbox Live の機能については、「[マルチプレイヤーのレベル](multiplayer-scenarios.md)」を参照してください。
+For an overview of some of the most common multiplayer scenarios, and which Xbox Live functionality can help implement those scenarios, see [Multiplayer Levels](multiplayer-scenarios.md).
 
-## <a name="how-can-i-implement-xbox-live-multiplayer-in-my-game"></a>ゲームに Xbox Live マルチプレイヤーを実装する方法
-Xbox Live マルチプレイヤー プラットフォームには、シナリオに応じてゲームに Xbox Live マルチプレイヤーを実装する複数のアプローチが用意されています。
+## <a name="how-can-i-implement-xbox-live-multiplayer-in-my-game"></a>How can I implement Xbox Live Multiplayer in my game?
+Depending on your scenario, the Xbox Live Multiplayer Platform provides several approaches to implementing Xbox Live Multiplayer in your game.
 
 ### <a name="xbox-integrated-multiplayer-xim"></a>Xbox Integrated Multiplayer (XIM)
-XIM は、Xbox Live サービスを利用してゲームにリアルタイムのマルチプレイヤー ネットワークと通信を追加するためのターンキー ソリューションです。 XIM の目的は、Xbox One および Windows 10 での高品質なピア ツー ピア (P2P) マルチプレイヤー ゲームの開発をこれまでよりはるかに簡単にすることです。
+XIM is an turnkey solution for adding real-time multiplayer networking and communication to your game through the power of Xbox Live services. The goal of XIM is to make it easier than ever to build high quality peer-to-peer (P2P) multiplayer games on Xbox One & Windows 10.
 
-XIM は以下の機能を提供します。
-- ゲームへの招待と簡単なマッチメイキングのサポート。
-- Xbox Live マルチプレイヤー リレー サービスによって透過的に拡張される簡単で安全なリアルタイム ネットワーク。
-- コミュニケーションのテキスト変換や読み上げの機能を備えた簡単な音声およびテキスト チャットによる、アクセシビリティに優れたエンド ユーザー エクスペリエンス。
-- ネットワーク輻輳の検出と管理およびゲーム状態の移行の補助。
+XIM provides the following functionality:
+- Support for game invitations and simple matchmaking.
+- A simple and secure real-time network that is transparently augmented by the Xbox Live Multiplayer Relay Service.
+- Simple voice and text chat, with facilities for transcribing and narrating communication for a more accessible end-user experience.
+- Aides for detecting and managing network congestion, as well as for migrating game state.
 
-XIM は Xbox Live マルチプレイヤー プラットフォームで利用できる最も簡単なマルチプレイヤー ソリューションですが、カスタマイズできる範囲は最も小さく、P2P ゲームに対してのみ適しています。 XIM について詳しくは、「[Xbox Integrated Multiplayer](xbox-integrated-multiplayer-overview.md)」をご覧ください。
+XIM is the simplest multiplayer solution available through the Xbox Live Multiplayer Platform, but also the least customizable and is only suited for P2P games. For more information about XIM, see [Xbox Integrated Multiplayer](xbox-integrated-multiplayer-overview.md).
 
 ### <a name="xbox-multiplayer-manager"></a>Xbox Multiplayer Manager
-Xbox Multiplayer Manager (MPM) は、Xbox Live のディレクトリ、招待、マッチメイキング サービスに柔軟にアクセスできるクライアント API です。
+Xbox Multiplayer Manager (MPM) は、Xbox Live のマルチプレイヤー セッション ディレクトリ、招待、マッチメイキング サービスに柔軟にアクセスできるクライアント API です。
 
-多くの一般的なマルチプレイヤー シナリオを、ベスト プラクティスに従った効率的な方法で実装し、認定に合格するためにゲームが実装する必要のある多くの Xbox 要件 (XR) にも対応しています。
+It implements many common multiplayer scenarios in an efficient manner that follows best practices, and also handles many of the Xbox Requirements (XRs) that your game must implement in order to pass certification.
 
-Xbox Multiplayer Manager は、ネットワーク層またはチャット層を実装していません。 MPM は、Windows.Networking.XboxLive によって実装された安全なネットワーク層と対になる、ゲーム用の柔軟な制御プレーンとして設計されています。 Game Chat API または XIM Chat Reservations によってゲーム内通信を追加できます。 ネットワークおよび Game Chat API のドキュメントは、Xbox One XDK および Xbox Live Platform Extensions SDK にあります。
+Xbox Multiplayer Manager does not implement a networking or chat layer. MPM は、Windows.Networking.XboxLive を通じて実装される安全なネットワーク層と対になる、柔軟ながらもシンプルで統合されたゲーム用マルチプレイヤー管理 API として設計されています。 [ゲーム チャット 2](chat/game-chat-2-overview.md) API または XIM Chat Reservations によってゲーム内通信を追加できます。 ネットワークおよびゲーム チャット 2 API のドキュメントは、Xbox One XDK と Xbox Live Platform Extensions SDK に含まれています。
 
-マルチプレイヤー ゲーム専用のサーバーをホストしている場合は、MPM が最善の選択です。 MPM は、Xbox Live トーナメントとの統合のような高度なシナリオにも適しています。 MPM について詳しくは、「[Multiplayer Manager の概要](multiplayer-manager/multiplayer-manager-api-overview.md)」をご覧ください。
+If you are hosting dedicated servers for your multiplayer game, MPM is the best choice. MPM is also well-suited for advanced scenarios such as integration with Xbox Live Tournaments. For more information on MPM, see  [Introduction to Multiplayer Manager](multiplayer-manager/multiplayer-manager-api-overview.md).
 
-Multiplayer Manager を使用するには、マルチプレイヤー シナリオ用に Xbox Live サービスを構成する必要があります。 この構成について詳しくは、「[マルチプレイヤー サービスを構成する](service-configuration/configure-the-multiplayer-service.md)」をご覧ください。
+To use Multiplayer Manager, you must configure the Xbox Live service for your multiplayer scenarios. For more information on this configuration, see [Configure the Multiplayer service](service-configuration/configure-the-multiplayer-service.md).
 
->現在、Multiplayer Manager はセッション参照をサポートしていません。 詳しくは、「[マルチプレイヤーのセッション参照](session-browse.md)」をご覧ください。
+>Multiplayer Manager does not currently support session browse. For information see [Multiplayer Session Browse](session-browse.md).
 
-### <a name="api-capabilites"></a>API の機能
+### <a name="api-capabilites"></a>API Capabilites
 
-機能 | Xbox Integrated Multiplayer| Multiplayer Manager
+Functionality | Xbox Integrated Multiplayer| Multiplayer Manager
 --  | -- | --
-表示 |  XIM はソースなしのコンパイル済みライブラリとして提供されます。  | MPM はソースと共に提供されるため、Xbox Live サービスまたは XSAPI と直接やり取りして動作をカスタマイズできます。
-セッションとマッチメイキング | XIM は、シンプルな事前構成済みのマッチメイキング ルールを提供し、マルチプレイヤーの構成を必要としません。 | MPM では、[マルチプレイヤー サービスを構成する](service-configuration/configure-the-multiplayer-service.md)必要があります。これにより、高度な仕様のマッチメイキングとセッション動作が可能になります。
-ネットワーキング | XIM は、必要に応じて Xbox Live リレー サービスによってサポートされる、セキュリティで保護されたシンプルなプレイヤー間ネットワークを提供します。 | MPM は、Windows.Networking.XboxLive を使用して、セキュリティで保護された独自のネットワーク ソリューションに接続できるように設計されています。
-ゲーム チャット | XIM は、統合された音声およびテキスト チャットを提供します。 | Game Chat API または XIM の帯域外予約を使用してゲーム内通信を実装し、MPM が管理する名簿に登録されている参加者によるチャットを有効にできます。
+Visibility |  XIM is provided as a compiled library without source.  | MPM is provided with source, so you may customize behavior by directly interacting with Xbox Live services or with XSAPI.
+Session and Matchmaking | XIM provides simple pre-configured matchmaking rules and does not require multiplayer configuration. | MPM [requires configuring the Multiplayer service](service-configuration/configure-the-multiplayer-service.md), which enables sophisticated specification of matchmaking and session behavior.
+Networking | XIM provides a simple & secure player to player network, backed by the Xbox Live Relay service when required. | MPM is designed so you can plug in your own secure networking solution using Windows.Networking.XboxLive.
+ゲーム チャット | XIM provides integrated voice and text chat. | ゲーム チャット 2 API または XIM の帯域外予約を使ってゲーム内通信を実装し、MPM が管理する名簿に登録された参加者によるチャットを有効にできます。
