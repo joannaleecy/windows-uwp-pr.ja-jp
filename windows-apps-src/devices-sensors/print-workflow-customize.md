@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-localizationpriority: medium
-ms.openlocfilehash: d4fc2ea5186acff1b8b2e63ae19884ee1bc3d02d
-ms.sourcegitcommit: 44a24b580feea0f188c7eae36e72e4a4f412802b
+ms.localizationpriority: medium
+ms.openlocfilehash: ea40c918ea0326a3ab1b0de92b47ccf9337c93cc
+ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="customize-the-print-workflow"></a>印刷ワークフローのカスタマイズ
 

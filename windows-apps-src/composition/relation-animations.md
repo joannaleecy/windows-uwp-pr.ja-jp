@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, アニメーション"
-localizationpriority: medium
-ms.openlocfilehash: 84a05d4dcb34cb14e20fbd222d5872dbc2adf10e
-ms.sourcegitcommit: 44a24b580feea0f188c7eae36e72e4a4f412802b
+ms.localizationpriority: medium
+ms.openlocfilehash: ceca1705938df29bd4fbb857fbc78649fec57a94
+ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="relation-based-animations"></a>関係ベース アニメーション
 

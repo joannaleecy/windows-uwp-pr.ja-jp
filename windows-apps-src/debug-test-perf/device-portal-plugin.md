@@ -9,11 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 1eb756c794e23a17420c14af7e27ec315305f232
-ms.sourcegitcommit: c5c96ec4b6ccef57f69eb341b06e6280994c9767
+ms.localizationpriority: medium
+ms.openlocfilehash: 2aae0e634ea219ef602eafdb1516d1d42b9c7913
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>Device Portal 用のカスタム プラグインの作成
 
@@ -187,15 +188,15 @@ Device Portal プロバイダーによって提供される静的コンテンツ
 バック グラウンド タスクをデバッグするには、Visual Studio でコードを実行する方法を変更する必要があります。 アプリ サービスの接続をデバッグして、プロバイダーが HTTP 要求を処理する方法を調べるには、次の手順に従います。
 
 1.  [デバッグ] メニューから [DevicePortalProvider のプロパティ] を選択します。 
-1.  [デバッグ] タブの [開始動作] で、[起動しないが、開始時にマイ コードをデバッグする] を選択します。  
+2.  [デバッグ] タブの [開始動作] で、[起動しないが、開始時にマイ コードをデバッグする] を選択します。  
 ![プラグインをデバッグ モードにする](images/device-portal/plugin-debug-mode.png)
-1.  RequestReceived ハンドラー関数にブレークポイントを設定します。
+3.  RequestReceived ハンドラー関数にブレークポイントを設定します。
 ![RequestReceived ハンドラーでのブレークポイント](images/device-portal/plugin-requestreceived-breakpoint.png)
-    > [!NOTE]
-    > ビルドのアーキテクチャがターゲットのアーキテクチャと正確に一致することを確認してください。  64 ビット PC を使用している場合は、AMD64 ビルドを使って展開する必要があります。
-1.  F5 キーを押してアプリを展開します。
-1.  Device Portal をオフにし、再度オンにしてアプリを検出できるようにします (アプリ マニフェストを変更した場合にのみ必要。その他の場合は、単に再配置し、この手順を省略できます)。 
-1.  ブラウザーで、プロバイダーの名前空間にアクセスすると、ブレークポイントにヒットします。
+> [!NOTE] 
+> ビルドのアーキテクチャがターゲットのアーキテクチャと正確に一致することを確認してください。 64 ビット PC を使用している場合は、AMD64 ビルドを使って展開する必要があります。 
+4.  F5 キーを押してアプリを展開します。
+5.  Device Portal をオフにし、再度オンにしてアプリを検出できるようにします (アプリ マニフェストを変更した場合にのみ必要。その他の場合は、単に再配置し、この手順を省略できます)。 
+6.  ブラウザーで、プロバイダーの名前空間にアクセスすると、ブレークポイントにヒットします。
 
 ## <a name="related-topics"></a>関連トピック
 * [Windows Device Portal の概要](device-portal.md)

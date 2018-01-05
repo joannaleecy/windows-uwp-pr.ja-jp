@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, ゲーム, 入力"
-localizationpriority: medium
-ms.openlocfilehash: f3ecb62187510761e17c155317b2a13b2b670b6d
-ms.sourcegitcommit: 44a24b580feea0f188c7eae36e72e4a4f412802b
+ms.localizationpriority: medium
+ms.openlocfilehash: b752221d7d8b29ea928e1e7cae59f886176d6cd7
+ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="game-broadcast-and-capture"></a>ゲームのブロードキャストとキャプチャ
 
