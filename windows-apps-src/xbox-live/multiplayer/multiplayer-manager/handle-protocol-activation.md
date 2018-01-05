@@ -15,7 +15,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/06/2017
 ---
-# プロトコルのアクティブ化を処理する
+# <a name="handle-protocol-activation"></a>プロトコルのアクティブ化を処理する
 
 プロトコルのアクティブ化では、別の操作 (通常、プレイヤーが別のプレイヤーからのゲームの招待を受け入れたとき) への応答としてシステムが自動的にゲームを起動します。
 

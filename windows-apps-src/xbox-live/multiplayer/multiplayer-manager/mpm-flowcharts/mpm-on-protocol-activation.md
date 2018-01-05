@@ -15,10 +15,10 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/06/2017
 ---
-# フローチャート - プロトコルのアクティブ化を処理する
+# <a name="flowchart---handle-protocol-activation"></a>フローチャート - プロトコルのアクティブ化を処理する
 
 次のフローチャートでは、ゲームへの招待に応答する場合、またはメンバーのプロフィール カードを通してゲームに参加する場合のフローを示します。
 
-## プロトコルのアクティブ化を処理する
+## <a name="handle-protocol-activation"></a>プロトコルのアクティブ化を処理する
 
 ![SmartMatch マッチメイキング](../../../images/multiplayer/mpm-on-activation.png)
