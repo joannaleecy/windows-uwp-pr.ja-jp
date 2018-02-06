@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "アプリの申請の [組織のライセンス] セクションでは、ビジネス向け Microsoft ストアと教育機関向け Microsoft ストアでアプリでボリューム購入を提供するかどうかと、その提供方法を指定できます。"
+Description: You can indicate whether and how your app can be offered for volume purchases through the Microsoft Store for Business and Microsoft Store for Education in the Organizational licensing section of an app submission.
 title: "組織のライセンス オプション"
 ms.assetid: 1EB139B0-67E7-4F66-AAEF-491B1E52E96F
 ms.author: wdg-dev-content
-ms.date: 06/14/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, ビジネス向けストア,教育機関向けストア, 組織, ボリューム ライセンス"
-ms.openlocfilehash: 8bb44a65f2ded280cfe8eda39663b64ef2edb3c8
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+keywords: "windows 10, uwp, ビジネス向け Store, 教育機関向け Store, 組織, ボリューム ライセンス, 企業, 教育機関 Store, ビジネス Store, ボリューム購入, 一括"
+localizationpriority: high
+ms.openlocfilehash: 7437b087c0966939bb5f5d8110d310f4dd5e73df
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="organizational-licensing-options"></a>組織のライセンス オプション
 
@@ -22,10 +23,14 @@ ms.lasthandoff: 06/21/2017
 
 これらの設定を通じて、ユーザー用に複数のライセンスを取得し展開する組織 (ビジネスおよび教育機関) にアプリを提供することができ、PC、タブレット、電話など、各種 Windows 10 デバイスを使用する組織を取り込むチャンスを拡大できます。
 
+企業に直接公開する[基幹業務 (LOB) アプリ](distribute-lob-apps-to-enterprises.md)に対して組織のライセンスを許可する必要もあります。
+
 > [!NOTE]
 > 各アプリの選択はそれぞれ独立して構成します。 アプリの基本設定は、新しい申請を作成することでいつでも変更できます。また、変更は申請が[認定プロセス](the-app-certification-process.md)を完了した後に有効になります。
 
-企業に直接公開する[基幹業務 (LOB) アプリ](distribute-lob-apps-to-enterprises.md)に対して組織のライセンスを許可する必要もあります。
+> [!IMPORTANT]
+> [Microsoft Store 申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使う申請は、ビジネス向け Microsoft Store と教育機関向け Microsoft Store では利用可能になりません。 組織がアプリをボリューム購入できるようにするには、Windows デベロッパー センター ダッシュボードを使って申請を作成および提出する必要があります。
+
 
 ## <a name="allowing-your-app-to-be-offered-to-organizations"></a>組織へのアプリの提供の許可
 
@@ -57,7 +62,7 @@ ms.lasthandoff: 06/21/2017
 現在、特定の市場の開発者アカウントでは、有料アプリをビジネス向け Microsoft ストアでボリューム取得用に提供することができます。 
 
 > [!NOTE]
-> 一部の市場では、ビジネス向け Microsoft ストアや教育機関向け Microsoft ストアに表示されるアプリの価格が、Windows ストアの同じ価格帯で小売顧客に表示される価格と異なる場合があります。 組織による購入の収益の支払いは、コンシューマーによるアプリの購入の場合と同様に機能します。 詳しくは、「[支払いの受け取り](getting-paid-apps.md)」と「[アプリ開発者契約](https://msdn.microsoft.com/library/windows/apps/hh694058)」をご覧ください。 ビジネス向け Microsoft ストアと教育機関向け Microsoft ストアを利用できる市場の一覧については、「[ビジネス向け Microsoft ストアと教育機関向け Microsoft ストアの概要](https://technet.microsoft.com/itpro/windows/manage/windows-store-for-business-overview#supported-markets)」をご覧ください。
+> 一部の市場では、ビジネス向け Microsoft Store や教育機関向け Microsoft Store に表示されるアプリの価格が、Microsoft Store の同じ価格帯で小売顧客に表示される価格と異なる場合があります。 組織による購入の収益の支払いは、コンシューマーによるアプリの購入の場合と同様に機能します。 詳しくは、「[支払いの受け取り](getting-paid-apps.md)」と「[アプリ開発者契約](https://msdn.microsoft.com/library/windows/apps/hh694058)」をご覧ください。 ビジネス向け Microsoft ストアと教育機関向け Microsoft ストアを利用できる市場の一覧については、「[ビジネス向け Microsoft ストアと教育機関向け Microsoft ストアの概要](https://technet.microsoft.com/itpro/windows/manage/windows-store-for-business-overview#supported-markets)」をご覧ください。
 
 お住まいの国または地域が以下の一覧にない場合は、現在、有料アプリをビジネス向け Microsoft ストアと教育機関向け Microsoft ストアで提供することはできません。 この場合、有料アプリ用に選択した組織のライセンスの設定は後で適用されることがあります。Microsoft ストアでは、他の開発者アカウント市場からの申請に対するサポートを将来追加することがあるためです。
 

@@ -1,27 +1,29 @@
 ---
 author: jnHs
-Description: "アプリのストア登録情報は、デベロッパー センター ダッシュボードを使わなくても、登録情報を .csv ファイルにエクスポートして情報と資産を入力し、更新したファイルをインポートして作成できます。"
-title: "ストア登録情報のインポートとエクスポート"
+Description: You can create Store listings for your apps without using the Dev Center dashboard by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file.
+title: "Store 登録情報のインポートとエクスポート"
 ms.author: wdg-dev-content
-ms.date: 08/03/2017
+ms.date: 12/22/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
-ms.openlocfilehash: 691074727bab67e616541b393468eb70f0b20a05
-ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+keywords: "windows 10, uwp, Store 登録情報のインポート, Store 登録情報のエクスポート, インポートとエクスポート, Store 登録情報 csv"
+ms.localizationpriority: high
+ms.openlocfilehash: f003ab35fa968e7b4be8e6e0591d97baafaa8648
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 01/12/2018
 ---
-# <a name="import-and-export-store-listings"></a>ストア登録情報のインポートとエクスポート
+# <a name="import-and-export-store-listings"></a>Store 登録情報のインポートとエクスポート
+[ダッシュボードに Store 登録情報を直接入力する](create-app-store-listings.md)代わりに、登録情報を .csv ファイルにエクスポートして情報と資産を入力し、更新したファイルをインポートすることにより、情報を追加または更新することもできます。 この方法を使うと、登録情報を最初から作成することも、既に作成している登録情報を更新することもできます。
 
-アプリの[ストア登録情報](create-app-store-listings.md)は、デベロッパー センター ダッシュボードを使わなくても、登録情報を .csv ファイルにエクスポートして情報と資産を入力し、更新したファイルをインポートして作成できます。 この方法を使うと、登録情報を最初から作成することも、既に作成している登録情報を更新することもできます。 
-
-ただし、この方法では、アプリの[プラットフォーム固有のストア登録情報](create-platform-specific-store-listings.md)を作成することはできません。
+このオプションは、複数の言語で製品の Store 登録情報を作成または更新する場合に特に便利です。複数のフィールドに同じ情報をコピーして貼り付け、特定の言語に適用される変更を簡単に行うことができます。 ただし、この方法では、アプリの[プラットフォーム固有の Store 登録情報](create-platform-specific-store-listings.md)を作成することはできません。 
 
 > [!TIP]
 > この機能は、アドオンのストア登録情報のインポートとエクスポートにも使うことができます。 アドオンの場合、プロセスは同じですが、[アドオンに関係のあるフィールドしか](#add-ons)含まれません。
+
+デベロッパー センター ダッシュボードでは、(以前にインポート/エクスポートの方法を使用した場合でも) 登録情報をいつでも直接作成または更新できることに留意してください。 単純な変更を行うだけの場合はダッシュボードで直接更新した方が簡単ですが、どちらの方法でも常に使用することができます。
 
 ## <a name="export-listings"></a>登録情報のエクスポート
 

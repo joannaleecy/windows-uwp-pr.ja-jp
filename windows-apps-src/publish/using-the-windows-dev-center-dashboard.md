@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "Windows デベロッパー センター ダッシュボードを使うと、Windows デバイス向けのすべてのアプリの管理と申請を 1 か所で行うことができます。"
+Description: The Windows Dev Center dashboard lets you manage and submit all of your apps for Windows devices in one place.
 title: "Windows デベロッパー センター ダッシュボードの使用"
 ms.assetid: FB63F773-71AC-464E-BDE1-21C429FB2B0B
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 01/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 8fabd6ecbbe5b9708a5741c69b8de7bd6096033f
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+keywords: "windows 10, uwp, ダッシュボード, デベロッパー センター, 開発センター"
+ms.localizationpriority: high
+ms.openlocfilehash: a9a0651145fcc8b7d8570de3151d474a154fe24c
+ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 01/08/2018
 ---
 # <a name="using-the-windows-dev-center-dashboard"></a>Windows デベロッパー センター ダッシュボードの使用
 
@@ -31,14 +32,13 @@ Windows デベロッパー センター ダッシュボードを使うと、Wind
 - プロフィールやアカウントの詳細、支払い明細、サポート、通知を 1 か所でまとめて管理できます。各情報には右上隅からアクセスできます。
 - すべての開発者プログラムにすぐにアクセスできます。それぞれにサインインとサインアウトを行う必要はありません。 また、おすすめの新しいプログラムが利用可能になると提示されます。
 
-
 [アプリの申請を作成](app-submissions.md) (新規作成または更新) するとき、サポートされている OS バージョンに対応した[アプリ パッケージをアップロード](upload-app-packages.md)できます。ストアでは、最適なパッケージがユーザーに対して自動的に提供されます。 アプリがサポートするオペレーティング システムすべてに対して同じ[ストア登録情報](create-app-store-listings.md)と[アートワーク](app-screenshots-and-images.md)を使うこともできますし、[特定の OS バージョン向けにストア登録情報をカスタマイズする](create-platform-specific-Store-listings.md)こともできます。
 
 アドオン (アプリ内製品) は、アプリの申請とは別に管理されます。 これにより、IAP をさらに柔軟に変更できるようになります。 詳しくは、「[アドオンの申請](add-on-submissions.md)」をご覧ください。
 
 デベロッパー センター ダッシュボードでは、[アプリの管理とサービスの構成](app-management-and-services.md)、[分析データの確認](analytics.md)、[支払いレポート](payout-summary.md)、[アプリの宣伝](attract-customers-and-promote-your-apps.md)、[ユーザーとの関係を深める](engage-with-your-customers.md)、[ベータ テスト](beta-testing-and-targeted-distribution.md)、[LOB アプリの企業への配布](distribute-lob-apps-to-enterprises.md)などの機能も提供されます。
 
-できる限り最高の機能とエクスペリエンスを開発するためには、皆様のフィードバックが重要です。 ぜひ、新しいダッシュボードの右上隅にある **[フィードバック]** リンクから、ダッシュボードを使用した感想やご意見をお寄せください。
+できる限り最高の機能とエクスペリエンスを開発するためには、皆様のフィードバックが重要です。 ぜひ、新しいダッシュボードの右上隅にある **[フィードバック]** リンク (疑問符アイコンの下) から、ダッシュボードを使用した感想やご意見をお寄せください。
 
 
  

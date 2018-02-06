@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "アカウント ユーザーのカスタムのアクセス許可を設定します。"
+Description: Set custom permissions for account users.
 title: "アカウント ユーザーのカスタムのアクセス許可の設定"
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.author: wdg-dev-content
-ms.date: 07/17/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
-ms.openlocfilehash: d45ae4001dbb14a11e2beeecc3f98fb72bbc8a86
-ms.sourcegitcommit: eaacc472317eef343b764d17e57ef24389dd1cc3
+keywords: "Windows 10, uwp, ユーザー ロール, ユーザーのアクセス許可, カスタムの役割, ユーザー アクセス, アクセス許可のカスタマイズ, 標準の役割"
+ms.localizationpriority: high
+ms.openlocfilehash: 1fdde4be606abae849ff3350d27afbbced157f75
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>アカウント ユーザーの役割またはカスタムのアクセス許可の設定
 
@@ -26,6 +27,9 @@ ms.lasthandoff: 07/17/2017
 -   ユーザー (グループと Azure AD アプリケーションを含む) は、管理者が[アクセス許可をカスタマイズ](#custom)し、[製品レベルのアクセス許可](#product-level-permissions)を割り当てて、ユーザーが特定のアプリやアドオンしか操作できないように調整していない限り、それぞれの役割に関連付けられているアクセス許可を使ってデベロッパー センター アカウント全体にアクセスできます。
 -   複数の役割を選択するか、カスタムのアクセス許可を使って必要なアクセス許可を付与することにより、ユーザー、グループ、または Azure AD アプリケーションが複数の役割の機能にアクセスできるようにすることができます。
 -   特定の 1 つの役割 (またはカスタムのアクセス許可のセット) を持つユーザーは、別の役割 (またはアクセス許可のセット) を持つグループの一部となることも可能です。 その場合ユーザーは、グループと個人アカウントの両方に関連付けられた機能のすべてにアクセスできます。
+
+> [!TIP]
+> このトピックは、Windows アプリ開発者プログラムに固有の内容です。 ハードウェア開発者プログラムでのユーザー ロールについて詳しくは、「[ユーザー ロールの管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles)」をご覧ください。
 
 
 <span id="roles" />
@@ -41,7 +45,7 @@ ms.lasthandoff: 07/17/2017
 
 | 役割                 | 説明              |
 |----------------------|--------------------------|
-| マネージャー              | アカウントに完全にアクセスできます (税金と支払いの設定の変更を除く)。 これにはデベロッパー センターでのユーザーの管理が含まれますが、ユーザーの作成および削除については、Azure AD でのアカウントのアクセス許可に依存することに注意してください。 つまり、ユーザーにマネージャーの役割が割り当てられていても、組織の Azure AD の管理者権限がなければ、そのユーザーは、新しいユーザーを作成したり、ディレクトリからユーザーを削除したりできません (ただし、ユーザーのデベロッパー センターの役割を変更することはできます)。 |
+| マネージャー              | アカウントに完全にアクセスできます (税金と支払いの設定の変更を除く)。 これにはデベロッパー センターでのユーザーの管理が含まれますが、Azure AD テナントでのユーザーの作成および削除については、Azure AD でのアカウントのアクセス許可に依存することに注意してください。 つまり、ユーザーにマネージャーの役割が割り当てられていても、組織の Azure AD のグローバル管理者権限がなければ、そのユーザーは、新しいユーザーを作成したり、ディレクトリからユーザーを削除したりできません (ただし、ユーザーのデベロッパー センターの役割を変更することはできます)。 <p> デベロッパー センター アカウントが複数の Azure AD テナントに関連付けられている場合、そのテナントのグローバル管理者アクセス許可を持つアカウントでそのユーザーと同じテナントにサインインしている場合を除き、マネージャーにはユーザーの完全な詳細が表示されません (姓名、パスワードの回復メール、Azure AD グローバル管理者かどうかなど)。 ただし、デベロッパー センター アカウントに関連付けられているどのテナントでもユーザーの追加と削除を行うことができます。 |
 | 開発者            | パッケージをアップロードし、アプリおよびアドオンを申請できます。また、[[使用状況] レポート](usage-report.md)で統計情報の詳細を確認できます。 財務情報やアカウントの設定を表示することはできません。   |
 | 経営担当者 | [[安定性]](health-report.md) レポートと [[使用状況]](usage-report.md) レポートを表示できます。 製品の作成や申請、アカウント設定の変更、財務情報の表示はできません。                                         |
 | 財務担当者  | [支払いレポート](payout-summary.md)、財務情報、取得レポートを表示できます。 アプリ、アドオン、またはアカウント設定を変更することはできません。                                                                                                                                   |
@@ -99,19 +103,19 @@ ms.lasthandoff: 07/17/2017
     </thead>
     <tbody>
 <tr><td align="left">    **アカウント設定**                    </td><td align="left">  [連絡先情報](managing-your-profile.md)など、**[アカウント設定]** セクションのすべてのページを表示できます。       </td><td align="left">  **アカウント設定**セクションのすべてのページを表示できます。 [連絡先情報](managing-your-profile.md)と他のページを変更できますが、支払いアカウントや税プロファイルは変更できません (アクセス許可が個別に付与されている場合を除く)。            </td></tr>
-<tr><td align="left">    **アカウント ユーザー**                       </td><td align="left">  **[ユーザーの管理]** セクションでアカウントに追加されているユーザーを表示できます。          </td><td align="left">  **[ユーザーの管理]** セクションで、ユーザーのアカウントへの追加と既存のユーザーの変更ができます。             </td></tr>
+<tr><td align="left">    **アカウント ユーザー**                       </td><td align="left">  **[ユーザー]** セクションでアカウントに追加されているユーザーを表示できます。          </td><td align="left">  **[ユーザー]** セクションで、ユーザーのアカウントへの追加と既存のユーザーの変更ができます。             </td></tr>
 <tr><td align="left">    **アカウント レベルの広告パフォーマンス レポート** </td><td align="left">  アカウント レベルの [[広告パフォーマンス] レポート](advertising-performance-report.md)を表示できます。      </td><td align="left">  該当なし   </td></tr>
 <tr><td align="left">    **広告キャンペーン**                        </td><td align="left">  アカウントで作成した[広告キャンペーン](create-an-ad-campaign-for-your-app.md)を表示できます。      </td><td align="left">  アカウントで作成した[広告キャンペーン](create-an-ad-campaign-for-your-app.md)を作成、管理、および表示できます。          </td></tr>
 <tr><td align="left">    **広告仲介**                        </td><td align="left">  アカウント内のすべての製品の[広告仲介の構成](https://msdn.microsoft.com/library/windows/apps/xaml/mt149935.aspx)を表示できます。    </td><td align="left">  アカウント内のすべての製品の[広告仲介の構成](https://msdn.microsoft.com/library/windows/apps/xaml/mt149935.aspx)の表示と変更ができます。        </td></tr>
 <tr><td align="left">    **広告仲介レポート**                </td><td align="left">  アカウント内のすべての製品の[広告仲介レポート](ad-mediation-report.md)を表示できます。    </td><td align="left">  該当なし    </td></tr>
 <tr><td align="left">    **[広告パフォーマンス] レポート**              </td><td align="left">  アカウント内のすべての製品の [[広告パフォーマンス] レポート](advertising-performance-report.md)を表示できます。       </td><td align="left">  該当なし         </td></tr>
-<tr><td align="left">    **広告ユニット**                            </td><td align="left">  アカウント用に作成された[広告ユニット](monetize-with-ads.md)を表示できます。    </td><td align="left">  アカウントの[広告ユニット](monetize-with-ads.md)を作成、管理、および表示できます。             </td></tr>
+<tr><td align="left">    **広告ユニット**                            </td><td align="left">  アカウント用に作成された[広告ユニット](in-app-ads.md)を表示できます。    </td><td align="left">  アカウントの[広告ユニット](in-app-ads.md)を作成、管理、および表示できます。             </td></tr>
 <tr><td align="left">    **アフィリエイト広告**                       </td><td align="left">  アカウント内のすべての製品で[アフィリエイト広告](about-affiliate-ads.md)の利用状況を表示できます。    </td><td align="left">  アカウント内のすべての製品に対して[アフィリエイト広告](about-affiliate-ads.md)の利用状況の管理と表示ができます。                </td></tr>
 <tr><td align="left">    **アフィリエイト パフォーマンス レポート**      </td><td align="left">  アカウント内のすべての製品の[アフィリエイト パフォーマンス レポート](affiliates-performance-report.md)を表示できます。   </td><td align="left">  該当なし   </td></tr>
 <tr><td align="left">    **[アプリ インストール広告] レポート**             </td><td align="left">  [[広告キャンペーン] レポート](promote-your-app-report.md)を表示できます。           </td><td align="left">  該当なし   </td></tr>
 <tr><td align="left">    **コミュニティ広告**                       </td><td align="left">  アカウント内のすべての製品の無料[コミュニティ広告](about-community-ads.md)の利用状況を表示できます。          </td><td align="left">  アカウント内のすべての製品の無料[コミュニティ広告](about-community-ads.md)の利用状況を作成、管理、および表示できます。               </td></tr>
 <tr><td align="left">    **連絡先情報**                        </td><td align="left">  [アカウント設定] セクションで[連絡先情報](managing-your-profile.md)を表示できます。        </td><td align="left">  [アカウント設定] セクションで[連絡先情報](managing-your-profile.md)の編集と表示ができます。            </td></tr>
-<tr><td align="left">    **COPPA 準拠**                    </td><td align="left">  アカウント内のすべての製品の [COPPA 準拠](monetize-with-ads.md#coppa-compliance)の選択 (製品が13歳未満の子供を対象とするかどうかを示す) を表示できます。                                            </td><td align="left">  アカウント内のすべての製品の [COPPA 準拠](monetize-with-ads.md#coppa-compliance)の選択 (製品が13歳未満の子供を対象とするかどうかを示す) の編集と表示ができます。         </td></tr>
+<tr><td align="left">    **COPPA 準拠**                    </td><td align="left">  アカウント内のすべての製品の [COPPA 準拠](in-app-ads.md#coppa-compliance)の選択 (製品が13歳未満の子供を対象とするかどうかを示す) を表示できます。                                            </td><td align="left">  アカウント内のすべての製品の [COPPA 準拠](in-app-ads.md#coppa-compliance)の選択 (製品が13歳未満の子供を対象とするかどうかを示す) の編集と表示ができます。         </td></tr>
 <tr><td align="left">    **顧客グループ**                     </td><td align="left">  **[顧客]** セクションで[顧客グループ](create-customer-groups.md) (セグメントとフライト グループ) を表示できます。      </td><td align="left">  **[顧客]** セクションで[顧客グループ](create-customer-groups.md) (セグメントとフライト グループ) を作成、編集、および表示できます。       </td></tr>
 <tr><td align="left">    **新しいアプリ**                            </td><td align="left">  新しいアプリの作成ページを表示できますが、実際にはアカウントに新しいアプリを作成することはできません。    </td><td align="left">  新しいアプリの名前を予約することで、アカウントで[新しいアプリを作成](create-your-app-by-reserving-a-name.md)できます。また、申請を作成してアプリをストアに提出できます。     </td></tr>
 <tr><td align="left">    **新しいバンドル**&nbsp;*                       </td><td align="left">  新しいバンドルの作成ページを表示できますが、実際にはアカウントに新しいバンドルを作成することはできません。     </td><td align="left">  製品の新しいバンドルを作成できます。          </td></tr>

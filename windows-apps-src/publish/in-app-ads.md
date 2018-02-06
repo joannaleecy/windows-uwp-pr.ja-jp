@@ -1,20 +1,20 @@
 ---
 author: jnHs
-Description: "アプリに Microsoft Advertising SDK を使用した広告が表示される場合は、デベロッパー センター ダッシュ ボードのアプリ内広告ページを使用して、広告の使用を管理します。"
+Description: If your app displays ads using the Microsoft Advertising SDK, use the In-app ads page of the Dev Center dashboard to manage your use of ads.
 title: "アプリ内広告"
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
-ms.date: 10/26/2017
+ms.date: 12/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, UWP
-localizationpriority: high
-ms.openlocfilehash: eb835269cd9df7385d8d03e032d8b41cb7f92a19
-ms.sourcegitcommit: 44a24b580feea0f188c7eae36e72e4a4f412802b
+ms.localizationpriority: high
+ms.openlocfilehash: f0faa69cef0f98171c4679d6a94b01199b215cb4
+ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="in-app-ads"></a>アプリ内広告
 
@@ -120,10 +120,13 @@ UWP 広告ユニットの[仲介設定](#mediation)または広告ユニット�
 | AOL と AppNexus |  これは Microsoft が管理する広告ネットワークです。パートナー ネットワークである AOL と AppNexus を通じて広告サービスを提供します。<p/>**メモ**: AOL and AppNexus は、バナー広告ユニットの **[有料の広告ネットワーク]** の一覧で常に先頭に位置付けられます。この種類の広告でランクを下げることはできません。 | バナー、ビデオ スポット広告 |
 | AppNexus (直接) | [AppNexus](https://www.appnexus.com) からビデオ スポット広告を提供するには、このオプションを選択します。 | ビデオ (スポット)、ネイティブ  |
 | Microsoft アプリ インストール広告 | Windows エコシステム内の他の開発者で、[各自が開発したアプリのプロモーション用広告キャンペーンを作成している](create-an-ad-campaign-for-your-app.md)開発者によって作成されたアプリ インストール広告やアプリ リエンゲージメント広告を提供するには、このオプションを選択します。  |  バナー、バナー (スポット)、ネイティブ  |
+| Outbrain |  [Outbrain](https://www.outbrain.com/) から広告を提供するには、このオプションを選択します。 |  バナー  |
+| Revcontent |  [Revcontent](http://www.revcontent.com/) から広告を提供するには、このオプションを選択します。 |  バナー  |
 | Smaato |  [Smaato](https://www.smaato.com/) から広告を提供するには、このオプションを選択します。 |  バナー  |
 | smartclip |  [smartclip](http://www.smartclip.com/) から広告を提供するには、このオプションを選択します。 |  ビデオ (スポット)  |
 | SpotX |  [SpotX](https://www.spotx.tv/) から広告を提供するには、このオプションを選択します。 |  ビデオ (スポット)  |
 | Taboola |  [Taboola](https://www.taboola.com/) から広告を提供するには、このオプションを選択します。 |  バナー  |
+
 
 <span id="other-networks" />
 ### <a name="other-ad-networks"></a>他の広告ネットワーク
@@ -141,14 +144,20 @@ UWP 広告ユニットの[仲介設定](#mediation)または広告ユニット�
 
 利用可能な広告ネットワークは、[サポートされるすべての市場](define-pricing-and-market-selection.md#microsoft-store-consumer-markets)で広告を提供しますが、次の例外があります。
 
-|  広告ネットワーク  |  サポート対象の市場  |
+|  広告ネットワーク  |  サポートされる市場  |
 |--------------|---------------------|
+| Revcontent | ブラジル、カナダ、フランス、ドイツ、イタリア、日本、スペイン、英国、米国  |
 | Smaato | ブラジル、カナダ、フランス、ドイツ、イタリア、日本、スペイン、英国、米国 |
 | smartclip | オーストリア、ベルギー、デンマーク、フィンランド、ドイツ、イタリア、オランダ、ノルウェー、スウェーデン、スイス  |
 
 <span id="coppa" />
 ## <a name="coppa-compliance"></a>COPPA 準拠
 
-アプリが 13 歳未満の子供を対象としている場合、児童オンライン プライバシー保護法 ("COPPA") に従って、マイクロソフトに通知する必要があります。 デベロッパー センターを使用して、アプリの対象が 13 歳未満の子供であることをマイクロソフトに通知した場合、マイクロソフトはアプリに広告を配信する際に、行動広告サービスを無効にする手順を実行します。 アプリの対象が 13 歳未満の子供である場合、COPPA の下で特定の義務が発生します。
+[広告ユニットを作成](#create-ad-unit)または[既存の広告ユニットを選択](#available-ad-units)すると、広告ユニットに対して選んだアプリにアプリ認定プロセスで [Store 内](../publish/the-app-certification-process.md#in-the-store) ステップに到達した申請が 1 つ以上ある場合、**[COPPA 準拠]** セクションがダッシュボード ページの下部に表示されます。
 
-COPPA の下での義務について詳しくは、[こちらのページ](http://go.microsoft.com/fwlink/p/?linkid=536558)をご覧ください。
+アプリの対象が 13 歳未満の子供である場合、児童オンライン プライバシー保護法 ("COPPA") に従って、このセクションで **[This application is directed at children under the age of 13]** (このアプリは 13 歳未満の子供を対象としています) を選ぶ必要があります。 このオプションを選んだ場合、マイクロソフトはアプリに広告を配信する際に、行動広告サービスを無効にする手順を実行します。
+
+選んだ **COPPA 準拠**設定は、選んだアプリのすべての広告ユニットに自動的に適用されます。
+
+> [!IMPORTANT]
+> アプリの対象が 13 歳未満の子供である場合、COPPA の下で特定の義務が発生します。 義務について詳しくは、[こちらのページ](http://go.microsoft.com/fwlink/p/?linkid=536558)をご覧ください。

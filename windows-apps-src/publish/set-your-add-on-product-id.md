@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "Windows デベロッパー センター ダッシュボードで新しいアドオンを作成する際は、製品の種類を指定して、製品 ID を割り当てる必要があります。"
+Description: When you create a new add-on in the Windows Dev Center dashboard, you need to specify a product type and assign it a product ID.
 title: "アドオンの製品の種類と製品 ID を設定する"
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
 ms.author: wdg-dev-content
-ms.date: 06/28/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 136077edcf4704f3ea71416719e7c37db43dafda
-ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+keywords: "windows 10, uwp, アドオン, iap, 永続的, コンシューマブル, サブスクリプション, 製品の種類, 製品 id, アプリ内購入, アプリ内製品"
+ms.localizationpriority: high
+ms.openlocfilehash: 24731a378ddc0defada7a94282afd790dfb5b780
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="set-your-add-on-product-type-and-product-id"></a>アドオンの製品の種類と製品 ID を設定する
 
@@ -49,14 +50,11 @@ ms.lasthandoff: 08/09/2017
 
 アドオンの顧客に繰り返し課金する場合は、**[サブスクリプション]** を選びます。
 
-> [!NOTE]
-> 現在、サブスクリプション アドオンを作成できるのは、早期導入プログラムに参加している開発者アカウントに限られます。 いずれは、すべての開発者アカウントでサブスクリプション アドオンをご利用いただけます。現時点でこの正式リリース前のドキュメントを公開しているのは、この機能がどのようなものかを開発者の皆様に簡単に紹介することが目的です。 詳しくは、「[アプリのサブスクリプション アドオンの有効化](../monetize/enable-subscription-add-ons-for-your-app.md)」をご覧ください。
-
 サブスクリプション アドオンは一度購入すると、その後アドオンを使い続けるための料金が定期的にユーザーに課金されます。 ユーザーはいつでもサブスクリプションをキャンセルして、それ以降の課金を取り消すことができます。 サブスクリプション期間と、無料試用版を提供するかどうかを申請の**プロパティ**のステップで指定する必要があります。
 
 サブスクリプション アドオンは、Windows 10 バージョン 1607 以降を実行しているユーザーのみが対象です。 親アプリは Windows 10 SDK バージョン 14393 以降を使ってコンパイルし、**Windows.ApplicationModel.Store** 名前空間ではなく、**Windows.Services.Store** 名前空間のアプリ内購入 API を使う必要があります。 これらの名前空間の違いについて詳しくは、「[アプリ内購入と試用版](../monetize/in-app-purchases-and-trials.md)」を参照してください。
 
-親製品を公開しないと、サブスクリプション アドオンをストアで公開することはできません (ただし、ダッシュ ボードで申請を作成して作業を開始することは可能です)。
+親製品を公開しないと、サブスクリプション アドオンを Store で公開することはできません (ただし、ダッシュボードで申請を作成して作業を開始することは可能です)。
 
 ## <a name="product-id"></a>製品 ID
 
@@ -69,5 +67,5 @@ ms.lasthandoff: 08/09/2017
 -   この製品 ID の長さは 100 文字以内にする必要があります。
 -   この製品 ID に **&lt; &gt; \* % & : \\ ? + ,** のいずれの文字も含めることはできません。
 -   すべての OS バージョンに対応したアドオンを提供するには、英数字、ピリオド、アンダースコアのみを使う必要があります。 その他の種類の文字を使った場合、Windows Phone 8.1 以前を実行しているお客様はそのアドオンを購入できなくなります。
--   この製品 ID は Windows ストアでは一意である必要はありませんが、開発者アカウントには一意である必要があります。
+-   この製品 ID は Microsoft Store では一意である必要はありませんが、開発者アカウントには一意である必要があります。
  

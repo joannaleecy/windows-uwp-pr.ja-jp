@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "アドオンを申請するとき、ストア登録情報の手順で入力した情報がユーザーに表示されます。"
-title: "アドオンのストア登録情報の作成"
+Description: When submitting an add-on, the info you provide in the Store listings step will be displayed to your customers.
+title: "アドオンの Store 登録情報の作成"
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
 ms.author: wdg-dev-content
-ms.date: 06/26/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 873e20039d6bd994f5ee3f42822f18c18ded0537
-ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+ms.localizationpriority: high
+ms.openlocfilehash: 0bd24b7b155a7f0d293e49e34ca92f02d99ea787
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="create-add-on-store-listings"></a>アドオンのストア登録情報の作成
 
@@ -21,7 +22,7 @@ ms.lasthandoff: 06/27/2017
 **ストア登録情報**の手順で入力した情報は、アドオンを申請する際、アドオンを入手するためのオプションを表示したときにユーザーに表示されます。 ストア登録情報は、ユーザーを最も引きつける方法でアドオンを正確に表すように慎重に検討してください。 また、このストア登録情報は、さまざまな言語でカスタマイズすることができます。
 
 > [!TIP]
-> ダッシュボードで直接ストア登録情報を入力するのではなく、.csv ファイルを使ってオフラインで登録情報を入力する場合は、アドオンの[ストア登録情報をインポートおよびエクスポート](import-and-export-store-listings.md)することもできます。 これは、多数の言語の登録情報を作成するときに、特に便利な場合があります。
+> ダッシュボードで直接ストア登録情報を入力するのではなく、.csv ファイルを使ってオフラインで登録情報を入力する場合は、アドオンの[ストア登録情報をインポートおよびエクスポート](import-and-export-store-listings.md)することもできます。 これは、多数の言語の登録情報を作成するときに、特に便利な場合があります。 ただし、インポート/エクスポート機能を使うのではなく、いつでもダッシュボードで直接情報を入力できます。
 
 
 ## <a name="store-listing-languages"></a>ストア登録情報の言語

@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "ビジネス向け Microsoft ストアまたは教育機関向け Microsoft ストアでは、基幹業務 (LOB) アプリを企業に直接公開して、ボリューム取得を可能にすることができます。アプリをストアで一般公開する必要はありません。"
+Description: You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via the Microsoft Store for Business or Microsoft Store for Education, without making the apps broadly available in the Store.
 title: "LOB アプリの企業への配布"
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, LOB, 基幹業務, エンタープライズ アプリ, ビジネス向けストア, 教育機関向けストア"
-ms.openlocfilehash: 5dab364d495334d102e73550e5d879d2f530d44e
-ms.sourcegitcommit: b42d14c775efbf449a544ddb881abd1c65c1ee86
+keywords: "Windows 10, UWP, LOB, 基幹業務, エンタープライズ アプリ, ビジネス向け Store, 教育機関向け Store, 企業"
+ms.localizationpriority: high
+ms.openlocfilehash: 3857e8e6e494700233d41832fb9edce6c65b89bc
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>LOB アプリの企業への配布
 
@@ -21,7 +22,10 @@ ms.lasthandoff: 07/20/2017
 ビジネス向け Microsoft ストアまたは教育機関向け Microsoft ストアでは、基幹業務 (LOB) アプリを企業に直接公開して、ボリューム取得を可能にすることができます。アプリをストアで一般公開する必要はありません。
 
 > [!NOTE]
-> 現在、ビジネス向け Microsoft ストアまたは教育機関向け Microsoft ストアを通じて企業に排他的に配布できるのは無料アプリだけです。 有料アプリを LOB として申請しても、現時点では企業が利用できるようにはなりません。 
+> 現在、ビジネス向け Microsoft ストアまたは教育機関向け Microsoft ストアを通じて企業に排他的に配布できるのは無料アプリだけです。 有料アプリを LOB として申請しても、企業が利用できるようにはなりません。 
+
+> [!IMPORTANT]
+> [Microsoft Store 申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使って、LOB アプリを直接企業に公開することはできません。 LOB アプリのすべての申請は、Windows デベロッパー センター ダッシュボードを使って行う必要があります。
 
 
 ## <a name="set-up-the-enterprise-association"></a>企業の関連付けの設定
@@ -29,16 +33,16 @@ ms.lasthandoff: 07/20/2017
 LOB アプリを専用アプリとして企業に公開するには、最初に、お使いのアカウントと企業のプライベート ストアを関連付けます。
 
 > [!IMPORTANT]
-> この関連付けプロセスは企業が開始する必要があり、アカウントの **[連絡先情報]** のメール アドレスに送信される必要があります。 詳しくは、「[基幹業務アプリの操作](http://go.microsoft.com/fwlink/p/?LinkId=698846)」をご覧ください。
+> この関連付けプロセスは、企業が開始する必要があります。また、開発者アカウントの作成に使った Microsoft アカウントに関連付けられているメール アドレスを使う必要があります。 詳しくは、「[基幹業務アプリの操作](http://go.microsoft.com/fwlink/p/?LinkId=698846)」をご覧ください。
 
-企業は、専用アプリを公開してほしいと思う開発者に、関連付けを確認するためのリンクを含むメールを送信します。 **[アカウント設定]** の **[企業団体]** セクションに移動して、その関連付けを確認することもできます。
+企業は、専用アプリを公開してほしいと思う開発者に、関連付けを確認するためのリンクを含むメールを送信します。 **[アカウント設定]** の **[企業団体]** セクションに移動することで、これらの関連付けを確認することもできます (開発者アカウントを開くために使った Microsoft アカウントでサインインしている場合に限ります)。
 
 関連付けを確認するには、**[承諾]** をクリックします。 お使いのアカウントが、その企業専用のアプリを公開できるようになります。
 
 
 ## <a name="submit-lob-apps"></a>LOB アプリの提出
 
-企業専用のアプリを公開する準備ができたら、プロセスは、アプリの申請プロセスとほぼ同じです。 アプリは同じ[認定プロセス](the-app-certification-process.md)で処理され、すべての [Windows ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944)に準拠している必要があります。 異なる点はわずかです。
+企業専用のアプリを公開する準備ができたら、プロセスは、アプリの申請プロセスとほぼ同じです。 アプリは同じ[認定プロセス](the-app-certification-process.md)で処理され、すべての [Microsoft Store ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944)に準拠している必要があります。 異なる点はわずかです。
 
 
 ### <a name="visibility"></a>表示

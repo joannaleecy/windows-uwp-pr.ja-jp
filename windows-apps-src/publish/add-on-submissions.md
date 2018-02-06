@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "アドオンは Windows デベロッパー センター ダッシュボードを使って公開します。"
+Description: Add-ons are published through the Windows Dev Center dashboard.
 title: "アドオンの申請"
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 ms.author: wdg-dev-content
-ms.date: 06/26/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 85ad5e297eed8daa5205aedc1253191fcff5fd49
-ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+keywords: "windows 10, uwp, iap, アプリ内購入, アプリ内製品, iap の申請"
+ms.localizationpriority: high
+ms.openlocfilehash: 5591542370f8ed47be37c10e8e8b7afd9ac69d65
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="add-on-submissions"></a>アドオンの申請
 
@@ -21,10 +22,10 @@ ms.lasthandoff: 06/27/2017
 
 アドオンは Windows デベロッパー センター ダッシュボードを使って公開します。 また、アプリのコードで [アドオンを有効にする](../monetize/in-app-purchases-and-trials.md)ことも必要です。
 
-アドオンの申請プロセスでは、最初に、[その製品の種類と製品 ID を定義](set-your-add-on-product-id.md)して、ダッシュボードでアドオンを作成します。 その後、アドオンが Windows ストアで購入可能になるように申請を作成できます。 [アプリの申請](app-submissions.md)と同時にまたは別々にアドオンを申請できます。 アプリがストアに公開された後は、アプリを再び申請することなく、アドオンを[更新](#updating-an-add-on-after-publication)できます。
+アドオンの申請プロセスでは、最初に、[その製品の種類と製品 ID を定義](set-your-add-on-product-id.md)して、ダッシュボードでアドオンを作成します。 その後、アドオンが Microsoft Store で購入可能になるように申請を作成できます。 [アプリの申請](app-submissions.md)と同時にまたは別々にアドオンを申請できます。 アプリがストアに公開された後は、アプリを再び申請することなく、アドオンを[更新](#updating-an-add-on-after-publication)できます。
 
 > [!NOTE]
-> ドキュメントのこのセクションでは、デベロッパー センター ダッシュボードでアドオンを申請する方法について説明します。 ここで説明する方法以外に、[Windows ストア申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使用してアドオン申請を自動化することもできます。
+> ドキュメントのこのセクションでは、デベロッパー センター ダッシュボードでアドオンを申請する方法について説明します。 ここで説明する方法以外に、[Microsoft Store 申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使用してアドオン申請を自動化することもできます。
 
 ## <a name="checklist-for-submitting-an-add-on"></a>アドオンの申請用チェック リスト
 
@@ -33,7 +34,7 @@ ms.lasthandoff: 06/27/2017
 ### <a name="create-a-new-add-on-page"></a>新しいアドオン ページを作成する
 | フィールド名                    | コメント                            |
 |-------------------------------|----------------------------------|
-| [**製品の種類**](set-your-add-on-product-id.md#product-type)      | 必須。 **[永続的]** を選んだ場合は、**[製品の有効期限]** を指定する必要があります。 |  
+| [**製品の種類**](set-your-add-on-product-id.md#product-type)      | 必須 |  
 | [**製品 ID**](set-your-add-on-product-id.md#product-id)          | 必須 |        
 
 <span/>
@@ -42,10 +43,12 @@ ms.lasthandoff: 06/27/2017
 | フィールド名                    | コメント                              |   
 |-------------------------------|------------------------------------|
 | [**製品の有効期限**](enter-add-on-properties.md#product-lifetime)  | 製品の種類が **[永続的]** である場合は必須です。 他の種類の製品には適用されません。 |
-| [**数量**](enter-add-on-properties.md#quantity)  | 製品の種類が **[ストアで管理されるコンシューマブル]** の場合は必須です。 他の種類の製品には適用されません。
-| [**コンテンツの種類**](enter-add-on-properties.md#content-type)          | 必須       |               
+| [**数量**](enter-add-on-properties.md#quantity)  | 製品の種類が **[ストアで管理されるコンシューマブル]** の場合は必須です。 他の種類の製品には適用されません。 |
+| [**サブスクリプション期間**](enter-add-on-properties.md#subscription-period)          | 製品の種類が **[サブスクリプション]** である場合は必須です。 他の種類の製品には適用されません。       |  
+| [**無料試用版**](enter-add-on-properties.md#free-trial)          | 製品の種類が **[サブスクリプション]** である場合は必須です。 他の種類の製品には適用されません。       |
+| [**コンテンツの種類**](enter-add-on-properties.md#content-type)          | 必須    |               
 | [**キーワード**](enter-add-on-properties.md#keywords)                  | 省略可能 (最大で 10 個まで。それぞれ 30 文字以内)。 |
-| [**カスタムの開発者データ**](enter-add-on-properties.md#custom-developer-data)                               | 省略可能 (3000 文字以内)             |
+| [**カスタムの開発者データ**](enter-add-on-properties.md#custom-developer-data)   | 省略可能 (3000 文字以内)            |
 
 <span/>
 
@@ -66,9 +69,9 @@ ms.lasthandoff: 06/27/2017
 
 | フィールド名                    | コメント                                       |
 |-------------------------------|---------------------------------------------|
-| [**タイトル**](create-add-on-store-listings.md#title)                    | 必須 (100 文字以内)              |
-| [**説明**](create-add-on-store-listings.md#description)       | 省略可能 (200 文字以内)              |
-| [**アイコン**](create-add-on-store-listings.md#icon)                    | 省略可能 (.png、300 x 300 ピクセル)             |
+| [**タイトル**](create-add-on-store-listings.md#title)                    | 必須 (100 文字以内)           |
+| [**説明**](create-add-on-store-listings.md#description)       | 省略可能 (200 文字以内)            |
+| [**アイコン**](create-add-on-store-listings.md#icon)                    | 省略可能 (.png、300 x 300 ピクセル)            |
 
 <span/>
 
@@ -87,4 +90,4 @@ ms.lasthandoff: 06/27/2017
 
 更新を申請するには、ダッシュボードでアドオンのページに移動し、**[更新]** をクリックします。 これにより、以前の申請からの情報をひな型として、アドオンの新しい申請が作成されます。 目的の情報を変更したら、**[ストアに提出]** をクリックします。
 
-既に提供されているアドオンを削除する場合は、新しい申請を作成し、[分布と認知度](set-add-on-pricing-and-availability.md) オプションを **[購入不可。アプリのリストには表示されません]** に変更します。 必要に応じて、アプリのコードを更新し、アドオンへの参照も削除してください。
+既に提供されているアドオンを削除する場合は、新しい申請を作成して、[[分布と認知度]](set-add-on-pricing-and-availability.md) オプションを **[ストアに表示しない]** に変更し、**[購入の停止]** オプションを選択します。 アドオンへの参照も削除するには、必要に応じて、アプリのコードを更新してください (特にアプリが以前に Windows 8.1 をサポートしていた場合、この表示の設定はそれらのユーザーには適用されません)。

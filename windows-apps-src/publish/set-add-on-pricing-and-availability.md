@@ -1,27 +1,25 @@
 ---
 author: jnHs
-Description: "アドオンを申請するときには、[価格と使用可能状況] ページのオプションで、アドオンの価格やユーザーに提供する方法を指定します。"
+Description: When submitting an add-on, the options on the Pricing and availability page determine what to charge for your add-on and how it should be offered to customers.
 title: "アドオンの価格と使用可能状況の設定"
 ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
 ms.author: wdg-dev-content
-ms.date: 08/03/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 09671148e670acbfdbc944558a2738712f848dd5
-ms.sourcegitcommit: de6bc8acec2cd5ebc36bb21b2ce1a9980c3e78b2
+keywords: "windows 10, uwp, アドオン, iap, 価格"
+ms.localizationpriority: high
+ms.openlocfilehash: 8eb2321ec6d2bc8602438e2dc66ca1d96690a3f8
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="set-add-on-pricing-and-availability"></a>アドオンの価格と使用可能状況の設定
 
 
 アドオンを申請するときには、**[価格と使用可能状況]** ページのオプションで、アドオンの価格やユーザーに提供する方法を指定します。
-
-> [!NOTE]
-> このページで利用可能なオプションが最近更新されています。 これらの以前のオプションを使った処理中の申請がある場合、その申請には引き続き以前のオプションが表示されます。 最新のオプションを使う場合は、その申請を削除して新しい申請を作成できます。 または、処理中の申請が公開された後、次回の更新時に最新のオプションを使用できます。
 
 ## <a name="markets"></a>市場
 
@@ -78,7 +76,7 @@ ms.lasthandoff: 08/17/2017
 申請が特定の日付まで公開されないようにするには、**[次の予定日に公開する \[日付\]]** を選びます。 このオプションを選ぶと、申請は指定された日付の当日またはその日以降に、できるだけ早くリリースされます。 日付は 24 時間以上先の日付にする必要があります。 日付と同時に、申請を公開し始める時刻を指定することもできます。
  
 > [!NOTE]
-> 認定または公開に遅延が生じると、実際のリリース日が、希望する日付よりも後になる場合があります。 Windows ストアではアドオン (更新プログラム) が特定の日にリリースされることを保証できません。  
+> 認定または公開に遅延が生じると、実際のリリース日が、希望する日付よりも後になる場合があります。 Microsoft Store ではアドオン (更新プログラム) が特定の日にリリースされることを保証できません。  
 
 
 
