@@ -1,26 +1,29 @@
 ---
 author: jnHs
-Description: "分析データを含む .tsv ファイルをダウンロードすると、統計情報と情報をオフラインで確認できます。"
+Description: You can download .tsv files that contain your analytics data so that you can review your stats and info offline.
 title: "分析レポートのダウンロード"
 ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 01/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: f18dd0f240644c0a962b73e78c5c4dd9b1bc8682
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.localizationpriority: high
+ms.openlocfilehash: 72dcf823c62065514cceb0744b4efcd705209a75
+ms.sourcegitcommit: 67cb03db41556cf0d58993073654cd0706aede84
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 01/03/2018
 ---
-# <a name="download-analytics-reports"></a><span data-ttu-id="3ff48-104">分析レポートのダウンロード</span><span class="sxs-lookup"><span data-stu-id="3ff48-104">Download analytics reports</span></span>
+# <a name="download-analytics-reports"></a><span data-ttu-id="7c7dd-103">分析レポートのダウンロード</span><span class="sxs-lookup"><span data-stu-id="7c7dd-103">Download analytics reports</span></span>
 
 
-<span data-ttu-id="3ff48-105">分析データを含むファイルをダウンロードすると、統計情報と情報をオフラインで確認できます。</span><span class="sxs-lookup"><span data-stu-id="3ff48-105">You can download files that contain your analytic data so that you can review your stats and info offline.</span></span>
+<span data-ttu-id="7c7dd-104">分析データを含むファイルをダウンロードすると、統計情報と情報をオフラインで確認できます。</span><span class="sxs-lookup"><span data-stu-id="7c7dd-104">You can download files that contain your analytic data so that you can review your stats and info offline.</span></span>
 
-<span data-ttu-id="3ff48-106">分析レポートを表示すると、データをダウンロードできるセクションには矢印のアイコンが表示されています。</span><span class="sxs-lookup"><span data-stu-id="3ff48-106">When viewing your analytic reports, you'll see an arrow icon within each section for which you can download data.</span></span> <span data-ttu-id="3ff48-107">この矢印をクリックしてダウンロード可能な .tsv ファイルを生成します。このファイルは、Microsoft Excel またはタブ区切り値 (TSV) ファイルをサポートしている別のプログラムでファイルを開くことができます。</span><span class="sxs-lookup"><span data-stu-id="3ff48-107">Click the arrow to generate a downloadable .tsv file, which you can open in Microsoft Excel or another program that supports tab-separated values (TSV) files.</span></span>
+<span data-ttu-id="7c7dd-105">分析レポートを表示すると、データをダウンロードできるセクションには矢印のアイコンが表示されています。</span><span class="sxs-lookup"><span data-stu-id="7c7dd-105">When viewing your analytic reports, you'll see an arrow icon within each section for which you can download data.</span></span> <span data-ttu-id="7c7dd-106">この矢印をクリックしてダウンロード可能な .tsv ファイルを生成します。このファイルは、Microsoft Excel またはタブ区切り値 (TSV) ファイルをサポートしている別のプログラムでファイルを開くことができます。</span><span class="sxs-lookup"><span data-stu-id="7c7dd-106">Click the arrow to generate a downloadable .tsv file, which you can open in Microsoft Excel or another program that supports tab-separated values (TSV) files.</span></span>
 
-<span data-ttu-id="3ff48-108">すべてのアプリのレポートをダウンロードすることも、特定のアプリのレポートをダウンロードすることもできます。それには、左側のナビゲーション メニューで **[分析]** を展開し、**[レポートのダウンロード]** を選びます。</span><span class="sxs-lookup"><span data-stu-id="3ff48-108">You can also download reports for all of your apps, or for a specific app, by expanding **Analyze** in the left navigation menu and selecting **Download reports**.</span></span> <span data-ttu-id="3ff48-109">**[アプリの選択]** ドロップダウン リストで **[すべてのアプリ]** を選ぶか、特定のアプリを選びます。</span><span class="sxs-lookup"><span data-stu-id="3ff48-109">In the **Select an app** drop-down list, choose **All apps** or a specific app.</span></span> <span data-ttu-id="3ff48-110">ダウンロードするレポートを選び、希望する集計レベルと期間を選びます。</span><span class="sxs-lookup"><span data-stu-id="3ff48-110">Select the report you want to download, then choose your desired aggregation level and date range.</span></span> <span data-ttu-id="3ff48-111">**[レポートのダウンロード]** ボタンをクリックしてダウンロード可能な .tsv ファイルを生成します。このファイルは、Microsoft Excel またはタブ区切り値 (TSV) ファイルをサポートしている別のプログラムでファイルを開くことができます。</span><span class="sxs-lookup"><span data-stu-id="3ff48-111">Click the **Download reports** button to generate a downloadable .tsv file, which you can open in Microsoft Excel or another program that supports tab-separated values (TSV) files.</span></span>
+<span data-ttu-id="7c7dd-107">すべてのアプリのレポートをダウンロードすることも、特定のアプリのレポートをダウンロードすることもできます。それには、左側のナビゲーション メニューで **[分析]** を展開し、**[レポートのダウンロード]** を選びます。</span><span class="sxs-lookup"><span data-stu-id="7c7dd-107">You can also download reports for all of your apps, or for a specific app, by expanding **Analyze** in the left navigation menu and selecting **Download reports**.</span></span> <span data-ttu-id="7c7dd-108">**[アプリの選択]** ドロップダウン リストで **[すべてのアプリ]** を選ぶか、特定のアプリを選びます。</span><span class="sxs-lookup"><span data-stu-id="7c7dd-108">In the **Select an app** drop-down list, choose **All apps** or a specific app.</span></span> <span data-ttu-id="7c7dd-109">ダウンロードするレポートを選び、希望する集計レベルと期間を選びます。</span><span class="sxs-lookup"><span data-stu-id="7c7dd-109">Select the report you want to download, then choose your desired aggregation level and date range.</span></span> <span data-ttu-id="7c7dd-110">**[レポートのダウンロード]** ボタンをクリックしてダウンロード可能な .tsv ファイルを生成します。このファイルは、Microsoft Excel またはタブ区切り値 (TSV) ファイルをサポートしている別のプログラムでファイルを開くことができます。</span><span class="sxs-lookup"><span data-stu-id="7c7dd-110">Click the **Download reports** button to generate a downloadable .tsv file, which you can open in Microsoft Excel or another program that supports tab-separated values (TSV) files.</span></span>
 
+> [!NOTE]
+> <span data-ttu-id="7c7dd-111">広告パフォーマンス データは現在、**[レポートのダウンロード]** ページからは取得できません。</span><span class="sxs-lookup"><span data-stu-id="7c7dd-111">Advertising performance data is not currently available via the **Download reports** page.</span></span> <span data-ttu-id="7c7dd-112">このデータをオフライン用にダウンロードするには、[広告パフォーマンス レポート](advertising-performance-report.md)に移動し、そのページにある矢印アイコンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="7c7dd-112">To download this data for offline use, navigate to the [Advertising performance report](advertising-performance-report.md) and click the arrow icons on that page.</span></span> 
