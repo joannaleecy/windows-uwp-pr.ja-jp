@@ -77,7 +77,7 @@
     },
     {
       "source_path": "windows-apps-src/get-started/ink-walkthrough.md",
-      "redirect_url": "/windows/uwp/design/input/ink-walthrough/",
+      "redirect_url": "/windows/uwp/design/input/ink-walkthrough/",
       "redirect_document_id": false
     },
     {
@@ -97,7 +97,7 @@
     },
     {
       "source_path": "windows-apps-src/get-started/xaml-basics-adaptive-layout.md",
-      "redirect_url": "/windows/uwp/design/layout/xaml-basics-adaptive-layout",
+      "redirect_url": "/windows/uwp/design/basics/xaml-basics-adaptive-layout",
       "redirect_document_id": false
     },
     {
@@ -1643,6 +1643,21 @@
     {
       "source_path": "windows-apps-src/xbox-live/storage-platform/connected-storage/connected-storage-clearing.md",
       "redirect_url": "/windows/uwp/xbox-live/storage-platform/connected-storage/connected-storage-xb-storage",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/design/input/custom-keyboard-interactions.md",
+      "redirect_url": "/windows/uwp/design/input/focus-navigation",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/design/input/managing-focus-navigation.md",
+      "redirect_url": "/windows/uwp/design/input/focus-navigation-programmatic",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/get-started/whats-a-uwp.md",
+      "redirect_url": "windows-apps-src/get-started/universal-application-platform-guide.md",
       "redirect_document_id": true
     }
   ]
