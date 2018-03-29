@@ -1,25 +1,26 @@
 ---
 author: JnHs
-Description: "顧客のグループにアプリの評価またはアドオンの購入などを勧めるために、Windows デベロッパー センターからアプリに通知を送信する方法について説明します。"
-title: "アプリの顧客にターゲット プッシュ通知を送信する"
+Description: Learn how to send notifications from Windows Dev Center to your app to encourage groups of customers to take an action, such as rating an app or buying an add-on.
+title: アプリのユーザーにターゲット プッシュ通知を送信する
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 02/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, ターゲット通知, プッシュ通知, トースト, タイル
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
-ms.openlocfilehash: e1103639cd324ec0dab9e43159cab57c39747d17
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.localizationpriority: high
+ms.openlocfilehash: f7b4558b6c5ea2cc9dbc30cb605f1cb06432504f
+ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>アプリのユーザーに通知を送信する
 
-アプリ開発者として成功するには、適切なメッセージを適切なタイミングで送信して顧客を惹きつけることが重要です。 Windows デベロッパー センターは、すべての顧客に、または[顧客セグメント](create-customer-segments.md)で定義した条件を満たす Windows 10 の顧客のサブセットだけを対象に通知を送信できる、データドリブンの顧客エンゲージメント プラットフォームを提供します。
+アプリ開発者として成功するには、適切なメッセージを適切なタイミングで送信してユーザーを惹きつけることが重要です。 通知を使用すると、アプリの評価、アドオンの購入、新機能の試用、別のアプリのダウンロード (場合によっては、[プロモーション コード](generate-promotional-codes.md)の提供による無料ダウンロード) などの実行をユーザーに促すことができます。
 
-通知を使って、アプリの評価、アドオンの購入、新機能の試用、別のアプリのダウンロード (場合によっては、[プロモーション コード](generate-promotional-codes.md)の提供による無料ダウンロード) などの実行をユーザーに促すことができます。
+Windows デベロッパー センターは、通知の送信に使用できる、データドリブンの顧客エンゲージメント プラットフォームを提供しています。すべてのアプリ ユーザーを対象にすることも、[顧客セグメント](create-customer-segments.md)で定義した条件を満たす Windows 10 のアプリ ユーザーだけを対象にすることもできます。 <!-- You can also send a single notification to all of the customers for multiple apps. -->
 
 > [!IMPORTANT]
 > これらの通知は、UWP アプリでのみ使用できます。
@@ -30,31 +31,34 @@ ms.lasthandoff: 06/21/2017
 - スケジュールに従って通知を配信するよう努めていますが、配信に影響する待ち時間の問題が発生する可能性があります。
 - 通知を送信する頻度を必要以上に高くしないでください。 30 分に 1 回以上の場合、侵入と見なされる可能性があります (多くのシナリオでは、これよりも頻度を低くすることをお勧めします)。
 - アプリを使用しているユーザーが (セグメント メンバーシップの決定時に自分の Microsoft アカウントでサインインしており)、後でそのデバイスを他のユーザーに使用させた場合、他のユーザーが元のユーザーを対象とした通知を見る可能性があります。 詳しくは、「[ターゲット プッシュ通知用のアプリの構成](../monetize/configure-your-app-to-receive-dev-center-notifications.md#notification-customers)」をご覧ください。
+<!-- - If you send the same notification to customers of multiple apps, you can't target a segment; the notification will be sent to all customers for the apps you select. -->
+
 
 ## <a name="getting-started-with-notifications"></a>通知の使い方の概要
 
-通知を使用して顧客と関わりあうには、次の 3 ステップを実行する必要があります。
-1. **プッシュ通知を受け取るためにアプリを登録します。** これを実行するには、アプリで Microsoft Store Services SDK への参照を追加し、デベロッパー センターとアプリ間で通知チャネルを登録するコードを数行追加します。 そのチャネルを使用して、通知を顧客に配信します。 詳しくは、「[ターゲット プッシュ通知用のアプリの構成](../monetize/configure-your-app-to-receive-dev-center-notifications.md)」をご覧ください。
-2. **対象にする 1 つ以上の顧客セグメントを作成します。** 人口統計または収益条件に基づいて顧客をセグメントにグループ化することができます。 詳しくは、「[ユーザー セグメントを作成する](create-customer-segments.md)」をご覧ください。 必要であれば、アプリの顧客全員に通知を送信することもできます。
-3. **プッシュ通知を作成し、特定の顧客セグメントに送信します。** たとえば、新しい顧客にアプリの評価を促すために通知を送信する、またはアドオンの購入を促進する特別サービスを含む通知を送信します。
+通知を使用してユーザーと関わりあうには、次の 3 ステップを実行する必要があります。
+
+1. **プッシュ通知を受け取るためにアプリを登録します。** これを実行するには、アプリで Microsoft Store Services SDK への参照を追加し、デベロッパー センターとアプリ間で通知チャネルを登録するコードを数行追加します。 そのチャネルを使用して、通知をユーザーに配信します。 詳しくは、「[ターゲット プッシュ通知用のアプリの構成](../monetize/configure-your-app-to-receive-dev-center-notifications.md)」をご覧ください。
+2. **対象とするユーザーを決定します。** すべてのアプリ ユーザーに通知を送信することも、(単一のアプリ用に作成した通知を) *セグメント*と呼ばれるユーザー グループに送信することもできます。セグメントは、人口統計や収入の条件に基づいて定義できます。 詳しくは、「[顧客セグメントの作成](create-customer-segments.md)」をご覧ください。 
+3. **通知のコンテンツを作成して送信します。**たとえば、新しいユーザーにアプリの評価を促す通知の作成や、アドオンの購入を促進する特別サービスを含む通知の送信などが考えられます。
+
 
 ## <a name="to-create-and-send-a-notification"></a>通知を作成して送信するには
 
 ダッシュボードで通知を作成し、特定の顧客セグメントに送信するには、以下の手順に従います。
 
 > [!NOTE]
-> アプリがデベロッパー センターからの通知を受信できるようにるには、最初にアプリで [RegisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) メソッドを呼び出して、通知を受信するようにアプリを登録する必要があります。 このメソッドは、[Microsoft Store Services SDK](http://aka.ms/store-em-sdk) に含まれています。 このメソッドを呼び出す方法の詳細 (コード例を含む) については、「[ターゲット プッシュ通知用のアプリの構成](../monetize/configure-your-app-to-receive-dev-center-notifications.md)」をご覧ください。
+> アプリでデベロッパー センターからの通知を受信するには、まずアプリ内で [RegisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) メソッドを呼び出して、通知の受信用にアプリを登録する必要があります。 このメソッドは、[Microsoft Store Services SDK](http://aka.ms/store-em-sdk) に含まれています。 このメソッドを呼び出す方法の詳細 (コード例を含む) については、「[ターゲット プッシュ通知用のアプリの構成](../monetize/configure-your-app-to-receive-dev-center-notifications.md)」をご覧ください。
 
 1.  [Windows デベロッパー センター ダッシュボード](https://developer.microsoft.com/dashboard/overview)で、**[Engage] (関心を引く)** セクションを展開し、**[通知]** を選びます。
 2.  **[通知]** ページで、**[新しい通知]** を選びます。
-3.      ドロップダウン メニューから、通知を生成するアプリを選択します。
-4.  **[テンプレートの選択]** セクションで、送信する通知の種類を選択します。 詳しくは、「[通知テンプレートの種類](#notification-template-types)」をご覧ください。
-  ![通知テンプレート](images/push-notifications-template.png)
-5.  **[通知設定]** セクションで、通知の **[名前]** を選択し、通知を送信する **[顧客グループ]** を選択します。
-セグメントをまだ作成していない場合は、**[新しい顧客グループの作成]** を選択します。 新しいセグメントで通知を使用できるようになるまでに、24 時間かかることに注意してください。 詳しくは、「[ユーザー セグメントを作成する](create-customer-segments.md)」をご覧ください。
-6.  通知を送信するタイミングを指定する場合は、**[すぐに通知する]** チェック ボックスをオフにして、特定の日付と時刻を選択します。
-7.  ある時点で通知を期限切れにする場合は、**[通知を無期限にする]** チェック ボックスをオフにして、特定の有効期限の日付と時刻を選択します。
-8.  受信者にフィルターを適用して、特定の言語を使うユーザーや特定のタイム ゾーンのユーザーにのみ通知が配信されるようにするには、**[フィルター]** チェック ボックスをオンにします。 受信者に適用するフィルターとして言語、タイム ゾーン、またはその両方を選択できます。
+3.  **[テンプレートの選択]** セクションで、送信する通知の種類を選択します。 詳しくは、「[通知テンプレートの種類](#notification-template-types)」をご覧ください。 <!-- ![Notification templates](images/push-notifications-template.png) -->
+4.      次のページで<!-- use the drop-down menu to choose either a **Single app** or **Multiple apps** for which you want to generate a notification. -->アプリを選択します<!-- or apps --> (Microsoft Store Services SDK を使用して通知を受信できるように構成する必要があります)。
+5.  **[通知設定]** セクションで、通知の **[名前]** を選択し、該当する場合は、通知の送信先として **[顧客グループ]** を選択します。 <!-- (Notifications sent to multiple apps can only be sent to all customers of those apps.) --> 使用するセグメントをまだ作成していない場合は、**[新しい顧客グループの作成]** を選択します。 通知対象の新しいセグメントを使用できるまでに 24 時間かかることに注意してください。 詳しくは、「[顧客セグメントの作成](create-customer-segments.md)」をご覧ください。
+6.  通知を送信するタイミングを指定する場合は、**[すぐに通知する]** チェック ボックスをオフにして、特定の日付と時刻を選択します (各ユーザーのローカル タイム ゾーンを使用するように指定しない限り、すべてのユーザーに対して UTC が使用されます)。
+7.  ある時点で通知を期限切れにする場合は、**[通知を無期限にする]** チェック ボックスをオフにして、特定の有効期限の日付と時刻 (UTC) を選択します。
+8.  <!-- For notifications to a single app: --> If you want to filter the recipients so that your notification is only delivered to people who use certain languages or are in specific time zones, check the **Use filters** checkbox. You can then specify the language and/or time zone options you want to use.
+<!-- and don't forget to update numbers when this comes back... 9.      For notifications to multiple apps: Specify whether to send the notification only to the last active app on each device (per customer), or to all apps on each device. -->
 9.  **[通知のコンテンツ]** セクションの **[言語]** メニューで、通知に表示する言語を選択します。 詳しくは、「[通知の翻訳](#translate-your-notifications)」をご覧ください。
 10. **[オプション]** セクションで、テキストを入力し、その他の必要なオプションを構成します。 テンプレートを使用して開始した場合は、既定でこの一部が提供されますが、必要な変更を加えることができます。
    使用している通知の種類に応じて、利用可能なオプションが異なります。 オプションの一部を次に示します:
@@ -66,7 +70,7 @@ ms.lasthandoff: 06/21/2017
    - **ベース URI** (対話型トースト型)。 詳しくは、「[BaseUri](https://msdn.microsoft.com/library/windows/apps/br208712)」をご覧ください。
    - **イメージ クエリの追加** (対話型トースト型)。 詳しくは、「[addImageQuery](https://msdn.microsoft.com/library/windows/apps/br230847)」をご覧ください。
    - **ビジュアル  **。 イメージ、ビデオ、またはサウンド。 詳しくは、「[ビジュアル](https://msdn.microsoft.com/library/windows/apps/br230847)」をご覧ください。
-   - **入力**/**アクション**/**選択** (対話型トースト型)。 ユーザーが通知と対話できるようにします。 詳しくは、「[アダプティブ トースト通知と対話型トースト通知](../controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts.md)」をご覧ください。
+   - **入力**/**アクション**/**選択** (対話型トースト型)。 ユーザーが通知と対話できるようにします。 詳しくは、「[アダプティブ トースト通知と対話型トースト通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)」をご覧ください。
    - **バインド** (対話型タイル型)。 トースト テンプレート。 詳しくは、「[バインド](https://msdn.microsoft.com/library/windows/apps/br230843)」をご覧ください。
 
    > [!TIP]
@@ -74,54 +78,58 @@ ms.lasthandoff: 06/21/2017
 
 11. 後で通知の作業を続ける場合は **[下書きとして保存]** を、すべて完了している場合は **[送信]** を選択します。
 
+
 ## <a name="notification-template-types"></a>通知テンプレートの種類
 
 さまざまな通知テンプレートから選択できます。
 
--   **空白 (トースト)。** カスタマイズできる空のトースト通知から始めます。 トースト通知は、顧客が別のアプリ内、スタート画面、またはデスクトップ上にいるときに、アプリが顧客と対話できるようにするために画面に表示されるポップアップ UI です。
+-   **空白 (トースト)。** カスタマイズできる空のトースト通知から始めます。 トースト通知は、ユーザーが別のアプリ内、スタート画面、またはデスクトップ上にいるときに、アプリがユーザーと対話できるようにするために画面に表示されるポップアップ UI です。
 -   **空白 (タイル)。** カスタマイズできる空のタイル通知から始めます。 タイルは、スタート画面でのアプリの表示です。 タイルは "ライブ" にすることができます。つまり、タイルに表示されるコンテンツは、通知に応じて変化させることができます。
--   **評価の依頼 (トースト)。** 顧客にアプリの評価を求めるトースト通知。 顧客が通知を選択すると、アプリのストア評価ページが表示されます。
--   **フィードバックの依頼 (トースト)。** 顧客にアプリのフィードバックを送信するよう求めるトースト通知。 顧客が通知を選択すると、アプリのフィードバック Hub ページが表示されます。
+-   **評価の依頼 (トースト)。** ユーザーにアプリの評価を求めるトースト通知。 ユーザーが通知を選択すると、アプリのストア評価ページが表示されます。
+-   **フィードバックの依頼 (トースト)。** ユーザーにアプリのフィードバックを送信するよう求めるトースト通知。 ユーザーが通知を選択すると、アプリのフィードバック Hub ページが表示されます。
 
    > [!NOTE]
    > このテンプレートの種類を選択した場合は、**[起動]** ボックスで、必ず {PACKAGE_FAMILY_NAME} プレースホルダーの値をアプリの実際のパッケージ ファミリ名 (PFN) に置き換えてください。 アプリの PFN は、[アプリ ID](view-app-identity-details.md) ページ (**[アプリ管理]** > **[アプリ ID]**) で確認できます。
 
    ![フィードバックのトースト起動ボックス](images/push-notifications-feedback-toast-launch-box.png)
--   **クロス プロモーション (トースト)。** 任意の別のアプリを販売促進するトースト通知。 顧客が通知を選択すると、他のアプリのストア登録情報が表示されます。
+-   **クロス プロモーション (トースト)。** 任意の別のアプリを販売促進するトースト通知。 ユーザーが通知を選択すると、他のアプリのストア登録情報が表示されます。
    > [!NOTE]
    > このテンプレートの種類を選択した場合は、**[起動]** ボックスで、必ず **{ProductId you want to promote here}** プレースホルダーの値を相互に販売促進するアイテムの実際のストア ID に置き換えてください。 ストア ID は、[アプリ ID](view-app-identity-details.md) ページ (**[アプリ管理]** > **[アプリ ID]**) で確認できます。
 
   ![クロス プロモーションのトースト起動ボックス](images/push-notifications-promote-toast-launch-box.png)
--   **販売の促進 (トースト)。** アプリのクーポンの通知に使用できるトースト通知。 顧客が通知を選択すると、アプリのストア登録情報が表示されます。
--   **更新のプロンプト (トースト)。** 古いバージョンのアプリを実行している顧客に最新バージョンをインストールするよう促すトースト通知。 顧客が通知を選択すると、ストア アプリに **[ダウンロードと更新]** 一覧が表示されます。 このテンプレートを使用するために顧客セグメントを作成する必要はないことに注意してください。 この通知は 24 時間以内にスケジュールされ、アプリの最新バージョンをまだ実行していないすべてのユーザーを対象にもれなく送信されます。
+-   **販売の促進 (トースト)。** アプリのクーポンの通知に使用できるトースト通知。 ユーザーが通知を選択すると、アプリのストア登録情報が表示されます。
+-   **更新のプロンプト (トースト)。** 古いバージョンのアプリを実行しているユーザーに最新バージョンをインストールするよう促すトースト通知。 ユーザーが通知を選択すると、Microsoft Store アプリが起動し、**[ダウンロードと更新]** 一覧が表示されます。 このテンプレートは単一のアプリのみで使用でき、特定のセグメントを対象にしたり、送信日時を指定することはできません。この通知は常に 24 時間以内にスケジュールされ、アプリの最新バージョンをまだ実行していないすべてのユーザーが可能な限り対象になるように送信されます。
+
 
 ## <a name="measure-notification-performance"></a>通知のパフォーマンスの測定
 
 各通知を通じて、効率的に集客しているかを測定できます。
+
 
 ###<a name="to-measure-notification-performance"></a>通知のパフォーマンスを測定するには
 
 1.  通知を作成するときに、**[通知のコンテンツ]** セクションで **[アプリの起動率の追跡]** チェック ボックスを選択します。
 2.  アプリで [ParseArgumentsAndTrackAppLaunch](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch.aspx) メソッドを呼び出して、ターゲット通知への応答としてアプリが起動されたことをデベロッパー センターに通知します。 このメソッドは Microsoft Store Services SDK によって提供されます。 このメソッドを呼び出す方法について詳しくは、「[デベロッパー センターの通知を受け取るようにアプリを構成する](../monetize/configure-your-app-to-receive-dev-center-notifications.md)」をご覧ください。
 
+
 ###<a name="to-view-notification-performance"></a>通知のパフォーマンスを表示するには
 
-前述のとおり、[通知のパフォーマンスを測定](#measure-notification-performance)するように通知とアプリを構成すると、ダッシュボードを使用して通知のパフォーマンス状態を表示できます。
+前述のとおり、通知のパフォーマンスを測定するように通知とアプリを構成すると、ダッシュボードを使用して通知のパフォーマンス状態を表示できます。
 
-1.  ダッシュボードで、アプリのいずれかを選択します。
-2.  左側のメニューの **[サービス]** セクションを展開して、**[プッシュ通知]** を選択してそのアプリに関連付けられている通知を表示します。
-3.  **ターゲット プッシュ通知**ページで、**[進行中]** または **[完了]** を選択し、**[配信率]** 列と **[アプリ起動率]** 列を参照して、通知ごとの大まかなパフォーマンスを確認します。
-4.  さらに詳細なパフォーマンスを確認するには、通知名を選択します。 **[配信統計]** セクションが表示され、次の通知**状態**の種類の **[カウント]** と **[割合]** の情報が表示されます。
+1.  [Windows デベロッパー センター ダッシュボード](https://developer.microsoft.com/dashboard/overview)で、**[利用率の引き上げ]** セクションを展開し、**[通知]** を選びます。
+2.  **ターゲット プッシュ通知**ページで、**[進行中]** または **[完了]** を選択し、**[配信率]** 列と **[アプリ起動率]** 列を参照して、通知ごとの大まかなパフォーマンスを確認します。
+3.  さらに詳細なパフォーマンスを確認するには、通知名を選択します。 **[配信統計]** セクションでは、通知に関する以下の**状態**について、**[カウント]** と **[割合]** の情報を確認できます。
  - **失敗**: 何らかの理由で、通知が配信されませんでした。 これは、Windows 通知サービスで問題が発生した場合などに発生します。
- - **チャネルの有効期限エラー**: アプリとデベロッパー センター間のチャネルの有効期限が切れているため、通知を配信できませんでした。 これは、顧客が長期間アプリを開いていない場合などに発生します。
+ - **チャネルの有効期限エラー**: アプリとデベロッパー センター間のチャネルの有効期限が切れているため、通知を配信できませんでした。 これは、ユーザーが長期間アプリを開いていない場合などに発生します。
  - **送信中**: 通知がキューで送信待ちになっています。
  - **送信済み**: 通知が送信されました。
- - **起動**: 通知が送信され、顧客が通知をクリックして、その結果、アプリが開かれました。 これは、アプリの起動のみを追跡することに注意してください。 ストアを起動して評価をするなど、他のアクションを実行するよう顧客に促す通知は、この状態には含まれていません。
+ - **起動**: 通知が送信され、ユーザーが通知をクリックして、その結果、アプリが開かれました。 これは、アプリの起動のみを追跡することに注意してください。 ストアを起動して評価をするなど、他のアクションを実行するようユーザーに促す通知は、この状態には含まれていません。
  - **不明**: この通知の状態を特定できませんでした。
+
 
 ## <a name="translate-your-notifications"></a>通知の翻訳
 
-通知を最大限に活用するには、顧客が希望する言語に翻訳することを検討します。 デベロッパー センターでは、優れた [Microsoft Translator](https://msdn.microsoft.com/library/dd576287.aspx) サービスを活用して、通知を簡単に自動的に翻訳できます。
+通知を最大限に活用するには、ユーザーが希望する言語に翻訳することを検討します。 デベロッパー センターでは、優れた [Microsoft Translator](https://msdn.microsoft.com/library/dd576287.aspx) サービスを活用して、通知を簡単に自動的に翻訳できます。
 
 1.  通知を既定の言語で記述したら、**[言語の追加]** (**[通知のコンテンツ]** セクションの **[言語]** メニューの下) を選択します。
 2.  **[言語の追加]** ウィンドウで、通知を表示する追加の言語を選択し、**[更新]** を選択します。
@@ -134,8 +142,8 @@ ms.lasthandoff: 06/21/2017
  - 通知が翻訳された後に英語のテキストを変更した場合は、翻訳済みの通知は変更に合わせて自動的に更新されます。 ただし、初期の翻訳を上書きすることを以前に選択している場合は、この処理は適用されません。
 
 ## <a name="related-topics"></a>関連トピック
-- [UWP アプリのタイル、バッジ、通知](../controls-and-patterns/tiles-badges-notifications.md)
-- [Windows プッシュ通知サービスの概要](../controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview.md)
+- [UWP アプリのタイル](../design/shell/tiles-and-notifications/creating-tiles.md)
+- [Windows プッシュ通知サービス (WNS) の概要](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)
 - [Notifications Visualizer アプリ](https://www.microsoft.com/store/apps/9nblggh5xsl1)
 - [StoreServicesEngagementManager.RegisterNotificationChannelAsync() | registerNotificationChannelAsync() メソッド](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx)
 - [顧客セグメントとプッシュ通知: Windows デベロッパー センター Insider Program の新機能 (ブログの投稿)](https://blogs.windows.com/buildingapps/2016/08/17/customer-segmentation-and-push-notifications-a-new-windows-dev-center-insider-program-feature/#XTuCqrG8G5IMgWew.97)

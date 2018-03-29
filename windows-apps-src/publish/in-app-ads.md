@@ -1,20 +1,20 @@
 ---
 author: jnHs
 Description: If your app displays ads using the Microsoft Advertising SDK, use the In-app ads page of the Dev Center dashboard to manage your use of ads.
-title: "アプリ内広告"
+title: アプリ内広告
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
-ms.date: 12/04/2017
+ms.date: 2/24/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, UWP
 ms.localizationpriority: high
-ms.openlocfilehash: f0faa69cef0f98171c4679d6a94b01199b215cb4
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: 66c0ae56c3722162ebef5a8660cc2322d69a278b
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="in-app-ads"></a>アプリ内広告
 
@@ -78,6 +78,8 @@ ms.lasthandoff: 12/12/2017
 
 UWP 広告ユニットの[仲介設定](#mediation)または広告ユニットを使用しているアプリの [COPPA 準拠](#coppa)を編集するには、ユニット名をクリックします。
 
+過去 6 か月間アクティビティがない広告ユニットには "**非アクティブ**" のラベルが付き、最終的にはダッシュボードから削除されます。 フィルターを使用して "**アクティブ**" または "**非アクティブ**" の広告ユニットのみを表示することもできます。 誤って "**非アクティブ**" がマークされていると思われる広告ユニットを見つけた場合は、[サポートにお問い合わせください](http://aka.ms/storesupport)。
+
 <span id="mediation" />
 ## <a name="mediation-settings"></a>仲介設定
 
@@ -120,8 +122,8 @@ UWP 広告ユニットの[仲介設定](#mediation)または広告ユニット�
 | AOL と AppNexus |  これは Microsoft が管理する広告ネットワークです。パートナー ネットワークである AOL と AppNexus を通じて広告サービスを提供します。<p/>**メモ**: AOL and AppNexus は、バナー広告ユニットの **[有料の広告ネットワーク]** の一覧で常に先頭に位置付けられます。この種類の広告でランクを下げることはできません。 | バナー、ビデオ スポット広告 |
 | AppNexus (直接) | [AppNexus](https://www.appnexus.com) からビデオ スポット広告を提供するには、このオプションを選択します。 | ビデオ (スポット)、ネイティブ  |
 | Microsoft アプリ インストール広告 | Windows エコシステム内の他の開発者で、[各自が開発したアプリのプロモーション用広告キャンペーンを作成している](create-an-ad-campaign-for-your-app.md)開発者によって作成されたアプリ インストール広告やアプリ リエンゲージメント広告を提供するには、このオプションを選択します。  |  バナー、バナー (スポット)、ネイティブ  |
-| Outbrain |  [Outbrain](https://www.outbrain.com/) から広告を提供するには、このオプションを選択します。 |  バナー  |
-| Revcontent |  [Revcontent](http://www.revcontent.com/) から広告を提供するには、このオプションを選択します。 |  バナー  |
+| Outbrain |  [Outbrain](https://www.outbrain.com/) から広告を提供するには、このオプションを選択します。 |  バナー、バナー (スポット)  |
+| Revcontent |  [Revcontent](http://www.revcontent.com/) から広告を提供するには、このオプションを選択します。 |  バナー、ネイティブ  |
 | Smaato |  [Smaato](https://www.smaato.com/) から広告を提供するには、このオプションを選択します。 |  バナー  |
 | smartclip |  [smartclip](http://www.smartclip.com/) から広告を提供するには、このオプションを選択します。 |  ビデオ (スポット)  |
 | SpotX |  [SpotX](https://www.spotx.tv/) から広告を提供するには、このオプションを選択します。 |  ビデオ (スポット)  |

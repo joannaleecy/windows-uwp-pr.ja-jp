@@ -1,19 +1,19 @@
 ---
 author: jnHs
 Description: The Xbox analytics report in the Windows Dev Center dashboard shows you statistics about how your customers are engaging with the Xbox features in your product.
-title: "Xbox 分析レポート"
+title: Xbox 分析レポート
 ms.author: wdg-dev-content
-ms.date: 10/30/2017
+ms.date: 02/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, xbox 分析, xbox live 分析, xbox 統計情報"
+keywords: windows 10, uwp, xbox 分析, xbox live 分析, xbox 統計情報
 ms.localizationpriority: high
-ms.openlocfilehash: ad40d33d51287126cd1940eb830b1be0c5ba7812
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: 2b6ab5c15b4683456502ce1b94b1bf3ca74c239c
+ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="xbox-analytics-report"></a>Xbox 分析レポート
 
@@ -55,7 +55,6 @@ Windows デベロッパー センター ダッシュボードの **Xbox 分析�
 このセクションには複数のタブが含まれています。いずれかを選択して、ゲーム ユーザーに関するさまざまなデータを表示できます。 このセクションの統計情報は、特定の製品内の機能ではなく、全般的な機能の使用状況を表していることに注意してください。
 
 - **[Social usage]** (ソーシャルの使用状況) タブは、ユーザーによるソーシャルな対話に関連するデータを示しています。
-   - **[ゲーム ハブ]** は、ゲーム ハブと対話するユーザーの割合を示します。 このデータは、Xbox 対応製品に対してのみ利用可能であり、製品のゲーム ハブではなく、全般的にゲーム ハブを使用するユーザーの数を表しています。
    - **[Game invites]** (ゲームへの招待) は、(任意のゲームについて) 招待を送信したユーザーの割合を示します。
    - **[パーティー チャット]** は、(任意のゲームで) パーティー チャットを使用するユーザーの割合を示します。
    - **[テキスト メッセージ]** は、(任意のゲームで) Xbox シェルを介してメッセージを送信するユーザーの割合を示します。

@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "マイクロソフトが発行する税関連の書類について、どのような開発者がその書類を受け取るのか、いつ書類が利用できるようになるのかなどを説明します。"
-title: "マイクロソフトが発行する IRS の税関連の書類について"
+Description: Learn about the tax forms issued by Microsoft, including who will receive them and when they are made available.
+title: マイクロソフトが発行する IRS の税関連の書類について
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 03/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10, uwp, 課税, irs, 米国内国歳入庁, 税, 所得税, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
-ms.openlocfilehash: bffb666184f52e6e6491d8651414ecbc269352b8
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.localizationpriority: high
+ms.openlocfilehash: 0bdae8a8489ddf4f2ec7eb7a619631bd4fa26e9e
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>マイクロソフトが発行する IRS の税関連の書類について
 
@@ -39,20 +40,20 @@ ms.lasthandoff: 06/21/2017
      <th> 以下の書類を受け取る</th>
   </tr>
   <tr> 
-     <td valign="top">適用される税年度に、**アプリの販売数が 200 個を上回り**、アプリ販売の合計購入金額が **20,000 米国ドルを超えました** (Windows 10 ストア経由でブラジルおよび中国で販売された数は**含まれません**)。</td>
-    <td valign="top">**1099-K** :<br>
+     <td valign="top">適用される税年度に、**アプリの販売数が 200 個を上回り**、アプリ販売の合計購入金額が **20,000 米国ドルを超えました** (Windows 10 の Microsoft Store 経由でブラジルおよび中国で販売された数は**含まれません**)。</td>
+    <td valign="top">**1099-K**:<br>
 提出者: Microsoft Corporation<br>
 EIN: \*\*\*\*\*4442<br>
 <br>
 **重要:** フォーム 1099 K には、開発者に支払われた金額ではなく、**仕入総額**が記載されます。</td>
   </tr>
   <tr> 
-     <td valign="top">Windows 10 ストア経由でブラジルおよび中国で販売したアプリについて、**10 ドル以上の支払い額**を受け取りました。<br>
+     <td valign="top">(i) Windows 10 の Microsoft Store 経由でブラジルおよび中国で販売したアプリまたは (ii) Minecraft Marketplace マーケットプレースでの売り上げについて、**10 ドル以上の支払い額**を受け取りました。<br>
 <br>
 **または**<br>
 <br>
 適用される税年度に、アプリの売り上げと関連のない 600 ドル以上の支払いをマイクロソフトから受け取りました (インセンティブ支払いや、コンテストまたはプロモーションによる支払いなど)。</td>
-    <td valign="top">**1099-MISC** :<br>
+    <td valign="top">**1099-MISC**:<br>
 支払者: Microsoft Corporation<br>
 EIN: \*\*\*\*\*4442<br>
 <br>
@@ -72,7 +73,7 @@ EIN: \*\*\*\*\*4442<br>
   </tr>
   <tr> 
      <td valign="top">適用される税年度に、アプリ内広告によって **600 ドル以上の支払い**を受け取りました。</td>
-    <td valign="top">**1099-MISC** :<br>
+    <td valign="top">**1099-MISC**:<br>
 支払い人: Microsoft Online Inc<br>
 EIN: \*\*\*\*\*0505<br>
 <br>

@@ -1,33 +1,24 @@
 ---
-author: jken
+author: QuinnRadich
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
-title: "初めてのアプリの作成"
-description: "Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリの作成は、思っているよりも簡単です。"
-ms.author: jken
-ms.date: 03/16/2017
+title: 初めてのアプリの作成
+description: Windows 10 用のユニバーサル Windows プラットフォーム (UWP) アプリは、好みのプログラミング言語で作成できます。
+ms.author: quradic
+ms.date: 1/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: fca180db42fcd5b8b9c30bd67fe2bb890a817c78
-ms.sourcegitcommit: a2908889b3566882c7494dc81fa9ece7d1d19580
+keywords: windows 10, uwp, 概要, 開始, c#, c++, JavaScript
+ms.localizationpriority: high
+ms.openlocfilehash: 39c9a6c65f5eb6ca828b782e6550d92601165481
+ms.sourcegitcommit: 444eaccbdcd4be2f1a1e6d4ce5525ba57e363b56
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="create-your-first-app"></a>初めてのアプリの作成
 
-## <a name="write-a-uwp-app-using-your-favorite-programming-language"></a>好みのプログラミング言語を使って UWP アプリを作成する
-
-![アプリの構築](images/build-your-app.png)
-
-UWP ([UWP とは何か](whats-a-uwp.md)) プラットフォームへようこそ。 このチュートリアルは、好みの言語で初めての UWP アプリを作る際に役立ちます。 次の方法について説明します。
-
--   Microsoft Visual Studio で UWP プロジェクトを作成する。
--   プロジェクトに UI 要素とコードを追加する。
--   アプリでインクと Dial を使用する。
--   サード パーティ製ライブラリを使って新しい機能を追加する。
--   ローカル コンピューターでアプリをビルドしてデバッグする。
+UWP プラットフォームへようこそ ([UWP についてはこちらを参照](whats-a-uwp.md))。 このチュートリアルは、好みの言語で初めての UWP アプリを作る際に役立ちます。
 
 最初に、好みの言語を選びます。
 
@@ -44,24 +35,11 @@ UWP ([UWP とは何か](whats-a-uwp.md)) プラットフォームへようこそ
 * [Windows 10 開発者向けガイド](https://go.microsoft.com/fwlink/?linkid=850804)
 * [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/)
 
-"Hello, World!" よりも少し進んだ内容が必要な場合は、次の C# および MonoGame のチュートリアルを試してください。
+"Hello, World!" よりも少し進んだ内容が必要な場合は、次のチュートリアルを試してください。
 
-* [C# と MonoGame で記述された Windows ストア向けのシンプルな 2D UWP ゲーム](get-started-tutorial-game-mg2d.md)
+* [XAML とデータ バインディング (UWP)](xaml-basics-intro.md)
+* [C# と MonoGame で記述された Microsoft Store 向けのシンプルな 2D UWP ゲーム](get-started-tutorial-game-mg2d.md)
 
-## <a name="javascript-and-html"></a>JavaScript と HTML
-
-Web のスキルを活用し、HTML5、CSS3、JavaScript を使ったアプリを作ります。
-
-* [HTML と JavaScript を使った "Hello, world" アプリの作成](create-a-hello-world-app-js-uwp.md)
-* [JavaScript と CreateJS で記述された Windows ストア向けのシンプルな 2D UWP ゲーム](get-started-tutorial-game-js2d.md)
-* [JavaScript と threeJS で記述された Windows ストア向けの 3D UWP ゲーム](get-started-tutorial-game-js3d.md)
-* [REST API を使った単一ページの Web アプリ](get-started-tutorial-fullstack-web-app.md)
-
-Web のスキルをブラッシュアップする必要がある場合は、以下をご覧ください。
-
-* [文字どおりの初心者のための JavaScript の基本](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
-* [文字どおりの初心者のための HTML5 と CSS3 の基本](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
-* [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916)
 
 ## <a name="visual-c-component-extensions-ccx-and-xaml"></a>Visual C++ コンポーネント拡張機能 (C++/CX) と XAML
 
@@ -74,36 +52,38 @@ C++ の詳しい情報については、以下をご覧ください。
 * [C++: 汎用言語およびライブラリ ジャンプ スタート](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
 * [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916)
 
-## <a name="using-features-unique-to-windows-10"></a>Windows 10 の独自の機能を使用する
+"Hello, World!" よりも少し進んだ内容が必要な場合は、次のチュートリアルを試してください。
 
-Windows 10 の一番の特徴は何でしょうか。 インクや Surface Dial のコントローラーは大きな特徴です。
+* [XAML とデータ バインディング (UWP)](xaml-basics-intro.md)
 
-* [UWP アプリでのインクの使用](ink-walkthrough.md)
-* [Surface Dial のサポート](radialcontroller-walkthrough.md)
+## <a name="javascript-and-html"></a>JavaScript と HTML
 
-## <a name="cutting-edge-ideas"></a>最先端のアイデア
+Web のスキルを活用し、HTML5、CSS3、JavaScript を使ったアプリを作ります。
 
-仮想現実の活用に関心がありますか
+* [HTML と JavaScript を使った "Hello, world" アプリの作成](create-a-hello-world-app-js-uwp.md)
 
-* [Babylon.js ゲームに WebVR を追加する](adding-webvr-to-a-babylonjs-game.md)
+UWP の域を超えて JavaScript と HTML のスキルを拡張し、Web アプリを作成しましょう。WebVR を使用すると、Web に仮想現実を組み込むこともできます。
 
-## <a name="objective-c"></a>Objective-C
+* [Microsoft Edge 開発者ドキュメント](https://docs.microsoft.com/microsoft-edge/)
+* [Microsoft Edge で WebVR を使用する](https://docs.microsoft.com/en-us/microsoft-edge/webvr/)
 
-どちらかといえば iOS 開発者である場合 
+Web アプリは、ホストされた Web アプリとして UWP フレームワークに簡単にパッケージ化し、Microsoft Store で販売促進できます。
 
-* [iOS 用 Windows ブリッジ](https://developer.microsoft.com/windows/bridges/ios)を使って既存のコードを UWP アプリに変換し、Objective-C での開発を続けてください。
+* [ホストされた Web アプリ](https://developer.microsoft.com/windows/bridges/hosted-web-apps)
+* [Web アプリケーションを UWP アプリに変換する](../porting/hwa-create-windows.md)
 
+Web のスキルをブラッシュアップする必要がある場合は、以下をご覧ください。
 
-## <a name="cross-platform-and-mobile-development"></a>クロスプラットフォームとモバイル開発
+* [文字どおりの初心者のための JavaScript の基本](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
+* [文字どおりの初心者のための HTML5 と CSS3 の基本](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
+* [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916)
 
-* Android や iOS をターゲットとする必要がある場合は、 [Xamarin](https://www.xamarin.com) をチェックしてください。
+## <a name="see-also"></a>関連項目
 
-## <a name="see-also"></a>参照
-
-* [Windows ストア アプリの公開](https://developer.microsoft.com/store/publish-apps)
+* [UWP チュートリアル](create-uwp-apps.md)
+* [UWP アプリを公開する](https://developer.microsoft.com/store/publish-apps)
 * [UWP アプリの開発に関するハウツー記事](https://developer.microsoft.com/windows/apps/develop)
 * [UWP 開発者向けコード サンプル](https://developer.microsoft.com/windows/samples)
 * [ユニバーサル Windows アプリとは?](whats-a-uwp.md)
 * [準備](get-set-up.md)
 * [Windows アカウントのサインアップ](sign-up.md)
-

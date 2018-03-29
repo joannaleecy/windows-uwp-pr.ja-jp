@@ -1,29 +1,32 @@
 ---
 author: jnHs
-Description: "アプリの申請プロセスの [アプリケーションのプロパティ] ページでは、アプリのカテゴリを定義し、ハードウェアの基本設定や他の宣言を指定できます。"
-title: "アプリのプロパティの入力"
+Description: The App properties page of the app submission process lets you define your app's category and indicate hardware preferences or other declarations.
+title: アプリのプロパティの入力
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ms.author: wdg-dev-content
-ms.date: 08/03/2017
+ms.date: 01/24/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: e4d391d551cf4e41853a1aac0e4b5be8bf0b0c3f
-ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+keywords: windows 10, uwp, ゲーム設定, 表示モード, システム要件, ハードウェア要件, 最小ハードウェア, 推奨されるハードウェア
+ms.localizationpriority: high
+ms.openlocfilehash: 8ecdeb0dd4ebba83a387666ab87067ff419a9303
+ms.sourcegitcommit: 8d9d4f17e272b78e38b346f846b96260c922bbb2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="enter-app-properties"></a>アプリのプロパティの入力
 
-[アプリの申請プロセス](app-submissions.md)の **[プロパティ]** ページでは、アプリのカテゴリを定義し、ハードウェアの基本設定や他の宣言を指定できます。 ここでは、このページのオプションと、この情報を入力するときに考慮する必要がある事項を順に説明します。
+[アプリの申請プロセス](app-submissions.md)の **[プロパティ]** ページでは、アプリのカテゴリを定義し、他の情報や宣言を入力します。 このページでは、アプリに関する完全な詳細情報を正確に指定してください。
+
 
 ## <a name="category-and-subcategory"></a>カテゴリとサブカテゴリ
 
-このセクションでは、ストアでアプリの分類に使われるカテゴリ (および該当する場合はサブカテゴリ) を指定します。 アプリを提出するには、カテゴリを指定することが必要です。
+Microsoft Store でアプリの分類に使うカテゴリを (該当する場合はサブカテゴリ/ジャンルも) 示す必要があります。 アプリを提出するには、カテゴリを指定することが必要です。
 
 詳しくは、「[カテゴリとサブカテゴリの一覧](category-and-subcategory-table.md)」をご覧ください。
+
 
 ## <a name="game-settings"></a>ゲーム設定
 
@@ -32,6 +35,17 @@ ms.lasthandoff: 08/03/2017
 ゲームでマルチプレイヤー オプションのいずれかをサポートしている場合は、セッションあたりの最小プレイヤー数と最大プレイヤー数を指定してください。 最小または最大のプレイヤー数として 1,000 人より大きい値を入力することはできません。
 
 **[クロスプラットフォーム マルチプレイヤー]** は、ゲームが Windows 10 PC と Xbox のプレイヤー間のマルチプレイヤー セッションをサポートしていることを示します。
+
+
+## <a name="display-mode"></a>表示モード
+
+このセクションでは、PC または HoloLens デバイス、あるいはその両方で、[Windows Mixed Reality](https://developer.microsoft.com/windows/mixed-reality) の (2D 表示でなく) イマーシブ ビューでの実行用に製品が設計されているかどうかを示します。 該当する場合は、次の操作も必要になります。
+- **[プロパティ]** ページの後半に表示される [[システム要件]](#system-requirements) セクションで、**[Windows Mixed Reality イマーシブ ヘッドセット]** について **[最小ハードウェア要件]** または **[推奨されるハードウェア]** を選択します。
+- PC を選択した場合は、アプリを座った状態のみまたは立った状態のみで使用するのか、使用中にさまざまな場所に移動できる (または移動する必要がある) のかをユーザーが判断できるように、**[境界線のセットアップ]** も指定します。 
+
+製品のカテゴリとして **[ゲーム]** を選択した場合は、**[表示モード]** に追加のオプションが表示されます。ここでは、4K 解像度のビデオ出力、ハイ ダイナミック レンジ (HDR) のビデオ出力、可変リフレッシュ レートの表示を製品がサポートしているかどうかを指定できます。
+
+製品がこれらの表示モード オプションをサポートしていない場合は、すべてのチェック ボックスをオフにしておきます。
 
 
 ## <a name="product-declarations"></a>製品の宣言
@@ -59,9 +73,12 @@ ms.lasthandoff: 08/03/2017
 - **Windows 8.x 以前および Windows Phone 8.x 以前のユーザー:**
      - **[タッチ スクリーン]** の **[最小ハードウェア]** チェック ボックスをオンにすると、この要件がアプリのストア登録情報に表示されます。また、タッチ スクリーンのないデバイスのユーザーがアプリをダウンロードしようとすると、警告が表示されます。 その他の要件については、検証も行われませんし、ストア登録情報に表示もされません。
 
-また指定したハードウェアについての実行時のチェックをアプリにも追加することをお勧めします。これは、選択した機能がユーザーのデバイスにないことをストアが常に検出できるとは限らず、また、警告が表示されていてもユーザーはアプリをダウンロードできるためです。
+また指定したハードウェアについての実行時のチェックをアプリにも追加することをお勧めします。これは、選択した機能がユーザーのデバイスにないことをストアが常に検出できるとは限らず、また、警告が表示されていてもユーザーはアプリをダウンロードできるためです。 メモリや DirectX レベルの最小要件を満たしていないデバイスに UWP アプリをまったくダウンロードできないようにするには、[StoreManifest XML ファイル](https://docs.microsoft.com/uwp/schemas/storemanifest/storemanifestschema2015/schema-root)で最小要件を指定します。
 
 > [!TIP]
-> メモリや DirectX レベルの最小要件を満たしていないデバイスに UWP アプリをまったくダウンロードできないようにするには、StoreManifest XML ファイルで最小要件を指定します。 詳しくは、「[StoreManifest のスキーマ (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335)」をご覧ください。
+> 3D プリンターや USB デバイスなど、製品が正常に動作するためにこのセクションに示されていない追加の項目を必要とする場合、Store 登録情報を作成するときに、[追加のシステム要件](create-app-store-listings.md#additional-system-requirements)を入力することもできます。
+
+
+
 
 

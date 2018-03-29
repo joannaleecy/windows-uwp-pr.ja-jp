@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "入金状況には、アプリやアドオンによる売り上げの詳細が表示されます。 支払いを受ける時期と支払われる金額も示されます。"
-title: "入金状況"
+Description: The Payout summary shows you details about the money you’ve earned with your apps and add-ons. It also lets you know when you’ll receive payments and how much you'll be paid.
+title: 支払いの概要
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 02/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: d6a069bab6bc24c6f6388eec7ad63c0c79525fd9
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+keywords: windows 10, uwp, 入金状況, ステートメントの, 支払い額, 売り上げ, 入金い, 支払い, 収益
+ms.localizationpriority: high
+ms.openlocfilehash: 5be84a7fe6918a0ba272aead83ec26e68669c477
+ms.sourcegitcommit: 980e604c3767e7a73619d027bebd78cf4bfe9678
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="payout-summary"></a>入金状況
 
@@ -25,10 +26,11 @@ ms.lasthandoff: 06/21/2017
 Azure Marketplace で製品を販売する場合、**[入金状況]** に正常に行われた支払いに関する情報も表示されます。 Azure Marketplace での支払いについて詳しくは、[Microsoft Azure Marketplace への参加ポリシーに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=722436)と [Microsoft Azure Marketplace の発行元契約に関するページ](http://go.microsoft.com/fwlink/p/?LinkID=699560 )をご覧ください。 Azure Marketplace の支払いレポートについては、[こちら](http://go.microsoft.com/fwlink/p/?LinkID=722439)をご覧ください。
 
 > [!NOTE]
-> 支払いを受けるには、収益が[規定の額](payment-thresholds-methods-and-timeframes.md)に達する必要があります。 支払しきい値未満の収益は、しきい値が満たされるまで **[処理待ち]** カテゴリに残ります。 アプリ収益の支払しきい値について詳しくは、「[アプリ開発者契約](https://msdn.microsoft.com/library/windows/apps/hh694058)」をご覧ください。 広告収益に関する支払しきい値は、50 米ドル (または現地通貨で同等額) です。 
+> 支払いを受けるには、収益が[規定の額](payment-thresholds-methods-and-timeframes.md)に達する必要があります。 支払しきい値未満の収益は、しきい値が満たされるまで **[処理待ち]** カテゴリに残ります。 アプリ収益の支払しきい値について詳しくは、「[アプリ開発者契約](https://msdn.microsoft.com/library/windows/apps/hh694058)」をご覧ください。 広告収益に関する支払しきい値は、50 米国ドル (または現地通貨で同等額) です。 
 >
 > 支払いは毎月行われます (支払いのしきい値に達している場合)。 通常、支払いは、該当する月の 15 日に行われます。 支払いが受取りアカウントに到着するまで、通常は 3 ～ 10 営業日かかることに注意してください。 詳しくは、「[支払しきい値、方法、期間](payment-thresholds-methods-and-timeframes.md)」をご覧ください。
 
+**入金状況**を確認するには、デベロッパー センターの右上隅付近に表示される **[支払い]** アイコンをクリックして、**[入金状況]** を選択します。
 
 ## <a name="current-proceeds-and-payments"></a>現在の収益とお支払い
 
@@ -56,7 +58,7 @@ Azure Marketplace で製品を販売する場合、**[入金状況]** に正常�
 
 各明細の上部には、当該月の支払いの合計額が表示されます。 そのすぐ下の **[発行済みの支払]** には、支払い額の計算方法の要約が表示されます。
 
-その下の **[Proceeds breakdown] (収益の内訳)** セクションでは、市場ごとの売り上げや収益源 (Windows Phone ストア、Windows ストア 8、Windows ストアなど) ごとの売り上げに関する詳細を、アプリ別に確認できます。 [調整](#proceeds-by-app-and-adjustments)が行われた場合は、日付、金額、調整の理由など、その調整に関する詳細も表示されます。
+その下の **[Proceeds breakdown] (収益の内訳)** セクションでは、市場ごとの売り上げや収益源 (Microsoft Store、Windows Store 8、Windows Phone Store など) ごとの売り上げに関する詳細を、アプリ別に確認できます。 [調整](#proceeds-by-app-and-adjustments)が行われた場合は、日付、金額、調整の理由など、その調整に関する詳細も表示されます。
 
 既に説明したセクションでは、アプリの販売による収益 (および調整) に関する情報のみが表示されます。広告によって収益を得た場合、Microsoft Advertising に関する別のセクションに、支払いと通貨換算の詳細が表示されます。
 
@@ -80,7 +82,7 @@ Azure Marketplace で製品を販売する場合、**[入金状況]** に正常�
 
 | フィールド名              | 説明                                                                                                                              |
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| 収益源          | 収益の発生元です。トランザクションがどこで行われたかに基づいています (Windows ストア、Windows Phone ストア、Windows ストア 8、広告など)。 |
+| 収益源          | 収益の発生元です。トランザクションがどこで行われたかに基づいています (Microsoft Store、Windows Phone Store、Windows Store 8、広告など)。 |
 | 注文 ID                |  注文の一意の識別子です。 この ID を使って、購入トランザクションと購入以外の各トランザクション (払戻しやチャージバックなど) を結び付けることができます。 どちらのトランザクションも、同じ注文 ID になります。 また、分割請求の場合 (1 つの購入に対して複数の支払方法が使われている場合)、注文 ID によって購入トランザクションにリンクすることもできます。                                                                                                          |
 | お取引 ID          |       一意のトランザクション識別子。  |
 | お取引日時   | トランザクションが行われた日時 (UTC)。                                                                                        |
@@ -89,7 +91,7 @@ Azure Marketplace で製品を販売する場合、**[入金状況]** に正常�
 | 親製品名     | 親製品の名前。 注意: トランザクションの親製品がない場合、親製品名 = 製品名です。   |
 | 製品名            | 製品の名前。                                                                                                                     |
 | 製品の種類            | 製品の種類 (アプリ、アドオン、ゲームなど)                                                                                        |
-| 数量                | 収益源がビジネス向け Windows ストアである場合、数量は購入されたライセンスの数を表します。 その他のすべての収益源については、数量は常に 1 です。 注: 2 つの異なるお支払い方法が使用されていたために、1 つの取引が 2 つの行項目に分割された場合でも、個々の行項目の数量は 1 と表示されます。    |
+| 数量                | 収益源がビジネス向け Microsoft Store である場合、数量は購入されたライセンスの数を表します。 その他のすべての収益源については、数量は常に 1 です。 注: 2 つの異なるお支払い方法が使用されていたために、1 つの取引が 2 つの行項目に分割された場合でも、個々の行項目の数量は 1 と表示されます。    |
 | 取引の種類        | 取引の種類 (購入、払戻し、取り消し、支払取り消しなど)                                                                |
 | 入金方法          | 取引にユーザーが使用した支払い方法 (クレジット カード、携帯電話会社による課金、PayPal など)                                 |
 | 国/地域        | 取引が行われた国/地域。                                                                                            |

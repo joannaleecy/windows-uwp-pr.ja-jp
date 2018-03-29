@@ -1,26 +1,27 @@
 ---
 author: jnHs
-Description: "Windows デベロッパー センター ダッシュボードの [アドオン取得] レポートでは、販売したアドオンの数と共に、人口統計データやプラットフォームの詳細を確認できます。"
-title: "[アドオン取得] レポート"
+Description: The Add-on acquisitions report in the Windows Dev Center dashboard lets you see how many add-ons you've sold, along with demographic and platform details.
+title: '[アドオン取得] レポート'
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
 ms.author: wdg-dev-content
-ms.date: 08/04/2017
+ms.date: 02/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 46d5ee3d0e0ac9c2a3599f51e17ea4d7425ab5af
-ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+keywords: windows 10, uwp, アドオン販売, アドオン取得, IAP 売り上げ, アプリ内製品, iap, アドオン
+ms.localizationpriority: high
+ms.openlocfilehash: 5b8d0bb140206612a5096f48d87029b2285a0770
+ms.sourcegitcommit: 980e604c3767e7a73619d027bebd78cf4bfe9678
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/04/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="add-on-acquisitions-report"></a>[アドオン取得] レポート
 
 
-Windows デベロッパー センター ダッシュボードの **[アドオン取得]** レポートでは、販売したアドオンの数と共に、人口統計データやプラットフォームの詳細を確認できます。 また、Windows 10 ユーザーのコンバージョン情報も取得できます。
+Windows デベロッパー センター ダッシュボードの **[アドオン取得]** レポートでは、販売したアドオンの数と共に、人口統計データやプラットフォームの詳細を確認できます。 また、Windows 10 ユーザー (Xbox ユーザーも含む) のコンバージョン情報も取得できます。
 
-このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md)してオフラインで表示することもできます。 または、[Windows ストア分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) の[アドオンの入手数の取得](../monetize/get-in-app-acquisitions.md)メソッドを使って、プログラムでこのデータを取得できます。
+このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md)してオフラインで表示することもできます。 または、[Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) の[アドオンの入手数の取得](../monetize/get-in-app-acquisitions.md)メソッドを使って、プログラムでこのデータを取得できます。
 
 このレポートで、アドオン取得とは、ユーザーが開発者からアドオンを購入 (または、無料で提供している場合は、支払いなしでアドオンを獲得) したことを意味します。 同じユーザーが同じコンシューマブルなアドオンを複数回購入した場合は、個別のアドオン取得としてカウントされます。
 
@@ -36,7 +37,7 @@ Windows デベロッパー センター ダッシュボードの **[アドオン
 
 -   **[アドオン]**: 既定のフィルターは **[すべてのアドオン]** ですが、特定の 1 つまたは複数のアプリのアドオンのデータのみを抽出することもできます。
 -   **[マーケット]**: 既定のフィルターは **[すべてのマーケット]** ですが、特定の 1 つまたは複数のマーケットの取得データのみを抽出することもできます。
--   **[デバイスの種類]**: 既定の設定は **[すべてのデバイス]** です。 特定のデバイスの種類についてのみ取得データを表示するには、ここでそのデバイスの種類を選ぶことができます。
+-   **[デバイスの種類]**: 既定の設定は **[すべてのデバイス]** です。 特定のデバイスの種類 (PC、コンソール、タブレットなど) についてのみ取得データを表示するには、ここでそのデバイスの種類を選ぶことができます。
 
 以下のすべてのグラフで、指定した期間とフィルターに応じた情報が表示されます。 セクションの中には、追加のフィルターを適用できるものもあります。
 
@@ -67,7 +68,7 @@ Windows デベロッパー センター ダッシュボードの **[アドオン
 
 ## <a name="add-on-page-views-and-conversions-by-campaign-id"></a>キャンペーン ID ごとのアドオン ページ ビューとコンバージョン
 
-**[Add-on page views and conversions by campaign ID] (キャンペーン ID ごとのアドオン ページ ビューとコンバージョン)** グラフには、指定した期間でのキャンペーン ID ごとのアドオンのコンバージョン数 (取得数) が示され、[カスタム プロモーション キャンペーン](create-a-custom-app-promotion-campaign.md)ごとの Windows 10 ユーザーのコンバージョン数とページ ビュー数を追跡できます。 このグラフに表示されるのは、アドオンのコンバージョン数のみです。
+**[キャンペーン ID ごとのアドオン ページ ビューとコンバージョン]** グラフには、指定した期間でのキャンペーン ID ごとのアドオンのコンバージョン数 (取得数) が示され、[カスタム プロモーション キャンペーン](create-a-custom-app-promotion-campaign.md)ごとの Windows 10 ユーザー (Xbox ユーザーを含む) のコンバージョン数とページ ビュー数を追跡できます。 このグラフに表示されるのは、アドオンのコンバージョン数のみです。
 
 > [!NOTE]
 > ユーザーは、アプリの作成者が作成したものではないカスタム キャンペーンをクリックして、アプリの登録情報に到達する可能性があります。 Microsoft では、セッション内のすべてのページ ビューに、ユーザーが初めてストアに到達したときの経路となったキャンペーン ID を記録しています。 その後、24 時間以内に発生したアプリの取得についてはすべて、そのキャンペーン ID にコンバージョンが関連付けられます。 合計コンバージョン数の方がキャンペーン ID のコンバージョン数の合計よりも多い場合や、ページビューがゼロであるコンバージョンやアドオンのコンバージョンがレポートされることがあるのはこのためです。 

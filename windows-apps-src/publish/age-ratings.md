@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "アプリの申請プロセスの [年齢区分] ページでは、アプリに関する情報を提供して、International Age Ratings Coalition (IARC) から適切な年齢区分を受け取ることができるようにすることができます。"
-title: "年齢区分"
+Description: The Age ratings page of the app submission process lets you provide information about your app so it can receive the appropriate age ratings from the International Age Ratings Coalition (IARC).
+title: 年齢区分
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 02/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 4adac59c0508bcdd9c21180a1c6dcb70fc4532b3
-ms.sourcegitcommit: b42d14c775efbf449a544ddb881abd1c65c1ee86
+keywords: windows 10, uwp, 年齢区分, ゲームの評価, iarc, 評価, アンケート, レーティング機関, コンテンツ区分
+ms.localizationpriority: high
+ms.openlocfilehash: 0af2d316b0d0c4705c4669ef910f37845ca78aa8
+ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="age-ratings"></a>年齢区分
 
@@ -21,10 +22,10 @@ ms.lasthandoff: 07/20/2017
 
 ## <a name="answering-the-age-ratings-questionnaire"></a>年齢区分についての質問表への回答
 
-初めてアプリを申請するとき (または、従来の年齢区分プロセスを経て公開されたアプリを更新するとき) は、アプリの年齢区分を決定するための複数選択肢の質問表に回答することを求められます。
+初めてアプリを申請するときに (または、以前の年齢区分プロセスを使用して公開されたアプリを更新するときに)、アプリの年齢区分を決定するための複数選択肢の質問表が表示されます。
 
 > [!IMPORTANT]
-> 別のネットショップで既に質問表に回答していて、IARC の年齢区分 ID を割り当てられている場合、マイクロソフトに年齢区分 ID を提供するオプションを選ぶことができます。 その ID を使って、Windows ストアのアプリに既存の年齢区分を関連付けます。
+> 別のネットショップで既に質問表に回答していて、IARC の年齢区分 ID を割り当てられている場合、マイクロソフトに年齢区分 ID を提供するオプションを選ぶことができます。 その ID を使って、Microsoft Store のアプリに既存の年齢区分を関連付けます。
 
 正確に質問に回答する必要があります。 このプロセスにおいて、弊社は発行者の表示名とメール アドレスを IARC と共有します。 質問票に記入した後、回答に基づいて年齢区分とコンテンツ区分の情報が IARC 評価システムから提供されます。 弊社は、この評価情報をさまざまな市場の顧客にアプリを表示するときに使います。 また、アプリの公開後、アプリの区分を確認するメールを IARC から受信します。
 
@@ -37,7 +38,10 @@ ms.lasthandoff: 07/20/2017
 <span id="boards" />
 
 > [!NOTE]
-> 韓国の法律により、韓国で入手可能なゲームは韓国の [Game Rating Board](http://go.microsoft.com/fwlink/p/?LinkId=228256) の評価を受ける必要があります。 アプリがゲームであり、そのアプリを韓国で提供する場合は、この追加セクションに入力し、評価証明書をアップロードする必要があります。 アプリがゲームではない場合や、そのアプリを韓国で提供しない場合は、このセクションは空白のままでかまいません。
+> 韓国の法律により、韓国で入手可能なゲームは韓国の [Game Rating Board](http://go.microsoft.com/fwlink/p/?LinkId=228256) の評価を受ける必要があります。 韓国で提供する可能性のあるゲームを提出する場合は、この追加セクションに入力し、評価証明書をアップロードする必要があります。 アプリがゲームではない場合や、そのアプリを韓国で提供しない場合は、このセクションは空白のままでかまいません。
+
+> [!NOTE]
+> 台湾での利用が可能になるゲームを提出する場合は、提供された CSRR レーティングを[こちらのフォーム](https://go.microsoft.com/fwlink/?linkid=867281)で登録することが法律で義務付けられています。 
 
 <span id="appeal" />
 ## <a name="appealing-ratings-or-refused-classifications"></a>区分、または拒否された分類に対する要請
@@ -47,9 +51,9 @@ ms.lasthandoff: 07/20/2017
 場合によっては、アプリの評価により、特定の国または地域では不適切として分類される可能性があります。 この場合、その市場ではアプリを提供できないことを示すメッセージが表示されます。 この分類に関して (またはその他、その問題に関して) 不服がある場合は、IARC から受信する評価証明書メールに表示されているリンクを使用して要請することができます。
 
 
-## <a name="previous-windows-store-age-ratings"></a>前の Windows ストアの年齢区分
+## <a name="previous-microsoft-store-age-ratings"></a>以前の Microsoft Store の年齢区分
 
-以前は、質問表に回答するのではなく、開発者がアプリの年齢区分を指定していました。 以下に、以前の Windows ストアの年齢区分の詳細を示します。
+以前は、質問表に回答するのではなく、開発者がアプリの年齢区分を指定していました。 以下に、以前の Microsoft Store の年齢区分の詳細を示します。
 
 | 年齢区分                           | 説明                            |
 |--------------------------------------|----------------------------------------|

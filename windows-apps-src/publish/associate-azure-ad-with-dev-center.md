@@ -1,19 +1,19 @@
 ---
 author: jnHs
 Description: In order to add and manage account users, you must first associate your Dev Center account with your organization's Azure Active Directory.
-title: "Azure Active Directory とデベロッパー センター アカウントとの関連付け"
+title: Azure Active Directory とデベロッパー センター アカウントとの関連付け
 ms.author: wdg-dev-content
-ms.date: 01/12/2018
+ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, azure ad, azure テナント, aad テナント, azure ad テナント, テナント管理, テナント"
+keywords: windows 10, uwp, azure ad, azure テナント, aad テナント, azure ad テナント, テナント管理, テナント
 ms.localizationpriority: high
-ms.openlocfilehash: ef53a8b339f7f6444373d7445721b641926f00a3
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: c430bb279d0b9da6126212a8af7400df8cd1693e
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="associate-azure-active-directory-with-your-dev-center-account"></a>Azure Active Directory とデベロッパー センター アカウントとの関連付け
 
@@ -22,12 +22,12 @@ ms.lasthandoff: 01/12/2018
 Windows デベロッパー センターでは、複数のユーザー アカウントのアクセスと管理に Azure AD を利用します。 組織で Office 365 または Microsoft の他のビジネス サービスが既に使用されている場合は、既に Azure AD をお持ちです。 それ以外の場合は、デベロッパー センター内から新しい Azure AD テナントを追加料金なしで作成できます。
 
 > [!TIP]
-> このトピックは、Windows アプリ開発者プログラムに固有の内容ですが、テナントの関連付けとユーザーの管理は Windows ハードウェア開発者プログラムのアカウントでも同様に機能します。 このセクションでは、**マネージャー**の役割への言及は、**管理者**の役割を持つハードウェア アカウントにも適用されます。 ハードウェア開発者プログラムでのユーザー管理について詳しくは、「[ダッシュボードの管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)」をご覧ください。
+> このトピックは Windows アプリ開発者プログラムに固有の内容ですが、テナントの関連付けとユーザーの管理は Windows デスクトップ アプリケーション プログラム (詳しくは「[Windows デスクトップ アプリケーション プログラム](https://msdn.microsoft.com/library/windows/desktop/mt826504#users)」を参照) のアカウントでも Windows ハードウェア開発者プログラム (**マネージャー** ロールという記述は、**管理者**ロールのハードウェア アカウントにも適用されます。詳しくは「[ダッシュボードの管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)」を参照) のアカウントでも同様に機能します。
 
-1 つの Azure AD テナントを複数のデベロッパー センター アカウントに関連付けることができます。 複数のアカウント ユーザーを追加には 1 つの Azure AD テナントをデベロッパー センター アカウントに関連付けるだけでかまいませんが、複数の Azure AD テナントを 1 つのデベロッパー センター アカウントに追加することもできます。 デベロッパー センター アカウントで**マネージャー**の役割を持つすべてのユーザーは、Azure AD テナントの追加と削除を行うことができます。
+1 つの Azure AD テナントを複数のデベロッパー センター アカウントに関連付けることもできます。 複数のアカウント ユーザーを追加には 1 つの Azure AD テナントをデベロッパー センター アカウントに関連付けるだけでかまいませんが、複数の Azure AD テナントを 1 つのデベロッパー センター アカウントに追加することもできます。 デベロッパー センター アカウントで**マネージャー** ロールを持つすべてのユーザーは、Azure AD テナントの追加と削除を行うことができます。
 
 > [!IMPORTANT]
-> デベロッパー センター アカウントを Azure AD テナントと関連付けた後、そのテナントでアカウント ユーザーを追加および管理するには、**マネージャー**の役割を持つ同じテナントのユーザーとしてデベロッパー センターにサインインする必要があります。
+> デベロッパー センター アカウントを Azure AD テナントと関連付けた後、そのテナントでアカウント ユーザーを追加および管理するには、**マネージャー** ロールを持つ同じテナントのユーザーとしてデベロッパー センターにサインインする必要があります。
 
 
 ## <a name="associate-your-dev-center-account-with-your-organizations-existing-azure-ad-tenant"></a>デベロッパー センター アカウントと組織の既存の Azure AD テナントを関連付ける
@@ -65,14 +65,14 @@ Azure AD テナントをデベロッパー センター アカウントに関連
 
 ### <a name="add-multiple-azure-ad-tenants-to-your-dev-center-account"></a>デベロッパー センター アカウントへの複数の Azure AD テナントの追加
 
-デベロッパー センター アカウントの**マネージャー**の役割を持つユーザーは、Azure AD テナントをアカウントに関連付けることができます。
+デベロッパー センター アカウントの**マネージャー** ロールを持つユーザーは、Azure AD テナントをアカウントに関連付けることができます。
 
 新しいテナントを関連付けるには、**[別の Azure AD テナントの関連付け]** を選び、上記の手順に従います。 関連付ける Azure AD テナントの資格情報が求められる点に注意してください。
 
 
 ### <a name="remove-an-azure-ad-tenant-from-your-dev-center-account"></a>デベロッパー センター アカウントからの Azure AD テナントの削除
 
-デベロッパー センター アカウントの**マネージャー**の役割を持つユーザーは、Azure AD テナントをアカウントから削除することができます。
+デベロッパー センター アカウントの**マネージャー** ロールを持つユーザーは、Azure AD テナントをアカウントから削除することができます。
 
 > [!IMPORTANT]
 > テナントを削除すると、そのテナントからデベロッパー センター アカウントに追加されたすべてのユーザーはアカウントにサインインできなくなります。 

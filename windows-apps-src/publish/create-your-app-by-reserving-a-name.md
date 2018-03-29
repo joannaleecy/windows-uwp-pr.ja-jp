@@ -1,28 +1,27 @@
 ---
 author: jnHs
-Description: "Windows デベロッパー センター ダッシュボードで新しいアプリを作るときは、最初にアプリ名を予約します。 ここでは、アプリ名を予約する方法について説明し、優れたアプリ名を選ぶための推奨事項を紹介します。"
-title: "名前の予約によるアプリの作成"
-keywords: Windows 10, UWP
+Description: The first step in creating a new app in your Windows Dev Center dashboard is reserving an app name. See how to reserve app names and find suggestions for choosing a great name for your app.
+title: 名前の予約によるアプリの作成
+keywords: windows 10, uwp, 名前の予約, アプリ名, アプリの名前, 名前, 製品名, 名前付け
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 01/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 55bd36cf1a84cc8d79d7e7373da22e97e571542e
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.localizationpriority: high
+ms.openlocfilehash: 960acceb9f665b9d2f2d1def680626876c3aa29b
+ms.sourcegitcommit: b6915c7fa2c7292e9b4e3d3e9927dc8746ec1ffb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>名前の予約によるアプリの作成
 
 
-Windows デベロッパー センター ダッシュボードで新しいアプリを作るときは、最初にアプリ名を予約します。 ここでは、アプリ名を予約する方法について説明し、[優れたアプリ名を選ぶ](#choosing-your-apps-name)ための推奨事項を紹介します。 予約する名前は、ストア全体で一意にする必要があります。
+Windows デベロッパー センター ダッシュボードで新しいアプリを作るときは、最初にアプリ名を予約します。 ここでは、アプリ名を予約する方法について説明し、[優れたアプリ名を選ぶ](#choosing-your-apps-name)ための推奨事項を紹介します。 予約する名前は、Microsoft Store 全体で一意にする必要があります。
 
 [アプリのパッケージをアップロード](upload-app-packages.md)するには、アプリに予約した名前と [**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-1-displayname) の値が一致している必要があります。 アプリのパッケージを作成するために Microsoft Visual Studio を使う場合は、この属性が自動的に入力されます。
-
-以前の Windows Phone ダッシュボードを使って作成した Windows Phone アプリがあり、そのアプリ用に名前を予約していなかった場合でも、そのアプリを管理および申請できます。 ただし、アプリの .appx パッケージをアップロードしたり、.appx パッケージに特有の[アプリ ID の詳細情報を表示](view-app-identity-details.md)したりするには、次の手順に従って一意の名前を予約する必要があります。 これにより、他の開発者がその名前を予約できないようになります。
 
 ## <a name="create-your-app-by-reserving-a-new-name"></a>新しい名前の予約によるアプリの作成
 
@@ -35,9 +34,12 @@ Windows デベロッパー センター ダッシュボードで新しいアプ�
 これにより名前が予約され、準備ができたときに[申請](app-submissions.md)を開始することができます。
 
 > [!NOTE]
-> 名前を予約するときに、その名前のアプリがストアの登録情報にない場合でも、予約できないことがあります。 これは多くの場合、他の開発者がアプリのために既にその名前を予約していて、そのアプリをまだ申請していないことが原因です。 自分が商標などの法的権利を持っている名前を予約できない場合や、Windows ストア内でその名前を使っている別のアプリを見つけた場合は、[Microsoft にお知らせください](http://go.microsoft.com/fwlink/p/?LinkId=233777)。
+> 名前を予約するときに、その名前のアプリが Microsoft Store の登録情報にない場合でも、予約できないことがあります。 これは多くの場合、他の開発者がアプリのために既にその名前を予約していて、そのアプリをまだ申請していないことが原因です。 自分が商標などの法的権利を持っている名前を予約できない場合や、Microsoft Store 内でその名前を使っている別のアプリを見つけた場合は、[Microsoft にお知らせください](http://go.microsoft.com/fwlink/p/?LinkId=233777)。
 
-名前を予約した後は、そのアプリを 1 年以内に申請します。 1 年以内にアプリを申請しない場合、名前の予約は期限切れになり、他の開発者がアプリにその名前を使うことができるようになります。 期限切れの名前でアプリを申請しようとすると、エラーが発生する可能性があります。
+名前を予約した後は、そのアプリを 1 年以内に申請する必要があります。 1 年以内にアプリを申請しない場合、名前の予約は期限切れになり、他の開発者がアプリにその名前を使うことができるようになります。 期限切れの名前でアプリを申請しようとすると、エラーが発生する可能性があります。
+
+> [!NOTE]
+> 以前の Windows Phone ダッシュボードで作成した Windows Phone アプリがあり、その名前を予約していなかった場合、そのアプリの .appx パッケージをアップロードしたり、.appx パッケージに固有の[アプリ ID の詳細を表示](view-app-identity-details.md)したりするには、アプリの名前を予約する必要があります。 また、一意の名前を予約すると、他の開発者はその名前を予約できなくなります。 ただし、名前を予約していない場合でも、Windows Phone 8.x ユーザー向けにアプリを管理および申請できます。
 
 
 ## <a name="choosing-your-apps-name"></a>アプリ名の選択
@@ -52,6 +54,8 @@ Windows デベロッパー センター ダッシュボードで新しいアプ�
 -   **独自の名前にする。** 既にある別のアプリと間違えられることのないよう、区別しやすいアプリ名を選ぶようにします。
 -   **他者が登録した商標名を使わない。** 予約した名前が商標などの法的権利を侵害していないことを確認してください。 その名前が他者によって商標登録されている場合は、侵害が通報され、その名前の使用を続行できなくなることがあります。 アプリの公開後にこの問題が発生した場合は、アプリがストアから削除されます。 また、もう一度認定用に[アプリを提出](app-submissions.md)する前に、アプリ名を変更し、アプリとコンテンツ全体にわたって名前の記載や表示をすべて変更する必要があります。
 -   **区別のための情報を名前の末尾に追加しない。** 複数のアプリを区別するための情報が名前の末尾に追加されていると、長い名前の場合は特に、その情報をユーザーが見落としかねません。その結果、すべてのアプリが同じ名前に見える可能性があります。 この問題を避けられない場合には、使用するロゴとアプリの画像を変えることで、アプリの違いを判別しやすくすることをお勧めします。
+-   **名前に絵文字を含めないでください。** 絵文字やその他のサポートされていない文字が含まれる名前を予約することはできません。
+
 
 ## <a name="manage-additional-app-names"></a>追加のアプリ名の管理
 

@@ -1,25 +1,22 @@
 ---
 author: TylerMSFT
-title: "URI のアクティブ化の処理"
-description: "URI (Uniform Resource Identifier) スキーム名の既定のハンドラーとしてアプリを登録する方法について説明します。"
+title: URI のアクティブ化の処理
+description: URI (Uniform Resource Identifier) スキーム名の既定のハンドラーとしてアプリを登録する方法について説明します。
 ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 10/12/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 40c70770028853d5912ef63f84259245252ce881
-ms.sourcegitcommit: 7f03e200ef34f7f24b6f8b6489ecb44aa2b870bc
+ms.localizationpriority: high
+ms.openlocfilehash: 754fa7c1fe805b45b33be1d560d07c22646d497c
+ms.sourcegitcommit: 444eaccbdcd4be2f1a1e6d4ce5525ba57e363b56
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/01/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="handle-uri-activation"></a>URI のアクティブ化の処理
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
-
 
 **重要な API**
 
@@ -30,12 +27,11 @@ URI (Uniform Resource Identifier) スキーム名の既定のハンドラーと�
 
 URI スキーム名に登録するのは、その種類の URI スキームのすべての URI 起動を処理する場合のみにすることをお勧めします。 URI スキーム名に登録する場合は、その URI スキームのためにアプリをアクティブ化した際に期待される機能をエンド ユーザーに提供する必要があります。 たとえば、mailto: URI スキーム名に登録したアプリでは、新しいメールを開いて、ユーザーが新しいメールを書くことができるようにする必要があります。 URI の関連付けについて詳しくは、「[ファイルの種類と URI のガイドラインとチェック リスト](https://msdn.microsoft.com/library/windows/apps/hh700321)」をご覧ください。
 
-以下の手順では、カスタムの URI スキーム名 alsdk:// を登録する方法と、ユーザーによって alsdk:// URI が起動されたときにアプリをアクティブ化する方法について説明します。
+以下の手順では、カスタムの URI スキーム名 `alsdk://` を登録する方法と、ユーザーによって `alsdk://` URI が起動されたときにアプリをアクティブ化する方法について説明します。
 
 > **注**  UWP アプリでは、組み込みのアプリとオペレーティング システムで使うために、特定の URI とファイル拡張子が予約されています。 予約されている URI またはファイル拡張子にアプリを登録しようとしても無視されます。 予約または禁止されいるため、UWP アプリを登録できない URI スキームの一覧 (アルファベット順) については、「[予約済みの URI スキーム名とファイルの種類](reserved-uri-scheme-names.md)」をご覧ください。
 
 ## <a name="step-1-specify-the-extension-point-in-the-package-manifest"></a>ステップ 1: パッケージ マニフェストに拡張点を指定する
-
 
 アプリは、パッケージ マニフェストに一覧表示される URI スキーム名のアクティブ化イベントだけを受け取ります。 アプリが `alsdk` URI スキーム名を処理することを示す方法は次のとおりです。
 
@@ -63,22 +59,26 @@ URI スキーム名に登録するのは、その種類の URI スキームの�
     これにより、次のような [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) 要素がパッケージ マニフェストに追加されます。 **windows.protocol** カテゴリは、アプリが `alsdk` URI スキーム名を処理することを示しています。
 
     ```xml
-          <Extensions>
-            <uap:Extension Category="windows.protocol">
-              <uap:Protocol Name="alsdk">
-                <uap:Logo>images\icon.png</uap:Logo>
-                <uap:DisplayName>SDK Sample URI Scheme</uap:DisplayName>
-              </uap:Protocol>
-            </uap:Extension>
+    <Applications>
+        <Application Id= ... >
+            <Extensions>
+                <uap:Extension Category="windows.protocol">
+                  <uap:Protocol Name="alsdk">
+                    <uap:Logo>images\icon.png</uap:Logo>
+                    <uap:DisplayName>SDK Sample URI Scheme</uap:DisplayName>
+                  </uap:Protocol>
+                </uap:Extension>
           </Extensions>
+          ...
+        </Application>
+   <Applications>
     ```
 
 ## <a name="step-2-add-the-proper-icons"></a>ステップ 2: 適切なアイコンを追加する
 
-URI スキーム名の既定となるアプリは、そのアイコンがシステムのさまざまな場所に表示されます。アイコンは、[既定のプログラム] コントロール パネルなどに表示されます。 このため、プロジェクトに 44 x 44 アイコンを含めます。 アプリのタイルのロゴの外観を調和させ、アイコンを透明にするのではなく、アプリの背景色を使います。 パディングせずにロゴを端まで拡張します。 アイコンは、白い背景でテストします。 アイコンについて詳しくは、「[タイルとアイコン アセットのガイドライン](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets)」をご覧ください。
+URI スキーム名の既定となるアプリは、そのアイコンがシステムのさまざまな場所に表示されます。アイコンは、[既定のプログラム] コントロール パネルなどに表示されます。 このため、プロジェクトに 44 x 44 アイコンを含めます。 アプリのタイルのロゴの外観を調和させ、アイコンを透明にするのではなく、アプリの背景色を使います。 パディングせずにロゴを端まで拡張します。 アイコンは、白い背景でテストします。 アイコンについて詳しくは、「[タイルとアイコン アセットのガイドライン](https://docs.microsoft.com/windows/uwp/shell/tiles-and-notifications/app-assets)」をご覧ください。
 
 ## <a name="step-3-handle-the-activated-event"></a>ステップ 3: アクティブ化イベントを処理する
-
 
 [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) イベント ハンドラーは、すべてのファイル アクティブ化イベントを受け取ります。 **Kind** プロパティは、アクティブ化イベントの種類を示しています。 次の例では、[**Protocol**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.activation.activationkind.aspx#Protocol) アクティブ化イベントを処理するように設定されています。
 
@@ -123,12 +123,21 @@ URI スキーム名の既定となるアプリは、そのアイコンがシス�
 
 > **注**  プロトコル コントラクトを介して起動した場合、戻るボタンが使われたときは、アプリの以前のコンテンツに戻るのではなく、アプリを起動した画面に戻るようにする必要があります。
 
+次のコードでは、プログラムで URI からアプリを起動しています。
+
+```cs
+   // Launch the URI
+   var uri = new Uri("alsdk:");
+   var success = await Windows.System.Launcher.LaunchUriAsync(uri)
+```
+
+URI からアプリを起動する方法について詳しくは、「[URI に応じた既定のアプリの起動](launch-default-app.md)」をご覧ください。
+
 新しいページを開くアクティブ化イベントごとにアプリで新しい XAML [**フレーム**](https://msdn.microsoft.com/library/windows/apps/br242682)を作成することをお勧めします。 こうすると、新しい XAML **フレーム**のナビゲーション バックスタックに、中断されたときに現在のウィンドウに表示されていた以前のコンテンツが含まれなくなります。 起動コントラクトとファイル コントラクトで単一 XAML **フレーム**を使うことにしたアプリは、新しいページに移動する前に**フレーム**のナビゲーション ジャーナルにあるページをクリアする必要があります。
 
 プロトコルのアクティブ化によって起動されるときは、アプリの先頭ページに戻ることができる UI を含めることを検討してください。
 
 ## <a name="remarks"></a>注釈
-
 
 URI スキーム名は、悪意のあるものも含め、あらゆるアプリや Web サイトから使われる可能性があります。 そのため、その URI で受け取るデータは、信頼できないソースからのデータである可能性があります。 URI で受け取るパラメーターに基づいて永続的な操作を実行しないことをお勧めします。 たとえば、アプリを起動するとユーザーのアカウント ページが表示されるようにするために URI パラメーターを使うことはかまいませんが、ユーザーのアカウントを直接変更するためにプロトコル パラメーターを使うことは行わないことをお勧めします。
 
@@ -140,16 +149,11 @@ URI スキーム名は、悪意のあるものも含め、あらゆるアプリ�
 
 アプリが、起動コントラクトとプロトコル コントラクトに単一 XAML [**フレーム**](https://msdn.microsoft.com/library/windows/apps/br242682)を使うようにした場合は、新しいページに移動する前に**フレーム**のナビゲーション ジャーナルにあるページをクリアする必要があります。 プロトコル コントラクトによって起動されるときは、アプリの先頭に戻ることができる UI をアプリに含めることを検討してください。
 
-> **注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
-
- 
-
 ## <a name="related-topics"></a>関連トピック
-
 
 **完全な例**
 
-* [Association Launching サンプル](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+* [Association Launching サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)
 
 **概念**
 
@@ -167,9 +171,9 @@ URI スキーム名は、悪意のあるものも含め、あらゆるアプリ�
 
 **リファレンス**
 
-* [**AppX パッケージ マニフェスト**](https://msdn.microsoft.com/library/windows/apps/dn934791)
-* [**Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742)
-* [**Windows.UI.Xaml.Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330)
+* [AppX パッケージ マニフェスト](https://msdn.microsoft.com/library/windows/apps/dn934791)
+* [Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/br224742)
+* [Windows.UI.Xaml.Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330)~~
 
  
 

@@ -2,7 +2,7 @@
 author: normesta
 Description: Create a modern Windows app package for your existing Windows Forms, WPF, or Win32 app or game. Add modern experiences for Windows 10 users and simplify deployment and monitization.
 Search.Product: eADQiWindows 10XVcnh
-title: "デスクトップ ブリッジ"
+title: デスクトップ ブリッジ
 ms.author: normesta
 ms.date: 08/30/2017
 ms.topic: article
@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: high
-ms.openlocfilehash: b8a70a249a91f654354d27faeffdf5f605fd9c26
-ms.sourcegitcommit: 12cc05b59b2a249a7683a8692ed453da03a91b28
+ms.openlocfilehash: 3cbaa8a8e78ad14472a34e107521d9c966ba434f
+ms.sourcegitcommit: 884b79b4c6fd8014fab9953faca557e56bb8c400
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="desktop-bridge"></a>デスクトップ ブリッジ
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 01/04/2018
 Windows 10 エクスペリエンスを実現するために使用するコード以外は、アプリは元のままです。引き続き、そのアプリを既存の Windows 7、Windows Vista、または Windows XP のユーザーに配布できます。 Windows 10 では、このアプリを現在のアプリと同じように、完全な信頼ユーザー モードで引き続き実行できます。
 
 >[!IMPORTANT]
->デスクトップ ブリッジは、Windows 10 バージョン 1607 で導入され、Visual Studio で、Windows 10 Anniversary Edition (10.0、ビルド 14393) 以降のリリースをターゲットとするプロジェクトでのみ使用できます。
+>デスクトップ ブリッジは、Windows 10 Version 1607 で導入されており、Windows 10 Anniversary Update (10.0、ビルド 14393) 以降のリリースをターゲットとする Visual Studio プロジェクトでのみ使用できます。
 
 > [!NOTE]
 > Microsoft Virtual Academy から公開されている、<a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">このシリーズ</a>の短いビデオをご覧ください。 これらのビデオでは、デスクトップ アプリをユニバーサル Windows プラットフォーム (UWP) に移行するプロセスをすべて説明しています。

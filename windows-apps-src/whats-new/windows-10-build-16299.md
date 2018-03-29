@@ -1,19 +1,19 @@
 ---
 author: QuinnRadich
-title: "Windows 10 の開発者向け新着情報、ツールと機能"
-description: "Windows 10 ビルド 16299 と新しい開発者ツールでは、ユニバーサル Windows プラットフォームによって強化されたツール、機能、エクスペリエンスを利用できます。"
-keywords: "新着情報, 新機能, 更新, 更新プログラム, 機能, 新規, Windows 10, 1709, 10 月, 最新, 開発者, 16299, Fall Creators"
+title: Windows 10 の開発者向け新着情報、ツール、機能
+description: Windows 10 ビルド 16299 と新しい開発者ツールでは、ユニバーサル Windows プラットフォームによって強化されたツール、機能、エクスペリエンスを利用できます。
+keywords: 新着情報, 新機能, 更新, 更新プログラム, 機能, 新規, Windows 10, 1709, 10 月, 最新, 開発者, 16299, Fall Creators
 ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: high
-ms.openlocfilehash: 852d59433f3dfe24da6509e588e350dbe1011bbf
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: 1e61ede3d16d9c92c28a0e40a0dd65951444ef3a
+ms.sourcegitcommit: eead3c00b27d9f66f79ec08c81a97e91dc1fdb3c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>Windows 10 ビルド 16299 の開発者向け新着情報
 
@@ -31,6 +31,8 @@ Fluent Design の効果 | これらの新しい効果は Fluent Design System �
 キーボード アクセラレータ | [キーボード アクセラレータ](../design/input/keyboard-accelerators.md)、つまりショートカットによって、アプリのアクセシビリティと使いやすさが向上します。 ユーザーがアプリの UI を移動しなくても直感的な方法で一般的な操作やコマンドを呼び出すことができ、必要な機能のスコープに合わせて構成することができます。
 インク操作 | [CoreIncrementalInkStroke](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.core.coreincrementalinkstroke) API を使うと、個々の **InkPoint** オブジェクトを使って段階的にレンダリングできる個々のインク ストロークを作成できます。 </br></br> [CoreInkPresenterHost](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.core.coreinkpresenterhost) API を使うと、関連する **InkCanvas** コントロールがなくても **InkPresenter** オブジェクトをホストできます。
 ラジアル コントローラー | [RadialControllerConfiguration](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerconfiguration) API は、**RadialController** メニューをアプリのビューまたはプロセスに絞り込む機能によって更新されました。
+ライブ タイル | [Desktop Bridge Win32 アプリからセカンダリタイルをピン留め](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md)します。
+トースト通知 | ボタンに[保留更新](../design/shell/tiles-and-notifications/toast-pending-update.md)を使用して、トースト内に複数ステップの対話機能を作成します。
 UI コントロール | 新しいコントロールを使用すると、優れた外観の UI をすばやく簡単に作成できます。 </br>* [カラー ピッカー コントロール](../design/controls-and-patterns/color-picker.md)では、ユーザーが色を自由に確認しながら選択できます。 </br>* [ナビゲーション ビュー コントロール](../design/controls-and-patterns/navigationview.md)を使うと、トップレベルのナビゲーションを簡単にアプリに追加できます。 </br>* [ユーザー画像コントロール](../design/controls-and-patterns/person-picture.md)では、人物のアバター画像を表示できます。 </br>* [評価コントロール](../design/controls-and-patterns/rating.md)では、ユーザーが評価の確認と設定を簡単に行うことができます。評価には、コンテンツやサービスに関する満足度が反映されます。
 ボイスとトーン | 新しい [UWP アプリでのトーンのボイスに関するガイダンス](../design/style/voice-and-tone.md)が追加され、アプリでテキストを記述するためのアドバイスを提供します。 作成する対象に関係なく、使用する言葉が親しみやすく、友好的で、有益であることが重要です。
 
@@ -46,7 +48,7 @@ UI コントロール | 新しいコントロールを使用すると、優れ�
 TruePlay | [TruePlay](https://aka.ms/trueplay) は、PC ゲーム内での不正な行為の防止するための新しいツール セットを開発者に提供します。 TruePlay に登録されているゲームは、保護されたプロセスで実行されるため、一般的な種類の攻撃が軽減されます。 ユニバーサル Windows プラットフォーム (UWP) 用の TruePlay API を使うと、Windows 10 PC におけるゲームとゲーム監視システムの間の操作を制限することができます。 これらの API は **&lt;gamemonitor.h&gt;** ヘッダーに含まれています。
 Xbox Live | Xbox Live 開発者向けに、UWP ゲームと Xbox 開発キット (XDK) のゲームの両方に関するドキュメントが追加されました。 </br>* 「[Xbox Live 開発者向けガイド](../xbox-live/index.md)」では、Xbox Live API を使ってゲームを Xbox Live ソーシャル ゲーミング ネットワークに接続する方法について説明します。 </br>* [Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)を利用すると、UWP ゲーム開発者はだれでも、PC と Xbox One の両方で Xbox Live 対応ゲームを開発して公開できます。 </br>* Xbox Live 開発者向けに提供されているプログラムと機能については、「[Xbox Live 開発者プログラムの概要](../xbox-live/developer-program-overview.md)」をご覧ください。
 
-## <a name="develop-windows-apps"></a>Windows アプリを開発
+## <a name="develop-windows-apps"></a>Windows アプリの開発
 
 機能 | 説明
  :------ | :------
@@ -68,7 +70,7 @@ EdgeHTML 16 | Microsoft Edge および JS ベースのユニバーサル Windows
 メディア再生 | メディア再生の基本について説明する記事に、新しいセクション「[MediaPlayer を使ったオーディオとビデオの再生](../audio-video-camera/play-audio-and-video-with-mediaplayer.md)」が追加されました。 </br></br>* 「[MediaPlayer を使った球面ビデオの再生](../audio-video-camera/play-audio-and-video-with-mediaplayer.md)」セクションでは、球状にエンコードされたビデオの再生方法を示します。サポートされる形式に合わせて視野やビューの向きを調整する方法についても説明しています。 </br></br>* 「[フレーム サーバー モードでの MediaPlayer の使用](../audio-video-camera/play-audio-and-video-with-mediaplayer.md#use-mediaplayer-in-frame-server-mode)」セクションでは、[MediaPlayer](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) で再生されるメディアから Direct3D サーフェスにフレームをコピーする方法を示します。 これにより、ピクセル シェーダーを使ってリアルタイムの効果を適用するといったシナリオを実現できます。 コード例では、Win2D を使ってビデオ再生にぼかし効果を適用する簡単な実装を紹介しています。
 マイ連絡先 | マイ連絡先では、ユーザーがアプリケーションから直接、タスク バーに連絡先をピン留めできます。 [アプリケーションにマイ連絡先のサポートを追加する方法については、こちらをご覧ください。](../contacts-and-calendar/my-people-support.md) </br></br>* [マイ連絡先の共有](../contacts-and-calendar/my-people-sharing.md)では、アプリケーションを通じて、ユーザーがタスク バーから直接ファイルを共有できます。 </br>* [マイ連絡先の通知](../contacts-and-calendar/my-people-support.md)は、ピン留めした連絡先にユーザーが通知を送信できる新しい種類のトースト通知です。
 .NET Standard 2.0 | ユニバーサル Windows プラットフォームに [.NET Standard 2.0](https://docs.microsoft.com/dotnet/standard/net-standard#net-implementation-support) が完全に実装されました。 この新しいバージョンの標準では、お気に入りの NuGet パッケージとサード パーティ製ライブラリに対する互換性 shim が追加されているだけでなく、.NET API の数が大幅に増えています。 </br></br> iOS や Android などの他のプラットフォームをターゲットとする予定の場合、またはデスクトップ アプリケーションを持っていて UWP アプリを作成したいと思っている場合は、コードを .NET Standard 2.0 クラス ライブラリに移動し、アプリの各バージョンでそのコードを再利用できます。
-タスク バーにピン留め | 新しい TaskbarManager クラスでは、[アプリをタスク バーにピン留め](../design/shell/pin-to-taskbar.md)するようにユーザーに勧めることができます。
+タスク バーへのピン留め | 新しい TaskbarManager クラスでは、[アプリをタスク バーにピン留め](../design/shell/pin-to-taskbar.md)するようにユーザーに勧めることができます。
 POS (店舗販売時点管理) | [POS (店舗販売時点管理) サービス](../devices-sensors/pos-get-started.md)を利用する場合に役立つ新しいガイドが追加されました。 このガイドでは、デバイスの列挙、デバイス機能の確認、デバイスの要求、デバイスの共有といったトピックについて説明します。
 音声認識 | Web サービス [SpeechRecognitionTopicConstraint](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint) と共に [SpeechRecognitionListConstraint](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint) を使って、ディクテーション中に使うと予想されるドメイン固有の一連のキーワードを指定することにより、ディクテーションの精度を上げることができるようになりました。
 ユーザー アクティビティ | 新しい [Windows.ApplicationModel.UserActivities](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities) API を使うと、後で再開する可能性がある (場合によっては別のデバイスで) ユーザー タスクをカプセル化できるようになりました。

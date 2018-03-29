@@ -1,7 +1,7 @@
 ---
 author: mijacobs
-description: "表示は照明効果の 1 つで、アプリの対話型要素に奥行きを与え、焦点を当てるために役立ちます。"
-title: "表示ハイライト"
+description: 表示は発光効果の 1 つで、アプリの対話型要素に奥行きを与え、焦点を当てるために役立ちます。
+title: 表示ハイライト
 template: detail.hbs
 ms.author: mijacobs
 ms.date: 08/9/2017
@@ -14,19 +14,20 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: high
-ms.openlocfilehash: 8ba0d9939d7ab1d9826ed2848e476499f09c628f
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
+ms.openlocfilehash: 2ec95f757b041b74dda8bc0606ad8113881809d5
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="reveal-highlight"></a>表示ハイライト
 
-表示は照明効果の 1 つで、アプリの対話型要素に奥行きを与え、焦点を当てるために役立ちます。
+表示ハイライトは、ユーザーがポインターを近付けたときにコマンド バーなどの対話型要素を目立たせるための発光効果です。 
 
 > **重要な API**: [RevealBrush クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)、[RevealBackgroundBrush クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、[RevealBorderBrush クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)、[RevealBrushHelper クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper)、[VisualState class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
-表示動作は、ポインターが近くにある場合にクリック可能なコンテンツのコンテナーを表示することによりこれを行います。
+## <a name="how-it-works"></a>動作のしくみ
+表示ハイライトでは、対話型要素に注意が向くように、ポインターが近付いたときに要素のコンテナーが明示されます (下図参照)。
 
 ![表示のビジュアル効果](images/Nav_Reveal_Animation.gif)
 
@@ -39,7 +40,7 @@ ms.lasthandoff: 01/08/2018
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/Reveal">アプリを開き、表示の動作を確認</a>してください。</p>
+    <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/Reveal">アプリを開き、表示効果の動作を確認</a>してください。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">ソース コード (GitHub) を入手する</a></li>
@@ -48,34 +49,29 @@ ms.lasthandoff: 01/08/2018
 </tr>
 </table>
 
-## <a name="video-summary"></a>ビデオの概要
+## <a name="video-summary"></a>概要 (ビデオ)
 
 > [!VIDEO https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Fall-Creators-Update/WinDev013/player]
 
-## <a name="reveal-and-the-fluent-design-system"></a>表示と Fluent Design System
+## <a name="how-to-use-it"></a>使用方法
 
- Fluent Design System では、ライト、深度、モーション、マテリアル、スケールを取り入れた、モダンで目を引く UI を作成できます。 表示は、アプリにライトを追加する Fluent Design System コンポーネントです。 詳しくは、[UWP 用の Fluent Design の概要に関するページ](../fluent-design-system/index.md)をご覧ください。
+表示効果は、一部のコントロールでは自動的に動作します。 他のコントロールでは、コントロールに特別なスタイルを割り当てることにより表示効果を有効にできます。この記事の「[他のコントロールで表示効果を有効にする](#enabling-reveal-on-other-controls)」と「[カスタム コントロールで表示効果を有効にする](#enabling-reveal-on-custom-controls)」をご覧ください。
 
-## <a name="how-to-use-it"></a>用途
-
-表示は、一部のコントロールでは自動的に動作します。 他のコントロールでは、コントロールに特別なスタイルを割り当てることにより表示を有効にできます。
-
-## <a name="controls-that-automatically-use-reveal"></a>表示を自動的に使用するコントロール
+## <a name="controls-that-automatically-use-reveal"></a>表示効果が自動的に使用されるコントロール
 
 - [**ListView**](../controls-and-patterns/lists.md)
 - [**GridView**](../controls-and-patterns/lists.md)
 - [**TreeView**](../controls-and-patterns/tree-view.md)
 - [**NavigationView**](../controls-and-patterns/navigationview.md)
-- [**AutosuggestBox**](../controls-and-patterns/auto-suggest-box.md)
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
 - [**CommandBar**](../controls-and-patterns/app-bars.md)
-- [**ComboBox**](../controls-and-patterns/lists.md)
 
-これらの図は、いくつかの異なるコントロールでの表示効果を示しています。
+以下の図は、種類が異なるコントロールでの表示効果を示しています。
 
-![表示の例](images/RevealExamples_Collage.png)
+![表示効果の例](images/RevealExamples_Collage.png)
 
-## <a name="enabling-reveal-on-other-common-controls"></a>他の一般的なコントロールで表示を有効にする
+
+## <a name="enabling-reveal-on-other-controls"></a>他のコントロールで表示効果を有効にする
 
 表示の適用が必要なシナリオの場合 (シナリオで使用されるコントロールはメイン コンテンツである場合、またはそれらのコントロールがリストやコレクションに対応するために使用される場合)、オプトインのリソース スタイルが用意されているので、これらのスタイルを使用することで、そのような状況で表示を有効にすることができます。
 
@@ -87,23 +83,74 @@ ms.lasthandoff: 01/08/2018
 | ToggleButton | ToggleButtonRevealStyle |
 | RepeatButton | RepeatButtonRevealStyle |
 | AppBarButton | AppBarButtonRevealStyle |
-| SemanticZoom | SemanticZoomRevealStyle |
+| AppBarToggleButton | AppBarToggleButtonRevealStyle |
+| GridViewItem (表示効果がコンテンツより手前) | GridViewItemRevealBackgroundShowsAboveContentStyle |
 
-これらのスタイルを適用するには、Style プロパティを次のように更新するだけです。
+これらのスタイルを適用するには、コントロールの [Style](/uwp/api/Windows.UI.Xaml.Style) プロパティを次のように設定します。
 
-```XAML
+```xaml
 <Button Content="Button Content" Style="{StaticResource ButtonRevealStyle}"/>
 ```
 
-## <a name="enabling-reveal-on-custom-controls"></a>カスタム コントロールで表示を有効にする
+### <a name="reveal-in-themes"></a>テーマ内の表示効果
 
-システム コントロールが表示を取得するかどうかを判断する際に考える必要がある一般的なルールは、すべてアプリで実行する包括的な機能またはアクションに関連している対話型要素のグループを作成する必要があるということです。
+表示効果は、コントロール、アプリ、またはユーザー設定で指定されているテーマによって少し異なります。 黒テーマの表示効果では境界線とホバー ライトが白ですが、白テーマでは境界線が明るい灰色になります。
 
-たとえば、NavigationView の項目はページ ナビゲーションに関連しています。 CommandBar のボタンは、メニューのアクションまたはページ機能のアクションに関連しています。 その下にある MediaTransportControl のボタンは、すべて再生するメディアに関連しています。
+![黒テーマと白テーマでの表示効果](images/Dark_vs_LightReveal.png)
 
-表示を取得するコントロールが互いに関連している必要はありません。高密度の領域に存在し、大きい目的に適合しているだけでかまいません。
+白テーマのときに白の境界線を有効にするには、コントロールに指定されたテーマを黒に設定します。
 
-カスタム コントロールや再テンプレート化されたコントロールで表示を有効にするには、そのコントロールのテンプレートの表示状態 (VisualState) でコントロールのスタイルを調べ、ルート グリッドで表示を指定します。
+```xaml
+<Grid RequestedTheme="Dark">
+    <Button Content="Button" Click="Button_Click" Style="{ThemeResource ButtonRevealStyle}"/>
+</Grid>
+```
+
+または、RevealBorderBrush の TargetTheme を黒に変更します。 注意:  TargetTheme が黒に設定されている場合、表示効果は白になりますが、TargetTheme が白に設定されている場合、表示効果の境界線は灰色になります。
+
+```xaml
+ <RevealBorderBrush x:Key="MyLightBorderBrush" TargetTheme="Dark" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}" />
+```
+
+## <a name="enabling-reveal-on-custom-controls"></a>カスタム コントロールで表示効果を有効にする
+
+表示効果は、カスタム コントロールにも追加できます。 その前に、表示効果の動作についてもう少し詳しく知っておくと便利です。 表示効果は、2 つの独立した効果 (**表示効果の境界線**と**表示効果のホバー**) で構成されています。
+
+- **表示効果の境界線**では、ポインターが近付くと、対話型要素の境界線が表示されます。 この効果では、現在フォーカスが置かれているオブジェクトと類似したアクションを、近くにある他のオブジェクトでも実行できることが示されます。
+- **表示効果のホバー**では、ホバーされた (フォーカスが置かれた) 項目の周囲に淡く発光する図形が描画され、クリック時には押下操作のアニメーションが再生されます。 
+
+![表示効果のレイヤー](images/RevealLayers.png)
+
+<!-- The Reveal recipe breakdown is:
+
+- Border reveal will be on top of all content but on the designated edges
+- Text and content will be displayed directly under Border Reveal
+- Hover reveal will be beneath content and text
+- The backplate (that turns on and enables Hover Reveal)
+- The background (background of control) -->
+
+
+これらの効果は、次の 2 つのブラシによって定義されます。 
+* 表示効果の境界線は、**RevealBorderBrush** で定義されます。
+* 表示効果のホバーは、**RevealBackgroundBrush** で定義されます。
+
+```xaml
+<RevealBorderBrush x:Key="MyRevealBorderBrush" TargetTheme="Light" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}"/>
+<RevealBackgroundBrush x:Key="MyRevealBackgroundBrush" TargetTheme="Light" Color="{StaticResource SystemAccentColor}" FallbackColor="{StaticResource SystemAccentColor}" />
+```
+ほとんどの場合、特定のコントロールについては、表示効果が自動的に有効になってこれらの使用が処理されます。 その他のコントロールでは、スタイルを適用するかテンプレートを直接変更することで、有効にする必要があります。
+
+### <a name="when-to-add-reveal"></a>表示効果の用途
+カスタム コントロールにも表示効果を追加できますが、その前に、コントロールの種類と動作を考慮してください。 
+* カスタム コントロールが単独の対話型要素であり、メニュー内のメニュー項目のように、類似する複数のコントロールが同じ場所にない場合は、そのカスタム コントロールには表示効果が不要である可能性があります。  
+* 関連する対話型コンテンツまたは要素のグループがある場合は、アプリのその領域に表示効果が必要である可能性があります。これは一般的に、[コマンド実行](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/collection-commanding)サーフェスと呼ばれます。
+
+たとえば、単独のボタンに表示効果は適していませんが、コマンド バー上の一連のボタンには表示効果が適しています。
+
+<!-- For example, NavigationView's items are related to page navigation. CommandBar's buttons relate to menu actions or page feature actions. MediaTransportControl's buttons beneath all relate to the media being played. -->
+
+### <a name="using-the-control-template-to-add-reveal"></a>コントロール テンプレートを使用して表示効果を追加する 
+カスタム コントロールまたは再テンプレート化されたコントロールで表示効果を有効にするには、コントロールのコントロール テンプレートを変更します。 ほとんどのコントロール テンプレートでは、ルートにグリッドがあります。そのルート グリッドで表示効果を使用できるように [VisualState](/uwp/api/windows.ui.xaml.visualstate) を更新します。
 
 ```xaml
 <VisualState x:Name="PointerOver">
@@ -116,94 +163,17 @@ ms.lasthandoff: 01/08/2018
 </VisualState>
 ```
 
-表示が十分に機能するため、表示状態ではブラシと setter の両方が必要である点に留意することは重要です。 コントロールのブラシをいずれかの表示ブラシ リソースに設定するだけでは、そのコントロールの表示が有効になりません。 反対に、表示ブラシとなる値がないターゲットまたは設定だけでも表示は有効になりません。
+表示効果が正しく機能するためには、VisualState 内にブラシと setter の両方が必要である点に注意してください。 コントロールのブラシをいずれかの表示ブラシ リソースに設定するだけでは、そのコントロールに対して表示効果は有効になりません。 逆に、ターゲットまたは設定があっても表示ブラシを指定する値がなければ、表示効果は有効になりません。
 
-UI のカスタマイズに使うことができる一連のシステム表示ブラシが作成されました。 たとえば、**ButtonRevealBackground** ブラシを使ってカスタム ボタンの背景を作成したり、カスタム一覧に **ListViewItemRevealBackground** ブラシを使ったりすることができます 
+コントロール テンプレートの変更について詳しくは、[XAML コントロール テンプレート](../controls-and-patterns/control-templates.md)に関する記事をご覧ください。
 
-(XAMl でのリソースのしくみについて詳しくは、[Xaml リソース ディクショナリに関する記事](../controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)をご覧ください)。
-
-### <a name="reveal-on-listview-controls-with-nested-buttons"></a>入れ子になったボタンのある ListView コントロールでの表示
-
-[ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) があり、その [ListViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewitem) 要素内でボタンや呼び出し可能なコンテンツが入れ子になっている場合、入れ子になった項目の表示を有効にする必要があります。
-
-ボタン、またはListViewItem 内のボタンのようなコントロールの場合、コントロールの [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_Style) プロパティを **ButtonRevealStyle** 静的リソースに設定するだけです。 
-
-![入れ子になった表示](images/NestedListContent.png)
-
-この例では、ListViewItem 内のいくつかのボタンで表示を有効にします。 
-
-```XAML
-<ListViewItem>
-    <StackPanel Orientation="Horizontal">
-        <TextBlock Margin="5">Test Text: lorem ipsum.</TextBlock>
-        <StackPanel Orientation="Horizontal">
-            <Button Content="&#xE71B;" FontFamily="Segoe MDL2 Assets" Width="45" Height="45" Margin="5" Style="{StaticResource ButtonRevealStyle}"/>
-            <Button Content="&#xE728;" FontFamily="Segoe MDL2 Assets" Width="45" Height="45" Margin="5" Style="{StaticResource ButtonRevealStyle}"/>
-            <Button Content="&#xE74D;" FontFamily="Segoe MDL2 Assets" Width="45" Height="45" Margin="5" Style="{StaticResource ButtonRevealStyle}"/>
-         </StackPanel>
-    </StackPanel>
-</ListViewItem>
-```
-
-### <a name="listviewitempresenter-with-reveal"></a>表示のある ListViewItemPresenter
-
-一覧は、XAML では少し特別です。表示のケースでは、ListViewItemPresenter 内で表示専用の Visual State Manager を定義する必要があります。
-
-```XAML
-<ListViewItemPresenter>
-<!-- ContentTransitions, SelectedForeground, etc. properties -->
-RevealBackground="{ThemeResource ListViewItemRevealBackground}"
-RevealBorderThickness="{ThemeResource ListViewItemRevealBorderThemeThickness}"
-RevealBorderBrush="{ThemeResource ListViewItemRevealBorderBrush}">
-    <VisualStateManager.VisualStateGroups>
-        <VisualStateGroup x:Name="CommonStates">
-        <VisualState x:Name="Normal" />
-        <VisualState x:Name="Selected" />
-        <VisualState x:Name="PointerOver">
-            <VisualState.Setters>
-                <Setter Target="Root.(RevealBrush.State)" Value="PointerOver" />
-            </VisualState.Setters>
-            </VisualState>
-            <VisualState x:Name="PointerOverSelected">
-                <VisualState.Setters>
-                    <Setter Target="Root.(RevealBrush.State)" Value="PointerOver" />
-                </VisualState.Setters>
-            </VisualState>
-            <VisualState x:Name="PointerOverPressed">
-                <VisualState.Setters>
-                    <Setter Target="Root.(RevealBrush.State)" Value="Pressed" />
-                </VisualState.Setters>
-            </VisualState>
-            <VisualState x:Name="Pressed">
-                <VisualState.Setters>
-                    <Setter Target="Root.(RevealBrush.State)" Value="Pressed" />
-                </VisualState.Setters>
-            </VisualState>
-            <VisualState x:Name="PressedSelected">
-                <VisualState.Setters>
-                    <Setter Target="Root.(RevealBrush.State)" Value="Pressed" />
-                </VisualState.Setters>
-            </VisualState>
-            </VisualStateGroup>
-                <VisualStateGroup x:Name="EnabledGroup">
-                    <VisualState x:Name="Enabled" />
-                    <VisualState x:Name="Disabled">
-                        <VisualState.Setters>
-                             <Setter Target="Root.RevealBorderThickness" Value="0"/>
-                        </VisualState.Setters>
-                    </VisualState>
-                </VisualStateGroup>
-    </VisualStateManager.VisualStateGroups>
-</ListViewItemPresenter>
-```
-
-これは、表示固有の表示状態 setter を持つ ListViewItemPresenter 内のプロパティ コレクションの末尾に追加することを意味します。
+テンプレートのカスタマイズに使うことができる一連のシステム表示ブラシが作成されました。 たとえば、**ButtonRevealBackground** ブラシを使ってカスタム ボタンの背景を作成したり、カスタム一覧に **ListViewItemRevealBackground** ブラシを使ったりすることができます  (XAMl でのリソースのしくみについて詳しくは、[Xaml リソース ディクショナリに関する記事](../controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)をご覧ください)。
 
 ### <a name="full-template-example"></a>テンプレート全体の例
 
 表示ボタンの外観を示すテンプレート全体を次に示します。
 
-```XAML
+```xaml
 <Style TargetType="Button" x:Key="ButtonStyle1">
     <Setter Property="Background" Value="{ThemeResource ButtonRevealBackground}" />
     <Setter Property="Foreground" Value="{ThemeResource ButtonForeground}" />
@@ -284,42 +254,33 @@ RevealBorderBrush="{ThemeResource ListViewItemRevealBorderBrush}">
 </Style>
 ```
 
+### <a name="fine-tuning-the-reveal-effect-on-a-custom-control"></a>カスタム コントロールに対する表示効果を微調整する 
+
+カスタム コントロールまたは再テンプレート化されたコントロールや、カスタムのコマンド実行サーフェスで表示効果を有効にする場合、その効果を最適化するには以下のヒントが役立ちます。
+ 
+* 隣接する項目の高さまたは幅が一致しない場合 (特に、リスト内): 境界線のアプローチ動作を削除し、ホバー時のみ境界線を表示しておきます。
+* 無効状態への移行と解除が頻繁に発生するコマンド実行項目の場合: 境界線アプローチのブラシを要素のバックプレートとバックプレートの境界線に配置して、状態を強調します。
+* 隣接するコマンド実行要素の間隔が狭すぎて接触する場合: 2 つの要素間に 1 px の余白を追加します。 
+
 ## <a name="dos-and-donts"></a>推奨と非推奨
-- ユーザーが操作を実行できる要素 (ボタン、選択肢) では表示を使う
-- 既定で視覚的な区切り記号がない対話型要素のグループ (一覧、コマンド バー) では表示を使う
-- 対話型要素が高密度な領域では表示を使う
-- 静的コンテンツ (背景、テキスト) では表示を使わない
-- 1 回限りの個別の状況では表示を使わない
-- 非常に多くの項目 (500 epx 超) では表示を使わない
-- セキュリティ上の決定を行う場合には表示を使わない (ユーザーに提供する必要があるメッセージから注意がそれる可能性があるため)
+- ユーザーが多数の操作を実行できる要素 (CommandBar、ナビゲーション メニュー) で表示効果を使う
+- 既定で視覚的な区切りがない対話型要素のグループ (一覧、リボン) 内で表示効果を使う
+- 対話型要素が密集している領域では表示を使う (コマンド実行シナリオ)
+- 表示効果を適用する項目と項目の間に 1 px の余白を配置する
+- 静的コンテンツ (背景、テキスト) では表示効果を使わない
+- ポップアップやドロップダウンでは表示効果を使わない
+- 1 回限りの個別の状況では表示効果を使わない
+- 非常に多くの項目 (500 epx 超) では表示効果を使わない
+- セキュリティ上の決定を行う場面では表示効果を使わない (ユーザーに提供する必要があるメッセージから注意がそれる可能性があるため)
 
-## <a name="how-we-designed-reveal"></a>表示をどのように設計したか
-
-表示には 2 つの主要な視覚コンポーネントがあります。それらは、**ホバーによる表示**動作と**境界線による表示**動作です。
-
-![表示レイヤー](images/RevealLayers.png)
-
-ホバーによる表示は、ポインターやフォーカス入力によってポイントされるコンテンツに直接関連付けられており、ポイントされる項目やフォーカスが置かれる項目の周囲に滑らかなハロー型を適用し、その項目が操作可能であることを示します。
-
-境界線による表示は、フォーカスが置かれる項目やその近くにある項目に適用されます。 これにより、オブジェクトの近くにある項目に対して、現在フォーカスが置かれている項目と類似した操作を実行できること示されます。
-
-表示のレシピには以下のものがあります。
-
-- 境界線による表示は、すべてのコンテンツの最上位にありますが、指定されたエッジの上に配置されます
-- テキストとコンテンツは、境界線による表示の直下に表示されます
-- ホバーによる表示は、コンテンツとテキストの下にあります
-- バック プレート (ホバーによる表示をオンにして有効にします)
-- 背景 (コントロールの背景です)
-
-<!--
-<div class=”microsoft-internal-note”>
-To create your own Reveal lighting effect for static comps or prototype purposes, see the full [uni design guidance](http://uni/DesignDepot.FrontEnd/#/ProductNav/3020/1/dv/?t=Resources%7CToolkit%7CReveal&f=Neon) for this effect in illustrator.
-</div>
--->  
 
 ## <a name="get-the-sample-code"></a>サンプル コードを入手する
 
-- [XAML コントロール ギャラリー サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - インタラクティブな形で XAML コントロールのすべてを参照できます。
+- [XAML コントロール ギャラリー サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - インタラクティブな形ですべての XAML コントロールを参照できます。
+
+## <a name="reveal-and-the-fluent-design-system"></a>表示効果と Fluent Design System
+
+ Fluent Design System では、ライト、深度、モーション、マテリアル、スケールを取り入れた、モダンで目を引く UI を作成できます。 表示は、アプリに発光効果を加える Fluent Design System コンポーネントです。 詳しくは、[UWP 用の Fluent Design の概要に関するページ](../fluent-design-system/index.md)をご覧ください。
 
 ## <a name="related-articles"></a>関連記事
 
