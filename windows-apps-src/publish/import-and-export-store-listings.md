@@ -1,21 +1,22 @@
 ---
 author: jnHs
 Description: You can create Store listings for your apps without using the Dev Center dashboard by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file.
-title: "Store 登録情報のインポートとエクスポート"
+title: Store 登録情報のインポートとエクスポート
 ms.author: wdg-dev-content
-ms.date: 12/22/2017
+ms.date: 03/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, Store 登録情報のインポート, Store 登録情報のエクスポート, インポートとエクスポート, Store 登録情報 csv"
+keywords: windows 10, uwp, Store 登録情報のインポート, Store 登録情報のエクスポート, インポートとエクスポート, Store 登録情報 csv
 ms.localizationpriority: high
-ms.openlocfilehash: f003ab35fa968e7b4be8e6e0591d97baafaa8648
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: fb9a3e6fd93600392ef724226368d33ed1585c76
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="import-and-export-store-listings"></a>Store 登録情報のインポートとエクスポート
+
 [ダッシュボードに Store 登録情報を直接入力する](create-app-store-listings.md)代わりに、登録情報を .csv ファイルにエクスポートして情報と資産を入力し、更新したファイルをインポートすることにより、情報を追加または更新することもできます。 この方法を使うと、登録情報を最初から作成することも、既に作成している登録情報を更新することもできます。
 
 このオプションは、複数の言語で製品の Store 登録情報を作成または更新する場合に特に便利です。複数のフィールドに同じ情報をコピーして貼り付け、特定の言語に適用される変更を簡単に行うことができます。 ただし、この方法では、アプリの[プラットフォーム固有の Store 登録情報](create-platform-specific-store-listings.md)を作成することはできません。 

@@ -1,21 +1,23 @@
 ---
 author: mcleanbyron
 ms.assetid: 414ACC73-2A72-465C-BD15-1B51CB2334F2
-title: "アプリのパッケージの更新をダウンロードしてインストールする"
-description: "デベロッパー センター ダッシュ ボードでパッケージを必須としてマークする方法と、パッケージ更新をダウンロードしてインストールするためのコードをアプリ内に記述する方法について説明します。"
+title: アプリのパッケージの更新をダウンロードしてインストールする
+description: デベロッパー センター ダッシュ ボードでパッケージを必須としてマークする方法と、パッケージ更新をダウンロードしてインストールするためのコードをアプリ内に記述する方法について説明します。
 ms.author: mcleans
-ms.date: 03/15/2017
+ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 07b8b769cbcaf86bfa70a562de568cab65c91a77
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: windows 10, UWP
+ms.localizationpriority: high
+ms.openlocfilehash: ce2f6d6607f09186a3969f37b6808fa1f04fb338
+ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="download-and-install-package-updates-for-your-app"></a>アプリのパッケージの更新をダウンロードしてインストールする
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 Windows 10 バージョン 1607 以降では、[Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 名前空間の API を使用して、現在のアプリに対するパッケージ更新をプログラムからチェックし、更新後のパッケージをダウンロードしてインストールすることができます。 また、[Windows デベロッパー センター ダッシュボードで必須としてマークされている](#mandatory-dashboard)パッケージを照会し、必須の更新がインストールされるまで機能を無効にすることもできます。
 
@@ -27,9 +29,9 @@ Windows 10 バージョン 1607 以降を対象としたアプリでは、[Store
 
 |  メソッド  |  [説明]  |
 |----------|---------------|
-| [GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_GetAppAndOptionalStorePackageUpdatesAsync) | 利用できるパッケージの更新の一覧を取得するには、このメソッドを呼び出します。 パッケージが認定プロセスを通過した後、そのパッケージ更新がアプリで利用可能になったことを **GetAppAndOptionalStorePackageUpdatesAsync** メソッドが認識するまでには、最大で 1 日間の遅延が生じる可能性があることに注意してください。 |
-| [RequestDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_RequestDownloadStorePackageUpdatesAsync_Windows_Foundation_Collections_IIterable_Windows_Services_Store_StorePackageUpdate__) | このメソッドを呼び出して、利用可能なパッケージの更新をダウンロードします (インストールはされません)。 この OS では、更新プログラムのダウンロードに対してユーザーのアクセス許可を求めるダイアログが表示されます。 |
-| [RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_RequestDownloadAndInstallStorePackageUpdatesAsync_Windows_Foundation_Collections_IIterable_Windows_Services_Store_StorePackageUpdate__) | 利用可能なパッケージの更新をダウンロードしてインストールするには、このメソッドを呼び出します。 OS では、更新プログラムのダウンロードとインストールに対してユーザーのアクセス許可を求めるダイアログが表示されます。 **RequestDownloadStorePackageUpdatesAsync** を呼び出すことでパッケージの更新が既にダウンロードされている場合、このメソッドはダウンロード プロセスをスキップし、更新のインストールのみを行います。  |
+| [GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetAppAndOptionalStorePackageUpdatesAsync) | 利用できるパッケージの更新の一覧を取得するには、このメソッドを呼び出します。 パッケージが認定プロセスを通過した後、そのパッケージ更新がアプリで利用可能になったことを **GetAppAndOptionalStorePackageUpdatesAsync** メソッドが認識するまでには、最大で 1 日間の遅延が生じる可能性があることに注意してください。 |
+| [RequestDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadstorepackageupdatesasync) | このメソッドを呼び出して、利用可能なパッケージの更新をダウンロードします (インストールはされません)。 この OS では、更新プログラムのダウンロードに対してユーザーのアクセス許可を求めるダイアログが表示されます。 |
+| [RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadandinstallstorepackageupdatesasync) | 利用可能なパッケージの更新をダウンロードしてインストールするには、このメソッドを呼び出します。 OS では、更新プログラムのダウンロードとインストールに対してユーザーのアクセス許可を求めるダイアログが表示されます。 **RequestDownloadStorePackageUpdatesAsync** を呼び出すことでパッケージの更新が既にダウンロードされている場合、このメソッドはダウンロード プロセスをスキップし、更新のインストールのみを行います。  |
 
 <span/>
 
@@ -37,8 +39,8 @@ Windows 10 バージョン 1607 以降を対象としたアプリでは、[Store
 
 |  プロパティ  |  説明  |
 |----------|---------------|
-| [Mandatory](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate#Windows_Services_Store_StorePackageUpdate_Mandatory) | このプロパティを使用して、デベロッパー センター ダッシュ ボードでパッケージが必須としてマークされているかどうかを決定します。 |
-| [Package](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate#Windows_Services_Store_StorePackageUpdate_Package) | このプロパティを使用して、基になるパッケージ関連データにアクセスします。 |
+| [Mandatory](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate.Mandatory) | このプロパティを使用して、デベロッパー センター ダッシュ ボードでパッケージが必須としてマークされているかどうかを決定します。 |
+| [Package](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate.Package) | このプロパティを使用して、基になるパッケージ関連データにアクセスします。 |
 
 <span/>
 
@@ -48,7 +50,7 @@ Windows 10 バージョン 1607 以降を対象としたアプリでは、[Store
 * コードは、[Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) のコンテキスト内で実行されます。
 * **Page** には、ダウンロード操作のステータスを提供するための、```downloadProgressBar``` という [ProgressBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressbar.aspx) が含まれます。
 * コード ファイルには、**Windows.Services.Store**、**Windows.Threading.Tasks**、および**Windows.UI.Popups** 名前空間の **using** ステートメントがあります。
-* アプリは、アプリを起動したユーザーのコンテキストでのみ動作するシングル ユーザー アプリです。 [マルチ ユーザー アプリ](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) の場合は、[GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_GetDefault) メソッドの代わりに [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_GetForUser_Windows_System_User_) メソッドを使用して、**StoreContext** オブジェクトを取得してください。
+* アプリは、アプリを起動したユーザーのコンテキストでのみ動作するシングル ユーザー アプリです。 [マルチ ユーザー アプリ](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) の場合は、[GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) メソッドの代わりに [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) メソッドを使用して、**StoreContext** オブジェクトを取得してください。
 
 <span/>
 
@@ -219,11 +221,12 @@ private void HandleMandatoryPackageError()
 
 ### <a name="display-progress-info-for-the-download-and-install"></a>ダウンロードとインストールの進行状況の情報を表示する
 
-**RequestDownloadStorePackageUpdatesAsync** または **RequestDownloadAndInstallStorePackageUpdatesAsync** を呼び出すときに、この要求で各パッケージのダウンロード (またはダウンロードとインストール) 処理の手順ごとに 1 回呼び出される [Progress](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress) ハンドラーを割り当てることができます。 このハンドラーは、進行状況の通知を発生させる更新パッケージに関する情報を提供する [StorePackageUpdateStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdatestatus) オブジェクトを受け取ります。 前の例では、**StorePackageUpdateStatus** オブジェクトの **PackageDownloadProgress** フィールドを使用して、ダウンロードとインストールの進行状況を表示します。
+**RequestDownloadStorePackageUpdatesAsync** または **RequestDownloadAndInstallStorePackageUpdatesAsync** を呼び出すときに、この要求で各パッケージのダウンロード (またはダウンロードとインストール) 処理の手順ごとに 1 回呼び出される [Progress](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncoperationwithprogress-2.progress) ハンドラーを割り当てることができます。 このハンドラーは、進行状況の通知を発生させる更新パッケージに関する情報を提供する [StorePackageUpdateStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdatestatus) オブジェクトを受け取ります。 前の例では、**StorePackageUpdateStatus** オブジェクトの **PackageDownloadProgress** フィールドを使用して、ダウンロードとインストールの進行状況を表示します。
 
 **RequestDownloadAndInstallStorePackageUpdatesAsync** を呼び出して 1 つの操作でパッケージの更新プログラムをダウンロードしてインストールする場合、**PackageDownloadProgress** フィールドは、パッケージのダウンロード処理中に 0.0 から 0.8 まで増加した後、インストール時に 0.8 から 1.0 まで増加することに注意してください。 そのため、カスタム進行状況 UI に表示されるパーセンテージを、直接、**PackageDownloadProgress** フィールドの値にマップする場合、パッケージのダウンロードが完了し、OS でインストール ダイアログが表示されたときに、UI には 80% と表示されます。 パッケージがダウンロードされ、インストールの準備ができたときに、カスタム進行状況 UI で 100% と表示するには、**PackageDownloadProgress** が 0.8 に達したときに進行状況 UI に 100% を割り当てるようにコードを変更します。
 
 <span id="mandatory-dashboard" />
+
 ## <a name="make-a-package-submission-mandatory-in-the-dev-center-dashboard"></a>デベロッパー センター ダッシュボードでパッケージ申請を必須にする
 
 Windows 10 バージョン 1607 以降を対象としたアプリのパッケージ申請を作成する際には、パッケージを必須としてマークし、それが必須になる日時を指定することができます。 このプロパティが設定されている場合、利用可能なパッケージの更新がこの記事の前半で説明した API を通じて検出されると、アプリは更新パッケージが必須であることを認識し、更新がインストールされるまで、その動作を変更することができます (機能を無効にするなど)。

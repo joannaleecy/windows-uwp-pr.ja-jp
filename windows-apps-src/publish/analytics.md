@@ -1,19 +1,20 @@
 ---
 author: JnHs
-Description: "Windows アプリについての詳しい分析をダッシュボードやその他の手段で確認しましょう。"
-title: "アプリのパフォーマンスの分析"
+Description: Get detailed analytics for your Windows apps, in the dashboard or via other methods.
+title: アプリのパフォーマンスの分析
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 ms.author: wdg-dev-content
-ms.date: 06/28/2017
+ms.date: 10/13/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, 分析, 報告, ダッシュ ボード, アプリ"
-ms.openlocfilehash: 57e4a30258fa25411bb461cac56aa18d2f74981d
-ms.sourcegitcommit: a93b1da07b386a682435de58a8129d7b4ee90c14
+keywords: Windows 10, UWP, 分析, 報告, ダッシュ ボード, アプリ
+ms.localizationpriority: high
+ms.openlocfilehash: 20e168b022ae8e9d35e0dfba39864d99e6ba22e8
+ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/29/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="analyze-app-performance"></a>アプリのパフォーマンスの分析
 
@@ -23,7 +24,7 @@ ms.lasthandoff: 06/29/2017
 
 ## <a name="view-key-analytics-for-all-your-apps"></a>すべてのアプリについての主要な分析を表示する
 
-最もダウンロードされたアプリについての主要な分析を表示するには、**[分析]** を展開し、**[概要]** を選びます。 既定では、**[分析の概要]** ページには、有効期間内の取得数が最も多い 5 つのアプリに関する情報が表示されます。 別の発行済みのアプリを選んで表示するには、**[フィルター]** を選びます。
+最もダウンロードされたアプリについての主要な分析を表示するには、**[分析]** を展開し、**[概要]** を選びます。 既定では、概要ページには、有効期間内の取得数が最も多い 5 つのアプリに関する情報が表示されます。 別の発行済みのアプリを選んで表示するには、**[フィルター]** を選びます。
 
 ## <a name="view-individual-reports-for-each-app"></a>アプリごとに個別レポートを表示する
 
@@ -36,19 +37,21 @@ ms.lasthandoff: 06/29/2017
 -   [[レビュー] レポート](reviews-report.md)
 -   [[フィードバック] レポート](feedback-report.md)
 -   [[広告パフォーマンス] レポート](advertising-performance-report.md)
--   [[広告キャンペーン] レポート](promote-your-app-report.md)
+-   [広告キャンペーン レポート](promote-your-app-report.md)
+-   [Xbox 分析レポート](xbox-analytics-report.md)
 
 > [!NOTE]
 > アプリの実際の機能や実装によっては、これらのレポートの一部にデータが含まれていないことがあります。
 
 <span id="no-dashboard"/>
+
 ## <a name="access-analytics-data-without-using-the-dev-center-dashboard"></a>デベロッパー センター ダッシュボードを使わずに分析データにアクセスする
 
-分析データにアクセスするには、ダッシュボードの分析レポートのほかにもいくつかの方法があります。
+ダッシュボードにレポートを表示するだけでなく、さまざまな方法でアプリ分析にアクセスできます。
 
-### <a name="windows-store-analytics-api"></a>Windows ストア分析 API
+### <a name="microsoft-store-analytics-api"></a>Microsoft Store 分析 API
 
-[Windows ストア分析 API](../monetize/access-analytics-data-using-windows-store-services.md) を使うと、アプリの分析データをプログラムで取得できます。 この REST API では、アプリおよびアドオンの入手数、エラー、アプリの評価とレビューに関するデータを取得できます。 この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
+[Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md) を使うと、アプリの分析データをプログラムで取得できます。 この REST API では、アプリおよびアドオンの入手数、エラー、アプリの評価とレビューに関するデータを取得できます。 この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
 
 ### <a name="windows-dev-center-content-pack-for-power-bi"></a>Power BI 用 Windows デベロッパー センター コンテンツ パック
 
@@ -61,7 +64,7 @@ Power BI を使って分析データにアクセスするには、まず、次�
 * [Power BI 用 Windows デベロッパー センター コンテンツ パックを使って分析データに接続する方法](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
 
 > [!NOTE]
-> Power BI 用 Windows デベロッパー センター コンテンツ パックに接続する際には、デベロッパー センター アカウントに関連付けられた Azure AD ディレクトリの資格情報を指定することをお勧めします。 Microsoft アカウントの資格情報を使う場合は、Power BI の分析データが自動的に更新されないため、Power BI にサインインしてデータを更新する必要があります。 組織で Office 365 または Microsoft の他のビジネス サービスが既に使用されている場合は、既に Azure AD をお持ちです。 それ以外の場合は、[こちらから無料で入手](http://go.microsoft.com/fwlink/p/?LinkId=703757)できます。 デベロッパー センター アカウントを Azure AD に関連付ける方法について詳しくは、「[アカウント ユーザーの管理](manage-account-users.md)」をご覧ください。
+> Power BI 用 Windows デベロッパー センター コンテンツ パックに接続する際には、デベロッパー センター アカウントに関連付けられた Azure AD ディレクトリの資格情報を指定することをお勧めします。 Microsoft アカウントの資格情報を使う場合は、Power BI の分析データが自動的に更新されないため、Power BI にサインインしてデータを更新する必要があります。 組織で Office 365 または Microsoft の他のビジネス サービスが既に使用されている場合は、既に Azure AD をお持ちです。 それ以外の場合は、[こちらから無料で入手](http://go.microsoft.com/fwlink/p/?LinkId=703757)できます。 関連付けをセットアップする方法について詳しくは、「[Azure Active Directory とデベロッパー センター アカウントとの関連付け](associate-azure-ad-with-dev-center.md)」をご覧ください。
 
 ### <a name="dev-center-app"></a>Dev Center アプリ
 

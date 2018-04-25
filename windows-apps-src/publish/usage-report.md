@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 使用状況, カスタム イベント, レポート, 利用統計情報, ユーザー セッション
 ms.localizationpriority: high
-ms.openlocfilehash: 35bc42e8a65441d9ee4387b65c60c3a51903142c
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: 68e9643093aa4f5b777f3e5c430edc394838766a
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="usage-report"></a>[使用状況] レポート
 
@@ -38,7 +38,7 @@ Windows デベロッパー センター ダッシュボードの **[使用状況
 > このレポートに含まれるのは、Windows 10 ユーザー (Xbox ユーザーを含む) で製品利用統計情報の提供を辞退していないユーザーの使用状況データのみです。 Xbox ゲームの使用状況データは、ユーザーが Xbox Live にサインインしているかどうかに関係なく含まれます。 
 
 
-##<a name="usage"></a>使用状況
+## <a name="usage"></a>使用状況
 
 **[使用状況]** グラフからは、選択された期間中にアプリがどのように使われたかについて詳しく知ることができます。 このグラフでは、アプリの一意のユーザーまたは一意のユーザー セッションは追跡されないことに注意してください (つまり、ユーザーがその日にアプリを 1 回しか使っていなくても、複数回使っていても、1 ユーザーとしてカウントされます)。
 

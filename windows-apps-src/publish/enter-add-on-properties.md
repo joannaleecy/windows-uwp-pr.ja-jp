@@ -1,20 +1,20 @@
 ---
 author: jnHs
 Description: When submitting an add-on, the options on the Properties page help determine the behavior of your add-on when offered to customers.
-title: "アドオン プロパティの入力"
+title: アドオン プロパティの入力
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ms.author: wdg-dev-content
 ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, アドオン, プロパティ, サブスクリプション期間, 製品の有効期間, コンテンツの種類, iap, アプリ内購入, アプリ内製品"
+keywords: windows 10, uwp, アドオン, プロパティ, サブスクリプション期間, 製品の有効期間, コンテンツの種類, iap, アプリ内購入, アプリ内製品
 ms.localizationpriority: high
-ms.openlocfilehash: 63fc414c230e5a988013b1509280bfdb083a93c0
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: c3f5de17dc090989572d72c30bd9d8b85e385316
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="enter-add-on-properties"></a>アドオン プロパティの入力
 
@@ -80,16 +80,18 @@ ms.lasthandoff: 01/12/2018
 これらのフィールドは、どのアドオンの種類でも省略可能です。
 
 <span id="keywords" />
+
 ### <a name="keywords"></a>キーワード
 
 提出するアドオンごとに、それぞれ 30 文字以内のキーワードを最大 10 個指定するオプションがあります。 そうすると、アプリはキーワードと一致するアドオンを照会できます。 この機能を利用すると、アプリのコードで製品 ID を直接指定しなくても、アドオンを読み込むことができる画面をアプリで構築できるようになります。 その場合、アプリでコードを変更したり、アプリをもう一度提出したりしなくても、いつでもアドオンのキーワードを変更することができます。
 
-このフィールドを照会するには、[Windows.Services.Store 名前空間](https://msdn.microsoft.com/en-us/library/windows/apps/windows.services.store.aspx)の [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct#Windows_Services_Store_StoreProduct_Keywords) プロパティを使用します  (または、[Windows.ApplicationModel.Store 名前空間](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.store.aspx)を使用している場合は、[ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting#Windows_ApplicationModel_Store_ProductListing_Keywords) プロパティを使用します)。
+このフィールドを照会するには、[Windows.Services.Store 名前空間](https://msdn.microsoft.com/en-us/library/windows/apps/windows.services.store.aspx)の [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Keywords) プロパティを使用します  (または、[Windows.ApplicationModel.Store 名前空間](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.store.aspx)を使用している場合は、[ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.Keywords) プロパティを使用します)。
 
 > [!NOTE]
 > キーワードは、Windows 8 と Windows 8.1 を対象とするパッケージでは使うことができません。
 
 <span id="custom-developer-data" />
+
 ### <a name="custom-developer-data"></a>カスタムの開発者データ
 
 **[カスタムの開発者データ]** フィールド (以前は**タグ**と呼ばれていました) に最大 3,000 文字を入力して、アプリ内製品について追加のコンテキストを指定できます。 通常、これは XML 文字列の形式ですが、このフィールドには任意の内容を入力できます。 これで、アプリはこのフィールドを照会して内容を読み取ることができます (ただし、アプリからデータを編集したり、変更を書き戻したりすることはできません)。

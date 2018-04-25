@@ -1,20 +1,20 @@
 ---
 author: jnHs
 Description: You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via the Microsoft Store for Business or Microsoft Store for Education, without making the apps broadly available in the Store.
-title: "LOB アプリの企業への配布"
+title: LOB アプリの企業への配布
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 ms.author: wdg-dev-content
-ms.date: 01/12/2018
+ms.date: 03/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, LOB, 基幹業務, エンタープライズ アプリ, ビジネス向け Store, 教育機関向け Store, 企業"
+keywords: Windows 10, UWP, LOB, 基幹業務, エンタープライズ アプリ, ビジネス向け Store, 教育機関向け Store, 企業
 ms.localizationpriority: high
-ms.openlocfilehash: 3857e8e6e494700233d41832fb9edce6c65b89bc
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: 97a56ec68e2aa51f0ee733c2eedaee18dc3cedb9
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>LOB アプリの企業への配布
 
@@ -54,6 +54,7 @@ LOB アプリを専用アプリとして企業に公開するには、最初に�
 基幹業務アプリとして公開するには、少なくとも 1 つの企業を選択する必要があります。
 
 <span id="organizational" />
+
 ### <a name="organizational-licensing"></a>組織のライセンス
 
 既定では、アプリを申請するとき、**[ストアで管理される (オンライン) ボリューム ライセンスと配布]** のチェック ボックスはオンになっています。 LOB アプリを公開するとき、このチェック ボックスは、企業がアプリをボリューム取得できるようにオンにしておく必要があります。 このように設定しても、**[分布と認知度]** セクションで選択した企業以外のユーザーが、このアプリを利用できるようになるわけではありません。
@@ -82,7 +83,7 @@ LOB アプリでの申請のプロセスの[年齢区分](age-ratings.md)の手�
 
 LOB として既に公開したアプリに更新プログラムを公開するには、新しい申請を作成するだけです。 新しいパッケージをアップロードするか、変更を加えて、**[ストアに提出]** をクリックし、更新されたバージョンを利用できるようにします。 **[表示]** で選択されている企業はそのままにしてください (アプリを取得できるようにする企業を追加する、前にアプリを配布していた企業を削除するなど、意図的に変更する場合を除く)。
 
-前に基幹業務として公開したアプリの提供を終了して、これ以上取得できないようにするには、新しい申請を作成する必要があります。 最初に、**[表示]** セクションを **[基幹業務 (LOB) 配布]** から **[小売配布]** に変更します。 次に**[表示]** セクションで **[この製品をストアで提供しますが、検索はできないようにします]** と **[購入の停止]** オプションを選びます。
+前に基幹業務として公開したアプリの提供を終了して、これ以上取得できないようにするには、新しい申請を作成する必要があります。 最初に、**[表示]** セクションを **[基幹業務 (LOB) 配布]** から **[小売配布]** に変更します。 次に [[Discoverability]](choose-visibility-options.md#discoverability) (見つけやすさ) セクションで **[この製品を Microsoft Store で提供しますが、検索はできないようにします]** と **[購入の停止]** オプションを選びます。
 
 申請の認定プロセスが完了すると、以降そのアプリは取得できなくなります (アプリを既に所有しているユーザーは引き続き使用できます)。
 

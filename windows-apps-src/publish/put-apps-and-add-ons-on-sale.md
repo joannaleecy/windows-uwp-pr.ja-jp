@@ -1,7 +1,7 @@
 ---
 author: jnHs
-Description: "期間限定で特売することにより Windows ストアでアプリやアドオンの販促活動をすることができます。"
-title: "アプリとアドオンの販売"
+Description: You can promote your app or add-on in the Microsoft Store by putting it on sale for a limited time.
+title: アプリとアドオンの販売
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
 ms.author: wdg-dev-content
 ms.date: 08/21/2017
@@ -9,15 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: d17394808232aeffbe81404427e668fb9c06e677
-ms.sourcegitcommit: cd9b4bdc9c3a0b537a6e910a15df8541b49abf9c
+ms.localizationpriority: high
+ms.openlocfilehash: 0cc26403c10e9300e983275d28a1a969af513dc3
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="put-apps-and-add-ons-on-sale"></a>アプリとアドオンの販売
 
-期間限定で特売することにより Windows ストアでアプリやアドオンの販促活動をすることができます。 製品を低い価格帯で提供することも、割引率を適用することもできます。
+期間限定で特売することにより Microsoft Store でアプリやアドオンの販促活動をすることができます。 製品を低い価格帯で提供することも、割引率を適用することもできます。
 
 申請の **[価格と使用可能状況]** ページの **[セール価格]** セクションを使ってアプリまたはアドオンの価格を一時的に下げると、顧客が見るストア登録情報には取り消し線が引かれた価格が表示され、値下げされていることをアピールできます (一方、[スケジュールされた価格変更](set-and-schedule-app-pricing.md#schedule-price-changes)では、ストアに変更を表示せずに価格を下げたり上げたりできます)。 
 
@@ -60,7 +61,7 @@ ms.lasthandoff: 08/21/2017
 
 > [!NOTE]
 > アプリの基本価格より高い価格帯を選択することもできます。 ただし、セール価格がユーザーに表示されるのは、価格がその市場でのアプリの通常価格よりも安い場合のみです。
-
+>
 > 特定の市場でアプリの基準価格より高いカスタム価格を既に設定していて、その市場での価格を一時的に下げる場合 (それでもセール価格はアプリの基準価格より高い)、アプリの基準価格より高い価格を選択することが特売において適切であることがあります。 選択の結果として特定の市場でアプリの価格が上がる場合、その (高い) 価格はその市場のユーザーには表示されず、引き続き以前の (低い) 価格でアプリが表示されます。 異なる価格で別の重複する特売をスケジュールする場合にも、ユーザーには適用される最低価格が表示されます。
 
 ## <a name="changing-or-canceling-a-scheduled-sale"></a>スケジュールされた特売の変更または取り消し

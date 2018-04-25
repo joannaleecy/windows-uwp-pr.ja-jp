@@ -4,17 +4,17 @@ Description: You can generate promotional codes for an app or add-on that you ha
 title: プロモーション コードを生成する
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 ms.author: wdg-dev-content
-ms.date: 01/22/2018
+ms.date: 03/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, プロモーション コード, promo code, トークン, token
 ms.localizationpriority: high
-ms.openlocfilehash: 634c0857982924ca1b588519172d77d97dd74791
-ms.sourcegitcommit: b6915c7fa2c7292e9b4e3d3e9927dc8746ec1ffb
+ms.openlocfilehash: 7043b12dc3b9d6e7a9813fb1d7b81b836902f92f
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="generate-promotional-codes"></a>プロモーション コードを生成する
 
@@ -33,7 +33,7 @@ Windows デベロッパー センター ダッシュボードでは、次の操�
 -   プロモーション コードの使用状況を確認する。
 
 > [!NOTE]
-> プロモーション コードは、[[表示]](set-app-pricing-and-availability.md#visibility) のオプションとして **[購入の停止: 直接リンクを知っているユーザーは製品のストア登録情報を表示できます。ただし、製品をダウンロードできるのは、以前にその製品を所有していたか、またはプロモーション コードを持っている場合で、かつ Windows 10 デバイスを使用している場合のみです。]** を選択している場合でも生成できます。
+> プロモーション コードは、[[Discoverability]](choose-visibility-options.md#discoverability) (見つけやすさ) セクションの **[購入の停止: 直接リンクを知っているユーザーは製品の Microsoft Store 登録情報を表示できます。ただし、製品をダウンロードできるのは、以前にその製品を所有していたか、またはプロモーション コードを持っている場合で、かつ Windows 10 デバイスを使用している場合のみです]** オプションで **[この製品を Microsoft Store で提供しますが、検索はできないようにします]** を選択している場合でも生成できます。
 
 ユーザーがプロモーション コードを利用してアプリをインストールするには、アプリが[アプリの認定プロセス](the-app-certification-process.md)の最終的な公開フェーズに合格する必要があります。
 
@@ -80,7 +80,7 @@ Microsoft Store に公開したアプリまたはアドオンのプロモーシ�
     -   **製品名**: このコードが関連付けられているアプリまたはアドオンの名前。
     -   **注文名**: コードが生成された注文の名前。
     -   **プロモーション コード**: コードそのもの。 ハイフンで区切られた英数字の 5 x 5 の文字列です。 たとえば、DM3GY-M2GYM-6YMW6-4QHHT-23W2Z のようになります。
-    -   **購入 URL**: ユーザーがコードを引き換えてアプリまたはアドオンをインストールするために使う URL。 この URL は http://go.microsoft.com/fwlink/?LinkId=532540&mstoken=&lt;プロモーション コード> という形式になります。
+    -   **購入 URL**: ユーザーがコードを引き換えてアプリまたはアドオンをインストールするために使う URL。 URL は、http://go.microsoft.com/fwlink/?LinkId=532540&mstoken=&lt;promotional_code> の形式になります。
     -   **開始日**: このコードがアクティブになる日付。
     -   **有効期限**: このコードの有効期限が切れる日付。
     -   **コード ID**: このコードの一意の ID。
@@ -97,7 +97,7 @@ Microsoft Store に公開したアプリまたはアドオンのプロモーシ�
 
 ## <a name="code-redemption-user-experience"></a>コード利用のユーザー エクスペリエンス
 
-プロモーション コード (またはその引き換え用 URL) をユーザーに配布した後、ユーザーはその URL 使って無料で製品を入手できます。 引き換え用 URL をクリックすると、認証された **[コードの適用]** ページ (<https://account.microsoft.com/billing/redeem>) が開きます。 このページには、ユーザーが引き換えようとしているアプリの説明が表示されます。 ユーザーが Microsoft アカウントでログインしていない場合は、ログインするように求められることがあります。 ユーザーが <https://account.microsoft.com/billing/redeem> にアクセスして、コードを直接入力することもできます。
+プロモーション コード (またはその引き換え用 URL) をユーザーに配布した後、ユーザーはその URL 使って無料で製品を入手できます。 コード引き換え用 URL をクリックすると、認証済みの **[コードの適用]** ページ (<https://account.microsoft.com/billing/redeem>) が開きます。 このページには、ユーザーが引き換えようとしているアプリの説明が表示されます。 ユーザーが Microsoft アカウントでログインしていない場合は、ログインするように求められることがあります。 ユーザーは、<https://account.microsoft.com/billing/redeem> にアクセスして直接コードを入力することもできます。
 
 > [!IMPORTANT]
 > プロモーション コードをユーザーに配布するのは、(**[この製品をストアで提供しますが、検索はできないようにします]** を選択した場合でも) 製品の公開プロセスが完了した後にすることをお勧めします。 まだ公開されていない製品のプロモーション コードをユーザーが使おうとすると、エラーが表示されます。
@@ -111,12 +111,12 @@ Microsoft Store に公開したアプリまたはアドオンのプロモーシ�
 ## <a name="review-your-promotional-codes"></a>プロモーション コードの確認
 
 アプリとアドオンのプロモーション コードの注文について詳しい要約を確認するには、**[プロモーション コード]** ページに移動します (デベロッパー センター ダッシュボードの左側のナビゲーション メニューで、**[ユーザーへのアピール]** を展開して、**[プロモーション コード]** を選びます)。 すべての現行および非アクティブなプロモーション コードについて、次の詳しい情報を確認できます。
-    -   注文名
-    -   アプリまたはアドオン
-    -   開始日
-    -   有効期限
-    -   利用可能
-    -   引き換え済み
+-   注文名
+-   アプリまたはアドオン
+-   開始日
+-   有効期限
+-   利用可能
+-   引き換え済み
 
 この表から注文を[ダウンロード](#download-and-distribute-promotional-codes)することもできます。
 

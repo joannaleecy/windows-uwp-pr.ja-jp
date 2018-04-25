@@ -1,19 +1,19 @@
 ---
 author: jnHs
 Description: After your packages have been successfully uploaded, you'll see a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order.
-title: "デバイス ファミリの利用可否"
+title: デバイス ファミリの利用可否
 ms.author: wdg-dev-content
-ms.date: 10/12/2017
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, パッケージ, アップロード, デバイス ファミリの利用可否"
+keywords: windows 10, uwp, パッケージ, アップロード, デバイス ファミリの利用可否
 ms.localizationpriority: high
-ms.openlocfilehash: a3ae23a08ec305285569de8b6d55e805beaa86ba
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: 44c20c05457669edb31067b6d7ac8bc60f09e72e
+ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="device-family-availability"></a>デバイス ファミリの利用可否
 
@@ -36,6 +36,7 @@ Windows.Universal デバイス ファミリを対象とするパッケージは�
 アプリを入手できる Windows 10 デバイスの種類を制限する特別な理由がない限り、アプリのサポート対象のチェック ボックスはすべてオンにしておくことをお勧めします。 たとえば、[Surface Hub](https://developer.microsoft.com/windows/surfacehub) や [Microsoft HoloLens](http://dev.windows.com/holographic/development_overview) でアプリが優れたエクスペリエンスを提供できないとわかっている場合は、**[Windows 10 Team]** ボックスや **[Windows 10 Holographic]** ボックスをオフにします。 これにより、これらのデバイスの新しいユーザーによるアプリの入手を防ぐことができます。 これらのユーザーに提供する準備ができたら、該当するチェック ボックスをオンにして新しい申請を作成することができます。
 
 <span id="xbox" />
+
 Windows.Universal パッケージに対してチェック ボックスが既定でオンにならない Windows 10 デバイス ファミリは、**[Windows 10 Xbox]** のみです。 アプリがゲームではない場合 (または、アプリがゲームで [Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)が有効になっている場合) やアプリで[概念の承認](../gaming/concept-approval.md)プロセスが完了している場合で、Windows 10 SDK バージョン 14393 以降を使ってコンパイルされたニュートラルまたは x64 版の UWP パッケージが申請に含まれる場合は、**[Windows 10 Xbox]** チェック ボックスをオンにして Xbox One ユーザーにアプリを提供できます。
 
 > [!IMPORTANT]
@@ -48,6 +49,8 @@ Windows.Universal パッケージに対してチェック ボックスが既定�
 >   
 > 問題がまだ解決しない場合は、サポートにお問い合わせください。
 
+Windows 10 IoT Core の UWP アプリを申請する場合、パッケージをアップロードした後に既定の選択を変更しないでください。Windows 10 IoT 用の別個のチェック ボックスはありません。 IoT Core UWP アプリの公開について詳しくは、[Microsoft Store による IoT Core UWP アプリのサポートに関する記事](https://docs.microsoft.com/windows/iot-core/commercialize-your-device/installingandservicing)をご覧ください。
+
 **Windows 8/8.1** および **Windows Phone 8.x 以前**で実行できるパッケージが申請に含まれている場合は、これらのパッケージはテーブルに示されているとおりにユーザーに提供されます。 これらの OS バージョンのチェック ボックスはありません。 これらのユーザーへのアプリ提供を停止するには、対応するパッケージを申請から削除する必要があります。
 
 > [!IMPORTANT]
@@ -57,8 +60,7 @@ Windows.Universal パッケージに対してチェック ボックスが既定�
 
 たとえば、Windows Phone 8.1 パッケージで公開したアプリがあり、ユニバーサル デバイス ファミリを対象とする同じアプリに Windows 10 (UWP) パッケージを後で追加する場合、**[Windows 10 Mobile]** チェック ボックスをオフにしていた場合でも、Windows Phone 8.1 パッケージを持っていた Windows 10 Mobile ユーザーにはこの Windows 10 (UWP) パッケージに対する更新プログラムが提供されます (これは新しい取得ではなく更新プログラムであるため)。 ただし、ユニバーサルまたはモバイル デバイス ファミリを対象とする Windows 10 (UWP) パッケージを一切提供しない場合は、Windows 10 モバイル ユーザーは Windows Phone 8.1 パッケージのままになります。
 
-デバイス ファミリについて詳しくは、「[ユニバーサル Windows プラットフォームの紹介](../get-started/universal-application-platform-guide.md)」および「[**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)」をご覧ください。
-
+デバイス ファミリについて詳しくは、[**デバイス ファミリの概要に関する記事**](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)をご覧ください。
 
 ## <a name="understanding-ranking"></a>ランク付けの概要
 

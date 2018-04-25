@@ -9,17 +9,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: high
-ms.openlocfilehash: 5d416ad13c2e689c5265164c0269244a387a6c7f
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: 518cc64fec2524bb3cc02daca72a990d016c8ce5
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="whats-new-in-windows-10-for-developers-sdk-preview-build-17110"></a>Windows 10 の開発者向け新着情報 (SDK プレビュー ビルド 17110)
 
 Windows 10 SDK プレビュー ビルド 17110 には、Visual Studio 2017 および更新された SDK の組み合わせで、優れたユニバーサル Windows プラットフォーム アプリを作るためのツール、機能、エクスペリエンスが用意されています。 Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/fwlink/?LinkId=821431)すると、[新しいユニバーサル Windows アプリを作成](../get-started/create-uwp-apps.md)したり、[Windows の既存のアプリ コード](../porting/index.md)がどのように使えるかを試したりすることができます。
 
-ここには、Windows 開発者にとって重要な SDK プレビューの新機能、強化された機能、ガイダンスを集めました。 現時点では、これらの機能は [Windows Insider Program](https://insider.windows.com/en-us/) のメンバーからアクセス可能であり、Windows 10 の次の主要な更新プログラムで一般に公開される予定です。 Windows SDK に追加されたすべての新しい名前空間の一覧については、[Windows 10 ビルド 17110 の新しい API](windows-10-build-17110-api-diff.md) をご覧ください。Windows 10 での注目すべき機能について詳しくは、「[Windows 10 の優れた機能](http://go.microsoft.com/fwlink/?LinkId=823181)」をご覧ください。 また、Windows プラットフォームに過去に追加された機能と今後追加される機能の概要については、[Windows 開発者向けプラットフォーム機能に関するページ](https://developer.microsoft.com/windows/platform/features)をご覧ください。
+ここには、Windows 開発者にとって重要な SDK プレビューの新機能、強化された機能、ガイダンスを集めました。 現時点では、これらの機能は [Windows Insider Program](https://insider.windows.com/) のメンバーからアクセス可能であり、Windows 10 の次の主要な更新プログラムで一般に公開される予定です。 Windows SDK に追加されたすべての新しい名前空間の一覧については、[Windows 10 ビルド 17110 の新しい API](windows-10-build-17110-api-diff.md) をご覧ください。Windows 10 での注目すべき機能について詳しくは、「[Windows 10 の優れた機能](http://go.microsoft.com/fwlink/?LinkId=823181)」をご覧ください。 また、Windows プラットフォームに過去に追加された機能と今後追加される機能の概要については、[Windows 開発者向けプラットフォーム機能に関するページ](https://developer.microsoft.com/windows/platform/features)をご覧ください。
 
 ## <a name="design--ui"></a>設計および UI
 
@@ -63,7 +63,7 @@ Machine Learning | Windows Machine Learning を使用すると、ローカルの
 PlayReady | Microsoft PlayReady は、デジタル コンテンツを保護して不正使用を防止するための一連のテクノロジです。 PlayReady は、デバイスやアプリの種類を問わず、あらゆるオペレーティング システム間で動作します。 [アプリに PlayReady を組み込む方法をご確認ください。](https://docs.microsoft.com/playready/)
 画面のキャプチャ | [Windows.Graphics.Capture 名前空間](https://docs.microsoft.com/uwp/api/windows.graphics.capture) には、ディスプレイまたはアプリケーション ウィンドウからフレームを取得する API が用意されています。これにより、ビデオ ストリームやスナップショットを作成して、コラボレーティブでインタラクティブなエクスペリエンスを構築できます。 詳しくは、「[画面の取り込み](../audio-video-camera/screen-capture.md)」をご覧ください。
 システム トリガー | [CustomSystemEventTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.customsystemeventtrigger) を使用すると、必要なシステム トリガーが OS から提供されない場合に、システム トリガーを定義できます。 ハードウェア ドライバーと UWP アプリの両方がサード パーティ製であり、ハードウェア ドライバーでカスタム イベントを生成し、アプリで処理する必要がある場合などに必要になります。 例として、オーディオ ジャックが接続されたときに、オーディオ カードからユーザーに通知する場合などが該当します。
-ユーザー アクティビティ | **UserActivitySessionHistoryItem**クラスには、最近のユーザー アクティビティを取得する新しいメソッドが含まれています。 詳しくは、[GetRecentUserActivitiesAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitychannel#Windows_ApplicationModel_UserActivities_UserActivityChannel_GetRecentUserActivitiesAsync_System_Int32_) およびそのオーバーロードの説明をご覧ください。
+ユーザー アクティビティ | **UserActivitySessionHistoryItem**クラスには、最近のユーザー アクティビティを取得する新しいメソッドが含まれています。 詳しくは、[GetRecentUserActivitiesAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitychannel.getrecentuseractivitiesasync) およびそのオーバーロードの説明をご覧ください。
 Windows Mixed Reality | 拡張中の Windows Mixed Reality プラットフォームをサポートするために、[Windows.Graphic.Holographic](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic) 名前空間と [Windows.UI.Input.Spatial](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Spatial) 名前空間に新しい API が追加されました。
 
 ## <a name="publish--monetize-windows-apps"></a>Windows アプリを公開および収益化する

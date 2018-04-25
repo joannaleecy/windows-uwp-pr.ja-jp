@@ -1,17 +1,20 @@
 ---
 author: mcleanbyron
-Description: "Windows デベロッパー センター ダッシュボードを使用して、ユニバーサル Windows プラットフォーム (UWP) アプリの A/B テストを実行することができます。"
-title: "A/B テストを使用してアプリの実験を実行する"
+Description: You can use the Windows Dev Center dashboard to run experiments for your Universal Windows Platform (UWP) apps with A/B testing.
+title: A/B テストを使用してアプリの実験を実行する
 ms.assetid: 790B4B37-C72D-4CEA-97AF-D226B2216DCC
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, Microsoft Store Services SDK, A/B テスト, 実験"
-ms.openlocfilehash: d95f42d7a57c191e371f06b21427d52c5c51773e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: Windows 10, UWP, Microsoft Store Services SDK, A/B テスト, 実験
+ms.localizationpriority: high
+ms.openlocfilehash: 0ed6fab97d5e4172601b3c2e549e8feab4f8db57
+ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="run-app-experiments-with-ab-testing"></a>A/B テストを使用してアプリの実験を実行する
 
@@ -47,6 +50,7 @@ A/B テストを実行する前に、開発用コンピューターを設定す�
 * 統計的に重要でアクション可能なデータを十分収集するために、少なくとも 2 ～ 4 週間はテストを実行します。
 
 <span id="terms" />
+
 ## <a name="related-terms"></a>関連用語
 
 |  用語  |  説明  |

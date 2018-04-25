@@ -1,24 +1,25 @@
 ---
 author: jnHs
-Description: "Windows ストアではバージョン番号に関する特定の規則が適用され、別の OS バージョンでは機能が多少異なります。"
-title: "パッケージ バージョンの番号付け"
+Description: The Microsoft Store enforces certain rules related to version numbers, which work somewhat differently in different OS versions.
+title: パッケージ バージョンの番号付け
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 67c90f87fe0d02a0a906392409103e93e83103c3
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.localizationpriority: high
+ms.openlocfilehash: a5c9c676a3ccd8ff7f1e7d53d9019d722fefa722
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="package-version-numbering"></a>パッケージ バージョンの番号付け
 
 
-提供する各パッケージには、バージョン番号がある必要があります (アプリ マニフェストの **Package/Identity** 要素の **Version** 属性の値として提供されます)。 Windows ストアではバージョン番号に関する特定の規則が適用され、別の OS バージョンでは機能が多少異なります。
+提供する各パッケージには、バージョン番号がある必要があります (アプリ マニフェストの **Package/Identity** 要素の **Version** 属性の値として提供されます)。 Microsoft Store ではバージョン番号に関する特定の規則が適用され、別の OS バージョンでは機能が多少異なります。
 
 > [!NOTE]
 > このトピックは "パッケージ" について説明していますが、特に記載のない限り、.appx ファイルと .appxbundle ファイルのバージョン番号にも同じ規則が適用されます。
@@ -26,12 +27,12 @@ ms.lasthandoff: 06/21/2017
 
 ## <a name="version-numbering-for-windows-10-packages"></a>Windows 10 パッケージのバージョン番号付け
 
-Windows 10 パッケージのバージョン番号は、同じアプリについて公開中の Windows 8、Windows 8.1、Windows Phone 8.1 のパッケージ (または前に公開したこれらの OS バージョンのパッケージ) のバージョン番号より常に大きい必要があります  (詳しくは、「[以前に公開したアプリに Windows 10 用のパッケージを追加する](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app)」をご覧ください)。
+Windows 10 パッケージのバージョン番号は、同じアプリについて公開中の Windows 8、Windows 8.1、Windows Phone 8.1 のパッケージ (または前に公開したこれらの OS バージョンのパッケージ) のバージョン番号より常に大きい必要があります  (詳しくは、「[以前に公開したアプリに Windows 10 用のパッケージを追加する](https://docs.microsoft.com/en-us/windows/uwp/publish/guidance-for-app-package-management#adding-packages-for-windows-10-to-a-previously-published-app)」をご覧ください)。
 
 > [!IMPORTANT]
 > バージョン番号の最後 (4 番目) のセクションはストア用に予約されており、パッケージをビルドする際に 0 のままにしておく必要があります (ただし、ストアはこのセクションの値を変更する可能性があります)。
 
-公開された申請から Windows 10 パッケージを選択すると、Windows ストアは常にユーザーのデバイスに適用可能で最も高いバージョンのパッケージを使用します。 これにより高い柔軟性が与えられ、特定のデバイスの種類のユーザーにどのパッケージを提供するかを管理することができます。 重要なことに、これらのパッケージは任意の順序で申請することができます。後続の各申請でより高いバージョンのパッケージを提供する必要はありません。
+公開された申請から Windows 10 パッケージを選択すると、Microsoft Store は常にユーザーのデバイスに適用可能で最も高いバージョンのパッケージを使用します。 これにより高い柔軟性が与えられ、特定のデバイスの種類のユーザーにどのパッケージを提供するかを管理することができます。 重要なことに、これらのパッケージは任意の順序で申請することができます。後続の各申請でより高いバージョンのパッケージを提供する必要はありません。
 
 同じバージョン番号を持つ複数の Windows 10 パッケージを提供することもできます。 ただし、バージョン番号を共有するパッケージが同じアーキテクチャを持つことはできません。ストアで各パッケージに使用する完全な ID は一意である必要があるためです。 詳しくは、「[**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-identity)」をご覧ください。
 
@@ -65,11 +66,12 @@ Windows 10 では、すべての場所で実行される単一のコードベー
 
 問題があるパッケージを既に受信したユーザーの問題を解決するためには、できるだけ早く問題のあるパッケージよりも大きいバージョン番号を持つ新しい Windows 10 パッケージを申請することです。 その申請の認定プロセスが完了すると、それがより大きいバージョン番号になるため、すべてのユーザーが新しいパッケージに更新されます。
 
+
 ## <a name="version-numbering-for-windows-81-and-earlier-and-windows-phone-81-packages"></a>Windows 8.1 (以前) と Windows Phone 8.1 パッケージのバージョン番号付け
 
 Windows Phone 8.1 を対象とする .appx パッケージでは、新しい申請のパッケージのバージョン番号は最後の申請 (または、以前の申請) に含まれるパッケージの番号より常に大きい必要があります。
 
-Windows 8 と Windows 8.1 を対象とする .appx パッケージでは、アーキテクチャごとに同じ規則が適用されます。新しい申請のパッケージのバージョン番号は、同じアーキテクチャで最後に Windows ストアに送信されたパッケージの番号より常に大きい必要があります。
+Windows 8 と Windows 8.1 を対象とする .appx パッケージでは、アーキテクチャごとに同じ規則が適用されます。新しい申請のパッケージのバージョン番号は、同じアーキテクチャで最後に Microsoft Store に公開されたパッケージの番号より常に大きい必要があります。
 
 さらに、Windows 8.1 用パッケージのバージョン番号は、同じアプリのどの Windows 8 用パッケージのバージョン番号よりも常に大きい必要があります。 言い換えれば、申請する Windows 8 用パッケージのバージョン番号は、同じアプリについて申請したすべての Windows 8.1 用パッケージのバージョン番号よりも小さい必要があります。
 
@@ -78,7 +80,7 @@ Windows 8 と Windows 8.1 を対象とする .appx パッケージでは、ア�
 
 ここでは、Windows 8 と Windows 8.1 のさまざまなバージョン番号の更新シナリオで何が起きるかの例を示します。
 
-| ストア内のアプリのバージョン  | アップロードするバージョン | 新しいバージョンが Windows ストアにアップロードされた後の動作、新規インストールのバージョン | 新しいバージョンが Windows ストアにアップロードされた後の動作、既存のバージョンの更新 |
+| ストア内のアプリのバージョン  | アップロードするバージョン | 新しいバージョンが Microsoft Store にアップロードされた後の動作、新規インストールのバージョン | 新しいバージョンが Microsoft Store にアップロードされた後の動作、既存のバージョンの更新 |
 |---------------------------------------------|-----------------------------|--------------------------------------------------------------------------------------------|----------|
 | なし                                     | x86, v1.0.0.0               | x86, v1.0.0.0 (x86 と x64 の両方のコンピューター)                                                | なし。 |
 | x86, v1.0.0.0                               | x64, v1.0.0.0               | 対応するアーキテクチャ用の v1.0.0.0                                                   | なし:  バージョン番号は同じであるため。 |
@@ -87,6 +89,6 @@ Windows 8 と Windows 8.1 を対象とする .appx パッケージでは、ア�
 | neutral, v1.0.0.1                           | x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | 対応するアーキテクチャ用の v1.0.0.0          | なし:  neutral, v1.0.0.1 のアプリは引き続き使用される。 |
 | neutral, v1.0.0.1 <br> x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | 対応するアーキテクチャ用の v1.0.0.1 | neutral, v1.0.0.1 のアプリを実行している場合はなし。 <br> 特定のアーキテクチャ用の v1.0.0.0 のアプリを実行している場合は v1.0.0.0 から v1.0.0.1 に更新。 |
 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | x86, v1.0.0.2 <br> x64, v1.0.0.2 <br> ARM, v1.0.0.2 | 対応するアーキテクチャ用の v1.0.0.2  | 特定のアーキテクチャ用の v1.0.0.1 のアプリを実行している場合は v1.0.0.1 から v1.0.0.2 に更新。 |
- 
+
 > [!NOTE]
 > .appx パッケージとは異なり、.xap パッケージのバージョン番号は、特定の顧客にどのパッケージを提供するかを決める場合に考慮されません。 特定の .xap パッケージから新しいパッケージへと顧客を更新するには、新しい提出で以前の .xap を削除してください。

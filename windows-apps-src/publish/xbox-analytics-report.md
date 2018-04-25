@@ -9,11 +9,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, xbox 分析, xbox live 分析, xbox 統計情報
 ms.localizationpriority: high
-ms.openlocfilehash: 2b6ab5c15b4683456502ce1b94b1bf3ca74c239c
-ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
+ms.openlocfilehash: 4f00d400724d07a00970f0145326068e15ea9054
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="xbox-analytics-report"></a>Xbox 分析レポート
 
@@ -64,7 +64,7 @@ Windows デベロッパー センター ダッシュボードの **Xbox 分析�
 
 ### <a name="friends-and-followers"></a>友だちとフォロワー
 
-このセクションには、対象ゲームをプレイしているユーザーの **[Median number of friends]** (フレンド数の中央値) と**[Median number of followers]** (フォロワー数の中央値) が表示されます。
+このセクションには、対象ゲームをプレイしているユーザーの **[Median number of friends]** (フレンド数の中央値) と **[Median number of followers]** (フォロワー数の中央値) が表示されます。
 
 
 ### <a name="accessory-usage"></a>アクセサリの利用状況
@@ -131,7 +131,7 @@ Windows デベロッパー センター ダッシュボードの **Xbox 分析�
 **[Rate limiting]** (レート制限) を選択することで、レート制限エラーのみを表示することもできます。 これにより、選択した期間を対象として各 Xbox Live サービス、エンドポイント、状態コードのレート制限エラー (429) とレート制限除外エラー(429E) の数が日付ごとに表示されます。
 
 > [!NOTE]
-429E 状態コードは、実際には 200 状態コードとして正常に返されたコードですが、その時点でサービスに高ボリュームが生じていればレート制限になるため、429 エラーの発生と全く同じように扱うことをお勧めします。
+> 429E 状態コードは、実際には 200 状態コードとして正常に返されたコードですが、その時点でサービスに高ボリュームが生じていればレート制限になるため、429 エラーの発生と全く同じように扱うことをお勧めします。
 
 
 

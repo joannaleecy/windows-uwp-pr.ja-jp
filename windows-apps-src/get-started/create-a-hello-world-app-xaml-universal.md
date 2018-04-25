@@ -1,17 +1,20 @@
 ---
 author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
-title: "Hello, world アプリを作成する (XAML)"
-description: "このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象にした単純な Hello, world アプリを Extensible Application Markup Language (XAML) を使って C# で作る方法について説明します。"
+title: "\"Hello, world\" アプリを作成する方法 (XAML)"
+description: Windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象にした単純な Hello, world アプリを Extensible Application Markup Language (XAML) を使って C# で作成します。
 ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 95e447550705d606483c20ec34cca6c97b03785c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: windows 10, uwp, 初めてのアプリ, hello world
+ms.localizationpriority: high
+ms.openlocfilehash: e6fb25572213947aa7c536cde552aca3c572f0cf
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="create-a-hello-world-app-xaml"></a>"Hello, world" アプリを作成する (XAML)
 
@@ -27,8 +30,8 @@ translationtype: HT
 
 ## <a name="before-you-start"></a>はじめに...
 
--   [ユニバーサル Windows アプリとは](whats-a-uwp.md)?
--   このチュートリアルを行うには、Windows 10 と Visual Studio 2017 が必要です。 [準備してください](get-set-up.md)。
+-   [ユニバーサル Windows アプリとは?](universal-application-platform-guide.md)
+-   [Visual Studio 2017 (および Windows 10) をダウンロードします](https://developer.microsoft.com/windows/downloads)。 サポートが必要な場合は、[セットアップする](get-set-up.md)方法をご覧ください。
 -   また、Visual Studio の既定のウィンドウ レイアウトを使用することを前提としています。 既定のレイアウトを変更した場合は、**[ウィンドウ]** メニューの **[ウィンドウ レイアウトのリセット]** を使って、レイアウトをリセットできます。
 
 > [!NOTE]
@@ -97,7 +100,7 @@ translationtype: HT
 
 *一連のロゴ イメージ*
 -   Assets/Square150x150Logo.scale-200.png は、スタート メニュー内のアプリを表します。
--   Assets/StoreLogo.png は、Windows ストア内のアプリを表します。
+-   Assets/StoreLogo.png は、Microsoft Store 内のアプリを表します。
 -   Assets/SplashScreen.scale-200.png は、アプリが起動したときに表示するスプラッシュ画面です。
 
 ## <a name="step-2-adding-a-button"></a>手順 2. ボタンを追加する
@@ -188,7 +191,7 @@ Windows キーを押して **[スタート]** メニューを開き、すべて�
 
    アプリ ウィンドウを閉じます。
 
-## <a name="step-3-event-handlers"></a>手順 4. イベント ハンドラー
+## <a name="step-4-event-handlers"></a>手順 4. イベント ハンドラー
 
 "イベント ハンドラー" は複雑なもののように聞こえますが、イベント (ユーザーによるボタンのクリックなど) が発生したときに呼び出されるコードの別名にすぎません。
 
@@ -231,17 +234,15 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 ## <a name="summary"></a>まとめ
 
-
 これで、Windows 10 と UWP 用の初めてのアプリを作成しました。
 
-アプリで使うコントロールを XAML によってレイアウトする方法については、[グリッドに関するチュートリアル](../layout/grid-tutorial.md)で学習するか、直接[次のステップ](learn-more.md)に進んでください。
-
+アプリで使うコントロールを XAML によってレイアウトする方法については、[グリッドに関するチュートリアル](../design/layout/grid-tutorial.md)で学習するか、直接[次のステップ](learn-more.md)に進んでください。
 
 ## <a name="see-also"></a>関連項目
 
 * [初めてのアプリ](your-first-app.md)
-* [Windows ストア アプリの公開](https://developer.microsoft.com/store/publish-apps)
+* [UWP アプリを公開する](https://developer.microsoft.com/store/publish-apps)
 * [UWP アプリの開発に関するハウツー記事](https://developer.microsoft.com/windows/apps/develop)
 * [UWP 開発者向けコード サンプル](https://developer.microsoft.com/windows/samples)
-* [ユニバーサル Windows アプリとは?](whats-a-uwp.md)
+* [ユニバーサル Windows アプリとは?](universal-application-platform-guide.md)
 * [Windows アカウントのサインアップ](sign-up.md)

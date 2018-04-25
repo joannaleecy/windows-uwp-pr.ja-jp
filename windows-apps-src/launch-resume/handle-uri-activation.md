@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: high
-ms.openlocfilehash: 754fa7c1fe805b45b33be1d560d07c22646d497c
-ms.sourcegitcommit: 444eaccbdcd4be2f1a1e6d4ce5525ba57e363b56
+ms.openlocfilehash: 1810cf1568ab40621ccc981a6ec1f561d0e8a296
+ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="handle-uri-activation"></a>URI のアクティブ化の処理
 
@@ -35,7 +35,7 @@ URI スキーム名に登録するのは、その種類の URI スキームの�
 
 アプリは、パッケージ マニフェストに一覧表示される URI スキーム名のアクティブ化イベントだけを受け取ります。 アプリが `alsdk` URI スキーム名を処理することを示す方法は次のとおりです。
 
-1.  **ソリューション エクスプローラー**で、package.appxmanifest をダブルクリックしてマニフェスト デザイナーを開きます。 **[宣言]** タブを選び、**[使用可能な宣言]** ドロップダウンから **[プロトコル]** を選んで **[追加]** をクリックします。
+1. **ソリューション エクスプローラー**で、package.appxmanifest をダブルクリックしてマニフェスト デザイナーを開きます。 **[宣言]** タブを選び、**[使用可能な宣言]** ドロップダウンから **[プロトコル]** を選んで **[追加]** をクリックします。
 
     プロトコルのマニフェスト デザイナーで指定することができる各フィールドについて、以下で簡単に説明します (詳しくは、「[**AppX パッケージ マニフェスト**](https://msdn.microsoft.com/library/windows/apps/dn934791)」をご覧ください)。
 
@@ -50,11 +50,12 @@ URI スキーム名に登録するのは、その種類の URI スキームの�
 | **エントリ ポイント** | プロトコル拡張機能を処理するタスクを指定します。 これは、通常、Windows ランタイムの型の完全な名前空間修飾名です。 指定しない場合、アプリのエントリ ポイントが使用されます。 |
 | **スタート ページ** | 拡張ポイントを処理する Web ページです。 |
 | **リソース グループ** | リソース管理のために拡張機能のアクティブ化をグループ化するために使用できるタグ。 |
-| **必要な表示** (Windows のみ) | この URI スキーム名に対して起動されたときにアプリのウィンドウに必要なスペースの量を示すには、**[必要な表示]** フィールドを指定します。 **[必要な表示]** に指定できる値は、**Default**、**UseLess**、**UseHalf**、**UseMore**、または **UseMinimum** です。 <br/>**注**  Windows では、ターゲット アプリの最終的なウィンドウ サイズを決定するときに複数の異なる要素が考慮されます。たとえば、ソース アプリの設定、画面上のアプリの数、画面の向きなどです。 **[必要な表示]** を設定しても、ターゲット アプリの特定のウィンドウ動作が保証されるわけではありません。<br/> **モバイル デバイス ファミリ: [必要な表示]** はモバイル デバイス ファミリではサポートされていません。 |
-2.  **[ロゴ]** に `images\Icon.png` と入力します。
-3.  **[表示名]** に `SDK Sample URI Scheme` と入力します。
-4.  **[名前]** に `alsdk` と入力します。
-5.  Ctrl + S キーを押して、変更を package.appxmanifest に保存します。
+| **必要な表示** (Windows のみ) | この URI スキーム名に対して起動されたときにアプリのウィンドウに必要なスペースの量を示すには、**[必要な表示]** フィールドを指定します。 **[必要な表示]** に指定できる値は、**Default**、**UseLess**、**UseHalf**、**UseMore**、または **UseMinimum** です。<br/>**注**  Windows では、ターゲット アプリの最終的なウィンドウ サイズを決定するときに複数の異なる要素が考慮されます。たとえば、ソース アプリの設定、画面上のアプリの数、画面の向きなどです。 **[必要な表示]** を設定しても、ターゲット アプリの特定のウィンドウ動作が保証されるわけではありません。<br/>**モバイル デバイス ファミリ: [必要な表示]** はモバイル デバイス ファミリではサポートされていません。 |
+
+2. **[ロゴ]** に `images\Icon.png` と入力します。
+3. **[表示名]** に `SDK Sample URI Scheme` と入力します。
+4. **[名前]** に `alsdk` と入力します。
+5. Ctrl + S キーを押して、変更を package.appxmanifest に保存します。
 
     これにより、次のような [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) 要素がパッケージ マニフェストに追加されます。 **windows.protocol** カテゴリは、アプリが `alsdk` URI スキーム名を処理することを示しています。
 
@@ -142,7 +143,6 @@ URI からアプリを起動する方法について詳しくは、「[URI に�
 URI スキーム名は、悪意のあるものも含め、あらゆるアプリや Web サイトから使われる可能性があります。 そのため、その URI で受け取るデータは、信頼できないソースからのデータである可能性があります。 URI で受け取るパラメーターに基づいて永続的な操作を実行しないことをお勧めします。 たとえば、アプリを起動するとユーザーのアカウント ページが表示されるようにするために URI パラメーターを使うことはかまいませんが、ユーザーのアカウントを直接変更するためにプロトコル パラメーターを使うことは行わないことをお勧めします。
 
 > **注**  アプリの新しい URI スキーム名を作成する場合は、[RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550) のガイダンスに従う必要があります。 これにより確実に名前が URI スキームの標準に準拠するようになります。
-
 > **注**  プロトコル コントラクトを介して起動した場合、戻るボタンが使われたときは、アプリの以前のコンテンツに戻るのではなく、アプリを起動した画面に戻るようにする必要があります。
 
 新しい URI ターゲットを開くアクティブ化イベントごとに、アプリで新しい XAML [**フレーム**](https://msdn.microsoft.com/library/windows/apps/br242682)を作成することをお勧めします。 こうすると、新しい XAML **フレーム**のナビゲーション バックスタックに、中断されたときに現在のウィンドウに表示されていた以前のコンテンツが含まれなくなります。
@@ -153,28 +153,24 @@ URI スキーム名は、悪意のあるものも含め、あらゆるアプリ�
 
 **完全な例**
 
-* [Association Launching サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)
+- [Association Launching サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)
 
 **概念**
 
-* [既定のプログラム](https://msdn.microsoft.com/library/windows/desktop/cc144154)
-* [ファイルの種類と URI の関連付けのモデル](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+- [既定のプログラム](https://msdn.microsoft.com/library/windows/desktop/cc144154)
+- [ファイルの種類と URI の関連付けのモデル](https://msdn.microsoft.com/library/windows/desktop/hh848047)
 
 **処理手順**
 
-* [URI に応じた既定のアプリの起動](launch-default-app.md)
-* [ファイルのアクティブ化の処理](handle-file-activation.md)
+- [URI に応じた既定のアプリの起動](launch-default-app.md)
+- [ファイルのアクティブ化の処理](handle-file-activation.md)
 
 **ガイドライン**
 
-* [ファイルの種類と URI のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700321)
+- [ファイルの種類と URI のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700321)
 
 **リファレンス**
 
-* [AppX パッケージ マニフェスト](https://msdn.microsoft.com/library/windows/apps/dn934791)
-* [Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/br224742)
-* [Windows.UI.Xaml.Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330)~~
-
- 
-
- 
+- [AppX パッケージ マニフェスト](https://msdn.microsoft.com/library/windows/apps/dn934791)
+- [Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/br224742)
+- [Windows.UI.Xaml.Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330)

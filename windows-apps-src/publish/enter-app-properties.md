@@ -4,17 +4,17 @@ Description: The App properties page of the app submission process lets you defi
 title: アプリのプロパティの入力
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ms.author: wdg-dev-content
-ms.date: 01/24/2018
+ms.date: 04/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, ゲーム設定, 表示モード, システム要件, ハードウェア要件, 最小ハードウェア, 推奨されるハードウェア
+keywords: windows 10, uwp, ゲーム設定, 表示モード, システム要件, ハードウェア要件, 最小ハードウェア, 推奨されるハードウェア, プライバシー ポリシー, サポートの問い合わせ先情報, アプリ Web サイト, サポート情報
 ms.localizationpriority: high
-ms.openlocfilehash: 8ecdeb0dd4ebba83a387666ab87067ff419a9303
-ms.sourcegitcommit: 8d9d4f17e272b78e38b346f846b96260c922bbb2
+ms.openlocfilehash: 35d7be3aa88ca17219c2f2e4024bd2e692fb1abc
+ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="enter-app-properties"></a>アプリのプロパティの入力
 
@@ -26,6 +26,37 @@ ms.lasthandoff: 01/24/2018
 Microsoft Store でアプリの分類に使うカテゴリを (該当する場合はサブカテゴリ/ジャンルも) 示す必要があります。 アプリを提出するには、カテゴリを指定することが必要です。
 
 詳しくは、「[カテゴリとサブカテゴリの一覧](category-and-subcategory-table.md)」をご覧ください。
+
+
+## <a name="support-info"></a>サポート情報
+
+このセクションでは、ユーザーがアプリの詳細とサポートを受ける方法について理解するのに役立つ情報を入力できます。
+
+### <a name="privacy-policy-url"></a>プライバシー ポリシーの URL
+
+開発者は、アプリをプライバシーに関する法令と規制に準拠させ、必要に応じてプライバシー ポリシーの有効な URL をここで提供する責任があります。
+
+このセクションでは、アプリが[個人情報](https://docs.microsoft.com/legal/windows/agreements/store-policies#105-personal-information)へのアクセス、収集、送信を行うかどうかを指定する必要があります。 **[はい]** と回答した場合、プライバシー ポリシーの URL が必要です。 それ以外の場合、これは任意です (ただし、アプリにプライバシー ポリシーが必要と判断されたが、用意されていない場合、申請が認定に合格しない可能性があります)。
+
+> [!NOTE]
+> 個人情報へのアクセス、送信、収集を許可する可能性がある[機能](../packaging/app-capability-declarations.md)をパッケージが宣言していることが検出された場合、この質問が **[はい]** とマークされ、プライバシー ポリシーの URL の入力が必須になります。
+
+アプリにプライバシー ポリシーが必要かどうかを確認するには、「[アプリ開発者契約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)」と「[Microsoft Store ポリシー](https://docs.microsoft.com/legal/windows/agreements/store-policies#105-personal-information)」をご覧ください。 
+
+> [!NOTE]
+> Microsoft では、アプリ用の既定のプライバシー ポリシーは用意していません。 同様に、アプリは Microsoft のプライバシー ポリシーの対象にはなりません。 
+
+
+### <a name="website"></a>Web サイト
+
+アプリの Web ページの URL を入力します。 この URL は、Microsoft Store のアプリの登録情報 Web ページではなく、独自の Web サイトのページを指すものにする必要があります。 このフィールドは任意ですが、使用することをお勧めします。
+
+### <a name="support-contact-info"></a>サポートの問い合わせ先情報
+
+アプリのサポートをユーザーに提供する Web ページの URL、またはユーザーがサポートに連絡するためのメール アドレスを入力します。 ユーザーが必要な場合にサポートを受ける方法を知ることができるように、すべての申請にこの情報を含めることをお勧めします。 Microsoft がアプリのサポートをユーザーに提供することはない点に注意してください。
+
+> [!IMPORTANT]
+> **[サポートの問い合わせ先情報]** フィールドは、アプリやゲームが Xbox で使用可能な場合に必須です。 それ以外の場合、これは任意です (ただし、推奨されます)。
 
 
 ## <a name="game-settings"></a>ゲーム設定

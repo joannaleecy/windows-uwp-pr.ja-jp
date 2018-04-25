@@ -1,17 +1,20 @@
 ---
 author: GrantMeStrength
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
-title: "準備"
-description: "準備は、思っているよりも簡単です。 次の手順に従って、Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリの作成を開始してください。"
+title: 準備
+description: 準備は、思っているよりも簡単です。 次の手順に従って、Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリの作成を開始してください。
 ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 202480cd8e9107e18c7fa8c84a17089177f91dcb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: high
+ms.openlocfilehash: 85c949307183cf71f8b770d190d983db28b61a9f
+ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="get-set-up"></a>準備
 
@@ -29,7 +32,6 @@ UWP アプリを開発するには、Windows の最新バージョンが必要�
 MSDN サブスクリプション会員の方は、 ISO をここからダウンロードできます。
 
 -   Windows 10 は、[MSDN サブスクライバー ダウンロード](http://go.microsoft.com/fwlink/p/?LinkId=266384)からダウンロードできます。
-
 
 
 ## <a name="2-download-or-update-visual-studio"></a>2. Visual Studio のダウンロードまたは更新
@@ -65,7 +67,7 @@ UWP アプリのテストは実際の PC と電話で行うことが重要です
 
 ## <a name="whats-next"></a>次の手順
 
-ツールをインストールして開発者用ライセンスまたは開発者アカウントを取得したら、チュートリアルを使って最初のアプリを作成します。
+ツールをインストールしてデバイスで開発できるようにしたら、チュートリアルを使って最初のアプリを作成します。
 
 -   [初めてのアプリの作成](your-first-app.md)のチュートリアル
 
@@ -77,8 +79,8 @@ UWP アプリのテストは実際の PC と電話で行うことが重要です
 ## <a name="see-also"></a>関連項目
 
 * [初めてのアプリ](your-first-app.md)
-* [Windows ストア アプリの公開](https://developer.microsoft.com/store/publish-apps)
+* [UWP アプリを公開する](https://developer.microsoft.com/store/publish-apps)
 * [UWP アプリの開発に関するハウツー記事](https://developer.microsoft.com/windows/apps/develop)
 * [UWP 開発者向けコード サンプル](https://developer.microsoft.com/windows/samples)
-* [ユニバーサル Windows アプリとは?](whats-a-uwp.md)
+* [UWP アプリとは](universal-application-platform-guide.md)
 * [Windows アカウントのサインアップ](sign-up.md)

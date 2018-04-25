@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: high
-ms.openlocfilehash: 3cbaa8a8e78ad14472a34e107521d9c966ba434f
-ms.sourcegitcommit: 884b79b4c6fd8014fab9953faca557e56bb8c400
+ms.openlocfilehash: a16f86512a3c33055cb4825966282f1487ea158d
+ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="desktop-bridge"></a>デスクトップ ブリッジ
 
@@ -58,6 +58,7 @@ Windows 10 エクスペリエンスを実現するために使用するコード
 次に、「[アプリのパッケージ化の準備](desktop-to-uwp-prepare.md)」を読み、アプリに該当する点があれば、Windows アプリ パッケージを作成する前に対処してください。 パッケージを作成する前に、多くの変更を加える必要はないかもしれません。 ただし、状況によっては、パッケージを作成する前にアプリへの調整が必要になる場合があります。
 
 <a id="convert" />
+
 ## <a name="package"></a>パッケージ化
 
 アプリの Windows アプリ パッケージを作成するには、以下のようなツールを使用できます。
@@ -114,6 +115,9 @@ Desktop App Converter は、Hyper-V および [VMware](http://www.vmware.com/) �
 Advanced Installer では、Visual Studio 2017 および 2015 用の拡張機能も提供されており、これらは[デスクトップ ブリッジ アプリのビルドとデバッグ](http://www.advancedinstaller.com/debug-desktop-bridge-apps.html)に使用できます。
 
 簡単な紹介については、こちらの[ビデオ](https://www.youtube.com/watch?v=cmLKgn04Vfg&feature=youtu.be)をご覧ください。
+
+> [!TIP]
+> 最近リリースされた [Advanced Installer Express Edition](https://www.advancedinstaller.com/express-edition.html) をチェックしてみてください。
 
 #### <a name="cloudhouse-compatibility-containers"></a>Cloudhouse 互換性コンテナー
 

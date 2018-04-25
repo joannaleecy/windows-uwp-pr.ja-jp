@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, UWP
 ms.localizationpriority: high
-ms.openlocfilehash: 66c0ae56c3722162ebef5a8660cc2322d69a278b
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: 04d4ca665a8f0dff495b144868767506d7a210f8
+ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="in-app-ads"></a>アプリ内広告
 
@@ -26,6 +26,7 @@ ms.lasthandoff: 03/08/2018
 これらの SDK をアプリに統合して広告を表示する方法については、「[Microsoft Advertising SDK を使用したアプリでの広告の表示](../monetize/display-ads-in-your-app.md)」をご覧ください。
 
 <span id="create-ad-unit" />
+
 ## <a name="create-ad-units"></a>広告ユニットの作成
 
 アプリ内の[バナー広告](../monetize/banner-ads.md), [interstitial ad](../monetize/interstitial-ads.md)または[ネイティブ広告](../monetize/native-ads.md)用に広告ユニットを作成するには:
@@ -61,6 +62,7 @@ ms.lasthandoff: 03/08/2018
 作成した新しい広告ユニットは、**[収益化]** &gt; **[アプリ内広告]** ページにある利用可能な広告ユニットの表に表示されます。
 
 <span id="available-ad-units" />
+
 ## <a name="review-and-edit-ad-units"></a>広告ユニットの確認と編集
 
 アカウント内で 1 つ以上のアプリに対して広告ユニットを作成すると、これらの広告ユニットが **[収益化]** &gt; **[アプリ内広告]** ページの下部にある表に表示されます。 この表には、各広告ユニットの **[アプリケーション ID]** および **[広告ユニット ID]** がその他の情報と共に表示されます。 アプリに広告を表示するには、コードでこれらの値を使う必要があります。 詳しくは、「[アプリの広告ユニットをセットアップする](../monetize/set-up-ad-units-in-your-app.md)」をご覧ください。
@@ -81,6 +83,7 @@ UWP 広告ユニットの[仲介設定](#mediation)または広告ユニット�
 過去 6 か月間アクティビティがない広告ユニットには "**非アクティブ**" のラベルが付き、最終的にはダッシュボードから削除されます。 フィルターを使用して "**アクティブ**" または "**非アクティブ**" の広告ユニットのみを表示することもできます。 誤って "**非アクティブ**" がマークされていると思われる広告ユニットを見つけた場合は、[サポートにお問い合わせください](http://aka.ms/storesupport)。
 
 <span id="mediation" />
+
 ## <a name="mediation-settings"></a>仲介設定
 
 [新しい UWP 広告ユニットを作成する](#create-ad-unit)場合または[既にある UWP 広告ユニットを編集する](#available-ad-units)場合は、このセクションのオプションを使用して広告ユニットの広告仲介を構成します。 広告仲介を使うと、複数の広告ネットワークから広告を表示して、広告収益とアプリ プロモーションの機能を最大限に引き出すことができます。表示される広告には、他の有料広告ネットワークからの広告や、Microsoft のアプリ プロモーション キャンペーン用の収益が生じない広告などが含まれます。 選択した広告ネットワークからのバナー広告要求の仲介は自動的に行われます。 アプリ内のバナー広告、スポット広告、またはネイティブ広告に既に関連付けられている UWP 広告ユニットがある場合は、広告仲介を有効にするためにアプリのコードを変更する必要はありません。
@@ -113,6 +116,7 @@ UWP 広告ユニットの[仲介設定](#mediation)または広告ユニット�
 10. **[広告ユニットを作成]** (新しい広告ユニットを作成している場合) または **[保存]** (既存の広告ユニットを編集している場合) をクリックします。
 
 <span id="paid-networks" />
+
 ### <a name="supported-paid-ad-networks"></a>サポートされている有料広告ネットワーク
 
 次の表は、広告の種類によって現在サポートされている有料ネットワークを示しています。 ただし、[一部の市場では利用できない](#network-markets)ネットワークもあります。
@@ -131,6 +135,7 @@ UWP 広告ユニットの[仲介設定](#mediation)または広告ユニット�
 
 
 <span id="other-networks" />
+
 ### <a name="other-ad-networks"></a>他の広告ネットワーク
 
 次の表は、広告の種類によって現在サポートされている他のネットワークを示しています。
@@ -142,6 +147,7 @@ UWP 広告ユニットの[仲介設定](#mediation)または広告ユニット�
 
 
 <span id="network-markets" />
+
 ### <a name="supported-markets-for-ad-networks"></a>広告ネットワークでサポートされる市場
 
 利用可能な広告ネットワークは、[サポートされるすべての市場](define-pricing-and-market-selection.md#microsoft-store-consumer-markets)で広告を提供しますが、次の例外があります。
@@ -153,6 +159,7 @@ UWP 広告ユニットの[仲介設定](#mediation)または広告ユニット�
 | smartclip | オーストリア、ベルギー、デンマーク、フィンランド、ドイツ、イタリア、オランダ、ノルウェー、スウェーデン、スイス  |
 
 <span id="coppa" />
+
 ## <a name="coppa-compliance"></a>COPPA 準拠
 
 [広告ユニットを作成](#create-ad-unit)または[既存の広告ユニットを選択](#available-ad-units)すると、広告ユニットに対して選んだアプリにアプリ認定プロセスで [Store 内](../publish/the-app-certification-process.md#in-the-store) ステップに到達した申請が 1 つ以上ある場合、**[COPPA 準拠]** セクションがダッシュボード ページの下部に表示されます。

@@ -4,17 +4,17 @@ Description: The Age ratings page of the app submission process lets you provide
 title: 年齢区分
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 ms.author: wdg-dev-content
-ms.date: 02/06/2018
+ms.date: 03/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 年齢区分, ゲームの評価, iarc, 評価, アンケート, レーティング機関, コンテンツ区分
 ms.localizationpriority: high
-ms.openlocfilehash: 0af2d316b0d0c4705c4669ef910f37845ca78aa8
-ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
+ms.openlocfilehash: 8ee0b2dd91de7cf18fc71ace8b97abc795e22e6b
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="age-ratings"></a>年齢区分
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 02/09/2018
 > [!IMPORTANT]
 > 別のネットショップで既に質問表に回答していて、IARC の年齢区分 ID を割り当てられている場合、マイクロソフトに年齢区分 ID を提供するオプションを選ぶことができます。 その ID を使って、Microsoft Store のアプリに既存の年齢区分を関連付けます。
 
-正確に質問に回答する必要があります。 このプロセスにおいて、弊社は発行者の表示名とメール アドレスを IARC と共有します。 質問票に記入した後、回答に基づいて年齢区分とコンテンツ区分の情報が IARC 評価システムから提供されます。 弊社は、この評価情報をさまざまな市場の顧客にアプリを表示するときに使います。 また、アプリの公開後、アプリの区分を確認するメールを IARC から受信します。
+正確に質問に回答する必要があります。 質問の詳細情報を確認するには、質問の横に表示される情報アイコンをクリックします。 このプロセスにおいて、弊社は発行者の表示名とメール アドレスを IARC と共有します。 質問票に記入した後、回答に基づいて年齢区分とコンテンツ区分の情報が IARC 評価システムから提供されます。 弊社は、この評価情報をさまざまな市場の顧客にアプリを表示するときに使います。 また、アプリの公開後、アプリの区分を確認するメールを IARC から受信します。
 
 最初の質問では、アプリ (およびそのメタデータ) の説明として最適なカテゴリを選択します。 選択すると、他の質問が表示されます。 表示される個別の質問は、前の回答によって異なります。 間違った場合は、正しい回答を指定するために質問表の前に戻ってもう一度やり直すことができます。
 
@@ -44,6 +44,7 @@ ms.lasthandoff: 02/09/2018
 > 台湾での利用が可能になるゲームを提出する場合は、提供された CSRR レーティングを[こちらのフォーム](https://go.microsoft.com/fwlink/?linkid=867281)で登録することが法律で義務付けられています。 
 
 <span id="appeal" />
+
 ## <a name="appealing-ratings-or-refused-classifications"></a>区分、または拒否された分類に対する要請
 
 アプリに対して割り当てられた年齢区分に関する質問がある場合、または年齢区分について異議がある場合は、アプリの公開後に受信する評価証明書メールに表示されているリンクを使用して IARC に問い合わせることができます。
