@@ -1,69 +1,188 @@
 ---
 author: jnHs
-Description: "適切なカテゴリとサブカテゴリにアプリを登録すると、どのようなアプリかわかりやすくなり、ユーザーもアプリを見つけやすくなります。"
-title: "カテゴリとサブカテゴリの一覧"
+Description: Listing your app in the right category and subcategory helps customers find your app and understand more about it.
+title: カテゴリとサブカテゴリの一覧
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 88971766290288f6badb611e6b27c58641020005
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+keywords: Windows 10, uwp, カテゴリ, サブカテゴリ, ジャンル, 分類, ジャンル
+ms.localizationpriority: high
+ms.openlocfilehash: ddbeb0f110e7557b668f4b8f03fb374bfdf7705c
+ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 03/28/2018
 ---
-# <a name="category-and-subcategory-table"></a><span data-ttu-id="97c4b-104">カテゴリとサブカテゴリの一覧</span><span class="sxs-lookup"><span data-stu-id="97c4b-104">Category and subcategory table</span></span>
+# <a name="category-and-subcategory-table"></a><span data-ttu-id="4c06e-103">カテゴリとサブカテゴリの一覧</span><span class="sxs-lookup"><span data-stu-id="4c06e-103">Category and subcategory table</span></span>
 
 
-<span data-ttu-id="97c4b-105">適切なカテゴリとサブカテゴリにアプリを登録すると、どのようなアプリかわかりやすくなり、ユーザーもアプリを見つけやすくなります。</span><span class="sxs-lookup"><span data-stu-id="97c4b-105">Listing your app in the right category and subcategory helps customers find your app and understand more about it.</span></span>
+<span data-ttu-id="4c06e-104">適切なカテゴリとサブカテゴリにアプリを登録すると、どのようなアプリかわかりやすくなり、ユーザーもアプリを見つけやすくなります。</span><span class="sxs-lookup"><span data-stu-id="4c06e-104">Listing your app in the right category and subcategory helps customers find your app and understand more about it.</span></span>
 
-<span data-ttu-id="97c4b-106">アプリに最も適したカテゴリを 1 つ選ぶ必要があります。</span><span class="sxs-lookup"><span data-stu-id="97c4b-106">You are required to the category that best describes your app.</span></span> <span data-ttu-id="97c4b-107">利用可能な場合は、サブカテゴリを選ぶこともできます。</span><span class="sxs-lookup"><span data-stu-id="97c4b-107">You can optionally choose a subcategory, if available.</span></span> <span data-ttu-id="97c4b-108">(カテゴリに**ゲーム**を選んだ場合は、サブカテゴリ (ジャンル) を必ず選んでください。)</span><span class="sxs-lookup"><span data-stu-id="97c4b-108">(If you choose **Games** for your category, a subcategory (genre) is required.)</span></span>
+<span data-ttu-id="4c06e-105">アプリに最も適したカテゴリを 1 つ選ぶ必要があります。</span><span class="sxs-lookup"><span data-stu-id="4c06e-105">You must choose the category that best describes your app.</span></span> <span data-ttu-id="4c06e-106">利用可能な場合は、サブカテゴリを選ぶこともできます。</span><span class="sxs-lookup"><span data-stu-id="4c06e-106">You can optionally choose a subcategory, if available.</span></span> <span data-ttu-id="4c06e-107">どのカテゴリやサブカテゴリを使えばよいかわからない場合、または、ぴったりだと思えるものが見つからない場合は、同じようなアプリを見つけるときに調べる可能性が高いと思われるカテゴリを選んでください。</span><span class="sxs-lookup"><span data-stu-id="4c06e-107">If you're not sure which category or subcategory to use, or you can't find one that seems to be an exact fit, choose the one that you think customers are most likely to look at when trying to find apps like yours.</span></span>
 
-<span data-ttu-id="97c4b-109">アプリは、1 つのカテゴリ (と、ある場合は 1 つのサブカテゴリ) にのみ登録できます。どのカテゴリやサブカテゴリを使えばよいかわからない場合、または、ぴったりだと思えるものが見つからない場合は、同じようなアプリを見つけるときに調べる可能性が高いと思われるカテゴリを選んでください。</span><span class="sxs-lookup"><span data-stu-id="97c4b-109">An app can only be listed in one category (and one subcategory, if available.) If you're not sure which category or subcategory to use, or you can't find one that seems to be an exact fit, choose the one that you think customers are most likely to look at when trying to find apps like yours.</span></span>
-
-<span data-ttu-id="97c4b-110">既にストアで公開されているアプリのカテゴリまたはサブカテゴリを変更するには、[新しい申請を作成](app-submissions.md) して、新しいカテゴリまたはサブカテゴリを選びます。</span><span class="sxs-lookup"><span data-stu-id="97c4b-110">To change the category or subcategory of an app that's already in the Store, [create a new submission](app-submissions.md) and select the new category or subcategory.</span></span>
+<span data-ttu-id="4c06e-108">カテゴリとして**ゲーム**を選択した場合、少なくとも 1 つのサブカテゴリ (ゲームの場合は*ジャンル*とも呼ばれる) を選択する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4c06e-108">If you choose **Games** for your category, you are required to select at least one subcategory (also called *genre* for games).</span></span> <span data-ttu-id="4c06e-109">ゲームに該当するジャンルを必要な数だけ選択できます。</span><span class="sxs-lookup"><span data-stu-id="4c06e-109">You can choose as many genres as are appropriate for your game.</span></span> <span data-ttu-id="4c06e-110">ゲームを Xbox のユーザーに公開するには、[Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)を有効にするか、[概念の承認](../gaming/concept-approval.md)プロセスを通過する必要がある点に注意してください)。</span><span class="sxs-lookup"><span data-stu-id="4c06e-110">Note that in order to publish a game to customers on Xbox, you must enable the [Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) or go through the [concept approval](../gaming/concept-approval.md) process).</span></span> 
 
 > [!IMPORTANT] 
-> <span data-ttu-id="97c4b-111">アプリを**ゲーム** カテゴリで公開すると、新しい申請で別のカテゴリを選べなくなります。</span><span class="sxs-lookup"><span data-stu-id="97c4b-111">If you publish the app in the **Games** category, you won't be able to pick a different category in a new submission.</span></span> <span data-ttu-id="97c4b-112">またゲーム以外のカテゴリで公開したアプリの更新プログラムに対して、**ゲーム**のカテゴリを選ぶこともできません。</span><span class="sxs-lookup"><span data-stu-id="97c4b-112">You also can't choose the **Games** category in an update to an app that you previously published in a different category.</span></span>
+> <span data-ttu-id="4c06e-111">**ゲーム**カテゴリでアプリを公開する場合、新しい申請で別のカテゴリを選択することはできません。引き続き**ゲーム**カテゴリで公開する必要があります (ただし、新しい申請でジャンルの選択は変更できます)。</span><span class="sxs-lookup"><span data-stu-id="4c06e-111">If you publish the app in the **Games** category, you won't be able to pick a different category in a new submission; it must be continue to be published in the **Games** category (although you can change the genre selections in a new submission).</span></span> <span data-ttu-id="4c06e-112">同様に、ゲーム以外のカテゴリで公開したアプリを更新するときに、**ゲーム**のカテゴリを選ぶこともできません。</span><span class="sxs-lookup"><span data-stu-id="4c06e-112">Likewise, you can't choose the **Games** category when updating an app that you previously published in a different category.</span></span>
 
-<span data-ttu-id="97c4b-113">Windows ストアでは、アプリを以下のカテゴリとサブカテゴリで分類しています。</span><span class="sxs-lookup"><span data-stu-id="97c4b-113">The Windows Store organizes apps into the following categories and subcategories.</span></span>
+<span data-ttu-id="4c06e-113">ゲーム以外のアプリでは、1 つのカテゴリを選択する必要があり、必要に応じて、利用可能な任意のサブカテゴリから選択できます。</span><span class="sxs-lookup"><span data-stu-id="4c06e-113">For apps which are not games, you must choose one category, and can optionally choose from any subcategories that are available.</span></span> <span data-ttu-id="4c06e-114">**ゲーム** カテゴリではないアプリの場合、1 つ以上のサブカテゴリを選択することはできません。</span><span class="sxs-lookup"><span data-stu-id="4c06e-114">You can't select more than one subcategory for apps which are not in the **Games** category.</span></span> <span data-ttu-id="4c06e-115">一部のカテゴリにのみサブカテゴリが存在し、選択したカテゴリにサブカテゴリが属している場合にのみサブカテゴリを使用できます。</span><span class="sxs-lookup"><span data-stu-id="4c06e-115">Only some categories have subcategories, and you can only use a subcategory if it belongs to the category you selected.</span></span>
 
-<span data-ttu-id="97c4b-114">サブカテゴリがあるのは、一部のカテゴリのみです。</span><span class="sxs-lookup"><span data-stu-id="97c4b-114">Only some categories have subcategories.</span></span> <span data-ttu-id="97c4b-115">選んだカテゴリに属するサブカテゴリのみを使うことができることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="97c4b-115">Keep in mind that you can only use a subcategory if it belongs to the category you picked.</span></span>
+<span data-ttu-id="4c06e-116">既に Microsoft Store で公開されているアプリ (**ゲーム**から別のカテゴリに変更した場合やその逆の場合を除く) のカテゴリまたはサブカテゴリを変更するには、[新しい申請を作成](app-submissions.md)して、新しいカテゴリまたはサブカテゴリを選びます。</span><span class="sxs-lookup"><span data-stu-id="4c06e-116">To change the category or subcategory of an app that's already in the Store (except for changing from **Games** to another category or vice versa), [create a new submission](app-submissions.md) and select the new category or subcategory.</span></span>
+
+## <a name="categories-and-subcategories"></a><span data-ttu-id="4c06e-117">カテゴリとサブカテゴリ</span><span class="sxs-lookup"><span data-stu-id="4c06e-117">Categories and subcategories</span></span>
+
+<span data-ttu-id="4c06e-118">Microsoft Store では、アプリを以下のカテゴリとサブカテゴリで分類しています。</span><span class="sxs-lookup"><span data-stu-id="4c06e-118">The Microsoft Store organizes apps into the following categories and subcategories.</span></span>
+
+<table>
+    <thead>
+    <tr class="header">
+    <th align="left"><span data-ttu-id="4c06e-119">カテゴリ</span><span class="sxs-lookup"><span data-stu-id="4c06e-119">Category</span></span></th>
+    <th align="left"><span data-ttu-id="4c06e-120">サブカテゴリ</span><span class="sxs-lookup"><span data-stu-id="4c06e-120">Subcategory</span></span></th>
+    </tr>
+    </thead>
+    <tbody>
+<tr>
+    <td><span data-ttu-id="4c06e-121">書籍＆参考資料</span><span class="sxs-lookup"><span data-stu-id="4c06e-121">Books + reference</span></span></td>
+    <td><span data-ttu-id="4c06e-122">電子ブック リーダー</span><span class="sxs-lookup"><span data-stu-id="4c06e-122">E-reader</span></span> <br> <span data-ttu-id="4c06e-123">フィクション</span><span class="sxs-lookup"><span data-stu-id="4c06e-123">Fiction</span></span> <br> <span data-ttu-id="4c06e-124">ノンフィクション</span><span class="sxs-lookup"><span data-stu-id="4c06e-124">Nonfiction</span></span> <br> <span data-ttu-id="4c06e-125">リファレンス</span><span class="sxs-lookup"><span data-stu-id="4c06e-125">Reference</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-126">会社</span><span class="sxs-lookup"><span data-stu-id="4c06e-126">Business</span></span></td>
+    <td><span data-ttu-id="4c06e-127">金融 & 会計</span><span class="sxs-lookup"><span data-stu-id="4c06e-127">Accounting + finance</span></span> <br> <span data-ttu-id="4c06e-128">コラボレーション</span><span class="sxs-lookup"><span data-stu-id="4c06e-128">Collaboration</span></span> <br> <span data-ttu-id="4c06e-129">CRM</span><span class="sxs-lookup"><span data-stu-id="4c06e-129">CRM</span></span> <br> <span data-ttu-id="4c06e-130">データ + 分析</span><span class="sxs-lookup"><span data-stu-id="4c06e-130">Data + analytics</span></span> <br> <span data-ttu-id="4c06e-131">ファイル管理</span><span class="sxs-lookup"><span data-stu-id="4c06e-131">File management</span></span> <br> <span data-ttu-id="4c06e-132">在庫 & 物流</span><span class="sxs-lookup"><span data-stu-id="4c06e-132">Inventory + logistics</span></span> <br> <span data-ttu-id="4c06e-133">法務 & 人事</span><span class="sxs-lookup"><span data-stu-id="4c06e-133">Legal + HR</span></span> <br> <span data-ttu-id="4c06e-134">プロジェクト管理</span><span class="sxs-lookup"><span data-stu-id="4c06e-134">Project management</span></span> <br> <span data-ttu-id="4c06e-135">リモート デスクトップ</span><span class="sxs-lookup"><span data-stu-id="4c06e-135">Remote desktop</span></span> <br> <span data-ttu-id="4c06e-136">販売 + マーケティング</span><span class="sxs-lookup"><span data-stu-id="4c06e-136">Sales + marketing</span></span> <br> <span data-ttu-id="4c06e-137">時間 & 経費</span><span class="sxs-lookup"><span data-stu-id="4c06e-137">Time + expenses</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-138">開発者ツール</span><span class="sxs-lookup"><span data-stu-id="4c06e-138">Developer tools</span></span></td>
+    <td><span data-ttu-id="4c06e-139">Database (データベース)</span><span class="sxs-lookup"><span data-stu-id="4c06e-139">Database</span></span> <br> <span data-ttu-id="4c06e-140">デザイン ツール</span><span class="sxs-lookup"><span data-stu-id="4c06e-140">Design tools</span></span> <br> <span data-ttu-id="4c06e-141">開発キット</span><span class="sxs-lookup"><span data-stu-id="4c06e-141">Development kits</span></span> <br> <span data-ttu-id="4c06e-142">ネットワーク</span><span class="sxs-lookup"><span data-stu-id="4c06e-142">Networking</span></span> <br> <span data-ttu-id="4c06e-143">リファレンス & トレーニング</span><span class="sxs-lookup"><span data-stu-id="4c06e-143">Reference + training</span></span> <br> <span data-ttu-id="4c06e-144">サーバー</span><span class="sxs-lookup"><span data-stu-id="4c06e-144">Servers</span></span> <br> <span data-ttu-id="4c06e-145">ユーティリティ</span><span class="sxs-lookup"><span data-stu-id="4c06e-145">Utilities</span></span> <br> <span data-ttu-id="4c06e-146">Web ホスティング</span><span class="sxs-lookup"><span data-stu-id="4c06e-146">Web hosting</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-147">教育</span><span class="sxs-lookup"><span data-stu-id="4c06e-147">Education</span></span></td>
+    <td><span data-ttu-id="4c06e-148">書籍＆参考資料</span><span class="sxs-lookup"><span data-stu-id="4c06e-148">Books + reference</span></span> <br> <span data-ttu-id="4c06e-149">就学前教育</span><span class="sxs-lookup"><span data-stu-id="4c06e-149">Early learning</span></span> <br> <span data-ttu-id="4c06e-150">教育ツール</span><span class="sxs-lookup"><span data-stu-id="4c06e-150">Instructional tools</span></span> <br> <span data-ttu-id="4c06e-151">言語</span><span class="sxs-lookup"><span data-stu-id="4c06e-151">Language</span></span> <br> <span data-ttu-id="4c06e-152">学習支援</span><span class="sxs-lookup"><span data-stu-id="4c06e-152">Study aids</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-153">エンターテイメント</span><span class="sxs-lookup"><span data-stu-id="4c06e-153">Entertainment</span></span></td>
+    <td><span data-ttu-id="4c06e-154">(なし)</span><span class="sxs-lookup"><span data-stu-id="4c06e-154">(None)</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-155">グルメ</span><span class="sxs-lookup"><span data-stu-id="4c06e-155">Food + dining</span></span></td>
+    <td><span data-ttu-id="4c06e-156">(なし)</span><span class="sxs-lookup"><span data-stu-id="4c06e-156">(None)</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-157">ゲーム</span><span class="sxs-lookup"><span data-stu-id="4c06e-157">Games</span></span></td>
+    <td><span data-ttu-id="4c06e-158">アクション＆アドベンチャー</span><span class="sxs-lookup"><span data-stu-id="4c06e-158">Action + adventure</span></span> <br> <span data-ttu-id="4c06e-159">カード＆ボード</span><span class="sxs-lookup"><span data-stu-id="4c06e-159">Card + board</span></span> <br> <span data-ttu-id="4c06e-160">カジノ</span><span class="sxs-lookup"><span data-stu-id="4c06e-160">Casino</span></span> <br> <span data-ttu-id="4c06e-161">クラシック</span><span class="sxs-lookup"><span data-stu-id="4c06e-161">Classics</span></span> <br> <span data-ttu-id="4c06e-162">教育</span><span class="sxs-lookup"><span data-stu-id="4c06e-162">Educational</span></span> <br> <span data-ttu-id="4c06e-163">家族 & 子供</span><span class="sxs-lookup"><span data-stu-id="4c06e-163">Family + kids</span></span> <br> <span data-ttu-id="4c06e-164">格闘</span><span class="sxs-lookup"><span data-stu-id="4c06e-164">Fighting</span></span> <br> <span data-ttu-id="4c06e-165">マルチプレーヤー オンライン バトル アリーナ</span><span class="sxs-lookup"><span data-stu-id="4c06e-165">Multi-Player Online Battle Arena</span></span> <br> <span data-ttu-id="4c06e-166">ミュージック</span><span class="sxs-lookup"><span data-stu-id="4c06e-166">Music</span></span> <br> <span data-ttu-id="4c06e-167">その他</span><span class="sxs-lookup"><span data-stu-id="4c06e-167">Other</span></span> <br> <span data-ttu-id="4c06e-168">プラットフォーマー</span><span class="sxs-lookup"><span data-stu-id="4c06e-168">Platformer</span></span> <br> <span data-ttu-id="4c06e-169">パズル＆クイズ</span><span class="sxs-lookup"><span data-stu-id="4c06e-169">Puzzle + trivia</span></span> <br> <span data-ttu-id="4c06e-170">レーシング＆フライト</span><span class="sxs-lookup"><span data-stu-id="4c06e-170">Racing + flying</span></span> <br> <span data-ttu-id="4c06e-171">RPG</span><span class="sxs-lookup"><span data-stu-id="4c06e-171">Role playing</span></span> <br> <span data-ttu-id="4c06e-172">シューティング</span><span class="sxs-lookup"><span data-stu-id="4c06e-172">Shooter</span></span> <br> <span data-ttu-id="4c06e-173">シミュレーション</span><span class="sxs-lookup"><span data-stu-id="4c06e-173">Simulation</span></span> <br> <span data-ttu-id="4c06e-174">スポーツ</span><span class="sxs-lookup"><span data-stu-id="4c06e-174">Sports</span></span> <br> <span data-ttu-id="4c06e-175">戦略</span><span class="sxs-lookup"><span data-stu-id="4c06e-175">Strategy</span></span> <br> <span data-ttu-id="4c06e-176">ツール</span><span class="sxs-lookup"><span data-stu-id="4c06e-176">Tools</span></span> <br> <span data-ttu-id="4c06e-177">ワード</span><span class="sxs-lookup"><span data-stu-id="4c06e-177">Word</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-178">行政 & 政治</span><span class="sxs-lookup"><span data-stu-id="4c06e-178">Government + politics</span></span></td>
+    <td><span data-ttu-id="4c06e-179">(なし)</span><span class="sxs-lookup"><span data-stu-id="4c06e-179">(None)</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-180">健康 & フィットネス</span><span class="sxs-lookup"><span data-stu-id="4c06e-180">Health + fitness</span></span></td>
+    <td><span data-ttu-id="4c06e-181">(なし)</span><span class="sxs-lookup"><span data-stu-id="4c06e-181">(None)</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-182">子供＆家族</span><span class="sxs-lookup"><span data-stu-id="4c06e-182">Kids + family</span></span></td>
+    <td><span data-ttu-id="4c06e-183">書籍＆参考資料</span><span class="sxs-lookup"><span data-stu-id="4c06e-183">Books + reference</span></span> <br> <span data-ttu-id="4c06e-184">エンターテイメント</span><span class="sxs-lookup"><span data-stu-id="4c06e-184">Entertainment</span></span> <br> <span data-ttu-id="4c06e-185">趣味 & おもちゃ</span><span class="sxs-lookup"><span data-stu-id="4c06e-185">Hobbies + toys</span></span> <br> <span data-ttu-id="4c06e-186">スポーツ & アクティビティ</span><span class="sxs-lookup"><span data-stu-id="4c06e-186">Sports + activities</span></span> <br> <span data-ttu-id="4c06e-187">旅行</span><span class="sxs-lookup"><span data-stu-id="4c06e-187">Travel</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-188">ライフスタイル</span><span class="sxs-lookup"><span data-stu-id="4c06e-188">Lifestyle</span></span></td>
+    <td><span data-ttu-id="4c06e-189">自動車</span><span class="sxs-lookup"><span data-stu-id="4c06e-189">Automotive</span></span> <br> <span data-ttu-id="4c06e-190">DIY</span><span class="sxs-lookup"><span data-stu-id="4c06e-190">DIY</span></span> <br> <span data-ttu-id="4c06e-191">自宅 & ガーデン</span><span class="sxs-lookup"><span data-stu-id="4c06e-191">Home + garden</span></span> <br> <span data-ttu-id="4c06e-192">リレーションシップ</span><span class="sxs-lookup"><span data-stu-id="4c06e-192">Relationships</span></span> <br> <span data-ttu-id="4c06e-193">特定の関心事</span><span class="sxs-lookup"><span data-stu-id="4c06e-193">Special interest</span></span> <br> <span data-ttu-id="4c06e-194">スタイル＆ファッション</span><span class="sxs-lookup"><span data-stu-id="4c06e-194">Style + fashion</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-195">医療</span><span class="sxs-lookup"><span data-stu-id="4c06e-195">Medical</span></span></td>
+    <td><span data-ttu-id="4c06e-196">(なし)</span><span class="sxs-lookup"><span data-stu-id="4c06e-196">(None)</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-197">マルチメディア デザイン</span><span class="sxs-lookup"><span data-stu-id="4c06e-197">Multimedia design</span></span></td>
+    <td><span data-ttu-id="4c06e-198">イラスト & グラフィック デザイン</span><span class="sxs-lookup"><span data-stu-id="4c06e-198">Illustration + graphic design</span></span> <br> <span data-ttu-id="4c06e-199">音楽制作</span><span class="sxs-lookup"><span data-stu-id="4c06e-199">Music production</span></span> <br> <span data-ttu-id="4c06e-200">写真 & ビデオ制作</span><span class="sxs-lookup"><span data-stu-id="4c06e-200">Photo + video production</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-201">音楽</span><span class="sxs-lookup"><span data-stu-id="4c06e-201">Music</span></span></td>
+    <td><span data-ttu-id="4c06e-202">(なし)</span><span class="sxs-lookup"><span data-stu-id="4c06e-202">(None)</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-203">ナビゲーション & マップ</span><span class="sxs-lookup"><span data-stu-id="4c06e-203">Navigation + maps</span></span></td>
+    <td><span data-ttu-id="4c06e-204">(なし)</span><span class="sxs-lookup"><span data-stu-id="4c06e-204">(None)</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-205">ニュース & 天気</span><span class="sxs-lookup"><span data-stu-id="4c06e-205">News + weather</span></span></td>
+    <td><span data-ttu-id="4c06e-206">ニュース</span><span class="sxs-lookup"><span data-stu-id="4c06e-206">News</span></span> <br> <span data-ttu-id="4c06e-207">天気</span><span class="sxs-lookup"><span data-stu-id="4c06e-207">Weather</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-208">個人資産管理</span><span class="sxs-lookup"><span data-stu-id="4c06e-208">Personal finance</span></span></td>
+    <td><span data-ttu-id="4c06e-209">銀行取引 & 投資</span><span class="sxs-lookup"><span data-stu-id="4c06e-209">Banking + investments</span></span> <br> <span data-ttu-id="4c06e-210">予算 & 税金</span><span class="sxs-lookup"><span data-stu-id="4c06e-210">Budgeting + taxes</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-211">個人用設定</span><span class="sxs-lookup"><span data-stu-id="4c06e-211">Personalization</span></span></td>
+    <td><span data-ttu-id="4c06e-212">着信音 & サウンド</span><span class="sxs-lookup"><span data-stu-id="4c06e-212">Ringtones + sounds</span></span> <br> <span data-ttu-id="4c06e-213">テーマ</span><span class="sxs-lookup"><span data-stu-id="4c06e-213">Themes</span></span> <br> <span data-ttu-id="4c06e-214">壁紙 & ロック画面</span><span class="sxs-lookup"><span data-stu-id="4c06e-214">Wallpaper + lock screens</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-215">写真 & ビデオ</span><span class="sxs-lookup"><span data-stu-id="4c06e-215">Photo + video</span></span></td>
+    <td><span data-ttu-id="4c06e-216">(なし)</span><span class="sxs-lookup"><span data-stu-id="4c06e-216">(None)</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-217">生産性</span><span class="sxs-lookup"><span data-stu-id="4c06e-217">Productivity</span></span></td>
+    <td><span data-ttu-id="4c06e-218">(なし)</span><span class="sxs-lookup"><span data-stu-id="4c06e-218">(None)</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-219">セキュリティ</span><span class="sxs-lookup"><span data-stu-id="4c06e-219">Security</span></span></td>
+    <td><span data-ttu-id="4c06e-220">PC の保護</span><span class="sxs-lookup"><span data-stu-id="4c06e-220">PC protection</span></span> <br> <span data-ttu-id="4c06e-221">個人のセキュリティ</span><span class="sxs-lookup"><span data-stu-id="4c06e-221">Personal security</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-222">ショッピング</span><span class="sxs-lookup"><span data-stu-id="4c06e-222">Shopping</span></span></td>
+    <td><span data-ttu-id="4c06e-223">(なし)</span><span class="sxs-lookup"><span data-stu-id="4c06e-223">(None)</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-224">ソーシャル</span><span class="sxs-lookup"><span data-stu-id="4c06e-224">Social</span></span></td>
+    <td><span data-ttu-id="4c06e-225">(なし)</span><span class="sxs-lookup"><span data-stu-id="4c06e-225">(None)</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-226">スポーツ</span><span class="sxs-lookup"><span data-stu-id="4c06e-226">Sports</span></span></td>
+    <td><span data-ttu-id="4c06e-227">(なし)</span><span class="sxs-lookup"><span data-stu-id="4c06e-227">(None)</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-228">旅行</span><span class="sxs-lookup"><span data-stu-id="4c06e-228">Travel</span></span></td>
+    <td><span data-ttu-id="4c06e-229">都市ガイド</span><span class="sxs-lookup"><span data-stu-id="4c06e-229">City guides</span></span> <br><span data-ttu-id="4c06e-230">ホテル</span><span class="sxs-lookup"><span data-stu-id="4c06e-230">Hotels</span></span></td>
+  </tr>
+  <tr>
+    <td><span data-ttu-id="4c06e-231">ユーティリティ & ツール</span><span class="sxs-lookup"><span data-stu-id="4c06e-231">Utilities + tools</span></span></td>
+    <td><span data-ttu-id="4c06e-232">バックアップ & 管理</span><span class="sxs-lookup"><span data-stu-id="4c06e-232">Backup + manage</span></span> <br> <span data-ttu-id="4c06e-233">ファイル マネージャー</span><span class="sxs-lookup"><span data-stu-id="4c06e-233">File managers</span></span></td>
+  </tr>
+</tbody>
+</table>
 
 
-| <span data-ttu-id="97c4b-116">カテゴリ</span><span class="sxs-lookup"><span data-stu-id="97c4b-116">Category</span></span>                    | <span data-ttu-id="97c4b-117">サブカテゴリ</span><span class="sxs-lookup"><span data-stu-id="97c4b-117">Subcategory</span></span>                                       |
+<!--
+| Category                    | Subcategory                                       |
 |-----------------------------|---------------------------------------------------|
-| <span data-ttu-id="97c4b-118">書籍＆参考資料</span><span class="sxs-lookup"><span data-stu-id="97c4b-118">Books + reference</span></span>           | <span data-ttu-id="97c4b-119">電子ブック リーダー</span><span class="sxs-lookup"><span data-stu-id="97c4b-119">E-reader</span></span> <br> <span data-ttu-id="97c4b-120">フィクション</span><span class="sxs-lookup"><span data-stu-id="97c4b-120">Fiction</span></span> <br> <span data-ttu-id="97c4b-121">ノンフィクション</span><span class="sxs-lookup"><span data-stu-id="97c4b-121">Nonfiction</span></span> <br> <span data-ttu-id="97c4b-122">リファレンス</span><span class="sxs-lookup"><span data-stu-id="97c4b-122">Reference</span></span> |
-| <span data-ttu-id="97c4b-123">会社</span><span class="sxs-lookup"><span data-stu-id="97c4b-123">Business</span></span>                    | <span data-ttu-id="97c4b-124">金融 & 会計</span><span class="sxs-lookup"><span data-stu-id="97c4b-124">Accounting + finance</span></span> <br> <span data-ttu-id="97c4b-125">コラボレーション</span><span class="sxs-lookup"><span data-stu-id="97c4b-125">Collaboration</span></span> <br> <span data-ttu-id="97c4b-126">CRM</span><span class="sxs-lookup"><span data-stu-id="97c4b-126">CRM</span></span> <br> <span data-ttu-id="97c4b-127">データ + 分析</span><span class="sxs-lookup"><span data-stu-id="97c4b-127">Data + analytics</span></span> <br> <span data-ttu-id="97c4b-128">ファイル管理</span><span class="sxs-lookup"><span data-stu-id="97c4b-128">File management</span></span> <br> <span data-ttu-id="97c4b-129">在庫 & 物流</span><span class="sxs-lookup"><span data-stu-id="97c4b-129">Inventory + logistics</span></span> <br> <span data-ttu-id="97c4b-130">法務 & 人事</span><span class="sxs-lookup"><span data-stu-id="97c4b-130">Legal + HR</span></span> <br> <span data-ttu-id="97c4b-131">プロジェクト管理</span><span class="sxs-lookup"><span data-stu-id="97c4b-131">Project management</span></span> <br> <span data-ttu-id="97c4b-132">リモート デスクトップ</span><span class="sxs-lookup"><span data-stu-id="97c4b-132">Remote desktop</span></span> <br> <span data-ttu-id="97c4b-133">販売 + マーケティング</span><span class="sxs-lookup"><span data-stu-id="97c4b-133">Sales + marketing</span></span> <br> <span data-ttu-id="97c4b-134">時間 & 経費</span><span class="sxs-lookup"><span data-stu-id="97c4b-134">Time + expenses</span></span> |
-| <span data-ttu-id="97c4b-135">開発者ツール</span><span class="sxs-lookup"><span data-stu-id="97c4b-135">Developer tools</span></span>             | <span data-ttu-id="97c4b-136">Database (データベース)</span><span class="sxs-lookup"><span data-stu-id="97c4b-136">Database</span></span> <br> <span data-ttu-id="97c4b-137">デザイン ツール</span><span class="sxs-lookup"><span data-stu-id="97c4b-137">Design tools</span></span> <br> <span data-ttu-id="97c4b-138">開発キット</span><span class="sxs-lookup"><span data-stu-id="97c4b-138">Development kits</span></span> <br> <span data-ttu-id="97c4b-139">ネットワーク</span><span class="sxs-lookup"><span data-stu-id="97c4b-139">Networking</span></span> <br> <span data-ttu-id="97c4b-140">リファレンス & トレーニング</span><span class="sxs-lookup"><span data-stu-id="97c4b-140">Reference + training</span></span> <br> <span data-ttu-id="97c4b-141">サーバー</span><span class="sxs-lookup"><span data-stu-id="97c4b-141">Servers</span></span> <br> <span data-ttu-id="97c4b-142">ユーティリティ</span><span class="sxs-lookup"><span data-stu-id="97c4b-142">Utilities</span></span> <br> <span data-ttu-id="97c4b-143">Web ホスティング</span><span class="sxs-lookup"><span data-stu-id="97c4b-143">Web hosting</span></span> |
-| <span data-ttu-id="97c4b-144">教育</span><span class="sxs-lookup"><span data-stu-id="97c4b-144">Education</span></span>                   | <span data-ttu-id="97c4b-145">書籍＆参考資料</span><span class="sxs-lookup"><span data-stu-id="97c4b-145">Books + reference</span></span> <br> <span data-ttu-id="97c4b-146">就学前教育</span><span class="sxs-lookup"><span data-stu-id="97c4b-146">Early learning</span></span> <br> <span data-ttu-id="97c4b-147">教育ツール</span><span class="sxs-lookup"><span data-stu-id="97c4b-147">Instructional tools</span></span> <br> <span data-ttu-id="97c4b-148">言語</span><span class="sxs-lookup"><span data-stu-id="97c4b-148">Language</span></span> <br> <span data-ttu-id="97c4b-149">学習支援</span><span class="sxs-lookup"><span data-stu-id="97c4b-149">Study aids</span></span> |
-| <span data-ttu-id="97c4b-150">エンターテイメント</span><span class="sxs-lookup"><span data-stu-id="97c4b-150">Entertainment</span></span>               | <span data-ttu-id="97c4b-151">(なし)</span><span class="sxs-lookup"><span data-stu-id="97c4b-151">(None)</span></span>                                            |
-| <span data-ttu-id="97c4b-152">グルメ</span><span class="sxs-lookup"><span data-stu-id="97c4b-152">Food + dining</span></span>               | <span data-ttu-id="97c4b-153">(なし)</span><span class="sxs-lookup"><span data-stu-id="97c4b-153">(None)</span></span>                                            |
-| <span data-ttu-id="97c4b-154">ゲーム</span><span class="sxs-lookup"><span data-stu-id="97c4b-154">Games</span></span>                       | <span data-ttu-id="97c4b-155">アクション＆アドベンチャー</span><span class="sxs-lookup"><span data-stu-id="97c4b-155">Action + adventure</span></span> <br> <span data-ttu-id="97c4b-156">カード＆ボード</span><span class="sxs-lookup"><span data-stu-id="97c4b-156">Card + board</span></span> <br> <span data-ttu-id="97c4b-157">カジノ</span><span class="sxs-lookup"><span data-stu-id="97c4b-157">Casino</span></span> <br> <span data-ttu-id="97c4b-158">教育</span><span class="sxs-lookup"><span data-stu-id="97c4b-158">Educational</span></span> <br> <span data-ttu-id="97c4b-159">家族 & 子供</span><span class="sxs-lookup"><span data-stu-id="97c4b-159">Family + kids</span></span> <br> <span data-ttu-id="97c4b-160">格闘</span><span class="sxs-lookup"><span data-stu-id="97c4b-160">Fighting</span></span> <br> <span data-ttu-id="97c4b-161">音楽</span><span class="sxs-lookup"><span data-stu-id="97c4b-161">Music</span></span> <br> <span data-ttu-id="97c4b-162">プラットフォーマー</span><span class="sxs-lookup"><span data-stu-id="97c4b-162">Platformer</span></span> <br> <span data-ttu-id="97c4b-163">パズル＆クイズ</span><span class="sxs-lookup"><span data-stu-id="97c4b-163">Puzzle + trivia</span></span> <br> <span data-ttu-id="97c4b-164">レーシング＆フライト</span><span class="sxs-lookup"><span data-stu-id="97c4b-164">Racing + flying</span></span> <br> <span data-ttu-id="97c4b-165">RPG</span><span class="sxs-lookup"><span data-stu-id="97c4b-165">Role playing</span></span> <br> <span data-ttu-id="97c4b-166">シューティング</span><span class="sxs-lookup"><span data-stu-id="97c4b-166">Shooter</span></span> <br> <span data-ttu-id="97c4b-167">シミュレーション</span><span class="sxs-lookup"><span data-stu-id="97c4b-167">Simulation</span></span> <br> <span data-ttu-id="97c4b-168">スポーツ</span><span class="sxs-lookup"><span data-stu-id="97c4b-168">Sports</span></span> <br> <span data-ttu-id="97c4b-169">戦略</span><span class="sxs-lookup"><span data-stu-id="97c4b-169">Strategy</span></span> <br> <span data-ttu-id="97c4b-170">ワード</span><span class="sxs-lookup"><span data-stu-id="97c4b-170">Word</span></span> |
-| <span data-ttu-id="97c4b-171">行政 & 政治</span><span class="sxs-lookup"><span data-stu-id="97c4b-171">Government + politics</span></span>       | <span data-ttu-id="97c4b-172">(なし)</span><span class="sxs-lookup"><span data-stu-id="97c4b-172">(None)</span></span>                                            |
-| <span data-ttu-id="97c4b-173">健康 & フィットネス</span><span class="sxs-lookup"><span data-stu-id="97c4b-173">Health + fitness</span></span>            | <span data-ttu-id="97c4b-174">(なし)</span><span class="sxs-lookup"><span data-stu-id="97c4b-174">(None)</span></span>                                            |
-| <span data-ttu-id="97c4b-175">子供＆家族</span><span class="sxs-lookup"><span data-stu-id="97c4b-175">Kids + family</span></span>               | <span data-ttu-id="97c4b-176">書籍＆参考資料</span><span class="sxs-lookup"><span data-stu-id="97c4b-176">Books + reference</span></span> <br> <span data-ttu-id="97c4b-177">エンターテイメント</span><span class="sxs-lookup"><span data-stu-id="97c4b-177">Entertainment</span></span> <br> <span data-ttu-id="97c4b-178">趣味 & おもちゃ</span><span class="sxs-lookup"><span data-stu-id="97c4b-178">Hobbies + toys</span></span> <br> <span data-ttu-id="97c4b-179">スポーツ & アクティビティ</span><span class="sxs-lookup"><span data-stu-id="97c4b-179">Sports + activities</span></span> <br> <span data-ttu-id="97c4b-180">旅行</span><span class="sxs-lookup"><span data-stu-id="97c4b-180">Travel</span></span> |
-| <span data-ttu-id="97c4b-181">ライフスタイル</span><span class="sxs-lookup"><span data-stu-id="97c4b-181">Lifestyle</span></span>                   | <span data-ttu-id="97c4b-182">自動車</span><span class="sxs-lookup"><span data-stu-id="97c4b-182">Automotive</span></span> <br> <span data-ttu-id="97c4b-183">DIY</span><span class="sxs-lookup"><span data-stu-id="97c4b-183">DIY</span></span> <br> <span data-ttu-id="97c4b-184">自宅 & ガーデン</span><span class="sxs-lookup"><span data-stu-id="97c4b-184">Home + garden</span></span> <br> <span data-ttu-id="97c4b-185">リレーションシップ</span><span class="sxs-lookup"><span data-stu-id="97c4b-185">Relationships</span></span> <br> <span data-ttu-id="97c4b-186">特定の関心事</span><span class="sxs-lookup"><span data-stu-id="97c4b-186">Special interest</span></span> <br> <span data-ttu-id="97c4b-187">スタイル＆ファッション</span><span class="sxs-lookup"><span data-stu-id="97c4b-187">Style + fashion</span></span> |
-| <span data-ttu-id="97c4b-188">医療</span><span class="sxs-lookup"><span data-stu-id="97c4b-188">Medical</span></span>                     | <span data-ttu-id="97c4b-189">(なし)</span><span class="sxs-lookup"><span data-stu-id="97c4b-189">(None)</span></span>                                            |
-| <span data-ttu-id="97c4b-190">マルチメディア デザイン</span><span class="sxs-lookup"><span data-stu-id="97c4b-190">Multimedia design</span></span>           | <span data-ttu-id="97c4b-191">イラスト & グラフィック デザイン</span><span class="sxs-lookup"><span data-stu-id="97c4b-191">Illustration + graphic design</span></span> <br> <span data-ttu-id="97c4b-192">音楽制作</span><span class="sxs-lookup"><span data-stu-id="97c4b-192">Music production</span></span> <br> <span data-ttu-id="97c4b-193">写真 & ビデオ制作</span><span class="sxs-lookup"><span data-stu-id="97c4b-193">Photo + video production</span></span> |
-| <span data-ttu-id="97c4b-194">音楽</span><span class="sxs-lookup"><span data-stu-id="97c4b-194">Music</span></span>                       | <span data-ttu-id="97c4b-195">(なし)</span><span class="sxs-lookup"><span data-stu-id="97c4b-195">(None)</span></span>                                            |
-| <span data-ttu-id="97c4b-196">ナビゲーション & マップ</span><span class="sxs-lookup"><span data-stu-id="97c4b-196">Navigation + maps</span></span>           | <span data-ttu-id="97c4b-197">(なし)</span><span class="sxs-lookup"><span data-stu-id="97c4b-197">(None)</span></span>                                            |
-| <span data-ttu-id="97c4b-198">ニュース & 天気</span><span class="sxs-lookup"><span data-stu-id="97c4b-198">News + weather</span></span>              | <span data-ttu-id="97c4b-199">ニュース</span><span class="sxs-lookup"><span data-stu-id="97c4b-199">News</span></span> <br> <span data-ttu-id="97c4b-200">天気</span><span class="sxs-lookup"><span data-stu-id="97c4b-200">Weather</span></span>                                 |
-| <span data-ttu-id="97c4b-201">個人資産管理</span><span class="sxs-lookup"><span data-stu-id="97c4b-201">Personal finance</span></span>            | <span data-ttu-id="97c4b-202">銀行取引 & 投資</span><span class="sxs-lookup"><span data-stu-id="97c4b-202">Banking + investments</span></span> <br> <span data-ttu-id="97c4b-203">予算 & 税金</span><span class="sxs-lookup"><span data-stu-id="97c4b-203">Budgeting + taxes</span></span>      |
-| <span data-ttu-id="97c4b-204">個人用設定</span><span class="sxs-lookup"><span data-stu-id="97c4b-204">Personalization</span></span>             | <span data-ttu-id="97c4b-205">着信音 & サウンド</span><span class="sxs-lookup"><span data-stu-id="97c4b-205">Ringtones + sounds</span></span> <br> <span data-ttu-id="97c4b-206">テーマ</span><span class="sxs-lookup"><span data-stu-id="97c4b-206">Themes</span></span> <br> <span data-ttu-id="97c4b-207">壁紙 & ロック画面</span><span class="sxs-lookup"><span data-stu-id="97c4b-207">Wallpaper + lock screens</span></span> |
-| <span data-ttu-id="97c4b-208">写真 & ビデオ</span><span class="sxs-lookup"><span data-stu-id="97c4b-208">Photo + video</span></span>               | <span data-ttu-id="97c4b-209">(なし)</span><span class="sxs-lookup"><span data-stu-id="97c4b-209">(None)</span></span>                                            |
-| <span data-ttu-id="97c4b-210">生産性</span><span class="sxs-lookup"><span data-stu-id="97c4b-210">Productivity</span></span>                | <span data-ttu-id="97c4b-211">(なし)</span><span class="sxs-lookup"><span data-stu-id="97c4b-211">(None)</span></span>                                            |
-| <span data-ttu-id="97c4b-212">セキュリティ</span><span class="sxs-lookup"><span data-stu-id="97c4b-212">Security</span></span>                    | <span data-ttu-id="97c4b-213">PC の保護</span><span class="sxs-lookup"><span data-stu-id="97c4b-213">PC protection</span></span> <br> <span data-ttu-id="97c4b-214">個人のセキュリティ</span><span class="sxs-lookup"><span data-stu-id="97c4b-214">Personal security</span></span>              |
-| <span data-ttu-id="97c4b-215">ショッピング</span><span class="sxs-lookup"><span data-stu-id="97c4b-215">Shopping</span></span>                    | <span data-ttu-id="97c4b-216">(なし)</span><span class="sxs-lookup"><span data-stu-id="97c4b-216">(None)</span></span>                                            |
-| <span data-ttu-id="97c4b-217">ソーシャル</span><span class="sxs-lookup"><span data-stu-id="97c4b-217">Social</span></span>                      | <span data-ttu-id="97c4b-218">(なし)</span><span class="sxs-lookup"><span data-stu-id="97c4b-218">(None)</span></span>                                            |
-| <span data-ttu-id="97c4b-219">スポーツ</span><span class="sxs-lookup"><span data-stu-id="97c4b-219">Sports</span></span>                      | <span data-ttu-id="97c4b-220">(なし)</span><span class="sxs-lookup"><span data-stu-id="97c4b-220">(None)</span></span>                                            |
-| <span data-ttu-id="97c4b-221">旅行</span><span class="sxs-lookup"><span data-stu-id="97c4b-221">Travel</span></span>                      | <span data-ttu-id="97c4b-222">都市ガイド</span><span class="sxs-lookup"><span data-stu-id="97c4b-222">City guides</span></span> <br> <span data-ttu-id="97c4b-223">ホテル</span><span class="sxs-lookup"><span data-stu-id="97c4b-223">Hotels</span></span>                           |
-| <span data-ttu-id="97c4b-224">ユーティリティ & ツール</span><span class="sxs-lookup"><span data-stu-id="97c4b-224">Utilities + tools</span></span>           | <span data-ttu-id="97c4b-225">バックアップ & 管理</span><span class="sxs-lookup"><span data-stu-id="97c4b-225">Backup + manage</span></span> <br> <span data-ttu-id="97c4b-226">ファイル マネージャー</span><span class="sxs-lookup"><span data-stu-id="97c4b-226">File managers</span></span>                |
- 
+| Books + reference           | E-reader <br> Fiction <br> Nonfiction <br> Reference |
+| Business                    | Accounting + finance <br> Collaboration <br> CRM <br> Data + analytics <br> File management <br> Inventory + logistics <br> Legal + HR <br> Project management <br> Remote desktop <br> Sales + marketing <br> Time + expenses |
+| Developer tools             | Database <br> Design tools <br> Development kits <br> Networking <br> Reference + training <br> Servers <br> Utilities <br> Web hosting |
+| Education                   | Books + reference <br> Early learning <br> Instructional tools <br> Language <br> Study aids |
+| Entertainment               | (None)                                            |
+| Food + dining               | (None)                                            |
+| Games                       | Action + adventure <br> Card + board <br> Casino <br> Classics <br> Educational <br> Family + kids <br> Fighting <br> Multi-Player Online Battle Arena <br> Music <br> Other <br> Platformer <br> Puzzle + trivia <br> Racing + flying <br> Role playing <br> Shooter <br> Simulation <br> Sports <br> Strategy <br> Tools <br> Word |
+| Government + politics       | (None)                                            |
+| Health + fitness            | (None)                                            |
+| Kids + family               | Books + reference <br> Entertainment <br> Hobbies + toys <br> Sports + activities <br> Travel |
+| Lifestyle                   | Automotive <br> DIY <br> Home + garden <br> Relationships <br> Special interest <br> Style + fashion |
+| Medical                     | (None)                                            |
+| Multimedia design           | Illustration + graphic design <br> Music production <br> Photo + video production |
+| Music                       | (None)                                            |
+| Navigation + maps           | (None)                                            |
+| News + weather              | News <br> Weather                                 |
+| Personal finance            | Banking + investments <br> Budgeting + taxes      |
+| Personalization             | Ringtones + sounds <br> Themes <br> Wallpaper + lock screens |
+| Photo + video               | (None)                                            |
+| Productivity                | (None)                                            |
+| Security                    | PC protection <br> Personal security              |
+| Shopping                    | (None)                                            |
+| Social                      | (None)                                            |
+| Sports                      | (None)                                            |
+| Travel                      | City guides <br> Hotels                           |
+| Utilities + tools           | Backup + manage <br> File managers                |
+-->
 
 > [!NOTE] 
-> <span data-ttu-id="97c4b-227">Windows 8.1 またはそれ以前のバージョン向けの Windows ストアや、Windows Phone ストアで使われているカテゴリやサブカテゴリの一部は、上記のカテゴリと表記が異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="97c4b-227">Some of the categories and subcategories used in the Windows Store for Windows 8.1 and earlier, and in the Windows Phone Store, may appear differently than the categories listed above.</span></span> 
+> <span data-ttu-id="4c06e-234">Windows 8.x と Windows Phone 8.x 以前のユーザー向けの Microsoft Store で使われているカテゴリやサブカテゴリの一部は、上記のカテゴリと表記が異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="4c06e-234">Some of the categories and subcategories used in the Store for customers on Windows 8.x and Windows Phone 8.x and earlier may appear differently than the categories listed above.</span></span> 
 

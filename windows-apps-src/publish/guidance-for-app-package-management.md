@@ -1,146 +1,138 @@
 ---
 author: jnHs
-Description: "アプリのパッケージをユーザーが使用できるようになるしくみと、特定のパッケージ シナリオを管理する方法について説明します。"
-title: "アプリ パッケージ管理のガイダンス"
+Description: Learn how your app's packages are made available to your customers, and how to manage specific package scenarios.
+title: アプリ パッケージ管理のガイダンス
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 03/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 54f6d6c786eb0787a441628452d26e46f353b3d8
-ms.lasthandoff: 02/07/2017
-
+keywords: windows 10, UWP
+ms.localizationpriority: high
+ms.openlocfilehash: cd54530c0f143258d960c84ad359078055053a07
+ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/03/2018
 ---
+# <a name="guidance-for-app-package-management"></a><span data-ttu-id="c7e62-103">アプリ パッケージ管理のガイダンス</span><span class="sxs-lookup"><span data-stu-id="c7e62-103">Guidance for app package management</span></span>
 
-# <a name="guidance-for-app-package-management"></a>アプリ パッケージ管理のガイダンス
+<span data-ttu-id="c7e62-104">アプリのパッケージをユーザーが使用できるようになるしくみと、特定のパッケージ シナリオを管理する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="c7e62-104">Learn how your app's packages are made available to your customers, and how to manage specific package scenarios.</span></span>
 
-
-アプリのパッケージをユーザーが使用できるようになるしくみと、特定のパッケージ シナリオを管理する方法について説明します。
-
--   [OS のバージョンとパッケージの配布](#os-versions-and-package-distribution)
--   [以前に公開したアプリに Windows 10 用のパッケージを追加する](#adding-packages-for-windows-10-to-a-previously-published-app)
--   [Windows Phone 8.1 に対するパッケージの互換性を維持する](#maintaining-package-compatibility-for-windows-phone-8-1)
--   [アプリをストアから削除する](#removing-an-app-from-the-store)
--   [これまでサポートされていたデバイス ファミリ用のパッケージを削除する](#removing-packages-for-a-previously-supported-device-family)
-
-## <a name="os-versions-and-package-distribution"></a>OS のバージョンとパッケージの配布
+-   [<span data-ttu-id="c7e62-105">OS のバージョンとパッケージの配布</span><span class="sxs-lookup"><span data-stu-id="c7e62-105">OS versions and package distribution</span></span>](#os-versions-and-package-distribution)
+-   [<span data-ttu-id="c7e62-106">以前に公開したアプリに Windows 10 用のパッケージを追加する</span><span class="sxs-lookup"><span data-stu-id="c7e62-106">Adding packages for Windows 10 to a previously-published app</span></span>](#adding-packages-for-windows-10-to-a-previously-published-app)
+-   [<span data-ttu-id="c7e62-107">Windows Phone 8.1 に対するパッケージの互換性を維持する</span><span class="sxs-lookup"><span data-stu-id="c7e62-107">Maintaining package compatibility for Windows Phone 8.1</span></span>](#maintaining-package-compatibility-for-windows-phone-81)
+-   [<span data-ttu-id="c7e62-108">アプリを Microsoft Store から削除する</span><span class="sxs-lookup"><span data-stu-id="c7e62-108">Removing an app from the Store</span></span>](#removing-an-app-from-the-store)
+-   [<span data-ttu-id="c7e62-109">これまでサポートされていたデバイス ファミリ用のパッケージを削除する</span><span class="sxs-lookup"><span data-stu-id="c7e62-109">Removing packages for a previously-supported device family</span></span>](#removing-packages-for-a-previously-supported-device-family)
 
 
-さまざまなオペレーティング システムで異なる種類のパッケージを実行できます。 ユーザーのデバイスで複数のパッケージを実行できる場合、Windows ストアは使用可能な最適のパッケージを提供します。
+## <a name="os-versions-and-package-distribution"></a><span data-ttu-id="c7e62-110">OS のバージョンとパッケージの配布</span><span class="sxs-lookup"><span data-stu-id="c7e62-110">OS versions and package distribution</span></span>
 
-一般に、新しい OS バージョンでは、同じデバイス ファミリの以前の OS バージョンを対象にしたパッケージを実行できます。 ただし、それらのパッケージが取得されるのは、現在の OS バージョンを対象にしたパッケージがアプリに含まれない場合に限られます。
+<span data-ttu-id="c7e62-111">さまざまなオペレーティング システムで異なる種類のパッケージを実行できます。</span><span class="sxs-lookup"><span data-stu-id="c7e62-111">Different operating systems can run different types of packages.</span></span> <span data-ttu-id="c7e62-112">ユーザーのデバイスで複数のパッケージを実行できる場合、Microsoft Store は使用可能な最適のパッケージを提供します。</span><span class="sxs-lookup"><span data-stu-id="c7e62-112">If more than one of your packages can run on a customer's device, the Microsoft Store will provide the best available match.</span></span>
 
-たとえば、Windows 10 デバイスでは、(デバイス ファミリごとに) サポートされている以前の OS のバージョンをすべて実行できます。 Windows 10 のデスクトップ デバイスでは Windows 8.1 または Windows 8 用に構築されたアプリを実行でき、Windows 10 のモバイル デバイスでは Windows Phone 8.1、Windows Phone 8、さらには Windows Phone 7.x 用に構築されたアプリまで実行できます。
+<span data-ttu-id="c7e62-113">一般に、新しい OS バージョンでは、同じデバイス ファミリの以前の OS バージョンを対象にしたパッケージを実行できます。</span><span class="sxs-lookup"><span data-stu-id="c7e62-113">Generally speaking, later OS versions can run packages that target previous OS versions for the same device family.</span></span> <span data-ttu-id="c7e62-114">ただし、それらのパッケージが取得されるのは、現在の OS バージョンを対象にしたパッケージがアプリに含まれない場合に限られます。</span><span class="sxs-lookup"><span data-stu-id="c7e62-114">However, customers will only get those packages if the app doesn't include a package that targets the current OS version.</span></span>
 
-次の例では、さまざまな OS のバージョンを対象にしたパッケージを含むアプリについてさまざまなシナリオを説明します。 場合によっては、パッケージ特有の制約によって、ここに示したすべての OS バージョンとデバイスの種類で実行できないことがありますが (アーキテクチャが特定のものである必要がある場合など)、これらの例は特定のパッケージを実行できるのはどの OS バージョンかを理解するために役立ちます。
+<span data-ttu-id="c7e62-115">たとえば、Windows 10 デバイスでは、(デバイス ファミリごとに) サポートされている以前の OS のバージョンをすべて実行できます。</span><span class="sxs-lookup"><span data-stu-id="c7e62-115">For example, Windows 10 devices can run all previous supported OS versions (per device family).</span></span> <span data-ttu-id="c7e62-116">Windows 10 のデスクトップ デバイスでは Windows 8.1 または Windows 8 用に構築されたアプリを実行でき、Windows 10 のモバイル デバイスでは Windows Phone 8.1、Windows Phone 8、さらには Windows Phone 7.x 用に構築されたアプリまで実行できます。</span><span class="sxs-lookup"><span data-stu-id="c7e62-116">Windows 10 desktop devices can run apps that were built for Windows 8.1 or Windows 8; Windows 10 mobile devices can run apps that were built for Windows Phone 8.1, Windows Phone 8, and even Windows Phone 7.x.</span></span> 
 
-### <a name="example-app-1"></a>アプリ例 1
+<span data-ttu-id="c7e62-117">以下の例では、複数の OS バージョンをターゲットとするパッケージなど、アプリのさまざまなシナリオについて説明します。ただし、パッケージ特有の制約によって、ここに示したすべての OS バージョンとデバイスの種類で実行できないことがあります (デバイスでパッケージのアーキテクチャが特定のものである必要がある場合など)。</span><span class="sxs-lookup"><span data-stu-id="c7e62-117">The following examples illustrate various scenarios for an app that includes packages targeting different OS versions (unless specific constraints of your packages don't allow them to run on every OS version/device type listed here; for example, the package's architecture must be appropriate for the device).</span></span> 
 
-| パッケージの対象オペレーティング システム | このパッケージを取得するオペレーティング システム |
+### <a name="example-app-1"></a><span data-ttu-id="c7e62-118">アプリ例 1</span><span class="sxs-lookup"><span data-stu-id="c7e62-118">Example app 1</span></span>
+
+| <span data-ttu-id="c7e62-119">パッケージの対象オペレーティング システム</span><span class="sxs-lookup"><span data-stu-id="c7e62-119">Package's targeted operating system</span></span> | <span data-ttu-id="c7e62-120">このパッケージを取得するオペレーティング システム</span><span class="sxs-lookup"><span data-stu-id="c7e62-120">Operating systems that will get this package</span></span> |
 |-------------------------------------|----------------------------------------------|
-| Windows 8.1                         | Windows 10 デスクトップ デバイス、Windows 8.1      |
-| Windows Phone 8.1                   | Windows 10 モバイル デバイス、Windows Phone 8.1 |
-| Windows Phone 8                     | Windows Phone 8                              |
-| Windows Phone 7.1                   | Windows Phone 7.x                            |
+| <span data-ttu-id="c7e62-121">Windows 8.1</span><span class="sxs-lookup"><span data-stu-id="c7e62-121">Windows 8.1</span></span>                         | <span data-ttu-id="c7e62-122">Windows 10 デスクトップ デバイス、Windows 8.1</span><span class="sxs-lookup"><span data-stu-id="c7e62-122">Windows 10 desktop devices, Windows 8.1</span></span>      |
+| <span data-ttu-id="c7e62-123">Windows Phone 8.1</span><span class="sxs-lookup"><span data-stu-id="c7e62-123">Windows Phone 8.1</span></span>                   | <span data-ttu-id="c7e62-124">Windows 10 モバイル デバイス、Windows Phone 8.1</span><span class="sxs-lookup"><span data-stu-id="c7e62-124">Windows 10 mobile devices, Windows Phone 8.1</span></span> |
+| <span data-ttu-id="c7e62-125">Windows Phone 8</span><span class="sxs-lookup"><span data-stu-id="c7e62-125">Windows Phone 8</span></span>                     | <span data-ttu-id="c7e62-126">Windows Phone 8</span><span class="sxs-lookup"><span data-stu-id="c7e62-126">Windows Phone 8</span></span>                              |
+| <span data-ttu-id="c7e62-127">Windows Phone 7.1</span><span class="sxs-lookup"><span data-stu-id="c7e62-127">Windows Phone 7.1</span></span>                   | <span data-ttu-id="c7e62-128">Windows Phone 7.x</span><span class="sxs-lookup"><span data-stu-id="c7e62-128">Windows Phone 7.x</span></span>                            |
 
-アプリ例 1 のアプリには Windows 10 デバイス用に特別に構築されたユニバーサル Windows プラットフォーム (UWP) パッケージがまだありませんが、Windows 10 のユーザーはこのアプリを入手できます。 ユーザーはデバイスの種類に応じて使用できる最適なパッケージを取得します。
+<span data-ttu-id="c7e62-129">アプリ例 1 のアプリには Windows 10 デバイス用に特別に構築されたユニバーサル Windows プラットフォーム (UWP) パッケージがまだありませんが、Windows 10 のユーザーはこのアプリを入手できます。</span><span class="sxs-lookup"><span data-stu-id="c7e62-129">In example app 1, the app does not yet have Universal Windows Platform (UWP) packages that are specifically built for Windows 10 devices, but customers on Windows 10 can still get the app.</span></span> <span data-ttu-id="c7e62-130">ユーザーはデバイスの種類で使用できる最適なパッケージを取得します。</span><span class="sxs-lookup"><span data-stu-id="c7e62-130">Those customers will get the best packages available for their device type.</span></span>
 
-### <a name="example-app-2"></a>アプリ例 2
+### <a name="example-app-2"></a><span data-ttu-id="c7e62-131">アプリ例 2</span><span class="sxs-lookup"><span data-stu-id="c7e62-131">Example app 2</span></span>
 
-| パッケージの対象オペレーティング システム  | このパッケージを取得するオペレーティング システム |
+| <span data-ttu-id="c7e62-132">パッケージの対象オペレーティング システム</span><span class="sxs-lookup"><span data-stu-id="c7e62-132">Package's targeted operating system</span></span>  | <span data-ttu-id="c7e62-133">このパッケージを取得するオペレーティング システム</span><span class="sxs-lookup"><span data-stu-id="c7e62-133">Operating systems that will get this package</span></span> |
 |--------------------------------------|----------------------------------------------|
-| Windows 10 (ユニバーサル デバイス ファミリ) | Windows 10 (すべてのデバイス ファミリ)             |
-| Windows 8.1                          | Windows 8.1                                  |
-| Windows Phone 8.1                    | Windows Phone 8.1                            |
-| Windows Phone 7.1                    | Windows Phone 7.x、Windows Phone 8           |
+| <span data-ttu-id="c7e62-134">Windows 10 (ユニバーサル デバイス ファミリ)</span><span class="sxs-lookup"><span data-stu-id="c7e62-134">Windows 10 (universal device family)</span></span> | <span data-ttu-id="c7e62-135">Windows 10 (すべてのデバイス ファミリ)</span><span class="sxs-lookup"><span data-stu-id="c7e62-135">Windows 10 (all device families)</span></span>             |
+| <span data-ttu-id="c7e62-136">Windows 8.1</span><span class="sxs-lookup"><span data-stu-id="c7e62-136">Windows 8.1</span></span>                          | <span data-ttu-id="c7e62-137">Windows 8.1</span><span class="sxs-lookup"><span data-stu-id="c7e62-137">Windows 8.1</span></span>                                  |
+| <span data-ttu-id="c7e62-138">Windows Phone 8.1</span><span class="sxs-lookup"><span data-stu-id="c7e62-138">Windows Phone 8.1</span></span>                    | <span data-ttu-id="c7e62-139">Windows Phone 8.1</span><span class="sxs-lookup"><span data-stu-id="c7e62-139">Windows Phone 8.1</span></span>                            |
+| <span data-ttu-id="c7e62-140">Windows Phone 7.1</span><span class="sxs-lookup"><span data-stu-id="c7e62-140">Windows Phone 7.1</span></span>                    | <span data-ttu-id="c7e62-141">Windows Phone 7.x、Windows Phone 8</span><span class="sxs-lookup"><span data-stu-id="c7e62-141">Windows Phone 7.x, Windows Phone 8</span></span>           |
 
-アプリ例 2 では、Windows 8 で実行可能なパッケージはありません。 他のすべての OS バージョンを実行しているユーザーは、アプリを入手できます。
+<span data-ttu-id="c7e62-142">アプリ例 2 では、Windows 8 で実行可能なパッケージはありません。</span><span class="sxs-lookup"><span data-stu-id="c7e62-142">In example app 2, there is no package that can run on Windows 8.</span></span> <span data-ttu-id="c7e62-143">他のすべての OS バージョンを実行しているユーザーは、アプリを入手できます。</span><span class="sxs-lookup"><span data-stu-id="c7e62-143">Customers who are running any other OS version can get the app.</span></span> <span data-ttu-id="c7e62-144">Windows 10 でのすべてのお客様は、同じパッケージを取得します。</span><span class="sxs-lookup"><span data-stu-id="c7e62-144">All customers on Windows 10 will get the same package.</span></span>
 
-### <a name="example-app-3"></a>アプリ例 3
+### <a name="example-app-3"></a><span data-ttu-id="c7e62-145">アプリ例 3</span><span class="sxs-lookup"><span data-stu-id="c7e62-145">Example app 3</span></span>
 
-| パッケージの対象オペレーティング システム | このパッケージを取得するオペレーティング システム                  |
+| <span data-ttu-id="c7e62-146">パッケージの対象オペレーティング システム</span><span class="sxs-lookup"><span data-stu-id="c7e62-146">Package's targeted operating system</span></span> | <span data-ttu-id="c7e62-147">このパッケージを取得するオペレーティング システム</span><span class="sxs-lookup"><span data-stu-id="c7e62-147">Operating systems that will get this package</span></span>                  |
 |-------------------------------------|---------------------------------------------------------------|
-| Windows 10 (デスクトップ デバイス ファミリ)  | Windows 10 デスクトップ デバイス                                    |
-| Windows Phone 8                     | Windows 10 モバイル デバイス、Windows Phone 8、Windows Phone 8.1 |
+| <span data-ttu-id="c7e62-148">Windows 10 (デスクトップ デバイス ファミリ)</span><span class="sxs-lookup"><span data-stu-id="c7e62-148">Windows 10 (desktop device family)</span></span>  | <span data-ttu-id="c7e62-149">Windows 10 デスクトップ デバイス</span><span class="sxs-lookup"><span data-stu-id="c7e62-149">Windows 10 desktop devices</span></span>                                    |
+| <span data-ttu-id="c7e62-150">Windows Phone 8</span><span class="sxs-lookup"><span data-stu-id="c7e62-150">Windows Phone 8</span></span>                     | <span data-ttu-id="c7e62-151">Windows 10 モバイル デバイス、Windows Phone 8、Windows Phone 8.1</span><span class="sxs-lookup"><span data-stu-id="c7e62-151">Windows 10 mobile devices, Windows Phone 8, Windows Phone 8.1</span></span> |
 
-アプリ例 3 では、モバイル デバイス ファミリを対象にした UWP パッケージがないため、Windows 10 モバイル デバイスのユーザーは Windows Phone 8 パッケージを取得することになります。 モバイル デバイス ファミリ (またはユニバーサル デバイス ファミリ) を対象とするパッケージがこのアプリに後で追加される場合、Windows Phone 8 パッケージの代わりにそのパッケージが Windows 10 モバイル デバイスのユーザーに提供されます。
+<span data-ttu-id="c7e62-152">アプリ例 3 では、モバイル デバイス ファミリを対象にした UWP パッケージがないため、Windows 10 モバイル デバイスのユーザーは Windows Phone 8 パッケージを取得することになります。</span><span class="sxs-lookup"><span data-stu-id="c7e62-152">In example app 3, since there is no UWP package that targets the mobile device family, customers on Windows 10 mobile devices will get the Windows Phone 8 package.</span></span> <span data-ttu-id="c7e62-153">モバイル デバイス ファミリ (またはユニバーサル デバイス ファミリ) を対象とするパッケージがこのアプリに後で追加される場合、Windows Phone 8 パッケージの代わりにそのパッケージが Windows 10 モバイル デバイスのユーザーに提供されます。</span><span class="sxs-lookup"><span data-stu-id="c7e62-153">If this app later adds a package that targets the mobile device family (or the universal device family), that package will then be available to customers on Windows 10 mobile devices instead of the Windows Phone 8 package.</span></span>
 
-また、このアプリ例には Windows 7.x で実行可能なパッケージが含まれていない点にも注目してください。
+<span data-ttu-id="c7e62-154">また、このアプリ例には Windows Phone 7.x で実行可能なパッケージが含まれていない点にも注目してください。</span><span class="sxs-lookup"><span data-stu-id="c7e62-154">Also note that this example app does not include any package that can run on Windows Phone 7.x.</span></span>
 
-### <a name="example-app-4"></a>アプリ例 4
+### <a name="example-app-4"></a><span data-ttu-id="c7e62-155">アプリ例 4</span><span class="sxs-lookup"><span data-stu-id="c7e62-155">Example app 4</span></span>
 
-| パッケージの対象オペレーティング システム  | このパッケージを取得するオペレーティング システム |
+| <span data-ttu-id="c7e62-156">パッケージの対象オペレーティング システム</span><span class="sxs-lookup"><span data-stu-id="c7e62-156">Package's targeted operating system</span></span>  | <span data-ttu-id="c7e62-157">このパッケージを取得するオペレーティング システム</span><span class="sxs-lookup"><span data-stu-id="c7e62-157">Operating systems that will get this package</span></span> |
 |--------------------------------------|----------------------------------------------|
-| Windows 10 (ユニバーサル デバイス ファミリ) | Windows 10 (すべてのデバイス ファミリ)             |
+| <span data-ttu-id="c7e62-158">Windows 10 (ユニバーサル デバイス ファミリ)</span><span class="sxs-lookup"><span data-stu-id="c7e62-158">Windows 10 (universal device family)</span></span> | <span data-ttu-id="c7e62-159">Windows 10 (すべてのデバイス ファミリ)</span><span class="sxs-lookup"><span data-stu-id="c7e62-159">Windows 10 (all device families)</span></span>             |
 
-アプリ例 4 では、Windows 10 を実行しているデバイスではアプリを入手することができますが、以前の OS バージョンのユーザーは利用できません。 UWP パッケージはユニバーサル デバイス ファミリを対象にしているため、デスクトップとモバイルの両方の Windows 10 デバイスで使用できます。
+<span data-ttu-id="c7e62-160">アプリ例 4 では、Windows 10 を実行しているデバイスではアプリを入手することができますが、以前の OS バージョンのユーザーは利用できません。</span><span class="sxs-lookup"><span data-stu-id="c7e62-160">In example app 4, any device that is running Windows 10 can get the app, but it will not be available to customers on any previous OS version.</span></span> <span data-ttu-id="c7e62-161">UWP パッケージはユニバーサル デバイス ファミリを対象にしているため、すべての Windows 10 デバイスで使用できます。</span><span class="sxs-lookup"><span data-stu-id="c7e62-161">Because the UWP package targets the universal device family, it will be available to any Windows 10 device.</span></span>
 
-## <a name="adding-packages-for-windows-10-to-a-previously-published-app"></a>以前に公開したアプリに Windows 10 用のパッケージを追加する
+<a name="adding-packages-for-windows-10-to-a-previously-published-app"></a>
 
+## <a name="adding-packages-for-windows-10-to-a-previously-published-app"></a><span data-ttu-id="c7e62-162">以前に公開したアプリに Windows 10 用のパッケージを追加する</span><span class="sxs-lookup"><span data-stu-id="c7e62-162">Adding packages for Windows 10 to a previously-published app</span></span>
 
-ストアにアプリがあり、Windows 10 用にアプリを更新する場合、「[パッケージ](upload-app-packages.md)」の手順で、新しい申請を作成し、UWP の .appxupload パッケージを追加します。 アプリが認定プロセスに合格すると、Windows 10 にアップグレードする前に既にアプリを所有していたユーザーは、ストアから更新プログラムとして UWP パッケージを取得できます。 この UWP パッケージは、Windows 10 のユーザーが新規の取得として利用することもできます。
+<span data-ttu-id="c7e62-163">ストアに Windows 8.x や Windows Phone 8.x を対象とするアプリがあり、Windows 10 用にアプリを更新する場合、「[パッケージ](upload-app-packages.md)」の手順で、新しい申請を作成し、UWP の .appxupload パッケージを追加します。</span><span class="sxs-lookup"><span data-stu-id="c7e62-163">If you have an app in the Store that targets Windows 8.x and/or Windows Phone 8.x, and you want to update your app for Windows 10, create a new submission and add your UWP .appxupload package(s) during the [Packages](upload-app-packages.md) step.</span></span> <span data-ttu-id="c7e62-164">アプリが認定プロセスに合格すると、既にアプリを所有していた Windows 10 のユーザーは、Store から更新プログラムとして UWP パッケージを取得できます。</span><span class="sxs-lookup"><span data-stu-id="c7e62-164">After your app goes through the certification process, customers on Windows 10 who had your app will get your UWP package as an update from the Store.</span></span> <span data-ttu-id="c7e62-165">この UWP パッケージは、Windows 10 のユーザーが新規にアプリを入手するためにも利用できます。</span><span class="sxs-lookup"><span data-stu-id="c7e62-165">The UWP package will also be available for new acquisitions by customers on Windows 10.</span></span>
 
-> **重要**  Windows 10 のユーザーが UWP パッケージを取得した後は、以前の OS バージョン用のパッケージを使用するようにそのユーザーをロールバックすることはできません。 申請に追加する前に、Windows 10 で UWP パッケージを十分にテストしたことを確認します。
+> [!IMPORTANT]
+> <span data-ttu-id="c7e62-166">Windows 10 のユーザーが UWP パッケージを入手した場合、以前の OS バージョン用のパッケージを使うようにそのユーザーをロールバックすることはできません。</span><span class="sxs-lookup"><span data-stu-id="c7e62-166">Once a customer on Windows 10 gets your UWP package, you can't roll that customer back to using a package for any previous OS version.</span></span> 
 
-その他のパッケージを同時に更新したり、申請にその他の変更を加えたりすることもできます (たとえば、以前の OS バージョンのユーザーに表示するために、[プラットフォーム固有の説明を作成](create-platform-specific-descriptions.md)することができます)。 必要に応じて、その他すべてをまったく同じにすることもできます。
+<span data-ttu-id="c7e62-167">Windows 10 パッケージのバージョン番号は、含めている Windows 8、Windows 8.1、Windows Phone 8.1 のパッケージ (または以前に公開したこれらの OS バージョン用のパッケージ) のバージョン番号より大きくする必要があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="c7e62-167">Note that the version number of your Windows 10 packages must be higher than those for any Windows 8, Windows 8.1, and/or Windows Phone 8.1 packages you include (or packages for those OS versions that you have previously published).</span></span> <span data-ttu-id="c7e62-168">詳しくは、「[パッケージ バージョンの番号付け](package-version-numbering.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c7e62-168">For more info, see [Package version numbering](package-version-numbering.md).</span></span>
 
-> **注**  Windows 10 パッケージのバージョン番号は、同じアプリについて公開中の Windows 8、Windows 8.1、Windows Phone 8.1 のパッケージ (または前に公開したこれらの OS バージョンのパッケージ) のバージョン番号より大きい必要があります。 Windows 10 のバージョンの番号付けについて詳しくは、「[パッケージ バージョンの番号付け](package-version-numbering.md)」をご覧ください。
+<span data-ttu-id="c7e62-169">Microsoft Store 用の UWP アプリのパッケージ化について詳しくは、「[アプリのパッケージ化](../packaging/index.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c7e62-169">For more info about packaging UWP apps for the Store, see [Packaging apps](../packaging/index.md).</span></span>
 
-新しい申請が認定プロセスを完了すると、Windows 10 を利用していないユーザーが使用できるようにしたその他のパッケージと共に、UWP パッケージが使用できるようになります。
-
-ストア用の UWP アプリのパッケージ化について詳しくは、「[Windows 10 用ユニバーサル Windows アプリのパッケージ化](http://go.microsoft.com/fwlink/p/?LinkId=620193 )」をご覧ください。
-
-> **重要**  ユニバーサル デバイス ファミリを対象にしたパッケージを提供している場合、以前のオペレーティング システム (Windows Phone 8、Windows 8.1 など) で既にアプリを持っていて Windows 10 にアップグレードするユーザーは、Windows 10 ユニバーサル パッケージに更新されることに注意してください。
+> [!IMPORTANT]
+> <span data-ttu-id="c7e62-170">ユニバーサル デバイス ファミリをターゲットとするパッケージを提供する場合は、以前のオペレーティング システム (Windows Phone 8、Windows 8.1 など) で既にアプリを入手していたユーザーが Windows 10 にアップグレードすると、そのユーザーは Windows 10 パッケージを使うように更新されることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="c7e62-170">Keep in mind that if you provide packages that target the universal device family, every customer who already had your app on any earlier operating system (Windows Phone 8, Windows 8.1, etc.) and then upgrades to Windows 10 will be updated to get your Windows 10 package.</span></span>
 > 
-> これは、申請の「[価格と使用可能状況](set-app-pricing-and-availability.md#windows-10-device-families)」の手順で特定のデバイス ファミリを除外していた場合にも当てはまります。**[デバイス ファミリ]** の選択は新規の利用者にしか適用されないためです。 以前のすべてのユーザーに新しい Windows 10 パッケージを取得させることを避けたい場合は、サポート対象の特定のデバイス ファミリのみを含めるように appx マニフェストの [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 要素を更新する必要があります。
+> <span data-ttu-id="c7e62-171">これは、申請の「[デバイス ファミリの利用可否](upload-app-packages.md#device-family-availability)」の手順で特定のデバイス ファミリを除外していた場合にも当てはまります。**[デバイス ファミリの利用可否]** の選択は新規の利用者にしか適用されないためです。</span><span class="sxs-lookup"><span data-stu-id="c7e62-171">This happens even if you have excluded a specific device family in the [Device family availability](upload-app-packages.md#device-family-availability) step of your submission, since the **Device family availability** selection only applies to new acquisitions.</span></span> <span data-ttu-id="c7e62-172">以前のすべてのユーザーに新しいユニバーサル Windows 10 パッケージを取得させることを避けたい場合は、サポート対象の特定のデバイス ファミリのみを含めるように appx マニフェストの [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) 要素を更新する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c7e62-172">If you don't want every previous customer to get your universal Windows 10 package, be sure to update the [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) element in your appx manifest to include only the particular device family you wish to support.</span></span>
 > 
-> たとえば、Windows 10 にアップグレードした Windows 8 と Windows 8.1 のユーザーだけが UWP アプリを取得し、Windows Phone 8.1 以前のユーザーには以前の (Windows Phone 8 または Windows Phone 8.1 を対象にした) パッケージのままにするとします。 これを行うには、appx マニフェストの [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) を、Microsoft Visual Studio の既定の appx マニフェストに含まれる **Windows.Universal** 値 (ユニバーサル デバイス ファミリ用) のままにするのではなく、**Windows.Desktop** (デスクトップ デバイス ファミリ用) のみを含むように更新する必要があります。 ユニバーサル デバイス ファミリまたはモバイル デバイス ファミリ (**Windows.Universal** または **Windows.Universal**) のどちらかを対象にした UWP パッケージは申請しないでください。 この場合、Windows 10 モバイルのユーザーが UWP パッケージを取得することはなくなります。
+> <span data-ttu-id="c7e62-173">たとえば、Windows 10 にアップグレードした Windows 8 と Windows 8.1 のユーザーだけが UWP アプリを取得し、Windows Phone 8.1 以前のユーザーには以前の (Windows Phone 8 または Windows Phone 8.1 を対象にした) パッケージのままにするとします。</span><span class="sxs-lookup"><span data-stu-id="c7e62-173">For example, say you only want your Windows 8 and Windows 8.1 customers who have upgraded to Windows 10 to get your UWP app, and you want customers on Windows Phone 8.1 and earlier to keep the packages you'd previously made available (targeting Windows Phone 8 or Windows Phone 8.1).</span></span> <span data-ttu-id="c7e62-174">これを行うには、appx マニフェストの [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) を、Microsoft Visual Studio の既定の appx マニフェストに含まれる **Windows.Universal** 値 (ユニバーサル デバイス ファミリ用) のままにするのではなく、**Windows.Desktop** (デスクトップ デバイス ファミリ用) のみを含むように更新する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c7e62-174">To do this, you'll need to make sure to update the [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) in your appx manifest to include only **Windows.Desktop** (for the desktop device family), rather than leaving it as the **Windows.Universal** value (for the universal device family) that Microsoft Visual Studio includes in the appx manifest by default.</span></span> <span data-ttu-id="c7e62-175">ユニバーサル デバイス ファミリまたはモバイル デバイス ファミリ (**Windows.Universal** または **Windows.Universal**) のどちらかを対象にした UWP パッケージは申請しないでください。</span><span class="sxs-lookup"><span data-stu-id="c7e62-175">Do not submit any UWP packages that target either the Universal or Mobile device families (**Windows.Universal** or **Windows.Universal**).</span></span> <span data-ttu-id="c7e62-176">この場合、Windows 10 Mobile のユーザーが UWP パッケージを取得することはなくなります。</span><span class="sxs-lookup"><span data-stu-id="c7e62-176">This way, your Windows 10 Mobile customers will not get any of your UWP packages.</span></span>
 > 
-> デバイス ファミリについて詳しくは、「[ユニバーサル Windows プラットフォーム (UWP) アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください。
+> <span data-ttu-id="c7e62-177">デバイス ファミリについて詳しくは、[**デバイス ファミリの概要に関する記事**](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c7e62-177">For more info about device families, see [**Device families overview**](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview).</span></span>
 
-## <a name="maintaining-package-compatibility-for-windows-phone-81"></a>Windows Phone 8.1 に対するパッケージの互換性を維持する
+## <a name="removing-an-app-from-the-store"></a><span data-ttu-id="c7e62-178">アプリを Microsoft Store から削除する</span><span class="sxs-lookup"><span data-stu-id="c7e62-178">Removing an app from the Store</span></span>
 
+<span data-ttu-id="c7e62-179">ユーザーへのアプリの提供を停止し、事実上 "非公開" にする必要が生じることがあります。</span><span class="sxs-lookup"><span data-stu-id="c7e62-179">At times, you may want to stop offering an app to customers, effectively "unpublishing" it.</span></span> <span data-ttu-id="c7e62-180">これを行うには、**[アプリの概要]** ページで **[アプリの提供を停止する]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="c7e62-180">To do so, click **Make app unavailable** from the **App overview** page.</span></span> <span data-ttu-id="c7e62-181">アプリを入手不可にすることを確認すると、そのアプリは数時間以内に Store に表示されなくなり、([プロモーション コード](generate-promotional-codes.md)があり、Windows 10 デバイスを使用している場合を除き) 新しいユーザーがアプリを入手することはできなくなります。</span><span class="sxs-lookup"><span data-stu-id="c7e62-181">After you confirm that you want to make the app unavailable, within a few hours it will no longer be visible in the Store, and no new customers will be able to get it (unless they have a [promotional code](generate-promotional-codes.md) and are using a Windows 10 device).</span></span>
 
-Windows Phone 8.1 用に以前公開されていたアプリを更新する場合、パッケージの種類に関する特定の要件が適用されます。
+> [!IMPORTANT]
+> <span data-ttu-id="c7e62-182">このオプションは、申請時に選択した[表示](choose-visibility-options.md#discoverability)設定よりも優先されます。</span><span class="sxs-lookup"><span data-stu-id="c7e62-182">This option will override any [visibility](choose-visibility-options.md#discoverability) settings that you have selected in your submissions.</span></span> 
 
--   アプリに公開済みの Windows Phone 8.1 パッケージがある場合、それ以降のすべての更新にも Windows Phone 8.1 パッケージを含める必要があります。
--   アプリに公開済みの Windows Phone 8.1 XAP がある場合、それ以降の更新には Windows Phone 8.1 XAP、Windows Phone 8.1 appx、Windows Phone 8.1 appxbundle のいずれかが含まれている必要があります。
--   アプリに公開済みの Windows Phone 8.1 .appx がある場合、それ以降の更新には Windows Phone 8.1 .appx または Windows Phone 8.1 .appxbundle が含まれている必要があります。 つまり、Windows Phone 8.1 XAP は認められません。 これは、Windows Phone 8.1 .appx を含む .appxupload にも適用されます。
--   アプリに公開済みの Windows Phone 8.1 .appxbundle がある場合、それ以降の更新にも Windows Phone 8.1 .appxbundle を含める必要があります。 つまり、Windows Phone 8.1 XAP または Windows Phone 8.1 .appx は認められません。 これは、Windows Phone 8.1 .appxbundle を含む .appxupload にも適用されます。
+<span data-ttu-id="c7e62-183">このオプションは、申請を作成し、**[購入の停止]** オプションと同時に **[この製品を Microsoft Store で提供しますが、検索はできないようにします]** を選択した場合と同じ効果があります。</span><span class="sxs-lookup"><span data-stu-id="c7e62-183">This option has the same effect as if you created a submission and chose **Make this product available but not discoverable in the Store** with the **Stop acquisition** option.</span></span> <span data-ttu-id="c7e62-184">ただし、新しい申請を作成する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="c7e62-184">However, it does not require you to create a new submission.</span></span>
 
-これらの規則に従わない場合、パッケージのアップロード エラーとなり申請を完了できません。
+<span data-ttu-id="c7e62-185">アプリを既に持っているユーザーは使用し続けることができ、もう一度アプリをダウンロードできることに注意してください (後で新しいパッケージを申請した場合には更新プログラムを入手することもできます)。</span><span class="sxs-lookup"><span data-stu-id="c7e62-185">Note that any customers who already have the app will still be able to use it and can download it again (and could even get updates if you submit new packages later).</span></span>
 
-## <a name="removing-an-app-from-the-store"></a>アプリをストアから削除する
+<span data-ttu-id="c7e62-186">アプリを入手不可にした後も、ダッシュボードには引き続き表示されます。</span><span class="sxs-lookup"><span data-stu-id="c7e62-186">After making the app unavailable, you'll still see it in your dashboard.</span></span> <span data-ttu-id="c7e62-187">アプリをもう一度ユーザーに提供する場合は、[アプリの概要] ページで **[アプリを提供する]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="c7e62-187">If you decide to offer the app to customers again, you can click **Make app available** from the App overview page.</span></span> <span data-ttu-id="c7e62-188">確認後、数時間以内に新しいユーザーがアプリを入手できるようになります (前回の申請時の設定により制限されている場合を除く)。</span><span class="sxs-lookup"><span data-stu-id="c7e62-188">After you confirm, the app will be available to new customers (unless restricted by the settings in your last submission) within a few hours.</span></span>
 
-
-ユーザーへのアプリの提供を完全に停止し、事実上 "非公開" にする必要が生じることがあります。 これを行うには、[アプリの概要] ページで **[アプリの提供を停止する]** をクリックします。 アプリを入手不可にすることを確認した後、数時間以内にストアに表示されなくなり、プロモーション コードを含むどのような方法を使っても新しいユーザーが入手することができなくなります。
-
-> **重要**  これは、提出時に選んだ[配布と表示](set-app-pricing-and-availability.md#distribution-and-visibility)の設定よりも優先されます。
-
-アプリを既に持っているユーザーは使用し続けることができることに注意してください (後で新しいパッケージを申請した場合には更新プログラムを入手することもできます)。
-
-アプリを入手不可にした後も、ダッシュボードには引き続き表示されます。 アプリをもう一度ユーザーに提供する場合は、[アプリの概要] ページで **[アプリを提供する]** をクリックします。 確認後、数時間以内に新しいユーザーがアプリを入手できるようになります (前回の申請時の設定により制限されている場合を除く)。
-
-> **注**  アプリの提供は継続するものの、特定の OS バージョンのユーザーには提供を継続しない場合は、新しい提出を作成して、新しい取得を許可しない OS バージョン用のパッケージをすべて削除できます。 たとえば、以前に Windows Phone 8、Windows Phone 8.1、Windows 10 用のパッケージを提供しており、Windows Phone 8 の新しいユーザーにはアプリの提供を継続しない場合は、申請から Windows Phone 8 用のパッケージを削除します。 更新プログラムの公開後、Windows Phone 8 で新しいユーザーはアプリを入手できなくなります (ただし、ユーザーが既に取得している場合は使い続けることができます)。 Windows Phone 8.1 および Windows 10 では、新しいユーザーはこのアプリを取得できます。
-
-## <a name="removing-packages-for-a-previously-supported-device-family"></a>これまでサポートされていたデバイス ファミリ用のパッケージを削除する
+> [!NOTE]
+> <span data-ttu-id="c7e62-189">アプリの提供は継続しながら、特定の OS バージョンで新しいユーザーへの提供を終了する場合は、新しい申請を作成して、新規の取得を許可しない OS バージョン用のパッケージをすべて削除できます。</span><span class="sxs-lookup"><span data-stu-id="c7e62-189">If you want to keep your app available, but don't want to continuing offering it to new customers on a particular OS version, you can create a new submission and remove all packages for the OS version on which you want to prevent new acquisitions.</span></span> <span data-ttu-id="c7e62-190">たとえば、以前に Windows Phone 8.1 と Windows 10 用のパッケージを提供していて、Windows Phone 8.1 の新しいユーザーへのアプリの提供を終了する場合は、申請から Windows Phone 8.1 用のパッケージを削除します。</span><span class="sxs-lookup"><span data-stu-id="c7e62-190">For example, if you previously had packages for Windows Phone 8.1 and Windows 10, and you don't want to keep offering the app to new customers on Windows Phone 8.1, remove all of your Windows Phone 8.1 packages from the submission.</span></span> <span data-ttu-id="c7e62-191">更新プログラムの公開後、Windows Phone 8.1 では新しいユーザーがアプリを入手できなくなります (ただし、既に取得しているユーザーは使い続けることができます)。</span><span class="sxs-lookup"><span data-stu-id="c7e62-191">After the update is published, no new customers on Windows Phone 8.1 will be able to acquire the app though customers who already have it can continue to use it).</span></span> <span data-ttu-id="c7e62-192">ただし、Windows 10 では、引き続き新しいユーザーにアプリが提供されます。</span><span class="sxs-lookup"><span data-stu-id="c7e62-192">However, the app will still be available for new customers on Windows 10.</span></span>
 
 
-これまでアプリでサポートされていた特定のデバイス ファミリ用のパッケージをすべて削除する場合、**[パッケージ]** ページでの変更を保存する前に、この削除を実行してもよいかどうかを確認するメッセージが表示されます。
+## <a name="removing-packages-for-a-previously-supported-device-family"></a><span data-ttu-id="c7e62-193">これまでサポートされていたデバイス ファミリ用のパッケージを削除する</span><span class="sxs-lookup"><span data-stu-id="c7e62-193">Removing packages for a previously-supported device family</span></span>
 
-これまでアプリでサポートされていたデバイス ファミリ用のパッケージを削除する申請を発行すると、新しいユーザーは、そのデバイス ファミリでアプリを入手することができなくなります。 そのデバイス ファミリ向けのパッケージを提供するための別の更新プログラムは、後でいつでも公開することができます。
+<span data-ttu-id="c7e62-194">これまでアプリでサポートされていた特定のデバイス ファミリ用のパッケージをすべて削除する場合、**[パッケージ]** ページでの変更を保存する前に、この削除を実行してもよいかどうかを確認するメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="c7e62-194">If you remove all packages for a certain device family that your app previously supported, you'll be prompted to confirm that this is your intention before you can save your changes on the **Packages** page.</span></span>
 
-特定のデバイス ファミリをサポートするパッケージをすべて削除した場合でも、該当する種類のデバイスにアプリを既にインストールしているユーザーは、そのアプリを使うことができますが、後で提供される更新プログラムを入手することになります。
+<span data-ttu-id="c7e62-195">これまでアプリでサポートされていたデバイス ファミリ用のパッケージを削除する申請を発行すると、新しいユーザーは、そのデバイス ファミリでアプリを入手することができなくなります。</span><span class="sxs-lookup"><span data-stu-id="c7e62-195">When you publish a submission that removes packages for a device family that your app previously supported, new customers will not be able to acquire the app on that device family.</span></span> <span data-ttu-id="c7e62-196">そのデバイス ファミリ向けのパッケージを提供するための別の更新プログラムは、後でいつでも公開することができます。</span><span class="sxs-lookup"><span data-stu-id="c7e62-196">You can always publish another update later to provide packages for that device family again.</span></span>
 
- 
-
- 
+<span data-ttu-id="c7e62-197">特定のデバイス ファミリをサポートするパッケージをすべて削除した場合でも、該当する種類のデバイスにアプリを既にインストールしているユーザーは、そのアプリを使うことができますが、後で提供される更新プログラムを入手することになります。</span><span class="sxs-lookup"><span data-stu-id="c7e62-197">Be aware that even if you remove all of the packages that support a certain device family, any existing customers who have already installed the app on that type of device can still use it, and they will get any updates you provide later.</span></span>
 
 
+## <a name="maintaining-package-compatibility-for-windows-phone-81"></a><span data-ttu-id="c7e62-198">Windows Phone 8.1 に対するパッケージの互換性を維持する</span><span class="sxs-lookup"><span data-stu-id="c7e62-198">Maintaining package compatibility for Windows Phone 8.1</span></span>
 
+<span data-ttu-id="c7e62-199">Windows Phone 8.1 用に以前公開されていたアプリを更新する場合、パッケージの種類に関する特定の要件が適用されます。</span><span class="sxs-lookup"><span data-stu-id="c7e62-199">Certain requirements for package types apply when updating apps that were previously published for Windows Phone 8.1:</span></span>
 
+-   <span data-ttu-id="c7e62-200">アプリに公開済みの Windows Phone 8.1 パッケージがある場合、それ以降のすべての更新にも Windows Phone 8.1 パッケージを含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="c7e62-200">After an app has a published Windows Phone 8.1 package, all subsequent updates must also contain a Windows Phone 8.1 package.</span></span>
+-   <span data-ttu-id="c7e62-201">アプリに公開済みの Windows Phone 8.1 XAP がある場合、それ以降の更新には Windows Phone 8.1 XAP、Windows Phone 8.1 appx、Windows Phone 8.1 appxbundle のいずれかが含まれている必要があります。</span><span class="sxs-lookup"><span data-stu-id="c7e62-201">After an app has a published Windows Phone 8.1 XAP, subsequent updates must either have a Windows Phone 8.1 XAP, Windows Phone 8.1 appx, or Windows Phone 8.1 appxbundle.</span></span>
+-   <span data-ttu-id="c7e62-202">アプリに公開済みの Windows Phone 8.1 .appx がある場合、それ以降の更新には Windows Phone 8.1 .appx または Windows Phone 8.1 .appxbundle が含まれている必要があります。</span><span class="sxs-lookup"><span data-stu-id="c7e62-202">When an app has a published Windows Phone 8.1 .appx, subsequent updates must either have a Windows Phone 8.1 .appx or Windows Phone 8.1 .appxbundle.</span></span> <span data-ttu-id="c7e62-203">つまり、Windows Phone 8.1 XAP は認められません。</span><span class="sxs-lookup"><span data-stu-id="c7e62-203">In other words, a Windows Phone 8.1 XAP is not allowed.</span></span> <span data-ttu-id="c7e62-204">これは、Windows Phone 8.1 .appx を含む .appxupload にも適用されます。</span><span class="sxs-lookup"><span data-stu-id="c7e62-204">This applies to an .appxupload that contains a Windows Phone 8.1 .appx as well.</span></span>
+-   <span data-ttu-id="c7e62-205">アプリに公開済みの Windows Phone 8.1 .appxbundle がある場合、それ以降の更新にも Windows Phone 8.1 .appxbundle を含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="c7e62-205">After an app has a published Windows Phone 8.1 .appxbundle, subsequent updates must have a Windows Phone 8.1 .appxbundle.</span></span> <span data-ttu-id="c7e62-206">つまり、Windows Phone 8.1 XAP または Windows Phone 8.1 .appx は認められません。</span><span class="sxs-lookup"><span data-stu-id="c7e62-206">In other words, a Windows Phone 8.1 XAP or Windows Phone 8.1 .appx is not allowed.</span></span> <span data-ttu-id="c7e62-207">これは、Windows Phone 8.1 .appxbundle を含む .appxupload にも適用されます。</span><span class="sxs-lookup"><span data-stu-id="c7e62-207">This applies to an .appxupload that contains a Windows Phone 8.1 .appxbundle as well.</span></span>
 
+<span data-ttu-id="c7e62-208">これらの規則に従わない場合、パッケージのアップロード エラーとなり申請を完了できません。</span><span class="sxs-lookup"><span data-stu-id="c7e62-208">Failure to follow these rules may result in package upload errors that will prevent you from completing your submission.</span></span>

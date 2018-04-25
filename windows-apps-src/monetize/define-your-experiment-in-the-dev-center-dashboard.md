@@ -1,94 +1,101 @@
 ---
 author: mcleanbyron
-Description: "ユニバーサル Windows プラットフォーム (UWP) アプリで A/B テストを実施する前に、デベロッパー センター ダッシュボードで実験を定義する必要があります。"
-title: "デベロッパー センター ダッシュボードで実験を定義する"
+Description: Before you can run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must define your experiment in the Dev Center dashboard.
+title: ダッシュボードで実験を定義する
 ms.assetid: 675F2ADE-0D4B-41EB-AA4E-56B9C8F32C41
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, Microsoft Store Services SDK, A/B テスト, 実験"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f07e842ebdcb25056218b96d192b4ff0f086bd0c
-ms.lasthandoff: 02/07/2017
-
+keywords: Windows 10, UWP, Microsoft Store Services SDK, A/B テスト, 実験
+ms.localizationpriority: high
+ms.openlocfilehash: a4b63da54bfd39d533ca1abb4f507c6523326ca4
+ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/15/2018
 ---
+# <a name="define-your-experiment-in-the-dashboard"></a><span data-ttu-id="37c5d-103">ダッシュボードで実験を定義する</span><span class="sxs-lookup"><span data-stu-id="37c5d-103">Define your experiment in the dashboard</span></span>
 
-# <a name="define-your-experiment-in-the-dev-center-dashboard"></a>デベロッパー センター ダッシュボードで実験を定義する
+<span data-ttu-id="37c5d-104">[デベロッパー センター ダッシュボードでプロジェクトを作成して、リモート変数を定義](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)し、[アプリの実験用のコードを記述](code-your-experiment-in-your-app.md)したら、プロジェクトで実験を作成することができます。</span><span class="sxs-lookup"><span data-stu-id="37c5d-104">After you [create a project and define remote variables in the Dev Center dashboard](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md) and [code your app for experimentation](code-your-experiment-in-your-app.md), you are ready to create an experiment in the project.</span></span> <span data-ttu-id="37c5d-105">実験を作成するときは、ゴールとユーザーが受け取るバリエーションを定義します。</span><span class="sxs-lookup"><span data-stu-id="37c5d-105">When you create the experiment, you will define the goals and variations that your users will receive.</span></span>
 
-[デベロッパー センター ダッシュボードでプロジェクトを作成して、リモート変数を定義](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)し、[アプリの実験用のコードを記述](code-your-experiment-in-your-app.md)したら、プロジェクトで実験を作成することができます。 実験を作成するときは、ゴールとユーザーが受け取るバリエーションを定義します。
-
-実験の作成および実行のプロセスについて詳しく示すチュートリアルについては、「[A/B テストを使用して最初の実験を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)」をご覧ください。
+<span data-ttu-id="37c5d-106">実験の作成および実行のプロセスについて詳しく示すチュートリアルについては、「[A/B テストを使用して最初の実験を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="37c5d-106">For a walkthrough that demonstrates the end-to-end process of creating and running an experiment, see [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md).</span></span>
 
 <span id="get-an-api-key" />
 <span id="create-an-experiment" />
-## <a name="create-your-experiment"></a>実験を作成する
 
-1. [デベロッパー センター ダッシュボード](https://dev.windows.com/overview)にサインインします。
-2. **[アプリ]** で、実験を作成するアプリを選択します。
-3. ナビゲーション ウィンドウで、**[サービス]** を選択し、**[実験]** を選択します。
-4. **[実験]** ページのプロジェクトの表で、実験を追加するプロジェクトを決め、そのプロジェクトの **[実験の追加]** リンクをクリックします。
-5. **[実験名]** フィールドに、実験を簡単に識別できるような名前を入力します。 実験の作成後、この名前は、アプリの **[実験]** のページと、プロジェクトのページの既存の実験の一覧に表示されます。
-6. 実験がアクティブなときにそれを編集する場合には、**[編集可能な実験]** のチェック ボックスをオンにします。 このチェック ボックスは、実験を作成して内部テストによってすべてのバリエーションを検証する場合のみ、オンにしてください。 詳しくは、「[内部テスト用の実験を作成する](define-your-experiment-in-the-dev-center-dashboard.md#test_experiments)」をご覧ください。
+## <a name="create-your-experiment"></a><span data-ttu-id="37c5d-107">実験を作成する</span><span class="sxs-lookup"><span data-stu-id="37c5d-107">Create your experiment</span></span>
 
-  > **注**&nbsp;&nbsp;ユーザーに公開する実験 (ユーザーに提供されるアプリのバージョンで使用されているプロジェクト ID に関連付けられている実験) を作成する場合には、このチェック ボックスをオンにしないでください。 実験がアクティブなときに実験を編集すると、実験の結果が無効になります。
-4. **[プロジェクト名]** ドロップダウンでは、現在のプロジェクトが自動的に選択されています。 別のプロジェクトに新しい実験を追加する場合は、ここでそのプロジェクトを選択できます。 それ以外の場合は、この選択はそのままにします。
-5.   [プロジェクトID](run-app-experiments-with-a-b-testing.md#terms) の値をメモしておきます。 [アプリの実験用のコードを記述](code-your-experiment-in-your-app.md)する場合、バリエーション データを受け取り、ビュー イベントとコンバージョン イベントをデベロッパー センターにレポートできるように、コードでこの ID を参照する必要があります。
-5. **[ビュー イベント]** セクションで、実験の[ビュー イベント](run-app-experiments-with-a-b-testing.md#terms) の名前を **[ビュー イベント名]** フィールドに入力します。
-6. **[ゴールとコンバージョン イベント]** セクションで、実験のゴールを 1 つ以上定義します。
-  * **[ゴール名]** フィールドに、わかりやすいゴールの名前を入力します。 実験を実行すると、この名前が実験の結果の要約に表示されます。
-  * **[コンバージョン イベント名]** フィールドに、このゴールの[コンバージョン イベント](run-app-experiments-with-a-b-testing.md#terms)の名前を入力します。
-  * **[目標]** フィールドで、コンバージョン イベントの発生回数を最大化するか最小化するかに応じて、**[最大化]** または **[最小化]** を選択します。 この情報は、実験の結果の要約で使用されます。
+1. <span data-ttu-id="37c5d-108">[デベロッパー センター ダッシュボード](https://dev.windows.com/overview)にサインインします。</span><span class="sxs-lookup"><span data-stu-id="37c5d-108">Sign in to the [Dev Center dashboard](https://dev.windows.com/overview).</span></span>
+2. <span data-ttu-id="37c5d-109">**[アプリ]** で、実験を作成するアプリを選択します。</span><span class="sxs-lookup"><span data-stu-id="37c5d-109">Under **Your apps**, select the app for which you want to create an experiment.</span></span>
+3. <span data-ttu-id="37c5d-110">ナビゲーション ウィンドウで、**[サービス]** を選択し、**[実験]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="37c5d-110">In the navigation pane, select **Services** and then select **Experimentation**.</span></span>
+4. <span data-ttu-id="37c5d-111">**[実験]** ページのプロジェクトの表で、実験を追加するプロジェクトを決め、そのプロジェクトの **[実験の追加]** リンクをクリックします。</span><span class="sxs-lookup"><span data-stu-id="37c5d-111">On the **Experimentation** page, identify the project where you want to add an experiment in the projects table, and click the **Add experiment** link for that project.</span></span>
+5. <span data-ttu-id="37c5d-112">**[実験名]** フィールドに、実験を簡単に識別できるような名前を入力します。</span><span class="sxs-lookup"><span data-stu-id="37c5d-112">In the **Experiment name** field, type a name that you can use to easily identify the experiment.</span></span> <span data-ttu-id="37c5d-113">実験の作成後、この名前は、アプリの **[実験]** のページと、プロジェクトのページの既存の実験の一覧に表示されます。</span><span class="sxs-lookup"><span data-stu-id="37c5d-113">After you create an experiment, this name appears in the list of existing experiments on the **Experimentation** page for your app and on the project's page.</span></span>
+6. <span data-ttu-id="37c5d-114">実験がアクティブなときにそれを編集する場合には、**[編集可能な実験]** のチェック ボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="37c5d-114">If you want to edit the experiment while it is active, click the **Editable experiment** check box.</span></span> <span data-ttu-id="37c5d-115">このチェック ボックスは、実験を作成して内部テストによってすべてのバリエーションを検証する場合のみ、オンにしてください。</span><span class="sxs-lookup"><span data-stu-id="37c5d-115">Check this box only if you are creating an experiment to validate all the variations through internal testing.</span></span> <span data-ttu-id="37c5d-116">詳しくは、「[内部テスト用の実験を作成する](define-your-experiment-in-the-dev-center-dashboard.md#test_experiments)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="37c5d-116">For more information, see [Create an experiment for internal testing](define-your-experiment-in-the-dev-center-dashboard.md#test_experiments).</span></span>
+    > [!NOTE]
+    > <span data-ttu-id="37c5d-117">ユーザーに公開する実験 (ユーザーに提供されるアプリのバージョンで使用されているプロジェクト ID に関連付けられている実験) を作成する場合には、このチェック ボックスをオンにしないでください。</span><span class="sxs-lookup"><span data-stu-id="37c5d-117">Do not check this box if you are creating an experiment that you will release to customers (that is, an experiment that is associated with a project ID that is used in a version of your app that is available to customers).</span></span> <span data-ttu-id="37c5d-118">実験がアクティブなときに実験を編集すると、実験の結果が無効になります。</span><span class="sxs-lookup"><span data-stu-id="37c5d-118">Editing an experiment while it is active will invalidate the experiment results.</span></span>
 
-  >**注**&nbsp;&nbsp;デベロッパー センターで報告されるのは、24 時間以内に発生した、各ユーザー ビューの最初のコンバージョン イベントのみです。 ユーザーが 24 時間以内にアプリで複数のコンバージョン イベントをトリガーした場合は、最初のコンバージョン イベントのみ報告されます。 これは、コンバージョンを行ったユーザーの数を最大化することをゴールとしていた場合に、単一のユーザーによって、サンプルのユーザー グループの実験の結果が歪曲されないようにすることを目的としています。
+7. <span data-ttu-id="37c5d-119">**[プロジェクト名]** ドロップダウンでは、現在のプロジェクトが自動的に選択されています。</span><span class="sxs-lookup"><span data-stu-id="37c5d-119">In the **Project name** drop-down, the current project is automatically selected.</span></span> <span data-ttu-id="37c5d-120">別のプロジェクトに新しい実験を追加する場合は、ここでそのプロジェクトを選択できます。</span><span class="sxs-lookup"><span data-stu-id="37c5d-120">If you want to add the new experiment to a different project, you can select that project here.</span></span> <span data-ttu-id="37c5d-121">それ以外の場合は、この選択はそのままにします。</span><span class="sxs-lookup"><span data-stu-id="37c5d-121">Otherwise, leave this selection alone.</span></span>
+8.   <span data-ttu-id="37c5d-122">[プロジェクトID](run-app-experiments-with-a-b-testing.md#terms) の値をメモしておきます。</span><span class="sxs-lookup"><span data-stu-id="37c5d-122">Make note of the [Project ID](run-app-experiments-with-a-b-testing.md#terms) value.</span></span> <span data-ttu-id="37c5d-123">[アプリの実験用のコードを記述](code-your-experiment-in-your-app.md)する場合、バリエーション データを受け取り、ビュー イベントとコンバージョン イベントをデベロッパー センターにレポートできるように、コードでこの ID を参照する必要があります。</span><span class="sxs-lookup"><span data-stu-id="37c5d-123">When you [code your app for experimentation](code-your-experiment-in-your-app.md), you must reference this ID in your code so you can receive variation data and report view and conversion events to Dev Center.</span></span>
+9. <span data-ttu-id="37c5d-124">**[ビュー イベント]** セクションで、実験の[ビュー イベント](run-app-experiments-with-a-b-testing.md#terms) の名前を **[ビュー イベント名]** フィールドに入力します。</span><span class="sxs-lookup"><span data-stu-id="37c5d-124">In the **View event** section, type the name of the [view event](run-app-experiments-with-a-b-testing.md#terms) for your experiment in the **View event name** field.</span></span>
+10. <span data-ttu-id="37c5d-125">**[ゴールとコンバージョン イベント]** セクションで、実験のゴールを 1 つ以上定義します。</span><span class="sxs-lookup"><span data-stu-id="37c5d-125">In the **Goals and conversion events** section, define at least one goal for your experiment:</span></span>
+  * <span data-ttu-id="37c5d-126">**[ゴール名]** フィールドに、わかりやすいゴールの名前を入力します。</span><span class="sxs-lookup"><span data-stu-id="37c5d-126">In the **Goal name** field, type a descriptive name for your goal.</span></span> <span data-ttu-id="37c5d-127">実験を実行すると、この名前が実験の結果の要約に表示されます。</span><span class="sxs-lookup"><span data-stu-id="37c5d-127">After you run an experiment, this name appears in the results summary for the experiment.</span></span>
+  * <span data-ttu-id="37c5d-128">**[コンバージョン イベント名]** フィールドに、このゴールの[コンバージョン イベント](run-app-experiments-with-a-b-testing.md#terms)の名前を入力します。</span><span class="sxs-lookup"><span data-stu-id="37c5d-128">In the **Conversion event name** field, type the name of the [conversion event](run-app-experiments-with-a-b-testing.md#terms) for this goal.</span></span>
+  * <span data-ttu-id="37c5d-129">**[目標]** フィールドで、コンバージョン イベントの発生回数を最大化するか最小化するかに応じて、**[最大化]** または **[最小化]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="37c5d-129">In the **Objective** field, choose **Maximize** or **Minimize**, depending on whether you want to maximize or minimize the occurrences of the conversion event.</span></span> <span data-ttu-id="37c5d-130">この情報は、実験の結果の要約で使用されます。</span><span class="sxs-lookup"><span data-stu-id="37c5d-130">This information is used in the results summary for the experiment.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="37c5d-131">デベロッパー センターで報告されるのは、24 時間以内に発生した、各ユーザー ビューの最初のコンバージョン イベントのみです。</span><span class="sxs-lookup"><span data-stu-id="37c5d-131">Dev Center reports only the first conversion event for each user view in a 24-hour time period.</span></span> <span data-ttu-id="37c5d-132">ユーザーが 24 時間以内にアプリで複数のコンバージョン イベントをトリガーした場合は、最初のコンバージョン イベントのみ報告されます。</span><span class="sxs-lookup"><span data-stu-id="37c5d-132">If a user triggers multiple conversion events in your app within a 24-hour period, only the first conversion event is reported.</span></span> <span data-ttu-id="37c5d-133">これは、コンバージョンを行ったユーザーの数を最大化することをゴールとしていた場合に、単一のユーザーによって、サンプルのユーザー グループの実験の結果が歪曲されないようにすることを目的としています。</span><span class="sxs-lookup"><span data-stu-id="37c5d-133">This is intended to help prevent a single user from skewing the experiment results for a sample group of users when the goal is to maximize the number of users who perform a conversion.</span></span>
 
 <span id="define-the-variations-and-settings-for-the-experiment" />
-### <a name="define-the-remote-variables-and-variations-for-your-experiment"></a>実験のリモート変数とバリエーションを定義する
 
-次に、実験のリモート[変数](run-app-experiments-with-a-b-testing.md#terms)と[バリエーション](run-app-experiments-with-a-b-testing.md#terms)を定義します。
+### <a name="define-the-remote-variables-and-variations-for-your-experiment"></a><span data-ttu-id="37c5d-134">実験のリモート変数とバリエーションを定義する</span><span class="sxs-lookup"><span data-stu-id="37c5d-134">Define the remote variables and variations for your experiment</span></span>
 
-1. **[リモート変数とバリエーション]** セクションには、**[バリエーション A (コントロール)]** と **[バリエーション B]** という 2 つの既定のバリエーションが表示されます。さらにバリエーションが必要な場合は、**[バリエーションの追加]** をクリックします。 必要に応じて、各バリエーションの名前を変更することができます。
-2. 既定では、バリエーションは、アプリ ユーザーに均等に配布されます。 特定の配布率を選択する場合は、**[均等に配布する]** チェック ボックスをオフにし、**[配布率 (%)]** 行に割合を入力します。
-3. バリエーションにリモート変数を追加します。 このセクションの下部にあるドロップダウン コントロールで、追加する各変数を選択し、**[変数の追加]** をクリックします。
+<span data-ttu-id="37c5d-135">次に、実験のリモート[変数](run-app-experiments-with-a-b-testing.md#terms)と[バリエーション](run-app-experiments-with-a-b-testing.md#terms)を定義します。</span><span class="sxs-lookup"><span data-stu-id="37c5d-135">Next, define the remote [variables](run-app-experiments-with-a-b-testing.md#terms) and [variations](run-app-experiments-with-a-b-testing.md#terms) for your experiment.</span></span>
 
-  >**注**&nbsp;&nbsp;このコントロールに表示されている変数は、実験のプロジェクトから継承されています。 変数の既定値は (プロジェクトで定義されているように)、コントロールのバリエーションに自動的に割り当てられます。 ここに記載されていない新しい変数を作成する場合は、関連するプロジェクト ページに移動して、そこで変数を追加します。
-4. 実験のそれぞれ一意のバリエーションに、変数の値を編集します (つまり、コントロールのバリエーション以外のバリエーションです)。
+1. <span data-ttu-id="37c5d-136">**[リモート変数とバリエーション]** セクションには、**[バリエーション A (コントロール)]** と **[バリエーション B]** という 2 つの既定のバリエーションが表示されます。さらにバリエーションが必要な場合は、**[バリエーションの追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="37c5d-136">In the **Remote variables and variations** section, you should see two default variations, **Variation A (Control)** and **Variation B**. If you want more variations, click **Add variation**.</span></span> <span data-ttu-id="37c5d-137">必要に応じて、各バリエーションの名前を変更することができます。</span><span class="sxs-lookup"><span data-stu-id="37c5d-137">Optionally, you can rename each variation.</span></span>
+2. <span data-ttu-id="37c5d-138">既定では、バリエーションは、アプリ ユーザーに均等に配布されます。</span><span class="sxs-lookup"><span data-stu-id="37c5d-138">By default, variations are distributed equally to your app users.</span></span> <span data-ttu-id="37c5d-139">特定の配布率を選択する場合は、**[均等に配布する]** チェック ボックスをオフにし、**[配布率 (%)]** 行に割合を入力します。</span><span class="sxs-lookup"><span data-stu-id="37c5d-139">If you want to choose a specific distribution percentage, clear the **Distribute equally** check box and type the percentages in the **Distribution (%)** row.</span></span>
+3. <span data-ttu-id="37c5d-140">バリエーションにリモート変数を追加します。</span><span class="sxs-lookup"><span data-stu-id="37c5d-140">Add remote variables to your variations.</span></span> <span data-ttu-id="37c5d-141">このセクションの下部にあるドロップダウン コントロールで、追加する各変数を選択し、**[変数の追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="37c5d-141">In the drop-down control at the bottom of this section, choose each variable you want to add and click **Add variable**.</span></span>
+    > [!NOTE]
+    > <span data-ttu-id="37c5d-142">このコントロールに表示されている変数は、実験のプロジェクトから継承されています。</span><span class="sxs-lookup"><span data-stu-id="37c5d-142">The variables listed in this control are inherited from the project for the experiment.</span></span> <span data-ttu-id="37c5d-143">変数の既定値は (プロジェクトで定義されているように)、コントロールのバリエーションに自動的に割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="37c5d-143">The default value for the variable (as defined in the project) is automatically assigned to the control variation.</span></span> <span data-ttu-id="37c5d-144">ここに記載されていない新しい変数を作成する場合は、関連するプロジェクト ページに移動して、そこで変数を追加します。</span><span class="sxs-lookup"><span data-stu-id="37c5d-144">If you want to create new variables that aren't listed here, go to the related project page and add the variables there.</span></span>
+
+4. <span data-ttu-id="37c5d-145">実験のそれぞれ一意のバリエーションに、変数の値を編集します (つまり、コントロールのバリエーション以外のバリエーションです)。</span><span class="sxs-lookup"><span data-stu-id="37c5d-145">Edit the variable values for each unique variation in the experiment (that is, the variations other than the control variation).</span></span>
 
 <span id="save-and-activate-your-experiment" />
-### <a name="save-and-activate-your-experiment"></a>実験を保存してアクティブ化する
 
-実験の必須フィールドへの入力が完了したら、**[保存]** をクリックして実験を保存します。
+### <a name="save-and-activate-your-experiment"></a><span data-ttu-id="37c5d-146">実験を保存してアクティブ化する</span><span class="sxs-lookup"><span data-stu-id="37c5d-146">Save and activate your experiment</span></span>
 
-実験のパラメーターに問題がなく、実験をアクティブ化する準備ができたら、**[アクティブ化]** をクリックして、アプリから実験データの収集を開始することができます。 実験がアクティブになっていると、アプリはバリエーション変数を取得し、デベロッパー センターにビュー イベントとコンバージョン イベントをレポートできます。 詳しくは、「[デベロッパー センター ダッシュボードで実験を実行および管理します](manage-your-experiment.md)」をご覧ください。
+<span data-ttu-id="37c5d-147">実験の必須フィールドへの入力が完了したら、**[保存]** をクリックして実験を保存します。</span><span class="sxs-lookup"><span data-stu-id="37c5d-147">When you finish entering the required fields for your experiment, click **Save** to save your experiment.</span></span>
 
-> **重要**  1 つのプロジェクトには、同時に 1 つのアクティブな実験のみを含むことができます。 実験をアクティブ化した後は、実験の作成時に **[編集可能な実験]** チェック ボックスをオンにしていない場合、実験のパラメーターを変更できなくなります。 アプリで実験のコードを記述してから実験をアクティブ化することをお勧めします。
+<span data-ttu-id="37c5d-148">実験のパラメーターに問題がなく、実験をアクティブ化する準備ができたら、**[アクティブ化]** をクリックして、アプリから実験データの収集を開始することができます。</span><span class="sxs-lookup"><span data-stu-id="37c5d-148">If you are satisfied with the parameters of your experiment and you are ready to activate it so you can start collecting experiment data from your app, click **Activate**.</span></span> <span data-ttu-id="37c5d-149">実験がアクティブになっていると、アプリはバリエーション変数を取得し、デベロッパー センターにビュー イベントとコンバージョン イベントをレポートできます。</span><span class="sxs-lookup"><span data-stu-id="37c5d-149">When the experiment is active, your app can retrieve variation variables and report view and conversion events to Dev Center.</span></span> <span data-ttu-id="37c5d-150">詳しくは、「[デベロッパー センター ダッシュボードで実験を実行および管理します](manage-your-experiment.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="37c5d-150">For more information, see [Run and manage your experiment in the Dev Center dashboard](manage-your-experiment.md).</span></span>
+
+> [!IMPORTANT]
+> <span data-ttu-id="37c5d-151">1 つのプロジェクトには、同時に 1 つのアクティブな実験のみを含むことができます。</span><span class="sxs-lookup"><span data-stu-id="37c5d-151">A project can only contain one active experiment at a time.</span></span> <span data-ttu-id="37c5d-152">実験の作成時に **[編集可能な実験]** チェック ボックスをオンにしていないと、実験をアクティブ化した後で実験のパラメーターを変更できなくなります。</span><span class="sxs-lookup"><span data-stu-id="37c5d-152">After you activate an experiment, you can no longer modify the experiment parameters unless you selected the **Editable experiment** check box when you created the experiment.</span></span> <span data-ttu-id="37c5d-153">アプリで実験のコードを記述してから実験をアクティブ化することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="37c5d-153">We recommend that you code the experiment in your app before activating your experiment.</span></span>
 
 <span id="test_experiments"/>
-## <a name="create-an-experiment-for-internal-testing"></a>内部テスト用の実験を作成する
 
-コントロールされたユーザー (たとえば社内のテスター) で実験のテストを行い、すべてのバリエーションが予想どおりに動作していることを確認してから、一般のユーザーを対象に実験をアクティブ化することをお勧めします。 **[編集可能な実験]** のオプションを選択した実験を作成することにより、これを実現できます。
+## <a name="create-an-experiment-for-internal-testing"></a><span data-ttu-id="37c5d-154">内部テスト用の実験を作成する</span><span class="sxs-lookup"><span data-stu-id="37c5d-154">Create an experiment for internal testing</span></span>
 
-ユーザーにリリースする前に、実験をテストするには、次のプロセスに従います。
+<span data-ttu-id="37c5d-155">コントロールされたユーザー (たとえば社内のテスター) で実験のテストを行い、すべてのバリエーションが予想どおりに動作していることを確認してから、一般のユーザーを対象に実験をアクティブ化することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="37c5d-155">You might want to test your experiment with a controlled audience (for example, a set of internal testers) and confirm that all of the variations are working as expected before you activate the experiment for your customers.</span></span> <span data-ttu-id="37c5d-156">**[編集可能な実験]** のオプションを選択した実験を作成することにより、これを実現できます。</span><span class="sxs-lookup"><span data-stu-id="37c5d-156">You can accomplish this by creating an experiment that has the **Editable experiment** option selected.</span></span>
 
-1. 2 つのプロジェクトを作成します。1 つはアプリの公開ビルド用で、もう 1 つはテスト ユーザーのみが利用可能なアプリのプライベート ビルド用です。 次の手順では、これらのプロジェクトをそれぞれ、公開プロジェクト、テスト プロジェクトと呼びます。
-2. [アプリの実験用のコードを記述](code-your-experiment-in-your-app.md)する場合には、アプリの公開ビルドの公開プロジェクトからプロジェクト ID を参照します。 アプリのプライベート ビルドでは、テスト プロジェクトからプロジェクト ID を参照します。
-3. テスト プロジェクトで実験を作成し、実験の **[編集可能な実験]** のオプションをオンにします。
-4. テスト プロジェクトで、実験をアクティブ化します。 1 つのバリエーションに 100% の配布率を割り当て、このバリエーションがテスターに期待どおりに動作することを確認します。 他のバリエーションについてプロセスを繰り返します。
-5. バリエーションが期待どおりに機能していることを確認したら、テスト プロジェクトで、実験に最終変更を加えます。 実験をユーザーにリリースする準備ができたら、事件をパブリック プロジェクトに複製します。 この実験では、**[編集可能な実験]** オプションをオフにします。
-4. 複製された実験で、ターゲットのバリエーションの配布が正しいことを確認します。
-5. 複製された実験をアクティブ化して、ユーザーに実験をリリースします。
+<span data-ttu-id="37c5d-157">ユーザーにリリースする前に、実験をテストするには、次のプロセスに従います。</span><span class="sxs-lookup"><span data-stu-id="37c5d-157">To test your experiment before releasing it to customers, follow this process:</span></span>
 
-## <a name="next-steps"></a>次の手順
+1. <span data-ttu-id="37c5d-158">2 つのプロジェクトを作成します。1 つはアプリの公開ビルド用で、もう 1 つはテスト ユーザーのみが利用可能なアプリのプライベート ビルド用です。</span><span class="sxs-lookup"><span data-stu-id="37c5d-158">Create two projects: one for the public build of your app, and one for a private build of your app that is available only to your test audience.</span></span> <span data-ttu-id="37c5d-159">次の手順では、これらのプロジェクトをそれぞれ、公開プロジェクト、テスト プロジェクトと呼びます。</span><span class="sxs-lookup"><span data-stu-id="37c5d-159">The following instructions refer to these projects as the public project and test project, respectively.</span></span>
+2. <span data-ttu-id="37c5d-160">[アプリの実験用のコードを記述](code-your-experiment-in-your-app.md)する場合には、アプリの公開ビルドの公開プロジェクトからプロジェクト ID を参照します。</span><span class="sxs-lookup"><span data-stu-id="37c5d-160">When you [code your app for experimentation](code-your-experiment-in-your-app.md), reference the project ID from your public project in the public build of your app.</span></span> <span data-ttu-id="37c5d-161">アプリのプライベート ビルドでは、テスト プロジェクトからプロジェクト ID を参照します。</span><span class="sxs-lookup"><span data-stu-id="37c5d-161">In the private build of your app, reference the project ID from your test project.</span></span>
+3. <span data-ttu-id="37c5d-162">テスト プロジェクトで実験を作成し、実験の **[編集可能な実験]** のオプションをオンにします。</span><span class="sxs-lookup"><span data-stu-id="37c5d-162">Create an experiment in the test project, and select the **Editable experiment** option for the experiment.</span></span>
+4. <span data-ttu-id="37c5d-163">テスト プロジェクトで、実験をアクティブ化します。</span><span class="sxs-lookup"><span data-stu-id="37c5d-163">Activate the experiment in the test project.</span></span> <span data-ttu-id="37c5d-164">1 つのバリエーションに 100% の配布率を割り当て、このバリエーションがテスターに期待どおりに動作することを確認します。</span><span class="sxs-lookup"><span data-stu-id="37c5d-164">Allocate 100% distribution to one variation and verify that this variation works as expected for your testers.</span></span> <span data-ttu-id="37c5d-165">他のバリエーションについてプロセスを繰り返します。</span><span class="sxs-lookup"><span data-stu-id="37c5d-165">Repeat the process for other variations.</span></span>
+5. <span data-ttu-id="37c5d-166">バリエーションが期待どおりに機能していることを確認したら、テスト プロジェクトで、実験に最終変更を加えます。</span><span class="sxs-lookup"><span data-stu-id="37c5d-166">After you verify that the variations are working as expected, make any final changes to the experiment in the test project.</span></span> <span data-ttu-id="37c5d-167">実験をユーザーにリリースする準備ができたら、事件をパブリック プロジェクトに複製します。</span><span class="sxs-lookup"><span data-stu-id="37c5d-167">When you are ready to release the experiment to your customers, clone the experiment to the public project.</span></span> <span data-ttu-id="37c5d-168">この実験では、**[編集可能な実験]** オプションをオフにします。</span><span class="sxs-lookup"><span data-stu-id="37c5d-168">In this experiment, do not select the **Editable experiment** option.</span></span>
+4. <span data-ttu-id="37c5d-169">複製された実験で、ターゲットのバリエーションの配布が正しいことを確認します。</span><span class="sxs-lookup"><span data-stu-id="37c5d-169">Ensure that the target variation distribution is correct in the cloned experiment.</span></span>
+5. <span data-ttu-id="37c5d-170">複製された実験をアクティブ化して、ユーザーに実験をリリースします。</span><span class="sxs-lookup"><span data-stu-id="37c5d-170">Activate the cloned experiment to release the experiment to your customers.</span></span>
 
-デベロッパー センター ダッシュボードで実験を定義し、アプリでその実験のコードを記述したら、[デベロッパー センター ダッシュボードで実験を実行および管理します](manage-your-experiment.md)。
+## <a name="next-steps"></a><span data-ttu-id="37c5d-171">次の手順</span><span class="sxs-lookup"><span data-stu-id="37c5d-171">Next steps</span></span>
 
-## <a name="related-topics"></a>関連トピック
+<span data-ttu-id="37c5d-172">デベロッパー センター ダッシュボードで実験を定義し、アプリでその実験のコードを記述したら、[デベロッパー センター ダッシュボードで実験を実行および管理します](manage-your-experiment.md)。</span><span class="sxs-lookup"><span data-stu-id="37c5d-172">After you define your experiment in the Dev Center dashboard and code the experiment in your app, you are ready to [run and manage your experiment in the Dev Center dashboard](manage-your-experiment.md).</span></span>
 
-* [プロジェクトを作成し、デベロッパー センター ダッシュボードでリモート変数を定義する](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
-* [アプリの実験用のコードを記述する](code-your-experiment-in-your-app.md)
-* [デベロッパー センター ダッシュボードで実験を管理する](manage-your-experiment.md)
-* [A/B テストを使用して最初の実験を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)
-* [A/B テストを使用してアプリの実験を実行する](run-app-experiments-with-a-b-testing.md)
+## <a name="related-topics"></a><span data-ttu-id="37c5d-173">関連トピック</span><span class="sxs-lookup"><span data-stu-id="37c5d-173">Related topics</span></span>
 
+* [<span data-ttu-id="37c5d-174">プロジェクトを作成し、デベロッパー センター ダッシュボードでリモート変数を定義する</span><span class="sxs-lookup"><span data-stu-id="37c5d-174">Create a project and define remote variables in the Dev Center dashboard</span></span>](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
+* [<span data-ttu-id="37c5d-175">アプリの実験用のコードを記述する</span><span class="sxs-lookup"><span data-stu-id="37c5d-175">Code your app for experimentation</span></span>](code-your-experiment-in-your-app.md)
+* [<span data-ttu-id="37c5d-176">デベロッパー センター ダッシュボードで実験を管理する</span><span class="sxs-lookup"><span data-stu-id="37c5d-176">Manage your experiment in the Dev Center dashboard</span></span>](manage-your-experiment.md)
+* [<span data-ttu-id="37c5d-177">A/B テストを使用して最初の実験を作成および実行する</span><span class="sxs-lookup"><span data-stu-id="37c5d-177">Create and run your first experiment with A/B testing</span></span>](create-and-run-your-first-experiment-with-a-b-testing.md)
+* [<span data-ttu-id="37c5d-178">A/B テストを使用してアプリの実験を実行する</span><span class="sxs-lookup"><span data-stu-id="37c5d-178">Run app experiments with A/B testing</span></span>](run-app-experiments-with-a-b-testing.md)
