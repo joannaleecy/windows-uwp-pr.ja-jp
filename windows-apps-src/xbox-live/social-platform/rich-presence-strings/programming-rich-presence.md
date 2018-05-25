@@ -1,23 +1,24 @@
 ---
-title: "リッチ プレゼンスのプログラミング"
+title: リッチ プレゼンスのプログラミング
 author: KevinAsgari
-description: "Xbox Live メンバーのオンライン プレゼンス状態を設定するコード例について説明します。"
+description: Xbox Live メンバーのオンライン プレゼンス状態を設定するコード例について説明します。
 ms.assetid: 7e6e7b69-d7c3-42fa-bcc4-6d68947f6fdb
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リッチ プレゼンス"
-ms.openlocfilehash: 2d29f58e0e58c9dbcc0264aea54f35d225d17ece
-ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リッチ プレゼンス
+ms.localizationpriority: low
+ms.openlocfilehash: f2a62ec2d1678c5f7912cdbff6f6ab3e2464e35a
+ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2017
+ms.lasthandoff: 02/24/2018
 ---
-# <a name="programming-rich-presence"></a><span data-ttu-id="427fb-104">リッチ プレゼンスのプログラミング</span><span class="sxs-lookup"><span data-stu-id="427fb-104">Programming Rich Presence</span></span>
+# <a name="programming-rich-presence"></a><span data-ttu-id="61fe3-104">リッチ プレゼンスのプログラミング</span><span class="sxs-lookup"><span data-stu-id="61fe3-104">Programming Rich Presence</span></span>
 
-<span data-ttu-id="427fb-105">リッチ プレゼンスは、プレイヤーの現在のアクティビティを他のプレイヤーに通知するための機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="427fb-105">Rich presence provides features for advertising a player's current activity to other players.</span></span> <span data-ttu-id="427fb-106">詳細については、「[リッチ プレゼンス文字列 - 概要](rich-presence-strings-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="427fb-106">For more information, see [Rich Presence Strings: Overview](rich-presence-strings-overview.md).</span></span>
+<span data-ttu-id="61fe3-105">リッチ プレゼンスは、プレイヤーの現在のアクティビティを他のプレイヤーに通知するための機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="61fe3-105">Rich presence provides features for advertising a player's current activity to other players.</span></span> <span data-ttu-id="61fe3-106">詳細については、「[リッチ プレゼンス文字列 - 概要](rich-presence-strings-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="61fe3-106">For more information, see [Rich Presence Strings: Overview](rich-presence-strings-overview.md).</span></span>
 
 ```cpp
 

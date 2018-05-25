@@ -1,40 +1,41 @@
 ---
-title: "Xbox Live SDK の新規事項 - October 2015"
+title: Xbox Live SDK の新規事項 - October 2015
 author: KevinAsgari
-description: "Xbox Live SDK の新規事項 - October 2015"
+description: Xbox Live SDK の新規事項 - October 2015
 ms.assetid: 052be4aa-5f18-4eb7-ba5f-80c5f5cab6f2
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "xbox live, xbox, ゲーム, uwp, windows 10, xbox one"
-ms.openlocfilehash: f521fadf8eb3af489af1c1cad29ab5ea387e6371
-ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
+ms.localizationpriority: low
+ms.openlocfilehash: 374955dd4cbb200d19d08f01535869cfbc3d14e7
+ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2017
+ms.lasthandoff: 02/24/2018
 ---
-# <a name="whats-new-for-the-xbox-live-sdk---october-2015"></a><span data-ttu-id="0daa2-104">Xbox Live SDK の新規事項 - October 2015</span><span class="sxs-lookup"><span data-stu-id="0daa2-104">What's new for the Xbox Live SDK - October 2015</span></span>
+# <a name="whats-new-for-the-xbox-live-sdk---october-2015"></a><span data-ttu-id="6d97b-104">Xbox Live SDK の新規事項 - October 2015</span><span class="sxs-lookup"><span data-stu-id="6d97b-104">What's new for the Xbox Live SDK - October 2015</span></span>
 
-<span data-ttu-id="0daa2-105">September 2015 リリースで追加された内容については、「[新規事項 - September 2015](1509-whats-new.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="0daa2-105">Please see the [What's New - September 2015](1509-whats-new.md) article for what was added in the September 2015 release.</span></span>
+<span data-ttu-id="6d97b-105">September 2015 リリースで追加された内容については、「[新規事項 - September 2015](1509-whats-new.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6d97b-105">Please see the [What's New - September 2015](1509-whats-new.md) article for what was added in the September 2015 release.</span></span>
 
 
-## <a name="os-and-tool-support"></a><span data-ttu-id="0daa2-106">OS とツールのサポート</span><span class="sxs-lookup"><span data-stu-id="0daa2-106">OS and tool support</span></span>
-<span data-ttu-id="0daa2-107">Xbox Live SDK では、Windows 10 RTM [バージョン 10.0.10240] と Visual Studio 2015 RTM [バージョン 14.0.23107.0] がサポートされます。</span><span class="sxs-lookup"><span data-stu-id="0daa2-107">The Xbox Live SDK supports Windows 10 RTM [Version 10.0.10240] and Visual Studio 2015 RTM [Version 14.0.23107.0].</span></span>
+## <a name="os-and-tool-support"></a><span data-ttu-id="6d97b-106">OS とツールのサポート</span><span class="sxs-lookup"><span data-stu-id="6d97b-106">OS and tool support</span></span>
+<span data-ttu-id="6d97b-107">Xbox Live SDK では、Windows 10 RTM [バージョン 10.0.10240] と Visual Studio 2015 RTM [バージョン 14.0.23107.0] がサポートされます。</span><span class="sxs-lookup"><span data-stu-id="6d97b-107">The Xbox Live SDK supports Windows 10 RTM [Version 10.0.10240] and Visual Studio 2015 RTM [Version 14.0.23107.0].</span></span>
 
-## <a name="social-manager"></a><span data-ttu-id="0daa2-108">Social Manager</span><span class="sxs-lookup"><span data-stu-id="0daa2-108">Social Manager</span></span>
-* <span data-ttu-id="0daa2-109">Social Manager は、Xbox Live Social API を簡単に使用できるようにするためのものです。</span><span class="sxs-lookup"><span data-stu-id="0daa2-109">The Social Manager is intended to ease the use of the Xbox Live social APIs.</span></span>  <span data-ttu-id="0daa2-110">ユーザーのソーシャル グラフをインテリジェントにキャッシュし、より単純な API などを提供します。</span><span class="sxs-lookup"><span data-stu-id="0daa2-110">It will intelligently cache a user's social graph, provide a simpler API and more.</span></span>  <span data-ttu-id="0daa2-111">詳細についてはドキュメントを参照してください。</span><span class="sxs-lookup"><span data-stu-id="0daa2-111">Please see the documentation for more information.</span></span>
+## <a name="social-manager"></a><span data-ttu-id="6d97b-108">Social Manager</span><span class="sxs-lookup"><span data-stu-id="6d97b-108">Social Manager</span></span>
+* <span data-ttu-id="6d97b-109">Social Manager は、Xbox Live Social API を簡単に使用できるようにするためのものです。</span><span class="sxs-lookup"><span data-stu-id="6d97b-109">The Social Manager is intended to ease the use of the Xbox Live social APIs.</span></span>  <span data-ttu-id="6d97b-110">ユーザーのソーシャル グラフをインテリジェントにキャッシュし、より単純な API などを提供します。</span><span class="sxs-lookup"><span data-stu-id="6d97b-110">It will intelligently cache a user's social graph, provide a simpler API and more.</span></span>  <span data-ttu-id="6d97b-111">詳細についてはドキュメントを参照してください。</span><span class="sxs-lookup"><span data-stu-id="6d97b-111">Please see the documentation for more information.</span></span>
 
-## <a name="samples"></a><span data-ttu-id="0daa2-112">サンプル</span><span class="sxs-lookup"><span data-stu-id="0daa2-112">Samples</span></span>
-* <span data-ttu-id="0daa2-113">API の使い方がわかる新しい Social Manager サンプルがあります。</span><span class="sxs-lookup"><span data-stu-id="0daa2-113">We have a new Social Manager sample demonstrating the API.</span></span>
+## <a name="samples"></a><span data-ttu-id="6d97b-112">サンプル</span><span class="sxs-lookup"><span data-stu-id="6d97b-112">Samples</span></span>
+* <span data-ttu-id="6d97b-113">API の使い方がわかる新しい Social Manager サンプルがあります。</span><span class="sxs-lookup"><span data-stu-id="6d97b-113">We have a new Social Manager sample demonstrating the API.</span></span>
 
-## <a name="tools"></a><span data-ttu-id="0daa2-114">ツール</span><span class="sxs-lookup"><span data-stu-id="0daa2-114">Tools</span></span>
-* <span data-ttu-id="0daa2-115">Xbox Live Trace Analyzer が Xbox Live SDK に含まれるようになりました。</span><span class="sxs-lookup"><span data-stu-id="0daa2-115">The Xbox Live Trace Analyzer is now included in the Xbox Live SDK.</span></span>  <span data-ttu-id="0daa2-116">「[Xbox Live サービスへの呼び出しを分析する](../tools/analyze-service-calls.md)」の説明に従ってトレースを収集した後、Live Trace Analyzer を実行して、繰り返されている呼び出しや呼び出しの頻度などについての統計情報を見ることにより、タイトルでの Xbox Live の使用方法が最適であることを確認します。</span><span class="sxs-lookup"><span data-stu-id="0daa2-116">Collect traces as described in the [Analyze calls to Xbox Live Services](../tools/analyze-service-calls.md), and then run the Live Trace Analyzer to ensure your title is using Xbox Live in an optimal way by viewing statistics about repeated calls, call frequency, and more.</span></span>
+## <a name="tools"></a><span data-ttu-id="6d97b-114">ツール</span><span class="sxs-lookup"><span data-stu-id="6d97b-114">Tools</span></span>
+* <span data-ttu-id="6d97b-115">Xbox Live Trace Analyzer が Xbox Live SDK に含まれるようになりました。</span><span class="sxs-lookup"><span data-stu-id="6d97b-115">The Xbox Live Trace Analyzer is now included in the Xbox Live SDK.</span></span>  <span data-ttu-id="6d97b-116">「[Xbox Live サービスへの呼び出しを分析する](../tools/analyze-service-calls.md)」の説明に従ってトレースを収集した後、Live Trace Analyzer を実行して、繰り返されている呼び出しや呼び出しの頻度などについての統計情報を見ることにより、タイトルでの Xbox Live の使用方法が最適であることを確認します。</span><span class="sxs-lookup"><span data-stu-id="6d97b-116">Collect traces as described in the [Analyze calls to Xbox Live Services](../tools/analyze-service-calls.md), and then run the Live Trace Analyzer to ensure your title is using Xbox Live in an optimal way by viewing statistics about repeated calls, call frequency, and more.</span></span>
 
-## <a name="bug-fixes"></a><span data-ttu-id="0daa2-117">バグ修正</span><span class="sxs-lookup"><span data-stu-id="0daa2-117">Bug Fixes</span></span>
-* <span data-ttu-id="0daa2-118">HTTP ソケット操作の既定のタイムアウトが、5 分から 30 秒に変更されました。</span><span class="sxs-lookup"><span data-stu-id="0daa2-118">Changed default timeout for HTTP socket operations to 30 seconds from 5 minutes.</span></span>  <span data-ttu-id="0daa2-119">タイトル ストレージのアップロードやダウンロードの呼び出しのような時間のかかる HTTP ソケット操作については、タイムアウトは 5 分のままになっています。</span><span class="sxs-lookup"><span data-stu-id="0daa2-119">For long running HTTP socket operations such as Title Storage upload and download calls, those remain using a 5 minute timeout.</span></span>
+## <a name="bug-fixes"></a><span data-ttu-id="6d97b-117">バグ修正</span><span class="sxs-lookup"><span data-stu-id="6d97b-117">Bug Fixes</span></span>
+* <span data-ttu-id="6d97b-118">HTTP ソケット操作の既定のタイムアウトが、5 分から 30 秒に変更されました。</span><span class="sxs-lookup"><span data-stu-id="6d97b-118">Changed default timeout for HTTP socket operations to 30 seconds from 5 minutes.</span></span>  <span data-ttu-id="6d97b-119">タイトル ストレージのアップロードやダウンロードの呼び出しのような時間のかかる HTTP ソケット操作については、タイムアウトは 5 分のままになっています。</span><span class="sxs-lookup"><span data-stu-id="6d97b-119">For long running HTTP socket operations such as Title Storage upload and download calls, those remain using a 5 minute timeout.</span></span>
 
-## <a name="documentation"></a><span data-ttu-id="0daa2-120">ドキュメント</span><span class="sxs-lookup"><span data-stu-id="0daa2-120">Documentation</span></span>
-* <span data-ttu-id="0daa2-121">Social Manager の概要が追加されました</span><span class="sxs-lookup"><span data-stu-id="0daa2-121">Introduction to the Social Manager added</span></span>
-* <span data-ttu-id="0daa2-122">Multiplayer Manager の概要が更新されました</span><span class="sxs-lookup"><span data-stu-id="0daa2-122">Introduction to the Multiplayer Manager updated</span></span>
+## <a name="documentation"></a><span data-ttu-id="6d97b-120">ドキュメント</span><span class="sxs-lookup"><span data-stu-id="6d97b-120">Documentation</span></span>
+* <span data-ttu-id="6d97b-121">Social Manager の概要が追加されました</span><span class="sxs-lookup"><span data-stu-id="6d97b-121">Introduction to the Social Manager added</span></span>
+* <span data-ttu-id="6d97b-122">Multiplayer Manager の概要が更新されました</span><span class="sxs-lookup"><span data-stu-id="6d97b-122">Introduction to the Multiplayer Manager updated</span></span>

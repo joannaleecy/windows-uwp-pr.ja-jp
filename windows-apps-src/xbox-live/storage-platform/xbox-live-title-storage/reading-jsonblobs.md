@@ -1,23 +1,24 @@
 ---
-title: "JSON BLOB の読み取り"
+title: JSON BLOB の読み取り
 author: KevinAsgari
-description: "Xbox Live タイトル ストレージ内の JSON BLOB の読み取りについて説明します。"
+description: Xbox Live タイトル ストレージ内の JSON BLOB の読み取りについて説明します。
 ms.assetid: 3697af16-d054-4835-af7f-7fee8c628345
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "xbox live, xbox, ゲーム, uwp, windows 10, xbox one"
-ms.openlocfilehash: 38a2eb462369857c4f587d9050e0487e4205c908
-ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
+ms.localizationpriority: low
+ms.openlocfilehash: 74c977765f5c539e3e2bcd991fd358cd728de900
+ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2017
+ms.lasthandoff: 02/24/2018
 ---
-# <a name="reading-a-json-blob-in-xbox-live-title-storage"></a><span data-ttu-id="2c3e7-104">Xbox Live タイトル ストレージ内の JSON BLOB の読み取り</span><span class="sxs-lookup"><span data-stu-id="2c3e7-104">Reading a JSON blob in Xbox Live Title Storage</span></span>
+# <a name="reading-a-json-blob-in-xbox-live-title-storage"></a><span data-ttu-id="7d222-104">Xbox Live タイトル ストレージ内の JSON BLOB の読み取り</span><span class="sxs-lookup"><span data-stu-id="7d222-104">Reading a JSON blob in Xbox Live Title Storage</span></span>
 
-1.  <span data-ttu-id="2c3e7-105">タイトル ストレージからデータを読み取るには、*GET* メソッドを使用して要求を送信します。</span><span class="sxs-lookup"><span data-stu-id="2c3e7-105">Send a request using the *GET* method to read the data from title storage.</span></span> <span data-ttu-id="2c3e7-106">次の例ではグローバル タイトル ストレージを使用します。</span><span class="sxs-lookup"><span data-stu-id="2c3e7-106">This example uses global title storage.</span></span>
+1.  <span data-ttu-id="7d222-105">タイトル ストレージからデータを読み取るには、*GET* メソッドを使用して要求を送信します。</span><span class="sxs-lookup"><span data-stu-id="7d222-105">Send a request using the *GET* method to read the data from title storage.</span></span> <span data-ttu-id="7d222-106">次の例ではグローバル タイトル ストレージを使用します。</span><span class="sxs-lookup"><span data-stu-id="7d222-106">This example uses global title storage.</span></span>
 
         GET https://titlestorage.xboxlive.com/global/scids/{scid}/data/surprise.json,json
         Content-Type: application/octet-stream
@@ -25,10 +26,10 @@ ms.lasthandoff: 07/06/2017
         Authorization: XBL3.0 x=<userHash>;<STSTokenString>
         Connection: Keep-Alive
 
--   <span data-ttu-id="2c3e7-107">更新するには、ユーザーはそのセッション内にいなければなりません。</span><span class="sxs-lookup"><span data-stu-id="2c3e7-107">The user must be in the session to update it.</span></span>
+-   <span data-ttu-id="7d222-107">更新するには、ユーザーはそのセッション内にいなければなりません。</span><span class="sxs-lookup"><span data-stu-id="7d222-107">The user must be in the session to update it.</span></span>
 
--   <span data-ttu-id="2c3e7-108">STSTokenString は、簡潔にするためのプレースホルダーであり、認証要求から返されるトークンで置き換える必要があります。</span><span class="sxs-lookup"><span data-stu-id="2c3e7-108">STSTokenString is a placeholder for brevity and should be replaced with the token returned by the authentication request.</span></span>
+-   <span data-ttu-id="7d222-108">STSTokenString は、簡潔にするためのプレースホルダーであり、認証要求から返されるトークンで置き換える必要があります。</span><span class="sxs-lookup"><span data-stu-id="7d222-108">STSTokenString is a placeholder for brevity and should be replaced with the token returned by the authentication request.</span></span>
 
-#### <a name="reference"></a><span data-ttu-id="2c3e7-109">参照先</span><span class="sxs-lookup"><span data-stu-id="2c3e7-109">Reference</span></span>
+#### <a name="reference"></a><span data-ttu-id="7d222-109">参照先</span><span class="sxs-lookup"><span data-stu-id="7d222-109">Reference</span></span>
 
-**<span data-ttu-id="2c3e7-110">/global/scids/{scid}/data/{pathAndFileName},{type}</span><span class="sxs-lookup"><span data-stu-id="2c3e7-110">/global/scids/{scid}/data/{pathAndFileName},{type}</span></span>**
+**<span data-ttu-id="7d222-110">/global/scids/{scid}/data/{pathAndFileName},{type}</span><span class="sxs-lookup"><span data-stu-id="7d222-110">/global/scids/{scid}/data/{pathAndFileName},{type}</span></span>**

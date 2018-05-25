@@ -1,27 +1,27 @@
 ---
-title: "ソーシャル サービスのプログラミング"
+title: ソーシャル サービスのプログラミング
 author: KevinAsgari
-description: "Xbox Live Social Manager API を使う方法のコード例を示します。"
+description: Xbox Live Social Manager API を使う方法のコード例を示します。
 ms.assetid: 101d059a-e03f-472c-8300-800aa5730ee2
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "xbox live, xbox, ゲーム, uwp, windows 10, xbox one, social manager, 例"
-ms.openlocfilehash: 6b449b9d5317667a4b35995ecff3864843ca68f4
-ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, social manager, 例
+ms.localizationpriority: low
+ms.openlocfilehash: 4a87001db34009036b64e388b7c3be623b4f5c62
+ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2017
+ms.lasthandoff: 04/03/2018
 ---
-# <a name="programming-social-services"></a><span data-ttu-id="33f76-104">ソーシャル サービスのプログラミング</span><span class="sxs-lookup"><span data-stu-id="33f76-104">Programming Social Services</span></span>
+# <a name="programming-social-services"></a><span data-ttu-id="f1cc1-104">ソーシャル サービスのプログラミング</span><span class="sxs-lookup"><span data-stu-id="f1cc1-104">Programming Social Services</span></span>
 
-| <span data-ttu-id="33f76-105">注</span><span class="sxs-lookup"><span data-stu-id="33f76-105">Note</span></span>                                                                                                                                                                                                          |
-|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <span data-ttu-id="33f76-106">この記事では、API の高度な使用方法を示します。</span><span class="sxs-lookup"><span data-stu-id="33f76-106">This article demonstrates advanced API usage.</span></span>  <span data-ttu-id="33f76-107">まず最初に、開発が大幅に簡素化される [Social Manager API の概要](../intro-to-social-manager.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="33f76-107">As a starting point, please take a look at the [Introduction to the Social Manager API](../intro-to-social-manager.md) which significantly simplifies development.</span></span>  <span data-ttu-id="33f76-108">Social Manager でサポートされていないシナリオが見つかった場合は、担当の DAM までご連絡ください。</span><span class="sxs-lookup"><span data-stu-id="33f76-108">Please let your DAM know if you find an unsupported scenario in the Social Manager.</span></span> |
+> [!NOTE]
+> <span data-ttu-id="f1cc1-105">この記事では、API の高度な使用方法を示します。</span><span class="sxs-lookup"><span data-stu-id="f1cc1-105">This article demonstrates advanced API usage.</span></span>  <span data-ttu-id="f1cc1-106">まず最初に、開発が大幅に簡素化される [Social Manager API の概要](../intro-to-social-manager.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f1cc1-106">As a starting point, please take a look at the [Introduction to the Social Manager API](../intro-to-social-manager.md) which significantly simplifies development.</span></span>  <span data-ttu-id="f1cc1-107">Social Manager でサポートされていないシナリオが見つかった場合は、担当の DAM までご連絡ください。</span><span class="sxs-lookup"><span data-stu-id="f1cc1-107">Please let your DAM know if you find an unsupported scenario in the Social Manager.</span></span>
 
-<span data-ttu-id="33f76-109">次のコード例では、Xbox Live とのソーシャル関係を取得する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="33f76-109">The following code example demonstrates how to retrieve a social relationship with Xbox Live.</span></span> <span data-ttu-id="33f76-110">コード例は、システム上のすべてのユーザーのリストを生成し、最初のものを取得します。</span><span class="sxs-lookup"><span data-stu-id="33f76-110">It generates a list of all users on the system and retrieves the first one.</span></span> <span data-ttu-id="33f76-111">次に、ユーザーのソーシャル関係のすべてを取得します。</span><span class="sxs-lookup"><span data-stu-id="33f76-111">Next, it retrieves all of that user's social relationships.</span></span> <span data-ttu-id="33f76-112">最後に、これらの各関係のパブリック プロパティを表示します。</span><span class="sxs-lookup"><span data-stu-id="33f76-112">Finally, it displays the public properties of each of those relationships.</span></span>
+<span data-ttu-id="f1cc1-108">次のコード例では、Xbox Live とのソーシャル関係を取得する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="f1cc1-108">The following code example demonstrates how to retrieve a social relationship with Xbox Live.</span></span> <span data-ttu-id="f1cc1-109">コード例は、システム上のすべてのユーザーのリストを生成し、最初のものを取得します。</span><span class="sxs-lookup"><span data-stu-id="f1cc1-109">It generates a list of all users on the system and retrieves the first one.</span></span> <span data-ttu-id="f1cc1-110">次に、ユーザーのソーシャル関係のすべてを取得します。</span><span class="sxs-lookup"><span data-stu-id="f1cc1-110">Next, it retrieves all of that user's social relationships.</span></span> <span data-ttu-id="f1cc1-111">最後に、これらの各関係のパブリック プロパティを表示します。</span><span class="sxs-lookup"><span data-stu-id="f1cc1-111">Finally, it displays the public properties of each of those relationships.</span></span>
 
 ```cpp
 XboxLiveContext^ xboxLiveContext = NULL;

@@ -1,176 +1,149 @@
 ---
-title: "Visual Studio を使用してクリエーターズ タイトルを開発する"
-author: KevinAsgari
-description: "Visual Studio を使用して、Xbox Live クリエーターズ プログラムのタイトルの開発を開始する"
+title: Visual Studio を使用してクリエーターズ タイトルを開発する
+author: StaceyHaffner
+description: Visual Studio を使用して、Xbox Live クリエーターズ プログラムのタイトルの開発を開始する
 ms.assetid: 6952dac0-66ff-4717-b3c7-8b3792e834e3
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 11/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Xbox Live クリエーターズ, Visual Studio"
-ms.openlocfilehash: 51bdb1cc3e6f06fef9a842c52a10a31b44dcbec9
-ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Xbox Live クリエーターズ, Visual Studio
+ms.localizationpriority: low
+ms.openlocfilehash: 682114949c6750b1e22ca16e8252ae0a37ac37ac
+ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2017
+ms.lasthandoff: 02/24/2018
 ---
-# <a name="get-started-developing-an-xbox-live-creators-program-title-with-visual-studio"></a><span data-ttu-id="e4ff0-104">Visual Studio を使用して、Xbox Live クリエーターズ プログラムのタイトルの開発を開始する</span><span class="sxs-lookup"><span data-stu-id="e4ff0-104">Get started developing an Xbox Live Creators Program title with Visual Studio</span></span>
+# <a name="get-started-developing-an-xbox-live-creators-program-title-with-visual-studio"></a><span data-ttu-id="6d65c-104">Visual Studio を使用して、Xbox Live クリエーターズ プログラムのタイトルの開発を開始する</span><span class="sxs-lookup"><span data-stu-id="6d65c-104">Get started developing an Xbox Live Creators Program title with Visual Studio</span></span>
 
-## <a name="setup"></a><span data-ttu-id="e4ff0-105">セットアップ</span><span class="sxs-lookup"><span data-stu-id="e4ff0-105">Setup</span></span>
+> [!NOTE]
+> <span data-ttu-id="6d65c-105">Unity で開発されたゲームに利用できるプラグインがあります。</span><span class="sxs-lookup"><span data-stu-id="6d65c-105">There is a plugin available for games that are being developed with Unity.</span></span> <span data-ttu-id="6d65c-106">詳しくは、「[Unity を使用してクリエーターズ タイトルを開発する](develop-creators-title-with-unity.md)」の記事をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="6d65c-106">See the [Develop a Creators title with Unity](develop-creators-title-with-unity.md) article for more information.</span></span>
 
-### <a name="software-requirements"></a><span data-ttu-id="e4ff0-106">ソフトウェア要件</span><span class="sxs-lookup"><span data-stu-id="e4ff0-106">Software Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="6d65c-107">要件</span><span class="sxs-lookup"><span data-stu-id="6d65c-107">Requirements</span></span>
 
-- <span data-ttu-id="e4ff0-107">Windows オペレーティング システム</span><span class="sxs-lookup"><span data-stu-id="e4ff0-107">Windows operating system</span></span>
-    - <span data-ttu-id="e4ff0-108">Windows 10 (開発用/テスト用コンピューターとして)</span><span class="sxs-lookup"><span data-stu-id="e4ff0-108">Windows 10 (as development and/or test machine)</span></span>
-- <span data-ttu-id="e4ff0-109">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="e4ff0-109">Visual Studio</span></span>
-    - <span data-ttu-id="e4ff0-110">Visual Studio 2015。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-110">Visual Studio 2015.</span></span>  <span data-ttu-id="e4ff0-111">[https://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx](https://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx) をご覧ください</span><span class="sxs-lookup"><span data-stu-id="e4ff0-111">See [https://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx](https://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx)</span></span>
-    - <span data-ttu-id="e4ff0-112">Windows 10 SDK v10.0.14393.0 以降 [https://developer.microsoft.com/ja-JP/windows/downloads/windows-10-sdk](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk)</span><span class="sxs-lookup"><span data-stu-id="e4ff0-112">Windows 10 SDK v10.0.14393.0 or later [https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk)</span></span>
+1. <span data-ttu-id="6d65c-108">**[デベロッパー センターの開発者プログラム](https://developer.microsoft.com/store/register)** に登録します。</span><span class="sxs-lookup"><span data-stu-id="6d65c-108">Enrollment in the **[Dev Center developer program](https://developer.microsoft.com/store/register)**.</span></span>
+2. <span data-ttu-id="6d65c-109">**[Windows 10](https://microsoft.com/windows)**。</span><span class="sxs-lookup"><span data-stu-id="6d65c-109">**[Windows 10](https://microsoft.com/windows)**.</span></span>
+3. <span data-ttu-id="6d65c-110">**ユニバーサル Windows アプリ開発ツール**を搭載した **[Visual Studio 2015](https://www.visualstudio.com/)** (またはそれ以降)。</span><span class="sxs-lookup"><span data-stu-id="6d65c-110">**[Visual Studio 2015](https://www.visualstudio.com/)** (or newer) with the **Universal Windows App Development Tools**.</span></span>
+4. <span data-ttu-id="6d65c-111">**[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) v10.0.10586.0** 以降。</span><span class="sxs-lookup"><span data-stu-id="6d65c-111">**[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) v10.0.10586.0** or later.</span></span>
 
-### <a name="install-the-windows-10-sdk"></a><span data-ttu-id="e4ff0-113">Windows 10 SDK をインストールする</span><span class="sxs-lookup"><span data-stu-id="e4ff0-113">Install the Windows 10 SDK</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="6d65c-112">Windows 10 SDK バージョン 10.0.15063.0 (Creators Update とも呼ばれます) 以降を使っている場合は、Visual Studio 2017 が必要です。</span><span class="sxs-lookup"><span data-stu-id="6d65c-112">Visual Studio 2017 is required if using Windows 10 SDK version 10.0.15063.0 (also known as Creators Update) or later.</span></span>
 
-<span data-ttu-id="e4ff0-114">Windows 10 SDK には、Windows 10 アプリを作成するための最新のヘッダー、ライブラリー、メタデータ、ツールが用意されています。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-114">The Windows 10 SDK provides the latest headers, libraries, metadata and tools for building Windows 10 apps.</span></span> <span data-ttu-id="e4ff0-115">この SDK、最新の Visual Studio 2015 リリース、IDE 環境をインストールすることにより、新しい Windows 10 API にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-115">By installing this SDK, the latest Visual Studio 2015 release, and your IDE environment you will be able to access the new Windows 10 APIs.</span></span> <span data-ttu-id="e4ff0-116">Windows 10 SDK を使用すると、ユニバーサル Windows アプリだけでなく Windows 10 用のデスクトップ アプリも作成できます。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-116">The Windows 10 SDK allows you to build Universal Windows apps as well as desktop apps for Windows 10.</span></span>
+## <a name="create-a-new-product-on-microsoft-dev-center"></a><span data-ttu-id="6d65c-113">Microsoft デベロッパー センターで新しい製品を作成する</span><span class="sxs-lookup"><span data-stu-id="6d65c-113">Create a new product on Microsoft Dev Center</span></span>
 
-<span data-ttu-id="e4ff0-117">この SDK は、通常、Visual Studio 2015 によってインストールおよび更新されます。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-117">This is typically installed and updated by Visual Studio 2015.</span></span>  <span data-ttu-id="e4ff0-118">既に Visual Studio 2015 がインストールされている場合は、メニューの [ツール]、[拡張機能と更新プログラム] の順に移動し、[更新] タブを調べて、最新の Windows SDK をインストールします。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-118">If you already have Visual Studio 2015 installed, go to the menu Tools, Extensions and Updates, and check the Updates tab to install the latest Windows SDK.</span></span>
+<span data-ttu-id="6d65c-114">すべての Xbox Live タイトルには、[Microsoft デベロッパー センター](https://developer.microsoft.com/store)で作成された製品が必要です。これにより、サインインして Xbox Live サービスを呼び出すことができるようになります。</span><span class="sxs-lookup"><span data-stu-id="6d65c-114">Every Xbox Live title must have a product created on [Microsoft Dev Center](https://developer.microsoft.com/store) before you will be able to sign-in and make Xbox Live Service calls.</span></span> <span data-ttu-id="6d65c-115">詳しくは、「[新しいクリエーターズ タイトルの作成](create-and-test-a-new-creators-title.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="6d65c-115">See [Creating a new Creators title](create-and-test-a-new-creators-title.md) for more information.</span></span>
 
-<span data-ttu-id="e4ff0-119">Visual Studio 2015 をお持ちでない場合は、 [https://developer.microsoft.com/ja-JP/windows/downloads/windows-10-sdk](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk) でスタンドアロン バージョンをインストールできます。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-119">Otherwise you can install a standalone version at [https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk)</span></span>
+## <a name="configuring-your-development-device"></a><span data-ttu-id="6d65c-116">開発用デバイスの構成</span><span class="sxs-lookup"><span data-stu-id="6d65c-116">Configuring your development device</span></span>
 
-### <a name="create-a-new-title-on-windows-dev-center"></a><span data-ttu-id="e4ff0-120">Windows デベロッパー センターで新しいタイトルを作成する</span><span class="sxs-lookup"><span data-stu-id="e4ff0-120">Create a new title on Windows Dev Center</span></span>
+<span data-ttu-id="6d65c-117">正常に Xbox Live にログインし、さまざまな Xbox Live サービスを呼び出すことができるように、デバイスでは、次のセットアップ手順を事前に実行しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="6d65c-117">The following preliminary setup steps are required on your device, so that you can successfully login with Xbox Live and call the various Xbox Live Services.</span></span>
 
-<span data-ttu-id="e4ff0-121">Xbox Live にサインインできるようにするには、デベロッパー センターで新しい UWP タイトルを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-121">You need to create a new UWP title on Dev Center before you can sign-in to Xbox Live.</span></span>  <span data-ttu-id="e4ff0-122">実績の定義付けなど、サービス構成はタイトルに関連付けられています。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-122">Your service configuration, such as what Achievements are defined, are associated with a title.</span></span>
+### <a name="set-your-sandbox"></a><span data-ttu-id="6d65c-118">サンドボックスを設定する</span><span class="sxs-lookup"><span data-stu-id="6d65c-118">Set your sandbox</span></span>
 
-<span data-ttu-id="e4ff0-123">新しいタイトルを作成する方法については、「[新しいクリエーターズ タイトルの作成](create-and-test-a-new-creators-title.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-123">See [Creating a new Creators title](create-and-test-a-new-creators-title.md) to learn how to create a new title.</span></span>
+<span data-ttu-id="6d65c-119">サンドボックスを使用すると、タイトルをリリースする準備ができるまで、[Xbox Live サービス構成](xbox-live-service-configuration-creators.md)を製品版から分離したままにしておくことができます。</span><span class="sxs-lookup"><span data-stu-id="6d65c-119">Sandboxes offer a way to keep your [Xbox Live Service Configuration](xbox-live-service-configuration-creators.md) isolated from retail until you are ready to release your title.</span></span> <span data-ttu-id="6d65c-120">蓄積するデータにはサンドボックス固有のものがあります。</span><span class="sxs-lookup"><span data-stu-id="6d65c-120">Some data that you accumulate is specific to a sandbox.</span></span> <span data-ttu-id="6d65c-121">たとえば、タイトルで*ヘッドショット*という統計が定義されていて、タイトルをテストしている間にユーザー アカウントにいくつかのヘッドショットが蓄積されているとします。</span><span class="sxs-lookup"><span data-stu-id="6d65c-121">For example let's say that your title defines a stat called *Headshots*, and you accumulate some number of Headshots in a user account while testing your title.</span></span> <span data-ttu-id="6d65c-122">この値は、タイトルの開発サンドボックスに固有であり、製品版のタイトルのプレイに切り替えた場合、ヘッドショットは繰り越されません。</span><span class="sxs-lookup"><span data-stu-id="6d65c-122">This value would be specific to your title's development sandbox, and if you switched to playing the retail version of your title, the headshots would not carry over.</span></span>
 
-### <a name="configuring-your-development-device"></a><span data-ttu-id="e4ff0-124">開発用デバイスの構成</span><span class="sxs-lookup"><span data-stu-id="e4ff0-124">Configuring your development device</span></span>
+<span data-ttu-id="6d65c-123">詳しい情報およびサンドボックスの設定方法については、「[Xbox Live のサンドボックス](xbox-live-sandboxes-creators.md)」の記事をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="6d65c-123">See the [Xbox Live Sandboxes](xbox-live-sandboxes-creators.md) article to learn more and see how to set your sandbox.</span></span>
 
-<span data-ttu-id="e4ff0-125">正常に Xbox Live にログインし、さまざまな Xbox Live サービスを呼び出すことができるように、デバイスでは、次のセットアップ手順を事前に実行しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-125">The following preliminary setup steps are required on your device, so that you can successfully login with Xbox Live and call the various Xbox Live Services.</span></span>
+### <a name="sign-in-with-an-xbox-live-account-that-has-been-authorized-for-testing"></a><span data-ttu-id="6d65c-124">テスト用に承認された Xbox Live アカウントでログインする</span><span class="sxs-lookup"><span data-stu-id="6d65c-124">Sign-in with an Xbox Live account that has been authorized for testing</span></span>
 
-#### <a name="set-your-sandbox"></a><span data-ttu-id="e4ff0-126">サンドボックスを設定する</span><span class="sxs-lookup"><span data-stu-id="e4ff0-126">Set your sandbox</span></span>
+<span data-ttu-id="6d65c-125">開発サンドボックスにログインするには、サンドボックスへのアクセス用に通常の Microsoft アカウント (MSA) をプロビジョニングする必要があります。</span><span class="sxs-lookup"><span data-stu-id="6d65c-125">To sign-in to your development sandbox, you must provision a regular Microsoft Account (MSA) for access to your sandbox.</span></span> <span data-ttu-id="6d65c-126">これにより、開発中のタイトルに対するセキュリティが向上し、他のメリットを受けることができます。</span><span class="sxs-lookup"><span data-stu-id="6d65c-126">This provides improved security for your titles in development, as well as some other benefits.</span></span>
 
-<span data-ttu-id="e4ff0-127">サンドボックスについて詳しくは、「[Xbox Live のサンドボックス](../xbox-live-sandboxes.md)」の記事をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-127">More detail on Sandboxes is available in the [Xbox Live Sandboxes](../xbox-live-sandboxes.md) article.</span></span>  <span data-ttu-id="e4ff0-128">記事を読んでからここに戻ってくることもできますが、簡単な概要は以下で確認できます。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-128">Feel free to read that article and come back here after, but a brief summary will be provided below.</span></span>
+<span data-ttu-id="6d65c-127">テスト アカウントとその作成方法について詳しくは、「[環境内でテスト用の Xbox Live アカウントを承認する](authorize-xbox-live-accounts.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="6d65c-127">To learn more about test accounts and how to create one, see [Authorize Xbox Live Accounts for Testing in your environment](authorize-xbox-live-accounts.md).</span></span>
 
-<span data-ttu-id="e4ff0-129">サンドボックスを使用すると、タイトルをリリースする準備ができるまで、[Xbox Live サービス構成](xbox-live-service-configuration-creators.md)を製品版から分離したままにしておくことができます。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-129">Sandboxes offer a way to keep your [Xbox Live Service Configuration](xbox-live-service-configuration-creators.md) isolated from retail until you are ready to release your title.</span></span>  <span data-ttu-id="e4ff0-130">蓄積するデータにはサンドボックス固有のものがあります。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-130">Some data that you accumulate is specific to a sandbox.</span></span>  <span data-ttu-id="e4ff0-131">たとえば、タイトルで*ヘッドショット*という統計が定義されていて、タイトルをテストしている間にユーザー アカウントにいくつかのヘッドショットが蓄積されているとします。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-131">For example let's say that your title defines a stat called *Headshots*, and you accumulate some number of Headshots in a user account while testing your title.</span></span>  <span data-ttu-id="e4ff0-132">この値は、タイトルの開発サンドボックスに固有であり、製品版のタイトルをプレイしている場合、それらのヘッドショットは繰り越されません。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-132">This value would be specific to your title's development sandbox, and if you were playing the retail version of your title, those headshots would not carry over.</span></span>
+## <a name="visual-studio-project-setup"></a><span data-ttu-id="6d65c-128">Visual Studio プロジェクトのセットアップ</span><span class="sxs-lookup"><span data-stu-id="6d65c-128">Visual Studio Project Setup</span></span>
 
-<span data-ttu-id="e4ff0-133">サンドボックスの設定方法については、「[Xbox Live のサンドボックス](../xbox-live-sandboxes.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-133">See the [Xbox Live Sandboxes](../xbox-live-sandboxes.md) on how to set the sandbox.</span></span>
+### <a name="1-open-a-uwp-project"></a><span data-ttu-id="6d65c-129">1. UWP プロジェクトを開く</span><span class="sxs-lookup"><span data-stu-id="6d65c-129">1. Open a UWP project</span></span>
+<span data-ttu-id="6d65c-130">既存の UWP プロジェクトがない場合は、次の手順で作成できます。</span><span class="sxs-lookup"><span data-stu-id="6d65c-130">If you do not already have an existing UWP project, you can create one by doing the following:</span></span>
 
-#### <a name="sign-in-with-an-xbox-live-account-that-has-been-authorized-for-testing"></a><span data-ttu-id="e4ff0-134">テスト用に承認された Xbox Live アカウントでログインする</span><span class="sxs-lookup"><span data-stu-id="e4ff0-134">Sign-in with an Xbox Live account that has been authorized for testing</span></span>
+1. <span data-ttu-id="6d65c-131">Visual Studio で、**[ファイル]** > **[新規作成]** > **[プロジェクト]** の順に選択します。</span><span class="sxs-lookup"><span data-stu-id="6d65c-131">In Visual Studio, **File** > **New** > **Project**.</span></span>
+2. <span data-ttu-id="6d65c-132">**[新しいプロジェクト]** ダイアログ ボックスが表示されたら、左側のウィンドウで **[Visual C#]** > **[Windows]** > **[ユニバーサル]** ノードを選択し、右側のウィンドウで **[空白のアプリ (ユニバーサル Windows)]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="6d65c-132">In the **New Project** dialog box, select the **Visual C#** > **Windows** > **Universal** node in the left pane, and click **Blank App (Universal Windows)** from the right pane.</span></span> 
+3. <span data-ttu-id="6d65c-133">ダイアログ ボックスの下部で、プロジェクトに名前を付け、プロジェクトの場所を指定します。</span><span class="sxs-lookup"><span data-stu-id="6d65c-133">In the lower portion of the dialog, give the project a name and specify the location of the project.</span></span>
+4. <span data-ttu-id="6d65c-134">Windows 10 SDK のターゲット バージョンと最小バージョンを指定します。</span><span class="sxs-lookup"><span data-stu-id="6d65c-134">Specify the Target Version and Minimum Version of the Windows 10 SDK.</span></span> <span data-ttu-id="6d65c-135">詳しくは、「[UWP バージョンの選択](https://docs.microsoft.com/windows/uwp/updates-and-versions/choose-a-uwp-version)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="6d65c-135">See [Choose a UWP version](https://docs.microsoft.com/windows/uwp/updates-and-versions/choose-a-uwp-version) for more information.</span></span>
 
-<span data-ttu-id="e4ff0-135">開発サンドボックスにログインするには、サンドボックスへのアクセス用に通常の Microsoft アカウント (MSA) をプロビジョニングする必要があります。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-135">To sign-in to your development sandbox, you must provision a regular Microsoft Account (MSA) for access to your sandbox.</span></span>  <span data-ttu-id="e4ff0-136">これにより、開発中のタイトルに対するセキュリティが向上し、他のメリットを受けることができます。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-136">This provides improved security for your titles in development, as well as some other benefits.</span></span>
+![VS でのプロジェクトの作成](../images/getting_started/vs-create-project.gif) 
 
-<span data-ttu-id="e4ff0-137">テスト アカウントについて詳しくは、「[環境内でテスト用の Xbox Live アカウントを承認する](authorize-xbox-live-accounts.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-137">To learn more about test accounts, see [Authorize Xbox Live Accounts for Testing in your environment](authorize-xbox-live-accounts.md)</span></span>
+> [!NOTE]
+> > <span data-ttu-id="6d65c-137">Xbox Live API (XSAPI) は、バージョン 10.0.10586.0 以上でなければなりません。</span><span class="sxs-lookup"><span data-stu-id="6d65c-137">Xbox Live API (XSAPI) requires a minimum version 10.0.10586.0 or higher.</span></span>
 
-## <a name="sdk-samples"></a><span data-ttu-id="e4ff0-138">SDK サンプル</span><span class="sxs-lookup"><span data-stu-id="e4ff0-138">SDK Samples</span></span>
+### <a name="2-add-references-to-the-xbox-live-api-xsapi-in-your-project"></a><span data-ttu-id="6d65c-138">2. プロジェクトで Xbox Live API (XSAPI) への参照を追加する</span><span class="sxs-lookup"><span data-stu-id="6d65c-138">2. Add references to the Xbox Live API (XSAPI) in your project</span></span>
+<span data-ttu-id="6d65c-139">Xbox Services API には、C++ に使用できるものと WinRT に使用できるものがあり、名前の構造は **Microsoft.Xbox.Live.SDK.\*.UWP** です。</span><span class="sxs-lookup"><span data-stu-id="6d65c-139">The Xbox Services API comes in flavors for C++ and WinRT and have their naming structured as **Microsoft.Xbox.Live.SDK.\*.UWP**.</span></span> <span data-ttu-id="6d65c-140">Xbox One での UWP の実行について詳しくは、[https://docs.microsoft.com/windows/uwp/xbox-apps/getting-started](https://docs.microsoft.com/windows/uwp/xbox-apps/getting-started) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="6d65c-140">You can read more about running UWP on Xbox One at [https://docs.microsoft.com/windows/uwp/xbox-apps/getting-started](https://docs.microsoft.com/windows/uwp/xbox-apps/getting-started).</span></span> <span data-ttu-id="6d65c-141">C++ SDK は C++ ゲーム エンジンに使用できます。 WinRT SDK は、C++、C#、JavaScript を使って記述されたゲーム エンジン用です。</span><span class="sxs-lookup"><span data-stu-id="6d65c-141">The C++ SDK can be used for C++ game engines, where as the  WinRT SDK is for game engines written with C++, C#, or JavaScript.</span></span> <span data-ttu-id="6d65c-142">C++ エンジンで WinRT を使用する場合は、ハット (^) を使う C++/CX を使用します。</span><span class="sxs-lookup"><span data-stu-id="6d65c-142">When using WinRT with a C++ engine, you would use C++/CX which uses hats (^).</span></span> <span data-ttu-id="6d65c-143">C++ は、C++ ゲーム エンジンで使用する際に推奨される API です。</span><span class="sxs-lookup"><span data-stu-id="6d65c-143">C++ is the recommended API to use for C++ game engines.</span></span>  
 
-<span data-ttu-id="e4ff0-139">Xbox Live API の使用方法を確認するには、SDK サンプルが適しています。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-139">The SDK samples are a good way to see how Xbox Live APIs are used.</span></span>
+<span data-ttu-id="6d65c-144">プロジェクトから Xbox Live API を使用するには、NuGet パッケージを使うか API ソースを追加してバイナリへの参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="6d65c-144">To use the Xbox Live API from your project, you can either add references to the binaries by using NuGet packages or adding the API source.</span></span> <span data-ttu-id="6d65c-145">NuGet パッケージを追加するとコンパイルが高速になりますが、ソースを追加するとデバッグが簡単になります。</span><span class="sxs-lookup"><span data-stu-id="6d65c-145">Adding NuGet packages makes compilation quicker while adding the source makes debugging easier.</span></span> <span data-ttu-id="6d65c-146">この記事では、NuGet パッケージを使う方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="6d65c-146">This article will walk through using NuGet packages.</span></span> <span data-ttu-id="6d65c-147">ソースを使用する場合は、「[UWP プロジェクトでの Xbox Live API ソースのコンパイル](../get-started-with-partner/add-xbox-live-apis-source-to-a-uwp-project.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="6d65c-147">If you want to use source, then please see [Compiling the Xbox Live APIs Source In Your UWP Project](../get-started-with-partner/add-xbox-live-apis-source-to-a-uwp-project.md).</span></span> <span data-ttu-id="6d65c-148">Xbox Live SDK NuGet パッケージは次の方法で追加できます。</span><span class="sxs-lookup"><span data-stu-id="6d65c-148">You can add the Xbox Live SDK NuGet package by:</span></span>
 
-<span data-ttu-id="e4ff0-140">[https://github.com/Microsoft/xbox-live-samples](https://github.com/Microsoft/xbox-live-samples) の /Samples/CreatorsSDK/ にあるサンプルでは、Xbox Live クリエーターズ プログラムの開発者が利用できる API を紹介しています。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-140">The samples found at [https://github.com/Microsoft/xbox-live-samples](https://github.com/Microsoft/xbox-live-samples) under /Samples/CreatorsSDK/ showcase the APIs available to developers in the Xbox Live Creators program.</span></span>  
+1. <span data-ttu-id="6d65c-149">Visual Studio では、**[ツール]** > **[NuGet パッケージ マネージャー]** > **[ソリューションの NuGet パッケージの管理...]** の順に移動します。</span><span class="sxs-lookup"><span data-stu-id="6d65c-149">In Visual Studio go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**.</span></span>
+2. <span data-ttu-id="6d65c-150">NuGet パッケージ マネージャーで、**[参照]** をクリックして検索ボックスに「**Xbox.Live.SDK**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="6d65c-150">In the NuGet package manager, click on **Browse** and enter **Xbox.Live.SDK** in the search box.</span></span> 
+3. <span data-ttu-id="6d65c-151">左側の一覧から使う Xbox Live SDK のバージョンを選びます。</span><span class="sxs-lookup"><span data-stu-id="6d65c-151">Select the version of the Xbox Live SDK that you want to use from the list on the left.</span></span> <span data-ttu-id="6d65c-152">この場合、Microsoft.Xbox.Live.UWP パッケージを使います。</span><span class="sxs-lookup"><span data-stu-id="6d65c-152">In this case, we will use the Microsoft.Xbox.Live.SDK.WinRT.UWP package.</span></span>
+3. <span data-ttu-id="6d65c-153">ウィンドウの右側にある、プロジェクトの横にあるチェック ボックスをオンにして **[インストール]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="6d65c-153">On the right side of the window, check the box next to your project and click **Install**.</span></span> 
 
-<span data-ttu-id="e4ff0-141">サンプルを使用するには、サンドボックスを XDKS.1 に変更する必要があります。サンドボックスの設定方法については、「[Xbox Live のサンドボックス](../xbox-live-sandboxes.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-141">To use the samples, you will need to change your sandbox to XDKS.1 See the [Xbox Live Sandboxes](../xbox-live-sandboxes.md) on how to set the sandbox.</span></span>
+![NuGet による XBL の追加](../images/getting_started/vs-add-nuget-xbl.gif)
 
-## <a name="visual-studio-project-setup"></a><span data-ttu-id="e4ff0-142">Visual Studio プロジェクトのセットアップ</span><span class="sxs-lookup"><span data-stu-id="e4ff0-142">Visual Studio Project Setup</span></span>
+#### <a name="optionally-include-xsapi-header-in-your-project"></a><span data-ttu-id="6d65c-155">必要に応じて、XSAPI ヘッダーをプロジェクトにインクルードする</span><span class="sxs-lookup"><span data-stu-id="6d65c-155">Optionally include XSAPI header in your project</span></span>
 
-### <a name="1-create-a-blank-project"></a><span data-ttu-id="e4ff0-143">1. 空のプロジェクトを作成する</span><span class="sxs-lookup"><span data-stu-id="e4ff0-143">1. Create a blank project</span></span>
+<span data-ttu-id="6d65c-156">Microsoft.Xbox.Live.SDK.Cpp.\* ベースのプロジェクトの場合は、`xsapi\\services.h` を C++ プロジェクトにインクルードして、Xbox Live Service API (XSAPI) NuGet パッケージのヘッダーを取り込む必要があります。</span><span class="sxs-lookup"><span data-stu-id="6d65c-156">For Microsoft.Xbox.Live.SDK.Cpp.\* based projects, you will need to include `xsapi\\services.h` to in your C++ project to bring in the header for the Xbox Live Service API (XSAPI) NuGet package.</span></span> <span data-ttu-id="6d65c-157">XSAPI ヘッダーをインクルードする前に、`XBOX_LIVE_CREATORS_SDK` を定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6d65c-157">Before including the XSAPI header, you must define `XBOX_LIVE_CREATORS_SDK`.</span></span> <span data-ttu-id="6d65c-158">これにより、Xbox Live クリエーターズ プログラムの開発者が使用できる API のみに、API サーフェス領域が制限されます。</span><span class="sxs-lookup"><span data-stu-id="6d65c-158">This limits the API surface area to only those APIs that are usable by developers in the Xbox Live Creators Program.</span></span> <span data-ttu-id="6d65c-159">次に、例を示します。</span><span class="sxs-lookup"><span data-stu-id="6d65c-159">For example:</span></span>
 
-<span data-ttu-id="e4ff0-144">UWP アプリが既にある場合は、このステップを省略できます。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-144">You can skip this step if you already have an existing UWP app.</span></span>
-
-<span data-ttu-id="e4ff0-145">[スタート] メニューまたはタスク バーから Visual Studio 2015 を起動します。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-145">Start Visual Studio 2015 from the Start Menu or the Taskbar.</span></span>  
-<span data-ttu-id="e4ff0-146">Visual Studio 2015 がインストールされていない場合は、[https://www.visualstudio.com/](https://www.visualstudio.com/) で入手できます。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-146">If you don't have Visual Studio 2015 installed, you can find it at [https://www.visualstudio.com/](https://www.visualstudio.com/)</span></span>
-
-![Visual Studio の起動](../images/VisualStudioStart.png)
-
-<span data-ttu-id="e4ff0-148">Visual Studio を起動した後、図のように **[ファイル]** -> **[新規作成]** -> **[プロジェクト]** の順に選択します。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-148">After Visual Studio starts, select **File** -> **New** -> **Project** as shown.</span></span>
-
-![](../images/VS_new_project.png)
-
-<span data-ttu-id="e4ff0-149">**[新しいプロジェクト]** ダイアログ ボックスが表示されたら、左側のウィンドウで **[Visual C#]**、**[Windows]**、**[ユニバーサル]** ノードを選択し、右側のウィンドウで **[空白のアプリ (ユニバーサル Windows)]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-149">When the **New Project** dialog box appears, select the **Visual C#**, **Windows**, **Universal** node in the left pane, and click **Blank App (Universal Windows)** from the right pane.</span></span>  <span data-ttu-id="e4ff0-150">ダイアログ ボックスの下部で、プロジェクトの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-150">In the lower portion of the dialog, give the project a name.</span></span>
-
-### <a name="2-add-references-to-the-xbox-live-api-xsapi-in-your-project"></a><span data-ttu-id="e4ff0-151">2. プロジェクトで Xbox Live API (XSAPI) への参照を追加する</span><span class="sxs-lookup"><span data-stu-id="e4ff0-151">2. Add references to the Xbox Live API (XSAPI) in your project</span></span>
-
-<span data-ttu-id="e4ff0-152">プロジェクトから Xbox Live Services API を使用するには、次のいずれかの方法を使用します。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-152">To use the Xbox Live Services API from your project, either:</span></span>
-
-* <span data-ttu-id="e4ff0-153">Xbox Live Services API バイナリへの参照を NuGet パッケージの形式でプロジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-153">Add references to Xbox Live Services API binaries to your project in the form of NuGet packages.</span></span>
-<p/>
-<span data-ttu-id="e4ff0-154">または</span><span class="sxs-lookup"><span data-stu-id="e4ff0-154">or</span></span>
-<p/>
-* <span data-ttu-id="e4ff0-155">Xbox Live Services API ソースへの参照をプロジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-155">Add references to the Xbox Live Services API source to your project</span></span>
-
-<span data-ttu-id="e4ff0-156">ソースを参照すると、デバッグが容易になります。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-156">Referencing source makes debugging easier.</span></span>
-<span data-ttu-id="e4ff0-157">バイナリを参照すると、コンパイルの時間が短くなります。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-157">Referencing binaries makes compilation quicker.</span></span>
-
-<span data-ttu-id="e4ff0-158">この記事では、NuGet パッケージを使用していると想定します。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-158">This article will assume you're using NuGet packages.</span></span>  <span data-ttu-id="e4ff0-159">ソースを使用する場合は、「[UWP プロジェクトでの Xbox Live API ソースのコンパイル](../get-started-with-partner/add-xbox-live-apis-source-to-a-uwp-project.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-159">If you want to use source, then please see [Compiling the Xbox Live APIs Source In Your UWP Project](../get-started-with-partner/add-xbox-live-apis-source-to-a-uwp-project.md)</span></span>
-
-#### <a name="add-references-to-xbox-live-api-binaries-to-your-project"></a><span data-ttu-id="e4ff0-160">プロジェクトに Xbox Live API バイナリへの参照を追加する</span><span class="sxs-lookup"><span data-stu-id="e4ff0-160">Add references to Xbox Live API binaries to your project</span></span>
-<span data-ttu-id="e4ff0-161">プロジェクトに Xbox Live API NuGet パッケージへの参照を追加するには、Visual Studio の [Nuget パッケージの管理] に移動します。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-161">To add references to Xbox Live API NuGet packages in your project, in Visual Studio go to "Manage Nuget Packages"</span></span>
-
-![](../images/getting_started/first_vstitle_nuget.png)
-
-#### <a name="locate-xbox-live"></a><span data-ttu-id="e4ff0-162">Xbox Live を検索する</span><span class="sxs-lookup"><span data-stu-id="e4ff0-162">Locate Xbox Live</span></span>
-<span data-ttu-id="e4ff0-163">NuGet の検索フィールドに "Xbox Live" (ただし引用符は付けない) と入力すると、以下に示す 4 種類の Xbox Live SDK が表示されます。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-163">You can enter "Xbox Live" (without quotes) in the search field in NuGet and you will find four variants of the Xbox Live SDK shown below.</span></span>
-
-![](../images/getting_started/first_vstitle_nuget_xbox.png)
-
-<span data-ttu-id="e4ff0-164">Xbox Services API には、UWP と XDK の両方で使用できるものと、C++ で使用できるもの、WinRT で使用できるものがあります。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-164">The Xbox Services API comes in flavors for both UWP and XDK, and for C++ and WinRT.</span></span>  
-
-<span data-ttu-id="e4ff0-165">`Microsoft.Xbox.Live.SDK.*.UWP` または `Microsoft.Xbox.Live.SDK.*.XboxOneXDK` を選択します。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-165">Choose between `Microsoft.Xbox.Live.SDK.*.UWP` and `Microsoft.Xbox.Live.SDK.*.XboxOneXDK`.</span></span>  `XboxOneXDK` <span data-ttu-id="e4ff0-166">は、ID@Xbox 用のものであり、Xbox One XDK を使用している管理対象の開発者が利用します。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-166">is for ID@Xbox and Managed developers who are using the Xbox One XDK.</span></span>  `UWP` <span data-ttu-id="e4ff0-167">は、PC、Xbox One、Windows Phone で実行できる UWP ゲーム用のものです。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-167">is for UWP games which can run on either PC, the Xbox One, or Windows Phone.</span></span>  <span data-ttu-id="e4ff0-168">Xbox One での UWP の実行について詳しくは、[https://docs.microsoft.com/ja-jp/windows/uwp/xbox-apps/getting-started](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/getting-started) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-168">You can read more about running UWP on Xbox One at [https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/getting-started](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/getting-started)</span></span>
-
-<span data-ttu-id="e4ff0-169">`Microsoft.Xbox.Live.SDK.Cpp.*` または `Microsoft.Xbox.Live.SDK.WinRT.*` を選択します。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-169">Choose between `Microsoft.Xbox.Live.SDK.Cpp.*` and `Microsoft.Xbox.Live.SDK.WinRT.*`.</span></span> `Cpp` <span data-ttu-id="e4ff0-170">は、Xbox Live API を使用している C++ ゲーム エンジン用のものです。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-170">is for C++ game engines using the Xbox Live APIs.</span></span>  `WinRT` <span data-ttu-id="e4ff0-171">は、Xbox Live API を使用し、C++、C#、または Javascript で記述されたゲーム エンジン用のものです。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-171">is for game engines written with C++, C#, or Javascript using the Xbox Live APIs.</span></span>  
-
-<span data-ttu-id="e4ff0-172">Xbox Live クリエーターズ プログラムに参加している場合は、次のオプションのいずれも使うことができます。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-172">If you are part of the Xbox Live Creators Program, you can use any of these options:</span></span>
-* <span data-ttu-id="e4ff0-173">Microsoft.Xbox.Live.SDK.Cpp.UWP (C++ の UWP ゲーム エンジン用)。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-173">Microsoft.Xbox.Live.SDK.Cpp.UWP for C++ UWP game engines.</span></span>
-* <span data-ttu-id="e4ff0-174">Microsoft.Xbox.Live.SDK.WinRT.UWP (C# または JavaScript の UWP ゲーム エンジン用)。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-174">Microsoft.Xbox.Live.SDK.WinRT.UWP for C# or JavaScript UWP game engines.</span></span> <span data-ttu-id="e4ff0-175">C++ エンジンで WinRT を使用する場合は、ハット (^) を使う C++/CX を使用できます。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-175">When using WinRT with a C++ engine, you can use C++/CX which uses hats (^).</span></span>  <span data-ttu-id="e4ff0-176">Microsoft.Xbox.Live.SDK.Cpp.UWP は、C++ ゲーム エンジンで使用する際に推奨される API です。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-176">Microsoft.Xbox.Live.SDK.Cpp.UWP is the recommended API to use for C++ game engines.</span></span>   
-* <span data-ttu-id="e4ff0-177">Unity。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-177">Unity.</span></span>  <span data-ttu-id="e4ff0-178">詳しくは、「[Unity を使用してクリエーターズ タイトルを開発する](develop-creators-title-with-unity.md)」の記事をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-178">See the [Develop a Creators title with Unity](develop-creators-title-with-unity.md) article for specifics.</span></span>
-
-### <a name="optional-install-the-xbox-live-platform-extensions-sdk"></a><span data-ttu-id="e4ff0-179">(オプション) Xbox Live Platform Extensions SDK をインストールする</span><span class="sxs-lookup"><span data-stu-id="e4ff0-179">(Optional) Install the Xbox Live Platform Extensions SDK</span></span>
-
-<span data-ttu-id="e4ff0-180">接続ストレージを使用する場合は、Xbox Live Platform Extensions SDK の zip ファイルを [http://aka.ms/xblextsdk](http://aka.ms/xblextsdk) からダウンロードする必要があります。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-180">If you want to use Connected Storage, you will need to download the Xbox Live Platform Extensions SDK zip file from [http://aka.ms/xblextsdk](http://aka.ms/xblextsdk).</span></span>
-
-> <span data-ttu-id="e4ff0-181">**注:** Xbox Live クリエーターズ プログラムに参加している場合は、セキュア ソケットにはアクセスできません。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-181">**Note** If you are in the Xbox Live Creators Program, you do not have access to Secure Sockets.</span></span>  <span data-ttu-id="e4ff0-182">ただし、接続ストレージを使用できます。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-182">You may use Connected Storage however.</span></span>
-
-<span data-ttu-id="e4ff0-183">zip ファイルをダウンロードした後、任意のフォルダーに内容を展開して、MSI をインストールします。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-183">After you download the zip file, extract the contents to a folder of your choice and install the MSI.</span></span>  
-<span data-ttu-id="e4ff0-184">パッケージには、UWP プラットフォーム用のネットワークのセキュリティ保護機能および接続ストレージ機能に関する winmd ファイルとドキュメントが含まれています。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-184">The package contains winmd files and documentation related to Secure Networking and Connected Storage features for the UWP platform.</span></span>
-
-<span data-ttu-id="e4ff0-185">Xbox Live Platform Extensions SDK をインストールすると、Visual Studio を使用して Extensions SDK への参照を追加し、次の名前空間をユニバーサル Windows プラットフォーム (UWP) ゲームで使用できます。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-185">After you have installed the Xbox Live Platform Extensions SDK, you can use Visual Studio to add a reference to the Extensions SDK and use the following namespaces in your Universal Windows Platform (UWP) game:</span></span>
-
-- <span data-ttu-id="e4ff0-186">Windows.Gaming.XboxLive.Storage</span><span class="sxs-lookup"><span data-stu-id="e4ff0-186">Windows.Gaming.XboxLive.Storage</span></span>
-
-### <a name="3-associate-your-visual-studio-project-with-your-uwp-app"></a><span data-ttu-id="e4ff0-187">3. Visual Studio のプロジェクトと UWP アプリを関連付ける</span><span class="sxs-lookup"><span data-stu-id="e4ff0-187">3. Associate your Visual Studio project with your UWP app</span></span>
-
-<span data-ttu-id="e4ff0-188">アプリがサインインできるようにするには、デベロッパー センターで既に作成した UWP アプリにリンクする必要があります。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-188">For your app to be able to sign-in, it must be linked to the UWP app you created on Dev Center earlier.</span></span>  <span data-ttu-id="e4ff0-189">この関連付けを作成する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-189">We will show you how to make this association.</span></span>
-
-<span data-ttu-id="e4ff0-190">**[ストア]** -> **[アプリケーションをストアと関連付ける…]** </span><span class="sxs-lookup"><span data-stu-id="e4ff0-190">If the **Store** -> **Associate App with the Store…**</span></span> <span data-ttu-id="e4ff0-191">オプションを Visual Studio で利用できる場合は、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-191">option is available in Visual Studio follow these steps:</span></span>
-
-1.  <span data-ttu-id="e4ff0-192">Visual Studio 2015 でプロジェクトを開きます</span><span class="sxs-lookup"><span data-stu-id="e4ff0-192">Open your project in Visual Studio 2015</span></span>
-1.  <span data-ttu-id="e4ff0-193">プライマリー プロジェクト (スタートアップ プロジェクト) を右クリックし、**[ストア]** -> **[アプリケーションをストアと関連付ける...]** の順にクリックします</span><span class="sxs-lookup"><span data-stu-id="e4ff0-193">Right click the primary project (the StartUp Project), click **Store** -> **Associate App with the Store...**</span></span>
-1.  <span data-ttu-id="e4ff0-194">要求されたら、アプリの作成に使用した **Windows デベロッパー アカウント**でサインインします</span><span class="sxs-lookup"><span data-stu-id="e4ff0-194">Sign-in with the **Windows Developer account** used for creating the app if asked</span></span>
-1.  <span data-ttu-id="e4ff0-195">次のページで、作成したアプリを選択し、情報を確認して、**[関連付け]** をクリックします</span><span class="sxs-lookup"><span data-stu-id="e4ff0-195">On the next page, select the app you just created, confirm the information, and click **Associate**</span></span>
-
-<span data-ttu-id="e4ff0-196">**[ストア]** -> **[アプリケーションをストアと関連付ける…]** </span><span class="sxs-lookup"><span data-stu-id="e4ff0-196">If the **Store** -> **Associate App with the Store…**</span></span> <span data-ttu-id="e4ff0-197">オプションを Visual Studio で利用できない場合は、アプリのストア パッケージ ID を使用するように、アプリのパッケージ マニフェストを手動で更新することができます。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-197">option is not available in Visual Studio, you can manually update the app's package manifest to use the app’s Store package identity:</span></span>
-
-1.  <span data-ttu-id="e4ff0-198">Package.appxmanifest ファイルをテキスト エディターで開き、Identity ノードを **[アプリ名の予約]** セクションの **[アプリケーション ID]** に更新します。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-198">Open your Package.appxmanifest file in a text editor and update the Identity node to the **Application Identity** from **Reserving an app name** section.</span></span>
-1.  <span data-ttu-id="e4ff0-199">プロジェクトから .pfx ファイルを削除します (プロジェクトから除外するのでは不十分です)。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-199">Delete (exclusion from project is not enough) the .pfx file from the project</span></span>
-
-### <a name="4-associate-your-visual-studio-project-with-your-xbox-live-enabled-title"></a><span data-ttu-id="e4ff0-200">4. Visual Studio のプロジェクトと Xbox Live 対応のタイトルを関連付ける</span><span class="sxs-lookup"><span data-stu-id="e4ff0-200">4. Associate your Visual Studio project with your Xbox Live enabled title</span></span>
-
-<span data-ttu-id="e4ff0-201">これを行うには、実行時に読み取るように Xbox Live SDK の構成ファイルを追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-201">To do this, you need to add a configuration file for the Xbox Live SDK to read at runtime.</span></span>
-
-1.  <span data-ttu-id="e4ff0-202">テキスト ファイルを作成し、名前を **xboxservices.config** に設定します。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-202">Create a text file and name it **xboxservices.config**.</span></span> <span data-ttu-id="e4ff0-203">ファイル拡張子は .config にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-203">Note the file extension must be .config</span></span>
-1.  <span data-ttu-id="e4ff0-204">プライマリー プロジェクト (スタートアップ プロジェクト) にテキスト ファイルを追加します。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-204">Add the text file to your primary project (the StartUp Project)</span></span>
-1.  <span data-ttu-id="e4ff0-205">ファイルを右クリックし、[プロパティ] を選択して、**[コンテンツ]** が **[はい]** に設定されているか、または **[ビルド アクション]** が **[コンテンツ]** に設定されていることを確認して、**[出力ディレクトリにコピー]** の **[常にコピーする]** を設定します。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-205">Right click on the file, select Properties and ensure that either **Content** is **Yes** or **Build Action** is set to **Content** and set **Copy always** for **Copy to Output Directory**.</span></span>  <span data-ttu-id="e4ff0-206">これにより、ファイルは正しく AppX フォルダーにコピーされます。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-206">This will ensure the file is copied correctly in the AppX folder.</span></span>
-1.  <span data-ttu-id="e4ff0-207">[項目の種類] は **[ビルドに含めない]** のままで問題ありません。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-207">You can leave the Item Type to **Does not participate in build**</span></span>
-1.  <span data-ttu-id="e4ff0-208">次のテンプレートを使用してテキスト ファイルを編集し、TitleId と PrimaryServiceConfigId を Windows デベロッパー センターから取得した値に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-208">Edit the text file with the following template, and replace the TitleId, and PrimaryServiceConfigId with the values you get from Windows Dev Center.</span></span>  <span data-ttu-id="e4ff0-209">PrimaryServiceConfigId は、Windows デベロッパー センターでは "SCID" として表示されます。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-209">The PrimaryServiceConfigId appears on Windows Dev Center as "SCID".</span></span>  
-1.  <span data-ttu-id="e4ff0-210">Xbox Live クリエーターズ プログラムのタイトルの場合、Xbox Live クリエーターズ プログラムのタイトルで機能するようにサインイン方法を変更するために、XboxLiveCreatorsTitle を true に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-210">XboxLiveCreatorsTitle must be set to true for titles in the Xbox Live Creators Program as it changes the sign-in method to work for titles in the Xbox Live Creators Program.</span></span>
-
+```c++
+#define XBOX_LIVE_CREATORS_SDK
+#include "xsapi\services.h"
 ```
+### <a name="3-optional-using-connected-storage"></a><span data-ttu-id="6d65c-160">3. (省略可能) 接続ストレージを使う</span><span class="sxs-lookup"><span data-stu-id="6d65c-160">3. (Optional) Using Connected Storage</span></span>
+<span data-ttu-id="6d65c-161">[接続ストレージ](../storage-platform/connected-storage/connected-storage-technical-overview.md)サービスを使う場合、`Windows.Gaming.XboxLive.Storage` 名前空間にアクセスする必要があります。</span><span class="sxs-lookup"><span data-stu-id="6d65c-161">If you want to use the [Connected Storage](../storage-platform/connected-storage/connected-storage-technical-overview.md) service, you will need to access the `Windows.Gaming.XboxLive.Storage` namespace.</span></span> <span data-ttu-id="6d65c-162">使う Windows SDK のバージョンによっては、それを使うために、追加のコンテンツをインストールしたり、プロジェクトに参照を手動で追加したりする必要があります。</span><span class="sxs-lookup"><span data-stu-id="6d65c-162">Depending on the version of the Windows SDK that you are using, you may need to install additional content or manually add references to your project to use it.</span></span> <span data-ttu-id="6d65c-163">Windows 10 SDK 10.0.16299 以降をターゲットとした場合、追加の作業を行わなくても接続ストレージ名前空間にアクセスできるようになります。</span><span class="sxs-lookup"><span data-stu-id="6d65c-163">If you've targeted Windows 10 SDK 10.0.16299 or higher, then you will be able to access the Connected Storage namespace without doing any additional work.</span></span>
+
+#### <a name="windows-10-sdk-version-10015063-or-lower"></a><span data-ttu-id="6d65c-164">Windows 10 SDK バージョン 10.0.15063 以下</span><span class="sxs-lookup"><span data-stu-id="6d65c-164">Windows 10 SDK version 10.0.15063 or lower</span></span>
+<span data-ttu-id="6d65c-165">接続ストレージを使用する場合は、プロジェクトに参照を追加する前に、Xbox Live Platform Extensions SDK をインストールする必要があります。</span><span class="sxs-lookup"><span data-stu-id="6d65c-165">If you want to use Connected Storage, you will need to install the Xbox Live Platforms Extensions SDK before you can add references to your project.</span></span> <span data-ttu-id="6d65c-166">そのためには、次のようにします。</span><span class="sxs-lookup"><span data-stu-id="6d65c-166">You can do this by:</span></span>
+
+1. <span data-ttu-id="6d65c-167">[Xbox Live Platform Extensions SDK](http://aka.ms/xblextsdk) をダウンロードして抽出します。</span><span class="sxs-lookup"><span data-stu-id="6d65c-167">Download and extract the [Xbox Live Platform Extensions SDK](http://aka.ms/xblextsdk).</span></span>
+2. <span data-ttu-id="6d65c-168">抽出されたら、使っている Windows 10 SDK バージョンに対応するインクルード MSI ファイルを実行します。</span><span class="sxs-lookup"><span data-stu-id="6d65c-168">Once extracted, run the included MSI file that matches the Windows 10 SDK version that you are using.</span></span> 
+
+<span data-ttu-id="6d65c-169">Xbox Live Platform Extensions SDK をインストールしたら、Visual Studio で参照を追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6d65c-169">After you have installed the Xbox Live Platform Extensions SDK, you will need to add a reference to it in Visual Studio.</span></span> <span data-ttu-id="6d65c-170">そのためには、次のようにします。</span><span class="sxs-lookup"><span data-stu-id="6d65c-170">You can do this by:</span></span>
+
+1. <span data-ttu-id="6d65c-171">**ソリューション エクスプローラー**で、**[参照設定]** ノードを右クリックし、**[参照の追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="6d65c-171">In the **Solution Explorer**, right click on the **References** node and pick **Add Reference...**</span></span> 
+2. <span data-ttu-id="6d65c-172">**[参照マネージャー]** ダイアログ ボックスの左側で、**[ユニバーサル Windows]** > **[拡張機能]** の順に選びます。</span><span class="sxs-lookup"><span data-stu-id="6d65c-172">On the left side of the **Reference Manager** dialog, select **Universal Windows** > **Extensions**.</span></span>
+3. <span data-ttu-id="6d65c-173">表示される一覧で、**[Windows Desktop Extensions for UWP]** を検索し、使っている Windows 10 SDK に一致するバージョンの横のチェック ボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="6d65c-173">In the list that appears, search for **Windows Desktop Extensions for UWP** and select the checkbox next to the version that matches your Windows 10 SDK.</span></span> 
+4. <span data-ttu-id="6d65c-174">**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="6d65c-174">Click **OK**.</span></span>
+
+![VS での新しい参照の追加](../images/getting_started/get-started-vs-add-ref.png)
+
+### <a name="4-associate-your-visual-studio-project-with-your-uwp-app"></a><span data-ttu-id="6d65c-176">4. Visual Studio のプロジェクトと UWP アプリを関連付ける</span><span class="sxs-lookup"><span data-stu-id="6d65c-176">4. Associate your Visual Studio project with your UWP app</span></span>
+
+<span data-ttu-id="6d65c-177">ゲームがサインインするには、Microsoft デベロッパー センターで既に作成した製品に関連付けられる必要があります。</span><span class="sxs-lookup"><span data-stu-id="6d65c-177">For your game to be able to sign-in, it must be associated with the product you created on Microsoft Dev Center.</span></span> <span data-ttu-id="6d65c-178">ゲームは、Visual Studio で Microsoft Store 関連付けウィザードを使って関連付けることができます。</span><span class="sxs-lookup"><span data-stu-id="6d65c-178">You can associate your game in Visual Studio by using the Store Association wizard.</span></span> <span data-ttu-id="6d65c-179">Visual Studio で、次のようにします。</span><span class="sxs-lookup"><span data-stu-id="6d65c-179">In Visual Studio, do the following:</span></span>
+
+1.  <span data-ttu-id="6d65c-180">プライマリー プロジェクト (スタートアップ プロジェクト) を右クリックし、**[Microsoft Store]** > **[アプリケーションを Microsoft Store と関連付ける...]** の順にクリックします</span><span class="sxs-lookup"><span data-stu-id="6d65c-180">Right click the primary project (the StartUp Project), click **Store** > **Associate App with the Store...**</span></span>
+2.  <span data-ttu-id="6d65c-181">要求されたら、アプリの作成に使用した **Windows デベロッパー アカウント**でサインインし、画面の指示に従います。</span><span class="sxs-lookup"><span data-stu-id="6d65c-181">Sign-in with the **Windows Developer account** used for creating the app if asked and follow the prompts.</span></span>
+
+> [!TIP]
+> <span data-ttu-id="6d65c-182">Microsoft Store 用のゲームの準備について詳しくは、「[アプリのパッケージ化](https://docs.microsoft.com/windows/uwp/packaging/)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="6d65c-182">See [Packaging apps](https://docs.microsoft.com/windows/uwp/packaging/) for more information on preparing your game for Windows Store.</span></span>
+
+### <a name="5-add-internet-capabilities-to-your-visual-studio-project"></a><span data-ttu-id="6d65c-183">5. インターネット機能を Visual Studio のプロジェクトに追加する</span><span class="sxs-lookup"><span data-stu-id="6d65c-183">5. Add Internet capabilities to your Visual Studio Project</span></span>
+<span data-ttu-id="6d65c-184">UWP プロジェクトが Xbox Live と通信するにはインターネット機能を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6d65c-184">Your UWP project will need to specify internet capabilities to communicate with Xbox Live.</span></span> <span data-ttu-id="6d65c-185">これらのプロパティは、次の方法で設定できます。</span><span class="sxs-lookup"><span data-stu-id="6d65c-185">You can set these properties by:</span></span>
+
+1. <span data-ttu-id="6d65c-186">Visual Studio で **package.appxmanifest** ファイルをダブルクリックして、**マニフェスト デザイナー**を開きます。</span><span class="sxs-lookup"><span data-stu-id="6d65c-186">Double click on the **package.appxmanifest** file in Visual Studio to open the **Manifest Designer**.</span></span>
+2. <span data-ttu-id="6d65c-187">**[機能]** タブをクリックし、**[インターネット (クライアント)]** をオンにします。</span><span class="sxs-lookup"><span data-stu-id="6d65c-187">Click on the **Capabilities** tab and check **Internet (Client)**.</span></span>
+
+![VS での新しい参照の追加](../images/getting_started/get-started-vs-add-capability.png)
+
+### <a name="6-associate-your-visual-studio-project-with-your-xbox-live-enabled-title"></a><span data-ttu-id="6d65c-189">6. Visual Studio のプロジェクトと Xbox Live 対応のタイトルを関連付ける</span><span class="sxs-lookup"><span data-stu-id="6d65c-189">6. Associate your Visual Studio project with your Xbox Live enabled title</span></span>
+
+<span data-ttu-id="6d65c-190">Xbox Live サービスと通信するには、プロジェクトにサービス構成ファイルを追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6d65c-190">To talk to the Xbox Live service, you'll need to add a service configuration file to your project.</span></span> <span data-ttu-id="6d65c-191">次の方法で行うと簡単です。</span><span class="sxs-lookup"><span data-stu-id="6d65c-191">This can be done easily by:</span></span>
+
+1. <span data-ttu-id="6d65c-192">スタートアップ プロジェクトで、右クリックして **[追加]** > **[新しい項目]** の順に選びます。</span><span class="sxs-lookup"><span data-stu-id="6d65c-192">On your StartUp project, right click and select **Add** > **New Item**.</span></span>
+2. <span data-ttu-id="6d65c-193">種類として **[テキスト ファイル]** を選び、名前を **xboxservices.config** に設定します。</span><span class="sxs-lookup"><span data-stu-id="6d65c-193">Select the **Text File** type and name it **xboxservices.config**.</span></span>
+3. <span data-ttu-id="6d65c-194">ファイルを右クリックして **[プロパティ]** を選び、以下の点を確認します。</span><span class="sxs-lookup"><span data-stu-id="6d65c-194">Right click on the file, select **Properties** and ensure that:</span></span>
+    1. <span data-ttu-id="6d65c-195">**[ビルド アクション]** が **[コンテンツ]** に設定されている。</span><span class="sxs-lookup"><span data-stu-id="6d65c-195">**Build Action** is set to **Content**, and</span></span>  
+    2. <span data-ttu-id="6d65c-196">**[出力ディレクトリにコピー]** が **[常にコピーする]** に設定されている。</span><span class="sxs-lookup"><span data-stu-id="6d65c-196">**Copy to Output Directory** is set to **Copy Always**.</span></span>
+5.  <span data-ttu-id="6d65c-197">次のテンプレートを使用して構成ファイルを編集し、**TitleId** と **PrimaryServiceConfigId** をタイトルに適用される値に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="6d65c-197">Edit the configuration file with the following template, replacing the **TitleId** and **PrimaryServiceConfigId** with the values applicable to your title.</span></span> <span data-ttu-id="6d65c-198">Microsoft デベロッパー センターでのルート Xbox Live ページから適切な値を取得できます。</span><span class="sxs-lookup"><span data-stu-id="6d65c-198">You can get the correct values from the root Xbox Live page on Microsoft Dev Center.</span></span> <span data-ttu-id="6d65c-199">**PrimaryServiceConfigId** は、Microsoft デベロッパー センターでは **SCID** として表示されます。</span><span class="sxs-lookup"><span data-stu-id="6d65c-199">The **PrimaryServiceConfigId** appears on Microsoft Dev Center as **SCID**.</span></span>
+
+```json
     {
-       "TitleId" : your title ID (JSON number in decimal),
-       "PrimaryServiceConfigId" : "{your primary service config ID}",
+       "TitleId" : "your title ID (JSON number in decimal)",
+       "PrimaryServiceConfigId" : "your primary service config ID",
        "XboxLiveCreatorsTitle" : true
     }
 ```
 
-<span data-ttu-id="e4ff0-211">次に、例を示します。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-211">For example:</span></span>
+<span data-ttu-id="6d65c-200">次に、例を示します。</span><span class="sxs-lookup"><span data-stu-id="6d65c-200">For example:</span></span>
 
-```
+```json
     {
         "TitleId" : 1563044810,
         "PrimaryServiceConfigId" : "12200100-88da-4d8b-af88-e38f5d2a2bca",
@@ -178,28 +151,10 @@ ms.lasthandoff: 07/06/2017
     }
 ```
 
-### <a name="5-add-internet-capabilities-to-your-visual-studio-project"></a><span data-ttu-id="e4ff0-212">5. インターネット機能を Visual Studio のプロジェクトに追加する</span><span class="sxs-lookup"><span data-stu-id="e4ff0-212">5. Add Internet capabilities to your Visual Studio Project</span></span>
+> [!TIP]
+> <span data-ttu-id="6d65c-201">xboxservices.config 内のすべての値で大文字と小文字が区別されます。</span><span class="sxs-lookup"><span data-stu-id="6d65c-201">All values inside xboxservices.config are case sensitive.</span></span> <span data-ttu-id="6d65c-202">TitleID と PrimaryServiceConfigId の取得について詳しくは、「[サービス構成](../xbox-live-service-configuration.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="6d65c-202">See [Service Configuration](../xbox-live-service-configuration.md) for more information on obtaining the TitleID and PrimaryServiceConfigId.</span></span>
 
-1. <span data-ttu-id="e4ff0-213">Visual Studio 2015 で **package.appxmanifest** ファイルをダブルクリックして、マニフェスト デザイナーを開きます。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-213">Double click on the **package.appxmanifest** file in Visual Studio 2015 to open the Manifest Designer.</span></span>
-2. <span data-ttu-id="e4ff0-214">**[機能]** タブをクリックします。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-214">Click on the **Capabilities** tab</span></span>
-3. <span data-ttu-id="e4ff0-215">**[インターネット (クライアント)]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-215">Click on **Internet (Client)**</span></span>
-4. <span data-ttu-id="e4ff0-216">ファイルを閉じて変更を保存します。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-216">Close the file and save the changes.</span></span>
+## <a name="learn-more"></a><span data-ttu-id="6d65c-203">詳細情報</span><span class="sxs-lookup"><span data-stu-id="6d65c-203">Learn More</span></span>
 
-### <a name="6-optionally-include-xsapi-header-in-your-project"></a><span data-ttu-id="e4ff0-217">6. 必要に応じて、XSAPI ヘッダーをプロジェクトにインクルードする</span><span class="sxs-lookup"><span data-stu-id="e4ff0-217">6. Optionally include XSAPI header in your project</span></span>
-
-<span data-ttu-id="e4ff0-218">Microsoft.Xbox.Live.SDK.WinRT.* ベースのプロジェクトの場合は、ヘッダーをインクルードする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-218">For Microsoft.Xbox.Live.SDK.WinRT.* based projects, no need to include any headers.</span></span>
-
-<span data-ttu-id="e4ff0-219">Microsoft.Xbox.Live.SDK.Cpp.* ベースのプロジェクトの場合は、"xsapi\\services.h" を C++ プロジェクトにインクルードして、Xbox Live Service API (XSAPI) NuGet パッケージのヘッダーを取り込みます。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-219">For Microsoft.Xbox.Live.SDK.Cpp.* based projects, include "xsapi\\services.h" to in your C++ project bring in the header for the Xbox Live Service API (XSAPI) NuGet package.</span></span> <span data-ttu-id="e4ff0-220">XSAPI ヘッダーをインクルードする前に、XBOX_LIVE_CREATORS_SDK を定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-220">Before including the XSAPI header, you must define XBOX_LIVE_CREATORS_SDK.</span></span> <span data-ttu-id="e4ff0-221">これにより、Xbox Live クリエーターズ プログラムの開発者が使用できる API のみに、API サーフェス領域が制限されます。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-221">This limits the API surface area to only those APIs that are usable by developers in the Xbox Live Creators Program.</span></span> <span data-ttu-id="e4ff0-222">次に、例を示します。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-222">For example:</span></span>
-
-```c++
-#define XBOX_LIVE_CREATORS_SDK
-#include "xsapi\services.h"
-```
-
-### <a name="7-change-your-sandbox-on-the-target-device"></a><span data-ttu-id="e4ff0-223">7. ターゲット デバイスのサンドボックスを変更する</span><span class="sxs-lookup"><span data-stu-id="e4ff0-223">7. Change your sandbox on the target device</span></span>
-
-<span data-ttu-id="e4ff0-224">サンドボックスの設定方法については、「[Xbox Live のサンドボックス](../xbox-live-sandboxes.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-224">See the [Xbox Live Sandboxes](../xbox-live-sandboxes.md) on how to set the sandbox.</span></span>
-
-### <a name="8-learn-more"></a><span data-ttu-id="e4ff0-225">8. 詳細情報</span><span class="sxs-lookup"><span data-stu-id="e4ff0-225">8. Learn More</span></span>
-
-<span data-ttu-id="e4ff0-226">[https://github.com/Microsoft/xbox-live-samples](https://github.com/Microsoft/xbox-live-samples) の /Samples/CreatorsSDK/ にあるサンプルでは、Xbox Live クリエーターズ プログラムの開発者が利用できる API を紹介しています。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-226">The samples found at [https://github.com/Microsoft/xbox-live-samples](https://github.com/Microsoft/xbox-live-samples) under /Samples/CreatorsSDK/ showcase the APIs available to developers in the Xbox Live Creators program.</span></span>  <span data-ttu-id="e4ff0-227">サンプルを使用するには、サンドボックスを XDKS.1 に変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e4ff0-227">To use the samples, you will need to change your sandbox to XDKS.1</span></span>
+<span data-ttu-id="6d65c-204">[Xbox Live SDK サンプル](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/CreatorsSDK)では、Xbox Live クリエーターズ プログラムの開発者が使用可能な API が示されています。</span><span class="sxs-lookup"><span data-stu-id="6d65c-204">The [Xbox Live SDK samples](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/CreatorsSDK) under showcase the APIs available to developers in the Xbox Live Creators program.</span></span> <span data-ttu-id="6d65c-205">サンプルを使用するには、サンドボックスを XDKS.1 に変更する必要があります。1。</span><span class="sxs-lookup"><span data-stu-id="6d65c-205">To use the samples, you will need to change your sandbox to XDKS.1.</span></span> 
+  

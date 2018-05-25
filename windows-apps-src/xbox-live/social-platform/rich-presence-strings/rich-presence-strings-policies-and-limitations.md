@@ -1,38 +1,39 @@
 ---
-title: "リッチ プレゼンスのポリシーと制限"
+title: リッチ プレゼンスのポリシーと制限
 author: KevinAsgari
-description: "Xbox Live リッチ プレゼンス システムのポリシーと制限事項について説明します。"
+description: Xbox Live リッチ プレゼンス システムのポリシーと制限事項について説明します。
 ms.assetid: 0ad21a75-0524-45a8-8d8a-0dec0f7d6d6f
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リッチ プレゼンス, ポリシー"
-ms.openlocfilehash: fb34c99ba5c449875446172d8b084b97b85fb979
-ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リッチ プレゼンス, ポリシー
+ms.localizationpriority: low
+ms.openlocfilehash: e4138690da904a99008d8ad4d987e61ee35a7c9d
+ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2017
+ms.lasthandoff: 02/24/2018
 ---
-# <a name="rich-presence-policies-and-limitations"></a><span data-ttu-id="4ae8c-104">リッチ プレゼンスのポリシーと制限</span><span class="sxs-lookup"><span data-stu-id="4ae8c-104">Rich Presence policies and limitations</span></span>
+# <a name="rich-presence-policies-and-limitations"></a><span data-ttu-id="65a92-104">リッチ プレゼンスのポリシーと制限</span><span class="sxs-lookup"><span data-stu-id="65a92-104">Rich Presence policies and limitations</span></span>
 
-<span data-ttu-id="4ae8c-105">タイトルにリッチ プレゼンスを実装するときは、以下のポリシーと制限に従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="4ae8c-105">When you implement Rich Presence for your title, you must adhere to the following policies and limits.</span></span>
+<span data-ttu-id="65a92-105">タイトルにリッチ プレゼンスを実装するときは、以下のポリシーと制限に従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="65a92-105">When you implement Rich Presence for your title, you must adhere to the following policies and limits.</span></span>
 
--   <span data-ttu-id="4ae8c-106">各タイトルに少なくとも 1 つの文字列セットを用意する必要がありますが、設定できる文字列セット数の上限はありません。</span><span class="sxs-lookup"><span data-stu-id="4ae8c-106">Each title must have at least 1 string-set, but there is no upper limit on how many strings-sets you can have.</span></span>
--   <span data-ttu-id="4ae8c-107">列挙ごと、およびリッチ プレゼンス文字列ごとに、既定の文字列とカルチャーに依存しない文字列を定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4ae8c-107">You must define a default string as well as culture neutral strings for each enumeration and for each Rich Presence string.</span></span>
--   <span data-ttu-id="4ae8c-108">数値または文字列の統計情報を使用して、文字列内のパラメーターに入力できます。</span><span class="sxs-lookup"><span data-stu-id="4ae8c-108">You can use numerical or string statistics to fill in the parameters in your strings.</span></span> <span data-ttu-id="4ae8c-109">DateTime 統計情報は使用できません。</span><span class="sxs-lookup"><span data-stu-id="4ae8c-109">You can't use DateTime statistics.</span></span>
--   <span data-ttu-id="4ae8c-110">リッチ プレゼンス文字列で統計情報を使用する場合は、それらの統計情報 (統計情報の列挙を含む) が同じ SCID およびサンドボックスで使用できる必要があります。</span><span class="sxs-lookup"><span data-stu-id="4ae8c-110">If you're using statistics in your Rich Presence strings, then those statistics (including any enumerations for statistics) must be available in the same SCID & Sandbox.</span></span>
--   <span data-ttu-id="4ae8c-111">合計 44 文字 (パラメーターの値を含む) の 1 つの行を使用できます。</span><span class="sxs-lookup"><span data-stu-id="4ae8c-111">You have 1 line of 44 characters total (including the values of the parameters).</span></span> <span data-ttu-id="4ae8c-112">これは、Xbox 360 のリッチ プレゼンスの制限と同様です。</span><span class="sxs-lookup"><span data-stu-id="4ae8c-112">This is similar to Xbox 360 Rich Presence limits.</span></span> <span data-ttu-id="4ae8c-113">クライアントと協力して、文字列の長さを増やすことができるかどうかを検討中です。</span><span class="sxs-lookup"><span data-stu-id="4ae8c-113">We will be working with the client to see if the length of the string can grow.</span></span> <span data-ttu-id="4ae8c-114">文字列を長くできる場合は発表します。</span><span class="sxs-lookup"><span data-stu-id="4ae8c-114">There will be an announcement if the string can be longer.</span></span>
-    -   <span data-ttu-id="4ae8c-115">Unicode 文字が必須であり、UTF-8 エンコーディングで表示できる必要があります。</span><span class="sxs-lookup"><span data-stu-id="4ae8c-115">Unicode characters are required and must be able to work with UTF-8 encoding for display.</span></span>
--   <span data-ttu-id="4ae8c-116">フレンドリ名は以下の規則に従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="4ae8c-116">Your friendly names must follow these rules:</span></span>
-    -   <span data-ttu-id="4ae8c-117">使用できる文字は、'A' ～ 'Z'、'a' ～ 'z'、アンダー スコア ('\_')、および '0' ～ '9' です。</span><span class="sxs-lookup"><span data-stu-id="4ae8c-117">The allowed characters are 'A' through 'Z', 'a' through 'z', underscore ('\_'), and '0' through '9'.</span></span>
+-   <span data-ttu-id="65a92-106">各タイトルに少なくとも 1 つの文字列セットを用意する必要がありますが、設定できる文字列セット数の上限はありません。</span><span class="sxs-lookup"><span data-stu-id="65a92-106">Each title must have at least 1 string-set, but there is no upper limit on how many strings-sets you can have.</span></span>
+-   <span data-ttu-id="65a92-107">列挙ごと、およびリッチ プレゼンス文字列ごとに、既定の文字列とカルチャーに依存しない文字列を定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="65a92-107">You must define a default string as well as culture neutral strings for each enumeration and for each Rich Presence string.</span></span>
+-   <span data-ttu-id="65a92-108">数値または文字列の統計情報を使用して、文字列内のパラメーターに入力できます。</span><span class="sxs-lookup"><span data-stu-id="65a92-108">You can use numerical or string statistics to fill in the parameters in your strings.</span></span> <span data-ttu-id="65a92-109">DateTime 統計情報は使用できません。</span><span class="sxs-lookup"><span data-stu-id="65a92-109">You can't use DateTime statistics.</span></span>
+-   <span data-ttu-id="65a92-110">リッチ プレゼンス文字列で統計情報を使用する場合は、それらの統計情報 (統計情報の列挙を含む) が同じ SCID およびサンドボックスで使用できる必要があります。</span><span class="sxs-lookup"><span data-stu-id="65a92-110">If you're using statistics in your Rich Presence strings, then those statistics (including any enumerations for statistics) must be available in the same SCID & Sandbox.</span></span>
+-   <span data-ttu-id="65a92-111">合計 44 文字 (パラメーターの値を含む) の 1 つの行を使用できます。</span><span class="sxs-lookup"><span data-stu-id="65a92-111">You have 1 line of 44 characters total (including the values of the parameters).</span></span> <span data-ttu-id="65a92-112">これは、Xbox 360 のリッチ プレゼンスの制限と同様です。</span><span class="sxs-lookup"><span data-stu-id="65a92-112">This is similar to Xbox 360 Rich Presence limits.</span></span> <span data-ttu-id="65a92-113">クライアントと協力して、文字列の長さを増やすことができるかどうかを検討中です。</span><span class="sxs-lookup"><span data-stu-id="65a92-113">We will be working with the client to see if the length of the string can grow.</span></span> <span data-ttu-id="65a92-114">文字列を長くできる場合は発表します。</span><span class="sxs-lookup"><span data-stu-id="65a92-114">There will be an announcement if the string can be longer.</span></span>
+    -   <span data-ttu-id="65a92-115">Unicode 文字が必須であり、UTF-8 エンコーディングで表示できる必要があります。</span><span class="sxs-lookup"><span data-stu-id="65a92-115">Unicode characters are required and must be able to work with UTF-8 encoding for display.</span></span>
+-   <span data-ttu-id="65a92-116">フレンドリ名は以下の規則に従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="65a92-116">Your friendly names must follow these rules:</span></span>
+    -   <span data-ttu-id="65a92-117">使用できる文字は、'A' ～ 'Z'、'a' ～ 'z'、アンダー スコア ('\_')、および '0' ～ '9' です。</span><span class="sxs-lookup"><span data-stu-id="65a92-117">The allowed characters are 'A' through 'Z', 'a' through 'z', underscore ('\_'), and '0' through '9'.</span></span>
 
-        <span data-ttu-id="4ae8c-118">文字数の制限はありません。</span><span class="sxs-lookup"><span data-stu-id="4ae8c-118">There is no character limit.</span></span>
+        <span data-ttu-id="65a92-118">文字数の制限はありません。</span><span class="sxs-lookup"><span data-stu-id="65a92-118">There is no character limit.</span></span>
 
--   <span data-ttu-id="4ae8c-119">文字列の検証は実行されません。スペル チェックなどの文字列検証を実行し、文字列が正しくローカライズされていることを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4ae8c-119">No string verification is done on your strings; you must do any string verification, such as spellcheck and verifying that the string has been localized properly.</span></span>
-    -   <span data-ttu-id="4ae8c-120">文字列セットが不適切である (暴力的または攻撃的な言葉使いなど) と思われる場合、Microsoft は、要件を満たすように文字列が更新されるまで、タイトルでのリッチ プレゼンスの使用を禁止します。</span><span class="sxs-lookup"><span data-stu-id="4ae8c-120">If we feel a string-set is inappropriate (such as abusive or offensive language), Microsoft prevents titles from using Rich Presence until strings have been updated to our satisfaction.</span></span>
--   <span data-ttu-id="4ae8c-121">タイトルがデータ プラットフォームと統合されていない場合、統計情報を文字列内のパラメーターとして使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="4ae8c-121">If your title isn't integrating with the data platform, there are no options for using statistics as parameters in your strings.</span></span>
-    -   <span data-ttu-id="4ae8c-122">すべての文字列を完全に事前定義する必要があります (トークンは使用できません)。</span><span class="sxs-lookup"><span data-stu-id="4ae8c-122">All strings must be completely predefined in that case (no tokens are allowed).</span></span>
--   <span data-ttu-id="4ae8c-123">列挙名はすべての列挙において一意である必要があり、統計情報名に対して一意である必要があります。</span><span class="sxs-lookup"><span data-stu-id="4ae8c-123">Enumeration names must be unique across all enumerations and must be unique to statistic names.</span></span>
--   <span data-ttu-id="4ae8c-124">1 行に表示できる文字数を超え、改行がある場合、行は自動的に切り捨てられます。</span><span class="sxs-lookup"><span data-stu-id="4ae8c-124">If a line exceeds the number of characters that can be shown, and there is a line break, the line is automatically truncated.</span></span>
+-   <span data-ttu-id="65a92-119">文字列の検証は実行されません。スペル チェックなどの文字列検証を実行し、文字列が正しくローカライズされていることを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="65a92-119">No string verification is done on your strings; you must do any string verification, such as spellcheck and verifying that the string has been localized properly.</span></span>
+    -   <span data-ttu-id="65a92-120">文字列セットが不適切である (暴力的または攻撃的な言葉使いなど) と思われる場合、Microsoft は、要件を満たすように文字列が更新されるまで、タイトルでのリッチ プレゼンスの使用を禁止します。</span><span class="sxs-lookup"><span data-stu-id="65a92-120">If we feel a string-set is inappropriate (such as abusive or offensive language), Microsoft prevents titles from using Rich Presence until strings have been updated to our satisfaction.</span></span>
+-   <span data-ttu-id="65a92-121">タイトルがデータ プラットフォームと統合されていない場合、統計情報を文字列内のパラメーターとして使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="65a92-121">If your title isn't integrating with the data platform, there are no options for using statistics as parameters in your strings.</span></span>
+    -   <span data-ttu-id="65a92-122">すべての文字列を完全に事前定義する必要があります (トークンは使用できません)。</span><span class="sxs-lookup"><span data-stu-id="65a92-122">All strings must be completely predefined in that case (no tokens are allowed).</span></span>
+-   <span data-ttu-id="65a92-123">列挙名はすべての列挙において一意である必要があり、統計情報名に対して一意である必要があります。</span><span class="sxs-lookup"><span data-stu-id="65a92-123">Enumeration names must be unique across all enumerations and must be unique to statistic names.</span></span>
+-   <span data-ttu-id="65a92-124">1 行に表示できる文字数を超え、改行がある場合、行は自動的に切り捨てられます。</span><span class="sxs-lookup"><span data-stu-id="65a92-124">If a line exceeds the number of characters that can be shown, and there is a line break, the line is automatically truncated.</span></span>

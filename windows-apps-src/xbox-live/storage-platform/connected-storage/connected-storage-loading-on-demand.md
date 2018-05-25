@@ -1,52 +1,144 @@
 ---
-title: "接続ストレージのオンデマンド読み込み"
-author: KevinAsgari
-description: "接続ストレージ データをすべて一度に読み込むのではなくオンデマンドで読み込む方法について説明します。"
+title: 接続ストレージのオンデマンド読み込み
+author: aablackm
+description: 接続ストレージ データをすべて一度に読み込むのではなくオンデマンドで読み込む方法について説明します。
 ms.assetid: a0797a14-c972-4017-864c-c6ba0d5a3363
-ms.author: kevinasg
-ms.date: 04-04-2017
+ms.author: aablackm
+ms.date: 02/27/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ"
-ms.openlocfilehash: a0c1e15a163dce8e64eee177497ff8febad27e10
-ms.sourcegitcommit: 90fbdc0e25e0dff40c571d6687143dd7e16ab8a8
+keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
+ms.localizationpriority: low
+ms.openlocfilehash: ef65ba7e491fb3c7b8838cd834481430326a9d5a
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2017
+ms.lasthandoff: 03/08/2018
 ---
-# <a name="connected-storage-loading-on-demand"></a><span data-ttu-id="2ae28-104">接続ストレージのオンデマンド読み込み</span><span class="sxs-lookup"><span data-stu-id="2ae28-104">Connected Storage loading on demand</span></span>
+# <a name="connected-storage-loading-on-demand"></a><span data-ttu-id="e433d-104">接続ストレージのオンデマンド読み込み</span><span class="sxs-lookup"><span data-stu-id="e433d-104">Connected Storage loading on demand</span></span>
 
-<span data-ttu-id="2ae28-105">*GetSyncOnDemandForUserAsync* を使用すると、クラウド バックアップ データを接続ストレージ領域から、一度にまとめてではなく、"オンデマンド" で読み込むことができます。</span><span class="sxs-lookup"><span data-stu-id="2ae28-105">*GetSyncOnDemandForUserAsync* allows you to load cloud-backed data from a connected storage space "on demand" rather than all at once.</span></span> <span data-ttu-id="2ae28-106">これにより、保存ファイルが特に大きい場合は、*GetForUserAsync* を使用するよりもパフォーマンスを向上させることができます。</span><span class="sxs-lookup"><span data-stu-id="2ae28-106">This can improve performance over *GetForUserAsync* for cases where file saves are particularly large.</span></span>
+`GetSyncOnDemandForUserAsync` <span data-ttu-id="e433d-105">を使用すると、クラウド バックアップ データを接続ストレージ領域から、一度にまとめてではなく、"オンデマンド" で読み込むことができます。</span><span class="sxs-lookup"><span data-stu-id="e433d-105">allows you to load cloud-backed data from a connected storage space "on demand" rather than all at once.</span></span> <span data-ttu-id="e433d-106">これにより、保存ファイルが特に大きい場合は、`GetForUserAsync` を使用するよりもパフォーマンスを向上させることができます。</span><span class="sxs-lookup"><span data-stu-id="e433d-106">This can improve performance over `GetForUserAsync` for cases where file saves are particularly large.</span></span>
 
-### <a name="to-load-data-from-a-connected-storage-space-on-demand"></a><span data-ttu-id="2ae28-107">オンデマンドで接続ストレージ領域からデータを読み込むには</span><span class="sxs-lookup"><span data-stu-id="2ae28-107">To load data from a connected storage space on demand</span></span>
+## <a name="to-load-data-from-a-connected-storage-space-on-demand"></a><span data-ttu-id="e433d-107">オンデマンドで接続ストレージ領域からデータを読み込むには</span><span class="sxs-lookup"><span data-stu-id="e433d-107">To load data from a connected storage space on demand</span></span>
 
-1.  <span data-ttu-id="2ae28-108">*GetSyncOnDemandForUserAsync* を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="2ae28-108">Call *GetSyncOnDemandForUserAsync*.</span></span> <span data-ttu-id="2ae28-109">これにより、コンテナーの内容ではなく、コンテナーのリストとメタデータをクラウドからダウンロードする部分的な同期がトリガーされます。</span><span class="sxs-lookup"><span data-stu-id="2ae28-109">This triggers a partial sync that downloads a list of containers and their metadata from the cloud, but not their contents.</span></span> <span data-ttu-id="2ae28-110">この操作は高速なので、適切なネットワーク条件下では、ユーザーには読み込み中の UI は表示されません。</span><span class="sxs-lookup"><span data-stu-id="2ae28-110">This operation is fast and, under good network conditions, the user should not see any loading UI.</span></span>
+### <a name="1--call-getsyncondemandforuserasync"></a><span data-ttu-id="e433d-108">1: `GetSyncOnDemandForUserAsync` を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="e433d-108">1:  Call `GetSyncOnDemandForUserAsync`</span></span>
 
-2.  <span data-ttu-id="2ae28-111">*GetContainerInfo2Async* を使用してコンテナー クエリを実行します。</span><span class="sxs-lookup"><span data-stu-id="2ae28-111">Perform a container query using *GetContainerInfo2Async*.</span></span> <span data-ttu-id="2ae28-112">これにより、3 つの新しいメタデータ フィールドを含む *ContainerInfo2* のコレクションが返されます。</span><span class="sxs-lookup"><span data-stu-id="2ae28-112">This will return a collection of *ContainerInfo2*, which contains 3 new metadata fields.</span></span>
+<span data-ttu-id="e433d-109">これにより、コンテナーの内容ではなく、コンテナーのリストとメタデータをクラウドからダウンロードする部分的な同期がトリガーされます。</span><span class="sxs-lookup"><span data-stu-id="e433d-109">This triggers a partial sync that downloads a list of containers and their metadata from the cloud, but not their contents.</span></span> <span data-ttu-id="e433d-110">この操作は高速なので、適切なネットワーク条件下では、ユーザーには読み込み中の UI は表示されません。</span><span class="sxs-lookup"><span data-stu-id="e433d-110">This operation is fast and, under good network conditions, the user should not see any loading UI.</span></span>
 
-    -   <span data-ttu-id="2ae28-113">*DisplayName*: 表示名の文字列をパラメーターとして受け取る *SubmitUpdatesAsync* のオーバーロードを使用して作成した表示名。</span><span class="sxs-lookup"><span data-stu-id="2ae28-113">*DisplayName*: Any display name you have written using the overload of *SubmitUpdatesAsync* that takes a display name string as a parameter.</span></span> <span data-ttu-id="2ae28-114">常にこのフィールドを使用して、ユーザーにわかりやすい名前を格納することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="2ae28-114">We suggest always using this field to store a user-friendly name.</span></span>
-    -   <span data-ttu-id="2ae28-115">*LastModifiedTime*: このコンテナーが最後に変更された時刻。</span><span class="sxs-lookup"><span data-stu-id="2ae28-115">*LastModifiedTime*: The last time this container was modified.</span></span> <span data-ttu-id="2ae28-116">ローカルとリモートのタイムスタンプが競合する場合は、リモートのタイムスタンプが使用されます。</span><span class="sxs-lookup"><span data-stu-id="2ae28-116">Note that in the case of conflicting local and remote timestamps, the remote ones is used.</span></span>
-    -   <span data-ttu-id="2ae28-117">*NeedsSync*: このコンテナーのデータをクラウドからダウンロードする必要があるかどうかを示すブール値。</span><span class="sxs-lookup"><span data-stu-id="2ae28-117">*NeedsSync*: A boolean indicating if this container has data that needs to be downloaded from the cloud.</span></span>
+```cpp
+auto op = ConnectedStorageSpace::GetSyncOnDemandForUserAsync(user);
+op->Completed = ref new AsyncOperationCompletedHandler<ConnectedStorageSpace^>(
+    [=](IAsyncOperation<ConnectedStorageSpace^>^ operation, Windows::Foundation::AsyncStatus status)
+{
+    switch (status)
+    {
+    case Windows::Foundation::AsyncStatus::Completed:
+        auto storageSpace = operation->GetResults();
+        break;
+    case Windows::Foundation::AsyncStatus::Error:
+    case Windows::Foundation::AsyncStatus::Canceled:
+        // Present user option: ?Would you like to continue without saving progress??
+        if (GetUserInputYesOrNo())
+            SetGameState(LoadSaveState::NO_SAVE_MODE);
+        else
+            SetGameState(LoadSaveState::RETRY_LOAD);
+        break;
+    }
+});
+```
 
-    <span data-ttu-id="2ae28-118">この追加のメタデータを使用することで、実際にはクラウドからの完全ダウンロードを実行せずに、セーブ データについての主要な情報 (名前、最後に使用された時刻、選択した場合にダウンロードが必要かどうかなど) をユーザーに表示できます。</span><span class="sxs-lookup"><span data-stu-id="2ae28-118">Using this additional metadata, you can present the user with core information about their game saves (including name, last time used, and whether selecting one will require a download) without actually performing a full download from the cloud.</span></span>
+```csharp
+var users = await Windows.System.User.FindAllAsync();
 
-3.  <span data-ttu-id="2ae28-119">次のいずれかの既存の接続ストレージ API を呼び出すことによって同期をトリガーします。</span><span class="sxs-lookup"><span data-stu-id="2ae28-119">Trigger a sync by calling any of the following existing connected storage API.</span></span>
+GameSaveProvider gameSaveProvider;
 
-    -   *<span data-ttu-id="2ae28-120">BlobInfoQueryResult::GetBlobInfoAsync</span><span class="sxs-lookup"><span data-stu-id="2ae28-120">BlobInfoQueryResult::GetBlobInfoAsync</span></span>*
-    -   *<span data-ttu-id="2ae28-121">BlobInfoQueryResult::GetItemCountAsync</span><span class="sxs-lookup"><span data-stu-id="2ae28-121">BlobInfoQueryResult::GetItemCountAsync</span></span>*
-    -   *<span data-ttu-id="2ae28-122">ConnectedStorageContainer::GetAsync</span><span class="sxs-lookup"><span data-stu-id="2ae28-122">ConnectedStorageContainer::GetAsync</span></span>*
-    -   *<span data-ttu-id="2ae28-123">ConnectedStorageContainer::ReadAsync</span><span class="sxs-lookup"><span data-stu-id="2ae28-123">ConnectedStorageContainer::ReadAsync</span></span>*
-    -   *<span data-ttu-id="2ae28-124">ConnectedStorageSpace::DeleteContainerAsync</span><span class="sxs-lookup"><span data-stu-id="2ae28-124">ConnectedStorageSpace::DeleteContainerAsync</span></span>*
+GameSaveProviderGetResult gameSaveTask = await GameSaveProvider.GetSyncOnDemandForUserAsync(users[0], context.AppConfig.ServiceConfigurationId); 
+//Paramaters
+//Windows.System.User user
+//string SCID
 
-    <span data-ttu-id="2ae28-125">これにより、選択したコンテナーのデータがダウンロードされていることを示す通常の同期 UI と進行状況バーがユーザーに表示されます。</span><span class="sxs-lookup"><span data-stu-id="2ae28-125">This will cause the user to see the usual sync UI and progress bar as data from their selected container is downloaded.</span></span> <span data-ttu-id="2ae28-126">選択したコンテナーのデータのみが同期され、その他のコンテナーのデータはダウンロードされません。</span><span class="sxs-lookup"><span data-stu-id="2ae28-126">Note that only data from the selected container is synchronized; data from other containers is not downloaded.</span></span>
+if(gameSaveTask.Status == GameSaveErrorStatus.Ok)
+{
+    gameSaveProvider = gameSaveTask.Value;
+}
+```
 
-    <span data-ttu-id="2ae28-127">オンデマンドによる同期のコンテキストでこれらの API を呼び出すと、それらの操作のすべてで、以下の新しいエラー コードが生成されます。</span><span class="sxs-lookup"><span data-stu-id="2ae28-127">When calling these API in the context of an on demand sync, these operations can all produce the following new error codes:</span></span>
 
-    -   <span data-ttu-id="2ae28-128">*ConnectedStorageErrorStatus::ContainerSyncFailed*: このエラーは、操作が失敗し、コンテナーをクラウドと同期できなかったことを示します。</span><span class="sxs-lookup"><span data-stu-id="2ae28-128">*ConnectedStorageErrorStatus::ContainerSyncFailed*: This error indicates that the operation failed and the container could not be synced with the cloud.</span></span> <span data-ttu-id="2ae28-129">ほとんどの場合、同期に失敗するのはユーザーのネットワークの状態が原因です。</span><span class="sxs-lookup"><span data-stu-id="2ae28-129">The most likely cause is the user's network conditions caused the sync to fail.</span></span> <span data-ttu-id="2ae28-130">その場合、ユーザーはネットワークを調整した後にもう一度やり直すか、または同期を必要としないコンテナーを使用することを選択できます。</span><span class="sxs-lookup"><span data-stu-id="2ae28-130">They may want to try again after they've fixed their network or they may choose to use a container they don't have to sync.</span></span> <span data-ttu-id="2ae28-131">これらのオプションのいずれかを UI で選択できる必要があります。</span><span class="sxs-lookup"><span data-stu-id="2ae28-131">Your UI should allow either of these options.</span></span> <span data-ttu-id="2ae28-132">システム UI の再試行のダイアログ ボックスはユーザーに既に表示されているので、再試行のダイアログ ボックスは必要ありません。</span><span class="sxs-lookup"><span data-stu-id="2ae28-132">No retry dialog is required, since they will have already seen the system UI retry dialog.</span></span>
+### <a name="2--perform-a-container-query-using-getcontainerinfo2async"></a><span data-ttu-id="e433d-111">2: `GetContainerInfo2Async` を使用してコンテナー クエリを実行します。</span><span class="sxs-lookup"><span data-stu-id="e433d-111">2:  Perform a container query using `GetContainerInfo2Async`</span></span>
 
-    -   <span data-ttu-id="2ae28-133">*ConnectedStorageErrorStatus::ContainerNotInSync*: このエラーは、同期されていないコンテナーへの書き込みをタイトルが誤って実行しようとしたことを示します。</span><span class="sxs-lookup"><span data-stu-id="2ae28-133">*ConnectedStorageErrorStatus::ContainerNotInSync*: This error indicates that your title incorrectly tried to write to an unsynced container.</span></span> <span data-ttu-id="2ae28-134">NeedsSync フラグが true に設定されているコンテナーに対して *ConnectedStorageContainer::SubmitUpdates* を呼び出すことはできません。</span><span class="sxs-lookup"><span data-stu-id="2ae28-134">Calling *ConnectedStorageContainer::SubmitUpdates* on a container that has the NeedsSync flag set to true is NOT allowed.</span></span> <span data-ttu-id="2ae28-135">コンテナーに書き込む前に、まず、同期をトリガーするためにそのコンテナーを読み取る必要があります。</span><span class="sxs-lookup"><span data-stu-id="2ae28-135">You must first read a container to trigger a sync before writing to it.</span></span> <span data-ttu-id="2ae28-136">コンテナーの読み取りを行わずにそこに書き込む場合、そのタイトルは、ユーザーの進行状況を失うかもしれないという欠陥を持つ可能性があります。</span><span class="sxs-lookup"><span data-stu-id="2ae28-136">If you write to a container without reading from it, it is likely your title has a bug where you could lose user progress.</span></span>
+<span data-ttu-id="e433d-112">これにより、3 つの新しいメタデータ フィールドを含む `ContainerInfo2` のコレクションが返されます。</span><span class="sxs-lookup"><span data-stu-id="e433d-112">This will return a collection of `ContainerInfo2`, which contains 3 new metadata fields:</span></span>
 
-        <span data-ttu-id="2ae28-137">この動作は、ユーザーがオフラインでプレイする場合とは異なります。</span><span class="sxs-lookup"><span data-stu-id="2ae28-137">This behavior is different from when a user plays offline.</span></span> <span data-ttu-id="2ae28-138">オフライン時は、コンテナーが同期されているかどうかは示されないので、後で競合を解決するのはユーザーの責任となります。</span><span class="sxs-lookup"><span data-stu-id="2ae28-138">While offline, there is no indication of whether containers are synchronized, so it is up to the user to resolve any conflicts at a later time.</span></span> <span data-ttu-id="2ae28-139">ただし、この場合、システムはユーザーが同期を必要としていることを把握しているので、ユーザーが古いコンテナーを使用して間違った状態にすることは許可されません (ただし、ユーザーが希望する場合は、タイトルを再起動してオフラインでプレイすることもできます)。</span><span class="sxs-lookup"><span data-stu-id="2ae28-139">In this case, however, the system knows the user needs to sync, so it will not allow them to get into a bad state by using an out-of-date container (though if they desire, they can still restart the title and play it offline).</span></span>
+    -   `DisplayName`<span data-ttu-id="e433d-113">: 表示名の文字列をパラメーターとして受け取る `SubmitUpdatesAsync` のオーバーロードを使用して作成した表示名。</span><span class="sxs-lookup"><span data-stu-id="e433d-113">: Any display name you have written using the overload of `SubmitUpdatesAsync` that takes a display name string as a parameter.</span></span> <span data-ttu-id="e433d-114">常にこのフィールドを使用して、ユーザーにわかりやすい名前を格納することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="e433d-114">We suggest always using this field to store a user-friendly name.</span></span>
+    -   `LastModifiedTime`<span data-ttu-id="e433d-115">: このコンテナーが最後に変更された時刻。</span><span class="sxs-lookup"><span data-stu-id="e433d-115">: The last time this container was modified.</span></span> <span data-ttu-id="e433d-116">ローカルとリモートのタイムスタンプが競合する場合は、リモートのタイムスタンプが使用されます。</span><span class="sxs-lookup"><span data-stu-id="e433d-116">Note that in the case of conflicting local and remote timestamps, the remote ones is used.</span></span>
+    -   `NeedsSync`<span data-ttu-id="e433d-117">: このコンテナーのデータをクラウドからダウンロードする必要があるかどうかを示すブール値。</span><span class="sxs-lookup"><span data-stu-id="e433d-117">: A boolean indicating if this container has data that needs to be downloaded from the cloud.</span></span>
 
-4.  <span data-ttu-id="2ae28-140">接続ストレージ API の残り部分を通常どおりに使用します。</span><span class="sxs-lookup"><span data-stu-id="2ae28-140">Use the rest of the connected storage API as normal.</span></span> <span data-ttu-id="2ae28-141">その動作は、オンデマンドで同期するときもそのままです。</span><span class="sxs-lookup"><span data-stu-id="2ae28-141">Its behavior remains unchanged when synchronizing on demand.</span></span>
+    <span data-ttu-id="e433d-118">この追加のメタデータを使用することで、実際にはクラウドからの完全ダウンロードを実行せずに、セーブ データについての主要な情報 (名前、最後に使用された時刻、選択した場合にダウンロードが必要かどうかなど) をユーザーに表示できます。</span><span class="sxs-lookup"><span data-stu-id="e433d-118">Using this additional metadata, you can present the user with core information about their game saves (including name, last time used, and whether selecting one will require a download) without actually performing a full download from the cloud.</span></span>
+
+```cpp
+auto containerQuery = storageSpace->CreateContainerInfoQuery(nullptr); //return list of containers in ConnectedStorageSpace
+auto queryOperation = containerQuery->GetContainerInfo2Async();
+
+queryOperation->Completed = ref new AsyncOperationCompletedHandler<IVectorView<ContainerInfo2>^ >( 
+    [=] (IAsyncOperation<IVectorView<ContainerInfo2>^ >^ operation, Windows::Foundation::AsyncStatus status)
+    {
+        switch (status)
+        {
+        case Windows::Foundation::AsyncStatus::Completed:
+            // get the resulting vector of container info
+            auto infoVector = operation->GetResults();
+            break;
+        case Windows::Foundation::AsyncStatus::Error:
+        case Windows::Foundation::AsyncStatus::Canceled:
+            // handle error cases
+            break;
+        }
+    });
+```
+
+```csharp
+GameSaveContainerInfoQuery infoQuery = gameSaveProvider.createContainerInfoQuery();
+GameSaveContainerInfoGetResult containerInfoResult = await infoQuery.GetContainerInfoAsync();
+var containerInfoList;
+
+if(containerInfoResult.Status == GameSaveErrorStatus.Ok)
+{
+    containerInfoList = containerInfoResult.value;
+}
+
+// Use the containerInfoList to inform further actions or display container data to user. 
+```
+
+### <a name="3--trigger-a-sync"></a><span data-ttu-id="e433d-119">3: 同期トリガー</span><span class="sxs-lookup"><span data-stu-id="e433d-119">3:  Trigger a sync</span></span>
+
+<span data-ttu-id="e433d-120">接続ストレージの同期は、次のいずれかの既存の接続ストレージ API を呼び出すことによってトリガーされます。</span><span class="sxs-lookup"><span data-stu-id="e433d-120">A Connected Storage synce will be triggered by calling any of the following existing connected storage API:</span></span>
+
+**<span data-ttu-id="e433d-121">C++</span><span class="sxs-lookup"><span data-stu-id="e433d-121">C++</span></span>**
+
+    -   <span data-ttu-id="e433d-122">BlobInfoQueryResult::GetBlobInfoAsync</span><span class="sxs-lookup"><span data-stu-id="e433d-122">BlobInfoQueryResult::GetBlobInfoAsync</span></span>
+    -   <span data-ttu-id="e433d-123">BlobInfoQueryResult::GetItemCountAsync</span><span class="sxs-lookup"><span data-stu-id="e433d-123">BlobInfoQueryResult::GetItemCountAsync</span></span>
+    -   <span data-ttu-id="e433d-124">ConnectedStorageContainer::GetAsync</span><span class="sxs-lookup"><span data-stu-id="e433d-124">ConnectedStorageContainer::GetAsync</span></span>
+    -   <span data-ttu-id="e433d-125">ConnectedStorageContainer::ReadAsync</span><span class="sxs-lookup"><span data-stu-id="e433d-125">ConnectedStorageContainer::ReadAsync</span></span>
+    -   <span data-ttu-id="e433d-126">ConnectedStorageSpace::DeleteContainerAsync</span><span class="sxs-lookup"><span data-stu-id="e433d-126">ConnectedStorageSpace::DeleteContainerAsync</span></span>
+
+**<span data-ttu-id="e433d-127">C#</span><span class="sxs-lookup"><span data-stu-id="e433d-127">C#</span></span>**
+
+    -   <span data-ttu-id="e433d-128">GameSaveBlobInfoQuery.GetBlobInfoAsync</span><span class="sxs-lookup"><span data-stu-id="e433d-128">GameSaveBlobInfoQuery.GetBlobInfoAsync</span></span>
+    -   <span data-ttu-id="e433d-129">GameSaveBlobInfoQuery.GetItemCountAsync</span><span class="sxs-lookup"><span data-stu-id="e433d-129">GameSaveBlobInfoQuery.GetItemCountAsync</span></span>
+    -   <span data-ttu-id="e433d-130">GameSaveContainer.GetAsync</span><span class="sxs-lookup"><span data-stu-id="e433d-130">GameSaveContainer.GetAsync</span></span>
+    -   <span data-ttu-id="e433d-131">GameSaveContainer.ReadAsync</span><span class="sxs-lookup"><span data-stu-id="e433d-131">GameSaveContainer.ReadAsync</span></span>
+    -   <span data-ttu-id="e433d-132">GameSaveProvider.DeleteContainerAsync</span><span class="sxs-lookup"><span data-stu-id="e433d-132">GameSaveProvider.DeleteContainerAsync</span></span>
+
+<span data-ttu-id="e433d-133">これにより、選択したコンテナーのデータがダウンロードされていることを示す通常の同期 UI と進行状況バーがユーザーに表示されます。</span><span class="sxs-lookup"><span data-stu-id="e433d-133">This will cause the user to see the usual sync UI and progress bar as data from their selected container is downloaded.</span></span> <span data-ttu-id="e433d-134">選択したコンテナーのデータのみが同期され、その他のコンテナーのデータはダウンロードされません。</span><span class="sxs-lookup"><span data-stu-id="e433d-134">Note that only data from the selected container is synchronized; data from other containers is not downloaded.</span></span>
+
+<span data-ttu-id="e433d-135">オンデマンドによる同期のコンテキストでこれらの API を呼び出すと、それらの操作のすべてで、以下の新しいエラー コードが生成されます。</span><span class="sxs-lookup"><span data-stu-id="e433d-135">When calling these API in the context of an on demand sync, these operations can all produce the following new error codes:</span></span>
+
+-   `ConnectedStorageErrorStatus::ContainerSyncFailed`<span data-ttu-id="e433d-136">(UWP C# API の `GameSaveErrorStatus.ContainerSyncFailed`): このエラーは、操作が失敗し、コンテナーをクラウドと同期できなかったことを示します。</span><span class="sxs-lookup"><span data-stu-id="e433d-136">(`GameSaveErrorStatus.ContainerSyncFailed` in UWP C# API): This error indicates that the operation failed and the container could not be synced with the cloud.</span></span> <span data-ttu-id="e433d-137">ほとんどの場合、同期に失敗するのはユーザーのネットワークの状態が原因です。</span><span class="sxs-lookup"><span data-stu-id="e433d-137">The most likely cause is the user's network conditions caused the sync to fail.</span></span> <span data-ttu-id="e433d-138">その場合、ユーザーはネットワークを調整した後にもう一度やり直すか、または同期を必要としないコンテナーを使用することを選択できます。これらのオプションのいずれかを UI で選択できる必要があります。</span><span class="sxs-lookup"><span data-stu-id="e433d-138">They may want to try again after they've fixed their network or they may choose to use a container they don't have to sync. Your UI should allow either of these options.</span></span> <span data-ttu-id="e433d-139">システム UI の再試行のダイアログ ボックスはユーザーに既に表示されているので、再試行のダイアログ ボックスは必要ありません。</span><span class="sxs-lookup"><span data-stu-id="e433d-139">No retry dialog is required, since they will have already seen the system UI retry dialog.</span></span>
+
+-   `ConnectedStorageErrorStatus::ContainerNotInSync`<span data-ttu-id="e433d-140">(UWP C# API の `GameSaveErrorStatus.ContainerNotInSync`): このエラーは、同期されていないコンテナーへの書き込みをタイトルが誤って実行しようとしたことを示します。</span><span class="sxs-lookup"><span data-stu-id="e433d-140">(`GameSaveErrorStatus.ContainerNotInSync` in UWP C# API): This error indicates that your title incorrectly tried to write to an unsynced container.</span></span> <span data-ttu-id="e433d-141">NeedsSync フラグが true に設定されているコンテナーに対して `ConnectedStorageContainer::SubmitUpdatesAsync`(UWP C# API の `GameSaveContainer.SubmitUpdatesAsync`) を呼び出すことはできません。</span><span class="sxs-lookup"><span data-stu-id="e433d-141">Calling `ConnectedStorageContainer::SubmitUpdatesAsync`(`GameSaveContainer.SubmitUpdatesAsync` in UWP C# API) on a container that has the NeedsSync flag set to true is NOT allowed.</span></span> <span data-ttu-id="e433d-142">コンテナーに書き込む前に、まず、同期をトリガーするためにそのコンテナーを読み取る必要があります。</span><span class="sxs-lookup"><span data-stu-id="e433d-142">You must first read a container to trigger a sync before writing to it.</span></span> <span data-ttu-id="e433d-143">コンテナーの読み取りを行わずにそこに書き込む場合、そのタイトルは、ユーザーの進行状況を失うかもしれないという欠陥を持つ可能性があります。</span><span class="sxs-lookup"><span data-stu-id="e433d-143">If you write to a container without reading from it, it is likely your title has a bug where you could lose user progress.</span></span>
+
+<span data-ttu-id="e433d-144">この動作は、ユーザーがオフラインでプレイする場合とは異なります。</span><span class="sxs-lookup"><span data-stu-id="e433d-144">This behavior is different from when a user plays offline.</span></span> <span data-ttu-id="e433d-145">オフライン時は、コンテナーが同期されているかどうかは示されないので、後で競合を解決するのはユーザーの責任となります。</span><span class="sxs-lookup"><span data-stu-id="e433d-145">While offline, there is no indication of whether containers are synchronized, so it is up to the user to resolve any conflicts at a later time.</span></span> <span data-ttu-id="e433d-146">ただし、この場合、システムはユーザーが同期を必要としていることを把握しているので、ユーザーが古いコンテナーを使用して間違った状態にすることは許可されません (ただし、ユーザーが希望する場合は、タイトルを再起動してオフラインでプレイすることもできます)。</span><span class="sxs-lookup"><span data-stu-id="e433d-146">In this case, however, the system knows the user needs to sync, so it will not allow them to get into a bad state by using an out-of-date container (though if they desire, they can still restart the title and play it offline).</span></span>
+
+### <a name="4--use-the-rest-of-the-connected-storage-api-as-normal"></a><span data-ttu-id="e433d-147">4: 接続ストレージ API の残り部分を通常どおりに使用します。</span><span class="sxs-lookup"><span data-stu-id="e433d-147">4:  Use the rest of the connected storage API as normal</span></span>
+
+<span data-ttu-id="e433d-148">接続ストレージの動作は、オンデマンドで同期するときもそのままです。</span><span class="sxs-lookup"><span data-stu-id="e433d-148">Connected Storage behavior remains unchanged when synchronizing on demand.</span></span>
