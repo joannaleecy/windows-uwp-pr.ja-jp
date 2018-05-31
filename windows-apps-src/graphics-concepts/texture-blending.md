@@ -1,53 +1,54 @@
 ---
-title: "テクスチャ ブレンド"
-description: "Direct3D では、1 つのパスでプリミティブに 8 個までのテクスチャをブレンドできます。"
+title: テクスチャ ブレンド
+description: Direct3D では、1 つのパスでプリミティブに 8 個までのテクスチャをブレンドできます。
 ms.assetid: 9AD388FA-B2B9-44A9-B73E-EDBD7357ACFB
 keywords:
-- "テクスチャ ブレンド"
-author: PeterTurcan
-ms.author: pettur
+- テクスチャ ブレンド
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 363adc6537fe2c8421f938dbeee7735c9d336771
-ms.lasthandoff: 02/07/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: f1014ed205c5cf0eda2c9b71c8406a98394b1463
+ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/15/2018
+ms.locfileid: "1652901"
 ---
-
-# <a name="texture-blending"></a>テクスチャ ブレンド
-
-
-Direct3D では、1 つのパスでプリミティブに 8 個までのテクスチャをブレンドできます。 複数のテクスチャ ブレンドを使うと、Direct3D アプリケーションのフレーム レートが大幅に増えることがあります。 アプリケーションは複数のテクスチャを使って、テクスチャ、シャドウ、鏡面反射、拡散光、およびその他の特殊効果を 1 つのパスで適用します。
-
-テクスチャ ブレンドを使用するには、最初にアプリケーションでユーザーのハードウェアがテクスチャ ブレンドをサポートしているかどうかを確認する必要があります。
-
-## <a name="span-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespantexture-stages-and-the-texture-blending-cascade"></a><span id="Texture-Stages-and-the-Texture-Blending-Cascade"></span><span id="texture-stages-and-the-texture-blending-cascade"></span><span id="TEXTURE-STAGES-AND-THE-TEXTURE-BLENDING-CASCADE"></span>テクスチャ ステージとテクスチャ ブレンディング カスケード
+# <a name="texture-blending"></a><span data-ttu-id="dfef9-104">テクスチャ ブレンド</span><span class="sxs-lookup"><span data-stu-id="dfef9-104">Texture blending</span></span>
 
 
-Direct3D では、テクスチャ ステージの使用によって、単一パスでの複数のテクスチャ ブレンドがサポートされます。 テクスチャ ステージは 2 つの引数を受け取り、それらに対してブレンド処理を実行して、その後の処理またはラスター化に結果を渡します。 テクスチャ ステージを具体的に表すと、次の図のようになります。
+<span data-ttu-id="dfef9-105">Direct3D では、1 つのパスでプリミティブに 8 個までのテクスチャをブレンドできます。</span><span class="sxs-lookup"><span data-stu-id="dfef9-105">Direct3D can blend as many as eight textures onto primitives in a single pass.</span></span> <span data-ttu-id="dfef9-106">複数のテクスチャ ブレンドを使うと、Direct3D アプリケーションのフレーム レートが大幅に増えることがあります。</span><span class="sxs-lookup"><span data-stu-id="dfef9-106">The use of multiple texture blending can profoundly increase the frame rate of a Direct3D application.</span></span> <span data-ttu-id="dfef9-107">アプリケーションは複数のテクスチャを使って、テクスチャ、シャドウ、鏡面反射、拡散光、およびその他の特殊効果を 1 つのパスで適用します。</span><span class="sxs-lookup"><span data-stu-id="dfef9-107">An application employs multiple texture blending to apply textures, shadows, specular lighting, diffuse lighting, and other special effects in a single pass.</span></span>
+
+<span data-ttu-id="dfef9-108">テクスチャ ブレンドを使用するには、最初にアプリケーションでユーザーのハードウェアがテクスチャ ブレンドをサポートしているかどうかを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="dfef9-108">To use texture blending, your application should first check if the user's hardware supports it.</span></span>
+
+## <a name="span-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespantexture-stages-and-the-texture-blending-cascade"></a><span data-ttu-id="dfef9-109"><span id="Texture-Stages-and-the-Texture-Blending-Cascade"></span><span id="texture-stages-and-the-texture-blending-cascade"></span><span id="TEXTURE-STAGES-AND-THE-TEXTURE-BLENDING-CASCADE"></span>テクスチャ ステージとテクスチャ ブレンディング カスケード</span><span class="sxs-lookup"><span data-stu-id="dfef9-109"><span id="Texture-Stages-and-the-Texture-Blending-Cascade"></span><span id="texture-stages-and-the-texture-blending-cascade"></span><span id="TEXTURE-STAGES-AND-THE-TEXTURE-BLENDING-CASCADE"></span>Texture stages and the texture blending cascade</span></span>
+
+
+<span data-ttu-id="dfef9-110">Direct3D では、テクスチャ ステージの使用によって、単一パスでの複数のテクスチャ ブレンドがサポートされます。</span><span class="sxs-lookup"><span data-stu-id="dfef9-110">Direct3D supports single-pass multiple texture blending through the use of texture stages.</span></span> <span data-ttu-id="dfef9-111">テクスチャ ステージは 2 つの引数を受け取り、それらに対してブレンド処理を実行して、その後の処理またはラスター化に結果を渡します。</span><span class="sxs-lookup"><span data-stu-id="dfef9-111">A texture stage takes two arguments and performs a blending operation on them, passing on the result for further processing or for rasterization.</span></span> <span data-ttu-id="dfef9-112">テクスチャ ステージを具体的に表すと、次の図のようになります。</span><span class="sxs-lookup"><span data-stu-id="dfef9-112">You can visualize a texture stage as shown in the following diagram.</span></span>
 
 ![テクスチャ ステージの図](images/texstg.png)
 
-上の図のように、テクスチャ ステージは、指定された演算子を使用して、2 つの引数をブレンドします。 一般的な演算には、引数のカラーまたはアルファ成分の単純な乗算や加算がありますが、実際にサポートされている演算は 24 を超えます。 ステージの引数には、関連付けられたテクスチャ、反復処理されるカラーまたはアルファ (グーロー シェーディング時に反復処理)、任意のカラーとアルファ、以前のテクスチャ ステージの結果などがあります。
+<span data-ttu-id="dfef9-114">上の図のように、テクスチャ ステージは、指定された演算子を使用して、2 つの引数をブレンドします。</span><span class="sxs-lookup"><span data-stu-id="dfef9-114">As the preceding diagram shows, texture stages blend two arguments by using a specified operator.</span></span> <span data-ttu-id="dfef9-115">一般的な演算には、引数のカラーまたはアルファ成分の単純な乗算や加算がありますが、実際にサポートされている演算は 24 を超えます。</span><span class="sxs-lookup"><span data-stu-id="dfef9-115">Common operations include simple modulation or addition of the color or alpha components of the arguments, but more than two dozen operations are supported.</span></span> <span data-ttu-id="dfef9-116">ステージの引数には、関連付けられたテクスチャ、反復処理されるカラーまたはアルファ (グーロー シェーディング時に反復処理)、任意のカラーとアルファ、以前のテクスチャ ステージの結果などがあります。</span><span class="sxs-lookup"><span data-stu-id="dfef9-116">The arguments for a stage can be an associated texture, the iterated color or alpha (iterated during Gouraud shading), arbitrary color and alpha, or the result from the previous texture stage.</span></span>
 
-**注**   Direct3D では、カラー ブレンドとアルファ ブレンドは区別されます。 アプリケーションでは、カラーとアルファについて個々にブレンドの演算と引数を設定し、これらの設定の結果は互いに独立しています。
+<span data-ttu-id="dfef9-117">**注**   Direct3D では、カラー ブレンドとアルファ ブレンドは区別されます。</span><span class="sxs-lookup"><span data-stu-id="dfef9-117">**Note**   Direct3D distinguishes color blending from alpha blending.</span></span> <span data-ttu-id="dfef9-118">アプリケーションでは、カラーとアルファについて個々にブレンドの演算と引数を設定し、これらの設定の結果は互いに独立しています。</span><span class="sxs-lookup"><span data-stu-id="dfef9-118">Applications set blending operations and arguments for color and alpha individually, and the results of those settings are independent of one another.</span></span>
 
  
 
-複数のブレンド ステージで、引数と演算を組み合わせて使用することによって、単純なフローベースのブレンド言語を定義できます。 1 つのステージの結果は別のステージに移行し、さらにそのステージから次のステージに移行します。 その後も同様に続きます。結果が、ステージからステージに渡され、最終的にポリゴンでラスター化される概念を、一般にテクスチャ ブレンディング カスケードと呼びます。 次の図は、個々のテクスチャ ステージがテクスチャ ブレンディング カスケードを構成しているようすを示しています。
+<span data-ttu-id="dfef9-119">複数のブレンド ステージで、引数と演算を組み合わせて使用することによって、単純なフローベースのブレンド言語を定義できます。</span><span class="sxs-lookup"><span data-stu-id="dfef9-119">The combination of arguments and operations used by multiple blending stages define a simple flow-based blending language.</span></span> <span data-ttu-id="dfef9-120">1 つのステージの結果は別のステージに移行し、さらにそのステージから次のステージに移行します。</span><span class="sxs-lookup"><span data-stu-id="dfef9-120">The results from one stage flow down to another stage, from that stage to the next, and so on.</span></span> <span data-ttu-id="dfef9-121">その後も同様に続きます。結果が、ステージからステージに渡され、最終的にポリゴンでラスター化される概念を、一般にテクスチャ ブレンディング カスケードと呼びます。</span><span class="sxs-lookup"><span data-stu-id="dfef9-121">The concept of results flowing from stage to stage to eventually be rasterized on a polygon is often called the texture blending cascade.</span></span> <span data-ttu-id="dfef9-122">次の図は、個々のテクスチャ ステージがテクスチャ ブレンディング カスケードを構成しているようすを示しています。</span><span class="sxs-lookup"><span data-stu-id="dfef9-122">The following diagram shows how individual texture stages make up the texture blending cascade.</span></span>
 
 ![テクスチャ ブレンディング カスケードのテクスチャ ステージの図](images/tcascade.png)
 
-デバイス内の各ステージには、ゼロから始まるインデックスがあります。 Direct3D では、最大 8 つのブレンド ステージを使用することができますが、必ずデバイスの能力をチェックして、現在のハードウェアでサポートされるステージの数を確認する必要があります。 最初のブレンド ステージはインデックス 0 にあり、2 番目のブレンド ステージはインデックス 1 にあり、その後、インデックス 7 まで同様に続きます。 システムは、インデックスの昇順でステージをブレンドします。
+<span data-ttu-id="dfef9-124">デバイス内の各ステージには、ゼロから始まるインデックスがあります。</span><span class="sxs-lookup"><span data-stu-id="dfef9-124">Each stage in a device has a zero-based index.</span></span> <span data-ttu-id="dfef9-125">Direct3D では、最大 8 つのブレンド ステージを使用することができますが、必ずデバイスの能力をチェックして、現在のハードウェアでサポートされるステージの数を確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="dfef9-125">Direct3D allows up to eight blending stages, although you should always check device capabilities to determine how many stages the current hardware supports.</span></span> <span data-ttu-id="dfef9-126">最初のブレンド ステージはインデックス 0 にあり、2 番目のブレンド ステージはインデックス 1 にあり、その後、インデックス 7 まで同様に続きます。</span><span class="sxs-lookup"><span data-stu-id="dfef9-126">The first blending stage is at index 0, the second is at 1, and so on, up to index 7.</span></span> <span data-ttu-id="dfef9-127">システムは、インデックスの昇順でステージをブレンドします。</span><span class="sxs-lookup"><span data-stu-id="dfef9-127">The system blends stages in increasing index order.</span></span>
 
-ステージは必要な数だけ使用してください。未使用のブレンド ステージは既定で無効になります。 つまり、アプリケーションで最初の 2 つのステージのみを使用する場合、演算と引数の設定が必要なのは、ステージ 0 と 1 のみです。 システムでは 2 つのステージがブレンドされ、無効なステージは無視されます。
+<span data-ttu-id="dfef9-128">ステージは必要な数だけ使用してください。未使用のブレンド ステージは既定で無効になります。</span><span class="sxs-lookup"><span data-stu-id="dfef9-128">Use only the number of stages you need; the unused blending stages are disabled by default.</span></span> <span data-ttu-id="dfef9-129">つまり、アプリケーションで最初の 2 つのステージのみを使用する場合、演算と引数の設定が必要なのは、ステージ 0 と 1 のみです。</span><span class="sxs-lookup"><span data-stu-id="dfef9-129">So, if your application only uses the first two stages, it need only set operations and arguments for stage 0 and 1.</span></span> <span data-ttu-id="dfef9-130">システムでは 2 つのステージがブレンドされ、無効なステージは無視されます。</span><span class="sxs-lookup"><span data-stu-id="dfef9-130">The system blends the two stages, and ignores the disabled stages.</span></span>
 
-4 つのステージを使用するオブジェクトや、2 つのステージのみを使用するオブジェクトなど、状況に応じてアプリケーションで使用するステージの数が変わる場合は、以前に使用したすべてのステージを明示的に無効にする必要はありません。 1 つのオプションとして、最初の未使用のステージについてカラー処理を無効にすると、それよりもインデックスが大きいステージはすべて適用されなくなります。 別のオプションとして、最初のテクスチャ ステージ (ステージ 0) のカラー処理を無効な状態に設定すると、テクスチャ マッピングをまとめて無効にすることができます。
+<span data-ttu-id="dfef9-131">4 つのステージを使用するオブジェクトや、2 つのステージのみを使用するオブジェクトなど、状況に応じてアプリケーションで使用するステージの数が変わる場合は、以前に使用したすべてのステージを明示的に無効にする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="dfef9-131">If your application varies the number of stages it uses for different situations - such as four stages for some objects, and only two for others - you don't need to explicitly disable all previously used stages.</span></span> <span data-ttu-id="dfef9-132">1 つのオプションとして、最初の未使用のステージについてカラー処理を無効にすると、それよりもインデックスが大きいステージはすべて適用されなくなります。</span><span class="sxs-lookup"><span data-stu-id="dfef9-132">One option is to disable the color operation for the first unused stage, then all stages with a higher index will not be applied.</span></span> <span data-ttu-id="dfef9-133">別のオプションとして、最初のテクスチャ ステージ (ステージ 0) のカラー処理を無効な状態に設定すると、テクスチャ マッピングをまとめて無効にすることができます。</span><span class="sxs-lookup"><span data-stu-id="dfef9-133">Another option is to disable texture mapping altogether by setting the color operation for the first texture stage (stage 0) to a disabled state.</span></span>
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>このセクションの内容
+## <a name="span-idin-this-sectionspanin-this-section"></a><span data-ttu-id="dfef9-134"><span id="in-this-section"></span>このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="dfef9-134"><span id="in-this-section"></span>In this section</span></span>
 
 
 <table>
@@ -57,33 +58,32 @@ Direct3D では、テクスチャ ステージの使用によって、単一パ�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">トピック</th>
-<th align="left">説明</th>
+<th align="left"><span data-ttu-id="dfef9-135">トピック</span><span class="sxs-lookup"><span data-stu-id="dfef9-135">Topic</span></span></th>
+<th align="left"><span data-ttu-id="dfef9-136">説明</span><span class="sxs-lookup"><span data-stu-id="dfef9-136">Description</span></span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[ブレンド ステージ](blending-stages.md)</p></td>
-<td align="left"><p>ブレンド ステージは、テクスチャ操作のセットと、テクスチャのブレンド方法を定義する引数です。</p></td>
+<td align="left"><p><a href="blending-stages.md"><span data-ttu-id="dfef9-137">ブレンド ステージ</span><span class="sxs-lookup"><span data-stu-id="dfef9-137">Blending stages</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="dfef9-138">ブレンド ステージは、テクスチャ操作のセットと、テクスチャのブレンド方法を定義する引数です。</span><span class="sxs-lookup"><span data-stu-id="dfef9-138">A blending stage is a set of texture operations and their arguments that define how textures are blended.</span></span></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[マルチパス テクスチャ ブレンド](multipass-texture-blending.md)</p></td>
-<td align="left"><p>Direct3D アプリケーションでは、複数のレンダリング パスでさまざまなテクスチャを 1 つのプリミティブに適用することで、多彩な特殊効果を実現することができます。 これを表す一般的な用語が<em>マルチパス テクスチャ ブレンド</em>です。 通常、マルチパス テクスチャ ブレンドは、さまざまなテクスチャから複数のカラーを適用して、複雑なライティング モデルやシェーディング モデルの効果をエミュレートするために使用されます。 このようなアプリケーションを<em>ライト マッピング</em>と呼びます。</p></td>
+<td align="left"><p><a href="multipass-texture-blending.md"><span data-ttu-id="dfef9-139">マルチパス テクスチャ ブレンド</span><span class="sxs-lookup"><span data-stu-id="dfef9-139">Multipass texture blending</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="dfef9-140">Direct3D アプリケーションでは、複数のレンダリング パスでさまざまなテクスチャを 1 つのプリミティブに適用することで、多彩な特殊効果を実現することができます。</span><span class="sxs-lookup"><span data-stu-id="dfef9-140">Direct3D applications can achieve numerous special effects by applying various textures to a primitive over the course of multiple rendering passes.</span></span> <span data-ttu-id="dfef9-141">これを表す一般的な用語が<em>マルチパス テクスチャ ブレンド</em>です。</span><span class="sxs-lookup"><span data-stu-id="dfef9-141">The common term for this is <em>multipass texture blending</em>.</span></span> <span data-ttu-id="dfef9-142">通常、マルチパス テクスチャ ブレンドは、さまざまなテクスチャから複数のカラーを適用して、複雑なライティング モデルやシェーディング モデルの効果をエミュレートするために使用されます。</span><span class="sxs-lookup"><span data-stu-id="dfef9-142">A typical use for multipass texture blending is to emulate the effects of complex lighting and shading models by applying multiple colors from several different textures.</span></span> <span data-ttu-id="dfef9-143">このようなアプリケーションを<em>ライト マッピング</em>と呼びます。</span><span class="sxs-lookup"><span data-stu-id="dfef9-143">One such application is called <em>light mapping</em>.</span></span></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="dfef9-144"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="dfef9-144"><span id="related-topics"></span>Related topics</span></span>
 
 
-[テクスチャ](textures.md)
-
- 
+[<span data-ttu-id="dfef9-145">テクスチャ</span><span class="sxs-lookup"><span data-stu-id="dfef9-145">Textures</span></span>](textures.md)
 
  
 
+ 
 
 
 

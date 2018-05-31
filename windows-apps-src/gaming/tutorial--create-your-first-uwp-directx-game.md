@@ -1,0 +1,79 @@
+---
+author: joannaleecy
+title: DirectX ユニバーサル Windows プラットフォーム (UWP) ゲームの作成
+description: この一連のチュートリアルでは、DirectX と C++ を使って基本的なユニバーサル Windows プラットフォーム (UWP) ゲームを作成する方法を説明します。
+ms.assetid: 9edc5868-38cf-58cc-1fb3-8fb85a7ab2c9
+keywords: DirectX ゲームのサンプル, ゲームのサンプル, ユニバーサル Windows プラットフォーム (UWP), Direct3D 11 ゲーム
+ms.author: joanlee
+ms.date: 12/01/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+ms.localizationpriority: medium
+ms.openlocfilehash: 564f59dfd7b27e3ece1aa6811ac667cd438aae68
+ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/05/2018
+ms.locfileid: "1488976"
+---
+# <a name="create-a-simple-universal-windows-platform-uwp-game-with-directx"></a><span data-ttu-id="67b35-104">DirectX を使った単純なユニバーサル Windows プラットフォーム (UWP) ゲームの作成</span><span class="sxs-lookup"><span data-stu-id="67b35-104">Create a simple Universal Windows Platform (UWP) game with DirectX</span></span>
+
+<span data-ttu-id="67b35-105">この一連のチュートリアルでは、DirectX と C++ を使って基本的なユニバーサル Windows プラットフォーム (UWP) ゲームを作成する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="67b35-105">In this set of tutorials, you learn how to create a basic Universal Windows Platform (UWP) game with DirectX and C++.</span></span> <span data-ttu-id="67b35-106">アートやメッシュなどのアセットの読み込み、主要なゲーム ループの作成、簡易なレンダリング パイプラインの実装、サウンドやコントロールの追加を行うプロセスなど、ゲームの主要な要素すべてについて説明します。</span><span class="sxs-lookup"><span data-stu-id="67b35-106">We cover all the major parts of a game, including the processes for loading assets such as arts and meshes, creating a main game loop, implementing a simple rendering pipeline, and adding sound and controls.</span></span>
+
+<span data-ttu-id="67b35-107">UWP ゲーム開発の手法と考慮事項について説明します。</span><span class="sxs-lookup"><span data-stu-id="67b35-107">We show you the UWP game development techniques and considerations.</span></span> <span data-ttu-id="67b35-108">完全なエンド ツー エンドのゲームを示すのではなく、</span><span class="sxs-lookup"><span data-stu-id="67b35-108">We don't provide a complete end-to-end game.</span></span> <span data-ttu-id="67b35-109">むしろ、UWP DirectX ゲーム開発の主要な概念に焦点を当てて、これらの概念に関係する Windows ランタイム固有の考慮事項を示します。</span><span class="sxs-lookup"><span data-stu-id="67b35-109">Rather, we focus on key UWP DirectX game development concepts, and call out Windows Runtime specific considerations around those concepts.</span></span>
+
+## <a name="objective"></a><span data-ttu-id="67b35-110">目標</span><span class="sxs-lookup"><span data-stu-id="67b35-110">Objective</span></span>
+
+<span data-ttu-id="67b35-111">UWP DirectX ゲームの基本的な概念とコンポーネントを使い、DirectX を使って UWP ゲームをより快適に設計できるようになること。</span><span class="sxs-lookup"><span data-stu-id="67b35-111">To use the basic concepts and components of a UWP DirectX game, and to become more comfortable designing UWP games with DirectX.</span></span>
+
+## <a name="what-you-need-to-know-before-starting"></a><span data-ttu-id="67b35-112">始める前に理解しておく必要があること</span><span class="sxs-lookup"><span data-stu-id="67b35-112">What you need to know before starting</span></span>
+
+
+<span data-ttu-id="67b35-113">説明を始める前に、次の事項について理解しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="67b35-113">Before we get started with this tutorial, you need to be familiar with these subjects.</span></span>
+
+-   <span data-ttu-id="67b35-114">Microsoft C++ Windows ランタイム言語拡張機能 (C++/CX)。</span><span class="sxs-lookup"><span data-stu-id="67b35-114">Microsoft C++ with Windows Runtime Language Extensions (C++/CX).</span></span> <span data-ttu-id="67b35-115">これは自動参照カウントが組み込まれた Microsoft C++ の更新であり、DirectX 11.1 以降のバージョンを使って UWP ゲームを開発するための言語です。</span><span class="sxs-lookup"><span data-stu-id="67b35-115">This is an update to Microsoft C++ that incorporates automatic reference counting, and is the language for developing a UWP games with DirectX 11.1 or later versions.</span></span>
+-   <span data-ttu-id="67b35-116">線形代数およびニュートン物理学の基本的な概念。</span><span class="sxs-lookup"><span data-stu-id="67b35-116">Basic linear algebra and Newtonian physics concepts.</span></span>
+-   <span data-ttu-id="67b35-117">基本的なグラフィックス プログラミング用語。</span><span class="sxs-lookup"><span data-stu-id="67b35-117">Basic graphics programming terminology.</span></span>
+-   <span data-ttu-id="67b35-118">Windows プログラミングの基本的な概念。</span><span class="sxs-lookup"><span data-stu-id="67b35-118">Basic Windows programming concepts.</span></span>
+-   <span data-ttu-id="67b35-119">[Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx) および [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh404569) API に関する基本的な知識。</span><span class="sxs-lookup"><span data-stu-id="67b35-119">Basic familiarity with the [Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx) and [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh404569) APIs.</span></span>
+
+##  <a name="direct3d-uwp-shooting-game-sample"></a><span data-ttu-id="67b35-120">Direct3D UWP シューティング ゲームのサンプル</span><span class="sxs-lookup"><span data-stu-id="67b35-120">Direct3D UWP shooting game sample</span></span>
+
+
+<span data-ttu-id="67b35-121">このサンプルは、プレイヤーが動く標的に弾を撃つ、簡単なファーストパーソン シューティング ギャラリーを実装しています。</span><span class="sxs-lookup"><span data-stu-id="67b35-121">This sample implements a simple first-person shooting gallery, where the player fires balls at moving targets.</span></span> <span data-ttu-id="67b35-122">標的に命中するたびにポイントが与えられ、プレイヤーは難度が上がっていく 6 つのレベルを進むことができます。</span><span class="sxs-lookup"><span data-stu-id="67b35-122">Hitting each target awards a set number of points, and the player can progress through 6 levels of increasing challenge.</span></span> <span data-ttu-id="67b35-123">レベルの最後に、ポイントが集計されて、プレイヤーに最終スコアが与えられます。</span><span class="sxs-lookup"><span data-stu-id="67b35-123">At the end of the levels, the points are tallied, and the player is awarded a final score.</span></span>
+
+<span data-ttu-id="67b35-124">サンプルで示されているゲームの概念は、次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="67b35-124">The sample demonstrates the game concepts:</span></span>
+
+-   <span data-ttu-id="67b35-125">DirectX 11.1 と Windows ランタイムの間の相互運用</span><span class="sxs-lookup"><span data-stu-id="67b35-125">Interoperation between DirectX 11.1 and the Windows Runtime</span></span>
+-   <span data-ttu-id="67b35-126">主観 3D 視点およびカメラ</span><span class="sxs-lookup"><span data-stu-id="67b35-126">A first-person 3D perspective and camera</span></span>
+-   <span data-ttu-id="67b35-127">ステレオスコピック 3D 効果</span><span class="sxs-lookup"><span data-stu-id="67b35-127">Stereoscopic 3D effects</span></span>
+-   <span data-ttu-id="67b35-128">3D でのオブジェクト間の衝突検出</span><span class="sxs-lookup"><span data-stu-id="67b35-128">Collision detection between objects in 3D</span></span>
+-   <span data-ttu-id="67b35-129">マウス、タッチ、Xbox コントローラーからのプレイヤーの入力の処理</span><span class="sxs-lookup"><span data-stu-id="67b35-129">Handling player input for mouse, touch, and Xbox controller controls</span></span>
+-   <span data-ttu-id="67b35-130">オーディオ ミキシングおよび再生</span><span class="sxs-lookup"><span data-stu-id="67b35-130">Audio mixing and playback</span></span>
+-   <span data-ttu-id="67b35-131">基本的なゲームのステート マシン</span><span class="sxs-lookup"><span data-stu-id="67b35-131">A basic game state machine</span></span>
+
+![ゲーム サンプルの動作](images/simple-dx-game-overview.png)
+
+
+| <span data-ttu-id="67b35-133">トピック</span><span class="sxs-lookup"><span data-stu-id="67b35-133">Topic</span></span> | <span data-ttu-id="67b35-134">説明</span><span class="sxs-lookup"><span data-stu-id="67b35-134">Description</span></span> |
+|---------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [<span data-ttu-id="67b35-135">ゲーム プロジェクトのセットアップ</span><span class="sxs-lookup"><span data-stu-id="67b35-135">Set up the game project</span></span>](tutorial--setting-up-the-games-infrastructure.md) | <span data-ttu-id="67b35-136">ゲームを作るための最初の手順は、必要なコード インフラストラクチャ作業の量を最小限に抑えるように Microsoft Visual Studio でプロジェクトを設定することです。</span><span class="sxs-lookup"><span data-stu-id="67b35-136">The first step in assembling your game is to set up a project in Microsoft Visual Studio in such a way that you minimize the amount of code infrastructure work you need to do.</span></span> <span data-ttu-id="67b35-137">適切なテンプレートを使い、ゲーム開発用にプロジェクトを構成することで、時間や手間を大幅に節約できます。</span><span class="sxs-lookup"><span data-stu-id="67b35-137">You can save yourself a lot of time and hassle by using the right template and configuring the project specifically for game development.</span></span> <span data-ttu-id="67b35-138">シンプルなゲーム プロジェクトを設定および構成する手順を紹介します。</span><span class="sxs-lookup"><span data-stu-id="67b35-138">We walk you through the setup and configuration of a simple game project.</span></span> |
+| [<span data-ttu-id="67b35-139">ゲームの UWP アプリ フレームワークの定義</span><span class="sxs-lookup"><span data-stu-id="67b35-139">Define the game's UWP app framework</span></span>](tutorial--building-the-games-uwp-app-framework.md) | <span data-ttu-id="67b35-140">UWP DirectX ゲーム オブジェクトで Windows と対話するためのフレームワークを構築します。</span><span class="sxs-lookup"><span data-stu-id="67b35-140">Build a framework that lets the UWP DirectX game object interact with Windows.</span></span> <span data-ttu-id="67b35-141">これには、中断/再開イベントの処理、ウィンドウのフォーカス、スナップなどの Windows ランタイム プロパティが含まれます。</span><span class="sxs-lookup"><span data-stu-id="67b35-141">This includes Windows Runtime properties like suspend/resume event handling, window focus, and snapping.</span></span>  |
+| [<span data-ttu-id="67b35-142">ゲームのフロー管理</span><span class="sxs-lookup"><span data-stu-id="67b35-142">Game flow management</span></span>](tutorial-game-flow-management.md) | <span data-ttu-id="67b35-143">プレイヤーとシステムとの対話を有効にする高度なステート マシンを定義します。</span><span class="sxs-lookup"><span data-stu-id="67b35-143">Define the high-level state machine to enable player and system interaction.</span></span> <span data-ttu-id="67b35-144">UI で全体的なゲームのステート マシンを操作する方法および UWP ゲーム用のイベント ハンドラーを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="67b35-144">Learn how UI interacts with the overall game's state machine and how to create event handlers for UWP games.</span></span> |
+| [<span data-ttu-id="67b35-145">メイン ゲーム オブジェクトの定義</span><span class="sxs-lookup"><span data-stu-id="67b35-145">Define the main game object</span></span>](tutorial--defining-the-main-game-loop.md) | <span data-ttu-id="67b35-146">ルールを作成することでゲームをプレイする方法を定義します。</span><span class="sxs-lookup"><span data-stu-id="67b35-146">Define how the game is played by creating rules.</span></span> |
+| [<span data-ttu-id="67b35-147">レンダリング フレームワーク I: レンダリングの概要</span><span class="sxs-lookup"><span data-stu-id="67b35-147">Rendering framework I: Intro to rendering</span></span>](tutorial--assembling-the-rendering-pipeline.md) | <span data-ttu-id="67b35-148">グラフィックスを表示するレンダリング フレームワークを作成します。</span><span class="sxs-lookup"><span data-stu-id="67b35-148">Assemble a rendering framework to display graphics.</span></span> <span data-ttu-id="67b35-149">このトピックは 2 部構成となっています。</span><span class="sxs-lookup"><span data-stu-id="67b35-149">This topic is split into two parts.</span></span> <span data-ttu-id="67b35-150">レンダリングの概要では、画面に表示するシーンのオブジェクトを表示する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="67b35-150">Intro to rendering explains how to present the scene objects for display on screen.</span></span> |
+| [<span data-ttu-id="67b35-151">レンダリング フレームワーク II: ゲームのレンダリング</span><span class="sxs-lookup"><span data-stu-id="67b35-151">Rendering framework II: Game rendering</span></span>](tutorial-game-rendering.md) | <span data-ttu-id="67b35-152">レンダリング トピックの第 2 部では、レンダリングが発生する前に必要なデータを準備する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="67b35-152">In the second part of the rendering topic, learn how to prepare the data required before rendering occurs.</span></span> |
+| [<span data-ttu-id="67b35-153">ユーザー インターフェイスの追加</span><span class="sxs-lookup"><span data-stu-id="67b35-153">Add a user interface</span></span>](tutorial--adding-a-user-interface.md) | <span data-ttu-id="67b35-154">単純なメニュー オプションとヘッドアップ ディスプレイ コンポーネントを追加し、プレイヤーにフィードバックを提供します。</span><span class="sxs-lookup"><span data-stu-id="67b35-154">Add simple menu options and heads-up display components, providing feedback to the player.</span></span> |
+| [<span data-ttu-id="67b35-155">コントロールの追加</span><span class="sxs-lookup"><span data-stu-id="67b35-155">Add controls</span></span>](tutorial--adding-controls.md) | <span data-ttu-id="67b35-156">ゲームにムーブ/ルック コントロール (基本的なタッチ、マウス、およびゲーム コントローラーのコントロール) を追加します。</span><span class="sxs-lookup"><span data-stu-id="67b35-156">Add move-look controls into the game &mdash; basic touch, mouse, and game controller controls.</span></span> |
+| [<span data-ttu-id="67b35-157">サウンドの追加</span><span class="sxs-lookup"><span data-stu-id="67b35-157">Add sound</span></span>](tutorial--adding-sound.md) | <span data-ttu-id="67b35-158">[XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) API を使用して、ゲームのサウンドを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="67b35-158">Learn how to create sounds for the game using [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) APIs.</span></span> |
+| [<span data-ttu-id="67b35-159">ゲーム サンプルの紹介</span><span class="sxs-lookup"><span data-stu-id="67b35-159">Extend the game sample</span></span>](tutorial-resources.md) | <span data-ttu-id="67b35-160">XAML を使用したオーバーレイの作成など、DirectX ゲーム開発の知識をさらに深めるためのリソースです。</span><span class="sxs-lookup"><span data-stu-id="67b35-160">Resources to further your knowledge of DirectX game development, includes using XAML to create overlays.</span></span> |
+ 
+
+ 
+
+ 
+
+
+
+

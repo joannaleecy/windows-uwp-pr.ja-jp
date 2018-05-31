@@ -1,27 +1,27 @@
 ---
 author: mtoepke
-title: "OpenGL ES 2.0 から Direct3D 11 への移行のためのリファレンス"
-description: "OpenGL ES 2.0 から Direct3D 11 への移植の際に API マッピングや簡単なコード サンプルを探す場合は、これらのリファレンス トピックをご覧ください。"
+title: OpenGL ES 2.0 から Direct3D 11 への移行のためのリファレンス
+description: OpenGL ES 2.0 から Direct3D 11 への移植の際に API マッピングや簡単なコード サンプルを探す場合は、これらのリファレンス トピックをご覧ください。
 ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, ゲーム, OpenGL, Direct3D 11"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 03d06a7d6df558552be67288909a1dad93369e12
-ms.lasthandoff: 02/07/2017
-
+keywords: Windows 10, UWP, ゲーム, OpenGL, Direct3D 11
+ms.localizationpriority: medium
+ms.openlocfilehash: 6b7642e9bca40c94bf11eac89600500881798069
+ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/15/2018
+ms.locfileid: "1651951"
 ---
+# <a name="opengl-es-20-to-direct3d-11-reference"></a><span data-ttu-id="3d022-104">OpenGL ES 2.0 から Direct3D 11 への移行のためのリファレンス</span><span class="sxs-lookup"><span data-stu-id="3d022-104">OpenGL ES 2.0 to Direct3D 11 reference</span></span>
 
-# <a name="opengl-es-20-to-direct3d-11-reference"></a>OpenGL ES 2.0 から Direct3D 11 への移行のためのリファレンス
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
-
-OpenGL ES 2.0 から Direct3D 11 への移植の際に API マッピングや簡単なコード サンプルを探す場合は、これらのリファレンス トピックをご覧ください。
+<span data-ttu-id="3d022-105">OpenGL ES 2.0 から Direct3D 11 への移植の際に API マッピングや簡単なコード サンプルを探す場合は、これらのリファレンス トピックをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="3d022-105">Use these reference topics to look up API mapping and short code samples when porting from OpenGL ES 2.0 to Direct3D 11.</span></span>
 ## 
 <table>
 <colgroup>
@@ -30,14 +30,14 @@ OpenGL ES 2.0 から Direct3D 11 への移植の際に API マッピングや簡
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">トピック</th>
-<th align="left">説明</th>
+<th align="left"><span data-ttu-id="3d022-106">トピック</span><span class="sxs-lookup"><span data-stu-id="3d022-106">Topic</span></span></th>
+<th align="left"><span data-ttu-id="3d022-107">説明</span><span class="sxs-lookup"><span data-stu-id="3d022-107">Description</span></span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[GLSL と HLSL の対応を示すリファレンス](glsl-to-hlsl-reference.md)</p></td>
-<td align="left"><p>[グラフィックス アーキテクチャを OpenGL ES 2.0 から Direct3D 11 に移植して](port-from-opengl-es-2-0-to-directx-11-1.md)ユニバーサル Windows プラットフォーム (UWP) 向けのゲームを作成する際は、OpenGL シェーダー言語 (GLSL) コードを Microsoft 上位レベル シェーダー言語 (HLSL) コードに移植します。</p></td>
+<td align="left"><p><a href="glsl-to-hlsl-reference.md"><span data-ttu-id="3d022-108">GLSL と HLSL の対応を示すリファレンス</span><span class="sxs-lookup"><span data-stu-id="3d022-108">GLSL-to-HLSL reference</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="3d022-109"><a href="port-from-opengl-es-2-0-to-directx-11-1.md">グラフィックス アーキテクチャを OpenGL ES 2.0 から Direct3D 11 に移植して</a>ユニバーサル Windows プラットフォーム (UWP) 向けのゲームを作成する際は、OpenGL シェーダー言語 (GLSL) コードを Microsoft 上位レベル シェーダー言語 (HLSL) コードに移植します。</span><span class="sxs-lookup"><span data-stu-id="3d022-109">You port your OpenGL Shader Language (GLSL) code to Microsoft High Level Shader Language (HLSL) code when you <a href="port-from-opengl-es-2-0-to-directx-11-1.md">port your graphics architecture from OpenGL ES 2.0 to Direct3D 11</a> to create a game for Universal Windows Platform (UWP).</span></span></p></td>
 </tr>
 </tbody>
 </table>
@@ -47,7 +47,6 @@ OpenGL ES 2.0 から Direct3D 11 への移植の際に API マッピングや簡
  
 
  
-
 
 
 

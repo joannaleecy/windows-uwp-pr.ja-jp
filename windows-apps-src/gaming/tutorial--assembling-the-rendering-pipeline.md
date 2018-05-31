@@ -1,2182 +1,239 @@
 ---
-author: mtoepke
-title: "レンダリング フレームワークの作成"
-description: "次に、作成した構造と状態をサンプル ゲームで使ってグラフィックスを表示する方法を見てみましょう。"
+author: joannaleecy
+title: レンダリングの概要
+description: グラフィックスを表示するレンダリング パイプラインをアセンブルする方法について説明します。 レンダリングの概要。
 ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
-ms.author: mtoepke
-ms.date: 02/08/2017
+ms.author: joanlee
+ms.date: 10/24/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, ゲーム, レンダリング"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7b97a70094c953e9614a84979c9f98fc91a82451
-ms.lasthandoff: 02/07/2017
-
+keywords: Windows 10, UWP, ゲーム, レンダリング
+ms.localizationpriority: medium
+ms.openlocfilehash: 450f95e68c85a325e43127df90ffeddbaa850afa
+ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/05/2018
+ms.locfileid: "1488866"
 ---
+# <a name="rendering-framework-i-intro-to-rendering"></a><span data-ttu-id="a6d74-105">レンダリング フレームワーク I: レンダリングの概要</span><span class="sxs-lookup"><span data-stu-id="a6d74-105">Rendering framework I: Intro to rendering</span></span>
 
-# <a name="assemble-the-rendering-framework"></a>レンダリング フレームワークの作成
+<span data-ttu-id="a6d74-106">これまでのトピックでは、Windows ランタイムで動作するユニバーサル Windows プラットフォーム (UWP) ゲームを構築する方法、ステート マシンを定義してゲームのフローを処理する方法について説明してきました。</span><span class="sxs-lookup"><span data-stu-id="a6d74-106">We've covered how to structure a Universal Windows Platform (UWP) game and how to define a state machine to handle the flow of the game in the earlier topics.</span></span> <span data-ttu-id="a6d74-107">ここでは、レンダリング フレームワークをアセンブルする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-107">Now, it's time to learn how to assemble the rendering framework.</span></span> <span data-ttu-id="a6d74-108">サンプル ゲームで Direct3D 11 (通常は DirectX 11 と呼ばれます) を使用して、ゲームのシーンをレンダリングする方法を見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="a6d74-108">Let's look at how the sample game renders the game scene using Direct3D 11 (commonly known as DirectX 11).</span></span>
 
+>[!Note]
+><span data-ttu-id="a6d74-109">このサンプルの最新ゲーム コードをダウンロードしていない場合は、[Direct3D ゲーム サンプルのページ](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)に移動してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-109">If you haven't downloaded the latest game code for this sample, go to [Direct3D game sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX).</span></span> <span data-ttu-id="a6d74-110">このサンプルは、UWP 機能のサンプルの大規模なコレクションの一部です。</span><span class="sxs-lookup"><span data-stu-id="a6d74-110">This sample is part of a large collection of UWP feature samples.</span></span> <span data-ttu-id="a6d74-111">サンプルをダウンロードする手順については、「[GitHub から UWP のサンプルを取得する](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-111">For instructions on how to download the sample, see [Get the UWP samples from GitHub](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+<span data-ttu-id="a6d74-112">Direct3D 11 には、ゲームなどのグラフィックス負荷の高いアプリケーションの 3D グラフィックスを作成するために使用できる高パフォーマンスのグラフィックス ハードウェアの高度な機能へのアクセスを提供する API のセットが含まれています。</span><span class="sxs-lookup"><span data-stu-id="a6d74-112">Direct3D 11 contains a set of APIs that provide access to the advanced features of high-performance graphic hardware that can be used to create 3D graphics for graphic intensive applications such as games.</span></span>
 
-これまで、Windows ランタイムで動作するユニバーサル Windows プラットフォーム (UWP) ゲームを構築する方法、ステート マシンを定義してゲームのフローを処理する方法について確認してきました。 次に、作成した構造と状態をサンプル ゲームで使ってグラフィックスを表示する方法を見てみましょう。 ここでは、グラフィックス デバイスの初期化からディスプレイへのグラフィックス オブジェクトの表示まで、レンダリング フレームワークの実装方法について見ていきます。
+<span data-ttu-id="a6d74-113">画面上のゲームのグラフィックのレンダリングは、基本的に画面上のフレームのシーケンスのレンダリングです。</span><span class="sxs-lookup"><span data-stu-id="a6d74-113">Rendering game graphics on-screen is basically rendering a sequence of frames on-screen.</span></span> <span data-ttu-id="a6d74-114">各フレームでは、ビューに基づいて、シーンに表示されているオブジェクトをレンダリングする必要があります。</span><span class="sxs-lookup"><span data-stu-id="a6d74-114">In each frame, you have to render objects that are visible in the scene, based on the view.</span></span> 
 
-## <a name="objective"></a>目標
+<span data-ttu-id="a6d74-115">フレームをレンダリングするには、画面に表示できるように、必要なシーンの情報をハードウェアに渡す必要があります。</span><span class="sxs-lookup"><span data-stu-id="a6d74-115">In order to render a frame, you have to pass the required scene information to the hardware so that it can be displayed on the screen.</span></span> <span data-ttu-id="a6d74-116">何かを画面に表示するには、ゲームの実行を開始すると同時にレンダリングを開始する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a6d74-116">If you want to have anything displayed on screen, you need to start rendering as soon as the game starts running.</span></span>
 
+## <a name="objective"></a><span data-ttu-id="a6d74-117">目標</span><span class="sxs-lookup"><span data-stu-id="a6d74-117">Objective</span></span>
 
--   基本的なレンダリング フレームワークを設定して、UWP DirectX ゲームのグラフィックス出力を表示する方法を理解する。
+<span data-ttu-id="a6d74-118">基本的なレンダリング フレームワークを設定して、UWP DirectX ゲームのグラフィックス出力を表示する方法は、大きく次の 3 つの手順にグループ分けすることができます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-118">To set up a basic rendering framework to display the graphics output for a UWP DirectX game, you can loosely group them into these three steps.</span></span>
 
-> **注**   ここでは次のコード ファイルについては説明しませんが、コード ファイルはこのトピックで参照するクラスとメソッドを提供しており、[このトピックの最後でコードとして提供されます](#complete-sample-code-for-this-section)。
--   **Animate.h/.cpp**。
--   **BasicLoader.h/.cpp**。 メッシュ、シェーダー、テクスチャを同期または非同期で読み込むメソッドを提供します。 これは非常に便利です。
--   **MeshObject.h/.cpp**、**SphereMesh.h/.cpp**、**CylinderMesh.h/.cpp**、**FaceMesh.h/.cpp**、**WorldMesh.h/.cpp**。 弾に使う球体、円柱形と円すい状の障害物、シューティング ギャラリーの壁など、ゲームで使うオブジェクト プリミティブの定義が含まれます (**GameObject.cpp**にはこれらのプリミティブをレンダリングするためのメソッドが含まれます。このトピックで簡単に説明します)。
--   **Level.h/.cpp** および **Level\[1-6\].h/.cpp**。 成功のための条件や、ターゲットと障害物の数や位置など、ゲームの 6 つのレベル用の構成が含まれます。
--   **TargetTexture.h/.cpp**。 ターゲットのテクスチャとして使うビットマップを描画するためのメソッドのセットが含まれます。
+ 1. <span data-ttu-id="a6d74-119">グラフィックス インターフェイスへの接続を確立する</span><span class="sxs-lookup"><span data-stu-id="a6d74-119">Establish a connection to the graphics interface</span></span>
+ 2. <span data-ttu-id="a6d74-120">グラフィックスを描画するために必要なリソースを作成する</span><span class="sxs-lookup"><span data-stu-id="a6d74-120">Create the resources needed to draw the graphics</span></span>
+ 3. <span data-ttu-id="a6d74-121">フレームをレンダリングすることによってグラフィックスを表示する</span><span class="sxs-lookup"><span data-stu-id="a6d74-121">Display the graphics by rendering the frame</span></span>
 
-これらのファイルには、UWP DirectX ゲームに固有ではないコードが含まれています。 ただし、実装について詳しく知りたい場合は個別に確認できます。
+<span data-ttu-id="a6d74-122">この記事では、手順 1 と 3 を取り上げて、グラフィックスをレンダリングする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-122">This article explains how graphics are rendered, covering steps 1 and 3.</span></span>
 
- 
+<span data-ttu-id="a6d74-123">「[レンダリング フレームワーク II: ゲームのレンダリング](tutorial-game-rendering.md)」では手順 2 を取り上げて、レンダリング フレームワークを設定する方法と、レンダリングの前にデータを準備する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-123">[Rendering framework II: Game rendering](tutorial-game-rendering.md) covers step 2; how to set up the rendering framework and how data is prepared before rendering can happen.</span></span>
 
-このセクションでは、ゲーム サンプルの 3 つの主要ファイルを取り上げます ([このトピックの最後でコードとして紹介します](#complete-sample-code-for-this-section))。
+## <a name="get-started"></a><span data-ttu-id="a6d74-124">概要</span><span class="sxs-lookup"><span data-stu-id="a6d74-124">Get started</span></span>
 
--   **Camera.h/.cpp**
--   **GameRenderer.h/.cpp**
--   **PrimObject.h/.cpp**
+<span data-ttu-id="a6d74-125">作業を開始する前に、基本的なグラフィックスとレンダリングの概念を理解しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="a6d74-125">Before you begin, you should familiarize yourself with the basic graphics and rendering concepts.</span></span> <span data-ttu-id="a6d74-126">Direct3D とレンダリングを使用して初めて開発を行う場合は、この記事で使用するグラフィックスとレンダリング用語の簡単な説明については、「[用語と概念](#terms-and-concepts)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-126">If you're new to Direct3D and rendering, see [Terms and concepts](#terms-and-concepts) for a brief description of the graphics and rendering terms used in this article.</span></span>
 
-繰り返しになりますが、メッシュ、頂点、テクスチャなどの 3D プログラミングの基本的な概念を理解しているものとします。 Direct3D 11 のプログラミング全般について詳しくは、「[Direct 3D 11 のプログラミング ガイド](https://msdn.microsoft.com/library/windows/desktop/ff476345)」をご覧ください。
-それでは、ゲームを画面に表示するために必要な作業を見ていきましょう。
+<span data-ttu-id="a6d74-127">このゲームでは、__GameRenderer__ クラス オブジェクトがこのサンプル ゲームのレンダラーを表します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-127">For this game, the __GameRenderer__ class object represents the renderer for this sample game.</span></span>  <span data-ttu-id="a6d74-128">レンダラーは、ゲームの視覚効果を生成するために使用する、すべての Direct3D 11 オブジェクトと Direct2D オブジェクトの作成と保持を担当します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-128">It's responsible for creating and maintaining all the Direct3D 11 and Direct2D objects used to generate the game visuals.</span></span>  <span data-ttu-id="a6d74-129">また、レンダリングするオブジェクトのリストとヘッドアップ ディスプレイ (HUD) 用にゲームの状態を取得するために使用される __Simple3DGame__ オブジェクトへの参照も保持します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-129">It also maintains a reference to the __Simple3DGame__ object used to retrieve the list of objects to render as well as status of the game for the Heads Up Display (HUD).</span></span> 
 
-## <a name="an-overview-of-the-windows-runtime-and-directx"></a>Windows ランタイムと DirectX の概要
+<span data-ttu-id="a6d74-130">このチュートリアルでは、ゲームの 3D オブジェクトのレンダリングに重点を置いています。</span><span class="sxs-lookup"><span data-stu-id="a6d74-130">In this part of the tutorial, we'll focus on rendering 3D objects in the game.</span></span>
 
+## <a name="establish-a-connection-to-the-graphics-interface"></a><span data-ttu-id="a6d74-131">グラフィックス インターフェイスへの接続を確立する</span><span class="sxs-lookup"><span data-stu-id="a6d74-131">Establish a connection to the graphics interface</span></span>
 
-DirectX は、Windows ランタイムと Windows 10 エクスペリエンスの基本となる部分です。 Windows 10 の視覚効果はすべて DirectX の上に構築されており、同じダイレクト ラインを、同じ下位レベルのグラフィックス インターフェイスである [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534) に対して持ちます。DXGI はグラフィックス ハードウェアとそのドライバーにアブストラクション レイヤーを提供します。 DXGI と直接対話するためのすべての Direct3D 11 API を利用できます。 これによって、ゲームで高速かつ高性能なグラフィックスを使用でき、すべての最新のグラフィックス ハードウェア機能にアクセスすることができます。
+<span data-ttu-id="a6d74-132">レンダリング用のハードウェアにアクセスする方法については、UWP フレームワークの記事にある [__App::Initialize__](tutorial--building-the-games-uwp-app-framework.md#appinitialize-method) の説明を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-132">To access to the hardware for rendering, see the UWP framework article under [__App::Initialize__](tutorial--building-the-games-uwp-app-framework.md#appinitialize-method).</span></span>
 
-UWP アプリに DirectX のサポートを追加するには、[**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482) インターフェイスと [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) インターフェイスを実装して DirectX リソース用のビュー プロバイダーを作成します。 これらのインターフェイスはそれぞれ、ビュー プロバイダー型用のファクトリ パターンと DirectX ビュー プロバイダーの実装を提供します。 [**CoreApplication**](https://msdn.microsoft.com/library/windows/apps/br225016) オブジェクトで表す UWP アプリ シングルトンが、この実装を実行します。
+<span data-ttu-id="a6d74-133">__make\_shared 関数__は ([以下](#appinitialize-method)に示すように) [__DX::DeviceResources__](#dxdeviceresources) への __shared\_ptr__ を作成するために使用されます。これもデバイスへのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-133">The __make\_shared function__, as shown [below](#appinitialize-method), is used to create a __shared\_ptr__ to [__DX::DeviceResources__](#dxdeviceresources), which also provides access to the device.</span></span> 
 
-「[ゲームのユニバーサル Windows プラットフォーム (UWP) アプリ フレームワークの定義](tutorial--building-the-games-metro-style-app-framework.md)」では、レンダラーがゲーム サンプルのアプリ フレームワークにどのように適合するかについて説明しています。 それでは、ゲーム レンダラーをビューに接続して、ゲームの外観を定義するグラフィックスを作成する方法を見ていきましょう。
+<span data-ttu-id="a6d74-134">Direct3D 11 では、[デバイス](#device)を使用して、オブジェクトの割り当てと破棄、プリミティブのレンダリング、グラフィックス ドライバー経由のグラフィックス カードとの通信を行います。</span><span class="sxs-lookup"><span data-stu-id="a6d74-134">In Direct3D 11, a [device](#device) is used to allocate and destroy objects, render primitives, and communicate with the graphics card through the graphics driver.</span></span>
 
-## <a name="defining-the-renderer"></a>レンダラーの定義
-
-
-**GameRenderer** 抽象型は **DirectXBase** レンダラー型から継承され、ステレオ 3-D に対するサポートを追加して、グラフィックス プリミティブの作成と定義を行うシェーダーの定数バッファーとリソースを宣言します。
-
-次に **GameRenderer** の定義を示します。
+### <a name="appinitialize-method"></a><span data-ttu-id="a6d74-135">App::Initialize メソッド</span><span class="sxs-lookup"><span data-stu-id="a6d74-135">App::Initialize method</span></span>
 
 ```cpp
-ref class GameRenderer : public DirectXBase
-{
-internal:
-    GameRenderer();
-
-    virtual void Initialize(
-        _In_ Windows::UI::Core::CoreWindow^ window,
-        float dpi
-        ) override;
-
-    virtual void CreateDeviceIndependentResources() override;
-    virtual void CreateDeviceResources() override;
-    virtual void UpdateForWindowSizeChange() override;
-    virtual void Render() override;
-    virtual void SetDpi(float dpi) override;
-
-    concurrency::task<void> CreateGameDeviceResourcesAsync(_In_ Simple3DGame^ game);
-    void FinalizeCreateGameDeviceResources();
-    concurrency::task<void> LoadLevelResourcesAsync();
-    void FinalizeLoadLevelResources();
-
-    GameInfoOverlay^ InfoOverlay()  { return m_gameInfoOverlay; };
-
-    DirectX::XMFLOAT2 GameInfoOverlayUpperLeft()
-    {
-        return DirectX::XMFLOAT2(
-            (m_windowBounds.Width  - GameInfoOverlayConstant::Width) / 2.0f,
-            (m_windowBounds.Height - GameInfoOverlayConstant::Height) / 2.0f
-            );
-    };
-    DirectX::XMFLOAT2 GameInfoOverlayLowerRight()
-    {
-        return DirectX::XMFLOAT2(
-            (m_windowBounds.Width  - GameInfoOverlayConstant::Width) / 2.0f + GameInfoOverlayConstant::Width,
-            (m_windowBounds.Height - GameInfoOverlayConstant::Height) / 2.0f + GameInfoOverlayConstant::Height
-            );
-    };
-
-protected private:
-    bool                                                m_initialized;
-    bool                                                m_gameResourcesLoaded;
-    bool                                                m_levelResourcesLoaded;
-    GameInfoOverlay^                                    m_gameInfoOverlay;
-    GameHud^                                            m_gameHud;
-    Simple3DGame^                                       m_game;
-
-    Microsoft::WRL::ComPtr<ID3D11ShaderResourceView>    m_sphereTexture;
-    Microsoft::WRL::ComPtr<ID3D11ShaderResourceView>    m_cylinderTexture;
-    Microsoft::WRL::ComPtr<ID3D11ShaderResourceView>    m_ceilingTexture;
-    Microsoft::WRL::ComPtr<ID3D11ShaderResourceView>    m_floorTexture;
-    Microsoft::WRL::ComPtr<ID3D11ShaderResourceView>    m_wallsTexture;
-
-    // Constant Buffers
-    Microsoft::WRL::ComPtr<ID3D11Buffer>                m_constantBufferNeverChanges;
-    Microsoft::WRL::ComPtr<ID3D11Buffer>                m_constantBufferChangeOnResize;
-    Microsoft::WRL::ComPtr<ID3D11Buffer>                m_constantBufferChangesEveryFrame;
-    Microsoft::WRL::ComPtr<ID3D11Buffer>                m_constantBufferChangesEveryPrim;
-    Microsoft::WRL::ComPtr<ID3D11SamplerState>          m_samplerLinear;
-    Microsoft::WRL::ComPtr<ID3D11VertexShader>          m_vertexShader;
-    Microsoft::WRL::ComPtr<ID3D11VertexShader>          m_vertexShaderFlat;
-    Microsoft::WRL::ComPtr<ID3D11PixelShader>           m_pixelShader;
-    Microsoft::WRL::ComPtr<ID3D11PixelShader>           m_pixelShaderFlat;
-    Microsoft::WRL::ComPtr<ID3D11InputLayout>           m_vertexLayout;
-};
-```
-
-Direct3D 11 API は COM API として定義されるため、これらの API で定義されたオブジェクトへの [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983) 参照を指定する必要があります。 これらのオブジェクトは、アプリ終了時に最後の参照がスコープ外になったときに自動的に解放されます。
-
-このゲーム サンプルでは、4 つの定数バッファーを宣言します。
-
--   **m\_constantBufferNeverChanges**。 この定数バッファーには照明パラメーターが含まれます。 設定されるのは一度だけで、変更はされません。
--   **m\_constantBufferChangeOnResize**。 この定数バッファーにはプロジェクション マトリックスが含まれます。 プロジェクション マトリックスは、ウィンドウのサイズと縦横比に依存します。 ウィンドウのサイズが変更されたときにのみ更新されます。
--   **m\_constantBufferChangesEveryFrame**。 この定数バッファーにはビュー マトリックスが含まれます。 このマトリックスは、カメラ位置とルック方向 (標準はプロジェクション方向) に依存し、1 フレームあたり 1 回だけ変更されます。
--   **m\_constantBufferChangesEveryPrim**。 この定数バッファーには各プリミティブのモデル マトリックスとマテリアル プロパティが含まれます。 モデル マトリックスは、頂点をローカル座標からワールド座標に変換します。 これらの定数は各プリミティブに固有で、描画呼び出しのたびに更新されます。
-
-複数の定数バッファーに異なる更新頻度を設定する趣旨は、GPU に送信するデータの 1 フレームあたりの量を減らすことです。 このため、サンプルでは、更新する必要のある頻度に基づいて定数を異なるバッファーに分けています。 Direct3D プログラミングでは、このような処理をお勧めします。
-
-レンダラーには、プリミティブとテクスチャを計算する **m\_vertexShader** と **m\_pixelShader** というシェーダー オブジェクトが含まれます。 頂点シェーダーはプリミティブと基本的な照明を処理し、ピクセル シェーダー (フラグメント シェーダーとも呼ばれます) はテクスチャとピクセルごとの効果を処理します。 これらのシェーダーには、異なるプリミティブをレンダリングするための 2 つのバージョン (標準とフラット) があります。 フラット バージョンは、標準と比べるときわめて単純であり、鏡面ハイライトやピクセル単位の照明効果は一切実行しません。 壁に使われ、低電力デバイスでレンダリングを高速化します。
-
-レンダラー クラスには、オーバーレイとヘッドアップ ディスプレイ (**GameHud** オブジェクト) に使う [DirectWrite and Direct2D](https://msdn.microsoft.com/library/windows/desktop/ff729481) というリソースが含まれます。 オーバーレイと HUD は、グラフィックス パイプラインでプロジェクションが完了するときに、レンダー ターゲット上に描画されます。
-
-レンダラーは、プリミティブのテクスチャを保持するシェーダー リソース オブジェクトも定義します。 これらのテクスチャの中には、事前定義されているもの (ゲーム内の壁や床の DDS テクスチャ、弾に使う球体) もあります。
-
-それでは、このオブジェクトの作成方法を見ていきましょう。
-
-## <a name="initializing-the-renderer"></a>レンダラーの初期化
-
-
-サンプル ゲームでは、この **Initialize** メソッドを **App::SetWindow** の CoreApplication 初期化シーケンスの一部として呼び出します。
-
-```cpp
-void GameRenderer::Initialize(
-    _In_ CoreWindow^ window,
-    float dpi
+void App::Initialize(
+    CoreApplicationView^ applicationView
     )
 {
-    if (!m_initialized)
+    //...
+
+    // At this point we have access to the device. 
+    // We can create the device-dependent resources.
+    m_deviceResources = std::make_shared<DX::DeviceResources>();
+}
+```
+
+## <a name="display-the-graphics-by-rendering-the-frame"></a><span data-ttu-id="a6d74-136">フレームをレンダリングすることによってグラフィックスを表示する</span><span class="sxs-lookup"><span data-stu-id="a6d74-136">Display the graphics by rendering the frame</span></span>
+
+<span data-ttu-id="a6d74-137">ゲームのシーンは、ゲームが起動したときにレンダリングされる必要があります。</span><span class="sxs-lookup"><span data-stu-id="a6d74-137">The game scene needs to render when the game is launched.</span></span> <span data-ttu-id="a6d74-138">レンダリングのための手順は、以下に示すように、[__GameMain::Run__](#gameamainrun-method) メソッド内で始まります。</span><span class="sxs-lookup"><span data-stu-id="a6d74-138">The instructions for rendering start in the  [__GameMain::Run__](#gameamainrun-method) method, as shown below.</span></span>
+
+<span data-ttu-id="a6d74-139">単純なフローは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="a6d74-139">The simple flow is:</span></span>
+1. __<span data-ttu-id="a6d74-140">Update</span><span class="sxs-lookup"><span data-stu-id="a6d74-140">Update</span></span>__
+2. __<span data-ttu-id="a6d74-141">Render</span><span class="sxs-lookup"><span data-stu-id="a6d74-141">Render</span></span>__
+3. __<span data-ttu-id="a6d74-142">Present</span><span class="sxs-lookup"><span data-stu-id="a6d74-142">Present</span></span>__
+
+### <a name="gamemainrun-method"></a><span data-ttu-id="a6d74-143">GameMain::Run メソッド</span><span class="sxs-lookup"><span data-stu-id="a6d74-143">GameMain::Run method</span></span>
+
+```cpp
+// Comparing this to App::Run() in the DirectX 11 App template
+void GameMain::Run()
+{
+    while (!m_windowClosed)
     {
-        m_gameHud = ref new GameHud(
-            "Windows 8 Samples",
-            "DirectX first-person game sample"
-            );
-        m_gameInfoOverlay = ref new GameInfoOverlay();
-        m_initialized = true;
-    }
-
-    DirectXBase::Initialize(window, dpi);
-
-    // Initialize could be called multiple times as a result of an error with the hardware device
-    // that requires it to be reinitialized.  Because the m_gameInfoOverlay variable has resources that are
-    // dependent on the device, it will need to be reinitialized each time with the new device information.
-    m_gameInfoOverlay->Initialize(m_d2dDevice.Get(), m_d2dContext.Get(), m_dwriteFactory.Get(), dpi);
-}
-```
-
-これは、非常に単純なメソッドです。 レンダラーが前に初期化されているかどうかを確認し、初期化されていない場合は **GameHud** オブジェクトと **GameInfoOverlay** オブジェクトをインスタンス化します。
-
-その後、レンダラー初期化プロセスにより、継承された **DirectXBase** クラスで提供される **Initialize** の基本実装が実行されます。
-
-DirectXBase の初期化が完了すると、**GameInfoOverlay** オブジェクトが初期化されます。 初期化が完了したら、ゲームのグラフィックス リソースの作成と読み込みを行うためのメソッドを確認します。
-
-## <a name="creating-and-loading-directx-graphics-resources"></a>DirectX グラフィックス リソースの作成と読み込み
-
-
-どのようなゲームでも、まずグラフィックス インターフェイスへの接続を確立し、グラフィックスの描画に必要なリソースを作成してから、これらのグラフィックスを描画するレンダー ターゲットを設定します。 このゲーム サンプル (および Microsoft Visual Studio の **DirectX 11 アプリ (ユニバーサル Windows)** テンプレート) では、このプロセスは 3 つのメソッドを使って実装されます。
-
--   **CreateDeviceIndependentResources**
--   **CreateDeviceResources**
--   **CreateWindowSizeDependentResources**
-
-このゲーム サンプルでは、これらのメソッドのうちの 2 つ (**CreateDeviceIndependentResources** と **CreateDeviceResources**) を、**DirectX 11 App (Universal Windows)** テンプレートに実装されている **DirectXBase** クラスで提供されるメソッドで上書きします。 これらの上書きメソッドごとに、まず上書きする **DirectXBase** 実装を呼び出して、次にゲーム サンプルに固有の実装の詳細をさらに追加します。 ゲーム サンプルに含まれている **DirectXBase** クラスの実装は、ステレオスコピック ビューのサポートと **SwapBuffer** オブジェクトの事前回転を含むように、Visual Studio テンプレートで提供されているバージョンから変更されています。
-
-**CreateWindowSizeDependentResources** は **GameRenderer** オブジェクトによって上書きされません。 **DirectXBase** クラスで提供されているこのメソッドの実装を使います。
-
-これらのメソッドの **DirectXBase** 基本実装について詳しくは、「[DirectX UWP アプリでビューを表示するための設定方法](https://msdn.microsoft.com/library/windows/apps/hh465077)」をご覧ください。
-
-上書きされるメソッドのうちの最初のメソッドである **CreateDeviceIndependentResources** では、**GameHud::CreateDeviceIndependentResources** メソッドを呼び出して、ほとんどの UWP アプリで使われる Segoe UI フォントを使う [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) テキスト リソースを作成します。
-
-CreateDeviceIndependentResources
-
-```cpp
-void GameRenderer::CreateDeviceIndependentResources()
-{
-    DirectXBase::CreateDeviceIndependentResources();
-    m_gameHud->CreateDeviceIndependentResources(m_dwriteFactory.Get(), m_wicFactory.Get());
-}
-```
-
-```cpp
-void GameHud::CreateDeviceIndependentResources(
-    _In_ IDWriteFactory* dwriteFactory,
-    _In_ IWICImagingFactory* wicFactory
-    )
-{
-    m_dwriteFactory = dwriteFactory;
-    m_wicFactory = wicFactory;
-
-    DX::ThrowIfFailed(
-        m_dwriteFactory->CreateTextFormat(
-            L"Segoe UI",
-            nullptr,
-            DWRITE_FONT_WEIGHT_LIGHT,
-            DWRITE_FONT_STYLE_NORMAL,
-            DWRITE_FONT_STRETCH_NORMAL,
-            GameConstants::HudBodyPointSize,
-            L"en-us",
-            &m_textFormatBody
-            )
-        );
-    DX::ThrowIfFailed(
-        m_dwriteFactory->CreateTextFormat(
-            L"Segoe UI Symbol",
-            nullptr,
-            DWRITE_FONT_WEIGHT_LIGHT,
-            DWRITE_FONT_STYLE_NORMAL,
-            DWRITE_FONT_STRETCH_NORMAL,
-            GameConstants::HudBodyPointSize,
-            L"en-us",
-            &m_textFormatBodySymbol
-            )
-        );
-    DX::ThrowIfFailed(
-        m_dwriteFactory->CreateTextFormat(
-            L"Segoe UI Light",
-            nullptr,
-            DWRITE_FONT_WEIGHT_LIGHT,
-            DWRITE_FONT_STYLE_NORMAL,
-            DWRITE_FONT_STRETCH_NORMAL,
-            GameConstants::HudTitleHeaderPointSize,
-            L"en-us",
-            &m_textFormatTitleHeader
-            )
-        );
-    DX::ThrowIfFailed(
-        m_dwriteFactory->CreateTextFormat(
-            L"Segoe UI Light",
-            nullptr,
-            DWRITE_FONT_WEIGHT_LIGHT,
-            DWRITE_FONT_STYLE_NORMAL,
-            DWRITE_FONT_STRETCH_NORMAL,
-            GameConstants::HudTitleBodyPointSize,
-            L"en-us",
-            &m_textFormatTitleBody
-            )
-        );
-
-    DX::ThrowIfFailed(m_textFormatBody->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_LEADING));
-    DX::ThrowIfFailed(m_textFormatBody->SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_NEAR));
-    DX::ThrowIfFailed(m_textFormatBodySymbol->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_LEADING));
-    DX::ThrowIfFailed(m_textFormatBodySymbol->SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_NEAR));
-    DX::ThrowIfFailed(m_textFormatTitleHeader->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_LEADING));
-    DX::ThrowIfFailed(m_textFormatTitleHeader->SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_NEAR));
-    DX::ThrowIfFailed(m_textFormatTitleBody->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_LEADING));
-    DX::ThrowIfFailed(m_textFormatTitleBody->SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_NEAR));
-}
-```
-
-サンプルでは、タイトル ヘッダーとタイトル本文テキスト用に 2 つ、本文テキスト用に 2 つの合わせて 4 つのテキスト フォーマッタを使っています。 ほとんどのオーバーレイ テキストで、このテキスト フォーマッタが使われています。
-
-2 つ目のメソッドである **CreateDeviceResources**は、グラフィックス デバイスで計算されるゲーム固有のリソースを読み込みます。 それでは、このメソッドのコードを見てみましょう。
-
-CreateDeviceResources
-
-```cpp
-oid GameRenderer::CreateDeviceResources()
-{
-    DirectXBase::CreateDeviceResources();
-
-    m_gameHud->CreateDeviceResources(m_d2dContext.Get());
-
-    if (m_game != nullptr)
-    {
-        // The initial invocation of CreateDeviceResources occurs
-        // before the Game State is initialized when the device is first
-        // being created, so that the inital loading screen can be displayed.
-        // Subsequent invocations of CreateDeviceResources will be a result
-        // of an error with the device that requires the resources to be
-        // recreated.  In this case, the game state is already initialized
-        // so the game device resources need to be recreated.
-
-        // This sample doesn't gracefully handle all the async recreation
-        // of resources so an exception is thrown.
-        throw Platform::Exception::CreateException(
-            DXGI_ERROR_DEVICE_REMOVED,
-            "GameRenderer::CreateDeviceResources - Recreation of resources after TDR not available\n"
-            );
-    }
-}
-```
-
-```cpp
-void GameHud::CreateDeviceResources(_In_ ID2D1DeviceContext* d2dContext)
-{
-    auto location = Package::Current->InstalledLocation;
-    Platform::String^ path = Platform::String::Concat(location->Path, "\\");
-    path = Platform::String::Concat(path, "windows-sdk.png");
-
-    ComPtr<IWICBitmapDecoder> wicBitmapDecoder;
-    DX::ThrowIfFailed(
-        m_wicFactory->CreateDecoderFromFilename(
-            path->Data(),
-            nullptr,
-            GENERIC_READ,
-            WICDecodeMetadataCacheOnDemand,
-            &wicBitmapDecoder
-            )
-        );
-
-    ComPtr<IWICBitmapFrameDecode> wicBitmapFrame;
-    DX::ThrowIfFailed(
-        wicBitmapDecoder->GetFrame(0, &wicBitmapFrame)
-        );
-
-    ComPtr<IWICFormatConverter> wicFormatConverter;
-    DX::ThrowIfFailed(
-        m_wicFactory->CreateFormatConverter(&wicFormatConverter)
-        );
-
-    DX::ThrowIfFailed(
-        wicFormatConverter->Initialize(
-            wicBitmapFrame.Get(),
-            GUID_WICPixelFormat32bppPBGRA,
-            WICBitmapDitherTypeNone,
-            nullptr,
-            0.0,
-            WICBitmapPaletteTypeCustom  // The BGRA format has no palette so this value is ignored.
-            )
-        );
-
-    double dpiX = 96.0f;
-    double dpiY = 96.0f;
-    DX::ThrowIfFailed(
-        wicFormatConverter->GetResolution(&dpiX, &dpiY)
-        );
-
-    // Create D2D Resources.
-    DX::ThrowIfFailed(
-        d2dContext->CreateBitmapFromWicBitmap(
-            wicFormatConverter.Get(),
-            BitmapProperties(
-                PixelFormat(DXGI_FORMAT_B8G8R8A8_UNORM, D2D1_ALPHA_MODE_PREMULTIPLIED),
-                static_cast<float>(dpiX),
-                static_cast<float>(dpiY)
-                ),
-            &m_logoBitmap
-            )
-        );
-
-    m_logoSize = m_logoBitmap->GetSize();
-
-    DX::ThrowIfFailed(
-        d2dContext->CreateSolidColorBrush(
-            D2D1::ColorF(D2D1::ColorF::White),
-            &m_textBrush
-            )
-        );
-}
-```
-
-この例では、通常の実行時には、**CreateDeviceResources** メソッドは単に基底クラスのメソッドを呼び出し、前に示した **GameHud::CreateDeviceResources** メソッドを呼び出します。 後でベースとなるグラフィックス デバイスに問題が生じた場合は、再初期化が必要になる可能性があります。 この場合、**CreateDeviceResources** メソッドは一連の非同期タスクを開始し、ゲーム デバイスのリソースを作成します。 これは、**CreateDeviceResourcesAsync** を呼び出してその完了時に **FinalizeCreateGameDeviceResources** を呼び出す、一連の 2 つのメソッドによって実行されます。
-
-CreateGameDeviceResourcesAsync と FinalizeCreateGameDeviceResources
-
-```cpp
-task<void> GameRenderer::CreateGameDeviceResourcesAsync(_In_ Simple3DGame^ game)
-{
-    // Set the Loading state to wait until any async resources have
-    // been loaded before proceeding.
-    m_game = game;
-
-    // NOTE: Only the m_d3dDevice is used in this method.  It's expected
-    // to not run on the same thread as the GameRenderer was created.
-    // Create methods on the m_d3dDevice are free-threaded and are safe while any methods
-    // in the m_d3dContext should only be used on a single thread and handled
-    // in the FinalizeCreateGameDeviceResources method.
-
-    D3D11_BUFFER_DESC bd;
-    ZeroMemory(&bd, sizeof(bd));
-
-    // Create the constant buffers.
-    bd.Usage = D3D11_USAGE_DEFAULT;
-    bd.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
-    bd.CPUAccessFlags = 0;
-    bd.ByteWidth = (sizeof(ConstantBufferNeverChanges) + 15) / 16 * 16;
-    DX::ThrowIfFailed(
-        m_d3dDevice->CreateBuffer(&bd, nullptr, &m_constantBufferNeverChanges)
-        );
-
-    bd.ByteWidth = (sizeof(ConstantBufferChangeOnResize) + 15) / 16 * 16;
-    DX::ThrowIfFailed(
-        m_d3dDevice->CreateBuffer(&bd, nullptr, &m_constantBufferChangeOnResize)
-        );
-
-    bd.ByteWidth = (sizeof(ConstantBufferChangesEveryFrame) + 15) / 16 * 16;
-    DX::ThrowIfFailed(
-        m_d3dDevice->CreateBuffer(&bd, nullptr, &m_constantBufferChangesEveryFrame)
-        );
-
-    bd.ByteWidth = (sizeof(ConstantBufferChangesEveryPrim) + 15) / 16 * 16;
-    DX::ThrowIfFailed(
-        m_d3dDevice->CreateBuffer(&bd, nullptr, &m_constantBufferChangesEveryPrim)
-        );
-
-    D3D11_SAMPLER_DESC sampDesc;
-    ZeroMemory(&sampDesc, sizeof(sampDesc));
-
-    sampDesc.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
-    sampDesc.AddressU = D3D11_TEXTURE_ADDRESS_WRAP;
-    sampDesc.AddressV = D3D11_TEXTURE_ADDRESS_WRAP;
-    sampDesc.AddressW = D3D11_TEXTURE_ADDRESS_WRAP;
-    sampDesc.ComparisonFunc = D3D11_COMPARISON_NEVER;
-    sampDesc.MinLOD = 0;
-    sampDesc.MaxLOD = FLT_MAX;
-    DX::ThrowIfFailed(
-        m_d3dDevice->CreateSamplerState(&sampDesc, &m_samplerLinear)
-        );
-
-    // Start the async tasks to load the shaders and textures.
-    BasicLoader^ loader = ref new BasicLoader(m_d3dDevice.Get());
-
-    std::vector<task<void>> tasks;
-
-    uint32 numElements = ARRAYSIZE(PNTVertexLayout);
-    tasks.push_back(loader->LoadShaderAsync("VertexShader.cso", PNTVertexLayout, numElements, &m_vertexShader, &m_vertexLayout));
-    tasks.push_back(loader->LoadShaderAsync("VertexShaderFlat.cso", nullptr, numElements, &m_vertexShaderFlat, nullptr));
-    tasks.push_back(loader->LoadShaderAsync("PixelShader.cso", &m_pixelShader));
-    tasks.push_back(loader->LoadShaderAsync("PixelShaderFlat.cso", &m_pixelShaderFlat));
-
-    // Make sure previous versions if any of the textures are released.
-    m_sphereTexture = nullptr;
-    m_cylinderTexture = nullptr;
-    m_ceilingTexture = nullptr;
-    m_floorTexture = nullptr;
-    m_wallsTexture = nullptr;
-
-    // Load Game specific Textures.
-    tasks.push_back(loader->LoadTextureAsync("seafloor.dds", nullptr, &m_sphereTexture));
-    tasks.push_back(loader->LoadTextureAsync("metal_texture.dds", nullptr, &m_cylinderTexture));
-    tasks.push_back(loader->LoadTextureAsync("cellceiling.dds", nullptr, &m_ceilingTexture));
-    tasks.push_back(loader->LoadTextureAsync("cellfloor.dds", nullptr, &m_floorTexture));
-    tasks.push_back(loader->LoadTextureAsync("cellwall.dds", nullptr, &m_wallsTexture));
-    tasks.push_back(create_task([]()
-    {
-        // Simulate loading additional resources.
-        wait(GameConstants::InitialLoadingDelay);
-    }));
-
-    // Return the task group of all the async tasks for loading the shader and texture assets.
-    return when_all(tasks.begin(), tasks.end());
-}
-```
-
-```cpp
-void GameRenderer::FinalizeCreateGameDeviceResources()
-{
-    // All asynchronously loaded resources have completed loading.
-    // Now, associate all the resources with the appropriate
-    // Game objects.
-    // This method is expected to run in the same thread as the GameRenderer
-    // was created. All work will happen behind the "Loading ..." screen after the
-    // main loop has been entered.
-
-    // Initialize the Constant buffer with the light positions.
-    // These are handled here to ensure that the d3dContext is only
-    // used in one thread.
-
-    ConstantBufferNeverChanges constantBufferNeverChanges;
-    constantBufferNeverChanges.lightPosition[0] = XMFLOAT4( 3.5f, 2.5f,  5.5f, 1.0f);
-    constantBufferNeverChanges.lightPosition[1] = XMFLOAT4( 3.5f, 2.5f, -5.5f, 1.0f);
-    constantBufferNeverChanges.lightPosition[2] = XMFLOAT4(-3.5f, 2.5f, -5.5f, 1.0f);
-    constantBufferNeverChanges.lightPosition[3] = XMFLOAT4( 3.5f, 2.5f,  5.5f, 1.0f);
-    constantBufferNeverChanges.lightColor = XMFLOAT4(0.25f, 0.25f, 0.25f, 1.0f);
-    m_d3dContext->UpdateSubresource(m_constantBufferNeverChanges.Get(), 0, nullptr, &constantBufferNeverChanges, 0, 0);
-
-    // For the targets, there are two unique generated textures.
-    // Each texture image includes the number of the texture.
-    // Make sure the 2-D rendering is occurring on the same thread
-    // as the main rendering.
-
-    TargetTexture^ textureGenerator = ref new TargetTexture(
-        m_d3dDevice.Get(),
-        m_d2dFactory.Get(),
-        m_dwriteFactory.Get(),
-        m_d2dContext.Get()
-        );
-
-    MeshObject^ cylinderMesh = ref new CylinderMesh(m_d3dDevice.Get(), 26);
-    MeshObject^ targetMesh = ref new FaceMesh(m_d3dDevice.Get());
-    MeshObject^ sphereMesh = ref new SphereMesh(m_d3dDevice.Get(), 26);
-
-    Material^ cylinderMaterial = ref new Material(
-        XMFLOAT4(0.8f, 0.8f, 0.8f, .5f),
-        XMFLOAT4(0.8f, 0.8f, 0.8f, .5f),
-        XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),
-        15.0f,
-        m_cylinderTexture.Get(),
-        m_vertexShader.Get(),
-        m_pixelShader.Get()
-        );
-
-    Material^ sphereMaterial = ref new Material(
-        XMFLOAT4(0.8f, 0.4f, 0.0f, 1.0f),
-        XMFLOAT4(0.8f, 0.4f, 0.0f, 1.0f),
-        XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),
-        50.0f,
-        m_sphereTexture.Get(),
-        m_vertexShader.Get(),
-        m_pixelShader.Get()
-        );
-
-    auto objects = m_game->RenderObjects();
-
-    // Attach the textures to the appropriate game objects.
-    for (auto object = objects.begin(); object != objects.end(); object++)
-    {
-        if ((*object)->TargetId() == GameConstants::WorldFloorId)
+        if (m_visible) // if the window is visible
         {
-           (*object)->NormalMaterial(
-               ref new Material(
-                    XMFLOAT4(0.5f, 0.5f, 0.5f, 1.0f),
-                    XMFLOAT4(0.8f, 0.8f, 0.8f, 1.0f),
-                    XMFLOAT4(0.3f, 0.3f, 0.3f, 1.0f),
-                    150.0f,
-                    m_floorTexture.Get(),
-                    m_vertexShaderFlat.Get(),
-                    m_pixelShaderFlat.Get()
-                    )
-                );
-           (*object)->Mesh(ref new WorldFloorMesh(m_d3dDevice.Get()));
+            // Added: Switching different game states since this game sample is more complex
+            switch (m_updateState) 
+            {
+
+                // ...
+                CoreWindow::GetForCurrentThread()->Dispatcher->ProcessEvents(CoreProcessEventsOption::ProcessAllIfPresent);
+                // 1. Update
+                // Also exist in DirectX 11 App template: Update loop to get the latest game changes
+                Update();
+                
+                // 2. Render
+                // Present also in DirectX 11 App template: Prepare to render
+                m_renderer->Render();
+                
+                // 3. Present
+                // Present also in DirectX 11 App template: Present the 
+                // contents of the swap chain to the screen.
+                m_deviceResources->Present(); 
+                
+                // Added: resetting a variable we've added to indicate that 
+                // render has been done and no longer needed to render
+                m_renderNeeded = false; 
+            }
         }
-        else if ((*object)->TargetId() == GameConstants::WorldCeilingId)
-        {
-           (*object)->NormalMaterial(
-               ref new Material(
-                    XMFLOAT4(0.5f, 0.5f, 0.5f, 1.0f),
-                    XMFLOAT4(0.8f, 0.8f, 0.8f, 1.0f),
-                    XMFLOAT4(0.3f, 0.3f, 0.3f, 1.0f),
-                    150.0f,
-                    m_ceilingTexture.Get(),
-                    m_vertexShaderFlat.Get(),
-                    m_pixelShaderFlat.Get()
-                    )
-                );
-           (*object)->Mesh(ref new WorldCeilingMesh(m_d3dDevice.Get()));
-        }
-        else if ((*object)->TargetId() == GameConstants::WorldWallsId)
-        {
-           (*object)->NormalMaterial(
-               ref new Material(
-                    XMFLOAT4(0.5f, 0.5f, 0.5f, 1.0f),
-                    XMFLOAT4(0.8f, 0.8f, 0.8f, 1.0f),
-                    XMFLOAT4(0.3f, 0.3f, 0.3f, 1.0f),
-                    150.0f,
-                    m_wallsTexture.Get(),
-                    m_vertexShaderFlat.Get(),
-                    m_pixelShaderFlat.Get()
-                    )
-                );
-           (*object)->Mesh(ref new WorldWallsMesh(m_d3dDevice.Get()));
-        }
-        else if (Cylinder^ cylinder = dynamic_cast<Cylinder^>(*object))
-        {
-            cylinder->Mesh(cylinderMesh);
-            cylinder->NormalMaterial(cylinderMaterial);
-        }
-        else if (Face^ target = dynamic_cast<Face^>(*object))
-        {
-            const int bufferLength = 16;
-            char16 str[bufferLength];
-            int len = swprintf_s(str, bufferLength, L"%d", target->TargetId());
-            Platform::String^ string = ref new Platform::String(str, len);
-
-            ComPtr<ID3D11ShaderResourceView> texture;
-            textureGenerator->CreateTextureResourceView(string, &texture);
-            target->NormalMaterial(
-                ref new Material(
-                    XMFLOAT4(0.8f, 0.8f, 0.8f, 0.5f),
-                    XMFLOAT4(0.8f, 0.8f, 0.8f, 0.5f),
-                    XMFLOAT4(0.3f, 0.3f, 0.3f, 1.0f),
-                    5.0f,
-                    texture.Get(),
-                    m_vertexShader.Get(),
-                    m_pixelShader.Get()
-                    )
-                );
-
-            textureGenerator->CreateHitTextureResourceView(string, &texture);
-            target->HitMaterial(
-                ref new Material(
-                    XMFLOAT4(0.8f, 0.8f, 0.8f, 0.5f),
-                    XMFLOAT4(0.8f, 0.8f, 0.8f, 0.5f),
-                    XMFLOAT4(0.3f, 0.3f, 0.3f, 1.0f),
-                    5.0f,
-                    texture.Get(),
-                    m_vertexShader.Get(),
-                    m_pixelShader.Get()
-                    )
-                );
-
-            target->Mesh(targetMesh);
-        }
-        else if (Sphere^ sphere = dynamic_cast<Sphere^>(*object))
-        {
-            sphere->Mesh(sphereMesh);
-            sphere->NormalMaterial(sphereMaterial);
+        else
+        {   
+            // Present also in DirectX 11 App template
+            CoreWindow::GetForCurrentThread()->Dispatcher->ProcessEvents(CoreProcessEventsOption::ProcessOneAndAllPending); 
         }
     }
-
-    // Ensure that the camera has been initialized with the right Projection
-    // matrix.  The camera is not created at the time the first window resize event
-    // occurs.
-    m_game->GameCamera()->SetProjParams(
-        XM_PI / 2, m_renderTargetSize.Width / m_renderTargetSize.Height,
-        0.01f,
-        100.0f
-        );
-
-    // Make sure that Projection matrix has been set in the constant buffer
-    // now that all the resources are loaded.
-    // DirectXBase is handling screen rotations directly to eliminate an unaligned
-    // fullscreen copy.  As a result, it's necessary to post multiply the rotationTransform3D
-    // matrix to the camera projection matrix.
-    ConstantBufferChangeOnResize changesOnResize;
-    XMStoreFloat4x4(
-        &changesOnResize.projection,
-            XMMatrixMultiply(
-                XMMatrixTranspose(m_game->GameCamera()->Projection()),
-                XMMatrixTranspose(XMLoadFloat4x4(&m_rotationTransform3D))
-                )
-        );
-
-    m_d3dContext->UpdateSubresource(
-        m_constantBufferChangeOnResize.Get(),
-        0,
-        nullptr,
-        &changesOnResize,
-        0,
-        0
-        );
-
-    m_gameResourcesLoaded = true;
+    m_game->OnSuspending();  // exiting due to window close. Make sure to save state.
 }
 ```
 
-**CreateDeviceResourcesAsync** は、ゲームのリソースを読み込むための一連の非同期タスクとして別個に実行されるメソッドです。 個別のスレッドで実行されると想定されるので、Direct3D 11 デバイス メソッド ([**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) で定義されているメソッド) にのみアクセスでき、デバイス コンテキスト メソッド ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) で定義されているメソッド) にはアクセスできないため、レンダリングを実行しないように選ぶことができます。 **FinalizeCreateGameDeviceResources** メソッドはメイン スレッドで実行され、Direct3D 11 デバイス コンテキスト メソッドにアクセスできます。
+### <a name="update"></a><span data-ttu-id="a6d74-144">Update</span><span class="sxs-lookup"><span data-stu-id="a6d74-144">Update</span></span>
 
-ゲーム デバイスのリソースを読み込むための一連のイベントは、次のように処理を進めます。
+<span data-ttu-id="a6d74-145">[__App::Update__ および __GameMain::Update__](tutorial-game-flow-management.md#appupdate-method) メソッドで、ゲームの状態がどのように更新される化については、「[ゲームのフロー管理](tutorial-game-flow-management.md)」の記事を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-145">See the [Game flow management](tutorial-game-flow-management.md) article for more information about how game states are updated in the [__App::Update__ and __GameMain::Update__](tutorial-game-flow-management.md#appupdate-method) method.</span></span>
 
-まず、**CreateDeviceResourcesAsync** がプリミティブの定数バッファーを初期化します。 定数バッファーは、シェーダー実行時にシェーダーが使うデータを保持する、待機時間の短い固定長バッファーです。 (これらのバッファーは、特定の描画呼び出しの実行時に一定であるシェーダーにデータを渡すと考えてください。) このサンプルでは、バッファーには、シェーダーが以下の用途に使うデータが含まれます。
+### <a name="render"></a><span data-ttu-id="a6d74-146">Render</span><span class="sxs-lookup"><span data-stu-id="a6d74-146">Render</span></span>
 
--   レンダラーの初期化時に光源を配置し、色を設定する
--   ウィンドウのサイズが変更されたときに、ビュー マトリックスを計算する
--   フレームが更新されるたびに、プロジェクション マトリックスを計算する
--   レンダーが更新されるたびに、プリミティブの変換を計算する
+<span data-ttu-id="a6d74-147">レンダリングは、__GameMain::Run__ で [__GameRenderer::Render__](#gamerendererrender-method) メソッドを呼び出すことによって実装されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-147">Rendering is implemented by calling the [__GameRenderer::Render__](#gamerendererrender-method) method in __GameMain::Run__.</span></span>
 
-定数がソースの情報 (頂点) を受け取り、頂点の座標とデータをモデル空間からデバイス空間に変換します。 最終的に、このデータはレンダー ターゲットのテクセル座標とピクセルに変換されます。
+<span data-ttu-id="a6d74-148">[ステレオ レンダリング](#stereo-rendering) が有効な場合、右目用と左目用の 2 つのレンダリング パスがあります。</span><span class="sxs-lookup"><span data-stu-id="a6d74-148">If [stereo rendering](#stereo-rendering) is enabled, there are two rendering passes: one for the right eye and one for the left eye.</span></span> <span data-ttu-id="a6d74-149">各レンダリング パスで、レンダー ターゲットと[深度ステンシル ビュー](#depth-stencil-view)をデバイスにバインドします。</span><span class="sxs-lookup"><span data-stu-id="a6d74-149">In each rendering pass, we bind the render target and the [depth-stencil view](#depth-stencil-view) to the device.</span></span> <span data-ttu-id="a6d74-150">後で深度ステンシル ビューをクリアします。</span><span class="sxs-lookup"><span data-stu-id="a6d74-150">We also clear the depth-stencil view afterward.</span></span>
 
-次に、ゲーム レンダラー オブジェクトが計算を実行するシェーダーのローダーを作成します  (具体的な実装については、サンプルの **BasicLoader.cpp** をご覧ください)。
+> [!Note]
+> <span data-ttu-id="a6d74-151">ステレオ レンダリングは、頂点のインスタンス化やジオメトリ シェーダーを使用する単一パス ステレオなど、他の方法で実現することもできます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-151">Stereo rendering can be achieved using other methods such as single pass stereo using vertex instancing or geometry shaders.</span></span> <span data-ttu-id="a6d74-152">2 つのレンダリング パスを使用する方法は時間がかかりますが、ステレオ レンダリングを実現するのに便利な方法です。</span><span class="sxs-lookup"><span data-stu-id="a6d74-152">The two rendering pass method is a slower, but more convenient way to achieve stereo rendering.</span></span>
 
-その後、**CreateDeviceResourcesAsync** は、すべてのテクスチャ リソースを **ShaderResourceViews** に読み込む非同期タスクを開始します。 これらのテクスチャ リソースは、サンプルに付属の DirectDraw Surface (DDS) テクスチャに格納されます。 DDS テクスチャは、DirectX Texture Compression (DXTC) で使われる、不可逆のテクスチャ形式です。 これらのテクスチャは、ゲーム内の壁、天井、床、および弾に使用する球体や柱の障害物で使用します。
+<span data-ttu-id="a6d74-153">ゲームが作成され、リソースが読み込まれたら、レンダリング パスごとに 1 回、[射影行列](#projection-transform-matrix)を更新します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-153">Once the game exists and resources are loaded, update the [projection matrix](#projection-transform-matrix), once per rendering pass.</span></span> <span data-ttu-id="a6d74-154">オブジェクトは、各ビューで若干異なります。</span><span class="sxs-lookup"><span data-stu-id="a6d74-154">Objects are slightly different from each view.</span></span> <span data-ttu-id="a6d74-155">次に、[グラフィックス レンダリング パイプライン](#rendering-pipeline)を設定します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-155">Next, set up the [graphics rendering pipeline](#rendering-pipeline).</span></span> 
 
-最後に、メソッドで作成されたすべての非同期タスクを含むタスク グループが返されます。 呼び出し元の関数は、これらすべての非同期タスクが完了するまで待機してから **FinalizeCreateGameDeviceResources** を呼び出します。
+> [!Note]
+> <span data-ttu-id="a6d74-156">リソースを読み込む方法については、「[DirectX グラフィックス リソースの作成と読み込み](tutorial-game-rendering.md#create-and-load-directx-graphic-resources)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-156">See [Create and load DirectX graphic resources](tutorial-game-rendering.md#create-and-load-directx-graphic-resources) for more information on how resources are loaded.</span></span>
 
-**FinalizeCreateGameDeviceResources** は、[**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) のデバイス コンテキスト メソッド呼び出し `m_deviceContext->UpdateSubresource` によって、最初のデータを定数バッファーに読み込みます。 このメソッドによって、球体、円柱形、フェイス、ゲーム オブジェクト、関連するマテリアルのメッシュ オブジェクトが作成されます。 その後、ゲーム オブジェクト リストで、適切なデバイス リソースが各オブジェクトに関連付けられます。
+<span data-ttu-id="a6d74-157">このゲーム サンプルでは、レンダラーは、すべてのオブジェクトについて標準の頂点レイアウトを使用するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="a6d74-157">In this game sample, the renderer is designed to use a standard vertex layout across all objects.</span></span> <span data-ttu-id="a6d74-158">これにより、シェーダーの設計が簡素化され、オブジェクトのジオメトリに関係なく、シェーダー間で簡単に切り替えることができます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-158">This simplifies the shader design and allows for easy changes between shaders, independent of the objects' geometry.</span></span>
 
-輪で囲まれ、番号が付いたターゲット オブジェクトのテクスチャは、**TargetTexture.cpp**。 レンダラーは、**TargetTexture** 型のインスタンスを作成します。このインスタンスは、**TargetTexture::CreateTextureResourceView** メソッドを呼び出すときにゲームのターゲット オブジェクトのビットマップ テクスチャを作成します。 作成されるテクスチャは、上部に数字の付いた、色付きの同心の輪で構成されます。 これらの生成されたリソースは、適切なターゲット ゲーム オブジェクトに関連付けられます。
+#### <a name="gamerendererrender-method"></a><span data-ttu-id="a6d74-159">GameRenderer::Render メソッド</span><span class="sxs-lookup"><span data-stu-id="a6d74-159">GameRenderer::Render method</span></span>
 
-最後に、**FinalizeCreateGameDeviceResources** はブール型の `m_gameResourcesLoaded` グローバル変数を設定し、すべてのリソースが読み込まれたことを示します。
+<span data-ttu-id="a6d74-160">入力頂点レイアウトを使用する Direct3D コンテキストを設定します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-160">Set the Direct3D context to use an input vertex layout.</span></span> <span data-ttu-id="a6d74-161">入力レイアウト オブジェクトは、頂点バッファー データを[レンダリング パイプライン](#rendering-pipeline)にストリーミングする方法を記述します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-161">Input-layout objects describe how vertex buffer data is streamed into the [rendering pipeline](#rendering-pipeline).</span></span> 
 
-ゲームには、現在のウィンドウにグラフィックスを表示するためのリソースがあり、ウィンドウが変更されたときにこれらのリソースを再作成できます。 次に、そのウィンドウ内のシーンのプレイヤー ビューを定義するカメラを見てみましょう。
+<span data-ttu-id="a6d74-162">次に、以前に定義した[定数バッファー](#constant-buffers)を使用する Direct3D コンテキストを設定します。この定数バッファーは、[頂点シェーダー](#vertex-shaders-and-pixel-shaders)のパイプライン ステージと[ピクセル シェーダー](#vertex-shaders-and-pixel-shaders)のパイプライン ステージで使用されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-162">Next, we set the Direct3D context to use the [constant buffers](#constant-buffers) defined earlier, that are used by the [vertex shader](#vertex-shaders-and-pixel-shaders) pipeline stage and the [pixel shader](#vertex-shaders-and-pixel-shaders) pipeline stage.</span></span> 
 
-## <a name="implementing-the-camera-object"></a>カメラ オブジェクトの実装
+> [!Note]
+> <span data-ttu-id="a6d74-163">定数バッファーの定義の詳細については、「[レンダリング フレームワーク II: ゲームのレンダリング](tutorial-game-rendering.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-163">See [Rendering framework II: Game rendering](tutorial-game-rendering.md) for more information about definition of the constant buffers.</span></span>
 
-
-ゲームには、独自の座標系でワールドを更新するためのコードがあります (ワールド空間またはシーン空間と呼ばれることもあります)。 カメラを含むすべてのオブジェクトはこの空間に配置されます。 サンプル ゲームでは、カメラの位置とルック ベクター (カメラからシーンを直接ポイントする "ルック アット" ベクターとシーンに対して垂直かつ上向きの "ルック アップ" ベクター) によってカメラ空間が定義されます。 プロジェクション パラメーターは、最終シーン内でその空間のどのくらいが実際に表示されるのかを決定します。また、視野 (FoV)、縦横比、クリッピング プレーンはプロジェクション変換を定義します。 頂点シェーダーは、次のアルゴリズムを使って (V はベクター、M はマトリックスを表す) モデル座標からデバイス座標への変換を行います。
-
-`              V(device) = V(model) x M(model-to-world) x M(world-to-view) x M(view-to-device)           `。
-
--   `M(model-to-world)`  はモデル座標からワールド座標への変換マトリックスです。 このマトリックスは、プリミティブによって提供されます。 (このページのプリミティブについてのセクションで確認します。)
--   `M(world-to-view)`  はワールド座標からビュー座標への変換マトリックスです。 このマトリックスは、カメラのビュー マトリックスによって提供されます。
--   `M(view-to-device)`  はビュー座標からデバイス座標への変換マトリックスです。 このマトリックスは、カメラのプロジェクションによって提供されます。
-
-**VertexShader.hlsl** のシェーダー コードがこれらのベクターとマトリックスと共に定数バッファーから読み込まれ、各頂点に対してこの変換を実行します。
-
-**Camera** オブジェクトは、ビュー マトリックスとプロジェクション マトリックスを定義します。 次に、サンプル ゲームがこのオブジェクトをどのように宣言するか見てみましょう。
-
-```cpp
-ref class Camera
-{
-internal:
-    Camera();
-
-    // Call these from client and use Get*Matrix() to read new matrices.
-    // Functions to change camera matrices
-    void SetViewParams(_In_ DirectX::XMFLOAT3 eye, _In_ DirectX::XMFLOAT3 lookAt, _In_ DirectX::XMFLOAT3 up);
-    void SetProjParams(_In_ float fieldOfView, _In_ float aspectRatio, _In_ float nearPlane, _In_ float farPlane);
-
-    void LookDirection (_In_ DirectX::XMFLOAT3 lookDirection);
-    void Eye (_In_ DirectX::XMFLOAT3 position);
-
-    DirectX::XMMATRIX View();
-    DirectX::XMMATRIX Projection();
-    DirectX::XMMATRIX LeftEyeProjection();
-    DirectX::XMMATRIX RightEyeProjection();
-    DirectX::XMMATRIX World();
-    DirectX::XMFLOAT3 Eye();
-    DirectX::XMFLOAT3 LookAt();
-    DirectX::XMFLOAT3 Up();
-    float NearClipPlane();
-    float FarClipPlane();
-    float Pitch();
-    float Yaw();
-
-protected private:
-    DirectX::XMFLOAT4X4 m_viewMatrix;                 // View matrix
-    DirectX::XMFLOAT4X4 m_projectionMatrix;           // Projection matrix
-    DirectX::XMFLOAT4X4 m_projectionMatrixLeft;       // Projection Matrix for Left Eye Stereo
-    DirectX::XMFLOAT4X4 m_projectionMatrixRight;      // Projection Matrix for Right Eye Stereo
-
-    DirectX::XMFLOAT4X4 m_inverseView;
-
-    DirectX::XMFLOAT3 m_eye;                        // Camera eye position
-    DirectX::XMFLOAT3 m_lookAt;                     // LookAt position
-    DirectX::XMFLOAT3 m_up;                         // Up vector
-    float             m_cameraYawAngle;             // Yaw angle of camera
-    float             m_cameraPitchAngle;           // Pitch angle of camera
-
-    float             m_fieldOfView;                // Field of view
-    float             m_aspectRatio;                // Aspect ratio
-    float             m_nearPlane;                  // Near plane
-    float             m_farPlane;                   // Far plane
-};
-```
-
-ビュー座標とプロジェクション座標 (**m\_viewMatrix** と **m\_projectionMatrix**) への変換を定義する 2 つの 4x4 マトリックスがあります。 (ステレオ プロジェクションの場合、それぞれの目のビューに 1 つずつ、2 つのプロジェクション マトリックスを使用します。) これらのマトリックスは、それぞれ次の 2 つのメソッドを使って計算されます。
-
--   **SetViewParams**
--   **SetProjParams**
-
-これら 2 つのメソッドのコードは次のとおりです。
-
-```cpp
-void Camera::SetViewParams(
-    _In_ XMFLOAT3 eye,
-    _In_ XMFLOAT3 lookAt,
-    _In_ XMFLOAT3 up
-    )
-{
-    m_eye = eye;
-    m_lookAt = lookAt;
-    m_up = up;
-
-    // Calc the view matrix.
-    XMMATRIX view = XMMatrixLookAtLH(
-        XMLoadFloat3(&m_eye),
-        XMLoadFloat3(&m_lookAt),
-        XMLoadFloat3(&m_up)
-        );
-
-    XMVECTOR det;
-    XMMATRIX inverseView = XMMatrixInverse(&det, view);
-    XMStoreFloat4x4(&m_viewMatrix, view);
-    XMStoreFloat4x4(&m_inverseView, inverseView);
-
-    // The axis basis vectors and camera position are stored inside the
-    // position matrix in the 4 rows of the camera's world matrix.
-    // To figure out the yaw/pitch of the camera, we just need the Z basis vector
-    XMFLOAT3* zBasis = (XMFLOAT3*)&inverseView._31;
-
-    m_cameraYawAngle = atan2f(zBasis->x, zBasis->z);
-
-    float len = sqrtf(zBasis->z * zBasis->z + zBasis->x * zBasis->x);
-    m_cameraPitchAngle = atan2f(zBasis->y, len);
-}
-//--------------------------------------------------------------------------------------
-// Calculates the projection matrix based on input params
-//--------------------------------------------------------------------------------------
-void Camera::SetProjParams(
-    _In_ float fieldOfView,
-    _In_ float aspectRatio,
-    _In_ float nearPlane,
-    _In_ float farPlane
-    )
-{
-    // Set attributes for the projection matrix
-    m_fieldOfView = fieldOfView;
-    m_aspectRatio = aspectRatio;
-    m_nearPlane = nearPlane;
-    m_farPlane = farPlane;
-    XMStoreFloat4x4(
-        &m_projectionMatrix,
-        XMMatrixPerspectiveFovLH(
-            m_fieldOfView,
-            m_aspectRatio,
-            m_nearPlane,
-            m_farPlane
-            )
-        );
-
-    STEREO_PARAMETERS* stereoParams = nullptr;
-    // change the projection matrix
-    XMStoreFloat4x4(
-        &m_projectionMatrixLeft,
-        MatrixStereoProjectionFovLH(
-            stereoParams,
-            STEREO_CHANNEL::LEFT,
-            m_fieldOfView,
-            m_aspectRatio,
-            m_nearPlane,
-            m_farPlane,
-            STEREO_MODE::NORMAL
-            )
-        );
-
-    XMStoreFloat4x4(
-        &m_projectionMatrixRight,
-        MatrixStereoProjectionFovLH(
-            stereoParams,
-            STEREO_CHANNEL::RIGHT,
-            m_fieldOfView,
-            m_aspectRatio,
-            m_nearPlane,
-            m_farPlane,
-            STEREO_MODE::NORMAL
-            )
-        );
-}
-```
-
-**Camera** オブジェクトで **View** メソッドと **Projection** メソッドをそれぞれ呼び出して、生成されたビューとプロジェクション データを取得します。 これらの呼び出しは、これから確認する次の手順 (ゲーム ループで呼び出される **GameRenderer::Render** メソッド) で行われます。
-
-次に、ゲームでフレームワークを作成し、カメラを使ってゲーム グラフィックスを描画する方法を見てみましょう。 この手順には、ゲーム ワールドとその要素で構成されるプリミティブを定義することも含まれます。
-
-## <a name="defining-the-primitives"></a>プリミティブの定義
-
-
-ゲーム サンプル コードでは、2 つの基底クラスでプリミティブを定義して実装し、プリミティブ型ごとに対応する特殊化を定義して実装します。
-
-**MeshObject.h/.cpp** では、すべてのメッシュ オブジェクトの基底クラスを定義します。 **SphereMesh.h/.cpp**、**CylinderMesh.h/.cpp**、**FaceMesh.h/.cpp**、**WorldMesh.h/.cpp** の各ファイルには、プリミティブのジオメトリを定義する頂点データと頂点標準データを使って各プリミティブに定数バッファーを設定するコードが含まれます。 これらのコード ファイルは、ゲーム アプリで Direct3D プリミティブを作成する方法を理解するための最初のファイルとしては適していますが、このゲームの実装に固有の要素が多いため、ここでは説明しません。 ここでは、各プリミティブの頂点バッファーが設定されていると想定して、ゲーム サンプルでこれらのバッファーがどのように処理され、ゲーム自体が更新されるかを見ていきます。
-
-ゲーム側から見た場合のプリミティブを表すオブジェクトの基底クラスは、**GameObject.h/.cpp** で定義されます。 この **GameObject** クラスは、すべてのプリミティブに共通する動作のフィールドとメソッドを定義します。 各プリミティブのオブジェクトの型は、ここから派生します。 オブジェクトがどのように定義されるかを見てみましょう。
-
-```cpp
-ref class GameObject
-{
-internal:
-    GameObject();
-
-    // Expect these two functions to be overloaded by subclasses.
-    virtual bool IsTouching(
-        DirectX::XMFLOAT3 /* point */,
-        float /* radius */,
-        _Out_ DirectX::XMFLOAT3 *contact,
-        _Out_ DirectX::XMFLOAT3 *normal
-        )
-    {
-        *contact = DirectX::XMFLOAT3(0.0f, 0.0f, 0.0f);
-        *normal = DirectX::XMFLOAT3(0.0f, 0.0f, 1.0f);
-        return false;
-    };
-
-    void Render(
-        _In_ ID3D11DeviceContext *context,
-        _In_ ID3D11Buffer *primitiveConstantBuffer
-        );
-
-    void Active(bool active);
-    bool Active();
-    void Target(bool target);
-    bool Target();
-    void Hit(bool hit);
-    bool Hit();
-    void OnGround(bool ground);
-    bool OnGround();
-    void TargetId(int targetId);
-    int  TargetId();
-    void HitTime(float t);
-    float HitTime();
-
-    void     AnimatePosition(_In_opt_ Animate^ animate);
-    Animate^ AnimatePosition();
-
-    void         HitSound(_In_ SoundEffect^ hitSound);
-    SoundEffect^ HitSound();
-
-    void PlaySound(float impactSpeed, DirectX::XMFLOAT3 eyePoint);
-
-    void Mesh(_In_ MeshObject^ mesh);
-
-    void NormalMaterial(_In_ Material^ material);
-    Material^ NormalMaterial();
-    void HitMaterial(_In_ Material^ material);
-    Material^ HitMaterial();
-
-    void Position(DirectX::XMFLOAT3 position);
-    void Position(DirectX::XMVECTOR position);
-    void Velocity(DirectX::XMFLOAT3 velocity);
-    void Velocity(DirectX::XMVECTOR velocity);
-    DirectX::XMMATRIX ModelMatrix();
-    DirectX::XMFLOAT3 Position();
-    DirectX::XMVECTOR VectorPosition();
-    DirectX::XMVECTOR VectorVelocity();
-    DirectX::XMFLOAT3 Velocity();
-
-protected private:
-    virtual void UpdatePosition() {};
-    // Object Data
-    bool                m_active;
-    bool                m_target;
-    int                 m_targetId;
-    bool                m_hit;
-    bool                m_ground;
-
-    DirectX::XMFLOAT3   m_position;
-    DirectX::XMFLOAT3   m_velocity;
-    DirectX::XMFLOAT4X4 m_modelMatrix;
-
-    Material^           m_normalMaterial;
-    Material^           m_hitMaterial;
-
-    DirectX::XMFLOAT3   m_defaultXAxis;
-    DirectX::XMFLOAT3   m_defaultYAxis;
-    DirectX::XMFLOAT3   m_defaultZAxis;
-
-    float               m_hitTime;
-
-    Animate^            m_animatePosition;
-    MeshObject^         m_mesh;
-
-    SoundEffect^        m_hitSound;
-};
-```
-
-ほとんどのフィールドには、状態、視覚プロパティ、またはゲーム ワールドでのプリミティブの位置に関するデータが含まれます。 特に、次のメソッドはほとんどのゲームで必須です。
-
--   **Mesh**。 **m\_mesh** に格納されている、プリミティブのメッシュ ジオメトリを取得します。 このジオメトリは、**MeshObject.h/.cpp** で定義されています。
--   **IsTouching**。 このメソッドは、プリミティブがポイントから特定の距離内にあるかどうかを判断して、そのポイントに最も近いサーフェス上のポイントと、そのポイントにあるオブジェクトのサーフェスに対する垂線を返します。 サンプルでは、弾のプリミティブの衝突のみに関係しているため、ゲームのダイナミクスはこれで十分です。 これはプリミティブどうしの汎用の交点関数ではありませんが、そのベースとして使うことはできます。
--   **AnimatePosition**。 プリミティブの動きとアニメーションを更新します。
--   **UpdatePosition**。 ワールド座標空間でのオブジェクトの位置を更新します。
--   **Render**。 プリミティブのマテリアル プロパティをプリミティブ定数バッファーに入れて、デバイス コンテキストを使ってプリミティブ ジオメトリをレンダリング (描画) します。
-
-プリミティブに最小限必要なメソッドのセットを定義する基本オブジェクト型を作成することをお勧めします。ほとんどのゲームには多数のプリミティブがあり、すぐにコードを管理するのが難しくなるためです。 更新ループによってプリミティブをさまざまな形で処理できる場合も、ゲーム コードを単純にすることができます。これにより、オブジェクト自身で自らの更新動作とレンダリング動作を定義できるようになります。
-
-次に、このゲーム サンプルでのプリミティブの基本的なレンダリングを確認しましょう。
-
-## <a name="rendering-the-primitives"></a>プリミティブのレンダリング
-
-
-ゲーム サンプルのプリミティブは、次のように、親の **GameObject** クラスに実装された基本の **Render** メソッドを使います。
-
-```cpp
-void GameObject::Render(
-    _In_ ID3D11DeviceContext *context,
-    _In_ ID3D11Buffer *primitiveConstantBuffer
-    )
-{
-    if (!m_active || (m_mesh == nullptr) || (m_normalMaterial == nullptr))
-    {
-        return;
-    }
-
-    ConstantBufferChangesEveryPrim constantBuffer;
-
-    XMStoreFloat4x4(
-        &constantBuffer.worldMatrix,
-        XMMatrixTranspose(ModelMatrix())
-        );
-
-    if (m_hit && m_hitMaterial != nullptr)
-    {
-        m_hitMaterial->RenderSetup(context, &constantBuffer);
-    }
-    else
-    {
-        m_normalMaterial->RenderSetup(context, &constantBuffer);
-    }
-    context->UpdateSubresource(primitiveConstantBuffer, 0, nullptr, &constantBuffer, 0, 0);
-
-    m_mesh->Render(context);
-}
-```
-
-**GameObject::Render** メソッドは、特定のプリミティブに固有のデータでプリミティブ定数バッファーを更新します。 ゲームでは複数の定数バッファーが使われますが、これらのバッファーはプリミティブごとに 1 回更新するだけで済みます。
-
-定数バッファーは、プリミティブごとに実行されるシェーダーに対する入力と考えることができます。 静的なデータ (**m\_constantBufferNeverChanges**) もあれば、カメラの位置のようにフレームで一定のデータ (**m\_constantBufferChangesEveryFrame)** もあれば、色やテクスチャなどのようにプリミティブに固有のデータ (**m\_constantBufferChangesEveryPrim**) もあります。 ゲーム レンダラーはこれらの入力を別個の定数バッファーに分けて、CPU や GPU が使うメモリ帯域幅を最適化します。 この方法は、GPU が追跡する必要のあるデータ量を最小限に抑えるのにも役立ちます。 GPU にはコマンドの大きいキューがあり、ゲームが **Draw** を呼び出すたびに、そのコマンドは関連するデータと共にキューに入れられます。 ゲームがプリミティブ定数バッファーを更新して、次の **Draw** コマンドを発行すると、グラフィックス ドライバーはこの次のコマンドと関連するデータをキューに追加します。 ゲームで 100 のプリミティブを描画する場合、キューに定数バッファー データの 100 のコピーが存在する可能性があります。 ゲームから GPU に送るデータ量を最小限に抑えるために、ゲームでは、各プリミティブの更新情報のみを含む個別のプリミティブ定数バッファーを使用します。
-
-衝突 (ヒット) が検出された場合、**GameObject::Render** は現在のコンテキストを確認し、弾 (球体) が標的に当たったと示しているかを調べます。 標的に弾が当たった場合、このメソッドは標的の輪の色を反転するヒット マテリアルを適用して、弾が当たったことをプレイヤーに示します。 弾が当たらなかった場合、同じメソッドで既定のマテリアルが適用されます。 どちらの場合も、このメソッドは、適切な定数を定数バッファーに設定する **Material::RenderSetup** を呼び出してマテリアルを設定します。 次に、[**ID3D11DeviceContext::PSSetShaderResources**](https://msdn.microsoft.com/library/windows/desktop/ff476473) を呼び出してピクセル シェーダーの対応するテクスチャ リソースを設定し、[**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) と [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) を呼び出してそれぞれ頂点シェーダー オブジェクトとピクセル シェーダー オブジェクト自体を設定します。
-
-次に、**Material::RenderSetup** で定数バッファーを構成してシェーダー リソースを割り当てる方法を示します。 繰り返しになりますが、この定数バッファーは、特にプリミティブに対する変更を更新するために使います。
-
-> **注**   **Material** クラスは **Material.h/.cpp** で定義されています。
-
- 
-
-```cpp
-void Material::RenderSetup(
-    _In_ ID3D11DeviceContext* context,
-    _Inout_ ConstantBufferChangesEveryPrim* constantBuffer
-    )
-{
-    constantBuffer->meshColor = m_meshColor;
-    constantBuffer->specularColor = m_specularColor;
-    constantBuffer->specularPower = m_specularExponent;
-    constantBuffer->diffuseColor = m_diffuseColor;
-
-    context->PSSetShaderResources(0, 1, m_textureRV.GetAddressOf());
-    context->VSSetShader(m_vertexShader.Get(), nullptr, 0);
-    context->PSSetShader(m_pixelShader.Get(), nullptr, 0);
-}
-```
-
-最後に、**PrimObject::Render** は、ベースとなる **MeshObject** オブジェクトの **Render** メソッドを呼び出します。
-
-```cpp
-void MeshObject::Render(_In_ ID3D11DeviceContext *context)
-{
-    uint32 stride = sizeof(PNTVertex);
-    uint32 offset = 0;
-
-    context->IASetVertexBuffers(0, 1, m_vertexBuffer.GetAddressOf(), &stride, &offset);
-    context->IASetIndexBuffer(m_indexBuffer.Get(), DXGI_FORMAT_R16_UINT, 0);
-    context->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-    context->DrawIndexed(m_indexCount, 0, 0);
-}
-```
-
-ゲーム サンプルの **MeshObject::Render** メソッドは描画コマンドをキューに入れ、現在のシーン状態を使って GPU 上でシェーダーを実行します。 頂点シェーダーは、カメラの位置や視点の変換を考慮して、ジオメトリ (頂点) をモデル座標からデバイス (ワールド) 座標に変換します。 最後に、ピクセル シェーダーは上で設定したテクスチャを使って、変換された三角形をバック バッファーにレンダリングします。
-
-これが実際のレンダリング プロセスで行われます。
-
-## <a name="creating-the-vertex-and-pixel-shaders"></a>頂点シェーダーとピクセル シェーダーの作成
-
-
-これまでにゲーム サンプルでは、描画するプリミティブと、レンダリングを定義する定数バッファーが定義されました。 これらの定数バッファーは、グラフィックス デバイス上で実行されるシェーダーに対するパラメーター セットとして機能します。 これらのシェーダー プログラムには 2 つの型があります。
-
--   頂点シェーダーは、頂点変換や照明などの頂点ごとの操作を実行します。
--   ピクセル (またはフラグメント) シェーダーは、テクスチャリングやピクセルごとの照明などの、ピクセルごとの操作を実行します。 最終レンダー ターゲットなど、ビットマップでの後処理効果の実行にも使用できます。
-
-シェーダー コードは、上位レベル シェーダー言語 (HLSL) を使って定義されます。これは、Direct3D 11 では C ライクな構文で作成されたプログラムからコンパイルされます  (完全な構文は、[ここ](https://msdn.microsoft.com/library/windows/desktop/bb509635)にあります)。サンプル ゲームの 2 つの主要シェーダーは、**PixelShader.hlsl** と **VertexShader.hlsl** で定義されています。 (低電力デバイス向けに定義されている "低電力" シェーダー **PixelShaderFlat.hlsl** と **VertexShaderFlat.hlsl** もあります。 これら 2 つのシェーダーで提供される効果は制限されており、たとえば、テクスチャ サーフェスで鏡面ハイライトは実行されません)。最後に、定数バッファーの形式が含まれている .hlsli ファイル **ConstantBuffers.hlsli** があります。
-
-**ConstantBuffers.hlsli** は次のように定義されています。
-
-```cpp
-Texture2D diffuseTexture : register(t0);
-SamplerState linearSampler : register(s0);
-
-cbuffer ConstantBufferNeverChanges : register(b0)
-{
-    float4 lightPosition[4];
-    float4 lightColor;
-}
-
-cbuffer ConstantBufferChangeOnResize : register(b1)
-{
-    matrix projection;
-};
-
-cbuffer ConstantBufferChangesEveryFrame : register(b2)
-{
-    matrix view;
-};
-
-cbuffer ConstantBufferChangesEveryPrim : register (b3)
-{
-    matrix world;
-    float4 meshColor;
-    float4 diffuseColor;
-    float4 specularColor;
-    float  specularExponent;
-};
-
-struct VertextShaderInput
-{
-    float4 position : POSITION;
-    float4 normal : NORMAL;
-    float2 textureUV : TEXCOORD0;
-};
-
-struct PixelShaderInput
-{
-    float4 position : SV_POSITION;
-    float2 textureUV : TEXCOORD0;
-    float3 vertexToEye : TEXCOORD1;
-    float3 normal : TEXCOORD2;
-    float3 vertexToLight0 : TEXCOORD3;
-    float3 vertexToLight1 : TEXCOORD4;
-    float3 vertexToLight2 : TEXCOORD5;
-    float3 vertexToLight3 : TEXCOORD6;
-};
-
-struct PixelShaderFlatInput
-{
-    float4 position : SV_POSITION;
-    float2 textureUV : TEXCOORD0;
-    float4 diffuseColor : TEXCOORD1;
-};
-```
-
-**VertexShader.hlsl** は次のように定義されています。
-
-VertexShader.hlsl
-
-```cpp
-#include "ConstantBuffers.hlsli"
-
-PixelShaderInput main(VertextShaderInput input)
-{
-    PixelShaderInput output = (PixelShaderInput)0;
-
-    output.position = mul(mul(mul(input.position, world), view), projection);
-    output.textureUV = input.textureUV;
-
-    // compute view space normal
-    output.normal = normalize (mul(mul(input.normal.xyz, (float3x3)world), (float3x3)view));
-
-    // Vertex pos in view space (normalize in pixel shader)
-    output.vertexToEye = -mul(mul(input.position, world), view).xyz;
-
-    // Compute view space vertex to light vectors (normalized)
-    output.vertexToLight0 = normalize(mul(lightPosition[0], view ).xyz + output.vertexToEye);
-    output.vertexToLight1 = normalize(mul(lightPosition[1], view ).xyz + output.vertexToEye);
-    output.vertexToLight2 = normalize(mul(lightPosition[2], view ).xyz + output.vertexToEye);
-    output.vertexToLight3 = normalize(mul(lightPosition[3], view ).xyz + output.vertexToEye);
-
-    return output;
-}
-```
-
-**VertexShader.hlsl** の **main** 関数は、カメラについてのセクションで説明した頂点変換シーケンスを実行します。 頂点ごとに 1 回ずつ実行されます。 生成された出力は、テクスチャリングとマテリアル効果のためにピクセル シェーダー コードに渡されます。
-
-PixelShader.hlsl
-
-```cpp
-#include "ConstantBuffers.hlsli"
-
-float4 main(PixelShaderInput input) : SV_Target
-{
-    float diffuseLuminance =
-        max(0.0f, dot(input.normal, input.vertexToLight0)) +
-        max(0.0f, dot(input.normal, input.vertexToLight1)) +
-        max(0.0f, dot(input.normal, input.vertexToLight2)) +
-        max(0.0f, dot(input.normal, input.vertexToLight3));
-
-    // Normalize view space vertex-to-eye
-    input.vertexToEye = normalize(input.vertexToEye);
-
-    float specularLuminance = 
-        pow(max(0.0f, dot(input.normal, normalize(input.vertexToEye + input.vertexToLight0))), specularExponent) +
-        pow(max(0.0f, dot(input.normal, normalize(input.vertexToEye + input.vertexToLight1))), specularExponent) +
-        pow(max(0.0f, dot(input.normal, normalize(input.vertexToEye + input.vertexToLight2))), specularExponent) +
-        pow(max(0.0f, dot(input.normal, normalize(input.vertexToEye + input.vertexToLight3))), specularExponent);
-
-    float4 specular;
-    specular = specularColor * specularLuminance * 0.5f;
-
-   return diffuseTexture.Sample(linearSampler, input.textureUV) *  diffuseColor * diffuseLuminance * 0.5f + specular;
-}
-```
-
-この **PixelShader.hlsl** の **main** 関数は、シーンのプリミティブごとに三角形サーフェスの 2-D プロジェクションを取得して、これらに適用されるテクスチャと効果 (この場合、鏡面反射) に基づいて、表示されるサーフェスのピクセルごとに色値を計算します。
-
-次に、これらのすべての概念 (プリミティブ、カメラ、シェーダー) をまとめて、サンプル ゲームで完全なレンダリング プロセスがどのように構築されるかを見てみましょう。
-
-## <a name="rendering-the-frame-for-output"></a>出力用のフレームのレンダリング
-
-
-このメソッドについては、「[メイン ゲーム オブジェクトの定義](tutorial--defining-the-main-game-loop.md)」で簡単に説明しました。 それでは、もう少し詳しく見てみましょう。
+<span data-ttu-id="a6d74-164">同じ入力レイアウトと一連の定数バッファーが、パイプライン内のすべてのシェーダーで使用されるため、設定はフレームごとに 1 回です。</span><span class="sxs-lookup"><span data-stu-id="a6d74-164">Because the same input layout and set of constant buffers is used for all shaders that are in the pipeline, it's set up once per frame.</span></span>
 
 ```cpp
 void GameRenderer::Render()
 {
+    bool stereoEnabled = m_deviceResources->GetStereoState();
+
+    auto d3dContext = m_deviceResources->GetD3DDeviceContext();
+    auto d2dContext = m_deviceResources->GetD2DDeviceContext();
+
     int renderingPasses = 1;
-    if (m_stereoEnabled)
+    if (stereoEnabled)
     {
         renderingPasses = 2;
     }
 
     for (int i = 0; i < renderingPasses; i++)
     {
-        if (m_stereoEnabled && i > 0)
-        {
-            // Doing the Right Eye View
-            m_d3dContext->OMSetRenderTargets(1, m_renderTargetViewRight.GetAddressOf(), m_depthStencilView.Get());
-            m_d3dContext->ClearDepthStencilView(m_depthStencilView.Get(), D3D11_CLEAR_DEPTH, 1.0f, 0);
-            m_d2dContext->SetTarget(m_d2dTargetBitmapRight.Get());
-        }
-        else
-        {
-            // Doing the Mono or Left Eye View
-            m_d3dContext->OMSetRenderTargets(1, m_renderTargetView.GetAddressOf(), m_depthStencilView.Get());
-            m_d3dContext->ClearDepthStencilView(m_depthStencilView.Get(), D3D11_CLEAR_DEPTH, 1.0f, 0);
-            m_d2dContext->SetTarget(m_d2dTargetBitmap.Get());
-        }
-
-        if (m_game != nullptr && m_gameResourcesLoaded && m_levelResourcesLoaded)
-        {
-            // This section is only used after the game state has been initialized and all device
-            // resources needed for the game have been created and associated with the game objects.
-            if (m_stereoEnabled)
-            {
-                ConstantBufferChangeOnResize changesOnResize;
-                XMStoreFloat4x4(
-                    &changesOnResize.projection,
-                    XMMatrixMultiply(
-                        XMMatrixTranspose(
-                            i == 0 ?
-                            m_game->GameCamera()->LeftEyeProjection() :
-                            m_game->GameCamera()->RightEyeProjection()
-                            ),
-                        XMMatrixTranspose(XMLoadFloat4x4(&m_rotationTransform3D))
-                        )
-                    );
-
-                m_d3dContext->UpdateSubresource(
-                    m_constantBufferChangeOnResize.Get(),
-                    0,
-                    nullptr,
-                    &changesOnResize,
-                    0,
-                    0
-                    );
-            }
-            // Update variables that change one time per frame
-
-            ConstantBufferChangesEveryFrame constantBufferChangesEveryFrame;
-            XMStoreFloat4x4(
-                &constantBufferChangesEveryFrame.view,
-                XMMatrixTranspose(m_game->GameCamera()->View())
-                );
-            m_d3dContext->UpdateSubresource(
-                m_constantBufferChangesEveryFrame.Get(),
-                0,
-                nullptr,
-                &constantBufferChangesEveryFrame,
-                0,
-                0
-                );
-
-            // Setup Pipeline
-
-            m_d3dContext->IASetInputLayout(m_vertexLayout.Get());
-            m_d3dContext->VSSetConstantBuffers(0, 1, m_constantBufferNeverChanges.GetAddressOf());
-            m_d3dContext->VSSetConstantBuffers(1, 1, m_constantBufferChangeOnResize.GetAddressOf());
-            m_d3dContext->VSSetConstantBuffers(2, 1, m_constantBufferChangesEveryFrame.GetAddressOf());
-            m_d3dContext->VSSetConstantBuffers(3, 1, m_constantBufferChangesEveryPrim.GetAddressOf());
-
-            m_d3dContext->PSSetConstantBuffers(2, 1, m_constantBufferChangesEveryFrame.GetAddressOf());
-            m_d3dContext->PSSetConstantBuffers(3, 1, m_constantBufferChangesEveryPrim.GetAddressOf());
-            m_d3dContext->PSSetSamplers(0, 1, m_samplerLinear.GetAddressOf());
-
-            // Get the all the objects to render from the Game state.
-            auto objects = m_game->RenderObjects();
-            for (auto object = objects.begin(); object != objects.end(); object++)
-            {
-                (*object)->Render(m_d3dContext.Get(), m_constantBufferChangesEveryPrim.Get());
-            }
-        }
-        else
-        {
-            const float ClearColor[4] = {0.1f, 0.1f, 0.1f, 1.0f};
-
-            // Only need to clear the background when not rendering the full 3-D scene because
-            // the 3-D world is a fully enclosed box and the dynamics prevents the camera from
-            // moving outside this space.
-            if (m_stereoEnabled && i > 0)
-            {
-                // Doing the Right Eye View
-                m_d3dContext->ClearRenderTargetView(m_renderTargetViewRight.Get(), ClearColor);
-            }
-            else
-            {
-                // Doing the Mono or Left Eye View
-                m_d3dContext->ClearRenderTargetView(m_renderTargetView.Get(), ClearColor);
-            }
-        }
-
-        m_d2dContext->BeginDraw();
-
-        // To handle the swapchain being pre-rotated, set the D2D transformation to include it.
-        m_d2dContext->SetTransform(m_rotationTransform2D);
-
-        if (m_game != nullptr && m_gameResourcesLoaded)
-        {
-            // This is only used after the game state has been initialized.
-            m_gameHud->Render(m_game, m_d2dContext.Get(), m_windowBounds);
-        }
-
-        if (m_gameInfoOverlay->Visible())
-        {
-            m_d2dContext->DrawBitmap(
-                m_gameInfoOverlay->Bitmap(),
-                D2D1::RectF(
-                    (m_windowBounds.Width - GameInfoOverlayConstant::Width)/2.0f,
-                    (m_windowBounds.Height - GameInfoOverlayConstant::Height)/2.0f,
-                    (m_windowBounds.Width - GameInfoOverlayConstant::Width)/2.0f + GameInfoOverlayConstant::Width,
-                    (m_windowBounds.Height - GameInfoOverlayConstant::Height)/2.0f + GameInfoOverlayConstant::Height
-                    )
-                );
-        }
-
-        HRESULT hr = m_d2dContext->EndDraw();
-        if (hr != D2DERR_RECREATE_TARGET)
-        {
-            // The D2DERR_RECREATE_TARGET indicates there has been a problem with the underlying
-            // D3D device.  All subsequent rendering will be ignored until the device is recreated.
-            // This error will be propagated and the appropriate D3D error will be returned from the
-            // swapchain->Present(...) call.   At that point, the sample will recreate the device
-            // and all associated resources.  As a result the D2DERR_RECREATE_TARGET doesn't
-            // need to be handled here.
-            DX::ThrowIfFailed(hr);
-        }
-    }
-    Present();
-}
-```
-
-ゲームには、プリミティブとその動作の規則、ゲーム ワールドのプレイヤー ビューを提供するカメラ オブジェクト、描画のためのグラフィックス リソースなど、出力用のビューを作成するためのすべての要素があります。
-
-それでは、これらすべてをまとめるプロセスを見てみましょう。
-
-1.  ステレオ 3D が有効な場合、次のレンダリング プロセスを、それぞれの目ごとに 1 回ずつ、計 2 回実行するように設定します。
-2.  シーン全体が境界ワールド ボリュームで囲まれるので、すべてのピクセル (不要なものも) を描画してレンダー ターゲットのカラー プレーンを消去します。 深度ステンシル バッファーを既定値に設定します。
-3.  カメラのビュー マトリックスとデータを使って、フレーム更新データの定数バッファーを更新します。
-4.  前に定義した 4 つのコンテンツ バッファーを使う Direct3D コンテキストを設定します。
-5.  プリミティブ オブジェクトごとに **Render** メソッドを呼び出します。 これにより、各プリミティブのジオメトリを描画するコンテキストで **Draw** 呼び出しまたは **DrawIndexed** 呼び出しが行われます。 特に、この **Draw** 呼び出しは、定数バッファー データによってパラメーター化されたとおり、コマンドとデータを GPU のキューに入れます。 各描画呼び出しは、頂点ごとに 1 回頂点シェーダーを実行し、次にプリミティブの各三角形のピクセルごとに 1 回ピクセル シェーダーを実行します。 テクスチャは、ピクセル シェーダーがレンダリングの実行に使う状態の一部です。
-6.  Direct2D コンテキストを使って HUD とオーバーレイを描画します。
-7.  **DirectXBase::Present** を呼び出します。
-
-これでゲームの表示が更新されます。 このように、これはゲームのグラフィックス フレームワークを実装する基本的なプロセスです。 もちろん、ゲームの規模が大きくなるほど、その複雑な構造 (オブジェクトの型やアニメーション動作の全体の階層など) を処理するために配置する必要のあるアブストラクションは多くなり、メッシュやテクスチャなどのアセットの読み込みと管理を行うためにより複雑なメソッドが必要になります。
-
-## <a name="next-steps"></a>次のステップ
-
-
-次に、他のセクションで簡単に説明した、ゲーム サンプルのいくつかの重要な要素、[ユーザー インターフェイスのオーバーレイ](tutorial--adding-a-user-interface.md)、[入力コントロール](tutorial--adding-controls.md)、[サウンド](tutorial--adding-sound.md)について確認しましょう。
-
-## <a name="complete-sample-code-for-this-section"></a>このセクションのサンプル コード一式
-
-
-Camera.h
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#pragma once
-
-ref class Camera
-{
-internal:
-    Camera();
-
-    // Call these from client and use Get*Matrix() to read new matrices.
-    // Functions to change camera matrices.
-    void SetViewParams(_In_ DirectX::XMFLOAT3 eye, _In_ DirectX::XMFLOAT3 lookAt, _In_ DirectX::XMFLOAT3 up);
-    void SetProjParams(_In_ float fieldOfView, _In_ float aspectRatio, _In_ float nearPlane, _In_ float farPlane);
-
-    void LookDirection (_In_ DirectX::XMFLOAT3 lookDirection);
-    void Eye (_In_ DirectX::XMFLOAT3 position);
-
-    DirectX::XMMATRIX View();
-    DirectX::XMMATRIX Projection();
-    DirectX::XMMATRIX LeftEyeProjection();
-    DirectX::XMMATRIX RightEyeProjection();
-    DirectX::XMMATRIX World();
-    DirectX::XMFLOAT3 Eye();
-    DirectX::XMFLOAT3 LookAt();
-    DirectX::XMFLOAT3 Up();
-    float NearClipPlane();
-    float FarClipPlane();
-    float Pitch();
-    float Yaw();
-
-protected private:
-    DirectX::XMFLOAT4X4 m_viewMatrix;                 // View matrix
-    DirectX::XMFLOAT4X4 m_projectionMatrix;           // Projection matrix
-    DirectX::XMFLOAT4X4 m_projectionMatrixLeft;       // Projection Matrix for Left Eye Stereo
-    DirectX::XMFLOAT4X4 m_projectionMatrixRight;      // Projection Matrix for Right Eye Stereo
-
-    DirectX::XMFLOAT4X4 m_inverseView;
-
-    DirectX::XMFLOAT3 m_eye;                        // Camera eye position
-    DirectX::XMFLOAT3 m_lookAt;                     // LookAt position
-    DirectX::XMFLOAT3 m_up;                         // Up vector
-    float             m_cameraYawAngle;             // Yaw angle of camera
-    float             m_cameraPitchAngle;           // Pitch angle of camera
-
-    float             m_fieldOfView;                // Field of view
-    float             m_aspectRatio;                // Aspect ratio
-    float             m_nearPlane;                  // Near plane
-    float             m_farPlane;                   // Far plane
-};
-```
-
-Camera.cpp
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#include "pch.h"
-#include "Camera.h"
-#include "StereoProjection.h"
-
-using namespace DirectX;
-
-#undef min // use __min instead
-#undef max // use __max instead
-//--------------------------------------------------------------------------------------
-// Constructor
-//--------------------------------------------------------------------------------------
-Camera::Camera()
-{
-    // Setup the view matrix.
-    SetViewParams(
-        XMFLOAT3(0.0f, 0.0f, 0.0f),   // default eye position.
-        XMFLOAT3(0.0f, 0.0f, 1.0f),   // default look at position.
-        XMFLOAT3(0.0f, 1.0f, 0.0f)    // default up vector.
-        );
-
-    // Setup the projection matrix.
-    SetProjParams(XM_PI / 4, 1.0f, 1.0f, 1000.0f);
-}
-//--------------------------------------------------------------------------------------
-void Camera::LookDirection (_In_ XMFLOAT3 lookDirection)
-{
-    XMFLOAT3 lookAt;
-    lookAt.x = m_eye.x + lookDirection.x;
-    lookAt.y = m_eye.y + lookDirection.y;
-    lookAt.z = m_eye.z + lookDirection.z;
-
-    SetViewParams(m_eye, lookAt, m_up);
-}
-//--------------------------------------------------------------------------------------
-void Camera::Eye(_In_ XMFLOAT3 eye)
-{
-    SetViewParams(eye, m_lookAt, m_up);
-}
-//--------------------------------------------------------------------------------------
-void Camera::SetViewParams(
-    _In_ XMFLOAT3 eye,
-    _In_ XMFLOAT3 lookAt,
-    _In_ XMFLOAT3 up
-    )
-{
-    m_eye = eye;
-    m_lookAt = lookAt;
-    m_up = up;
-
-    // Calculate the view matrix.
-    XMMATRIX view = XMMatrixLookAtLH(
-        XMLoadFloat3(&m_eye),
-        XMLoadFloat3(&m_lookAt),
-        XMLoadFloat3(&m_up)
-        );
-
-    XMVECTOR det;
-    XMMATRIX inverseView = XMMatrixInverse(&det, view);
-    XMStoreFloat4x4(&m_viewMatrix, view);
-    XMStoreFloat4x4(&m_inverseView, inverseView);
-
-    // The axis basis vectors and camera position are stored inside the
-    // position matrix in the four rows of the camera's world matrix.
-    // To figure out the yaw/pitch of the camera, we just need the Z basis vector.
-    XMFLOAT3 zBasis;
-    XMStoreFloat3(&zBasis, inverseView.r[2]);
-
-    m_cameraYawAngle = atan2f(zBasis.x, zBasis.z);
-
-    float len = sqrtf(zBasis.z * zBasis.z + zBasis.x * zBasis.x);
-    m_cameraPitchAngle = atan2f(zBasis.y, len);
-}
-//--------------------------------------------------------------------------------------
-// Calculates the projection matrix based on input params.
-//--------------------------------------------------------------------------------------
-void Camera::SetProjParams(
-    _In_ float fieldOfView,
-    _In_ float aspectRatio,
-    _In_ float nearPlane,
-    _In_ float farPlane
-    )
-{
-    // Set attributes for the projection matrix.
-    m_fieldOfView = fieldOfView;
-    m_aspectRatio = aspectRatio;
-    m_nearPlane = nearPlane;
-    m_farPlane = farPlane;
-    XMStoreFloat4x4(
-        &m_projectionMatrix,
-        XMMatrixPerspectiveFovLH(
-            m_fieldOfView,
-            m_aspectRatio,
-            m_nearPlane,
-            m_farPlane
-            )
-        );
-
-    STEREO_PARAMETERS* stereoParams = nullptr;
-    // Change the projection matrix.
-    XMStoreFloat4x4(
-        &m_projectionMatrixLeft,
-        MatrixStereoProjectionFovLH(
-            stereoParams,
-            STEREO_CHANNEL::LEFT,
-            m_fieldOfView,
-            m_aspectRatio,
-            m_nearPlane,
-            m_farPlane,
-            STEREO_MODE::NORMAL
-            )
-        );
-
-    XMStoreFloat4x4(
-        &m_projectionMatrixRight,
-        MatrixStereoProjectionFovLH(
-            stereoParams,
-            STEREO_CHANNEL::RIGHT,
-            m_fieldOfView,
-            m_aspectRatio,
-            m_nearPlane,
-            m_farPlane,
-            STEREO_MODE::NORMAL
-            )
-        );
-}
-//--------------------------------------------------------------------------------------
-DirectX::XMMATRIX Camera::View()
-{
-    return XMLoadFloat4x4(&m_viewMatrix);
-}
-DirectX::XMMATRIX Camera::Projection()
-{
-    return XMLoadFloat4x4(&m_projectionMatrix);
-}
-DirectX::XMMATRIX Camera::LeftEyeProjection()
-{
-    return XMLoadFloat4x4(&m_projectionMatrixLeft);
-}
-DirectX::XMMATRIX Camera::RightEyeProjection()
-{
-    return XMLoadFloat4x4(&m_projectionMatrixRight);
-}
-DirectX::XMMATRIX Camera::World()
-{
-    return XMLoadFloat4x4(&m_inverseView);
-}
-DirectX::XMFLOAT3 Camera::Eye()
-{
-    return m_eye;
-}
-DirectX::XMFLOAT3 Camera::LookAt()
-{
-    return m_lookAt;
-}
-float Camera::NearClipPlane()
-{
-    return m_nearPlane;
-}
-float Camera::FarClipPlane()
-{
-    return m_farPlane;
-}
-float Camera::Pitch()
-{
-    return m_cameraPitchAngle;
-}
-float Camera::Yaw()
-{
-    return m_cameraYawAngle;
-}
-```
-
-GameRenderer.h
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#pragma once
-
-#include "DirectXBase.h"
-#include "GameInfoOverlay.h"
-#include "GameHud.h"
-#include "Simple3DGame.h"
-
-ref class Simple3DGame;
-ref class GameHud;
-
-ref class GameRenderer : public DirectXBase
-{
-internal:
-    GameRenderer();
-
-    virtual void Initialize(
-        _In_ Windows::UI::Core::CoreWindow^ window,
-        float dpi
-        ) override;
-
-    virtual void CreateDeviceIndependentResources() override;
-    virtual void CreateDeviceResources() override;
-    virtual void UpdateForWindowSizeChange() override;
-    virtual void Render() override;
-    virtual void SetDpi(float dpi) override;
-
-    concurrency::task<void> CreateGameDeviceResourcesAsync(_In_ Simple3DGame^ game);
-    void FinalizeCreateGameDeviceResources();
-    concurrency::task<void> LoadLevelResourcesAsync();
-    void FinalizeLoadLevelResources();
-
-    GameInfoOverlay^ InfoOverlay()  { return m_gameInfoOverlay; };
-
-    DirectX::XMFLOAT2 GameInfoOverlayUpperLeft()
-    {
-        return DirectX::XMFLOAT2(
-            (m_windowBounds.Width  - GameInfoOverlayConstant::Width) / 2.0f,
-            (m_windowBounds.Height - GameInfoOverlayConstant::Height) / 2.0f
-            );
-    };
-    DirectX::XMFLOAT2 GameInfoOverlayLowerRight()
-    {
-        return DirectX::XMFLOAT2(
-            (m_windowBounds.Width  - GameInfoOverlayConstant::Width) / 2.0f + GameInfoOverlayConstant::Width,
-            (m_windowBounds.Height - GameInfoOverlayConstant::Height) / 2.0f + GameInfoOverlayConstant::Height
-            );
-    };
-
-protected private:
-    bool                                                m_initialized;
-    bool                                                m_gameResourcesLoaded;
-    bool                                                m_levelResourcesLoaded;
-    GameInfoOverlay^                                    m_gameInfoOverlay;
-    GameHud^                                            m_gameHud;
-    Simple3DGame^                                       m_game;
-
-    Microsoft::WRL::ComPtr<ID3D11ShaderResourceView>    m_sphereTexture;
-    Microsoft::WRL::ComPtr<ID3D11ShaderResourceView>    m_cylinderTexture;
-    Microsoft::WRL::ComPtr<ID3D11ShaderResourceView>    m_ceilingTexture;
-    Microsoft::WRL::ComPtr<ID3D11ShaderResourceView>    m_floorTexture;
-    Microsoft::WRL::ComPtr<ID3D11ShaderResourceView>    m_wallsTexture;
-
-    // Constant Buffers.
-    Microsoft::WRL::ComPtr<ID3D11Buffer>                m_constantBufferNeverChanges;
-    Microsoft::WRL::ComPtr<ID3D11Buffer>                m_constantBufferChangeOnResize;
-    Microsoft::WRL::ComPtr<ID3D11Buffer>                m_constantBufferChangesEveryFrame;
-    Microsoft::WRL::ComPtr<ID3D11Buffer>                m_constantBufferChangesEveryPrim;
-    Microsoft::WRL::ComPtr<ID3D11SamplerState>          m_samplerLinear;
-    Microsoft::WRL::ComPtr<ID3D11VertexShader>          m_vertexShader;
-    Microsoft::WRL::ComPtr<ID3D11VertexShader>          m_vertexShaderFlat;
-    Microsoft::WRL::ComPtr<ID3D11PixelShader>           m_pixelShader;
-    Microsoft::WRL::ComPtr<ID3D11PixelShader>           m_pixelShaderFlat;
-    Microsoft::WRL::ComPtr<ID3D11InputLayout>           m_vertexLayout;
-};
-```
-
-GameRenderer.cpp
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#include "pch.h"
-#include "DirectXSample.h"
-#include "GameRenderer.h"
-#include "ConstantBuffers.h"
-#include "TargetTexture.h"
-#include "BasicLoader.h"
-#include "CylinderMesh.h"
-#include "FaceMesh.h"
-#include "SphereMesh.h"
-#include "WorldMesh.h"
-#include "Face.h"
-#include "Sphere.h"
-#include "Cylinder.h"
-
-using namespace concurrency;
-using namespace DirectX;
-using namespace Microsoft::WRL;
-using namespace Windows::UI::Core;
-
-//----------------------------------------------------------------------
-
-GameRenderer::GameRenderer() :
-    m_initialized(false),
-    m_gameResourcesLoaded(false),
-    m_levelResourcesLoaded(false)
-{
-}
-
-//----------------------------------------------------------------------
-
-void GameRenderer::Initialize(
-    _In_ CoreWindow^ window,
-    float dpi
-    )
-{
-    if (!m_initialized)
-    {
-        m_gameHud = ref new GameHud(
-            "Windows 8 Samples",
-            "DirectX first-person game sample"
-            );
-        m_gameInfoOverlay = ref new GameInfoOverlay();
-        m_initialized = true;
-    }
-
-    DirectXBase::Initialize(window, dpi);
-
-    // Initialize could be called multiple times as a result of an error with the hardware device
-    // that requires it to be reinitialized.  Since the m_gameInfoOverlay has resources that are
-    // dependent on the device, it will need to be reinitialized each time with the new device information.
-    m_gameInfoOverlay->Initialize(m_d2dDevice.Get(), m_d2dContext.Get(), m_dwriteFactory.Get(), dpi);
-}
-
-//----------------------------------------------------------------------
-
-void GameRenderer::CreateDeviceIndependentResources()
-{
-    DirectXBase::CreateDeviceIndependentResources();
-    m_gameHud->CreateDeviceIndependentResources(m_dwriteFactory.Get(), m_wicFactory.Get());
-}
-
-//----------------------------------------------------------------------
-
-void GameRenderer::CreateDeviceResources()
-{
-    DirectXBase::CreateDeviceResources();
-
-    m_gameHud->CreateDeviceResources(m_d2dContext.Get());
-
-    if (m_game != nullptr)
-    {
-        // The initial invocation of CreateDeviceResources will occur
-        // before the Game State is initialized when the device is first
-        // being created, so that the inital loading screen can be displayed.
-        // Subsequent invocations of CreateDeviceResources will be a result
-        // of an error with the Device that requires the resources to be
-        // recreated.  In this case, the game state is already initialized
-        // so the game device resources need to be recreated.
-
-        // This sample doesn't gracefully handle all the async recreation
-        // of resources, so an exception is thrown.
-        throw Platform::Exception::CreateException(
-            DXGI_ERROR_DEVICE_REMOVED,
-            "GameRenderer::CreateDeviceResources - Recreation of resources after TDR not available\n"
-            );
-    }
-}
-
-//----------------------------------------------------------------------
-
-void GameRenderer::UpdateForWindowSizeChange()
-{
-    DirectXBase::UpdateForWindowSizeChange();
-
-    m_gameHud->UpdateForWindowSizeChange(m_windowBounds);
-
-    // Update the Projection Matrix and update the associated Constant Buffer.
-    if (m_game != nullptr)
-    {
-        m_game->GameCamera()->SetProjParams(
-            XM_PI / 2, m_renderTargetSize.Width / m_renderTargetSize.Height,
-            0.01f,
-            100.0f
-            );
-        ConstantBufferChangeOnResize changesOnResize;
-        XMStoreFloat4x4(
-            &changesOnResize.projection,
-            XMMatrixMultiply(
-                XMMatrixTranspose(m_game->GameCamera()->Projection()),
-                XMMatrixTranspose(XMLoadFloat4x4(&m_rotationTransform3D))
-                )
-            );
-
-        m_d3dContext->UpdateSubresource(
-            m_constantBufferChangeOnResize.Get(),
-            0,
-            nullptr,
-            &changesOnResize,
-            0,
-            0
-            );
-    }
-}
-
-//----------------------------------------------------------------------
-
-void GameRenderer::SetDpi(float dpi)
-{
-    DirectXBase::SetDpi(dpi);
-
-    if (m_gameInfoOverlay)
-    {
-        m_gameInfoOverlay->SetDpi(dpi);
-    }
-}
-
-//----------------------------------------------------------------------
-
-task<void> GameRenderer::CreateGameDeviceResourcesAsync(_In_ Simple3DGame^ game)
-{
-    // Set the Loading state to wait until any async resources have
-    // been loaded before proceeding.
-    m_game = game;
-
-    // NOTE: Only the m_d3dDevice is used in this method.  It is expected
-    // to not run on the same thread as the GameRenderer was created.
-    // Create methods on the m_d3dDevice are free-threaded and are safe while any methods
-    // in the m_d3dContext should only be used on a single thread and handled
-    // in the FinalizeCreateGameDeviceResources method.
-
-    D3D11_BUFFER_DESC bd;
-    ZeroMemory(&bd, sizeof(bd));
-
-    // Create the constant buffers,
-    bd.Usage = D3D11_USAGE_DEFAULT;
-    bd.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
-    bd.CPUAccessFlags = 0;
-    bd.ByteWidth = (sizeof(ConstantBufferNeverChanges) + 15) / 16 * 16;
-    DX::ThrowIfFailed(
-        m_d3dDevice->CreateBuffer(&bd, nullptr, &m_constantBufferNeverChanges)
-        );
-
-    bd.ByteWidth = (sizeof(ConstantBufferChangeOnResize) + 15) / 16 * 16;
-    DX::ThrowIfFailed(
-        m_d3dDevice->CreateBuffer(&bd, nullptr, &m_constantBufferChangeOnResize)
-        );
-
-    bd.ByteWidth = (sizeof(ConstantBufferChangesEveryFrame) + 15) / 16 * 16;
-    DX::ThrowIfFailed(
-        m_d3dDevice->CreateBuffer(&bd, nullptr, &m_constantBufferChangesEveryFrame)
-        );
-
-    bd.ByteWidth = (sizeof(ConstantBufferChangesEveryPrim) + 15) / 16 * 16;
-    DX::ThrowIfFailed(
-        m_d3dDevice->CreateBuffer(&bd, nullptr, &m_constantBufferChangesEveryPrim)
-        );
-
-    D3D11_SAMPLER_DESC sampDesc;
-    ZeroMemory(&sampDesc, sizeof(sampDesc));
-
-    sampDesc.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
-    sampDesc.AddressU = D3D11_TEXTURE_ADDRESS_WRAP;
-    sampDesc.AddressV = D3D11_TEXTURE_ADDRESS_WRAP;
-    sampDesc.AddressW = D3D11_TEXTURE_ADDRESS_WRAP;
-    sampDesc.ComparisonFunc = D3D11_COMPARISON_NEVER;
-    sampDesc.MinLOD = 0;
-    sampDesc.MaxLOD = FLT_MAX;
-    DX::ThrowIfFailed(
-        m_d3dDevice->CreateSamplerState(&sampDesc, &m_samplerLinear)
-        );
-
-    // Start the async tasks to load the shaders and textures.
-    BasicLoader^ loader = ref new BasicLoader(m_d3dDevice.Get());
-
-    std::vector<task<void>> tasks;
-
-    uint32 numElements = ARRAYSIZE(PNTVertexLayout);
-    tasks.push_back(loader->LoadShaderAsync("VertexShader.cso", PNTVertexLayout, numElements, &m_vertexShader, &m_vertexLayout));
-    tasks.push_back(loader->LoadShaderAsync("VertexShaderFlat.cso", nullptr, numElements, &m_vertexShaderFlat, nullptr));
-    tasks.push_back(loader->LoadShaderAsync("PixelShader.cso", &m_pixelShader));
-    tasks.push_back(loader->LoadShaderAsync("PixelShaderFlat.cso", &m_pixelShaderFlat));
-
-    // Make sure previous versions if any of the textures are released.
-    m_sphereTexture = nullptr;
-    m_cylinderTexture = nullptr;
-    m_ceilingTexture = nullptr;
-    m_floorTexture = nullptr;
-    m_wallsTexture = nullptr;
-
-    // Load Game specific textures.
-    tasks.push_back(loader->LoadTextureAsync("seafloor.dds", nullptr, &m_sphereTexture));
-    tasks.push_back(loader->LoadTextureAsync("metal_texture.dds", nullptr, &m_cylinderTexture));
-    tasks.push_back(loader->LoadTextureAsync("cellceiling.dds", nullptr, &m_ceilingTexture));
-    tasks.push_back(loader->LoadTextureAsync("cellfloor.dds", nullptr, &m_floorTexture));
-    tasks.push_back(loader->LoadTextureAsync("cellwall.dds", nullptr, &m_wallsTexture));
-    tasks.push_back(create_task([]()
-    {
-        // Simulate loading additional resources.
-        wait(GameConstants::InitialLoadingDelay);
-    }));
-
-    // Return the task group of all the async tasks for loading the shader and texture assets.
-    return when_all(tasks.begin(), tasks.end());
-}
-
-//----------------------------------------------------------------------
-
-void GameRenderer::FinalizeCreateGameDeviceResources()
-{
-    // All asynchronously loaded resources have completed loading.
-    // Now, associate all the resources with the appropriate
-    // Game objects.
-    // This method is expected to run in the same thread as the GameRenderer
-    // was created. All work will happen behind the "Loading ..." screen after the
-    // main loop has been entered.
-
-    // Initialize the Constant buffer with the light positions.
-    // These are handled here to ensure that the d3dContext is only
-    // used in one thread.
-
-    ConstantBufferNeverChanges constantBufferNeverChanges;
-    constantBufferNeverChanges.lightPosition[0] = XMFLOAT4( 3.5f, 2.5f,  5.5f, 1.0f);
-    constantBufferNeverChanges.lightPosition[1] = XMFLOAT4( 3.5f, 2.5f, -5.5f, 1.0f);
-    constantBufferNeverChanges.lightPosition[2] = XMFLOAT4(-3.5f, 2.5f, -5.5f, 1.0f);
-    constantBufferNeverChanges.lightPosition[3] = XMFLOAT4( 3.5f, 2.5f,  5.5f, 1.0f);
-    constantBufferNeverChanges.lightColor = XMFLOAT4(0.25f, 0.25f, 0.25f, 1.0f);
-    m_d3dContext->UpdateSubresource(m_constantBufferNeverChanges.Get(), 0, nullptr, &constantBufferNeverChanges, 0, 0);
-
-    // For the targets, there are two unique generated textures.
-    // Each texture image includes the number of the texture.
-    // Make sure the 2D rendering is occurring on the same thread
-    // as the main rendering.
-
-    TargetTexture^ textureGenerator = ref new TargetTexture(
-        m_d3dDevice.Get(),
-        m_d2dFactory.Get(),
-        m_dwriteFactory.Get(),
-        m_d2dContext.Get()
-        );
-
-    MeshObject^ cylinderMesh = ref new CylinderMesh(m_d3dDevice.Get(), 26);
-    MeshObject^ targetMesh = ref new FaceMesh(m_d3dDevice.Get());
-    MeshObject^ sphereMesh = ref new SphereMesh(m_d3dDevice.Get(), 26);
-
-    Material^ cylinderMaterial = ref new Material(
-        XMFLOAT4(0.8f, 0.8f, 0.8f, .5f),
-        XMFLOAT4(0.8f, 0.8f, 0.8f, .5f),
-        XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),
-        15.0f,
-        m_cylinderTexture.Get(),
-        m_vertexShader.Get(),
-        m_pixelShader.Get()
-        );
-
-    Material^ sphereMaterial = ref new Material(
-        XMFLOAT4(0.8f, 0.4f, 0.0f, 1.0f),
-        XMFLOAT4(0.8f, 0.4f, 0.0f, 1.0f),
-        XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f),
-        50.0f,
-        m_sphereTexture.Get(),
-        m_vertexShader.Get(),
-        m_pixelShader.Get()
-        );
-
-    auto objects = m_game->RenderObjects();
-
-    // Attach the textures to the appropriate game objects.
-    for (auto object = objects.begin(); object != objects.end(); object++)
-    {
-        if ((*object)->TargetId() == GameConstants::WorldFloorId)
-        {
-           (*object)->NormalMaterial(
-               ref new Material(
-                    XMFLOAT4(0.5f, 0.5f, 0.5f, 1.0f),
-                    XMFLOAT4(0.8f, 0.8f, 0.8f, 1.0f),
-                    XMFLOAT4(0.3f, 0.3f, 0.3f, 1.0f),
-                    150.0f,
-                    m_floorTexture.Get(),
-                    m_vertexShaderFlat.Get(),
-                    m_pixelShaderFlat.Get()
-                    )
-                );
-           (*object)->Mesh(ref new WorldFloorMesh(m_d3dDevice.Get()));
-        }
-        else if ((*object)->TargetId() == GameConstants::WorldCeilingId)
-        {
-           (*object)->NormalMaterial(
-               ref new Material(
-                    XMFLOAT4(0.5f, 0.5f, 0.5f, 1.0f),
-                    XMFLOAT4(0.8f, 0.8f, 0.8f, 1.0f),
-                    XMFLOAT4(0.3f, 0.3f, 0.3f, 1.0f),
-                    150.0f,
-                    m_ceilingTexture.Get(),
-                    m_vertexShaderFlat.Get(),
-                    m_pixelShaderFlat.Get()
-                    )
-                );
-           (*object)->Mesh(ref new WorldCeilingMesh(m_d3dDevice.Get()));
-        }
-        else if ((*object)->TargetId() == GameConstants::WorldWallsId)
-        {
-           (*object)->NormalMaterial(
-               ref new Material(
-                    XMFLOAT4(0.5f, 0.5f, 0.5f, 1.0f),
-                    XMFLOAT4(0.8f, 0.8f, 0.8f, 1.0f),
-                    XMFLOAT4(0.3f, 0.3f, 0.3f, 1.0f),
-                    150.0f,
-                    m_wallsTexture.Get(),
-                    m_vertexShaderFlat.Get(),
-                    m_pixelShaderFlat.Get()
-                    )
-                );
-           (*object)->Mesh(ref new WorldWallsMesh(m_d3dDevice.Get()));
-        }
-        else if (Cylinder^ cylinder = dynamic_cast<Cylinder^>(*object))
-        {
-            cylinder->Mesh(cylinderMesh);
-            cylinder->NormalMaterial(cylinderMaterial);
-        }
-        else if (Face^ target = dynamic_cast<Face^>(*object))
-        {
-            const int bufferLength = 16;
-            char16 str[bufferLength];
-            int len = swprintf_s(str, bufferLength, L"%d", target->TargetId());
-            Platform::String^ string = ref new Platform::String(str, len);
-
-            ComPtr<ID3D11ShaderResourceView> texture;
-            textureGenerator->CreateTextureResourceView(string, &texture);
-            target->NormalMaterial(
-                ref new Material(
-                    XMFLOAT4(0.8f, 0.8f, 0.8f, 0.5f),
-                    XMFLOAT4(0.8f, 0.8f, 0.8f, 0.5f),
-                    XMFLOAT4(0.3f, 0.3f, 0.3f, 1.0f),
-                    5.0f,
-                    texture.Get(),
-                    m_vertexShader.Get(),
-                    m_pixelShader.Get()
-                    )
-                );
-
-            textureGenerator->CreateHitTextureResourceView(string, &texture);
-            target->HitMaterial(
-                ref new Material(
-                    XMFLOAT4(0.8f, 0.8f, 0.8f, 0.5f),
-                    XMFLOAT4(0.8f, 0.8f, 0.8f, 0.5f),
-                    XMFLOAT4(0.3f, 0.3f, 0.3f, 1.0f),
-                    5.0f,
-                    texture.Get(),
-                    m_vertexShader.Get(),
-                    m_pixelShader.Get()
-                    )
-                );
-
-            target->Mesh(targetMesh);
-        }
-        else if (Sphere^ sphere = dynamic_cast<Sphere^>(*object))
-        {
-            sphere->Mesh(sphereMesh);
-            sphere->NormalMaterial(sphereMaterial);
-        }
-    }
-
-    // Ensure that the camera has been initialized with the right Projection
-    // matrix.  The camera is not created at the time the first window resize event
-    // occurs.
-    m_game->GameCamera()->SetProjParams(
-        XM_PI / 2, m_renderTargetSize.Width / m_renderTargetSize.Height,
-        0.01f,
-        100.0f
-        );
-
-    // Make sure that Projection matrix has been set in the constant buffer
-    // now that all the resources are loaded.
-    // DirectXBase is handling screen rotations directly to eliminate an unaligned
-    // fullscreen copy.  As a result, it is necessary to post multiply the rotationTransform3D
-    // matrix to the camera projection matrix.
-    ConstantBufferChangeOnResize changesOnResize;
-    XMStoreFloat4x4(
-        &changesOnResize.projection,
-            XMMatrixMultiply(
-                XMMatrixTranspose(m_game->GameCamera()->Projection()),
-                XMMatrixTranspose(XMLoadFloat4x4(&m_rotationTransform3D))
-                )
-        );
-
-    m_d3dContext->UpdateSubresource(
-        m_constantBufferChangeOnResize.Get(),
-        0,
-        nullptr,
-        &changesOnResize,
-        0,
-        0
-        );
-
-    m_gameResourcesLoaded = true;
-}
-
-//----------------------------------------------------------------------
-
-task<void> GameRenderer::LoadLevelResourcesAsync()
-{
-    m_levelResourcesLoaded = false;
-
-    return create_task([this]()
-    {
-        // This is where additional async loading of level specific resources
-        // would be done.  Because there aren't any to load, just simulate
-        // by delaying for some time.
-        wait(GameConstants::LevelLoadingDelay);
-    });
-}
-
-//----------------------------------------------------------------------
-
-void GameRenderer::FinalizeLoadLevelResources()
-{
-    // After the level specific resources had been loaded, this method is
-    // where D3D context specific actions would be handled.  This method
-    // runs in the same thread context as the GameRenderer was created.
-
-    m_levelResourcesLoaded = true;
-}
-
-//----------------------------------------------------------------------
-
-void GameRenderer::Render()
-{
-    int renderingPasses = 1;
-    if (m_stereoEnabled)
-    {
-        renderingPasses = 2;
-    }
-
-    for (int i = 0; i < renderingPasses; i++)
-    {
-        if (m_stereoEnabled && i > 0)
+        // Iterate through the number of rendering passes to be completed.
+        // 2 rendering passes if stereo is enabled
+        if (i > 0)
         {
             // Doing the Right Eye View.
-            m_d3dContext->OMSetRenderTargets(1, m_renderTargetViewRight.GetAddressOf(), m_depthStencilView.Get());
-            m_d3dContext->ClearDepthStencilView(m_depthStencilView.Get(), D3D11_CLEAR_DEPTH, 1.0f, 0);
-            m_d2dContext->SetTarget(m_d2dTargetBitmapRight.Get());
+            ID3D11RenderTargetView *const targets[1] = { m_deviceResources->GetBackBufferRenderTargetViewRight() };
+
+            // Resets render targets to the screen.
+            // OMSetRenderTargets binds 2 things to the device.
+            // 1. Binds one render target atomically to the device.
+            // 2. Binds the depth-stencil view, as returned by the GetDepthStencilView method, to the device.
+            // For more info, go to: https://msdn.microsoft.com/library/windows/desktop/ff476464.aspx
+
+            d3dContext->OMSetRenderTargets(1, targets, m_deviceResources->GetDepthStencilView());
+            
+            // Clears the depth stencil view.
+            // A depth stencil view contains the format and buffer to hold depth and stencil info.
+            // For more info about depth stencil view, go to: 
+            // https://docs.microsoft.com/windows/uwp/graphics-concepts/depth-stencil-view--dsv-
+            // A depth buffer is used to store depth information to control which areas of 
+            // polygons are rendered rather than hidden from view. To learn more about a depth buffer,
+            // go to: https://docs.microsoft.com/windows/uwp/graphics-concepts/depth-buffers
+            // A stencil buffer is used to mask pixels in an image, to produce special effects. 
+            // The mask determines whether a pixel is drawn or not,
+            // by setting the bit to a 1 or 0. To learn more about a stencil buffer,
+            // go to: https://docs.microsoft.com/windows/uwp/graphics-concepts/stencil-buffers
+
+            d3dContext->ClearDepthStencilView(m_deviceResources->GetDepthStencilView(), D3D11_CLEAR_DEPTH, 1.0f, 0);
+            
+            // d2d -- Discussed later
+            d2dContext->SetTarget(m_deviceResources->GetD2DTargetBitmapRight());
         }
         else
         {
             // Doing the Mono or Left Eye View.
-            m_d3dContext->OMSetRenderTargets(1, m_renderTargetView.GetAddressOf(), m_depthStencilView.Get());
-            m_d3dContext->ClearDepthStencilView(m_depthStencilView.Get(), D3D11_CLEAR_DEPTH, 1.0f, 0);
-            m_d2dContext->SetTarget(m_d2dTargetBitmap.Get());
+            // As compared to the right eye:
+            // m_deviceResources->GetBackBufferRenderTargetView instead of GetBackBufferRenderTargetViewRight
+            ID3D11RenderTargetView *const targets[1] = { m_deviceResources->GetBackBufferRenderTargetView() }; 
+            
+            // Same as the Right Eye View.
+            d3dContext->OMSetRenderTargets(1, targets, m_deviceResources->GetDepthStencilView());
+            d3dContext->ClearDepthStencilView(m_deviceResources->GetDepthStencilView(), D3D11_CLEAR_DEPTH, 1.0f, 0);
+            
+            // d2d -- Discussed later under Adding UI
+            d2dContext->SetTarget(m_deviceResources->GetD2DTargetBitmap()); 
         }
 
+        // Render the scene objects
         if (m_game != nullptr && m_gameResourcesLoaded && m_levelResourcesLoaded)
         {
             // This section is only used after the game state has been initialized and all device
             // resources needed for the game have been created and associated with the game objects.
-            if (m_stereoEnabled)
+            if (stereoEnabled)
             {
+                // When doing stereo, it is necessary to update the projection matrix once per rendering pass.
+
+                auto orientation = m_deviceResources->GetOrientationTransform3D();
+
                 ConstantBufferChangeOnResize changesOnResize;
+
+                // Apply either a left or right eye projection, which is an offset from the middle
                 XMStoreFloat4x4(
                     &changesOnResize.projection,
                     XMMatrixMultiply(
@@ -2185,11 +242,11 @@ void GameRenderer::Render()
                             m_game->GameCamera()->LeftEyeProjection() :
                             m_game->GameCamera()->RightEyeProjection()
                             ),
-                        XMMatrixTranspose(XMLoadFloat4x4(&m_rotationTransform3D))
+                        XMMatrixTranspose(XMLoadFloat4x4(&orientation))
                         )
                     );
 
-                m_d3dContext->UpdateSubresource(
+                d3dContext->UpdateSubresource(
                     m_constantBufferChangeOnResize.Get(),
                     0,
                     nullptr,
@@ -2198,14 +255,14 @@ void GameRenderer::Render()
                     0
                     );
             }
-            // Update variables that change one time per frame.
 
+            // Update variables that change once per frame.
             ConstantBufferChangesEveryFrame constantBufferChangesEveryFrame;
             XMStoreFloat4x4(
                 &constantBufferChangesEveryFrame.view,
                 XMMatrixTranspose(m_game->GameCamera()->View())
                 );
-            m_d3dContext->UpdateSubresource(
+            d3dContext->UpdateSubresource(
                 m_constantBufferChangesEveryFrame.Get(),
                 0,
                 nullptr,
@@ -2214,407 +271,114 @@ void GameRenderer::Render()
                 0
                 );
 
-            // Set up Pipeline.
+            // Setup the graphics pipeline. This sample uses the same InputLayout and set of
+            // constant buffers for all shaders, so they only need to be set once per frame.
+            // For more info about the graphics or rendering pipeline, 
+            // go to https://msdn.microsoft.com/library/windows/desktop/ff476882.aspx
 
-            m_d3dContext->IASetInputLayout(m_vertexLayout.Get());
-            m_d3dContext->VSSetConstantBuffers(0, 1, m_constantBufferNeverChanges.GetAddressOf());
-            m_d3dContext->VSSetConstantBuffers(1, 1, m_constantBufferChangeOnResize.GetAddressOf());
-            m_d3dContext->VSSetConstantBuffers(2, 1, m_constantBufferChangesEveryFrame.GetAddressOf());
-            m_d3dContext->VSSetConstantBuffers(3, 1, m_constantBufferChangesEveryPrim.GetAddressOf());
+            // IASetInputLayout binds an input-layout object to the input-assembler (IA) stage. 
+            // Input-layout objects describe how vertex buffer data is streamed into the IA pipeline stage.
+            // Set up the Direct3D context to use this vertex layout.
+            // For more info, go to: https://msdn.microsoft.com/library/windows/desktop/ff476454.aspx
+            d3dContext->IASetInputLayout(m_vertexLayout.Get());
 
-            m_d3dContext->PSSetConstantBuffers(2, 1, m_constantBufferChangesEveryFrame.GetAddressOf());
-            m_d3dContext->PSSetConstantBuffers(3, 1, m_constantBufferChangesEveryPrim.GetAddressOf());
-            m_d3dContext->PSSetSamplers(0, 1, m_samplerLinear.GetAddressOf());
+            // VSSetConstantBuffers sets the constant buffers used by the vertex shader pipeline stage.
+            // Set up the Direct3D context to use these constant buffers.
+            // For more info, go to: https://msdn.microsoft.com/library/windows/desktop/ff476491.aspx
 
-            // Get all the objects to render from the Game state.
+            d3dContext->VSSetConstantBuffers(0, 1, m_constantBufferNeverChanges.GetAddressOf());
+            d3dContext->VSSetConstantBuffers(1, 1, m_constantBufferChangeOnResize.GetAddressOf());
+            d3dContext->VSSetConstantBuffers(2, 1, m_constantBufferChangesEveryFrame.GetAddressOf());
+            d3dContext->VSSetConstantBuffers(3, 1, m_constantBufferChangesEveryPrim.GetAddressOf());
+
+            // Sets the constant buffers used by the pixel shader pipeline stage. 
+            // For more info, go to: https://msdn.microsoft.com/library/windows/desktop/ff476470.aspx
+
+            d3dContext->PSSetConstantBuffers(2, 1, m_constantBufferChangesEveryFrame.GetAddressOf());
+            d3dContext->PSSetConstantBuffers(3, 1, m_constantBufferChangesEveryPrim.GetAddressOf());
+            d3dContext->PSSetSamplers(0, 1, m_samplerLinear.GetAddressOf());
+
             auto objects = m_game->RenderObjects();
             for (auto object = objects.begin(); object != objects.end(); object++)
             {
-                (*object)->Render(m_d3dContext.Get(), m_constantBufferChangesEveryPrim.Get());
+                // The 3D object render method handles the rendering.
+                // For more info, see Primitive rendering below.
+                (*object)->Render(d3dContext, m_constantBufferChangesEveryPrim.Get()); /
             }
         }
         else
         {
-            const float ClearColor[4] = {0.1f, 0.1f, 0.1f, 1.0f};
+            const float ClearColor[4] = {0.5f, 0.5f, 0.8f, 1.0f};
 
-            // Only need to clear the background when not rendering the full 3-D scene because
-            // the 3-D world is a fully enclosed box and the dynamics prevents the camera from
+            // Only need to clear the background when not rendering the full 3D scene since
+            // the 3D world is a fully enclosed box and the dynamics prevents the camera from
             // moving outside this space.
-            if (m_stereoEnabled && i > 0)
+            if (i > 0)
             {
                 // Doing the Right Eye View.
-                m_d3dContext->ClearRenderTargetView(m_renderTargetViewRight.Get(), ClearColor);
+                d3dContext->ClearRenderTargetView(m_deviceResources->GetBackBufferRenderTargetViewRight(), ClearColor);
             }
             else
             {
                 // Doing the Mono or Left Eye View.
-                m_d3dContext->ClearRenderTargetView(m_renderTargetView.Get(), ClearColor);
+                d3dContext->ClearRenderTargetView(m_deviceResources->GetBackBufferRenderTargetView(), ClearColor);
             }
         }
 
-        m_d2dContext->BeginDraw();
+        // Start of 2D rendering
+        d3dContext->BeginEventInt(L"D2D BeginDraw", 1);
+        d2dContext->BeginDraw();
 
-        // To handle the swapchain being pre-rotated, set the D2D transformation to include it.
-        m_d2dContext->SetTransform(m_rotationTransform2D);
-
-        if (m_game != nullptr && m_gameResourcesLoaded)
-        {
-            // This is only used after the game state has been initialized.
-            m_gameHud->Render(m_game, m_d2dContext.Get(), m_windowBounds);
-        }
-
-        if (m_gameInfoOverlay->Visible())
-        {
-            m_d2dContext->DrawBitmap(
-                m_gameInfoOverlay->Bitmap(),
-                D2D1::RectF(
-                    (m_windowBounds.Width - GameInfoOverlayConstant::Width)/2.0f,
-                    (m_windowBounds.Height - GameInfoOverlayConstant::Height)/2.0f,
-                    (m_windowBounds.Width - GameInfoOverlayConstant::Width)/2.0f + GameInfoOverlayConstant::Width,
-                    (m_windowBounds.Height - GameInfoOverlayConstant::Height)/2.0f + GameInfoOverlayConstant::Height
-                    )
-                );
-        }
-
-        HRESULT hr = m_d2dContext->EndDraw();
-        if (hr != D2DERR_RECREATE_TARGET)
-        {
-            // The D2DERR_RECREATE_TARGET indicates there has been a problem with the underlying
-            // D3D device.  All subsequent rendering will be ignored until the device is recreated.
-            // This error will be propagated and the appropriate D3D error will be returned from the
-            // swapchain->Present(...) call.   At that point, the sample will recreate the device
-            // and all associated resources.  As a result, the D2DERR_RECREATE_TARGET doesn't
-            // need to be handled here.
-            DX::ThrowIfFailed(hr);
-        }
+        // ...
     }
-    Present();
 }
 ```
 
-GameObject.h
+### <a name="primitive-rendering"></a><span data-ttu-id="a6d74-165">プリミティブのレンダリング</span><span class="sxs-lookup"><span data-stu-id="a6d74-165">Primitive rendering</span></span>
+
+<span data-ttu-id="a6d74-166">シーンをレンダリングする場合は、レンダリングする必要があるすべてのオブジェクトをループ処理します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-166">When rendering the scene, you loop through all the objects that need to be rendered.</span></span> <span data-ttu-id="a6d74-167">次の手順は、オブジェクト (プリミティブ) ごとに繰り返されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-167">The steps below are repeated for each object (primitive).</span></span>
+
+* <span data-ttu-id="a6d74-168">モデルの[ワールド変換行列](#world-transform-matrix)とマテリアルの情報を使用して定数バッファー (__m\_constantBufferChangesEveryPrim__) を更新します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-168">Update the constant buffer(__m\_constantBufferChangesEveryPrim__) with the model's [world transformation matrix](#world-transform-matrix) and material information.</span></span>
+* <span data-ttu-id="a6d74-169">__m\_constantBufferChangesEveryPrim__ には、各オブジェクトのパラメーターが格納されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-169">The  __m\_constantBufferChangesEveryPrim__ contains parameters for each object.</span></span>  <span data-ttu-id="a6d74-170">ワールド変換行列に渡されるオブジェクトや、照明の計算の色と鏡面反射指数などのマテリアルのプロパティが含まれます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-170">It includes the object to world transformation matrix as well as material properties like color and specular exponent for lighting calculations.</span></span>
+* <span data-ttu-id="a6d74-171">[レンダリング パイプライン](#rendering-pipeline)の入力アセンブラー (IA) ステージにストリーミングされるメッシュ オブジェクトのデータ用に入力頂点レイアウトを使用する Direct3D コンテキストを設定します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-171">Set Direct3D context to use the input vertex layout for the mesh object data to be streamed into the input-assembler (IA) stage of the [rendering pipeline](#rendering-pipeline)</span></span>
+* <span data-ttu-id="a6d74-172">IA ステージで[インデックス バッファー](#index-buffer)を使用する Direct3D コンテキストを設定します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-172">Set Direct3D context to use an [index buffer](#index-buffer) in the IA stage.</span></span> <span data-ttu-id="a6d74-173">プリミティブの情報 (型、データの順序) を提供します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-173">Provide the primitive info: type, data order.</span></span>
+* <span data-ttu-id="a6d74-174">インデックス付きの、インスタンス化されていないプリミティブを描画する描画呼び出しを送信します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-174">Submit a draw call to draw the indexed, non-instanced primitive.</span></span> <span data-ttu-id="a6d74-175">__GameObject::Render__ メソッドは、特定のプリミティブに固有のデータでプリミティブ[定数バッファー](#constant-buffer-or-shader-constant-buffer)を更新します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-175">The __GameObject::Render__ method updates the primitive [constant buffer](#constant-buffer-or-shader-constant-buffer) with the data specific to a given primitive.</span></span> <span data-ttu-id="a6d74-176">これにより、各プリミティブのジオメトリを描画するコンテキストで __DrawIndexed__ 呼び出しが行われます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-176">This results in a __DrawIndexed__ call on the context to draw the geometry of that each primitive.</span></span> <span data-ttu-id="a6d74-177">特に、この描画呼び出しは、定数バッファー データによってパラメーター化されたとおり、コマンドとデータをグラフィックス処理装置 (GPU) のキューに入れます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-177">Specifically, this draw call queues commands and data to the graphics processing unit (GPU), as parameterized by the constant buffer data.</span></span> <span data-ttu-id="a6d74-178">各描画呼び出しは、頂点ごとに 1 回[頂点シェーダー](#vertex-shaders-and-pixel-shaders)を実行し、次にプリミティブの各三角形のピクセルごとに 1 回[ピクセル シェーダー](#vertex-shaders-and-pixel-shaders)を実行します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-178">Each draw call executes the [vertex shader](#vertex-shaders-and-pixel-shaders) one time per vertex, and then the [pixel shader](#vertex-shaders-and-pixel-shaders) one time for every pixel of each triangle in the primitive.</span></span> <span data-ttu-id="a6d74-179">テクスチャは、ピクセル シェーダーがレンダリングの実行に使う状態の一部です。</span><span class="sxs-lookup"><span data-stu-id="a6d74-179">The textures are part of the state that the pixel shader uses to do the rendering.</span></span>
+
+<span data-ttu-id="a6d74-180">複数の定数バッファーを使用する理由は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="a6d74-180">Reasons for multiple constant buffers:</span></span>
+    * <span data-ttu-id="a6d74-181">ゲームでは複数の定数バッファーが使われますが、これらのバッファーはプリミティブごとに 1 回更新するだけで済みます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-181">The game uses multiple constant buffers but only needs to update these buffers one time per primitive.</span></span> <span data-ttu-id="a6d74-182">前述のように、定数バッファーは、プリミティブごとに実行されるシェーダーに対する入力のようなものです。</span><span class="sxs-lookup"><span data-stu-id="a6d74-182">As mentioned earlier, constant buffers are like inputs to the shaders that run for each primitive.</span></span> <span data-ttu-id="a6d74-183">静的なデータ (__m\_constantBufferNeverChanges__) もあれば、カメラの位置のようにフレームで一定のデータ (__m\_constantBufferChangesEveryFrame__) もあれば、色やテクスチャなどのようにプリミティブに固有のデータ (__m\_constantBufferChangesEveryPrim__) もあります。</span><span class="sxs-lookup"><span data-stu-id="a6d74-183">Some data is static (__m\_constantBufferNeverChanges__); some data is constant over the frame (__m\_constantBufferChangesEveryFrame__), like the position of the camera; and some data is specific to the primitive, like its color and textures (__m\_constantBufferChangesEveryPrim__)</span></span>
+    * <span data-ttu-id="a6d74-184">ゲーム [レンダラー](#renderer)はこれらの入力を別個の定数バッファーに分けて、CPU や GPU が使うメモリ帯域幅を最適化します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-184">The game [renderer](#renderer) separates these inputs into different constant buffers to optimize the memory bandwidth that the CPU and GPU use.</span></span> <span data-ttu-id="a6d74-185">この方法は、GPU が追跡する必要のあるデータ量を最小限に抑えるのにも役立ちます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-185">This approach also helps to minimize the amount of data the GPU needs to keep track of.</span></span> <span data-ttu-id="a6d74-186">GPU にはコマンドの大きいキューがあり、ゲームが __Draw__ を呼び出すたびに、そのコマンドは関連するデータと共にキューに入れられます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-186">The GPU has a big queue of commands, and each time the game calls __Draw__, that command is queued along with the data associated with it.</span></span> <span data-ttu-id="a6d74-187">ゲームがプリミティブ定数バッファーを更新して、次の __Draw__ コマンドを発行すると、グラフィックス ドライバーはこの次のコマンドと関連するデータをキューに追加します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-187">When the game updates the primitive constant buffer and issues the next __Draw__ command, the graphics driver adds this next command and the associated data to the queue.</span></span> <span data-ttu-id="a6d74-188">ゲームで 100 のプリミティブを描画する場合、キューに定数バッファー データの 100 のコピーが存在する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="a6d74-188">If the game draws 100 primitives, it could potentially have 100 copies of the constant buffer data in the queue.</span></span> <span data-ttu-id="a6d74-189">ゲームから GPU に送るデータ量を最小限に抑えるために、ゲームでは、各プリミティブの更新情報のみを含む個別のプリミティブ定数バッファーを使用します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-189">To minimize the amount of data the game is sending to the GPU, the game uses a separate primitive constant buffer that only contains the updates for each primitive.</span></span>
+
+#### <a name="gameobjectrender-method"></a><span data-ttu-id="a6d74-190">GameObject::Render メソッド</span><span class="sxs-lookup"><span data-stu-id="a6d74-190">GameObject::Render method</span></span>
 
 ```cpp
-/// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#pragma once
-
-#include "MeshObject.h"
-#include "SoundEffect.h"
-#include "Animate.h"
-#include "Material.h"
-
-ref class GameObject
-{
-internal:
-    GameObject();
-
-    // Expect these two functions to be overloaded by subclasses.
-    virtual bool IsTouching(
-        DirectX::XMFLOAT3 /* point */,
-        float /* radius */,
-        _Out_ DirectX::XMFLOAT3 *contact,
-        _Out_ DirectX::XMFLOAT3 *normal
-        )
-    {
-        *contact = DirectX::XMFLOAT3(0.0f, 0.0f, 0.0f);
-        *normal = DirectX::XMFLOAT3(0.0f, 0.0f, 1.0f);
-        return false;
-    };
-
-    void Render(
-        _In_ ID3D11DeviceContext *context,
-        _In_ ID3D11Buffer *primitiveConstantBuffer
-        );
-
-    void Active(bool active);
-    bool Active();
-    void Target(bool target);
-    bool Target();
-    void Hit(bool hit);
-    bool Hit();
-    void OnGround(bool ground);
-    bool OnGround();
-    void TargetId(int targetId);
-    int  TargetId();
-    void HitTime(float t);
-    float HitTime();
-
-    void     AnimatePosition(_In_opt_ Animate^ animate);
-    Animate^ AnimatePosition();
-
-    void         HitSound(_In_ SoundEffect^ hitSound);
-    SoundEffect^ HitSound();
-
-    void PlaySound(float impactSpeed, DirectX::XMFLOAT3 eyePoint);
-
-    void Mesh(_In_ MeshObject^ mesh);
-
-    void NormalMaterial(_In_ Material^ material);
-    Material^ NormalMaterial();
-    void HitMaterial(_In_ Material^ material);
-    Material^ HitMaterial();
-
-    void Position(DirectX::XMFLOAT3 position);
-    void Position(DirectX::XMVECTOR position);
-    void Velocity(DirectX::XMFLOAT3 velocity);
-    void Velocity(DirectX::XMVECTOR velocity);
-    DirectX::XMMATRIX ModelMatrix();
-    DirectX::XMFLOAT3 Position();
-    DirectX::XMVECTOR VectorPosition();
-    DirectX::XMVECTOR VectorVelocity();
-    DirectX::XMFLOAT3 Velocity();
-
-protected private:
-    virtual void UpdatePosition() {};
-    // Object Data.
-    bool                m_active;
-    bool                m_target;
-    int                 m_targetId;
-    bool                m_hit;
-    bool                m_ground;
-
-    DirectX::XMFLOAT3   m_position;
-    DirectX::XMFLOAT3   m_velocity;
-    DirectX::XMFLOAT4X4 m_modelMatrix;
-
-    Material^           m_normalMaterial;
-    Material^           m_hitMaterial;
-
-    DirectX::XMFLOAT3   m_defaultXAxis;
-    DirectX::XMFLOAT3   m_defaultYAxis;
-    DirectX::XMFLOAT3   m_defaultZAxis;
-
-    float               m_hitTime;
-
-    Animate^            m_animatePosition;
-    MeshObject^         m_mesh;
-
-    SoundEffect^        m_hitSound;
-};
-
-
-__forceinline void GameObject::Active(bool active)
-{
-    m_active = active;
-}
-
-__forceinline bool GameObject::Active()
-{
-    return m_active;
-}
-
-__forceinline void GameObject::Target(bool target)
-{
-    m_target = target;
-}
-
-__forceinline bool GameObject::Target()
-{
-    return m_target;
-}
-
-__forceinline void GameObject::Hit(bool hit)
-{
-    m_hit = hit;
-}
-
-__forceinline bool GameObject::Hit()
-{
-    return m_hit;
-}
-
-__forceinline void GameObject::OnGround(bool ground)
-{
-    m_ground = ground;
-}
-
-__forceinline bool GameObject::OnGround()
-{
-    return m_ground;
-}
-
-__forceinline void GameObject::TargetId(int targetId)
-{
-    m_targetId = targetId;
-}
-
-__forceinline int GameObject::TargetId()
-{
-    return m_targetId;
-}
-
-__forceinline void GameObject::HitTime(float t)
-{
-    m_hitTime = t;
-}
-
-__forceinline float GameObject::HitTime()
-{
-    return m_hitTime;
-}
-
-__forceinline void GameObject::Position(DirectX::XMFLOAT3 position)
-{
-    m_position = position;
-    // Update any internal states that are dependent on the position.
-    // UpdatePosition is a virtual function that is specific to the derived class.
-    UpdatePosition();
-}
-
-__forceinline void GameObject::Position(DirectX::XMVECTOR position)
-{
-    XMStoreFloat3(&m_position, position);
-   // Update any internal states that are dependent on the position.
-    // UpdatePosition is a virtual function that is specific to the derived class.
-    UpdatePosition();
-}
-
-__forceinline DirectX::XMFLOAT3 GameObject::Position()
-{
-    return m_position;
-}
-
-__forceinline DirectX::XMVECTOR GameObject::VectorPosition()
-{
-    return DirectX::XMLoadFloat3(&m_position);
-}
-
-__forceinline void GameObject::Velocity(DirectX::XMFLOAT3 velocity)
-{
-    m_velocity = velocity;
-}
-
-__forceinline void GameObject::Velocity(DirectX::XMVECTOR velocity)
-{
-    XMStoreFloat3(&m_velocity, velocity);
-}
-
-__forceinline DirectX::XMFLOAT3 GameObject::Velocity()
-{
-    return m_velocity;
-}
-
-__forceinline DirectX::XMVECTOR GameObject::VectorVelocity()
-{
-    return DirectX::XMLoadFloat3(&m_velocity);
-}
-
-__forceinline void GameObject::AnimatePosition(_In_opt_ Animate^ animate)
-{
-    m_animatePosition = animate;
-}
-
-__forceinline Animate^ GameObject::AnimatePosition()
-{
-    return m_animatePosition;
-}
-
-__forceinline void GameObject::NormalMaterial(_In_ Material^ material)
-{
-    m_normalMaterial = material;
-}
-
-__forceinline Material^ GameObject::NormalMaterial()
-{
-    return m_normalMaterial;
-}
-
-__forceinline void GameObject::HitMaterial(_In_ Material^ material)
-{
-    m_hitMaterial = material;
-}
-
-__forceinline Material^ GameObject::HitMaterial()
-{
-    return m_hitMaterial;
-}
-
-__forceinline void GameObject::Mesh(_In_ MeshObject^ mesh)
-{
-    m_mesh = mesh;
-}
-
-__forceinline void GameObject::HitSound(_In_ SoundEffect^ hitSound)
-{
-    m_hitSound = hitSound;
-}
-
-__forceinline SoundEffect^ GameObject::HitSound()
-{
-    return m_hitSound;
-}
-
-__forceinline DirectX::XMMATRIX GameObject::ModelMatrix()
-{
-    return DirectX::XMLoadFloat4x4(&m_modelMatrix);
-}
-```
-
-GameObject.cpp
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#include "pch.h"
-#include "GameObject.h"
-#include "ConstantBuffers.h"
-#include "GameConstants.h"
-
-using namespace DirectX;
-
-//--------------------------------------------------------------------------------
-
-GameObject::GameObject() :
-    m_normalMaterial(nullptr),
-    m_hitMaterial(nullptr)
-{
-    m_active          = false;
-    m_target          = false;
-    m_targetId        = 0;
-    m_hit             = false;
-    m_ground          = true;
-
-    m_position        = XMFLOAT3(0.0f, 0.0f, 0.0f);
-    m_velocity        = XMFLOAT3(0.0f, 0.0f, 0.0f);
-    m_defaultXAxis    = XMFLOAT3(1.0f, 0.0f, 0.0f);
-    m_defaultYAxis    = XMFLOAT3(0.0f, 1.0f, 0.0f);
-    m_defaultZAxis    = XMFLOAT3(0.0f, 0.0f, 1.0f);
-    XMStoreFloat4x4(&m_modelMatrix, XMMatrixIdentity());
-
-    m_hitTime         = 0.0f;
-
-    m_animatePosition = nullptr;
-}
-
-//----------------------------------------------------------------------
-
 void GameObject::Render(
     _In_ ID3D11DeviceContext *context,
     _In_ ID3D11Buffer *primitiveConstantBuffer
     )
 {
-    if (!m_active || (m_mesh == nullptr) || (m_normalMaterial == nullptr))
+    if (!m\_active || (m\_mesh == nullptr) || (m_normalMaterial == nullptr))
     {
         return;
     }
 
     ConstantBufferChangesEveryPrim constantBuffer;
 
+    // Put the model matrix info into a constant buffer, in world matrix.
     XMStoreFloat4x4(
         &constantBuffer.worldMatrix,
         XMMatrixTranspose(ModelMatrix())
         );
+
+    // Check to see which material to use on the object.
+    // If a collision (a hit) is detected, GameObject::Render checks the current context, which 
+    // indicates whether the target has been hit by an ammo sphere. If the target has been hit, 
+    // this method applies a hit material, which reverses the colors of the rings of the target to 
+    // indicate a successful hit to the player. Otherwise, it applies the default material 
+    // with the same method. In both cases, it sets the material by calling Material::RenderSetup, 
+    // which sets the appropriate constants into the constant buffer. Then, it calls 
+    // ID3D11DeviceContext::PSSetShaderResources to set the corresponding texture resource for the 
+    // pixel shader, and ID3D11DeviceContext::VSSetShader and ID3D11DeviceContext::PSSetShader 
+    // to set the vertex shader and pixel shader objects themselves, respectively.
 
     if (m_hit && m_hitMaterial != nullptr)
     {
@@ -2624,3710 +388,311 @@ void GameObject::Render(
     {
         m_normalMaterial->RenderSetup(context, &constantBuffer);
     }
+
+    // Update the primitive constant buffer with the object model's info.
     context->UpdateSubresource(primitiveConstantBuffer, 0, nullptr, &constantBuffer, 0, 0);
 
+    // Render the mesh.
+    // See MeshObject::Render method below.
     m_mesh->Render(context);
 }
 
-//----------------------------------------------------------------------
+#### MeshObject::Render method
 
-void GameObject::PlaySound(float impactSpeed, XMFLOAT3 eyePoint)
+void MeshObject::Render(\_In\_ ID3D11DeviceContext *context)
 {
-    if (m_hitSound != nullptr)
-    {
-        // Determine the sound volume adjustment based on velocity.
-        float adjustment;
-        if (impactSpeed < GameConstants::Sound::MinVelocity)
-        {
-            adjustment = 0.0f;  // Too soft.  Don't play sound.
-        }
-        else
-        {
-            adjustment = min(1.0f, impactSpeed / GameConstants::Sound::MaxVelocity);
-            adjustment = GameConstants::Sound::MinAdjustment + adjustment * (1.0f - GameConstants::Sound::MinAdjustment);
-        }
-
-        // Compute Distance to eyePoint to adjust the volume based on that distance.
-        XMVECTOR cameraToPosition = XMLoadFloat3(&eyePoint) - VectorPosition();
-        float distToPositionSquared = XMVectorGetX(XMVector3LengthSq(cameraToPosition));
-
-        float volume = min(distToPositionSquared, 1.0f);
-        // Scale
-        // Sound is proportional to how hard the ball is hitting.
-        volume = adjustment * volume;
-
-        m_hitSound->PlaySound(volume);
-    }
-}
-```
-
-Animate.h
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#pragma once
-
-// Animate:
-// This is an abstract class for animations.  It defines a set of
-// capabilities for animating XMFLOAT3 variables.  An animation has the following
-// characteristics:
-//     Start - the time for the animation to start.
-//     Duration - the length of time the animation is to run.
-//     Continuous - whether the animation loops after duration is reached or just
-//         stops.
-// There are two query functions:
-//     IsActive - determines if the animation is active at time t.
-//     IsFinished - determines if the animation is done at time t.
-// It is expected that each derived class will provide an Evaluate method for the
-// specific kind of animation.
-
-ref class Animate abstract
-{
-internal:
-    Animate();
-
-    virtual DirectX::XMFLOAT3 Evaluate (_In_ float t) = 0;
-
-    bool  IsActive(_In_ float t) { return ((t >= m_startTime) && (m_continuous || (t < (m_startTime + m_duration)))); };
-    bool  IsFinished(_In_ float t) { return (!m_continuous && (t >= (m_startTime + m_duration))); }
-    float Start();
-    void  Start(_In_ float start);
-    float Duration();
-    void  Duration(_In_ float duration);
-    bool  Continuous();
-    void  Continuous(_In_ bool continuous);
-
-protected private:
-    bool  m_continuous;      // if true means at end cycle back to beginning
-    float m_startTime;       // time at which animation begins
-    float m_duration;        // for continuous, this is the duration of 1 cycle through path
-};
-
-//----------------------------------------------------------------------
-
-// AnimateLinePosition:
-// This class is a specialization of Animate that defines an animation of a position vector
-// along a straight line defined in world coordinates from startPosition to endPosition.
-
-ref class AnimateLinePosition: public Animate
-{
-internal:
-    AnimateLinePosition(
-        _In_ DirectX::XMFLOAT3 startPosition,
-        _In_ DirectX::XMFLOAT3 endPosition,
-        _In_ float duration,
-        _In_ bool continuous
-        );
-    virtual DirectX::XMFLOAT3 Evaluate(_In_ float t) override;
-
-private:
-    DirectX::XMFLOAT3 m_startPosition;
-    DirectX::XMFLOAT3 m_endPosition;
-    float             m_length;
-};
-
-//----------------------------------------------------------------------
-
-struct LineSegment
-{
-    DirectX::XMFLOAT3 position;
-    float             length;
-    float             uStart;
-    float             uLength;
-};
-
-// AnimateLineListPosition:
-// This class is a specialization of Animate that defines an animation of a position vector
-// along a set of line segments defined by a set of points.  The animation along the path is
-// such that the evaluation of the position along the path will be uniform independent of
-// the length of each of the line segments.  A continuous loop can be achieved by having the
-// first and last points of the list be the same.
-
-ref class AnimateLineListPosition: public Animate
-{
-internal:
-    AnimateLineListPosition(
-        _In_ unsigned int count,
-        _In_reads_(count) DirectX::XMFLOAT3 position[],
-        _In_ float duration,
-        _In_ bool continuous
-        );
-    virtual DirectX::XMFLOAT3 Evaluate(_In_ float t) override;
-
-private:
-    unsigned int             m_count;
-    float                    m_totalLength;
-    std::vector<LineSegment> m_segment;
-};
-
-//----------------------------------------------------------------------
-
-// AnimateCirclePosition:
-// This class is a specialization of Animate that defines an animation of a position vector
-// along a circular path centered at 'center' with a starting point of 'startPosition'.  The
-// distance between 'center' and 'startPosition' defines the radius of the circle.  The plane
-// of the circle will pass through 'center' and 'startPosition' and have a normal of 'planeNormal'.
-// The direction of the animation can be either clockwise or counterclockwise based
-// on the 'clockwise' parameter.
-
-ref class AnimateCirclePosition: public Animate
-{
-internal:
-    AnimateCirclePosition(
-        _In_ DirectX::XMFLOAT3 center,
-        _In_ DirectX::XMFLOAT3 startPosition,
-        _In_ DirectX::XMFLOAT3 planeNormal,
-        _In_ float duration,
-        _In_ bool continuous,
-        _In_ bool clockwise
-        );
-    virtual DirectX::XMFLOAT3 Evaluate(_In_ float t) override;
-
-private:
-    DirectX::XMFLOAT4X4 m_rotationMatrix;
-    DirectX::XMFLOAT3   m_center;
-    DirectX::XMFLOAT3   m_planeNormal;
-    DirectX::XMFLOAT3   m_startPosition;
-    float               m_radius;
-    bool                m_clockwise;
-};
-
-//----------------------------------------------------------------------
-            
-            
-```
-
-Animate.cpp
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#include "pch.h"
-#include "Animate.h"
-
-using namespace DirectX;
-
-//----------------------------------------------------------------------
-
-Animate::Animate():
-    m_continuous(false),
-    m_startTime(0.0f),
-    m_duration(10.0f)
-{
-}
-
-//----------------------------------------------------------------------
-
-float Animate::Start()
-{
-    return m_startTime;
-}
-
-//----------------------------------------------------------------------
-
-void Animate::Start(_In_ float start)
-{
-    m_startTime = start;
-}
-
-//----------------------------------------------------------------------
-
-float Animate::Duration()
-{
-    return m_duration;
-}
-
-//----------------------------------------------------------------------
-
-void Animate::Duration(_In_ float duration)
-{
-    m_duration = duration;
-}
-
-//----------------------------------------------------------------------
-
-bool Animate::Continuous()
-{
-    return m_continuous;
-}
-
-//----------------------------------------------------------------------
-
-void Animate::Continuous(_In_ bool continuous)
-{
-    m_continuous = continuous;
-}
-
-//----------------------------------------------------------------------
-
-AnimateLinePosition::AnimateLinePosition(
-    _In_ XMFLOAT3 startPosition,
-    _In_ XMFLOAT3 endPosition,
-    _In_ float duration,
-    _In_ bool continuous)
-{
-    m_startPosition = startPosition;
-    m_endPosition = endPosition;
-    m_duration = duration;
-    m_continuous = continuous;
-
-    m_length = XMVectorGetX(
-        XMVector3Length(XMLoadFloat3(&endPosition) - XMLoadFloat3(&startPosition))
-        );
-}
-
-//----------------------------------------------------------------------
-
-XMFLOAT3 AnimateLinePosition::Evaluate(_In_ float t)
-{
-    if (t <= m_startTime)
-    {
-        return m_startPosition;
-    }
-
-    if ((t >= (m_startTime + m_duration)) && !m_continuous)
-    {
-        return m_endPosition;
-    }
-
-    float startTime = m_startTime;
-    if (m_continuous)
-    {
-        // For continuous operation, move the start time forward to
-        // eliminate previous iterations.
-        startTime += ((int)((t - m_startTime) / m_duration)) * m_duration;
-    }
-
-    float u = (t - startTime) / m_duration;
-    XMFLOAT3 currentPosition;
-    currentPosition.x = m_startPosition.x + (m_endPosition.x - m_startPosition.x)*u;
-    currentPosition.y = m_startPosition.y + (m_endPosition.y - m_startPosition.y)*u;
-    currentPosition.z = m_startPosition.z + (m_endPosition.z - m_startPosition.z)*u;
-
-    return currentPosition;
-}
-
-//----------------------------------------------------------------------
-
-AnimateLineListPosition::AnimateLineListPosition(
-    _In_ unsigned int count,
-    _In_reads_(count) XMFLOAT3 position[],
-    _In_ float duration,
-    _In_ bool continuous)
-{
-    m_duration = duration;
-    m_continuous = continuous;
-    m_count = count;
-
-    std::vector<LineSegment> segment(m_count);
-    m_segment = segment;
-    m_totalLength = 0.0f;
-
-    m_segment[0].position = position[0];
-    for (unsigned int i = 1; i < count; i++)
-    {
-        m_segment[i].position = position[i];
-        m_segment[i - 1].length = XMVectorGetX(
-            XMVector3Length(
-                XMLoadFloat3(&m_segment[i].position) -
-                XMLoadFloat3(&m_segment[i - 1].position)
-                )
-            );
-        m_totalLength += m_segment[i - 1].length;
-    }
-
-    // Parameterize the segments to ensure uniform evaluation along the path.
-    float u = 0.0f;
-    for (unsigned int i = 0; i < (count - 1); i++)
-    {
-        m_segment[i].uStart = u;
-        m_segment[i].uLength = (m_segment[i].length / m_totalLength);
-        u += m_segment[i].uLength;
-    }
-    m_segment[count-1].uStart = 1.0f;
-}
-
-//----------------------------------------------------------------------
-
-XMFLOAT3 AnimateLineListPosition::Evaluate(_In_ float t)
-{
-    if (t <= m_startTime)
-    {
-        return m_segment[0].position;
-    }
-
-    if ((t >= (m_startTime + m_duration)) && !m_continuous)
-    {
-        return m_segment[m_count-1].position;
-    }
-
-    float startTime = m_startTime;
-    if (m_continuous)
-    {
-        // For continuous operation, move the start time forward to
-        // eliminate previous iterations.
-        startTime += ((int)((t - m_startTime) / m_duration)) * m_duration;
-    }
-
-    float u = (t - startTime) / m_duration;
-    // Find the right segment.
-    unsigned int i = 0;
-    while (u > m_segment[i + 1].uStart)
-    {
-        i++;
-    }
-
-    u -= m_segment[i].uStart;
-    u /= m_segment[i].uLength;
-
-    XMFLOAT3 currentPosition;
-    currentPosition.x = m_segment[i].position.x + (m_segment[i + 1].position.x - m_segment[i].position.x)*u;
-    currentPosition.y = m_segment[i].position.y + (m_segment[i + 1].position.y - m_segment[i].position.y)*u;
-    currentPosition.z = m_segment[i].position.z + (m_segment[i + 1].position.z - m_segment[i].position.z)*u;
-
-    return currentPosition;
-}
-
-//----------------------------------------------------------------------
-
-AnimateCirclePosition:: AnimateCirclePosition(
-    _In_ XMFLOAT3 center,
-    _In_ XMFLOAT3 startPosition,
-    _In_ XMFLOAT3 planeNormal,
-    _In_ float duration,
-    _In_ bool continuous,
-    _In_ bool clockwise)
-{
-    m_center = center;
-    m_planeNormal = planeNormal;
-    m_startPosition = startPosition;
-    m_duration = duration;
-    m_continuous = continuous;
-    m_clockwise = clockwise;
-
-    XMVECTOR coordX = XMLoadFloat3(&m_startPosition) - XMLoadFloat3(&m_center);
-    m_radius = XMVectorGetX(XMVector3Length(coordX));
-
-    XMVector3Normalize(coordX);
-
-    XMVECTOR coordZ = XMLoadFloat3(&m_planeNormal);
-    XMVector3Normalize(coordZ);
-
-    XMVECTOR coordY;
-    if (m_clockwise)
-    {
-        coordY = XMVector3Cross(coordZ, coordX);
-    }
-    else
-    {
-        coordY = XMVector3Cross(coordX, coordZ);
-    }
-
-    XMVECTOR vectorX = XMVectorSet(1.0f, 0.0f, 0.0f, 1.0f);
-    XMVECTOR vectorY = XMVectorSet(0.0f, 1.0f, 0.0f, 1.0f);
-    XMMATRIX mat1 = XMMatrixIdentity();
-    XMMATRIX mat2 = XMMatrixIdentity();
-
-    if (!XMVector3Equal(coordX, vectorX))
-    {
-        float angle;
-        angle = XMVectorGetX(
-            XMVector3AngleBetweenVectors(vectorX, coordX)
-            );
-        if ((angle * angle) > 0.025)
-        {
-            XMVECTOR axis1 = XMVector3Cross(vectorX, coordX);
-
-            mat1 = XMMatrixRotationAxis(axis1, angle);
-            vectorY = XMVector3TransformCoord(vectorY, mat1);
-        }
-    }
-    if (!XMVector3Equal(vectorY, coordY))
-    {
-        float angle;
-        angle = XMVectorGetX(
-            XMVector3AngleBetweenVectors(vectorY, coordY)
-            );
-        if ((angle * angle) > 0.025)
-        {
-            XMVECTOR axis2 = XMVector3Cross(vectorY, coordY);
-            mat2 = XMMatrixRotationAxis(axis2, angle);
-        }
-    }
-    XMStoreFloat4x4(
-        &m_rotationMatrix,
-        mat1 *
-        mat2 *
-        XMMatrixTranslation(m_center.x, m_center.y, m_center.z)
-        );
-}
-
-//----------------------------------------------------------------------
-
-XMFLOAT3 AnimateCirclePosition::Evaluate(_In_ float t)
-{
-    if (t <= m_startTime)
-    {
-        return m_startPosition;
-    }
-
-    if ((t >= (m_startTime + m_duration)) && !m_continuous)
-    {
-        return m_startPosition;
-    }
-
-    float startTime = m_startTime;
-    if (m_continuous)
-    {
-        // For continuous operation, move the start time forward to
-        // eliminate previous iterations.
-        startTime += ((int)((t - m_startTime) / m_duration)) * m_duration;
-    }
-
-    float u = (t - startTime) / m_duration * XM_2PI;
-
-    XMFLOAT3 currentPosition;
-    currentPosition.x = m_radius * cos(u);
-    currentPosition.y = m_radius * sin(u);
-    currentPosition.z = 0.0f;
-
-    XMStoreFloat3(
-        &currentPosition,
-        XMVector3TransformCoord(
-            XMLoadFloat3(&currentPosition),
-            XMLoadFloat4x4(&m_rotationMatrix)
-            )
-        );
-
-    return currentPosition;
-}
-
-//----------------------------------------------------------------------
-            
-            
-```
-
-BasicLoader.h
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#pragma once
-
-#include "BasicReaderWriter.h"
-
-// A simple loader class that provides support for loading shaders, textures,
-// and meshes from files on disk. Provides synchronous and asynchronous methods.
-ref class BasicLoader
-{
-internal:
-    BasicLoader(
-        _In_ ID3D11Device* d3dDevice,
-        _In_opt_ IWICImagingFactory2* wicFactory = nullptr
-        );
-
-    void LoadTexture(
-        _In_ Platform::String^ filename,
-        _Out_opt_ ID3D11Texture2D** texture,
-        _Out_opt_ ID3D11ShaderResourceView** textureView
-        );
-
-    concurrency::task<void> LoadTextureAsync(
-        _In_ Platform::String^ filename,
-        _Out_opt_ ID3D11Texture2D** texture,
-        _Out_opt_ ID3D11ShaderResourceView** textureView
-        );
-
-    void LoadShader(
-        _In_ Platform::String^ filename,
-        _In_reads_opt_(layoutDescNumElements) D3D11_INPUT_ELEMENT_DESC layoutDesc[],
-        _In_ uint32 layoutDescNumElements,
-        _Out_ ID3D11VertexShader** shader,
-        _Out_opt_ ID3D11InputLayout** layout
-        );
-
-    concurrency::task<void> LoadShaderAsync(
-        _In_ Platform::String^ filename,
-        _In_reads_opt_(layoutDescNumElements) D3D11_INPUT_ELEMENT_DESC layoutDesc[],
-        _In_ uint32 layoutDescNumElements,
-        _Out_ ID3D11VertexShader** shader,
-        _Out_opt_ ID3D11InputLayout** layout
-        );
-
-    void LoadShader(
-        _In_ Platform::String^ filename,
-        _Out_ ID3D11PixelShader** shader
-        );
-
-    concurrency::task<void> LoadShaderAsync(
-        _In_ Platform::String^ filename,
-        _Out_ ID3D11PixelShader** shader
-        );
-
-    void LoadShader(
-        _In_ Platform::String^ filename,
-        _Out_ ID3D11ComputeShader** shader
-        );
-
-    concurrency::task<void> LoadShaderAsync(
-        _In_ Platform::String^ filename,
-        _Out_ ID3D11ComputeShader** shader
-        );
-
-    void LoadShader(
-        _In_ Platform::String^ filename,
-        _Out_ ID3D11GeometryShader** shader
-        );
-
-    concurrency::task<void> LoadShaderAsync(
-        _In_ Platform::String^ filename,
-        _Out_ ID3D11GeometryShader** shader
-        );
-
-    void LoadShader(
-        _In_ Platform::String^ filename,
-        _In_reads_opt_(numEntries) const D3D11_SO_DECLARATION_ENTRY* streamOutDeclaration,
-        _In_ uint32 numEntries,
-        _In_reads_opt_(numStrides) const uint32* bufferStrides,
-        _In_ uint32 numStrides,
-        _In_ uint32 rasterizedStream,
-        _Out_ ID3D11GeometryShader** shader
-        );
-
-    concurrency::task<void> LoadShaderAsync(
-        _In_ Platform::String^ filename,
-        _In_reads_opt_(numEntries) const D3D11_SO_DECLARATION_ENTRY* streamOutDeclaration,
-        _In_ uint32 numEntries,
-        _In_reads_opt_(numStrides) const uint32* bufferStrides,
-        _In_ uint32 numStrides,
-        _In_ uint32 rasterizedStream,
-        _Out_ ID3D11GeometryShader** shader
-        );
-
-    void LoadShader(
-        _In_ Platform::String^ filename,
-        _Out_ ID3D11HullShader** shader
-        );
-
-    concurrency::task<void> LoadShaderAsync(
-        _In_ Platform::String^ filename,
-        _Out_ ID3D11HullShader** shader
-        );
-
-    void LoadShader(
-        _In_ Platform::String^ filename,
-        _Out_ ID3D11DomainShader** shader
-        );
-
-    concurrency::task<void> LoadShaderAsync(
-        _In_ Platform::String^ filename,
-        _Out_ ID3D11DomainShader** shader
-        );
-
-    void LoadMesh(
-        _In_ Platform::String^ filename,
-        _Out_ ID3D11Buffer** vertexBuffer,
-        _Out_ ID3D11Buffer** indexBuffer,
-        _Out_opt_ uint32* vertexCount,
-        _Out_opt_ uint32* indexCount
-        );
-
-    concurrency::task<void> LoadMeshAsync(
-        _In_ Platform::String^ filename,
-        _Out_ ID3D11Buffer** vertexBuffer,
-        _Out_ ID3D11Buffer** indexBuffer,
-        _Out_opt_ uint32* vertexCount,
-        _Out_opt_ uint32* indexCount
-        );
-
-private:
-    Microsoft::WRL::ComPtr<ID3D11Device> m_d3dDevice;
-    Microsoft::WRL::ComPtr<IWICImagingFactory2> m_wicFactory;
-    BasicReaderWriter^ m_basicReaderWriter;
-
-    template <class DeviceChildType>
-    inline void SetDebugName(
-        _In_ DeviceChildType* object,
-        _In_ Platform::String^ name
-        );
-
-    Platform::String^ GetExtension(
-        _In_ Platform::String^ filename
-        );
-
-    void CreateTexture(
-        _In_ bool decodeAsDDS,
-        _In_reads_bytes_(dataSize) byte* data,
-        _In_ uint32 dataSize,
-        _Out_opt_ ID3D11Texture2D** texture,
-        _Out_opt_ ID3D11ShaderResourceView** textureView,
-        _In_opt_ Platform::String^ debugName
-        );
-
-    void CreateInputLayout(
-        _In_reads_bytes_(bytecodeSize) byte* bytecode,
-        _In_ uint32 bytecodeSize,
-        _In_reads_opt_(layoutDescNumElements) D3D11_INPUT_ELEMENT_DESC* layoutDesc,
-        _In_ uint32 layoutDescNumElements,
-        _Out_ ID3D11InputLayout** layout
-        );
-
-    void CreateMesh(
-        _In_ byte* meshData,
-        _Out_ ID3D11Buffer** vertexBuffer,
-        _Out_ ID3D11Buffer** indexBuffer,
-        _Out_opt_ uint32* vertexCount,
-        _Out_opt_ uint32* indexCount,
-        _In_opt_ Platform::String^ debugName
-        );
-};
-```
-
-BasicLoader.cpp
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#include "pch.h"
-#include "BasicLoader.h"
-#include "BasicShapes.h"
-#include "DDSTextureLoader.h"
-#include "DirectXSample.h"
-#include <memory>
-
-using namespace Microsoft::WRL;
-using namespace Windows::Storage;
-using namespace Windows::Storage::Streams;
-using namespace Windows::Foundation;
-using namespace Windows::ApplicationModel;
-using namespace std;
-using namespace concurrency;
-
-BasicLoader::BasicLoader(
-    _In_ ID3D11Device* d3dDevice,
-    _In_opt_ IWICImagingFactory2* wicFactory
-    ) :
-    m_d3dDevice(d3dDevice),
-    m_wicFactory(wicFactory)
-{
-    // Create a new BasicReaderWriter to do raw file I/O.
-    m_basicReaderWriter = ref new BasicReaderWriter();
-}
-
-template <class DeviceChildType>
-inline void BasicLoader::SetDebugName(
-    _In_ DeviceChildType* object,
-    _In_ Platform::String^ name
-    )
-{
-#if defined(_DEBUG)
-    // Only assign debug names in debug builds.
-
-    char nameString[1024];
-    int nameStringLength = WideCharToMultiByte(
-        CP_ACP,
-        0,
-        name->Data(),
-        -1,
-        nameString,
-        1024,
-        nullptr,
-        nullptr
-        );
-
-    if (nameStringLength == 0)
-    {
-        char defaultNameString[] = "BasicLoaderObject";
-        DX::ThrowIfFailed(
-            object->SetPrivateData(
-                WKPDID_D3DDebugObjectName,
-                sizeof(defaultNameString) - 1,
-                defaultNameString
-                )
-            );
-    }
-    else
-    {
-        DX::ThrowIfFailed(
-            object->SetPrivateData(
-                WKPDID_D3DDebugObjectName,
-                nameStringLength - 1,
-                nameString
-                )
-            );
-    }
-#endif
-}
-
-Platform::String^ BasicLoader::GetExtension(
-    _In_ Platform::String^ filename
-    )
-{
-    int lastDotIndex = -1;
-    for (int i = filename->Length() - 1; i >= 0 && lastDotIndex == -1; i--)
-    {
-        if (*(filename->Data() + i) == '.')
-        {
-            lastDotIndex = i;
-        }
-    }
-    if (lastDotIndex != -1)
-    {
-        std::unique_ptr<wchar_t[]> extension(new wchar_t[filename->Length() - lastDotIndex]);
-        for (unsigned int i = 0; i < filename->Length() - lastDotIndex; i++)
-        {
-            extension[i] = tolower(*(filename->Data() + lastDotIndex + 1 + i));
-        }
-        return ref new Platform::String(extension.get());
-    }
-    return "";
-}
-
-void BasicLoader::CreateTexture(
-    _In_ bool decodeAsDDS,
-    _In_reads_bytes_(dataSize) byte* data,
-    _In_ uint32 dataSize,
-    _Out_opt_ ID3D11Texture2D** texture,
-    _Out_opt_ ID3D11ShaderResourceView** textureView,
-    _In_opt_ Platform::String^ debugName
-    )
-{
-    ComPtr<ID3D11ShaderResourceView> shaderResourceView;
-    ComPtr<ID3D11Texture2D> texture2D;
-
-    if (decodeAsDDS)
-    {
-        ComPtr<ID3D11Resource> resource;
-
-        if (textureView == nullptr)
-        {
-            CreateDDSTextureFromMemory(
-                m_d3dDevice.Get(),
-                data,
-                dataSize,
-                &resource,
-                nullptr
-                );
-        }
-        else
-        {
-            CreateDDSTextureFromMemory(
-                m_d3dDevice.Get(),
-                data,
-                dataSize,
-                &resource,
-                &shaderResourceView
-                );
-        }
-
-        DX::ThrowIfFailed(
-            resource.As(&texture2D)
-            );
-    }
-    else
-    {
-        if (m_wicFactory.Get() == nullptr)
-        {
-            // A WIC factory object is required in order to load texture
-            // assets stored in non-DDS formats.  If BasicLoader was not
-            // initialized with one, create one as needed.
-            DX::ThrowIfFailed(
-                CoCreateInstance(
-                    CLSID_WICImagingFactory,
-                    nullptr,
-                    CLSCTX_INPROC_SERVER,
-                    IID_PPV_ARGS(&m_wicFactory)
-                    )
-                );
-        }
-
-        ComPtr<IWICStream> stream;
-        DX::ThrowIfFailed(
-            m_wicFactory->CreateStream(&stream)
-            );
-
-        DX::ThrowIfFailed(
-            stream->InitializeFromMemory(
-                data,
-                dataSize
-                )
-            );
-
-        ComPtr<IWICBitmapDecoder> bitmapDecoder;
-        DX::ThrowIfFailed(
-            m_wicFactory->CreateDecoderFromStream(
-                stream.Get(),
-                nullptr,
-                WICDecodeMetadataCacheOnDemand,
-                &bitmapDecoder
-                )
-            );
-
-        ComPtr<IWICBitmapFrameDecode> bitmapFrame;
-        DX::ThrowIfFailed(
-            bitmapDecoder->GetFrame(0, &bitmapFrame)
-            );
-
-        ComPtr<IWICFormatConverter> formatConverter;
-        DX::ThrowIfFailed(
-            m_wicFactory->CreateFormatConverter(&formatConverter)
-            );
-
-        DX::ThrowIfFailed(
-            formatConverter->Initialize(
-                bitmapFrame.Get(),
-                GUID_WICPixelFormat32bppPBGRA,
-                WICBitmapDitherTypeNone,
-                nullptr,
-                0.0,
-                WICBitmapPaletteTypeCustom
-                )
-            );
-
-        uint32 width;
-        uint32 height;
-        DX::ThrowIfFailed(
-            bitmapFrame->GetSize(&width, &height)
-            );
-
-        std::unique_ptr<byte[]> bitmapPixels(new byte[width * height * 4]);
-        DX::ThrowIfFailed(
-            formatConverter->CopyPixels(
-                nullptr,
-                width * 4,
-                width * height * 4,
-                bitmapPixels.get()
-                )
-            );
-
-        D3D11_SUBRESOURCE_DATA initialData;
-        ZeroMemory(&initialData, sizeof(initialData));
-        initialData.pSysMem = bitmapPixels.get();
-        initialData.SysMemPitch = width * 4;
-        initialData.SysMemSlicePitch = 0;
-
-        CD3D11_TEXTURE2D_DESC textureDesc(
-            DXGI_FORMAT_B8G8R8A8_UNORM,
-            width,
-            height,
-            1,
-            1
-            );
-
-        DX::ThrowIfFailed(
-            m_d3dDevice->CreateTexture2D(
-                &textureDesc,
-                &initialData,
-                &texture2D
-                )
-            );
-
-        if (textureView != nullptr)
-        {
-            CD3D11_SHADER_RESOURCE_VIEW_DESC shaderResourceViewDesc(
-                texture2D.Get(),
-                D3D11_SRV_DIMENSION_TEXTURE2D
-                );
-
-            DX::ThrowIfFailed(
-                m_d3dDevice->CreateShaderResourceView(
-                    texture2D.Get(),
-                    &shaderResourceViewDesc,
-                    &shaderResourceView
-                    )
-                );
-        }
-    }
-
-    SetDebugName(texture2D.Get(), debugName);
-
-    if (texture != nullptr)
-    {
-        *texture = texture2D.Detach();
-    }
-    if (textureView != nullptr)
-    {
-        *textureView = shaderResourceView.Detach();
-    }
-}
-
-void BasicLoader::CreateInputLayout(
-    _In_reads_bytes_(bytecodeSize) byte* bytecode,
-    _In_ uint32 bytecodeSize,
-    _In_reads_opt_(layoutDescNumElements) D3D11_INPUT_ELEMENT_DESC* layoutDesc,
-    _In_ uint32 layoutDescNumElements,
-    _Out_ ID3D11InputLayout** layout
-    )
-{
-    if (layoutDesc == nullptr)
-    {
-        // If no input layout is specified, use the BasicVertex layout.
-        const D3D11_INPUT_ELEMENT_DESC basicVertexLayoutDesc[] =
-        {
-            { "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0,  D3D11_INPUT_PER_VERTEX_DATA, 0 },
-            { "NORMAL",   0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 12, D3D11_INPUT_PER_VERTEX_DATA, 0 },
-            { "TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT,    0, 24, D3D11_INPUT_PER_VERTEX_DATA, 0 },
-        };
-
-        DX::ThrowIfFailed(
-            m_d3dDevice->CreateInputLayout(
-                basicVertexLayoutDesc,
-                ARRAYSIZE(basicVertexLayoutDesc),
-                bytecode,
-                bytecodeSize,
-                layout
-                )
-            );
-    }
-    else
-    {
-        DX::ThrowIfFailed(
-            m_d3dDevice->CreateInputLayout(
-                layoutDesc,
-                layoutDescNumElements,
-                bytecode,
-                bytecodeSize,
-                layout
-                )
-            );
-    }
-}
-
-void BasicLoader::CreateMesh(
-    _In_ byte* meshData,
-    _Out_ ID3D11Buffer** vertexBuffer,
-    _Out_ ID3D11Buffer** indexBuffer,
-    _Out_opt_ uint32* vertexCount,
-    _Out_opt_ uint32* indexCount,
-    _In_opt_ Platform::String^ debugName
-    )
-{
-    // The first 4 bytes of the BasicMesh format define the number of vertices in the mesh.
-    uint32 numVertices = *reinterpret_cast<uint32*>(meshData);
-
-    // The following 4 bytes define the number of indices in the mesh.
-    uint32 numIndices = *reinterpret_cast<uint32*>(meshData + sizeof(uint32));
-
-    // The next segment of the BasicMesh format contains the vertices of the mesh.
-    BasicVertex* vertices = reinterpret_cast<BasicVertex*>(meshData + sizeof(uint32) * 2);
-
-    // The last segment of the BasicMesh format contains the indices of the mesh.
-    uint16* indices = reinterpret_cast<uint16*>(meshData + sizeof(uint32) * 2 + sizeof(BasicVertex) * numVertices);
-
-    // Create the vertex and index buffers with the mesh data.
-
-    D3D11_SUBRESOURCE_DATA vertexBufferData = {0};
-    vertexBufferData.pSysMem = vertices;
-    vertexBufferData.SysMemPitch = 0;
-    vertexBufferData.SysMemSlicePitch = 0;
-    CD3D11_BUFFER_DESC vertexBufferDesc(numVertices * sizeof(BasicVertex), D3D11_BIND_VERTEX_BUFFER);
-    DX::ThrowIfFailed(
-        m_d3dDevice->CreateBuffer(
-            &vertexBufferDesc,
-            &vertexBufferData,
-            vertexBuffer
-            )
-        );
-
-    D3D11_SUBRESOURCE_DATA indexBufferData = {0};
-    indexBufferData.pSysMem = indices;
-    indexBufferData.SysMemPitch = 0;
-    indexBufferData.SysMemSlicePitch = 0;
-    CD3D11_BUFFER_DESC indexBufferDesc(numIndices * sizeof(uint16), D3D11_BIND_INDEX_BUFFER);
-    DX::ThrowIfFailed(
-        m_d3dDevice->CreateBuffer(
-            &indexBufferDesc,
-            &indexBufferData,
-            indexBuffer
-            )
-        );
-
-    SetDebugName(*vertexBuffer, Platform::String::Concat(debugName, "_VertexBuffer"));
-    SetDebugName(*indexBuffer, Platform::String::Concat(debugName, "_IndexBuffer"));
-
-    if (vertexCount != nullptr)
-    {
-        *vertexCount = numVertices;
-    }
-    if (indexCount != nullptr)
-    {
-        *indexCount = numIndices;
-    }
-}
-
-void BasicLoader::LoadTexture(
-    _In_ Platform::String^ filename,
-    _Out_opt_ ID3D11Texture2D** texture,
-    _Out_opt_ ID3D11ShaderResourceView** textureView
-    )
-{
-    Platform::Array<byte>^ textureData = m_basicReaderWriter->ReadData(filename);
-
-    CreateTexture(
-        GetExtension(filename) == "dds",
-        textureData->Data,
-        textureData->Length,
-        texture,
-        textureView,
-        filename
-        );
-}
-
-task<void> BasicLoader::LoadTextureAsync(
-    _In_ Platform::String^ filename,
-    _Out_opt_ ID3D11Texture2D** texture,
-    _Out_opt_ ID3D11ShaderResourceView** textureView
-    )
-{
-    return m_basicReaderWriter->ReadDataAsync(filename).then([=](const Platform::Array<byte>^ textureData)
-    {
-        CreateTexture(
-            GetExtension(filename) == "dds",
-            textureData->Data,
-            textureData->Length,
-            texture,
-            textureView,
-            filename
-            );
-    });
-}
-
-void BasicLoader::LoadShader(
-    _In_ Platform::String^ filename,
-    _In_reads_opt_(layoutDescNumElements) D3D11_INPUT_ELEMENT_DESC layoutDesc[],
-    _In_ uint32 layoutDescNumElements,
-    _Out_ ID3D11VertexShader** shader,
-    _Out_opt_ ID3D11InputLayout** layout
-    )
-{
-    Platform::Array<byte>^ bytecode = m_basicReaderWriter->ReadData(filename);
-
-    DX::ThrowIfFailed(
-        m_d3dDevice->CreateVertexShader(
-            bytecode->Data,
-            bytecode->Length,
-            nullptr,
-            shader
-            )
-        );
-
-    SetDebugName(*shader, filename);
-
-    if (layout != nullptr)
-    {
-        CreateInputLayout(
-            bytecode->Data,
-            bytecode->Length,
-            layoutDesc,
-            layoutDescNumElements,
-            layout
-            );
-
-        SetDebugName(*layout, filename);
-    }
-}
-
-task<void> BasicLoader::LoadShaderAsync(
-    _In_ Platform::String^ filename,
-    _In_reads_opt_(layoutDescNumElements) D3D11_INPUT_ELEMENT_DESC layoutDesc[],
-    _In_ uint32 layoutDescNumElements,
-    _Out_ ID3D11VertexShader** shader,
-    _Out_opt_ ID3D11InputLayout** layout
-    )
-{
-    // This method assumes that the lifetime of input arguments may be shorter
-    // than the duration of this task.  In order to ensure accurate results, a
-    // copy of all arguments passed by pointer must be made.  The method then
-    // ensures that the lifetime of the copied data exceeds that of the task.
-
-    // Create copies of the layoutDesc array as well as the SemanticName strings,
-    // both of which are pointers to data whose lifetimes may be shorter than that
-    // of this method's task.
-    shared_ptr<vector<D3D11_INPUT_ELEMENT_DESC>> layoutDescCopy;
-    shared_ptr<vector<string>> layoutDescSemanticNamesCopy;
-    if (layoutDesc != nullptr)
-    {
-        layoutDescCopy.reset(
-            new vector<D3D11_INPUT_ELEMENT_DESC>(
-                layoutDesc,
-                layoutDesc + layoutDescNumElements
-                )
-            );
-
-        layoutDescSemanticNamesCopy.reset(
-            new vector<string>(layoutDescNumElements)
-            );
-
-        for (uint32 i = 0; i < layoutDescNumElements; i++)
-        {
-            layoutDescSemanticNamesCopy->at(i).assign(layoutDesc[i].SemanticName);
-        }
-    }
-
-    return m_basicReaderWriter->ReadDataAsync(filename).then([=](const Platform::Array<byte>^ bytecode)
-    {
-        DX::ThrowIfFailed(
-            m_d3dDevice->CreateVertexShader(
-                bytecode->Data,
-                bytecode->Length,
-                nullptr,
-                shader
-                )
-            );
-
-        SetDebugName(*shader, filename);
-
-        if (layout != nullptr)
-        {
-            if (layoutDesc != nullptr)
-            {
-                // Reassign the SemanticName elements of the layoutDesc array copy to point
-                // to the corresponding copied strings. Performing the assignment inside the
-                // lambda body ensures that the lambda will take a reference to the shared_ptr
-                // that holds the data.  This will guarantee that the data is still valid when
-                // CreateInputLayout is called.
-                for (uint32 i = 0; i < layoutDescNumElements; i++)
-                {
-                    layoutDescCopy->at(i).SemanticName = layoutDescSemanticNamesCopy->at(i).c_str();
-                }
-            }
-
-            CreateInputLayout(
-                bytecode->Data,
-                bytecode->Length,
-                layoutDesc == nullptr ? nullptr : layoutDescCopy->data(),
-                layoutDescNumElements,
-                layout
-                );
-
-            SetDebugName(*layout, filename);
-        }
-    });
-}
-
-void BasicLoader::LoadShader(
-    _In_ Platform::String^ filename,
-    _Out_ ID3D11PixelShader** shader
-    )
-{
-    Platform::Array<byte>^ bytecode = m_basicReaderWriter->ReadData(filename);
-
-    DX::ThrowIfFailed(
-        m_d3dDevice->CreatePixelShader(
-            bytecode->Data,
-            bytecode->Length,
-            nullptr,
-            shader
-            )
-        );
-
-    SetDebugName(*shader, filename);
-}
-
-task<void> BasicLoader::LoadShaderAsync(
-    _In_ Platform::String^ filename,
-    _Out_ ID3D11PixelShader** shader
-    )
-{
-    return m_basicReaderWriter->ReadDataAsync(filename).then([=](const Platform::Array<byte>^ bytecode)
-    {
-        DX::ThrowIfFailed(
-            m_d3dDevice->CreatePixelShader(
-                bytecode->Data,
-                bytecode->Length,
-                nullptr,
-                shader
-                )
-            );
-
-        SetDebugName(*shader, filename);
-    });
-}
-
-void BasicLoader::LoadShader(
-    _In_ Platform::String^ filename,
-    _Out_ ID3D11ComputeShader** shader
-    )
-{
-    Platform::Array<byte>^ bytecode = m_basicReaderWriter->ReadData(filename);
-
-    DX::ThrowIfFailed(
-        m_d3dDevice->CreateComputeShader(
-            bytecode->Data,
-            bytecode->Length,
-            nullptr,
-            shader
-            )
-        );
-
-    SetDebugName(*shader, filename);
-}
-
-task<void> BasicLoader::LoadShaderAsync(
-    _In_ Platform::String^ filename,
-    _Out_ ID3D11ComputeShader** shader
-    )
-{
-    return m_basicReaderWriter->ReadDataAsync(filename).then([=](const Platform::Array<byte>^ bytecode)
-    {
-        DX::ThrowIfFailed(
-            m_d3dDevice->CreateComputeShader(
-                bytecode->Data,
-                bytecode->Length,
-                nullptr,
-                shader
-                )
-            );
-
-        SetDebugName(*shader, filename);
-    });
-}
-
-void BasicLoader::LoadShader(
-    _In_ Platform::String^ filename,
-    _Out_ ID3D11GeometryShader** shader
-    )
-{
-    Platform::Array<byte>^ bytecode = m_basicReaderWriter->ReadData(filename);
-
-    DX::ThrowIfFailed(
-        m_d3dDevice->CreateGeometryShader(
-            bytecode->Data,
-            bytecode->Length,
-            nullptr,
-            shader
-            )
-        );
-
-    SetDebugName(*shader, filename);
-}
-
-task<void> BasicLoader::LoadShaderAsync(
-    _In_ Platform::String^ filename,
-    _Out_ ID3D11GeometryShader** shader
-    )
-{
-    return m_basicReaderWriter->ReadDataAsync(filename).then([=](const Platform::Array<byte>^ bytecode)
-    {
-        DX::ThrowIfFailed(
-            m_d3dDevice->CreateGeometryShader(
-                bytecode->Data,
-                bytecode->Length,
-                nullptr,
-                shader
-                )
-            );
-
-        SetDebugName(*shader, filename);
-    });
-}
-
-void BasicLoader::LoadShader(
-    _In_ Platform::String^ filename,
-    _In_reads_opt_(numEntries) const D3D11_SO_DECLARATION_ENTRY* streamOutDeclaration,
-    _In_ uint32 numEntries,
-    _In_reads_opt_(numStrides) const uint32* bufferStrides,
-    _In_ uint32 numStrides,
-    _In_ uint32 rasterizedStream,
-    _Out_ ID3D11GeometryShader** shader
-    )
-{
-    Platform::Array<byte>^ bytecode = m_basicReaderWriter->ReadData(filename);
-
-    DX::ThrowIfFailed(
-        m_d3dDevice->CreateGeometryShaderWithStreamOutput(
-            bytecode->Data,
-            bytecode->Length,
-            streamOutDeclaration,
-            numEntries,
-            bufferStrides,
-            numStrides,
-            rasterizedStream,
-            nullptr,
-            shader
-            )
-        );
-
-    SetDebugName(*shader, filename);
-}
-
-task<void> BasicLoader::LoadShaderAsync(
-    _In_ Platform::String^ filename,
-    _In_reads_opt_(numEntries) const D3D11_SO_DECLARATION_ENTRY* streamOutDeclaration,
-    _In_ uint32 numEntries,
-    _In_reads_opt_(numStrides) const uint32* bufferStrides,
-    _In_ uint32 numStrides,
-    _In_ uint32 rasterizedStream,
-    _Out_ ID3D11GeometryShader** shader
-    )
-{
-    // This method assumes that the lifetime of input arguments may be shorter
-    // than the duration of this task.  In order to ensure accurate results, a
-    // copy of all arguments passed by pointer must be made.  The method then
-    // ensures that the lifetime of the copied data exceeds that of the task.
-
-    // Create copies of the streamOutDeclaration array as well as the SemanticName
-    // strings, both of which are pointers to data whose lifetimes may be shorter
-    // than that of this method's task.
-    shared_ptr<vector<D3D11_SO_DECLARATION_ENTRY>> streamOutDeclarationCopy;
-    shared_ptr<vector<string>> streamOutDeclarationSemanticNamesCopy;
-    if (streamOutDeclaration != nullptr)
-    {
-        streamOutDeclarationCopy.reset(
-            new vector<D3D11_SO_DECLARATION_ENTRY>(
-                streamOutDeclaration,
-                streamOutDeclaration + numEntries
-                )
-            );
-
-        streamOutDeclarationSemanticNamesCopy.reset(
-            new vector<string>(numEntries)
-            );
-
-        for (uint32 i = 0; i < numEntries; i++)
-        {
-            streamOutDeclarationSemanticNamesCopy->at(i).assign(streamOutDeclaration[i].SemanticName);
-        }
-    }
-    
-    // Create a copy of the bufferStrides array, which is a pointer to data
-    // whose lifetime may be shorter than that of this method's task.
-    shared_ptr<vector<uint32>> bufferStridesCopy;
-    if (bufferStrides != nullptr)
-    {
-        bufferStridesCopy.reset(
-            new vector<uint32>(
-                bufferStrides,
-                bufferStrides + numStrides
-                )
-            );
-    }
-
-    return m_basicReaderWriter->ReadDataAsync(filename).then([=](const Platform::Array<byte>^ bytecode)
-    {
-        if (streamOutDeclaration != nullptr)
-        {
-            // Reassign the SemanticName elements of the streamOutDeclaration array copy to
-            // point to the corresponding copied strings. Performing the assignment inside the
-            // lambda body ensures that the lambda will take a reference to the shared_ptr
-            // that holds the data.  This will guarantee that the data is still valid when
-            // CreateGeometryShaderWithStreamOutput is called.
-            for (uint32 i = 0; i < numEntries; i++)
-            {
-                streamOutDeclarationCopy->at(i).SemanticName = streamOutDeclarationSemanticNamesCopy->at(i).c_str();
-            }
-        }
-
-        DX::ThrowIfFailed(
-            m_d3dDevice->CreateGeometryShaderWithStreamOutput(
-                bytecode->Data,
-                bytecode->Length,
-                streamOutDeclaration == nullptr ? nullptr : streamOutDeclarationCopy->data(),
-                numEntries,
-                bufferStrides == nullptr ? nullptr : bufferStridesCopy->data(),
-                numStrides,
-                rasterizedStream,
-                nullptr,
-                shader
-                )
-            );
-
-        SetDebugName(*shader, filename);
-    });
-}
-
-void BasicLoader::LoadShader(
-    _In_ Platform::String^ filename,
-    _Out_ ID3D11HullShader** shader
-    )
-{
-    Platform::Array<byte>^ bytecode = m_basicReaderWriter->ReadData(filename);
-
-    DX::ThrowIfFailed(
-        m_d3dDevice->CreateHullShader(
-            bytecode->Data,
-            bytecode->Length,
-            nullptr,
-            shader
-            )
-        );
-
-    SetDebugName(*shader, filename);
-}
-
-task<void> BasicLoader::LoadShaderAsync(
-    _In_ Platform::String^ filename,
-    _Out_ ID3D11HullShader** shader
-    )
-{
-    return m_basicReaderWriter->ReadDataAsync(filename).then([=](const Platform::Array<byte>^ bytecode)
-    {
-        DX::ThrowIfFailed(
-            m_d3dDevice->CreateHullShader(
-                bytecode->Data,
-                bytecode->Length,
-                nullptr,
-                shader
-                )
-            );
-
-        SetDebugName(*shader, filename);
-    });
-}
-
-void BasicLoader::LoadShader(
-    _In_ Platform::String^ filename,
-    _Out_ ID3D11DomainShader** shader
-    )
-{
-    Platform::Array<byte>^ bytecode = m_basicReaderWriter->ReadData(filename);
-
-    DX::ThrowIfFailed(
-        m_d3dDevice->CreateDomainShader(
-            bytecode->Data,
-            bytecode->Length,
-            nullptr,
-            shader
-            )
-        );
-
-    SetDebugName(*shader, filename);
-}
-
-task<void> BasicLoader::LoadShaderAsync(
-    _In_ Platform::String^ filename,
-    _Out_ ID3D11DomainShader** shader
-    )
-{
-    return m_basicReaderWriter->ReadDataAsync(filename).then([=](const Platform::Array<byte>^ bytecode)
-    {
-        DX::ThrowIfFailed(
-            m_d3dDevice->CreateDomainShader(
-                bytecode->Data,
-                bytecode->Length,
-                nullptr,
-                shader
-                )
-            );
-
-        SetDebugName(*shader, filename);
-    });
-}
-
-void BasicLoader::LoadMesh(
-    _In_ Platform::String^ filename,
-    _Out_ ID3D11Buffer** vertexBuffer,
-    _Out_ ID3D11Buffer** indexBuffer,
-    _Out_opt_ uint32* vertexCount,
-    _Out_opt_ uint32* indexCount
-    )
-{
-    Platform::Array<byte>^ meshData = m_basicReaderWriter->ReadData(filename);
-
-    CreateMesh(
-        meshData->Data,
-        vertexBuffer,
-        indexBuffer,
-        vertexCount,
-        indexCount,
-        filename
-        );
-}
-
-task<void> BasicLoader::LoadMeshAsync(
-    _In_ Platform::String^ filename,
-    _Out_ ID3D11Buffer** vertexBuffer,
-    _Out_ ID3D11Buffer** indexBuffer,
-    _Out_opt_ uint32* vertexCount,
-    _Out_opt_ uint32* indexCount
-    )
-{
-    return m_basicReaderWriter->ReadDataAsync(filename).then([=](const Platform::Array<byte>^ meshData)
-    {
-        CreateMesh(
-            meshData->Data,
-            vertexBuffer,
-            indexBuffer,
-            vertexCount,
-            indexCount,
-            filename
-            );
-    });
-}
-```
-
-MeshObject.h
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#pragma once
-
-// MeshObject:
-// This class is the generic (abstract) representation of D3D11 Indexed triangle
-// list.  Each of the derived classes is just the constructor for the specific
-// geometry primitive.  This abstract class does not place any requirements on
-// the format of the geometry directly.
-// The primary method of the MeshObject is Render.  The default implementation
-// just sets the IndexBuffer, VertexBuffer, and topology to a TriangleList and
-// makes a  DrawIndexed call on the context.  It assumes all other state has
-// already been set on the context.
-
-ref class MeshObject abstract
-{
-internal:
-    MeshObject();
-
-    virtual void Render(_In_ ID3D11DeviceContext *context);
-
-protected private:
-    Microsoft::WRL::ComPtr<ID3D11Buffer>  m_vertexBuffer;
-    Microsoft::WRL::ComPtr<ID3D11Buffer>  m_indexBuffer;
-    int                                   m_vertexCount;
-    int                                   m_indexCount;
-};
-            
-            
-```
-
-MeshObject.cpp
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#include "pch.h"
-#include "MeshObject.h"
-#include "DirectXSample.h"
-#include "ConstantBuffers.h"
-
-using namespace Microsoft::WRL;
-using namespace DirectX;
-
-MeshObject::MeshObject():
-    m_vertexCount(0),
-    m_indexCount(0)
-{
-}
-
-//--------------------------------------------------------------------------------
-
-void MeshObject::Render(_In_ ID3D11DeviceContext *context)
-{
+    // PNTVertex is a struct. stride provides us the size required for all the mesh data
+    // struct PNTVertex
+    //{
+    //  DirectX::XMFLOAT3 position;
+    //  DirectX::XMFLOAT3 normal;
+    //  DirectX::XMFLOAT2 textureCoordinate;
+    //};
     uint32 stride = sizeof(PNTVertex);
     uint32 offset = 0;
 
+    // Similar to the main render loop.
+    // Input-layout objects describe how vertex buffer data is streamed into the IA pipeline stage.
     context->IASetVertexBuffers(0, 1, m_vertexBuffer.GetAddressOf(), &stride, &offset);
+
+    // IASetIndexBuffer binds an index buffer to the input-assembler stage.
+    // For more info, go to: https://msdn.microsoft.com/library/windows/desktop/ff476453.aspx
     context->IASetIndexBuffer(m_indexBuffer.Get(), DXGI_FORMAT_R16_UINT, 0);
+
+    // Binds information about the primitive type, and data order that describes input data for the input assembler stage.
+    // For more info, go to: https://msdn.microsoft.com/library/windows/desktop/ff476455.aspx
     context->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+
+    // Draw indexed, non-instanced primitives. A draw API submits work to the rendering pipeline.
+    // For more info, go to: https://msdn.microsoft.com/library/windows/desktop/ff476409.aspx
     context->DrawIndexed(m_indexCount, 0, 0);
 }
-
-//--------------------------------------------------------------------------------
-            
-            
 ```
 
-SphereMesh.h
+### <a name="present"></a><span data-ttu-id="a6d74-191">Present</span><span class="sxs-lookup"><span data-stu-id="a6d74-191">Present</span></span>
+
+<span data-ttu-id="a6d74-192">__DX::DeviceResources::Present__ メソッドを呼び出して、配置した内容をバッファーに格納し、表示します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-192">We call the __DX::DeviceResources::Present__ method to put the contents we've placed in the buffers and display it.</span></span>
+
+<span data-ttu-id="a6d74-193">ユーザーにフレームを表示するために使用されるバッファーのコレクションという意味で、スワップ チェーンという用語を使用します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-193">We use the term swap chain for a collection of buffers that are used for displaying frames to the user.</span></span> <span data-ttu-id="a6d74-194">アプリケーションが表示する新しいフレームを提供するたびに、スワップ チェーンの最初のバッファーが、表示されているバッファーの場所を取得します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-194">Each time an application presents a new frame for display, the first buffer in the swap chain takes the place of the displayed buffer.</span></span> <span data-ttu-id="a6d74-195">このプロセスは、スワップまたはフリップと呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-195">This process is called swapping or flipping.</span></span> <span data-ttu-id="a6d74-196">詳しくは、「[スワップ チェーン](../graphics-concepts/swap-chains.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-196">For more information, see [Swap chains](../graphics-concepts/swap-chains.md).</span></span>
+
+* <span data-ttu-id="a6d74-197">__IDXGISwapChain1__ インターフェイスの __Present__ メソッドは、[DXGI](#dxgi) に対して垂直同期 (VSync) までブロックするよう指示し、アプリケーションを次の VSync までスリープ状態にします。</span><span class="sxs-lookup"><span data-stu-id="a6d74-197">__IDXGISwapChain1__ interface's __Present__ method the instructs [DXGI](#dxgi) to block until Vertical Synchronization (VSync), putting the application to sleep until the next VSync.</span></span> <span data-ttu-id="a6d74-198">これによって、画面に表示されないフレームのレンダリングによるサイクルの無駄をなくします。</span><span class="sxs-lookup"><span data-stu-id="a6d74-198">This ensures you don't waste any cycles rendering frames that will never be displayed to the screen.</span></span>
+* <span data-ttu-id="a6d74-199">__ID3D11DeviceContext3__ インターフェイスの __DiscardView__ メソッドは、[レンダー ターゲット](#render-target)の内容を破棄します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-199">__ID3D11DeviceContext3__ interface's __DiscardView__ method discards the contents of the [render target](#render-target).</span></span> <span data-ttu-id="a6d74-200">これは、既存の内容が完全に上書きされる場合にのみ有効な操作です。</span><span class="sxs-lookup"><span data-stu-id="a6d74-200">This is a valid operation only when the existing contents will be entirely overwritten.</span></span> <span data-ttu-id="a6d74-201">dirty rect や scroll rect を使用する場合は、この呼び出しを削除してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-201">If dirty or scroll rects are used, this call should be removed.</span></span>
+* <span data-ttu-id="a6d74-202">同じ __DiscardView__ メソッドを使用して、[深度/ステンシル](#depth-stencil)の内容を破棄します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-202">Using the same __DiscardView__ method, discard the contents of the [depth-stencil](#depth-stencil).</span></span>
+* <span data-ttu-id="a6d74-203">[デバイス](#device)が削除される場合は、__HandleDeviceLost__ メソッドを使用してシナリオを管理します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-203">__HandleDeviceLost__ method is used to manage the scenario if the [device](#device) is removed.</span></span> <span data-ttu-id="a6d74-204">切断またはドライバーのアップグレードによってデバイスが削除された場合は、すべてのデバイス リソースを作成し直す必要があります。</span><span class="sxs-lookup"><span data-stu-id="a6d74-204">If the device was removed either by a disconnection or a driver upgrade, you must recreate all device resources.</span></span> <span data-ttu-id="a6d74-205">詳細については、「[Direct3D 11 でのデバイス削除シナリオの処理](handling-device-lost-scenarios.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-205">For more information, see [Handle device removed scenarios in Direct3D 11](handling-device-lost-scenarios.md).</span></span>
+
+> [!Tip]
+> <span data-ttu-id="a6d74-206">滑らかなフレーム レートを実現するには、フレームのレンダリングの作業量が、VSync 間の時間に収まることを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a6d74-206">To achieve a smooth frame rate, you must ensure that the amount of work to render a frame fits the time between VSyncs.</span></span>
 
 ```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#pragma once
-
-// SphereMesh:
-// This class derives from MeshObject and creates a ID3D11Buffer of
-// vertices and indices to represent a canonical sphere that is
-// positioned at the origin with a radius of 1.0.
-
-#include "MeshObject.h"
-
-ref class SphereMesh: public MeshObject
+// Present the contents of the swap chain to the screen.
+void DX::DeviceResources::Present()
 {
-internal:
-    SphereMesh(_In_ ID3D11Device *device, uint32 segments);
-};
-            
-            
-```
+    // The first argument instructs DXGI to block until VSync, putting the application
+    // to sleep until the next VSync. This ensures we don't waste any cycles rendering
+    // frames that will never be displayed to the screen.
+    HRESULT hr = m_swapChain->Present(1, 0);
 
-SphereMesh.cpp
+    // Discard the contents of the render target.
+    // This is a valid operation only when the existing contents will be entirely
+    // overwritten. If dirty or scroll rects are used, this call should be removed.
+    m_d3dContext->DiscardView(m_d3dRenderTargetView.Get());
 
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
+    // Discard the contents of the depth-stencil.
+    m_d3dContext->DiscardView(m_d3dDepthStencilView.Get());
 
-#include "pch.h"
-#include "SphereMesh.h"
-#include "DirectXSample.h"
-#include "ConstantBuffers.h"
-
-using namespace Microsoft::WRL;
-using namespace DirectX;
-
-SphereMesh::SphereMesh(_In_ ID3D11Device *device, uint32 segments)
-{
-    D3D11_BUFFER_DESC bd = {0};
-    D3D11_SUBRESOURCE_DATA initData = {0};
-
-    uint32 slices = segments / 2;
-    uint32 numVertices = (slices + 1) * (segments + 1) + 1;
-    uint32 numIndices = slices * segments * 3 * 2;
-
-    std::vector<PNTVertex> point(numVertices);
-    std::vector<uint16> index(numIndices);
-
-    // To make the texture look right on the top and bottom of the sphere,
-    // each slice will have 'segments + 1' vertices.  The top and bottom
-    // vertices will all be coincident, but have different U texture cooordinates.
-    uint32 p = 0;
-    for (uint32 a = 0; a <= slices; a++)
+    // If the device was removed either by a disconnection or a driver upgrade, we 
+    // must recreate all device resources.
+    // For more info about how to handle a device lost scenario, go to:
+    // https://docs.microsoft.com/windows/uwp/gaming/handling-device-lost-scenarios
+    if (hr == DXGI_ERROR_DEVICE_REMOVED || hr == DXGI_ERROR_DEVICE_RESET)
     {
-        float angle1 = static_cast<float>(a) / static_cast<float>(slices) * XM_PI;
-        float z = cos(angle1);
-        float r = sin(angle1);
-        for (uint32 b = 0; b <= segments; b++)
-        {
-            float angle2 = static_cast<float>(b) / static_cast<float>(segments) * XM_2PI;
-            point[p].position = XMFLOAT3(r * cos(angle2), r * sin(angle2), z);
-            point[p].normal = point[p].position;
-            point[p].textureCoordinate = XMFLOAT2((1.0f-z) / 2.0f, static_cast<float>(b) / static_cast<float>(segments));
-            p++;
-        }
+        HandleDeviceLost();
     }
-    m_vertexCount = p;
-
-    p = 0;
-    for (uint16 a = 0; a < slices; a++)
-    {
-        uint16 p1 = a * (segments + 1);
-        uint16 p2 = (a + 1) * (segments + 1);
-
-        // Generate two triangles for each segment around the slice.
-        for (uint16 b = 0; b < segments; b++)
-        {
-            if (a < (slices - 1))
-            {
-                // For all but the bottom slice, add the triangle with one
-                // vertex in the a slice and two vertices in the a + 1 slice.
-                // Skip it for the bottom slice since the triangle would be
-                // degenerate as all the vertices in the bottom slice are coincident.
-                index[p] = b + p1;
-                index[p+1] = b + p2;
-                index[p+2] = b + p2 + 1;
-                p = p + 3;
-            }
-            if (a > 0)
-            {
-                // For all but the top slice, add the triangle with two
-                // vertices in the a slice and one vertex in the a + 1 slice.
-                // Skip it for the top slice since the triangle would be
-                // degenerate as all the vertices in the top slice are coincident.
-                index[p] = b + p1;
-                index[p+1] = b + p2 + 1;
-                index[p+2] = b + p1 + 1;
-                p = p + 3;
-            }
-        }
-    }
-    m_indexCount = p;
-
-    bd.Usage = D3D11_USAGE_DEFAULT;
-    bd.ByteWidth = sizeof(PNTVertex) * m_vertexCount;
-    bd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-    bd.CPUAccessFlags = 0;
-    initData.pSysMem = point.data();
-    DX::ThrowIfFailed(
-        device->CreateBuffer(&bd, &initData, &m_vertexBuffer)
-        );
-
-    bd.Usage = D3D11_USAGE_DEFAULT;
-    bd.ByteWidth = sizeof(uint16) * m_indexCount;
-    bd.BindFlags = D3D11_BIND_INDEX_BUFFER;
-    bd.CPUAccessFlags = 0;
-    initData.pSysMem = index.data();
-    DX::ThrowIfFailed(
-        device->CreateBuffer(&bd, &initData, &m_indexBuffer)
-        );
-}
-            
-            
-```
-
-CylinderMesh.h
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#pragma once
-
-// CylinderMesh:
-// This class derives from MeshObject and creates a ID3D11Buffer of
-// vertices and indices to represent a canonical cylinder (capped at
-// both ends) that is positioned at the origin with a radius of 1.0,
-// a height of 1.0 and with its axis in the +Z direction.
-
-#include "MeshObject.h"
-
-ref class CylinderMesh: public MeshObject
-{
-internal:
-    CylinderMesh(_In_ ID3D11Device *device, uint32 segments);
-};
-            
-            
-```
-
-CylinderMesh.cpp
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#include "pch.h"
-#include "CylinderMesh.h"
-#include "DirectXSample.h"
-#include "ConstantBuffers.h"
-
-using namespace Microsoft::WRL;
-using namespace DirectX;
-
-CylinderMesh::CylinderMesh(_In_ ID3D11Device *device, uint32 segments)
-{
-    D3D11_BUFFER_DESC bd = {0};
-    D3D11_SUBRESOURCE_DATA initData = {0};
-
-    uint32 numVertices = 6 * (segments + 1) + 1;
-    uint32 numIndices = 3 * segments * 3 * 2;
-
-    std::vector<PNTVertex> point(numVertices);
-    std::vector<uint16> index(numIndices);
-
-    uint32 p = 0;
-    // Top center point (multiple points for texture coordinates).
-    for (uint32 a = 0; a <= segments; a++)
-    {
-        point[p].position = XMFLOAT3(0.0f, 0.0f, 1.0f);
-        point[p].normal = XMFLOAT3(0.0f, 0.0f, 1.0f);
-        point[p].textureCoordinate = XMFLOAT2(static_cast<float>(a) / static_cast<float>(segments), 0.0f);
-        p++;
-    }
-    // Top edge of cylinder: Normals point up for lighting of top surface.
-    for (uint32 a = 0; a <= segments; a++)
-    {
-        float angle = static_cast<float>(a) / static_cast<float>(segments) * XM_2PI;
-        point[p].position = XMFLOAT3(cos(angle), sin(angle), 1.0f);
-        point[p].normal = XMFLOAT3(0.0f, 0.0f, 1.0f);
-        point[p].textureCoordinate = XMFLOAT2(static_cast<float>(a) / static_cast<float>(segments), 0.0f);
-        p++;
-    }
-    // Top edge of cylinder: Normals point out for lighting of the side surface.
-    for (uint32 a = 0; a <= segments; a++)
-    {
-        float angle = static_cast<float>(a) / static_cast<float>(segments) * XM_2PI;
-        point[p].position = XMFLOAT3(cos(angle), sin(angle), 1.0f);
-        point[p].normal = XMFLOAT3(cos(angle), sin(angle), 0.0f);
-        point[p].textureCoordinate = XMFLOAT2(static_cast<float>(a) / static_cast<float>(segments), 0.0f);
-        p++;
-    }
-    // Bottom edge of cylinder: Normals point out for lighting of the side surface.
-    for (uint32 a = 0; a <= segments; a++)
-    {
-        float angle = static_cast<float>(a) / static_cast<float>(segments) * XM_2PI;
-        point[p].position = XMFLOAT3(cos(angle), sin(angle), 0.0f);
-        point[p].normal = XMFLOAT3(cos(angle), sin(angle), 0.0f);
-        point[p].textureCoordinate = XMFLOAT2(static_cast<float>(a) / static_cast<float>(segments), 1.0f);
-        p++;
-    }
-    // Bottom edge of cylinder: Normals point down for lighting of the bottom surface.
-    for (uint32 a = 0; a <= segments; a++)
-    {
-        float angle = static_cast<float>(a) / static_cast<float>(segments) * XM_2PI;
-        point[p].position = XMFLOAT3(cos(angle), sin(angle), 0.0f);
-        point[p].normal = XMFLOAT3(0.0f, 0.0f, -1.0f);
-        point[p].textureCoordinate = XMFLOAT2(static_cast<float>(a) / static_cast<float>(segments), 1.0f);
-        p++;
-    }
-    // Bottom center of cylinder: Normals point down for lighting on the bottom surface.
-    for (uint32 a = 0; a <= segments; a++)
-    {
-        point[p].position = XMFLOAT3(0.0f, 0.0f, 0.0f);
-        point[p].normal = XMFLOAT3(0.0f, 0.0f, -1.0f);
-        point[p].textureCoordinate = XMFLOAT2(static_cast<float>(a) / static_cast<float>(segments), 1.0f);
-        p++;
-    }
-    m_vertexCount = p;
-
-    p = 0;
-    for (uint16 a = 0; a < 6; a += 2)
-    {
-        uint16 p1 = a*(segments + 1);
-        uint16 p2 = (a+1)*(segments + 1);
-        for (uint16 b = 0; b < segments; b++)
-        {
-            if (a < 4)
-            {
-                index[p] = b + p1;
-                index[p+1] = b + p2;
-                index[p+2] = b + p2 + 1;
-                p = p + 3;
-            }
-            if (a > 0)
-            {
-                index[p] = b + p1;
-                index[p+1] = b + p2 + 1;
-                index[p+2] = b + p1 + 1;
-                p = p + 3;
-            }
-        }
-    }
-    m_indexCount = p;
-
-    bd.Usage = D3D11_USAGE_DEFAULT;
-    bd.ByteWidth = sizeof(PNTVertex) * m_vertexCount;
-    bd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-    bd.CPUAccessFlags = 0;
-    initData.pSysMem = point.data();
-    DX::ThrowIfFailed(
-        device->CreateBuffer(&bd, &initData, &m_vertexBuffer)
-        );
-
-    bd.Usage = D3D11_USAGE_DEFAULT;
-    bd.ByteWidth = sizeof(uint16) * m_indexCount;
-    bd.BindFlags = D3D11_BIND_INDEX_BUFFER;
-    bd.CPUAccessFlags = 0;
-    initData.pSysMem = index.data();
-    DX::ThrowIfFailed(
-        device->CreateBuffer(&bd, &initData, &m_indexBuffer)
-        );
-}
-            
-            
-```
-
-FaceMesh.h
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#pragma once
-
-// FaceMesh:
-// This class derives from MeshObject and creates a ID3D11Buffer of
-// vertices and indices to represent a canonical face defined as a
-// rectangle at the origin extending 1 unit in the +X and
-// 1 unit in the +Y direction.
-// The face is defined to be two sided, so it is visible from either
-// side.
-
-#include "MeshObject.h"
-
-ref class FaceMesh: public MeshObject
-{
-internal:
-    FaceMesh(_In_ ID3D11Device *device);
-};
-            
-            
-```
-
-FaceMesh.cpp
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#include "pch.h"
-#include "FaceMesh.h"
-#include "DirectXSample.h"
-#include "ConstantBuffers.h"
-
-using namespace Microsoft::WRL;
-using namespace DirectX;
-
-FaceMesh::FaceMesh(_In_ ID3D11Device *device)
-{
-    D3D11_BUFFER_DESC bd = {0};
-    D3D11_SUBRESOURCE_DATA initData = {0};
-
-    PNTVertex target_vertices[] =
-    {
-        {XMFLOAT3(0.0f, 0.0f, 0.0f), XMFLOAT3(0.0f, 0.0f, 1.0f), XMFLOAT2(1.0f, 1.0f)},
-        {XMFLOAT3(1.0f, 0.0f, 0.0f), XMFLOAT3(0.0f, 0.0f, 1.0f), XMFLOAT2(0.0f, 1.0f)},
-        {XMFLOAT3(1.0f, 1.0f, 0.0f), XMFLOAT3(0.0f, 0.0f, 1.0f), XMFLOAT2(0.0f, 0.0f)},
-        {XMFLOAT3(0.0f, 1.0f, 0.0f), XMFLOAT3(0.0f, 0.0f, 1.0f), XMFLOAT2(1.0f, 0.0f)}
-    };
-    WORD target_indices[] =
-    {
-        0, 1, 2,
-        0, 2, 3,
-        0, 2, 1,
-        0, 3, 2
-    };
-
-    m_vertexCount = 4;
-    m_indexCount = 12;
-
-    bd.Usage = D3D11_USAGE_DEFAULT;
-    bd.ByteWidth = sizeof(PNTVertex) * m_vertexCount;
-    bd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-    bd.CPUAccessFlags = 0;
-    initData.pSysMem = target_vertices;
-    DX::ThrowIfFailed(
-        device->CreateBuffer(&bd, &initData, &m_vertexBuffer)
-        );
-
-    bd.Usage = D3D11_USAGE_DEFAULT;
-    bd.ByteWidth = sizeof(WORD) * m_indexCount;
-    bd.BindFlags = D3D11_BIND_INDEX_BUFFER;
-    bd.CPUAccessFlags = 0;
-    initData.pSysMem = target_indices;
-    DX::ThrowIfFailed(
-        device->CreateBuffer(&bd, &initData, &m_indexBuffer)
-        );
-}
-            
-            
-```
-
-WorldMesh.h
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#pragma once
-
-#include "MeshObject.h"
-
-// WorldCeilingMesh:
-// This class derives from MeshObject and creates a ID3D11Buffer of
-// vertices and indices to represent the ceiling of the bounding cube
-// of the world.
-// The vertices are defined by a position, a normal and a single
-// 2D texture coordinate.
-
-ref class WorldCeilingMesh: public MeshObject
-{
-internal:
-    WorldCeilingMesh(_In_ ID3D11Device *device);
-};
-
-// WorldFloorMesh:
-// This class derives from MeshObject and creates a ID3D11Buffer of
-// vertices and indices to represent the floor of the bounding cube
-// of the world.
-
-ref class WorldFloorMesh: public MeshObject
-{
-internal:
-    WorldFloorMesh(_In_ ID3D11Device *device);
-};
-
-// WorldWallsMesh:
-// This class derives from MeshObject and creates a ID3D11Buffer of
-// vertices and indices to represent the walls of the bounding cube
-// of the world.
-
-ref class WorldWallsMesh: public MeshObject
-{
-internal:
-    WorldWallsMesh(_In_ ID3D11Device *device);
-};
-            
-            
-```
-
-WorldMesh.cpp
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#include "pch.h"
-#include "WorldMesh.h"
-#include "DirectXSample.h"
-#include "ConstantBuffers.h"
-
-using namespace Microsoft::WRL;
-using namespace DirectX;
-
-WorldCeilingMesh::WorldCeilingMesh(_In_ ID3D11Device *device)
-{
-    PNTVertex cellVertices[] =
-    {
-        // CEILING
-        {XMFLOAT3(-4.0f,  3.0f, -6.0f), XMFLOAT3(0.0f, -1.0f, 0.0f), XMFLOAT2(-0.15f, 0.0f)},
-        {XMFLOAT3( 4.0f,  3.0f, -6.0f), XMFLOAT3(0.0f, -1.0f, 0.0f), XMFLOAT2( 1.25f, 0.0f)},
-        {XMFLOAT3(-4.0f,  3.0f,  6.0f), XMFLOAT3(0.0f, -1.0f, 0.0f), XMFLOAT2(-0.15f, 2.1f)},
-        {XMFLOAT3( 4.0f,  3.0f,  6.0f), XMFLOAT3(0.0f, -1.0f, 0.0f), XMFLOAT2( 1.25f, 2.1f)},
-    };
-
-    WORD cellIndices[] = {
-        0, 1, 2,
-        1, 3, 2,
-    };
-
-    m_vertexCount = 4;
-    m_indexCount = 6;
-
-    D3D11_BUFFER_DESC bd = {0};
-    D3D11_SUBRESOURCE_DATA initData = {0};
-
-    bd.Usage = D3D11_USAGE_DEFAULT;
-    bd.ByteWidth = sizeof(PNTVertex) * m_vertexCount;
-    bd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-    bd.CPUAccessFlags = 0;
-    initData.pSysMem = cellVertices;
-    DX::ThrowIfFailed(
-        device->CreateBuffer(&bd, &initData, &m_vertexBuffer)
-        );
-
-    bd.Usage = D3D11_USAGE_DEFAULT;
-    bd.ByteWidth = sizeof(WORD) * m_indexCount;
-    bd.BindFlags = D3D11_BIND_INDEX_BUFFER;
-    bd.CPUAccessFlags = 0;
-    initData.pSysMem = cellIndices;
-    DX::ThrowIfFailed(
-        device->CreateBuffer(&bd, &initData, &m_indexBuffer)
-        );
-}
-
-WorldFloorMesh::WorldFloorMesh(_In_ ID3D11Device *device)
-{
-    PNTVertex cellVertices[] =
-    {
-        // FLOOR
-        {XMFLOAT3(-4.0f, -3.0f,  6.0f), XMFLOAT3(0.0f, 1.0f, 0.0f), XMFLOAT2(0.0f, 0.0f)},
-        {XMFLOAT3( 4.0f, -3.0f,  6.0f), XMFLOAT3(0.0f, 1.0f, 0.0f), XMFLOAT2(1.0f, 0.0f)},
-        {XMFLOAT3(-4.0f, -3.0f, -6.0f), XMFLOAT3(0.0f, 1.0f, 0.0f), XMFLOAT2(0.0f, 1.5f)},
-        {XMFLOAT3( 4.0f, -3.0f, -6.0f), XMFLOAT3(0.0f, 1.0f, 0.0f), XMFLOAT2(1.0f, 1.5f)},
-    };
-
-    WORD cellIndices[] = {
-        0, 1, 2,
-        1, 3, 2,
-    };
-
-    m_vertexCount = 4;
-    m_indexCount = 6;
-
-    D3D11_BUFFER_DESC bd = {0};
-    D3D11_SUBRESOURCE_DATA initData = {0};
-
-    bd.Usage = D3D11_USAGE_DEFAULT;
-    bd.ByteWidth = sizeof(PNTVertex) * m_vertexCount;
-    bd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-    bd.CPUAccessFlags = 0;
-    initData.pSysMem = cellVertices;
-    DX::ThrowIfFailed(
-        device->CreateBuffer(&bd, &initData, &m_vertexBuffer)
-        );
-
-    bd.Usage = D3D11_USAGE_DEFAULT;
-    bd.ByteWidth = sizeof(WORD) * m_indexCount;
-    bd.BindFlags = D3D11_BIND_INDEX_BUFFER;
-    bd.CPUAccessFlags = 0;
-    initData.pSysMem = cellIndices;
-    DX::ThrowIfFailed(
-        device->CreateBuffer(&bd, &initData, &m_indexBuffer)
-        );
-}
-
-WorldWallsMesh::WorldWallsMesh(_In_ ID3D11Device *device)
-{
-    PNTVertex cellVertices[] =
-    {
-        // WALL
-        {XMFLOAT3(-4.0f,  3.0f,  6.0f), XMFLOAT3(0.0f, 0.0f, -1.0f), XMFLOAT2(0.0f, 0.0f)},
-        {XMFLOAT3( 4.0f,  3.0f,  6.0f), XMFLOAT3(0.0f, 0.0f, -1.0f), XMFLOAT2(2.0f, 0.0f)},
-        {XMFLOAT3(-4.0f, -3.0f,  6.0f), XMFLOAT3(0.0f, 0.0f, -1.0f), XMFLOAT2(0.0f, 1.5f)},
-        {XMFLOAT3( 4.0f, -3.0f,  6.0f), XMFLOAT3(0.0f, 0.0f, -1.0f), XMFLOAT2(2.0f, 1.5f)},
-        // WALL
-        {XMFLOAT3(4.0f,  3.0f,  6.0f), XMFLOAT3(-1.0f, 0.0f, 0.0f), XMFLOAT2(0.0f, 0.0f)},
-        {XMFLOAT3(4.0f,  3.0f, -6.0f), XMFLOAT3(-1.0f, 0.0f, 0.0f), XMFLOAT2(3.0f, 0.0f)},
-        {XMFLOAT3(4.0f, -3.0f,  6.0f), XMFLOAT3(-1.0f, 0.0f, 0.0f), XMFLOAT2(0.0f, 1.5f)},
-        {XMFLOAT3(4.0f, -3.0f, -6.0f), XMFLOAT3(-1.0f, 0.0f, 0.0f), XMFLOAT2(3.0f, 1.5f)},
-        // WALL
-        {XMFLOAT3( 4.0f,  3.0f, -6.0f), XMFLOAT3(0.0f, 0.0f, 1.0f), XMFLOAT2(0.0f, 0.0f)},
-        {XMFLOAT3(-4.0f,  3.0f, -6.0f), XMFLOAT3(0.0f, 0.0f, 1.0f), XMFLOAT2(2.0f, 0.0f)},
-        {XMFLOAT3( 4.0f, -3.0f, -6.0f), XMFLOAT3(0.0f, 0.0f, 1.0f), XMFLOAT2(0.0f, 1.5f)},
-        {XMFLOAT3(-4.0f, -3.0f, -6.0f), XMFLOAT3(0.0f, 0.0f, 1.0f), XMFLOAT2(2.0f, 1.5f)},
-        // WALL
-        {XMFLOAT3(-4.0f,  3.0f, -6.0f), XMFLOAT3(1.0f, 0.0f, 0.0f), XMFLOAT2(0.0f, 0.0f)},
-        {XMFLOAT3(-4.0f,  3.0f,  6.0f), XMFLOAT3(1.0f, 0.0f, 0.0f), XMFLOAT2(3.0f, 0.0f)},
-        {XMFLOAT3(-4.0f, -3.0f, -6.0f), XMFLOAT3(1.0f, 0.0f, 0.0f), XMFLOAT2(0.0f, 1.5f)},
-        {XMFLOAT3(-4.0f, -3.0f,  6.0f), XMFLOAT3(1.0f, 0.0f, 0.0f), XMFLOAT2(3.0f, 1.5f)},
-    };
-
-    WORD cellIndices[] = {
-         0,  1,  2,
-         1,  3,  2,
-         4,  5,  6,
-         5,  7,  6,
-         8,  9, 10,
-         9, 11, 10,
-        12, 13, 14,
-        13, 15, 14,
-    };
-
-    m_vertexCount = 16;
-    m_indexCount = 24;
-
-    D3D11_BUFFER_DESC bd = {0};
-    D3D11_SUBRESOURCE_DATA initData = {0};
-
-    bd.Usage = D3D11_USAGE_DEFAULT;
-    bd.ByteWidth = sizeof(PNTVertex) * m_vertexCount;
-    bd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-    bd.CPUAccessFlags = 0;
-    initData.pSysMem = cellVertices;
-    DX::ThrowIfFailed(
-        device->CreateBuffer(&bd, &initData, &m_vertexBuffer)
-        );
-
-    bd.Usage = D3D11_USAGE_DEFAULT;
-    bd.ByteWidth = sizeof(WORD) * m_indexCount;
-    bd.BindFlags = D3D11_BIND_INDEX_BUFFER;
-    bd.CPUAccessFlags = 0;
-    initData.pSysMem = cellIndices;
-    DX::ThrowIfFailed(
-        device->CreateBuffer(&bd, &initData, &m_indexBuffer)
-        );
-}
-
-            
-            
-```
-
-Level.h
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#pragma once
-
-// Level:
-// This is an abstract class from which all of the levels of the game are derived.
-// Each level potentially overrides up to four methods:
-//     Initialize - (required) takes a list of objects and enables the objects that
-//         are active for the level as well as setting their positions and
-//         any animations associated with the objects.
-//     Update - this method is called once per time step and is expected to
-//         determine if the level has been completed.  The Level class provides
-//         a 'standard' Update method which checks each object that is a target
-//         and disables any active targets that have been hit.  It returns true
-//         once there are no active targets remaining.
-//     SaveState - method to save any Level specific state.  Default is defined as
-//         not saving any state.
-//     LoadState - method to restore any Level specific state.  Default is defined
-//         as not restoring any state.
-
-#include "GameObject.h"
-#include "PersistentState.h"
-
-ref class Level abstract
-{
-internal:
-    virtual void Initialize(
-        std::vector<GameObject^> objects
-        ) = 0;
-
-    virtual bool Update(
-        float time,
-        float elapsedTime,
-        float timeRemaining,
-        std::vector<GameObject^> objects
-        );
-
-    virtual void SaveState(PersistentState^ state);
-    virtual void LoadState(PersistentState^ state);
-
-    Platform::String^ Objective();
-    float TimeLimit();
-
-protected private:
-    Platform::String^ m_objective;
-    float             m_timeLimit;
-};
-            
-            
-```
-
-Level.cpp
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#include "pch.h"
-#include "Level.h"
-
-//----------------------------------------------------------------------
-
-bool Level::Update(
-    float /* time */,
-    float /* elapsedTime */,
-    float /* timeRemaining*/,
-    std::vector<GameObject^> objects
-    )
-{
-    int left = 0;
-
-    for (auto object = objects.begin(); object != objects.end(); object++)
-    {
-        if ((*object)->Active() && (*object)->Target())
-        {
-            if ((*object)->Hit())
-            {
-                (*object)->Active(false);
-            }
-            else
-            {
-                left++;
-            }
-        }
-    }
-    return (left == 0);
-}
-
-//----------------------------------------------------------------------
-
-void Level::SaveState(PersistentState^ /* state */)
-{
-}
-
-//----------------------------------------------------------------------
-
-void Level::LoadState(PersistentState^ /* state */)
-{
-}
-
-//----------------------------------------------------------------------
-
-Platform::String^ Level::Objective()
-{
-    return m_objective;
-}
-
-//----------------------------------------------------------------------
-
-float Level::TimeLimit()
-{
-    return m_timeLimit;
-}
-
-//----------------------------------------------------------------------            
-            
-```
-
-Level1.h
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#pragma once
-
-// Level1:
-// This class defines the first level of the game.  There are nine active targets.
-// Each of the targets is stationary and can be hit in any order.
-
-#include "Level.h"
-
-ref class Level1: public Level
-{
-internal:
-    Level1();
-    virtual void Initialize(std::vector<GameObject^> objects) override;
-};
-            
-```
-
-Level1.cpp
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#include "pch.h"
-#include "Level1.h"
-#include "Face.h"
-
-using namespace DirectX;
-
-//----------------------------------------------------------------------
-
-Level1::Level1()
-{
-    m_timeLimit = 20.0f;
-    m_objective =  "Hit each of the targets before time runs out.\nTouch to aim.  Tap in right box to fire.  Drag in left box to move.";
-}
-
-//----------------------------------------------------------------------
-
-void Level1::Initialize(std::vector<GameObject^> objects)
-{
-    XMFLOAT3 position[] =
-    {
-        XMFLOAT3(-2.5f, -1.0f, -1.5f),
-        XMFLOAT3(-1.0f,  1.0f, -3.0f),
-        XMFLOAT3( 1.5f,  0.0f, -3.0f),
-        XMFLOAT3(-2.5f, -1.0f, -5.5f),
-        XMFLOAT3( 0.5f, -2.0f, -5.0f),
-        XMFLOAT3( 1.5f, -2.0f, -5.5f),
-        XMFLOAT3( 2.0f,  0.0f,  0.0f),
-        XMFLOAT3( 0.0f,  0.0f,  0.0f),
-        XMFLOAT3(-2.0f,  0.0f,  0.0f)
-    };
-
-    int targetCount = 0;
-    for (auto object = objects.begin(); object != objects.end(); object++)
-    {
-        if (Face^ target = dynamic_cast<Face^>(*object))
-        {
-            if (targetCount < 9)
-            {
-                target->Active(true);
-                target->Target(true);
-                target->Hit(false);
-                target->AnimatePosition(nullptr);
-                target->Position(position[targetCount]);
-                targetCount++;
-            }
-            else
-            {
-                (*object)->Active(false);
-            }
-        }
-        else
-        {
-            (*object)->Active(false);
-        }
-    }
-}
-
-//----------------------------------------------------------------------
-            
-            
-```
-
-Level2.h
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#pragma once
-
-// Level2:
-// This class defines the second level of the game.  It derives from the
-// first level.  In this level, the targets must be hit in numeric order.
-
-#include "Level1.h"
-
-ref class Level2: public Level1
-{
-internal:
-    Level2();
-    virtual void Initialize(std::vector<GameObject^> objects) override;
-
-    virtual bool Update(
-        float time,
-        float elapsedTime,
-        float timeRemaining,
-        std::vector<GameObject^> objects
-        ) override;
-
-    virtual void SaveState(PersistentState^ state) override;
-    virtual void LoadState(PersistentState^ state) override;
-
-private:
-    int m_nextId;
-};
-            
-            
-```
-
-Level2.cpp
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#include "pch.h"
-#include "Level2.h"
-#include "Face.h"
-
-//----------------------------------------------------------------------
-
-Level2::Level2()
-{
-    m_timeLimit = 30.0f;
-    m_objective = "Hit each of the targets in ORDER before time runs out.";
-}
-
-//----------------------------------------------------------------------
-
-void Level2::Initialize(std::vector<GameObject^> objects)
-{
-    Level1::Initialize(objects);
-
-    int targetCount = 0;
-    for (auto object = objects.begin(); object != objects.end(); object++)
-    {
-        if (Face^ target = dynamic_cast<Face^>(*object))
-        {
-            if (targetCount < 9)
-            {
-                target->Target(targetCount == 0 ? true : false);
-                targetCount++;
-            }
-        }
-    }
-    m_nextId = 1;
-}
-
-//----------------------------------------------------------------------
-
-bool Level2::Update(
-    float /* time */,
-    float /* elapsedTime */,
-    float /* timeRemaining */,
-    std::vector<GameObject^> objects
-    )
-{
-    int left = 0;
-    for (auto object = objects.begin(); object != objects.end(); object++)
-    {
-        if ((*object)->Active() && ((*object)->TargetId() > 0))
-        {
-            if ((*object)->Hit()  && ((*object)->TargetId() == m_nextId))
-            {
-                (*object)->Active(false);
-                m_nextId++;
-            }
-            else
-            {
-                left++;
-            }
-        }
-        if ((*object)->Active() && ((*object)->TargetId() == m_nextId))
-        {
-            (*object)->Target(true);
-        }
-    }
-    return (left == 0);
-}
-
-//----------------------------------------------------------------------
-
-void Level2::SaveState(PersistentState^ state)
-{
-    state->SaveInt32(":NextTarget", m_nextId);
-}
-
-//----------------------------------------------------------------------
-
-void Level2::LoadState(PersistentState^ state)
-{
-    m_nextId = state->LoadInt32(":NextTarget", 1);
-}
-
-//----------------------------------------------------------------------            
-            
-```
-
-Level3.h
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#pragma once
-
-// Level3:
-// This class defines the third level of the game.  In this level, each of the
-// nine targets is moving along closed paths and can be hit
-// in any order.
-
-#include "Level.h"
-
-ref class Level3: public Level
-{
-internal:
-    Level3();
-    virtual void Initialize(std::vector<GameObject^> objects) override;
-};
-            
-            
-```
-
-Level3.cpp
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#include "pch.h"
-#include "Level3.h"
-#include "Face.h"
-#include "Animate.h"
-
-using namespace DirectX;
-
-//----------------------------------------------------------------------
-
-Level3::Level3()
-{
-    m_timeLimit = 30.0f;
-    m_objective = "Hit each of the moving targets before time runs out.";
-}
-
-//----------------------------------------------------------------------
-
-void Level3::Initialize(std::vector<GameObject^> objects)
-{
-    XMFLOAT3 position[] =
-    {
-        XMFLOAT3(-2.5f, -1.0f, -1.5f),
-        XMFLOAT3(-1.0f,  1.0f, -3.0f),
-        XMFLOAT3( 1.5f,  0.0f, -5.5f),
-        XMFLOAT3(-2.5f, -1.0f, -5.5f),
-        XMFLOAT3( 0.5f, -2.0f, -5.0f),
-        XMFLOAT3( 1.5f, -2.0f, -5.5f),
-        XMFLOAT3( 0.0f, -3.6f,  0.0f),
-        XMFLOAT3( 0.0f, -3.6f,  0.0f),
-        XMFLOAT3( 0.0f, -3.6f,  0.0f)
-    };
-    XMFLOAT3 LineList1[] =
-    {
-        XMFLOAT3(-2.5f, -1.0f, -1.5f),
-        XMFLOAT3(-0.5f,  1.0f,  1.0f),
-        XMFLOAT3(-0.5f, -2.5f,  1.0f),
-        XMFLOAT3(-2.5f, -1.0f, -1.5f),
-    };
-    XMFLOAT3 LineList2[] =
-    {
-        XMFLOAT3(-1.0f,  1.0f, -3.0f),
-        XMFLOAT3(-2.0f,  2.0f, -1.5f),
-        XMFLOAT3(-2.0f, -2.5f, -1.5f),
-        XMFLOAT3( 1.5f, -2.5f, -1.5f),
-        XMFLOAT3( 1.5f, -2.5f, -3.0f),
-        XMFLOAT3(-1.0f,  1.0f, -3.0f),
-    };
-    XMFLOAT3 LineList3[] =
-    {
-        XMFLOAT3(1.5f,  0.0f, -5.5f),
-        XMFLOAT3(1.5f,  1.0f, -5.5f),
-        XMFLOAT3(1.5f, -2.5f, -5.5f),
-        XMFLOAT3(1.5f,  0.0f, -5.5f),
-    };
-    XMFLOAT3 LineList4[] =
-    {
-        XMFLOAT3(-2.5f, -1.0f, -5.5f),
-        XMFLOAT3( 1.0f, -1.0f, -5.5f),
-        XMFLOAT3( 1.0f,  1.0f, -5.5f),
-        XMFLOAT3(-2.5f,  1.0f, -5.5f),
-        XMFLOAT3(-2.5f, -1.0f, -5.5f),
-    };
-    XMFLOAT3 LineList5[] =
-    {
-        XMFLOAT3( 0.5f, -2.0f, -5.0f),
-        XMFLOAT3( 2.0f, -2.0f, -5.0f),
-        XMFLOAT3( 2.0f,  1.0f, -5.0f),
-        XMFLOAT3(-2.5f,  1.0f, -5.0f),
-        XMFLOAT3(-2.5f, -2.0f, -5.0f),
-        XMFLOAT3( 0.5f, -2.0f, -5.0f),
-    };
-    XMFLOAT3 LineList6[] =
-    {
-        XMFLOAT3( 1.5f, -2.0f, -5.5f),
-        XMFLOAT3(-2.5f, -2.0f, -5.5f),
-        XMFLOAT3(-2.5f,  1.0f, -5.5f),
-        XMFLOAT3( 1.5f,  1.0f, -5.5f),
-        XMFLOAT3( 1.5f, -2.0f, -5.5f),
-    };
-
-    int targetCount = 0;
-    for (auto object = objects.begin(); object != objects.end(); object++)
-    {
-        if (Face^ target = dynamic_cast<Face^>(*object))
-        {
-            if (targetCount < 9)
-            {
-                target->Active(true);
-                target->Target(true);
-                target->Hit(false);
-                target->Position(position[targetCount]);
-                switch (targetCount)
-                {
-                case 0:
-                    target->AnimatePosition(ref new AnimateLineListPosition(4, LineList1, 10.0f, true));
-                    break;
-                case 1:
-                    target->AnimatePosition(ref new AnimateLineListPosition(6, LineList2, 15.0f, true));
-                    break;
-                case 2:
-                    target->AnimatePosition(ref new AnimateLineListPosition(4, LineList3, 15.0f, true));
-                    break;
-                case 3:
-                    target->AnimatePosition(ref new AnimateLineListPosition(5, LineList4, 15.0f, true));
-                    break;
-                case 4:
-                    target->AnimatePosition(ref new AnimateLineListPosition(6, LineList5, 15.0f, true));
-                    break;
-                case 5:
-                    target->AnimatePosition(ref new AnimateLineListPosition(5, LineList6, 15.0f, true));
-                    break;
-                case 6:
-                    target->AnimatePosition(
-                        ref new AnimateCirclePosition(
-                            XMFLOAT3(0.0f, -2.5f, 0.0f),
-                            XMFLOAT3(0.0f, -3.6f, 0.0f),
-                            XMFLOAT3(0.0f,  0.0f, 1.0f),
-                            9.0f,
-                            true,
-                            true
-                            )
-                        );
-                    break;
-                case 7:
-                    target->AnimatePosition(
-                        ref new AnimateCirclePosition(
-                            XMFLOAT3(0.0f, -2.5f, 0.0f),
-                            XMFLOAT3(0.0f, -3.6f, 0.0f),
-                            XMFLOAT3(0.0f,  0.0f, 1.0f),
-                            9.0f,
-                            true,
-                            true
-                            )
-                        );
-                    target->AnimatePosition()->Start(3.0f);
-                    break;
-                case 8:
-                    target->AnimatePosition(
-                        ref new AnimateCirclePosition(
-                            XMFLOAT3(0.0f, -2.5f, 0.0f),
-                            XMFLOAT3(0.0f, -3.6f, 0.0f),
-                            XMFLOAT3(0.0f,  0.0f, 1.0f),
-                            9.0f,
-                            true,
-                            true
-                            )
-                        );
-                    target->AnimatePosition()->Start(6.0f);
-                    break;
-                }
-                targetCount++;
-            }
-            else
-            {
-                target->Active(false);
-            }
-        }
-        else
-        {
-            (*object)->Active(false);
-        }
-    }
-}
-
-//----------------------------------------------------------------------
-            
-            
-```
-
-Level4.h
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#pragma once
-
-// Level4:
-// This class defines the fourth level of the game.  It derives from the
-// third level.  The targets must be hit in numeric order.
-
-#include "Level3.h"
-
-ref class Level4: public Level3
-{
-internal:
-    Level4();
-    virtual void Initialize(std::vector<GameObject^> objects) override;
-
-    virtual bool Update(
-        float time,
-        float elapsedTime,
-        float timeRemaining,
-        std::vector<GameObject^> objects
-        ) override;
-
-    virtual void SaveState(PersistentState^ state) override;
-    virtual void LoadState(PersistentState^ state) override;
-
-private:
-    int m_nextId;
-};
-            
-            
-```
-
-Level4.cpp
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#include "pch.h"
-#include "Level4.h"
-#include "Face.h"
-
-//----------------------------------------------------------------------
-
-Level4::Level4()
-{
-    m_timeLimit = 30.0f;
-    m_objective = "Hit each of the moving targets in ORDER before time runs out.";
-}
-
-//----------------------------------------------------------------------
-
-void Level4::Initialize(std::vector<GameObject^> objects)
-{
-    Level3::Initialize(objects);
-
-    int targetCount = 0;
-    for (auto object = objects.begin(); object != objects.end(); object++)
-    {
-        if (Face^ target = dynamic_cast<Face^>(*object))
-        {
-            if (targetCount < 9)
-            {
-                target->Target(targetCount == 0 ? true : false);
-                targetCount++;
-            }
-        }
-    }
-    m_nextId = 1;
-}
-
-//----------------------------------------------------------------------
-
-bool Level4::Update(
-    float /* time */,
-    float /* elapsedTime */,
-    float /* timeRemaining */,
-    std::vector<GameObject^> objects
-    )
-{
-    int left = 0;
-    for (auto object = objects.begin(); object != objects.end(); object++)
-    {
-        if ((*object)->Active() && ((*object)->TargetId() > 0))
-        {
-            if ((*object)->Hit() && ((*object)->TargetId() == m_nextId))
-            {
-                (*object)->Active(false);
-                m_nextId++;
-            }
-            else
-            {
-                left++;
-            }
-        }
-        if ((*object)->Active() && ((*object)->TargetId() == m_nextId))
-        {
-            (*object)->Target(true);
-        }
-    }
-    return (left == 0);
-}
-
-//----------------------------------------------------------------------
-
-void Level4::SaveState(PersistentState^ state)
-{
-    state->SaveInt32(":NextTarget", m_nextId);
-}
-
-//----------------------------------------------------------------------
-
-void Level4::LoadState(PersistentState^ state)
-{
-    m_nextId = state->LoadInt32(":NextTarget", 1);
-}
-
-//----------------------------------------------------------------------
-            
-            
-```
-
-Level5.h
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#pragma once
-
-// Level5:
-// This class defines the fifth level of the game.  It derives from the
-// third level.  This level introduces obstacles that move into place
-// during game play.  The targets may be hit in any order.
-
-#include "Level3.h"
-
-ref class Level5: public Level3
-{
-internal:
-    Level5();
-    virtual void Initialize(std::vector<GameObject^> objects) override;
-};
-            
-            
-```
-
-Level5.cpp
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#include "pch.h"
-#include "Level5.h"
-#include "Cylinder.h"
-#include "Animate.h"
-
-using namespace DirectX;
-
-//----------------------------------------------------------------------
-
-Level5::Level5()
-{
-    m_timeLimit = 30.0f;
-    m_objective = "Hit each of the moving targets while avoiding the obstacles before time runs out.";
-}
-
-//----------------------------------------------------------------------
-
-void Level5::Initialize(std::vector<GameObject^> objects)
-{
-    Level3::Initialize(objects);
-
-    XMFLOAT3 obstacleStartPosition[] =
-    {
-        XMFLOAT3(-4.5f, -3.0f, 0.0f),
-        XMFLOAT3(4.5f, -3.0f, 0.0f),
-        XMFLOAT3(0.0f, 3.01f, -2.0f),
-        XMFLOAT3(-1.5f, -3.0f, -6.5f),
-        XMFLOAT3(1.5f, -3.0f, -6.5f)
-    };
-    XMFLOAT3 obstacleEndPosition[] =
-    {
-        XMFLOAT3(-2.0f, -3.0f, 0.0f),
-        XMFLOAT3(2.0f, -3.0f, 0.0f),
-        XMFLOAT3(0.0f, -3.0f, -2.0f),
-        XMFLOAT3(-1.5f, -3.0f, -4.0f),
-        XMFLOAT3(1.5f, -3.0f, -4.0f)
-    };
-    float obstacleStartTime[] =
-    {
-        2.0f,
-        5.0f,
-        8.0f,
-        11.0f,
-        14.0f
-    };
-
-    int obstacleCount = 0;
-    for (auto object = objects.begin(); object != objects.end(); object++)
-    {
-        if (Cylinder^ obstacle = dynamic_cast<Cylinder^>(*object))
-        {
-            if (obstacleCount < 5)
-            {
-                obstacle->Active(true);
-                obstacle->Position(obstacleStartPosition[obstacleCount]);
-                obstacle->AnimatePosition(
-                    ref new AnimateLinePosition(
-                        obstacleStartPosition[obstacleCount],
-                        obstacleEndPosition[obstacleCount],
-                        10.0,
-                        false
-                        )
-                    );
-                obstacle->AnimatePosition()->Start(obstacleStartTime[obstacleCount]);
-                obstacleCount ++;
-            }
-        }
-    }
-}
-
-//----------------------------------------------------------------------            
-            
-```
-
-Level6.h
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#pragma once
-
-// Level6:
-// This class defines the sixth and final level of the game.  It derives from the
-// fifth level.  In this level, the targets do not disappear when they are hit.
-// The target will stay highlighted for two seconds.  As this is the last level,
-// the only criteria for completion is time expiring.
-
-#include "Level5.h"
-
-ref class Level6: public Level5
-{
-internal:
-    Level6();
-    virtual bool Update(
-        float time,
-        float elapsedTime,
-        float timeRemaining,
-        std::vector<GameObject^> objects
-        ) override;
-};
-            
-            
-```
-
-Level6.cpp
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#include "pch.h"
-#include "Level6.h"
-
-//----------------------------------------------------------------------
-
-Level6::Level6()
-{
-    m_timeLimit = 20.0f;
-    m_objective = "Hit as many moving targets as possible while avoiding the obstacles before time runs out.";
-}
-
-//----------------------------------------------------------------------
-
-bool Level6::Update(
-    float time,
-    float elapsedTime,
-    float timeRemaining,
-    std::vector<GameObject^> objects
-    )
-{
-    for (auto object = objects.begin(); object != objects.end(); object++)
-    {
-        if ((*object)->Active() && (*object)->Target())
-        {
-            if ((*object)->Hit() && ((*object)->HitTime() < (time - 2.0f)))
-            {
-                (*object)->Hit(false);
-            }
-        }
-    }
-    return ((timeRemaining - elapsedTime) <= 0.0f);
-}
-
-//----------------------------------------------------------------------            
-            
-```
-
-TargetTexture.h
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#pragma once
-
-// TargetTexture:
-// This is a helper class to procedurally generate textures for game
-// targets.  There are two versions of the textures, one when it is
-// hit and the other is when it is not.
-// The class creates the necessary resources to draw the texture into
-// an off screen resource at initialization time.
-
-ref class TargetTexture
-{
-internal:
-    TargetTexture(
-        _In_ ID3D11Device1*      d3dDevice,
-        _In_ ID2D1Factory1*      d2dFactory,
-        _In_ IDWriteFactory1*    dwriteFactory,
-        _In_ ID2D1DeviceContext* d2dContext
-        );
-
-    void CreateTextureResourceView(
-        _In_ Platform::String^ name,
-        _Out_ ID3D11ShaderResourceView** textureResourceView
-        );
-    void CreateHitTextureResourceView(
-        _In_ Platform::String^ name,
-        _Out_ ID3D11ShaderResourceView** textureResourceView
-        );
-
-protected private:
-    Microsoft::WRL::ComPtr<ID3D11Device1>           m_d3dDevice;
-    Microsoft::WRL::ComPtr<ID2D1Factory1>           m_d2dFactory;
-    Microsoft::WRL::ComPtr<ID2D1DeviceContext>      m_d2dContext;
-    Microsoft::WRL::ComPtr<IDWriteFactory1>         m_dwriteFactory;
-
-    Microsoft::WRL::ComPtr<ID2D1SolidColorBrush>    m_redBrush;
-    Microsoft::WRL::ComPtr<ID2D1SolidColorBrush>    m_blueBrush;
-    Microsoft::WRL::ComPtr<ID2D1SolidColorBrush>    m_greenBrush;
-    Microsoft::WRL::ComPtr<ID2D1SolidColorBrush>    m_whiteBrush;
-    Microsoft::WRL::ComPtr<ID2D1SolidColorBrush>    m_blackBrush;
-    Microsoft::WRL::ComPtr<ID2D1SolidColorBrush>    m_yellowBrush;
-    Microsoft::WRL::ComPtr<ID2D1SolidColorBrush>    m_clearBrush;
-
-    Microsoft::WRL::ComPtr<ID2D1EllipseGeometry>    m_circleGeometry1;
-    Microsoft::WRL::ComPtr<ID2D1EllipseGeometry>    m_circleGeometry2;
-    Microsoft::WRL::ComPtr<ID2D1EllipseGeometry>    m_circleGeometry3;
-    Microsoft::WRL::ComPtr<ID2D1EllipseGeometry>    m_circleGeometry4;
-    Microsoft::WRL::ComPtr<ID2D1EllipseGeometry>    m_circleGeometry5;
-
-    Microsoft::WRL::ComPtr<IDWriteTextFormat>       m_textFormat;
-};            
-            
-```
-
-TargetTexture.cpp
-
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
-
-#include "pch.h"
-#include "TargetTexture.h"
-#include "DirectXSample.h"
-
-using namespace Microsoft::WRL;
-using namespace Windows::Graphics::Display;
-
-TargetTexture::TargetTexture(
-    _In_ ID3D11Device1* d3dDevice,
-    _In_ ID2D1Factory1* d2dFactory,
-    _In_ IDWriteFactory1* dwriteFactory,
-    _In_ ID2D1DeviceContext* d2dContext
-    )
-{
-    m_d3dDevice = d3dDevice;
-    m_d2dFactory = d2dFactory;
-    m_dwriteFactory = dwriteFactory;
-    m_d2dContext = d2dContext;
-
-    DX::ThrowIfFailed(
-        m_d2dContext->CreateSolidColorBrush(
-            D2D1::ColorF(D2D1::ColorF::Red, 1.f),
-            &m_redBrush
-            )
-        );
-
-    DX::ThrowIfFailed(
-        m_d2dContext->CreateSolidColorBrush(
-            D2D1::ColorF(D2D1::ColorF::CornflowerBlue, 1.0f),
-            &m_blueBrush
-            )
-        );
-
-    DX::ThrowIfFailed(
-        m_d2dContext->CreateSolidColorBrush(
-            D2D1::ColorF(D2D1::ColorF::Green, 1.f),
-            &m_greenBrush
-            )
-        );
-
-    DX::ThrowIfFailed(
-        m_d2dContext->CreateSolidColorBrush(
-            D2D1::ColorF(D2D1::ColorF::White, 1.f),
-            &m_whiteBrush
-            )
-        );
-
-    DX::ThrowIfFailed(
-        m_d2dContext->CreateSolidColorBrush(
-            D2D1::ColorF(D2D1::ColorF::Black, 1.f),
-            &m_blackBrush
-            )
-        );
-
-    DX::ThrowIfFailed(
-        m_d2dContext->CreateSolidColorBrush(
-            D2D1::ColorF(D2D1::ColorF::Yellow, 1.f),
-            &m_yellowBrush
-            )
-        );
-
-    DX::ThrowIfFailed(
-        m_d2dContext->CreateSolidColorBrush(
-            D2D1::ColorF(D2D1::ColorF::White, 0.0f),
-            &m_clearBrush
-            )
-        );
-
-    DX::ThrowIfFailed(
-        m_d2dFactory->CreateEllipseGeometry(
-            D2D1::Ellipse(
-                D2D1::Point2F(256.0f, 256.0f),
-                50.0f,
-                50.0f
-                ),
-            &m_circleGeometry1)
-            );
-
-    DX::ThrowIfFailed(
-        m_d2dFactory->CreateEllipseGeometry(
-            D2D1::Ellipse(
-                D2D1::Point2F(256.0f, 256.0f),
-                100.0f,
-                100.0f
-                ),
-            &m_circleGeometry2)
-            );
-
-    DX::ThrowIfFailed(
-        m_d2dFactory->CreateEllipseGeometry(
-            D2D1::Ellipse(
-                D2D1::Point2F(256.0f, 256.0f),
-                150.0f,
-                150.0f
-                ),
-            &m_circleGeometry3)
-            );
-
-    DX::ThrowIfFailed(
-        m_d2dFactory->CreateEllipseGeometry(
-            D2D1::Ellipse(
-                D2D1::Point2F(256.0f, 256.0f),
-                200.0f,
-                200.0f
-                ),
-            &m_circleGeometry4)
-            );
-
-    DX::ThrowIfFailed(
-        m_d2dFactory->CreateEllipseGeometry(
-            D2D1::Ellipse(
-                D2D1::Point2F(256.0f, 256.0f),
-                250.0f,
-                250.0f
-                ),
-            &m_circleGeometry5)
-            );
-
-    DX::ThrowIfFailed(
-        m_dwriteFactory->CreateTextFormat(
-            L"Segoe UI",
-            nullptr,
-            DWRITE_FONT_WEIGHT_LIGHT,
-            DWRITE_FONT_STYLE_NORMAL,
-            DWRITE_FONT_STRETCH_NORMAL,
-            425,        // fontsize
-            L"en-US",   // locale
-            &m_textFormat
-            )
-        );
-
-    // Center the text horizontally.
-    DX::ThrowIfFailed(
-        m_textFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_CENTER)
-        );
-
-    // Center the text vertically.
-    DX::ThrowIfFailed(
-        m_textFormat->SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_CENTER)
-        );
-}
-//----------------------------------------------------------------------
-void TargetTexture::CreateTextureResourceView(
-    _In_ Platform::String^ name,
-    _Out_ ID3D11ShaderResourceView** textureResourceView
-    )
-{
-    // Allocate a offscreen D3D surface for D2D to render our 2D content into
-    D3D11_TEXTURE2D_DESC texDesc;
-    texDesc.ArraySize = 1;
-    texDesc.BindFlags = D3D11_BIND_RENDER_TARGET | D3D11_BIND_SHADER_RESOURCE;
-    texDesc.CPUAccessFlags = 0;
-    texDesc.Format = DXGI_FORMAT_B8G8R8A8_UNORM;
-    texDesc.Height = 512;
-    texDesc.Width = 512;
-    texDesc.MipLevels = 1;
-    texDesc.MiscFlags = 0;
-    texDesc.SampleDesc.Count = 1;
-    texDesc.SampleDesc.Quality = 0;
-    texDesc.Usage = D3D11_USAGE_DEFAULT;
-
-    ComPtr<ID3D11Texture2D> offscreenTexture;
-    DX::ThrowIfFailed(
-        m_d3dDevice->CreateTexture2D(&texDesc, nullptr, &offscreenTexture)
-        );
-
-    // Convert the Direct2D texture into a Shader Resource View
-    ComPtr<ID3D11ShaderResourceView> texture;
-    DX::ThrowIfFailed(
-        m_d3dDevice->CreateShaderResourceView(offscreenTexture.Get(), nullptr, &texture)
-        );
-#if defined(_DEBUG)
-    {
-        char debugName[100];
-        int l = sprintf_s(debugName, sizeof(debugName) / sizeof(debugName[0]), "Simple3DGame Target %ls", name->Data());
-        DX::ThrowIfFailed(
-            texture->SetPrivateData(WKPDID_D3DDebugObjectName, l, debugName)
-            );
-    }
-#endif
-
-    ComPtr<IDXGISurface> dxgiSurface;
-    DX::ThrowIfFailed(
-        offscreenTexture.As(&dxgiSurface)
-        );
-
-    // Create a D2D render target which can draw into our offscreen D3D
-    // surface. Given that we use a constant size for the texture, we
-    // fix the DPI at 96.
-
-    D2D1_BITMAP_PROPERTIES1 properties;
-    properties.pixelFormat.format = DXGI_FORMAT_B8G8R8A8_UNORM;
-    properties.pixelFormat.alphaMode = D2D1_ALPHA_MODE_PREMULTIPLIED;
-    properties.dpiX = 96;
-    properties.dpiY = 96;
-    properties.bitmapOptions = D2D1_BITMAP_OPTIONS_TARGET | D2D1_BITMAP_OPTIONS_CANNOT_DRAW;
-    properties.colorContext = nullptr;
-
-    ComPtr<ID2D1Bitmap1> renderTarget;
-    DX::ThrowIfFailed(
-        m_d2dContext->CreateBitmapFromDxgiSurface(
-            dxgiSurface.Get(),
-            &properties,
-            &renderTarget
-            )
-        );
-
-    m_d2dContext->SetTarget(renderTarget.Get());
-    float saveDpiX;
-    float saveDpiY;
-
-    m_d2dContext->GetDpi(&saveDpiX, &saveDpiY);
-    m_d2dContext->SetDpi(96.0f, 96.0f);
-
-    m_d2dContext->BeginDraw();
-    m_d2dContext->SetTransform(D2D1::Matrix3x2F::Identity());
-
-    D2D1_SIZE_F renderTargetSize = renderTarget->GetSize();
-
-    m_d2dContext->Clear(D2D1::ColorF(D2D1::ColorF::White));
-    m_d2dContext->FillGeometry(m_circleGeometry5.Get(), m_redBrush.Get());
-    m_d2dContext->FillGeometry(m_circleGeometry4.Get(), m_blueBrush.Get());
-    m_d2dContext->FillGeometry(m_circleGeometry3.Get(), m_greenBrush.Get());
-    m_d2dContext->FillGeometry(m_circleGeometry2.Get(), m_yellowBrush.Get());
-    m_d2dContext->FillGeometry(m_circleGeometry1.Get(), m_blackBrush.Get());
-    m_d2dContext->DrawText(
-        name->Data(),
-        name->Length(),
-        m_textFormat.Get(),
-        D2D1::RectF(0, 0, renderTargetSize.width, renderTargetSize.height),
-        m_whiteBrush.Get()
-        );
-
-    // We ignore D2DERR_RECREATE_TARGET here. This error indicates that the device
-    // is lost. It will be handled during the next call to Present.
-    HRESULT hr = m_d2dContext->EndDraw();
-    if (hr != D2DERR_RECREATE_TARGET)
+    else
     {
         DX::ThrowIfFailed(hr);
     }
-
-    m_d2dContext->SetTarget(nullptr);
-    m_d2dContext->SetDpi(saveDpiX, saveDpiY);
-
-    *textureResourceView = texture.Detach();
 }
-//----------------------------------------------------------------------
-void TargetTexture::CreateHitTextureResourceView(
-    _In_ Platform::String^ name,
-    _Out_ ID3D11ShaderResourceView** textureResourceView
-    )
-{
-    // Allocate a offscreen D3D surface for D2D to render our 2D content into
-    D3D11_TEXTURE2D_DESC texDesc;
-    texDesc.ArraySize = 1;
-    texDesc.BindFlags = D3D11_BIND_RENDER_TARGET | D3D11_BIND_SHADER_RESOURCE;
-    texDesc.CPUAccessFlags = 0;
-    texDesc.Format = DXGI_FORMAT_B8G8R8A8_UNORM;
-    texDesc.Height = 512;
-    texDesc.Width = 512;
-    texDesc.MipLevels = 1;
-    texDesc.MiscFlags = 0;
-    texDesc.SampleDesc.Count = 1;
-    texDesc.SampleDesc.Quality = 0;
-    texDesc.Usage = D3D11_USAGE_DEFAULT;
-
-    ComPtr<ID3D11Texture2D> offscreenTexture;
-    DX::ThrowIfFailed(
-        m_d3dDevice->CreateTexture2D(&texDesc, nullptr, &offscreenTexture)
-        );
-
-    // Convert the Direct2D texture into a Shader Resource View.
-    ComPtr<ID3D11ShaderResourceView> texture;
-    DX::ThrowIfFailed(
-        m_d3dDevice->CreateShaderResourceView(offscreenTexture.Get(), nullptr, &texture)
-        );
-#if defined(_DEBUG)
-    {
-        char debugName[100];
-        int l = sprintf_s(debugName, sizeof(debugName) / sizeof(debugName[0]), "Simple3DGame HitTarget %ls", name->Data());
-        DX::ThrowIfFailed(
-            texture->SetPrivateData(WKPDID_D3DDebugObjectName, l, debugName)
-            );
-    }
-#endif
-
-    ComPtr<IDXGISurface> dxgiSurface;
-    DX::ThrowIfFailed(
-        offscreenTexture.As(&dxgiSurface)
-        );
-
-    // Create a D2D render target which can draw into our offscreen D3D
-    // surface. Given that we use a constant size for the texture, we
-    // fix the DPI at 96.
-
-    D2D1_BITMAP_PROPERTIES1 properties;
-    properties.pixelFormat.format = DXGI_FORMAT_B8G8R8A8_UNORM;
-    properties.pixelFormat.alphaMode = D2D1_ALPHA_MODE_PREMULTIPLIED;
-    properties.dpiX = 96;
-    properties.dpiY = 96;
-    properties.bitmapOptions = D2D1_BITMAP_OPTIONS_TARGET | D2D1_BITMAP_OPTIONS_CANNOT_DRAW;
-    properties.colorContext = nullptr;
-
-    ComPtr<ID2D1Bitmap1> renderTarget;
-    DX::ThrowIfFailed(
-        m_d2dContext->CreateBitmapFromDxgiSurface(
-            dxgiSurface.Get(),
-            &properties,
-            &renderTarget
-            )
-        );
-
-    m_d2dContext->SetTarget(renderTarget.Get());
-    float saveDpiX;
-    float saveDpiY;
-
-    m_d2dContext->GetDpi(&saveDpiX, &saveDpiY);
-    m_d2dContext->SetDpi(96.0f, 96.0f);
-
-    m_d2dContext->BeginDraw();
-    m_d2dContext->SetTransform(D2D1::Matrix3x2F::Identity());
-
-    D2D1_SIZE_F renderTargetSize = renderTarget->GetSize();
-
-    m_d2dContext->Clear(D2D1::ColorF(D2D1::ColorF::Black));
-    m_d2dContext->FillGeometry(m_circleGeometry5.Get(), m_yellowBrush.Get());
-    m_d2dContext->FillGeometry(m_circleGeometry4.Get(), m_greenBrush.Get());
-    m_d2dContext->FillGeometry(m_circleGeometry3.Get(), m_blueBrush.Get());
-    m_d2dContext->FillGeometry(m_circleGeometry2.Get(), m_redBrush.Get());
-    m_d2dContext->FillGeometry(m_circleGeometry1.Get(), m_whiteBrush.Get());
-    m_d2dContext->DrawText(
-        name->Data(),
-        name->Length(),
-        m_textFormat.Get(),
-        D2D1::RectF(0, 0, renderTargetSize.width, renderTargetSize.height),
-        m_blackBrush.Get()
-        );
-
-    // We ignore D2DERR_RECREATE_TARGET here. This error indicates that the device
-    // is lost. It will be handled during the next call to Present.
-    HRESULT hr = m_d2dContext->EndDraw();
-    if (hr != D2DERR_RECREATE_TARGET)
-    {
-        DX::ThrowIfFailed(hr);
-    }
-
-    m_d2dContext->SetTarget(nullptr);
-    m_d2dContext->SetDpi(saveDpiX, saveDpiY);
-
-    *textureResourceView = texture.Detach();
-}
-//----------------------------------------------------------------------
-            
-            
 ```
 
-Material.h
+## <a name="next-steps"></a><span data-ttu-id="a6d74-207">次の手順</span><span class="sxs-lookup"><span data-stu-id="a6d74-207">Next steps</span></span>
 
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
+<span data-ttu-id="a6d74-208">この記事では、ディスプレイにグラフィックスをレンダリングする方法を説明し、使用されるレンダリング用語の一部について簡単に説明しました。</span><span class="sxs-lookup"><span data-stu-id="a6d74-208">This article explained how graphics is rendered on the display and provided a short description for some of the rendering terms used.</span></span> <span data-ttu-id="a6d74-209">「[レンダリング フレームワーク II: ゲームのレンダリング](tutorial-game-rendering.md)」では、レンダリングの詳細や、レンダリングする前に必要なデータを準備する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-209">Learn more about rendering in the [Rendering framework II: Game rendering](tutorial-game-rendering.md) article, and learn how to prepare the data needed before rendering.</span></span>
 
-#pragma once
+## <a name="terms-and-concepts"></a><span data-ttu-id="a6d74-210">用語と概念</span><span class="sxs-lookup"><span data-stu-id="a6d74-210">Terms and concepts</span></span>
 
-// Material:
-// This class maintains the properties that represent how an object will
-// look when it is rendered.  This includes the color of the object, the
-// texture used to render the object, and the vertex and pixel shader that
-// should be used for rendering.
-// The RenderSetup method sets the appropriate values into the constantBuffer
-// and calls the appropriate D3D11 context methods to set up the rendering pipeline
-// in the graphics hardware.
+### <a name="simple-game-scene"></a><span data-ttu-id="a6d74-211">シンプルなゲームのシーン</span><span class="sxs-lookup"><span data-stu-id="a6d74-211">Simple game scene</span></span>
 
-#include "ConstantBuffers.h"
+<span data-ttu-id="a6d74-212">シンプルなゲームのシーンは、数個のオブジェクトといくつかの光源で構成されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-212">A simple game scene is made up of a few objects with several light sources.</span></span>
 
-ref class Material
-{
-internal:
-    Material(
-        DirectX::XMFLOAT4 meshColor,
-        DirectX::XMFLOAT4 diffuseColor,
-        DirectX::XMFLOAT4 specularColor,
-        float specularExponent,
-        _In_ ID3D11ShaderResourceView* textureResourceView,
-        _In_ ID3D11VertexShader* vertexShader,
-        _In_ ID3D11PixelShader* pixelShader
-        );
+<span data-ttu-id="a6d74-213">オブジェクトのシェイプは、空間の一連の X、Y、Z 座標で定義されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-213">An object's shape is defined by a set of X, Y, Z coordinates in space.</span></span> <span data-ttu-id="a6d74-214">ゲーム ワールド内の実際のレンダリングの位置は、位置の X、Y、Z 座標に変換行列を適用することで決定できます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-214">The actual render location in the game world can be determined by applying a transformation matrix to the positional X, Y, Z coordinates.</span></span> <span data-ttu-id="a6d74-215">一連のテクスチャ座標 (マテリアルをオブジェクトに適用する方法を指定する U と V) が含まれる場合もあります。</span><span class="sxs-lookup"><span data-stu-id="a6d74-215">It may also have a set of texture coordinates - U and V which specifies how a material is applied to the object.</span></span> <span data-ttu-id="a6d74-216">これはオブジェクトのサーフェスのプロパティを定義し、これを使ってオブジェクトがテニス ボールのような粗いサーフェスを持つのか、ボーリングの球のように滑らかな光沢のあるサーフェスを持つのかを確認できます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-216">This defines the surface properties of the object and gives you the ability to see if an object has a rough surface like a tennis ball or a smooth glossy surface like a bowling ball.</span></span>
 
-    void RenderSetup(
-        _In_ ID3D11DeviceContext* context,
-        _Inout_ ConstantBufferChangesEveryPrim* constantBuffer
-        );
+<span data-ttu-id="a6d74-217">シーンとオブジェクトの情報は、レンダリング フレームワークでフレームごとにシーンを再作成し、シーンをディスプレイ モニターに表示するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-217">Scene and object info are used by the rendering framework to recreate the scene frame by frame, making it come alive on your display monitor.</span></span>
 
-    void SetTexture(_In_ ID3D11ShaderResourceView* textureResourceView)
-    {
-        m_textureRV = textureResourceView;
-    }
+### <a name="rendering-pipeline"></a><span data-ttu-id="a6d74-218">レンダリング パイプライン</span><span class="sxs-lookup"><span data-stu-id="a6d74-218">Rendering pipeline</span></span>
 
-protected private:
-    DirectX::XMFLOAT4   m_meshColor;
-    DirectX::XMFLOAT4   m_diffuseColor;
-    DirectX::XMFLOAT4   m_hitColor;
-    DirectX::XMFLOAT4   m_specularColor;
-    float               m_specularExponent;
+<span data-ttu-id="a6d74-219">レンダリング パイプラインは、3D シーンの情報が画面に表示される画像に変換されるプロセスです。</span><span class="sxs-lookup"><span data-stu-id="a6d74-219">The rendering pipeline is the process in which 3D scene info is translated to an image displayed on screen.</span></span> <span data-ttu-id="a6d74-220">Direct3D 11 では、このパイプラインはプログラミング可能です。</span><span class="sxs-lookup"><span data-stu-id="a6d74-220">In Direct3D 11, this pipeline is programmable.</span></span> <span data-ttu-id="a6d74-221">レンダリングのニーズをサポートするために、ステージを適合させることができます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-221">You can adapt the stages to support your rendering needs.</span></span> <span data-ttu-id="a6d74-222">一般的なシェーダー コアの機能を利用するステージは、HLSL プログラミング言語を使用することによってプログラミングできます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-222">Stages that feature common shader cores are programmable by using the HLSL programming language.</span></span> <span data-ttu-id="a6d74-223">これは、グラフィックス レンダリング パイプラインまたは単にパイプラインとも呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-223">It is also known as the graphics rendering pipeline or simply pipeline.</span></span>
 
-    Microsoft::WRL::ComPtr<ID3D11VertexShader>       m_vertexShader;
-    Microsoft::WRL::ComPtr<ID3D11PixelShader>        m_pixelShader;
-    Microsoft::WRL::ComPtr<ID3D11ShaderResourceView> m_textureRV;
-};
-            
-            
-```
+<span data-ttu-id="a6d74-224">このパイプラインを作成するには、以下についての知識が必要です。</span><span class="sxs-lookup"><span data-stu-id="a6d74-224">To help you create this pipeline, you need to be familiar with:</span></span>
+* <span data-ttu-id="a6d74-225">[HLSL](#HLSL)。</span><span class="sxs-lookup"><span data-stu-id="a6d74-225">[HLSL](#HLSL).</span></span> <span data-ttu-id="a6d74-226">UWP DirectX ゲームでは、HLSL シェーダー モデル 5.1 以上を使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="a6d74-226">We recommend the use of HLSL Shader Model 5.1 and above for UWP DirectX games.</span></span>
+* [<span data-ttu-id="a6d74-227">シェーダー</span><span class="sxs-lookup"><span data-stu-id="a6d74-227">Shaders</span></span>](#Shaders)
+* [<span data-ttu-id="a6d74-228">頂点シェーダーとピクセル シェーダー</span><span class="sxs-lookup"><span data-stu-id="a6d74-228">Vertex shaders and pixel shaders</span></span>](#vertext-shaders-pixel-shaders)
+* [<span data-ttu-id="a6d74-229">シェーダー ステージ</span><span class="sxs-lookup"><span data-stu-id="a6d74-229">Shader stages</span></span>](#shader-stages)
+* [<span data-ttu-id="a6d74-230">さまざまなシェーダー ファイル形式</span><span class="sxs-lookup"><span data-stu-id="a6d74-230">Various shader file formats</span></span>](#various-shader-file-formats)
 
-Material.cpp
+<span data-ttu-id="a6d74-231">詳細については、[Direct3D 11 のレンダリング パイプラインに関するページ](https://msdn.microsoft.com/library/windows/desktop/dn643746.aspx)と[グラフィックス パイプラインに関するページ](https://msdn.microsoft.com/library/windows/desktop/ff476882.aspx)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-231">For more information, see [Understand the Direct3D 11 rendering pipeline](https://msdn.microsoft.com/library/windows/desktop/dn643746.aspx) and [Graphics pipeline](https://msdn.microsoft.com/library/windows/desktop/ff476882.aspx).</span></span>
 
-```cpp
-//// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
-//// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-//// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-//// PARTICULAR PURPOSE.
-////
-//// Copyright (c) Microsoft Corporation. All rights reserved
+#### <a name="hlsl"></a><span data-ttu-id="a6d74-232">HLSL</span><span class="sxs-lookup"><span data-stu-id="a6d74-232">HLSL</span></span>
 
-#include "pch.h"
-#include "Material.h"
-#include "GameConstants.h"
+<span data-ttu-id="a6d74-233">HLSL は、DirectX 用の上位レベル シェーダー言語です。</span><span class="sxs-lookup"><span data-stu-id="a6d74-233">HLSL is the High Level Shading Language for DirectX.</span></span> <span data-ttu-id="a6d74-234">HLSL を使用して、Direct3D パイプライン用の C に似たプログラミング可能なシェーダーを作成できます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-234">Using HLSL, you can create C like programmable shaders for the Direct3D pipeline.</span></span> <span data-ttu-id="a6d74-235">詳しくは、「[HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561.aspx)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-235">For more information, see [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561.aspx).</span></span>
 
-using namespace DirectX;
+#### <a name="shaders"></a><span data-ttu-id="a6d74-236">シェーダー</span><span class="sxs-lookup"><span data-stu-id="a6d74-236">Shaders</span></span>
 
-//--------------------------------------------------------------------------------
+<span data-ttu-id="a6d74-237">シェーダーは、レンダリングするときのオブジェクトのサーフェスの表示方法を決定する命令のセットと考えることができます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-237">Shaders can be thought of as a set of instructions that determine how the surface of an object appears when rendered.</span></span> <span data-ttu-id="a6d74-238">HLSL を使用してプログラミングされるシェーダーは、HLSL シェーダーと呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-238">Those that are programmed using HLSL are known as HLSL shaders.</span></span> <span data-ttu-id="a6d74-239">[HLSL])(#hlsl) シェーダーのソース コード ファイルには、.hlsl というファイル拡張子が付きます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-239">Source code files for [HLSL])(#hlsl) shaders have .hlsl file extension.</span></span> <span data-ttu-id="a6d74-240">これらのシェーダーは、作成時または実行時にコンパイルでき、実行時に適切なパイプライン ステージに設定できます。コンパイルされたシェーダー オブジェクトには、.cso というファイル拡張子が付きます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-240">These shaders can be compiled at author-time or at runtime, and set at runtime into the appropriate pipeline stage; a compiled shader object has a .cso file extension.</span></span>
 
-Material::Material(
-    XMFLOAT4 meshColor,
-    XMFLOAT4 diffuseColor,
-    XMFLOAT4 specularColor,
-    float specularExponent,
-    _In_ ID3D11ShaderResourceView* textureResourceView,
-    _In_ ID3D11VertexShader* vertexShader,
-    _In_ ID3D11PixelShader* pixelShader
-    )
-{
-    m_meshColor = meshColor;
-    m_diffuseColor = diffuseColor;
-    m_specularColor = specularColor;
-    m_specularExponent = specularExponent;
+<span data-ttu-id="a6d74-241">Direct3D 9 シェーダーは、シェーダー モデル 1、シェーダー モデル 2、シェーダー モデル 3 を使用して設計できます。Direct3D 10 シェーダーは、シェーダー モデル 4 でのみ設計できます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-241">Direct3D 9 shaders can be designed using shader model 1, shader model 2 and shader model 3; Direct3D 10 shaders can only be designed on shader model 4.</span></span> <span data-ttu-id="a6d74-242">Direct3D 11 シェーダーは、シェーダー モデル 5 で設計できます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-242">Direct3D 11 shaders can be designed on shader model 5.</span></span> <span data-ttu-id="a6d74-243">Direct3D 11.3 および Direct3D 12 シェーダーは、シェーダー モデル 5.1 で設計できます。Direct3D 12 シェーダーは、シェーダー モデル 6 でも設計できます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-243">Direct3D 11.3 and Direct3D 12 can be designed on shader model 5.1, and Direct3D 12 can also be designed on shader model 6.</span></span>
 
-    m_vertexShader = vertexShader;
-    m_pixelShader = pixelShader;
-    m_textureRV = textureResourceView;
-}
+#### <a name="vertex-shaders-and-pixel-shaders"></a><span data-ttu-id="a6d74-244">頂点シェーダーとピクセル シェーダー</span><span class="sxs-lookup"><span data-stu-id="a6d74-244">Vertex shaders and pixel shaders</span></span>
 
-//--------------------------------------------------------------------------------
+<span data-ttu-id="a6d74-245">データは、プリミティブのストリームとしてグラフィックス パイプラインに入り、頂点シェーダーやピクセル シェーダーなどさまざまなシェーダーによって処理されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-245">Data enters the graphics pipeline as a stream of primitives and is processed by various shaders such as the vertex shaders and pixel shaders.</span></span> 
 
-void Material::RenderSetup(
-    _In_ ID3D11DeviceContext* context,
-    _Inout_ ConstantBufferChangesEveryPrim* constantBuffer
-    )
-{
-    constantBuffer->meshColor = m_meshColor;
-    constantBuffer->specularColor = m_specularColor;
-    constantBuffer->specularPower = m_specularExponent;
-    constantBuffer->diffuseColor = m_diffuseColor;
+<span data-ttu-id="a6d74-246">頂点シェーダーは、通常、変換、スキン、照明の適用などの操作を実行することによって、頂点を処理します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-246">Vertex shaders processes vertices, typically performing operations such as transformations, skinning, and lighting.</span></span>  <span data-ttu-id="a6d74-247">ピクセル シェーダーは、ピクセル単位の照明や後処理など、豊富なシェーディング手法を実現します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-247">Pixel shaders enables rich shading techniques such as per-pixel lighting and post-processing.</span></span> <span data-ttu-id="a6d74-248">ピクセル シェーダーは、定数変数、テクスチャ データ、補間された頂点単位の値などのデータを組み合わせて、ピクセル単位の出力を生成します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-248">It combines constant variables, texture data, interpolated per-vertex values, and other data to produce per-pixel outputs.</span></span> 
 
-    context->PSSetShaderResources(0, 1, m_textureRV.GetAddressOf());
-    context->VSSetShader(m_vertexShader.Get(), nullptr, 0);
-    context->PSSetShader(m_pixelShader.Get(), nullptr, 0);
-}            
-            
-```
+#### <a name="shader-stages"></a><span data-ttu-id="a6d74-249">シェーダー ステージ</span><span class="sxs-lookup"><span data-stu-id="a6d74-249">Shader stages</span></span>
 
-> **注**  
-この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+<span data-ttu-id="a6d74-250">このプリミティブのストリームを処理するために定義されたさまざまなシェーダーのシーケンスは、レンダリング パイプラインのシェーダー ステージと呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-250">A sequence of these various shaders defined to process this stream of primitives is known as shader stages in a rendering pipeline.</span></span> <span data-ttu-id="a6d74-251">実際のステージは、Direct3D のバージョンによって異なりますが、通常は、頂点、ジオメトリ、ピクセルのステージが含まれます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-251">The actual stages depend on the version of Direct3D, but usually include the vertex, geometry, and pixel stages.</span></span> <span data-ttu-id="a6d74-252">テセレーション用のハル シェーダーやドメイン シェーダー、計算シェーダーなど、他のステージもあります。</span><span class="sxs-lookup"><span data-stu-id="a6d74-252">There are also other stages, such as the hull and domain shaders for tessellation, and the compute shader.</span></span> <span data-ttu-id="a6d74-253">これらステージはすべて、[HLSL])(#hlsl) を使用して完全にプログラミングできます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-253">All these stages are completely programmable using the [HLSL])(#hlsl).</span></span> <span data-ttu-id="a6d74-254">詳細については、[グラフィックス パイプラインに関するページ](https://msdn.microsoft.com/library/windows/desktop/ff476882.aspx)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-254">For more information, see [Graphics pipeline](https://msdn.microsoft.com/library/windows/desktop/ff476882.aspx).</span></span>
 
- 
+#### <a name="various-shader-file-formats"></a><span data-ttu-id="a6d74-255">さまざまなシェーダー ファイル形式</span><span class="sxs-lookup"><span data-stu-id="a6d74-255">Various shader file formats</span></span>
 
-## <a name="related-topics"></a>関連トピック
+<span data-ttu-id="a6d74-256">シェーダー コード ファイルの拡張子は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="a6d74-256">Shader code file extensions:</span></span>
+    * <span data-ttu-id="a6d74-257">.hlsl という拡張子を持つファイルは、[HLSL])(#hlsl) ソース コードを保持します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-257">A file with the .hlsl extension holds [HLSL])(#hlsl) source code.</span></span>
+    * <span data-ttu-id="a6d74-258">.cso という拡張子を持つファイルは、コンパイル済みシェーダー オブジェクトを保持します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-258">A file with the .cso extension holds a compiled shader object.</span></span>
+    * <span data-ttu-id="a6d74-259">.h という拡張子を持つファイルはヘッダー ファイルですが、シェーダー コードのコンテキストでは、このヘッダー ファイルはシェーダー データを保持するバイト配列を定義します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-259">A file with the .h extension is a header file, but in a shader code context, this header file defines a byte array that holds shader data.</span></span>
+    * <span data-ttu-id="a6d74-260">.hlsli という拡張子を持つファイルは、定数バッファーの形式を格納します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-260">A file with the .hlsli extension contains the format of the constant buffers.</span></span> <span data-ttu-id="a6d74-261">ゲーム サンプルでは、このファイルは __Shaders__>__ConstantBuffers.hlsli__ です。</span><span class="sxs-lookup"><span data-stu-id="a6d74-261">In the game sample, the file is __Shaders__>__ConstantBuffers.hlsli__.</span></span>
 
+> [!Note]
+> <span data-ttu-id="a6d74-262">シェーダーを埋め込むには、実行時に .cso ファイルを読み込むか、または実行可能コードに .h ファイルを追加します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-262">You would embed the shader either by loading a .cso file at runtime or adding the .h file in your executable code.</span></span> <span data-ttu-id="a6d74-263">ただし、同じシェーダーで両方を使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-263">But you would not use both for the same shader.</span></span>
 
-* [DirectX によるシンプルな UWP ゲームの作成](tutorial--create-your-first-metro-style-directx-game.md)
+### <a name="deeper-understanding-of-directx"></a><span data-ttu-id="a6d74-264">DirectX に関する高度な知識</span><span class="sxs-lookup"><span data-stu-id="a6d74-264">Deeper understanding of DirectX</span></span>
 
- 
+<span data-ttu-id="a6d74-265">Direct3D 11 は、ゲームなどのグラフィックスを多用するアプリケーションのグラフィックスを作成するのに役立つ一連の API です。このようなアプリケーションでは、負荷の高い計算を処理するために優れたグラフィックス カードを使用します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-265">Direct3D 11 is a set of APIs that can help us create graphics for graphics intensive applications like games, where we want to have a good graphics card to process intensive computation.</span></span> <span data-ttu-id="a6d74-266">このセクションでは、Direct3D 11 グラフィックス プログラミングの概念 (リソース、サブリソース、デバイス、デバイス コンテキスト) について簡単に説明します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-266">This section briefly explains the Direct3D 11 graphics programming concepts: resource, subresource, device, and device context.</span></span>
 
- 
+#### <a name="resource"></a><span data-ttu-id="a6d74-267">リソース</span><span class="sxs-lookup"><span data-stu-id="a6d74-267">Resource</span></span>
 
+<span data-ttu-id="a6d74-268">グラフィックス プログラミングに関する経験が浅い場合は、リソース (デバイス リソースとも呼ばれる) は、テクスチャ、位置、色など、オブジェクトをレンダリングする方法に関する情報と考えてもかまいません。</span><span class="sxs-lookup"><span data-stu-id="a6d74-268">For those who are new, you can think of resources (also known as device resources) as info on how to render an object like texture, position, color.</span></span> <span data-ttu-id="a6d74-269">リソースは、パイプラインにデータを提供し、シーン内でレンダリングされる対象を定義します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-269">Resources provide data to the pipeline and define what is rendered during your scene.</span></span> <span data-ttu-id="a6d74-270">リソースは、ゲーム メディアから読み込むことも、実行時に動的に作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-270">Resources can be loaded from your game media or created dynamically at run time.</span></span>
 
+<span data-ttu-id="a6d74-271">リソースは、実際には、Direct3D [パイプライン](#rendering-pipeline)からアクセスできるメモリ内の領域です。</span><span class="sxs-lookup"><span data-stu-id="a6d74-271">A resource is, in fact, an area in memory that can be accessed by the Direct3D [pipeline](#rendering-pipeline).</span></span> <span data-ttu-id="a6d74-272">パイプラインでメモリに効率的にアクセスするには、パイプラインに渡すデータ (入力ジオメトリ、シェーダー リソース、テクスチャなど) をリソースに格納する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a6d74-272">In order for the pipeline to access memory efficiently, data that is provided to the pipeline (such as input geometry, shader resources, and textures) must be stored in a resource.</span></span> <span data-ttu-id="a6d74-273">すべての Direct3D リソースの派生元となるリソースは 2 種類あります。バッファーとテクスチャです。</span><span class="sxs-lookup"><span data-stu-id="a6d74-273">There are two types of resources from which all Direct3D resources derive: a buffer or a texture.</span></span> <span data-ttu-id="a6d74-274">各パイプライン ステージでは最大 128 個のリソースをアクティブにできます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-274">Up to 128 resources can be active for each pipeline stage.</span></span> <span data-ttu-id="a6d74-275">詳しくは、「[リソース](../graphics-concepts/resources.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-275">For more information, see [Resources](../graphics-concepts/resources.md).</span></span>
 
+#### <a name="subresource"></a><span data-ttu-id="a6d74-276">サブリソース</span><span class="sxs-lookup"><span data-stu-id="a6d74-276">Subresource</span></span>
 
+<span data-ttu-id="a6d74-277">サブリソースという用語はリソースのサブセットを指します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-277">The term subresource refers to a subset of a resource.</span></span> <span data-ttu-id="a6d74-278">Direct3D は、リソース全体を参照することも、リソースのサブセットを参照することもできます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-278">Direct3D can reference an entire resource or it can reference subsets of a resource.</span></span> <span data-ttu-id="a6d74-279">詳しくは、「[サブリソース](../graphics-concepts/resource-types.md#subresources)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-279">For more information, see [Subresource](../graphics-concepts/resource-types.md#subresources).</span></span>
 
+#### <a name="depth-stencil"></a><span data-ttu-id="a6d74-280">深度/ステンシル</span><span class="sxs-lookup"><span data-stu-id="a6d74-280">Depth-stencil</span></span>
+
+<span data-ttu-id="a6d74-281">深度/ステンシル リソースには、深度とステンシルの情報を保持するための形式とバッファーが含まれます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-281">A depth-stencil resource contains the format and buffer to hold depth and stencil information.</span></span> <span data-ttu-id="a6d74-282">このリソースは、テクスチャー リソースを使用して作成されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-282">It is created using a texture resource.</span></span> <span data-ttu-id="a6d74-283">深度/ステンシル リソースを作成する方法について詳しくは、「[深度/ステンシル機能の構成](https://msdn.microsoft.com/library/windows/desktop/bb205074.aspx)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-283">For more information on how to create a depth-stencil resource, see [Configuring Depth-Stencil Functionality](https://msdn.microsoft.com/library/windows/desktop/bb205074.aspx).</span></span> <span data-ttu-id="a6d74-284">深度/ステンシル リソースにアクセスするには、[ID3D11DepthStencilView](https://msdn.microsoft.com/library/windows/desktop/ff476377.aspx) インターフェイスを使って実装される深度/ステンシル ビュー使用します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-284">We access the depth-stencil resource through the depth-stencil view implemented using the [ID3D11DepthStencilView](https://msdn.microsoft.com/library/windows/desktop/ff476377.aspx) interface.</span></span>
+
+<span data-ttu-id="a6d74-285">深度情報は、ビューから隠すのではなくレンダリングする多角形の領域を示します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-285">Depth info tells us which areas of polygons are rendered rather than hidden from view.</span></span> <span data-ttu-id="a6d74-286">ステンシル情報は、マスクするピクセルを示します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-286">Stencil info tells us which pixels are masked.</span></span> <span data-ttu-id="a6d74-287">ステンシル情報は、ピクセルを描画するかどうかを決定する (ビットを 1 または 0 に設定する) ため、特殊効果を生成するために使用できます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-287">It can be used to produce special effects since it determines whether a pixel is drawn or not; sets the bit to a 1 or 0.</span></span> 
+
+<span data-ttu-id="a6d74-288">詳細については、「[深度ステンシル ビュー](../graphics-concepts/depth-stencil-view--dsv-.md)」、「[深度バッファー](../graphics-concepts/depth-buffers.md)」、「[ステンシル バッファー](../graphics-concepts/stencil-buffers.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-288">For more information, see: [Depth-stencil view](../graphics-concepts/depth-stencil-view--dsv-.md), [depth buffer](../graphics-concepts/depth-buffers.md), and [stencil buffer](../graphics-concepts/stencil-buffers.md).</span></span>
+
+#### <a name="render-target"></a><span data-ttu-id="a6d74-289">レンダー ターゲット</span><span class="sxs-lookup"><span data-stu-id="a6d74-289">Render target</span></span>
+
+<span data-ttu-id="a6d74-290">レンダー ターゲットは、レンダリング パスの最後に書き込むことができるリソースです。</span><span class="sxs-lookup"><span data-stu-id="a6d74-290">A render target is a resource that we can write to at the end of a render pass.</span></span> <span data-ttu-id="a6d74-291">通常、[ID3D11Device::CreateRenderTargetView](https://msdn.microsoft.com/library/windows/desktop/ff476517.aspx) メソッドで、入力パラメーターとしてスワップ チェーン バック バッファー (これもリソースです) を使用して作成されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-291">It is commonly created using the [ID3D11Device::CreateRenderTargetView](https://msdn.microsoft.com/library/windows/desktop/ff476517.aspx) method using the swap chain back buffer (which is also a resource) as the input parameter.</span></span> 
+
+<span data-ttu-id="a6d74-292">各レンダー ターゲットには、対応する深度/ステンシル ビューも必要です。これは、レンダー ターゲットを使用する前に、[OMSetRenderTargets](https://msdn.microsoft.com/library/windows/desktop/ff476464.aspx) を使用してレンダー ターゲットを設定するときに、深度/ステンシル ビューも必要となるためです。</span><span class="sxs-lookup"><span data-stu-id="a6d74-292">Each render target should also have a corresponding depth-stencil view because when we use [OMSetRenderTargets](https://msdn.microsoft.com/library/windows/desktop/ff476464.aspx) to set the render target before using it, it requires also a depth-stencil view.</span></span> <span data-ttu-id="a6d74-293">レンダー ターゲット リソースにアクセスするには、[ID3D11RenderTargetView](https://msdn.microsoft.com/library/windows/desktop/ff476582.aspx) インターフェイスを使用して実装されるレンダー ターゲット ビューを使用します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-293">We access the render target resource through the render target view implemented using the [ID3D11RenderTargetView](https://msdn.microsoft.com/library/windows/desktop/ff476582.aspx) interface.</span></span> 
+
+#### <a name="device"></a><span data-ttu-id="a6d74-294">デバイス</span><span class="sxs-lookup"><span data-stu-id="a6d74-294">Device</span></span>
+
+<span data-ttu-id="a6d74-295">Direct3D 11 の使用経験が浅い場合は、デバイスは、オブジェクトの割り当てと破棄、プリミティブのレンダリング、グラフィックス ドライバー経由のグラフィックス カードとの通信を行うための方法であると考えることができます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-295">For those who are new to Direct3D 11, you can imagine a device as a way to allocate and destroy objects, render primitives, and communicate with the graphics card through the graphics driver.</span></span> 
+
+<span data-ttu-id="a6d74-296">より正確に説明すると、Direct3D デバイスは Direct3D のレンダリング コンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="a6d74-296">For a more precise explanation, a Direct3D device is the rendering component of Direct3D.</span></span> <span data-ttu-id="a6d74-297">デバイスは、レンダリングの状態をカプセル化して格納します。また、変換や照明の操作、サーフェスへのイメージのラスタライズを実行します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-297">A device encapsulates and stores the rendering state, performs transformations and lighting operations, and rasterizes an image to a surface.</span></span> <span data-ttu-id="a6d74-298">詳しくは、「[デバイス](../graphics-concepts/devices.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-298">For more information, see [Devices](../graphics-concepts/devices.md)</span></span>
+
+<span data-ttu-id="a6d74-299">デバイスは、[ID3D11Device](https://msdn.microsoft.com/library/windows/desktop/ff476379.aspx) インターフェイスによって表されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-299">A device is represented by the [ID3D11Device](https://msdn.microsoft.com/library/windows/desktop/ff476379.aspx) interface.</span></span> <span data-ttu-id="a6d74-300">つまり、ID3D11Device インターフェイスは仮想ディスプレイ アダプターを表し、デバイスによって所有されるリソースを作成するために使用します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-300">In other words, the ID3D11Device interface represents a virtual display adapter and is used to create resources that are owned by a device.</span></span> 
+
+<span data-ttu-id="a6d74-301">ID3D11Device には複数のバージョンがあり、[ID3D11Device5](https://msdn.microsoft.com/library/windows/desktop/mt492478.aspx) が最新バージョンで、ID3D11Device4 に新しいメソッドが追加されています。</span><span class="sxs-lookup"><span data-stu-id="a6d74-301">Note that there are different versions of ID3D11Device, [ID3D11Device5](https://msdn.microsoft.com/library/windows/desktop/mt492478.aspx) is the latest version and adds new methods to those in ID3D11Device4.</span></span> <span data-ttu-id="a6d74-302">Direct3D が基になるハードウェアと通信する方法の詳細については、[Windows Device Driver Model (WDDM) アーキテクチャに関するページ](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-and-later-display-driver-model-architecture)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-302">For more information on how Direct3D communicates with the underlying hardware, see [Windows Device Driver Model (WDDM) architecture](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-and-later-display-driver-model-architecture).</span></span>
+
+<span data-ttu-id="a6d74-303">各アプリケーションには少なくとも 1 つのデバイスが必要であり、ほとんどのアプリケーションは 1 つだけデバイスを作成します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-303">Each application must have at least one device, most applications only create one device.</span></span> <span data-ttu-id="a6d74-304">コンピューターにインストールされているいずれかのハードウェア ドライバーについてデバイスを作成するには、__D3D11CreateDevice__ または __D3D11CreateDeviceAndSwapChain__ を呼び出して、D3D\_DRIVER\_TYPE フラグでドライバーの種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-304">Create a device for one of the hardware drivers installed on your machine by calling __D3D11CreateDevice__ or __D3D11CreateDeviceAndSwapChain__ and specifying the driver type with the D3D\_DRIVER\_TYPE flag.</span></span> <span data-ttu-id="a6d74-305">各デバイスでは、必要な機能に応じて、1 つまたは複数のデバイス コンテキストを使用できます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-305">Each device can use one or more device contexts, depending on the functionality desired.</span></span> <span data-ttu-id="a6d74-306">詳細については、[D3D11CreateDevice 関数に関するページ](https://msdn.microsoft.com/library/windows/desktop/ff476082.aspx)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-306">For more information, see [D3D11CreateDevice function](https://msdn.microsoft.com/library/windows/desktop/ff476082.aspx).</span></span>
+
+#### <a name="device-context"></a><span data-ttu-id="a6d74-307">デバイス コンテキスト</span><span class="sxs-lookup"><span data-stu-id="a6d74-307">Device context</span></span>
+
+<span data-ttu-id="a6d74-308">デバイス コンテキストは、[パイプライン](#rendering-pipeline)の状態を設定し、[デバイス](#device)によって所有される[リソース](#resource)を使用してレンダリング コマンドを生成するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-308">A device context is used to set [pipeline](#rendering-pipeline) state and generate rendering commands using the [resources](#resource) owned by a [device](#device).</span></span> 
+
+<span data-ttu-id="a6d74-309">Direct3D 11 は 2 種類のデバイス コンテキストを実装します。1 つは即時レンダリング用で、もう 1 つは遅延レンダリング用です。いずれのコンテキストも [ID3D11DeviceContext](https://msdn.microsoft.com/library/windows/desktop/ff476385.aspx) インターフェイスを使用して表されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-309">Direct3D 11 implements two types of device contexts, one for immediate rendering and the other for deferred rendering; both contexts are represented with an [ID3D11DeviceContext](https://msdn.microsoft.com/library/windows/desktop/ff476385.aspx) interface.</span></span>  
+
+<span data-ttu-id="a6d74-310">__ID3D11DeviceContext__ インターフェイスには複数のバージョンがあり、__ID3D11DeviceContext4__ は __ID3D11DeviceContext3__ に新しいメソッドを追加します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-310">The __ID3D11DeviceContext__ interfaces have different versions; __ID3D11DeviceContext4__ adds new methods to those in __ID3D11DeviceContext3__.</span></span>
+
+<span data-ttu-id="a6d74-311">注: __ID3D11DeviceContext4__ は Windows 10 Creators Update で導入され、__ID3D11DeviceContext__ インターフェイスの最新バージョンです。</span><span class="sxs-lookup"><span data-stu-id="a6d74-311">Note: __ID3D11DeviceContext4__ is introduced in the Windows 10 Creators Update and is the latest version of the __ID3D11DeviceContext__ interface.</span></span> <span data-ttu-id="a6d74-312">Windows 10 Creators Update を対象とするアプリケーションでは、以前のバージョンではなく、このインターフェイスを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a6d74-312">Applications targeting Windows 10 Creators Update should use this interface instead of earlier versions.</span></span> <span data-ttu-id="a6d74-313">詳しくは、[ID3D11DeviceContext4 に関するページ](https://msdn.microsoft.com/library/windows/desktop/mt492481.aspx)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-313">For more information, see [ID3D11DeviceContext4](https://msdn.microsoft.com/library/windows/desktop/mt492481.aspx).</span></span>
+
+#### <a name="dxdeviceresources"></a><span data-ttu-id="a6d74-314">DX::DeviceResources</span><span class="sxs-lookup"><span data-stu-id="a6d74-314">DX::DeviceResources</span></span>
+
+<span data-ttu-id="a6d74-315">__DX::DeviceResources__ クラスは、__DeviceResources.cpp__/__.h__ ファイルに含まれており、すべての DirectX デバイス リソースを制御します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-315">The __DX::DeviceResources__ class is in the __DeviceResources.cpp__/__.h__ files and controls all of DirectX device resources.</span></span> <span data-ttu-id="a6d74-316">サンプル ゲーム プロジェクトおよび DirectX 11 アプリ テンプレート プロジェクトでは、これらのファイルは __Commons__ フォルダーにあります。</span><span class="sxs-lookup"><span data-stu-id="a6d74-316">In the sample game project and the DirectX 11 App template project, these files are in the __Commons__ folder.</span></span> <span data-ttu-id="a6d74-317">Visual Studio 2015 以降で、新しい DirectX 11 アプリ テンプレート プロジェクトを作成するときに、これらのファイルの最新バージョンを取り込むことができます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-317">You can grab the latest version of these files when you create a new DirectX 11 App template project in Visual Studio 2015 or later.</span></span>
+
+### <a name="buffer"></a><span data-ttu-id="a6d74-318">バッファー</span><span class="sxs-lookup"><span data-stu-id="a6d74-318">Buffer</span></span>
+
+<span data-ttu-id="a6d74-319">バッファー リソースは完全に型指定されたデータのコレクションであり、複数の要素にグループ化されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-319">A buffer resource is a collection of fully typed data grouped into elements.</span></span> <span data-ttu-id="a6d74-320">バッファーを使用して、さまざまなデータを格納できます。たとえば、位置ベクトル、法線ベクトル、頂点バッファー内のテクスチャ座標、インデックス バッファー内のインデックス、デバイスの状態などのデータが格納されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-320">You can use buffers to store a wide variety of data, including position vectors, normal vectors, texture coordinates in a vertex buffer, indexes in an index buffer, or device state.</span></span> <span data-ttu-id="a6d74-321">バッファー要素には、圧縮済みデータ値 (R8G8B8A8 サーフェス値)、単一の 8 ビット整数、または 4 つの 32 ビット浮動小数点値を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-321">Buffer elements can include packed data values (like R8G8B8A8 surface values), single 8-bit integers, or four 32-bit floating point values.</span></span>
+
+<span data-ttu-id="a6d74-322">利用可能なバッファーには、頂点バッファー、インデックス バッファー、定数バッファーの 3 つの種類があります。</span><span class="sxs-lookup"><span data-stu-id="a6d74-322">There are three types of buffers available: Vertex buffer, index buffer, and constant buffer.</span></span>
+
+#### <a name="vertex-buffer"></a><span data-ttu-id="a6d74-323">頂点バッファー</span><span class="sxs-lookup"><span data-stu-id="a6d74-323">Vertex Buffer</span></span>
+
+<span data-ttu-id="a6d74-324">ジオメトリの定義に使われる頂点データが格納されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-324">Contains the vertex data used to define your geometry.</span></span> <span data-ttu-id="a6d74-325">頂点データには、位置座標、色データ、テクスチャ座標データ、法線データなどが含まれます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-325">Vertex data includes position coordinates, color data, texture coordinate data, normal data, and so on.</span></span> 
+
+#### <a name="index-buffer"></a><span data-ttu-id="a6d74-326">インデックス バッファー</span><span class="sxs-lookup"><span data-stu-id="a6d74-326">Index Buffer</span></span>
+
+<span data-ttu-id="a6d74-327">頂点バッファーへの整数オフセットが格納されます。このバッファーは、より効率的なプリミティブのレンダリングに使われます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-327">Contains integer offsets into vertex buffers and are used to render primitives more efficiently.</span></span> <span data-ttu-id="a6d74-328">インデックス バッファーは 16 ビットまたは 32 ビットの連続するインデックスを格納します。各インデックスは頂点バッファーの頂点を識別するのに使用されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-328">An index buffer contains a sequential set of 16-bit or 32-bit indices; each index is used to identify a vertex in a vertex buffer.</span></span>
+
+#### <a name="constant-buffer-or-shader-constant-buffer"></a><span data-ttu-id="a6d74-329">定数バッファーまたはシェーダー定数バッファー</span><span class="sxs-lookup"><span data-stu-id="a6d74-329">Constant Buffer or shader-constant buffer</span></span>
+
+<span data-ttu-id="a6d74-330">シェーダー データをパイプラインに効率的に提供できます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-330">Allows you to efficiently supply shader data to the pipeline.</span></span> <span data-ttu-id="a6d74-331">定数バッファーは、各プリミティブについて実行され、レンダリング パイプラインのストリーム出力ステージの結果を格納するシェーダーの入力として使用できます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-331">You can use constant buffers as inputs to the shaders that run for each primitive and store results of the stream-output stage of the rendering pipeline.</span></span> <span data-ttu-id="a6d74-332">定数バッファーは、概念的には要素が 1 つの頂点バッファーに似ています。</span><span class="sxs-lookup"><span data-stu-id="a6d74-332">Conceptually, a constant buffer looks just like a single-element vertex buffer.</span></span>
+
+#### <a name="design-and-implementation-of-buffers"></a><span data-ttu-id="a6d74-333">バッファーの設計と実装</span><span class="sxs-lookup"><span data-stu-id="a6d74-333">Design and implementation of buffers</span></span>
+
+<span data-ttu-id="a6d74-334">バッファーはデータ型に基づいて設計できます。たとえば、ゲームのサンプルでは、静的データ用に 1 つのバッファー、フレームで一定のデータ用に別のバッファー、プリミティブに固有のデータ用にまた別のバッファーを作成します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-334">You can design buffers based on the data type, for example, like in our game sample, one buffer is created for static data, another for data that's constant over the frame, and another for data that's specific to a primitive.</span></span>
+
+<span data-ttu-id="a6d74-335">すべてのバッファーの種類は __ID3D11Buffer__ インターフェイスによってカプセル化され、__ID3D11Device::CreateBuffer__ を呼び出すことによってバッファー リソースを作成できます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-335">All buffer types are encapsulated by the __ID3D11Buffer__ interface and you can create a buffer resource by calling __ID3D11Device::CreateBuffer__.</span></span> <span data-ttu-id="a6d74-336">ただし、バッファーにアクセスするには、その前にバッファーがパイプラインにバインドされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="a6d74-336">But a buffer must be bound to the pipeline before it can be accessed.</span></span> <span data-ttu-id="a6d74-337">バッファーは、読み取りのために同時に複数のパイプライン ステージにバインドできます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-337">Buffers can be bound to multiple pipeline stages simultaneously for reading.</span></span> <span data-ttu-id="a6d74-338">バッファーは、書き込みのために単一のパイプライン ステージにバインドすることもできます。ただし、同じバッファーを読み取りと書き込みのために同時にバインドすることはできません。</span><span class="sxs-lookup"><span data-stu-id="a6d74-338">A buffer can also be bound to a single pipeline stage for writing; however, the same buffer cannot be bound for reading and writing simultaneously.</span></span>
+
+<span data-ttu-id="a6d74-339">次のようなステージにバッファーをバインドします。</span><span class="sxs-lookup"><span data-stu-id="a6d74-339">Bind buffers to the:</span></span>
+    * <span data-ttu-id="a6d74-340">入力アセンブラー ステージ。そのためには、__ID3D11DeviceContext__ の __ID3D11DeviceContext::IASetVertexBuffers__ メソッドや __ID3D11DeviceContext::IASetIndexBuffer__ メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-340">Input-assembler stage by calling __ID3D11DeviceContext__ methods like __ID3D11DeviceContext::IASetVertexBuffers__ and __ID3D11DeviceContext::IASetIndexBuffer__</span></span>
+    * <span data-ttu-id="a6d74-341">ストリーム出力ステージ。そのためには、__ID3D11DeviceContext::SOSetTargets__ を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-341">Stream-output stage by calling __ID3D11DeviceContext::SOSetTargets__</span></span>
+    * <span data-ttu-id="a6d74-342">シェーダー ステージ。そのためには、__ID3D11DeviceContext::VSSetConstantBuffers__ などのシェーダー メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-342">Shader stage by calling shader methods, like __ID3D11DeviceContext::VSSetConstantBuffers__</span></span>
+
+<span data-ttu-id="a6d74-343">詳しくは、「[Direct3D 11 のバッファーについて](https://msdn.microsoft.com/library/windows/desktop/ff476898.aspx)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-343">For more information, see [Introduction to buffers in Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898.aspx).</span></span>
+
+### <a name="dxgi"></a><span data-ttu-id="a6d74-344">DXGI</span><span class="sxs-lookup"><span data-stu-id="a6d74-344">DXGI</span></span>
+
+<span data-ttu-id="a6d74-345">Microsoft DirectX Graphics Infrastructure (DXGI) は、Direct3D 10、10.1、11、11.1 で必要とされる低レベルのタスクの一部をカプセル化する、Windows Vista で導入された新しいサブシステムです。</span><span class="sxs-lookup"><span data-stu-id="a6d74-345">Microsoft DirectX Graphics Infrastructure (DXGI) is a new subsystem that was introduced with Windows Vista that encapsulates some of the low-level tasks that are needed by Direct3D 10, 10.1, 11, and 11.1.</span></span> <span data-ttu-id="a6d74-346">マルチスレッド アプリケーションで DXGI を使用する場合、デッドロックが発生しないように特に注意する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a6d74-346">Special care must be taken when using DXGI in a multithreaded application to ensure that deadlocks do not occur.</span></span> <span data-ttu-id="a6d74-347">詳細については、[DirectX グラフィックス インフラストラクチャ (DXGI): ベスト プラクティスのマルチスレッドに関する説明](https://msdn.microsoft.com/library/windows/desktop/ee417025.aspx#multithreading_and_dxgi)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-347">For more info, see [DirectX Graphics Infrastructure (DXGI): Best Practices- Multithreading](https://msdn.microsoft.com/library/windows/desktop/ee417025.aspx#multithreading_and_dxgi)</span></span>
+
+### <a name="feature-level"></a><span data-ttu-id="a6d74-348">機能レベル</span><span class="sxs-lookup"><span data-stu-id="a6d74-348">Feature Level</span></span>
+
+<span data-ttu-id="a6d74-349">機能レベルは、最新または既存のコンピューターで多様なビデオ カードを処理するために、Direct3D 11 で導入された概念です。</span><span class="sxs-lookup"><span data-stu-id="a6d74-349">Feature level is a concept introduced in Direct3D 11 to handle the diversity of video cards in new and existing machines.</span></span> <span data-ttu-id="a6d74-350">機能レベルは、明確に定義されたグラフィックス処理装置 (GPU) 機能のセットです。</span><span class="sxs-lookup"><span data-stu-id="a6d74-350">A feature level is a well defined set of graphics processing unit (GPU) functionality.</span></span> 
+
+<span data-ttu-id="a6d74-351">各ビデオ カードは、インストールされている GPU に応じて、特定のレベルの DirectX の機能を実装します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-351">Each video card implements a certain level of DirectX functionality depending on the GPUs installed.</span></span> <span data-ttu-id="a6d74-352">以前のバージョンの Microsoft Direct3D では、ビデオ カードが実装しているバージョンを検出し、それに応じてアプリケーションをプログラミングすることができました。</span><span class="sxs-lookup"><span data-stu-id="a6d74-352">In prior versions of Microsoft Direct3D, you could find out the version of Direct3D the video card implemented, and then program your application accordingly.</span></span> 
+
+<span data-ttu-id="a6d74-353">機能レベルを使用すると、デバイスを作成するときに、必要な機能レベルのデバイスを作成してみることができます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-353">With feature level, when you create a device, you can attempt to create a device for the feature level that you want to request.</span></span> <span data-ttu-id="a6d74-354">デバイスの作成に成功した場合は、その機能レベルが存在します。失敗した場合は、ハードウェアはその機能レベルをサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="a6d74-354">If the device creation works, that feature level exists, if not, the hardware does not support that feature level.</span></span> <span data-ttu-id="a6d74-355">低い機能レベルでデバイスを再作成してみることも、アプリケーションの終了を選択することもできます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-355">You can either try to recreate a device at a lower feature level or you can choose to exit the application.</span></span> <span data-ttu-id="a6d74-356">たとえば、12\_0 機能レベルでは、Direct3D 11.3 や Direct3D 12、およびシェーダー モデル 5.1 が必要です。</span><span class="sxs-lookup"><span data-stu-id="a6d74-356">For instance, the 12\_0 feature level requires Direct3D 11.3 or Direct3D 12, and shader model 5.1.</span></span> <span data-ttu-id="a6d74-357">詳細については、[Direct3D の各機能レベルの概要に関するページ](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx#Overview)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-357">For more information, see [Direct3D feature levels: Overview for each feature level](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx#Overview).</span></span>
+
+<span data-ttu-id="a6d74-358">機能レベルを使用して、Direct3D 9 や Microsoft Direct3D 10、Direct3D 11 のアプリケーションを開発し、9、10、または 11 のハードウェアで実行できます (いくつか例外があります)。</span><span class="sxs-lookup"><span data-stu-id="a6d74-358">Using feature levels, you can develop an application for Direct3D 9, Microsoft Direct3D 10, or Direct3D 11, and then run it on 9, 10, or 11 hardware (with some exceptions).</span></span> <span data-ttu-id="a6d74-359">詳細については、[Direct3D の機能レベルに関するページ](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-359">For more information, see [Direct3D feature levels](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx).</span></span>
+
+### <a name="stereo-rendering"></a><span data-ttu-id="a6d74-360">ステレオ レンダリング</span><span class="sxs-lookup"><span data-stu-id="a6d74-360">Stereo rendering</span></span>
+
+<span data-ttu-id="a6d74-361">ステレオ レンダリングは奥行き感を強化するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-361">Stereo rendering is used to enhance the illusion of depth.</span></span> <span data-ttu-id="a6d74-362">左目の視点から画像と右目の視点からの画像の 2 つの画像を使用して、ディスプレイの画面にシーンを表示します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-362">It uses two images, one from the left eye and the other from the right eye to display a scene on the display screen.</span></span> 
+
+<span data-ttu-id="a6d74-363">数学的には、ステレオ射影行列を適用することによってこれを実現します。ステレオ射影行列は、通常のモノラル射影行列を水平方向にわずかに右および左にオフセットしたものです。</span><span class="sxs-lookup"><span data-stu-id="a6d74-363">Mathematically, we apply a stereo projection matrix, which is a slight horizontal offset to the right and to the left, of the regular mono projection matrix to achieve this.</span></span>
+
+<span data-ttu-id="a6d74-364">このゲーム サンプルでは、ステレオ レンダリングを実現するために、次の 2 つのレンダリング パスを実行しました。</span><span class="sxs-lookup"><span data-stu-id="a6d74-364">We did two rendering passes to achieve stereo rendering in this game sample:</span></span>
+* <span data-ttu-id="a6d74-365">右側のレンダー ターゲットにバインドし、右の射影を適用したのち、プリミティブ オブジェクトを描画します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-365">Bind to right render target, apply right projection, then draw the primitive object.</span></span>
+* <span data-ttu-id="a6d74-366">左側のレンダー ターゲットにバインドし、左の射影を適用したのち、プリミティブ オブジェクトを描画します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-366">Bind to left render target, apply left projection, then draw the primitive object.</span></span>
+
+### <a name="camera-and-coordinate-space"></a><span data-ttu-id="a6d74-367">カメラと座標空間</span><span class="sxs-lookup"><span data-stu-id="a6d74-367">Camera and coordinate space</span></span>
+
+<span data-ttu-id="a6d74-368">ゲームには、独自の座標系でワールドを更新するためのコードがあります (ワールド空間またはシーン空間と呼ばれることもあります)。</span><span class="sxs-lookup"><span data-stu-id="a6d74-368">The game has the code in place to update the world in its own coordinate system (sometimes called the world space or scene space).</span></span> <span data-ttu-id="a6d74-369">カメラを含むすべてのオブジェクトはこの空間に配置されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-369">All objects, including the camera, are positioned and oriented in this space.</span></span> <span data-ttu-id="a6d74-370">詳細については、「[座標系](../graphics-concepts/coordinate-systems.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-370">For more information, see [Coordinate systems](../graphics-concepts/coordinate-systems.md).</span></span>
+
+<span data-ttu-id="a6d74-371">頂点シェーダーは、次のアルゴリズムを使って (V はベクター、M は行列を表す) モデル座標からデバイス座標への変換を行います。</span><span class="sxs-lookup"><span data-stu-id="a6d74-371">A vertex shader does the heavy lifting of converting from the model coordinates to device coordinates with the following algorithm (where V is a vector and M is a matrix).</span></span>
+
+<span data-ttu-id="a6d74-372">V(device) = V(model) x M(model-to-world) x M(world-to-view) x M(view-to-device)。</span><span class="sxs-lookup"><span data-stu-id="a6d74-372">V(device) = V(model) x M(model-to-world) x M(world-to-view) x M(view-to-device).</span></span>
+
+<span data-ttu-id="a6d74-373">この場合</span><span class="sxs-lookup"><span data-stu-id="a6d74-373">where:</span></span> 
+* <span data-ttu-id="a6d74-374">M(model-to-world) はモデル座標からワールド座標への変換行列であり、[ワールド変換行列](#world-transform-matrix)とも呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-374">M(model-to-world) is a transformation matrix for model coordinates to world coordinates, also known as the [World transform matrix](#world-transform-matrix).</span></span> <span data-ttu-id="a6d74-375">これは、プリミティブによって提供されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-375">This is provided by the primitive.</span></span>
+* <span data-ttu-id="a6d74-376">M(world-to-view) はワールド座標からビュー座標への変換行列であり、[ビュー変換行列](#view-transform-matrix)とも呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-376">M(world-to-view) is a transformation matrix for world coordinates to view coordinates, also known as the [View transform matrix](#view-transform-matrix).</span></span>
+    * <span data-ttu-id="a6d74-377">これは、カメラのビュー行列によって提供されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-377">This is provided by the view matrix of the camera.</span></span> <span data-ttu-id="a6d74-378">これは、カメラの位置とルック ベクター (カメラからシーンを直接ポイントする "ルック アット" ベクターとシーンに対して垂直かつ上向きの "ルック アップ" ベクター) によって定義されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-378">It's defined by the camera's position along with the look vectors (the "look at" vector that points directly into the scene from the camera, and the "look up" vector that is upwards perpendicular to it)</span></span>
+    * <span data-ttu-id="a6d74-379">サンプル ゲームでは、__m\_viewMatrix__ はビュー変換行列であり、__Camera::SetViewParams__ を使用して計算されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-379">In the sample game, __m\_viewMatrix__ is the view transformation matrix and is calculated using __Camera::SetViewParams__</span></span> 
+* <span data-ttu-id="a6d74-380">M(view-to-device) はビュー座標からデバイス座標への変換行列であり、[射影変換行列](#projection-transform-matrix)とも呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-380">M(view-to-device) is a transformation matrix for view coordinates to device coordinates, also known as the [Projection transform matrix](#projection-transform-matrix)</span></span>
+    * <span data-ttu-id="a6d74-381">これは、カメラの射影によって提供されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-381">This is provided by the projection of the camera.</span></span> <span data-ttu-id="a6d74-382">その空間のどれくらいの量が実際に最終的なシーンに表示されるかについての情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-382">It provides info how much of that space is actually visible in the final scene.</span></span> <span data-ttu-id="a6d74-383">視野 (FoV)、縦横比、クリッピング面によって、射影変換行列が定義されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-383">The Field of View (FoV), aspect ratio, and clipping planes define the projection transform matrix.</span></span>
+    * <span data-ttu-id="a6d74-384">サンプル ゲームでは、__m\_projectionMatrix__ は、__Camera::SetProjParams__ を使用して計算された、射影座標への変換を定義します (ステレオ射影の場合は、それぞれの目のビューに 1 つずつ、2 つの射影行列を使用します)。</span><span class="sxs-lookup"><span data-stu-id="a6d74-384">In the sample game, __m\_projectionMatrix__ defines transformation to the projection coordinates, calculated using __Camera::SetProjParams__ (For stereo projection, you use two projection matrices: one for each eye's view.)</span></span> 
+
+<span data-ttu-id="a6d74-385">VertexShader.hlsl のシェーダー コードがこれらのベクターや行列と共に定数バッファーから読み込まれ、各頂点に対してこの変換を実行します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-385">The shader code in VertexShader.hlsl is loaded with these vectors and matrices from the constant buffers, and performs this transformation for every vertex.</span></span>
+
+### <a name="coordinate-transformation"></a><span data-ttu-id="a6d74-386">座標変換</span><span class="sxs-lookup"><span data-stu-id="a6d74-386">Coordinate transformation</span></span>
+
+<span data-ttu-id="a6d74-387">Direct3D では、3 つの変換を使用して 3D モデル座標をピクセル座標 (スクリーン空間) に変更します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-387">Direct3D uses three transformations to change your 3D model coordinates into pixel coordinates (screen space).</span></span> <span data-ttu-id="a6d74-388">これらの変換は、ワールド変換、ビュー変換、射影変換です。</span><span class="sxs-lookup"><span data-stu-id="a6d74-388">These transformations are world transform, view transform, and projection transform.</span></span> <span data-ttu-id="a6d74-389">詳細については、「[変換の概要](../graphics-concepts/transform-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-389">For more info, go to [Transform overview](../graphics-concepts/transform-overview.md).</span></span>
+
+#### <a name="world-transform-matrix"></a><span data-ttu-id="a6d74-390">ワールド変換行列</span><span class="sxs-lookup"><span data-stu-id="a6d74-390">World transform matrix</span></span>
+
+<span data-ttu-id="a6d74-391">ワールド変換は、座標系をモデル空間からワールド空間に変更します。モデル空間では、頂点はモデルのローカル原点を基準として相対的に定義されます。ワールド空間では、頂点はシーン内のすべてのオブジェクトに共通の原点を基準として相対的に定義されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-391">A world transform changes coordinates from model space, where vertices are defined relative to a model's local origin, to world space, where vertices are defined relative to an origin common to all the objects in a scene.</span></span> <span data-ttu-id="a6d74-392">基本的に、ワールド変換はモデルをワールド空間に配置します。そのため、このように呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-392">In essence, the world transform places a model into the world; hence its name.</span></span> <span data-ttu-id="a6d74-393">詳細については、「[ワールド変換](../graphics-concepts/world-transform.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-393">For more information, see [World transform](../graphics-concepts/world-transform.md).</span></span>
+
+####  <a name="view-transform-matrix"></a><span data-ttu-id="a6d74-394">ビュー変換行列</span><span class="sxs-lookup"><span data-stu-id="a6d74-394">View transform matrix</span></span>
+
+<span data-ttu-id="a6d74-395">ビュー変換は、ビューアーをワールド空間に配置し、頂点をカメラ空間に変換します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-395">The view transform locates the viewer in world space, transforming vertices into camera space.</span></span> <span data-ttu-id="a6d74-396">カメラ空間では、カメラつまりビューアーは原点に位置し、Z 軸の正方向を向いています。</span><span class="sxs-lookup"><span data-stu-id="a6d74-396">In camera space, the camera, or viewer, is at the origin, looking in the positive z-direction.</span></span> <span data-ttu-id="a6d74-397">詳細については、「[ビュー変換](../graphics-concepts/view-transform.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-397">For more info, go to [View transform](../graphics-concepts/view-transform.md).</span></span>
+
+####  <a name="projection-transform-matrix"></a><span data-ttu-id="a6d74-398">射影変換行列</span><span class="sxs-lookup"><span data-stu-id="a6d74-398">Projection transform matrix</span></span>
+
+<span data-ttu-id="a6d74-399">射影変換では、視錐台を立方体に変換します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-399">The projection transform converts the viewing frustum to a cuboid shape.</span></span> <span data-ttu-id="a6d74-400">視錐台とは、ビューポートのカメラに対して相対的に配置された、シーン内の 3D ボリュームです。</span><span class="sxs-lookup"><span data-stu-id="a6d74-400">A viewing frustum is a 3D volume in a scene positioned relative to the viewport's camera.</span></span> <span data-ttu-id="a6d74-401">ビューポートとは、3D シーンが投影される 2D の四角形です。</span><span class="sxs-lookup"><span data-stu-id="a6d74-401">A viewport is a 2D rectangle into which a 3D scene is projected.</span></span> <span data-ttu-id="a6d74-402">詳細については、「[ビューポートとクリッピング](../graphics-concepts/viewports-and-clipping.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-402">For more information, see [Viewports and clipping](../graphics-concepts/viewports-and-clipping.md)</span></span>
+
+<span data-ttu-id="a6d74-403">視錐台の近くの端は遠くの端よりも小さいので、この変換にはカメラの近くのオブジェクトを拡大するという効果があり、これによってシーンに遠近感が生まれます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-403">Because the near end of the viewing frustum is smaller than the far end, this has the effect of expanding objects that are near to the camera; this is how perspective is applied to the scene.</span></span> <span data-ttu-id="a6d74-404">したがって、プレイヤーに近いオブジェクトは大きく表示され、遠くにあるオブジェクトは小さく表示されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-404">So objects that are closer to the player, appear larger; objects that are further away, appear smaller.</span></span>
+
+<span data-ttu-id="a6d74-405">数学的には、射影変換は、通常、スケーリングおよび遠近法の両方の行列です。</span><span class="sxs-lookup"><span data-stu-id="a6d74-405">Mathematically, the projection transform is a matrix that is typically both a scale and perspective projection.</span></span> <span data-ttu-id="a6d74-406">カメラのレンズと同様に機能します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-406">It functions like the lens of a camera.</span></span> <span data-ttu-id="a6d74-407">詳細については、「[射影変換](../graphics-concepts/projection-transform.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-407">For more information, see [Projection transform](../graphics-concepts/projection-transform.md).</span></span>
+
+### <a name="sampler-state"></a><span data-ttu-id="a6d74-408">サンプラーの状態</span><span class="sxs-lookup"><span data-stu-id="a6d74-408">Sampler state</span></span>
+
+<span data-ttu-id="a6d74-409">サンプラーの状態は、テクスチャのアドレス指定モード、フィルター、詳細レベルを使用して、テクスチャ データをサンプリングする方法を決定します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-409">Sampler state determines how texture data is sampled using texture addressing modes, filtering, and level of detail.</span></span> <span data-ttu-id="a6d74-410">サンプリングは、テクスチャ ピクセル、つまりテクセルがテクスチャから読み取られるたびに実行されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-410">Sampling is done each time a texture pixel, or texel, is read from a texture.</span></span>
+
+<span data-ttu-id="a6d74-411">テクスチャには、テクセル、つまりテクスチャ ピクセルの配列が含まれています。</span><span class="sxs-lookup"><span data-stu-id="a6d74-411">A texture contains an array of texels, or texture pixels.</span></span> <span data-ttu-id="a6d74-412">各テクセルの位置は (u, v) で表されます。u が幅、v が高さで、テクスチャの幅と高さに基づいて、0 ～ 1 にマッピングされます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-412">The position of each texel is denoted by (u,v), where u is the width and v is the height, and is mapped between 0 and 1 based on the texture width and height.</span></span> <span data-ttu-id="a6d74-413">結果として得られるテクスチャ座標は、テクスチャをサンプリングするときに、テクセルのアドレス指定に使用されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-413">The resulting texture coordinates are used to address a texel when sampling a texture.</span></span>
+
+<span data-ttu-id="a6d74-414">テクスチャ座標が 0 未満または 1 を超える場合、テクスチャ アドレス モードは、テクスチャ座標がテクセル位置を指定する方法を定義します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-414">When texture coordinates are below 0 or above 1, the texture address mode defines how the texture coordinate addresses a texel location.</span></span> <span data-ttu-id="a6d74-415">たとえば、__TextureAddressMode.Clamp__ を使用する場合、0 ～ 1 の範囲外の座標は、サンプリングの前に、最大値 1 および最小値 0 にクランプされます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-415">For example, when using __TextureAddressMode.Clamp__, any coordinate outside the 0-1 range is clamped to a maximum value of 1, and minimum value of 0 before sampling.</span></span>
+
+<span data-ttu-id="a6d74-416">テクスチャがポリゴンに対して大きすぎる場合や小さすぎる場合は、テクスチャは空間に合わせてフィルタリングされます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-416">If the texture is too large or too small for the polygon, the texture is filtered to fit the space.</span></span> <span data-ttu-id="a6d74-417">拡大フィルターはテクスチャを拡大し、縮小フィルターは小さな領域に収まるようにテクスチャを縮小します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-417">A magnification filter enlarges a texture, a minification filter reduces the texture to fit into a smaller area.</span></span> <span data-ttu-id="a6d74-418">テクスチャの拡大では、サンプル テクセルが 1 つまたは複数のアドレスに繰り返され、ぼやけた画像が生成されます。</span><span class="sxs-lookup"><span data-stu-id="a6d74-418">Texture magnification repeats the sample texel for one or more addresses which yields a blurrier image.</span></span> <span data-ttu-id="a6d74-419">テクスチャの縮小では、1 つ以上のテクセルの値が 1 つの値に結合する必要があるためより複雑です。</span><span class="sxs-lookup"><span data-stu-id="a6d74-419">Texture minification is more complicated because it requires combining more than one texel value into a single value.</span></span> <span data-ttu-id="a6d74-420">これによって、テクスチャ データに応じてエイリアシングやぎざぎざのエッジが発生する場合があります。</span><span class="sxs-lookup"><span data-stu-id="a6d74-420">This can cause aliasing or jagged edges depending on the texture data.</span></span> <span data-ttu-id="a6d74-421">縮小の最も一般的なアプローチでは、ミップマップを使用します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-421">The most popular approach for minification is to use a mipmap.</span></span> <span data-ttu-id="a6d74-422">ミップマップは、複数レベルのテクスチャです。</span><span class="sxs-lookup"><span data-stu-id="a6d74-422">A mipmap is a multi-level texture.</span></span> <span data-ttu-id="a6d74-423">各レベルのサイズは、上のレベルよりも 2 の累乗だけ小さくなり、最終的には 1 x 1 のテクスチャになります。</span><span class="sxs-lookup"><span data-stu-id="a6d74-423">The size of each level is a power-of-two smaller than the previous level down to a 1x1 texture.</span></span> <span data-ttu-id="a6d74-424">縮小を使用すると、ゲームはレンダリング時に必要なサイズに最も近いミップマップ レベルを選択します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-424">When minification is used, a game chooses the mipmap level closest to the size that is needed at render time.</span></span> 
+
+### <a name="basicloader"></a><span data-ttu-id="a6d74-425">BasicLoader</span><span class="sxs-lookup"><span data-stu-id="a6d74-425">BasicLoader</span></span>
+
+<span data-ttu-id="a6d74-426">__BasicLoader__ は、ディスク上のファイルからのシェーダー、テクスチャ、メッシュの読み込みをサポートする、単純なローダー クラスです。</span><span class="sxs-lookup"><span data-stu-id="a6d74-426">__BasicLoader__ is a simple loader class that provides support for loading shaders, textures, and meshes from files on disk.</span></span> <span data-ttu-id="a6d74-427">同期メソッドと非同期メソッドの両方を提供します。</span><span class="sxs-lookup"><span data-stu-id="a6d74-427">It provides both synchronous and asynchronous methods.</span></span> <span data-ttu-id="a6d74-428">このゲーム サンプルでは、BasicLoader.h/.cpp ファイルは __Commons__ フォルダーにあります。</span><span class="sxs-lookup"><span data-stu-id="a6d74-428">In this game sample, the BasicLoader.h/.cpp files are found in the __Commons__ folder.</span></span>
+
+<span data-ttu-id="a6d74-429">詳細については、[BasicLoader](complete-code-for-basicloader.md) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a6d74-429">For more information, see [Basic Loader](complete-code-for-basicloader.md).</span></span>

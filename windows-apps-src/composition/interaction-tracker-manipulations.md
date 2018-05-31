@@ -1,19 +1,20 @@
 ---
 author: jwmsft
-title: "InteractionTracker を使用したカスタム操作"
-description: "InteractionTracker API を使用して、カスタム操作エクスペリエンスを作成します。"
+title: InteractionTracker を使用したカスタム操作
+description: InteractionTracker API を使用して、カスタム操作エクスペリエンスを作成します。
 ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, アニメーション"
+keywords: Windows 10, UWP, アニメーション
 ms.localizationpriority: medium
 ms.openlocfilehash: 49c9e034219b22dd17b03e2b9e8396a5edc38667
 ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/12/2017
+ms.locfileid: "1393201"
 ---
 # <a name="custom-manipulation-experiences-with-interactiontracker"></a><span data-ttu-id="492cf-104">InteractionTracker を使用したカスタム操作エクスペリエンス</span><span class="sxs-lookup"><span data-stu-id="492cf-104">Custom manipulation experiences with InteractionTracker</span></span>
 

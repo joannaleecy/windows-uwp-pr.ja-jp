@@ -1,108 +1,100 @@
 ---
 author: mcleanbyron
-description: "アプリの申請に関するパッケージのロールアウト率を更新するには、Windows ストア申請 API のこのメソッドを使います。"
-title: "Windows ストア申請 API を使用したアプリの申請のパッケージ ロールアウト率の更新"
+description: アプリの申請に関するパッケージのロールアウト率を更新するには、Microsoft Store 申請 API の以下のメソッドを使います。
+title: アプリの申請に関するロールアウト率の更新
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, Windows ストア申請 API, パッケージのロールアウト, アプリの申請, 更新, 割合"
+keywords: Windows 10, UWP, Microsoft Store 申請 API, パッケージのロールアウト, アプリの申請, 更新, 割合
 ms.assetid: 4c82d837-7a25-4f3a-997e-b7be33b521cc
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 18dee2374ad1daa33520438d348aa8ea0805c30a
-ms.lasthandoff: 02/08/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: 3225a8387355f60a69ba892e4d9a379e552ff02c
+ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/30/2018
+ms.locfileid: "1816117"
 ---
-
-# <a name="update-the-package-rollout-percentage-for-an-app-submission-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアプリの申請のパッケージ ロールアウト率の更新
-
-
-アプリの申請に関する[ロールアウト率を更新する](../publish/gradual-package-rollout.md#setting-the-rollout-percentage)には、Windows ストア申請 API のこのメソッドを使います。 Windows ストア申請 API を使ったアプリ申請の作成プロセスについて詳しくは、「[アプリの申請の管理](manage-app-submissions.md)」をご覧ください。
+# <a name="update-the-rollout-percentage-for-an-app-submission"></a><span data-ttu-id="3ba58-104">アプリの申請に関するロールアウト率の更新</span><span class="sxs-lookup"><span data-stu-id="3ba58-104">Update the rollout percentage for an app submission</span></span>
 
 
-## <a name="prerequisites"></a>前提条件
+<span data-ttu-id="3ba58-105">アプリの申請に関する[ロールアウト率を更新する](../publish/gradual-package-rollout.md#setting-the-rollout-percentage)には、Microsoft Store 申請 API の以下のメソッドを使います。</span><span class="sxs-lookup"><span data-stu-id="3ba58-105">Use this method in the Microsoft Store submission API to [update the rollout percentage](../publish/gradual-package-rollout.md#setting-the-rollout-percentage) for an app submission.</span></span> <span data-ttu-id="3ba58-106">Microsoft Store 申請 API を使ったアプリの申請の作成プロセスについて詳しくは、「[アプリの申請の管理](manage-app-submissions.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="3ba58-106">For more information about the process of process of creating an app submission by using the Microsoft Store submission API, see [Manage app submissions](manage-app-submissions.md).</span></span>
 
-このメソッドを使うには、最初に次の作業を行う必要があります。
 
-* Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
-* デベロッパー センターのアカウントでアプリの申請を作成します。 この操作は、デベロッパー センター ダッシュボードまたは[アプリ申請の作成](create-an-app-submission.md)メソッドを使って実行できます。
-* 申請に関する段階的なパッケージのロールアウトを有効にします。 これは、[デベロッパー センター ダッシュボード](../publish/gradual-package-rollout.md)で行うことも、[Windows ストア申請 API](manage-app-submissions.md#manage-gradual-package-rollout) を使用して行うこともできます。
+## <a name="prerequisites"></a><span data-ttu-id="3ba58-107">前提条件</span><span class="sxs-lookup"><span data-stu-id="3ba58-107">Prerequisites</span></span>
 
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア申請 API を使用するためのアクセス許可が付与された Windows デベロッパー センター アカウントでのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
+<span data-ttu-id="3ba58-108">このメソッドを使うには、最初に次の作業を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="3ba58-108">To use this method, you need to first do the following:</span></span>
 
-## <a name="request"></a>要求
+* <span data-ttu-id="3ba58-109">Microsoft Store 申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。</span><span class="sxs-lookup"><span data-stu-id="3ba58-109">If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Microsoft Store submission API.</span></span>
+* <span data-ttu-id="3ba58-110">このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。</span><span class="sxs-lookup"><span data-stu-id="3ba58-110">[Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method.</span></span> <span data-ttu-id="3ba58-111">アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。</span><span class="sxs-lookup"><span data-stu-id="3ba58-111">After you obtain an access token, you have 60 minutes to use it before it expires.</span></span> <span data-ttu-id="3ba58-112">トークンの有効期限が切れたら、新しいトークンを取得できます。</span><span class="sxs-lookup"><span data-stu-id="3ba58-112">After the token expires, you can obtain a new one.</span></span>
+* <span data-ttu-id="3ba58-113">デベロッパー センターのアカウントでアプリの申請を作成します。</span><span class="sxs-lookup"><span data-stu-id="3ba58-113">Create a submission for an app in your Dev Center account.</span></span> <span data-ttu-id="3ba58-114">この操作は、デベロッパー センター ダッシュボードまたは[アプリ申請の作成](create-an-app-submission.md)メソッドを使って実行できます。</span><span class="sxs-lookup"><span data-stu-id="3ba58-114">You can do this in the Dev Center dashboard, or you can do this by using the [create an app submission](create-an-app-submission.md) method.</span></span>
+* <span data-ttu-id="3ba58-115">申請に関する段階的なパッケージのロールアウトを有効にします。</span><span class="sxs-lookup"><span data-stu-id="3ba58-115">Enable a gradual package rollout for the submission.</span></span> <span data-ttu-id="3ba58-116">これは、[デベロッパー センター ダッシュボード](../publish/gradual-package-rollout.md)で行うことも、[Microsoft Store 申請 API](manage-app-submissions.md#manage-gradual-package-rollout) を使って行うこともできます。</span><span class="sxs-lookup"><span data-stu-id="3ba58-116">You can do this in the [Dev Center dashboard](../publish/gradual-package-rollout.md), or you can do this by [using the Microsoft Store submission API](manage-app-submissions.md#manage-gradual-package-rollout).</span></span>
 
-このメソッドの構文は次のとおりです。 ヘッダーと要求のパラメーターの使用例と説明については、以下のセクションをご覧ください。
+## <a name="request"></a><span data-ttu-id="3ba58-117">要求</span><span class="sxs-lookup"><span data-stu-id="3ba58-117">Request</span></span>
 
-| メソッド | 要求 URI                                                      |
+<span data-ttu-id="3ba58-118">このメソッドの構文は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="3ba58-118">This method has the following syntax.</span></span> <span data-ttu-id="3ba58-119">ヘッダーと要求のパラメーターの使用例と説明については、以下のセクションをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="3ba58-119">See the following sections for usage examples and descriptions of the header and request parameters.</span></span>
+
+| <span data-ttu-id="3ba58-120">メソッド</span><span class="sxs-lookup"><span data-stu-id="3ba58-120">Method</span></span> | <span data-ttu-id="3ba58-121">要求 URI</span><span class="sxs-lookup"><span data-stu-id="3ba58-121">Request URI</span></span>                                                      |
 |--------|------------------------------------------------------------------|
-| POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/updatepackagerolloutpercentage``` |
+| <span data-ttu-id="3ba58-122">POST</span><span class="sxs-lookup"><span data-stu-id="3ba58-122">POST</span></span>   | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/updatepackagerolloutpercentage``` |
 
-<span/>
- 
 
-### <a name="request-header"></a>要求ヘッダー
+### <a name="request-header"></a><span data-ttu-id="3ba58-123">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="3ba58-123">Request header</span></span>
 
-| ヘッダー        | 型   | 説明                                                                 |
+| <span data-ttu-id="3ba58-124">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="3ba58-124">Header</span></span>        | <span data-ttu-id="3ba58-125">型</span><span class="sxs-lookup"><span data-stu-id="3ba58-125">Type</span></span>   | <span data-ttu-id="3ba58-126">説明</span><span class="sxs-lookup"><span data-stu-id="3ba58-126">Description</span></span>                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
+| <span data-ttu-id="3ba58-127">Authorization</span><span class="sxs-lookup"><span data-stu-id="3ba58-127">Authorization</span></span> | <span data-ttu-id="3ba58-128">文字列</span><span class="sxs-lookup"><span data-stu-id="3ba58-128">string</span></span> | <span data-ttu-id="3ba58-129">必須。</span><span class="sxs-lookup"><span data-stu-id="3ba58-129">Required.</span></span> <span data-ttu-id="3ba58-130">**Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。</span><span class="sxs-lookup"><span data-stu-id="3ba58-130">The Azure AD access token in the form **Bearer** &lt;*token*&gt;.</span></span> |
 
-<span/>
 
-### <a name="request-parameters"></a>要求パラメーター
+### <a name="request-parameters"></a><span data-ttu-id="3ba58-131">要求パラメーター</span><span class="sxs-lookup"><span data-stu-id="3ba58-131">Request parameters</span></span>
 
-| 名前        | 型   | 説明                                                                 |
+| <span data-ttu-id="3ba58-132">名前</span><span class="sxs-lookup"><span data-stu-id="3ba58-132">Name</span></span>        | <span data-ttu-id="3ba58-133">種類</span><span class="sxs-lookup"><span data-stu-id="3ba58-133">Type</span></span>   | <span data-ttu-id="3ba58-134">説明</span><span class="sxs-lookup"><span data-stu-id="3ba58-134">Description</span></span>                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | 必須。 パッケージ ロールアウト率を更新する対象の申請が含まれているアプリのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。  |
-| submissionId | string | 必須。 パッケージ ロールアウト率を更新する対象の申請の ID。 この ID は、[アプリの申請の作成](create-an-app-submission.md)要求の応答データに含まれており、デベロッパー センター ダッシュボードで確認できます。  |
-| percentage  |  float  |  必須。 段階的なロールアウト パッケージを受信するユーザーの割合。  |
+| <span data-ttu-id="3ba58-135">applicationId</span><span class="sxs-lookup"><span data-stu-id="3ba58-135">applicationId</span></span> | <span data-ttu-id="3ba58-136">string</span><span class="sxs-lookup"><span data-stu-id="3ba58-136">string</span></span> | <span data-ttu-id="3ba58-137">必須。</span><span class="sxs-lookup"><span data-stu-id="3ba58-137">Required.</span></span> <span data-ttu-id="3ba58-138">パッケージ ロールアウト率を更新する対象の申請が含まれているアプリのストア ID です。</span><span class="sxs-lookup"><span data-stu-id="3ba58-138">The Store ID of the app that contains the submission with the package rollout percentage you want to update.</span></span> <span data-ttu-id="3ba58-139">ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="3ba58-139">For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).</span></span>  |
+| <span data-ttu-id="3ba58-140">submissionId</span><span class="sxs-lookup"><span data-stu-id="3ba58-140">submissionId</span></span> | <span data-ttu-id="3ba58-141">string</span><span class="sxs-lookup"><span data-stu-id="3ba58-141">string</span></span> | <span data-ttu-id="3ba58-142">必須。</span><span class="sxs-lookup"><span data-stu-id="3ba58-142">Required.</span></span> <span data-ttu-id="3ba58-143">パッケージ ロールアウト率を更新する対象の申請の ID です。</span><span class="sxs-lookup"><span data-stu-id="3ba58-143">The ID of the submission with the package rollout percentage you want to update.</span></span> <span data-ttu-id="3ba58-144">この ID は、[アプリの申請の作成](create-an-app-submission.md)要求に対する応答データで確認できます。</span><span class="sxs-lookup"><span data-stu-id="3ba58-144">This ID is available in the response data for requests to [create an app submission](create-an-app-submission.md).</span></span> <span data-ttu-id="3ba58-145">デベロッパー センター ダッシュボードで作成された申請の場合、この ID はダッシュボードの申請ページの URL にも含まれています。</span><span class="sxs-lookup"><span data-stu-id="3ba58-145">For a submission that was created in the Dev Center dashboard, this ID is also available in the URL for the submission page in the dashboard.</span></span>   |
+| <span data-ttu-id="3ba58-146">percentage</span><span class="sxs-lookup"><span data-stu-id="3ba58-146">percentage</span></span>  |  <span data-ttu-id="3ba58-147">float</span><span class="sxs-lookup"><span data-stu-id="3ba58-147">float</span></span>  |  <span data-ttu-id="3ba58-148">必須。</span><span class="sxs-lookup"><span data-stu-id="3ba58-148">Required.</span></span> <span data-ttu-id="3ba58-149">段階的なロールアウト パッケージを受信するユーザーの割合。</span><span class="sxs-lookup"><span data-stu-id="3ba58-149">The percentage of users who will receive the gradual rollout package.</span></span>  |
 
-<span/>
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a><span data-ttu-id="3ba58-150">要求本文</span><span class="sxs-lookup"><span data-stu-id="3ba58-150">Request body</span></span>
 
-このメソッドでは要求本文を指定しないでください。
+<span data-ttu-id="3ba58-151">このメソッドでは要求本文を指定しないでください。</span><span class="sxs-lookup"><span data-stu-id="3ba58-151">Do not provide a request body for this method.</span></span>
 
-### <a name="request-example"></a>要求の例
+### <a name="request-example"></a><span data-ttu-id="3ba58-152">要求の例</span><span class="sxs-lookup"><span data-stu-id="3ba58-152">Request example</span></span>
 
-アプリの申請のパッケージ ロールアウト率を更新する方法の例を次に示します。
+<span data-ttu-id="3ba58-153">アプリの申請のパッケージ ロールアウト率を更新する方法の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="3ba58-153">The following example demonstrates how to update the package rollout percentage for an app submission.</span></span>
 
 ```
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/submissions/1152921504621243680/updatepackagerolloutpercentage?percentage=25 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>応答
+## <a name="response"></a><span data-ttu-id="3ba58-154">応答</span><span class="sxs-lookup"><span data-stu-id="3ba58-154">Response</span></span>
 
-次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文の値について詳しくは、「[パッケージのロールアウトのリソース](manage-app-submissions.md#package-rollout-object)」をご覧ください。
+<span data-ttu-id="3ba58-155">次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。</span><span class="sxs-lookup"><span data-stu-id="3ba58-155">The following example demonstrates the JSON response body for a successful call to this method.</span></span> <span data-ttu-id="3ba58-156">応答本文の値について詳しくは、「[パッケージのロールアウトのリソース](manage-app-submissions.md#package-rollout-object)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="3ba58-156">For more details about the values in the response body, see [Package rollout resource](manage-app-submissions.md#package-rollout-object).</span></span>
 
 ```json
 {
     "isPackageRollout": true,
-    "packageRolloutPercentage": 25,
+    "packageRolloutPercentage": 25.0,
     "packageRolloutStatus": "PackageRolloutInProgress",
     "fallbackSubmissionId": "1212922684621243058"
 }
 ```
 
-## <a name="error-codes"></a>エラー コード
+## <a name="error-codes"></a><span data-ttu-id="3ba58-157">エラー コード</span><span class="sxs-lookup"><span data-stu-id="3ba58-157">Error codes</span></span>
 
-要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。
+<span data-ttu-id="3ba58-158">要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。</span><span class="sxs-lookup"><span data-stu-id="3ba58-158">If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.</span></span>
 
-| エラー コード |  説明   |
+| <span data-ttu-id="3ba58-159">エラー コード</span><span class="sxs-lookup"><span data-stu-id="3ba58-159">Error code</span></span> |  <span data-ttu-id="3ba58-160">説明</span><span class="sxs-lookup"><span data-stu-id="3ba58-160">Description</span></span>   |
 |--------|------------------|
-| 404  | 申請は見つかりませんでした。 |
-| 409  | このコードは、次のエラーのいずれかを示します。<br/><br/><ul><li>申請が、段階的なロールアウト操作に対して有効な状態になっていません (このメソッドを呼び出す前に、申請を公開し、[packageRolloutStatus](manage-app-submissions.md#package-rollout-object) の値を **PackageRolloutInProgress** に設定する必要があります)。</li><li>申請が、指定されたアプリに属していません。</li><li>アプリは、[Windows ストア申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センターのダッシュボード機能を使用します。</li></ul> |   
-
-<span/>
+| <span data-ttu-id="3ba58-161">404</span><span class="sxs-lookup"><span data-stu-id="3ba58-161">404</span></span>  | <span data-ttu-id="3ba58-162">申請は見つかりませんでした。</span><span class="sxs-lookup"><span data-stu-id="3ba58-162">The submission could not be found.</span></span> |
+| <span data-ttu-id="3ba58-163">409</span><span class="sxs-lookup"><span data-stu-id="3ba58-163">409</span></span>  | <span data-ttu-id="3ba58-164">このコードは、次のエラーのいずれかを示します。</span><span class="sxs-lookup"><span data-stu-id="3ba58-164">This code indicates one of the following errors:</span></span><br/><br/><ul><li><span data-ttu-id="3ba58-165">申請が、段階的なロールアウト操作に対して有効な状態になっていません (このメソッドを呼び出す前に、申請を公開し、[packageRolloutStatus](manage-app-submissions.md#package-rollout-object) の値を **PackageRolloutInProgress** に設定する必要があります)。</span><span class="sxs-lookup"><span data-stu-id="3ba58-165">The submission is not in a valid state for the gradual rollout operation (before calling this method, the submission must be published and the [packageRolloutStatus](manage-app-submissions.md#package-rollout-object) value must be set to **PackageRolloutInProgress**).</span></span></li><li><span data-ttu-id="3ba58-166">申請が、指定されたアプリに属していません。</span><span class="sxs-lookup"><span data-stu-id="3ba58-166">The submission does not belong to the specified app.</span></span></li><li><span data-ttu-id="3ba58-167">アプリが、[Microsoft Store 申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能を使用しています。</span><span class="sxs-lookup"><span data-stu-id="3ba58-167">The app uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).</span></span></li></ul> |   
 
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="3ba58-168">関連トピック</span><span class="sxs-lookup"><span data-stu-id="3ba58-168">Related topics</span></span>
 
-* [段階的なパッケージのロールアウト](../publish/gradual-package-rollout.md)
-* [Windows ストア申請 API を使用したアプリの申請の管理](manage-app-submissions.md)
-* [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-
+* [<span data-ttu-id="3ba58-169">段階的なパッケージのロールアウト</span><span class="sxs-lookup"><span data-stu-id="3ba58-169">Gradual package rollout</span></span>](../publish/gradual-package-rollout.md)
+* [<span data-ttu-id="3ba58-170">Microsoft Store 申請 API を使用したアプリの申請の管理</span><span class="sxs-lookup"><span data-stu-id="3ba58-170">Manage app submissions using the Microsoft Store submission API</span></span>](manage-app-submissions.md)
+* [<span data-ttu-id="3ba58-171">Microsoft Store サービスを使用した申請の作成と管理</span><span class="sxs-lookup"><span data-stu-id="3ba58-171">Create and manage submissions using Microsoft Store services</span></span>](create-and-manage-submissions-using-windows-store-services.md)

@@ -1,19 +1,20 @@
 ---
 author: jwmsft
-title: "関係ベース アニメーション"
-description: "別のオブジェクトのプロパティに基づいくモーションを作成します。"
+title: 関係ベース アニメーション
+description: 別のオブジェクトのプロパティに基づいくモーションを作成します。
 ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, アニメーション"
+keywords: Windows 10, UWP, アニメーション
 ms.localizationpriority: medium
 ms.openlocfilehash: ceca1705938df29bd4fbb857fbc78649fec57a94
 ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/12/2017
+ms.locfileid: "1393551"
 ---
 # <a name="relation-based-animations"></a><span data-ttu-id="56787-104">関係ベース アニメーション</span><span class="sxs-lookup"><span data-stu-id="56787-104">Relation based animations</span></span>
 
@@ -48,7 +49,7 @@ ms.lasthandoff: 12/12/2017
 <span data-ttu-id="56787-136">Expression の数学的な関係を構築する際に利用できる主なコンポーネントには、以下のものがあります。</span><span class="sxs-lookup"><span data-stu-id="56787-136">When building the mathematical relationship of an Expression, there are several core components:</span></span>
 
 - <span data-ttu-id="56787-137">パラメーター – 定数値または他のコンポジション オブジェクトへの参照を表す値です。</span><span class="sxs-lookup"><span data-stu-id="56787-137">Parameters – values representing constant values or references to other Composition objects.</span></span>
-- <span data-ttu-id="56787-138">数学演算子 – 式を構成するためにパラメーターを結合する一般的な数学演算子 (加算 (+)、減算 (-)、乗算 (*)、除算 (/)) です。</span><span class="sxs-lookup"><span data-stu-id="56787-138">Mathematical Operators – the typical mathematical operators plus(+), minus(-), multiply(*), divide(/) that join together parameters to form an equation.</span></span> <span data-ttu-id="56787-139">条件演算子 (より大きい (>)、等しい (==) など) や、三項演算子 (condition ? </span><span class="sxs-lookup"><span data-stu-id="56787-139">Also included are conditional operators such as greater than(>), equal(==), ternary operator (condition ?</span></span> <span data-ttu-id="56787-140">ifTrue : ifFalse) なども含まれます。</span><span class="sxs-lookup"><span data-stu-id="56787-140">ifTrue : ifFalse), etc.</span></span>
+- <span data-ttu-id="56787-138">数学演算子 – 式を構成するためにパラメーターを結合する一般的な数学演算子 (加算 (+)、減算 (-)、乗算 (\*)、除算 (/)) です。</span><span class="sxs-lookup"><span data-stu-id="56787-138">Mathematical Operators – the typical mathematical operators plus(+), minus(-), multiply(\*), divide(/) that join together parameters to form an equation.</span></span> <span data-ttu-id="56787-139">条件演算子 (より大きい (>)、等しい (==) など) や、三項演算子 (condition ? </span><span class="sxs-lookup"><span data-stu-id="56787-139">Also included are conditional operators such as greater than(>), equal(==), ternary operator (condition ?</span></span> <span data-ttu-id="56787-140">ifTrue : ifFalse) なども含まれます。</span><span class="sxs-lookup"><span data-stu-id="56787-140">ifTrue : ifFalse), etc.</span></span>
 - <span data-ttu-id="56787-141">数学関数 – System.Numerics に基づく数学関数/数学ショートカットです。</span><span class="sxs-lookup"><span data-stu-id="56787-141">Mathematical Functions – mathematical functions/shortcuts based on System.Numerics.</span></span> <span data-ttu-id="56787-142">サポートされる関数の完全な一覧については、「[ExpressionAnimation](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ExpressionAnimation)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="56787-142">For a full list of supported functions, see [ExpressionAnimation](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ExpressionAnimation).</span></span>
 
 <span data-ttu-id="56787-143">Expression では一連のキーワードもサポートされています。キーワードとは、ExpressionAnimation システム内でのみ使われる独自の意味を持つ特別な語句です。</span><span class="sxs-lookup"><span data-stu-id="56787-143">Expressions also support a set of keywords – special phrases that have distinct meaning only within the ExpressionAnimation system.</span></span> <span data-ttu-id="56787-144">これらのキーワードの一覧 (および数学関数の完全な一覧) については、「[ExpressionAnimation](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ExpressionAnimation)」の説明をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="56787-144">These are listed (along with the full list of math functions) in the [ExpressionAnimation](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ExpressionAnimation) documentation.</span></span>

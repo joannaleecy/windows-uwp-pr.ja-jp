@@ -1,68 +1,68 @@
 ---
-title: "Windows Hello ログイン アプリの作成"
-description: "これは、従来のユーザー名とパスワードの認証システムの代わりに Windows Hello を使う Windows 10 UWP (ユニバーサル Windows プラットフォーム) アプリを作成する方法に関する詳しいチュートリアルのパート 1 です。"
+title: Windows Hello ログイン アプリの作成
+description: これは、従来のユーザー名とパスワードの認証システムの代わりに Windows Hello を使う Windows 10 UWP (ユニバーサル Windows プラットフォーム) アプリを作成する方法に関する詳しいチュートリアルのパート 1 です。
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
-author: awkoren
-ms.author: alkoren
+author: PatrickFarley
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2ffec3d72ab0b3ca87a5cc0ec9325fe805ae9b6f
-ms.lasthandoff: 02/07/2017
-
+keywords: windows 10, uwp
+ms.localizationpriority: medium
+ms.openlocfilehash: 23a4bd392689a71191e19ea245f984a6984839e3
+ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/30/2018
+ms.locfileid: "1817330"
 ---
-
-# <a name="create-a-windows-hello-login-app"></a>Windows Hello ログイン アプリの作成
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
+# <a name="create-a-windows-hello-login-app"></a><span data-ttu-id="81f77-104">Windows Hello ログイン アプリの作成</span><span class="sxs-lookup"><span data-stu-id="81f77-104">Create a Windows Hello login app</span></span>
 
 
-\[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。\]
-
-これは、従来のユーザー名とパスワードの認証システムの代わりに Windows Hello を使う Windows 10 UWP (ユニバーサル Windows プラットフォーム) アプリを作成する方法に関する詳しいチュートリアルのパート 1 です。 アプリでは、サインインにユーザー名を使い、アカウントごとに Hello キーを作成します。 これらのアカウントは、Windows Hello の構成時に Windows の設定でセットアップされた暗証番号 (PIN) によって保護されます。
-
-このチュートリアルは、アプリの作成とバックエンド サービスの接続の 2 つの部分に分かれています。 この記事を終了したら、パート 2「[Windows Hello ログイン サービス](microsoft-passport-login-auth-service.md)」に進んでください。
-
-開始する前に、「[Windows Hello](microsoft-passport.md)」の概要を読んで、Windows Hello の全般的なしくみを理解してください。
-
-## <a name="get-started"></a>開始
 
 
-このプロジェクトを作成するには、C# と XAML の経験がいくらか必要です。 Windows 10 コンピューターで Visual Studio 2015 (Community Edition 以上) を使う必要もあります。
+<span data-ttu-id="81f77-105">\[一部の情報はリリース前の製品に関する事項であり、正式版がリリースされるまでに大幅に変更される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="81f77-105">\[Some information relates to pre-released product which may be substantially modified before it's commercially released.</span></span> <span data-ttu-id="81f77-106">ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。\]</span><span class="sxs-lookup"><span data-stu-id="81f77-106">Microsoft makes no warranties, express or implied, with respect to the information provided here.\]</span></span>
 
--   Visual Studio 2015 を開き、[ファイル]、[新規]、[プロジェクト] の順に選びます。
--   [新しいプロジェクト] ウィンドウが開きます。 [テンプレート]、[Visual C#] の順に移動します。
--   [空白のアプリ (ユニバーサル Windows)] を選び、アプリケーションに "PassportLogin" という名前を付けます。
--   新しいアプリケーションをビルドして実行すると (F5)、画面に空白のウィンドウが表示されます。 アプリケーションを閉じます。
+<span data-ttu-id="81f77-107">これは、従来のユーザー名とパスワードの認証システムの代わりに Windows Hello を使う Windows 10 UWP (ユニバーサル Windows プラットフォーム) アプリを作成する方法に関する詳しいチュートリアルのパート 1 です。</span><span class="sxs-lookup"><span data-stu-id="81f77-107">This is Part 1 of a complete walkthrough on how to create a Windows 10 UWP (Universal Windows Platform) app that uses Windows Hello as an alternative to traditional username and password authentication systems.</span></span> <span data-ttu-id="81f77-108">アプリでは、サインインにユーザー名を使い、アカウントごとに Hello キーを作成します。</span><span class="sxs-lookup"><span data-stu-id="81f77-108">The app uses a username for sign-in and create a Hello Key for each account.</span></span> <span data-ttu-id="81f77-109">これらのアカウントは、Windows Hello の構成時に Windows の設定でセットアップされた暗証番号 (PIN) によって保護されます。</span><span class="sxs-lookup"><span data-stu-id="81f77-109">These accounts will be protected by the PIN that is setup in Windows Settings on configuration of Windows Hello.</span></span>
+
+<span data-ttu-id="81f77-110">このチュートリアルは、アプリの作成とバックエンド サービスの接続の 2 つの部分に分かれています。</span><span class="sxs-lookup"><span data-stu-id="81f77-110">This walkthrough is split into two parts: building the app and connecting the backend service.</span></span> <span data-ttu-id="81f77-111">この記事を終了したら、パート 2「[Windows Hello ログイン サービス](microsoft-passport-login-auth-service.md)」に進んでください。</span><span class="sxs-lookup"><span data-stu-id="81f77-111">When you're finished with this article, continue on to Part 2: [Windows Hello login service](microsoft-passport-login-auth-service.md).</span></span>
+
+<span data-ttu-id="81f77-112">開始する前に、「[Windows Hello](microsoft-passport.md)」の概要を読んで、Windows Hello の全般的なしくみを理解してください。</span><span class="sxs-lookup"><span data-stu-id="81f77-112">Before you begin, you should read the [Windows Hello](microsoft-passport.md) overview for a general understanding of how Windows Hello works.</span></span>
+
+## <a name="get-started"></a><span data-ttu-id="81f77-113">開始</span><span class="sxs-lookup"><span data-stu-id="81f77-113">Get started</span></span>
+
+
+<span data-ttu-id="81f77-114">このプロジェクトを作成するには、C# と XAML の経験がいくらか必要です。</span><span class="sxs-lookup"><span data-stu-id="81f77-114">In order to build this project, you'll need some experience with C#, and XAML.</span></span> <span data-ttu-id="81f77-115">Windows 10 コンピューターで Visual Studio 2015 (Community Edition 以上) を使う必要もあります。</span><span class="sxs-lookup"><span data-stu-id="81f77-115">You'll also need to be using Visual Studio 2015 (Community Edition or greater) on a Windows 10 machine.</span></span>
+
+-   <span data-ttu-id="81f77-116">Visual Studio 2015 を開き、[ファイル]、[新規]、[プロジェクト] の順に選びます。</span><span class="sxs-lookup"><span data-stu-id="81f77-116">Open Visual Studio 2015 and select File > New > Project.</span></span>
+-   <span data-ttu-id="81f77-117">[新しいプロジェクト] ウィンドウが開きます。</span><span class="sxs-lookup"><span data-stu-id="81f77-117">This will open a “New Project” window.</span></span> <span data-ttu-id="81f77-118">[テンプレート]、[Visual C#] の順に移動します。</span><span class="sxs-lookup"><span data-stu-id="81f77-118">Navigation to Templates > Visual C#.</span></span>
+-   <span data-ttu-id="81f77-119">[空白のアプリ (ユニバーサル Windows)] を選び、アプリケーションに "PassportLogin" という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="81f77-119">Choose Blank App (Universal Windows) and name your application "PassportLogin".</span></span>
+-   <span data-ttu-id="81f77-120">新しいアプリケーションをビルドして実行すると (F5)、画面に空白のウィンドウが表示されます。</span><span class="sxs-lookup"><span data-stu-id="81f77-120">Build and Run the new application (F5), you should see a blank window shown on the screen.</span></span> <span data-ttu-id="81f77-121">アプリケーションを閉じます。</span><span class="sxs-lookup"><span data-stu-id="81f77-121">Close the application.</span></span>
 
 ![Windows Hello の新しいプロジェクト](images/passport-login-1.png)
 
-## <a name="exercise-1-login-with-microsoft-passport"></a>演習 1: Microsoft Passport でログインする
+## <a name="exercise-1-login-with-microsoft-passport"></a><span data-ttu-id="81f77-123">演習 1: Microsoft Passport でログインする</span><span class="sxs-lookup"><span data-stu-id="81f77-123">Exercise 1: Login with Microsoft Passport</span></span>
 
 
-この演習では、コンピューターで Windows Hello がセットアップされているかどうかを確認する方法と、Windows Hello を使ってアカウントにサインインする方法について説明します。
+<span data-ttu-id="81f77-124">この演習では、コンピューターで Windows Hello がセットアップされているかどうかを確認する方法と、Windows Hello を使ってアカウントにサインインする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="81f77-124">In this exercise you will learn how to check if Windows Hello is setup on the machine, and how to sign into an account using Windows Hello.</span></span>
 
--   新しいプロジェクトで、"Views" という新しいフォルダーをソリューションに作成します。 このフォルダーには、このサンプルで移動先となるページが置かれます。 ソリューション エクスプローラーでプロジェクトを右クリックし、[追加]、[新しいフォルダー] の順に選んでフォルダー名を Views に変更します。
+-   <span data-ttu-id="81f77-125">新しいプロジェクトで、"Views" という新しいフォルダーをソリューションに作成します。</span><span class="sxs-lookup"><span data-stu-id="81f77-125">In the new project create a new folder in the solution called "Views".</span></span> <span data-ttu-id="81f77-126">このフォルダーには、このサンプルで移動先となるページが置かれます。</span><span class="sxs-lookup"><span data-stu-id="81f77-126">This folder will contain the pages that will be navigated to in this sample.</span></span> <span data-ttu-id="81f77-127">ソリューション エクスプローラーでプロジェクトを右クリックし、[追加]、[新しいフォルダー] の順に選んでフォルダー名を Views に変更します。</span><span class="sxs-lookup"><span data-stu-id="81f77-127">Right click on the project in solution explorer, select Add > New Folder, then rename the folder to Views.</span></span>
 
     ![Windows Hello のフォルダーの追加](images/passport-login-2.png)
 
--   新しい Views フォルダーを右クリックし、[追加]、[新しい項目] の順に選び、[空白のページ] を選びます。 このページに "Login.xaml" という名前を付けます。
+-   <span data-ttu-id="81f77-129">新しい Views フォルダーを右クリックし、[追加]、[新しい項目] の順に選び、[空白のページ] を選びます。</span><span class="sxs-lookup"><span data-stu-id="81f77-129">Right click on the new Views folder, select Add > New Item and select Blank Page.</span></span> <span data-ttu-id="81f77-130">このページに "Login.xaml" という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="81f77-130">Name this page "Login.xaml".</span></span>
 
     ![Windows Hello の空白ページの追加](images/passport-login-3.png)
 
--   新しいログイン ページのユーザー インターフェイスを定義するには、次の XAML を追加します。 この XAML では、次の子を配置するために StackPanel が定義されます。
+-   <span data-ttu-id="81f77-132">新しいログイン ページのユーザー インターフェイスを定義するには、次の XAML を追加します。</span><span class="sxs-lookup"><span data-stu-id="81f77-132">To define the user interface for the new login page, add the following XAML.</span></span> <span data-ttu-id="81f77-133">この XAML では、次の子を配置するために StackPanel が定義されます。</span><span class="sxs-lookup"><span data-stu-id="81f77-133">This XAML defines a StackPanel to align the following children:</span></span>
 
-    -   タイトルが格納される TextBlock
-    -   エラー メッセージ用の TextBlock
-    -   ユーザー名を入力する TextBox
-    -   登録ページに移動する Button
-    -   Windows Hello の状態が格納される TextBlock
-    -   バックエンド ユーザーまたは構成済みユーザーがない場合に Login ページについて説明する TextBlock
+    -   <span data-ttu-id="81f77-134">タイトルが格納される TextBlock</span><span class="sxs-lookup"><span data-stu-id="81f77-134">TextBlock that will contain a title.</span></span>
+    -   <span data-ttu-id="81f77-135">エラー メッセージ用の TextBlock</span><span class="sxs-lookup"><span data-stu-id="81f77-135">TextBlock for error messages.</span></span>
+    -   <span data-ttu-id="81f77-136">ユーザー名を入力する TextBox</span><span class="sxs-lookup"><span data-stu-id="81f77-136">TextBox for the username to input.</span></span>
+    -   <span data-ttu-id="81f77-137">登録ページに移動する Button</span><span class="sxs-lookup"><span data-stu-id="81f77-137">Button to navigate to a register page.</span></span>
+    -   <span data-ttu-id="81f77-138">Windows Hello の状態が格納される TextBlock</span><span class="sxs-lookup"><span data-stu-id="81f77-138">TextBlock to contain the status of Windows Hello.</span></span>
+    -   <span data-ttu-id="81f77-139">バックエンド ユーザーまたは構成済みユーザーがない場合に Login ページについて説明する TextBlock</span><span class="sxs-lookup"><span data-stu-id="81f77-139">TextBlock to explain the Login page as there is no backend or configured users.</span></span>
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -92,7 +92,7 @@ ms.lasthandoff: 02/07/2017
     </Grid>
     ```
 
--   ソリューションをビルドするには、分離コードにいくつかのメソッドを追加する必要があります。 F7 キーを押すか、ソリューション エクスプローラーを使って Login.xaml.cs に移動します。 Login イベントと Register イベントを処理する次の 2 つのイベント メソッドを追加します。 この時点では、これらのメソッドは ErrorMessage.Text を空の文字列に設定します。
+-   <span data-ttu-id="81f77-140">ソリューションをビルドするには、分離コードにいくつかのメソッドを追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="81f77-140">A few methods need to be added to the code behind to get the solution building.</span></span> <span data-ttu-id="81f77-141">F7 キーを押すか、ソリューション エクスプローラーを使って Login.xaml.cs に移動します。</span><span class="sxs-lookup"><span data-stu-id="81f77-141">Either press F7 or use the Solution Explorer to get to the Login.xaml.cs.</span></span> <span data-ttu-id="81f77-142">Login イベントと Register イベントを処理する次の 2 つのイベント メソッドを追加します。</span><span class="sxs-lookup"><span data-stu-id="81f77-142">Add in the following two event methods to handle the Login and Register events.</span></span> <span data-ttu-id="81f77-143">この時点では、これらのメソッドは ErrorMessage.Text を空の文字列に設定します。</span><span class="sxs-lookup"><span data-stu-id="81f77-143">For now these methods will set the ErrorMessage.Text to an empty string.</span></span>
 
     ```cs
     namespace PassportLogin.Views
@@ -116,7 +116,7 @@ ms.lasthandoff: 02/07/2017
     }
     ```
 
--   Login ページをレンダリングするため、MainPage コードを編集し、MainPage が読み込まれたときに Login ページに移動するようにします。 MainPage.xaml.cs ファイルを開きます。 ソリューション エクスプローラーで、MainPage.xaml.cs をダブルクリックします。 見つからない場合、MainPage.xaml の横にある小さい矢印をクリックして分離コードを表示します。 ログイン ページに移動する読み込みイベント ハンドラー メソッドを作成します。 Views 名前空間への参照を追加する必要があります。
+-   <span data-ttu-id="81f77-144">Login ページをレンダリングするため、MainPage コードを編集し、MainPage が読み込まれたときに Login ページに移動するようにします。</span><span class="sxs-lookup"><span data-stu-id="81f77-144">In order to render the Login page, edit the MainPage code to navigate to the Login page when the MainPage is loaded.</span></span> <span data-ttu-id="81f77-145">MainPage.xaml.cs ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="81f77-145">Open the MainPage.xaml.cs file.</span></span> <span data-ttu-id="81f77-146">ソリューション エクスプローラーで、MainPage.xaml.cs をダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="81f77-146">In the solution explorer double click on MainPage.xaml.cs.</span></span> <span data-ttu-id="81f77-147">見つからない場合、MainPage.xaml の横にある小さい矢印をクリックして分離コードを表示します。</span><span class="sxs-lookup"><span data-stu-id="81f77-147">If you can’t find this click the little arrow next to MainPage.xaml to show the code behind.</span></span> <span data-ttu-id="81f77-148">ログイン ページに移動する読み込みイベント ハンドラー メソッドを作成します。</span><span class="sxs-lookup"><span data-stu-id="81f77-148">Create a loaded event handler method that will navigate to the login page.</span></span> <span data-ttu-id="81f77-149">Views 名前空間への参照を追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="81f77-149">You will need to add a reference to the Views namespace.</span></span>
 
     ```cs
     using PassportLogin.Views;
@@ -139,7 +139,7 @@ ms.lasthandoff: 02/07/2017
     }
     ```
 
--   Login ページでは、OnNavigatedTo イベントを処理して Windows Hello がこのコンピューターで利用できることを検証する必要があります。 Login.xaml.cs で、次の内容を実装します。 MicrosoftPassportHelper オブジェクトがエラーを示します。 これは、まだ実装していないためです。
+-   <span data-ttu-id="81f77-150">Login ページでは、OnNavigatedTo イベントを処理して Windows Hello がこのコンピューターで利用できることを検証する必要があります。</span><span class="sxs-lookup"><span data-stu-id="81f77-150">In the Login page you need to handle the OnNavigatedTo event to validate if Windows Hello is available on this machine.</span></span> <span data-ttu-id="81f77-151">Login.xaml.cs で、次の内容を実装します。</span><span class="sxs-lookup"><span data-stu-id="81f77-151">In Login.xaml.cs implement the following.</span></span> <span data-ttu-id="81f77-152">MicrosoftPassportHelper オブジェクトがエラーを示します。</span><span class="sxs-lookup"><span data-stu-id="81f77-152">You will notice that the MicrosoftPassportHelper object flags an error.</span></span> <span data-ttu-id="81f77-153">これは、まだ実装していないためです。</span><span class="sxs-lookup"><span data-stu-id="81f77-153">This is because we have not implement it yet.</span></span>
 
     ```cs
     public sealed partial class Login : Page
@@ -167,12 +167,12 @@ ms.lasthandoff: 02/07/2017
     }
     ```
 
--   MicrosoftPassportHelper クラスを作成するには、PassportLogin (ユニバーサル Windows) ソリューションを右クリックし、[追加]、[新しいフォルダー] の順にクリックします。 このフォルダーに Utils という名前を付けます。
+-   <span data-ttu-id="81f77-154">MicrosoftPassportHelper クラスを作成するには、PassportLogin (ユニバーサル Windows) ソリューションを右クリックし、[追加]、[新しいフォルダー] の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="81f77-154">To create the MicrosoftPassportHelper class, right click on the solution PassportLogin (Universal Windows) and click Add > New Folder.</span></span> <span data-ttu-id="81f77-155">このフォルダーに Utils という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="81f77-155">Name this folder Utils.</span></span>
 
     ![Passport のヘルパー クラスの作成](images/passport-login-5.png)
 
--   Utils フォルダーを右クリックし、[追加]、[クラス] の順にクリックします。 このクラスに "MicrosoftPassportHelper.cs" という名前を付けます。
--   MicrosoftPassportHelper のクラス定義をパブリック静的に変更した後、Windows Hello を使う準備ができたかどうかをユーザーに知らせる次のメソッドを追加します。 必要な名前空間を追加する必要があります。
+-   <span data-ttu-id="81f77-157">Utils フォルダーを右クリックし、[追加]、[クラス] の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="81f77-157">Right click on the Utils folder and click Add > Class.</span></span> <span data-ttu-id="81f77-158">このクラスに "MicrosoftPassportHelper.cs" という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="81f77-158">Name this class "MicrosoftPassportHelper.cs".</span></span>
+-   <span data-ttu-id="81f77-159">MicrosoftPassportHelper のクラス定義をパブリック静的に変更した後、Windows Hello を使う準備ができたかどうかをユーザーに知らせる次のメソッドを追加します。</span><span class="sxs-lookup"><span data-stu-id="81f77-159">Change the class definition of MicrosoftPassportHelper to public static, then add the following method that to inform the user if Windows Hello is ready to be used or not.</span></span> <span data-ttu-id="81f77-160">必要な名前空間を追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="81f77-160">You will need to add the required namespaces.</span></span>
 
     ```cs
     using System;
@@ -208,20 +208,20 @@ ms.lasthandoff: 02/07/2017
     }
     ```
 
--   Login.xaml.cs で、Utils 名前空間への参照を追加します。 これにより、OnNavigatedTo メソッドのエラーが解決されます。
+-   <span data-ttu-id="81f77-161">Login.xaml.cs で、Utils 名前空間への参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="81f77-161">In Login.xaml.cs add a reference to the Utils namespace.</span></span> <span data-ttu-id="81f77-162">これにより、OnNavigatedTo メソッドのエラーが解決されます。</span><span class="sxs-lookup"><span data-stu-id="81f77-162">This will resolve the error in the OnNavigatedTo method.</span></span>
 
     ```cs
     using PassportLogin.Utils;
     ```
 
--   アプリをビルドして実行します (F5)。 ログイン ページに自動的に移動し、Hello を使う準備ができているかどうかを示す Windows Hello バナーが表示されます。 コンピューターでの Windows Hello の状態を示す緑色または青色のバナーが表示されます。
+-   <span data-ttu-id="81f77-163">アプリをビルドして実行します (F5)。</span><span class="sxs-lookup"><span data-stu-id="81f77-163">Build and run the application (F5).</span></span> <span data-ttu-id="81f77-164">ログイン ページに自動的に移動し、Hello を使う準備ができているかどうかを示す Windows Hello バナーが表示されます。</span><span class="sxs-lookup"><span data-stu-id="81f77-164">You will be navigated to the login page and the Windows Hello banner will indicate to you if Hello is ready to be used.</span></span> <span data-ttu-id="81f77-165">コンピューターでの Windows Hello の状態を示す緑色または青色のバナーが表示されます。</span><span class="sxs-lookup"><span data-stu-id="81f77-165">You should see either the green or blue banner indicating the Windows Hello status on your machine.</span></span>
 
     ![Windows Hello のログイン画面の準備](images/passport-login-6.png)
 
     ![Windows Hello のログイン画面 (セットアップされていない場合)](images/passport-login-7.png)
 
--   次に、サインインのロジックを作成する必要があります。 新しいフォルダーを "Models" という名前で作成します。
--   Models フォルダーで、"Account.cs" という新しいクラスを作成します。 このクラスは、アカウント モデルとして機能します。 これはサンプルのため、ユーザー名のみが含められます。 クラス定義をパブリックに変更し、Username プロパティを追加します。
+-   <span data-ttu-id="81f77-168">次に、サインインのロジックを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="81f77-168">The next thing you need to do is build the logic for signing in.</span></span> <span data-ttu-id="81f77-169">新しいフォルダーを "Models" という名前で作成します。</span><span class="sxs-lookup"><span data-stu-id="81f77-169">Create a new folder called "Models".</span></span>
+-   <span data-ttu-id="81f77-170">Models フォルダーで、"Account.cs" という新しいクラスを作成します。</span><span class="sxs-lookup"><span data-stu-id="81f77-170">In the Models folder create a new class called "Account.cs".</span></span> <span data-ttu-id="81f77-171">このクラスは、アカウント モデルとして機能します。</span><span class="sxs-lookup"><span data-stu-id="81f77-171">This class will act as your account model.</span></span> <span data-ttu-id="81f77-172">これはサンプルのため、ユーザー名のみが含められます。</span><span class="sxs-lookup"><span data-stu-id="81f77-172">As this is a sample it will only contain a username.</span></span> <span data-ttu-id="81f77-173">クラス定義をパブリックに変更し、Username プロパティを追加します。</span><span class="sxs-lookup"><span data-stu-id="81f77-173">Change the class definition to public and add the Username property.</span></span>
     
     ```cs
     namespace PassportLogin.Models
@@ -233,7 +233,7 @@ ms.lasthandoff: 02/07/2017
     }
     ```
 
--   アカウントを処理する方法が必要です。 このハンズオン ラボでは、サーバー (つまり、データベース) がないため、ユーザーの一覧の保存と読み込みはローカルで行われます。 Utils フォルダーを右クリックし、"AccountHelper.cs" という新しいクラスを追加します。 クラス定義をパブリック静的に変更します。 AccountHelper は、アカウントの一覧をローカルで保存して読み込むために必要なすべてのメソッドが追加される静的クラスです。 保存と読み込みは、XmlSerializer を使って機能します。 保存したファイルとその保存場所を覚えておく必要もあります。 追加の名前空間を参照する必要があります。
+-   <span data-ttu-id="81f77-174">アカウントを処理する方法が必要です。</span><span class="sxs-lookup"><span data-stu-id="81f77-174">You will need a way to handle accounts.</span></span> <span data-ttu-id="81f77-175">このハンズオン ラボでは、サーバー (つまり、データベース) がないため、ユーザーの一覧の保存と読み込みはローカルで行われます。</span><span class="sxs-lookup"><span data-stu-id="81f77-175">For this hands on lab as there is no server, or a database, a list of users will be saved and loaded locally.</span></span> <span data-ttu-id="81f77-176">Utils フォルダーを右クリックし、"AccountHelper.cs" という新しいクラスを追加します。</span><span class="sxs-lookup"><span data-stu-id="81f77-176">Right click on the Utils folder and add a new class called "AccountHelper.cs".</span></span> <span data-ttu-id="81f77-177">クラス定義をパブリック静的に変更します。</span><span class="sxs-lookup"><span data-stu-id="81f77-177">Change the class definition to be public static.</span></span> <span data-ttu-id="81f77-178">AccountHelper は、アカウントの一覧をローカルで保存して読み込むために必要なすべてのメソッドが追加される静的クラスです。</span><span class="sxs-lookup"><span data-stu-id="81f77-178">The AccountHelper is a static class that will contain all the necessary methods to save and load the list of accounts locally.</span></span> <span data-ttu-id="81f77-179">保存と読み込みは、XmlSerializer を使って機能します。</span><span class="sxs-lookup"><span data-stu-id="81f77-179">Saving and loading will work by using an XmlSerializer.</span></span> <span data-ttu-id="81f77-180">保存したファイルとその保存場所を覚えておく必要もあります。</span><span class="sxs-lookup"><span data-stu-id="81f77-180">You will also need to remember the file you saved and where you saved it.</span></span> <span data-ttu-id="81f77-181">追加の名前空間を参照する必要があります。</span><span class="sxs-lookup"><span data-stu-id="81f77-181">Additional namespaces will be need to be referenced.</span></span>
     
     ```cs
     using System.IO;
@@ -316,7 +316,7 @@ ms.lasthandoff: 02/07/2017
     }
     ```
 
--   次に、アカウントのローカルの一覧からアカウントを追加および削除する方法を実装します。 これらの操作それぞれにより、一覧が保存されます。 このハンズオン ラボで必要となる最後のメソッドは、検証メソッドです。 ユーザーの認証サーバーまたはデータベースがないため、ハード コーディングされている単一のユーザーをこのメソッドが検証します。 これらのメソッドは、AccountHelper クラスに追加する必要があります。
+-   <span data-ttu-id="81f77-182">次に、アカウントのローカルの一覧からアカウントを追加および削除する方法を実装します。</span><span class="sxs-lookup"><span data-stu-id="81f77-182">Next, implement a way to add and remove an account from the local list of accounts.</span></span> <span data-ttu-id="81f77-183">これらの操作それぞれにより、一覧が保存されます。</span><span class="sxs-lookup"><span data-stu-id="81f77-183">These actions will each save the list.</span></span> <span data-ttu-id="81f77-184">このハンズオン ラボで必要となる最後のメソッドは、検証メソッドです。</span><span class="sxs-lookup"><span data-stu-id="81f77-184">The final method that you will need for this hands on lab is a validation method.</span></span> <span data-ttu-id="81f77-185">ユーザーの認証サーバーまたはデータベースがないため、ハード コーディングされている単一のユーザーをこのメソッドが検証します。</span><span class="sxs-lookup"><span data-stu-id="81f77-185">As there is no auth server or database of users, this will validate against a single user which is hard coded.</span></span> <span data-ttu-id="81f77-186">これらのメソッドは、AccountHelper クラスに追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="81f77-186">These methods should be added to the AccountHelper class.</span></span>
     
     ```cs
     public static Account AddAccount(string username)
@@ -355,10 +355,10 @@ ms.lasthandoff: 02/07/2017
                 }
      
                 return true;
-            }<
+            }
     ```
 
--   次に、ユーザーからのサインイン要求を処理する必要があります。 Login.xaml.cs で、現在のアカウント ログインを保持する新しいプライベート変数を作成します。 次に、新しいメソッド呼び出し SignInPassport を追加します。 これにより、AccountHelper.ValidateAccountCredentials メソッドを使ってアカウントの資格情報が検証されます。 入力されたユーザー名が、前の手順で設定したハード コーディングされた文字列値と同じ場合、こメソッドはブール値を返します。 このサンプルのハードコーディングされた値は、"sampleUsername" です。
+-   <span data-ttu-id="81f77-187">次に、ユーザーからのサインイン要求を処理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="81f77-187">The next thing you need to do is handle a sign in request from the user.</span></span> <span data-ttu-id="81f77-188">Login.xaml.cs で、現在のアカウント ログインを保持する新しいプライベート変数を作成します。</span><span class="sxs-lookup"><span data-stu-id="81f77-188">In Login.xaml.cs create a new private variable that will hold the current account logging in.</span></span> <span data-ttu-id="81f77-189">次に、新しいメソッド呼び出し SignInPassport を追加します。</span><span class="sxs-lookup"><span data-stu-id="81f77-189">Then add a new method call SignInPassport.</span></span> <span data-ttu-id="81f77-190">これにより、AccountHelper.ValidateAccountCredentials メソッドを使ってアカウントの資格情報が検証されます。</span><span class="sxs-lookup"><span data-stu-id="81f77-190">This will validate the account credentials using the AccountHelper.ValidateAccountCredentials method.</span></span> <span data-ttu-id="81f77-191">入力されたユーザー名が、前の手順で設定したハード コーディングされた文字列値と同じ場合、こメソッドはブール値を返します。</span><span class="sxs-lookup"><span data-stu-id="81f77-191">This method will return a Boolean value if the entered user name is the same as the hard coded string value you set in the previous step.</span></span> <span data-ttu-id="81f77-192">このサンプルのハードコーディングされた値は、"sampleUsername" です。</span><span class="sxs-lookup"><span data-stu-id="81f77-192">The hard coded value for this sample is "sampleUsername".</span></span>
 
     ```cs
     using PassportLogin.Models;
@@ -424,7 +424,7 @@ ms.lasthandoff: 02/07/2017
     }
     ```
 
--   MicrosoftPassportHelper のメソッドを参照しているコメント化されたコードがありました。 MicrosoftPassportHelper.cs で、CreatePassportKeyAsync という新しいメソッドを追加します。 このメソッドは、[**KeyCredentialManager**](https://msdn.microsoft.com/library/windows/apps/dn973043) で Windows Hello API を使います。 [**RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) を呼び出すと、*accountId* とローカル コンピューターに固有の Passport キーが作成されます。 実際のシナリオでこれを実装する場合は、switch ステートメント内のコメントに注目してください。
+-   <span data-ttu-id="81f77-193">MicrosoftPassportHelper のメソッドを参照しているコメント化されたコードがありました。</span><span class="sxs-lookup"><span data-stu-id="81f77-193">You may have noticed the commented code that was referencing a method in MicrosoftPassportHelper.</span></span> <span data-ttu-id="81f77-194">MicrosoftPassportHelper.cs で、CreatePassportKeyAsync という新しいメソッドを追加します。</span><span class="sxs-lookup"><span data-stu-id="81f77-194">In MicrosoftPassportHelper.cs add in a new method called CreatePassportKeyAsync.</span></span> <span data-ttu-id="81f77-195">このメソッドは、[**KeyCredentialManager**](https://msdn.microsoft.com/library/windows/apps/dn973043) で Windows Hello API を使います。</span><span class="sxs-lookup"><span data-stu-id="81f77-195">This method uses the Windows Hello API in the [**KeyCredentialManager**](https://msdn.microsoft.com/library/windows/apps/dn973043).</span></span> <span data-ttu-id="81f77-196">[**RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) を呼び出すと、*accountId* とローカル コンピューターに固有の Passport キーが作成されます。</span><span class="sxs-lookup"><span data-stu-id="81f77-196">Calling [**RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) will create a Passport key that is specific to the *accountId* and the local machine.</span></span> <span data-ttu-id="81f77-197">実際のシナリオでこれを実装する場合は、switch ステートメント内のコメントに注目してください。</span><span class="sxs-lookup"><span data-stu-id="81f77-197">Please note the comments in the switch statement if you are interested in implementing this in a real world scenario.</span></span>
 
     ```cs
     /// <summary>
@@ -468,7 +468,7 @@ ms.lasthandoff: 02/07/2017
     }
     ```
 
--   これで、CreatePassportKeyAsync メソッドが作成されました。Login.xaml.cs ファイルに戻り、SignInPassport メソッド内のコードのコメントを解除します。
+-   <span data-ttu-id="81f77-198">これで、CreatePassportKeyAsync メソッドが作成されました。Login.xaml.cs ファイルに戻り、SignInPassport メソッド内のコードのコメントを解除します。</span><span class="sxs-lookup"><span data-stu-id="81f77-198">Now you have created the CreatePassportKeyAsync method, return to the Login.xaml.cs file and uncomment the code inside the SignInPassport method.</span></span>
 
     ```cs
     private async void SignInPassport()
@@ -491,16 +491,16 @@ ms.lasthandoff: 02/07/2017
     }
     ```
 
--   アプリをビルドして実行します。 自動的に Login ページに移動します。 "sampleUsername" と入力し、[Login] をクリックします。 PIN の入力を求める Windows Hello プロンプトが表示されます。 PIN を正しく入力すると、CreatePassportKeyAsync メソッドが Windows Hello キーを作成できるようになります。 出力ウィンドウで、成功を示すメッセージが表示されるかどうかを確認してください。
+-   <span data-ttu-id="81f77-199">アプリをビルドして実行します。</span><span class="sxs-lookup"><span data-stu-id="81f77-199">Build and run the application.</span></span> <span data-ttu-id="81f77-200">自動的に Login ページに移動します。</span><span class="sxs-lookup"><span data-stu-id="81f77-200">You will be taken to the Login page.</span></span> <span data-ttu-id="81f77-201">"sampleUsername" と入力し、[Login] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="81f77-201">Type in "sampleUsername" and click login.</span></span> <span data-ttu-id="81f77-202">PIN の入力を求める Windows Hello プロンプトが表示されます。</span><span class="sxs-lookup"><span data-stu-id="81f77-202">You will be prompted with a Windows Hello prompt asking you to enter your PIN.</span></span> <span data-ttu-id="81f77-203">PIN を正しく入力すると、CreatePassportKeyAsync メソッドが Windows Hello キーを作成できるようになります。</span><span class="sxs-lookup"><span data-stu-id="81f77-203">Upon entering your PIN correctly the CreatePassportKeyAsync method will be able to create a Windows Hello key.</span></span> <span data-ttu-id="81f77-204">出力ウィンドウで、成功を示すメッセージが表示されるかどうかを確認してください。</span><span class="sxs-lookup"><span data-stu-id="81f77-204">Monitor the output windows to see if the messages indicating success are shown.</span></span>
 
     ![Windows Hello のログイン PIN の入力画面](images/passport-login-8.png)
 
-## <a name="exercise-2-welcome-and-user-selection-pages"></a>演習 2: ウェルカム ページとユーザーの選択ページ
+## <a name="exercise-2-welcome-and-user-selection-pages"></a><span data-ttu-id="81f77-206">演習 2: ウェルカム ページとユーザーの選択ページ</span><span class="sxs-lookup"><span data-stu-id="81f77-206">Exercise 2: Welcome and User Selection Pages</span></span>
 
 
-この演習は、前の演習の続きです。 ユーザーが正常にログインすると、ウェルカム ページに移動し、サインアウトしたり、アカウントを削除したりすることができます。 Windows Hello ではコンピューターごとにキーが作成されるため、そのコンピューターにサインインしたすべてのユーザーが表示されるユーザーの選択画面を作成できます。 その後、ユーザーはいずれかのアカウントを選び、パスワードを再入力しなくてもようこそ画面に直接移動することができます。コンピューターにアクセスするときに既に認証されているためです。
+<span data-ttu-id="81f77-207">この演習は、前の演習の続きです。</span><span class="sxs-lookup"><span data-stu-id="81f77-207">In this exercise, you will continue from the previous exercise.</span></span> <span data-ttu-id="81f77-208">ユーザーが正常にログインすると、ウェルカム ページに移動し、サインアウトしたり、アカウントを削除したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="81f77-208">When a person successfully logs in they should be taken to a welcome page where they can sign out or delete their account.</span></span> <span data-ttu-id="81f77-209">Windows Hello ではコンピューターごとにキーが作成されるため、そのコンピューターにサインインしたすべてのユーザーが表示されるユーザーの選択画面を作成できます。</span><span class="sxs-lookup"><span data-stu-id="81f77-209">As Windows Hello creates a key for every machine, a user selection screen can be created, which displays all users that have been signed in on that machine.</span></span> <span data-ttu-id="81f77-210">その後、ユーザーはいずれかのアカウントを選び、パスワードを再入力しなくてもようこそ画面に直接移動することができます。コンピューターにアクセスするときに既に認証されているためです。</span><span class="sxs-lookup"><span data-stu-id="81f77-210">A user can then select one of these accounts and go directly to the welcome screen without needed to re-enter a password as they have already authenticated to access the machine.</span></span>
 
--   Views フォルダーで、"Welcome.xaml" という新しい空白のページを追加します。 次の XAML を追加して、ユーザー インターフェイスを完成させます。 これには、タイトル、ログインしているユーザー名、および 2 つのボタンが表示されます。 ボタンのうち 1 つはユーザーの一覧 (後で作成します) に戻るボタンで、もう 1 つのボタンはこのユーザーの消去を処理するボタンです。
+-   <span data-ttu-id="81f77-211">Views フォルダーで、"Welcome.xaml" という新しい空白のページを追加します。</span><span class="sxs-lookup"><span data-stu-id="81f77-211">In the Views folder add a new blank page called "Welcome.xaml".</span></span> <span data-ttu-id="81f77-212">次の XAML を追加して、ユーザー インターフェイスを完成させます。</span><span class="sxs-lookup"><span data-stu-id="81f77-212">Add the following XAML to complete the user interface.</span></span> <span data-ttu-id="81f77-213">これには、タイトル、ログインしているユーザー名、および 2 つのボタンが表示されます。</span><span class="sxs-lookup"><span data-stu-id="81f77-213">This will display a title, the logged in username, and two buttons.</span></span> <span data-ttu-id="81f77-214">ボタンのうち 1 つはユーザーの一覧 (後で作成します) に戻るボタンで、もう 1 つのボタンはこのユーザーの消去を処理するボタンです。</span><span class="sxs-lookup"><span data-stu-id="81f77-214">One of the buttons will navigate back to a user list (that you will create later), and the other button will handle forgetting this user.</span></span>
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -519,7 +519,7 @@ ms.lasthandoff: 02/07/2017
     </Grid>
     ```
 
--   Welcome.xaml.cs 分離コード ファイルで、ログオンしているアカウントを保持する新しいプライベート変数を追加します。 OnNavigateTo イベントをオーバーライドするメソッドを実装する必要があります、このメソッドには、ウェルカム ページに渡されたアカウントが格納されます。 また、XAML で定義された 2 つのボタンのクリック イベントも実装する必要があります。 Models フォルダーと Utils フォルダーへの参照が必要になります。
+-   <span data-ttu-id="81f77-215">Welcome.xaml.cs 分離コード ファイルで、ログオンしているアカウントを保持する新しいプライベート変数を追加します。</span><span class="sxs-lookup"><span data-stu-id="81f77-215">In the Welcome.xaml.cs code behind file, add a new private variable that will hold the account that is logged in.</span></span> <span data-ttu-id="81f77-216">OnNavigateTo イベントをオーバーライドするメソッドを実装する必要があります、このメソッドには、ウェルカム ページに渡されたアカウントが格納されます。</span><span class="sxs-lookup"><span data-stu-id="81f77-216">You will need to implement a method to override the OnNavigateTo event, this will store the account passed to the welcome page.</span></span> <span data-ttu-id="81f77-217">また、XAML で定義された 2 つのボタンのクリック イベントも実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="81f77-217">You will also need to implement the click event for the two buttons defined in the XAML.</span></span> <span data-ttu-id="81f77-218">Models フォルダーと Utils フォルダーへの参照が必要になります。</span><span class="sxs-lookup"><span data-stu-id="81f77-218">You will need a reference to the Models and Utils folders.</span></span>
 
     ```cs
     using PassportLogin.Models;
@@ -564,7 +564,7 @@ ms.lasthandoff: 02/07/2017
     }
     ```
 
--   ユーザーの消去クリック イベントにコメント アウトされた行があることに注目してください。 アカウントは、ローカルの一覧から削除されますが、現在のところ Windows Hello から削除する方法はありません。 Windows Hello ユーザーの削除を処理する新しいメソッドを MicrosoftPassportHelper.cs に実装する必要があります。 このメソッドは、他の Windows Hello API を使ってアカウントを開いたり削除したりします。 実際の環境では、アカウントを削除するとサーバーやデータベースに通知されるため、ユーザー データベースは有効なままです。 Models フォルダーへの参照が必要になります。
+-   <span data-ttu-id="81f77-219">ユーザーの消去クリック イベントにコメント アウトされた行があることに注目してください。</span><span class="sxs-lookup"><span data-stu-id="81f77-219">You may have noticed a line commented out in the forget user click event.</span></span> <span data-ttu-id="81f77-220">アカウントは、ローカルの一覧から削除されますが、現在のところ Windows Hello から削除する方法はありません。</span><span class="sxs-lookup"><span data-stu-id="81f77-220">The account is being removed from your local list but currently there is no way to be removed from Windows Hello.</span></span> <span data-ttu-id="81f77-221">Windows Hello ユーザーの削除を処理する新しいメソッドを MicrosoftPassportHelper.cs に実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="81f77-221">You need to implement a new method in MicrosoftPassportHelper.cs that will handle removing a Windows Hello user.</span></span> <span data-ttu-id="81f77-222">このメソッドは、他の Windows Hello API を使ってアカウントを開いたり削除したりします。</span><span class="sxs-lookup"><span data-stu-id="81f77-222">This method will use other Windows Hello APIs to open and delete the account.</span></span> <span data-ttu-id="81f77-223">実際の環境では、アカウントを削除するとサーバーやデータベースに通知されるため、ユーザー データベースは有効なままです。</span><span class="sxs-lookup"><span data-stu-id="81f77-223">In the real world when you delete an account the server or database should be notified so the user database remains valid.</span></span> <span data-ttu-id="81f77-224">Models フォルダーへの参照が必要になります。</span><span class="sxs-lookup"><span data-stu-id="81f77-224">You will need a reference to the Models folder.</span></span>
 
     ```cs
     using PassportLogin.Models;
@@ -590,7 +590,7 @@ ms.lasthandoff: 02/07/2017
     }
     ```
 
--   Welcome.xaml.cs に戻り、RemovePassportAccountAsync を呼び出す行のコメントを解除します。
+-   <span data-ttu-id="81f77-225">Welcome.xaml.cs に戻り、RemovePassportAccountAsync を呼び出す行のコメントを解除します。</span><span class="sxs-lookup"><span data-stu-id="81f77-225">Back in Welcome.xaml.cs, uncomment the line that calls RemovePassportAccountAsync.</span></span>
 
     ```cs
     private void Button_Forget_User_Click(object sender, RoutedEventArgs e)
@@ -605,7 +605,7 @@ ms.lasthandoff: 02/07/2017
     }
     ```
 
--   SignInPassport メソッド (Login.xaml.cs の) で、CreatePassportKeyAsync が成功すると、ようこそ画面に移動し、Account が渡されます。
+-   <span data-ttu-id="81f77-226">SignInPassport メソッド (Login.xaml.cs の) で、CreatePassportKeyAsync が成功すると、ようこそ画面に移動し、Account が渡されます。</span><span class="sxs-lookup"><span data-stu-id="81f77-226">In the SignInPassport method (of Login.xaml.cs), once the CreatePassportKeyAsync is successful it should navigate to the Welcome screen and pass the Account.</span></span>
 
     ```cs
     private async void SignInPassport()
@@ -629,11 +629,11 @@ ms.lasthandoff: 02/07/2017
     }
     ```
 
--   アプリをビルドして実行します。 "sampleUsername" を使ってログインし、[Login] をクリックします。 PIN を入力し、成功した場合は、自動的にようこそ画面に移動します。 ユーザーの消去ボタンをクリックし、出力ウィンドウでユーザーが削除されたかどうかを確認してください。 ユーザーが削除されても、ウェルカム ページから移動しない点に注意してください。 アプリが移動できるユーザーの選択ページを作成する必要があります。
+-   <span data-ttu-id="81f77-227">アプリをビルドして実行します。</span><span class="sxs-lookup"><span data-stu-id="81f77-227">Build and run the application.</span></span> <span data-ttu-id="81f77-228">"sampleUsername" を使ってログインし、[Login] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="81f77-228">Login with "sampleUsername" and click login.</span></span> <span data-ttu-id="81f77-229">PIN を入力し、成功した場合は、自動的にようこそ画面に移動します。</span><span class="sxs-lookup"><span data-stu-id="81f77-229">Enter your PIN and if successful you should be navigated to the welcome screen.</span></span> <span data-ttu-id="81f77-230">ユーザーの消去ボタンをクリックし、出力ウィンドウでユーザーが削除されたかどうかを確認してください。</span><span class="sxs-lookup"><span data-stu-id="81f77-230">Try clicking forget user and monitor the output window to see if the user was deleted.</span></span> <span data-ttu-id="81f77-231">ユーザーが削除されても、ウェルカム ページから移動しない点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="81f77-231">Notice that when the user is deleted you remain on the welcome page.</span></span> <span data-ttu-id="81f77-232">アプリが移動できるユーザーの選択ページを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="81f77-232">You will need to create a user selection page that the app can navigate to.</span></span>
 
     ![Windows Hello のようこそ画面](images/passport-login-9.png)
 
--   Views フォルダーで、"UserSelection.xaml" という新しい空白ページを作成し、次の XAML を追加してユーザー インターフェイスを定義します。 このページには、ローカル アカウントの一覧にすべてのユーザーを表示する [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) と、ログイン ページに移動してユーザーが別のアカウントを追加できるようにする Button が含められます。
+-   <span data-ttu-id="81f77-234">Views フォルダーで、"UserSelection.xaml" という新しい空白ページを作成し、次の XAML を追加してユーザー インターフェイスを定義します。</span><span class="sxs-lookup"><span data-stu-id="81f77-234">In the Views folder create a new blank page called "UserSelection.xaml" and add the following XAML to define the user interface.</span></span> <span data-ttu-id="81f77-235">このページには、ローカル アカウントの一覧にすべてのユーザーを表示する [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) と、ログイン ページに移動してユーザーが別のアカウントを追加できるようにする Button が含められます。</span><span class="sxs-lookup"><span data-stu-id="81f77-235">This page will contain a [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) that displays all the users in the local accounts list, and a Button that will navigate to the login page to allow the user to add another account.</span></span>
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -652,10 +652,10 @@ ms.lasthandoff: 02/07/2017
 
         <Button x:Name="AddUserButton" Content="+" FontSize="36" Width="60" Click="AddUserButton_Click" HorizontalAlignment="Center"/>
       </StackPanel>
-    </Grid><
+    </Grid>
     ```
 
--   UserSelection.xaml.cs で、ローカルの一覧にアカウントが存在しない場合にログイン ページに移動する loaded メソッドを実装します。 ListView の SelectionChanged イベントと Button のクリック イベントも実装します。
+-   <span data-ttu-id="81f77-236">UserSelection.xaml.cs で、ローカルの一覧にアカウントが存在しない場合にログイン ページに移動する loaded メソッドを実装します。</span><span class="sxs-lookup"><span data-stu-id="81f77-236">In UserSelection.xaml.cs implement the loaded method that will navigate to the login page if there are no accounts in the local list.</span></span> <span data-ttu-id="81f77-237">ListView の SelectionChanged イベントと Button のクリック イベントも実装します。</span><span class="sxs-lookup"><span data-stu-id="81f77-237">Also implement the SelectionChanged event for the ListView and a click event for the Button.</span></span>
 
     ```cs
     using System.Diagnostics;
@@ -716,7 +716,7 @@ ms.lasthandoff: 02/07/2017
 
 <!-- -->
 
--   アプリには、UserSelection ページへの移動が必要ないくつかの場所があります。 MainPage.xaml.cs では、Login ページではなく UserSelection ページに移動する必要があります。 MainPage で読み込みイベントが発生したときは、アカウントが存在することを UserSelection ページが確認できるようにアカウントの一覧を読み込む必要があります。 これには、loaded メソッドが非同期になるように変更するだけでなく、Utils フォルダーへの参照を追加することも必要です。
+-   <span data-ttu-id="81f77-238">アプリには、UserSelection ページへの移動が必要ないくつかの場所があります。</span><span class="sxs-lookup"><span data-stu-id="81f77-238">There are a few places in the app where you want to navigated to the UserSelection page.</span></span> <span data-ttu-id="81f77-239">MainPage.xaml.cs では、Login ページではなく UserSelection ページに移動する必要があります。</span><span class="sxs-lookup"><span data-stu-id="81f77-239">In MainPage.xaml.cs you should navigate to the UserSelection page instead of the Login page.</span></span> <span data-ttu-id="81f77-240">MainPage で読み込みイベントが発生したときは、アカウントが存在することを UserSelection ページが確認できるようにアカウントの一覧を読み込む必要があります。</span><span class="sxs-lookup"><span data-stu-id="81f77-240">While you are in the loaded event in MainPage you will need to load the accounts list so that the UserSelection page can check if there are any accounts.</span></span> <span data-ttu-id="81f77-241">これには、loaded メソッドが非同期になるように変更するだけでなく、Utils フォルダーへの参照を追加することも必要です。</span><span class="sxs-lookup"><span data-stu-id="81f77-241">This will require changing the loaded method to be async and also adding a reference to the Utils folder.</span></span>
 
     ```cs
     using PassportLogin.Utils;
@@ -729,7 +729,7 @@ ms.lasthandoff: 02/07/2017
     }
     ```
 
--   次に、ウェルカム ページから UserSelection ページに移動します。 どちらのクリック イベントでも、UserSelection ページに戻る必要があります。
+-   <span data-ttu-id="81f77-242">次に、ウェルカム ページから UserSelection ページに移動します。</span><span class="sxs-lookup"><span data-stu-id="81f77-242">Next you will want to navigate to the UserSelection page from the Welcome page.</span></span> <span data-ttu-id="81f77-243">どちらのクリック イベントでも、UserSelection ページに戻る必要があります。</span><span class="sxs-lookup"><span data-stu-id="81f77-243">In both click events you should navigate back to the UserSelection page.</span></span>
 
     ```cs
     private void Button_Restart_Click(object sender, RoutedEventArgs e)
@@ -752,7 +752,7 @@ ms.lasthandoff: 02/07/2017
     }
     ```
 
--   Login ページでは、UserSelection ページの一覧から選択されたアカウントにログインするためのコードが必要です。 OnNavigatedTo イベントには、ナビゲーションに渡されるアカウントを格納します。 まず、アカウントが既存のアカウントかどうかを識別する新しいプライベート変数を追加します。 次に、OnNavigatedTo イベントを処理します。
+-   <span data-ttu-id="81f77-244">Login ページでは、UserSelection ページの一覧から選択されたアカウントにログインするためのコードが必要です。</span><span class="sxs-lookup"><span data-stu-id="81f77-244">In the Login page you need code to log in to the account selected from the list in the UserSelection page.</span></span> <span data-ttu-id="81f77-245">OnNavigatedTo イベントには、ナビゲーションに渡されるアカウントを格納します。</span><span class="sxs-lookup"><span data-stu-id="81f77-245">In OnNavigatedTo event store the account passed to the navigation.</span></span> <span data-ttu-id="81f77-246">まず、アカウントが既存のアカウントかどうかを識別する新しいプライベート変数を追加します。</span><span class="sxs-lookup"><span data-stu-id="81f77-246">Start by adding a new private variable that will identify if the account is an existing account.</span></span> <span data-ttu-id="81f77-247">次に、OnNavigatedTo イベントを処理します。</span><span class="sxs-lookup"><span data-stu-id="81f77-247">Then handle the OnNavigatedTo event.</span></span>
 
     ```cs
     namespace PassportLogin.Views
@@ -799,7 +799,7 @@ ms.lasthandoff: 02/07/2017
     }
     ```
 
--   選択されたアカウントにサインインするには、SignInPassport メソッドを更新する必要があります。 MicrosoftPassportHelper には、Passport でアカウントを開くための別のメソッドが必要になります。アカウントには、既に Passport キーが作成されているためです。 MicrosoftPassportHelper.cs に新しいメソッドを実装し、Passport を使って既存のユーザーにサインインします。 コードの各部分については、コードのコメントをお読みください。
+-   <span data-ttu-id="81f77-248">選択されたアカウントにサインインするには、SignInPassport メソッドを更新する必要があります。</span><span class="sxs-lookup"><span data-stu-id="81f77-248">The SignInPassport method will need to be updated to sign in to the selected account.</span></span> <span data-ttu-id="81f77-249">MicrosoftPassportHelper には、Passport でアカウントを開くための別のメソッドが必要になります。アカウントには、既に Passport キーが作成されているためです。</span><span class="sxs-lookup"><span data-stu-id="81f77-249">The MicrosoftPassportHelper will need another method to open the account with Passport, as the account already has a Passport key created for it.</span></span> <span data-ttu-id="81f77-250">MicrosoftPassportHelper.cs に新しいメソッドを実装し、Passport を使って既存のユーザーにサインインします。</span><span class="sxs-lookup"><span data-stu-id="81f77-250">Implement the new method in MicrosoftPassportHelper.cs to sign in an existing user with passport.</span></span> <span data-ttu-id="81f77-251">コードの各部分については、コードのコメントをお読みください。</span><span class="sxs-lookup"><span data-stu-id="81f77-251">For information on each part of the code please read through the code comments.</span></span>
 
     ```cs
     /// <summary>
@@ -846,7 +846,7 @@ ms.lasthandoff: 02/07/2017
     }
     ```
 
--   既存のアカウントを処理するには、Login.xaml.cs の SignInPassport メソッドを更新します。 この処理には、MicrosoftPassportHelper.cs の新しいメソッドが使われます。 成功した場合、アカウントにサインインされ、自動的にようこそ画面に移動します。
+-   <span data-ttu-id="81f77-252">既存のアカウントを処理するには、Login.xaml.cs の SignInPassport メソッドを更新します。</span><span class="sxs-lookup"><span data-stu-id="81f77-252">Update the SignInPassport method in Login.xaml.cs to handle the existing account.</span></span> <span data-ttu-id="81f77-253">この処理には、MicrosoftPassportHelper.cs の新しいメソッドが使われます。</span><span class="sxs-lookup"><span data-stu-id="81f77-253">This will use the new method in the MicrosoftPassportHelper.cs.</span></span> <span data-ttu-id="81f77-254">成功した場合、アカウントにサインインされ、自動的にようこそ画面に移動します。</span><span class="sxs-lookup"><span data-stu-id="81f77-254">If successful the account will be signed in and the user navigated to the welcome screen.</span></span>
 
     ```cs
     private async void SignInPassport()
@@ -877,16 +877,16 @@ ms.lasthandoff: 02/07/2017
     }
     ```
 
--   アプリをビルドして実行します。 "sampleUsername" を使ってログインします。 PIN を入力します。成功した場合は、自動的にようこそ画面に移動します。 ユーザーの一覧に戻るボタンをクリックします。 一覧にユーザーが表示されます。 この Passport をクリックすると、パスワードなどを再入力しなくても再度サインインできるようになります。
+-   <span data-ttu-id="81f77-255">アプリをビルドして実行します。</span><span class="sxs-lookup"><span data-stu-id="81f77-255">Build and run the application.</span></span> <span data-ttu-id="81f77-256">"sampleUsername" を使ってログインします。</span><span class="sxs-lookup"><span data-stu-id="81f77-256">Login with "sampleUsername".</span></span> <span data-ttu-id="81f77-257">PIN を入力します。成功した場合は、自動的にようこそ画面に移動します。</span><span class="sxs-lookup"><span data-stu-id="81f77-257">Type in your PIN and if successful you will be navigated to the Welcome screen.</span></span> <span data-ttu-id="81f77-258">ユーザーの一覧に戻るボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="81f77-258">Click back to user list.</span></span> <span data-ttu-id="81f77-259">一覧にユーザーが表示されます。</span><span class="sxs-lookup"><span data-stu-id="81f77-259">You should now see a user in the list.</span></span> <span data-ttu-id="81f77-260">この Passport をクリックすると、パスワードなどを再入力しなくても再度サインインできるようになります。</span><span class="sxs-lookup"><span data-stu-id="81f77-260">If you click on this Passport enables you to sign back in without having to re-enter any passwords etc.</span></span>
 
     ![Windows Hello のユーザー選択用の一覧](images/passport-login-10.png)
 
-## <a name="exercise-3-registering-a-new-windows-hello-user"></a>演習 3: 新しい Windows Hello ユーザーを登録する
+## <a name="exercise-3-registering-a-new-windows-hello-user"></a><span data-ttu-id="81f77-262">演習 3: 新しい Windows Hello ユーザーを登録する</span><span class="sxs-lookup"><span data-stu-id="81f77-262">Exercise 3: Registering a new Windows Hello user</span></span>
 
 
-この演習では、Windows Hello を使って新しいアカウントを作成する新しいページを作成します。 このページは、Login ページの動作と似ています。 Login ページは、Windows Hello の使用に移行する既存のユーザーのために実装されます。 PassportRegister ページでは、新しいユーザーの Windows Hello の登録が作成されます。
+<span data-ttu-id="81f77-263">この演習では、Windows Hello を使って新しいアカウントを作成する新しいページを作成します。</span><span class="sxs-lookup"><span data-stu-id="81f77-263">In this exercise you will be creating a new page that will create a new account with Windows Hello.</span></span> <span data-ttu-id="81f77-264">このページは、Login ページの動作と似ています。</span><span class="sxs-lookup"><span data-stu-id="81f77-264">This will work similarly to how the Login page works.</span></span> <span data-ttu-id="81f77-265">Login ページは、Windows Hello の使用に移行する既存のユーザーのために実装されます。</span><span class="sxs-lookup"><span data-stu-id="81f77-265">The Login page is implemented for an existing user that is migrating to use Windows Hello.</span></span> <span data-ttu-id="81f77-266">PassportRegister ページでは、新しいユーザーの Windows Hello の登録が作成されます。</span><span class="sxs-lookup"><span data-stu-id="81f77-266">A PassportRegister page will create Windows Hello registration for a new user.</span></span>
 
--   Views フォルダーで、"PassportRegister.xaml" という新しい空白のページを作成します。 XAML で、次の内容を追加してユーザー インターフェイスをセットアップします。 このインターフェイスは、Login ページに似ています。
+-   <span data-ttu-id="81f77-267">Views フォルダーで、"PassportRegister.xaml" という新しい空白のページを作成します。</span><span class="sxs-lookup"><span data-stu-id="81f77-267">In the views folder create a new blank page called "PassportRegister.xaml".</span></span> <span data-ttu-id="81f77-268">XAML で、次の内容を追加してユーザー インターフェイスをセットアップします。</span><span class="sxs-lookup"><span data-stu-id="81f77-268">In the XAML add in the following to setup the user interface.</span></span> <span data-ttu-id="81f77-269">このインターフェイスは、Login ページに似ています。</span><span class="sxs-lookup"><span data-stu-id="81f77-269">The interface here is similar to the Login page.</span></span>
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -913,7 +913,7 @@ ms.lasthandoff: 02/07/2017
     </Grid>
     ```
 
--   PassportRegister.xaml.cs 分離コード ファイルで、プライベート変数 Account と登録ボタンのクリック イベントを実装します。 これにより、新しいローカル アカウントが追加され、Passport キーが作成されます。
+-   <span data-ttu-id="81f77-270">PassportRegister.xaml.cs 分離コード ファイルで、プライベート変数 Account と登録ボタンのクリック イベントを実装します。</span><span class="sxs-lookup"><span data-stu-id="81f77-270">In the PassportRegister.xaml.cs code behind file implement a private Account variable and a click event for the register Button.</span></span> <span data-ttu-id="81f77-271">これにより、新しいローカル アカウントが追加され、Passport キーが作成されます。</span><span class="sxs-lookup"><span data-stu-id="81f77-271">This will add a new local account and create a Passport key.</span></span>
 
     ```cs
     using PassportLogin.Models;
@@ -956,7 +956,7 @@ ms.lasthandoff: 02/07/2017
     }
     ```
 
--   登録ボタンがクリックされたら、Login ページからこのページに移動する必要があります。
+-   <span data-ttu-id="81f77-272">登録ボタンがクリックされたら、Login ページからこのページに移動する必要があります。</span><span class="sxs-lookup"><span data-stu-id="81f77-272">You need to navigate to this page from the Login page when register is clicked.</span></span>
 
     ```cs
     private void RegisterButtonTextBlock_OnPointerPressed(object sender, PointerRoutedEventArgs e)
@@ -966,13 +966,13 @@ ms.lasthandoff: 02/07/2017
     }
     ```
 
--   アプリをビルドして実行します。 新しいユーザーを登録してみます。 その後、ユーザーの一覧に戻り、そのユーザーを選んでログインできることを検証します。
+-   <span data-ttu-id="81f77-273">アプリをビルドして実行します。</span><span class="sxs-lookup"><span data-stu-id="81f77-273">Build and run the application.</span></span> <span data-ttu-id="81f77-274">新しいユーザーを登録してみます。</span><span class="sxs-lookup"><span data-stu-id="81f77-274">Try to register a new user.</span></span> <span data-ttu-id="81f77-275">その後、ユーザーの一覧に戻り、そのユーザーを選んでログインできることを検証します。</span><span class="sxs-lookup"><span data-stu-id="81f77-275">Then return to the user list and validate that you can select that user and login.</span></span>
 
     ![Windows Hello の新しいユーザーの登録](images/passport-login-11.png)
 
-このラボでは、新しい Windows Hello API を使って既存のユーザーを認証し、新しいユーザーのアカウントを作成するために必要となる基本的なスキルを習得しました。 この新しい知識があれば、ユーザーはアプリケーションのパスワードを記憶する必要がなくなりますが、引き続きアプリケーションをユーザー認証によって確実に保護することができます。 Windows 10 では、Windows Hello の新しい認証テクノロジを使って、その生体認証ログイン オプションがサポートされます。
+<span data-ttu-id="81f77-277">このラボでは、新しい Windows Hello API を使って既存のユーザーを認証し、新しいユーザーのアカウントを作成するために必要となる基本的なスキルを習得しました。</span><span class="sxs-lookup"><span data-stu-id="81f77-277">In this lab you have learned the essential skills you need to use the new Windows Hello API to authenticate existing users and create accounts for new users.</span></span> <span data-ttu-id="81f77-278">この新しい知識があれば、ユーザーはアプリケーションのパスワードを記憶する必要がなくなりますが、引き続きアプリケーションをユーザー認証によって確実に保護することができます。</span><span class="sxs-lookup"><span data-stu-id="81f77-278">With this new knowledge you can start removing the need for users to remember passwords for your application, yet remain confident that your applications remain protected by user authentication.</span></span> <span data-ttu-id="81f77-279">Windows 10 では、Windows Hello の新しい認証テクノロジを使って、その生体認証ログイン オプションがサポートされます。</span><span class="sxs-lookup"><span data-stu-id="81f77-279">Windows 10 uses Windows Hello's new authentication technology to support its biometrics login options.</span></span>
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="81f77-280">関連トピック</span><span class="sxs-lookup"><span data-stu-id="81f77-280">Related topics</span></span>
 
-* [Windows Hello](microsoft-passport.md)
-* [Windows Hello ログイン サービス](microsoft-passport-login-auth-service.md)
+* [<span data-ttu-id="81f77-281">Windows Hello</span><span class="sxs-lookup"><span data-stu-id="81f77-281">Windows Hello</span></span>](microsoft-passport.md)
+* [<span data-ttu-id="81f77-282">Windows Hello ログイン サービス</span><span class="sxs-lookup"><span data-stu-id="81f77-282">Windows Hello login service</span></span>](microsoft-passport-login-auth-service.md)

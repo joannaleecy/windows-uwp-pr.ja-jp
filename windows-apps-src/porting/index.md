@@ -1,44 +1,42 @@
 ---
-author: mcleblanc
+author: stevewhims
 ms.assetid: ba2ac5f5-1e0d-4f1d-a6f8-6a65b4cff501
-description: "ここでは、既存のアプリをユニバーサル Windows プラットフォーム (UWP) に移行する方法について説明します。UWP で 1 つの Windows 10 アプリ パッケージを作成するだけで、ユーザーはすべての種類のデバイスにそのアプリをインストールすることができます。 アプリは、魅力的な新しいハードウェア、大きな収益を得るチャンス、最新の API セット、アダプティブ UI コントロール、およびマウス、キーボード、タッチ、音声などの幅広い入力形式を活用できます。"
-title: "Windows 10 へのアプリの移植"
-ms.author: markl
+description: ここでは、既存のアプリをユニバーサル Windows プラットフォーム (UWP) に移行する方法について説明します。UWP で 1 つの Windows 10 アプリ パッケージを作成するだけで、ユーザーはすべての種類のデバイスにそのアプリをインストールすることができます。 アプリは、魅力的な新しいハードウェア、大きな収益を得るチャンス、最新の API セット、アダプティブ UI コントロール、およびマウス、キーボード、タッチ、音声などの幅広い入力形式を活用できます。
+title: Windows 10 へのアプリの移植
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: cbb3b501fcaf1e51ca313423e812a4119ffca49c
-ms.lasthandoff: 02/07/2017
-
+keywords: windows 10, UWP
+ms.localizationpriority: medium
+ms.openlocfilehash: 8057bd4efcf1d7bfdc704f6217915fac6a019386
+ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/30/2018
+ms.locfileid: "1815577"
 ---
+# <a name="porting-apps-to-windows-10"></a><span data-ttu-id="cedaa-105">Windows 10 へのアプリの移植</span><span class="sxs-lookup"><span data-stu-id="cedaa-105">Porting apps to Windows 10</span></span>
 
-# <a name="porting-apps-to-windows-10"></a>Windows 10 へのアプリの移植
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+<span data-ttu-id="cedaa-106">ここでは、既存のアプリをユニバーサル Windows プラットフォーム (UWP) に移行する方法について説明します。UWP で 1 つの Windows 10 アプリ パッケージを作成するだけで、ユーザーはすべての種類のデバイスにそのアプリをインストールすることができます。</span><span class="sxs-lookup"><span data-stu-id="cedaa-106">This section describes how to port your existing app to the Universal Windows Platform (UWP) where you can create a single Windows 10 app package that your customers can install onto all types of devices.</span></span> <span data-ttu-id="cedaa-107">アプリは、魅力的な新しいハードウェア、大きな収益を得るチャンス、最新の API セット、アダプティブ UI コントロール、およびマウス、キーボード、タッチ、音声などの幅広い入力形式を活用できます。</span><span class="sxs-lookup"><span data-stu-id="cedaa-107">Your app will benefit from exciting new hardware, great monetization opportunities, a modern API set, adaptive UI controls, and a range of input modalities including mouse/keyboard, touch, and speech.</span></span>
 
-ここでは、既存のアプリをユニバーサル Windows プラットフォーム (UWP) に移行する方法について説明します。UWP で 1 つの Windows 10 アプリ パッケージを作成するだけで、ユーザーはすべての種類のデバイスにそのアプリをインストールすることができます。 アプリは、魅力的な新しいハードウェア、大きな収益を得るチャンス、最新の API セット、アダプティブ UI コントロール、およびマウス、キーボード、タッチ、音声などの幅広い入力形式を活用できます。
+<span data-ttu-id="cedaa-108">Windows ランタイム (WinRT) は、ユニバーサル Windows プラットフォーム (UWP) アプリを構築できるテクノロジです。</span><span class="sxs-lookup"><span data-stu-id="cedaa-108">The Windows Runtime (WinRT) is the technology that lets you build Universal Windows Platform (UWP) apps.</span></span> <span data-ttu-id="cedaa-109">WinRT および UWP アプリの背景知識について詳しくは、「[ユニバーサル Windows プラットフォーム (UWP) アプリとは](https://msdn.microsoft.com/library/windows/apps/dn726767)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="cedaa-109">You can refer to [What's a Universal Windows Platform (UWP) app?](https://msdn.microsoft.com/library/windows/apps/dn726767) for more background on WinRT and UWP apps.</span></span>
 
-Windows ランタイム (WinRT) は、ユニバーサル Windows プラットフォーム (UWP) アプリを構築できるテクノロジです。 WinRT および UWP アプリの背景知識について詳しくは、「[ユニバーサル Windows プラットフォーム (UWP) アプリとは](https://msdn.microsoft.com/library/windows/apps/dn726767)」をご覧ください。
+<span data-ttu-id="cedaa-110">この移植ガイドでは、現在のアプリのテクノロジとユニバーサル Windows プラットフォーム (UWP) の違いについて説明します。</span><span class="sxs-lookup"><span data-stu-id="cedaa-110">This porting guide explains the differences between your current app's technology and the Universal Windows Platform (UWP).</span></span> <span data-ttu-id="cedaa-111">テクノロジ間のパスが理解できれば、デベロッパー センターの以降のリソースに進むことができます。これは、UWP アプリを開発するための包括的なリソースです。</span><span class="sxs-lookup"><span data-stu-id="cedaa-111">Once the path between technologies is understood, you'll be able to dive into the rest of the Developer Center, which is a comprehensive resource for developing UWP apps.</span></span> <span data-ttu-id="cedaa-112">このためには、準備ができたらまず「[ストア アプリの開発方法](https://msdn.microsoft.com/library/windows/apps/dn726537)」を参照することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="cedaa-112">A good way to do that, when you're ready, is to start with [How to develop a Store app](https://msdn.microsoft.com/library/windows/apps/dn726537).</span></span>
 
-この移植ガイドでは、現在のアプリのテクノロジとユニバーサル Windows プラットフォーム (UWP) の違いについて説明します。 テクノロジ間のパスが理解できれば、デベロッパー センターの以降のリソースに進むことができます。これは、UWP アプリを開発するための包括的なリソースです。 このためには、準備ができたらまず「[ストア アプリの開発方法](https://msdn.microsoft.com/library/windows/apps/dn726537)」を参照することをお勧めします。
-
-| トピック | 説明 |
+| <span data-ttu-id="cedaa-113">トピック</span><span class="sxs-lookup"><span data-stu-id="cedaa-113">Topic</span></span> | <span data-ttu-id="cedaa-114">説明</span><span class="sxs-lookup"><span data-stu-id="cedaa-114">Description</span></span> |
 |-------|-------------|
-| [Windows Phone Silverlight から UWP への移行](wpsl-to-uwp-root.md) | Windows Phone Silverlight アプリの開発者は、Windows 10 への移行で、自身のスキル セットとソース コードを十分に活用できます。 Windows 10 では、UWP アプリを作成できます。これは、どのような種類のデバイスにでもインストールできる単一のアプリ パッケージです。 |
-| [Windows ランタイム 8.x から UWP への移行](w8x-to-uwp-root.md) | ユニバーサル 8.1 アプリがある場合は、その対象が、Windows 8.1 と Windows Phone 8.1 のいずれかであるか、両方であるかにかかわらず、ソース コードとスキルがスムーズに Windows 10 に移植されることがわかるでしょう。 Windows 10 では、UWP アプリを作成できます。これは、どのような種類のデバイスにでもインストールできる単一のアプリ パッケージです。 |
-| [UWP Microsoft Visual Studio 2015 RC プロジェクトを RTM に更新する](update-your-visual-studio-2015-rc-project-to-rtm.md) | Microsoft Visual Studio 2015 RC で作成した Windows 10 プロジェクトがある場合、プロジェクト ファイルを Visual Studio 2015 RTM に適した形式に更新するには 2 つの方法があります。 推奨される方法は、Visual Studio 2015 RTM で新しい Windows 10 プロジェクトを作成し、お使いのファイルをそのプロジェクトにコピーする方法です。 代わりに、詳細なドキュメントに従って、既存のプロジェクト ファイルを編集し、新しい形式に移行することもできます。 |
-| [Android や iOS 開発者向けの Windows アプリの概念マッピング](android-ios-uwp-map.md) | このリソースには、Android や iOS のスキルとコードを持つ開発者が Windows 10 とユニバーサル Windows プラットフォームに移行する場合に、それら 3 つのプラットフォーム間でプラットフォームの機能と知識を関連付けるために必要なすべての情報が含まれています。 |
-| [iOS から UWP への移行](ios-to-uwp-root.md) | iOS 向けに開発したアプリを Windows 10 と UWP に移行するにはどうすればよいでしょうか。 これは思っているほど難しくはありません。 iOS デバイスと同様に Windows でも (おそらくより快適に) 動作する優れたアプリの作成に必要なツール、手法、情報が用意されています。 |
-| [デスクトップから UWP への移行](desktop-to-uwp-root.md) | Win32 および .NET 4.6.1 デスクトップ アプリケーションをユニバーサル Windows プラットフォーム (UWP) アプリに変換します。 |
-| [Web アプリから UWP への移行](hwa-to-uwp-root.md) | Web アプリケーションをユニバーサル Windows プラットフォーム (UWP) アプリに変換します。 * 開発プラットフォームとして Windows または Mac を使用するための手順と、UWP を使用できるように Chrome アプリを変換するための手順が含まれます。 |
- 
-## <a name="related-topics"></a>関連トピック
+| [<span data-ttu-id="cedaa-115">Windows Phone Silverlight から UWP への移行</span><span class="sxs-lookup"><span data-stu-id="cedaa-115">Move from Windows Phone Silverlight to UWP</span></span>](wpsl-to-uwp-root.md) | <span data-ttu-id="cedaa-116">Windows Phone Silverlight アプリの開発者は、Windows 10 への移行で、自身のスキル セットとソース コードを十分に活用できます。</span><span class="sxs-lookup"><span data-stu-id="cedaa-116">If you’re a developer with a Windows Phone Silverlight app, then you can make great use of your skill set and your source code in the move to Windows 10.</span></span> <span data-ttu-id="cedaa-117">Windows 10 では、UWP アプリを作成できます。これは、どのような種類のデバイスにでもインストールできる単一のアプリ パッケージです。</span><span class="sxs-lookup"><span data-stu-id="cedaa-117">With Windows 10, you can create a UWP app, which is a single app package that your customers can install onto every kind of device.</span></span> |
+| [<span data-ttu-id="cedaa-118">Windows ランタイム 8.x から UWP への移行</span><span class="sxs-lookup"><span data-stu-id="cedaa-118">Move from Windows Runtime 8.x to UWP</span></span>](w8x-to-uwp-root.md) | <span data-ttu-id="cedaa-119">ユニバーサル 8.1 アプリがある場合は、その対象が、Windows 8.1 と Windows Phone 8.1 のいずれかであるか、両方であるかにかかわらず、ソース コードとスキルがスムーズに Windows 10 に移植されることがわかるでしょう。</span><span class="sxs-lookup"><span data-stu-id="cedaa-119">If you have a Universal 8.1 app—whether it's targeting Windows 8.1, Windows Phone 8.1, or both—then you'll find that your source code and skills will port smoothly to Windows 10.</span></span> <span data-ttu-id="cedaa-120">Windows 10 では、UWP アプリを作成できます。これは、どのような種類のデバイスにでもインストールできる単一のアプリ パッケージです。</span><span class="sxs-lookup"><span data-stu-id="cedaa-120">With Windows 10, you can create a UWP app, which is a single app package that your customers can install onto every kind of device.</span></span> |
+| [<span data-ttu-id="cedaa-121">Android と iOS 開発者向けの Windows アプリ概念マッピング</span><span class="sxs-lookup"><span data-stu-id="cedaa-121">Windows apps concept mapping for Android and iOS developers</span></span>](android-ios-uwp-map.md) | <span data-ttu-id="cedaa-122">このリソースには、Android や iOS のスキルとコードを持つ開発者が Windows 10 とユニバーサル Windows プラットフォームに移行する場合に、それら 3 つのプラットフォーム間でプラットフォームの機能と知識を関連付けるために必要なすべての情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="cedaa-122">If you're a developer with Android or iOS skills or code, and you want to make the move to Windows 10 and the Universal Windows Platform, then this resource has all you need to map platform features—and your knowledge—between the three platforms.</span></span> |
+| [<span data-ttu-id="cedaa-123">iOS から UWP への移行</span><span class="sxs-lookup"><span data-stu-id="cedaa-123">Move from iOS to UWP</span></span>](ios-to-uwp-root.md) | <span data-ttu-id="cedaa-124">iOS 向けに開発したアプリを Windows 10 と UWP に移行するにはどうすればよいでしょうか。</span><span class="sxs-lookup"><span data-stu-id="cedaa-124">Are you an iOS developer, wondering how to make the move to Windows 10 and the UWP?</span></span> <span data-ttu-id="cedaa-125">これは思っているほど難しくはありません。</span><span class="sxs-lookup"><span data-stu-id="cedaa-125">It needn't be as scary as you think.</span></span> <span data-ttu-id="cedaa-126">iOS デバイスと同様に Windows でも (おそらくより快適に) 動作する優れたアプリの作成に必要なツール、手法、情報が用意されています。</span><span class="sxs-lookup"><span data-stu-id="cedaa-126">We've got the tools, techniques, and info you need to make great apps that work as well on Windows as they do on your iOS devices: maybe better!</span></span> |
+| [<span data-ttu-id="cedaa-127">デスクトップから UWP への移行</span><span class="sxs-lookup"><span data-stu-id="cedaa-127">Move from desktop to UWP</span></span>](desktop-to-uwp-root.md) | <span data-ttu-id="cedaa-128">Win32 および .NET 4.6.1 デスクトップ アプリケーションをユニバーサル Windows プラットフォーム (UWP) アプリに変換します。</span><span class="sxs-lookup"><span data-stu-id="cedaa-128">Convert your Win32 and .NET 4.6.1 desktop applications to Universal Windows Platform (UWP) apps.</span></span> |
+| [<span data-ttu-id="cedaa-129">Web アプリを PWA に変換する</span><span class="sxs-lookup"><span data-stu-id="cedaa-129">Convert your web app to a PWA</span></span>](https://docs.microsoft.com/microsoft-edge/progressive-web-apps) | <span data-ttu-id="cedaa-130">Web アプリをプログレッシブ Web アプリ (PWA) 変換できるようになりました。PWA は、UWP を含むあらゆるプラットフォームで動作します。</span><span class="sxs-lookup"><span data-stu-id="cedaa-130">You can now convert your web app to a Progressive Web App (PWA) will work on any platform, including UWP!</span></span> <span data-ttu-id="cedaa-131">[PWA ビルダー ツール](https://www.pwabuilder.com)により、必要なマニフェストが自動的に生成されます。</span><span class="sxs-lookup"><span data-stu-id="cedaa-131">The [PWA Builder tool](https://www.pwabuilder.com) will generate the necessary manifest for you.</span></span> <span data-ttu-id="cedaa-132">これは、ホスト型 Web アプリ (HWA) ブリッジを置き換えるものです。</span><span class="sxs-lookup"><span data-stu-id="cedaa-132">This replaces the Hosted Web Apps (HWA) bridge.</span></span> |
 
-* [WPF と Silverlight から WinRT への移行](https://msdn.microsoft.com/library/windows/apps/dn263237)
-* [Android から WinRT への移行](https://msdn.microsoft.com/library/windows/apps/jj945421)
-* [Web から WinRT への移行](https://msdn.microsoft.com/library/windows/apps/hh465151)
+## <a name="related-topics"></a><span data-ttu-id="cedaa-133">関連トピック</span><span class="sxs-lookup"><span data-stu-id="cedaa-133">Related topics</span></span>
 
+* [<span data-ttu-id="cedaa-134">WPF と Silverlight から WinRT への移行</span><span class="sxs-lookup"><span data-stu-id="cedaa-134">Move from WPF and Silverlight to WinRT</span></span>](https://msdn.microsoft.com/library/windows/apps/dn263237)
+* [<span data-ttu-id="cedaa-135">Android から WinRT への移行</span><span class="sxs-lookup"><span data-stu-id="cedaa-135">Move from Android to WinRT</span></span>](https://msdn.microsoft.com/library/windows/apps/jj945421)
+* [<span data-ttu-id="cedaa-136">Web から WinRT への移行</span><span class="sxs-lookup"><span data-stu-id="cedaa-136">Move from the web to WinRT</span></span>](https://msdn.microsoft.com/library/windows/apps/hh465151)

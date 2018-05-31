@@ -1,62 +1,43 @@
 ---
 author: mcleanbyron
 ms.assetid: 414ACC73-2A72-465C-BD15-1B51CB2334F2
-title: アプリのパッケージの更新をダウンロードしてインストールする
+title: パッケージの更新プログラムを Microsoft Store からダウンロードしてインストールする
 description: デベロッパー センター ダッシュ ボードでパッケージを必須としてマークする方法と、パッケージ更新をダウンロードしてインストールするためのコードをアプリ内に記述する方法について説明します。
 ms.author: mcleans
-ms.date: 03/22/2018
+ms.date: 04/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, UWP
 ms.localizationpriority: high
-ms.openlocfilehash: ce2f6d6607f09186a3969f37b6808fa1f04fb338
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: daf18cb87360f6717c7ec33d95032343c8fa617e
+ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/30/2018
+ms.locfileid: "1816787"
 ---
-# <a name="download-and-install-package-updates-for-your-app"></a><span data-ttu-id="3b781-104">アプリのパッケージの更新をダウンロードしてインストールする</span><span class="sxs-lookup"><span data-stu-id="3b781-104">Download and install package updates for your app</span></span>
+# <a name="download-and-install-package-updates-from-the-store"></a><span data-ttu-id="78fa1-104">パッケージの更新プログラムを Microsoft Store からダウンロードしてインストールする</span><span class="sxs-lookup"><span data-stu-id="78fa1-104">Download and install package updates from the Store</span></span>
 
+<span data-ttu-id="78fa1-105">Windows 10 バージョン 1607 以降では、[Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 名前空間で [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) クラスのメソッドを使用して、現在のアプリに対するパッケージ更新がないかプログラムによって Microsoft Store でチェックし、更新後のパッケージをダウンロードしてインストールすることができます。</span><span class="sxs-lookup"><span data-stu-id="78fa1-105">Starting in Windows 10, version 1607, you can use methods of the [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) class in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace to programmatically check for package updates for the current app from the Microsoft Store, and download and install the updated packages.</span></span> <span data-ttu-id="78fa1-106">また、Windows デベロッパー センター ダッシュボードで必須としてマークしたパッケージを照会し、必須の更新がインストールされるまで機能を無効にすることもできます。</span><span class="sxs-lookup"><span data-stu-id="78fa1-106">You can also query for packages that you have marked as mandatory on the Windows Dev Center dashboard and disable functionality in your app until the mandatory update is installed.</span></span>
 
-<span data-ttu-id="3b781-105">Windows 10 バージョン 1607 以降では、[Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 名前空間の API を使用して、現在のアプリに対するパッケージ更新をプログラムからチェックし、更新後のパッケージをダウンロードしてインストールすることができます。</span><span class="sxs-lookup"><span data-stu-id="3b781-105">Starting in Windows 10, version 1607, you can use an API in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace to programmatically check for package updates for the current app, and download and install the updated packages.</span></span> <span data-ttu-id="3b781-106">また、[Windows デベロッパー センター ダッシュボードで必須としてマークされている](#mandatory-dashboard)パッケージを照会し、必須の更新がインストールされるまで機能を無効にすることもできます。</span><span class="sxs-lookup"><span data-stu-id="3b781-106">You can also query for packages that have been [marked as mandatory on the Windows Dev Center dashboard](#mandatory-dashboard) and disable functionality in your app until the mandatory update is installed.</span></span>
+<span data-ttu-id="78fa1-107">Windows 10 バージョン 1803 で導入された追加の [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) メソッドを使うと、パッケージの更新プログラムを背後で (ユーザーに通知 UI を表示せずに) ダウンロードおよびインストールしたり、[オプション パッケージ](optional-packages.md)をアンインストールしたり、アプリのダウンロードおよびインストール キューにあるパッケージの情報を取得したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="78fa1-107">Additional [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) methods introduced in Windows 10, version 1803 enable you to download and install package updates silently (without displaying a notification UI to the user), uninstall an [optional package](optional-packages.md), and get info about packages in the download and install queue for your app.</span></span>
 
-<span data-ttu-id="3b781-107">これらの機能は、ユーザー ベースが使用しているアプリや関連サービスを、自動的に最新バージョンに維持するために役立ちます。</span><span class="sxs-lookup"><span data-stu-id="3b781-107">These features help you to automatically keep your user base up to date with the latest version of your app and related services.</span></span>
+<span data-ttu-id="78fa1-108">これらの機能は、ユーザー ベースが使っているアプリ、オプション パッケージ、関連サービスを、Microsoft Store にある最新バージョンに自動的に維持するために役立ちます。</span><span class="sxs-lookup"><span data-stu-id="78fa1-108">These features help you automatically keep your user base up to date with the latest version of your app, optional packages, and related services in the Store.</span></span>
 
-## <a name="api-overview"></a><span data-ttu-id="3b781-108">API の概要</span><span class="sxs-lookup"><span data-stu-id="3b781-108">API overview</span></span>
+## <a name="download-and-install-package-updates-with-the-users-permission"></a><span data-ttu-id="78fa1-109">ユーザーの許可によるパッケージの更新プログラムのダウンロードとインストール</span><span class="sxs-lookup"><span data-stu-id="78fa1-109">Download and install package updates with the user's permission</span></span>
 
-<span data-ttu-id="3b781-109">Windows 10 バージョン 1607 以降を対象としたアプリでは、[StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) クラスの次のメソッドを使用して、パッケージの更新をダウンロードし、インストールすることができます。</span><span class="sxs-lookup"><span data-stu-id="3b781-109">Apps that targets Windows 10, version 1607 or later can use the following methods of the [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) class to download and install package updates.</span></span>
+<span data-ttu-id="78fa1-110">このコード例は、[GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync) メソッドを使って Microsoft Store から利用可能なパッケージの更新プログラムをすべて見つけ、[RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadandinstallstorepackageupdatesasync) メソッドを呼び出して更新プログラムをダウンロードおよびインストールする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="78fa1-110">This code example demonstrates how to use the [GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync) method to discover all available package updates from the Store and then call the [RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadandinstallstorepackageupdatesasync) method to download and install the updates.</span></span> <span data-ttu-id="78fa1-111">このメソッドを使って更新プログラムをダウンロードおよびインストールすると、更新プログラムをダウンロードする前にユーザーの許可を求めるダイアログが OS に表示されます。</span><span class="sxs-lookup"><span data-stu-id="78fa1-111">When using this method to download and install updates, the OS displays a dialog that asks the user's permission before downloading the updates.</span></span>
 
-|  <span data-ttu-id="3b781-110">メソッド</span><span class="sxs-lookup"><span data-stu-id="3b781-110">Method</span></span>  |  <span data-ttu-id="3b781-111">[説明]</span><span class="sxs-lookup"><span data-stu-id="3b781-111">Description</span></span>  |
-|----------|---------------|
-| [<span data-ttu-id="3b781-112">GetAppAndOptionalStorePackageUpdatesAsync</span><span class="sxs-lookup"><span data-stu-id="3b781-112">GetAppAndOptionalStorePackageUpdatesAsync</span></span>](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetAppAndOptionalStorePackageUpdatesAsync) | <span data-ttu-id="3b781-113">利用できるパッケージの更新の一覧を取得するには、このメソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="3b781-113">Call this method to get the list of package updates that are available.</span></span> <span data-ttu-id="3b781-114">パッケージが認定プロセスを通過した後、そのパッケージ更新がアプリで利用可能になったことを **GetAppAndOptionalStorePackageUpdatesAsync** メソッドが認識するまでには、最大で 1 日間の遅延が生じる可能性があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="3b781-114">Note that there can be a delay of up to a day between the time when a package passes the certification process and when the **GetAppAndOptionalStorePackageUpdatesAsync** method recognizes that the package update is available to the app.</span></span> |
-| [<span data-ttu-id="3b781-115">RequestDownloadStorePackageUpdatesAsync</span><span class="sxs-lookup"><span data-stu-id="3b781-115">RequestDownloadStorePackageUpdatesAsync</span></span>](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadstorepackageupdatesasync) | <span data-ttu-id="3b781-116">このメソッドを呼び出して、利用可能なパッケージの更新をダウンロードします (インストールはされません)。</span><span class="sxs-lookup"><span data-stu-id="3b781-116">Call this method to download (but not install) the available package updates.</span></span> <span data-ttu-id="3b781-117">この OS では、更新プログラムのダウンロードに対してユーザーのアクセス許可を求めるダイアログが表示されます。</span><span class="sxs-lookup"><span data-stu-id="3b781-117">This OS displays a dialog that asks the user's permission to download the updates.</span></span> |
-| [<span data-ttu-id="3b781-118">RequestDownloadAndInstallStorePackageUpdatesAsync</span><span class="sxs-lookup"><span data-stu-id="3b781-118">RequestDownloadAndInstallStorePackageUpdatesAsync</span></span>](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadandinstallstorepackageupdatesasync) | <span data-ttu-id="3b781-119">利用可能なパッケージの更新をダウンロードしてインストールするには、このメソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="3b781-119">Call this method to download and install the available package updates.</span></span> <span data-ttu-id="3b781-120">OS では、更新プログラムのダウンロードとインストールに対してユーザーのアクセス許可を求めるダイアログが表示されます。</span><span class="sxs-lookup"><span data-stu-id="3b781-120">The OS displays dialogs that ask the user's permission to download and install the updates.</span></span> <span data-ttu-id="3b781-121">**RequestDownloadStorePackageUpdatesAsync** を呼び出すことでパッケージの更新が既にダウンロードされている場合、このメソッドはダウンロード プロセスをスキップし、更新のインストールのみを行います。</span><span class="sxs-lookup"><span data-stu-id="3b781-121">If you already downloaded the package updates by calling **RequestDownloadStorePackageUpdatesAsync**, this method skips the download process and only installs the updates.</span></span>  |
+> [!NOTE]
+> <span data-ttu-id="78fa1-112">これらのメソッドでは、アプリの必須のパッケージと[オプション パッケージ](optional-packages.md)がサポートされます。</span><span class="sxs-lookup"><span data-stu-id="78fa1-112">These methods support required and [optional packages](optional-packages.md) for your app.</span></span> <span data-ttu-id="78fa1-113">オプション パッケージは、ダウンロード可能なコンテンツ (DLC) アドオン用や、サイズ制約に対応して大規模アプリを分割する場合、コア アプリから分離して追加コンテンツを出荷する場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="78fa1-113">Optional packages are useful for downloadable content (DLC) add-ons, dividing your large app for size constraints, or for shipping additional content separate from your core app.</span></span> <span data-ttu-id="78fa1-114">オプション パッケージ (DLC アドオンを含む) を使うアプリを Microsoft Store に提出する許可を得るには、「[Windows 開発者向けサポート](https://developer.microsoft.com/windows/support)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="78fa1-114">To get permission to submit an app that uses optional packages (including DLC add-ons) to the Store, see [Windows developer support](https://developer.microsoft.com/windows/support).</span></span>
 
-<span/>
+<span data-ttu-id="78fa1-115">このコード例では、次のことを前提条件としています。</span><span class="sxs-lookup"><span data-stu-id="78fa1-115">This code example assumes:</span></span>
 
-<span data-ttu-id="3b781-122">これらのメソッドは [StorePackageUpdate](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate) オブジェクトを使用して、使用可能な更新プログラム パッケージを表します。</span><span class="sxs-lookup"><span data-stu-id="3b781-122">These methods use [StorePackageUpdate](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate) objects to represent available update packages.</span></span> <span data-ttu-id="3b781-123">次の **StorePackageUpdate** プロパティを使用して、更新プログラム パッケージに関する情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="3b781-123">Use the following **StorePackageUpdate** properties to get information about an update package.</span></span>
-
-|  <span data-ttu-id="3b781-124">プロパティ</span><span class="sxs-lookup"><span data-stu-id="3b781-124">Property</span></span>  |  <span data-ttu-id="3b781-125">説明</span><span class="sxs-lookup"><span data-stu-id="3b781-125">Description</span></span>  |
-|----------|---------------|
-| [<span data-ttu-id="3b781-126">Mandatory</span><span class="sxs-lookup"><span data-stu-id="3b781-126">Mandatory</span></span>](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate.Mandatory) | <span data-ttu-id="3b781-127">このプロパティを使用して、デベロッパー センター ダッシュ ボードでパッケージが必須としてマークされているかどうかを決定します。</span><span class="sxs-lookup"><span data-stu-id="3b781-127">Use this property to determine whether the package is marked as mandatory in the Dev Center dashboard.</span></span> |
-| [<span data-ttu-id="3b781-128">Package</span><span class="sxs-lookup"><span data-stu-id="3b781-128">Package</span></span>](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate.Package) | <span data-ttu-id="3b781-129">このプロパティを使用して、基になるパッケージ関連データにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="3b781-129">Use this property to access the underlying package-related data.</span></span> |
-
-<span/>
-
-## <a name="code-examples"></a><span data-ttu-id="3b781-130">コード例</span><span class="sxs-lookup"><span data-stu-id="3b781-130">Code examples</span></span>
-
-<span data-ttu-id="3b781-131">次のコード例は、アプリでパッケージの更新をダウンロードし、インストールする方法を示したものです。</span><span class="sxs-lookup"><span data-stu-id="3b781-131">The following code examples demonstrate how to download and install package updates in your app.</span></span> <span data-ttu-id="3b781-132">これらの例は、次のことを前提としています。</span><span class="sxs-lookup"><span data-stu-id="3b781-132">These example assume:</span></span>
-* <span data-ttu-id="3b781-133">コードは、[Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) のコンテキスト内で実行されます。</span><span class="sxs-lookup"><span data-stu-id="3b781-133">The code runs in the context of a [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx).</span></span>
-* <span data-ttu-id="3b781-134">**Page** には、ダウンロード操作のステータスを提供するための、```downloadProgressBar``` という [ProgressBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressbar.aspx) が含まれます。</span><span class="sxs-lookup"><span data-stu-id="3b781-134">The **Page** contains a [ProgressBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressbar.aspx) named ```downloadProgressBar``` to provide status for the download operation.</span></span>
-* <span data-ttu-id="3b781-135">コード ファイルには、**Windows.Services.Store**、**Windows.Threading.Tasks**、および**Windows.UI.Popups** 名前空間の **using** ステートメントがあります。</span><span class="sxs-lookup"><span data-stu-id="3b781-135">The code file has a **using** statement for the **Windows.Services.Store**, **Windows.Threading.Tasks**, and **Windows.UI.Popups** namespaces.</span></span>
-* <span data-ttu-id="3b781-136">アプリは、アプリを起動したユーザーのコンテキストでのみ動作するシングル ユーザー アプリです。</span><span class="sxs-lookup"><span data-stu-id="3b781-136">The app is a single-user app that runs only in the context of the user that launched the app.</span></span> <span data-ttu-id="3b781-137">[マルチ ユーザー アプリ](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) の場合は、[GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) メソッドの代わりに [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) メソッドを使用して、**StoreContext** オブジェクトを取得してください。</span><span class="sxs-lookup"><span data-stu-id="3b781-137">For a [multi-user app](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.</span></span>
-
-<span/>
-
-### <a name="download-and-install-all-package-updates"></a><span data-ttu-id="3b781-138">すべてのパッケージ更新をダウンロードしてインストールする</span><span class="sxs-lookup"><span data-stu-id="3b781-138">Download and install all package updates</span></span>
-
-<span data-ttu-id="3b781-139">次のコード例は、利用可能なすべてのパッケージ更新をダウンロードしてインストールする方法を示したものです。</span><span class="sxs-lookup"><span data-stu-id="3b781-139">The following code example demonstrates how to download and install all available package updates.</span></span>  
+* <span data-ttu-id="78fa1-116">コードは、[Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) のコンテキスト内で実行されます。</span><span class="sxs-lookup"><span data-stu-id="78fa1-116">The code runs in the context of a [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx).</span></span>
+* <span data-ttu-id="78fa1-117">**Page** には、ダウンロード操作のステータスを提供するための、```downloadProgressBar``` という [ProgressBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressbar.aspx) が含まれます。</span><span class="sxs-lookup"><span data-stu-id="78fa1-117">The **Page** contains a [ProgressBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressbar.aspx) named ```downloadProgressBar``` to provide status for the download operation.</span></span>
+* <span data-ttu-id="78fa1-118">コード ファイルには、**Windows.Services.Store**、**Windows.Threading.Tasks**、および**Windows.UI.Popups** 名前空間の **using** ステートメントがあります。</span><span class="sxs-lookup"><span data-stu-id="78fa1-118">The code file has a **using** statement for the **Windows.Services.Store**, **Windows.Threading.Tasks**, and **Windows.UI.Popups** namespaces.</span></span>
+* <span data-ttu-id="78fa1-119">アプリは、アプリを起動したユーザーのコンテキストでのみ動作するシングル ユーザー アプリです。</span><span class="sxs-lookup"><span data-stu-id="78fa1-119">The app is a single-user app that runs only in the context of the user that launched the app.</span></span> <span data-ttu-id="78fa1-120">[マルチ ユーザー アプリ](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) の場合は、[GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) メソッドの代わりに [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) メソッドを使用して、**StoreContext** オブジェクトを取得してください。</span><span class="sxs-lookup"><span data-stu-id="78fa1-120">For a [multi-user app](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.</span></span>
 
 ```csharp
 private StoreContext context = null;
@@ -105,9 +86,136 @@ public async Task DownloadAndInstallAllUpdatesAsync()
 }
 ```
 
-### <a name="handle-mandatory-package-updates"></a><span data-ttu-id="3b781-140">必須のパッケージ更新を処理する</span><span class="sxs-lookup"><span data-stu-id="3b781-140">Handle mandatory package updates</span></span>
+> [!NOTE]
+> <span data-ttu-id="78fa1-121">利用可能なパッケージの更新プログラムをダウンロードするだけ (インストールしない) の場合は、[RequestDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadstorepackageupdatesasync) メソッドを使います。</span><span class="sxs-lookup"><span data-stu-id="78fa1-121">To only download (but not install) the available package updates, use the [RequestDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadstorepackageupdatesasync) method.</span></span>
 
-<span data-ttu-id="3b781-141">次のコード例は、前の例とは別に作成されたもので、[Windows デベロッパー センター ダッシュ ボードで必須としてマークされている](#mandatory-dashboard)更新パッケージがあるかどうかを確認する方法を示したものです。</span><span class="sxs-lookup"><span data-stu-id="3b781-141">The following code example builds off the previous example, and demonstrates how to determine whether any update packages have been [marked as mandatory on the Windows Dev Center dashboard](#mandatory-dashboard).</span></span> <span data-ttu-id="3b781-142">通常、必須のパッケージ更新を正常にダウンロードまたはインストールできない場合は、ユーザーに不便のない方法でアプリのエクスペリエンスをダウングレードする必要があります。</span><span class="sxs-lookup"><span data-stu-id="3b781-142">Typically, you should downgrade your app experience gracefully for the user if a mandatory package update does not successfully download or install.</span></span>
+### <a name="display-download-and-install-progress-info"></a><span data-ttu-id="78fa1-122">ダウンロードとインストールの進行状況の情報を表示する</span><span class="sxs-lookup"><span data-stu-id="78fa1-122">Display download and install progress info</span></span>
+
+<span data-ttu-id="78fa1-123">[RequestDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadstorepackageupdatesasync) メソッドまたは [RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadandinstallstorepackageupdatesasync) メソッドを呼び出すときに、この要求で各パッケージのダウンロード (またはダウンロードとインストール) 処理の手順ごとに 1 回呼び出される [Progress](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncoperationwithprogress-2.progress) ハンドラーを割り当てることができます。</span><span class="sxs-lookup"><span data-stu-id="78fa1-123">When you call the [RequestDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadstorepackageupdatesasync) or [RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadandinstallstorepackageupdatesasync) method, you can assign a [Progress](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncoperationwithprogress-2.progress) handler that is called one time for each step in the download (or download and install) process for each package in this request.</span></span> <span data-ttu-id="78fa1-124">このハンドラーは、進行状況の通知を発生させる更新パッケージに関する情報を提供する [StorePackageUpdateStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdatestatus) オブジェクトを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="78fa1-124">The handler receives a [StorePackageUpdateStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdatestatus) object that provides info about the update package that raised the progress notification.</span></span> <span data-ttu-id="78fa1-125">前の例では、**StorePackageUpdateStatus** オブジェクトの **PackageDownloadProgress** フィールドを使用して、ダウンロードとインストールの進行状況を表示します。</span><span class="sxs-lookup"><span data-stu-id="78fa1-125">The previous example uses the **PackageDownloadProgress** field of the **StorePackageUpdateStatus** object to display the progress of the download and install process.</span></span>
+
+<span data-ttu-id="78fa1-126">**RequestDownloadAndInstallStorePackageUpdatesAsync** を呼び出して 1 つの操作でパッケージの更新プログラムをダウンロードしてインストールする場合、**PackageDownloadProgress** フィールドは、パッケージのダウンロード処理中に 0.0 から 0.8 まで増加した後、インストール時に 0.8 から 1.0 まで増加することに注意してください。</span><span class="sxs-lookup"><span data-stu-id="78fa1-126">Be aware that when you call **RequestDownloadAndInstallStorePackageUpdatesAsync** to download and install package updates in a single operation, the **PackageDownloadProgress** field increases from 0.0 to 0.8 during the download process for a package, and then it increases from 0.8 to 1.0 during the install.</span></span> <span data-ttu-id="78fa1-127">そのため、カスタム進行状況 UI に表示されるパーセンテージを、直接、**PackageDownloadProgress** フィールドの値にマップする場合、パッケージのダウンロードが完了し、OS でインストール ダイアログが表示されたときに、UI には 80% と表示されます。</span><span class="sxs-lookup"><span data-stu-id="78fa1-127">Therefore, if you map the percentage shown in your custom progress UI directly to the value of the **PackageDownloadProgress** field, your UI will show 80% when the package is finished downloading and the OS displays the installation dialog.</span></span> <span data-ttu-id="78fa1-128">パッケージがダウンロードされ、インストールの準備ができたときに、カスタム進行状況 UI で 100% と表示するには、**PackageDownloadProgress** が 0.8 に達したときに進行状況 UI に 100% を割り当てるようにコードを変更します。</span><span class="sxs-lookup"><span data-stu-id="78fa1-128">If you want your custom progress UI to display 100% when the package is downloaded and ready to be installed, you can modify your code to assign 100% to your progress UI when the **PackageDownloadProgress** field reaches 0.8.</span></span>
+
+## <a name="download-and-install-package-updates-silently"></a><span data-ttu-id="78fa1-129">パッケージの更新プログラムを背後でダウンロードしてインストールする</span><span class="sxs-lookup"><span data-stu-id="78fa1-129">Download and install package updates silently</span></span>
+
+<span data-ttu-id="78fa1-130">Windows 10 バージョン 1803 以降では、[TrySilentDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadstorepackageupdatesasync) メソッドと [TrySilentDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadandinstallstorepackageupdatesasync) メソッドを使って、ユーザーに通知 UI を表示せずに背後でパッケージの更新プログラムをダウンロードおよびインストールできます。</span><span class="sxs-lookup"><span data-stu-id="78fa1-130">Starting in Windows 10, version 1803, you can use the [TrySilentDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadstorepackageupdatesasync) and [TrySilentDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadandinstallstorepackageupdatesasync) methods to download and install package updates silently, without displaying a notification UI to the user.</span></span> <span data-ttu-id="78fa1-131">この操作は、ユーザーが Microsoft Store で **[アプリを自動的に更新]** 設定をオンにしており、ユーザーが従量制課金接続を使っていない場合のみ成功します。</span><span class="sxs-lookup"><span data-stu-id="78fa1-131">This operation will succeed only if the user has enabled the **Update apps automatically** setting in the Store and the user is not on a metered network.</span></span> <span data-ttu-id="78fa1-132">これらのメソッドを呼び出す前に、まず [CanSilentlyDownloadStorePackageUpdates](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.cansilentlydownloadstorepackageupdates) プロパティを確認し、これらの条件を現在満たしているかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="78fa1-132">Before calling these methods, you can first check the [CanSilentlyDownloadStorePackageUpdates](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.cansilentlydownloadstorepackageupdates) property to determine whether these conditions are currently met.</span></span>
+
+<span data-ttu-id="78fa1-133">このコード例は、[GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync) メソッドを使って利用可能なパッケージの更新プログラムをすべて見つけた後、[TrySilentDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadstorepackageupdatesasync) メソッドと [TrySilentDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadandinstallstorepackageupdatesasync) メソッドを呼び出して背後で更新プログラムをダウンロードおよびインストールする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="78fa1-133">This code example demonstrates how to use the [GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync) method to discover all available package updates and then call the [TrySilentDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadstorepackageupdatesasync) and [TrySilentDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.trysilentdownloadandinstallstorepackageupdatesasync) methods to download and install the updates silently.</span></span>
+
+<span data-ttu-id="78fa1-134">このコード例では、次のことを前提条件としています。</span><span class="sxs-lookup"><span data-stu-id="78fa1-134">This code example assumes:</span></span>
+* <span data-ttu-id="78fa1-135">コード ファイルに **Windows.Services.Store** 名前空間と **System.Threading.Tasks** 名前空間を使うための **using** ステートメントがある。</span><span class="sxs-lookup"><span data-stu-id="78fa1-135">The code file has a **using** statement for the **Windows.Services.Store** and  **System.Threading.Tasks** namespaces.</span></span>
+* <span data-ttu-id="78fa1-136">アプリは、アプリを起動したユーザーのコンテキストでのみ動作するシングル ユーザー アプリです。</span><span class="sxs-lookup"><span data-stu-id="78fa1-136">The app is a single-user app that runs only in the context of the user that launched the app.</span></span> <span data-ttu-id="78fa1-137">[マルチ ユーザー アプリ](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) の場合は、[GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) メソッドの代わりに [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) メソッドを使用して、**StoreContext** オブジェクトを取得してください。</span><span class="sxs-lookup"><span data-stu-id="78fa1-137">For a [multi-user app](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="78fa1-138">この例のコードにより呼び出されている **IsNowAGoodTimeToRestartApp**、**RetryDownloadAndInstallLater**、**RetryInstallLater** の各メソッドは、アプリの設計の必要に応じて実装することを目的としたプレースホルダー メソッドです。</span><span class="sxs-lookup"><span data-stu-id="78fa1-138">The **IsNowAGoodTimeToRestartApp**, **RetryDownloadAndInstallLater**, and **RetryInstallLater** methods called by the code in this example are placeholder methods that are intended to be implemented as needed according to your own app's design.</span></span>
+
+```csharp
+private StoreContext context = null;
+
+public async Task DownloadAndInstallAllUpdatesInBackgroundAsync()
+{
+    if (context == null)
+    {
+        context = StoreContext.GetDefault();
+    }
+
+    // Get the updates that are available.
+    IReadOnlyList<StorePackageUpdate> storePackageUpdates =
+        await context.GetAppAndOptionalStorePackageUpdatesAsync();
+
+    if (storePackageUpdates.Count > 0)
+    {
+
+        if (!context.CanSilentlyDownloadStorePackageUpdates)
+        {
+            return;
+        }
+
+        // Start the silent downloads and wait for the downloads to complete.
+        StorePackageUpdateResult downloadResult =
+            await context.TrySilentDownloadStorePackageUpdatesAsync(storePackageUpdates);
+
+        switch (downloadResult.OverallState)
+        {
+            case StorePackageUpdateState.Completed:
+                // The download has completed successfully. At this point, confirm whether your app
+                // can restart now and then install the updates (for example, you might only install
+                // packages silently if your app has been idle for a certain period of time). The
+                // IsNowAGoodTimeToRestartApp method is not implemented in this example, you should
+                // implement it as needed for your own app.
+                if (IsNowAGoodTimeToRestartApp())
+                {
+                    await InstallUpdate(storePackageUpdates);
+                }
+                else
+                {
+                    // Retry/reschedule the installation later. The RetryInstallLater method is not  
+                    // implemented in this example, you should implement it as needed for your own app.
+                    RetryInstallLater();
+                    return;
+                }
+                break;
+            // If the user cancelled the download or you can't perform the download for some other
+            // reason (for example, Wi-Fi might have been turned off and the device is now on
+            // a metered network) try again later. The RetryDownloadAndInstallLater method is not  
+            // implemented in this example, you should implement it as needed for your own app.
+            case StorePackageUpdateState.Canceled:
+            case StorePackageUpdateState.ErrorLowBattery:
+            case StorePackageUpdateState.ErrorWiFiRecommended:
+            case StorePackageUpdateState.ErrorWiFiRequired:
+            case StorePackageUpdateState.OtherError:
+                RetryDownloadAndInstallLater();
+                return;
+            default:
+                break;
+        }
+    }
+}
+
+private async Task InstallUpdate(IReadOnlyList<StorePackageUpdate> storePackageUpdates)
+{
+    // Start the silent installation of the packages. Because the packages have already
+    // been downloaded in the previous method, the following line of code just installs
+    // the downloaded packages.
+    StorePackageUpdateResult downloadResult =
+        await context.TrySilentDownloadAndInstallStorePackageUpdatesAsync(storePackageUpdates);
+
+    switch (downloadResult.OverallState)
+    {
+        // If the user cancelled the installation or you can't perform the installation  
+        // for some other reason, try again later. The RetryInstallLater method is not  
+        // implemented in this example, you should implement it as needed for your own app.
+        case StorePackageUpdateState.Canceled:
+        case StorePackageUpdateState.ErrorLowBattery:
+        case StorePackageUpdateState.OtherError:
+            RetryInstallLater();
+            return;
+        default:
+            break;
+    }
+}
+```
+
+## <a name="mandatory-package-updates"></a><span data-ttu-id="78fa1-139">必須のパッケージの更新プログラム</span><span class="sxs-lookup"><span data-stu-id="78fa1-139">Mandatory package updates</span></span>
+
+<span data-ttu-id="78fa1-140">Windows 10 バージョン 1607 以降を対象としたアプリのパッケージ申請を作成する際には、[パッケージを必須としてマーク](../publish/upload-app-packages.md#mandatory-update)し、それが必須になる日時を指定することができます。</span><span class="sxs-lookup"><span data-stu-id="78fa1-140">When you create a package submission for an app that targets Windows 10, version 1607 or later, you can [mark the package as mandatory](../publish/upload-app-packages.md#mandatory-update) and the date and time on which it becomes mandatory.</span></span> <span data-ttu-id="78fa1-141">このプロパティが設定されている場合、利用可能なパッケージの更新が検出されると、アプリは更新パッケージが必須であることを認識し、更新がインストールされるまで、その動作を変更することができます (機能を無効にするなど)。</span><span class="sxs-lookup"><span data-stu-id="78fa1-141">When this property is set and your app discovers that the package update is available, your app can determine whether the update package is mandatory and alter its behavior until the update is installed (for example, your app can disable features).</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="78fa1-142">パッケージ更新の必須ステータスは Microsoft によって強制されるものではありません。アプリの必須更新プログラムをインストールする必要があることをユーザーに示すための UI は、OS では提供されていません。</span><span class="sxs-lookup"><span data-stu-id="78fa1-142">The mandatory status of a package update is not enforced by Microsoft, and the OS does not provide a UI to indicate to users that a mandatory app update must be installed.</span></span> <span data-ttu-id="78fa1-143">必須設定は、開発者が自身のコード内でアプリの必須更新プログラムを強制するために使用するものです。</span><span class="sxs-lookup"><span data-stu-id="78fa1-143">Developers are intended to use the mandatory setting to enforce mandatory app updates in their own code.</span></span>  
+
+<span data-ttu-id="78fa1-144">パッケージ申請を必須としてマークするには、次の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="78fa1-144">To mark a package submission as mandatory:</span></span>
+
+1. <span data-ttu-id="78fa1-145">[デベロッパー センター ダッシュ ボード](https://dev.windows.com/overview)にサインインし、アプリの概要ページに移動します。</span><span class="sxs-lookup"><span data-stu-id="78fa1-145">Sign in to the [Dev Center dashboard](https://dev.windows.com/overview) and navigate to the overview page for your app.</span></span>
+2. <span data-ttu-id="78fa1-146">必須にするパッケージ更新が含まれている申請の名前をクリックします。</span><span class="sxs-lookup"><span data-stu-id="78fa1-146">Click the name of the submission that contains the package update you want to make mandatory.</span></span>
+3. <span data-ttu-id="78fa1-147">申請の **[パッケージ]** ページに移動します。</span><span class="sxs-lookup"><span data-stu-id="78fa1-147">Navigate to the **Packages** page for the submission.</span></span> <span data-ttu-id="78fa1-148">このページの下部で、**[この更新を必須にします]** を選択した後、パッケージ更新が必須になる日時を選択します。</span><span class="sxs-lookup"><span data-stu-id="78fa1-148">Near the bottom of this page, select **Make this update mandatory** and then choose the day and time on which the package update becomes mandatory.</span></span> <span data-ttu-id="78fa1-149">このオプションは、申請内のすべての UWP パッケージに適用されます。</span><span class="sxs-lookup"><span data-stu-id="78fa1-149">This option applies to all UWP packages in the submission.</span></span>
+
+<span data-ttu-id="78fa1-150">詳細については、「[アプリ パッケージのアップロード](../publish/upload-app-packages.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="78fa1-150">For more information, see [Upload app packages](../publish/upload-app-packages.md).</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="78fa1-151">[パッケージ フライト](../publish/package-flights.md)を作成する場合は、フライトの**パッケージ** ページで同様の UI を使用して、パッケージを必須としてマークできます。</span><span class="sxs-lookup"><span data-stu-id="78fa1-151">If you create a [package flight](../publish/package-flights.md), you can mark the packages as mandatory using a similar UI on the **Packages** page for the flight.</span></span> <span data-ttu-id="78fa1-152">その場合、必須のパッケージ更新は、フライト グループのメンバーであるユーザーにのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="78fa1-152">In this case, the mandatory package update applies only to the customers who are part of the flight group.</span></span>
+
+### <a name="code-example-for-mandatory-packages"></a><span data-ttu-id="78fa1-153">必須パッケージのコード例</span><span class="sxs-lookup"><span data-stu-id="78fa1-153">Code example for mandatory packages</span></span>
+
+<span data-ttu-id="78fa1-154">次のコード例は、更新パッケージが必須であるかどうかを調べる方法を示したものです。</span><span class="sxs-lookup"><span data-stu-id="78fa1-154">The following code example demonstrates how to determine whether any update packages are mandatory.</span></span> <span data-ttu-id="78fa1-155">通常、必須のパッケージ更新を正常にダウンロードまたはインストールできない場合は、ユーザーに不便のない方法でアプリのエクスペリエンスをダウングレードする必要があります。</span><span class="sxs-lookup"><span data-stu-id="78fa1-155">Typically, you should downgrade your app experience gracefully for the user if a mandatory package update does not successfully download or install.</span></span>
 
 ```csharp
 private StoreContext context = null;
@@ -119,6 +227,7 @@ public async Task DownloadAndInstallAllUpdatesAsync()
     {
         context = StoreContext.GetDefault();
     }  
+
     // Get the updates that are available.
     IReadOnlyList<StorePackageUpdate> updates =
         await context.GetAppAndOptionalStorePackageUpdatesAsync();
@@ -219,28 +328,143 @@ private void HandleMandatoryPackageError()
 }
 ```
 
-### <a name="display-progress-info-for-the-download-and-install"></a><span data-ttu-id="3b781-143">ダウンロードとインストールの進行状況の情報を表示する</span><span class="sxs-lookup"><span data-stu-id="3b781-143">Display progress info for the download and install</span></span>
+## <a name="uninstall-optional-packages"></a><span data-ttu-id="78fa1-156">オプション パッケージのアンインストール</span><span class="sxs-lookup"><span data-stu-id="78fa1-156">Uninstall optional packages</span></span>
 
-<span data-ttu-id="3b781-144">**RequestDownloadStorePackageUpdatesAsync** または **RequestDownloadAndInstallStorePackageUpdatesAsync** を呼び出すときに、この要求で各パッケージのダウンロード (またはダウンロードとインストール) 処理の手順ごとに 1 回呼び出される [Progress](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncoperationwithprogress-2.progress) ハンドラーを割り当てることができます。</span><span class="sxs-lookup"><span data-stu-id="3b781-144">When you call **RequestDownloadStorePackageUpdatesAsync** or **RequestDownloadAndInstallStorePackageUpdatesAsync**, you can assign a [Progress](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncoperationwithprogress-2.progress) handler that is called one time for each step in the download (or download and install) process for each package in this request.</span></span> <span data-ttu-id="3b781-145">このハンドラーは、進行状況の通知を発生させる更新パッケージに関する情報を提供する [StorePackageUpdateStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdatestatus) オブジェクトを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="3b781-145">The handler receives a [StorePackageUpdateStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdatestatus) object that provides info about the update package that raised the progress notification.</span></span> <span data-ttu-id="3b781-146">前の例では、**StorePackageUpdateStatus** オブジェクトの **PackageDownloadProgress** フィールドを使用して、ダウンロードとインストールの進行状況を表示します。</span><span class="sxs-lookup"><span data-stu-id="3b781-146">The previous examples use the **PackageDownloadProgress** field of the **StorePackageUpdateStatus** object to display the progress of the download and install process.</span></span>
+<span data-ttu-id="78fa1-157">Windows 10 バージョン 1803 以降では、[RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync) メソッドまたは [RequestUninstallStorePackageByStoreIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackagebystoreidasync) メソッドを使って、現在のアプリの[オプション パッケージ](optional-packages.md) (DLC パッケージを含む) をアンインストールできます。</span><span class="sxs-lookup"><span data-stu-id="78fa1-157">Starting in Windows 10, version 1803, you can use the [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync) or [RequestUninstallStorePackageByStoreIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackagebystoreidasync) methods to uninstall an [optional package](optional-packages.md) (including a DLC package) for the current app.</span></span> <span data-ttu-id="78fa1-158">たとえば、オプション パッケージを通じてインストールされるコンテンツを持つアプリがある場合、ユーザーがオプション パッケージをアンインストールしてディスク領域を解放できる UI を用意できます。</span><span class="sxs-lookup"><span data-stu-id="78fa1-158">For example, if you have an app with content that is installed via optional packages, you might want to provide a UI that enables users to uninstall the optional packages to free up disk space.</span></span>
 
-<span data-ttu-id="3b781-147">**RequestDownloadAndInstallStorePackageUpdatesAsync** を呼び出して 1 つの操作でパッケージの更新プログラムをダウンロードしてインストールする場合、**PackageDownloadProgress** フィールドは、パッケージのダウンロード処理中に 0.0 から 0.8 まで増加した後、インストール時に 0.8 から 1.0 まで増加することに注意してください。</span><span class="sxs-lookup"><span data-stu-id="3b781-147">Be aware that when you call **RequestDownloadAndInstallStorePackageUpdatesAsync** to download and install package updates in a single operation, the **PackageDownloadProgress** field increases from 0.0 to 0.8 during the download process for a package, and then it increases from 0.8 to 1.0 during the install.</span></span> <span data-ttu-id="3b781-148">そのため、カスタム進行状況 UI に表示されるパーセンテージを、直接、**PackageDownloadProgress** フィールドの値にマップする場合、パッケージのダウンロードが完了し、OS でインストール ダイアログが表示されたときに、UI には 80% と表示されます。</span><span class="sxs-lookup"><span data-stu-id="3b781-148">Therefore, if you map the percentage shown in your custom progress UI directly to the value of the **PackageDownloadProgress** field, your UI will show 80% when the package is finished downloading and the OS displays the installation dialog.</span></span> <span data-ttu-id="3b781-149">パッケージがダウンロードされ、インストールの準備ができたときに、カスタム進行状況 UI で 100% と表示するには、**PackageDownloadProgress** が 0.8 に達したときに進行状況 UI に 100% を割り当てるようにコードを変更します。</span><span class="sxs-lookup"><span data-stu-id="3b781-149">If you want your custom progress UI to display 100% when the package is downloaded and ready to be installed, you can modify your code to assign 100% to your progress UI when the **PackageDownloadProgress** field reaches 0.8.</span></span>
+<span data-ttu-id="78fa1-159">次のコード例は、[RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync) を呼び出す方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="78fa1-159">The following code example demonstrates how to call [RequestUninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestuninstallstorepackageasync).</span></span> <span data-ttu-id="78fa1-160">この例では、次のことを前提条件としています。</span><span class="sxs-lookup"><span data-stu-id="78fa1-160">This example assumes:</span></span>
+* <span data-ttu-id="78fa1-161">コード ファイルに **Windows.Services.Store** 名前空間と **System.Threading.Tasks** 名前空間を使うための **using** ステートメントがある。</span><span class="sxs-lookup"><span data-stu-id="78fa1-161">The code file has a **using** statement for the **Windows.Services.Store** and  **System.Threading.Tasks** namespaces.</span></span>
+* <span data-ttu-id="78fa1-162">アプリは、アプリを起動したユーザーのコンテキストでのみ動作するシングル ユーザー アプリである。</span><span class="sxs-lookup"><span data-stu-id="78fa1-162">The app is a single-user app that runs only in the context of the user that launched the app.</span></span> <span data-ttu-id="78fa1-163">[マルチ ユーザー アプリ](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) の場合は、[GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) メソッドの代わりに [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) メソッドを使用して、**StoreContext** オブジェクトを取得してください。</span><span class="sxs-lookup"><span data-stu-id="78fa1-163">For a [multi-user app](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.</span></span>
 
-<span id="mandatory-dashboard" />
+```csharp
+public async Task UninstallPackage(Windows.ApplicationModel.Package package)
+{
+    if (context == null)
+    {
+        context = StoreContext.GetDefault();
+    }
 
-## <a name="make-a-package-submission-mandatory-in-the-dev-center-dashboard"></a><span data-ttu-id="3b781-150">デベロッパー センター ダッシュボードでパッケージ申請を必須にする</span><span class="sxs-lookup"><span data-stu-id="3b781-150">Make a package submission mandatory in the Dev Center dashboard</span></span>
+    var storeContext = StoreContext.GetDefault();
+    IAsyncOperation<StoreUninstallStorePackageResult> uninstallOperation =
+        storeContext.RequestUninstallStorePackageAsync(package);
 
-<span data-ttu-id="3b781-151">Windows 10 バージョン 1607 以降を対象としたアプリのパッケージ申請を作成する際には、パッケージを必須としてマークし、それが必須になる日時を指定することができます。</span><span class="sxs-lookup"><span data-stu-id="3b781-151">When you create a package submission for an app that targets Windows 10, version 1607 or later, you can mark the package as mandatory and the date/time on which it becomes mandatory.</span></span> <span data-ttu-id="3b781-152">このプロパティが設定されている場合、利用可能なパッケージの更新がこの記事の前半で説明した API を通じて検出されると、アプリは更新パッケージが必須であることを認識し、更新がインストールされるまで、その動作を変更することができます (機能を無効にするなど)。</span><span class="sxs-lookup"><span data-stu-id="3b781-152">When this property is set and your app discovers that the package update is available by using the API described earlier in this article, your app can determine whether the update package is mandatory and alter its behavior until the update is installed (for example, your app can disable features).</span></span>
+    // At this point, you can update your app UI to show that the package
+    // is installing.
+
+    uninstallOperation.Completed += (asyncInfo, status) =>
+    {
+        StoreUninstallStorePackageResult result = uninstallOperation.GetResults();
+        switch (result.Status)
+        {
+            case StoreUninstallStorePackageStatus.Succeeded:
+                {
+                    // Update your app UI to show the package as uninstalled.
+                    break;
+                }
+            default:
+                {
+                    // Update your app UI to show that the package uninstall failed.
+                    break;
+                }
+        }
+    };
+}
+```
+
+## <a name="get-download-queue-info"></a><span data-ttu-id="78fa1-164">ダウンロード キューの情報の取得</span><span class="sxs-lookup"><span data-stu-id="78fa1-164">Get download queue info</span></span>
+
+<span data-ttu-id="78fa1-165">Windows 10 バージョン 1803 以降では、[GetAssociatedStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getassociatedstorequeueitemsasync) メソッドと [GetStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getstorequeueitemsasync) メソッドを使い、現在のダウンロードおよびインストール キューにあるパッケージの情報を Microsoft Store から取得することができます。</span><span class="sxs-lookup"><span data-stu-id="78fa1-165">Starting in Windows 10, version 1803, you can use the [GetAssociatedStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getassociatedstorequeueitemsasync) and [GetStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getstorequeueitemsasync) methods to get info about the packages that are in the current download and installation queue from the Store.</span></span> <span data-ttu-id="78fa1-166">これらのメソッドは、ダウンロードとインストールに数時間から数日かかる可能性がある大規模なオプション パッケージ (DLC を含む) がアプリやゲームでサポートされており、ダウンロードおよびインストール プロセスが完了する前にユーザーがアプリやゲームを閉じるケースを適切に処理する必要がある場合に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="78fa1-166">These methods are useful if your app or game supports large optional packages (including DLCs) that can take hours or days to download and install, and you want to gracefully handle the case where a customer closes your app or game before the download and installation process is complete.</span></span> <span data-ttu-id="78fa1-167">ユーザーがアプリやゲームを再度起動すると、コードはこれらのメソッドを使ってダウンロードおよびインストール キューにまだ残っているパッケージの状態に関する情報を取得できるため、各パッケージのステータスをユーザーに表示できます。</span><span class="sxs-lookup"><span data-stu-id="78fa1-167">When the customer starts your app or game again, your code can use these methods to get info about the state of the packages that are still in the download and installation queue so you can display the status of each package to the customer.</span></span>
+
+<span data-ttu-id="78fa1-168">次のコード例は、[GetAssociatedStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getassociatedstorequeueitemsasync) を呼び出し、現在のアプリの進行中のパッケージ更新プログラムの一覧を取得して、各パッケージのステータス情報を表示する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="78fa1-168">The following code example demonstrates how to call [GetAssociatedStoreQueueItemsAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getassociatedstorequeueitemsasync) to get the list of in-progress package updates for the current app and retrieve status info for each package.</span></span> <span data-ttu-id="78fa1-169">この例では、次のことを前提条件としています。</span><span class="sxs-lookup"><span data-stu-id="78fa1-169">This example assumes:</span></span>
+* <span data-ttu-id="78fa1-170">コード ファイルに **Windows.Services.Store** 名前空間と **System.Threading.Tasks** 名前空間を使うための **using** ステートメントがある。</span><span class="sxs-lookup"><span data-stu-id="78fa1-170">The code file has a **using** statement for the **Windows.Services.Store** and  **System.Threading.Tasks** namespaces.</span></span>
+* <span data-ttu-id="78fa1-171">アプリは、アプリを起動したユーザーのコンテキストでのみ動作するシングル ユーザー アプリである。</span><span class="sxs-lookup"><span data-stu-id="78fa1-171">The app is a single-user app that runs only in the context of the user that launched the app.</span></span> <span data-ttu-id="78fa1-172">[マルチ ユーザー アプリ](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications) の場合は、[GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) メソッドの代わりに [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) メソッドを使用して、**StoreContext** オブジェクトを取得してください。</span><span class="sxs-lookup"><span data-stu-id="78fa1-172">For a [multi-user app](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) method.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3b781-153">パッケージ更新の必須ステータスは Microsoft によって強制されるものではありません。アプリの必須更新プログラムをインストールする必要があることをユーザーに示すための UI は、OS では提供されていません。</span><span class="sxs-lookup"><span data-stu-id="3b781-153">The mandatory status of a package update is not enforced by Microsoft, and the OS does not provide a UI to indicate to users that a mandatory app update must be installed.</span></span> <span data-ttu-id="3b781-154">必須設定は、開発者が自身のコード内でアプリの必須更新プログラムを強制するために使用するものです。</span><span class="sxs-lookup"><span data-stu-id="3b781-154">Developers are intended to use the mandatory setting to enforce mandatory app updates in their own code.</span></span>  
+> <span data-ttu-id="78fa1-173">この例のコードにより呼び出されている **MarkUpdateInProgressInUI**、**RemoveItemFromUI**、**MarkInstallCompleteInUI**、**MarkInstallErrorInUI**、**MarkInstallPausedInUI** の各メソッドは、アプリの設計の必要に応じて実装することを目的としてプレースホルダー メソッドです。</span><span class="sxs-lookup"><span data-stu-id="78fa1-173">The **MarkUpdateInProgressInUI**, **RemoveItemFromUI**, **MarkInstallCompleteInUI**, **MarkInstallErrorInUI**, and **MarkInstallPausedInUI** methods called by the code in this example are placeholder methods that are intended to be implemented as needed according to your own app's design.</span></span>
 
-<span data-ttu-id="3b781-155">パッケージ申請を必須としてマークするには、次の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="3b781-155">To mark a package submission as mandatory:</span></span>
+```csharp
+private StoreContext context = null;
 
-1. <span data-ttu-id="3b781-156">[デベロッパー センター ダッシュ ボード](https://dev.windows.com/overview)にサインインし、アプリの概要ページに移動します。</span><span class="sxs-lookup"><span data-stu-id="3b781-156">Sign in to the [Dev Center dashboard](https://dev.windows.com/overview) and navigate to the overview page for your app.</span></span>
-2. <span data-ttu-id="3b781-157">必須にするパッケージ更新が含まれている申請の名前をクリックします。</span><span class="sxs-lookup"><span data-stu-id="3b781-157">Click the name of the submission that contains the package update you want to make mandatory.</span></span>
-3. <span data-ttu-id="3b781-158">申請の **[パッケージ]** ページに移動します。</span><span class="sxs-lookup"><span data-stu-id="3b781-158">Navigate to the **Packages** page for the submission.</span></span> <span data-ttu-id="3b781-159">このページの下部で、**[この更新を必須にします]** を選択した後、パッケージ更新が必須になる日時を選択します。</span><span class="sxs-lookup"><span data-stu-id="3b781-159">Near the bottom of this page, select **Make this update mandatory** and then choose the day and time on which the package update becomes mandatory.</span></span> <span data-ttu-id="3b781-160">このオプションは、申請内のすべての UWP パッケージに適用されます。</span><span class="sxs-lookup"><span data-stu-id="3b781-160">This option applies to all UWP packages in the submission.</span></span>
+private async Task GetQueuedInstallItemsAndBuildInitialStoreUI()
+{
+    if (context == null)
+    {
+        context = StoreContext.GetDefault();
+    }
 
-<span data-ttu-id="3b781-161">デベロッパー センター ダッシュボードでのパッケージの構成について詳しくは、「[アプリ パッケージのアップロード](../publish/upload-app-packages.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="3b781-161">For more information about configuring packages in the Dev Center dashboard, see [Upload app packages](../publish/upload-app-packages.md).</span></span>
+    // Get the Store packages in the install queue.
+    IReadOnlyList<StoreQueueItem> storeUpdateItems = await context.GetAssociatedStoreQueueItemsAsync();
 
-  > [!NOTE]
-  > <span data-ttu-id="3b781-162">[パッケージ フライト](../publish/package-flights.md)を作成する場合は、フライトの**パッケージ** ページで同様の UI を使用して、パッケージを必須としてマークできます。</span><span class="sxs-lookup"><span data-stu-id="3b781-162">If you create a [package flight](../publish/package-flights.md), you can mark the packages as mandatory using a similar UI on the **Packages** page for the flight.</span></span> <span data-ttu-id="3b781-163">その場合、必須のパッケージ更新は、フライト グループのメンバーであるユーザーにのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="3b781-163">In this case, the mandatory package update applies only to the customers who are part of the flight group.</span></span>
+    foreach (StoreQueueItem storeItem in storeUpdateItems)
+    {
+        // In this example we only care about package updates.
+        if (storeItem.InstallKind != StoreQueueItemKind.Update)
+            continue;
+
+        StoreQueueItemStatus currentStatus = storeItem.GetCurrentStatus();
+        StoreQueueItemState installState = currentStatus.PackageInstallState;
+        StoreQueueItemExtendedState extendedInstallState =
+            currentStatus.PackageInstallExtendedState;
+
+        // Handle the StatusChanged event to display current status to the customer.
+        storeItem.StatusChanged += StoreItem_StatusChanged;
+
+        switch (installState)
+        {
+            // Download and install are still in progress, so update the status for this  
+            // item and provide the extended state info. The following methods are not
+            // implemented in this example; you should implement them as needed for your
+            // app's UI.
+            case StoreQueueItemState.Active:
+                MarkUpdateInProgressInUI(storeItem, extendedInstallState);
+                break;
+            case StoreQueueItemState.Canceled:
+                RemoveItemFromUI(storeItem);
+                break;
+            case StoreQueueItemState.Completed:
+                MarkInstallCompleteInUI(storeItem);
+                break;
+            case StoreQueueItemState.Error:
+                MarkInstallErrorInUI(storeItem);
+                break;
+            case StoreQueueItemState.Paused:
+                MarkInstallPausedInUI(storeItem, installState, extendedInstallState);
+                break;
+        }
+    }
+}
+
+private void StoreItem_StatusChanged(StoreQueueItem sender, object args)
+{
+    StoreQueueItemStatus currentStatus = sender.GetCurrentStatus();
+    StoreQueueItemState installState = currentStatus.PackageInstallState;
+    StoreQueueItemExtendedState extendedInstallState = currentStatus.PackageInstallExtendedState;
+
+    switch (installState)
+    {
+        // Download and install are still in progress, so update the status for this  
+        // item and provide the extended state info. The following methods are not
+        // implemented in this example; you should implement them as needed for your
+        // app's UI.
+        case StoreQueueItemState.Active:
+            MarkUpdateInProgressInUI(sender, extendedInstallState);
+            break;
+        case StoreQueueItemState.Canceled:
+            RemoveItemFromUI(sender);
+            break;
+        case StoreQueueItemState.Completed:
+            MarkInstallCompleteInUI(sender);
+            break;
+        case StoreQueueItemState.Error:
+            MarkInstallErrorInUI(sender);
+            break;
+        case StoreQueueItemState.Paused:
+            MarkInstallPausedInUI(sender, installState, extendedInstallState);
+            break;
+    }
+}
+```
+
+## <a name="related-topics"></a><span data-ttu-id="78fa1-174">関連トピック</span><span class="sxs-lookup"><span data-stu-id="78fa1-174">Related topics</span></span>
+
+* [<span data-ttu-id="78fa1-175">オプション パッケージと関連セットの作成</span><span class="sxs-lookup"><span data-stu-id="78fa1-175">Optional packages and related set authoring</span></span>](optional-packages.md)

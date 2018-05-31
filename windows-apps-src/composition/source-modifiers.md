@@ -1,19 +1,20 @@
 ---
 author: jwmsft
-title: "ソース修飾子を使用した引っ張って更新"
-description: "SourceModifier を使用してカスタムの引っ張って更新コントロールを作成します。"
+title: ソース修飾子を使用した引っ張って更新
+description: SourceModifier を使用してカスタムの引っ張って更新コントロールを作成します。
 ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, アニメーション"
+keywords: Windows 10, UWP, アニメーション
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d85dbe89fe90723c3475b77c6057def684bd60d
 ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/12/2017
+ms.locfileid: "1394381"
 ---
 # <a name="pull-to-refresh-with-source-modifiers"></a><span data-ttu-id="f1884-104">ソース修飾子を使用した引っ張って更新</span><span class="sxs-lookup"><span data-stu-id="f1884-104">Pull-to-refresh with source modifiers</span></span>
 

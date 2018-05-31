@@ -1,0 +1,177 @@
+---
+author: stevewhims
+description: With C++/WinRT では、標準的な C++ ワイド文字列型を使用して Windows ランタイム API を呼び出すか、または winrt::hstring 型を使用することができます。
+title: C++/WinRT での文字列の処理
+ms.author: stwhi
+ms.date: 04/10/2018
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、文字列
+ms.localizationpriority: medium
+ms.openlocfilehash: 433b3423c27910f1c680bba4ae2ede5a1e13f8ea
+ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/03/2018
+ms.locfileid: "1832056"
+---
+# <a name="string-handling-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a><span data-ttu-id="7e1f7-104">[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) での文字列の処理</span><span class="sxs-lookup"><span data-stu-id="7e1f7-104">String handling in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)</span></span>
+<span data-ttu-id="7e1f7-105">C++/WinRT では、C++ 標準ライブラリの **std::wstring** などのワイド文字列型 (注: **std::string** などのナロー文字列ではない) を使用して Windows ランタイム API を呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-105">With C++/WinRT, you can call Windows Runtime APIs using C++ Standard Library wide string types such as **std::wstring** (note: not with narrow string types such as **std::string**).</span></span> <span data-ttu-id="7e1f7-106">C++/WinRT には [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) というカスタム文字列型があります (C++/WinRT 基本ライブラリ、`%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h` で定義)。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-106">C++/WinRT does have a custom string type called [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) (defined in the C++/WinRT base library, which is `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h`).</span></span> <span data-ttu-id="7e1f7-107">これは、Windows ランタイムのコンストラクター、関数、およびプロパティで実際に受け取られ、返される文字列型です。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-107">And that's the string type that Windows Runtime constructors, functions, and properties actually take and return.</span></span> <span data-ttu-id="7e1f7-108">ただし、多くの場合、**hstring** の変換コンストラクターと変換演算子のおかげで、クライアント コードで **hstring** を認識するかどうかを選択できます。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-108">But in many cases&mdash;thanks to **hstring**'s conversion constructors and conversion operators&mdash;you can choose whether or not to be aware of **hstring** in your client code.</span></span> <span data-ttu-id="7e1f7-109">API を*作成している*場合は、**hstring** を理解しておく必要性が高くなると思われます。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-109">If you're *authoring* APIs, then you're more likely to need to know about **hstring**.</span></span>
+
+<span data-ttu-id="7e1f7-110">C++ には多くの文字列型があります。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-110">There are many string types in C++.</span></span> <span data-ttu-id="7e1f7-111">C++ 標準ライブラリの **std::basic_string** に加えて、多くのライブラリにバリアントが存在します。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-111">Variants exist in many libraries in addition to **std::basic_string** from the C++ Standard Library.</span></span> <span data-ttu-id="7e1f7-112">C++17 には、すべての文字列型間のギャップの橋渡しをする文字列変換ユーティリティと **std::basic_string_view** があります。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-112">C++17 has string conversion utilities, and **std::basic_string_view**, to bridge the gaps between all of the string types.</span></span> <span data-ttu-id="7e1f7-113">**hstring** は **std::wstring_view** と互換性があり、**std::basic_string_view** の設計目的である相互運用性が提供されます。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-113">**hstring** provides convertibility with **std::wstring_view** to provide the interoperability that **std::basic_string_view** was designed for.</span></span>
+
+## <a name="using-stdwstring-and-optionally-winrthstringuwpcpp-ref-for-winrthstring-with-uriuwpapiwindowsfoundationuri"></a><span data-ttu-id="7e1f7-114">[**Uri**](/uwp/api/windows.foundation.uri) での **std::wstring** (および必要に応じて [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)) の使用</span><span class="sxs-lookup"><span data-stu-id="7e1f7-114">Using **std::wstring** (and optionally [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)) with [**Uri**](/uwp/api/windows.foundation.uri)</span></span>
+
+<span data-ttu-id="7e1f7-115">[**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) は [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) から作成されます。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-115">[**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) is constructed from a [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring).</span></span>
+
+```cppwinrt
+public:
+    Uri(winrt::hstring uri) const;
+```
+
+<span data-ttu-id="7e1f7-116">ただし、**hstring** には[変換コンストラクター](/uwp/api/windows.foundation.uri#hstringhstring-constructor)があるため、それを意識せずに操作することができます。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-116">But **hstring** has [conversion constructors](/uwp/api/windows.foundation.uri#hstringhstring-constructor) that let you work with it without needing to be aware of it.</span></span> <span data-ttu-id="7e1f7-117">次のコード例で、ワイド文字列リテラル、ワイド文字列ビュー、および **std::wstring** から **Uri** を作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-117">Here's a code example showing how to make a **Uri** from a wide string literal, from a wide string view, and from a **std::wstring**.</span></span>
+
+```cppwinrt
+#include <winrt/Windows.Foundation.h>
+#include <string_view>
+
+using namespace winrt;
+using namespace Windows::Foundation;
+
+int main()
+{
+    using namespace std::literals;
+
+    winrt::init_apartment();
+
+    // You can make a Uri from a wide string literal.
+    Uri contosoUri{ L"http://www.contoso.com" };
+
+    // Or from a wide string view.
+    Uri contosoSVUri{ L"http://www.contoso.com"sv };
+
+    // Or from a std::wstring.
+    std::wstring wideString{ L"http://www.adventure-works.com" };
+    Uri awUri{ wideString };
+}
+```
+
+<span data-ttu-id="7e1f7-118">プロパティ アクセサー [**Uri::Domain**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.Domain) の型は **hstring** です。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-118">The property accessor [**Uri::Domain**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.Domain) is of type **hstring**.</span></span>
+
+```cppwinrt
+public:
+    winrt::hstring Domain();
+```
+
+<span data-ttu-id="7e1f7-119">ただし、この場合も、**hstring** の [**std::wstring_view への変換演算子**](/uwp/api/windows.foundation.uri#hstringoperator-stdwstringview)のおかげで、その詳細を認識するかどうかは任意です。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-119">But, again, being aware of that detail is optional thanks to **hstring**'s [conversion operator to **std::wstring_view**](/uwp/api/windows.foundation.uri#hstringoperator-stdwstringview).</span></span>
+
+```cppwinrt
+// Access a property of type hstring, via a conversion operator to a standard type.
+std::wstring domainWstring{ contosoUri.Domain() }; // L"contoso.com"
+domainWstring = awUri.Domain(); // L"adventure-works.com"
+
+// Or, you can choose to keep the hstring unconverted.
+hstring domainHstring{ contosoUri.Domain() }; // L"contoso.com"
+domainHstring = awUri.Domain(); // L"adventure-works.com"
+```
+
+<span data-ttu-id="7e1f7-120">同様に、[**IStringable::ToString**](https://msdn.microsoft.com/library/windows/desktop/dn302136) は hstring を返します。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-120">Similarly, [**IStringable::ToString**](https://msdn.microsoft.com/library/windows/desktop/dn302136) returns hstring.</span></span>
+
+```cppwinrt
+public:
+    hstring ToString() const;
+```
+
+<span data-ttu-id="7e1f7-121">**Uri** は [**IStringable**](https://msdn.microsoft.com/library/windows/desktop/dn302135) インターフェイスを実装しています。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-121">**Uri** implements the [**IStringable**](https://msdn.microsoft.com/library/windows/desktop/dn302135) interface.</span></span>
+
+```cppwinrt
+// Access hstring's IStringable::ToString, via a conversion operator to a standard type.
+std::wstring tostringWstring{ contosoUri.ToString() }; // L"http://www.contoso.com/"
+tostringWstring = awUri.ToString(); // L"http://www.adventure-works.com/"
+
+// Or you can choose to keep the hstring unconverted.
+hstring tostringHstring{ contosoUri.ToString() }; // L"http://www.contoso.com/"
+tostringHstring = awUri.ToString(); // L"http://www.adventure-works.com/"
+```
+
+<span data-ttu-id="7e1f7-122">[hstring::c_str 関数](/uwp/api/windows.foundation.uri#hstringcstr-function)を使用して、**hstring** から標準ワイド文字列を取得することができます (**std::wstring** から取得する場合と同様)。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-122">You can use the [hstring::c_str function](/uwp/api/windows.foundation.uri#hstringcstr-function) to get a standard wide string from an **hstring** (just as you can from a **std::wstring**).</span></span>
+
+```cppwinrt
+#include <iostream>
+std::wcout << tostringHstring.c_str() << std::endl;
+```
+<span data-ttu-id="7e1f7-123">**hstring** がある場合、そこから **Uri** を作成することができます。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-123">If you have an **hstring** then you can make a **Uri** from it.</span></span>
+
+```cppwinrt
+Uri awUriFromHstring{ tostringHstring };
+```
+
+<span data-ttu-id="7e1f7-124">**hstring** を受け取るメソッドを考えてみます。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-124">Consider a method that takes an **hstring**.</span></span>
+
+```cppwinrt
+public:
+    Uri CombineUri(winrt::hstring relativeUri) const;
+```
+
+<span data-ttu-id="7e1f7-125">そのような場合にも、前述したすべてのオプションが適用されます。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-125">All of the options you've just seen also apply in such cases.</span></span>
+
+```cppwinrt
+std::wstring contact{ L"contact" };
+contosoUri = contosoUri.CombineUri(contact);
+    
+std::wcout << contosoUri.ToString().c_str() << std::endl;
+```
+
+<span data-ttu-id="7e1f7-126">**hstring** は、メンバー **std::wstring_view** という変換演算子を持っており、コストを伴わずに変換が実行されます。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-126">**hstring** has a member **std::wstring_view** conversion operator, and the conversion is achieved at no cost.</span></span>
+
+```cppwinrt
+void legacy_print(std::wstring_view view);
+
+void Print(winrt::hstring const& hstring)
+{
+    legacy_print(hstring);
+}
+```
+
+## <a name="winrthstring-functions-and-operators"></a><span data-ttu-id="7e1f7-127">**winrt::hstring** の関数と演算子</span><span class="sxs-lookup"><span data-stu-id="7e1f7-127">**winrt::hstring** functions and operators</span></span>
+<span data-ttu-id="7e1f7-128">コンストラクター、演算子、関数、および反復子のホストが **hstring** に対して実装されています。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-128">A host of constructors, operators, functions, and iterators are implemented for **hstring**.</span></span>
+
+<span data-ttu-id="7e1f7-129">**hstring** は範囲であるため、範囲ベースの `for`、または `std::for_each` で使用できます。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-129">An **hstring** is a range, so you can use it with range-based `for`, or with `std::for_each`.</span></span> <span data-ttu-id="7e1f7-130">C++ 標準ライブラリ内の対応部分と自然かつ効率的に比較するための比較演算子も提供されます。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-130">It also provides comparison operators for naturally and efficiently comparing against its counterparts in the C++ Standard Library.</span></span> <span data-ttu-id="7e1f7-131">また、関連コンテナーのキーとして **hstring** を使用するために必要なものがすべて含まれています。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-131">And it includes everything you need to use **hstring** as a key for associative containers.</span></span> <span data-ttu-id="7e1f7-132">多くの C++ ライブラリが **std::basic_string** を使用し、UTF-8 テキストでのみ動作することは認識されています。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-132">We recognize that many C++ libraries use **std::basic_string**, and work exclusively with UTF-8 text.</span></span> <span data-ttu-id="7e1f7-133">利便性を考慮して、双方向に変換するためのヘルパーが提供されています。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-133">As a convenience, we provide helpers for converting back and forth.</span></span>
+
+```cppwinrt
+hstring w{ L"hello world" };
+ 
+std::string c = to_string(w);
+assert(c == "hello world");
+ 
+w = to_hstring(c);
+assert(w == L"hello world");
+```
+
+<span data-ttu-id="7e1f7-134">**hstring** の関数および演算子のその他の例および詳細については、[**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) API リファレンス トピックをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-134">For more examples and info about **hstring** functions and operators, see the [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) API reference topic.</span></span>
+
+## <a name="the-rationale-for-winrthstring-and-winrtparamhstring"></a><span data-ttu-id="7e1f7-135">**winrt::hstring** および **winrt::param::hstring** の原理</span><span class="sxs-lookup"><span data-stu-id="7e1f7-135">The rationale for **winrt::hstring** and **winrt::param::hstring**</span></span>
+<span data-ttu-id="7e1f7-136">Windows ランタイムは **wchar_t** 文字によって実装されていますが、Windows ランタイムのアプリケーション バイナリ インターフェイス (ABI) は **std::wstring** や **std::wstring_view** が提供するもののサブセットではありません。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-136">The Windows Runtime is implemented in terms of **wchar_t** characters, but the Windows Runtime's Application Binary Interface (ABI) is not a subset of what either **std::wstring** or **std::wstring_view** provide.</span></span> <span data-ttu-id="7e1f7-137">これらを使用すると、効率が大幅に低下します。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-137">Using those would lead to significant inefficiency.</span></span> <span data-ttu-id="7e1f7-138">代わりに、C++/WinRT は **winrt::hstring** を提供します。これは、基礎となる [HSTRING](https://msdn.microsoft.com/library/windows/desktop/br205775) と互換性がある不変文字列を表し、**std::wstring** の場合と同様にインターフェイスの背後に実装されています。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-138">Instead, C++/WinRT provides **winrt::hstring**, which represents an immutable string consistent with the underlying [HSTRING](https://msdn.microsoft.com/library/windows/desktop/br205775), and implemented behind an interface similar to that of **std::wstring**.</span></span> 
+
+<span data-ttu-id="7e1f7-139">論理的に **winrt::hstring** を受け入れるはずの C++/WinRT 入力パラメーターが、実際には **winrt::param::hstring** を予期している場合があります。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-139">You may notice that C++/WinRT input parameters that should logically accept **winrt::hstring** actually expect **winrt::param::hstring**.</span></span> <span data-ttu-id="7e1f7-140">**param** 名前空間には、自然に C++ 標準ライブラリにバインドしてコピーやその他の非効率性を回避するために、入力パラメーターの最適化にのみ使用される一連の型が含まれています。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-140">The **param** namespace contains a set of types used exclusively to optimize input parameters to naturally bind to C++ Standard Library types and avoid copies and other inefficiencies.</span></span> <span data-ttu-id="7e1f7-141">これらの型は直接使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-141">You shouldn't use these types directly.</span></span> <span data-ttu-id="7e1f7-142">独自の関数で最適化を使用する場合は、**std::wstring_view** を使用します。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-142">If you want to use an optimization for your own functions then use **std::wstring_view**.</span></span>
+
+<span data-ttu-id="7e1f7-143">重要なことは、Windows ランタイムの文字列管理の詳細はほとんど無視して、自分が理解していることを効率的に操作することができるということです。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-143">The upshot is that you can largely ignore the specifics of Windows Runtime string management, and just work with efficiency with what you know.</span></span> <span data-ttu-id="7e1f7-144">また、これは Windows ランタイムで文字列を大量に使用する場合は重要になります。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-144">And that's important, given how heavily strings are used in the Windows Runtime.</span></span>
+
+# <a name="formatting-strings"></a><span data-ttu-id="7e1f7-145">文字列の書式設定</span><span class="sxs-lookup"><span data-stu-id="7e1f7-145">Formatting strings</span></span>
+<span data-ttu-id="7e1f7-146">文字列の書式設定のための 1 つのオプションは **std::wstringstream** です。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-146">One option for string-formatting is **std::wstringstream**.</span></span> <span data-ttu-id="7e1f7-147">次の例では、単純なデバッグ トレース メッセージを書式設定して表示します。</span><span class="sxs-lookup"><span data-stu-id="7e1f7-147">Here's an example that formats and displays a simple debug trace message.</span></span>
+
+```cppwinrt
+#include <sstream>
+...
+void OnPointerPressed(IInspectable const&, PointerEventArgs const& args)
+{
+    float2 const point = args.CurrentPoint().Position();
+    std::wstringstream wstringstream;
+    wstringstream << L"Pointer pressed at (" << point.x << L"," << point.y << L")" << std::endl;
+    ::OutputDebugString(wstringstream.str().c_str());
+}
+```
+
+## <a name="important-apis"></a><span data-ttu-id="7e1f7-148">重要な API</span><span class="sxs-lookup"><span data-stu-id="7e1f7-148">Important APIs</span></span>
+* [<span data-ttu-id="7e1f7-149">winrt::hstring 構造体</span><span class="sxs-lookup"><span data-stu-id="7e1f7-149">winrt::hstring struct</span></span>](/uwp/cpp-ref-for-winrt/hstring)

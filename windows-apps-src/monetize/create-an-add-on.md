@@ -1,73 +1,66 @@
 ---
 author: mcleanbyron
 ms.assetid: 5BD650D2-AA26-4DE9-8243-374FDB7D932B
-description: "Windows ストア申請 API 内のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されいているアプリのアドオンを作成します。"
-title: "Windows ストア申請 API を使用したアドオンの作成"
+description: Windows デベロッパー センター アカウントに登録されているアプリのアドオンを作成するには、Microsoft Store 申請 API の以下のメソッドを使います。
+title: アドオンの作成
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10、UWP、Windows ストア申請 API、アドオンの作成、アプリ内製品、IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0492398872142aabd32d3a4d68d55b4e326f027e
-ms.lasthandoff: 02/07/2017
-
+keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの作成, アプリ内製品, IAP
+ms.localizationpriority: medium
+ms.openlocfilehash: d463fb1f2e40b8556d9f2c57847dae5420ec3b21
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/17/2018
+ms.locfileid: "1662542"
 ---
+# <a name="create-an-add-on"></a><span data-ttu-id="2a0a7-104">アドオンの作成</span><span class="sxs-lookup"><span data-stu-id="2a0a7-104">Create an add-on</span></span>
 
-# <a name="create-an-add-on-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したアドオンの作成
+<span data-ttu-id="2a0a7-105">Windows デベロッパー センター アカウントに登録されているアプリのアドオン (アプリ内製品または IAP とも呼ばれます) を作成するには、Microsoft Store 申請 API の以下のメソッドを使います。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-105">Use this method in the Microsoft Store submission API to create an add-on (also known as in-app product or IAP) for an app that is registered to your Windows Dev Center account.</span></span>
 
+> [!NOTE]
+> <span data-ttu-id="2a0a7-106">このメソッドは、申請なしでアドオンを作成します。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-106">This method creates an add-on without any submissions.</span></span> <span data-ttu-id="2a0a7-107">アドオンの申請を作成する方法については、「[アドオンの申請の管理](manage-add-on-submissions.md)」のメソッドをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-107">To create a submission for an add-on, see the methods in [Manage add-on submissions](manage-add-on-submissions.md).</span></span>
 
+## <a name="prerequisites"></a><span data-ttu-id="2a0a7-108">前提条件</span><span class="sxs-lookup"><span data-stu-id="2a0a7-108">Prerequisites</span></span>
 
+<span data-ttu-id="2a0a7-109">このメソッドを使うには、最初に次の作業を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-109">To use this method, you need to first do the following:</span></span>
 
-Windows ストア申請 API 内のこのメソッドを使用して、Windows デベロッパー センター アカウントに登録されているアプリのアドオン (アプリ内製品または IAP とも呼ばれます) を作成します。
+* <span data-ttu-id="2a0a7-110">Microsoft Store 申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-110">If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Microsoft Store submission API.</span></span>
+* <span data-ttu-id="2a0a7-111">このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-111">[Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method.</span></span> <span data-ttu-id="2a0a7-112">アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-112">After you obtain an access token, you have 60 minutes to use it before it expires.</span></span> <span data-ttu-id="2a0a7-113">トークンの有効期限が切れたら新しいトークンを取得できます。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-113">After the token expires, you can obtain a new one.</span></span>
 
->**注:**&nbsp;&nbsp;このメソッドは、申請なしでアドオンを作成します。 アドオンの申請を作成する方法については、「[アドオンの申請の管理](manage-add-on-submissions.md)」のメソッドをご覧ください。
+## <a name="request"></a><span data-ttu-id="2a0a7-114">要求</span><span class="sxs-lookup"><span data-stu-id="2a0a7-114">Request</span></span>
 
-## <a name="prerequisites"></a>前提条件
+<span data-ttu-id="2a0a7-115">このメソッドの構文は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-115">This method has the following syntax.</span></span> <span data-ttu-id="2a0a7-116">ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-116">See the following sections for usage examples and descriptions of the header and request body.</span></span>
 
-このメソッドを使うには、最初に次の作業を行う必要があります。
-
-* Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
-
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア提出 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
-
-## <a name="request"></a>要求
-
-このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
-
-| メソッド | 要求 URI                                                      |
+| <span data-ttu-id="2a0a7-117">メソッド</span><span class="sxs-lookup"><span data-stu-id="2a0a7-117">Method</span></span> | <span data-ttu-id="2a0a7-118">要求 URI</span><span class="sxs-lookup"><span data-stu-id="2a0a7-118">Request URI</span></span>                                                      |
 |--------|------------------------------------------------------------------|
-| POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` |
+| <span data-ttu-id="2a0a7-119">POST</span><span class="sxs-lookup"><span data-stu-id="2a0a7-119">POST</span></span>    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` |
 
-<span/>
- 
 
-### <a name="request-header"></a>要求ヘッダー
+### <a name="request-header"></a><span data-ttu-id="2a0a7-120">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="2a0a7-120">Request header</span></span>
 
-| ヘッダー        | 型   | 説明                                                                 |
+| <span data-ttu-id="2a0a7-121">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="2a0a7-121">Header</span></span>        | <span data-ttu-id="2a0a7-122">型</span><span class="sxs-lookup"><span data-stu-id="2a0a7-122">Type</span></span>   | <span data-ttu-id="2a0a7-123">説明</span><span class="sxs-lookup"><span data-stu-id="2a0a7-123">Description</span></span>                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
+| <span data-ttu-id="2a0a7-124">Authorization</span><span class="sxs-lookup"><span data-stu-id="2a0a7-124">Authorization</span></span> | <span data-ttu-id="2a0a7-125">文字列</span><span class="sxs-lookup"><span data-stu-id="2a0a7-125">string</span></span> | <span data-ttu-id="2a0a7-126">必須。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-126">Required.</span></span> <span data-ttu-id="2a0a7-127">**Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-127">The Azure AD access token in the form **Bearer** &lt;*token*&gt;.</span></span> |
 
-<span/>
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a><span data-ttu-id="2a0a7-128">要求本文</span><span class="sxs-lookup"><span data-stu-id="2a0a7-128">Request body</span></span>
 
-要求本文には次のパラメーターがあります。
- 
-|  パラメーター  |  型  |  説明  |  必須かどうか  |
+<span data-ttu-id="2a0a7-129">要求本文には次のパラメーターがあります。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-129">The request body has the following parameters.</span></span>
+
+|  <span data-ttu-id="2a0a7-130">パラメーター</span><span class="sxs-lookup"><span data-stu-id="2a0a7-130">Parameter</span></span>  |  <span data-ttu-id="2a0a7-131">型</span><span class="sxs-lookup"><span data-stu-id="2a0a7-131">Type</span></span>  |  <span data-ttu-id="2a0a7-132">説明</span><span class="sxs-lookup"><span data-stu-id="2a0a7-132">Description</span></span>  |  <span data-ttu-id="2a0a7-133">必須かどうか</span><span class="sxs-lookup"><span data-stu-id="2a0a7-133">Required</span></span>  |
 |------|------|------|------|
-|  applicationIds  |  array  |  このアドオンが関連付けられるアプリのストア ID を含む配列です。 この配列でサポートされる項目は 1 つのみです。   |  はい  |
-|  productId  |  string  |  アドオンの製品 ID です。 これは、アドオンを参照する、コード内で使用できる識別子です。 詳しくは、「[IAP の製品の種類と製品 ID を設定する](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id)」をご覧ください。  |  はい  |
-|  productType  |  string  |  アドオンの製品の種類です。 値 **Durable** と **Consumable** がサポートされています。  |  はい  |
+|  <span data-ttu-id="2a0a7-134">applicationIds</span><span class="sxs-lookup"><span data-stu-id="2a0a7-134">applicationIds</span></span>  |  <span data-ttu-id="2a0a7-135">array</span><span class="sxs-lookup"><span data-stu-id="2a0a7-135">array</span></span>  |  <span data-ttu-id="2a0a7-136">このアドオンが関連付けられるアプリのストア ID を含む配列です。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-136">An array that contains the Store ID of the app that this add-on is associated with.</span></span> <span data-ttu-id="2a0a7-137">この配列でサポートされる項目は 1 つのみです。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-137">Only one item is supported in this array.</span></span>   |  <span data-ttu-id="2a0a7-138">はい</span><span class="sxs-lookup"><span data-stu-id="2a0a7-138">Yes</span></span>  |
+|  <span data-ttu-id="2a0a7-139">productId</span><span class="sxs-lookup"><span data-stu-id="2a0a7-139">productId</span></span>  |  <span data-ttu-id="2a0a7-140">string</span><span class="sxs-lookup"><span data-stu-id="2a0a7-140">string</span></span>  |  <span data-ttu-id="2a0a7-141">アドオンの製品 ID です。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-141">The product ID of the add-on.</span></span> <span data-ttu-id="2a0a7-142">これは、アドオンを参照する、コード内で使用できる識別子です。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-142">This is an identifier that can use in code to refer to the add-on.</span></span> <span data-ttu-id="2a0a7-143">詳しくは、「[IAP の製品の種類と製品 ID を設定する](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-143">For more information, see [Set your product type and product ID](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id).</span></span>  |  <span data-ttu-id="2a0a7-144">はい</span><span class="sxs-lookup"><span data-stu-id="2a0a7-144">Yes</span></span>  |
+|  <span data-ttu-id="2a0a7-145">productType</span><span class="sxs-lookup"><span data-stu-id="2a0a7-145">productType</span></span>  |  <span data-ttu-id="2a0a7-146">string</span><span class="sxs-lookup"><span data-stu-id="2a0a7-146">string</span></span>  |  <span data-ttu-id="2a0a7-147">アドオンの製品の種類です。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-147">The product type of the add-on.</span></span> <span data-ttu-id="2a0a7-148">値 **Durable** と **Consumable** がサポートされています。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-148">The following values are supported: **Durable** and **Consumable**.</span></span>  |  <span data-ttu-id="2a0a7-149">はい</span><span class="sxs-lookup"><span data-stu-id="2a0a7-149">Yes</span></span>  |
 
-<span/>
 
-### <a name="request-example"></a>要求の例
+### <a name="request-example"></a><span data-ttu-id="2a0a7-150">要求の例</span><span class="sxs-lookup"><span data-stu-id="2a0a7-150">Request example</span></span>
 
-次の例は、アプリの新しいコンシューマブルなアドオンを作成する方法を示しています。
+<span data-ttu-id="2a0a7-151">次の例は、アプリの新しいコンシューマブルなアドオンを作成する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-151">The following example demonstrates how to create a new consumable add-on for an app.</span></span>
 
 ```syntax
 POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts HTTP/1.1
@@ -80,9 +73,9 @@ Content-Type: application/json
 }
 ```
 
-## <a name="response"></a>応答
+## <a name="response"></a><span data-ttu-id="2a0a7-152">応答</span><span class="sxs-lookup"><span data-stu-id="2a0a7-152">Response</span></span>
 
-次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答の本文内の値について詳しくは、[アドオンのリソース](manage-add-ons.md#add-on-object)をご覧ください。
+<span data-ttu-id="2a0a7-153">次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-153">The following example demonstrates the JSON response body for a successful call to this method.</span></span> <span data-ttu-id="2a0a7-154">応答の本文内の値について詳しくは、[アドオンのリソース](manage-add-ons.md#add-on-object)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-154">For more details about the values in the response body, see [add-on resource](manage-add-ons.md#add-on-object).</span></span>
 
 ```json
 {
@@ -101,22 +94,20 @@ Content-Type: application/json
 }
 ```
 
-## <a name="error-codes"></a>エラー コード
+## <a name="error-codes"></a><span data-ttu-id="2a0a7-155">エラー コード</span><span class="sxs-lookup"><span data-stu-id="2a0a7-155">Error codes</span></span>
 
-要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。
+<span data-ttu-id="2a0a7-156">要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-156">If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.</span></span>
 
-| エラー コード |  説明                                                                                                                                                                           |
+| <span data-ttu-id="2a0a7-157">エラー コード</span><span class="sxs-lookup"><span data-stu-id="2a0a7-157">Error code</span></span> |  <span data-ttu-id="2a0a7-158">説明</span><span class="sxs-lookup"><span data-stu-id="2a0a7-158">Description</span></span>                                                                                                                                                                           |
 |--------|------------------|
-| 400  | 要求が無効です。 |
-| 409  | 現在の状態が原因でアドオンを作成できませんでした。または、[Windows ストア申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能がアドオンで使用されています。 |   
+| <span data-ttu-id="2a0a7-159">400</span><span class="sxs-lookup"><span data-stu-id="2a0a7-159">400</span></span>  | <span data-ttu-id="2a0a7-160">要求が無効です。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-160">The request is invalid.</span></span> |
+| <span data-ttu-id="2a0a7-161">409</span><span class="sxs-lookup"><span data-stu-id="2a0a7-161">409</span></span>  | <span data-ttu-id="2a0a7-162">現在の状態が原因でアドオンを作成できませんでした。または、[Microsoft Store 申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能がアドオンで使用されています。</span><span class="sxs-lookup"><span data-stu-id="2a0a7-162">The add-on could not be created because of its current state, or the add-on uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).</span></span> |   
 
-<span/>
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="2a0a7-163">関連トピック</span><span class="sxs-lookup"><span data-stu-id="2a0a7-163">Related topics</span></span>
 
-* [Windows ストア サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-* [アドオンの申請の管理](manage-add-on-submissions.md)
-* [すべてのアドオンの入手](get-all-add-ons.md)
-* [アドオンの入手](get-an-add-on.md)
-* [アドオンの削除](delete-an-add-on.md)
-
+* [<span data-ttu-id="2a0a7-164">Microsoft Store サービスを使用した申請の作成と管理</span><span class="sxs-lookup"><span data-stu-id="2a0a7-164">Create and manage submissions using Microsoft Store services</span></span>](create-and-manage-submissions-using-windows-store-services.md)
+* [<span data-ttu-id="2a0a7-165">アドオンの申請の管理</span><span class="sxs-lookup"><span data-stu-id="2a0a7-165">Manage add-on submissions</span></span>](manage-add-on-submissions.md)
+* [<span data-ttu-id="2a0a7-166">すべてのアドオンの取得</span><span class="sxs-lookup"><span data-stu-id="2a0a7-166">Get all add-ons</span></span>](get-all-add-ons.md)
+* [<span data-ttu-id="2a0a7-167">アドオンの取得</span><span class="sxs-lookup"><span data-stu-id="2a0a7-167">Get an add-on</span></span>](get-an-add-on.md)
+* [<span data-ttu-id="2a0a7-168">アドオンの削除</span><span class="sxs-lookup"><span data-stu-id="2a0a7-168">Delete an add-on</span></span>](delete-an-add-on.md)

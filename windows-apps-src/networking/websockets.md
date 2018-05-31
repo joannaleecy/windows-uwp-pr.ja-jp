@@ -1,352 +1,679 @@
 ---
-author: DelfCo
-description: "WebSocket は、クライアントとサーバー間の高速で安全な双方向通信を、HTTP(S) を使った Web 経由で実現するメカニズムを提供します。"
+author: stevewhims
+description: WebSocket は、クライアントとサーバー間の高速で安全な双方向通信を、HTTP(S) を使った Web 経由で実現するメカニズムを提供し、UTF-8 メッセージとバイナリ メッセージの両方をサポートします。
 title: WebSocket
 ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
-ms.author: bobdel
-ms.date: 02/08/2017
+ms.author: stwhi
+ms.date: 04/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 203face64ddb925601d23274c4e9cf9ab6d7c6f8
-ms.lasthandoff: 02/07/2017
-
+keywords: windows 10, uwp, ネットワーク, websocket, messagewebsocket, streamwebsocket
+ms.localizationpriority: medium
+ms.openlocfilehash: 35997bbfcb59ed92403cf51afaf896b9564ed871
+ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/30/2018
+ms.locfileid: "1817763"
 ---
+# <a name="websockets"></a><span data-ttu-id="2ae44-104">WebSocket</span><span class="sxs-lookup"><span data-stu-id="2ae44-104">WebSockets</span></span>
+<span data-ttu-id="2ae44-105">WebSocket は、クライアントとサーバー間の高速で安全な双方向通信を、HTTP(S) を使った Web 経由で実現するメカニズムを提供し、UTF-8 メッセージとバイナリ メッセージの両方をサポートします。</span><span class="sxs-lookup"><span data-stu-id="2ae44-105">WebSockets provide a mechanism for fast, secure, two-way communication between a client and a server over the web using HTTP(S), and supporting both UTF-8 and binary messages.</span></span>
 
-# <a name="websockets"></a>WebSocket
+<span data-ttu-id="2ae44-106">[WebSocket プロトコル](http://tools.ietf.org/html/rfc6455)では、データはすぐに、全二重の 1 つのソケット接続によって転送され、両方のエンドポイント間のメッセージの送受信をリアルタイムで実行できます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-106">Under the [WebSocket Protocol](http://tools.ietf.org/html/rfc6455), data is transferred immediately over a full-duplex single socket connection, allowing messages to be sent and received from both endpoints in real time.</span></span> <span data-ttu-id="2ae44-107">WebSocket はマルチプレイヤー ゲーム (リアルタイムとターン制のどちらも)、ソーシャル ネットワークのインスタント通知、株価や天気予報のリアルタイム表示、セキュリティや高速なデータ転送を必要とするアプリなど、Microsoft Store アプリでの使用に適しています。</span><span class="sxs-lookup"><span data-stu-id="2ae44-107">WebSockets are ideal for use in multiplayer gaming (both real-time and turn-based), instant social network notifications, up-to-date displays of stock or weather information, and other apps requiring secure and fast data transfer.</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
+<span data-ttu-id="2ae44-108">WebSocket 接続を確立するには、クライアントとサーバー間で専用の HTTP ベースのハンドシェークをやり取りします。</span><span class="sxs-lookup"><span data-stu-id="2ae44-108">To establish a WebSocket connection, a specific, HTTP-based handshake is exchanged between the client and the server.</span></span> <span data-ttu-id="2ae44-109">成功した場合、直前に確立された TCP 接続を使って、アプリケーション レイヤー プロトコルが HTTP から WebSocket に "アップグレード" されます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-109">If successful, the application-layer protocol is "upgraded" from HTTP to WebSockets, using the previously established TCP connection.</span></span> <span data-ttu-id="2ae44-110">この時点で、HTTP は完全に不要となります。WebSocket 接続が閉じるまで、データの送受信は、両方のエンドポイントから WebSocket プロトコルを使って行うことができます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-110">Once this occurs, HTTP is completely out of the picture; data can be sent or received using the WebSocket protocol by both endpoints, until the WebSocket connection is closed.</span></span>
 
-**重要な API**
+<span data-ttu-id="2ae44-111">**注** クライアントとサーバーの両方が WebSocket プロトコルを使っていないと、クライアントは WebSocket を使ってデータを転送することはできません。</span><span class="sxs-lookup"><span data-stu-id="2ae44-111">**Note** A client cannot use WebSockets to transfer data unless the server also uses the WebSocket protocol.</span></span> <span data-ttu-id="2ae44-112">サーバーが WebSocket をサポートしていない場合は、別の方法でデータ転送を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="2ae44-112">If the server does not support WebSockets, then you must use another method of data transfer.</span></span>
 
--   [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842)
--   [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923)
+<span data-ttu-id="2ae44-113">ユニバーサル Windows プラットフォーム (UWP) は、クライアントとサーバーの両方について、WebSocket の使用をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="2ae44-113">The Universal Windows Platform (UWP) provides support for both client and server use of WebSockets.</span></span> <span data-ttu-id="2ae44-114">[**Windows.Networking.Sockets**](/uwp/api/windows.networking.sockets?branch=live) 名前空間には、クライアントが使うことのできる 2 つの WebSocket クラスが定義されています。それらは、&mdash;[**MessageWebSocket**](/uwp/api/windows.networking.sockets.messagewebsocket?branch=live) と [**StreamWebSocket**](/uwp/api/windows.networking.sockets.streamwebsocket?branch=live) です。</span><span class="sxs-lookup"><span data-stu-id="2ae44-114">The [**Windows.Networking.Sockets**](/uwp/api/windows.networking.sockets?branch=live) namespace defines two WebSocket classes for use by clients&mdash;[**MessageWebSocket**](/uwp/api/windows.networking.sockets.messagewebsocket?branch=live), and [**StreamWebSocket**](/uwp/api/windows.networking.sockets.streamwebsocket?branch=live).</span></span> <span data-ttu-id="2ae44-115">これら 2 つの WebSocket クラスの比較を次に示します。</span><span class="sxs-lookup"><span data-stu-id="2ae44-115">Here's a comparison of these two WebSocket classes.</span></span>
 
-WebSocket は、クライアントとサーバー間の高速で安全な双方向通信を、HTTP(S) を使った Web 経由で実現するメカニズムを提供します。
+| [<span data-ttu-id="2ae44-116">MessageWebSocket</span><span class="sxs-lookup"><span data-stu-id="2ae44-116">MessageWebSocket</span></span>](/uwp/api/windows.networking.sockets.messagewebsocket?branch=live) | [<span data-ttu-id="2ae44-117">StreamWebSocket</span><span class="sxs-lookup"><span data-stu-id="2ae44-117">StreamWebSocket</span></span>](/uwp/api/windows.networking.sockets.streamwebsocket?branch=live) |
+| - | - |
+| <span data-ttu-id="2ae44-118">WebSocket メッセージ全体の読み取りや書き込みが 1 回の操作で行われます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-118">An entire WebSocket message is read/written in a single operation.</span></span> | <span data-ttu-id="2ae44-119">メッセージのセクションを、何回かに分けて読み取ることができます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-119">Sections of a message can be read with each read operation.</span></span> |
+| <span data-ttu-id="2ae44-120">メッセージがあまり大きくない場合に適しています。</span><span class="sxs-lookup"><span data-stu-id="2ae44-120">Suitable when messages are not very large.</span></span> | <span data-ttu-id="2ae44-121">かなり大きなファイル (写真やビデオなど) を転送する場合に適しています。</span><span class="sxs-lookup"><span data-stu-id="2ae44-121">Suitable when very large files (such as photos or videos) are being transferred.</span></span> |
+| <span data-ttu-id="2ae44-122">UTF-8 とバイナリの両方のメッセージがサポートされます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-122">Supports both UTF-8 and binary messages.</span></span> | <span data-ttu-id="2ae44-123">バイナリ メッセージのみサポートされます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-123">Supports only binary messages.</span></span> |
+| <span data-ttu-id="2ae44-124">[UDP またはデータグラム ソケット](sockets.md#build-a-basic-udp-socket-client-and-server)に似ていますが (頻繁に送信される小さいメッセージに使用されるという意味で)、TCP の信頼性、パケット順序の保証、輻輳制御が提供されます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-124">Similar to a [UDP or datagram socket](sockets.md#build-a-basic-udp-socket-client-and-server) (in the sense of being intended for frequent, small messages), but with TCP's reliability, packet order guarantees, and congestion control.</span></span> | <span data-ttu-id="2ae44-125">[TCP またはストリーム ソケット](sockets.md#build-a-basic-tcp-socket-client-and-server)に似ています。</span><span class="sxs-lookup"><span data-stu-id="2ae44-125">Similar to a [TCP or stream socket](sockets.md#build-a-basic-tcp-socket-client-and-server).</span></span> |
 
-[WebSocket プロトコル](http://tools.ietf.org/html/rfc6455)では、データはすぐに、全二重の 1 つのソケット接続によって転送され、両方のエンドポイント間のメッセージの送受信をリアルタイムで実行できます。 WebSocket は、ソーシャル ネットワークでの即時の通知と最新情報 (ゲームの結果) の表示をセキュリティで保護すると同時に高速にデータ転送する必要があるリアルタイム ゲームでの使用に適しています。 ユニバーサル Windows プラットフォーム (UWP) の開発者は、 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) クラスと [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) クラスを使うことで Websocket プロトコルをサポートするサーバーに接続できます。
+## <a name="secure-your-connection-with-tlsssl"></a><span data-ttu-id="2ae44-126">TLS/SSL による接続の保護</span><span class="sxs-lookup"><span data-stu-id="2ae44-126">Secure your connection with TLS/SSL</span></span>
+<span data-ttu-id="2ae44-127">ほとんどの場合、セキュリティ保護された WebSocket 接続を使って、送受信するデータを暗号化できます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-127">In most cases, you'll want to  use a secure WebSocket connection so that the data you send and receive is encrypted.</span></span> <span data-ttu-id="2ae44-128">ファイアウォールやプロキシなどの多くの中継点は、暗号化されていない WebSocket 接続を拒否するため、接続の成功率も高くなります。</span><span class="sxs-lookup"><span data-stu-id="2ae44-128">This will also increase the chances that your connection will succeed, because many intermediaries such as firewalls and proxies reject unencrypted WebSocket connections.</span></span> <span data-ttu-id="2ae44-129">[WebSocket プロトコル](https://tools.ietf.org/html/rfc6455#section-3)には、以下の 2 つの URI スキームが定義されています。</span><span class="sxs-lookup"><span data-stu-id="2ae44-129">The [WebSocket protocol](https://tools.ietf.org/html/rfc6455#section-3) defines these two URI schemes.</span></span>
 
-| MessageWebSocket                                                         | StreamWebSocket                                                                               |
-|--------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| メッセージが極端に大きくない標準的なシナリオに適しています。   | 大きなファイル (写真やビデオなど) を転送するシナリオに適しています。 |
-| WebSocket メッセージ全体の受信が完了したときに受け取る通知を有効にできます。 | メッセージを分割し、何回かに分けて読み取ることができます。                             |
-| UTF-8 とバイナリの両方のメッセージがサポートされます。                                 | バイナリ メッセージのみサポートされます。                                                                |
-| UDP またはデータグラム ソケットに似ています。                                     | TCP またはストリーム ソケットに似ています。                                                            |
+| <span data-ttu-id="2ae44-130">URI スキーム</span><span class="sxs-lookup"><span data-stu-id="2ae44-130">URI scheme</span></span> | <span data-ttu-id="2ae44-131">目的</span><span class="sxs-lookup"><span data-stu-id="2ae44-131">Purpose</span></span> |
+| - | - |
+| <span data-ttu-id="2ae44-132">wss:</span><span class="sxs-lookup"><span data-stu-id="2ae44-132">wss:</span></span> | <span data-ttu-id="2ae44-133">セキュリティ保護された、暗号化を必要とする接続に使われます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-133">Use for secure connections that should be encrypted.</span></span> |
+| <span data-ttu-id="2ae44-134">ws:</span><span class="sxs-lookup"><span data-stu-id="2ae44-134">ws:</span></span> | <span data-ttu-id="2ae44-135">暗号化されていない接続に使われます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-135">Use for unencrypted connections.</span></span> |
 
-ほとんどの場合、セキュリティ保護された WebSocket 接続を使って、送受信されるデータを暗号化できます。 多くのプロキシは、暗号化されていない WebSocket 接続を拒否するため、接続の成功率も高くなります。 WebSocket プロトコルには、次の 2 つの URI スキームが定義されています。
+<span data-ttu-id="2ae44-136">WebSocket 接続を暗号化するには、`wss:` URI スキームを使います。</span><span class="sxs-lookup"><span data-stu-id="2ae44-136">To encrypt your WebSocket connection, use the `wss:` URI scheme.</span></span> <span data-ttu-id="2ae44-137">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="2ae44-137">Here's an example.</span></span>
 
--   ws: - 暗号化されていない接続に使われます。
--   wss: - セキュリティ保護された、暗号化を必要とする接続に使われます。
+```csharp
+protected override async void OnNavigatedTo(NavigationEventArgs e)
+{
+    var webSocket = new Windows.Networking.Sockets.MessageWebSocket();
+    await webSocket.ConnectAsync(new Uri("wss://www.contoso.com/mywebservice"));
+}
+```
 
-WebSocket 接続を暗号化するには、たとえば `wss://www.contoso.com/mywebservice` といった wss: URI スキームを使います。
+## <a name="use-messagewebsocket-to-connect"></a><span data-ttu-id="2ae44-138">MessageWebSocket を使用した接続</span><span class="sxs-lookup"><span data-stu-id="2ae44-138">Use MessageWebSocket to connect</span></span>
+<span data-ttu-id="2ae44-139">[**MessageWebSocket**](/uwp/api/windows.networking.sockets.messagewebsocket?branch=live) を使うと、WebSocket メッセージ全体の読み取りや書き込みを 1 回の操作で行うことができるようになります。</span><span class="sxs-lookup"><span data-stu-id="2ae44-139">[**MessageWebSocket**](/uwp/api/windows.networking.sockets.messagewebsocket?branch=live) allows an entire WebSocket message to be read/written in a single operation.</span></span> <span data-ttu-id="2ae44-140">したがって、メッセージがあまり大きくない場合に適しています。</span><span class="sxs-lookup"><span data-stu-id="2ae44-140">Consequently, it's suitable when messages are not very large.</span></span> <span data-ttu-id="2ae44-141">このクラスでは、UTF-8 とバイナリの両方のメッセージがサポートされます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-141">The class supports both UTF-8 and binary messages.</span></span>
 
-## <a name="using-messagewebsocket"></a>MessageWebSocket を使う
+<span data-ttu-id="2ae44-142">以下のコード例では、送信されたメッセージを送信元にエコー バックするサービス、WebSocket.org エコー サーバーを使っています。</span><span class="sxs-lookup"><span data-stu-id="2ae44-142">The example code below uses the WebSocket.org echo server&mdash;a service that echoes back to the sender any message sent to it.</span></span>
 
-[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) により、分割されたメッセージを何回かに分けて読み取ることができます。 **MessageWebSocket** は、メッセージがそれほど大きくないシナリオでよく使われます。 UTF-8 とバイナリ ファイルの両方がサポートされています。
+```csharp
+private Windows.Networking.Sockets.MessageWebSocket messageWebSocket;
 
-このセクションのコードは、新しい [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) を作り、WebSocket サーバーに接続して、サーバーにデータを送ります。 接続が正常に確立されると、アプリは、データが受け取られたことを示す [**MessageWebSocket.MessageReceived**](https://msdn.microsoft.com/library/windows/apps/br241358) イベントがトリガーされるのを待ちます。
+protected override void OnNavigatedTo(NavigationEventArgs e)
+{
+    this.messageWebSocket = new Windows.Networking.Sockets.MessageWebSocket();
 
-この例では、送信された文字列を単純に送信元にエコー バックするサービス、WebSocket.org エコー サーバーを使っています。 この例では、"wss:" プロトコル指定子を使うことで、メッセージの送受信でセキュリティ保護された接続を行っています。
+    // In this example, we send/receive a string, so we need to set the MessageType to Utf8.
+    this.messageWebSocket.Control.MessageType = Windows.Networking.Sockets.SocketMessageType.Utf8;
 
-> [!div class="tabbedCodeSnippets"]
-> ```cpp
-> void Game::InitWebSockets()
-> {
->     // Create a new web socket
->     m_messageWebSocket = ref new MessageWebSocket();
-> 
->     // Set the message type to UTF-8
->     m_messageWebSocket->Control->MessageType = Windows::Networking::Sockets::SocketMessageType::Utf8;
-> 
->     // Register callbacks for notifications of interest
->     m_messageWebSocket->MessageReceived += 
->        ref new TypedEventHandler<MessageWebSocket^, MessageWebSocketMessageReceivedEventArgs^>(this, &Game::WebSocketMessageReceived);
->     m_messageWebSocket->Closed += ref new TypedEventHandler<IWebSocket^, WebSocketClosedEventArgs^>(this, &Game::WebSocketClosed);
-> 
->     // This test code uses the websocket.org echo service to illustrate sending a string and receiving the echoed string back
->     // Note that wss: makes this an encrypted connection.
->     m_serverUri = ref new Uri("wss://echo.websocket.org");
-> 
->     // Establish the connection, and set m_socketConnected on success
->     create_task(m_messageWebSocket->ConnectAsync(m_serverUri)).then([this] (task<void> previousTask)
->     {
->         try
->         {
->             // Try getting all exceptions from the continuation chain above this point.
->             previousTask.get();
-> 
->             // websocket connected. update state variable
->             m_socketConnected = true;
->             OutputDebugString(L"Successfully initialized websockets\n");
->         }
->         catch (Platform::COMException^ exception)
->         {
->             // Add code here to handle any exceptions
->             // HandleException(exception);
-> 
->         }
->     });
-> }
-> ```
-> ```cs
-> MessageWebSocket webSock = new MessageWebSocket();
-> 
-> //In this case we will be sending/receiving a string so we need to set the MessageType to Utf8.
-> webSock.Control.MessageType = SocketMessageType.Utf8;
-> 
-> //Add the MessageReceived event handler.
-> webSock.MessageReceived += WebSock_MessageReceived;
-> 
-> //Add the Closed event handler.
-> webSock.Closed += WebSock_Closed;
-> 
-> Uri serverUri = new Uri("wss://echo.websocket.org");
-> 
-> try
-> {
->     //Connect to the server.
->     await webSock.ConnectAsync(serverUri);
-> 
->     //Send a message to the server.
->     await WebSock_SendMessage(webSock, "Hello, world!");
-> }
-> catch (Exception ex)
-> {
->     //Add code here to handle any exceptions
-> }
-> ```
+    this.messageWebSocket.MessageReceived += WebSocket_MessageReceived;
+    this.messageWebSocket.Closed += WebSocket_Closed;
 
-WebSocket 接続を初期化した後、コードは、データを適切に送受信するために次のアクティビティを実行する必要があります。
+    try
+    {
+        Task connectTask = this.messageWebSocket.ConnectAsync(new Uri("wss://echo.websocket.org")).AsTask();
+        connectTask.ContinueWith(_ => this.SendMessageUsingMessageWebSocketAsync("Hello, World!"));
+    }
+    catch (Exception ex)
+    {
+        Windows.Web.WebErrorStatus webErrorStatus = Windows.Networking.Sockets.WebSocketError.GetStatus(ex.GetBaseException().HResult);
+        // Add additional code here to handle exceptions.
+    }
+}
 
-### <a name="implement-a-callback-for-the-messagewebsocketmessagereceived-event"></a>MessageWebSocket.MessageReceived イベント用のコールバックを実装する
+private async Task SendMessageUsingMessageWebSocketAsync(string message)
+{
+    using (var dataWriter = new DataWriter(this.messageWebSocket.OutputStream))
+    {
+        dataWriter.WriteString(message);
+        await dataWriter.StoreAsync();
+        dataWriter.DetachStream();
+    }
+    Debug.WriteLine("Sending message using MessageWebSocket: " + message);
+}
 
-接続を確立して WebSocket でデータを送信する前に、アプリは、データが受信されたときに通知を受け取るためのイベント コールバックを登録する必要があります。 [**MessageWebSocket.MessageReceived**](https://msdn.microsoft.com/library/windows/apps/br241358) イベントが発生すると、登録したコールバックが呼び出され、[**MessageWebSocketMessageReceivedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br226852) からデータを受け取ります。 次の例は、送信されるメッセージが UTF-8 形式であるという前提で記述されています。
+private void WebSocket_MessageReceived(Windows.Networking.Sockets.MessageWebSocket sender, Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs args)
+{
+    try
+    {
+        using (DataReader dataReader = args.GetDataReader())
+        {
+            dataReader.UnicodeEncoding = Windows.Storage.Streams.UnicodeEncoding.Utf8;
+            string message = dataReader.ReadString(dataReader.UnconsumedBufferLength);
+            Debug.WriteLine("Message received from MessageWebSocket: " + message);
+            this.messageWebSocket.Dispose();
+        }
+    }
+    catch (Exception ex)
+    {
+        Windows.Web.WebErrorStatus webErrorStatus = Windows.Networking.Sockets.WebSocketError.GetStatus(ex.GetBaseException().HResult);
+        // Add additional code here to handle exceptions.
+    }
+}
 
-次の例に示す関数は、接続された WebSocket サーバーから文字列を受信し、その文字列をデバッガーの出力ウィンドウに表示します。
-
-> [!div class="tabbedCodeSnippets"]
->```cpp
->void Game::WebSocketMessageReceived(MessageWebSocket^ sender, MessageWebSocketMessageReceivedEventArgs^ args)
->{
->    DataReader^ messageReader = args->GetDataReader();
->    messageReader->UnicodeEncoding = Windows::Storage::Streams::UnicodeEncoding::Utf8;
->
->    String^ readString = messageReader->ReadString(messageReader->UnconsumedBufferLength);
->    // Data has been read and is now available from the readString variable.
->    swprintf(m_debugBuffer, 511, L"WebSocket Message received: %s\n", readString->Data());
->    OutputDebugString(m_debugBuffer);
->}
->```
->```csharp
->//The MessageReceived event handler.
->private void WebSock_MessageReceived(MessageWebSocket sender, MessageWebSocketMessageReceivedEventArgs args)
->{
->    DataReader messageReader = args.GetDataReader();
->    messageReader.UnicodeEncoding = UnicodeEncoding.Utf8;
->    string messageString = messageReader.ReadString(messageReader.UnconsumedBufferLength);
->
->    //Add code here to do something with the string that is received.
->}
->```
-
-###  <a name="implement-a-callback-for-the-messagewebsocketclosed-event"></a>MessageWebSocket.Closed イベント用のコールバックを実装する
-
-接続を確立して WebSocket でデータを送信する前に、アプリは、WebSocket サーバーによって WebSocket が閉じられたときに通知を受け取るためのイベント コールバックを登録する必要があります。 [**MessageWebSocket.Closed**](https://msdn.microsoft.com/library/windows/apps/hh701364) イベントが発生すると、登録したコールバックが呼び出され、接続が WebSocket サーバーによって閉じられたことが伝えられます。
-
-> [!div class="tabbedCodeSnippets"]
->```cpp
->void Game::WebSocketClosed(IWebSocket^ sender, WebSocketClosedEventArgs^ args)
->{
->    // The method may be triggered remotely by the server sending unsolicited close frame or locally by Close()/delete operator.
->    // This method assumes we saved the connected WebSocket to a variable called m_messageWebSocket
->    if (m_messageWebSocket != nullptr)
->    {
->        delete m_messageWebSocket;
->        m_messageWebSocket = nullptr;
->        OutputDebugString(L"Socket was closed\n");
->    }
->    m_socketConnected = false;
-> }
->```
->```csharp
->//The Closed event handler
->private void WebSock_Closed(IWebSocket sender, WebSocketClosedEventArgs args)
->{
->    //Add code here to do something when the connection is closed locally or by the server
->}
->```
-
-###  <a name="send-a-message-on-a-websocket"></a>WebSocket でメッセージを送信する
-
-接続が確立されたら、WebSocket クライアントはサーバーにデータを送信できます。 [**DataWriter.StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) メソッドは、符号なし整数にマッピングされるパラメーターを返します。 これにより、メッセージを送信するタスクの定義方法と、接続を行うタスクの定義方法とは異なるものになります。
-
-**注**   MessageWebSocket の OutputStream を使って新しい DataWriter オブジェクトを作成すると、OutputStream の所有権が DataWriter に移り、DataWriter がスコープを外れると Outputstream の割り当てが解除されます。 このため、その後 OutputStream を使おうとすると、HRESULT 値 0x80000013 のエラーが発生します。 次のコードでは、OutputStream の割り当てが解除されないようにするため、DataWriter の DetachStream メソッドを呼び出し、ストリームの所有権を WebSocket オブジェクトに返しています。
-
-次の例に示す関数は、接続された WebSocket サーバーに文字列を送信し、確認メッセージをデバッガーの出力ウィンドウに表示します。
-
-> [!div class="tabbedCodeSnippets"]
->```cpp
->void Game::SendWebSocketMessage(Windows::Networking::Sockets::MessageWebSocket^ sendingSocket, Platform::String^ message)
->{
->    if (m_socketConnected)
->    {
->        // WebSocket is connected, so send a message
->        m_messageWriter = ref new DataWriter(sendingSocket->OutputStream);
->
->        m_messageWriter->WriteString(message);
->
->        // Send the data as one complete message
->        create_task(m_messageWriter->StoreAsync()).then([this] (unsigned int)
->        {
->            // Send Completed
->            m_messageWriter->DetachStream();    // give the stream back to m_messageWebSocket
->            OutputDebugString(L"Sent websocket message\n");
->        })
->            .then([this] (task<void>> previousTask)
->        {
->            try
->            {
->                // Try getting all exceptions from the continuation chain above this point.
->                previousTask.get();
->            }
->            catch (Platform::COMException ^ex)
->            {
->                // Add code to handle the exception
->                // HandleException(exception);
->            }
->        });
->    }
->}
->```
->```csharp
->//Send a message to the server.
->private async Task WebSock_SendMessage(MessageWebSocket webSock, string message)
->{
->    DataWriter messageWriter = new DataWriter(webSock.OutputStream);
->    messageWriter.WriteString(message);
->    await messageWriter.StoreAsync();
->}
->```
-
-## <a name="using-advanced-controls-with-websockets"></a>WebSocket での高度なコントロールの使用
-
-[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) と [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) では、高度なコントロールの使い方に関して同じモデルが採用されています。 上記の主要なクラスには、それぞれに高度なコントロールにアクセスするための関連クラスがあります。
-
-[**MessageWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226843) は、[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) オブジェクトに関するソケット制御データを提供します。
-[**StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) は、[**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) オブジェクトに関するソケット制御データを提供します。
-どちらのタイプの WebSocket も、高度なコントロールを行うための基本的なモデルは同じです。 以降の説明では [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) を例として使っていますが、[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) でもプロセスは同じです。
-
-1.  [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) オブジェクトを作成します。
-2.  [**StreamWebSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226934) プロパティを使って、この [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) オブジェクトに関連付けられている [**StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) インスタンスを取得します。
-3.  [**StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) インスタンスのプロパティを取得または設定することで、特定の高度なコントロールを取得または設定します。
-
-[**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) と [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) のどちらも、高度なコントロールを設定するときには要件があります。
-
--   [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) における高度なコントロールでは、アプリは常に、接続操作を発行する前にプロパティを設定しておく必要があります。 この要件を満たすため、コントロール プロパティは、**StreamWebSocket** オブジェクトを作成したらすぐに設定することをお勧めします。 [**StreamWebSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/br226933) メソッドが呼び出された後は、コントロール プロパティを設定しないでください。
--   メッセージ型以外の [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) に関する高度なコントロールでは常に、接続操作を発行する前にプロパティを設定しておく必要があります。 **MessageWebSocket** の作成したらすぐにすべてのコントロール プロパティを設定することをお勧めします。 メッセージ型以外については、[**MessageWebSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/br226859) メソッドが呼び出された後は、コントロール プロパティを変更しないでください。
-
-## <a name="websocket-information-classes"></a>WebSocket の情報クラス
-
-[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) と [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) には、WebSocket インスタンスについての追加情報を提供するクラスがそれぞれあります。
-
-[**MessageWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226849) は、[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) についての情報を提供します。情報クラスのインスタンスは、[**MessageWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226861) プロパティを使って取得します。
-
-[**StreamWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226929) は、[**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) についての情報を提供します。情報クラスのインスタンスは、[**StreamWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226935) プロパティを使って取得します。
-
-どちらの情報クラスについても、すべてのプロパティは読み取り専用であり、また WebSocket オブジェクトの有効期間中はいつでも現在の情報を取得できます。
-
-## <a name="handling-network-exceptions"></a>ネットワーク例外を処理する
-
-[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) または [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 操作で発生したエラーは **HRESULT** 値として返されます。 ネットワーク エラーを WebSocket 操作から [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 列挙値に変換するには、[**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) メソッドを使います。 **WebErrorStatus** 列挙値のほとんどは、ネイティブ HTTP クライアント操作から返されるエラーに対応しています。 アプリは特定の **WebErrorStatus** 列挙値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更することができます。
-
-パラメーター検証エラーの場合は、例外の **HRESULT** を使って、その例外の原因となったエラーの詳細情報を確認することもできます。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 パラメーター検証エラーではほとんどの場合、返される **HRESULT** は **E\_INVALIDARG** です。
-
-## <a name="setting-timeouts-on-websocket-operations"></a>WebSocket の操作に対してタイムアウトを設定する
-
-MessageWebSocket クラスと StreamWebSocket クラスは、内部システム サービスを使って WebSocket クライアントに要求を送信し、サーバーからの応答を受信します。 WebSocket の接続操作で既定されているタイムアウト値は 60 秒です。 WebSocket をサポートする HTTP サーバーが、ネットワーク停止によって一時的にダウンするかブロックされているために WebSocket の接続要求に応答できない場合は、内部システム サービスは 60 秒待った後でエラーを返し、それによって WebSocket の ConnectAsync メソッドに例外がスローされます。 URI 内の HTTP サーバー名に対する名前クエリで複数の IP アドレスが返されると、内部システム サービスは最大で 5 つのサイトの IP アドレスに接続を試みますが、その場合は各アドレスについて既定のタイムアウト時間である 60 秒待ちます。 すなわち、WebSocket 接続要求を行うアプリが複数の IP アドレスに接続を試みる場合は、エラーが返されて例外がスローされまで、数分間の待機が発生する可能性があります。 この動作は、ユーザーからはまるでアプリが停止しているかのように見えることがあります。 WebSocket 接続確立後の送受信操作における既定のタイムアウト値は 30 秒です。
-
-アプリの応答性を高め、こうした問題を最小化するためには、接続操作のタイムアウトを既定よりも短く設定します。そうすることで、待機時間を短縮することができます。
-
-タイムアウトは StreamWebSocket と MessageWebSocket の両方で同じように設定します。 次の例は、StreamWebSocket に対するタイムアウトの設定方法を示していますが、MessageWebSocket でもプロセスはほぼ同じです。
-
-1.  タイマーを使って指定した遅延後に完了するタスクを作成します。
-2.  取り消しに対応する cancellation\_token\_source を含む WebSocket 操作のタスクを作成します。
-3.  タイムアウト遅延が指定されたタスクが、WebSocket 接続操作が完了する前に完了した場合は、WebSocket 操作のタスクを取り消します。
-
-次の例では、指定した遅延後に完了する第 1 のタスクと、指定した遅延後に取り消す第 2 のタスクを作成しています。 これらのクラスは、特定のタイムアウトを設定して接続を確立するときに、StreamWebSocket と MessageWebSocket と使うことができます。 たとえば、タスクの取り消しに対応する cancellation\_token\_source を含むタスクで StreamWebSocket.ConnectAsync メソッドを呼び出すときなどに使えます。 タイムアウトが先に完了した場合は、cancellation\_token\_source により WebSocket の接続操作のタスクが取り消されます。
+private void WebSocket_Closed(Windows.Networking.Sockets.IWebSocket sender, Windows.Networking.Sockets.WebSocketClosedEventArgs args)
+{
+    Debug.WriteLine("WebSocket_Closed; Code: " + args.Code + ", Reason: \"" + args.Reason + "\"");
+    // Add additional code here to handle the WebSocket being closed.
+}
+```
 
 ```cpp
-    #include <agents.h>
-    #include <ppl.h>
-    #include <ppltasks.h>
+#include <ppltasks.h>
+#include <sstream>
 
-    using namespace concurrency;
-    using namespace std;
+    ...
+    
+using namespace Windows::Foundation;
+using namespace Windows::Storage::Streams;
+using namespace Windows::UI::Xaml::Navigation;
 
-    // Creates a task that completes after the specified delay.
-    task<void> complete_after(unsigned int timeout)
+    ...
+
+private:
+    Windows::Networking::Sockets::MessageWebSocket^ messageWebSocket;
+
+protected:
+    virtual void OnNavigatedTo(NavigationEventArgs^ e) override
     {
-        // A task completion event that is set when a timer fires.
-        task_completion_event<void> tce;
+        this->messageWebSocket = ref new Windows::Networking::Sockets::MessageWebSocket();
 
-        // Create a non-repeating timer.
-        shared_ptr<timer<int>> fire_once(new timer<int>(timeout, 0, nullptr, false));
-        
-        // Create a call object that sets the completion event after the timer fires.
-        shared_ptr<call<int>> callback(new call<int>([tce](int)
+        // In this example, we send/receive a string, so we need to set the MessageType to Utf8.
+        this->messageWebSocket->Control->MessageType = Windows::Networking::Sockets::SocketMessageType::Utf8;
+
+        this->messageWebSocket->MessageReceived += ref new TypedEventHandler<Windows::Networking::Sockets::MessageWebSocket^, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs^>(this, &MessageWebSocketPage::WebSocket_MessageReceived);
+        this->messageWebSocket->Closed += ref new TypedEventHandler<Windows::Networking::Sockets::IWebSocket^, Windows::Networking::Sockets::WebSocketClosedEventArgs^>(this, &MessageWebSocketPage::WebSocket_Closed);
+
+        try
         {
-            tce.set();
-        }));
-
-        // Connect the timer to the callback and start the timer.
-        fire_once->link_target(callback.get());
-        fire_once->start();
-
-        // Create a task that completes after the completion event is set.
-        task<void> event_set(tce);
-
-        // Create a continuation task that cleans up resources and
-        // and return that continuation task.
-        return event_set.then([callback, fire_once]()
+            auto connectTask = Concurrency::create_task(this->messageWebSocket->ConnectAsync(ref new Uri(L"wss://echo.websocket.org")));
+            connectTask.then([this] { this->SendMessageUsingMessageWebSocketAsync(L"Hello, World!"); });
+        }
+        catch (Platform::Exception^ ex)
         {
+            Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(ex->HResult);
+            // Add additional code here to handle exceptions.
+        }
+    }
+
+private:
+    void SendMessageUsingMessageWebSocketAsync(Platform::String^ message)
+    {
+        auto dataWriter = ref new DataWriter(this->messageWebSocket->OutputStream);
+        dataWriter->WriteString(message);
+
+        Concurrency::create_task(dataWriter->StoreAsync()).then(
+            [=](unsigned int)
+        {
+            dataWriter->DetachStream();
+            std::wstringstream wstringstream;
+            wstringstream << L"Sending message using MessageWebSocket: " << message->Data() << std::endl;
+            ::OutputDebugString(wstringstream.str().c_str());
         });
     }
 
-    // Cancels the provided task after the specifed delay, if the task
-    // did not complete.
-    template<typename T>
-    task<T> cancel_after_timeout(task<T> t, cancellation_token_source cts, unsigned int timeout)
+    void WebSocket_MessageReceived(Windows::Networking::Sockets::MessageWebSocket^ sender, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs^ args)
     {
-        // Create a task that returns true after the specified task completes.
-        task<bool> success_task = t.then([](T)
+        try
         {
-            return true;
-        });
-        // Create a task that returns false after the specified timeout.
-        task<bool> failure_task = complete_after(timeout).then([]
-        {
-            return false;
-        });
+            DataReader^ dataReader = args->GetDataReader();
 
-        // Create a continuation task that cancels the overall task  
-        // if the timeout task finishes first. 
-        return (failure_task || success_task).then([t, cts](bool success)
+            dataReader->UnicodeEncoding = Windows::Storage::Streams::UnicodeEncoding::Utf8;
+            Platform::String^ message = dataReader->ReadString(dataReader->UnconsumedBufferLength);
+            std::wstringstream wstringstream;
+            wstringstream << L"Message received from MessageWebSocket: " << message->Data() << std::endl;
+            ::OutputDebugString(wstringstream.str().c_str());
+            this->messageWebSocket->Close(1000, L"");
+        }
+        catch (Platform::Exception^ ex)
         {
-            if (!success)
-            {
-                // Set the cancellation token. The task that is passed as the 
-                // t parameter should respond to the cancellation and stop 
-                // as soon as it can.
-                cts.cancel();
-            }
- 
-            // Return the original task.
-            return t;
-        });
+            Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(ex->HResult);
+            // Add additional code here to handle exceptions.
+        }
+    }
+
+    void WebSocket_Closed(Windows::Networking::Sockets::IWebSocket^ sender, Windows::Networking::Sockets::WebSocketClosedEventArgs^ args)
+    {
+        std::wstringstream wstringstream;
+        wstringstream << L"WebSocket_Closed; Code: " << args->Code << ", Reason: \"" << args->Reason->Data() << "\"" << std::endl;
+        ::OutputDebugString(wstringstream.str().c_str());
+        // Add additional code here to handle the WebSocket being closed.
     }
 ```
 
+```cppwinrt
+#include "winrt/Windows.Foundation.h"
+#include "winrt/Windows.Networking.Sockets.h"
+#include "winrt/Windows.Storage.Streams.h"
+#include "winrt/Windows.UI.Xaml.Navigation.h"
+#include <sstream>
 
+using namespace winrt;
+using namespace Windows::Foundation;
+using namespace Windows::Storage::Streams;
+using namespace Windows::UI::Xaml::Navigation;
+...
+
+private:
+    Windows::Networking::Sockets::MessageWebSocket m_messageWebSocket;
+    winrt::event_token m_messageReceivedEventToken;
+    winrt::event_token m_closedEventToken;
+
+public:
+    IAsyncAction OnNavigatedTo(NavigationEventArgs const&)
+    {
+        // In this example, we send/receive a string, so we need to set the MessageType to Utf8.
+        m_messageWebSocket.Control().MessageType(Windows::Networking::Sockets::SocketMessageType::Utf8);
+
+        m_messageReceivedEventToken = m_messageWebSocket.MessageReceived({ this, &MainPage::OnWebSocketMessageReceived });
+        m_closedEventToken = m_messageWebSocket.Closed({ this, &MainPage::OnWebSocketClosed });
+
+        try
+        {
+            co_await m_messageWebSocket.ConnectAsync(Uri{ L"wss://echo.websocket.org" });
+            SendMessageUsingMessageWebSocketAsync(L"Hello, World!");
+        }
+        catch (winrt::hresult_error const& ex)
+        {
+            Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(ex.code());
+            // Add additional code here to handle exceptions.
+        }
+    }
+
+private:
+    IAsyncAction SendMessageUsingMessageWebSocketAsync(std::wstring const& message)
+    {
+        DataWriter dataWriter{ m_messageWebSocket.OutputStream() };
+        dataWriter.WriteString(message);
+
+        co_await dataWriter.StoreAsync();
+        dataWriter.DetachStream();
+        std::wstringstream wstringstream;
+        wstringstream << L"Sending message using MessageWebSocket: " << message.c_str() << std::endl;
+        ::OutputDebugString(wstringstream.str().c_str());
+    }
+
+    void OnWebSocketMessageReceived(Windows::Networking::Sockets::MessageWebSocket const&, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs const& args)
+    {
+        try
+        {
+            DataReader dataReader{ args.GetDataReader() };
+
+            dataReader.UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding::Utf8);
+            auto message = dataReader.ReadString(dataReader.UnconsumedBufferLength());
+            std::wstringstream wstringstream;
+            wstringstream << L"Message received from MessageWebSocket: " << message.c_str() << std::endl;
+            ::OutputDebugString(wstringstream.str().c_str());
+            m_messageWebSocket.Close(1000, L"");
+        }
+        catch (winrt::hresult_error const& ex)
+        {
+            Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(ex.code());
+            // Add additional code here to handle exceptions.
+        }
+    }
+
+    void OnWebSocketClosed(Windows::Networking::Sockets::IWebSocket const&, Windows::Networking::Sockets::WebSocketClosedEventArgs const& args)
+    {
+        std::wstringstream wstringstream;
+        wstringstream << L"WebSocket_Closed; Code: " << args.Code() << ", Reason: \"" << args.Reason().c_str() << "\"" << std::endl;
+        ::OutputDebugString(wstringstream.str().c_str());
+        // Add additional code here to handle the WebSocket being closed.
+    }
+```
+
+### <a name="handle-the-messagewebsocketmessagereceived-and-messagewebsocketclosed-events"></a><span data-ttu-id="2ae44-143">MessageWebSocket.MessageReceived イベントと MessageWebSocket.Closed イベントの処理</span><span class="sxs-lookup"><span data-stu-id="2ae44-143">Handle the MessageWebSocket.MessageReceived and MessageWebSocket.Closed events</span></span>
+<span data-ttu-id="2ae44-144">上の例のように、**MessageWebSocket** を使って接続を確立してデータを送信する前に、[**MessageWebSocket.MessageReceived**](/uwp/api/windows.networking.sockets.messagewebsocket.MessageReceived) イベントと [**MessageWebSocket.Closed**](/uwp/api/windows.networking.sockets.messagewebsocket.Closed) イベントにサブスクライブする必要があります。</span><span class="sxs-lookup"><span data-stu-id="2ae44-144">As shown in the example above, before establishing a connection and sending data with a **MessageWebSocket**, you should subscribe to the [**MessageWebSocket.MessageReceived**](/uwp/api/windows.networking.sockets.messagewebsocket.MessageReceived) and  [**MessageWebSocket.Closed**](/uwp/api/windows.networking.sockets.messagewebsocket.Closed) events.</span></span>
+ 
+<span data-ttu-id="2ae44-145">データを受信すると **MessageReceived** が発生します。</span><span class="sxs-lookup"><span data-stu-id="2ae44-145">**MessageReceived** is raised when data is received.</span></span> <span data-ttu-id="2ae44-146">データには、[**MessageWebSocketMessageReceivedEventArgs**](/uwp/api/windows.networking.sockets.messagewebsocketmessagereceivedeventargs?branch=live) 経由でアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-146">The data can be accessed via [**MessageWebSocketMessageReceivedEventArgs**](/uwp/api/windows.networking.sockets.messagewebsocketmessagereceivedeventargs?branch=live).</span></span> <span data-ttu-id="2ae44-147">クライアントまたはサーバーがソケットを閉じると **Closed** が発生します。</span><span class="sxs-lookup"><span data-stu-id="2ae44-147">**Closed** is raised when the client or the server closes the socket.</span></span>
+ 
+### <a name="send-data-on-a-messagewebsocket"></a><span data-ttu-id="2ae44-148">MessageWebSocket でのデータの送信</span><span class="sxs-lookup"><span data-stu-id="2ae44-148">Send data on a MessageWebSocket</span></span>
+<span data-ttu-id="2ae44-149">接続が確立されたら、サーバーにデータを送信できます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-149">Once a connection is established, you can send data to the server.</span></span> <span data-ttu-id="2ae44-150">これを行うには、[**MessageWebSocket.OutputStream**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.MessageWebSocket.OutputStream) プロパティと [**DataWriter**](/uwp/api/windows.storage.streams.datawriter?branch=live) を使って、データを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-150">You do this by using the [**MessageWebSocket.OutputStream**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.MessageWebSocket.OutputStream) property, and a [**DataWriter**](/uwp/api/windows.storage.streams.datawriter?branch=live), to write the data.</span></span> 
+
+<span data-ttu-id="2ae44-151">**注:** **DataWriter** が出力ストリームの所有権を取得します。</span><span class="sxs-lookup"><span data-stu-id="2ae44-151">**Note** The **DataWriter** takes ownership of the output stream.</span></span> <span data-ttu-id="2ae44-152">**DataWriter** がスコープ外になると、出力ストリームがそれにアタッチされている場合は **DataWriter** は出力ストリームの割り当てを解除します。</span><span class="sxs-lookup"><span data-stu-id="2ae44-152">When the **DataWriter** goes out of scope, if the output stream is attached to it, the **DataWriter** deallocates the output stream.</span></span> <span data-ttu-id="2ae44-153">その後、出力ストリームを使おうとすると、HRESULT 値 0x80000013 のエラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="2ae44-153">After that, subsequent attempts to use the output stream fail with an HRESULT value of 0x80000013.</span></span> <span data-ttu-id="2ae44-154">ただし、[**DataWriter.DetachStream**](/uwp/api/windows.storage.streams.datawriter.DetachStream) を呼び出して **DataWriter** から出力ストリームをデタッチし、ストリームの所有権を **MessageWebSocket** に返すことができます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-154">But you can call [**DataWriter.DetachStream**](/uwp/api/windows.storage.streams.datawriter.DetachStream) to detach the output stream from the **DataWriter** and return ownership of the stream to the **MessageWebSocket**.</span></span>
+
+## <a name="use-streamwebsocket-to-connect"></a><span data-ttu-id="2ae44-155">StreamWebSocket を使用した接続</span><span class="sxs-lookup"><span data-stu-id="2ae44-155">Use StreamWebSocket to connect</span></span>
+<span data-ttu-id="2ae44-156">[**StreamWebSocket**](/uwp/api/windows.networking.sockets.streamwebsocket?branch=live) を使うと、メッセージを分割し、何回かに分けて読み取ることができます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-156">[**StreamWebSocket**](/uwp/api/windows.networking.sockets.streamwebsocket?branch=live) allows sections of a message to be read with each read operation.</span></span> <span data-ttu-id="2ae44-157">したがって、かなり大きなファイル (写真やビデオなど) を転送する場合に適しています。</span><span class="sxs-lookup"><span data-stu-id="2ae44-157">Consequently, it's suitable when very large files (such as photos or videos) are being transferred.</span></span> <span data-ttu-id="2ae44-158">このクラスでは、バイナリ メッセージのみサポートされます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-158">The class supports only binary messages.</span></span>
+
+<span data-ttu-id="2ae44-159">以下のコード例では、送信されたメッセージを送信元にエコー バックするサービス、WebSocket.org エコー サーバーを使っています。</span><span class="sxs-lookup"><span data-stu-id="2ae44-159">The example code below uses the WebSocket.org echo server&mdash;a service that echoes back to the sender any message sent to it.</span></span>
+
+```csharp
+private Windows.Networking.Sockets.StreamWebSocket streamWebSocket;
+
+protected override void OnNavigatedTo(NavigationEventArgs e)
+{
+    this.streamWebSocket = new Windows.Networking.Sockets.StreamWebSocket();
+
+    this.streamWebSocket.Closed += WebSocket_Closed;
+
+    try
+    {
+        Task connectTask = this.streamWebSocket.ConnectAsync(new Uri("wss://echo.websocket.org")).AsTask();
+
+        connectTask.ContinueWith(_ =>
+        {
+            Task.Run(() => this.ReceiveMessageUsingStreamWebSocket());
+            Task.Run(() => this.SendMessageUsingStreamWebSocket(new byte[] { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09 }));
+        });
+    }
+    catch (Exception ex)
+    {
+        Windows.Web.WebErrorStatus webErrorStatus = Windows.Networking.Sockets.WebSocketError.GetStatus(ex.GetBaseException().HResult);
+        // Add code here to handle exceptions.
+    }
+}
+
+private async void ReceiveMessageUsingStreamWebSocket()
+{
+    try
+    {
+        using (var dataReader = new DataReader(this.streamWebSocket.InputStream))
+        {
+            dataReader.InputStreamOptions = InputStreamOptions.Partial;
+            await dataReader.LoadAsync(256);
+            byte[] message = new byte[dataReader.UnconsumedBufferLength];
+            dataReader.ReadBytes(message);
+            Debug.WriteLine("Data received from StreamWebSocket: " + message.Length + " bytes");
+        }
+        this.streamWebSocket.Dispose();
+    }
+    catch (Exception ex)
+    {
+        Windows.Web.WebErrorStatus webErrorStatus = Windows.Networking.Sockets.WebSocketError.GetStatus(ex.GetBaseException().HResult);
+        // Add code here to handle exceptions.
+    }
+}
+
+private async void SendMessageUsingStreamWebSocket(byte[] message)
+{
+    try
+    {
+        using (var dataWriter = new DataWriter(this.streamWebSocket.OutputStream))
+        {
+            dataWriter.WriteBytes(message);
+            await dataWriter.StoreAsync();
+            dataWriter.DetachStream();
+        }
+        Debug.WriteLine("Sending data using StreamWebSocket: " + message.Length.ToString() + " bytes");
+    }
+    catch (Exception ex)
+    {
+        Windows.Web.WebErrorStatus webErrorStatus = Windows.Networking.Sockets.WebSocketError.GetStatus(ex.GetBaseException().HResult);
+        // Add code here to handle exceptions.
+    }
+}
+
+private void WebSocket_Closed(Windows.Networking.Sockets.IWebSocket sender, Windows.Networking.Sockets.WebSocketClosedEventArgs args)
+{
+    Debug.WriteLine("WebSocket_Closed; Code: " + args.Code + ", Reason: \"" + args.Reason + "\"");
+    // Add additional code here to handle the WebSocket being closed.
+}
+```
+
+```cpp
+#include <ppltasks.h>
+#include <sstream>
+
+    ...
+    
+using namespace Windows::Foundation;
+using namespace Windows::Storage::Streams;
+using namespace Windows::UI::Xaml::Navigation;
+
+    ...
+
+private:
+    Windows::Networking::Sockets::StreamWebSocket^ streamWebSocket;
+
+protected:
+    virtual void OnNavigatedTo(NavigationEventArgs^ e) override
+    {
+        this->streamWebSocket = ref new Windows::Networking::Sockets::StreamWebSocket();
+
+        this->streamWebSocket->Closed += ref new TypedEventHandler<Windows::Networking::Sockets::IWebSocket^, Windows::Networking::Sockets::WebSocketClosedEventArgs^>(this, &StreamWebSocketPage::WebSocket_Closed);
+
+        try
+        {
+            auto connectTask = Concurrency::create_task(this->streamWebSocket->ConnectAsync(ref new Uri(L"wss://echo.websocket.org")));
+
+            connectTask.then(
+                [=]
+            {
+                this->ReceiveMessageUsingStreamWebSocket();
+                this->SendMessageUsingStreamWebSocket(ref new Platform::Array< byte >{ 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09 });
+            });
+        }
+        catch (Platform::Exception^ ex)
+        {
+            Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(ex->HResult);
+            // Add additional code here to handle exceptions.
+        }
+    }
+
+private:
+    void SendMessageUsingStreamWebSocket(const Platform::Array< byte >^ message)
+    {
+        try
+        {
+            auto dataWriter = ref new DataWriter(this->streamWebSocket->OutputStream);
+            dataWriter->WriteBytes(message);
+
+            Concurrency::create_task(dataWriter->StoreAsync()).then(
+                [=](Concurrency::task< unsigned int >) // task< unsigned int > instead of unsigned int in order to handle any exceptions thrown in StoreAsync().
+            {
+                dataWriter->DetachStream();
+                std::wstringstream wstringstream;
+                wstringstream << L"Sending data using StreamWebSocket: " << message->Length << L" bytes" << std::endl;
+                ::OutputDebugString(wstringstream.str().c_str());
+            });
+        }
+        catch (Platform::Exception^ ex)
+        {
+            Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(ex->HResult);
+            // Add additional code here to handle exceptions.
+        }
+    }
+
+    void ReceiveMessageUsingStreamWebSocket()
+    {
+        try
+        {
+            DataReader^ dataReader = ref new DataReader(this->streamWebSocket->InputStream);
+            dataReader->InputStreamOptions = InputStreamOptions::Partial;
+
+            Concurrency::create_task(dataReader->LoadAsync(256)).then(
+                [=](unsigned int bytesLoaded)
+            {
+                auto message = ref new Platform::Array< byte >(bytesLoaded);
+                dataReader->ReadBytes(message);
+                std::wstringstream wstringstream;
+                wstringstream << L"Data received from StreamWebSocket: " << message->Length << " bytes" << std::endl;
+                ::OutputDebugString(wstringstream.str().c_str());
+                this->streamWebSocket->Close(1000, L"");
+            });
+        }
+        catch (Platform::Exception^ ex)
+        {
+            Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(ex->HResult);
+            // Add additional code here to handle exceptions.
+        }
+    }
+
+    void WebSocket_Closed(Windows::Networking::Sockets::IWebSocket^ sender, Windows::Networking::Sockets::WebSocketClosedEventArgs^ args)
+    {
+        std::wstringstream wstringstream;
+        wstringstream << L"WebSocket_Closed; Code: " << args->Code << ", Reason: \"" << args->Reason->Data() << "\"" << std::endl;
+        ::OutputDebugString(wstringstream.str().c_str());
+        // Add additional code here to handle the WebSocket being closed.
+    }
+```
+
+### <a name="handle-the-streamwebsocketclosed-event"></a><span data-ttu-id="2ae44-160">StreamWebSocket.Closed イベントの処理</span><span class="sxs-lookup"><span data-stu-id="2ae44-160">Handle the StreamWebSocket.Closed event</span></span>
+<span data-ttu-id="2ae44-161">**StreamWebSocket** を使って接続を確立してデータを送信する前に、[**StreamWebSocket.Closed**](/uwp/api/windows.networking.sockets.streamwebsocket.Closed) イベントにサブスクライブしてください。</span><span class="sxs-lookup"><span data-stu-id="2ae44-161">Before establishing a connection and sending data with a **StreamWebSocket**, you should subscribe to the [**StreamWebSocket.Closed**](/uwp/api/windows.networking.sockets.streamwebsocket.Closed) event.</span></span> <span data-ttu-id="2ae44-162">クライアントまたはサーバーがソケットを閉じると **Closed** が発生します。</span><span class="sxs-lookup"><span data-stu-id="2ae44-162">**Closed** is raised when the client or the server closes the socket.</span></span>
+ 
+### <a name="send-data-on-a-streamwebsocket"></a><span data-ttu-id="2ae44-163">StreamWebSocket でのデータの送信</span><span class="sxs-lookup"><span data-stu-id="2ae44-163">Send data on a StreamWebSocket</span></span>
+<span data-ttu-id="2ae44-164">接続が確立されたら、サーバーにデータを送信できます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-164">Once a connection is established, you can send data to the server.</span></span> <span data-ttu-id="2ae44-165">これを行うには、[**StreamWebSocket.OutputStream**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket.OutputStream) プロパティと [**DataWriter**](/uwp/api/windows.storage.streams.datawriter?branch=live) を使って、データを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-165">You do this by using the [**StreamWebSocket.OutputStream**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket.OutputStream) property, and a [**DataWriter**](/uwp/api/windows.storage.streams.datawriter?branch=live), to write the data.</span></span>
+
+<span data-ttu-id="2ae44-166">**注** 同じソケットにさらにデータを書き込む場合、**DataWriter** がスコープ外になる前に、必ず [**DataWriter.DetachStream**](/uwp/api/windows.storage.streams.datawriter.DetachStream) を呼び出して **DataWriter** から出力ストリームをデタッチしてください。</span><span class="sxs-lookup"><span data-stu-id="2ae44-166">**Note** If you want to write more data on the same socket, then be sure to call [**DataWriter.DetachStream**](/uwp/api/windows.storage.streams.datawriter.DetachStream) to detach the output stream from the **DataWriter** before the **DataWriter** goes out of scope.</span></span> <span data-ttu-id="2ae44-167">これにより、ストリームの所有権が **MessageWebSocket** に返されます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-167">This returns ownership of the stream to the **MessageWebSocket**.</span></span>
+
+### <a name="receive-data-on-a-streamwebsocket"></a><span data-ttu-id="2ae44-168">StreamWebSocket でのデータの受信</span><span class="sxs-lookup"><span data-stu-id="2ae44-168">Receive data on a StreamWebSocket</span></span>
+<span data-ttu-id="2ae44-169">[**StreamWebSocket.InputStream**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket.InputStream) プロパティと [**DataReader**](/uwp/api/windows.storage.streams.datareader?branch=live) を使って、データを読み取ります。</span><span class="sxs-lookup"><span data-stu-id="2ae44-169">Use the [**StreamWebSocket.InputStream**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket.InputStream) property, and a [**DataReader**](/uwp/api/windows.storage.streams.datareader?branch=live), to read the data.</span></span>
+
+## <a name="advanced-options-for-messagewebsocket-and-streamwebsocket"></a><span data-ttu-id="2ae44-170">MessageWebSocket と StreamWebSocket の高度なオプション</span><span class="sxs-lookup"><span data-stu-id="2ae44-170">Advanced options for MessageWebSocket and StreamWebSocket</span></span>
+<span data-ttu-id="2ae44-171">接続を確立する前に、[**MessageWebSocketControl**](/uwp/api/windows.networking.sockets.messagewebsocketcontrol?branch=live) または [**StreamWebSocketControl**](/uwp/api/windows.networking.sockets.streamwebsocketcontrol) でプロパティを設定して、ソケットで高度なオプションを設定できます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-171">Before establishing a connection, you can set advanced options on a socket by setting properties on either [**MessageWebSocketControl**](/uwp/api/windows.networking.sockets.messagewebsocketcontrol?branch=live) or [**StreamWebSocketControl**](/uwp/api/windows.networking.sockets.streamwebsocketcontrol).</span></span> <span data-ttu-id="2ae44-172">必要に応じて [**MessageWebSocket.Control**](/uwp/api/windows.networking.sockets.messagewebsocket.control) プロパティまたは [**StreamWebSocket.Control**](/uwp/api/windows.networking.sockets.streamwebsocket.control) プロパティを使って、ソケット オブジェクト自体からそれらのクラスのインスタンスにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-172">You access an instance of those classes from the socket object itself either via its [**MessageWebSocket.Control**](/uwp/api/windows.networking.sockets.messagewebsocket.control) property or its [**StreamWebSocket.Control**](/uwp/api/windows.networking.sockets.streamwebsocket.control) property, as appropriate.</span></span>
+
+<span data-ttu-id="2ae44-173">**StreamWebSocket** の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="2ae44-173">Here's an example using **StreamWebSocket**.</span></span> <span data-ttu-id="2ae44-174">同じパターンが **MessageWebSocket** に適用されます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-174">The same pattern applies to **MessageWebSocket**.</span></span>
+
+```csharp
+var streamWebSocket = new Windows.Networking.Sockets.StreamWebSocket();
+
+// By default, the Nagle algorithm is not used. This overrides that, and causes it to be used.
+streamWebSocket.Control.NoDelay = false;
+
+await streamWebSocket.ConnectAsync(new Uri("wss://echo.websocket.org"));
+```
+
+```cpp
+auto streamWebSocket = ref new Windows::Networking::Sockets::StreamWebSocket();
+
+// By default, the Nagle algorithm is not used. This overrides that, and causes it to be used.
+streamWebSocket->Control->NoDelay = false;
+
+auto connectTask = Concurrency::create_task(streamWebSocket->ConnectAsync(ref new Uri(L"wss://echo.websocket.org")));
+```
+
+<span data-ttu-id="2ae44-175">**注** **ConnectAsync** を呼び出した*後*に、コントロール プロパティを変更しようとしないでください。</span><span class="sxs-lookup"><span data-stu-id="2ae44-175">**Note** Don't try to change a control property *after* you've called **ConnectAsync**.</span></span> <span data-ttu-id="2ae44-176">ルールの唯一の例外は [MessageWebSocketControl.MessageType](/uwp/api/windows.networking.sockets.messagewebsocketcontrol.MessageType) です。</span><span class="sxs-lookup"><span data-stu-id="2ae44-176">The only exception to that rule is [MessageWebSocketControl.MessageType](/uwp/api/windows.networking.sockets.messagewebsocketcontrol.MessageType).</span></span>
+
+## <a name="websocket-information-classes"></a><span data-ttu-id="2ae44-177">WebSocket の情報クラス</span><span class="sxs-lookup"><span data-stu-id="2ae44-177">WebSocket information classes</span></span>
+<span data-ttu-id="2ae44-178">[**MessageWebSocket**](/uwp/api/windows.networking.sockets.messagewebsocket?branch=live) と [**StreamWebSocket**](/uwp/api/windows.networking.sockets.streamwebsocket?branch=live) には、オブジェクトについての追加情報を提供するクラスがそれぞれあります。</span><span class="sxs-lookup"><span data-stu-id="2ae44-178">[**MessageWebSocket**](/uwp/api/windows.networking.sockets.messagewebsocket?branch=live) and [**StreamWebSocket**](/uwp/api/windows.networking.sockets.streamwebsocket?branch=live) each have a corresponding class that provides additional information about the object.</span></span>
+
+<span data-ttu-id="2ae44-179">[**MessageWebSocketInformation**](/uwp/api/windows.networking.sockets.messagewebsocketinformation?branch=live) は、**MessageWebSocket** についての情報を提供します。情報クラスのインスタンスは、[**MessageWebSocket.Information**](/uwp/api/windows.networking.sockets.messagewebsocket.Information) プロパティを使って取得します。</span><span class="sxs-lookup"><span data-stu-id="2ae44-179">[**MessageWebSocketInformation**](/uwp/api/windows.networking.sockets.messagewebsocketinformation?branch=live) provides information about a **MessageWebSocket**, and you retrieve an instance of it using the [**MessageWebSocket.Information**](/uwp/api/windows.networking.sockets.messagewebsocket.Information) property.</span></span>
+
+<span data-ttu-id="2ae44-180">[**StreamWebSocketInformation**](/uwp/api/Windows.Networking.Sockets.StreamWebSocketInformation?branch=live) は、**StreamWebSocket** についての情報を提供します。情報クラスのインスタンスは、[**StreamWebSocket.Information**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket.Information) プロパティを使って取得します。</span><span class="sxs-lookup"><span data-stu-id="2ae44-180">[**StreamWebSocketInformation**](/uwp/api/Windows.Networking.Sockets.StreamWebSocketInformation?branch=live) provides information about a **StreamWebSocket**, and you retrieve an instance of it using the [**StreamWebSocket.Information**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket.Information) property.</span></span>
+
+<span data-ttu-id="2ae44-181">これらの情報クラスのプロパティは読み取り専用ですが、WebSocket オブジェクトの有効期間中はいつでも現在の情報を取得するために使うことができます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-181">Note that the properties on these information classes are read-only, but you can use them to retrieve information at any time during the lifetime of a web socket object.</span></span>
+
+## <a name="handling-exceptions"></a><span data-ttu-id="2ae44-182">例外処理</span><span class="sxs-lookup"><span data-stu-id="2ae44-182">Handling exceptions</span></span>
+<span data-ttu-id="2ae44-183">[**MessageWebSocket**](/uwp/api/Windows.Networking.Sockets.MessageWebSocket?branch=live) または [**StreamWebSocket**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket?branch=live) 操作で発生したエラーは **HRESULT** 値として返されます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-183">An error encountered on a [**MessageWebSocket**](/uwp/api/Windows.Networking.Sockets.MessageWebSocket?branch=live) or [**StreamWebSocket**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket?branch=live) operation is returned as an **HRESULT** value.</span></span> <span data-ttu-id="2ae44-184">その **HRESULT** 値を [**WebSocketError.GetStatus**](/uwp/api/windows.networking.sockets.websocketerror.getstatus) メソッドに渡し、[**WebErrorStatus**](/uwp/api/Windows.Web.WebErrorStatus) 列挙値に変換することができます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-184">You can pass that **HRESULT** value to the [**WebSocketError.GetStatus**](/uwp/api/windows.networking.sockets.websocketerror.getstatus) method to convert it into a [**WebErrorStatus**](/uwp/api/Windows.Web.WebErrorStatus) enumeration value.</span></span>
+
+<span data-ttu-id="2ae44-185">**WebErrorStatus** 列挙値のほとんどは、ネイティブ HTTP クライアント操作から返されるエラーに対応しています。</span><span class="sxs-lookup"><span data-stu-id="2ae44-185">Most **WebErrorStatus** enumeration values correspond to an error returned by the native HTTP client operation.</span></span> <span data-ttu-id="2ae44-186">アプリは **WebErrorStatus** 列挙値で切り替えを行い、例外の原因に応じてアプリの動作を変更することができます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-186">Your app can switch on **WebErrorStatus** enumeration values to modify app behavior depending on the cause of the exception.</span></span>
+
+<span data-ttu-id="2ae44-187">パラメーター検証エラーの場合、例外からの **HRESULT** を使ってエラーの詳細情報を確認することもできます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-187">For parameter validation errors, you can use the **HRESULT** from the exception to learn more detailed information about the error.</span></span> <span data-ttu-id="2ae44-188">考えられる **HRESULT** 値は、SDK インストールに含まれる `Winerror.h` に一覧表示されています (たとえば、`C:\Program Files (x86)\Windows Kits\10\Include\<VERSION>\shared` フォルダーにあります)。</span><span class="sxs-lookup"><span data-stu-id="2ae44-188">Possible **HRESULT** values are listed in `Winerror.h`, which can be found in your SDK installation (for example, in the folder `C:\Program Files (x86)\Windows Kits\10\Include\<VERSION>\shared`).</span></span> <span data-ttu-id="2ae44-189">ほとんどのパラメーター検証エラーの場合、返される **HRESULT** は **E_INVALIDARG** です。</span><span class="sxs-lookup"><span data-stu-id="2ae44-189">For most parameter validation errors, the **HRESULT** returned is **E_INVALIDARG**.</span></span>
+
+## <a name="setting-timeouts-on-websocket-operations"></a><span data-ttu-id="2ae44-190">WebSocket の操作に対してタイムアウトを設定する</span><span class="sxs-lookup"><span data-stu-id="2ae44-190">Setting timeouts on WebSocket operations</span></span>
+<span data-ttu-id="2ae44-191">**MessageWebSocket** クラスと **StreamWebSocket** は、内部システム サービスを使って WebSocket クライアントに要求を送信し、サーバーからの応答を受信します。</span><span class="sxs-lookup"><span data-stu-id="2ae44-191">**MessageWebSocket** and **StreamWebSocket** use an internal system service to send WebSocket client requests, and to receive responses from a server.</span></span> <span data-ttu-id="2ae44-192">WebSocket の接続操作で既定されているタイムアウト値は 60 秒です。</span><span class="sxs-lookup"><span data-stu-id="2ae44-192">The default timeout value used for a WebSocket connect operation is 60 seconds.</span></span> <span data-ttu-id="2ae44-193">WebSocket をサポートする HTTP サーバーが、WebSocket の接続要求に応答できない場合 (一時的にダウンするか、ネットワーク停止によってブロックされる) は、内部システム サービスは 60 秒待った後でエラーを返します。</span><span class="sxs-lookup"><span data-stu-id="2ae44-193">If the HTTP server that supports WebSockets doesn't or can't respond to the WebSocket connection request (it's temporarily down, or blocked by a network outage), then the internal system service waits the default 60 seconds before it returns an error.</span></span> <span data-ttu-id="2ae44-194">このエラーによって、WebSocket の **ConnectAsync** メソッドに例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="2ae44-194">That error causes an exception to be thrown on the WebSocket **ConnectAsync** method.</span></span> <span data-ttu-id="2ae44-195">WebSocket 接続確立後の送受信操作では、既定のタイムアウト値は 30 秒です。</span><span class="sxs-lookup"><span data-stu-id="2ae44-195">For send and receive operations after a WebSocket connection has been established, the default timeout is 30 seconds.</span></span>
+
+<span data-ttu-id="2ae44-196">URI 内の HTTP サーバー名に対する名前クエリで複数の IP アドレスが返されると、内部システム サービスは最大で 5 つのサイトの IP アドレスに接続を試みます (各アドレスについて既定のタイムアウト時間である 60 秒待ちます)。</span><span class="sxs-lookup"><span data-stu-id="2ae44-196">If the name query for an HTTP server name in the URI returns multiple IP addresses for the name, then the internal system service tries up to 5 IP addresses for the site (each with a default timeout of 60 seconds) before it fails.</span></span> <span data-ttu-id="2ae44-197">したがって、アプリは例外を処理する前に複数の IP アドレスへの接続を数分間待機する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="2ae44-197">Consequently, your app could wait several minutes trying to connect to multiple IP addresses before it handles an exception.</span></span> <span data-ttu-id="2ae44-198">この動作は、ユーザーからはアプリが停止しているかのように見えることがあります。</span><span class="sxs-lookup"><span data-stu-id="2ae44-198">This behavior might appear to the user like the app has stopped working.</span></span> 
+
+<span data-ttu-id="2ae44-199">アプリの応答性を高めてこれらの問題を最小限に抑えるには、接続要求に短いタイムアウトを設定します。</span><span class="sxs-lookup"><span data-stu-id="2ae44-199">To make your app more responsive and minimize these issues, you can set a shorter timeout on connection requests.</span></span> <span data-ttu-id="2ae44-200">**MessageWebSocket** と **StreamWebSocket** の両方でタイムアウトを同じように設定します。</span><span class="sxs-lookup"><span data-stu-id="2ae44-200">You set a timeout in a similar way for both **MessageWebSocket** and **StreamWebSocket**.</span></span>
+
+```csharp
+private Windows.Networking.Sockets.MessageWebSocket messageWebSocket;
+
+protected override void OnNavigatedTo(NavigationEventArgs e)
+{
+    this.messageWebSocket = new Windows.Networking.Sockets.MessageWebSocket();
+
+    try
+    {
+        var cancellationTokenSource = new CancellationTokenSource();
+        var connectTask = this.messageWebSocket.ConnectAsync(new Uri("wss://echo.websocket.org")).AsTask(cancellationTokenSource.Token);
+
+        // Cancel connectTask after 5 seconds.
+        cancellationTokenSource.CancelAfter(TimeSpan.FromMilliseconds(5000));
+
+        connectTask.ContinueWith((antecedent) =>
+        {
+            if (antecedent.Status == TaskStatus.RanToCompletion)
+            {
+                // connectTask ran to completion, so we know that the MessageWebSocket is connected.
+                // Add additional code here to use the MessageWebSocket.
+            }
+            else
+            {
+                // connectTask timed out, or faulted.
+            }
+        });
+    }
+    catch (Exception ex)
+    {
+        Windows.Web.WebErrorStatus webErrorStatus = Windows.Networking.Sockets.WebSocketError.GetStatus(ex.GetBaseException().HResult);
+        // Add additional code here to handle exceptions.
+    }
+}
+```
+
+```cpp
+#include <agents.h>
+#include <ppltasks.h>
+#include <sstream>
+
+    ...
+    
+using namespace Windows::Foundation;
+using namespace Windows::Storage::Streams;
+using namespace Windows::UI::Xaml::Navigation;
+
+    ...
+
+private:
+    Windows::Networking::Sockets::MessageWebSocket^ messageWebSocket;
+
+protected:
+    virtual void OnNavigatedTo(NavigationEventArgs^ e) override
+    {
+        this->messageWebSocket = ref new Windows::Networking::Sockets::MessageWebSocket();
+
+        try
+        {
+            Concurrency::cancellation_token_source cancellationTokenSource;
+            Concurrency::cancellation_token cancellationToken = cancellationTokenSource.get_token();
+
+            auto connectTask = Concurrency::create_task(this->messageWebSocket->ConnectAsync(ref new Uri(L"wss://echo.websocket.org")), cancellationToken);
+
+            // This continuation task returns true should connectTask run to completion.
+            Concurrency::task< bool > taskRanToCompletion = connectTask.then([](void)
+            {
+                return true;
+            });
+
+            // This task returns false after the specified timeout. 5 seconds, in this example.
+            Concurrency::task< bool > taskTimedout = Concurrency::create_task([]() -> bool
+            {
+                Concurrency::task_completion_event< void > taskCompletionEvent;
+
+                // A call object that sets the task completion event.
+                auto call = std::make_shared< Concurrency::call< int > >([taskCompletionEvent](int)
+                {
+                    taskCompletionEvent.set();
+                });
+
+                // A non-repeating timer that calls the call object when the timer fires.
+                auto nonRepeatingTimer = std::make_shared< Concurrency::timer < int > >(5000, 0, call.get(), false);
+                nonRepeatingTimer->start();
+
+                // A task that completes after the completion event is set.
+                Concurrency::task< void > taskWaitForCompletionEvent(taskCompletionEvent);
+
+                return taskWaitForCompletionEvent.then([]() {return false; }).get();
+            });
+
+            (taskRanToCompletion || taskTimedout).then([this, cancellationTokenSource](bool connectTaskRanToCompletion)
+            {
+                if (connectTaskRanToCompletion)
+                {
+                    // connectTask ran to completion, so we know that the MessageWebSocket is connected.
+                    // Add additional code here to use the MessageWebSocket.
+                }
+                else
+                {
+                    // taskTimedout ran to completion, so we should cancel connectTask via the cancellation_token_source.
+                    cancellationTokenSource.cancel();
+                }
+            });
+        }
+        catch (Platform::Exception^ ex)
+        {
+            Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(ex->HResult);
+            // Add additional code here to handle exceptions.
+        }
+    }
+```
+
+## <a name="important-apis"></a><span data-ttu-id="2ae44-201">重要な API</span><span class="sxs-lookup"><span data-stu-id="2ae44-201">Important APIs</span></span>
+* [<span data-ttu-id="2ae44-202">DataReader</span><span class="sxs-lookup"><span data-stu-id="2ae44-202">DataReader</span></span>](/uwp/api/Windows.Storage.Streams.DataReader?branch=live)
+* [<span data-ttu-id="2ae44-203">DataWriter</span><span class="sxs-lookup"><span data-stu-id="2ae44-203">DataWriter</span></span>](/uwp/api/Windows.Storage.Streams.DataWriter?branch=live)
+* [<span data-ttu-id="2ae44-204">DataWriter.DetachStream</span><span class="sxs-lookup"><span data-stu-id="2ae44-204">DataWriter.DetachStream</span></span>](/uwp/api/windows.storage.streams.datawriter.DetachStream)
+* [<span data-ttu-id="2ae44-205">MessageWebSocket</span><span class="sxs-lookup"><span data-stu-id="2ae44-205">MessageWebSocket</span></span>](/uwp/api/windows.networking.sockets.messagewebsocket?branch=live)
+* [<span data-ttu-id="2ae44-206">MessageWebSocket.Closed</span><span class="sxs-lookup"><span data-stu-id="2ae44-206">MessageWebSocket.Closed</span></span>](/uwp/api/Windows.Networking.Sockets.MessageWebSocket.Closed)
+* [<span data-ttu-id="2ae44-207">MessageWebSocket.ConnectAsync</span><span class="sxs-lookup"><span data-stu-id="2ae44-207">MessageWebSocket.ConnectAsync</span></span>](/uwp/api/windows.networking.sockets.messagewebsocket.connectasync)
+* [<span data-ttu-id="2ae44-208">MessageWebSocket.Control</span><span class="sxs-lookup"><span data-stu-id="2ae44-208">MessageWebSocket.Control</span></span>](/uwp/api/windows.networking.sockets.messagewebsocket.control)
+* [<span data-ttu-id="2ae44-209">MessageWebSocket.Information</span><span class="sxs-lookup"><span data-stu-id="2ae44-209">MessageWebSocket.Information</span></span>](/uwp/api/Windows.Networking.Sockets.MessageWebSocket.Information)
+* [<span data-ttu-id="2ae44-210">MessageWebSocket.MessageReceived</span><span class="sxs-lookup"><span data-stu-id="2ae44-210">MessageWebSocket.MessageReceived</span></span>](/uwp/api/Windows.Networking.Sockets.MessageWebSocket.MessageReceived)
+* [<span data-ttu-id="2ae44-211">MessageWebSocket.OutputStream</span><span class="sxs-lookup"><span data-stu-id="2ae44-211">MessageWebSocket.OutputStream</span></span>](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.MessageWebSocket.OutputStream)
+* [<span data-ttu-id="2ae44-212">MessageWebSocketControl</span><span class="sxs-lookup"><span data-stu-id="2ae44-212">MessageWebSocketControl</span></span>](/uwp/api/Windows.Networking.Sockets.MessageWebSocketControl?branch=live)
+* [<span data-ttu-id="2ae44-213">MessageWebSocketControl.MessageType</span><span class="sxs-lookup"><span data-stu-id="2ae44-213">MessageWebSocketControl.MessageType</span></span>](/uwp/api/Windows.Networking.Sockets.MessageWebSocketControl.MessageType)
+* [<span data-ttu-id="2ae44-214">MessageWebSocketInformation</span><span class="sxs-lookup"><span data-stu-id="2ae44-214">MessageWebSocketInformation</span></span>](/uwp/api/Windows.Networking.Sockets.MessageWebSocketInformation?branch=live)
+* [<span data-ttu-id="2ae44-215">MessageWebSocketMessageReceivedEventArgs</span><span class="sxs-lookup"><span data-stu-id="2ae44-215">MessageWebSocketMessageReceivedEventArgs</span></span>](/uwp/api/Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs?branch=live)
+* [<span data-ttu-id="2ae44-216">SocketMessageType</span><span class="sxs-lookup"><span data-stu-id="2ae44-216">SocketMessageType</span></span>](/uwp/api/windows.networking.sockets.socketmessagetype?branch=live)
+* [<span data-ttu-id="2ae44-217">StreamWebSocket</span><span class="sxs-lookup"><span data-stu-id="2ae44-217">StreamWebSocket</span></span>](/uwp/api/Windows.Networking.Sockets.StreamWebSocket?branch=live)
+* [<span data-ttu-id="2ae44-218">StreamWebSocket.Closed</span><span class="sxs-lookup"><span data-stu-id="2ae44-218">StreamWebSocket.Closed</span></span>](/uwp/api/Windows.Networking.Sockets.StreamWebSocket.Closed)
+* [<span data-ttu-id="2ae44-219">StreamSocket.ConnectAsync</span><span class="sxs-lookup"><span data-stu-id="2ae44-219">StreamSocket.ConnectAsync</span></span>](/uwp/api/windows.networking.sockets.streamsocket.connectasync)
+* [<span data-ttu-id="2ae44-220">StreamWebSocket.Control</span><span class="sxs-lookup"><span data-stu-id="2ae44-220">StreamWebSocket.Control</span></span>](/uwp/api/windows.networking.sockets.streamwebsocket.control?branch=live)
+* [<span data-ttu-id="2ae44-221">StreamWebSocket.Information</span><span class="sxs-lookup"><span data-stu-id="2ae44-221">StreamWebSocket.Information</span></span>](/uwp/api/windows.networking.sockets.streamwebsocket.Information)
+* [<span data-ttu-id="2ae44-222">StreamWebSocket.InputStream</span><span class="sxs-lookup"><span data-stu-id="2ae44-222">StreamWebSocket.InputStream</span></span>](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket.InputStream)
+* [<span data-ttu-id="2ae44-223">StreamWebSocket.OutputStream</span><span class="sxs-lookup"><span data-stu-id="2ae44-223">StreamWebSocket.OutputStream</span></span>](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket.OutputStream)
+* [<span data-ttu-id="2ae44-224">StreamWebSocketControl</span><span class="sxs-lookup"><span data-stu-id="2ae44-224">StreamWebSocketControl</span></span>](/uwp/api/Windows.Networking.Sockets.StreamWebSocketControl?branch=live)
+* [<span data-ttu-id="2ae44-225">StreamWebSocketInformation</span><span class="sxs-lookup"><span data-stu-id="2ae44-225">StreamWebSocketInformation</span></span>](/uwp/api/Windows.Networking.Sockets.StreamWebSocketInformation?branch=live)
+* [<span data-ttu-id="2ae44-226">WebErrorStatus</span><span class="sxs-lookup"><span data-stu-id="2ae44-226">WebErrorStatus</span></span>](/uwp/api/Windows.Web.WebErrorStatus?branch=live) 
+* [<span data-ttu-id="2ae44-227">WebSocketError.GetStatus</span><span class="sxs-lookup"><span data-stu-id="2ae44-227">WebSocketError.GetStatus</span></span>](/uwp/api/windows.networking.sockets.websocketerror.getstatus)
+* [<span data-ttu-id="2ae44-228">Windows.Networking.Sockets</span><span class="sxs-lookup"><span data-stu-id="2ae44-228">Windows.Networking.Sockets</span></span>](/uwp/api/Windows.Networking.Sockets?branch=live)
+
+## <a name="related-topics"></a><span data-ttu-id="2ae44-229">関連トピック</span><span class="sxs-lookup"><span data-stu-id="2ae44-229">Related topics</span></span>
+* [<span data-ttu-id="2ae44-230">WebSocket プロトコル</span><span class="sxs-lookup"><span data-stu-id="2ae44-230">WebSocket Protocol</span></span>](http://tools.ietf.org/html/rfc6455)
+* [<span data-ttu-id="2ae44-231">ソケット</span><span class="sxs-lookup"><span data-stu-id="2ae44-231">Sockets</span></span>](sockets.md)
+
+## <a name="samples"></a><span data-ttu-id="2ae44-232">サンプル</span><span class="sxs-lookup"><span data-stu-id="2ae44-232">Samples</span></span>
+* [<span data-ttu-id="2ae44-233">WebSocket のサンプル</span><span class="sxs-lookup"><span data-stu-id="2ae44-233">WebSocket sample</span></span>](http://go.microsoft.com/fwlink/p/?LinkId=620623)

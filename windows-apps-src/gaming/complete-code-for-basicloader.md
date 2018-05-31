@@ -1,54 +1,55 @@
 ---
 author: mtoepke
-title: "BasicLoader のコード一式"
-description: "メッシュ オブジェクト、テクスチャ オブジェクト、さまざまなシェーダー オブジェクトなどの一般的なグラフィックス リソースを変換して読み込むクラスとメソッドのコード一式です。"
+title: BasicLoader のコード一式
+description: メッシュ オブジェクト、テクスチャ オブジェクト、さまざまなシェーダー オブジェクトなどの一般的なグラフィックス リソースを変換して読み込むクラスとメソッドのコード一式です。
 ms.assetid: b37f5852-278c-57b8-0834-002fb837e158
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10、UWP、ゲーム、BasicLoader"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d6714030031a4986c8a5495fc02a5c68fb0aa4d8
-ms.lasthandoff: 02/07/2017
-
+keywords: Windows 10, UWP, ゲーム, BasicLoader
+ms.localizationpriority: medium
+ms.openlocfilehash: 9f602b9f3007bc4c58209648820a5062e728a905
+ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/15/2018
+ms.locfileid: "1653411"
 ---
+# <a name="complete-code-for-basicloader"></a><span data-ttu-id="5a33e-104">BasicLoader のコード一式</span><span class="sxs-lookup"><span data-stu-id="5a33e-104">Complete code for BasicLoader</span></span>
 
-# <a name="complete-code-for-basicloader"></a>BasicLoader のコード一式
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+<span data-ttu-id="5a33e-105">メッシュ オブジェクト、テクスチャ オブジェクト、さまざまなシェーダー オブジェクトなどの一般的なグラフィックス リソースを変換して読み込むクラスとメソッドのコード一式です。</span><span class="sxs-lookup"><span data-stu-id="5a33e-105">Complete code for a class and methods that convert and load common graphics resources, such as meshes, textures, and various shader objects.</span></span>
 
-メッシュ オブジェクト、テクスチャ オブジェクト、さまざまなシェーダー オブジェクトなどの一般的なグラフィックス リソースを変換して読み込むクラスとメソッドのコード一式です。
+<span data-ttu-id="5a33e-106">このトピックは次のセクションで構成されます。</span><span class="sxs-lookup"><span data-stu-id="5a33e-106">This topic contains these sections:</span></span>
 
-このトピックは次のセクションで構成されます。
-
--   [テクノロジ](#technologies)
--   [必要条件](#requirements)
--   [コードの表示 (C++)](#view-the-code-c)
+-   [<span data-ttu-id="5a33e-107">テクノロジ</span><span class="sxs-lookup"><span data-stu-id="5a33e-107">Technologies</span></span>](#technologies)
+-   [<span data-ttu-id="5a33e-108">必要条件</span><span class="sxs-lookup"><span data-stu-id="5a33e-108">Requirements</span></span>](#requirements)
+-   [<span data-ttu-id="5a33e-109">コードの表示 (C++)</span><span class="sxs-lookup"><span data-stu-id="5a33e-109">View the code (C++)</span></span>](#view-the-code-c)
 
 <span id="download_locations"></span>
-## <a name="download-location"></a>ダウンロード場所
+
+## <a name="download-location"></a><span data-ttu-id="5a33e-110">ダウンロード場所</span><span class="sxs-lookup"><span data-stu-id="5a33e-110">Download location</span></span>
 
 
-このサンプルはダウンロードできません。
+<span data-ttu-id="5a33e-111">このサンプルはダウンロードできません。</span><span class="sxs-lookup"><span data-stu-id="5a33e-111">This sample is not available for download.</span></span>
 
-## <a name="technologies"></a>テクノロジ
+## <a name="technologies"></a><span data-ttu-id="5a33e-112">テクノロジ</span><span class="sxs-lookup"><span data-stu-id="5a33e-112">Technologies</span></span>
 
-**プログラミング言語** - C++  
-**プログラミング モデル** - Windows ランタイム
+<span data-ttu-id="5a33e-113">**プログラミング言語** - C++</span><span class="sxs-lookup"><span data-stu-id="5a33e-113">**Programming languages** - C++</span></span>  
+<span data-ttu-id="5a33e-114">**プログラミング モデル** - Windows ランタイム</span><span class="sxs-lookup"><span data-stu-id="5a33e-114">**Programming models** - Windows Runtime</span></span>
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a><span data-ttu-id="5a33e-115">要件</span><span class="sxs-lookup"><span data-stu-id="5a33e-115">Requirements</span></span>
 
-**サポートされている最小のクライアント** - Windows 10                              
-**サポートされている最小のサーバー** - Windows Server 2016 Technical Preview 
+<span data-ttu-id="5a33e-116">**サポートされている最小のクライアント** - Windows 10</span><span class="sxs-lookup"><span data-stu-id="5a33e-116">**Minimum supported client** - Windows 10</span></span>                              
+<span data-ttu-id="5a33e-117">**サポートされている最小のサーバー** - Windows Server 2016 Technical Preview</span><span class="sxs-lookup"><span data-stu-id="5a33e-117">**Minimum supported server** - Windows Server 2016 Technical Preview</span></span> 
 
 
-## <a name="view-the-code-c"></a>コードの表示 (C++)
+## <a name="view-the-code-c"></a><span data-ttu-id="5a33e-118">コードの表示 (C++)</span><span class="sxs-lookup"><span data-stu-id="5a33e-118">View the code (C++)</span></span>
 
-## <a name="basicloaderh"></a>BasicLoader.h
+## <a name="basicloaderh"></a><span data-ttu-id="5a33e-119">BasicLoader.h</span><span class="sxs-lookup"><span data-stu-id="5a33e-119">BasicLoader.h</span></span>
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -229,7 +230,7 @@ private:
 };
 ```
 
-## <a name="basicloadercpp"></a>BasicLoader.cpp
+## <a name="basicloadercpp"></a><span data-ttu-id="5a33e-120">BasicLoader.cpp</span><span class="sxs-lookup"><span data-stu-id="5a33e-120">BasicLoader.cpp</span></span>
 
 
 ```cpp
@@ -1111,7 +1112,6 @@ task<void> BasicLoader::LoadMeshAsync(
  
 
  
-
 
 
 

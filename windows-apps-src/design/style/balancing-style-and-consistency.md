@@ -1,7 +1,7 @@
 ---
 author: mijacobs
-description: "一貫性があって使いやすく、独創性と創造性を発揮できるアプリを作成するためのヒントを示します。"
-title: "スタイルと一貫性のバランスをとる (UWP アプリの設計)"
+description: 一貫性があって使いやすく、独創性と創造性を発揮できるアプリを作成するためのヒントを示します。
+title: スタイルと一貫性のバランスをとる (UWP アプリの設計)
 template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
@@ -15,6 +15,7 @@ ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/12/2017
+ms.locfileid: "1394201"
 ---
 # <a name="balancing-style-and-consistency"></a><span data-ttu-id="35b97-104">スタイルと一貫性のバランスをとる</span><span class="sxs-lookup"><span data-stu-id="35b97-104">Balancing style and consistency</span></span>
 

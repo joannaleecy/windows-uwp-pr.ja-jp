@@ -1,20 +1,21 @@
 ---
 author: joannaleecy
-title: "セットアップ"
-description: "グラフィックスを表示するレンダリング パイプラインをアセンブルする方法について説明します。 ゲームのレンダリング、データのセットアップと準備。"
+title: セットアップ
+description: グラフィックスを表示するレンダリング パイプラインをアセンブルする方法について説明します。 ゲームのレンダリング、データのセットアップと準備。
 ms.assetid: 7720ac98-9662-4cf3-89c5-7ff81896364a
 ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, ゲーム, レンダリング"
+keywords: Windows 10, UWP, ゲーム, レンダリング
 ms.localizationpriority: medium
 ms.openlocfilehash: 42662d7ecfa415f9528f0acd3e4d4b7ce25cf40a
 ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/12/2017
+ms.locfileid: "1396981"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a><span data-ttu-id="d5f91-105">レンダリング フレームワーク II: ゲームのレンダリング</span><span class="sxs-lookup"><span data-stu-id="d5f91-105">Rendering framework II: Game rendering</span></span>
 

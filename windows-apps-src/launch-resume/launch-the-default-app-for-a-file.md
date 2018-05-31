@@ -1,57 +1,52 @@
 ---
 author: TylerMSFT
-title: "ファイルに応じた既定のアプリの起動"
-description: "ファイルに応じて既定のアプリを起動する方法について説明します。"
+title: ファイルに応じた既定のアプリの起動
+description: ファイルに応じて既定のアプリを起動する方法について説明します。
 ms.assetid: BB45FCAF-DF93-4C99-A8B5-59B799C7BD98
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1ab65f210c5fd01460cbe9f63f8b94f6935a630e
-ms.lasthandoff: 02/07/2017
-
+keywords: Windows 10、UWP
+ms.localizationpriority: medium
+ms.openlocfilehash: 294ab01d03fd407e8aa52a4e37f17f8ff6409ff3
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/17/2018
+ms.locfileid: "1663402"
 ---
+# <a name="launch-the-default-app-for-a-file"></a><span data-ttu-id="71a5e-104">ファイルに応じた既定のアプリの起動</span><span class="sxs-lookup"><span data-stu-id="71a5e-104">Launch the default app for a file</span></span>
 
-# <a name="launch-the-default-app-for-a-file"></a>ファイルに応じた既定のアプリの起動
+**<span data-ttu-id="71a5e-105">重要な API</span><span class="sxs-lookup"><span data-stu-id="71a5e-105">Important APIs</span></span>**
 
+-   [**<span data-ttu-id="71a5e-106">Windows.System.Launcher.LaunchFileAsync</span><span class="sxs-lookup"><span data-stu-id="71a5e-106">Windows.System.Launcher.LaunchFileAsync</span></span>**](https://msdn.microsoft.com/library/windows/apps/hh701461)
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+<span data-ttu-id="71a5e-107">ファイルに応じて既定のアプリを起動する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="71a5e-107">Learn how to launch the default app for a file.</span></span> <span data-ttu-id="71a5e-108">多くのアプリでは、アプリ自体で処理できないファイルを操作する必要が生じる場合があります。</span><span class="sxs-lookup"><span data-stu-id="71a5e-108">Many apps need to work with files that they can't handle themselves.</span></span> <span data-ttu-id="71a5e-109">たとえば、さまざまな種類のファイルを受け取るメール アプリは、これらのファイルを既定のハンドラーで起動する手段を備えている必要があります。</span><span class="sxs-lookup"><span data-stu-id="71a5e-109">For example, e-mail apps receive a variety of file types and need a way to launch these files in their default handlers.</span></span> <span data-ttu-id="71a5e-110">以下の手順では、[**Windows.System.Launcher**](https://msdn.microsoft.com/library/windows/apps/br241801) API を使って、アプリがそれ自体で処理できないファイルの既定のハンドラーを起動する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="71a5e-110">These steps show how to use the [**Windows.System.Launcher**](https://msdn.microsoft.com/library/windows/apps/br241801) API to launch the default handler for a file that your app can't handle itself.</span></span>
 
+## <a name="get-the-file-object"></a><span data-ttu-id="71a5e-111">ファイル オブジェクトを取得する</span><span class="sxs-lookup"><span data-stu-id="71a5e-111">Get the file object</span></span>
 
-**重要な API**
+<span data-ttu-id="71a5e-112">最初にファイルの [**Windows.Storage.StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="71a5e-112">First, get a [**Windows.Storage.StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object for the file.</span></span>
 
--   [**Windows.System.Launcher.LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461)
+<span data-ttu-id="71a5e-113">ファイルがアプリのパッケージに含まれている場合は、[**Package.InstalledLocation**](https://msdn.microsoft.com/library/windows/apps/br224681) プロパティで [**Windows.Storage.StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) オブジェクトを取得し、[**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) メソッドで [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="71a5e-113">If the file is included in the package for your app, you can use the [**Package.InstalledLocation**](https://msdn.microsoft.com/library/windows/apps/br224681) property to get a [**Windows.Storage.StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) object and the [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) method to get the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object.</span></span>
 
-ファイルに応じて既定のアプリを起動する方法について説明します。 多くのアプリでは、アプリ自体で処理できないファイルを操作する必要が生じる場合があります。 たとえば、さまざまな種類のファイルを受け取るメール アプリは、これらのファイルを既定のハンドラーで起動する手段を備えている必要があります。 以下の手順では、[**Windows.System.Launcher**](https://msdn.microsoft.com/library/windows/apps/br241801) API を使って、アプリがそれ自体で処理できないファイルの既定のハンドラーを起動する方法を示します。
+<span data-ttu-id="71a5e-114">ファイルが既知のフォルダー内にある場合には、[**Windows.Storage.KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) クラスのプロパティで [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) を取得し、[**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) メソッドで [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="71a5e-114">If the file is in a known folder, you can use the properties of the [**Windows.Storage.KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) class to get a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) and the [**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) method to get the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object.</span></span>
 
-## <a name="get-the-file-object"></a>ファイル オブジェクトを取得する
+## <a name="launch-the-file"></a><span data-ttu-id="71a5e-115">ファイルを起動する</span><span class="sxs-lookup"><span data-stu-id="71a5e-115">Launch the file</span></span>
 
+<span data-ttu-id="71a5e-116">Windows には、ファイルの既定のハンドラーを起動するためのいくつかの異なるオプションが用意されています。</span><span class="sxs-lookup"><span data-stu-id="71a5e-116">Windows provides several different options for launching the default handler for a file.</span></span> <span data-ttu-id="71a5e-117">これらのオプションについて、次の表とセクションで説明します。</span><span class="sxs-lookup"><span data-stu-id="71a5e-117">These options are described in this chart and in the sections that follow.</span></span>
 
-最初にファイルの [**Windows.Storage.StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを取得します。
+| <span data-ttu-id="71a5e-118">オプション</span><span class="sxs-lookup"><span data-stu-id="71a5e-118">Option</span></span> | <span data-ttu-id="71a5e-119">メソッド</span><span class="sxs-lookup"><span data-stu-id="71a5e-119">Method</span></span> | <span data-ttu-id="71a5e-120">説明</span><span class="sxs-lookup"><span data-stu-id="71a5e-120">Description</span></span> |
+|--------|--------|-------------|
+| <span data-ttu-id="71a5e-121">既定の起動</span><span class="sxs-lookup"><span data-stu-id="71a5e-121">Default launch</span></span> | [**<span data-ttu-id="71a5e-122">LaunchFileAsync(IStorageFile)</span><span class="sxs-lookup"><span data-stu-id="71a5e-122">LaunchFileAsync(IStorageFile)</span></span>**](https://msdn.microsoft.com/library/windows/apps/hh701471) | <span data-ttu-id="71a5e-123">指定されたファイルを既定のハンドラーで起動します。</span><span class="sxs-lookup"><span data-stu-id="71a5e-123">Launch the specified file with the default handler.</span></span> |
+| <span data-ttu-id="71a5e-124">[プログラムから開く] を使った起動</span><span class="sxs-lookup"><span data-stu-id="71a5e-124">Open With launch</span></span> | [**<span data-ttu-id="71a5e-125">LaunchFileAsync(IStorageFile, LauncherOptions)</span><span class="sxs-lookup"><span data-stu-id="71a5e-125">LaunchFileAsync(IStorageFile, LauncherOptions)</span></span>**](https://msdn.microsoft.com/library/windows/apps/hh701465) | <span data-ttu-id="71a5e-126">指定されたファイルを [プログラムから開く] ダイアログでユーザーによって選択されたハンドラーを使って起動します。</span><span class="sxs-lookup"><span data-stu-id="71a5e-126">Launch the specified file letting the user pick the handler through the Open With dialog.</span></span> |
+| <span data-ttu-id="71a5e-127">推奨されるアプリ フォールバックを使った起動</span><span class="sxs-lookup"><span data-stu-id="71a5e-127">Launch with a recommended app fallback</span></span> | [**<span data-ttu-id="71a5e-128">LaunchFileAsync(IStorageFile, LauncherOptions)</span><span class="sxs-lookup"><span data-stu-id="71a5e-128">LaunchFileAsync(IStorageFile, LauncherOptions)</span></span>**](https://msdn.microsoft.com/library/windows/apps/hh701465) | <span data-ttu-id="71a5e-129">指定されたファイルを既定のハンドラーで起動します。</span><span class="sxs-lookup"><span data-stu-id="71a5e-129">Launch the specified file with the default handler.</span></span> <span data-ttu-id="71a5e-130">ハンドラーがシステムにインストールされていない場合は、ストアにあるアプリをユーザーに勧めます。</span><span class="sxs-lookup"><span data-stu-id="71a5e-130">If no handler is installed on the system, recommend an app in the store to the user.</span></span> |
+| <span data-ttu-id="71a5e-131">画面上に留まった適切なビューを使った起動</span><span class="sxs-lookup"><span data-stu-id="71a5e-131">Launch with a desired remaining view</span></span> | <span data-ttu-id="71a5e-132">[**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) (Windows のみ)</span><span class="sxs-lookup"><span data-stu-id="71a5e-132">[**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) (Windows-only)</span></span> | <span data-ttu-id="71a5e-133">指定されたファイルを既定のハンドラーで起動します。</span><span class="sxs-lookup"><span data-stu-id="71a5e-133">Launch the specified file with the default handler.</span></span> <span data-ttu-id="71a5e-134">起動後も画面上に留まるように指定し、特定のウィンドウ サイズを要求します。</span><span class="sxs-lookup"><span data-stu-id="71a5e-134">Specify a preference to stay on screen after the launch and request a specific window size.</span></span> <span data-ttu-id="71a5e-135">[**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) はモバイル デバイス ファミリではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="71a5e-135">[**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) isn't supported on the mobile device family.</span></span> |
 
-ファイルがアプリのパッケージに含まれている場合は、[**Package.InstalledLocation**](https://msdn.microsoft.com/library/windows/apps/br224681) プロパティで [**Windows.Storage.StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) オブジェクトを取得し、[**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) メソッドで [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを取得します。
+### <a name="default-launch"></a><span data-ttu-id="71a5e-136">既定の起動</span><span class="sxs-lookup"><span data-stu-id="71a5e-136">Default launch</span></span>
 
-ファイルが既知のフォルダー内にある場合には、[**Windows.Storage.KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) クラスのプロパティで [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) を取得し、[**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) メソッドで [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを取得します。
-
-## <a name="launch-the-file"></a>ファイルを起動する
-
-
-Windows には、ファイルの既定のハンドラーを起動するためのいくつかの異なるオプションが用意されています。 これらのオプションについて、次の表とセクションで説明します。
-
-| オプション | メソッド | 説明 |
-|----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 既定の起動 | [**LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) | 指定されたファイルを既定のハンドラーで起動します。 |
-| [プログラムから開く] を使った起動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 指定されたファイルを [プログラムから開く] ダイアログでユーザーによって選択されたハンドラーを使って起動します。 |
-| 推奨されるアプリ フォールバックを使った起動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 指定されたファイルを既定のハンドラーで起動します。 ハンドラーがシステムにインストールされていない場合は、ストアにあるアプリをユーザーに勧めます。 |
-| 画面上に留まった適切なビューを使った起動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) (Windows のみ) | 指定されたファイルを既定のハンドラーで起動します。 起動後も画面上に留まるように指定し、特定のウィンドウ サイズを要求します。 [**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) はモバイル デバイス ファミリではサポートされていません。   |
- 
-### <a name="default-launch"></a>既定の起動
-
-既定のアプリを起動するには、[**Windows.System.Launcher.LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) メソッドを呼び出します。 この例では [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) メソッドを使って、このアプリ パッケージに含まれる画像ファイル test.png を起動します。
+<span data-ttu-id="71a5e-137">既定のアプリを起動するには、[**Windows.System.Launcher.LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="71a5e-137">Call the [**Windows.System.Launcher.LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) method to launch the default app.</span></span> <span data-ttu-id="71a5e-138">この例では [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) メソッドを使って、このアプリ パッケージに含まれる画像ファイル test.png を起動します。</span><span class="sxs-lookup"><span data-stu-id="71a5e-138">This example uses the [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) method to launch an image file, test.png, that is included in the app package.</span></span>
 
 
 > [!div class="tabbedCodeSnippets"]
@@ -135,13 +130,13 @@ Windows には、ファイルの既定のハンドラーを起動するための
 > }
 > ```
 
-### <a name="open-with-launch"></a>[プログラムから開く] を使った起動
+### <a name="open-with-launch"></a><span data-ttu-id="71a5e-139">[プログラムから開く] を使った起動</span><span class="sxs-lookup"><span data-stu-id="71a5e-139">Open With launch</span></span>
 
-[**LauncherOptions.DisplayApplicationPicker**](https://msdn.microsoft.com/library/windows/apps/hh701438) を **true** に設定して [**Windows.System.Launcher.LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) メソッドを呼び出して、ユーザーが **[プログラムから開く]** ダイアログ ボックスで選んだアプリを起動します。
+<span data-ttu-id="71a5e-140">[**LauncherOptions.DisplayApplicationPicker**](https://msdn.microsoft.com/library/windows/apps/hh701438) を **true** に設定して [**Windows.System.Launcher.LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) メソッドを呼び出して、ユーザーが **[プログラムから開く]** ダイアログ ボックスで選んだアプリを起動します。</span><span class="sxs-lookup"><span data-stu-id="71a5e-140">Call the [**Windows.System.Launcher.LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) method with [**LauncherOptions.DisplayApplicationPicker**](https://msdn.microsoft.com/library/windows/apps/hh701438) set to **true** to launch the app that the user selects from the **Open With** dialog box.</span></span>
 
-ユーザーが特定のファイルに既定以外のアプリを選ぶ場合は、**[プログラムから開く]** ダイアログ ボックスを使うことをお勧めします。 たとえば、アプリで画像ファイルを起動できる場合、既定のハンドラーは多くの場合ビューアー アプリです。 場合によっては、ユーザーが画像の表示ではなく編集を行うこともあります。 **[プログラムから開く]** オプションを **AppBar** またはコンテキスト メニューで代替コマンドと共に使って、ユーザーが **[プログラムから開く]** ダイアログを開き、このようなシナリオでエディター アプリを選択できるようにします。
+<span data-ttu-id="71a5e-141">ユーザーが特定のファイルに既定以外のアプリを選ぶ場合は、**[プログラムから開く]** ダイアログ ボックスを使うことをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="71a5e-141">We recommend that you use the **Open With** dialog box when the user may want to select an app other than the default for a particular file.</span></span> <span data-ttu-id="71a5e-142">たとえば、アプリで画像ファイルを起動できる場合、既定のハンドラーは多くの場合ビューアー アプリです。</span><span class="sxs-lookup"><span data-stu-id="71a5e-142">For example, if your app allows the user to launch an image file, the default handler will likely be a viewer app.</span></span> <span data-ttu-id="71a5e-143">場合によっては、ユーザーが画像の表示ではなく編集を行うこともあります。</span><span class="sxs-lookup"><span data-stu-id="71a5e-143">In some cases, the user may want to edit the image instead of viewing it.</span></span> <span data-ttu-id="71a5e-144">**[プログラムから開く]** オプションを **AppBar** またはコンテキスト メニューで代替コマンドと共に使って、ユーザーが **[プログラムから開く]** ダイアログを開き、このようなシナリオでエディター アプリを選択できるようにします。</span><span class="sxs-lookup"><span data-stu-id="71a5e-144">Use the **Open With** option along with an alternative command in the **AppBar** or in a context menu to let the user bring up the **Open With** dialog and select the editor app in these types of scenarios.</span></span>
 
-![.png ファイルの起動のための [プログラムから開く] ダイアログ。 このダイアログには、ユーザーによって選択されたアプリをすべての .png ファイルに使用するかまたはこの 1 つの .png ファイルのみに使用するかを指定するチェック ボックスがあります。 また、このダイアログには、ファイルの起動に関する 4 つのアプリ オプションと、[その他のオプション] リンクがあります。](images/checkboxopenwithdialog.png)
+![.png ファイルの起動のための [プログラムから開く] ダイアログ。](images/checkboxopenwithdialog.png)
 
 > [!div class="tabbedCodeSnippets"]
 > ```vb
@@ -237,13 +232,13 @@ Windows には、ファイルの既定のハンドラーを起動するための
 > }
 > ```
 
-**推奨されるアプリ フォールバックを使った起動**
+**<span data-ttu-id="71a5e-148">推奨されるアプリ フォールバックを使った起動</span><span class="sxs-lookup"><span data-stu-id="71a5e-148">Launch with a recommended app fallback</span></span>**
 
-場合によっては、起動中のファイルを処理するためのアプリがインストールされていないこともあります。 既定では、Windows はストア上の適切なアプリを検索するリンクを表示して、これらのケースに対処します。 このシナリオで入手するアプリに関する特定の推奨事項を示す場合は、起動中のファイルと共に推奨事項を渡すことができます。 そのためには、[**LauncherOptions.PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482) を推奨するストア内のアプリのパッケージのファミリ名に設定して、[**Windows.System.Launcher.launchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) メソッドを呼び出します。 その後、[**LauncherOptions.PreferredApplicationDisplayName**](https://msdn.microsoft.com/library/windows/apps/hh965481) をそのアプリの名前に設定します。 Windows ではこの情報を使って、ストア内のアプリを検索する一般的なオプションを、ストアから推奨アプリを入手する固有のオプションに置き換えます。
+<span data-ttu-id="71a5e-149">場合によっては、起動中のファイルを処理するためのアプリがインストールされていないこともあります。</span><span class="sxs-lookup"><span data-stu-id="71a5e-149">In some cases the user may not have an app installed to handle the file that you are launching.</span></span> <span data-ttu-id="71a5e-150">既定では、Windows はストア上の適切なアプリを検索するリンクを表示して、これらのケースに対処します。</span><span class="sxs-lookup"><span data-stu-id="71a5e-150">By default, Windows will handle these cases by providing the user with a link to search for an appropriate app on the store.</span></span> <span data-ttu-id="71a5e-151">このシナリオで入手するアプリに関する特定の推奨事項を示す場合は、起動中のファイルと共に推奨事項を渡すことができます。</span><span class="sxs-lookup"><span data-stu-id="71a5e-151">If you would like to give the user a specific recommendation for which app to acquire in this scenario, you may do so by passing that recommendation along with the file that you are launching.</span></span> <span data-ttu-id="71a5e-152">そのためには、[**LauncherOptions.PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482) を推奨するストア内のアプリのパッケージのファミリ名に設定して、[**Windows.System.Launcher.launchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="71a5e-152">To do this, call the [**Windows.System.Launcher.launchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) method with [**LauncherOptions.PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482) set to the package family name of the app in the Store that you want to recommend.</span></span> <span data-ttu-id="71a5e-153">その後、[**LauncherOptions.PreferredApplicationDisplayName**](https://msdn.microsoft.com/library/windows/apps/hh965481) をそのアプリの名前に設定します。</span><span class="sxs-lookup"><span data-stu-id="71a5e-153">Then, set the [**LauncherOptions.PreferredApplicationDisplayName**](https://msdn.microsoft.com/library/windows/apps/hh965481) to the name of that app.</span></span> <span data-ttu-id="71a5e-154">Windows ではこの情報を使って、ストア内のアプリを検索する一般的なオプションを、ストアから推奨アプリを入手する固有のオプションに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="71a5e-154">Windows will use this information to replace the general option to search for an app in the store with a specific option to acquire the recommended app from the Store.</span></span>
 
-> **注**  アプリを推奨するには、これらの両方のオプションを設定する必要があります。 どちらか一方のみを設定した場合は、エラーになります。
+> <span data-ttu-id="71a5e-155">**注**  アプリを推奨するには、これらの両方のオプションを設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="71a5e-155">**Note**  You must set both of these options to recommend an app.</span></span> <span data-ttu-id="71a5e-156">どちらか一方のみを設定した場合は、エラーになります。</span><span class="sxs-lookup"><span data-stu-id="71a5e-156">Setting one without the other will result in a failure.</span></span>
 
-![.contoso ファイルの起動のための [プログラムから開く] ダイアログ。 コンピューターには .contoso に対応するハンドラーがインストールされていないため、このダイアログには、ストア アイコンとストア上の適切なハンドラーをユーザーに通知するテキストを含むオプションが表示されます。 このダイアログには、[その他のオプション] リンクもあります。](images/howdoyouwanttoopen.png)
+![.contoso ファイルの起動のための [プログラムから開く] ダイアログ。](images/howdoyouwanttoopen.png)
 
 
 > [!div class="tabbedCodeSnippets"]
@@ -349,14 +344,14 @@ Windows には、ファイルの既定のハンドラーを起動するための
 > }
 > ```
 
-### <a name="launch-with-a-desired-remaining-view-windows-only"></a>画面上に留まった適切なビューを使った起動 (Windows のみ)
+### <a name="launch-with-a-desired-remaining-view-windows-only"></a><span data-ttu-id="71a5e-160">画面上に留まった適切なビューを使った起動 (Windows のみ)</span><span class="sxs-lookup"><span data-stu-id="71a5e-160">Launch with a Desired Remaining View (Windows-only)</span></span>
 
-[**LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461) を呼び出すソース アプリは、ファイルの起動後も画面上に留まることを要求できます。 既定では、利用可能なスペース全体がソース アプリとファイルを処理するターゲット アプリとで均等に共有されます。 ソース アプリでは、[**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) プロパティを使って、利用可能なスペースをソース アプリのウィンドウがどの程度占めるかをオペレーティング システムに指示できます。 
-              この **DesiredRemainingView** では、ファイルの起動後にソース アプリが画面上に留まる必要がなく、ターゲット アプリに完全に置き換わってもよいことも示せます。 このプロパティは呼び出し元アプリの優先ウィンドウのサイズだけを指定します。 画面に同時に表示されている可能性のある他のアプリの動作は指定しません。
+<span data-ttu-id="71a5e-161">[**LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461) を呼び出すソース アプリは、ファイルの起動後も画面上に留まることを要求できます。</span><span class="sxs-lookup"><span data-stu-id="71a5e-161">Source apps that call [**LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461) can request that they remain on screen after a file launch.</span></span> <span data-ttu-id="71a5e-162">既定では、利用可能なスペース全体がソース アプリとファイルを処理するターゲット アプリとで均等に共有されます。</span><span class="sxs-lookup"><span data-stu-id="71a5e-162">By default, Windows attempts to share all available space equally between the source app and the target app that handles the file.</span></span> <span data-ttu-id="71a5e-163">ソース アプリでは、[**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) プロパティを使って、利用可能なスペースをソース アプリのウィンドウがどの程度占めるかをオペレーティング システムに指示できます。</span><span class="sxs-lookup"><span data-stu-id="71a5e-163">Source apps can use the [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) property to indicate to the operating system that they prefer their app window to take up more or less of the available space.</span></span> <span data-ttu-id="71a5e-164">
+              この **DesiredRemainingView** では、ファイルの起動後にソース アプリが画面上に留まる必要がなく、ターゲット アプリに完全に置き換わってもよいことも示せます。</span><span class="sxs-lookup"><span data-stu-id="71a5e-164">**DesiredRemainingView** can also be used to indicate that the source app does not need to remain on screen after the file launch and can be completely replaced by the target app.</span></span> <span data-ttu-id="71a5e-165">このプロパティは呼び出し元アプリの優先ウィンドウのサイズだけを指定します。</span><span class="sxs-lookup"><span data-stu-id="71a5e-165">This property only specifies the preferred window size of the calling app.</span></span> <span data-ttu-id="71a5e-166">画面に同時に表示されている可能性のある他のアプリの動作は指定しません。</span><span class="sxs-lookup"><span data-stu-id="71a5e-166">It doesn't specify the behavior of other apps that may happen to also be on screen at the same time.</span></span>
 
-> **注**  ソース アプリの最終的なウィンドウ サイズは、複数の異なる要素が考慮されて決定されます。たとえば、ソース アプリの設定、画面上のアプリの数、画面の向きなどです。 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) を設定しても、ソース アプリの特定のウィンドウ動作が保証されるわけではありません。
+> <span data-ttu-id="71a5e-167">**注**  ソース アプリの最終的なウィンドウ サイズは、複数の異なる要素が考慮されて決定されます。たとえば、ソース アプリの設定、画面上のアプリの数、画面の向きなどです。</span><span class="sxs-lookup"><span data-stu-id="71a5e-167">**Note**  Windows takes into account multiple different factors when it determines the source app's final window size, for example, the preference of the source app, the number of apps on screen, the screen orientation, and so on.</span></span> <span data-ttu-id="71a5e-168">[**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) を設定しても、ソース アプリの特定のウィンドウ動作が保証されるわけではありません。</span><span class="sxs-lookup"><span data-stu-id="71a5e-168">By setting [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314), you aren't guaranteed a specific windowing behavior for the source app.</span></span>
 
-**モバイル デバイス ファミリ:  **[**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) はモバイル デバイス ファミリではサポートされていません。
+<span data-ttu-id="71a5e-169">**モバイル デバイス ファミリ:  **[**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) はモバイル デバイス ファミリではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="71a5e-169">**Mobile device family:  **[**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) isn't supported on the mobile device family.</span></span>
 
 > [!div class="tabbedCodeSnippets"]
 > ```cpp
@@ -426,37 +421,35 @@ Windows には、ファイルの既定のハンドラーを起動するための
 > }
 > ```
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a><span data-ttu-id="71a5e-170">注釈</span><span class="sxs-lookup"><span data-stu-id="71a5e-170">Remarks</span></span>
 
-起動するアプリをアプリが選ぶことはできません。 どのアプリを起動するかはユーザーが決めます。 ユーザーは、ユニバーサル Windows プラットフォーム (UWP) アプリまたは Windows デスクトップ アプリを選択できます。
+<span data-ttu-id="71a5e-171">起動するアプリをアプリが選ぶことはできません。</span><span class="sxs-lookup"><span data-stu-id="71a5e-171">Your app can't select the app that is launched.</span></span> <span data-ttu-id="71a5e-172">どのアプリを起動するかはユーザーが決めます。</span><span class="sxs-lookup"><span data-stu-id="71a5e-172">The user determines which app is launched.</span></span> <span data-ttu-id="71a5e-173">ユーザーは、ユニバーサル Windows プラットフォーム (UWP) アプリまたは Windows デスクトップ アプリを選択できます。</span><span class="sxs-lookup"><span data-stu-id="71a5e-173">The user can select either a Universal Windows Platform (UWP) app or a Windows desktop app.</span></span>
 
-ファイルの起動時、アプリはユーザーに表示されるフォアグラウンド アプリである必要があります。 この要件は、ユーザーが制御を維持するのに役立ちます。 この要件を満たすために、すべてのファイル起動がアプリの UI に直接結び付けられていることを確認します。 ほとんどの場合、ファイル起動を開始するには、常にユーザーがなんらかの操作を行う必要があります。
+<span data-ttu-id="71a5e-174">ファイルの起動時、アプリはユーザーに表示されるフォアグラウンド アプリである必要があります。</span><span class="sxs-lookup"><span data-stu-id="71a5e-174">When launching a file, your app must be the foreground app, that is, it must be visible to the user.</span></span> <span data-ttu-id="71a5e-175">この要件は、ユーザーが制御を維持するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="71a5e-175">This requirement helps ensure that the user remains in control.</span></span> <span data-ttu-id="71a5e-176">この要件を満たすために、すべてのファイル起動がアプリの UI に直接結び付けられていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="71a5e-176">To meet this requirement, make sure that you tie all file launches directly to the UI of your app.</span></span> <span data-ttu-id="71a5e-177">ほとんどの場合、ファイル起動を開始するには、常にユーザーがなんらかの操作を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="71a5e-177">Most likely, the user must always take some action to initiate a file launch.</span></span>
 
-.exe、.msi、.js ファイルなど、オペレーティング システムによって自動的に実行されるコードまたはスクリプトを含むファイルの種類を起動することはできません。 この制約により、オペレーティング システムを変更する可能性のある、悪意のあるファイルからユーザーを保護できます。 この方法では、.docx ファイルなど、スクリプトを分離するアプリによって実行されるスクリプトを含むファイルの種類を起動できます。 Microsoft Word などのアプリは、.docx ファイルのスクリプトがオペレーティング システムを変更しないようにします。
+<span data-ttu-id="71a5e-178">.exe、.msi、.js ファイルなど、オペレーティング システムによって自動的に実行されるコードまたはスクリプトを含むファイルの種類を起動することはできません。</span><span class="sxs-lookup"><span data-stu-id="71a5e-178">You can't launch file types that contain code or script if they are executed automatically by the operating system, such as, .exe, .msi, and .js files.</span></span> <span data-ttu-id="71a5e-179">この制約により、オペレーティング システムを変更する可能性のある、悪意のあるファイルからユーザーを保護できます。</span><span class="sxs-lookup"><span data-stu-id="71a5e-179">This restriction protects users from potentially malicious files that could modify the operating system.</span></span> <span data-ttu-id="71a5e-180">この方法では、.docx ファイルなど、スクリプトを分離するアプリによって実行されるスクリプトを含むファイルの種類を起動できます。</span><span class="sxs-lookup"><span data-stu-id="71a5e-180">You can use this method to launch file types that can contain script if they are executed by an app that isolates the script, such as, .docx files.</span></span> <span data-ttu-id="71a5e-181">Microsoft Word などのアプリは、.docx ファイルのスクリプトがオペレーティング システムを変更しないようにします。</span><span class="sxs-lookup"><span data-stu-id="71a5e-181">Apps like Microsoft Word keep the script in .docx files from modifying the operating system.</span></span>
 
-制限されている種類のファイルを起動しようとすると、起動は失敗し、エラー コールバックが呼び出されます。 アプリがさまざまな種類のファイルを処理するため、このエラーの発生が予想される場合は、ユーザーにフォールバックを提供することをお勧めします。 たとえば、ファイルをデスクトップに保存してそこで開けるようなオプションをユーザーに提供することができます。
+<span data-ttu-id="71a5e-182">制限されている種類のファイルを起動しようとすると、起動は失敗し、エラー コールバックが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="71a5e-182">If you try to launch a restricted file type, the launch will fail and your error callback will be invoked.</span></span> <span data-ttu-id="71a5e-183">アプリがさまざまな種類のファイルを処理するため、このエラーの発生が予想される場合は、ユーザーにフォールバックを提供することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="71a5e-183">If your app handles many different types of files and you expect that you will hit this error, we recommend that you provide a fallback experience to your user.</span></span> <span data-ttu-id="71a5e-184">たとえば、ファイルをデスクトップに保存してそこで開けるようなオプションをユーザーに提供することができます。</span><span class="sxs-lookup"><span data-stu-id="71a5e-184">For example, you could give the user an option to save the file to the desktop, and they could open it there.</span></span>
 
-> **注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="71a5e-185">関連トピック</span><span class="sxs-lookup"><span data-stu-id="71a5e-185">Related topics</span></span>
 
 
-**処理手順**
+**<span data-ttu-id="71a5e-186">タスク</span><span class="sxs-lookup"><span data-stu-id="71a5e-186">Tasks</span></span>**
 
-* [URI に応じた既定のアプリの起動](launch-default-app.md)
-* [ファイルのアクティブ化の処理](handle-file-activation.md)
+* [<span data-ttu-id="71a5e-187">URI に応じた既定のアプリの起動</span><span class="sxs-lookup"><span data-stu-id="71a5e-187">Launch the default app for a URI</span></span>](launch-default-app.md)
+* [<span data-ttu-id="71a5e-188">ファイルのアクティブ化の処理</span><span class="sxs-lookup"><span data-stu-id="71a5e-188">Handle file activation</span></span>](handle-file-activation.md)
 
-**ガイドライン**
+**<span data-ttu-id="71a5e-189">ガイドライン</span><span class="sxs-lookup"><span data-stu-id="71a5e-189">Guidelines</span></span>**
 
-* [ファイルの種類と URI のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700321)
+* [<span data-ttu-id="71a5e-190">ファイルの種類と URI のガイドライン</span><span class="sxs-lookup"><span data-stu-id="71a5e-190">Guidelines for file types and URIs</span></span>](https://msdn.microsoft.com/library/windows/apps/hh700321)
 
-**リファレンス**
+**<span data-ttu-id="71a5e-191">リファレンス</span><span class="sxs-lookup"><span data-stu-id="71a5e-191">Reference</span></span>**
 
-* [**Windows.Storage.StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
-* [**Windows.System.Launcher.LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461)
-
- 
+* [**<span data-ttu-id="71a5e-192">Windows.Storage.StorageFile</span><span class="sxs-lookup"><span data-stu-id="71a5e-192">Windows.Storage.StorageFile</span></span>**](https://msdn.microsoft.com/library/windows/apps/br227171)
+* [**<span data-ttu-id="71a5e-193">Windows.System.Launcher.LaunchFileAsync</span><span class="sxs-lookup"><span data-stu-id="71a5e-193">Windows.System.Launcher.LaunchFileAsync</span></span>**](https://msdn.microsoft.com/library/windows/apps/hh701461)
 
  
 
+ 

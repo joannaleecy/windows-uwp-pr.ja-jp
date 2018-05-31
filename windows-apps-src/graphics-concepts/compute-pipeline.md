@@ -1,34 +1,35 @@
 ---
-title: "計算パイプライン"
-description: "Direct3D 計算パイプラインは、グラフィックス パイプラインとほぼ並行して実行できる計算を処理するように設計されています。"
+title: 計算パイプライン
+description: Direct3D 計算パイプラインは、グラフィックス パイプラインとほぼ並行して実行できる計算を処理するように設計されています。
 ms.assetid: 355B66C6-C0DF-47BA-A9C9-7AFA50B5B614
-author: mtoepke
-ms.author: mtoepke
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e6c2fdf148e582360a125c3cd98013dc6b424535
-ms.lasthandoff: 02/07/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: ee55a932857611e19dc24170d5b61c9c26b51c13
+ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/15/2018
+ms.locfileid: "1652721"
 ---
-
-# <a name="compute-pipeline"></a>計算パイプライン
-
-
-\[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。\]
+# <a name="compute-pipeline"></a><span data-ttu-id="0513b-104">計算パイプライン</span><span class="sxs-lookup"><span data-stu-id="0513b-104">Compute pipeline</span></span>
 
 
-Direct3D 計算パイプラインは、グラフィックス パイプラインとほぼ並行して実行できる計算を処理するように設計されています。 計算パイプラインには、プログラム可能な計算シェーダー ステージを介して入力から出力へデータが流れる、わずかなステップしかありません。
+<span data-ttu-id="0513b-105">\[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="0513b-105">\[Some information relates to pre-released product which may be substantially modified before it's commercially released.</span></span> <span data-ttu-id="0513b-106">ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。\]</span><span class="sxs-lookup"><span data-stu-id="0513b-106">Microsoft makes no warranties, express or implied, with respect to the information provided here.\]</span></span>
+
+
+<span data-ttu-id="0513b-107">Direct3D 計算パイプラインは、グラフィックス パイプラインとほぼ並行して実行できる計算を処理するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="0513b-107">The Direct3D compute pipeline is designed to handle calculations that can be done mostly in parallel with the graphics pipeline.</span></span> <span data-ttu-id="0513b-108">計算パイプラインには、プログラム可能な計算シェーダー ステージを介して入力から出力へデータが流れる、わずかなステップしかありません。</span><span class="sxs-lookup"><span data-stu-id="0513b-108">There are only a few steps in the compute pipeline, with data flowing from input to output through the programmable compute shader stage.</span></span>
 
 | | |
 |-|-|
-|目的|他のプログラム可能なシェーダーと同様に、[計算シェーダー (CS) ステージ](compute-shader-stage--cs-.md)は、HLSL を使って設計され、実装されています。 計算シェーダーは、高速な汎用コンピューティングを提供し、グラフィックス処理装置 (GPU) 上の多数の並列プロセッサを利用します。 計算シェーダーは、メモリ共有とスレッド同期機能を提供し、より効果的な並列プログラミング手法を可能にします。|
-|入力|他のプログラム可能なシェーダーとは異なり、入力は抽象定義です。 入力は、1 次元、2 次元または 3 次元とすることができ、実行する計算シェーダーの呼び出し回数を決定します。 1 セットの読み込み呼び出しのために、共有データを定義することができます。|
-|出力|計算シェーダーからの出力データは、大幅に変化する場合がありますが、計算データが必要な場合には、グラフィックス レンダリング パイプラインと同期させることができます。|
+|<span data-ttu-id="0513b-109">目的</span><span class="sxs-lookup"><span data-stu-id="0513b-109">Purpose</span></span>|<span data-ttu-id="0513b-110">他のプログラム可能なシェーダーと同様に、[計算シェーダー (CS) ステージ](compute-shader-stage--cs-.md)は、HLSL を使って設計され、実装されています。</span><span class="sxs-lookup"><span data-stu-id="0513b-110">Like other programmable shaders, [Compute Shader (CS) stage](compute-shader-stage--cs-.md) is designed and implemented with HLSL.</span></span> <span data-ttu-id="0513b-111">計算シェーダーは、高速な汎用コンピューティングを提供し、グラフィックス処理装置 (GPU) 上の多数の並列プロセッサを利用します。</span><span class="sxs-lookup"><span data-stu-id="0513b-111">A compute shader provides high-speed general purpose computing and takes advantage of the large numbers of parallel processors on the graphics processing unit (GPU).</span></span> <span data-ttu-id="0513b-112">計算シェーダーは、メモリ共有とスレッド同期機能を提供し、より効果的な並列プログラミング手法を可能にします。</span><span class="sxs-lookup"><span data-stu-id="0513b-112">The compute shader provides memory sharing and thread synchronization features to allow more effective parallel programming methods.</span></span>|
+|<span data-ttu-id="0513b-113">入力</span><span class="sxs-lookup"><span data-stu-id="0513b-113">Input</span></span>|<span data-ttu-id="0513b-114">他のプログラム可能なシェーダーとは異なり、入力は抽象定義です。</span><span class="sxs-lookup"><span data-stu-id="0513b-114">Unlike other programmable shaders, the definition of input is abstract.</span></span> <span data-ttu-id="0513b-115">入力は、1 次元、2 次元または 3 次元とすることができ、実行する計算シェーダーの呼び出し回数を決定します。</span><span class="sxs-lookup"><span data-stu-id="0513b-115">The input can be one, two or three-dimensional in nature, determining the number of invocations of the compute shader to execute.</span></span> <span data-ttu-id="0513b-116">1 セットの読み込み呼び出しのために、共有データを定義することができます。</span><span class="sxs-lookup"><span data-stu-id="0513b-116">It is possible to define shared data for one set of invocations to read.</span></span>|
+|<span data-ttu-id="0513b-117">出力</span><span class="sxs-lookup"><span data-stu-id="0513b-117">Output</span></span>|<span data-ttu-id="0513b-118">計算シェーダーからの出力データは、大幅に変化する場合がありますが、計算データが必要な場合には、グラフィックス レンダリング パイプラインと同期させることができます。</span><span class="sxs-lookup"><span data-stu-id="0513b-118">Output data from the compute shader, which can be highly varied, can be synchronized with the graphics rendering pipeline when the computed data is required.</span></span>|
 | | |
 
 
@@ -43,7 +44,7 @@ Direct3D 計算パイプラインは、グラフィックス パイプライン�
 <tbody>
 <tr class="odd">
 <td align="left">Purpose</td>
-<td align="left">Like other programmable shaders, [Compute Shader (CS) stage](#compute-shader-stage--cs-.md) is designed and implemented with HLSL. A compute shader provides high-speed general purpose computing and takes advantage of the large numbers of parallel processors on the graphics processing unit (GPU). The compute shader provides memory sharing and thread synchronization features to allow more effective parallel programming methods.</td>
+<td align="left">Like other programmable shaders, <a href="#compute-shader-stage--cs-.md">Compute Shader (CS) stage</a> is designed and implemented with HLSL. A compute shader provides high-speed general purpose computing and takes advantage of the large numbers of parallel processors on the graphics processing unit (GPU). The compute shader provides memory sharing and thread synchronization features to allow more effective parallel programming methods.</td>
 </tr>
 <tr class="even">
 <td align="left">Input</td>
@@ -57,12 +58,11 @@ Direct3D 計算パイプラインは、グラフィックス パイプライン�
 </table>
 -->
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連項目
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="0513b-119"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="0513b-119"><span id="related-topics"></span>Related topics</span></span>
 
 
-[Direct3D Graphics の学習ガイド](index.md)
-
- 
+[<span data-ttu-id="0513b-120">Direct3D グラフィックスの学習ガイド</span><span class="sxs-lookup"><span data-stu-id="0513b-120">Direct3D Graphics Learning Guide</span></span>](index.md)
 
  
 
+ 
