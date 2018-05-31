@@ -1,28 +1,28 @@
 ---
 author: stevewhims
-Description: "リソースを要求すると、現在のリソース コンテキストにある程度一致するリソース候補がいくつか存在する場合があります。 リソース管理システムはすべての候補を分析して、返すのに最もよい候補を決定します。 このトピックでは、そのプロセスの詳細について説明し、例を示します。"
-title: "リソース管理システムでのリソースの照合と選択の仕組み"
+Description: When a resource is requested, there may be several candidates that match the current resource context to some degree. The Resource Management System will analyze all of the candidates and determine the best candidate to return. This topic describes that process in detail and gives examples.
+title: リソース管理システムでのリソースの照合と選択の仕組み
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子"
-localizationpriority: medium
-ms.openlocfilehash: 4731ae7add7d5b969ab98da60b3f6740dbbbee1b
-ms.sourcegitcommit: 44a24b580feea0f188c7eae36e72e4a4f412802b
+keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
+ms.localizationpriority: medium
+ms.openlocfilehash: bb1168401aaa715f8d1c459691dfa1b1ca38ccbe
+ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 03/28/2018
+ms.locfileid: "1690428"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a>リソース管理システムでのリソースの照合と選択の仕組み
-
 リソースを要求すると、現在のリソース コンテキストにある程度一致するリソース候補がいくつか存在する場合があります。 リソース管理システムはすべての候補を分析して、返すのに最もよい候補を決定します。 これはすべての修飾子を考慮して、すべての候補をランク付けすることで実行されます。
 
 このランク付けプロセスでは、修飾子が異なれば優先順位も異なります。言語は全体のランキングに最大の影響を及ぼし、コントラスト、スケールなどが続きます。 修飾子ごとに、候補の修飾子がコンテキスト修飾子の値と比較され、一致度が決定されます。 どのように比較がなされるかは、修飾子に左右されます。
+
+言語タグの照合のしくみの詳細については、「[リソース管理システムでの言語タグの照合の仕組み](how-rms-matches-lang-tags.md)」を参照してください。
 
 スケールやコントラストのような修飾子の場合、常に最低限の一致が存在します。 たとえば、"scale-400" というコンテキストに対して、"scale-100" で修飾された候補は、"scale-200" または (完全一致の) "scale-400" で修飾された候補ほどではなくても、ある程度は一致します。
 
@@ -41,7 +41,6 @@ ms.lasthandoff: 10/31/2017
 一致度が同じ場合、次に優先順位が高いコンテキスト修飾子の値が調べられます。最も一致するものが見つかるまで、この操作が続けられます。
 
 ## <a name="example-of-choosing-a-resource-candidate"></a>リソース候補を選択する例
-
 次のようなファイルがあるとします。
 
 ```
@@ -85,7 +84,7 @@ en/images/logo.scale-100.jpg
 en/images/logo.scale-400.jpg
 ```
 
-高度な [**NamedResource.ResolveAll**](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live#Windows_ApplicationModel_Resources_Core_NamedResource_ResolveAll_Windows_ApplicationModel_Resources_Core_ResourceContext_) メソッドを使うと、コンテキスト設定に一致する順にすべての候補を取得できます。 前述の例では、**ResolveAll** は次の順序で候補を返します。
+高度な [**NamedResource.ResolveAll**](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live) メソッドを使うと、コンテキスト設定に一致する順にすべての候補を取得できます。 前述の例では、**ResolveAll** は次の順序で候補を返します。
 
 ```
 en/images/logo.scale-400.jpg
@@ -95,7 +94,6 @@ fr/images/logo.scale-100.jpg
 ```
 
 ## <a name="example-of-producing-a-fallback-choice"></a>フォールバック選択肢を生成する例
-
 次のようなファイルがあるとします。
 
 ```
@@ -138,9 +136,7 @@ de/images/contrast-standard/logo.jpg
 ```
 
 ## <a name="important-apis"></a>重要な API
-
-* [NamedResource.ResolveAll](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live#Windows_ApplicationModel_Resources_Core_NamedResource_ResolveAll_Windows_ApplicationModel_Resources_Core_ResourceContext_)
+* [NamedResource.ResolveAll](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live)
 
 ## <a name="related-topics"></a>関連トピック
-
 * [MakePri.exe を使用して手動でリソースをコンパイルする](compile-resources-manually-with-makepri.md)

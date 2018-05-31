@@ -1,21 +1,24 @@
 ---
 author: drewbatgit
 ms.assetid: 42A06423-670F-4CCC-88B7-3DCEEDDEBA57
-description: "この記事では、カメラ プロファイルを使ってさまざまなビデオ キャプチャ デバイスの機能を検出および管理する方法について説明します。 これには、特定の解像度やフレーム レートをサポートするプロファイル、複数のカメラへの同時アクセスをサポートするプロファイル、HDR をサポートするプロファイルを選ぶなどのタスクが含まれます。"
-title: "カメラ プロファイルを使用したカメラ機能の検出と選択"
+description: この記事では、カメラ プロファイルを使ってさまざまなビデオ キャプチャ デバイスの機能を検出および管理する方法について説明します。 これには、特定の解像度やフレーム レートをサポートするプロファイル、複数のカメラへの同時アクセスをサポートするプロファイル、HDR をサポートするプロファイルを選ぶなどのタスクが含まれます。
+title: カメラ プロファイルを使用したカメラ機能の検出と選択
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: f45fea396c775a7d9e783be1d0a821ff68716279
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: f842b10ce056d02d1c30c2fe285a87d5fe20dca8
+ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/03/2018
+ms.locfileid: "1832256"
 ---
 # <a name="discover-and-select-camera-capabilities-with-camera-profiles"></a>カメラ プロファイルを使用したカメラ機能の検出と選択
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 この記事では、カメラ プロファイルを使ってさまざまなビデオ キャプチャ デバイスの機能を検出および管理する方法について説明します。 これには、特定の解像度やフレーム レートをサポートするプロファイル、複数のカメラへの同時アクセスをサポートするプロファイル、HDR をサポートするプロファイルを選ぶなどのタスクが含まれます。
@@ -61,23 +64,20 @@ translationtype: HT
 
 [!code-cs[InitCaptureWithProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitCaptureWithProfile)]
 
-## <a name="select-a-profile-that-supports-concurrence"></a>同時実行をサポートするプロファイルを選択する
+## <a name="use-media-frame-source-groups-to-get-profiles"></a>メディア フレーム ソース グループを使用してプロファイルを取得する
 
-カメラ プロファイルを使うと、デバイスで複数カメラからのビデオ キャプチャが同時にサポートされるかどうかを確認できます。 このシナリオでは、前面カメラ用と背面カメラ用に、2 セットのキャプチャ オブジェクトを作成する必要があります。 各カメラについて、**MediaCapture** と **MediaCaptureInitializationSettings** を作成し、キャプチャ デバイス ID を保持するための文字列を作成します。 また、同時実行がサポートされているかどうかを追跡するためのブール変数を追加します。
+Windows 10、バージョン 1803 以降では、[**MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup) クラスを使用して、特定の機能を備えたカメラ プロファイルを取得した後に、**MediaCapture** オブジェクトを初期化できます。 デバイス メーカーは、フレーム ソース グループを使用して、一連のセンサー機能やキャプチャ機能を 1 つの仮想デバイスとして表すことができます。 これにより、深度とカラー カメラを組み合わせるなどのコンピュテーショナル フォトグラフィー (計算写真学) のシナリオが可能になるだけでなく、単純なキャプチャのシナリオでカメラ プロファイルを選択するためにも使用できます。 **MediaFrameSourceGroup** の使用方法について詳しくは、「[MediaFrameReader を使ったメディア フレームの処理](process-media-frames-with-mediaframereader.md)」をご覧ください。
 
-[!code-cs[ConcurrencySetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConcurrencySetup)]
+次のサンプル メソッドでは、**MediaFrameSourceGroup** オブジェクトを使用して、既知のビデオ プロファイルをサポートしているカメラ プロファイル (HDR や可変の写真シーケンスをサポートするカメラ プロファイルなど) を検索する方法を示しています。 まず、[**MediaFrameSourceGroup.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.FindAllAsync) を呼び出して、現在のデバイス上で利用可能なすべてのメディア フレーム ソース グループの一覧を取得します。 ループ処理によって各ソース グループで [**MediaCapture.FindKnownVideoProfiles**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.findknownvideoprofiles) を呼び出し、現在のソース グループについて、指定したプロファイル (この例では HDR/WCG 写真) をサポートしているすべてのビデオ プロファイルの一覧を取得します。 条件に適合するプロファイルが見つかった場合、新しい **MediaCaptureInitializationSettings** オブジェクトが作成され、**VideoProfile** が選択したプロファイルに設定されると共に、**VideoDeviceId** が現在のメディア フレーム ソース グループの **Id** プロパティに設定されます。 これにより、たとえば **KnownVideoProfile.HdrWithWcgVideo** をこのメソッドに渡すと、HDR ビデオをサポートしているメディア キャプチャ設定を取得できます。 また **KnownVideoProfile.VariablePhotoSequence** を渡すと、加変の写真シーケンスをサポートしている設定を取得できます。
 
-静的メソッド [**MediaCapture.FindConcurrentProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926709) により、指定された (同時実行もサポート可能な) キャプチャ デバイスでサポートされているカメラ プロファイルの一覧が返されます。 Linq クエリを使って、同時実行をサポートし、前面カメラ用と背面カメラの両方でサポートされているプロファイルを検出します。 これらの要件を満たしているプロファイルが見つかった場合は、このプロファイルを各 **MediaCaptureInitializationSettings** オブジェクトに設定し、同時実行を追跡するブール変数を true に設定します。
+ [!code-cs[FindKnownVideoProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindKnownVideoProfile)]
 
-[!code-cs[FindConcurrencyDevices](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindConcurrencyDevices)]
+## <a name="use-known-profiles-to-find-a-profile-that-supports-hdr-video-legacy-technique"></a>既知のプロファイルを使用して HDR ビデオをサポートするプロファイルを検出する (従来の手法)
 
-アプリのシナリオのプライマリ カメラ用に **MediaCapture.InitializeAsync** を呼び出します。 同時実行がサポートされている場合は、2 台目のカメラも初期化します。
+> [!NOTE] 
+> このセクションで説明されている API は、Windows 10、バージョン 1803 以降では非推奨です。 上記の「**メディア フレーム ソース グループを使用してプロファイルを取得する**」をご覧ください。
 
-[!code-cs[InitConcurrentMediaCaptures](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitConcurrentMediaCaptures)]
-
-## <a name="use-known-profiles-to-find-a-profile-that-supports-hdr-video"></a>既知のプロファイルを使用して HDR ビデオをサポートするプロファイルを検出する
-
-HDR をサポートするプロファイルの選択も、他のシナリオと同じように始まります。 **MediaCaptureInitializationSettings** を作成し、キャプチャ デバイス ID を保持する文字列を作成します。 HDR ビデオがサポートされているかどうかを追跡するためのブール変数を追加します。
+HDR をサポートするプロファイルの選択も、最初の処理は他のシナリオと同じです。 **MediaCaptureInitializationSettings** を作成し、キャプチャ デバイス ID を保持する文字列を作成します。 HDR ビデオがサポートされているかどうかを追跡するためのブール変数を追加します。
 
 [!code-cs[GetHdrProfileSetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetHdrProfileSetup)]
 

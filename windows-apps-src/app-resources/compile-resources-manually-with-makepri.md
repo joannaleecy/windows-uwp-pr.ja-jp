@@ -1,26 +1,34 @@
 ---
 author: stevewhims
-Description: "MakePri.exe は、PRI ファイルを作成およびダンプするために使用できるコマンド ライン ツールです。 このツールは、Microsoft Visual Studio の MSBuild の一部として統合されていますが、パッケージを手動で作成したり、カスタム ビルド システムを使って作成する場合にも使うことができます。"
-title: "MakePri.exe を使用して手動でリソースをコンパイルする"
+Description: MakePri.exe is a command line tool that you can use to create and dump PRI files. It is integrated as part of MSBuild within Microsoft Visual Studio, but it could be useful to you for creating packages manually or with a custom build system.
+title: MakePri.exe を使用して手動でリソースをコンパイルする
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子"
-localizationpriority: medium
-ms.openlocfilehash: 16d2a270a69497bc66f7b17109bc28b062f14b5e
-ms.sourcegitcommit: d0c93d734639bd31f264424ae5b6fead903a951d
+keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
+ms.localizationpriority: medium
+ms.openlocfilehash: 261a2b747d25284351bb6f4e51f108158b6e2bc5
+ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 04/05/2018
+ms.locfileid: "1707027"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="compile-resources-manually-with-makepriexe"></a>MakePri.exe を使用して手動でリソースをコンパイルする
 
 MakePri.exe は、PRI ファイルを作成およびダンプするために使用できるコマンド ライン ツールです。 このツールは、Microsoft Visual Studio の MSBuild の一部として統合されていますが、パッケージを手動で作成したり、カスタム ビルド システムを使って作成する場合にも使うことができます。
+
+PRI ファイルのサイズ制限は、64 キロバイトです。
+
+## <a name="in-this-section"></a>このセクションの内容
+|トピック|説明|
+|-|-|
+| [MakePri.exe のコマンド ライン オプション](makepri-exe-command-options.md) | MakePri.exe には、`createconfig`、`dump`、`new`、`resourcepack`、`versioned` コマンドのセットが含まれます。 このトピックでは、コマンド ライン オプションの使用について説明します。 |
+| [MakePri.exe 構成ファイル](makepri-exe-configuration.md) | ここでは、MakePri.exe XML 構成ファイルのスキーマについて説明します。 |
+| [MakePri.exe の形式に固有のインデクサー](makepri-exe-format-specific-indexers.md) | このトピックでは、リソースのインデックスを生成するために MakePri.exe ツールによって使われる形式に固有のインデクサーについて説明します。 |
 
 ## <a name="makepriexe-command-line-options"></a>MakePri.exe のコマンド ライン オプション
 
@@ -59,7 +67,6 @@ No default or neutral resource given for '<resource identifier>'. The applicatio
 他のコンポーネント、クラス ライブラリ、アセンブリ、DLL、SDK 用に PRI ファイルをビルドする場合は、**initialPath** 構成を使って、格納先のアプリと競合しない独自のサブリソース マップがコンポーネント リソースにあることを確認します。
 
 ## <a name="related-topics"></a>関連トピック
-
 * [MakePri.exe のコマンド ライン オプション](makepri-exe-command-options.md)
 * [MakePri.exe 構成](makepri-exe-configuration.md)
 * [MakePri.exe の形式に固有のインデクサー](makepri-exe-format-specific-indexers.md)
