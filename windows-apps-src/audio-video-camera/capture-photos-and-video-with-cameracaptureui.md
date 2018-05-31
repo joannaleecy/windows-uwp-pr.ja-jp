@@ -1,21 +1,24 @@
 ---
 author: drewbatgit
 ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
-description: "この記事では、CameraCaptureUI クラスを使用して、Windows に組み込まれているカメラ UI で写真またはビデオをキャプチャする方法を説明します。"
-title: "Windows の組み込みカメラ UI を使った写真とビデオのキャプチャ"
+description: この記事では、CameraCaptureUI クラスを使用して、Windows に組み込まれているカメラ UI で写真またはビデオをキャプチャする方法を説明します。
+title: Windows の組み込みカメラ UI を使った写真とビデオのキャプチャ
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 7be9a38bdb4d9489c08cd53c5b24348e16d7a74f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: windows 10, UWP
+ms.localizationpriority: medium
+ms.openlocfilehash: acd14b63bb877dca2f801423f9d0de73ec994acf
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/28/2018
+ms.locfileid: "1691971"
 ---
 # <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>Windows の組み込みカメラ UI を使った写真とビデオのキャプチャ
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 この記事では、CameraCaptureUI クラスを使用して、Windows に組み込まれているカメラ UI で写真またはビデオをキャプチャする方法を説明します。 この機能は使いやすく、わずか数行のコードで、ユーザーがキャプチャした写真やビデオをアプリに取り込むことができます。
@@ -77,38 +80,14 @@ XAML ページでソフトウェア ビットマップを使用するには、[*
 
 キャプチャしたビデオ ファイルをどのように使うかは、アプリのシナリオによって異なります。 この記事の残りの部分では、キャプチャした 1 つ以上のビデオからメディア コンポジションをすばやく作成し、UI に表示する方法を説明します。
 
-まず、ビデオ コンポジションを表示する [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) コントロールを XAML ページに追加します。
+まず、ビデオ コンポジションを表示する [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) コントロールを XAML ページに追加します。
 
 [!code-xml[MediaElement](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetMediaElement)]
 
-[**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 名前空間と [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 名前空間をプロジェクトに追加します。
 
+カメラ キャプチャ UI から返されたビデオ ファイルを使用し、**[CreateFromStorageFile](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfromstoragefile)** を呼び出して、新しい [**MediaSource**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource) を作成します。 **MediaPlayerElement** に関連付けられている既定の **[MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer)** の **[Play](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Play)** メソッドを呼び出してビデオを再生します。
 
-[!code-cs[UsingMediaComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingMediaComposition)]
-
-[**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) オブジェクトおよび [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716) のメンバー変数を宣言します。これらは、ページの有効期間の間、スコープ内で存続します。
-
-[!code-cs[DeclareMediaComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetDeclareMediaComposition)]
-
-ビデオをキャプチャする前に 1 回だけ、**MediaComposition** クラスの新しいインスタンスを作成する必要があります。
-
-[!code-cs[InitComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetInitComposition)]
-
-カメラ キャプチャ UI から返されたビデオ ファイルを使用し、[**MediaClip.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607) を呼び出して、新しい [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) を作成します。 メディア クリップをコンポジションの [**Clips**](https://msdn.microsoft.com/library/windows/apps/dn652648) コレクションに追加します。
-
-コンポジションから **MediaStreamSource** オブジェクトを作成するには、[**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) を呼び出します。
-
-[!code-cs[AddToComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetAddToComposition)]
-
-最後に、コンポジションを UI に表示するには、メディア要素の [**SetMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn299029) メソッドを使用して、ストリーム ソースを設定します。
-
-[!code-cs[SetMediaElementSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSetMediaElementSource)]
-
-ビデオ クリップのキャプチャを続行して、コンポジションに追加することもできます。 メディア コンポジションについて詳しくは、「[メディア コンポジションと編集](media-compositions-and-editing.md)」をご覧ください。
-
-> [!NOTE] 
-> この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
-
+[!code-cs[PlayVideo](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetPlayVideo)]
  
 
 ## <a name="related-topics"></a>関連トピック

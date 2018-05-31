@@ -1,7 +1,7 @@
 ---
 ms.assetid: E0728EB0-DFC3-4203-A367-8997B16E2328
-description: "ここでは、共有コントラクトの使用、コピーと貼り付け、ドラッグ アンド ドロップなど、ユニバーサル Windows プラットフォーム (UWP) アプリ間でデータを共有する方法について説明します。"
-title: "アプリ間通信"
+description: ここでは、共有コントラクトの使用、コピーと貼り付け、ドラッグ アンド ドロップなど、ユニバーサル Windows プラットフォーム (UWP) アプリ間でデータを共有する方法について説明します。
+title: アプリ間通信
 author: msatranjr
 ms.author: misatran
 ms.date: 02/08/2017
@@ -9,15 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 938c2d20067dc99a84939c8501971a06fa702515
-ms.sourcegitcommit: 23cda44f10059bcaef38ae73fd1d7c8b8330c95e
+ms.localizationpriority: medium
+ms.openlocfilehash: 6cc0b8fb9d1388db0e79e5f029ae69bfae1e4c69
+ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2017
+ms.lasthandoff: 04/05/2018
+ms.locfileid: "1706967"
 ---
 # <a name="app-to-app-communication"></a>アプリ間通信
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 ここでは、共有コントラクトの使用、コピーと貼り付け、ドラッグ アンド ドロップなど、ユニバーサル Windows プラットフォーム (UWP) アプリ間でデータを共有する方法について説明します。
 
@@ -36,7 +37,7 @@ ms.lasthandoff: 07/19/2017
 | [データの共有](share-data.md) | この記事では、UWP アプリで共有コントラクトをサポートする方法について説明します。 共有コントラクトは、テキスト、リンク、写真、ビデオなどのデータをアプリ間ですばやく共有するための簡単な方法です。 たとえば、ユーザーがソーシャル ネットワーキング アプリを使って友人と Web ページを共有する場合や、後で参照するためにリンクをメモ帳アプリで保存する場合があります。 |
 | [データの受信](receive-data.md) | この記事では、UWP アプリで、共有コントラクトを使って別のアプリから共有されたコンテンツを受け取る方法について説明します。 共有コントラクトを使うと、ユーザーが共有機能を呼び出したときに、アプリをオプションとして提示できます。 |
 | [コピーと貼り付け](copy-and-paste.md) | この記事では、UWP アプリで、クリップボードを使ってコピーと貼り付けをサポートする方法について説明します。 コピーと貼り付けはアプリ間やアプリ内でデータを交換するための従来の方法であり、クリップボード操作はほとんどすべてのアプリである程度サポートできます。 |
-| [ドラッグ アンド ドロップ](drag-and-drop.md) | この記事では、UWP アプリにドラッグ アンド ドロップを追加する方法について説明します。 ドラッグ アンド ドロップは、画像やファイルなどのコンテンツを操作するための従来からある自然な方法です。 ドラッグ アンド ドロップを実装すると、アプリからアプリ、アプリからデスクトップ、デスクトップからアプリなど、あらゆる方向でシームレスに機能します。 |
+| [ドラッグ アンド ドロップ](../design/input/drag-and-drop.md) | この記事では、UWP アプリにドラッグ アンド ドロップを追加する方法について説明します。 ドラッグ アンド ドロップは、画像やファイルなどのコンテンツを操作するための従来からある自然な方法です。 ドラッグ アンド ドロップを実装すると、アプリからアプリ、アプリからデスクトップ、デスクトップからアプリなど、あらゆる方向でシームレスに機能します。 |
 
 ## <a name="see-also"></a>関連項目
 - [UWP アプリの開発](https://developer.microsoft.com/windows/develop)
