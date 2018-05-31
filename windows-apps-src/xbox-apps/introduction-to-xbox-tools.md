@@ -1,139 +1,65 @@
 ---
-author: Mtoepke
-title: "Xbox One ツールの概要"
-description: "Windows Device Portal を使った、Xbox One 固有のツールである Dev Home"
-ms.author: mtoepke
-ms.date: 02/08/2017
+author: eliotcowley
+title: Xbox One ツールの概要
+description: Windows デバイス ポータルを使った、Xbox One 固有のツールである Dev Home
+ms.author: elcowle
+ms.date: 10/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10, uwp, xbox one, ツール
 ms.assetid: 6eaf376f-0d7c-49de-ad78-38e689b43658
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 6f2744a571e7a601eca058957cbe181a14143b68
-ms.lasthandoff: 02/08/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: f39759b91993bdb641dca9d3029a620ada2ab59c
+ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/03/2018
+ms.locfileid: "1701108"
 ---
+# <a name="introduction-to-xbox-one-tools"></a><span data-ttu-id="579d8-104">Xbox One ツールの概要</span><span class="sxs-lookup"><span data-stu-id="579d8-104">Introduction to Xbox One tools</span></span>
 
-# <a name="introduction-to-xbox-one-tools"></a>Xbox One ツールの概要
+<span data-ttu-id="579d8-105">このセクションでは、Dev Home アプリを介して Xbox Device Portal にアクセスする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="579d8-105">This section covers how to access the Xbox Device Portal through the Dev Home app.</span></span>
 
-このセクションでは、Windows Device Portal を使った、Xbox One 固有のツールである _Dev Home_ について説明します。
+## <a name="dev-home"></a><span data-ttu-id="579d8-106">Dev Home</span><span class="sxs-lookup"><span data-stu-id="579d8-106">Dev Home</span></span>
 
-## <a name="dev-home"></a>Dev Home
+<span data-ttu-id="579d8-107">Dev Home は、Xbox One 開発キットに含まれ、開発者の生産性をサポートするための 1 つのツール エクスペリエンスです。</span><span class="sxs-lookup"><span data-stu-id="579d8-107">Dev Home is a tools experience on the Xbox One Development Kit designed to aid developer productivity.</span></span> <span data-ttu-id="579d8-108">Dev Home は、開発キットの管理と構成の機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="579d8-108">Dev Home offers functionality to manage and configure your dev kit.</span></span>
 
-_Dev Home_ は、Xbox One 開発キットに含まれ、開発者の生産性をサポートするための 1 つのツール エクスペリエンスです。 Dev Home は、開発キットの管理と構成の機能を提供します。
+<span data-ttu-id="579d8-109">Dev Home は、開発者モードで本体が起動するときに開かれる既定のアプリです。</span><span class="sxs-lookup"><span data-stu-id="579d8-109">Dev Home is the default app that is opened when your console in Developer Mode boots up.</span></span> <span data-ttu-id="579d8-110">Dev Home は、ホーム画面の **[Dev Home]** タイルを選択して開くこともできます。</span><span class="sxs-lookup"><span data-stu-id="579d8-110">You can also open Dev Home by selecting the **Dev Home** tile on the home screen.</span></span> <span data-ttu-id="579d8-111">タイルが表示されていない場合は、本体が開発者モードに設定されていません。</span><span class="sxs-lookup"><span data-stu-id="579d8-111">If there is no tile present, the console is not in Developer Mode.</span></span>
 
-Dev Home を開くには、ホーム画面の **[Dev Home]** タイルを選択します。 タイルが表示されていない場合は、本体が開発者モードに設定されていません。
+<span data-ttu-id="579d8-112">Dev Home について詳しくは、「[コンソール (Dev Home) における開発者ホーム](dev-home.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="579d8-112">For more information about Dev Home, see [Developer Home on the Console (Dev Home)](dev-home.md).</span></span>
 
-  ![Windows Device Portal](images/windowsdeviceportal_1.png)
+## <a name="xbox-device-portal"></a><span data-ttu-id="579d8-113">Xbox Device Portal</span><span class="sxs-lookup"><span data-stu-id="579d8-113">Xbox Device Portal</span></span>
+<span data-ttu-id="579d8-114">Xbox Device Portal は、ブラウザー ベースのデバイス管理ツールであり、ゲームやアプリの追加、Xbox Live テスト アカウントの追加、サンドボックスの変更などを行うことができます。</span><span class="sxs-lookup"><span data-stu-id="579d8-114">The Xbox Device Portal is a browser-based device management tool that allows you to add games and apps, add Xbox Live test accounts, change sandboxes, and much more.</span></span>
 
-### <a name="user-interface"></a>ユーザー インターフェイス
-Dev Home のユーザー インターフェイスは、次のセクションで説明する領域に分割されます。 本体の IP アドレスとフレンドリ名がここに表示されます。
+<span data-ttu-id="579d8-115">Xbox One 本体で Xbox Device Portal を有効にするには、次のようにします。</span><span class="sxs-lookup"><span data-stu-id="579d8-115">To enable the Xbox Device Portal on your Xbox One console:</span></span>
 
-  ![DevHome UI](images/devhome_ui.png)
+1. <span data-ttu-id="579d8-116">ホーム画面で、**Dev Home** タイルを選びます。</span><span class="sxs-lookup"><span data-stu-id="579d8-116">Select the **Dev Home** tile on the home screen.</span></span>
 
-#### <a name="header"></a>ヘッダー
-ヘッダーには、開発キットについての重要な "概要" 情報が含まれています。 これには、本体名、IP アドレス、Xbox Live サンド ボックス、実行されているオペレーティング システムのバージョンが含まれます。 ヘッダーの右側に、現在のシステム時刻と日付が表示されます。
+  ![Dev Home タイルの選択](images/introduction-to-xbox-one-tools-1.png)
 
-#### <a name="tool-windows"></a>ツール ウィンドウ
-ヘッダーの下のアプリのメイン領域には、構成可能なツールのウィンドウのセットが含まれています。 これらを使って、開発者はさまざまなツールや情報セットにアクセスして、アプリをカスタマイズできます。 ツールについて詳しくは、次の各ツールの説明をご覧ください。 ツール ウィンドウのレイアウトと外観を構成する方法について詳しくは、このページの「[Dev Home のカスタマイズ](#customizing-dev-home)」のセクションをご覧ください。
+2. <span data-ttu-id="579d8-118">Dev Home 内で、**[ホーム]** タブに移動し、**[リモート アクセス]** セクションで、**[リモート アクセス設定]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="579d8-118">Within Dev Home, navigate to the **Home** tab, and in the **Remote Access** section, select **Remote Access Settings**.</span></span>
 
-#### <a name="main-menu"></a>メイン メニュー
-コントローラーの **[メニュー]** ボタンを押すか、または画面の左上のメニュー (「ハンバーガー」) ボタンをクリックすると、メイン メニューにアクセスできます。ここでは、アプリのワークスペースのテーマの色と背景画像を構成したり、アプリのフィードバックを提供できます。
+  ![リモート管理ツール](images/introduction-to-xbox-one-tools-2.png)
 
-  ![メイン メニュー](images/devhome_mainmenu.png)
+3. <span data-ttu-id="579d8-120">**[Enable Xbox Device Portal]** (Xbox Device Portal を有効にする) チェックボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="579d8-120">Select the **Enable Xbox Device Portal** checkbox.</span></span>
 
-#### <a name="snap-mode"></a>スナップ モード
-Dev Home のツールは、タイトルの実行中に、端にスナップできます。これにより、テスト中にツールに容易にアクセスできます。
+4. <span data-ttu-id="579d8-121">**[Authentication]** (認証) で、**[Require authentication to remotely access this console from the web or PC tools]** (Web または PC ツールからこの本体にリモートでアクセスするときに認証を求める)チェック ボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="579d8-121">Under **Authentication**, select the **Require authentication to remotely access this console from the web or PC tools** checkbox.</span></span>
 
-**スナップ** モードにアクセスするには、適切なツールのタイトルを選択して、コントローラーの **[ビュー]** ボタンを押し、コンテキスト メニューで **[スナップ]** を選択します。
+5. <span data-ttu-id="579d8-122">**[ユーザー名]** と __[パスワード]__ を入力して、**[保存]** を選びます。</span><span class="sxs-lookup"><span data-stu-id="579d8-122">Enter a **User name** and __Password__, and select **Save**.</span></span> <span data-ttu-id="579d8-123">この認証情報はブラウザーから開発キットへのアクセスの認証に使用されます。</span><span class="sxs-lookup"><span data-stu-id="579d8-123">These credentials are used to authenticate access to your dev kit from a browser.</span></span>
 
-  ![スナップ モード](images/devhome_snapmode.png)
+6. <span data-ttu-id="579d8-124">**[閉じる]** を選択し、**[ホーム]** タブの **[リモート アクセス]** ツールに表示される URL を書き留めます。</span><span class="sxs-lookup"><span data-stu-id="579d8-124">Select **Close**, and on the **Home** tab, note the URL listed in the **Remote Access** tool.</span></span>
 
-Dev Home は右にスナップします。 通常どおり **[連結]** ボタンをダブル タップすると、コンテキストを切り替えることができます。
+7. <span data-ttu-id="579d8-125">ブラウザーに URL を入力します。</span><span class="sxs-lookup"><span data-stu-id="579d8-125">Enter the URL in your browser.</span></span> <span data-ttu-id="579d8-126">提供された証明書についての、次のスクリーン ショットのような警告が表示されます。これは、Xbox One 本体によって署名されたセキュリティ証明書が、既知の信頼された発行元とは見なされないためです。</span><span class="sxs-lookup"><span data-stu-id="579d8-126">You will receive a warning about the certificate that was provided, similar to the following screenshot, because the security certificate signed by your Xbox One console is not considered a well-known, trusted publisher.</span></span> <span data-ttu-id="579d8-127">Edge で **[詳細]** をクリックし、**[Go on to the webpage]** (Web ページにアクセス) をクリックして、Xbox Device Portal にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="579d8-127">On Edge, click **Details** and then **Go on to the webpage** to access the Xbox Device Portal.</span></span>
 
-  ![連結](images/devhome_nexus.png)
+    ![セキュリティ証明書の警告](images/introduction-to-xbox-one-tools-3.png)
 
-#### <a name="tool-descriptions"></a>ツールの説明
-| ツール    | 機能 |
-|-------|--------------|
-| アプリ+ゲーム    | 開発キットにインストールされているタイトルとアプリの一覧を表示し、それらをすばやく開くことができます。 ゲームやアプリのプロセス ライフタイム管理 (PLM) の状態を表示し、コンテキスト メニューから PLM 状態を変更することもできます。 |
-| ユーザー    | 本体に現在登録されているユーザーの一覧を表示します。 ユーザーのワン クリック サインインやサインアウトを有効化したり、ユーザーやゲストを追加したり、ユーザーやゲストの詳細を表示できます。 |
-| [本体の設定](#console-settings) | "概要" ビューおよび本体の設定と情報の編集オプションを提供します。 |
-| Visual Studio | 展開のために、本体を Visual Studio のインスタンスにペアリングできます。 必要に応じて、ペアリングされた既存の VS インスタンスをクリアして、UWP アプリがキットに展開されないようにできます。 |
-| [Windows Device Portal](#windows-device-portal) |    キットの WDP (ブラウザー ベースのデバイス管理ツール) を有効にします。 |
-| Xbox Live の状態 | Xbox Live サービスの現在の状態を提供します。 |
-<br/>
-### <a name="managing-the-size-of-the-developer-storage-allocation"></a>開発者向け記憶域のサイズの割り当てを管理する
+8. <span data-ttu-id="579d8-129">構成した資格情報でサインインします。</span><span class="sxs-lookup"><span data-stu-id="579d8-129">Sign in with the credentials you configured.</span></span>
 
-開発者向け記憶域として使用されるディスク領域の容量を増やしたり減らしたりするには、メイン メニューの **[Manage dev storage]** (開発者向け記憶域の管理) を選んでください。 **[Dev storage]** (開発者向け記憶域) バーの値を変更してから、**[保存して再起動]** を選んで、本体を再起動します。
+## <a name="xbox-dev-mode-companion"></a><span data-ttu-id="579d8-130">Xbox 開発者モード コンパニオン</span><span class="sxs-lookup"><span data-stu-id="579d8-130">Xbox Dev Mode Companion</span></span>
+<span data-ttu-id="579d8-131">Xbox 開発者モード コンパニオンは、PC から離れずに本体を操作できるツールです。</span><span class="sxs-lookup"><span data-stu-id="579d8-131">Xbox Dev Mode Companion is a tool that allows you to work on your console without leaving your PC.</span></span> <span data-ttu-id="579d8-132">このアプリを使うと、本体の画面を表示し、入力を本体に送ることができます。</span><span class="sxs-lookup"><span data-stu-id="579d8-132">The app allows you to view the console screen and send input to it.</span></span> <span data-ttu-id="579d8-133">詳しくは、「[Xbox 開発者モード コンパニオン](xbox-dev-mode-companion.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="579d8-133">For more information, see [Xbox Dev Mode Companion](xbox-dev-mode-companion.md).</span></span>
 
-  ![開発者向け記憶域の割り当ての管理](images/devhome_storage.png)
-
-### <a name="customizing-dev-home"></a>Dev Home のカスタマイズ
-
-Dev Home は、カスタマイズして個人用に設定できるように設計されています。 背景画像とテーマの色を選んで、Dev Home のエクスペリエンスをカスタマイズできます。 これらのオプションは、メイン メニューに表示されます。
-
-#### <a name="resizing-and-reordering-tools"></a>サイズの変更とツールの並べ替え
-ツールのサイズや位置を変更するには、タイトルにフォーカスがあるときに、コンテキスト メニュー ボタン (コントローラー上の **[ビュー]** ボタン) を使用します。 コンテキスト メニューで **[移動]** または **[サイズ変更] ** を選択します。
-
-  ![移動またはサイズ変更](images/devhome_move.png)
-
-#### <a name="changing-theme-color-and-background-image"></a>テーマの色と背景画像の変更
-メイン メニューで、**[テーマの色の変更]** を選択します。 フォーカスが強調表示されたテーマの色を更新するには、新しい色を選択して、**[保存]** をクリックします。
-
-  ![テーマの色の変更](images/devhome_colors.png)
-
-### <a name="providing-feedback"></a>フィードバックの提供
-Dev Home またはいずれかのツールのプロセスでフィードバックを提供するには、メイン メニューの **[フィードバック]** オプションを選択します。
-
-  ![フィードバックの提供](images/devhome_feedback.png)
-
-## <a name="console-settings"></a>本体の設定
-本体の設定ツールでは、開発キットの設定に簡単にアクセスできます。
-
-### <a name="setting-a-hostname-for-the-console"></a>本体のホスト名の設定
-開発用 PC から本体に通信している場合は、Xbox One 開発キットにフレンドリ名 (_ホスト名_と呼ばれます) を設定して、本体の IP アドレスの代わりに使用できます。 開発用 PC と開発キットは、ホスト名への接続と同じサブネット上にある必要があります。  
-
-開発キットのホスト名を定義するには、本体設定ツールに移動して、__[ホスト名]__ ボックスにホスト名を入力します。  
-
-> [!NOTE]
-> ホスト名の作成時に名前の一意性は強制されません。 名前が重複しないように注意する必要があります。 1 つの方法としては、開発用コンピューターの名前からホスト名を取得することにより、通常は組織内で一意となります。
-
-## <a name="windows-device-portal"></a>Windows Device Portal
-Windows Device Portal (WDP) は、ブラウザー ベースのデバイス管理エクスペリエンスを実現する、OneCore デバイス管理ツールです。
-
-> [!NOTE]
-> WDP について詳しくは、「[Windows Device Portal の概要](../debug-test-perf/device-portal.md)」をご覧ください。
-
-Xbox One 本体で WDP を有効にするには、次を実行します。
-
-1. ホーム画面で、Dev Home タイルを選びます。
-
-  ![Dev Home タイルの選択](images/windowsdeviceportal_1.png)
-
-2. Dev Home 内で **[リモート管理]** ツールに移動します。
-
-  ![リモート管理ツール](images/windowsdeviceportal_2.png)
-
-3. __[Windows Device Portal の管理]__ を選択し、__[A]__ を押します。
-4. __[Windows Device Portal を有効にする]__ のチェックボックスをオンにします。
-5. __[ユーザー名]__ と __[パスワード]__ を入力して、保存します。 これはブラウザーから開発キットへのアクセスの認証に使用されます。
-6. __[設定]__ ページを閉じ、_[リモート管理]_ ツールに表示された接続 URL を記録します。
-7. その URL をブラウザーに入力し、構成した資格情報でサインインします。
-8. 提供された証明書についての、次のスクリーン ショットのような警告が表示されます。これは、Xbox One 本体によって署名されたセキュリティ証明書が、既知の信頼された発行元とは見なされないためです。 **[このサイトの閲覧を続行する]** をクリックして、Windows Device Portal にアクセスします。
-
-  ![セキュリティ証明書の警告](images/security_cert_warning.jpg)
-
-## <a name="xbox-dev-mode-companion"></a>Xbox 開発者モード コンパニオン
-Xbox 開発者モード コンパニオンは、PC から離れずに本体を操作できるツールです。 このアプリを使うと、本体の画面を表示し、入力を本体に送ることができます。 詳しくは、「[Xbox 開発者モード コンパニオン](xbox-dev-mode-companion.md)」をご覧ください。
-
-## <a name="see-also"></a>関連項目
-- [UWP を開発するときに、Xbox One で Fiddler を使用する方法](uwp-fiddler.md)
-- [Windows Device Portal の概要](../debug-test-perf/device-portal.md)
-- [Xbox One の UWP](index.md)
-
-
-----
-
+## <a name="see-also"></a><span data-ttu-id="579d8-134">関連項目</span><span class="sxs-lookup"><span data-stu-id="579d8-134">See also</span></span>
+- [<span data-ttu-id="579d8-135">UWP を開発するときに、Xbox One で Fiddler を使用する方法</span><span class="sxs-lookup"><span data-stu-id="579d8-135">How to use Fiddler with Xbox One when developing for UWP</span></span>](uwp-fiddler.md)
+- [<span data-ttu-id="579d8-136">Windows Device Portal の概要</span><span class="sxs-lookup"><span data-stu-id="579d8-136">Windows Device Portal overview</span></span>](../debug-test-perf/device-portal.md)
+- [<span data-ttu-id="579d8-137">Xbox One の UWP</span><span class="sxs-lookup"><span data-stu-id="579d8-137">UWP on Xbox One</span></span>](index.md)
