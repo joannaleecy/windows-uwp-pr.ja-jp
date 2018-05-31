@@ -1,23 +1,22 @@
 ---
 author: stevewhims
-Description: "ここでは、MakePri.exe XML 構成ファイルのスキーマについて説明します。"
-title: "MakePri.exe 構成ファイル"
+Description: This topic describes the schema of the MakePri.exe XML configuration file.
+title: MakePri.exe 構成ファイル
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/18/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子"
-localizationpriority: medium
-ms.openlocfilehash: 7d19d1d778b434abd25d0d087159ea79521642e8
-ms.sourcegitcommit: 44a24b580feea0f188c7eae36e72e4a4f412802b
+keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
+ms.localizationpriority: medium
+ms.openlocfilehash: 24ba76549053ef0f88612249eb903278d8554167
+ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/12/2017
+ms.locfileid: "1393521"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="makepriexe-configuration-file"></a>MakePri.exe 構成ファイル
 
 ここでは、[MakePri.exe](compile-resources-manually-with-makepri.md) XML 構成ファイル (PRI 構成ファイルとも呼ばれる) のスキーマについて説明します。 MakePri.exe ツールには、新しい、初期化された PRI 構成ファイルを作成するために使用できる [createconfig コマンド](makepri-exe-command-options.md#createconfig-command)が含まれています。
@@ -186,7 +185,6 @@ MakePri.exe では、特定の次元に沿ったリソース PRI ファイルの
 
 MakePri.exe は、すべての `index` ノードの後に `packaging` ノードを解析して、すべての既定の修飾子を設定します。 MakePri.exe は、解析された情報をこれらのデータ構造に収集します。
 
-**C#**
 ```csharp
 enum ResourcePackageMode
 {

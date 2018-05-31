@@ -1,23 +1,22 @@
 ---
 author: stevewhims
-Description: "MakePri.exe には、createconfig、dump、new、resourcepack、versioned コマンドのセットが含まれます。 このトピックでは、その使用方法について説明します。"
-title: "MakePri.exe のコマンド ライン オプション"
+Description: MakePri.exe has the set of commands createconfig, dump, new, resourcepack, and versioned. This topic details their use.
+title: MakePri.exe のコマンド ライン オプション
 template: detail.hbs
 ms.author: stwhi
-ms.date: 10/18/2017
+ms.date: 04/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子"
-localizationpriority: medium
-ms.openlocfilehash: e269984134c7313b6ea6464cd04a3ef60254d537
-ms.sourcegitcommit: 44a24b580feea0f188c7eae36e72e4a4f412802b
+keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
+ms.localizationpriority: medium
+ms.openlocfilehash: fbfb5f6626f799878c294b0a4e21efb673147a50
+ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 04/30/2018
+ms.locfileid: "1817543"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="makepriexe-command-line-options"></a>MakePri.exe のコマンド ライン オプション
 
 [MakePri.exe](compile-resources-manually-with-makepri.md) には、`createconfig`、`dump`、`new`、`resourcepack`、`versioned` コマンドのセットが含まれます。 このトピックでは、コマンド ライン オプションの使用について説明します。
@@ -113,6 +112,9 @@ Help:
 ## <a name="dump-command"></a>Dump コマンド
 
 `dump` コマンドは、指定された PRI ファイル内のすべてのリソースの一覧を含む、ダンプされた xml ファイルを出力します。 `MakePri.exe dump /?` を実行すると、このコマンドの詳しいヘルプが表示されます。
+
+> [!NOTE]
+> スキーマのないリソース パックは、PRI 構成ファイルで *omitSchemaFromResourcePacks* スイッチを使用して作成されたものです。 スキーマのないリソース パックを出力するには、`/es <main_package_PRI_file>` スイッチを使用します。 メイン ファイルを指定しない場合、"*The resources.pri in the package was corrupted so encryption failed (error PRI222: 0xdef0000f - Unspecified error occurred)*" (パッケージ内の resources.pri が破損していたため、暗号化できませんでした (エラー PRI222: 0xdef0000f - 特定できないエラーが発生しました)。
 
 ```
 C:\>makepri dump /?

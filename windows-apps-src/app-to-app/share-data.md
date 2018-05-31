@@ -1,6 +1,6 @@
 ---
-description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで、共有コントラクトをサポートする方法について説明します。"
-title: "データの共有"
+description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで、共有コントラクトをサポートする方法について説明します。
+title: データの共有
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
 author: msatranjr
 ms.author: misatran
@@ -9,15 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: fe6da350fbfe006b55e90aee8c12da90967f5711
-ms.sourcegitcommit: 23cda44f10059bcaef38ae73fd1d7c8b8330c95e
+ms.localizationpriority: medium
+ms.openlocfilehash: d283ce0211b28f9d41e4689c978e8731c677698d
+ms.sourcegitcommit: c11e7163010cb7547aeaca96e9b90a3c3a8ef31e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2017
+ms.lasthandoff: 01/25/2018
+ms.locfileid: "1541115"
 ---
 # <a name="share-data"></a>データの共有
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで、共有コントラクトをサポートする方法について説明します。 共有コントラクトは、テキスト、リンク、写真、ビデオなどのデータをアプリ間ですばやく共有するための簡単な方法です。 たとえば、ユーザーがソーシャル ネットワーキング アプリを使って友人と Web ページを共有する場合や、後で参照するためにリンクをメモ帳アプリで保存する場合があります。
 
@@ -25,11 +26,11 @@ ms.lasthandoff: 07/19/2017
 
 ユーザーが共有を呼び出したときに呼び出される [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested) イベント ハンドラーを追加します。 このイベントは、ユーザーがアプリ内のコントロール (ボタンやアプリ バー コマンドなど) をタップした場合に発生します。ユーザーがあるレベルをクリアしてハイ スコアを獲得した場合など、特定のシナリオで自動的に発生することもあります。
 
-[!code-cs[メイン](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
 
 [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested) イベントが発生すると、アプリは [**DataRequest**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest) オブジェクトを受け取ります。 このオブジェクトに含まれている [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) を使って、ユーザーが共有するコンテンツを提供することができます。 共有するデータとタイトルを指定する必要があります。 説明は省略することもできますが、指定することをお勧めします。
 
-[!code-cs[メイン](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
 
 ## <a name="choose-data"></a>データの選択
 
@@ -40,13 +41,12 @@ ms.lasthandoff: 07/19/2017
 -   HTML
 -   書式付きテキスト
 -   ビットマップ
--   プレーンテキスト
 -   ファイル
 -   開発者が定義したカスタム データ
 
 [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) オブジェクトには、これらの 1 つ以上の形式を任意に組み合わせて格納することができます。 次の例は、テキストの共有を示しています。
 
-[!code-cs[メイン](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
 
 ## <a name="set-properties"></a>プロパティの設定
 
@@ -54,13 +54,13 @@ ms.lasthandoff: 07/19/2017
 
 タイトルを除くすべてのプロパティは任意です。 タイトルのプロパティは必須です。必ず設定してください。
 
-[!code-cs[メイン](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
 
 ## <a name="launch-the-share-ui"></a>共有 UI の起動
 
 共有用の UI は、システムによって提供されます。 起動するには、[**ShowShareUI**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI) メソッドを呼び出します。
 
-[!code-cs[メイン](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
 
 ## <a name="handle-errors"></a>エラーの処理
 

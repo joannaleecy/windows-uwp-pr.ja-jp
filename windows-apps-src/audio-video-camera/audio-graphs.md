@@ -1,21 +1,24 @@
 ---
 author: drewbatgit
 ms.assetid: CB924E17-C726-48E7-A445-364781F4CCA1
-description: "この記事では、Windows.Media.Audio 名前空間の API を使ってオーディオのルーティング、ミキシング、処理のシナリオでオーディオ グラフを作成する方法について説明します。"
-title: "オーディオ グラフ"
+description: この記事では、Windows.Media.Audio 名前空間の API を使ってオーディオのルーティング、ミキシング、処理のシナリオでオーディオ グラフを作成する方法について説明します。
+title: オーディオ グラフ
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 1b286a9fcfd71bb2dc219fb3c03a363a41d24346
-ms.sourcegitcommit: bccf9bcc39f0c4ee8801d90e2d7fcae3ad6e3b3e
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 26b9f49c8f21c7c60fb99fd8eaf24156a8aed3d9
+ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/03/2018
+ms.locfileid: "1832503"
 ---
 # <a name="audio-graphs"></a>オーディオ グラフ
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
 この記事では、[**Windows.Media.Audio**](https://msdn.microsoft.com/library/windows/apps/dn914341) 名前空間の API を使ってオーディオのルーティング、ミキシング、処理のシナリオでオーディオ グラフを作成する方法について説明します。
@@ -32,7 +35,7 @@ translationtype: HT
 
 オーディオ エフェクトをオーディオ グラフに追加することで、その他のシナリオも有効になります。 オーディオ グラフ内の各ノードには、ノードを通過するオーディオに対してオーディオ処理を実行するオーディオ エフェクトを 0 個以上設定できます。 エコー、イコライザー、リミッティング、リバーブなど、いくつかの組み込みエフェクトがあり、これらはわずか数行のコードでオーディオ ノードにアタッチできます。 組み込みエフェクトとまったく同様に動作するカスタム オーディオ エフェクトを独自に作成することもできます。
 
-> [!NOTE]  
+> [!NOTE]
 > [AudioGraph UWP サンプル](http://go.microsoft.com/fwlink/?LinkId=619481)は、この概要で説明するコードを実装します。 サンプルをダウンロードすると、コンテキスト内のコードを確認できます。独自のアプリの出発点として使うこともできます。
 
 ## <a name="choosing-windows-runtime-audiograph-or-xaudio2"></a>Windows ランタイム AudioGraph または XAudio2 の選択
@@ -64,6 +67,7 @@ Windows ランタイム オーディオ グラフ API:
 -   オーディオ グラフの使用対象がファイルのみであり、オーディオ デバイスに出力する予定がない場合は、[**DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205) プロパティを設定せずに、既定のクォンタム サイズを使うことをお勧めします。
 -   [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522) プロパティは、オーディオ グラフの出力に対してプライマリ レンダリング デバイスで実行される処理の量を決定します。 **Default** 設定を使うと、指定されたオーディオ レンダリング カテゴリに対してシステムが既定のオーディオ処理を使用できるようになります。 この処理により、一部のデバイス (特に、小型スピーカーが搭載されているモバイル デバイス) ではオーディオのサウンドが大幅に改善される場合があります。 **Raw** 設定を使うと、実行する信号処理の量を最小化してパフォーマンスを向上できることがありますが、一部のデバイスでは音質が低下する場合があります。
 -   [**QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) が **LowestLatency** に設定されていると、オーディオ グラフは [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522) に対して自動的に **Raw** を使います。
+- Windows 10、バージョン 1803 では、[**AudioGraphSettings.MaxPlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiographsettings.maxplaybackspeedfactor) プロパティを設定することで、[**AudioFileInputNode.PlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiofileinputnode.playbackspeedfactor) プロパティ、[**AudioFrameInputNode.PlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeinputnode.playbackspeedfactor) プロパティ、[**MediaSourceInputNode.PlaybackSpeedFactor**](https://docs.microsoft.com/uwp/api/windows.media.audio.mediasourceinputnode.playbackspeedfactor) プロパティに使用する最大値を設定できます。 オーディオ グラフが、1 より大きい再生速度係数をサポートしている場合、システムは、オーディオ データの十分なバッファーを維持するために、追加のメモリを割り当てる必要があります。 このため、**MaxPlaybackSpeedFactor** をアプリで必要な最小値に設定すると、アプリによるメモリ消費量が減少します。 アプリが、通常の速度でのみコンテンツを再生する場合は、MaxPlaybackSpeedFactor を 1 に設定することをお勧めします。
 -   [**EncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn958523) は、グラフで使用されるオーディオ形式を決定します。 サポートされているのは 32 ビットの浮動小数点形式のみです。
 -   [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) は、オーディオ グラフのプライマリ レンダリング デバイスを設定します。 このプロパティを設定しなかった場合は、既定のシステム デバイスが使われます。 プライマリ レンダリング デバイスは、グラフの他のノードのクォンタム サイズの計算に使われます。 システムにオーディオ レンダリング デバイスが存在しない場合、オーディオ グラフの作成は失敗します。
 
@@ -107,6 +111,26 @@ Windows ランタイム オーディオ グラフ API:
 -   オーディオ ファイルのループ処理を有効にするには、[**LoopCount**](https://msdn.microsoft.com/library/windows/apps/dn914120) プロパティを設定します。 この値は、null 以外であれば、初回の再生後にファイルが再生される回数を示します。 たとえば、**LoopCount** を 1 に設定すると、このファイルは合計 2 回再生されます。値を 5 に設定すると、ファイルは合計 6 回再生されます。 **LoopCount** を null に設定すると、ファイルが無限にループされます。 ループを停止するには、値を 0 に設定します。
 -   オーディオ ファイルの再生速度を調整するには、[**PlaybackSpeedFactor**](https://msdn.microsoft.com/library/windows/apps/dn914123) を設定します。 値 1 は、ファイルの元の速度を示します、0.5 は半分の速度、2 は 2 倍の速度を示します。
 
+##  <a name="mediasource-input-node"></a>MediaSource 入力ノード
+
+[**MediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaSource) クラスは、さまざまなソースのメディアを参照するための一般的な方法を提供し、基になるメディア形式 (ディスク上のファイル、ストリーム、アダプティブ ストリーミング ネットワーク ソースなど) に関係なく、メディア データにアクセスするための一般的なモデルを公開します。 [**MediaSourceAudioInputNode](https://docs.microsoft.com/uwp/api/windows.media.audio.mediasourceaudioinputnode) ノードを使用すると、**MediaSource** からオーディオ グラフにオーディオ データを渡すことができます。 **MediaSourceAudioInputNode** を作成するには、[**CreateMediaSourceAudioInputNodeAsync**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.createmediasourceaudioinputnodeasync#Windows_Media_Audio_AudioGraph_CreateMediaSourceAudioInputNodeAsync_Windows_Media_Core_MediaSource_) を呼び出して、再生するコンテンツを表す **MediaSource** オブジェクトを渡します。 [* * CreateMediaSourceAudioInputNodeResult](https://docs.microsoft.com/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult) が返され、その [**Status**](https://docs.microsoft.com/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.status) プロパティを確認すると、操作の状態を判断できます。 状態が **Success** の場合は、[**Node**](https://docs.microsoft.com/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.node) プロパティにアクセスして、作成された **MediaSourceAudioInputNode ** を取得できます。 以下では、ネットワーク経由のコンテンツのストリーミングを表す AdaptiveMediaSource オブジェクトからノードを作成する例を示します。 **MediaSource** の使用方法について詳しくは、「[メディア項目、プレイリスト、トラック](media-playback-with-mediasource.md)」をご覧ください。 インターネット経由のストリーミング メディア コンテンツについて詳しくは、「[アダプティブ ストリーミング](adaptive-streaming.md)」をご覧ください。
+
+[!code-cs[DeclareMediaSourceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareMediaSourceInputNode)]
+
+[!code-cs[CreateMediaSourceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateMediaSourceInputNode)]
+
+再生が **MediaSource** コンテンツの最後に達したときに通知を受け取るには、[**MediaSourceCompleted**](https://docs.microsoft.com/uwp/api/windows.media.audio.mediasourceaudioinputnode.mediasourcecompleted) イベントのハンドラーを登録します。 
+
+[!code-cs[RegisterMediaSourceCompleted](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetRegisterMediaSourceCompleted)]
+
+[!code-cs[MediaSourceCompleted](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetMediaSourceCompleted)]
+
+ディスクからファイルを再生した場合は、ほとんどが正常に完了しますが、ネットワーク ソースからストリームされたメディアは、ネットワーク接続状況の変化など、オーディオ グラフの制御の及ばない問題によって再生中に失敗することがあります。 **MediaSource** が再生中に再生できなくなった場合、オーディオ グラフで [**UnrecoverableErrorOccurred**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiograph.unrecoverableerroroccurred) イベントが発生します。 このイベントのハンドラーを使用して、オーディオ グラフを停止および破棄すると、グラフを再初期化できるようになります。 
+
+[!code-cs[RegisterUnrecoverableError](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetRegisterUnrecoverableError)]
+
+[!code-cs[UnrecoverableError](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetUnrecoverableError)]
+
 ##  <a name="file-output-node"></a>ファイル出力ノード
 
 ファイル出力ノードを使用すると、オーディオ データをグラフからオーディオ ファイルに渡すことができます。 [**AudioFileOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914133) を作成するには、[**CreateFileOutputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914227) を呼び出します。
@@ -134,6 +158,7 @@ Windows ランタイム オーディオ グラフ API:
 
 -   **QuantumStarted** イベント ハンドラーに渡された [**FrameInputNodeQuantumStartedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958533) オブジェクトには [**RequiredSamples**](https://msdn.microsoft.com/library/windows/apps/dn958534) プロパティがあります。このプロパティは、クォンタムを処理するためにオーディオ グラフが必要とするサンプル数を示します。
 -   オーディオ データを設定した [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) オブジェクトをグラフに渡すには、[**AudioFrameInputNode.AddFrame**](https://msdn.microsoft.com/library/windows/apps/dn914148) を呼び出します。
+- Windows 10、バージョン 1803 では、オーディオ データで **MediaFrameReader** を使用するための新しい API セットが導入されました。 これらの API を使用すると、メディア フレーム ソースから **AudioFrame** オブジェクトを取得し、それを **AddFrame** メソッドを使用して **FrameInputNode** に渡すことができます。 詳しくは、「[MediaFrameReader を使ったオーディオ フレームの処理](process-audio-frames-with-mediaframereader.md)」をご覧ください。
 -   **GenerateAudioData** ヘルパー メソッドの実装例を下に示します。
 
 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) にオーディオ データを設定するには、オーディオ フレームの基になるメモリ バッファーにアクセスできる必要があります。 これには、該当する名前空間に以下のコードを追加して、COM インターフェイス **IMemoryBufferByteAccess** を初期化する必要があります。
@@ -159,10 +184,10 @@ Windows ランタイム オーディオ グラフ API:
 
 [!code-cs[CreateFrameOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFrameOutputNode)]
 
-オーディオ グラフでオーディオ データのクォンタムの処理が開始すると、[**AudioGraph.QuantumStarted**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Audio.AudioGraph#Windows_Media_Audio_AudioGraph_QuantumStarted) イベントが発生します。 オーディオ データには、このイベントのハンドラー内からアクセスすることができます。 
+オーディオ グラフでオーディオ データのクォンタムの処理が開始すると、[**AudioGraph.QuantumStarted**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph.QuantumStarted) イベントが発生します。 オーディオ データには、このイベントのハンドラー内からアクセスすることができます。 
 
-> [!NOTE]  
-> オーディオ フレームを一定間隔で、オーディオ グラフと同期させて取得する場合は、同期 **QuantumStarted** イベント ハンドラー内から [AudioFrameOutputNode.GetFrame](https://docs.microsoft.com/en-us/uwp/api/windows.media.audio.audioframeoutputnode#Windows_Media_Audio_AudioFrameOutputNode_GetFrame) を呼び出します。 **QuantumProcessed** イベントは、オーディオ エンジンがオーディオ処理を完了した後、非同期的に発生するため、一定間隔でない可能性があります。 したがって、オーディオ フレーム データの同期処理に **QuantumProcessed** イベントを使用することはできません。
+> [!NOTE]
+> オーディオ フレームを一定間隔で、オーディオ グラフと同期させて取得する場合は、同期 **QuantumStarted** イベント ハンドラー内から [AudioFrameOutputNode.GetFrame](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeoutputnode.GetFrame) を呼び出します。 **QuantumProcessed** イベントは、オーディオ エンジンがオーディオ処理を完了した後、非同期的に発生するため、一定間隔でない可能性があります。 したがって、オーディオ フレーム データの同期処理に **QuantumProcessed** イベントを使用することはできません。
 
 [!code-cs[SnippetQuantumStartedFrameOutput](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumStartedFrameOutput)]
 
@@ -220,9 +245,9 @@ Windows ランタイム オーディオ グラフ API:
 ## <a name="spatial-audio"></a>空間オーディオ
 Windows 10 バージョン 1607 以降、**AudioGraph** は空間オーディオをサポートしています。これにより、任意の入力またはサブミックス ノードからのオーディオが出力される 3D 空間内の場所を指定することができます。 また、オーディオ出力の形状や方向、ノードのオーディオのドップラー偏移に使用される速度を指定することや、距離に応じたオーディオの減衰を記述する減衰モデルを定義することもできます。 
 
-エミッターを作成するには、最初に、エミッターから出力されるサウンドの形状を作成します。これには、円すい状または無指向性を指定できます。 [**AudioNodeEmitterShape**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitterShape) クラスは、これらの各形状を作成するための静的メソッドを提供します。 次に、減衰モデルを作成します。 これは、リスナーからの距離が増加するにつれて、エミッターからのオーディオの音量をどのように減少させるかを定義します。 [**CreateNatural**](https://msdn.microsoft.com/library/windows/apps/mt711740) メソッドは、距離二乗減衰モデルを使用してサウンドの自然減衰をエミュレートする減衰モデルを作成します。 最後に、[**AudioNodeEmitterSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitterSettings) オブジェクトを作成します。 現時点では、このオブジェクトは、エミッターのオーディオの速度ベースのドップラー減衰を有効または無効にするためにのみ使用されます。 [**AudioNodeEmitter**](https://msdn.microsoft.com/en-us/library/windows/apps/mt694324.aspx) コンストラクターを呼び出して、作成した初期化オブジェクトを渡します。 既定では、エミッターは原点に置かれますが、エミッターの位置は [**Position**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitter.Position) プロパティで設定できます。
+エミッターを作成するには、最初に、エミッターから出力されるサウンドの形状を作成します。これには、円すい状または無指向性を指定できます。 [**AudioNodeEmitterShape**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitterShape) クラスは、これらの各形状を作成するための静的メソッドを提供します。 次に、減衰モデルを作成します。 これは、リスナーからの距離が増加するにつれて、エミッターからのオーディオの音量をどのように減少させるかを定義します。 [**CreateNatural**](https://msdn.microsoft.com/library/windows/apps/mt711740) メソッドは、距離二乗減衰モデルを使用してサウンドの自然減衰をエミュレートする減衰モデルを作成します。 最後に、[**AudioNodeEmitterSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitterSettings) オブジェクトを作成します。 現時点では、このオブジェクトは、エミッターのオーディオの速度ベースのドップラー減衰を有効または無効にするためにのみ使用されます。 [**AudioNodeEmitter**](https://msdn.microsoft.com/library/windows/apps/mt694324.aspx) コンストラクターを呼び出して、作成した初期化オブジェクトを渡します。 既定では、エミッターは原点に置かれますが、エミッターの位置は [**Position**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitter.Position) プロパティで設定できます。
 
-> [!NOTE] 
+> [!NOTE]
 > オーディオ ノード エミッターは、48 kHz のサンプル レートとモノラルでフォーマットされているオーディオのみを処理できます。 ステレオ オーディオや別のサンプル レートのオーディオを使用しようとすると、例外が発生します。
 
 目的のノードの種類の作成メソッドをオーバーロードした作成メソッドを使用してオーディオ ノードを作成する場合、オーディオ ノードにエミッターを割り当てます。 この例では、[**CreateFileInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914225) を使用して、指定されたファイルとノードに関連付ける [**AudioNodeEmitter**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitter) オブジェクトから、ファイル入力ノードを作成しています。

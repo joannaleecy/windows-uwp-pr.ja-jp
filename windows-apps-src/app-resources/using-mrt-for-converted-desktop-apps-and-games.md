@@ -1,19 +1,20 @@
 ---
 author: ptorr-msft
-title: "変換されたデスクトップ アプリとゲームに MRT を使用する"
-description: ".NET または Win32 アプリやゲームを AppX パッケージとしてパッケージ化することにより、リソース管理システムを活用して実行時のコンテキストに合わせたアプリ リソースを読み込むことができます。 この詳細なトピックでは、この手法について説明します。"
+title: 変換されたデスクトップ アプリとゲームに MRT を使用する
+description: .NET または Win32 アプリやゲームを AppX パッケージとしてパッケージ化することにより、リソース管理システムを活用して実行時のコンテキストに合わせたアプリ リソースを読み込むことができます。 この詳細なトピックでは、この手法について説明します。
 ms.author: ptorr
 ms.date: 10/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, MRT, PRI,  リソース, ゲーム, Centennial, Desktop App Converter, MUI, サテライト アセンブリ"
+keywords: Windows 10, UWP, MRT, PRI,  リソース, ゲーム, Centennial, Desktop App Converter, MUI, サテライト アセンブリ
 ms.localizationpriority: medium
 ms.openlocfilehash: 098ec71f2f3e487b76f9992c297ad7cba9ac5538
 ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/12/2017
+ms.locfileid: "1396481"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>レガシ アプリやゲームで Windows 10 のリソース管理システムを使用する
 

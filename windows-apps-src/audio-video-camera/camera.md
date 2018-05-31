@@ -1,41 +1,48 @@
 ---
 author: drewbatgit
 ms.assetid: 370f2c14-4f1e-47b3-9197-24205ab255a3
-description: "この記事では、UWP アプリで使用可能なカメラ機能と、その使用方法を示すハウツー記事へのリンクを示します。"
-title: "カメラ"
+description: この記事では、UWP アプリで使用可能なカメラ機能と、その使用方法を示すハウツー記事へのリンクを示します。
+title: カメラ
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 883a8977839d8f93ff878b075a52df8b9a587aa9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: a1b8a63609bbc9caa452093517ca43f71e8d5ccc
+ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/19/2018
+ms.locfileid: "1664702"
 ---
 # <a name="camera"></a>カメラ
 
 このセクションでは、カメラやマイクを使って写真、ビデオ、オーディオをキャプチャするユニバーサル Windows プラットフォーム (UWP) アプリの作成について説明します。
 
-##<a name="use-the-windows-built-in-camera-ui"></a>Windows 組み込みのカメラ UI を使う
-| トピック                                                                                             | 説明                                                                                                                                                                                                                                                                                    |
+## <a name="use-the-windows-built-in-camera-ui"></a>Windows 組み込みのカメラ UI を使う
+
+| トピック | 説明 |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Windows の組み込みカメラ UI を使った写真とビデオのキャプチャ](capture-photos-and-video-with-cameracaptureui.md) | [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CameraCaptureUI) クラスを使用して、Windows に組み込まれているカメラ UI で写真またはビデオをキャプチャする方法を説明します。 ユーザーが写真やビデオをキャプチャしてアプリに結果を返すだけでよい場合は、これが最も早くて簡単な方法です。  |
-##<a name="basic-mediacapture-tasks"></a>基本的な MediaCapture タスク
-| トピック                                                                                             | 説明                                                                                                                                                                                                                                                                                    |
+
+## <a name="basic-mediacapture-tasks"></a>基本的な MediaCapture タスク
+
+| トピック | 説明 |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [カメラ プレビューの表示](simple-camera-preview-access.md) | UWP アプリで XAML ページ内にカメラ プレビュー ストリームをすばやく表示する方法を示します。 |
 | [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md) | [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) クラスを使用して写真やビデオをキャプチャする最も簡単な方法を示します。 **MediaCapture** クラスは、キャプチャ パイプラインに対する低レベルの制御を提供し、高度なキャプチャ シナリオを実現する、堅牢な一連の API を公開しますが、この記事では基本的なメディア キャプチャをアプリにすばやく簡単に追加できるようにすることを目的としています。 |
 | [モバイル デバイスのカメラ UI の機能](camera-ui-features-for-mobile-devices.md) | モバイル デバイス上にのみある特殊カメラの UI 機能を活用する方法を示します。  |
                                                                                                                
-##<a name="advanced-mediacapture-tasks"></a>高度な MediaCapture タスク   
+## <a name="advanced-mediacapture-tasks"></a>高度な MediaCapture タスク   
                                                                                                                
 | トピック                                                                                             | 説明                                                                                                                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [MediaCapture を使ってデバイスと画面の向きを処理する](handle-device-orientation-with-mediacapture.md) | 写真とビデオをキャプチャするときに、ヘルパー クラスを使ってデバイスの向きを処理する方法について説明します。 | 
 | [カメラ プロファイルを使用したカメラ機能の検出と選択](camera-profiles.md) | カメラ プロファイルを使ってさまざまなビデオ キャプチャ デバイスの機能を検出および管理する方法について説明します。 これには、特定の解像度やフレーム レートをサポートするプロファイル、複数のカメラへの同時アクセスをサポートするプロファイル、HDR をサポートするプロファイルを選ぶなどのタスクが含まれます。 |
 | [MediaCapture の形式、解像度、およびフレーム レートの設定](set-media-encoding-properties.md) | [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) インターフェイスを使用して、カメラのプレビュー ストリームとキャプチャした写真/ビデオの解像度およびフレーム レートを設定する方法を説明します。 プレビュー ストリームの縦横比をキャプチャしたメディアの縦横比と一致させる方法についても説明します。 |
-| [HDR とローライトの写真のキャプチャ](high-dynamic-range-hdr-photo-capture.md) | [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedPhotoCapture) クラスを使って、ハイ ダイナミック レンジ (HDR) とローライトの写真をキャプチャする方法について説明します。 |
+| [HDR 写真と低光量写真のキャプチャ](high-dynamic-range-hdr-photo-capture.md) | [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedPhotoCapture) クラスを使って、ハイ ダイナミック レンジ (HDR) 写真と低光量写真をキャプチャする方法について説明します。 |
 | [写真とビデオのキャプチャのための手動カメラ制御](capture-device-controls-for-photo-and-video-capture.md) | 光学式手ブレ補正やスムーズ ズームなど、写真とビデオのキャプチャに関する拡張シナリオを可能にするために、手動デバイス制御を使う方法について説明します。 |
 | [ビデオ キャプチャのための手動カメラ制御](capture-device-controls-for-video-capture.md) | この記事では、ビデオ キャプチャの拡張シナリオ (HDR ビデオ、露出の優先順位など) が手動デバイス制御によってどのように有効になるかを示します。  |
 | [ビデオ キャプチャのためのビデオ手ブレ補正効果](effects-for-video-capture.md) | ビデオ手ブレ補正効果を使う方法について説明します。  |

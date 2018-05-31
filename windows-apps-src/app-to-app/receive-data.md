@@ -1,6 +1,6 @@
 ---
-description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで、共有コントラクトを使用して別のアプリから共有されたコンテンツを受け取る方法について説明します。 共有コントラクトを使うと、ユーザーが共有機能を呼び出したときに、アプリをオプションとして提示できます。"
-title: "データの受信"
+description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで、共有コントラクトを使用して別のアプリから共有されたコンテンツを受け取る方法について説明します。 共有コントラクトを使うと、ユーザーが共有機能を呼び出したときに、アプリをオプションとして提示できます。
+title: データの受信
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
 author: msatranjr
 ms.author: misatran
@@ -9,15 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 9c3054d161e45bd614e8ef42ea6f21aeb937f582
-ms.sourcegitcommit: 23cda44f10059bcaef38ae73fd1d7c8b8330c95e
+ms.localizationpriority: medium
+ms.openlocfilehash: 3b44b3d693f6e9675f0b60e667bc434a7485eed8
+ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2017
+ms.lasthandoff: 05/03/2018
+ms.locfileid: "1832536"
 ---
 # <a name="receive-data"></a>データの受信
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
 
 この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで、共有コントラクトを使用して別のアプリから共有されたコンテンツを受け取る方法について説明します。 共有コントラクトを使うと、ユーザーが共有機能を呼び出したときに、アプリをオプションとして提示できます。
@@ -45,7 +46,7 @@ ms.lasthandoff: 07/19/2017
 データ形式を設定するには:
 
 1.  マニフェスト ファイルを開きます。
-2.  **[宣言]** ページの **[データ形式]** セクションを開き、**[新規追加]**をクリックします。
+2.  **[宣言]** ページの **[データ形式]** セクションを開き、**[新規追加]** をクリックします。
 3.  サポートすデータ形式の名前を入力します。たとえば、「テキスト」と入力します。
 
 ## <a name="handle-share-activation"></a>共有のアクティブ化の処理
@@ -79,7 +80,7 @@ if (shareOperation.Data.Contains(StandardDataFormats.Text))
 場合によっては、ユーザーが共有するデータをアプリが処理するのに時間がかかることがあります。 たとえば、ファイルまたは画像のコレクションを共有する場合などです。 このような項目は単純なテキスト文字列より大きいため、処理に時間がかかります。
 
 ```cs
-shareOperation.ReportDataRetreived(); 
+shareOperation.ReportStarted(); 
 ```
 
 [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted) を呼び出した後、ユーザーはアプリをそれ以上操作できなくなります。 したがって、このオブジェクトの呼び出しは、ユーザーがアプリを閉じても問題がない状況でのみ行ってください。
@@ -108,7 +109,7 @@ shareOperation.ReportCompleted();
 
 ユーザーがアプリでコンテンツを受け取ることを選んだときは、[**QuickLink**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink) を作成することをお勧めします。 **QuickLink** は、情報をアプリと簡単に共有できるようにするショートカットのようなものです。 たとえば、あらかじめ友人のメール アドレスが構成された新しいメール メッセージを開く **QuickLink** を作成できます。
 
-**QuickLink** には、タイトル、アイコン、ID が必要です。 タイトル ("母へのメール" など) とアイコンは、ユーザーが共有チャームをタップすると表示されます。 ID は、アプリがメール アドレスやログイン資格情報などのカスタム情報にアクセスするために使われます。 アプリは、**QuickLink** を作成すると、[**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted) を呼び出して **QuickLink** をシステムに返します。
+**QuickLink** には、タイトル、アイコン、ID が必要です。タイトル ("母へのメール" など) とアイコンは、ユーザーが共有チャームをタップすると表示されます。 ID は、アプリがメール アドレスやログイン資格情報などのカスタム情報にアクセスするために使われます。 アプリは、**QuickLink** を作成すると、[**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted) を呼び出して **QuickLink** をシステムに返します。
 
 **QuickLink** には、実際にデータが格納されているわけではなく、 識別子だけが含まれています。選択されたときにその識別子がアプリに送られます。 **QuickLink** の ID と対応するユーザー データは、アプリで格納する必要があります。 ユーザーが **QuickLink** をタップすると、[**QuickLinkId**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.QuickLinkId) プロパティを介してその ID を取得できます。
 

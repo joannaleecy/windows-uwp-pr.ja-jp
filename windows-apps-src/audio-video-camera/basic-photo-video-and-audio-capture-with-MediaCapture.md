@@ -1,21 +1,24 @@
 ---
 author: drewbatgit
 ms.assetid: 66d0c3dc-81f6-4d9a-904b-281f8a334dd0
-description: "この記事では、MediaCapture クラスを使用して写真やビデオをキャプチャする最も簡単な方法を示します。"
-title: "MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ"
+description: この記事では、MediaCapture クラスを使用して写真やビデオをキャプチャする最も簡単な方法を示します。
+title: MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: dbdc65fb842c6f8d6439f0041a33d991e27bd6b6
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: windows 10, UWP
+ms.localizationpriority: medium
+ms.openlocfilehash: d6e5d69c2f86c0d57c0c1be938799d5e81bb8f00
+ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/03/2018
+ms.locfileid: "1832276"
 ---
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 この記事では、[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) クラスを使用して写真やビデオをキャプチャする最も簡単な方法を示します。 **MediaCapture** クラスは、キャプチャ パイプラインに対する低レベルの制御を提供し、高度なキャプチャ シナリオを実現する、堅牢な一連の API を公開しますが、この記事では基本的なメディア キャプチャをアプリにすばやく簡単に追加できるようにすることを目的としています。 **MediaCapture** が提供する機能について詳しくは、「[**カメラ**](camera.md)」をご覧ください。
 
@@ -54,10 +57,16 @@ translationtype: HT
 
 [!code-cs[CaptureToSoftwareBitmap](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCaptureToSoftwareBitmap)]
 
-XAML ページに表示する方法など、**SoftwareBitmap** オブジェクトの操作について詳しくは、「[**ビットマップ画像の作成、編集、保存**](imaging.md)」をご覧ください。
+Windows バージョン 1803 以降では、**CaptureAsync** から返された **CapturedFrame** クラスの [**BitmapProperties**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.bitmapproperties) プロパティにアクセスして、キャプチャした写真に関するメタデータを取得できます。 このデータを **BitmapEncoder** に渡すと、メタデータをファイルに保存できます。 以前は、圧縮されていない画像形式について、このデータにアクセスできませんでした。 [**ControlValues**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.controlvalues) プロパティにアクセスすると、キャプチャした写真の露出やホワイト バランスなどのコントロールの値を記述した [**CapturedFrameControlValues**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframecontrolvalues) オブジェクトも取得できます。
+
+**BitmapEncoder** の使い方および **SoftwareBitmap** オブジェクトの操作 (XAML ページに表示する方法など) について詳しくは、「[**ビットマップ画像の作成、編集、保存**](imaging.md)」をご覧ください。 
+
+キャプチャ デバイス コントロールの値の設定について詳しくは、「[写真とビデオのキャプチャのためのキャプチャ デバイス コントロール](capture-device-controls-for-photo-and-video.md)」をご覧ください。
+
+Windows 10 バージョン 1803 以降では、**MediaCapture** によって返された **CapturedFrame** の [**BitmapProperties**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.bitmapproperties) プロパティにアクセスして、圧縮されていない形式でキャプチャした写真に関する EXIF 情報などのメタデータを取得できます。 以前のリリースでは、このデータにアクセスできるのは、圧縮ファイル形式にキャプチャされた写真のヘッダーでのみでした。 このデータを [**BitmapEncoder**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder) に渡すと、画像ファイルを手動で書き込むことができます。 ビットマップのエンコードについて詳しくは、「[ビットマップ画像の作成、編集、保存](imaging.md)」をご覧ください。  [**ControlValues**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.capturedframe.controlvalues) プロパティにアクセスすると、画像をキャプチャしたときに使用された露出やフラッシュ設定などのフレーム コントロールの値にもアクセスできます。 詳しくは、「[写真とビデオのキャプチャのためのキャプチャ デバイス コントロール](capture-device-controls-for-photo-and-video-capture.md)」をご覧ください。
 
 ## <a name="capture-a-photo-to-a-file"></a>ファイルへの写真のキャプチャ
-典型的な写真アプリでは、キャプチャした写真をディスクやクラウド ストレージに保存し、写真の向きなどのメタデータをファイルに追加する必要があります。 次の例では、ファイルに写真をキャプチャする方法を示します。 後で画像ファイルから **SoftwareBitmap** を作成するオプションもあります。 
+一般的な写真アプリでは、キャプチャした写真をディスクやクラウド ストレージに保存し、写真の向きなどのメタデータをファイルに追加する必要があります。 次の例では、ファイルに写真をキャプチャする方法を示します。 後で画像ファイルから **SoftwareBitmap** を作成するオプションもあります。 
 
 この例で示されている方法では、写真をインメモリ ストリームにキャプチャし、写真をストリームからディスク上のファイルにコード変換します。 この例では、[**GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageLibrary.GetLibraryAsync) を使ってユーザーのピクチャ ライブラリを取得し、次に [**SaveFolder**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageLibrary.SaveFolder) プロパティを使って既定の保存フォルダーを取得します。 このフォルダーにアクセスするには、必ず**ピクチャ ライブラリ**機能をアプリ マニフェストに追加してください。 [**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFolder.CreateFileAsync) は、写真の保存先となる新しい [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFile) を作成します。
 
@@ -96,6 +105,11 @@ XAML ページに表示する方法など、**SoftwareBitmap** オブジェク�
 
 [!code-cs[RecordLimitationExceededHandler](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRecordLimitationExceededHandler)]
 
+### <a name="play-and-edit-captured-video-files"></a>キャプチャしたビデオ ファイルの再生と編集
+ビデオをファイルにキャプチャした後は、アプリの UI の中でファイルを読み込んで再生できます。 この操作には、**[MediaPlayerElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement)** XAML コントロールと、それに関連付けられている **[MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer)** を使用します。 XAML ページでメディアを再生する方法について詳しくは、「[MediaPlayer を使ったオーディオとビデオの再生](play-audio-and-video-with-mediaplayer.md)」をご覧ください。
+
+**[CreateFromFileAsync](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip.createfromfileasync)** を呼び出すと、ビデオ ファイルから **[MediaClip](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip)** オブジェクトを作成することもできます。  **[MediaComposition](https://docs.microsoft.com/uwp/api/windows.media.editing.mediacomposition)** は、**MediaClip** オブジェクトのシーケンスの配置、ビデオの長さのトリミング、レイヤーの作成、BGM の追加、ビデオ効果の適用などの基本的なビデオ編集機能を備えています。 メディア コンポジションの操作について詳しくは、「[メディア コンポジションと編集](media-compositions-and-editing.md)」をご覧ください。
+
 ## <a name="pause-and-resume-video-recording"></a>ビデオ録画の一時停止と再開
 [**PauseAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.PauseAsync) と [**ResumeAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.ResumeAsync) を呼び出すことによって、ビデオの録画を一時停止し、別の出力ファイルを作成せずに録画を再開することができます
 
@@ -117,22 +131,41 @@ Windows 10 バージョン 1607 以降では、ビデオの録画を一時停止
 
 
 ## <a name="capture-audio"></a>オーディオのキャプチャ 
-前に示したビデオのキャプチャと同じ手法を用いて、アプリにオーディオ キャプチャ機能を簡単に追加することができます。 次の例では、アプリケーション データ フォルダーに **StorageFile** を作成します。 [**PrepareLowLagRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.PrepareLowLagRecordToStorageFileAsync) を呼び出して、ファイルと、[**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile) を渡すことによって、キャプチャ セッションを初期化します。この例では、MediaEncodingProfile は静的メソッド [**CreateMp3**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile.CreateMp3) によって生成されます。 録音を開始するには、[**StartAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.StartAsync) を呼び出します。
+前に示したビデオのキャプチャと同じ手法を用いて、アプリにオーディオ キャプチャ機能を簡単に追加することができます。 次の例では、アプリケーション データ フォルダーに **StorageFile** を作成します。 [**PrepareLowLagRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.PrepareLowLagRecordToStorageFileAsync) を呼び出して、ファイルと [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile) (この例では、静的メソッド [**CreateMp3**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile.CreateMp3) によって生成) を渡すことによって、キャプチャ セッションを初期化します。 録音を開始するには、[**StartAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.StartAsync) を呼び出します。
 
 [!code-cs[StartAudioCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartAudioCapture)]
 
 
-[**StopAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagPhotoSequenceCapture.StopAsync) を呼び出して、オーディオの録音を停止します。
-
-[!code-cs[StopRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStopRecording)]
-
-**StartAsync** と **StopAsync** を複数回呼び出して、複数のオーディオ ファイルを録音します。 オーディオのキャプチャが完了したら、[**FinishAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.FinishAsync) を呼び出して、キャプチャ セッションを破棄し、関連付けられているリソースをクリーンアップします。 この呼び出しの後は、再び **PrepareLowLagRecordToStorageFileAsync** 呼び出してキャプチャ セッションを再初期化してから、**StartAsync** を呼び出す必要があります。
-
-[!code-cs[FinishAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetFinishAsync)]
+オーディオの録音を停止するには、[**StopAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagPhotoSequenceCapture.StopAsync) を呼び出します。
 
 ## <a name="related-topics"></a>関連トピック
 
 * [カメラ](camera.md)
+[!code-cs[StopRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStopRecording)]
+
+複数のオーディオ ファイルを録音するには、**StartAsync** と **StopAsync** を複数回呼び出します。 オーディオのキャプチャが完了したら、[**FinishAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.FinishAsync) を呼び出して、キャプチャ セッションを破棄し、関連付けられているリソースをクリーンアップします。 この呼び出しの後は、再び **PrepareLowLagRecordToStorageFileAsync** を呼び出してキャプチャ セッションを再初期化してから、**StartAsync** を呼び出す必要があります。
+
+[!code-cs[FinishAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetFinishAsync)]
+
+
+## <a name="detect-and-respond-to-audio-level-changes-by-the-system"></a>システムによるオーディオ レベルの変更を検出して対応する
+Windows 10、バージョン 1803 以降では、アプリのオーディオ キャプチャやオーディオ レンダリング ストリームのオーディオ レベルが、システムによって低下した場合やミュートされた場合に、アプリがそれを検出できます。 たとえば、アプリがバックグラウンドに移動すると、アプリのストリームがシステムによってミュートされることがあります。 [**AudioStateMonitor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor) クラスを使用すると、オーディオ ストリームの音量がシステムによって変更されたときに、イベントを受け取るように登録できます。 オーディオ キャプチャ ストリーム監視用の **AudioStateMonitor **のインスタンスを取得するには、[**CreateForCaptureMonitoring**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.createforcapturemonitoring#Windows_Media_Audio_AudioStateMonitor_CreateForCaptureMonitoring) を呼び出します。 オーディオ レンダリング ストリーム監視用のインスタンスを取得するには、[**CreateForRenderMonitoring**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.createforrendermonitoring) を呼び出します。 対応するストリーム カテゴリのオーディオがシステムによって変更されたときに通知を受け取るには、各モニターの [**SoundLevelChanged**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) イベントのハンドラーを登録します。
+
+[!code-cs[AudioStateMonitorUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetAudioStateMonitorUsing)]
+
+[!code-cs[AudioStateVars](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetAudioStateVars)]
+
+[!code-cs[RegisterAudioStateMonitor](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRegisterAudioStateMonitor)]
+
+キャプチャ ストリームの **SoundLevelChanged** ハンドラーで、**AudioStateMonitor** センダーの [**SoundLevel**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevel)プロパティを確認すると、新しいサウンド レベルを判定できます。 キャプチャー ストリームは、システムによって下げないで (つまり "ダッキング" しないで) ください。 ミュートとフル音量の間の切り替えのみを行うことができます。 オーディオ ストリームがミュートになっている場合は、実行中のキャプチャを停止できます。 オーディオ ストリームがフル音量に戻った場合は、もう一度キャプチャを開始できます。 次の例では、複数のブール型のクラス変数を使用して、オーディオが現在キャプチャ中か、それともオーディオ状態の変更のためにキャプチャが停止しているかを追跡しています。 これらの変数を使用すると、オーディオ キャプチャをプログラムによって停止または開始する適切な時期を判断できます。
+
+[!code-cs[CaptureSoundLevelChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCaptureSoundLevelChanged)]
+
+次のコード例では、オーディオ レンダリング用の **SoundLevelChanged** ハンドラーの実装を示しています。 アプリのシナリオや、再生しているコンテンツの種類に応じて、サウンド レベルがダッキングされている間、オーディオ再生を一時停止します。 メディア再生のサウンド レベルの変更を処理する方法について詳しくは、「[MediaPlayer を使ったオーディオとビデオの再生](play-audio-and-video-with-mediaplayer.md)」をご覧ください。
+
+[!code-cs[RenderSoundLevelChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRenderSoundLevelChanged)]
+
+
 * [Windows の組み込みカメラ UI を使った写真とビデオのキャプチャ](capture-photos-and-video-with-cameracaptureui.md)
 * [MediaCapture を使ってデバイスの向きを処理する](handle-device-orientation-with-mediacapture.md)
 * [ビットマップ画像の作成、編集、保存](imaging.md)
