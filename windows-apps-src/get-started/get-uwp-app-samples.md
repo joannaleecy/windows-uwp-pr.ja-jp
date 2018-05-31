@@ -1,57 +1,60 @@
 ---
-title: "GitHub からユニバーサル Windows プラットフォーム (UWP) のサンプルを取得する"
-description: "GitHub から UWP 機能のサンプルをダウンロードする方法について説明します"
+title: UWP アプリのサンプルを取得する
+description: GitHub から UWP コードのサンプルをダウンロードする方法について説明します
 author: JoshuaPartlow
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: Windows 10、UWP、サンプル コード、コード サンプル
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 93dde6fe68275987c16562370ba277072e5467a9
-ms.lasthandoff: 02/08/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: 4e326d276bc08f6185226b7dd54b634dbb512771
+ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/28/2018
+ms.locfileid: "1689388"
 ---
+# <a name="get-uwp-app-samples"></a><span data-ttu-id="cea59-104">UWP アプリのサンプルを取得する</span><span class="sxs-lookup"><span data-stu-id="cea59-104">Get UWP app samples</span></span>
 
-#<a name="get-the-universal-windows-platform-uwp-samples-from-github"></a>GitHub からユニバーサル Windows プラットフォーム (UWP) のサンプルを取得する
-UWP アプリのサンプルは、GitHub のリポジトリを利用して入手できます。 初めて UWP を操作する場合は、[Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "Universal Windows Platform app samples GitHub repository") リポジトリを最初に使用することをお勧めします。このリポジトリには、すべての UWP 機能と API の使用パターンを示すサンプルが含まれています。  
-![GitHub の UWP サンプルのリポジトリ](images/GitHubUWPSamplesPage.png) デベロッパー センターの「[サンプル](https://developer.microsoft.com/windows/samples "Dev Center samples")」セクションを利用すると、その他のサンプルを探すことができます。  
+<span data-ttu-id="cea59-105">ユニバーサル Windows プラットフォーム (UWP) アプリのサンプルは、GitHub のリポジトリを利用して入手できます。</span><span class="sxs-lookup"><span data-stu-id="cea59-105">The Universal Windows Platform (UWP) app samples are available through repositories on GitHub.</span></span> <span data-ttu-id="cea59-106">検索可能な、カテゴリ別の一覧については、[サンプル](https://developer.microsoft.com/windows/samples "デベロッパー センターのサンプル")をご覧ください。または [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "ユニバーサル Windows プラットフォーム アプリのサンプルの GitHub リポジトリ") リポジトリには、UWP 機能のすべてと API の使用パターンを示すサンプルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="cea59-106">See [Samples](https://developer.microsoft.com/windows/samples "Dev Center samples") for a searchable, categorized list, or browse the [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "Universal Windows Platform app samples GitHub repository") repository, which contains samples that demonstrate all of the UWP features and their API usage patterns.</span></span>  
+![GitHub の UWP サンプルのリポジトリ](images/GitHubUWPSamplesPage.png)
 
-##<a name="download-the-code"></a>コードのダウンロード
-サンプルをダウンロードするには、[リポジトリ](https://github.com/Microsoft/Windows-universal-samples "ユニバーサル Windows プラットフォーム アプリのサンプル GitHub リポジトリ")に移動し、**[Clone or download]**、**[Download ZIP]** の順に選択します。 または、[ここ](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "ユニバーサル Windows プラットフォーム アプリのサンプル zip ファイルのダウンロード")をクリックしてください。
+## <a name="download-the-code"></a><span data-ttu-id="cea59-108">コードのダウンロード</span><span class="sxs-lookup"><span data-stu-id="cea59-108">Download the code</span></span>
 
-zip ファイルには、常に最新のサンプルが含まれています。 ダウンロードする際に GitHub のアカウントは必要ありません。 SDK の更新プログラムがリリースされた場合、または最新の変更内容や追加内容を選ぶ場合は、最新の zip ファイルを確認してください。
+<span data-ttu-id="cea59-109">サンプルをダウンロードするには、[リポジトリ](https://github.com/Microsoft/Windows-universal-samples "ユニバーサル Windows プラットフォーム アプリのサンプル GitHub リポジトリ")に移動し、**[Clone or download]**、**[Download ZIP]** の順に選択します。</span><span class="sxs-lookup"><span data-stu-id="cea59-109">To download the samples, go to the [repository](https://github.com/Microsoft/Windows-universal-samples "Universal Windows Platform app samples GitHub repository") and select **Clone or download**, then **Download ZIP**.</span></span> <span data-ttu-id="cea59-110">または、[ここ](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "ユニバーサル Windows プラットフォーム アプリのサンプル zip ファイルのダウンロード")をクリックしてください。</span><span class="sxs-lookup"><span data-stu-id="cea59-110">Or, just click [here](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "Universal Windows Platform app samples zip file download").</span></span>
+
+<span data-ttu-id="cea59-111">zip ファイルには、常に最新のサンプルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="cea59-111">The zip file will always have the latest samples.</span></span> <span data-ttu-id="cea59-112">ダウンロードする際に GitHub のアカウントは必要ありません。</span><span class="sxs-lookup"><span data-stu-id="cea59-112">You don’t need a GitHub account to download it.</span></span> <span data-ttu-id="cea59-113">SDK の更新プログラムがリリースされた場合、または最新の変更内容や追加内容を選ぶ場合は、最新の zip ファイルを確認してください。</span><span class="sxs-lookup"><span data-stu-id="cea59-113">When an SDK update is released or if you want to pick up any recent changes/additions, just check back for the latest zip file.</span></span>
 
 ![サンプルのダウンロード](images/SamplesDownloadButton.png)
 
 
-> **注**: UWP のサンプルを開いたり、作成や実行したりする場合は、Visual Studio 2015 と Windows SDK が必要になります。 Visual Studio をまだインストールしていない場合は、[ここ](http://go.microsoft.com/fwlink/p/?LinkID=280676 "Windows 開発ツールのダウンロード")から、UWP アプリの作成をサポートする Visual Studio 2015 Community Edition を無料で入手できます。  
+> [!NOTE]
+> <span data-ttu-id="cea59-115">UWP のサンプルを開いたり、作成や実行したりする場合は、Visual Studio 2015 以降と Windows SDK が必要になります。</span><span class="sxs-lookup"><span data-stu-id="cea59-115">The UWP samples require Visual Studio 2015 or later and the Windows SDK to open, build, and run.</span></span> <span data-ttu-id="cea59-116">UWP アプリの構築をサポートする Visual Studio Community の無料コピーは[こちら](http://go.microsoft.com/fwlink/p/?LinkID=280676 "Windows development tools downloads")から入手できます。</span><span class="sxs-lookup"><span data-stu-id="cea59-116">You can get a free copy of Visual Studio Community with support for building UWP apps [here](http://go.microsoft.com/fwlink/p/?LinkID=280676 "Windows development tools downloads").</span></span>  
 >
-> また、個々のサンプルだけではなく、アーカイブ全体を解凍してください。 すべてのサンプルは、アーカイブ内の SharedContent フォルダーに依存しているためです。 UWP 機能のサンプルは、Visual Studio のリンク ファイルを使用して、共通ファイル (サンプルのテンプレート ファイルや画像アセットなど) の重複を減らします。 これらの共通ファイルは、リポジトリのルートにある SharedContent フォルダーに格納され、リンクを使用するプロジェクト ファイル内で参照されます。
+> <span data-ttu-id="cea59-117">また、個々のサンプルだけではなく、アーカイブ全体を解凍してください。</span><span class="sxs-lookup"><span data-stu-id="cea59-117">Also, be sure to unzip the entire archive, and not just individual samples.</span></span> <span data-ttu-id="cea59-118">すべてのサンプルは、アーカイブ内の SharedContent フォルダーに依存しているためです。</span><span class="sxs-lookup"><span data-stu-id="cea59-118">The samples all depend on the SharedContent folder in the archive.</span></span> <span data-ttu-id="cea59-119">UWP 機能のサンプルは、Visual Studio のリンク ファイルを使用して、共通ファイル (サンプルのテンプレート ファイルや画像アセットなど) の重複を減らします。</span><span class="sxs-lookup"><span data-stu-id="cea59-119">The UWP feature samples use Linked files in Visual Studio to reduce duplication of common files, including sample template files and image assets.</span></span> <span data-ttu-id="cea59-120">これらの共通ファイルは、リポジトリのルートにある SharedContent フォルダーに格納され、リンクを使用するプロジェクト ファイル内で参照されます。</span><span class="sxs-lookup"><span data-stu-id="cea59-120">These common files are stored in the SharedContent folder at the root of the repository, and are referred to in the project files using links.</span></span>
 
-zip ファイルをダウンロードしたら、Visual Studio でサンプルを開きます。
+<span data-ttu-id="cea59-121">zip ファイルをダウンロードしたら、Visual Studio でサンプルを開きます。</span><span class="sxs-lookup"><span data-stu-id="cea59-121">After you download the zip file, open the samples in Visual Studio:</span></span>
 
-1.  アーカイブを解凍する前に、アーカイブを右クリックし、**[プロパティ]** > **[ブロックの解除]** > **[適用]** の順に選びます。 次に、アーカイブをコンピューター上のローカル フォルダーに展開します。
+1.  <span data-ttu-id="cea59-122">アーカイブを解凍する前に、アーカイブを右クリックし、**[プロパティ]** > **[ブロックの解除]** > **[適用]** の順に選びます。</span><span class="sxs-lookup"><span data-stu-id="cea59-122">Before you unzip the archive, right-click it, select **Properties** > **Unblock** > **Apply**.</span></span> <span data-ttu-id="cea59-123">次に、アーカイブをコンピューター上のローカル フォルダーに展開します。</span><span class="sxs-lookup"><span data-stu-id="cea59-123">Then, unzip the archive to a local folder on your machine.</span></span>
 
     ![解凍されたアーカイブ](images/SamplesUnzip1.png)
-2.  [Samples] フォルダーには多くのフォルダーが含まれており、各フォルダーには UWP 機能のサンプルが含まれています。
+2.  <span data-ttu-id="cea59-125">[Samples] フォルダーには多くのフォルダーが含まれており、各フォルダーには UWP 機能のサンプルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="cea59-125">Within the samples folder, you’ll see a number of folders, each of which contains a UWP feature sample.</span></span>
 
     ![サンプルのフォルダー](images/SamplesUnzip2.png)
 
-3.  ([Altimeter)] （高度計） などのサンプルを選ぶと、サポートされている言語を示す複数のフォルダーが表示されます。
+3.  <span data-ttu-id="cea59-127">([Altimeter)] （高度計） などのサンプルを選ぶと、サポートされている言語を示す複数のフォルダーが表示されます。</span><span class="sxs-lookup"><span data-stu-id="cea59-127">Select a sample, such as Altimeter, and you’ll see multiple folders indicating the languages supported.</span></span>
 
     ![言語フォルダー](images/SamplesUnzip3.png)
 
-4.  使用する言語 (C\# の場合は [CS]) を選ぶと、Visual Studio で開くことができる Visual Studio のソリューション ファイルが表示されます。
+4.  <span data-ttu-id="cea59-129">使用する言語 (C\# の場合は [CS]) を選ぶと、Visual Studio で開くことができる Visual Studio のソリューション ファイルが表示されます。</span><span class="sxs-lookup"><span data-stu-id="cea59-129">Select the language you’d like to use, such as CS for C\#, and you’ll see a Visual Studio solution file, which you can open in Visual Studio.</span></span>
 
     ![VS ソリューション](images/SamplesUnzip4.png)
 
-## <a name="give-feedback-ask-questions-and-report-issues"></a>フィードバックの提供、質問の投稿、問題の報告
+## <a name="give-feedback-ask-questions-and-report-issues"></a><span data-ttu-id="cea59-131">フィードバックの提供、質問の投稿、問題の報告</span><span class="sxs-lookup"><span data-stu-id="cea59-131">Give feedback, ask questions, and report issues</span></span>
 
-問題や質問がある場合は、リポジトリの [Issues] タブを使用して、新しい問題や質問に関する報告を作成します。サポートできる問題や質問については、弊社で対応します。
+<span data-ttu-id="cea59-132">問題や質問がある場合は、リポジトリの [Issues] タブを使用して、新しい問題や質問に関する報告を作成します。サポートできる問題や質問については、弊社で対応します。</span><span class="sxs-lookup"><span data-stu-id="cea59-132">If you have problems or questions, just use the Issues tab on the repository to create a new issue and we’ll do what we can to help.</span></span>
 
 ![フィードバックの画像](images/GitHubUWPSamplesFeedback.png)
-

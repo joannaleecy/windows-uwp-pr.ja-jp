@@ -10,11 +10,12 @@ ms.topic: article
 keywords: 概要, windows 10, uwp, xaml, c#
 ms.technology: uwp
 ms.localizationpriority: high
-ms.openlocfilehash: a6a7fd3b16316c7ee0a5d162fc1d0aff5813a81f
-ms.sourcegitcommit: 1d479842a5410f8ba3f286b972504f57bbc97ed1
+ms.openlocfilehash: 9e2cd95cfc74273f4c9f6c949a5a618542b99acf
+ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2018
+ms.lasthandoff: 04/30/2018
+ms.locfileid: "1815747"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Windows 10 アプリの概要 
  
@@ -54,8 +55,7 @@ ms.lasthandoff: 03/29/2018
                     <h3>準備</h3>
                     <p>Visual Studio Community と Windows 10 SDK には、優れたアプリを構築するために必要なものがすべて揃っています。無料でご利用いただけます。</p>
                     <ul>
-                        <li><a href="//developer.microsoft.com/windows/downloads">ツールと SDK のダウンロード</a></li>
-                        <li><a href="//docs.microsoft.com/windows/uwp/get-started/get-set-up">サポートが必要な場合</a></li>
+                        <li><a href="//docs.microsoft.com/windows/uwp/get-started/get-set-up">ツールと SDK のダウンロード</a></li>
                     </ul>
                   </div>
                 </div>
@@ -221,7 +221,7 @@ ms.lasthandoff: 03/29/2018
                         <h3>開発者ツール</h3>
                         <p><a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">UWP コミュニティ ツールキット</a></p>
                         <p><a href="//developer.microsoft.com/windows/downloads/virtual-machines">バーチャル マシン</a></p>
-                        <p><a href="//docs.microsoft.com/windows/wsl/about">Bash on Ubunutu on Windows</a></p>
+                        <p><a href="//docs.microsoft.com/windows/wsl/about">Bash on Ubuntu on Windows</a></p>
                         </div>
                     </div>
                 </div>

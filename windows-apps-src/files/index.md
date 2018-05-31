@@ -1,47 +1,48 @@
 ---
 author: laurenhughes
 ms.assetid: 1901c4c2-5161-435d-bc7b-f40c69cdb138
-title: "ファイル、フォルダー、およびライブラリ"
-description: "アプリの設定の読み取りと書き込み、ファイルやフォルダーのピッカー、ビデオ ライブラリやミュージック ライブラリなどのセキュリティで保護された特別なサンドボックス化された場所について説明します。"
+title: ファイル、フォルダー、およびライブラリ
+description: アプリの設定の読み取りと書き込み、ファイルやフォルダーのピッカー、ビデオ ライブラリやミュージック ライブラリなどのセキュリティで保護された特別なサンドボックス化された場所について説明します。
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: 3c073879ab847a3e1af454e0c1550d8af0f78b3e
-ms.openlocfilehash: 0baa58915bfac91d618a6da84f37174e41f7377f
-ms.lasthandoff: 01/19/2017
-
+keywords: windows 10, uwp
+ms.localizationpriority: medium
+ms.openlocfilehash: 5c29a14c91b66e10f4f23e8305eb7781e682eba6
+ms.sourcegitcommit: 97b47dafbd0593d19d96f9722f35052f13e591a9
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/10/2018
+ms.locfileid: "1502916"
 ---
- # <a name="files-folders-and-libraries"></a>ファイル、フォルダー、およびライブラリ
+ # <a name="files-folders-and-libraries"></a><span data-ttu-id="a0dea-104">ファイル、フォルダー、およびライブラリ</span><span class="sxs-lookup"><span data-stu-id="a0dea-104">Files, folders, and libraries</span></span>
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-[Windows.Storage](https://msdn.microsoft.com/library/windows/apps/br227346)、[Windows.Storage.Streams](https://msdn.microsoft.com/library/windows/apps/br241791)、[Windows.Storage.Pickers](https://msdn.microsoft.com/library/windows/apps/br207928) の各名前空間の API を使い、ファイル内にあるテキストやその他のデータ形式の読み取りと書き込み、およびファイルやフォルダーの管理を行います。 このセクションでは、アプリの設定の読み取りと書き込み、ファイルやフォルダーのピッカー、およびビデオ ライブラリやミュージック ライブラリなどのセキュリティで保護された特別な場所についても説明します。
+<span data-ttu-id="a0dea-105">[Windows.Storage](https://msdn.microsoft.com/library/windows/apps/br227346)、[Windows.Storage.Streams](https://msdn.microsoft.com/library/windows/apps/br241791)、[Windows.Storage.Pickers](https://msdn.microsoft.com/library/windows/apps/br207928) の各名前空間の API を使い、ファイル内にあるテキストやその他のデータ形式の読み取りと書き込み、およびファイルやフォルダーの管理を行います。</span><span class="sxs-lookup"><span data-stu-id="a0dea-105">You use the APIs in the [Windows.Storage](https://msdn.microsoft.com/library/windows/apps/br227346), [Windows.Storage.Streams](https://msdn.microsoft.com/library/windows/apps/br241791), and [Windows.Storage.Pickers](https://msdn.microsoft.com/library/windows/apps/br207928) namespaces to read and write text and other data formats in files, and to manage files and folders.</span></span> <span data-ttu-id="a0dea-106">このセクションでは、アプリの設定の読み取りと書き込み、ファイルやフォルダーのピッカー、およびビデオ ライブラリやミュージック ライブラリなどのセキュリティで保護された特別な場所についても説明します。</span><span class="sxs-lookup"><span data-stu-id="a0dea-106">In this section, you'll also learn about reading and writing app settings, about file and folder pickers, and about special sand-boxed locations such as the Video/Music library.</span></span>
 
-| トピック | 説明  |
+| <span data-ttu-id="a0dea-107">トピック</span><span class="sxs-lookup"><span data-stu-id="a0dea-107">Topic</span></span> | <span data-ttu-id="a0dea-108">説明</span><span class="sxs-lookup"><span data-stu-id="a0dea-108">Description</span></span>  |
 |-------|--------------|
-| [ファイルとフォルダーの列挙と照会](quickstart-listing-files-and-folders.md) | フォルダー、ライブラリ、デバイス、またはネットワークの場所にあるファイルやフォルダーにアクセスします。 ファイルやフォルダーのクエリを作成することで、任意の場所にあるファイルやフォルダーを照会することもできます。 |
-| [ファイルの作成、書き込み、および読み取り](quickstart-reading-and-writing-files.md) | [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを使ってファイルの読み取りと書き込みを行います。 |
-| [ファイルのプロパティの取得](quickstart-getting-file-properties.md) | [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトで表されるファイルのプロパティ (最上位、基本、拡張) を取得します。 |
-| [ピッカーでファイルやフォルダーを開く](quickstart-using-file-and-folder-pickers.md) | ユーザーがピッカーを操作してファイルやフォルダーにアクセスできるようにします。 フォルダーへのアクセスには [FolderPicker](https://msdn.microsoft.com/library/windows/apps/br207881) を使います。 |
-| [ピッカーによるファイルの保存](quickstart-save-a-file-with-a-picker.md) | [FileSavePicker](https://msdn.microsoft.com/library/windows/apps/br207871) を使って、ユーザーがアプリで保存するファイルの名前とその保存場所を指定できるようにします。 |
-| [ホームグループ コンテンツへのアクセス](quickstart-accessing-homegroup-content.md) | ユーザーのホームグループ フォルダーに格納されているコンテンツ (画像、音楽、ビデオなど) にアクセスします。 |
-| [Microsoft OneDrive ファイルが利用可能かどうかの確認](quickstart-determining-availability-of-microsoft-onedrive-files.md) | [StorageFile.IsAvailable](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) プロパティを使って、Microsoft OneDrive ファイルが利用可能かどうかを確認します。 |
-| [ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | 音楽、画像、またはビデオの既存のフォルダーを対応するライブラリに追加できます。 ライブラリからフォルダーを削除したり、ライブラリ内のフォルダーの一覧を取得したり、保存した写真、音楽、ビデオにアクセスしたりすることもできます。 |
-| [最近使ったファイルやフォルダーの追跡](how-to-track-recently-used-files-and-folders.md) | ユーザーが頻繁にアクセスするファイルを追跡するには、そのファイルを最近使ったアプリの一覧 (MRU) に追加します。 MRU はプラットフォームが管理し、最後にアクセスした日時に基づいて項目を並べ替えたり、一覧の上限である 25 項目に達したら最も古い項目を削除したりします。 すべてのアプリにはそれぞれに専用の MRU があります。 |
-| [SD カードへのアクセス](access-the-sd-card.md) | オプションの microSD カードに重要度の低いデータを保存したり、これらのデータにアクセスしたりすることができます (特に内部ストレージに制限がある低コストのモバイル デバイスの場合)。 |
-| [ファイル アクセス許可](file-access-permissions.md) | アプリは既定でファイル システムの特定の場所にアクセスできます。 また、ファイル ピッカーを使うか機能を宣言すると、その他の場所にアクセスすることもできます。 |
+| [<span data-ttu-id="a0dea-109">ファイルとフォルダーの列挙と照会</span><span class="sxs-lookup"><span data-stu-id="a0dea-109">Enumerate and query files and folders</span></span>](quickstart-listing-files-and-folders.md) | <span data-ttu-id="a0dea-110">フォルダー、ライブラリ、デバイス、またはネットワークの場所にあるファイルやフォルダーにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="a0dea-110">Access files and folders in either a folder, library, device, or network   location.</span></span> <span data-ttu-id="a0dea-111">ファイルやフォルダーのクエリを作成することで、任意の場所にあるファイルやフォルダーを照会することもできます。</span><span class="sxs-lookup"><span data-stu-id="a0dea-111">You can also query the files and folders in a location by constructing file and folder queries.</span></span> |
+| [<span data-ttu-id="a0dea-112">ファイルの作成、書き込み、および読み取り</span><span class="sxs-lookup"><span data-stu-id="a0dea-112">Create, write, and read a file</span></span>](quickstart-reading-and-writing-files.md) | <span data-ttu-id="a0dea-113">[StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを使ってファイルの読み取りと書き込みを行います。</span><span class="sxs-lookup"><span data-stu-id="a0dea-113">Read and write a file using a [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) object.</span></span> |
+| [<span data-ttu-id="a0dea-114">ファイルのプロパティの取得</span><span class="sxs-lookup"><span data-stu-id="a0dea-114">Get file properties</span></span>](quickstart-getting-file-properties.md) | <span data-ttu-id="a0dea-115">[StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトで表されるファイルのプロパティ (最上位、基本、拡張) を取得します。</span><span class="sxs-lookup"><span data-stu-id="a0dea-115">Get properties—top-level, basic, and extended—for a file represented by a   [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) object.</span></span> |
+| [<span data-ttu-id="a0dea-116">ピッカーでファイルやフォルダーを開く</span><span class="sxs-lookup"><span data-stu-id="a0dea-116">Open files and folders with a picker</span></span>](quickstart-using-file-and-folder-pickers.md) | <span data-ttu-id="a0dea-117">ユーザーがピッカーを操作してファイルやフォルダーにアクセスできるようにします。</span><span class="sxs-lookup"><span data-stu-id="a0dea-117">Access files and folders by letting the user interact with a picker.</span></span> <span data-ttu-id="a0dea-118">フォルダーへのアクセスには [FolderPicker](https://msdn.microsoft.com/library/windows/apps/br207881) を使います。</span><span class="sxs-lookup"><span data-stu-id="a0dea-118">You can use the   [FolderPicker](https://msdn.microsoft.com/library/windows/apps/br207881) to gain access to a folder.</span></span> |
+| [<span data-ttu-id="a0dea-119">ピッカーによるファイルの保存</span><span class="sxs-lookup"><span data-stu-id="a0dea-119">Save a file with a picker</span></span>](quickstart-save-a-file-with-a-picker.md) | <span data-ttu-id="a0dea-120">[FileSavePicker](https://msdn.microsoft.com/library/windows/apps/br207871) を使って、アプリで保存するファイルの名前とその保存場所をユーザーが指定できるようにします。</span><span class="sxs-lookup"><span data-stu-id="a0dea-120">Use [FileSavePicker](https://msdn.microsoft.com/library/windows/apps/br207871) to let users specify the name and location where they want your app to save a file.</span></span> |
+| [<span data-ttu-id="a0dea-121">ホームグループ コンテンツへのアクセス</span><span class="sxs-lookup"><span data-stu-id="a0dea-121">Accessing HomeGroup content</span></span>](quickstart-accessing-homegroup-content.md) | <span data-ttu-id="a0dea-122">ユーザーのホームグループ フォルダーに格納されているコンテンツ (画像、音楽、ビデオなど) にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="a0dea-122">Access content stored in the user's HomeGroup folder, including pictures, music, and videos.</span></span> |
+| [<span data-ttu-id="a0dea-123">Microsoft OneDrive ファイルが利用可能かどうかの確認</span><span class="sxs-lookup"><span data-stu-id="a0dea-123">Determining availability of Microsoft OneDrive files</span></span>](quickstart-determining-availability-of-microsoft-onedrive-files.md) | <span data-ttu-id="a0dea-124">[StorageFile.IsAvailable](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) プロパティを使って、Microsoft OneDrive ファイルが利用可能かどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="a0dea-124">Determine if a Microsoft OneDrive file is available using the [StorageFile.IsAvailable](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) property.</span></span> |
+| [<span data-ttu-id="a0dea-125">ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー</span><span class="sxs-lookup"><span data-stu-id="a0dea-125">Files and folders in the Music, Pictures, and Videos libraries</span></span>](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | <span data-ttu-id="a0dea-126">音楽、画像、またはビデオの既存のフォルダーを対応するライブラリに追加できます。</span><span class="sxs-lookup"><span data-stu-id="a0dea-126">Add existing folders of music, pictures, or videos to the corresponding libraries.</span></span> <span data-ttu-id="a0dea-127">ライブラリからフォルダーを削除したり、ライブラリ内のフォルダーの一覧を取得したり、保存した写真、音楽、ビデオにアクセスしたりすることもできます。</span><span class="sxs-lookup"><span data-stu-id="a0dea-127">You can also remove folders from libraries, get the list of folders in a library, and discover stored photos, music, and videos.</span></span> |
+| [<span data-ttu-id="a0dea-128">最近使ったファイルやフォルダーの追跡</span><span class="sxs-lookup"><span data-stu-id="a0dea-128">Track recently used files and folders</span></span>](how-to-track-recently-used-files-and-folders.md) | <span data-ttu-id="a0dea-129">ユーザーが頻繁にアクセスするファイルを追跡するには、そのファイルを最近使ったアプリの一覧 (MRU) に追加します。</span><span class="sxs-lookup"><span data-stu-id="a0dea-129">Track files that your user accesses frequently by adding them to your app's most recently used list (MRU).</span></span> <span data-ttu-id="a0dea-130">MRU はプラットフォームが管理し、最後にアクセスした日時に基づいて項目を並べ替えたり、一覧の上限である 25 項目に達したら最も古い項目を削除したりします。</span><span class="sxs-lookup"><span data-stu-id="a0dea-130">The platform manages the MRU for you by sorting items based on when they were last accessed, and by removing the oldest item when the list's 25-item limit is reached.</span></span> <span data-ttu-id="a0dea-131">すべてのアプリにはそれぞれに専用の MRU があります。</span><span class="sxs-lookup"><span data-stu-id="a0dea-131">All apps have their own MRU.</span></span> |
+| [<span data-ttu-id="a0dea-132">SD カードへのアクセス</span><span class="sxs-lookup"><span data-stu-id="a0dea-132">Access the SD card</span></span>](access-the-sd-card.md) | <span data-ttu-id="a0dea-133">オプションの microSD カードに重要度の低いデータを保存したり、これらのデータにアクセスしたりすることができます (特に内部ストレージに制限がある低コストのモバイル デバイスの場合)。</span><span class="sxs-lookup"><span data-stu-id="a0dea-133">You can store and access non-essential data on an optional microSD card, especially on low-cost mobile devices that have limited internal storage.</span></span> |
+| [<span data-ttu-id="a0dea-134">ファイル アクセス許可</span><span class="sxs-lookup"><span data-stu-id="a0dea-134">File access permissions</span></span>](file-access-permissions.md) | <span data-ttu-id="a0dea-135">アプリは既定でファイル システムの特定の場所にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="a0dea-135">Apps can access certain file system locations by default.</span></span> <span data-ttu-id="a0dea-136">また、ファイル ピッカーの使用や機能の宣言によって、その他の場所にアクセスすることもできます。</span><span class="sxs-lookup"><span data-stu-id="a0dea-136">Apps can also access additional locations through the file picker, or by declaring capabilities.</span></span> |
+| [<span data-ttu-id="a0dea-137">UWP でファイルのプロパティにすばやくアクセスする</span><span class="sxs-lookup"><span data-stu-id="a0dea-137">Fast access to file properties in UWP</span></span>](fast-file-properties.md) | <span data-ttu-id="a0dea-138">UWP アプリで使用するために、ライブラリからファイルとそのプロパティの一覧を効率的に収集します。</span><span class="sxs-lookup"><span data-stu-id="a0dea-138">Efficiently gather a list of files and their properties from a library to use in a UWP app.</span></span> |
 
-## <a name="related-samples"></a>関連するサンプル
-[フォルダーの列挙のサンプル](http://go.microsoft.com/fwlink/p/?linkid=619993)
+## <a name="related-samples"></a><span data-ttu-id="a0dea-139">関連するサンプル</span><span class="sxs-lookup"><span data-stu-id="a0dea-139">Related samples</span></span>
+[<span data-ttu-id="a0dea-140">フォルダーの列挙のサンプル</span><span class="sxs-lookup"><span data-stu-id="a0dea-140">Folder enumeration sample</span></span>](http://go.microsoft.com/fwlink/p/?linkid=619993)
 
-[ファイル アクセスのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619995)
+[<span data-ttu-id="a0dea-141">ファイル アクセスのサンプル</span><span class="sxs-lookup"><span data-stu-id="a0dea-141">File access sample</span></span>](http://go.microsoft.com/fwlink/p/?linkid=619995)
 
-[ファイル ピッカーのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619994)
+[<span data-ttu-id="a0dea-142">ファイル ピッカーのサンプル</span><span class="sxs-lookup"><span data-stu-id="a0dea-142">File picker sample</span></span>](http://go.microsoft.com/fwlink/p/?linkid=619994)
  
 
  
-

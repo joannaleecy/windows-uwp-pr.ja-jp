@@ -1,42 +1,43 @@
 ---
 author: TylerMSFT
-title: "Windows 設定アプリの起動"
-description: "アプリから Windows 設定アプリを起動する方法について説明します。 ここでは、ms-settings URI スキームについて説明します。 Windows 設定アプリを起動して特定の設定ページを表示するには、この URI スキームを使います。"
+title: Windows 設定アプリの起動
+description: アプリから Windows 設定アプリを起動する方法について説明します。 ここでは、ms-settings URI スキームについて説明します。 Windows 設定アプリを起動して特定の設定ページを表示するには、この URI スキームを使います。
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
 ms.author: twhitney
-ms.date: 06/12/2017
+ms.date: 03/20/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 2a30e14f7c275c48f52253157fc9c67bf05d259e
-ms.sourcegitcommit: 00c3f5a1208bd0125f5b275f972cf2a82d8eb9b6
+ms.localizationpriority: medium
+ms.openlocfilehash: 03ec6cf478097a6cd00af85d52112555650db35f
+ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2017
+ms.lasthandoff: 04/30/2018
+ms.locfileid: "1817147"
 ---
-# <a name="launch-the-windows-settings-app"></a><span data-ttu-id="408a7-106">Windows 設定アプリの起動</span><span class="sxs-lookup"><span data-stu-id="408a7-106">Launch the Windows Settings app</span></span>
+# <a name="launch-the-windows-settings-app"></a><span data-ttu-id="f3e10-106">Windows 設定アプリの起動</span><span class="sxs-lookup"><span data-stu-id="f3e10-106">Launch the Windows Settings app</span></span>
 
-<span data-ttu-id="408a7-107">\[Windows 10 の UWP アプリ向けに更新。</span><span class="sxs-lookup"><span data-stu-id="408a7-107">\[ Updated for UWP apps on Windows 10.</span></span> <span data-ttu-id="408a7-108">Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]</span><span class="sxs-lookup"><span data-stu-id="408a7-108">For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]</span></span>
 
-**<span data-ttu-id="408a7-109">重要な API</span><span class="sxs-lookup"><span data-stu-id="408a7-109">Important APIs</span></span>**
+**<span data-ttu-id="f3e10-107">重要な API</span><span class="sxs-lookup"><span data-stu-id="f3e10-107">Important APIs</span></span>**
 
--   [**<span data-ttu-id="408a7-110">LaunchUriAsync</span><span class="sxs-lookup"><span data-stu-id="408a7-110">LaunchUriAsync</span></span>**](https://msdn.microsoft.com/library/windows/apps/hh701476)
--   [**<span data-ttu-id="408a7-111">PreferredApplicationPackageFamilyName</span><span class="sxs-lookup"><span data-stu-id="408a7-111">PreferredApplicationPackageFamilyName</span></span>**](https://msdn.microsoft.com/library/windows/apps/hh965482)
--   [**<span data-ttu-id="408a7-112">DesiredRemainingView</span><span class="sxs-lookup"><span data-stu-id="408a7-112">DesiredRemainingView</span></span>**](https://msdn.microsoft.com/library/windows/apps/dn298314)
+-   [**<span data-ttu-id="f3e10-108">LaunchUriAsync</span><span class="sxs-lookup"><span data-stu-id="f3e10-108">LaunchUriAsync</span></span>**](https://msdn.microsoft.com/library/windows/apps/hh701476)
+-   [**<span data-ttu-id="f3e10-109">PreferredApplicationPackageFamilyName</span><span class="sxs-lookup"><span data-stu-id="f3e10-109">PreferredApplicationPackageFamilyName</span></span>**](https://msdn.microsoft.com/library/windows/apps/hh965482)
+-   [**<span data-ttu-id="f3e10-110">DesiredRemainingView</span><span class="sxs-lookup"><span data-stu-id="f3e10-110">DesiredRemainingView</span></span>**](https://msdn.microsoft.com/library/windows/apps/dn298314)
 
-<span data-ttu-id="408a7-113">アプリから Windows 設定アプリを起動する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="408a7-113">Learn how to launch the Windows Settings app from your app.</span></span> <span data-ttu-id="408a7-114">ここでは、**ms-settings:** URI スキームについて説明します。</span><span class="sxs-lookup"><span data-stu-id="408a7-114">This topic describes the **ms-settings:** URI scheme.</span></span> <span data-ttu-id="408a7-115">Windows 設定アプリを起動して特定の設定ページを表示するには、この URI スキームを使います。</span><span class="sxs-lookup"><span data-stu-id="408a7-115">Use this URI scheme to launch the Windows Settings app to specific settings pages.</span></span>
+<span data-ttu-id="f3e10-111">Windows 設定アプリを起動する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="f3e10-111">Learn how to launch the Windows Settings app.</span></span> <span data-ttu-id="f3e10-112">ここでは、**ms-settings:** URI スキームについて説明します。</span><span class="sxs-lookup"><span data-stu-id="f3e10-112">This topic describes the **ms-settings:** URI scheme.</span></span> <span data-ttu-id="f3e10-113">Windows 設定アプリを起動して特定の設定ページを表示するには、この URI スキームを使います。</span><span class="sxs-lookup"><span data-stu-id="f3e10-113">Use this URI scheme to launch the Windows Settings app to specific settings pages.</span></span>
 
-<span data-ttu-id="408a7-116">設定アプリの起動は、個人データにアクセスするアプリの開発の重要な部分です。</span><span class="sxs-lookup"><span data-stu-id="408a7-116">Launching to the Settings app is an important part of writing a privacy-aware app.</span></span> <span data-ttu-id="408a7-117">アプリが機密性の高いリソースにアクセスできない場合、そのリソースのプライバシー設定への便利なリンクをユーザーに提供することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="408a7-117">If your app can't access a sensitive resource, we recommend providing the user a convenient link to the privacy settings for that resource.</span></span> <span data-ttu-id="408a7-118">詳しくは、「[個人データにアクセスするアプリのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh768223)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="408a7-118">For more info, see [Guidelines for privacy-aware apps](https://msdn.microsoft.com/library/windows/apps/hh768223).</span></span>
+<span data-ttu-id="f3e10-114">設定アプリの起動は、個人データにアクセスするアプリの開発の重要な部分です。</span><span class="sxs-lookup"><span data-stu-id="f3e10-114">Launching to the Settings app is an important part of writing a privacy-aware app.</span></span> <span data-ttu-id="f3e10-115">アプリが機密性の高いリソースにアクセスできない場合、そのリソースのプライバシー設定への便利なリンクをユーザーに提供することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="f3e10-115">If your app can't access a sensitive resource, we recommend providing the user a convenient link to the privacy settings for that resource.</span></span> <span data-ttu-id="f3e10-116">詳しくは、「[個人データにアクセスするアプリのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh768223)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="f3e10-116">For more info, see [Guidelines for privacy-aware apps](https://msdn.microsoft.com/library/windows/apps/hh768223).</span></span>
 
-## <a name="how-to-launch-the-settings-app"></a><span data-ttu-id="408a7-119">設定アプリを起動する方法</span><span class="sxs-lookup"><span data-stu-id="408a7-119">How to launch the Settings app</span></span>
+## <a name="how-to-launch-the-settings-app"></a><span data-ttu-id="f3e10-117">設定アプリを起動する方法</span><span class="sxs-lookup"><span data-stu-id="f3e10-117">How to launch the Settings app</span></span>
 
-<span data-ttu-id="408a7-120">**設定**アプリを起動するには、次の例に示されているように `ms-settings:` URI スキームを使います。</span><span class="sxs-lookup"><span data-stu-id="408a7-120">To launch the **Settings** app, use the `ms-settings:` URI scheme as shown in the following examples.</span></span>
+<span data-ttu-id="f3e10-118">**設定**アプリを起動するには、次の例に示されているように `ms-settings:` URI スキームを使います。</span><span class="sxs-lookup"><span data-stu-id="f3e10-118">To launch the **Settings** app, use the `ms-settings:` URI scheme as shown in the following examples.</span></span>
 
-<span data-ttu-id="408a7-121">この例では、ハイパーリンク XAML コントロールで `ms-settings:privacy-microphone` URI を使って、マイクのプライバシー設定ページを起動します。</span><span class="sxs-lookup"><span data-stu-id="408a7-121">In this example, a Hyperlink XAML control is used to launch the privacy settings page for the microphone using the `ms-settings:privacy-microphone` URI.</span></span>
+<span data-ttu-id="f3e10-119">この例では、ハイパーリンク XAML コントロールで `ms-settings:privacy-microphone` URI を使って、マイクのプライバシー設定ページを起動します。</span><span class="sxs-lookup"><span data-stu-id="f3e10-119">In this example, a Hyperlink XAML control is used to launch the privacy settings page for the microphone using the `ms-settings:privacy-microphone` URI.</span></span>
 
 ```xml
-<!--Set Visibility to Visible when access to the microphone is denied -->  
+<!--Set Visibility to Visible when access to the microphone is denied -->
 <TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic"
                  Visibility="Collapsed" Margin="0,15,0,0" TextWrapping="Wrap" >
           <Run Text="This app is not able to access the microphone. Go to " />
@@ -47,672 +48,268 @@ ms.lasthandoff: 06/13/2017
 </TextBlock>
 ```
 
-<span data-ttu-id="408a7-122">また、アプリで [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) メソッドを呼び出し、コードで**設定**アプリを起動することもできます。</span><span class="sxs-lookup"><span data-stu-id="408a7-122">Alternatively, your app can call the [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) method to launch the **Settings** app from code.</span></span> <span data-ttu-id="408a7-123">次の例は、`ms-settings:privacy-webcam` URI を使って、カメラのプライバシー設定ページを起動する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="408a7-123">This example shows how to launch to the privacy settings page for the camera using the `ms-settings:privacy-webcam` URI.</span></span>
+<span data-ttu-id="f3e10-120">また、アプリで [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) メソッドを呼び出し、コードから**設定**アプリを起動することもできます。</span><span class="sxs-lookup"><span data-stu-id="f3e10-120">Alternatively, your app can call the [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) method to launch the **Settings** app.</span></span> <span data-ttu-id="f3e10-121">次の例は、`ms-settings:privacy-webcam` URI を使って、カメラのプライバシー設定ページを起動する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="f3e10-121">This example shows how to launch to the privacy settings page for the camera using the `ms-settings:privacy-webcam` URI.</span></span>
 
 ```cs
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
 ```
 
-<span data-ttu-id="408a7-124">上記のコードでは、カメラのプライバシー設定ページが起動されます。</span><span class="sxs-lookup"><span data-stu-id="408a7-124">The code above launches the privacy settings page for the camera:</span></span>
+<span data-ttu-id="f3e10-122">上記のコードでは、カメラのプライバシー設定ページが起動されます。</span><span class="sxs-lookup"><span data-stu-id="f3e10-122">The code above launches the privacy settings page for the camera:</span></span>
 
 ![カメラのプライバシー設定。](images/privacyawarenesssettingsapp.png)
 
-<span data-ttu-id="408a7-126">URI の起動について詳しくは、「[URI に応じた既定のアプリの起動](launch-default-app.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="408a7-126">For more info about launching URIs, see [Launch the default app for a URI](launch-default-app.md).</span></span>
+<span data-ttu-id="f3e10-124">URI の起動について詳しくは、「[URI に応じた既定のアプリの起動](launch-default-app.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="f3e10-124">For more info about launching URIs, see [Launch the default app for a URI](launch-default-app.md).</span></span>
 
-## <a name="ms-settings-uri-scheme-reference"></a><span data-ttu-id="408a7-127">ms-settings: URI スキーム リファレンス</span><span class="sxs-lookup"><span data-stu-id="408a7-127">ms-settings: URI scheme reference</span></span>
+## <a name="ms-settings-uri-scheme-reference"></a><span data-ttu-id="f3e10-125">ms-settings: URI スキーム リファレンス</span><span class="sxs-lookup"><span data-stu-id="f3e10-125">ms-settings: URI scheme reference</span></span>
 
-<span data-ttu-id="408a7-128">設定アプリのさまざまなページ開くには、次の URI を使います。</span><span class="sxs-lookup"><span data-stu-id="408a7-128">Use the following URIs to open various pages of the Settings app.</span></span>
+<span data-ttu-id="f3e10-126">設定アプリのさまざまなページ開くには、次の URI を使います。</span><span class="sxs-lookup"><span data-stu-id="f3e10-126">Use the following URIs to open various pages of the Settings app.</span></span>
 
-> <span data-ttu-id="408a7-129">設定ページを使用できるかどうかは、Windows の SKU によって異なることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="408a7-129">Note that whether a settings page is available varies by Windows SKU.</span></span> <span data-ttu-id="408a7-130">デスクトップの Windows 10 で利用可能な設定ページのすべてを Windows 10 Mobile で利用できるとは限りません。またその逆も同様です。</span><span class="sxs-lookup"><span data-stu-id="408a7-130">Not all settings page available on Windows 10 for desktop are available on Windows 10 Mobile, and vice-versa.</span></span> <span data-ttu-id="408a7-131">注の列には、ページが利用可能となるための追加の要件も記されています。</span><span class="sxs-lookup"><span data-stu-id="408a7-131">The notes column also captures additional requirements that must be met for a page to be available.</span></span>
+> <span data-ttu-id="f3e10-127">設定ページを使用できるかどうかは、Windows の SKU によって異なることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="f3e10-127">Note that whether a settings page is available varies by Windows SKU.</span></span> <span data-ttu-id="f3e10-128">デスクトップの Windows 10 で利用可能な設定ページのすべてを Windows 10 Mobile で利用できるとは限りません。またその逆も同様です。</span><span class="sxs-lookup"><span data-stu-id="f3e10-128">Not all settings page available on Windows 10 for desktop are available on Windows 10 Mobile, and vice-versa.</span></span> <span data-ttu-id="f3e10-129">注の列には、ページが使用可能となるための追加の要件も記されています。</span><span class="sxs-lookup"><span data-stu-id="f3e10-129">The notes column also captures additional requirements that must be met for a page to be available.</span></span>
 
-<table border="1">
- <tr>
-  <th><span data-ttu-id="408a7-132">カテゴリ</span><span class="sxs-lookup"><span data-stu-id="408a7-132">Category</span></span></th>
-  <th><span data-ttu-id="408a7-133">設定ページ</span><span class="sxs-lookup"><span data-stu-id="408a7-133">Settings page</span></span></th>
-  <th><span data-ttu-id="408a7-134">URI</span><span class="sxs-lookup"><span data-stu-id="408a7-134">URI</span></span></th>
-  <th><span data-ttu-id="408a7-135">注</span><span class="sxs-lookup"><span data-stu-id="408a7-135">Notes</span></span></th>
- </tr>
- <tr>
-  <td rowspan="6"><span data-ttu-id="408a7-136">アカウント</span><span class="sxs-lookup"><span data-stu-id="408a7-136">Accounts</span></span></td>
-  <td><span data-ttu-id="408a7-137">職場または学校にアクセスする</span><span class="sxs-lookup"><span data-stu-id="408a7-137">Access work or school</span></span></td>
-  <td><span data-ttu-id="408a7-138">ms-settings:workplace</span><span class="sxs-lookup"><span data-stu-id="408a7-138">ms-settings:workplace</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-139">メール & アプリのアカウント</span><span class="sxs-lookup"><span data-stu-id="408a7-139">Email & app accounts</span></span></td>
-  <td><span data-ttu-id="408a7-140">ms-settings:emailandaccounts</span><span class="sxs-lookup"><span data-stu-id="408a7-140">ms-settings:emailandaccounts</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-141">家族とその他のユーザー</span><span class="sxs-lookup"><span data-stu-id="408a7-141">Family & other people</span></span></td>
-  <td><span data-ttu-id="408a7-142">ms-settings:otherusers</span><span class="sxs-lookup"><span data-stu-id="408a7-142">ms-settings:otherusers</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-143">サインイン オプション</span><span class="sxs-lookup"><span data-stu-id="408a7-143">Sign-in options</span></span></td>
-  <td><span data-ttu-id="408a7-144">ms-settings:signinoptions</span><span class="sxs-lookup"><span data-stu-id="408a7-144">ms-settings:signinoptions</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-145">設定の同期</span><span class="sxs-lookup"><span data-stu-id="408a7-145">Sync your settings</span></span></td>
-  <td><span data-ttu-id="408a7-146">ms-settings:sync</span><span class="sxs-lookup"><span data-stu-id="408a7-146">ms-settings:sync</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-147">ユーザーの情報</span><span class="sxs-lookup"><span data-stu-id="408a7-147">Your info</span></span></td>
-  <td><span data-ttu-id="408a7-148">ms-settings:yourinfo</span><span class="sxs-lookup"><span data-stu-id="408a7-148">ms-settings:yourinfo</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td rowspan="4"><span data-ttu-id="408a7-149">アプリ</span><span class="sxs-lookup"><span data-stu-id="408a7-149">Apps</span></span></td>
-  <td><span data-ttu-id="408a7-150">アプリと機能</span><span class="sxs-lookup"><span data-stu-id="408a7-150">Apps & Features</span></span></td>
-  <td><span data-ttu-id="408a7-151">ms-settings:appsfeatures</span><span class="sxs-lookup"><span data-stu-id="408a7-151">ms-settings:appsfeatures</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-152">Web サイト用のアプリ</span><span class="sxs-lookup"><span data-stu-id="408a7-152">Apps for websites</span></span></td>
-  <td><span data-ttu-id="408a7-153">ms-settings:appsforwebsites</span><span class="sxs-lookup"><span data-stu-id="408a7-153">ms-settings:appsforwebsites</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-154">既定のアプリ</span><span class="sxs-lookup"><span data-stu-id="408a7-154">Default apps</span></span></td>
-  <td><span data-ttu-id="408a7-155">ms-settings:defaultapps</span><span class="sxs-lookup"><span data-stu-id="408a7-155">ms-settings:defaultapps</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-156">アプリと機能</span><span class="sxs-lookup"><span data-stu-id="408a7-156">Apps & features</span></span></td>
-  <td><span data-ttu-id="408a7-157">ms-settings:optionalfeatures</span><span class="sxs-lookup"><span data-stu-id="408a7-157">ms-settings:optionalfeatures</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td rowspan="12"><span data-ttu-id="408a7-158">デバイス</span><span class="sxs-lookup"><span data-stu-id="408a7-158">Devices</span></span></td>
-  <td><span data-ttu-id="408a7-159">USB</span><span class="sxs-lookup"><span data-stu-id="408a7-159">USB</span></span></td>
-  <td><span data-ttu-id="408a7-160">ms-settings:usb</span><span class="sxs-lookup"><span data-stu-id="408a7-160">ms-settings:usb</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-161">オーディオと音声認識</span><span class="sxs-lookup"><span data-stu-id="408a7-161">Audio and speech</span></span></td>
-  <td><span data-ttu-id="408a7-162">ms-settings:holographic-audio</span><span class="sxs-lookup"><span data-stu-id="408a7-162">ms-settings:holographic-audio</span></span></td>
-  <td><span data-ttu-id="408a7-163">Mixed Reality ポータル アプリ (Windows ストアで入手可能) がインストールされている場合のみ利用可能</span><span class="sxs-lookup"><span data-stu-id="408a7-163">Only available if the Mixed Reality Portal app is installed (available in the Windows Store)</span></span></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-164">自動再生</span><span class="sxs-lookup"><span data-stu-id="408a7-164">AutoPlay</span></span></td>
-  <td><span data-ttu-id="408a7-165">ms-settings:autoplay</span><span class="sxs-lookup"><span data-stu-id="408a7-165">ms-settings:autoplay</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-166">タッチパッド</span><span class="sxs-lookup"><span data-stu-id="408a7-166">Touchpad</span></span></td>
-  <td><span data-ttu-id="408a7-167">ms-settings:devices-touchpad</span><span class="sxs-lookup"><span data-stu-id="408a7-167">ms-settings:devices-touchpad</span></span></td>
-  <td><span data-ttu-id="408a7-168">タッチパッドのハードウェアが存在する場合にのみ利用可能</span><span class="sxs-lookup"><span data-stu-id="408a7-168">Only available if touchpad hardware is present</span></span></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-169">ペンと Windows Ink</span><span class="sxs-lookup"><span data-stu-id="408a7-169">Pen & Windows Ink</span></span></td>
-  <td><span data-ttu-id="408a7-170">ms-settings:pen</span><span class="sxs-lookup"><span data-stu-id="408a7-170">ms-settings:pen</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-171">プリンターとスキャナー</span><span class="sxs-lookup"><span data-stu-id="408a7-171">Printers & scanners</span></span></td>
-  <td><span data-ttu-id="408a7-172">ms-settings:printers</span><span class="sxs-lookup"><span data-stu-id="408a7-172">ms-settings:printers</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-173">入力</span><span class="sxs-lookup"><span data-stu-id="408a7-173">Typing</span></span></td>
-  <td><span data-ttu-id="408a7-174">ms-settings:typing</span><span class="sxs-lookup"><span data-stu-id="408a7-174">ms-settings:typing</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-175">ホイール</span><span class="sxs-lookup"><span data-stu-id="408a7-175">Wheel</span></span></td>
-  <td><span data-ttu-id="408a7-176">ms-settings:wheel</span><span class="sxs-lookup"><span data-stu-id="408a7-176">ms-settings:wheel</span></span></td>
-  <td><span data-ttu-id="408a7-177">Dial がペアリングされている場合のみ利用可能</span><span class="sxs-lookup"><span data-stu-id="408a7-177">Only available if Dial is paired</span></span></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-178">既定のカメラ</span><span class="sxs-lookup"><span data-stu-id="408a7-178">Default camera</span></span></td>
-  <td><span data-ttu-id="408a7-179">ms-settings:camera</span><span class="sxs-lookup"><span data-stu-id="408a7-179">ms-settings:camera</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-180">Bluetooth</span><span class="sxs-lookup"><span data-stu-id="408a7-180">Bluetooth</span></span></td>
-  <td><span data-ttu-id="408a7-181">ms-settings:bluetooth</span><span class="sxs-lookup"><span data-stu-id="408a7-181">ms-settings:bluetooth</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-182">接続されたデバイス</span><span class="sxs-lookup"><span data-stu-id="408a7-182">Connected Devices</span></span></td>
-  <td><span data-ttu-id="408a7-183">ms-settings:connecteddevices</span><span class="sxs-lookup"><span data-stu-id="408a7-183">ms-settings:connecteddevices</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-184">マウスとタッチパッド</span><span class="sxs-lookup"><span data-stu-id="408a7-184">Mouse & touchpad</span></span></td>
-  <td><span data-ttu-id="408a7-185">ms-settings:mousetouchpad</span><span class="sxs-lookup"><span data-stu-id="408a7-185">ms-settings:mousetouchpad</span></span></td>
-  <td><span data-ttu-id="408a7-186">タッチパット設定は、タッチパッドが搭載されているデバイスでのみ利用可能</span><span class="sxs-lookup"><span data-stu-id="408a7-186">Touchpad settings only available on devices that have a touchpad</span></span></td>
- </tr>
- <tr>
-  <td rowspan="7"><span data-ttu-id="408a7-187">コンピューターの簡単操作</span><span class="sxs-lookup"><span data-stu-id="408a7-187">Ease of Access</span></span></td>
-  <td><span data-ttu-id="408a7-188">ナレーター</span><span class="sxs-lookup"><span data-stu-id="408a7-188">Narrator</span></span></td>
-  <td><span data-ttu-id="408a7-189">ms-settings:easeofaccess-narrator</span><span class="sxs-lookup"><span data-stu-id="408a7-189">ms-settings:easeofaccess-narrator</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-190">拡大鏡</span><span class="sxs-lookup"><span data-stu-id="408a7-190">Magnifier</span></span></td>
-  <td><span data-ttu-id="408a7-191">ms-settings:easeofaccess-magnifier</span><span class="sxs-lookup"><span data-stu-id="408a7-191">ms-settings:easeofaccess-magnifier</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-192">ハイ コントラスト</span><span class="sxs-lookup"><span data-stu-id="408a7-192">High contrast</span></span></td>
-  <td><span data-ttu-id="408a7-193">ms-settings:easeofaccess-highcontrast</span><span class="sxs-lookup"><span data-stu-id="408a7-193">ms-settings:easeofaccess-highcontrast</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-194">字幕</span><span class="sxs-lookup"><span data-stu-id="408a7-194">Closed captions</span></span></td>
-  <td><span data-ttu-id="408a7-195">ms-settings:easeofaccess-closedcaptioning</span><span class="sxs-lookup"><span data-stu-id="408a7-195">ms-settings:easeofaccess-closedcaptioning</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-196">キーボード</span><span class="sxs-lookup"><span data-stu-id="408a7-196">Keyboard</span></span></td>
-  <td><span data-ttu-id="408a7-197">ms-settings:easeofaccess-keyboard</span><span class="sxs-lookup"><span data-stu-id="408a7-197">ms-settings:easeofaccess-keyboard</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-198">マウス</span><span class="sxs-lookup"><span data-stu-id="408a7-198">Mouse</span></span></td>
-  <td><span data-ttu-id="408a7-199">ms-settings:easeofaccess-mouse</span><span class="sxs-lookup"><span data-stu-id="408a7-199">ms-settings:easeofaccess-mouse</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-200">その他のオプション</span><span class="sxs-lookup"><span data-stu-id="408a7-200">Other options</span></span></td>
-  <td><span data-ttu-id="408a7-201">ms-settings:easeofaccess-otheroptions</span><span class="sxs-lookup"><span data-stu-id="408a7-201">ms-settings:easeofaccess-otheroptions</span></span></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-202">Extras</span><span class="sxs-lookup"><span data-stu-id="408a7-202">Extras</span></span></td>
-  <td><span data-ttu-id="408a7-203">Extras</span><span class="sxs-lookup"><span data-stu-id="408a7-203">Extras</span></span></td>
-  <td><span data-ttu-id="408a7-204">ms-settings:extras</span><span class="sxs-lookup"><span data-stu-id="408a7-204">ms-settings:extras</span></span></td>
-  <td><span data-ttu-id="408a7-205">(サード パーティなどによる) "設定アプリ" がインストールされている場合のみ利用可能</span><span class="sxs-lookup"><span data-stu-id="408a7-205">Only available if "settings apps" are installed (e.g. by 3rd party)</span></span></td>
- </tr>
- <tr>
-  <td rowspan="4"><span data-ttu-id="408a7-206">ゲーム</span><span class="sxs-lookup"><span data-stu-id="408a7-206">Gaming</span></span></td>
-  <td><span data-ttu-id="408a7-207">ブロードキャスト</span><span class="sxs-lookup"><span data-stu-id="408a7-207">Broadcasting</span></span></td>
-  <td><span data-ttu-id="408a7-208">ms-settings:gaming-broadcasting</span><span class="sxs-lookup"><span data-stu-id="408a7-208">ms-settings:gaming-broadcasting</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-209">ゲーム バー</span><span class="sxs-lookup"><span data-stu-id="408a7-209">Game bar</span></span></td>
-  <td><span data-ttu-id="408a7-210">ms-settings:gaming-gamebar</span><span class="sxs-lookup"><span data-stu-id="408a7-210">ms-settings:gaming-gamebar</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-211">ゲーム DVR</span><span class="sxs-lookup"><span data-stu-id="408a7-211">Game DVR</span></span></td>
-  <td><span data-ttu-id="408a7-212">ms-settings:gaming-gamedvr</span><span class="sxs-lookup"><span data-stu-id="408a7-212">ms-settings:gaming-gamedvr</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-213">ゲーム モード</span><span class="sxs-lookup"><span data-stu-id="408a7-213">Game Mode</span></span></td>
-  <td><span data-ttu-id="408a7-214">ms-settings:gaming-gamemode</span><span class="sxs-lookup"><span data-stu-id="408a7-214">ms-settings:gaming-gamemode</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-215">ホーム ページ</span><span class="sxs-lookup"><span data-stu-id="408a7-215">Home page</span></span></td>
-  <td><span data-ttu-id="408a7-216">設定のランディング ページ</span><span class="sxs-lookup"><span data-stu-id="408a7-216">Landing page for Settings</span></span></td>
-  <td><span data-ttu-id="408a7-217">ms-settings:</span><span class="sxs-lookup"><span data-stu-id="408a7-217">ms-settings:</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td rowspan="10"><span data-ttu-id="408a7-218">ネットワークとインターネット</span><span class="sxs-lookup"><span data-stu-id="408a7-218">Network & internet</span></span></td>
-  <td><span data-ttu-id="408a7-219">イーサネット</span><span class="sxs-lookup"><span data-stu-id="408a7-219">Ethernet</span></span></td>
-  <td><span data-ttu-id="408a7-220">ms-settings:network-ethernet</span><span class="sxs-lookup"><span data-stu-id="408a7-220">ms-settings:network-ethernet</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-221">VPN</span><span class="sxs-lookup"><span data-stu-id="408a7-221">VPN</span></span></td>
-  <td><span data-ttu-id="408a7-222">ms-settings:network-vpn</span><span class="sxs-lookup"><span data-stu-id="408a7-222">ms-settings:network-vpn</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-223">ダイヤルアップ</span><span class="sxs-lookup"><span data-stu-id="408a7-223">Dial-up</span></span></td>
-  <td><span data-ttu-id="408a7-224">ms-settings:network-dialup</span><span class="sxs-lookup"><span data-stu-id="408a7-224">ms-settings:network-dialup</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-225">DirectAccess</span><span class="sxs-lookup"><span data-stu-id="408a7-225">DirectAccess</span></span></td>
-  <td><span data-ttu-id="408a7-226">ms-settings:network-directaccess</span><span class="sxs-lookup"><span data-stu-id="408a7-226">ms-settings:network-directaccess</span></span></td>
-  <td><span data-ttu-id="408a7-227">DirectAccess が有効な場合のみ利用可能</span><span class="sxs-lookup"><span data-stu-id="408a7-227">Only available if DirectAccess is enabled</span></span></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-228">Wi-Fi 通話</span><span class="sxs-lookup"><span data-stu-id="408a7-228">Wi-Fi Calling</span></span></td>
-  <td><span data-ttu-id="408a7-229">ms-settings:network-wificalling</span><span class="sxs-lookup"><span data-stu-id="408a7-229">ms-settings:network-wificalling</span></span></td>
-  <td><span data-ttu-id="408a7-230">Wi-Fi 通話が有効な場合のみ利用可能</span><span class="sxs-lookup"><span data-stu-id="408a7-230">Only available if Wi-Fi calling is enabled</span></span></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-231">データ使用状況</span><span class="sxs-lookup"><span data-stu-id="408a7-231">Data usage</span></span></td>
-  <td><span data-ttu-id="408a7-232">ms-settings:datausage</span><span class="sxs-lookup"><span data-stu-id="408a7-232">ms-settings:datausage</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-233">携帯ネットワーク & SIM</span><span class="sxs-lookup"><span data-stu-id="408a7-233">Cellular & SIM</span></span></td>
-  <td><span data-ttu-id="408a7-234">ms-settings:network-cellular</span><span class="sxs-lookup"><span data-stu-id="408a7-234">ms-settings:network-cellular</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-235">モバイル ホットスポット</span><span class="sxs-lookup"><span data-stu-id="408a7-235">Mobile hotspot</span></span></td>
-  <td><span data-ttu-id="408a7-236">ms-settings:network-mobilehotspot</span><span class="sxs-lookup"><span data-stu-id="408a7-236">ms-settings:network-mobilehotspot</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-237">プロキシ</span><span class="sxs-lookup"><span data-stu-id="408a7-237">Proxy</span></span></td>
-  <td><span data-ttu-id="408a7-238">ms-settings:network-proxy</span><span class="sxs-lookup"><span data-stu-id="408a7-238">ms-settings:network-proxy</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-239">状態</span><span class="sxs-lookup"><span data-stu-id="408a7-239">Status</span></span></td>
-  <td><span data-ttu-id="408a7-240">ms-settings:network-status</span><span class="sxs-lookup"><span data-stu-id="408a7-240">ms-settings:network-status</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-241">既知のネットワークの管理</span><span class="sxs-lookup"><span data-stu-id="408a7-241">Manage known networks</span></span></td>
-  <td><span data-ttu-id="408a7-242">ms-settings:network-wifisettings</span><span class="sxs-lookup"><span data-stu-id="408a7-242">ms-settings:network-wifisettings</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td rowspan="3"><span data-ttu-id="408a7-243">ネットワークとワイヤレス</span><span class="sxs-lookup"><span data-stu-id="408a7-243">Network & wireless</span></span></td>
-  <td><span data-ttu-id="408a7-244">NFC</span><span class="sxs-lookup"><span data-stu-id="408a7-244">NFC</span></span></td>
-  <td><span data-ttu-id="408a7-245">ms-settings:nfctransactions</span><span class="sxs-lookup"><span data-stu-id="408a7-245">ms-settings:nfctransactions</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-246">Wi-Fi</span><span class="sxs-lookup"><span data-stu-id="408a7-246">Wi-Fi</span></span></td>
-  <td><span data-ttu-id="408a7-247">ms-settings:network-wifi</span><span class="sxs-lookup"><span data-stu-id="408a7-247">ms-settings:network-wifi</span></span></td>
-  <td><span data-ttu-id="408a7-248">デバイスに WiFi アダプターがある場合のみ利用可能</span><span class="sxs-lookup"><span data-stu-id="408a7-248">Only available if the device has a wifi adaptor</span></span></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-249">機内モード</span><span class="sxs-lookup"><span data-stu-id="408a7-249">Airplane mode</span></span></td>
-  <td><span data-ttu-id="408a7-250">ms-settings:network-airplanemode</span><span class="sxs-lookup"><span data-stu-id="408a7-250">ms-settings:network-airplanemode</span></span></td>
-  <td><span data-ttu-id="408a7-251">Windows 8.x では ms-settings:proximity を使用する</span><span class="sxs-lookup"><span data-stu-id="408a7-251">Use ms-settings:proximity on Windows 8.x</span></span></td>
- </tr>
- <tr>
-  <td rowspan="10"><span data-ttu-id="408a7-252">パーソナル設定</span><span class="sxs-lookup"><span data-stu-id="408a7-252">Personalization</span></span></td>
-  <td><span data-ttu-id="408a7-253">スタート</span><span class="sxs-lookup"><span data-stu-id="408a7-253">Start</span></span></td>
-  <td><span data-ttu-id="408a7-254">ms-settings:personalization-start</span><span class="sxs-lookup"><span data-stu-id="408a7-254">ms-settings:personalization-start</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-255">テーマ</span><span class="sxs-lookup"><span data-stu-id="408a7-255">Themes</span></span></td>
-  <td><span data-ttu-id="408a7-256">ms-settings:themes</span><span class="sxs-lookup"><span data-stu-id="408a7-256">ms-settings:themes</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-257">概要</span><span class="sxs-lookup"><span data-stu-id="408a7-257">Glance</span></span></td>
-  <td><span data-ttu-id="408a7-258">ms-settings:personalization-glance</span><span class="sxs-lookup"><span data-stu-id="408a7-258">ms-settings:personalization-glance</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-259">ナビゲーション バー</span><span class="sxs-lookup"><span data-stu-id="408a7-259">Navigation bar</span></span></td>
-  <td><span data-ttu-id="408a7-260">ms-settings:personalization-navbar</span><span class="sxs-lookup"><span data-stu-id="408a7-260">ms-settings:personalization-navbar</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-261">個人用設定 (カテゴリ)</span><span class="sxs-lookup"><span data-stu-id="408a7-261">Personalization (category)</span></span></td>
-   <td><span data-ttu-id="408a7-262">ms-settings:personalization</span><span class="sxs-lookup"><span data-stu-id="408a7-262">ms-settings:personalization</span></span></td>
-   <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-263">背景</span><span class="sxs-lookup"><span data-stu-id="408a7-263">Background</span></span></td>
-   <td><span data-ttu-id="408a7-264">ms-settings:personalization-background</span><span class="sxs-lookup"><span data-stu-id="408a7-264">ms-settings:personalization-background</span></span></td>
-   <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-265">画面の色</span><span class="sxs-lookup"><span data-stu-id="408a7-265">Colors</span></span></td>
-   <td><span data-ttu-id="408a7-266">ms-settings:personalization-colors</span><span class="sxs-lookup"><span data-stu-id="408a7-266">ms-settings:personalization-colors</span></span></td>
-   <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-267">サウンド</span><span class="sxs-lookup"><span data-stu-id="408a7-267">Sounds</span></span></td>
-   <td><span data-ttu-id="408a7-268">ms-settings:sounds</span><span class="sxs-lookup"><span data-stu-id="408a7-268">ms-settings:sounds</span></span></td>
-   <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-269">ロック画面</span><span class="sxs-lookup"><span data-stu-id="408a7-269">Lock screen</span></span></td>
-   <td><span data-ttu-id="408a7-270">ms-settings:lockscreen</span><span class="sxs-lookup"><span data-stu-id="408a7-270">ms-settings:lockscreen</span></span></td>
-   <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-271">タスク バー</span><span class="sxs-lookup"><span data-stu-id="408a7-271">Task Bar</span></span></td>
-   <td><span data-ttu-id="408a7-272">ms-settings:taskbar</span><span class="sxs-lookup"><span data-stu-id="408a7-272">ms-settings:taskbar</span></span></td>
-   <td></td>
- </tr>
- <tr>
-  <td rowspan="22"><span data-ttu-id="408a7-273">プライバシー</span><span class="sxs-lookup"><span data-stu-id="408a7-273">Privacy</span></span></td>
-  <td><span data-ttu-id="408a7-274">アプリの診断</span><span class="sxs-lookup"><span data-stu-id="408a7-274">App diagnostics</span></span></td>
-   <td><span data-ttu-id="408a7-275">ms-settings:privacy-appdiagnostics</span><span class="sxs-lookup"><span data-stu-id="408a7-275">ms-settings:privacy-appdiagnostics</span></span></td>
-   <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-276">通知</span><span class="sxs-lookup"><span data-stu-id="408a7-276">Notifications</span></span></td>
-   <td><span data-ttu-id="408a7-277">ms-settings:privacy-notifications</span><span class="sxs-lookup"><span data-stu-id="408a7-277">ms-settings:privacy-notifications</span></span></td>
-   <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-278">タスク</span><span class="sxs-lookup"><span data-stu-id="408a7-278">Tasks</span></span></td>
-   <td><span data-ttu-id="408a7-279">ms-settings:privacy-tasks</span><span class="sxs-lookup"><span data-stu-id="408a7-279">ms-settings:privacy-tasks</span></span></td>
-   <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-280">全般</span><span class="sxs-lookup"><span data-stu-id="408a7-280">General</span></span></td>
-   <td><span data-ttu-id="408a7-281">ms-settings:privacy-general</span><span class="sxs-lookup"><span data-stu-id="408a7-281">ms-settings:privacy-general</span></span></td>
-   <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-282">アクセサリ用アプリ</span><span class="sxs-lookup"><span data-stu-id="408a7-282">Accessory apps</span></span></td>
-   <td><span data-ttu-id="408a7-283">ms-settings:privacy-accessoryapps</span><span class="sxs-lookup"><span data-stu-id="408a7-283">ms-settings:privacy-accessoryapps</span></span></td>
-   <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-284">広告識別子</span><span class="sxs-lookup"><span data-stu-id="408a7-284">Advertising ID</span></span></td>
-   <td><span data-ttu-id="408a7-285">ms-settings:privacy-advertisingid</span><span class="sxs-lookup"><span data-stu-id="408a7-285">ms-settings:privacy-advertisingid</span></span></td>
-   <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-286">通話</span><span class="sxs-lookup"><span data-stu-id="408a7-286">Phone calls</span></span></td>
-   <td><span data-ttu-id="408a7-287">ms-settings:privacy-phonecall</span><span class="sxs-lookup"><span data-stu-id="408a7-287">ms-settings:privacy-phonecall</span></span></td>
-   <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-288">場所</span><span class="sxs-lookup"><span data-stu-id="408a7-288">Location</span></span></td>
-   <td><span data-ttu-id="408a7-289">ms-settings:privacy-location</span><span class="sxs-lookup"><span data-stu-id="408a7-289">ms-settings:privacy-location</span></span></td>
-   <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-290">カメラ</span><span class="sxs-lookup"><span data-stu-id="408a7-290">Camera</span></span></td>
-   <td><span data-ttu-id="408a7-291">ms-settings:privacy-webcam</span><span class="sxs-lookup"><span data-stu-id="408a7-291">ms-settings:privacy-webcam</span></span></td>
-   <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-292">マイク</span><span class="sxs-lookup"><span data-stu-id="408a7-292">Microphone</span></span></td>
-   <td><span data-ttu-id="408a7-293">ms-settings:privacy-microphone</span><span class="sxs-lookup"><span data-stu-id="408a7-293">ms-settings:privacy-microphone</span></span></td>
-   <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-294">モーション</span><span class="sxs-lookup"><span data-stu-id="408a7-294">Motion</span></span></td>
-   <td><span data-ttu-id="408a7-295">ms-settings:privacy-motion</span><span class="sxs-lookup"><span data-stu-id="408a7-295">ms-settings:privacy-motion</span></span></td>
-   <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-296">音声認識、手描き入力、入力の設定</span><span class="sxs-lookup"><span data-stu-id="408a7-296">Speech, inking & typing</span></span></td>
-   <td><span data-ttu-id="408a7-297">ms-settings:privacy-speechtyping</span><span class="sxs-lookup"><span data-stu-id="408a7-297">ms-settings:privacy-speechtyping</span></span></td>
-   <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-298">アカウント情報</span><span class="sxs-lookup"><span data-stu-id="408a7-298">Account info</span></span></td>
-   <td><span data-ttu-id="408a7-299">ms-settings:privacy-accountinfo</span><span class="sxs-lookup"><span data-stu-id="408a7-299">ms-settings:privacy-accountinfo</span></span></td>
-   <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-300">連絡先</span><span class="sxs-lookup"><span data-stu-id="408a7-300">Contacts</span></span></td>
-   <td><span data-ttu-id="408a7-301">ms-settings:privacy-contacts</span><span class="sxs-lookup"><span data-stu-id="408a7-301">ms-settings:privacy-contacts</span></span></td>
-   <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-302">カレンダー</span><span class="sxs-lookup"><span data-stu-id="408a7-302">Calendar</span></span></td>
-   <td><span data-ttu-id="408a7-303">ms-settings:privacy-calendar</span><span class="sxs-lookup"><span data-stu-id="408a7-303">ms-settings:privacy-calendar</span></span></td>
-   <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-304">通話履歴</span><span class="sxs-lookup"><span data-stu-id="408a7-304">Call history</span></span></td>
-   <td><span data-ttu-id="408a7-305">ms-settings:privacy-callhistory</span><span class="sxs-lookup"><span data-stu-id="408a7-305">ms-settings:privacy-callhistory</span></span></td>
-   <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-306">メール</span><span class="sxs-lookup"><span data-stu-id="408a7-306">Email</span></span></td>
-  <td><span data-ttu-id="408a7-307">ms-settings:privacy-email</span><span class="sxs-lookup"><span data-stu-id="408a7-307">ms-settings:privacy-email</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-308">メッセージング</span><span class="sxs-lookup"><span data-stu-id="408a7-308">Messaging</span></span></td>
-    <td><span data-ttu-id="408a7-309">ms-settings:privacy-messaging</span><span class="sxs-lookup"><span data-stu-id="408a7-309">ms-settings:privacy-messaging</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-310">無線</span><span class="sxs-lookup"><span data-stu-id="408a7-310">Radios</span></span></td>
-    <td><span data-ttu-id="408a7-311">ms-settings:privacy-radios</span><span class="sxs-lookup"><span data-stu-id="408a7-311">ms-settings:privacy-radios</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-312">バックグラウンド アプリ</span><span class="sxs-lookup"><span data-stu-id="408a7-312">Background Apps</span></span></td>
-    <td><span data-ttu-id="408a7-313">ms-settings:privacy-backgroundapps</span><span class="sxs-lookup"><span data-stu-id="408a7-313">ms-settings:privacy-backgroundapps</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-314">他のデバイス</span><span class="sxs-lookup"><span data-stu-id="408a7-314">Other devices</span></span></td>
-    <td><span data-ttu-id="408a7-315">ms-settings:privacy-customdevices</span><span class="sxs-lookup"><span data-stu-id="408a7-315">ms-settings:privacy-customdevices</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-316">フィードバックと診断</span><span class="sxs-lookup"><span data-stu-id="408a7-316">Feedback & diagnostics</span></span></td>
-    <td><span data-ttu-id="408a7-317">ms-settings:privacy-feedback</span><span class="sxs-lookup"><span data-stu-id="408a7-317">ms-settings:privacy-feedback</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td rowspan="5"><span data-ttu-id="408a7-318">Surface Hub</span><span class="sxs-lookup"><span data-stu-id="408a7-318">Surface Hub</span></span></td>
-  <td><span data-ttu-id="408a7-319">アカウント</span><span class="sxs-lookup"><span data-stu-id="408a7-319">Accounts</span></span></td>
-    <td><span data-ttu-id="408a7-320">ms-settings:surfacehub-accounts</span><span class="sxs-lookup"><span data-stu-id="408a7-320">ms-settings:surfacehub-accounts</span></span></td>
-      <td></td>
-  </tr>
-  <tr>
-    <td><span data-ttu-id="408a7-321">チーム会議</span><span class="sxs-lookup"><span data-stu-id="408a7-321">Team Conferencing</span></span></td>
-      <td><span data-ttu-id="408a7-322">ms-settings:surfacehub-calling</span><span class="sxs-lookup"><span data-stu-id="408a7-322">ms-settings:surfacehub-calling</span></span></td>
-      <td></td>
-  </tr>
-  <tr>
-    <td><span data-ttu-id="408a7-323">チーム デバイス管理</span><span class="sxs-lookup"><span data-stu-id="408a7-323">Team device management</span></span></td>
-      <td><span data-ttu-id="408a7-324">ms-settings:surfacehub-devicemanagenent</span><span class="sxs-lookup"><span data-stu-id="408a7-324">ms-settings:surfacehub-devicemanagenent</span></span></td>
-      <td></td>
-  </tr>
-  <tr>
-    <td><span data-ttu-id="408a7-325">セッションのクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="408a7-325">Session cleanup</span></span></td>
-      <td><span data-ttu-id="408a7-326">ms-settings:surfacehub-sessioncleanup</span><span class="sxs-lookup"><span data-stu-id="408a7-326">ms-settings:surfacehub-sessioncleanup</span></span></td>
-      <td></td>
-  </tr>
-  <tr>
-    <td><span data-ttu-id="408a7-327">ようこそ画面</span><span class="sxs-lookup"><span data-stu-id="408a7-327">Welcome screen</span></span></td>
-      <td><span data-ttu-id="408a7-328">ms-settings:surfacehub-welcome</span><span class="sxs-lookup"><span data-stu-id="408a7-328">ms-settings:surfacehub-welcome</span></span></td>
-      <td></td>
-  </tr>
-    <td rowspan="19"><span data-ttu-id="408a7-329">システム</span><span class="sxs-lookup"><span data-stu-id="408a7-329">System</span></span></td>
-    <td><span data-ttu-id="408a7-330">共有エクスペリエンス</span><span class="sxs-lookup"><span data-stu-id="408a7-330">Shared experiences</span></span></td>
-      <td><span data-ttu-id="408a7-331">ms-settings:crossdevice</span><span class="sxs-lookup"><span data-stu-id="408a7-331">ms-settings:crossdevice</span></span></td>
-    <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-332">ディスプレイ</span><span class="sxs-lookup"><span data-stu-id="408a7-332">Display</span></span></td>
-    <td><span data-ttu-id="408a7-333">ms-settings:display</span><span class="sxs-lookup"><span data-stu-id="408a7-333">ms-settings:display</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-334">マルチタスク</span><span class="sxs-lookup"><span data-stu-id="408a7-334">Multitasking</span></span></td>
-    <td><span data-ttu-id="408a7-335">ms-settings:multitasking</span><span class="sxs-lookup"><span data-stu-id="408a7-335">ms-settings:multitasking</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-336">この PC へのプロジェクション</span><span class="sxs-lookup"><span data-stu-id="408a7-336">Projecting to this PC</span></span></td>
-    <td><span data-ttu-id="408a7-337">ms-settings:project</span><span class="sxs-lookup"><span data-stu-id="408a7-337">ms-settings:project</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-338">タブレット モード</span><span class="sxs-lookup"><span data-stu-id="408a7-338">Tablet mode</span></span></td>
-    <td><span data-ttu-id="408a7-339">ms-settings:tabletmode</span><span class="sxs-lookup"><span data-stu-id="408a7-339">ms-settings:tabletmode</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-340">タスク バー</span><span class="sxs-lookup"><span data-stu-id="408a7-340">Taskbar</span></span></td>
-    <td><span data-ttu-id="408a7-341">ms-settings:taskbar</span><span class="sxs-lookup"><span data-stu-id="408a7-341">ms-settings:taskbar</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-342">電話</span><span class="sxs-lookup"><span data-stu-id="408a7-342">Phone</span></span></td>
-    <td><span data-ttu-id="408a7-343">ms-settings:phone-defaultapps</span><span class="sxs-lookup"><span data-stu-id="408a7-343">ms-settings:phone-defaultapps</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-344">ディスプレイ</span><span class="sxs-lookup"><span data-stu-id="408a7-344">Display</span></span></td>
-    <td><span data-ttu-id="408a7-345">ms-settings:screenrotation</span><span class="sxs-lookup"><span data-stu-id="408a7-345">ms-settings:screenrotation</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-346">通知とアクション</span><span class="sxs-lookup"><span data-stu-id="408a7-346">Notifications & actions</span></span></td>
-    <td><span data-ttu-id="408a7-347">ms-settings:notifications</span><span class="sxs-lookup"><span data-stu-id="408a7-347">ms-settings:notifications</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-348">電話</span><span class="sxs-lookup"><span data-stu-id="408a7-348">Phone</span></span></td>
-    <td><span data-ttu-id="408a7-349">ms-settings:phone</span><span class="sxs-lookup"><span data-stu-id="408a7-349">ms-settings:phone</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-350">メッセージング</span><span class="sxs-lookup"><span data-stu-id="408a7-350">Messaging</span></span></td>
-    <td><span data-ttu-id="408a7-351">ms-settings:messaging</span><span class="sxs-lookup"><span data-stu-id="408a7-351">ms-settings:messaging</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-352">バッテリー節約機能</span><span class="sxs-lookup"><span data-stu-id="408a7-352">Battery Saver</span></span></td>
-  <td><span data-ttu-id="408a7-353">ms-settings:batterysaver</span><span class="sxs-lookup"><span data-stu-id="408a7-353">ms-settings:batterysaver</span></span></td>
-  <td><span data-ttu-id="408a7-354">タブレットなど、バッテリーを搭載したデバイスでのみ利用可能</span><span class="sxs-lookup"><span data-stu-id="408a7-354">Only available on devices that have a battery, such as a tablet</span></span></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-355">バッテリーの使用状況</span><span class="sxs-lookup"><span data-stu-id="408a7-355">Battery use</span></span></td>
-  <td><span data-ttu-id="408a7-356">ms-settings:batterysaver-usagedetails</span><span class="sxs-lookup"><span data-stu-id="408a7-356">ms-settings:batterysaver-usagedetails</span></span></td>
-  <td><span data-ttu-id="408a7-357">タブレットなど、バッテリーを搭載したデバイスでのみ利用可能</span><span class="sxs-lookup"><span data-stu-id="408a7-357">Only available on devices that have a battery, such as a tablet</span></span></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-358">電源とスリープ</span><span class="sxs-lookup"><span data-stu-id="408a7-358">Power & sleep</span></span></td>
-  <td><span data-ttu-id="408a7-359">ms-settings:powersleep</span><span class="sxs-lookup"><span data-stu-id="408a7-359">ms-settings:powersleep</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-360">バージョン情報</span><span class="sxs-lookup"><span data-stu-id="408a7-360">About</span></span></td>
-    <td><span data-ttu-id="408a7-361">ms-settings:about</span><span class="sxs-lookup"><span data-stu-id="408a7-361">ms-settings:about</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-362">ストレージ</span><span class="sxs-lookup"><span data-stu-id="408a7-362">Storage</span></span></td>
-    <td><span data-ttu-id="408a7-363">ms-settings:storagesense</span><span class="sxs-lookup"><span data-stu-id="408a7-363">ms-settings:storagesense</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-364">ストレージ センサー</span><span class="sxs-lookup"><span data-stu-id="408a7-364">Storage Sense</span></span></td>
-    <td><span data-ttu-id="408a7-365">ms-settings:storagepolicies</span><span class="sxs-lookup"><span data-stu-id="408a7-365">ms-settings:storagepolicies</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-366">暗号化</span><span class="sxs-lookup"><span data-stu-id="408a7-366">Encryption</span></span></td>
-    <td><span data-ttu-id="408a7-367">ms-settings:deviceencryption</span><span class="sxs-lookup"><span data-stu-id="408a7-367">ms-settings:deviceencryption</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-368">オフライン マップ</span><span class="sxs-lookup"><span data-stu-id="408a7-368">Offline Maps</span></span></td>
-    <td><span data-ttu-id="408a7-369">ms-settings:maps</span><span class="sxs-lookup"><span data-stu-id="408a7-369">ms-settings:maps</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td rowspan="5"><span data-ttu-id="408a7-370">時刻と言語</span><span class="sxs-lookup"><span data-stu-id="408a7-370">Time and language</span></span></td>
-  <td><span data-ttu-id="408a7-371">日付と時刻</span><span class="sxs-lookup"><span data-stu-id="408a7-371">Date & time</span></span></td>
-    <td><span data-ttu-id="408a7-372">ms-settings:dateandtime</span><span class="sxs-lookup"><span data-stu-id="408a7-372">ms-settings:dateandtime</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-373">地域と言語</span><span class="sxs-lookup"><span data-stu-id="408a7-373">Region & language</span></span></td>
-    <td><span data-ttu-id="408a7-374">ms-settings:regionlanguage</span><span class="sxs-lookup"><span data-stu-id="408a7-374">ms-settings:regionlanguage</span></span></td>
-  <td></td>
- </tr>
- <tr>
-     <td><span data-ttu-id="408a7-375">音声認識の言語</span><span class="sxs-lookup"><span data-stu-id="408a7-375">Speech Language</span></span></td>
-     <td><span data-ttu-id="408a7-376">ms-settings:speech</span><span class="sxs-lookup"><span data-stu-id="408a7-376">ms-settings:speech</span></span></td>
-     <td></td>
- </tr>
- <tr>
-     <td><span data-ttu-id="408a7-377">Pinyin キーボード</span><span class="sxs-lookup"><span data-stu-id="408a7-377">Pinyin keyboard</span></span></td>
-     <td><span data-ttu-id="408a7-378">ms-settings:regionlanguage-chsime-pinyin</span><span class="sxs-lookup"><span data-stu-id="408a7-378">ms-settings:regionlanguage-chsime-pinyin</span></span></td>
-     <td><span data-ttu-id="408a7-379">Microsoft Pinyin IME がインストールされている場合に利用可能</span><span class="sxs-lookup"><span data-stu-id="408a7-379">Available if the Microsoft Pinyin input method editor is installed</span></span></td>
- </tr>
- <tr>
-     <td><span data-ttu-id="408a7-380">Wubi 入力モード</span><span class="sxs-lookup"><span data-stu-id="408a7-380">Wubi input mode</span></span></td>
-     <td><span data-ttu-id="408a7-381">ms-settings:regionlanguage-chsime-wubi</span><span class="sxs-lookup"><span data-stu-id="408a7-381">ms-settings:regionlanguage-chsime-wubi</span></span></td>
-     <td><span data-ttu-id="408a7-382">Microsoft Wubi IME がインストールされている場合に利用可能</span><span class="sxs-lookup"><span data-stu-id="408a7-382">Available if the Microsoft Wubi input method editor is installed</span></span></td>
- </tr>
- <tr>
-  <td rowspan="13"><span data-ttu-id="408a7-383">更新とセキュリティ</span><span class="sxs-lookup"><span data-stu-id="408a7-383">Update & security</span></span></td>
-  <td><span data-ttu-id="408a7-384">Windows Hello セットアップ</span><span class="sxs-lookup"><span data-stu-id="408a7-384">Windows Hello setup</span></span></td>
-    <td><span data-ttu-id="408a7-385">ms-settings:signinoptions-launchfaceenrollment</span><span class="sxs-lookup"><span data-stu-id="408a7-385">ms-settings:signinoptions-launchfaceenrollment</span></span><br><span data-ttu-id="408a7-386">ms-settings:signinoptions-launchfingerprintenrollment</span><span class="sxs-lookup"><span data-stu-id="408a7-386">ms-settings:signinoptions-launchfingerprintenrollment</span></span></td>
-  </tr>
-  <tr>
-    <td><span data-ttu-id="408a7-387">バックアップ</span><span class="sxs-lookup"><span data-stu-id="408a7-387">Backup</span></span></td>
-      <td><span data-ttu-id="408a7-388">ms-settings:backup</span><span class="sxs-lookup"><span data-stu-id="408a7-388">ms-settings:backup</span></span></td>
-    <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-389">デバイスの検索</span><span class="sxs-lookup"><span data-stu-id="408a7-389">Find My Device</span></span></td>
-    <td><span data-ttu-id="408a7-390">ms-settings:findmydevice</span><span class="sxs-lookup"><span data-stu-id="408a7-390">ms-settings:findmydevice</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-391">Windows Insider Program</span><span class="sxs-lookup"><span data-stu-id="408a7-391">Windows Insider Program</span></span></td>
-  <td><span data-ttu-id="408a7-392">ms-settings:windowsinsider</span><span class="sxs-lookup"><span data-stu-id="408a7-392">ms-settings:windowsinsider</span></span></td>
-  <td><span data-ttu-id="408a7-393">ユーザーが Windows Insider Program に登録されている場合のみ利用可能</span><span class="sxs-lookup"><span data-stu-id="408a7-393">Only present if user is enrolled in WIP</span></span></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-394">Windows Update</span><span class="sxs-lookup"><span data-stu-id="408a7-394">Windows Update</span></span></td>
-  <td><span data-ttu-id="408a7-395">ms-settings:windowsupdate</span><span class="sxs-lookup"><span data-stu-id="408a7-395">ms-settings:windowsupdate</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-396">Windows Update</span><span class="sxs-lookup"><span data-stu-id="408a7-396">Windows Update</span></span></td>
-    <td><span data-ttu-id="408a7-397">ms-settings:windowsupdate-history</span><span class="sxs-lookup"><span data-stu-id="408a7-397">ms-settings:windowsupdate-history</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-398">Windows Update</span><span class="sxs-lookup"><span data-stu-id="408a7-398">Windows Update</span></span></td>
-    <td><span data-ttu-id="408a7-399">ms-settings:windowsupdate-options</span><span class="sxs-lookup"><span data-stu-id="408a7-399">ms-settings:windowsupdate-options</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-400">Windows Update</span><span class="sxs-lookup"><span data-stu-id="408a7-400">Windows Update</span></span></td>
-    <td><span data-ttu-id="408a7-401">ms-settings:windowsupdate-restartoptions</span><span class="sxs-lookup"><span data-stu-id="408a7-401">ms-settings:windowsupdate-restartoptions</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-402">Windows Update</span><span class="sxs-lookup"><span data-stu-id="408a7-402">Windows Update</span></span></td>
-    <td><span data-ttu-id="408a7-403">ms-settings:windowsupdate-action</span><span class="sxs-lookup"><span data-stu-id="408a7-403">ms-settings:windowsupdate-action</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-404">ライセンス認証</span><span class="sxs-lookup"><span data-stu-id="408a7-404">Activation</span></span></td>
-    <td><span data-ttu-id="408a7-405">ms-settings:activation</span><span class="sxs-lookup"><span data-stu-id="408a7-405">ms-settings:activation</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-406">回復</span><span class="sxs-lookup"><span data-stu-id="408a7-406">Recovery</span></span></td>
-    <td><span data-ttu-id="408a7-407">ms-settings:recovery</span><span class="sxs-lookup"><span data-stu-id="408a7-407">ms-settings:recovery</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-408">トラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="408a7-408">Troubleshoot</span></span></td>
-    <td><span data-ttu-id="408a7-409">ms-settings:troubleshoot</span><span class="sxs-lookup"><span data-stu-id="408a7-409">ms-settings:troubleshoot</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-410">Windows Defender</span><span class="sxs-lookup"><span data-stu-id="408a7-410">Windows Defender</span></span></td>
-    <td><span data-ttu-id="408a7-411">ms-settings:windowsdefender</span><span class="sxs-lookup"><span data-stu-id="408a7-411">ms-settings:windowsdefender</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-412">開発者向け</span><span class="sxs-lookup"><span data-stu-id="408a7-412">For developers</span></span></td>
-    <td><span data-ttu-id="408a7-413">ms-settings:developers</span><span class="sxs-lookup"><span data-stu-id="408a7-413">ms-settings:developers</span></span></td>
-  <td></td>
- </tr>
- <tr>
-  <td rowspan="2"><span data-ttu-id="408a7-414">ユーザー アカウント</span><span class="sxs-lookup"><span data-stu-id="408a7-414">User  Accounts</span></span></td>
-  <td><span data-ttu-id="408a7-415">Windows Anywhere</span><span class="sxs-lookup"><span data-stu-id="408a7-415">Windows Anywhere</span></span></td>
-  <td><span data-ttu-id="408a7-416">ms-settings:windowsanywhere</span><span class="sxs-lookup"><span data-stu-id="408a7-416">ms-settings:windowsanywhere</span></span></td>
-  <td><span data-ttu-id="408a7-417">デバイスが Windows Anywhere に対応している必要がある</span><span class="sxs-lookup"><span data-stu-id="408a7-417">Device must be Windows Anywhere-capable</span></span></td>
- </tr>
- <tr>
-  <td><span data-ttu-id="408a7-418">プロビジョニング</span><span class="sxs-lookup"><span data-stu-id="408a7-418">Provisioning</span></span></td>
-  <td><span data-ttu-id="408a7-419">ms-settings:workplace-provisioning</span><span class="sxs-lookup"><span data-stu-id="408a7-419">ms-settings:workplace-provisioning</span></span></td>
-  <td><span data-ttu-id="408a7-420">企業でプロビジョニング パッケージが展開されている場合のみ利用可能</span><span class="sxs-lookup"><span data-stu-id="408a7-420">Only available if enterprise has deployed a provisioning package</span></span></td>
- </tr>
-</table><br/>  
+## <a name="accounts"></a><span data-ttu-id="f3e10-130">アカウント</span><span class="sxs-lookup"><span data-stu-id="f3e10-130">Accounts</span></span>
+
+|<span data-ttu-id="f3e10-131">［設定］ページ</span><span class="sxs-lookup"><span data-stu-id="f3e10-131">Settings Page</span></span>| <span data-ttu-id="f3e10-132">URI</span><span class="sxs-lookup"><span data-stu-id="f3e10-132">URI</span></span> |
+|-------------|-----|
+|<span data-ttu-id="f3e10-133">職場または学校にアクセスする</span><span class="sxs-lookup"><span data-stu-id="f3e10-133">Access work or school</span></span> | <span data-ttu-id="f3e10-134">ms-settings:workplace</span><span class="sxs-lookup"><span data-stu-id="f3e10-134">ms-settings:workplace</span></span> |
+|<span data-ttu-id="f3e10-135">メール & アプリのアカウント</span><span class="sxs-lookup"><span data-stu-id="f3e10-135">Email & app accounts</span></span>  | <span data-ttu-id="f3e10-136">ms-settings:emailandaccounts</span><span class="sxs-lookup"><span data-stu-id="f3e10-136">ms-settings:emailandaccounts</span></span> |
+|<span data-ttu-id="f3e10-137">家族とその他のユーザー</span><span class="sxs-lookup"><span data-stu-id="f3e10-137">Family & other people</span></span> | <span data-ttu-id="f3e10-138">ms-settings:otherusers</span><span class="sxs-lookup"><span data-stu-id="f3e10-138">ms-settings:otherusers</span></span> |
+|<span data-ttu-id="f3e10-139">サインイン オプション</span><span class="sxs-lookup"><span data-stu-id="f3e10-139">Sign-in options</span></span> | <span data-ttu-id="f3e10-140">ms-settings:signinoptions</span><span class="sxs-lookup"><span data-stu-id="f3e10-140">ms-settings:signinoptions</span></span><br><span data-ttu-id="f3e10-141">ms-settings:signinoptions-dynamiclock</span><span class="sxs-lookup"><span data-stu-id="f3e10-141">ms-settings:signinoptions-dynamiclock</span></span> |
+|<span data-ttu-id="f3e10-142">設定の同期</span><span class="sxs-lookup"><span data-stu-id="f3e10-142">Sync your settings</span></span> | <span data-ttu-id="f3e10-143">ms-settings:sync</span><span class="sxs-lookup"><span data-stu-id="f3e10-143">ms-settings:sync</span></span> |
+|<span data-ttu-id="f3e10-144">ユーザーの情報</span><span class="sxs-lookup"><span data-stu-id="f3e10-144">Your info</span></span> | <span data-ttu-id="f3e10-145">ms-settings:yourinfo</span><span class="sxs-lookup"><span data-stu-id="f3e10-145">ms-settings:yourinfo</span></span> |
+
+## <a name="apps"></a><span data-ttu-id="f3e10-146">Apps</span><span class="sxs-lookup"><span data-stu-id="f3e10-146">Apps</span></span>
+
+|<span data-ttu-id="f3e10-147">［設定］ページ</span><span class="sxs-lookup"><span data-stu-id="f3e10-147">Settings Page</span></span>| <span data-ttu-id="f3e10-148">URI</span><span class="sxs-lookup"><span data-stu-id="f3e10-148">URI</span></span> |
+|-------------|-----|
+| <span data-ttu-id="f3e10-149">アプリと機能</span><span class="sxs-lookup"><span data-stu-id="f3e10-149">Apps & Features</span></span> | <span data-ttu-id="f3e10-150">ms-settings:appsfeatures</span><span class="sxs-lookup"><span data-stu-id="f3e10-150">ms-settings:appsfeatures</span></span> |
+| <span data-ttu-id="f3e10-151">アプリの機能</span><span class="sxs-lookup"><span data-stu-id="f3e10-151">App features</span></span> | <span data-ttu-id="f3e10-152">ms-settings:appsfeatures-app (アプリのリセット、アドオンの管理およびダウンロード可能なコンテンツなど)</span><span class="sxs-lookup"><span data-stu-id="f3e10-152">ms-settings:appsfeatures-app (Reset, manage add-on & downloadable content, etc. for the app)</span></span>|
+| <span data-ttu-id="f3e10-153">Web サイト用のアプリ</span><span class="sxs-lookup"><span data-stu-id="f3e10-153">Apps for websites</span></span> | <span data-ttu-id="f3e10-154">ms-settings:appsforwebsites</span><span class="sxs-lookup"><span data-stu-id="f3e10-154">ms-settings:appsforwebsites</span></span> |
+| <span data-ttu-id="f3e10-155">既定のアプリ</span><span class="sxs-lookup"><span data-stu-id="f3e10-155">Default apps</span></span> | <span data-ttu-id="f3e10-156">ms-settings:defaultapps</span><span class="sxs-lookup"><span data-stu-id="f3e10-156">ms-settings:defaultapps</span></span> |
+| <span data-ttu-id="f3e10-157">オプション機能の管理</span><span class="sxs-lookup"><span data-stu-id="f3e10-157">Manage optional features</span></span> | <span data-ttu-id="f3e10-158">ms-settings:optionalfeatures</span><span class="sxs-lookup"><span data-stu-id="f3e10-158">ms-settings:optionalfeatures</span></span> |
+| <span data-ttu-id="f3e10-159">スタートアップ アプリ</span><span class="sxs-lookup"><span data-stu-id="f3e10-159">Startup apps</span></span> | <span data-ttu-id="f3e10-160">ms-settings:startupapps</span><span class="sxs-lookup"><span data-stu-id="f3e10-160">ms-settings:startupapps</span></span> |
+
+## <a name="cortana"></a><span data-ttu-id="f3e10-161">Cortana</span><span class="sxs-lookup"><span data-stu-id="f3e10-161">Cortana</span></span>
+
+|<span data-ttu-id="f3e10-162">[設定] ページ</span><span class="sxs-lookup"><span data-stu-id="f3e10-162">Settings Page</span></span>| <span data-ttu-id="f3e10-163">URI</span><span class="sxs-lookup"><span data-stu-id="f3e10-163">URI</span></span> |
+|-------------|-----|
+| <span data-ttu-id="f3e10-164">Cortana のアクセス許可と履歴</span><span class="sxs-lookup"><span data-stu-id="f3e10-164">Cortana Permissions & History</span></span> | <span data-ttu-id="f3e10-165">ms-settings:cortana-permissions</span><span class="sxs-lookup"><span data-stu-id="f3e10-165">ms-settings:cortana-permissions</span></span> |
+| <span data-ttu-id="f3e10-166">詳細</span><span class="sxs-lookup"><span data-stu-id="f3e10-166">More details</span></span> | <span data-ttu-id="f3e10-167">ms-settings:cortana-moredetails</span><span class="sxs-lookup"><span data-stu-id="f3e10-167">ms-settings:cortana-moredetails</span></span> |
+| <span data-ttu-id="f3e10-168">通知</span><span class="sxs-lookup"><span data-stu-id="f3e10-168">Notifications</span></span> | <span data-ttu-id="f3e10-169">ms-settings:cortana-notifications</span><span class="sxs-lookup"><span data-stu-id="f3e10-169">ms-settings:cortana-notifications</span></span> |
+| <span data-ttu-id="f3e10-170">Cortana に話す</span><span class="sxs-lookup"><span data-stu-id="f3e10-170">Talk to Cortana</span></span> | <span data-ttu-id="f3e10-171">ms-settings:cortana-language</span><span class="sxs-lookup"><span data-stu-id="f3e10-171">ms-settings:cortana-language</span></span> |
+
+## <a name="devices"></a><span data-ttu-id="f3e10-172">デバイス</span><span class="sxs-lookup"><span data-stu-id="f3e10-172">Devices</span></span>
+
+|<span data-ttu-id="f3e10-173">[設定] ページ</span><span class="sxs-lookup"><span data-stu-id="f3e10-173">Settings Page</span></span>| <span data-ttu-id="f3e10-174">URI</span><span class="sxs-lookup"><span data-stu-id="f3e10-174">URI</span></span> |
+|-------------|-----|
+| <span data-ttu-id="f3e10-175">オーディオと音声認識</span><span class="sxs-lookup"><span data-stu-id="f3e10-175">Audio and speech</span></span> | <span data-ttu-id="f3e10-176">ms-settings:holographic-audio (Microsoft Store で入手可能な Mixed Reality ポータル アプリがインストールされている場合のみ利用可能)</span><span class="sxs-lookup"><span data-stu-id="f3e10-176">ms-settings:holographic-audio (only available if the Mixed Reality Portal app is installed--available in the Microsoft Store)</span></span> |
+| <span data-ttu-id="f3e10-177">自動再生</span><span class="sxs-lookup"><span data-stu-id="f3e10-177">AutoPlay</span></span> | <span data-ttu-id="f3e10-178">ms-settings:autoplay</span><span class="sxs-lookup"><span data-stu-id="f3e10-178">ms-settings:autoplay</span></span> |
+| <span data-ttu-id="f3e10-179">Bluetooth</span><span class="sxs-lookup"><span data-stu-id="f3e10-179">Bluetooth</span></span> | <span data-ttu-id="f3e10-180">ms-settings:bluetooth</span><span class="sxs-lookup"><span data-stu-id="f3e10-180">ms-settings:bluetooth</span></span> |
+| <span data-ttu-id="f3e10-181">接続されたデバイス</span><span class="sxs-lookup"><span data-stu-id="f3e10-181">Connected Devices</span></span> | <span data-ttu-id="f3e10-182">ms-settings:connecteddevices</span><span class="sxs-lookup"><span data-stu-id="f3e10-182">ms-settings:connecteddevices</span></span> |
+| <span data-ttu-id="f3e10-183">既定のカメラ</span><span class="sxs-lookup"><span data-stu-id="f3e10-183">Default camera</span></span> | <span data-ttu-id="f3e10-184">ms-settings:camera</span><span class="sxs-lookup"><span data-stu-id="f3e10-184">ms-settings:camera</span></span> |
+| <span data-ttu-id="f3e10-185">マウスとタッチパッド</span><span class="sxs-lookup"><span data-stu-id="f3e10-185">Mouse & touchpad</span></span> | <span data-ttu-id="f3e10-186">ms-settings:mousetouchpad (タッチパット設定は、タッチパッドが搭載されているデバイスでのみ利用可能)</span><span class="sxs-lookup"><span data-stu-id="f3e10-186">ms-settings:mousetouchpad (touchpad settings only available on devices that have a touchpad)</span></span> |
+| <span data-ttu-id="f3e10-187">ペンと Windows Ink</span><span class="sxs-lookup"><span data-stu-id="f3e10-187">Pen & Windows Ink</span></span> | <span data-ttu-id="f3e10-188">ms-settings:pen</span><span class="sxs-lookup"><span data-stu-id="f3e10-188">ms-settings:pen</span></span> |
+| <span data-ttu-id="f3e10-189">プリンターとスキャナー</span><span class="sxs-lookup"><span data-stu-id="f3e10-189">Printers & scanners</span></span> | <span data-ttu-id="f3e10-190">ms-settings:printers</span><span class="sxs-lookup"><span data-stu-id="f3e10-190">ms-settings:printers</span></span> |
+| <span data-ttu-id="f3e10-191">タッチパッド</span><span class="sxs-lookup"><span data-stu-id="f3e10-191">Touchpad</span></span> | <span data-ttu-id="f3e10-192">ms-settings:devices-touchpad (タッチパッド ハードウェアが搭載されている場合のみ利用可能)</span><span class="sxs-lookup"><span data-stu-id="f3e10-192">ms-settings:devices-touchpad (only available if touchpad hardware is present)</span></span> |
+| <span data-ttu-id="f3e10-193">入力</span><span class="sxs-lookup"><span data-stu-id="f3e10-193">Typing</span></span> | <span data-ttu-id="f3e10-194">ms-settings:typing</span><span class="sxs-lookup"><span data-stu-id="f3e10-194">ms-settings:typing</span></span> |
+| <span data-ttu-id="f3e10-195">USB</span><span class="sxs-lookup"><span data-stu-id="f3e10-195">USB</span></span> | <span data-ttu-id="f3e10-196">ms-settings:usb</span><span class="sxs-lookup"><span data-stu-id="f3e10-196">ms-settings:usb</span></span> |
+| <span data-ttu-id="f3e10-197">ホイール</span><span class="sxs-lookup"><span data-stu-id="f3e10-197">Wheel</span></span> | <span data-ttu-id="f3e10-198">ms-settings:wheel (Dial がペアリングされている場合のみ利用可能)</span><span class="sxs-lookup"><span data-stu-id="f3e10-198">ms-settings:wheel (only available if Dial is paired)</span></span> |
+| <span data-ttu-id="f3e10-199">同期電話</span><span class="sxs-lookup"><span data-stu-id="f3e10-199">Your phone</span></span> | <span data-ttu-id="f3e10-200">ms-settings:mobile-devices</span><span class="sxs-lookup"><span data-stu-id="f3e10-200">ms-settings:mobile-devices</span></span>  |
+
+## <a name="ease-of-access"></a><span data-ttu-id="f3e10-201">コンピューターの簡単操作</span><span class="sxs-lookup"><span data-stu-id="f3e10-201">Ease of Access</span></span>
+
+|<span data-ttu-id="f3e10-202">［設定］ページ</span><span class="sxs-lookup"><span data-stu-id="f3e10-202">Settings Page</span></span>| <span data-ttu-id="f3e10-203">URI</span><span class="sxs-lookup"><span data-stu-id="f3e10-203">URI</span></span> |
+|-------------|-----|
+| <span data-ttu-id="f3e10-204">オーディオ</span><span class="sxs-lookup"><span data-stu-id="f3e10-204">Audio</span></span> | <span data-ttu-id="f3e10-205">ms-settings:easeofaccess-audio</span><span class="sxs-lookup"><span data-stu-id="f3e10-205">ms-settings:easeofaccess-audio</span></span> |
+| <span data-ttu-id="f3e10-206">クローズド キャプション</span><span class="sxs-lookup"><span data-stu-id="f3e10-206">Closed captions</span></span> | <span data-ttu-id="f3e10-207">ms-settings:easeofaccess-closedcaptioning</span><span class="sxs-lookup"><span data-stu-id="f3e10-207">ms-settings:easeofaccess-closedcaptioning</span></span> |
+| <span data-ttu-id="f3e10-208">表示</span><span class="sxs-lookup"><span data-stu-id="f3e10-208">Display</span></span> | <span data-ttu-id="f3e10-209">ms-settings:easeofaccess-display</span><span class="sxs-lookup"><span data-stu-id="f3e10-209">ms-settings:easeofaccess-display</span></span> |
+| <span data-ttu-id="f3e10-210">視線制御</span><span class="sxs-lookup"><span data-stu-id="f3e10-210">Eye control</span></span> | <span data-ttu-id="f3e10-211">ms-settings:easeofaccess-eyecontrol</span><span class="sxs-lookup"><span data-stu-id="f3e10-211">ms-settings:easeofaccess-eyecontrol</span></span> |
+| <span data-ttu-id="f3e10-212">フォント</span><span class="sxs-lookup"><span data-stu-id="f3e10-212">Fonts</span></span> | <span data-ttu-id="f3e10-213">ms-settings:fonts</span><span class="sxs-lookup"><span data-stu-id="f3e10-213">ms-settings:fonts</span></span> |
+| <span data-ttu-id="f3e10-214">ハイ コントラスト</span><span class="sxs-lookup"><span data-stu-id="f3e10-214">High contrast</span></span> | <span data-ttu-id="f3e10-215">ms-settings:easeofaccess-highcontrast</span><span class="sxs-lookup"><span data-stu-id="f3e10-215">ms-settings:easeofaccess-highcontrast</span></span> |
+| <span data-ttu-id="f3e10-216">ホログラフィック ヘッドセット</span><span class="sxs-lookup"><span data-stu-id="f3e10-216">Holographic headset</span></span> | <span data-ttu-id="f3e10-217">ms-settings:holographic-headset (ホログラフィック ハードウェアが必要)</span><span class="sxs-lookup"><span data-stu-id="f3e10-217">ms-settings:holographic-headset (requires holographic hardware)</span></span> |
+| <span data-ttu-id="f3e10-218">キーボード</span><span class="sxs-lookup"><span data-stu-id="f3e10-218">Keyboard</span></span> | <span data-ttu-id="f3e10-219">ms-settings:easeofaccess-keyboard</span><span class="sxs-lookup"><span data-stu-id="f3e10-219">ms-settings:easeofaccess-keyboard</span></span> |
+| <span data-ttu-id="f3e10-220">拡大鏡</span><span class="sxs-lookup"><span data-stu-id="f3e10-220">Magnifier</span></span> | <span data-ttu-id="f3e10-221">ms-settings:easeofaccess-magnifier</span><span class="sxs-lookup"><span data-stu-id="f3e10-221">ms-settings:easeofaccess-magnifier</span></span> |
+| <span data-ttu-id="f3e10-222">マウス</span><span class="sxs-lookup"><span data-stu-id="f3e10-222">Mouse</span></span> | <span data-ttu-id="f3e10-223">ms-settings:easeofaccess-mouse</span><span class="sxs-lookup"><span data-stu-id="f3e10-223">ms-settings:easeofaccess-mouse</span></span> |
+| <span data-ttu-id="f3e10-224">ナレーター</span><span class="sxs-lookup"><span data-stu-id="f3e10-224">Narrator</span></span> | <span data-ttu-id="f3e10-225">ms-settings:easeofaccess-narrator</span><span class="sxs-lookup"><span data-stu-id="f3e10-225">ms-settings:easeofaccess-narrator</span></span> |
+| <span data-ttu-id="f3e10-226">その他のオプション</span><span class="sxs-lookup"><span data-stu-id="f3e10-226">Other options</span></span> | <span data-ttu-id="f3e10-227">ms-settings:easeofaccess-otheroptions</span><span class="sxs-lookup"><span data-stu-id="f3e10-227">ms-settings:easeofaccess-otheroptions</span></span> |
+| <span data-ttu-id="f3e10-228">音声認識</span><span class="sxs-lookup"><span data-stu-id="f3e10-228">Speech</span></span> | <span data-ttu-id="f3e10-229">ms-settings:easeofaccess-speechrecognition</span><span class="sxs-lookup"><span data-stu-id="f3e10-229">ms-settings:easeofaccess-speechrecognition</span></span> |
+
+## <a name="extras"></a><span data-ttu-id="f3e10-230">Extras</span><span class="sxs-lookup"><span data-stu-id="f3e10-230">Extras</span></span>
+
+|<span data-ttu-id="f3e10-231">[設定] ページ</span><span class="sxs-lookup"><span data-stu-id="f3e10-231">Settings Page</span></span>| <span data-ttu-id="f3e10-232">URI</span><span class="sxs-lookup"><span data-stu-id="f3e10-232">URI</span></span> |
+|-------------|-----|
+| <span data-ttu-id="f3e10-233">Extras</span><span class="sxs-lookup"><span data-stu-id="f3e10-233">Extras</span></span> | <span data-ttu-id="f3e10-234">ms-settings:extras (第三者などによる「設定アプリ」がインストールされている場合のみ利用可能)</span><span class="sxs-lookup"><span data-stu-id="f3e10-234">ms-settings:extras (only available if "settings apps" are installed, e.g. by a 3rd party)</span></span> |
+
+## <a name="gaming"></a><span data-ttu-id="f3e10-235">ゲーム</span><span class="sxs-lookup"><span data-stu-id="f3e10-235">Gaming</span></span>
+
+|<span data-ttu-id="f3e10-236">［設定］ページ</span><span class="sxs-lookup"><span data-stu-id="f3e10-236">Settings Page</span></span>| <span data-ttu-id="f3e10-237">URI</span><span class="sxs-lookup"><span data-stu-id="f3e10-237">URI</span></span> |
+|-------------|-----|
+| <span data-ttu-id="f3e10-238">ブロードキャスト</span><span class="sxs-lookup"><span data-stu-id="f3e10-238">Broadcasting</span></span> | <span data-ttu-id="f3e10-239">ms-settings:gaming-broadcasting</span><span class="sxs-lookup"><span data-stu-id="f3e10-239">ms-settings:gaming-broadcasting</span></span> |
+| <span data-ttu-id="f3e10-240">ゲーム バー</span><span class="sxs-lookup"><span data-stu-id="f3e10-240">Game bar</span></span> | <span data-ttu-id="f3e10-241">ms-settings:gaming-gamebar</span><span class="sxs-lookup"><span data-stu-id="f3e10-241">ms-settings:gaming-gamebar</span></span> |
+| <span data-ttu-id="f3e10-242">ゲーム DVR</span><span class="sxs-lookup"><span data-stu-id="f3e10-242">Game DVR</span></span> | <span data-ttu-id="f3e10-243">ms-settings:gaming-gamedvr</span><span class="sxs-lookup"><span data-stu-id="f3e10-243">ms-settings:gaming-gamedvr</span></span> |
+| <span data-ttu-id="f3e10-244">ゲーム モード</span><span class="sxs-lookup"><span data-stu-id="f3e10-244">Game Mode</span></span> | <span data-ttu-id="f3e10-245">ms-settings:gaming-gamemode</span><span class="sxs-lookup"><span data-stu-id="f3e10-245">ms-settings:gaming-gamemode</span></span> |
+| <span data-ttu-id="f3e10-246">ゲームの全画面表示の再生</span><span class="sxs-lookup"><span data-stu-id="f3e10-246">Playing a game full screen</span></span> | <span data-ttu-id="f3e10-247">ms-settings:quietmomentsgame</span><span class="sxs-lookup"><span data-stu-id="f3e10-247">ms-settings:quietmomentsgame</span></span> |
+| <span data-ttu-id="f3e10-248">TruePlay</span><span class="sxs-lookup"><span data-stu-id="f3e10-248">TruePlay</span></span> | <span data-ttu-id="f3e10-249">ms-settings:gaming-trueplay</span><span class="sxs-lookup"><span data-stu-id="f3e10-249">ms-settings:gaming-trueplay</span></span> |
+| <span data-ttu-id="f3e10-250">Xbox ネットワーク</span><span class="sxs-lookup"><span data-stu-id="f3e10-250">Xbox Networking</span></span> | <span data-ttu-id="f3e10-251">ms-settings:gaming-xboxnetworking</span><span class="sxs-lookup"><span data-stu-id="f3e10-251">ms-settings:gaming-xboxnetworking</span></span> |
+
+## <a name="home-page"></a><span data-ttu-id="f3e10-252">ホーム ページ</span><span class="sxs-lookup"><span data-stu-id="f3e10-252">Home page</span></span>
+
+|<span data-ttu-id="f3e10-253">[設定] ページ</span><span class="sxs-lookup"><span data-stu-id="f3e10-253">Settings Page</span></span>| <span data-ttu-id="f3e10-254">URI</span><span class="sxs-lookup"><span data-stu-id="f3e10-254">URI</span></span> |
+|-------------|-----|
+| <span data-ttu-id="f3e10-255">設定ホーム ページ</span><span class="sxs-lookup"><span data-stu-id="f3e10-255">Settings home page</span></span> | <span data-ttu-id="f3e10-256">ms-settings:</span><span class="sxs-lookup"><span data-stu-id="f3e10-256">ms-settings:</span></span> |
+
+
+## <a name="network-wireless--internet"></a><span data-ttu-id="f3e10-257">ネットワーク、無線およびインターネット</span><span class="sxs-lookup"><span data-stu-id="f3e10-257">Network, wireless & internet</span></span>
+
+|<span data-ttu-id="f3e10-258">[設定] ページ</span><span class="sxs-lookup"><span data-stu-id="f3e10-258">Settings Page</span></span>| <span data-ttu-id="f3e10-259">URI</span><span class="sxs-lookup"><span data-stu-id="f3e10-259">URI</span></span> |
+|-------------|-----|
+| <span data-ttu-id="f3e10-260">機内モード</span><span class="sxs-lookup"><span data-stu-id="f3e10-260">Airplane mode</span></span> | <span data-ttu-id="f3e10-261">ms-settings:network-airplanemode (Windows 8.x では ms-settings:proximity を使用する)</span><span class="sxs-lookup"><span data-stu-id="f3e10-261">ms-settings:network-airplanemode (use ms-settings:proximity on Windows 8.x)</span></span> |
+| <span data-ttu-id="f3e10-262">携帯ネットワークと SIM</span><span class="sxs-lookup"><span data-stu-id="f3e10-262">Cellular & SIM</span></span> | <span data-ttu-id="f3e10-263">ms-settings:network-cellular</span><span class="sxs-lookup"><span data-stu-id="f3e10-263">ms-settings:network-cellular</span></span> |
+| <span data-ttu-id="f3e10-264">データ使用状況</span><span class="sxs-lookup"><span data-stu-id="f3e10-264">Data usage</span></span> | <span data-ttu-id="f3e10-265">ms-settings:datausage</span><span class="sxs-lookup"><span data-stu-id="f3e10-265">ms-settings:datausage</span></span> |
+| <span data-ttu-id="f3e10-266">ダイヤルアップ</span><span class="sxs-lookup"><span data-stu-id="f3e10-266">Dial-up</span></span> | <span data-ttu-id="f3e10-267">ms-settings:network-dialup</span><span class="sxs-lookup"><span data-stu-id="f3e10-267">ms-settings:network-dialup</span></span> |
+| <span data-ttu-id="f3e10-268">DirectAccess</span><span class="sxs-lookup"><span data-stu-id="f3e10-268">DirectAccess</span></span> | <span data-ttu-id="f3e10-269">ms-settings:network-directaccess (DirectAccess が有効な場合にのみ利用可能)</span><span class="sxs-lookup"><span data-stu-id="f3e10-269">ms-settings:network-directaccess (only available if DirectAccess is enabled)</span></span> |
+| <span data-ttu-id="f3e10-270">イーサネット</span><span class="sxs-lookup"><span data-stu-id="f3e10-270">Ethernet</span></span> | <span data-ttu-id="f3e10-271">ms-settings:network-ethernet</span><span class="sxs-lookup"><span data-stu-id="f3e10-271">ms-settings:network-ethernet</span></span> |
+| <span data-ttu-id="f3e10-272">既知のネットワークの管理</span><span class="sxs-lookup"><span data-stu-id="f3e10-272">Manage known networks</span></span> | <span data-ttu-id="f3e10-273">ms-settings:network-wifisettings</span><span class="sxs-lookup"><span data-stu-id="f3e10-273">ms-settings:network-wifisettings</span></span> |
+| <span data-ttu-id="f3e10-274">モバイル ホットスポット</span><span class="sxs-lookup"><span data-stu-id="f3e10-274">Mobile hotspot</span></span> | <span data-ttu-id="f3e10-275">ms-settings:network-mobilehotspot</span><span class="sxs-lookup"><span data-stu-id="f3e10-275">ms-settings:network-mobilehotspot</span></span> |
+| <span data-ttu-id="f3e10-276">NFC</span><span class="sxs-lookup"><span data-stu-id="f3e10-276">NFC</span></span> | <span data-ttu-id="f3e10-277">ms-settings:nfctransactions</span><span class="sxs-lookup"><span data-stu-id="f3e10-277">ms-settings:nfctransactions</span></span> |
+| <span data-ttu-id="f3e10-278">プロキシ</span><span class="sxs-lookup"><span data-stu-id="f3e10-278">Proxy</span></span> | <span data-ttu-id="f3e10-279">ms-settings:network-proxy</span><span class="sxs-lookup"><span data-stu-id="f3e10-279">ms-settings:network-proxy</span></span> |
+| <span data-ttu-id="f3e10-280">状態</span><span class="sxs-lookup"><span data-stu-id="f3e10-280">Status</span></span> | <span data-ttu-id="f3e10-281">ms-settings:network-status</span><span class="sxs-lookup"><span data-stu-id="f3e10-281">ms-settings:network-status</span></span> |
+| <span data-ttu-id="f3e10-282">VPN</span><span class="sxs-lookup"><span data-stu-id="f3e10-282">VPN</span></span> | <span data-ttu-id="f3e10-283">ms-settings:network-vpn</span><span class="sxs-lookup"><span data-stu-id="f3e10-283">ms-settings:network-vpn</span></span> |
+| <span data-ttu-id="f3e10-284">Wi-Fi</span><span class="sxs-lookup"><span data-stu-id="f3e10-284">Wi-Fi</span></span> | <span data-ttu-id="f3e10-285">ms-settings:network-wifi (デバイスに wifi アダプターがある場合にのみ利用可能)</span><span class="sxs-lookup"><span data-stu-id="f3e10-285">ms-settings:network-wifi (only available if the device has a wifi adapter)</span></span> |
+| <span data-ttu-id="f3e10-286">Wi-Fi 通話</span><span class="sxs-lookup"><span data-stu-id="f3e10-286">Wi-Fi Calling</span></span> | <span data-ttu-id="f3e10-287">ms-settings:network-wificalling (Wi-Fi 通話が有効な場合のみ利用可能)</span><span class="sxs-lookup"><span data-stu-id="f3e10-287">ms-settings:network-wificalling (only available if Wi-Fi calling is enabled)</span></span> |
+
+## <a name="personalization"></a><span data-ttu-id="f3e10-288">個人用設定</span><span class="sxs-lookup"><span data-stu-id="f3e10-288">Personalization</span></span>
+
+|<span data-ttu-id="f3e10-289">［設定］ページ</span><span class="sxs-lookup"><span data-stu-id="f3e10-289">Settings Page</span></span>| <span data-ttu-id="f3e10-290">URI</span><span class="sxs-lookup"><span data-stu-id="f3e10-290">URI</span></span> |
+|-------------|-----|
+| <span data-ttu-id="f3e10-291">背景</span><span class="sxs-lookup"><span data-stu-id="f3e10-291">Background</span></span> | <span data-ttu-id="f3e10-292">ms-settings:personalization-background</span><span class="sxs-lookup"><span data-stu-id="f3e10-292">ms-settings:personalization-background</span></span> |
+| <span data-ttu-id="f3e10-293">スタート時にどのフォルダを表示するかを選択する</span><span class="sxs-lookup"><span data-stu-id="f3e10-293">Choose which folders appear on Start</span></span> | <span data-ttu-id="f3e10-294">ms-settings:personalization-start-places</span><span class="sxs-lookup"><span data-stu-id="f3e10-294">ms-settings:personalization-start-places</span></span> |
+| <span data-ttu-id="f3e10-295">画面の色</span><span class="sxs-lookup"><span data-stu-id="f3e10-295">Colors</span></span> | <span data-ttu-id="f3e10-296">ms-settings:personalization-colors</span><span class="sxs-lookup"><span data-stu-id="f3e10-296">ms-settings:personalization-colors</span></span> |
+| <span data-ttu-id="f3e10-297">概要</span><span class="sxs-lookup"><span data-stu-id="f3e10-297">Glance</span></span> | <span data-ttu-id="f3e10-298">ms-settings:personalization-glance</span><span class="sxs-lookup"><span data-stu-id="f3e10-298">ms-settings:personalization-glance</span></span> |
+| <span data-ttu-id="f3e10-299">ロック画面</span><span class="sxs-lookup"><span data-stu-id="f3e10-299">Lock screen</span></span> | <span data-ttu-id="f3e10-300">ms-settings:lockscreen</span><span class="sxs-lookup"><span data-stu-id="f3e10-300">ms-settings:lockscreen</span></span> |
+| <span data-ttu-id="f3e10-301">ナビゲーション バー</span><span class="sxs-lookup"><span data-stu-id="f3e10-301">Navigation bar</span></span> | <span data-ttu-id="f3e10-302">ms-settings:personalization-navbar</span><span class="sxs-lookup"><span data-stu-id="f3e10-302">ms-settings:personalization-navbar</span></span> |
+| <span data-ttu-id="f3e10-303">個人用設定 (カテゴリ)</span><span class="sxs-lookup"><span data-stu-id="f3e10-303">Personalization (category)</span></span> | <span data-ttu-id="f3e10-304">ms-settings:personalization</span><span class="sxs-lookup"><span data-stu-id="f3e10-304">ms-settings:personalization</span></span> |
+| <span data-ttu-id="f3e10-305">スタート</span><span class="sxs-lookup"><span data-stu-id="f3e10-305">Start</span></span> | <span data-ttu-id="f3e10-306">ms-settings:personalization-start</span><span class="sxs-lookup"><span data-stu-id="f3e10-306">ms-settings:personalization-start</span></span> |
+| <span data-ttu-id="f3e10-307">サウンド</span><span class="sxs-lookup"><span data-stu-id="f3e10-307">Sounds</span></span> | <span data-ttu-id="f3e10-308">ms-settings:sounds</span><span class="sxs-lookup"><span data-stu-id="f3e10-308">ms-settings:sounds</span></span> |
+| <span data-ttu-id="f3e10-309">タスク バー</span><span class="sxs-lookup"><span data-stu-id="f3e10-309">Task Bar</span></span> | <span data-ttu-id="f3e10-310">ms-settings:taskbar</span><span class="sxs-lookup"><span data-stu-id="f3e10-310">ms-settings:taskbar</span></span> |
+| <span data-ttu-id="f3e10-311">テーマ</span><span class="sxs-lookup"><span data-stu-id="f3e10-311">Themes</span></span> | <span data-ttu-id="f3e10-312">ms-settings:themes</span><span class="sxs-lookup"><span data-stu-id="f3e10-312">ms-settings:themes</span></span> |
+
+## <a name="privacy"></a><span data-ttu-id="f3e10-313">プライバシー</span><span class="sxs-lookup"><span data-stu-id="f3e10-313">Privacy</span></span>
+
+|<span data-ttu-id="f3e10-314">[設定] ページ</span><span class="sxs-lookup"><span data-stu-id="f3e10-314">Settings Page</span></span>| <span data-ttu-id="f3e10-315">URI</span><span class="sxs-lookup"><span data-stu-id="f3e10-315">URI</span></span> |
+|-------------|-----|
+| <span data-ttu-id="f3e10-316">アクセサリ用アプリ</span><span class="sxs-lookup"><span data-stu-id="f3e10-316">Accessory apps</span></span> | <span data-ttu-id="f3e10-317">ms-settings:privacy-accessoryapps</span><span class="sxs-lookup"><span data-stu-id="f3e10-317">ms-settings:privacy-accessoryapps</span></span> |
+| <span data-ttu-id="f3e10-318">アカウント情報</span><span class="sxs-lookup"><span data-stu-id="f3e10-318">Account info</span></span> | <span data-ttu-id="f3e10-319">ms-settings:privacy-accountinfo</span><span class="sxs-lookup"><span data-stu-id="f3e10-319">ms-settings:privacy-accountinfo</span></span> |
+| <span data-ttu-id="f3e10-320">アクティビティの履歴</span><span class="sxs-lookup"><span data-stu-id="f3e10-320">Activity history</span></span> | <span data-ttu-id="f3e10-321">ms-settings:privacy-activityhistory</span><span class="sxs-lookup"><span data-stu-id="f3e10-321">ms-settings:privacy-activityhistory</span></span> |
+| <span data-ttu-id="f3e10-322">広告識別子</span><span class="sxs-lookup"><span data-stu-id="f3e10-322">Advertising ID</span></span> | <span data-ttu-id="f3e10-323">ms-settings:privacy-advertisingid</span><span class="sxs-lookup"><span data-stu-id="f3e10-323">ms-settings:privacy-advertisingid</span></span> |
+| <span data-ttu-id="f3e10-324">アプリの診断</span><span class="sxs-lookup"><span data-stu-id="f3e10-324">App diagnostics</span></span> | <span data-ttu-id="f3e10-325">ms-settings:privacy-appdiagnostics</span><span class="sxs-lookup"><span data-stu-id="f3e10-325">ms-settings:privacy-appdiagnostics</span></span> |
+| <span data-ttu-id="f3e10-326">ファイルの自動ダウンロード</span><span class="sxs-lookup"><span data-stu-id="f3e10-326">Automatic file downloads</span></span> | <span data-ttu-id="f3e10-327">ms-settings:privacy-automaticfiledownloads</span><span class="sxs-lookup"><span data-stu-id="f3e10-327">ms-settings:privacy-automaticfiledownloads</span></span> |
+| <span data-ttu-id="f3e10-328">バックグラウンド アプリ</span><span class="sxs-lookup"><span data-stu-id="f3e10-328">Background Apps</span></span> | <span data-ttu-id="f3e10-329">ms-settings:privacy-backgroundapps</span><span class="sxs-lookup"><span data-stu-id="f3e10-329">ms-settings:privacy-backgroundapps</span></span> |
+| <span data-ttu-id="f3e10-330">カレンダー</span><span class="sxs-lookup"><span data-stu-id="f3e10-330">Calendar</span></span> | <span data-ttu-id="f3e10-331">ms-settings:privacy-calendar</span><span class="sxs-lookup"><span data-stu-id="f3e10-331">ms-settings:privacy-calendar</span></span> |
+| <span data-ttu-id="f3e10-332">通話履歴</span><span class="sxs-lookup"><span data-stu-id="f3e10-332">Call history</span></span> | <span data-ttu-id="f3e10-333">ms-settings:privacy-callhistory</span><span class="sxs-lookup"><span data-stu-id="f3e10-333">ms-settings:privacy-callhistory</span></span> |
+| <span data-ttu-id="f3e10-334">カメラ</span><span class="sxs-lookup"><span data-stu-id="f3e10-334">Camera</span></span> | <span data-ttu-id="f3e10-335">ms-settings:privacy-webcam</span><span class="sxs-lookup"><span data-stu-id="f3e10-335">ms-settings:privacy-webcam</span></span> |
+| <span data-ttu-id="f3e10-336">連絡先</span><span class="sxs-lookup"><span data-stu-id="f3e10-336">Contacts</span></span> | <span data-ttu-id="f3e10-337">ms-settings:privacy-contacts</span><span class="sxs-lookup"><span data-stu-id="f3e10-337">ms-settings:privacy-contacts</span></span> |
+| <span data-ttu-id="f3e10-338">ドキュメント</span><span class="sxs-lookup"><span data-stu-id="f3e10-338">Documents</span></span> | <span data-ttu-id="f3e10-339">ms-settings:privacy-documents</span><span class="sxs-lookup"><span data-stu-id="f3e10-339">ms-settings:privacy-documents</span></span> |
+| <span data-ttu-id="f3e10-340">Email</span><span class="sxs-lookup"><span data-stu-id="f3e10-340">Email</span></span> | <span data-ttu-id="f3e10-341">ms-settings:privacy-email</span><span class="sxs-lookup"><span data-stu-id="f3e10-341">ms-settings:privacy-email</span></span> |
+| <span data-ttu-id="f3e10-342">アイ トラッカー</span><span class="sxs-lookup"><span data-stu-id="f3e10-342">Eye tracker</span></span> | <span data-ttu-id="f3e10-343">ms-settings:privacy-eyetracker (eyetracker ハードウェアが必要)</span><span class="sxs-lookup"><span data-stu-id="f3e10-343">ms-settings:privacy-eyetracker (requires eyetracker hardware)</span></span> |
+| <span data-ttu-id="f3e10-344">フィードバックと診断</span><span class="sxs-lookup"><span data-stu-id="f3e10-344">Feedback & diagnostics</span></span> | <span data-ttu-id="f3e10-345">ms-settings:privacy-feedback</span><span class="sxs-lookup"><span data-stu-id="f3e10-345">ms-settings:privacy-feedback</span></span> |
+| <span data-ttu-id="f3e10-346">ファイル システム</span><span class="sxs-lookup"><span data-stu-id="f3e10-346">File system</span></span> | <span data-ttu-id="f3e10-347">ms-settings:privacy-broadfilesystemaccess</span><span class="sxs-lookup"><span data-stu-id="f3e10-347">ms-settings:privacy-broadfilesystemaccess</span></span> |
+| <span data-ttu-id="f3e10-348">全般的な情報</span><span class="sxs-lookup"><span data-stu-id="f3e10-348">General</span></span> | <span data-ttu-id="f3e10-349">ms-settings:privacy-general</span><span class="sxs-lookup"><span data-stu-id="f3e10-349">ms-settings:privacy-general</span></span> |
+| <span data-ttu-id="f3e10-350">位置情報</span><span class="sxs-lookup"><span data-stu-id="f3e10-350">Location</span></span> | <span data-ttu-id="f3e10-351">ms-settings:privacy-location</span><span class="sxs-lookup"><span data-stu-id="f3e10-351">ms-settings:privacy-location</span></span> |
+| <span data-ttu-id="f3e10-352">メッセージング</span><span class="sxs-lookup"><span data-stu-id="f3e10-352">Messaging</span></span> | <span data-ttu-id="f3e10-353">ms-settings:privacy-messaging</span><span class="sxs-lookup"><span data-stu-id="f3e10-353">ms-settings:privacy-messaging</span></span> |
+| <span data-ttu-id="f3e10-354">マイク</span><span class="sxs-lookup"><span data-stu-id="f3e10-354">Microphone</span></span> | <span data-ttu-id="f3e10-355">ms-settings:privacy-microphone</span><span class="sxs-lookup"><span data-stu-id="f3e10-355">ms-settings:privacy-microphone</span></span> |
+| <span data-ttu-id="f3e10-356">モーション</span><span class="sxs-lookup"><span data-stu-id="f3e10-356">Motion</span></span> | <span data-ttu-id="f3e10-357">ms-settings:privacy-motion</span><span class="sxs-lookup"><span data-stu-id="f3e10-357">ms-settings:privacy-motion</span></span> |
+| <span data-ttu-id="f3e10-358">通知</span><span class="sxs-lookup"><span data-stu-id="f3e10-358">Notifications</span></span> | <span data-ttu-id="f3e10-359">ms-settings:privacy-notifications</span><span class="sxs-lookup"><span data-stu-id="f3e10-359">ms-settings:privacy-notifications</span></span> |
+| <span data-ttu-id="f3e10-360">その他のデバイス</span><span class="sxs-lookup"><span data-stu-id="f3e10-360">Other devices</span></span> | <span data-ttu-id="f3e10-361">ms-settings:privacy-customdevices</span><span class="sxs-lookup"><span data-stu-id="f3e10-361">ms-settings:privacy-customdevices</span></span> |
+| <span data-ttu-id="f3e10-362">ピクチャ</span><span class="sxs-lookup"><span data-stu-id="f3e10-362">Pictures</span></span> | <span data-ttu-id="f3e10-363">ms-settings:privacy-pictures</span><span class="sxs-lookup"><span data-stu-id="f3e10-363">ms-settings:privacy-pictures</span></span> |
+| <span data-ttu-id="f3e10-364">電話での通話</span><span class="sxs-lookup"><span data-stu-id="f3e10-364">Phone calls</span></span> | <span data-ttu-id="f3e10-365">ms-settings:privacy-phonecall</span><span class="sxs-lookup"><span data-stu-id="f3e10-365">ms-settings:privacy-phonecall</span></span> |
+| <span data-ttu-id="f3e10-366">無線</span><span class="sxs-lookup"><span data-stu-id="f3e10-366">Radios</span></span> | <span data-ttu-id="f3e10-367">ms-settings:privacy-radios</span><span class="sxs-lookup"><span data-stu-id="f3e10-367">ms-settings:privacy-radios</span></span> |
+| <span data-ttu-id="f3e10-368">音声認識、手描き入力、入力の設定</span><span class="sxs-lookup"><span data-stu-id="f3e10-368">Speech, inking & typing</span></span> |<span data-ttu-id="f3e10-369">ms-settings:privacy-speechtyping</span><span class="sxs-lookup"><span data-stu-id="f3e10-369">ms-settings:privacy-speechtyping</span></span> |
+| <span data-ttu-id="f3e10-370">タスク</span><span class="sxs-lookup"><span data-stu-id="f3e10-370">Tasks</span></span> | <span data-ttu-id="f3e10-371">ms-settings:privacy-tasks</span><span class="sxs-lookup"><span data-stu-id="f3e10-371">ms-settings:privacy-tasks</span></span> |
+| <span data-ttu-id="f3e10-372">ビデオ</span><span class="sxs-lookup"><span data-stu-id="f3e10-372">Videos</span></span> | <span data-ttu-id="f3e10-373">ms-settings:privacy-videos</span><span class="sxs-lookup"><span data-stu-id="f3e10-373">ms-settings:privacy-videos</span></span> |
+
+## <a name="surface-hub"></a><span data-ttu-id="f3e10-374">Surface Hub</span><span class="sxs-lookup"><span data-stu-id="f3e10-374">Surface Hub</span></span>
+
+|<span data-ttu-id="f3e10-375">［設定］ページ</span><span class="sxs-lookup"><span data-stu-id="f3e10-375">Settings Page</span></span>| <span data-ttu-id="f3e10-376">URI</span><span class="sxs-lookup"><span data-stu-id="f3e10-376">URI</span></span> |
+|-------------|-----|
+| <span data-ttu-id="f3e10-377">アカウント</span><span class="sxs-lookup"><span data-stu-id="f3e10-377">Accounts</span></span> | <span data-ttu-id="f3e10-378">ms-settings:surfacehub-accounts</span><span class="sxs-lookup"><span data-stu-id="f3e10-378">ms-settings:surfacehub-accounts</span></span> |
+| <span data-ttu-id="f3e10-379">セッションのクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="f3e10-379">Session cleanup</span></span> | <span data-ttu-id="f3e10-380">ms-settings:surfacehub-sessioncleanup</span><span class="sxs-lookup"><span data-stu-id="f3e10-380">ms-settings:surfacehub-sessioncleanup</span></span> |
+| <span data-ttu-id="f3e10-381">チーム会議</span><span class="sxs-lookup"><span data-stu-id="f3e10-381">Team Conferencing</span></span> | <span data-ttu-id="f3e10-382">ms-settings:surfacehub-calling</span><span class="sxs-lookup"><span data-stu-id="f3e10-382">ms-settings:surfacehub-calling</span></span> |
+| <span data-ttu-id="f3e10-383">チーム デバイス管理</span><span class="sxs-lookup"><span data-stu-id="f3e10-383">Team device management</span></span> | <span data-ttu-id="f3e10-384">ms-settings:surfacehub-devicemanagenent</span><span class="sxs-lookup"><span data-stu-id="f3e10-384">ms-settings:surfacehub-devicemanagenent</span></span> |
+| <span data-ttu-id="f3e10-385">ようこそ画面</span><span class="sxs-lookup"><span data-stu-id="f3e10-385">Welcome screen</span></span> | <span data-ttu-id="f3e10-386">ms-settings:surfacehub-welcome</span><span class="sxs-lookup"><span data-stu-id="f3e10-386">ms-settings:surfacehub-welcome</span></span> |
+
+## <a name="system"></a><span data-ttu-id="f3e10-387">System</span><span class="sxs-lookup"><span data-stu-id="f3e10-387">System</span></span>
+
+|<span data-ttu-id="f3e10-388">[設定] ページ</span><span class="sxs-lookup"><span data-stu-id="f3e10-388">Settings Page</span></span>| <span data-ttu-id="f3e10-389">URI</span><span class="sxs-lookup"><span data-stu-id="f3e10-389">URI</span></span> |
+|-------------|-----|
+| <span data-ttu-id="f3e10-390">バージョン情報</span><span class="sxs-lookup"><span data-stu-id="f3e10-390">About</span></span> | <span data-ttu-id="f3e10-391">ms-settings:about</span><span class="sxs-lookup"><span data-stu-id="f3e10-391">ms-settings:about</span></span> |
+| <span data-ttu-id="f3e10-392">ディスプレイの詳細設定</span><span class="sxs-lookup"><span data-stu-id="f3e10-392">Advanced display settings</span></span> | <span data-ttu-id="f3e10-393">ms-settings:display-advanced (詳細オプションをサポートするデバイスでのみ利用可能)</span><span class="sxs-lookup"><span data-stu-id="f3e10-393">ms-settings:display-advanced (only available on devices that support advanced display options)</span></span> |
+| <span data-ttu-id="f3e10-394">バッテリー節約機能</span><span class="sxs-lookup"><span data-stu-id="f3e10-394">Battery Saver</span></span> | <span data-ttu-id="f3e10-395">ms-settings:batterysaver (タブレットなど、バッテリーを搭載したデバイスでのみ利用可能)</span><span class="sxs-lookup"><span data-stu-id="f3e10-395">ms-settings:batterysaver (only available on devices that have a battery, such as a tablet)</span></span> |
+| <span data-ttu-id="f3e10-396">バッテリー節約機能の設定</span><span class="sxs-lookup"><span data-stu-id="f3e10-396">Battery Saver settings</span></span> | <span data-ttu-id="f3e10-397">ms-settings:batterysaver-settings (タブレットなど、バッテリーを搭載したデバイスでのみ利用可能)</span><span class="sxs-lookup"><span data-stu-id="f3e10-397">ms-settings:batterysaver-settings (only available on devices that have a battery, such as a tablet)</span></span> |
+| <span data-ttu-id="f3e10-398">バッテリーの使用状況</span><span class="sxs-lookup"><span data-stu-id="f3e10-398">Battery use</span></span> | <span data-ttu-id="f3e10-399">ms-settings:batterysaver-usagedetails (タブレットなど、バッテリーを搭載したデバイスでのみ利用可能)</span><span class="sxs-lookup"><span data-stu-id="f3e10-399">ms-settings:batterysaver-usagedetails (only available on devices that have a battery, such as a tablet)</span></span> |
+| <span data-ttu-id="f3e10-400">表示</span><span class="sxs-lookup"><span data-stu-id="f3e10-400">Display</span></span> | <span data-ttu-id="f3e10-401">ms-settings:display</span><span class="sxs-lookup"><span data-stu-id="f3e10-401">ms-settings:display</span></span> |
+| <span data-ttu-id="f3e10-402">既定の保存場所</span><span class="sxs-lookup"><span data-stu-id="f3e10-402">Default Save Locations</span></span> | <span data-ttu-id="f3e10-403">ms-settings:savelocations</span><span class="sxs-lookup"><span data-stu-id="f3e10-403">ms-settings:savelocations</span></span> |
+| <span data-ttu-id="f3e10-404">表示</span><span class="sxs-lookup"><span data-stu-id="f3e10-404">Display</span></span> | <span data-ttu-id="f3e10-405">ms-settings:screenrotation</span><span class="sxs-lookup"><span data-stu-id="f3e10-405">ms-settings:screenrotation</span></span> |
+| <span data-ttu-id="f3e10-406">ディスプレイの複製</span><span class="sxs-lookup"><span data-stu-id="f3e10-406">Duplicating my display</span></span> | <span data-ttu-id="f3e10-407">ms-settings:quietmomentspresentation</span><span class="sxs-lookup"><span data-stu-id="f3e10-407">ms-settings:quietmomentspresentation</span></span> |
+| <span data-ttu-id="f3e10-408">これらの時間帯</span><span class="sxs-lookup"><span data-stu-id="f3e10-408">During these hours</span></span> | <span data-ttu-id="f3e10-409">ms-settings:quietmomentsscheduled</span><span class="sxs-lookup"><span data-stu-id="f3e10-409">ms-settings:quietmomentsscheduled</span></span> |
+| <span data-ttu-id="f3e10-410">暗号化</span><span class="sxs-lookup"><span data-stu-id="f3e10-410">Encryption</span></span> | <span data-ttu-id="f3e10-411">ms-settings:deviceencryption</span><span class="sxs-lookup"><span data-stu-id="f3e10-411">ms-settings:deviceencryption</span></span> |
+| <span data-ttu-id="f3e10-412">集中モード</span><span class="sxs-lookup"><span data-stu-id="f3e10-412">Focus assist</span></span> | <span data-ttu-id="f3e10-413">ms-settings:quiethours</span><span class="sxs-lookup"><span data-stu-id="f3e10-413">ms-settings:quiethours</span></span> <br> <span data-ttu-id="f3e10-414">ms-settings:quietmomentshome</span><span class="sxs-lookup"><span data-stu-id="f3e10-414">ms-settings:quietmomentshome</span></span> |
+| <span data-ttu-id="f3e10-415">グラフィック設定</span><span class="sxs-lookup"><span data-stu-id="f3e10-415">Graphics Settings</span></span> | <span data-ttu-id="f3e10-416">ms-settings:display-advancedgraphics (詳細グラフィック オプションをサポートするデバイスでのみ利用可能)</span><span class="sxs-lookup"><span data-stu-id="f3e10-416">ms-settings:display-advancedgraphics (only available on devices that support advanced graphics options)</span></span> |
+| <span data-ttu-id="f3e10-417">メッセージング</span><span class="sxs-lookup"><span data-stu-id="f3e10-417">Messaging</span></span> | <span data-ttu-id="f3e10-418">ms-settings:messaging</span><span class="sxs-lookup"><span data-stu-id="f3e10-418">ms-settings:messaging</span></span> |
+| <span data-ttu-id="f3e10-419">マルチタスク</span><span class="sxs-lookup"><span data-stu-id="f3e10-419">Multitasking</span></span> | <span data-ttu-id="f3e10-420">ms-settings:multitasking</span><span class="sxs-lookup"><span data-stu-id="f3e10-420">ms-settings:multitasking</span></span> |
+| <span data-ttu-id="f3e10-421">夜間モード設定</span><span class="sxs-lookup"><span data-stu-id="f3e10-421">Night light settings</span></span> | <span data-ttu-id="f3e10-422">ms-settings:nightlight</span><span class="sxs-lookup"><span data-stu-id="f3e10-422">ms-settings:nightlight</span></span> |
+| <span data-ttu-id="f3e10-423">オフライン マップ</span><span class="sxs-lookup"><span data-stu-id="f3e10-423">Offline Maps</span></span> | <span data-ttu-id="f3e10-424">ms-settings:maps</span><span class="sxs-lookup"><span data-stu-id="f3e10-424">ms-settings:maps</span></span> |
+| <span data-ttu-id="f3e10-425">スマートフォン</span><span class="sxs-lookup"><span data-stu-id="f3e10-425">Phone</span></span> | <span data-ttu-id="f3e10-426">ms-settings:phone-defaultapps</span><span class="sxs-lookup"><span data-stu-id="f3e10-426">ms-settings:phone-defaultapps</span></span> |
+| <span data-ttu-id="f3e10-427">この PC へのプロジェクション</span><span class="sxs-lookup"><span data-stu-id="f3e10-427">Projecting to this PC</span></span> | <span data-ttu-id="f3e10-428">ms-settings:project</span><span class="sxs-lookup"><span data-stu-id="f3e10-428">ms-settings:project</span></span> |
+| <span data-ttu-id="f3e10-429">共有エクスペリエンス</span><span class="sxs-lookup"><span data-stu-id="f3e10-429">Shared experiences</span></span> | <span data-ttu-id="f3e10-430">ms-settings:crossdevice</span><span class="sxs-lookup"><span data-stu-id="f3e10-430">ms-settings:crossdevice</span></span> |
+| <span data-ttu-id="f3e10-431">タブレット モード</span><span class="sxs-lookup"><span data-stu-id="f3e10-431">Tablet mode</span></span> | <span data-ttu-id="f3e10-432">ms-settings:tabletmode</span><span class="sxs-lookup"><span data-stu-id="f3e10-432">ms-settings:tabletmode</span></span> |
+| <span data-ttu-id="f3e10-433">タスク バー</span><span class="sxs-lookup"><span data-stu-id="f3e10-433">Taskbar</span></span> | <span data-ttu-id="f3e10-434">ms-settings:taskbar</span><span class="sxs-lookup"><span data-stu-id="f3e10-434">ms-settings:taskbar</span></span> |
+| <span data-ttu-id="f3e10-435">通知とアクション</span><span class="sxs-lookup"><span data-stu-id="f3e10-435">Notifications & actions</span></span> | <span data-ttu-id="f3e10-436">ms-settings:notifications</span><span class="sxs-lookup"><span data-stu-id="f3e10-436">ms-settings:notifications</span></span> |
+| <span data-ttu-id="f3e10-437">リモート デスクトップ</span><span class="sxs-lookup"><span data-stu-id="f3e10-437">Remote Desktop</span></span> | <span data-ttu-id="f3e10-438">ms-settings:remotedesktop</span><span class="sxs-lookup"><span data-stu-id="f3e10-438">ms-settings:remotedesktop</span></span> |
+| <span data-ttu-id="f3e10-439">スマートフォン</span><span class="sxs-lookup"><span data-stu-id="f3e10-439">Phone</span></span> | <span data-ttu-id="f3e10-440">ms-settings:phone</span><span class="sxs-lookup"><span data-stu-id="f3e10-440">ms-settings:phone</span></span> |
+| <span data-ttu-id="f3e10-441">電源とスリープ</span><span class="sxs-lookup"><span data-stu-id="f3e10-441">Power & sleep</span></span> | <span data-ttu-id="f3e10-442">ms-settings:powersleep</span><span class="sxs-lookup"><span data-stu-id="f3e10-442">ms-settings:powersleep</span></span> |
+| <span data-ttu-id="f3e10-443">ストレージ</span><span class="sxs-lookup"><span data-stu-id="f3e10-443">Storage</span></span> | <span data-ttu-id="f3e10-444">ms-settings:storagesense</span><span class="sxs-lookup"><span data-stu-id="f3e10-444">ms-settings:storagesense</span></span> |
+| <span data-ttu-id="f3e10-445">ストレージ センサー</span><span class="sxs-lookup"><span data-stu-id="f3e10-445">Storage Sense</span></span> | <span data-ttu-id="f3e10-446">ms-settings:storagepolicies</span><span class="sxs-lookup"><span data-stu-id="f3e10-446">ms-settings:storagepolicies</span></span> |
+| <span data-ttu-id="f3e10-447">ビデオ再生</span><span class="sxs-lookup"><span data-stu-id="f3e10-447">Video playback</span></span> | <span data-ttu-id="f3e10-448">ms-settings:videoplayback</span><span class="sxs-lookup"><span data-stu-id="f3e10-448">ms-settings:videoplayback</span></span> |
+
+## <a name="time-and-language"></a><span data-ttu-id="f3e10-449">Time and language (時刻と言語)</span><span class="sxs-lookup"><span data-stu-id="f3e10-449">Time and language</span></span>
+
+|<span data-ttu-id="f3e10-450">[設定] ページ</span><span class="sxs-lookup"><span data-stu-id="f3e10-450">Settings Page</span></span>| <span data-ttu-id="f3e10-451">URI</span><span class="sxs-lookup"><span data-stu-id="f3e10-451">URI</span></span> |
+|-------------|-----|
+| <span data-ttu-id="f3e10-452">日付と時刻</span><span class="sxs-lookup"><span data-stu-id="f3e10-452">Date & time</span></span> | <span data-ttu-id="f3e10-453">ms-settings:dateandtime</span><span class="sxs-lookup"><span data-stu-id="f3e10-453">ms-settings:dateandtime</span></span> |
+| <span data-ttu-id="f3e10-454">日本 IME の設定</span><span class="sxs-lookup"><span data-stu-id="f3e10-454">Japan IME settings</span></span> | <span data-ttu-id="f3e10-455">ms-settings:regionlanguage-jpnime (Microsoft 日本語入力方式エディターがインストールされている場合に利用可能)</span><span class="sxs-lookup"><span data-stu-id="f3e10-455">ms-settings:regionlanguage-jpnime (available if the Microsoft Japan input method editor is installed)</span></span> |
+| <span data-ttu-id="f3e10-456">Pinyin IME の設定</span><span class="sxs-lookup"><span data-stu-id="f3e10-456">Pinyin IME settings</span></span> | <span data-ttu-id="f3e10-457">ms-settings:regionlanguage-chsime-pinyin (Microsoft Pinyin 入力方式エディターがインストールされている場合に利用可能)</span><span class="sxs-lookup"><span data-stu-id="f3e10-457">ms-settings:regionlanguage-chsime-pinyin (available if the Microsoft Pinyin input method editor is installed)</span></span> |
+| <span data-ttu-id="f3e10-458">地域と言語</span><span class="sxs-lookup"><span data-stu-id="f3e10-458">Region & language</span></span> | <span data-ttu-id="f3e10-459">ms-settings:regionlanguage</span><span class="sxs-lookup"><span data-stu-id="f3e10-459">ms-settings:regionlanguage</span></span> |
+| <span data-ttu-id="f3e10-460">音声認識の言語</span><span class="sxs-lookup"><span data-stu-id="f3e10-460">Speech Language</span></span> | <span data-ttu-id="f3e10-461">ms-settings:speech</span><span class="sxs-lookup"><span data-stu-id="f3e10-461">ms-settings:speech</span></span> |
+| <span data-ttu-id="f3e10-462">Wubi IME の設定</span><span class="sxs-lookup"><span data-stu-id="f3e10-462">Wubi IME settings</span></span>  | <span data-ttu-id="f3e10-463">ms-settings:regionlanguage-chsime-wubi (Microsoft Wubi 入力方式エディターがインストールされている場合に利用可能)</span><span class="sxs-lookup"><span data-stu-id="f3e10-463">ms-settings:regionlanguage-chsime-wubi (available if the Microsoft Wubi input method editor is installed)</span></span> |
+
+## <a name="update--security"></a><span data-ttu-id="f3e10-464">更新とセキュリティ</span><span class="sxs-lookup"><span data-stu-id="f3e10-464">Update & security</span></span>
+
+|<span data-ttu-id="f3e10-465">［設定］ページ</span><span class="sxs-lookup"><span data-stu-id="f3e10-465">Settings Page</span></span>| <span data-ttu-id="f3e10-466">URI</span><span class="sxs-lookup"><span data-stu-id="f3e10-466">URI</span></span> |
+|-------------|-----|
+| <span data-ttu-id="f3e10-467">ライセンス認証</span><span class="sxs-lookup"><span data-stu-id="f3e10-467">Activation</span></span> | <span data-ttu-id="f3e10-468">ms-settings:activation</span><span class="sxs-lookup"><span data-stu-id="f3e10-468">ms-settings:activation</span></span> |
+| <span data-ttu-id="f3e10-469">バックアップ</span><span class="sxs-lookup"><span data-stu-id="f3e10-469">Backup</span></span> | <span data-ttu-id="f3e10-470">ms-settings:backup</span><span class="sxs-lookup"><span data-stu-id="f3e10-470">ms-settings:backup</span></span> |
+| <span data-ttu-id="f3e10-471">配信の最適化</span><span class="sxs-lookup"><span data-stu-id="f3e10-471">Delivery Optimization</span></span> | <span data-ttu-id="f3e10-472">ms-settings:delivery-optimization</span><span class="sxs-lookup"><span data-stu-id="f3e10-472">ms-settings:delivery-optimization</span></span> |
+| <span data-ttu-id="f3e10-473">デバイスの検索</span><span class="sxs-lookup"><span data-stu-id="f3e10-473">Find My Device</span></span> | <span data-ttu-id="f3e10-474">ms-settings:findmydevice</span><span class="sxs-lookup"><span data-stu-id="f3e10-474">ms-settings:findmydevice</span></span> |
+| <span data-ttu-id="f3e10-475">回復</span><span class="sxs-lookup"><span data-stu-id="f3e10-475">Recovery</span></span> | <span data-ttu-id="f3e10-476">ms-settings:recovery</span><span class="sxs-lookup"><span data-stu-id="f3e10-476">ms-settings:recovery</span></span> |
+| <span data-ttu-id="f3e10-477">トラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="f3e10-477">Troubleshoot</span></span> | <span data-ttu-id="f3e10-478">ms-settings:troubleshoot</span><span class="sxs-lookup"><span data-stu-id="f3e10-478">ms-settings:troubleshoot</span></span> |
+| <span data-ttu-id="f3e10-479">Windows Defender</span><span class="sxs-lookup"><span data-stu-id="f3e10-479">Windows Defender</span></span> | <span data-ttu-id="f3e10-480">ms-settings:windowsdefender</span><span class="sxs-lookup"><span data-stu-id="f3e10-480">ms-settings:windowsdefender</span></span> |
+| <span data-ttu-id="f3e10-481">Windows Hello セットアップ</span><span class="sxs-lookup"><span data-stu-id="f3e10-481">Windows Hello setup</span></span> | <span data-ttu-id="f3e10-482">ms-settings:signinoptions-launchfaceenrollment</span><span class="sxs-lookup"><span data-stu-id="f3e10-482">ms-settings:signinoptions-launchfaceenrollment</span></span><br><span data-ttu-id="f3e10-483">ms-settings:signinoptions-launchfingerprintenrollment</span><span class="sxs-lookup"><span data-stu-id="f3e10-483">ms-settings:signinoptions-launchfingerprintenrollment</span></span> |
+| <span data-ttu-id="f3e10-484">Windows Insider Program</span><span class="sxs-lookup"><span data-stu-id="f3e10-484">Windows Insider Program</span></span> | <span data-ttu-id="f3e10-485">ms-settings:windowsinsider(ユーザーが WIP に登録されている場合にのみ存在)</span><span class="sxs-lookup"><span data-stu-id="f3e10-485">ms-settings:windowsinsider (only present if user is enrolled in WIP)</span></span> |
+| <span data-ttu-id="f3e10-486">Windows Update</span><span class="sxs-lookup"><span data-stu-id="f3e10-486">Windows Update</span></span> | <span data-ttu-id="f3e10-487">ms-settings:windowsupdate</span><span class="sxs-lookup"><span data-stu-id="f3e10-487">ms-settings:windowsupdate</span></span><br><span data-ttu-id="f3e10-488">ms-settings:windowsupdate-action</span><span class="sxs-lookup"><span data-stu-id="f3e10-488">ms-settings:windowsupdate-action</span></span> |
+| <span data-ttu-id="f3e10-489">Windows Update - 詳細オプション</span><span class="sxs-lookup"><span data-stu-id="f3e10-489">Windows Update-Advanced options</span></span> | <span data-ttu-id="f3e10-490">ms-settings:windowsupdate-options</span><span class="sxs-lookup"><span data-stu-id="f3e10-490">ms-settings:windowsupdate-options</span></span> |
+| <span data-ttu-id="f3e10-491">Windows Update - 再起動オプション</span><span class="sxs-lookup"><span data-stu-id="f3e10-491">Windows Update-Restart options</span></span> | <span data-ttu-id="f3e10-492">ms-settings:windowsupdate-restartoptions</span><span class="sxs-lookup"><span data-stu-id="f3e10-492">ms-settings:windowsupdate-restartoptions</span></span> |
+| <span data-ttu-id="f3e10-493">Windows Update - 更新履歴の表示</span><span class="sxs-lookup"><span data-stu-id="f3e10-493">Windows Update-View update history</span></span> | <span data-ttu-id="f3e10-494">ms-settings:windowsupdate-history</span><span class="sxs-lookup"><span data-stu-id="f3e10-494">ms-settings:windowsupdate-history</span></span> |
+
+## <a name="developers"></a><span data-ttu-id="f3e10-495">開発者向け</span><span class="sxs-lookup"><span data-stu-id="f3e10-495">Developers</span></span>
+
+|<span data-ttu-id="f3e10-496">［設定］ページ</span><span class="sxs-lookup"><span data-stu-id="f3e10-496">Settings Page</span></span>| <span data-ttu-id="f3e10-497">URI</span><span class="sxs-lookup"><span data-stu-id="f3e10-497">URI</span></span> |
+|-------------|-----|
+| <span data-ttu-id="f3e10-498">開発者向け</span><span class="sxs-lookup"><span data-stu-id="f3e10-498">For developers</span></span> | <span data-ttu-id="f3e10-499">ms-settings:developers</span><span class="sxs-lookup"><span data-stu-id="f3e10-499">ms-settings:developers</span></span> |
+
+## <a name="user--accounts"></a><span data-ttu-id="f3e10-500">ユーザー アカウント</span><span class="sxs-lookup"><span data-stu-id="f3e10-500">User  Accounts</span></span>
+
+|<span data-ttu-id="f3e10-501">[設定] ページ</span><span class="sxs-lookup"><span data-stu-id="f3e10-501">Settings Page</span></span>| <span data-ttu-id="f3e10-502">URI</span><span class="sxs-lookup"><span data-stu-id="f3e10-502">URI</span></span> |
+|-------------|-----|
+| <span data-ttu-id="f3e10-503">プロビジョニング</span><span class="sxs-lookup"><span data-stu-id="f3e10-503">Provisioning</span></span> | <span data-ttu-id="f3e10-504">ms-settings:workplace-provisioning (企業でプロビジョニング パッケージが展開されている場合のみ利用可能)</span><span class="sxs-lookup"><span data-stu-id="f3e10-504">ms-settings:workplace-provisioning (only available if enterprise has deployed a provisioning package)</span></span> |
+| <span data-ttu-id="f3e10-505">プロビジョニング</span><span class="sxs-lookup"><span data-stu-id="f3e10-505">Provisioning</span></span> | <span data-ttu-id="f3e10-506">ms-settings:workplace-provisioning (企業でプロビジョニング パッケージが展開されている場合にモバイルでのみ利用可能)</span><span class="sxs-lookup"><span data-stu-id="f3e10-506">ms-settings:provisioning (only available on mobile and if the enterprise has deployed a provisioning package)</span></span> |
+| <span data-ttu-id="f3e10-507">Windows Anywhere</span><span class="sxs-lookup"><span data-stu-id="f3e10-507">Windows Anywhere</span></span> | <span data-ttu-id="f3e10-508">ms-settings:windowsanywhere (デバイスが Windows Anywhere に対応している必要がある)</span><span class="sxs-lookup"><span data-stu-id="f3e10-508">ms-settings:windowsanywhere (device must be Windows Anywhere-capable)</span></span> |

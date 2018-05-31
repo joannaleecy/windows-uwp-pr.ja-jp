@@ -1,155 +1,155 @@
 ---
-title: "暗号化"
-description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで利用できる暗号化の機能の概要を説明します。 特定のタスクについて詳しくは、この記事の最後にある表をご覧ください。"
+title: 暗号化
+description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで利用できる暗号化の機能の概要を説明します。 特定のタスクについて詳しくは、この記事の最後にある表をご覧ください。
 ms.assetid: 9C213036-47FD-4AA4-99E0-84006BE63F47
-author: awkoren
-ms.author: alkoren
+author: msatranjr
+ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3329a873b0e86a606d6e8899dcaca62c2e127c29
-ms.lasthandoff: 02/07/2017
-
+keywords: windows 10, uwp
+ms.localizationpriority: medium
+ms.openlocfilehash: 0b102d84a428555b05d475368ef08bb4999fa392
+ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/28/2018
+ms.locfileid: "1689918"
 ---
-
-# <a name="cryptography"></a>暗号化
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
+# <a name="cryptography"></a><span data-ttu-id="da686-105">暗号化</span><span class="sxs-lookup"><span data-stu-id="da686-105">Cryptography</span></span>
 
 
-この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで利用できる暗号化の機能の概要を説明します。 特定のタスクについて詳しくは、この記事の最後にある表をご覧ください。
-
-## <a name="terminology"></a>用語
 
 
-暗号化と公開キー基盤 (PKI) でよく使われる用語を以下に示します。
+<span data-ttu-id="da686-106">この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで利用できる暗号化の機能の概要を説明します。</span><span class="sxs-lookup"><span data-stu-id="da686-106">The article provides an overview of the cryptography features available to Universal Windows Platform (UWP) apps.</span></span> <span data-ttu-id="da686-107">特定のタスクについて詳しくは、この記事の最後にある表をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="da686-107">For detailed information on particular tasks, see the table at the end of this article.</span></span>
 
-| 用語                        | 説明                                                                                                                                                                                           |
+## <a name="terminology"></a><span data-ttu-id="da686-108">用語</span><span class="sxs-lookup"><span data-stu-id="da686-108">Terminology</span></span>
+
+
+<span data-ttu-id="da686-109">暗号化と公開キー基盤 (PKI) でよく使われる用語を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="da686-109">The following terminology is commonly used in cryptography and public key infrastructure (PKI).</span></span>
+
+| <span data-ttu-id="da686-110">用語</span><span class="sxs-lookup"><span data-stu-id="da686-110">Term</span></span>                        | <span data-ttu-id="da686-111">説明</span><span class="sxs-lookup"><span data-stu-id="da686-111">Description</span></span>                                                                                                                                                                                           |
 |-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 暗号化                  | 暗号化アルゴリズムとキーを使ってデータを変換するプロセス。 変換されたデータは、同じアルゴリズムと、同じ (対称) または関連する (公開) キーを使った場合のみ回復できます。 |
-| 暗号化解除                  | 暗号化されたデータを元の形式に戻すプロセス。                                                                                                                                         |
-| プレーンテキスト                   | 当初は暗号化されていないテキスト メッセージを表しました。 現在は、すべての暗号化されていないデータを表します。                                                                                                         |
-| 暗号化テキスト                  | 当初は暗号化された読み取り不可能なテキスト メッセージを表しました。 現在はすべての暗号化データを表します。                                                                                  |
-| ハッシュ                     | 可変長データを、通常それより小さい値の固定長データに変換するプロセス。 ハッシュを比較して、2 つ以上のデータが同じものであることを合理的に保証できます。            |
-| 署名                   | データの送信者を認証するために、または、送信中にデータが改ざんされていないことを確認するために使われるデジタル データの暗号化されたハッシュ。                                               |
-| アルゴリズム                   | データを暗号化するための詳しい手順。                                                                                                                                                         |
-| キー                         | データを暗号化および暗号化解除するために、暗号化アルゴリズムへの入力に使われる乱数または疑似乱数。                                                                                               |
-| 対称キーの暗号化  | 暗号化と暗号化解除に同じキーを使う暗号化。 これは、秘密鍵の暗号化とも呼ばれます。                                                                                      |
-| 非対称キーの暗号化 | 暗号化と暗号化解除に異なる、数学的に関連性のあるキーを使う暗号化。 これは、公開キーの暗号化とも呼ばれます。                                                          |
-| エンコード                    | 証明書などのデジタル メッセージをネットワーク経由で送るためにエンコードするプロセス。                                                                                                     |
-| アルゴリズム プロバイダー          | 暗号化アルゴリズムを実装する DLL。                                                                                                                                                      |
-| キー ストレージ プロバイダー        | キー マテリアルを格納するコンテナー。 現在、キーはソフトウェア、スマート カード、またはトラステッド プラットフォーム モジュール (TPM) に格納できます。                                                                   |
-| X.509 証明書           | 個人、システム、またはエンティティをその他の関係者に識別させるために、通常、証明機関によって発行されるデジタル ドキュメント。                                            |
+| <span data-ttu-id="da686-112">暗号化</span><span class="sxs-lookup"><span data-stu-id="da686-112">Encryption</span></span>                  | <span data-ttu-id="da686-113">暗号化アルゴリズムとキーを使ってデータを変換するプロセス。</span><span class="sxs-lookup"><span data-stu-id="da686-113">The process of transforming data by using a cryptographic algorithm and key.</span></span> <span data-ttu-id="da686-114">変換されたデータは、同じアルゴリズムと、同じ (対称) または関連する (公開) キーを使った場合のみ回復できます。</span><span class="sxs-lookup"><span data-stu-id="da686-114">The transformed data can be recovered only by using the same algorithm and the same (symmetric) or related (public) key.</span></span> |
+| <span data-ttu-id="da686-115">暗号化解除</span><span class="sxs-lookup"><span data-stu-id="da686-115">Decryption</span></span>                  | <span data-ttu-id="da686-116">暗号化されたデータを元の形式に戻すプロセス。</span><span class="sxs-lookup"><span data-stu-id="da686-116">The process of returning encrypted data to its original form.</span></span>                                                                                                                                         |
+| <span data-ttu-id="da686-117">プレーンテキスト</span><span class="sxs-lookup"><span data-stu-id="da686-117">Plaintext</span></span>                   | <span data-ttu-id="da686-118">当初は暗号化されていないテキスト メッセージを表しました。</span><span class="sxs-lookup"><span data-stu-id="da686-118">Originally referred to an unencrypted text message.</span></span> <span data-ttu-id="da686-119">現在は、すべての暗号化されていないデータを表します。</span><span class="sxs-lookup"><span data-stu-id="da686-119">Currently refers to any unencrypted data.</span></span>                                                                                                         |
+| <span data-ttu-id="da686-120">暗号化テキスト</span><span class="sxs-lookup"><span data-stu-id="da686-120">Ciphertext</span></span>                  | <span data-ttu-id="da686-121">当初は暗号化された読み取り不可能なテキスト メッセージを表しました。</span><span class="sxs-lookup"><span data-stu-id="da686-121">Originally referred to an encrypted, and therefore unreadable, text message.</span></span> <span data-ttu-id="da686-122">現在はすべての暗号化データを表します。</span><span class="sxs-lookup"><span data-stu-id="da686-122">Currently refers to any encrypted data.</span></span>                                                                                  |
+| <span data-ttu-id="da686-123">ハッシュ</span><span class="sxs-lookup"><span data-stu-id="da686-123">Hashing</span></span>                     | <span data-ttu-id="da686-124">可変長データを、通常それより小さい値の固定長データに変換するプロセス。</span><span class="sxs-lookup"><span data-stu-id="da686-124">The process of converting variable length data into a fixed length, typically smaller, value.</span></span> <span data-ttu-id="da686-125">ハッシュを比較して、2 つ以上のデータが同じものであることを合理的に保証できます。</span><span class="sxs-lookup"><span data-stu-id="da686-125">By comparing hashes, you can obtain reasonable assurance that two or more data are the same.</span></span>            |
+| <span data-ttu-id="da686-126">署名</span><span class="sxs-lookup"><span data-stu-id="da686-126">Signature</span></span>                   | <span data-ttu-id="da686-127">データの送信者を認証するために、または、送信中にデータが改ざんされていないことを確認するために使われるデジタル データの暗号化されたハッシュ。</span><span class="sxs-lookup"><span data-stu-id="da686-127">Encrypted hash of digital data typically used to authenticate the sender of the data or verify that the data was not tampered with during transmission.</span></span>                                               |
+| <span data-ttu-id="da686-128">アルゴリズム</span><span class="sxs-lookup"><span data-stu-id="da686-128">Algorithm</span></span>                   | <span data-ttu-id="da686-129">データを暗号化するための詳しい手順。</span><span class="sxs-lookup"><span data-stu-id="da686-129">A step-by-step procedure for encrypting data.</span></span>                                                                                                                                                         |
+| <span data-ttu-id="da686-130">キー</span><span class="sxs-lookup"><span data-stu-id="da686-130">Key</span></span>                         | <span data-ttu-id="da686-131">データを暗号化および暗号化解除するために、暗号化アルゴリズムへの入力に使われる乱数または疑似乱数。</span><span class="sxs-lookup"><span data-stu-id="da686-131">A random or pseudorandom number used as input to a cryptographic algorithm to encrypt and decrypt data.</span></span>                                                                                               |
+| <span data-ttu-id="da686-132">対称キーの暗号化</span><span class="sxs-lookup"><span data-stu-id="da686-132">Symmetric Key Cryptography</span></span>  | <span data-ttu-id="da686-133">暗号化と暗号化解除に同じキーを使う暗号化。</span><span class="sxs-lookup"><span data-stu-id="da686-133">Cryptography in which encryption and decryption use the same key.</span></span> <span data-ttu-id="da686-134">これは、秘密鍵の暗号化とも呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="da686-134">This is also known as secret key cryptography.</span></span>                                                                                      |
+| <span data-ttu-id="da686-135">非対称キーの暗号化</span><span class="sxs-lookup"><span data-stu-id="da686-135">Asymmetric Key Cryptography</span></span> | <span data-ttu-id="da686-136">暗号化と暗号化解除に異なる、数学的に関連性のあるキーを使う暗号化。</span><span class="sxs-lookup"><span data-stu-id="da686-136">Cryptography in which encryption and decryption use a different but mathematically related key.</span></span> <span data-ttu-id="da686-137">これは、公開キーの暗号化とも呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="da686-137">This is also called public key cryptography.</span></span>                                                          |
+| <span data-ttu-id="da686-138">エンコード</span><span class="sxs-lookup"><span data-stu-id="da686-138">Encoding</span></span>                    | <span data-ttu-id="da686-139">証明書などのデジタル メッセージをネットワーク経由で送るためにエンコードするプロセス。</span><span class="sxs-lookup"><span data-stu-id="da686-139">The process of encoding digital messages, including certificates, for transport across a network.</span></span>                                                                                                     |
+| <span data-ttu-id="da686-140">アルゴリズム プロバイダー</span><span class="sxs-lookup"><span data-stu-id="da686-140">Algorithm Provider</span></span>          | <span data-ttu-id="da686-141">暗号化アルゴリズムを実装する DLL。</span><span class="sxs-lookup"><span data-stu-id="da686-141">A DLL that implements a cryptographic algorithm.</span></span>                                                                                                                                                      |
+| <span data-ttu-id="da686-142">キー ストレージ プロバイダー</span><span class="sxs-lookup"><span data-stu-id="da686-142">Key Storage Provider</span></span>        | <span data-ttu-id="da686-143">キー マテリアルを格納するコンテナー。</span><span class="sxs-lookup"><span data-stu-id="da686-143">A container for storing key material.</span></span> <span data-ttu-id="da686-144">現在、キーはソフトウェア、スマート カード、またはトラステッド プラットフォーム モジュール (TPM) に格納できます。</span><span class="sxs-lookup"><span data-stu-id="da686-144">Currently, keys can be stored in software, smart cards, or the trusted platform module (TPM).</span></span>                                                                   |
+| <span data-ttu-id="da686-145">X.509 証明書</span><span class="sxs-lookup"><span data-stu-id="da686-145">X.509 Certificate</span></span>           | <span data-ttu-id="da686-146">個人、システム、またはエンティティをその他の関係者に識別させるために、通常、証明機関によって発行されるデジタル ドキュメント。</span><span class="sxs-lookup"><span data-stu-id="da686-146">A digital document, typically issued by a certification authority, to verify the identity of an individual, system, or entity to other interested parties.</span></span>                                            |
 
  
-## <a name="namespaces"></a>名前空間
+## <a name="namespaces"></a><span data-ttu-id="da686-147">名前空間</span><span class="sxs-lookup"><span data-stu-id="da686-147">Namespaces</span></span>
 
-アプリでは、以下の名前空間を使うことができます。
+<span data-ttu-id="da686-148">アプリでは、以下の名前空間を使うことができます。</span><span class="sxs-lookup"><span data-stu-id="da686-148">The following namespaces are available for use in apps.</span></span>
 
-### <a name="windowssecuritycryptography"></a>Windows.Security.Cryptography
+### <a name="windowssecuritycryptography"></a><span data-ttu-id="da686-149">Windows.Security.Cryptography</span><span class="sxs-lookup"><span data-stu-id="da686-149">Windows.Security.Cryptography</span></span>
 
-CryptographicBuffer クラスと静的メソッドが含まれています。これらによって以下のことが可能になります。
+<span data-ttu-id="da686-150">CryptographicBuffer クラスと静的メソッドが含まれています。これらによって以下のことが可能になります。</span><span class="sxs-lookup"><span data-stu-id="da686-150">Contains the CryptographicBuffer class and static methods that enable you to:</span></span>
 
--   データから文字列への変換と文字列からデータへの変換
--   データからバイト配列への変換とバイト配列からデータへの変換
--   ネットワーク転送のためのメッセージのエンコード
--   転送後のメッセージのデコード
+-   <span data-ttu-id="da686-151">データから文字列への変換と文字列からデータへの変換</span><span class="sxs-lookup"><span data-stu-id="da686-151">Convert data to and from strings</span></span>
+-   <span data-ttu-id="da686-152">データからバイト配列への変換とバイト配列からデータへの変換</span><span class="sxs-lookup"><span data-stu-id="da686-152">Convert data to and from byte arrays</span></span>
+-   <span data-ttu-id="da686-153">ネットワーク転送のためのメッセージのエンコード</span><span class="sxs-lookup"><span data-stu-id="da686-153">Encode messages for network transport</span></span>
+-   <span data-ttu-id="da686-154">転送後のメッセージのデコード</span><span class="sxs-lookup"><span data-stu-id="da686-154">Decode messages after transport</span></span>
 
-### <a name="windowssecuritycryptographycertificates"></a>Windows.Security.Cryptography.Certificates
+### <a name="windowssecuritycryptographycertificates"></a><span data-ttu-id="da686-155">Windows.Security.Cryptography.Certificates</span><span class="sxs-lookup"><span data-stu-id="da686-155">Windows.Security.Cryptography.Certificates</span></span>
 
-クラス、インターフェイス、列挙型が含まれています。これらによって以下のことが可能になります。
+<span data-ttu-id="da686-156">クラス、インターフェイス、列挙型が含まれています。これらによって以下のことが可能になります。</span><span class="sxs-lookup"><span data-stu-id="da686-156">Contains classes, interfaces, and enumeration types that enable you to:</span></span>
 
--   証明書要求の作成
--   証明書応答のインストール
--   PFX ファイルでの証明書のインポート
--   証明書要求プロパティの指定と取得
+-   <span data-ttu-id="da686-157">証明書要求の作成</span><span class="sxs-lookup"><span data-stu-id="da686-157">Create a certificate request</span></span>
+-   <span data-ttu-id="da686-158">証明書応答のインストール</span><span class="sxs-lookup"><span data-stu-id="da686-158">Install a certificate response</span></span>
+-   <span data-ttu-id="da686-159">PFX ファイルでの証明書のインポート</span><span class="sxs-lookup"><span data-stu-id="da686-159">Import a certificate in a PFX file</span></span>
+-   <span data-ttu-id="da686-160">証明書要求プロパティの指定と取得</span><span class="sxs-lookup"><span data-stu-id="da686-160">Specify and retrieve certificate request properties</span></span>
 
-### <a name="windowssecuritycryptographycore"></a>Windows.Security.Cryptography.Core
+### <a name="windowssecuritycryptographycore"></a><span data-ttu-id="da686-161">Windows.Security.Cryptography.Core</span><span class="sxs-lookup"><span data-stu-id="da686-161">Windows.Security.Cryptography.Core</span></span>
 
-クラスと列挙型が含まれています、これらによって以下のことが可能になります。
+<span data-ttu-id="da686-162">クラスと列挙型が含まれています、これらによって以下のことが可能になります。</span><span class="sxs-lookup"><span data-stu-id="da686-162">Contains classes and enumeration types that enable you to:</span></span>
 
--   データの暗号化と暗号化解除
--   データのハッシュ
--   データへの署名と署名の確認
--   キーの作成、インポート、エクスポート
--   非対称キー アルゴリズム プロバイダーとの連携
--   対称キー アルゴリズム プロバイダーとの連携
--   ハッシュ アルゴリズム プロバイダーとの連携
--   マシン認証コード (MAC) アルゴリズム プロバイダーとの連携
--   キー派性アルゴリズム プロバイダーとの連携
+-   <span data-ttu-id="da686-163">データの暗号化と暗号化解除</span><span class="sxs-lookup"><span data-stu-id="da686-163">Encrypt and decrypt data</span></span>
+-   <span data-ttu-id="da686-164">データのハッシュ</span><span class="sxs-lookup"><span data-stu-id="da686-164">Hash data</span></span>
+-   <span data-ttu-id="da686-165">データへの署名と署名の確認</span><span class="sxs-lookup"><span data-stu-id="da686-165">Sign data and verify signatures</span></span>
+-   <span data-ttu-id="da686-166">キーの作成、インポート、エクスポート</span><span class="sxs-lookup"><span data-stu-id="da686-166">Create, import, and export keys</span></span>
+-   <span data-ttu-id="da686-167">非対称キー アルゴリズム プロバイダーとの連携</span><span class="sxs-lookup"><span data-stu-id="da686-167">Work with asymmetric key algorithm providers</span></span>
+-   <span data-ttu-id="da686-168">対称キー アルゴリズム プロバイダーとの連携</span><span class="sxs-lookup"><span data-stu-id="da686-168">Work with symmetric key algorithm providers</span></span>
+-   <span data-ttu-id="da686-169">ハッシュ アルゴリズム プロバイダーとの連携</span><span class="sxs-lookup"><span data-stu-id="da686-169">Work with hash algorithm providers</span></span>
+-   <span data-ttu-id="da686-170">マシン認証コード (MAC) アルゴリズム プロバイダーとの連携</span><span class="sxs-lookup"><span data-stu-id="da686-170">Work with machine authentication code (MAC) algorithm providers</span></span>
+-   <span data-ttu-id="da686-171">キー派性アルゴリズム プロバイダーとの連携</span><span class="sxs-lookup"><span data-stu-id="da686-171">Work with key derivation algorithm providers</span></span>
 
-### <a name="windowssecuritycryptographydataprotection"></a>Windows.Security.Cryptography.DataProtection
+### <a name="windowssecuritycryptographydataprotection"></a><span data-ttu-id="da686-172">Windows.Security.Cryptography.DataProtection</span><span class="sxs-lookup"><span data-stu-id="da686-172">Windows.Security.Cryptography.DataProtection</span></span>
 
-クラスが含まれています。これにより、以下のことが可能になります。
+<span data-ttu-id="da686-173">クラスが含まれています。これにより、以下のことが可能になります。</span><span class="sxs-lookup"><span data-stu-id="da686-173">Contains classes that enable you to:</span></span>
 
--   静的データの非同期の暗号化と暗号化解除
--   データ ストリームの非同期の暗号化と暗号化解除
+-   <span data-ttu-id="da686-174">静的データの非同期の暗号化と暗号化解除</span><span class="sxs-lookup"><span data-stu-id="da686-174">Asynchronously encrypt and decrypt static data</span></span>
+-   <span data-ttu-id="da686-175">データ ストリームの非同期の暗号化と暗号化解除</span><span class="sxs-lookup"><span data-stu-id="da686-175">Asynchronously encrypt and decrypt data streams</span></span>
 
-## <a name="crypto-and-pki-application-capabilities"></a>Crypto と PKI アプリケーションの機能
-
-
-アプリで利用可能な簡素化されたアプリケーション プログラミング インターフェイスにより、次の暗号化機能と公開キー基盤 (PKI) 機能が有効になります。
-
-### <a name="cryptography-support"></a>暗号化のサポート
-
-次の暗号化タスクを実行できます。 詳しくは、「[**Windows.Security.Cryptography.Core**](https://msdn.microsoft.com/library/windows/apps/br241547) 名前空間」をご覧ください。
-
--   対称キーの作成
--   対称暗号化の実行
--   非対称キーの作成
--   非対称暗号化の実行
--   パスワード ベースのキー派性
--   メッセージ認証コード (MAC) の作成
--   コンテンツのハッシュ
--   コンテンツへのデジタル署名
-
-SDK では、パスワードベースのデータ保護を行うのための簡素化されたインターフェイスも提供されます。 これを使って、次のタスクを実行できます。 詳しくは、「[**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) 名前空間」をご覧ください。
-
--   静的データの非同期保護
--   データ ストリームの非同期保護
-
-### <a name="encoding-support"></a>暗号化のサポート
-
-アプリでは、暗号化されたデータをネットワーク経由で送るためにエンコードし、ネットワーク ソースから受け取ったデータをデコードすることができます。 詳しくは、「[**Windows.Security.Cryptography**](https://msdn.microsoft.com/library/windows/apps/br241404) 名前空間」をご覧ください。
-
-### <a name="pki-support"></a>PKI サポート
-
-アプリは次の PKI タスクを実行できます。 詳しくは、「[**Windows.Security.Cryptography.Certificates**](https://msdn.microsoft.com/library/windows/apps/br241476) 名前空間」をご覧ください。
-
--   証明書を作成する
--   自己署名証明書を作成する
--   証明書応答をインストールする
--   証明書を PFX 形式でインポートする
--   スマート カード証明書とキーを使う (sharedUserCertificates 機能設定)
--   ユーザーの MY ストアから証明書を使う (sharedUserCertificates 機能設定)
-
-さらに、マニフェストを使って次の操作を実行できます。
-
--   アプリケーションごとに信頼されたルート証明書を指定する
--   アプリケーションごとにピア信頼証明書を指定する
--   システムの信頼からの継承を明示的に無効にする
--   証明書の選択条件を指定する
-    -   ハードウェアの証明書のみ
-    -   指定した一連の発行元の証明書
-    -   証明書をアプリケーション ストアから自動的に選ぶ
-
-## <a name="detailed-articles"></a>詳細記事
+## <a name="crypto-and-pki-application-capabilities"></a><span data-ttu-id="da686-176">Crypto と PKI アプリケーションの機能</span><span class="sxs-lookup"><span data-stu-id="da686-176">Crypto and PKI application capabilities</span></span>
 
 
-次の記事では、セキュリティのシナリオについての詳細が示されています。
+<span data-ttu-id="da686-177">アプリで利用可能な簡素化されたアプリケーション プログラミング インターフェイスにより、次の暗号化機能と公開キー基盤 (PKI) 機能が有効になります。</span><span class="sxs-lookup"><span data-stu-id="da686-177">The simplified application programming interface available for apps enables the following cryptographic and public key infrastructure (PKI) capabilities.</span></span>
 
-| トピック                                                                         | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+### <a name="cryptography-support"></a><span data-ttu-id="da686-178">暗号化のサポート</span><span class="sxs-lookup"><span data-stu-id="da686-178">Cryptography support</span></span>
+
+<span data-ttu-id="da686-179">次の暗号化タスクを実行できます。</span><span class="sxs-lookup"><span data-stu-id="da686-179">You can perform the following cryptographic tasks.</span></span> <span data-ttu-id="da686-180">詳しくは、「[**Windows.Security.Cryptography.Core**](https://msdn.microsoft.com/library/windows/apps/br241547) 名前空間」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="da686-180">For more information, see the [**Windows.Security.Cryptography.Core**](https://msdn.microsoft.com/library/windows/apps/br241547) namespace.</span></span>
+
+-   <span data-ttu-id="da686-181">対称キーの作成</span><span class="sxs-lookup"><span data-stu-id="da686-181">Create symmetric keys</span></span>
+-   <span data-ttu-id="da686-182">対称暗号化の実行</span><span class="sxs-lookup"><span data-stu-id="da686-182">Perform symmetric encryption</span></span>
+-   <span data-ttu-id="da686-183">非対称キーの作成</span><span class="sxs-lookup"><span data-stu-id="da686-183">Create asymmetric keys</span></span>
+-   <span data-ttu-id="da686-184">非対称暗号化の実行</span><span class="sxs-lookup"><span data-stu-id="da686-184">Perform asymmetric encryption</span></span>
+-   <span data-ttu-id="da686-185">パスワード ベースのキー派性</span><span class="sxs-lookup"><span data-stu-id="da686-185">Derive password based keys</span></span>
+-   <span data-ttu-id="da686-186">メッセージ認証コード (MAC) の作成</span><span class="sxs-lookup"><span data-stu-id="da686-186">Create message authentication codes (MACs)</span></span>
+-   <span data-ttu-id="da686-187">コンテンツのハッシュ</span><span class="sxs-lookup"><span data-stu-id="da686-187">Hash content</span></span>
+-   <span data-ttu-id="da686-188">コンテンツへのデジタル署名</span><span class="sxs-lookup"><span data-stu-id="da686-188">Digitally sign content</span></span>
+
+<span data-ttu-id="da686-189">SDK では、パスワードベースのデータ保護を行うのための簡素化されたインターフェイスも提供されます。</span><span class="sxs-lookup"><span data-stu-id="da686-189">The SDK also provides a simplified interface for password-based data protection.</span></span> <span data-ttu-id="da686-190">これを使って、次のタスクを実行できます。</span><span class="sxs-lookup"><span data-stu-id="da686-190">You can use this to perform the following tasks.</span></span> <span data-ttu-id="da686-191">詳しくは、「[**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) 名前空間」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="da686-191">For more information, see the [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) namespace.</span></span>
+
+-   <span data-ttu-id="da686-192">静的データの非同期保護</span><span class="sxs-lookup"><span data-stu-id="da686-192">Asynchronous protection of static data</span></span>
+-   <span data-ttu-id="da686-193">データ ストリームの非同期保護</span><span class="sxs-lookup"><span data-stu-id="da686-193">Asynchronous protection of a data stream</span></span>
+
+### <a name="encoding-support"></a><span data-ttu-id="da686-194">暗号化のサポート</span><span class="sxs-lookup"><span data-stu-id="da686-194">Encoding support</span></span>
+
+<span data-ttu-id="da686-195">アプリでは、暗号化されたデータをネットワーク経由で送るためにエンコードし、ネットワーク ソースから受け取ったデータをデコードすることができます。</span><span class="sxs-lookup"><span data-stu-id="da686-195">An app can encode cryptographic data for transmission across a network and decode data received from a network source.</span></span> <span data-ttu-id="da686-196">詳しくは、「[**Windows.Security.Cryptography**](https://msdn.microsoft.com/library/windows/apps/br241404) 名前空間」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="da686-196">For more information, see the static methods available in the [**Windows.Security.Cryptography**](https://msdn.microsoft.com/library/windows/apps/br241404) namespace.</span></span>
+
+### <a name="pki-support"></a><span data-ttu-id="da686-197">PKI サポート</span><span class="sxs-lookup"><span data-stu-id="da686-197">PKI support</span></span>
+
+<span data-ttu-id="da686-198">アプリは次の PKI タスクを実行できます。</span><span class="sxs-lookup"><span data-stu-id="da686-198">Apps can perform the following PKI tasks.</span></span> <span data-ttu-id="da686-199">詳しくは、「[**Windows.Security.Cryptography.Certificates**](https://msdn.microsoft.com/library/windows/apps/br241476) 名前空間」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="da686-199">For more information, see the [**Windows.Security.Cryptography.Certificates**](https://msdn.microsoft.com/library/windows/apps/br241476) namespace.</span></span>
+
+-   <span data-ttu-id="da686-200">証明書を作成する</span><span class="sxs-lookup"><span data-stu-id="da686-200">Create a certificate</span></span>
+-   <span data-ttu-id="da686-201">自己署名証明書を作成する</span><span class="sxs-lookup"><span data-stu-id="da686-201">Create a self-signed certificate</span></span>
+-   <span data-ttu-id="da686-202">証明書応答をインストールする</span><span class="sxs-lookup"><span data-stu-id="da686-202">Install a certificate response</span></span>
+-   <span data-ttu-id="da686-203">証明書を PFX 形式でインポートする</span><span class="sxs-lookup"><span data-stu-id="da686-203">Import a certificate in PFX format</span></span>
+-   <span data-ttu-id="da686-204">スマート カード証明書とキーを使う (sharedUserCertificates 機能設定)</span><span class="sxs-lookup"><span data-stu-id="da686-204">Use smart card certificates and keys (sharedUserCertificates capabilities set)</span></span>
+-   <span data-ttu-id="da686-205">ユーザーの MY ストアから証明書を使う (sharedUserCertificates 機能設定)</span><span class="sxs-lookup"><span data-stu-id="da686-205">Use certificates from the user MY store (sharedUserCertificates capabilities set)</span></span>
+
+<span data-ttu-id="da686-206">さらに、マニフェストを使って次の操作を実行できます。</span><span class="sxs-lookup"><span data-stu-id="da686-206">Additionally, you can use the manifest to perform the following actions:</span></span>
+
+-   <span data-ttu-id="da686-207">アプリケーションごとに信頼されたルート証明書を指定する</span><span class="sxs-lookup"><span data-stu-id="da686-207">Specify per application trusted root certificates</span></span>
+-   <span data-ttu-id="da686-208">アプリケーションごとにピア信頼証明書を指定する</span><span class="sxs-lookup"><span data-stu-id="da686-208">Specify per application peer trusted certificates</span></span>
+-   <span data-ttu-id="da686-209">システムの信頼からの継承を明示的に無効にする</span><span class="sxs-lookup"><span data-stu-id="da686-209">Explicitly disable inheritance from system trust</span></span>
+-   <span data-ttu-id="da686-210">証明書の選択条件を指定する</span><span class="sxs-lookup"><span data-stu-id="da686-210">Specify the certificate selection criteria</span></span>
+    -   <span data-ttu-id="da686-211">ハードウェアの証明書のみ</span><span class="sxs-lookup"><span data-stu-id="da686-211">Hardware certificates only</span></span>
+    -   <span data-ttu-id="da686-212">指定した一連の発行元の証明書</span><span class="sxs-lookup"><span data-stu-id="da686-212">Certificates that chain through a specified set of issuers</span></span>
+    -   <span data-ttu-id="da686-213">証明書をアプリケーション ストアから自動的に選ぶ</span><span class="sxs-lookup"><span data-stu-id="da686-213">Automatically select a certificate from the application store</span></span>
+
+## <a name="detailed-articles"></a><span data-ttu-id="da686-214">詳細記事</span><span class="sxs-lookup"><span data-stu-id="da686-214">Detailed articles</span></span>
+
+
+<span data-ttu-id="da686-215">次の記事では、セキュリティのシナリオについての詳細が示されています。</span><span class="sxs-lookup"><span data-stu-id="da686-215">The following articles provide more detail on security scenarios:</span></span>
+
+| <span data-ttu-id="da686-216">トピック</span><span class="sxs-lookup"><span data-stu-id="da686-216">Topic</span></span>                                                                         | <span data-ttu-id="da686-217">説明</span><span class="sxs-lookup"><span data-stu-id="da686-217">Description</span></span>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 |-------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [証明書](certificates.md)                                               | この記事では、UWP アプリでの証明書の利用について説明します。 デジタル証明書は、公開キーを個人、コンピューター、組織にバインドするために、公開キーの暗号化で使われます。 バインドされた識別情報は、あるエンティティを別のエンティティに対して認証する際に最も頻繁に使われます。 たとえば、証明書は、Web サーバーをユーザーに対して、また、ユーザーを Web サーバーに対して認証するためによく使われます。 証明書要求を作成し、発行された証明書をインストールまたはインポートすることができます。 また、証明書階層で証明書を登録することもできます。 |
-| [暗号化キー](cryptographic-keys.md)                                   | この記事では、標準のキー派生関数を使ってキーを派生させる方法、および対称キーと非対称キーを使ってコンテンツを暗号化する方法について説明します。                                                                                                                                                                                                                                                                                                                                                                             |
-| [データ保護](data-protection.md)                                         | この記事では、[Windows.Security.Cryptography.DataProtection](https://msdn.microsoft.com/library/windows/apps/br241585) 名前空間の [DataProtectionProvider](https://msdn.microsoft.com/library/windows/apps/br241559) クラスを使って、UWP アプリでデジタル データの暗号化と暗号化解除を行う方法について説明します。                                                                                                                                                                                                                  |
-| [MAC、ハッシュ、および署名](macs-hashes-and-signatures.md)               | この記事では、メッセージ認証コード (MAC)、ハッシュ、署名を UWP アプリで使って、メッセージの改ざんを検出する方法について説明します。                                                                                                                                                                                                                                                                                                                                                                                |
-| [暗号化に関する輸出制限の順守](export-restrictions-on-cryptography.md) | Windows ストアで認定されない原因となり得るような暗号化がアプリで使われていないかを判断するためにこの情報をご利用ください。                                                                                                                                                                                                                                                                                                                                                                                            |
-| [一般的な暗号化タスク](common-cryptography-tasks.md)                     | これらの記事では、乱数の生成、バッファーの比較、文字列とバイナリ データの間の変換、バイト配列間のコピー、データのエンコードとデコードなど、一般的な UWP 暗号化タスクのコード例が示されています。                                                                                                                                                                                                                                                                                    |
+| [<span data-ttu-id="da686-218">証明書</span><span class="sxs-lookup"><span data-stu-id="da686-218">Certificates</span></span>](certificates.md)                                               | <span data-ttu-id="da686-219">この記事では、UWP アプリでの証明書の利用について説明します。</span><span class="sxs-lookup"><span data-stu-id="da686-219">This article discusses the use of certificates in UWP apps.</span></span> <span data-ttu-id="da686-220">デジタル証明書は、公開キーを個人、コンピューター、組織にバインドするために、公開キーの暗号化で使われます。</span><span class="sxs-lookup"><span data-stu-id="da686-220">Digital certificates are used in public key cryptography to bind a public key to a person, computer, or organization.</span></span> <span data-ttu-id="da686-221">バインドされた識別情報は、あるエンティティを別のエンティティに対して認証する際に最も頻繁に使われます。</span><span class="sxs-lookup"><span data-stu-id="da686-221">The bound identities are most often used to authenticate one entity to another.</span></span> <span data-ttu-id="da686-222">たとえば、証明書は、Web サーバーをユーザーに対して、また、ユーザーを Web サーバーに対して認証するためによく使われます。</span><span class="sxs-lookup"><span data-stu-id="da686-222">For example, certificates are often used to authenticate a web server to a user and a user to a web server.</span></span> <span data-ttu-id="da686-223">証明書要求を作成し、発行された証明書をインストールまたはインポートすることができます。</span><span class="sxs-lookup"><span data-stu-id="da686-223">You can create certificate requests and install or import issued certificates.</span></span> <span data-ttu-id="da686-224">また、証明書階層で証明書を登録することもできます。</span><span class="sxs-lookup"><span data-stu-id="da686-224">You can also enroll a certificate in a certificate hierarchy.</span></span> |
+| [<span data-ttu-id="da686-225">暗号化キー</span><span class="sxs-lookup"><span data-stu-id="da686-225">Cryptographic keys</span></span>](cryptographic-keys.md)                                   | <span data-ttu-id="da686-226">この記事では、標準のキー派生関数を使ってキーを派生させる方法、および対称キーと非対称キーを使ってコンテンツを暗号化する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="da686-226">This article shows how to use standard key derivation functions to derive keys and how to encrypt content using symmetric and asymmetric keys.</span></span>                                                                                                                                                                                                                                                                                                                                                                             |
+| [<span data-ttu-id="da686-227">データ保護</span><span class="sxs-lookup"><span data-stu-id="da686-227">Data protection</span></span>](data-protection.md)                                         | <span data-ttu-id="da686-228">この記事では、[Windows.Security.Cryptography.DataProtection](https://msdn.microsoft.com/library/windows/apps/br241585) 名前空間の [DataProtectionProvider](https://msdn.microsoft.com/library/windows/apps/br241559) クラスを使って、UWP アプリでデジタル データの暗号化と暗号化解除を行う方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="da686-228">This article explains how to use the [DataProtectionProvider](https://msdn.microsoft.com/library/windows/apps/br241559) class in the [Windows.Security.Cryptography.DataProtection](https://msdn.microsoft.com/library/windows/apps/br241585) namespace to encrypt and decrypt digital data in a UWP app.</span></span>                                                                                                                                                                                                                  |
+| [<span data-ttu-id="da686-229">MAC、ハッシュ、および署名</span><span class="sxs-lookup"><span data-stu-id="da686-229">MACs, hashes, and signatures</span></span>](macs-hashes-and-signatures.md)               | <span data-ttu-id="da686-230">この記事では、メッセージ認証コード (MAC)、ハッシュ、署名を UWP アプリで使って、メッセージの改ざんを検出する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="da686-230">This article discusses how message authentication codes (MACs), hashes, and signatures can be used in UWP apps to detect message tampering.</span></span>                                                                                                                                                                                                                                                                                                                                                                                |
+| [<span data-ttu-id="da686-231">暗号化に関する輸出制限の順守</span><span class="sxs-lookup"><span data-stu-id="da686-231">Export restrictions on cryptography</span></span>](export-restrictions-on-cryptography.md) | <span data-ttu-id="da686-232">アプリでの暗号化が、Microsoft Store に登録されない可能性がある方法で使われていないかどうかを判断する場合に、この情報を利用してください。</span><span class="sxs-lookup"><span data-stu-id="da686-232">Use this info to determine if your app uses cryptography in a way that might prevent it from being listed in the Microsoft Store.</span></span>                                                                                                                                                                                                                                                                                                                                                                                            |
+| [<span data-ttu-id="da686-233">一般的な暗号化タスク</span><span class="sxs-lookup"><span data-stu-id="da686-233">Common cryptography tasks</span></span>](common-cryptography-tasks.md)                     | <span data-ttu-id="da686-234">これらの記事では、乱数の生成、バッファーの比較、文字列とバイナリ データの間の変換、バイト配列間のコピー、データのエンコードとデコードなど、一般的な UWP 暗号化タスクのコード例が示されています。</span><span class="sxs-lookup"><span data-stu-id="da686-234">These articles provide example code for common UWP cryptography tasks, such as creating random numbers, comparing buffers, converting between strings and binary data, copying to and from byte arrays, and encoding and decoding data.</span></span>                                                                                                                                                                                                                                                                                    |
 
  

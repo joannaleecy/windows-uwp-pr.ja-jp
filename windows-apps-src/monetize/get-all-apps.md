@@ -1,90 +1,83 @@
 ---
 author: mcleanbyron
 ms.assetid: 2BCFF687-DC12-49CA-97E4-ACEC72BFCD9B
-description: "Windows デベロッパー センター アカウントに登録されているすべてのアプリに関する情報を取得するには、Windows ストア申請 API 内のこのメソッドを使用します。"
-title: "Windows ストア申請 API を使用したすべてのアプリの取得"
+description: Windows デベロッパー センター アカウントに登録されているすべてのアプリに関する情報を取得するには、Microsoft Store 申請 API の以下のメソッドを使います。
+title: すべてのアプリの取得
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, Windows ストア申請 API, アプリ"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 12466a50c6cabe5ceca907cdd2f0d600ec95121f
-ms.lasthandoff: 02/07/2017
-
+keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリ
+ms.localizationpriority: medium
+ms.openlocfilehash: bf2e7bb5e809d975c7217118ebc36409a54061c9
+ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/30/2018
+ms.locfileid: "1816137"
 ---
-
-# <a name="get-all-apps-using-the-windows-store-submission-api"></a>Windows ストア申請 API を使用したすべてのアプリの取得
-
+# <a name="get-all-apps"></a><span data-ttu-id="bbe63-104">すべてのアプリの取得</span><span class="sxs-lookup"><span data-stu-id="bbe63-104">Get all apps</span></span>
 
 
+<span data-ttu-id="bbe63-105">Windows デベロッパー センター アカウントに登録されているすべてのアプリに関するデータを取得するには、Microsoft Store 申請 API の以下のメソッドを使います。</span><span class="sxs-lookup"><span data-stu-id="bbe63-105">Use this method in the Microsoft Store submission API to retrieve data for all the apps that are registered to your Windows Dev Center account.</span></span>
 
-Windows デベロッパー センター アカウントに登録されているすべてのアプリのデータを取得するには、Windows ストア申請 API 内のこのメソッドを使用します。
+## <a name="prerequisites"></a><span data-ttu-id="bbe63-106">前提条件</span><span class="sxs-lookup"><span data-stu-id="bbe63-106">Prerequisites</span></span>
 
-## <a name="prerequisites"></a>前提条件
+<span data-ttu-id="bbe63-107">このメソッドを使うには、最初に次の作業を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="bbe63-107">To use this method, you need to first do the following:</span></span>
 
-このメソッドを使うには、最初に次の作業を行う必要があります。
+* <span data-ttu-id="bbe63-108">Microsoft Store 申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。</span><span class="sxs-lookup"><span data-stu-id="bbe63-108">If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Microsoft Store submission API.</span></span>
+* <span data-ttu-id="bbe63-109">このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。</span><span class="sxs-lookup"><span data-stu-id="bbe63-109">[Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method.</span></span> <span data-ttu-id="bbe63-110">アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。</span><span class="sxs-lookup"><span data-stu-id="bbe63-110">After you obtain an access token, you have 60 minutes to use it before it expires.</span></span> <span data-ttu-id="bbe63-111">トークンの有効期限が切れたら新しいトークンを取得できます。</span><span class="sxs-lookup"><span data-stu-id="bbe63-111">After the token expires, you can obtain a new one.</span></span>
 
-* Windows ストア申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
+## <a name="request"></a><span data-ttu-id="bbe63-112">要求</span><span class="sxs-lookup"><span data-stu-id="bbe63-112">Request</span></span>
 
->**注:**&nbsp;&nbsp;このメソッドは、Windows ストア提出 API を使用するアクセス許可が付与された Windows デベロッパー センター アカウントにのみ使用できます。 すべてのアカウントでこのアクセス許可が有効になっているとは限りません。
+<span data-ttu-id="bbe63-113">このメソッドの構文は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="bbe63-113">This method has the following syntax.</span></span> <span data-ttu-id="bbe63-114">ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="bbe63-114">See the following sections for usage examples and descriptions of the header and request body.</span></span>
 
-## <a name="request"></a>要求
-
-このメソッドの構文は次のとおりです。 ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。
-
-| メソッド | 要求 URI                                                      |
+| <span data-ttu-id="bbe63-115">メソッド</span><span class="sxs-lookup"><span data-stu-id="bbe63-115">Method</span></span> | <span data-ttu-id="bbe63-116">要求 URI</span><span class="sxs-lookup"><span data-stu-id="bbe63-116">Request URI</span></span>                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications``` |
+| <span data-ttu-id="bbe63-117">GET</span><span class="sxs-lookup"><span data-stu-id="bbe63-117">GET</span></span>    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications``` |
 
-<span/>
- 
 
-### <a name="request-header"></a>要求ヘッダー
+### <a name="request-header"></a><span data-ttu-id="bbe63-118">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="bbe63-118">Request header</span></span>
 
-| ヘッダー        | 型   | 説明                                                                 |
+| <span data-ttu-id="bbe63-119">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="bbe63-119">Header</span></span>        | <span data-ttu-id="bbe63-120">型</span><span class="sxs-lookup"><span data-stu-id="bbe63-120">Type</span></span>   | <span data-ttu-id="bbe63-121">説明</span><span class="sxs-lookup"><span data-stu-id="bbe63-121">Description</span></span>                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
+| <span data-ttu-id="bbe63-122">Authorization</span><span class="sxs-lookup"><span data-stu-id="bbe63-122">Authorization</span></span> | <span data-ttu-id="bbe63-123">文字列</span><span class="sxs-lookup"><span data-stu-id="bbe63-123">string</span></span> | <span data-ttu-id="bbe63-124">必須。</span><span class="sxs-lookup"><span data-stu-id="bbe63-124">Required.</span></span> <span data-ttu-id="bbe63-125">**Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。</span><span class="sxs-lookup"><span data-stu-id="bbe63-125">The Azure AD access token in the form **Bearer** &lt;*token*&gt;.</span></span> |
 
-<span/>
 
-### <a name="request-parameters"></a>要求パラメーター
+### <a name="request-parameters"></a><span data-ttu-id="bbe63-126">要求パラメーター</span><span class="sxs-lookup"><span data-stu-id="bbe63-126">Request parameters</span></span>
 
-このメソッドでは、要求パラメーターはすべてオプションです。 パラメーターを指定せずにこのメソッドを呼び出す場合、応答には、アカウントに登録するすべてのアプリのデータが含まれます。
- 
-|  パラメーター  |  型  |  説明  |  必須かどうか  |
+<span data-ttu-id="bbe63-127">このメソッドでは、要求パラメーターはすべてオプションです。</span><span class="sxs-lookup"><span data-stu-id="bbe63-127">All request parameters are optional for this method.</span></span> <span data-ttu-id="bbe63-128">パラメーターを指定せずにこのメソッドを呼び出す場合、応答には、アカウントに登録するすべてのアプリのデータが含まれます。</span><span class="sxs-lookup"><span data-stu-id="bbe63-128">If you call this method without parameters, the response contains data for all apps that are registered to your account.</span></span>
+
+|  <span data-ttu-id="bbe63-129">パラメーター</span><span class="sxs-lookup"><span data-stu-id="bbe63-129">Parameter</span></span>  |  <span data-ttu-id="bbe63-130">型</span><span class="sxs-lookup"><span data-stu-id="bbe63-130">Type</span></span>  |  <span data-ttu-id="bbe63-131">説明</span><span class="sxs-lookup"><span data-stu-id="bbe63-131">Description</span></span>  |  <span data-ttu-id="bbe63-132">必須かどうか</span><span class="sxs-lookup"><span data-stu-id="bbe63-132">Required</span></span>  |
 |------|------|------|------|
-|  top  |  int  |  要求で返される項目の数 (つまり、返されるアプリの数)。 クエリで指定した値よりアカウントのアプリの数が多い場合、応答本文には、データの次のページを要求するためにメソッド URI に追加できる相対 URI パスが含まれます。  |  必須ではない  |
-|  skip  |  int  |  残りの項目を返す前にクエリでバイパスする項目の数。 データ セットを操作するには、このパラメーターを使用します。 たとえば、top = 10 と skip = 0 は、1 から 10 の項目を取得し、top=10 と skip=10 は 11 から 20 の項目を取得するという具合です。  |  必須ではない  |
+|  <span data-ttu-id="bbe63-133">top</span><span class="sxs-lookup"><span data-stu-id="bbe63-133">top</span></span>  |  <span data-ttu-id="bbe63-134">int</span><span class="sxs-lookup"><span data-stu-id="bbe63-134">int</span></span>  |  <span data-ttu-id="bbe63-135">要求で返される項目の数 (つまり、返されるアプリの数)。</span><span class="sxs-lookup"><span data-stu-id="bbe63-135">The number of items to return in the request (that is, the number of apps to return).</span></span> <span data-ttu-id="bbe63-136">クエリで指定した値よりアカウントのアプリの数が多い場合、応答本文には、データの次のページを要求するためにメソッド URI に追加できる相対 URI パスが含まれます。</span><span class="sxs-lookup"><span data-stu-id="bbe63-136">If your account has more apps than the value you specify in the query, the response body includes a relative URI path that you can append to the method URI to request the next page of data.</span></span>  |  <span data-ttu-id="bbe63-137">必須ではない</span><span class="sxs-lookup"><span data-stu-id="bbe63-137">No</span></span>  |
+|  <span data-ttu-id="bbe63-138">skip</span><span class="sxs-lookup"><span data-stu-id="bbe63-138">skip</span></span>  |  <span data-ttu-id="bbe63-139">int</span><span class="sxs-lookup"><span data-stu-id="bbe63-139">int</span></span>  |  <span data-ttu-id="bbe63-140">残りの項目を返す前にクエリでバイパスする項目の数。</span><span class="sxs-lookup"><span data-stu-id="bbe63-140">The number of items to bypass in the query before returning the remaining items.</span></span> <span data-ttu-id="bbe63-141">データ セットを操作するには、このパラメーターを使用します。</span><span class="sxs-lookup"><span data-stu-id="bbe63-141">Use this parameter to page through data sets.</span></span> <span data-ttu-id="bbe63-142">たとえば、top = 10 と skip = 0 は、1 から 10 の項目を取得し、top=10 と skip=10 は 11 から 20 の項目を取得するという具合です。</span><span class="sxs-lookup"><span data-stu-id="bbe63-142">For example, top=10 and skip=0 retrieves items 1 through 10, top=10 and skip=10 retrieves items 11 through 20, and so on.</span></span>  |  <span data-ttu-id="bbe63-143">必須ではない</span><span class="sxs-lookup"><span data-stu-id="bbe63-143">No</span></span>  |
 
-<span/>
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a><span data-ttu-id="bbe63-144">要求本文</span><span class="sxs-lookup"><span data-stu-id="bbe63-144">Request body</span></span>
 
-このメソッドでは要求本文を指定しないでください。
+<span data-ttu-id="bbe63-145">このメソッドでは要求本文を指定しないでください。</span><span class="sxs-lookup"><span data-stu-id="bbe63-145">Do not provide a request body for this method.</span></span>
 
-### <a name="request-examples"></a>要求の例
+### <a name="request-examples"></a><span data-ttu-id="bbe63-146">要求の例</span><span class="sxs-lookup"><span data-stu-id="bbe63-146">Request examples</span></span>
 
-次の例は、アカウントに登録するすべてのアプリに関する情報を取得する方法を示しています。
+<span data-ttu-id="bbe63-147">次の例は、アカウントに登録するすべてのアプリに関する情報を取得する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="bbe63-147">The following example demonstrates how to retrieve information about all the apps that are registered to your account.</span></span>
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-次の例は、アカウントに登録されている最初の 10 個のアプリを取得する方法を示しています。
+<span data-ttu-id="bbe63-148">次の例は、アカウントに登録されている最初の 10 個のアプリを取得する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="bbe63-148">The following example demonstrates how to retrieve the first 10 apps that are registered to your account.</span></span>
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications?top=10 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>応答
+## <a name="response"></a><span data-ttu-id="bbe63-149">応答</span><span class="sxs-lookup"><span data-stu-id="bbe63-149">Response</span></span>
 
-次の例は、合計 21 個のアプリがある開発者アカウントに登録されている、最初の 10 個のアプリに対する要求が成功した場合に返される JSON 応答本文を示しています。 簡潔にするために、この例では、要求によって返される最初の 2 つのアプリのデータのみが示されています。 応答本文の値について詳しくは、次のセクションをご覧ください。
+<span data-ttu-id="bbe63-150">次の例は、合計 21 個のアプリがある開発者アカウントに登録されている、最初の 10 個のアプリに対する要求が成功した場合に返される JSON 応答本文を示しています。</span><span class="sxs-lookup"><span data-stu-id="bbe63-150">The following example demonstrates the JSON response body returned by a successful request for the first 10 apps that are registered to a developer account with 21 total apps.</span></span> <span data-ttu-id="bbe63-151">簡潔にするために、この例では、要求によって返される最初の 2 つのアプリのデータのみが示されています。</span><span class="sxs-lookup"><span data-stu-id="bbe63-151">For brevity, this example only shows the data for the first two apps returned by the request.</span></span> <span data-ttu-id="bbe63-152">応答本文の値について詳しくは、次のセクションをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="bbe63-152">For more details about the values in the response body, see the following section.</span></span>
 
 ```json
 {
@@ -120,31 +113,28 @@ Authorization: Bearer <your access token>
 }
 ```
 
-### <a name="response-body"></a>応答本文
+### <a name="response-body"></a><span data-ttu-id="bbe63-153">応答本文</span><span class="sxs-lookup"><span data-stu-id="bbe63-153">Response body</span></span>
 
-| 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
+| <span data-ttu-id="bbe63-154">値</span><span class="sxs-lookup"><span data-stu-id="bbe63-154">Value</span></span>      | <span data-ttu-id="bbe63-155">型</span><span class="sxs-lookup"><span data-stu-id="bbe63-155">Type</span></span>   | <span data-ttu-id="bbe63-156">説明</span><span class="sxs-lookup"><span data-stu-id="bbe63-156">Description</span></span>                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| value      | array  | アカウントに登録されている各アプリについての情報が含まれるオブジェクトの配列。 各オブジェクトのデータについて詳しくは、「[アプリケーション リソース](get-app-data.md#application_object)」をご覧ください。                                                                                                                           |
-| @nextLink  | string | データの追加ページが存在する場合、この文字列には、データの次のページを要求するために基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI に追加できる相対パスが含まれます。 たとえば、最初の要求本文の *top* パラメーターが 10 に設定されていて、アカウントには 20 個のアプリが登録されている場合、応答本文には ```applications?skip=10&top=10``` の @nextLink 値が含まれます。これは、次の 10 個のアプリを要求するために ```https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=10&top=10``` を呼び出すことができることを示しています。 |
-| totalCount | int    | クエリの結果データ内の行の総数 (つまり、自分のアカウントに登録されているアプリの合計数)。                                                                                                                                                                                                                             |
+| <span data-ttu-id="bbe63-157">value</span><span class="sxs-lookup"><span data-stu-id="bbe63-157">value</span></span>      | <span data-ttu-id="bbe63-158">array</span><span class="sxs-lookup"><span data-stu-id="bbe63-158">array</span></span>  | <span data-ttu-id="bbe63-159">アカウントに登録されている各アプリについての情報が含まれるオブジェクトの配列。</span><span class="sxs-lookup"><span data-stu-id="bbe63-159">An array of objects that contain information about each app that is registered to your account.</span></span> <span data-ttu-id="bbe63-160">各オブジェクトのデータについて詳しくは、「[アプリケーション リソース](get-app-data.md#application_object)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="bbe63-160">For more information about the data in each object, see [Application resource](get-app-data.md#application_object).</span></span>                                                                                                                           |
+| @nextLink  | <span data-ttu-id="bbe63-161">string</span><span class="sxs-lookup"><span data-stu-id="bbe63-161">string</span></span> | <span data-ttu-id="bbe63-162">データの追加ページが存在する場合、この文字列には、データの次のページを要求するために、ベースとなる ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI に追加できる相対パスが含まれます。</span><span class="sxs-lookup"><span data-stu-id="bbe63-162">If there are additional pages of data, this string contains a relative path that you can append to the base ```https://manage.devcenter.microsoft.com/v1.0/my/``` request URI to request the next page of data.</span></span> <span data-ttu-id="bbe63-163">たとえば、最初の要求本文の *top* パラメーターが 10 に設定されていて、アカウントには 20 個のアプリが登録されている場合、応答本文には、```applications?skip=10&top=10``` という @nextLink 値が含まれます。これは、次の 10 個のアプリを要求するために、```https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=10&top=10``` を呼び出すことができることを示しています。</span><span class="sxs-lookup"><span data-stu-id="bbe63-163">For example, if the *top* parameter of the initial request body is set to 10 but there are 20 apps registered to your account, the response body will include a @nextLink value of ```applications?skip=10&top=10```, which indicates that you can call ```https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=10&top=10``` to request the next 10 apps.</span></span> |
+| <span data-ttu-id="bbe63-164">totalCount</span><span class="sxs-lookup"><span data-stu-id="bbe63-164">totalCount</span></span> | <span data-ttu-id="bbe63-165">int</span><span class="sxs-lookup"><span data-stu-id="bbe63-165">int</span></span>    | <span data-ttu-id="bbe63-166">クエリの結果データ内の行の総数 (つまり、自分のアカウントに登録されているアプリの合計数)。</span><span class="sxs-lookup"><span data-stu-id="bbe63-166">The total number of rows in the data result for the query (that is, the total number of apps that are registered to your account).</span></span>                                                |
 
-<span/>
 
-## <a name="error-codes"></a>エラー コード
+## <a name="error-codes"></a><span data-ttu-id="bbe63-167">エラー コード</span><span class="sxs-lookup"><span data-stu-id="bbe63-167">Error codes</span></span>
 
-要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。
+<span data-ttu-id="bbe63-168">要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。</span><span class="sxs-lookup"><span data-stu-id="bbe63-168">If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.</span></span>
 
-| エラー コード |  説明   |
+| <span data-ttu-id="bbe63-169">エラー コード</span><span class="sxs-lookup"><span data-stu-id="bbe63-169">Error code</span></span> |  <span data-ttu-id="bbe63-170">説明</span><span class="sxs-lookup"><span data-stu-id="bbe63-170">Description</span></span>   |
 |--------|------------------|
-| 404  | アプリが見つかりませんでした。 |
-| 409  | アプリは、[Windows ストア提出 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センターのダッシュボード機能を使用します。  |
+| <span data-ttu-id="bbe63-171">404</span><span class="sxs-lookup"><span data-stu-id="bbe63-171">404</span></span>  | <span data-ttu-id="bbe63-172">アプリが見つかりませんでした。</span><span class="sxs-lookup"><span data-stu-id="bbe63-172">No apps were found.</span></span> |
+| <span data-ttu-id="bbe63-173">409</span><span class="sxs-lookup"><span data-stu-id="bbe63-173">409</span></span>  | <span data-ttu-id="bbe63-174">アプリが、[Microsoft Store 申請 API で現在サポートされていない](create-and-manage-submissions-using-windows-store-services.md#not_supported)デベロッパー センター ダッシュボード機能を使用しています。</span><span class="sxs-lookup"><span data-stu-id="bbe63-174">The apps use Dev Center dashboard features that are [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).</span></span>  |
 
-<span/>
 
-## <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a><span data-ttu-id="bbe63-175">関連トピック</span><span class="sxs-lookup"><span data-stu-id="bbe63-175">Related topics</span></span>
 
-* [Windows ストア サービスを使用した提出の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-* [アプリの入手](get-an-app.md)
-* [アプリのパッケージ フライトの入手](get-flights-for-an-app.md)
-* [アプリのアドオンの入手](get-add-ons-for-an-app.md)
-
+* [<span data-ttu-id="bbe63-176">Microsoft Store サービスを使用した申請の作成と管理</span><span class="sxs-lookup"><span data-stu-id="bbe63-176">Create and manage submissions using Microsoft Store services</span></span>](create-and-manage-submissions-using-windows-store-services.md)
+* [<span data-ttu-id="bbe63-177">アプリの取得</span><span class="sxs-lookup"><span data-stu-id="bbe63-177">Get an app</span></span>](get-an-app.md)
+* [<span data-ttu-id="bbe63-178">アプリのパッケージ フライトの取得</span><span class="sxs-lookup"><span data-stu-id="bbe63-178">Get package flights for an app</span></span>](get-flights-for-an-app.md)
+* [<span data-ttu-id="bbe63-179">アプリのアドオンの取得</span><span class="sxs-lookup"><span data-stu-id="bbe63-179">Get add-ons for an app</span></span>](get-add-ons-for-an-app.md)

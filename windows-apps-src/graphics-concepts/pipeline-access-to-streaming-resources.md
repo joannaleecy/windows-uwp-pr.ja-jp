@@ -1,32 +1,33 @@
 ---
-title: "ストリーミング リソースへのパイプライン アクセス"
-description: "ストリーミング リソースは、シェーダー リソース ビュー (SRV)、レンダー ターゲット ビュー (RTV)、深度ステンシル ビュー (DSV)、順序指定されていないアクセス ビュー (UAV) のほか、頂点バッファー バインドなどのビューが使用されない一部のバインド ポイントで使用できます。"
+title: ストリーミング リソースへのパイプライン アクセス
+description: ストリーミング リソースは、シェーダー リソース ビュー (SRV)、レンダー ターゲット ビュー (RTV)、深度ステンシル ビュー (DSV)、順序指定されていないアクセス ビュー (UAV) のほか、頂点バッファー バインドなどのビューが使用されない一部のバインド ポイントで使用できます。
 ms.assetid: 18DA5D61-930D-4466-8EFE-0CED566EA4A6
 keywords:
-- "ストリーミング リソースへのパイプライン アクセス"
-author: PeterTurcan
-ms.author: pettur
+- ストリーミング リソースへのパイプライン アクセス
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5f4fd92e1519579f15b3c3d452ce80e944f0942b
-ms.lasthandoff: 02/07/2017
-
+ms.localizationpriority: medium
+ms.openlocfilehash: b650188f6e4306a8dbdaae58e333128408d0f076
+ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/15/2018
+ms.locfileid: "1652701"
 ---
+# <a name="pipeline-access-to-streaming-resources"></a><span data-ttu-id="14502-104">ストリーミング リソースへのパイプライン アクセス</span><span class="sxs-lookup"><span data-stu-id="14502-104">Pipeline access to streaming resources</span></span>
 
-# <a name="pipeline-access-to-streaming-resources"></a>ストリーミング リソースへのパイプライン アクセス
 
+<span data-ttu-id="14502-105">ストリーミング リソースは、シェーダー リソース ビュー (SRV)、レンダー ターゲット ビュー (RTV)、深度ステンシル ビュー (DSV)、順序指定されていないアクセス ビュー (UAV) のほか、頂点バッファー バインドなどのビューが使用されない一部のバインド ポイントで使用できます。</span><span class="sxs-lookup"><span data-stu-id="14502-105">Streaming resources can be used in shader resource views (SRV), render target views (RTV), depth stencil views (DSV) and unordered access views (UAV), as well as some bind points where views aren't used, such as vertex buffer bindings.</span></span> <span data-ttu-id="14502-106">サポートされているバインドの一覧については、「[ストリーミング リソースの作成パラメーター](streaming-resource-creation-parameters.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="14502-106">For the list of supported bindings, see [Streaming resource creation parameters](streaming-resource-creation-parameters.md).</span></span> <span data-ttu-id="14502-107">また、さまざまな D3D コピー操作もストリーミング リソース上で機能します。</span><span class="sxs-lookup"><span data-stu-id="14502-107">The various D3D Copy operations also work on streaming resources.</span></span>
 
-ストリーミング リソースは、シェーダー リソース ビュー (SRV)、レンダー ターゲット ビュー (RTV)、深度ステンシル ビュー (DSV)、順序指定されていないアクセス ビュー (UAV) のほか、頂点バッファー バインドなどのビューが使用されない一部のバインド ポイントで使用できます。 サポートされているバインドの一覧については、「[ストリーミング リソースの作成パラメーター](streaming-resource-creation-parameters.md)」を参照してください。 また、さまざまな D3D コピー操作もストリーミング リソース上で機能します。
+<span data-ttu-id="14502-108">1 つ以上のビュー内の複数のタイルの座標が同じメモリ位置にバインドされている場合、複数のパスから同一メモリへの読み取りと書き込みは、無作為で反復不可能な順序のメモリ アクセスで発生します。</span><span class="sxs-lookup"><span data-stu-id="14502-108">If multiple tile coordinates in one or more views is bound to the same memory location, reads and writes from different paths to the same memory will occur in a non-deterministic and non-repeatable order of memory accesses.</span></span>
 
-1 つ以上のビュー内の複数のタイルの座標が同じメモリ位置にバインドされている場合、複数のパスから同一メモリへの読み取りと書き込みは、無作為で反復不可能な順序のメモリ アクセスで発生します。
+<span data-ttu-id="14502-109">シェーダーからのメモリ アクセス フットプリントの背後にある全タイルが一意のタイルにマップされる場合、動作はどの実装においても、同一のメモリ内容を非タイル形式で保持するサーフェスと同じになります。</span><span class="sxs-lookup"><span data-stu-id="14502-109">If all tiles behind a memory access footprint from a shader are mapped to unique tiles, behavior is identical on all implementations to the surface having the same memory contents in a non-tiled fashion.</span></span>
 
-シェーダーからのメモリ アクセス フットプリントの背後にある全タイルが一意のタイルにマップされる場合、動作はどの実装においても、同一のメモリ内容を非タイル形式で保持するサーフェスと同じになります。
-
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>このセクションの内容
+## <a name="span-idin-this-sectionspanin-this-section"></a><span data-ttu-id="14502-110"><span id="in-this-section"></span>このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="14502-110"><span id="in-this-section"></span>In this section</span></span>
 
 
 <table>
@@ -36,49 +37,48 @@ ms.lasthandoff: 02/07/2017
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">トピック</th>
-<th align="left">説明</th>
+<th align="left"><span data-ttu-id="14502-111">トピック</span><span class="sxs-lookup"><span data-stu-id="14502-111">Topic</span></span></th>
+<th align="left"><span data-ttu-id="14502-112">説明</span><span class="sxs-lookup"><span data-stu-id="14502-112">Description</span></span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[マップされていないタイルでの SRV 動作](srv-behavior-with-non-mapped-tiles.md)</p></td>
-<td align="left"><p>マップされていないタイルに関連するシェーダー リソース ビュー (SRV) の読み取り動作は、ハードウェア サポートのレベルによって異なります。</p></td>
+<td align="left"><p><a href="srv-behavior-with-non-mapped-tiles.md"><span data-ttu-id="14502-113">マップされていないタイルでの SRV 動作</span><span class="sxs-lookup"><span data-stu-id="14502-113">SRV behavior with non-mapped tiles</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="14502-114">マップされていないタイルに関連するシェーダー リソース ビュー (SRV) の読み取り動作は、ハードウェア サポートのレベルによって異なります。</span><span class="sxs-lookup"><span data-stu-id="14502-114">Behavior of shader resource view (SRV) reads that involve non-mapped tiles depends on the level of hardware support.</span></span></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[マップされていないタイルでの UAV 動作](uav-behavior-with-non-mapped-tiles.md)</p></td>
-<td align="left"><p>順序指定されていないアクセス ビュー (UAV) の読み取りと書き込みの動作は、ハードウェア サポートのレベルによって異なります。</p></td>
+<td align="left"><p><a href="uav-behavior-with-non-mapped-tiles.md"><span data-ttu-id="14502-115">マップされていないタイルでの UAV 動作</span><span class="sxs-lookup"><span data-stu-id="14502-115">UAV behavior with non-mapped tiles</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="14502-116">順序指定されていないアクセス ビュー (UAV) の読み取りと書き込みの動作は、ハードウェア サポートのレベルによって異なります。</span><span class="sxs-lookup"><span data-stu-id="14502-116">Behavior of unordered access view (UAV) reads and writes depends on the level of hardware support.</span></span></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[マップされていないタイルでのラスタライザー動作](rasterizer-behavior-with-non-mapped-tiles.md)</p></td>
-<td align="left"><p>このセクションでは、マップされていないタイルを使用したラスタライザー動作について説明します。</p></td>
+<td align="left"><p><a href="rasterizer-behavior-with-non-mapped-tiles.md"><span data-ttu-id="14502-117">マップされていないタイルでのラスタライザー動作</span><span class="sxs-lookup"><span data-stu-id="14502-117">Rasterizer behavior with non-mapped tiles</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="14502-118">このセクションでは、マップされていないタイルを使用したラスタライザー動作について説明します。</span><span class="sxs-lookup"><span data-stu-id="14502-118">This section describes rasterizer behavior with non-mapped tiles.</span></span></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[重複するマッピングを含むタイルのアクセス制限](tile-access-limitations-with-duplicate-mappings.md)</p></td>
-<td align="left"><p>コピー元とコピー先が重複しているストリーミング リソースをコピーする場合や、レンダー領域内で共有されるタイルをレンダリングする場合などでは、重複するマッピングを含むタイル アクセスに制限があります。</p></td>
+<td align="left"><p><a href="tile-access-limitations-with-duplicate-mappings.md"><span data-ttu-id="14502-119">重複するマッピングを含むタイルのアクセス制限</span><span class="sxs-lookup"><span data-stu-id="14502-119">Tile access limitations with duplicate mappings</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="14502-120">コピー元とコピー先が重複しているストリーミング リソースをコピーする場合や、レンダー領域内で共有されるタイルをレンダリングする場合などでは、重複するマッピングを含むタイル アクセスに制限があります。</span><span class="sxs-lookup"><span data-stu-id="14502-120">There are limitations on tile access with duplicate mappings, such as when copying streaming resources with overlapping source and destination, or when rendering to tiles shared within the render area.</span></span></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[ストリーミング リソース テクスチャ サンプリング機能](streaming-resources-texture-sampling-features.md)</p></td>
-<td align="left"><p>ストリーミング リソース テクスチャ サンプリングの機能は複数あります。たとえば、マップの領域についてシェーダー状態のフィードバックを取得する機能、アクセスされている全データがリソース内にマップされたかどうか確認する機能、マップされていないことがわかっているミップマップ ストリーミング リソース内の領域をシェーダーが避けられるようにクランプする機能、テクスチャ フィルターのフットプリント全体に完全にマップされる最小の LOD を検出する機能などがあります。</p></td>
+<td align="left"><p><a href="streaming-resources-texture-sampling-features.md"><span data-ttu-id="14502-121">ストリーミング リソース テクスチャ サンプリング機能</span><span class="sxs-lookup"><span data-stu-id="14502-121">Streaming resources texture sampling features</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="14502-122">ストリーミング リソース テクスチャ サンプリングの機能は複数あります。たとえば、マップの領域についてシェーダー状態のフィードバックを取得する機能、アクセスされている全データがリソース内にマップされたかどうか確認する機能、マップされていないことがわかっているミップマップ ストリーミング リソース内の領域をシェーダーが避けられるようにクランプする機能、テクスチャ フィルターのフットプリント全体に完全にマップされる最小の LOD を検出する機能などがあります。</span><span class="sxs-lookup"><span data-stu-id="14502-122">Streaming resources texture sampling features include getting shader status feedback about mapped areas, checking whether all data being accessed was mapped in the resource, clamping to help shaders avoid areas in mipmapped streaming resources that are known to be non-mapped, and discovering what the minimum LOD that is fully mapped for an entire texture filter footprint will be.</span></span></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[HLSL ストリーミング リソースの露出](hlsl-streaming-resources-exposure.md)</p></td>
-<td align="left"><p>[シェーダー モデル 5](https://msdn.microsoft.com/library/windows/desktop/ff471356) のストリーミング リソースをサポートするには、Microsoft 上位レベル シェーダー言語 (HLSL) の特定の構文が必要です。</p></td>
+<td align="left"><p><a href="hlsl-streaming-resources-exposure.md"><span data-ttu-id="14502-123">HLSL ストリーミング リソースの露出</span><span class="sxs-lookup"><span data-stu-id="14502-123">HLSL streaming resources exposure</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="14502-124"><a href="https://msdn.microsoft.com/library/windows/desktop/ff471356">シェーダー モデル 5</a> のストリーミング リソースをサポートするには、Microsoft 上位レベル シェーダー言語 (HLSL) の特定の構文が必要です。</span><span class="sxs-lookup"><span data-stu-id="14502-124">A specific Microsoft High Level Shader Language (HLSL) syntax is required to support streaming resources in <a href="https://msdn.microsoft.com/library/windows/desktop/ff471356">Shader Model 5</a>.</span></span></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連項目
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="14502-125"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="14502-125"><span id="related-topics"></span>Related topics</span></span>
 
 
-[ストリーミング リソース](streaming-resources.md)
-
- 
+[<span data-ttu-id="14502-126">ストリーミング リソース</span><span class="sxs-lookup"><span data-stu-id="14502-126">Streaming resources</span></span>](streaming-resources.md)
 
  
 
+ 
 
 
 
