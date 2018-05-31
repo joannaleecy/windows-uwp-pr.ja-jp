@@ -1,17 +1,21 @@
 ---
 author: drewbatgit
 ms.assetid: b7333924-d641-4ba5-92a2-65925b44ccaa
-description: "この記事では、アプリがバックグラウンドで実行されているときにメディアを再生する方法を示します。"
-title: "バックグラウンドでのメディアの再生"
+description: この記事では、アプリがバックグラウンドで実行されているときにメディアを再生する方法を示します。
+title: バックグラウンドでのメディアの再生
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 148bb77f9386864a1b127341aa875beb7123bae9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: f8fdc99355ef5a024757cc2e415b1d259965c1ce
+ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/28/2018
+ms.locfileid: "1690498"
 ---
 # <a name="play-media-in-the-background"></a>バックグラウンドでのメディアの再生
 この記事では、アプリをフォアグラウンドからバックグラウンドに移動してもメディアの再生を続行できるように、アプリを構成する方法について説明します。 バックグラウンドでの再生とは、ユーザーがアプリを最小化してホーム画面に戻った後や、それ以外の方法でアプリから離れた後も、アプリでオーディオの再生を続行できることを意味します。 
@@ -65,7 +69,7 @@ Windows 10 バージョン 1607 では、新しいシングル プロセス モ�
 </Capabilities>
 ```
 
-##<a name="handle-transitioning-between-foreground-and-background"></a>フォアグラウンドとバックグラウンドの間の移行の処理
+## <a name="handle-transitioning-between-foreground-and-background"></a>フォアグラウンドとバックグラウンドの間の移行の処理
 アプリがフォアグラウンドからバックグラウンドに移動すると、[**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) イベントが発生します。 また、アプリがフォアグラウンドに戻るときには、[**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) イベントが発生します。 これらは、アプリのライフサイクル イベントであるために、アプリを作成するときに、これらのイベントのハンドラーを登録する必要があります。 既定のプロジェクト テンプレートでは、これは、App.xaml.cs の **App** クラス コンストラクターに追加することを意味します。 
 
 [!code-cs[RegisterEvents](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetRegisterEvents)]
@@ -88,7 +92,7 @@ Windows 10 バージョン 1607 では、新しいシングル プロセス モ�
 ## <a name="network-availability-for-background-media-apps"></a>バックグラウンド メディア アプリのネットワークの可用性
 すべてのネットワーク対応メディア ソース (ストリームやファイルから作成されないソース) は、リモート コンテンツの取得中はアクティブなネットワーク接続を維持し、リモート コンテンツを取得していないときはネットワーク接続を解放します。 [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaStreamSource) は、具体的には、アプリケーションを利用して、[**SetBufferedRange**](https://msdn.microsoft.com/library/windows/apps/dn282762) を使用して適切にバッファー処理された範囲をプラットフォームに適切に報告します。 コンテンツ全体が完全にバッファー処理されると、ネットワークはアプリ用に予約されなくなります。
 
-メディアをダウンロードしていないときに、バックグラウンドでネットワーク呼び出しを行う必要がある場合は、[**ApplicationTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.ApplicationTrigger)、[**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.MaintenanceTrigger)、[**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.TimeTrigger) などの適切なタスクでこれらの呼び出しをラップする必要があります。 詳しくは、「[バックグラウンド タスクによるアプリのサポート](https://msdn.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)」をご覧ください。
+メディアをダウンロードしていないときに、バックグラウンドでネットワーク呼び出しを行う必要がある場合は、[**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.MaintenanceTrigger) や [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.TimeTrigger) などの適切なタスクでこれらの呼び出しをラップする必要があります。 詳しくは、「[バックグラウンド タスクによるアプリのサポート](https://msdn.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)」をご覧ください。
 
 ## <a name="related-topics"></a>関連トピック
 * [メディア再生](media-playback.md)

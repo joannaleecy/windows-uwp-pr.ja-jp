@@ -1,23 +1,22 @@
 ---
 author: stevewhims
-Description: "アプリのパッケージ、アプリのデータ フォルダー、またはクラウドからのファイルを参照するために使用できる URI (Uniform Resource Identifier) スキームはいくつかあります。 また、URI スキームを使用して、アプリのリソース ファイル (.resw) から読み込まれた文字列を参照することもできます。"
-title: "URI スキーム"
+Description: There are several URI (Uniform Resource Identifier) schemes that you can use to refer to files that come from your app's package, your app's data folders, or the cloud. You can also use a URI scheme to refer to strings loaded from your app's Resources Files (.resw).
+title: URI スキーム
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子"
-localizationpriority: medium
-ms.openlocfilehash: 7cbd4a6fea3ca7d179eae9857c6e98010d11439e
-ms.sourcegitcommit: d0c93d734639bd31f264424ae5b6fead903a951d
+keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
+ms.localizationpriority: medium
+ms.openlocfilehash: 445f053b0243f1b9c2e54e6e9fcfa332d49cbec5
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 03/22/2018
+ms.locfileid: "1674519"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="uri-schemes"></a>URI スキーム
 
 アプリのパッケージ、アプリのデータ フォルダー、またはクラウドからのファイルを参照するために使用できる URI (Uniform Resource Identifier) スキームはいくつかあります。 また、URI スキームを使用して、アプリのリソース ファイル (.resw) から読み込まれた文字列を参照することもできます。 これらの URI スキームは、コード、XAML マークアップ、アプリ パッケージ マニフェスト、またはタイル/トースト通知テンプレートで使用できます。
@@ -28,7 +27,7 @@ ms.lasthandoff: 11/03/2017
 
 すべての URI スキームでは [RFC 3986](http://go.microsoft.com/fwlink/p/?LinkId=263444) に従い、URI の機関コンポーネントおよびパス コンポーネントとして階層部分を定義しています。
 
-```
+```syntax
 URI         = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
 hier-part   = "//" authority path-abempty
             / path-absolute
@@ -44,13 +43,13 @@ hier-part   = "//" authority path-abempty
 
 ## <a name="case-insensitivity-and-normalization"></a>大文字と小文字の区別と正規化
 
-このトピックで説明している URI スキームはすべて、スキームの正規化とリソース取得について一般的な URI 規則 (RFC 3986) に従っています。 正規化されたこれらの URI の形式は大文字と小文字を保持し、RFC 3986 の非予約文字をパーセントデコードします。
+このトピックで説明している URI スキームはすべて、スキームの正規化とリソース取得について一般的な URI 規則 (RFC 3986) に従っています。 これらの URI の正規化された形式では、大文字と小文字が保持され、RFC 3986 の非予約文字がパーセントデコードされます。
 
 このトピックで説明されているすべての URI スキームでは、標準では*スキーム*、*機関*、および*パス*の大文字と小文字が区別されません。それ以外でも、大文字と小文字を区別せずシステムによって処理されます。 **注** そのルールの唯一の例外は、`ms-resource` の*機関*で、大文字と小文字が区別されます。
 
 ## <a name="ms-appx-and-ms-appx-web"></a>ms-appx と ms-appx-web
 
-アプリのパッケージに含まれるファイルを参照するには、URI スキーム `ms-appx` または `ms-appx-web` を使用します (「[アプリのパッケージ化](../packaging/index.md)」をご覧ください)。 アプリ パッケージ内のファイルは通常、静止画像ファイル、データ ファイル、コード ファイル、レイアウト ファイルです。 `ms-appx-web` スキームは、`ms-appx` と同じファイルにアクセスしますが、このファイルは Web コンパートメントにあります。 例や詳しい情報については、「[XAML マークアップとコードから画像やその他のアセットを参照する](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)」をご覧ください。
+アプリのパッケージに含まれるファイルを参照するには、URI スキーム `ms-appx` または `ms-appx-web` を使用します (「[アプリのパッケージ化](../packaging/index.md)」をご覧ください)。 アプリ パッケージ内のファイルは通常、静的なイメージ ファイル、データ ファイル、コード ファイル、レイアウト ファイルです。 `ms-appx-web` スキームは、`ms-appx` と同じファイルにアクセスしますが、このファイルは Web コンパートメントにあります。 例や詳しい情報については、「[XAML マークアップとコードから画像やその他のアセットを参照する](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)」をご覧ください。
 
 ### <a name="scheme-name-ms-appx-and-ms-appx-web"></a>スキーム名 (ms-appx と ms-appx-web)
 
@@ -82,7 +81,7 @@ ms-appx-web:///
 
 ### <a name="user-info-and-port-ms-appx-and-ms-appx-web"></a>ユーザー情報とポート (ms-appx と ms-appx-web)
 
-`ms-appx` スキームは、他の一般的なスキームとは異なり、ユーザー情報やポートのコンポーネントを定義しません。 "@" と ":" は機関の有効な値として許可されていないため、これらが含まれていると参照は失敗します。 以下の処理はそれぞれ失敗となります。
+`ms-appx` スキームは、他の一般的なスキームとは異なり、ユーザー情報やポートのコンポーネントを定義しません。 "@" and ":" は機関の有効な値として許可されていないため、これらが含まれていると参照は失敗します。 以下の処理はそれぞれ失敗となります。
 
 ```xml
 ms-appx://john@contoso.myapp/default.html
@@ -109,8 +108,7 @@ ms-appx:///images/logo.png
 
 もちろん、完全名を直接参照することで、同じ物理ファイルを取得することもできます。
 
-**XAML**
-```xml
+```xaml
 <Image Source="ms-appx:///images/fr-FR/logo.scale-100_contrast-white.png"/>
 ```
 
@@ -128,9 +126,9 @@ ms-appx:///Hello%23World.html
 
 ## <a name="ms-appdata"></a>ms-appdata
 
-アプリのローカル フォルダー、ローミング フォルダー、一時データ フォルダーのアプリ ファイルを参照するには、URI スキーム `ms-appdata` を使用します。 アプリ データ フォルダーについて詳しくは、「[設定と他のアプリ データを保存して取得する](../app-settings/store-and-retrieve-app-data.md)」をご覧ください。
+アプリのローカル フォルダー、ローミング フォルダー、一時データ フォルダーのアプリ ファイルを参照するには、URI スキーム `ms-appdata` を使用します。 アプリ データ フォルダーについて詳しくは、「[設定と他のアプリ データを保存して取得する](../design/app-settings/store-and-retrieve-app-data.md)」をご覧ください。
 
-URI スキーム `ms-appdata` では、[ms-appx と ms-appx-web](#ms-appx-and-ms-appx-web) で行われるような、実行時のコンテンツ ネゴシエーションは行われません。 ただし、URI 内で物理ファイルの完全名を使用すると、[ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues) のコンテンツに応答し、アプリ データから適切なアセットを読み込むことができます。
+URI スキーム `ms-appdata` では、[ms-appx と ms-appx-web](#ms-appx-and-ms-appx-web) で行われるような、実行時のコンテンツ ネゴシエーションは行われません。 ただし、URI 内で物理ファイルの完全名を使用すると、[ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) のコンテンツに応答し、アプリ データから適切なアセットを読み込むことができます。
 
 ### <a name="scheme-name-ms-appdata"></a>スキーム名 (ms-appdata)
 
@@ -156,7 +154,7 @@ ms-appdata:///
 
 ### <a name="user-info-and-port-ms-appdata"></a>ユーザー情報とポート (ms-appdata)
 
-`ms-appdata` スキームは、他の一般的なスキームとは異なり、ユーザー情報やポートのコンポーネントを定義しません。 "@" と ":" は機関の有効な値として許可されていないため、これらが含まれていると参照は失敗します。 以下の処理はそれぞれ失敗となります。
+`ms-appdata` スキームは、他の一般的なスキームとは異なり、ユーザー情報やポートのコンポーネントを定義しません。 "@" and ":" は機関の有効な値として許可されていないため、これらが含まれていると参照は失敗します。 以下の処理はそれぞれ失敗となります。
 
 ```xml
 ms-appdata://john@contoso.myapp/local/data.xml
@@ -167,7 +165,7 @@ ms-appdata://john:password@contoso.myapp:8080/local/data.xml
 
 ### <a name="path-ms-appdata"></a>パス (ms-appdata)
 
-パス コンポーネントは RFC 3986 の一般的な構文に一致し、IRI 内の非 ASCII 文字をサポートします。 [Windows.Storage.ApplicationData](/uwp/api/Windows.Storage.ApplicationData?branch=live) の場所には、ローカル ストレージ、ローミング ストレージ、一時的状態のストレージの 3 つの予約済みフォルダーがあります。 `ms-appdata` スキームを使用すると、これらの場所にあるファイルとフォルダーへのアクセスが可能になります。 パス コンポーネントの最初のセグメントでは、次の方法で特定のフォルダーを指定する必要があります。 したがって、"hier-part" の "path-empty" 形式は許可されません。
+パス コンポーネントは RFC 3986 の一般的な構文に一致し、IRI 内の非 ASCII 文字をサポートします。 [Windows.Storage.ApplicationData](/uwp/api/Windows.Storage.ApplicationData?branch=live) の場所には、ローカル ストレージ、ローミング ストレージ、一時状態ストレージの 3 つの予約済みフォルダーがあります。 `ms-appdata` スキームを使用すると、これらの場所にあるファイルとフォルダーへのアクセスが可能になります。 パス コンポーネントの最初のセグメントでは、次の方法で特定のフォルダーを指定する必要があります。 したがって、"hier-part" の "path-empty" 形式は許可されません。
 
 ローカル フォルダーの場合:
 
@@ -242,7 +240,7 @@ ms-resource:///
 
 ### <a name="user-info-and-port-ms-resource"></a>ユーザー情報とポート (ms-resource)
 
-`ms-resource` スキームは、他の一般的なスキームとは異なり、ユーザー情報やポートのコンポーネントを定義しません。 "@" と ":" は機関の有効な値として許可されていないため、これらが含まれていると参照は失敗します。 以下の処理はそれぞれ失敗となります。
+`ms-resource` スキームは、他の一般的なスキームとは異なり、ユーザー情報やポートのコンポーネントを定義しません。 "@" and ":" は機関の有効な値として許可されていないため、これらが含まれていると参照は失敗します。 以下の処理はそれぞれ失敗となります。
 
 ```xml
 ms-resource://john@contoso.myapp/Resources/String1
@@ -253,13 +251,13 @@ ms-resource://john:password@contoso.myapp:8080/Resources/String1
 
 ### <a name="path-ms-resource"></a>パス (ms-resource)
 
-パスは、[ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) サブツリーとサブツリー内の [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResourcebranch=live) の階層の場所を特定します (「[リソース管理システム](https://msdn.microsoft.com/library/windows/apps/jj552947)」をご覧ください)。 これは通常、リソース ファイル (.resw) のファイル名 (拡張子を除く) と、ファイル内の文字列リソースの識別子に対応しています。
+パスでは、[ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) サブツリー (「[リソース管理システム](https://msdn.microsoft.com/library/windows/apps/jj552947)」をご覧ください) とサブツリー内の [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live) の階層の場所が特定されます (「リソース管理システム」をご覧ください)。 これは通常、リソース ファイル (.resw) のファイル名 (拡張子を除く) と、ファイル内の文字列リソースの識別子に対応しています。
 
-例と詳しい情報については、「[UI とアプリ パッケージ マニフェスト内の文字列をローカライズする](localize-strings-ui-manifest.md)」と「[言語、スケール、ハイ コントラストに合わせたタイルとトースト通知のサポート](tile-toast-language-scale-contrast.md)」をご覧ください。
+例と詳しい情報については、「[UI とアプリ パッケージ マニフェスト内の文字列をローカライズする](localize-strings-ui-manifest.md)」と「[言語、スケール、ハイ コントラストに合わせたタイルとトースト通知のサポート](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)」をご覧ください。
 
-パス コンポーネント `ms-resource` では、一般的な URI と同様、大文字と小文字が区別されます。 ただし、基本的な取得では、*ignoreCase* を `true` に設定して、[CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628) を実行します。
+パス コンポーネント `ms-resource` では、一般的な URI と同様、大文字と小文字が区別されます。 ただし、基になるファイル システムに従い、リソース取得時には *ignoreCase* を `true` に設定して [CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628) が実行されます。
 
-正規化された URI 形式では大文字と小文字が保持され、RFC 3986 の非予約文字がパーセントデコード ("%" 記号の後に 2 桁の 16 進数表現) されます。 "?"、"#"、"/"、"*"、'”' (二重引用符) の各文字は、ファイル名やフォルダー名などのデータを示すパス内でパーセントエンコードする必要があります。 パーセントエンコードされたすべての文字は、取得前にデコードされます。 このため、Hello#World.resw という名前のリソース ファイルから文字列リソースを取得するには、次の URI を使用します。
+正規化された URI 形式では大文字と小文字が保持され、RFC 3986 の非予約文字がパーセントデコードされます ("%" 記号の後に 2 桁の 16 進数表現)。 "?"、"#"、"/"、"*"、'”' (二重引用符) の各文字は、ファイル名やフォルダー名などのデータを示すパス内でパーセントエンコードする必要があります。 パーセントエンコードされたすべての文字は、取得前にデコードされます。 このため、Hello#World.resw という名前のリソース ファイルから文字列リソースを取得するには、次の URI を使用します。
 
 ```xml
 ms-resource:///Hello%23World/String1
@@ -276,7 +274,7 @@ ms-resource:///Hello%23World/String1
 * [Uniform Resource Identifier (URI): 一般的な構文](http://go.microsoft.com/fwlink/p/?LinkId=263444)
 * [アプリのパッケージ化](../packaging/index.md)
 * [XAML マークアップとコードから画像やその他のアセットを参照する](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
-* [設定と他のアプリ データを保存して取得する](../app-settings/store-and-retrieve-app-data.md)
+* [設定と他のアプリ データを保存して取得する](../design/app-settings/store-and-retrieve-app-data.md)
 * [UI とアプリ パッケージ マニフェスト内の文字列をローカライズする](localize-strings-ui-manifest.md)
 * [リソース管理システム](https://msdn.microsoft.com/library/windows/apps/jj552947)
-* [言語、スケール、ハイ コントラストに合わせたタイルとトースト通知のサポート](tile-toast-language-scale-contrast.md)
+* [言語、スケール、ハイ コントラストに合わせたタイルとトースト通知のサポート](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)
